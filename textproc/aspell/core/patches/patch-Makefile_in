@@ -1,6 +1,7 @@
---- Makefile.in.orig	Mon Jul  4 10:58:49 2011
-+++ Makefile.in	Tue Jan 17 10:55:18 2012
-@@ -482,7 +482,7 @@ top_builddir = @top_builddir@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -667,7 +667,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign subdir-objects
  SUBDIRS = . po manual
@@ -8,4 +9,13 @@
 +DIST_SUBDIRS = ${SUBDIRS} myspell lib5
  filterdir = ${pkglibdir}
  optdir = ${pkgdatadir}
+ 
+@@ -2053,7 +2053,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-binSCRIP
+ # settings.h added as a dependency so it will get recreated if
+ #   the COMPILE_IN_FILTERS option changes
+ gen/static_filters.src.cpp: ${static_optfiles} gen/mk-static-filter.pl gen/settings.h
+-	${PERLPROG} ${srcdir}/gen/mk-static-filter.pl $(addprefix ${srcdir}/,${static_optfiles})
++	${PERLPROG} ${srcdir}/gen/mk-static-filter.pl ${srcdir}/${static_optfiles}
+ 
+ ${srcdir}/lib/new_filter.cpp: gen/static_filters.src.cpp
  

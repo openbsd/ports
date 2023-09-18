@@ -1,6 +1,7 @@
---- configure.orig	Mon Jul  4 09:58:50 2011
-+++ configure	Mon Apr 17 22:05:04 2017
-@@ -2645,7 +2645,7 @@ fi
+Index: configure
+--- configure.orig
++++ configure
+@@ -3308,7 +3308,7 @@ fi
  
  if test "$pkgdatadir" = "undef"
  then
@@ -9,17 +10,12 @@
  fi
  
  
-@@ -20216,10 +20216,10 @@ XGETTEXT!$XGETTEXT$ac_delim
- XGETTEXT_015!$XGETTEXT_015$ac_delim
- MSGMERGE!$MSGMERGE$ac_delim
- INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- PTHREAD_LIB!$PTHREAD_LIB$ac_delim
+@@ -3329,7 +3329,7 @@ fi
+ 
+ if test "$pkglibdir" = "undef"
+ then
+-  pkglibdir=\${libdir}/aspell-0.60
++  pkglibdir=\${libdir}/aspell
+ fi
+ 
+ 

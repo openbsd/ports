@@ -73,10 +73,10 @@ lib/aspell/koi8-u.cset
 lib/aspell/spell
 lib/aspell/split.kbd
 lib/aspell/standard.kbd
-lib/libaspell.a
+@static-lib lib/libaspell.a
 lib/libaspell.la
 @lib lib/libaspell.so.${LIBaspell_VERSION}
-lib/libpspell.a
+@static-lib lib/libpspell.a
 lib/libpspell.la
 @lib lib/libpspell.so.${LIBpspell_VERSION}
 @man man/man1/aspell-import.1
@@ -91,6 +91,11 @@ share/aspell/american-variant_1.alias
 share/aspell/american-w_accents.alias
 share/aspell/american-wo_accents.alias
 share/aspell/american.alias
+share/aspell/australian-variant_0.alias
+share/aspell/australian-variant_1.alias
+share/aspell/australian-w_accents.alias
+share/aspell/australian-wo_accents.alias
+share/aspell/australian.alias
 share/aspell/british-ise-w_accents.alias
 share/aspell/british-ise-wo_accents.alias
 share/aspell/british-ise.alias
@@ -122,6 +127,15 @@ share/aspell/en-w_accents.multi
 share/aspell/en-wo_accents-only.rws
 share/aspell/en-wo_accents.multi
 share/aspell/en.multi
+share/aspell/en_AU-variant_0.multi
+share/aspell/en_AU-variant_0.rws
+share/aspell/en_AU-variant_1.multi
+share/aspell/en_AU-variant_1.rws
+share/aspell/en_AU-w_accents-only.rws
+share/aspell/en_AU-w_accents.multi
+share/aspell/en_AU-wo_accents-only.rws
+share/aspell/en_AU-wo_accents.multi
+share/aspell/en_AU.multi
 share/aspell/en_CA-variant_0.multi
 share/aspell/en_CA-variant_0.rws
 share/aspell/en_CA-variant_1.multi
@@ -162,6 +176,7 @@ share/aspell/english-w_accents.alias
 share/aspell/english-wo_accents.alias
 share/aspell/english.alias
 share/aspell/html.amf
+share/aspell/markdown.amf
 share/aspell/none.amf
 share/aspell/nroff.amf
 share/aspell/perl.amf
@@ -169,8 +184,6 @@ share/aspell/sgml.amf
 share/aspell/tex.amf
 share/aspell/texinfo.amf
 share/aspell/url.amf
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/aspell.mo
 share/locale/be/LC_MESSAGES/aspell.mo
 share/locale/ca/LC_MESSAGES/aspell.mo
@@ -180,10 +193,15 @@ share/locale/de/LC_MESSAGES/aspell.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/aspell.mo
+share/locale/eo/LC_MESSAGES/aspell.mo
 share/locale/es/LC_MESSAGES/aspell.mo
 share/locale/fi/LC_MESSAGES/aspell.mo
 share/locale/fr/LC_MESSAGES/aspell.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/aspell.mo
 share/locale/ga/LC_MESSAGES/aspell.mo
+share/locale/hr/LC_MESSAGES/aspell.mo
 share/locale/id/LC_MESSAGES/aspell.mo
 share/locale/it/LC_MESSAGES/aspell.mo
 share/locale/ja/LC_MESSAGES/aspell.mo
@@ -194,6 +212,8 @@ share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/aspell.mo
 share/locale/nl/LC_MESSAGES/aspell.mo
+share/locale/pl/LC_MESSAGES/aspell.mo
+share/locale/pt/LC_MESSAGES/aspell.mo
 share/locale/pt_BR/LC_MESSAGES/aspell.mo
 share/locale/ro/LC_MESSAGES/aspell.mo
 share/locale/ru/LC_MESSAGES/aspell.mo
