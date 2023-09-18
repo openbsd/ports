@@ -1,0 +1,15 @@
+XXX remove once we have xdg-desktop-portal-gnome;
+unbreak getting (at least) color-scheme.
+https://gitlab.gnome.org/GNOME/libadwaita/-/commit/e715fae6a509db006a805af816f9d163f81011ef
+
+Index: src/adw-settings-impl.c
+--- src/adw-settings-impl.c.orig
++++ src/adw-settings-impl.c
+@@ -161,6 +161,7 @@ adw_settings_impl_set_high_contrast (AdwSettingsImpl *
+ gboolean
+ adw_get_disable_portal (void)
+ {
++  g_setenv ("ADW_DISABLE_PORTAL", "1", 0);
+   const char *disable_portal = g_getenv ("ADW_DISABLE_PORTAL");
+ 
+   return disable_portal && disable_portal[0] == '1';
