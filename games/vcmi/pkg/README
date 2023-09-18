@@ -1,0 +1,8 @@
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+As yet VCMI is not standalone program, it uses original game files and
+graphics. You need data files before running VCMI.
+You can copy Data and Maps from disk to ~/.local/share/vcmi/ or use
+vcmibuilder script to extract and install game data.
