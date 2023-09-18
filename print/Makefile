@@ -19,7 +19,6 @@
      SUBDIR += foo2zjs
      SUBDIR += foomatic-db
      SUBDIR += foomatic-db-engine
-     SUBDIR += freetype
      SUBDIR += ghostscript
      SUBDIR += gl2ps
      SUBDIR += gtklp
