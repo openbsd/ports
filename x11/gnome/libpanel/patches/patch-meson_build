@@ -3,7 +3,7 @@ Should match b_lundef in meson(1).
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -171,7 +171,6 @@ generate_vapi = generate_gir and get_option('vapi')
+@@ -176,7 +176,6 @@ generate_vapi = generate_gir and get_option('vapi')
  # cast checks, asserts, and additional link options.
  release_link_args = []
  test_link_args = [
