@@ -18,7 +18,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 17
+REVISION = 18
 
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
