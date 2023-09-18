@@ -3,7 +3,7 @@ https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 Index: src/pipewire/pipewire.h
 --- src/pipewire/pipewire.h.orig
 +++ src/pipewire/pipewire.h
-@@ -50,9 +50,12 @@ extern "C" {
+@@ -50,9 +50,15 @@ extern "C" {
   * \{
   */
  void
@@ -15,6 +15,9 @@ Index: src/pipewire/pipewire.h
 +/* BSD has pw_init already */
 +#define pw_init pipewire_init
 +#define pw_deinit pipewire_deinit
++
++unsigned int
++pw_if_nametoindex(const char *ifname, int fd);
  
  bool
  pw_debug_is_category_enabled(const char *name);

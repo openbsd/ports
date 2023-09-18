@@ -1,0 +1,14 @@
+Index: src/modules/module-pipe-tunnel.c
+--- src/modules/module-pipe-tunnel.c.orig
++++ src/modules/module-pipe-tunnel.c
+@@ -15,6 +15,10 @@
+ #include <limits.h>
+ #include <math.h>
+ 
++#if defined(__OpenBSD__)
++#include <sys/uio.h>
++#endif
++
+ #include "config.h"
+ 
+ #include <spa/utils/result.h>

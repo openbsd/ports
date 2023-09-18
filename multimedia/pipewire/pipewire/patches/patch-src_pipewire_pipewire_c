@@ -3,7 +3,7 @@ Middle chunks: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 Index: src/pipewire/pipewire.c
 --- src/pipewire/pipewire.c.orig
 +++ src/pipewire/pipewire.c
-@@ -7,7 +7,7 @@
+@@ -7,9 +7,13 @@
  #include <unistd.h>
  #include <limits.h>
  #include <stdio.h>
@@ -11,8 +11,14 @@ Index: src/pipewire/pipewire.c
 +#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__)
  #include <sys/prctl.h>
  #endif
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/ioctl.h>
++#include <net/if.h>
  #include <pwd.h>
-@@ -552,7 +552,7 @@ parse_pw_debug_env(void)
+ #include <errno.h>
+ #include <dlfcn.h>
+@@ -552,7 +556,7 @@ parse_pw_debug_env(void)
   * This function can be called multiple times.
   */
  SPA_EXPORT
@@ -21,7 +27,7 @@ Index: src/pipewire/pipewire.c
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -665,7 +665,7 @@ done:
+@@ -665,7 +669,7 @@ done:
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -30,7 +36,7 @@ Index: src/pipewire/pipewire.c
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -691,6 +691,21 @@ done:
+@@ -691,6 +695,21 @@ done:
  
  }
  
@@ -52,7 +58,7 @@ Index: src/pipewire/pipewire.c
  /** Check if a debug category is enabled
   *
   * \param name the name of the category to check
-@@ -738,7 +753,7 @@ static void init_prgname(void)
+@@ -738,7 +757,7 @@ static void init_prgname(void)
  		}
  	}
  #endif
@@ -61,3 +67,25 @@ Index: src/pipewire/pipewire.c
  	{
  		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
  			prgname = name;
+@@ -856,4 +875,21 @@ SPA_EXPORT
+ const struct spa_type_info * pw_type_info(void)
+ {
+ 	return type_info;
++}
++
++SPA_EXPORT
++unsigned int pw_if_nametoindex(const char *ifname, int fd)
++{
++#ifdef SIOCGIFINDEX
++	struct ifreq ifr;
++	snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
++	if (ioctl(fd, SIOCGIFINDEX, &ifr) < 0)
++		return -1;
++	return ifr.ifr_ifindex;
++#else
++	int res;
++	if ((res = if_nametoindex(ifname)) == 0)
++		return -1;
++	return res;
++#endif
+ }
