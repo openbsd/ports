@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1550 2023/09/18 17:39:26 volker Exp $
+# $OpenBSD: Quirks.pm,v 1.1551 2023/09/18 18:56:38 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1849,6 +1849,8 @@ setup_obsolete_reason(
 	1 => 'libxcvt',
 	1 => 'ocaml-camlp4',
 	1 => 'ocaml-camlp5',
+	3 => 'freetype',
+	3 => 'freetype-doc',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
