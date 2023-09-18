@@ -43,6 +43,9 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Davahi=disabled \
 			-Dopus=disabled
 
+# PAM limits.d file
+CONFIGURE_ARGS +=	-Drlimits-install=false
+
 # only useful for examples which we don't install
 CONFIGURE_ARGS +=	-Dsdl2=disabled
 
