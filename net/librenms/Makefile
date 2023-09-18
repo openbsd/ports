@@ -3,10 +3,9 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	23.8.2
+GH_TAGNAME=	23.9.0
 
-DISTFILES=	${GH_DISTFILE} \
-		${PKGNAME}-vendor.tar.xz:0
+DISTFILES.deps=	${PKGNAME}-vendor.tar.xz
 EPOCH=		0
 
 CATEGORIES=	net www
@@ -18,7 +17,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES0=	https://spacehopper.org/mirrors/
+SITES.deps=	https://spacehopper.org/mirrors/
 
 MODULES=	lang/php \
 		lang/python
