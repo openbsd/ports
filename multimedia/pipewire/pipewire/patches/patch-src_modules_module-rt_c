@@ -6,7 +6,7 @@ Index: src/modules/module-rt.c
  	thr_self(&pid);
  	return (pid_t)pid;
 +#elif defined(__OpenBSD__)
-+	return syscall(SYS_getpid);
++	return getthrid();
  #else
  #error "No gettid impl"
  #endif
