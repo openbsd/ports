@@ -87,7 +87,6 @@
      SUBDIR += node
      SUBDIR += nqp
      SUBDIR += ocaml
-     SUBDIR += ocaml-camlp4
      SUBDIR += ocaml-camlp5
      SUBDIR += otcl
      SUBDIR += p5-Language-Ook
