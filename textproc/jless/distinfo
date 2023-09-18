@@ -4,7 +4,7 @@ SHA256 (cargo/autocfg-1.0.1.tar.gz) = zbAx3XjihzHYfVbMj/70qPNsomw4/i3nAFQ+Yn+KRk
 SHA256 (cargo/beef-0.5.1.tar.gz) = vtVUvVAkZymh7BWNCKoyNdG2nZStEg6+GH4oiUeH5zY=
 SHA256 (cargo/bitflags-1.2.1.tar.gz) = zx3i/ox1vBRaL1d63ZUfgTSIm0eV1HRmpUpchG1pFpM=
 SHA256 (cargo/block-0.1.6.tar.gz) = DYwf72kJQdPneI0yhRdZH+zGhMCECEcC1v8WQemTaZo=
-SHA256 (cargo/cc-1.0.69.tar.gz) = 5wzC9ixs4YaJY4J71nd2TGLQfD2aPh+xF37hqasZnrI=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/clap-4.0.26.tar.gz) = IUit79pU4USS+5vdzGALQ0TF0aMSO9Zm3Lk5xvDg5X4=
@@ -25,7 +25,7 @@ SHA256 (cargo/hermit-abi-0.1.18.tar.gz) = Mi9N53lW4i7Q5QMsNZoPEnPx9/DXm/o7j/vHMN
 SHA256 (cargo/indoc-1.0.4.tar.gz) = 55Bqn6urrqy3dPckEOSXodGN6RYyLjN5e7LNKbqiPJ4=
 SHA256 (cargo/isatty-0.1.9.tar.gz) = 4xqCgfyT7JaTSU2mX78owMKqYKLq7CXcWOLzGVLpXtw=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.99.tar.gz) = p/gj0UH+CiTfHiO0r048e6nllm7FFOoGjJMCSqfet2U=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/libc-stdhandle-0.1.0.tar.gz) = bawkc9wok0xeC4IlDasjHJ07lBYNkf6f9IMyOwV5dVE=
 SHA256 (cargo/linked-hash-map-0.5.4.tar.gz) = f7mzivkmCBQLhraTYEuf/MWCQkCkhNHs1HlbrLL+iPM=
 SHA256 (cargo/log-0.4.14.tar.gz) = Ubm75sR9Ufw+GpuUWWWUa0xEFCq4eSxQg1qYDTYsJxA=
@@ -86,7 +86,7 @@ SIZE (cargo/autocfg-1.0.1.tar.gz) = 12908
 SIZE (cargo/beef-0.5.1.tar.gz) = 15177
 SIZE (cargo/bitflags-1.2.1.tar.gz) = 16745
 SIZE (cargo/block-0.1.6.tar.gz) = 4077
-SIZE (cargo/cc-1.0.69.tar.gz) = 56044
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/clap-4.0.26.tar.gz) = 205197
@@ -107,7 +107,7 @@ SIZE (cargo/hermit-abi-0.1.18.tar.gz) = 9936
 SIZE (cargo/indoc-1.0.4.tar.gz) = 13122
 SIZE (cargo/isatty-0.1.9.tar.gz) = 8009
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.99.tar.gz) = 524997
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/libc-stdhandle-0.1.0.tar.gz) = 2254
 SIZE (cargo/linked-hash-map-0.5.4.tar.gz) = 16166
 SIZE (cargo/log-0.4.14.tar.gz) = 34582
