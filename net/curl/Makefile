@@ -1,7 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-8.2.1
-SHARED_LIBS=	curl                 26.21    # 12.0
+DISTNAME=	curl-8.3.0
+SHARED_LIBS=	curl                 26.22    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://curl.se/download/
+SITES=		https://curl.se/download/
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	www/nghttp2 www/nghttp3 net/ngtcp2
@@ -37,6 +37,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Note:
 # use ulimit -p 256 for test
+
+# Known test failures: test1474
 
 # Skip python dependency; it is only required for three rudimentary
 # DICT/SMB/TELNET tests.

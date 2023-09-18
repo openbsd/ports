@@ -4,7 +4,7 @@ https://github.com/curl/curl/commit/e0093b4b732f6495b0fb1cd6747cbfedcdcf63ed
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2947,42 +2947,42 @@ if test X"$want_tcp2" != Xno; then
+@@ -2926,42 +2926,42 @@ if test X"$want_tcp2" != Xno; then
  fi
  
  if test "x$NGTCP2_ENABLED" = "x1" -a "x$OPENSSL_ENABLED" = "x1"; then
@@ -67,7 +67,7 @@ Index: configure.ac
         )
        ],
          dnl not found, revert back to clean variables
-@@ -2992,11 +2992,11 @@ if test "x$NGTCP2_ENABLED" = "x1" -a "x$OPENSSL_ENABLE
+@@ -2971,11 +2971,11 @@ if test "x$NGTCP2_ENABLED" = "x1" -a "x$OPENSSL_ENABLE
      )
  
    else
