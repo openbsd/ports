@@ -327,6 +327,7 @@
      SUBDIR += urbanterror-data
      SUBDIR += vacuum
      SUBDIR += valyriatear
+     SUBDIR += vcmi
      SUBDIR += vectoroids
      SUBDIR += vegastrike
      SUBDIR += vitetris
