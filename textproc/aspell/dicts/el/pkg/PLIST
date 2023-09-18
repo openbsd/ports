@@ -1,5 +1,7 @@
 lib/aspell/el.dat
+lib/aspell/el.kbd
 lib/aspell/el_phonet.dat
 share/aspell/el.multi
 share/aspell/el.rws
+share/aspell/gr.alias
 share/aspell/greek.alias

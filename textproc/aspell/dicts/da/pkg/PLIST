@@ -2,4 +2,5 @@ lib/aspell/da.dat
 lib/aspell/da_phonet.dat
 share/aspell/da.multi
 share/aspell/da.rws
+share/aspell/danish.alias
 share/aspell/dansk.alias
