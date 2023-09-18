@@ -1,10 +1,10 @@
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-3.6.1
+DISTNAME =		vice-3.7.1
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://vice-emu.sourceforge.net/
+HOMEPAGE =		https://vice-emu.sourceforge.io/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -25,7 +25,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			graphics/png
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 
 CONFIGURE_ARGS +=	--without-alsa \
 			--without-oss \
@@ -34,7 +34,7 @@ CONFIGURE_ARGS +=	--without-alsa \
 			--disable-portaudio \
 			--disable-html-docs \
 			--disable-pdf-docs \
-			--enable-sdlui2
+			--enable-sdl2ui
 
 CONFIGURE_ENV +=	ac_cv_header_mpg123_h=no
 
