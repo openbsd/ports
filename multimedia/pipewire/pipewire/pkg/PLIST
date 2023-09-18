@@ -1,11 +1,14 @@
 @bin bin/pipewire
-@bin bin/pipewire-avb
-@bin bin/pipewire-pulse
+bin/pipewire-aes67
+bin/pipewire-avb
+bin/pipewire-pulse
 @bin bin/pw-cat
 @bin bin/pw-cli
+@bin bin/pw-config
 @bin bin/pw-dot
 bin/pw-dsdplay
 @bin bin/pw-dump
+bin/pw-encplay
 @bin bin/pw-link
 @bin bin/pw-loopback
 @bin bin/pw-metadata
@@ -94,6 +97,7 @@ include/spa-0.2/spa/control/control.h
 include/spa-0.2/spa/control/type-info.h
 include/spa-0.2/spa/debug/
 include/spa-0.2/spa/debug/buffer.h
+include/spa-0.2/spa/debug/context.h
 include/spa-0.2/spa/debug/dict.h
 include/spa-0.2/spa/debug/format.h
 include/spa-0.2/spa/debug/log.h
@@ -121,30 +125,86 @@ include/spa-0.2/spa/node/type-info.h
 include/spa-0.2/spa/node/utils.h
 include/spa-0.2/spa/param/
 include/spa-0.2/spa/param/audio/
+include/spa-0.2/spa/param/audio/aac-types.h
+include/spa-0.2/spa/param/audio/aac-utils.h
+include/spa-0.2/spa/param/audio/aac.h
+include/spa-0.2/spa/param/audio/alac-utils.h
+include/spa-0.2/spa/param/audio/alac.h
+include/spa-0.2/spa/param/audio/amr-types.h
+include/spa-0.2/spa/param/audio/amr-utils.h
+include/spa-0.2/spa/param/audio/amr.h
+include/spa-0.2/spa/param/audio/ape-utils.h
+include/spa-0.2/spa/param/audio/ape.h
+include/spa-0.2/spa/param/audio/compressed.h
+include/spa-0.2/spa/param/audio/dsd-utils.h
 include/spa-0.2/spa/param/audio/dsd.h
+include/spa-0.2/spa/param/audio/dsp-utils.h
+include/spa-0.2/spa/param/audio/dsp.h
+include/spa-0.2/spa/param/audio/flac-utils.h
+include/spa-0.2/spa/param/audio/flac.h
 include/spa-0.2/spa/param/audio/format-utils.h
 include/spa-0.2/spa/param/audio/format.h
+include/spa-0.2/spa/param/audio/iec958-types.h
+include/spa-0.2/spa/param/audio/iec958-utils.h
 include/spa-0.2/spa/param/audio/iec958.h
 include/spa-0.2/spa/param/audio/layout.h
+include/spa-0.2/spa/param/audio/mp3-types.h
+include/spa-0.2/spa/param/audio/mp3-utils.h
+include/spa-0.2/spa/param/audio/mp3.h
+include/spa-0.2/spa/param/audio/opus.h
+include/spa-0.2/spa/param/audio/ra-utils.h
+include/spa-0.2/spa/param/audio/ra.h
+include/spa-0.2/spa/param/audio/raw-types.h
+include/spa-0.2/spa/param/audio/raw-utils.h
 include/spa-0.2/spa/param/audio/raw.h
 include/spa-0.2/spa/param/audio/type-info.h
+include/spa-0.2/spa/param/audio/vorbis-utils.h
+include/spa-0.2/spa/param/audio/vorbis.h
+include/spa-0.2/spa/param/audio/wma-types.h
+include/spa-0.2/spa/param/audio/wma-utils.h
+include/spa-0.2/spa/param/audio/wma.h
 include/spa-0.2/spa/param/bluetooth/
 include/spa-0.2/spa/param/bluetooth/audio.h
 include/spa-0.2/spa/param/bluetooth/type-info.h
+include/spa-0.2/spa/param/buffers-types.h
+include/spa-0.2/spa/param/buffers.h
+include/spa-0.2/spa/param/format-types.h
 include/spa-0.2/spa/param/format-utils.h
 include/spa-0.2/spa/param/format.h
+include/spa-0.2/spa/param/latency-types.h
 include/spa-0.2/spa/param/latency-utils.h
+include/spa-0.2/spa/param/latency.h
+include/spa-0.2/spa/param/param-types.h
 include/spa-0.2/spa/param/param.h
+include/spa-0.2/spa/param/port-config-types.h
+include/spa-0.2/spa/param/port-config.h
+include/spa-0.2/spa/param/profile-types.h
+include/spa-0.2/spa/param/profile.h
+include/spa-0.2/spa/param/profiler-types.h
 include/spa-0.2/spa/param/profiler.h
+include/spa-0.2/spa/param/props-types.h
 include/spa-0.2/spa/param/props.h
+include/spa-0.2/spa/param/route-types.h
+include/spa-0.2/spa/param/route.h
+include/spa-0.2/spa/param/tag-types.h
+include/spa-0.2/spa/param/tag-utils.h
+include/spa-0.2/spa/param/tag.h
 include/spa-0.2/spa/param/type-info.h
 include/spa-0.2/spa/param/video/
 include/spa-0.2/spa/param/video/chroma.h
 include/spa-0.2/spa/param/video/color.h
+include/spa-0.2/spa/param/video/dsp-utils.h
+include/spa-0.2/spa/param/video/dsp.h
 include/spa-0.2/spa/param/video/encoded.h
 include/spa-0.2/spa/param/video/format-utils.h
 include/spa-0.2/spa/param/video/format.h
+include/spa-0.2/spa/param/video/h264-utils.h
+include/spa-0.2/spa/param/video/h264.h
+include/spa-0.2/spa/param/video/mjpg-utils.h
+include/spa-0.2/spa/param/video/mjpg.h
 include/spa-0.2/spa/param/video/multiview.h
+include/spa-0.2/spa/param/video/raw-types.h
+include/spa-0.2/spa/param/video/raw-utils.h
 include/spa-0.2/spa/param/video/raw.h
 include/spa-0.2/spa/param/video/type-info.h
 include/spa-0.2/spa/pod/
@@ -171,15 +231,18 @@ include/spa-0.2/spa/support/system.h
 include/spa-0.2/spa/support/thread.h
 include/spa-0.2/spa/utils/
 include/spa-0.2/spa/utils/ansi.h
+include/spa-0.2/spa/utils/atomic.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/dll.h
+include/spa-0.2/spa/utils/enum-types.h
 include/spa-0.2/spa/utils/hook.h
 include/spa-0.2/spa/utils/json-pod.h
 include/spa-0.2/spa/utils/json.h
 include/spa-0.2/spa/utils/keys.h
 include/spa-0.2/spa/utils/list.h
 include/spa-0.2/spa/utils/names.h
+include/spa-0.2/spa/utils/ratelimit.h
 include/spa-0.2/spa/utils/result.h
 include/spa-0.2/spa/utils/ringbuffer.h
 include/spa-0.2/spa/utils/string.h
@@ -192,27 +255,33 @@ lib/pipewire-0.3/
 @so lib/pipewire-0.3/libpipewire-module-adapter.so
 @so lib/pipewire-0.3/libpipewire-module-client-device.so
 @so lib/pipewire-0.3/libpipewire-module-client-node.so
+@so lib/pipewire-0.3/libpipewire-module-combine-stream.so
 @so lib/pipewire-0.3/libpipewire-module-echo-cancel.so
 @so lib/pipewire-0.3/libpipewire-module-fallback-sink.so
 @so lib/pipewire-0.3/libpipewire-module-filter-chain.so
 @so lib/pipewire-0.3/libpipewire-module-link-factory.so
 @so lib/pipewire-0.3/libpipewire-module-loopback.so
 @so lib/pipewire-0.3/libpipewire-module-metadata.so
+@so lib/pipewire-0.3/libpipewire-module-netjack2-driver.so
+@so lib/pipewire-0.3/libpipewire-module-netjack2-manager.so
 @so lib/pipewire-0.3/libpipewire-module-pipe-tunnel.so
 @so lib/pipewire-0.3/libpipewire-module-portal.so
 @so lib/pipewire-0.3/libpipewire-module-profiler.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-native.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
 @so lib/pipewire-0.3/libpipewire-module-protocol-simple.so
-@so lib/pipewire-0.3/libpipewire-module-raop-discover.so
 @so lib/pipewire-0.3/libpipewire-module-rt.so
+@so lib/pipewire-0.3/libpipewire-module-rtp-sap.so
+@so lib/pipewire-0.3/libpipewire-module-rtp-sink.so
+@so lib/pipewire-0.3/libpipewire-module-rtp-source.so
 @so lib/pipewire-0.3/libpipewire-module-session-manager.so
 @so lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
 @so lib/pipewire-0.3/libpipewire-module-spa-device.so
 @so lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
 @so lib/pipewire-0.3/libpipewire-module-spa-node.so
+@so lib/pipewire-0.3/libpipewire-module-vban-recv.so
+@so lib/pipewire-0.3/libpipewire-module-vban-send.so
 @so lib/pipewire-0.3/libpipewire-module-x11-bell.so
-@so lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
 lib/pkgconfig/libpipewire-0.3.pc
 lib/pkgconfig/libspa-0.2.pc
 lib/spa-0.2/
@@ -233,12 +302,11 @@ lib/spa-0.2/videoconvert/
 @so lib/spa-0.2/videoconvert/libspa-videoconvert.so
 lib/spa-0.2/videotestsrc/
 @so lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
-lib/spa-0.2/volume/
-@so lib/spa-0.2/volume/libspa-volume.so
 @man man/man1/pipewire-pulse.1
 @man man/man1/pipewire.1
 @man man/man1/pw-cat.1
 @man man/man1/pw-cli.1
+@man man/man1/pw-config.1
 @man man/man1/pw-dot.1
 @man man/man1/pw-link.1
 @man man/man1/pw-metadata.1
@@ -304,7 +372,11 @@ share/locale/zh_CN/LC_MESSAGES/pipewire.mo
 share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 share/pipewire/
 share/pipewire/client-rt.conf
+share/pipewire/client-rt.conf.avail/
+share/pipewire/client-rt.conf.avail/20-upmix.conf
 share/pipewire/client.conf
+share/pipewire/client.conf.avail/
+share/pipewire/client.conf.avail/20-upmix.conf
 share/pipewire/filter-chain/
 share/pipewire/filter-chain.conf
 share/pipewire/filter-chain/demonic.conf
@@ -319,6 +391,12 @@ share/pipewire/filter-chain/source-duplicate-FL.conf
 share/pipewire/filter-chain/source-rnnoise.conf
 share/pipewire/jack.conf
 share/pipewire/minimal.conf
+share/pipewire/pipewire-aes67.conf
 share/pipewire/pipewire-avb.conf
 share/pipewire/pipewire-pulse.conf
+share/pipewire/pipewire-pulse.conf.avail/
+share/pipewire/pipewire-pulse.conf.avail/20-upmix.conf
 share/pipewire/pipewire.conf
+share/pipewire/pipewire.conf.avail/
+share/pipewire/pipewire.conf.avail/10-rates.conf
+share/pipewire/pipewire.conf.avail/20-upmix.conf

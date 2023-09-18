@@ -7,28 +7,27 @@ SHARED_LIBS += pipewire-0.3              0.0 # 0.357.0
 
 CATEGORIES=		audio
 
-WANTLIB += X11 Xfixes avahi-client avahi-common c canberra curses
-WANTLIB += dbus-1 epoll-shim glib-2.0 gobject-2.0 gstallocators-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstvideo-1.0
-WANTLIB += intl m pthread readline sndfile
+WANTLIB += X11 Xfixes c canberra curses dbus-1 epoll-shim glib-2.0
+WANTLIB += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m pthread readline
+WANTLIB += sndfile
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		audio/libcanberra \
 			audio/libsndfile \
-			audio/pulseaudio \
 			devel/epoll-shim \
 			multimedia/gstreamer1/plugins-base \
-			net/avahi,-libs
+			x11/dbus
 
 CONFIGURE_ARGS=		-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
 			-Dudev=disabled \
 			-Dlegacy-rtkit=false \
 			-Dalsa=disabled \
-			-Dflatpak=disabled \
+			-Dflatpak=disabled
 
-# until proven useful
+# until supported and/or proven useful
 CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Dpipewire-jack=disabled \
 			-Dbluez5=disabled \
@@ -39,7 +38,10 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Draop=disabled \
 			-Dlv2=disabled \
 			-Davb=disabled \
-			-Dlibffado=disabled
+			-Dlibffado=disabled \
+			-Dlibmysofa=disabled \
+			-Davahi=disabled \
+			-Dopus=disabled
 
 # only useful for examples which we don't install
 CONFIGURE_ARGS +=	-Dsdl2=disabled
