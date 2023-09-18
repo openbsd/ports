@@ -5,11 +5,18 @@ BROKEN-i386=		linking problems
 # - without the above, build fails with
 # ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 
+# without, build fails partway through (though some previous gplc calls
+# did work ok):
+# gplc -c --fast-math fd2c.pl
+# compilation failed
+USE_NOBTCFI=		Yes
+
 ONLY_FOR_ARCHS=		amd64 i386 sparc64
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.5.0
+REVISION=		0
 
 CATEGORIES=		lang
 
