@@ -1,0 +1,14 @@
+https://invent.kde.org/frameworks/kio/-/commit/48322f44323a1fc09305d66d9093fe6c3780709e
+Index: src/ioslaves/file/file_unix.cpp
+--- src/ioslaves/file/file_unix.cpp.orig
++++ src/ioslaves/file/file_unix.cpp
+@@ -328,6 +328,9 @@ inline static time_t stat_mtime(const QT_STATBUF &buf)
+ static bool isOnCifsMount(const QString &filePath)
+ {
+     const auto mount = KMountPoint::currentMountPoints().findByPath(filePath);
++    if (!mount) {
++        return false;
++    }
+     return mount->mountType() == QStringLiteral("cifs") || mount->mountType() == QStringLiteral("smb3");
+ }
+ 
