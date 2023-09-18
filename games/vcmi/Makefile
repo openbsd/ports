@@ -1,4 +1,4 @@
-DISTNAME = 	vcmi-1.3.1.20230830
+DISTNAME = 	vcmi-1.3.2.20230916
 
 COMMENT =	HoMM3 engine rewrite
 

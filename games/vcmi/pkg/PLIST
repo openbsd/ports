@@ -19,6 +19,7 @@ share/icons/hicolor/16x16/apps/vcmiclient.png
 share/icons/hicolor/2048x2048/
 share/icons/hicolor/2048x2048/apps/
 share/icons/hicolor/2048x2048/apps/vcmiclient.png
+share/icons/hicolor/22x22/apps/vcmiclient.png
 share/icons/hicolor/256x256/apps/vcmiclient.png
 share/icons/hicolor/32x32/apps/vcmiclient.png
 share/icons/hicolor/48x48/apps/vcmiclient.png
@@ -40,13 +41,19 @@ share/vcmi/Mods/vcmi/Data/debug/blocked.png
 share/vcmi/Mods/vcmi/Data/debug/grid.png
 share/vcmi/Mods/vcmi/Data/debug/spellRange.png
 share/vcmi/Mods/vcmi/Data/debug/visitable.png
+share/vcmi/Mods/vcmi/Data/lobby/
+share/vcmi/Mods/vcmi/Data/lobby/iconFolder.png
+share/vcmi/Mods/vcmi/Data/lobby/townBorderBig.png
+share/vcmi/Mods/vcmi/Data/lobby/townBorderBigActivated.png
+share/vcmi/Mods/vcmi/Data/lobby/townBorderBigGrayedOut.png
+share/vcmi/Mods/vcmi/Data/lobby/townBorderSmallActivated.png
 share/vcmi/Mods/vcmi/Data/questDialog.png
 share/vcmi/Mods/vcmi/Data/radialMenu/
 share/vcmi/Mods/vcmi/Data/radialMenu/heroMove.png
 share/vcmi/Mods/vcmi/Data/radialMenu/heroSwap.png
 share/vcmi/Mods/vcmi/Data/radialMenu/itemEmpty.png
 share/vcmi/Mods/vcmi/Data/radialMenu/itemInactive.png
-share/vcmi/Mods/vcmi/Data/radialMenu/stackInfo.png
+share/vcmi/Mods/vcmi/Data/radialMenu/stackFillOne.png
 share/vcmi/Mods/vcmi/Data/radialMenu/stackMerge.png
 share/vcmi/Mods/vcmi/Data/radialMenu/stackSplitDialog.png
 share/vcmi/Mods/vcmi/Data/radialMenu/stackSplitEqual.png
@@ -81,6 +88,8 @@ share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-0.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-1.png
 share/vcmi/Mods/vcmi/Data/stackWindow/info-panel-2.png
 share/vcmi/Mods/vcmi/Data/stackWindow/spell-effects.png
+share/vcmi/Mods/vcmi/Sounds/
+share/vcmi/Mods/vcmi/Sounds/we5.wav
 share/vcmi/Mods/vcmi/Sprites/
 share/vcmi/Mods/vcmi/Sprites/PortraitsLarge.json
 share/vcmi/Mods/vcmi/Sprites/PortraitsSmall.json
@@ -113,9 +122,15 @@ share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeft.png
 share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftCorner.png
 share/vcmi/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftHalfCorner.png
 share/vcmi/Mods/vcmi/Sprites/buttons/
+share/vcmi/Mods/vcmi/Sprites/buttons/backpack.json
+share/vcmi/Mods/vcmi/Sprites/buttons/backpackButtonIcon.png
+share/vcmi/Mods/vcmi/Sprites/buttons/backpackNormal.png
+share/vcmi/Mods/vcmi/Sprites/buttons/backpackPressed.png
 share/vcmi/Mods/vcmi/Sprites/buttons/commander.json
 share/vcmi/Mods/vcmi/Sprites/buttons/commanderNormal.png
 share/vcmi/Mods/vcmi/Sprites/buttons/commanderPressed.png
+share/vcmi/Mods/vcmi/Sprites/heroWindow/
+share/vcmi/Mods/vcmi/Sprites/heroWindow/artifactSlotEmpty.png
 share/vcmi/Mods/vcmi/Sprites/itpa.json
 share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/
 share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/vcmi1.png
@@ -174,6 +189,7 @@ share/vcmi/Mods/vcmi/Sprites/vcmi/creatureIcons/towerSmall.png
 share/vcmi/Mods/vcmi/config/
 share/vcmi/Mods/vcmi/config/vcmi/
 share/vcmi/Mods/vcmi/config/vcmi/chinese.json
+share/vcmi/Mods/vcmi/config/vcmi/czech.json
 share/vcmi/Mods/vcmi/config/vcmi/english.json
 share/vcmi/Mods/vcmi/config/vcmi/french.json
 share/vcmi/Mods/vcmi/config/vcmi/german.json
@@ -410,9 +426,11 @@ share/vcmi/config/terrainViewPatterns.json
 share/vcmi/config/terrains.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/vcmi/config/textColors.json
 share/vcmi/config/widgets/
 share/vcmi/config/widgets/adventureMap.json
 share/vcmi/config/widgets/battleWindow2.json
+share/vcmi/config/widgets/optionsTab.json
 share/vcmi/config/widgets/randomMapTab.json
 share/vcmi/config/widgets/settings/
 share/vcmi/config/widgets/settings/adventureOptionsTab.json
@@ -421,3 +439,4 @@ share/vcmi/config/widgets/settings/generalOptionsTab.json
 share/vcmi/config/widgets/settings/library.json
 share/vcmi/config/widgets/settings/otherOptionsTab.json
 share/vcmi/config/widgets/settings/settingsMainContainer.json
+share/vcmi/config/widgets/turnTimer.json
