@@ -283,6 +283,14 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}patterns
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}patterns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_darwin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_darwin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_freebsd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_freebsd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_linux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_linux.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_posix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}platform_posix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}repoobj.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -421,6 +429,10 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/lrucache.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/nanorst.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/patterns.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/platform.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/platform_darwin.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/platform_freebsd.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/platform_linux.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/platform_posix.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/remote.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/repoobj.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/repository.py
@@ -431,6 +443,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/upgrade.py
 lib/python${MODPY_VERSION}/site-packages/borg/version.py
 lib/python${MODPY_VERSION}/site-packages/borg/xattr.py
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-info/RECORD
