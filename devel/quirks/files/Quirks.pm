@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1548 2023/09/16 09:29:16 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1549 2023/09/18 17:38:24 volker Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1847,6 +1847,7 @@ setup_obsolete_reason(
 	3 => 'bg5ps',
 	9 => 'haxe',
 	1 => 'libxcvt',
+	1 => 'ocaml-camlp4',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
