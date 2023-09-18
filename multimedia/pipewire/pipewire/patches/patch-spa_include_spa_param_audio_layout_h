@@ -1,0 +1,12 @@
+Index: spa/include/spa/param/audio/layout.h
+--- spa/include/spa/param/audio/layout.h.orig
++++ spa/include/spa/param/audio/layout.h
+@@ -9,7 +9,7 @@
+ extern "C" {
+ #endif
+ 
+-#if !defined(__FreeBSD__) && !defined(__MidnightBSD__)
++#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__)
+ #include <endian.h>
+ #endif
+ 

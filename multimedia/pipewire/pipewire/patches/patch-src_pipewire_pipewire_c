@@ -1,0 +1,63 @@
+Middle chunks: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+Index: src/pipewire/pipewire.c
+--- src/pipewire/pipewire.c.orig
++++ src/pipewire/pipewire.c
+@@ -7,7 +7,7 @@
+ #include <unistd.h>
+ #include <limits.h>
+ #include <stdio.h>
+-#if !defined(__FreeBSD__) && !defined(__MidnightBSD__)
++#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__)
+ #include <sys/prctl.h>
+ #endif
+ #include <pwd.h>
+@@ -552,7 +552,7 @@ parse_pw_debug_env(void)
+  * This function can be called multiple times.
+  */
+ SPA_EXPORT
+-void pw_init(int *argc, char **argv[])
++void pipewire_init(int *argc, char **argv[])
+ {
+ 	const char *str;
+ 	struct spa_dict_item items[6];
+@@ -665,7 +665,7 @@ done:
+  * used again after being deinitialized with a new pw_init() call.
+  */
+ SPA_EXPORT
+-void pw_deinit(void)
++void pipewire_deinit(void)
+ {
+ 	struct support *support = &global_support;
+ 	struct registry *registry = &support->registry;
+@@ -691,6 +691,21 @@ done:
+ 
+ }
+ 
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
++#undef pw_init
++SPA_EXPORT
++void pw_init(int *argc, char **argv[])
++{
++	pipewire_init(argc, argv);
++}
++#undef pw_deinit
++SPA_EXPORT
++void pw_deinit(void)
++{
++	pipewire_deinit();
++}
++#endif
++
+ /** Check if a debug category is enabled
+  *
+  * \param name the name of the category to check
+@@ -738,7 +753,7 @@ static void init_prgname(void)
+ 		}
+ 	}
+ #endif
+-#if !defined(__FreeBSD__) && !defined(__MidnightBSD__)
++#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__)
+ 	{
+ 		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
+ 			prgname = name;

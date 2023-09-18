@@ -1,0 +1,26 @@
+Index: src/pipewire/private.h
+--- src/pipewire/private.h.orig
++++ src/pipewire/private.h
+@@ -12,6 +12,10 @@ extern "C" {
+ #include <sys/socket.h>
+ #include <sys/types.h> /* for pthread_t */
+ 
++#ifdef __OpenBSD__
++#include <pthread.h> /* for pthread_t */
++#endif
++
+ #include "pipewire/impl.h"
+ 
+ #include <spa/support/plugin.h>
+@@ -257,7 +261,11 @@ struct pw_impl_client {
+ 
+ 	void *user_data;		/**< extra user data */
+ 
++#ifdef __OpenBSD__
+ 	struct ucred ucred;		/**< ucred information */
++#else
++	struct sockpeercred ucred;		/**< sockpeercred information */
++#endif
+ 	unsigned int registered:1;
+ 	unsigned int ucred_valid:1;	/**< if the ucred member is valid */
+ 	unsigned int busy:1;

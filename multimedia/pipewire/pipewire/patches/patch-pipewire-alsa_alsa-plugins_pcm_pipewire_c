@@ -1,0 +1,12 @@
+Index: pipewire-alsa/alsa-plugins/pcm_pipewire.c
+--- pipewire-alsa/alsa-plugins/pcm_pipewire.c.orig
++++ pipewire-alsa/alsa-plugins/pcm_pipewire.c
+@@ -5,7 +5,7 @@
+ #define __USE_GNU
+ 
+ #include <limits.h>
+-#if !defined(__FreeBSD__) && !defined(__MidnightBSD__)
++#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__)
+ #include <byteswap.h>
+ #endif
+ #include <sys/shm.h>

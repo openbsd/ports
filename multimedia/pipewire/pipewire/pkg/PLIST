@@ -1,0 +1,324 @@
+@bin bin/pipewire
+@bin bin/pipewire-avb
+@bin bin/pipewire-pulse
+@bin bin/pw-cat
+@bin bin/pw-cli
+@bin bin/pw-dot
+bin/pw-dsdplay
+@bin bin/pw-dump
+@bin bin/pw-link
+@bin bin/pw-loopback
+@bin bin/pw-metadata
+@bin bin/pw-mididump
+bin/pw-midiplay
+bin/pw-midirecord
+@bin bin/pw-mon
+bin/pw-play
+@bin bin/pw-profiler
+bin/pw-record
+@bin bin/pw-reserve
+@bin bin/pw-top
+@bin bin/spa-inspect
+@bin bin/spa-json-dump
+@bin bin/spa-monitor
+@bin bin/spa-resample
+include/pipewire-0.3/
+include/pipewire-0.3/pipewire/
+include/pipewire-0.3/pipewire/array.h
+include/pipewire-0.3/pipewire/buffers.h
+include/pipewire-0.3/pipewire/client.h
+include/pipewire-0.3/pipewire/conf.h
+include/pipewire-0.3/pipewire/context.h
+include/pipewire-0.3/pipewire/control.h
+include/pipewire-0.3/pipewire/core.h
+include/pipewire-0.3/pipewire/data-loop.h
+include/pipewire-0.3/pipewire/device.h
+include/pipewire-0.3/pipewire/extensions/
+include/pipewire-0.3/pipewire/extensions/client-node.h
+include/pipewire-0.3/pipewire/extensions/metadata.h
+include/pipewire-0.3/pipewire/extensions/profiler.h
+include/pipewire-0.3/pipewire/extensions/protocol-native.h
+include/pipewire-0.3/pipewire/extensions/session-manager/
+include/pipewire-0.3/pipewire/extensions/session-manager.h
+include/pipewire-0.3/pipewire/extensions/session-manager/impl-interfaces.h
+include/pipewire-0.3/pipewire/extensions/session-manager/interfaces.h
+include/pipewire-0.3/pipewire/extensions/session-manager/introspect-funcs.h
+include/pipewire-0.3/pipewire/extensions/session-manager/introspect.h
+include/pipewire-0.3/pipewire/extensions/session-manager/keys.h
+include/pipewire-0.3/pipewire/factory.h
+include/pipewire-0.3/pipewire/filter.h
+include/pipewire-0.3/pipewire/global.h
+include/pipewire-0.3/pipewire/i18n.h
+include/pipewire-0.3/pipewire/impl-client.h
+include/pipewire-0.3/pipewire/impl-core.h
+include/pipewire-0.3/pipewire/impl-device.h
+include/pipewire-0.3/pipewire/impl-factory.h
+include/pipewire-0.3/pipewire/impl-link.h
+include/pipewire-0.3/pipewire/impl-metadata.h
+include/pipewire-0.3/pipewire/impl-module.h
+include/pipewire-0.3/pipewire/impl-node.h
+include/pipewire-0.3/pipewire/impl-port.h
+include/pipewire-0.3/pipewire/impl.h
+include/pipewire-0.3/pipewire/keys.h
+include/pipewire-0.3/pipewire/link.h
+include/pipewire-0.3/pipewire/log.h
+include/pipewire-0.3/pipewire/loop.h
+include/pipewire-0.3/pipewire/main-loop.h
+include/pipewire-0.3/pipewire/map.h
+include/pipewire-0.3/pipewire/mem.h
+include/pipewire-0.3/pipewire/module.h
+include/pipewire-0.3/pipewire/node.h
+include/pipewire-0.3/pipewire/permission.h
+include/pipewire-0.3/pipewire/pipewire.h
+include/pipewire-0.3/pipewire/port.h
+include/pipewire-0.3/pipewire/properties.h
+include/pipewire-0.3/pipewire/protocol.h
+include/pipewire-0.3/pipewire/proxy.h
+include/pipewire-0.3/pipewire/resource.h
+include/pipewire-0.3/pipewire/stream.h
+include/pipewire-0.3/pipewire/thread-loop.h
+include/pipewire-0.3/pipewire/thread.h
+include/pipewire-0.3/pipewire/type.h
+include/pipewire-0.3/pipewire/utils.h
+include/pipewire-0.3/pipewire/version.h
+include/pipewire-0.3/pipewire/work-queue.h
+include/spa-0.2/
+include/spa-0.2/spa/
+include/spa-0.2/spa/buffer/
+include/spa-0.2/spa/buffer/alloc.h
+include/spa-0.2/spa/buffer/buffer.h
+include/spa-0.2/spa/buffer/meta.h
+include/spa-0.2/spa/buffer/type-info.h
+include/spa-0.2/spa/control/
+include/spa-0.2/spa/control/control.h
+include/spa-0.2/spa/control/type-info.h
+include/spa-0.2/spa/debug/
+include/spa-0.2/spa/debug/buffer.h
+include/spa-0.2/spa/debug/dict.h
+include/spa-0.2/spa/debug/format.h
+include/spa-0.2/spa/debug/log.h
+include/spa-0.2/spa/debug/mem.h
+include/spa-0.2/spa/debug/node.h
+include/spa-0.2/spa/debug/pod.h
+include/spa-0.2/spa/debug/types.h
+include/spa-0.2/spa/graph/
+include/spa-0.2/spa/graph/graph.h
+include/spa-0.2/spa/interfaces/
+include/spa-0.2/spa/interfaces/audio/
+include/spa-0.2/spa/interfaces/audio/aec.h
+include/spa-0.2/spa/monitor/
+include/spa-0.2/spa/monitor/device.h
+include/spa-0.2/spa/monitor/event.h
+include/spa-0.2/spa/monitor/type-info.h
+include/spa-0.2/spa/monitor/utils.h
+include/spa-0.2/spa/node/
+include/spa-0.2/spa/node/command.h
+include/spa-0.2/spa/node/event.h
+include/spa-0.2/spa/node/io.h
+include/spa-0.2/spa/node/keys.h
+include/spa-0.2/spa/node/node.h
+include/spa-0.2/spa/node/type-info.h
+include/spa-0.2/spa/node/utils.h
+include/spa-0.2/spa/param/
+include/spa-0.2/spa/param/audio/
+include/spa-0.2/spa/param/audio/dsd.h
+include/spa-0.2/spa/param/audio/format-utils.h
+include/spa-0.2/spa/param/audio/format.h
+include/spa-0.2/spa/param/audio/iec958.h
+include/spa-0.2/spa/param/audio/layout.h
+include/spa-0.2/spa/param/audio/raw.h
+include/spa-0.2/spa/param/audio/type-info.h
+include/spa-0.2/spa/param/bluetooth/
+include/spa-0.2/spa/param/bluetooth/audio.h
+include/spa-0.2/spa/param/bluetooth/type-info.h
+include/spa-0.2/spa/param/format-utils.h
+include/spa-0.2/spa/param/format.h
+include/spa-0.2/spa/param/latency-utils.h
+include/spa-0.2/spa/param/param.h
+include/spa-0.2/spa/param/profiler.h
+include/spa-0.2/spa/param/props.h
+include/spa-0.2/spa/param/type-info.h
+include/spa-0.2/spa/param/video/
+include/spa-0.2/spa/param/video/chroma.h
+include/spa-0.2/spa/param/video/color.h
+include/spa-0.2/spa/param/video/encoded.h
+include/spa-0.2/spa/param/video/format-utils.h
+include/spa-0.2/spa/param/video/format.h
+include/spa-0.2/spa/param/video/multiview.h
+include/spa-0.2/spa/param/video/raw.h
+include/spa-0.2/spa/param/video/type-info.h
+include/spa-0.2/spa/pod/
+include/spa-0.2/spa/pod/builder.h
+include/spa-0.2/spa/pod/command.h
+include/spa-0.2/spa/pod/compare.h
+include/spa-0.2/spa/pod/dynamic.h
+include/spa-0.2/spa/pod/event.h
+include/spa-0.2/spa/pod/filter.h
+include/spa-0.2/spa/pod/iter.h
+include/spa-0.2/spa/pod/parser.h
+include/spa-0.2/spa/pod/pod.h
+include/spa-0.2/spa/pod/vararg.h
+include/spa-0.2/spa/support/
+include/spa-0.2/spa/support/cpu.h
+include/spa-0.2/spa/support/dbus.h
+include/spa-0.2/spa/support/i18n.h
+include/spa-0.2/spa/support/log-impl.h
+include/spa-0.2/spa/support/log.h
+include/spa-0.2/spa/support/loop.h
+include/spa-0.2/spa/support/plugin-loader.h
+include/spa-0.2/spa/support/plugin.h
+include/spa-0.2/spa/support/system.h
+include/spa-0.2/spa/support/thread.h
+include/spa-0.2/spa/utils/
+include/spa-0.2/spa/utils/ansi.h
+include/spa-0.2/spa/utils/defs.h
+include/spa-0.2/spa/utils/dict.h
+include/spa-0.2/spa/utils/dll.h
+include/spa-0.2/spa/utils/hook.h
+include/spa-0.2/spa/utils/json-pod.h
+include/spa-0.2/spa/utils/json.h
+include/spa-0.2/spa/utils/keys.h
+include/spa-0.2/spa/utils/list.h
+include/spa-0.2/spa/utils/names.h
+include/spa-0.2/spa/utils/result.h
+include/spa-0.2/spa/utils/ringbuffer.h
+include/spa-0.2/spa/utils/string.h
+include/spa-0.2/spa/utils/type-info.h
+include/spa-0.2/spa/utils/type.h
+@so lib/gstreamer-1.0/libgstpipewire.so
+@lib lib/libpipewire-0.3.so.${LIBpipewire-0.3_VERSION}
+lib/pipewire-0.3/
+@so lib/pipewire-0.3/libpipewire-module-access.so
+@so lib/pipewire-0.3/libpipewire-module-adapter.so
+@so lib/pipewire-0.3/libpipewire-module-client-device.so
+@so lib/pipewire-0.3/libpipewire-module-client-node.so
+@so lib/pipewire-0.3/libpipewire-module-echo-cancel.so
+@so lib/pipewire-0.3/libpipewire-module-fallback-sink.so
+@so lib/pipewire-0.3/libpipewire-module-filter-chain.so
+@so lib/pipewire-0.3/libpipewire-module-link-factory.so
+@so lib/pipewire-0.3/libpipewire-module-loopback.so
+@so lib/pipewire-0.3/libpipewire-module-metadata.so
+@so lib/pipewire-0.3/libpipewire-module-pipe-tunnel.so
+@so lib/pipewire-0.3/libpipewire-module-portal.so
+@so lib/pipewire-0.3/libpipewire-module-profiler.so
+@so lib/pipewire-0.3/libpipewire-module-protocol-native.so
+@so lib/pipewire-0.3/libpipewire-module-protocol-pulse.so
+@so lib/pipewire-0.3/libpipewire-module-protocol-simple.so
+@so lib/pipewire-0.3/libpipewire-module-raop-discover.so
+@so lib/pipewire-0.3/libpipewire-module-rt.so
+@so lib/pipewire-0.3/libpipewire-module-session-manager.so
+@so lib/pipewire-0.3/libpipewire-module-spa-device-factory.so
+@so lib/pipewire-0.3/libpipewire-module-spa-device.so
+@so lib/pipewire-0.3/libpipewire-module-spa-node-factory.so
+@so lib/pipewire-0.3/libpipewire-module-spa-node.so
+@so lib/pipewire-0.3/libpipewire-module-x11-bell.so
+@so lib/pipewire-0.3/libpipewire-module-zeroconf-discover.so
+lib/pkgconfig/libpipewire-0.3.pc
+lib/pkgconfig/libspa-0.2.pc
+lib/spa-0.2/
+lib/spa-0.2/aec/
+@so lib/spa-0.2/aec/libspa-aec-null.so
+lib/spa-0.2/audioconvert/
+@so lib/spa-0.2/audioconvert/libspa-audioconvert.so
+lib/spa-0.2/audiomixer/
+@so lib/spa-0.2/audiomixer/libspa-audiomixer.so
+lib/spa-0.2/audiotestsrc/
+@so lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
+lib/spa-0.2/control/
+@so lib/spa-0.2/control/libspa-control.so
+lib/spa-0.2/support/
+@so lib/spa-0.2/support/libspa-dbus.so
+@so lib/spa-0.2/support/libspa-support.so
+lib/spa-0.2/videoconvert/
+@so lib/spa-0.2/videoconvert/libspa-videoconvert.so
+lib/spa-0.2/videotestsrc/
+@so lib/spa-0.2/videotestsrc/libspa-videotestsrc.so
+lib/spa-0.2/volume/
+@so lib/spa-0.2/volume/libspa-volume.so
+@man man/man1/pipewire-pulse.1
+@man man/man1/pipewire.1
+@man man/man1/pw-cat.1
+@man man/man1/pw-cli.1
+@man man/man1/pw-dot.1
+@man man/man1/pw-link.1
+@man man/man1/pw-metadata.1
+@man man/man1/pw-mididump.1
+@man man/man1/pw-mon.1
+@man man/man1/pw-profiler.1
+@man man/man1/pw-top.1
+@man man/man5/pipewire.conf.5
+share/locale/af/LC_MESSAGES/pipewire.mo
+share/locale/as/LC_MESSAGES/pipewire.mo
+share/locale/be/LC_MESSAGES/pipewire.mo
+share/locale/bg/LC_MESSAGES/pipewire.mo
+share/locale/bn_IN/LC_MESSAGES/pipewire.mo
+share/locale/ca/LC_MESSAGES/pipewire.mo
+share/locale/cs/LC_MESSAGES/pipewire.mo
+share/locale/da/LC_MESSAGES/pipewire.mo
+share/locale/de/LC_MESSAGES/pipewire.mo
+share/locale/de_CH/
+share/locale/de_CH/LC_MESSAGES/
+share/locale/de_CH/LC_MESSAGES/pipewire.mo
+share/locale/el/LC_MESSAGES/pipewire.mo
+share/locale/eo/LC_MESSAGES/pipewire.mo
+share/locale/es/LC_MESSAGES/pipewire.mo
+share/locale/fi/LC_MESSAGES/pipewire.mo
+share/locale/fr/LC_MESSAGES/pipewire.mo
+share/locale/gl/LC_MESSAGES/pipewire.mo
+share/locale/gu/LC_MESSAGES/pipewire.mo
+share/locale/he/LC_MESSAGES/pipewire.mo
+share/locale/hi/LC_MESSAGES/pipewire.mo
+share/locale/hr/LC_MESSAGES/pipewire.mo
+share/locale/hu/LC_MESSAGES/pipewire.mo
+share/locale/id/LC_MESSAGES/pipewire.mo
+share/locale/it/LC_MESSAGES/pipewire.mo
+share/locale/ja/LC_MESSAGES/pipewire.mo
+share/locale/ka/LC_MESSAGES/pipewire.mo
+share/locale/kk/LC_MESSAGES/pipewire.mo
+share/locale/kn/LC_MESSAGES/pipewire.mo
+share/locale/ko/LC_MESSAGES/pipewire.mo
+share/locale/lt/LC_MESSAGES/pipewire.mo
+share/locale/ml/LC_MESSAGES/pipewire.mo
+share/locale/mr/LC_MESSAGES/pipewire.mo
+share/locale/my/LC_MESSAGES/pipewire.mo
+share/locale/nl/LC_MESSAGES/pipewire.mo
+share/locale/nn/LC_MESSAGES/pipewire.mo
+share/locale/oc/LC_MESSAGES/pipewire.mo
+share/locale/or/LC_MESSAGES/pipewire.mo
+share/locale/pa/LC_MESSAGES/pipewire.mo
+share/locale/pl/LC_MESSAGES/pipewire.mo
+share/locale/pt/LC_MESSAGES/pipewire.mo
+share/locale/pt_BR/LC_MESSAGES/pipewire.mo
+share/locale/ro/LC_MESSAGES/pipewire.mo
+share/locale/ru/LC_MESSAGES/pipewire.mo
+share/locale/si/LC_MESSAGES/pipewire.mo
+share/locale/sk/LC_MESSAGES/pipewire.mo
+share/locale/sr/LC_MESSAGES/pipewire.mo
+share/locale/sr@latin/LC_MESSAGES/pipewire.mo
+share/locale/sv/LC_MESSAGES/pipewire.mo
+share/locale/ta/LC_MESSAGES/pipewire.mo
+share/locale/te/LC_MESSAGES/pipewire.mo
+share/locale/tr/LC_MESSAGES/pipewire.mo
+share/locale/uk/LC_MESSAGES/pipewire.mo
+share/locale/zh_CN/LC_MESSAGES/pipewire.mo
+share/locale/zh_TW/LC_MESSAGES/pipewire.mo
+share/pipewire/
+share/pipewire/client-rt.conf
+share/pipewire/client.conf
+share/pipewire/filter-chain/
+share/pipewire/filter-chain.conf
+share/pipewire/filter-chain/demonic.conf
+share/pipewire/filter-chain/sink-dolby-surround.conf
+share/pipewire/filter-chain/sink-eq6.conf
+share/pipewire/filter-chain/sink-make-LFE.conf
+share/pipewire/filter-chain/sink-matrix-spatialiser.conf
+share/pipewire/filter-chain/sink-mix-FL-FR.conf
+share/pipewire/filter-chain/sink-virtual-surround-5.1-kemar.conf
+share/pipewire/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
+share/pipewire/filter-chain/source-duplicate-FL.conf
+share/pipewire/filter-chain/source-rnnoise.conf
+share/pipewire/jack.conf
+share/pipewire/minimal.conf
+share/pipewire/pipewire-avb.conf
+share/pipewire/pipewire-pulse.conf
+share/pipewire/pipewire.conf

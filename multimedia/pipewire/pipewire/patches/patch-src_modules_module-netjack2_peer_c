@@ -1,0 +1,13 @@
+Index: src/modules/module-netjack2/peer.c
+--- src/modules/module-netjack2/peer.c.orig
++++ src/modules/module-netjack2/peer.c
+@@ -1,5 +1,8 @@
+ 
+-#include <byteswap.h>
++#include <endian.h>
++#if !defined(bswap_32)                                                         
++#  define bswap_32 swap32
++#endif
+ 
+ #ifdef HAVE_OPUS_CUSTOM
+ #include <opus/opus.h>

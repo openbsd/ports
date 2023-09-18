@@ -1,0 +1,23 @@
+Index: src/pipewire/thread.c
+--- src/pipewire/thread.c.orig
++++ src/pipewire/thread.c
+@@ -7,6 +7,10 @@
+ #include <sys/types.h>
+ #include <pthread.h>
+ 
++#ifdef __OpenBSD__
++#include <pthread_np.h> /* pthread_set_name_np */
++#endif
++
+ #include <spa/utils/dict.h>
+ #include <spa/utils/defs.h>
+ #include <spa/utils/list.h>
+@@ -43,7 +47,7 @@ error:
+ 	return NULL;
+ }
+ 
+-#if defined(__FreeBSD__) || defined(__MidnightBSD__)
++#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
+ #include <sys/param.h>
+ #if __FreeBSD_version < 1202000 || defined(__MidnightBSD__)
+ int pthread_setname_np(pthread_t thread, const char *name)

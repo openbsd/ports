@@ -1,0 +1,15 @@
+Index: spa/plugins/audioconvert/fmt-ops.h
+--- spa/plugins/audioconvert/fmt-ops.h.orig
++++ spa/plugins/audioconvert/fmt-ops.h
+@@ -8,6 +8,11 @@
+ #define bswap_16 bswap16
+ #define bswap_32 bswap32
+ #define bswap_64 bswap64
++#elif defined(__OpenBSD__)
++#include <endian.h>
++#define bswap_16 swap16
++#define bswap_32 swap32
++#define bswap_64 swap64
+ #else
+ #include <byteswap.h>
+ #endif

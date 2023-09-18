@@ -1,0 +1,30 @@
+Index: src/pipewire/mem.c
+--- src/pipewire/mem.c.orig
++++ src/pipewire/mem.c
+@@ -25,7 +25,7 @@
+ PW_LOG_TOPIC_EXTERN(log_mem);
+ #define PW_LOG_TOPIC_DEFAULT log_mem
+ 
+-#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(HAVE_MEMFD_CREATE)
++#if !defined(__FreeBSD__) && !defined(__MidnightBSD__) && !defined(__OpenBSD__) && !defined(HAVE_MEMFD_CREATE)
+ /*
+  * No glibc wrappers exist for memfd_create(2), so provide our own.
+  *
+@@ -42,7 +42,7 @@ static inline int memfd_create(const char *name, unsig
+ #define HAVE_MEMFD_CREATE 1
+ #endif
+ 
+-#if defined(__FreeBSD__) || defined(__MidnightBSD__)
++#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
+ #define MAP_LOCKED 0
+ #endif
+ 
+@@ -504,7 +504,7 @@ struct pw_memblock * pw_mempool_alloc(struct pw_mempoo
+ #else
+ 	char filename[128];
+ 	snprintf(filename, sizeof(filename),
+-		 "/dev/shm/pipewire-tmpfile:flags=0x%08x,type=%" PRIu32 ",size=%zu:XXXXXX",
++		 "/tmp/pipewire-tmpfile:flags=0x%08x,type=%" PRIu32 ",size=%zu:XXXXXX",
+ 		 (unsigned int) flags, type, size);
+ 
+ 	b->this.fd = mkostemp(filename, O_CLOEXEC);

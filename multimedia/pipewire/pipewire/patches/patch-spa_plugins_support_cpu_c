@@ -1,0 +1,21 @@
+Index: spa/plugins/support/cpu.c
+--- spa/plugins/support/cpu.c.orig
++++ spa/plugins/support/cpu.c
+@@ -10,7 +10,7 @@
+ #include <sched.h>
+ #include <fcntl.h>
+ 
+-#if defined(__FreeBSD__) || defined(__MidnightBSD__)
++#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+ #endif
+ 
+@@ -85,7 +85,7 @@ impl_cpu_force_flags(void *object, uint32_t flags)
+ 	return 0;
+ }
+ 
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ static uint32_t get_count(struct impl *this)
+ {
+ 	cpu_set_t cpuset;
