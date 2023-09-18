@@ -4,6 +4,8 @@ GH_ACCOUNT=	nginx
 GH_PROJECT=	njs
 GH_TAGNAME=	0.8.1
 
+REVISION=	0
+
 CATEGORIES=	lang www
 
 HOMEPAGE=	https://nginx.org/en/docs/njs/

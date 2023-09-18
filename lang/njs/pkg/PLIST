@@ -20,6 +20,7 @@ include/njs_encoding.h
 include/njs_error.h
 include/njs_event.h
 include/njs_file.h
+include/njs_flathsh.h
 include/njs_function.h
 include/njs_generator.h
 include/njs_iterator.h
