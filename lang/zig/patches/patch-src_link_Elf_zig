@@ -1,0 +1,15 @@
+Force -znobtcfi on linker invocation.
+
+Index: src/link/Elf.zig
+--- src/link/Elf.zig.orig
++++ src/link/Elf.zig
+@@ -1510,6 +1510,9 @@ fn linkWithLLD(self: *Elf, comp: *Compilation, prog_no
+ 
+         try argv.append("--error-limit=0");
+ 
++	try argv.append("-z");
++	try argv.append("nobtcfi");
++
+         if (self.base.options.sysroot) |sysroot| {
+             try argv.append(try std.fmt.allocPrint(arena, "--sysroot={s}", .{sysroot}));
+         }

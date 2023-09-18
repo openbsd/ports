@@ -7,6 +7,7 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.11.0
+REVISION =	0
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
