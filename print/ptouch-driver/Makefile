@@ -1,6 +1,6 @@
 COMMENT=		Brother P-touch CUPS driver
 
-GH_TAGNAME=		v1.6
+GH_TAGNAME=		v1.7
 GH_ACCOUNT=		philpem
 GH_PROJECT=		printer-driver-ptouch
 DISTNAME=		ptouch-driver-${GH_TAGNAME:S/v//}
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=		libdir=${PREFIX}/libexec
 # uses gnu89-inlines; fixes build with clang
 CFLAGS +=		-fgnu89-inline
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 
 USE_GMAKE=		Yes

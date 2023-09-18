@@ -1,0 +1,14 @@
+https://github.com/philpem/printer-driver-ptouch/pull/35
+
+Index: printer/Brother-QL-600.xml
+--- printer/Brother-QL-600.xml.orig
++++ printer/Brother-QL-600.xml
+@@ -33,7 +33,7 @@ USA
+       </dpi>
+     </resolution>
+   </mechanism>
+-  <url>https://support.brother.com/g/b/downloadhowto.aspx?c=us&lang=en&prod=lpql600eus&os=130&dlid=dlfp100718_000&flang=178&type3=10309</url>
++  <url>https://support.brother.com/g/b/downloadhowto.aspx?c=us&amp;lang=en&amp;prod=lpql600eus&amp;os=130&amp;dlid=dlfp100718_000&amp;flang=178&amp;type3=10309</url>
+   <lang>
+     <proprietary />
+   </lang>
