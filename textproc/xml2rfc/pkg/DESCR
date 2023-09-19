@@ -1,2 +1,15 @@
-This software helps you to write Internet-Drafts (I-Ds) and Request for
-Comments (RFCs) using XML (eXtensible Markup Language) as a source format.
+The IETF uses a specific format for the standards and other documents it
+publishes as RFCs, and for the draft documents which are produced when
+developing documents for publications.
+
+xml2rfc is one of a number of tools available to facilitate the formatting
+of drafts and RFCs according to the existing rules. It takes as input an
+xml file that contains the text and meta-information about author names
+etc., and transforms it into suitably formatted output.
+
+The input xml file should follow the grammars in RFC7749 (for v2 documents)
+or RFC7991 (for v3 documents). Note that the grammar for v3 is still being
+refined, and changes will eventually be captured in the bis draft for 7991
+(also see https://ietf-tools.github.io/xml2rfc/).
+
+To use PDF output, "pkg_add weasyprint noto-fonts roboto-fonts".
