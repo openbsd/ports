@@ -1,8 +1,8 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
 V =		3.11.22
-DISTNAME =	rabbitmq-server-$V
-PKGNAME =	rabbitmq-$V
+DISTNAME =	rabbitmq-server-${V}
+PKGNAME =	rabbitmq-${V}
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.rabbitmq.com/
@@ -10,7 +10,7 @@ HOMEPAGE =	https://www.rabbitmq.com/
 # MPL
 PERMIT_PACKAGE= Yes
 
-MASTER_SITES =	https://github.com/rabbitmq/rabbitmq-server/releases/download/v$V/
+SITES =		https://github.com/rabbitmq/rabbitmq-server/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/erlang \

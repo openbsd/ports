@@ -11,7 +11,7 @@ HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
-MASTER_SITES =		https://github.com/denoland/deno/releases/download/v${VERSION}/
+SITES 	=		https://github.com/denoland/deno/releases/download/v${VERSION}/
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 

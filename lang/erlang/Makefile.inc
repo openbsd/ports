@@ -6,7 +6,7 @@ CATEGORIES =	lang
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	https://www.erlang.org/
-MASTER_SITES =	https://github.com/erlang/otp/releases/download/OTP-${V}/
+SITES =	https://github.com/erlang/otp/releases/download/OTP-${V}/
 MAJ_V =		${V:C/\.[0-9]+//g}
 
 MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
