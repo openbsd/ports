@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64
 
 COMPILER=	ports-gcc
 COMPILER_LANGS=	c
@@ -16,13 +16,11 @@ FW_DRIVER=	vmm
 FW_VER=		1.16.2
 SB_VER=		20180715
 DISTNAME=	seabios-${FW_VER}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-	sgabios-${SB_VER}{72f39d48bedf044e202fd51fecf3e2218fc2ae66}.tar.gz:0
+DIST_TUPLE=	github qemu sgabios 72f39d48bedf044e202fd51fecf3e2218fc2ae66 sgabios
 
 HOMEPAGE=	https://www.seabios.org/
 
-MASTER_SITES=	https://www.seabios.org/downloads/
-MASTER_SITES0=	https://github.com/qemu/sgabios/archive/
+SITES=		https://www.seabios.org/downloads/
 
 # LGPLv3 but distributed via fw_update/firmware.openbsd.org so disable
 # normal packaging.
@@ -50,7 +48,6 @@ MAKE_FLAGS=	V=1 \
 		PYTHON="${MODPY_BIN}"
 
 post-extract:
-	mv ${WRKDIR}/sgabios-* ${WRKSRC}/sgabios
 	cp ${FILESDIR}/config ${WRKSRC}/.config
 
 post-build:
