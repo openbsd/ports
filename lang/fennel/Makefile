@@ -1,8 +1,14 @@
-COMMENT =	Lisp dialect that runs on Lua ${MODLUA_VERSION}
+COMMENT-main =	Lisp dialect that runs on Lua ${MODLUA_VERSION}
+COMMENT-docs =	Documentation for fennel
 
-V =		1.2.1
-PKGNAME =	fennel-$V
-FULLPKGNAME =	fennel-${FLAVOR}-${V}
+V =			1.3.1
+DIST_TUPLE =		srht technomancy fennel $V .
+FULLPKGPATH-main =	lang/fennel,-main,${FLAVOR}
+FULLPKGNAME-main =	fennel-${FLAVOR}-${V}
+
+# -docs isn't flavoured, so overwrite its default name/path
+FULLPKGNAME-docs =	fennel-docs-$V
+FULLPKGPATH-docs =	${PKGPATH},-docs
 
 CATEGORIES =	lang
 
@@ -13,9 +19,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # MIT
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://git.sr.ht/~technomancy/fennel/archive/
-
-DISTFILES =	fennel-{}$V${EXTRACT_SUFX}
+MULTI_PACKAGES = -main -docs
 
 MODULES =	lang/lua
 
@@ -29,13 +33,14 @@ ALL_TARGET =	build
 MAKE_FLAGS +=	LUA=${MODLUA_BIN} \
 		LUA_VERSION=${MODLUA_VERSION} \
 		LUA_LIB_DIR=${MODLUA_LIBDIR}
-FAKE_FLAGS +=	PREFIX=${TRUEPREFIX}
+FAKE_FLAGS +=	PREFIX=${TRUEPREFIX} \
+		MAN_DIR=${PREFIX}
 
-WRKDIST =	${WRKDIR}/${PKGNAME}
+RUN_DEPENDS-main+= lang/fennel,-docs
+RUN_DEPENDS-docs =
 
 post-install:
 	chmod +x ${PREFIX}/bin/fennel
 	cd ${PREFIX}/bin && mv fennel fennel-${MODLUA_VERSION}
-	cd ${PREFIX}/man/man1 && mv fennel.1 fennel-${MODLUA_VERSION}.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,15 @@
+don't run git during the regress suite.
+
+Index: test/irc.lua
+--- test/irc.lua.orig
++++ test/irc.lua
+@@ -5,8 +5,7 @@ local url = os.getenv("JOB_URL") or "???"
+ local origin_job_prefix = 'https://builds.sr.ht/technomancy/job/'
+ local is_origin = url:sub(1, #origin_job_prefix) == origin_job_prefix
+ 
+-local branch = io.popen("git rev-parse --abbrev-ref HEAD"):read('*a')
+-local is_main = branch == 'main'
++local is_main = false
+ 
+ -- This may fail in future if libera chat once again blocks builds.sr.ht
+ -- from connecting; it currently works after we asked them to look into it

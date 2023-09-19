@@ -1,0 +1,4 @@
+@man man/man1/fennel.1
+@man man/man3/fennel-api.3
+@man man/man5/fennel-reference.5
+@man man/man7/fennel-tutorial.7
