@@ -13,11 +13,11 @@ HOMEPAGE =		https://www.id.ee/
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		qdigidoc4
-MASTER_SITES =		https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
+SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES.eesti =	https://id.eesti.ee/
+SITES.eesti =		https://id.eesti.ee/
 CONFIG_NAME =		config-20230904
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
@@ -26,7 +26,7 @@ DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
 # ${WRKSRC}/common/CMakeLists.txt itself substitutes suffix in CONFIG_URL
 CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/${CONFIG_NAME}.json
 
-MASTER_SITES.eu =	https://ec.europa.eu/tools/lotl/
+SITES.eu =		https://ec.europa.eu/tools/lotl/
 DISTFILES.eu =		eu-lotl-pivot-300.xml
 CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 

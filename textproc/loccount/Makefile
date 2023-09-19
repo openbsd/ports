@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 # statically linked
 WANTLIB =		c pthread
 
-MASTER_SITES =		https://gitlab.com/esr/loccount/-/archive/${V}/
+SITES =			https://gitlab.com/esr/loccount/-/archive/${V}/
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No

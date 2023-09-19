@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} c m xerces-c
 
-MASTER_SITES =		https://codesynthesis.com/~boris/tmp/xsd/${V}/
+SITES =			https://codesynthesis.com/~boris/tmp/xsd/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # C++11

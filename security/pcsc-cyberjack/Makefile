@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m usb-1.0
 
-MASTER_SITES =		https://support.reiner-sct.de/downloads/LINUX/V${V}_SP${SP}/
+SITES =			https://support.reiner-sct.de/downloads/LINUX/V${V}_SP${SP}/
 EXTRACT_SUFX =		.tar.bz2
 
 # -std=c++11

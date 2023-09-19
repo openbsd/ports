@@ -13,7 +13,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # Universal Permissive License (UPL), Version 1.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://yum.oracle.com/repo/OracleLinux/OL6/latest/source/getPackageSource/
+SITES =			https://yum.oracle.com/repo/OracleLinux/OL6/latest/source/getPackageSource/
 EXTRACT_SUFX =		.el6.src.rpm
 # the SRC RPM contains a SPEC file and the actual uncompressed source tarball
 EXTRACT_FILES =		${DISTNAME}.tar

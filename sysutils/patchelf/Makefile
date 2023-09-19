@@ -2,7 +2,7 @@ COMMENT =	utility for modifying existing ELF executables and libraries
 
 V =			0.18.0
 DISTNAME =		patchelf-${V}
-MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
+SITES =			https://github.com/NixOS/patchelf/releases/download/${V}/
 
 CATEGORIES =		sysutils
 

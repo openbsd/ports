@@ -18,8 +18,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/v${V}/
-MASTER_SITES.test =	${HOMEPAGE}-test/releases/download/v${TEST_V}/
+SITES =			${HOMEPAGE}/releases/download/v${V}/
+SITES.test =		${HOMEPAGE}-test/releases/download/v${TEST_V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.test =	${TEST_DISTNAME}${EXTRACT_SUFX}
 

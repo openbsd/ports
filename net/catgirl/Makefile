@@ -19,7 +19,7 @@ WANTLIB +=	c curses tls
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-MASTER_SITES =	https://git.causal.agency/catgirl/snapshot/
+SITES =		https://git.causal.agency/catgirl/snapshot/
 
 CONFIGURE_STYLE =	simple
 

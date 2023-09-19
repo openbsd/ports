@@ -18,7 +18,7 @@ DOC_DISTFILE =		git-manpages-${V}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${DOC_DISTFILE}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES =		https://www.kernel.org/pub/software/scm/git/
+SITES =			https://www.kernel.org/pub/software/scm/git/
 
 MODULES =		perl \
 			x11/tk

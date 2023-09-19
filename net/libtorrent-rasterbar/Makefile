@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_MAJORMINOR}-mt crypto
 WANTLIB += m ssl
 
-MASTER_SITES =		https://github.com/arvidn/libtorrent/releases/download/v${V}/
+SITES =			https://github.com/arvidn/libtorrent/releases/download/v${V}/
 
 MODULES =		devel/cmake \
 			lang/python

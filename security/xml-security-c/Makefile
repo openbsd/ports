@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${COMPILER_LIBCXX} c crypto icudata icui18n icuuc m
 WANTLIB +=		xerces-c
 
-MASTER_SITES =		https://dlcdn.apache.org/santuario/c-library/
+SITES =			https://dlcdn.apache.org/santuario/c-library/
 
 # C++
 COMPILER =		base-clang ports-gcc

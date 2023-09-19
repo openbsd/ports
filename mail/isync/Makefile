@@ -4,7 +4,7 @@ DISTNAME=	isync-1.4.4
 REVISION=	1
 
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isync/}
+SITES=		${MASTER_SITE_SOURCEFORGE:=isync/}
 
 HOMEPAGE=	http://isync.sourceforge.net/
 
