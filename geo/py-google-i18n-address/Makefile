@@ -1,10 +1,9 @@
 COMMENT=	validation helpers for Google's i18n address database
 
-MODPY_EGG_VERSION=	2.5.2
+MODPY_EGG_VERSION=	3.1.0
 
-DISTNAME=	google-i18n-address-${MODPY_EGG_VERSION}
-PKGNAME=	py-${DISTNAME}
-REVISION=	1
+DISTNAME=	google_i18n_address-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:S/_/-/g}
 
 CATEGORIES=	geo
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=	hatchling
 NO_TEST=	Yes
 
 FLAVOR=		python3
