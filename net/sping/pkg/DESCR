@@ -1,0 +1,2 @@
+split-ping is a tool that can tell you what direction packet latency or
+loss is on. This can be handy for network debugging and locating congestion.
