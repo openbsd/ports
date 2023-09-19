@@ -27,7 +27,7 @@ DISTFILES=	{xerial/snappy-java/archive/${SNAPPYJ_V}/}snappy-java-${SNAPPYJ_V}.ta
 EXTRACT_ONLY=	${_LIST_DISTFILES:N*jar}
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 
 # not MODULES; it is run from a Makefile
 BUILD_DEPENDS=	devel/cmake
@@ -36,7 +36,7 @@ USE_GMAKE=	Yes
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
 MAKE_FLAGS=	CXX="${CXX}" CC="${CC}" LINKFLAGS="-shared" \
 		HOME=${WRKDIR} \
-		PATH="${PATH}:${LOCALBASE}/jdk-1.8.0/bin"
+		PATH="${PATH}:${LOCALBASE}/jdk-11/bin"
 ALL_TARGET=	native
 NO_TEST=	Yes
 
@@ -52,7 +52,7 @@ post-extract:
 post-build:
 	cp ${FULLDISTDIR}/snappy-java-${SNAPPYJ_V}.jar ${WRKDIR}
 	cd ${WRKSRC}/target/classes; \
-	    ${LOCALBASE}/jdk-1.8.0/bin/jar uvf ${WRKDIR}/snappy-java-${SNAPPYJ_V}.jar \
+	    ${LOCALBASE}/jdk-11/bin/jar uvf ${WRKDIR}/snappy-java-${SNAPPYJ_V}.jar \
 	    org/xerial/snappy/native/OpenBSD/*/libsnappyjava.so
 
 do-install:
