@@ -2,20 +2,20 @@
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
 _BV =		${BUILD_V:C/^http[^-]*-([0-9a-f]{10}).*/-\1/}
-MASTER_SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
-MASTER_SITES0 =	https://spacehopper.org/mirrors/
-MASTER_SITES1 =	https://dl.ubnt-ut.com/snmp/
+SITES ?=	https://dl.ui.com/unifi/${V}${_BV}/
+DISTFILES =	unifi-$V{UniFi.unix}.zip \
+		unifi_sh_api-$V{unifi_sh_api}
+
+SITES.sh =	https://spacehopper.org/mirrors/
 
 LOG4J_V =	2.17.1
-MASTER_SITES2 =	https://dlcdn.apache.org/logging/log4j/${LOG4J_V}/
+SITES.log4j =	${SITE_APACHE:=logging/log4j/${LOG4J_V}/}
 
 COMMONSTEXT_V =	1.10.0
-MASTER_SITES3 =	https://dlcdn.apache.org/commons/text/binaries/
+SITES.commons =	${SITE_APACHE:=commons/text/binaries/}
 
-DISTFILES +=	unifi-$V{UniFi.unix}.zip \
-		unifi_sh_api-$V{unifi_sh_api} \
-		UBNT-MIB:1 \
-		UBNT-UniFi-MIB:1
+SITES.snmp =	https://dl.ubnt-ut.com/snmp/
+DISTFILES.snmp = UBNT-MIB UBNT-UniFi-MIB
 
 EXTRACT_ONLY =	unifi-$V.zip
 PKGNAME =	unifi-$V
@@ -26,16 +26,16 @@ PKGNAME =	unifi-$V
 #
 # typical symptom of failure: APs stuck in "adopting".
 SNAPPY_S ?=	-libc++.9.0
-DISTFILES +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar:0
+DISTFILES.sh +=	snappy-java-${SNAPPY_V}${SNAPPY_S}.jar
 
 REPLACE_LOG4J ?= No
 .if ${REPLACE_LOG4J} == Yes
-DISTFILES +=	apache-log4j-${LOG4J_V}-bin.tar.gz:2
+DISTFILES.log4j += apache-log4j-${LOG4J_V}-bin.tar.gz
 EXTRACT_ONLY +=	apache-log4j-${LOG4J_V}-bin.tar.gz
 .endif
 REPLACE_COMMONSTEXT ?= No
 .if ${REPLACE_COMMONSTEXT} == Yes
-DISTFILES +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz:3
+DISTFILES.commons += commons-text-${COMMONSTEXT_V}-bin.tar.gz
 EXTRACT_ONLY +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz
 .endif
 

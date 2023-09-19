@@ -6,8 +6,7 @@ GH_TAGNAME=	v1.13.1
 REVISION=	0
 
 # update the post-patch target if moving to a new major branch of xorg-server
-DISTFILES=	${GH_DISTFILE} \
-		xorg-server-21.1.1.tar.xz:0
+DISTFILES.x=	xorg-server-21.1.1.tar.xz
 
 CATEGORIES=	x11 net
 EPOCH=		0
@@ -28,15 +27,15 @@ WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit
 WANTLIB += pixman-1 swscale tasn1 unistring xcb xshmfence
 WANTLIB += z zstd
 
-MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
+MASTER_SITES.x=	https://www.x.org/releases/individual/xserver/
 
 # the vncserver script in 1.11.0+ is no longer useful for us (systemd/pam
 # dependencies) so fetch an old working one from the v1.10.1 tag.
 SCRIPTV=	1.10.1
-MASTER_SITES1=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
+MASTER_SITES.t=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
 EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-21.1.1.tar.xz
-DISTFILES+=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver}:1 \
-		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}:1
+DISTFILES.t=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver} \
+		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}
 
 # main parts use cmake, Xvnc uses autoconf
 # Xvnc requires files generated in the cmake build stage that aren't

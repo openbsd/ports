@@ -15,8 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses event_core event_extra pthread readline
 
-MASTER_SITES=	https://media.luffy.cx/files/lldpd/
-MASTER_SITES0=	https://www.ieee802.org/1/files/public/MIBs/
+SITES=		https://media.luffy.cx/files/lldpd/
 
 FLAVORS=	snmp
 FLAVOR?=

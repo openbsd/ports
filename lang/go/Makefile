@@ -23,10 +23,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 
-MASTER_SITES =		https://golang.org/dl/
-MASTER_SITES0 =		https://download.exigere.com.au/pub/go/
-
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+SITES =			https://golang.org/dl/
+SITES.bootstrap =	https://download.exigere.com.au/pub/go/
 
 BUILD_DEPENDS =		shells/bash
 
@@ -69,10 +67,10 @@ MAKE_ENV +=		TMPDIR="${WRKBUILD}"
 MAKE_ENV +=		GO386=softfloat
 
 .for arch in ${BIN_BOOTSTRAP_GOARCHS}
-SUPDISTFILES +=		go-openbsd-${arch}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
+SUPDISTFILES.bootstrap += go-openbsd-${arch}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}
 
 .if ${GOARCH} == ${arch} && !${FLAVOR:Mnative_bootstrap}
-DISTFILES +=		go-openbsd-${GOARCH}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0
+DISTFILES.bootstrap +=	go-openbsd-${GOARCH}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}
 GOROOT_BOOTSTRAP =	${WRKDIR}/go-openbsd-${GOARCH}-bootstrap
 .endif
 .endfor

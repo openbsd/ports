@@ -19,12 +19,11 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://gitlab.com/pdftk-java/
 
-MASTER_SITES=	https://gitlab.com/pdftk-java/pdftk/-/archive/v$V/
-MASTER_SITES0=	${MASTER_SITE_APACHE:=commons/lang/binaries/}
-MASTER_SITES1=	https://www.bouncycastle.org/download/
-DISTFILES=	pdftk-v$V.tar.gz \
-		commons-lang3-${CL3}-bin.tar.gz:0 \
-		bcprov-jdk18on-${BC}.jar:1
+SITES=		https://gitlab.com/pdftk-java/pdftk/-/archive/v$V/
+SITES.comm=	${SITE_APACHE:=commons/lang/binaries/}
+DISTFILES.comm=	commons-lang3-${CL3}-bin.tar.gz
+SITES.bc=	https://www.bouncycastle.org/download/
+DISTFILES.bc=	bcprov-jdk18on-${BC}.jar
 
 MODULES=	java
 MODJAVA_VER=	1.8+

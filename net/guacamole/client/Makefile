@@ -1,4 +1,4 @@
-MASTER_SITES=	${MASTER_SITE_APACHE:=guacamole/$V/binary/}
+SITES=		${SITE_APACHE:=guacamole/$V/binary/}
 DISTNAME=	guacamole-$V
 DISTFILES=	guacamole-$V.war
 
@@ -24,8 +24,8 @@ EXTRACT_ONLY+=	guacamole-$a-$V.tar.gz
 PKGNAME-$a=	guacamole-$a-$V
 .endfor
 
-MASTER_SITES0=	https://
-
+# yes this is intentional
+SITES.multi=	https://
 # hold at 9.x MS driver; 10.x defaults to using TLS encryption and needs
 # a connection string to disable, but guacamole-auth-jdbc-sqlserver doesn't
 # allow setting this, only host/user/pass.
@@ -33,7 +33,7 @@ MASTER_SITES0=	https://
 	github.com/microsoft/mssql-jdbc/releases/download/v9.4.1 mssql-jdbc -9.4.1.jre8 \
 	jdbc.postgresql.org/download postgresql -42.3.3 \
 	downloads.mariadb.com/Connectors/java/connector-java-2.7.3 mariadb-java-client -2.7.3
-DISTFILES+=	{${liburl}/}${libjar}${libver}.jar:0
+DISTFILES.multi+= {${liburl}/}${libjar}${libver}.jar
 LIBS+=		${libjar}${libver}.jar ${libjar}.jar
 .endfor
 

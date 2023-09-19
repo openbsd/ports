@@ -1,13 +1,13 @@
 COMMENT=		browser for a large lexical database of English
 
 DISTNAME=		WordNet-3.0
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} wn3.1.dict.tar.gz:0
+DISTFILES.dict=		wn3.1.dict.tar.gz
 PKGNAME=		wordnet-3.1
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		misc
 
-HOMEPAGE=		http://wordnet.princeton.edu/
+HOMEPAGE=		https://wordnet.princeton.edu/
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -15,29 +15,29 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig
 WANTLIB += freetype m xcb z ${MODTK_WANTLIB}
 
-MASTER_SITES=		http://wordnetcode.princeton.edu/3.0/
-MASTER_SITES0=		http://wordnetcode.princeton.edu/
+SITES=		https://wordnetcode.princeton.edu/3.0/
+SITES.dict=	https://wordnetcode.princeton.edu/
 
-MODULES=		x11/tk
+MODULES=	x11/tk
 
-RUN_DEPENDS +=		devel/desktop-file-utils
-LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
+RUN_DEPENDS +=	devel/desktop-file-utils
+LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
 
 CONFIGURE_STYLE=	simple
 
-CONFIGURE_ARGS=		--prefix='${PREFIX}/share/wordnet' \
-			--exec-prefix='${PREFIX}' \
-			--sysconfdir='${SYSCONFDIR}' \
-			--mandir='${PREFIX}/man' \
-			--includedir='${PREFIX}/include' \
-			--with-tcl=${MODTCL_LIBDIR} \
-			--with-tk=${MODTK_LIBDIR}
+CONFIGURE_ARGS=	--prefix='${PREFIX}/share/wordnet' \
+		--exec-prefix='${PREFIX}' \
+		--sysconfdir='${SYSCONFDIR}' \
+		--mandir='${PREFIX}/man' \
+		--includedir='${PREFIX}/include' \
+		--with-tcl=${MODTCL_LIBDIR} \
+		--with-tk=${MODTK_LIBDIR}
 
-CFLAGS+=		-I${MODTK_INCDIR} -I${MODTCL_INCDIR}
+CFLAGS+=	-I${MODTK_INCDIR} -I${MODTCL_INCDIR}
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/include/wn.h ${WRKSRC}/src/wnb

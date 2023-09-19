@@ -8,8 +8,9 @@ GH_PROJECT =		sphinx_rtd_theme
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 
 PKGNAME =		py-${DISTNAME}
-DISTFILES =		${DISTNAME}.tar.gz \
-			sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz:0
+
+SITES.deb =		${SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
+DISTFILES.deb =		sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz
 
 CATEGORIES =		textproc
 
@@ -21,7 +22,6 @@ BUILD_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
 RUN_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
 
 MODPY_PYBUILD =		setuptools
-MASTER_SITES0 =		${MASTER_SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
 
 FLAVORS =		python3
 FLAVOR =		python3

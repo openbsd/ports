@@ -13,11 +13,9 @@ CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-MASTER_SITES=	https://github.com/royhills/arp-scan/releases/download/$V/
-MASTER_SITES0=	https://spacehopper.org/mirrors/
-
-DISTFILES=	${DISTNAME}.tar.gz \
-		oui-iab-$M.tar.xz:0
+SITES=		https://github.com/royhills/arp-scan/releases/download/$V/
+SITES.iab=	https://spacehopper.org/mirrors/
+DISTFILES.iab=	oui-iab-$M.tar.xz
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
