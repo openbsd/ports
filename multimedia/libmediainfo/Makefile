@@ -1,8 +1,8 @@
 COMMENT=	read metadata from media files
 
-VERSION=	23.07
+VERSION=	23.09
 PKGNAME=	libmediainfo-${VERSION}
-SHARED_LIBS=	mediainfo	7.0 # 0.0
+SHARED_LIBS=	mediainfo	8.0 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} m z zen
 
-MASTER_SITES=	https://mediaarea.net/download/source/libmediainfo/${VERSION}/
+SITES=		https://mediaarea.net/download/source/libmediainfo/${VERSION}/
 DISTFILES=	libmediainfo_${VERSION}.tar.xz
 
 COMPILER=	base-clang ports-gcc

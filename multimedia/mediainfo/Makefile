@@ -1,6 +1,6 @@
 COMMENT=	utility for reading information from audio/video files
 
-VERSION=	23.07
+VERSION=	23.09
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c m mediainfo pthread z zen
 
-MASTER_SITES=	https://mediaarea.net/download/source/mediainfo/${VERSION}/
+SITES=		https://mediaarea.net/download/source/mediainfo/${VERSION}/
 DISTFILES=	mediainfo_${VERSION}.tar.xz
 
 COMPILER=	base-clang ports-gcc
