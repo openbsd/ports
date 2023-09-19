@@ -40,6 +40,7 @@
      SUBDIR += autoconf-archive
      SUBDIR += autogen
      SUBDIR += automake
+     SUBDIR += autopep8
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
