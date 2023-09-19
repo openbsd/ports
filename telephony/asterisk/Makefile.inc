@@ -1,11 +1,14 @@
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
-DISTFILES=	${DISTNAME}.tar.gz
+SITES=		https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
+		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+SITES.pjast=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/
+SITES.pjsip=	https://github.com/pjsip/pjproject/archive/refs/tags/
 # from asterisk mirror:
-DISTFILES+=	pjproject-${PJ_V}.tar.gz:0
+DISTFILES.pjast= pjproject-${PJ_V}.tar.gz
 # from pjsip original:
-#DISTFILES+=	pjproject-{}${PJ_V}.tar.gz:1
+#DISTFILES.pjsip= pjproject-{}${PJ_V}.tar.gz
 
 PKGNAME-main=	asterisk-${VER}
 SHORTVER=	${.CURDIR:T}
@@ -80,11 +83,6 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			www/uriparser
 RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 			telephony/asterisk-sounds/moh-opsound,wav
-
-MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
-		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/
-MASTER_SITES1=	https://github.com/pjsip/pjproject/archive/refs/tags/
 
 USE_GMAKE=		Yes
 
@@ -171,7 +169,7 @@ CFLAGS +=		-DHAVE_OPENSSL_BIO_METHOD
 
 .if ${PROPERTIES:Mclang}
 LDFLAGS +=		-lBlocksRuntime
-BLOCKSLIBDEP =		devel/libdispatch 
+BLOCKSLIBDEP =		devel/libdispatch
 BLOCKSWANTLIB =		BlocksRuntime
 .else
 CFLAGS +=		-ftrampolines

@@ -7,8 +7,9 @@ M=		0.24.1
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
-DISTFILES=	snmp_exporter-$V.tar.gz \
-		snmp_exporter_mibs+vendor-$M.tar.xz:0
+
+SITES.sh=	https://spacehopper.org/mirrors/
+DISTFILES.sh=	snmp_exporter_mibs+vendor-$M.tar.xz
 
 CATEGORIES=	sysutils
 
@@ -20,8 +21,6 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c netsnmp pthread
-
-MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 LIB_DEPENDS=	net/net-snmp
 

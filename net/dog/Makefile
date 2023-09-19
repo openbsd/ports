@@ -19,8 +19,8 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 HOMEPAGE =		https://dns.lookup.dog/
-MASTER_SITES0 =		https://github.com/ogham/dog/releases/download/${GH_TAGNAME}/
-DISTFILES +=            dog-${GH_TAGNAME}-x86_64-apple-darwin.zip:0
+MASTER_SITES.man =	https://github.com/ogham/dog/releases/download/${GH_TAGNAME}/
+DISTFILES.man =		dog-${GH_TAGNAME}-x86_64-apple-darwin.zip
 
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	cc libc

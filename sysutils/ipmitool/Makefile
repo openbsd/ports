@@ -7,12 +7,11 @@ GH_TAGNAME=	IPMITOOL_${V:S/./_/g}
 PKGNAME=	ipmitool-$V
 REVISION=	0
 
-#DISTFILES=	${GH_DISTFILE} \
-#		enterprise-numbers.20220204.gz:0
-#EXTRACT_ONLY=	${GH_DISTFILE}
-# was re-rolled
-DISTFILES=	ipmitool-IPMITOOL_1_8_19.0{ipmitool-IPMITOOL_1_8_19}.tar.gz \
-		enterprise-numbers.20220204.gz:0
+# renamed as the distfile was re-rolled
+DISTFILES=	ipmitool-IPMITOOL_1_8_19.0{ipmitool-IPMITOOL_1_8_19}.tar.gz
+
+SITES.sh=	https://spacehopper.org/mirrors/
+DISTFILES.sh=	enterprise-numbers.20220204.gz
 EXTRACT_ONLY=	ipmitool-IPMITOOL_1_8_19.0.tar.gz
 
 CATEGORIES=	sysutils
@@ -29,8 +28,6 @@ WANTLIB=	m curses edit crypto c
 
 # -std=gnu11
 COMPILER =	base-clang ports-gcc
-
-MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoreconf

@@ -1,9 +1,9 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
 V=		3.4.1
-MASTER_SITES0=	https://spacehopper.org/mirrors/
 DISTNAME=	vpn-user-portal-$V
-DISTFILES=	${DISTNAME}.tar.xz ${DISTNAME}-vendor.tar.xz:0
+SITES.sh=	https://spacehopper.org/mirrors/
+DISTFILES.sh=	${DISTNAME}-vendor.tar.xz
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
 
 # AGPL-3.0

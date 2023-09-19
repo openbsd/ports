@@ -7,7 +7,6 @@ SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
-PATCH_DIST_STRIP= -p1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -27,8 +26,7 @@ WANTLIB += pthread ssl unistring uv xml2 z
 FLAVORS=	geoip
 FLAVOR?=
 
-MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	${MASTER_SITE_ISC:=bind9/$V/patches/}
+SITES=		${MASTER_SITE_ISC:=bind9/$V/}
 
 MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
