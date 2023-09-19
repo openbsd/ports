@@ -12,7 +12,7 @@ SHARED_LIBS +=		xornstorage	0.0	# 0.0
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES = http://ftp.geda-project.org/geda-gaf/stable/v${V:R}/${V}/
+SITES = http://ftp.geda-project.org/geda-gaf/stable/v${V:R}/${V}/
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi

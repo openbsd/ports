@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTK_WANTLIB} c m ICE X11 SM
 
-MASTER_SITES =	http://opencircuitdesign.com/qrouter/archive/
+SITES =		http://opencircuitdesign.com/qrouter/archive/
 
 MODULES =	x11/tk
 

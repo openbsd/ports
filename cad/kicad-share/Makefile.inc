@@ -14,7 +14,7 @@ CATEGORIES ?=		cad
 
 HOMEPAGE ?=		https://kicad.github.io/${KICAD_PROJECT:L}/
 
-MASTER_SITES ?=	\
+SITES ?=	\
 	https://gitlab.com/kicad/libraries/kicad-${KICAD_PROJECT}/-/archive/$V/
 
 # CC-BY-SA 4.0

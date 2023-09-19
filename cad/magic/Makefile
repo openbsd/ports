@@ -13,7 +13,7 @@ PERMIT_PACKAGE = Yes
 WANTLIB =	${MODTK_WANTLIB} GL GLU X11 Xext Xi Xmu c cairo fontconfig \
 		freetype m z
 
-MASTER_SITES =	http://opencircuitdesign.com/magic/archive/
+SITES =		http://opencircuitdesign.com/magic/archive/
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c

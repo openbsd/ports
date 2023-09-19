@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${MODTK_WANTLIB} X11 Xpm
 WANTLIB +=		c cairo m 
 
-MASTER_SITES =		http://repo.hu/projects/xschem/releases/
+SITES =			http://repo.hu/projects/xschem/releases/
 
 MODULES =		x11/tk
 MODTK_VERSION =		8.5

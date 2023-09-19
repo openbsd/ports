@@ -35,7 +35,7 @@ WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
 WANTLIB += wx_gtk3u_stc-3.2 z
 
-MASTER_SITES =		https://gitlab.com/kicad/code/kicad/-/archive/${V}/
+SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
 COMPILER =		base-clang ports-gcc
 

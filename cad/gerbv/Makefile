@@ -19,7 +19,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm
 WANTLIB += z Xau Xdmcp jpeg
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gerbv/}
+SITES=			${SITE_SOURCEFORGE:=gerbv/}
 
 COMPILER=		base-clang ports-gcc
 

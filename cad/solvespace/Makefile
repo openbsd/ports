@@ -9,7 +9,7 @@ HOMEPAGE =	https://solvespace.com/
 
 MAINTAINER =	Johannes Thyssen Tishman <ports@thyssentishman.com>
 
-MASTER_SITES =	https://github.com/solvespace/solvespace/releases/download/v${V}/
+SITES =	https://github.com/solvespace/solvespace/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
 # GPLv3+

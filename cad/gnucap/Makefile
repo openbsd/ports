@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses m readline
 
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES=		${HOMEPAGE}dist/ \
+SITES=			${HOMEPAGE}dist/ \
 			http://www.geda.seul.org/dist/
 
 USE_GMAKE=		Yes

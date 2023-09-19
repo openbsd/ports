@@ -6,7 +6,7 @@ CATEGORIES =		cad x11
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES =		https://bitbucket.org/starling13/tkgate/downloads/
+SITES =			https://bitbucket.org/starling13/tkgate/downloads/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

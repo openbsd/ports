@@ -18,7 +18,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB =	c m
 
-MASTER_SITES =	http://opencircuitdesign.com/qflow/archive/
+SITES =		http://opencircuitdesign.com/qflow/archive/
 
 EXTRACT_SUFX =	.tgz
 

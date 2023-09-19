@@ -20,7 +20,7 @@ WANTLIB += boost_thread-mt c cairo double-conversion fontconfig
 WANTLIB += freetype glib-2.0 gmp harfbuzz intl m mpfr opencsg
 WANTLIB += qscintilla2_qt5 xml2 zip
 
-MASTER_SITES =		https://files.openscad.org/
+SITES =			https://files.openscad.org/
 EXTRACT_SUFX =		.src.tar.gz
 
 MODULES =		devel/qmake \

@@ -9,12 +9,12 @@ REVISION=	6
 DISTNAME=	fritzing-${GH_TAGNAME}
 CATEGORIES=	cad
 
-DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tar.gz \
-		fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tar.gz
+DISTFILES.ext = fritzing-parts-${GH_TAGNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	https://fritzing.org/
 
-MASTER_SITES0=	https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
+SITES.ext =	https://github.com/fritzing/fritzing-parts/archive/${GH_TAGNAME}/
 
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA

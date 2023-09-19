@@ -6,7 +6,7 @@ CATEGORIES =	cad graphics
 REVISION =	0
 
 HOMEPAGE =	https://qelectrotech.org/
-MASTER_SITES =	https://git.tuxfamily.org/qet/qet.git/snapshot/
+SITES =		https://git.tuxfamily.org/qet/qet.git/snapshot/
 EXTRACT_SUFX =	.tar.gz
 
 # GPLv2 / CC-BY 3.0 for the graphic elements

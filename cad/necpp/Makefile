@@ -5,7 +5,7 @@ REVISION =	8
 CATEGORIES=    	cad hamradio
 
 HOMEPAGE=	http://elec.otago.ac.nz/w/index.php/Necpp
-MASTER_SITES=	https://openbsd.dead-parrot.de/distfiles/
+SITES=		https://openbsd.dead-parrot.de/distfiles/
 
 # GPL
 PERMIT_PACKAGE=	Yes

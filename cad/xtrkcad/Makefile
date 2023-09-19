@@ -13,7 +13,7 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xtrkcad-fork/}
+SITES=		${SITE_SOURCEFORGE:=xtrkcad-fork/}
 
 MODULES=	devel/cmake
 

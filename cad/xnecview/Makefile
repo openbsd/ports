@@ -4,7 +4,7 @@ DISTNAME =	xnecview-1.37
 EXTRACT_SUFX=	.tgz
 REVISION =	0
 
-MASTER_SITES=	https://www.pa3fwm.nl/software/xnecview/
+SITES=		https://www.pa3fwm.nl/software/xnecview/
 
 CATEGORIES=	cad hamradio
 

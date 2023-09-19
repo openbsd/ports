@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${MODTK_WANTLIB} X11 c m
 
-MASTER_SITES =	http://opencircuitdesign.com/netgen/archive/
+SITES =		http://opencircuitdesign.com/netgen/archive/
 
 MODULES =	x11/tk \
 		lang/python

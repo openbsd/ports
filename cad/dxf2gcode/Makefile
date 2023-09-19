@@ -12,7 +12,7 @@ MAINTAINER =		Tracey Emery <tracey@openbsd.org>
 #GPLv3
 PERMIT_PACKAGE = 	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dxf2gcode/}
+SITES =			${SITE_SOURCEFORGE:=dxf2gcode/}
 
 EXTRACT_SUFX =		.zip
 

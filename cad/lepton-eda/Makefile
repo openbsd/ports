@@ -24,8 +24,7 @@ WANTLIB += graphite2 gtk-x11-2.0 guile-2.2 harfbuzz iconv intl
 WANTLIB += jpeg ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png unistring xcb xcb-render xcb-shm z
 
-MASTER_SITES =	\
-	https://github.com/lepton-eda/lepton-eda/releases/download/$V/
+SITES =	https://github.com/lepton-eda/lepton-eda/releases/download/$V/
 
 COMPILER =	base-clang ports-gcc
 

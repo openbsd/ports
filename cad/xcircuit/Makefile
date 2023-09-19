@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m z ICE Xt X11 SM Xpm ${MODTK_WANTLIB}
 
-MASTER_SITES =	${HOMEPAGE:=archive/}
+SITES =		${HOMEPAGE:=archive/}
 EXTRACT_SUFX =	.tgz
 
 MODULES =	x11/tk
