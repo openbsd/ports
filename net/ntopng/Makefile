@@ -1,24 +1,8 @@
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
-GH_ACCOUNT=	ntop
-GH_PROJECT=	ntopng
-GH_TAGNAME=	5.2.1
-# if using a branch commit of ntopng, comment GH_TAGNAME and
-# update/uncomment the below 4 lines:
-#NTOPNG_V=	4.2
-#GH_COMMIT=	025e96e6cbb61e0f7320acf1d4038fafbbf836fa
-#NTOPNG_D=	20210727
-#DISTNAME=	ntopng-${NTOPNG_V}.${NTOPNG_D}
+DIST_TUPLE=	github ntop ntopng 5.2.1 . \
+		github ntop nDPI 4.2 nDPI
 REVISION=	0
-
-NDPI_V=		4.2
-DISTFILES=	${GH_DISTFILE} \
-		ndpi-{}${NDPI_V}.tar.gz:0
-# if using a branch commit of ndpi, comment above and update/uncomment below:
-#NDPI_V=		4.0pl20211111
-#NDPI_COMMIT=	92a1be258117c6e68c5f5b92ce688e2cea089495
-#DISTFILES=	${GH_DISTFILE} \
-#		ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
 
 CATEGORIES=	net
 
@@ -35,8 +19,6 @@ WANTLIB += mariadb maxminddb netsnmp pcap radcli rrd sodium sqlite3
 WANTLIB += ssl z zmq zstd
 
 COMPILER =	base-clang ports-gcc
-
-MASTER_SITES0=	https://github.com/ntop/ndpi/archive/
 
 RUN_DEPENDS=	databases/redis \
 		net/libmaxminddb,-db \
@@ -91,9 +73,6 @@ MODLUA_SA=	Yes
 MODLUA_RUNDEP=	No
 
 NO_TEST=	Yes
-
-post-extract:
-	cd ${WRKDIR}; mv nDPI-* ${WRKSRC}/nDPI
 
 pre-configure:
 	sed -i 's,/var/db,${LOCALSTATEDIR}/db,' \
