@@ -8,7 +8,7 @@ CATEGORIES=	x11
 
 FIX_EXTRACT_PERMISSIONS=	Yes
 
-MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/ \
+SITES=		http://dist.schmorp.de/rxvt-unicode/ \
 		http://dist.schmorp.de/rxvt-unicode/Attic/
 
 HOMEPAGE=	http://software.schmorp.de/pkg/rxvt-unicode.html

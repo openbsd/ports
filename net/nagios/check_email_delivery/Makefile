@@ -12,7 +12,7 @@ HOMEPAGE=	http://buhacoff.net/software/check_email_delivery/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/archive/
+SITES=		${HOMEPAGE}/archive/
 
 PKG_ARCH=	*
 NO_BUILD=	Yes

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl qdbm ssl unistring z
 
-MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
+SITES=		http://ftp.mutt.org/pub/mutt/ \
 		https://ftp.osuosl.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
 		ftp://ftp.mutt.org/pub/mutt/

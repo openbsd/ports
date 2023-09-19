@@ -1,24 +1,24 @@
-COMMENT-main=		ODBC 3.x driver manager
-COMMENT-admin=		ODBC 3.x driver manager admin application
-REVISION-admin=		3
-REVISION-main=		3
+COMMENT-main=	ODBC 3.x driver manager
+COMMENT-admin=	ODBC 3.x driver manager admin application
+REVISION-admin=	3
+REVISION-main=	3
 
-V=			3.52.12
-DISTNAME=		libiodbc-$V
-PKGNAME=		iodbc-$V
-REVISION=		3
+V=		3.52.12
+DISTNAME=	libiodbc-$V
+PKGNAME=	iodbc-$V
+REVISION=	3
 
-CATEGORIES=		databases
+CATEGORIES=	databases
 
-SHARED_LIBS +=		iodbcinst	3.15
-SHARED_LIBS +=		iodbc		3.16
-SHARED_LIBS +=		iodbcadm	3.15
-SHARED_LIBS +=		drvproxy	3.15
+SHARED_LIBS +=	iodbcinst	3.15
+SHARED_LIBS +=	iodbc		3.16
+SHARED_LIBS +=	iodbcadm	3.15
+SHARED_LIBS +=	drvproxy	3.15
 
-HOMEPAGE=		http://www.iodbc.org/
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=iodbc/}
+HOMEPAGE=	http://www.iodbc.org/
+SITES=		${SITE_SOURCEFORGE:=iodbc/}
 
-MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Dual licensed: BSD or LGPLv2
 PERMIT_PACKAGE=	yes

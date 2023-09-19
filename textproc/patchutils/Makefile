@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
+SITES=		http://cyberelk.net/tim/data/patchutils/stable/
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		textproc/xmlto

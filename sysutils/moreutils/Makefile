@@ -17,7 +17,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 
-MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/m/moreutils/}
+SITES =			${SITE_DEBIAN:=main/m/moreutils/}
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 RUN_DEPENDS =		devel/p5-IPC-Run \

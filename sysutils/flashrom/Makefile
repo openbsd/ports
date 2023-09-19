@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ftdi1 usb-1.0 z
 
-MASTER_SITES=	https://download.flashrom.org/releases/
+SITES=		https://download.flashrom.org/releases/
 
 LIB_DEPENDS=	devel/libftdi1 \
 		devel/libusb1

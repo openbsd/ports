@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://www.pc-tools.net/files/unix/
+SITES=		http://www.pc-tools.net/files/unix/
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 FAKE_FLAGS=	MANDIR="${PREFIX}/man"

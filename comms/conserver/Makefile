@@ -17,7 +17,7 @@ WANTLIB += c util
 FLAVORS=	ipmi net
 FLAVOR?=
 
-MASTER_SITES=	https://github.com/bstansell/conserver/releases/download/v$V/
+SITES=		https://github.com/bstansell/conserver/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-master=localhost \

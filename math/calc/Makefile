@@ -19,8 +19,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=	https://github.com/lcn2/calc/releases/download/v$V/ \
-		http://www.isthe.com/chongo/src/calc/
+SITES=	https://github.com/lcn2/calc/releases/download/v$V/ \
+	http://www.isthe.com/chongo/src/calc/
 
 MAKE_FLAGS= Q="" \
 	BINDIR='$${DESTDIR}${PREFIX}/bin' \

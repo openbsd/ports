@@ -16,7 +16,7 @@ WRKDIST=	${WRKDIR}
 CATEGORIES=	www devel
 
 HOMEPAGE=	https://pear.php.net/
-MASTER_SITES=	https://github.com/pear/pearweb_phars/raw/v${VERSION}/
+SITES=		https://github.com/pear/pearweb_phars/raw/v${VERSION}/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 

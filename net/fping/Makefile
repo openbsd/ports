@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-MASTER_SITES=	https://fping.org/dist/
+SITES=		https://fping.org/dist/
 
 CONFIGURE_STYLE= gnu
 SEPARATE_BUILD=	Yes

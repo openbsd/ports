@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += crypto event pthread ssl
 
-MASTER_SITES=	https://www.unbound.net/downloads/
+SITES=		https://www.unbound.net/downloads/
 
 SEPARATE_BUILD=	 Yes
 CONFIGURE_STYLE= gnu

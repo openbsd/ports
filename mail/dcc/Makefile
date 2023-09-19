@@ -18,7 +18,7 @@ PERMIT_DISTFILES=Yes
 
 WANTLIB += c curses edit m pthread
 
-MASTER_SITES=	https://www.dcc-servers.net/dcc/source/old/
+SITES=		https://www.dcc-servers.net/dcc/source/old/
 
 USE_GMAKE=	Yes
 

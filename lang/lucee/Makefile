@@ -13,7 +13,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://cdn.lucee.org/
+SITES=		https://cdn.lucee.org/
 
 # doesn't actually need tomcat to build, but listing it here avoids
 # providing a useless package on arch where it's unavailable

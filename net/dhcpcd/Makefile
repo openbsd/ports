@@ -9,7 +9,7 @@ EPOCH=		0
 CATEGORIES=	net
 
 HOMEPAGE=	https://roy.marples.name/projects/dhcpcd
-MASTER_SITES=	https://github.com/NetworkConfiguration/dhcpcd/releases/download/v$V/
+SITES=		https://github.com/NetworkConfiguration/dhcpcd/releases/download/v$V/
 
 # BSD-2
 PERMIT_PACKAGE=	Yes

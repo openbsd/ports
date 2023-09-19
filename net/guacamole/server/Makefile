@@ -1,4 +1,4 @@
-SITES=		${MASTER_SITE_APACHE:=guacamole/$V/source/}
+SITES=		${SITE_APACHE:=guacamole/$V/source/}
 DISTNAME=	guacamole-server-$V
 COMMENT=	clientless remote desktop gateway
 

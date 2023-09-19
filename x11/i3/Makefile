@@ -23,7 +23,7 @@ COMPILER_LANGS=	c
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/
+SITES=		${HOMEPAGE}/downloads/
 EXTRACT_SUFX=	.tar.xz
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
 

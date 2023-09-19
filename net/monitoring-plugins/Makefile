@@ -38,7 +38,7 @@ WANTLIB=	c iconv intl pthread
 COMPILER=	base-clang ports-gcc base-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-MASTER_SITES=	https://www.monitoring-plugins.org/download/
+SITES=		https://www.monitoring-plugins.org/download/
 
 LIB_DEPENDS=	devel/gettext,-runtime
 

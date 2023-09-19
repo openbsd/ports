@@ -27,12 +27,12 @@ WANTLIB += iconv idn2 intl jpeg kvm m nettle p11-kit
 WANTLIB += pixman-1 swscale tasn1 unistring xcb xshmfence
 WANTLIB += z zstd
 
-MASTER_SITES.x=	https://www.x.org/releases/individual/xserver/
+SITES.x=	https://www.x.org/releases/individual/xserver/
 
 # the vncserver script in 1.11.0+ is no longer useful for us (systemd/pam
 # dependencies) so fetch an old working one from the v1.10.1 tag.
 SCRIPTV=	1.10.1
-MASTER_SITES.t=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
+SITES.t=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
 EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-21.1.1.tar.xz
 DISTFILES.t=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver} \
 		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}

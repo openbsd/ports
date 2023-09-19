@@ -26,7 +26,7 @@ WANTLIB += pthread ssl unistring uv xml2 z
 FLAVORS=	geoip
 FLAVOR?=
 
-SITES=		${MASTER_SITE_ISC:=bind9/$V/}
+SITES=		${SITE_ISC:=bind9/$V/}
 
 MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.

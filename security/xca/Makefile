@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Help Qt5Sql Qt5Widgets
 WANTLIB += c crypto ltdl m
 
-MASTER_SITES=	https://github.com/chris2511/xca/releases/download/RELEASE.$V/
+SITES=		https://github.com/chris2511/xca/releases/download/RELEASE.$V/
 
 MODULES=	x11/qt5
 

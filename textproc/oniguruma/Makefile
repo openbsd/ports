@@ -16,7 +16,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/kkos/oniguruma/releases/download/v$V/
+SITES=		https://github.com/kkos/oniguruma/releases/download/v$V/
 
 SEPARATE_BUILD=	 Yes
 DEBUG_PACKAGES=	 ${BUILD_PACKAGES}

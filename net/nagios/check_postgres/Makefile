@@ -7,7 +7,7 @@ CATEGORIES=	net databases
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://bucardo.org/wiki/Check_postgres
-MASTER_SITES=	http://bucardo.org/downloads/
+SITES=		http://bucardo.org/downloads/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.freetds.org/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-MASTER_SITES=	https://www.freetds.org/files/stable/ \
+SITES=		https://www.freetds.org/files/stable/ \
 		ftp://ftp.freetds.org/pub/freetds/stable/
 
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)

@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl popt z
 
-MASTER_SITES=	https://github.com/rdoeffinger/iec16022/releases/download/v$V/
+SITES=		https://github.com/rdoeffinger/iec16022/releases/download/v$V/
 
 LIB_DEPENDS=	devel/popt
 

@@ -12,15 +12,15 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.mindrot.org/files/jBCrypt/
+SITES=		https://www.mindrot.org/files/jBCrypt/
 
-MODULES=		java
-MODJAVA_VER=		1.8+
-MODJAVA_BUILD=		ant
+MODULES=	java
+MODJAVA_VER=	1.8+
+MODJAVA_BUILD=	ant
 
 # JUnit tests exist but unsure how to handle non-ascii chars (or run them in
 # the first place..)
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 do-configure:
 	cp ${FILESDIR}/build.xml ${WRKSRC}/

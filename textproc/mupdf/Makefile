@@ -24,9 +24,9 @@ FLAVORS =	js
 FLAVOR ?=
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
-MASTER_SITES =	https://mupdf.com/downloads/archive/
+SITES =		https://mupdf.com/downloads/archive/
 
-COMPILER =	 base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils

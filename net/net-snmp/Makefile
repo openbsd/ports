@@ -21,7 +21,7 @@ SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5
 PORTROACH=	site:https://github.com/net-snmp/net-snmp/releases/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
+SITES=		${SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org/
 

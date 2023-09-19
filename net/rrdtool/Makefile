@@ -16,7 +16,7 @@ CATEGORIES=	net databases
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://oss.oetiker.ch/rrdtool/
-MASTER_SITES=	https://github.com/oetiker/rrdtool-1.x/releases/download/v$V/
+SITES=		https://github.com/oetiker/rrdtool-1.x/releases/download/v$V/
 
 # GPLv2+, with exemptions for use of the library with certain
 # named open-source licenses; see COPYRIGHT

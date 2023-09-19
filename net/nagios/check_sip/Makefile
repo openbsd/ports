@@ -7,7 +7,7 @@ CATEGORIES=	net
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	http://isle.wumpus.org/src/nagios/
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes

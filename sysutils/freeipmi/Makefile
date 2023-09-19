@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gcrypt gpg-error iconv intl m pthread
 
-MASTER_SITES=	${MASTER_SITE_GNU:=freeipmi/}
+SITES=		${SITE_GNU:=freeipmi/}
 
 BUILD_DEPENDS=	devel/argp-standalone
 LIB_DEPENDS=	security/libgcrypt \

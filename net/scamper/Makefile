@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	 Yes
 
 WANTLIB += c crypto m ssl pthread z
 
-MASTER_SITES=	https://www.caida.org/tools/measurement/scamper/code/
+SITES=		https://www.caida.org/tools/measurement/scamper/code/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

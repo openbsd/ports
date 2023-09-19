@@ -9,7 +9,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # Public Domain
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 RUN_DEPENDS=	net/arp-scan,-mac \
 		textproc/p5-Text-CSV \

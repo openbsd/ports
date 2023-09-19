@@ -26,7 +26,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB=	c crypto pthread sasl2 ssl
 WANTLIB-server=	${WANTLIB} lber ldap ltdl m perl sodium
 
-MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/ \
+SITES =		https://openldap.org/software/download/OpenLDAP/openldap-release/ \
 		https://mirror.eu.oneandone.net/software/openldap/ \
 		https://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/

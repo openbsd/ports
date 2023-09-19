@@ -24,7 +24,7 @@ PKGNAME-python3= freeradius-python3-$V
 
 CATEGORIES=	net security
 
-MASTER_SITES=	https://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
+SITES=		https://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/ \
 		ftp://ftp.freeradius.org/pub/freeradius/ \
 		ftp://ftp.freeradius.org/pub/freeradius/old/
 

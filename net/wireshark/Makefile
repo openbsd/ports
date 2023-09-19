@@ -59,10 +59,10 @@ WANTLIB-main += minizip speexdsp wireshark wiretap wsutil
 WANTLIB-main += Qt6Core Qt6Core5Compat Qt6Gui Qt6Multimedia Qt6PrintSupport
 WANTLIB-main += Qt6Widgets
 
-MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/
+SITES =		https://www.wireshark.org/download/src/all-versions/
 
-WVER =			${V:C/^(...).*/\1/}
-SUBST_VARS =		WVER
+WVER =		${V:C/^(...).*/\1/}
+SUBST_VARS =	WVER
 
 BUILD_DEPENDS +=	devel/bison \
 			devel/desktop-file-utils \

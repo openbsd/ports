@@ -10,7 +10,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://trac.edgewall.org/
 
-MASTER_SITES=	https://download.edgewall.org/trac/
+SITES=		https://download.edgewall.org/trac/
 
 MODPY_PYBUILD=	setuptools
 
