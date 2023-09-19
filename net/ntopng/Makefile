@@ -1,8 +1,10 @@
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
-DIST_TUPLE=	github ntop ntopng 5.2.1 . \
+# see GIT_RELEASE below if moving back to a commit id rather than a tag
+NTOPNG_V=	5.2.1
+DIST_TUPLE=	github ntop ntopng ${NTOPNG_V} . \
 		github ntop nDPI 4.2 nDPI
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -58,12 +60,7 @@ SHARED_LIBS=	ndpi 1.0
 
 AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
-.if defined(GH_COMMIT)
-GIT_RELEASE=		${NTOPNG_V}:${GH_COMMIT:C/(^..........).*/\1/}
-.else
-GIT_RELEASE=		${GH_TAGNAME}
-.endif
-AUTORECONF=		sh -c "GIT_RELEASE=${GIT_RELEASE} ./autogen.sh; cd nDPI; ./autogen.sh"
+AUTORECONF=		sh -c "GIT_RELEASE=${NTOPNG_V} ./autogen.sh; cd nDPI; ./autogen.sh"
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/nDPI
 
