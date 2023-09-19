@@ -674,6 +674,7 @@
      SUBDIR += socat
      SUBDIR += softflowd
      SUBDIR += spectrum-tools
+     SUBDIR += sping
      SUBDIR += srain
      SUBDIR += sshuttle
      SUBDIR += ssldump
