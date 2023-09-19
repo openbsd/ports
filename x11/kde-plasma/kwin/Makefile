@@ -64,7 +64,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-plasma/kdecoration \
 		x11/kde-plasma/kscreenlocker \
 		x11/libqaccessibilityclient \
-		x11/libxcvt \
 		x11/qt5/qtdeclarative
 
 CXXFLAGS +=		-I${X11BASE}/include
