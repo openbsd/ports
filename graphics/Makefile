@@ -305,6 +305,7 @@
      SUBDIR += skanlite
      SUBDIR += sketch
      SUBDIR += slop
+     SUBDIR += spirv-cross
      SUBDIR += spirv-headers
      SUBDIR += spirv-tools
      SUBDIR += termtosvg
