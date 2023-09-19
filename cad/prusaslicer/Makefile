@@ -1,6 +1,7 @@
 COMMENT =	g-code generator for 3D printers
 
 V =		2.5.2
+REVISION =	0
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -38,21 +39,29 @@ MODULES =		devel/cmake \
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
+# uses headers from gmp,-cxx but not libgmpxx so BDEP not LDEP
+# cereal/eigen3 are header-only libraries
 BUILD_DEPENDS =		devel/cereal \
-			devel/gmp,-cxx
+			devel/gmp,-cxx \
+			math/eigen3
 
-LIB_DEPENDS =		devel/tbb \
-			math/nlopt \
-			graphics/openvdb \
-			graphics/glew \
-			x11/dbus \
-			x11/wxWidgets \
-			math/cgal \
+LIB_DEPENDS =		archivers/blosc \
+			cad/oce \
 			comms/libhidapi \
+			devel/gmp \
+			devel/tbb \
+			graphics/glew \
+			graphics/openvdb \
+			graphics/png \
+			math/cgal \
+			math/nlopt \
 			math/qhull \
-			cad/oce
+			net/curl \
+			x11/dbus \
+			x11/wxWidgets
 
-CONFIGURE_ARGS +=	-DSLIC3R_GTK=3 -DSLIC3R_FHS=1 \
+CONFIGURE_ARGS +=	-DSLIC3R_GTK=3 \
+			-DSLIC3R_FHS=1 \
 			-DOPENVDB_FIND_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB
 
 .include <bsd.port.mk>
