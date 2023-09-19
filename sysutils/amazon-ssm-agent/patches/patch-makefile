@@ -9,8 +9,8 @@ Index: makefile
 +#	$(GO_SPACE)/Tools/src/checkstyle.sh
  
  analyze-install::
- 	$(GO_SPACE)/Tools/src/static_analysis.sh -I ${analyze-flags}
-@@ -33,7 +33,7 @@ coverage:: build-linux
+ 	$(GO_SPACE)/Tools/src/static_analysis.sh $(shell echo ${flags} | tr ",\[\]" " \"") -I
+@@ -34,7 +34,7 @@ coverage:: build-linux
  	  github.com/aws/amazon-ssm-agent/agent/... \
  	  github.com/aws/amazon-ssm-agent/core/...
  
@@ -19,7 +19,7 @@ Index: makefile
  
  prepack:: cpy-plugins copy-win-dep prepack-linux prepack-linux-arm64 prepack-linux-386 prepack-windows prepack-windows-386
  
-@@ -51,6 +51,8 @@ finalize:: build-tests copy-package-dep
+@@ -52,6 +52,8 @@ finalize:: build-tests copy-package-dep
  dev-build-linux: clean quick-integtest checkstyle pre-release build-linux
  .PHONY: dev-build-freebsd
  dev-build-freebsd: clean quick-integtest checkstyle pre-release build-freebsd
@@ -28,7 +28,7 @@ Index: makefile
  .PHONY: dev-build-windows
  dev-build-windows: clean quick-integtest checkstyle pre-release build-windows
  .PHONY: dev-build-linux-386
-@@ -166,6 +168,12 @@ build-freebsd: GOARCH=amd64
+@@ -167,6 +169,12 @@ build-freebsd: GOARCH=amd64
  build-freebsd: GOOS=freebsd
  build-freebsd: GO_BUILD=$(GO_BUILD_NOPIE)
  build-freebsd: build-any-amd64-freebsd
