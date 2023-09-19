@@ -1,5 +1,8 @@
 COMMENT=	extract, list, and test RAR archives
 
+# beta
+PORTROACH=	skipv:6.2.11
+
 # NB: The software version is different from the distfile version.
 # Check version.hpp or the banner printed when running unrar
 # for the version to use in PKGNAME.  In particular, RARVER_BETA
