@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.92.1
+MODPY_EGG_VERSION =	1.92.3
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -43,7 +43,7 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-asn1-modules${MODPY_FLAVOR} \
 		security/py-bcrypt${MODPY_FLAVOR} \
-		graphics/py-Pillow${MODPY_FLAVOR} \
+		graphics/py-Pillow${MODPY_FLAVOR}>=10.0.1 \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
 		devel/py-pydantic${MODPY_FLAVOR} \
 		www/py-macaroons${MODPY_FLAVOR} \
