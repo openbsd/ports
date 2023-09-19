@@ -2,6 +2,7 @@ vpn-user-portal/
 vpn-user-portal/locale/
 vpn-user-portal/locale/eduVPN/
 vpn-user-portal/locale/eduVPN/ar-MA.php
+vpn-user-portal/locale/eduVPN/cs-CZ.php
 vpn-user-portal/locale/eduVPN/de-DE.php
 vpn-user-portal/locale/eduVPN/empty.php
 vpn-user-portal/locale/eduVPN/et-EE.php
@@ -10,6 +11,7 @@ vpn-user-portal/locale/eduVPN/nb-NO.php
 vpn-user-portal/locale/eduVPN/nl-NL.php
 vpn-user-portal/locale/eduVPN/pl-PL.php
 vpn-user-portal/locale/eduVPN/pt-PT.php
+vpn-user-portal/locale/eduVPN/sk-SK.php
 vpn-user-portal/locale/eduVPN/uk-UA.php
 vpn-user-portal/views/
 vpn-user-portal/views/eduVPN/
