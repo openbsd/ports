@@ -1,10 +1,23 @@
 - Honor CFLAGS and DEBUG
 - Use system libpng on arm platforms
+- Allow disabling Wayland even if found
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -378,13 +378,13 @@ if(NOT MSVC)
+@@ -188,10 +188,9 @@ if(UNIX AND NOT (APPLE OR ANDROID) AND VULKAN)
+ 	find_package(Wayland)
+ 	if(NOT WAYLAND_FOUND)
+ 		message(STATUS "Could not find Wayland libraries, disabling Wayland WSI support for Vulkan.")
+-	else()
++	elseif(USE_WAYLAND_WSI)
+ 		include_directories(${WAYLAND_INCLUDE_DIR})
+ 		add_definitions(-DVK_USE_PLATFORM_WAYLAND_KHR)
+-		add_definitions(-DUSE_WAYLAND_WSI=ON)
+ 	endif()
+ 
+ 	if(USE_VULKAN_DISPLAY_KHR)
+@@ -378,13 +377,13 @@ if(NOT MSVC)
  		endif()
  	endif()
  
@@ -22,7 +35,7 @@ Index: CMakeLists.txt
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  
  	# Enable checking printf-like format strings (also works for logging functions)
-@@ -1125,7 +1125,7 @@ else()
+@@ -1125,7 +1124,7 @@ else()
  endif()
  
  # Arm platforms require at least libpng17.

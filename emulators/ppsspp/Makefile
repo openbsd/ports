@@ -5,6 +5,7 @@ COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
 V =		1.16.1
+REVISION =	0
 
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
@@ -37,11 +38,13 @@ LIB_DEPENDS =		archivers/snappy \
 
 COMPILER =		base-clang ports-gcc
 
+# Wayland not yet supported in sdl2
 CONFIGURE_ARGS =	-DUSE_SYSTEM_FFMPEG=ON \
 			-DUSE_SYSTEM_LIBZIP=ON \
 			-DUSE_SYSTEM_SNAPPY=ON \
 			-DUSE_SYSTEM_ZSTD=ON \
 			-DUSE_DISCORD=OFF \
+			-DUSE_WAYLAND_WSI=OFF \
 			-DUSING_EGL=OFF
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
