@@ -1,2 +1,9 @@
-Roboto is a sans-serif typeface family introduced with Android Ice
-Cream Sandwich operating system.
+Roboto is Google's signature family of fonts, the default font on
+Android and Chrome OS, and the recommended font for Google's visual
+language, Material Design.
+
+The font family supports all Latin, Cyrillic, and Greek characters
+in Unicode 7.0.
+
+This package include the Roboto and Roboto Condensed sans-serif
+typefaces and the Roboto Mono monospaced typeface.
