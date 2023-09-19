@@ -1,5 +1,4 @@
 @bin bin/xfce4-notifyd-config
-lib/systemd/user/xfce4-notifyd.service
 lib/xfce4/notifyd/
 @bin lib/xfce4/notifyd/xfce4-notifyd
 @so lib/xfce4/panel/plugins/libnotification-plugin.so
@@ -13,6 +12,7 @@ share/icons/hicolor/scalable/apps/org.xfce.notification.svg
 share/icons/hicolor/scalable/status/notification-disabled-symbolic.svg
 share/icons/hicolor/scalable/status/notification-symbolic.svg
 share/icons/hicolor/scalable/status/org.xfce.notification.unread-emblem-symbolic.svg
+share/locale/ar/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/ast/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/be/LC_MESSAGES/xfce4-notifyd.mo
 share/locale/bg/LC_MESSAGES/xfce4-notifyd.mo
