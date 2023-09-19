@@ -1,0 +1,6 @@
+SPIRV-Cross is a tool designed for parsing and converting SPIR-V to
+other shader languages.
+
+SPIRV-Cross tries hard to emit readable and clean output from the
+SPIR-V. The goal is to emit GLSL or MSL that looks like it was written
+by a human and not awkward IR/assembly-like code.

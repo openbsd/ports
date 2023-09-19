@@ -1,0 +1,65 @@
+@bin bin/spirv-cross
+include/spirv_cross/
+include/spirv_cross/GLSL.std.450.h
+include/spirv_cross/spirv.h
+include/spirv_cross/spirv.hpp
+include/spirv_cross/spirv_cfg.hpp
+include/spirv_cross/spirv_common.hpp
+include/spirv_cross/spirv_cpp.hpp
+include/spirv_cross/spirv_cross.hpp
+include/spirv_cross/spirv_cross_c.h
+include/spirv_cross/spirv_cross_containers.hpp
+include/spirv_cross/spirv_cross_error_handling.hpp
+include/spirv_cross/spirv_cross_parsed_ir.hpp
+include/spirv_cross/spirv_cross_util.hpp
+include/spirv_cross/spirv_glsl.hpp
+include/spirv_cross/spirv_hlsl.hpp
+include/spirv_cross/spirv_msl.hpp
+include/spirv_cross/spirv_parser.hpp
+include/spirv_cross/spirv_reflect.hpp
+@lib lib/libspirv-cross-c-shared.so.${LIBspirv-cross-c-shared_VERSION}
+@static-lib lib/libspirv-cross-c.a
+@static-lib lib/libspirv-cross-core.a
+@static-lib lib/libspirv-cross-cpp.a
+@static-lib lib/libspirv-cross-glsl.a
+@static-lib lib/libspirv-cross-hlsl.a
+@static-lib lib/libspirv-cross-msl.a
+@static-lib lib/libspirv-cross-reflect.a
+@static-lib lib/libspirv-cross-util.a
+lib/pkgconfig/spirv-cross-c-shared.pc
+share/spirv_cross_c/
+share/spirv_cross_c/cmake/
+share/spirv_cross_c/cmake/spirv_cross_cConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_c/cmake/spirv_cross_cConfig.cmake
+share/spirv_cross_c_shared/
+share/spirv_cross_c_shared/cmake/
+share/spirv_cross_c_shared/cmake/spirv_cross_c_sharedConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_c_shared/cmake/spirv_cross_c_sharedConfig.cmake
+share/spirv_cross_core/
+share/spirv_cross_core/cmake/
+share/spirv_cross_core/cmake/spirv_cross_coreConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_core/cmake/spirv_cross_coreConfig.cmake
+share/spirv_cross_cpp/
+share/spirv_cross_cpp/cmake/
+share/spirv_cross_cpp/cmake/spirv_cross_cppConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_cpp/cmake/spirv_cross_cppConfig.cmake
+share/spirv_cross_glsl/
+share/spirv_cross_glsl/cmake/
+share/spirv_cross_glsl/cmake/spirv_cross_glslConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_glsl/cmake/spirv_cross_glslConfig.cmake
+share/spirv_cross_hlsl/
+share/spirv_cross_hlsl/cmake/
+share/spirv_cross_hlsl/cmake/spirv_cross_hlslConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_hlsl/cmake/spirv_cross_hlslConfig.cmake
+share/spirv_cross_msl/
+share/spirv_cross_msl/cmake/
+share/spirv_cross_msl/cmake/spirv_cross_mslConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_msl/cmake/spirv_cross_mslConfig.cmake
+share/spirv_cross_reflect/
+share/spirv_cross_reflect/cmake/
+share/spirv_cross_reflect/cmake/spirv_cross_reflectConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_reflect/cmake/spirv_cross_reflectConfig.cmake
+share/spirv_cross_util/
+share/spirv_cross_util/cmake/
+share/spirv_cross_util/cmake/spirv_cross_utilConfig${MODCMAKE_BUILD_SUFFIX}
+share/spirv_cross_util/cmake/spirv_cross_utilConfig.cmake
