@@ -1,12 +1,12 @@
-openbsd doesn't have v4mapped
+openbsd doesn't support v4mapped
 
 Index: dns/resolver.py
 --- dns/resolver.py.orig
 +++ dns/resolver.py
-@@ -1410,7 +1410,7 @@ def _getaddrinfo(host=None, service=None, family=socke
+@@ -1841,7 +1841,7 @@ def _getaddrinfo(
+         # reasons.  We will also do this short circuit below if we
          # discover that the host is an address literal.
-         return _original_getaddrinfo(host, service, family, socktype, proto,
-                                      flags)
+         return _original_getaddrinfo(host, service, family, socktype, proto, flags)
 -    if flags & (socket.AI_ADDRCONFIG | socket.AI_V4MAPPED) != 0:
 +    if flags & (socket.AI_ADDRCONFIG) != 0:
          # Not implemented.  We raise a gaierror as opposed to a
