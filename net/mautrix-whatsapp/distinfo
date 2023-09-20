@@ -201,7 +201,7 @@ SHA256 (go_modules/maunium.net/go/maulogger/v2/@v/v2.4.1.mod) = UaR297ZfR4YSLC1i
 SHA256 (go_modules/maunium.net/go/maulogger/v2/@v/v2.4.1.zip) = 9+1m2Ab6zyA1Pv0pC16yNDQS7U+Te7YnG230R7dIPKA=
 SHA256 (go_modules/maunium.net/go/mautrix/@v/v0.16.1.mod) = zjLNoI881AXYgAhKlnXcTOuNolambuSjswzWFmTn3D4=
 SHA256 (go_modules/maunium.net/go/mautrix/@v/v0.16.1.zip) = wh5KP+b3SPh6eKAkDt6VPsFE+Uqon60/FUuyJ1zSHu4=
-SHA256 (mautrix-whatsapp-v0.10.1.zip) = ZeUN6zHH4W9CyihkiaUDg5yVgREYRrvejQA2eedPdlg=
+SHA256 (mautrix-whatsapp-v0.10.2.zip) = wGEoOIiJOgqxRgT1p7o3mHZoGqN/fR3fg2uWd7te6nY=
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.0.0.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.0.0.zip) = 48930
 SIZE (go_modules/github.com/!d!a!t!a-!d!o!g/go-sqlmock/@v/v1.5.0.mod) = 38
@@ -405,4 +405,4 @@ SIZE (go_modules/maunium.net/go/maulogger/v2/@v/v2.4.1.mod) = 423
 SIZE (go_modules/maunium.net/go/maulogger/v2/@v/v2.4.1.zip) = 16363
 SIZE (go_modules/maunium.net/go/mautrix/@v/v0.16.1.mod) = 1049
 SIZE (go_modules/maunium.net/go/mautrix/@v/v0.16.1.zip) = 351903
-SIZE (mautrix-whatsapp-v0.10.1.zip) = 195027
+SIZE (mautrix-whatsapp-v0.10.2.zip) = 195065

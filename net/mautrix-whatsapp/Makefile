@@ -1,6 +1,6 @@
 COMMENT =	matrix-WhatsApp puppeting bridge
 
-MODGO_VERSION =	v0.10.1
+MODGO_VERSION =	v0.10.2
 MODGO_MODNAME =	maunium.net/go/mautrix-whatsapp
 
 DISTNAME =	mautrix-whatsapp-${MODGO_VERSION}
