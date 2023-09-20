@@ -1,4 +1,4 @@
-SHA256 (cargo/aho-corasick-1.0.5.tar.gz) = DDeNeEI/2tgIlhb4J1Ju4zwZ8v3b1d4WKRUslZO6R4M=
+SHA256 (cargo/aho-corasick-1.1.0.tar.gz) = DyE1Vj+1xgnSsrh8HoznvEGwtFQw+pZh9FeYFQPdW/A=
 SHA256 (cargo/bindgen-0.64.0.tar.gz) = xCQ+YDEmDbd+3pethsJ+UB1kaierV7WaV09yXZirH7Q=
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.4.0.tar.gz) = tGgq5ih/z3Uuyqu/zHtvm3KqM5M9wjpVTYU66o7qhjU=
@@ -34,7 +34,7 @@ SHA256 (cargo/memchr-2.6.3.tar.gz) = jyMtbvcH4ZVqQzQmk9KjHnKYlVTVgpnXqIc4zJWw01w
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/once_cell-1.18.0.tar.gz) = 3Ytd0q5e1xRixUAli+3LUZZRI61+fM9LmoyvqkpjV20=
-SHA256 (cargo/openssl-src-300.1.3+3.1.2.tar.gz) = zSwQGhZf/5k1403vRmlZWrHHhHlDxCvobiFQPkgr4Qc=
+SHA256 (cargo/openssl-src-300.1.5+3.1.3.tar.gz) = VZBo5MEpUNfcqhhXphclwNONT8A/+OBwqzGnXW4xZJE=
 SHA256 (cargo/peeking_take_while-0.1.2.tar.gz) = GbF83b5+w/i8gAiHurXnFzSMleosoLG/CDf7lk3GcJk=
 SHA256 (cargo/pkg-config-0.3.27.tar.gz) = JgcoYLqSTL+pjqOcjBm03WpKJUI9vfIZweypGqDPaWQ=
 SHA256 (cargo/proc-macro2-1.0.67.tar.gz) = PUM9nxo+jBJj2UVlmLFv7Gb0rMmnTaz/01x7sJs6Eyg=
@@ -51,10 +51,10 @@ SHA256 (cargo/ryu-1.0.15.tar.gz) = GtTMjaTvcj7WC87SARgdg3ka1DMhPYwk7//aHuyF10E=
 SHA256 (cargo/semver-1.0.18.tar.gz) = sCk7Synar0hyhFKcwvVnW45Xxh9wFnukFaRjZR/WqRg=
 SHA256 (cargo/serde-1.0.188.tar.gz) = z54Py6aaNw7tYbzytyhXX3JrULVcungGR1PXCN3HVJ4=
 SHA256 (cargo/serde_derive-1.0.188.tar.gz) = Tsp6xkLYKqNbYASabsy0vmvnXlmb0umttfh1pzdlSvI=
-SHA256 (cargo/serde_json-1.0.106.tar.gz) = LMZqYZ7YC/eg9rF90GOoS4j23qGBNzfPRprvHQgRQsI=
+SHA256 (cargo/serde_json-1.0.107.tar.gz) = a0IM5uPYvYgumyQ8bu0128mmEQyXaedLWE4NaNHyDGU=
 SHA256 (cargo/shlex-1.2.0.tar.gz) = p87gUpptQPWA56XmxJXI+/4ht7Unle1LteYs35K8Y4A=
 SHA256 (cargo/syn-1.0.109.tar.gz) = crZBkbJ1tm/+JGnorywc/juvpntSnq15Km0BYIiLQjc=
-SHA256 (cargo/syn-2.0.33.tar.gz) = nK7OcMY7+6Kewv7YQaCYUbFKI1xgAQ+k3lgIm2wCVmg=
+SHA256 (cargo/syn-2.0.37.tar.gz) = cwPvLAXNZUGGyyUNKQSaJIQMol0nR8JcA4HI2eL1gug=
 SHA256 (cargo/term-0.6.1.tar.gz) = wIY6M0XnD2HWE+qzLuBGzNG8xfkQX+QCxh/NDBPuuLU=
 SHA256 (cargo/thiserror-1.0.48.tar.gz) = nW16dAuKZmp+go3QDanA3CkN/1MVTqd6wQkoHekFibc=
 SHA256 (cargo/thiserror-impl-1.0.48.tar.gz) = SZIuyuZsyKJJt35o0dBiPBssUU8AYMJ83Gi9YqEhnTU=
@@ -75,8 +75,8 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (rust-openssl-tests-20230914-f9907087.tar.gz) = XxQF+Oiujt2P8aGujI3kdMIDrsP6zGobMPciw8aXTbw=
-SIZE (cargo/aho-corasick-1.0.5.tar.gz) = 172064
+SHA256 (rust-openssl-tests-20230919-2f269c9e.tar.gz) = S2LcFtqFfK2pXNI7Z+4BRoWsDwJmooCdvy5l/ixeGvg=
+SIZE (cargo/aho-corasick-1.1.0.tar.gz) = 182697
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.4.0.tar.gz) = 36954
@@ -112,7 +112,7 @@ SIZE (cargo/memchr-2.6.3.tar.gz) = 94377
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/once_cell-1.18.0.tar.gz) = 32969
-SIZE (cargo/openssl-src-300.1.3+3.1.2.tar.gz) = 8823710
+SIZE (cargo/openssl-src-300.1.5+3.1.3.tar.gz) = 8829668
 SIZE (cargo/peeking_take_while-0.1.2.tar.gz) = 6697
 SIZE (cargo/pkg-config-0.3.27.tar.gz) = 18838
 SIZE (cargo/proc-macro2-1.0.67.tar.gz) = 43683
@@ -129,10 +129,10 @@ SIZE (cargo/ryu-1.0.15.tar.gz) = 46906
 SIZE (cargo/semver-1.0.18.tar.gz) = 29703
 SIZE (cargo/serde-1.0.188.tar.gz) = 76230
 SIZE (cargo/serde_derive-1.0.188.tar.gz) = 55563
-SIZE (cargo/serde_json-1.0.106.tar.gz) = 146672
+SIZE (cargo/serde_json-1.0.107.tar.gz) = 146458
 SIZE (cargo/shlex-1.2.0.tar.gz) = 6584
 SIZE (cargo/syn-1.0.109.tar.gz) = 237611
-SIZE (cargo/syn-2.0.33.tar.gz) = 242543
+SIZE (cargo/syn-2.0.37.tar.gz) = 243250
 SIZE (cargo/term-0.6.1.tar.gz) = 37578
 SIZE (cargo/thiserror-1.0.48.tar.gz) = 18862
 SIZE (cargo/thiserror-impl-1.0.48.tar.gz) = 15096
@@ -153,4 +153,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (rust-openssl-tests-20230914-f9907087.tar.gz) = 350170
+SIZE (rust-openssl-tests-20230919-2f269c9e.tar.gz) = 350172
