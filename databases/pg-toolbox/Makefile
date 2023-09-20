@@ -10,7 +10,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD / Zlib
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://ftp.postgresql.org/pub/projects/pgFoundry/pg-toolbox/pg-toolbox/Release$V/
+SITES=		https://ftp.postgresql.org/pub/projects/pgFoundry/pg-toolbox/pg-toolbox/Release$V/
 
 RUN_DEPENDS=	databases/postgresql,-main
 

@@ -9,9 +9,9 @@ HOMEPAGE=	http://sharedance.pureftpd.org/project/sharedance
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c event
+WANTLIB=	c event
 
-MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
+SITES=		http://download.pureftpd.org/pub/sharedance/
 
 CONFIGURE_STYLE=	simple
 

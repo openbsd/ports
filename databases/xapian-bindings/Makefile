@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} m z xapian
 WANTLIB-main = ${WANTLIB} c perl
 
-MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
+SITES=		https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11

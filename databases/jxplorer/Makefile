@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.pegacat.com/jxplorer/
 # CA Open Source Licence v1.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jxplorer/}
+SITES=		${SITE_SOURCEFORGE:=jxplorer/}
 WRKDIST=	${WRKDIR}/jxplorer
 
 MODULES=	java

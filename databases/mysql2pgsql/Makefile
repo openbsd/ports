@@ -5,7 +5,7 @@ PKGNAME=	mysql2pgsql-20010320
 REVISION=	1
 CATEGORIES=	databases
 
-MASTER_SITES=	http://www.rot13.org/~dpavlin/projects/sql/
+SITES=		http://www.rot13.org/~dpavlin/projects/sql/
 EXTRACT_SUFX=	#empty
 
 EXTRACT_ONLY=	#empty

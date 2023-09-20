@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS =		java/javaPathHelper
 
-MASTER_SITES =		https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${VERSION}/
+SITES =			https://github.com/liquibase/liquibase/releases/download/liquibase-parent-${VERSION}/
 
 MODULES =		java
 # XXX when updating please confirm if this is 1.8 only or if 11 is also ok (in which case, switch to 1.8+)

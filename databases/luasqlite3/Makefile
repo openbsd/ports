@@ -3,7 +3,7 @@ PKGNAME=	luasqlite3-0.4.1
 REVISION=	7
 DISTNAME=	lua-sqlite3-0.4.1
 CATEGORIES=	databases
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.nessie.de/mroth/lua-sqlite3/
 

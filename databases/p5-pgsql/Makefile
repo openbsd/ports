@@ -5,7 +5,7 @@ DISTNAME=	pgsql_perl5-${VERSION}
 PKGNAME=	p5-pgsql-${VERSION}
 REVISION=	6
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
+SITES=		${SITE_PERL_CPAN:=Pg/}
 
 LIB_DEPENDS =	databases/postgresql
 

@@ -21,14 +21,14 @@ SHARED_LIBS +=	db_tcl               6.0      # .0.0
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES0=	${HOMEPAGE}db/update/${VERSION}/
+SITES.up=	${HOMEPAGE}db/update/${VERSION}/
 # patch 2 has converted DOS line-endings; no other change
 # patches 1,3,4 are just mirrored
-MASTER_SITES2=	https://spacehopper.org/mirrors/
-PATCHFILES=	patch.${VERSION}.1:2 \
-		patch.${VERSION}.2.fixed:2 \
-		patch.${VERSION}.3:2 \
-		patch.${VERSION}.4:2
+SITES.stu=	https://spacehopper.org/mirrors/
+PATCHFILES.stu=	patch.${VERSION}.1 \
+		patch.${VERSION}.2.fixed \
+		patch.${VERSION}.3 \
+		patch.${VERSION}.4
 
 CONFIGURE_STYLE=gnu
 

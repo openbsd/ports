@@ -41,7 +41,7 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c glib-2.0 iconv m mariadb X11
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
+SITES =		${SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \

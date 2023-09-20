@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c crypto ssl m pthread
 
-MASTER_SITES =		http://download.redis.io/releases/
+SITES =			http://download.redis.io/releases/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

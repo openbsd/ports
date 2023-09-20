@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 1.6.5
 DISTNAME =	mysql-utilities-${MODPY_EGG_VERSION}
 REVISION =	0
 CATEGORIES =	databases
-MASTER_SITES =	http://mirror.switch.ch/mirror/mysql/Downloads/MySQLGUITools/ \
+SITES =		http://mirror.switch.ch/mirror/mysql/Downloads/MySQLGUITools/ \
 		http://ftp.fi.muni.cz/pub/mysql/Downloads/MySQLGUITools/ \
 		http://ftp.gwdg.de/pub/misc/mysql/Downloads/MySQLGUITools/
 EXTRACT_SUFX =	.zip

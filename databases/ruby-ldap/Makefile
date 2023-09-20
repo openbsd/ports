@@ -5,7 +5,7 @@ REVISION=	2
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
-MASTER_SITES.github=	https://github.com/bearded/ruby-ldap/commit/
+SITES.github=	https://github.com/bearded/ruby-ldap/commit/
 PATCHFILES.github=	ruby-ldap-taint-fix{72a4a89b28a99560b018b78069b29632f362a7d0}.patch
 PATCH_DIST_STRIP=	-p1
 

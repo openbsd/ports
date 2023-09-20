@@ -5,7 +5,7 @@ CATEGORIES =	databases
 REVISION =	1
 
 HOMEPAGE =	http://www.rbt.ca/autodoc/
-MASTER_SITES =	${HOMEPAGE}binaries/
+SITES =		${HOMEPAGE}binaries/
 
 # BSD
 PERMIT_PACKAGE =		Yes

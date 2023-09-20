@@ -13,10 +13,10 @@ WSREP_API_COMMIT=	694d6ca47f5eec7873be99b7d6babccf633d1231
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-MASTER_SITES0=	https://github.com/
+SITES.extra =	https://github.com/
 
-DISTFILES=	${GH_PROJECT}-{}${GH_TAGNAME}${EXTRACT_SUFX} \
-		wsrep-api-{codership/wsrep-API/archive/}${WSREP_API_COMMIT}${EXTRACT_SUFX}:0
+DISTFILES=	${GH_PROJECT}-{}${GH_TAGNAME}${EXTRACT_SUFX}
+DISTFILES.extra=wsrep-api-{codership/wsrep-API/archive/}${WSREP_API_COMMIT}${EXTRACT_SUFX}
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE=	Yes

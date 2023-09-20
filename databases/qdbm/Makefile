@@ -8,9 +8,9 @@ REVISION=		2
 HOMEPAGE=		https://fallabs.com/qdbm/
 
 # LGPLv2.1+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${HOMEPAGE}/
+SITES=			${HOMEPAGE}/
 
 WANTLIB=		c iconv z
 LIB_DEPENDS=		converters/libiconv

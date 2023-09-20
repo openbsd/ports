@@ -2,7 +2,7 @@ COMMENT =	interface LDAP from lua
 DISTNAME=	lualdap-1.1.0
 CATEGORIES =	databases
 
-MASTER_SITES =	http://files.luaforge.net/releases/lualdap/lualdap/LuaLDAP1.1.0/
+SITES =		http://files.luaforge.net/releases/lualdap/lualdap/LuaLDAP1.1.0/
 HOMEPAGE =	http://www.keplerproject.org/lualdap/
 
 # MIT

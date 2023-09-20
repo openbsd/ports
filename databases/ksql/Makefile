@@ -6,7 +6,7 @@ CATEGORIES =		databases
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://kristaps.bsd.lv/ksql/
-MASTER_SITES =		https://kristaps.bsd.lv/ksql/snapshots/
+SITES =			https://kristaps.bsd.lv/ksql/snapshots/
 
 # ISC
 PERMIT_PACKAGE =	Yes

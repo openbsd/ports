@@ -13,7 +13,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
+SITES =		http://www.zmanda.com/downloads/community/ZRM-MySQL/$V/Source/
 
 RUN_DEPENDS =	archivers/gtar \
 		databases/p5-DBD-mysql \

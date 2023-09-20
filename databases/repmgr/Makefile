@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pq
 
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	USE_PGXS=1

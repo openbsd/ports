@@ -12,7 +12,7 @@ MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.web2ldap.de/download/
+SITES =		https://www.web2ldap.de/download/
 
 MODULES =	lang/python
 

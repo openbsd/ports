@@ -5,7 +5,7 @@ CATEGORIES =	databases
 SHARED_LIBS =	cdb	0.0
 
 HOMEPAGE =	http://www.corpit.ru/mjt/tinycdb.html
-MASTER_SITES =	http://www.corpit.ru/mjt/tinycdb/
+SITES =		http://www.corpit.ru/mjt/tinycdb/
 
 MAINTAINER =	Christian Rueger <cr+openbsd@rueger-net.de>
 

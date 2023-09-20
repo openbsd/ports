@@ -4,7 +4,7 @@ COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
 DISTNAME=	db-${VERSION}
 CATEGORIES=	databases
 HOMEPAGE=	https://www.oracle.com/database/technologies/related/berkeleydb.html
-MASTER_SITES=	https://download.oracle.com/berkeley-db/
+SITES=		https://download.oracle.com/berkeley-db/
 
 # License: BSD + SleepyCat's additions.
 # Must purchase license to redistribute if not distributing the source.

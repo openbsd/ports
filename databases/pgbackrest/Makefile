@@ -10,7 +10,7 @@ MAINTAINER = 		Pavel Korovin <pvk@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/pgbackrest/pgbackrest/archive/release/
+SITES =		https://github.com/pgbackrest/pgbackrest/archive/release/
 DISTFILES =		pgbackrest-{}${V}.tar.gz
 
 WRKDIST =		${WRKDIR}/pgbackrest-release-${V}

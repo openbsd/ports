@@ -16,7 +16,7 @@ HOMEPAGE =	https://www.pgbarman.org/
 PERMIT_PACKAGE =	Yes
 
 # generated tars are available in /releases/, but lack tests
-#MASTER_SITES =	https://github.com/EnterpriseDB/barman/releases/download/release%2F${MODPY_EGG_VERSION}/
+#SITES =	https://github.com/EnterpriseDB/barman/releases/download/release%2F${MODPY_EGG_VERSION}/
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools

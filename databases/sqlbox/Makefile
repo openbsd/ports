@@ -6,7 +6,7 @@ CATEGORIES =		databases
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://kristaps.bsd.lv/sqlbox/
-MASTER_SITES =		https://kristaps.bsd.lv/sqlbox/snapshots/
+SITES =			https://kristaps.bsd.lv/sqlbox/snapshots/
 
 # ISC
 PERMIT_PACKAGE =	Yes

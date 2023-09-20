@@ -21,7 +21,7 @@ HOMEPAGE =	https://www.mongodb.com/
 # (later versions: fmt: MIT)
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://fastdl.mongodb.org/src/
+SITES =		https://fastdl.mongodb.org/src/
 FIX_CRLF_FILES = src/third_party/IntelRDFPMathLib*/LIBRARY/src/bid_functions.h
 
 MODULES =	devel/scons \

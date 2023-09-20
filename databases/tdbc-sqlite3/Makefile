@@ -11,7 +11,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
+SITES =			${SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread sqlite3 z
 
-MASTER_SITES =		http://www.tildeslash.com/libzdb/dist/
+SITES =			http://www.tildeslash.com/libzdb/dist/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

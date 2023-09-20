@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES =		https://git.openldap.org/openldap/openldap/-/archive/LMDB_${VERSION}/
+SITES =	https://git.openldap.org/openldap/openldap/-/archive/LMDB_${VERSION}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

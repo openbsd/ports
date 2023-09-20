@@ -10,7 +10,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 WANTLIB =		iodbcinst m pthread sqlite3 z
 LIB_DEPENDS =		databases/iodbc databases/sqlite3
 AUTOCONF_VERSION =	2.63

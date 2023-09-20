@@ -32,7 +32,7 @@ WANTLIB-python=	intl m pthread tdb util
 # Extra
 WANTLIB-python+=${MODPY_WANTLIB}
 
-MASTER_SITES=	https://download.samba.org/pub/tdb/
+SITES=		https://download.samba.org/pub/tdb/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

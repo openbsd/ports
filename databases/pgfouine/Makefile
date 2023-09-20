@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 # XXX likely to be broken with php>=5; version in PORTROACH site may work
 PORTROACH =	site:https://github.com/milo/pgFouine/archive/
-MASTER_SITES =	https://ftp.postgresql.org/pub/projects/pgFoundry/pgfouine/pgFouine/pgFouine$V/
+SITES =		https://ftp.postgresql.org/pub/projects/pgFoundry/pgfouine/pgFouine/pgFouine$V/
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		c iconv
 
-MASTER_SITES =		https://www.spinnaker.de/lbdb/download/
+SITES =			https://www.spinnaker.de/lbdb/download/
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main}
 LIB_DEPENDS-main =	converters/libiconv

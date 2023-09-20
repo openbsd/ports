@@ -11,7 +11,7 @@ PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi-drivers/}
+SITES =			${SITE_SOURCEFORGE:=libdbi-drivers/}
 
 MULTI_PACKAGES =	-main -pgsql -sqlite3 -freetds
 

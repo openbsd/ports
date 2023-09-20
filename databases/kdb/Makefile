@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml c icui18n icuuc m mariadb pq sqlite3
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdb/src/}}
+SITES =		${SITE_KDE:=stable/kdb/src/}}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/cmake \

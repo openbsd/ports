@@ -7,7 +7,7 @@ SHARED_LIBS +=  gdbm                 7.0      # 6.0
 
 HOMEPAGE=		https://www.gnu.org/software/gdbm/
 
-MASTER_SITES=		${MASTER_SITE_GNU:=gdbm/}
+SITES=			${SITE_GNU:=gdbm/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

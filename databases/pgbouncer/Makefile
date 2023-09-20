@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB = 	c event_core event_extra crypto ssl
 
-MASTER_SITES = 	https://pgbouncer.github.io/downloads/files/${V}/
+SITES = 	https://pgbouncer.github.io/downloads/files/${V}/
 
 LIB_DEPENDS =	devel/libevent2
 

@@ -6,9 +6,9 @@ CATEGORIES=		databases sysutils
 HOMEPAGE=		https://pgcluu.darold.net/
 
 # BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pgcluu/}
+SITES=			${SITE_SOURCEFORGE:=pgcluu/}
 
 MODULES=		perl
 CONFIGURE_STYLE=	perl

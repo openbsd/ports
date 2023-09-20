@@ -6,7 +6,7 @@ EXTRACT_SUFX=	.tar.bz2
 PKGNAME =	p5-GDBM_File-1.26.3
 CATEGORIES=	databases perl5
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../src/}
+SITES=		${SITE_PERL_CPAN:=../../src/}
 
 # perl
 PERMIT_PACKAGE=	Yes

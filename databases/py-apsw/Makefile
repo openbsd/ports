@@ -13,7 +13,7 @@ HOMEPAGE =	https://rogerbinns.github.io/apsw/
 # zlib
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/rogerbinns/apsw/releases/download/${MODPY_EGG_VERSION}${DISTVERSIONSUFFIX}/
+SITES =		https://github.com/rogerbinns/apsw/releases/download/${MODPY_EGG_VERSION}${DISTVERSIONSUFFIX}/
 
 EXTRACT_SUFX =	.zip
 

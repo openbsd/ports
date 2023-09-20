@@ -11,7 +11,7 @@ MAINTAINER=	Paul Irofti <paul@irofti.net>
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://ftp.postgresql.org/pub/odbc/versions/src/
+SITES=			https://ftp.postgresql.org/pub/odbc/versions/src/
 
 LIB_DEPENDS =		databases/postgresql>=10.3 \
 			databases/iodbc

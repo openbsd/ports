@@ -46,13 +46,13 @@ EXTRACT_ONLY +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz
 MODGO_LDFLAGS =	-X main.version=${MODGO_VERSION:S/v//}
 
 # fetch compiled ui assets
-MASTER_SITES0 =	https://github.com/influxdata/ui/releases/download/OSS-${MODGO_VERSION}/
-DISTFILES +=	influxdb-ui-${MODGO_VERSION}.tar.gz{build.tar.gz}:0
+SITES.ui =	https://github.com/influxdata/ui/releases/download/OSS-${MODGO_VERSION}/
+DISTFILES.ui =	influxdb-ui-${MODGO_VERSION}.tar.gz{build.tar.gz}
 EXTRACT_ONLY +=	influxdb-ui-${MODGO_VERSION}.tar.gz
 # sha comes from ${WRKSRC}/scripts/fetch-swagger.sh
 OPENAPI_SHA =	8b5f1bbb2cd388eb454dc9da19e3d2c4061cdf5f
-MASTER_SITES1 =	https://github.com/influxdata/openapi/raw/${OPENAPI_SHA}/contracts/
-DISTFILES +=	influxdb-openapi-${OPENAPI_SHA}.json{oss.json}:1
+SITES.json =	https://github.com/influxdata/openapi/raw/${OPENAPI_SHA}/contracts/
+DISTFILES.json =influxdb-openapi-${OPENAPI_SHA}.json{oss.json}
 # tell go to bundle web ui assets in binary
 MODGO_FLAGS +=	-tags assets
 

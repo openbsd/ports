@@ -12,9 +12,9 @@ HOMEPAGE=	http://sourceforge.net/projects/sqsh/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c ct>=2 iconv curses m pthread readline
+WANTLIB += 	c ct>=2 iconv curses m pthread readline
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sqsh/}
+SITES=		${SITE_SOURCEFORGE:=sqsh/}
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/freetds

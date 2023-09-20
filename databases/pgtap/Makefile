@@ -9,7 +9,7 @@ HOMEPAGE =	https://pgtap.org/
 # PostgreSQL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://api.pgxn.org/dist/pgtap/${V}/
+SITES =		https://api.pgxn.org/dist/pgtap/${V}/
 MODULES =	databases/postgresql
 
 SUBST_VARS +=	V

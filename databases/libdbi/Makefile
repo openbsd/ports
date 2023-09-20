@@ -4,7 +4,7 @@ CATEGORIES =		databases
 SHARED_LIBS +=		dbi 1.0
 
 HOMEPAGE =		http://libdbi.sourceforge.net/
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdbi/}
+SITES =			${SITE_SOURCEFORGE:=libdbi/}
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

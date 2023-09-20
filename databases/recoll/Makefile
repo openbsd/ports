@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.lesbonscomptes.com/recoll/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.lesbonscomptes.com/recoll/
+SITES=		https://www.lesbonscomptes.com/recoll/
 
 # C++11
 COMPILER=	base-clang ports-gcc

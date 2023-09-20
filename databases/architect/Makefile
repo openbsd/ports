@@ -4,7 +4,7 @@ COMMENT=		database exploration/builder written in Java
 
 V=			1.0.6
 DISTNAME=		SQL-Power-Architect-generic-jdbc-${V}
-MASTER_SITES=		http://download.sqlpower.ca/architect/${V}/community/
+SITES=			http://download.sqlpower.ca/architect/${V}/community/
 PKGNAME=		architect-${V}
 CATEGORIES=		databases
 WRKDIST=		${WRKDIR}/architect-${V}

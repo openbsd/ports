@@ -13,7 +13,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://www.percona.com/redir/downloads/percona-toolkit/${V}/
+SITES =		http://www.percona.com/redir/downloads/percona-toolkit/${V}/
 
 RUN_DEPENDS =	databases/p5-DBD-mysql>=3.0 \
 		sysutils/flock

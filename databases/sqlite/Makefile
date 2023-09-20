@@ -5,7 +5,7 @@ REVISION =	5
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite               8.6      # .0.0
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.sqlite.org/
 

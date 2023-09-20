@@ -12,7 +12,7 @@ HOMEPAGE=	https://puppet.com/docs/puppetdb/
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
-MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
+SITES=		https://downloads.puppetlabs.com/puppetdb/
 
 # Apachev2
 PERMIT_PACKAGE=	Yes

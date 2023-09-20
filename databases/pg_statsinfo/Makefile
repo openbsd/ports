@@ -8,7 +8,7 @@ HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pgstatsinfo/}
+SITES=		${SITE_SOURCEFORGE:=pgstatsinfo/}
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	USE_PGXS=1 CFLAGS="-DPG_USE_INLINE" LDFLAGS=-lkvm

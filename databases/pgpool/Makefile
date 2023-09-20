@@ -14,7 +14,7 @@ SHARED_LIBS=  pcp	0.0
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.pgpool.net/mediawiki/images/
+SITES=			https://www.pgpool.net/mediawiki/images/
 
 WANTLIB= 		c crypto m pq ssl pthread
 

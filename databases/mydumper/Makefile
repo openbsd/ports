@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c crypto glib-2.0 gthread-2.0 m iconv mariadb
 WANTLIB +=	pcre ssl z
 
-MASTER_SITES =	https://launchpad.net/mydumper/${V:R}/${V}/+download/
+SITES =		https://launchpad.net/mydumper/${V:R}/${V}/+download/
 
 MODULES =	devel/cmake
 BUILD_DEPENDS =	textproc/py-sphinx,python3>=4.0.2

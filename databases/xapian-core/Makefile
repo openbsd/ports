@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX} z
 
-MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
+SITES=		https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11
