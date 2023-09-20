@@ -1,4 +1,4 @@
-SHA256 (cli-v2.34.0.zip) = gGvAfMFRTq1E2a0aCOxKDjkDl1qWWMejI30FSoEm/P0=
+SHA256 (cli-v2.35.0.zip) = g1RMKXmXAlsC8zbSxQQnQbCjxo51e79aNEx3pAqYeNE=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.105.0.mod) = X4d8/qVd81QmYDxnHgs2Ne/tSlCq8FKOMU7/wIEFZwI=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.105.0.zip) = JJxNp89MzDfSpwi/A8Zx55iMaoWz9xJpwGA19MzcE70=
 SHA256 (go_modules/cloud.google.com/go/accessapproval/@v/v1.5.0.mod) = dwzvPNTuoNjjlJrg+8gsSFaI78J3R/k3KhRhSehcJqQ=
@@ -530,7 +530,7 @@ SHA256 (go_modules/gopkg.in/h2non/gock.v1/@v/v1.1.2.zip) = oGf7/77c+jWbAKmKXv2SQ
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (cli-v2.34.0.zip) = 1343570
+SIZE (cli-v2.35.0.zip) = 1345518
 SIZE (go_modules/cloud.google.com/go/@v/v0.105.0.mod) = 1034
 SIZE (go_modules/cloud.google.com/go/@v/v0.105.0.zip) = 553446
 SIZE (go_modules/cloud.google.com/go/accessapproval/@v/v1.5.0.mod) = 948
