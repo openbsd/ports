@@ -1,6 +1,6 @@
 @mode g+s
 @group utmp
-bin/hanterm
+@bin bin/hanterm
 @mode
 @group
 lib/X11/app-defaults/Hanterm

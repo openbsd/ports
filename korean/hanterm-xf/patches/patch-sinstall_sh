@@ -1,6 +1,7 @@
---- sinstall.sh.orig	Wed Sep 20 19:19:43 2006
-+++ sinstall.sh	Wed Sep 20 19:19:54 2006
-@@ -67,7 +67,7 @@
+Index: sinstall.sh
+--- sinstall.sh.orig
++++ sinstall.sh
+@@ -67,7 +67,7 @@ if test -f "$REF_PROG" ; then
  		PROG_GRP=
  		;;
  	.??????s*)

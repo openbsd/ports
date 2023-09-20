@@ -1,6 +1,7 @@
---- Makefile.in.orig	Thu May  4 11:46:59 2006
-+++ Makefile.in	Thu May  4 12:00:00 2006
-@@ -175,15 +175,12 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -175,15 +175,12 @@ install \
  install-bin \
  install-full :: $(BINNAME)$x resize$x $(BINDIR)
  	$(SHELL) $(srcdir)/sinstall.sh "$(INSTALL_PROGRAM)" $(BINNAME)$x  @XTERM_PATH@ $(BINDIR)/$(binary_xterm)
@@ -16,7 +17,7 @@
  
  install \
  install-app \
-@@ -194,9 +191,6 @@
+@@ -194,9 +191,6 @@ install-full :: $(APPSDIR)
  	@echo installing $(APPSDIR)/$(CLASS)-color
  	@sed -e s/$(RESFNAME)/$(CLASS)/ $(srcdir)/$(RESFNAME)-col.ad >XTerm.tmp
  	@$(INSTALL_DATA) XTerm.tmp $(APPSDIR)/$(CLASS)-color
@@ -26,7 +27,7 @@
  	@rm -f XTerm.tmp
  
  install ::
-@@ -219,13 +213,9 @@
+@@ -219,13 +213,9 @@ installdirs: $(INSTALL_DIRS)
  
  uninstall:
  	-$(RM) $(BINDIR)/$(binary_xterm)

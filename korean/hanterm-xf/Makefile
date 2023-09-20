@@ -2,13 +2,14 @@ COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
 V=		2.0.6-177
 DISTNAME=	hanterm-xf-$V
+DISTFILES=	1761-${DISTNAME}${EXTRACT_SUFX}
 CATEGORIES=	korean
 PKGNAME=	hanterm-xf-${V:S/-/./}
-REVISION=	6
+REVISION=	7
 EPOCH=		0
 
-SITES=		http://kldp.net/frs/download.php/3281/
-HOMEPAGE=	http://hanterm-xf.kldp.net
+SITES=		https://kldp.net/hanterm-xf/release/
+HOMEPAGE=	https://hanterm-xf.kldp.net
 
 PERMIT_PACKAGE=	Yes
 
