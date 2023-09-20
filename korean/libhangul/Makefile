@@ -18,7 +18,7 @@ WANTLIB += c iconv intl
 LIB_DEPENDS=	converters/libiconv \
 		devel/gettext,-runtime
 
-MASTER_SITES=	http://kldp.net/hangul/release/
+SITES=		http://kldp.net/hangul/release/
 
 CONFIGURE_STYLE=gnu
 

@@ -7,7 +7,7 @@ PKGNAME=	hanterm-xf-${V:S/-/./}
 REVISION=	6
 EPOCH=		0
 
-MASTER_SITES=	http://kldp.net/frs/download.php/3281/
+SITES=		http://kldp.net/frs/download.php/3281/
 HOMEPAGE=	http://hanterm-xf.kldp.net
 
 PERMIT_PACKAGE=	Yes
