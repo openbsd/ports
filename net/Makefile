@@ -162,7 +162,6 @@
      SUBDIR += ipaudit
      SUBDIR += ipcad
      SUBDIR += ipcalc
-     SUBDIR += ipcheck
      SUBDIR += iperf
      SUBDIR += iperf3
      SUBDIR += ipfm
