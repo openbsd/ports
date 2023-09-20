@@ -1,0 +1,9 @@
+Index: src/common/sandbox.c
+--- src/common/sandbox.c.orig
++++ src/common/sandbox.c
+@@ -1,3 +1,5 @@
++#include <stdio.h>
++#include <unistd.h>
+ #include "config.h"
+ #include "sandbox.h"
+ 

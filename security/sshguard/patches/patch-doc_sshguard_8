@@ -1,7 +1,7 @@
 Index: doc/sshguard.8
 --- doc/sshguard.8.orig
 +++ doc/sshguard.8
-@@ -119,8 +119,8 @@ Set to enable verbose output from sshg\-blocker.
+@@ -124,8 +124,8 @@ Set to enable verbose output from \fBsshg\-blocker\fP\
  .SH FILES
  .INDENT 0.0
  .TP

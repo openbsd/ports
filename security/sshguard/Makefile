@@ -1,17 +1,18 @@
 COMMENT=	protect against brute force attacks on sshd and others
 
-DISTNAME=	sshguard-2.4.2
+DISTNAME=	sshguard-2.4.3
 CATEGORIES=	security
 
 HOMEPAGE=	https://www.sshguard.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sshguard/}
+SITES=		${SITE_SOURCEFORGE:=sshguard/}
 
-MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB+=	c pthread
 
 CONFIGURE_STYLE=gnu

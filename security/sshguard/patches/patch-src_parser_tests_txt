@@ -1,0 +1,13 @@
+Index: src/parser/tests.txt
+--- src/parser/tests.txt.orig
++++ src/parser/tests.txt
+@@ -231,6 +231,9 @@ M
+ imap-login: Aborted login (auth failed, 6 attempts): XYZ rip=2001:db8::a11:beef:7ac0, lip=127.0.0.1
+ 210 2001:db8::a11:beef:7ac0 6 10
+ M
++dovecot: imap-login: Disconnected: Aborted login by logging out (auth failed, 2 attempts in 4 secs): XYZ, method=PLAIN, rip=192.0.2.1, lip=192.168.41.21, TLS, session=<uAr6j8UFtcoC2jhm>, TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
++210 192.0.2.1 4 10
++M
+ 2019-10-15 08:08:52 imap-login: Info: Disconnected (auth failed, 1 attempts in 2 secs): user=<test>, method=PLAIN, rip=172.21.0.1, lip=172.21.0.3, TLS, session=<1MyTfu0USIqsFQAB>
+ 210 172.21.0.1 4 10
+ M
