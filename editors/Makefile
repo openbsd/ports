@@ -54,6 +54,7 @@
      SUBDIR += poke
      SUBDIR += py-neovim,python3
      SUBDIR += py-qscintilla,python3
+     SUBDIR += qownnotes
      SUBDIR += qscintilla
      SUBDIR += scintilla
      SUBDIR += scite
