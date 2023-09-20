@@ -1542,6 +1542,7 @@
      SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
+     SUBDIR += py-python-language-server,python3
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix,python3
