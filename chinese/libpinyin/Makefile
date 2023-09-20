@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c db glib-2.0 iconv intl m pcre2-8
 
-MASTER_SITES =	https://github.com/libpinyin/libpinyin/releases/download/$V/
+SITES =		https://github.com/libpinyin/libpinyin/releases/download/$V/
 
 COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	print/texinfo

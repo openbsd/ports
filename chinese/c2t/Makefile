@@ -8,9 +8,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
-MASTER_SITES0=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
-DISTFILES=	c2t.tar.gz TONEPY.tit:0
+SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
+SITES.dict=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/dict/gb/
+DISTFILES=	c2t.tar.gz 
+DISTFILES.dict= TONEPY.tit
 EXTRACT_ONLY=	c2t.tar.gz
 
 WRKDIST=	${WRKDIR}

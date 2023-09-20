@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= 	c iconv
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=cconv/}
+SITES=		${SITE_GOOGLECODE:=cconv/}
 
 LIB_DEPENDS=	converters/libiconv
 

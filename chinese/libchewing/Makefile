@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	m pthread sqlite3 z
 
-MASTER_SITES =	https://github.com/chewing/libchewing/releases/download/v$V/
+SITES =		https://github.com/chewing/libchewing/releases/download/v$V/
 
 EXTRACT_SUFX=	.tar.bz2
 

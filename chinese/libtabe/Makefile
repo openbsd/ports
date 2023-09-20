@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c lib/db/db=3
 
-MASTER_SITES=	http://www.kpvs.tp.edu.tw/
+SITES=		http://www.kpvs.tp.edu.tw/
 
 LIB_DEPENDS=	databases/db/v3
 

@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
+SITES=		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/
 DISTFILES=	hc-30.tar.gz hc-supp.tab
 EXTRACT_ONLY=	hc-30.tar.gz
 

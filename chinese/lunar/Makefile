@@ -7,7 +7,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=	chinese
 
-MASTER_SITES=   http://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
+SITES=   	http://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/
 
 PERMIT_PACKAGE=	Yes
 
