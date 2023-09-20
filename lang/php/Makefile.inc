@@ -231,7 +231,7 @@ COMMENT-curl=		curl URL library extensions for php
 HOMEPAGE-curl=		https://www.php.net/curl
 LIB_DEPENDS-curl=	net/curl
 WANTLIB-curl=		crypto curl nghttp2 nghttp3 ngtcp2 \
-			ngtcp2_crypto_openssl pthread ssl z
+			ngtcp2_crypto_quictls pthread ssl z
 .if ${BUILD_PACKAGES:M-curl}
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 .endif

@@ -2,7 +2,7 @@ COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor2-2.0.16
 PKGNAME=		${DISTNAME:C/raptor2/raptor/}
 CATEGORIES=		textproc
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  raptor2              0.1      # 0.0
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl iconv icudata icuuc
-WANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB += ssl xml2 xslt yajl z
 
 LIB_DEPENDS=		devel/libyajl \

@@ -2,6 +2,7 @@ COMMENT=	opensource implementation of the OFX specification
 
 V=	0.10.9
 DISTNAME=	libofx-${V}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,7 +20,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl ffi glib-2.0 glibmm-2.4
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl lzma m nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_openssl osp pcre2-8 sigc-2.0 ssl
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls osp pcre2-8 sigc-2.0 ssl
 WANTLIB += xml++-2.6 xml2 z
 
 LIB_DEPENDS=	textproc/opensp \

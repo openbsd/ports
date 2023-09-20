@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
-REVISION=	4
+REVISION=	5
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
@@ -44,7 +44,7 @@ WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gspell-1 gthread-2.0 gtk-3 harfbuzz hunspell-1.7 iconv
 WANTLIB += icudata icuuc intl jpeg lzma m mspack nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_openssl notify pango-1.0 pangocairo-1.0
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-32 pcre2-8 pixman-1 png samplerate
 WANTLIB += secret-1 sndio ssl tiff usbhid wx_baseu-3.2 wx_baseu_net-3.2
 WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2

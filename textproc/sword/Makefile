@@ -3,6 +3,7 @@ COMMENT=	Crosswire's Bible study utility
 V=		1.9.0
 DISTNAME=	sword-${V}
 CATEGORIES=	textproc books
+REVISION=	0
 
 MASTER_SITES=	https://crosswire.org/ftpmirror/pub/sword/source/v${V:R}/
 MASTER_SITES0=	https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/
@@ -22,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c clucene-core clucene-shared crypto
 WANTLIB += curl icudata icui18n icuio icuuc m nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_openssl ssl xapian z
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls ssl xapian z
 
 COMPILER=	base-clang ports-gcc
 

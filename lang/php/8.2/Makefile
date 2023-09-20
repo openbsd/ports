@@ -6,9 +6,11 @@ PHP_PKGSPEC=	>=8.2,<8.3
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=
 
-# keep REVISION-gd >= -stable for 7.3 cycle;
-# libwebp gained additional WANTLIB post 7.3-release
+# keep these REVISIONs >= -stable for 7.3 cycle;
+# libwebp gained additional WANTLIB
 REVISION-gd=	0
+# WANTLIB changed (ngtcp2_crypto_openssl to ngtcp2_crypto_quictls)
+REVISION-curl=	0
 
 AUTOCONF_VERSION=	2.71
 

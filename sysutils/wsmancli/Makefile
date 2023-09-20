@@ -3,6 +3,7 @@ COMMENT=	command line client to run WS-Management requests
 GH_ACCOUNT=	Openwsman
 GH_PROJECT=	wsmancli
 GH_TAGNAME=	v2.6.2
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -12,7 +13,7 @@ HOMEPAGE=	https://github.com/Openwsman/openwsman/wiki/openwsman-command-line-cli
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto curl iconv lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += c crypto curl iconv lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB += pthread ssl wsman wsman_client wsman_curl_client_transport
 WANTLIB += xml2 z
 

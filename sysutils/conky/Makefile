@@ -6,7 +6,7 @@ COMMENT=	light-weight system monitor
 GH_ACCOUNT=	brndnmtthws
 GH_PROJECT=	conky
 GH_TAGNAME=	1.9.0
-REVISION=	23
+REVISION=	24
 
 # remove after updating:
 DISTFILES=	conky_0-{}${GH_TAGNAME}.tar.gz
@@ -17,7 +17,7 @@ CATEGORIES=	sysutils
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODLUA_WANTLIB} X11-xcb c crypto curl curses glib-2.0 iconv
-WANTLIB += intl kvm lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += intl kvm lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB += ossaudio pcre2-8 pthread ssl xcb-shm xml2 z
 
 MODULES=	lang/lua

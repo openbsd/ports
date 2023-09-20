@@ -1,7 +1,7 @@
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1
-REVISION =	3
+REVISION =	4
 PROJECT =	spatialite_gui
 
 LIB_DEPENDS +=	x11/wxWidgets>=3.0.4 \
@@ -21,7 +21,7 @@ WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 geos geos_c geotiff
 WANTLIB += gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += icudata icuuc intl jpeg lz4 lzma m minizip mspack nghttp2
-WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_openssl notify openjp2
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls notify openjp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-32 pcre2-8
 WANTLIB += pixman-1 png pq proj rasterlite2 rttopo samplerate
 WANTLIB += secret-1 sndio spatialite sqlite3 ssl tiff usbhid virtualpg

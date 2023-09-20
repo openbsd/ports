@@ -5,6 +5,8 @@ COMMENT-share=	shared data files for Freeciv
 VERSION=	3.0.8
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
+REVISION-main=	0
+REVISION-client=0
 
 CATEGORIES=	games
 
@@ -17,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.xz
 
 cWANTLIB += bz2 c crypto curl execinfo iconv icudata icuuc intl
-cWANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+cWANTLIB += lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 cWANTLIB += pthread sqlite3 ssl z ${MODLUA_WANTLIB}
 
 WANTLIB-main += readline ${cWANTLIB}

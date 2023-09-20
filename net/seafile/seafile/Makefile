@@ -5,12 +5,13 @@ GH_PROJECT =		seafile
 # this commit is from the "v8.0.10" tag
 GH_COMMIT =		20d59479163492eb309c90499011ab508a4f1ecb
 DISTNAME =		seafile-daemon-9.0.10pl20230410
+REVISION =		0
 
 SHARED_LIBS =		seafile 4.0
 
 WANTLIB += c crypto curl event_core event_extra event_pthreads
 WANTLIB += execinfo ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += iconv intl jansson m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += iconv intl jansson m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB += pcre2-8 pthread searpc sqlite3 ssl uuid websockets z
 WANTLIB += lib/inotify/inotify
 

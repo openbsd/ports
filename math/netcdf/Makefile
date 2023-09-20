@@ -4,7 +4,7 @@ V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	math
 
@@ -18,7 +18,7 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c crypto curl execinfo hdf5 hdf5_hl iconv lzma
-WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl pthread
+WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls pthread
 WANTLIB += ssl xml2 z zip zstd
 
 # curl is needed for DAP support

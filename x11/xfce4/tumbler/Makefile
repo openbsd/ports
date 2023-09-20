@@ -2,7 +2,7 @@ COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
 XFCE_VERSION=	4.18.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	tumbler-1 1.0
 
@@ -19,7 +19,7 @@ WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
 WANTLIB += ${COMPILER_LIBCXX} ass avfilter fribidi unibreak
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
 WANTLIB += vpx x264 x265 xfce4util xvidcore theoradec theoraenc zstd
-WANTLIB += Xau Xdmcp vidstab nghttp3 ngtcp2 ngtcp2_crypto_openssl zimg
+WANTLIB += Xau Xdmcp vidstab nghttp3 ngtcp2 ngtcp2_crypto_quictls zimg
 
 COMPILER =		base-clang ports-gcc base-gcc
 

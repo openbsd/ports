@@ -1,7 +1,7 @@
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.20
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 
@@ -57,7 +57,7 @@ CONFIGURE_ARGS+= --without-libpcsclite \
 .else
 WANTLIB += ssl ltdl pcsclite proxy pskc xmlsec1 xslt
 WANTLIB += crypto curl duktape gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl pcre2-8
+WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls pcre2-8
 LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 		security/oath-toolkit,-pskc \
 		security/pcsc-lite

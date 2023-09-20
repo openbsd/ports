@@ -1,11 +1,12 @@
 PHP_VERSION=	7.4.33
 PHP_PKGSPEC=	<7.5
 REVISION-main=	1
-REVISION-curl=	0
 
-# keep REVISION-gd >= -stable for 7.3 cycle;
-# libwebp gained additional WANTLIB post 7.3-release
+# keep these REVISIONs >= -stable for 7.3 cycle;
+# libwebp gained additional WANTLIB
 REVISION-gd=	1
+# WANTLIB changed (ngtcp2_crypto_openssl to ngtcp2_crypto_quictls)
+REVISION-curl=	1
 
 CONFIGURE_ARGS=	--enable-inline-optimization
 PHP_EXTENSIONS=	-xmlrpc
