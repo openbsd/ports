@@ -1,3 +1,5 @@
+BROKEN-aarch64 = Fails to compile in 3rdparty/lzma/C/7zCrc.c
+
 ONLY_FOR_ARCHS = amd64 aarch64
 DPB_PROPERTIES = parallel
 
@@ -10,10 +12,13 @@ GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://mamedev.org/
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
