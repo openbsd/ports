@@ -10,8 +10,6 @@ HOMEPAGE=	https://github.com/sdgathman/pyspf/
 # Python
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
-
 MODULES=        lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

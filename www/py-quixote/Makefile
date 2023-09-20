@@ -8,7 +8,6 @@ REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://quixote.ca/
-MASTER_SITES=	${HOMEPAGE}releases/
 
 # MIT
 PERMIT_PACKAGE=	Yes
