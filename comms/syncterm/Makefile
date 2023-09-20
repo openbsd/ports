@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 # sdl2 is dlopen()'d
 WANTLIB +=	SDL2 c curses m ossaudio pthread util
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=syncterm/}
+SITES=		${SITE_SOURCEFORGE:=syncterm/}
 EXTRACT_SUFX=	-src.tgz
 
 USE_GMAKE=	Yes

@@ -12,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =	https://distfiles.sigtrap.nl/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MAKE_FLAGS =	CXX="${CXX}" PORTS_CXXFLAGS="${CXXFLAGS}"
 

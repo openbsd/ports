@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 
-MASTER_SITES=	http://www.qsl.net/pg4i/download/
+SITES=		http://www.qsl.net/pg4i/download/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

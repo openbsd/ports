@@ -3,7 +3,7 @@ COMMENT=		data exchange utility for Siemens mobile phones
 DISTNAME=		scmxx-0.9.0
 CATEGORIES=		comms
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scmxx/}
+SITES=			${SITE_SOURCEFORGE:=scmxx/}
 EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2

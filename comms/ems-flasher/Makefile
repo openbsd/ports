@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread usb-1.0
 
-MASTER_SITES =		https://lacklustre.net/projects/ems-flasher/
+SITES =			https://lacklustre.net/projects/ems-flasher/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		devel/libusb1

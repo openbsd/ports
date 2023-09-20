@@ -4,7 +4,7 @@ SIGROK_PROJECT =	sigrok-firmware-fx2lafw-bin
 SIGROK_VERSION =	0.1.7
 
 PKGNAME =		sigrok-firmware-fx2lafw-${SIGROK_VERSION}
-MASTER_SITES =		https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/
+SITES =		https://sigrok.org/download/binary/sigrok-firmware-fx2lafw/
 
 CONFIGURE_STYLE =
 NO_BUILD =		Yes

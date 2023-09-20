@@ -7,7 +7,7 @@ CATEGORIES=	comms
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://ftp.hylafax.org/contrib/tkhylafax/ \
+SITES=		http://ftp.hylafax.org/contrib/tkhylafax/ \
 		ftp://ftp.hylafax.org/contrib/tkhylafax/ \
 		http://mirror.aarnet.edu.au/pub/hylafax/contrib/tkhylafax/ \
 		ftp://ftp.ntua.gr/pub/net/hylafax/contrib/tkhylafax/

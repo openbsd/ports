@@ -16,9 +16,9 @@ WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c fltk
 WANTLIB += fltk_images fontconfig hamlib iconv intl jpeg m png
 WANTLIB += portaudio pthread samplerate sndfile ${COMPILER_LIBCXX} z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fldigi/}
+SITES=		${SITE_SOURCEFORGE:=fldigi/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils
 BUILD_DEPENDS=	textproc/asciidoc

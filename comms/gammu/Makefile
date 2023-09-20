@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl dbi glib-2.0 gobject-2.0 iconv intl m pthread usb-1.0
 
-MASTER_SITES =		https://dl.cihar.com/gammu/releases/
+SITES =			https://dl.cihar.com/gammu/releases/
 
 MODULES =		devel/cmake
 

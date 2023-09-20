@@ -2,7 +2,7 @@ COMMENT=		Bohlin's IrDA utilities
 
 DISTNAME=		birda-1.3
 CATEGORIES=		comms
-MASTER_SITES=		https://ftp.netbsd.org/pub/pkgsrc/distfiles/
+SITES=			https://ftp.netbsd.org/pub/pkgsrc/distfiles/
 
 # BSD
 PERMIT_PACKAGE=	Yes

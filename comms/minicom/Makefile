@@ -2,7 +2,7 @@ COMMENT=	MS-DOS Telix-like serial communication program
 
 DISTNAME=	minicom-2.8
 CATEGORIES=	comms
-MASTER_SITES=	https://salsa.debian.org/minicom-team/minicom/-/archive/2.8/
+SITES=		${HOMEPAGE}/-/archive/2.8/
 
 HOMEPAGE=	https://salsa.debian.org/minicom-team/minicom
 

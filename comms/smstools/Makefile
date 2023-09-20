@@ -13,11 +13,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c mm
 
-MASTER_SITES =	${HOMEPAGE}/packages/
+SITES =		${HOMEPAGE}/packages/
 
 # -fno-common fixes from https://salsa.debian.org/debian-mobcom-team/smstools/-/tree/master/debian/patches
-MASTER_SITES0 =	https://salsa.debian.org/debian-mobcom-team/smstools/-/raw/57a358a9eebbe2ca5639cc526f7027944ed95ea1/debian/patches/
-PATCHFILES =	${DISTNAME}-{}gcc10.patch:0
+SITES.p =		https://salsa.debian.org/debian-mobcom-team/smstools/-/raw/57a358a9eebbe2ca5639cc526f7027944ed95ea1/debian/patches/
+PATCHFILES.p =	${DISTNAME}-{}gcc10.patch
 PATCH_DIST_ARGS = -p2 -d${WRKSRC}
 
 RUN_DEPENDS =	mail/procmail # some scripts use formail(1)

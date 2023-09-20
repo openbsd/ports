@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/serialcomm/fax/}
+SITES=		${SITE_SUNSITE:=apps/serialcomm/fax/}
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 

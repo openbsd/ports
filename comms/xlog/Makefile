@@ -15,7 +15,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += hamlib harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += z
 
-MASTER_SITES=		http://download.savannah.nongnu.org/releases/xlog/ \
+SITES=			http://download.savannah.nongnu.org/releases/xlog/ \
 			https://distfiles.sigtrap.nl/
 
 RUN_DEPENDS=		devel/desktop-file-utils \

@@ -4,7 +4,7 @@ DISTNAME=	flipit-0.3.6
 CATEGORIES=	comms
 REVISION =	0
 
-MASTER_SITES=	http://www.lickey.com/flipit/dist/
+SITES=		${HOMEPAGE}/dist/
 HOMEPAGE=	http://www.lickey.com/flipit/
 
 # MIT

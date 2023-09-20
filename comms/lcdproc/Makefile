@@ -17,7 +17,7 @@ WANTLIB +=		X11 c curses ftdi1 hid kvm pthread png usb-1.0 usb
 
 USE_GMAKE =		Yes
 
-MASTER_SITES =		https://github.com/lcdproc/lcdproc/releases/download/v$V/
+SITES =		https://github.com/lcdproc/lcdproc/releases/download/v$V/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${WITH_APM}" \

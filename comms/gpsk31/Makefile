@@ -20,7 +20,7 @@ WANTLIB += pixman-1 png pthread sndio ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += z gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 GL
 WANTLIB += xcb-shm harfbuzz
 
-MASTER_SITES=		http://www.qsl.net/pg4i/download/
+SITES=			http://www.qsl.net/pg4i/download/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

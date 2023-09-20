@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += Gammu gsmsd m pthread ${MODPY_WANTLIB}
 
-MASTER_SITES =		https://dl.cihar.com/python-gammu/
+SITES =			https://dl.cihar.com/python-gammu/
 
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

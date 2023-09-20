@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	http://www.qpage.org/download/
+SITES=		http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 CONFIGURE_STYLE=gnu
 

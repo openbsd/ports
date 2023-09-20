@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =  c fftw3f fftw3f_threads intl m pthread pulse pulse-simple
 WANTLIB += sndfile
 
-MASTER_SITES =	http://www.whence.com/minimodem/
+SITES =		${HOMEPAGE}
 
 LIB_DEPENDS =	audio/libsndfile \
 		audio/pulseaudio \

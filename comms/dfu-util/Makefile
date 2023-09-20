@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c usb-1.0
 
-MASTER_SITES =		${HOMEPAGE}/releases/
+SITES =			${HOMEPAGE}/releases/
 
 LIB_DEPENDS =		devel/libusb1
 

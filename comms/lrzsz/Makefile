@@ -6,7 +6,7 @@ CATEGORIES=	comms
 
 HOMEPAGE=	https://www.ohse.de/uwe/software/lrzsz.html
 
-MASTER_SITES=	https://www.ohse.de/uwe/releases/
+SITES=		https://www.ohse.de/uwe/releases/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

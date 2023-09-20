@@ -11,7 +11,7 @@ HOMEPAGE=		http://sendpage.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sendpage/}
+SITES=		${SITE_SOURCEFORGE:=sendpage/}
 
 RUN_DEPENDS=	comms/p5-Device-SerialPort \
 		mail/p5-Mail-Tools \

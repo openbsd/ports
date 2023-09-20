@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c fftw3f m pthread usb-1.0
 
-MASTER_SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
+SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.xz
 

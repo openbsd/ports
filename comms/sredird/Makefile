@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	http://www.ibiblio.org/pub/Linux/system/serial/
+SITES=		http://www.ibiblio.org/pub/Linux/system/serial/
 
 NO_TEST=	Yes
 

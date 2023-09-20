@@ -8,7 +8,7 @@ REVISION=	2
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html
 
-MASTER_SITES=	https://github.com/Tlf/tlf/archive/
+SITES=		https://github.com/Tlf/tlf/archive/
 WRKDIST=	${WRKDIR}/tlf-${DISTNAME}
 
 # GPLv2+

@@ -47,9 +47,9 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
 WANTLIB += fftw3f_threads gmp gmpxx gsl gslcblas gsm iconv jack
 WANTLIB += log4cpp m orc-0.4 portaudio qwt zmq
 
-MASTER_SITES =	https://github.com/gnuradio/gnuradio/releases/download/v$V/
+SITES =		https://github.com/gnuradio/gnuradio/releases/download/v$V/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake \
 		lang/python \

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses util
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qodem/}
+SITES =		${SITE_SOURCEFORGE:=qodem/}
 
 USE_GMAKE =	Yes
 

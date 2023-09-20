@@ -20,7 +20,7 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
 WANTLIB += pangocairo-1.0 ssl vte-2.91
 
 # https://git.kraxel.org/cgit/amtterm/
-MASTER_SITES=	https://www.kraxel.org/releases/amtterm/
+SITES=		https://www.kraxel.org/releases/amtterm/
 
 LIB_DEPENDS-term=
 LIB_DEPENDS-main= devel/gettext,-runtime \

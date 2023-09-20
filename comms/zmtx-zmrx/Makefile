@@ -9,7 +9,7 @@ PERMIT_DISTFILES=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
+SITES=		ftp://ftp.netsw.org/net/modem/protocols/zmodem/zmtx-zmrx/
 # see also comp.unix.sources for version 1.0
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
 

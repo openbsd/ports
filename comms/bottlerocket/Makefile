@@ -5,7 +5,7 @@ REVISION =	2
 CATEGORIES=	comms
 
 HOMEPAGE =	http://www.linuxha.com/bottlerocket/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 

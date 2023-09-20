@@ -15,7 +15,7 @@ WANTLIB += c crypto curses iconv readline ssl util
 
 LIB_DEPENDS=		converters/libiconv
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x3270/}
+SITES=			${SITE_SOURCEFORGE:=x3270/}
 
 WRKDIST=		${WRKDIR}/suite3270-4.0
 USE_GMAKE =		Yes

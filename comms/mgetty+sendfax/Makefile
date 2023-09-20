@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m util
 
-MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/${VERSION:R}/
+SITES=		ftp://mgetty.greenie.net/pub/mgetty/source/${VERSION:R}/
 
 RUN_DEPENDS=	print/ghostscript/gnu \
 		graphics/netpbm

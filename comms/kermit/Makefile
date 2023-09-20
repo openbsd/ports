@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses m util
 
-MASTER_SITES =		https://www.kermitproject.org/ftp/kermit/archives/
+SITES =			https://www.kermitproject.org/ftp/kermit/archives/
 
 WRKDIST =		${WRKDIR}
 

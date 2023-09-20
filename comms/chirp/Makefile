@@ -11,7 +11,7 @@ HOMEPAGE=	https://chirp.danplanet.com/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://trac.chirp.danplanet.com/chirp_next/next-${MODPY_EGG_VERSION}/
+SITES=	https://trac.chirp.danplanet.com/chirp_next/next-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 

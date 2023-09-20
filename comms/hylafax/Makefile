@@ -5,7 +5,7 @@ CATEGORIES=		comms
 
 HOMEPAGE=		https://www.HylaFAX.org/
 
-MASTER_SITES=		http://ftp.hylafax.org/source/ \
+SITES=			http://ftp.hylafax.org/source/ \
 			ftp://ftp.hylafax.org/source/ \
 			ftp://ftp.ntua.gr/pub/net/hylafax/source/ \
 			http://mirror.aarnet.edu.au/pub/hylafax/source/

@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m pthread usb-1.0
 
 # http://cgit.osmocom.org/rtl-sdr
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/libusb1
