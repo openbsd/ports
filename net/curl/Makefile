@@ -4,6 +4,7 @@ DISTNAME=	curl-8.3.0
 SHARED_LIBS=	curl                 26.22    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -14,7 +15,7 @@ SITES=		https://curl.se/download/
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	www/nghttp2 www/nghttp3 net/ngtcp2
-WANTLIB=	c crypto pthread nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB=	c crypto pthread nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB+=	ssl z
 
 AUTOCONF_VERSION=2.71
