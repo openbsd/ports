@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	no-asm
 
 INSTALL_TARGET=		install_sw install_ssldirs install_man_docs
 
-SUBST_VARS+=		MAN_PREFIX SHLIBVER
+SUBST_VARS+=		SHLIBVER
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
