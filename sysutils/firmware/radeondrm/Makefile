@@ -1,5 +1,5 @@
 FW_DRIVER=	radeondrm
-FW_VER=		20230804
+FW_VER=		20230919
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,radeon/\*.bin}
