@@ -247,7 +247,7 @@ _MODPY_USERBASE =	${WRKDIR}
 .if ${MODPY_PI:L} == "yes"
 _MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_EGG_VERSION}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
-MASTER_SITES =		${MASTER_SITE_PYPI:=${MODPY_PI_DIR}/}
+SITES =			${SITE_PYPI:=${MODPY_PI_DIR}/}
 HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 .endif
 
