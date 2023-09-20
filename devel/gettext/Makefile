@@ -2,16 +2,16 @@ COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools
 
-VERSION=		0.22
+VERSION=		0.22.2
 DISTNAME=		gettext-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 
-SHARED_LIBS +=  intl                 8.0      # 11.0
-SHARED_LIBS +=  asprintf             2.0      # unknown
-SHARED_LIBS +=  textstyle            0.2      # 2.0
-SHARED_LIBS +=  gettextlib           12.0     # unknown
+SHARED_LIBS +=  intl                 8.0      # 12.0
+SHARED_LIBS +=  asprintf             3.0      # unknown
+SHARED_LIBS +=  textstyle            0.2      # 2.1
+SHARED_LIBS +=  gettextlib           13.0     # unknown
 SHARED_LIBS +=  gettextsrc           10.0     # unknown
-SHARED_LIBS +=  gettextpo            12.0     # 5.9
+SHARED_LIBS +=  gettextpo            12.0     # 5.10
 
 SUBST_VARS=	VERSION
 
