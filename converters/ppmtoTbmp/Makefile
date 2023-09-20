@@ -7,9 +7,9 @@ HOMEPAGE=	http://www.isaac.cs.berkeley.edu/pilot/
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c m netpbm
+WANTLIB=	c m netpbm
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/netpbm" \
 		LDLIBS="-L${LOCALBASE}/lib -lnetpbm -lm"

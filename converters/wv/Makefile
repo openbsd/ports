@@ -16,7 +16,7 @@ WANTLIB =  X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gsf-1 iconv intl jpeg lzma m pcre2-8 png pthread
 WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
-MASTER_SITES =	http://abisource.com/downloads/wv/1.2.9/
+SITES =		http://abisource.com/downloads/wv/1.2.9/
 
 RUN_DEPENDS =	graphics/ImageMagick
 LIB_DEPENDS =	devel/libgsf \

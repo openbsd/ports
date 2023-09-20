@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl
 
-MASTER_SITES=	https://github.com/rrthomas/recode/releases/download/v$V/
+SITES=		https://github.com/rrthomas/recode/releases/download/v$V/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

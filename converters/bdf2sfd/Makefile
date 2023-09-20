@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c
 
-MASTER_SITES =	https://github.com/fcambus/bdf2sfd/releases/download/$V/
+SITES =		https://github.com/fcambus/bdf2sfd/releases/download/$V/
 
 MODULES =	devel/cmake
 

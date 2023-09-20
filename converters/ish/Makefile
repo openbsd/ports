@@ -10,9 +10,8 @@ PERMIT_DISTFILES=	no license
 
 WANTLIB += c
 
-MASTER_SITES=	\
-	${MASTER_SITE_FREEBSD} \
-	http://www.unix.gr.jp/jnetcex/soft/
+SITES=		${SITE_FREEBSD} \
+		http://www.unix.gr.jp/jnetcex/soft/
 
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" CC="${CC}"

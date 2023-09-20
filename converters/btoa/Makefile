@@ -8,7 +8,7 @@ REVISION =	0
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.netsw.org/system/tools/fileutils/encode/
+SITES=		http://www.netsw.org/system/tools/fileutils/encode/
 PATCHFILES=	btoa-5.2-patch1.gz
 
 MAKE_FLAGS=	DESTDIR=${PREFIX}

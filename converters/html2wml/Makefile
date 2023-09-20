@@ -9,8 +9,8 @@ HOMEPAGE =	http://maddingue.free.fr/softwares/html2wml.html.en
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	http://maddingue.free.fr/softwares/download/Html2Wml/ \
-		${MASTER_SITE_SOURCEFORGE:=htmlwml/}
+SITES =		http://maddingue.free.fr/softwares/download/Html2Wml/ \
+		${SITE_SOURCEFORGE:=htmlwml/}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/p5-libwww \

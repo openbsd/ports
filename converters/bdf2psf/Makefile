@@ -12,7 +12,7 @@ HOMEPAGE =	https://packages.debian.org/sid/bdf2psf
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_DEBIAN:=main/c/console-setup/}
+SITES =		${SITE_DEBIAN:=main/c/console-setup/}
 
 WRKDIST =	${WRKDIR}/console-setup
 

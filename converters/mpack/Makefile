@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://ftp.andrew.cmu.edu/pub/mpack/ \
+SITES=		http://ftp.andrew.cmu.edu/pub/mpack/ \
 		https://spacehopper.org/mirrors/
 
 CONFIGURE_STYLE= gnu

@@ -10,7 +10,7 @@ MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmltoman/}
+SITES=			${SITE_SOURCEFORGE:=xmltoman/}
 
 NO_TEST=		Yes
 

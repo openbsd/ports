@@ -2,7 +2,7 @@ COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.17
 CATEGORIES=	converters devel
-MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
+SITES=		${SITE_GNU:=libiconv/}
 
 SHARED_LIBS=	charset		1.1 \
 		iconv		7.1

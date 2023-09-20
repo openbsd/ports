@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-MASTER_SITES=		http://www.mbayer.de/html2text/downloads/ \
+SITES=			http://www.mbayer.de/html2text/downloads/ \
 			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/
 
 COMPILER =		base-clang ports-gcc base-gcc

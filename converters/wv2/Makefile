@@ -4,7 +4,7 @@ REVISION =	4
 DISTNAME=	wv2-0.4.2
 SHARED_LIBS +=	wv2                  4.0      # .1.8
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
+SITES=		${SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://wvware.sourceforge.net/

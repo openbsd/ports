@@ -3,7 +3,7 @@ CATEGORIES =	converters fonts
 HOMEPAGE = 	http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/
 DISTNAME = 	otf2bdf-3.1
 REVISION =	2
-MASTER_SITES =	http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/
+SITES =		http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/
 EXTRACT_SUFX =	.tgz
 
 # BSD

@@ -7,9 +7,9 @@ REVISION =	0
 
 # public domain
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
+WANTLIB=	c
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf no-autoheader

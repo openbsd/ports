@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		iconv
 
-MASTER_SITES =		${MASTER_SITE_GNU:=libunistring/}
+SITES =			${SITE_GNU:=libunistring/}
 
 LIB_DEPENDS =		converters/libiconv
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c intl
 
-MASTER_SITES=	https://waterlan.home.xs4all.nl/dos2unix/
+SITES=		https://waterlan.home.xs4all.nl/dos2unix/
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

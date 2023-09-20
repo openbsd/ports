@@ -6,7 +6,7 @@ HOMEPAGE =		https://www.j3e.de/linux/convmv/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 PKG_ARCH =		*
 

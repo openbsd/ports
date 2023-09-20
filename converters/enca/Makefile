@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m recode
 
-MASTER_SITES=		http://dl.cihar.com/enca/
+SITES=			http://dl.cihar.com/enca/
 
 
 BUILD_DEPENDS=		converters/p5-Unicode-Map8

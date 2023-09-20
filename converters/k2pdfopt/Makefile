@@ -25,7 +25,7 @@ COMMENT =	optimizes PDF/DJVU files for mobile e-readers
 V =		2.42
 DISTNAME =	k2pdfopt_v${V}_src
 PKGNAME =	k2pdfopt-${V}
-MASTER_SITES =	http://willus.com/k2pdfopt/src/
+SITES =		http://willus.com/k2pdfopt/src/
 EXTRACT_SUFX =	.zip
 REVISION =	3
 

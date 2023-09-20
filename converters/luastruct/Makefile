@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.inf.puc-rio.br/~roberto/struct/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 MODULES=	lang/lua
 

@@ -4,7 +4,7 @@ DISTNAME=	d1489-1.5.1
 REVISION=	0
 CATEGORIES=	converters
 
-MASTER_SITES=	http://koi8.pp.ru/dist/
+SITES=		http://koi8.pp.ru/dist/
 EXTRACT_SUFX=	.tgz
 
 # MIT

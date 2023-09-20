@@ -14,7 +14,7 @@ WANTLIB= 		c expat m pcap ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}/releases/ \
+SITES=			${HOMEPAGE}/releases/ \
 			https://distfiles.sigtrap.nl/
 
 MAKE_FLAGS=		WITH_EXPAT=1 \

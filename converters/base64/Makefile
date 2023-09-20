@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.fourmilab.ch/webtools/base64/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 ALL_TARGET=	prog

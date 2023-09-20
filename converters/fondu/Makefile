@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-MASTER_SITES =	http://fondu.sourceforge.net/
+SITES =		http://fondu.sourceforge.net/
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 

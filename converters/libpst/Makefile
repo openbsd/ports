@@ -32,7 +32,7 @@ WANTLIB-python += pst boost_python${MODPY_VERSION:C/\.//g}-mt
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://www.five-ten-sg.com/libpst/packages/
+SITES=			http://www.five-ten-sg.com/libpst/packages/
 
 MULTI_PACKAGES=		-main -python
 

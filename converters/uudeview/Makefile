@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m
 
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 
 CONFIGURE_STYLE =	autoconf dest
 AUTOCONF_VERSION =	2.13

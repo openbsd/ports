@@ -7,7 +7,7 @@ REVISION=	4
 SHARED_LIBS +=	cole                 2.1      # .2.1
 CATEGORIES=	converters
 
-MASTER_SITES=	http://gd.tuwien.ac.at/utils/format-conv/xlHtml/
+SITES=		http://gd.tuwien.ac.at/utils/format-conv/xlHtml/
 HOMEPAGE=	http://chicago.sourceforge.net/xlhtml/
 
 PERMIT_PACKAGE=	Yes

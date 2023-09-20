@@ -3,7 +3,7 @@ COMMENT=	descramble scrambled DVDs
 VER=		1.4.3
 DISTNAME=	libdvdcss-${VER}
 CATEGORIES=	converters
-MASTER_SITES=	https://download.videolan.org/pub/videolan/libdvdcss/${VER}/
+SITES=		https://download.videolan.org/pub/videolan/libdvdcss/${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	dvdcss	4.1

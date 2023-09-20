@@ -6,7 +6,7 @@ MAINTAINER =		Kristaps Dzonsons <kristaps@bsd.lv>
 
 CATEGORIES =		converters databases
 HOMEPAGE =		https://github.com/kristapsdz/sqlite2mdoc
-MASTER_SITES =		https://kristaps.bsd.lv/sqlite2mdoc/snapshots/
+SITES =			https://kristaps.bsd.lv/sqlite2mdoc/snapshots/
 
 # ISC
 PERMIT_PACKAGE =	Yes

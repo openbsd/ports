@@ -7,7 +7,7 @@ CATEGORIES=		converters
 PERMIT_PACKAGE=		restrictive non-commercial license
 PERMIT_DISTFILES=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=devel/lang/c++/}
+SITES=			${SITE_SUNSITE:=devel/lang/c++/}
 
 MAKE_FILE=		makefile.unx
 MAKE_FLAGS=		CXX="${CXX}"
