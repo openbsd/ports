@@ -22,6 +22,8 @@ LIB_DEPENDS =		audio/libmodplug \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/love/mime
 
+PORTROACH =
+
 # delete the liblove.so symlink, .a and .la files; delete the icon for
 # the application/x-love-game mime type too.
 # rename some files to avoid name clashes with other version of love.
