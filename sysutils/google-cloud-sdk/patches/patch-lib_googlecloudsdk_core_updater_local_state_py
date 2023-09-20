@@ -3,7 +3,7 @@ Text from lib/googlecloudsdk/core/updater/update_manager.py.
 Index: lib/googlecloudsdk/core/updater/local_state.py
 --- lib/googlecloudsdk/core/updater/local_state.py.orig
 +++ lib/googlecloudsdk/core/updater/local_state.py
-@@ -55,10 +55,13 @@ class InvalidSDKRootError(Error):
+@@ -54,10 +54,13 @@ class InvalidSDKRootError(Error):
  
    def __init__(self):
      super(InvalidSDKRootError, self).__init__(
