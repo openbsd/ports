@@ -14,7 +14,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.72.0
+V =			1.72.1
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
@@ -22,8 +22,8 @@ BV-aarch64 =		1.72.0-20230825
 BV-amd64 =		1.72.0-20230824
 BV-i386 =		1.72.0-20230825
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.71.0-20230716
-BV-sparc64 =		1.71.1-20230826
+BV-riscv64 =		1.72.0-20230920
+BV-sparc64 =		1.72.0-20230920
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -38,7 +38,7 @@ MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -src
 CATEGORIES =		lang
 
 HOMEPAGE =		https://www.rust-lang.org/
-MAINTAINER =		Sebastien Marie <semarie@online.fr>
+MAINTAINER =		Sebastien Marie <semarie@kapouay.eu.org>
 
 # both MIT and Apache2.0
 # with portions covered by various BSD-like licenses
@@ -49,9 +49,9 @@ WANTLIB-gdb =
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
-MASTER_SITES =		https://static.rust-lang.org/dist/ \
+SITES =			https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
-MASTER_SITES.bsp =	http://kapouay.odns.fr/pub/rust/
+SITES.bsp =		http://kapouay.eu.org/pub/rust/
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	native_bootstrap
@@ -81,7 +81,7 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM ?=	Yes
+USE_EMB_LLVM ?=	No
 
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
@@ -145,8 +145,8 @@ BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
 MODULES +=			lang/clang
-MODCLANG_VERSION=		16
-MODCLANG_COMPILER_LINKS=	No
+MODCLANG_VERSION =		16
+MODCLANG_COMPILER_LINKS =	No
 .else
 WANTLIB-main +=		execinfo
 .endif
