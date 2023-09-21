@@ -1,9 +1,13 @@
 @bin bin/hl
-include/hl.h
-include/hlc.h
-include/hlc_main.c
+include/hl/
+include/hl/hl.h
+include/hl/hlc.h
+include/hl/hlc_main.c
+include/hl/hlmodule.h
+include/hl/opcodes.h
 @bin lib/fmt.hdll
 @lib lib/libhl.so.${LIBhl_VERSION}
+@lib lib/libhl_module.so.${LIBhl_module_VERSION}
 @bin lib/mysql.hdll
 @bin lib/openal.hdll
 @bin lib/sdl.hdll

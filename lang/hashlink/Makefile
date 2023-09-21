@@ -10,9 +10,10 @@ DISTNAME =	hashlink-${V}
 GH_ACCOUNT =	HaxeFoundation
 GH_PROJECT =	hashlink
 GH_TAGNAME =	${V}
-REVISION =	1
+REVISION =	2
 
-SHARED_LIBS =	hl	1.0	# 1.12
+SHARED_LIBS +=	hl		1.0	# 1.12
+SHARED_LIBS +=	hl_module	0.0	# 1.13
 
 CATEGORIES =	lang
 HOMEPAGE =	https://hashlink.haxe.org/
