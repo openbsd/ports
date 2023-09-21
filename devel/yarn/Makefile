@@ -12,7 +12,7 @@ HOMEPAGE =	https://yarnpkg.com/lang/en/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/yarnpkg/yarn/releases/download/${V}/
+SITES =			https://github.com/yarnpkg/yarn/releases/download/${V}/
 
 RUN_DEPENDS =		lang/node
 

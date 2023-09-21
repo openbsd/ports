@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.cmake.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =	https://www.cmake.org/files/v${VER:R}/
+SITES =		https://www.cmake.org/files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE =	Yes

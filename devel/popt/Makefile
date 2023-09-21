@@ -2,7 +2,7 @@ COMMENT=	getopt(3)-like library with a number of enhancements
 
 DISTNAME=	popt-1.16
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.rpm.org/mirror/popt/
+SITES=		http://ftp.rpm.org/mirror/popt/
 REVISION=	2
 
 SHARED_LIBS=	popt	1.0

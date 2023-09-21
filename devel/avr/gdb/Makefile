@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c expat m curses
 
-MASTER_SITES=   	${MASTER_SITE_GNU:=gdb/}
+SITES=   		${SITE_GNU:=gdb/}
 DIST_SUBDIR=		gdb
 
 TEST_DEPENDS=	devel/dejagnu

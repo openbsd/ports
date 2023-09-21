@@ -17,7 +17,7 @@ WANTLIB +=	c
 
 TEST_DEPENDS =	textproc/libxml
 
-MASTER_SITES =	https://github.com/mptre/robsd/releases/download/v${V}/
+SITES =		https://github.com/mptre/robsd/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
 

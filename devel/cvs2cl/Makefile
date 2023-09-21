@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.gz
 PERMIT_PACKAGE=	Yes
 
 WRKDIST=	${WRKDIR}
-MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
+SITES=		http://openbsd.dead-parrot.de/distfiles/
 
 NO_TEST=	Yes
 PKG_ARCH=	*

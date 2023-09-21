@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m pthread
 
-MASTER_SITES =	https://github.com/libcheck/check/releases/download/$V/
+SITES =		https://github.com/libcheck/check/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
 

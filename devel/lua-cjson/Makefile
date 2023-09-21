@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.kyne.com.au/~mark/software/lua-cjson.php
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.kyne.com.au/~mark/software/download/
+SITES=		http://www.kyne.com.au/~mark/software/download/
 
 MODULES=	lang/lua
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}

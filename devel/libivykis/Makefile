@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libivykis/$V/}
+SITES =			${SITE_SOURCEFORGE:=libivykis/$V/}
 
 CONFIGURE_STYLE =	gnu
 

@@ -10,7 +10,7 @@ CATEGORIES =		devel
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://distfiles.sigtrap.nl/
+SITES =			https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE =	gnu
 

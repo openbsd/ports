@@ -5,7 +5,7 @@ SHARED_LIBS=	rttr_core		0.0	# 0.9.6
 DISTFILES = 	${DISTNAME}-src.tar.gz
 REVISION =	1
 
-MASTER_SITES = 	https://github.com/rttrorg/rttr/releases/download/v$V/
+SITES = 	https://github.com/rttrorg/rttr/releases/download/v$V/
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.rttr.org

@@ -3,7 +3,7 @@ COMMENT=	library to provide abstract access to various archives
 DISTNAME=	physfs-3.0.2
 REVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	${HOMEPAGE}downloads/
+SITES=		${HOMEPAGE}downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	physfs		3.0

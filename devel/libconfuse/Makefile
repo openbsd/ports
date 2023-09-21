@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		iconv intl
 
-MASTER_SITES=		https://github.com/martinh/libconfuse/releases/download/v${V}/
+SITES=		https://github.com/martinh/libconfuse/releases/download/v${V}/
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

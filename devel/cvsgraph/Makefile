@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c freetype gd m z
 
 # also https://gitlab.com/bertho/cvsgraph/
-MASTER_SITES=		https://www.vagrearg.org/cvsgraph/release/
+SITES=			https://www.vagrearg.org/cvsgraph/release/
 
 LIB_DEPENDS=		graphics/gd
 

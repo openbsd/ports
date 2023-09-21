@@ -16,7 +16,7 @@ WANTLIB += m ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://hyperrealm.github.io/libconfig/dist/
+SITES=		https://hyperrealm.github.io/libconfig/dist/
 
 CONFIGURE_STYLE=	gnu
 

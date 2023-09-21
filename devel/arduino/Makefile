@@ -9,15 +9,16 @@ GH_PROJECT=	arduino
 GH_TAGNAME=	${V}
 EPOCH=		0
 
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		ArduinoCore-avr-{arduino/ArduinoCore-avr/archive/}${AVR_V}${EXTRACT_SUFX}:0 \
-		Adafruit_Arduino_Boards-{adafruit/Adafruit_Arduino_Boards/archive/}${ADAFRUIT_BOARDS_V}${EXTRACT_SUFX}:0 \
-		arduino-examples-{arduino/arduino-examples/archive/}${EX_V}${EXTRACT_SUFX}:0
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.extra = \
+		ArduinoCore-avr-{arduino/ArduinoCore-avr/archive/}${AVR_V}${EXTRACT_SUFX} \
+		Adafruit_Arduino_Boards-{adafruit/Adafruit_Arduino_Boards/archive/}${ADAFRUIT_BOARDS_V}${EXTRACT_SUFX} \
+		arduino-examples-{arduino/arduino-examples/archive/}${EX_V}${EXTRACT_SUFX}
 
 CATEGORIES=	devel
 HOMEPAGE=	https://www.arduino.cc/
 
-MASTER_SITES0=	https://github.com/
+SITES.extra=	https://github.com/
 
 # arduino core + libraries: LGPLv2.1
 # frontend application: GPLv2 (not shipped yet)

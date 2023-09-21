@@ -13,7 +13,7 @@ MAINTAINER =	Paul Irofti <paul@irofti.net>
 # GPL v2
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB	+=		m ${COMPILER_LIBCXX} gmp

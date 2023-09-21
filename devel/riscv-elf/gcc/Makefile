@@ -12,7 +12,7 @@ DIST_SUBDIR=	gcc
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+SITES=		${SITE_GCC:=releases/gcc-$(VERSION)/}
 
 .if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*

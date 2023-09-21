@@ -12,7 +12,7 @@ HOMEPAGE=	http://ndevilla.free.fr/iniparser/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 WRKDIST=	${WRKDIR}/iniparser
 ALL_TARGET=	default

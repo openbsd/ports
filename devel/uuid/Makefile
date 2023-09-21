@@ -21,7 +21,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/uuid/
 
-MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/uuid/
+SITES=		ftp://ftp.ossp.org/pkg/lib/uuid/
 
 # BSD
 PERMIT_PACKAGE=	Yes

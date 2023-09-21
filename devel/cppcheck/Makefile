@@ -17,7 +17,7 @@ BUILD_DEPENDS =		textproc/docbook-xsl
 
 LIB_DEPENDS =		devel/pcre
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
+SITES =			${SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
 TEST_TARGET =		test

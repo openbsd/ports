@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://github.com/jmmv/lutok/releases/download/${DISTNAME}/
+SITES =		https://github.com/jmmv/lutok/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

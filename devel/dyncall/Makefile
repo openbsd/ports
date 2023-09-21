@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.dyncall.org/
 # ISC-like
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.dyncall.org/r${V}/
+SITES=		http://www.dyncall.org/r${V}/
 
 SEPARATE_BUILD=	Yes
 

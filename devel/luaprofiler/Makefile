@@ -9,7 +9,7 @@ HOMEPAGE=		http://luaprofiler.luaforge.net/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://luaforge.net/frs/download.php/3400/
+SITES=			http://luaforge.net/frs/download.php/3400/
 
 MODULES=		lang/lua
 

@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.peterantoine.me.uk/vtags.html
 # Artistic License
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	http://www.peterantoine.me.uk/downloads/
+SITES =		http://www.peterantoine.me.uk/downloads/
 TAR =		${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS = archivers/gtar

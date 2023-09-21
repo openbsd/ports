@@ -6,7 +6,7 @@ PKGNAME=	riscv-elf-newlib-${VERSION}
 
 HOMEPAGE=	https://sourceware.org/newlib/
 
-MASTER_SITES=	ftp://sourceware.org/pub/newlib/
+SITES=		ftp://sourceware.org/pub/newlib/
 
 EXTRACT_SUFX=	.tar.gz
 

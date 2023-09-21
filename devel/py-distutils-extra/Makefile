@@ -12,7 +12,7 @@ HOMEPAGE=	https://launchpad.net/python-distutils-extra/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://launchpad.net/python-distutils-extra/trunk/${MODPY_EGG_VERSION}/+download/
+SITES=		https://launchpad.net/python-distutils-extra/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools

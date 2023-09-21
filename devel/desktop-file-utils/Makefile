@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c glib-2.0 intl
 
-MASTER_SITES=	https://freedesktop.org/software/desktop-file-utils/releases/
+SITES=		https://freedesktop.org/software/desktop-file-utils/releases/
 
 # -std=gnu11
 COMPILER=	base-clang ports-gcc

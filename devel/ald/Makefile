@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ald/}
+SITES=			${SITE_SOURCEFORGE:=ald/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gtk

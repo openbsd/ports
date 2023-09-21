@@ -12,7 +12,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES = https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v${V}/
+SITES = https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v${V}/
 
 USE_GMAKE=	Yes
 

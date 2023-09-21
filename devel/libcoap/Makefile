@@ -8,7 +8,8 @@ DISTFILES=	libcoap-${GH_TAGNAME}.tar.gz
 REVISION=	2
 
 DTLS_V=		7f8c86e501e690301630029fa9bae22424adf618
-DISTFILES+=	tinydtls-${DTLS_V:C/(........).*/\1/}{${DTLS_V}}.tar.gz:0
+
+DISTFILES.e=	tinydtls-${DTLS_V:C/(........).*/\1/}{${DTLS_V}}.tar.gz
 
 SHARED_LIBS +=  coap-2-tinydtls             2.0 # 2.1
 SHARED_LIBS +=  tinydtls                    0.0 # 
@@ -22,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES0=	https://github.com/eclipse/tinydtls/archive/
+SITES.e=	https://github.com/eclipse/tinydtls/archive/
 
 BUILD_DEPENDS=	devel/cunit \
 		textproc/asciidoc \

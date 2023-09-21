@@ -6,9 +6,9 @@ REVISION =	1
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
+WANTLIB=	c
 
-MASTER_SITES=	http://www.does-not-exist.org/roessler/
+SITES=		http://www.does-not-exist.org/roessler/
 
 CONFIGURE_STYLE=gnu
 

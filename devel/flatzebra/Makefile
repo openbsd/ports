@@ -19,7 +19,7 @@ WANTLIB += pthread webp lzma zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
+SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl-image \

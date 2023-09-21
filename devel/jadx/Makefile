@@ -13,7 +13,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/skylot/jadx/releases/download/v${VERSION}/
+SITES =		https://github.com/skylot/jadx/releases/download/v${VERSION}/
 
 EXTRACT_SUFX =	.zip
 

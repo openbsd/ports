@@ -11,7 +11,7 @@ MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/releases/
+SITES=		${HOMEPAGE}/releases/
 
 MODULES=	lang/python
 

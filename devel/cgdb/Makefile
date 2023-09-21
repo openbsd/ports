@@ -13,7 +13,7 @@ WANTLIB=	${COMPILER_LIBCXX} c curses ereadline m util
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	https://cgdb.me/files/
+SITES=		https://cgdb.me/files/
 
 LIB_DEPENDS=	devel/readline>=6.1p2
 RUN_DEPENDS=	devel/gdb

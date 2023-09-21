@@ -16,7 +16,7 @@ COMPILER_LANGS =	c
 
 WANTLIB +=	c curses m panel pthread util z
 
-MASTER_SITES =	https://fnc.bsdbox.org/tarball/${V}/
+SITES =		https://fnc.bsdbox.org/tarball/${V}/
 
 MAKE_ENV =	MANDIR=/man
 

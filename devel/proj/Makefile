@@ -15,7 +15,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://download.osgeo.org/proj/
+SITES=		http://download.osgeo.org/proj/
 
 # c++11
 COMPILER=		base-clang ports-gcc

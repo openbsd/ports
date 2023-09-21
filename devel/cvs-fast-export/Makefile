@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES=	http://www.catb.org/esr/cvs-fast-export/
+SITES=		http://www.catb.org/esr/cvs-fast-export/
 
 # XXX weird tar, includes files symlinked to themselves
 BUILD_DEPENDS=	archivers/gtar

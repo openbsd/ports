@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS=	ev 3.1 # 4.0
 
 HOMEPAGE =	http://software.schmorp.de/pkg/libev.html
-MASTER_SITES =	http://dist.schmorp.de/libev/ \
+SITES =		http://dist.schmorp.de/libev/ \
 		http://dist.schmorp.de/libev/Attic/
 
 # BSD / GPL

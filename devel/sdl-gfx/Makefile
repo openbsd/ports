@@ -3,7 +3,7 @@ COMMENT=	primitives drawing/other support functions for SDL
 DISTNAME=	SDL_gfx-2.0.25
 PKGNAME=	${DISTNAME:L:S/_/-/}
 CATEGORIES=	devel graphics x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlgfx/}
+SITES=		${SITE_SOURCEFORGE:=sdlgfx/}
 REVISION=	1
 
 SHARED_LIBS=	SDL_gfx	15.0

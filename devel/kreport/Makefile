@@ -23,7 +23,7 @@ WANTLIB += Qt5Positioning Qt5QmlModels Qt5Quick Qt5WebChannel
 WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
 
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kreport/src/}}
+SITES =		${SITE_KDE:=stable/kreport/src/}}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/kf5 \

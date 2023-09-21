@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
 WANTLIB += m pthread samplerate sndio usbhid xcb
 
-MASTER_SITES =	https://www.libsdl.org/projects/SDL_ttf/release/
+SITES =		https://www.libsdl.org/projects/SDL_ttf/release/
 
 COMPILER =	base-clang ports-gcc
 

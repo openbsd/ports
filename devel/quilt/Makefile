@@ -9,7 +9,7 @@ MAINTAINER=		Kent R. Spillner <kspillner@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=quilt/}
+SITES=			${SITE_SAVANNAH:=quilt/}
 
 USE_GMAKE=		Yes
 

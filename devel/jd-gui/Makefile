@@ -13,7 +13,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/java-decompiler/jd-gui/releases/download/v${VERSION}/
+SITES =	https://github.com/java-decompiler/jd-gui/releases/download/v${VERSION}/
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar

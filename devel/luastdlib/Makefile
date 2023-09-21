@@ -6,7 +6,7 @@ PKGNAME=	lua${DISTNAME}
 REVISION=	1
 CATEGORIES=	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/4805/
+SITES=		http://luaforge.net/frs/download.php/4805/
 HOMEPAGE=	http://luaforge.net/projects/stdlib/
 EXTRACT_SUFX=	.zip
 

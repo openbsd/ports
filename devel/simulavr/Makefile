@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.nongnu.org/simulavr/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=simulavr/}
+SITES=		${SITE_SAVANNAH:=simulavr/}
 
 WANTLIB=		c curses
 

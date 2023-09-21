@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pcre serd-0
 
-MASTER_SITES=	https://download.drobilla.net/
+SITES=		https://download.drobilla.net/
 
 EXTRACT_SUFX=	.tar.bz2
 

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m ${MODRUBY_WANTLIB}
 
-MASTER_SITES =		https://spacehopper.org/mirrors/
+SITES =			https://spacehopper.org/mirrors/
 
 MODULES =		lang/ruby
 

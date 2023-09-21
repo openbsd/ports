@@ -5,7 +5,7 @@ REVISION =	6
 CATEGORIES =	devel games
 
 HOMEPAGE =	http://plib.sourceforge.net/
-MASTER_SITES =	${HOMEPAGE}/dist/
+SITES =		${HOMEPAGE}/dist/
 
 # LGPLv2
 PERMIT_PACKAGE =	Yes

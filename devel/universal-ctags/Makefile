@@ -7,7 +7,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://ctags.io/
 
-MASTER_SITES =	https://github.com/universal-ctags/ctags/releases/download/v${V}/
+SITES =	https://github.com/universal-ctags/ctags/releases/download/v${V}/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

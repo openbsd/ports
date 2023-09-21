@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =		c curses
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cscope/}
+SITES =			${SITE_SOURCEFORGE:=cscope/}
 
 CONFIGURE_STYLE =	gnu
 

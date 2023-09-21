@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.catb.org/~esr/rcs-fast-import/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	rcs-fast-import

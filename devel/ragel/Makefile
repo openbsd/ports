@@ -13,7 +13,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://www.colm.net/files/ragel/
+SITES =			http://www.colm.net/files/ragel/
 
 MODULES =		lang/ruby
 

@@ -7,7 +7,7 @@ PKGNAME =	${DISTNAME:S/v//}
 
 SHARED_LIBS +=  coeurl                    0.1 # 0.2.0
 
-MASTER_SITES =	https://nheko.im/nheko-reborn/coeurl/-/archive/${V}/
+SITES =		https://nheko.im/nheko-reborn/coeurl/-/archive/${V}/
 
 # MIT
 PERMIT_PACKAGE =	Yes

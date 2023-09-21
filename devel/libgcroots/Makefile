@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/uim/libgcroots/
 # Boehm GC license, permission to use/copy/modify/distribute
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/uim/libgcroots/releases/download/$V/
+SITES =			https://github.com/uim/libgcroots/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
 

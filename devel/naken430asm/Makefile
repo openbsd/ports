@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.mikekohn.net/micro/naken430asm_msp430_assembler.php
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://downloads.mikekohn.net/naken430asm/
+SITES=			http://downloads.mikekohn.net/naken430asm/
 
 WANTLIB +=		c
 

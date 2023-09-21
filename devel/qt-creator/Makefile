@@ -42,8 +42,8 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5SerialPort Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml c m yaml-cpp
 
-MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
-		https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
+SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
+	https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt5 \
 		lang/clang \

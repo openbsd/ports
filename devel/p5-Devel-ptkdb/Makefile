@@ -9,7 +9,7 @@ HOMEPAGE=	http://ptkdb.sourceforge.net/
 # perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ptkdb/}
+SITES=		${SITE_SOURCEFORGE:=ptkdb/}
 
 MODULES=	cpan
 PKG_ARCH=	*

@@ -14,7 +14,7 @@ MAINTAINER =		Lucas Raab <tuftedocelot@fastmail.fm>
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://download.jetbrains.com/python/
+SITES=			https://download.jetbrains.com/python/
 
 MODULES=		java
 MODJAVA_VER=		17

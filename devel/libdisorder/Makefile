@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 
-MASTER_SITES=	${HOMEPAGE}/releases/
+SITES=		${HOMEPAGE}/releases/
 
 MAKE_FILE=	${FILESDIR}/Makefile
 MAKE_ENV=	SHLIB_MAJOR=${LIBdisorder_VERSION:R} \

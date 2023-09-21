@@ -15,7 +15,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 # C++11
 COMPILER=	base-clang ports-gcc
 
-MASTER_SITES=	https://github.com/skvadrik/re2c/releases/download/$V/
+SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
 
 TEST_DEPENDS=	shells/bash
 

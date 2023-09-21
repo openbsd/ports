@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses iconv pcre2-8 pcre2-posix
 
-MASTER_SITES =	https://github.com/jonas/tig/releases/download/tig-$V/
+SITES =		https://github.com/jonas/tig/releases/download/tig-$V/
 
 BUILD_DEPENDS =	textproc/xmlto
 

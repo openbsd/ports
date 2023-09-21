@@ -27,8 +27,8 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	https://github.com/battleblow/jdk17u/archive/
-MASTER_SITES1=	https://spacehopper.org/mirrors/ \
+SITES=		https://github.com/battleblow/jdk17u/archive/
+SITES.boot=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
@@ -43,9 +43,10 @@ WANTLIB += harfbuzz iconv jpeg lcms2 m png pthread z
 
 NO_TEST=	Yes
 
-SUPDISTFILES+=	openjdk-jdk17u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
-		openjdk-jdk17u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
-		openjdk-jdk17u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1
+SUPDISTFILES.boot= \
+		openjdk-jdk17u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz  \
+		openjdk-jdk17u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz \
+		openjdk-jdk17u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz
 
 COMPILER=	base-clang ports-gcc
 
@@ -61,7 +62,7 @@ BOOT_JDK=	${LOCALBASE}/jdk-17
 .else
 BOOT_JDK_DIST=	openjdk-jdk17u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
 .  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
-DISTFILES+=	${BOOT_JDK_DIST}:1
+DISTFILES.boot=	${BOOT_JDK_DIST}
 .  endif
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 CONFIGURE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs

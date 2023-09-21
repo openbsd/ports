@@ -12,7 +12,7 @@ GH_ACCOUNT =		ocaml
 GH_PROJECT =		dune
 GH_TAGNAME =		${VERSION}
 
-MASTER_SITES = https://github.com/ocaml/dune/releases/download/${VERSION}/
+SITES = 	https://github.com/ocaml/dune/releases/download/${VERSION}/
 EXTRACT_SUFX = .tbz
 
 MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>

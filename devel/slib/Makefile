@@ -7,7 +7,7 @@ DISTNAME =	slib-3b4
 
 HOMEPAGE =	http://people.csail.mit.edu/jaffer/SLIB
 
-MASTER_SITES =	https://groups.csail.mit.edu/mac/ftpdir/scm/ \
+SITES =		https://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		https://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

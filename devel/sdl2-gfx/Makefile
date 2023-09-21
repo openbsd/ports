@@ -17,7 +17,7 @@ WANTLIB += SDL2 m pthread sndio usbhid
 WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss 
 WANTLIB += Xxf86vm samplerate xcb
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sdl2gfx/}
+SITES =		${SITE_SOURCEFORGE:=sdl2gfx/}
 
 LIB_DEPENDS =	devel/sdl2
 

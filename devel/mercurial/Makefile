@@ -10,7 +10,7 @@ HOMEPAGE =		https://www.mercurial-scm.org
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.mercurial-scm.org/release/ \
+SITES =			https://www.mercurial-scm.org/release/ \
 			https://download.tuxfamily.org/jod/devel/mercurial/ \
 			ftp://download.tuxfamily.org/jod/devel/mercurial/
 

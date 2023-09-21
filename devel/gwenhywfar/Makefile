@@ -29,7 +29,7 @@ WANTLIB += pcre2-8 pixman-1 png ssl tasn1 unistring xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm xcb-sync
 WANTLIB += xcb-xfixes xshmfence z zstd
 
-MASTER_SITES=		https://www.aquamaniac.de/rdm/attachments/download/465/
+SITES=			https://www.aquamaniac.de/rdm/attachments/download/465/
 
 MODULES=		x11/qt5
 

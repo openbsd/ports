@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		FLAC audiofile bz2 gcrypt glib-2.0 gpg-error iconv
 WANTLIB +=		intl m ogg pcre2-8 pthread z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
+SITES =			${SITE_SOURCEFORGE:=fuse-emulator/}
 
 LIB_DEPENDS =		devel/glib2 \
 			security/libgcrypt \

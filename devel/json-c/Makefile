@@ -12,7 +12,7 @@ HOMEPAGE=		https://github.com/json-c/json-c/wiki
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://s3.amazonaws.com/json-c_releases/releases/
+SITES =			https://s3.amazonaws.com/json-c_releases/releases/
 
 MODULES=		devel/cmake
 

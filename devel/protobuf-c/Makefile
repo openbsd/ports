@@ -10,7 +10,7 @@ CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/protobuf-c/protobuf-c/wiki
 
-MASTER_SITES=		https://github.com/protobuf-c/protobuf-c/releases/download/v$V/
+SITES=		https://github.com/protobuf-c/protobuf-c/releases/download/v$V/
 
 # New BSD
 PERMIT_PACKAGE =	Yes

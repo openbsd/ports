@@ -23,7 +23,7 @@ CATEGORIES =		devel
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE =		https://spidermonkey.dev/
-MASTER_SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
+SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
 EXTRACT_SUFX =		.tar.xz
 
 # MPLv2

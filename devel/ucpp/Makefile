@@ -3,7 +3,7 @@ REVISION =	1
 COMMENT =	C preprocessor and lexer
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/lpsantil/ucpp
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =		https://distfiles.sigtrap.nl/
 
 PERMIT_PACKAGE =	Yes
 WANTLIB =		c

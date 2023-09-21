@@ -15,7 +15,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=codeworker/} \
+SITES =			${SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/
 DISTNAME =		CodeWorker_SRC${V:S/./_/g}
 EXTRACT_SUFX =		.zip

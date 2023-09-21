@@ -9,7 +9,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 CATEGORIES=		devel
 HOMEPAGE=		http://www.daemon.de/PCRE
 
-MASTER_SITES=		http://www.daemon.de/idisk/Apps/pcre++/
+SITES=			http://www.daemon.de/idisk/Apps/pcre++/
 
 # LGPLv2.1 only
 PERMIT_PACKAGE=	Yes

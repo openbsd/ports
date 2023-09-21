@@ -13,7 +13,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://bitbucket.org/iBotPeaches/apktool/downloads/
+SITES =			https://bitbucket.org/iBotPeaches/apktool/downloads/
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar

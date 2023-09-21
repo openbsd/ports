@@ -8,7 +8,7 @@ REVISION =	5
 SHARED_LIBS=	avcall		1.0 \
 		callback	1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.haible.de/bruno/gnu/
+SITES=		http://www.haible.de/bruno/gnu/
 HOMEPAGE=	http://www.haible.de/bruno/packages-ffcall.html
 
 # GPLv2 only

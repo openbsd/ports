@@ -17,7 +17,7 @@ WANTLIB += m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=log4cpp/}
+SITES=		${SITE_SOURCEFORGE:=log4cpp/}
 
 CONFIGURE_STYLE= gnu
 

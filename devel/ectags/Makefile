@@ -10,7 +10,7 @@ HOMEPAGE=	http://ctags.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ctags/}
+SITES=		${SITE_SOURCEFORGE:=ctags/}
 
 CONFIGURE_STYLE=gnu
 

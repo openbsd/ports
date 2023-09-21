@@ -5,7 +5,7 @@ SHARED_LIBS=	glpk		8.0	# 43.1.3
 
 CATEGORIES=	devel
 HOMEPAGE=	https://www.gnu.org/software/glpk/index.html
-MASTER_SITES=	${MASTER_SITE_GNU:=glpk/}
+SITES=		${SITE_GNU:=glpk/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

@@ -17,7 +17,7 @@ WANTLIB =	c m pcre2-8 ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=swig/}
+SITES =		${SITE_SOURCEFORGE:=swig/}
 
 MODULES =	lang/python \
 		lang/ruby \

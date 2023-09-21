@@ -16,7 +16,7 @@ WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
 WANTLIB += c m modplug ogg opus opusfile pthread samplerate sndio
 WANTLIB += usbhid xcb
 
-MASTER_SITES =	https://www.libsdl.org/projects/SDL_mixer/release/
+SITES =		https://www.libsdl.org/projects/SDL_mixer/release/
 
 LIB_DEPENDS =	audio/libmodplug \
 		audio/opusfile \

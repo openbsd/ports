@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =	https://www.fefe.de/libowfat/
+SITES =		https://www.fefe.de/libowfat/
 
 MAKE_FLAGS =	CC="${CC}" \
 		OPT_REG="${CFLAGS}" OPT_PLUS="${CFLAGS}" \

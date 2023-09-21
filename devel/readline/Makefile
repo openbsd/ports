@@ -17,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += curses
 
-MASTER_SITES =		${MASTER_SITE_GNU:=readline/}
-#MASTER_SITES0 =		${MASTER_SITE_GNU:=readline/${DISTNAME}-patches/}
+SITES =			${SITE_GNU:=readline/}
+#SITES.p =		${SITE_GNU:=readline/${DISTNAME}-patches/}
 CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
 

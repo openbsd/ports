@@ -2,7 +2,7 @@ COMMENT=	GNU Portable Shell Tool
 
 DISTNAME=	shtool-2.0.8
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=shtool/}
+SITES=		${SITE_GNU:=shtool/}
 
 HOMEPAGE=	https://www.gnu.org/software/shtool/
 

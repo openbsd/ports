@@ -23,7 +23,7 @@ WANTLIB += c m
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://doxygen.nl/files/
+SITES=		https://doxygen.nl/files/
 TAR =		${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS = archivers/gtar

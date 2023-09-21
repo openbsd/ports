@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= 		c
 
-MASTER_SITES=		http://www.sigala.it/sandro/files/
+SITES=			http://www.sigala.it/sandro/files/
 
 CONFIGURE_STYLE=	gnu
 

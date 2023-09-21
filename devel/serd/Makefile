@@ -18,7 +18,7 @@ COMPILER_LANGS=	c
 
 WANTLIB +=	c m
 
-MASTER_SITES=	https://download.drobilla.net/
+SITES=		https://download.drobilla.net/
 
 EXTRACT_SUFX=	.tar.bz2
 

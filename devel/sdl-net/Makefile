@@ -5,7 +5,7 @@ DISTNAME=	SDL_net-${V}
 PKGNAME=	sdl-net-${V}
 REVISION=	4
 CATEGORIES=	devel net
-MASTER_SITES=	https://www.libsdl.org/projects/SDL_net/release/ \
+SITES=		https://www.libsdl.org/projects/SDL_net/release/ \
 		http://distcache.freebsd.org/ports-distfiles/
 
 SHARED_LIBS=	SDL_net	2.0

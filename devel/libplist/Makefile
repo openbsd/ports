@@ -14,7 +14,7 @@ HOMEPAGE =		https://www.libimobiledevice.org
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/libimobiledevice/libplist/releases/download/${V}/
+SITES =	https://github.com/libimobiledevice/libplist/releases/download/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += ${COMPILER_LIBCXX} c m

@@ -10,7 +10,7 @@ HOMEPAGE=		http://0pointer.de/lennart/projects/libdaemon/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	--disable-lynx

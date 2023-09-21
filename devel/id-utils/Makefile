@@ -8,7 +8,7 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c iconv intl
 
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/ \
+SITES=		ftp://alpha.gnu.org/gnu/ \
 		ftp://ftp.enst.fr/pub/gnu/gnits/
 
 BUILD_DEPENDS=	devel/gettext,-tools

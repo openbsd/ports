@@ -12,7 +12,7 @@ MAINTAINER=		Rafael Sadowski <rsadowski@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=netbeans/netbeans/${V}/}
+SITES=			${SITE_APACHE:=netbeans/netbeans/${V}/}
 EXTRACT_SUFX=		.zip
 
 MODULES=		java

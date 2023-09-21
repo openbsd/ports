@@ -9,6 +9,6 @@ CATEGORIES=	devel
 # Artistic
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Time/}
+SITES=		${SITE_PERL_CPAN:=Time/}
 
 .include <bsd.port.mk>

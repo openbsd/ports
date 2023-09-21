@@ -3,7 +3,7 @@ COMMENT=	library providing malloc debugging via VM protection
 DISTNAME=	ElectricFence-2.0.5
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=devel/lang/c/}
+SITES=		${SITE_SUNSITE:=devel/lang/c/}
 REVISION=	0
 
 # GPL

@@ -52,7 +52,7 @@ WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1
 WANTLIB += svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =	x11/kde-applications \
 		devel/kf5 \

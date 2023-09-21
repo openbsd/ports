@@ -11,7 +11,7 @@ HOMEPAGE=		https://github.com/omarkohl/pytest-datafiles
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		https://github.com/omarkohl/pytest-datafiles/releases/download/${MODPY_EGG_VERSION}/
+SITES=		https://github.com/omarkohl/pytest-datafiles/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
 

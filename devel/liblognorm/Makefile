@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c estr fastjson
 
-MASTER_SITES =	https://www.liblognorm.com/files/download/
+SITES =		https://www.liblognorm.com/files/download/
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15

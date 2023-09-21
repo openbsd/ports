@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c confuse intl usb-1.0
 
-MASTER_SITES =	https://www.intra2net.com/en/developer/libftdi/download/
+SITES =		https://www.intra2net.com/en/developer/libftdi/download/
 
 EXTRACT_SUFX =	.tar.bz2
 

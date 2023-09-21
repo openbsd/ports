@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/ustuehler/git-cvs
 # BSD
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://github.com/ustuehler/git-cvs/archive/
+SITES =		https://github.com/ustuehler/git-cvs/archive/
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

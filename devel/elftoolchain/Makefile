@@ -7,7 +7,7 @@ CATEGORIES =		devel
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=elftoolchain/}
+SITES =			${SITE_SOURCEFORGE:=elftoolchain/}
 EXTRACT_SUFX =		.tgz
 
 LIBDIR =		${PREFIX}/lib/elftoolchain

@@ -15,9 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	SDL iconv m pthread sndio ${COMPILER_LIBCXX} usbhid
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlmm/}
+SITES=		${SITE_SOURCEFORGE:=sdlmm/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/sdl

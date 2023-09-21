@@ -4,7 +4,7 @@ DISTNAME=	SDL_sound-1.0.3
 PKGNAME=	${DISTNAME:L:S/_/-/}
 REVISION=	3
 CATEGORIES=	devel audio
-MASTER_SITES=	http://offload1.icculus.org/SDL_sound/downloads/
+SITES=		http://offload1.icculus.org/SDL_sound/downloads/
 
 SHARED_LIBS=	SDL_sound	2.0
 

@@ -4,7 +4,7 @@ DISTNAME=	mm-1.4.2
 SHARED_LIBS +=	mm                   13.22    # 14.22
 
 CATEGORIES=	devel
-MASTER_SITES=	https://distfiles.sigtrap.nl/ \
+SITES=		https://distfiles.sigtrap.nl/ \
 		ftp://ftp.ossp.org/pkg/lib/mm/
 
 HOMEPAGE=	http://www.ossp.org/pkg/lib/mm/

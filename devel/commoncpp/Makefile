@@ -5,7 +5,7 @@ DISTNAME=	commoncpp2-${VER}
 PKGNAME=	commoncpp-${VER}
 REVISION=	10
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=commoncpp/}
+SITES=		${SITE_GNU:=commoncpp/}
 
 SHARED_LIBS+=	ccext2		2.0
 SHARED_LIBS+=	ccgnu2		2.0

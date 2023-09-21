@@ -3,7 +3,7 @@ COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 # py3: https://github.com/mhagger/cvs2svn/issues/9
 MODPY_EGG_VERSION=	2.5.0
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
-MASTER_SITES=		https://github.com/mhagger/cvs2svn/releases/download/${MODPY_EGG_VERSION}/
+SITES=			https://github.com/mhagger/cvs2svn/releases/download/${MODPY_EGG_VERSION}/
 
 CATEGORIES=		devel
 

@@ -9,7 +9,7 @@ HOMEPAGE=	http://tkdiff.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkdiff/}
+SITES=		${SITE_SOURCEFORGE:=tkdiff/}
 
 MODULES=	x11/tk
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS}

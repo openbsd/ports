@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 FLAVORS =		erlang25 erlang26
 FLAVOR ?=		erlang25
 
-MASTER_SITES1 = 	https://repo.hex.pm/tarballs/
+SITES.mod = 	https://repo.hex.pm/tarballs/
 
 .if ${FLAVOR:Merlang25} || ${FLAVOR:Merlang26}
 _EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
@@ -31,7 +31,7 @@ HEX_MODULES += \
 
 DISTFILES =		rebar3-{}${GH_TAGNAME}.tar.gz
 .for _m _v in ${HEX_MODULES}
-DISTFILES += ${_m}-${_v}.tar:1
+DISTFILES.mod += ${_m}-${_v}.tar
 .endfor
 
 BUILD_DEPENDS += 	${RUN_DEPENDS}

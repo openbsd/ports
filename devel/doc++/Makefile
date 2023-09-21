@@ -8,11 +8,11 @@ HOMEPAGE=	http://docpp.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c intl m ${COMPILER_LIBCXX}
+WANTLIB=	c intl m ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docpp/}
+SITES=		${SITE_SOURCEFORGE:=docpp/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 RUN_DEPENDS=	print/ghostscript/gnu \
 		print/texlive/base

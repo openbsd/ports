@@ -22,7 +22,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += startup-notification-1 wnck-3 xcb xcb-render xcb-shm xcb-util
 WANTLIB += z
 
-MASTER_SITES =	https://launchpad.net/bamf/${V}/${V}.${P}/+download/
+SITES =		https://launchpad.net/bamf/${V}/${V}.${P}/+download/
 
 COMPILER =	base-clang ports-gcc
 

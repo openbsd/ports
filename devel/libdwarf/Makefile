@@ -20,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c elf>=2 z
 
-MASTER_SITES=		https://www.prevanders.net/
+SITES=			https://www.prevanders.net/
 
 NO_TEST=		Yes
 

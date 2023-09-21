@@ -2,7 +2,7 @@ COMMENT=	Type 1 rasterizer library for UNIX/X11
 
 DISTNAME=	t1lib-5.1.2
 CATEGORIES=	devel textproc
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=libs/graphics/}
+SITES=		${SITE_SUNSITE:=libs/graphics/}
 REVISION=	0
 
 SHARED_LIBS=	t1	6.0

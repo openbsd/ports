@@ -10,11 +10,11 @@ GH_TAGNAME =		${V}
 # `ARCH_ARM7_COMMIT`.
 VECTOR35_ARM64_COMMIT =	9ab2b0be
 VECTOR35_ARMV7_COMMIT =	dde39f69
-MASTER_SITES0 =		https://github.com/radareorg/vector35-arch-arm64/archive/
-MASTER_SITES1 =		https://github.com/radareorg/vector35-arch-armv7/archive/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			vector35-arch-arm64-{}${VECTOR35_ARM64_COMMIT}.tar.gz:0 \
-			vector35-arch-armv7-{}${VECTOR35_ARMV7_COMMIT}.tar.gz:1
+SITES.arm64 =	https://github.com/radareorg/vector35-arch-arm64/archive/
+SITES.armv7 =	https://github.com/radareorg/vector35-arch-armv7/archive/
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.arm64 = 	vector35-arch-arm64-{}${VECTOR35_ARM64_COMMIT}.tar.gz
+DISTFILES.armv7 = 	vector35-arch-armv7-{}${VECTOR35_ARMV7_COMMIT}.tar.gz
 
 # In radare, all libs have the same version.
 LIBV =			9.0	# Upstream lib versions same as ${V}.

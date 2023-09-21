@@ -13,7 +13,7 @@ WANTLIB += c m ${LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://pasmo.speccy.org/bin/
+SITES =			http://pasmo.speccy.org/bin/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu

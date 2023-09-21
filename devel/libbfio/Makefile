@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		pthread
 BUILD_DEPENDS =	
 
-MASTER_SITES =		https://github.com/libyal/libbfio/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libbfio/releases/download/${VERSION}/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man --disable-nls

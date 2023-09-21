@@ -9,7 +9,7 @@ DIST_SUBDIR=	luaalarm-${DATE}
 WRKDIST=	${WRKDIR}/alarm
 CATEGORIES=	devel
 
-MASTER_SITES=	${HOMEPAGE}5.0/
+SITES=		${HOMEPAGE}5.0/
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 
 # PD

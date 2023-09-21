@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =		c c++abi crypto m pthread ssl
 
-MASTER_SITES =		https://objfw.nil.im/downloads/
+SITES =			https://objfw.nil.im/downloads/
 
 COMPILER=		base-clang ports-clang
 

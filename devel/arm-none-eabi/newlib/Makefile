@@ -9,8 +9,8 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 
 HOMEPAGE=	http://sourceware.org/newlib/
 
-MASTER_SITES=	ftp://sourceware.org/pub/newlib/
-#MASTER_SITES=	ftp://sources.redhat.com/pub/newlib/
+SITES=		ftp://sourceware.org/pub/newlib/
+#SITES=		ftp://sources.redhat.com/pub/newlib/
 
 EXTRACT_SUFX=	.tar.gz
 

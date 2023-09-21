@@ -6,7 +6,7 @@ DISTNAME=		libgit2-glib-$V
 SHARED_LIBS += git2-glib-1.0             5.4 # 0.200.0
 
 SUBDIR=			sources/libgit2-glib/${V:R}/
-MASTER_SITES=		${MASTER_SITE_GNOME:=${SUBDIR}}
+SITES=			${SITE_GNOME:=${SUBDIR}}
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson \

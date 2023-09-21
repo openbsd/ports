@@ -13,7 +13,7 @@ MAINTAINER=	Victor Kukshiev <andrey0bolkonsky@gmail.com>
 # GPL + Scintilla License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://download.geany.org/
+SITES=		http://download.geany.org/
 EXTRACT_SUFX=	.tar.bz2
 
 # C++11 

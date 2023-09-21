@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.suckless.org
 # MIT/X, except intmap.c under Plan 9 License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 WANTLIB=	c
 

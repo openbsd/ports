@@ -9,7 +9,7 @@ SHARED_LIBS +=  uv                   4.1      # 1.0
 
 HOMEPAGE =	https://libuv.org/
 
-MASTER_SITES =	https://dist.libuv.org/dist/v${VER}/
+SITES =		https://dist.libuv.org/dist/v${VER}/
 
 # BSD
 PERMIT_PACKAGE = Yes

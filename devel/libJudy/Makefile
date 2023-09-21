@@ -12,7 +12,7 @@ HOMEPAGE=		http://judy.sourceforge.net/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=judy/}
+SITES=			${SITE_SOURCEFORGE:=judy/}
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

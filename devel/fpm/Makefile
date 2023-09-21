@@ -27,7 +27,7 @@ HOMEPAGE =	https://fpm.fortran-lang.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES.fpm =	https://github.com/fortran-lang/fpm/releases/download/v${V}/
+SITES.fpm =	https://github.com/fortran-lang/fpm/releases/download/v${V}/
 
 DISTFILES.fpm =	fpm-${V}.F90
 

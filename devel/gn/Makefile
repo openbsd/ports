@@ -11,7 +11,7 @@ DISTNAME =	gn-${DATE}
 PKGNAME =	gn-${VERSION}
 
 # gn.googlesource.com does not provide stable snapshots
-MASTER_SITES =	https://codeberg.org/vlkrs/gn/archive/
+SITES =		https://codeberg.org/vlkrs/gn/archive/
 
 HOMEPAGE =	https://gn.googlesource.com/gn/
 

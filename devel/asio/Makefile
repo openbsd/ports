@@ -2,7 +2,7 @@ COMMENT=	header-only C++ library for asynchronous I/O programming
 
 DISTNAME=	asio-1.28.0
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asio/}
+SITES=		${SITE_SOURCEFORGE:=asio/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	https://think-async.com/Asio/

@@ -13,7 +13,7 @@ HOMEPAGE =	http://atheme.org/projects/libmowgli.html
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://distfiles.atheme.org/
+SITES =		http://distfiles.atheme.org/
 
 MAKE_ENV =	LIBmowgli_VERSION=${LIBmowgli_VERSION}
 

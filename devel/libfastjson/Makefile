@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/rsyslog/libfastjson
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://download.rsyslog.com/libfastjson/
+SITES =		http://download.rsyslog.com/libfastjson/
 
 CONFIGURE_STYLE =	gnu
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

@@ -5,7 +5,7 @@ CATEGORIES =	devel security
 
 SHARED_LIBS +=	olm	2.0 # 3.2.6
 
-MASTER_SITES =	https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
+SITES =		https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
 
 HOMEPAGE =	https://git.matrix.org/git/olm
 

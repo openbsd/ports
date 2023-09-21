@@ -8,7 +8,7 @@ HOMEPAGE=	https://www.gnu.org/software/gdb/
 
 WANTLIB=	${COMPILER_LIBCXX} c expat m curses pthread z
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
+SITES=		${SITE_GNU:=gdb/}
 DIST_SUBDIR=	gdb
 
 USE_GMAKE=	Yes

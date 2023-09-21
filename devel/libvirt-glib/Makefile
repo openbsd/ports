@@ -12,7 +12,7 @@ SHARED_LIBS += virt-gobject-1.0          2.3 # 0.4000.0
 
 HOMEPAGE=		https://libvirt.org/
 
-MASTER_SITES=		https://libvirt.org/sources/glib/ \
+SITES=			https://libvirt.org/sources/glib/ \
 			ftp://libvirt.org/libvirt/glib/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>

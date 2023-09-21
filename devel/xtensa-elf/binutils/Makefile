@@ -8,7 +8,7 @@ HOMEPAGE=	https://www.gnu.org/software/binutils/
 
 WANTLIB=	c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
+SITES=		${SITE_GNU:=binutils/}
 DIST_SUBDIR=	binutils
 
 USE_LIBTOOL=	No

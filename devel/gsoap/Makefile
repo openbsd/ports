@@ -28,7 +28,7 @@ WANTLIB += c crypto m pthread ssl ${LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsoap2/gSOAP/}
+SITES=			${SITE_SOURCEFORGE:=gsoap2/gSOAP/}
 
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-DWITH_NO_C_LOCALE=1" LDFLAGS="-pthread"

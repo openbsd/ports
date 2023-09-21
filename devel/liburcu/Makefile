@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
 
-MASTER_SITES =		https://lttng.org/files/urcu/
+SITES =			https://lttng.org/files/urcu/
 EXTRACT_SUFX =		.tar.bz2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

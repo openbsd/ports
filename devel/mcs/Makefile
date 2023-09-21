@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB = 	c mowgli
 
-MASTER_SITES =	http://distfiles.atheme.org/
+SITES =		http://distfiles.atheme.org/
 EXTRACT_SUFX =	.tgz
 
 LIB_DEPENDS =	devel/mowgli

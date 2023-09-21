@@ -3,7 +3,7 @@ COMMENT=		CVS-managed project analyzer
 DISTNAME=		cvsplot-1.7.4
 CATEGORIES=		devel
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cvsplot/}
+SITES=			${SITE_SOURCEFORGE:=cvsplot/}
 
 HOMEPAGE=		http://cvsplot.sourceforge.net/
 

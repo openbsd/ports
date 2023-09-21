@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=  c glib-2.0>=1200 gmodule-2.0>=1200 gthread-2.0>=1200 iconv
 WANTLIB+= intl pthread sqlite3>=8 xml2>=9
 
-MASTER_SITES=	http://www.opensync.org/download/releases/${V}/
+SITES=		http://www.opensync.org/download/releases/${V}/
 
 
 SEPARATE_BUILD=	Yes

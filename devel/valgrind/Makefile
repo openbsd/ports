@@ -8,7 +8,7 @@ DISTNAME =		valgrind-${V}
 REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
 
-MASTER_SITES =		https://sourceware.org/pub/valgrind/
+SITES =			https://sourceware.org/pub/valgrind/
 PATCH_DIST_STRIP =	-p0
 
 HOMEPAGE =		https://valgrind.org/

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	https://github.com/liblouis/liblouis/releases/download/v${V}/
+SITES=		https://github.com/liblouis/liblouis/releases/download/v${V}/
 
 MODULES=	lang/python
 

@@ -11,7 +11,7 @@ DISTFILES =	pkg-config-${PKGCONFIG_V}.tar.gz
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-MASTER_SITES =	https://pkg-config.freedesktop.org/releases/
+SITES =		https://pkg-config.freedesktop.org/releases/
 
 # BSD, except pkg.m4 which is GPL
 PERMIT_PACKAGE =	Yes

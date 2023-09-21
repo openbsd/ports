@@ -17,7 +17,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX} otcl>=1
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
+SITES=		${SITE_SOURCEFORGE:=otcl-tclcl/}
 WRKDIST=	${WRKDIR}/tclcl-$V
 
 LIB_DEPENDS=	lang/otcl

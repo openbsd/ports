@@ -4,7 +4,7 @@ V=		2.28.3
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
-MASTER_SITES=	https://www.libsdl.org/release/
+SITES=		https://www.libsdl.org/release/
 
 SHARED_LIBS=	SDL2		0.14	# 2.28.1
 

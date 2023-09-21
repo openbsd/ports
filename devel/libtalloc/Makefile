@@ -32,7 +32,7 @@ COMPILER_LANGS=	c
 WANTLIB-main=	# empty
 WANTLIB-python=	intl m pthread talloc util ${MODPY_WANTLIB}
 
-MASTER_SITES=	https://download.samba.org/pub/talloc/
+SITES=		https://download.samba.org/pub/talloc/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

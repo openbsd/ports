@@ -10,7 +10,7 @@ SHARED_LIBS +=  pcrecpp              3.3      # 0.0
 CATEGORIES=	devel
 DPB_PROPERTIES=	parallel
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pcre/}
+SITES=		${SITE_SOURCEFORGE:=pcre/}
 
 HOMEPAGE=	http://www.pcre.org/
 

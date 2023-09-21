@@ -8,12 +8,12 @@ GH_PROJECT =	cabal-extras
 
 # Overrides cabal.port.mk which would otherwise preempt bsd.port.mk
 DISTNAME =	${GH_PROJECT}-${V}
-DISTFILES =	${GH_DISTFILE} \
-		gentle-introduction-2022.5.tar.gz:1
+DISTFILES =	${GH_DISTFILE}
+DISTFILES.tuto= gentle-introduction-2022.5.tar.gz
 PKGNAME =	${MODCABAL_EXECUTABLES}-${V}
-MASTER_SITES =	${MASTER_SITES_GITHUB}
+SITES =		${SITES_GITHUB}
 
-MASTER_SITES1 =	https://oleg.fi/
+SITES.tuto =	https://oleg.fi/
 
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/phadej/cabal-extras

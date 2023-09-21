@@ -9,8 +9,8 @@ DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
 
 # source tarball for this OpenBSD-specific patch level:
-MASTER_SITES=	https://jggimi.net/codeblocks/
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
+SITES=		https://jggimi.net/codeblocks/
+#SITES=		${SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
 DEBUG_PACKAGES=${BUILD_PACKAGES}
 

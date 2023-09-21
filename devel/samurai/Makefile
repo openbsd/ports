@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://github.com/michaelforney/samurai/releases/download/$V/
+SITES =		https://github.com/michaelforney/samurai/releases/download/$V/
 
 ALL_TARGET =	samu
 

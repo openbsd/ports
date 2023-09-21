@@ -11,7 +11,7 @@ HOMEPAGE=		https://inai.de/projects/libhx/
 # LGPL2/LGPL3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://inai.de/files/libhx/
+SITES=			https://inai.de/files/libhx/
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

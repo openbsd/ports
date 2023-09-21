@@ -10,7 +10,7 @@ HOMEPAGE =	http://www.cvstrac.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 WANTLIB =	c m sqlite3
 LIB_DEPENDS =	databases/sqlite3

@@ -3,7 +3,7 @@ COMMENT=	MPEG video player library with sound support
 DISTNAME=	smpeg-0.4.4
 REVISION=	17
 CATEGORIES=	devel graphics
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 SHARED_LIBS=	smpeg	2.0
 

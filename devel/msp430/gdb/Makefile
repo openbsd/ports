@@ -6,7 +6,7 @@ REVISION=		3
 
 GNU_TOOL=		Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=gdb/}
+SITES=			${SITE_GNU:=gdb/}
 
 RUN_DEPENDS=		devel/msp430/binutils>=2.21.1a \
 			devel/msp430/gcc>=4.6.3

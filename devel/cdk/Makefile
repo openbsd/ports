@@ -18,7 +18,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://invisible-mirror.net/archives/cdk/ \
+SITES=		https://invisible-mirror.net/archives/cdk/ \
 		ftp://ftp.invisible-island.net/cdk/
 
 CONFIGURE_STYLE= gnu

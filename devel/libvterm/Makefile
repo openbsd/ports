@@ -3,7 +3,7 @@ DISTNAME =	libvterm-0.3
 EPOCH =		0
 
 HOMEPAGE =	https://www.leonerd.org.uk/code/libvterm/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 SHARED_LIBS +=  vterm                     2.0 # 0.0
 

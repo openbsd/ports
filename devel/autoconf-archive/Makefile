@@ -10,7 +10,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv3 with Autoconf exception
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=autoconf-archive/}
+SITES=			${SITE_GNU:=autoconf-archive/}
 EXTRACT_SUFX=		.tar.xz
 
 CONFIGURE_STYLE=	gnu

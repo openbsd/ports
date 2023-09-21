@@ -5,7 +5,7 @@ V =		0.3.2
 
 CATEGORIES =	devel
 
-MASTER_SITES =	https://gitlab.tetaneutral.net/mherrb/libstdthreads/-/archive/${V}/
+SITES =	https://gitlab.tetaneutral.net/mherrb/libstdthreads/-/archive/${V}/
 
 SHARED_LIBS +=  stdthreads                0.0 # 0.0
 

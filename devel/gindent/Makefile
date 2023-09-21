@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=indent/}
+SITES=		${SITE_GNU:=indent/}
 
 NO_TEST=	Yes
 BUILD_DEPENDS=	devel/gettext,-runtime \

@@ -6,7 +6,7 @@ DISTNAME=		libmemcached-${VERSION}
 CATEGORIES=		devel misc
 
 HOMEPAGE=		http://libmemcached.org/
-MASTER_SITES=		http://launchpad.net/libmemcached/1.0/${VERSION}/+download/
+SITES=		http://launchpad.net/libmemcached/1.0/${VERSION}/+download/
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

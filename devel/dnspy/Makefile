@@ -9,7 +9,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/0xd4d/dnSpy/releases/download/v${V}/
+SITES =		https://github.com/0xd4d/dnSpy/releases/download/v${V}/
 EXTRACT_SUFX =	.zip
 DIST_SUBDIR =	dnspy-${V}
 MODULES =	lang/mono

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=rcs/}
+SITES=		${SITE_GNU:=rcs/}
 EXTRACT_SUFX=	.tar.xz
 
 RUN_DEPENDS=	textproc/gdiff

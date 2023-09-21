@@ -3,7 +3,7 @@ COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 DISTNAME=	ddd-3.3.12
 REVISION =	16
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
+SITES=		${SITE_GNU:=ddd/}
 
 HOMEPAGE=	https://www.gnu.org/software/ddd/
 

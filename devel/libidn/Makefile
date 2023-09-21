@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 
-MASTER_SITES=		${MASTER_SITE_GNU:=libidn/}
+SITES=			${SITE_GNU:=libidn/}
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

@@ -10,9 +10,10 @@ CATEGORIES =		devel lang
 
 HOMEPAGE =		https://leiningen.org
 
-MASTER_SITES0 =		${MASTER_SITES:S/archive/releases\/download/}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${JAR_FILE}:0
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
+SITES.jar =		${SITES:S/archive/releases\/download/}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.jar =		${JAR_FILE}
+EXTRACT_ONLY =		${DISTFILES}
 
 # EPL
 PERMIT_PACKAGE =	Yes

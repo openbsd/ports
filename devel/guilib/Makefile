@@ -7,7 +7,7 @@ REVISION=	5
 SHARED_LIBS +=	GUI                  2.0      # .0.1
 
 CATEGORIES=	devel graphics
-MASTER_SITES=	${HOMEPAGE}/src/
+SITES=		${HOMEPAGE}/src/
 
 HOMEPAGE=	http://www.libsdl.org/projects/GUIlib/
 

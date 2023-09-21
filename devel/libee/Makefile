@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c estr m
 
-MASTER_SITES =		${HOMEPAGE}/files/download/
+SITES =			${HOMEPAGE}/files/download/
 
 TEST_FLAGS =		CFLAGS+=-I${LOCALBASE}/include
 

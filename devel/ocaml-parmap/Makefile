@@ -8,7 +8,7 @@ DISTNAME =	ocaml-parmap-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
 WRKDIST =	${WRKDIR}/parmap-$V
 PKGNAME =	ocaml-parmap-${V:S/-//}
-MASTER_SITES =	https://github.com/rdicosmo/parmap/archive/
+SITES =		${HOMEPAGE}/archive/
 
 HOMEPAGE =	https://github.com/rdicosmo/parmap
 

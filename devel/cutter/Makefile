@@ -8,10 +8,10 @@ REVISION =	0
 
 # Requires the translations submodule. For the next release there should be a
 # proper vendored tarball and this step should not be needed.
-MASTER_SITES0 =		https://github.com/rizinorg/cutter-translations/archive/
+SITES.t =		https://github.com/rizinorg/cutter-translations/archive/
 TRANSLATIONS_COMMIT =	97429865
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.t = 		cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz
 
 CATEGORIES =	devel
 

@@ -11,7 +11,7 @@ HOMEPAGE=	https://www.gnu.org/software/binutils/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c z
 
-MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
+SITES=		${SITE_GNU:=binutils/}
 DIST_SUBDIR=	binutils
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no

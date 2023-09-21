@@ -18,7 +18,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=		pthread
 
-MASTER_SITES=		${MASTER_SITE_GNUPG:=npth/}
+SITES=			${SITE_GNUPG:=npth/}
 
 CONFIGURE_STYLE=	gnu
 

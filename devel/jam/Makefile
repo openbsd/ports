@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.perforce.com/jam/jam.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.perforce.com/pub/jam/
+SITES=			ftp://ftp.perforce.com/pub/jam/
 EXTRACT_SUFX=		.tar
 NO_TEST=		Yes
 MAKE_FLAGS=		CC="${CC}" CCFLAGS="${CFLAGS}"

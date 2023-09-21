@@ -3,7 +3,7 @@ COMMENT=	GNU make
 DISTNAME=	make-4.4.1
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=make/}
+SITES=		${SITE_GNU:=make/}
 EXTRACT_SUFX=	.tar.lz
 
 HOMEPAGE=	https://www.gnu.org/software/make/

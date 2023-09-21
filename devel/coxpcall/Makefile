@@ -11,7 +11,7 @@ HOMEPAGE =	http://coxpcall.luaforge.net/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://luaforge.net/frs/download.php/3406/
+SITES =			http://luaforge.net/frs/download.php/3406/
 
 MODULES =		lang/lua
 

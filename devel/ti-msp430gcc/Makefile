@@ -15,7 +15,7 @@ HOMEPAGE =		http://www.ti.com/tool/msp430-gcc-opensource
 # GPLv2+BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/$V/exports/
+SITES =			http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/$V/exports/
 DIST_SUBDIR =		ti-msp430gcc-$V
 DISTFILES =		msp430-gcc-source.tar.bz2 \
 			msp430-gcc-support-files.zip

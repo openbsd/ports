@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += curses iconv pthread
 
-MASTER_SITES=	http://www.clifford.at/stfl/
+SITES=		http://www.clifford.at/stfl/
 
 LIB_DEPENDS=	converters/libiconv
 

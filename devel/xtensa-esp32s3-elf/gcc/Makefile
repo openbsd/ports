@@ -18,9 +18,9 @@ WANTLIB =	${COMPILER_LIBCXX} c gmp isl m mpc mpfr z
 SUBST_VARS +=	V
 
 LIBELF =	libelf-0.8.13
-MASTER_SITES0 =	https://github.com/earlephilhower/esp-quick-toolchain/raw/master/blobs/
+SITES.elf =	https://github.com/earlephilhower/esp-quick-toolchain/raw/master/blobs/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES +=	${LIBELF}${EXTRACT_SUFX}:0
+DISTFILES.elf =	${LIBELF}${EXTRACT_SUFX}
 
 .if ${MACHINE_ARCH} == "powerpc64"
 PATCH_LIST =	patch-* vecstep-*

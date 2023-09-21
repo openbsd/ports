@@ -20,7 +20,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://github.com/harfbuzz/harfbuzz/releases/download/${V}/
+SITES=		https://github.com/harfbuzz/harfbuzz/releases/download/${V}/
 
 WANTLIB-main += c cairo freetype glib-2.0 gobject-2.0 graphite2 m
 

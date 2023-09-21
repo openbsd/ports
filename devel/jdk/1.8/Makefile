@@ -27,8 +27,8 @@ FLAVOR?=
 
 HOMEPAGE=	https://openjdk.java.net/
 
-MASTER_SITES=	https://github.com/battleblow/jdk8u/archive/
-MASTER_SITES1=	https://spacehopper.org/mirrors/ \
+SITES=		https://github.com/battleblow/jdk8u/archive/
+SITES.boot=	https://spacehopper.org/mirrors/ \
 		http://www.intricatesoftware.com/distfiles/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
@@ -40,10 +40,11 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NO_TEST=	Yes
 
-SUPDISTFILES+=	openjdk-jdk8u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
-		openjdk-jdk8u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
-		openjdk-jdk8u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1 \
-		openjdk-jdk8u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz:1
+SUPDISTFILES.boot= \
+		openjdk-jdk8u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz  \
+		openjdk-jdk8u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz \
+		openjdk-jdk8u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz \
+		openjdk-jdk8u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz
 
 COMPILER=	base-clang base-gcc
 
@@ -60,7 +61,7 @@ BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
 BOOT_JDK_DIST=	openjdk-jdk8u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
 .  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || \
       (${MACHINE_ARCH}==aarch64) || (${MACHINE_ARCH}==sparc64)
-DISTFILES+=	${BOOT_JDK_DIST}:1
+DISTFILES.boot=	${BOOT_JDK_DIST}
 .  endif
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
 CONFIGURE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs

@@ -11,7 +11,7 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/semarie/cargo-generate-vendor/releases/download/${V}/
+SITES =	https://github.com/semarie/cargo-generate-vendor/releases/download/${V}/
 
 MAKE_ENV =		BINDIR=${LOCALBASE}/bin \
 			MANDIR=${LOCALBASE}/man/man

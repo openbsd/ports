@@ -16,7 +16,7 @@ WANTLIB += c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=log4cplus/}
+SITES=			${SITE_SOURCEFORGE:=log4cplus/}
 
 MODULES=		devel/cmake
 #CXXFLAGS+=		-fPIC

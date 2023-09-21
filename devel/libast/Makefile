@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xext freetype m pcre xcb
 WANTLIB += xcb-shm z
 
-MASTER_SITES=		http://www.eterm.org/download/
+SITES=			http://www.eterm.org/download/
 
 LIB_DEPENDS=		devel/pcre \
 			graphics/imlib2

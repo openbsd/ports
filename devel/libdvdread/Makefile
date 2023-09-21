@@ -3,7 +3,7 @@ COMMENT =	accessing DVD files
 VER =		6.1.3
 DISTNAME =	libdvdread-${VER}
 CATEGORIES =	devel
-MASTER_SITES =	https://download.videolan.org/pub/videolan/libdvdread/${VER}/
+SITES =		https://download.videolan.org/pub/videolan/libdvdread/${VER}/
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	dvdread		9.0

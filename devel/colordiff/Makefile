@@ -7,7 +7,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.colordiff.org/ \
+SITES =			https://www.colordiff.org/ \
 			https://www.colordiff.org/archive/
 
 MODULES =		perl

@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c ftdi1 hidapi-libusb iconv jim m pthread usb usb-1.0 util
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=openocd/}
+SITES =		${SITE_SOURCEFORGE:=openocd/}
 EXTRACT_SUFX =	.tar.bz2
 
 CONFIGURE_STYLE = gnu

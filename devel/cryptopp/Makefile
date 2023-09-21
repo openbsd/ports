@@ -2,7 +2,7 @@ COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
 
 HOMEPAGE =	https://cryptopp.com/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 V =		8.7.0
 DISTNAME =	cryptopp${V:S/.//g}

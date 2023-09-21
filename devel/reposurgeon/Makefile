@@ -12,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-#MASTER_SITES=	http://www.catb.org/esr/reposurgeon/
+#SITES=	http://www.catb.org/esr/reposurgeon/
 # generated from upstream distfile (.tar.xz) with "go mod vendor"
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 USE_GMAKE=	Yes
 MODULES=	lang/go \

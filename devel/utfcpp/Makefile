@@ -14,7 +14,7 @@ MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=utfcpp/}
+SITES =			${SITE_SOURCEFORGE:=utfcpp/}
 EXTRACT_SUFX =		.zip
 
 NO_TEST =		Yes

@@ -9,7 +9,7 @@ MAINTAINER=	Currell Berry <currellberry@gmail.com>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tkcvs/} \
+SITES=		${SITE_SOURCEFORGE:=tkcvs/} \
 		https://www.twobarleycorns.net/
 
 MODULES=	x11/tk

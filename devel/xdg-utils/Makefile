@@ -9,7 +9,7 @@ REVISION=		0
 
 # use a git checkout; releases are not made regularly
 COMMIT=			1a58bc28f6844898532daf9ee1bf6da7764955a9
-MASTER_SITES=		https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/${COMMIT}/
+SITES=	https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/${COMMIT}/
 WRKDIST=		${WRKDIR}/xdg-utils-${COMMIT}
 EXTRACT_SUFX=		.tar.gz
 
@@ -22,7 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-#MASTER_SITES=		https://portland.freedesktop.org/download/
+#SITES=		https://portland.freedesktop.org/download/
 
 PKG_ARCH=		*
 USE_GMAKE=		Yes

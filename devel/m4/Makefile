@@ -3,7 +3,7 @@ COMMENT=	GNU m4
 DISTNAME=	m4-1.4.18
 REVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=m4/}
+SITES=		${SITE_GNU:=m4/}
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gnu.org/software/m4/

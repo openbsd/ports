@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += 	c usb pthread usb-1.0
 
-MASTER_SITES=	https://alioth-archive.debian.org/releases/libhid/libhid/0.2.16/
+SITES=		https://alioth-archive.debian.org/releases/libhid/libhid/0.2.16/
 
 LIB_DEPENDS = 	devel/libusb-compat
 

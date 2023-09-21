@@ -12,7 +12,7 @@ WANTLIB =		m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=rlog/}
+SITES =			${SITE_GOOGLECODE:=rlog/}
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ DISTNAME =		snare-$V
 CATEGORIES =		devel
 
 HOMEPAGE =		https://tratt.net/laurie/src/snare/
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 EXTRACT_SUFX =		.tgz
 
 MAINTAINER =            Laurence Tratt <laurie@tratt.net>

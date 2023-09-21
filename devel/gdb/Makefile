@@ -11,7 +11,7 @@ MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 # GPLv2 and GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
+SITES=		${SITE_GNU:=gdb/}
 DIST_SUBDIR=	gdb
 EXTRACT_SUFX=	.tar.xz
 

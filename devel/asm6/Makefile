@@ -10,7 +10,7 @@ CATEGORIES =	devel
 # of this software in any fashion."
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	https://3dscapture.com/NES/
+SITES =		https://3dscapture.com/NES/
 
 WRKDIST =	${WRKDIR}
 WANTLIB +=	c

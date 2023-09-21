@@ -22,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Concurrent Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5X11Extras
 WANTLIB += SM X11 Xext archive c m sqlite3 xcb xcb-keysyms
 
-MASTER_SITES =	https://github.com/zealdocs/zeal/releases/download/v${V}/
+SITES =		https://github.com/zealdocs/zeal/releases/download/v${V}/
 
 EXTRACT_SUFX =	.tar.xz
 

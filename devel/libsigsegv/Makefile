@@ -10,7 +10,7 @@ HOMEPAGE =		https://www.gnu.org/software/libsigsegv/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=libsigsegv/}
+SITES =			${SITE_GNU:=libsigsegv/}
 
 SEPARATE_BUILD = 	Yes
 

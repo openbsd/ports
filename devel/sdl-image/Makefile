@@ -4,7 +4,7 @@ DISTNAME=	SDL_image-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
 REVISION=	5
 CATEGORIES=	devel graphics
-MASTER_SITES=	${HOMEPAGE}release/
+SITES=		${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL_image	3.1
 

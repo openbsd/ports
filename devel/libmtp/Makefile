@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gcrypt gpg-error iconv intl pthread usb-1.0
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
+SITES=			${SITE_SOURCEFORGE:=libmtp/}
 
 COMPILER=		base-clang ports-gcc base-gcc
 COMPILER_LANGS=		c

@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext gif jpeg m png sqlite3
 WANTLIB += webp z
 
-MASTER_SITES =		http://dlib.net/files/
+SITES =			http://dlib.net/files/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake

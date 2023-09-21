@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c
 
-MASTER_SITES =	https://github.com/mptre/knfmt/releases/download/v${V}/
+SITES =		https://github.com/mptre/knfmt/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
 

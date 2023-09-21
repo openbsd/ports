@@ -11,7 +11,7 @@ CATEGORIES=		devel
 
 HOMEPAGE=		https://premake.github.io
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=premake/}
+SITES=			${SITE_SOURCEFORGE:=premake/}
 EXTRACT_SUFX=		.zip
 
 # BSD

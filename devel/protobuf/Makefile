@@ -23,7 +23,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m pthread ${COMPILER_LIBCXX} z
 
-MASTER_SITES =		https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
+SITES =	https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
 
 COMPILER =		base-clang ports-gcc
 

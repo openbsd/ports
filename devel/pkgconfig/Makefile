@@ -9,7 +9,7 @@ CATEGORIES=		devel
 REVISION=		2
 
 HOMEPAGE=		https://www.freedesktop.org/software/pkgconfig/
-MASTER_SITES=		https://pkgconfig.freedesktop.org/releases/
+SITES=			https://pkgconfig.freedesktop.org/releases/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

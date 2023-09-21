@@ -10,7 +10,7 @@ HOMEPAGE=		http://vtcl.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vtcl/}
+SITES=			${SITE_SOURCEFORGE:=vtcl/}
 
 MODULES=		x11/tk
 NO_BUILD=		Yes

@@ -16,7 +16,7 @@ WANTLIB += c z zstd
 
 LIB_DEPENDS +=	archivers/zstd
 
-MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
+SITES =		${SITE_GNU:=binutils/}
 
 CONFIGURE_STYLE =	gnu
 

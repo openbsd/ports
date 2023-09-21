@@ -11,7 +11,7 @@ DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 REVISION-main=	2
 CATEGORIES=	devel
-MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
+SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 

@@ -6,9 +6,9 @@ CATEGORIES=	devel
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
+WANTLIB=	c
 
-MASTER_SITES=	https://invisible-mirror.net/archives/rcs-blame/
+SITES=		https://invisible-mirror.net/archives/rcs-blame/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"

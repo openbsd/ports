@@ -6,7 +6,7 @@ PKGNAME=	${DISTNAME:L}
 REVISION=	12
 CATEGORIES=	devel
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
-MASTER_SITES=	${HOMEPAGE}release/
+SITES=		${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL	8.0
 

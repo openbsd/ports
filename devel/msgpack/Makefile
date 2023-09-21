@@ -9,7 +9,7 @@ SHARED_LIBS +=	msgpackc                  2.0 # 2.0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://msgpack.org/
-MASTER_SITES =		https://github.com/msgpack/msgpack-c/releases/download/c-${V}/
+SITES =		https://github.com/msgpack/msgpack-c/releases/download/c-${V}/
 
 # Boost license
 PERMIT_PACKAGE =	Yes

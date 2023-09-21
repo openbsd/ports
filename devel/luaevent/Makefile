@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	event ${MODLUA_WANTLIB}
 
-MASTER_SITES =	http://matthewwild.co.uk/uploads/
+SITES =		http://matthewwild.co.uk/uploads/
 
 MODULES =	lang/lua
 

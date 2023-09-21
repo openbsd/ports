@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		https://distfiles.dereferenced.org/pkgconf/
+SITES =			https://distfiles.dereferenced.org/pkgconf/
 
 TEST_DEPENDS =		devel/kyua-cli
 

@@ -7,7 +7,7 @@ EXTRACT_SUFX =	.zip
 REVISION =	1
 
 HOMEPAGE =	http://vim-taglist.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=vim-taglist/}
+SITES =		${SITE_SOURCEFORGE:=vim-taglist/}
 
 # BSD like license
 PERMIT_PACKAGE =	Yes

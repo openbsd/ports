@@ -13,7 +13,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://download.osgeo.org/geotiff/libgeotiff/
+SITES=			http://download.osgeo.org/geotiff/libgeotiff/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include -fPIC $(COPTS)" \

@@ -8,7 +8,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD style
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://chiselapp.com/user/stwo/repository/tarballia/uv/
+SITES =		https://chiselapp.com/user/stwo/repository/tarballia/uv/
 
 MODULES =	x11/tk
 BUILD_DEPENDS =	devel/tcllib

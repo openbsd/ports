@@ -10,7 +10,7 @@ MAINTAINER =		Dmitri Alenichev <mitya@rockers.su>
 PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 NO_TEST =		Yes
 

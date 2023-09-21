@@ -14,7 +14,7 @@ SHARED_LIBS +=  audiofile            1.0      # 1.0
 
 CATEGORIES=	devel audio
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	https://audiofile.68k.org/
 

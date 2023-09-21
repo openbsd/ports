@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.catb.org/~esr/src/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	src

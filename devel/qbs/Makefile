@@ -14,7 +14,7 @@ HOMEPAGE =	https://doc.qt.io/qbs/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =		https://download.qt.io/official_releases/qbs/${V}/
+SITES =		https://download.qt.io/official_releases/qbs/${V}/
 
 # LGPLv3 or GPLv2+
 PERMIT_PACKAGE =	Yes

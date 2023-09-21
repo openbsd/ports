@@ -16,12 +16,12 @@ MAINTAINER =	Moritz Buhl <mbuhl@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =	codechecker-${GH_TAGNAME}
-MASTER_SITES0 =	https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/
-MASTER_SITES1 =	https://raw.githubusercontent.com/codemirror/CodeMirror/master/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		codemirror.min.js:0 codemirror.min.css:0 \
-		clike.min.js{/mode/clike/clike.min.js}:0 \
-		codemirror.LICENSE{LICENSE}:1
+SITES.a =	https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/
+SITES.b =	https://raw.githubusercontent.com/codemirror/CodeMirror/master/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a = 	codemirror.min.js codemirror.min.css \
+		clike.min.js{/mode/clike/clike.min.js}
+DISTFILES.b= 	codemirror.LICENSE{LICENSE}
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 

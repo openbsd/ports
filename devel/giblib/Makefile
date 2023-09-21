@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += Imlib2 X11 X11-xcb Xext freetype m xcb xcb-shm
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/slackbuildsdirectlinks/giblib/}
+SITES=		${SITE_SOURCEFORGE:=project/slackbuildsdirectlinks/giblib/}
 
 LIB_DEPENDS=		graphics/imlib2
 

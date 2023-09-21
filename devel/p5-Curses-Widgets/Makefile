@@ -7,7 +7,7 @@ DISTNAME=	CursesWidgets-${VERSION}
 REVISION=	4
 CATEGORIES=	devel
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Curses/}
+SITES=		${SITE_PERL_CPAN:=Curses/}
 
 # Artistic 
 PERMIT_PACKAGE=	Yes

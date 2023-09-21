@@ -10,7 +10,7 @@ HOMEPAGE=		http://liboop.ofb.net/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-adns \

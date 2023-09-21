@@ -17,9 +17,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-DISTFILES =	${GH_DISTFILE} \
-		minisat2_2.2.1.orig.tar.gz:0
-MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/m/minisat2/}
+DISTFILES =	${GH_DISTFILE}
+DISTFILES.ex =	minisat2_2.2.1.orig.tar.gz
+SITES.ex =	${SITE_DEBIAN:=main/m/minisat2/}
 
 # C++11
 COMPILER =	base-clang ports-gcc

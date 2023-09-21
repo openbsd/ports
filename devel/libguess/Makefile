@@ -13,7 +13,7 @@ HOMEPAGE =		http://atheme.org/projects/libguess.html
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://rabbit.dereferenced.org/~nenolod/distfiles/
+SITES =			http://rabbit.dereferenced.org/~nenolod/distfiles/
 
 MAKE_ENV =		LIB_MAJOR=${LIBguess_VERSION:R} \
 			LIB_MINOR=${LIBguess_VERSION:E}

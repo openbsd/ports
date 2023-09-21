@@ -11,7 +11,7 @@ HOMEPAGE=	https://pyusb.github.io/pyusb/
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/pyusb/pyusb/releases/download/v${MODPY_EGG_VERSION}/
+SITES=	https://github.com/pyusb/pyusb/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm

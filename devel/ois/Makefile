@@ -20,7 +20,7 @@ WANTLIB =		X11 m ${COMPILER_LIBCXX} xcb
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wgois/}
+SITES =			${SITE_SOURCEFORGE:=wgois/}
 EXTRACT_SUFX =		.zip
 
 # needs libtoolize

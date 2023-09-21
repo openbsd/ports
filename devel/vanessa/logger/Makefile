@@ -6,7 +6,7 @@ REVISION=	1
 
 SHARED_LIBS=	vanessa_logger			1.0	# 0.5
 
-MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_logger/${VERSION}/}
+SITES=	${SITE_VANESSA:=vanessa_logger/${VERSION}/}
 
 WANTLIB=	c
 

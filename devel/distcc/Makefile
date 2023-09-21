@@ -14,7 +14,7 @@ HOMEPAGE =		https://distcc.github.io/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/distcc/distcc/releases/download/v${VERSION}/
+SITES =	https://github.com/distcc/distcc/releases/download/v${VERSION}/
 
 MULTI_PACKAGES =	-main -gtk -server
 

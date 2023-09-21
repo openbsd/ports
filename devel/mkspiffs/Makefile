@@ -9,10 +9,10 @@ CATEGORIES =		devel
 MAINTAINER =		Tracey Emery <tracey@openbsd.org>
 
 SPFS_V =		f5e26c4e933189593a71c6b82cda381a7b21e41c
-MASTER_SITES0 =		https://github.com/pellepl/spiffs/archive/
+SITES.spiffs =		https://github.com/pellepl/spiffs/archive/
 
 DISTFILES =		${GH_PROJECT}-${GH_TAGNAME}${EXTRACT_SUFX}
-DISTFILES +=		spiffs-${SPFS_V}{${SPFS_V}}${EXTRACT_SUFX}:0
+DISTFILES.spiffs = 	spiffs-${SPFS_V}{${SPFS_V}}${EXTRACT_SUFX}
 
 # MIT both mkspiffs and spiffs
 PERMIT_PACKAGE =	Yes

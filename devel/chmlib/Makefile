@@ -2,7 +2,7 @@ COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.jedrea.com/chmlib/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 DISTNAME=	chmlib-0.40
 REVISION =	2

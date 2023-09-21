@@ -18,7 +18,7 @@ MAINTAINER=	Steffen Wendzel <wendzel@hs-worms.de>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 WANTLIB=	c
 

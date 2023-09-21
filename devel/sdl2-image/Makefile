@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender
 WANTLIB += Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy jpeg jxl
 WANTLIB += lcms2 lzma m pthread samplerate sndio tiff usbhid webp xcb z zstd
 
-MASTER_SITES =	https://www.libsdl.org/projects/SDL_image/release/
+SITES =		https://www.libsdl.org/projects/SDL_image/release/
 
 COMPILER =	base-clang ports-gcc
 

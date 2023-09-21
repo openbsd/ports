@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=astyle/}
+SITES=			${SITE_SOURCEFORGE:=astyle/}
 
 # C++11
 COMPILER=		base-clang ports-clang ports-gcc

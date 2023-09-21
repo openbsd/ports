@@ -7,7 +7,7 @@ CATEGORIES =		devel www
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://fossil-scm.org/
-MASTER_SITES =		https://fossil-scm.org/home/tarball/
+SITES =			https://fossil-scm.org/home/tarball/
 DISTFILES =		{66ee0beb9b47d827bde533fe6a1fb2ead4ceb1936468881b4fb621bd6bdfd862/}${DISTNAME}${EXTRACT_SUFX}
 
 

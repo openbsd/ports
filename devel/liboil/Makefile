@@ -3,7 +3,7 @@ COMMENT=	library of optimized inner loops
 DISTNAME=	liboil-0.3.17
 REVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 SHARED_LIBS+=	oil-0.3		4.0
 

@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += lib/db4/db>=4 crypto expat iconv pthread ssl
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
+SITES=		${SITE_APACHE:=apr/}
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/db/v4,no_java,no_tcl

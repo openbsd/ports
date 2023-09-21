@@ -8,7 +8,7 @@ PKGNAME =		${CRATE}-${V}
 
 DISTFILES =		${PKGNAME}${EXTRACT_SUFX}{${CRATE}/${V}/download}
 
-MASTER_SITES =		https://crates.io/api/v1/crates/
+SITES =			https://crates.io/api/v1/crates/
 
 CATEGORIES =		devel
 

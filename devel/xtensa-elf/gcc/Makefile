@@ -12,7 +12,7 @@ SUBST_VARS+=	VERSION
 WANTLIB=	${COMPILER_LIBCXX} c gmp m mpc mpfr
 DIST_SUBDIR=	gcc
 
-MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+SITES= 		${SITE_GCC:=releases/gcc-$(VERSION)/}
 
 COMPILER =	base-clang ports-gcc base-gcc
 

@@ -10,7 +10,7 @@ HOMEPAGE=	https://maven.apache.org/
 # Apache Software License 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=maven/maven-3/${V}/binaries/} \
+SITES=		${SITE_APACHE:=maven/maven-3/${V}/binaries/} \
 		https://archive.apache.org/dist/maven/binaries/
 
 EXTRACT_SUFX=	-bin.tar.gz

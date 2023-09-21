@@ -9,7 +9,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 #MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://download.mono-project.com/sources/nuget/
+SITES =		https://download.mono-project.com/sources/nuget/
 EXTRACT_SUFX =	.tar.xz
 MODULES =	lang/mono
 NO_BUILD =	Yes

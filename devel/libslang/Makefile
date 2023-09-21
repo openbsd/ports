@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tar.bz2
 SHARED_LIBS=	slang 17.0
 
 CATEGORIES=	devel
-MASTER_SITES=	https://www.jedsoft.org/releases/slang/ \
+SITES=		https://www.jedsoft.org/releases/slang/ \
 		https://www.jedsoft.org/releases/slang/old/
 
 HOMEPAGE=	https://jedsoft.org/slang/

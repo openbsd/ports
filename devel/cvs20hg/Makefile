@@ -13,7 +13,7 @@ CATEGORIES=     	devel
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://ww2.fs.ei.tum.de/~corecode/hg/cvs20hg
-MASTER_SITES=		http://hg.recoil.org/dist/
+SITES=			http://hg.recoil.org/dist/
 WRKDIST=		${WRKDIR}/-corecode-hg-cvs20hg-${CHANGESET}
 
 USE_GMAKE=		Yes

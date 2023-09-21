@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m readline z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sdcc/}
+SITES=		${SITE_SOURCEFORGE:=sdcc/}
 
 # clang6 makes sdcc regenerate its configure scripts at *BUILD* time
 # so we need to add the autoconf/automake depends. We don't know

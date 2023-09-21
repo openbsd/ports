@@ -2,7 +2,7 @@
 COMMENT ?=	automatically configure source code on many Un*x platforms
 DISTNAME ?=	autoconf-${VERSION}
 CATEGORIES +=	devel
-MASTER_SITES ?=	${MASTER_SITE_GNU:=autoconf/}
+SITES ?=	${SITE_GNU:=autoconf/}
 
 HOMEPAGE ?=	https://www.gnu.org/software/autoconf/
 MAINTAINER ?=	Marc Espie <espie@openbsd.org>

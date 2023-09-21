@@ -5,7 +5,7 @@ REVISION=		4
 
 GNU_TOOL=		Yes
 
-MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(TOOL_V)/}
+SITES= 			${SITE_GCC:=releases/gcc-$(TOOL_V)/}
 
 DISTFILES=		gcc-core-${TOOL_V}${EXTRACT_SUFX} \
 			gcc-g++-${TOOL_V}${EXTRACT_SUFX}

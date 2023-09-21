@@ -9,7 +9,7 @@ HOMEPAGE=	https://github.com/antirez/lua-cmsgpack
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 MODULES=	lang/lua
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} m pthread
 
-MASTER_SITES=	https://mediaarea.net/download/source/libzen/${VERSION}/
+SITES=		https://mediaarea.net/download/source/libzen/${VERSION}/
 DISTFILES=	libzen_${VERSION}.tar.bz2
 
 COMPILER=	base-clang ports-gcc

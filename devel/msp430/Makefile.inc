@@ -10,10 +10,10 @@ DISTNAME?=		${TOOL}-${TOOL_V}
 COMMENT?=		${TOOL} for ${TARGET}
 
 .if defined(GNU_TOOL) && ${GNU_TOOL:L:Myes}
-    PKGNAME?=		${TARGET}-${DISTNAME}
+PKGNAME?=		${TARGET}-${DISTNAME}
 
-    # Patches distributed by mspgcc to modify the GNU sources.
-    PATCHFILES?=	${TARGET}-${TOOL}-${TOOL_V}-${LTS_V}.patch:0
+# Patches distributed by mspgcc to modify the GNU sources.
+PATCHFILES.tweak?=	${TARGET}-${TOOL}-${TOOL_V}-${LTS_V}.patch
 .endif
 
 LTS_V?=			20120406
@@ -31,19 +31,17 @@ HOMEPAGE?=		http://mspgcc.sourceforge.net/
 # libc/msp430mcu: BSD3/ISC
 PERMIT_PACKAGE?=   Yes
 
-MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
+SITES?=			${SITE_SOURCEFORGE:=mspgcc/}
 
 # The patches on http://distfiles.sigtrap.nl/mspgcc/ are taken from
 # git://mspgcc.git.sourceforge.net/gitroot/mspgcc/
 # or from the official release tarballs.
-MASTER_SITES0=		http://distfiles.sigtrap.nl/mspgcc/
+SITES.tweak=	http://distfiles.sigtrap.nl/mspgcc/
 
 # These are the patches intended for the LTS releases.
-MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/${LTS_V}/}
+SITES.lts= 	${SITE_SOURCEFORGE:=mspgcc/Patches/LTS/${LTS_V}/}
 
-.for p in ${LTS_PATCHES}
-PATCHFILES += $p:1
-.endfor
+PATCHFILES.lts = ${LTS_PATCHES}
 
 PATCH_DIST_STRIP?=	-p1
 

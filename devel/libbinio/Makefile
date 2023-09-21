@@ -16,7 +16,7 @@ WANTLIB +=	m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://github.com/adplug/libbinio/releases/download/${DISTNAME}/
+SITES =	https://github.com/adplug/libbinio/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE = gnu
 

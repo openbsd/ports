@@ -29,7 +29,7 @@ MAKE_FLAGS =		CC="${CC}"
 ALL_TARGET =		all server webd
 INSTALL_TARGET =	install server-install webd-install
 
-MASTER_SITES =		https://gameoftrees.org/releases/
+SITES =			https://gameoftrees.org/releases/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

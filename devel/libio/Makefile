@@ -2,7 +2,7 @@ COMMENT=	abstraction for general data transport
 
 DISTNAME=	libio-0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://monkey.org/~provos/
+SITES=		http://monkey.org/~provos/
 
 HOMEPAGE=	http://monkey.org/~provos/libio/
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =		c iconv intl
 
-MASTER_SITES =		${MASTER_SITE_GNU:=cflow/}
+SITES =			${SITE_GNU:=cflow/}
 
 LIB_DEPENDS =		devel/gettext,-runtime
 

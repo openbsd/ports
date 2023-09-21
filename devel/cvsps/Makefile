@@ -13,7 +13,7 @@ HOMEPAGE=	http://cvsps.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c z
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cvsps ${PREFIX}/bin

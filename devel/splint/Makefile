@@ -12,7 +12,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
-MASTER_SITES =	${HOMEPAGE}downloads/
+SITES =		${HOMEPAGE}downloads/
 
 # Has to use bison because splint uses pure parsers
 BUILD_DEPENDS =	devel/bison

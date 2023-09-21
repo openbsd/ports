@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://bitop.luajit.org/download/
+SITES =		https://bitop.luajit.org/download/
 
 # "Lua BitOp is a C extension module for Lua 5.1/5.2"
 FLAVORS =	lua52

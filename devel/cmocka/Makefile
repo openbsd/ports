@@ -13,7 +13,7 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 # Apache License v2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://cmocka.org/files/1.1/
+SITES =			https://cmocka.org/files/1.1/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake

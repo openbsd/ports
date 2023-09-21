@@ -7,10 +7,10 @@ GH_TAGNAME =		3.0.0
 CATEGORIES =		devel
 
 LFS_V =			1863dc7883d82bd6ca79faa164b65341064d1c16
-MASTER_SITES0 =		https://github.com/littlefs-project/littlefs/archive/
+SITES.e =		https://github.com/littlefs-project/littlefs/archive/
 
 DISTFILES =		${GH_PROJECT}-${GH_TAGNAME}${EXTRACT_SUFX}
-DISTFILES +=		littlefs-${LFS_V}{${LFS_V}}${EXTRACT_SUFX}:0
+DISTFILES.e =		littlefs-${LFS_V}{${LFS_V}}${EXTRACT_SUFX}
 
 # BSDv3 littlefs and MIT mklittlefs
 PERMIT_PACKAGE =	Yes

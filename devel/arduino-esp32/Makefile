@@ -11,7 +11,7 @@ MAINTAINER =	Tracey Emery <tracey@openbsd.org>
 #LGPLv2.1, MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES = https://github.com/espressif/arduino-esp32/releases/download/${V}/
+SITES = https://github.com/espressif/arduino-esp32/releases/download/${V}/
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python

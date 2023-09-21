@@ -8,7 +8,7 @@ HOMEPAGE=	http://goog-goopy.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=goog-goopy/}
+SITES=		${SITE_SOURCEFORGE:=goog-goopy/}
 
 MODULES=	lang/python
 

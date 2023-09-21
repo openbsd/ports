@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} c m png
 
-MASTER_SITES =	https://github.com/gbdev/rgbds/releases/download/v$V/
+SITES =		https://github.com/gbdev/rgbds/releases/download/v$V/
 
 COMPILER =	base-clang ports-gcc
 

@@ -4,7 +4,7 @@ DISTNAME=	pth-2.0.7
 REVISION=	1
 SHARED_LIBS=	pth 20.25
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
+SITES=		${SITE_GNU:=pth/}
 
 HOMEPAGE=	https://www.gnu.org/software/pth/
 

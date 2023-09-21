@@ -2,7 +2,7 @@ COMMENT=	logging for c library
 DISTNAME =	log4c-1.2.4
 SHARED_LIBS +=  log4c                1.0      # 6.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=log4c/}
+SITES=		${SITE_SOURCEFORGE:=log4c/}
 
 HOMEPAGE=	http://log4c.sourceforge.net/
 

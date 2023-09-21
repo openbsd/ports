@@ -8,7 +8,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c usb-1.0
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dfu-programmer/}
+SITES =			${SITE_SOURCEFORGE:=dfu-programmer/}
 
 LIB_DEPENDS =		devel/libusb1
 

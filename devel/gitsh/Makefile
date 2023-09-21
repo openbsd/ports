@@ -19,7 +19,7 @@ COMPILER =		base-clang ports-gcc
 
 WANTLIB +=		ereadline curses ${MODRUBY_WANTLIB}
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/v${VERSION}/
+SITES =			${HOMEPAGE}/releases/download/v${VERSION}/
 
 MODULES =		lang/ruby
 RUN_DEPENDS =		devel/git

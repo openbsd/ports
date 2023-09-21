@@ -11,7 +11,7 @@ HOMEPAGE=	http://keplerproject.github.io/copas/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/downloads/keplerproject/copas/
+SITES=		https://github.com/downloads/keplerproject/copas/
 
 MODULES=	lang/lua
 

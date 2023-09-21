@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += atf-c c
 
-MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
+SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
 LIB_DEPENDS =		devel/atf
 

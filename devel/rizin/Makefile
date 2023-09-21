@@ -9,7 +9,7 @@ DISTNAME =	rizin-src-v${V}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME =	rizin-${V}
 
-MASTER_SITES =	https://github.com/rizinorg/rizin/releases/download/v${V}/
+SITES =		https://github.com/rizinorg/rizin/releases/download/v${V}/
 
 # Upstream shared lib versions are the same as the rizin release version.
 LIBV =			0.0	# ${V}

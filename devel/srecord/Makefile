@@ -13,7 +13,7 @@ HOMEPAGE=		http://srecord.sf.net/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=srecord/}
+SITES=			${SITE_SOURCEFORGE:=srecord/}
 
 WANTLIB += c gcrypt gpg-error iconv intl m ${COMPILER_LIBCXX}
 

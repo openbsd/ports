@@ -7,7 +7,7 @@ HOMEPAGE =	https://www.ode.org/
 
 MAINTAINER = 	Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES =	https://bitbucket.org/odedevs/ode/downloads/
+SITES =		https://bitbucket.org/odedevs/ode/downloads/
 
 # LGPLv2.1+ / 3-clause BSD
 PERMIT_PACKAGE =	Yes

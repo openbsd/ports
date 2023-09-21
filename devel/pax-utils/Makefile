@@ -18,7 +18,7 @@ COMPILER_LANGS =	c
 
 WANTLIB +=	c
 
-MASTER_SITES =	https://dev.gentoo.org/~sam/distfiles/app-misc/pax-utils/
+SITES =		https://dev.gentoo.org/~sam/distfiles/app-misc/pax-utils/
 
 MODULES =	devel/meson
 

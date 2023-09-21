@@ -15,7 +15,7 @@ SHARED_LIBS+=	event_pthreads	0.0	# 7.1
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/libevent/libevent/releases/download/release-$V-stable/
+SITES=		https://github.com/libevent/libevent/releases/download/release-$V-stable/
 
 WANTLIB=	crypto pthread ssl
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c usb pthread usb-1.0
 
-MASTER_SITES =		${HOMEPAGE}/download/
+SITES =			${HOMEPAGE}/download/
 
 LIB_DEPENDS =		devel/libusb-compat
 

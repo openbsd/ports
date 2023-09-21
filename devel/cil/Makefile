@@ -8,7 +8,7 @@ CATEGORIES =	devel lang
 REVISION =	5
 DISTNAME =	cil-1.7.3
 EXTRACT_SUFX =	.tar.gz
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
+SITES =		${SITE_SOURCEFORGE:=cil/}
 
 HOMEPAGE=	https://cil-project.github.io/cil/
 

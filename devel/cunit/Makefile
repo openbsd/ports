@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += curses
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cunit/}
+SITES =			${SITE_SOURCEFORGE:=cunit/}
 EXTRACT_SUFX =		-src.tar.bz2
 
 FAKE_FLAGS +=		docdir=${PREFIX}/share/doc/CUnit/ \

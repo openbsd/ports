@@ -9,7 +9,7 @@ HOMEPAGE=	https://ant.apache.org/
 # W3C Consortium License (August 14 1998)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
+SITES=		${SITE_APACHE:=ant/binaries/} \
 		https://archive.apache.org/dist/ant/binaries/
 
 EXTRACT_SUFX=	-bin.tar.bz2

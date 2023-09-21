@@ -15,7 +15,7 @@ WANTLIB+=	c m ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 HOMEPAGE=	https://embed.cs.utah.edu/csmith/
-MASTER_SITES=	https://embed.cs.utah.edu/csmith/
+SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 

@@ -16,7 +16,7 @@ CATEGORIES=	devel
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
+SITES=		ftp://ftp.ecs.soton.ac.uk/pub/worldforge/acorn/0.4/src/ \
 		http://kafka.i-site.com/~novalis/mirrors/acorn/0.4/src/
 
 WANTLIB+=	m ${COMPILER_LIBCXX}

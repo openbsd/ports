@@ -32,7 +32,7 @@ WANTLIB-main += xml2 xmlb yaml-0
 WANTLIB-qt5 += ${COMPILER_LIBCXX} Qt5Core appstream gio-2.0 glib-2.0
 WANTLIB-qt5 += gobject-2.0
 
-MASTER_SITES=		https://www.freedesktop.org/software/appstream/releases/
+SITES=			https://www.freedesktop.org/software/appstream/releases/
 
 MULTI_PACKAGES=		-main -qt5
 

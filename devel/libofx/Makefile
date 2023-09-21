@@ -7,7 +7,7 @@ REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
-MASTER_SITES=https://github.com/libofx/libofx/releases/download/${V}/
+SITES=	https://github.com/libofx/libofx/releases/download/${V}/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 

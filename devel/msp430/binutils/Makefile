@@ -5,7 +5,7 @@ REVISION=		2
 
 GNU_TOOL=		Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
+SITES=			${SITE_GNU:=binutils/}
 
 WANTLIB=		c z
 

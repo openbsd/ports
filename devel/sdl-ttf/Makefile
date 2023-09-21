@@ -5,7 +5,7 @@ DISTNAME=	SDL_ttf-${V}
 PKGNAME=	sdl-ttf-${V}
 REVISION=	3
 CATEGORIES=	devel graphics fonts
-MASTER_SITES=	https://www.libsdl.org/projects/SDL_ttf/release/
+SITES=		https://www.libsdl.org/projects/SDL_ttf/release/
 
 SHARED_LIBS=	SDL_ttf	8.1
 

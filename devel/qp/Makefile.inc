@@ -11,7 +11,7 @@ HOMEPAGE ?=	https://www.state-machine.com/
 # GPLv3+
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=qpc/}
+SITES ?=		${SITE_SOURCEFORGE:=qpc/}
 
 EXTRACT_SUFX ?=		.zip
 

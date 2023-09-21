@@ -10,7 +10,7 @@ HOMEPAGE =		https://github.com/kward/shunit2
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://distfiles.sigtrap.nl/
+SITES =			https://distfiles.sigtrap.nl/
 
 EXTRACT_SUFX =		.tgz
 

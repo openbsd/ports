@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://github.com/cpptest/cpptest/releases/download/${V}/
+SITES =		https://github.com/cpptest/cpptest/releases/download/${V}/
 
 # C++11
 COMPILER =		base-clang ports-gcc

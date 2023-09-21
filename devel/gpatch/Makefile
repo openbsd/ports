@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		${MASTER_SITE_GNU:=patch/}
+SITES=			${SITE_GNU:=patch/}
 EXTRACT_SUFX=		.tar.xz
 
 CONFIGURE_STYLE=	gnu

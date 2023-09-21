@@ -8,7 +8,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.red-bean.com/cvsutils/
 
-MASTER_SITES=	${HOMEPAGE}releases/
+SITES=		${HOMEPAGE}releases/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

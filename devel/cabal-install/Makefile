@@ -27,7 +27,7 @@ RUN_DEPENDS =		lang/ghc
 EXTRACT_ONLY =		${DISTNAME}.tar.gz
 DISTFILES =		${EXTRACT_ONLY}
 DIST_SUBDIR =		hackage
-MASTER_SITES.hs =	https://hackage.haskell.org/package/
+SITES.hs =		https://hackage.haskell.org/package/
 
 # Produced by manually copying values out of files/openbsd.json.
 _MANIFEST = \

@@ -7,7 +7,7 @@ DISTNAME=		remake-4.3+dbg-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://bashdb.sourceforge.net/remake/mdb.html
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
+SITES=			${SITE_SOURCEFORGE:=bashdb/}
 
 # GPL
 PERMIT_PACKAGE=	Yes

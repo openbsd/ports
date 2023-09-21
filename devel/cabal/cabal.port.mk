@@ -35,7 +35,7 @@ ONLY_FOR_ARCHS ?=	i386 amd64
 BUILD_DEPENDS +=	devel/cabal-install>=3.4.0.0 \
 			lang/ghc>=8.6.4
 
-MASTER_SITES.hs =	https://hackage.haskell.org/package/
+SITES.hs =		https://hackage.haskell.org/package/
 
 DIST_SUBDIR ?= 		hackage
 
@@ -44,8 +44,8 @@ DIST_SUBDIR ?= 		hackage
 EXTRACT_CASES += *.cabal) ;;
 
 DISTNAME ?=		${MODCABAL_STEM}-${MODCABAL_VERSION}
-HOMEPAGE ?=		${MASTER_SITES.hs}${MODCABAL_STEM}
-MASTER_SITES ?=		${MASTER_SITES.hs}${DISTNAME}/
+HOMEPAGE ?=		${SITES.hs}${MODCABAL_STEM}
+SITES ?=		${SITES.hs}${DISTNAME}/
 DISTFILES ?=		${DISTNAME}.tar.gz
 SUBST_VARS +=		MODCABAL_STEM MODCABAL_VERSION PKGNAME
 

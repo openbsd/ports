@@ -3,7 +3,7 @@ COMMENT=	Purdue Compiler Construction Tool Set
 DISTNAME=	pccts133mr33
 PKGNAME=	pccts-1.33r33
 CATEGORIES=	devel lang
-MASTER_SITES=	http://www.polhode.com/
+SITES=		http://www.polhode.com/
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://www.polhode.com/pccts.html

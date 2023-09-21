@@ -22,11 +22,11 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES0 =	https://github.com/mono/msbuild/releases/download/${MONO_MSBUILD_V}/
-MASTER_SITES1 =	https://mirrors.nycbug.org/pub/distfiles/
-DISTFILES =	${DISTNAME}{${GH_COMMIT}}${EXTRACT_SUFX} \
-		mono_msbuild_xplat-master-${GH_HASH}.zip:0 \
-		msbuild-nuget-packages-${MONO_MSBUILD_V}.tar.xz:1
+SITES.a =	https://github.com/mono/msbuild/releases/download/${MONO_MSBUILD_V}/
+SITES.b =	https://mirrors.nycbug.org/pub/distfiles/
+DISTFILES =	${DISTNAME}{${GH_COMMIT}}${EXTRACT_SUFX}
+DISTFILES.a = 	mono_msbuild_xplat-master-${GH_HASH}.zip
+DISTFILES.b = 	msbuild-nuget-packages-${MONO_MSBUILD_V}.tar.xz
 MODULES =	lang/mono
 BUILD_DEPENDS =	shells/bash
 

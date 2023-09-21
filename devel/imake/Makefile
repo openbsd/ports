@@ -1,7 +1,7 @@
 COMMENT =	makefile generator
 CATEGORIES =	devel x11
 DISTNAME =	imake-1.0.9
-MASTER_SITES =	${MASTER_SITE_XORG:=util/}
+SITES =		${SITE_XORG:=util/}
 
 PERMIT_PACKAGE =	Yes
 

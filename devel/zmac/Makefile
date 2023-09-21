@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-MASTER_SITES =	https://github.com/ibara/ports/releases/download/v1.0/
+SITES =		https://github.com/ibara/ports/releases/download/v1.0/
 
 COMPILER =	base-clang ports-gcc
 

@@ -6,7 +6,7 @@ REVISION=	0
 
 SHARED_LIBS=	vanessa_socket			1.0	# 3.0
 
-MASTER_SITES=	${MASTER_SITE_VANESSA:=vanessa_socket/${VERSION}/}
+SITES=		${SITE_VANESSA:=vanessa_socket/${VERSION}/}
 
 WANTLIB=  c iconv intl popt vanessa_logger>=1.0
 

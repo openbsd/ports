@@ -6,7 +6,7 @@ DISTNAME=	libtool-${VERSION}
 PKGNAME-ltdl=	libltdl-${VERSION}
 REVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=libtool/}
+SITES=		${SITE_GNU:=libtool/}
 
 SHARED_LIBS=	ltdl	5.0
 

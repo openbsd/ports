@@ -12,7 +12,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://luarocks.org/releases/
+SITES =			https://luarocks.org/releases/
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes

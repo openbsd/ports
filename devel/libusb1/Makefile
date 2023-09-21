@@ -13,7 +13,7 @@ HOMEPAGE =		https://libusb.info
 # LGPL 2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/libusb/libusb/releases/download/v${VERSION}/
+SITES =		https://github.com/libusb/libusb/releases/download/v${VERSION}/
 EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc

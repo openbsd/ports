@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c++abi
 .endif
 
-MASTER_SITES=		https://github.com/libffi/libffi/releases/download/v$V/
+SITES=			https://github.com/libffi/libffi/releases/download/v$V/
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

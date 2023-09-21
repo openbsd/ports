@@ -22,7 +22,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 HOMEPAGE=		https://github.com/protocolbuffers/protobuf/
-MASTER_SITES=		https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
+SITES=			${HOMEPAGE}/releases/download/${TAG}/
 
 MODPY_PYBUILD=		setuptools
 

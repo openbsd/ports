@@ -8,7 +8,7 @@ SHARED_LIBS=	mpc	1.0	# 4.0
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://www.multiprecision.org/mpc/
-MASTER_SITES=	${MASTER_SITE_GNU:=mpc/}
+SITES=		${SITE_GNU:=mpc/}
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes

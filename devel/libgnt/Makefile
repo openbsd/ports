@@ -3,7 +3,7 @@ COMMENT=	ncurses toolkit for text-mode graphical user interfaces
 VER=		2.14.3
 DISTNAME=	libgnt-${VER}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/libgnt/${VER}/}
+SITES=		${SITE_SOURCEFORGE:=pidgin/libgnt/${VER}/}
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	gnt	0.0

@@ -10,7 +10,7 @@ HOMEPAGE=	http://luadoc.luaforge.net/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
+SITES=		http://luaforge.net/frs/download.php/3185/
 
 MODULES=	lang/lua
 MODLUA_RUN_DEPENDS=	devel/luafs

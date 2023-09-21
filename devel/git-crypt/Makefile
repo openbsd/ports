@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${COMPILER_LIBCXX} c crypto m
 
-MASTER_SITES =		https://www.agwa.name/projects/git-crypt/downloads/
+SITES =			https://www.agwa.name/projects/git-crypt/downloads/
 
 # C++11
 COMPILER =		base-clang ports-gcc

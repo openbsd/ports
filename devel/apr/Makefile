@@ -13,9 +13,9 @@ HOMEPAGE=	https://apr.apache.org/
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += pthread
+WANTLIB += 	pthread
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
+SITES=		${SITE_APACHE:=apr/}
 
 AUTOCONF_VERSION=2.71
 CONFIGURE_STYLE=autoconf autoheader

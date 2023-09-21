@@ -13,7 +13,7 @@ MAINTAINER =	Paul Irofti <paul@irofti.net>
 # BSD
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udis86/}
+SITES =		${SITE_SOURCEFORGE:=udis86/}
 
 WANTLIB +=	c
 

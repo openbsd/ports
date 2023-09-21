@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses elf ftdi1 m pthread readline usb usb-1.0
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=avrdude/}
+SITES=		${SITE_SAVANNAH:=avrdude/}
 EXTRACT_ONLY=	avrdude-${V}${EXTRACT_SUFX}
 
 AUTOCONF_VERSION=	2.69

@@ -10,7 +10,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		http://user-dirs.freedesktop.org/releases/
+SITES=			http://user-dirs.freedesktop.org/releases/
 
 WANTLIB += c iconv intl
 

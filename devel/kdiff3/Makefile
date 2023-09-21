@@ -8,7 +8,7 @@ HOMEPAGE =	https://kde.org/applications/development/kdiff3/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiff3/}
+SITES =		${SITE_KDE:=stable/kdiff3/}
 EXTRACT_SUFX =	.tar.xz
 
 # GPLv2+

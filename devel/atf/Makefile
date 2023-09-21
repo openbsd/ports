@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://github.com/jmmv/atf/releases/download/${DISTNAME}/
+SITES =		https://github.com/jmmv/atf/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

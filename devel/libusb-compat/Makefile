@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread usb-1.0
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
+SITES=		${SITE_SOURCEFORGE:=libusb/}
 
 LIB_DEPENDS=	devel/libusb1
 

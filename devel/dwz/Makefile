@@ -1,8 +1,8 @@
 COMMENT =	DWARF optimization and duplicate removal tool
 PKGNAME =	dwz-0.15
 XXHASH_V =	0.8.1
-DISTFILES =	${PKGNAME}.tar.gz:0 \
-		xxhash-${XXHASH_V}{xxhash}.h:1
+DISTFILES =	${PKGNAME}.tar.gz
+DISTFILES.h= 	xxhash-${XXHASH_V}{xxhash}.h
 
 CATEGORIES =	devel
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c elf
 
-MASTER_SITES0 =	https://sourceware.org/ftp/dwz/releases/
-MASTER_SITES1 =	https://raw.githubusercontent.com/Cyan4973/xxHash/v${XXHASH_V}/
+SITES =		https://sourceware.org/ftp/dwz/releases/
+SITES.h =	https://raw.githubusercontent.com/Cyan4973/xxHash/v${XXHASH_V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -30,7 +30,7 @@ WRKDIST =	${WRKDIR}/dwz
 
 DWZ = ${WRKBUILD}/dwz
 
-EXTRACT_ONLY =	${PKGNAME}.tar.gz
+EXTRACT_ONLY =	${DISTFILES}
 
 # Cannot use sysutils/xxhash as that introduces a loop.
 # XXX: Revisit using the :patch target next update.

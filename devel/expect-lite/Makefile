@@ -11,7 +11,7 @@ HOMEPAGE =		http://expect-lite.sourceforge.net/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=expect-lite/}
+SITES =			${SITE_SOURCEFORGE:=expect-lite/}
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		lang/expect \

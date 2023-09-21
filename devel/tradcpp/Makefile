@@ -6,7 +6,7 @@ DISTNAME =		tradcpp-${V}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.netbsd.org/~dholland/tradcpp/
-MASTER_SITES =		https://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
+SITES =			https://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
 
 # BSD
 PERMIT_PACKAGE =	Yes

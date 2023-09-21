@@ -26,7 +26,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c execinfo m pciaccess pthread util z
 
-MASTER_SITES =		${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
+SITES =	${HOMEPAGE}/software/ompi/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/downloads/
 
 COMPILER =		ports-gcc
 

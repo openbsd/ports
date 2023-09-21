@@ -6,7 +6,7 @@ CATEGORIES=	devel
 SHARED_LIBS+=		dshconfig                 0.0 # 1.0
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/
-MASTER_SITES=	${HOMEPAGE}downloads/
+SITES=		${HOMEPAGE}downloads/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

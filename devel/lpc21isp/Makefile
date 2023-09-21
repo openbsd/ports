@@ -11,7 +11,7 @@ HOMEPAGE =	http://sourceforge.net/projects/lpc21isp/
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lpc21isp/}
+SITES =		${SITE_SOURCEFORGE:=lpc21isp/}
 
 WANTLIB =	c
 

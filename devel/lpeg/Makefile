@@ -2,7 +2,7 @@ COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-1.1.0
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
-MASTER_SITES=	https://www.inf.puc-rio.br/~roberto/lpeg/
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	https://www.inf.puc-rio.br/~roberto/lpeg/
 

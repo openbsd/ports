@@ -12,7 +12,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dex2jar/}
+SITES =		${SITE_SOURCEFORGE:=dex2jar/}
 
 EXTRACT_SUFX =	.zip
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	 Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c hiredis m zstd
 
-MASTER_SITES =	https://github.com/ccache/ccache/releases/download/v$V/
+SITES =	https://github.com/ccache/ccache/releases/download/v$V/
 
 MODULES =		devel/cmake
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}

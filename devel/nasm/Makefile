@@ -5,7 +5,7 @@ COMMENT=	general-purpose multi-platform x86 assembler
 VERSION=	2.16.01
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
-MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
+SITES=		${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.nasm.us/

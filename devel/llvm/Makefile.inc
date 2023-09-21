@@ -32,7 +32,7 @@ HOMEPAGE =	https://www.llvm.org/
 
 WANTLIB +=	${COMPILER_LIBCXX} c edit execinfo m z
 
-MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
+SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
 MULTI_PACKAGES =	-main -python -lldb

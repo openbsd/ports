@@ -18,8 +18,8 @@ EXTRACT_SUFX=	.tar.xz
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://gmplib.org/download/gmp/ \
-		${MASTER_SITE_GNU:=gmp/}
+SITES=		https://gmplib.org/download/gmp/ \
+		${SITE_GNU:=gmp/}
 
 WANTLIB-main=	# empty
 WANTLIB-cxx=	gmp m ${COMPILER_LIBCXX}

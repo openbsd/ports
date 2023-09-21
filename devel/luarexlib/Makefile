@@ -4,7 +4,7 @@ PKGNAME=	luarexlib-2.4.0
 REVISION=	5
 CATEGORIES=	devel
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/3599/
+SITES=		http://luaforge.net/frs/download.php/3599/
 HOMEPAGE=	http://lrexlib.luaforge.net/
 EXTRACT_SUFX=	.zip
 

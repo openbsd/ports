@@ -9,7 +9,7 @@ SHARED_LIBS +=	opts                 27.5     # .27.5
 SHARED_LIBS +=	guileopts            1.0      # .0.1
 
 HOMEPAGE=	http://autogen.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_GNU:=autogen/rel${V}/}
+SITES=		${SITE_GNU:=autogen/rel${V}/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

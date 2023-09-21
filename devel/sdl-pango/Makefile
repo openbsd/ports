@@ -14,7 +14,7 @@ HOMEPAGE=	http://sdlpango.sourceforge.net/
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
+SITES=		${SITE_SOURCEFORGE:=sdlpango/}
 
 WANTLIB += ${COMPILER_LIBCXX} SDL expat ffi fontconfig freetype
 WANTLIB += fribidi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2

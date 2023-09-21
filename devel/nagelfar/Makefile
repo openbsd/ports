@@ -10,7 +10,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD (textSearch)
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nagelfar/}
+SITES =		${SITE_SOURCEFORGE:=nagelfar/}
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes

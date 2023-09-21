@@ -11,7 +11,7 @@ HOMEPAGE =	https://cpputest.github.io
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/cpputest/cpputest/releases/download/v${V}/
+SITES =		https://github.com/cpputest/cpputest/releases/download/v${V}/
 
 MODULES =		devel/cmake
 

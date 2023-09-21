@@ -13,7 +13,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.spice-space.org/download/releases/
+SITES=		https://www.spice-space.org/download/releases/
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/meson

@@ -11,11 +11,11 @@ HOMEPAGE =	https://www.gnu.org/software/gperf/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m ${COMPILER_LIBCXX}
+WANTLIB =	c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_GNU:=gperf/}
+SITES =		${SITE_GNU:=gperf/}
 
 post-extract:
 	rm ${WRKDIST}/doc/gperf.info

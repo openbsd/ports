@@ -4,7 +4,7 @@ DISTNAME=	SDL_mixer-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
 REVISION=	5
 CATEGORIES=	devel audio
-MASTER_SITES=	${HOMEPAGE}release/
+SITES=		${HOMEPAGE}release/
 
 SHARED_LIBS=	SDL_mixer	5.0
 

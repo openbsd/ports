@@ -8,7 +8,7 @@ HOMEPAGE=	https://www.poedit.net/
 
 MAINTAINER=	Omar Polo <op@openbsd.org>
 
-MASTER_SITES=	https://github.com/vslavik/poedit/releases/download/v${V}-oss/
+SITES=		https://github.com/vslavik/poedit/releases/download/v${V}-oss/
 
 # MIT
 PERMIT_PACKAGE=	Yes

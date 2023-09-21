@@ -16,7 +16,7 @@ MAINTAINER =	Nicholas Marriott <nicm@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 MAKE_ENV +=	CC="${CC}"
 

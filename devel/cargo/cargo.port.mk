@@ -1,7 +1,7 @@
 CATEGORIES +=	lang/rust
 
 # List of static dependencies. The format is cratename-version.
-# MODCARGO_CRATES will be downloaded from MASTER_SITES_CRATESIO.
+# MODCARGO_CRATES will be downloaded from SITES_CRATESIO.
 MODCARGO_CRATES ?=
 
 # List of features to build (space separated list).
@@ -39,8 +39,8 @@ MODCARGO_WANTLIB +=
 CHECK_LIB_DEPENDS_ARGS += -S MODCARGO_WANTLIB="${MODCARGO_WANTLIB}"
 CHECK_LIB_DEPENDS_ARGS += -F c++abi
 
-# Define MASTER_SITES_CRATESIO for crates.io
-MASTER_SITES.cargo =	https://crates.io/api/v1/crates/
+# Define SITES_CRATESIO for crates.io
+SITES.cargo =	https://crates.io/api/v1/crates/
 
 # Save crates inside particular DIST_SUBDIR by default.
 # If you use DIST_SUBDIR, adjust MODCARGO_DIST_SUBDIR.

@@ -11,7 +11,7 @@ MAINTAINER=		Lucas Raab <tuftedocelot@fastmail.fm>
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://download.jetbrains.com/idea/
+SITES=			https://download.jetbrains.com/idea/
 
 MODULES=		java
 MODJAVA_VER=		17
@@ -23,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=	${WRKDIR}/idea-IC-232.9559.62
+WRKDIST=		${WRKDIR}/idea-IC-232.9559.62
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do

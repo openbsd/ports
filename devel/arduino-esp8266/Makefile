@@ -11,7 +11,7 @@ MAINTAINER =	Tracey Emery <tracey@openbsd.org>
 #LGPLv2.1, MIT, BSD, Zlib
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES = https://github.com/esp8266/Arduino/releases/download/${V}/
+SITES = 	https://github.com/esp8266/Arduino/releases/download/${V}/
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python

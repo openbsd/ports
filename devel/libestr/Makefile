@@ -10,7 +10,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://libestr.adiscon.com/files/download/
+SITES =		http://libestr.adiscon.com/files/download/
 
 CONFIGURE_STYLE =	gnu
 

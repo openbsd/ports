@@ -8,7 +8,7 @@ MAINTAINER=	Ingo Schwarze <schwarze@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://mandoc.bsd.lv/cvsweb/release/
+SITES=		https://mandoc.bsd.lv/cvsweb/release/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

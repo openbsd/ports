@@ -40,7 +40,7 @@ MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 # BSD alike + Apache License 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
+SITES=		${SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby no_gnome-keyring

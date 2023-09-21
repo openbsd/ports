@@ -18,7 +18,7 @@ WANTLIB += archive c cairo curl fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl json-glib-1.0
 WANTLIB += pango-1.0 stemmer uuid yaml-0
 
-MASTER_SITES=		http://people.freedesktop.org/~hughsient/appstream-glib/releases/
+SITES=	http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 
 MODULES=		devel/meson \
 			textproc/intltool \

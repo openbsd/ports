@@ -4,7 +4,7 @@ V =			20230608
 DISTNAME =		menhir-${V}
 PKGNAME =		ocaml-${DISTNAME}
 
-MASTER_SITES =		https://gitlab.inria.fr/fpottier/menhir/-/archive/${V}/
+SITES =			https://gitlab.inria.fr/fpottier/menhir/-/archive/${V}/
 
 HOMEPAGE =		http://cristal.inria.fr/~fpottier/menhir/
 

@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://gitlab.com/libidn/libidn2/uploads/58f148618e25cdd66171bc240b9ef1af/
+SITES=		https://gitlab.com/libidn/libidn2/uploads/58f148618e25cdd66171bc240b9ef1af/
 
 WANTLIB=	c iconv unistring
 

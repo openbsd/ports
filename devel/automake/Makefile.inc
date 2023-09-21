@@ -1,6 +1,6 @@
 COMMENT ?=	GNU Standards-compliant Makefile generator
 HOMEPAGE ?=	https://www.gnu.org/software/automake/
-MASTER_SITES ?=	${MASTER_SITE_GNU:=automake/}
+SITES ?=	${SITE_GNU:=automake/}
 
 SUFFIX ?=	-${VERSION}
 SUBST_VARS +=	SUFFIX PKGSPEC

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://dev-www.libreoffice.org/src/
+SITES=			https://dev-www.libreoffice.org/src/
 
 COMPILER =		base-clang ports-gcc
 

@@ -19,7 +19,7 @@ RUN_DEPENDS =		java/javaPathHelper
 # Sun Binary Code License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.intricatesoftware.com/distfiles/
+SITES =			http://www.intricatesoftware.com/distfiles/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

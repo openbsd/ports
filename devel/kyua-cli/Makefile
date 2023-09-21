@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODLUA_WANTLIB} atf-c atf-c++ c lutok m pthread sqlite3 ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
+SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

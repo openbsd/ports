@@ -3,7 +3,7 @@ COMMENT=	generates simple manual pages from program output
 DISTNAME=	help2man-1.49.3
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
+SITES=		${SITE_GNU:=help2man/}
 
 HOMEPAGE=	https://www.gnu.org/software/help2man/
 

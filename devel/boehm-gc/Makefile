@@ -12,8 +12,8 @@ DISTNAME=	gc-${VERSION}
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.lib = libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
 
 MULTI_PACKAGES=	-main -atomic
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -27,8 +27,8 @@ SHARED_LIBS +=	atomic_ops_gpl	3.0	# 3.0
 
 CATEGORIES=	devel
 
-MASTER_SITES=	https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/
-MASTER_SITES0=	https://github.com/ivmai/libatomic_ops/releases/download/v${LIBAO_VERSION}/
+SITES=		https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/
+SITES.lib=	https://github.com/ivmai/libatomic_ops/releases/download/v${LIBAO_VERSION}/
 
 HOMEPAGE=	https://hboehm.info/gc/
 

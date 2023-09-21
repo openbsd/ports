@@ -5,7 +5,7 @@ V =		1.8.8
 REVISION =	6
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
-MASTER_SITES =	http://ocamlgraph.lri.fr/download/
+SITES =		http://ocamlgraph.lri.fr/download/
 
 HOMEPAGE =	http://ocamlgraph.lri.fr/index.en.html
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>

@@ -2,7 +2,7 @@ COMMENT=	GNU parser generator
 
 DISTNAME=	bison-3.7.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
+SITES=		${SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://www.gnu.org/software/bison/

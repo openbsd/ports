@@ -14,7 +14,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://pyyaml.org/download/libyaml/
+SITES=		https://pyyaml.org/download/libyaml/
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes

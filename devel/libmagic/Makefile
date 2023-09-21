@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c z
 
-MASTER_SITES=	http://ftp.astron.com/pub/file/
+SITES=		http://ftp.astron.com/pub/file/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-fsect-man5
