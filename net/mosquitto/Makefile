@@ -1,6 +1,6 @@
 COMMENT =		opensource MQTT broker
 
-V =			2.0.17
+V =			2.0.18
 DISTNAME =		mosquitto-$V
 
 SHARED_LIBS +=  mosquitto                 2.1 # 1.5
@@ -12,7 +12,7 @@ HOMEPAGE =		https://mosquitto.org/
 # EPL/EDL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c crypto m pthread ssl websockets ${COMPILER_LIBCXX}
+WANTLIB +=		c cjson crypto m pthread ssl ${COMPILER_LIBCXX}
 
 MASTER_SITES =		https://mosquitto.org/files/source/
 
@@ -25,7 +25,7 @@ MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS =		devel/uthash
-LIB_DEPENDS =		www/libwebsockets
+LIB_DEPENDS =		devel/cjson
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
