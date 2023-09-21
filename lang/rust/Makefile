@@ -81,7 +81,7 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM ?=	No
+USE_EMB_LLVM ?=	Yes
 
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
