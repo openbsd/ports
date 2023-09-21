@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.simon-cozens.org/fonts/sunscreen.html
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.simon-cozens.org/downloads/
+SITES =			http://www.simon-cozens.org/downloads/
 
 MODULES =		font
 FONTTYPES =		otf

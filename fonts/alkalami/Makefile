@@ -10,7 +10,7 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://software.sil.org/downloads/r/alkalami/
+SITES =			https://software.sil.org/downloads/r/alkalami/
 EXTRACT_SUFX =		.zip
 
 MODULES =		font

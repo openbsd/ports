@@ -12,7 +12,7 @@ HOMEPAGE=	https://arabeyes.org/Khotot
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/t/ttf-arabeyes/}
+SITES=			${SITE_DEBIAN:=main/t/ttf-arabeyes/}
 EXTRACT_SUFX=		.tar.gz
 MODULES =		font
 

@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.squaregear.net/fonts/free3of9.shtml
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.squaregear.net/fonts/
+SITES=		http://www.squaregear.net/fonts/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

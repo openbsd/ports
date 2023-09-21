@@ -12,7 +12,7 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://software.sil.org/downloads/r/charis/
+SITES =			https://software.sil.org/downloads/r/charis/
 
 MODULES =		font
 

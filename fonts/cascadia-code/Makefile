@@ -8,7 +8,7 @@ CATEGORIES =	fonts x11
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/microsoft/cascadia-code/releases/download/v${V}/
+SITES =	https://github.com/microsoft/cascadia-code/releases/download/v${V}/
 WRKDIST =	${WRKDIR}
 
 MODULES =	font

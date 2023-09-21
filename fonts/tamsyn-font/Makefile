@@ -9,7 +9,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # Custom
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.fial.com/~scott/tamsyn-font/download/
+SITES=		http://www.fial.com/~scott/tamsyn-font/download/
 
 FONTDIR=	${PREFIX}/share/fonts/tamsyn
 DOCDIR=		${PREFIX}/share/doc/tamsyn

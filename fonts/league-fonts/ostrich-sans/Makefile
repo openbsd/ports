@@ -5,7 +5,7 @@ DISTNAME =	OstrichSans-$V
 LEAGUE_FONT =	ostrich-sans
 REVISION =	0
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

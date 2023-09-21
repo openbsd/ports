@@ -5,7 +5,7 @@ CATEGORIES =	fonts x11
 REVISION =	2
 
 HOMEPAGE =	https://font.gohu.org/
-MASTER_SITES =	https://font.gohu.org/
+SITES =		${HOMEPAGE}
 
 # WTFPLv2
 PERMIT_PACKAGE =		Yes

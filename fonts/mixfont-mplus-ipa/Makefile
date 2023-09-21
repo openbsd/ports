@@ -12,7 +12,7 @@ REVISION=	7
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://mix-mplus-ipa.osdn.jp/
-MASTER_SITES=	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/20216/}
+SITES=		${SITE_OSDN_JP:=mix-mplus-ipa/20216/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

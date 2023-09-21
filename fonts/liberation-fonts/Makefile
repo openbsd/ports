@@ -14,7 +14,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://releases.pagure.org/liberation-fonts/
+SITES =		https://releases.pagure.org/liberation-fonts/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

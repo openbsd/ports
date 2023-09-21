@@ -14,7 +14,7 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://software.sil.org/downloads/r/annapurna/
+SITES =			https://software.sil.org/downloads/r/annapurna/
 
 EXTRACT_SUFX =		.zip
 

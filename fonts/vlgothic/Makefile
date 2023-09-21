@@ -11,7 +11,7 @@ HOMEPAGE =	http://vlgothic.dicey.org/
 #BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		${MASTER_SITE_OSDN_JP:=vlgothic/77450/}
+SITES =			${SITE_OSDN_JP:=vlgothic/77450/}
 EXTRACT_SUFX =		.tar.bz2
 
 NO_BUILD =		Yes

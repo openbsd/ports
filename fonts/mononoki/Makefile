@@ -4,7 +4,7 @@ TYPEFACE =	mononoki
 V =		1.3
 
 DISTFILES =	mononoki-${V}{mononoki}.zip
-MASTER_SITES =	https://github.com/madmalik/mononoki/releases/download/${V}/
+SITES =		https://github.com/madmalik/mononoki/releases/download/${V}/
 
 HOMEPAGE =	https://madmalik.github.io/mononoki/
 

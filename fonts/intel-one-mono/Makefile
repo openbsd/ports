@@ -7,7 +7,7 @@ PKGNAME =	intel-one-mono-$V
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/intel/intel-one-mono/releases/download/V$V/
+SITES =		https://github.com/intel/intel-one-mono/releases/download/V$V/
 
 DISTFILES =	otf.zip \
 		ttf.zip

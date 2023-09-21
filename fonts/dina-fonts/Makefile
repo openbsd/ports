@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.dcmembers.com/jibsen/download/61/
 PERMIT_PACKAGE = Yes
 
 EXTRACT_SUFX =	.zip
-MASTER_SITES =	https://sizeofvoid.org/pub/OpenBSD/distfiles/
+SITES =		https://sizeofvoid.org/pub/OpenBSD/distfiles/
 
 NO_TEST =	Yes
 USE_X11 =	Yes

@@ -4,7 +4,7 @@ TYPEFACE =	aref-ruqaa
 V =		1.005
 
 DISTFILES =	ArefRuqaa-${V}.zip
-MASTER_SITES =	https://github.com/aliftype/aref-ruqaa/releases/download/v${V}/
+SITES =		https://github.com/aliftype/aref-ruqaa/releases/download/v${V}/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 

@@ -9,7 +9,7 @@ MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
 # SIL OFL 1.1
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=	https://github.com/theleagueof/${LEAGUE_FONT}/releases/download/$V/
+SITES ?= https://github.com/theleagueof/${LEAGUE_FONT}/releases/download/$V/
 
 EXTRACT_SUFX ?=	.tar.xz
 

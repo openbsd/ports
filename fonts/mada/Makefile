@@ -10,7 +10,7 @@ MAINTAINER =	George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/alif-type/mada/releases/download/v${V}/
+SITES =		https://github.com/alif-type/mada/releases/download/v${V}/
 
 MODULES =	font
 

@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.jetbrains.com/lp/mono/
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://download.jetbrains.com/fonts/
+SITES =		https://download.jetbrains.com/fonts/
 
 TYPEFACE =	JetBrainsMono
 

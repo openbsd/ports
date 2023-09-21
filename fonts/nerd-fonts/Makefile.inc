@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.nerdfonts.com/
 # BY-NC-ND 3.0, but we the required consent from the author.
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/ryanoasis/${NF_PROJECT}/releases/download/v${VERSION}/
+SITES =			https://github.com/ryanoasis/${NF_PROJECT}/releases/download/v${VERSION}/
 DISTFILES =		${NF_FONT}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.zip
 

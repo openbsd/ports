@@ -13,7 +13,7 @@ MAINTAINER =    Laurence Tratt <laurie@tratt.net>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/cormullion/juliamono/releases/download/v${V}/
+SITES =		https://github.com/cormullion/juliamono/releases/download/v${V}/
 DISTFILES =     ${DISTNAME}-${V}{${DISTNAME}}${EXTRACT_SUFX}
 
 NO_BUILD =	Yes

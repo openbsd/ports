@@ -8,7 +8,7 @@ CATEGORIES=		fonts x11
 
 HOMEPAGE =		https://www.levien.com/type/myfonts/inconsolata.html
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.otf
 EXTRACT_ONLY=
 

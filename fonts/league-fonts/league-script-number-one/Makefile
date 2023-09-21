@@ -7,7 +7,7 @@ REVISION =	0
 
 HOMEPAGE =	https://www.theleagueofmoveabletype.com/league-script
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

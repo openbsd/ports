@@ -7,7 +7,7 @@ PKGNAME=	ja-fonts-gnu-$V
 USE_X11 =	Yes
 REVISION =	0
 
-MASTER_SITES=	${MASTER_SITE_GNU:=intlfonts/}
+SITES=		${SITE_GNU:=intlfonts/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

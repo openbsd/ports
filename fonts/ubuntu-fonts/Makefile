@@ -13,7 +13,7 @@ HOMEPAGE =		https://design.ubuntu.com/font/
 # https://www.ubuntu.com/legal/font-licence
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		https://assets.ubuntu.com/v1/
+SITES =			https://assets.ubuntu.com/v1/
 EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes

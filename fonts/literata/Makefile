@@ -10,12 +10,12 @@ HOMEPAGE =	https://fonts.google.com/specimen/Literata
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/googlefonts/literata/releases/download/v$V/
-MASTER_SITES0 =	https://raw.githubusercontent.com/googlefonts/literata/v$V/
+SITES =		https://github.com/googlefonts/literata/releases/download/v$V/
+SITES.a =	https://raw.githubusercontent.com/googlefonts/literata/v$V/
 
-DISTFILES =	Literata-v$V.zip \
-		OFL.txt:0
-EXTRACT_ONLY =	Literata-v$V.zip
+DISTFILES =	Literata-v$V.zip
+DISTFILES.a = 	OFL.txt
+EXTRACT_ONLY =	$(DISTFILES)
 
 DIST_SUBDIR =	literata-$V
 

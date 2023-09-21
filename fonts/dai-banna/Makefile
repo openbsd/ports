@@ -13,7 +13,7 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://software.sil.org/downloads/r/daibanna/
+SITES =			https://software.sil.org/downloads/r/daibanna/
 
 EXTRACT_SUFX =		.zip
 

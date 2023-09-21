@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.nihilist.org.uk/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://drive.google.com/
+SITES =			https://drive.google.com/
 DISTFILES =		KanjiStrokeOrders_v4.004.zip{uc?export=download&id=1snpD-IQmT6fGGQjEePHdDzE2aiwuKrz4}
 
 EXTRACT_SUFX =		.zip

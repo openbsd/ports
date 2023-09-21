@@ -7,7 +7,7 @@ PKGNAME =		ibm-plex-$V
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/IBM/plex/releases/download/v$V/
+SITES =			https://github.com/IBM/plex/releases/download/v$V/
 
 DISTFILES =		OpenType.zip \
 			TrueType.zip

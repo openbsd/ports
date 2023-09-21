@@ -12,7 +12,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # IPA Font License Agreement v1.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=mix-mplus-ipa/72511/}
+SITES =		${SITE_OSDN_JP:=mix-mplus-ipa/72511/}
 
 DISTFILES =	migu-1c-$V.zip \
 		migu-1m-$V.zip \

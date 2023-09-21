@@ -15,7 +15,7 @@ HOMEPAGE=		http://www.jmknoble.net/fonts/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 CONFIGURE_STYLE=	imake
 

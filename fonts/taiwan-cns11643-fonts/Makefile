@@ -12,7 +12,7 @@ CATEGORIES =	fonts chinese x11
 # May be used in compliance with CC-BY-4.0 International
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.sizeofvoid.org/pub/OpenBSD/distfiles/ \
+SITES =		https://www.sizeofvoid.org/pub/OpenBSD/distfiles/ \
 		https://distfiles.roadrunner.page/
 
 NO_BUILD =	Yes

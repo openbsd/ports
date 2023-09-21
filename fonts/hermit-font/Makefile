@@ -11,7 +11,7 @@ CATEGORIES=	fonts x11
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://pcaro.es/p/hermit/
-MASTER_SITES=	https://deftly.net/dist/
+SITES=		https://deftly.net/dist/
 EXTRACT_SUFX=	.tar.gz
 
 MODULES=	font

@@ -4,10 +4,10 @@ NOTO_PROJECT =		cjk
 
 V =			20220127
 
-MASTER_SITES0 =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
-MASTER_SITES1 =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.001/
-DISTFILES =		01_NotoSansCJK-OTF-VF.zip:0 \
-			02_NotoSerifCJK-OTF-VF.zip:1
+SITES.a =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
+SITES.b =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.001/
+DISTFILES.a =		01_NotoSansCJK-OTF-VF.zip
+DISTFILES.b = 		02_NotoSerifCJK-OTF-VF.zip
 DIST_SUBDIR =		noto-cjk-$V
 WRKDIST =		${WRKDIR}
 

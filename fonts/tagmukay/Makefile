@@ -11,7 +11,7 @@ MAINTAINER =		George Rosamond <george@nycbug.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://software.sil.org/downloads/r/tagmukay/
+SITES =			https://software.sil.org/downloads/r/tagmukay/
 EXTRACT_SUFX =		.zip
 
 MODULE =		font

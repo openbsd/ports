@@ -18,7 +18,7 @@ HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=artwizaleczapka/}
+SITES=		${SITE_SOURCEFORGE:=artwizaleczapka/}
 EXTRACT_SUFX=	.tar.bz2
 
 NO_BUILD=	Yes

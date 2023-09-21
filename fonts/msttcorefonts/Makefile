@@ -10,7 +10,7 @@ HOMEPAGE=		http://corefonts.sourceforge.net/
 PERMIT_PACKAGE=		Restrictive license, can't distribute modified files
 PERMIT_DISTFILES=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=corefonts/}
+SITES=			${SITE_SOURCEFORGE:=corefonts/}
 DIST_SUBDIR=		${DISTNAME}
 
 BUILD_DEPENDS=		archivers/cabextract

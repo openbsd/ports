@@ -8,7 +8,7 @@ PKGNAME=	ko-baekmuk-fonts-${V}
 REVISION=	6
 CATEGORIES=	fonts korean x11
 
-MASTER_SITES=	${MASTER_SITE_FREEBSD} \
+SITES=		${SITE_FREEBSD} \
 		ftp://ftp.mizi.com/pub/baekmuk/
 HOMEPAGE=	http://www.mizi.co.kr
 

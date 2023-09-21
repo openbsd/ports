@@ -13,7 +13,7 @@ HOMEPAGE=	http://wqy.sourceforge.net/en/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wqy/}
+SITES=		${SITE_SOURCEFORGE:=wqy/}
 EXTRACT_SUFX=	.tar.gz
 
 MODULES=	font

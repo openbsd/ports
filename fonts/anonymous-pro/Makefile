@@ -7,7 +7,7 @@ REVISION =	4
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
-MASTER_SITES =	https://www.marksimonson.com/assets/content/fonts/
+SITES =		https://www.marksimonson.com/assets/content/fonts/
 HOMEPAGE =	https://www.marksimonson.com/fonts/view/anonymous-pro
 
 # SIL OFL 1.1

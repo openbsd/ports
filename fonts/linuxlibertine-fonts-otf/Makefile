@@ -13,7 +13,7 @@ HOMEPAGE =		http://www.linuxlibertine.org/
 # GPLv2 / SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=linuxlibertine/}
+SITES =			${SITE_SOURCEFORGE:=linuxlibertine/}
 EXTRACT_SUFX =		.tgz
 
 NO_BUILD =		Yes

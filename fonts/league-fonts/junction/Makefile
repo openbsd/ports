@@ -5,7 +5,7 @@ DISTNAME =	Junction-$V
 LEAGUE_FONT =	junction
 REVISION =	1
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

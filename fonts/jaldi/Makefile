@@ -5,7 +5,7 @@ V =		1.007
 REVISION =	0
 
 DISTFILES =	${V}.zip
-MASTER_SITES =	https://github.com/Omnibus-Type/Jaldi/archive/refs/tags/
+SITES =		https://github.com/Omnibus-Type/Jaldi/archive/refs/tags/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 

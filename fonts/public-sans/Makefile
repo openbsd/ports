@@ -11,7 +11,7 @@ HOMEPAGE =		https://public-sans.digital.gov/
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/uswds/public-sans/releases/download/v$V/
+SITES =		https://github.com/uswds/public-sans/releases/download/v$V/
 
 EXTRACT_SUFX =		.zip
 

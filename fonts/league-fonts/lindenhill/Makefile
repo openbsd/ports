@@ -6,7 +6,7 @@ PKGNAME =	lindenhill-$V
 LEAGUE_FONT =	linden-hill
 REVISION =	0
 
-MASTER_SITES =	https://crudfactory.com/
+SITES =		https://crudfactory.com/
 EXTRACT_SUFX =	.zip
 WRKDIST =	${WRKDIR}
 

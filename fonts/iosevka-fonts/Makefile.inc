@@ -6,7 +6,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # SIL OFL 1.1
 PERMIT_PACKAGE =Yes
 
-MASTER_SITES =	https://github.com/be5invis/Iosevka/releases/download/v${V}/
+SITES =		https://github.com/be5invis/Iosevka/releases/download/v${V}/
 EXTRACT_SUFX =	.zip
 
 NO_BUILD =		Yes

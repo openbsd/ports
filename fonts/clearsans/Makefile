@@ -10,7 +10,7 @@ HOMEPAGE =		https://01.org/clear-sans
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://01.org/sites/default/files/downloads/clear-sans/
+SITES =			https://01.org/sites/default/files/downloads/clear-sans/
 
 MODULES =		font
 

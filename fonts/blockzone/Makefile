@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/ansilove/blockzone
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/ansilove/BlockZone/releases/download/$V/
+SITES =		https://github.com/ansilove/BlockZone/releases/download/$V/
 
 MODULES =	font
 

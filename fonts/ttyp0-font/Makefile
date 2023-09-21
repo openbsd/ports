@@ -11,7 +11,7 @@ MAINTAINER =		Christopher Zimmermann <chrisz@openbsd.org>
 # similar to 2-clause BSD with name restrictions
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
+SITES =			https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		PCFDIR=${PREFIX}/share/fonts/uw-ttyp0

@@ -13,7 +13,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/source-foundry/Hack/releases/download/v${V}/
+SITES =		https://github.com/source-foundry/Hack/releases/download/v${V}/
 
 WRKDIST =		${WRKDIR}
 

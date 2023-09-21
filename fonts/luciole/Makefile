@@ -9,7 +9,7 @@ HOMEPAGE =	https://www.luciole-vision.com/
 # Creative Commons Attribution 4.0 International Public License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.typographies.fr/N/luciole/
+SITES =		https://www.typographies.fr/N/luciole/
 
 DISTFILES =	Luciole-Bold-Italic.ttf \
 		Luciole-Bold.ttf \

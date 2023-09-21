@@ -5,7 +5,7 @@ DISTNAME =	Blackout-$V
 LEAGUE_FONT =	blackout
 REVISION =	0
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}

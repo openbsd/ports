@@ -5,7 +5,7 @@ CATEGORIES =	fonts x11
 REVISION =	0
 
 # Original distfile taken from http://www.fontstock.com/public/
-MASTER_SITES =	http://ohvost.ru/distfiles/
+SITES =		http://ohvost.ru/distfiles/
 HOMEPAGE =	http://paratype.com/public/
 
 # OFL, http://scripts.sil.org/OFL (CC-like)

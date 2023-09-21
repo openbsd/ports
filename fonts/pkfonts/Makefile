@@ -12,7 +12,7 @@ PERMIT_PACKAGE=		no license
 PERMIT_DISTFILES=	no license
 
 S= FreeBSD-jp/ports-jp/LOCAL_PORTS/pkfonts
-MASTER_SITES=   ftp://ports.jp.FreeBSD.org/pub/$S/ \
+SITES=   	ftp://ports.jp.FreeBSD.org/pub/$S/ \
                 ftp://ftp4.jp.FreeBSD.org/pub/$S/ \
                 ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/$S/
 EXTRACT_ONLY=	

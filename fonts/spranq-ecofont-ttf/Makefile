@@ -14,8 +14,8 @@ HOMEPAGE=		http://www.ecofont.eu/ecofont_en.html
 # http://www.bitstream.com/font_rendering/products/dev_fonts/vera.html
 PERMIT_PACKAGE=	Yes
 
-# Untill upstream starts to version the font
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+# Until upstream starts to version the font
+SITES=			https://distfiles.sigtrap.nl/
 
 MODULES =		font
 

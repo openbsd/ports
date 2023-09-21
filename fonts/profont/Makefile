@@ -12,8 +12,8 @@ MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE =		Yes
 
 # Upstream keeps re-rolling the distfile without bumping the version
-MASTER_SITES =		https://distfiles.sigtrap.nl/ \
-			http://www.fontsquirrel.com/fonts/download/ProFontWindows/
+SITES =		https://distfiles.sigtrap.nl/ \
+		http://www.fontsquirrel.com/fonts/download/ProFontWindows/
 EXTRACT_SUFX =		.zip
 
 NO_BUILD=		Yes

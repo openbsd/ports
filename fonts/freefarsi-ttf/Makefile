@@ -7,11 +7,11 @@ CATEGORIES=		fonts x11
 HOMEPAGE=		http://sourceforge.net/projects/fpf/
 
 # GPLv2
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
 # The original distfile contains .sfd files, the Debian package contains
 # .ttf files. These are the files we install.
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 PKG_ARCH=		*
 NO_BUILD=		Yes

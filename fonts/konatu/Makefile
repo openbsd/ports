@@ -11,7 +11,7 @@ HOMEPAGE =	http://blog.masuseki.com/?p=233
 #MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		http://www.masuseki.com/be/konatu/
+SITES =			http://www.masuseki.com/be/konatu/
 EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes

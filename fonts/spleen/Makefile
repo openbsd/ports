@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/fcambus/spleen
 # BSD
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://github.com/fcambus/spleen/releases/download/${V}/
+SITES =		https://github.com/fcambus/spleen/releases/download/${V}/
 
 NO_TEST =	Yes
 USE_X11 =	Yes

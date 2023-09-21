@@ -8,7 +8,7 @@ PKGNAME =		vollkorn-$V
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://vollkorn-typeface.com/download/
+SITES =			http://vollkorn-typeface.com/download/
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		fonts

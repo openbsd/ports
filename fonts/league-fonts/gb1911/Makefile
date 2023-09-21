@@ -6,7 +6,7 @@ PKGNAME =	gb1911-$V
 LEAGUE_FONT =	goudy-bookletter-1911
 REVISION =	0
 
-MASTER_SITES =	https://crudfactory.com/
+SITES =		https://crudfactory.com/
 EXTRACT_SUFX =	.zip
 WRKDIST =	${WRKDIR}
 

@@ -10,7 +10,7 @@ HOMEPAGE =	https://fontawesome.com
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =	https://github.com/FortAwesome/Font-Awesome/releases/download/${V}/
+SITES =	https://github.com/FortAwesome/Font-Awesome/releases/download/${V}/
 EXTRACT_SUFX =	.zip
 
 # SIL OFL 1.1

@@ -7,7 +7,7 @@ REVISION=	3
 CATEGORIES=	fonts korean x11
 USE_X11 =	Yes
 
-MASTER_SITES =	https://kldp.net/hanterm/release/
+SITES =		${HOMEPAGE}/release/
 HOMEPAGE =	https://kldp.net/hanterm/
 
 PERMIT_PACKAGE=	Yes

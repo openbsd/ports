@@ -9,7 +9,7 @@ CATEGORIES =		fonts
 PERMIT_PACKAGE =	No redistribution
 PERMIT_DISTFILES =	No redistribution
 
-MASTER_SITES =		http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/
+SITES =			http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/
 
 BUILD_DEPENDS =		archivers/cabextract
 

@@ -5,7 +5,7 @@ MAINTAINER=	Ashlen <dev@anthes.is>
 TYPEFACE=	victor-mono
 V=		1.5.5
 
-MASTER_SITES=	https://github.com/rubjo/victor-mono/raw/v${V}/public/
+SITES=		https://github.com/rubjo/victor-mono/raw/v${V}/public/
 DISTFILES=	victor-mono-${V}{VictorMonoAll}${EXTRACT_SUFX}
 
 # SIL OFL 1.1

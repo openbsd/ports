@@ -13,7 +13,7 @@ MAINTAINER =		Tristan Le Guern <tleguern@bouledef.eu>
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://comicneue.com/
+SITES =			https://comicneue.com/
 EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes

@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.arabeyes.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=arabeyes/}
+SITES=			${SITE_SOURCEFORGE:=arabeyes/}
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		font

@@ -4,7 +4,7 @@ TYPEFACE =	vazirmatn
 V =		33.003
 
 DISTFILES =	vazirmatn-v${V}.zip
-MASTER_SITES =	https://github.com/rastikerdar/vazirmatn/releases/download/v${V}/
+SITES =	https://github.com/rastikerdar/vazirmatn/releases/download/v${V}/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 

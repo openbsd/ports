@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		font
 
-MASTER_SITES =		https://software.sil.org/downloads/r/abyssinica/
+SITES =			https://software.sil.org/downloads/r/abyssinica/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

@@ -6,7 +6,7 @@ CATEGORIES=     fonts chinese x11
 
 DIST_SUBDIR=    zh-fonts
 
-MASTER_SITES=	https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/taipeifont/
+SITES=		https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/taipeifont/
 
 PERMIT_DISTFILES=	no license
 PERMIT_PACKAGE=		no license

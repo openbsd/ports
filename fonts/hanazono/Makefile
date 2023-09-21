@@ -10,7 +10,7 @@ HOMEPAGE =	http://fonts.jp/hanazono/
 #  with or without modification, either commercially and noncommercially."
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_OSDN_JP:=hanazono-font/68253/}
+SITES =			${SITE_OSDN_JP:=hanazono-font/68253/}
 EXTRACT_SUFX =		.zip
 
 NO_BUILD =		Yes

@@ -2,7 +2,7 @@ CATEGORIES ?=	fonts x11 japanese korean
 
 HOMEPAGE ?=	https://kldp.net/unfonts/
 
-MASTER_SITES ?=	https://kldp.net/unfonts/release/
+SITES ?=	https://kldp.net/unfonts/release/
 
 WRKDIST = 	${WRKDIR}/un-fonts
 

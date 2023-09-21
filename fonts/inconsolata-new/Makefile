@@ -8,7 +8,7 @@ CATEGORIES=		fonts x11
 HOMEPAGE =		https://www.levien.com/type/myfonts/inconsolata.html
 
 DIST_SUBDIR =		inconsolata-$V
-MASTER_SITES =		https://github.com/googlefonts/Inconsolata/releases/download/v$V/
+SITES =	https://github.com/googlefonts/Inconsolata/releases/download/v$V/
 DISTFILES =		fonts_ttf.zip \
 			fonts_otf.zip
 

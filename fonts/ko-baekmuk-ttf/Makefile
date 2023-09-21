@@ -11,7 +11,7 @@ HOMEPAGE=	http://kldp.net/projects/baekmuk
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://kldp.net/frs/download.php/1429/
+SITES=		http://kldp.net/frs/download.php/1429/
 
 FONTDIR=	${PREFIX}/share/fonts/korean
 

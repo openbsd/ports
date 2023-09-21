@@ -19,7 +19,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+ with font embedding in documents exception
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://unifoundry.com/pub/unifont/unifont-${V}/font-builds/
+SITES =		https://unifoundry.com/pub/unifont/unifont-${V}/font-builds/
 
 NO_BUILD =	Yes
 

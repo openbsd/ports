@@ -8,7 +8,7 @@ CATEGORIES=		fonts print
 # Free redistribution is permitted without fonts files modifications
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://tex.imm.uran.ru/texserver/fonts/pscyr/ \
+SITES=			http://tex.imm.uran.ru/texserver/fonts/pscyr/ \
 			ftp://ftp.vsu.ru/pub/tex/font-packs/pscyr/
 DISTFILES=		PSCyr-0.4c-patch2-tex.tar.gz \
 			PSCyr-0.4c-patch2-type1.tar.gz

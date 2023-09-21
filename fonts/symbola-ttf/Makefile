@@ -8,7 +8,7 @@ HOMEPAGE=		http://users.teilar.gr/~g1951d/
 # "free for any use"
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+SITES=			https://distfiles.bsdfrog.org/
 
 EXTRACT_SUFX=		.zip
 PKG_ARCH=		*

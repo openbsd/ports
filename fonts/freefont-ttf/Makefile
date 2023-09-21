@@ -7,9 +7,9 @@ CATEGORIES=		fonts x11
 HOMEPAGE=		https://www.gnu.org/software/freefont/
 
 # GPLv3+
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=freefont/}
+SITES=			${SITE_GNU:=freefont/}
 EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/freefont-$V

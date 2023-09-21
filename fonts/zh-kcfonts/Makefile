@@ -6,7 +6,7 @@ CATEGORIES=     fonts chinese x11
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/KCFONTS/
+SITES=		https://ftp.kh.edu.tw/Linux/CLE/fonts/bitmap/KCFONTS/
 DIST_SUBDIR=    zh-kcfonts
 DISTFILES=	${FONTS}
 

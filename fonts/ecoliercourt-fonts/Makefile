@@ -11,7 +11,7 @@ CATEGORIES=	fonts x11 education
 # Open Font License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.bsdfrog.org/
+SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=	font
 

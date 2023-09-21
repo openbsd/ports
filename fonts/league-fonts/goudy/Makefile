@@ -6,7 +6,7 @@ PKGNAME =	goudy-$V
 LEAGUE_FONT =	sorts-mill-goudy
 REVISION =	0
 
-MASTER_SITES =	https://crudfactory.com/
+SITES =		https://crudfactory.com/
 EXTRACT_SUFX =	.zip
 WRKDIST =	${WRKDIR}
 

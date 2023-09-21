@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.apl385.com/fonts/
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.apl385.com/fonts/
+SITES =		${HOMEPAGE}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

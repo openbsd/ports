@@ -7,7 +7,7 @@ DISTNAME=		ja-fonts-funet
 PKGNAME=		${DISTNAME}-19911117
 REVISION=		2
 
-MASTER_SITES=	ftp://ftp.funet.fi/pub/culture/japan/fonts/bdf/
+SITES=	ftp://ftp.funet.fi/pub/culture/japan/fonts/bdf/
 
 FONTS=	13x26.bdf.Z 13x26rk.bdf.Z 7x14maru.bdf.Z 7x14rkmaru.bdf.Z \
 	a16.bdf.Z a16rk.bdf.Z a18.bdf.Z a18rk.bdf.Z \

@@ -11,7 +11,7 @@ HOMEPAGE =	https://rsms.me/inter/
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/rsms/inter/releases/download/v$V/
+SITES =		https://github.com/rsms/inter/releases/download/v$V/
 
 EXTRACT_SUFX =	.zip
 

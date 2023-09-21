@@ -5,7 +5,7 @@ DISTNAME =	prociono-$V
 LEAGUE_FONT =	prociono
 REVISION =	0
 
-MASTER_SITES =	https://crudfactory.com/
+SITES =		https://crudfactory.com/
 EXTRACT_SUFX =	.zip
 WRKDIST =	${WRKDIR}
 

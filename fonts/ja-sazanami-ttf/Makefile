@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://wiki.fdiary.net/font/
-MASTER_SITES=		${MASTER_SITE_OSDN_JP:=efont/10087/}
+SITES=			${SITE_OSDN_JP:=efont/10087/}
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

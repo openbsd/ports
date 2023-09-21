@@ -11,7 +11,7 @@ REVISION=	2
 # SIL OFL 1.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://releases.pagure.org/lohit/
+SITES=		https://releases.pagure.org/lohit/
 DIST_SUBDIR=	lohit
 .for s in	assamese bengali devanagari gujarati kannada malayalam \
 		marathi nepali oriya punjabi tamil tamil-classical telugu

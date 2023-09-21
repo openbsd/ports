@@ -12,7 +12,7 @@ HOMEPAGE =			https://fontlibrary.org/en/font/fantasque-sans-mono
 # SIL OFL 1.1
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =			https://github.com/belluzj/fantasque-sans/releases/download/v$V/
+SITES =	https://github.com/belluzj/fantasque-sans/releases/download/v$V/
 
 NO_BUILD =			Yes
 NO_TEST =			Yes

@@ -12,7 +12,7 @@ HOMEPAGE =		https://mplus-fonts.osdn.jp/
 #  with or without modification, either commercially or noncommercially."
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_OSDN_JP:=mplus-fonts/62344/}
+SITES =			${SITE_OSDN_JP:=mplus-fonts/62344/}
 EXTRACT_SUFX =		.tar.xz
 
 NO_BUILD =		Yes

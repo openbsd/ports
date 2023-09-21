@@ -11,7 +11,7 @@ MAINTAINER =		LEVAI Daniel <leva@ecentrum.hu>
 # SIL OFL 1.1
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
+SITES =			${SITE_SOURCEFORGE:=terminus-font/}
 
 MODULES +=		lang/python
 MODPY_RUNDEP =		No
