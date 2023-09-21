@@ -1,8 +1,7 @@
 COMMENT=		mixer library for MATE desktop
-REVISION=		0
 
 MATE_PROJECT=		libmatemixer
-MATE_VERSION=		1.26.0
+MATE_VERSION=		1.26.1
 
 SHARED_LIBS +=  matemixer                 0.0 # 0.0
 
