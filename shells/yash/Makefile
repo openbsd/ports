@@ -1,18 +1,16 @@
 COMMENT=	POSIX-compliant command line shell
 
-VERSION=	2.54
+VERSION=	2.55
 DISTNAME=	yash-${VERSION}
-RELEASE=	78345
 CATEGORIES=	shells
-HOMEPAGE=	https://yash.osdn.jp/index.html.en
+HOMEPAGE=	https://magicant.github.io/yash/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_OSDN_JP:=yash/${RELEASE}/} \
-		https://github.com/magicant/yash/releases/download/${VERSION}/
+SITES=		https://github.com/magicant/yash/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c curses intl m

@@ -11,20 +11,3 @@ Index: configure
      sunos)
  	defconfigh "__EXTENSIONS__"
  	;;
-@@ -746,6 +749,7 @@ END
- 	checking "for ${i%:*}"
- 	cat >"${tempsrc}" <<END
- ${confighdefs}
-+#include <stdio.h>
- #if HAVE_CURSES_H
- #include <curses.h>
- #elif HAVE_NCURSES_H
-@@ -756,8 +760,6 @@ ${confighdefs}
- #include <ncursesw/ncurses.h>
- #endif
- #include <${i%:*}>
--int putchar(int);
--
- int main(void) {
- /* Undeclared identifiers are a syntax error in C99, but many compilers assume
-  * implicit declarations when they appear in a function call. We force compilers

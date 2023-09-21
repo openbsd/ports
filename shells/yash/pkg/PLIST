@@ -114,6 +114,7 @@ share/yash/completion/git-stash
 share/yash/completion/git-status
 share/yash/completion/git-submodule
 share/yash/completion/git-svn
+share/yash/completion/git-switch
 share/yash/completion/git-tag
 share/yash/completion/git-whatchanged
 share/yash/completion/git-worktree
@@ -155,6 +156,7 @@ share/yash/completion/nice
 share/yash/completion/nl
 share/yash/completion/nohup
 share/yash/completion/od
+share/yash/completion/pass
 share/yash/completion/passwd
 share/yash/completion/paste
 share/yash/completion/patch
