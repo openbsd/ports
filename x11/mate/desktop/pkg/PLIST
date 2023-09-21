@@ -116,6 +116,9 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mate-desktop.mo
 share/locale/en_CA/LC_MESSAGES/mate-desktop.mo
 share/locale/en_GB/LC_MESSAGES/mate-desktop.mo
+share/locale/en_US/
+share/locale/en_US/LC_MESSAGES/
+share/locale/en_US/LC_MESSAGES/mate-desktop.mo
 share/locale/eo/LC_MESSAGES/mate-desktop.mo
 share/locale/es/LC_MESSAGES/mate-desktop.mo
 share/locale/es_AR/
@@ -224,6 +227,8 @@ share/locale/zh_TW/LC_MESSAGES/mate-desktop.mo
 share/locale/zu/LC_MESSAGES/mate-desktop.mo
 share/mate-about/
 share/mate-about/mate-version.xml
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/mate-portals.conf
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
