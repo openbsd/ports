@@ -39,8 +39,6 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # Note:
 # use ulimit -p 256 for test
 
-# Known test failures: test1474
-
 # Skip python dependency; it is only required for three rudimentary
 # DICT/SMB/TELNET tests.
 
