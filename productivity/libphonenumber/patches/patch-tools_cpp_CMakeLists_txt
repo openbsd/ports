@@ -3,7 +3,7 @@
 Index: tools/cpp/CMakeLists.txt
 --- tools/cpp/CMakeLists.txt.orig
 +++ tools/cpp/CMakeLists.txt
-@@ -30,7 +30,7 @@ set (
+@@ -25,7 +25,7 @@ set (
  )
  
  if (NOT WIN32)

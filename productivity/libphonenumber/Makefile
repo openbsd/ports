@@ -2,7 +2,7 @@ COMMENT =	C++ library to parse/format/validate phone numbers
 
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
-GH_TAGNAME =	v8.13.20
+GH_TAGNAME =	v8.13.21
 
 SHARED_LIBS +=  geocoding                 0.0 # 8.12
 SHARED_LIBS +=  phonenumber               0.0 # 8.12
@@ -41,7 +41,8 @@ LIB_DEPENDS =		devel/abseil-cpp \
 			textproc/icu4c
 
 CONFIGURE_ARGS =	-DUSE_STD_MAP=ON \
-			-DREGENERATE_METADATA=OFF
+			-DREGENERATE_METADATA=OFF \
+			-DCMAKE_CXX_STANDARD=17
 
 WRKSRC =		${WRKDIST}/cpp
 
