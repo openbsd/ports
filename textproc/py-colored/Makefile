@@ -1,6 +1,6 @@
 COMMENT=	simple library for color and formatting in terminal
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	2.2.3
 DISTNAME=	colored-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
