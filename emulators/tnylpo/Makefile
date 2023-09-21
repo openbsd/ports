@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	https://gitlab.com/gbrein/tnylpo/-/archive/${V}/
+SITES =		https://gitlab.com/gbrein/tnylpo/-/archive/${V}/
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile

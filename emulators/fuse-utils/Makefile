@@ -13,7 +13,7 @@ WANTLIB += intl jpeg m ogg pcre2-8 png pthread spectrum ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
+SITES=			${SITE_SOURCEFORGE:=fuse-emulator/}
 
 LIB_DEPENDS=		devel/libspectrum \
 			graphics/jpeg \

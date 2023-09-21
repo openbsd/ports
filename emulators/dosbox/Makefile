@@ -6,7 +6,7 @@ VERSION=	0.74-3
 DISTNAME=	dosbox-${VERSION}
 PKGNAME=	dosbox-${VERSION:S/-/./}
 CATEGORIES=	games x11 emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
+SITES=		${SITE_SOURCEFORGE:=dosbox/}
 
 HOMEPAGE=	https://www.dosbox.com/
 

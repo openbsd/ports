@@ -33,8 +33,8 @@ CONFIGURE_ENV=		CFLAGS='${CFLAGS} -D__unix -DX_USE_SHM -DUSE_SNDIO -fno-exceptio
 
 MAKE_ENV=WISH=${WISH} FRODOLIBDIR=${FRODOLIBDIR}
 
-MASTER_SITES=	http://frodo.cebix.net/downloads/ \
- ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
+SITES=	http://frodo.cebix.net/downloads/ \
+ 	ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
 
 WRKDIST=${WRKDIR}/Frodo-4.1b
 WRKSRC=${WRKDIST}/Src

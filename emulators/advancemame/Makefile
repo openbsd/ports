@@ -16,7 +16,7 @@ PERMIT_DISTFILES =	unclear license
 
 WANTLIB +=	SDL2 c expat freetype m pthread z
 
-MASTER_SITES =	https://github.com/amadvance/advancemame/releases/download/v$V/
+SITES =		https://github.com/amadvance/advancemame/releases/download/v$V/
 
 LIB_DEPENDS =	devel/sdl2
 

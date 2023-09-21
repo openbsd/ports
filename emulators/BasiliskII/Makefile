@@ -12,7 +12,7 @@ HOMEPAGE=		https://basilisk.cebix.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi

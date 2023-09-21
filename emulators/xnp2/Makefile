@@ -17,7 +17,7 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread usb-1.0 z ${COMPILER_LIBCXX}
 WANTLIB += fribidi harfbuzz
 
-MASTER_SITES =		https://www.nonakap.org/np2/release/
+SITES =			https://www.nonakap.org/np2/release/
 EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc

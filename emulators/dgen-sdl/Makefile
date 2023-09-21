@@ -24,7 +24,7 @@ WANTLIB =		GL SDL archive c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dgen/}
+SITES =			${SITE_SOURCEFORGE:=dgen/}
 
 BUILD_DEPENDS =		devel/sdl
 

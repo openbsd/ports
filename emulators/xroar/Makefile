@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0
 WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pthread sndfile z ICE SM
 
-MASTER_SITES =		https://www.6809.org.uk/xroar/dl/
+SITES =			https://www.6809.org.uk/xroar/dl/
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

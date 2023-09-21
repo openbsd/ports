@@ -9,7 +9,7 @@ HOMEPAGE=		http://gavare.se/gxemul/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gxemul/}
+SITES=			${SITE_SOURCEFORGE:=gxemul/}
 
 WANTLIB =		c m ${COMPILER_LIBCXX}
 

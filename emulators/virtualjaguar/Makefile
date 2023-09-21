@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB +=	SDL c cdio iconv m z
 
-MASTER_SITES=	https://icculus.org/virtualjaguar/tarballs/
+SITES=		https://icculus.org/virtualjaguar/tarballs/
 
 MODULES =	x11/qt5
 

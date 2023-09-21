@@ -11,7 +11,7 @@ REVISION =		0
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}files/FS-UAE-Launcher/Stable/${MODPY_EGG_VERSION}/
+SITES =		${HOMEPAGE}files/FS-UAE-Launcher/Stable/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 

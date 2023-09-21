@@ -12,7 +12,7 @@ WANTLIB += Xrender Xss Xxf86vm audiofile bz2 c gcrypt glib-2.0
 WANTLIB += gpg-error iconv intl lzma m ogg pcre2-8 png pthread samplerate
 WANTLIB += sndio spectrum usbhid xcb xml2 z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fuse-emulator/}
+SITES=			${SITE_SOURCEFORGE:=fuse-emulator/}
 
 LIB_DEPENDS=		devel/glib2 \
 			audio/flac \

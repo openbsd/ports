@@ -19,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL c m z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gambatte/}
+SITES =			${SITE_SOURCEFORGE:=gambatte/}
 
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

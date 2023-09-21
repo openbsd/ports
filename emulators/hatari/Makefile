@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ICE SDL2 SM X11 Xext c m png portmidi pthread readline
 WANTLIB += z
 
-MASTER_SITES =	https://download.tuxfamily.org/hatari/$V/
+SITES =		https://download.tuxfamily.org/hatari/$V/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \

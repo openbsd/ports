@@ -14,7 +14,7 @@ MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${HOMEPAGE}/releases/files/
+SITES =		${HOMEPAGE}/releases/files/
 EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += FLAC SDL2 c iconv intl m pthread z ${COMPILER_LIBCXX}

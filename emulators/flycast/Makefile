@@ -28,7 +28,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SPIRV ao c curl chdr glslang
 WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse vulkan xxhash z zip
 
-MASTER_SITES =	https://namtsui.com/source/
+SITES =		https://namtsui.com/source/
 
 NO_TEST =	Yes
 

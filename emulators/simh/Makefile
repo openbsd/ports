@@ -4,7 +4,7 @@ DISTNAME=		simhv39-0
 PKGNAME=		simh-3.9.0
 REVISION =		3
 CATEGORIES=		emulators
-MASTER_SITES=		${HOMEPAGE}/sources/
+SITES=			${HOMEPAGE}/sources/
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://simh.trailing-edge.com/

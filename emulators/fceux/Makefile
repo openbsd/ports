@@ -9,7 +9,7 @@ HOMEPAGE =		https://fceux.com/web/home.html
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fceultra/}
+SITES =			${SITE_SOURCEFORGE:=fceultra/}
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
 WANTLIB += avcodec avformat avutil GL GLU Qt5Core

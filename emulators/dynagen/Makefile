@@ -9,7 +9,7 @@ HOMEPAGE =		http://sourceforge.net/projects/dyna-gen/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dyna-gen/}
+SITES=			${SITE_SOURCEFORGE:=dyna-gen/}
 
 MODULES=		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

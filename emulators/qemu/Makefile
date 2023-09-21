@@ -9,7 +9,7 @@ COMMENT-ga=	QEMU guest agent
 VERSION=	8.0.2
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
-MASTER_SITES=	https://download.qemu.org/
+SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 REVISION=	0
 

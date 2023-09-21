@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.slicer.ca/coldfire/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/files/
+SITES=		${HOMEPAGE}/files/
 
 WANTLIB=		c curses pthread readline
 

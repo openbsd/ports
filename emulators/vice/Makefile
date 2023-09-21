@@ -14,7 +14,7 @@ WANTLIB += readline z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vice-emu/}
+SITES =			${SITE_SOURCEFORGE:=vice-emu/}
 
 BUILD_DEPENDS =		devel/xa \
 			converters/dos2unix

@@ -21,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Widgets
 WANTLIB += SDL2 avcodec avformat avutil boost_serialization-mt
 WANTLIB += c cryptopp enet fmt m swresample swscale usb-1.0
 
-MASTER_SITES =	https://github.com/citra-emu/citra-nightly/releases/download/nightly-${V}/
+SITES =		https://github.com/citra-emu/citra-nightly/releases/download/nightly-${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \

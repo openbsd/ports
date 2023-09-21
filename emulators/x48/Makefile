@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext c curses readline util
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=x48.berlios/}
+SITES=			${SITE_SOURCEFORGE:=x48.berlios/}
 EXTRACT_SUFX=		.tar.bz2
 
 AUTOCONF_VERSION=	2.60

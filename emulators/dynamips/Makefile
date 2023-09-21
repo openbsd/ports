@@ -8,7 +8,7 @@ REVISION=		9
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://www.gns3.net/dynamips/
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gns-3/}
+SITES=			${SITE_SOURCEFORGE:=gns-3/}
 
 # GPL
 PERMIT_PACKAGE=	Yes

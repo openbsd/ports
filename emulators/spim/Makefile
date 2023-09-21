@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m
 
-MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
+SITES=		http://www.cs.wisc.edu/~larus/SPIM/
 
 BUILD_DEPENDS=	devel/bison
 

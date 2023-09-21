@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c xcb
 
-MASTER_SITES=	http://xcopilot.cuspy.com/build/
+SITES=		http://xcopilot.cuspy.com/build/
 
 CONFIGURE_STYLE=gnu
 

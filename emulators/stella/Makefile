@@ -17,7 +17,7 @@ WANTLIB =		${COMPILER_LIBCXX} c m z pthread SDL2 png
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/stella-emu/stella/releases/download/$V/
+SITES =		https://github.com/stella-emu/stella/releases/download/$V/
 
 LIB_DEPENDS =		devel/sdl2 \
 			graphics/png

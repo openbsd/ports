@@ -18,7 +18,7 @@ WANTLIB += gtk-x11-2.0 gtksourceview-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES =		http://launchpad.net/gnusim8085/trunk/${V}/+download/
+SITES =			http://launchpad.net/gnusim8085/trunk/${V}/+download/
 
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \

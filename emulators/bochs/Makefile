@@ -3,7 +3,7 @@ COMMENT=	x86 machine simulator
 DISTNAME=	bochs-2.7
 REVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
+SITES=		${SITE_SOURCEFORGE:=bochs/}
 
 HOMEPAGE=	https://bochs.sourceforge.io/
 

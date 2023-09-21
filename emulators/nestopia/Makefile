@@ -19,7 +19,7 @@ WANTLIB += m png z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nestopiaue/}
+SITES =			${SITE_SOURCEFORGE:=nestopiaue/}
 EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		devel/autoconf-archive

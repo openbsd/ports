@@ -20,7 +20,7 @@ WANTLIB += atk-1.0 cairo gdk-x11-2.0 gtk-x11-2.0 iconv intl
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 zzip
 WANTLIB += harfbuzz
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=desmume/}
+SITES =		${SITE_SOURCEFORGE:=desmume/}
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

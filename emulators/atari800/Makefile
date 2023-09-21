@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c curses m mp3lame pthread readline z
 
-MASTER_SITES =	https://github.com/atari800/atari800/releases/download/ATARI800_${V:S/./_/g}/
+SITES =		https://github.com/atari800/atari800/releases/download/ATARI800_${V:S/./_/g}/
 
 LIB_DEPENDS =	audio/lame \
 		devel/sdl

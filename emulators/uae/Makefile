@@ -15,7 +15,7 @@ WANTLIB+= gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB+= pangoft2-1.0 pixman-1 png pthread xcb xcb-render
 WANTLIB+= xcb-render-util z
 
-MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
+SITES=		ftp://ftp.coresystems.de/pub/uae/sources/develop/
 
 LIB_DEPENDS+=	x11/gtk+2 \
 		devel/sdl

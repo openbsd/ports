@@ -23,7 +23,7 @@ WANTLIB += openal png pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}files/FS-UAE/Stable/$V/
+SITES =			${HOMEPAGE}files/FS-UAE/Stable/$V/
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			archivers/zip
