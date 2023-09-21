@@ -1,6 +1,6 @@
 COMMENT =		fast Python json encoder/decoder
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	5.8.0
 DISTNAME =		ujson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
