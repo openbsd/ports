@@ -1,6 +1,8 @@
 COMMENT=	graphical tool to change Tux Paint settings
 
 DISTNAME=	tuxpaint-config-0.0.22
+REVISION=	0
+
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -21,7 +23,8 @@ COMPILER=	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	print/libpaper \
+LIB_DEPENDS=	devel/pango \
+		print/libpaper \
 		textproc/libunibreak \
 		x11/fltk
 
