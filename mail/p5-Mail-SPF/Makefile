@@ -2,7 +2,7 @@ COMMENT =		perl oop implementation of Sender Policy Framework
 
 DISTNAME =		Mail-SPF-v2.9.0
 PKGNAME =		p5-${DISTNAME:S/-v/-/}
-REVISION =		3
+REVISION =		4
 CATEGORIES =		mail
 
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>

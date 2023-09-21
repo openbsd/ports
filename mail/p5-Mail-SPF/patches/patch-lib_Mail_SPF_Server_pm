@@ -2,7 +2,15 @@ Fix for cpan bug 149825 (https://rt.cpan.org/Ticket/Display.html?id=149825)
 Index: lib/Mail/SPF/Server.pm
 --- lib/Mail/SPF/Server.pm.orig
 +++ lib/Mail/SPF/Server.pm
-@@ -513,7 +513,15 @@ sub get_acceptable_records_from_packet {
+@@ -22,6 +22,7 @@ use strict;
+ use base 'Mail::SPF::Base';
+ 
+ use Error ':try';
++use Net::DNS;
+ use Net::DNS::Resolver;
+ 
+ use Mail::SPF::MacroString;
+@@ -513,7 +514,15 @@ sub get_acceptable_records_from_packet {
      foreach my $rr ($packet->answer) {
          next if $rr->type ne $rr_type;  # Ignore RRs of unexpected type.
  
