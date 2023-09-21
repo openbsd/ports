@@ -60,6 +60,10 @@ CXXFLAGS +=		${XFLAGS-${MACHINE_ARCH}}
 MAKE_ENV +=	ZIG_GLOBAL_CACHE_DIR=${WRKBUILD}/zig-global-cache \
 		ZIG_LOCAL_CACHE_DIR=${WRKBUILD}/zig-local-cache
 
+# set stacksize limit to 10M during the build
+do-build:
+	@ulimit -s 10240 && ${MODCMAKE_BUILD_TARGET}
+
 do-install:
 	cp -R ${WRKBUILD}/stage3/* ${PREFIX}
 	find ${PREFIX}/lib/zig -name '*${PATCHORIG}' -delete
