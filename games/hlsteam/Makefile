@@ -5,7 +5,7 @@ GH_ACCOUNT =	HeapsIO
 GH_PROJECT =	hlsteam
 # checkout from 2022-03-22
 GH_COMMIT =	f774d8ea2b7255a3067254fde8d18063455dec24
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
@@ -25,7 +25,8 @@ NO_TEST =		Yes
 MAKE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXX="${CXX}"
 CFLAGS +=		-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/goldberg_emulator
+			-I${LOCALBASE}/include/goldberg_emulator \
+			-I${LOCALBASE}/include/hl
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/steam.hdll ${PREFIX}/lib/
