@@ -6,8 +6,8 @@ HOMEPAGE=	https://www.nano-editor.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-MASTER_SITES=	https://www.nano-editor.org/dist/v7/ \
-		${MASTER_SITE_GNU:=nano/}
+SITES=		https://www.nano-editor.org/dist/v7/ \
+		${SITE_GNU:=nano/}
 PORTROACH=	site:https://www.nano-editor.org/dist/latest/
 EXTRACT_SUFX=	.tar.xz
 

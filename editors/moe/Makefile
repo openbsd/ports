@@ -13,7 +13,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_GNU:=moe/}
+SITES =		${SITE_GNU:=moe/}
 
 CONFIGURE_STYLE =	simple
 

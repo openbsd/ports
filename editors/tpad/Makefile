@@ -18,7 +18,7 @@ WANTLIB += harfbuzz iconv intl jpeg lzma m magic pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
-MASTER_SITES =	https://launchpad.net/tpad-project/4.0/4.0/+download/
+SITES =		https://launchpad.net/tpad-project/4.0/4.0/+download/
 
 MODULES =	textproc/intltool
 

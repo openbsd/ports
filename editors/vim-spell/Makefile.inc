@@ -6,7 +6,7 @@ HOMEPAGE =	https://www.vim.org/
 VERSION =	9.0
 P =		${VERSION:C/[\.]//g}
 CATEGORIES =	editors
-MASTER_SITES =	http://ftp.vim.org/pub/vim/runtime/spell/ \
+SITES =		http://ftp.vim.org/pub/vim/runtime/spell/ \
 		ftp://ftp.vim.org/pub/vim/runtime/spell/
 DIST_SUBDIR =	vim-spell-${VERSION}
 EXTRACT_ONLY =

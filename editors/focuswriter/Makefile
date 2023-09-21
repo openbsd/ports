@@ -7,7 +7,7 @@ REVISION =	1
 
 HOMEPAGE =	https://gottcode.org/focuswriter/
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+

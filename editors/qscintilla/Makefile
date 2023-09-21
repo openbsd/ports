@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport
 WANTLIB += Qt5Widgets m
 
-MASTER_SITES =	https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
+SITES =		https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
 MODULES =	devel/qmake \
 		x11/qt5

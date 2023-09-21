@@ -28,7 +28,7 @@ WANTLIB += png raptor2 rasqal rdf rsvg-2 spectre ssl uuid wmf-0.2
 WANTLIB += wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm xml2 xslt
 WANTLIB += yajl z zstd
 
-MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
+SITES=		http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
 MODULES=	lang/python
 

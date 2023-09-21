@@ -40,7 +40,7 @@ SHARED_LIBS +=  kookularGenerator_odt     0.0 # 17.0
 SHARED_LIBS +=  kookularGenerator_odp     0.0 # 17.0
 
 DIST_SUBDIR =	kde
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
+SITES =		${SITE_KDE:=stable/calligra/${VERSION}/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

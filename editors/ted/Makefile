@@ -4,7 +4,7 @@ DISTNAME =	ted-$V
 REVISION =	6
 CATEGORIES =	editors textproc print
 HOMEPAGE =	http://www.nllgg.nl/Ted/
-MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
+SITES =		ftp://ftp.nluug.nl/pub/editors/ted/
 
 DISTFILES =	ted-$V.src.tar.gz
 # GPL

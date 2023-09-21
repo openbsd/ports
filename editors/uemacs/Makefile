@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
+SITES=		ftp://aquest.com/pub/uemacs400/disk2/
 DISTFILES=	ue400dev.zip
 
 EXTRACT_CASES=	*.zip) ${UNZIP} -Laq ${FULLDISTDIR}/$$archive -d ${WRKDIR};;

@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.scintilla.org/
 # old Python license
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 USE_GMAKE=	Yes

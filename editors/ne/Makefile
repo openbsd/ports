@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m
 
-MASTER_SITES =	http://ne.di.unimi.it/
+SITES =		http://ne.di.unimi.it/
 
 USE_GMAKE =	Yes
 MAKE_FILE =	makefile

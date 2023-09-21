@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto curses glib-2.0 intl lber ldap popt readline
 WANTLIB += ssl
 
-MASTER_SITES=		http://www.lichteblau.com/download/
+SITES=			http://www.lichteblau.com/download/
 
 BUILD_DEPENDS=		textproc/libxslt
 

@@ -14,7 +14,7 @@ COMMENT=		complete set of supported XEmacs packages
 # GNU GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/packages/ \
+SITES=		http://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.oleane.net/pub/xemacs/packages/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/packages/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/

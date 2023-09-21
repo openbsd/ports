@@ -7,7 +7,7 @@ CATEGORIES =		editors
 
 HOMEPAGE =		https://github.com/alexandervdm/gummi
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/$V/
+SITES =			${HOMEPAGE}/releases/download/$V/
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 

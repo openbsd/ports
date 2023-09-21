@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += c curses
 
-MASTER_SITES =	https://www.chiark.greenend.org.uk/~sgtatham/tweak/
+SITES =		https://www.chiark.greenend.org.uk/~sgtatham/tweak/
 
 MAKE_FLAGS =	CC="${CC}" LINK="${CC}" CFLAGS="${CFLAGS} -c -Dunix"
 

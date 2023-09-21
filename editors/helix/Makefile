@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
 
-MASTER_SITES =	https://github.com/helix-editor/helix/releases/download/${VER}/
+SITES =		https://github.com/helix-editor/helix/releases/download/${VER}/
 
 EXTRACT_SUFX =	.tar.xz
 DISTFILES +=	${DISTNAME}-source${EXTRACT_SUFX}

@@ -21,7 +21,7 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
 WANTLIB += Qt5Xml X11 c m poppler poppler-qt5
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kile/}
+SITES =		${SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/kf5

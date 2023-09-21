@@ -16,7 +16,7 @@ FLAVOR ?=
 
 WANTLIB =	X11 c iconv intl util xcb
 
-MASTER_SITES =	http://fossies.org/linux/misc/
+SITES =		http://fossies.org/linux/misc/
 
 .if ${FLAVOR:Mpython}
 MODULES +=	lang/python

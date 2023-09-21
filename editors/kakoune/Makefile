@@ -10,7 +10,7 @@ HOMEPAGE =		https://kakoune.org/
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
-MASTER_SITES =		https://github.com/mawww/kakoune/releases/download/v${V}/
+SITES =		https://github.com/mawww/kakoune/releases/download/v${V}/
 
 EXTRACT_SUFX =		.tar.bz2
 

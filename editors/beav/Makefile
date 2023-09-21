@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/beav/}
+SITES=		${SITE_DEBIAN:=main/b/beav/}
 
 DISTFILES=	beav_${VERSION}.orig.tar.gz
 PATCHFILES=	beav_${VERSION}-${REV}.diff.gz

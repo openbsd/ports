@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 scintilla
 
-MASTER_SITES=		https://www.scintilla.org/
+SITES=			https://www.scintilla.org/
 EXTRACT_SUFX=		.tgz
 
 # c++17

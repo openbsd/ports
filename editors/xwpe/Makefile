@@ -4,7 +4,7 @@ DISTNAME=	xwpe-1.5.30a
 REVISION=	3
 CATEGORIES=	editors
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/editors/X/} \
+SITES=		${SITE_SUNSITE:=apps/editors/X/} \
 		http://www.identicalsoftware.com/xwpe/ 
 
 # GPLv2

@@ -10,9 +10,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c curses m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	http://lav.yar.ru/download/le/
+SITES =		http://lav.yar.ru/download/le/
 
 CONFIGURE_STYLE =	gnu
 

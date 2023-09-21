@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses gc iconv intl m pthread readline textstyle
 
-MASTER_SITES =		${MASTER_SITE_GNU:=poke/}
+SITES =			${SITE_GNU:=poke/}
 
 BUILD_DEPENDS =		devel/dejagnu
 LIB_DEPENDS =		devel/boehm-gc \

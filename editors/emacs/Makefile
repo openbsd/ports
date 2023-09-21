@@ -16,7 +16,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c curses execinfo gmp gnutls jansson m pthread sqlite3
 WANTLIB += tree-sitter xml2 z
 
-MASTER_SITES=		${MASTER_SITE_GNU:=emacs/}
+SITES=			${SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

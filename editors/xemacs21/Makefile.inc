@@ -7,7 +7,7 @@ HOMEPAGE=	http://www.xemacs.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/xemacs-${BRANCH}/ \
+SITES=		http://ftp.xemacs.org/pub/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.oleane.net/pub/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-${BRANCH}/

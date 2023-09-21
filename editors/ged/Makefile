@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		${MASTER_SITE_GNU:=ed/}
+SITES =			${SITE_GNU:=ed/}
 EXTRACT_SUFX =		.tar.lz
 
 CONFIGURE_STYLE =	gnu

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c
 
-MASTER_SITES=		${MASTER_SITE_XCONTRIB:=editors/}
+SITES=			${SITE_XCONTRIB:=editors/}
 EXTRACT_SUFX=		.tar.Z
 
 CONFIGURE_STYLE=	imake

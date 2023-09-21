@@ -15,7 +15,7 @@ WANTLIB =		c m curses ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hte/}
+SITES =			${SITE_SOURCEFORGE:=hte/}
 
 EXTRACT_SUFX =		.tar.bz2
 

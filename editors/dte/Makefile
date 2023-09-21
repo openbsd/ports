@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv
 
-MASTER_SITES =	https://craigbarnes.gitlab.io/dist/dte/
+SITES =		https://craigbarnes.gitlab.io/dist/dte/
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c

@@ -10,7 +10,7 @@ HOMEPAGE=	https://texmacs.org/
 
 MAINTAINER=	Nam Nguyen <namn@berkeley.edu>
 
-MASTER_SITES=	http://texmacs.org/Download/ftp/tmftp/source/
+SITES=		http://texmacs.org/Download/ftp/tmftp/source/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

@@ -11,7 +11,7 @@ MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.dettus.net/dhex/
+SITES =			https://www.dettus.net/dhex/
 
 WANTLIB =		c curses
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"

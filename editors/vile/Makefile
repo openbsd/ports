@@ -8,7 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c curses iconv
 
-MASTER_SITES=	https://invisible-island.net/archives/vile/current/ \
+SITES=		https://invisible-island.net/archives/vile/current/ \
 		https://invisible-mirror.net/archives/vile/current/ \
 		ftp://ftp.invisible-island.net/vile/current/
 

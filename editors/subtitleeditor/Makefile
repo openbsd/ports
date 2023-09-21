@@ -28,7 +28,7 @@ WANTLIB += lzma m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm xml++-2.6 xml2 z
 
-MASTER_SITES=		https://github.com/kitone/subtitleeditor/releases/download/${V}/
+SITES=	https://github.com/kitone/subtitleeditor/releases/download/${V}/
 
 BUILD_DEPENDS=		devel/iso-codes
 

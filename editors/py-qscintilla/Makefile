@@ -12,7 +12,7 @@ HOMEPAGE =		https://www.riverbankcomputing.com/software/qscintilla/
 # GPLv2/GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
+SITES =			https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
 WANTLIB += ${COMPILER_LIBCXX} GL m Qt5Core Qt5Gui Qt5PrintSupport
 WANTLIB += Qt5Widgets qscintilla2_qt5

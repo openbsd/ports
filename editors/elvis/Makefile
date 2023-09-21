@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=	http://www.the-little-red-haired-girl.org/pub/elvis/
+SITES=		http://www.the-little-red-haired-girl.org/pub/elvis/
 
 FLAVORS=	no_x11
 FLAVOR?=

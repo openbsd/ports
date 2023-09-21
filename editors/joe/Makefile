@@ -2,7 +2,7 @@ COMMENT=		Joe's Own Editor
 
 DISTNAME=		joe-4.6
 CATEGORIES=		editors
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=joe-editor/}
+SITES=			${SITE_SOURCEFORGE:=joe-editor/}
 
 HOMEPAGE=		http://joe-editor.sourceforge.net/
 

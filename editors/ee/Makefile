@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=		http://mirrors.nycbug.org/pub/distfiles/
+SITES=			http://mirrors.nycbug.org/pub/distfiles/
 EXTRACT_SUFX=		.tgz
 
 WRKDIST=		${WRKDIR}/easyedit-${VERSION}

@@ -4,15 +4,15 @@ DISTNAME=		nedit-5.7
 P_V=			0.5
 EPOCH=			0
 REVISION =		1
-DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
-			nedit_patterns-${P_V}.tgz:0
+DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX}
+DISTFILES.trap = 	nedit_patterns-${P_V}.tgz
 
 CATEGORIES=		editors x11
 HOMEPAGE =		https://sourceforge.net/projects/nedit/
 MAINTAINER =		Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nedit/}
-MASTER_SITES0=		http://distfiles.sigtrap.nl/
+SITES=			${SITE_SOURCEFORGE:=nedit/}
+SITES.trap=		http://distfiles.sigtrap.nl/
 
 DIST_SUBDIR=		nedit
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=	ftp://ftp.cs.toronto.edu/cs/ftp/pub/hugh/jove-dev/
+SITES=		ftp://ftp.cs.toronto.edu/cs/ftp/pub/hugh/jove-dev/
 EXTRACT_SUFX=	.tgz
 
 

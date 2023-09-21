@@ -5,7 +5,7 @@ REVISION =		2
 CATEGORIES =		editors
 
 HOMEPAGE =		http://se-editor.org/
-MASTER_SITES =		http://se-editor.org/dist/
+SITES =			http://se-editor.org/dist/
 
 # PD
 PERMIT_PACKAGE =	Yes

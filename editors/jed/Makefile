@@ -4,7 +4,7 @@ DISTNAME=	jed-0.99-19
 PKGNAME=	jed-0.99.19
 REVISION=	2
 CATEGORIES=	editors
-MASTER_SITES=   http://www.jedsoft.org/releases/jed/ \
+SITES=   	http://www.jedsoft.org/releases/jed/ \
 		ftp://space.mit.edu/pub/davis/jed/v0.99/ \
 		ftp://ftp.ntua.gr/pub/lang/slang/jed/v0.99/ \
 		ftp://ftp.fu-berlin.de/pub/unix/editors/jed/v0.99/

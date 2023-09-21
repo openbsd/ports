@@ -13,7 +13,7 @@ WANTLIB+=	X11 Xau Xdmcp Xpm c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	ftp://ftp.mrsserver.net/pub/distfiles/
+SITES=		ftp://ftp.mrsserver.net/pub/distfiles/
 
 NO_TEST=	Yes
 

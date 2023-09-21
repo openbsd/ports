@@ -22,7 +22,7 @@ SHARED_LIBS +=  planwidgetutils           0.0 # 0.0
 SHARED_LIBS +=  planworkfactory           0.0 # 0.0
 
 DIST_SUBDIR =	kde
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/calligra/${VERSION}/}
+SITES =		${SITE_KDE:=stable/calligra/${VERSION}/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

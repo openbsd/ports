@@ -28,13 +28,13 @@ LUV_VER =	093a977b82077591baefe1e880d37dfa2730bd54
 LUAJIT_VER =	505e2c03de35e2718eef0d2d3660712e06dadf1f
 LUACOMPAT_VER =	v0.9
 
-MASTER_SITES0 =	https://github.com/luvit/luv/archive/
-MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
-MASTER_SITES2 = https://github.com/keplerproject/lua-compat-5.3/archive/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		luv-{}${LUV_VER}${EXTRACT_SUFX}:0 \
-		luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}:1 \
-		lua-compat-5.3-{}${LUACOMPAT_VER}${EXTRACT_SUFX}:2
+SITES.a =	https://github.com/luvit/luv/archive/
+SITES.b = 	https://github.com/LuaJIT/LuaJIT/archive/
+SITES.c = 	https://github.com/keplerproject/lua-compat-5.3/archive/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a = 	luv-{}${LUV_VER}${EXTRACT_SUFX}
+DISTFILES.b = 	luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}
+DISTFILES.c = 	lua-compat-5.3-{}${LUACOMPAT_VER}${EXTRACT_SUFX}
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain

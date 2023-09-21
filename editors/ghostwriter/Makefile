@@ -20,7 +20,7 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c hunspell-1.7
 WANTLIB += m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =		x11/kde-applications \
 			devel/kf5
