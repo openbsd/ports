@@ -28,7 +28,7 @@ HOMEPAGE =	https://apps.ankiweb.net/
 # AGPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://apps.ankiweb.net/downloads/archive/
+SITES =		https://apps.ankiweb.net/downloads/archive/
 
 MODULES =	lang/python
 

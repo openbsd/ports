@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.gamgi.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://atom.ist.utl.pt/src/ \
+SITES=			http://atom.ist.utl.pt/src/ \
 			http://gamgi.ist.utl.pt/src/ \
 			ftp://atom.ist.utl.pt/src/
 

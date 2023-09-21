@@ -15,7 +15,7 @@ WRKDIST=		${WRKDIR}/epte
 MAKE_FILE=		makefile
 ALL_TARGET=		epte
 
-MASTER_SITES=		http://www.toddmiller.com/epte/
+SITES=			http://www.toddmiller.com/epte/
 
 NO_TEST=		Yes
 

@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.ofset.org/drgeo/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://documentation.ofset.org/drgeo/
+SITES=		http://documentation.ofset.org/drgeo/
 
 CONFIGURE_STYLE=	gnu
 

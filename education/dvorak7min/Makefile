@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 MAKE_FLAGS=	CC="${CC}" PROF="${CFLAGS}"
 

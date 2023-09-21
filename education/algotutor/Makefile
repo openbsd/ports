@@ -9,7 +9,7 @@ HOMEPAGE=	http://people.ofset.org/~ckhung/p/algotutor/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://people.ofset.org/~ckhung/dl/
+SITES=		http://people.ofset.org/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
 
 RUN_DEPENDS=	x11/p5-Tk

@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.ofset.org/drgeo/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ofset/}
+SITES=		${SITE_SOURCEFORGE:=ofset/}
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

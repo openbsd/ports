@@ -19,7 +19,7 @@ WANTLIB += pthread ${COMPILER_LIBCXX} xcb xml2 z
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
+SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
 BUILD_DEPENDS=	textproc/p5-XML-Parser
 LIB_DEPENDS=	x11/gtk+2 \

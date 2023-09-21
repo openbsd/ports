@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gtypist/}
+SITES=		${SITE_GNU:=gtypist/}
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/gettext,-runtime
