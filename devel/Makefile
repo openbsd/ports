@@ -1432,6 +1432,7 @@
      SUBDIR += py-hatch-fancy-pypi-readme,python3
      SUBDIR += py-hatch-vcs,python3
      SUBDIR += py-hatchling,python3
+     SUBDIR += py-helpdev,python3
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
@@ -1537,12 +1538,15 @@
      SUBDIR += py-pydantic,python3
      SUBDIR += py-pydocstyle,python3
      SUBDIR += py-pyinotify,python3
+     SUBDIR += py-pyls-black,python3
+     SUBDIR += py-pyls-spyder,python3
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyproject-api,python3
      SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
      SUBDIR += py-python-language-server,python3
+     SUBDIR += py-qdarkstyle,python3
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix,python3
@@ -1588,6 +1592,7 @@
      SUBDIR += py-suds,python3
      SUBDIR += py-sure,python3
      SUBDIR += py-tabulate
+     SUBDIR += py-three-merge,python3
      SUBDIR += py-thrift,python3
      SUBDIR += py-typeguard,python3
      SUBDIR += py-tabulate,python3
