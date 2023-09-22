@@ -11,7 +11,7 @@ MAINTAINER=	Omar Polo <op@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
+SITES=		${SITE_SOURCEFORGE:=enlightenment/}
 
 WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xdmcp Xext aom brotlicommon
 WANTLIB += brotlidec brotlienc bz2 c dav1d de265 freetype gif
