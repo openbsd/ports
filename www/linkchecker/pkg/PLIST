@@ -124,10 +124,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}itmss
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}itmsservicesurl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}mailtourl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}mailtourl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}nntpurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}nntpurl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}telneturl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}telneturl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}unknownurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}unknownurl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/${MODPY_PYCACHE}urlbase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,8 +137,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/ignoreurl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/internpaturl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/itmsservicesurl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/mailtourl.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/nntpurl.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/telneturl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/unknownurl.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/urlbase.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cmdline.py
