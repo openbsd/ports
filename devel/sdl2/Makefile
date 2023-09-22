@@ -38,6 +38,7 @@ CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-libsamplerate-shared \
 		 --disable-libudev \
 		 --disable-nas \
+	         --disable-pipewire \
 		 --disable-pulseaudio \
 		 --disable-sndio-shared \
 		 --disable-video-wayland \
