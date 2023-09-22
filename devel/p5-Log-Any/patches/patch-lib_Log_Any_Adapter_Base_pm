@@ -1,8 +1,9 @@
+Index: lib/Log/Any/Adapter/Base.pm
 --- lib/Log/Any/Adapter/Base.pm.orig
 +++ lib/Log/Any/Adapter/Base.pm
 @@ -54,6 +54,10 @@ Log::Any::Adapter::Base
  
- version 1.049
+ version 1.717
  
 +=head1 DESCRIPTION
 +

@@ -1,8 +1,9 @@
+Index: lib/Log/Any/Proxy/Test.pm
 --- lib/Log/Any/Proxy/Test.pm.orig
 +++ lib/Log/Any/Proxy/Test.pm
 @@ -44,6 +44,10 @@ Log::Any::Proxy::Test
  
- version 1.049
+ version 1.717
  
 +=head1 DESCRIPTION
 +

@@ -1,8 +1,9 @@
+Index: lib/Log/Any/Adapter/Test.pm
 --- lib/Log/Any/Adapter/Test.pm.orig
 +++ lib/Log/Any/Adapter/Test.pm
 @@ -220,6 +220,10 @@ Log::Any::Adapter::Test
  
- version 1.049
+ version 1.717
  
 +=head1 DESCRIPTION
 +

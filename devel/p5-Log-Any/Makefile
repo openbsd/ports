@@ -1,16 +1,22 @@
-COMMENT=		bringing loggers and listeners together
+COMMENT =	bringing loggers and listeners together
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME=		Log-Any-1.714
-CATEGORIES=		devel
+DISTNAME =	Log-Any-1.717
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-CONFIGURE_STYLE=	perl
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Devel-StackTrace>=2.00 \
+			devel/p5-Moose \
+			devel/p5-Throwable \
+			www/p5-Mojo
+
+PKG_ARCH =		*
 
 pre-configure:
-			@find ${WRKSRC} -name "*.orig.port" -delete
+			find ${WRKSRC} -name "*.orig.port" -delete
 
 .include <bsd.port.mk>
