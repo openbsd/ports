@@ -11,6 +11,4 @@ PERMIT_PACKAGE=		Yes
 
 MASTER_SITES ?=		https://gitlab.freedesktop.org/pipewire/${PW_PROJECT}/-/archive/${PW_VERSION}/
 
-MODULES +=		devel/meson
-
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}

@@ -12,7 +12,13 @@ WANTLIB += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m pthread readline
 WANTLIB += sndfile
 
-BUILD_DEPENDS=		devel/gettext,-tools
+MODULES=		devel/meson \
+			lang/python
+
+MODPY_RUNDEP=		No
+
+BUILD_DEPENDS=		devel/gettext,-tools \
+			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS=		audio/libcanberra \
 			audio/libsndfile \
