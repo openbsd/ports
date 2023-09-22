@@ -1,3 +1,5 @@
+BROKEN =	needs updating to python3
+
 COMMENT =	FireEye Labs Obfuscated String Solver
 
 MODPY_EGG_VERSION =	1.6.1
