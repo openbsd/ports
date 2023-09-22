@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -27,7 +27,7 @@ import subprocess
+@@ -28,7 +28,7 @@ import subprocess
  import sys
  import shutil
  
@@ -10,30 +10,29 @@ Index: setup.py
  from distutils.command.install_data import install_data
  
  
-@@ -82,7 +82,7 @@ def get_subpackages(name):
- 
- def get_data_files():
-     """Return data_files in a platform dependent manner"""
--    if sys.platform.startswith('linux'):
-+    if sys.platform.startswith(('linux', 'openbsd')):
-         if PY3:
-             data_files = [('share/applications', ['scripts/spyder3.desktop']),
-                           ('share/icons', ['img_src/spyder3.png']),
-@@ -132,7 +132,7 @@ CMDCLASS = {'install_data': MyInstallData}
- # NOTE: the '[...]_win_post_install.py' script is installed even on non-Windows
- # platforms due to a bug in pip installation process (see Issue 1158)
- SCRIPTS = ['%s_win_post_install.py' % NAME]
--if PY3 and sys.platform.startswith('linux'):
-+if PY3 and sys.platform.startswith(('linux', 'openbsd')):
-     SCRIPTS.append('spyder3')
- else:
-     SCRIPTS.append('spyder')
-@@ -244,7 +244,7 @@ install_requires = [
-     'keyring;sys_platform!="linux2"',
-     # Packages for pyqt5 are only available in
-     # Python 3
--    'pyqt5<=5.12;python_version>="3"'
-+    #'pyqt5<=5.12;python_version>="3"'
- ]
- 
- extras_require = {
+@@ -197,21 +197,21 @@ install_requires = [
+     'diff-match-patch>=20181111',
+     'intervaltree>=3.0.2',
+     'ipython>=7.6.0',
+-    'jedi==0.17.2',
++    'jedi>=0.17.2',
+     'jsonschema>=3.2.0',
+     'keyring>=17.0.0',
+     'nbconvert>=4.0',
+     'numpydoc>=0.6.0',
+     # Required to get SSH connections to remote kernels
+     'paramiko>=2.4.0;platform_system=="Windows"',
+-    'parso==0.7.0',
++    'parso>=0.7.0',
+     'pexpect>=4.4.0',
+     'pickleshare>=0.4',
+     'psutil>=5.3',
+     'pygments>=2.0',
+     'pylint>=1.0',
+-    'pyqt5<5.13',
+-    'pyqtwebengine<5.13',
++    #'pyqt5<5.13',
++    #'pyqtwebengine<5.13',
+     'python-language-server[all]>=0.36.2,<1.0.0',
+     'pyls-black>=0.4.6',
+     'pyls-spyder>=0.3.2',

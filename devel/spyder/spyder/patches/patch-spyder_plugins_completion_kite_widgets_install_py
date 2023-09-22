@@ -1,0 +1,28 @@
+Spyder before 5.3.0 is not compatible with Python 3.10 but
+deleting calls to image.scaled allows us to launch Spyder.
+
+See: https://github.com/spyder-ide/spyder/issues/16571
+
+Index: spyder/plugins/completion/kite/widgets/install.py
+--- spyder/plugins/completion/kite/widgets/install.py.orig
++++ spyder/plugins/completion/kite/widgets/install.py
+@@ -52,8 +52,6 @@ class KiteIntegrationInfo(QWidget):
+         image_label = QLabel()
+         image_height = image.height() * self.ICON_SCALE_FACTOR
+         image_width = image.width() * self.ICON_SCALE_FACTOR
+-        image = image.scaled(image_width, image_height, Qt.KeepAspectRatio,
+-                             Qt.SmoothTransformation)
+         image_label.setPixmap(image)
+ 
+         images_layout.addStretch()
+@@ -212,10 +210,6 @@ class KiteInstallation(QWidget):
+         else:
+             image_height = copilot_image.height() * 0.4
+             image_width = copilot_image.width() * 0.4
+-            copilot_label.setPixmap(
+-                copilot_image.scaled(image_width, image_height,
+-                                     Qt.KeepAspectRatio,
+-                                     Qt.SmoothTransformation))
+ 
+         # Layout
+         general_layout = QHBoxLayout()

@@ -1,12 +1,14 @@
+silence warning; remove when updating to spyder 5.x.
+
 Index: spyder/app/mainwindow.py
 --- spyder/app/mainwindow.py.orig
 +++ spyder/app/mainwindow.py
-@@ -1037,7 +1037,7 @@ class MainWindow(QMainWindow):
-         add_actions(web_resources, webres_actions)
-         self.help_menu_actions.append(web_resources)
-         # Qt assistant link
--        if sys.platform.startswith('linux') and not PYQT5:
-+        if sys.platform.startswith(('linux','openbsd')) and not PYQT5:
-             qta_exe = "assistant-qt4"
-         else:
-             qta_exe = "assistant"
+@@ -1327,8 +1327,6 @@ class MainWindow(QMainWindow):
+             timer_report_deps = QTimer(self)
+             timer_report_deps.setInterval(2000)
+             timer_report_deps.setSingleShot(True)
+-            timer_report_deps.timeout.connect(
+-                self.report_missing_dependencies)
+             timer_report_deps.start()
+ 
+         # Raise the menuBar to the top of the main window widget's stack

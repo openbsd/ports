@@ -1,7 +1,7 @@
 Index: spyder/__init__.py
 --- spyder/__init__.py.orig
 +++ spyder/__init__.py
-@@ -42,7 +42,7 @@ __website_url__ = 'https://www.spyder-ide.org/'
+@@ -46,7 +46,7 @@ __docs_url__ = 'https://docs.spyder-ide.org/'
  # Dear (Debian, RPM, ...) package makers, please feel free to customize the
  # following path to module's data (images) and translations:
  DATAPATH = LOCALEPATH = DOCPATH = MATHJAXPATH = JQUERYPATH = ''
