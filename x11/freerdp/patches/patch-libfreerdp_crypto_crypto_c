@@ -1,7 +1,7 @@
 Index: libfreerdp/crypto/crypto.c
 --- libfreerdp/crypto/crypto.c.orig
 +++ libfreerdp/crypto/crypto.c
-@@ -976,7 +976,7 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
+@@ -978,7 +978,7 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
  			return WINPR_MD_SHA512;
  		case NID_ripemd160:
  			return WINPR_MD_RIPEMD160;
@@ -10,7 +10,7 @@ Index: libfreerdp/crypto/crypto.c
  		case NID_sha3_224:
  			return WINPR_MD_SHA3_224;
  		case NID_sha3_256:
-@@ -985,6 +985,8 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
+@@ -987,6 +987,8 @@ WINPR_MD_TYPE crypto_cert_get_signature_alg(X509* xcer
  			return WINPR_MD_SHA3_384;
  		case NID_sha3_512:
  			return WINPR_MD_SHA3_512;
