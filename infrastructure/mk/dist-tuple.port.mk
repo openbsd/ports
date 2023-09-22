@@ -31,17 +31,20 @@ DISTNAME ?= ${_project}-${_id:S/^v//}
 _subdir =	refs/tags/
 .    endif
 
-DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:S/<account>/${_account}/g:S/<project>/${_project}/g:S/<id>/${_id}/g:S/<subdir>/${_subdir}/g}
-.    if !empty(TEMPLATE_HOMEPAGE.${_template})
-HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:S/<account>/${_account}/g:S/<project>/${_project}/g}
-.    endif
+.    for _subst in S/<account>/${_account}/g:S/<project>/${_project}/g:S/<id>/${_id}/g:S/<subdir>/${_subdir}/g
 
-.    if "${_targetdir}" != "."
+DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:${_subst}}
+.      if !empty(TEMPLATE_HOMEPAGE.${_template})
+HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:${_subst}}
+.      endif
+
+.      if "${_targetdir}" != "."
 MODDIST-TUPLE_post-extract += \
 	t=${WRKDIST}/${_targetdir}; [[ -d $$t ]] && rmdir $$t \
 	|| mkdir -p `dirname $$t` ; \
 	mv ${WRKDIR}/${_project}-${_id:S/refs\/tags\///:S/^v//} $$t;
-.    endif
+.      endif
+.    endfor
 
 .  endfor
 .endif
