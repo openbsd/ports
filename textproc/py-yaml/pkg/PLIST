@@ -1,3 +1,5 @@
+@conflict py-yaml-*
+@pkgpath textproc/py-yaml
 lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyYAML-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
