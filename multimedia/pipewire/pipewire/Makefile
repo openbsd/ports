@@ -35,9 +35,7 @@ CONFIGURE_ARGS=		-Dsystemd=disabled \
 
 # until supported and/or proven useful
 CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
-			-Dpipewire-jack=disabled \
 			-Dbluez5=disabled \
-			-Djack=disabled \
 			-Dlibcamera=disabled \
 			-Droc=disabled \
 			-Decho-cancel-webrtc=disabled \
@@ -60,14 +58,20 @@ CONFIGURE_ARGS +=	-Dlibusb=disabled
 # needs udev
 CONFIGURE_ARGS +=	-Dv4l2=disabled
 
-# needs alsa
-CONFIGURE_ARGS +=	-Dsession-managers=[]
-
 # XXX needs O_TMPFILE
 CONFIGURE_ARGS +=	-Dpipewire-v4l2=disabled
 
-# XXX to be revisited; useful to replace the pulseaudio daemon but it seems to
-# depend on systemd activation for now
+# needs alsa
+CONFIGURE_ARGS +=	-Dsession-managers=[]
+
+# XXX to be revisited; useful to replace Jack (audio/jack)
+# Jack2 client
+CONFIGURE_ARGS +=	-Djack=disabled
+# Jack3 server
+CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
+
+# XXX to be revisited; useful to replace the pulseaudio daemon
+# (audio/pulseaudio) but it seems to depend on systemd activation for now
 CONFIGURE_ARGS +=	-Dlibpulse=disabled
 
 # libintl
