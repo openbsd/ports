@@ -1,0 +1,4 @@
+Helps users and developers to get information about the environment
+to report bugs or even test one's system without spending a day on
+it. It can get information about hardware, OS, paths, Python
+distribution and packages, including Qt-things.
