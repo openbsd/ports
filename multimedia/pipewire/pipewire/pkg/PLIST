@@ -400,8 +400,8 @@ share/pipewire/pipewire.conf
 share/pipewire/pipewire.conf.avail/
 share/pipewire/pipewire.conf.avail/10-rates.conf
 share/pipewire/pipewire.conf.avail/20-upmix.conf
-@sample /etc/pipewire/
-@sample /etc/pipewire/client-rt.conf.d/
-@sample /etc/pipewire/client.conf.d/
-@sample /etc/pipewire/minimal.conf.d/
-@sample /etc/pipewire/pipewire.conf.d/
+@sample ${SYSCONFDIR}/pipewire/
+@sample ${SYSCONFDIR}/pipewire/client-rt.conf.d/
+@sample ${SYSCONFDIR}/pipewire/client.conf.d/
+@sample ${SYSCONFDIR}/pipewire/minimal.conf.d/
+@sample ${SYSCONFDIR}/pipewire/pipewire.conf.d/
