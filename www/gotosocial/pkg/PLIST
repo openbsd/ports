@@ -45,6 +45,8 @@ gotosocial/web/assets/dist/profile.css
 gotosocial/web/assets/dist/settings-style.css
 gotosocial/web/assets/dist/settings.js
 gotosocial/web/assets/dist/status.css
+gotosocial/web/assets/dist/tag.css
+gotosocial/web/assets/feditext.svg
 gotosocial/web/assets/fonts/
 gotosocial/web/assets/fonts/OFL.txt
 gotosocial/web/assets/fonts/noto-sans-v27-latin-700.woff
@@ -78,6 +80,7 @@ gotosocial/web/template/oob.tmpl
 gotosocial/web/template/profile.tmpl
 gotosocial/web/template/sign-in.tmpl
 gotosocial/web/template/status.tmpl
+gotosocial/web/template/tag.tmpl
 gotosocial/web/template/thread.tmpl
 @cwd ${LOCALBASE}
 @bin bin/gotosocial

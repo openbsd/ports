@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.10.0
+MODGO_VERSION =	v0.11.1
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -15,8 +15,8 @@ HOMEPAGE =	https://docs.gotosocial.org
 MAINTAINER =	Hukadan <me@hukadan.org>
 
 # fetch the web assets built for the release
-DISTFILES +=	gotosocial_${MODGO_VERSION:S/v//}_web-assets.tar.gz:0
-MASTER_SITES0 =	https://github.com/superseriousbusiness/gotosocial/releases/download/${MODGO_VERSION}/
+DISTFILES.web_assets +=	gotosocial_${MODGO_VERSION:S/v//}_web-assets.tar.gz
+MASTER_SITES.web_assets =	https://github.com/superseriousbusiness/gotosocial/releases/download/${MODGO_VERSION}/
 
 # AGPL-3.0+
 PERMIT_PACKAGE =	yes
