@@ -492,7 +492,6 @@
      SUBDIR += py-xmldiff		# unflavoured (standalone?) but uses python3
      SUBDIR += py-xmlschema,python3
      SUBDIR += py-xmltodict,python3
-     SUBDIR += py-yaml
      SUBDIR += py-yaml,python3
      SUBDIR += qpdfview
      SUBDIR += qxlsx
