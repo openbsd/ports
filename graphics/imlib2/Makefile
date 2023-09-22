@@ -1,7 +1,7 @@
 COMMENT=	image manipulation library
 
-DISTNAME=	imlib2-1.12.0
-SHARED_LIBS=	Imlib2	9.0	# 13.0
+DISTNAME=	imlib2-1.12.1
+SHARED_LIBS=	Imlib2	9.0	# 13.1
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://docs.enlightenment.org/api/imlib2/html/
