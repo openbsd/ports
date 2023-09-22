@@ -1,9 +1,9 @@
 # XXX needs eventfd from rust libc (there's no epoll-shim rust) and rust pw_sys
 
-COMMENT=		XXX
+COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
-PW_VERSION=		0.3.4
+PW_VERSION=		0.4.1
 # needed because the devel/cargo module resets the list
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -11,11 +11,14 @@ CATEGORIES=		audio
 
 MODULES=		devel/cargo
 
-BUILD_DEPENDS=		devel/appstream-glib
+#BUILD_DEPENDS=		devel/appstream-glib
 
 # libclang.so
-BUILD_DEPENDS +=	devel/llvm
-MODCARGO_ENV=		LIBCLANG_PATH=${LOCALBASE}/lib
+MODULES +=		lang/clang
+MODCARGO_ENV=		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
+			LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+
+#MODCARGO_CRATES_UPDATE=	libspa libspa-sys
 
 LIB_DEPENDS=		multimedia/pipewire/pipewire \
 			x11/gtk+4

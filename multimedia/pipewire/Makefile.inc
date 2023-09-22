@@ -6,7 +6,8 @@ HOMEPAGE ?=		https://pipewire.org/
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# MIT
+# pipewire: MIT
+# helvum: GPLv3
 PERMIT_PACKAGE=		Yes
 
 MASTER_SITES ?=		https://gitlab.freedesktop.org/pipewire/${PW_PROJECT}/-/archive/${PW_VERSION}/
