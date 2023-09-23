@@ -2,37 +2,14 @@
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
 @pkgpath print/foomatic-filters
+@pkgpath print/cups-filters,ldap
 @rcscript ${RCDIR}/cups_browsed
 bin/driverless
 bin/driverless-fax
 bin/foomatic-rip
-include/cupsfilters/
-include/cupsfilters/colord.h
-include/cupsfilters/colormanager.h
-include/cupsfilters/driver.h
-include/cupsfilters/image.h
-include/cupsfilters/ipp.h
-include/cupsfilters/pdftoippprinter.h
-include/cupsfilters/ppdgenerator.h
-include/cupsfilters/raster.h
-include/fontembed/
-include/fontembed/bitset.h
-include/fontembed/embed.h
-include/fontembed/fontfile.h
-include/fontembed/iofn.h
-include/fontembed/sfnt.h
-@static-lib lib/libcupsfilters.a
-lib/libcupsfilters.la
-@lib lib/libcupsfilters.so.${LIBcupsfilters_VERSION}
-@static-lib lib/libfontembed.a
-lib/libfontembed.la
-@lib lib/libfontembed.so.${LIBfontembed_VERSION}
-lib/pkgconfig/libcupsfilters.pc
-lib/pkgconfig/libfontembed.pc
 @bin libexec/cups/backend/beh
 libexec/cups/backend/driverless
 libexec/cups/backend/driverless-fax
-@bin libexec/cups/backend/implicitclass
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
 @bin libexec/cups/driver/driverless
@@ -41,76 +18,48 @@ libexec/cups/driver/driverless-fax
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
 @bin libexec/cups/filter/foomatic-rip
-libexec/cups/filter/gstopdf
-libexec/cups/filter/gstopxl
+@bin libexec/cups/filter/gstopdf
+@bin libexec/cups/filter/gstopxl
 @bin libexec/cups/filter/gstoraster
 @bin libexec/cups/filter/imagetopdf
-libexec/cups/filter/imagetops
+@bin libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
+@bin libexec/cups/filter/pclmtoraster
 @bin libexec/cups/filter/pdftopdf
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
 libexec/cups/filter/pstopxl
 libexec/cups/filter/pstoraster
+@bin libexec/cups/filter/pwgtopclm
+@bin libexec/cups/filter/pwgtopdf
+@bin libexec/cups/filter/pwgtoraster
 @bin libexec/cups/filter/rastertoescpx
-libexec/cups/filter/rastertopclm
 @bin libexec/cups/filter/rastertopclx
-@bin libexec/cups/filter/rastertopdf
 @bin libexec/cups/filter/rastertops
-@bin libexec/cups/filter/sys5ippprinter
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/texttotext
+@bin libexec/cups/filter/universal
 @man man/man1/driverless.1
 @man man/man1/foomatic-rip.1
-@man man/man5/cups-browsed.conf.5
-@man man/man8/cups-browsed.8
-@bin sbin/cups-browsed
-share/cups/banners/classified
-share/cups/banners/confidential
-share/cups/banners/form
-share/cups/banners/secret
-share/cups/banners/standard
-share/cups/banners/topsecret
-share/cups/banners/unclassified
-share/cups/charsets/
-share/cups/charsets/pdf.utf-8
-share/cups/charsets/pdf.utf-8.heavy
-share/cups/charsets/pdf.utf-8.simple
-share/cups/data/classified.pdf
-share/cups/data/confidential.pdf
-share/cups/data/default-testpage.pdf
-share/cups/data/default.pdf
-share/cups/data/form_english.pdf
-share/cups/data/form_english_in.odt
-share/cups/data/form_russian.pdf
-share/cups/data/form_russian_in.odt
-share/cups/data/secret.pdf
-share/cups/data/standard.pdf
-share/cups/data/testprint
-share/cups/data/topsecret.pdf
-share/cups/data/unclassified.pdf
 share/cups/drv/cupsfilters.drv
-share/cups/mime/cupsfilters-ghostscript.convs
-share/cups/mime/cupsfilters-poppler.convs
+share/cups/mime/cupsfilters-universal-postscript.convs
+share/cups/mime/cupsfilters-universal.convs
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
-share/cups/ppdc/escp.h
-share/cups/ppdc/pcl.h
 share/doc/cups-filters/
 share/doc/cups-filters/ABOUT-NLS
 share/doc/cups-filters/AUTHORS
+share/doc/cups-filters/CHANGES-1.x.md
+share/doc/cups-filters/CHANGES.md
+share/doc/cups-filters/CONTRIBUTING.md
 share/doc/cups-filters/COPYING
+share/doc/cups-filters/DEVELOPING.md
 share/doc/cups-filters/INSTALL
-share/doc/cups-filters/NEWS
-share/doc/cups-filters/README
+share/doc/cups-filters/LICENSE
+share/doc/cups-filters/NOTICE
+share/doc/cups-filters/README.md
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/cups-filters/
-share/examples/cups-filters/cups/
-@mode 0644
-share/examples/cups-filters/cups/cups-browsed.conf
-@sample ${SYSCONFDIR}/cups/cups-browsed.conf
-@mode
 share/ppd/
 share/ppd/cupsfilters/
 share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
@@ -119,3 +68,5 @@ share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/Ricoh-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/pxlcolor.ppd
 share/ppd/cupsfilters/pxlmono.ppd
+share/ppdc/escp.h
+share/ppdc/pcl.h
