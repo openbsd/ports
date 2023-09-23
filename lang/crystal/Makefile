@@ -1,6 +1,8 @@
 # https://github.com/crystal-lang/crystal/issues/12743
 #BROKEN = No LLVM 15 support
 
+BROKEN=		not IBT compatible, cannot load library libLLVM-13.so
+
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
