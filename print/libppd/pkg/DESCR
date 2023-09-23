@@ -1,0 +1,4 @@
+Libppd provides all PPD related function/API which is going to be removed from
+CUPS 3.X, but are still required for retro-fitting support of legacy printers.
+The library is meant only for retro-fitting printer applications, any new
+printer drivers have to be written as native printer application without libppd.

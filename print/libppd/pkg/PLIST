@@ -1,0 +1,28 @@
+@bin bin/testppdfile
+include/ppd/
+include/ppd/ppd-filter.h
+include/ppd/ppd.h
+include/ppd/ppdc.h
+@static-lib lib/libppd.a
+lib/libppd.la
+@lib lib/libppd.so.${LIBppd_VERSION}
+lib/pkgconfig/libppd.pc
+share/doc/libppd/
+share/doc/libppd/ABOUT-NLS
+share/doc/libppd/AUTHORS
+share/doc/libppd/CHANGES-1.x.md
+share/doc/libppd/CHANGES.md
+share/doc/libppd/CONTRIBUTING.md
+share/doc/libppd/COPYING
+share/doc/libppd/DEVELOPING.md
+share/doc/libppd/INSTALL
+share/doc/libppd/LICENSE
+share/doc/libppd/NOTICE
+share/doc/libppd/README.md
+share/ppdc/
+share/ppdc/epson.h
+share/ppdc/font.defs
+share/ppdc/hp.h
+share/ppdc/label.h
+share/ppdc/media.defs
+share/ppdc/raster.defs
