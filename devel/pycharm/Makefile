@@ -1,13 +1,11 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2022.2.3
+V=			2023.2.1
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
-REVISION=		0
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
-DISTFILES=		${DISTNAME}-no-jbr${EXTRACT_SUFX}
 
 MAINTAINER =		Lucas Raab <tuftedocelot@fastmail.fm>
 
@@ -36,6 +34,7 @@ do-build:
 do-install:
 	${INSTALL_DATA_DIR} ${PC}
 	@cd ${WRKDIST} && pax -rw . ${PC}
+	@rm -rf ${PC}/jbr
 	@rm -rf ${PC}/plugins/android
 	@rm -rf ${PC}/lib/pty4j-native
 .for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
