@@ -31,8 +31,10 @@
      SUBDIR += l2a
      SUBDIR += latex-mk
      SUBDIR += lcdf-typetools
+     SUBDIR += libcupsfilters
      SUBDIR += libharu
      SUBDIR += libpaper
+     SUBDIR += libppd
      SUBDIR += libspectre
      SUBDIR += lilypond
      SUBDIR += lout
