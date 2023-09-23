@@ -1,2 +1,6 @@
-SHA256 (vcmi-1.3.2.20230916.tar.gz) = +B79NOEtX3jjGlr92aYf24C3MG5RkutcQl0iEIG8YaI=
-SIZE (vcmi-1.3.2.20230916.tar.gz) = 11634943
+B79NOEtX3jjGlr92aYf24C3MG5RkutcQl0iEIG8YaI=
+SHA256 (fuzzylite-fuzzylite-7aee562d6ca17f3cf42588ffb5116e03017c3c50.tar.gz) = cOf9r/LVFHo79ZDMgXGWbZmDzNSZQAL4IWyDskBZl0Y=
+SHA256 (google-googletest-b796f7d44681514f58a683a3a71ff17c94edb0c1.tar.gz) = JoHejAkwsGENxSomAvrUHQ2vo9f/EDDaZXXVb8H0ykY=
+SHA256 (vcmi-vcmi-b7de6854836373b1f77e24e94c1a933e782f3d34.tar.gz) = C+RsiEDZzSAUyYAcAJWqUyGxu8rveO0oeflSatQ9v9o=
+SIZE (fuzzylite-fuzzylite-7aee562d6ca17f3cf42588ffb5116e03017c3c50.tar.gz) = 2194254
+SIZE (google-googletest-b796f7d44681514f58a683a3a71ff17c94edb0c1.tar.gz) = 864010
