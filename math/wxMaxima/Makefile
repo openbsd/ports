@@ -13,8 +13,6 @@ HOMEPAGE =		https://wxmaxima-developers.github.io/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
-
 WANTLIB += ${COMPILER_LIBCXX} c m wx_baseu-3.2 wx_baseu_net-3.2
 WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_richtext-3.2
