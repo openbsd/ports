@@ -47,8 +47,15 @@ CONFIGURE_ARGS +=	-DOCIO_USE_SSE=ON
 CONFIGURE_ARGS +=	-DOCIO_USE_SSE=OFF
 .endif
 
+# everything except tests
+ALL_TARGET =		OpenColorIO PyOpenColorIO
+
 pre-configure:
 	# custom code fails to find yaml-cpp>=0.8.0
 	rm -f ${WRKSRC}/share/cmake/modules/Findyaml-cpp.cmake
+
+pre-test:
+	# build whatever is left (ca. 180 C++ test files)
+	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
