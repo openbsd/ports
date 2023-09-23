@@ -1,13 +1,15 @@
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-DISTNAME=	netpbm-11.01.01
+DISTNAME=	netpbm-11.03.05
 SHARED_LIBS=	netpbm	6.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://shell.uugrn.org/~naddy/
+SITES=		https://shell.uugrn.org/~naddy/
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	graphics/tiff \
