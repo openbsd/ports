@@ -1,0 +1,16 @@
+Avoid ${WRKBUILD}/tmp/out.tar.lz consuming all disk space
+
+Index: testsuite/check.sh
+--- testsuite/check.sh.orig
++++ testsuite/check.sh
+@@ -1110,8 +1110,10 @@ if [ "${ln_works}" = yes ] ; then
+ 	"${TARLZ}" -xf "${testdir}"/ts_in_link.tar.lz || test_failed $LINENO
+ 	"${TARLZ}" -df "${testdir}"/ts_in_link.tar.lz --ignore-ids ||
+ 		test_failed $LINENO
++echo -n '\nSKIP archiving the root disk (link1 points to /):
+ 	"${TARLZ}" -0 -cf out.tar.lz link1 link2 link3 link4 || test_failed $LINENO
+ 	"${TARLZ}" -df out.tar.lz || test_failed $LINENO
++'
+ 	rm -f out.tar.lz link1 link2 link3 link4 || framework_failure
+ fi
+ 
