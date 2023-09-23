@@ -1,1 +1,2 @@
+@bin bin/osv-reporter
 @bin bin/osv-scanner
