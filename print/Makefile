@@ -7,7 +7,6 @@
      SUBDIR += cups
      SUBDIR += cups-bjnp
      SUBDIR += cups-filters
-     SUBDIR += cups-filters,ldap
      SUBDIR += cups-pdf
      SUBDIR += cups-pk-helper
      SUBDIR += detex
