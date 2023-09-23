@@ -59,6 +59,7 @@ share/doc/transmission/news/news-4.0.0.md
 share/doc/transmission/news/news-4.0.1.md
 share/doc/transmission/news/news-4.0.2.md
 share/doc/transmission/news/news-4.0.3.md
+share/doc/transmission/news/news-4.0.4.md
 share/doc/transmission/rpc-spec.md
 share/doc/transmission/send-email-when-torrent-done.sh
 @comment XXX update-plist(1) really wants this here, but -main is CLI only
