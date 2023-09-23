@@ -4,10 +4,7 @@ COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 USE_NOEXECONLY=	Yes
 .endif
 
-GH_ACCOUNT=	rbsec
-GH_PROJECT=	sslscan
-GH_TAGNAME=	2.1.0
-REVISION =	0
+DIST_TUPLE=	github rbsec sslscan 2.1.1 .
 
 CATEGORIES=	security net
 
@@ -19,7 +16,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER_LANGS=	c
 
 WANTLIB += c pthread z
 
