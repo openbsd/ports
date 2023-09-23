@@ -25,6 +25,7 @@ WANTLIB +=	pthread stdthreads utf8proc wayland-client wayland-cursor
 WANTLIB +=	xkbcommon
 
 BUILD_DEPENDS =	devel/tllist \
+		textproc/scdoc \
 		wayland/wayland-protocols
 
 LIB_DEPENDS =	devel/libstdthreads \
