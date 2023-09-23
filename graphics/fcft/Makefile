@@ -23,7 +23,8 @@ MODULES =	devel/meson
 WANTLIB +=	fontconfig freetype harfbuzz m pixman-1
 WANTLIB +=	stdthreads pthread utf8proc
 
-BUILD_DEPENDS =	devel/tllist
+BUILD_DEPENDS =	devel/tllist \
+		textproc/scdoc
 
 LIB_DEPENDS =	www/netsurf/libutf8proc \
 		devel/libstdthreads \
