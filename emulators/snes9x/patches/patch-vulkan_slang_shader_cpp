@@ -1,0 +1,18 @@
+Use system glslang and SPIRV-Cross.
+
+Index: vulkan/slang_shader.cpp
+--- vulkan/slang_shader.cpp.orig
++++ vulkan/slang_shader.cpp
+@@ -7,9 +7,9 @@
+ #include <sstream>
+ #include <vector>
+ #include <fstream>
+-#include "../external/glslang/glslang/Public/ShaderLang.h"
+-#include "../external/glslang/SPIRV/GlslangToSpv.h"
+-#include "../external/glslang/glslang/Public/ResourceLimits.h"
++#include <glslang/Public/ShaderLang.h>
++#include <glslang/SPIRV/GlslangToSpv.h>
++#include <glslang/Public/ResourceLimits.h>
+ 
+ using std::string;
+ using std::vector;

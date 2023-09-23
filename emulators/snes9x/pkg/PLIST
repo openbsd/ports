@@ -7,12 +7,15 @@ share/doc/snes9x/controls.txt
 share/doc/snes9x/snapshots.txt
 share/examples/snes9x/
 share/examples/snes9x/snes9x.conf.default
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
 share/icons/hicolor/128x128/apps/snes9x.png
 share/icons/hicolor/16x16/apps/snes9x.png
 share/icons/hicolor/24x24/apps/snes9x.png
 share/icons/hicolor/256x256/apps/snes9x.png
 share/icons/hicolor/32x32/apps/snes9x.png
 share/icons/hicolor/64x64/apps/snes9x.png
+share/icons/hicolor/scalable/apps/snes9x.svg
 share/locale/es/LC_MESSAGES/snes9x-gtk.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
@@ -21,7 +24,7 @@ share/locale/ja/LC_MESSAGES/snes9x-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/snes9x-gtk.mo
 share/locale/ru/LC_MESSAGES/snes9x-gtk.mo
 share/locale/sr@latin/LC_MESSAGES/snes9x-gtk.mo
+share/locale/uk/LC_MESSAGES/snes9x-gtk.mo
+share/locale/zh_CN/LC_MESSAGES/snes9x-gtk.mo
 share/snes9x/
 share/snes9x/cheats.bml
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database

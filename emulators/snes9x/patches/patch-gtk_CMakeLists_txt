@@ -1,0 +1,43 @@
+No -ldl on OpenBSD.
+Use system glslang and SPIRV-Cross.
+Don't reach for Wayland headers.
+
+Index: gtk/CMakeLists.txt
+--- gtk/CMakeLists.txt.orig
++++ gtk/CMakeLists.txt
+@@ -63,7 +63,6 @@ pkg_check_modules(XRANDR REQUIRED xrandr)
+ 
+ find_library(X11 X11 REQUIRED)
+ find_library(XEXT Xext REQUIRED)
+-find_library(DL dl REQUIRED)
+ list(APPEND ARGS ${SDL2_CFLAGS} ${GTK_CFLAGS} ${XRANDR_CFLAGS})
+ list(APPEND LIBS ${X11} ${XEXT} ${DL} ${SDL2_LIBRARIES} ${GTK_LIBRARIES} ${XRANDR_LIBRARIES})
+ 
+@@ -78,16 +77,11 @@ list(APPEND SOURCES src/gtk_display_driver_opengl.cpp
+ 
+ if(USE_SLANG)
+     list(APPEND SOURCES ../shaders/slang.cpp)
+-    list(APPEND INCLUDES ../external/glslang)
+ 
+     set(SPIRV_CROSS_EXCEPTIONS_TO_ASSERTIONS CACHE BOOL ON)
+     set(BUILD_TESTING CACHE BOOL OFF)
+-    add_subdirectory("../external/glslang" "glslang" EXCLUDE_FROM_ALL)
+-    add_subdirectory("../external/SPIRV-Cross" "SPIRV-Cross" EXCLUDE_FROM_ALL)
+     list(APPEND LIBS glslang
+-                     OGLCompiler
+                      HLSL
+-                     OSDependent
+                      SPIRV
+                      glslang-default-resource-limits)
+     list(APPEND LIBS spirv-cross-core
+@@ -95,10 +89,8 @@ if(USE_SLANG)
+                      spirv-cross-reflect
+                      spirv-cross-cpp)
+     list(APPEND DEFINES "USE_SLANG")
+-    list(APPEND INCLUDES "../external/glslang")
+ 
+     list(APPEND DEFINES "VK_USE_PLATFORM_XLIB_KHR"
+-                        "VK_USE_PLATFORM_WAYLAND_KHR"
+                         "VULKAN_HPP_DISPATCH_LOADER_DYNAMIC=1"
+                         "VMA_DYNAMIC_VULKAN_FUNCTIONS=1"
+                         "VMA_STATIC_VULKAN_FUNCTIONS=0")
