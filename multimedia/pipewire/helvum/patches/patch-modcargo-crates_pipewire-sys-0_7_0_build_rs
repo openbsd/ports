@@ -1,0 +1,13 @@
+https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
+
+Index: modcargo-crates/pipewire-sys-0.7.0/build.rs
+--- modcargo-crates/pipewire-sys-0.7.0/build.rs.orig
++++ modcargo-crates/pipewire-sys-0.7.0/build.rs
+@@ -19,6 +19,7 @@ fn main() {
+         // included header files changed.
+         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+         .size_t_is_usize(true)
++        .allowlist_function("pipewire_.*")
+         .allowlist_function("pw_.*")
+         .allowlist_type("pw_.*")
+         .allowlist_var("pw_.*")
