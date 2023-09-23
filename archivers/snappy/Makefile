@@ -20,10 +20,10 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
-			-DSNAPPY_BUILD_BENCHMARKS=OFF \
-			-DSNAPPY_BUILD_TESTS=OFF
+			-DSNAPPY_BUILD_BENCHMARKS=OFF
 
-# Requires git submodules
-NO_TEST =		Yes
+# expects submodule/cannot use system library
+DIST_TUPLE =		github	google	googletest	e40661d89b051e9ef4eb8a2420b74bf78b39ef41 \
+			third_party/googletest/	# BSD
 
 .include <bsd.port.mk>
