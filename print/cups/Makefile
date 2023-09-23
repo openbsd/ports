@@ -87,10 +87,8 @@ CONFIGURE_ARGS=		--enable-static \
 			--with-system-groups=wheel \
 			--with-dbusdir=${SYSCONFDIR}/dbus-1 \
 			--with-printcap=${SYSCONFDIR}/cups/printcap \
-			--with-smbconfigfile="samba://${SYSCONFDIR}/samba/smb.conf" \
-			--disable-cdsassl \
 			--disable-pam \
-			--disable-systemd
+			--without-systemd
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
