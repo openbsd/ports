@@ -3,7 +3,7 @@ COMMENT=	YAML parser and emitter in Python
 MODPY_EGG_VERSION=5.4.1
 DISTNAME=	PyYAML-${MODPY_EGG_VERSION}
 PKGNAME=	py-yaml-${MODPY_EGG_VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc
 
@@ -21,11 +21,14 @@ FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
-
-MODPY_SETUP_ARGS= --with-libyaml
+MODPY_PYBUILD=	setuptools
 CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	devel/libyaml
 BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+
+# https://github.com/yaml/pyyaml/issues/640
+MODPY_PYTEST=	No
+do-test:
+	cd ${WRKSRC}; ${MODPY_BIN} setup.py test
 
 .include <bsd.port.mk>
