@@ -31,7 +31,7 @@ DISTNAME ?= ${_project}-${_id:S/^v//}
 _subdir =	refs/tags/
 .    endif
 
-.    for _subst in S/<account>/${_account}/g:S/<project>/${_project}/g:S/<id>/${_id}/g:S,<subdir>,${_subdir},g
+.    for _subst in S,<account>,${_account},g:S,<project>,${_project},g:S,<id>,${_id},g:S,<subdir>,${_subdir},g
 
 DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:${_subst}}
 .      if !empty(TEMPLATE_HOMEPAGE.${_template})
