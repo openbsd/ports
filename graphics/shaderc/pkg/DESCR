@@ -1,0 +1,16 @@
+shaderc is a collection of tools, libraries and tests for shader
+compilation. At the moment it includes:
+
+ - glslc, a command line compiler for GLSL/HLSL to SPIR-V, and
+ - libshaderc, a library API for accessing glslc functionality.
+
+glslc wraps around core functionality in glslang and SPIRV-Tools. glslc
+and its library aims to to provide:
+
+ - a command line compiler with GCC- and Clang-like usage, for better
+   integration with build systems
+ - an API where functionality can be added without breaking existing
+   clients
+ - an API supporting standard concurrency patterns across multiple
+   operating systems
+ - increased functionality such as file #include support

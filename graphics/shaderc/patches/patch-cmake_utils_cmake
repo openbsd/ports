@@ -1,0 +1,24 @@
+- fix building with system gtest
+- remove -std=c++11; gtest wants at least C++14
+
+Index: cmake/utils.cmake
+--- cmake/utils.cmake.orig
++++ cmake/utils.cmake
+@@ -18,7 +18,7 @@ function (shaderc_use_gmock TARGET)
+   target_include_directories(${TARGET} PRIVATE
+     ${gmock_SOURCE_DIR}/include
+     ${gtest_SOURCE_DIR}/include)
+-  target_link_libraries(${TARGET} PRIVATE gmock gtest_main)
++  target_link_libraries(${TARGET} PRIVATE gmock gtest gtest_main)
+ endfunction(shaderc_use_gmock)
+ 
+ function(shaderc_default_c_compile_options TARGET)
+@@ -59,7 +59,7 @@ endfunction(shaderc_default_c_compile_options)
+ function(shaderc_default_compile_options TARGET)
+   shaderc_default_c_compile_options(${TARGET})
+   if (NOT "${MSVC}")
+-    target_compile_options(${TARGET} PRIVATE -std=c++11)
++    target_compile_options(${TARGET} PRIVATE)
+     if (NOT SHADERC_ENABLE_SHARED_CRT)
+       if (WIN32)
+         # For MinGW cross compile, statically link to the C++ runtime.

@@ -1,0 +1,13 @@
+@bin bin/glslc
+include/shaderc/
+include/shaderc/env.h
+include/shaderc/shaderc.h
+include/shaderc/shaderc.hpp
+include/shaderc/status.h
+include/shaderc/visibility.h
+@static-lib lib/libshaderc.a
+@static-lib lib/libshaderc_combined.a
+@lib lib/libshaderc_shared.so.${LIBshaderc_shared_VERSION}
+lib/pkgconfig/shaderc.pc
+lib/pkgconfig/shaderc_combined.pc
+lib/pkgconfig/shaderc_static.pc
