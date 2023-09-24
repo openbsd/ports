@@ -3,7 +3,7 @@ COMMENT=	gcc for ${CONFIG} cross-development
 VERSION=	12.2.0
 DISTNAME=	gcc-${VERSION}
 PKGNAME=	${CONFIG}-gcc-${VERSION}
-REVISION=	0
+REVISION=	1
 
 USE_NOEXECONLY=	Yes
 
@@ -55,7 +55,6 @@ CONFIGURE_ARGS+=--enable-languages=${LANGS}	\
 		--with-gmp=${LOCALBASE}		\
 		--with-newlib			\
 		--disable-libcc1		\
-		--disable-lto			\
 		--enable-cpp			\
 		--without-isl			\
 		--without-zstd

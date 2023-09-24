@@ -11,6 +11,7 @@
 @bin bin/${CONFIG}-gcov
 @bin bin/${CONFIG}-gcov-dump
 @bin bin/${CONFIG}-gcov-tool
+@bin bin/${CONFIG}-lto-dump
 libexec/gcc/
 libexec/gcc/${CONFIG}/
 libexec/gcc/${CONFIG}/${VERSION}/
@@ -23,7 +24,10 @@ libexec/gcc/${CONFIG}/${VERSION}/install-tools/fixinc.sh
 @bin libexec/gcc/${CONFIG}/${VERSION}/install-tools/fixincl
 libexec/gcc/${CONFIG}/${VERSION}/install-tools/mkheaders
 libexec/gcc/${CONFIG}/${VERSION}/install-tools/mkinstalldirs
+libexec/gcc/${CONFIG}/${VERSION}/liblto_plugin.la
+@so libexec/gcc/${CONFIG}/${VERSION}/liblto_plugin.so
 @bin libexec/gcc/${CONFIG}/${VERSION}/lto-wrapper
+@bin libexec/gcc/${CONFIG}/${VERSION}/lto1
 libexec/gcc/${CONFIG}/${VERSION}/plugin/
 @bin libexec/gcc/${CONFIG}/${VERSION}/plugin/gengtype
 @man man/man1/${CONFIG}-cpp.1
@@ -35,3 +39,4 @@ libexec/gcc/${CONFIG}/${VERSION}/plugin/
 @comment @man man/man7/fsf-funding.7
 @comment @man man/man7/gfdl.7
 @comment @man man/man7/gpl.7
+@man man/man1/${CONFIG}-lto-dump.1
