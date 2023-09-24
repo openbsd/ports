@@ -299,6 +299,7 @@
      SUBDIR += scratch
      SUBDIR += scrot
      SUBDIR += seq2gif
+     SUBDIR += shaderc
      SUBDIR += shotwell
      SUBDIR += simgear
      SUBDIR += simple-scan
