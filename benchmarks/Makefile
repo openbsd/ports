@@ -25,6 +25,7 @@
      SUBDIR += tsung
      SUBDIR += ubench
      SUBDIR += udpbench
+     SUBDIR += vegeta
      SUBDIR += wrk
      SUBDIR += xengine
 
