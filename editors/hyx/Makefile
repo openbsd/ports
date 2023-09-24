@@ -1,7 +1,6 @@
 COMMENT =	minimal cli hex editor with Vim-like keybindings
 
-V =		2021.06.09
-DISTNAME =	hyx-${V}
+DISTNAME =	hyx-2021.06.09
 
 CATEGORIES =	editors
 
