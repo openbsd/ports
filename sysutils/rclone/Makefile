@@ -1,6 +1,6 @@
 COMMENT =	rsync for cloud storage
 
-V =		1.63.1
+V =		1.64.0
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =	https://downloads.rclone.org/v${V}/
+SITES =		https://downloads.rclone.org/v${V}/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-vendor${EXTRACT_SUFX}
 
