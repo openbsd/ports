@@ -28,6 +28,8 @@ LIB_DEPENDS =	databases/db/v4 \
 
 CONFIGURE_STYLE = gnu
 
+CONFIGURE_ARGS =  --with-db --with-json=cjson --with-xml2
+
 CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/db4"
