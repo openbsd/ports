@@ -333,7 +333,6 @@ lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/priv/ct_default.css
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/priv/jquery-latest.js
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/priv/jquery.tablesorter.min.js
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/priv/tile1.jpg
-lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/priv/vts.tool
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/src/
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/src/ct.erl
 lib/${ERLANG_V}/lib/${ERL_COMMON_TEST}/src/ct_config.erl
@@ -3536,6 +3535,7 @@ lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/digraph_utils.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/edlin.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/edlin_context.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/edlin_expand.chunk
+lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/edlin_key.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/edlin_type_suggestion.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/epp.chunk
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/doc/chunks/erl_abstract_code.chunk
@@ -3627,6 +3627,7 @@ lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/digraph_utils.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/edlin.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/edlin_context.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/edlin_expand.beam
+lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/edlin_key.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/edlin_type_suggestion.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/epp.beam
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/ebin/erl_abstract_code.beam
@@ -3731,6 +3732,7 @@ lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/digraph_utils.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/edlin.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/edlin_context.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/edlin_expand.erl
+lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/edlin_key.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/edlin_type_suggestion.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/epp.erl
 lib/${ERLANG_V}/lib/${ERL_STDLIB}/src/erl_abstract_code.erl
@@ -4137,6 +4139,7 @@ lib/${ERLANG_V}/man/man3/
 @man lib/${ERLANG_V}/man/man3/disksup.3
 @man lib/${ERLANG_V}/man/man3/driver_entry.3
 @man lib/${ERLANG_V}/man/man3/dyntrace.3
+@man lib/${ERLANG_V}/man/man3/edlin.3
 @man lib/${ERLANG_V}/man/man3/edlin_expand.3
 @man lib/${ERLANG_V}/man/man3/edoc.3
 @man lib/${ERLANG_V}/man/man3/edoc_doclet.3
