@@ -1,0 +1,51 @@
+include a suffix argument for find_file_in_dir
+monosgen is linked statically; use .a and not .so suffix
+disable librt/libdl
+
+Index: modules/mono/build_scripts/mono_configure.py
+--- modules/mono/build_scripts/mono_configure.py.orig
++++ modules/mono/build_scripts/mono_configure.py
+@@ -31,15 +31,16 @@ def find_name_in_dir_files(directory, names, prefixes=
+     return ""
+ 
+ 
+-def find_file_in_dir(directory, names, prefixes=[""], extensions=[""]):
+-    for extension in extensions:
+-        if extension and not extension.startswith("."):
+-            extension = "." + extension
+-        for prefix in prefixes:
+-            for curname in names:
+-                filename = prefix + curname + extension
+-                if os.path.isfile(os.path.join(directory, filename)):
+-                    return filename
++def find_file_in_dir(directory, names, prefixes=[""], extensions=[""], suffix=[""]):
++    for sufx in suffix:
++        for extension in extensions:
++            if extension and not extension.startswith("."):
++                extension = "." + extension
++            for prefix in prefixes:
++                for curname in names:
++                    filename = prefix + curname + extension + sufx
++                    if os.path.isfile(os.path.join(directory, filename)):
++                        return filename
+     return ""
+ 
+ 
+@@ -335,7 +336,7 @@ def configure(env, env_mono):
+             elif is_javascript:
+                 env.Append(LIBS=["m", "rt", "dl", "pthread"])
+             else:
+-                env.Append(LIBS=["m", "rt", "dl", "pthread"])
++                env.Append(LIBS=["m", "pthread"])
+ 
+             if not mono_static:
+                 mono_so_file = find_file_in_dir(
+@@ -358,7 +359,7 @@ def configure(env, env_mono):
+             tmpenv.ParseConfig("pkg-config monosgen-2 --libs-only-L")
+ 
+             for hint_dir in tmpenv["LIBPATH"]:
+-                file_found = find_file_in_dir(hint_dir, mono_lib_names, prefixes=["lib"], extensions=[sharedlib_ext])
++                file_found = find_file_in_dir(hint_dir, mono_lib_names, prefixes=["lib"], extensions=".a")
+                 if file_found:
+                     mono_lib_path = hint_dir
+                     mono_so_file = file_found

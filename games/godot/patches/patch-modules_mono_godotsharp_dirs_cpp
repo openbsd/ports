@@ -1,0 +1,93 @@
+fix paths for our mono and godot install dirs
+make data_editor_prebuilt_api_dir() available also when !TOOLS_ENABLED
+
+Index: modules/mono/godotsharp_dirs.cpp
+--- modules/mono/godotsharp_dirs.cpp.orig
++++ modules/mono/godotsharp_dirs.cpp
+@@ -97,6 +97,8 @@ class _GodotSharpDirs { (public)
+ 	String res_temp_assemblies_dir;
+ 	String mono_user_dir;
+ 	String mono_logs_dir;
++	String data_editor_tools_dir;
++	String data_editor_prebuilt_api_dir;
+ 
+ #ifdef TOOLS_ENABLED
+ 	String mono_solutions_dir;
+@@ -106,8 +108,6 @@ class _GodotSharpDirs { (public)
+ 	String sln_filepath;
+ 	String csproj_filepath;
+ 
+-	String data_editor_tools_dir;
+-	String data_editor_prebuilt_api_dir;
+ #else
+ 	// Equivalent of res_assemblies_dir, but in the data directory rather than in 'res://'.
+ 	// Only defined on export templates. Used when exporting assemblies outside of PCKs.
+@@ -177,20 +177,20 @@ class _GodotSharpDirs { (public)
+ #endif
+ 
+ 		String exe_dir = OS::get_singleton()->get_executable_path().get_base_dir();
++		String share_dir = "${LOCALBASE}/share/godot";
+ 
+-#ifdef TOOLS_ENABLED
+-
+-		String data_dir_root = exe_dir.plus_file("GodotSharp");
++		String data_dir_root = share_dir.plus_file("GodotSharp");
+ 		data_editor_tools_dir = data_dir_root.plus_file("Tools");
+ 		data_editor_prebuilt_api_dir = data_dir_root.plus_file("Api");
+ 
+ 		String data_mono_root_dir = data_dir_root.plus_file("Mono");
+-		data_mono_etc_dir = data_mono_root_dir.plus_file("etc");
++		data_mono_etc_dir = "${SYSCONFDIR}";
++#ifdef TOOLS_ENABLED
+ 
+ #ifdef ANDROID_ENABLED
+ 		data_mono_lib_dir = gdmono::android::support::get_app_native_lib_dir();
+ #else
+-		data_mono_lib_dir = data_mono_root_dir.plus_file("lib");
++		data_mono_lib_dir = "${LOCALBASE}/lib";
+ #endif
+ 
+ #ifdef WINDOWS_ENABLED
+@@ -214,6 +214,7 @@ class _GodotSharpDirs { (public)
+ 
+ #else
+ 
++#if 0
+ 		String appname = ProjectSettings::get_singleton()->get("application/config/name");
+ 		String appname_safe = OS::get_singleton()->get_safe_dir_name(appname);
+ 		String data_dir_root = exe_dir.plus_file("data_" + appname_safe);
+@@ -223,11 +224,12 @@ class _GodotSharpDirs { (public)
+ 
+ 		String data_mono_root_dir = data_dir_root.plus_file("Mono");
+ 		data_mono_etc_dir = data_mono_root_dir.plus_file("etc");
++#endif
+ 
+ #ifdef ANDROID_ENABLED
+ 		data_mono_lib_dir = gdmono::android::support::get_app_native_lib_dir();
+ #else
+-		data_mono_lib_dir = data_mono_root_dir.plus_file("lib");
++		data_mono_lib_dir = "${LOCALBASE}/lib";
+ 		data_game_assemblies_dir = data_dir_root.plus_file("Assemblies");
+ #endif
+ 
+@@ -299,6 +301,10 @@ String get_mono_logs_dir() {
+ 	return _GodotSharpDirs::get_singleton().mono_logs_dir;
+ }
+ 
++String get_data_editor_prebuilt_api_dir() {
++	return _GodotSharpDirs::get_singleton().data_editor_prebuilt_api_dir;
++}
++
+ #ifdef TOOLS_ENABLED
+ String get_mono_solutions_dir() {
+ 	return _GodotSharpDirs::get_singleton().mono_solutions_dir;
+@@ -324,9 +330,6 @@ String get_data_editor_tools_dir() {
+ 	return _GodotSharpDirs::get_singleton().data_editor_tools_dir;
+ }
+ 
+-String get_data_editor_prebuilt_api_dir() {
+-	return _GodotSharpDirs::get_singleton().data_editor_prebuilt_api_dir;
+-}
+ #else
+ String get_data_game_assemblies_dir() {
+ 	return _GodotSharpDirs::get_singleton().data_game_assemblies_dir;

@@ -2,6 +2,18 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
+Using MSBuild/C#/Mono
+=====================
+
+MSBuild is used by Godot to compile the assemblies for C# projects. In order
+for it to run without error, you need to remove the following line from
+~/.nuget/packages/godot.net.sdk/3.3.0/Sdk/Sdk.targets:
+
+	TargetFrameworkFallbackSearchPaths="$(TargetFrameworkFallbackSearchPaths)"
+
+If the file doesn't exist, it hasn't been installed yet. You may need to run a
+build with MSBuild in Godot first before the file is created.
+
 Modules
 =======
 

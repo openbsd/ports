@@ -1,5 +1,6 @@
 @conflict godot-<=3.4.4p0
 @bin bin/godot-tools
+share/applications/
 share/applications/org.godotengine.Godot.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/metainfo/

@@ -1,0 +1,28 @@
+fix error: cannot initialize return object of type 'bool' with
+an rvalue of type 'nullptr_t'
+
+Index: modules/mono/csharp_script.cpp
+--- modules/mono/csharp_script.cpp.orig
++++ modules/mono/csharp_script.cpp
+@@ -2310,7 +2310,7 @@ bool CSharpScript::_update_exports(PlaceHolderScriptIn
+ 
+ 			GDMonoMethod *ctor = script_class->get_method(CACHED_STRING_NAME(dotctor), 0);
+ 
+-			ERR_FAIL_NULL_V_MSG(ctor, NULL,
++			ERR_FAIL_NULL_V_MSG(ctor, false,
+ 					"Cannot construct temporary MonoObject because the class does not define a parameterless constructor: '" + get_path() + "'.");
+ 
+ 			MonoException *ctor_exc = NULL;
+@@ -2891,10 +2891,10 @@ bool CSharpScript::can_instance() const {
+ 	if (extra_cond && !script_class) {
+ 		if (GDMono::get_singleton()->get_project_assembly() == NULL) {
+ 			// The project assembly is not loaded
+-			ERR_FAIL_V_MSG(NULL, "Cannot instance script because the project assembly is not loaded. Script: '" + get_path() + "'.");
++			ERR_FAIL_V_MSG(false, "Cannot instance script because the project assembly is not loaded. Script: '" + get_path() + "'.");
+ 		} else {
+ 			// The project assembly is loaded, but the class could not found
+-			ERR_FAIL_V_MSG(NULL, "Cannot instance script because the class '" + name + "' could not be found. Script: '" + get_path() + "'.");
++			ERR_FAIL_V_MSG(false, "Cannot instance script because the class '" + name + "' could not be found. Script: '" + get_path() + "'.");
+ 		}
+ 	}
+ 

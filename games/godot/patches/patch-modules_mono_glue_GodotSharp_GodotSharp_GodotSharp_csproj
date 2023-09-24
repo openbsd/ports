@@ -1,0 +1,13 @@
+needs LangVersion 7.1 for 'default literal'; otherwise error CS8107
+
+Index: modules/mono/glue/GodotSharp/GodotSharp/GodotSharp.csproj
+--- modules/mono/glue/GodotSharp/GodotSharp/GodotSharp.csproj.orig
++++ modules/mono/glue/GodotSharp/GodotSharp/GodotSharp.csproj
+@@ -7,6 +7,7 @@
+     <TargetFramework>netstandard2.0</TargetFramework>
+     <DocumentationFile>$(OutputPath)/$(AssemblyName).xml</DocumentationFile>
+     <EnableDefaultItems>false</EnableDefaultItems>
++    <LangVersion>7.1</LangVersion>
+   </PropertyGroup>
+   <PropertyGroup>
+     <DefineConstants>$(DefineConstants);GODOT</DefineConstants>
