@@ -29,6 +29,7 @@
      SUBDIR += hexedit
      SUBDIR += ht
      SUBDIR += ht,no_x11
+     SUBDIR += hyx
      SUBDIR += jed
      SUBDIR += jed,no_x11
      SUBDIR += joe
