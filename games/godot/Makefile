@@ -43,8 +43,6 @@ DISTFILES.sharp =	godot-${V}-mono-glue.tar.gz godot-${V}-nuget-packages.tar.xz
 
 DIST_TUPLE +=	github CoaguCo-Industries GodotSteam v3.20 godotsteam # MIT
 
-DIST_SUBDIR =   ${PKGNAME}
-
 MODULES =	devel/scons
 
 MODSCONS_FLAGS =	CC="${CC}" \
