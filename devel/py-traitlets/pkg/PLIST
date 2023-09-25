@@ -6,7 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/licenses/COPYING.md
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/traitlets/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/traitlets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}argcomplete_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}argcomplete_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}configurable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}configurable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -34,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}manage
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}sphinxdoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/${MODPY_PYCACHE}sphinxdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/application.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/argcomplete_config.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/configurable.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/loader.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/manager.py
@@ -45,11 +48,14 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_application.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_application.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_argcomplete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_argcomplete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_configurable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_configurable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/${MODPY_PYCACHE}test_loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/test_application.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/test_argcomplete.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/test_configurable.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/config/tests/test_loader.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/log.py
@@ -65,11 +71,14 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_tr
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets_enum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_traitlets_enum.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}test_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_traitlets.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_traitlets_enum.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/tests/test_typing.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/traitlets.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/
@@ -93,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}sentine
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}sentinel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/bunch.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/decorators.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/descriptions.py
@@ -115,3 +126,4 @@ lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_bunch.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_decorators.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/tests/test_importstring.py
 lib/python${MODPY_VERSION}/site-packages/traitlets/utils/text.py
+lib/python${MODPY_VERSION}/site-packages/traitlets/utils/warnings.py

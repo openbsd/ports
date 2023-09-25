@@ -1,6 +1,6 @@
 COMMENT =		configuration system for Python applications
 
-MODPY_EGG_VERSION =	5.6.0
+MODPY_EGG_VERSION =	5.10.0
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -19,5 +19,9 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 MODPY_PYTEST_ARGS =	traitlets
+
+TEST_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
+			devel/py-mypy${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
