@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.94 2023/09/05 13:50:32 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.95 2023/09/25 17:10:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -269,10 +269,6 @@ sub build1info($self, $v, $mirror, $roach)
 	my $build = sub($arg, $k) {
 		my $site = 'SITES';
 		my $url;
-		if ($arg =~ m/^(.*)\:(\d)$/) {
-			$arg = $1;
-			$site.= $2;
-		}
 		if ($k =~ m/^.*?FILES(.+)/) {
 			$site .= $1;
 		}
