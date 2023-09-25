@@ -3,7 +3,7 @@ Use /var/www/etc/icingaweb2.
 Index: library/Icinga/Application/ApplicationBootstrap.php
 --- library/Icinga/Application/ApplicationBootstrap.php.orig
 +++ library/Icinga/Application/ApplicationBootstrap.php
-@@ -175,7 +175,7 @@ abstract class ApplicationBootstrap
+@@ -168,7 +168,7 @@ abstract class ApplicationBootstrap
              if ($configDir === false) {
                  $configDir = Platform::isWindows()
                      ? $baseDir . '/config'
@@ -12,7 +12,7 @@ Index: library/Icinga/Application/ApplicationBootstrap.php
              }
          }
          $canonical = realpath($configDir);
-@@ -200,9 +200,9 @@ abstract class ApplicationBootstrap
+@@ -193,9 +193,9 @@ abstract class ApplicationBootstrap
                      explode(':', $libraryPaths)
                  ), 'is_dir');
              } else {
