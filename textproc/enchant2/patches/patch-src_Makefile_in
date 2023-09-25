@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1495,10 +1495,10 @@ uninstall-man: uninstall-man1 uninstall-man5
+@@ -1588,10 +1588,10 @@ uninstall-man: uninstall-man1 uninstall-man5
  
  
  .1.html:
@@ -13,4 +13,4 @@ Index: src/Makefile.in
 +	mandoc -Thtml $< > $@
  
  enchant-@ENCHANT_MAJOR_VERSION@.1: $(builddir)/enchant.1 Makefile.am $(top_builddir)/config.status
- 	rm -f $@ $@.tmp
+ 	cp $(abs_builddir)/enchant.1 $@
