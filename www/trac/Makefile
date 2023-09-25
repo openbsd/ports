@@ -1,7 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=1.5.4
-#PORTROACH=	limitw:1,even
+MODPY_EGG_VERSION=1.6
+PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
 CATEGORIES=	www devel
