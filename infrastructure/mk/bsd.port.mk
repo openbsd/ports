@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1624 2023/09/22 07:04:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1625 2023/09/25 17:09:10 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1384,36 +1384,30 @@ _T =${w:N$v:N$v.*}
 ERRORS += "Fatal: suffix not starting with . in ${_T}"
 .      endif
 .      for e in ${$w}
-_warn_distfiles += ${e:M*\:[0-9]}
-.        for p in ${e:C/:[0-9]$//}
-.          for f m u in ${p:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/SITES/}${e:M*\:[0-9]:C/^.*:([0-9])$/\1/} ${p:C/^.*\{(.*)\}(.*)$/\1\2/}
-.            if !defined($m)
+.        for f m u in ${e:C/^(.*)\{.*\}(.*)$/\1\2/} ${w:S/$v/SITES/} ${e:C/^.*\{(.*)\}(.*)$/\1\2/}
+.          if !defined($m)
 ERRORS += "Fatal: $m is not defined but referenced by $e in $v"
-.            endif
-# XXX kanjistroke
-#.            if "${u:S/"//g}" == "${ROACH_URL:S/"//g}"
-.            if "${u}" == "${ROACH_URL}"
+.          endif
+.          if "${u}" == "${ROACH_URL}"
 ROACH_SITES = ${$m}
-.            endif
-.            if empty(_FILES:M$f)
+.          endif
+.          if empty(_FILES:M$f)
 _FILES += $f
-.              if empty(DIST_SUBDIR)
+.            if empty(DIST_SUBDIR)
 _FULL_FETCH_LIST += $f $f $m $u
 _PATH_$v += $f
-.              else
+.            else
 _FULL_FETCH_LIST += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
-.              endif
-ALL_$v += $f
 .            endif
-.          endfor
+ALL_$v += $f
+.          endif
 .        endfor
 .      endfor
-.    else
-_PATH_$v ?=
-ALL_$v ?=
 .    endif
 .  endfor
+_PATH_$v ?=
+ALL_$v ?=
 .endfor
 _FULL_FETCH_LIST ?=
 
@@ -2732,9 +2726,6 @@ ${_BULK_COOKIE}:
 
 ${_WRKDIR_COOKIE}:
 	@${ECHO_MSG} "===> Building from scratch ${FULLPKGNAME}${_MASTER}"
-.if !empty(_warn_distfiles)
-	@echo "WARNING: old style distfiles ${_warn_distfiles} found"
-.endif
 	@${_PBUILD} rm -rf ${WRKDIR}
 	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
 	if ! test -d $$appdefaults -a -h $$appdefaults; then \
