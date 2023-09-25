@@ -2,7 +2,7 @@ COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_EGG_VERSION =	0.3.8.1
 DISTNAME =		tootstream-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -20,7 +20,7 @@ MODPY_PI =		Yes
 RUN_DEPENDS =		www/py-mastodon.py${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \
-			textproc/py-colored${MODPY_FLAVOR} \
+			textproc/py-colored${MODPY_FLAVOR}>=2.0 \
 			textproc/py-emoji${MODPY_FLAVOR} \
 			textproc/py-humanize${MODPY_FLAVOR}
 
