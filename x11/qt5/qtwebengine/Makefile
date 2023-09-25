@@ -15,15 +15,18 @@ COMMENT =		Chromium-based web engine for Qt5
 # Many parts are copied from www/chromium port, so keep in sync
 DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
 QT5NAME =		QtWebEngine
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		www
 
 SHARED_LIBS +=  Qt5WebEngine              2.0 # 5.15
 SHARED_LIBS +=  Qt5WebEngineCore          2.0 # 5.15
 SHARED_LIBS +=  Qt5WebEngineWidgets       2.0 # 5.15
-SHARED_LIBS +=  Qt5Pdf                    1.0 # 5.15
-SHARED_LIBS +=  Qt5PdfWidgets             1.0 # 5.15
+
+# XXX libQt5Pdf.so.1.0: undefined symbol FPDF_InitLibrary
+# libQt5Pdf needs to link explicitly against libQt5WebEngineCore?
+#SHARED_LIBS +=  Qt5Pdf                    1.0 # 5.15
+#SHARED_LIBS +=  Qt5PdfWidgets             1.0 # 5.15
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels

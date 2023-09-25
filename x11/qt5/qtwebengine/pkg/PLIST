@@ -1,54 +1,4 @@
-include/X11/qt5/QtPdf/
-include/X11/qt5/QtPdf/${VERSION}/
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdfdestination_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdfdocument_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdflinkmodel_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdflinkmodel_p_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdfsearchmodel_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdfsearchresult_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qpdfselection_p.h
-include/X11/qt5/QtPdf/${VERSION}/QtPdf/private/qtpdf-config_p.h
-include/X11/qt5/QtPdf/QPdfBookmarkModel
-include/X11/qt5/QtPdf/QPdfDestination
-include/X11/qt5/QtPdf/QPdfDocument
-include/X11/qt5/QtPdf/QPdfDocumentRenderOptions
-include/X11/qt5/QtPdf/QPdfPageNavigation
-include/X11/qt5/QtPdf/QPdfPageRenderer
-include/X11/qt5/QtPdf/QPdfSearchModel
-include/X11/qt5/QtPdf/QPdfSearchResult
-include/X11/qt5/QtPdf/QPdfSelection
-include/X11/qt5/QtPdf/QtPdf
-include/X11/qt5/QtPdf/QtPdfDepends
-include/X11/qt5/QtPdf/QtPdfVersion
-include/X11/qt5/QtPdf/qpdfbookmarkmodel.h
-include/X11/qt5/QtPdf/qpdfdestination.h
-include/X11/qt5/QtPdf/qpdfdocument.h
-include/X11/qt5/QtPdf/qpdfdocumentrenderoptions.h
-include/X11/qt5/QtPdf/qpdfnamespace.h
-include/X11/qt5/QtPdf/qpdfpagenavigation.h
-include/X11/qt5/QtPdf/qpdfpagerenderer.h
-include/X11/qt5/QtPdf/qpdfsearchmodel.h
-include/X11/qt5/QtPdf/qpdfsearchresult.h
-include/X11/qt5/QtPdf/qpdfselection.h
-include/X11/qt5/QtPdf/qtpdf-config.h
-include/X11/qt5/QtPdf/qtpdfglobal.h
-include/X11/qt5/QtPdf/qtpdfversion.h
-include/X11/qt5/QtPdfWidgets/
-include/X11/qt5/QtPdfWidgets/${VERSION}/
-include/X11/qt5/QtPdfWidgets/${VERSION}/QtPdfWidgets/
-include/X11/qt5/QtPdfWidgets/${VERSION}/QtPdfWidgets/private/
-include/X11/qt5/QtPdfWidgets/${VERSION}/QtPdfWidgets/private/qpdfview_p.h
-include/X11/qt5/QtPdfWidgets/${VERSION}/QtPdfWidgets/private/qtpdfwidgets-config_p.h
-include/X11/qt5/QtPdfWidgets/QPdfView
-include/X11/qt5/QtPdfWidgets/QtPdfWidgets
-include/X11/qt5/QtPdfWidgets/QtPdfWidgetsDepends
-include/X11/qt5/QtPdfWidgets/QtPdfWidgetsVersion
-include/X11/qt5/QtPdfWidgets/qpdfview.h
-include/X11/qt5/QtPdfWidgets/qtpdfwidgets-config.h
-include/X11/qt5/QtPdfWidgets/qtpdfwidgetsglobal.h
-include/X11/qt5/QtPdfWidgets/qtpdfwidgetsversion.h
+include/X11/qt5/
 include/X11/qt5/QtWebEngine/
 include/X11/qt5/QtWebEngine/${VERSION}/
 include/X11/qt5/QtWebEngine/${VERSION}/QtWebEngine/
@@ -172,26 +122,19 @@ include/X11/qt5/QtWebEngineWidgets/qwebenginescript.h
 include/X11/qt5/QtWebEngineWidgets/qwebenginescriptcollection.h
 include/X11/qt5/QtWebEngineWidgets/qwebenginesettings.h
 include/X11/qt5/QtWebEngineWidgets/qwebengineview.h
-@lib lib/libQt5Pdf.so.${LIBQt5Pdf_VERSION}
-@lib lib/libQt5PdfWidgets.so.${LIBQt5PdfWidgets_VERSION}
 @lib lib/libQt5WebEngine.so.${LIBQt5WebEngine_VERSION}
 @lib lib/libQt5WebEngineCore.so.${LIBQt5WebEngineCore_VERSION}
 @lib lib/libQt5WebEngineWidgets.so.${LIBQt5WebEngineWidgets_VERSION}
-lib/pkgconfig/Qt5Pdf.pc
-lib/pkgconfig/Qt5PdfWidgets.pc
 lib/pkgconfig/Qt5WebEngine.pc
 lib/pkgconfig/Qt5WebEngineCore.pc
 lib/pkgconfig/Qt5WebEngineWidgets.pc
+lib/qt5/
 lib/qt5/Qt5WebEngineCore.la
+lib/qt5/bin/
 @bin lib/qt5/bin/qwebengine_convert_dict
+lib/qt5/cmake/
+lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QWebEngineViewPlugin.cmake
-lib/qt5/cmake/Qt5Gui/Qt5Gui_QPdfPlugin.cmake
-lib/qt5/cmake/Qt5Pdf/
-lib/qt5/cmake/Qt5Pdf/Qt5PdfConfig.cmake
-lib/qt5/cmake/Qt5Pdf/Qt5PdfConfigVersion.cmake
-lib/qt5/cmake/Qt5PdfWidgets/
-lib/qt5/cmake/Qt5PdfWidgets/Qt5PdfWidgetsConfig.cmake
-lib/qt5/cmake/Qt5PdfWidgets/Qt5PdfWidgetsConfigVersion.cmake
 lib/qt5/cmake/Qt5WebEngine/
 lib/qt5/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
 lib/qt5/cmake/Qt5WebEngine/Qt5WebEngineConfigVersion.cmake
@@ -201,12 +144,6 @@ lib/qt5/cmake/Qt5WebEngineCore/Qt5WebEngineCoreConfigVersion.cmake
 lib/qt5/cmake/Qt5WebEngineWidgets/
 lib/qt5/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfig.cmake
 lib/qt5/cmake/Qt5WebEngineWidgets/Qt5WebEngineWidgetsConfigVersion.cmake
-lib/qt5/libQt5Pdf.la
-lib/qt5/libQt5Pdf.prl
-@lib lib/qt5/libQt5Pdf.so.${LIBQt5Pdf_VERSION}
-lib/qt5/libQt5PdfWidgets.la
-lib/qt5/libQt5PdfWidgets.prl
-@lib lib/qt5/libQt5PdfWidgets.so.${LIBQt5PdfWidgets_VERSION}
 lib/qt5/libQt5WebEngine.la
 lib/qt5/libQt5WebEngine.prl
 @lib lib/qt5/libQt5WebEngine.so.${LIBQt5WebEngine_VERSION}
@@ -218,10 +155,8 @@ lib/qt5/libQt5WebEngineWidgets.prl
 @lib lib/qt5/libQt5WebEngineWidgets.so.${LIBQt5WebEngineWidgets_VERSION}
 lib/qt5/libexec/
 @bin lib/qt5/libexec/QtWebEngineProcess
-lib/qt5/mkspecs/modules/qt_lib_pdf.pri
-lib/qt5/mkspecs/modules/qt_lib_pdf_private.pri
-lib/qt5/mkspecs/modules/qt_lib_pdfwidgets.pri
-lib/qt5/mkspecs/modules/qt_lib_pdfwidgets_private.pri
+lib/qt5/mkspecs/
+lib/qt5/mkspecs/modules/
 lib/qt5/mkspecs/modules/qt_lib_webengine.pri
 lib/qt5/mkspecs/modules/qt_lib_webengine_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginecore.pri
@@ -229,21 +164,14 @@ lib/qt5/mkspecs/modules/qt_lib_webenginecore_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginewidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginewidgets_private.pri
-lib/qt5/pkgconfig/Qt5Pdf.pc
-lib/qt5/pkgconfig/Qt5PdfWidgets.pc
+lib/qt5/pkgconfig/
 lib/qt5/pkgconfig/Qt5WebEngine.pc
 lib/qt5/pkgconfig/Qt5WebEngineCore.pc
 lib/qt5/pkgconfig/Qt5WebEngineWidgets.pc
+lib/qt5/plugins/
+lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/libqwebengineview.so
-@so lib/qt5/plugins/imageformats/libqpdf.so
-lib/qt5/qml/QtQuick/Pdf/
-@so lib/qt5/qml/QtQuick/Pdf/libpdfplugin.so
-lib/qt5/qml/QtQuick/Pdf/plugins.qmltypes
-lib/qt5/qml/QtQuick/Pdf/qml/
-lib/qt5/qml/QtQuick/Pdf/qml/PdfMultiPageView.qml
-lib/qt5/qml/QtQuick/Pdf/qml/PdfPageView.qml
-lib/qt5/qml/QtQuick/Pdf/qml/PdfScrollablePageView.qml
-lib/qt5/qml/QtQuick/Pdf/qmldir
+lib/qt5/qml/
 lib/qt5/qml/QtWebEngine/
 lib/qt5/qml/QtWebEngine/Controls1Delegates/
 lib/qt5/qml/QtWebEngine/Controls1Delegates/AlertDialog.qml

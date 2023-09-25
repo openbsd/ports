@@ -68,7 +68,7 @@ Index: src/buildtools/configure.json
 -                         && (!config.linux || features.pkg-config)
 -                         && (!config.linux || features.webengine-host-pkg-config)
 -                         && (!config.win32 || features.webengine-winversion)",
-+            "condition": "(config.unix || config.win32 || config.macos || config.ios)",
++            "condition": "(config.win32 || config.macos || config.ios)",
              "output": [ "privateFeature" ]
          },
          "build-qtwebengine-core": {
