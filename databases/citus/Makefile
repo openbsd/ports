@@ -2,7 +2,7 @@ COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata
 GH_PROJECT =		citus
-GH_TAGNAME =		v11.3.0
+GH_TAGNAME =		v12.1.0
 
 CATEGORIES =		databases
 HOMEPAGE =		https://www.citusdata.com/
@@ -19,6 +19,7 @@ LIB_DEPENDS =		databases/postgresql
 BUILD_DEPENDS =		databases/postgresql,-server
 RUN_DEPENDS =		databases/postgresql,-server
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			databases/postgresql,-contrib \
 			shells/bash
 
 FAKE_TARGET =		install-all

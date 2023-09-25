@@ -5,7 +5,7 @@ building anyway.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -68,7 +68,7 @@ check-style:
+@@ -60,7 +60,7 @@ check-style:
  .PHONY: reindent check-style
  
  # depend on install-all so that downgrade scripts are installed as well
