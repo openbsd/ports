@@ -1,7 +1,7 @@
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 
-V =			2.10
+V =			2.11
 EPOCH =			0
 DISTNAME =		vnstat-${V}
 PKGNAME-main =		${DISTNAME}
