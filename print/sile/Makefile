@@ -19,12 +19,12 @@ WANTLIB += png pthread z ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/simoncozens/sile/releases/download/v$V/
-MASTER_SITES0 =		http://sile-typesetter.org/images/
+SITES =		https://github.com/simoncozens/sile/releases/download/v$V/
+SITES.pdf =	http://sile-typesetter.org/images/
 
-DISTFILES =		sile-$V.tar.bz2 \
-			sile-$V.pdf:0
-EXTRACT_ONLY =		sile-$V.tar.bz2
+DISTFILES =		sile-$V.tar.bz2
+DISTFILES.pdf = 	sile-$V.pdf
+EXTRACT_ONLY =		${DISTFILES}
 
 MODULES =		lang/lua
 MODLUA_VERSION =	5.2

@@ -5,12 +5,12 @@ CATEGORIES =	www devel
 
 # upstream has git 2.25.1 called out as the specific version to build against
 # https://git.zx2c4.com/cgit/commit/?id=fde897b8171ed2e925b44ec6f69590ec07241017
-DISTFILES =	${DISTNAME}.tar.xz:0 \
-		git-2.25.1.tar.gz:1
+DISTFILES =	${DISTNAME}.tar.xz
+DISTFILES.a = 	git-2.25.1.tar.gz
 
-MASTER_SITES0 =		https://git.zx2c4.com/cgit/snapshot/
-MASTER_SITES1 =		https://www.kernel.org/pub/software/scm/git/
-HOMEPAGE =		https://git.zx2c4.com/cgit/about/
+SITES =		https://git.zx2c4.com/cgit/snapshot/
+SITES.a =	https://www.kernel.org/pub/software/scm/git/
+HOMEPAGE =	https://git.zx2c4.com/cgit/about/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

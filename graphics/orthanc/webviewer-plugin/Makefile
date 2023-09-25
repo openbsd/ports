@@ -12,13 +12,13 @@ PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY =		${DISTFILES}
 
-DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
-MASTER_SITES1 =		https://www.orthanc-server.com/downloads/third-party/WebViewer/
+DISTFILES.p +=		${PLUGIN_3RDPARTY}
+SITES.p =		https://www.orthanc-server.com/downloads/third-party/WebViewer/
 
-DISTFILES +=		${FRAMEWORK_DISTFILE:C/$/:2/}
-MASTER_SITES2 =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+DISTFILES.f +=		${FRAMEWORK_DISTFILE}
+SITES.f =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt

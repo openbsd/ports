@@ -6,9 +6,9 @@ USE_NOBTCFI =	Yes
 
 V =		2.104.0
 COMMENT =	reference compiler for the D programming language
-DISTFILES =	dmd-${V}{v${V}}.tar.gz:1 \
-		dmd-${V}-bootstrap.tar.gz:0 \
-		phobos-${V}{v${V}}.tar.gz:2
+DISTFILES =		dmd-${V}{v${V}}.tar.gz
+DISTFILES.boot= 	dmd-${V}-bootstrap.tar.gz
+DISTFILES.phobos = 	phobos-${V}{v${V}}.tar.gz
 PKGNAME =	dmd-${V}
 CATEGORIES =	lang
 
@@ -20,9 +20,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi execinfo m pthread
 
-MASTER_SITES0 =	https://github.com/ibara/dmd/releases/download/bootstrap-${V}/
-MASTER_SITES1 =	https://github.com/dlang/dmd/archive/refs/tags/
-MASTER_SITES2 =	https://github.com/dlang/phobos/archive/refs/tags/
+SITES.boot =	https://github.com/ibara/dmd/releases/download/bootstrap-${V}/
+SITES =		https://github.com/dlang/dmd/archive/refs/tags/
+SITES.phobos =	https://github.com/dlang/phobos/archive/refs/tags/
 
 USE_GMAKE =	Yes
 MAKE_ENV =	HOST_CXX="${CXX}" \

@@ -21,10 +21,10 @@ MODPY_PYBUILD=	setuptools
 RUN_DEPENDS=	textproc/py-chardet${MODPY_FLAVOR} \
 		graphics/py-termcolor${MODPY_FLAVOR}
 
-DISTFILES=	${DISTNAME}.tar.gz \
-		definitions-${DEF_DATE}{definitions}.zip:0
-MASTER_SITES0=	https://github.com/bitsadmin/wesng/raw/${DEF_COMMITHASH}/
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz
+DISTFILES.d = 	definitions-${DEF_DATE}{definitions}.zip
+SITES.d=	https://github.com/bitsadmin/wesng/raw/${DEF_COMMITHASH}/
+EXTRACT_ONLY=	${DISTFILES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wes.py

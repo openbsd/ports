@@ -25,10 +25,10 @@ WANTLIB += xcb-imdkit xcb-keysyms xcb-randr xcb-render
 WANTLIB += xcb-shape xcb-util xcb-xfixes xcb-xinerama xcb-xkb
 WANTLIB += xkbcommon xkbcommon-x11 xkbfile z
 
-MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5/
-MASTER_SITES0 =	https://download.fcitx-im.org/data/
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
-		en_dict-20121020.tar.gz:0
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5/
+SITES.data =	https://download.fcitx-im.org/data/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.data= en_dict-20121020.tar.gz
 
 DIST_SUBDIR =	fcitx
 

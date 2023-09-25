@@ -12,15 +12,15 @@ MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
 QWP_COMMIT =	0023db327bc1db00068284b70e1db45857aeee35
 QWP_VERSION =	20120131
-MASTER_SITES0 = https://raw.githubusercontent.com/id-Software/Quake/${QWP_COMMIT}/QW/progs/
+SITES.a = 	https://raw.githubusercontent.com/id-Software/Quake/${QWP_COMMIT}/QW/progs/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curl m pcre pthread
 
-DISTFILES =	mvdsv-{}${GH_TAGNAME}.tar.gz \
-		qwprogs-${QWP_VERSION}{qwprogs}.dat:0
+DISTFILES =	mvdsv-{}${GH_TAGNAME}.tar.gz
+DISTFILES.a = 	qwprogs-${QWP_VERSION}{qwprogs}.dat
 EXTRACT_ONLY =	mvdsv-${GH_TAGNAME}.tar.gz
 
 MODULES =	devel/cmake

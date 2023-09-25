@@ -6,9 +6,9 @@ GH_COMMIT =	05cd0af0af4b5a191117d47a182adff1d6546b87
 DISTNAME =	wasi-libc-0.20220413
 REVISION =	0
 
-DISTFILES =	${GH_DISTFILE} \
-		wasi-libc-llvm${MODCLANG_VERSION}-std-headers.tar.gz:0
-MASTER_SITES0=	https://nerd.hu/distfiles/
+DISTFILES =	${GH_DISTFILE}
+DISTFILES.h = 	wasi-libc-llvm${MODCLANG_VERSION}-std-headers.tar.gz
+SITES.h =	https://nerd.hu/distfiles/
 
 CATEGORIES =	lang
 

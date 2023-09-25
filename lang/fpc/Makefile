@@ -23,14 +23,15 @@ WANTLIB += c iconv pthread
 
 LIB_DEPENDS =		converters/libiconv
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freepascal/}
-MASTER_SITES0 =		https://distfiles.stumpf.co/
+SITES =			${SITE_SOURCEFORGE:=freepascal/}
+SITES.boot =		https://distfiles.stumpf.co/
 DIST_SUBDIR =		fpc
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${FPCBOOT-${MACHINE_ARCH}}:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} 
+DISTFILES.boot =	${FPCBOOT-${MACHINE_ARCH}}
 .endif
-SUPDISTFILES =		${FPCBOOT-amd64}:0 ${FPCBOOT-i386}:0
+SUPDISTFILES.boot =		${FPCBOOT-amd64} ${FPCBOOT-i386}
 
 .if ${MACHINE_ARCH} == "amd64"
 COMPNAME =		ppcx64

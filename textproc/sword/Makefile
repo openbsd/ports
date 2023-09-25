@@ -5,13 +5,13 @@ DISTNAME=	sword-${V}
 CATEGORIES=	textproc books
 REVISION=	0
 
-MASTER_SITES=	https://crosswire.org/ftpmirror/pub/sword/source/v${V:R}/
-MASTER_SITES0=	https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/
+SITES=		https://crosswire.org/ftpmirror/pub/sword/source/v${V:R}/
+SITES.k=	https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 # keeps changing
-DISTFILES+=	KJV-2.10.2{KJV}.zip:0
+DISTFILES.k+=	KJV-2.10.2{KJV}.zip
 
 SHARED_LIBS=	sword 0.0
 

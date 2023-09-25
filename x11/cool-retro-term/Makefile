@@ -9,9 +9,9 @@ REVISION =	0
 
 # check version in submodule at https://github.com/Swordfish90/cool-retro-term
 QMLTERMWIDGET =	63228027e1f97c24abb907550b22ee91836929c5
-MASTER_SITES0 =	https://github.com/Swordfish90/qmltermwidget/archive/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		qmltermwidget-{}${QMLTERMWIDGET}.tar.gz:0
+SITES.a =	https://github.com/Swordfish90/qmltermwidget/archive/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a = 	qmltermwidget-{}${QMLTERMWIDGET}.tar.gz
 
 USE_WXNEEDED =	Yes
 

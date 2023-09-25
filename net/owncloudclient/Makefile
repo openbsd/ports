@@ -4,8 +4,8 @@ V = 			4.2.0.11670
 GRAPHAPI_V = 		1.0.1
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
-DISTFILES += 		ownCloud-${V}.tar.xz \
-			libre-graph-api-cpp-qt-client-{}v${GRAPHAPI_V}.tar.gz:0
+DISTFILES += 		ownCloud-${V}.tar.xz
+DISTFILES.a +=		libre-graph-api-cpp-qt-client-{}v${GRAPHAPI_V}.tar.gz
 
 SHARED_LIBS +=		owncloudsync		9.0
 SHARED_LIBS +=		owncloud_csync		3.0
@@ -24,9 +24,9 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml c m qt5keychain sqlite3 z
 WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 
-MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
-			https://download.owncloud.com/desktop/ownCloud/stable/${V}/source/
-MASTER_SITES0 = 	https://github.com/owncloud/libre-graph-api-cpp-qt-client/archive/refs/tags/
+SITES =	https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
+	https://download.owncloud.com/desktop/ownCloud/stable/${V}/source/
+SITES.a = 	https://github.com/owncloud/libre-graph-api-cpp-qt-client/archive/refs/tags/
 
 MODULES =		devel/cmake x11/qt5
 

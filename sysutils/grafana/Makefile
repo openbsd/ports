@@ -14,8 +14,8 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://grafana.com
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		grafana-$V.linux-amd64.tar.gz{grafana-$V.linux-amd64.tar.gz?1}:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a = 	grafana-$V.linux-amd64.tar.gz{grafana-$V.linux-amd64.tar.gz?1}
 # force CDN refresh; upstream rerolled but some CDN nodes have the old version
 # normally	grafana-$V.linux-amd64.tar.gz:0
 
@@ -23,8 +23,8 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 # https://github.com/grafana/grafana/archive/v$V/grafana-$V.tar.gz
 # running "ulimit -d 8388608 && gmake gen-go", "go mod tidy", 
 # and "go mod vendor"
-MASTER_SITES =	https://ports.lucasraab.me/
-MASTER_SITES0 =	https://dl.grafana.com/oss/release/
+SITES =		https://ports.lucasraab.me/
+SITES.a =	https://dl.grafana.com/oss/release/
 
 # Apache 2.0 (bundles roboto and opensans fonts)
 PERMIT_PACKAGE =	Yes

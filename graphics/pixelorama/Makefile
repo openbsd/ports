@@ -16,10 +16,10 @@ MAINTAINER =	Riccardo Mazzurco <mazzurco.riccardo@protonmail.com>
 # MIT
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://github.com/Orama-Interactive/Pixelorama/releases/download/v$V/
-MASTER_SITES0 =	https://github.com/Orama-Interactive/Pixelorama/raw/v$V/Misc/Clickable/click/
-DISTFILES =	${DISTNAME}{Pixelorama.Linux-64bit}${EXTRACT_SUFX} \
-		pixelorama-$V{icon}.png:0
+SITES =		https://github.com/Orama-Interactive/Pixelorama/releases/download/v$V/
+SITES.i =	https://github.com/Orama-Interactive/Pixelorama/raw/v$V/Misc/Clickable/click/
+DISTFILES =	${DISTNAME}{Pixelorama.Linux-64bit}${EXTRACT_SUFX}
+DISTFILES.i = 	pixelorama-$V{icon}.png
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 

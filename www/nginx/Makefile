@@ -47,10 +47,10 @@ REVISION-njs=		0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
-MASTER_SITES=	https://nginx.org/download/
-MASTER_SITES0=	https://github.com/
-MASTER_SITES1=	https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
-		https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
+SITES=	https://nginx.org/download/
+SITES.a=https://github.com/
+SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
+	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -66,7 +66,7 @@ _GH_MODS=	\
 	nginx-modules	ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50
 
 .for _a _p _c in ${_GH_MODS}
-DISTFILES+=	${_p}-{${_a}/${_p}/archive/}${_c}.tar.gz:0
+DISTFILES.a+=	${_p}-{${_a}/${_p}/archive/}${_c}.tar.gz
 .endfor
 
 HOMEPAGE=	https://nginx.org/
@@ -139,7 +139,7 @@ CFLAGS+=	-Wall -Wpointer-arith \
 LDFLAGS+=	-L ${LOCALBASE}/lib -L ${X11BASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
-PATCHFILES+=		nginx-1.20.1-chroot.patch:1
+PATCHFILES.p+=		nginx-1.20.1-chroot.patch
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=	simple

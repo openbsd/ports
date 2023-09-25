@@ -9,9 +9,9 @@ EXTRACT_SUFX =		.tgz
 WRKDIST =		${WRKDIR}/package
 
 # sao-dependencies is generated using https://github.com/semarie/sao-dependencies
-MASTER_SITES0 =		http://kapouay.odns.fr/pub/tryton/
-DISTFILES +=		tryton-sao-${VERSION}.tgz \
-			sao-dependencies-${TRYTON_VERSION}-${DEPVERSION}.tar.gz:0
+SITES.boot =		http://kapouay.odns.fr/pub/tryton/
+DISTFILES +=		tryton-sao-${VERSION}.tgz
+DISTFILES.boot += 	sao-dependencies-${TRYTON_VERSION}-${DEPVERSION}.tar.gz
 
 RUN_DEPENDS +=		productivity/tryton/${TRYTON_VERSION}/trytond
 

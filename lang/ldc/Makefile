@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	amd64
 
 V =		1.33.0
 COMMENT =	LLVM D Compiler
-DISTFILES =	ldc-${V}-src.tar.gz:0 \
-		ldc-${V}-bootstrap.tar.gz:1
+DISTFILES =	ldc-${V}-src.tar.gz
+DISTFILES.boot= ldc-${V}-bootstrap.tar.gz
 PKGNAME =	ldc-${V}
 CATEGORIES =	lang
 REVISION =	0
@@ -20,8 +20,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c execinfo m z
 
-MASTER_SITES0 =	https://github.com/ldc-developers/ldc/releases/download/v${V}/
-MASTER_SITES1 =	https://github.com/ibara/ldc/releases/download/bootstrap-${V}/
+SITES =		https://github.com/ldc-developers/ldc/releases/download/v${V}/
+SITES.boot =	https://github.com/ibara/ldc/releases/download/bootstrap-${V}/
 
 # C++14
 COMPILER =	base-clang ports-gcc

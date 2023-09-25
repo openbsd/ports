@@ -33,14 +33,14 @@ WANTLIB +=	${COMPILER_LIBCXX} c event_core gc iconv m pcre yaml-0
 # The result will be built at .build/crystal.o
 #
 
-MASTER_SITES =	https://github.com/crystal-lang/crystal/archive/
-MASTER_SITES0 =	https://jcs.org/distfiles/
-MASTER_SITES1 =	https://github.com/crystal-lang/shards/archive/
-MASTER_SITES2 =	https://github.com/crystal-lang/crystal-molinillo/archive/
-DISTFILES =	crystal-${V}{${V}}.tar.gz \
-		crystal-${V}-OpenBSD7.1.tar.gz:0 \
-		shards-${V}{v${V_SHARDS}}.tar.gz:1 \
-		crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz:2
+SITES =		https://github.com/crystal-lang/crystal/archive/
+SITES.a =	https://jcs.org/distfiles/
+SITES.b =	https://github.com/crystal-lang/shards/archive/
+SITES.c =	https://github.com/crystal-lang/crystal-molinillo/archive/
+DISTFILES =	crystal-${V}{${V}}.tar.gz
+DISTFILES.a = 	crystal-${V}-OpenBSD7.1.tar.gz
+DISTFILES.b = 	shards-${V}{v${V_SHARDS}}.tar.gz
+DISTFILES.c =	crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz
 
 # Build requires llvm-config from ports, not from base
 MODULES =	lang/clang

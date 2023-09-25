@@ -7,7 +7,7 @@ PKGSPEC-main ?=         ruby->=3.0.0,<${NEXTVER}
 REVISION-main =		0
 
 # Backport fix for fixnum*fixnum multiplication on octeon
-PATCHFILES =		ruby-octeon-fix-1{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch:0
+PATCHFILES.p =		ruby-octeon-fix-1{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

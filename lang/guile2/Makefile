@@ -24,13 +24,13 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c curses ffi gc gmp iconv intl ltdl m pthread readline
 WANTLIB += unistring
 
-MASTER_SITES=		${MASTER_SITE_GNU:=guile/}
-MASTER_SITES0=		https://charlenew.xyz/distfiles/
+SITES=			${SITE_GNU:=guile/}
+SITES.boot=		https://charlenew.xyz/distfiles/
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
-SUPDISTFILES=		${BOOTSTRAP_32BE}:0
+SUPDISTFILES.boot=	${BOOTSTRAP_32BE}
 
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=		${DISTFILES}
 
 # internal compiler error: in unify_nodes, at tree-ssa-structalias.c:1231
 COMPILER =		base-clang ports-gcc

@@ -16,15 +16,15 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
 
-MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
+SITES=		http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		ftp://ftp.netsw.org/dict/tools/
-MASTER_SITES0=	http://distcache.freebsd.org/ports-distfiles/
-MASTER_SITES1=	https://spacehopper.org/mirrors/
-MASTER_SITES2=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
-MASTER_SITES3=	http://www.sslug.dk/locale/ispell/iswedish/
-MASTER_SITES4=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/
-MASTER_SITES5=	http://sk-spell.sk.cx/files/
-MASTER_SITES6=	http://www.datsi.fi.upm.es/~coes/
+SITES.a=	http://distcache.freebsd.org/ports-distfiles/
+SITES.b=	https://spacehopper.org/mirrors/
+SITES.c=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
+SITES.d=	http://www.sslug.dk/locale/ispell/iswedish/
+SITES.e=	http://natura.di.uminho.pt/download/sources/Dictionaries/ispell/
+SITES.f=	http://sk-spell.sk.cx/files/
+SITES.g=	http://www.datsi.fi.upm.es/~coes/
 
 DIST_SUBDIR=	ispell
 
@@ -37,15 +37,15 @@ PORTUGUESE_DICT=	ispell.pt-20091013
 SLOVAK_DICT=		ispell-sk-0.3.2
 SPANISH_DICT=		espa~nol-1.7
 
-DISTFILES=	${DISTNAME}.tar.gz \
-		${DUTCH_DICT}.tar.gz:0 \
-		${FRENCH_DICT}.tar.gz:1 \
-		${GERMAN_DICT}.tar.gz:2 \
-		${SWEDISH_DICT}.tar.gz:3 \
-		${RUSSIAN_DICT}.tar.gz:1 \
-		${PORTUGUESE_DICT}.tar.gz:4 \
-		${SLOVAK_DICT}.tar.gz:5  \
-		${SPANISH_DICT}.tar.gz:6
+DISTFILES=	${DISTNAME}.tar.gz
+DISTFILES.a+= 	${DUTCH_DICT}.tar.gz
+DISTFILES.b+= 	${FRENCH_DICT}.tar.gz
+DISTFILES.c+= 	${GERMAN_DICT}.tar.gz
+DISTFILES.d+= 	${SWEDISH_DICT}.tar.gz
+DISTFILES.b+= 	${RUSSIAN_DICT}.tar.gz
+DISTFILES.e+= 	${PORTUGUESE_DICT}.tar.gz
+DISTFILES.f+= 	${SLOVAK_DICT}.tar.gz
+DISTFILES.g+= 	${SPANISH_DICT}.tar.gz
 
 EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 		${DUTCH_DICT}.tar.gz \

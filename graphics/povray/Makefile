@@ -12,16 +12,16 @@ WANTLIB += ICE SM X11 Xpm c jpeg m ${COMPILER_LIBCXX} tiff z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	\
-	http://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
+SITES=	http://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
 EXTRACT_SUFX=		.tar.bz2
 
 # We replace the included ancient copy of libpng with a later release
 # from the 1.2 branch.
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=		${DISTFILES}
 PNG_V=			1.2.57
-MASTER_SITES0=		${MASTER_SITE_SOURCEFORGE:=libpng/}
-DISTFILES=		${EXTRACT_ONLY} libpng-${PNG_V}.tar.gz:0
+SITES.png=		${SITE_SOURCEFORGE:=libpng/}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.png =		libpng-${PNG_V}.tar.gz
 
 
 LIB_DEPENDS=		graphics/jpeg \

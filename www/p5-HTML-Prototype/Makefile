@@ -3,12 +3,12 @@ COMMENT=	AJAX framework for perl
 MODULES=	cpan
 PKG_ARCH=	*
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=HTML/}
-MASTER_SITES0=	http://script.aculo.us/dist/
+SITES=		${SITE_PERL_CPAN:=HTML/}
+SITES.js=	http://script.aculo.us/dist/
 DISTNAME=	HTML-Prototype-1.48
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		scriptaculous-js-1.7.0.tar.gz:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.js= 	scriptaculous-js-1.7.0.tar.gz
 
 HOMEPAGE=	http://prototype.conio.net/
 

@@ -18,12 +18,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-# XXX: Ports does not permit GH_* and MASTER_SITES together.
-MASTER_SITES0 =	https://github.com/official-stockfish/Stockfish/archive/
-MASTER_SITES1 =	https://tests.stockfishchess.org/api/nn/
-DISTFILES =	sf_${V}.tar.gz:0 \
-		${NNUE}:1
-EXTRACT_ONLY =	sf_${V}.tar.gz
+SITES =		https://github.com/official-stockfish/Stockfish/archive/
+SITES.a =	https://tests.stockfishchess.org/api/nn/
+DISTFILES =	sf_${V}.tar.gz
+DISTFILES.a = 	${NNUE}
+EXTRACT_ONLY =	${DISTFILES}
 
 # C++17
 COMPILER =	base-clang ports-gcc

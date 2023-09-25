@@ -2,11 +2,11 @@ COMMENT =	decoder for JBIG2 monochrome hi-res image compression format
 
 DISTNAME =	jbig2dec-0.19
 CATEGORIES =	graphics
-MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/
-MASTER_SITES0 =	https://jbig2dec.com/tests/
+SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/
+SITES.t =	https://jbig2dec.com/tests/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		jb2streams.zip:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.t = 	jb2streams.zip
 
 SHARED_LIBS +=	jbig2dec	1.0	# 0.0
 

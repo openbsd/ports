@@ -9,14 +9,14 @@ GH_COMMIT=		640bb9cef3d16bffb51c198cefeb9cb83612e735
 EXTRACT_SUFX=		.tar.gz
 REVISION=		1
 
-DISTFILES=		${GH_DISTFILE} \
-			gdm-puffy.png:0
+DISTFILES=		${GH_DISTFILE}
+DISTFILES.puffy =	gdm-puffy.png
 # XXX can't use GH_DISTFILE since EXTRACT_ONLY expects filenames instead of
 # DISTFILES filename{url}sufx patterns
-EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
+EXTRACT_ONLY=		${ALL_DISTFILES:N*puffy*}
 
-MASTER_SITES=		${MASTER_SITES_GITHUB}
-MASTER_SITES0=		https://distfiles.bsdfrog.org/
+SITES=			${SITES_GITHUB}
+SITES.puffy=		https://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 

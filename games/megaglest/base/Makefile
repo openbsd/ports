@@ -3,11 +3,11 @@ GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}
 REVISION =		7
 
-MASTER_SITES0 =		https://github.com/MegaGlest/megaglest-source/commit/
-PATCHFILES =		789e1cdf.patch:0 \
-			5801b1fa.patch:0 \
-			412b37d0.patch:0 \
-			e09ba53c.patch:0
+SITES.p =		https://github.com/MegaGlest/megaglest-source/commit/
+PATCHFILES.p =		789e1cdf.patch \
+			5801b1fa.patch \
+			412b37d0.patch \
+			e09ba53c.patch
 PATCH_DIST_STRIP =	-p1
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE SDL2 SM X11 Xext

@@ -22,8 +22,8 @@ WANTLIB += xcb-sync xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
-MASTER_SITES0 =	http://www.linklevel.net/distfiles/
+SITES =		${HOMEPAGE}raw-attachment/wiki/download/
+SITES.sfx =	http://www.linklevel.net/distfiles/
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/sdl-mixer \
@@ -33,8 +33,8 @@ LIB_DEPENDS =	converters/libiconv \
 		audio/libmikmod \
 		audio/libvorbis
 
-DISTFILES = 	${DISTNAME}.tar.gz \
-		${ABUSE_SFX}.tar.gz:0
+DISTFILES = 	${DISTNAME}.tar.gz
+DISTFILES.sfx =	${ABUSE_SFX}.tar.gz
 
 SEPARATE_BUILD =Yes
 

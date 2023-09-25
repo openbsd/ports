@@ -5,11 +5,11 @@ PKGNAME=	mmv-1.01b
 REVISION=	1
 CATEGORIES=	misc
 
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
+SITES=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume21/mmv/
 DISTFILES=	part01.Z part02.Z
 
-MASTER_SITES0=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
-PATCHFILES=	mmv.pch.Z:0
+SITES.p=	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.unix/volume22/
+PATCHFILES.p=	mmv.pch.Z
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c

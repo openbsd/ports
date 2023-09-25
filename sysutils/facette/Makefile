@@ -17,10 +17,10 @@ HOMEPAGE =	https://facette.io
 # 'go-bindata -pkg web -prefix ../dist/assets -tags builtin_assets -o bindata.go ../dist/assets/...'
 # in WRKSRC/web .
 # For the above to work, pandoc and go-bindata need to be installed.
-DISTFILES =	${GH_DISTFILE} \
-		${GH_PROJECT}-${GH_TAGNAME}-node_modules${EXTRACT_SUFX}:0 \
-		${GH_PROJECT}-${GH_TAGNAME}-assets${EXTRACT_SUFX}:0
-MASTER_SITES0 =	https://deftly.net/dist/
+DISTFILES =	${GH_DISTFILE}
+DISTFILES.a = 	${GH_PROJECT}-${GH_TAGNAME}-node_modules${EXTRACT_SUFX} \
+		${GH_PROJECT}-${GH_TAGNAME}-assets${EXTRACT_SUFX}
+SITES.a =	https://deftly.net/dist/
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -4,9 +4,9 @@ DISTNAME=		ii-2.0
 CATEGORIES=		net
 
 HOMEPAGE=		https://tools.suckless.org/ii
-MASTER_SITES=		https://dl.suckless.org/tools/
-MASTER_SITES0=		${HOMEPAGE}/patches/tls/
-MASTER_SITES1=		${HOMEPAGE}/patches/ucspi/
+SITES=			https://dl.suckless.org/tools/
+SITES.p1=		${HOMEPAGE}/patches/tls/
+SITES.p2=		${HOMEPAGE}/patches/ucspi/
 
 MAINTAINER=		Jan Klemkow <j.klemkow@wemelug.de>
 
@@ -26,16 +26,16 @@ PATCH_DIST_STRIP=	-p1
 
 .if ${FLAVOR} == "ucspi"
 # adds unix client server programming interface support
-PATCHFILES+=		${DISTNAME}-ucspi.diff:1
+PATCHFILES.p2+=		${DISTNAME}-ucspi.diff
 RUN_DEPENDS=		net/ucspi-tools
 .else
 # adds tls encryption support
-PATCHFILES+=		${DISTNAME}-tls.diff:0
+PATCHFILES.p1+=		${DISTNAME}-tls.diff
 WANTLIB+=		tls
 .endif
 
-SUPDISTFILES+=		${DISTNAME}-tls.diff:0
-SUPDISTFILES+=		${DISTNAME}-ucspi.diff:1
+SUPDISTFILES.p1+=		${DISTNAME}-tls.diff
+SUPDISTFILES.p2+=		${DISTNAME}-ucspi.diff
 
 FAKE_FLAGS=		MANPREFIX=${PREFIX}/man
 

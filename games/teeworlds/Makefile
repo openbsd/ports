@@ -11,13 +11,13 @@ HOMEPAGE=	https://www.teeworlds.com
 
 MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
-MASTER_SITES=	https://github.com/teeworlds/teeworlds/releases/download/${V}/
+SITES=	https://github.com/teeworlds/teeworlds/releases/download/${V}/
 # maps repo without tags/releases on https://github.com/teeworlds/teeworlds-maps
 # therefore hosted as archive.
-MASTER_SITES0=	http://si3t.ch/pub/openbsd/distfiles/
+SITES.a=	http://si3t.ch/pub/openbsd/distfiles/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		teeworlds-${V}-data.tar.gz{teeworlds-data.tar.gz}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a= 	teeworlds-${V}-data.tar.gz{teeworlds-data.tar.gz}
 
 # BSD-like
 PERMIT_PACKAGE=	Yes

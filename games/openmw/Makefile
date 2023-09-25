@@ -8,10 +8,10 @@ GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			e75adf86f91eb3082220085e42dda62679f9a3ea.zip:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a = 		e75adf86f91eb3082220085e42dda62679f9a3ea.zip
 DIST_SUBDIR =		openmw
-MASTER_SITES0 =		https://github.com/recastnavigation/recastnavigation/archive/
+SITES.a =		https://github.com/recastnavigation/recastnavigation/archive/
 
 CATEGORIES =		games
 

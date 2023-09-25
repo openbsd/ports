@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB+=	GL X11 c m pthread uv
 
-MASTER_SITES0=	https://github.com/
+SITES.zest=	https://github.com/
 
 MRUBY=		mruby-{mruby/mruby/archive/}69482dbc8e590ed66f0944e9b48c4f9c2f83c873
 
@@ -39,10 +39,11 @@ SRCS=		osc-bridge-{mruby-zest/osc-bridge/archive/}c678428bf164fc732ab4c7ee903bc8
 		mruby-zest-{mruby-zest/mruby-zest/archive/}238dfbad266186e3ffc679a00a87aec472ce956b \
 		mruby-qml-parse-{mruby-zest/mruby-qml-parse/archive/}3e2c32cc55c60027e6406eca89bf1ae5301aa16b
 
-DISTFILES=	zyn-fusion-{}${GH_COMMIT}${EXTRACT_SUFX} \
-		${DEPS:C/$/.tar.gz:0/} \
-		${SRCS:C/$/.tar.gz:0/} \
-		${MRUBY:C/$/.tar.gz:0/}
+DISTFILES=	zyn-fusion-{}${GH_COMMIT}${EXTRACT_SUFX}
+
+DISTFILES.zest =${DEPS:C/$/.tar.gz/} \
+		${SRCS:C/$/.tar.gz/} \
+		${MRUBY:C/$/.tar.gz/}
 
 MODULES=	lang/ruby
 MODRUBY_RUNDEP=	No

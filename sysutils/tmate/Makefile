@@ -6,9 +6,9 @@ GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
 REVISION =	6
 
-MASTER_SITES0 =	https://github.com/tmate-io/tmate/commit/
-PATCHFILES =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch:0 \
-		tmate-include-errno{339e6c43575244f72831654e5dda41c037febde7}.patch:0
+SITES.p =	https://github.com/tmate-io/tmate/commit/
+PATCHFILES.p =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch \
+		tmate-include-errno{339e6c43575244f72831654e5dda41c037febde7}.patch
 PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =	https://tmate.io

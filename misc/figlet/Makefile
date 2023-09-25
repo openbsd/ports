@@ -12,11 +12,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =	ftp://ftp.figlet.org/pub/figlet/program/unix/
-MASTER_SITES0 =	http://www.arcane-labs.net/download/OpenBSD/
+SITES =		ftp://ftp.figlet.org/pub/figlet/program/unix/
+SITES.c =	http://www.arcane-labs.net/download/OpenBSD/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		figlet-contributed-06092002${EXTRACT_SUFX}:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.c = 	figlet-contributed-06092002${EXTRACT_SUFX}
 MAKE_FLAGS =	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
 

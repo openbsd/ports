@@ -29,15 +29,15 @@ WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c crypto m pam ssl
 WANTLIB += util uuid z lib/R/lib/R lib/inotify/inotify
 
-# XXX: Ports does not permit GH_* and MASTER_SITES together.
-MASTER_SITES0 =	https://github.com/rstudio/rstudio/archive/
-MASTER_SITES1 =	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/
-MASTER_SITES2 =	https://s3.amazonaws.com/rstudio-buildtools/
-DISTFILES =	rstudio-${V}{v${V}}.tar.gz:0 \
-		core-dictionaries.zip:1 \
-		gin-${GIN_VERSION}.zip:2 \
-		gwt-${GWT_VERSION}.zip:2 \
-		mathjax-27.zip:2
+# XXX: Ports does not permit GH_* and SITES together.
+SITES =		https://github.com/rstudio/rstudio/archive/
+SITES.a =	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/
+SITES.b =	https://s3.amazonaws.com/rstudio-buildtools/
+DISTFILES =	rstudio-${V}{v${V}}.tar.gz
+DISTFILES.a = 	core-dictionaries.zip
+DISTFILES.b = 	gin-${GIN_VERSION}.zip \
+		gwt-${GWT_VERSION}.zip \
+		mathjax-27.zip
 
 # CMake looks for qmake-qt5 during configure...
 MODULES =	devel/cmake \

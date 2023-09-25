@@ -11,9 +11,8 @@ REVISION=		1
 # grep 'zipdata =' `make show=WRKSRC`/setup.py
 PFBFER=			pfbfer-20180109.zip
 SUBST_VARS=		FULLDISTDIR PFBFER WRKINST MODPY_SITEPKG
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			${PFBFER}:0
+EXTRACT_ONLY=		${DISTFILES}
+DISTFILES.p= 		${PFBFER}
 
 CATEGORIES=		print graphics
 
@@ -24,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} art_lgpl_2 freetype pthread
 
-MASTER_SITES0=		https://www.reportlab.com/ftp/
+SITES.p=		https://www.reportlab.com/ftp/
 
 FLAVORS=		python3
 FLAVOR?=

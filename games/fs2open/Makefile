@@ -25,12 +25,12 @@ WANTLIB += vulkan z
 RPAVLIK_CMAKE_MOD =	7cef9577d6fc35057ea57f46b4986a8a28aeff50
 LIBROCKET =		ecd648a43aff8a9f3daf064d75ca5725237d5b38
 
-MASTER_SITES0 =	https://github.com/asarium/cmake-modules/archive/
-MASTER_SITES1 =	https://github.com/asarium/libRocket/archive/
+SITES.a =	https://github.com/asarium/cmake-modules/archive/
+SITES.b =	https://github.com/asarium/libRocket/archive/
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${RPAVLIK_CMAKE_MOD}.tar.gz:0 \
-			${LIBROCKET}.tar.gz:1
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a =		${RPAVLIK_CMAKE_MOD}.tar.gz
+DISTFILES.b = 		${LIBROCKET}.tar.gz
 
 DIST_SUBDIR =		fs2open-${V}
 

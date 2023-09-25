@@ -9,8 +9,8 @@ REVISION=	2
 
 CATEGORIES=	games
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		endgame-singularity-music-${MUSIC_V}.zip:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.m = 	endgame-singularity-music-${MUSIC_V}.zip
 
 HOMEPAGE=	http://emhsoft.com/singularity/
 
@@ -18,8 +18,8 @@ HOMEPAGE=	http://emhsoft.com/singularity/
 # music under CC Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/singularity/singularity/releases/download/v${V}/
-MASTER_SITES0=	http://emhsoft.com/singularity/
+SITES=	https://github.com/singularity/singularity/releases/download/v${V}/
+SITES.m=http://emhsoft.com/singularity/
 
 WRKDIST=	${WRKDIR}/singularity-${V}
 

@@ -6,13 +6,14 @@ DISTNAME=		marathon2-0.0.${V}
 PKGNAME=		marathon2-0.0.${V}
 HOMEPAGE=		https://alephone.lhowon.org/games/marathon2.html
 
-DISTFILES=		Marathon2-${V}-Data.zip:6
-DISTFILES +=		Marathon_2_Manual.pdf:4
+DISTFILES=
+DISTFILES.g=		Marathon2-${V}-Data.zip
+DISTFILES.e =		Marathon_2_Manual.pdf
 
 # http://trilogyrelease.bungie.org/faq.html
 PERMIT_PACKAGE=	YES
 
-EXTRACT_ONLY =		Marathon2-${V}-Data.zip
+EXTRACT_ONLY =		${DISTFILES.g}
 INSTALL_LOC=		${PREFIX}/share/alephone
 INSTALL_M2=		${INSTALL_LOC}/Marathon2
 

@@ -12,11 +12,12 @@ COMMENT-buildset =	smallest texlive texmf for building ports
 
 DISTNAME =		texlive-${DIST_V}-texmf
 
-MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
+SITES.pregen =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20220325-tlpdb-full.tar.gz \
-			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
+			texlive-20220325-tlpdb-full.tar.gz
+
+DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}

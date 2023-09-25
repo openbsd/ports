@@ -12,8 +12,8 @@ GH_TAGNAME =	jitsi-meet_8319
 DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
-MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
-DISTFILES +=	jicofo-deps-${VERSION}.tgz:7
+SITES.maven =	https://files.bsd.ac/openbsd-distfiles/
+DISTFILES.maven +=	jicofo-deps-${VERSION}.tgz
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <aisha@openbsd.org>

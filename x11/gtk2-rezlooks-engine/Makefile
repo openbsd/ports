@@ -19,11 +19,11 @@ WANTLIB += Xau Xdmcp jpeg
 
 THEMES_DISTNAME=rezlooks-themes-0.1
 
-MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
-MASTER_SITES0=	http://distfiles.sigtrap.nl/
+SITES=		http://gnome-look.org/CONTENT/content-files/
+SITES.t=	http://distfiles.sigtrap.nl/
 DIST_SUBDIR=	rezlooks
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${THEMES_DISTNAME}${EXTRACT_SUFX}:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.t= 	${THEMES_DISTNAME}${EXTRACT_SUFX}
 
 
 LIB_DEPENDS =	x11/gtk+2

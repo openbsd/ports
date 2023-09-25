@@ -6,7 +6,7 @@ PKGNAME=	ja-kterm-${VERSION}
 REVISION=	9
 CATEGORIES=	japanese x11
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
+SITES=		${SITE_XCONTRIB:=applications/}
 
 # License: X
 PERMIT_PACKAGE=	Yes
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt curses c \
 		util
 
-MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	kterm-620-0213-20010706.diff.gz:0
+SITES.p=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES.p=	kterm-620-0213-20010706.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 CONFIGURE_STYLE=imake

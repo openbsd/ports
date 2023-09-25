@@ -5,10 +5,11 @@ PKGNAME =	slash-3.2.2.e8
 REVISION =	8
 CATEGORIES =	games
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
-MASTER_SITES0 =	http://www.rz.tu-ilmenau.de/~wi019/Slash/
+SITES =		${SITE_SOURCEFORGE:=nethack/}
+SITES.sl =	http://www.rz.tu-ilmenau.de/~wi019/Slash/
 
-DISTFILES =	nethack-322.tgz Slash-Unix.tar.gz:0
+DISTFILES =	nethack-322.tgz 
+DISTFILES.sl =	Slash-Unix.tar.gz
 PATCHFILES =	nh-3.2.2-3.2.3.diff
 
 

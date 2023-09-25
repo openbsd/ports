@@ -17,17 +17,17 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_regex-mt c m
 
-MASTER_SITES =		https://download.fcitx-im.org/fcitx5/libime/
+SITES =			https://download.fcitx-im.org/fcitx5/libime/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITES0 =		https://download.fcitx-im.org/data/
+SITES.data =		https://download.fcitx-im.org/data/
 
 # Dictionary and Language Model
 # Keep in sync with the post-patch section + upstream list
 # https://github.com/fcitx/libime/blob/master/data/CMakeLists.txt
-DISTFILES +=		dict-20220810.tar.xz:0
-DISTFILES +=		lm_sc.arpa-20220810.tar.xz:0
-DISTFILES +=		table.tar.gz:0
+DISTFILES.data +=	dict-20220810.tar.xz
+DISTFILES.data +=	lm_sc.arpa-20220810.tar.xz
+DISTFILES.data +=	table.tar.gz
 
 EXTRACT_SUFX = 		.tar.xz
 DIST_SUBDIR =		fcitx

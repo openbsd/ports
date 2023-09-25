@@ -13,14 +13,17 @@ UGV=			${V}-1
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
-			${UGOOGLE_DISTFILES}:0 \
-			${REGRESS_DISTFILES} \
-			libudev-openbsd-20221108-c3330efd.tar.gz:0
+			${REGRESS_DISTFILES}
+
+DISTFILES.u=	 	libudev-openbsd-20221108-c3330efd.tar.gz \
+			${UGOOGLE_DISTFILES} \
+			${REGRESS_DISTFILES.u}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
-REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX} \
-			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:0
+REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
+
+REGRESS_DISTFILES.u= 	test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}
@@ -40,8 +43,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
-MASTER_SITES0=	http://nerd.hu/distfiles/
+SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES.u=http://nerd.hu/distfiles/
 
 MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No

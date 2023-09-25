@@ -9,9 +9,9 @@ CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.oasis-open.org/docbook/
 
-MASTER_SITES=	${HOMEPAGE} \
+SITES=		${HOMEPAGE} \
 		https://www.docbook.org/
-MASTER_SITES0=	https://spacehopper.org/mirrors/
+SITES.ex=	https://spacehopper.org/mirrors/
 
 DISTFILES=	sgml/2.4.1/docbk241.zip \
 		sgml/3.0/docbk30.zip \
@@ -23,8 +23,9 @@ DISTFILES=	sgml/2.4.1/docbk241.zip \
 		xml/4.2/docbook-xml-4.2.zip \
 		xml/4.3/docbook-xml-4.3.zip \
 		xml/4.4/docbook-xml-4.4.zip \
-		xml/4.5/docbook-xml-4.5.zip \
-		examples.zip:0
+		xml/4.5/docbook-xml-4.5.zip
+
+DISTFILES.ex =	examples.zip
 
 # permission granted in dtd copyright notice
 PERMIT_PACKAGE=	Yes

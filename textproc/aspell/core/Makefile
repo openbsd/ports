@@ -9,11 +9,11 @@ SHARED_LIBS +=  pspell               17.0     # .18.1
 
 DIST_EN=	aspell6-en-2020.12.07-0
 
-MASTER_SITES0=	${MASTER_SITE_GNU:=aspell/}
-MASTER_SITES1=	${MASTER_SITE_GNU:=aspell/dict/en/}
+SITES=		${SITE_GNU:=aspell/}
+SITES.en=	${SITE_GNU:=aspell/dict/en/}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:0 \
-		${DIST_EN}.tar.bz2:1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.en= 	${DIST_EN}.tar.bz2
 
 HOMEPAGE=	http://aspell.net/
 

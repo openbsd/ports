@@ -7,9 +7,9 @@ GH_TESTDATA_COMMIT=98b37ee31189f1a31bb384191de0ea4b0358e0a0
 CATEGORIES =	graphics
 
 # add external test data
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}:0
-MASTER_SITES0 =	https://github.com/libjxl/testdata/archive/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.t = 	libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}
+SITES.t =	https://github.com/libjxl/testdata/archive/
 
 SHARED_LIBS +=	jxl		0.0 # 0.0
 SHARED_LIBS +=	jxl_threads	0.0 # 0.0

@@ -5,7 +5,8 @@ V =			0.0.20090509
 DISTNAME =		marathon-red-${V}
 HOMEPAGE =		http://bighouse.bungie.org/red/
 
-DISTFILES =		MarathonRED.zip:5
+DISTFILES =
+DISTFILES.f =		MarathonRED.zip
 
 PERMIT_PACKAGE =	YES
 

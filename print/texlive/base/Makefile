@@ -15,10 +15,10 @@ PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			mktexlsr-2022.gz:0
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
+DISTFILES.mk =		mktexlsr-2022.gz
 
-MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
+SITES.mk =		https://theunixzoo.co.uk/distfiles/
 
 SHARED_LIBS =		kpathsea	9.0 # 9.2
 SHARED_LIBS +=		ptexenc		6.0 # 5.0

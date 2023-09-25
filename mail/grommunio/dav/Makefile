@@ -7,12 +7,12 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-dav
 GH_COMMIT=      a9262794cb6b27acd10943138c92a230b0742ea8
 
-DISTFILES=	${GH_DISTFILE} \
-		${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz:0
+DISTFILES=	${GH_DISTFILE}
+DISTFILES.a = 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz
 
 CATEGORIES=	mail www
 
-MASTER_SITES0=	https://nerd.hu/distfiles/
+SITES.a=	https://nerd.hu/distfiles/
 
 MODULES=	lang/php
 

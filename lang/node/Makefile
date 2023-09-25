@@ -7,15 +7,17 @@ COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
 NODE_VERSION =		v18.17.1
 PLEDGE_VER =		1.1.3
-DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
-			${DISTNAME}-headers.tar.gz \
+
+DISTFILES = 		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
+DISTFILES.b =		node-pledge-{}${PLEDGE_VER}.tar.gz
+
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
 
-MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
+SITES.b =		https://github.com/qbit/node-pledge/archive/
 
 CATEGORIES =		lang devel
 

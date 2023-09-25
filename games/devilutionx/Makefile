@@ -8,11 +8,11 @@ GH_TAGNAME =	1.5.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-MASTER_SITES0 =	${MASTER_SITES_GITHUB}
-MASTER_SITES1 =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
+SITES =		${SITES_GITHUB}
+SITES.a =	https://github.com/diasurgical/devilutionX/releases/download/${GH_TAGNAME}/
 
-DISTFILES =	${GH_DISTFILE}:0 \
-		devilutionx-src-${GH_TAGNAME}{devilutionx-src}.tar.xz:1
+DISTFILES =	${GH_DISTFILE}
+DISTFILES.a = 	devilutionx-src-${GH_TAGNAME}{devilutionx-src}.tar.xz
 
 # Sustainable Use License 1.0
 PERMIT_PACKAGE =	Yes

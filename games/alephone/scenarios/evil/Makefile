@@ -5,7 +5,8 @@ V =			0.0.20090509
 DISTNAME =		marathon-evil-${V}
 HOMEPAGE =		http://bighouse.bungie.org/evil/
 
-DISTFILES =		MarathonEvil.zip:5
+DISTFILES =
+DISTFILES.f =		MarathonEvil.zip
 
 ## You may, however, freely distribute this adventure as a whole, unaltered,
 ## adventure to anyone and any place.

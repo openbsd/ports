@@ -9,9 +9,9 @@ GH_ACCOUNT =		wkhtmltopdf
 GH_PROJECT =		wkhtmltopdf
 GH_TAGNAME =		0.12.5
 QT_COMMIT =		5db36ec76b29712eb2c5bd0625c2c77d7468b3fc
-MASTER_SITES0 =		https://github.com/wkhtmltopdf/qt/archive/
-DISTFILES =		${DISTNAME}.tar.gz \
-			wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz:0
+SITES.a =		https://github.com/wkhtmltopdf/qt/archive/
+DISTFILES =		${DISTNAME}.tar.gz
+DISTFILES.a = 		wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz
 REVISION =		5
 
 SHARED_LIBS =		wkhtmltox 1.0 # 0.12

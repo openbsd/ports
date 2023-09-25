@@ -15,15 +15,15 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c m pthread util zstd
 
-MASTER_SITES=		https://github.com/stumpwm/stumpwm/archive/
-MASTER_SITES0=		https://github.com/edicl/cl-ppcre/archive/
-MASTER_SITES1=		https://beta.quicklisp.org/archive/clx/2022-07-07/
-MASTER_SITES2=		https://beta.quicklisp.org/archive/alexandria/2022-07-07/
+SITES=		https://github.com/stumpwm/stumpwm/archive/
+SITES.a=	https://github.com/edicl/cl-ppcre/archive/
+SITES.b=	https://beta.quicklisp.org/archive/clx/2022-07-07/
+SITES.c=	https://beta.quicklisp.org/archive/alexandria/2022-07-07/
 
-DISTFILES=		${DISTNAME}{${VERSION}}${EXTRACT_SUFX} \
-			cl-ppcre-2.1.1{v2.1.1}.tar.gz:0 \
-			clx-20220707-git.tgz:1 \
-			alexandria-20220707-git.tgz:2
+DISTFILES=	${DISTNAME}{${VERSION}}${EXTRACT_SUFX}
+DISTFILES.a= 	cl-ppcre-2.1.1{v2.1.1}.tar.gz
+DISTFILES.b= 	clx-20220707-git.tgz
+DISTFILES.c= 	alexandria-20220707-git.tgz
 
 BUILD_DEPENDS=		lang/sbcl \
 			print/texinfo

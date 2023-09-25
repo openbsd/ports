@@ -19,10 +19,9 @@ DIST_SUBDIR =		openra
 # dlopen'd via mono-config(5)
 WANTLIB +=	SDL2 freetype openal
 
-MASTER_SITES = 		https://thfr.info/distfiles/
-MASTER_SITES0 = 	https://thfr.info/distfiles/
+SITES = 		https://thfr.info/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			nuget-${DISTNAME}${EXTRACT_SUFX}:0
+			nuget-${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tar.xz
 
 FIX_CRLF_FILES =	thirdparty/download/SharpFont.dll.config

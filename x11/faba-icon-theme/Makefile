@@ -7,9 +7,10 @@ CATEGORIES =		x11
 REVISION =		0
 
 HOMEPAGE =		https://snwh.org/moka#faba-icon-theme
-MASTER_SITES0 =		https://github.com/moka-project/faba-mono-icons/raw/master/
+SITES.a =	https://github.com/moka-project/faba-mono-icons/raw/master/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} faba-mono-icons-4.2.tar.gz:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} 
+DISTFILES.a =	faba-mono-icons-4.2.tar.gz
 # GPLv3
 PERMIT_PACKAGE =	Yes
 

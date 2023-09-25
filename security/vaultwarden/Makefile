@@ -22,8 +22,8 @@ FLAVOR ?=
 
 WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
 
-MASTER_SITES7 =		https://files.bsd.ac/openbsd-distfiles/
-DISTFILES +=		vaultwarden-deps-${GH_TAGNAME}.tgz:7
+SITES.deps =		https://files.bsd.ac/openbsd-distfiles/
+DISTFILES.deps +=	vaultwarden-deps-${GH_TAGNAME}.tgz
 
 MODULES =		devel/cargo
 

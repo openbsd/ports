@@ -12,10 +12,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://cr.yp.to/ucspi-tcp/
-MASTER_SITES0=	http://www.fefe.de/ucspi/
+SITES=		http://cr.yp.to/ucspi-tcp/
+SITES.p=	http://www.fefe.de/ucspi/
 
-PATCHFILES=	ucspi-tcp-0.88-ipv6.diff20.bz2:0
+PATCHFILES.p=	ucspi-tcp-0.88-ipv6.diff20.bz2
 PATCH_DIST_STRIP=
 
 ALL_TARGET=

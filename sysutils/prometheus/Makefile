@@ -10,12 +10,12 @@ CATEGORIES =		sysutils
 HOMEPAGE =		https://prometheus.io/
 
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
-DISTFILES =		prometheus-${V}.tar.gz \
-			prometheus-web-ui-${V}.tar.gz:0
-DISTFILES +=		prometheus-vendor-${V}.tar.gz:1
+DISTFILES =		prometheus-${V}.tar.gz
+DISTFILES.a = 		prometheus-web-ui-${V}.tar.gz
+DISTFILES.b =		prometheus-vendor-${V}.tar.gz
 
-MASTER_SITES0 =		https://github.com/prometheus/prometheus/releases/download/${GH_TAGNAME}/
-MASTER_SITES1 =		https://www.zyd.ch/distfiles/
+SITES.a =		https://github.com/prometheus/prometheus/releases/download/${GH_TAGNAME}/
+SITES.b =		https://www.zyd.ch/distfiles/
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

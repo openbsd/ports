@@ -6,10 +6,10 @@ REVISION=		4
 
 CATEGORIES=		net
 
-MASTER_SITES0=		http://nerd.hu/distfiles/
+SITES.p=		http://nerd.hu/distfiles/
 
-DISTFILES+=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX} \
-			vino-preferences-20200330.tar.gz:0
+DISTFILES+=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
+DISTFILES.p+= 		vino-preferences-20200330.tar.gz
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 

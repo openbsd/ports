@@ -8,7 +8,9 @@ REVISION=	2
 SHARED_LIBS=	lapack 7.1
 
 CATEGORIES=	math
-DISTFILES=	${DISTNAME}.tar.gz manpages.tgz:0
+DISTFILES=	${DISTNAME}.tar.gz 
+DISTFILES.doc =	manpages.tgz
+
 
 HOMEPAGE=	https://netlib.org/lapack/
 
@@ -17,9 +19,9 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://netlib.org/lapack/ \
+SITES=		https://netlib.org/lapack/ \
 		http://www.netlib.no/netlib/lapack/
-MASTER_SITES0=	https://netlib.org/lapack/
+SITES.doc=	https://netlib.org/lapack/
 DIST_SUBDIR=	${DISTNAME}
 
 LIB_DEPENDS =	math/blas

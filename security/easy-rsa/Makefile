@@ -9,14 +9,14 @@ CATEGORIES =	security
 HOMEPAGE =	https://openvpn.net/
 
 # Use upstream commit to fix number_only option parsing
-MASTER_SITES0 =		https://github.com/OpenVPN/easy-rsa/commit/
+SITES.p =	https://github.com/OpenVPN/easy-rsa/commit/
 PATCH_DIST_STRIP =	-p2
-PATCHFILES =		easy-rsa-number_only-fix{4472516e24b068542cfd1ff5c3e51c3b89eb38b1}.patch:0
+PATCHFILES.p =	easy-rsa-number_only-fix{4472516e24b068542cfd1ff5c3e51c3b89eb38b1}.patch
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v${V}/
+SITES 	=	https://github.com/OpenVPN/easy-rsa/releases/download/v${V}/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

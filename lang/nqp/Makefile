@@ -22,11 +22,11 @@ GH_PROJECT =		nqp
 GH_TAGNAME =		$V
 
 # Take the missing WRKDIST/3rdparty/nqp-configure from rakudo.
-MASTER_SITES0 =		https://rakudo.org/dl/rakudo/
+SITES.rakudo =		https://rakudo.org/dl/rakudo/
 RAKUDO_VERSION =	$V
-DISTFILES =		nqp-$V.tar.gz \
-			rakudo-${RAKUDO_VERSION}.tar.gz:0
-EXTRACT_ONLY =		nqp-$V.tar.gz
+DISTFILES =		nqp-$V.tar.gz
+DISTFILES.rakudo = 	rakudo-${RAKUDO_VERSION}.tar.gz
+EXTRACT_ONLY =		${DISTFILES}
 
 BUILD_DEPENDS =		math/libtommath
 LIB_DEPENDS =		lang/moarvm>=${MOAR_VERSION}

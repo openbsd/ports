@@ -4,8 +4,8 @@ COMMENT=		fractal program with GTK interface
 GH_ACCOUNT=		oskusalerma
 GH_PROJECT=		gfract
 GH_TAGNAME=		v1.0
-DISTFILES=		${DISTNAME}.tar.gz \
-			gfract-palettes-0.1.tar.gz:0
+DISTFILES=		${DISTNAME}.tar.gz
+DISTFILES.gfx=		gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
 REVISION=		3
 
@@ -23,7 +23,7 @@ WANTLIB += pangoft2-1.0 png z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES0= 		http://distfiles.sigtrap.nl/
+SITES.gfx= 		http://distfiles.sigtrap.nl/
 
 MODULES=		lang/python
 

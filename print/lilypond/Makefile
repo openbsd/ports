@@ -11,8 +11,10 @@ CATEGORIES=		print
 REVISION-main=		1
 
 URW_V=			20200910
-DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0 urw-base35-fonts-${URW_V}.tar.gz:1
-EXTRACT_ONLY=		${DISTNAME}.tar.gz urw-base35-fonts-${URW_V}.tar.gz
+DISTFILES=		${DISTNAME}.tar.gz 
+DISTFILES.doc=		${DISTNAME-docs}.tar.bz2
+DISTFILES.urw =		urw-base35-fonts-${URW_V}.tar.gz
+EXTRACT_ONLY=		${DISTFILES} ${DISTFILES.urw}
 
 MULTI_PACKAGES=		-main -docs
 
@@ -25,10 +27,10 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_BASE=		https://lilypond.org/download/
-MASTER_SITES=		${MASTER_BASE}source/v${VERSION:C,\.[0-9]*$,,}/
-MASTER_SITES0=		${MASTER_BASE}binaries/documentation/
-MASTER_SITES1=		https://github.com/ArtifexSoftware/urw-base35-fonts/archive/${URW_V}/
+SITE_BASE=		https://lilypond.org/download/
+SITES=			${SITE_BASE}source/v${VERSION:C,\.[0-9]*$,,}/
+SITES.doc=		${SITE_BASE}binaries/documentation/
+SITES.urw=		https://github.com/ArtifexSoftware/urw-base35-fonts/archive/${URW_V}/
 
 # We don't use the standard autoconf mechanisms from the ports
 # system, because it doesn't work for lilypond. Instead, we use

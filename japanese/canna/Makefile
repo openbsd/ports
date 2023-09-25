@@ -19,11 +19,11 @@ SHARED_LIBS=	RKC	1.0 \
 
 CATEGORIES=	japanese
 
-MASTER_SITES =	ftp://ftp.sra.co.jp/pub/misc/canna/
+SITES =		ftp://ftp.sra.co.jp/pub/misc/canna/
 
-MASTER_SITES0=	http://www.jaist.ac.jp/~fujieda/canna/
-PATCHFILES=	Canna35b2-unoff1.patch.gz:0 Canna35b2-unoff2.patch.gz:0 \
-		Canna35b2-hack1.patch.gz:0
+SITES.p=	http://www.jaist.ac.jp/~fujieda/canna/
+PATCHFILES.p=	Canna35b2-unoff1.patch.gz Canna35b2-unoff2.patch.gz \
+		Canna35b2-hack1.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

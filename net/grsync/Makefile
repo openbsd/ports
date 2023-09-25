@@ -11,9 +11,9 @@ WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
 WANTLIB += pango-1.0 pangocairo-1.0
 
-MASTER_SITES =	https://www.opbyte.it/release/
-MASTER_SITES0 =	https://gitlab.archlinux.org/archlinux/packaging/packages/grsync/-/raw/main/
-PATCHFILES +=	use-themed-icon.patch:0
+SITES =		https://www.opbyte.it/release/
+SITES.p =	https://gitlab.archlinux.org/archlinux/packaging/packages/grsync/-/raw/main/
+PATCHFILES.p +=	use-themed-icon.patch
 PATCH_DIST_STRIP =	-p1
 
 MODULES =	textproc/intltool

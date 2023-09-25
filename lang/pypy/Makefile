@@ -31,8 +31,8 @@ BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}-0.tar.xz
 #BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
 BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-0.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
-SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
-SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
+SUPDISTFILES.boot +=	${BOOTSTRAP-amd64}
+SUPDISTFILES.boot +=	${BOOTSTRAP-aarch64}
 REVISION =		7
 
 CATEGORIES =		lang
@@ -50,8 +50,8 @@ WANTLIB +=		${MODTK_LIB} util z
 
 LIB_DEPENDS +=		databases/sqlite3
 
-MASTER_SITES =		https://downloads.python.org/pypy/
-MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/ \
+SITES =			https://downloads.python.org/pypy/
+SITES.boot =		https://theunixzoo.co.uk/distfiles/ \
 			https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
@@ -62,7 +62,7 @@ DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if defined(BOOTSTRAP-${MACHINE_ARCH}) && !${FLAVOR:Mno_bootstrap}
 #   ^^ needed to avoid breakage in arches that don't have pypy
-DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
+DISTFILES.boot +=		${BOOTSTRAP-${MACHINE_ARCH}}
 .endif
 
 MODULES +=		lang/python x11/tk

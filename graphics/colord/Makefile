@@ -4,17 +4,17 @@ GH_ACCOUNT=		hughsie
 GH_PROJECT=		colord
 GH_TAGNAME=		1.4.6
 
-MASTER_SITES0=		https://github.com/hughsie/colord/commit/
-PATCHFILES=		fa832689e2574436b0e4cd3db5f99df6aa55882b.diff:0 \
-			41bf6b99a11ccf4235aa946a3bc9fc37ea4ee4d9.diff:0 \
-			c357ea2e1f65b5127a33960e89163245355a4d7c.diff:0 \
-			124efd03f3cb9b1df819134eb7cb6683497be9b1.diff:0 \
-			7ec44427a82bf1779098dcb1ae979a070d6eefa6.diff:0 \
-			1452a975ecae14299fb27d41522dfd32305481ce.diff:0 \
-			f7e487584d1a22ffcfd910e9ae47429599c39b44.diff:0 \
-			be3aa625c10e9f1053c520d2cf849332cb535bd4.diff:0 \
-			91a3cc2e994be587def3b70762f15461101d43a1.diff:0 \
-			4a33e7c0b46f0c8d940bd2bafbe60b114428413e.diff:0
+SITES.p=		https://github.com/hughsie/colord/commit/
+PATCHFILES.p=		fa832689e2574436b0e4cd3db5f99df6aa55882b.diff \
+			41bf6b99a11ccf4235aa946a3bc9fc37ea4ee4d9.diff \
+			c357ea2e1f65b5127a33960e89163245355a4d7c.diff \
+			124efd03f3cb9b1df819134eb7cb6683497be9b1.diff \
+			7ec44427a82bf1779098dcb1ae979a070d6eefa6.diff \
+			1452a975ecae14299fb27d41522dfd32305481ce.diff \
+			f7e487584d1a22ffcfd910e9ae47429599c39b44.diff \
+			be3aa625c10e9f1053c520d2cf849332cb535bd4.diff \
+			91a3cc2e994be587def3b70762f15461101d43a1.diff \
+			4a33e7c0b46f0c8d940bd2bafbe60b114428413e.diff
 PATCH_DIST_STRIP=	-p1
 
 SHARED_LIBS += colordprivate             2.0 # 2.0.5

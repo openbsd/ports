@@ -6,14 +6,16 @@ DISTNAME=kanjips
 PKGNAME=${DISTNAME}-19900310
 REVISION=1
 
-MASTER_SITES=ftp://ftp.funet.fi/pub/culture/japan/unix/
-MASTER_SITES0=ftp://ftp.funet.fi/pub/culture/japan/fonts/
+SITES=		ftp://ftp.funet.fi/pub/culture/japan/unix/
+SITES.fonts=	ftp://ftp.funet.fi/pub/culture/japan/fonts/
 
-DISTFILES=kanjips.tar.Z jis32.Z:0 jis48.Z:0
+DISTFILES =	kanjips.tar.Z 
+DISTFILES.fonts= jis32.Z jis48.Z
+EXTRACT_ONLY =	${DISTFILES}
+
 # Freeware
-EXTRACT_ONLY=kanjips.tar.Z
+PERMIT_PACKAGE =	Yes
 
-PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 

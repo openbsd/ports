@@ -7,11 +7,11 @@ REVISION =		5
 CATEGORIES =		x11 devel
 
 # patches from Fedora for wxWidgets>=3.2
-MASTER_SITES0 =		https://src.fedoraproject.org/rpms/perl-Wx/raw/rawhide/f/
-PATCHFILES =		Wx-0.9932-Undefine-BOM_UTF8.patch:0 \
-			gtk3.patch:0 \
-			wxWidgets_3.2_MakeMaker.patch:0 \
-			wxWidgets_3.2_port.patch:0
+SITES.p =	https://src.fedoraproject.org/rpms/perl-Wx/raw/rawhide/f/
+PATCHFILES.p =		Wx-0.9932-Undefine-BOM_UTF8.patch \
+			gtk3.patch \
+			wxWidgets_3.2_MakeMaker.patch \
+			wxWidgets_3.2_port.patch
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>

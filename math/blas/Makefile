@@ -7,7 +7,8 @@ REVISION=	1
 SHARED_LIBS=	blas	2.1
 
 CATEGORIES=	math
-DISTFILES=	${DISTNAME}.tgz manpages.tgz:0
+DISTFILES=	${DISTNAME}.tgz 
+DISTFILES.la =	manpages.tgz
 
 HOMEPAGE=	https://netlib.org/blas/
 
@@ -16,8 +17,8 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # freely available
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://netlib.org/blas/
-MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
+SITES=		https://netlib.org/blas/
+SITES.la=	${SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}
 WRKDIST=	${WRKDIR}/${DISTNAME:U}

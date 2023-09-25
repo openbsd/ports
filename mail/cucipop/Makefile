@@ -4,10 +4,10 @@ DISTNAME=	cucipop-1.31
 REVISION=	1
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
-MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+SITES=		ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
+SITES.p=	ftp://ftp.kame.net/pub/kame/misc/
 
-PATCHFILES=	cucipop-1.31-v6-20010223.diff.gz:0
+PATCHFILES.p=	cucipop-1.31-v6-20010223.diff.gz
 PATCH_DIST_STRIP= -p1
 
 PERMIT_PACKAGE=	Yes

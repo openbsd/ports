@@ -12,8 +12,8 @@ GH_COMMIT =	f6426ea01d6d4426149dd2bf658d388f447b9f5d
 DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
-MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
-DISTFILES +=	jitsi-videobridge-deps-${VERSION}.tgz:7
+SITES.maven =	https://files.bsd.ac/openbsd-distfiles/
+DISTFILES.maven +=	jitsi-videobridge-deps-${VERSION}.tgz
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <aisha@openbsd.org>

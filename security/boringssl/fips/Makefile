@@ -4,18 +4,18 @@ GH_COMMIT =	15655052e8701f908937204785eaa8cd4363099f
 DISTNAME =	boringssl-fips-20230428
 REVISION =	0
 
-MASTER_SITES0 =	https://proxy.golang.org/
+SITES.mods =	https://proxy.golang.org/
 
 DISTFILES +=	${GH_DISTFILE}
 # can't use GH_DISTFILE because EXTRACT_ONLY does not understand DISTFILES {}
-EXTRACT_ONLY =	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
+EXTRACT_ONLY =	${ALL_DISTFILES:Mboringssl*}
 
 BORING_GOMOD +=	golang.org/x/crypto	v0.6.0
 BORING_GOMOD +=	golang.org/x/net	v0.7.0
 
 .for _modpath _modver in ${BORING_GOMOD}
-DISTFILES +=	go_modules/{}${_modpath}/@v/${_modver}.zip:0
-DISTFILES +=	go_modules/{}${_modpath}/@v/${_modver}.mod:0
+DISTFILES.mods +=	go_modules/{}${_modpath}/@v/${_modver}.zip
+DISTFILES.mods +=	go_modules/{}${_modpath}/@v/${_modver}.mod
 .endfor
 
 WANTLIB += ${COMPILER_LIBCXX} c m

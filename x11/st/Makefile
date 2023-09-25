@@ -2,7 +2,7 @@ COMMENT=		simple X terminal
 
 V=			0.9
 DISTNAME=		st-${V}
-SUPDISTFILES=		st-scrollback-0.8.5.diff:0
+SUPDISTFILES.p=		st-scrollback-0.8.5.diff
 REVISION=		0
 
 CATEGORIES=		x11
@@ -17,8 +17,8 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB=		X11 Xft c fontconfig freetype m util
 
-MASTER_SITES=		https://dl.suckless.org/st/
-MASTER_SITES0=		https://st.suckless.org/patches/scrollback/
+SITES=			https://dl.suckless.org/st/
+SITES.p=		https://st.suckless.org/patches/scrollback/
 
 MAKE_ENV=		LDFLAGS="${LDFLAGS}" \
 			X11INC=${X11BASE}/include \
@@ -30,7 +30,7 @@ FLAVORS=		scrollback
 FLAVOR?=
 
 .if ${FLAVOR:Mscrollback}
-PATCHFILES=		${SUPDISTFILES}
+PATCHFILES.p=		${SUPDISTFILES.p}
 .endif
 PATCH_DIST_STRIP=	-p1
 

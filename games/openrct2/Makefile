@@ -8,12 +8,12 @@ OPENSFX_V =	1.0.3
 OPENMSX_V =	1.3.0
 REPLAYS_V =	0.0.78
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
-DISTFILES =	openrct2-${V}{v${V}}.tar.gz:0 \
-		title-sequences-${TITLE_V}{title-sequences}.zip:1 \
-		objects-${OBJECTS_V}{objects}.zip:2 \
-		opensfx-${OPENSFX_V}{opensound}.zip:3 \
-		openmsx-${OPENMSX_V}{openmusic}.zip:4 \
-		replays-${REPLAYS_V}{replays}.zip:5
+DISTFILES =	openrct2-${V}{v${V}}.tar.gz
+DISTFILES.a = 	title-sequences-${TITLE_V}{title-sequences}.zip
+DISTFILES.b = 	objects-${OBJECTS_V}{objects}.zip
+DISTFILES.c = 	opensfx-${OPENSFX_V}{opensound}.zip
+DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
+DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
 
@@ -30,14 +30,15 @@ WANTLIB += zip
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887
 # Find repos and version numbers in top-level CMakeLists.txt
-MASTER_SITES0 =	https://github.com/OpenRCT2/OpenRCT2/archive/refs/tags/
-MASTER_SITES1 =	https://github.com/OpenRCT2/title-sequences/releases/download/v${TITLE_V}/
-MASTER_SITES2 =	https://github.com/OpenRCT2/objects/releases/download/v${OBJECTS_V}/
-MASTER_SITES3 =	https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v${OPENSFX_V}/
-MASTER_SITES4 =	https://github.com/OpenRCT2/OpenMusic/releases/download/v${OPENMSX_V}/
-MASTER_SITES5 =	https://github.com/OpenRCT2/replays/releases/download/v${REPLAYS_V}/
+BASE = 		https://github.com/OpenRCT2/
+SITES =		${BASE}OpenRCT2/archive/refs/tags/
+SITES.a =	${BASE}title-sequences/releases/download/v${TITLE_V}/
+SITES.b =	${BASE}objects/releases/download/v${OBJECTS_V}/
+SITES.c =	${BASE}OpenSoundEffects/releases/download/v${OPENSFX_V}/
+SITES.d =	${BASE}OpenMusic/releases/download/v${OPENMSX_V}/
+SITES.e =	${BASE}replays/releases/download/v${REPLAYS_V}/
 
-EXTRACT_ONLY =	openrct2-${V}.tar.gz
+EXTRACT_ONLY =	openrct2-$V.tar.gz
 
 # C++17
 COMPILER =	base-clang ports-gcc

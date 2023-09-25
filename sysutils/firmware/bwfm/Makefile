@@ -5,15 +5,15 @@ REVISION=	3
 FW_VER=		${LINUX_VER}.${SUP_VER}
 DISTNAME=	linux-firmware-${LINUX_VER}
 EXTRACT_SUFX=	.tar.xz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		{bsdkurt/brcm-supplemental/archive/}brcm-supplemental-${SUP_VER}.tar.gz:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a= 	{bsdkurt/brcm-supplemental/archive/}brcm-supplemental-${SUP_VER}.tar.gz
 # broad enough to reduce WRKSRC size but specific enough to match all DISTFILES
 EXTRACT_FILES=	\*/{brcm\*,LICEN\*}
 
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
-MASTER_SITES0=	https://github.com/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES.a=	https://github.com/
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/brcm
 

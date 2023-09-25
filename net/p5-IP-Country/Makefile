@@ -5,8 +5,8 @@ PKG_ARCH=	*
 D=		20190301
 DISTNAME=	IP-Country-2.28
 PKGNAME=	p5-${DISTNAME}.$D
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		IP-Country-data-$D.tar.bz2:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.data= IP-Country-data-$D.tar.bz2
 REVISION=	0
 
 CATEGORIES=	net
@@ -16,7 +16,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # Artistic
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES0 =		https://paclan.it/distfiles/
+SITES.data =		https://paclan.it/distfiles/
 
 RUN_DEPENDS =		geo/p5-Geography-Countries
 

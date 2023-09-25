@@ -25,10 +25,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m ${COMPILER_LIBCXX}
 
-MASTER_SITES0 =		${HOMEPAGE}
-MASTER_SITES1 =		https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-${YAJSW_VER}/
-MASTER_SITES2 =		https://repo.maven.apache.org/maven2/
-MASTER_SITES3 =		https://dlcdn.apache.org/logging/log4j/${LOG4J_VER}/
+SITES.a =		${HOMEPAGE}
+SITES.b =		https://sourceforge.net/projects/yajsw/files/yajsw/yajsw-stable-${YAJSW_VER}/
+SITES.c =		https://repo.maven.apache.org/maven2/
+SITES.d =		https://dlcdn.apache.org/logging/log4j/${LOG4J_VER}/
 
 EXTRACT_SUFX =		.zip
 
@@ -51,13 +51,12 @@ JAR_DISTFILES +=	json-simple{com/googlecode/json-simple/json-simple/${JSON_SIMPL
 JAR_DISTFILES +=	junit{junit/junit/${JUNIT_VER}/junit}-${JUNIT_VER}.jar
 
 DISTFILES =		${DISTNAME}.tar.gz
-DISTFILES +=		ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}${EXTRACT_SUFX}:0
-DISTFILES +=		yajsw-stable-${YAJSW_VER}${EXTRACT_SUFX}:1
-DISTFILES +=		${JAR_DISTFILES:C/$/:2/}
-DISTFILES +=		apache-log4j-${LOG4J_VER}-bin.tar.gz:3
+DISTFILES.a +=		ghidra_${VERSION}_PUBLIC_${GHIDRA_DATE}${EXTRACT_SUFX}
+DISTFILES.b +=		yajsw-stable-${YAJSW_VER}${EXTRACT_SUFX}
+DISTFILES.c +=		${JAR_DISTFILES}
+DISTFILES.d +=		apache-log4j-${LOG4J_VER}-bin.tar.gz
 
-EXTRACT_ONLY =		${DISTNAME}.tar.gz
-EXTRACT_ONLY +=		apache-log4j-${LOG4J_VER}-bin.tar.gz
+EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.d}
 
 COMPILER =		base-clang ports-clang
 

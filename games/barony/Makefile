@@ -15,9 +15,9 @@ MAINTAINER =	David Carlier <devnexen@gmail.com>
 PERMIT_PACKAGE =	Yes
 
 RAPIDJSON_V =		1.1.0
-MASTER_SITES0 =		https://github.com/Tencent/rapidjson/archive/
-DISTFILES +=		Barony-${V}.tar.gz \
-			rapidjson-{}v${RAPIDJSON_V}.tar.gz:0
+SITES.json =		https://github.com/Tencent/rapidjson/archive/
+DISTFILES +=		Barony-${V}.tar.gz
+DISTFILES.json = 	rapidjson-{}v${RAPIDJSON_V}.tar.gz
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
 WANTLIB += SDL2_ttf c execinfo m ogg openal png vorbisfile physfs

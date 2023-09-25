@@ -5,9 +5,9 @@ REVISION =	6
 
 HOMEPAGE =	http://fluxbox.org/
 
-MASTER_SITES0 =         http://git.fluxbox.org/fluxbox.git/patch/
+SITES.p =         http://git.fluxbox.org/fluxbox.git/patch/
 # Backport fix for maxDepth to fix usage with Firefox
-PATCHFILES =            fluxbox-firefox-fix.patch{?id=dcdde4d32c93d01df205bc06d7dfcbd356be031f}:0
+PATCHFILES.p =            fluxbox-firefox-fix.patch{?id=dcdde4d32c93d01df205bc06d7dfcbd356be031f}
 PATCH_DIST_STRIP =      -p1
 
 # X11
@@ -18,7 +18,7 @@ WANTLIB += freetype fribidi iconv m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fluxbox/}
+SITES =		${SITE_SOURCEFORGE:=fluxbox/}
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/fribidi \

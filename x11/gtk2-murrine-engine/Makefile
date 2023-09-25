@@ -19,24 +19,24 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z jpeg Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES0 =	${HOMEPAGE}files/
+SITES.p =	${HOMEPAGE}files/
 DIST_SUBDIR =	murrine
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		MurrinaBlu-0.32.tar.gz:0 \
-		MurrineThemePack.tar.bz2:0 \
-		MurrinaBlue.tar.bz2:0 \
-		MurrinaChrome.tar.gz:0 \
-		MurrinaCream.tar.gz:0 \
-		MurrinaCandido.tar.gz:0 \
-		MurrinaOranche_02.tar.gz:0 \
-		MurrinaElement.tar.gz:0 \
-		MurrinaFancyCandy.tar.bz2:0 \
-		MurrinaOransun.tar.gz:0 \
-		MurrinaTango.tar.bz2:0 \
-		MurrinaVerdeOlivo.tar.bz2:0 \
-		MurrinaAquaIsh.tar.bz2:0 \
-		MurrinaGilouche.tar.bz2:0 \
-		MurrinaLoveGray.tar.bz2:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.p = 	MurrinaBlu-0.32.tar.gz \
+		MurrineThemePack.tar.bz2 \
+		MurrinaBlue.tar.bz2 \
+		MurrinaChrome.tar.gz \
+		MurrinaCream.tar.gz \
+		MurrinaCandido.tar.gz \
+		MurrinaOranche_02.tar.gz \
+		MurrinaElement.tar.gz \
+		MurrinaFancyCandy.tar.bz2 \
+		MurrinaOransun.tar.gz \
+		MurrinaTango.tar.bz2 \
+		MurrinaVerdeOlivo.tar.bz2 \
+		MurrinaAquaIsh.tar.bz2 \
+		MurrinaGilouche.tar.bz2 \
+		MurrinaLoveGray.tar.bz2
 
 MODULES =	x11/gnome
 

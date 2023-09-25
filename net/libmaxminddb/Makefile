@@ -10,8 +10,8 @@ PKGNAME-main =	libmaxminddb-${V}
 PKGNAME-db =	geolite2-country-${D}
 PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		geolite2-data-$D.tar.xz:0
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.d = 	geolite2-data-$D.tar.xz
 REVISION-db =	1
 REVISION-city = 1
 REVISION-asn =  1
@@ -28,8 +28,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main +=	c m pthread
 
-MASTER_SITES =	https://github.com/maxmind/libmaxminddb/releases/download/${V}/
-MASTER_SITES0 =	https://spacehopper.org/mirrors/
+SITES =		https://github.com/maxmind/libmaxminddb/releases/download/${V}/
+SITES.d =	https://spacehopper.org/mirrors/
 
 MULTI_PACKAGES = -main -db -city -asn
 

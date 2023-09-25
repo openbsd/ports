@@ -7,8 +7,8 @@ COMMENT =		multi-paradigm programming language
 
 V =			8.10
 PKGNAME =		racket-minimal-$V
-DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
-			racket-openbsd-2${EXTRACT_SUFX}:0
+DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX}
+DISTFILES.boot = 	racket-openbsd-2${EXTRACT_SUFX}
 
 CATEGORIES =		lang
 HOMEPAGE =		https://racket-lang.org/
@@ -19,20 +19,20 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # different licenses: https://github.com/racket/racket/blob/master/LICENSE
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://mirror.racket-lang.org/installers/${V}/ \
-			https://www.cs.utah.edu/plt/installers/${V}/ \
-			https://plt.eecs.northwestern.edu/racket-mirror/${V}/ \
-			http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
-			http://pre-release.racket-lang.org/installers/ \
-			http://pre.racket-lang.org/release/installers/ \
-			http://pre.racket-lang.org/installers/ \
-			https://download.tuxfamily.org/jod/lang/racket/ \
-			ftp://download.tuxfamily.org/jod/lang/racket/ \
-			https://users.cs.utah.edu/plt/snapshots/current/installers/ \
-			http://plt.eecs.northwestern.edu/snapshots/current/installers/
+SITES =		https://mirror.racket-lang.org/installers/${V}/ \
+		https://www.cs.utah.edu/plt/installers/${V}/ \
+		https://plt.eecs.northwestern.edu/racket-mirror/${V}/ \
+		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
+		http://pre-release.racket-lang.org/installers/ \
+		http://pre.racket-lang.org/release/installers/ \
+		http://pre.racket-lang.org/installers/ \
+		https://download.tuxfamily.org/jod/lang/racket/ \
+		ftp://download.tuxfamily.org/jod/lang/racket/ \
+		https://users.cs.utah.edu/plt/snapshots/current/installers/ \
+		http://plt.eecs.northwestern.edu/snapshots/current/installers/
 
-MASTER_SITES0 =		https://download.tuxfamily.org/jod/lang/racket/ \
-			ftp://download.tuxfamily.org/jod/lang/racket/
+SITES.boot =	https://download.tuxfamily.org/jod/lang/racket/ \
+		ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		archivers/lz4 \

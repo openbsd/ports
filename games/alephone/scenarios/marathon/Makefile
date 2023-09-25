@@ -5,13 +5,14 @@ V =		20200904
 DISTNAME =	marathon-0.0.${V}
 HOMEPAGE =	https://alephone.lhowon.org/games/marathon.html
 
-DISTFILES =	Marathon-${V}-Data.zip:6
-DISTFILES +=	Marathon_Manual.pdf:4
+DISTFILES =
+DISTFILES.g =	Marathon-${V}-Data.zip
+DISTFILES.e =	Marathon_Manual.pdf
 
 # http://trilogyrelease.bungie.org/faq.html
 PERMIT_PACKAGE =	YES
 
-EXTRACT_ONLY =	Marathon-${V}-Data.zip
+EXTRACT_ONLY =	${DISTFILES.g}
 INSTALL_LOC =	${PREFIX}/share/alephone
 INSTALL_M =	${INSTALL_LOC}/Marathon
 

@@ -8,9 +8,9 @@ MODGO_BUILDDEP ?=	Yes
 
 MODGO_DIST_SUBDIR ?=	go_modules
 
-MASTER_SITE_ATHENS =	https://proxy.golang.org/
+SITE_ATHENS =		https://proxy.golang.org/
 
-MASTER_SITES.go ?= ${MASTER_SITE_ATHENS}
+SITES.go ?= 		${SITE_ATHENS}
 
 MODGO_RUN_DEPENDS =	lang/go
 MODGO_BUILD_DEPENDS =	lang/go
@@ -76,7 +76,7 @@ ALL_TARGET ?=		${MODGO_MODNAME}
 MODGO_FLAGS +=		-modcacherw -trimpath
 DISTFILES +=		${DISTNAME_ESC}{${MODGO_VERSION}}${EXTRACT_SUFX}
 EXTRACT_ONLY +=		${DISTNAME_ESC}${EXTRACT_SUFX}
-MASTER_SITES ?=		${MASTER_SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
+SITES ?=		${SITE_ATHENS}${MODGO_MODNAME_ESC}/@v/
 .  for _modpath _modver in ${MODGO_MODULES}
 DISTFILES.go +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.zip
 DISTFILES.go +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod

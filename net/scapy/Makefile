@@ -14,9 +14,10 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
-DISTFILES =		${EXTRACT_ONLY} ethertypes-20120703:0
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
+SITES.data =		https://spacehopper.org/mirrors/
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.data =	ethertypes-20120703
+EXTRACT_ONLY =		${DISTFILES}
 
 MODULES =		lang/python
 MODPY_PI =		Yes

@@ -20,10 +20,10 @@ MAINTAINER ?=		Thomas Frohwein <thfr@openbsd.org>
 # Eclipse Public License (junit)
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES0 ?=	https://thfr.info/distfiles/
+SITES.a ?=		https://thfr.info/distfiles/
 
-DISTFILES ?=		${DISTNAME}${EXTRACT_SUFX} \
-			m2repo-libgdx-${VERSION}-tools.tar.gz:0
+DISTFILES ?=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a ?= 		m2repo-libgdx-${VERSION}-tools.tar.gz
 
 DIST_SUBDIR ?=		libgdx
 

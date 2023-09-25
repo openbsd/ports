@@ -34,7 +34,7 @@ WANTLIB-tools =	${WANTLIB}
 # C++14
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
+SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
 DISTFILES =     ${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX =	.tar.xz
 

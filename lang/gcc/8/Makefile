@@ -58,9 +58,9 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
-SUPDISTFILES =	${ADASTRAP-amd64}:0 ${ADASTRAP-arm}:0 ${ADASTRAP-hppa}:0 \
-		${ADASTRAP-i386}:0 ${ADASTRAP-mips64}:0 ${ADASTRAP-powerpc}:0 \
-		${ADASTRAP-sparc64}:0
+SUPDISTFILES.strap =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
+		${ADASTRAP-i386} ${ADASTRAP-mips64} ${ADASTRAP-powerpc} \
+		${ADASTRAP-sparc64}
 EXTRACT_ONLY =	${DISTNAME}.tar.xz
 
 BUILD_DEPENDS +=	devel/bison
@@ -83,15 +83,15 @@ TEST_DEPENDS += devel/dejagnu \
 		devel/autogen \
 		${BUILD_PKGPATH},-libs>=8,<9
 
-MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	https://distfiles.stumpf.co/ \
+SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+SITES.strap =	https://distfiles.stumpf.co/ \
 		https://spacehopper.org/mirrors/ \
 		https://distfiles.bsdfrog.org/
 
 LANGS = c,c++,fortran,objc
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
-DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
+DISTFILES.strap = ${ADASTRAP-${MACHINE_ARCH}}
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc

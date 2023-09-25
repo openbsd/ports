@@ -21,13 +21,14 @@ REVISION-server =	0
 PKG_ARCH-data = 	*
 
 DISTNAME =		openarena-${V}
-DISTFILES =		${DISTNAME}.zip openarena-engine-source-${E_V}.tar.bz2:0
+DISTFILES =		${DISTNAME}.zip 
+DISTFILES.a =		openarena-engine-source-${E_V}.tar.bz2
 
 HOMEPAGE =		http://www.openarena.ws/
 MS_PREFIX =		https://download.tuxfamily.org/openarena/rel/
-MASTER_SITES =		${MS_PREFIX}${V:S/.//g}/ \
+SITES =			${MS_PREFIX}${V:S/.//g}/ \
 			${MS_PREFIX}${E_V:S/.//g}/source/
-MASTER_SITES0 =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
+SITES.a =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well

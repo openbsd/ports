@@ -17,10 +17,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pthread ssl tls
 
-MASTER_SITES =		https://github.com/open62541/open62541/
-MASTER_SITES0 =		https://github.com/OPCFoundation/UA-Nodeset/archive/
-DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz \
-			UA-1.04.10-2021-09-15.tar.gz:0
+SITES =			https://github.com/open62541/open62541/
+SITES.ua =		https://github.com/OPCFoundation/UA-Nodeset/archive/
+DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz
+DISTFILES.ua= 		UA-1.04.10-2021-09-15.tar.gz
 
 MODULES =		devel/cmake
 

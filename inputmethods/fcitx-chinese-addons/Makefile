@@ -19,13 +19,13 @@ WANTLIB += Fcitx5Qt5WidgetsAddons Fcitx5Utils IMECore IMEPinyin
 WANTLIB += IMETable Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
 
-MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR =		fcitx
 
-MASTER_SITES0 =		https://download.fcitx-im.org/data/
-DISTFILES +=		py_table-20121124.tar.gz:0
-DISTFILES +=		py_stroke-20121124.tar.gz:0
+SITES.py =		https://download.fcitx-im.org/data/
+DISTFILES.py +=		py_table-20121124.tar.gz
+DISTFILES.py +=		py_stroke-20121124.tar.gz
 
 MODULES =		devel/kf5
 

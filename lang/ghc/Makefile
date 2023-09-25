@@ -44,33 +44,32 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
 RUN_DEPENDS =
 
-MASTER_SITES =		https://downloads.haskell.org/ghc/${GHC_VERSION}/
-MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
+SITES =			https://downloads.haskell.org/ghc/${GHC_VERSION}/
+SITES.boot =		https://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
 
-BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
+.for m in amd64
+BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz \
+			ghc-${BIN_VER}-shlibs-$m.tar.gz
+SUPDISTFILES.boot +=	${BINDISTFILE-$m}
+.endfor
 
 DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
-			ghc-${GHC_VERSION}-testsuite.tar.xz \
-			${BINDISTFILE}
+			ghc-${GHC_VERSION}-testsuite.tar.xz
+DISTFILES.boot = 	${BINDISTFILE-${MACHINE_ARCH}}
 
 # sphinx-rtd-theme update patch set
 # mirrored from https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.patch
 # "GIT binary patch" (gpatch doesn't handle it, patch segfaults)
 # (sorry! -sthen)
-MASTER_SITES1 =		https://spacehopper.org/mirrors/
-DISTFILES +=		ghc-rtd-update-70526f5bd8.diff:1
-EXTRACT_ONLY =		${DISTFILES:Nghc-rtd-update*:S/:0//}
+SITES.p =		https://spacehopper.org/mirrors/
+DISTFILES.p +=		ghc-rtd-update-70526f5bd8.diff
+EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.boot}
 BUILD_DEPENDS +=	devel/git
 pre-patch:
 	cd ${WRKSRC}; env -i git apply ${FULLDISTDIR}/ghc-rtd-update-70526f5bd8.diff
 
-.for m in amd64
-BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
-			ghc-${BIN_VER}-shlibs-$m.tar.gz:0
-SUPDISTFILES +=		${BINDISTFILE-$m}
-.endfor
 
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.

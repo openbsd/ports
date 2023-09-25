@@ -5,16 +5,16 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://nongnu.org/eliot/
 
-MASTER_SITES =	http://dl.sv.nongnu.org/releases/eliot/releases/${V}/
+SITES =		http://dl.sv.nongnu.org/releases/eliot/releases/${V}/
 
-EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY =	${DISTFILES}
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR =	eliot
 DICTS =		danosc eliot-dic-cs eliot-dic-fr lex-fise rak sowpods06 twl06
 .for dict in ${DICTS}
-DISTFILES+=	${dict}.dawg:0
+DISTFILES.dict+=	${dict}.dawg
 .endfor
-MASTER_SITES0 =	${MASTER_SITE_SAVANNAH:=eliot/dict/}
+SITES.dict =	${SITE_SAVANNAH:=eliot/dict/}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

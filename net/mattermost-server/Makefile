@@ -16,11 +16,11 @@ FULLPKGPATH-main =	net/mattermost-server,-main
 FULLPKGNAME-mmctl =	mmctl-${V}
 FULLPKGPATH-mmctl =	net/mattermost-server,-mmctl
 
-MASTER_SITES =	https://distfiles.tristero.se/
-MASTER_SITES0 =	https://releases.mattermost.com/${V}/
+SITES =		https://distfiles.tristero.se/
+SITES.a =	https://releases.mattermost.com/${V}/
 
-DISTFILES +=	${DISTNAME}${EXTRACT_SUFX} \
-		mattermost-${V}-linux-amd64${EXTRACT_SUFX}:0
+DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES.a += 	mattermost-${V}-linux-amd64${EXTRACT_SUFX}
 
 CATEGORIES =	net
 HOMEPAGE =	https://mattermost.com/

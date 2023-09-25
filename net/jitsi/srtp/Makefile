@@ -14,8 +14,8 @@ REVISION =	0
 DISTFILES +=	${GH_DISTFILE}
 
 # vendor maven dependencies
-MASTER_SITES7 =	https://files.bsd.ac/openbsd-distfiles/
-DISTFILES +=	jitsi-srtp-deps-${VERSION}.tgz:7
+SITES.maven =	https://files.bsd.ac/openbsd-distfiles/
+DISTFILES.maven +=	jitsi-srtp-deps-${VERSION}.tgz
 
 MAINTAINER =	Philipp Buehler <pb-openbsd@sysfive.com>, \
 		Aisha Tammy <aisha@openbsd.org>

@@ -33,18 +33,16 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 
 COMPILER =	base-clang ports-gcc
 
-EXTRACT_ONLY =	${DISTNAME}.tar.gz
+EXTRACT_ONLY =	${DISTFILES}
 
 # Build downloads kotlin compiler and libraries from maven if not available
 
-DISTFILES +=	${DISTNAME}.tar.gz \
-		kotlin-compiler-${KOTLIN_V}.zip:1 \
-		lwjgl3-maven-20210208.tar.gz:2
-MASTER_SITES =	\
-	https://github.com/kmosiejczuk/lwjgl3/releases/download/${V}/
-MASTER_SITES1 =	\
-	https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_V}/
-MASTER_SITES2 =	https://kurt.mosiejcz.uk/pub/distfiles/
+DISTFILES =	${DISTNAME}.tar.gz
+DISTFILES.c = 	kotlin-compiler-${KOTLIN_V}.zip
+DISTFILES.m = 	lwjgl3-maven-20210208.tar.gz
+SITES =	  https://github.com/kmosiejczuk/lwjgl3/releases/download/${V}/
+SITES.c = https://github.com/JetBrains/kotlin/releases/download/v${KOTLIN_V}/
+SITES.m = https://kurt.mosiejcz.uk/pub/distfiles/
 
 # BSD
 PERMIT_PACKAGE =	Yes

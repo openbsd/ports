@@ -14,10 +14,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyfugue/}
+SITES=		${SITE_SOURCEFORGE:=tinyfugue/}
 
-MASTER_SITES0=	http://inphobia.net/openbsd/patches/
-PATCHFILES=	tf-40s1-mccp-20020717.patch.gz:0
+SITES.p=	http://inphobia.net/openbsd/patches/
+PATCHFILES.p=	tf-40s1-mccp-20020717.patch.gz
 PATCH_DIST_STRIP=	-p0
 
 MAKE_ENV=	TFVER="${DISTNAME:S/^tf-//}" \

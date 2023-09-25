@@ -16,7 +16,7 @@ MAINTAINER =	Hukadan <me@hukadan.org>
 
 # fetch the web assets built for the release
 DISTFILES.web_assets +=	gotosocial_${MODGO_VERSION:S/v//}_web-assets.tar.gz
-MASTER_SITES.web_assets =	https://github.com/superseriousbusiness/gotosocial/releases/download/${MODGO_VERSION}/
+SITES.web_assets =	https://github.com/superseriousbusiness/gotosocial/releases/download/${MODGO_VERSION}/
 
 # AGPL-3.0+
 PERMIT_PACKAGE =	yes
