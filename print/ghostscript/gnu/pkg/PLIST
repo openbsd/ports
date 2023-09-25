@@ -57,7 +57,7 @@ share/doc/ghostscript/${VERSION}/
 share/doc/ghostscript/${VERSION}/COPYING
 share/doc/ghostscript/${VERSION}/GS9_Color_Management.pdf
 share/doc/ghostscript/${VERSION}/Ghostscript.pdf
-share/doc/ghostscript/${VERSION}/News.htm
+share/doc/ghostscript/${VERSION}/News.html
 share/ghostscript/
 share/ghostscript/${VERSION}/
 share/ghostscript/${VERSION}/lib/
