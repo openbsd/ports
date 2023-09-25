@@ -1,9 +1,8 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_EGG_VERSION =	5.0.3
+MODPY_EGG_VERSION =	5.4.4
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		shells
 
@@ -12,26 +11,30 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+FLAVORS =		python3
+FLAVOR =		python3
 
-RUN_DEPENDS =		devel/ipython${MODPY_FLAVOR}>=5.1.0 \
-			devel/py-ipython_genutils${MODPY_FLAVOR} \
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
+
+RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-jupyter_client${MODPY_FLAVOR}>=4.1 \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR} \
+			net/py-zmq${MODPY_FLAVOR}>=17.1 \
+			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			x11/py-qt5${MODPY_FLAVOR} \
-			x11/py-qtpy${MODPY_FLAVOR}
+			x11/py-qtpy${MODPY_FLAVOR}>=2.4.0
 
-TEST_DEPENDS =		devel/py-flaky${MODPY_FLAVOR}
+# XXX: needs qtbot fixture from pytest-qt
+MODPY_PYTEST_ARGS =	--ignore qtconsole/tests/test_00_console_widget.py
 
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-flaky${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR}
 
-TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
+PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
