@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.73 2023/09/06 21:07:16 espie Exp $
+# $OpenBSD: Var.pm,v 1.74 2023/09/25 17:10:44 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -910,20 +910,6 @@ sub table($) { 'ConfigureArgs' }
 package DebugConfigureArgsVar;
 our @ISA = qw(ConfigureArgsVar);
 sub table($) { 'DebugConfigureArgs' }
-package Sql::Column::View::WithSite;
-our @ISA = qw(Sql::Column::View::Expr);
-
-sub expr($self)
-{
-	my $c = $self->column;
-	my $n = $self->column("N");
-	return
-qq{CASE 1
-  WHEN $n IS NULL THEN $c
-  ELSE $c||':'||$n
-END
-};
-}
 
 package DistfilesVar;
 our @ISA = qw(ListVar);
@@ -932,23 +918,14 @@ sub table($) { 'Distfiles' }
 sub match($) { 0 }
 sub want_in_ports_view($) { 0 }
 
-sub _add($self, $ins, $value, $num)
+sub add_value($self, $ins, $value, @extra)
 {
 	my $sufx;
 	if ($self->var =~ m/^(?:DISTFILES|SUPDISTFILES|PATCHFILES)(.+)$/) {
 		$sufx = $1;
 	}
-	$self->normal_insert($ins, $self->keyword($ins, $value), $num, 
+	$self->normal_insert($ins, $self->keyword($ins, $value), 
 	    $sufx, $self->match);
-}
-
-sub add_value($self, $ins, $value, @extra)
-{
-	if ($value =~ m/^(.*?)\:(\d)$/) {
-		$self->_add($ins, $1, $2);
-	} else {
-		$self->_add($ins, $value, undef);
-	}
 }
 
 sub create_tables($self, $inserter)
@@ -958,15 +935,13 @@ sub create_tables($self, $inserter)
 	$self->create_table(
 	    $self->fullpkgpath,
 	    Sql::Column::Integer->new("Value")->references($k)->constraint,
-	    Sql::Column::Integer->new("N")->constraint,
 	    Sql::Column::Text->new("SUFX")->constraint,
 	    Sql::Column::Integer->new("Type")->constraint->notnull);
 
 	$self->create_view(
 	    $self->pathref,
-	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
+	    Sql::Column::View->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
-	    Sql::Column::View->new("N"),
 	    Sql::Column::View->new("Sufx"),
 	    Sql::Column::View->new("Type"));
 	$inserter->make_ordered_view($self);
@@ -977,7 +952,7 @@ sub subselect($self)
 	my $t = $self->table_name($self->table);
 	my $k = $self->keyword_table;
 	return (Sql::Column::View->new('FullPkgPath'),
-	    Sql::Column::View::WithSite->new("Value")->join(Sql::Join->new($k)
+	    Sql::Column::View->new("Value")->join(Sql::Join->new($k)
 		->add(Sql::Equal->new("KeyRef", "Value"))),
 	    Sql::Column::View->new("Sufx"),
 	    Sql::Column::View->new("Type"),

@@ -1,4 +1,4 @@
-.\"	$OpenBSD: sqlports.5,v 1.11 2023/09/06 11:56:34 espie Exp $
+.\"	$OpenBSD: sqlports.5,v 1.12 2023/09/25 17:10:44 espie Exp $
 .\"
 .\" Copyright (c) 2020 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 6 2023 $
+.Dd $Mdocdate: September 25 2023 $
 .Dt SQLPORTS 5
 .Os
 .Sh NAME
@@ -147,7 +147,7 @@ FULLDEPENDS is the full text of the dependency, which parses as DEPENDSPATH,
 the actual PKGPATH we depend upon, PKGSPEC, the spec we depend upon 
 (if explicit), and REST the remainder of the text (things like :configure and
 such).
-.It _Distfiles(FULLPKGPATH, VALUE, N, Sufx, Type)
+.It _Distfiles(FULLPKGPATH, VALUE, Sufx, Type)
 All distfiles/patchfiles/supdistfiles are stored in a single table, with Type
 .Bl -tag -width 10 -offset indent -compact
 .It 0
@@ -157,7 +157,6 @@ patchfiles
 .It 2
 supdistfiles
 .El
-Note that N is :N from Sites, those are not considered ordered lists.
 .It _DPBProperties (FULLPKGPATH, VALUE, N)
 .It _Wantlib(FULLPKGPATH, VALUE, EXTRA)
 All the libraries the FULLPKGPATH depends upon, with optional version 
