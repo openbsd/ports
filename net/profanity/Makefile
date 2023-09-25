@@ -1,7 +1,6 @@
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.13.1
+DISTNAME =	profanity-0.14.0
 CATEGORIES =	net
-REVISION =	1
 
 HOMEPAGE =	https://profanity-im.github.io/
 
@@ -16,9 +15,9 @@ MASTER_SITES =	https://profanity-im.github.io/tarballs/
 
 WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpgme iconv intl m nghttp2 otr pcre2-8 pthread ${MODPY_WANTLIB}
-WANTLIB += qrencode signal-protocol-c sqlite3 ssl strophe util
-WANTLIB += z
+WANTLIB += gpgme iconv intl m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_openssl
+WANTLIB += otr pcre2-8 pthread python3.10 qrencode signal-protocol-c
+WANTLIB += sqlite3 ssl strophe util z
 
 MODULES +=	lang/python
 
@@ -53,6 +52,8 @@ CONFIGURE_ARGS +=	--with-xscreensaver=no \
 
 MAKE_FLAGS =	CC="${CC}" \
 		CFLAGS="${CFLAGS}"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/configure.ac
