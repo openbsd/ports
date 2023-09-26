@@ -24,7 +24,7 @@ DISTFILES=	{xerial/snappy-java/archive/${SNAPPYJ_V}/}snappy-java-${SNAPPYJ_V}.ta
 SITES.mvn=	https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/${SNAPPYJ_V}/
 DISTFILES.mvn=	snappy-java-${SNAPPYJ_V}.jar
 
-EXTRACT_ONLY=	${_LIST_DISTFILES:N*jar}
+EXTRACT_ONLY=	${ALL_DISTFILES:N*jar}
 
 MODULES=	java
 MODJAVA_VER=	11+
