@@ -803,6 +803,7 @@
      SUBDIR += p5-Hash-Merge-Simple
      SUBDIR += p5-Hash-MultiValue
      SUBDIR += p5-Hash-NoRef
+     SUBDIR += p5-Hash-Ordered
      SUBDIR += p5-Hash-Util-FieldHash-Compat
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
