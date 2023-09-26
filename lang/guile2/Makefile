@@ -25,9 +25,9 @@ WANTLIB += c curses ffi gc gmp iconv intl ltdl m pthread readline
 WANTLIB += unistring
 
 SITES=			${SITE_GNU:=guile/}
-SITES.boot=		https://charlenew.xyz/distfiles/
-
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
+
+SITES.boot=		https://charlenew.xyz/distfiles/
 SUPDISTFILES.boot=	${BOOTSTRAP_32BE}
 
 EXTRACT_ONLY=		${DISTFILES}
@@ -63,7 +63,7 @@ BOOTSTRAP_32BE=		g2strap-2.2.7-32be.tgz
 .if !${PROPERTIES:Mlp64} && ${PROPERTIES:Mbe}
 BOOTSTRAP_TARGET=	32-bit-big-endian
 BOOTSTRAP=		${BOOTSTRAP_32BE}
-DISTFILES+=		${SUPDISTFILES}
+DISTFILES+=		${SUPDISTFILES.boot}
 .endif
 
 post-extract:
