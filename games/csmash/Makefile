@@ -8,7 +8,7 @@ HOMEPAGE=	http://cannonsmash.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cannonsmash/}
+SITES=		${SITE_SOURCEFORGE:=cannonsmash/}
 
 USE_GMAKE=	Yes
 

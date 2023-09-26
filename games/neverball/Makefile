@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB-main =	GL SDL2 c m pthread ogg vorbis vorbisfile \
 		jpeg png SDL2_ttf physfs iconv intl
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

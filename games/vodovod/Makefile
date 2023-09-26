@@ -12,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image SDL_mixer
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://download.gna.org/vodovod/
+SITES=		http://download.gna.org/vodovod/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer

@@ -14,7 +14,7 @@ HOMEPAGE =		http://apocalypse.rulez.org/vacuum
 # GPLv2+, see bin/vacuum.pl
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vacuum/}
+SITES =			${SITE_SOURCEFORGE:=vacuum/}
 
 BUILD_DEPENDS =		devel/p5-SDL
 RUN_DEPENDS =		devel/p5-SDL

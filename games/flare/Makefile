@@ -21,7 +21,7 @@ WANTLIB-main += ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flare-game/}
+SITES =			${SITE_SOURCEFORGE:=flare-game/}
 DISTFILES = 		flare-engine-v${V}${EXTRACT_SUFX} \
 			flare-game-v${V}${EXTRACT_SUFX}
 

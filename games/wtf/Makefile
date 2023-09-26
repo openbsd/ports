@@ -9,7 +9,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bsdwtf/}
+SITES =		${SITE_SOURCEFORGE:=bsdwtf/}
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

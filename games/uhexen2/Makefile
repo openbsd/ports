@@ -12,7 +12,7 @@ HOMEPAGE =		http://uhexen2.sourceforge.net/
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uhexen2/}
+SITES =			${SITE_SOURCEFORGE:=uhexen2/}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

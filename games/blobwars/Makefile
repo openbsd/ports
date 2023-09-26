@@ -19,7 +19,7 @@ WANTLIB =	SDL2 SDL2_image SDL2_mixer SDL2_net SDL2_ttf c iconv intl \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blobwars/}
+SITES =		${SITE_SOURCEFORGE:=blobwars/}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

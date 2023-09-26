@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer c m png pthread z
 
-MASTER_SITES =	https://github.com/bvschaik/julius/releases/download/v${V}/
+SITES =		https://github.com/bvschaik/julius/releases/download/v${V}/
 
 MODULES =	devel/cmake
 

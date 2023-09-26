@@ -5,7 +5,7 @@ REVISION =	6
 CATEGORIES =	games
 
 HOMEPAGE =	http://tuxkart.sourceforge.net/
-MASTER_SITES =	${HOMEPAGE}/dist/
+SITES =		${HOMEPAGE}/dist/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

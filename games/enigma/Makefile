@@ -18,7 +18,7 @@ WANTLIB += c curl enet iconv intl m png xerces-c z
 # C++14
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	https://github.com/Enigma-Game/Enigma/releases/download/${V}/
+SITES=		https://github.com/Enigma-Game/Enigma/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.gz
 
 WRKDIST=	${WRKDIR}/enigma-${V}

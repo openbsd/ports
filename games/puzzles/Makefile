@@ -4,7 +4,7 @@ DISTNAME =	puzzles-20211021
 CATEGORIES =	games
 REVISION =	1
 
-MASTER_SITES =	https://rhaalovely.net/stuff/
+SITES =		https://rhaalovely.net/stuff/
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 
 #gitweb generates tarballs on the fly with varying timestamps

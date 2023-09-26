@@ -20,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m curses
 
-MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
+SITES =			${HOMEPAGE}/downloads/${V_DLDIR}/
 
 CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION =	2.69

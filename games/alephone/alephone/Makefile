@@ -18,7 +18,7 @@ MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 # GPLv2 or later
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/Aleph-One-Marathon/alephone/releases/download/release-${DATE}/
+SITES =			https://github.com/Aleph-One-Marathon/alephone/releases/download/release-${DATE}/
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
 WANTLIB += SDL2_ttf avcodec avformat avutil boost_filesystem boost_system

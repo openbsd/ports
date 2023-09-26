@@ -8,8 +8,8 @@ REVISION =		2
 CATEGORIES=		games
 
 HOMEPAGE =		http://opensnc.sourceforge.net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=opensnc/}
-#MASTER_SITES =		http://downloads.sourceforge.net/project/opensnc/Open%20Sonic/${V}/
+SITES =			${SITE_SOURCEFORGE:=opensnc/}
+#SITES =		http://downloads.sourceforge.net/project/opensnc/Open%20Sonic/${V}/
 
 # GPLv2 or later
 PERMIT_PACKAGE=	Yes

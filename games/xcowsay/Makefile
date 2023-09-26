@@ -11,7 +11,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
 WANTLIB += pangocairo-1.0 pthread
 
-MASTER_SITES =		http://www.nickg.me.uk/files/
+SITES =			http://www.nickg.me.uk/files/
 CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS =		x11/gtk+3

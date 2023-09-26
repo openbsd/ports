@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	i386 amd64 macppc
 COMMENT-main=	sauerbraten client
 COMMENT-data=	sauerbraten data
 CATEGORIES=	games x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sauerbraten/}
+SITES=		${SITE_SOURCEFORGE:=sauerbraten/}
 
 HOMEPAGE=	http://sauerbraten.org/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>

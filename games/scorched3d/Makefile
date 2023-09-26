@@ -19,7 +19,7 @@ WANTLIB += wx_gtk3u_xrc-3.2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=scorched3d/}
+SITES =			${SITE_SOURCEFORGE:=scorched3d/}
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}

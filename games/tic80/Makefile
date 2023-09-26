@@ -27,7 +27,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} SDL2 c curl
 WANTLIB += duktape gif lua5.3 m png z
 
-MASTER_SITES =	https://github.com/ibara/tic80-openbsd/releases/download/v${V}/
+SITES =		https://github.com/ibara/tic80-openbsd/releases/download/v${V}/
 
 COMPILER =	base-clang ports-gcc
 

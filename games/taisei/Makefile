@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 SDL2_mixer c crypto freetype m opusfile png webpdecoder
 WANTLIB += z
 
-MASTER_SITES=	https://github.com/taisei-project/taisei/releases/download/${VERSION}/
+SITES=	https://github.com/taisei-project/taisei/releases/download/${VERSION}/
 
 EXTRACT_SUFX=		.tar.xz
 

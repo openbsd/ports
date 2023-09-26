@@ -18,7 +18,7 @@ WANTLIB += SDL SDL_image SDL_net c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://dataapa.net/brumbrumrally/files/
+SITES =			http://dataapa.net/brumbrumrally/files/
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl-image \

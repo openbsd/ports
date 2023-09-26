@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
 
-MASTER_SITES =	https://github.com/davidjoffe/dave_gnukem/releases/download/${V}/
+SITES =	https://github.com/davidjoffe/dave_gnukem/releases/download/${V}/
 
 # C++14
 COMPILER =	base-clang ports-gcc

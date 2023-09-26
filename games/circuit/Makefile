@@ -5,7 +5,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	circuit-0.1.4
 REVISION =	11
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =		https://distfiles.sigtrap.nl/
 
 # BSD
 PERMIT_PACKAGE =	Yes

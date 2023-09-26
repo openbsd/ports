@@ -3,7 +3,7 @@ DISTNAME=	late-0.1.0
 REVISION=	5
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=late/}
+SITES=		${SITE_SOURCEFORGE:=late/}
 
 HOMEPAGE=	http://late.sourceforge.net/
 

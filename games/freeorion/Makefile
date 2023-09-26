@@ -18,7 +18,7 @@ WANTLIB += boost_python${MODPY_VERSION:C/\.//g}-mt boost_regex-mt
 WANTLIB += boost_serialization-mt boost_thread-mt c freetype m ogg openal
 WANTLIB += png ${MODPY_WANTLIB} vorbis vorbisenc vorbisfile z
 
-MASTER_SITES =	https://github.com/freeorion/freeorion/releases/download/v${V}/
+SITES =		https://github.com/freeorion/freeorion/releases/download/v${V}/
 
 COMPILER =	base-clang ports-gcc
 

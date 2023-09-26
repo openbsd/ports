@@ -27,7 +27,7 @@ WANTLIB-data = #empty
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=speed-dreams/}
+SITES =			${SITE_SOURCEFORGE:=speed-dreams/}
 EXTRACT_SUFX =		.tar.xz
 TAR =			${LOCALBASE}/bin/gtar
 # avoid WRKDIST = ${WRKDIR}

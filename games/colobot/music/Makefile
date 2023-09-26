@@ -5,7 +5,7 @@ COMMENT =		music files for colobot
 DISTNAME =		colobot-music_ogg_$V-alpha
 PKGNAME =		colobot-music-$V
 
-MASTER_SITES =		https://colobot.info/files/music/
+SITES =			https://colobot.info/files/music/
 
 WRKDIST =		${WRKDIR}
 

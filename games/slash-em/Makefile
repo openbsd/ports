@@ -6,7 +6,7 @@ V =		3.4.3.7e7f1
 CATEGORIES =	games
 
 HOMEPAGE =	http://slashem.sourceforge.net
-#MASTER_SITES =	http://avrc.city.ac.uk/nethack/slashem/
+#SITES =	http://avrc.city.ac.uk/nethack/slashem/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

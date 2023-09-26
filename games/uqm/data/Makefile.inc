@@ -2,7 +2,7 @@ EPOCH ?=		0# N.B. in RUN_DEPENDS
 CATEGORIES ?=		games x11
 
 DIST_SUBDIR ?=		uqm
-MASTER_SITES ?=		${MASTER_SITE_SOURCEFORGE:=sc2/}
+SITES ?=		${SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE ?=		http://sc2.sourceforge.net/
 

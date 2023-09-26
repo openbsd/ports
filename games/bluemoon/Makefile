@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	http://www.catb.org/~esr/bluemoon/
+SITES =		http://www.catb.org/~esr/bluemoon/
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

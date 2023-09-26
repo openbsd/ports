@@ -13,7 +13,7 @@ HOMEPAGE=		https://www.dockapps.net/wmtictactoe
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		https://www.dockapps.net/download/
+SITES=			https://www.dockapps.net/download/
 
 NO_TEST=		Yes
 

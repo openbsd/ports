@@ -9,7 +9,7 @@ REVISION=		2
 PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xext c iconv intl m png xcb z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lincity/}
+SITES=			${SITE_SOURCEFORGE:=lincity/}
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			graphics/png

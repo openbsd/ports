@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=		http://manticore.2y.net/cgi-bin/dlwct.sh?f=clines/
+SITES=			http://manticore.2y.net/cgi-bin/dlwct.sh?f=clines/
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu

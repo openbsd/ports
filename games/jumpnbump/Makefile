@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer SDL2_net bz2 c m z
 
-MASTER_SITES =	https://gitlab.com/LibreGames/jumpnbump/-/archive/${V}/
+SITES =		https://gitlab.com/LibreGames/jumpnbump/-/archive/${V}/
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

@@ -19,7 +19,7 @@ WANTLIB =		SDL c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=clonekeen/}
+SITES =			${SITE_SOURCEFORGE:=clonekeen/}
 
 USE_X11 =		Yes
 NO_TEST =		Yes

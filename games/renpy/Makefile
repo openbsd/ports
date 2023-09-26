@@ -16,7 +16,7 @@ PERMIT_PACKAGE =		Yes
 WANTLIB += GLEW SDL2 avcodec avformat avutil freetype
 WANTLIB += m png pthread swresample swscale z ${MODPY_WANTLIB}
 
-MASTER_SITES =		https://www.renpy.org/dl/${V}/
+SITES =			https://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m xcb
 
-MASTER_SITES=	http://www710.univ-lyon1.fr/ftp/xbl/
+SITES=		http://www710.univ-lyon1.fr/ftp/xbl/
 
 BUILD_DEPENDS +=	devel/imake
 CONFIGURE_STYLE=gnu	# also uses imake

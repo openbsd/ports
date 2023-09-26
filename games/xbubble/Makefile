@@ -11,8 +11,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  X11 c iconv intl m png>=2 xcb z
 
-MASTER_SITES=		https://gentoo.osuosl.org/distfiles/ \
-			ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/
+SITES=		https://gentoo.osuosl.org/distfiles/ \
+		ftp://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/
 			
 
 LIB_DEPENDS=		devel/gettext,-runtime \

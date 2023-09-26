@@ -10,7 +10,7 @@ MAINTAINER =	Pat Jensen <patj@passpackets.com>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/jensenpat/wordsearch/releases/download/${V}/
+SITES =		https://github.com/jensenpat/wordsearch/releases/download/${V}/
 
 MODULES =	lang/python
 

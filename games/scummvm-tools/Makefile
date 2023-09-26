@@ -4,7 +4,7 @@ DISTNAME=	scummvm-tools-${V}
 REVISION=	0
 
 CATEGORIES=	games
-MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm-tools/${V}/
+SITES=		https://downloads.scummvm.org/frs/scummvm-tools/${V}/
 
 HOMEPAGE=	https://www.scummvm.org/
 

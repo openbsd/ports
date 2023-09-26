@@ -15,7 +15,7 @@ DIST_TUPLE += 	github FNA-XNA FNA.NetStub ebff244074bb3c28aeeb8cf7b383b5a029d7e2
 DIST_TUPLE += 	github flibitijibibo Vorbisfile-CS \
 		521c8532f03b3608a141b36d7c1343e816b46cb1 Vorbisfile-CS # zlib
 
-MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
+SITES =		https://github.com/FNA-XNA/FNA/releases/download/${V}/
 
 EXTRACT_SUFX =	.zip
 MODULES =	dist-tuple \

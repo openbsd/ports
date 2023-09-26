@@ -6,7 +6,7 @@ REVISION=	0
 PKGNAME=	${DISTNAME:S/cd-//}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
+SITES=		${SITE_SOURCEFORGE:=scummvm/}
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 

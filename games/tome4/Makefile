@@ -13,7 +13,7 @@ PKGNAME =	tome4-${V}
 CATEGORIES =	games x11
 REVISION =	0
 
-MASTER_SITES =	https://te4.org/dl/t-engine/
+SITES =		https://te4.org/dl/t-engine/
 
 DISTNAME =	t-engine4-src-${V}
 EXTRACT_SUFX =	.tar.bz2

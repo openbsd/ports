@@ -13,7 +13,7 @@ CATEGORIES =		games
 # GPL v2 only
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=blinkensisters/}
+SITES =			${SITE_SOURCEFORGE:=blinkensisters/}
 
 LIB_DEPENDS =		devel/sdl-net		\
 			devel/sdl-image		\

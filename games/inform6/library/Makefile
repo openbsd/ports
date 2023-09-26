@@ -2,7 +2,7 @@ V =		6.12.6
 COMMENT =	standard library for Inform 6 interactive fiction
 DISTNAME =	inform6lib-${V}
 
-MASTER_SITES =	https://gitlab.com/DavidGriffith/inform6lib/-/archive/${V}/
+SITES =		https://gitlab.com/DavidGriffith/inform6lib/-/archive/${V}/
 
 PKG_ARCH =	*
 

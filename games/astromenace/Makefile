@@ -20,7 +20,7 @@ WANTLIB += freetype m ogg openal pthread ${COMPILER_LIBCXX} vorbis vorbisfile
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openastromenace/}
+SITES =			${SITE_SOURCEFORGE:=openastromenace/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake

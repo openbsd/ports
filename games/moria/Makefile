@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=	http://www.nic.funet.fi/pub/unix/games/moria/source/
+SITES=		http://www.nic.funet.fi/pub/unix/games/moria/source/
 
 EXTRACT_SUFX=	.tar.Z
 

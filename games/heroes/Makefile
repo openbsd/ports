@@ -22,7 +22,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  SDL SDL_mixer c iconv intl m pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
+SITES=		${SITE_SOURCEFORGE:=heroes/}
 
 USE_GMAKE=	Yes
 

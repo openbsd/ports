@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_image SDL_mixer c m physfs png z
 
-MASTER_SITES =	https://www.dxx-rebirth.com/download/dxx/rebirth/
+SITES =		https://www.dxx-rebirth.com/download/dxx/rebirth/
 EXTRACT_SUFX =	.tar.xz
 
 # requires -std=gnu++20

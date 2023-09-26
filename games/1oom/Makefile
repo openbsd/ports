@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_mixer c readline
 
-MASTER_SITES =	https://gitlab.com/KilgoreTroutMaskReplicant/1oom/uploads/13d2d645650929c6f7f08be356b62f66/
+SITES =	https://gitlab.com/KilgoreTroutMaskReplicant/1oom/uploads/13d2d645650929c6f7f08be356b62f66/
 
 LIB_DEPENDS =	devel/sdl2-mixer
 

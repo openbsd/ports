@@ -11,7 +11,7 @@ HOMEPAGE = 	https://ufoai.org/
 
 MAINTAINER = 	Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=ufoai/}
+SITES = 	${SITE_SOURCEFORGE:=ufoai/}
 
 # GPLv2+, MIT, Public Domain, CC-BY-SA 3.0
 PERMIT_PACKAGE =	Yes

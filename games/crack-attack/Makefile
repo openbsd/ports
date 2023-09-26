@@ -20,7 +20,7 @@ WANTLIB = GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=crack-attack/}
+SITES=		${SITE_SAVANNAH:=crack-attack/}
 
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	x11/gtk+2 \

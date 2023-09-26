@@ -9,7 +9,7 @@ HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/batrachians.html
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://perso.b2b2c.ca/~sarrazip/dev/
+SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
 WANTLIB=	SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX} flatzebra-0.1>=1
 

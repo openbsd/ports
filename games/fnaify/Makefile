@@ -11,7 +11,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/rfht/fnaify/releases/download/${V}/
+SITES =		https://github.com/rfht/fnaify/releases/download/${V}/
 
 # it may be possible to drop audio/openal and a few others when FAudio
 # has been disseminated to all FNA games

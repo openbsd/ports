@@ -12,7 +12,7 @@ HOMEPAGE=	https://salsa.debian.org/pm/an
 
 WANTLIB=	c icudata icui18n icuuc
 
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/a/an/}
+SITES=		${SITE_DEBIAN:=main/a/an/}
 
 LIB_DEPENDS=	textproc/icu4c,-main
 

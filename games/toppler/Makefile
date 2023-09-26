@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} usbhid vorbis vorbisfile z mikmod
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=toppler/}
+SITES=			${SITE_SOURCEFORGE:=toppler/}
 
 LIB_DEPENDS=		audio/libmikmod \
 			devel/gettext,-runtime \

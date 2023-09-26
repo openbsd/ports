@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.mattdm.org/icebreaker/
 
-MASTER_SITES=	${HOMEPAGE}1.2.x/
+SITES=		${HOMEPAGE}1.2.x/
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \

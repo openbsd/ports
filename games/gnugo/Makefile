@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m curses
 
-MASTER_SITES =	${MASTER_SITE_GNU:=gnugo/}
+SITES =		${SITE_GNU:=gnugo/}
 
 CONFIGURE_STYLE = gnu
 

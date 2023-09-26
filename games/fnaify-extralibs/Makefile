@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2
 
-MASTER_SITES =	https://github.com/rfht/fnaify-extralibs/releases/download/${V}/
+SITES =		https://github.com/rfht/fnaify-extralibs/releases/download/${V}/
 EXTRACT_SUFX =	.tar.xz
 LIB_DEPENDS =	devel/sdl2
 USE_GMAKE =	Yes

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	SDL2 c m SDL2_mixer SDL2_image SDL2_net z
 
-MASTER_SITES =	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
+SITES =		http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
 LIB_DEPENDS =	devel/sdl2-mixer \
 		devel/sdl2-image \

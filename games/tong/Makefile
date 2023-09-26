@@ -10,9 +10,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	http://www.nongnu.org/tong/
+SITES =		http://www.nongnu.org/tong/
 
 LIB_DEPENDS =	devel/sdl-image \
 		devel/sdl-mixer

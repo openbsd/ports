@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	X11 Xext c m pthread usbhid xcb \
 		SDL SDL_mixer SDL_image
 
-MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
+SITES=		ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/
 
 LIB_DEPENDS=	devel/sdl \
 		devel/sdl-mixer \

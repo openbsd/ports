@@ -11,7 +11,7 @@ MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://leva.ecentrum.hu/openbsd/
+SITES =		http://leva.ecentrum.hu/openbsd/
 
 RUN_DEPENDS =	games/chroma
 

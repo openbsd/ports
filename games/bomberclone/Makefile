@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL SDL_image SDL_mixer c jpeg m png pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bomberclone/}
+SITES=		${SITE_SOURCEFORGE:=bomberclone/}
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer

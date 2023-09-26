@@ -17,7 +17,7 @@ WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz iconv intl m
 WANTLIB += nghttp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread ssl
 WANTLIB += z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=crossfire/}
+SITES=		${SITE_SOURCEFORGE:=crossfire/}
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		crossfire-client-images-${VERSION}${EXTRACT_SUFX}

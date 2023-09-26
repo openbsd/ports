@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
+SITES=		${SITE_SOURCEFORGE:=eboard/}
 
 RUN_DEPENDS=	games/eboard
 

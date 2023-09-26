@@ -19,7 +19,7 @@ WANTLIB += GL GLU X11 Xrandr c m pthread sfml-audio sfml-graphics sfml-system
 WANTLIB += sfml-window
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=extremetuxracer/}
+SITES =			${SITE_SOURCEFORGE:=extremetuxracer/}
 EXTRACT_SUFX =		.tar.xz
 
 COMPILER =		base-clang ports-gcc

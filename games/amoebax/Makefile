@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.emma-soft.com/games/amoebax/
 
-MASTER_SITES=	${HOMEPAGE}download/
+SITES=		${HOMEPAGE}download/
 
 # GPL/LAL
 PERMIT_PACKAGE=	Yes

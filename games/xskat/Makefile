@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.xskat.de/xskat.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c xcb
 
-MASTER_SITES=	http://www.xskat.de/
+SITES=		http://www.xskat.de/
 
 CONFIGURE_STYLE=imake
 NO_TEST=	Yes

@@ -7,7 +7,7 @@ CATEGORIES=	games x11
 
 HOMEPAGE=	https://github.com/lincity-ng/lincity-ng
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lincity-ng.berlios/}
+SITES=		${SITE_SOURCEFORGE:=lincity-ng.berlios/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -11,7 +11,7 @@ HOMEPAGE=	http://forcedattack.sourceforge.net/
 # GPL 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=forcedattack/}
+SITES=		${SITE_SOURCEFORGE:=forcedattack/}
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

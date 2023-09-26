@@ -7,7 +7,7 @@ WANTLIB += SimGearScene X11 Xext c dbus-1 event_core execinfo
 WANTLIB += freetype glut m osg osgDB osgFX osgGA osgParticle osgSim
 WANTLIB += osgText osgUtil osgViewer png sqlite3 z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
+SITES =		${SITE_SOURCEFORGE:=flightgear/}
 
 MODULES =	devel/cmake
 COMPILER =	base-clang ports-gcc

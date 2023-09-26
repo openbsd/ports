@@ -11,7 +11,7 @@ WANTLIB=	X11 Xau Xdmcp Xext c sndio xcb
 
 COMMENT=	Lode Runner clone
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
-MASTER_SITES=	http://www.xdr.com/dash/
+SITES=		http://www.xdr.com/dash/
 
 NO_TEST=	Yes
 

@@ -19,7 +19,7 @@ WANTLIB += lzma lzo2 m png z
 
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		https://cdn.openttd.org/openttd-releases/$V/
+SITES =			https://cdn.openttd.org/openttd-releases/$V/
 EXTRACT_SUFX =		.tar.xz
 
 DIST_SUBDIR =		openttd

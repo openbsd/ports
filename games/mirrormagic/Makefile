@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_net c m
 
-MASTER_SITES=	https://www.artsoft.org/RELEASES/unix/mirrormagic/
+SITES=		https://www.artsoft.org/RELEASES/unix/mirrormagic/
 
 LIB_DEPENDS=	devel/sdl2-image \
 		devel/sdl2-mixer \

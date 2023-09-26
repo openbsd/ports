@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=spacetraderwin/}
+SITES =		${SITE_SOURCEFORGE:=spacetraderwin/}
 
 MODULES =	lang/mono
 

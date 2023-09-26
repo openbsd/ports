@@ -5,7 +5,7 @@ REVISION =	5
 
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://cns-ftp.bu.edu/pub/xbattle/
+SITES=		ftp://cns-ftp.bu.edu/pub/xbattle/
 
 PERMIT_PACKAGE=	Yes
 

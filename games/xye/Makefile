@@ -9,7 +9,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xye/}
+SITES =		${SITE_SOURCEFORGE:=xye/}
 
 FIX_CRLF_FILES =	src/xsb_level.cpp
 

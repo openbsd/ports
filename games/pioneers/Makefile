@@ -19,7 +19,7 @@ WANTLIB += epoxy expat ffi fontconfig freetype fribidi gmodule-2.0
 WANTLIB += graphite2 harfbuzz iconv pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pio/}
+SITES=			${SITE_SOURCEFORGE:=pio/}
 EXTRACT_SUFX=		.tar.gz
 
 MODULES=		textproc/intltool \

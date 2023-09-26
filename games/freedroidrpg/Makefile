@@ -17,7 +17,7 @@ WANTLIB += GL GLEW GLU SDL SDL_gfx SDL_image SDL_mixer X11 Xext
 WANTLIB += Xi Xmu c execinfo iconv intl jpeg m ogg png pthread
 WANTLIB += vorbis z
 
-MASTER_SITES=		https://ftp.osuosl.org/pub/freedroid/${DISTNAME}/
+SITES=			https://ftp.osuosl.org/pub/freedroid/${DISTNAME}/
 
 WRKDIST=		${WRKDIR}/${DISTNAME:L}
 

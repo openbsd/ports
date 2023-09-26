@@ -16,7 +16,7 @@ WANTLIB += usbhid vorbis vorbisfile webp z lzma zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://perso.b2b2c.ca/~sarrazip/dev/
+SITES =			http://perso.b2b2c.ca/~sarrazip/dev/
 
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		converters/libiconv \

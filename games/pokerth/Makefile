@@ -18,7 +18,7 @@ WANTLIB += boost_iostreams-mt boost_program_options-mt boost_random-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += curl gsasl iconv ircclient m protobuf sqlite3 ssl tinyxml
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
+SITES=		${SITE_SOURCEFORGE:=pokerth/}
 
 # C++11
 CXXFLAGS +=	-std=gnu++11

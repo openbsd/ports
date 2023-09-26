@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m \
 			xcb
 
-MASTER_SITES=		http://www.okb-1.org/speyes/
+SITES=			http://www.okb-1.org/speyes/
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	imake noman

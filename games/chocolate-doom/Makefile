@@ -18,7 +18,7 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 		audio/libsamplerate \
 		graphics/png
 
-MASTER_SITES =	https://www.chocolate-doom.org/downloads/${V}/
+SITES =		https://www.chocolate-doom.org/downloads/${V}/
 
 MODULES =	lang/python
 

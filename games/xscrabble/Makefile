@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 EXTRACT_SUFX=	.tar.bz2
 
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/educational_games/
+SITES=		ftp://ftp.ac-grenoble.fr/ge/educational_games/
 
 # GPL
 PERMIT_PACKAGE=	Yes

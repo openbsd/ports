@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/arcade/}
+SITES=			${SITE_SUNSITE:=games/arcade/}
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"
 

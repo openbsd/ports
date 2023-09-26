@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		SDL X11 Xext c m pthread usbhid xcb \
 			SDL_image SDL_mixer
 
-MASTER_SITES=	http://hocwp.free.fr/
+SITES=		http://hocwp.free.fr/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer

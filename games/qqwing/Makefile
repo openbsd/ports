@@ -13,9 +13,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://qqwing.com/
+SITES =		https://qqwing.com/
 
 CONFIGURE_STYLE =	gnu
 

@@ -9,7 +9,7 @@ HOMEPAGE=	http://pathological.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pathological/}
+SITES=		${SITE_SOURCEFORGE:=pathological/}
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

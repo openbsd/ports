@@ -14,7 +14,7 @@ HOMEPAGE =		http://fretsonfire.sourceforge.net
 # GPLv2 or later
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fretsonfire/}
+SITES =			${SITE_SOURCEFORGE:=fretsonfire/}
 USE_GMAKE =		Yes
 
 MODULES =		lang/python

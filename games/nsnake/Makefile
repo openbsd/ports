@@ -14,7 +14,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c curses m
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nsnake/GNU-Linux/}
+SITES =		${SITE_SOURCEFORGE:=nsnake/GNU-Linux/}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

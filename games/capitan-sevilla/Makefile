@@ -13,7 +13,7 @@ WANTLIB = 	alleg c freetype m ogg png pthread ${COMPILER_LIBCXX} vorbis vorbisfi
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://computeremuzone.com/pc/juegos/
+SITES =			http://computeremuzone.com/pc/juegos/
 EXTRACT_SUFX = 		.tar.bz2
 # XXX upstream distfile has no version number
 DISTFILES = 		Capitan${EXTRACT_SUFX}

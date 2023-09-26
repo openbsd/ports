@@ -5,7 +5,7 @@ PKGNAME =	${DISTNAME}
 REVISION =	17
 CATEGORIES =	games
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
+SITES =		${SITE_SOURCEFORGE:=nethack/}
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
 
 HOMEPAGE =	http://nethack.org/

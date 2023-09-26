@@ -11,7 +11,7 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # shareware
 PERMIT_PACKAGE =    Yes
 
-MASTER_SITES =	ftp://ftp.3drealms.com/share/
+SITES =		ftp://ftp.3drealms.com/share/
 DISTFILES =	3dduke13.zip
 
 NO_TEST =	Yes

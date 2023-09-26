@@ -20,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL GLU SDL SDL_mixer SDL_net c m pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pacmanarena/}
+SITES=		${SITE_SOURCEFORGE:=pacmanarena/}
 
 BUILD_DEPENDS=	archivers/unzip
 

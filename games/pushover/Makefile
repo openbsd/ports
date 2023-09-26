@@ -16,7 +16,7 @@ WANTLIB += ${MODLUA_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pushover/}
+SITES =			${SITE_SOURCEFORGE:=pushover/}
 
 MODULES =		lang/lua
 BUILD_DEPENDS =		devel/libtool

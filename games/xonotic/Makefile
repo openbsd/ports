@@ -13,7 +13,7 @@ PKGNAME-server =	xonotic-server-${V}
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		games x11
-MASTER_SITES =		https://dl.xonotic.org/
+SITES =			https://dl.xonotic.org/
 HOMEPAGE =		https://xonotic.org
 
 # GPLv3+

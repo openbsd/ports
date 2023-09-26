@@ -21,7 +21,7 @@ WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5QuickParticles Qt5QuickTemplates2
 WANTLIB += Qt5Sensors Qt5Svg Qt5Widgets c m
 
-MASTER_SITES=	http://gcompris.net/download/qt/src/
+SITES=		http://gcompris.net/download/qt/src/
 
 MODULES=	devel/kf5
 

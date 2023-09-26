@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.frozen-bubble.org
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/data/
+SITES =			${HOMEPAGE}/data/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_GMAKE =		Yes

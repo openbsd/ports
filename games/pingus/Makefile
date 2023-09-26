@@ -7,7 +7,7 @@ CATEGORIES=	games x11
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	https://pingus.seul.org/
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=pingus/}
+SITES=		${SITE_GOOGLECODE:=pingus/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

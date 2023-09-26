@@ -4,7 +4,7 @@ DISTNAME=	xpat2-1.07
 REVISION=	3
 CATEGORIES=	games
 
-MASTER_SITES=	http://www.ibiblio.org/pub/linux/games/solitaires/
+SITES=		http://www.ibiblio.org/pub/linux/games/solitaires/
 
 EXTRACT_SUFX=	-src.tar.gz
 

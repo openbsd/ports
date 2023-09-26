@@ -4,7 +4,7 @@ V=		2.4.22
 DISTNAME=	bzflag-${V}
 REVISION=	0
 CATEGORIES=	games x11
-MASTER_SITES=	https://download.bzflag.org/bzflag/source/${V}/
+SITES=		https://download.bzflag.org/bzflag/source/${V}/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	https://www.bzflag.org/

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
 
-MASTER_SITES=		${HOMEPAGE}/dist/
+SITES=			${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
 

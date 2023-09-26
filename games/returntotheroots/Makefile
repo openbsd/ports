@@ -21,7 +21,7 @@ WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
 WANTLIB += boost_system-mt bz2 c execinfo iconv m miniupnpc
 WANTLIB += ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc

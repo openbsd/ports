@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c xcb
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/xpuzzles/}
+SITES=		${SITE_XCONTRIB:=games/xpuzzles/}
 
 WRKDIST=	${WRKDIR}/xdino
 CONFIGURE_STYLE=	imake	

@@ -12,7 +12,7 @@ WANTLIB =  atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gstreamer-1.0 gtk-3 harfbuzz intl m
 WANTLIB += pango-1.0 pangocairo-1.0
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gamine-game/}
+SITES=			${SITE_SOURCEFORGE:=gamine-game/}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

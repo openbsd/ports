@@ -20,7 +20,7 @@ WANTLIB += z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/minetest/
+SITES =			https://github.com/minetest/
 
 DISTFILES =		minetest-{minetest/archive/}${V}${EXTRACT_SUFX} \
 			minetest-game-{minetest_game/archive/}${GAME_V}${EXTRACT_SUFX} \

@@ -13,7 +13,7 @@ WANTLIB = 		SDL SDL_image SDL_mixer SDL_ttf c fribidi \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fillets/}
+SITES =			${SITE_SOURCEFORGE:=fillets/}
 DISTFILES = 		fillets-ng-${V}.tar.gz \
 			fillets-ng-data-${V}.tar.gz
 EXTRACT_ONLY = 		fillets-ng-${V}.tar.gz

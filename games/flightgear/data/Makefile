@@ -3,7 +3,7 @@ COMMENT =		data files for flightgear
 DISTNAME =		FlightGear-${V}-data
 PKGNAME =		flightgear-data-${V}
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=flightgear/}
+SITES =		${SITE_SOURCEFORGE:=flightgear/}
 
 BUILD_DEPENDS = archivers/xz
 EXTRACT_SUFX =	.txz

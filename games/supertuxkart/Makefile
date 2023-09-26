@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto curl freetype harfbuzz
 WANTLIB += jpeg m openal png sqlite3 vorbisfile z
 
-MASTER_SITES =		https://github.com/supertuxkart/stk-code/releases/download/$V/
+SITES =		https://github.com/supertuxkart/stk-code/releases/download/$V/
 EXTRACT_SUFX =		-src.tar.xz
 
 MODULES =		devel/cmake

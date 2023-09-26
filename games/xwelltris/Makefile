@@ -4,7 +4,7 @@ DISTNAME=	xwelltris-1.0.1
 DISTFILES=	${DISTNAME}.src.tar.gz
 REVISION =	6
 CATEGORIES=	games x11
-MASTER_SITES=	${HOMEPAGE}src/
+SITES=		${HOMEPAGE}src/
 
 HOMEPAGE=	http://xnc.jinr.ru/xwelltris/
 

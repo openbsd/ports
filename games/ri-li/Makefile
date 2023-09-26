@@ -13,7 +13,7 @@ WANTLIB += SDL SDL_mixer c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ri-li/}
+SITES=		${SITE_SOURCEFORGE:=ri-li/}
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	devel/sdl-mixer \

@@ -19,7 +19,7 @@ WANTLIB += boost_filesystem-mt boost_locale-mt boost_system-mt
 WANTLIB += c curl freetype m ogg openal physfs png vorbis vorbisfile
 WANTLIB += z
 
-MASTER_SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
+SITES =		https://github.com/SuperTux/supertux/releases/download/v${V}/
 
 FIX_CRLF_FILES =	external/squirrel/CMakeLists.txt
 

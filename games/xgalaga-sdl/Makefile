@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf c pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xgalaga-sdl/}
+SITES =			${SITE_SOURCEFORGE:=xgalaga-sdl/}
 EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/sdl-gfx \

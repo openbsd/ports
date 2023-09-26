@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 c m mikmod ogg png vorbisfile z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sc2/}
+SITES =			${SITE_SOURCEFORGE:=sc2/}
 
 EXTRACT_SUFX =		.tgz
 

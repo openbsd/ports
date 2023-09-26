@@ -11,7 +11,7 @@ HOMEPAGE ?=	https://freedoom.github.io/
 # BSD 3-clause
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES =		https://github.com/freedoom/freedoom/releases/download/v$V/
+SITES =		https://github.com/freedoom/freedoom/releases/download/v$V/
 
 EXTRACT_SUFX ?=		.zip
 

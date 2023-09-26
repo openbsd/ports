@@ -22,7 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 MODLUA_VERSION =	5.3
 
-MASTER_SITES =	https://gitlab.com/jazztickets/uploads/-/raw/main/
+SITES =		https://gitlab.com/jazztickets/uploads/-/raw/main/
 
 MODULES =	devel/cmake lang/lua
 

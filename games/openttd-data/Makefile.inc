@@ -12,7 +12,7 @@ MAINTAINER ?=	Florian Viehweger <openbsd@out-of-creativity.de>
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES ?=	https://cdn.openttd.org/${OPENTTD_PROJECT}-releases/$V/
+SITES ?=	https://cdn.openttd.org/${OPENTTD_PROJECT}-releases/$V/
 
 EXTRACT_SUFX ?=	.zip
 

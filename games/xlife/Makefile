@@ -5,7 +5,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://litwr2.atspace.eu/xlife.php
 
-MASTER_SITES=	http://litwr2.atspace.eu/xlife/
+SITES=		http://litwr2.atspace.eu/xlife/
 EXTRACT_SUFX=	.tar.bz2
 
 PERMIT_PACKAGE=	Yes

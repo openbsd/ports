@@ -14,7 +14,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
+SITES=		${SITE_SOURCEFORGE:=tuxpaint/}
 
 NO_TEST=	Yes
 

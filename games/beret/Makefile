@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread
 
-MASTER_SITES=	https://mirrors.nycbug.org/pub/distfiles/
+SITES=		https://mirrors.nycbug.org/pub/distfiles/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \

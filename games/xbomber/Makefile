@@ -12,7 +12,7 @@ PERMIT_PACKAGE=		No
 PERMIT_DISTFILES=	No
 WANTLIB=		X11 c m xcb
 
-MASTER_SITES=		ftp://ftp.tuxpaint.org/unix/x/xbomber/
+SITES=			ftp://ftp.tuxpaint.org/unix/x/xbomber/
 
 NO_TEST=		Yes
 WRKDIST=		${WRKDIR}/xbomber

@@ -9,7 +9,7 @@ HOMEPAGE =	http://komi.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=komi/}
+SITES =		${SITE_SOURCEFORGE:=komi/}
 
 WANTLIB =	SDL c pthread SDL_mixer>=3
 

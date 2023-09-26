@@ -10,7 +10,7 @@ REVISION=	0
 
 HOMEPAGE=	https://www.yamagi.org/quake2/
 MAINTAINER=	Adam Wolk <awolk@openbsd.org>
-MASTER_SITES=	https://deponie.yamagi.org/quake2/
+SITES=		https://deponie.yamagi.org/quake2/
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv2

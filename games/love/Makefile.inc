@@ -12,7 +12,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/love2d/love/releases/download/${VERSION}/
+SITES =		https://github.com/love2d/love/releases/download/${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 

@@ -26,7 +26,7 @@ WANTLIB += png readline sqlite3 ssl util vorbis vorbisfile xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-xfixes xshmfence z
 
-MASTER_SITES =		https://ftp.gnu.org/gnu/gnubg/
+SITES =			https://ftp.gnu.org/gnu/gnubg/
 
 MODULES =		lang/python
 

@@ -17,7 +17,7 @@ WANTLIB += SDL2_ttf c cairo fontconfig freetype fribidi gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz imagequant intl
 WANTLIB += m pango-1.0 pangoft2-1.0 paper png pthread rsvg-2 z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
+SITES=			${SITE_SOURCEFORGE:=tuxpaint/}
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gperf \

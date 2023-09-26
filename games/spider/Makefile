@@ -5,7 +5,7 @@ PKGNAME=	spider-1.1
 REVISION =	7
 CATEGORIES=	games
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/solitaires/}
+SITES=		${SITE_SUNSITE:=games/solitaires/}
 EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE=	Yes

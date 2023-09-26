@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 COMMENT-main=	redeclipse client
 COMMENT-data=	redeclipse data
 CATEGORIES=	games x11
-MASTER_SITES=	https://github.com/red-eclipse/
+SITES=		https://github.com/red-eclipse/
 
 HOMEPAGE=	http://www.redeclipse.net/
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
@@ -15,7 +15,7 @@ MULTI_PACKAGES=	-main -data
 N=		redeclipse
 V=		1.6.0
 PKGNAME=	${N}-${V}
-MASTER_SITES=	https://github.com/red-eclipse/base/releases/download/v${V}/
+SITES=		https://github.com/red-eclipse/base/releases/download/v${V}/
 DISTNAME=	redeclipse_${V}_combined
 EXTRACT_SUFX=	.tar.bz2
 REVISION-main=	3

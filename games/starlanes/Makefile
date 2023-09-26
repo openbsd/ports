@@ -2,7 +2,7 @@ COMMENT=	classic space-age stock trading game
 
 DISTNAME=	starlanes-1.2.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/strategy/}
+SITES=		${SITE_SUNSITE:=games/strategy/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

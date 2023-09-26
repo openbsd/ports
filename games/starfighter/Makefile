@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf c glib-2.0 gobject-2.0
 WANTLIB += harfbuzz intl m pango-1.0 pthread
 
-MASTER_SITES = 		https://github.com/pr-starfighter/starfighter/releases/download/v${V}/
+SITES = https://github.com/pr-starfighter/starfighter/releases/download/v${V}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE SDL2 SDL2_image
 WANTLIB += SDL2_ttf SM X11 Xext c iconv intl lua5.1 m ogg openal
 WANTLIB += png vorbis vorbisfile z
 
-MASTER_SITES =	https://github.com/ValyriaTear/ValyriaTear/releases/download/${V}/
+SITES =	https://github.com/ValyriaTear/ValyriaTear/releases/download/${V}/
 
 # C++11
 COMPILER =	base-clang ports-gcc

@@ -2,7 +2,7 @@ COMMENT=	dungeon crawl
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.dungeoncrawl.org/
-MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
+SITES=		ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
 DISTNAME=	dc400b26-src
 EXTRACT_SUFX=	.tbz2
 V=		4.0.0b26

@@ -8,7 +8,7 @@ HOMEPAGE =	https://www.freecol.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=freecol/}
+SITES =		${SITE_SOURCEFORGE:=freecol/}
 
 MODULES =		java
 MODJAVA_VER =		11+

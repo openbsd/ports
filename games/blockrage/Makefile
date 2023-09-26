@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL c m pthread
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=blockrage/}
+SITES =		${SITE_SOURCEFORGE:=blockrage/}
 
 LIB_DEPENDS =	devel/sdl
 

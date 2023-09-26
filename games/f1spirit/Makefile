@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 
 HOMEPAGE=	https://f1spirit.jorito.net/
-MASTER_SITES=	https://braingames.jorito.net/f1spirit/
+SITES=		https://braingames.jorito.net/f1spirit/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

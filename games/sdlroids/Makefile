@@ -6,7 +6,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://sourceforge.net/projects/sdlroids/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlroids/}
+SITES=		${SITE_SOURCEFORGE:=sdlroids/}
 
 # GPL
 PERMIT_PACKAGE=	Yes

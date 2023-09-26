@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 argtable2 c confuse enet intl m openal png xmp
 WANTLIB += z
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 # C11
 COMPILER =	base-clang ports-gcc

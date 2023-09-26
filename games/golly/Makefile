@@ -6,7 +6,7 @@ DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=golly/}
+SITES =		${SITE_SOURCEFORGE:=golly/}
 
 HOMEPAGE =	http://golly.sourceforge.net/
 

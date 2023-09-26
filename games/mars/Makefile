@@ -17,7 +17,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 # Not using the GH_* variables on purpose. The tarball was generated
 # separately. Will update to use GH_* next time M.A.R.S. is updated.
-MASTER_SITES =	https://github.com/downloads/thelaui/M.A.R.S./
+SITES =		https://github.com/downloads/thelaui/M.A.R.S./
 
 MODULES =	devel/cmake
 

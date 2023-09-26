@@ -4,7 +4,7 @@ DISTNAME=	xonix-1.4
 REVISION = 	7
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/ \
+SITES=		ftp://ftp.interface-business.de/pub/outgoing/ \
 		https://spacehopper.org/mirrors/
 
 # BSD

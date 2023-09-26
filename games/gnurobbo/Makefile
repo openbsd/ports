@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf c m pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnurobbo/}
+SITES =			${SITE_SOURCEFORGE:=gnurobbo/}
 
 LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-mixer \

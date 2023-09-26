@@ -14,7 +14,7 @@ WANTLIB += Qt5X11Extras SDL2 SDL2_mixer X11 Xrandr c
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://gitlab.com/coringao/jag/-/archive/${V}/
+SITES =			https://gitlab.com/coringao/jag/-/archive/${V}/
 
 MODULES =		devel/qmake x11/qt5
 LIB_DEPENDS =		devel/sdl2 \

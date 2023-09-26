@@ -11,7 +11,7 @@ MAINTAINER=	Kirill Bychkov <kirby@openbsd.org>
 
 HOMEPAGE=	https://www.wesnoth.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wesnoth/}
+SITES=		${SITE_SOURCEFORGE:=wesnoth/}
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2

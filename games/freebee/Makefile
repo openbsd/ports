@@ -12,7 +12,7 @@ PERMIT_PACKAGE = Yes
 # uses unveil()
 WANTLIB +=	c curl curses
 
-MASTER_SITES =	https://github.com/freebee-game/console-client/releases/download/${DISTNAME}/
+SITES =	https://github.com/freebee-game/console-client/releases/download/${DISTNAME}/
 
 LIB_DEPENDS =	net/curl
 

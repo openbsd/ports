@@ -5,7 +5,7 @@ PKGNAME = 		${DISTNAME:L}
 REVISION =		4
 CATEGORIES =		games x11
 HOMEPAGE =		http://www.devolution.com/~slouken/Maelstrom/
-MASTER_SITES =		${HOMEPAGE}/src/
+SITES =			${HOMEPAGE}/src/
 
 MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 

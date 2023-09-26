@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	X11 Xext c curses m pthread usbhid xcb SDL
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=falconseye/}
+SITES =		${SITE_SOURCEFORGE:=falconseye/}
 
 FIX_CRLF_FILES = util/makedefs.c
 

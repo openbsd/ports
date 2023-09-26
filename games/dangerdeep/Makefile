@@ -17,7 +17,7 @@ WANTLIB += pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dangerdeep/}
+SITES =			${SITE_SOURCEFORGE:=dangerdeep/}
 DISTFILES =		dangerdeep-0.4.0_pre3327.tar.gz \
 			dangerdeep-data-0.4.0_pre3327.zip
 

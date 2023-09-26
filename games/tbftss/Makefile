@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf c m
 
-MASTER_SITES =		https://www.battleforthesolarsystem.com/downloads/
+SITES =			https://www.battleforthesolarsystem.com/downloads/
 
 LIB_DEPENDS =		devel/sdl2-image \
 			devel/sdl2-mixer \

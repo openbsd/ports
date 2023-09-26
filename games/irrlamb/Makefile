@@ -11,7 +11,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU Irrlicht X11 Xext Xrandr
 WANTLIB += Xxf86vm c freetype jpeg m ogg openal png sqlite3 vorbis
 WANTLIB += vorbisfile z
 
-MASTER_SITES =	https://github.com/jazztickets/irrlamb/releases/download/v$V/
+SITES =		https://github.com/jazztickets/irrlamb/releases/download/v$V/
 
 MODULES =	devel/cmake
 

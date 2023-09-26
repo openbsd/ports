@@ -6,7 +6,7 @@ REVISION=		1
 CATEGORIES=		games
 
 HOMEPAGE=		http://catb.org/~esr/ski/
-MASTER_SITES=		http://catb.org/~esr/ski/
+SITES=			http://catb.org/~esr/ski/
 
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 

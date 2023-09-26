@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.robobunny.com/projects/asciiquarium/html/
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://www.robobunny.com/projects/asciiquarium/
+SITES =		https://www.robobunny.com/projects/asciiquarium/
 
 RUN_DEPENDS =	misc/p5-Term-Animation
 

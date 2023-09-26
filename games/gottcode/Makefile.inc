@@ -3,7 +3,7 @@ PKGNAME ?=	${DISTNAME:S/-src//}
 EXTRACT_SUFX ?=	.tar.bz2
 
 HOMEPAGE ?=	https://gottcode.org/${GAME}/
-MASTER_SITES ?=	${HOMEPAGE}
+SITES ?=	${HOMEPAGE}
 
 MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
 

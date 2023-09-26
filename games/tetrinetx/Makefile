@@ -8,7 +8,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://tetrinetx.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tetrinetx/}
+SITES=		${SITE_SOURCEFORGE:=tetrinetx/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

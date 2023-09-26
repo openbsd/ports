@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.oolite.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oolite-linux.berlios/}
+SITES=		${SITE_SOURCEFORGE:=oolite-linux.berlios/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	x11/gnustep

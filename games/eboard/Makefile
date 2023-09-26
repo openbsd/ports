@@ -18,7 +18,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=eboard/}
+SITES=		${SITE_SOURCEFORGE:=eboard/}
 
 EXTRACT_SUFX=	.tar.bz2
 

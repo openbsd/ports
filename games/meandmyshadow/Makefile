@@ -6,7 +6,7 @@ PKGNAME =	${DISTNAME:S/-src//}
 REVISION =	5
 
 HOMEPAGE =	http://meandmyshadow.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=meandmyshadow/}
+SITES =		${SITE_SOURCEFORGE:=meandmyshadow/}
 
 # GPLv3 (some fonts/data CCY-BY-SA/OFL)
 PERMIT_PACKAGE =	Yes

@@ -8,7 +8,7 @@ HOMEPAGE=	http://seehuhn.de/pages/moon-buggy
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://seehuhn.de/media/programs/
+SITES=		http://seehuhn.de/media/programs/
 
 WANTLIB=	c curses m
 

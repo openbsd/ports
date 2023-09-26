@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =		http://mirror.ifarchive.org/if-archive/games/source/ \
+SITES =			http://mirror.ifarchive.org/if-archive/games/source/ \
 			ftp://ftp.ifarchive.org/if-archive/games/source/ \
 			ftp://ftp.funet.fi/pub/misc/if-archive/games/source/ \
 			http://www.vaxdungeon.com/vax-dungeon/Archive/dungeon/ \

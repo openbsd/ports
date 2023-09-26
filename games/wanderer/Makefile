@@ -9,11 +9,11 @@ HOMEPAGE=	http://www.e271.net/~marina/wanderer.html
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c curses
+WANTLIB=	c curses
 
-MASTER_SITES=	http://www.e271.net/~marina/
+SITES=		http://www.e271.net/~marina/
 
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 pre-patch:
 	@rm ${WRKSRC}/Makefile.orig

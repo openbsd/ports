@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =		http://www.catb.org/~esr/vms-empire/
+SITES =			http://www.catb.org/~esr/vms-empire/
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS}"

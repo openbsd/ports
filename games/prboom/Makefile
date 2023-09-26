@@ -4,7 +4,7 @@ REVISION=	3
 
 CATEGORIES=	games x11
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=prboom/}
+SITES=		${SITE_SOURCEFORGE:=prboom/}
 
 HOMEPAGE=	http://prboom.sourceforge.net/
 

@@ -17,7 +17,7 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # or package.
 PERMIT_PACKAGE =    Yes
 
-MASTER_SITES =	http://cdn.urbanterror.info/urt/${URT_VER}/releases/zips/
+SITES =		http://cdn.urbanterror.info/urt/${URT_VER}/releases/zips/
 
 EXTRACT_SUFX =	.zip
 

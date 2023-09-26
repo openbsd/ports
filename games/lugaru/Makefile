@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += GL GLU SDL2 c jpeg m ogg openal png pthread vorbisfile
 WANTLIB += z ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://bitbucket.org/osslugaru/lugaru/downloads/
+SITES =			https://bitbucket.org/osslugaru/lugaru/downloads/
 
 EXTRACT_SUFX =		.tar.xz
 

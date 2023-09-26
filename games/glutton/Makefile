@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c m pthread usbhid xcb \
 			SDL SDL_mixer
 
-MASTER_SITES=	http://mirror.csoft.org/glutton/
+SITES=		http://mirror.csoft.org/glutton/
 
 LIB_DEPENDS= 	devel/sdl \
 	 	devel/sdl-mixer

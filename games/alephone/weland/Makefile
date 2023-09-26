@@ -13,7 +13,7 @@ HOMEPAGE =		http://sourceforge.net/projects/weland/
 # GPL v2-only
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=weland/}
+SITES =			${SITE_SOURCEFORGE:=weland/}
 EXTRACT_SUFX =		.zip
 
 MODULES =		lang/mono

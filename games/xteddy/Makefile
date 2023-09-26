@@ -5,7 +5,7 @@ REVISION=	1
 CATEGORIES=	games
 
 HOMEPAGE=	http://staffwww.itn.liu.se/~stegu/xteddy/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

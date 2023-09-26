@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses iconv m
 
-MASTER_SITES =	https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
+SITES =		https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
 
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc

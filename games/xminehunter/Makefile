@@ -4,13 +4,13 @@ DISTNAME=	xminehunter-0.4
 REVISION =	7
 CATEGORIES=	games
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
+SITES=		${SITE_XCONTRIB:=games/}
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		X11 Xext Xpm Xt c m ${COMPILER_LIBCXX} xcb Xm
+WANTLIB=	X11 Xext Xpm Xt c m ${COMPILER_LIBCXX} xcb Xm
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS+=	x11/motif
 

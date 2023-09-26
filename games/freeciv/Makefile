@@ -15,7 +15,7 @@ HOMEPAGE=	https://www.freeciv.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
+SITES=		${SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.xz
 
 cWANTLIB += bz2 c crypto curl execinfo iconv icudata icuuc intl

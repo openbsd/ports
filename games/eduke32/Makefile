@@ -32,7 +32,7 @@ WANTLIB +=	gtk-x11-2.0
 
 RUN_DEPENDS =	games/duke3ddata
 
-MASTER_SITES =	https://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
+SITES =		https://dukeworld.duke4.net/eduke32/synthesis/${RDATE}-${RTAG}/
 
 COMPILER =	base-clang ports-gcc
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL GLU ICE SDL SM Xaw Xi c freetype m png pthread z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=foobillard/}
+SITES =			${SITE_SOURCEFORGE:=foobillard/}
 
 LIB_DEPENDS =		graphics/png \
 			devel/sdl

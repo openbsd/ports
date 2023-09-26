@@ -5,7 +5,7 @@ REVISION =		0
 CATEGORIES =		games
 
 HOMEPAGE =		http://egoboo.sourceforge.net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=egoboo/}
+SITES =			${SITE_SOURCEFORGE:=egoboo/}
 
 # GPL v3 or later
 PERMIT_PACKAGE =	Yes

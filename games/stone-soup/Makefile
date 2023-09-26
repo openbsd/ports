@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
 
-MASTER_SITES = 	https://crawl.develz.org/release/${VERSION:R}/ \
+SITES = 	https://crawl.develz.org/release/${VERSION:R}/ \
 		https://github.com/crawl/crawl/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 

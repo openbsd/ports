@@ -16,7 +16,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 # New releases at https://github.com/vegastrike/Vega-Strike-Engine-Source/releases/
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vegastrike/}
+SITES =			${SITE_SOURCEFORGE:=vegastrike/}
 EXTRACT_SUFX ?=		.tar.bz2
 
 NO_TEST =		Yes

@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5QuickControls2 Qt5Svg Qt5Widgets c m
 WANTLIB += lzma zstd
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pentobi/}
+SITES =		${SITE_SOURCEFORGE:=pentobi/}
 
 MODULES =	devel/cmake \
 		x11/qt5

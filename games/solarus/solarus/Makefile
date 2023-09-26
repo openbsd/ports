@@ -18,7 +18,7 @@ WANTLIB += Qt5Core Qt5Gui Qt5Widgets SDL2 SDL2_image SDL2_ttf
 WANTLIB += c luajit-5.1 m modplug ogg openal physfs pthread vorbis
 WANTLIB += vorbisfile GL GLU ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://www.solarus-games.org/downloads/solarus/
+SITES =		https://www.solarus-games.org/downloads/solarus/
 
 MODULES +=	devel/cmake \
 		lang/lua \

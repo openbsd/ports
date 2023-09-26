@@ -16,7 +16,7 @@ WANTLIB += m z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${HOMEPAGE}files/einstein/
+SITES =		${HOMEPAGE}files/einstein/
 EXTRACT_SUFX =	-src.tar.gz
 
 LIB_DEPENDS =	devel/sdl	\

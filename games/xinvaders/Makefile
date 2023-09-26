@@ -8,7 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xaw Xmu Xt c iconv intl
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=games/arcade/invaders/}
+SITES=		${SITE_SUNSITE:=games/arcade/invaders/}
 
 LIB_DEPENDS=	devel/gettext,-runtime
 

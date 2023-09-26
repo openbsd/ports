@@ -4,7 +4,7 @@ DISTNAME =	nethack-$V
 PKGNAME =	hackdata-$V
 CATEGORIES =	games
 
-MASTER_SITES =	https://www.nethack.org/download/$V/
+SITES =		https://www.nethack.org/download/$V/
 
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
 

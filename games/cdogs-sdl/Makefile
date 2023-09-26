@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL SDL_image SDL_mixer SDL_net c m pthread
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+SITES =		http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES =	devel/cmake
 

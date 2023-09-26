@@ -16,7 +16,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gemrb/}
+SITES =			${SITE_SOURCEFORGE:=gemrb/}
 
 WANTLIB += SDL SDL_mixer c freetype iconv m openal png pthread
 WANTLIB += vlc vorbisfile z ${MODPY_WANTLIB} ${COMPILER_LIBCXX}

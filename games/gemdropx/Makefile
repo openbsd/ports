@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.newbreedsoftware.com/gemdropx/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread SDL SDL_mixer
 
-MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/
+SITES=		ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/
 
 LIB_DEPENDS=	devel/sdl-mixer
 

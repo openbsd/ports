@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	SDL c m pthread SDL_mixer
 
-MASTER_SITES =	ftp://ftp.tuxpaint.org/unix/x/defendguin/src/
+SITES =		ftp://ftp.tuxpaint.org/unix/x/defendguin/src/
 
 LIB_DEPENDS =	devel/sdl-mixer
 

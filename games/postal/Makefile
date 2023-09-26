@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c m
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 # base-gcc not good enough (tested on armv7)
 COMPILER =	base-clang ports-gcc base-gcc

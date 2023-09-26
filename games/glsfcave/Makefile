@@ -8,7 +8,7 @@ CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://user.ecc.u-tokyo.ac.jp/~s081016/glsfcave/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # MIT
 PERMIT_PACKAGE=	Yes

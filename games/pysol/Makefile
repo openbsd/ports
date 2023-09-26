@@ -11,7 +11,7 @@ HOMEPAGE =		http://pysolfc.sourceforge.net/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pysolfc/}
+SITES =			${SITE_SOURCEFORGE:=pysolfc/}
 EXTRACT_SUFX =		.tar.xz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			PySolFC-Cardsets-2.2.tar.bz2

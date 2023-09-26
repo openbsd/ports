@@ -8,7 +8,7 @@ MAINTAINER =		Marcus Glocker <marcus@nazgul.ch>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		c curses
-MASTER_SITES = 		http://www.nazgul.ch/dev/
+SITES = 		http://www.nazgul.ch/dev/
 NO_TEST =		Yes
 
 do-install:

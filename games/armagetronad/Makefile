@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL SDL_image c m png xml2
 # C++11
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =	https://launchpad.net/armagetronad/${V}/${V}.${P}/+download/
+SITES =	https://launchpad.net/armagetronad/${V}/${V}.${P}/+download/
 
 BUILD_DEPENDS =		shells/bash
 LIB_DEPENDS =		devel/sdl-image \

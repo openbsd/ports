@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xrender c fontconfig m png t1 z
 
-MASTER_SITES=		https://www.logicalshift.co.uk/unix/zoom/
+SITES=			https://www.logicalshift.co.uk/unix/zoom/
 
 LIB_DEPENDS=		devel/t1lib \
 			graphics/png

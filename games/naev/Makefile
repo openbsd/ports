@@ -17,7 +17,7 @@ MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
 # GPLv3, GPLv2+, CC-by, CC-by-sa 3.0
 PERMIT_PACKAGE = 	Yes
 
-MASTER_SITES =          https://github.com/naev/naev/releases/download/v${V}/
+SITES =          	https://github.com/naev/naev/releases/download/v${V}/
 EXTRACT_SUFX = 		.tar.xz
 
 WANTLIB-main += SDL2 SDL2_image c cblas cholmod cxsparse freetype glpk

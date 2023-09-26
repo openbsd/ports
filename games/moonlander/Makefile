@@ -3,7 +3,7 @@ DISTNAME=	moon-lander-1.0
 PKGNAME=	moonlander-1.0
 REVISION=	3
 CATEGORIES=	games x11
-MASTER_SITES=	http://downloads.daveblood.com/lunar_lander/
+SITES=		http://downloads.daveblood.com/lunar_lander/
 
 FIX_EXTRACT_PERMISSIONS=	yes
 

@@ -6,7 +6,7 @@ CATEGORIES = games
 HOMEPAGE = http://keldon.net/rftg/
 DISTNAME = rftg-$V
 EXTRACT_SUFX = .tar.bz2
-MASTER_SITES = ${HOMEPAGE}
+SITES = 	${HOMEPAGE}
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
 

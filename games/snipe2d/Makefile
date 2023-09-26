@@ -18,7 +18,7 @@ WANTLIB +=		SDL c m pthread ${COMPILER_LIBCXX} SDL_image>=2 SDL_mixer>=3
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://icculus.org/oes/
+SITES =			http://icculus.org/oes/
 
 LIB_DEPENDS =		devel/sdl-image \
 			devel/sdl-mixer

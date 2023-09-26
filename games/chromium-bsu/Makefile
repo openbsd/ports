@@ -12,7 +12,7 @@ WANTLIB += iconv intl m openal pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chromium-bsu/}
+SITES =			${SITE_SOURCEFORGE:=chromium-bsu/}
 
 USE_GMAKE =		Yes
 

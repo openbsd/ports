@@ -5,7 +5,7 @@ DISTFILES=	omega-${VERSION}-src.tar.gz
 DISTNAME=	omega-${VERSION}
 REVISION =	3
 CATEGORIES=     games
-MASTER_SITES=   http://www.alcyone.com/binaries/omega/
+SITES=   	http://www.alcyone.com/binaries/omega/
 
 HOMEPAGE=	http://www.alcyone.com/max/projects/omega/
 

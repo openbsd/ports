@@ -7,7 +7,7 @@ WRKDIST=	${WRKDIR}/micropolis
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.donhopkins.com/home/micropolis/
-MASTER_SITES=	http://freedaemon.com/~deanna/
+SITES=		http://freedaemon.com/~deanna/
 
 # GPLv3
 # beware of SimCity, tm of Electronic Arts

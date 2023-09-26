@@ -2,7 +2,7 @@ COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.5.1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games x11
-MASTER_SITES=	${HOMEPAGE}download/
+SITES=		${HOMEPAGE}download/
 REVISION=	3
 
 EXTRACT_SUFX=	.tar.bz2

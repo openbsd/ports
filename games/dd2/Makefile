@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		SDL SDL_mixer c m pthread
 
-MASTER_SITES =		http://www.usebox.net/jjm/dd2/releases/
+SITES =			http://www.usebox.net/jjm/dd2/releases/
 
 # SDL and SDL_Mixer
 LIB_DEPENDS =		devel/sdl-mixer

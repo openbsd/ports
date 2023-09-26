@@ -24,7 +24,7 @@ WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
 WANTLIB += c enet iconv intl m ogg openal physfs pthread tinyxml vorbis
 WANTLIB += vorbisfile boost_atomic-mt ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sumwars/}
+SITES =			${SITE_SOURCEFORGE:=sumwars/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake \

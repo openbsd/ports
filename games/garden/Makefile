@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xcursor Xext Xfixes Xpm Xrender Xxf86dga Xxf86vm
 WANTLIB += alleg c m pthread sndio xcb
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=garden/}
+SITES =			${SITE_SOURCEFORGE:=garden/}
 
 BUILD_DEPENDS =		devel/desktop-file-utils
 RUN_DEPENDS =		devel/desktop-file-utils \

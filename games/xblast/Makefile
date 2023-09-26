@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE X11 c iconv intl m sndio
 
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=xblast/}
+SITES=   	${SITE_SOURCEFORGE:=xblast/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

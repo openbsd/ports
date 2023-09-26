@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_gfx-1.0 SDL2_image
 WANTLIB += SDL2_mixer SDL2_net SDL2_ttf X11 c curl execinfo iconv
 WANTLIB += intl m png xml2 z
 
-MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
+SITES =		http://download.evolonline.org/manaplus/download/${V}/
 
 # Base gcc miscompiles on at least macppc
 COMPILER =	base-clang ports-gcc

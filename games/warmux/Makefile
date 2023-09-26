@@ -14,7 +14,7 @@ WANTLIB += curl intl m nghttp2 png pthread ssl xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://download.gna.org/warmux/ \
+SITES=			http://download.gna.org/warmux/ \
 			http://download.gna.org/warmux/archive/
 EXTRACT_SUFX=		.tar.bz2
 

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 # old upstream (http://www.sacredchao.net/~piman/angrydd/) is no more;
 # this distfile is forked from the old one with patches added from
 # https://salsa.debian.org/games-team/angrydd/-/raw/master/debian/patches/python3.patch
-MASTER_SITES=	https://dickman.org/openbsd/distfiles/
+SITES=		https://dickman.org/openbsd/distfiles/
 
 BUILD_DEPENDS=	devel/pygame${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/pygame${MODPY_FLAVOR} \

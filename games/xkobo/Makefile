@@ -5,7 +5,7 @@ DISTNAME =	xkobo-1.11
 REVISION =	9
 CATEGORIES =	games
 
-MASTER_SITES =	${MASTER_SITE_XCONTRIB:=games/}  \
+SITES =		${SITE_XCONTRIB:=games/}  \
 		ftp://ftp.uoknor.edu/mirrors/X/contrib/games/
 
 FLAVORS =	harder

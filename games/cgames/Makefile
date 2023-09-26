@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	https://www.muppetlabs.com/~breadbox/pub/software/
+SITES =		https://www.muppetlabs.com/~breadbox/pub/software/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${LOCALBASE}/share/cgames" \

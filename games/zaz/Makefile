@@ -16,7 +16,7 @@ WANTLIB += m ogg theoradec theoraenc vorbis vorbisenc vorbisfile
 COMPILER =		base-clang ports-gcc base-gcc
 
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=zaz/}
+SITES =		${SITE_SOURCEFORGE:=zaz/}
 
 LIB_DEPENDS =	audio/libvorbis \
 		devel/gettext,-runtime \

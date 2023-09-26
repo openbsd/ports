@@ -17,7 +17,7 @@ WANTLIB += Xft Xinerama c fltk fontconfig freetype glib-2.0 gobject-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangoft2-1.0 paper
 WANTLIB += unibreak
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
+SITES=		${SITE_SOURCEFORGE:=tuxpaint/}
 
 COMPILER=	base-clang ports-gcc base-gcc
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=   Yes
 
 WANTLIB += SDL SDL_mixer c intl m pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgeneral/}
+SITES=		${SITE_SOURCEFORGE:=lgeneral/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 LIB_DEPENDS=	devel/gettext,-runtime \

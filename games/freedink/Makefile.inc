@@ -6,4 +6,4 @@ MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES ?=	${MASTER_SITE_GNU:=freedink/}
+SITES ?=	${SITE_GNU:=freedink/}

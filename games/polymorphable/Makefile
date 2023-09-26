@@ -8,7 +8,7 @@ HOMEPAGE =	https://github.com/makrohn/polymorphable
 # GPLv3 & CC-BY-SA-3.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+SITES =		http://mirrors.nycbug.org/pub/distfiles/
 
 RUN_DEPENDS =	games/flare
 

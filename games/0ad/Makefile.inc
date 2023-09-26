@@ -6,8 +6,8 @@ V ?= 			0.0.26
 
 HOMEPAGE = 		https://play0ad.com/
 
-MASTER_SITES =		https://releases.wildfiregames.com/ \
-			${MASTER_SITE_SOURCEFORGE:=zero-ad/}
+SITES =			https://releases.wildfiregames.com/ \
+			${SITE_SOURCEFORGE:=zero-ad/}
 
 # GPLv2+, MIT for libs, CC-BY-SA for data
 PERMIT_PACKAGE =	Yes

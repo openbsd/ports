@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 c m png xcb z
 
-MASTER_SITES =		http://www.delorie.com/store/ace/
+SITES =			http://www.delorie.com/store/ace/
 
 LIB_DEPENDS =		graphics/png
 

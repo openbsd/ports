@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
 
 HOMEPAGE=	https://roadfighter.jorito.net/
-MASTER_SITES=	https://braingames.jorito.net/roadfighter/downloads/
+SITES=		https://braingames.jorito.net/roadfighter/downloads/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

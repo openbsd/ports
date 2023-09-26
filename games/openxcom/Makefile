@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		GL SDL SDL_gfx SDL_image SDL_mixer c m pthread \
 			yaml-cpp ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
+SITES =			${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
 
 MODULES =		devel/cmake
 

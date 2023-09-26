@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv intl curses
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=typespeed/}
+SITES =			${SITE_SOURCEFORGE:=typespeed/}
 
 LIB_DEPENDS =		devel/gettext,-runtime
 

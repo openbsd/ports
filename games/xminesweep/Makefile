@@ -5,7 +5,7 @@ PKGNAME=	xminesweep-3.0
 REVISION =	6
 CATEGORIES=	games
 
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+SITES=		ftp://ftp.warwick.ac.uk/pub/x11/
 EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE=	Yes

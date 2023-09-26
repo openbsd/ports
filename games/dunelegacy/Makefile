@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		SDL2 SDL2_mixer c enet m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=dunelegacy/}
+SITES = 		${SITE_SOURCEFORGE:=dunelegacy/}
 EXTRACT_SUFX =		.tar.bz2
 
 COMPILER = 		base-clang ports-gcc

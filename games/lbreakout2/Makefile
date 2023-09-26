@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  SDL SDL_mixer c iconv intl m png>=9.0 pthread z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lgames/}
+SITES =		${SITE_SOURCEFORGE:=lgames/}
 
 LIB_DEPENDS =	devel/sdl-mixer \
 		graphics/png

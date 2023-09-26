@@ -5,7 +5,7 @@ DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
 
 CATEGORIES=	games
 HOMEPAGE=	https://www.gnu.org/software/chess/
-MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
+SITES=		${SITE_GNU:=chess/}
 
 MAINTAINER =	Martin Ziemer <horrad@horrad.de>
 

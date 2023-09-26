@@ -13,7 +13,7 @@ CATEGORIES =	games
 
 HOMEPAGE =	http://numptyphysics.garage.maemo.org/
 
-MASTER_SITES =	https://spacehopper.org/mirrors/
+SITES =		https://spacehopper.org/mirrors/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		npcomplete-0.0.r20100124.tar.bz2

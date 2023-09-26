@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.laurasia.com.au/sudoku/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c curses
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/ \
+SITES=			https://distfiles.sigtrap.nl/ \
 			http://www.laurasia.com.au/downloads/
 EXTRACT_SUFX=		.tgz
 

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL SDL SDL_image SDL_mixer c m png pthread z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wizznic/}
+SITES =			${SITE_SOURCEFORGE:=wizznic/}
 EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/sdl-image \

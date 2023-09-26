@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses iconv intl
 
-MASTER_SITES =	https://ftp.zap.org.au/pub/trader/unix/
+SITES =		https://ftp.zap.org.au/pub/trader/unix/
 
 LIB_DEPENDS =	converters/libiconv \
 		devel/gettext,-runtime

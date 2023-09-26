@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 FIX_CRLF_FILES =	stdafx.h
 

@@ -16,7 +16,7 @@ WANTLIB += SDL2 SDL2_mixer ao c curses execinfo freetype jpeg
 WANTLIB += m modplug png pthread samplerate sndfile vorbisfile
 WANTLIB += z
 
-MASTER_SITES=		https://gitlab.com/DavidGriffith/frotz/-/archive/${V}/
+SITES=			https://gitlab.com/DavidGriffith/frotz/-/archive/${V}/
 
 LIB_DEPENDS=		audio/libao \
 			audio/libmodplug \

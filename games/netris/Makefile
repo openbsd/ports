@@ -4,7 +4,7 @@ DISTNAME=	netris-0.52
 REVISION=	3
 CATEGORIES=	games
 
-MASTER_SITES=	https://distfiles.gentoo.org/distfiles/
+SITES=		https://distfiles.gentoo.org/distfiles/
 
 # GPL
 PERMIT_PACKAGE=	Yes

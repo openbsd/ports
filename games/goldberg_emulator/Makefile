@@ -17,7 +17,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m protobuf-lite
-MASTER_SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_COMMIT}/
+SITES =	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_COMMIT}/
 FIX_CRLF_FILES =	sdk_includes/isteamuser.h \
 			sdk_includes/steamclientpublic.h \
 			sdk_includes/steam_gameserver.h

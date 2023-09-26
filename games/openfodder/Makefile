@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m
 
 # Upstream tarball is incomplete
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 # C++14
 COMPILER =	base-clang ports-gcc

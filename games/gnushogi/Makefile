@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses m
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gnushogi/}
+SITES=		${SITE_GNU:=gnushogi/}
 
 CONFIGURE_STYLE=gnu
 

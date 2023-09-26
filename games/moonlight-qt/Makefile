@@ -4,7 +4,7 @@ V =			3.1.4
 PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
-MASTER_SITES =		https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
+SITES =			https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
 REVISION =		2
 
 CATEGORIES =		games

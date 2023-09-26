@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  SDL SDL_image c freetype iconv intl curses pthread z
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 CONFIGURE_STYLE =	gnu
 

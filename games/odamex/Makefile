@@ -17,7 +17,7 @@ WANTLIB += c curl execinfo m miniupnpc png portmidi wx_baseu-3.2
 WANTLIB += wx_baseu_net-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_xrc-3.2 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=odamex/}
+SITES =			${SITE_SOURCEFORGE:=odamex/}
 EXTRACT_SUFX =		.tar.bz2
 
 FIX_CRLF_FILES =	CMakeLists.txt odalaunch/CMakeLists.txt

@@ -9,7 +9,7 @@ CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 
 HOMEPAGE =	http://liballeg.org/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alleg/}
+SITES =		${SITE_SOURCEFORGE:=alleg/}
 
 # readme.txt: "You may use, modify, redistribute, and generally hack it about
 # in any way you like, and you do not have to give us anything in return."

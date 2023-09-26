@@ -22,7 +22,7 @@ WANTLIB += SDL c m pthread GL GLU SDL_mixer SDL_net
 LIB_DEPENDS =	devel/sdl-mixer \
 		devel/sdl-net
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=prboom-plus/}
+SITES =		${SITE_SOURCEFORGE:=prboom-plus/}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-waddir=${TRUEPREFIX}/share/doom

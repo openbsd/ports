@@ -4,7 +4,7 @@ DISTNAME=	xjig-2.4
 REVISION =	7
 CATEGORIES=	games
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
+SITES=		${SITE_XCONTRIB:=games/}
 EXTRACT_SUFX=	.tgz
 
 # License: BSD

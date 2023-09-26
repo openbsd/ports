@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://n.ethz.ch/student/loehrerl/amph/amph.html
 
-MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
+SITES=		http://n.ethz.ch/student/loehrerl/amph/files/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

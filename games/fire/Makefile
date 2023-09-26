@@ -6,7 +6,7 @@ CATEGORIES=	games
 
 HOMEPAGE=	http://www.libsdl.org/projects/fire/
 
-MASTER_SITES=	${HOMEPAGE}/src/
+SITES=		${HOMEPAGE}/src/
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c m pthread usbhid xcb SDL

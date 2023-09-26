@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.mnemosyne-proj.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mnemosyne-proj/}
+SITES=		${SITE_SOURCEFORGE:=mnemosyne-proj/}
 
 MODULES=	lang/python
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL c m pthread SDL_mixer
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lgames/}
+SITES=		${SITE_SOURCEFORGE:=lgames/}
 
 LIB_DEPENDS=	devel/sdl-mixer
 RUN_DEPENDS =	devel/desktop-file-utils \

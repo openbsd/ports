@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.xbill.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 WANTLIB=	ICE SM X11 Xaw Xmu Xpm Xt c xcb
 

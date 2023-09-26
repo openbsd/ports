@@ -6,7 +6,7 @@ V=		4.3.2
 REVISION=	1
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
-MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/$V/
+SITES=		https://github.com/Warzone2100/warzone2100/releases/download/$V/
 DISTFILES=	warzone2100-${V}{warzone2100_src}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.xz
 

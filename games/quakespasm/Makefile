@@ -1,7 +1,7 @@
 COMMENT=	SDL Quake port
 CATEGORIES=	games
 DISTNAME=	quakespasm-0.95.0
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quakespasm/}
+SITES=		${SITE_SOURCEFORGE:=quakespasm/}
 HOMEPAGE=	https://quakespasm.sourceforge.net
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>

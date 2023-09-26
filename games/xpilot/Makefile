@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xpilotgame/}
+SITES=		${SITE_SOURCEFORGE:=xpilotgame/}
 
 NO_TEST=	Yes
 
