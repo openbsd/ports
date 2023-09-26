@@ -22,7 +22,6 @@ THEMES_DISTNAME=rezlooks-themes-0.1
 SITES=		http://gnome-look.org/CONTENT/content-files/
 SITES.t=	http://distfiles.sigtrap.nl/
 DIST_SUBDIR=	rezlooks
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.t= 	${THEMES_DISTNAME}${EXTRACT_SUFX}
 
 

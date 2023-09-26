@@ -4,8 +4,6 @@ COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
 PW_VERSION=		0.4.1
-# needed because the devel/cargo module resets the list
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES=		audio
 

@@ -25,7 +25,7 @@ RUN_DEPENDS-maps=	astro/sunclock
 PKG_ARCH-maps=	*
 
 # GPL
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 PERMIT_PACKAGE-maps=	no license for additional maps
 
 WANTLIB-main=		X11 Xpm c m z jpeg png
@@ -35,8 +35,7 @@ DIST_SUBDIR=		sunclock
 LIB_DEPENDS-main=	graphics/jpeg \
 			graphics/png
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 .if ${BUILD_PACKAGES:M-maps} # with maps
 DISTFILES+=	${SUPDISTFILES}

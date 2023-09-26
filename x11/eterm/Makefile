@@ -3,7 +3,6 @@ COMMENT-kanji=	color japanese terminal emulator with transparency support
 
 V=		0.9.6
 DISTNAME=	Eterm-$V
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 # also see below
 PKGNAME=	eterm-$V
 REVISION=	2

@@ -27,7 +27,6 @@ WANTLIB += xkbcommon xkbcommon-x11 xkbfile z
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5/
 SITES.data =	https://download.fcitx-im.org/data/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.data= en_dict-20121020.tar.gz
 
 DIST_SUBDIR =	fcitx

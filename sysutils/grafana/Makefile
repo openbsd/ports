@@ -14,7 +14,6 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://grafana.com
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.a = 	grafana-$V.linux-amd64.tar.gz{grafana-$V.linux-amd64.tar.gz?1}
 # force CDN refresh; upstream rerolled but some CDN nodes have the old version
 # normally	grafana-$V.linux-amd64.tar.gz:0

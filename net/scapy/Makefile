@@ -15,9 +15,8 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 SITES.data =		https://spacehopper.org/mirrors/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.data =	ethertypes-20120703
-EXTRACT_ONLY =		${DISTFILES}
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 MODPY_PI =		Yes

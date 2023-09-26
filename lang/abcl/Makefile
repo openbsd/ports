@@ -15,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			${HOMEPAGE}/releases/${V}/
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 # Remember to keep MODJAVA_VER in sync with jna

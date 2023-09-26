@@ -4,8 +4,7 @@ VERSION =		4.0
 PLUGIN =		PostgreSQL
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY =		${DISTFILES}
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 DISTFILES.f =		${FRAMEWORK_DISTFILE}
 SITES.f =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/

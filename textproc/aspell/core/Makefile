@@ -12,7 +12,6 @@ DIST_EN=	aspell6-en-2020.12.07-0
 SITES=		${SITE_GNU:=aspell/}
 SITES.en=	${SITE_GNU:=aspell/dict/en/}
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.en= 	${DIST_EN}.tar.bz2
 
 HOMEPAGE=	http://aspell.net/

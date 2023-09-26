@@ -52,8 +52,6 @@ SITES.a=https://github.com/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
 	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
 _GH_MODS=	\
 	openresty	headers-more-nginx-module	v0.34 \
 	openresty	lua-nginx-module		v0.10.11 \

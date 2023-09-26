@@ -59,7 +59,6 @@ PSEUDO_FLAVORS =	no_bootstrap
 FLAVOR ?=
 
 DIST_SUBDIR =		pypy
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if defined(BOOTSTRAP-${MACHINE_ARCH}) && !${FLAVOR:Mno_bootstrap}
 #   ^^ needed to avoid breakage in arches that don't have pypy
 DISTFILES.boot +=		${BOOTSTRAP-${MACHINE_ARCH}}

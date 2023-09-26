@@ -20,7 +20,6 @@ WANTLIB += IMETable Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR =		fcitx
 
 SITES.py =		https://download.fcitx-im.org/data/

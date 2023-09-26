@@ -17,10 +17,9 @@ EXTRACT_SUFX=		.tar.bz2
 
 # We replace the included ancient copy of libpng with a later release
 # from the 1.2 branch.
-EXTRACT_ONLY=		${DISTFILES}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 PNG_V=			1.2.57
 SITES.png=		${SITE_SOURCEFORGE:=libpng/}
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.png =		libpng-${PNG_V}.tar.gz
 
 

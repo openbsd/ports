@@ -28,7 +28,6 @@ LIBROCKET =		ecd648a43aff8a9f3daf064d75ca5725237d5b38
 SITES.a =	https://github.com/asarium/cmake-modules/archive/
 SITES.b =	https://github.com/asarium/libRocket/archive/
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.a =		${RPAVLIK_CMAKE_MOD}.tar.gz
 DISTFILES.b = 		${LIBROCKET}.tar.gz
 

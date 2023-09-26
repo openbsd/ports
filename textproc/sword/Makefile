@@ -8,8 +8,6 @@ REVISION=	0
 SITES=		https://crosswire.org/ftpmirror/pub/sword/source/v${V:R}/
 SITES.k=	https://crosswire.org/ftpmirror/pub/sword/packages/rawzip/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
 # keeps changing
 DISTFILES.k+=	KJV-2.10.2{KJV}.zip
 

@@ -18,7 +18,6 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_regex-mt c m
 
 SITES =			https://download.fcitx-im.org/fcitx5/libime/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 
 SITES.data =		https://download.fcitx-im.org/data/
 

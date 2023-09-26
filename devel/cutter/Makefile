@@ -10,7 +10,6 @@ REVISION =	0
 # proper vendored tarball and this step should not be needed.
 SITES.t =		https://github.com/rizinorg/cutter-translations/archive/
 TRANSLATIONS_COMMIT =	97429865
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.t = 		cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz
 
 CATEGORIES =	devel

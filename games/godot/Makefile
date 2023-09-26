@@ -35,7 +35,6 @@ WANTLIB-tools =	${WANTLIB}
 COMPILER =	base-clang ports-gcc
 
 SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
-DISTFILES =     ${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX =	.tar.xz
 
 SITES.sharp =		https://thfr.info/distfiles/

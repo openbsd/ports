@@ -7,7 +7,6 @@ SITES=		${SITE_PERL_CPAN:=HTML/}
 SITES.js=	http://script.aculo.us/dist/
 DISTNAME=	HTML-Prototype-1.48
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.js= 	scriptaculous-js-1.7.0.tar.gz
 
 HOMEPAGE=	http://prototype.conio.net/

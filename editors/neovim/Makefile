@@ -31,7 +31,6 @@ LUACOMPAT_VER =	v0.9
 SITES.a =	https://github.com/luvit/luv/archive/
 SITES.b = 	https://github.com/LuaJIT/LuaJIT/archive/
 SITES.c = 	https://github.com/keplerproject/lua-compat-5.3/archive/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.a = 	luv-{}${LUV_VER}${EXTRACT_SUFX}
 DISTFILES.b = 	luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}
 DISTFILES.c = 	lua-compat-5.3-{}${LUACOMPAT_VER}${EXTRACT_SUFX}

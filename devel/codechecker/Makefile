@@ -18,10 +18,9 @@ PERMIT_PACKAGE =	Yes
 DIST_SUBDIR =	codechecker-${GH_TAGNAME}
 SITES.a =	https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.30.0/
 SITES.b =	https://raw.githubusercontent.com/codemirror/CodeMirror/master/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES.a = 	codemirror.min.js codemirror.min.css \
+DISTFILES.a =	codemirror.min.js codemirror.min.css \
 		clike.min.js{/mode/clike/clike.min.js}
-DISTFILES.b= 	codemirror.LICENSE{LICENSE}
+DISTFILES.b=	codemirror.LICENSE{LICENSE}
 
 EXTRACT_ONLY =	${DISTNAME}${EXTRACT_SUFX}
 

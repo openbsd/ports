@@ -16,7 +16,6 @@ SITES=	https://github.com/teeworlds/teeworlds/releases/download/${V}/
 # therefore hosted as archive.
 SITES.a=	http://si3t.ch/pub/openbsd/distfiles/
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.a= 	teeworlds-${V}-data.tar.gz{teeworlds-data.tar.gz}
 
 # BSD-like

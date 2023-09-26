@@ -9,7 +9,6 @@ REVISION=	2
 
 CATEGORIES=	games
 
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.m = 	endgame-singularity-music-${MUSIC_V}.zip
 
 HOMEPAGE=	http://emhsoft.com/singularity/

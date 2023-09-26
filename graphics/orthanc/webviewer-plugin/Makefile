@@ -11,8 +11,7 @@ PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 			js-url-1.8.6.zip
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY =		${DISTFILES}
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 DISTFILES.p +=		${PLUGIN_3RDPARTY}
 SITES.p =		https://www.orthanc-server.com/downloads/third-party/WebViewer/

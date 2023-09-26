@@ -8,7 +8,6 @@ GH_PROJECT =		openmw
 GH_TAGNAME =		openmw-$V
 DISTNAME =		openmw-$V
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.a = 		e75adf86f91eb3082220085e42dda62679f9a3ea.zip
 DIST_SUBDIR =		openmw
 SITES.a =		https://github.com/recastnavigation/recastnavigation/archive/

@@ -10,7 +10,6 @@ PKGNAME-main =	libmaxminddb-${V}
 PKGNAME-db =	geolite2-country-${D}
 PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.d = 	geolite2-data-$D.tar.xz
 REVISION-db =	1
 REVISION-city = 1

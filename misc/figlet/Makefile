@@ -15,7 +15,6 @@ WANTLIB =		c
 SITES =		ftp://ftp.figlet.org/pub/figlet/program/unix/
 SITES.c =	http://www.arcane-labs.net/download/OpenBSD/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.c = 	figlet-contributed-06092002${EXTRACT_SUFX}
 MAKE_FLAGS =	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet

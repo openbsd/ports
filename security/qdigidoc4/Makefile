@@ -14,7 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		qdigidoc4
 SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 SITES.eesti =		https://id.eesti.ee/

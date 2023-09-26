@@ -21,7 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 SITES.p =	${HOMEPAGE}files/
 DIST_SUBDIR =	murrine
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.p = 	MurrinaBlu-0.32.tar.gz \
 		MurrineThemePack.tar.bz2 \
 		MurrinaBlue.tar.bz2 \

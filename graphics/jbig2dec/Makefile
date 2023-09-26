@@ -5,7 +5,6 @@ CATEGORIES =	graphics
 SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/
 SITES.t =	https://jbig2dec.com/tests/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.t = 	jb2streams.zip
 
 SHARED_LIBS +=	jbig2dec	1.0	# 0.0

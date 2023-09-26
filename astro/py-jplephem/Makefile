@@ -13,7 +13,6 @@ CATEGORIES=	astro
 PERMIT_PACKAGE=	Yes
 
 SITES.jpl=	https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/a_old_versions/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.jpl=	de405.bsp de421.bsp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

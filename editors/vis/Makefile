@@ -20,7 +20,6 @@ WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
 
 SITES =			${HOMEPAGE}/releases/download/v${V}/
 SITES.test =		${HOMEPAGE}-test/releases/download/v${TEST_V}/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.test =	${TEST_DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/lua

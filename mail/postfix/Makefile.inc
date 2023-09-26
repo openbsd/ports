@@ -11,7 +11,6 @@ SITE_POSTFIX= \
 		ftp://ftp.porcupine.org/mirrors/postfix-release/
 
 DIST_SUBDIR=	postfix
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	https://www.postfix.org/
 

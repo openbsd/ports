@@ -13,8 +13,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c c++abi pthread
 
 MASTER_SITES =		https://bitbucket.org/delan/nonymous/get/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-PATCHORIG =		.openbsd.orig
 
 MODULES =		devel/cargo
 SEPARATE_BUILD =	Yes

@@ -58,7 +58,6 @@ PSEUDO_FLAVORS =	native_bootstrap
 
 DIST_SUBDIR =		rust
 EXTRACT_SUFX =		.tar.xz
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 .if ${FLAVOR} == native_bootstrap
 BUILD_DEPENDS +=	lang/rust
 .else

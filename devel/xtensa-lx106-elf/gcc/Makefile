@@ -33,7 +33,6 @@ PATCH_DIST_STRIP = -p1
 
 LIBELF =	libelf-0.8.13
 SITES.elf =	https://github.com/earlephilhower/esp-quick-toolchain/raw/master/blobs/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES.elf =	${LIBELF}${EXTRACT_SUFX}
 
 .if ${MACHINE_ARCH} == "powerpc64"

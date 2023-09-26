@@ -2,7 +2,6 @@ FW_DRIVER=	qcpas
 FW_VER=		20230625
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 # broad enough to reduce WRKSRC size but specific enough to match all DISTFILES
 EXTRACT_FILES=	\*/{qcom\*,LICEN\*}
 
