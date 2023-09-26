@@ -1,6 +1,6 @@
 COMMENT =	convert a BDF font to PSF format for the Linux console
 
-V =		1.222
+V =		1.223
 DISTNAME =	console-setup_${V}
 PKGNAME =	bdf2psf-${V}
 EXTRACT_SUFX =	.tar.xz
@@ -9,12 +9,14 @@ CATEGORIES =	converters
 
 HOMEPAGE =	https://packages.debian.org/sid/bdf2psf
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 SITES =		${SITE_DEBIAN:=main/c/console-setup/}
 
-WRKDIST =	${WRKDIR}/console-setup
+WRKDIST =	${WRKDIR}/console-setup-${V}
 
 NO_BUILD =	Yes
 
