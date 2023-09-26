@@ -1,3 +1,4 @@
 @pkgpath games/godot
 @bin bin/godot
 @man man/man6/godot.6
+share/applications/

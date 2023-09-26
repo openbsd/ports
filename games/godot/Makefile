@@ -2,12 +2,12 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
-COMMENT-sharp =		glue for mono/C# module of Godot
+COMMENT-sharp=	.NET libs for mono/C# module of Godot
 
-V =		3.5.2
+V =		3.5.3
+SHARPFILES_V =	3.5.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	6
 
 CATEGORIES =	games
 
@@ -38,7 +38,8 @@ SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
 EXTRACT_SUFX =	.tar.xz
 
 SITES.sharp =		https://thfr.info/distfiles/
-DISTFILES.sharp =	godot-${V}-mono-glue.tar.gz godot-${V}-nuget-packages.tar.xz
+DISTFILES.sharp =	godot-${SHARPFILES_V}-mono-glue.tar.gz \
+			godot-${SHARPFILES_V}-nuget-packages.tar.xz
 
 DIST_TUPLE +=	github CoaguCo-Industries GodotSteam v3.20 godotsteam # MIT
 
@@ -118,7 +119,7 @@ RUN_DEPENDS-sharp =
 RUN_DEPENDS-main =	games/godot,-sharp
 RUN_DEPENDS-tools +=	devel/msbuild \
 			games/godot,-sharp
-GLUEDIR =	${WRKDIR}/godot-${V}-mono-glue
+GLUEDIR =	${WRKDIR}/godot-${SHARPFILES_V}-mono-glue
 MONOSUFFIX =	.mono
 .else
 BUILD_PACKAGES :=	${BUILD_PACKAGES:N-sharp}
@@ -150,7 +151,7 @@ post-extract:
 		${WRKDIST}/platform/x11/
 .if ${PROPERTIES:Mmono}
 	mkdir -p ${PORTHOME}/.nuget
-	mv	${WRKDIR}/godot-${V}-nuget-packages ${PORTHOME}/.nuget/packages
+	mv	${WRKDIR}/godot-${SHARPFILES_V}-nuget-packages ${PORTHOME}/.nuget/packages
 	mv	${GLUEDIR}/mono_glue.gen.cpp ${WRKSRC}/modules/mono/glue/
 	mv	${GLUEDIR}/GodotSharp/GodotSharp/Generated \
 		${WRKSRC}/modules/mono/glue/GodotSharp/GodotSharp/
