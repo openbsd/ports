@@ -44,21 +44,21 @@ NO_TEST =		Yes
 #      loadObj_() instead.
 USE_WXNEEDED =		special
 
-MASTER_SITES =		${HOMEPAGE}dist/${GHC_VERSION}/ \
+SITES =			${HOMEPAGE}dist/${GHC_VERSION}/ \
 			${HOMEPAGE}dist/stable/dist/
-MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
+SITES.boot =		https://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
-DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
-			${BINDISTFILE}
+DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz
+DISTFILES.boot = 	${BINDISTFILE}
 
 .for m in amd64
-BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
-			ghc-${BIN_VER}-shlibs-$m.tar.gz:0
-SUPDISTFILES +=		${BINDISTFILE-$m}
+BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz \
+			ghc-${BIN_VER}-shlibs-$m.tar.gz
+SUPDISTFILES.boot +=	${BINDISTFILE-$m}
 .endfor
 
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
