@@ -21,7 +21,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://download.osgeo.org/gdal/${V:C/rc.//}/
+SITES =		https://download.osgeo.org/gdal/${V:C/rc.//}/
 WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
 MODULES =	devel/cmake \

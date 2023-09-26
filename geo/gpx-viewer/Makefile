@@ -26,7 +26,7 @@ WANTLIB += pixman-1 png psl soup-3.0 sqlite3 unistring xcb xcb-dri2
 WANTLIB += xcb-dri3 xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xml2 xshmfence z
 
-MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
+SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

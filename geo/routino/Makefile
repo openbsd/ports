@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		bz2 c m pthread z
 
-MASTER_SITES =		https://www.routino.org/download/
+SITES =			https://www.routino.org/download/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		archivers/bzip2

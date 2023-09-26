@@ -10,7 +10,7 @@ SHARED_LIBS =	spatialindex 3.0 \
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =	https://libspatialindex.org/
-MASTER_SITES =	https://github.com/libspatialindex/libspatialindex/releases/download/${V}/
+SITES =		https://github.com/libspatialindex/libspatialindex/releases/download/${V}/
 
 MODULES =	devel/cmake
 

@@ -4,7 +4,7 @@ CATEGORIES ?=	geo
 PERMIT_PACKAGE ?=	Yes
 
 HOMEPAGE ?=	https://www.gaia-gis.it/fossil/${PROJECT}/index
-MASTER_SITES ?=	https://www.gaia-gis.it/gaia-sins/${PROJECT:S/_/-/}-sources/
+SITES ?=	https://www.gaia-gis.it/gaia-sins/${PROJECT:S/_/-/}-sources/
 
 CONFIGURE_STYLE ?=	gnu
 

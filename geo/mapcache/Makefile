@@ -6,7 +6,7 @@ SHARED_LIBS +=	mapcache 3.3
 CATEGORIES=	geo www
 
 HOMEPAGE=	https://www.mapserver.org/
-MASTER_SITES=	http://download.osgeo.org/mapserver/
+SITES=		http://download.osgeo.org/mapserver/
 
 # MIT
 PERMIT_PACKAGE=	Yes

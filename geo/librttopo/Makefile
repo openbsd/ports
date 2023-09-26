@@ -10,7 +10,7 @@ HOMEPAGE =	https://git.osgeo.org/gogs/rttopo/librttopo
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	http://download.osgeo.org/librttopo/src/
+SITES =		http://download.osgeo.org/librttopo/src/
 
 CONFIGURE_STYLE=gnu
 LIB_DEPENDS =	geo/geos

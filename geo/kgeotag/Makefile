@@ -22,7 +22,7 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngine
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m marblewidget-qt5
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kgeotag/${V}/}
+SITES =		${SITE_KDE:=stable/kgeotag/${V}/}
 
 MODULES =	devel/kf5
 

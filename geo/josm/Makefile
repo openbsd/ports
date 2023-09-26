@@ -12,7 +12,7 @@ PKG_ARCH=		*
 CATEGORIES=		geo
 
 HOMEPAGE=		http://josm.openstreetmap.de/
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 MAINTAINER=		Holger Mikolon <holger@mikolon.com>
 

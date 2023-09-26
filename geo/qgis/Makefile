@@ -27,7 +27,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}downloads/
+SITES =		${HOMEPAGE}downloads/
 
 MODULES =	devel/cmake \
 		x11/qt5 \

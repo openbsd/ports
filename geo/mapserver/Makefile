@@ -25,7 +25,7 @@ PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
-MASTER_SITES=	http://download.osgeo.org/mapserver/
+SITES=		http://download.osgeo.org/mapserver/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

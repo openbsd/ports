@@ -7,7 +7,7 @@ CATEGORIES =		geo x11
 
 HOMEPAGE =		https://www.foxtrotgps.org/
 
-MASTER_SITES =		${HOMEPAGE}/releases/
+SITES =			${HOMEPAGE}/releases/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 

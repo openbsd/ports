@@ -12,7 +12,7 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/traccar/traccar/releases/download/v${V}/
+SITES =		https://github.com/traccar/traccar/releases/download/v${V}/
 
 MODULES =	java
 MODJAVA_VER =	11+

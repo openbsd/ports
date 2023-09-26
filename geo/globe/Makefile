@@ -12,7 +12,7 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 # ACME (2-clause BSD)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 WANTLIB=		c
 

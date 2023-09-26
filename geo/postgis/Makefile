@@ -20,7 +20,7 @@ WANTLIB += archive b2 brotlicommon brotlidec brotlienc bz2 hwy sharpyuv
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://download.osgeo.org/postgis/source/
+SITES=		http://download.osgeo.org/postgis/source/
 
 MODULES =	databases/postgresql
 

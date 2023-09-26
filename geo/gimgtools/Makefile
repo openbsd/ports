@@ -8,7 +8,7 @@ HOMEPAGE=	https://github.com/wuyongzheng/gimgtools
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 WANTLIB += c m
 

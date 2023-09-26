@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} cairo double-conversion glib-2.0
 WANTLIB += gsl gslcblas intl m
 
-MASTER_SITES =	https://gitlab.com/inkscape/lib2geom/-/archive/${V}/
+SITES =		https://gitlab.com/inkscape/lib2geom/-/archive/${V}/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/cmake \

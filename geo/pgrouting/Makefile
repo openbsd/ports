@@ -4,7 +4,7 @@ COMMENT =	geospatial routing extension for PostgreSQL
 
 V =		3.5.0
 DISTNAME =	pgrouting-${V}
-MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
+SITES =		https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
 CATEGORIES =	geo databases
 

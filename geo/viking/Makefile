@@ -17,7 +17,7 @@ WANTLIB += gps gthread-2.0 gtk-3 harfbuzz intl json-glib-1.0 m
 WANTLIB += magic nettle pango-1.0 pangocairo-1.0 pthread sqlite3
 WANTLIB += z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
+SITES =		${SITE_SOURCEFORGE:=viking/}
 EXTRACT_SUFX = .tar.bz2
 
 MODULES =	textproc/intltool x11/gnome

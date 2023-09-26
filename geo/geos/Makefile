@@ -12,7 +12,7 @@ SHARED_LIBS=	geos	22.0 \
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		https://trac.osgeo.org/geos/
-MASTER_SITES=		http://download.osgeo.org/geos/
+SITES=			http://download.osgeo.org/geos/
 
 EXTRACT_SUFX=		.tar.bz2
 

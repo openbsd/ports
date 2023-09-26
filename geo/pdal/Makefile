@@ -11,7 +11,7 @@ SHARED_LIBS +=  pdal_util 2.0 # 13.0
 CATEGORIES =	geo devel textproc
 
 HOMEPAGE =	https://pdal.io/
-MASTER_SITES =	https://github.com/PDAL/PDAL/releases/download/${V}/
+SITES =		https://github.com/PDAL/PDAL/releases/download/${V}/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

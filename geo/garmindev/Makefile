@@ -4,7 +4,7 @@ REVISION =	3
 DISTNAME =	garmindev-0.3.4
 CATEGORIES =	geo x11
 HOMEPAGE =	http://www.qlandkarte.org/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
+SITES =		${SITE_SOURCEFORGE:=qlandkartegt/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
