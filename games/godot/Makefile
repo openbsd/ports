@@ -99,14 +99,7 @@ DPB_PROPERTIES =	parallel
 
 .include <bsd.port.arch.mk>
 
-IS_MONO_ARCH=
-.for _arch in ${MONO_ARCHS}
-.  if ${MACHINE_ARCH} == ${_arch}
-IS_MONO_ARCH =	1
-.  endif
-.endfor
-
-.if !empty(IS_MONO_ARCH)
+.if ${PROPERTIES:Mmono}
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 PORTHOME = 		${WRKDIR}/nugethome
@@ -127,15 +120,6 @@ RUN_DEPENDS-tools +=	devel/msbuild \
 			games/godot,-sharp
 GLUEDIR =	${WRKDIR}/godot-${V}-mono-glue
 MONOSUFFIX =	.mono
-SHARP_POST_EXTRACT =	mkdir -p	${PORTHOME}/.nuget; \
-	mv	${WRKDIR}/godot-${V}-nuget-packages ${PORTHOME}/.nuget/packages; \
-	mv	${GLUEDIR}/mono_glue.gen.cpp ${WRKSRC}/modules/mono/glue/; \
-	mv	${GLUEDIR}/GodotSharp/GodotSharp/Generated \
-		${WRKSRC}/modules/mono/glue/GodotSharp/GodotSharp/; \
-	mv	${GLUEDIR}/GodotSharp/GodotSharpEditor/Generated \
-		${WRKSRC}/modules/mono/glue/GodotSharp/GodotSharpEditor/
-SHARP_DO_INSTALL =	${INSTALL_DATA_DIR} ${PREFIX}/share/godot; \
-	cp -R	${WRKBUILD}/bin/GodotSharp ${PREFIX}/share/godot/
 .else
 BUILD_PACKAGES :=	${BUILD_PACKAGES:N-sharp}
 MONOSUFFIX =
@@ -164,7 +148,15 @@ post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
 	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
 		${WRKDIST}/platform/x11/
-	${SHARP_POST_EXTRACT}
+.if ${PROPERTIES:Mmono}
+	mkdir -p ${PORTHOME}/.nuget
+	mv	${WRKDIR}/godot-${V}-nuget-packages ${PORTHOME}/.nuget/packages
+	mv	${GLUEDIR}/mono_glue.gen.cpp ${WRKSRC}/modules/mono/glue/
+	mv	${GLUEDIR}/GodotSharp/GodotSharp/Generated \
+		${WRKSRC}/modules/mono/glue/GodotSharp/GodotSharp/
+	mv	${GLUEDIR}/GodotSharp/GodotSharpEditor/Generated \
+		${WRKSRC}/modules/mono/glue/GodotSharp/GodotSharpEditor
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
@@ -189,7 +181,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.tools.${BINSUFFIX}${MONOSUFFIX} \
 		${PREFIX}/bin/godot-tools
 	# GodotSharp files if built
-	${SHARP_DO_INSTALL}
+.if ${PROPERTIES:Mmono}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/godot
+	cp -R	${WRKBUILD}/bin/GodotSharp ${PREFIX}/share/godot/
+.endif
 	# Rest: man pages, icons, desktop integration
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
