@@ -1,11 +1,13 @@
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.32
+V =		2.33
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
 
 HOMEPAGE =	https://www.newsboat.org/
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
