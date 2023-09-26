@@ -1,14 +1,17 @@
-COMMENT =		maintains info about a physical person
+COMMENT =	maintains info about a physical person
 
-DISTNAME =		User-Identity-1.01
-CATEGORIES =		misc
+DISTNAME =	User-Identity-1.02
 
-# perl
+CATEGORIES =	misc
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-PKG_ARCH =		*
 
-RUN_DEPENDS =		geo/p5-Geography-Countries
+RUN_DEPENDS =		devel/p5-Hash-Ordered>=0.014 \
+			geo/p5-Geography-Countries
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
