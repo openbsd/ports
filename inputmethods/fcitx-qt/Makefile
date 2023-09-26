@@ -21,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils GL Qt5Concurrent Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt6Core Qt6DBus Qt6Gui Qt6Widgets
 WANTLIB += c m xcb xkbcommon
 
-MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5-qt/
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-qt/
 
 MODULES =	devel/kf5 \
 		x11/qt6

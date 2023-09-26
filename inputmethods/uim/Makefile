@@ -10,7 +10,7 @@ PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
 PKGNAME-gtk3=		uim-gtk3-$V
 
-MASTER_SITES=		https://github.com/uim/uim/releases/download/$V/
+SITES=			https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
 
 SHARED_LIBS +=	uim-scm              0.0      # .0.0

@@ -5,7 +5,7 @@ PKGNAME=	lib${DISTNAME}
 REVISION=	5
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/tomoe-gtk/}
+SITES=		${SITE_SOURCEFORGE:=tomoe/tomoe-gtk/}
 
 CATEGORIES=	inputmethods japanese
 

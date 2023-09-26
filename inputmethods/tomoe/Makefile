@@ -4,7 +4,7 @@ DISTNAME=	tomoe-0.6.0
 REVISION=	4
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/}
+SITES=		${SITE_SOURCEFORGE:=tomoe/}
 
 CATEGORIES=	inputmethods japanese
 

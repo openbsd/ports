@@ -12,7 +12,7 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =  https://download.fcitx-im.org/fcitx5/fcitx5-lua/
+SITES =  	https://download.fcitx-im.org/fcitx5/fcitx5-lua/
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += m

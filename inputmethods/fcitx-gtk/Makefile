@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} atk-1.0 gdk-3 gtk-3 xkbcommon
 WANTLIB += X11 cairo cairo-gobject harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl m
 
-MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5-gtk/
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-gtk/
 
 MODULES =	devel/kf5
 MODQT5_DEPS =	No

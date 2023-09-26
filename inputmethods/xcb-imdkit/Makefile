@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += xcb xcb-util
 
-MASTER_SITES =	https://download.fcitx-im.org/fcitx5/xcb-imdkit/
+SITES =		https://download.fcitx-im.org/fcitx5/xcb-imdkit/
 EXTRACT_SUFX = .tar.xz
 
 # C11

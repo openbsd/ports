@@ -4,7 +4,7 @@ DISTNAME=	uim-tomoe-gtk-0.6.0
 REVISION=	5
 
 HOMEPAGE= 	https://osdn.jp/projects/tomoe/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
+SITES=		${SITE_SOURCEFORGE:=tomoe/uim-tomoe-gtk/}
 
 CATEGORIES=	inputmethods japanese
 

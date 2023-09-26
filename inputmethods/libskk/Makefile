@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c ffi gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl json-glib-1.0 pcre2-8 pthread xkbcommon z
 
-MASTER_SITES =		https://github.com/ueno/libskk/releases/download/${V}/
+SITES =			https://github.com/ueno/libskk/releases/download/${V}/
 
 MODULES =		textproc/intltool
 

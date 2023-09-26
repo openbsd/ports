@@ -16,7 +16,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c iconv intl m scim-1.0
 
 COMPILER=	base-clang ports-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
+SITES=		${SITE_SOURCEFORGE:=scim/}
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	inputmethods/scim

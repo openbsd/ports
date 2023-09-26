@@ -12,7 +12,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3+, APLv2 (fonts)
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/mike-fabian/ibus-typing-booster/releases/download/${VERSION}/
+SITES =			https://github.com/mike-fabian/ibus-typing-booster/releases/download/${VERSION}/
 
 MODULES =		devel/dconf \
 			lang/python

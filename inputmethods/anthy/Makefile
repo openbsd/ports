@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =	c m
 
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=anthy/37536/}
+SITES =		${SITE_OSDN_JP:=anthy/37536/}
 
 FAKE_FLAGS =	sysconfdir=$(PREFIX)/share/examples/anthy
 

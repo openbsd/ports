@@ -14,7 +14,7 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # GPLv3.0 or later
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
+SITES =			https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
 DIST_SUBDIR =		fcitx
 
 MODULES =		devel/kf5

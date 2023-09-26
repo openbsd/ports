@@ -22,7 +22,7 @@ WANTLIB += xcb-render xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=scim-imengine/37309/}
+SITES =		${SITE_OSDN_JP:=scim-imengine/37309/}
 
 LIB_DEPENDS =	inputmethods/anthy \
 		inputmethods/scim

@@ -21,7 +21,7 @@ WANTLIB += xcb-shm z Xau Xdmcp jpeg
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scim/}
+SITES=		${SITE_SOURCEFORGE:=scim/}
 
 LIB_DEPENDS=	x11/gtk+2 \
 		inputmethods/scim

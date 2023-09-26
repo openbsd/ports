@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  chewing gcroots iconv intl uim uim-scm m pthread sqlite3 z
 
-MASTER_SITES=	https://github.com/uim/uim-chewing/releases/download/uim-chewing-$V/
+SITES=	https://github.com/uim/uim-chewing/releases/download/uim-chewing-$V/
 
 LIB_DEPENDS=	chinese/libchewing \
 		inputmethods/uim>=1.8.6

@@ -11,7 +11,7 @@ CATEGORIES =	inputmethods japanese
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/ueno/libkkc/releases/download/v0.3.5/
+SITES =			https://github.com/ueno/libkkc/releases/download/v0.3.5/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		lang/python
