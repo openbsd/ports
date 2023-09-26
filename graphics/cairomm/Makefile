@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} cairo sigc-2.0
 
-MASTER_SITES=		http://cairographics.org/releases/
+SITES=			http://cairographics.org/releases/
 
 MODULES=		devel/meson
 

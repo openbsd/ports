@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xaw3d Xpm Xt c jpeg m png
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
+SITES=		${SITE_SOURCEFORGE:=mcj/}
 EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	print/transfig

@@ -13,9 +13,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
+SITES=		${SITE_SOURCEFORGE:=makehuman/}
 
 CONFIGURE_STYLE=gnu
 

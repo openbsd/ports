@@ -18,7 +18,7 @@ MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 # CeCILL, GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://files.kde.org/krita/build/dependencies/
+SITES =		https://files.kde.org/krita/build/dependencies/
 DISTFILES =	gmic-${V}-patched.tar.gz
 
 MODULES =	devel/kf5 x11/qt5

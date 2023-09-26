@@ -6,7 +6,7 @@ CATEGORIES=		graphics x11
 
 HOMEPAGE=		http://sf-xpaint.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sf-xpaint/}
+SITES=			${SITE_SOURCEFORGE:=sf-xpaint/}
 EXTRACT_SUFX=		.tar.bz2
 
 # MIT

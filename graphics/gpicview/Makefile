@@ -19,7 +19,7 @@ WANTLIB += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lxde/}
+SITES =		${SITE_SOURCEFORGE:=lxde/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	textproc/intltool

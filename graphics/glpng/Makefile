@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.fifi.org/doc/libglpng-dev/glpng.html
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://mirrors.nycbug.org/pub/distfiles/
+SITES=		http://mirrors.nycbug.org/pub/distfiles/
 
 WANTLIB=	GL png>=5
 

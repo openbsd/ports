@@ -29,7 +29,7 @@ WANTLIB += osdCPU osdGPU png potrace pugixml pystring sndfile
 WANTLIB += swresample swscale tbb tiff util webp webpdemux webpmux
 WANTLIB += yaml-cpp z zstd
 
-MASTER_SITES =	https://download.blender.org/source/ \
+SITES =		https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
 
 EXTRACT_SUFX = .tar.xz

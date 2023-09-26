@@ -19,7 +19,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		https://imagemagick.org/
 
-MASTER_SITES=		https://imagemagick.org/archive/releases/ \
+SITES=			https://imagemagick.org/archive/releases/ \
 			https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ \
 			ftp://sunsite.icm.edu.pl/packages/ImageMagick/
 

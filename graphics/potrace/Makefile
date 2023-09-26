@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=potrace/}
+SITES=		${SITE_SOURCEFORGE:=potrace/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libpotrace

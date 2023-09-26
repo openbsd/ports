@@ -8,7 +8,7 @@ CATEGORIES =	graphics
 SHARED_LIBS =	alleg	0.0	# 4.2
 
 HOMEPAGE =	http://alpng.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=alpng/}
+SITES =		${SITE_SOURCEFORGE:=alpng/}
 
 # bsd-like
 # "Altered source versions must be plainly marked as such

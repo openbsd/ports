@@ -22,7 +22,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-rc/~rc/}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ftgl/}
+SITES =			${SITE_SOURCEFORGE:=ftgl/}
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-gl-inc=${X11BASE}/include	\
 			--with-gl-lib=${X11BASE}/lib

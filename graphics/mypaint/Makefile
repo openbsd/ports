@@ -19,7 +19,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz
 WANTLIB += intl json-c lcms2 m mypaint pango-1.0 pangocairo-1.0
 WANTLIB += png z
 
-MASTER_SITES =	https://github.com/mypaint/mypaint/releases/download/v${MODPY_EGG_VERSION}/
+SITES =			https://github.com/mypaint/mypaint/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 

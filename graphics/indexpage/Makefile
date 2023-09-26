@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.lysator.liu.se/~unicorn/hacks/indexpage/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 RUN_DEPENDS=	graphics/p5-Image-Size \
 		graphics/ImageMagick

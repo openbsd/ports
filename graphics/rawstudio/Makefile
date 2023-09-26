@@ -6,7 +6,7 @@ REVISION =	24
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://rawstudio.org/
-MASTER_SITES =	${HOMEPAGE}files/release/
+SITES =		${HOMEPAGE}files/release/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

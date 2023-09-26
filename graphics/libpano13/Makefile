@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c jpeg m png tiff z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=panotools/}
+SITES =			${SITE_SOURCEFORGE:=panotools/}
 
 MODULES =		devel/cmake
 

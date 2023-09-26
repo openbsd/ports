@@ -19,7 +19,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
+SITES=		${SITE_SOURCEFORGE:=gphoto/}
 
 RUN_DEPENDS=	devel/desktop-file-utils
 

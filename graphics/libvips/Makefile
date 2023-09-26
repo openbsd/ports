@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} c cgif expat gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 imagequant intl jpeg m spng tiff webp webpdemux
 WANTLIB += webpmux
 
-MASTER_SITES =	https://github.com/libvips/libvips/releases/download/v${VERSION}/
+SITES =	https://github.com/libvips/libvips/releases/download/v${VERSION}/
 
 MODULES =	devel/meson
 

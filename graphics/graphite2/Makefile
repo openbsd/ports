@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silgraphite/}
+SITES=		${SITE_SOURCEFORGE:=silgraphite/}
 
 MODULES=	devel/cmake \
 		lang/python

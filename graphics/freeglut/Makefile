@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL X11 Xi Xrandr Xxf86vm m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freeglut/}
+SITES =			${SITE_SOURCEFORGE:=freeglut/}
 
 MODULES =		devel/cmake
 

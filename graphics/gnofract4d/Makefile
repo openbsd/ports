@@ -2,7 +2,7 @@ COMMENT =		fractal image generator
 
 MODPY_EGG_VERSION =	4.3
 
-MASTER_SITES =		https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_EGG_VERSION}/
+SITES =			https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_EGG_VERSION}/
 DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
 REVISION =		2
 

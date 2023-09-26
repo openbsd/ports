@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kirigami-addons/}
+SITES =			${SITE_KDE:=stable/kirigami-addons/}
 
 MODULES =		devel/kf5
 

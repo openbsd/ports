@@ -26,7 +26,7 @@ WANTLIB += tiff webp umfpack
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://download.gimp.org/pub/gegl/${API_VERSION}/
+SITES=			http://download.gimp.org/pub/gegl/${API_VERSION}/
 
 MODULES=		devel/meson \
 			x11/gnome

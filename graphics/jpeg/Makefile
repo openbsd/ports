@@ -16,7 +16,7 @@ HOMEPAGE=	https://libjpeg-turbo.org/
 # BSD-style
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libjpeg-turbo/}
+SITES=		${SITE_SOURCEFORGE:=libjpeg-turbo/}
 
 WANTLIB=	c m
 

@@ -10,7 +10,7 @@ HOMEPAGE =		https://www.freetype.org/ttfautohint/#download
 # FreeType License or GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=/freetype/}
+SITES =			${SITE_SAVANNAH:=/freetype/}
 
 COMPILER =		base-clang ports-gcc
 

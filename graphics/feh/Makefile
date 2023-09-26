@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	Imlib2 X11 Xinerama c curl exif m png
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=	graphics/imlib2 \
 		graphics/libexif \

@@ -6,7 +6,7 @@ REVISION =	4
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
+SITES=		${SITE_XCONTRIB:=utilities/}
 
 # Public Domain-ish
 PERMIT_PACKAGE=	Yes

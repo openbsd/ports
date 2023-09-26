@@ -36,7 +36,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.dcmtk.org/dcmtk.php.en
 
-MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk${V:S/.//g}/
+SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk${V:S/.//g}/
 
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk363/COPYRIGHT

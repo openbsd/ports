@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.mcternan.me.uk/mscgen/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/software/
+SITES=			${HOMEPAGE}/software/
 
 WANTLIB += c fontconfig freetype gd iconv jpeg m png pthread tiff webp z
 

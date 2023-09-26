@@ -12,7 +12,7 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pstoedit/}
+SITES=		${SITE_SOURCEFORGE:=pstoedit/}
 
 RUN_DEPENDS=	print/ghostscript/gnu
 BUILD_DEPENDS=	${RUN_DEPENDS}

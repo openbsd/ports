@@ -10,7 +10,7 @@ CATEGORIES =	graphics
 # Public Domain/CC0 1.0
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://github.com/mypaint/mypaint-brushes/releases/download/v$V/
+SITES =	https://github.com/mypaint/mypaint-brushes/releases/download/v$V/
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes

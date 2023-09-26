@@ -26,7 +26,7 @@ WANTLIB += harfbuzz intl json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 lensfun
 
 
-# MASTER_SITES = http://www.logarithmic.net/pfh-files/resynthesizer/
+# SITES = http://www.logarithmic.net/pfh-files/resynthesizer/
 
 COMPILER =		base-clang ports-gcc
 

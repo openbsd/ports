@@ -21,7 +21,7 @@ WANTLIB += pangocairo-1.0 raw tiff
 # C++14
 COMPILER=		base-clang ports-gcc
 
-MASTER_SITES=		https://github.com/BestImageViewer/geeqie/releases/download/v${V}/
+SITES=	https://github.com/BestImageViewer/geeqie/releases/download/v${V}/
 
 MODULES=		devel/meson
 

@@ -6,7 +6,7 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.dechifro.org/dcraw/
 
-MASTER_SITES =	https://www.dechifro.org/dcraw/archive/
+SITES =		https://www.dechifro.org/dcraw/archive/
 
 # Some code is completely free, some is under the GPL
 PERMIT_PACKAGE =	Yes

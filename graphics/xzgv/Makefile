@@ -16,7 +16,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0>=0.11 harfbuzz iconv intl
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xzgv/}
+SITES=		${SITE_SOURCEFORGE:=xzgv/}
 
 LIB_DEPENDS+=   x11/gtk+2
 

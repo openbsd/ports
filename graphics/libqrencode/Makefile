@@ -12,7 +12,7 @@ HOMEPAGE=		https://fukuchi.org/works/qrencode/
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://fukuchi.org/works/qrencode/
+SITES=			https://fukuchi.org/works/qrencode/
 
 WANTLIB += c m png pthread z
 

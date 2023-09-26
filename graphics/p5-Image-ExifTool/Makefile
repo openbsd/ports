@@ -10,7 +10,7 @@ MAINTAINER=	Remi Pointel <rpointel@openbsd.org>
 # perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Image/} \
+SITES=		${SITE_PERL_CPAN:=Image/} \
 		${HOMEPAGE}
 
 MODULES=	cpan

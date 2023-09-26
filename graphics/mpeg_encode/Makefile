@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 PERMIT_PACKAGE=     Yes
 WANTLIB=		c m jpeg>=62
 
-MASTER_SITES=	http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/
+SITES=		http://bmrc.berkeley.edu/ftp/pub/multimedia/mpeg/encode/
 
 LIB_DEPENDS=    graphics/jpeg
 

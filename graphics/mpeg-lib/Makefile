@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
+SITES=		ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 		http://starship.python.net/~gward/mpeglib/
 
 CONFIGURE_STYLE= gnu

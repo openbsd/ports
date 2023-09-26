@@ -3,7 +3,7 @@ COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 V=		1.3.3
 DISTNAME=	libdvbpsi-${V}
 CATEGORIES=	devel graphics
-MASTER_SITES=	https://download.videolan.org/pub/libdvbpsi/${V}/
+SITES=		https://download.videolan.org/pub/libdvbpsi/${V}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	dvbpsi	8.1

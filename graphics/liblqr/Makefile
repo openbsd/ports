@@ -4,7 +4,7 @@ CATEGORIES =			graphics devel
 HOMEPAGE = 			http://liblqr.wikidot.com/
 DISTNAME = 			liblqr-1-0.4.2
 PKGNAME = 			liblqr-0.4.2
-MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
+SITES =				${HOMEPAGE}local--files/en:download-page/
 EXTRACT_SUFX =			.tar.bz2
 REVISION =                      1
 

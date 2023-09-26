@@ -4,7 +4,7 @@ DISTNAME =	kquickimageeditor-0.2.0
 
 CATEGORIES =	graphics x11
 
-MASTER_SITES =  ${MASTER_SITE_KDE:=stable/kquickimageeditor/}
+SITES =  	${SITE_KDE:=stable/kquickimageeditor/}
 
 HOMEPAGE =	https://invent.kde.org/libraries/kquickimageeditor/
 

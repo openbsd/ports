@@ -15,8 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 Xau Xdmcp Xext c m z
 
-MASTER_SITES =	ftp://bourbon.usc.edu/pub/tgif/ \
-		${MASTER_SITE_SOURCEFORGE:=tgif/}
+SITES =		ftp://bourbon.usc.edu/pub/tgif/ \
+		${SITE_SOURCEFORGE:=tgif/}
 
 RUN_DEPENDS =	graphics/netpbm
 

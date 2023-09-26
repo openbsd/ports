@@ -17,7 +17,7 @@ HOMEPAGE=		http://gmt.soest.hawaii.edu/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.iris.washington.edu/pub/gmt/4/
+SITES=			ftp://ftp.iris.washington.edu/pub/gmt/4/
 			
 DISTFILES=		GMT$V_src.tar.bz2 \
 			GMT$V_man.tar.bz2 \

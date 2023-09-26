@@ -16,7 +16,7 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += intl jasper jpeg lcms2 m pango-1.0 pangocairo-1.0 png
 WANTLIB += pthread tiff z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mtpaint/}
+SITES =		${SITE_SOURCEFORGE:=mtpaint/}
 
 BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	devel/gettext,-runtime \

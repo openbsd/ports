@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m paper
 
-MASTER_SITES=		${MASTER_SITE_GNU:=barcode/}
+SITES=			${SITE_GNU:=barcode/}
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			print/libpaper

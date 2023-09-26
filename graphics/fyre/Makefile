@@ -18,7 +18,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 xml2
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://releases.navi.cx/fyre/ \
+SITES=			http://releases.navi.cx/fyre/ \
 			https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS=		devel/libglade2 \

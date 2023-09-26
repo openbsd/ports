@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c gsl lcms2 m tiff vigraimpex
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
+SITES =		${SITE_SOURCEFORGE:=enblend/}
 
 COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/help2man\

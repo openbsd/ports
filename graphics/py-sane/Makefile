@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread sane
 
-MASTER_SITES=          https://github.com/python-pillow/Sane/archive/
+SITES=          	https://github.com/python-pillow/Sane/archive/
 
 FLAVORS=		python3
 FLAVOR =		python3

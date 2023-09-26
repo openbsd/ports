@@ -4,7 +4,7 @@ DISTNAME=	giflib-5.2.1
 SHARED_LIBS +=	gif                  9.0      # 7.1
 CATEGORIES=	graphics
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=giflib/}
+SITES=		${SITE_SOURCEFORGE:=giflib/}
 
 HOMEPAGE=	http://giflib.sourceforge.net/
 

@@ -36,7 +36,7 @@ WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 z
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
 WANTLIB += lensfun
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
+SITES =			${SITE_SOURCEFORGE:=hugin/}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/swig>=2 \

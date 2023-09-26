@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcursor Xinerama Xrandr Xxf86vm m pthread
 
-MASTER_SITES =	https://github.com/glfw/glfw/releases/download/${V}/
+SITES =		https://github.com/glfw/glfw/releases/download/${V}/
 EXTRACT_SUFX =	.zip
 
 MODULES =	devel/cmake

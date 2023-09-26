@@ -7,7 +7,7 @@ CATEGORIES =	graphics
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-MASTER_SITES =	${MASTER_SITE_PERL_CPAN:=GD/}
+SITES =		${SITE_PERL_CPAN:=GD/}
 
 RUN_DEPENDS =	graphics/p5-GD>=1.18 \
 		graphics/p5-GD-TextUtil

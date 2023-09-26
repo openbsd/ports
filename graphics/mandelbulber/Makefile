@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mandelbulber/}
+SITES =			${SITE_SOURCEFORGE:=mandelbulber/}
 
 LIB_DEPENDS =		graphics/png \
 			x11/gtk+2

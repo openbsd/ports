@@ -14,7 +14,7 @@ HOMEPAGE=		http://openil.sourceforge.net/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
+SITES=			${SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Xau Xdmcp lzma xcb-shm zstd

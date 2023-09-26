@@ -18,7 +18,7 @@ WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets c m poppler-qt5
 WANTLIB += unarr
 
-MASTER_SITES = https://github.com/YACReader/yacreader/releases/download/${V}/
+SITES = 	https://github.com/YACReader/yacreader/releases/download/${V}/
 
 EXTRACT_SUFX =		-src.tar.xz
 

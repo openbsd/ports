@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gif jpeg m openjp2 png tiff webp webpmux z
 
-MASTER_SITES=	${HOMEPAGE}/source/
+SITES=		${HOMEPAGE}/source/
 
 LIB_DEPENDS=	graphics/libwebp \
 		graphics/giflib \

@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	https://github.com/mchehab/zbar
 
-MASTER_SITES=	https://linuxtv.org/downloads/zbar/
+SITES=		https://linuxtv.org/downloads/zbar/
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>

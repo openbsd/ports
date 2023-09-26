@@ -6,7 +6,7 @@ DISTNAME=	png2ico-src-${VERSION}
 REVISION =	4
 CATEGORIES=	graphics www
 HOMEPAGE=	https://www.winterdrache.de/freeware/png2ico/
-MASTER_SITES=	${HOMEPAGE}data/
+SITES=		${HOMEPAGE}data/
 
 # GPL
 PERMIT_PACKAGE=	Yes

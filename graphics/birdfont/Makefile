@@ -13,7 +13,7 @@ HOMEPAGE =	https://birdfont.org/
 PERMIT_PACKAGE =	Yes
 
 
-MASTER_SITES =	https://birdfont.org/releases/
+SITES =		https://birdfont.org/releases/
 EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3

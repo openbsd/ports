@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c jasper jpeg lcms2 m z
 
-MASTER_SITES =		https://www.libraw.org/data/
+SITES =			https://www.libraw.org/data/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

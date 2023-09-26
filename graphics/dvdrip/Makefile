@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.exit1.org/dvdrip/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
+SITES=		http://www.exit1.org/dvdrip/dist/
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		devel/desktop-file-utils \

@@ -15,7 +15,7 @@ WANTLIB += freetype iconv jpeg m png ${COMPILER_LIBCXX} xcb z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=geomview/}
+SITES =			${SITE_SOURCEFORGE:=geomview/}
 
 RUN_DEPENDS =		graphics/netpbm \
 			print/ps2eps

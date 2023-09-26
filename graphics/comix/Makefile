@@ -12,7 +12,7 @@ HOMEPAGE=	http://comix.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
+SITES=		${SITE_SOURCEFORGE:=comix/}
 
 MODULES=	lang/python \
 		devel/gconf2

@@ -9,7 +9,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://billposer.org/Software/Downloads/
+SITES =		http://billposer.org/Software/Downloads/
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
 		graphics/xoris

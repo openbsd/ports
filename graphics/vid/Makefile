@@ -9,7 +9,7 @@ HOMEPAGE=	http://ovtvid-bsd.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ovtvid-bsd/}
+SITES=		${SITE_SOURCEFORGE:=ovtvid-bsd/}
 
 LIB_DEPENDS=	graphics/netpbm
 WANTLIB=	c m netpbm

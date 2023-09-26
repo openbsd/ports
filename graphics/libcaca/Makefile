@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses m z
 
-MASTER_SITES=		https://github.com/cacalabs/libcaca/releases/download/v${V}/
+SITES=		https://github.com/cacalabs/libcaca/releases/download/v${V}/
 
 FLAVORS=		no_x11
 FLAVOR?=

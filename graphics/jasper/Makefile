@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m pthread
 
-MASTER_SITES =	https://github.com/jasper-software/jasper/releases/download/version-$V/
+SITES =	https://github.com/jasper-software/jasper/releases/download/version-$V/
 
 # -stdc=gnu11
 COMPILER =	base-clang ports-gcc

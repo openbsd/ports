@@ -11,7 +11,7 @@ SHARED_LIBS +=  ${i}-3.0 0.0
 
 CATEGORIES=	graphics
 
-MASTER_SITES=	https://download.gimp.org/gimp/v${V}/ \
+SITES=		https://download.gimp.org/gimp/v${V}/ \
 		https://www.mirrorservice.org/sites/ftp.gimp.org/gimp/v${V}/
 EXTRACT_SUFX=	.tar.xz
 

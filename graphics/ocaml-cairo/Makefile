@@ -15,7 +15,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += z
 
-MASTER_SITES =	https://github.com/Chris00/ocaml-cairo/releases/download/${V}/
+SITES =		https://github.com/Chris00/ocaml-cairo/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
 
 MODULES =	lang/ocaml

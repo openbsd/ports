@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c jpeg m png z
 
-MASTER_SITES =	https://github.com/saitoha/libsixel/releases/download/v$V/
+SITES =		https://github.com/saitoha/libsixel/releases/download/v$V/
 
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png

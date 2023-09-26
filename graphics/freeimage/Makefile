@@ -16,7 +16,7 @@ WANTLIB=		${COMPILER_LIBCXX} m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=freeimage/}
+SITES=			${SITE_SOURCEFORGE:=freeimage/}
 EXTRACT_SUFX=		.zip
 
 WRKDIST=		${WRKDIR}/FreeImage

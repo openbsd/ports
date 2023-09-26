@@ -5,7 +5,7 @@ PKGNAME=	aalib-1.4
 REVISION=	7
 SHARED_LIBS=	aa	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aa-project/}
+SITES=		${SITE_SOURCEFORGE:=aa-project/}
 
 HOMEPAGE=	http://aa-project.sourceforge.net/aalib/
 

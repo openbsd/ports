@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m png z
 
-MASTER_SITES=	http://www.catb.org/~esr/gif2png/
+SITES=		http://www.catb.org/~esr/gif2png/
 
 LIB_DEPENDS=	graphics/png
 

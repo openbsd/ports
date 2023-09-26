@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.pdflib.com/products/more/jpeg2ps.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE:S/.html/\//}
+SITES=		${HOMEPAGE:S/.html/\//}
 
 TEST_TARGET=	test
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS} -c' LD='${CC}'

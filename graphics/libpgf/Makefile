@@ -16,7 +16,7 @@ WANTLIB =	m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libpgf/libpgf/${V}-latest/}
+SITES =			${SITE_SOURCEFORGE:=libpgf/libpgf/${V}-latest/}
 EXTRACT_SUFX =		.zip
 
 CONFIGURE_STYLE =	autoreconf

@@ -12,7 +12,7 @@ WANTLIB=	c m pthread png ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
+SITES=		${SITE_GNU:=ocrad/}
 
 CONFIGURE_STYLE=simple
 

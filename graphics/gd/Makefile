@@ -18,7 +18,7 @@ WANTLIB += c fontconfig freetype iconv jpeg m png tiff webp z
 COMPILER =	base-clang ports-gcc
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-MASTER_SITES=	https://github.com/libgd/libgd/releases/download/${PKGNAME}/
+SITES=		https://github.com/libgd/libgd/releases/download/${PKGNAME}/
 
 MODULES=	devel/cmake
 

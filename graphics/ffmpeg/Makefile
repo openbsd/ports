@@ -5,7 +5,7 @@ DISTNAME=	ffmpeg-${V}
 EPOCH=		1
 REVISION=	2
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	https://ffmpeg.org/releases/
+SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
 USE_NOBTCFI-amd64=	Yes

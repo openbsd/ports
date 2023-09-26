@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2
 
-MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
+SITES =		https://github.com/FNA-XNA/FNA/releases/download/${V}/
 EXTRACT_SUFX =	.zip
 
 # base-gcc does not have thread-local storage

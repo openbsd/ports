@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv intl
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libiptcdata/}
+SITES =			${SITE_SOURCEFORGE:=libiptcdata/}
 
 LIB_DEPENDS =		devel/gettext,-runtime
 

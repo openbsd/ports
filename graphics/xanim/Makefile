@@ -8,7 +8,7 @@ CATEGORIES =	graphics x11
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DIST_SUBDIR =	xanim
-MASTER_SITES =	${MASTER_SITES_OPENBSD}
+SITES =		${SITES_OPENBSD}
 
 # License: NOFEE
 PERMIT_PACKAGE =Yes

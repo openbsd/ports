@@ -19,7 +19,7 @@ WANTLIB += Xau Xdmcp xcb-shm
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
+SITES=		${SITE_SOURCEFORGE:=makehuman/}
 
 LIB_DEPENDS=	graphics/animorph>=0.3 \
 		graphics/freeglut \

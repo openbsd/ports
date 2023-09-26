@@ -10,7 +10,7 @@ HOMEPAGE=	http://sourceforge.net/projects/dumpmpeg/
 PERMIT_PACKAGE=	Yes
 
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dumpmpeg/}
+SITES=		${SITE_SOURCEFORGE:=dumpmpeg/}
 
 LIB_DEPENDS =	devel/smpeg
 WANTLIB =	SDL c pthread smpeg>=1.3

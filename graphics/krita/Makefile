@@ -57,7 +57,7 @@ WANTLIB += jpeg lcms2 m mypaint openjp2 png poppler poppler-qt5
 WANTLIB += quazip1-qt5 raw tiff turbojpeg webp z jxl jxl_threads
 WANTLIB += sharpyuv OpenEXRCore-3_2
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
+SITES =		${SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/kf5 \

@@ -10,7 +10,7 @@ CATEGORIES =	graphics
 # GPLv2+
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	https://github.com/mypaint/mypaint-brushes/releases/download/v$V/
+SITES =	https://github.com/mypaint/mypaint-brushes/releases/download/v$V/
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes

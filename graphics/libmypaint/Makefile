@@ -19,7 +19,7 @@ WANTLIB += babl-0.1 ffi gegl-0.4 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl json-c json-glib-1.0 lcms2
 WANTLIB += m pcre2-8 pthread z
 
-MASTER_SITES =	https://github.com/mypaint/libmypaint/releases/download/v$V/
+SITES =	https://github.com/mypaint/libmypaint/releases/download/v$V/
 
 MODULES =		textproc/intltool
 

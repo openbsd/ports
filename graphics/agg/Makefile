@@ -15,9 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 freetype iconv m sndio usbhid xcb z SDL>=6 ${COMPILER_LIBCXX} pthread
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9

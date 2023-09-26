@@ -23,9 +23,9 @@ LIB_DEPENDS =	x11/qt5/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-MASTER_SITES =	https://github.com/enricoros/fotowall/releases/download/v${V}/
+SITES =		https://github.com/enricoros/fotowall/releases/download/v${V}/
 
-EXTRACT_SUFX =		-RETRO.tar.bz2
+EXTRACT_SUFX =	-RETRO.tar.bz2
 # avoid WRKDIST = ${WRKDIR}
 EXTRACT_CASES= *.tar.bz2) \
         bzip2 -dc ${FULLDISTDIR}/$$archive| ${TAR} xf - -C ${WRKDIST};;

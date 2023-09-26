@@ -18,7 +18,7 @@ WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl jpeg json-glib-1.0
 WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png xcb xcb-render xcb-shm z
 
-MASTER_SITES =	https://launchpad.net/dibuja/trunk/${V}/+download/
+SITES =		https://launchpad.net/dibuja/trunk/${V}/+download/
 
 COMPILER =	base-clang ports-gcc
 

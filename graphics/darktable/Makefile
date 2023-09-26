@@ -26,7 +26,7 @@ WANTLIB += png pugixml raw rsvg-2 secret-1 sqlite3 tiff webp
 WANTLIB += webpmux xml2 z OpenEXRCore-3_2
 
 
-MASTER_SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
+SITES=	https://github.com/darktable-org/darktable/releases/download/release-$V/
 
 MODULES=	devel/cmake \
 		lang/lua \

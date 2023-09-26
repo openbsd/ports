@@ -19,7 +19,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread rsvg-2 tiff webp webpdemux xcb xcb-render
 WANTLIB += xcb-shm xml2 z zstd
 
-MASTER_SITES =		https://hpjansson.org/chafa/releases/
+SITES =			https://hpjansson.org/chafa/releases/
 EXTRACT_SUFX =		.tar.xz
 
 COMPILER =		base-clang ports-gcc

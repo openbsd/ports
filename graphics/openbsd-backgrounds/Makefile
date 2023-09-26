@@ -6,7 +6,7 @@ MAINTAINER = 	Marc Espie <espie@openbsd.org>
 GH_PROJECT = 	openbsd-backgrounds
 GH_TAGNAME = 	3.1
 GH_ACCOUNT = 	marcespie
-MASTER_SITES = 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
+SITES = 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 
 # CC-by 4.0
 PERMIT_PACKAGE = Yes

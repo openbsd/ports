@@ -29,7 +29,7 @@ FIX_CRLF_FILES =	src/ipeui/Makefile
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/otfried/ipe/releases/download/v$V/
+SITES =			https://github.com/otfried/ipe/releases/download/v$V/
 
 MODULES =		lang/lua \
 			x11/qt5

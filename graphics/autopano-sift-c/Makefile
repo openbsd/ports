@@ -15,7 +15,7 @@ WANTLIB += c jpeg m pano13 png pthread ${COMPILER_LIBCXX} tiff xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
+SITES =			${SITE_SOURCEFORGE:=hugin/}
 
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/libpano13 \

@@ -8,7 +8,7 @@ EXTRACT_SUFX=		.tgz
 
 HOMEPAGE=		https://spiegl.de/qiv/
 
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

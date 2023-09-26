@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets c m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdiagram/${VERSION}/}
+SITES =		${SITE_KDE:=stable/kdiagram/${VERSION}/}
 
 MODULES =	devel/cmake \
 		devel/kf5

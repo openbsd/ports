@@ -5,7 +5,7 @@ REVISION=	7
 
 CATEGORIES=	graphics
 
-MASTER_SITES=	http://www.xsane.org/download/
+SITES=		http://www.xsane.org/download/
 
 HOMEPAGE=	http://www.xsane.org/
 

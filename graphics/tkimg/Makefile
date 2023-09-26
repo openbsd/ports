@@ -11,7 +11,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE =	Yes
 WANTLIB =		X11 Xext Xft Xss fontconfig m
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkimg/}
+SITES =			${SITE_SOURCEFORGE:=tkimg/}
 MODULES =		x11/tk
 
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \

@@ -13,7 +13,7 @@ HOMEPAGE =	https://www.contextfreeart.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.contextfreeart.org/download/
+SITES =		https://www.contextfreeart.org/download/
 EXTRACT_SUFX =	.tgz
 
 WANTLIB += ${COMPILER_LIBCXX} c icudata icui18n icuuc m png

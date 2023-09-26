@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  X11 Xext c gsl gslcblas iconv intl m png z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xaos/XaoS/${VERSION}/}
+SITES =			${SITE_SOURCEFORGE:=xaos/XaoS/${VERSION}/}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

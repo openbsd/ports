@@ -21,7 +21,7 @@ WANTLIB += pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libexif/}
+SITES=		${SITE_SOURCEFORGE:=libexif/}
 
 
 LIB_DEPENDS=	x11/gtk+2 \

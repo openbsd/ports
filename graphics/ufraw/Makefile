@@ -8,7 +8,7 @@ DISTNAME=	ufraw-0.22
 REVISION=	8
 
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
+SITES=		${SITE_SOURCEFORGE:=ufraw/}
 HOMEPAGE=	http://ufraw.sourceforge.net/
 
 # GPLv2+

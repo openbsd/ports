@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c jpeg png
 
-MASTER_SITES =	https://dl.suckless.org/farbfeld/
+SITES =		https://dl.suckless.org/farbfeld/
 
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg

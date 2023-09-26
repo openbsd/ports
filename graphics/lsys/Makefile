@@ -10,7 +10,7 @@ HOMEPAGE=	http://software.schmorp.de/pkg/lsys
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://crappydiffs.org/
+SITES=		http://crappydiffs.org/
 
 WANTLIB += GL GLU X11 Xext c m pthread ${COMPILER_LIBCXX}
 

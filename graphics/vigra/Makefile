@@ -14,7 +14,7 @@ HOMEPAGE =		http://ukoethe.github.io/vigra/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
-MASTER_SITES = https://github.com/ukoethe/vigra/releases/download/Version-${V}/
+SITES = 	https://github.com/ukoethe/vigra/releases/download/Version-${V}/
 
 # MIT
 PERMIT_PACKAGE =	Yes

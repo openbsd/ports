@@ -25,7 +25,7 @@ WANTLIB += harfbuzz iconv intl jpeg lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib potrace
 WANTLIB += sigc-2.0 soup-2.4 xml2 xslt z
 
-MASTER_SITES =	https://media.inkscape.org/dl/resources/file/
+SITES =		https://media.inkscape.org/dl/resources/file/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \

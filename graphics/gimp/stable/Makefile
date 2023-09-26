@@ -12,7 +12,7 @@ SHARED_LIBS +=  $i-2.0 275.0
 CATEGORIES=	graphics
 
 DIR=		gimp/v2.10
-MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \
+SITES=		https://download.gimp.org/pub/${DIR}/ \
 		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/
 
 HOMEPAGE=	https://www.gimp.org/

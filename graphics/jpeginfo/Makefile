@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c jpeg
 
-MASTER_SITES =		https://www.kokkonen.net/tjko/src/
+SITES =			https://www.kokkonen.net/tjko/src/
 
 LIB_DEPENDS =		graphics/jpeg
 

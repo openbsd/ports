@@ -16,7 +16,7 @@ WANTLIB += curl fftw3 fftw3_threads
 WANTLIB += ICE Qt5Core Qt5Gui Qt5Network Qt5Widgets SM Xext 
 WANTLIB += png gmic
 
-MASTER_SITES = 	https://gmic.eu/files/source/
+SITES = 	https://gmic.eu/files/source/
 DISTFILES = 	gmic_$V${EXTRACT_SUFX}
 
 MODULES = 	devel/cmake x11/qt5

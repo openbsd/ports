@@ -8,7 +8,7 @@ DISTNAME=	videod-${VERSION}
 REVISION =	1
 CATEGORIES=	graphics
 HOMEPAGE=	http://videod.csoft.org/
-MASTER_SITES=	http://stable.csoft.org/videod/
+SITES=		http://stable.csoft.org/videod/
 
 # BSD license
 PERMIT_PACKAGE=	Yes

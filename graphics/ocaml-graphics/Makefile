@@ -11,7 +11,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB +=	X11
 
-MASTER_SITES =	https://github.com/ocaml/graphics/releases/download/${V}/
+SITES =		https://github.com/ocaml/graphics/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
 
 MODULES =	lang/ocaml

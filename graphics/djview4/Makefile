@@ -14,7 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5PrintSupport Qt5Widgets c djvulibre glib-2.0 iconv
 WANTLIB += intl m pcre2-8 tiff
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
+SITES=		${SITE_SOURCEFORGE:=djvu/}
 
 MODULES=	x11/qt5
 

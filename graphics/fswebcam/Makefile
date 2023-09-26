@@ -6,7 +6,7 @@ CATEGORIES=		graphics
 
 HOMEPAGE=		https://www.sanslogic.co.uk/fswebcam/
 
-MASTER_SITES=		https://www.sanslogic.co.uk/fswebcam/files/
+SITES=			https://www.sanslogic.co.uk/fswebcam/files/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

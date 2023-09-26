@@ -9,7 +9,7 @@ HOMEPAGE=	http://math.smsu.edu/~erik/software.php?id=63
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://math.smsu.edu/~erik/files/
+SITES=		http://math.smsu.edu/~erik/files/
 
 WANTLIB=	SDL X11 c pthread SDL_image
 LIB_DEPENDS=	devel/sdl-image

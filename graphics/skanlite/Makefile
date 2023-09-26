@@ -6,7 +6,7 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	https://kde.org/applications/graphics/org.kde.skanlite
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

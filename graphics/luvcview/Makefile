@@ -8,7 +8,7 @@ CATEGORIES=		graphics x11
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://mxhaard.free.fr/
-MASTER_SITES=	${HOMEPAGE}/spca50x/Investigation/uvc/
+SITES=		${HOMEPAGE}/spca50x/Investigation/uvc/
 
 LIB_DEPENDS=	devel/sdl>=1.2.5
 WANTLIB=	SDL c pthread

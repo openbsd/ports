@@ -25,7 +25,7 @@ WANTLIB += rsvg-2 sigc-2.0 tiff z ${COMPILER_LIBCXX}
 # c++11
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		https://www.rawtherapee.com/shared/source/
+SITES =			https://www.rawtherapee.com/shared/source/
 EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		devel/cmake

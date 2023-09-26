@@ -21,7 +21,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv jpeg lzma m png
 WANTLIB += tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
 
-MASTER_SITES=		https://gitlab.com/sane-project/backends/-/archive/${V}/
+SITES=			https://gitlab.com/sane-project/backends/-/archive/${V}/
 
 COMPILER=		base-clang ports-gcc
 

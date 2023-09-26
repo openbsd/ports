@@ -20,9 +20,9 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread ${COMPILER_LIBCXX} xcb
 WANTLIB += xcb-render xcb-shm z fribidi jpeg
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${HOMEPAGE}chrome/common/releases/
+SITES=		${HOMEPAGE}chrome/common/releases/
 
 LIB_DEPENDS=	x11/gtk+2,-main
 

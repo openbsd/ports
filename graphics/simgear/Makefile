@@ -14,7 +14,7 @@ HOMEPAGE =		http://www.flightgear.org
 # LGPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=flightgear/}
+SITES =			${SITE_SOURCEFORGE:=flightgear/}
 EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += GL GLU OpenThreads curl expat lzma m openal osg osgDB osgGA

@@ -10,7 +10,7 @@ REVISION-main =	0
 REVISION-gui =	1
 
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
+SITES=		${SITE_SOURCEFORGE:=jocr/}
 
 HOMEPAGE=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 

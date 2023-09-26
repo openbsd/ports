@@ -24,8 +24,8 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 z
 WANTLIB += gthread-2.0 pthread
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
 
-# MASTER_SITES = http://www.logarithmic.net/pfh-files/resynthesizer/
-MASTER_SITES = ${MASTER_SITES_GITHUB}
+# SITES = http://www.logarithmic.net/pfh-files/resynthesizer/
+SITES = ${SITES_GITHUB}
 
 BUILD_DEPENDS =	graphics/gimp/stable \
 		devel/gettext,-tools \

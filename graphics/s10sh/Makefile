@@ -3,7 +3,7 @@ COMMENT=	S10sh - a Canon PowerShot digital camera driver
 DISTNAME=	s10sh-0.2.0
 REVISION =	5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.kyuzz.org/antirez/s10sh-src/
+SITES=		http://www.kyuzz.org/antirez/s10sh-src/
 
 HOMEPAGE=	http://www.kyuzz.org/antirez/s10sh.html
 

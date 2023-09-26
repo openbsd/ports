@@ -11,7 +11,7 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libvidcap/}
+SITES=		${SITE_SOURCEFORGE:=libvidcap/}
 
 WANTLIB=	pthread m ${COMPILER_LIBCXX}
 

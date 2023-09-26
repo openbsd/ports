@@ -10,7 +10,7 @@ PERMIT_PACKAGE = Yes
 
 SHARED_LIBS = 	liftoff 0.0 # 0.5.0
 
-MASTER_SITES =	https://gitlab.freedesktop.org/emersion/libliftoff/-/archive/v$V/
+SITES =	https://gitlab.freedesktop.org/emersion/libliftoff/-/archive/v$V/
 
 COMPILER = 	base-clang ports-gcc
 COMPILER_LANGS = c

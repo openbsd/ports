@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c iconv intl m png z
 
-MASTER_SITES =		http://savannah.nongnu.org/download/icoutils/
+SITES =			http://savannah.nongnu.org/download/icoutils/
 
 EXTRACT_SUFX =		.tar.bz2
 

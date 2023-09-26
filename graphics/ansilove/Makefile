@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	ansilove c
 
-MASTER_SITES =	https://github.com/ansilove/ansilove/releases/download/$V/
+SITES =		https://github.com/ansilove/ansilove/releases/download/$V/
 
 LIB_DEPENDS =	graphics/libansilove
 

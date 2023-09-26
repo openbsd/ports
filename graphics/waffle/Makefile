@@ -2,7 +2,7 @@ COMMENT=	OpenGL API/window system abstraction
 DISTNAME=	waffle-1.6.3
 CATEGORIES=	x11 graphics
 HOMEPAGE=	https://mesa.pages.freedesktop.org/waffle/
-MASTER_SITES=	${HOMEPAGE}files/release/${DISTNAME}/
+SITES=		${HOMEPAGE}files/release/${DISTNAME}/
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>

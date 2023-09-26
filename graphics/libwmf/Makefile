@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	X11 c expat freetype m xcb z jpeg png Xau Xdmcp
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wvware/}
+SITES=		${SITE_SOURCEFORGE:=wvware/}
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png

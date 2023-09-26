@@ -16,7 +16,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB =	m
 
-MASTER_SITES =	https://github.com/fontforge/libspiro/releases/download/${V}/
+SITES =		https://github.com/fontforge/libspiro/releases/download/${V}/
 
 # spiro fails to build using base libtool:
 # cc: error: unsupported option '--mode=link'

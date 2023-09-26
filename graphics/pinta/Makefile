@@ -11,7 +11,7 @@ HOMEPAGE =	http://pinta-project.com/
 PERMIT_PACKAGE =	Yes
 
 # These tarballs have a proper configure. GH checkout does not...
-MASTER_SITES =	https://github.com/PintaProject/Pinta/releases/download/${V}/
+SITES =		https://github.com/PintaProject/Pinta/releases/download/${V}/
 
 MODULES =	lang/mono \
 		textproc/intltool

@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL c curl curses fftw3 gc glut gsl gslcblas m readline sigsegv z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=asymptote/}
+SITES=			${SITE_SOURCEFORGE:=asymptote/}
 
 MODULES=		lang/python
 

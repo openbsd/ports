@@ -15,9 +15,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://mp3butcher.github.io/Cal3D/sources/
+SITES =		https://mp3butcher.github.io/Cal3D/sources/
 
 CONFIGURE_STYLE=gnu
 

@@ -13,7 +13,7 @@ WANTLIB += wx_gtk3u_xrc-3.2 xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =		https://distfiles.sigtrap.nl/
 
 LIB_DEPENDS =	converters/libiconv \
 		textproc/libxml \

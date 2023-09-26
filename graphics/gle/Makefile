@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/gle/gle/${DISTNAME}/}
+SITES=			${SITE_SOURCEFORGE:=project/gle/gle/${DISTNAME}/}
 
 BUILD_DEPENDS=		graphics/freeglut
 

@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW m
 
-MASTER_SITES =		http://www.opencsg.org/
+SITES =			http://www.opencsg.org/
 
 MODULES =		devel/qmake \
 			x11/qt5

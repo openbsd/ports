@@ -13,7 +13,7 @@ WANTLIB +=		c m
 
 ALL_TARGET =		dpic
 
-MASTER_SITES =		https://ece.uwaterloo.ca/~aplevich/dpic/
+SITES =			https://ece.uwaterloo.ca/~aplevich/dpic/
 
 TEST_DEPENDS =		print/texlive/base \
 			print/texlive/texmf,-main

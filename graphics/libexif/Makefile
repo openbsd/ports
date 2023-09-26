@@ -16,7 +16,7 @@ PERMIT_PACKAGE=   Yes
 
 WANTLIB += iconv intl m
 
-MASTER_SITES=	https://github.com/libexif/libexif/releases/download/v$V/
+SITES=	https://github.com/libexif/libexif/releases/download/v$V/
 
 LIB_DEPENDS=		devel/gettext,-runtime
 SEPARATE_BUILD=		Yes

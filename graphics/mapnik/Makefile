@@ -24,7 +24,7 @@ WANTLIB += gdal glib-2.0 gobject-2.0 icudata icui18n icuuc
 WANTLIB += intl jpeg lzo2 m pcre2-8 pixman-1 png>=17.0 pq pthread
 WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://github.com/mapnik/mapnik/releases/download/v${V}/
+SITES =		https://github.com/mapnik/mapnik/releases/download/v${V}/
 MODULES =	devel/scons
 
 # C++14

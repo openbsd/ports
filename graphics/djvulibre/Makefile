@@ -10,7 +10,7 @@ HOMEPAGE=	http://djvu.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
+SITES=		${SITE_SOURCEFORGE:=djvu/}
 
 WANTLIB=	c iconv m jpeg pthread ${COMPILER_LIBCXX} tiff z lzma zstd
 

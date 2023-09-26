@@ -9,7 +9,7 @@ CATEGORIES=	graphics
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
+SITES=		ftp://ftp.lab.kdd.co.jp/infosystems/misc/tools/
 
 NO_TEST=	Yes
 

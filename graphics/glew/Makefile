@@ -5,7 +5,7 @@ COMMENT=	GL Extension Wrangler library
 
 DISTNAME=	glew-2.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
+SITES=		${SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	GLEW	9.0

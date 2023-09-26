@@ -12,7 +12,7 @@ HOMEPAGE=	http://mapivi.de.vu/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mapivi/}
+SITES=		${SITE_SOURCEFORGE:=mapivi/}
 
 RUN_DEPENDS=	x11/p5-Tk>=804.025 \
 		graphics/p5-Image-ExifTool \

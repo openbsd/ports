@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		m
 
-MASTER_SITES =		${MASTER_SITE_GNU:=libxmi/}
+SITES =			${SITE_GNU:=libxmi/}
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

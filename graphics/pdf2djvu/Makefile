@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += GraphicsMagick GraphicsMagick++ c djvulibre exiv2 iconv intl m
 WANTLIB += poppler pthread ${LIBCXX}
 
-MASTER_SITES =	https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
+SITES =		https://github.com/jwilk/pdf2djvu/releases/download/${V}/ \
 		https://download.tuxfamily.org/jod/graphics/pdf2djvu/ \
 		ftp://download.tuxfamily.org/jod/graphics/pdf2djvu/
 

@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 aa c cdk exif gphoto2 gphoto2_port iconv intl jpeg
 WANTLIB += ltdl m curses popt pthread readline xcb
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
+SITES=			${SITE_SOURCEFORGE:=gphoto/}
 
 LIB_DEPENDS=		devel/cdk \
 			devel/popt \

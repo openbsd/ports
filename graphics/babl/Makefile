@@ -20,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c lcms2 m pthread
 
-MASTER_SITES=		http://download.gimp.org/pub/babl/${V:R}/
+SITES=			http://download.gimp.org/pub/babl/${V:R}/
 
 MODULES=		devel/meson \
 			x11/gnome

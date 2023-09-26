@@ -9,7 +9,7 @@ HOMEPAGE=		http://redsymbol.net/software/l2p/
 # Public Domain
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://static.redsymbol.net/software/l2p/dist/
+SITES=			http://static.redsymbol.net/software/l2p/dist/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		graphics/ImageMagick \

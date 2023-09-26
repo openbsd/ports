@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c exif jpeg m pixman-1
 
-MASTER_SITES=	http://www.kraxel.org/releases/fbida/
+SITES=		http://www.kraxel.org/releases/fbida/
 
 LIB_DEPENDS=	graphics/libexif \
 		graphics/jpeg

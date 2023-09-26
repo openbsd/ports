@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5DNSSD Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += c gif m microhttpd miniupnpc qt5keychain sodium vpx
 
-MASTER_SITES =	https://drawpile.net/files/src/
+SITES =		https://drawpile.net/files/src/
 
 MODULES =	devel/kf5
 

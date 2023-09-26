@@ -9,7 +9,7 @@ HOMEPAGE = 	https://kristaps.bsd.lv/kplot/
 # ISC licence
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES = 	${HOMEPAGE}/snapshots/
+SITES = 	${HOMEPAGE}/snapshots/
 
 EXTRACT_SUFX =	.tgz
 

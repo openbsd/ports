@@ -4,7 +4,7 @@ DISTNAME=	gracula-3.0
 CATEGORIES=	graphics
 REVISION =	0
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.whizkidtech.redprince.net/gcl/
 

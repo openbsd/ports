@@ -7,7 +7,7 @@ REVISION=	9
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://lua-gd.luaforge.net/
-MASTER_SITES=	http://luaforge.net/frs/download.php/1592/
+SITES=		http://luaforge.net/frs/download.php/1592/
 
 # MIT
 PERMIT_PACKAGE=	Yes

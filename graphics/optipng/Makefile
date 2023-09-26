@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m png z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=optipng/}
+SITES =			${SITE_SOURCEFORGE:=optipng/}
 
 LIB_DEPENDS =		graphics/png
 

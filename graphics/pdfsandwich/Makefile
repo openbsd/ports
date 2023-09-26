@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pdfsandwich/}
+SITES =			${SITE_SOURCEFORGE:=pdfsandwich/}
 
 EXTRACT_SUFX =		.tar.bz2
 

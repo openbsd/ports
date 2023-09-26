@@ -12,7 +12,7 @@ HOMEPAGE =	https://www.ansilove.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/ansilove/libansilove/releases/download/${V}/
+SITES =	https://github.com/ansilove/libansilove/releases/download/${V}/
 
 WANTLIB =	m gd
 

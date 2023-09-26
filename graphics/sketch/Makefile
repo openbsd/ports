@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 FIX_CRLF_FILES =	makefile
 MAKE_FILE =		makefile

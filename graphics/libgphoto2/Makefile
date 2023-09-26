@@ -25,7 +25,7 @@ WANTLIB += freetype gd iconv intl jpeg ltdl lzma m nghttp2 nghttp3
 WANTLIB += ngtcp2 ngtcp2_crypto_quictls png sharpyuv ssl tiff
 WANTLIB += usb usb-1.0 webp xml2 z zstd
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gphoto/}
+SITES=			${SITE_SOURCEFORGE:=gphoto/}
 
 BUILD_DEPENDS=		devel/doxygen
 

@@ -8,7 +8,7 @@ CATEGORIES=	graphics x11
 
 # http://www.trilon.com/xv/index.html
 HOMEPAGE=	https://github.com/jasper-software/xv
-MASTER_SITES=	https://github.com/jasper-software/xv/releases/download/v$V/
+SITES=		${HOMEPAGE}/releases/download/v$V/
 
 PERMIT_PACKAGE=	Yes
 

@@ -5,7 +5,7 @@ CATEGORIES=		graphics multimedia
 
 SHARED_LIBS +=  vcdinfo              0.0      # 2.0
 
-MASTER_SITES=		${MASTER_SITE_GNU:=vcdimager/}
+SITES=			${SITE_GNU:=vcdimager/}
 
 HOMEPAGE=		http://www.vcdimager.org/
 

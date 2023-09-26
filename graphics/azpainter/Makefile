@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xcursor Xext Xi c fontconfig freetype iconv jpeg
 WANTLIB += m png pthread sharpyuv tiff webp z
 
-MASTER_SITES =	https://gitlab.com/azelpg/azpainter/-/archive/v${V}/
+SITES =		https://gitlab.com/azelpg/azpainter/-/archive/v${V}/
 
 # C11
 COMPILER =	base-clang ports-gcc

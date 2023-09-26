@@ -5,7 +5,7 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	http://xoris.sf.net/
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xoris/}
+SITES =		${SITE_SOURCEFORGE:=xoris/}
 
 # MIT/X license
 PERMIT_PACKAGE =	Yes

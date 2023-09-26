@@ -5,7 +5,7 @@ REVISION=	1
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.zero-based.org/software/jpegpixi/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -25,7 +25,7 @@ WANTLIB += opencv_ml opencv_objdetect opencv_photo opencv_stitching
 WANTLIB += opencv_video opencv_videoio
 
 
-MASTER_SITES = 	https://gmic.eu/files/source/
+SITES = 	https://gmic.eu/files/source/
 DISTFILES = 	gmic_$V${EXTRACT_SUFX}
 
 COMPILER =	base-clang ports-gcc 

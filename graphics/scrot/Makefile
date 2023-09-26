@@ -13,7 +13,7 @@ COMPILER_LANGS=		c
 
 WANTLIB += Imlib2 X11 Xcomposite Xext Xfixes Xinerama c
 
-MASTER_SITES=		https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
+SITES=			https://github.com/resurrecting-open-source-projects/scrot/releases/download/${V}/
 
 LIB_DEPENDS=		graphics/imlib2
 

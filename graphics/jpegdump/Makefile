@@ -1,7 +1,7 @@
 COMMENT =	dump raw jpeg exif information
 CATEGORIES =	graphics devel
 
-MASTER_SITES =	https://svn.xiph.org/experimental/giles/
+SITES =		https://svn.xiph.org/experimental/giles/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL2 SDL2_image X11 c iconv m png tiff z ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://pulkomandy.tk/projects/GrafX2/downloads/
+SITES =		https://pulkomandy.tk/projects/GrafX2/downloads/
 
 MODULES =	lang/lua
 MODLUA_VERSION = 5.3

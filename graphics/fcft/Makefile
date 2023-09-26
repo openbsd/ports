@@ -3,7 +3,7 @@ COMMENT = 	small font loading and glyph rasterization library
 DISTNAME =	fcft-$V
 V =		3.1.6
 
-MASTER_SITES =	https://codeberg.org/dnkl/fcft/archive/
+SITES =		https://codeberg.org/dnkl/fcft/archive/
 DISTFILES =     fcft-{}${V}${EXTRACT_SUFX}
 
 CATEGORIES =	graphics

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	http://www.cl.cam.ac.uk/~mgk25/download/
+SITES =		http://www.cl.cam.ac.uk/~mgk25/download/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -Wall" \
 		VERSION="${LIBjbig_VERSION}"

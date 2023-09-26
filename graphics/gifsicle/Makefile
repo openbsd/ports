@@ -13,7 +13,7 @@ WANTLIB =		c ICE SM X11 m pthread
 
 HOMEPAGE =		http://www.lcdf.org/gifsicle/
 
-MASTER_SITES =		http://www.lcdf.org/gifsicle/
+SITES =			http://www.lcdf.org/gifsicle/
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69

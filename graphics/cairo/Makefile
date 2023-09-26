@@ -18,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://cairographics.org/snapshots/
+SITES=			https://cairographics.org/snapshots/
 
 WANTLIB += X11 Xext Xrender fontconfig freetype glib-2.0 gobject-2.0
 WANTLIB += lzo2 m pixman-1 png pthread xcb xcb-render xcb-shm
