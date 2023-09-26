@@ -5,7 +5,7 @@ DISTFILES=	${DISTNAME}{ucblogo}${EXTRACT_SUFX}
 CATEGORIES=	lang
 
 HOMEPAGE=	https://people.eecs.berkeley.edu/~bh/logo.html
-MASTER_SITES=	https://people.eecs.berkeley.edu/~bh/downloads/
+SITES=		https://people.eecs.berkeley.edu/~bh/downloads/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

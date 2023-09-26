@@ -29,7 +29,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c execinfo m pthread z
 
-MASTER_SITES=	https://download.mono-project.com/sources/mono/
+SITES=		https://download.mono-project.com/sources/mono/
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	lang/mono \

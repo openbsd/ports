@@ -11,7 +11,7 @@ HOMEPAGE =		https://steveicarus.github.io/iverilog/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.icarus.com/pub/eda/verilog/v11/
+SITES=			ftp://ftp.icarus.com/pub/eda/verilog/v11/
 
 WANTLIB += ${COMPILER_LIBCXX} bz2 c curses m readline z
 

@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m ncurses pthread
 
 # Can't use upstream; no OpenBSD bootstrap.
-MASTER_SITES =	https://devio.us/~bcallah/source/
+SITES =		https://devio.us/~bcallah/source/
 
 # Code uses GNU C extensions clang doesn't like.
 COMPILER =	ports-gcc

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gc m pthread z
 
-MASTER_SITES =		https://github.com/HaxeFoundation/neko/archive/
+SITES =			https://github.com/HaxeFoundation/neko/archive/
 MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/git
 LIB_DEPENDS =		devel/boehm-gc,-main

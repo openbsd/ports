@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gmp mpfr
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 BUILD_DEPENDS =	devel/bison \
 		textproc/gsed \

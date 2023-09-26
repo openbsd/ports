@@ -8,7 +8,7 @@ MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
 CATEGORIES=	lang
 
 HOMEPAGE=	https://www.call-cc.org/
-MASTER_SITES=	https://code.call-cc.org/releases/${V:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
+SITES=		https://code.call-cc.org/releases/${V:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -17,7 +17,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=gforth/}
+SITES =			${SITE_GNU:=gforth/}
 
 WANTLIB += avcall c callback ffi ltdl m pthread
 

@@ -25,7 +25,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =	${MASTER_SITE_GNU:=apl/}
+SITES =		${SITE_GNU:=apl/}
 
 LIB_DEPENDS =	devel/pcre2 \
 		math/fftw3 \

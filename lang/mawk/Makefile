@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m
 
-MASTER_SITES=	https://invisible-mirror.net/archives/mawk/ \
+SITES=		https://invisible-mirror.net/archives/mawk/ \
 		ftp://ftp.invisible-island.net/mawk/
 EXTRACT_SUFX=	.tgz
 

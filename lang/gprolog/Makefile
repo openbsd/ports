@@ -27,9 +27,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=		http://www.gprolog.org/ \
+SITES=			http://www.gprolog.org/ \
 			http://www.gprolog.org/old_versions/ \
-			${MASTER_SITE_GNU:=gprolog/}
+			${SITE_GNU:=gprolog/}
 
 CONFIGURE_STYLE=	gnu dest no-autoheader
 

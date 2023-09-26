@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODLUA_WANTLIB}
 WANTLIB += c curses m readline
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=datalog/}
+SITES=			${SITE_SOURCEFORGE:=datalog/}
 
 MODULES=		lang/lua
 

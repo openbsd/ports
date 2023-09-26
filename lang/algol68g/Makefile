@@ -8,7 +8,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://jmvdveer.home.xs4all.nl/
+SITES =		https://jmvdveer.home.xs4all.nl/
 
 WANTLIB += c curl curses m pthread
 

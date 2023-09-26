@@ -10,7 +10,7 @@ REVISION=	0
 EXTRACT_CASES=	*.txi) cp ${FULLDISTDIR}/$$archive ${WRKDIR};;
 WRKDIST=	${WRKDIR}
 
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+SITES=		http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 do-build:

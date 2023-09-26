@@ -22,7 +22,7 @@ COMPILER_LANGS =	c
 
 WANTLIB =		atomic_ops c ffi kvm m pthread uv zstd
 
-MASTER_SITES =		https://moarvm.org/releases/
+SITES =			https://moarvm.org/releases/
 
 BUILD_DEPENDS =		math/libtommath>=1.2.0
 LIB_DEPENDS =		devel/libffi \

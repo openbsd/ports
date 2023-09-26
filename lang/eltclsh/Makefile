@@ -3,7 +3,7 @@ COMMENT =	Libedit interface to Tcl/Tk interpreters
 DISTNAME =	eltclsh-1.18
 CATEGORIES =	lang x11
 
-MASTER_SITES =	https://www.openrobots.org/distfiles/eltclsh/
+SITES =		https://www.openrobots.org/distfiles/eltclsh/
 
 HOMEPAGE =	https://git.openrobots.org/projects/eltclsh/
 

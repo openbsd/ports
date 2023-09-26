@@ -16,7 +16,7 @@ WANTLIB += xshmfence z
 
 SEPARATE_BUILD =	Yes
 
-MASTER_SITES =	${SQUEAK_SITE}unix-linux/
+SITES =		${SQUEAK_SITE}unix-linux/
 
 RUN_DEPENDS =		squeak-sources-${SOURCEV}:lang/squeak/sources
 

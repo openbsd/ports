@@ -9,7 +9,7 @@ HOMEPAGE=		https://www.gnu.org/software/kawa/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=kawa/}
+SITES=			${SITE_GNU:=kawa/}
 
 MODULES=		java
 MODJAVA_VER=		1.8+

@@ -5,7 +5,7 @@ DISTNAME=	intel2gas-${VERSION}
 REVISION =	3
 CATEGORIES=	lang
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 # GPL
 PERMIT_PACKAGE=	Yes

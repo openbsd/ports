@@ -9,7 +9,7 @@ HOMEPAGE=	https://www.veripool.org/wiki/verilator/Intro
 # LGPLv3 or Perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.veripool.org/ftp/
+SITES=			https://www.veripool.org/ftp/
 EXTRACT_SUFX=		.tgz
 
 WANTLIB=		c m ${COMPILER_LIBCXX}

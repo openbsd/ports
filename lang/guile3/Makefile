@@ -26,7 +26,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curses ffi gc gmp iconv intl m pthread readline
 WANTLIB += unistring
 
-MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
+SITES=		${SITE_GNU:=guile/}
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c

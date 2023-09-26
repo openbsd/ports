@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c m
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=brandy/}
+SITES =		${SITE_SOURCEFORGE:=brandy/}
 
 LIB_DEPENDS +=	devel/sdl
 

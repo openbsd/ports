@@ -6,7 +6,7 @@ DISTNAME=	jikes-1.22
 REVISION =	9
 CATEGORIES=	lang
 HOMEPAGE=	http://jikes.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jikes/}
+SITES=		${SITE_SOURCEFORGE:=jikes/}
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	Yozo TODA <yozo@v007.vaio.ne.jp>

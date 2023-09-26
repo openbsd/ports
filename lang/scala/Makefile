@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.scala-lang.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.lightbend.com/scala/${VERSION}/
+SITES=		https://downloads.lightbend.com/scala/${VERSION}/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	java

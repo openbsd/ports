@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses m pthread readline
 
-MASTER_SITES =	https://github.com/ibara/ports/releases/download/v1.0/
+SITES =		https://github.com/ibara/ports/releases/download/v1.0/
 
 CONFIGURE_STYLE =	gnu
 

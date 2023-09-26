@@ -16,11 +16,11 @@ HOMEPAGE=	http://www.freehdl.seul.org/
 # (L)GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/~enaroska/
+SITES=		${HOMEPAGE}/~enaroska/
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 CXXFLAGS +=	-Wno-parentheses-equality

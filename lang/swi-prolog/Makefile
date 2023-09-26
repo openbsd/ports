@@ -22,7 +22,7 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt archive c crypto curses
 WANTLIB += db edit execinfo fontconfig freetype gmp iodbc jpeg m
 WANTLIB += ossp-uuid pcre pthread readline ssl z
 
-MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
+SITES =			${HOMEPAGE}download/stable/src/ \
 			https://distfiles.sigtrap.nl/
 
 

@@ -23,7 +23,7 @@ CATEGORIES=		lang www
 MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=		https://www.php.net/
-MASTER_SITES=		https://www.php.net/distributions/
+SITES=			https://www.php.net/distributions/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade

@@ -8,7 +8,7 @@ HOMEPAGE=	http://tinyscheme.sourceforge.net/home.html
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyscheme/}
+SITES=		${SITE_SOURCEFORGE:=tinyscheme/}
 
 WANTLIB += c m
 

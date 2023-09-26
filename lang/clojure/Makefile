@@ -15,7 +15,7 @@ MAINTAINER =		Omar Polo <op@openbsd.org>
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://download.clojure.org/install/
+SITES =			https://download.clojure.org/install/
 
 MODULES =		java
 MODJAVA_VER =		1.8+

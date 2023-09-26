@@ -15,7 +15,7 @@ EXTRACT_SUFX =	.tgz
 # LGPLv2 or later
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}static/files/release/
+SITES =			${HOMEPAGE}static/files/release/
 
 COMPILER =		base-clang ports-gcc
 USE_GMAKE =		Yes

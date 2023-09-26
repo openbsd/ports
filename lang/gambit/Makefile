@@ -17,7 +17,7 @@ MAINTAINER=	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # LGPLv2.1 / Apachev2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.gambitscheme.org/$V/
+SITES=		https://www.gambitscheme.org/$V/
 EXTRACT_SUFX=	.tgz
 
 WANTLIB +=	c crypto m ssl util

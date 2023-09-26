@@ -2,7 +2,7 @@ CATEGORIES=	books lang
 COMMENT=	Icon language implemention reference book
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/doc/
+SITES=		http://www.cs.arizona.edu/icon/ftp/doc/
 
 
 # This documents version 9.3 of the language.

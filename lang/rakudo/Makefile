@@ -21,7 +21,7 @@ COMPILER_LANGS =	c
 
 WANTLIB += atomic_ops c ffi kvm m moar pthread uv zstd
 
-MASTER_SITES =		https://rakudo.org/dl/rakudo/
+SITES =		https://rakudo.org/dl/rakudo/
 
 BUILD_DEPENDS =	lang/nqp>=${NQP_VERSION} \
 		math/libtommath

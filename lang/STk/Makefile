@@ -10,7 +10,7 @@ CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
 
-MASTER_SITES=	http://kaolin.unice.fr/STk/Distrib/
+SITES=		${HOMEPAGE}Distrib/
 
 # BSD-like licenses apply
 PERMIT_PACKAGE=	Yes

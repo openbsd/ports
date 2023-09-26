@@ -5,7 +5,7 @@ EXTRACT_ONLY =
 NO_BUILD =	Yes
 DISTNAME =	squeak-sources-${SOURCEV}
 PKG_ARCH = *
-MASTER_SITES =	${SQUEAK_SITE}
+SITES =		${SQUEAK_SITE}
 REVISION=	0
 
 do-install:

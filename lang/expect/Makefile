@@ -6,7 +6,7 @@ PKGNAME =	expect-${VERSION}
 REVISION =	7
 SHARED_LIBS =	expect545 0.0
 CATEGORIES =	lang
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
+SITES =		${SITE_SOURCEFORGE:=expect/}
 
 HOMEPAGE =	https://core.tcl-lang.org/expect/index
 # PD

@@ -8,7 +8,7 @@ EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		lang
 
 HOMEPAGE =		https://nim-lang.org/
-MASTER_SITES =		https://nim-lang.org/download/
+SITES =			${HOMEPAGE}download/
 
 # MIT
 PERMIT_PACKAGE =	Yes

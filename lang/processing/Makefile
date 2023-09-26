@@ -13,7 +13,7 @@ HOMEPAGE=		http://processing.org/
 # Core libraries: LGPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=processing/}
+SITES=			${SITE_GOOGLECODE:=processing/}
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		devel/desktop-file-utils

@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.s48.org/
 # 3-clause BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/$V/
+SITES=			${HOMEPAGE}/$V/
 EXTRACT_SUFX=		.tgz
 
 WANTLIB=		c m pthread

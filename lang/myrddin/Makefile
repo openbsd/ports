@@ -10,7 +10,7 @@ CATEGORIES =		lang
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://myrlang.org/
-MASTER_SITES =		https://myrlang.org/releases/
+SITES =			https://myrlang.org/releases/
 
 # MIT
 PERMIT_PACKAGE =	Yes

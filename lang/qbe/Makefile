@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://c9x.me/compile/release/
+SITES =		https://c9x.me/compile/release/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

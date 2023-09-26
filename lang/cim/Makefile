@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-MASTER_SITES =	${MASTER_SITE_GNU:=cim/}
+SITES =		${SITE_GNU:=cim/}
 
 CONFIGURE_STYLE =	gnu
 

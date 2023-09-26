@@ -5,7 +5,7 @@ PKGNAME =	pcc-${PKGVER}
 
 WANTLIB += c
 
-MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
+SITES =		http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
 		ftp://pcc.ludd.ltu.se/pub/pcc/
 
 CONFIGURE_ENV =	YACC=/usr/bin/yacc

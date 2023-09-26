@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://eigenstate.org/distfiles/ \
+SITES =		https://eigenstate.org/distfiles/ \
 		https://spinroot.com/spin/Src/
 
 ALL_TARGET =	spin

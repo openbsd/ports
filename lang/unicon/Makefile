@@ -12,7 +12,7 @@ FIX_EXTRACT_PERMISSIONS= Yes
 
 HOMEPAGE=	http://unicon.sourceforge.net/
 
-MASTER_SITES=	http://icon.cs.unlv.edu/v9/
+SITES=		http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 # GPL

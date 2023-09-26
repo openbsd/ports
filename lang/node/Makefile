@@ -25,7 +25,7 @@ MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
+SITES =			${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
 

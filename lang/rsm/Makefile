@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-MASTER_SITES =	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_TAGNAME}/
+SITES =	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_TAGNAME}/
 
 NO_TEST =	Yes
 MAKE_FILE =	BSDmakefile

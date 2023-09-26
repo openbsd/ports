@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto ffi m readline sqlite3 ssl util z
 
-MASTER_SITES =	ftp://ftp.snobol4.org/snobol/ \
+SITES =		ftp://ftp.snobol4.org/snobol/ \
 		ftp://ftp.snobol4.org/snobol/old/
 
 COMPILER =	base-clang ports-gcc

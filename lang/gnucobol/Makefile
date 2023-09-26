@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c cjson curses db gmp iconv intl lzma m pthread xml2
 WANTLIB += z
 
-MASTER_SITES =	${MASTER_SITE_GNU:=gnucobol/}
+SITES =		${SITE_GNU:=gnucobol/}
 
 # base makeinfo chokes on gnucobol texinfo files
 BUILD_DEPENDS =	print/texinfo

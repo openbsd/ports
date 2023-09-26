@@ -1,7 +1,7 @@
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 LLVM_V =	13.0.0
 CATEGORIES =	lang
-MASTER_SITES =	https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
+SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
 COMPILER =	ports-clang
 MODULES =		devel/cmake

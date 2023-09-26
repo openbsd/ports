@@ -4,7 +4,7 @@ COMMENT-main-no_x11 =	programming language with generators
 VERSION =	9.5.1
 DISTNAME =	icon-v951src
 CATEGORIES =	lang
-MASTER_SITES = 	http://www.cs.arizona.edu/icon/ftp/packages/unix/
+SITES = 	http://www.cs.arizona.edu/icon/ftp/packages/unix/
 DISTFILES =	icon-v951src.tgz
 
 MULTI_PACKAGES =	-main #-compiler

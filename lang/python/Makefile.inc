@@ -30,7 +30,7 @@ PKGNAME-tools =	python-tools-${FULL_VERSION}
 PKGSPEC-tools =	python-tools-${VERSION_SPEC}
 
 CATEGORIES =	lang
-MASTER_SITES =	https://www.python.org/ftp/${PSUBDIR}/
+SITES =		https://www.python.org/ftp/${PSUBDIR}/
 PSUBDIR ?=	python/${FULL_VERSION}
 EXTRACT_SUFX =	.tgz
 

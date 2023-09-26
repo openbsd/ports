@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c llvm${MODCLANG_VERSION}/lib/clang-cpp m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/clazy/${V}/src/}
+SITES =			${SITE_KDE:=stable/clazy/${V}/src/}
 EXTRACT_SUFX =		.tar.xz
 
 COMPILER =		base-clang ports-gcc

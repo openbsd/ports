@@ -25,7 +25,7 @@ PERMIT_PACKAGE =Yes
 
 BUILD_DEPENDS +=	devel/bison
 
-MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 
 LANGS = c,c++
 

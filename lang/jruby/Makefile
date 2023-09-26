@@ -17,9 +17,9 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # EPLv1/GPLv2/LGPLv2.1/Ruby/MIT/BSD/Apache/CPL
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
-MASTER_SITES.jffi =	https://github.com/jnr/jffi/archive/refs/tags/
-MASTER_SITES.gem =	${MASTER_SITE_RUBYGEMS}
+SITES =		https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
+SITES.jffi =	https://github.com/jnr/jffi/archive/refs/tags/
+SITES.gem =	${SITE_RUBYGEMS}
 
 MODULES =	java
 MODJAVA_VER =	17+

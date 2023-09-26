@@ -18,7 +18,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB =	c m util
 
-MASTER_SITES =	http://synthcode.com/scheme/chibi/ \
+SITES =		http://synthcode.com/scheme/chibi/ \
 		https://download.tuxfamily.org/jod/lang/chibi-scheme/ \
 		ftp://download.tuxfamily.org/jod/lang/chibi-scheme/
 

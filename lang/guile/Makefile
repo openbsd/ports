@@ -13,7 +13,7 @@ SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-60-v-2 2.2 \
 		guilereadline-v-17 17.3
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
+SITES=		${SITE_GNU:=guile/}
 
 HOMEPAGE=	https://www.gnu.org/software/guile/
 

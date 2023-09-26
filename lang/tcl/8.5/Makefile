@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
+SITES =			${SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
 MAKE_FLAGS =		TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'

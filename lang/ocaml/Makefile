@@ -18,7 +18,7 @@ PKGSPEC =	ocaml-=${VERSION:C/\+//}
 
 CATEGORIES=	lang
 BASENAME =	${DISTNAME:R}
-MASTER_SITES=	https://caml.inria.fr/pub/distrib/${BASENAME}/
+SITES=		https://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 DISTNAME =	ocaml-${VERSION}

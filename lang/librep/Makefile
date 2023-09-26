@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c ffi gdbm gmp iconv intl m curses pthread readline
 
-MASTER_SITES=           https://download.tuxfamily.org/librep/
+SITES=           	https://download.tuxfamily.org/librep/
 EXTRACT_SUFX=           .tar.xz
 
 

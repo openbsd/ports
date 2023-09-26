@@ -4,7 +4,7 @@ V=		5.1.0
 DISTNAME=	gawk-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU:=gawk/}
+SITES=		${SITE_GNU:=gawk/}
 
 HOMEPAGE=	https://www.gnu.org/software/gawk/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>

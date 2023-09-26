@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 
-MASTER_SITES =	https://duktape.org/
+SITES =		https://duktape.org/
 
 USE_GMAKE =	Yes
 

@@ -8,7 +8,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://www.msen.com/~clif/
+SITES =		http://www.msen.com/~clif/
 DISTFILES =	tcltutor30b7.tgz
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}

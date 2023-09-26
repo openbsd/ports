@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # use pledge()
 WANTLIB = ${COMPILER_LIBCXX} c crypto m
 
-MASTER_SITES =	https://github.com/WebAssembly/wabt/releases/download/${V}/
+SITES =		https://github.com/WebAssembly/wabt/releases/download/${V}/
 
 EXTRACT_SUFX =	.tar.xz
 

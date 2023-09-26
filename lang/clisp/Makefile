@@ -16,7 +16,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libsigsegv \
 			devel/ffcall>=1.10p1
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=clisp/}
+SITES=			${SITE_SOURCEFORGE:=clisp/}
 EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes

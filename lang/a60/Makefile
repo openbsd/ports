@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xaw Xext Xmu Xt c m
 
-MASTER_SITES =	https://www.bertnase.de/a60/
+SITES =		https://www.bertnase.de/a60/
 
 CONFIGURE_STYLE =	gnu
 

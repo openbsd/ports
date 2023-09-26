@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m ncurses readline
 
-MASTER_SITES=		http://newlisp.org/downloads/
+SITES=			http://newlisp.org/downloads/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		devel/xdg-utils

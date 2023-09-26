@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
 
-MASTER_SITES =	https://bellard.org/quickjs/
+SITES =		https://bellard.org/quickjs/
 EXTRACT_SUFX =	.tar.xz
 
 # Requires stdatomic

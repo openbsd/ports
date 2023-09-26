@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD
 PERMIT_PACKAGE =Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
+SITES =		${SITE_SOURCEFORGE:=eagle/} \
 		https://download.eagle.to/releases/${V}.${P}/ \
 		https://distfiles.sigtrap.nl/
 

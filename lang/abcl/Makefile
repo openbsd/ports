@@ -13,7 +13,7 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/releases/${V}/
+SITES =			${HOMEPAGE}/releases/${V}/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}

@@ -17,7 +17,7 @@ WANTLIB += Xft Xinerama c fltk fltk_images fontconfig m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://www.basic-converter.org/stable/ \
+SITES =			https://www.basic-converter.org/stable/ \
 			https://www.basic-converter.org/museum/
 
 BUILD_DEPENDS =		shells/zsh
