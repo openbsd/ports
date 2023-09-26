@@ -35,10 +35,9 @@ DIST_SUBDIR=		sunclock
 LIB_DEPENDS-main=	graphics/jpeg \
 			graphics/png
 
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-
 .if ${BUILD_PACKAGES:M-maps} # with maps
-DISTFILES+=	${SUPDISTFILES}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=		${EXTRACT_ONLY} ${SUPDISTFILES}
 
 post-extract:
 	PATH=${PORTPATH} ${BZIP2} -dkc ${FULLDISTDIR}/medium_images_270804.tar.bz2 | tar -xf - \
