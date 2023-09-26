@@ -54,7 +54,7 @@ WANTLIB-xwnmo =		ICE SM X11 Xext Xmu Xt c
 RUN_DEPENDS =		japanese/Wnn,-data
 RUN_DEPENDS-data =	
 
-MASTER_SITES =	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
+SITES =		ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
 DISTFILES =	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
 

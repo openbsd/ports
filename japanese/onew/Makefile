@@ -9,7 +9,7 @@ DISTNAME=	jvim2.0r+onew2.2.10
 REVISION=	4
 CATEGORIES=	japanese
 
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
+SITES=		ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

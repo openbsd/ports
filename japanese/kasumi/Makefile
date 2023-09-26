@@ -10,7 +10,7 @@ HOMEPAGE =	https://osdn.jp/projects/kasumi/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=kasumi/41436/}
+SITES =		${SITE_OSDN_JP:=kasumi/41436/}
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender anthy anthydic atk-1.0 c cairo fontconfig

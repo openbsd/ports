@@ -21,7 +21,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread ssl xcb xcb-render xcb-shm z Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
+SITES =		${SITE_SOURCEFORGE:=gwaei/}
 
 MODULES =	devel/dconf \
 		textproc/intltool \

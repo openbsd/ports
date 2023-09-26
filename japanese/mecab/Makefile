@@ -25,9 +25,9 @@ MULTI_PACKAGES = -main -ipadic
 WANTLIB-main =	c iconv m pthread ${COMPILER_LIBCXX}
 WANTLIB-ipadic =
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://distfiles.sigtrap.nl/
+SITES =		https://distfiles.sigtrap.nl/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz

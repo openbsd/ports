@@ -4,7 +4,7 @@ DISTNAME=	kbanner2
 PKGNAME=	kbanner-2
 CATEGORIES=	japanese
 
-MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
+SITES=		http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/program.html

@@ -5,7 +5,7 @@ COMMENT=	Kanji -> kana converter
 DISTNAME=	kakasi-2.3.4
 SHARED_LIBS=	kakasi	3.0
 CATEGORIES=	japanese
-MASTER_SITES=	http://kakasi.namazu.org/stable/
+SITES=		http://kakasi.namazu.org/stable/
 REVISION=	0
 
 HOMEPAGE=	http://kakasi.namazu.org/

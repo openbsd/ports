@@ -9,7 +9,7 @@ HOMEPAGE=	https://fishsoup.net/software/kanjipad/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://fishsoup.net/software/kanjipad/
+SITES=		https://fishsoup.net/software/kanjipad/
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype

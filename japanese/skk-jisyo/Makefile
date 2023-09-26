@@ -12,7 +12,7 @@ HOMEPAGE =		http://openlab.ring.gr.jp/skk/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://openlab.ring.gr.jp/skk/dic/
+SITES =			http://openlab.ring.gr.jp/skk/dic/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

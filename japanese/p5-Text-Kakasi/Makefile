@@ -5,7 +5,7 @@ PKGNAME=	p5-${DISTNAME}
 REVISION=	5
 CATEGORIES=	japanese converters textproc devel perl5
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Text/}
+SITES=		${SITE_PERL_CPAN:=Text/}
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 LIB_DEPENDS=	japanese/kakasi

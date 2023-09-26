@@ -7,7 +7,7 @@ EPOCH =		0
 CATEGORIES =	japanese textproc
 
 HOMEPAGE =	https://nkf.osdn.jp/
-MASTER_SITES =	${MASTER_SITE_OSDN_JP:=nkf/70406/}
+SITES =		${SITE_OSDN_JP:=nkf/70406/}
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

@@ -5,7 +5,7 @@ COMMENT-wnn=		X input method for Japanese, wnn support
 DISTNAME=	kinput2-v3
 PKGNAME=	ja-kinput2-3.0
 REVISION=	7
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
+SITES=		ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
 
 # License: NOFEE
