@@ -1,36 +1,36 @@
-COMMENT =		Lisp-1 dialect for the Java Virtual Machine
+COMMENT =	Lisp-1 dialect for the Java Virtual Machine
 
-V =			1.11.1.1347
-DISTNAME =		clojure-tools-$V
-PKGNAME =		clojure-$V
+V =		1.11.1.1413
+DISTNAME =	clojure-tools-$V
+PKGNAME =	clojure-$V
 
-PKG_ARCH =		*
+PKG_ARCH =	*
 
-CATEGORIES =		lang
+CATEGORIES =	lang
 
-HOMEPAGE =		https://www.clojure.org/
+HOMEPAGE =	https://www.clojure.org/
 
-MAINTAINER =		Omar Polo <op@openbsd.org>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # Eclipse Public License EPL 1.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-SITES =			https://download.clojure.org/install/
+SITES =		https://github.com/clojure/brew-install/releases/download/$V/
 
-MODULES =		java
-MODJAVA_VER =		1.8+
+MODULES =	java
+MODJAVA_VER =	1.8+
 
-WRKDIST =		${WRKDIR}/clojure-tools
+WRKDIST =	${WRKDIR}/clojure-tools
 
-RUN_DEPENDS =		java/javaPathHelper \
-			misc/rlwrap \
-			shells/bash
+RUN_DEPENDS =	java/javaPathHelper \
+		misc/rlwrap \
+		shells/bash
 
-NO_BUILD =		Yes
-NO_TEST =		Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
 
-CLOJURE_HOME =		${PREFIX}/clojure
-SUBST_VARS +=		V
+CLOJURE_HOME =	${PREFIX}/clojure
+SUBST_VARS +=	V
 
 # Maintainer target to generate completions file
 completions: install
