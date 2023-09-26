@@ -10,10 +10,9 @@ CATEGORIES =		devel lang
 
 HOMEPAGE =		https://leiningen.org
 
-SITES.jar =		${SITES:S/archive/releases\/download/}
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+SITES.jar =		https://github.com/technomancy/leiningen/releases/download/${GH_TAGNAME}/
 DISTFILES.jar =		${JAR_FILE}
-EXTRACT_ONLY =		${DISTFILES}
+EXTRACT_ONLY =		${DISTFILES:N*.jar}
 
 # EPL
 PERMIT_PACKAGE =	Yes
