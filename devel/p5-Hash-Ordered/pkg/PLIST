@@ -1,0 +1,6 @@
+${P5SITE}/Hash/
+${P5SITE}/Hash/Ordered/
+${P5SITE}/Hash/Ordered.pm
+${P5SITE}/Hash/Ordered/Benchmarks.pod
+@man man/man3p/Hash::Ordered.3p
+@man man/man3p/Hash::Ordered::Benchmarks.3p
