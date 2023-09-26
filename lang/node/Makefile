@@ -5,19 +5,17 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v18.17.1
+NODE_VERSION =		v18.18.0
 PLEDGE_VER =		1.1.3
-
-DISTFILES = 		${DISTNAME}-headers.tar.gz \
+DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-DISTFILES.b =		node-pledge-{}${PLEDGE_VER}.tar.gz
-
+DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
 
-SITES.b =		https://github.com/qbit/node-pledge/archive/
+SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
 CATEGORIES =		lang devel
 
@@ -100,8 +98,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
 		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
-	ln -fs ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
-		${PREFIX}/bin/node-gyp;
 	rm -r ${PREFIX}/lib/node_modules/npm/node_modules/node-pledge/build/node_gyp_bins
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \
 		mv $$x ../..; \

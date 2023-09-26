@@ -16,7 +16,7 @@ Index: Makefile
  build-addons: | $(NODE_EXE) test/addons/.buildstamp
 +
 +build-pledge: $(NODE_EXE)
-+	$(NODE) deps/npm/node_modules/node-gyp/bin/node-gyp rebuild \
++	$(NODE) deps/npm/node_modules/node-gyp/bin/node-gyp.js rebuild \
 +		--directory="deps/npm/node_modules/node-pledge" \
 +		--nodedir="$(shell pwd)" && \
 +	$(RM) -rf deps/npm/node_modules/node-pledge/build/Release/{.deps,../Makefile,obj.target}
