@@ -12,7 +12,7 @@ WANTLIB=		c z m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jlint/}
+SITES=		${SITE_SOURCEFORGE:=jlint/}
 
 MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \

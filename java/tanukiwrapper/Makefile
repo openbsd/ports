@@ -8,7 +8,7 @@ CATEGORIES=	java
 
 HOMEPAGE=	https://wrapper.tanukisoftware.com/
 
-MASTER_SITES=	https://download.tanukisoftware.com/wrapper/${V}/
+SITES=		https://download.tanukisoftware.com/wrapper/${V}/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

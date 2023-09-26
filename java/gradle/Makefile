@@ -13,7 +13,7 @@ MAINTAINER =	Lawrence Teo <lteo@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://services.gradle.org/distributions/
+SITES =			https://services.gradle.org/distributions/
 
 MODULES =		java
 MODJAVA_VER =		1.8+
