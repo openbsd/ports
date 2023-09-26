@@ -6,7 +6,7 @@ CATEGORIES=	mail
 
 HOMEPAGE=	https://postgrey.schweikert.ch/
 
-MASTER_SITES=	${HOMEPAGE}/pub/ \
+SITES=		${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
 
 # GPLv2

@@ -30,7 +30,7 @@ WANTLIB += xcb-render xcb-shm z fribidi Xau Xdmcp execinfo jpeg
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
-MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.7/
+SITES =			http://sylpheed.sraoss.jp/sylpheed/v3.7/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-compface \

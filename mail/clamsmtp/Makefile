@@ -5,7 +5,7 @@ CATEGORIES=    	mail
 
 HOMEPAGE=	http://memberwebs.com/stef/software/clamsmtp/
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=	security/clamav
 

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}/srs/
+SITES =			${HOMEPAGE}/srs/
 
 CONFIGURE_STYLE =	gnu
 

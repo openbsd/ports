@@ -7,7 +7,7 @@ HOMEPAGE=		http://www.rpcurnow.force9.co.uk/mairix/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mairix/} \
+SITES=			${SITE_SOURCEFORGE:=mairix/} \
 			http://www.rpcurnow.force9.co.uk/mairix/
 
 WANTLIB=		c z bz2

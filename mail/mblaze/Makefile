@@ -11,7 +11,7 @@ MAINTAINER =	Lucas <lucas@sexy.is>
 # Public domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://leahneukirchen.org/releases/
+SITES =		https://leahneukirchen.org/releases/
 
 WANTLIB =	c iconv pthread
 LIB_DEPENDS =	converters/libiconv

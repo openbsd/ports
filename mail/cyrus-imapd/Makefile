@@ -23,7 +23,7 @@ WANTLIB += ${COMPILER_LIBCXX} c com_err crypto execinfo icudata
 WANTLIB += icui18n icuuc jansson m pcre pcreposix perl sasl2 sqlite3
 WANTLIB += srs2 ssl uuid z
 
-MASTER_SITES=		https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
+SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
 COMPILER=		base-clang ports-gcc base-gcc
 USE_GMAKE=		Yes

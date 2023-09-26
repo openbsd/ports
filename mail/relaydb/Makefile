@@ -3,7 +3,7 @@ COMMENT=	spam relay database
 DISTNAME=	relaydb-1.7
 REVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.benzedrine.ch/
+SITES=		http://www.benzedrine.ch/
 
 HOMEPAGE=	http://www.benzedrine.ch/relaydb.html
 

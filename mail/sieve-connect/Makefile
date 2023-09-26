@@ -8,7 +8,7 @@ PKG_ARCH =	*
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
 HOMEPAGE =	http://github.com/philpennock/sieve-connect
-MASTER_SITES =	http://github.com/philpennock/sieve-connect/releases/download/v${V}/
+SITES =		${HOMEPAGE}/releases/download/v${V}/
 
 EXTRACT_SUFX =	.tar.bz2
 

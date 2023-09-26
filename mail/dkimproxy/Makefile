@@ -10,7 +10,7 @@ HOMEPAGE =		http://dkimproxy.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dkimproxy/}
+SITES =			${SITE_SOURCEFORGE:=dkimproxy/}
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Error \

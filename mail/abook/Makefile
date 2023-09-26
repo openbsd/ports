@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl readline
 
-MASTER_SITES=		http://abook.sourceforge.net/devel/
+SITES=			http://abook.sourceforge.net/devel/
 
 LIB_DEPENDS=		converters/libiconv \
 			devel/gettext,-runtime

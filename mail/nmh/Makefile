@@ -2,7 +2,7 @@ COMMENT=		new MH mail handling program
 
 DISTNAME=		nmh-1.8
 CATEGORIES=		mail
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
+SITES=			${SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		https://www.nongnu.org/nmh/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>

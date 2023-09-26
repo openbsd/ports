@@ -9,7 +9,7 @@ FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
 CATEGORIES=		mail
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
+SITES=			${SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://www.courier-mta.org/imap/

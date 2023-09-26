@@ -3,7 +3,7 @@ COMMENT=	sendmail milter plugin for recipient checking
 DISTNAME=	milter-checkrcpt-0.3
 REVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.benzedrine.ch/
+SITES=		http://www.benzedrine.ch/
 
 HOMEPAGE=	http://www.benzedrine.ch/milter-checkrcpt.html
 

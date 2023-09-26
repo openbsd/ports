@@ -23,7 +23,7 @@ WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre2-8 spf2 \
 			ssl opendmarc
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre2-8
 
-MASTER_SITES =		https://ftp.exim.org/pub/exim/exim4/ \
+SITES =			https://ftp.exim.org/pub/exim/exim4/ \
 			https://ftp.exim.org/pub/exim/exim4/fixes/ \
 			https://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \

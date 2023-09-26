@@ -7,7 +7,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE=	gnu dest
 

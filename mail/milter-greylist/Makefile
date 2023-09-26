@@ -5,7 +5,7 @@ REVISION=	6
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
-MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
+SITES=		ftp://ftp.espci.fr/pub/milter-greylist/
 EXTRACT_SUFX=	.tgz
 
 # BSD license

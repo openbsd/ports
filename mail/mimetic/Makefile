@@ -7,7 +7,7 @@ REVISION =		3
 SHARED_LIBS =		mimetic	1.0 #0.0
 
 HOMEPAGE =		http://www.codesink.org/mimetic_mime_library.html
-MASTER_SITES =		http://www.codesink.org/download/
+SITES =			http://www.codesink.org/download/
 
 # MIT
 PERMIT_PACKAGE =	Yes

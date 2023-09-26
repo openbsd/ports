@@ -16,7 +16,7 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 NO_TEST=	Yes

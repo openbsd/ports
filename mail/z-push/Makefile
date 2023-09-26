@@ -12,7 +12,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # AGPLv3 (GNU Affero Public License)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://nerd.hu/distfiles/
+SITES=		http://nerd.hu/distfiles/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

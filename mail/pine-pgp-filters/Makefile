@@ -9,7 +9,7 @@ HOMEPAGE=	http://dougbarton.us/PGP/ppf/index.html
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://dougbarton.us/PGP/ppf/
+SITES=		http://dougbarton.us/PGP/ppf/
 
 BUILD_DEPENDS=	security/gnupg
 RUN_DEPENDS=	security/gnupg \

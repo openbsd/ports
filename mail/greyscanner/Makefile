@@ -7,7 +7,7 @@ REVISION =	1
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/gonzalo-/openbsd-distfiles/raw/main/greyscanner/
+SITES =	https://github.com/gonzalo-/openbsd-distfiles/raw/main/greyscanner/
 
 RUN_DEPENDS =	mail/p5-Email-Valid \
 		net/p5-Net-DNS

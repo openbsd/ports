@@ -29,7 +29,7 @@ RUN_DEPENDS=	devel/py-rfc6555${MODPY_FLAVOR} \
 		mail/py-imaplib2${MODPY_FLAVOR} \
 		sysutils/py-distro${MODPY_FLAVOR}
 
-#MASTER_SITES=	https://www.offlineimap.org/uploads/
+#SITES=		https://www.offlineimap.org/uploads/
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 

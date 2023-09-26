@@ -11,6 +11,6 @@ MAINTAINER?=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE?=	Yes
 
 DIST_SUBDIR?=	kopano
-MASTER_SITES?=	http://nerd.hu/distfiles/ \
+SITES?=		http://nerd.hu/distfiles/ \
 		https://download.kopano.io/community/core:/sourcecode/ \
 		http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}.${BUILD}/

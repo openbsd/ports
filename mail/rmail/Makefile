@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://wxcvbn.org/~jca/distfiles/
+SITES =			http://wxcvbn.org/~jca/distfiles/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

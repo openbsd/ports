@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		No
 PERMIT_DISTFILES=	No
 WANTLIB=		c
 
-MASTER_SITES=	http://www.greatcircle.com/majordomo/$V/ \
+SITES=		http://www.greatcircle.com/majordomo/$V/ \
 		ftp://ftp.sgi.com/other/majordomo/$V/
 EXTRACT_SUFX=	.tgz
 

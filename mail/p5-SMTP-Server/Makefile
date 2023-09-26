@@ -3,8 +3,8 @@ COMMENT=	implements a complete, RFC compliant SMTP server
 DISTNAME=	SMTP-Server-1.1
 REVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Net/} \
-		http://www.macgyver.org/software/perl/
+SITES=		${SITE_PERL_CPAN:=Net/} \
+		${HOMEPAGE}
 
 HOMEPAGE=	http://www.macgyver.org/software/perl/
 

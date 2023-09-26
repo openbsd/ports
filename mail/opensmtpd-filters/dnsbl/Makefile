@@ -9,7 +9,7 @@ HOMEPAGE=	http://imperialat.at/dev/filter-dnsbl
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv
 
-MASTER_SITES=	http://mlmmj.org/releases/
+SITES=		http://mlmmj.org/releases/
 
 LIB_DEPENDS=	converters/libiconv
 

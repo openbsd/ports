@@ -7,7 +7,7 @@ PKG_ARCH=	*
 DISTNAME=	MailTools-${V}
 PKGNAME=	p5-Mail-Tools-${V}
 CATEGORIES=	mail devel
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
+SITES=		${SITE_PERL_CPAN:=Mail/}
 REVISION=	0
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>

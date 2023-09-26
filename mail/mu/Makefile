@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c gio-2.0 glib-2.0 gmime-3.0 gobject-2.0
 WANTLIB += m xapian
 
-MASTER_SITES =	https://github.com/djcb/mu/releases/download/v${V}/
+SITES =		https://github.com/djcb/mu/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/meson

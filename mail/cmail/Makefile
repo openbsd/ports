@@ -6,7 +6,7 @@ CATEGORIES=	mail
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/
+SITES=		ftp://ftp.eboai.org/pub/users/chip/
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE= perl

@@ -24,7 +24,7 @@ HOMEPAGE=		https://www.claws-mail.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.claws-mail.org/releases/
+SITES=			https://www.claws-mail.org/releases/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

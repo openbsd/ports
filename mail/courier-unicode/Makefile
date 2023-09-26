@@ -6,7 +6,7 @@ DISTNAME =		courier-unicode-2.2.6
 
 CATEGORIES =		mail devel
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=courier/}
+SITES =			${SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX =		.tar.bz2
 
 HOMEPAGE =		http://www.courier-mta.org/imap/

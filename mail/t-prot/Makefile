@@ -9,7 +9,7 @@ MAINTAINER=	Andrew Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		https://www.escape.de/~tolot/mutt/
-MASTER_SITES=		${HOMEPAGE}/t-prot/downloads/
+SITES=			${HOMEPAGE}/t-prot/downloads/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

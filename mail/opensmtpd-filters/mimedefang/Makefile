@@ -10,7 +10,7 @@ HOMEPAGE=	https://mimedefang.org
 
 MAINTAINER=	Giovanni Bechis <gbechis@openbsd.org>
 
-MASTER_SITES=   ${HOMEPAGE}/releases/opensmtpd/
+SITES=   	${HOMEPAGE}/releases/opensmtpd/
 INSTALL_TARGET=	build install
 
 WRKDIST=	${WRKDIR}/${PKGNAME}

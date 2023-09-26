@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}/source/
+SITES=			${HOMEPAGE}/source/
 EXTRACT_SUFX=		.tgz
 
 .if ${MACHINE_ARCH} == "i386"

@@ -13,7 +13,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # BSD
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 RUN_DEPENDS =	devel/p5-Net-Server \
 		devel/p5-IO-Multiplex \

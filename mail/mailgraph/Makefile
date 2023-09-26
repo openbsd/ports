@@ -4,7 +4,7 @@ DISTNAME=	mailgraph-1.14
 REVISION=	2
 CATEGORIES=	net mail
 
-MASTER_SITES=	${HOMEPAGE}/pub/ \
+SITES=		${HOMEPAGE}/pub/ \
 		${HOMEPAGE}/pub/old/
 
 HOMEPAGE=	http://mailgraph.schweikert.ch

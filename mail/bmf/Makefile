@@ -8,7 +8,7 @@ HOMEPAGE=		http://sourceforge.net/projects/bmf/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bmf/}
+SITES=			${SITE_SOURCEFORGE:=bmf/}
 
 CONFIGURE_STYLE=	simple
 

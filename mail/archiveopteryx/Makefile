@@ -13,7 +13,7 @@ WANTLIB =		c crypto m pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}/download/
+SITES =			${HOMEPAGE}/download/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/jam

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= c crypto pcre ssl z tdb>=3.0
 
-MASTER_SITES=	https://github.com/nicm/fdm/releases/download/$V/
+SITES=		https://github.com/nicm/fdm/releases/download/$V/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 LIB_DEPENDS +=	databases/tdb>=1.2.7 \

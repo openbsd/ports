@@ -5,7 +5,7 @@ REVISION =	1
 
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
+SITES=		ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
 HOMEPAGE=	http://www.cs.utk.edu/~moore/software.html
 

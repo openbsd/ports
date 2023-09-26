@@ -32,7 +32,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=courier/}
+SITES=			${SITE_SOURCEFORGE:=courier/}
 EXTRACT_SUFX=		.tar.bz2
 
 COMPILER =		base-clang ports-gcc base-gcc

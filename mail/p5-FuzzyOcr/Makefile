@@ -8,7 +8,7 @@ PKG_ARCH=		*
 CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://fuzzyocr.own-hero.net/
-MASTER_SITES=		https://www.paclan.it/distfiles/
+SITES=			https://www.paclan.it/distfiles/
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 

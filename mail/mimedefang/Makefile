@@ -5,7 +5,7 @@ DISTNAME=	mimedefang-3.4
 CATEGORIES=	mail
 
 HOMEPAGE=	https://www.mimedefang.org/
-MASTER_SITES=	${HOMEPAGE}releases/
+SITES=		${HOMEPAGE}releases/
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 

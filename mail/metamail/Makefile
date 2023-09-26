@@ -5,7 +5,7 @@ PKGNAME=	metamail-2.7
 REVISION=	6
 CATEGORIES=	mail
 
-MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
+SITES=		http://www.guppylake.com/~nsb/metamail/
 EXTRACT_SUFX=	.tar.Z
 
 PERMIT_PACKAGE=	Yes

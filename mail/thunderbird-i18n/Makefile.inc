@@ -16,7 +16,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/thunderbird/releases/${FV}/linux-x86_64/xpi/ \
+SITES =		https://ftp.mozilla.org/pub/thunderbird/releases/${FV}/linux-x86_64/xpi/ \
 		http://releases.mozilla.org/pub/thunderbird/releases/${FV}/linux-x86_64/xpi/
 
 LANGUAGES =	ar ast be bg br ca cs cy da de dsb el en-GB en-US es-AR es-ES et eu \

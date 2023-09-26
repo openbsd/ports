@@ -11,7 +11,7 @@ CATEGORIES =	mail
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org> \
 		Joerg Jung <jung@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}dl/
+SITES =		${HOMEPAGE}dl/
 
 # ISC
 PERMIT_PACKAGE =	Yes

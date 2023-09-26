@@ -8,7 +8,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/
+SITES=			http://ftp.ksut.edu.tw/FTP/Unix/Network/tools/
 EXTRACT_SUFX=		.tar.Z
 
 WRKDIST=		${WRKDIR}

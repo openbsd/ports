@@ -5,7 +5,7 @@ DISTNAME=	swaks-20201014.0
 CATEGORIES=	mail
 
 HOMEPAGE=	https://jetmore.org/john/code/swaks/
-MASTER_SITES=	https://jetmore.org/john/code/swaks/
+SITES=		${HOMEPAGE}
 
 MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread milter
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	mail/sendmail,-libmilter

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c perl
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=razor/}
+SITES=			${SITE_SOURCEFORGE:=razor/}
 EXTRACT_SUFX=		.tar.bz2
 
 RUN_DEPENDS=		security/p5-Digest-SHA1>=1.0 \

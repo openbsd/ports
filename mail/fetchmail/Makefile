@@ -4,7 +4,7 @@ DISTNAME=	fetchmail-6.4.37
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fetchmail/}
+SITES=		${SITE_SOURCEFORGE:=fetchmail/}
 
 HOMEPAGE=	https://www.fetchmail.info/
 

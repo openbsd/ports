@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.klake.org/sma/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.klake.org/sma/dl/
+SITES=		http://www.klake.org/sma/dl/
 
 NO_TEST=	Yes
 ALL_TARGET=	sma

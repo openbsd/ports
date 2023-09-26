@@ -11,7 +11,7 @@ CATEGORIES =		mail x11
 
 HOMEPAGE =		http://trojita.flaska.net/
 MAINTAINER =		Caspar Schutijser <caspar@schutijser.com>
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=trojita/}
+SITES =			${SITE_SOURCEFORGE:=trojita/}
 EXTRACT_SUFX =		.tar.xz
 
 # GPLv2+

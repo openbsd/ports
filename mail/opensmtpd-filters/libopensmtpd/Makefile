@@ -11,7 +11,7 @@ HOMEPAGE=	http://imperialat.at/dev/libopensmtpd
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 INSTALL_TARGET=	includes install
 
 # ISC

@@ -6,7 +6,7 @@ Vss=		${Vs}-1
 DISTNAME=	MailScanner-${V}.${Vss}
 PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
 CATEGORIES=	mail
-MASTER_SITES=	https://s3.amazonaws.com/mailscanner/release/v4/tar/
+SITES=		https://s3.amazonaws.com/mailscanner/release/v4/tar/
 REVISION=	2
 
 HOMEPAGE=	http://www.mailscanner.info/

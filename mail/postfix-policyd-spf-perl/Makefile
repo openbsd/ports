@@ -11,7 +11,7 @@ MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://launchpad.net/postfix-policyd-spf-perl/trunk/${V}/+download/
+SITES =	https://launchpad.net/postfix-policyd-spf-perl/trunk/${V}/+download/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

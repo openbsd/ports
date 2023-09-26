@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge(2)
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 
 CONFIGURE_STYLE =	gnu
 

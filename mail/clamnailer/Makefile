@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.scamnailer.info/
 # Public Domain
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.scamnailer.info/files/contrib/
+SITES=		http://www.scamnailer.info/files/contrib/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

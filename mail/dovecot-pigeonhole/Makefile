@@ -7,7 +7,7 @@ DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
 PKGNAME=	dovecot-pigeonhole-${V_SIEVE}
 EPOCH=		1
 CATEGORIES=	mail
-MASTER_SITES=	${HOMEPAGE}releases/${V_DOVECOT}/
+SITES=		${HOMEPAGE}releases/${V_DOVECOT}/
 DPB_PROPERTIES=	parallel
 
 SHARED_LIBS=	dovecot-sieve	4.0

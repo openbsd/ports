@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c z
 
-MASTER_SITES=		http://www.mew.org/Release/
+SITES=			http://www.mew.org/Release/
 
 MODULES=		lang/ruby
 MODRUBY_BUILDDEP=	No

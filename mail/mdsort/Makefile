@@ -20,7 +20,7 @@ COMPILER_LANGS = c
 # uses pledge()
 WANTLIB +=	c
 
-MASTER_SITES =	https://github.com/mptre/mdsort/releases/download/v${V}/
+SITES =		https://github.com/mptre/mdsort/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
 

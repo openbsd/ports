@@ -4,7 +4,7 @@ DISTNAME=	asmail-0.56
 REVISION =	5
 CATEGORIES=	mail
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asmail/}
+SITES=		${SITE_SOURCEFORGE:=asmail/}
 
 HOMEPAGE=	http://asmail.sourceforge.net/
 

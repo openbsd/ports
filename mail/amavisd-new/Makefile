@@ -15,7 +15,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 # BSD / GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://gitlab.com/amavis/amavis/-/archive/v${V}/
+SITES=			https://gitlab.com/amavis/amavis/-/archive/v${V}/
 
 EXTRACT_SUFX=		.tar.bz2
 

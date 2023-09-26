@@ -3,7 +3,7 @@ COMMENT=	complain about SPAM
 DISTNAME=	adcomplain-3.52
 CATEGORIES=	mail news
 
-MASTER_SITES=	http://www.rdrop.com/users/billmc/
+SITES=		http://www.rdrop.com/users/billmc/
 DISTFILES=	adcomplain.pl.uu
 
 EXTRACT_CASES=	*.uu) uudecode ${FULLDISTDIR}/$$archive;;

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES=	${HOMEPAGE:nmzmail.html=}
+SITES=		${HOMEPAGE:nmzmail.html=}
 
 BUILD_DEPENDS=	textproc/namazu
 RUN_DEPENDS=	textproc/namazu

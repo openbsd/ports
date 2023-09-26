@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB = c iconv idn2 intl tls
 
-MASTER_SITES =		https://marlam.de/msmtp/releases/
+SITES =			https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		devel/libidn2 \

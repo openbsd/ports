@@ -5,7 +5,7 @@ CATEGORIES =	mail
 REVISION =	1
 
 HOMEPAGE =	http://sqlgrey.sf.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqlgrey/}
+SITES =		${SITE_SOURCEFORGE:=sqlgrey/}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

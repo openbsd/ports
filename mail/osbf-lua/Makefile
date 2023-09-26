@@ -10,7 +10,7 @@ HOMEPAGE=	http://osbf-lua.luaforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
+SITES=		http://luaforge.net/frs/download.php/2094/
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes

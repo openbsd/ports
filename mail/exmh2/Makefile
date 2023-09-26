@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.beedub.com/exmh/
 # custom BSD-like
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
+SITES=			ftp://ftp.funet.fi/pub/languages/tcl/tcl/exmh/ \
 			ftp://ftp.tcl.tk/pub/tcl/exmh/
 
 MODULES=		x11/tk

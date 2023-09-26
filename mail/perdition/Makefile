@@ -32,7 +32,7 @@ SHARED_LIBS +=  perditiondb_postgresql       0.0  # .0.0
 # copyright claim specify version 2 or above).
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
+SITES=		${HOMEPAGE}download/${DISTVER}/
 
 USE_GMAKE=	Yes
 

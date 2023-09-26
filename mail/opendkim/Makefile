@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto milter pthread ssl
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opendkim/}
+SITES=		${SITE_SOURCEFORGE:=opendkim/}
 
 LIB_DEPENDS=	mail/sendmail,-libmilter
 

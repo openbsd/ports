@@ -11,8 +11,8 @@ HOMEPAGE =	http://www.sympa.org
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/distribution/ \
-			${HOMEPAGE}/distribution/old/
+SITES =		${HOMEPAGE}/distribution/ \
+		${HOMEPAGE}/distribution/old/
 
 MODULES =	perl
 USE_GMAKE =	Yes

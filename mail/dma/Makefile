@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto ssl
 
-MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
+SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 MAKE_FLAGS =	CC="${CC}" \
 		CONF_PATH="${SYSCONFDIR}/dma" \

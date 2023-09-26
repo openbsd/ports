@@ -6,7 +6,7 @@ CATEGORIES=		mail www
 
 HOMEPAGE=		http://www.hypermail-project.org/
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 WRKDIST=		${WRKDIR}/hypermail
 
 LIB_DEPENDS+=		devel/pcre

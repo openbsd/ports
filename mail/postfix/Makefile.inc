@@ -4,7 +4,7 @@ DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
 
-MASTER_SITE_POSTFIX= \
+SITE_POSTFIX= \
 		https://archive.mgm51.com/mirrors/postfix-source/ \
 		https://de.postfix.org/ftpmirror/ \
 		https://postfix-mirror.horus-it.com/postfix-release/ \

@@ -20,7 +20,7 @@ PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
-MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
+SITES=		${HOMEPAGE}releases/${V_MAJOR}/
 DPB_PROPERTIES=	parallel
 
 SHARED_LIBS=	dovecot-compression 1.1 \

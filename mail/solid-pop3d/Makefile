@@ -4,7 +4,7 @@ VERSION=	0.15
 DISTNAME=	solid-pop3d-${VERSION}
 REVISION =	9
 CATEGORIES=	mail
-MASTER_SITES=	ftp://dione.ids.pl/pub/solidpop3d/
+SITES=		ftp://dione.ids.pl/pub/solidpop3d/
 
 HOMEPAGE=	http://solidpop3d.pld.org.pl/
 

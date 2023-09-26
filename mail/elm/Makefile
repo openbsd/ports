@@ -4,7 +4,7 @@ DISTNAME=	elm-2.4ME+66
 REVISION=	4
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
+SITES=		ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	Paul Janzen <pjanzen@foatdi.net>
 

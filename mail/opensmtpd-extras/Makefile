@@ -33,7 +33,7 @@ WANTLIB-pgsql=		c crypto event ssl m pq
 WANTLIB-python=		c crypto event iconv intl ssl m util pthread ${MODPY_WANTLIB}
 WANTLIB-redis=		c crypto event ssl hiredis
 
-MASTER_SITES=		${HOMEPAGE}archives/
+SITES=			${HOMEPAGE}archives/
 
 MODULES=		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

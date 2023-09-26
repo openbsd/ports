@@ -6,7 +6,7 @@ DISTNAME=	mini_sendmail-${V}
 PKGNAME-main=	mini_sendmail-${V}
 PKGNAME-chroot=	mini_sendmail-chroot-${V}
 CATEGORIES=	mail www
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.acme.com/software/mini_sendmail/
 

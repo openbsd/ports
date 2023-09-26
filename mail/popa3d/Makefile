@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto
 
-MASTER_SITES =	https://www.openwall.com/popa3d/
+SITES =		https://www.openwall.com/popa3d/
 
 CFLAGS +=	-Wall -DHAVE_PROGNAME -DHAVE_OPENSSL
 LIBS =		-lcrypto

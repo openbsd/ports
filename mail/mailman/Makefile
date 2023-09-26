@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
+SITES=			${SITE_SOURCEFORGE:=mailman/}
 EXTRACT_SUFX=		.tgz
 
 MODULES=		lang/python

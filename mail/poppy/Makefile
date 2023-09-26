@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.cnpbagwell.com/projects.html
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.cnpbagwell.com/
+SITES=		http://www.cnpbagwell.com/
 
 CONFIGURE_STYLE= perl
 

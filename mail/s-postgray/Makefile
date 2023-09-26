@@ -4,7 +4,7 @@ DISTNAME=		s-postgray-0.8.1
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-postgray
 
-MASTER_SITES=		https://ftp.sdaoden.eu/
+SITES=			https://ftp.sdaoden.eu/
 
 MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>
 

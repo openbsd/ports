@@ -24,7 +24,7 @@ MULTI_PACKAGES =	-main -libmilter
 WANTLIB-main =		c crypto ssl
 WANTLIB-libmilter =	pthread
 
-MASTER_SITES =		ftp://ftp.sendmail.org/pub/sendmail/ \
+SITES =			ftp://ftp.sendmail.org/pub/sendmail/ \
 			ftp://ftp.bit.nl/mirror/sendmail/ \
 			http://negi.ipv6labs.jp/pub/sendmail/
 

@@ -8,7 +8,7 @@ WRKDIST=	${WRKDIR}/squirrelmail.imap_proxy
 
 CATEGORIES=	mail
 PORTROACH=	site:https://snapshots.squirrelmail.org/
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 HOMEPAGE=	https://squirrelmail.org/
 

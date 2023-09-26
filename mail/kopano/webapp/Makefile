@@ -31,7 +31,7 @@ DISTFILES+=	kopano-webapp-plugin-files-4.0.1.7-451.19${EXTRACT_SUFX} \
 		kopano-webapp-plugin-filesbackend-owncloud-4.0.0.0-129.21${EXTRACT_SUFX} \
 		kopano-webapp-plugin-filesbackend-smb-4.0.0.0-98.20${EXTRACT_SUFX}
 
-MASTER_SITES=	http://nerd.hu/distfiles/kopano-webapp/
+SITES=		http://nerd.hu/distfiles/kopano-webapp/
 
 CATEGORIES=	mail www
 

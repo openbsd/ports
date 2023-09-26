@@ -9,7 +9,7 @@ CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-senderscore/
 
 MAINTAINER =	Gilles Chehade <gilles@poolp.org>
-MASTER_SITES =	https://github.com/poolpOrg/filter-senderscore/releases/download/${V}/
+SITES =	https://github.com/poolpOrg/filter-senderscore/releases/download/${V}/
 
 # ISC
 PERMIT_PACKAGE =	Yes

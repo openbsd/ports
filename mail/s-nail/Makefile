@@ -10,7 +10,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB+=		c crypto curses iconv ssl
 
-MASTER_SITES=		https://ftp.sdaoden.eu/
+SITES=			https://ftp.sdaoden.eu/
 MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>
 
 FLAVORS=		idna

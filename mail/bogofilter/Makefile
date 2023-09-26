@@ -7,7 +7,7 @@ CATEGORIES =	mail
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 HOMEPAGE =	https://bogofilter.sourceforge.io/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bogofilter/}
+SITES =		${SITE_SOURCEFORGE:=bogofilter/}
 
 # GPLv2/GPLv3
 PERMIT_PACKAGE =	Yes

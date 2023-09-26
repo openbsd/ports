@@ -4,7 +4,7 @@ DISTNAME=	tnef-1.4.12
 CATEGORIES=	mail
 REVISION=	2
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tnef/}
+SITES=		${SITE_SOURCEFORGE:=tnef/}
 
 HOMEPAGE=	http://tnef.sourceforge.net/
 

@@ -3,7 +3,7 @@ COMMENT=	Postfix log entry summarizer
 DISTNAME=	pflogsumm-1.1.5
 CATEGORIES=	mail
 
-MASTER_SITES=	http://jimsun.linxnet.com/downloads/
+SITES=		http://jimsun.linxnet.com/downloads/
 
 HOMEPAGE=	http://jimsun.linxnet.com/postfix_contrib.html
 

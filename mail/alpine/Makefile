@@ -43,7 +43,7 @@ HOMEPAGE=		https://alpineapp.email/
 PERMIT_PACKAGE=	Yes
 
 # repo at https://repo.or.cz/alpine.git
-MASTER_SITES=		https://alpineapp.email/alpine/release/src/ \
+SITES=			https://alpineapp.email/alpine/release/src/ \
 			https://alpineapp.email/alpine/release/src/Old/
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot

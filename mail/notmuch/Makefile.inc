@@ -5,7 +5,7 @@ EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		mail databases
 
 HOMEPAGE =		https://notmuchmail.org/
-MASTER_SITES =		https://notmuchmail.org/releases/
+SITES =			${HOMEPAGE}releases/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

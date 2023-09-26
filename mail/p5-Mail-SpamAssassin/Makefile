@@ -20,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB=		c crypto ssl z
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=spamassassin/source/}
+SITES=			${SITE_APACHE:=spamassassin/source/}
 
 COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
 			mail/p5-Mail-DKIM>=0.31 \

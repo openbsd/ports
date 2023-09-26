@@ -8,8 +8,8 @@ HOMEPAGE=	http://imperialat.at/dev/filter-admdscrub
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-#MASTER_SITES=	https://distfiles.sigtrap.nl/
-MASTER_SITES=	https://imperialat.at/releases/
+#SITES=		https://distfiles.sigtrap.nl/
+SITES=		https://imperialat.at/releases/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd

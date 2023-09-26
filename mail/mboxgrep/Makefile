@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c pcre z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mboxgrep/}
+SITES=			${SITE_SOURCEFORGE:=mboxgrep/}
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/pcre
