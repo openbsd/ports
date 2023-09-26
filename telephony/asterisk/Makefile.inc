@@ -114,7 +114,7 @@ OLD_SAMPLECONF?=
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-download-cache=${FULLDISTDIR} \
 			--with-pjproject-bundled
-CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
+CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx --disable-upnp"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 .if ${LLD_EMUL} != ""
 MAKE_ENV+=		LLD_EMUL="-Wl,${LLD_EMUL}"

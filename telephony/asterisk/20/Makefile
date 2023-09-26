@@ -6,4 +6,6 @@ VERSION_SPEC=	>=20.0,<21.0
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=
 
+REVISION-main=	0
+
 .include <bsd.port.mk>
