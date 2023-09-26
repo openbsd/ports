@@ -1,7 +1,6 @@
-Index: widget/gtk/v4l2test/v4l2test.cpp
-
 https://bugzilla.mozilla.org/show_bug.cgi?id=1847500
 
+Index: widget/gtk/v4l2test/v4l2test.cpp
 --- widget/gtk/v4l2test/v4l2test.cpp.orig
 +++ widget/gtk/v4l2test/v4l2test.cpp
 @@ -9,7 +9,13 @@

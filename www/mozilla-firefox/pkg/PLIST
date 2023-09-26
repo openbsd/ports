@@ -69,6 +69,7 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
+@lib lib/${MOZILLA_PROJECT}/libgkcodecs.so.${LIBgkcodecs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
