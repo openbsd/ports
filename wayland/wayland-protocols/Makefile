@@ -10,7 +10,7 @@ HOMEPAGE =	https://wayland.freedesktop.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/${V}/downloads/
+SITES =			https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/${V}/downloads/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson

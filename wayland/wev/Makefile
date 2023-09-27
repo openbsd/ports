@@ -6,7 +6,7 @@ DISTNAME =	wev-${V}
 CATEGORIES =	wayland
 HOMEPAGE =	https://git.sr.ht/~sircmpwn/wev
 
-MASTER_SITES =	https://git.sr.ht/~sircmpwn/wev/
+SITES =		https://git.sr.ht/~sircmpwn/wev/
 DISTFILES =	wev-{archive/}${V}${EXTRACT_SUFX}
 
 WANTLIB =	epoll-shim ffi wayland-client xkbcommon c

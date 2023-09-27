@@ -4,7 +4,7 @@ V =		20230812
 PKGNAME =	wlroots-$V
 CATEGORIES =	wayland
 
-MASTER_SITES =	https://gitlab.freedesktop.org/mherrb/wlroots/-/archive/wlroots-obsd-$V/
+SITES =	https://gitlab.freedesktop.org/mherrb/wlroots/-/archive/wlroots-obsd-$V/
 DISTFILES =	wlroots-wlroots-obsd-${V}${EXTRACT_SUFX}
 
 HOMEPAGE =	https://gitlab.freedesktop.org/wlroots

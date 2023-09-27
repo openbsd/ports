@@ -3,7 +3,7 @@ COMMENT = 	fast, lightweight and minimalistic Wayland terminal emulator
 DISTNAME =	foot-${V}
 V =		1.15.3
 
-MASTER_SITES =	https://codeberg.org/dnkl/foot/archive/
+SITES =		https://codeberg.org/dnkl/foot/archive/
 DISTFILES =     foot-{}${V}${EXTRACT_SUFX}
 
 CATEGORIES =	wayland

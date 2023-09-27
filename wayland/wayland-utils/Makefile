@@ -11,7 +11,7 @@ WANTLIB += c wayland-client
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://wayland.freedesktop.org/releases/
+SITES =			https://wayland.freedesktop.org/releases/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 MODULES =		devel/kf5
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/plasma-wayland-protocols/}
+SITES =			${SITE_KDE:=stable/plasma-wayland-protocols/}
 
 BUILD_DEPENDS =		wayland/wayland
 RUN_DEPENDS =		wayland/wayland

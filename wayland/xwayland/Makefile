@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		GL Xau Xdmcp Xfont2 gbm xcvt drm kvm pthread c m
 WANTLIB +=		pixman-1 xshmfence epoxy wayland-client
 
-MASTER_SITES =		${MASTER_SITE_XORG:=xserver/}
+SITES =			${SITE_XORG:=xserver/}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson
