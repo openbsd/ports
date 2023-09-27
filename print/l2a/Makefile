@@ -7,7 +7,7 @@ CATEGORIES=     	print
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://monkey.org/~jose/openbsd/ports/
+SITES=			http://monkey.org/~jose/openbsd/ports/
 
 MAKE_FLAGS=		CC='${CC}' OBJ=l2a.o EXE=l2a LLL=-ll
 

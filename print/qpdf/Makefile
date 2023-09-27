@@ -19,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto gnutls jpeg m ssl z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=qpdf/}
+SITES=		${SITE_SOURCEFORGE:=qpdf/}
 
 MODULES=	devel/cmake
 

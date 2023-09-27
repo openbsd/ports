@@ -32,7 +32,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 - MIT (backend) - BSD (hpijs)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hplip/}
+SITES=			${SITE_SOURCEFORGE:=hplip/}
 
 MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 

@@ -5,7 +5,7 @@ CATEGORIES=		print
 REVISION=		1
 
 HOMEPAGE=		http://www.cups-pdf.de/
-MASTER_SITES=		${HOMEPAGE}src/
+SITES=			${HOMEPAGE}src/
 DISTFILES=		${DISTNAME:S/pdf-/pdf_/}.tar.gz
 
 # GPLv2+

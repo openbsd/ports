@@ -9,7 +9,7 @@ HOMEPAGE=		https://www.gnu.org/software/enscript/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GNU:=enscript/}
+SITES=			${SITE_GNU:=enscript/}
 
 LIB_DEPENDS=		devel/gettext,-runtime
 WANTLIB=		c iconv intl m

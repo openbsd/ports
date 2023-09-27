@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://github.com/OpenPrinting/libppd/releases/download/${V}/
+SITES=		https://github.com/OpenPrinting/libppd/releases/download/${V}/
 
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common brotlidec
 WANTLIB += brotlienc c crypto cups cupsfilters dbus-1 execinfo

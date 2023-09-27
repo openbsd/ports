@@ -29,10 +29,10 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread spiro tiff util xcb xcb-render
 WANTLIB += xcb-shm xml2 z zstd
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
+SITES=			${SITE_SOURCEFORGE:=fontforge/}
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

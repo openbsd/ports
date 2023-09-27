@@ -16,7 +16,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz iconv intl lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += xcb xml2 z
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

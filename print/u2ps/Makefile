@@ -9,7 +9,7 @@ MAINTAINER =		Alexander Arkhipov <aa@manpager.net>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/arsv/u2ps/releases/download/$V/
+SITES =			https://github.com/arsv/u2ps/releases/download/$V/
 
 WANTLIB +=		c
 

@@ -8,7 +8,7 @@ HOMEPAGE=	http://latex-mk.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=latex-mk/}
+SITES=		${SITE_SOURCEFORGE:=latex-mk/}
 
 CONFIGURE_STYLE=gnu
 PKG_ARCH=	*

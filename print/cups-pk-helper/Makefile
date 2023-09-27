@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cups gio-2.0 glib-2.0 gobject-2.0 polkit-gobject-1
 
-MASTER_SITES=		http://www.freedesktop.org/software/cups-pk-helper/releases/
+SITES=		http://www.freedesktop.org/software/cups-pk-helper/releases/
 
 MODULES=		devel/meson
 

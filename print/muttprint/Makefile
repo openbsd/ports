@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=muttprint/}
+SITES =			${SITE_SOURCEFORGE:=muttprint/}
 
 RUN_DEPENDS =		converters/p5-Text-Iconv \
 			devel/p5-Time-TimeDate \

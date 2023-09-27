@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c cups jbig m pthread
 
 # most patches are also from Fedora
-MASTER_SITES=	https://src.fedoraproject.org/repo/pkgs/foo2zjs/${DISTFILES}/sha512/786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c/
+SITES=	https://src.fedoraproject.org/repo/pkgs/foo2zjs/${DISTFILES}/sha512/786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c/
 
 USE_GMAKE=	Yes
 

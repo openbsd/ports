@@ -21,8 +21,8 @@ WANTLIB += ${COMPILER_LIBCXX} c cups cupsimage jbig85 m
 COMPILER=	base-clang ports-gcc base-gcc
 
 # snapshot of SVN (Fedora tarball)
-MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/splix/${DISTNAME}${EXTRACT_SUFX}/2901e9482dd1a7c44f7b730696868e09/
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
+SITES=	http://pkgs.fedoraproject.org/repo/pkgs/splix/${DISTNAME}${EXTRACT_SUFX}/2901e9482dd1a7c44f7b730696868e09/
+#SITES=	${SITE_SOURCEFORGE:=splix/}
 
 LIB_DEPENDS=	print/cups,-libs \
 		graphics/jbigkit

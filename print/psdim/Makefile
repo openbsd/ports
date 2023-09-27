@@ -11,7 +11,7 @@ MAINTAINER=		Steven Mestdagh <steven@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS=		${RUN_DEPENDS}

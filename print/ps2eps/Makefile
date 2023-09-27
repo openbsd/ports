@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	https://tm.kit.edu/~bless/
+SITES=		https://tm.kit.edu/~bless/
 
 RUN_DEPENDS=	print/ghostscript/gnu
 

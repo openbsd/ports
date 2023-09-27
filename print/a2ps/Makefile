@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gc iconv intl m paper pthread
 
-MASTER_SITES=	${MASTER_SITE_GNU:=a2ps/}
+SITES=		${SITE_GNU:=a2ps/}
 
 USE_GMAKE=	Yes
 

@@ -16,8 +16,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 # tarballs are only available for a 24 hour period
-#MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		https://src.fedoraproject.org/repo/extras/foomatic-db/${DISTFILES}/sha512/b6d2526f6c392620f1bb1511063ff8c709f66a8b20ee2f9026017884d29b80cdf52727d6c44f98559f2b461c2cabeb3c672284af7218a4316921ff1698499d27/
+#SITES=		http://www.openprinting.org/download/foomatic/
+SITES=		https://src.fedoraproject.org/repo/extras/foomatic-db/${DISTFILES}/sha512/b6d2526f6c392620f1bb1511063ff8c709f66a8b20ee2f9026017884d29b80cdf52727d6c44f98559f2b461c2cabeb3c672284af7218a4316921ff1698499d27/
 
 BUILD_DEPENDS=		print/cups,-libs
 

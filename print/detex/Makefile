@@ -5,7 +5,7 @@ PKGNAME=		detex-2.8.1
 CATEGORIES=		print
 
 HOMEPAGE=		https://code.google.com/archive/p/opendetex/
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=opendetex/}
+SITES=			${SITE_GOOGLECODE:=opendetex/}
 
 EXTRACT_SUFX=		.tar.bz2
 

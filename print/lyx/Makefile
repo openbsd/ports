@@ -9,7 +9,7 @@ CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
 
-MASTER_SITES=	https://ftp.lip6.fr/pub/lyx/stable/2.3.x/ \
+SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.3.x/ \
 		http://ftp.icm.edu.pl/packages/lyx/stable/ \
 		http://mirror.ufs.ac.za/applications/lyx/stable/2.3.x/ \
 		ftp://ftp.lyx.org/pub/lyx/stable/2.3.x/ \

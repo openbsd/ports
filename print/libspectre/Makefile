@@ -20,7 +20,7 @@ WANTLIB += cups dbus-1 execinfo expat fontconfig freetype gs iconv
 WANTLIB += idn ijs intl jbig2dec jpeg lzma m openjp2 paper png
 WANTLIB += pthread ssl tiff xcb z zstd
 
-MASTER_SITES=	http://libspectre.freedesktop.org/releases/
+SITES=		http://libspectre.freedesktop.org/releases/
 
 # we want the 'display' device from ghostscript, which is not available
 # in the no_x11 FLAVOR

@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
+SITES=			https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

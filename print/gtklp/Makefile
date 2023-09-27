@@ -22,7 +22,7 @@ WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png ssl xcb
 WANTLIB += xcb-render xcb-shm z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gtklp/}
+SITES=			${SITE_SOURCEFORGE:=gtklp/}
 
 LIB_DEPENDS=		print/cups,-libs \
 			x11/gtk+2

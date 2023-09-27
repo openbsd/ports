@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.cs.wisc.edu/~ghost/doc/cvs/Fonts.htm
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ghostscript/}
+SITES=		${SITE_SOURCEFORGE:=ghostscript/}
 
 WRKDIST=	${WRKDIR}
 NO_BUILD=	Yes

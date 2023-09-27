@@ -11,7 +11,7 @@ HOMEPAGE=		https://www.openprinting.org/download/ijs/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 
 CONFIGURE_STYLE=	gnu

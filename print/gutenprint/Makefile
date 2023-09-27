@@ -27,7 +27,7 @@ WANTLIB += avahi-client avahi-common c crypto cups curses dbus-1
 WANTLIB += execinfo iconv intl m pthread readline ssl usb-1.0
 WANTLIB += z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
+SITES=			${SITE_SOURCEFORGE:=gimp-print/}
 
 BUILD_DEPENDS=		print/foomatic-db-engine
 

@@ -18,7 +18,7 @@ WANTLIB += freetype gmp hogweed iconv idn2 intl jpeg lcms2 lzma
 WANTLIB += m nettle p11-kit png poppler-cpp ppd pthread qpdf ssl
 WANTLIB += tasn1 tiff unistring z zstd
 
-MASTER_SITES=		https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
+SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
 
 # cc1plus: error: unrecognized command line option "-std=c++0x"
 COMPILER=		base-clang ports-gcc

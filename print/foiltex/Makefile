@@ -8,7 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive ${WRKDIST};;
 
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=macros/latex/contrib/foiltex/}
+SITES=		${SITE_TEX_CTAN:=macros/latex/contrib/foiltex/}
 
 DISTFILES=	foiltex.ins foiltex.dtx
 DIST_SUBDIR=	${DISTNAME}

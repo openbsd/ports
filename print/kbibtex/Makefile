@@ -21,7 +21,7 @@ SHARED_LIBS +=  kbibtexio                 0.0 # 0.0
 SHARED_LIBS +=  kbibtexnetworking         0.0 # 0.0
 SHARED_LIBS +=  kbibtexprocessing         0.0 # 0.0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/KBibTeX/${VERSION}/}
+SITES =		${SITE_KDE:=stable/KBibTeX/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks

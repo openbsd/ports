@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL GLU Xi Xmu glut m png z
 
-MASTER_SITES =		http://geuz.org/gl2ps/src/
+SITES =			http://geuz.org/gl2ps/src/
 
 EXTRACT_SUFX =		.tgz
 

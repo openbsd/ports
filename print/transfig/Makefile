@@ -5,7 +5,7 @@ DISTNAME=	fig2dev-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME=	transfig-${VERSION}
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mcj/}
+SITES=		${SITE_SOURCEFORGE:=mcj/}
 HOMEPAGE=	https://xfig.org/
 
 BUILD_DEPENDS=	print/ghostscript/gnu

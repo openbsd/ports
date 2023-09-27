@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv m lzma pthread xml2 z
 
-MASTER_SITES=		https://www.openprinting.org/download/foomatic/
+SITES=			https://www.openprinting.org/download/foomatic/
 
 LIB_DEPENDS=		converters/libiconv \
 			textproc/libxml

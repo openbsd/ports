@@ -8,7 +8,7 @@ CATEGORIES=     	print
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://www.mesa.nl/pub/dvi2tty/
+SITES=			http://www.mesa.nl/pub/dvi2tty/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 

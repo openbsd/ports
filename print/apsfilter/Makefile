@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.apsfilter.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.apsfilter.org/download/
+SITES=			http://www.apsfilter.org/download/
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix='${PREFIX}' \

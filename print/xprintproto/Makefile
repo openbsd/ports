@@ -12,7 +12,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.x.org/releases/individual/proto/
+SITES =			https://www.x.org/releases/individual/proto/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu

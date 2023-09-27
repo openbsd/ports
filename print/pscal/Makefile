@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.panix.com/~mbh/projects.html
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.panix.com/~mbh/pscal/
+SITES=		http://www.panix.com/~mbh/pscal/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

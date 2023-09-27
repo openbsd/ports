@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups cupsimage m
 
-MASTER_SITES=		https://github.com/philpem/printer-driver-ptouch/releases/download/${GH_TAGNAME}/
+SITES=			https://github.com/philpem/printer-driver-ptouch/releases/download/${GH_TAGNAME}/
 
 BUILD_DEPENDS=		textproc/p5-XML-LibXML
 

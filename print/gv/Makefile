@@ -6,7 +6,7 @@ REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/gv/
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gv/}
+SITES=		${SITE_GNU:=gv/}
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

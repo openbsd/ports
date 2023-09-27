@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=		https://www.lcdf.org/~eddietwo/type/
+SITES=			https://www.lcdf.org/~eddietwo/type/
 
 CONFIGURE_STYLE=	gnu
 

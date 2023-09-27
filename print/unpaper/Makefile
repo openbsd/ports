@@ -17,7 +17,7 @@ COMPILER_LANGS=		c
 
 WANTLIB += avcodec avformat avutil c m
 
-MASTER_SITES=		https://www.flameeyes.eu/files/
+SITES=			https://www.flameeyes.eu/files/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson \

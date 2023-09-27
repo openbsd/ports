@@ -13,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3 - LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://github.com/rrthomas/libpaper/releases/download/${GH_TAGNAME}/
+SITES=	https://github.com/rrthomas/libpaper/releases/download/${GH_TAGNAME}/
 
 WANTLIB += c
 

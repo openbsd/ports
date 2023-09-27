@@ -17,7 +17,7 @@ WANTLIB += freetype harfbuzz harfbuzz-icu hunspell-1.7 icudata
 WANTLIB += icuuc jpeg lcms2 m png podofo poppler tiff util xml2
 WANTLIB += z harfbuzz-subset
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scribus/}
+SITES=		${SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	x11/qt5 \

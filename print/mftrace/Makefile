@@ -9,7 +9,7 @@ HOMEPAGE=	http://lilypond.org/mftrace/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://lilypond.org/download/sources/mftrace/
+SITES=		http://lilypond.org/download/sources/mftrace/
 
 WANTLIB=	c
 

@@ -15,7 +15,7 @@ WANTLIB += gnomecanvas-2 gobject-2.0 gtk-x11-2.0 harfbuzz intl
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 poppler-glib
 WANTLIB += z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xournal/}
+SITES =			${SITE_SOURCEFORGE:=xournal/}
 
 
 BUILD_DEPENDS =		devel/gettext,-tools

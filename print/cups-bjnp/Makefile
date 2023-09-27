@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c cups
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cups-bjnp/}
+SITES=			${SITE_SOURCEFORGE:=cups-bjnp/}
 
 LIB_DEPENDS=		print/cups,-libs
 

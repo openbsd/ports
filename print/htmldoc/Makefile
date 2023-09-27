@@ -16,7 +16,7 @@ WANTLIB += c crypto m ssl z jpeg png ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 DISTFILES =		${DISTNAME}-source${EXTRACT_SUFX}
-MASTER_SITES =		https://github.com/michaelrsweet/htmldoc/releases/download/v${V}/
+SITES =	https://github.com/michaelrsweet/htmldoc/releases/download/v${V}/
 
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/png

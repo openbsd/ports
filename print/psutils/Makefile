@@ -13,7 +13,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/rrthomas/psutils/releases/download/v${MODPY_EGG_VERSION}/
+SITES=		https://github.com/rrthomas/psutils/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 

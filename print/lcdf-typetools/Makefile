@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c kpathsea m
 
-MASTER_SITES =		https://www.lcdf.org/type/
+SITES =			https://www.lcdf.org/type/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

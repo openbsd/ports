@@ -6,7 +6,7 @@ HOMEPAGE =		https://poppler.freedesktop.org/
 # Mixture of GPL2 and MIT and something similar to BSD4
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 PKG_ARCH =		*
 

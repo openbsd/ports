@@ -10,7 +10,7 @@ HOMEPAGE=	http://openclipart.org/
 # Public domain
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/downloads/$V/
+SITES=		${HOMEPAGE}/downloads/$V/
 EXTRACT_SUFX=	.tar.bz2
 
 BUILD_DEPENDS=	archivers/bzip2

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv intl curses
 
-MASTER_SITES =		${MASTER_SITE_GNU:=texinfo/}
+SITES =			${SITE_GNU:=texinfo/}
 
 BUILD_DEPENDS =		devel/help2man \
 			lang/gawk

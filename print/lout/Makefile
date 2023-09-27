@@ -5,7 +5,7 @@ CATEGORIES=	print textproc
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 HOMEPAGE=	http://savannah.nongnu.org/projects/lout/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=lout/}
+SITES=		${SITE_SAVANNAH:=lout/}
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 

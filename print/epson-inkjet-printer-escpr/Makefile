@@ -1,7 +1,7 @@
-# MASTER_SITES changes at each version; when looking for updates, try searching
+# SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore:1
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/14/61/06/ad3f08f88782de47a1aec9acda205e354309636e/
+SITES=		https://download3.ebz.epson.net/dsc/f/03/00/14/61/06/ad3f08f88782de47a1aec9acda205e354309636e/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 

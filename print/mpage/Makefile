@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://www.mesa.nl/pub/mpage/ \
+SITES=		http://www.mesa.nl/pub/mpage/ \
 		ftp://ftp.mesa.nl/pub/mpage/ \
 		ftp://ftp.mesa.nl/pub/mpage/old/
 
