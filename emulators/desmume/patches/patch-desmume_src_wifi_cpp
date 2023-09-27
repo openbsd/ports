@@ -1,0 +1,13 @@
+Missing includes for INADDR_ANY
+
+Index: desmume/src/wifi.cpp
+--- desmume/src/wifi.cpp.orig
++++ desmume/src/wifi.cpp
+@@ -44,6 +44,7 @@
+ #include <string.h>
+ #include <arpa/inet.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #define socket_t    int
+ #define sockaddr_t  struct sockaddr
+ #define closesocket close

@@ -1,0 +1,22 @@
+OpenBSD does not implement pthread_setname_np
+
+Index: desmume/src/libretro-common/rthreads/rthreads.c
+--- desmume/src/libretro-common/rthreads/rthreads.c.orig
++++ desmume/src/libretro-common/rthreads/rthreads.c
+@@ -54,6 +54,7 @@
+ #include <sys/sys_time.h>
+ #else
+ #include <pthread.h>
++#include <pthread_np.h>
+ #include <time.h>
+ #endif
+ 
+@@ -323,7 +324,7 @@ void sthread_setname(sthread_t *thread, const char *na
+    // any thread. At the time of this writing (2021/08/30), there is no way to
+    // set the thread name from a different thread when running an Apple OS.
+ #if !defined(USE_WIN32_THREADS) && !defined(__APPLE__)
+-   pthread_setname_np(thread->id, name);
++   pthread_set_name_np(thread->id, name);
+ #endif
+ }
+ 

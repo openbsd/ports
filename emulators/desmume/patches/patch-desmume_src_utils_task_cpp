@@ -1,0 +1,26 @@
+OpenBSD does not implement pthread_setname_np
+
+Index: desmume/src/utils/task.cpp
+--- desmume/src/utils/task.cpp.orig
++++ desmume/src/utils/task.cpp
+@@ -28,6 +28,11 @@
+ #include <pthread.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <pthread.h>
++#include <pthread_np.h>
++#endif
++
+ class Task::Impl {
+ private:
+ 	sthread_t* _thread;
+@@ -65,7 +70,7 @@ static void taskProc(void *arg)
+ #if defined(MAC_OS_X_VERSION_10_6) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6)
+ 	if (ctx->needSetThreadName)
+ 	{
+-		pthread_setname_np(ctx->threadName);
++		pthread_set_name_np(ctx->threadName);
+ 		ctx->needSetThreadName = false;
+ 	}
+ #endif

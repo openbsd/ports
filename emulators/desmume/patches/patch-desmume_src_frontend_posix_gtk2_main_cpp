@@ -1,10 +1,10 @@
 https://forums.desmume.org/viewtopic.php?id=10415
 
-Index: src/gtk/main.cpp
---- src/gtk/main.cpp.orig
-+++ src/gtk/main.cpp
-@@ -3131,6 +3131,11 @@ common_gtk_main( class configured_features *my_config)
-     pDrawingArea = gtk_drawing_area_new();
+Index: desmume/src/frontend/posix/gtk2/main.cpp
+--- desmume/src/frontend/posix/gtk2/main.cpp.orig
++++ desmume/src/frontend/posix/gtk2/main.cpp
+@@ -3551,6 +3551,11 @@ common_gtk_main( class configured_features *my_config)
+ 
      gtk_container_add (GTK_CONTAINER (pVBox), pDrawingArea);
  
 +    /* Set a black background color for a usable full-screen mode. */
