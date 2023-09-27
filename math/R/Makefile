@@ -22,9 +22,9 @@ WANTLIB += gobject-2.0 harfbuzz iconv icui18n icuuc intl jpeg
 WANTLIB += lzma m pango-1.0 pangocairo-1.0 pcre2-8 png pthread
 WANTLIB += readline tiff z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://cran.r-project.org/src/base/R-4/ \
+SITES=		https://cran.r-project.org/src/base/R-4/ \
 		https://cloud.r-project.org/src/base/R-4/
 
 MODULES=	fortran \

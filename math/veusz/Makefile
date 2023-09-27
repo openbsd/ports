@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
 WANTLIB += m
 
-MASTER_SITES =	https://github.com/veusz/veusz/releases/download/${DISTNAME}/
+SITES =		https://github.com/veusz/veusz/releases/download/${DISTNAME}/
 
 MODULES =	lang/python \
 		x11/qt5

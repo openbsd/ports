@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=calcoo/}
+SITES=		${SITE_SOURCEFORGE:=calcoo/}
 
 LIB_DEPENDS=	x11/gtk+2
 

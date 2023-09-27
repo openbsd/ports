@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ecl ffi gc gmp m pthread
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=maxima/}
+SITES=			${SITE_SOURCEFORGE:=maxima/}
 
 USE_GMAKE=		yes
 

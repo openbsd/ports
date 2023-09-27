@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES =	https://alpha.gnu.org/gnu/ssw/
+SITES =		https://alpha.gnu.org/gnu/ssw/
 
 BUILD_DEPENDS =	x11/gtk+3
 

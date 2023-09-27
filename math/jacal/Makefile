@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/JACAL
 
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+SITES=		http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
 # GPLv3

@@ -11,7 +11,7 @@ CATEGORIES=	math devel
 
 HOMEPAGE=	http://yorick.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yorick/}
+SITES=		${SITE_SOURCEFORGE:=yorick/}
 EXTRACT_SUFX=	.tgz
 
 # BSD

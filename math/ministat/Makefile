@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB=	c m
 
-MASTER_SITES=	https://people.freebsd.org/~misha/
+SITES=		https://people.freebsd.org/~misha/
 NO_TEST=	Yes
 # needs -lm for gcc archs
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -lm"

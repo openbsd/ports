@@ -19,7 +19,7 @@ WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pq readline spread-sheet-widget ssl xcb
 WANTLIB += xcb-render xcb-shm xml2 z Xau Xdmcp execinfo jpeg
 
-MASTER_SITES =	${MASTER_SITE_GNU:=pspp/}
+SITES =		${SITE_GNU:=pspp/}
 
 COMPILER =	base-clang ports-gcc
 

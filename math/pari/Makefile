@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		X11 c gmp m readline
 
-MASTER_SITES=		https://pari.math.u-bordeaux.fr/pub/pari/unix/ \
+SITES=			https://pari.math.u-bordeaux.fr/pub/pari/unix/ \
 			https://pari.math.u-bordeaux.fr/pub/pari/OLD/${V:R}/
 
 BUILD_DEPENDS=		print/texlive/base

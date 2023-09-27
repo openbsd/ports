@@ -29,7 +29,7 @@ WANTLIB += Qt5Xml X11 c cantorlibs cerf cfitsio fftw3 gsl gslcblas
 WANTLIB += hdf5 lz4 m markdown matio netcdf poppler poppler-qt5
 WANTLIB += spectre z
 
-MASTER_SITES =	https://download.kde.org/stable/labplot/
+SITES =		https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/kf5

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://github.com/gavinhoward/bc/releases/download/${V}/
+SITES =		https://github.com/gavinhoward/bc/releases/download/${V}/
 
 COMPILER =	base-clang ports-gcc
 

@@ -7,7 +7,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # BSD
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES =	${HOMEPAGE}/files/
+SITES =		${HOMEPAGE}/files/
 
 COMPILER = 	base-clang ports-gcc
 MODULES += 	devel/cmake

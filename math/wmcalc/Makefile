@@ -10,7 +10,7 @@ HOMEPAGE=		http://members.cox.net/ehf_dockapps/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c m
 
-MASTER_SITES=		${HOMEPAGE}wmcalc/
+SITES=			${HOMEPAGE}wmcalc/
 
 NO_TEST=		Yes
 

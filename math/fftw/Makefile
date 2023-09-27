@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.fftw.org/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		m
 
-MASTER_SITES=	https://fftw.org/ \
+SITES=		https://fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 

@@ -4,7 +4,7 @@ DISTNAME=	sc-7.16
 REVISION=	6
 CATEGORIES=	math
 
-MASTER_SITES=	${MASTER_SITE_SUNSITE:=apps/financial/spreadsheet/}
+SITES=		${SITE_SUNSITE:=apps/financial/spreadsheet/}
 
 # Public Domain
 PERMIT_PACKAGE=	Yes

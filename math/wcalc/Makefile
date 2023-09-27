@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses gmp>=7 m mpfr>=0.2 readline
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=w-calc/}
+SITES =			${SITE_SOURCEFORGE:=w-calc/}
 
 LIB_DEPENDS =		devel/gmp devel/mpfr
 

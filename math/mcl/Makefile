@@ -12,7 +12,7 @@ HOMEPAGE=	https://micans.org/mcl/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://micans.org/mcl/src/
+SITES=		https://micans.org/mcl/src/
 
 WANTLIB=	c m pthread
 

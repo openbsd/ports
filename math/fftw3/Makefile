@@ -19,7 +19,7 @@ HOMEPAGE=	https://www.fftw.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://fftw.org/ \
+SITES=		https://fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 

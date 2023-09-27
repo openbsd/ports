@@ -6,7 +6,7 @@ CATEGORIES=	math x11
 
 HOMEPAGE=	http://lashwhip.com/grpn.html
 
-MASTER_SITES=	http://lashwhip.com/grpn/ \
+SITES=		http://lashwhip.com/grpn/ \
 		ftp://lashwhip.com/pub/
 
 # GPLv2

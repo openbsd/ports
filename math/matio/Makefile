@@ -9,7 +9,7 @@ HOMEPAGE=	https://sourceforge.net/projects/matio/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=matio/}
+SITES=			${SITE_SOURCEFORGE:=matio/}
 
 COMPILER=		base-clang ports-gcc
 

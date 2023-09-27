@@ -3,7 +3,7 @@ COMMENT=		GNU units conversion program
 DISTNAME=		units-2.22
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
-MASTER_SITES=		${MASTER_SITE_GNU:=units/}
+SITES=			${SITE_GNU:=units/}
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 

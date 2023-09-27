@@ -3,7 +3,7 @@ COMMENT=	monte carlo simulation software
 DISTNAME=	mcsim-4.2.0
 CATEGORIES=	math
 REVISION=	2
-MASTER_SITES=	${MASTER_SITE_GNU:=mcsim/}
+SITES=		${SITE_GNU:=mcsim/}
 
 FAKE_FLAGS=	PREFIX="${WRKINST}${PREFIX}"
 WRKDIST=	${WRKDIR}/mcsim

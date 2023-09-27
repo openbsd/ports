@@ -28,7 +28,7 @@ WANTLIB +=		c m ${COMPILER_LIBCXX}
 # c++17
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		http://www.openfst.org/twiki/pub/FST/FstDownload/
+SITES =			http://www.openfst.org/twiki/pub/FST/FstDownload/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-bin		\

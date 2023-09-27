@@ -25,7 +25,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # parts are 3-clause BSD, others MPL 2, other Boost SL 1.0
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES = https://mlpack.org/files/
+SITES = 	https://mlpack.org/files/
 
 MULTI_PACKAGES = 	-main -python
 

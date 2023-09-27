@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c gmp
 
-MASTER_SITES =		http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
+SITES =			http://cgm.cs.mcgill.ca/~avis/C/lrslib/archive/
 
 USE_GMAKE =		Yes
 

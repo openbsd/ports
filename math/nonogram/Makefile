@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://www.lancs.ac.uk/~simpsons/archives/
+SITES =			https://www.lancs.ac.uk/~simpsons/archives/
 
 EXTRACT_SUFX =		.zip
 

@@ -7,7 +7,7 @@ DISTNAME=	cfitsio-4.2.0
 
 SHARED_LIBS +=  cfitsio                   3.0 # 0.0
 
-MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
+SITES=		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/
 
 # Mostly BSD-style, with two chunks of GPL code

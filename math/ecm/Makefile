@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m gmp
 
-MASTER_SITES =		http://gforge.inria.fr/frs/download.php/36224/
+SITES =			http://gforge.inria.fr/frs/download.php/36224/
 
 LIB_DEPENDS =		devel/gmp
 

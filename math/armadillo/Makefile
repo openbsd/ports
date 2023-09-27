@@ -11,7 +11,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB = 	${COMPILER_LIBCXX} arpack blas hdf5 lapack m z gfortran
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=arma/}
+SITES =		${SITE_SOURCEFORGE:=arma/}
 EXTRACT_SUFX= 	.tar.xz
 
 COMPILER = 	base-clang ports-gcc

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += gmp
 
-MASTER_SITES =		https://gcc.gnu.org/pub/gcc/infrastructure/
+SITES =			https://gcc.gnu.org/pub/gcc/infrastructure/
 EXTRACT_SUFX =		.tar.bz2
 
 LIB_DEPENDS =		devel/gmp

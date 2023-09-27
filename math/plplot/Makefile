@@ -25,7 +25,7 @@ HOMEPAGE =	http://plplot.sourceforge.net/
 # LGPL
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=plplot/}
+SITES =		${SITE_SOURCEFORGE:=plplot/}
 
 COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		fortran

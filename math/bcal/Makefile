@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses readline
 
-MASTER_SITES =	https://github.com/jarun/bcal/releases/download/v${V}/
+SITES =		https://github.com/jarun/bcal/releases/download/v${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

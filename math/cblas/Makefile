@@ -15,7 +15,7 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # freely available
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.netlib.org/blas/blast-forum/ \
+SITES=		http://www.netlib.org/blas/blast-forum/ \
 		http://www.netlib.no/netlib/blas/blast-forum/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}-${VERSION}

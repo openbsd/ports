@@ -13,7 +13,7 @@ MAINTAINER =	Paul Irofti <paul@irofti.net>
 # GPL v3
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=qrupdate/}
+SITES =			${SITE_SOURCEFORGE:=qrupdate/}
 
 MODULES =		fortran
 MODFORTRAN_COMPILER =	gfortran

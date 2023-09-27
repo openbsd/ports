@@ -11,7 +11,7 @@ HOMEPAGE =		http://webhome.phy.duke.edu/~rgb/General/dieharder.php
 # https://webhome.phy.duke.edu/~rgb/GPL.php
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://webhome.phy.duke.edu/~rgb/General/dieharder/
+SITES =			http://webhome.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX =		.tgz
 
 WANTLIB += c gsl gslcblas m

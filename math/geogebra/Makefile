@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.geogebra.org
 # See: http://www.geogebra.org/download/license.txt
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=geogebra/}
+SITES=			${SITE_GOOGLECODE:=geogebra/}
 
 MODULES=		java
 MODJAVA_VER=		1.8+

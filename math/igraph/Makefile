@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += 	${COMPILER_LIBCXX} m
 WANTLIB += 	arpack blas cxsparse glpk gmp lapack xml2
 
-MASTER_SITES =	https://github.com/igraph/igraph/releases/download/$V/
+SITES =		https://github.com/igraph/igraph/releases/download/$V/
 
 COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake

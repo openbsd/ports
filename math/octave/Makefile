@@ -17,7 +17,7 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_GNU:=octave/}
+SITES =		${SITE_GNU:=octave/}
 
 MODULES =	fortran \
 		x11/qt5

@@ -15,7 +15,7 @@ WANTLIB =		m gmp ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 LIB_DEPENDS =		devel/gmp
 

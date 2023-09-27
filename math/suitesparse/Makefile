@@ -24,7 +24,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODFORTRAN_WANTLIB} blas lapack m
 
-MASTER_SITES=		http://faculty.cse.tamu.edu/davis/SuiteSparse/
+SITES=			http://faculty.cse.tamu.edu/davis/SuiteSparse/
 
 MODULES=		fortran
 MODFORTRAN_COMPILER=	gfortran

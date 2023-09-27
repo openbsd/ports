@@ -17,7 +17,7 @@ WANTLIB += ngtcp2 ngtcp2_crypto_quictls ssl xml2 z
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =	https://github.com/Qalculate/libqalculate/releases/download/v$V/
+SITES =		https://github.com/Qalculate/libqalculate/releases/download/v$V/
 
 MODULES =	textproc/intltool
 

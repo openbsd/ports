@@ -13,7 +13,7 @@ WANTLIB += c fftw jpeg m netcdf png t1 z
 GRACE_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/ \
 		ftp://ftp.fu-berlin.de/unix/graphics/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/math/
-MASTER_SITES=	${GRACE_SITES:=grace/src/grace5/}
+SITES=		${GRACE_SITES:=grace/src/grace5/}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/ac-tools

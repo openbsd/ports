@@ -13,7 +13,7 @@ PKGNAME =	eigen3-${VERSION}
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://gitlab.com/libeigen/eigen/-/archive/${VERSION}/
+SITES =		https://gitlab.com/libeigen/eigen/-/archive/${VERSION}/
 
 # Many dependencies are only needed for tests
 PSEUDO_FLAVORS =	test

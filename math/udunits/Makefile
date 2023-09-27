@@ -10,7 +10,7 @@ HOMEPAGE =		http://www.unidata.ucar.edu/software/udunits/
 # original BSD-like, with advertisement clause
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		ftp://ftp.unidata.ucar.edu/pub/udunits/
+SITES =			ftp://ftp.unidata.ucar.edu/pub/udunits/
 
 WANTLIB +=		c expat m
 

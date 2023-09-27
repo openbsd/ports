@@ -11,7 +11,7 @@ MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://openbsd.dead-parrot.de/distfiles/
+SITES=			http://openbsd.dead-parrot.de/distfiles/
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m readline
 

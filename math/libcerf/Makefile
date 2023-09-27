@@ -5,7 +5,7 @@ DISTNAME =	libcerf-v${V}
 PKGNAME =	libcerf-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	math
-MASTER_SITES =	https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v${V}/
+SITES =		https://jugit.fz-juelich.de/mlz/libcerf/-/archive/v${V}/
 REVISION =	0
 
 SHARED_LIBS +=  cerf	2.0 # 1.13

@@ -4,7 +4,7 @@ V =		5.4
 PATCHLEVEL =	8
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
+SITES =		${SITE_SOURCEFORGE:=gnuplot/}
 
 HOMEPAGE =	http://www.gnuplot.info/
 

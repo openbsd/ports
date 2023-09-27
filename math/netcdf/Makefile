@@ -30,7 +30,7 @@ LIB_DEPENDS=		archivers/libzip \
 TEST_DEPENDS=		shells/bash \
 			textproc/gdiff
 
-MASTER_SITES=		https://downloads.unidata.ucar.edu/netcdf-c/$V/
+SITES=			https://downloads.unidata.ucar.edu/netcdf-c/$V/
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \

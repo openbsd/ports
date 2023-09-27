@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xaw Xext Xmu Xt c
 
-MASTER_SITES=	https://spacehopper.org/mirrors/ \
+SITES=		https://spacehopper.org/mirrors/ \
 		ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
 
 NO_TEST=	Yes

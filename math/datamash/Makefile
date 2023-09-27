@@ -6,7 +6,7 @@ REVISION=	0
 CATEGORIES=	math
 
 HOMEPAGE=	https://www.gnu.org/software/datamash/
-MASTER_SITES=	${MASTER_SITE_GNU:=datamash/}
+SITES=		${SITE_GNU:=datamash/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

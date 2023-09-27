@@ -11,7 +11,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.lancs.ac.uk/~simpsons/archives/
+SITES =			https://www.lancs.ac.uk/~simpsons/archives/
 
 EXTRACT_SUFX =		.zip
 

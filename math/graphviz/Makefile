@@ -9,7 +9,7 @@ CATEGORIES=	math devel graphics
 
 MULTI_PACKAGES=	-main -tcl
 
-MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$V/
+SITES=		https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$V/
 
 SHARED_LIBS += cdt			2.0 # 5.0
 SHARED_LIBS += xdot			1.0 # 4.0

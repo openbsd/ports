@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m curses readline
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2
 
 MAKE_ENV =	READLINE=1

@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5OpenGL Qt5Svg
 WANTLIB += Qt5Widgets Qt5Xml gmp m mpfr z
 
-MASTER_SITES =		https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14.2/
+SITES =	https://github.com/CGAL/cgal/releases/download/releases%2FCGAL-4.14.2/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake \

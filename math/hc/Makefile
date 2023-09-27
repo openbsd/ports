@@ -7,7 +7,7 @@ CATEGORIES=	math
 
 HOMEPAGE=	http://www.geocities.com/connorbd/software/hc.html
 
-MASTER_SITES=	http://www.geocities.com/connorbd/software/
+SITES=		http://www.geocities.com/connorbd/software/
 
 # GPL
 PERMIT_PACKAGE=	Yes
