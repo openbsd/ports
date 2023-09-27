@@ -64,8 +64,9 @@ DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.6.jar
 ECJ =		ecj-4.5.jar
-SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0 \
-		${ADASTRAP-hppa}:0 ${ADASTRAP-alpha}:0 ${ECJ}:1
+SUPDISTFILES.boot =	${ADASTRAP-i386} ${ADASTRAP-amd64} \
+	${ADASTRAP-sparc64} ${ADASTRAP-hppa} ${ADASTRAP-alpha}
+SUPDISTFILES.java =	${ECJ}
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 
@@ -75,9 +76,9 @@ BUILD_DEPENDS +=	devel/bison \
 TEST_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
-MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://spacehopper.org/mirrors/ http://distfiles.tmux.org/adastrap/
-MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
+SITES =		${SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
+SITES.boot =	http://spacehopper.org/mirrors/ http://distfiles.tmux.org/adastrap/
+SITES.java =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c
 .if ${BUILD_PACKAGES:M-c++}
@@ -92,13 +93,13 @@ LANGS := ${LANGS},objc
 .endif
 .if ${BUILD_PACKAGES:M-java}
 LANGS := ${LANGS},java
-DISTFILES +=		${ECJ}:1
+DISTFILES.java +=	${ECJ}
 BUILD_DEPENDS +=	archivers/zip>=2.3p0
 CONFIGURE_ARGS +=	--enable-libgcj --without-jar
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
-DISTFILES += ${ADASTRAP-${MACHINE_ARCH}}:0
+DISTFILES.boot += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRACT_ONLY += ${ADASTRAP-${MACHINE_ARCH}}
 EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 

@@ -1,10 +1,10 @@
-# $OpenBSD: cpan.port.mk,v 1.24 2023/07/19 11:17:11 sthen Exp $
+# $OpenBSD: cpan.port.mk,v 1.25 2023/09/27 21:41:16 espie Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
-MASTER_SITES ?=	${MASTER_SITE_PERL_CPAN:N*backpan.perl.org*:=${DISTNAME:C/-.*$//}/}
+SITES ?=	${SITE_PERL_CPAN:N*backpan.perl.org*:=${DISTNAME:C/-.*$//}/}
 .else
-MASTER_SITES ?=	${MASTER_SITE_PERL_CPAN:S_/by-module/_/by-authors/_:=id/${CPAN_AUTHOR:C/^(.).*/\1/}/${CPAN_AUTHOR:C/^(..).*/\1/}/${CPAN_AUTHOR}/}
+SITES ?=	${SITE_PERL_CPAN:S_/by-module/_/by-authors/_:=id/${CPAN_AUTHOR:C/^(.).*/\1/}/${CPAN_AUTHOR:C/^(..).*/\1/}/${CPAN_AUTHOR}/}
 .endif
 
 HOMEPAGE ?=	https://metacpan.org/release/${DISTNAME:C/-[^-]*$//}

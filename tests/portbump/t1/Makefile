@@ -46,7 +46,7 @@ HOMEPAGE=	http://www.avahi.org/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4 bootstrap
 FLAVOR?=	no_gui no_mono no_qt3 no_qt4 bootstrap

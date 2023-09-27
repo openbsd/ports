@@ -15,11 +15,11 @@ HOMEPAGE=		http://www.php.net/
 SUHOSIN_V=		0.9.33
 SUHOSIN_PHPV?=		${V}
 
-MASTER_SITES=		http://se.php.net/distributions/ \
+SITES=			http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		http://spacehopper.org/mirrors/ \
+SITES.a=		http://spacehopper.org/mirrors/ \
 			http://download.suhosin.org/ \
 			http://blade2k.humppa.hu/ \
 			${MASTER_SITE_FREEBSD}
@@ -315,11 +315,11 @@ LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 .if ${PV} != "5.4" && ${PV} != "5.5"
 .  if ${FLAVOR:Mno_suhosin}
-SUPDISTFILES=		suhosin-${SUHOSIN_V}.tgz:0 \
-			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
+SUPDISTFILES.a=		suhosin-${SUHOSIN_V}.tgz \
+			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz
 .  else
-DISTFILES+=		suhosin-${SUHOSIN_V}.tgz:0
-PATCHFILES=		suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
+DISTFILES.a+=		suhosin-${SUHOSIN_V}.tgz
+PATCHFILES.a=		suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-suhosin
 

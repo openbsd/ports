@@ -149,7 +149,7 @@ LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 
 .if ${CONFIGURE_STYLE:L:Mgem}
 # All gems should be in the same directory on rubygems.org.
-MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
+SITES?=		${SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
 
 .  if ${CONFIGURE_STYLE:L:Mext}

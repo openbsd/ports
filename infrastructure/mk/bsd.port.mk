@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1626 2023/09/27 08:21:06 semarie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1627 2023/09/27 21:41:16 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1234,7 +1234,7 @@ YACC ?= yacc
 # command is expanded from a variable, as this could be a shell construct
 SETENV ?= /usr/bin/env -i
 
-# basic master sites configuration
+# basic sites configuration
 
 .include "${PORTSDIR}/infrastructure/db/network.conf"
 
@@ -1243,32 +1243,28 @@ SETENV ?= /usr/bin/env -i
 ERRORS += "Fatal: specifying both GH_TAGNAME and GH_COMMIT is invalid"
 .  endif
 .  if !empty(GH_TAGNAME)
-MASTER_SITES_GITHUB += \
+SITES_GITHUB += \
 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/refs/tags/${GH_TAGNAME:S/$/\//}
 .  elif !empty(GH_COMMIT)
-MASTER_SITES_GITHUB += \
+SITES_GITHUB += \
 	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/
 .  else
 ERRORS += "Fatal: if using GH_*, one of GH_TAGNAME or GH_COMMIT must be set"
 .  endif
 
-MASTER_SITES ?= ${MASTER_SITES_GITHUB}
+SITES ?= ${SITES_GITHUB}
 HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .else
-# There are two types of ports with DISTFILES but no actionable (MASTER_)SITES:
+# There are two types of ports with DISTFILES but no actionable SITES:
 # - FETCH_MANUALLY
 # - orphaned port, defaults to SITES_BACKUP
-MASTER_SITES ?=
+SITES ?=
 .endif
 
 # I guess we're in the master distribution business! :)  As we gain mirror
-# sites for distfiles, add them to MASTER_SITE_BACKUP
+# sites for distfiles, add them to SITE_BACKUP
 
 _warn_checksum = :
-
-.for v in ${.VARIABLES:MMASTER_SITE*}
-${v:S/MASTER_//} ?= ${$v}
-.endfor
 
 .if empty(.VARIABLES)
 ERRORS += "Fatal: requires make(1) with .VARIABLES support"
@@ -3249,7 +3245,7 @@ ${DISTDIR}/$f:
 	${_PFETCH} install -d ${DISTDIR_MODE} ${@:H}; \
 	cd ${@:H}; \
 	file=$@.part; \
-	for site in ${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}; do \
+	for site in ${SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${SITE_OPENBSD:=${cipher}/${value}/}; do \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
 		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$u; then \
 			ck=`${_size_fragment} $$file $p`; \
@@ -3308,11 +3304,11 @@ ${DISTDIR}/$p: # XXX that comment works around a limitation in make
 	done; \
 	if ${_MAKESUM}; then \
 		if test -z ${$m}; then \
-				${ECHO_MSG} ">> No master site in $m"; \
+				${ECHO_MSG} ">> No site in $m"; \
 		fi; \
 		exit 1; \
 	fi; \
-	for site in ${MASTER_SITE_BACKUP}; do \
+	for site in ${SITE_BACKUP}; do \
 		${ECHO_MSG} ">> Fetch $${site}$p"; \
 		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$p; then \
 				ck=`${_size_fragment} $$file $p`; \

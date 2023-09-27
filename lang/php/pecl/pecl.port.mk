@@ -30,8 +30,8 @@ _PECLMOD ?=	${DISTNAME:S/pecl-//:C/-[0-9].*//:L}
 
 SUBST_VARS +=	MODPECL_DEFAULTV
 
-.if !defined(MASTER_SITES) && !defined(GH_PROJECT)
-MASTER_SITES ?=	https://pecl.php.net/get/
+.if !defined(SITES) && !defined(GH_PROJECT)
+SITES ?=	https://pecl.php.net/get/
 HOMEPAGE ?=	https://pecl.php.net/package/${_PECLMOD}
 EXTRACT_SUFX ?=	.tgz
 .endif

@@ -1,7 +1,7 @@
-# known MASTER_SITES.x
-MASTER_SITES.github ?=	https://github.com/
-MASTER_SITES.gitlab ?=	https://gitlab.com/
-MASTER_SITES.srht ?=	https://git.sr.ht/
+# known SITES.x
+SITES.github ?=	https://github.com/
+SITES.gitlab ?=	https://gitlab.com/
+SITES.srht ?=	https://git.sr.ht/
 
 # set EXTRACT_SUFX.x if different from TEMPLATE_EXTRACT_SUFX
 TEMPLATE_EXTRACT_SUFX ?=	.tar.gz
@@ -22,6 +22,6 @@ TEMPLATE_DISTFILES.srht ?= \
 
 # template for HOMEPAGE; same substitutions as for DISTFILES.x
 # Defaults to TEMPLATE_HOMEPAGE. Set TEMPLATE_HOMEPAGE.x to use different pattern.
-# - <site> - substituted, may correspond to MASTER_SITES.x
+# - <site> - substituted, may correspond to SITES.x
 TEMPLATE_HOMEPAGE ?=		<site><account>/<project>
 TEMPLATE_HOMEPAGE.srht ?=	<site>~<account>/<project>

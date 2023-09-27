@@ -19,7 +19,7 @@ PKGNAME-web =	amuleweb-$V
 PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
+SITES =		${SITE_SOURCEFORGE:=amule/}
 EXTRACT_SUFX =	.tar.xz
 
 LIB_DEPENDS =

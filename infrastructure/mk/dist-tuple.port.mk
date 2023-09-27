@@ -20,7 +20,7 @@ DIST_TUPLE ?=
 .if !empty(DIST_TUPLE)
 .  for _template _account _project _id _targetdir in ${DIST_TUPLE}
 
-.    if empty(MASTER_SITES.${_template})
+.    if empty(SITES.${_template})
 ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 .    endif
 
@@ -34,7 +34,7 @@ WRKDIST ?= ${WRKDIR}/${_project}-${_id:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9
 WRKDIST ?= ${WRKDIR}/${_project}-${_id}
 .    endif
 
-.    for _subst in S,<account>,${_account},g:S,<project>,${_project},g:S,<id>,${_id},g:S,<subdir>,${_subdir},g:S,<site>,${MASTER_SITES.${_template}},g
+.    for _subst in S,<account>,${_account},g:S,<project>,${_project},g:S,<id>,${_id},g:S,<subdir>,${_subdir},g:S,<site>,${SITES.${_template}},g
 
 DISTFILES.${_template} +=		${TEMPLATE_DISTFILES.${_template}:${_subst}}
 EXTRACT_SUFX.${_template} ?=		${TEMPLATE_EXTRACT_SUFX}

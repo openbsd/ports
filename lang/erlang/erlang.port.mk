@@ -126,9 +126,9 @@ pre-build:
 
 # Add possibility to include additional build or test dependencies from 
 # https://hex.pm.
-MASTER_SITE_HEX =	https://repo.hex.pm/tarballs/
+SITE_HEX =		https://repo.hex.pm/tarballs/
 
-MASTER_SITES.erl	?= ${MASTER_SITE_HEX}
+SITES.erl ?= 		${SITE_HEX}
 MODERL_DIST_SUBDIR ?=	hex_modules
 
 .  for _m _v in ${MODERL_MODULES}

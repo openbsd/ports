@@ -1,7 +1,7 @@
 COMMENT=	tempo/pitch audio processing library
 
 DISTNAME=	soundtouch-1.3.1
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 WANTLIB=	c m ${COMPILER_LIBCXX}
 
 AUTOCONF_VERSION=2.61
