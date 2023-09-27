@@ -16,8 +16,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xau Xdmcp Xext Xrender c m sndio
 
 # bad https redirect
-#MASTER_SITES=	http://www.ryanflannery.net/hacking/xstatbar/files/
-MASTER_SITES=	https://spacehopper.org/mirrors/
+#SITES=		http://www.ryanflannery.net/hacking/xstatbar/files/
+SITES=		https://spacehopper.org/mirrors/
 
 EXTRACT_SUFX=	.tgz
 

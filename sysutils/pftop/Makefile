@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
+SITES=		http://www.eee.metu.edu.tr/~canacar/
 
 MAKE_FLAGS=	CC="${CC}"
 FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man

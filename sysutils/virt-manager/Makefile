@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://virt-manager.org/download/sources/virt-manager/
+SITES=			https://virt-manager.org/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
 			lang/python

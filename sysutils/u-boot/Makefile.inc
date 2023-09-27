@@ -15,7 +15,7 @@ HOMEPAGE=	https://www.denx.de/wiki/U-Boot
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://ftp.denx.de/pub/u-boot/
+SITES=		https://ftp.denx.de/pub/u-boot/
 EXTRACT_SUFX=	.tar.bz2
 PKG_ARCH=	*
 

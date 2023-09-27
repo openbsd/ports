@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses pthread readline
 
-MASTER_SITES =		https://github.com/jarun/nnn/releases/download/v${V}/
+SITES =			https://github.com/jarun/nnn/releases/download/v${V}/
 
 # Uses -std=c11 so cannot use base-gcc
 COMPILER =		base-clang ports-gcc

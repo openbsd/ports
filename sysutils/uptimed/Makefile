@@ -14,7 +14,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 
-MASTER_SITES =	http://podgorny.cz/uptimed/releases/
+SITES =		http://podgorny.cz/uptimed/releases/
 EXTRACT_SUFX =	.tar.bz2
 
 CONFIGURE_STYLE = gnu

@@ -9,7 +9,7 @@ HOMEPAGE=		https://dev.yorhel.nl/ncdu/
 
 MAINTAINER=		Frederic Cambus <fcambus@openbsd.org>
 
-MASTER_SITES=		https://dev.yorhel.nl/download/
+SITES=			https://dev.yorhel.nl/download/
 
 # MIT
 PERMIT_PACKAGE=	Yes

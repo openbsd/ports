@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c
 
-MASTER_SITES=	http://www.netbsd.org/~chuck/gz/
+SITES=		http://www.netbsd.org/~chuck/gz/
 
 WRKDIST=	${WRKDIR}/xuvmstat
 MAKE_FLAGS=	CC="${CC}"

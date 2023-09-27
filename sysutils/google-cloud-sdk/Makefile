@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
+SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 
 MODULES=		lang/python
 

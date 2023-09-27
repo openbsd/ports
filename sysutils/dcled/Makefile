@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.last-outpost.com/~malakai/dcled/
 
 PERMIT_PACKAGE = Yes
 
-MASTER_SITES=	http://www.last-outpost.com/~malakai/dcled/
+SITES=		http://www.last-outpost.com/~malakai/dcled/
 
 WANTLIB += c m pthread usb-1.0
 

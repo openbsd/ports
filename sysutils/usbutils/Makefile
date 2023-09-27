@@ -13,7 +13,7 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://ftp.de.debian.org/debian/pool/main/u/usbutils/
+SITES =			http://ftp.de.debian.org/debian/pool/main/u/usbutils/
 EXTRACT_SUFX =		.tar.xz
 
 WANTLIB =		c pthread usb-1.0 z

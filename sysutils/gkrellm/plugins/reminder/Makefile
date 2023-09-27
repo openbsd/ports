@@ -8,7 +8,7 @@ CATEGORIES=	misc
 
 HOMEPAGE=	http://members.dslextreme.com/users/billw/gkrellm/Plugins.html\#REMINDER
 
-MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/Plugins/
+SITES=		http://members.dslextreme.com/users/billw/gkrellm/Plugins/
 
 EXTRA_WANTLIB=	gthread-2.0
 

@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c duktape expat gio-2.0 glib-2.0 gobject-2.0 intl pthread
 
-MASTER_SITES=		https://gitlab.freedesktop.org/polkit/polkit/-/archive/${V}/
+SITES=		https://gitlab.freedesktop.org/polkit/polkit/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python

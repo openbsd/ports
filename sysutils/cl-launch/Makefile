@@ -9,7 +9,7 @@ HOMEPAGE=		http://cliki.net/cl-launch
 # LLGPL (http://www.cliki.net/LLGPL)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 WRKDIST=		${WRKDIR}/cl-launch.git
 

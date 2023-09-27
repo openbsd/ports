@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
+SITES =		http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 
 CONFIGURE_STYLE = gnu
 

@@ -4,7 +4,7 @@ DISTNAME =		ranval-1.4
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.weirdnet.nl/openbsd/code/ranval/
-MASTER_SITES =		http://www.weirdnet.nl/openbsd/code/ranval/
+SITES =			${HOMEPAGE}
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 

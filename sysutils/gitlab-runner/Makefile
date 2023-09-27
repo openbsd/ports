@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 
-MASTER_SITES =		https://gitlab.com/gitlab-org/gitlab-runner/-/archive/${V}/
+SITES =		https://gitlab.com/gitlab-org/gitlab-runner/-/archive/${V}/
 
 MODULES =		lang/go
 

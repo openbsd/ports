@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m kvm pthread ssl z
 
-MASTER_SITES=	${HOMEPAGE}/dist/
+SITES=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=gnu
 

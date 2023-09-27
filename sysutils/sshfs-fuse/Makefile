@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c fuse glib-2.0 gthread-2.0 intl pthread
 
-MASTER_SITES =	${HOMEPAGE}/releases/download/${DISTNAME}/
+SITES =		${HOMEPAGE}/releases/download/${DISTNAME}/
 
 LIB_DEPENDS =	devel/glib2
 

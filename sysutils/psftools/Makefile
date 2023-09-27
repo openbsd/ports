@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	https://www.seasip.info/Unix/PSF/
+SITES =		https://www.seasip.info/Unix/PSF/
 
 CONFIGURE_STYLE = gnu
 

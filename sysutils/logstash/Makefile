@@ -15,7 +15,7 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 # Apache2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
+SITES =			https://artifacts.elastic.co/downloads/logstash/
 
 MODULES =		java
 MODJAVA_VER =		17

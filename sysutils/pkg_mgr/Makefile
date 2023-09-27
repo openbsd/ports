@@ -10,7 +10,7 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://rhaalovely.net/stuff/
+SITES=		https://rhaalovely.net/stuff/
 
 # for P5SITE
 MODULES=	perl

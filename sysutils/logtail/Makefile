@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/l/logcheck/}
+SITES=		${SITE_DEBIAN:=main/l/logcheck/}
 WRKDIST=	${WRKDIR}/logcheck
 FIX_EXTRACT_PERMISSIONS= Yes
 

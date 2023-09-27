@@ -10,7 +10,7 @@ MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 # BSD / MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 
 CONFIGURE_STYLE =	gnu
 

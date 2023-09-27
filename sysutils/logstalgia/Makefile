@@ -9,7 +9,7 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
+SITES =	https://github.com/acaudwell/Logstalgia/releases/download/${DISTNAME}/
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU SDL2 SDL2_image X11
 WANTLIB += Xext Xi Xmu boost_filesystem boost_system c freetype

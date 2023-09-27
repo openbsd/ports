@@ -8,7 +8,7 @@ CATEGORIES=	mail
 
 HOMEPAGE=	http://gkrellm.luon.net/mailwatch.phtml
 
-MASTER_SITES=	http://gkrellm.luon.net/files/
+SITES=		http://gkrellm.luon.net/files/
 
 EXTRA_WANTLIB=	gthread-2.0
 

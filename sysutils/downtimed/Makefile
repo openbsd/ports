@@ -4,7 +4,7 @@ REVISION =		1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://dist.epipe.com/downtimed/
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 

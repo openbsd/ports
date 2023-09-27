@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	https://github.com/pyr/tree/releases/download/$V/
+SITES=		https://github.com/pyr/tree/releases/download/$V/
 EXTRACT_SUFX=	.tgz
 
 NO_TEST=	Yes

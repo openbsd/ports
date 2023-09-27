@@ -5,7 +5,7 @@ REVISION=	0
 
 HOMEPAGE=	http://www.igmus.org/code/
 
-MASTER_SITES=	http://www.igmus.org/files/
+SITES=		http://www.igmus.org/files/
 
 CATEGORIES=	sysutils
 

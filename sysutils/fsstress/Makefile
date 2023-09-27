@@ -10,7 +10,7 @@ MAINTAINER=		Bob Beck <beck@openbsd.org>
 # GPLv2 (only)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://bofh.ucs.ualberta.ca/beck/fsstress/
+SITES=		http://bofh.ucs.ualberta.ca/beck/fsstress/
 
 NO_TEST=	Yes
 WANTLIB=	c

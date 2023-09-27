@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c usb-1.0
 
-MASTER_SITES=	https://s3.amazonaws.com/cdn.softiron.com/
+SITES=		https://s3.amazonaws.com/cdn.softiron.com/
 
 LIB_DEPENDS=	devel/libusb1
 

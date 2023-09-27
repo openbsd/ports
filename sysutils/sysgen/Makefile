@@ -3,7 +3,7 @@ COMMENT=		calculates QBUS CSR and Vector assignments
 DISTNAME=		sysgen
 PKGNAME=		sysgen-0.0
 CATEGORIES=		sysutils
-MASTER_SITES=		http://ox.compsoc.net/~dankolb/sysgen/
+SITES=			http://ox.compsoc.net/~dankolb/sysgen/
 EXTRACT_SUFX=		.tar.Z
 MAINTAINER=		Hugh Graham <hugh@openbsd.org>
 

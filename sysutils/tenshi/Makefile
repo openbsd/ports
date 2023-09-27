@@ -16,7 +16,7 @@ MAINTAINER =		Paul B. Henson <henson@acm.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/inversepath/tenshi/archive/
+SITES =			https://github.com/inversepath/tenshi/archive/
 
 RUN_DEPENDS =		devel/p5-IO-BufferedSelect
 

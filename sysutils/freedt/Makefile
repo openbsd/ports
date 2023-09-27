@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://offog.org/files/
+SITES=			http://offog.org/files/
 
 CONFIGURE_STYLE=	gnu
 

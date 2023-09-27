@@ -11,7 +11,7 @@ HOMEPAGE =	https://ranger.github.io/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ranger.github.io/
+SITES =		https://ranger.github.io/
 
 MODULES =	lang/python
 MODPY_ADJ_FILES =	tests/manpage_completion_test.py

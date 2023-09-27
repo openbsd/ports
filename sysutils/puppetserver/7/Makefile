@@ -13,7 +13,7 @@ HOMEPAGE =		https://puppet.com/docs/puppet/7/server/about_server.html
 
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://downloads.puppetlabs.com/puppet/
+SITES =			https://downloads.puppetlabs.com/puppet/
 
 MODULES =		java \
 			lang/ruby

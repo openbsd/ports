@@ -5,7 +5,7 @@ DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/adrianlopezroche/fdupes
-MASTER_SITES=	https://github.com/adrianlopezroche/fdupes/releases/download/v$V/
+SITES=		${HOMEPAGE}/releases/download/v$V/
 
 MAINTAINER =	Martin Ziemer <horrad@horrad.de>
 

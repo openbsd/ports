@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c z
 
-MASTER_SITES =		https://www.kernel.org/pub/software/utils/pciutils/ \
+SITES =			https://www.kernel.org/pub/software/utils/pciutils/ \
 			https://mj.ucw.cz/download/linux/pci/
 
 USE_GMAKE =		Yes

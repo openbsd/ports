@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c execinfo uuid fuse pthread
 
-MASTER_SITES =	https://tuxera.com/opensource/
+SITES =		https://tuxera.com/opensource/
 EXTRACT_SUFX =	.tgz
 
 LIB_DEPENDS =		sysutils/e2fsprogs

@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libevtx/wiki
 
-MASTER_SITES =	https://github.com/libyal/libevtx/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libevtx/releases/download/${VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

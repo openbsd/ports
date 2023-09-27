@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://sortix.org/rw/release/
+SITES =		https://sortix.org/rw/release/
 
 FAKE_FLAGS =	DESTDIR= MANDIR="${DESTDIR}${PREFIX}/man"
 

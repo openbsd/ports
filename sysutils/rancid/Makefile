@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c util
 
-MASTER_SITES =	ftp://ftp.shrubbery.net/pub/rancid/
+SITES =		ftp://ftp.shrubbery.net/pub/rancid/
 
 RUN_DEPENDS =	lang/expect
 BUILD_DEPENDS =	${RUN_DEPENDS}

@@ -36,7 +36,7 @@ WANTLIB-snmp +=	${COMMON} m netsnmp
 WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 
-MASTER_SITES=	https://github.com/networkupstools/nut/releases/download/v$V/
+SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

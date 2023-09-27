@@ -7,7 +7,7 @@ WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
-MASTER_SITES=	https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
+SITES=		https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
 		http://firmware.openbsd.org/firmware-dist/
 
 do-install:

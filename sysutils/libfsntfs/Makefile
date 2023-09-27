@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libfsntfs/wiki
 
-MASTER_SITES =	https://github.com/libyal/libfsntfs/releases/download/${VERSION}/
+SITES =	https://github.com/libyal/libfsntfs/releases/download/${VERSION}/
 
 MAINTAINER = 	Remi Pointel <rpointel@openbsd.org>
 

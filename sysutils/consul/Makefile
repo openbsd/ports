@@ -10,7 +10,7 @@ PKGNAME=		consul-${VERSION}
 # https://github.com/hashicorp/consul/archive/v$VERSION/consul-$VERSION.tar.gz
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		consul-vendored-${VERSION}
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+SITES=			https://distfiles.bsdfrog.org/
 ALL_TARGET=		github.com/hashicorp/consul
 
 CATEGORIES=		sysutils net

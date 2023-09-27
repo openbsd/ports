@@ -10,7 +10,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
+SITES=		${SITE_GNU:=grep/}
 
 EXTRACT_SUFX=	.tar.xz
 

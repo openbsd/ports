@@ -5,7 +5,7 @@ REVISION =		0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.laffeycomputer.com/rpl.html
-MASTER_SITES =		http://downloads.laffeycomputer.com/current_builds/
+SITES =			http://downloads.laffeycomputer.com/current_builds/
 
 # GPL
 PERMIT_PACKAGE =	Yes

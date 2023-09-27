@@ -17,9 +17,9 @@ HOMEPAGE=	https://www.devicetree.org
 # dual GPL/BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/v6.x/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/v6.x/
 EXTRACT_SUFX=	.tar.xz
-#MASTER_SITES=	https://git.kernel.org/torvalds/t/
+#SITES=		https://git.kernel.org/torvalds/t/
 PKG_ARCH=	*
 
 MODULES=	lang/clang

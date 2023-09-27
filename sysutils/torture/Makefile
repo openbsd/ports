@@ -9,7 +9,7 @@ MAINTAINER =		Bob Beck <beck@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://foad2.obtuse.com/pub/beck/
+SITES =		http://foad2.obtuse.com/pub/beck/
 
 NO_TEST =	Yes
 WANTLIB =	c

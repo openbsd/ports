@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c popt>=0.3
 
-MASTER_SITES =		https://framagit.org/soleneBSD/faubackup/-/archive/${V}/
+SITES =			https://framagit.org/soleneBSD/faubackup/-/archive/${V}/
 
 LIB_DEPENDS =		devel/popt
 TEST_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS}

@@ -6,7 +6,7 @@ DISTNAME =	libptytty-2.0
 CATEGORIES =	sysutils
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-MASTER_SITES =	http://dist.schmorp.de/libptytty/ \
+SITES =		http://dist.schmorp.de/libptytty/ \
 		http://dist.schmorp.de/libptytty/Attic/
 
 HOMEPAGE =	http://software.schmorp.de/pkg/libptytty.html

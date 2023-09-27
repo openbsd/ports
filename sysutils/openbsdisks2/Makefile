@@ -17,7 +17,7 @@ COMPILER =	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m util
 
-MASTER_SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}/
+SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5

@@ -3,7 +3,7 @@ COMMENT=	copy stdin to a qmail-style maildir
 REVISION=	0
 DISTNAME=	safecat-1.13
 CATEGORIES=	sysutils
-MASTER_SITES=	http://jeenyus.net/linux/software/safecat/ \
+SITES=		http://jeenyus.net/linux/software/safecat/ \
 		http://sunsite.unc.edu/pub/Linux/utils/file/
 
 HOMEPAGE=	http://jeenyus.net/linux/software/safecat.html

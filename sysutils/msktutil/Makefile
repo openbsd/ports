@@ -2,7 +2,7 @@ COMMENT=	tool for ActiveDirectory interoperability
 
 V=		1.2.1
 DISTNAME=	msktutil-$V
-MASTER_SITES=	https://github.com/msktutil/msktutil/releases/download/$V/
+SITES=		${HOMEPAGE}/releases/download/$V/
 HOMEPAGE=	https://github.com/msktutil/msktutil
 
 CATEGORIES=	sysutils

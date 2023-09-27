@@ -11,7 +11,7 @@ MAINTAINER =		Mike Burns <mike+openbsd@mike-burns.com>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://thoughtbot.github.io/rcm/dist/
+SITES =			https://thoughtbot.github.io/rcm/dist/
 
 CONFIGURE_STYLE =	gnu
 

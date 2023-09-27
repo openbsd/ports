@@ -8,7 +8,7 @@ REVISION=	1
 DISTFILES=	tphdisk.c
 CATEGORIES=	sysutils
 
-MASTER_SITES=	https://www.samba.org//ftp/unpacked/junkcode/
+SITES=		https://www.samba.org//ftp/unpacked/junkcode/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

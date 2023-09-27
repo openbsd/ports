@@ -6,9 +6,9 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	http://wizard.ae.krakow.pl/~mike/
 
-MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
+SITES=		http://wizard.ae.krakow.pl/~mike/download/ \
 		http://janek.ae.krakow.pl/~suszyckm/download/ \
-		${MASTER_SITE_PACKETSTORM:=UNIX/IDS/}
+		${SITE_PACKETSTORM:=UNIX/IDS/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

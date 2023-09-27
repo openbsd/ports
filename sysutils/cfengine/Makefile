@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto iconv lzma m pam pcre pthread ssl qdbm xml2 z
 
-MASTER_SITES =	https://cfengine-package-repos.s3.amazonaws.com/tarballs/
+SITES =		https://cfengine-package-repos.s3.amazonaws.com/tarballs/
 
 CFENGINE_BASE =		/var/cfengine
 CFENGINE_EXAMPLES =	${PREFIX}/share/examples/cfengine

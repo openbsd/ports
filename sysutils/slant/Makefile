@@ -23,7 +23,7 @@ RUN_DEPENDS =	databases/sqlbox \
 
 LIB_DEPENDS = databases/sqlite3
 
-MASTER_SITES =	https://kristaps.bsd.lv/slant/snapshots/
+SITES =		https://kristaps.bsd.lv/slant/snapshots/
 
 SUBST_VARS = VARBASE
 

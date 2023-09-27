@@ -13,7 +13,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://scriptedconfiguration.org/code/
+SITES =			https://scriptedconfiguration.org/code/
 
 MODULES =		lang/ruby
 MODRUBY_BUILDDEP =	No

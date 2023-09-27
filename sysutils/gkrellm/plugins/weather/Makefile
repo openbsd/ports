@@ -7,7 +7,7 @@ CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	https://sites.google.com/site/makovick/gkrellm-plugins
-MASTER_SITES=	https://sites.google.com/site/makovick/projects/
+SITES=		https://sites.google.com/site/makovick/projects/
 
 ALL_TARGET=	gkrellweather.so
 PLUGIN=		${WRKSRC}/gkrellweather.so

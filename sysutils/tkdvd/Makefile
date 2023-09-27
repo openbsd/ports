@@ -9,7 +9,7 @@ HOMEPAGE=		http://regis.damongeot.free.fr/tkdvd/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE:=dl/}
+SITES=			${HOMEPAGE:=dl/}
 
 WRKDIST=		${WRKDIR}/tkdvd
 

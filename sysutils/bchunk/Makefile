@@ -9,7 +9,7 @@ REVISION=	1
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://he.fi/bchunk/
+SITES=		http://he.fi/bchunk/
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LDFLAGS="${LDFLAGS}"
 

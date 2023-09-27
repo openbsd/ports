@@ -6,7 +6,7 @@ CATEGORIES=		sysutils
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 NO_TEST=		Yes
 NO_BUILD=		Yes

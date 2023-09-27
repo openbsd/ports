@@ -2,7 +2,7 @@ COMMENT=	extended script command
 
 DISTNAME=	superscript-0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 
 WANTLIB=	c util

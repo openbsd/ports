@@ -6,7 +6,7 @@ CATEGORIES =	sysutils
 REVISION =	0
 
 HOMEPAGE =	https://www.cgsecurity.org/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>

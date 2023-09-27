@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto m
 
-MASTER_SITES =	https://github.com/ibara/cmb/releases/download/${DISTNAME}/
+SITES =		https://github.com/ibara/cmb/releases/download/${DISTNAME}/
 
 NO_TEST =	Yes
 

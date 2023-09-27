@@ -20,7 +20,7 @@ PERMIT_PACKAGE=		Yes
 # uses pledge()
 WANTLIB += c
 
-MASTER_SITES=		http://repo.or.cz/login_krb5.git/snapshot/
+SITES=			http://repo.or.cz/login_krb5.git/snapshot/
 
 MODULES=		security/heimdal
 

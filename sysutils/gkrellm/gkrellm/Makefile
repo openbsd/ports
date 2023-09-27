@@ -13,7 +13,7 @@ HOMEPAGE=	http://gkrellm.srcbox.net/
 # GPLv3 with OpenSSL license exception
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://gkrellm.srcbox.net/releases/
+SITES=		http://gkrellm.srcbox.net/releases/
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_client

@@ -6,7 +6,7 @@ CATEGORIES=		sysutils security
 
 HOMEPAGE=		http://www.sleuthkit.org/mac-robber/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mac-robber/}
+SITES=			${SITE_SOURCEFORGE:=mac-robber/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

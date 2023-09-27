@@ -9,7 +9,7 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 PERMIT_PACKAGE=	Yes
 WANTLIB+= c pcre
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=logpp/}
+SITES=		${SITE_SOURCEFORGE:=logpp/}
 
 LIB_DEPENDS=	devel/pcre
 

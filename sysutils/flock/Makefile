@@ -10,7 +10,7 @@ DIST_SUBDIR=	flock
 
 REVISION=	1
 
-MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
+SITES=		http://blade2k.humppa.hu/distfiles/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

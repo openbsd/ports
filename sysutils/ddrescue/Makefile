@@ -15,7 +15,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_GNU:=ddrescue/}
+SITES =			${SITE_GNU:=ddrescue/}
 
 EXTRACT_SUFX =		.tar.lz
 

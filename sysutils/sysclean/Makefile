@@ -8,7 +8,7 @@ HOMEPAGE =	https://codeberg.org/semarie/sysclean/
 
 MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
-MASTER_SITES = https://codeberg.org/semarie/sysclean/releases/download/${V}/
+SITES = 	https://codeberg.org/semarie/sysclean/releases/download/${V}/
 
 # ISC
 PERMIT_PACKAGE =	Yes

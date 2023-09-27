@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =  gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
 WANTLIB += tasn1 unistring crypto ssl brotlidec brotlienc z zstd
 
-MASTER_SITES =		http://download.rsyslog.com/librelp/
+SITES =			http://download.rsyslog.com/librelp/
 
 MODULES =		lang/python
 MODPY_BUILDDEP =	No

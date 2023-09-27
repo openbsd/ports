@@ -5,7 +5,7 @@ CATEGORIES=	sysutils net
 REVISION =	1
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/dsh.html.en
-MASTER_SITES=	http://www.netfort.gr.jp/~dancer/software/downloads/
+SITES=		http://www.netfort.gr.jp/~dancer/software/downloads/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

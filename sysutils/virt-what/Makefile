@@ -10,7 +10,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/files/
+SITES =			${HOMEPAGE}/files/
 
 WANTLIB += c
 

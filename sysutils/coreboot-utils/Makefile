@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		https://coreboot.org/releases/
+SITES =			https://coreboot.org/releases/
 
 EXTRACT_SUFX =		.tar.xz
 EXTRACT_FILES =		${DISTNAME}/{src/commonlib,util}

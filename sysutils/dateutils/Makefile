@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://bitbucket.org/hroptatyr/dateutils/downloads/
+SITES =			https://bitbucket.org/hroptatyr/dateutils/downloads/
 EXTRACT_SUFX =		.tar.xz
 
 CONFIGURE_STYLE =	gnu

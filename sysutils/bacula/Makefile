@@ -31,7 +31,7 @@ SHARED_LIBS +=  baccats-mysql        ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-sqlite3      ${BACCATS_LIBV}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
+SITES=			${SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
 WANTLIB += c crypto m pthread ssl z ${COMPILER_LIBCXX}

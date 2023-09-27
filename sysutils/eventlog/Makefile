@@ -13,7 +13,7 @@ DISTFILES =	eventlog_${V}.tar.gz
 # BSD
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	http://www.balabit.com/downloads/files/eventlog/0.2/
+SITES =		http://www.balabit.com/downloads/files/eventlog/0.2/
 
 WANTLIB =		c
 

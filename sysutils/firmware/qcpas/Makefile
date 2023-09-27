@@ -7,7 +7,7 @@ EXTRACT_FILES=	\*/{qcom\*,LICEN\*}
 
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/qcom
 

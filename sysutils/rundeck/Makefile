@@ -12,7 +12,7 @@ HOMEPAGE=		http://rundeck.org/
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://download.rundeck.org/jar/
+SITES=			http://download.rundeck.org/jar/
 EXTRACT_SUFX=		.jar
 EXTRACT_ONLY=		# empty
 

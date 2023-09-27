@@ -14,7 +14,7 @@ MAINTAINER=	joshua stein <jcs@jcs.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}archive/
+SITES=		${HOMEPAGE}archive/
 DIST_SUBDIR=	vmwh
 
 WANTLIB+=	X11 Xmu c

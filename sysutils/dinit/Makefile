@@ -1,7 +1,7 @@
 V =		0.12.0
 COMMENT =	service monitoring / "init" system
 DISTNAME =	dinit-${V}
-MASTER_SITES =	https://github.com/davmac314/dinit/releases/download/v${V}/
+SITES =		https://github.com/davmac314/dinit/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	sysutils

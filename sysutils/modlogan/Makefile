@@ -6,7 +6,7 @@ CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

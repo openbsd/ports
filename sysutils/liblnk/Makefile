@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/liblnk/wiki
 
-MASTER_SITES =	https://github.com/libyal/liblnk/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/liblnk/releases/download/${VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

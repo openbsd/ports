@@ -12,7 +12,7 @@ MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/riemann/riemann/releases/download/${V}/
+SITES =		https://github.com/riemann/riemann/releases/download/${V}/
 
 EXTRACT_SUFX =	.tar.bz2
 

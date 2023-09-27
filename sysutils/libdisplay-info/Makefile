@@ -9,7 +9,7 @@ PERMIT_PACKAGE = Yes
 
 SHARED_LIBS +=  display-info 0.0 # 0.0
 
-MASTER_SITES = 	https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$V/
+SITES = https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$V/
 
 COMPILER = 	base-clang ports-gcc
 COMPILER_LANGS = c

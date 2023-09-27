@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=lookat/}
+SITES =		${SITE_SAVANNAH:=lookat/}
 
 CONFIGURE_STYLE =	gnu
 

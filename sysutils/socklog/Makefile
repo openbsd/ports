@@ -10,7 +10,7 @@ MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 WRKDIST=		${WRKDIR}/admin/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 BINPROGRAMS=		tryto uncat

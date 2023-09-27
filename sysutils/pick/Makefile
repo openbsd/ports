@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c curses
 
-MASTER_SITES =	https://github.com/mptre/pick/releases/download/v${V}/
+SITES =		https://github.com/mptre/pick/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
 

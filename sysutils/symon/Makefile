@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB-main=	c
 WANTLIB-mux=	c fontconfig pthread rrd
 
-MASTER_SITES=	${HOMEPAGE}/philes/
+SITES=		${HOMEPAGE}/philes/
 
 MULTI_PACKAGES=	-main -mux
 MODULES=	perl

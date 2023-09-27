@@ -3,7 +3,7 @@ COMMENT=		wm-dockapp; wireless interface monitor
 DISTNAME=		wmwlmon-1.0
 REVISION =		5
 CATEGORIES=		sysutils x11 x11/windowmaker
-MASTER_SITES=		http://www.nazgul.ch/dev/
+SITES=			http://www.nazgul.ch/dev/
 
 HOMEPAGE=		http://www.nazgul.ch/dev.html
 

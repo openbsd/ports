@@ -8,7 +8,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://gkrellmoon.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellmoon/}
+SITES=		${SITE_SOURCEFORGE:=gkrellmoon/}
 
 EXTRA_WANTLIB=	gthread-2.0
 

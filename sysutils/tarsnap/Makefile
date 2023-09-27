@@ -13,7 +13,7 @@ PERMIT_DISTFILES=	restrictive licence
 
 WANTLIB += bz2>=10 c crypto lzma z
 
-MASTER_SITES=		https://www.tarsnap.com/download/
+SITES=			https://www.tarsnap.com/download/
 EXTRACT_SUFX=		.tgz
 
 LIB_DEPENDS=		archivers/xz \

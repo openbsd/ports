@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c consolekit gio-2.0 glib-2.0 gobject-2.0 intl polkit-gobject-1
 
-MASTER_SITES=	http://www.freedesktop.org/software/accountsservice/
+SITES=		http://www.freedesktop.org/software/accountsservice/
 
 MODULES=	devel/meson
 

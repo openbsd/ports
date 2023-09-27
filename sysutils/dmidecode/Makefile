@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	sysutils
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=dmidecode/}
+SITES=		${SITE_SAVANNAH:=dmidecode/}
 
 HOMEPAGE=	https://www.nongnu.org/dmidecode/
 

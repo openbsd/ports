@@ -10,6 +10,6 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # GPL/Artistic
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/K/KP/KPETERS/}
+SITES=		${SITE_PERL_CPAN:=../by-authors/id/K/KP/KPETERS/}
 
 .include <bsd.port.mk>

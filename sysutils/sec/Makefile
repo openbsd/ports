@@ -3,7 +3,7 @@ COMMENT=	simple event correlator
 V=		2.9.2
 DISTNAME=	sec-${V}
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/simple-evcorr/sec/releases/download/${V}/
+SITES=		https://github.com/simple-evcorr/sec/releases/download/${V}/
 
 HOMEPAGE=	https://simple-evcorr.github.io/
 

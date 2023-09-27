@@ -2,7 +2,7 @@ COMMENT=	create tcp socket and connect to stdin/out
 
 DISTNAME=	socket-1.2
 CATEGORIES=	sysutils net
-MASTER_SITES=	https://people.freebsd.org/~wosch/src/
+SITES=		https://people.freebsd.org/~wosch/src/
 
 PERMIT_PACKAGE=	Yes
 

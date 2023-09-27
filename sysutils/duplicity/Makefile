@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += rsync
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=duplicity/}
+SITES =			${SITE_SAVANNAH:=duplicity/}
 
 MODULES =		lang/python
 

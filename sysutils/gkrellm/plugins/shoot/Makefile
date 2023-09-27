@@ -6,7 +6,7 @@ REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gkrellshoot.sourceforge.net
-MASTER_SITES=  	${MASTER_SITE_SOURCEFORGE:=gkrellshoot/}
+SITES=  	${SITE_SOURCEFORGE:=gkrellshoot/}
 
 EXTRA_WANTLIB=	gthread-2.0
 

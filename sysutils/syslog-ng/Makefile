@@ -17,7 +17,7 @@ WANTLIB += c crypto curl dbi glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += iconv intl ivykis json-c m maxminddb nghttp2 pcre pcre2-8
 WANTLIB += pthread ssl z
 
-MASTER_SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
+SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
 SHARED_LIBS =	evtlog			6.0 \
 		evtlog-3.38		6.0 \

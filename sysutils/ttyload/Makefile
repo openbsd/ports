@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://www.daveltd.com/src/util/ttyload/
+SITES =			http://www.daveltd.com/src/util/ttyload/
 EXTRACT_SUFX =		.tar.bz2
 
 MAKE_FLAGS =		ARCHLINKS_FREEBSD=arch/OpenBSD \

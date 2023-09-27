@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE =	http://backuppc.sourceforge.net
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=backuppc/}
+SITES =		${SITE_SOURCEFORGE:=backuppc/}
 
 NO_BUILD =	Yes
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c
 
-MASTER_SITES =	${HOMEPAGE}code/
+SITES =		${HOMEPAGE}code/
 
 MAKE_FILE =	Makefile.bsd
 MAKE_FLAGS =	CC="${CC}" \

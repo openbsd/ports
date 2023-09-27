@@ -8,9 +8,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME_OLD}${EXTRACT_SUFX}
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 
-# MASTER_SITES was https://cdn.kernel.org/pub/linux/kernel/firmware/
+# SITES was https://cdn.kernel.org/pub/linux/kernel/firmware/
 # but the latest releases tagged in the Git repository are not always present
-MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/snapshot/
+SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/snapshot/
 EXTRACT_FILES=	linux-firmware-iwlwifi-fw-*/{LICENCE.\*,iwlwifi-\*-\*.*}
 
 FW=	cc-a0		77 \

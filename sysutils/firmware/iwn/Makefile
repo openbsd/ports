@@ -19,7 +19,7 @@ DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 WRKDIST=	${WRKDIR}
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
-MASTER_SITES=	https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
+SITES=		https://wireless.wiki.kernel.org/_media/en/users/drivers/ \
 		http://firmware.openbsd.org/firmware-dist/
 
 FW_FILES=	iwn-4965 iwn-5000 iwn-5150 iwn-1000 iwn-100 iwn-2030 iwn-2030\

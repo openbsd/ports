@@ -8,7 +8,7 @@ REVISION=		1
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}tools/
+SITES=			${HOMEPAGE}tools/
 
 WANTLIB += c m pthread ${COMPILER_LIBCXX}
 

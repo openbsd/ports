@@ -4,7 +4,7 @@ GNOME_VERSION=		44.2
 GNOME_PROJECT=		deja-dup
 
 # override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
+SITES=	https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 
 CATEGORIES=		sysutils

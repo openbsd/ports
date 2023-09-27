@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	pthread statgrab ${MODPY_WANTLIB}
 
-MASTER_SITES=	http://ftp.i-scream.org/pub/i-scream/pystatgrab/ \
+SITES=		http://ftp.i-scream.org/pub/i-scream/pystatgrab/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/pystatgrab/
 
 MODULES =	lang/python

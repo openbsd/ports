@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m ${COMPILER_LIBCXX} util
 
 COMPILER =		base-clang ports-gcc base-gcc
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=smartmontools/}
+SITES=			${SITE_SOURCEFORGE:=smartmontools/}
 
 SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes

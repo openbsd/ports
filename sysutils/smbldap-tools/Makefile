@@ -10,7 +10,7 @@ HOMEPAGE=	http://gna.org/projects/smbldap-tools/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=smbldap-tools/}
+SITES=		${SITE_SOURCEFORGE:=smbldap-tools/}
 
 RUN_DEPENDS=	converters/p5-Unicode-MapUTF8 \
 		databases/p5-ldap \

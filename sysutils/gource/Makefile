@@ -9,7 +9,7 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
+SITES =	https://github.com/acaudwell/Gource/releases/download/${DISTNAME}/
 
 CONFIGURE_STYLE =	gnu
 COMPILER =		base-clang ports-gcc

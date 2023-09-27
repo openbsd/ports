@@ -4,7 +4,7 @@ DISTNAME=	zap-1.3
 REVISION=	0
 WRKDIST=	${WRKDIR}/zap
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.darwinsys.com/freeware/
+SITES=		http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

@@ -9,7 +9,7 @@ HOMEPAGE=		http://cdrtools.sourceforge.net/private/cdrtools.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c sndio
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cdrtools/}
+SITES=			${SITE_SOURCEFORGE:=cdrtools/}
 
 
 BUILD_DEPENDS=		devel/m4

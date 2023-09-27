@@ -10,7 +10,7 @@ PERMIT_PACKAGE ?=   proprietary
 PERMIT_DISTFILES ?= proprietary
 
 .if !defined(GH_ACCOUNT)
-MASTER_SITES ?=	http://firmware.openbsd.org/firmware-dist/
+SITES ?=	http://firmware.openbsd.org/firmware-dist/
 .endif
 
 PKG_ARCH ?=	*

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=mtools/}
+SITES=		${SITE_GNU:=mtools/}
 
 USE_GMAKE=		Yes
 

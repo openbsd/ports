@@ -12,7 +12,7 @@ MAINTAINER=	Adam Wolk <awolk@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c m curses util panel

@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c execinfo iconv intl pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
+SITES=		${SITE_SOURCEFORGE:=e2fsprogs/}
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 LIB_DEPENDS=	devel/gettext,-runtime

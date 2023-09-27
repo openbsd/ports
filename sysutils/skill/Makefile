@@ -8,7 +8,7 @@ CATEGORIES=		sysutils
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
+SITES=			ftp://fast.cs.utah.edu/pub/skill-${VERSION}/
 EXTRACT_SUFX=		.tgz
 
 MAKE_FLAGS=		CC='${CC}' CFLAGS='${CFLAGS}'

@@ -7,7 +7,7 @@ EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,\*.bin}
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amdgpu
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/amdgpu

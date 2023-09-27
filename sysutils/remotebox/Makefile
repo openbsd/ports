@@ -13,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://remotebox.knobgoblin.org.uk/downloads/
+SITES=			http://remotebox.knobgoblin.org.uk/downloads/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  c crypto curl fuse glib-2.0 iconv intl nghttp2 pcre2-8 pthread
 WANTLIB += ssl z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=curlftpfs/}
+SITES=		${SITE_SOURCEFORGE:=curlftpfs/}
 
 LIB_DEPENDS=	devel/glib2 net/curl
 

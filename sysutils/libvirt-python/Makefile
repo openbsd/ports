@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += virt virt-lxc virt-qemu
 
-MASTER_SITES =		https://libvirt.org/sources/python/
+SITES =			https://libvirt.org/sources/python/
 
 MODULES =		lang/python
 

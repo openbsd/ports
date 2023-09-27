@@ -6,7 +6,7 @@ REVISION=	20
 CATEGORIES=	misc
 
 HOMEPAGE=	http://gkrellstock.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellstock/}
+SITES=		${SITE_SOURCEFORGE:=gkrellstock/}
 
 EXTRA_WANTLIB=	gthread-2.0
 

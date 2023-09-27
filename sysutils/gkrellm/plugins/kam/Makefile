@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 
 HOMEPAGE=	http://gkrellkam.sourceforge.net
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellkam/}
+SITES=		${SITE_SOURCEFORGE:=gkrellkam/}
 DISTFILES=	gkrellkam_${V}.tar.gz
 
 WANTLIB=	# empty

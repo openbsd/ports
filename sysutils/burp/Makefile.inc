@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB ?=	b2 c crypto m curses rsync ssl z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=burp/}
+SITES =		${SITE_SOURCEFORGE:=burp/}
 
 EXTRACT_SUFX = .tar.bz2
 

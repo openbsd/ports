@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 
-MASTER_SITES=		http://www.Awfulhak.org/vmdktool/ \
+SITES=			http://www.Awfulhak.org/vmdktool/ \
 			ftp://ftp.Awfulhak.org/pub/vmdktool/ \
 			http://people.FreeBSD.org/~brian/vmdktool/
 

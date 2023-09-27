@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses m pthread
 
-MASTER_SITES=	http://ftp.i-scream.org/pub/i-scream/libstatgrab/ \
+SITES=		http://ftp.i-scream.org/pub/i-scream/libstatgrab/ \
 		http://ftp.uk.i-scream.org/pub/i-scream/libstatgrab/
 
 CONFIGURE_STYLE=gnu

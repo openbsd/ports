@@ -12,7 +12,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
+SITES =			${HOMEPAGE}/releases/download/${V}/
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

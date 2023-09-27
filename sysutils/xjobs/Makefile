@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m
 
-MASTER_SITES =		http://www.maier-komor.de/xjobs/
+SITES =			http://www.maier-komor.de/xjobs/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu

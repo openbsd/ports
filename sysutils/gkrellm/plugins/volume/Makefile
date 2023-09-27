@@ -8,7 +8,7 @@ CATEGORIES=	audio
 
 HOMEPAGE=	http://gkrellm.luon.net/volume.phtml
 
-MASTER_SITES=	http://gkrellm.luon.net/files/
+SITES=		http://gkrellm.luon.net/files/
 
 EXTRA_WANTLIB=	gthread-2.0 ossaudio
 

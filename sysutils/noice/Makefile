@@ -8,7 +8,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses
 
-MASTER_SITES =		https://dl.2f30.org/releases/
+SITES =			https://dl.2f30.org/releases/
 
 MAKE_FLAGS =            CC="${CC}"
 NO_TEST =		Yes

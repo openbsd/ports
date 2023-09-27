@@ -10,7 +10,7 @@ MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=stow/}
+SITES=		${SITE_GNU:=stow/}
 
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes

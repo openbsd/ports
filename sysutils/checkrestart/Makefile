@@ -12,7 +12,7 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/semarie/checkrestart/releases/download/${V}/
+SITES =		https://github.com/semarie/checkrestart/releases/download/${V}/
 
 # use pledge()
 WANTLIB =		c kvm>=16.2

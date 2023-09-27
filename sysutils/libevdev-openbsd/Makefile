@@ -4,7 +4,7 @@ V		= 20230706
 DISTNAME	= libevdev-openbsd-$V
 CATEGORIES	= sysutils
 
-MASTER_SITES	= https://gitlab.tetaneutral.net/mherrb/libevdev-openbsd/-/archive/${V}/
+SITES	= https://gitlab.tetaneutral.net/mherrb/libevdev-openbsd/-/archive/${V}/
 
 SHARED_LIBS	+=  evdev 0.0 # 0.0
 

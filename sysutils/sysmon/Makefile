@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto curses pthread ssl
 
-MASTER_SITES =	ftp://puck.nether.net/pub/jared/ \
+SITES =		ftp://puck.nether.net/pub/jared/ \
 		https://mirrors.nycbug.org/pub/distfiles/
 
 

@@ -6,7 +6,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://gkrellm.luon.net/gkrellmwireless.php
 
-MASTER_SITES=	http://gkrellm.luon.net/files/
+SITES=		http://gkrellm.luon.net/files/
 
 EXTRA_WANTLIB=	gthread-2.0
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv intl pthread
 
-MASTER_SITES =		${MASTER_SITE_GNU:=coreutils/}
+SITES =			${SITE_GNU:=coreutils/}
 EXTRACT_SUFX =		.tar.xz
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

@@ -12,7 +12,7 @@ MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=anacron2/}
+SITES=		${SITE_SOURCEFORGE:=anacron2/}
 
 USE_GMAKE=	Yes
 

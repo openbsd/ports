@@ -5,7 +5,7 @@ REVISION=	20
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gkrellmlaunch.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellmlaunch/}
+SITES=		${SITE_SOURCEFORGE:=gkrellmlaunch/}
 
 EXTRA_WANTLIB=	gthread-2.0
 

@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libsmdev/wiki
 
-MASTER_SITES =	https://github.com/libyal/libsmdev/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libsmdev/releases/download/${VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

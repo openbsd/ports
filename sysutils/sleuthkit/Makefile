@@ -12,7 +12,7 @@ MAINTAINER=		Remi Pointel <rpointel@openbsd.org>
 # CPLv1 & IBM & GPLv2 & Apache2 & BSD & MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
+SITES =	https://github.com/sleuthkit/sleuthkit/releases/download/${DISTNAME}/
 
 WANTLIB +=		bfio c m pthread ${COMPILER_LIBCXX} sqlite3 vhdi vmdk z
 

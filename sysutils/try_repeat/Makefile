@@ -10,7 +10,7 @@ MAINTAINER =		Laurence Tratt <laurie@tratt.net>
 # Apache-2.0 / MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE:=releases/}
+SITES =			${HOMEPAGE:=releases/}
 
 EXTRACT_SUFX =		.tgz
 

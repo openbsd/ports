@@ -10,7 +10,7 @@ MAINTAINER=     Jan-Piet Mens <ports@jpmens.net>
 # License free to use
 PERMIT_PACKAGE= Yes
 
-MASTER_SITES=   https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
+SITES=   	https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

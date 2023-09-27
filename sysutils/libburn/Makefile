@@ -6,7 +6,7 @@ SHARED_LIBS +=  burn 0.1 # 111.0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://dev.lovelyhq.com/libburnia/web/wikis/Libburn
-MASTER_SITES =	http://files.libburnia-project.org/releases/
+SITES =		http://files.libburnia-project.org/releases/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

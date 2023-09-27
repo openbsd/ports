@@ -10,7 +10,7 @@ CATEGORIES=		sysutils devel
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://deb.debian.org/debian/pool/main/d/devscripts/
+SITES=			https://deb.debian.org/debian/pool/main/d/devscripts/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

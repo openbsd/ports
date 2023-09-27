@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=		http://www.ostc.de/
+SITES=			http://www.ostc.de/
 EXTRACT_SUFX=		.tgz
 
 WRKDIST=		${WRKDIR}/openpoppassd

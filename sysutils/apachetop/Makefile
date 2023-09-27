@@ -15,7 +15,7 @@ WANTLIB +=		c m curses readline ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/tessus/apachetop/releases/download/$V/
+SITES =		https://github.com/tessus/apachetop/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		NCURSES_CFLAGS=' ' \

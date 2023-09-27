@@ -2,7 +2,7 @@ DISTNAME=       xps-4.2
 REVISION=	10
 CATEGORIES=     sysutils x11
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
+SITES=		${SITE_SOURCEFORGE:=motif-pstree/}
 
 PERMIT_PACKAGE=	Yes
 

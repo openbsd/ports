@@ -8,7 +8,7 @@ HOMEPAGE =	https://dataswamp.org/~solene/2018-01-17-reed-alert.html
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	ftp://bitreich.org/releases/reed-alert/
+SITES =		ftp://bitreich.org/releases/reed-alert/
 
 RUN_DEPENDS =	net/curl \
 		lang/ecl

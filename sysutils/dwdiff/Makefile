@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c icudata icuuc intl
 
-MASTER_SITES =		http://os.ghalkes.nl/dist/
+SITES =			http://os.ghalkes.nl/dist/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/gettext,-tools

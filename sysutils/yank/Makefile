@@ -10,7 +10,7 @@ MAINTAINER =	Anton Lindqvist <anton@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/mptre/yank/releases/download/v${V}/
+SITES =		https://github.com/mptre/yank/releases/download/v${V}/
 
 # uses pledge()
 WANTLIB +=	c

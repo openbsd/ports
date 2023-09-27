@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	${HOMEPAGE}/old-versions/
+SITES=		${HOMEPAGE}/old-versions/
 
 # probably doesn't work with strict-alignment
 .if ${MACHINE_ARCH} != sparc64

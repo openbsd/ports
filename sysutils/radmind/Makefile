@@ -10,7 +10,7 @@ HOMEPAGE=	http://rsug.itd.umich.edu/software/radmind/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c crypto ssl z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=radmind/}
+SITES=			${SITE_SOURCEFORGE:=radmind/}
 NO_TEST=		Yes
 
 CONFIGURE_ARGS=	--disable-profiled

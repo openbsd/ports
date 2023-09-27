@@ -11,7 +11,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_GNU:=parallel/}
+SITES =			${SITE_GNU:=parallel/}
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu

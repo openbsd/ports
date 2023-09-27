@@ -5,7 +5,7 @@ REVISION=	9
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://sourceforge.net/projects/login-ldap/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=login-ldap/}
+SITES=		${SITE_SOURCEFORGE:=login-ldap/}
 
 # BSD
 PERMIT_PACKAGE=	Yes

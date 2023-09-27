@@ -15,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # unclear, rather be on the safe side and set CDROM to 'No'
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://s3.amazonaws.com/ec2-downloads/
+SITES=			http://s3.amazonaws.com/ec2-downloads/
 
 MODULES=		java
 MODJAVA_VER=		1.8+

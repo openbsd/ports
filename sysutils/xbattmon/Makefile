@@ -11,7 +11,7 @@ HOMEPAGE =		https://git.2f30.org/xbattmon
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://dl.2f30.org/releases/
+SITES =			https://dl.2f30.org/releases/
 
 WANTLIB =		X11 c
 

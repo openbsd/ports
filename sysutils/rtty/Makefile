@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c 
 
-MASTER_SITES=   ${MASTER_SITE_ISC:=rtty/}
+SITES=   	${SITE_ISC:=rtty/}
 EXTRACT_SUFX=	.shar.gz
 
 WRKDIST=	${WRKDIR}

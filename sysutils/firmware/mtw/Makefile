@@ -5,7 +5,7 @@ EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,mediatek/mt7601\*}
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/drivers/mediatek
 
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 
 do-install:

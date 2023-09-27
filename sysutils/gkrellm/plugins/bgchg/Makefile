@@ -6,7 +6,7 @@ REVISION=	3
 
 HOMEPAGE=	http://www.bender-suhl.de/stefan/english/comp/gkrellmbgchg.html
 
-MASTER_SITES=	http://www.bender-suhl.de/stefan/comp/sources/ \
+SITES=		http://www.bender-suhl.de/stefan/comp/sources/ \
 		http://www.bender-suhl.de/stefan/comp/sources/old/
 
 PLUGIN=		${WRKSRC}/gkrellmbgchg.so

@@ -13,7 +13,7 @@ WANTLIB =		c kvm m curses ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://code.douglasthrift.net/files/dtpstree/ \
+SITES =			http://code.douglasthrift.net/files/dtpstree/ \
 			http://apt.douglasthrift.net/files/dtpstree/
 EXTRACT_SUFX =		.tar.bz2
 

@@ -17,7 +17,7 @@ WANTLIB += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangomm-1.4 pcre pcrecpp pthread sigc-2.0
 WANTLIB += util harfbuzz ${COMPILER_LIBCXX}
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gsmartcontrol/}
+SITES=			${SITE_SOURCEFORGE:=gsmartcontrol/}
 
 # c++11
 COMPILER =		base-clang ports-gcc

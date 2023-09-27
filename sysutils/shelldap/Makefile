@@ -12,7 +12,7 @@ HOMEPAGE =	https://hg.sr.ht/~mahlon/shelldap/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://github.com/mahlonsmith/shelldap/releases/download/v${V}/
+SITES =		https://github.com/mahlonsmith/shelldap/releases/download/v${V}/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

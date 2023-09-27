@@ -8,7 +8,7 @@ HOMEPAGE =		https://www.ivarch.com/programs/pv.shtml
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://www.ivarch.com/programs/sources/
+SITES =			https://www.ivarch.com/programs/sources/
 
 WANTLIB =		c
 

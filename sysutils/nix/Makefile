@@ -21,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} boost_context-mt boost_system boost_thread-mt
 WANTLIB += brotlidec brotlienc bz2 c crypto curl lzma m readline
 WANTLIB += sodium sqlite3
 
-MASTER_SITES =		https://nixos.org/releases/nix/${DISTNAME}/
+SITES =			https://nixos.org/releases/nix/${DISTNAME}/
 
 # C++17
 COMPILER =		base-clang ports-gcc

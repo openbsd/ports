@@ -22,7 +22,7 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c exiv2 freetype
 WANTLIB += m podofo tag z X11
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krename/${VERSION}/src/}
+SITES =		${SITE_KDE:=stable/krename/${VERSION}/src/}
 
 MODULES =	devel/kf5
 

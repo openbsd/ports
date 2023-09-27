@@ -6,7 +6,7 @@ DISTNAME =	seatd-openbsd-$V
 CATEGORIES =	sysutils
 REVISION =	0
 
-MASTER_SITES =	https://gitlab.tetaneutral.net/mherrb/seatd/-/archive/openbsd-${V}/
+SITES =	https://gitlab.tetaneutral.net/mherrb/seatd/-/archive/openbsd-${V}/
 
 SHARED_LIBS+=	seat 0.0 # 0.0
 

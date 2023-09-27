@@ -58,7 +58,7 @@ LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	${PKGNAME-main}:${PKGPATH},-main
 RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 
-MASTER_SITES =		https://www.rsyslog.com/files/download/rsyslog/
+SITES =			https://www.rsyslog.com/files/download/rsyslog/
 
 CONFIGURE_STYLE =	gnu
 LIBTOOL_FLAGS =		--tag=disable-static

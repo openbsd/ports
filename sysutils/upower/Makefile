@@ -10,7 +10,7 @@ CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          3.0
 
 HOMEPAGE =	https://upower.freedesktop.org/
-MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/-/archive/${V}/
+SITES =		https://gitlab.freedesktop.org/upower/upower/-/archive/${V}/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

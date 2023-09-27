@@ -51,7 +51,7 @@ SHARED_LIBS +=		collectdclient 1.0
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/files/
+SITES =			${HOMEPAGE}/files/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python

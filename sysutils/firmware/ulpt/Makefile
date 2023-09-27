@@ -6,7 +6,7 @@ REVISION =	0
 PERMIT_PACKAGE =   stupid license
 PERMIT_DISTFILES = stupid license
 
-MASTER_SITES =	https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
+SITES =	https://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
 
 DISTFILES =	hplip-3.12.11-plugin.run
 WRKDIST =	${WRKDIR}

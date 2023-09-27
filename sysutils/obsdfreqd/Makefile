@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses unveil()
 WANTLIB +=		c m
 
-MASTER_SITES =		https://git.sr.ht/~solene/obsdfreqd/archive/
+SITES =			https://git.sr.ht/~solene/obsdfreqd/archive/
 
 DISTFILES =		obsdfreqd-{}${V}${EXTRACT_SUFX}
 NO_TEST =		Yes

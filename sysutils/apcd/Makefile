@@ -3,7 +3,7 @@ COMMENT=		APC SmartUPS daemon
 DISTNAME=		apcd-0.2
 REVISION=		0
 CATEGORIES=		sysutils
-MASTER_SITES=		http://www.nazgul.ch/dev/
+SITES=			http://www.nazgul.ch/dev/
 
 HOMEPAGE=		http://www.nazgul.ch/dev.html
 

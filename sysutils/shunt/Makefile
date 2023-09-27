@@ -11,7 +11,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.net>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # uses pledge()
 WANTLIB=	c

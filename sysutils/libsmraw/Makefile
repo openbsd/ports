@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libsmraw/wiki
 
-MASTER_SITES =	https://github.com/libyal/libsmraw/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libsmraw/releases/download/${VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

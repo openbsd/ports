@@ -6,7 +6,7 @@ SHARED_LIBS +=  isofs 0.1 # 97.0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://dev.lovelyhq.com/libburnia/web/wikis/Libisofs
-MASTER_SITES =	http://files.libburnia-project.org/releases/
+SITES =		http://files.libburnia-project.org/releases/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

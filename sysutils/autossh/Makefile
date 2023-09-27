@@ -3,7 +3,7 @@ COMMENT=		SSH monitoring
 DISTNAME=		autossh-1.4g
 CATEGORIES=		sysutils
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 HOMEPAGE=		https://www.harding.motd.ca/autossh/
 

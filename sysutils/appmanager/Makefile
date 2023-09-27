@@ -10,7 +10,7 @@ HOMEPAGE =	https://tildegit.org/solene/AppManager/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://tildegit.org/solene/AppManager/archive/
+SITES =		https://tildegit.org/solene/AppManager/archive/
 
 DISTFILES =	appmanager-{}${V}${EXTRACT_SUFX}
 

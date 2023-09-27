@@ -5,7 +5,7 @@ COMMENT=	command line quota tools
 DISTNAME=	setquota-0.1
 REVISION =	2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
+SITES=		ftp://ftp.jurai.net/users/winter/
 
 # License: BSD
 PERMIT_PACKAGE=	Yes

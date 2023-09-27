@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c util
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpioflicker ${PREFIX}/sbin

@@ -13,7 +13,7 @@ PKGNAME=		nomad-${VERSION}
 # https://github.com/hashicorp/nomad/archive/v$VERSION/nomad-$VERSION.tar.gz
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		nomad-vendored-${VERSION}
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+SITES=			https://distfiles.bsdfrog.org/
 ALL_TARGET=		github.com/hashicorp/nomad
 
 CATEGORIES=		sysutils

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
-MASTER_SITES =	http://mama.indstate.edu/users/ice/tree/src/
+SITES =		http://mama.indstate.edu/users/ice/tree/src/
 EXTRACT_SUFX =	.tgz
 
 NO_TEST =	Yes

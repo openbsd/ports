@@ -9,7 +9,7 @@ MAINTAINER =	Alexey Vatchenko <av@bsdua.org>
 
 HOMEPAGE =	http://www.bsdua.org/hotplug-diskmount.html
 
-MASTER_SITES =	http://www.bsdua.org/files/
+SITES =		http://www.bsdua.org/files/
 
 # Public domain
 PERMIT_PACKAGE =	Yes

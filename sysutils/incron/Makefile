@@ -7,7 +7,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	http://inotify.aiken.cz/
 
-MASTER_SITES =	http://inotify.aiken.cz/download/incron/
+SITES =		http://inotify.aiken.cz/download/incron/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl m pthread
 WANTLIB += sasl2 ssh2 util xml2 yajl
 
-MASTER_SITES=		https://libvirt.org/sources/
+SITES=			https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
 
 # "#error You need at least GCC v4.8 to compile libvirt"

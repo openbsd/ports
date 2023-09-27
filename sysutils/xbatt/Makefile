@@ -6,7 +6,7 @@ DISTNAME=	xbatt-1.2.1
 REVISION =	5
 CATEGORIES=	sysutils x11
 
-MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
+SITES=		http://www.clave.gr.jp/~eto/xbatt/
 
 PERMIT_PACKAGE=	Yes
 

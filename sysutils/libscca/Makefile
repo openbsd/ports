@@ -11,7 +11,7 @@ CATEGORIES =	sysutils security
 
 HOMEPAGE =	https://github.com/libyal/libscca/wiki
 
-MASTER_SITES =	https://github.com/libyal/libscca/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libscca/releases/download/${VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

@@ -8,7 +8,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://shell.uugrn.org/~naddy/
+SITES=		https://shell.uugrn.org/~naddy/
 
 WANTLIB=	c curses
 

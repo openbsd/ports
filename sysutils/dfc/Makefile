@@ -4,7 +4,7 @@ DISTNAME =	dfc-3.1.1
 CATEGORIES =	sysutils
 REVISION =	0
 
-MASTER_SITES =	https://projects.gw-computing.net/attachments/download/615/
+SITES =		https://projects.gw-computing.net/attachments/download/615/
 HOMEPAGE =	https://projects.gw-computing.net/projects/dfc
 
 # BSD

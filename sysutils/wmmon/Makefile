@@ -4,7 +4,7 @@ DISTNAME=	wmmon-1.0b2
 REVISION =	6
 CATEGORIES=	sysutils x11 x11/windowmaker
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 # GPL
 PERMIT_PACKAGE=	Yes

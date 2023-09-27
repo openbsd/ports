@@ -7,7 +7,7 @@ CATEGORIES =	sysutils
 
 EXTRACT_SUFX =	.tar.xz
 HOMEPAGE =	https://htop.dev
-MASTER_SITES =	https://github.com/htop-dev/htop/releases/download/$V/
+SITES =		https://github.com/htop-dev/htop/releases/download/$V/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

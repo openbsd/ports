@@ -27,7 +27,7 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			devel/libusb-compat
 WANTLIB-main =		${WANTLIB} usb
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
+SITES =			${SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes

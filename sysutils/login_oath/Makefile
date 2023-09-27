@@ -4,7 +4,7 @@ DISTNAME=	login_oath-0.8
 REVISION=	6
 CATEGORIES=	sysutils
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 # BSD
 PERMIT_PACKAGE=	Yes

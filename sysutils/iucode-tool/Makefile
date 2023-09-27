@@ -15,7 +15,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	Patrick Wildt <patrick@blueri.se>
 
-MASTER_SITES=	https://gitlab.com/iucode-tool/releases/raw/latest/
+SITES=		https://gitlab.com/iucode-tool/releases/raw/latest/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

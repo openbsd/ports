@@ -7,7 +7,7 @@ PKGNAME=		cloud-sql-proxy-${VERSION}
 # https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/v$VERSION/cloud-sql-proxy-$VERSION.tar.gz
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		cloud-sql-proxy-vendored-${VERSION}
-MASTER_SITES=		https://distfiles.bsdfrog.org/
+SITES=			https://distfiles.bsdfrog.org/
 ALL_TARGET=		github.com/GoogleCloudPlatform/cloud-sql-proxy
 
 CATEGORIES=		sysutils databases net

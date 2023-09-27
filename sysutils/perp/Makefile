@@ -11,7 +11,7 @@ PERMIT_PACKAGE= Yes
 
 WANTLIB += c
 
-MASTER_SITES=   http://b0llix.net/perp/distfiles/
+SITES=   	http://b0llix.net/perp/distfiles/
 
 CFLAGS+=        -I. -I../lasagna
 CFLAGS+=        -DPERP_BASE_DEFAULT='\"${SYSCONFDIR}/perp\"'

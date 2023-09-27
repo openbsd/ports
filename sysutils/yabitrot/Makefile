@@ -13,7 +13,7 @@ MAINTAINER =		Martin Ziemer <horrad@horrad.de>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=yabitrot/}
+SITES =			${SITE_SOURCEFORGE:=yabitrot/}
 EXTRACT_SUFX =		.tar.gz
 
 MODULES =		lang/python

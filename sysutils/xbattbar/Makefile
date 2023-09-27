@@ -10,7 +10,7 @@ CATEGORIES =	sysutils x11
 
 HOMEPAGE =	http://iplab.naist.jp/member/suguru/xbattbar.html
 
-MASTER_SITES =	http://iplab.naist.jp/member/suguru/
+SITES =		http://iplab.naist.jp/member/suguru/
 
 MAINTAINER =	Brynet <brynet@gmail.com>
 

@@ -7,7 +7,7 @@ CATEGORIES=	astro
 
 HOMEPAGE=	http://gkrellsun.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gkrellsun/}
+SITES=		${SITE_SOURCEFORGE:=gkrellsun/}
 
 EXTRA_WANTLIB=	gthread-2.0
 

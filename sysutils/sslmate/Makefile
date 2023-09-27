@@ -4,7 +4,7 @@ DISTNAME =		sslmate-1.9.1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://sslmate.com/
-MASTER_SITES =		https://packages.sslmate.com/other/
+SITES =			https://packages.sslmate.com/other/
 
 # MIT
 PERMIT_PACKAGE =	Yes

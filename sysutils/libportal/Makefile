@@ -24,7 +24,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv3
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://github.com/flatpak/libportal/releases/download/${V}/
+SITES=		https://github.com/flatpak/libportal/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
 
 # C++

@@ -8,7 +8,7 @@ CATEGORIES =		sysutils
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://duo.com/docs/loginduo/
-MASTER_SITES =		https://dl.duosecurity.com/
+SITES =			https://dl.duosecurity.com/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

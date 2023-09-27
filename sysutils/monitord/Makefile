@@ -11,7 +11,7 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

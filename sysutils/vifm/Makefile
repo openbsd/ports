@@ -9,7 +9,7 @@ MAINTAINER =		xaizek <xaizek@posteo.net>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=vifm/} \
+SITES =			${SITE_SOURCEFORGE:=vifm/} \
 			https://github.com/vifm/vifm/releases/download/v${V}/
 EXTRACT_SUFX =		.tar.bz2
 

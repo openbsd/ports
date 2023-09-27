@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/dosfstools/dosfstools
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/dosfstools/dosfstools/releases/download/v${V}/
+SITES=	https://github.com/dosfstools/dosfstools/releases/download/v${V}/
 
 WANTLIB+=	c iconv
 

@@ -7,7 +7,7 @@ EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,i915}
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/i915
-MASTER_SITES=	https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 # referenced only by drm 5.15
 FW515=		adlp_dmc_ver2_10.bin \

@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.kyberdigi.cz/projects/mencal/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}files/
+SITES=		${HOMEPAGE}files/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

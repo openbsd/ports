@@ -11,7 +11,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES =	https://deftly.net/
+SITES =		https://deftly.net/
 
 MODULES =	lang/go
 

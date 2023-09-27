@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pthread
 
-MASTER_SITES=		https://github.com/nicm/logfmon/releases/download/$V/
+SITES=			https://github.com/nicm/logfmon/releases/download/$V/
 
 CONFIGURE_STYLE=	gnu
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://git.vuxu.org/lr/snapshot/
+SITES =		https://git.vuxu.org/lr/snapshot/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 

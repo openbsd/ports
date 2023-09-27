@@ -4,7 +4,7 @@ DISTNAME=	login_fingerprint-1.2
 REVISION=	6
 CATEGORIES=    	sysutils
 
-MASTER_SITES=	http://blade2k.humppa.hu/
+SITES=		http://blade2k.humppa.hu/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

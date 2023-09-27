@@ -8,7 +8,7 @@ REVISION=	8
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.nongnu.org/tpb/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=tpb/}
+SITES=		${SITE_SAVANNAH:=tpb/}
 
 # gpl
 PERMIT_PACKAGE=	Yes

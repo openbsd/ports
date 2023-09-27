@@ -10,7 +10,7 @@ MAINTAINER=	Reyk Floeter <reyk@openbsd.org>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}releases/download/v${V}/
+SITES=		${HOMEPAGE}releases/download/v${V}/
 
 WANTLIB=	c crypto expat ssl tls util
 

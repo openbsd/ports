@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  c fuse glib-2.0 iconv intl pthread smbclient xml2
 
 # http://repo.or.cz/w/usmb.git/snapshot/aa94e132c12faf1a00f547ea4a96b5728612dea6.tar.gz
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 BUILD_DEPENDS=	textproc/gsed
 LIB_DEPENDS=	devel/glib2 \

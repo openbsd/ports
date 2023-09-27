@@ -3,7 +3,7 @@ CATEGORIES=	sysutils
 DISTNAME=	findlib-1.9.6
 REVISION=	0
 
-MASTER_SITES=	http://download.camlcity.org/download/
+SITES=		http://download.camlcity.org/download/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://projects.camlcity.org/projects/findlib.html
