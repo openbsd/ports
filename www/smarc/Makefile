@@ -1,6 +1,6 @@
 COMMENT =	static web mail archive generator
 
-DISTNAME =	smarc-0.2
+DISTNAME =	smarc-0.3
 
 CATEGORIES =	www mail
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses unveil
 WANTLIB += c event sqlite3
 
-MASTER_SITES =	https://ftp.omarpolo.com/
+SITES =		https://ftp.omarpolo.com/
 
 MODULES =	perl
 
