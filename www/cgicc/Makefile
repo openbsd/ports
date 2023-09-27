@@ -7,7 +7,7 @@ CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
 MODGNU_SHARED_LIBS=cgicc ''
 
-MASTER_SITES=	${MASTER_SITE_GNU:=cgicc/}
+SITES=		${SITE_GNU:=cgicc/}
 HOMEPAGE=	https://www.gnu.org/software/cgicc/cgicc.html
 
 # LGPL

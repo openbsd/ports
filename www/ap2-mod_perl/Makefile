@@ -5,7 +5,7 @@ PKGNAME=	ap2-${DISTNAME:S/-rc/rc/}
 CATEGORIES=	www net
 
 MODULES=	cpan
-MASTER_SITES=	${MASTER_SITE_APACHE:=perl/}
+SITES=		${SITE_APACHE:=perl/}
 
 # Apache Software License
 PERMIT_PACKAGE=	Yes

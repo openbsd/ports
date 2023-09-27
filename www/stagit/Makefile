@@ -17,7 +17,7 @@ WANTLIB =		c git2
 
 LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
 
-MASTER_SITES =		https://codemadness.org/releases/stagit/
+SITES =			https://codemadness.org/releases/stagit/
 
 MAKE_FLAGS =		CC='${CC}' \
 			CFLAGS='${CFLAGS}' \

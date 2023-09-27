@@ -21,7 +21,7 @@ WANTLIB += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
 WANTLIB += db expat iconv jansson lzma m nghttp2 pcre2-8 pthread ssl
 WANTLIB += xml2 z
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
+SITES=			${SITE_APACHE:=httpd/}
 
 NO_TEST=		Yes
 

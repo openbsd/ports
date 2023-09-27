@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto m pcreposix pthread ssl
 
-MASTER_SITES =		https://www.apsis.ch/pound/
+SITES =			https://www.apsis.ch/pound/
 EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		devel/pcre

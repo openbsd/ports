@@ -7,7 +7,7 @@ REVISION =	1
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar
 
-MASTER_SITES =	https://github.com/wp-cli/wp-cli/releases/download/v${V}/
+SITES =		https://github.com/wp-cli/wp-cli/releases/download/v${V}/
 
 CATEGORIES =	www
 HOMEPAGE =	https://wp-cli.org/

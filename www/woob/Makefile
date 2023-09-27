@@ -11,7 +11,7 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://gitlab.com/woob/woob/-/archive/${MODPY_EGG_VERSION}/
+SITES =		https://gitlab.com/woob/woob/-/archive/${MODPY_EGG_VERSION}/
 
 MODULES =	lang/python
 

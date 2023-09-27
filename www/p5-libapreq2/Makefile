@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += apr-1 aprutil-1 c db expat iconv perl pthread
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=httpd/libapreq/}
+SITES=		${SITE_APACHE:=httpd/libapreq/}
 
 MODPERL_REGEN_PPPORT =	glue/perl/xsbuilder/ppport.h
 

@@ -6,7 +6,7 @@ CATEGORIES=	www benchmarks
 
 HOMEPAGE=	https://www.acme.com/software/http_ping/
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE=	Yes

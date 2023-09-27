@@ -32,7 +32,7 @@ WANTLIB += xshmfence xslt z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
+SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
 
 EXTRACT_SUFX=		.tar.bz2
 

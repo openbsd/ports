@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto pthread ssl
 
-MASTER_SITES =	https://kore.io/releases/
+SITES =		https://kore.io/releases/
 
 FLAVORS =	acme curl debug pgsql python
 FLAVOR ?=

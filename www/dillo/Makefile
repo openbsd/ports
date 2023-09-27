@@ -14,7 +14,7 @@ WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	https://www.dillo.org/download/
+SITES =		https://www.dillo.org/download/
 
 EXTRACT_SUFX =	.tar.bz2
 

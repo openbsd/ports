@@ -7,7 +7,7 @@ DISTNAME ?=	${NETSURF_PROJECT}-${NETSURF_VERSION}-src
 
 MAINTAINER ?=	Anthony J. Bentley <anthony@anjbe.name>
 HOMEPAGE ?=	https://www.netsurf-browser.org/projects/${NETSURF_PROJECT}/
-MASTER_SITES ?=	https://download.netsurf-browser.org/libs/releases/
+SITES ?=	https://download.netsurf-browser.org/libs/releases/
 
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 

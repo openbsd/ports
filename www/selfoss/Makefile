@@ -12,7 +12,7 @@ HOMEPAGE=		http://selfoss.aditu.de/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
+SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
 EXTRACT_SUFX=		.zip
 
 MODULES=		lang/php

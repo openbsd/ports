@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curses intl maxminddb pthread ssl
 
-MASTER_SITES =		https://tar.goaccess.io/
+SITES =			https://tar.goaccess.io/
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			net/libmaxminddb

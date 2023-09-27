@@ -12,7 +12,7 @@ HOMEPAGE=		https://cord.de/calamaris-english
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://cord.de/files/calamaris/
+SITES=			https://cord.de/files/calamaris/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

@@ -17,7 +17,7 @@ PREFIX=		${VARBASE}/www
 PEAR_LIBDIR=	${PREFIX}/pear/lib
 PEAR_PHPBIN=	${LOCALBASE}/bin/php
 
-MASTER_SITES?=	http://pear.php.net/get/
+SITES?=		http://pear.php.net/get/
 EXTRACT_SUFX?=	.tgz
 
 CATEGORIES+=	pear

@@ -3,7 +3,7 @@ COMMENT=	web log rotation program
 DISTNAME=	cronolog-1.6.2
 REVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://www.cronolog.org/download/
+SITES=		http://www.cronolog.org/download/
 
 HOMEPAGE=	http://www.cronolog.org/
 

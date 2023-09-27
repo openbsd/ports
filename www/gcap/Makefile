@@ -9,7 +9,7 @@ HOMEPAGE =		https://code.google.com/p/gcap/
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=gcap/}
+SITES =			${SITE_GOOGLECODE:=gcap/}
 
 RUN_DEPENDS =		devel/p5-Getopt-ArgvFile \
 			misc/p5-Umph-Prompt \

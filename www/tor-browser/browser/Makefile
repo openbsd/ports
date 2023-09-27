@@ -27,7 +27,7 @@ MOZILLA_LIBS +=		mozsqlite3 ipcclientcerts
 # mozilla public license for the browser
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://dist.torproject.org/torbrowser/${TB_VERSION}/ \
+SITES =			https://dist.torproject.org/torbrowser/${TB_VERSION}/ \
 			https://archive.torproject.org/tor-package-archive/torbrowser/${TB_VERSION}/
 
 MODULES =		www/mozilla lang/python

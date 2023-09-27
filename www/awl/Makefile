@@ -9,7 +9,7 @@ PKG_ARCH =	*
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.davical.org/downloads/
+SITES =		https://www.davical.org/downloads/
 
 WRKSRC =	${WRKDIR}
 PREFIX =	${VARBASE}/www

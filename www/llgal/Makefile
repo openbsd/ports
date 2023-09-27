@@ -10,7 +10,7 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/bgoglin/llgal/archive/
+SITES=		https://github.com/bgoglin/llgal/archive/
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

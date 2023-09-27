@@ -3,7 +3,7 @@ COMMENT=	web proxy with antivirus filter
 DISTNAME=	havp-0.93
 REVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 # https://github.com/HaveSec/HAVP
 HOMEPAGE=	https://www.havp.org/

@@ -5,7 +5,7 @@ DISTNAME=	wwwcount$V
 PKGNAME=	wwwcount-$V
 REVISION=	0
 CATEGORIES=	www
-MASTER_SITES=	http://muquit.com/muquit/software/Count/src/wwwcount$V/ \
+SITES=		http://muquit.com/muquit/software/Count/src/wwwcount$V/ \
 		http://wwwcount.yeehaw.net/src/wwwcount$V/ \
 		http://www.asamnet.de/mirror/Count/src/wwwcount$V/ \
 		http://wwwcount.webcc.net/src/wwwcount$V/

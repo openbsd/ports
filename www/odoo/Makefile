@@ -16,7 +16,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=		https://www.odoo.com
 
-MASTER_SITES=		https://nightly.odoocdn.com/${MV}/nightly/src/
+SITES=			https://nightly.odoocdn.com/${MV}/nightly/src/
 
 MODULES=		lang/python
 MODPY_PYBUILD =		setuptools

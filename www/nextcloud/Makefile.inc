@@ -20,7 +20,7 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 # Silk icons: Creative Commons Attribution
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://download.nextcloud.com/server/releases/
+SITES=			https://download.nextcloud.com/server/releases/
 
 MODULES=		lang/php
 

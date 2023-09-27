@@ -5,7 +5,7 @@ REVISION = 		4
 CATEGORIES =		www
 
 HOMEPAGE =		http://retawq.sourceforge.net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=retawq/}
+SITES =			${SITE_SOURCEFORGE:=retawq/}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

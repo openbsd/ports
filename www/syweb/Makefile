@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/philes/
+SITES=		${HOMEPAGE}/philes/
 
 NO_TEST=	Yes
 NO_BUILD=	Yes

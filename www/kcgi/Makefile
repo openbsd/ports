@@ -6,7 +6,7 @@ CATEGORIES =		www
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://kristaps.bsd.lv/kcgi/
-MASTER_SITES =		https://kristaps.bsd.lv/kcgi/snapshots/
+SITES =			${HOMEPAGE}snapshots/
 EXTRACT_SUFX =		.tgz
 
 # ISC

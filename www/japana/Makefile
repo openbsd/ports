@@ -10,7 +10,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 
-MASTER_SITES =	https://www.cgarbs.de/stuff/
+SITES =		https://www.cgarbs.de/stuff/
 RUN_DEPENDS =	japanese/p5-Text-Kakasi \
 		devel/p5-AppConfig \
 		www/p5-libwww

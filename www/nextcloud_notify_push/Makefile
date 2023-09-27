@@ -19,7 +19,7 @@ CATEGORIES =		www
 PERMIT_PACKAGE =	Yes
 
 # a tarball is shipped on github, but without Cargo.lock, and contains linux binaries..
-# MASTER_SITES =	https://github.com/nextcloud/notify_push/releases/download/v0.1.7/
+# SITES =	https://github.com/nextcloud/notify_push/releases/download/v0.1.7/
 
 COMPILER =		base-clang ports-gcc
 

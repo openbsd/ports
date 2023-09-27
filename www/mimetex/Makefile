@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.forkosh.com/mimetex.html
 # GPLv2 or later
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://meta-planets.net/~openbsd/
+SITES=			http://meta-planets.net/~openbsd/
 
 NO_TEST=     	Yes
 

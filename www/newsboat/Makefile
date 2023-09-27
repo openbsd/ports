@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} c crypto curl curses iconv intl
 WANTLIB +=	json-c m sqlite3 ssl stfl xml2
 
-MASTER_SITES =	https://www.newsboat.org/releases/$V/
+SITES =		https://www.newsboat.org/releases/$V/
 
 EXTRACT_SUFX =	.tar.xz
 

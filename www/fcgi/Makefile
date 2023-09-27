@@ -21,7 +21,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}/dist/
+SITES=			${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu
 

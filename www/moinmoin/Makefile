@@ -12,7 +12,7 @@ HOMEPAGE =	https://moinmo.in/
 # actually being less restrictive.
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://static.moinmo.in/files/
+SITES =		https://static.moinmo.in/files/
 
 MODULES =	lang/python
 # "Moin 1.9.x does not support Python 3.x and only works with Python 2.7.x (and

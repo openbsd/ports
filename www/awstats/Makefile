@@ -9,7 +9,7 @@ HOMEPAGE=		https://awstats.sourceforge.io/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=awstats/}
+SITES=			${SITE_SOURCEFORGE:=awstats/}
 
 RUN_DEPENDS=		www/p5-libwww
 

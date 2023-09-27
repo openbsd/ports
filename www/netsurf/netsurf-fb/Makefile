@@ -6,7 +6,7 @@ DISTNAME =		netsurf-${NETSURF_VERSION}-src
 REVISION =		2
 
 HOMEPAGE =		https://www.netsurf-browser.org/
-MASTER_SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
+SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 
 BUILD_DEPENDS =		editors/vim \
 			www/netsurf/nsgenbind>=0.4 \

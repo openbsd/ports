@@ -12,7 +12,7 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://download.dokuwiki.org/src/dokuwiki/
+SITES =		https://download.dokuwiki.org/src/dokuwiki/
 
 EXTRACT_SUFX =	.tgz
 NO_BUILD =	Yes

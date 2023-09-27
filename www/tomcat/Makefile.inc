@@ -11,7 +11,7 @@ CATEGORIES =	www
 DISTFILES =	${DISTNAME}.tar.gz \
 		${DISTNAME}-fulldocs.tar.gz
 
-MASTER_SITES =	${MASTER_SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
+SITES =		${SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
 		http://archive.apache.org/dist/tomcat/tomcat-${MAJ_VER}/archive/v${VER}/bin/
 
 HOMEPAGE =	http://tomcat.apache.org/

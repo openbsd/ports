@@ -16,7 +16,7 @@ WANTLIB =		c m pcre pcreposix ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dansguardian/}
+SITES =			${SITE_SOURCEFORGE:=dansguardian/}
 
 LIB_DEPENDS =		devel/pcre
 

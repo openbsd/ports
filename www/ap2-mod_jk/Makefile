@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	pthread
 
-MASTER_SITES =	${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/}
+SITES =		${SITE_APACHE:=tomcat/tomcat-connectors/jk/}
 
 RUN_DEPENDS =	www/apache-httpd
 BUILD_DEPENDS =	${RUN_DEPENDS}

@@ -14,7 +14,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/validator/validator/releases/download/$V/
+SITES =		https://github.com/validator/validator/releases/download/$V/
 
 EXTRACT_SUFX =		.zip
 

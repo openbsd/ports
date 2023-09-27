@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 
-MASTER_SITES=		http://www.gedanken.org.uk/software/wwwoffle/download/
+SITES=			http://www.gedanken.org.uk/software/wwwoffle/download/
 EXTRACT_SUFX=		.tgz
 
 CONFIGURE_STYLE=	gnu

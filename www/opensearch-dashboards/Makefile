@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.opensearch.org/
 MAINTAINER =	Omar Polo <op@openbsd.org>,\
 		Pavel Korovin <pvk@openbsd.org>
 
-MASTER_SITES =	https://artifacts.opensearch.org/releases/bundle/opensearch-dashboards/$V/
+SITES =		https://artifacts.opensearch.org/releases/bundle/opensearch-dashboards/$V/
 
 FIX_EXTRACT_PERMISSIONS = Yes
 

@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 
-MASTER_SITES =		http://distfiles.gentoo.org/distfiles/
+SITES =			http://distfiles.gentoo.org/distfiles/
 
 MAKE_FLAGS =		CC="${CC}" SYSCONFDIR="${SYSCONFDIR}/cntlm"
 

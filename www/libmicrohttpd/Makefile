@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += brotlidec brotlienc gmp gnutls hogweed iconv idn2 intl
 WANTLIB += nettle p11-kit pthread tasn1 unistring z zstd
 
-MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
+SITES =		${SITE_GNU:=libmicrohttpd/}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

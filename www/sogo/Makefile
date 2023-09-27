@@ -11,7 +11,7 @@ SHARED_LIBS +=	SOGoUI		2.2
 
 CATEGORIES =	www
 HOMEPAGE =	https://sogo.nu/
-MASTER_SITES =	https://packages.sogo.nu/sources/
+SITES =		https://packages.sogo.nu/sources/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2/GPLv2

@@ -16,7 +16,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 soup-2.4 webkit2gtk-4.0 intl
 WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gmodule-2.0 gthread-2.0 harfbuzz
 WANTLIB += p11-kit pthread
 
-MASTER_SITES =	http://dl.suckless.org/surf/
+SITES =		http://dl.suckless.org/surf/
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/gnome/gcr \

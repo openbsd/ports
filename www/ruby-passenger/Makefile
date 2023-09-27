@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
 CATEGORIES =	www
 DISTFILES.nginx = 	nginx-${NGINX_VERSION}.tar.gz
-MASTER_SITES.nginx =	https://nginx.org/download/
+SITES.nginx =	https://nginx.org/download/
 
 HOMEPAGE =	https://www.phusionpassenger.com/
 

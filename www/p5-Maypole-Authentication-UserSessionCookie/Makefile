@@ -9,7 +9,7 @@ CATEGORIES=	www
 # Same as Maypole which is same as Perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/SIMON/}
+SITES=		${SITE_PERL_CPAN:=Apache/SIMON/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/p5-Maypole

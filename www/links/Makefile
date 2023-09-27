@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl z
 
-MASTER_SITES=	${HOMEPAGE}download/
+SITES=		${HOMEPAGE}download/
 
 CONFIGURE_STYLE=	gnu
 

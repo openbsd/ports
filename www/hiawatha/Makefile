@@ -7,7 +7,7 @@ HOMEPAGE =		https://www.hiawatha-webserver.org/
 # GPLv2 only
 PERMIT_PACKAGE =	mbedtls Apache 2 license incompatible with GPLv2
 
-MASTER_SITES =		${HOMEPAGE}files/
+SITES =			${HOMEPAGE}files/
 
 WANTLIB += c pthread xml2 xslt z
 

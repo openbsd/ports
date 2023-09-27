@@ -12,7 +12,7 @@ HOMEPAGE=	https://www.patrickfrei.ch/webalizer/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.patrickfrei.ch/webalizer/rb${RB_V}/
+SITES=		https://www.patrickfrei.ch/webalizer/rb${RB_V}/
 
 WANTLIB +=	c db gd m png z
 

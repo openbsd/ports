@@ -9,7 +9,7 @@ HOMEPAGE=	https://www.drush.org/
 
 # packaged from https://github.com/drush-ops/drush/tree/8.4.11
 # plus dependencies fetched using "composer install" as of 20220826
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 MODULES=	lang/php
 

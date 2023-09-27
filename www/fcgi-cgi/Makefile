@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ev glib-2.0 intl
 
-MASTER_SITES=	http://cgit.lighttpd.net/fcgi-cgi.git/snapshot/ \
+SITES=		http://cgit.lighttpd.net/fcgi-cgi.git/snapshot/ \
 		https://spacehopper.org/mirrors/
 
 SEPARATE_BUILD=	Yes

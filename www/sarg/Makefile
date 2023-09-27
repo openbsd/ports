@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 c execinfo gd iconv intl lzma m pcre z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
+SITES=			${SITE_SOURCEFORGE:=sarg/}
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/gettext,-runtime \

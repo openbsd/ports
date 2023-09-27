@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c jansson m maxminddb
 
-MASTER_SITES =	https://github.com/fcambus/logswan/releases/download/$V/
+SITES =		https://github.com/fcambus/logswan/releases/download/$V/
 
 COMPILER =	base-clang ports-gcc
 

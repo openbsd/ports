@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c crypto curses ssl z
 
-MASTER_SITES =	https://invisible-mirror.net/archives/lynx/tarballs/ \
+SITES =		https://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
 
 CONFIGURE_STYLE =	gnu

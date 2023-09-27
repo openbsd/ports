@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c lib/db4/db pthread
 
-MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/s/squidguard/}
+SITES =			${SITE_DEBIAN:=main/s/squidguard/}
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db/squidGuard
 CONFIG_DIR =		${SYSCONFDIR}/squidguard

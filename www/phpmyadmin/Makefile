@@ -13,7 +13,7 @@ MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://files.phpmyadmin.net/phpMyAdmin/${V}/
+SITES=		http://files.phpmyadmin.net/phpMyAdmin/${V}/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

@@ -9,7 +9,7 @@ HOMEPAGE=		http://fsinfo.noone.org/~abe/wApua/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 CONFIGURE_STYLE=	perl
 

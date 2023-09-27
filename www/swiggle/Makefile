@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c exif iconv intl jpeg
 
-MASTER_SITES =		${HOMEPAGE}/files/
+SITES =			${HOMEPAGE}/files/
 
 LIB_DEPENDS =		graphics/libexif \
 			graphics/jpeg

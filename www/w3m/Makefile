@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses gc iconv intl m ssl z
 
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
+SITES=		${SITE_DEBIAN:=main/w/w3m/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 DEBUG_PACKAGES=	${BUILD_PACKAGES}

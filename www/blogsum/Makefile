@@ -8,7 +8,7 @@ HOMEPAGE =		http://blogsum.obfuscurity.com/
 # BSD
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	http://www.dixongroup.net/
+SITES =		http://www.dixongroup.net/
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*

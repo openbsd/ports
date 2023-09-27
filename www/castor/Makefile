@@ -16,7 +16,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c c++abi crypto gdk-3 glib-2.0 gobject-2.0 gtk-3 pthread
 WANTLIB += ssl
 
-MASTER_SITES=		https://git.sr.ht/~julienxx/
+SITES=			https://git.sr.ht/~julienxx/
 
 MODULES=		devel/cargo
 

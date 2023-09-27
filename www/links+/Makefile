@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	bz2 c crypto event lzma pthread ssl z
 
-MASTER_SITES=	http://links.twibright.com/download/
+SITES=		http://links.twibright.com/download/
 
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz

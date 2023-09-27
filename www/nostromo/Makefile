@@ -2,7 +2,7 @@ COMMENT=		simple, fast and secure HTTP server
 
 DISTNAME=		nostromo-2.1
 CATEGORIES=		www
-MASTER_SITES=		http://www.nazgul.ch/dev/
+SITES=			http://www.nazgul.ch/dev/
 
 HOMEPAGE=		http://www.nazgul.ch/dev_nostromo.html
 

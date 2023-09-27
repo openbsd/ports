@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.linofee.org/~jel/webtools/jesred/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.linofee.org/~jel/webtools/src/
+SITES=		http://www.linofee.org/~jel/webtools/src/
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

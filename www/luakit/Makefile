@@ -12,7 +12,7 @@ MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
 HOMEPAGE =	https://luakit.github.io
 
-MASTER_SITES =	https://github.com/luakit/luakit/releases/download/${V}/
+SITES =		https://github.com/luakit/luakit/releases/download/${V}/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

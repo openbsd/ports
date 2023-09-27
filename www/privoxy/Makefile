@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto pcre pcreposix pthread ssl z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ijbswa/}
+SITES=		${SITE_SOURCEFORGE:=ijbswa/}
 EXTRACT_SUFX=	-src.tar.gz
 FIX_EXTRACT_PERMISSIONS=	Yes
 

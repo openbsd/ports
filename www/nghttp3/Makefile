@@ -12,7 +12,7 @@ HOMEPAGE=	https://nghttp2.org/nghttp3/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/ngtcp2/nghttp3/releases/download/v$V/
+SITES=		https://github.com/ngtcp2/nghttp3/releases/download/v$V/
 
 SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

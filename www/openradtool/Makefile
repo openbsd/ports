@@ -6,7 +6,7 @@ CATEGORIES =		www
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://kristaps.bsd.lv/openradtool/
-MASTER_SITES =		https://kristaps.bsd.lv/openradtool/snapshots/
+SITES =			${HOMEPAGE}snapshots/
 
 # ISC
 PERMIT_PACKAGE =	Yes

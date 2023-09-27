@@ -7,7 +7,7 @@ CATEGORIES=		www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
 
-MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
+SITES=			http://www.mhonarc.org/release/MHonArc/tar/ \
 			http://mhonarc.domainunion.de/release/MHonArc/tar/
 
 MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>

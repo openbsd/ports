@@ -13,7 +13,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject crypto curl gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gstreamer-1.0 gtk-3 harfbuzz
 WANTLIB += intl notify pango-1.0 pangocairo-1.0 pthread
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=urlget/}
+SITES =		${SITE_SOURCEFORGE:=urlget/}
 
 MODULES =	textproc/intltool
 

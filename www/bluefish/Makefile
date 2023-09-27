@@ -19,7 +19,7 @@ WANTLIB += gucharmap_2_90 harfbuzz iconv intl jpeg lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png python3.10
 WANTLIB += util xcb xcb-render xcb-shm xml2 z
 
-MASTER_SITES=		https://www.bennewitz.com/bluefish/stable/source/
+SITES=			https://www.bennewitz.com/bluefish/stable/source/
 
 COMPILER=		base-clang ports-gcc base-gcc
 

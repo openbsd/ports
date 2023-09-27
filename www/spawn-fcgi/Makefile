@@ -2,7 +2,7 @@ COMMENT=	spawn FastCGI processes
 
 DISTNAME=	spawn-fcgi-1.6.4
 CATEGORIES=	www
-MASTER_SITES=	https://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
+SITES=		https://download.lighttpd.net/spawn-fcgi/releases-1.6.x/
 EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://redmine.lighttpd.net/projects/spawn-fcgi/news

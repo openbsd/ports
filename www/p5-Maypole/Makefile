@@ -9,7 +9,7 @@ CATEGORIES=	www
 # Same as Perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
+SITES=		${SITE_PERL_CPAN:=Apache/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	databases/p5-Class-DBI-AbstractSearch \

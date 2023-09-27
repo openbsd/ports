@@ -6,7 +6,7 @@ CATEGORIES =	www
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://icedtea.classpath.org/download/source/
+SITES =		http://icedtea.classpath.org/download/source/
 HOMEPAGE =	http://icedtea.classpath.org/wiki/IcedTea-Web
 
 CONFIGURE_STYLE =	gnu

@@ -15,7 +15,7 @@ HOMEPAGE =	https://codeberg.org/grisha/gumbo-parser
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://codeberg.org/grisha/gumbo-parser/archive/
+SITES =		https://codeberg.org/grisha/gumbo-parser/archive/
 
 TEST_DEPENDS =	devel/gtest
 

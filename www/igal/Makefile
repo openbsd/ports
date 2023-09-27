@@ -11,7 +11,7 @@ HOMEPAGE=	http://trexler.at/igal/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=	graphics/ImageMagick \
 		graphics/jpeg \

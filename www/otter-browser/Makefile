@@ -11,7 +11,7 @@ HOMEPAGE =	https://otter-browser.org/
 
 MAINTAINER =	Adam Wolk <awolk@openbsd.org>
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=otter-browser/}
+SITES =		${SITE_SOURCEFORGE:=otter-browser/}
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv3+

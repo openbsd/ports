@@ -19,7 +19,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
+SITES =		https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
 		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/
 
 BUILD_DEPENDS =	archivers/unzip

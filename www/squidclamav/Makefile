@@ -10,7 +10,7 @@ HOMEPAGE=	http://squidclamav.darold.net/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=squidclamav/}
+SITES=		${SITE_SOURCEFORGE:=squidclamav/}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	www/c-icap/c-icap>=0.4.1

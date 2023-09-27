@@ -9,7 +9,7 @@ MAINTAINER =	Adnan Shameem <adnan360@protonmail.com>
 # BSD-3-Clause
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://hacktivis.me/releases/
+SITES =		https://hacktivis.me/releases/
 
 # C11
 COMPILER =	base-clang ports-gcc

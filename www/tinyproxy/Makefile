@@ -17,7 +17,7 @@ BUILD_DEPENDS =		textproc/asciidoc
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
-MASTER_SITES =		https://github.com/tinyproxy/tinyproxy/releases/download/$V/
+SITES =		https://github.com/tinyproxy/tinyproxy/releases/download/$V/
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
 

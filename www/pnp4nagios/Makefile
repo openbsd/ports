@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		c pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pnp4nagios/}
+SITES =			${SITE_SOURCEFORGE:=pnp4nagios/}
 
 MODULES =		lang/php
 BUILD_DEPENDS =		net/rrdtool

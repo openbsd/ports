@@ -14,7 +14,7 @@ MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://youtube-dl.org/downloads/${VERSION}/
+SITES =		https://youtube-dl.org/downloads/${VERSION}/
 
 MODULES =	lang/python
 

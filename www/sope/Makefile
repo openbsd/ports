@@ -18,7 +18,7 @@ SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 
 CATEGORIES=	www
 HOMEPAGE=	https://sogo.nu
-MASTER_SITES=	https://packages.sogo.nu/sources/
+SITES=		https://packages.sogo.nu/sources/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later

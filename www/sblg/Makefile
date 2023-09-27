@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += c expat
 
-MASTER_SITES =		https://kristaps.bsd.lv/sblg/snapshots/
+SITES =			${HOMEPAGE}snapshots/
 
 MAKE_FLAGS =		CC="${CC}"
 

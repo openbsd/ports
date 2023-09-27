@@ -13,7 +13,7 @@ MAINTAINER =		Gonzalo L. Rodriguez <gonzalo@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://varnish-cache.org/_downloads/
+SITES =			https://varnish-cache.org/_downloads/
 
 EXTRACT_SUFX =		.tgz
 

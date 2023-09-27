@@ -11,7 +11,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # Public Domain 
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/dist/
+SITES =		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE = 	gnu
 

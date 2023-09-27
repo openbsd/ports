@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 HOMEPAGE=	http://www.hping.org/visitors/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 WRKDIST=${WRKDIR}/${DISTNAME:S/-/_/}
 

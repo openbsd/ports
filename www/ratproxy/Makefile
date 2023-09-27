@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl
 
-MASTER_SITES=		${HOMEPAGE}/files/
+SITES=			${HOMEPAGE}/files/
 
 RUN_DEPENDS=		shells/bash
 

@@ -4,7 +4,7 @@ VERSION =		1.20.4
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
-MASTER_SITES =		https://github.com/go-gitea/gitea/releases/download/v${VERSION}/
+SITES =		https://github.com/go-gitea/gitea/releases/download/v${VERSION}/
 
 CATEGORIES =		www devel
 

@@ -4,7 +4,7 @@ DISTNAME=	unit-${VERSION}
 CATEGORIES=	www
 
 HOMEPAGE?=	https://unit.nginx.org
-MASTER_SITES=	https://unit.nginx.org/download/
+SITES=		https://unit.nginx.org/download/
 
 MAINTAINER=	Sergey A. Osokin <osa@FreeBSD.org>
 

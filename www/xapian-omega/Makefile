@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c iconv m magic pcre2-8 xapian z
 
-MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
+SITES=		https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # C++11

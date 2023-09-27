@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/
 
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
-MASTER_SITES=	http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
+SITES=		http://www.pps.univ-paris-diderot.fr/~jch/software/files/polipo/
 
 # MIT
 PERMIT_PACKAGE=	Yes

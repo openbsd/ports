@@ -13,7 +13,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.tgz
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lightsquid/}
+SITES =			${SITE_SOURCEFORGE:=lightsquid/}
 
 NO_BUILD =		Yes
 RUN_DEPENDS = 		graphics/p5-GD

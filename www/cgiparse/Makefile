@@ -12,7 +12,7 @@ HOMEPAGE=	http://resnet.uoregon.edu/~gurney_j/jmpc/cgiparse.html
 # License: BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
+SITES=		http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
 CONFIGURE_STYLE=	gnu
 

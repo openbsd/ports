@@ -3,7 +3,7 @@ COMMENT=	multiprocessing HTTP performance testing client
 DISTNAME=	http_load-09Mar2016
 PKGNAME=	http_load-20160309
 CATEGORIES=	www benchmarks
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	https://www.acme.com/software/http_load/
 

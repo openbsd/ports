@@ -12,7 +12,7 @@ HOMEPAGE =	https://tatsuhiro-t.github.io/wslay/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/tatsuhiro-t/wslay/releases/download/release-$V/
+SITES =	https://github.com/tatsuhiro-t/wslay/releases/download/release-$V/
 
 BUILD_DEPENDS =		devel/cunit
 

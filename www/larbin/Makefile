@@ -13,7 +13,7 @@ WANTLIB += adns>=1 c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=larbin/}
+SITES=			${SITE_SOURCEFORGE:=larbin/}
 
 LIB_DEPENDS=		net/adns
 

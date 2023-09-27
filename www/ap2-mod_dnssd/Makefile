@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += apr-1 avahi-client avahi-common dbus-1 execinfo iconv
 WANTLIB += intl pthread
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=	devel/apr \
 		net/avahi,-libs

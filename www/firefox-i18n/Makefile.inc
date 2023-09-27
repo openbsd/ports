@@ -19,8 +19,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://ftp.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/ \
-		http://releases.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/
+SITES =	https://ftp.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/ \
+	http://releases.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/
 
 LANGUAGES =	ach af an ar ast az bg bn br bs ca cs cy da de dsb el en-GB en-US eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he \

@@ -7,7 +7,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=		http://www.bestpractical.com/rt/
 
-MASTER_SITES=		https://download.bestpractical.com/pub/rt/release/ \
+SITES=			https://download.bestpractical.com/pub/rt/release/ \
 			http://www.fsck.com/pub/rt/release/
 
 RUN_DEPENDS=		converters/p5-Convert-ASN1 \

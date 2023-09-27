@@ -10,7 +10,7 @@ HOMEPAGE=	https://www.racktables.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=racktables/}
+SITES=		${SITE_SOURCEFORGE:=racktables/}
 
 MODULES=	lang/php
 

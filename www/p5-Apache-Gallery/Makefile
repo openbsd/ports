@@ -7,7 +7,7 @@ EPOCH=			0
 REVISION=		5
 CATEGORIES=		www
 HOMEPAGE=		http://www.apachegallery.dk/
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 # Artistic
 PERMIT_PACKAGE=	Yes

@@ -27,7 +27,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c crypto iconv pthread ssl z
 
-MASTER_SITES =		https://mirror.httrack.com/ \
+SITES =			https://mirror.httrack.com/ \
 			https://mirror.httrack.com/historical/
 
 LIB_DEPENDS =		converters/libiconv

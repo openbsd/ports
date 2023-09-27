@@ -11,7 +11,7 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/aria2/aria2/releases/download/release-${V}/
+SITES =		https://github.com/aria2/aria2/releases/download/release-${V}/
 
 COMPILER =		base-clang ports-gcc
 

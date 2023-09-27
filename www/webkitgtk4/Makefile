@@ -45,7 +45,7 @@ WANTLIB += hyphen icudata icui18n icuuc intl jpeg jxl lcms2 m
 WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 sqlite3
 WANTLIB += tasn1 webp webpdemux woff2dec xml2 xslt z
 
-MASTER_SITES =		https://webkitgtk.org/releases/
+SITES =			https://webkitgtk.org/releases/
 
 COMPILER =		base-clang ports-gcc
 

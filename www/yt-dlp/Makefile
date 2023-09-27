@@ -15,7 +15,7 @@ MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 # Public Domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/yt-dlp/yt-dlp/releases/download/${VERSION}/
+SITES =		https://github.com/yt-dlp/yt-dlp/releases/download/${VERSION}/
 
 MODULES =	lang/python
 

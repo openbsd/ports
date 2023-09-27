@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.steve.org.uk/Software/asql/
 # Perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 RUN_DEPENDS=		devel/p5-Term-ReadLine-Gnu \
 			devel/p5-Regexp-IPv6 \

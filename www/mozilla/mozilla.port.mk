@@ -28,11 +28,11 @@ MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
 MOZILLA_MAJOR_VERSION =${MOZILLA_VERSION:C/\..*//}
 
 .if ${MOZILLA_VERSION:M*rc?}
-MASTER_SITES ?=	https://ftp.mozilla.org/pub/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
+SITES ?=	https://ftp.mozilla.org/pub/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
 # first is the CDN and only has last releases
 # ftp.m.o has all the betas/candidate builds but should only be used as fallback
 .else
-MASTER_SITES ?=	https://releases.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+SITES ?=	https://releases.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		https://ftp.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
 .endif
 
@@ -40,7 +40,7 @@ MASTER_SITES ?=	https://releases.mozilla.org/pub/${MOZILLA_DIST}/releases/${MOZI
 DISTNAME =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 DISTFILES ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}{${MOZILLA_COMMIT}${EXTRACT_SUFX}}
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}-${MOZILLA_COMMIT}
-MASTER_SITES ?=	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
+SITES ?=	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
 EXTRACT_SUFX =	.tar.bz2
 MODMOZILLA_pre-configure+= \
 	cp ${WRKSRC}/${CONFIGURE_SCRIPT}.in ${WRKSRC}/${CONFIGURE_SCRIPT}; \
@@ -55,10 +55,10 @@ DIST_SUBDIR ?=	mozilla
 .if defined(MOZILLA_PROFDATA_TASKID)
 .if ${MOZILLA_PROJECT:Mfirefox*}
 DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}
-MASTER_SITES.profdata =	https://rhaalovely.net/stuff/
+SITES.profdata =	https://rhaalovely.net/stuff/
 .else
 DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}{profdata${EXTRACT_SUFX}}
-MASTER_SITES.prof =	https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/${MOZILLA_PROFDATA_TASKID}/runs/0/artifacts/public/build/
+SITES.prof =		https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/${MOZILLA_PROFDATA_TASKID}/runs/0/artifacts/public/build/
 .endif
 CONFIGURE_ARGS +=	--enable-profile-use
 CONFIGURE_ARGS +=	--with-pgo-profile-path=${WRKDIR}/merged.profdata

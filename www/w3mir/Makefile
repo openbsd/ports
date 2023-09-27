@@ -8,7 +8,7 @@ HOMEPAGE=		http://langfeldt.net/w3mir/
 # Artistic license
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 RUN_DEPENDS=	www/p5-URI \
 		www/p5-libwww

@@ -9,7 +9,7 @@ MAINTAINER =		Hiltjo Posthuma <hiltjo@codemadness.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://codemadness.org/releases/sfeed/
+SITES =			https://codemadness.org/releases/sfeed/
 
 # uses pledge()
 # uses unveil()

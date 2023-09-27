@@ -2,7 +2,7 @@ COMMENT=	filtering HTTP proxy server
 DISTNAME=	ffproxy-1.6
 REVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://faith.eu.org/ffproxy/
+SITES=		http://faith.eu.org/ffproxy/
 
 HOMEPAGE=	http://faith.eu.org/programs.html\#ffproxy
 

@@ -3,7 +3,7 @@ COMMENT =	Web vault builds for vaultwarden
 CATEGORIES =	www
 
 VERSION =	2023.7.1
-MASTER_SITES =	https://github.com/dani-garcia/bw_web_builds/releases/download/v${VERSION}/
+SITES =		https://github.com/dani-garcia/bw_web_builds/releases/download/v${VERSION}/
 DISTNAME =	bw_web_v${VERSION}
 PKGNAME =	vaultwarden-web-${VERSION}
 

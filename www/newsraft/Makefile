@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curl curses expat gumbo pthread sqlite3 yajl
 
-MASTER_SITES=	https://codeberg.org/grisha/newsraft/archive/
+SITES=		https://codeberg.org/grisha/newsraft/archive/
 
 BUILD_DEPENDS=	textproc/scdoc
 LIB_DEPENDS=	databases/sqlite3 \

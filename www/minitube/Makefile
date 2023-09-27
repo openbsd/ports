@@ -15,7 +15,7 @@ PERMIT_PACKAGE =		Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Sql Qt5Widgets Qt5X11Extras c m mpv
 
-MASTER_SITES =	https://github.com/flaviotordini/minitube/releases/download/$V/
+SITES =		https://github.com/flaviotordini/minitube/releases/download/$V/
 
 MODULES =	devel/qmake x11/qt5
 

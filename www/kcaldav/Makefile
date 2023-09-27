@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # "make port-lib-depends-check" can help
 WANTLIB +=		c expat m sqlite3
 
-MASTER_SITES =		https://kristaps.bsd.lv/kcaldav/snapshots/
+SITES =			https://kristaps.bsd.lv/kcaldav/snapshots/
 EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		www/kcgi

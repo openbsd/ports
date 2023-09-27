@@ -10,7 +10,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/phppgadmin/phppgadmin/releases/download/REL_5-6-0/
+SITES=	https://github.com/phppgadmin/phppgadmin/releases/download/REL_5-6-0/
 EXTRACT_SUFX=	.tar.bz2
 
 NO_BUILD=	Yes

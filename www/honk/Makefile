@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread sqlite3
 
-MASTER_SITES =		${HOMEPAGE}/d/
+SITES =			${HOMEPAGE}/d/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/go
