@@ -6,7 +6,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-MASTER_SITES=	https://distfiles.bsdfrog.org/
+SITES=		https://distfiles.bsdfrog.org/
 
 # GPL
 PERMIT_PACKAGE=	Yes

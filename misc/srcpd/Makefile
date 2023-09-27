@@ -4,7 +4,7 @@ DISTNAME =	srcpd-2.1.6
 CATEGORIES =	misc net
 
 HOMEPAGE =	http://srcpd.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=srcpd/}
+SITES =		${SITE_SOURCEFORGE:=srcpd/}
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 

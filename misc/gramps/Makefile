@@ -10,7 +10,7 @@ HOMEPAGE=		https://gramps-project.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
+SITES=			${SITE_SOURCEFORGE:=gramps/}
 
 MODULES=		lang/python \
 			textproc/intltool

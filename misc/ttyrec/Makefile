@@ -9,9 +9,9 @@ HOMEPAGE=	http://0xcc.net/ttyrec/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
-MASTER_SITES=	http://0xcc.net/ttyrec/
+SITES=		http://0xcc.net/ttyrec/
 
 NO_TEST=	Yes
 

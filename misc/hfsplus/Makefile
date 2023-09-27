@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=		.src.tar.bz2
 
 USE_GMAKE=		Yes

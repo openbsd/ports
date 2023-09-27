@@ -19,7 +19,7 @@ WANTLIB += X11 c m
 # TLS
 COMPILER=	base-clang ports-gcc
 
-MASTER_SITES=	https://www.astrolog.org/ftp/
+SITES=		https://www.astrolog.org/ftp/
 DISTFILES=	${DISTNAME}.zip \
 		${DISTNAME}-{ephem/}astephem.zip
 UNZIP=		unzip -a

@@ -15,7 +15,7 @@ WANTLIB =  X11 Xau Xdmcp Xext Xxf86vm c drm ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl m pcre2-8 pthread xcb
 WANTLIB += xcb-randr z
 
-MASTER_SITES=		https://github.com/jonls/redshift/releases/download/v$V/
+SITES=			https://github.com/jonls/redshift/releases/download/v$V/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		lang/python \

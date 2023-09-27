@@ -9,7 +9,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://invisible-mirror.net/archives/vttest/ \
+SITES=		https://invisible-mirror.net/archives/vttest/ \
 		ftp://ftp.invisible-island.net/vttest/
 EXTRACT_SUFX=	.tgz
 

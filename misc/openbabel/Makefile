@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
 WANTLIB+=	c cairo m xml2 z
 
-MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${V:S/./-/g}/
+SITES=		https://github.com/openbabel/openbabel/releases/download/openbabel-${V:S/./-/g}/
 EXTRACT_SUFX=	-source.tar.bz2
 
 COMPILER=	base-clang ports-gcc

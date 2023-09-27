@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c grapheme
 
-MASTER_SITES =	https://dl.suckless.org/tools/
+SITES =		https://dl.suckless.org/tools/
 
 LIB_DEPENDS =	textproc/libgrapheme
 

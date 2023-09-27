@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses util
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 NO_TEST=     		Yes
 

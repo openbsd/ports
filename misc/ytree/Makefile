@@ -5,7 +5,7 @@ CATEGORIES=	misc
 
 HOMEPAGE=	https://www.han.de/~werner/ytree.html
 
-MASTER_SITES=	https://www.han.de/~werner/
+SITES=		https://www.han.de/~werner/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

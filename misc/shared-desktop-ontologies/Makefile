@@ -9,7 +9,7 @@ HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
 
 CATEGORIES = 		misc
 
-MASTER_SITES = 		${MASTER_SITE_SOURCEFORGE:=oscaf/}
+SITES = 		${SITE_SOURCEFORGE:=oscaf/}
 
 # BSD - CC-BY
 PERMIT_PACKAGE =	Yes

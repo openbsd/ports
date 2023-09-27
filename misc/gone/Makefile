@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=	${HOMEPAGE}/downloads/
+SITES=		${HOMEPAGE}/downloads/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"

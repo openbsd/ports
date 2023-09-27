@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses iconv intl
 
-MASTER_SITES =		https://invisible-mirror.net/archives/dialog/ \
+SITES =			https://invisible-mirror.net/archives/dialog/ \
 			ftp://ftp.invisible-island.net/dialog/
 EXTRACT_SUFX =		.tgz
 

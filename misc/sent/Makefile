@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xft c fontconfig m
 
-MASTER_SITES=		http://dl.suckless.org/tools/
+SITES=			http://dl.suckless.org/tools/
 
 RUN_DEPENDS=		archivers/bzip2 \
 			graphics/farbfeld

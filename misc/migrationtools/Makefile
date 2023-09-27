@@ -4,7 +4,7 @@ DISTNAME=	MigrationTools-47
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.padl.com/download/
+SITES=		http://www.padl.com/download/
 HOMEPAGE=	http://www.padl.com/OSS/MigrationTools.html
 
 # BSD

@@ -5,7 +5,7 @@ CATEGORIES=	misc
 
 HOMEPAGE=	https://www.jedsoft.org/most/
 
-MASTER_SITES=	https://www.jedsoft.org/releases/most/
+SITES=		https://www.jedsoft.org/releases/most/
 
 LIB_DEPENDS=	devel/libslang
 

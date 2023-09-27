@@ -11,7 +11,7 @@ HOMEPAGE =		http://repo.or.cz/w/umph-prompt.git
 # LGPLv2.1+
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		https://distfiles.sigtrap.nl/
+SITES =			https://distfiles.sigtrap.nl/
 
 CONFIGURE_STYLE =	perl
 

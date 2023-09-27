@@ -6,7 +6,7 @@ REVISION=	2
 DISTFILES=	imp${VERSION}.tar.gz
 CATEGORIES=	misc
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.ntlug.org/~ccox/impress/
 

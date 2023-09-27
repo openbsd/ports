@@ -6,7 +6,7 @@ CATEGORIES =	misc
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://www.ohvost.ru/dnl/
+SITES =		https://www.ohvost.ru/dnl/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

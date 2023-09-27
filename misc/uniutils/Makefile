@@ -14,7 +14,7 @@ WANTLIB=	c iconv intl
 
 LIB_DEPENDS=	devel/gettext,-runtime
 
-MASTER_SITES=	http://billposer.org/Software/Downloads/
+SITES=		http://billposer.org/Software/Downloads/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

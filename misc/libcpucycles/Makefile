@@ -5,7 +5,7 @@ DISTNAME=		libcpucycles-${V}
 SHARED_LIBS+=		cpucycles	0.0	# 1.0
 CATEGORIES=		misc
 HOMEPAGE=		https://cpucycles.cr.yp.to/
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 MAINTAINER=		Miguel Landaeta <miguel@miguel.cc>
 

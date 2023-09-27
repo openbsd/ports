@@ -5,7 +5,7 @@ PKGNAME=	${DISTNAME:L:S/_/-/}
 REVISION=	3
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.autistici.org/fox/files/XKCD_viewer/
+SITES=		http://www.autistici.org/fox/files/XKCD_viewer/
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # GPLv3

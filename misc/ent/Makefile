@@ -9,7 +9,7 @@ REVISION=		1
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		https://www.fourmilab.ch/random/
-MASTER_SITES=		https://www.fourmilab.ch/random/
+SITES=			https://www.fourmilab.ch/random/
 
 WRKDIST=		${WRKDIR}
 ALL_TARGET=		ent

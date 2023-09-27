@@ -9,7 +9,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=teseq/}
+SITES=		${SITE_GNU:=teseq/}
 EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl m
 
-MASTER_SITES=		${MASTER_SITE_GNU:=findutils/}
+SITES=			${SITE_GNU:=findutils/}
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

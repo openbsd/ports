@@ -23,7 +23,7 @@ WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c crypto curl
 WANTLIB += git2 m sqlite3 ssh2 ssl usb-1.0 xml2 xslt zip
 WANTLIB += Qt5PositioningQuick Qt5QmlModels
 
-MASTER_SITES =	https://subsurface-divelog.org/downloads/
+SITES =		https://subsurface-divelog.org/downloads/
 EXTRACT_SUFX =	.tgz
 DISTFILES =	Subsurface-${VER}${EXTRACT_SUFX} \
 		libdivecomputer-subsurface-branch-${VER}${EXTRACT_SUFX}

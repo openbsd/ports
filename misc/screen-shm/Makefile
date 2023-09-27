@@ -6,7 +6,7 @@ PORTROACH=	ignore:1
 DISTNAME=	screen-4.0.3
 REVISION=	9
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
+SITES=		${SITE_GNU:=screen/}
 
 HOMEPAGE=	https://www.gnu.org/software/screen/
 

@@ -9,7 +9,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # Artistic License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tkman/}
+SITES =		${SITE_SOURCEFORGE:=tkman/}
 MODULES =	x11/tk
 
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \

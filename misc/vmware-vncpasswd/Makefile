@@ -14,8 +14,8 @@ PERMIT_DISTFILES=	missing license
 
 WANTLIB=	c
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
-#MASTER_SITES=	http://communities.vmware.com/servlet/JiveServlet/download/7535-4-13355/
+SITES=		https://spacehopper.org/mirrors/
+#SITES=		http://communities.vmware.com/servlet/JiveServlet/download/7535-4-13355/
 EXTRACT_SUFX=	.zip
 
 NO_TEST=		Yes

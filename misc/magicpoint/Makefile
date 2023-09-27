@@ -5,7 +5,7 @@ EPOCH=		0
 
 CATEGORIES=	misc productivity
 
-MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
+SITES=		ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 
 HOMEPAGE=	http://member.wide.ad.jp/wg/mgp/
 

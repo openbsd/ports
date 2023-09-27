@@ -18,7 +18,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		http://bugs.launchpad.net/rocrail/sunrise/2.0/+download/
+SITES =			http://bugs.launchpad.net/rocrail/sunrise/2.0/+download/
 
 COMPILER =		base-clang ports-gcc base-gcc
 

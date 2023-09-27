@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=posixtest/}
+SITES =			${SITE_SOURCEFORGE:=posixtest/}
 
 BUILD_DEPENDS =		textproc/gsed
 

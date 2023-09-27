@@ -20,7 +20,7 @@ HOMEPAGE =		https://gpsd.gitlab.io/gpsd/
 # BSD
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=gpsd/}
+SITES =			${SITE_SAVANNAH:=gpsd/}
 
 # C++11
 COMPILER =		base-clang ports-gcc

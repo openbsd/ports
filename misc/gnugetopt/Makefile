@@ -10,7 +10,7 @@ HOMEPAGE=	http://software.frodo.looijaard.name/getopt/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://frodo.looijaard.name/system/files/software/getopt/
+SITES=		http://frodo.looijaard.name/system/files/software/getopt/
 
 WANTLIB=	c iconv intl
 

@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m
 
 # the software authors do not make source release tarballs
-MASTER_SITES =		http://theunixzoo.co.uk/distfiles/
+SITES =			http://theunixzoo.co.uk/distfiles/
 
 NO_TEST =		Yes
 

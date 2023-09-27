@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses readline
 
-MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/bible-kjv/}
+SITES=		${SITE_DEBIAN:=main/b/bible-kjv/}
 
 WRKDIST=	${WRKDIR}/work
 

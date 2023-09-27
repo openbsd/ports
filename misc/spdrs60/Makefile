@@ -4,7 +4,7 @@ DISTNAME =	spdrs60-0.6.5
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://spdrs60.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=spdrs60/}
+SITES =		${SITE_SOURCEFORGE:=spdrs60/}
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 

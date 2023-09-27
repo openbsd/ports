@@ -4,7 +4,7 @@ DISTNAME=	deco383
 PKGNAME=	deco-3.8.3
 REVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX=	.tgz
 
 # GPL

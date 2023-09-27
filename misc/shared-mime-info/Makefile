@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c glib-2.0 xml2
 
-MASTER_SITES=		https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
+SITES=	https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python

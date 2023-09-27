@@ -9,5 +9,5 @@ HOMEPAGE=		https://libosinfo.org/
 # GPLv2+ - LGPLv2+
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://releases.pagure.org/libosinfo/
+SITES=			https://releases.pagure.org/libosinfo/
 EXTRACT_SUFX=		.tar.xz

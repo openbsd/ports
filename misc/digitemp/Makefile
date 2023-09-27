@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m usb pthread
 
-MASTER_SITES=	${HOMEPAGE}/software/linux/
+SITES=		${HOMEPAGE}/software/linux/
 
 LIB_DEPENDS=	devel/libusb-compat
 

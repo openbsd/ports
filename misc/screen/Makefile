@@ -2,7 +2,7 @@ COMMENT=	multi-screen window manager
 
 DISTNAME=	screen-4.9.1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
+SITES=		${SITE_GNU:=screen/}
 
 HOMEPAGE=	https://www.gnu.org/software/screen/
 

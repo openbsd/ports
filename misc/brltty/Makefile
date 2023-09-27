@@ -4,7 +4,7 @@ DISTNAME=	brltty-3.6
 REVISION=	7
 CATEGORIES=	misc
 HOMEPAGE=	https://brltty.app
-MASTER_SITES=	https://brltty.app/archive/
+SITES=		https://brltty.app/archive/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

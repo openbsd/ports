@@ -3,7 +3,7 @@ DISTNAME=		xcdroast-0.98alpha16
 PKGNAME=		${DISTNAME:L:S/alpha/a/}
 REVISION=		8
 CATEGORIES=		misc x11
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xcdroast/}
+SITES=			${SITE_SOURCEFORGE:=xcdroast/}
 
 HOMEPAGE=		http://www.xcdroast.org/
 

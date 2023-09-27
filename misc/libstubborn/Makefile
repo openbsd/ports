@@ -8,7 +8,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
-MASTER_SITES =		https://github.com/rfht/libstubborn/releases/download/${V}/
+SITES =		https://github.com/rfht/libstubborn/releases/download/${V}/
 NO_TEST =		Yes
 
 do-install:

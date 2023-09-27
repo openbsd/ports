@@ -4,7 +4,7 @@ DISTNAME=	xtar-1.4
 REVISION=	6
 CATEGORIES=	misc
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
+SITES=		${SITE_XCONTRIB:=utilities/}
 
 # License: BSD
 PERMIT_PACKAGE=	Yes

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm Xt c m Xm
 
 # ftp server seems to have a firewalling/config problem
-MASTER_SITES=	ftp://ftp.bitrot.de/pub/plan/ \
+SITES=		ftp://ftp.bitrot.de/pub/plan/ \
 		https://spacehopper.org/mirrors/
 FIX_EXTRACT_PERMISSIONS=	Yes
 

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c curses iconv intl m slang
 
-MASTER_SITES=		https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
+SITES=			https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gettext,-runtime \

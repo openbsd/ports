@@ -6,7 +6,7 @@ CATEGORIES=		misc
 
 HOMEPAGE=		http://p-f-m.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=p-f-m/}
+SITES=			${SITE_SOURCEFORGE:=p-f-m/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

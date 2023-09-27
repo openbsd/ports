@@ -7,7 +7,7 @@ CATEGORIES=		misc
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/hanslub42/rlwrap/releases/download/v$V/
+SITES=		https://github.com/hanslub42/rlwrap/releases/download/v$V/
 
 WANTLIB=		c curses readline util
 

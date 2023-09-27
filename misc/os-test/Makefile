@@ -21,8 +21,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 #DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{archive${EXTRACT_SUFX}?ref=${GL_COMMIT}}
-#MASTER_SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/
-MASTER_SITES =		https://spacehopper.org/mirrors/
+#SITES =		https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/repository/
+SITES =			https://spacehopper.org/mirrors/
 
 MAKE_FILE =		BSDmakefile
 

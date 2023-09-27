@@ -17,7 +17,7 @@ WANTLIB += c crypto event pthread ssl event_core
 FLAVOR?=
 FLAVORS=	sasl
 
-MASTER_SITES=		http://memcached.org/files/
+SITES=			http://memcached.org/files/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

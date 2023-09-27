@@ -5,7 +5,7 @@ CATEGORIES=	misc
 REVISION=	0
 
 HOMEPAGE=	http://bjk.sourceforge.net/randtype/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bjk/}
+SITES=		${SITE_SOURCEFORGE:=bjk/}
 
 FIX_EXTRACT_PERMISSIONS=Yes
 

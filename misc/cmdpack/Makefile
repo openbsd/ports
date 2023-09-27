@@ -13,7 +13,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c
 
-MASTER_SITES =		http://www.neillcorlett.com/downloads/
+SITES =			http://www.neillcorlett.com/downloads/
 
 NO_TEST =		Yes
 

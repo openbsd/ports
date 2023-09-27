@@ -11,7 +11,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}
+SITES =			${SITE_SOURCEFORGE:=dtcltiny/}
 
 MODULES =		x11/qt5
 WANTLIB += 		c m pthread ${COMPILER_LIBCXX}

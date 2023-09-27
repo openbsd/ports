@@ -8,7 +8,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD/GPL
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes

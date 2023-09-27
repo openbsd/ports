@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c caca
 
-MASTER_SITES =	http://caca.zoy.org/raw-attachment/wiki/toilet/
+SITES =		http://caca.zoy.org/raw-attachment/wiki/toilet/
 
 LIB_DEPENDS =	graphics/libcaca
 

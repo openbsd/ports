@@ -8,7 +8,7 @@ CATEGORIES=	misc
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.bwct.de/
+SITES=		http://www.bwct.de/
 
 FAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
 		MANDIR="${TRUEPREFIX}/man/man"

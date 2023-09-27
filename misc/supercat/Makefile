@@ -4,7 +4,7 @@ DISTNAME=	supercat-0.5.8
 CATEGORIES=	misc
 
 HOMEPAGE=	https://supercat.nosredna.net/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

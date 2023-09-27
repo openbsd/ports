@@ -11,7 +11,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.arcane-labs.net/download/OpenBSD/ \
+SITES =			http://www.arcane-labs.net/download/OpenBSD/ \
 			http://billposer.org/Software/Downloads/
 
 MODULES =		x11/tk

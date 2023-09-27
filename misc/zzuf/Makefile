@@ -7,7 +7,7 @@ DISTNAME=		zzuf-${VERSION}
 
 CATEGORIES=		misc security
 
-MASTER_SITES=		https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
+SITES=	https://github.com/samhocevar/zzuf/releases/download/v${VERSION}/
 
 # WTFPL
 PERMIT_PACKAGE=	Yes

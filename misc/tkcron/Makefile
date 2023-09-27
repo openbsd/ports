@@ -7,7 +7,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 PERMIT_PACKAGE =Yes
 
-MASTER_SITES =	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/alcatel/code/
+SITES =		ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/alcatel/code/
 EXTRACT_SUFX =	.tcl.gz
 MODULES =	x11/tk
 MODTK_VERSION =	8.6

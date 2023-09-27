@@ -19,7 +19,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png psl soup-2.4
 WANTLIB += sqlite3 unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += Xau Xdmcp execinfo jpeg
 
-MASTER_SITES =	${HOMEPAGE}/download/
+SITES =		${HOMEPAGE}/download/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	textproc/intltool

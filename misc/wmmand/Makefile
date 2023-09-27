@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=wmmand/}
+SITES=			${SITE_SOURCEFORGE:=wmmand/}
 EXTRACT_SUFX=		.tar.bz2
 
 RUN_DEPENDS=		graphics/ImageMagick \

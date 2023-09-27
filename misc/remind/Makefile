@@ -17,7 +17,7 @@ COMPILER_LANGS=		c
 
 WANTLIB=		c m
 
-MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
+SITES=			https://dianne.skoll.ca/projects/remind/download/
 
 TEST_ENV=		LC_ALL=en_US.UTF-8
 

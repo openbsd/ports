@@ -4,7 +4,7 @@ DISTNAME=		mc-4.8.30
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.midnight-commander.org/
-MASTER_SITES=		${HOMEPAGE}downloads/
+SITES=			${HOMEPAGE}downloads/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz

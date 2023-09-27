@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c m
 
-MASTER_SITES =		https://www.libdivecomputer.org/releases/
+SITES =			https://www.libdivecomputer.org/releases/
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += 		divecomputer expat m c
 
-MASTER_SITES =		https://kristaps.bsd.lv/divecmd/snapshots/
+SITES =			https://kristaps.bsd.lv/divecmd/snapshots/
 
 LIB_DEPENDS =		misc/libdivecomputer
 

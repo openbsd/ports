@@ -5,7 +5,7 @@ PKGNAME=	xtimer-0.8089
 REVISION=	4
 CATEGORIES=	misc
 
-MASTER_SITES=	http://www.bsddiary.net/xtimer/
+SITES=		http://www.bsddiary.net/xtimer/
 
 PERMIT_PACKAGE=	Yes
 

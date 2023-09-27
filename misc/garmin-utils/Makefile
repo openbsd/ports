@@ -4,7 +4,7 @@ DISTNAME=	garmin-utils-2.4
 REVISION=	2
 CATEGORIES=	misc geo
 
-MASTER_SITES=	ftp://ftp.snafu.org/pub/
+SITES=		ftp://ftp.snafu.org/pub/
 
 PERMIT_PACKAGE=	Yes
 
