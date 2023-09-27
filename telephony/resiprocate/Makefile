@@ -34,7 +34,7 @@ WANTLIB-repro += ${WANTLIB-main} c db_cxx dum mariadb pq resip rutil
 
 WANTLIB-return += ${WANTLIB-main} boost_system c rutil
 
-MASTER_SITES =		https://www.resiprocate.org/files/pub/reSIProcate/releases/
+SITES =		https://www.resiprocate.org/files/pub/reSIProcate/releases/
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			resiprocate-contrib-${V}${EXTRACT_SUFX}

@@ -31,7 +31,7 @@ MAKE_ENV =		CC="${CC}" \
 			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS -DHAVE_ARC4RANDOM -I${LOCALBASE}/include" \
 			LD_EXTRA_OPTS="${LDFLAGS} -pthread -L${LOCALBASE}/lib"
 
-MASTER_SITES =		https://www.kamailio.org/pub/kamailio/${VERSION}/src/
+SITES =			https://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 WANTLIB-main =		${COMPILER_LIBCXX} \

@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c crypto glib-2.0 iconv intl pcre2-8 pthread ssl
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sofia-sip/}
+SITES=		${SITE_SOURCEFORGE:=sofia-sip/}
 
 
 BUILD_DEPENDS=		devel/check

@@ -3,7 +3,7 @@ COMMENT=	DSP library for telephony
 DISTNAME=	spandsp-0.0.6
 REVISION=	0
 CATEGORIES=	telephony
-MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
+SITES=		${HOMEPAGE}downloads/spandsp/
 
 SHARED_LIBS=	spandsp	7.0
 

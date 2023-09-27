@@ -2,7 +2,7 @@ COMMENT=	Creative VoIP Blaster driver/software
 DISTNAME=	fobbit-0.61
 REVISION=	0
 CATEGORIES=	telephony
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fobbit/}
+SITES=		${SITE_SOURCEFORGE:=fobbit/}
 
 HOMEPAGE=	http://fobbit.sourceforge.net/
 

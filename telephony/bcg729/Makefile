@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.linphone.org/technical-corner/bcg729/
 # Dual: GPLv3(only) or commercial
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://gitlab.linphone.org/BC/public/bcg729/-/archive/${V}/
+SITES =		https://gitlab.linphone.org/BC/public/bcg729/-/archive/${V}/
 
 MODULES =	devel/cmake
 CONFIGURE_ARGS +=-DENABLE_TESTS=YES

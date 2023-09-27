@@ -12,7 +12,7 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.pkts.ca/
+SITES =			http://www.pkts.ca/
 
 RUN_DEPENDS =		www/p5-libwww \
 			www/p5-HTML-Form

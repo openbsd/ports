@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	pthread
 
-MASTER_SITES=	${MASTER_SITE_GNU:=osip/}
+SITES=		${SITE_GNU:=osip/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-test

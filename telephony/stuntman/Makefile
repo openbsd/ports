@@ -9,7 +9,7 @@ REVISION =	0
 
 HOMEPAGE =	http://www.stunprotocol.org/
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 # Apache 2.0 license
 PERMIT_PACKAGE=	Yes

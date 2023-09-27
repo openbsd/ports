@@ -31,7 +31,7 @@ MAINTAINER=		Ian Darwin <ian@openbsd.org>
 # Copyright held by Theo; ok for non-commercial-redistribution
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://ftp.openbsd.org/pub/OpenBSD/songs/
+SITES =			https://ftp.openbsd.org/pub/OpenBSD/songs/
 
 BUILD_DEPENDS =		audio/madplay
 

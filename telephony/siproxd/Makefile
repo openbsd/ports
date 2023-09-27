@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c ltdl m osip2 osipparser2 pthread sqlite3 z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=siproxd/}
+SITES=		${SITE_SOURCEFORGE:=siproxd/}
 
 USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static

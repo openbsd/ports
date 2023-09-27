@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += hiredis intl mariadb pq pthread sqlite3 ssl m z
 
-MASTER_SITES =		http://turnserver.open-sys.org/downloads/v${V}/ \
+SITES =			http://turnserver.open-sys.org/downloads/v${V}/ \
 			http://coturn.net/turnserver/v${V}/
 
 LIB_DEPENDS =		databases/mariadb \

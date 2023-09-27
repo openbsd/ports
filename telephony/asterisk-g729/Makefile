@@ -4,7 +4,7 @@ REVISION=	5
 PKGNAME=	${DISTNAME:S/g72x/g729/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
-MASTER_SITES=	http://asterisk.hosting.lv/src/
+SITES=		http://asterisk.hosting.lv/src/
 
 # https://github.com/arkadijs/asterisk-g72x
 HOMEPAGE=	http://asterisk.hosting.lv/

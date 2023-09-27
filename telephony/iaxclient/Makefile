@@ -10,7 +10,7 @@ CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
 		iaxclient 0.0
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iaxclient/}
+SITES=		${SITE_SOURCEFORGE:=iaxclient/}
 HOMEPAGE=	http://iaxclient.sourceforge.net/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
