@@ -8,7 +8,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 HOMEPAGE=	https://www.zsh.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zsh/} \
+SITES=		${SITE_SOURCEFORGE:=zsh/} \
 		https://www.zsh.org/pub/
 
 EXTRACT_SUFX=	.tar.xz

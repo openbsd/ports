@@ -7,7 +7,7 @@ HOMEPAGE=		http://www.canb.auug.org.au/~dbell/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.canb.auug.org.au/~dbell/programs/
+SITES=			http://www.canb.auug.org.au/~dbell/programs/
 
 ALL_TARGET=		sash
 

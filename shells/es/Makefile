@@ -6,7 +6,7 @@ REVISION=	0
 EPOCH=		0
 CATEGORIES=	shells
 
-MASTER_SITES=	ftp://ftp.sys.toronto.edu/pub/es/
+SITES=		ftp://ftp.sys.toronto.edu/pub/es/
 
 PERMIT_PACKAGE=	Yes
 

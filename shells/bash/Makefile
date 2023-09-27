@@ -9,8 +9,8 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GNU:=bash/}
-MASTER_SITES.p=	${MASTER_SITE_GNU:=bash/bash-5.2-patches/}
+SITES=		${SITE_GNU:=bash/}
+SITES.p=	${SITE_GNU:=bash/bash-5.2-patches/}
 DIST_SUBDIR=	bash
 .for i in
 PATCHFILES.p +=	bash52-$i

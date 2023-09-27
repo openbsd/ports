@@ -17,7 +17,7 @@ EXTRACT_SUFX =		.tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
 
-MASTER_SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
+SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
 
 # C++11
 COMPILER =		base-clang ports-gcc base-gcc

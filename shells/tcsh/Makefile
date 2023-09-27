@@ -7,7 +7,7 @@ HOMEPAGE=	https://www.tcsh.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://astron.com/pub/tcsh/ \
+SITES=		https://astron.com/pub/tcsh/ \
 		https://astron.com/pub/tcsh/old/ \
 		https://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/ \
 		https://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/old/

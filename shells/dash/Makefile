@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses edit
 
-MASTER_SITES =		${HOMEPAGE:=files/}
+SITES =			${HOMEPAGE:=files/}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

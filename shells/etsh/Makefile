@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =	https://etsh.nl/src/etsh_${V}/
+SITES =		https://etsh.nl/src/etsh_${V}/
 
 CONFIGURE_STYLE =	simple
 
