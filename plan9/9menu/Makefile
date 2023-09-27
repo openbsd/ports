@@ -5,7 +5,7 @@ CATEGORIES=	plan9
 
 MAINTAINER=	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
-MASTER_SITES=	ftp://ftp.freefriends.org/arnold/Source/
+SITES=		ftp://ftp.freefriends.org/arnold/Source/
 
 EXTRACT_SUFX=	.shar.gz
 

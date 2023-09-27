@@ -5,7 +5,7 @@ DISTNAME=	wily-9libs
 PKGNAME=	${DISTNAME:S/-/_/}-${VERSION}
 EPOCH=		1
 CATEGORIES=	plan9 editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wily/} \
+SITES=		${SITE_SOURCEFORGE:=wily/} \
 		ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
 		ftp://ftp.cs.yorku.ca/pub/wily/src/
 REVISION=	0

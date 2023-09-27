@@ -11,7 +11,7 @@ CATEGORIES=	plan9
 
 HOMEPAGE=	http://drawterm.9front.org/
 
-MASTER_SITES=	http://git.9front.org/git/plan9front/drawterm/${V}/
+SITES=		http://git.9front.org/git/plan9front/drawterm/${V}/
 
 MAINTAINER=	Stanley Lieber <sl@stanleylieber.com>
 

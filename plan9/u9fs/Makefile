@@ -3,7 +3,7 @@ COMMENT=	9P server for Unix
 DISTNAME=	u9fs-20210125
 CATEGORIES=	plan9
 
-MASTER_SITES=	https://bitbucket.org/plan9-from-bell-labs/u9fs/get/
+SITES=		https://bitbucket.org/plan9-from-bell-labs/u9fs/get/
 
 COMMIT=		d65923fd17e8
 DISTFILES=	${DISTNAME}{${COMMIT}}${EXTRACT_SUFX}
