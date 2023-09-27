@@ -24,7 +24,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU freetype m ogg openal
 WANTLIB += vorbis vorbisenc vorbisfile
 
-MASTER_SITES =		https://www.sfml-dev.org/files/
+SITES =			https://www.sfml-dev.org/files/
 
 MODULES =		devel/cmake
 

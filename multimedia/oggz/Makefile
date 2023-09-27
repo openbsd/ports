@@ -12,7 +12,7 @@ SHARED_LIBS =	oggz	0.0
 # BSD
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	https://downloads.xiph.org/releases/liboggz/
+SITES =		https://downloads.xiph.org/releases/liboggz/
 
 WANTLIB =	c ogg m
 

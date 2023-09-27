@@ -3,7 +3,7 @@ COMMENT=	fast tool to backup video DVDs 'on the fly'
 DISTNAME=	streamdvd-0.4
 REVISION =	6
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.badabum.de/down/
+SITES=		http://www.badabum.de/down/
 
 HOMEPAGE=	http://www.badabum.de/streamdvd.html
 

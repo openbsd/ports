@@ -6,7 +6,7 @@ CATEGORIES =		multimedia
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 
-MASTER_SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/
+SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1

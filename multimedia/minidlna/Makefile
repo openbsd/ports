@@ -13,7 +13,7 @@ WANTLIB += FLAC avcodec avformat avutil c exif iconv id3tag intl jpeg
 WANTLIB += ogg pthread sqlite3 vorbis z
 
 # sometimes https://github.com/glebius/minidlna has useful things
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=minidlna/}
+SITES=			${SITE_SOURCEFORGE:=minidlna/}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 

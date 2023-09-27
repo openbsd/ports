@@ -12,7 +12,7 @@ HOMEPAGE=		https://www.rastersoft.com/programas/devede.html
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://gitlab.com/rastersoft/devedeng/-/archive/${MODPY_EGG_VERSION}/
+SITES=	https://gitlab.com/rastersoft/devedeng/-/archive/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

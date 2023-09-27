@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 gdk_pixbuf-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png sharpyuv x265
 WANTLIB += z
 
-MASTER_SITES=	https://github.com/strukturag/libheif/releases/download/v$V/
+SITES=		https://github.com/strukturag/libheif/releases/download/v$V/
 
 COMPILER=	base-clang ports-gcc
 

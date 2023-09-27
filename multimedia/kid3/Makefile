@@ -16,7 +16,7 @@ WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5Widgets Qt5Xml c chromaprint gstreamer-1.0
 WANTLIB += id3 m ogg readline tag vorbis vorbisfile z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kid3/}
+SITES =			${SITE_SOURCEFORGE:=kid3/}
 EXTRACT_SUFX =		.tar.gz
 
 # Python is only needed for tests, but KDE Frameworks depend on it anyway

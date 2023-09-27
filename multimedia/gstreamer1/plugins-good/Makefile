@@ -11,7 +11,7 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
+SITES=			${SITE_GST:=gst-plugins-good/}
 
 WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += intl

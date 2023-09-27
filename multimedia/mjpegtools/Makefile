@@ -3,7 +3,7 @@ COMMENT=		tools to edit/modify/encode video streams
 DISTNAME=		mjpegtools-2.0.0
 REVISION=		13
 CATEGORIES=		multimedia
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
+SITES=			${SITE_SOURCEFORGE:=mjpeg/}
 
 SHARED_LIBS=		lavfile		5.0 \
 			lavjpeg		5.0 \

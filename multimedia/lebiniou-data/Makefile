@@ -11,7 +11,7 @@ HOMEPAGE =	https://biniou.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://gitlab.com/lebiniou/lebiniou-data/-/archive/${V}/
+SITES =		https://gitlab.com/lebiniou/lebiniou-data/-/archive/${V}/
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.68

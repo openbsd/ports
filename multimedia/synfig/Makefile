@@ -30,7 +30,7 @@ WANTLIB += swresample swscale theoradec theoraenc tiff vorbis
 WANTLIB += vorbisenc vpx webp webpdemux webpmux x264 x265 xcb
 WANTLIB += xml++-2.6 xml2 xvidcore z zstd deflate
 
-MASTER_SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
+SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
 
 # c++11
 COMPILER =		base-clang ports-gcc

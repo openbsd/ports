@@ -8,7 +8,7 @@ VER=		1.2.1
 DISTNAME=	dav1d-${VER}
 REVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
+SITES=		https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	dav1d	2.3

@@ -9,7 +9,7 @@ HOMEPAGE=		http://dvd-create.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://dvd-create.sourceforge.net/
+SITES=			http://dvd-create.sourceforge.net/
 
 LIB_DEPENDS=		multimedia/libdvdnav
 WANTLIB=		c dvdnav dvdread pthread

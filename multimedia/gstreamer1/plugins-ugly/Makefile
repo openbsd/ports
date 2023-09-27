@@ -8,7 +8,7 @@ WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
 WANTLIB += gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += intl x264
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-ugly/}
+SITES=			${SITE_GST:=gst-plugins-ugly/}
 
 LIB_DEPENDS=		${P}/plugins-base=${V} \
 			audio/libcdio \

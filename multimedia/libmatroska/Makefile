@@ -2,7 +2,7 @@ COMMENT=	extensible open standard audio/video container library
 
 DISTNAME=	libmatroska-1.7.1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://dl.matroska.org/downloads/libmatroska/
+SITES=		https://dl.matroska.org/downloads/libmatroska/
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	matroska	5.2

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  c iconv intl m popt pthread
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libdv/}
+SITES=			${SITE_SOURCEFORGE:=libdv/}
 
 LIB_DEPENDS=		devel/popt
 

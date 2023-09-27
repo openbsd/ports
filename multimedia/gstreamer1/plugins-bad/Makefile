@@ -28,7 +28,7 @@ WANTLIB += gstreamer-1.0 gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += intl lcms2 m nettle opus orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += rsvg-2 xml2
 
-MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
+SITES =			${SITE_GST:=gst-plugins-bad/}
 
 BUILD_DEPENDS=		devel/gobject-introspection
 

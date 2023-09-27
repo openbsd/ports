@@ -10,8 +10,7 @@ CATEGORIES =	multimedia devel
 
 HOMEPAGE =	https://www.mltframework.org/
 
-MASTER_SITES =		\
-	https://github.com/mltframework/mlt/releases/download/v${V}/
+SITES =		https://github.com/mltframework/mlt/releases/download/v${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

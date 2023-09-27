@@ -16,7 +16,7 @@ WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets boost_filesystem
 WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
 WANTLIB += m matroska ogg pugixml vorbis z
 
-MASTER_SITES=	https://mkvtoolnix.download/sources/
+SITES=		https://mkvtoolnix.download/sources/
 
 EXTRACT_SUFX=	.tar.xz
 

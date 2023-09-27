@@ -37,7 +37,7 @@ WANTLIB += webpdemux webpmux x264 x265 xcb xcb-render xcb-shm
 WANTLIB += xml++-2.6 xml2 xvidcore z zstd atspi dbus-1 sharpyuv
 
 
-MASTER_SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
+SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
 
 MODULES =		textproc/intltool
 

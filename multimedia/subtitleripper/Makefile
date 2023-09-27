@@ -12,7 +12,7 @@ HOMEPAGE=	http://subtitleripper.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=subtitleripper/}
+SITES=		${SITE_SOURCEFORGE:=subtitleripper/}
 
 WANTLIB=	c m z png netpbm
 

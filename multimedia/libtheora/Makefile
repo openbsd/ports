@@ -4,7 +4,7 @@ COMMENT=	open video codec
 DISTNAME=	libtheora-1.2.20190601
 REVISION=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://comstyle.com/source/
+SITES=		https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	theora		4.0 \

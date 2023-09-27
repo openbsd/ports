@@ -4,7 +4,7 @@ VER=		6.1.1
 DISTNAME=	libdvdnav-${VER}
 EPOCH=		0
 CATEGORIES=	multimedia
-MASTER_SITES=	https://download.videolan.org/pub/videolan/libdvdnav/${VER}/
+SITES=		https://download.videolan.org/pub/videolan/libdvdnav/${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	dvdnav		7.2

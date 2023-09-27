@@ -6,8 +6,8 @@ DISTNAME =		libaacs-${V}
 CATEGORIES =		multimedia
 
 HOMEPAGE =		https://www.videolan.org/developers/libaacs.html
-MASTER_SITES =		https://download.videolan.org/pub/videolan/libaacs/${V}/ \
-			ftp://ftp.videolan.org/pub/videolan/libaacs/${V}/
+SITES =		https://download.videolan.org/pub/videolan/libaacs/${V}/ \
+		ftp://ftp.videolan.org/pub/videolan/libaacs/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1

@@ -10,6 +10,6 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # helvum: GPLv3
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES ?=		https://gitlab.freedesktop.org/pipewire/${PW_PROJECT}/-/archive/${PW_VERSION}/
+SITES ?=		https://gitlab.freedesktop.org/pipewire/${PW_PROJECT}/-/archive/${PW_VERSION}/
 
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}

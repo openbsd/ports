@@ -6,7 +6,7 @@ DISTNAME =		libbdplus-${V}
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://www.videolan.org/developers/libbdplus.html
-MASTER_SITES =		https://download.videolan.org/pub/videolan/libbdplus/${V}/
+SITES =		https://download.videolan.org/pub/videolan/libbdplus/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1

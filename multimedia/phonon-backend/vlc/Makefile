@@ -3,7 +3,7 @@ VERSION =	0.11.2
 DISTNAME =	phonon-backend-vlc-${VERSION}
 REVISION =	0
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-vlc/${VERSION}/}
+SITES =		${SITE_KDE:=stable/phonon/phonon-backend-vlc/${VERSION}/}
 EXTRACT_SUFX = .tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m phonon4qt5

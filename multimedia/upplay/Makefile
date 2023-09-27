@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5WebKit
 WANTLIB += Qt5WebKitWidgets Qt5Widgets c jsoncpp m upnpp
 
-MASTER_SITES =		https://www.lesbonscomptes.com/upplay/downloads/
+SITES =			https://www.lesbonscomptes.com/upplay/downloads/
 
 # C++11
 COMPILER =		base-clang ports-gcc

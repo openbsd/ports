@@ -16,7 +16,7 @@ SHARED_LIBS += gstapp-1.0                7.1 # 0.2206.0
 SHARED_LIBS += gstallocators-1.0         6.1 # 0.2206.0
 SHARED_LIBS += gstgl-1.0                 6.1 # 0.2206.0
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
+SITES=			${SITE_GST:=gst-plugins-base/}
 
 WANTLIB += EGL GL X11 X11-xcb Xext Xi Xv c cairo cdda_interface
 WANTLIB += cdda_paranoia gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0

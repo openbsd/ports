@@ -11,7 +11,7 @@ SHARED_LIBS += gstcheck-1.0              7.1 # 0.2206.0
 
 WANTLIB += c execinfo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl m
 
-MASTER_SITES=		${MASTER_SITE_GST:=gstreamer/}
+SITES=			${SITE_GST:=gstreamer/}
 
 BUILD_DEPENDS=		devel/bison \
 			devel/gobject-introspection \

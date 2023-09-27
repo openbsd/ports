@@ -30,7 +30,7 @@ WANTLIB-tools += z zstd xcb-shm
 
 MULTI_PACKAGES=	-main -tools
 
-MASTER_SITES=	https://github.com/strukturag/libde265/releases/download/v$V/
+SITES=		https://github.com/strukturag/libde265/releases/download/v$V/
 
 COMPILER=	base-clang ports-gcc
 

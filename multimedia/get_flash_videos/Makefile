@@ -12,7 +12,7 @@ MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://github.com/monsieurvideo/get-flash-videos/releases/download/${V}/
+SITES =		https://github.com/monsieurvideo/get-flash-videos/releases/download/${V}/
 
 MODULES=	perl
 CONFIGURE_STYLE=perl

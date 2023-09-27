@@ -29,7 +29,7 @@ GST_PKGNAME_PREFIX=	gstreamer1
 PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR=		gstreamer
-MASTER_SITE_GST=	http://gstreamer.freedesktop.org/src/
+SITE_GST=		http://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
 P=			multimedia/${GST_PKGNAME_PREFIX}
 

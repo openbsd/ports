@@ -27,7 +27,7 @@ WANTLIB += png postproc speex ssl swresample swscale theoradec
 WANTLIB += theoraenc udfread vidstab vorbis vorbisenc vpx x264
 WANTLIB += x265 xcb xcb-render xcb-shm xml2 xvidcore z zimg
 
-MASTER_SITES =	https://github.com/HandBrake/HandBrake/releases/download/${V}/
+SITES =		https://github.com/HandBrake/HandBrake/releases/download/${V}/
 
 COMPILER =	base-clang ports-gcc
 

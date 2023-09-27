@@ -6,7 +6,7 @@ CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
 
-MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
+SITES=		https://bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2

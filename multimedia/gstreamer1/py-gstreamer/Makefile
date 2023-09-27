@@ -8,7 +8,7 @@ HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-1.0
 
-MASTER_SITES=		${MASTER_SITE_GST:=gst-python/}
+SITES=			${SITE_GST:=gst-python/}
 
 # XXX we need the meson MODULE to come first, but Makefile.inc is parsed after
 MODULES=		devel/meson lang/python

@@ -2,7 +2,7 @@ COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.14
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
+SITES=		${SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 REVISION=	0
 

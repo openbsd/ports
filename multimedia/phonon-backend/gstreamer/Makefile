@@ -4,7 +4,7 @@ VERSION =	4.10.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
 REVISION =	2
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
+SITES =		${SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 EXTRACT_SUFX = .tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets

@@ -4,7 +4,7 @@ COMMENT =	closed caption subtitles extractor
 HOMEPAGE = 	http://ccextractor.sourceforge.net/
 V =		0.56
 DISTFILES =	ccextractor.${V:S/.//}-src.zip
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ccextractor/}
+SITES =		${SITE_SOURCEFORGE:=ccextractor/}
 DISTNAME =	ccextractor-$V
 REVISION =	2
 WRKDIST =	${WRKDIR}/ccextractor.$V

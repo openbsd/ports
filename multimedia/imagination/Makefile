@@ -20,7 +20,7 @@ WANTLIB += wavpack xcb xcb-render xcb-shm z
 WANTLIB += Xau Xdmcp crypto jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
+SITES =			${SITE_SOURCEFORGE:=imagination/}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localedir=${PREFIX}/share/locale

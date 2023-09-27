@@ -5,7 +5,7 @@ DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 REVISION=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	https://bitbucket.org/multicoreware/x265_git/downloads/
+SITES=		https://bitbucket.org/multicoreware/x265_git/downloads/
 
 SHARED_LIBS=	x265	23.0
 

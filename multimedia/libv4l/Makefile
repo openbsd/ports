@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c execinfo jpeg m pthread
 
-MASTER_SITES =		https://linuxtv.org/downloads/v4l-utils/
+SITES =			https://linuxtv.org/downloads/v4l-utils/
 
 EXTRACT_SUFX =		.tar.bz2
 

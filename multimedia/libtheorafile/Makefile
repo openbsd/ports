@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += m
 
-MASTER_SITES = https://github.com/FNA-XNA/FNA/releases/download/${FNA}/
+SITES = 	https://github.com/FNA-XNA/FNA/releases/download/${FNA}/
 EXTRACT_SUFX = .zip
 
 MAKE_ENV =	LIBtheorafile_VERSION=${LIBtheorafile_VERSION}

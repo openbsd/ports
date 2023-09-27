@@ -6,7 +6,7 @@ VER=		1.5.0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
-MASTER_SITES=	https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
+SITES=		https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	SvtAv1Dec	2.0 \

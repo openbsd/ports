@@ -8,7 +8,7 @@ DISTFILES =	libtheoraplay-${HG_CHANGESET}{${HG_COMMIT}}${EXTRACT_SUFX}
 PKGNAME =	libtheoraplay-${HG_CHANGESET}
 REVISION =	1
 CATEGORIES =	multimedia
-MASTER_SITES =	https://hg.icculus.org/icculus/theoraplay/archive/
+SITES =		https://hg.icculus.org/icculus/theoraplay/archive/
 
 SHARED_LIBS =	theoraplay	0.0	# Changeset 61
 

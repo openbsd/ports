@@ -2,7 +2,7 @@ COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.3.7
 CATEGORIES=	multimedia
-MASTER_SITES=	https://downloads.xvid.com/downloads/
+SITES=		https://downloads.xvid.com/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	xvidcore	5.0

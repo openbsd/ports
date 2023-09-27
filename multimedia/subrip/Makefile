@@ -3,7 +3,7 @@ DISTNAME=	ogmrip-0.10.0
 PKGNAME=	subrip-0.10.0
 REVISION=	2
 CATEGORIES=	multimedia converters
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ogmrip/}
+SITES=		${SITE_SOURCEFORGE:=ogmrip/}
 
 HOMEPAGE=	http://ogmrip.sourceforge.net/
 

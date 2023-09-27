@@ -2,7 +2,7 @@ COMMENT=	library for reading UDF from raw devices and image files
 
 DISTNAME=	libudfread-1.1.2
 CATEGORIES=	multimedia devel
-MASTER_SITES=	https://download.videolan.org/videolan/libudfread/
+SITES=		https://download.videolan.org/videolan/libudfread/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	udfread	0.0

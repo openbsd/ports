@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c m pulse
 WANTLIB += pulse-mainloop-glib
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/phonon/${VERSION}/}
+SITES =			${SITE_KDE:=stable/phonon/${VERSION}/}
 
 MODULES =		devel/kf5
 

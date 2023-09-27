@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c dvdread
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lsdvd/}
+SITES=			${SITE_SOURCEFORGE:=lsdvd/}
 
 LIB_DEPENDS=		devel/libdvdread
 

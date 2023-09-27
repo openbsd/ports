@@ -16,7 +16,7 @@ WANTLIB +=	avutil c caca fftw3 glib-2.0 intl jack jansson m orcania
 WANTLIB +=	pthread pulse pulse-simple sndfile sndio swscale ulfius
 WANTLIB +=	yder
 
-MASTER_SITES =	https://gitlab.com/lebiniou/lebiniou/-/archive/${V}/
+SITES =		https://gitlab.com/lebiniou/lebiniou/-/archive/${V}/
 
 # C11
 COMPILER =	base-clang ports-gcc

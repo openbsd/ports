@@ -14,7 +14,7 @@ DISTFILES=	${FW} ${SRC}
 EXTRACT_ONLY=	${SRC}
 PKGNAME=	hdhomerun-$V
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.silicondust.com/hdhomerun/
+SITES=		http://download.silicondust.com/hdhomerun/
 
 HOMEPAGE=	http://www.silicondust.com/
 

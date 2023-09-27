@@ -16,7 +16,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://distfiles.sigtrap.nl/
+SITES =			https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/help2man

@@ -18,7 +18,7 @@ WANTLIB += c curses m tag tag_c util z
 LIB_DEPENDS =		audio/taglib
 RUN_DEPENDS =		x11/mplayer
 
-MASTER_SITES =		${HOMEPAGE}/files/
+SITES =			${HOMEPAGE}/files/
 
 ALL_TARGET =		vitunes
 NO_TEST =		Yes

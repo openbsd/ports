@@ -9,7 +9,7 @@ HOMEPAGE=		http://mpgtx.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mpgtx/}
+SITES=			${SITE_SOURCEFORGE:=mpgtx/}
 
 WANTLIB=		c m ${COMPILER_LIBCXX}
 

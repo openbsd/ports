@@ -3,7 +3,7 @@ DISTNAME=		ogmtools-1.5
 REVISION =		2
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		multimedia
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 HOMEPAGE=		http://www.bunkus.org/videotools/ogmtools/
 
