@@ -36,14 +36,11 @@ LIB_DEPENDS-main=	graphics/jpeg \
 			graphics/png
 
 .if ${BUILD_PACKAGES:M-maps} # with maps
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-DISTFILES=		${EXTRACT_ONLY} ${SUPDISTFILES}
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${SUPDISTFILES}
+EXTRACT_ONLY=		${DISTFILES:M*.tar*}
 
 post-extract:
-	PATH=${PORTPATH} ${BZIP2} -dkc ${FULLDISTDIR}/medium_images_270804.tar.bz2 | tar -xf - \
-		-C ${WRKSRC}/vmf -s '#images/medium#.#'
-	PATH=${PORTPATH} ${BZIP2} -dkc ${FULLDISTDIR}/big_images_270804.tar.bz2 | tar -xf - \
-		-C ${WRKSRC}/vmf -s '#images/big#.#'
+	mv ${WRKDIR}/images/*/* ${WRKSRC}/vmf/
 	cp ${FULLDISTDIR}/e43_color1_sh_16k.jpg ${WRKSRC}/vmf/
 	cp ${FULLDISTDIR}/huge.jpg ${WRKSRC}/vmf/
 .endif
