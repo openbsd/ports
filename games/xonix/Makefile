@@ -1,7 +1,7 @@
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4
-REVISION=	8
+REVISION=	9
 CATEGORIES=	games
 
 SITES=		ftp://ftp.interface-business.de/pub/outgoing/ \
@@ -15,6 +15,7 @@ WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m
 CONFIGURE_STYLE=imake
 NO_TEST=	Yes
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+MAKE_FLAGS=	CDEBUGFLAGS="${CFLAGS}"
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xonix
