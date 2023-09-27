@@ -351,6 +351,7 @@
      SUBDIR += openvpn
      SUBDIR += openvpn,mbedtls
      SUBDIR += openvpn-auth-ldap
+     SUBDIR += openvpn-otp
      SUBDIR += openvpn_bsdauth
      SUBDIR += osrtspproxy
      SUBDIR += owamp
