@@ -7,7 +7,7 @@ CATEGORIES=	news
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../../scripts/news/nntpstuff/aub/}
+SITES=		${SITE_PERL_CPAN:=../../scripts/news/nntpstuff/aub/}
 DISTFILES=	aub aub.1 BUG_FIXES
 DIST_SUBDIR=	aub
 EXTRACT_CASES=	*) cp ${FULLDISTDIR}/$$archive . ;;

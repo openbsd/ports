@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcre
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=leafnode/}
+SITES=			${SITE_SOURCEFORGE:=leafnode/}
 EXTRACT_SUFX=		.tar.xz
 
 LIB_DEPENDS=		devel/pcre

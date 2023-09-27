@@ -6,7 +6,7 @@ PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/v//}
 REVISION=		0
 
 # override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/GNOME/pan/-/archive/${GNOME_VERSION}/
+SITES=		https://gitlab.gnome.org/GNOME/pan/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 
 CATEGORIES=		news x11

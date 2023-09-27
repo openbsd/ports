@@ -4,7 +4,7 @@ DISTNAME=	yencode-0.46
 REVISION=	3
 CATEGORIES=	news
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yencode/}
+SITES=		${SITE_SOURCEFORGE:=yencode/}
 
 LIB_DEPENDS=	devel/gettext,-runtime
 

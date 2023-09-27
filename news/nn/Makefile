@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES =		ftp://ftp.nndev.org/pub/nn-6.7/ \
+SITES =			ftp://ftp.nndev.org/pub/nn-6.7/ \
                         https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =		.tar.Z
 

@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto iconv intl m ssl slang
 
-MASTER_SITES=	https://jedsoft.org/releases/slrn/ \
+SITES=		https://jedsoft.org/releases/slrn/ \
 		https://jedsoft.org/releases/slrn/old/
 
 NO_TEST=	Yes

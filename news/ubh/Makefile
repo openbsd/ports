@@ -8,7 +8,7 @@ HOMEPAGE=	http://ubh.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 RUN_DEPENDS=	mail/p5-MIME-tools \
 		news/p5-News-Newsrc \

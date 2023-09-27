@@ -13,7 +13,7 @@ MAINTAINER =			Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =			https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}/
+SITES =		https://github.com/sabnzbd/sabnzbd/releases/download/${VERSION}/
 EXTRACT_SUFX =			-src.tar.gz
 
 MODULES =			lang/python

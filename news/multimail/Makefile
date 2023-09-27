@@ -15,9 +15,9 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =	c curses m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=multimail/}
+SITES =		${SITE_SOURCEFORGE:=multimail/}
 
 FIX_EXTRACT_PERMISSIONS = Yes
 

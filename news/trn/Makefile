@@ -3,7 +3,7 @@ COMMENT=	threaded newsreader
 CATEGORIES=	news
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
-MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
+SITES=		${SITE_SOURCEFORGE:=trn/}
 V=77
 DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V

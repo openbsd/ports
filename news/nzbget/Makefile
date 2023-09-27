@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c crypto curses m ssl xml2 z
 
-MASTER_SITES =	https://github.com/nzbget/nzbget/releases/download/v${VERSION}/
+SITES =		https://github.com/nzbget/nzbget/releases/download/v${VERSION}/
 EXTRACT_SUFX =	-src.tar.gz
 
 # C++14

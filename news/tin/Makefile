@@ -5,7 +5,7 @@ MAJORVERSION=	2.6
 PATCHLEVEL=	2
 CATEGORIES=	news
 
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
+SITES=		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		http://ftp.cuhk.edu.hk/pub/packages/news/tin/v${MAJORVERSION}/ \
 		http://ftp.lip6.fr/pub/unix/news/readers/tin-unoff/ \
 		ftp://ftp.karlsruhe.org:/pub/news/clients/tin/ \

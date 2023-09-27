@@ -5,7 +5,7 @@ PKG_ARCH=	*
 DISTNAME=	Gateway-0.42
 REVISION=	5
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=News/}
+SITES=		${SITE_PERL_CPAN:=News/}
 
 RUN_DEPENDS=	security/p5-PGP-Sign \
 		news/p5-News-Article>=1.07
