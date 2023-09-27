@@ -13,7 +13,7 @@ CATEGORIES=	net security
 REVISION=	1
 
 HOMEPAGE=	https://www.kismetwireless.net/
-MASTER_SITES=	${HOMEPAGE}code/
+SITES=		${HOMEPAGE}code/
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>

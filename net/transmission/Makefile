@@ -14,7 +14,7 @@ MAINTAINER=	Josh Grosse <josh@jggimi.net>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
+SITES=	https://github.com/transmission/transmission/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -gtk -qt

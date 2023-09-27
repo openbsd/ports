@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	${COMPILER_LIBCXX} c crypto iconv lzma m ogg shout \
 		speex ssl tag tag_c theora vorbis xml2 z
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ezstream/ \
+SITES=		https://downloads.xiph.org/releases/ezstream/ \
 		https://ezstream.mrsserver.net/releases/
 
 BUILD_DEPENDS=	devel/check

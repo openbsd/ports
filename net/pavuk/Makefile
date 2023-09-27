@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto iconv intl ssl z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pavuk/}
+SITES=		${SITE_SOURCEFORGE:=pavuk/}
 
 FLAVORS=	no_x11
 FLAVOR?=

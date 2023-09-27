@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pcap
 
-MASTER_SITES =		http://www.si6networks.com/tools/ipv6toolkit/
+SITES =			http://www.si6networks.com/tools/ipv6toolkit/
 
 MAKE_FLAGS =		CC=${CC}
 FAKE_FLAGS =		PREFIX=${PREFIX} \

@@ -6,7 +6,7 @@ COMMENT=	multi-purpose sniffer/interceptor/logger
 V=		0.8.3.1
 DISTNAME=	ettercap-$V
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/Ettercap/ettercap/releases/download/v$V/
+SITES=		https://github.com/Ettercap/ettercap/releases/download/v$V/
 REVISION=	0
 
 HOMEPAGE=	https://www.ettercap-project.org/

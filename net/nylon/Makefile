@@ -7,9 +7,9 @@ HOMEPAGE=	http://monkey.org/~marius/nylon/
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c event
+WANTLIB=	c event
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 

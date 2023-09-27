@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ogg pthread theora vorbis shout>=5 speex>=4
 
-MASTER_SITES=	http://v2v.cc/~j/oggfwd/
+SITES=		http://v2v.cc/~j/oggfwd/
 
 LIB_DEPENDS=	net/libshout \
 		audio/speex

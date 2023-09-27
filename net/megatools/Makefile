@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curl gio-2.0 glib-2.0 gobject-2.0
 
-MASTER_SITES =		https://megatools.megous.com/builds/
+SITES =			https://megatools.megous.com/builds/
 
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		devel/gobject-introspection \

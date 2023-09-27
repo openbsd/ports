@@ -10,9 +10,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c curses
 
-MASTER_SITES=	https://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/ \
+SITES=		https://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/ \
 		ftp://ftp.ncftp.com/ncftp/
-MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITES:=older_versions/}
+SITES:=		${SITES} ${SITES:=older_versions/}
 
 DISTFILES=	${DISTNAME}-src.tar.xz
 

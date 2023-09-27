@@ -6,7 +6,7 @@ REVISION=	4
 
 CATEGORIES=	net
 
-MASTER_SITES=	${HOMEPAGE}pub/
+SITES=		${HOMEPAGE}pub/
 
 HOMEPAGE=	https://oss.oetiker.ch/smokeping/
 

@@ -3,7 +3,7 @@ COMMENT=	TCP/IP traffic logging tool
 DISTNAME=	iplog-2.2.3
 REVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
+SITES=		${SITE_SOURCEFORGE:=ojnk/}
 
 HOMEPAGE=	http://ojnk.sourceforge.net
 

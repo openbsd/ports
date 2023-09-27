@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ahh/}
+SITES=			${SITE_SOURCEFORGE:=ahh/}
 
 LIB_DEPENDS=		devel/gettext,-runtime
 

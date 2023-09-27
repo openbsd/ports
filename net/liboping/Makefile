@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c m curses perl
 CFLAGS += -Wno-error
 
-MASTER_SITES =	https://noping.cc/files/
+SITES =		https://noping.cc/files/
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

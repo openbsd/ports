@@ -7,7 +7,7 @@ CATEGORIES =		net
 REVISION =		5
 
 HOMEPAGE =		http://xael.org/norman/python/python-nmap/
-MASTER_SITES =		http://xael.org/pages/
+SITES =			http://xael.org/pages/
 
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 

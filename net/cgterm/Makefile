@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	SDL c pthread
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 LIB_DEPENDS =	devel/sdl
 

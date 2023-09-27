@@ -16,7 +16,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB=  glib-2.0 iconv idn intl loudmouth-1
 
-MASTER_SITES=		${HOMEPAGE}files/
+SITES=			${HOMEPAGE}files/
 
 BUILD_DEPENDS=		net/irssi>=0.8.15p5
 LIB_DEPENDS=		net/loudmouth

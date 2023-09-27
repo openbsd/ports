@@ -14,8 +14,8 @@ CATEGORIES=	net
 DISTFILES=	dhcp-${VERSION}.tar.gz
 WRKDIST=	${WRKDIR}/dhcp-${VERSION}
 
-MASTER_SITES=	${MASTER_SITE_ISC:=dhcp/${VERSION}/} \
-		${MASTER_SITE_ISC:=dhcp/}
+SITES=		${SITE_ISC:=dhcp/${VERSION}/} \
+		${SITE_ISC:=dhcp/}
 
 HOMEPAGE=	https://www.isc.org/dhcp/
 

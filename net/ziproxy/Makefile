@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c m pthread z gif>=6 png>=8 jpeg>=62 jasper>=2
 WANTLIB +=		sasl2
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ziproxy/}
+SITES =			${SITE_SOURCEFORGE:=ziproxy/}
 
 LIB_DEPENDS =		graphics/giflib \
 			graphics/png \

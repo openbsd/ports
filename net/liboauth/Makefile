@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += curl nss3
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liboauth/}
+SITES=			${SITE_SOURCEFORGE:=liboauth/}
 
 LIB_DEPENDS=		net/curl \
 			security/nss

@@ -15,7 +15,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://gitlab.com/accounts-sso/libaccounts-qt/-/archive/${V}/
+SITES =	https://gitlab.com/accounts-sso/libaccounts-qt/-/archive/${V}/
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Test Qt5Xml accounts-glib
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl m

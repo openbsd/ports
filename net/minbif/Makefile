@@ -5,7 +5,7 @@ CATEGORIES=	net
 REVISION=	6
 
 HOMEPAGE =	http://minbif.im/
-MASTER_SITES=	${HOMEPAGE}attachments/download/148/
+SITES=		${HOMEPAGE}attachments/download/148/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

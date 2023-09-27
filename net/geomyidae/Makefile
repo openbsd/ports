@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =		c tls
 
-MASTER_SITES =		ftp://bitreich.org/releases/geomyidae/
+SITES =			ftp://bitreich.org/releases/geomyidae/
 
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS} -Wall" \
 			MANDIR="${PREFIX}/man/man8"

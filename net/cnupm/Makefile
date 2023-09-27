@@ -9,7 +9,7 @@ HOMEPAGE=		http://pdp-11.org.ru/~form/cnupm
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/files/
+SITES=			${HOMEPAGE}/files/
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/man
 CFLAGS+=		-DCNUPM_USER=\"_cnupm\"

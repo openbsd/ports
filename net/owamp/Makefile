@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-MASTER_SITES =	http://software.internet2.edu/sources/owamp/
+SITES =		http://software.internet2.edu/sources/owamp/
 
 CONFIGURE_STYLE =	gnu
 

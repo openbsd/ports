@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread glib-2.0 gmodule-2.0 ssl crypto intl
 
-MASTER_SITES=		https://get.bitlbee.org/src/
+SITES=			https://get.bitlbee.org/src/
 
 MODULES=		devel/gettext,-runtime
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

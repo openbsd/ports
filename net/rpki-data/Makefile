@@ -11,8 +11,8 @@ TIME =			T000429Z
 DISTNAME =		rpki-${DATE:S|/||g}${TIME}
 PKGNAME =		rpki-data-${DATE:S|/|.|g}.${TIME:T%Z=%}
 
-MASTER_SITES =	https://dango.attn.jp/rpkidata/josephine.sobornost.net/${DATE}/ \
-		http://josephine.sobornost.net/josephine.sobornost.net/rpkidata/${DATE}/
+SITES =	https://dango.attn.jp/rpkidata/josephine.sobornost.net/${DATE}/ \
+	http://josephine.sobornost.net/josephine.sobornost.net/rpkidata/${DATE}/
 EXTRACT_SUFX =		.tgz
 EXTRACT_ONLY =		# empty
 PKG_ARCH =		*

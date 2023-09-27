@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto gadu curses pthread ssl z
 
-MASTER_SITES=	${HOMEPAGE}archive/
+SITES=		${HOMEPAGE}archive/
 
 LIB_DEPENDS=	net/libgadu
 

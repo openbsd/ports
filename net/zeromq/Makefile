@@ -18,7 +18,7 @@ WANTLIB += c m pthread sodium ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/zeromq/libzmq/releases/download/v$V/
+SITES =			https://github.com/zeromq/libzmq/releases/download/v$V/
 
 BUILD_DEPENDS =		textproc/asciidoc \
 			textproc/xmlto

@@ -19,7 +19,7 @@ WANTLIB += c m ${COMPILER_LIBCXX} z jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vncsnapshot/}
+SITES=			${SITE_SOURCEFORGE:=vncsnapshot/}
 
 MAKE_FLAGS=		CC="${CC}" CXX="${CXX}"
 

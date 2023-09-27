@@ -4,7 +4,7 @@ DISTNAME=	udptunnel-1.1
 REVISION=	1
 CATEGORIES=	net
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.cs.columbia.edu/~lennox/udptunnel/
 

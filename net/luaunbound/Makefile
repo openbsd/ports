@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += unbound
 
-MASTER_SITES =	https://code.zash.se/dl/luaunbound/
+SITES =		https://code.zash.se/dl/luaunbound/
 
 MODULES =	lang/lua
 

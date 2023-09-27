@@ -12,7 +12,7 @@ REVISION-gui=		3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.olsr.org/
-MASTER_SITES=	${HOMEPAGE}releases/0.9/
+SITES=		${HOMEPAGE}releases/0.9/
 
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 

@@ -19,7 +19,7 @@ WANTLIB += c crypto curses gcrypt gpg-error gsasl iconv idn intl
 WANTLIB += lber ldap ltdl m pam pcre pthread readline sasl2 ssl
 WANTLIB += util z
 
-MASTER_SITES =		${MASTER_SITE_GNU:=dico/}
+SITES =			${SITE_GNU:=dico/}
 
 MODULES =		lang/python
 LIB_DEPENDS =		databases/openldap \

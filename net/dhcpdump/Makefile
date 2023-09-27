@@ -10,7 +10,7 @@ HOMEPAGE =		http://mavetju.org/unix/general.php
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://mavetju.org/download/
+SITES =			http://mavetju.org/download/
 
 WANTLIB =		c pcap
 

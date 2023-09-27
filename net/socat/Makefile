@@ -10,7 +10,7 @@ MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 WANTLIB=	c readline crypto util ssl
 

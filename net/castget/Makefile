@@ -6,7 +6,7 @@ REVISION=		0
 
 HOMEPAGE=		https://castget.johndal.com/
 
-MASTER_SITES=          	${MASTER_SITE_SAVANNAH:=castget/}
+SITES=          	${SITE_SAVANNAH:=castget/}
 
 EXTRACT_SUFX=		.tar.bz2
 

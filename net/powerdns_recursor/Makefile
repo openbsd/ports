@@ -16,7 +16,7 @@ WANTLIB+=		${COMPILER_LIBCXX} boost_context-mt boost_filesystem-mt
 WANTLIB+=		boost_system-mt boost_thread-mt c crypto curl fstrm m
 WANTLIB+=		sodium ssl z
 
-MASTER_SITES=		https://downloads.powerdns.com/releases/
+SITES=			https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 COMPILER =		base-clang ports-gcc

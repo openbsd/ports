@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv idn2 intl unistring
 
-MASTER_SITES =		${HOMEPAGE}/releases/download/${V}/
+SITES =			${HOMEPAGE}/releases/download/${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

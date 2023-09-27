@@ -8,7 +8,7 @@ CATEGORIES =		net
 # https://github.com/ihabunek/toot
 HOMEPAGE =		https://toot.bezdomni.net/
 
-MASTER_SITES =		https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_VERSION}/
+SITES =	https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_VERSION}/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

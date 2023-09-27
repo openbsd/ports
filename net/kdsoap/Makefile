@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Xml c m
 
-MASTER_SITES =		https://github.com/KDAB/KDSoap/releases/download/${DISTNAME}/
+SITES =		https://github.com/KDAB/KDSoap/releases/download/${DISTNAME}/
 
 MODULES =		devel/cmake \
 			x11/qt5

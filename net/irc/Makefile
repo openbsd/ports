@@ -6,7 +6,7 @@ EPOCH=		0
 CATEGORIES=	net
 REVISION=	0
 
-MASTER_SITES=   http://www.irc.org/ftp/irc/server/Old/irc2.10/ \
+SITES=   	http://www.irc.org/ftp/irc/server/Old/irc2.10/ \
                 ftp://ftp.ntua.gr/pub/net/irc/server/
 EXTRACT_SUFX=	.tgz
 

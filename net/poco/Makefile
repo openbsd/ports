@@ -13,7 +13,7 @@ SHARED_LIBS +=	${_lib} ${SHLIB_VERSION}
 .endfor
 
 HOMEPAGE =	http://pocoproject.org/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=poco/}
+SITES =		${SITE_SOURCEFORGE:=poco/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Boost software license

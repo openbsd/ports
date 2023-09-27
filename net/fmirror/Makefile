@@ -4,7 +4,7 @@ DISTNAME=       fmirror-0.8.4
 CATEGORIES=	net
 REVISION=       0
 
-MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/
+SITES=		ftp://ftp.oav.net/pkg_freebsd/distfiles/
 
 # GPL
 PERMIT_PACKAGE=	Yes

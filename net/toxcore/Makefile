@@ -12,7 +12,7 @@ HOMEPAGE =		https://tox.chat/
 
 MAINTAINER =		Omar Polo <op@openbsd.org>
 
-MASTER_SITES = https://github.com/TokTok/c-toxcore/releases/download/v$V/
+SITES = 	https://github.com/TokTok/c-toxcore/releases/download/v$V/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

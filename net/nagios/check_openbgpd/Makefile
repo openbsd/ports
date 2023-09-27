@@ -7,7 +7,7 @@ CATEGORIES=		sysutils net
 MAINTAINER=		Andrew Hewus Fresh <afresh1@openbsd.org>
 
 HOMEPAGE=		http://openbsd.somedomain.net/nagios/
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -6,7 +6,7 @@ CATEGORIES=	net www
 
 HOMEPAGE=	http://www.linux.it/~md/software/
 
-MASTER_SITES= 	${HOMEPAGE}
+SITES= 		${HOMEPAGE}
 
 MAINTAINER=     Pierre-Emmanuel Andre <pea@openbsd.org>
 

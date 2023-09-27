@@ -4,7 +4,7 @@ DISTNAME=	httptunnel-3.3
 CATEGORIES=	net
 REVISION=	0
 
-MASTER_SITES=	${MASTER_SITE_GNU:=httptunnel/}
+SITES=		${SITE_GNU:=httptunnel/}
 
 HOMEPAGE=	http://www.nocrew.org/software/httptunnel/
 

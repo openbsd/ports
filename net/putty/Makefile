@@ -8,7 +8,7 @@ PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
 CATEGORIES=	net security
 
 HOMEPAGE=	https://www.chiark.greenend.org.uk/~sgtatham/putty/
-MASTER_SITES=	https://the.earth.li/~sgtatham/putty/$V/ \
+SITES=		https://the.earth.li/~sgtatham/putty/$V/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-$V/
 
 # BSD

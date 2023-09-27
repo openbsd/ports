@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 
-MASTER_SITES=		http://www2.mindrot.org/files/flowd/
+SITES=			http://www2.mindrot.org/files/flowd/
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/Flowd-perl
 BUILD_DEPENDS=		net/flowd

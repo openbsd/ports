@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cares gnutls
 
-MASTER_SITES =		https://github.com/nils-ohlmeier/sipsak/releases/download/$V/
+SITES =		https://github.com/nils-ohlmeier/sipsak/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	LDFLAGS="-L${LOCALBASE}/lib"

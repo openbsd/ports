@@ -5,7 +5,7 @@ REVISION=		6
 CATEGORIES=		net
 
 HOMEPAGE=		http://bodgitandscarper.co.uk/natpmpd/
-MASTER_SITES=		http://natpmpd.s3.amazonaws.com/
+SITES=			http://natpmpd.s3.amazonaws.com/
 
 MAINTAINER=		Matt Dainty <matt@bodgit-n-scarper.com>
 

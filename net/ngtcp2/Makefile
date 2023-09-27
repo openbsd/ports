@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	crypto ssl
 
-MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v$V/
+SITES=		https://github.com/ngtcp2/ngtcp2/releases/download/v$V/
 
 SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

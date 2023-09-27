@@ -14,7 +14,7 @@ COMPILER_LANGS =	c
 
 WANTLIB +=		c crypto curses lzo2 m readline z
 
-MASTER_SITES =		https://www.tinc-vpn.org/packages/
+SITES =			https://www.tinc-vpn.org/packages/
 
 LIB_DEPENDS +=		archivers/lzo2
 

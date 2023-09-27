@@ -13,7 +13,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c pthread
 
-MASTER_SITES =	https://www.cypherpunk.at/ocat/download/Source/${V:R}/
+SITES =		https://www.cypherpunk.at/ocat/download/Source/${V:R}/
 
 RUN_DEPENDS =	net/tor
 

@@ -10,7 +10,7 @@ HOMEPAGE=	http://snmptt.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=snmptt/}
+SITES=			${SITE_SOURCEFORGE:=snmptt/}
 EXTRACT_SUFX=		.tgz
 
 PKG_ARCH=		*

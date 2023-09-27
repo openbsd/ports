@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES =	ftp://ftp.shrubbery.net/pub/tac_plus/
+SITES =		ftp://ftp.shrubbery.net/pub/tac_plus/
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

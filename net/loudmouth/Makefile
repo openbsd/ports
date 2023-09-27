@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  crypto glib-2.0 iconv idn>=16 intl pcre2-8 pthread ssl
 
-MASTER_SITES=   	${MASTER_SITE_GNOME:=sources/loudmouth/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
+SITES=   	${SITE_GNOME:=sources/loudmouth/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=   	.tar.bz2
 
 LIB_DEPENDS=		devel/glib2 \

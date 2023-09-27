@@ -3,7 +3,7 @@ COMMENT=	point-to-point bandwidth measurement tool
 DISTNAME=	bing-1.0.5
 REVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 # BSD
 PERMIT_PACKAGE=	Yes

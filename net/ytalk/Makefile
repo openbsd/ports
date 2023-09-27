@@ -4,7 +4,7 @@ DISTNAME=	ytalk-3.1.1
 REVISION=	4
 CATEGORIES=	net
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

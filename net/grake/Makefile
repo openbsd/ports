@@ -8,7 +8,7 @@ CATEGORIES =		net
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=grake/}
+SITES =			${SITE_GOOGLECODE:=grake/}
 
 RUN_DEPENDS =		devel/p5-Getopt-ArgvFile \
 			misc/p5-Umph-Prompt \

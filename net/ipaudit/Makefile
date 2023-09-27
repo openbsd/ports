@@ -6,7 +6,7 @@ CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://ipaudit.sourceforge.net/
 
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 
 # GPL
 PERMIT_PACKAGE=	Yes

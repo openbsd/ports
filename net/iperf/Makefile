@@ -13,9 +13,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=iperf2/}
+SITES=		${SITE_SOURCEFORGE:=iperf2/}
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69

@@ -10,7 +10,7 @@ HOMEPAGE=	http://netsplit.de/tkirc2/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://netsplit.de/tkirc2/
+SITES=		http://netsplit.de/tkirc2/
 
 MODULES=	x11/tk
 RUN_DEPENDS=	net/ircII \

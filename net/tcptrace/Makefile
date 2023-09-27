@@ -4,7 +4,7 @@ DISTNAME=		tcptrace-6.6.7
 REVISION=		2
 CATEGORIES=		net
 HOMEPAGE=		http://www.tcptrace.org/
-MASTER_SITES=		http://www.tcptrace.org/download/
+SITES=			http://www.tcptrace.org/download/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

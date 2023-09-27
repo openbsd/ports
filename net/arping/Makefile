@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pcap lib/libnet-1.1/net=11
 
-MASTER_SITES =	http://www.habets.pp.se/synscan/files/
+SITES =		http://www.habets.pp.se/synscan/files/
 
 LIB_DEPENDS =	net/libnet/1.1
 

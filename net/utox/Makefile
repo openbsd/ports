@@ -4,7 +4,7 @@ V =		0.18.1
 
 DISTNAME =	uTox-${V}-full
 PKGNAME =	utox-${V}
-MASTER_SITES =	https://github.com/uTox/uTox/releases/download/v${V}/
+SITES =		https://github.com/uTox/uTox/releases/download/v${V}/
 FIX_EXTRACT_PERMISSIONS = Yes
 REVISION =	0
 

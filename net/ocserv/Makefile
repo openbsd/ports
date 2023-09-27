@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	c curses ev gnutls lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
 
-MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
+SITES=		ftp://ftp.infradead.org/pub/ocserv/
 
 MODULES=	lang/ruby
 

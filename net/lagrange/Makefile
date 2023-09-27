@@ -18,7 +18,7 @@ WANTLIB +=	webp z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-MASTER_SITES =	https://git.skyjake.fi/skyjake/lagrange/releases/download/v${VERSION}/
+SITES =	https://git.skyjake.fi/skyjake/lagrange/releases/download/v${VERSION}/
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS=	c

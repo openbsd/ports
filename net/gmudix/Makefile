@@ -5,7 +5,7 @@ REVISION=		16
 CATEGORIES=		net x11
 
 HOMEPAGE=		http://dw.nl.eu.org/mudix.html
-MASTER_SITES=		http://dw.nl.eu.org/gmudix/
+SITES=			http://dw.nl.eu.org/gmudix/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

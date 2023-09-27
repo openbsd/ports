@@ -2,7 +2,7 @@ COMMENT=		ssh through https proxy tunnel
 
 DISTNAME=		gotthard-1.3
 CATEGORIES=		net
-MASTER_SITES=		http://www.nazgul.ch/dev/
+SITES=			http://www.nazgul.ch/dev/
 
 HOMEPAGE=		http://www.nazgul.ch/dev.html
 

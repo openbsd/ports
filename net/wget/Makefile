@@ -19,7 +19,7 @@ LIB_DEPENDS =		converters/libunistring \
 			devel/pcre2 \
 			net/libpsl
 
-MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
+SITES =			${SITE_GNU:=wget/}
 
 # some regression tests require python3
 MODULES +=		lang/python

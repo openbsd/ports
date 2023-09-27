@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB= c oop>=4
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nepim/}
+SITES=			${SITE_SAVANNAH:=nepim/}
 
 LIB_DEPENDS=		devel/liboop
 

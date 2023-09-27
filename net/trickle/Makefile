@@ -5,7 +5,7 @@ REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://monkey.org/~marius/trickle/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}client/linux/
+SITES=			${HOMEPAGE}client/linux/
 
 NO_TEST=		Yes
 

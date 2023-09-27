@@ -13,7 +13,7 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 # GPL2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/firehol/iprange/releases/download/v${V}/
+SITES =		https://github.com/firehol/iprange/releases/download/v${V}/
 
 WANTLIB =  c pthread
 

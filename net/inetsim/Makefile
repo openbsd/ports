@@ -11,7 +11,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://www.inetsim.org/downloads/
+SITES =			https://www.inetsim.org/downloads/
 
 MODULES =		perl
 

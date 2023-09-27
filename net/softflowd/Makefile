@@ -9,7 +9,7 @@ HOMEPAGE=	https://code.google.com/p/softflowd/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=softflowd/}
+SITES=		${SITE_GOOGLECODE:=softflowd/}
 
 WANTLIB=	c pcap
 

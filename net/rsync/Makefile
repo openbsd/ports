@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto
 
-MASTER_SITES =	https://rsync.samba.org/ftp/rsync/src/ \
+SITES =		https://rsync.samba.org/ftp/rsync/src/ \
 		https://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
 
 MODULES =	lang/python

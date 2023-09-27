@@ -8,7 +8,7 @@ CATEGORIES =		net
 MAINTAINER =		Andrew Fresh <afresh1@openbsd.org>
 
 HOMEPAGE =		http://cvs.afresh1.com/nagios/check_bioctl.html
-MASTER_SITES =		http://cvs.afresh1.com/nagios/
+SITES =			http://cvs.afresh1.com/nagios/
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	${HOMEPAGE}/stable/ \
+SITES=		${HOMEPAGE}/stable/ \
 		${HOMEPAGE}/stable/old/
 
 MAKE_FLAGS=	FLAGS="${CFLAGS} -DIPV6" CC="${CC}"

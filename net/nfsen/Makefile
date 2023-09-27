@@ -9,7 +9,7 @@ HOMEPAGE=	http://nfsen.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nfsen/}
+SITES=		${SITE_SOURCEFORGE:=nfsen/}
 
 MODULES=	perl lang/php
 MODPHP_VERSION=	7.4

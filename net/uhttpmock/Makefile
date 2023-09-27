@@ -11,7 +11,7 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 soup-2.4
-MASTER_SITES =		http://tecnocode.co.uk/downloads/uhttpmock/
+SITES =			http://tecnocode.co.uk/downloads/uhttpmock/
 EXTRACT_SUFX =		.tar.xz
 
 

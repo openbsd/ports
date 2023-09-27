@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses tls
 
-MASTER_SITES =	ftp://bitreich.org/releases/sacc/
+SITES =		ftp://bitreich.org/releases/sacc/
 
 # To open HTML and other links sacc doesn't understand.
 RUN_DEPENDS =	devel/xdg-utils

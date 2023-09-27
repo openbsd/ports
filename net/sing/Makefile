@@ -4,7 +4,7 @@ DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}
 REVISION=	6
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
+SITES=		${SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	http://sourceforge.net/projects/sing/

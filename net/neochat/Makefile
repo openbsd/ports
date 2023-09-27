@@ -3,7 +3,7 @@ MODKDE_VERSION = 23.04.3
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 HOMEPAGE =	https://apps.kde.org/de/neochat/
 

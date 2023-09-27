@@ -4,7 +4,7 @@ DISTNAME=	pmacct-1.7.8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
-MASTER_SITES=	http://www.pmacct.net/
+SITES=		${HOMEPAGE}
 
 # partly GPLv2 partly ISC (in transition to ISC)
 PERMIT_PACKAGE=	Yes

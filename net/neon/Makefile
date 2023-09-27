@@ -16,7 +16,7 @@ WANTLIB += crypto expat iconv intl m proxy pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 BUILD_DEPENDS=		textproc/xmlto
 

@@ -12,7 +12,7 @@ WANTLIB=		c m pcap ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xprobe/}
+SITES=			${SITE_SOURCEFORGE:=xprobe/}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfg-scripts

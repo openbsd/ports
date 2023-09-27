@@ -11,7 +11,7 @@ REVISION=	1
 
 HOMEPAGE=	https://psi-im.org/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=psi/Psi/${V}/}
+SITES=		${SITE_SOURCEFORGE:=psi/Psi/${V}/}
 EXTRACT_SUFX=	.tar.xz
 
 # GPLv2

@@ -6,7 +6,7 @@ HOMEPAGE =	https://prosody.im/
 
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
 
-MASTER_SITES =	https://prosody.im/downloads/source/
+SITES =		https://prosody.im/downloads/source/
 
 # MIT
 PERMIT_PACKAGE =	Yes

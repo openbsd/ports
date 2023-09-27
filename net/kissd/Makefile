@@ -2,7 +2,7 @@ COMMENT=	server for KiSS DP-500 network movie player
 
 DISTNAME=	kissd-0.3
 CATEGORIES=	net
-MASTER_SITES=	http://www.benzedrine.ch/
+SITES=		http://www.benzedrine.ch/
 REVISION=	1
 
 HOMEPAGE=	http://www.benzedrine.ch/kissd.html

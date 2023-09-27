@@ -7,7 +7,7 @@ SHARED_LIBS +=  mission-control-plugins 3.0      # 5.1
 
 HOMEPAGE=		https://telepathy.freedesktop.org/components/telepathy-mission-control/
 
-MASTER_SITES=		${MASTER_SITES_TP:=telepathy-mission-control/}
+SITES=			${SITES_TP:=telepathy-mission-control/}
 
 WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 iconv intl pcre2-8 pthread

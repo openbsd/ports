@@ -7,7 +7,7 @@ CATEGORIES=	net mail
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_GNU:=uucp/}
+SITES=		${SITE_GNU:=uucp/}
 
 RUN_DEPENDS=	mail/rmail
 

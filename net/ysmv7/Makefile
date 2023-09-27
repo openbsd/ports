@@ -7,7 +7,7 @@ REVISION=		2
 
 HOMEPAGE=		http://ysmv7.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ysmv7/}
+SITES=			${SITE_SOURCEFORGE:=ysmv7/}
 
 LIB_DEPENDS=		converters/libiconv
 

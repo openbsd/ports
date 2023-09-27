@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.quagga.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=quagga/}
+SITES=		${SITE_SAVANNAH:=quagga/}
 
 WANTLIB += c curses m readline
 

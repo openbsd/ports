@@ -9,7 +9,7 @@ MAINTAINER = 	Stefan Sperling <stsp@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES = 	http://www.routemeister.net/projects/sipcalc/files/
+SITES = 	http://www.routemeister.net/projects/sipcalc/files/
 
 CONFIGURE_STYLE = 	gnu
 WANTLIB =		c

@@ -2,7 +2,7 @@ COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.10
 CATEGORIES =	net
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
 REVISION =	4
 

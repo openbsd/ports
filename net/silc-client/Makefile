@@ -3,7 +3,7 @@ COMMENT=	Secure Internet Live Conferencing (SILC) client
 DISTNAME=	silc-client-1.1.11
 REVISION=	7
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
+SITES=		${SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://silcnet.org/client.html

@@ -8,7 +8,7 @@ CATEGORIES=		sysutils net
 MAINTAINER=		Andrew Fresh <afresh1@openbsd.org>
 
 HOMEPAGE=		http://openbsd.somedomain.net/nagios/check_hw_sensors.html
-MASTER_SITES=		http://monitoringexchange.org/attachment/download/Check-Plugins/Operating-Systems/BSD/OpenBSD/check_hw_sensors/
+SITES=			http://monitoringexchange.org/attachment/download/Check-Plugins/Operating-Systems/BSD/OpenBSD/check_hw_sensors/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -19,7 +19,7 @@ WANTLIB =		c crypto m pthread ssl z
 # packaged from git://git.ffmpeg.org/rtmpdump : fa8646da
 # and patch from https://github.com/K-S-V/Scripts/releases/, see
 # http://stream-recorder.com/forum/customized-rtmpdump-binaries-patch-file-t16103.html
-MASTER_SITES =		https://spacehopper.org/mirrors/
+SITES =			https://spacehopper.org/mirrors/
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= \
 			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION} \

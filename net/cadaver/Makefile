@@ -12,7 +12,7 @@ WANTLIB =  c crypto curses expat intl iconv neon proxy readline ssl z
 
 LIB_DEPENDS=		net/neon
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu

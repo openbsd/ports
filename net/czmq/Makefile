@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ossp-uuid pthread sodium zmq
 
-MASTER_SITES=		https://github.com/zeromq/czmq/releases/download/v$V/
+SITES=			https://github.com/zeromq/czmq/releases/download/v$V/
 
 LIB_DEPENDS=		devel/uuid \
 			net/zeromq

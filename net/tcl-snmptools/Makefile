@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	netsnmp
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tcl-snmptools/}
+SITES =		${SITE_SOURCEFORGE:=tcl-snmptools/}
 MODULES =	lang/tcl
 LIB_DEPENDS =	net/net-snmp
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}

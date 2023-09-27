@@ -12,7 +12,7 @@ HOMEPAGE=	https://tn5250.sourceforge.net/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tn5250/}
+SITES=		${SITE_SOURCEFORGE:=tn5250/}
 
 WANTLIB=	curses c ssl crypto
 

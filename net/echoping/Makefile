@@ -6,7 +6,7 @@ PKGNAME=	echoping-${VER:S/_/./g}
 REVISION=	1
 CATEGORIES=	net
 
-MASTER_SITES=	https://framagit.org/bortzmeyer/echoping/-/archive/RELEASE_${VER}/
+SITES=	https://framagit.org/bortzmeyer/echoping/-/archive/RELEASE_${VER}/
 
 HOMEPAGE=	https://github.com/bortzmeyer/echoping
 

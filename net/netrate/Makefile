@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES=		https://spacehopper.org/mirrors/
+SITES=			https://spacehopper.org/mirrors/
 
 MAKE_ENV=		BINDIR=${PREFIX}/bin NOMAN=Yes
 NO_TEST=		Yes

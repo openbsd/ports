@@ -9,7 +9,7 @@ HOMEPAGE=	http://lcamtuf.coredump.cx/
 
 MAINTAINER=	Artur Skura <arturs@iidea.pl>
 
-MASTER_SITES=	${HOMEPAGE}/soft/
+SITES=		${HOMEPAGE}/soft/
 EXTRACT_SUFX=	.zip
 
 # GPL

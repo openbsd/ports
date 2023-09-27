@@ -9,7 +9,7 @@ WANTLIB=	c
 
 COMMENT=	domain name system resolution tracer
 HOMEPAGE=	https://www.mavetju.org/unix/dnstracer.php
-MASTER_SITES=	https://www.mavetju.org/download/
+SITES=		https://www.mavetju.org/download/
 
 CONFIGURE_STYLE= gnu
 

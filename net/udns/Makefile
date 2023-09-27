@@ -12,7 +12,7 @@ MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=		http://www.corpit.ru/mjt/udns.html
-MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \
+SITES=			http://www.corpit.ru/mjt/udns/ \
 			https://distfiles.sigtrap.nl/
 
 WANTLIB += c

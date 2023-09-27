@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 
-MASTER_SITES =		https://download.tuxfamily.org/jod/net/kurly/ \
+SITES =			https://download.tuxfamily.org/jod/net/kurly/ \
 			ftp://download.tuxfamily.org/jod/net/kurly/
 
 MODULES =		lang/go

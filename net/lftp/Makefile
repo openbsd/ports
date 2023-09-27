@@ -23,7 +23,7 @@ LIB_DEPENDS=	devel/libidn2 \
 		devel/gettext,-runtime \
 		devel/readline>=6.1p2
 
-MASTER_SITES=	http://lftp.yar.ru/ftp/ \
+SITES=		http://lftp.yar.ru/ftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/
 
 LIBTOOL_FLAGS=	--tag=disable-shared

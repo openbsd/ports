@@ -29,7 +29,7 @@ WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5Xml X11 c gcrypt gmp m phonon4qt5 tag
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =		x11/kde-applications \
 			devel/kf5

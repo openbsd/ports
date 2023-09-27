@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto m ogg pthread speex ssl theora>=1 vorbis>=4
 
-MASTER_SITES=	https://downloads.xiph.org/releases/libshout/
+SITES=		https://downloads.xiph.org/releases/libshout/
 
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \

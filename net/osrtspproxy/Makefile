@@ -11,7 +11,7 @@ MAINTAINER=		Alexander Bluhm <bluhm@openbsd.org>
 # Real Networks license, permits modification and distribution
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://docs.real.com/docs/proxykit/
+SITES=			http://docs.real.com/docs/proxykit/
 
 CONFIGURE_STYLE=	simple
 

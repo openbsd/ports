@@ -2,7 +2,7 @@ COMMENT =		SNMP statistics monitoring system
 
 DISTNAME =		rtg-0.7.5
 CATEGORIES =		net
-MASTER_SITES =		ftp://ftpmirror.uk/freebsd-ports/rtg/
+SITES =			ftp://ftpmirror.uk/freebsd-ports/rtg/
 
 HOMEPAGE =		http://rtg.sourceforge.net/
 

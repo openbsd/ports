@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =	c
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	net/openvpn

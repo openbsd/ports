@@ -23,7 +23,7 @@ WANTLIB += c m qca-qt5
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =	x11/kde-applications \
 		devel/kf5 \

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://www.inlab.de/
+SITES=			http://www.inlab.de/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=		balance

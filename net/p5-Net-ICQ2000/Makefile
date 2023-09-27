@@ -9,6 +9,6 @@ CATEGORIES=	net
 PERMIT_PACKAGE=		no license
 PERMIT_DISTFILES=	no license
 
-MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
+SITES=		http://gonzo.kiev.ua/projects/vicq.old/
 
 .include <bsd.port.mk>

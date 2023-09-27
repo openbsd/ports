@@ -4,7 +4,7 @@ VER=		1.12.2
 DISTNAME=	libgadu-${VER}
 EPOCH=		0
 CATEGORIES=	net
-MASTER_SITES=	http://github.com/wojtekka/libgadu/releases/download/${VER}/
+SITES=		http://github.com/wojtekka/libgadu/releases/download/${VER}/
 
 SHARED_LIBS=	gadu	7.0
 

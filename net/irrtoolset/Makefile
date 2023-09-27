@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses m readline
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	http://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/ \
+SITES=		http://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/ \
 		ftp://ftp.isc.org/isc/IRRToolSet/IRRToolSet-$V/
 
 BUILD_DEPENDS=	devel/bison

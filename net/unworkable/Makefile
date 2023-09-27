@@ -10,7 +10,7 @@ HOMEPAGE=		https://github.com/niallo/Unworkable
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=unworkable/}
+SITES=			${SITE_GOOGLECODE:=unworkable/}
 
 WRKDIST=		${WRKDIR}/unworkable
 WANTLIB=		c crypto event

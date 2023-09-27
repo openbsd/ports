@@ -22,7 +22,7 @@ WANTLIB += event_core event_extra ffi gcrypt gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 iconv intl pcre2-8 pthread
 WANTLIB += tdb execinfo
 
-MASTER_SITES=		https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
+SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
 MODULES=		lang/python
 

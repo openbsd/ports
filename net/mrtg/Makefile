@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c jpeg m png z gd>=18
 
-MASTER_SITES=	${HOMEPAGE}pub/ \
+SITES=		${HOMEPAGE}pub/ \
 		${HOMEPAGE}pub/old/
 
 RUN_DEPENDS=	net/p5-IO-Socket-INET6 \

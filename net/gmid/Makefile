@@ -15,7 +15,7 @@ PERMIT_PACKAGE = Yes
 # uses unveil()
 WANTLIB += c crypto event ssl tls util
 
-MASTER_SITES = https://github.com/omar-polo/gmid/releases/download/$V/
+SITES = 	https://github.com/omar-polo/gmid/releases/download/$V/
 
 CONFIGURE_STYLE = simple
 

@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${COMPILER_LIBCXX} c crypto curses m protobuf
 WANTLIB +=		pthread ssl util z
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

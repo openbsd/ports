@@ -3,7 +3,7 @@ COMMENT=	client and servers for the WIDE DHCPv6 protocol
 DISTNAME=	wide-dhcpv6-20080615
 REVISION=	9
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=wide-dhcpv6/}
+SITES=		${SITE_SOURCEFORGE:=wide-dhcpv6/}
 
 HOMEPAGE=	http://wide-dhcpv6.sourceforge.net/
 

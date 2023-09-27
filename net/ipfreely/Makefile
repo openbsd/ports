@@ -9,7 +9,7 @@ HOMEPAGE=		http://ipfreely.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipfreely/}
+SITES=			${SITE_SOURCEFORGE:=ipfreely/}
 
 WRKDIST=		${WRKDIR}/ipfreely
 WANTLIB=		c

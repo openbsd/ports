@@ -15,7 +15,7 @@ WANTLIB =  c crypto curl>=10 iconv intl lzma m nghttp2 pthread raptor2
 WANTLIB += ssl xml2>=9 xslt yajl z
 
 
-MASTER_SITES =		http://download.dajobe.org/flickcurl/
+SITES =			http://download.dajobe.org/flickcurl/
 
 LIB_DEPENDS =		net/curl \
 			textproc/libxml,-main \

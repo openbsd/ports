@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # use unveil()
 WANTLIB += c curses event tls util
 
-MASTER_SITES = https://github.com/omar-polo/telescope/releases/download/${V}/
+SITES = 	https://github.com/omar-polo/telescope/releases/download/${V}/
 
 CONFIGURE_STYLE =	gnu
 

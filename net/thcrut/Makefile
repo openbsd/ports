@@ -13,7 +13,7 @@ PERMIT_DISTFILES=	no license
 
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 
-MASTER_SITES=	http://dl.packetstormsecurity.net/wireless/
+SITES=		http://dl.packetstormsecurity.net/wireless/
 
 CONFIGURE_STYLE= gnu old
 

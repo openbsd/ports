@@ -9,7 +9,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 #		BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.vigor.nu/dxpc/${VERSION}/
+SITES =			http://www.vigor.nu/dxpc/${VERSION}/
 HOMEPAGE =		http://www.vigor.nu/dxpc/
 
 LIB_DEPENDS =		archivers/lzo

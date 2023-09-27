@@ -7,7 +7,7 @@ REVISION =	0
 
 CATEGORIES =	net benchmarks
 
-MASTER_SITES +=	https://gitlab.isc.org/isc-projects/queryperf/-/archive/$C/
+SITES +=	https://gitlab.isc.org/isc-projects/queryperf/-/archive/$C/
 
 HOMEPAGE =	https://gitlab.isc.org/isc-projects/queryperf
 

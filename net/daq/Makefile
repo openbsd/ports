@@ -16,7 +16,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =		pcap
 
-MASTER_SITES =		https://www.snort.org/downloads/snort/
+SITES =			https://www.snort.org/downloads/snort/
 
 
 SEPARATE_BUILD =	Yes

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	http://www.bsdua.org/files/
+SITES=		http://www.bsdua.org/files/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netfwd ${PREFIX}/bin

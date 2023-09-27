@@ -6,6 +6,6 @@ HOMEPAGE=	https://miniupnp.tuxfamily.org/
 PERMIT_PACKAGE=	Yes
 
 .if !defined(GH_ACCOUNT)
-MASTER_SITES?=	https://miniupnp.tuxfamily.org/files/
+SITES?=		https://miniupnp.tuxfamily.org/files/
 .endif
 NO_TEST=	Yes

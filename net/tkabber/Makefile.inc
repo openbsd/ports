@@ -7,7 +7,7 @@ PERMIT_PACKAGE =	Yes
 
 VERSION = 		1.1.2
 
-MASTER_SITES =		http://files.jabber.ru/tkabber/
+SITES =			http://files.jabber.ru/tkabber/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		x11/tk

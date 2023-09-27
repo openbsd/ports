@@ -4,13 +4,13 @@ DISTNAME=	trafshow-3.1
 REVISION=	2
 CATEGORIES=	net
 
-MASTER_SITES=	https://spacehopper.org/mirrors/ \
+SITES=		https://spacehopper.org/mirrors/ \
 		ftp://ftp.nsk.su/pub/RinetSoft/
-MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+SITES.e=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
 
 # See PR#3565 before enabling
-#PATCHFILES=	trafshow-31-v6-20010322a.diff.gz:0
+#PATCHFILES.e=	trafshow-31-v6-20010322a.diff.gz
 #PATCH_DIST_STRIP= -p1
 
 HOMEPAGE=	http://soft.risp.ru/trafshow/index_en.shtml

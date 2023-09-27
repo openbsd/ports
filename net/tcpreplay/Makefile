@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c dnet>=1
 
-MASTER_SITES=   https://github.com/appneta/tcpreplay/releases/download/v$V/
+SITES=   	https://github.com/appneta/tcpreplay/releases/download/v$V/
 
 CONFIGURE_STYLE= gnu
 

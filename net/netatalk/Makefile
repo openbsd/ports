@@ -4,7 +4,7 @@ COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.8
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
+SITES=		${SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://netatalk.sourceforge.net/

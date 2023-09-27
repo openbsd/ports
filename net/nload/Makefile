@@ -14,7 +14,7 @@ WANTLIB=		c form m curses ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes

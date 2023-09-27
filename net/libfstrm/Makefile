@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c event_core event_extra pthread
 
-MASTER_SITES=	https://dl.farsightsecurity.com/dist/fstrm/
+SITES=		https://dl.farsightsecurity.com/dist/fstrm/
 
 LIB_DEPENDS=	devel/libevent2
 

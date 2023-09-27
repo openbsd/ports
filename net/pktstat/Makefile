@@ -8,7 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m pcap
 
-MASTER_SITES=		http://openbsd.fi/dist/
+SITES=			http://openbsd.fi/dist/
 
 CONFIGURE_STYLE=	gnu
 

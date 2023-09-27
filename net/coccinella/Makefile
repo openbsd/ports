@@ -11,7 +11,7 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}
+SITES =			${SITE_SOURCEFORGE:=coccinella/}
 
 MODULES =		x11/tk
 RUN_DEPENDS =		audio/snack \

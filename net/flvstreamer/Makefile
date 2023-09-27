@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pthread
 
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=flvstreamer/source/}
+SITES =			${SITE_SAVANNAH:=flvstreamer/source/}
 
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}"
 ALL_TARGET =		linux

@@ -6,7 +6,7 @@ PKGNAME-main=		${DISTNAME}
 REVISION=		5
 
 CATEGORIES=	net security
-MASTER_SITES=	${HOMEPAGE}/dist/
+SITES=		${HOMEPAGE}/dist/
 EXTRACT_SUFX=	.tgz
 
 HOMEPAGE=	https://www.nmap.org/

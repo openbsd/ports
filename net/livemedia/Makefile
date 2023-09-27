@@ -4,7 +4,7 @@ VERSION=	2023.01.19
 DISTNAME=	live.${VERSION}
 PKGNAME=	liveMedia-${VERSION:S/.//g}
 CATEGORIES=	net devel
-MASTER_SITES=	https://download.videolan.org/contrib/live555/
+SITES=		https://download.videolan.org/contrib/live555/
 
 HOMEPAGE=	http://www.live555.com/liveMedia/
 

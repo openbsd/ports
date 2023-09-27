@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =	https://github.com/akoshibe/mininet/releases/download/v$V/
+SITES =		https://github.com/akoshibe/mininet/releases/download/v$V/
 
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

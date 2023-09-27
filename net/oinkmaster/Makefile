@@ -3,7 +3,7 @@ COMMENT=	update your Snort rules
 DISTNAME=	oinkmaster-2.0
 REVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oinkmaster/}
+SITES=		${SITE_SOURCEFORGE:=oinkmaster/}
 
 HOMEPAGE=       http://oinkmaster.sourceforge.net/
 

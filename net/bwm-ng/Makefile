@@ -2,7 +2,7 @@ COMMENT=	realtime bandwidth monitoring of interfaces
 
 DISTNAME=	bwm-ng-0.6.3
 CATEGORIES=	net
-MASTER_SITES=	https://www.gropp.org/bwm-ng/
+SITES=		https://www.gropp.org/bwm-ng/
 HOMEPAGE=	https://www.gropp.org/?id=projects&sub=bwm-ng
 
 # GPLv2+

@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.haesbaert.org/openmdns/
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
+SITES =			http://www.haesbaert.org/openmdns/releases/ \
 			http://x61.com.ar/mirrors/openmdns/
 
 WANTLIB +=		c event util

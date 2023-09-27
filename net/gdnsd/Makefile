@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c ev m maxminddb pthread
 
-MASTER_SITES=		https://github.com/gdnsd/gdnsd/releases/download/v$V/
+SITES=			https://github.com/gdnsd/gdnsd/releases/download/v$V/
 
 USE_GMAKE=		Yes
 # TLS

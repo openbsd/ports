@@ -4,7 +4,7 @@ DISTNAME=	libpcapnav-0.8
 REVISION=	2
 SHARED_LIBS=	pcapnav	1.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
+SITES=		${SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/doco/libpcapnav/
 

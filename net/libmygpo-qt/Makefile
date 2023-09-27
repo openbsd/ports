@@ -16,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network m
 MODULES =	devel/cmake \
 		x11/qt5
 
-MASTER_SITES =	https://stefan.derkits.at/files/libmygpo-qt/
+SITES =		https://stefan.derkits.at/files/libmygpo-qt/
 
 # picks up doxygen during configure but does not really use it
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON

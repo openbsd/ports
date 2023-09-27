@@ -3,7 +3,7 @@ COMMENT=	report network interface statistics
 DISTNAME=	tcpstat-1.5
 REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
+SITES=		http://www.frenchfries.net/paul/tcpstat/
 
 HOMEPAGE=	http://www.frenchfries.net/paul/tcpstat/
 

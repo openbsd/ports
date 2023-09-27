@@ -10,7 +10,7 @@ HOMEPAGE=	http://web.purplefrog.com/~thoth/netpipes/netpipes.html
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/
+SITES=		ftp://ftp.purplefrog.com/pub/netpipes/
 
 WRKDIST=	${WRKDIR}
 

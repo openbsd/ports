@@ -2,7 +2,7 @@ COMMENT=	powerful console ftp client with many features
 
 DISTNAME=	yafc-1.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=yafc/}
+SITES=		${SITE_SOURCEFORGE:=yafc/}
 REVISION=	6
 
 HOMEPAGE=	http://yafc.sourceforge.net/

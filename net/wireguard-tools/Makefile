@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://git.zx2c4.com/wireguard-tools/snapshot/
+SITES =			https://git.zx2c4.com/wireguard-tools/snapshot/
 
 EXTRACT_SUFX =		.tar.xz
 

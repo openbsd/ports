@@ -10,7 +10,7 @@ HOMEPAGE_TP=	https://telepathy.freedesktop.org/components/
 HOMEPAGE=	${HOMEPAGE_TP}
 .endif
 
-MASTER_SITES_TP=	https://telepathy.freedesktop.org/releases/
+SITES_TP=		https://telepathy.freedesktop.org/releases/
 DIST_SUBDIR=		telepathy
 
 # BSD/GPL/LGPL

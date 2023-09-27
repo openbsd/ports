@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pcap
 
-MASTER_SITES =		http://www.netpatch.ru/projects/dhcdrop/
+SITES =			http://www.netpatch.ru/projects/dhcdrop/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	gnu

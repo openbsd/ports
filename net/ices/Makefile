@@ -16,7 +16,7 @@ WANTLIB =	c iconv m ogg perl pthread theora util vorbis vorbisfile z
 WANTLIB += 	${MODPY_WANTLIB} crypto ssl
 WANTLIB += 	mp3lame shout>=3 speex>=4 FLAC>=5 lzma xml2>=7
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ices/
+SITES=		https://downloads.xiph.org/releases/ices/
 
 AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=autoconf

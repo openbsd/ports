@@ -9,7 +9,7 @@ HOMEPAGE=	http://josefsson.org/walker/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}releases/
+SITES=		${HOMEPAGE}releases/
 
 RUN_DEPENDS=	net/p5-Net-DNS \
 		net/p5-Net-DNS-SEC

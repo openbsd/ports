@@ -10,7 +10,7 @@ HOMEPAGE=		http://freshmeat.net/projects/wmnetload
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c m dockapp
 
-MASTER_SITES=		ftp://truffula.com/pub/
+SITES=			ftp://truffula.com/pub/
 
 LIB_DEPENDS=		devel/libdockapp>=0.7.3
 

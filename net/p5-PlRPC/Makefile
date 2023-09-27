@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 RUN_DEPENDS=	net/p5-Net-Daemon
 BUILD_DEPENDS=	net/p5-Net-Daemon
 
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=RPC/}
+SITES=		${SITE_PERL_CPAN:=RPC/}
 WRKDIST=	${WRKDIR}/PlRPC
 
 .include <bsd.port.mk>

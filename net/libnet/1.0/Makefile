@@ -6,7 +6,7 @@ SHARED_LIBS=	net	0.0
 PKGSPEC =	libnet->=1.0v0,<1.1v0
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES=	http://packetfactory.openwall.net/libnet/dist/deprecated/
+SITES=		http://packetfactory.openwall.net/libnet/dist/deprecated/
 
 WRKDIST=	${WRKDIR}/Libnet-1.0.2a
 AUTOCONF_VERSION=2.13

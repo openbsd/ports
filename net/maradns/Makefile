@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c pthread
 
-MASTER_SITES=	http://maradns.org/download/1.3/
+SITES=		http://maradns.org/download/1.3/
 
 MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 

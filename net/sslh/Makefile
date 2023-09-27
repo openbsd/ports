@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c config m pcre2-8
 
-MASTER_SITES =	https://www.rutschle.net/tech/sslh/
+SITES =		https://www.rutschle.net/tech/sslh/
 
 LIB_DEPENDS =	devel/libconfig \
 		devel/pcre2

@@ -3,7 +3,7 @@ COMMENT=	proxy IRC client with ICB server
 DISTNAME=	icbirc-2.1
 REVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	https://www.benzedrine.ch/
+SITES=		https://www.benzedrine.ch/
 
 HOMEPAGE=	https://www.benzedrine.ch/icbirc.html
 

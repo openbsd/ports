@@ -8,7 +8,7 @@ HOMEPAGE=		http://www.remlab.net/tcpreen/
 
 MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
-MASTER_SITES=		http://www.remlab.net/files/tcpreen/stable/
+SITES=			http://www.remlab.net/files/tcpreen/stable/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += crypto gcrypt gnutls jpeg lzo2 png pthread sasl2
 WANTLIB += ssl z
 
-MASTER_SITES=		https://github.com/LibVNC/libvncserver/archive/
+SITES=			https://github.com/LibVNC/libvncserver/archive/
 
 # TLS (Thread-Local Storage)
 COMPILER=		base-clang ports-gcc

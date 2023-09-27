@@ -12,7 +12,7 @@ HOMEPAGE=		http://lcamtuf.coredump.cx/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://lcamtuf.coredump.cx/soft/
+SITES=			http://lcamtuf.coredump.cx/soft/
 
 MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}"
 

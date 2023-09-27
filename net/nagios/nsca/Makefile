@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.nagios.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
+SITES=			${SITE_SOURCEFORGE:=nagios/}
 
 WANTLIB=		c mcrypt>=8
 LIB_DEPENDS=		security/libmcrypt

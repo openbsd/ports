@@ -18,7 +18,7 @@ WANTLIB =	c crypto iconv ssl z
 FLAVORS =	ident
 FLAVOR ?=
 
-MASTER_SITES =	https://ngircd.barton.de/pub/ngircd/ \
+SITES =		https://ngircd.barton.de/pub/ngircd/ \
 		https://ngircd.mirror.3rz.de/pub/ngircd/ \
 		https://ngircd.sourceforge.io/pub/ngircd/
 

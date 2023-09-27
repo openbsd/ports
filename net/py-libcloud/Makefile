@@ -13,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${MASTER_SITE_APACHE:=libcloud/}
+SITES=			${SITE_APACHE:=libcloud/}
 
 MODULES=		lang/python
 

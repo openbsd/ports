@@ -10,7 +10,7 @@ HOMEPAGE=		http://untroubled.org/ucspi-unix/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://em.ca/~bruceg/ucspi-unix/0.34/
+SITES=			http://em.ca/~bruceg/ucspi-unix/0.34/
 
 NO_TEST=		Yes
 

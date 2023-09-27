@@ -13,7 +13,7 @@ REVISION-utils= 2
 
 CATEGORIES =	net
 
-MASTER_SITES =	http://www.kismetwireless.net/code/
+SITES =		http://www.kismetwireless.net/code/
 
 HOMEPAGE =	http://www.kismetwireless.net/spectools/
 

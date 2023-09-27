@@ -6,7 +6,7 @@ SHARED_LIBS +=	gloox                2.0      # 8.0
 CATEGORIES =	net devel
 
 HOMEPAGE =	https://camaya.net/gloox/
-MASTER_SITES =	https://camaya.net/download/
+SITES =		https://camaya.net/download/
 EXTRACT_SUFX =	.tar.bz2
 
 # GPLv3 with OpenSSL exemption

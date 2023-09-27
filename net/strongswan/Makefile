@@ -25,7 +25,7 @@ WANTLIB += lzma m z
 
 COMPILER=	base-clang ports-gcc
 
-MASTER_SITES=	https://download.strongswan.org/
+SITES=		https://download.strongswan.org/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu

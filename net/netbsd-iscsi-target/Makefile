@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES=	http://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
+SITES=		http://ftp.netbsd.org/pub/pkgsrc/distfiles/ \
 		ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/
 
 CONFIGURE_STYLE=gnu

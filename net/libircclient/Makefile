@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto pthread ssl
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libircclient/}
+SITES =			${SITE_SOURCEFORGE:=libircclient/}
 
 NO_TEST =		Yes
 

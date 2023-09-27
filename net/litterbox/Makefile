@@ -15,7 +15,7 @@ WANTLIB += c sqlite3 tls
 
 LIB_DEPENDS =		databases/sqlite3
 
-MASTER_SITES =		https://git.causal.agency/litterbox/snapshot/
+SITES =			https://git.causal.agency/litterbox/snapshot/
 
 # C11
 COMPILER =		base-clang ports-gcc

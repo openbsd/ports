@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += b2 c popt iconv intl
 
-MASTER_SITES =	https://github.com/librsync/librsync/releases/download/v${V}/
+SITES =		https://github.com/librsync/librsync/releases/download/v${V}/
 
 MODULES=	devel/cmake
 

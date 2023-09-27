@@ -3,7 +3,7 @@ COMMENT=	FTP proxy
 DISTNAME=	jftpgw-0.13.5
 REVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.mcknight.de/jftpgw/
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://www.mcknight.de/jftpgw/
 

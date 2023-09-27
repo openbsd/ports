@@ -17,7 +17,7 @@ WANTLIB +=	${COMPILER_LIBCXX} brotlidec brotlienc gmp gnutls hogweed
 WANTLIB +=	iconv idn2 intl m nettle p11-kit tasn1 unistring z
 WANTLIB +=	zstd
 
-MASTER_SITES =		https://download.filezilla-project.org/libfilezilla/
+SITES =			https://download.filezilla-project.org/libfilezilla/
 EXTRACT_SUFX =		.tar.xz
 
 # c++17

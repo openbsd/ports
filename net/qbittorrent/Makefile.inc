@@ -15,7 +15,7 @@ MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES ?=	${MASTER_SITE_SOURCEFORGE:=qbittorrent/}
+SITES ?=	${SITE_SOURCEFORGE:=qbittorrent/}
 
 MODULES +=	devel/cmake \
 		x11/qt6

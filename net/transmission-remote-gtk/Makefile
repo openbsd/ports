@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += intl json-glib-1.0 m pango-1.0 soup-3.0
 
-MASTER_SITES =	https://github.com/transmission-remote-gtk/transmission-remote-gtk/releases/download/${V}/
+SITES =	https://github.com/transmission-remote-gtk/transmission-remote-gtk/releases/download/${V}/
 
 EXTRACT_SUFX =	.tar.xz
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += gcrypt glib-2.0 intl png purple webp z
 
-MASTER_SITES =	https://github.com/majn/telegram-purple/releases/download/v$V/
+SITES =		https://github.com/majn/telegram-purple/releases/download/v$V/
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			sysutils/coreutils

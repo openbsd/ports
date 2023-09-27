@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c glib-2.0 gthread-2.0 intl curses pcap pthread
 
-MASTER_SITES=	${HOMEPAGE}dist/
+SITES=		${HOMEPAGE}dist/
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/glib2

@@ -10,7 +10,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=	c crypto pcre2-8 pcre2-posix pthread ssl z
 
-MASTER_SITES =	${HOMEPAGE}/download/2.8/src/
+SITES =		${HOMEPAGE}/download/2.8/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy

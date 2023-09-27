@@ -4,7 +4,7 @@ DISTNAME=	arpwatch-2.1a15
 REVISION=	20
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+SITES=		ftp://ftp.ee.lbl.gov/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

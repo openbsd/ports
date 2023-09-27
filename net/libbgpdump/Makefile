@@ -12,7 +12,7 @@ HOMEPAGE=	https://bitbucket.org/ripencc/bgpdump/wiki/Home
 # License_NCC: "for any purpose and without fee".
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://ris.ripe.net/source/bgpdump/
+SITES=		http://ris.ripe.net/source/bgpdump/
 
 WANTLIB=	bz2 c z
 LIB_DEPENDS=	archivers/bzip2

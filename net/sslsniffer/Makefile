@@ -4,7 +4,7 @@ DISTNAME=	sslsniffer-1.21
 REVISION=	1
 CATEGORIES=	net security
 HOMEPAGE=	http://crypto.stanford.edu/~eujin/sslsniffer/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 # GPL
 PERMIT_PACKAGE=	Yes

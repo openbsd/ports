@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto ssl
 
-MASTER_SITES=	https://github.com/NagiosEnterprises/nrpe/releases/download/${DISTNAME}/
+SITES=	https://github.com/NagiosEnterprises/nrpe/releases/download/${DISTNAME}/
 
 RUN_DEPENDS=	net/monitoring-plugins
 

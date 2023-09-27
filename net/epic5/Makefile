@@ -5,7 +5,7 @@ DISTNAME=	epic5-${VERSION}
 CATEGORIES=	net
 HOMEPAGE=	http://www.epicsol.org/
 MAINTAINER=	Joey Beach <fro@disciples.com>
-MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
+SITES=		http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/
 REVISION=	0
 
 # BSD

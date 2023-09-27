@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		https://www.chiark.greenend.org.uk/~ian/adns/ftp/
+SITES=			https://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
 CONFIGURE_STYLE=	gnu dest
 USE_GMAKE=		Yes

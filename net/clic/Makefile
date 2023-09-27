@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += c ecl ffi gc gmp m pthread
 
-MASTER_SITES =	ftp://bitreich.org/releases/clic/
+SITES =		ftp://bitreich.org/releases/clic/
 
 LIB_DEPENDS =	lang/ecl
 

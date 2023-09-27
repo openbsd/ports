@@ -16,7 +16,7 @@ WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
 			fstrm h2o-evloop nghttp2 pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://downloads.powerdns.com/releases/
+SITES=			https://downloads.powerdns.com/releases/
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69

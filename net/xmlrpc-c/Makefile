@@ -22,7 +22,7 @@ SHARED_LIBS += $i 2.0
 
 HOMEPAGE=	http://xmlrpc-c.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-c/}
+SITES=		${SITE_SOURCEFORGE:=xmlrpc-c/}
 
 # BSD
 PERMIT_PACKAGE=	Yes

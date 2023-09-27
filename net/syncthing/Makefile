@@ -13,7 +13,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c pthread
 
-MASTER_SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
+SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
 
 WRKDIST =		${WRKDIR}/syncthing
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing

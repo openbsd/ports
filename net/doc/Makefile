@@ -6,7 +6,7 @@ REVISION=	0
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
+SITES=		ftp://ftp.shub-internet.org/pub/shub/brad/dns/
 
 do-build:
 	mv ${WRKSRC}/doc ${WRKSRC}/doc.dist

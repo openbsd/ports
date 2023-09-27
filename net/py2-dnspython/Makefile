@@ -15,7 +15,7 @@ HOMEPAGE=		https://www.dnspython.org/
 # BSD
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
+SITES=			${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

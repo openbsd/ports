@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		http://dl.2f30.org/releases/
+SITES =			http://dl.2f30.org/releases/
 
 MAKE_FLAGS =            CC="${CC}" CFLAGS="-Wall ${CFLAGS}"
 NO_TEST =		Yes

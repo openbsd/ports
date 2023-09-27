@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += assuan c crypto curses gcrypt glib-2.0 gpg-error gpgme iconv
 WANTLIB += idn intl loudmouth-1>=3 otr panel pcre2-8 pthread ssl
 
-MASTER_SITES=		${HOMEPAGE}/files/
+SITES=			${HOMEPAGE}/files/
 EXTRACT_SUFX=		.tar.bz2
 
 # uses pledge()

@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge() and unveil()
 WANTLIB =		c curses readline
 
-MASTER_SITES =		https://github.com/grayed/oicb/releases/download/v${VERSION}/
+SITES =		https://github.com/grayed/oicb/releases/download/v${VERSION}/
 
 NO_TEST =		Yes
 

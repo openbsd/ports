@@ -7,7 +7,7 @@ SHARED_LIBS +=  telepathy-logger     4.1      # 6.0
 
 HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 
-MASTER_SITES=	${MASTER_SITES_TP:=telepathy-logger/}
+SITES=		${SITES_TP:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0

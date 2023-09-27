@@ -11,7 +11,7 @@ CATEGORIES =	net sysutils
 
 HOMEPAGE =	https://humdi.net/vnstat/
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 

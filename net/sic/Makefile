@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB=		c
 
-MASTER_SITES=		http://dl.suckless.org/tools/
+SITES=			http://dl.suckless.org/tools/
 
 MAKE_FLAGS=		CC="${CC}"
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"

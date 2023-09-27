@@ -12,7 +12,7 @@ MAINTAINER =		Laurent FANIS <laurent.fanis@gmail.com>
 # MIT-like
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/download/
+SITES =			${HOMEPAGE}/download/
 
 
 CONFIGURE_STYLE =	gnu

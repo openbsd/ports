@@ -8,7 +8,7 @@ HOMEPAGE=		https://labs.consol.de/nagios/check_mssql_health/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://labs.consol.de/assets/downloads/nagios/
+SITES=			https://labs.consol.de/assets/downloads/nagios/
 
 PKG_ARCH=		*
 BUILD_DEPENDS=		${RUN_DEPENDS}

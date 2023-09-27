@@ -8,7 +8,7 @@ HOMEPAGE=		http://monkey.org/~dugsong/dsocks/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=dsocks/}
+SITES=			${SITE_GOOGLECODE:=dsocks/}
 
 MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}" \
 			SHLIB_MAJOR=${LIBdsocks_VERSION:R} \

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c iconv lzma m ogg pthread shout sndio speex theora vorbis
 WANTLIB += vorbisenc xml2 z crypto ssl
 
-MASTER_SITES=	https://downloads.xiph.org/releases/ices/
+SITES=		https://downloads.xiph.org/releases/ices/
 
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS += 	devel/libtool \

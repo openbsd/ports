@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 
-MASTER_SITES=		https://www.ibr.cs.tu-bs.de/projects/libsmi/download/
+SITES=			https://www.ibr.cs.tu-bs.de/projects/libsmi/download/
 
 USE_GMAKE=		Yes
 

@@ -12,7 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.net-dns.org/download/
+SITES =			http://www.net-dns.org/download/
 
 MODULES =		cpan
 

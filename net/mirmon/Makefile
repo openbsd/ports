@@ -9,7 +9,7 @@ HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
 # free license, see LICENSE
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 MODULES=	perl
 ICONDIR=	${PREFIX}/share/examples/mirmon/icons

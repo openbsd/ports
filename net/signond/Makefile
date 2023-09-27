@@ -10,7 +10,7 @@ REVISION =	4
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =	https://gitlab.com/accounts-sso/signond/-/archive/${V}/
+SITES =		https://gitlab.com/accounts-sso/signond/-/archive/${V}/
 
 SHARED_LIBS +=  signon-extension          0.0 # 1.0
 SHARED_LIBS +=  signon-plugins-common     0.0 # 1.0

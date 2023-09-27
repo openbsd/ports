@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # uses unveil()
 WANTLIB +=		c
 
-MASTER_SITES =		https://tildegit.org/solene/vger/archive/
+SITES =			https://tildegit.org/solene/vger/archive/
 
 CFLAGS +=		-std=gnu99
 

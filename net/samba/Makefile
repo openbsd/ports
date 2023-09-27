@@ -55,7 +55,7 @@ WANTLIB-main +=		talloc tasn1 tdb z lib/inotify/inotify
 
 WANTLIB-docs =
 
-MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
+SITES =			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
 
 MULTI_PACKAGES =	-main -docs

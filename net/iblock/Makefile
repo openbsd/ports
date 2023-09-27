@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses unveil()
 WANTLIB +=		c
 
-MASTER_SITES =		https://tildegit.org/solene/iblock/archive/
+SITES =			https://tildegit.org/solene/iblock/archive/
 
 DISTFILES =		iblock-{}${V}${EXTRACT_SUFX}
 WRKSRC =		${WRKDIR}/iblock

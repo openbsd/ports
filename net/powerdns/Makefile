@@ -32,7 +32,7 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += boost_program_options-mt c curl nghttp2 sodium
 WANTLIB-main += sqlite3 yaml-cpp z
 
-MASTER_SITES=		https://downloads.powerdns.com/releases/
+SITES=			https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 COMPILER =		base-clang ports-gcc

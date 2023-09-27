@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c curses m pcap pthread
 
-MASTER_SITES =		${HOMEPAGE}download/
+SITES =			${HOMEPAGE}download/
 
 CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config

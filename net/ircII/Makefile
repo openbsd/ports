@@ -4,7 +4,7 @@ VERSION=	20210314
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
-MASTER_SITES=	https://ircii.warped.com/ \
+SITES=		https://ircii.warped.com/ \
 		https://ircii.warped.com/old/ \
 		ftp://ircii.warped.com/pub/ircII/ \
 		https://distfiles.macports.org/ircii/

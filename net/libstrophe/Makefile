@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += crypto expat ssl
 
-MASTER_SITES =	https://github.com/strophe/libstrophe/releases/download/${V}/
+SITES =		https://github.com/strophe/libstrophe/releases/download/${V}/
 
 BUILD_DEPENDS =	devel/libtool
 

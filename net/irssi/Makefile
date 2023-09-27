@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 m perl ssl
 
-MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
+SITES =		https://github.com/irssi/irssi/releases/download/${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

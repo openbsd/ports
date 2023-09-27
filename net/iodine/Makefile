@@ -14,7 +14,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # ISC
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

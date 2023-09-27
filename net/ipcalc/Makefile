@@ -9,7 +9,7 @@ HOMEPAGE=	https://github.com/pyr/ipcalc
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/downloads/pyr/ipcalc/
+SITES=		https://github.com/downloads/pyr/ipcalc/
 
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/man"
 

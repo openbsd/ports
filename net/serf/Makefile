@@ -9,7 +9,7 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB = 		apr-1 aprutil-1 crypto db expat iconv pthread ssl z
-MASTER_SITES =		https://www.apache.org/dist/serf/
+SITES =			https://www.apache.org/dist/serf/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES = 		devel/scons

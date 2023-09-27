@@ -15,7 +15,7 @@ WANTLIB += ssl torrent>=21 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://rtorrent.net/downloads/
+SITES=			https://rtorrent.net/downloads/
 
 BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.13.4 \

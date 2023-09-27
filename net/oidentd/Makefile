@@ -2,7 +2,7 @@ COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.8
 REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
+SITES=		${SITE_SOURCEFORGE:=ojnk/}
 
 HOMEPAGE=	http://ojnk.sourceforge.net/
 

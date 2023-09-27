@@ -26,7 +26,7 @@ FLAVOR ?=
 FLAVOR =		no_luajit
 .endif
 
-MASTER_SITES =		https://www.snort.org/downloads/snort/
+SITES =			https://www.snort.org/downloads/snort/
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

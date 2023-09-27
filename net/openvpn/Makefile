@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c lz4 lzo2
 
-MASTER_SITES=	https://swupdate.openvpn.org/community/releases/
+SITES=		https://swupdate.openvpn.org/community/releases/
 
 BUILD_DEPENDS=	textproc/py-docutils,python3
 LIB_DEPENDS=	archivers/lzo2 \

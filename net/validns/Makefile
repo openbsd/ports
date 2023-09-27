@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	Judy c crypto pthread
 
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 
 LIB_DEPENDS =	devel/libJudy
 

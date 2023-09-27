@@ -5,7 +5,7 @@ PKGNAME=	${DISTNAME}-19970824
 REVISION=	0
 CATEGORIES=	net
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://skoda.sockpuppet.org/tqbf/
 

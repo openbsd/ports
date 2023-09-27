@@ -7,7 +7,7 @@ SHARED_LIBS +=	xmlrpc-epi	0.3
 
 HOMEPAGE=	http://xmlrpc-epi.sourceforge.net/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlrpc-epi/}
+SITES=		${SITE_SOURCEFORGE:=xmlrpc-epi/}
 
 # BSD
 PERMIT_PACKAGE=	Yes

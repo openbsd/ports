@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c pcap
 
-MASTER_SITES =		${HOMEPAGE}archive/
+SITES =			${HOMEPAGE}archive/
 EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu

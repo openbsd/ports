@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.smarden.org/ipsvd/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 WRKDIST=		${WRKDIR}/net/${DISTNAME}
 WRKSRC=			${WRKDIST}/src
 SBINPROGRAMS=		ipsvd-cdb tcpsvd udpsvd

@@ -8,7 +8,7 @@ HOMEPAGE=	http://nic.com.pl/~alek/pidgin-icb/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 BUILD_DEPENDS=	net/pidgin,-libpurple>=2.0.0
 

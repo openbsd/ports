@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto iconv intl ssl
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=weex/}
+SITES=			${SITE_SOURCEFORGE:=weex/}
 DISTFILES=		weex_${VERSION}.tar.gz
 
 BUILD_DEPENDS=		devel/gettext,-tools

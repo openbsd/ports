@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge() and unveil()
 WANTLIB += c tls
 
-MASTER_SITES =		https://git.causal.agency/pounce/snapshot/
+SITES =			https://git.causal.agency/pounce/snapshot/
 
 # C11
 COMPILER =		base-clang ports-gcc

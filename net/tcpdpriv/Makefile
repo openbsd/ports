@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c pcap 
 
-MASTER_SITES=		http://ita.ee.lbl.gov/software/ \
+SITES=			http://ita.ee.lbl.gov/software/ \
 			ftp://ita.ee.lbl.gov/software/
 EXTRACT_SUFX=		.tar.Z
 

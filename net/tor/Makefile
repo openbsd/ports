@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto event_core event_extra execinfo m pthread ssl z
 
-MASTER_SITES=	https://www.torproject.org/dist/
+SITES=		https://www.torproject.org/dist/
 
 AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf

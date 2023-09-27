@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c event lib/db/db=3
 
-MASTER_SITES=		http://www.monkey.org/~provos/
+SITES=			http://www.monkey.org/~provos/
 
 LIB_DEPENDS=		databases/db/v3
 

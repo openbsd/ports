@@ -18,7 +18,7 @@ WANTLIB +=	${MODTK_WANTLIB}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nsnam/}
+SITES=		${SITE_SOURCEFORGE:=nsnam/}
 WRKDIST=	${WRKDIR}/ns-$V
 
 BUILD_DEPENDS=	devel/tclcl

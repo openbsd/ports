@@ -10,7 +10,7 @@ HOMEPAGE =	http://pydns.sourceforge.net/
 # Python License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydns/}
+SITES =		${SITE_SOURCEFORGE:=pydns/}
 
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

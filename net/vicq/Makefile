@@ -2,7 +2,7 @@ COMMENT=	text-based ICQ implementation
 
 DISTNAME=	vicq-0.4.1
 CATEGORIES=     net
-MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
+SITES=		http://gonzo.kiev.ua/projects/vicq.old/
 REVISION =	0
 
 HOMEPAGE=	http://gonzo.kiev.ua/projects/vicq/

@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.domtools.com/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.domtools.com/pub/
+SITES=			http://www.domtools.com/pub/
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

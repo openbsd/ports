@@ -8,7 +8,7 @@ CATEGORIES=    		net
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap event dnet
 
-MASTER_SITES=		http://www.citi.umich.edu/u/provos/honeyd/
+SITES=			http://www.citi.umich.edu/u/provos/honeyd/
 
 AUTOCONF_VERSION=	2.52
 CONFIGURE_STYLE=	autoconf

@@ -20,7 +20,7 @@ WANTLIB += gpg-error gpgme gthread-2.0 iconv idn idn2 intl lzma
 WANTLIB += m nspr4 nss3 nssutil3 pcre2-8 plc4 plds4 pthread purple
 WANTLIB += smime3 ssl3 unistring xml2 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sipe/}
+SITES =			${SITE_SOURCEFORGE:=sipe/}
 
 LIB_DEPENDS =		mail/gmime30 \
 			net/pidgin,-libpurple \

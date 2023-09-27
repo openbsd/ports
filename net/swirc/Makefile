@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} c crypto curl curses hunspell-1.7 \
 			iconv idn intl m panel pthread ssl
 
-MASTER_SITES =		https://www.nifty-networks.net/swirc/releases/
+SITES =			https://www.nifty-networks.net/swirc/releases/
 EXTRACT_SUFX =		.tgz
 
 # C++17

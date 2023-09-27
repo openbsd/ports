@@ -28,7 +28,7 @@ WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl m qca-qt5 wayland-client
 WANTLIB += xkbcommon
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MODULES =	x11/kde-applications \
 		devel/kf5 \

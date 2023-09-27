@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge(2)
 WANTLIB += c c++abi pthread
 
-MASTER_SITES =		https://bitbucket.org/delan/nonymous/get/
+SITES =			https://bitbucket.org/delan/nonymous/get/
 
 MODULES =		devel/cargo
 SEPARATE_BUILD =	Yes

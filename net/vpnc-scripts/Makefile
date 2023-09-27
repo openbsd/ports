@@ -14,7 +14,7 @@ MAINTAINER=	Andrew Hewus Fresh <afresh1@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://gitlab.com/openconnect/vpnc-scripts/-/archive/${C}/
+SITES=		https://gitlab.com/openconnect/vpnc-scripts/-/archive/${C}/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

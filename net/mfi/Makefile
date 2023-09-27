@@ -14,7 +14,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE=		http://www.ubnt.com/eula/
 PERMIT_DISTFILES=	http://www.ubnt.com/eula/
 
-MASTER_SITES=	http://dl.ubnt.com/mfi/$V/
+SITES=		http://dl.ubnt.com/mfi/$V/
 
 MODULES=	java
 MODJAVA_VER=	1.8

@@ -18,7 +18,7 @@ WANTLIB += xml2 z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
+SITES=		ftp://ftp.infradead.org/pub/openconnect/
 
 FLAVORS=	light
 FLAVOR?=

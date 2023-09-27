@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m maxminddb z
 
-MASTER_SITES =	https://www.dns-oarc.net/files/packetq/
+SITES =		https://www.dns-oarc.net/files/packetq/
 
 COMPILER =	base-clang ports-gcc
 

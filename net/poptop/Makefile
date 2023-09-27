@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c util 
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=poptop/}
+SITES=			${SITE_SOURCEFORGE:=poptop/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-bsdppp --with-pppd-ip-alloc

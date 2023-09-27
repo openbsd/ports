@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gnutls m pcre pthread util z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tintin/}
+SITES =		${SITE_SOURCEFORGE:=tintin/}
 
 LIB_DEPENDS =	devel/pcre \
 		security/gnutls

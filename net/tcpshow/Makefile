@@ -4,7 +4,7 @@ DISTNAME=	tcpshow-1.74
 REVISION=	0
 CATEGORIES=	net security
 
-MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=obrien/}
+SITES=		${SITE_FREEBSD_LOCAL:=obrien/}
 DISTFILES=	tcpshow.c tcpshow.1
 
 EXTRACT_CASES=	*)cp ${FULLDISTDIR}/$$archive ${WRKDIST};;

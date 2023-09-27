@@ -4,7 +4,7 @@ DISTNAME=	openfire_${V:S/./_/g}
 PKGNAME=	openfire-$V
 CATEGORIES=	net
 
-MASTER_SITES=	https://www.igniterealtime.org/downloadServlet?filename=openfire/
+SITES=	https://www.igniterealtime.org/downloadServlet?filename=openfire/
 
 HOMEPAGE=	https://www.igniterealtime.org/projects/openfire/index.jsp
 

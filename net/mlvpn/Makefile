@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB += c ev m sodium
 
-MASTER_SITES =		https://github.com/zehome/MLVPN/releases/download/$V/
+SITES =			https://github.com/zehome/MLVPN/releases/download/$V/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

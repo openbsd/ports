@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =	http://www.ohse.de/uwe/ftpcopy/
+SITES =		http://www.ohse.de/uwe/ftpcopy/
 
 WRKDIST =	${WRKDIR}/web/${DISTNAME}
 

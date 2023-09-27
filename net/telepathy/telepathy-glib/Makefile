@@ -7,7 +7,7 @@ SHARED_LIBS +=	telepathy-glib       80.0      # 84.1
 
 HOMEPAGE =		${HOMEPAGE_TP:=telepathy-glib}
 
-MASTER_SITES=		${MASTER_SITES_TP:=telepathy-glib/}
+SITES=			${SITES_TP:=telepathy-glib/}
 
 WANTLIB =  dbus-1 dbus-glib-1 execinfo gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += iconv intl pthread

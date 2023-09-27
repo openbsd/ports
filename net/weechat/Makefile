@@ -21,7 +21,7 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.weechat.org/files/src/
+SITES=		https://www.weechat.org/files/src/
 
 # C++
 COMPILER=	base-clang ports-gcc

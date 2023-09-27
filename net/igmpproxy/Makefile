@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
-MASTER_SITES =	${HOMEPAGE}/releases/download/${V}/
+SITES =		${HOMEPAGE}/releases/download/${V}/
 
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -Wall" \
 		LDFLAGS="${LDFLAGS}"

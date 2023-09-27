@@ -19,7 +19,7 @@ WANTLIB += ${MODPY_WANTLIB}
 # libproxy requires libestdc++
 COMPILER =		base-clang ports-gcc
 
-MASTER_SITES =		https://dl.hexchat.net/hexchat/
+SITES =			https://dl.hexchat.net/hexchat/
 
 MODULES =		devel/meson \
 			lang/python \

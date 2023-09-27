@@ -6,7 +6,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		http://wiki.github.com/btpd/btpd/
 
-MASTER_SITES=		https://github.com/downloads/btpd/btpd/
+SITES=			https://github.com/downloads/btpd/btpd/
 
 # BSD
 PERMIT_PACKAGE=	Yes

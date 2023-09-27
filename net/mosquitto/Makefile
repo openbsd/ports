@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c cjson crypto m pthread ssl ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://mosquitto.org/files/source/
+SITES =			https://mosquitto.org/files/source/
 
 COMPILER =		base-clang ports-gcc
 

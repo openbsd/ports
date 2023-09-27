@@ -16,7 +16,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # MPLv1.1 or GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=state-threads/}
+SITES =			${SITE_SOURCEFORGE:=state-threads/}
 
 MAKE_FLAGS =		CC='${CC}' CFLAGS='${CFLAGS} -fPIC -DOPENBSD' \
 			LD='${CC}' LDFLAGS='-shared -fPIC' \

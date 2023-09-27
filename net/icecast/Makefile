@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  c crypto curl>=2 iconv intl lzma m nghttp2 ogg pthread
 WANTLIB += speex>=3 ssl theora>=1 vorbis>=3 xml2 xslt>=3 z
 
-MASTER_SITES=	https://downloads.xiph.org/releases/icecast/
+SITES=		https://downloads.xiph.org/releases/icecast/
 
 
 CONFIGURE_STYLE= gnu

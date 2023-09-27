@@ -22,7 +22,7 @@ HOMEPAGE=	https://wiki.netbsd.org/individual-software-releases/netresolv/
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_ISC:=libbind/$V/}
+SITES=		${SITE_ISC:=libbind/$V/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libtool \

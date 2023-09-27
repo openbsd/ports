@@ -13,9 +13,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c glib-2.0 gmp iconv idn intl ltdl m curses pthread \
 		readline ${COMPILER_LIBCXX} guile loudmouth-1>=3
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=freetalk/}
+SITES=		${SITE_SAVANNAH:=freetalk/}
 
 LIB_DEPENDS=	lang/guile \
 		net/loudmouth

@@ -7,7 +7,7 @@ HOMEPAGE =	https://db-ip.com/db/lite.php
 # CC BY 4.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://download.db-ip.com/free/
+SITES =		https://download.db-ip.com/free/
 EXTRACT_SUFX =	.gz
 
 WRKDIST =	${WRKDIR}

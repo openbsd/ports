@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c crypto ssl util
 
-MASTER_SITES=		https://security.appspot.com/downloads/
+SITES=			https://security.appspot.com/downloads/
 
 ALL_TARGET=		vsftpd
 

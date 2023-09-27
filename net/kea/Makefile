@@ -22,7 +22,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += boost_system c crypto log4cplus m pthread ssl ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_ISC:=kea/${VERSION}/}
+SITES=		${SITE_ISC:=kea/${VERSION}/}
 
 LIB_DEPENDS=	devel/boost \
 		devel/log4cplus

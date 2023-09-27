@@ -6,7 +6,7 @@ REVISION=		0
 
 HOMEPAGE=		http://www.wolfermann.org/dnsreflector.html
 
-MASTER_SITES=		http://www.wolfermann.org/
+SITES=			http://www.wolfermann.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes

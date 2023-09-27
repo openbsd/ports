@@ -12,7 +12,7 @@ HOMEPAGE=	https://finalrewind.org/projects/App-Icli/
 # custom, see COPYING.
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 FLAVORS=		nagios
 FLAVOR?=

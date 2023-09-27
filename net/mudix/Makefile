@@ -7,9 +7,9 @@ REVISION=	0
 
 # BSD-style
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c curses panel
+WANTLIB=	c curses panel
 
-MASTER_SITES=	http://dw.nl.eu.org/mudix/
+SITES=		http://dw.nl.eu.org/mudix/
 
 CONFIGURE_STYLE=gnu
 

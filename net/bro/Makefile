@@ -25,7 +25,7 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
 WANTLIB += c m maxminddb pcap pthread z
 WANTLIB += lib/eopenssl11/crypto lib/eopenssl11/ssl lib/libbind/bind
 
-MASTER_SITES=		https://download.zeek.org/ \
+SITES=			https://download.zeek.org/ \
 			https://old.zeek.org/downloads/
 
 FIX_EXTRACT_PERMISSIONS=Yes

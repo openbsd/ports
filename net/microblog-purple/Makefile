@@ -19,7 +19,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread purple xcb xcb-render xcb-shm z
 
-MASTER_SITES=	${HOMEPAGE}/files/
+SITES=		${HOMEPAGE}/files/
 
 FIX_CRLF_FILES=	Makefile \
 		microblog/identica.c

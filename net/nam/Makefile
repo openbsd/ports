@@ -7,7 +7,7 @@ REVISION =	4
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
-MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=nsnam/}
+SITES= 		${SITE_SOURCEFORGE:=nsnam/}
 
 HOMEPAGE=	http://nsnam.sourceforge.net/
 

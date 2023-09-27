@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.network-weathermap.com/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}files/
+SITES=		${HOMEPAGE}files/
 
 MODULES=	lang/php
 MODPHP_VERSION=	7.4

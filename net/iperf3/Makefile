@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m
 
-MASTER_SITES=	https://downloads.es.net/pub/iperf/
+SITES=		https://downloads.es.net/pub/iperf/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --with-openssl=no

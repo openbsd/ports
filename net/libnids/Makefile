@@ -11,7 +11,7 @@ HOMEPAGE=	http://libnids.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libnids/}
+SITES=		${SITE_SOURCEFORGE:=libnids/}
 FIX_EXTRACT_PERMISSIONS=Yes
 
 WANTLIB += lib/libnet-1.0/net=0 pcap

@@ -18,7 +18,7 @@ WANTLIB=		c iconv intl m curses pthread readline z \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://ftp.indexdata.dk/pub/yaz/
+SITES=			http://ftp.indexdata.dk/pub/yaz/
 
 LIB_DEPENDS=		textproc/libxml \
 			security/libgpg-error \

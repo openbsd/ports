@@ -14,7 +14,7 @@ SHARED_LIBS +=	ldns                 8.0      # 7.0
 
 CATEGORIES=	net
 
-MASTER_SITES=	https://www.nlnetlabs.nl/downloads/ldns/
+SITES=		https://www.nlnetlabs.nl/downloads/ldns/
 HOMEPAGE=	https://www.nlnetlabs.nl/projects/ldns/
 
 # BSD

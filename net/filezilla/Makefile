@@ -37,7 +37,7 @@ WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_xrc-3.2 xcb xcb-render xcb-shm
 WANTLIB += z zstd
 
-MASTER_SITES=	https://download.filezilla-project.org/client/
+SITES=		https://download.filezilla-project.org/client/
 EXTRACT_SUFX=	.tar.xz
 
 # c++17

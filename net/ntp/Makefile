@@ -12,7 +12,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://www.ntp.org/
 
-MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
+SITES=		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
 		http://archive.ntp.org/ntp4/ntp-4.2/
 
 # modified ISC

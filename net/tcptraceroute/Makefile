@@ -15,7 +15,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libnet=${PREFIX} \
 			--enable-noselect-default
 
-MASTER_SITES=		http://michael.toren.net/code/tcptraceroute/
+SITES=			http://michael.toren.net/code/tcptraceroute/
 
 LIB_DEPENDS=		net/libnet/1.1
 

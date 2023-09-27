@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 # uses unveil
 WANTLIB += c
 
-MASTER_SITES= https://github.com/gophernicus/gophernicus/releases/download/${V}/
+SITES= 	https://github.com/gophernicus/gophernicus/releases/download/${V}/
 FIX_EXTRACT_PERMISSIONS= yes
 
 CONFIGURE_STYLE= simple

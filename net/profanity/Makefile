@@ -12,7 +12,7 @@ SHARED_LIBS +=  profanity                 1.0 # 0.0
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://profanity-im.github.io/tarballs/
+SITES =		https://profanity-im.github.io/tarballs/
 
 WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error

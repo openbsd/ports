@@ -4,7 +4,7 @@ VER=		4.7.0
 DISTNAME=	libslirp-v${VER}
 PKGNAME=	libslirp-${VER}
 CATEGORIES=	net
-MASTER_SITES=	https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v${VER}/
+SITES=		https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS+=	slirp	0.1

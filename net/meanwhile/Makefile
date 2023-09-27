@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  glib-2.0>=800 iconv intl m pcre2-8 pthread
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=meanwhile/}
+SITES=		${SITE_SOURCEFORGE:=meanwhile/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-mailme=no \

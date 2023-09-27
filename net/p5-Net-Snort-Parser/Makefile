@@ -9,6 +9,6 @@ CATEGORIES=	net
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.shmoo.com/~bmc/software/snortconfig/
+SITES=		http://www.shmoo.com/~bmc/software/snortconfig/
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		ftp://ftp.vmlinux.org/pub/People/jocke/inadyn/
+SITES =			ftp://ftp.vmlinux.org/pub/People/jocke/inadyn/
 EXTRACT_SUFX =		.tar.bz2
 
 MAKE_FLAGS =		EXTRA_CFLAGS="${CFLAGS}"

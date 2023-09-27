@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c crypto perl
 
-MASTER_SITES =		http://www.net-dns.org/download/
+SITES =			http://www.net-dns.org/download/
 
 MODULES =		cpan
 RUN_DEPENDS =		net/p5-Net-DNS>=1.08

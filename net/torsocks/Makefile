@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES=	https://gitweb.torproject.org/torsocks.git/snapshot/
+SITES=			https://gitweb.torproject.org/torsocks.git/snapshot/
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

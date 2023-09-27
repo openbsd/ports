@@ -8,7 +8,7 @@ REVISION =	2
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 
-MASTER_SITES =	https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/${V}/
+SITES =	https://gitlab.com/accounts-sso/libaccounts-glib/-/archive/${V}/
 
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes

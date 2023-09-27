@@ -14,7 +14,7 @@ CATEGORIES=		net multimedia
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/World/dLeyna/-/archive/v${GNOME_VERSION}/
+SITES=	https://gitlab.gnome.org/World/dLeyna/-/archive/v${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 WRKDIST=		${WRKDIR}/dLeyna-v${GNOME_VERSION}-9444b8eb9e48a3985340c7f7e0d3a63d2b352302
 

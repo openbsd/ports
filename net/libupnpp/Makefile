@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} crypto curl expat ixml m nghttp2
 WANTLIB += ssl upnp z
 
-MASTER_SITES =		https://www.lesbonscomptes.com/upmpdcli/downloads/
+SITES =			https://www.lesbonscomptes.com/upmpdcli/downloads/
 
 # C++11
 COMPILER =		base-clang ports-gcc

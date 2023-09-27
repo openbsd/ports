@@ -20,7 +20,7 @@ WANTLIB += c curses edit gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle nghttp2 p11-kit pthread tasn1 unistring urcu
 WANTLIB += urcu-common brotlidec brotlienc z zstd
 
-MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
+SITES =			https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

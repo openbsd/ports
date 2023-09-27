@@ -2,12 +2,12 @@ COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.51
 CATEGORIES=	net
-MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/ \
+SITES=		https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp4.fr.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.dk.pureftpd.org/mirrors/pure-ftpd/releases/ \
 		ftp://ftp.nl.pureftpd.org/pub/pure-ftpd/releases/ \
-		${MASTER_SITE_SOURCEFORGE:=pureftpd/}
+		${SITE_SOURCEFORGE:=pureftpd/}
 EXTRACT_SUFX=	.tar.bz2
 REVISION=	0
 

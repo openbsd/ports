@@ -17,7 +17,7 @@ HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://rtorrent.net/downloads/
+SITES=			https://rtorrent.net/downloads/
 
 WANTLIB=		crypto m pthread ${COMPILER_LIBCXX} z
 

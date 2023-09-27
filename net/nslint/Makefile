@@ -5,7 +5,7 @@ CATEGORIES=		net
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://ftp.ee.lbl.gov/
+SITES=			ftp://ftp.ee.lbl.gov/
 
 WANTLIB=		c
 

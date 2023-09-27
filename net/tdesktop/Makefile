@@ -16,7 +16,7 @@ DPB_PROPERTIES =	parallel
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
-MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+SITES =	https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>

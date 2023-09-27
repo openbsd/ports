@@ -6,7 +6,7 @@ CATEGORIES=		net
 
 HOMEPAGE=		http://www.mavetju.org/unix/general.php
 
-MASTER_SITES=		http://www.mavetju.org/download/
+SITES=			http://www.mavetju.org/download/
 
 # GPL
 PERMIT_PACKAGE=	Yes

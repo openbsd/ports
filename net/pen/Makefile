@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto ssl
 
-MASTER_SITES=		http://siag.nu/pub/pen/
+SITES=			http://siag.nu/pub/pen/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/pen \

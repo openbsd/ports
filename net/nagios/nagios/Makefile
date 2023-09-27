@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=	-main -web
 
-MASTER_SITES=	https://assets.nagios.com/downloads/nagioscore/releases/
+SITES=		https://assets.nagios.com/downloads/nagioscore/releases/
 
 MODULES=	lang/php
 

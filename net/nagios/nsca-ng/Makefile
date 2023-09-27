@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c ev lib/eopenssl11/crypto lib/eopenssl11/ssl
 WANTLIB-main=	${WANTLIB} confuse
 
-MASTER_SITES=		https://github.com/weiss/nsca-ng/releases/download/v$V/
+SITES=			https://github.com/weiss/nsca-ng/releases/download/v$V/
 
 # OpenSSL used for PSK (SSL_get_psk_identity)
 LIB_DEPENDS=		devel/libev \

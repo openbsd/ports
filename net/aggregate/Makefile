@@ -4,7 +4,7 @@ DISTNAME=	aggregate-1.6
 REVISION=	1
 CATEGORIES=	net
 
-MASTER_SITES=	${MASTER_SITE_ISC:=aggregate/}
+SITES=		${SITE_ISC:=aggregate/}
 
 PERMIT_PACKAGE=	Yes
 

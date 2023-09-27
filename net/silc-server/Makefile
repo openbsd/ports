@@ -3,7 +3,7 @@ COMMENT=	Secure Internet Live Conferencing (SILC) server
 DISTNAME=	silc-server-1.1.19
 REVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=silc/}
+SITES=		${SITE_SOURCEFORGE:=silc/}
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.silcnet.org/

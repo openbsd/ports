@@ -3,7 +3,7 @@ COMMENT=		threaded DNS daemon, optimized for caching
 DISTNAME=		pdnsd-1.2.9a-par
 PKGNAME=		${DISTNAME:S/-par//}
 CATEGORIES=		net
-MASTER_SITES=		${HOMEPAGE}/releases/
+SITES=			${HOMEPAGE}/releases/
 REVISION=		1
 
 HOMEPAGE=		http://members.home.nl/p.a.rombouts/pdnsd/

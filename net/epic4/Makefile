@@ -5,7 +5,7 @@ REVISION=	3
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
+SITES=		http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.bz2
 
 HOMEPAGE=	http://www.epicsol.org/

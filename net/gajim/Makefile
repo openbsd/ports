@@ -7,7 +7,7 @@ HOMEPAGE=	https://www.gajim.org
 
 MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
+SITES=		${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes

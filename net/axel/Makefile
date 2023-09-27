@@ -10,7 +10,7 @@ HOMEPAGE=	https://github.com/axel-download-accelerator/axel
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/axel-download-accelerator/axel/releases/download/v${V}/
+SITES=		https://github.com/axel-download-accelerator/axel/releases/download/v${V}/
 
 WANTLIB += c crypto pthread ssl
 
