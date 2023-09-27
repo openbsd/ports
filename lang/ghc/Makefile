@@ -14,13 +14,13 @@ USE_NOEXECONLY =	Yes
 USE_NOBTCFI =		Yes
 
 GHC_VERSION =		9.2.7
-REVISION =		3
+REVISION =		4
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.10.7.20230613
+BIN_VER =		8.10.7.20230925
 
 # lang/python needed for regression tests.
 MODULES =		lang/python
