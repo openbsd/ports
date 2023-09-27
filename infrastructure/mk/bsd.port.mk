@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1625 2023/09/25 17:09:10 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1626 2023/09/27 08:21:06 semarie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -781,6 +781,12 @@ _LD_PROGRAM = /usr/bin/ld.lld
 .  if ! ${PROPERTIES:Mlld}
 _NONDEFAULT_LD = Yes
 .  endif
+.elif ${USE_LLD:L} == "ports"
+.  if ! defined(MODCLANG_VERSION)
+ERRORS += "can't use USE_LLD=ports without lang/clang inside MODULES"
+.  endif
+_LD_PROGRAM = ${LOCALBASE}/llvm${MODCLANG_VERSION}/bin/ld.lld
+_NONDEFAULT_LD = Yes
 .else
 _LD_PROGRAM = /usr/bin/ld.bfd
 .  if ${PROPERTIES:Mlld}
