@@ -17,7 +17,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-render-util z
 
-MASTER_SITES=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
+SITES=		http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
 EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	x11/gtk+2

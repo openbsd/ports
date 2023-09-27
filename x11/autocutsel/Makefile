@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 WANTLIB += xcb
 
-MASTER_SITES=	https://github.com/sigmike/autocutsel/releases/download/$V/
+SITES=		https://github.com/sigmike/autocutsel/releases/download/$V/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

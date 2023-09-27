@@ -4,7 +4,7 @@ REVISION =	14
 DISTNAME =	Grr-1.0
 
 HOMEPAGE =	http://gap.nongnu.org/grr/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 WANTLIB +=	RSSKit

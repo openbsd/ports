@@ -18,7 +18,7 @@ WANTLIB +=		GL Xxf86vm bz2 jpeg m png ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=irrlicht/}
+SITES =			${SITE_SOURCEFORGE:=irrlicht/}
 
 EXTRACT_SUFX =		.zip
 

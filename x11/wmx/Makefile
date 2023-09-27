@@ -5,7 +5,7 @@ CATEGORIES=	x11
 REVISION =	4
 
 HOMEPAGE=	http://www.all-day-breakfast.com/wmx/
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 PERMIT_PACKAGE=		no license
 PERMIT_DISTFILES=	no license

@@ -22,7 +22,7 @@ WANTLIB += xcb-render xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =	http://bsdforge.com/projects/source/x11-themes/gtk-nodoka-engine/
+SITES =	http://bsdforge.com/projects/source/x11-themes/gtk-nodoka-engine/
 
 LIB_DEPENDS =	x11/gtk+2
 

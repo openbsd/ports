@@ -5,7 +5,7 @@ REVISION =	14
 CATEGORIES =	games
 
 HOMEPAGE =      http://gap.nongnu.org/gmastermind/
-MASTER_SITES =  ${MASTER_SITE_SAVANNAH:=gap/}
+SITES =  	${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

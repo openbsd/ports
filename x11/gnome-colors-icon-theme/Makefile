@@ -7,7 +7,7 @@ PKGNAME =		gnome-colors-icon-theme-${V}
 CATEGORIES =		x11
 
 HOMEPAGE =		https://github.com/gnome-colors/gnome-colors
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=gnome-colors/}
+SITES =			${SITE_GOOGLECODE:=gnome-colors/}
 
 # GPLv2 
 PERMIT_PACKAGE =	Yes

@@ -3,7 +3,7 @@ DISTNAME=		vdesk-1.2
 REVISION=		3
 
 CATEGORIES=		x11
-MASTER_SITES=		http://offog.org/files/
+SITES=			http://offog.org/files/
 
 HOMEPAGE=		http://offog.org/code/vdesk.html
 

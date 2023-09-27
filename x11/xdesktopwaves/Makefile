@@ -8,7 +8,7 @@ HOMEPAGE=		http://xdesktopwaves.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xdesktopwaves/}
+SITES=			${SITE_SOURCEFORGE:=xdesktopwaves/}
 
 WANTLIB=		X11 Xext c m
 NO_TEST=		Yes

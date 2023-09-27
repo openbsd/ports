@@ -8,8 +8,8 @@ CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/experience/ProjectCenter.html
 
-#MASTER_SITES=	http://ftp.gnustep.org/pub/gnustep/dev-apps/
-MASTER_SITES=	https://github.com/gnustep/apps-projectcenter/releases/download/projectcenter-0_7_0/
+#SITES=		http://ftp.gnustep.org/pub/gnustep/dev-apps/
+SITES=		https://github.com/gnustep/apps-projectcenter/releases/download/projectcenter-0_7_0/
 
 SHARED_LIBS=	ProjectCenter 1.2
 

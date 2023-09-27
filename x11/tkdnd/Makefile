@@ -11,7 +11,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # BSD
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkdnd/}
+SITES =			${SITE_SOURCEFORGE:=tkdnd/}
 
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}

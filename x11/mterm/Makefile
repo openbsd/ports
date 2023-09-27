@@ -10,7 +10,7 @@ HOMEPAGE=		http://mterm.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c 
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mterm/}
+SITES=			${SITE_SOURCEFORGE:=mterm/}
 
 NO_TEST=		Yes
 

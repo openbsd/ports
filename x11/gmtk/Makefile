@@ -22,7 +22,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread xcb xcb-render xcb-shm z Xau Xdmcp execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://gmtk.googlecode.com/svn/packages/
+SITES =		https://gmtk.googlecode.com/svn/packages/
 
 MODULES =	textproc/intltool
 

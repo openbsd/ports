@@ -17,7 +17,7 @@ WANTLIB += m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://www.robertk.com/source/fl_editor/
+SITES=			http://www.robertk.com/source/fl_editor/
 EXTRACT_SUFX=		.tgz
 
 FIX_CRLF_FILES=		FL/wstring.h fltk/wstring.h

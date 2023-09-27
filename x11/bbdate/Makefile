@@ -3,7 +3,7 @@ COMMENT=	displays the date and resembles the toolbar
 DISTNAME=	bbdate-0.2.4
 REVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bbtools/}
+SITES=		${SITE_SOURCEFORGE:=bbtools/}
 HOMEPAGE=	http://bbtools.sourceforge.net/download.php?file=3
 
 # GPL

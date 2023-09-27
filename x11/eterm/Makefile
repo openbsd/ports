@@ -14,8 +14,8 @@ HOMEPAGE=	http://www.eterm.org/
 # GPL with some custom licenses
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/download/ \
-		${MASTER_SITE_SOURCEFORGE:=eterm/}
+SITES=		${HOMEPAGE}/download/ \
+		${SITE_SOURCEFORGE:=eterm/}
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb XRes Xext ast c freetype
 WANTLIB += iconv m pcre util xcb xcb-shm z

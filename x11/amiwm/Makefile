@@ -5,7 +5,7 @@ DISTNAME=	amiwm${VERSION}
 PKGNAME=	amiwm-${VERSION:S/pl/./}
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
+SITES=		ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/
 
 HOMEPAGE=	http://www.lysator.liu.se/~marcus/amiwm.html
 

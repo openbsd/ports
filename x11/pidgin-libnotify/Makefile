@@ -6,7 +6,7 @@ CATEGORIES=	x11
 REVISION=	8
 
 HOMEPAGE=	http://gaim-libnotify.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gaim-libnotify/}
+SITES=		${SITE_SOURCEFORGE:=gaim-libnotify/}
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -4,7 +4,7 @@ DISTNAME=	xkeycaps-2.46
 REVISION=	3
 CATEGORIES=	x11 sysutils
 
-MASTER_SITES=	http://www.jwz.org/xkeycaps/
+SITES=		http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
 
 HOMEPAGE=http://www.jwz.org/xkeycaps/

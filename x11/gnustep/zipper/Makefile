@@ -4,7 +4,7 @@ REVISION =	12
 DISTNAME =	Zipper-1.5
 
 HOMEPAGE =	http://gap.nongnu.org/zipper/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB += c m
 
-MASTER_SITES =	https://github.com/steveire/grantlee/releases/download/v${V}/
+SITES =		https://github.com/steveire/grantlee/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5

@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB+=	Qt5Svg Qt5Widgets Qt5Xml c m openbabel
 
-MASTER_SITES=	https://gitlab.com/yamanq/xdrawchem/-/archive/v${V}/
+SITES=		https://gitlab.com/yamanq/xdrawchem/-/archive/v${V}/
 
 MODULES=	devel/qmake \
 		x11/qt5

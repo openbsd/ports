@@ -14,7 +14,7 @@ PERMIT_PACKAGE =Yes
 
 WANTLIB += X11 Xext Xi Xtst xcb
 
-MASTER_SITES =	https://downloads.yoctoproject.org/releases/matchbox/libfakekey/${V}/
+SITES =	https://downloads.yoctoproject.org/releases/matchbox/libfakekey/${V}/
 
 CONFIGURE_STYLE =	gnu
 

@@ -24,7 +24,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m polkit-agent-1 polkit-gobject-1 intl
 
-MASTER_SITES=	${MASTER_SITE_KDE:=stable/polkit-qt-1/}
+SITES=		${SITE_KDE:=stable/polkit-qt-1/}
 
 MODULES=	devel/cmake \
 		x11/qt5

@@ -5,7 +5,7 @@ DISTNAME =	ImpersonatorToolKit-0.3
 CATEGORIES =	net security
 
 HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf
-MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
+SITES =		http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No

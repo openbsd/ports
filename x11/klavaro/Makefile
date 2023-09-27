@@ -20,7 +20,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 gtkdatabox harfbuzz intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=klavaro/}
+SITES =		${SITE_SOURCEFORGE:=klavaro/}
 
 EXTRACT_SUFX = 	.tar.bz2
 

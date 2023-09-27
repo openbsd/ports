@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xss c fontconfig freetype m pthread tcl86 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
+SITES =			${SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
 LIB_DEPENDS =		tcl-8.6.${P}:lang/tcl/8.6

@@ -6,7 +6,7 @@ REVISION=	2
 
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/
+SITES=		http://www2s.biglobe.ne.jp/~yav/soft/
 
 HOMEPAGE=	http://www2s.biglobe.ne.jp/~yav/soft/indexe.html
 

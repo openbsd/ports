@@ -4,7 +4,7 @@ DISTNAME=	viewfax-2.6
 REVISION=	1
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.ping.de/pub/unix/
+SITES=		ftp://ftp.ping.de/pub/unix/
 
 CONFIGURE_STYLE=	imake
 

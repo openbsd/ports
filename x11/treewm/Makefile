@@ -3,7 +3,7 @@ DISTNAME=		treewm-0.4.5
 REVISION=		8
 CATEGORIES=		x11
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/}
+SITES=			${SITE_SOURCEFORGE:=treewm/}
 
 HOMEPAGE=		http://treewm.sourceforge.net/
 

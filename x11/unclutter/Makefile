@@ -4,7 +4,7 @@ DISTNAME=	unclutter-8
 REVISION=	1
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
+SITES=		${SITE_XCONTRIB:=utilities/}
 EXTRACT_SUFX=	.tar.Z
 
 # Public Domain

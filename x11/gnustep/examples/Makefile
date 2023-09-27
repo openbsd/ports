@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.gnustep.org/experience/examples.html
 WANTLIB =	GL GLU
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
+SITES=		${SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 

@@ -17,7 +17,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
+SITES=		http://www.stellingwerff.com/TheWidgetFactory/
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2

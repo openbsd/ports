@@ -24,7 +24,7 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += xml2 z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://download.mono-project.com/sources/gtk-sharp2${MAJOR}/
+SITES=		https://download.mono-project.com/sources/gtk-sharp2${MAJOR}/
 
 USE_GMAKE=		Yes
 

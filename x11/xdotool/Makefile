@@ -17,7 +17,7 @@ USE_GMAKE=	Yes
 
 WANTLIB += X11 Xi Xinerama Xtst c m xkbcommon
 
-MASTER_SITES =	https://github.com/jordansissel/xdotool/releases/download/v${V}/
+SITES =		https://github.com/jordansissel/xdotool/releases/download/v${V}/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

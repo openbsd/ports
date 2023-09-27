@@ -5,7 +5,7 @@ V =		3.1.1
 DISTNAME =	lablgtk3-${V}
 REVISION =	5
 
-MASTER_SITES =	https://github.com/garrigue/lablgtk/releases/download/${V}/
+SITES =		https://github.com/garrigue/lablgtk/releases/download/${V}/
 EXTRACT_SUFX =	.tbz
 
 # LGPL

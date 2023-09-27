@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ICE SM X11 Xext Xpm c
 
-MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/o/oroborus/} \
+SITES =			${SITE_DEBIAN:=main/o/oroborus/} \
 			https://distfiles.gentoo.org/distfiles/
 
 SEPARATE_BUILD =	Yes

@@ -11,7 +11,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/jnsh/arc-theme/releases/download/${V}/
+SITES=		https://github.com/jnsh/arc-theme/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES +=		devel/meson

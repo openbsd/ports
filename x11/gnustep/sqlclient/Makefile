@@ -12,7 +12,7 @@ CATEGORIES =	databases
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/SQLClient
 
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI = 	No

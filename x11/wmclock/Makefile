@@ -3,7 +3,7 @@ COMMENT=		Window Maker dock.app clock
 VERSION=		1.0.14
 DISTNAME=		wmclock-${VERSION}
 CATEGORIES=		x11 x11/windowmaker
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 HOMEPAGE=		http://www.bluestop.org/wmclock/
 

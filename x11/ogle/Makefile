@@ -9,7 +9,7 @@ SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
 # Authors can be reached at dvd@dtek.chalmers.se
-MASTER_SITES =	${HOMEPAGE}dist/
+SITES =		${HOMEPAGE}dist/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

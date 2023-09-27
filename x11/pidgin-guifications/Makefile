@@ -18,7 +18,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread purple
 WANTLIB += xcb xcb-render xcb-shm xml2 z Xau Xdmcp jpeg execinfo
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
+SITES=		http://downloads.guifications.org/plugins/Guifications2/
 
 MODULES=	textproc/intltool
 LIB_DEPENDS=	net/pidgin,-libpurple \

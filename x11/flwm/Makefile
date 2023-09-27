@@ -4,7 +4,7 @@ DISTNAME=	flwm-1.02
 PKGNAME=	flwm-1.0.2
 REVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	http://flwm.sourceforge.net/
 

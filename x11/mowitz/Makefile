@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		m neXtaw
 
-MASTER_SITES=		http://siag.nu/pub/mowitz/
+SITES=			http://siag.nu/pub/mowitz/
 
 LIB_DEPENDS=		x11/neXtaw
 

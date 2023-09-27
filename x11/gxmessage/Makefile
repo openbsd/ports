@@ -10,7 +10,7 @@ HOMEPAGE=	http://homepages.ihug.co.nz/~trmusson/programs.html\#gxmessage
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/
+SITES=		http://homepages.ihug.co.nz/~trmusson/stuff/
 
 WANTLIB =  atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0

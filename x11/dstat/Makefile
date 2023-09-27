@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 c util sndio
 
-MASTER_SITES =		${HOMEPAGE}/dl/
+SITES =			${HOMEPAGE}/dl/
 
 RUN_DEPENDS =		x11/dwm
 

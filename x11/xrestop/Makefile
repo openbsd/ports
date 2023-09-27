@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	XRes Xext X11 Xau Xdmcp curses c xcb
 
-MASTER_SITES =	${MASTER_SITE_XORG:=app/}
+SITES =		${SITE_XORG:=app/}
 
 SEPARATE_BUILD=	Yes
 

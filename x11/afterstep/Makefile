@@ -5,7 +5,7 @@ REVISION=	8
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
-MASTER_SITES=	ftp://ftp.afterstep.org/stable/
+SITES=		ftp://ftp.afterstep.org/stable/
 
 WRKDIST=	${WRKDIR}/afterstep-devel-${V}
 

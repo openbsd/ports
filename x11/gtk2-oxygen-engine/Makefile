@@ -19,7 +19,7 @@ WANTLIB += pthread ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		http://download.kde.org/stable/oxygen-gtk2/${V}/src/
+SITES =			http://download.kde.org/stable/oxygen-gtk2/${V}/src/
 
 EXTRACT_SUFX =		.tar.bz2
 

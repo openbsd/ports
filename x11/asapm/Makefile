@@ -8,7 +8,7 @@ HOMEPAGE=	http://www.tigr.net/afterstep/
 
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
+SITES=		http://www.tigr.net/afterstep/download/asapm/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

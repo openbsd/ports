@@ -5,7 +5,7 @@ GNOME_VERSION=		3.11.92.20221209
 
 # override gnome MODULE
 COMMIT=			d59dc92f4f703b734dac82ce0c186c1751133df5
-MASTER_SITES=           https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
+SITES=           	https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
 WRKDIST=                ${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
 EXTRACT_SUFX=           .tar.gz
 

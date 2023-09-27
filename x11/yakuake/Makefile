@@ -8,7 +8,7 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

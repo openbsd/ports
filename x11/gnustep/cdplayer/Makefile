@@ -5,7 +5,7 @@ REVISION =	15
 DISTNAME =	cdplayer-${VERSION}
 
 HOMEPAGE =	http://gsburn.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gsburn/}
+SITES =		${SITE_SOURCEFORGE:=gsburn/}
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	x11/gnustep

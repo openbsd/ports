@@ -9,7 +9,7 @@ CATEGORIES=		x11 x11/windowmaker
 PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xaw Xext Xmu Xpm Xt c m Dnd
 
-MASTER_SITES=		${MASTER_SITE_AFTERSTEP:=apps/ASFiles/}
+SITES=			${SITE_AFTERSTEP:=apps/ASFiles/}
 
 LIB_DEPENDS=		x11/libdnd
 

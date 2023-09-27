@@ -22,7 +22,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp jpeg
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkdatabox/}
+SITES=		${SITE_SOURCEFORGE:=gtkdatabox/}
 
 LIB_DEPENDS =	x11/gtk+2
 

@@ -5,7 +5,7 @@ DISTNAME =	HighlighterKit-0.1.3
 SHARED_LIBS =	HighlighterKit 0.1
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/HighlighterKit
-MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
+SITES =		http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes

@@ -9,7 +9,7 @@ HOMEPAGE=		http://home.kde.org/~seli/numlockx/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext c
 
-MASTER_SITES=		http://home.kde.org/~seli/numlockx/
+SITES=			http://home.kde.org/~seli/numlockx/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	autoconf

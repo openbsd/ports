@@ -20,7 +20,7 @@ WANTLIB += popt pthread ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gmrun/}
+SITES=			${SITE_SOURCEFORGE:=gmrun/}
 
 LIB_DEPENDS=		x11/gtk+2 \
 			devel/popt

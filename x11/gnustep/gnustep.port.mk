@@ -66,4 +66,4 @@ CONFIGURE_ARGS +=       --disable-debug --enable-strip
 MAKE_ENV +=	debug=no strip=yes
 .endif
 
-MASTER_SITE_GNUSTEP = http://ftp.gnustep.org/pub/gnustep/
+SITE_GNUSTEP = http://ftp.gnustep.org/pub/gnustep/

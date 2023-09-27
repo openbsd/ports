@@ -16,7 +16,7 @@ WANTLIB += xcb-cursor xcb-icccm xcb-keysyms xcb-randr xcb-render
 WANTLIB += xcb-shape xcb-util xcb-xinerama xcb-xkb xcb-xrm xcb-xtest
 WANTLIB += xdg-basedir xkbcommon xkbcommon-x11 ${MODLUA_WANTLIB}
 
-MASTER_SITES=		https://github.com/awesomeWM/awesome/releases/download/v${V}/
+SITES=		https://github.com/awesomeWM/awesome/releases/download/v${V}/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/cmake \

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c
 
-MASTER_SITES=		http://dl.suckless.org/tools/
+SITES=			http://dl.suckless.org/tools/
 
 MAKE_FLAGS=             CC="${CC}"
 MAKE_ENV=               LDFLAGS="${LDFLAGS}"

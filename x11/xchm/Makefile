@@ -16,7 +16,7 @@ WANTLIB += c chm m wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2
 
-MASTER_SITES=	https://github.com/rzvncj/xCHM/releases/download/$V/
+SITES=		https://github.com/rzvncj/xCHM/releases/download/$V/
 
 LIB_DEPENDS=	devel/chmlib \
 		x11/wxWidgets>=3.0.4

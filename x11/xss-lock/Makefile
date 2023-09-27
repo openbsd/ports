@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl xcb xcb-screensaver
 WANTLIB += xcb-util
 
-MASTER_SITES=	https://bitbucket.org/raymonad/xss-lock/get/
+SITES=		https://bitbucket.org/raymonad/xss-lock/get/
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/glib2

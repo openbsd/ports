@@ -5,7 +5,7 @@ DISTNAME=	RemoteDesk-0.1
 
 CATEGORIES=	x11
 HOMEPAGE=	http://gap.nongnu.org/remotedesk/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
+SITES=		${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

@@ -4,7 +4,7 @@ DISTNAME=	xtoolwait-1.3
 REVISION=	1
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/} \
+SITES=		${SITE_XCONTRIB:=utilities/} \
 		http://www.hacom.nl/~richard/software/
 
 HOMEPAGE=	http://www.hacom.nl/~richard/software/xtoolwait.html

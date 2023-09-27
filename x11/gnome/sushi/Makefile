@@ -4,7 +4,7 @@ GNOME_PROJECT=		sushi
 GNOME_VERSION=		44.2
 
 # override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
+SITES=			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 
 # GPLv2+

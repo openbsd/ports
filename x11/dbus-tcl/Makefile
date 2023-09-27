@@ -12,7 +12,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE =Yes
 
 WANTLIB =	dbus-1
-MASTER_SITES =	${HOMEPAGE:=uv/}
+SITES =		${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} devel/tcllib
 LIB_DEPENDS =	x11/dbus

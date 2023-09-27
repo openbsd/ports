@@ -23,7 +23,7 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
 WANTLIB += Qt5Xml c m z KF5KIOGui X11
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/krusader/${VERSION}/}
+SITES =		${SITE_KDE:=stable/krusader/${VERSION}/}
 EXTRACT_SUFX=	.tar.xz
 
 MODULES =	devel/kf5

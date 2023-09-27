@@ -24,7 +24,7 @@ PERMIT_PACKAGE ?=	Yes
 
 VERSION ?=		${MODKDE_VERSION}
 
-MASTER_SITES ?=		${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
+SITES ?=		${SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 RUN_DEPENDS +=		${MODKDE5_RUN_DEPENDS}
 BUILD_DEPENDS +=	${MODKDE5_BUILD_DEPENDS}

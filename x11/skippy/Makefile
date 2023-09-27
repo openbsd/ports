@@ -9,7 +9,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB+= Imlib2 X11 Xext Xft Xinerama c m
 
-MASTER_SITES=		https://spacehopper.org/mirrors/
+SITES=			https://spacehopper.org/mirrors/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		graphics/imlib2

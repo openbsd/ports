@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets \
 			dbus-c++-1 m xcb
 
-MASTER_SITES =		https://gitlab.com/bharadwaj-raju/TextSuggest/-/archive/v${V}/
+SITES =		https://gitlab.com/bharadwaj-raju/TextSuggest/-/archive/v${V}/
 
 MODULES =		x11/qt5
 RUN_DEPENDS =		x11/xdotool

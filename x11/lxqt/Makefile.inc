@@ -14,7 +14,7 @@ MODULES +=	x11/qt5 \
 # Mostly LGPLv2.1, some GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/lxqt/${NAME}/releases/download/${VERSION}/
+SITES =		https://github.com/lxqt/${NAME}/releases/download/${VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
 NO_TEST ?=	Yes

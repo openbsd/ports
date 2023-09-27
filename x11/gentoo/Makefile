@@ -7,7 +7,7 @@ CATEGORIES=		x11
 
 HOMEPAGE=		http://www.obsession.se/gentoo/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gentoo/}
+SITES=			${SITE_SOURCEFORGE:=gentoo/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

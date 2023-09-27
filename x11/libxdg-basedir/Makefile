@@ -8,7 +8,7 @@ REVISION =	2
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://nevill.ch/libxdg-basedir/downloads/
+SITES =		http://nevill.ch/libxdg-basedir/downloads/
 
 CONFIGURE_STYLE =	gnu
 

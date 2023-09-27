@@ -3,7 +3,7 @@ DISTNAME=	wmctrl-1.07
 REVISION=	9
 
 CATEGORIES=	x11
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 HOMEPAGE=	https://sites.google.com/site/tstyblo/wmctrl/
 

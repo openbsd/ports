@@ -37,7 +37,7 @@ WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 hyphen icui18n icuuc jpeg m png sqlite3
 WANTLIB += webp xml2 xslt z
 
-MASTER_SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
+SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
 
 MODULES =		devel/cmake \
 			lang/python \

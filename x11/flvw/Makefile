@@ -11,7 +11,7 @@ HOMEPAGE=		http://flvw.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=flvw/}
+SITES=			${SITE_SOURCEFORGE:=flvw/}
 
 EXTRACT_SUFX=		.tgz
 

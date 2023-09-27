@@ -31,7 +31,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # wxWindows Library Licence (modified LGPL)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/wxWidgets/Phoenix/releases/download/wxPython-${V}/
+SITES=	https://github.com/wxWidgets/Phoenix/releases/download/wxPython-${V}/
 
 COMMON_WANTLIB += ${COMPILER_LIBCXX}
 COMMON_WANTLIB += m wx_baseu-3.2 wx_baseu_net-3.2 wx_gtk3u_core-3.2

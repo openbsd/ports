@@ -10,7 +10,7 @@ HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 WANTLIB +=	crypto ssl AddressView Addresses Pantomime
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
+SITES=		https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 LIB_DEPENDS=	x11/gnustep/addresses \

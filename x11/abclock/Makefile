@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.let.rug.nl/~kleiweg/abclock/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 WANTLIB=	X11 c
 

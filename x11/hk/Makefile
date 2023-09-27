@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 c
 
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 
 EXTRACT_SUFX =		.tgz
 

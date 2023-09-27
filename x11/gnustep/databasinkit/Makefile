@@ -6,7 +6,7 @@ DISTNAME =	DataBasinKit-${VERSION}
 SHARED_LIBS +=  DataBasinKit	0.2
 
 HOMEPAGE =	http://gap.nongnu.org/databasin/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 # LGPLv2 or later
 

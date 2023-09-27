@@ -23,7 +23,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${V}/
+SITES=		https://github.com/ice-wm/icewm/releases/download/${V}/
 
 BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/asciidoc

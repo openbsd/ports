@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	X11 c
 
-MASTER_SITES =	https://dl.suckless.org/tools/
+SITES =		https://dl.suckless.org/tools/
 
 
 NO_TEST =	Yes

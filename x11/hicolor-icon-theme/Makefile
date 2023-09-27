@@ -10,7 +10,7 @@ CATEGORIES=		x11
 
 HOMEPAGE=		http://www.freedesktop.org/Standards/icon-theme-spec
 
-MASTER_SITES=		https://icon-theme.freedesktop.org/releases/
+SITES=			https://icon-theme.freedesktop.org/releases/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext Xft Xinerama Xrender
 WANTLIB += c crypto expat fontconfig freetype m ssl xcb z
 
-MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
+SITES =		http://www.boomerangsworld.de/cms/worker/downloads/
 
 # C++14
 COMPILER =	base-clang ports-clang ports-gcc

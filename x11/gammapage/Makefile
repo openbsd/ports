@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.pcbypaul.com/software/GAMMApage.html
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.pcbypaul.com/software/dl/
+SITES=		http://www.pcbypaul.com/software/dl/
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}

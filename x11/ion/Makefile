@@ -8,7 +8,7 @@ REVISION=	5
 FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
-MASTER_SITES=	http://tuomov.iki.fi/software/dl/
+SITES=		http://tuomov.iki.fi/software/dl/
 
 # LGPL
 PERMIT_PACKAGE=	Yes

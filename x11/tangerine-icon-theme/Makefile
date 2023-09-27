@@ -6,7 +6,7 @@ PKGNAME=		${DISTNAME:S/_/-/}
 CATEGORIES=		x11
 REVISION=		2
 
-MASTER_SITES=		http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/
+SITES=	http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/
 
 # Creative Commons Attribution-ShareAlike 2.5
 PERMIT_PACKAGE=	Yes

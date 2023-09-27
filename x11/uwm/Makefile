@@ -9,7 +9,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm c iconv intl jpeg
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=udeproject/}
+SITES =		${SITE_SOURCEFORGE:=udeproject/}
 
 BUILD_DEPENDS =	devel/bison
 

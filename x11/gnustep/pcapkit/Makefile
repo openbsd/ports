@@ -9,7 +9,7 @@ CATEGORIES =	net
 SHARED_LIBS =	PcapKit 0.0
 
 HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf
-MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
+SITES =		http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 WANTLIB =	pthread pcap

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB +=	Qt6Network Qt6PrintSupport Qt6Sql Qt6Widgets c m
 
-MASTER_SITES =	https://gitlab.com/tipp10/tipp10/-/archive/v${V}/
+SITES =		https://gitlab.com/tipp10/tipp10/-/archive/v${V}/
 
 MODULES =	devel/cmake x11/qt6
 

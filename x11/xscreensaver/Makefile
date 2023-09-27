@@ -24,7 +24,7 @@ WANTLIB += gio-2.0 gle glib-2.0 gmodule-2.0 gobject-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pthread util xml2
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 COMPILER=	base-clang ports-gcc
 

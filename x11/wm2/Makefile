@@ -13,7 +13,7 @@ WANTLIB=		X11 Xext Xau Xdmcp c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://www.all-day-breakfast.com/wm2/
+SITES=			http://www.all-day-breakfast.com/wm2/
 
 FAKE_FLAGS=		PREFIX="${PREFIX}"
 

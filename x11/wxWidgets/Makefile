@@ -13,7 +13,7 @@ REVISION-media =	1
 REVISION-webview =	1
 
 CATEGORIES =		x11
-MASTER_SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
+SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>

@@ -10,7 +10,7 @@ CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://xawm.sourceforge.net/
 
-MASTER_SITES=		http://siag.nu/pub/widgets/
+SITES=			http://siag.nu/pub/widgets/
 
 # X11/badly worded
 PERMIT_PACKAGE=	Yes

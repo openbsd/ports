@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		Xau Xdmcp xcb
 
-MASTER_SITES =		https://xcb.freedesktop.org/dist/
+SITES =			https://xcb.freedesktop.org/dist/
 
 MODULES=                lang/python
 MODPY_BUILDDEP =        Yes

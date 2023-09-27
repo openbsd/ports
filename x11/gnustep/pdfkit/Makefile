@@ -5,7 +5,7 @@ REVISION =	0
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK	= Yes

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	X11 c
 
 # releases used to be at but currently only on github
-#MASTER_SITES=  https://www.vergenet.net/~conrad/software/xsel/download/
+#SITES=  	https://www.vergenet.net/~conrad/software/xsel/download/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=autoreconf

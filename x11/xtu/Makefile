@@ -6,7 +6,7 @@ CATEGORIES=	x11 sysutils
 # BSD license
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 WANTLIB=	X11 Xext Xpm c
 CONFIGURE_STYLE=imake

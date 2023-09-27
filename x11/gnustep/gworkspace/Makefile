@@ -11,7 +11,7 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 
 HOMEPAGE=	http://www.gnustep.org/experience/GWorkspace.html
 
-MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
+SITES=		${SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 WANTLIB +=	sqlite3 PDFKit PreferencePanes

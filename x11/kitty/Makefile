@@ -21,7 +21,7 @@ WANTLIB += GL X11 X11-xcb Xcursor Xinerama Xrandr c canberra crypto dbus-1
 WANTLIB += fontconfig freetype harfbuzz intl lcms2 m png pthread rsync
 WANTLIB += util xcb xkbcommon xkbcommon-x11 z ${MODPY_WANTLIB}
 
-MASTER_SITES =		https://github.com/kovidgoyal/kitty/releases/download/v${MODPY_EGG_VERSION}/
+SITES =			https://github.com/kovidgoyal/kitty/releases/download/v${MODPY_EGG_VERSION}/
 EXTRACT_SUFX =		.tar.xz
 
 # C11

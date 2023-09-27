@@ -11,7 +11,7 @@ MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 # ISC
 PERMIT_PACKAGE =Yes
 
-MASTER_SITES =	${HOMEPAGE:=uv/}
+SITES =		${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	x11/dbus-tcl

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xmu Xt \
 			xcb
 
-MASTER_SITES=		http://siag.nu/pub/neXtaw/
+SITES=			http://siag.nu/pub/neXtaw/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include"

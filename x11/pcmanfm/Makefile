@@ -17,7 +17,7 @@ WANTLIB += X11 atk-1.0 c cairo cairo-gobject fm fm-gtk3 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0 pthread
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
+SITES=			${SITE_SOURCEFORGE:=pcmanfm/}
 
 MODULES=		textproc/intltool
 

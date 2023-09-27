@@ -7,7 +7,7 @@ REVISION =		6
 CATEGORIES =		x11
 
 HOMEPAGE =		http://tiheum.deviantart.com/art/Faenza-Icons-173323228
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=faenza-icon-theme/}
+SITES =			${SITE_GOOGLECODE:=faenza-icon-theme/}
 EXTRACT_SUFX =		.zip
 
 # GPLv3

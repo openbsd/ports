@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c
 
-MASTER_SITES=		http://dl.suckless.org/tools/
+SITES=			http://dl.suckless.org/tools/
 
 RUN_DEPENDS=		fonts/terminus-font
 

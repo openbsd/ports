@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-MASTER_SITES=		${HOMEPAGE}/download/
+SITES=			${HOMEPAGE}/download/
 EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson

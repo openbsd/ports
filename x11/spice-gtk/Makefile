@@ -20,7 +20,7 @@ WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0
 WANTLIB += lz4 m opus pixman-1 sasl2 ssl z
 
-MASTER_SITES=		https://gitlab.freedesktop.org/spice/spice-gtk/uploads/e41347144c5d2f9947e215c894969f0e/
+SITES=			https://gitlab.freedesktop.org/spice/spice-gtk/uploads/e41347144c5d2f9947e215c894969f0e/
 
 COMPILER=		base-clang ports-gcc ports-clang
 COMPILER_LANGS=		c

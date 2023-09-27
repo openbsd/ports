@@ -10,7 +10,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		x11/tk
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkcon/}
+SITES =			${SITE_SOURCEFORGE:=tkcon/}
 BUILD_DEPENDS =		devel/tcllib>=1.11.1
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 NO_BUILD =		Yes

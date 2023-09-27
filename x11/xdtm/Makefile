@@ -4,7 +4,7 @@ DISTNAME=		xdtm-2.5.8
 REVISION=		2
 CATEGORIES=		x11
 
-MASTER_SITES=		${MASTER_SITE_XCONTRIB:=applications/}
+SITES=			${SITE_XCONTRIB:=applications/}
 
 # BSD-like, badly worded
 PERMIT_PACKAGE=	Yes

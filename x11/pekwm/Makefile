@@ -19,7 +19,7 @@ WANTLIB += pangoxft-1.0 png
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://github.com/pekdon/pekwm/releases/download/release-${V}/
+SITES=		https://github.com/pekdon/pekwm/releases/download/release-${V}/
 LIB_DEPENDS=	devel/pango \
 		graphics/jpeg \
 		graphics/png

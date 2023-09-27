@@ -5,7 +5,7 @@ EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=X11/screensavers/}
+SITES=			${SITE_SUNSITE:=X11/screensavers/}
 
 HOMEPAGE=		http://freshmeat.net/projects/xautolock/
 

@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MASTER_SITES =		https://i3wm.org/i3lock/
+SITES =			https://i3wm.org/i3lock/
 EXTRACT_SUFX =		.tar.xz
 
 WANTLIB += c cairo ev m xcb xcb-image xcb-randr xcb-xrm

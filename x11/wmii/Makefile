@@ -9,7 +9,7 @@ HOMEPAGE=	http://wmii.suckless.org/
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://dl.suckless.org/wmii/
+SITES=		http://dl.suckless.org/wmii/
 
 WANTLIB += X11 Xext c iconv m
 

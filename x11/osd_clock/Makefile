@@ -3,7 +3,7 @@ DISTNAME=	osd_clock-0.5
 REVISION=	3
 
 CATEGORIES=	x11
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

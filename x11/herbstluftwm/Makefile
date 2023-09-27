@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xfixes Xft Xinerama Xrandr
 WANTLIB += Xrender c freetype m
 
-MASTER_SITES =		https://herbstluftwm.org/tarballs/
+SITES =			https://herbstluftwm.org/tarballs/
 
 # c++11
 COMPILER =		base-clang ports-gcc

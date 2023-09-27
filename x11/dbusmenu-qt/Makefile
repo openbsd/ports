@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += m
 
-MASTER_SITES =	http://archive.ubuntu.com/ubuntu/pool/main/libd/libdbusmenu-qt/
+SITES =		http://archive.ubuntu.com/ubuntu/pool/main/libd/libdbusmenu-qt/
 EXTRACT_SUFX =	.orig.tar.gz
 
 MODULES =	devel/cmake \

@@ -9,7 +9,7 @@ HOMEPAGE=	http://obmenu.sourceforge.net/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=obmenu/}
+SITES=		${SITE_SOURCEFORGE:=obmenu/}
 
 NO_TEST=	Yes
 

@@ -10,7 +10,7 @@ HOMEPAGE =		https://icculus.org/openbox/2/docker/
 #GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://icculus.org/openbox/2/docker/
+SITES =			https://icculus.org/openbox/2/docker/
 
 WANTLIB =		X11 c glib-2.0 intl
 

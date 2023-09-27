@@ -6,7 +6,7 @@ DISTNAME =	Clipboard-0.13
 REVISION =	2
 CATEGORIES =	x11
 
-MASTER_SITES =	http://search.cpan.org/CPAN/authors/id/K/KI/KING/
+SITES =		http://search.cpan.org/CPAN/authors/id/K/KI/KING/
 
 # Perl
 PERMIT_PACKAGE =	Yes

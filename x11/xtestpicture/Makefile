@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c 
 
-MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
+SITES=		ftp://ftp.interface-business.de/pub/outgoing/
 
 CONFIGURE_STYLE=imake
 

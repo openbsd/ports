@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext c jpeg m png
 
-MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
+SITES =		http://www.boomerangsworld.de/cms/worker/downloads/
 
 LIB_DEPENDS =	graphics/jpeg \
 		graphics/png

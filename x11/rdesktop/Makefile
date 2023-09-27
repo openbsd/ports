@@ -5,7 +5,7 @@ DISTNAME=		rdesktop-$V
 
 CATEGORIES=		x11 net
 
-MASTER_SITES=		https://github.com/rdesktop/rdesktop/releases/download/v$V/
+SITES=		https://github.com/rdesktop/rdesktop/releases/download/v$V/
 
 HOMEPAGE=		https://www.rdesktop.org/
 

@@ -15,7 +15,7 @@ WANTLIB += c cairo curl fontconfig freetype intl m mpdclient
 WANTLIB += pulse xcb xcb-composite xcb-cursor xcb-ewmh xcb-icccm
 WANTLIB += xcb-image xcb-randr xcb-util xcb-xkb xcb-xrm z jsoncpp uv
 
-MASTER_SITES =	https://github.com/polybar/polybar/releases/download/$V/
+SITES =		https://github.com/polybar/polybar/releases/download/$V/
 EXTRACT_SUFX =	.tar.gz
 
 # C++14

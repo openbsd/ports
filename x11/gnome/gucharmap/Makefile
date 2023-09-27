@@ -4,7 +4,7 @@ GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		15.1.0
 
 # override gnome MODULE
-MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
+SITES =			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.gz
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0

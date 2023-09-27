@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext ICE Xt Xtst Xmu c m SM Xpm Xaw
 
-MASTER_SITES=	http://www.handhelds.org/download/projects/xscribble/
+SITES=		http://www.handhelds.org/download/projects/xscribble/
 
 
 NO_TEST=	Yes

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c dockapp m
 
 # dockapps.net only provides an old tarball without libdockapp support.
-MASTER_SITES=		https://distfiles.gentoo.org/distfiles/
+SITES=			https://distfiles.gentoo.org/distfiles/
 
 LIB_DEPENDS=		devel/libdockapp>=0.7.3
 

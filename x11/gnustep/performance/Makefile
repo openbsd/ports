@@ -8,7 +8,7 @@ CATEGORIES =	devel
 SHARED_LIBS +=  Performance               0.2
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Performance
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 WANTLIB =		pthread

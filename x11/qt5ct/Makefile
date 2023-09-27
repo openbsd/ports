@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Widgets c m
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qt5ct/}
+SITES =		${SITE_SOURCEFORGE:=qt5ct/}
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/qmake \

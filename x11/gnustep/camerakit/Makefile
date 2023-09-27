@@ -10,7 +10,7 @@ CATEGORIES =	graphics
 SHARED_LIBS =	CameraKit 0.0
 
 HOMEPAGE =	http://home.gna.org/gsimageapps/
-MASTER_SITES =	http://download.gna.org/gsimageapps/
+SITES =		http://download.gna.org/gsimageapps/
 
 MODULES =	x11/gnustep
 WANTLIB =	pthread gphoto2

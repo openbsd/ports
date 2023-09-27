@@ -11,7 +11,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += X11 Xext Xft c
 
-MASTER_SITES =	http://nickgravgaard.com/windowlab/
+SITES =		http://nickgravgaard.com/windowlab/
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" \

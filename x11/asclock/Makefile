@@ -4,7 +4,7 @@ DISTNAME=	asclock-2.0.12
 REVISION=	2
 CATEGORIES=	x11
 
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP:=apps/asclock/} \
+SITES=		${SITE_AFTERSTEP:=apps/asclock/} \
 		http://www.tigr.net/afterstep/download/asclock/
 
 # GPL

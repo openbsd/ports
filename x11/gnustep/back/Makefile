@@ -8,8 +8,8 @@ DISTNAME=       gnustep-back-${GH_TAGNAME}
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/
-#MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
-MASTER_SITES=   https://github.com/gnustep/libs-back/releases/download/back-0_30_0/
+#SITES=	${SITE_GNUSTEP:=core/}
+SITES=  https://github.com/gnustep/libs-back/releases/download/back-0_30_0/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_BACK=	No

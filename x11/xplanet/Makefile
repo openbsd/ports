@@ -4,7 +4,7 @@ DISTNAME=	xplanet-1.3.1
 CATEGORIES=	astro geo x11
 
 HOMEPAGE=	http://xplanet.sourceforge.net/
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xplanet/}
+SITES=		${SITE_SOURCEFORGE:=xplanet/}
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -8,7 +8,7 @@ REVISION=		1
 SHARED_LIBS +=  xklavier             17.1     # .20.0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/LibXklavier
-MASTER_SITES=	https://people.freedesktop.org/~svu/
+SITES=			https://people.freedesktop.org/~svu/
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes

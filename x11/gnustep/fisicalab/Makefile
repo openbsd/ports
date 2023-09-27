@@ -6,7 +6,7 @@ DISTNAME =	fisicalab-${VERSION}-1
 PKGNAME =	fisicalab-${VERSION}.1
 
 HOMEPAGE=	http://www.nongnu.org/fisicalab/
-MASTER_SITES=	${MASTER_SITE_GNU:=fisicalab/}
+SITES=		${SITE_GNU:=fisicalab/}
 
 #GPLv3
 

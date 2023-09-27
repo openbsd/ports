@@ -19,7 +19,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread xcb xcb-render xcb-shm z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo jpeg
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+SITES =		http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES =	x11/gnome
 

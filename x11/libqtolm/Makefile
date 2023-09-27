@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core m olm
 
-MASTER_SITES =	https://gitlab.com/b0/libqtolm/-/archive/${V}/
+SITES =		https://gitlab.com/b0/libqtolm/-/archive/${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5

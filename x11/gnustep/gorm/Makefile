@@ -5,8 +5,8 @@ GH_ACCOUNT=     gnustep
 GH_PROJECT=     apps-gorm
 DISTNAME=       gorm-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
-#MASTER_SITES=	${MASTER_SITE_GNUSTEP}dev-apps/
-MASTER_SITES=	https://github.com/gnustep/apps-gorm/releases/download/gorm-1_3_1/
+#SITES=	${SITE_GNUSTEP}dev-apps/
+SITES=	https://github.com/gnustep/apps-gorm/releases/download/gorm-1_3_1/
 
 SHARED_LIBS=	GormCore		0.2 \
 		GormPrefs		1.0 \

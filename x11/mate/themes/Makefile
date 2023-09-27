@@ -3,7 +3,7 @@ COMMENT=		standard MATE themes
 MATE_PROJECT=		mate-themes
 MATE_VERSION=		3.22.24
 
-MASTER_SITES=		http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+SITES=			http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

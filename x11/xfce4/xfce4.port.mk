@@ -34,8 +34,8 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+4,-guic
 .if defined(XFCE_PLUGIN)
 HOMEPAGE?=	https://docs.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/start
 
-MASTER_SITES?=	https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://gitlab.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/-/archive/${XFCE_COMMIT}/
+SITES?=		https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
+SITES_GIT?=	https://gitlab.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 DISTNAME_GIT?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_COMMIT}
 PKGNAME?=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
@@ -47,20 +47,20 @@ MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 HOMEPAGE?=	https://docs.xfce.org/apps/${XFCE_GOODIE}/start
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-MASTER_SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://gitlab.xfce.org/apps/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
+SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
+SITES_GIT?=	https://gitlab.xfce.org/apps/${XFCE_GOODIE:L}/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_GOODIE}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 .elif defined(XFCE_ARTWORK)
 HOMEPAGE?=	https://www.xfce.org/projects/
 
-MASTER_SITES?=	https://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
+SITES?=	https://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
 DISTNAME?=	${XFCE_ARTWORK}-${XFCE_VERSION}
 .elif defined(THUNAR_PLUGIN)
 HOMEPAGE?=	https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN:S/thunar-//:S/-plugin//}
 
-MASTER_SITES?=	https://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
+SITES?=	https://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
 DISTNAME?=	${THUNAR_PLUGIN}-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 MODXFCE_PURGE_LA ?=	lib/thunarx-2
@@ -68,8 +68,8 @@ MODXFCE_PURGE_LA ?=	lib/thunarx-2
 HOMEPAGE?=	https://docs.xfce.org/xfce/${XFCE_PROJECT}/start
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-MASTER_SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
-MASTER_SITES_GIT?=	https://gitlab.xfce.org/xfce/${XFCE_PROJECT:L}/-/archive/${XFCE_COMMIT}/
+SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
+SITES_GIT?=	https://gitlab.xfce.org/xfce/${XFCE_PROJECT:L}/-/archive/${XFCE_COMMIT}/
 DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 DISTNAME_GIT?=	${XFCE_PROJECT}-${XFCE_COMMIT}
 PKGNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
@@ -78,7 +78,7 @@ PORTROACH+=	limitw:1,even
 
 .if defined(XFCE_COMMIT)
 DISTNAME =	${DISTNAME_GIT}
-MASTER_SITES =	${MASTER_SITES_GIT}
+SITES =	${SITES_GIT}
 # makes sure some code is generated from .ui files
 CONFIGURE_ARGS +=	--enable-maintainer-mode
 AUTOMAKE_VERSION =	1.14

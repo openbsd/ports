@@ -16,7 +16,7 @@ WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz intl m obrender obt
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 rsvg-2
 WANTLIB += startup-notification-1 xml2 z
 
-MASTER_SITES=	http://openbox.org/dist/obconf/
+SITES=		http://openbox.org/dist/obconf/
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		x11/gtk+2 \

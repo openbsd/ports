@@ -9,7 +9,7 @@ HOMEPAGE=		http://tango.freedesktop.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/releases/
+SITES=			${HOMEPAGE}/releases/
 
 RUN_DEPENDS=		textproc/p5-XML-Simple
 BUILD_DEPENDS=		${RUN_DEPENDS}

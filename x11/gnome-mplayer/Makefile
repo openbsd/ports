@@ -9,7 +9,7 @@ CATEGORIES =		x11 multimedia
 
 HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer/
 
-MASTER_SITES =		https://gnome-mplayer.googlecode.com/svn/packages/
+SITES =			https://gnome-mplayer.googlecode.com/svn/packages/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

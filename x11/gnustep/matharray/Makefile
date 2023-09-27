@@ -8,7 +8,7 @@ CATEGORIES =	math
 SHARED_LIBS +=  MathArray	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/MathArray
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=contrib/}
+SITES =		${SITE_GNUSTEP:=contrib/}
 
 WANTLIB += 		pthread
 MODULES =		x11/gnustep

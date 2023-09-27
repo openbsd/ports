@@ -3,7 +3,7 @@ COMMENT=	english-russian keyboard switcher for X11
 DISTNAME=	xruskb-1.15.4
 REVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://lav.yar.ru/download/xruskb/
+SITES=		http://lav.yar.ru/download/xruskb/
 EXTRACT_SUFX=	.tar.bz2
 
 # GPLv2

@@ -5,7 +5,7 @@ DISTNAME =	Paje-1.98
 SHARED_LIBS +=	General	0.0
 
 HOMEPAGE =	http://paje.sourceforge.net/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=paje/}
+SITES =		${SITE_SOURCEFORGE:=paje/}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

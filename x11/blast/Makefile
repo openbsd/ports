@@ -4,7 +4,7 @@ DISTNAME=	blast-1.0
 CATEGORIES=	x11
 DISTFILES=	${DISTNAME}-src-11.00.tar.gz
 
-MASTER_SITES=	http://hpux.connect.org.uk/ftp/hpux/X11/Demos/blast-1.0/
+SITES=		http://hpux.connect.org.uk/ftp/hpux/X11/Demos/blast-1.0/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -6,7 +6,7 @@ PKGNAME	=	xmem-${V}
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://git.sdf.org/bch/xmem
-MASTER_SITES =	${HOMEPAGE}/archive/
+SITES =		${HOMEPAGE}/archive/
 
 MAINTAINER =	Michael <michi+openbsd@dataswamp.org>
 

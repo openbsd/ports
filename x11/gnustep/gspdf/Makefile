@@ -4,7 +4,7 @@ REVISION =	13
 DISTNAME=	GSPdf-0.5
 
 HOMEPAGE=	http://gap.nongnu.org/gspdf/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
+SITES=		${SITE_SAVANNAH:=gap/}
 
 MODULES=	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

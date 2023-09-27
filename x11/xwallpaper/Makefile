@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 Xpm c jpeg pixman-1 png xcb xcb-image xcb-randr
 WANTLIB += xcb-shm xcb-util z
 
-MASTER_SITES =	https://github.com/stoeckmann/xwallpaper/releases/download/v${V}/
+SITES =	https://github.com/stoeckmann/xwallpaper/releases/download/v${V}/
 
 DISTFILES =	${DISTNAME}_1{${DISTNAME}}${EXTRACT_SUFX}
 EXTRACT_SUFX =	.tar.xz

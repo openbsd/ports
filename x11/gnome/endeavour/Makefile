@@ -5,7 +5,7 @@ GNOME_VERSION=		43.0
 REVISION=		0
 
 # override gnome MODULE
-MASTER_SITES=		https://gitlab.gnome.org/World/Endeavour/-/archive/${GNOME_VERSION}/
+SITES=			https://gitlab.gnome.org/World/Endeavour/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX=		.tar.gz
 WRKDIST=		${WRKDIR}/Endeavour-${GNOME_VERSION}-92706b42784e553d9f841117111a5e14bd201e1c
 

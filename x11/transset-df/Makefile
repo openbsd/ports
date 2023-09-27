@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xrender c m \
 			xcb
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 NO_TEST=		Yes
 ALL_TARGET=

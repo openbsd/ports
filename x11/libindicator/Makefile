@@ -21,7 +21,7 @@ WANTLIB += xcb-shm z
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =  https://launchpad.net/libindicator/${V:R}/${V}/+download/
+SITES =  	https://launchpad.net/libindicator/${V:R}/${V}/+download/
 
 LIB_DEPENDS =	x11/gtk+3
 

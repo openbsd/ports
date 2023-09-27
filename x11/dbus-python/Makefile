@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += dbus-1 glib-2.0
 
-MASTER_SITES =		${HOMEPAGE}releases/dbus-python/
+SITES =			${HOMEPAGE}releases/dbus-python/
 
 MODULES =		devel/meson \
 			lang/python

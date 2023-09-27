@@ -27,7 +27,7 @@ HOMEPAGE ?=		https://www.qt.io/
 # A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
+SITES ?=		https://download.qt.io/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${VERSION:R}/${VERSION}/submodules/
 
 DIST_SUBDIR ?=		qt

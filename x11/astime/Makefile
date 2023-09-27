@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.tigr.net/afterstep/view.php?applet=astime/data
 PERMIT_PACKAGE=	Yes
 WANTLIB=		ICE SM X11 Xext Xpm c m
 
-MASTER_SITES=		http://www.tigr.net/afterstep/download/astime/
+SITES=			http://www.tigr.net/afterstep/download/astime/
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu

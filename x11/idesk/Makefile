@@ -4,7 +4,7 @@ DISTNAME=		idesk-0.7.5
 REVISION =		8
 CATEGORIES=		x11
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=idesk/}
+SITES=			${SITE_SOURCEFORGE:=idesk/}
 
 HOMEPAGE=		http://idesk.sourceforge.net/
 

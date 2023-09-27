@@ -20,7 +20,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z Xau Xdmcp execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/
+SITES =		https://launchpad.net/libdbusmenu/16.04/16.04.0/+download/
 
 CONFIGURE_STYLE = gnu
 

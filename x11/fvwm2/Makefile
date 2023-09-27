@@ -19,7 +19,7 @@ WANTLIB += c cairo curses fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv intl m png
 WANTLIB += readline rsvg-2
 
-MASTER_SITES=	https://github.com/fvwmorg/fvwm/releases/download/${VERSION}/
+SITES=		https://github.com/fvwmorg/fvwm/releases/download/${VERSION}/
 
 LIB_DEPENDS+=	graphics/png \
 		x11/gnome/librsvg

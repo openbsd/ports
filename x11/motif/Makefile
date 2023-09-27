@@ -10,7 +10,7 @@ SHARED_LIBS +=  Uil                  5.0      # 4.4
 CATEGORIES=	x11
 HOMEPAGE=	http://motif.ics.com/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif/}
+SITES=		${SITE_SOURCEFORGE:=motif/}
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

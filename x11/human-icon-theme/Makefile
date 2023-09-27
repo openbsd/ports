@@ -12,7 +12,7 @@ HOMEPAGE=		https://launchpad.net/human-icon-theme
 # Creative Commons Attribution-ShareAlike 2.5
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://launchpad.net/ubuntu/oneiric/+source/human-icon-theme/${V}/+files/
+SITES=		https://launchpad.net/ubuntu/oneiric/+source/human-icon-theme/${V}/+files/
 
 WRKDIST=	${WRKDIR}/human-icon-theme
 MODULES=	textproc/intltool

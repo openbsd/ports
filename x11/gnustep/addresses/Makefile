@@ -13,7 +13,7 @@ HOMEPAGE=	http://gap.nongnu.org/addresses/index.html
 WANTLIB =	Inspector
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
+SITES=		${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 LIB_DEPENDS +=	x11/gnustep/gworkspace

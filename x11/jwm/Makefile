@@ -15,7 +15,7 @@ WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangoft2-1.0 pangoxft-1.0
 WANTLIB += png rsvg-2
 
-MASTER_SITES=		https://github.com/joewing/jwm/releases/download/v${V}/
+SITES=			https://github.com/joewing/jwm/releases/download/v${V}/
 EXTRACT_SUFX=		.tar.xz
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

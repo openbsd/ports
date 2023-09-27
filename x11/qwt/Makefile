@@ -9,7 +9,7 @@ CATEGORIES =	x11
 
 HOMEPAGE =	http://qwt.sourceforge.net/
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qwt/}
+SITES =		${SITE_SOURCEFORGE:=qwt/}
 EXTRACT_SUFX =	.tar.bz2
 
 # Qwt License, Version 1.0

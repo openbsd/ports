@@ -8,7 +8,7 @@ CATEGORIES =	www
 SHARED_LIBS +=  WebServices	0.4
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServices
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+SITES =		${SITE_GNUSTEP:=libs/}
 
 WANTLIB += 		Performance pthread gnutls nettle
 

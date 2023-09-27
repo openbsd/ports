@@ -26,7 +26,7 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg
 WANTLIB += kvm m png pthread tiff xcb z lzma zstd
 
-MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
+SITES=			${SITE_WINDOWMAKER:=source/release/}
 
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes

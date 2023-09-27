@@ -6,7 +6,7 @@ REVISION=	6
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/terminal
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
+SITES=	${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 LIB_DEPENDS =	converters/libiconv

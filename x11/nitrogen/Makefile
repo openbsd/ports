@@ -17,7 +17,7 @@ WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 gtkmm-2.4 intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pthread sigc-2.0 z harfbuzz
 
-MASTER_SITES=		${HOMEPAGE}/files/
+SITES=			${HOMEPAGE}/files/
 
 COMPILER =		base-clang ports-clang
 CXXFLAGS +=		-std=c++11

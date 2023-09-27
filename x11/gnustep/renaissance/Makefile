@@ -9,7 +9,7 @@ SHARED_LIBS +=  Renaissance	0.0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://www.gnustep.it/Renaissance/
-MASTER_SITES =	${HOMEPAGE:=Download/}
+SITES =		${HOMEPAGE:=Download/}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

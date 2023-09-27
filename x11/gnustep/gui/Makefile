@@ -18,8 +18,8 @@ WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
 WANTLIB += flite_usenglish gif jpeg png sndfile sndio
 WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
-#MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
-MASTER_SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_30_0/
+#SITES=	${SITE_GNUSTEP:=core/}
+SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_30_0/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=No

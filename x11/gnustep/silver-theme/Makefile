@@ -6,7 +6,7 @@ DISTNAME =	Silver.theme-${V}
 PKGNAME =	gnustep-silver-theme-${V}
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Silver.theme
-MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
+SITES =		http://download.gna.org/gnustep-nonfsf/
 
 # GPLv3
 

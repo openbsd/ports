@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext Xss c
 
-MASTER_SITES=	http://fredrik.hubbe.net/x2vnc/
+SITES=		http://fredrik.hubbe.net/x2vnc/
 
 HOMEPAGE=	http://fredrik.hubbe.net/x2vnc.html
 

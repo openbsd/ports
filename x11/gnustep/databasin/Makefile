@@ -4,7 +4,7 @@ DISTNAME =	DataBasin-1.0
 REVISION =	4
 
 HOMEPAGE =	http://gap.nongnu.org/databasin/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 # GPLv2 or later
 

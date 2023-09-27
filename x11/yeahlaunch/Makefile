@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 c
 
-MASTER_SITES=	http://phrat.de/
+SITES=		http://phrat.de/
 
 NO_TEST=	Yes
 

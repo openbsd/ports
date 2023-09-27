@@ -12,7 +12,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 EXTRACT_SUFX=		.tar.xz
 
 # C11

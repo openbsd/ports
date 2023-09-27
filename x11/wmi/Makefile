@@ -11,7 +11,7 @@ WANTLIB += ICE SM X11 Xft c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://dl.suckless.org/misc/
+SITES=		https://dl.suckless.org/misc/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu

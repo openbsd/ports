@@ -28,7 +28,7 @@ WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
 WANTLIB += X11 c cdio exempi exslt iconv iso9660 m poppler poppler-qt5
 WANTLIB += tag xml2 xslt yaz z
 
-MASTER_SITES =	http://tellico-project.org/files/
+SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES +=	devel/kf5 \

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext c
 
-MASTER_SITES=		${HOMESITE}/data/
+SITES=			${HOMESITE}/data/
 
 CONFIGURE_STYLE=	imake
 NO_TEST=		Yes

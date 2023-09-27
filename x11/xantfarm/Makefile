@@ -7,7 +7,7 @@ CATEGORIES=	x11
 
 HOMEPAGE=	http://www.acme.com/software/xantfarm/
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 DISTFILES=	xantfarm_23oct1991.tar.gz
 
 # BSD-like, badly worded

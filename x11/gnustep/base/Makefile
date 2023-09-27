@@ -22,8 +22,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += iberty
 .endif
 
-#MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
-MASTER_SITES=	https://github.com/gnustep/libs-base/releases/download/base-1_29_0/
+#SITES=	${SITE_GNUSTEP:=core/}
+SITES=	https://github.com/gnustep/libs-base/releases/download/base-1_29_0/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No

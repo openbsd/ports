@@ -11,7 +11,7 @@ HOMEPAGE =	http://jimmac.musichall.cz/themes.php?skin=7
 # CC by-sa 3.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=	http://jimmac.musichall.cz/zip/
+SITES=		http://jimmac.musichall.cz/zip/
 DISTFILES =	${DISTNAME}.tar.bz2 \
 		vanilla-dmz-aa-${VERSION}.tar.bz2
 

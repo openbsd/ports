@@ -5,7 +5,7 @@ REVISION =	14
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.gnustep.it/nicola/Applications/Gomoku/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 MODULES =	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

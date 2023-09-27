@@ -7,7 +7,7 @@ REVISION=		4
 
 CATEGORIES=		x11
 
-MASTER_SITES=		https://download.tuxfamily.org/sawfish/ \
+SITES=			https://download.tuxfamily.org/sawfish/ \
 			https://download.tuxfamily.org/sawfish/Archive/
 EXTRACT_SUFX=		.tar.xz
 

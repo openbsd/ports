@@ -9,7 +9,7 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 # X11
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	${MASTER_SITE_XORG:=app/}
+SITES =		${SITE_XORG:=app/}
 
 WANTLIB =		c
 

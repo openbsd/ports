@@ -7,7 +7,7 @@ SHARED_LIBS +=  Xaw3d                12.0     # 8.0
 
 CATEGORIES=	x11
 
-MASTER_SITES=	https://xorg.freedesktop.org/archive/individual/lib/
+SITES=		https://xorg.freedesktop.org/archive/individual/lib/
 
 # X11/badly worded
 PERMIT_PACKAGE=	Yes

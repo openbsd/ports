@@ -7,7 +7,7 @@ REVISION=		1
 
 HOMEPAGE=		http://tnemeth.free.fr/projets/dockapps.html
 
-MASTER_SITES=		http://tnemeth.free.fr/projets/programmes/
+SITES=			http://tnemeth.free.fr/projets/programmes/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -9,7 +9,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://christian.amsuess.com/tools/arandr/files/
+SITES =			https://christian.amsuess.com/tools/arandr/files/
 
 MODULES =		lang/python
 

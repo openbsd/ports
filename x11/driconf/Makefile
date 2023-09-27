@@ -6,7 +6,7 @@ REVISION=		6
 CATEGORIES =		x11
 
 HOMEPAGE =		https://dri.freedesktop.org/wiki/DriConf
-MASTER_SITES =		https://people.freedesktop.org/~fxkuehl/driconf/ \
+SITES =			https://people.freedesktop.org/~fxkuehl/driconf/ \
 			https://distfiles.sigtrap.nl/
 
 # GPLv2

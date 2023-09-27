@@ -5,7 +5,7 @@ DISTNAME=	goggles-0.9.1
 REVISION=	6
 
 EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=gogglesmm/}
+SITES=		${SITE_GOOGLECODE:=gogglesmm/}
 HOMEPAGE=	http://www.fifthplanet.net/goggles.html
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

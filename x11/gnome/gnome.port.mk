@@ -9,10 +9,10 @@ VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
 # XXX add support for fetching DISTFILES from gitlab
 .    if ${GNOME_VERSION:C/^([0-9]+).*/\1/:M[4-9]?}
-MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
+SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
 .    else
 PORTROACH +=		limitw:1,even
-MASTER_SITES ?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 .    endif
 CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
@@ -20,7 +20,7 @@ DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
 VERSION=		${MATE_VERSION}
 HOMEPAGE ?=		http://mate-desktop.org/
 PORTROACH +=		limitw:1,even
-MASTER_SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 CATEGORIES +=		x11/mate
 .  endif
 .  if ${NO_BUILD:L} == "no"

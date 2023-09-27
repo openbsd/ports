@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/software/
+SITES=			${HOMEPAGE}/software/
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

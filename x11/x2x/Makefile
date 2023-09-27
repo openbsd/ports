@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xtst c
 
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
+SITES=		ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.digital.de/Digital/SRC/x2x/ \
 		ftp://ftp.europe.digital.com/pub/DEC/SRC/x2x/
 

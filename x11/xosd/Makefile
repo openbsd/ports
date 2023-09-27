@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xau Xdmcp Xext Xinerama c pthread
 WANTLIB += xcb
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libxosd/}
+SITES=			${SITE_SOURCEFORGE:=libxosd/}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-new-plugin \

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xau Xdmcp Xft Xrender expat z c m \
 			fontconfig freetype xcb
 
-MASTER_SITES=	http://onion.dynserv.net/~timo/files/
+SITES=		http://onion.dynserv.net/~timo/files/
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=simple

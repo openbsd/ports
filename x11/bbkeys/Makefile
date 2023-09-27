@@ -2,7 +2,7 @@ COMMENT=		X keygrabber for blackbox
 
 DISTNAME=		bbkeys-0.9.1
 CATEGORIES=		x11
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bbkeys/}
+SITES=			${SITE_SOURCEFORGE:=bbkeys/}
 REVISION=		0
 
 HOMEPAGE=		http://bbkeys.sourceforge.net/

@@ -7,7 +7,7 @@ CATEGORIES=	x11
 # BSD-like, badly worded
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}
+SITES=		${SITE_XCONTRIB:=utilities/}
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 

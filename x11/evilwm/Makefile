@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xext Xrandr c m
 
-MASTER_SITES=	https://www.6809.org.uk/evilwm/dl/
+SITES=		https://www.6809.org.uk/evilwm/dl/
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" \

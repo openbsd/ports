@@ -22,7 +22,7 @@ WANTLIB += z
 
 COMPILER =	base-clang ports-gcc
 
-MASTER_SITES =  https://launchpad.net/libappindicator/${V:R}/${V}/+download/
+SITES =  	https://launchpad.net/libappindicator/${V:R}/${V}/+download/
 
 LIB_DEPENDS =	x11/libdbusmenu \
 		x11/libindicator \

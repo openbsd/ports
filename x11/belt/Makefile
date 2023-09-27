@@ -4,7 +4,7 @@ REVISION=		3
 CATEGORIES=     	x11
 
 HOMEPAGE=		http://www.stacken.kth.se/~maxz/programming.html\#belt
-MASTER_SITES=		http://www.stacken.kth.se/~maxz/files/
+SITES=			http://www.stacken.kth.se/~maxz/files/
 
 DISTFILES=		${DISTNAME} menu.conf.EXAMPLE belticons.tar.gz
 DIST_SUBDIR=		belt

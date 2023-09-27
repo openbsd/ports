@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB=		X11 Xft Xinerama c fontconfig
 
-MASTER_SITES=		https://dl.suckless.org/tools/
+SITES=			https://dl.suckless.org/tools/
 
 RUN_DEPENDS=		fonts/terminus-font
 

@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} Imlib2 X11 c intl m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_GOOGLECODE:=wbar/}
+SITES =			${SITE_GOOGLECODE:=wbar/}
 
 MODULES =		textproc/intltool
 

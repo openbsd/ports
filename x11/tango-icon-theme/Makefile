@@ -5,7 +5,7 @@ REVISION=		13
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tango.freedesktop.org/
-MASTER_SITES=		${HOMEPAGE}/releases/
+SITES=			${HOMEPAGE}/releases/
 
 # Public Domain
 PERMIT_PACKAGE=	Yes

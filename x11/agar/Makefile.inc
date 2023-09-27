@@ -8,7 +8,7 @@ HOMEPAGE ?=		https://libagar.org/
 # BSD
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=		https://stable.hypertriton.com/agar/
+SITES ?=		https://stable.hypertriton.com/agar/
 
 CONFIGURE_STYLE ?=	simple
 

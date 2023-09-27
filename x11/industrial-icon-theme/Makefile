@@ -5,7 +5,7 @@ REVISION=		10
 
 CATEGORIES=		x11
 
-MASTER_SITES=		http://forgeftp.novell.com/opensuse-art/openSUSE11/icons/
+SITES=		http://forgeftp.novell.com/opensuse-art/openSUSE11/icons/
 
 # CC-BY-SA 3.0
 PERMIT_PACKAGE=	Yes

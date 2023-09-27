@@ -5,7 +5,7 @@ PKGNAME=	xcolors-1.3
 REVISION=	3
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
+SITES=		ftp://ftp.tut.ac.jp/X11/X11R6/contrib/programs/ \
 		ftp://ftp.weird.com/pub/mirror/
 
 # License: BSD

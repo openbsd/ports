@@ -10,7 +10,7 @@ HOMEPAGE=	https://savannah.nongnu.org/projects/gnustep-nonfsf/
 
 WANTLIB=	ssl
 
-MASTER_SITES=	https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
+SITES=		https://download.savannah.nongnu.org/releases/gnustep-nonfsf/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes

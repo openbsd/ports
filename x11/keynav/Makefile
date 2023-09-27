@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.semicomplete.com/projects/keynav/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=semicomplete/}
+SITES=		${SITE_GOOGLECODE:=semicomplete/}
 
 WANTLIB += X11 Xext Xinerama c cairo glib-2.0 intl xdo
 

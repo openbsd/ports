@@ -5,7 +5,7 @@ PKGNAME=	xtacy-1.14
 REVISION=	4
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www.gweep.net/~jer/
+SITES=		http://www.gweep.net/~jer/
 
 HOMEPAGE=	http://sidehack.gweep.net/~jer/xtacy.html
 

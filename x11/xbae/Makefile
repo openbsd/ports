@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xpm Xrender Xt expat fontconfig
 WANTLIB += freetype iconv jpeg m png xcb z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xbae/}
+SITES=		${SITE_SOURCEFORGE:=xbae/}
 
 LIB_DEPENDS+=	converters/libiconv \
 		x11/motif

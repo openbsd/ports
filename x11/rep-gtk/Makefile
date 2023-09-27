@@ -18,7 +18,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread xcb xcb-render xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=		https://download.tuxfamily.org/librep/rep-gtk/
+SITES=			https://download.tuxfamily.org/librep/rep-gtk/
 EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

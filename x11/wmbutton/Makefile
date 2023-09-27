@@ -11,7 +11,7 @@ HOMEPAGE=		http://greek0.net/~greek0/wmbutton/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 Xext Xpm c
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 NO_TEST=		Yes
 

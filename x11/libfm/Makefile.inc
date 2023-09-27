@@ -19,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pcmanfm/}
+SITES=			${SITE_SOURCEFORGE:=pcmanfm/}
 
 MODULES +=		textproc/intltool
 

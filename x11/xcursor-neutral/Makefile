@@ -7,7 +7,7 @@ REVISION =		0
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://gnome-look.org/CONTENT/content-files/ \
+SITES =			http://gnome-look.org/CONTENT/content-files/ \
 			http://xfce-look.org/CONTENT/content-files/ \
 			http://kde-look.org/CONTENT/content-files/
 

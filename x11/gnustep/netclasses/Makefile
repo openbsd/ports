@@ -9,7 +9,7 @@ CATEGORIES =	net
 SHARED_LIBS +=  netclasses	0.0
 
 HOMEPAGE =	http://gap.nongnu.org/talksoup/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes

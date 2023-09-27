@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 intl
 WANTLIB += json-glib-1.0 pango-1.0 pthread secret-1 sodium spice-client-glib-2.0
 WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vncserver vte-2.91 winpr2
 
-MASTER_SITES=		https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
+SITES=			https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
 
 MODULES=		devel/cmake \
 			lang/python

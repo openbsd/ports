@@ -7,7 +7,7 @@ CATEGORIES=	devel
 SHARED_LIBS =	gnustep-corebase 0.0
 
 HOMEPAGE =	http://www.gnustep.org/
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =	x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes

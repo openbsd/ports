@@ -11,7 +11,7 @@ HOMEPAGE=	http://parcellite.sourceforge.net/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=parcellite/}
+SITES=		${SITE_SOURCEFORGE:=parcellite/}
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0

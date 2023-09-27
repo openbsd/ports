@@ -5,7 +5,7 @@ CATEGORIES=		x11 security
 REVISION=		0
 
 HOMEPAGE=		http://cern.ch/mxconns/
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 EXTRACT_SUFX=		.tgz
 
 # Restrictive

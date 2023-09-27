@@ -6,7 +6,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c
 
 COMMENT=	launch commands with your keyboard
-MASTER_SITES=	http://www.update.uu.se/~zrajm/programs/ratmen/
+SITES=		http://www.update.uu.se/~zrajm/programs/ratmen/
 
 NO_TEST=	Yes
 

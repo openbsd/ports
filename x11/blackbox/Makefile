@@ -6,7 +6,7 @@ CATEGORIES=		x11
 
 HOMEPAGE=		http://blackboxwm.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=blackboxwm/}
+SITES=			${SITE_SOURCEFORGE:=blackboxwm/}
 
 # BSD
 PERMIT_PACKAGE=	Yes

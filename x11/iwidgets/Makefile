@@ -14,7 +14,7 @@ HOMEPAGE=	http://incrtcl.sourceforge.net/iwidgets/
 # BSD style
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
+SITES=		${SITE_SOURCEFORGE:=incrtcl/}
 
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}

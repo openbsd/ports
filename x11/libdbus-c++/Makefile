@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} c dbus-1 expat glib-2.0 iconv \
 			intl m pcre2-8 execinfo
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dbus-cplusplus/}
+SITES =			${SITE_SOURCEFORGE:=dbus-cplusplus/}
 
 LIB_DEPENDS =		devel/glib2 \
 			x11/dbus

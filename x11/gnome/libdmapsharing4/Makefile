@@ -5,7 +5,7 @@ GNOME_VERSION=		3.9.13
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
 
 # override gnome MODULE
-MASTER_SITES=		https://www.flyn.org/projects/libdmapsharing/
+SITES=			https://www.flyn.org/projects/libdmapsharing/
 EXTRACT_SUFX=		.tar.gz
 
 SHARED_LIBS +=	dmapsharing-4.0           0.0 # 12.12

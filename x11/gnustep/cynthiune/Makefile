@@ -5,7 +5,7 @@ REVISION =	16
 CATEGORIES +=	audio
 
 HOMEPAGE =	http://gap.nongnu.org/cynthiune/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 SHARED_LIBS +=	Cynthiune	0.0
 

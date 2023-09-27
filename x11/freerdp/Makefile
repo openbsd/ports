@@ -9,12 +9,12 @@ SHARED_LIBS +=  winpr-tools2              1.0
 SHARED_LIBS +=  winpr2                    2.1
 
 HOMEPAGE =		https://www.freerdp.com/
-MASTER_SITES =		https://pub.freerdp.com/releases/
+SITES =			https://pub.freerdp.com/releases/
 
 # add sndio patchset, not yet in stable branch
 # mirrored from https://github.com/FreeRDP/FreeRDP/commit/b3a2042103a192d9e4482691ce9e7d73f9475b09.patch
 # (github patch files aren't stable)
-MASTER_SITES.sndio =	https://spacehopper.org/mirrors/
+SITES.sndio =		https://spacehopper.org/mirrors/
 PATCHFILES.sndio =	freerdp-sndio-upd2.patch
 PATCH_DIST_STRIP =	-p1
 

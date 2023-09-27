@@ -6,7 +6,7 @@ REVISION=	12
 CATEGORIES =	devel x11
 
 HOMEPAGE =	https://podbrowser.googlecode.com/
-MASTER_SITES =	http://jodrell.net/files/unsupported/podbrowser/
+SITES =		http://jodrell.net/files/unsupported/podbrowser/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

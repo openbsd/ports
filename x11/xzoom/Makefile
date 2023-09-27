@@ -3,7 +3,7 @@ COMMENT=	magnify, rotate, mirror the image on the X11 screen
 DISTNAME=	xzoom-0.4
 CATEGORIES=	x11
 
-MASTER_SITES=	http://www.linklevel.net/distfiles/
+SITES=		http://www.linklevel.net/distfiles/
 
 # custom
 PERMIT_PACKAGE=	Yes

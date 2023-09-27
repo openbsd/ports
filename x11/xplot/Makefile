@@ -12,7 +12,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE=	Yes
 WANTLIB=		X11 c m
 
-MASTER_SITES=	${HOMEPAGE}xplot/
+SITES=		${HOMEPAGE}xplot/
 
 CONFIGURE_STYLE=gnu dest
 

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # dlopen()'d
 WANTLIB =		X11 Xtst
 
-MASTER_SITES =		https://www.thregr.org/~wavexx/software/screenkey/releases/
+SITES =		https://www.thregr.org/~wavexx/software/screenkey/releases/
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools

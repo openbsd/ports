@@ -11,7 +11,7 @@ REVISION=	0
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://gitlab.com/o9000/tint2/-/archive/${V}/
+SITES=		https://gitlab.com/o9000/tint2/-/archive/${V}/
 
 WANTLIB += Imlib2 X11 Xcomposite Xdamage Xext Xfixes Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo cairo-gobject gdk-3

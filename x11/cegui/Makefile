@@ -25,7 +25,7 @@ WANTLIB += GL GLEW GLU Irrlicht OIS OgreMain SDL2 SDL2_image boost_system-mt
 WANTLIB += boost_thread-mt c expat freeimage freetype glfw iconv m pcre 
 WANTLIB += pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=crayzedsgui/}
+SITES =			${SITE_SOURCEFORGE:=crayzedsgui/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/cmake

@@ -6,7 +6,7 @@ DISTNAME =	Neos-${V}.theme
 PKGNAME =	gnustep-neos-theme-${V}
 
 HOMEPAGE =	http://gap.nongnu.org/themes/index.html
-MASTER_SITES =	http://savannah.nongnu.org/download/gap/
+SITES =		http://savannah.nongnu.org/download/gap/
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =		No

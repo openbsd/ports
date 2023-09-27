@@ -13,7 +13,7 @@ HOMEPAGE=	http://faculty.missouri.edu/~stephen/software/\#xkbset
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://faculty.missouri.edu/~stephen/software/xkbset/
+SITES=		http://faculty.missouri.edu/~stephen/software/xkbset/
 
 MAKE_FLAGS=	X11BASE="${X11BASE}"
 

@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.windowmaker.org/
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
+SITES=			${SITE_WINDOWMAKER:=source/release/}
 
 RUN_DEPENDS=		x11/windowmaker
 

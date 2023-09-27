@@ -12,7 +12,7 @@ WANTLIB = 	c xcb xcb-ewmh xcb-icccm xcb-keysyms xcb-randr xcb-xrm
 
 RUN_DEPENDS = 	x11/dmenu
 
-MASTER_SITES = 	http://git.nixers.net/releases/
+SITES = 	http://git.nixers.net/releases/
 EXTRACT_SUFX = 	.tar.bz2
 
 MAKE_ENV =	LDFLAGS=-L${X11BASE}/lib \

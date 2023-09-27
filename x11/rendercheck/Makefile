@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xrender c xcb
 
-MASTER_SITES=	${MASTER_SITE_XORG:=app/}
+SITES=		${SITE_XORG:=app/}
 
 CONFIGURE_STYLE=	gnu
 

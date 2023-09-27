@@ -10,7 +10,7 @@ SHARED_LIBS +=  formsGL              2.0      # 3.3
 
 HOMEPAGE=		http://xforms-toolkit.org/
 
-MASTER_SITES=		${MASTER_SITE_SAVANNAH:=xforms/}
+SITES=			${SITE_SAVANNAH:=xforms/}
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

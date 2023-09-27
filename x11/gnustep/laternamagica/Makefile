@@ -4,7 +4,7 @@ DISTNAME =	LaternaMagica-0.5
 REVISION =	4
 
 HOMEPAGE=	http://gap.nongnu.org/laternamagica/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
+SITES=		${SITE_SAVANNAH:=gap/}
 
 MODULES=	x11/gnustep
 WANTLIB += ${COMPILER_LIBCXX}

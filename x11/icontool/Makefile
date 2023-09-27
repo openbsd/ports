@@ -8,7 +8,7 @@ HOMEPAGE=	https://launchpad.net/icontool/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/trunk/0.1/+download/
+SITES=		${HOMEPAGE}/trunk/0.1/+download/
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	textproc/p5-XML-Simple

@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m
 
-MASTER_SITES=	http://www.crynwr.com/piewm/
+SITES=		http://www.crynwr.com/piewm/
 
 CONFIGURE_STYLE= imake
 

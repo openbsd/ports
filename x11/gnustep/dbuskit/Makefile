@@ -9,7 +9,7 @@ PKGNAME =	gnustep-dbuskit-${VERSION}
 SHARED_LIBS =	DBusKit	0.0
 
 HOMEPAGE =	http://www.gnustep.org/
-MASTER_SITES =	http://download.gna.org/gnustep/
+SITES =		http://download.gna.org/gnustep/
 
 MODULES +=		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No

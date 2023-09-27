@@ -11,7 +11,7 @@ CATEGORIES =	www
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServer
 
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_IS_FRAMEWORK = Yes

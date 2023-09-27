@@ -7,7 +7,7 @@ MAJOR_VERSION?=	3.5.0
 # GPLv2/LGPLv2
 PERMIT_PACKAGE?=	Yes
 
-MASTER_SITES_NX=	http://code.x2go.org/releases/source/nx-libs/
+SITES_NX=		http://code.x2go.org/releases/source/nx-libs/
 DIST_SUBDIR=		nx
 
 USE_GMAKE?=		Yes

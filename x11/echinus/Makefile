@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 Xft Xrandr c
 
-MASTER_SITES=		${HOMEPAGE}/static/echinus/
+SITES=			${HOMEPAGE}/static/echinus/
 
 MAKE_ENV=		BINPREFIX="${LOCALBASE}/bin" \
 			MANPREFIX="${LOCALBASE}/man" \

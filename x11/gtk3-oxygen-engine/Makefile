@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/oxygen-gtk3/${V}/src/}
+SITES =			${SITE_KDE:=stable/oxygen-gtk3/${V}/src/}
 
 EXTRACT_SUFX =		.tar.bz2
 

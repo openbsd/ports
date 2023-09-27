@@ -24,7 +24,7 @@ WANTLIB += pangoxft-1.0 pcre2-8 pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
 WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
 
-MASTER_SITES =	${HOMEPAGE}dist/openbox/
+SITES =		${HOMEPAGE}dist/openbox/
 
 MODULES =	lang/python
 

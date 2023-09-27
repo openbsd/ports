@@ -4,7 +4,7 @@ DISTNAME =	bbpager-0.4.7
 REVISION =	8
 
 CATEGORIES =	x11
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=bbtools/}
+SITES =		${SITE_SOURCEFORGE:=bbtools/}
 
 HOMEPAGE =	http://bbtools.sourceforge.net/
 

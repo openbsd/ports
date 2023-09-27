@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Svg
 WANTLIB += Qt5Widgets Qt5X11Extras X11 Xpm c cups ldap m ssh
 
-MASTER_SITES =	https://code.x2go.org/releases/source/x2goclient/
+SITES =		https://code.x2go.org/releases/source/x2goclient/
 
 MODULES =	x11/qt5
 

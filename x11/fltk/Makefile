@@ -26,7 +26,7 @@ WANTLIB += c fontconfig jpeg m png pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://fltk.org/pub/fltk/${VER}/
+SITES=		https://fltk.org/pub/fltk/${VER}/
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png

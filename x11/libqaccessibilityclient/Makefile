@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c m
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/libqaccessibilityclient/}
+SITES =		${SITE_KDE:=stable/libqaccessibilityclient/}
 
 EXTRACT_SUFX =	.tar.xz
 

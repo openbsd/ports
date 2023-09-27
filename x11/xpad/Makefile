@@ -14,7 +14,7 @@ WANTLIB += ICE SM atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-4
 WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pthread
 
-MASTER_SITES=	http://launchpad.net/xpad/trunk/${V}/+download/
+SITES=		http://launchpad.net/xpad/trunk/${V}/+download/
 
 MODULES=	textproc/intltool
 

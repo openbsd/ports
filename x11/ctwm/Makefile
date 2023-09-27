@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xrandr Xpm Xt c jpeg
 
-MASTER_SITES=	https://www.ctwm.org/dist/
+SITES=		https://www.ctwm.org/dist/
 
 MODULES=	devel/cmake
 

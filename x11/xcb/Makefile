@@ -5,7 +5,7 @@ REVISION=	2
 CATEGORIES=	x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES=	http://www.goof.com/pcg/marc/data/
+SITES=		http://www.goof.com/pcg/marc/data/
 
 HOMEPAGE=	http://www.goof.com/pcg/marc/xcb.html
 

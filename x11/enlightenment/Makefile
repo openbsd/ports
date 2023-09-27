@@ -20,7 +20,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv intl
 WANTLIB += m ogg pango-1.0 pangoft2-1.0 pangoxft-1.0 pcre2-8 sndio
 WANTLIB += xcb xcb-shm z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
+SITES=		${SITE_SOURCEFORGE:=enlightenment/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		${DOCS}.tar.gz \

@@ -5,7 +5,7 @@ CATEGORIES=		x11
 FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=		https://tuomov.iki.fi/software/
-MASTER_SITES=		${HOMEPAGE}dl/
+SITES=			${HOMEPAGE}dl/
 
 # Artistic or GPLv2+
 PERMIT_PACKAGE=	Yes

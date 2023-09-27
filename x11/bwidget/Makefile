@@ -8,7 +8,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # BSD style
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
+SITES =			${SITE_SOURCEFORGE:=tcllib/}
 EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/tk
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}

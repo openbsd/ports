@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		X11 c util
 
-MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE:=xrootconsole/}
+SITES=           	${SITE_SOURCEFORGE:=xrootconsole/}
 
 NO_TEST=		Yes
 

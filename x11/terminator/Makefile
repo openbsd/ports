@@ -11,7 +11,7 @@ HOMEPAGE =		https://gnome-terminator.org
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =		https://github.com/gnome-terminator/terminator/releases/download/v${VERSION}/
+SITES =			https://github.com/gnome-terminator/terminator/releases/download/v${VERSION}/
 
 MODULES =		lang/python \
 			textproc/intltool

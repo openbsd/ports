@@ -13,7 +13,7 @@ SHARED_LIBS +=  Kasten4Okteta2Gui         1.0 # 0.4
 SHARED_LIBS +=  Okteta3Core               1.0 # 0.10
 SHARED_LIBS +=  Okteta3Gui                1.0 # 0.10
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/okteta/${VERSION}/src/}
+SITES =		${SITE_KDE:=stable/okteta/${VERSION}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

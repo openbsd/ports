@@ -27,7 +27,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 GIT_COMMIT=	ad95fbab68398f81d7a5c895276903b0695887e2
 DISTFILES=	gtkglext-${GIT_COMMIT}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/gtkglext-${GIT_COMMIT}
-MASTER_SITES=	https://gitlab.gnome.org/Archive/gtkglext/-/archive/${GIT_COMMIT}/
+SITES=	https://gitlab.gnome.org/Archive/gtkglext/-/archive/${GIT_COMMIT}/
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		textproc/gtk-doc

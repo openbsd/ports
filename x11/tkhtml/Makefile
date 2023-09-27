@@ -5,7 +5,7 @@ DISTNAME =	tkhtml3-alpha-16
 PKGNAME =	${DISTNAME:S/3-alpha-/-3a/}
 CATEGORIES =	x11
 HOMEPAGE = 	http://tkhtml.tcl.tk/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD

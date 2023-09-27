@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xmu Xpm Xt c Xau Xdmcp
 
-MASTER_SITES=	${MASTER_SITE_XCONTRIB:=window_managers/}
+SITES=		${SITE_XCONTRIB:=window_managers/}
 
 WRKDIST=	${WRKDIR}/tvtwm
 

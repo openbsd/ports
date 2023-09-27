@@ -21,7 +21,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += util xcb xcb-render xcb-shm z Xau Xdmcp jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
+SITES=		${SITE_SOURCEFORGE:=mlterm/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

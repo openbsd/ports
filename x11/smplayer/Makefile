@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 Xext c m pthread z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
+SITES =			${SITE_SOURCEFORGE:=smplayer/}
 
 EXTRACT_SUFX =		.tar.bz2
 

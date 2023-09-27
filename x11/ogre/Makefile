@@ -44,7 +44,7 @@ WANTLIB-samples += ${WANTLIB} OIS OgreMain OgrePaging OgreRTShaderSystem
 WANTLIB-samples += OgreTerrain OgreOverlay OgreVolume
 
 
-MASTER_SITES =		https://bitbucket.org/sinbad/ogre/get/
+SITES =			https://bitbucket.org/sinbad/ogre/get/
 DISTFILES =		ogre-$V${EXTRACT_SUFX}{v${V:S/./-/g}${EXTRACT_SUFX}}
 #EXTRACT_SUFX =		.tar.bz2
 

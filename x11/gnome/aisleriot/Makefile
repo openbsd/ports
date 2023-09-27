@@ -5,7 +5,7 @@ GNOME_VERSION =		3.22.29
 REVISION =		0
 
 # override gnome MODULE
-MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
+SITES =			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
 EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		games

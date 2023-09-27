@@ -9,7 +9,7 @@ HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=yad-dialog/}
+SITES=			${SITE_SOURCEFORGE:=yad-dialog/}
 EXTRACT_SUFX=		.tar.xz
 
 WANTLIB =  atk-1.0 c cairo cairo-gobject fribidi gdk-3 gdk_pixbuf-2.0

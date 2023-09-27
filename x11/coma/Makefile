@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	X11 Xft c
 
-MASTER_SITES =	https://coma.one/releases/
+SITES =		https://coma.one/releases/
 
 NO_TEST =	Yes
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c X11
 
-MASTER_SITES =	http://phrat.de/
+SITES =		http://phrat.de/
 NO_TEST =	Yes
 ALL_TARGET =	yeahconsole
 

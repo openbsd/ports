@@ -28,7 +28,7 @@ WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png pthread xshmfence
 WANTLIB += sigc-2.0 ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-sync xcb-xfixes
 WANTLIB += xcb-render xcb-shm z fribidi jpeg xcb-dri3 xcb-present
 
-MASTER_SITES=		http://fedorchenko.net/src/
+SITES=			http://fedorchenko.net/src/
 EXTRACT_SUFX=		.tar.bz2
 
 # c++11

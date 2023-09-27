@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/jcs/xbanish
 
 MAINTAINER=	joshua stein <jcs@jcs.org>
 
-MASTER_SITES=	${HOMEPAGE}/archive/
+SITES=		${HOMEPAGE}/archive/
 
 # BSD
 PERMIT_PACKAGE=	Yes

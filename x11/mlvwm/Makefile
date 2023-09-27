@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		X11 Xau Xdmcp Xext Xpm c
 
-MASTER_SITES =		https://github.com/morgant/mlvwm/releases/download/$V/
+SITES =			https://github.com/morgant/mlvwm/releases/download/$V/
 
 CONFIGURE_STYLE =	imake
 MAKE_FLAGS =		CC="${CC}" COPTS="${CFLAGS}"

@@ -3,7 +3,7 @@ DISTNAME =	menumaker-0.99.14
 CATEGORIES =	x11
 REVISION =	0
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=menumaker/}
+SITES =		${SITE_SOURCEFORGE:=menumaker/}
 
 HOMEPAGE =	http://menumaker.sourceforge.net/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>

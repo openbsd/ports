@@ -36,7 +36,7 @@ MULTI_PACKAGES=		-main -suid
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-MASTER_SITES=		https://dbus.freedesktop.org/releases/dbus/
+SITES=			https://dbus.freedesktop.org/releases/dbus/
 
 USE_GMAKE=		Yes
 

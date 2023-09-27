@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5WebKit
 WANTLIB += Qt5WebKitWidgets Qt5Widgets c m
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smtube/}
+SITES =			${SITE_SOURCEFORGE:=smtube/}
 
 EXTRACT_SUFX =		.tar.bz2
 

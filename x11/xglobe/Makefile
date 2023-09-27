@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5X11Extras SM X11 Xext c m
 
-MASTER_SITES=	https://github.com/sizeofvoid/xglobe/releases/download/v${V}/
+SITES=		https://github.com/sizeofvoid/xglobe/releases/download/v${V}/
 
 MODULES=	devel/cmake \
 		x11/qt5

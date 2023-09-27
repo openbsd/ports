@@ -4,7 +4,7 @@ DISTNAME =	MPDCon-1.5.1
 REVISION =	10
 
 HOMEPAGE =	http://gap.nongnu.org/mpdcon/
-MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
+SITES =		${SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
 LIB_DEPENDS =	audio/libmpdclient \

@@ -10,7 +10,7 @@ DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB=	${COMPILER_LIBCXX}
-MASTER_SITES= 	https://github.com/gnustep/tools-make/releases/download/make-2_9_1/
+SITES= 	https://github.com/gnustep/tools-make/releases/download/make-2_9_1/
 
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar

@@ -15,7 +15,7 @@ MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_XORG:=proto/}
+SITES =			${SITE_XORG:=proto/}
 
 EXTRACT_SUFX=           .tar.xz
 
