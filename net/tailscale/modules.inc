@@ -128,7 +128,7 @@ MODGO_MODULES =	\
 	github.com/danieljoos/wincred							 v1.1.2 \
 	github.com/dave/jennifer							 v1.6.1 \
 	github.com/davecgh/go-spew							 v1.1.1 \
-	github.com/dblohm7/wingoes							 v0.0.0-20230803162905-5c6286bb8c6e \
+	github.com/dblohm7/wingoes							 v0.0.0-20230821191801-fc76608aecf0 \
 	github.com/denis-tingaikin/go-header						 v0.4.3 \
 	github.com/docker/cli								 v23.0.5+incompatible \
 	github.com/docker/distribution							 v2.8.2+incompatible \
@@ -172,7 +172,7 @@ MODGO_MODULES =	\
 	github.com/go-git/go-git/v5							 v5.7.0 \
 	github.com/go-gl/glfw								 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw							 v0.0.0-20200222043503-6f7a984d4dc4 \
-	github.com/go-json-experiment/json						 v0.0.0-20230321051131-ccbac49a6929 \
+	github.com/go-json-experiment/json						 v0.0.0-20230908182459-f320be06fe37 \
 	github.com/go-kit/kit								 v0.9.0 \
 	github.com/go-kit/log								 v0.2.1 \
 	github.com/go-logfmt/logfmt							 v0.5.1 \
@@ -203,7 +203,7 @@ MODGO_MODULES =	\
 	github.com/gobwas/httphead							 v0.0.0-20180130184737-2c6c146eadee \
 	github.com/gobwas/pool								 v0.2.0 \
 	github.com/gobwas/ws								 v1.0.2 \
-	github.com/godbus/dbus/v5							 v5.1.0 \
+	github.com/godbus/dbus/v5							 v5.1.1-0.20230522191255-76236955d466 \
 	github.com/gofrs/flock								 v0.8.1 \
 	github.com/gogo/protobuf							 v1.3.2 \
 	github.com/gojuno/minimock/v3							 v3.0.8 \
@@ -250,6 +250,8 @@ MODGO_MODULES =	\
 	github.com/goreleaser/chglog							 v0.5.0 \
 	github.com/goreleaser/fileglob							 v1.3.0 \
 	github.com/goreleaser/nfpm/v2							 v2.32.1-0.20230803123630-24a43c5ad7cf \
+	github.com/gorilla/csrf								 v1.7.1 \
+	github.com/gorilla/securecookie							 v1.1.1 \
 	github.com/gorilla/websocket							 v1.4.2 \
 	github.com/gostaticanalysis/analysisutil					 v0.7.1 \
 	github.com/gostaticanalysis/comment						 v1.4.2 \
@@ -477,7 +479,8 @@ MODGO_MODULES =	\
 	github.com/tailscale/hujson							 v0.0.0-20221223112325-20486734a56a \
 	github.com/tailscale/mkctr							 v0.0.0-20220601142259-c0b937af2e89 \
 	github.com/tailscale/netlink							 v1.1.1-0.20211101221916-cabfb018fe85 \
-	github.com/tailscale/wireguard-go						 v0.0.0-20230710185534-bb2c8f22eccf \
+	github.com/tailscale/web-client-prebuilt					 v0.0.0-20230919163828-68bd39ee4109 \
+	github.com/tailscale/wireguard-go						 v0.0.0-20230824215414-93bd5cbf7fd8 \
 	github.com/tc-hib/winres							 v0.2.0 \
 	github.com/tcnksm/go-httpstat							 v0.2.0 \
 	github.com/tdakkota/asciicheck							 v0.2.0 \
@@ -551,19 +554,19 @@ MODGO_MODULES =	\
 	go.uber.org/zap									 v1.24.0 \
 	go4.org/mem									 v0.0.0-20220726221520-4f986261bf13 \
 	go4.org/netipx									 v0.0.0-20230728180743-ad4cb58a6516 \
-	golang.org/x/crypto								 v0.11.0 \
+	golang.org/x/crypto								 v0.12.0 \
 	golang.org/x/exp								 v0.0.0-20230725093048-515e97ebf090 \
 	golang.org/x/exp/typeparams							 v0.0.0-20230425010034-47ecfdc1ba53 \
 	golang.org/x/image								 v0.7.0 \
 	golang.org/x/lint								 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile								 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod								 v0.11.0 \
-	golang.org/x/net								 v0.10.0 \
+	golang.org/x/net								 v0.14.0 \
 	golang.org/x/oauth2								 v0.7.0 \
 	golang.org/x/sync								 v0.2.0 \
-	golang.org/x/sys								 v0.10.0 \
-	golang.org/x/term								 v0.10.0 \
-	golang.org/x/text								 v0.11.0 \
+	golang.org/x/sys								 v0.11.0 \
+	golang.org/x/term								 v0.11.0 \
+	golang.org/x/text								 v0.12.0 \
 	golang.org/x/time								 v0.3.0 \
 	golang.org/x/tools								 v0.9.1 \
 	golang.org/x/xerrors								 v0.0.0-20220907171357-04be3eba64a2 \
@@ -983,6 +986,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/crypto					 v0.0.0-20220722155217-630584e8d5aa \
 	golang.org/x/crypto					 v0.1.0 \
+	golang.org/x/crypto					 v0.11.0 \
 	golang.org/x/crypto					 v0.3.0 \
 	golang.org/x/crypto					 v0.3.1-0.20221117191849-2c476679df9a \
 	golang.org/x/crypto					 v0.5.0 \
@@ -1002,7 +1006,6 @@ MODGO_MODFILES =	\
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/exp					 v0.0.0-20220722155223-a9213eeb770e \
 	golang.org/x/exp					 v0.0.0-20230127140709-cafedaf64729 \
-	golang.org/x/exp					 v0.0.0-20230315142452-642cacee5cc0 \
 	golang.org/x/exp/typeparams				 v0.0.0-20220218215828-6cf2b201936e \
 	golang.org/x/exp/typeparams				 v0.0.0-20220428152302-39d4317da171 \
 	golang.org/x/exp/typeparams				 v0.0.0-20221002003631-540bb7301a08 \
@@ -1085,6 +1088,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20220421235706-1d1ef9303861 \
 	golang.org/x/net					 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/net					 v0.1.0 \
+	golang.org/x/net					 v0.10.0 \
 	golang.org/x/net					 v0.2.0 \
 	golang.org/x/net					 v0.3.0 \
 	golang.org/x/net					 v0.4.0 \
@@ -1185,9 +1189,11 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys					 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys					 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys					 v0.0.0-20220817070843-5a390386f1f2 \
 	golang.org/x/sys					 v0.0.0-20220825204002-c680a09ffe64 \
 	golang.org/x/sys					 v0.0.0-20220908164124-27713097b956 \
 	golang.org/x/sys					 v0.1.0 \
+	golang.org/x/sys					 v0.10.0 \
 	golang.org/x/sys					 v0.2.0 \
 	golang.org/x/sys					 v0.3.0 \
 	golang.org/x/sys					 v0.4.0 \
@@ -1200,6 +1206,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term					 v0.1.0 \
+	golang.org/x/term					 v0.10.0 \
 	golang.org/x/term					 v0.2.0 \
 	golang.org/x/term					 v0.3.0 \
 	golang.org/x/term					 v0.4.0 \
@@ -1207,6 +1214,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term					 v0.6.0 \
 	golang.org/x/term					 v0.8.0 \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
+	golang.org/x/text					 v0.11.0 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text					 v0.3.2 \
