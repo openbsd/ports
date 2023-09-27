@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c m
 WANTLIB += atomic
 .endif
 
-MASTER_SITES =	https://gottcode.org/novprog/
+SITES =		https://gottcode.org/novprog/
 
 MODULES =	devel/cmake \
 		x11/qt6

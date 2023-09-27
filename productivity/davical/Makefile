@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
 
 HOMEPAGE =	https://www.davical.org/
-MASTER_SITES =	https://www.davical.org/downloads/
+SITES =		https://www.davical.org/downloads/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+

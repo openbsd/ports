@@ -13,7 +13,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # documentation: GFDL 1.2, icons: LGPL 3, source code: GPL 2.0
 PERMIT_PACKAGE =	Yes
 
-SITES =			${MASTER_SITE_KDE:=stable/ktimetracker/${VERSION}/src/}
+SITES =			${SITE_KDE:=stable/ktimetracker/${VERSION}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

@@ -10,7 +10,7 @@ PKG_ARCH =	*
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://almworks.com/deskzilla/
-MASTER_SITES =	http://d1.almworks.com/.files/
+SITES =		http://d1.almworks.com/.files/
 
 # http://almworks.com/eula.html
 # permission to distribute granted by ALM Works in private mail

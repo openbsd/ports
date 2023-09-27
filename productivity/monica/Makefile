@@ -5,7 +5,7 @@ CATEGORIES =	productivity
 VERSION =	4.0.0
 PKGNAME =	monica-${VERSION}
 
-MASTER_SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/
+SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/
 DISTNAME =	monica-v${VERSION}
 
 EXTRACT_SUFX =	.tar.bz2

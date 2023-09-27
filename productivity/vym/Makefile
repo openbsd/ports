@@ -9,7 +9,7 @@ HOMEPAGE=	https://www.insilmaril.de/vym/
 # modified GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
+SITES=		${SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport

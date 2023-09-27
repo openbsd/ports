@@ -13,7 +13,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GFDL 1.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
+SITES =			${SITE_SOURCEFORGE:=gnucash/}
 
 MODULES =		devel/cmake \
 			x11/gnome

@@ -17,7 +17,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${VERSION}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore

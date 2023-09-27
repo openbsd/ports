@@ -27,7 +27,7 @@ WANTLIB += harfbuzz iconv intl jpeg lzma lzo2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png sigc-2.0
 WANTLIB += tiff xcb xcb-render xcb-shm z zstd
 
-MASTER_SITES=		https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
+SITES=	https://github.com/rcaelers/workrave/releases/download/v${V:S/./_/g}/
 
 MODULES=		lang/python \
 			textproc/intltool

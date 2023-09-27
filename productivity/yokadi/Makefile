@@ -7,7 +7,7 @@ DISTNAME =	yokadi-${MODPY_EGG_VERSION}
 REVISION =	3
 
 HOMEPAGE =	https://yokadi.github.io/
-MASTER_SITES =	${HOMEPAGE}/download/
+SITES =		${HOMEPAGE}/download/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

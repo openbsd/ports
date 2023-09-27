@@ -13,7 +13,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =	https://taskwarrior.org/download/
+SITES =		https://taskwarrior.org/download/
 
 COMPILER =		base-clang ports-gcc
 

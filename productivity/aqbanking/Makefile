@@ -15,7 +15,7 @@ WANTLIB =  brotlidec brotlienc c ffi gcrypt gmp gnutls gpg-error
 WANTLIB += gwenhywfar hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread tasn1 unistring xml2 xmlsec1 xslt z zstd
 
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/467/
+SITES=			https://www.aquamaniac.de/rdm/attachments/download/467/
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gmp \

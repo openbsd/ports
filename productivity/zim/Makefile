@@ -13,7 +13,7 @@ MAINTAINER =		Sebastian Benoit <benno@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://zim-wiki.org/downloads/
+SITES =			https://zim-wiki.org/downloads/
 
 NO_TEST =		Yes
 

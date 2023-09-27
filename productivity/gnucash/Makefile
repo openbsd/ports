@@ -30,7 +30,7 @@ WANTLIB += webkit2gtk-4.0 xml2 xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
+SITES =			${SITE_SOURCEFORGE:=gnucash/}
 
 MODULES =		devel/dconf \
 			devel/cmake \

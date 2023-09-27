@@ -11,7 +11,7 @@ HOMEPAGE=		http://www.projectlibre.org/
 # with some changes / additional terms)
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=projectlibre/}
+SITES=		${SITE_SOURCEFORGE:=projectlibre/}
 
 MODULES=	java
 MODJAVA_VER=	1.8+

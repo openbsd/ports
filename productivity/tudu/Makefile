@@ -11,9 +11,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m curses
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 CONFIGURE_STYLE = simple
 

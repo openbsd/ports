@@ -18,7 +18,7 @@ WANTLIB += archive enchant-2 gdk-3 gspell-1 gtk-3 z
 WANTLIB += javascriptcoregtk-4.0 soup-2.4 webkit2gtk-4.0 xml2
 WANTLIB += cairo-gobject harfbuzz gmodule-2.0
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
+SITES=		${SITE_SOURCEFORGE:=osmo-pim/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

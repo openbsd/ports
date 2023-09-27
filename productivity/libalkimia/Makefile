@@ -12,7 +12,7 @@ SHARED_LIBS =  alkimia5  1.0 # 8.0.4
 
 HOMEPAGE =	https://community.kde.org/Alkimia/libalkimia
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/alkimia/$V/}
+SITES =		${SITE_KDE:=stable/alkimia/$V/}
 EXTRACT_SUFX =	.tar.xz
 
 # LGPLv2.1+

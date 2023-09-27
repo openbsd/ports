@@ -22,7 +22,7 @@ WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jpeg lzma m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png xcb xcb-render xcb-shm xml2 z Xau Xdmcp
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rubrica.berlios/}
+SITES=		${SITE_SOURCEFORGE:=rubrica.berlios/}
 
 MODULES=	devel/gconf2 \
 		textproc/intltool

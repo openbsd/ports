@@ -8,7 +8,7 @@ HOMEPAGE =	http://www.taskwarrior.org/
 
 MAINTAINER =	Kent R. Spillner <kspillner@openbsd.org>
 
-MASTER_SITES =	${HOMEPAGE}download/
+SITES =		${HOMEPAGE}download/
 
 # MIT
 PERMIT_PACKAGE =		Yes

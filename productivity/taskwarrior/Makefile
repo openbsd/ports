@@ -8,7 +8,7 @@ CATEGORIES =	productivity
 HOMEPAGE =	https://www.taskwarrior.org/
 MAINTAINER = 	Paco Esteban <paco@openbsd.org>
 
-MASTER_SITES =	https://www.taskwarrior.org/download/
+SITES =		https://www.taskwarrior.org/download/
 
 # MIT
 PERMIT_PACKAGE =		Yes

@@ -8,7 +8,7 @@ HOMEPAGE=		http://www.lightandmatter.com/when/when.html
 # perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 NO_BUILD=		Yes
 PKG_ARCH=		*

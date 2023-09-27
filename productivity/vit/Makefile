@@ -10,7 +10,7 @@ MAINTAINER =		Kent R. Spillner <kspillner@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://taskwarrior.org/download/
+SITES =			http://taskwarrior.org/download/
 RUN_DEPENDS =		devel/p5-Curses \
 			productivity/taskwarrior
 BUILD_DEPENDS =		${RUN_DEPENDS}

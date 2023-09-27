@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl m pthread
 
-MASTER_SITES=	${HOMEPAGE}files/
+SITES=		${HOMEPAGE}files/
 
 RUN_DEPENDS=	www/py-httplib2${MODPY_FLAVOR}
 

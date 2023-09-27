@@ -12,7 +12,7 @@ HOMEPAGE =		https://wiki.gnome.org/Apps/GTG
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES =		https://github.com/getting-things-gnome/gtg/releases/download/v${MODPY_EGG_VERSION:R}/
+SITES =			https://github.com/getting-things-gnome/gtg/releases/download/v${MODPY_EGG_VERSION:R}/
 
 MODULES =		devel/meson \
 			lang/python

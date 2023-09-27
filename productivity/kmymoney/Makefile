@@ -26,7 +26,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/kmymoney/${V}/src/}
+SITES =		${SITE_KDE:=stable/kmymoney/${V}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion

@@ -11,7 +11,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Widgets c m
 
-MASTER_SITES=		${HOMEPAGE}/download/ \
+SITES=			${HOMEPAGE}/download/ \
 			https://timetabling.de/download/
 EXTRACT_SUFX=		.tar.bz2
 

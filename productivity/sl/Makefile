@@ -8,7 +8,7 @@ HOMEPAGE =	http://practicalthought.com/sl/
 # GPLv3
 PERMIT_PACKAGE =		Yes
 
-MASTER_SITES =	http://mirrors.nycbug.org/pub/distfiles/
+SITES =		http://mirrors.nycbug.org/pub/distfiles/
 
 MODULES +=	lang/tcl
 

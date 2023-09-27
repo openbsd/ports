@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.trgtd.com.au/
 # CDDL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=thinkingrock/}
+SITES=		${SITE_SOURCEFORGE:=thinkingrock/}
 
 MODULES=	java
 MODJAVA_VER=	1.8+

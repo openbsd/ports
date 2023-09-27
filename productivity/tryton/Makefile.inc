@@ -8,8 +8,8 @@ MAINTAINER ?=		Sebastien Marie <semarie@online.fr>
 # GPLv3
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES =		https://downloads-cdn.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
-			https://downloads.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+SITES =	https://downloads-cdn.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
+	https://downloads.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 DIST_SUBDIR =		tryton
 
 PORTROACH +=		site:https://downloads-cdn.tryton.org/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/

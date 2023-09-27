@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += 	c curses m
 
-MASTER_SITES =	https://www.syntax-k.de/projekte/teapot/
+SITES =		https://www.syntax-k.de/projekte/teapot/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 # binary distribution to extract the documentation

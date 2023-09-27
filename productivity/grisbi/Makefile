@@ -4,7 +4,7 @@ DISTNAME=	grisbi-2.0.5
 REVISION=	4
 
 EXTRACT_SUFX=	.tar.bz2
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
+SITES=		${SITE_SOURCEFORGE:=grisbi/}
 
 CATEGORIES=	productivity x11
 

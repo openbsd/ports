@@ -6,7 +6,7 @@ CATEGORIES=		productivity devel
 
 HOMEPAGE=		http://swapoff.org/devtodo1.html
 
-MASTER_SITES=		http://swapoff.org/files/devtodo/ \
+SITES=			http://swapoff.org/files/devtodo/ \
 			https://spacehopper.org/mirrors/
 
 # GPLv2

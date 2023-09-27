@@ -16,7 +16,7 @@ WANTLIB += champlain-gtk-0.12 clutter-1.0 clutter-gtk-1.0 enchant-2
 WANTLIB += gcrypt gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
 WANTLIB += gobject-2.0 gtk-3 gtkmm-3.0 intl m pangomm-1.4 sigc-2.0
 
-MASTER_SITES= 	https://launchpad.net/lifeograph/trunk/${V}/+download/
+SITES= 		https://launchpad.net/lifeograph/trunk/${V}/+download/
 
 EXTRACT_SUFX=	.tar.xz
 

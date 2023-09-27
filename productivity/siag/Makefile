@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE Mowitz SM X11 Xext Xmu Xpm Xt c curses m neXtaw
 
-MASTER_SITES=		${HOMEPAGE}/pub/siag/
+SITES=			${HOMEPAGE}/pub/siag/
 
 LIB_DEPENDS=		x11/mowitz \
 			x11/neXtaw

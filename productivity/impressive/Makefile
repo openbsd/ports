@@ -7,7 +7,7 @@ REVISION =		0
 
 CATEGORIES =		productivity
 HOMEPAGE =		http://impressive.sourceforge.net/
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=impressive/}
+SITES =			${SITE_SOURCEFORGE:=impressive/}
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
