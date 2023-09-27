@@ -113,9 +113,6 @@ TEST_ENV =		GIT_TEST_OPTS=${GIT_TEST_OPTS:Q} \
 # one expensive test needs explicit enabling
 TEST_ENV +=		GIT_TEST_CLONE_2GB=true
 
-# ${WRKSRC}/t/t4256/1/mailinfo.c.orig
-PATCHORIG =		.pat.orig
-
 post-extract:
 	@mkdir -p ${WRKSRC}/doc
 	${TAR} -C ${WRKSRC}/doc -xzf ${FULLDISTDIR}/${DOC_DISTFILE}

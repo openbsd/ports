@@ -23,8 +23,6 @@ LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
 RUN_DEPENDS =	shells/bash
 
-PATCHORIG =	.patch.orig
-
 WRKCONF =		${WRKSRC}/scripts
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
