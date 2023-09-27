@@ -9,7 +9,7 @@ DISTNAME=	flow-tools-0.68.6pl20210211
 EPOCH=		0
 CATEGORIES=	net
 
-REVISION=	3
+REVISION=	4
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -35,7 +35,7 @@ LIB_DEPENDS+=		databases/postgresql,-main
 .endif
 
 MAKE_FLAGS+=		SUBDIRS="lib src bin configs docs"
-FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
+FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples
 # flow-log2rrd and flow-rpt2rrd have never been packaged here
 MODPY_ADJ_FILES=	bin/flow-rptfmt
 

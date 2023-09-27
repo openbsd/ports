@@ -56,19 +56,27 @@ lib/libft.la
 @man man/man1/flow-tools.1
 @man man/man1/flow-xlate.1
 share/examples/flow-tools/
-@sample ${SYSCONFDIR}/
-@sample ${SYSCONFDIR}/cfg/
-@sample ${SYSCONFDIR}/sym/
+@sample ${SYSCONFDIR}/flow-tools/
+share/examples/flow-tools/asn.sym
+@sample ${SYSCONFDIR}/flow-tools/asn.sym
+share/examples/flow-tools/filter.cfg
+@sample ${SYSCONFDIR}/flow-tools/filter.cfg
+share/examples/flow-tools/ip-prot.sym
+@sample ${SYSCONFDIR}/flow-tools/ip-prot.sym
+share/examples/flow-tools/ip-type.sym
+@sample ${SYSCONFDIR}/flow-tools/ip-type.sym
+share/examples/flow-tools/map.cfg
+@sample ${SYSCONFDIR}/flow-tools/map.cfg
+share/examples/flow-tools/mask.cfg
+@sample ${SYSCONFDIR}/flow-tools/mask.cfg
+share/examples/flow-tools/stat.cfg
+@sample ${SYSCONFDIR}/flow-tools/stat.cfg
+share/examples/flow-tools/tag.cfg
+@sample ${SYSCONFDIR}/flow-tools/tag.cfg
+share/examples/flow-tools/tag.sym
+@sample ${SYSCONFDIR}/flow-tools/tag.sym
+share/examples/flow-tools/tcp-port.sym
+@sample ${SYSCONFDIR}/flow-tools/tcp-port.sym
+share/examples/flow-tools/xlate.cfg
+@sample ${SYSCONFDIR}/flow-tools/xlate.cfg
 @extraunexec rm -rf /var/flow-tools
-share/examples/flow-tools/flow-tools/
-share/examples/flow-tools/flow-tools/asn.sym
-share/examples/flow-tools/flow-tools/filter.cfg
-share/examples/flow-tools/flow-tools/ip-prot.sym
-share/examples/flow-tools/flow-tools/ip-type.sym
-share/examples/flow-tools/flow-tools/map.cfg
-share/examples/flow-tools/flow-tools/mask.cfg
-share/examples/flow-tools/flow-tools/stat.cfg
-share/examples/flow-tools/flow-tools/tag.cfg
-share/examples/flow-tools/flow-tools/tag.sym
-share/examples/flow-tools/flow-tools/tcp-port.sym
-share/examples/flow-tools/flow-tools/xlate.cfg
