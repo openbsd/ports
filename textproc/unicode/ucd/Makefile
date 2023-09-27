@@ -4,7 +4,7 @@ COMMENT =		Unicode Character Database (UCD)
 V =			15.1.0
 UNICODE_DATA_NAME =	ucd
 
-MASTER_SITES =		${UNICODE_MASTER_SITES}/zipped/${V}/
+SITES =			${UNICODE_SITES}/zipped/${V}/
 DISTFILES =		UCD${EXTRACT_SUFX} \
 			Unihan${EXTRACT_SUFX}
 

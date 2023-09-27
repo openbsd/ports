@@ -15,7 +15,7 @@ HOMEPAGE=	http://openjade.sourceforge.net/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
+SITES=		${SITE_SOURCEFORGE:=openjade/}
 
 WANTLIB += c iconv intl m pthread ${COMPILER_LIBCXX} osp
 

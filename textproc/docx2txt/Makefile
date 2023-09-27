@@ -7,7 +7,7 @@ REVISION =		0
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=docx2txt/}
+SITES =			${SITE_SOURCEFORGE:=docx2txt/}
 EXTRACT_SUFX =		.tgz
 
 RUN_DEPENDS = 		archivers/unzip

@@ -25,7 +25,7 @@ WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render
 WANTLIB += xcb-shm z Xau Xdmcp c++ c++abi execinfo jpeg
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
+SITES=		${SITE_SOURCEFORGE:=gtkspell/}
 
 MODULES=	textproc/intltool \
 		x11/gnome

@@ -7,7 +7,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m pthread
 
 DISTNAME =	hevea-2.34
-MASTER_SITES =	http://hevea.inria.fr/distri/ \
+SITES =		http://hevea.inria.fr/distri/ \
 		http://hevea.inria.fr/old/ \
 		https://spacehopper.org/mirrors/
 REVISION =	3

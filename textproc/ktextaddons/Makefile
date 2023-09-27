@@ -17,7 +17,7 @@ CATEGORIES =	textproc devel
 
 HOMEPAGE =	https://invent.kde.org/libraries/ktextaddons
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/ktextaddons/}
+SITES =		${SITE_KDE:=stable/ktextaddons/}
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 

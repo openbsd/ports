@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  glib-2.0 iconv intl
 
-MASTER_SITES =		http://birdfont.org/xmlbird-releases/
+SITES =			http://birdfont.org/xmlbird-releases/
 EXTRACT_SUFX =		.tar.xz
 
 

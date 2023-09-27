@@ -14,7 +14,7 @@ WANTLIB += icuuc m
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_GNU:=src-highlite/}
+SITES=		${SITE_GNU:=src-highlite/}
 
 LIB_DEPENDS=	devel/boost
 BUILD_DEPENDS=	devel/help2man \

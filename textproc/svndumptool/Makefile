@@ -7,7 +7,7 @@ HOMEPAGE =		http://svn.borg.ch/svndumptool/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
+SITES =			http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 

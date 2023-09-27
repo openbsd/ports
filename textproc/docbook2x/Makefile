@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=docbook2x/}
+SITES = 	${SITE_SOURCEFORGE:=docbook2x/}
 
 RUN_DEPENDS =		converters/libiconv \
 			textproc/libxml \

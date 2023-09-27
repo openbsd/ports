@@ -16,7 +16,7 @@ WANTLIB =  c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre2-8 pthread soup-2.4 sqlite3 xml2 z
 WANTLIB += brotlicommon brotlidec idn2 psl unistring
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=libtranslate/}
+SITES=		${SITE_SAVANNAH:=libtranslate/}
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/libsoup \

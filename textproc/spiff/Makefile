@@ -4,7 +4,7 @@ DISTNAME=	spiff-1.0
 REVISION=	1
 CATEGORIES=	textproc
 
-MASTER_SITES=	http://www.darwinsys.com/freeware/
+SITES=		http://www.darwinsys.com/freeware/
 
 MAINTAINER=	Ian Darwin <ian@openbsd.org>
 

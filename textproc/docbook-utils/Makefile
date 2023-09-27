@@ -10,7 +10,7 @@ HOMEPAGE=		https://www.sourceware.org/docbook-tools/
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/
+SITES=		https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/
 
 USE_GMAKE=		Yes
 

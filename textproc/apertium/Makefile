@@ -27,7 +27,7 @@ WANTLIB += c iconv lzma m pcre pcrecpp pcreposix pthread
 WANTLIB += ${COMPILER_LIBCXX} xml2 z
 WANTLIB += icudata icui18n icuuc lttoolbox3-3.5
 
-MASTER_SITES =		https://github.com/apertium/apertium/releases/download/v${VER}/
+SITES =		https://github.com/apertium/apertium/releases/download/v${VER}/
 
 EXTRACT_SUFX =		.tar.xz
 

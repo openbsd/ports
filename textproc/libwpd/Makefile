@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libwpd/}
+SITES=		${SITE_SOURCEFORGE:=libwpd/}
 
 WANTLIB += ${COMPILER_LIBCXX} c m z
 WANTLIB += revenge-0.0 revenge-generators-0.0

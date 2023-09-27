@@ -9,7 +9,7 @@ HOMEPAGE =		http://matthewwild.co.uk/projects/luaexpat/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		expat
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 MODULES =		lang/lua
 MODLUA_TEST_DEPENDS =	textproc/luaexpat

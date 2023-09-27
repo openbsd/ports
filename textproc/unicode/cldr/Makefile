@@ -9,7 +9,7 @@ PKGNAME-annotations =	unicode-${UNICODE_DATA_NAME}-annotations-${V}
 
 MULTI_PACKAGES =	-main -annotations
 
-MASTER_SITES =		${UNICODE_MASTER_SITES}/cldr/${V}/
+SITES =			${UNICODE_SITES}/cldr/${V}/
 DISTFILES =		cldr-common-${V}${EXTRACT_SUFX}
 
 RUN_DEPENDS-main =	${BASE_PKGPATH},-annotations

@@ -32,7 +32,7 @@ WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-python += iconv intl link-grammar pthread util
 
 # XXX no https: TLS handshake failure: certificate verification failed: certificate has expired
-MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
+SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
 
 MODULES =		lang/python
 

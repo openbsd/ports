@@ -12,7 +12,7 @@ MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE:=downloads/}
+SITES =			${HOMEPAGE:=downloads/}
 EXTRACT_SUFX =		-src.tgz
 
 WANTLIB =		expat

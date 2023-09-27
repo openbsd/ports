@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread xml2 z zip
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ebook-tools/${V}/}
+SITES =			${SITE_SOURCEFORGE:=ebook-tools/${V}/}
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		textproc/libxml \

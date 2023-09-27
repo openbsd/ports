@@ -9,7 +9,7 @@ MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://docscripts.glenbarber.us/tags/igor/${VERSION}/
+SITES =			http://docscripts.glenbarber.us/tags/igor/${VERSION}/
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

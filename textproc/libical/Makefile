@@ -27,7 +27,7 @@ WANTLIB += icui18n icuuc
 WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX} m lib/db4/db lib/db4/db_cxx
 WANTLIB-glib += ${WANTLIB} c ical glib-2.0 gobject-2.0 intl pthread xml2
 
-MASTER_SITES=		https://github.com/libical/libical/releases/download/v${V}/
+SITES=		https://github.com/libical/libical/releases/download/v${V}/
 
 MULTI_PACKAGES=		-main -glib
 

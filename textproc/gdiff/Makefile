@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl sigsegv
 
-MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
+SITES=		${SITE_GNU:=diffutils/}
 
 LIB_DEPENDS=	devel/gettext,-runtime \
 		devel/libsigsegv

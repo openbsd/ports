@@ -10,7 +10,7 @@ HOMEPAGE=	http://xmlcatmgr.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xmlcatmgr/}
+SITES=		${SITE_SOURCEFORGE:=xmlcatmgr/}
 
 CONFIGURE_STYLE=gnu
 

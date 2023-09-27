@@ -19,7 +19,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=		c icui18n icuio icuuc m pthread ${COMPILER_LIBCXX}
 
-MASTER_SITES =		https://github.com/GrammarSoft/cg3/releases/download/v$V/
+SITES =		https://github.com/GrammarSoft/cg3/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.bz2
 

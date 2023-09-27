@@ -8,7 +8,7 @@ CATEGORIES=		textproc
 # Apache-2.0
 PERMIT_PACKAGE=		Yes
 
-MASTER_SITES=		https://github.com/praiskup/argparse-manpage/releases/download/v${MODPY_EGG_VERSION}/
+SITES=			https://github.com/praiskup/argparse-manpage/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
 

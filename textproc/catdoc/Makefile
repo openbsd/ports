@@ -7,7 +7,7 @@ PKGNAME-main=	catdoc-$V
 PKGNAME-tk=	wordview-$V
 PKG_ARCH-tk=	*
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/
+SITES=		http://ftp.wagner.pp.ru/pub/catdoc/
 
 HOMEPAGE=	http://wagner.pp.ru/~vitus/software/catdoc/
 

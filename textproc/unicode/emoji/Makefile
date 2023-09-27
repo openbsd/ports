@@ -3,7 +3,7 @@ COMMENT =		Unicode emoji data files
 V =			15.1
 UNICODE_DATA_NAME =	emoji
 
-MASTER_SITES =		${UNICODE_MASTER_SITES}/emoji/${V}/
+SITES =			${UNICODE_SITES}/emoji/${V}/
 
 DISTFILES =		emoji-sequences.txt \
 			emoji-test.txt \

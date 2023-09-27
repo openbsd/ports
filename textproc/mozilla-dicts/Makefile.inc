@@ -14,7 +14,7 @@ HOMEPAGE =	https://addons.mozilla.org/language-tools/
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://spacehopper.org/martynas/mozilla/dicts/${V}/
+SITES =		https://spacehopper.org/martynas/mozilla/dicts/${V}/
 
 LANGUAGES =	af ak am-ET ar az-IR be bg bn-BD ca-valencia ca cs \
 		csb cy-GB da de-AT de-CH de-DE dsb el en-AU en-CA \

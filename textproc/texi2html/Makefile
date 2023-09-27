@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.nongnu.org/texi2html/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=texi2html/}
+SITES=		${SITE_SAVANNAH:=texi2html/}
 
 USE_GMAKE=	Yes
 

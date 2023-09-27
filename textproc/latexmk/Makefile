@@ -11,7 +11,7 @@ HOMEPAGE=	http://www.phys.psu.edu/~collins/software/latexmk-jcc/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=	print/texlive/base
 

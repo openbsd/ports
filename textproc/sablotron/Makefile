@@ -14,9 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c expat iconv m curses readline ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES =	http://www.arcane-labs.net/download/OpenBSD/
+SITES =		http://www.arcane-labs.net/download/OpenBSD/
 
 LIB_DEPENDS =	converters/libiconv
 

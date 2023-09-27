@@ -10,7 +10,7 @@ HOMEPAGE=		https://edge.launchpad.net/intltool
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/trunk/${V}/+download/
+SITES=			${HOMEPAGE}/trunk/${V}/+download/
 
 BUILD_DEPENDS=		textproc/p5-XML-Parser
 

@@ -17,9 +17,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tinyxml/}
+SITES=		${SITE_SOURCEFORGE:=tinyxml/}
 
 USE_GMAKE=	Yes
 

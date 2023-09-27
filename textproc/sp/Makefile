@@ -12,7 +12,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
+SITES=		ftp://ftp.jclark.com/pub/sp/
 
 MAKE_FLAGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates -ansi" \

@@ -7,7 +7,7 @@ REVISION =	0
 
 HOMEPAGE =	https://www.gnu.org/software/diction/
 
-MASTER_SITES =	${MASTER_SITE_GNU:=diction/}
+SITES =		${SITE_GNU:=diction/}
 
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 

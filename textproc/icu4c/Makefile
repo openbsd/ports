@@ -36,7 +36,7 @@ WANTLIB-main=		c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/
+SITES=			https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/
 
 EXTRACT_SUFX=		.tgz
 

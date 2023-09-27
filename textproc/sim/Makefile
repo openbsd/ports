@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 EXTRACT_SUFX =		.zip
-MASTER_SITES =		https://dickgrune.com/Programs/similarity_tester/
+SITES =			https://dickgrune.com/Programs/similarity_tester/
 
 MAKE_FLAGS =		CC=${CC} CFLAGS="${CFLAGS} -DUNIX" LDFLAGS="${LDFLAGS}"
 

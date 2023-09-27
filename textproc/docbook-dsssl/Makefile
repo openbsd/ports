@@ -9,7 +9,7 @@ HOMEPAGE=	http://docbook.sourceforge.net/
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
+SITES=		${SITE_SOURCEFORGE:=docbook/}
 DISTFILES=	docbook-dsssl-${V}${EXTRACT_SUFX}
 DISTFILES+=	docbook-dsssl-doc-${V}${EXTRACT_SUFX}
 

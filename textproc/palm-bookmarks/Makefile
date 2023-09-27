@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.vanhemert.co.uk/palmbookmarks.html
 # GPL
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.vanhemert.co.uk/files/
+SITES=		http://www.vanhemert.co.uk/files/
 NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*

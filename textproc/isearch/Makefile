@@ -12,7 +12,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	ftp://ftp.cnidr.org/pub/software/Isearch/
+SITES=			ftp://ftp.cnidr.org/pub/software/Isearch/
 
 CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		CC="${CXX}" CFLAGS="${CXXFLAGS} -DUNIX"

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =	c m
 
-MASTER_SITES =	https://github.com/jpmens/jo/releases/download/$V/
+SITES =		https://github.com/jpmens/jo/releases/download/$V/
 
 CONFIGURE_STYLE = gnu
 

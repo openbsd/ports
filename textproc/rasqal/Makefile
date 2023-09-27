@@ -7,7 +7,7 @@ SHARED_LIBS +=  rasqal               2.0      # 3.0
 
 HOMEPAGE=		http://librdf.org/rasqal/
 
-MASTER_SITES=		http://download.librdf.org/source/
+SITES=			http://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes

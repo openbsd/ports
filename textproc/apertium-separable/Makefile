@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} apertium3-3.7 c lttoolbox3-3.5 m xml2
 
-MASTER_SITES =		https://github.com/apertium/apertium-separable/releases/download/v$V/
+SITES =	https://github.com/apertium/apertium-separable/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.bz2
 

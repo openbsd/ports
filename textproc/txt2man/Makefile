@@ -7,7 +7,7 @@ HOMEPAGE =		http://mvertes.free.fr/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE:=download/}
+SITES =			${HOMEPAGE:=download/}
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		archivers/bzip2 \

@@ -4,7 +4,7 @@ V =	0.2.0
 
 USE_GMAKE =	Yes
 
-MASTER_SITES =	https://github.com/apertium/apertium-$L/releases/download/v$V/
+SITES =		https://github.com/apertium/apertium-$L/releases/download/v$V/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

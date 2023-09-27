@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/asciidoc/asciidoc-py3
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://github.com/asciidoc/asciidoc-py3/releases/download/${V}/
+SITES=		https://github.com/asciidoc/asciidoc-py3/releases/download/${V}/
 
 MODULES=	lang/python
 

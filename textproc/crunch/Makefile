@@ -13,7 +13,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c m pthread
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=crunch-wordlist/}
+SITES =		${SITE_SOURCEFORGE:=crunch-wordlist/}
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LFS=

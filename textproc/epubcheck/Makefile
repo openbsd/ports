@@ -14,7 +14,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/w3c/epubcheck/releases/download/v$V/
+SITES =			https://github.com/w3c/epubcheck/releases/download/v$V/
 
 EXTRACT_SUFX =		.zip
 

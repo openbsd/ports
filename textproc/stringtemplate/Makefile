@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.stringtemplate.org/
 PERMIT_PACKAGE=	Yes
 
 # upstream keeps re-rolling the distfile
-MASTER_SITES=	https://distfiles.sigtrap.nl/
+SITES=		https://distfiles.sigtrap.nl/
 
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#

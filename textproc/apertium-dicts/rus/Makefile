@@ -2,7 +2,7 @@ L =	rus
 LANG =	Russian
 V =	0.2.1
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

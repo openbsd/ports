@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m
 
-MASTER_SITES =		https://www.lri.fr/~filliatr/ftp/bibtex2html/
+SITES =			https://www.lri.fr/~filliatr/ftp/bibtex2html/
 
 BUILD_DEPENDS =		lang/ocaml \
 			print/texlive/base \

@@ -18,7 +18,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 # Groff does not use C++, but merely pre-1995 C with classes.
 COMPILER =		base-clang base-gcc
 
-MASTER_SITES =		${MASTER_SITE_GNU:=groff/}
+SITES =			${SITE_GNU:=groff/}
 
 MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
 			exampledir=${PREFIX}/share/examples/groff \

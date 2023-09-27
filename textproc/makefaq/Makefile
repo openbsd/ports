@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.makefaq.org/
 # GPL 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makefaq/}
+SITES=		${SITE_SOURCEFORGE:=makefaq/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

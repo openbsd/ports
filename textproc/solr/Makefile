@@ -14,7 +14,7 @@ HOMEPAGE=	https://lucene.apache.org/solr/
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_APACHE:=solr/solr/$V/}
+SITES=		${SITE_APACHE:=solr/solr/$V/}
 
 MODULES=	java
 MODJAVA_VER=	11+

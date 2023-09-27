@@ -10,7 +10,7 @@ MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://kristaps.bsd.lv/lowdown/snapshots/
+SITES =		https://kristaps.bsd.lv/lowdown/snapshots/
 
 # uses pledge()
 WANTLIB +=	c m

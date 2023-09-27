@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		https://mandoc.bsd.lv/texi2mdoc/snapshots/
+SITES =			https://mandoc.bsd.lv/texi2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
 MAKE_FLAGS =		CC="${CC}"

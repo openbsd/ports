@@ -16,7 +16,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=	https://www.freedesktop.org/software/uchardet/releases/
+SITES=		https://www.freedesktop.org/software/uchardet/releases/
 
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"

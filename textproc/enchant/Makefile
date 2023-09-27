@@ -9,7 +9,7 @@ GH_TAGNAME=		enchant-${V:S/./-/g}
 REVISION=		4
 
 # XXX needed for portroach (DISTNAME must match the GH_PROJECT-GH_TAGNAME)
-MASTER_SITES=		https://github.com/AbiWord/enchant/releases/download/${GH_PROJECT}-${V:S/./-/g}/
+SITES=			https://github.com/AbiWord/enchant/releases/download/${GH_PROJECT}-${V:S/./-/g}/
 DISTNAME=		${GH_PROJECT}-${V}
 WRKDIST=		${WRKDIR}/${DISTNAME}
 

@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/bibelot
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bibelot/}
+SITES=		${SITE_SOURCEFORGE:=bibelot/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

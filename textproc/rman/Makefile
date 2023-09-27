@@ -9,7 +9,7 @@ HOMEPAGE=	http://polyglotman.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=polyglotman/}
+SITES=		${SITE_SOURCEFORGE:=polyglotman/}
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}"

@@ -2,7 +2,7 @@ COMMENT=	interactive front end to diff
 
 DISTNAME=	idiff-1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.darwinsys.com/freeware/
+SITES=		http://www.darwinsys.com/freeware/
 
 CATEGORIES =	textproc
 

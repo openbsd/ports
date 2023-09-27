@@ -18,7 +18,7 @@ COMPILER =		base-clang ports-gcc
 WANTLIB +=		${COMPILER_LIBCXX}
 WANTLIB +=		c m pthread poppler-cpp pcre gcrypt gpg-error
 
-MASTER_SITES =		https://pdfgrep.org/download/
+SITES =			https://pdfgrep.org/download/
 
 LIB_DEPENDS =		devel/pcre \
 			print/poppler \

@@ -26,7 +26,7 @@ WANTLIB += xcb xcb-render xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
+SITES=		${SITE_SOURCEFORGE:=gtkspell/}
 
 USE_GMAKE=	Yes
 

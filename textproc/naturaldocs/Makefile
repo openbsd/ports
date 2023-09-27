@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.naturaldocs.org/
 # AGPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=naturaldocs/}
+SITES=		${SITE_SOURCEFORGE:=naturaldocs/}
 EXTRACT_SUFX=	.zip
 
 MODULES=	perl

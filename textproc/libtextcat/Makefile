@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://software.wise-guys.nl/download/
+SITES=		http://software.wise-guys.nl/download/
 
 
 CONFIGURE_STYLE= gnu

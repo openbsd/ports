@@ -3,7 +3,7 @@ COMMENT =	yet another free document preparation system
 DISTNAME =	halibut-1.3
 CATEGORIES =	textproc
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/halibut/
-MASTER_SITES =	${HOMEPAGE}${DISTNAME}/
+SITES =		${HOMEPAGE}${DISTNAME}/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # MIT

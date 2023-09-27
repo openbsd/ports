@@ -7,7 +7,7 @@ SHARED_LIBS =	hunspell-1.7	1.0 # 0.0
 
 CATEGORIES =	textproc
 
-MASTER_SITES =	https://github.com/hunspell/hunspell/releases/download/v$V/
+SITES =		https://github.com/hunspell/hunspell/releases/download/v$V/
 HOMEPAGE =	https://hunspell.github.io/
 
 # GPL/LGPL/MPL

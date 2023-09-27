@@ -6,7 +6,7 @@ DISTNAME=	expat-$V
 
 CATEGORIES=	textproc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expat/}
+SITES=		${SITE_SOURCEFORGE:=expat/}
 
 HOMEPAGE=	http://expat.sourceforge.net/
 

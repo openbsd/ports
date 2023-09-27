@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curl iconv idn nghttp2 ssl z
 
-MASTER_SITES =		https://www.w3.org/Tools/HTML-XML-utils/
+SITES =			https://www.w3.org/Tools/HTML-XML-utils/
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/libidn \

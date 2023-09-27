@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c util
 
-MASTER_SITES =		http://mandoc.bsd.lv/pod2mdoc/snapshots/
+SITES =			http://mandoc.bsd.lv/pod2mdoc/snapshots/
 EXTRACT_SUFX =		.tgz
 
 MAKE_FLAGS =		CC="${CC}" \

@@ -2,7 +2,7 @@ COMMENT=	Extensible Binary Meta Language library
 
 DISTNAME=	libebml-1.4.4
 CATEGORIES=	textproc
-MASTER_SITES=	https://dl.matroska.org/downloads/libebml/
+SITES=		https://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	ebml	4.0

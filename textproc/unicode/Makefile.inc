@@ -9,7 +9,7 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD like (https://www.unicode.org/license.txt)
 PERMIT_PACKAGE ?=	Yes
 
-UNICODE_MASTER_SITES =	https://www.unicode.org/Public
+UNICODE_SITES =		https://www.unicode.org/Public
 DIST_SUBDIR =		unicode/${UNICODE_DATA_NAME}/${V}
 
 EXTRACT_SUFX ?=		.zip

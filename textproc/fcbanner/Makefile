@@ -7,7 +7,7 @@ DISTFILES =	fcbanner.c
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://www.normalesup.org/~george/comp/fcbanner/
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE =	Yes

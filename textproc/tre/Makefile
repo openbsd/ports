@@ -7,7 +7,7 @@ REVISION=		4
 
 HOMEPAGE=		http://laurikari.net/tre/
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 

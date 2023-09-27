@@ -1,7 +1,7 @@
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.5.0
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}
+SITES=		${SITE_SOURCEFORGE:=libots/}
 REVISION=	3
 
 SHARED_LIBS +=  ots-1                5.0      # 5.0

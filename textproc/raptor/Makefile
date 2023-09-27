@@ -8,7 +8,7 @@ SHARED_LIBS +=  raptor2              0.1      # 0.0
 
 HOMEPAGE=		https://librdf.org/
 
-MASTER_SITES=		https://download.librdf.org/source/
+SITES=			https://download.librdf.org/source/
 
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes

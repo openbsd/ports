@@ -17,7 +17,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/n-t-roff/heirloom-doctools/releases/download/$V/
+SITES =	https://github.com/n-t-roff/heirloom-doctools/releases/download/$V/
 EXTRACT_SUFX =		.tar.bz2
 
 FAKE_FLAGS =		ROOT=${DESTDIR}

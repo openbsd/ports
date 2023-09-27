@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
+SITES =		${SITE_SOURCEFORGE:=uncrustify/}
 
 COMPILER =	base-clang ports-gcc
 

@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 
-MASTER_SITES =		https://github.com/hfst/hfst/releases/download/v$V/
+SITES =			https://github.com/hfst/hfst/releases/download/v$V/
 
 # C++11
 COMPILER =		base-clang ports-gcc

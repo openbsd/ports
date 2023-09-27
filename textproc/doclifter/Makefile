@@ -9,7 +9,7 @@ HOMEPAGE =		http://www.catb.org/~esr/doclifter/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://www.catb.org/~esr/doclifter/
+SITES =			http://www.catb.org/~esr/doclifter/
 
 MODULES =		lang/python
 

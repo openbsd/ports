@@ -5,7 +5,7 @@ PKGNAME=	iso8879-1986
 REVISION=	1
 CATEGORIES=	textproc
 
-MASTER_SITES=	http://xml.coverpages.org/
+SITES=		http://xml.coverpages.org/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>

@@ -13,7 +13,7 @@ WANTLIB += c iconv m pthread lzma ${COMPILER_LIBCXX} xml2>=6 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 LIB_DEPENDS=	converters/libiconv \
 		textproc/libxml

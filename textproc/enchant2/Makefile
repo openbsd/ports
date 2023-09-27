@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} aspell c curses glib-2.0 gmodule-2.0
 WANTLIB += hunspell-1.7 iconv intl m pcre2-8
 
-MASTER_SITES =		https://github.com/AbiWord/enchant/releases/download/v${V}/
+SITES =		https://github.com/AbiWord/enchant/releases/download/v${V}/
 
 # c++11
 COMPILER =		base-clang ports-gcc

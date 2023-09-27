@@ -3,7 +3,7 @@ COMMENT=		GNU stream editor
 DISTNAME=		sed-4.9
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		textproc
-MASTER_SITES=		${MASTER_SITE_GNU:=sed/}
+SITES=			${SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.xz
 
 HOMEPAGE=		https://www.gnu.org/software/sed/

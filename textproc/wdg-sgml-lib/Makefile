@@ -9,7 +9,7 @@ HOMEPAGE=	http://www.htmlhelp.com/tools/validator/offline/
 # custom
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.htmlhelp.com/tools/validator/src/
+SITES=		http://www.htmlhelp.com/tools/validator/src/
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

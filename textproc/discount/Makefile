@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c
 
-MASTER_SITES =		http://www.pell.portland.or.us/~orc/Code/discount/
+SITES =			http://www.pell.portland.or.us/~orc/Code/discount/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	simple

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c crypto fontconfig freetype idn
 WANTLIB += jpeg m png ssl tiff unistring z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=podofo/}
+SITES=		${SITE_SOURCEFORGE:=podofo/}
 
 MODULES=	devel/cmake
 

@@ -9,7 +9,7 @@ CATEGORIES =	textproc
 MODULES =	cpan
 
 HOMEPAGE =	http://swish-e.org/
-MASTER_SITES =	${HOMEPAGE}distribution/
+SITES =		${HOMEPAGE}distribution/
 
 # Perl
 PERMIT_PACKAGE =	Yes

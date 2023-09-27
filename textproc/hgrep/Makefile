@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 DISTFILES=		hgrep_04oct1999.tar.gz
 
 NO_TEST=		Yes

@@ -14,7 +14,7 @@ CATEGORIES +=		textproc textproc/hyphen
 PERMIT_PACKAGE=	Yes
 
 DIST_SUBDIR=		hyphen
-MASTER_SITES=		${MASTER_SITE_FREEBSD_LOCAL:=sunpoet/hyphen/}
+SITES=			${SITE_FREEBSD_LOCAL:=sunpoet/hyphen/}
 EXTRACT_SUFX=		.zip
 
 RUN_DEPENDS +=		textproc/hyphen

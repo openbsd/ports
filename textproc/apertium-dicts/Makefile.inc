@@ -11,7 +11,7 @@ MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2+
 PERMIT_PACKAGE ?=	Yes
 
-MASTER_SITES ?=		https://github.com/apertium/apertium-$L/releases/download/v$V/
+SITES ?=	https://github.com/apertium/apertium-$L/releases/download/v$V/
 
 BUILD_DEPENDS +=	textproc/apertium \
 			textproc/libxslt \

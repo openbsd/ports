@@ -5,7 +5,7 @@ DISTNAME=	libgrapheme-2.0.2
 SHARED_LIBS=	grapheme	1.0	# 2.0.0
 
 CATEGORIES=	textproc devel
-MASTER_SITES=	https://dl.suckless.org/libgrapheme/
+SITES=		https://dl.suckless.org/libgrapheme/
 HOMEPAGE=	https://libs.suckless.org/libgrapheme/
 
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>

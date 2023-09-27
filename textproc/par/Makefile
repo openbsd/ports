@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 # uses pledge()
 WANTLIB += c
 
-MASTER_SITES=   ${HOMEPAGE}
+SITES=   	${HOMEPAGE}
 
 PATCHFILES=	par_1.52-i18n.3.diff.gz
 PATCH_DIST_STRIP=	-p1

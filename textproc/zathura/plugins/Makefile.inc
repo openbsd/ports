@@ -1,5 +1,5 @@
 CATEGORIES ?=		textproc x11
-MASTER_SITES ?=		https://pwmt.org/projects/${PROJECT}/download/
+SITES ?=		https://pwmt.org/projects/${PROJECT}/download/
 HOMEPAGE ?=		http://pwmt.org/projects/${PROJECT}/
 EXTRACT_SUFX ?=		.tar.xz
 DISTNAME ?=		${PROJECT}-${V}

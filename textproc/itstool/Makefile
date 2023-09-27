@@ -12,7 +12,7 @@ HOMEPAGE=		http://itstool.org/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://files.itstool.org/itstool/
+SITES=			http://files.itstool.org/itstool/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python

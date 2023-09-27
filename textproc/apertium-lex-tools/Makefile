@@ -22,7 +22,7 @@ WANTLIB += apertium3-3.7 c lttoolbox3-3.5 m xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/apertium/apertium-lex-tools/releases/download/v$V/
+SITES =	https://github.com/apertium/apertium-lex-tools/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.bz2
 

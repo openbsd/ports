@@ -16,7 +16,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fragistics/}
+SITES =			${SITE_SOURCEFORGE:=fragistics/}
 
 RUN_DEPENDS =		devel/p5-Shell
 

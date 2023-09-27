@@ -7,7 +7,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+SITES =			${HOMEPAGE}
 
 RUN_DEPENDS =		textproc/groff
 NO_BUILD =		Yes

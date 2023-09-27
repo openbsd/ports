@@ -15,7 +15,7 @@ WANTLIB += c lzma pcre pthread z
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MASTER_SITES =	https://geoff.greer.fm/ag/releases/
+SITES =		https://geoff.greer.fm/ag/releases/
 
 LIB_DEPENDS =	archivers/xz \
 		devel/pcre

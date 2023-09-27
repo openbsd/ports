@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c gcrypt gpg-error iconv intl m readline
 
-MASTER_SITES =		${MASTER_SITE_GNU:=recutils/}
+SITES =			${SITE_GNU:=recutils/}
 
 BUILD_DEPENDS =		devel/check
 

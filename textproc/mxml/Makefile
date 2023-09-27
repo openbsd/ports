@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://www.msweet.org/files/project3/
+SITES=			http://www.msweet.org/files/project3/
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--disable-threads

@@ -12,7 +12,7 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 MAKE_FLAGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -fno-implicit-templates" \

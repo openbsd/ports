@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 lzma zstd
 
-MASTER_SITES=		https://github.com/hughsie/libxmlb/releases/download/${V}/
+SITES=		https://github.com/hughsie/libxmlb/releases/download/${V}/
 
 MODULES=		devel/meson
 

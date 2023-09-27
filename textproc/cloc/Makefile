@@ -12,7 +12,7 @@ MAINTAINER=		Joerg Jung <jung@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/AlDanial/cloc/releases/download/v${V}/
+SITES=		https://github.com/AlDanial/cloc/releases/download/v${V}/
 
 NO_BUILD=		Yes
 PKG_ARCH=		*

@@ -5,7 +5,7 @@ GNOME_VERSION=		2023.1
 REVISION=		0
 
 # override gnome MODULE
-MASTER_SITES ?=         ${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+)\..*/\1/}/}
+SITES ?=         	${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+)\..*/\1/}/}
 
 CATEGORIES=		textproc
 

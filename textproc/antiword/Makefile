@@ -7,7 +7,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 
 HOMEPAGE=	http://www.winfield.demon.nl/
 
-MASTER_SITES=	${HOMEPAGE}/linux/
+SITES=		${HOMEPAGE}/linux/
 
 # GPLv2+ (mentioned in manpage)
 PERMIT_PACKAGE=	Yes

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c iconv intl m
 
-MASTER_SITES=	${HOMEPAGE}stable/
+SITES=		${HOMEPAGE}stable/
 
 LIB_DEPENDS=	devel/gettext,-runtime
 BUILD_DEPENDS=	misc/p5-File-MMagic

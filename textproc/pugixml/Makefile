@@ -14,9 +14,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v$V/
+SITES=		https://github.com/zeux/pugixml/releases/download/v$V/
 
 MODULES=	devel/cmake
 

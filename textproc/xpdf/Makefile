@@ -5,7 +5,7 @@ CATEGORIES=	textproc x11
 EPOCH=		0
 REVISION=	2
 
-MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/old/
+SITES=		https://xpdfreader-dl.s3.amazonaws.com/old/
 
 HOMEPAGE=	https://www.xpdfreader.com/
 

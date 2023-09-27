@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		c
 
-MASTER_SITES=		https://distfiles.sigtrap.nl/
+SITES=			https://distfiles.sigtrap.nl/
 
 RUN_DEPENDS=		textproc/groff>=1.21
 

@@ -19,7 +19,7 @@ WANTLIB =		c execinfo expat iconv m pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}files/
+SITES =			${HOMEPAGE}files/
 
 # for tests
 MODULES =		lang/php

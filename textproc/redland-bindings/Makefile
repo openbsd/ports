@@ -14,7 +14,7 @@ REVISION-ruby=		7
 
 HOMEPAGE=		https://librdf.org/bindings/
 
-MASTER_SITES=		https://download.librdf.org/source/
+SITES=			https://download.librdf.org/source/
 
 # LGPL 2.1, or Apache 2
 PERMIT_PACKAGE=	Yes

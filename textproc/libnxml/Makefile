@@ -4,7 +4,7 @@ VERSION =		0.18.3
 DISTNAME =		libnxml-${VERSION}
 REVISION =		8
 CATEGORIES =		textproc
-MASTER_SITES =		http://www.autistici.org/bakunin/libnxml/
+SITES =			http://www.autistici.org/bakunin/libnxml/
 SHARED_LIBS =		nxml 0.0 # 18.3
 
 HOMEPAGE=		http://www.autistici.org/bakunin/libnxml/doc

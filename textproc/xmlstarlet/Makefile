@@ -7,14 +7,14 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	http://xmlstar.sourceforge.net/
 
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
+MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c exslt xml2 xslt
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmlstar/}
+SITES =		${SITE_SOURCEFORGE:=xmlstar/}
 
 LIB_DEPENDS =		textproc/libxml \
 			textproc/libxslt

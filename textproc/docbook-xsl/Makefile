@@ -9,7 +9,7 @@ HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
 # MIT/X Consortium License
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=docbook/}
+SITES=		${SITE_SOURCEFORGE:=docbook/}
 
 BUILD_DEPENDS=	textproc/libxml
 RUN_DEPENDS=	textproc/docbook \

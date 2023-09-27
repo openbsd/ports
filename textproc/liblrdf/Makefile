@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =  crypto curl iconv intl lzma m nghttp2 pthread raptor2 ssl
 WANTLIB += xml2 xslt yajl z
 
-MASTER_SITES =		https://spacehopper.org/mirrors/
+SITES =			https://spacehopper.org/mirrors/
 BUILD_DEPENDS =		audio/ladspa
 LIB_DEPENDS =		devel/libyajl \
 			textproc/raptor

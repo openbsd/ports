@@ -3,7 +3,7 @@ COMMENT =	cpp-like generic file pre-processor
 DISTNAME =	filepp-1.8.0
 REVISION =	3
 CATEGORIES =	textproc devel
-MASTER_SITES =	http://www-users.york.ac.uk/~dm26/filepp/
+SITES =		${HOMEPAGE}
 
 HOMEPAGE =	http://www-users.york.ac.uk/~dm26/filepp/
 

@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 PERMIT_PACKAGE=		no license
 PERMIT_DISTFILES=	no license
 
-MASTER_SITES=	${MASTER_SITE_FREEBSD_LOCAL:=kuriyama/}
+SITES=		${SITE_FREEBSD_LOCAL:=kuriyama/}
 EXTRACT_ONLY=	# empty
 NO_BUILD=       Yes
 NO_TEST=	Yes

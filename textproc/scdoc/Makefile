@@ -7,7 +7,7 @@ HOMEPAGE =		https://git.sr.ht/~sircmpwn/scdoc
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://git.sr.ht/~sircmpwn/scdoc/
+SITES =			https://git.sr.ht/~sircmpwn/scdoc/
 DISTFILES =		scdoc-{archive/}${VERSION}${EXTRACT_SUFX}
 
 # uses pledge(2)

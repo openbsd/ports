@@ -4,7 +4,7 @@ DISTNAME =	clucene-core-2.3.3.4
 
 REVISION =	4
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=clucene/}
+SITES =		${SITE_SOURCEFORGE:=clucene/}
 
 HOMEPAGE = 	http://clucene.sourceforge.net/
 

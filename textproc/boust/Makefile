@@ -8,7 +8,7 @@ HOMEPAGE=		http://traevoli.com/boust/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}bin/
+SITES=			${HOMEPAGE}bin/
 
 MODULES=		x11/tk
 

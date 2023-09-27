@@ -5,7 +5,7 @@ REVISION =	1
 
 BROKEN =	0.8.0 incompatible with apertium>=3.7.2
 
-MASTER_SITES =	https://apertium.org/releases/apertium-$L/$V/
+SITES =		https://apertium.org/releases/apertium-$L/$V/
 
 USE_GMAKE =	Yes
 

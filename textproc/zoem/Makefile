@@ -11,7 +11,7 @@ HOMEPAGE=	https://micans.org/zoem/
 PERMIT_PACKAGE=	Yes
 WANTLIB=	c m curses readline
 
-MASTER_SITES=	${HOMEPAGE}/src/
+SITES=		${HOMEPAGE}/src/
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c cairo gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gdk-3 gtk-3 intl m magic pango-1.0 sqlite3 synctex
 
-MASTER_SITES =	https://pwmt.org/projects/zathura/download/
+SITES =		https://pwmt.org/projects/zathura/download/
 
 MODULES=	devel/meson
 BUILD_DEPENDS =	textproc/py-docutils,python3 \

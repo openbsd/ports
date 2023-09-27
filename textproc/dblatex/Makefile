@@ -7,7 +7,7 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		http://dblatex.sourceforge.net
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dblatex/}
+SITES =			${SITE_SOURCEFORGE:=dblatex/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python

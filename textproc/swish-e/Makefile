@@ -5,7 +5,7 @@ REVISION =		5
 SHARED_LIBS =		swish-e	2.1
 CATEGORIES =		textproc www
 
-MASTER_SITES =		https://spacehopper.org/mirrors/
+SITES =			https://spacehopper.org/mirrors/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

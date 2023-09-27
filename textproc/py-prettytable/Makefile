@@ -8,7 +8,7 @@ REVISION =		8
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=prettytable/}
+SITES =		${SITE_GOOGLECODE:=prettytable/}
 HOMEPAGE =	https://code.google.com/p/prettytable/
 
 FLAVOR =	python3

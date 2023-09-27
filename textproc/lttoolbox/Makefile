@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv lzma m pthread ${COMPILER_LIBCXX} xml2 z
 
-MASTER_SITES =		https://github.com/apertium/lttoolbox/releases/download/v${VER}/
+SITES =		https://github.com/apertium/lttoolbox/releases/download/v${VER}/
 
 EXTRACT_SUFX =		.tar.xz
 

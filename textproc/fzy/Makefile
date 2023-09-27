@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c pthread
 
-MASTER_SITES =	https://github.com/jhawthorn/fzy/releases/download/$V/
+SITES =		https://github.com/jhawthorn/fzy/releases/download/$V/
 
 MAKE_ENV =	CC=${CC} BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man"
 

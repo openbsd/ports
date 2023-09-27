@@ -10,7 +10,7 @@ MAINTAINER=	Salil Wadnerkar <bsdprg@gmail.com>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://launchpad.net/qpdfview/trunk/$V/+download/
+SITES=		https://launchpad.net/qpdfview/trunk/$V/+download/
 
 MODULES=	devel/qmake \
 		x11/qt5

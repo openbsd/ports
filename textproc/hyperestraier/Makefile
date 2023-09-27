@@ -12,7 +12,7 @@ MAINTAINER=		Jeremy Evans <jeremy@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hyperestraier/}
+SITES=			${SITE_SOURCEFORGE:=hyperestraier/}
 
 WANTLIB=		c iconv m pthread z qdbm>=14.11
 

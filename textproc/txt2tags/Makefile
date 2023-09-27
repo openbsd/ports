@@ -11,7 +11,7 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_GOOGLECODE:=txt2tags/}
+SITES=		${SITE_GOOGLECODE:=txt2tags/}
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

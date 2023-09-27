@@ -3,7 +3,7 @@ COMMENT=	SGML DTDs from The Electronic Publishing SIG
 DISTNAME=	iso12083-1993
 CATEGORIES=	textproc
 
-MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/ \
+SITES=		ftp://info.ex.ac.uk/pub/SGML/ISO-12083/ \
 		https://distfiles.sigtrap.nl/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd
 

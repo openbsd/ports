@@ -3,7 +3,7 @@ CATEGORIES=	textproc converters
 
 VERSION=	0.0
 HOMEPAGE=	http://www.oasis-open.org/docbook/tools/dtm/
-MASTER_SITES= 	http://www.oasis-open.org/docbook/tools/dtm/
+SITES= 		${HOMEPAGE}
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 DISTNAME=	docbook-to-man
 PKGNAME=	docbook-to-man-${VERSION}

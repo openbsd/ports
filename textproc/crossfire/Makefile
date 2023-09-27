@@ -2,7 +2,7 @@ COMMENT =	CrossFire crossword constructor
 CATEGORIES =	textproc games
 
 HOMEPAGE =	http://beekeeperlabs.com/crossfire
-MASTER_SITES =	http://beekeeperlabs.com/download/
+SITES =		http://beekeeperlabs.com/download/
 V =				1.3.1
 PKGNAME =	crossfire-${V}
 DISTNAME =	CrossFire-${V:S/./_/g}-linux

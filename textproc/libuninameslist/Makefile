@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/fontforge/libuninameslist
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/fontforge/libuninameslist/releases/download/$V/
+SITES =	https://github.com/fontforge/libuninameslist/releases/download/$V/
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-frenchlib

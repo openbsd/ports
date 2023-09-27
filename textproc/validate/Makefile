@@ -9,7 +9,7 @@ HOMEPAGE=		http://www.htmlhelp.com/tools/validator/offline/
 # Perl
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 EXTRACT_SUFX=
 EXTRACT_CASES=		*) cp ${FULLDISTDIR}/$$archive ${WRKDIST}/validate ;;
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  brotlidec brotlienc c gmp gnutls hogweed iconv idn2 intl
 WANTLIB += nettle p11-kit pthread tasn1 unistring z zstd
 
-MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=iksemel/}
+SITES=			${SITE_GOOGLECODE:=iksemel/}
 
 LIB_DEPENDS=		security/gnutls
 

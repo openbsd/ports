@@ -4,7 +4,7 @@ DISTNAME=		c2html-0.9.6
 CATEGORIES=		textproc www
 
 # Old versions seem to stay there...
-MASTER_SITES=		${MASTER_SITE_SUNSITE:=apps/www/converters/}
+SITES=			${SITE_SUNSITE:=apps/www/converters/}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

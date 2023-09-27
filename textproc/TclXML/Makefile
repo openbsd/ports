@@ -4,7 +4,7 @@ DISTNAME =	tclxml-3.2
 REVISION =	5
 CATEGORIES =	textproc
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tclxml/}
+SITES =		${SITE_SOURCEFORGE:=tclxml/}
 HOMEPAGE =	http://tclxml.sourceforge.net/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 

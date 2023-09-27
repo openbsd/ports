@@ -2,7 +2,7 @@ L =	pol
 LANG =	Polish
 V =	0.1.2
 
-MASTER_SITES =	https://distfiles.roadrunner.page/
+SITES =		https://distfiles.roadrunner.page/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

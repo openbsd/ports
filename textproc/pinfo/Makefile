@@ -8,8 +8,8 @@ HOMEPAGE=		https://alioth.debian.org/frs/?group_id=30592
 
 MAINTAINER=		Marc Espie <espie@openbsd.org>
 
-MASTER_SITES=		https://alioth-archive.debian.org/releases/pinfo/pinfo/pinfo-0.6.9/ \
-			${MASTER_SITE_FREEBSD}
+SITES=	https://alioth-archive.debian.org/releases/pinfo/pinfo/pinfo-0.6.9/ \
+	${SITE_FREEBSD}
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

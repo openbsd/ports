@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c iconv
 
-MASTER_SITES =	${MASTER_SITE_GNU:=unrtf/}
+SITES =		${SITE_GNU:=unrtf/}
 
 LIB_DEPENDS =	converters/libiconv
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	https://releases.pagure.org/xmlto/
+SITES=		https://releases.pagure.org/xmlto/
 
 RUN_DEPENDS=	misc/gnugetopt \
 		print/libpaper \

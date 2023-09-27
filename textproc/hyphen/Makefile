@@ -12,7 +12,7 @@ HOMEPAGE=		http://hunspell.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hunspell/}
+SITES=			${SITE_SOURCEFORGE:=hunspell/}
 
 BUILD_DEPENDS=		lang/gawk
 TEST_DEPENDS=		shells/bash

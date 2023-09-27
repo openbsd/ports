@@ -13,7 +13,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		https://invisible-mirror.net/archives/diffstat/ \
+SITES=			https://invisible-mirror.net/archives/diffstat/ \
 			ftp://ftp.invisible-island.net/diffstat/
 EXTRACT_SUFX=		.tgz
 
