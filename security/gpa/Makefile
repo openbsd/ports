@@ -15,7 +15,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gpg-error gpgme gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread z
 
-MASTER_SITES = 	https://gnupg.org/ftp/gcrypt/gpa/
+SITES = 	https://gnupg.org/ftp/gcrypt/gpa/
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	devel/desktop-file-utils

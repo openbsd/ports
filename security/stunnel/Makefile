@@ -13,7 +13,7 @@ WANTLIB += c crypto pthread ssl util
 
 HOMEPAGE=	https://www.stunnel.org/
 
-MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
+SITES=		https://www.stunnel.org/downloads/archive/5.x/ \
 		https://ftp.nluug.nl/pub/networking/stunnel/ \
 		https://www.usenix.org.uk/mirrors/stunnel/
 

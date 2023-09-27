@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto m
 
-MASTER_SITES =		http://stealth.openwall.net/opmsg/
+SITES =			http://stealth.openwall.net/opmsg/
 
 COMPILER =		base-clang ports-clang ports-gcc
 

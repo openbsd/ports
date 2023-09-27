@@ -7,7 +7,7 @@ REVISION =	1
 
 CATEGORIES =	security
 
-MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
+SITES =		${SITE_GNUPG:=gnupg/}
 
 HOMEPAGE =	https://www.gnupg.org/
 

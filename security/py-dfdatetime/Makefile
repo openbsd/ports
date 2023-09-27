@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/log2timeline/dfdatetime/wiki
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
-MASTER_SITES =	https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_EGG_VERSION}/
 
 # Apachev2
 PERMIT_PACKAGE =	Yes

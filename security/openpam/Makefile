@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += util
 
-MASTER_SITES=	http://nerd.hu/distfiles/
+SITES=		http://nerd.hu/distfiles/
 
 WRKSRC=	${WRKDIST}/libpam
 

@@ -10,7 +10,7 @@ HOMEPAGE =	https://github.com/tadfisher/pass-otp
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/tadfisher/pass-otp/releases/download/v${V}/
+SITES =		https://github.com/tadfisher/pass-otp/releases/download/v${V}/
 
 BUILD_DEPENDS =	shells/bash
 RUN_DEPENDS =	security/password-store \

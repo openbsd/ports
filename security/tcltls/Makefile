@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	ssl crypto
 
-MASTER_SITES=	${HOMEPAGE:=uv/}
+SITES=		${HOMEPAGE:=uv/}
 
 MODULES=	lang/tcl
 MODTCL_VERSION=	8.6

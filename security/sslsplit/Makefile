@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += net pcap pthread ssl
 
-MASTER_SITES=	https://mirror.roe.ch/rel/sslsplit/
+SITES=		https://mirror.roe.ch/rel/sslsplit/
 
 LIB_DEPENDS=	devel/libevent2 \
 		net/libnet/1.1

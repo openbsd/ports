@@ -7,7 +7,7 @@ CATEGORIES=	security
 
 WRKDIST=	${WRKDIR}/nfs
 
-MASTER_SITES=	ftp://ftp.cs.vu.nl/pub/leendert/
+SITES=		ftp://ftp.cs.vu.nl/pub/leendert/
 
 PERMIT_PACKAGE=	Yes
 

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c
 
-MASTER_SITES=		${MASTER_SITE_GNU:=libtasn1/}
+SITES=			${SITE_GNU:=libtasn1/}
 
 CONFIGURE_STYLE=	gnu
 

@@ -8,7 +8,7 @@ HOMEPAGE=		https://www.funtoo.org/Keychain
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		http://www.funtoo.org/archive/keychain/
+SITES=			http://www.funtoo.org/archive/keychain/
 EXTRACT_SUFX=		.tar.bz2
 
 NO_BUILD=		Yes

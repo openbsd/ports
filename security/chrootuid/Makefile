@@ -12,8 +12,8 @@ HOMEPAGE=		http://www.porcupine.org/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://ftp.porcupine.org/pub/security/ \
-			ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/
+SITES=		http://ftp.porcupine.org/pub/security/ \
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/
 
 ALL_TARGET=		chrootuid
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"

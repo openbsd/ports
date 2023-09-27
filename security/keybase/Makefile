@@ -17,7 +17,7 @@ HOMEPAGE =	https://keybase.io
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/keybase/client/releases/download/${V}/
+SITES =		https://github.com/keybase/client/releases/download/${V}/
 
 RUN_DEPENDS =	security/gnupg>=2.2.23p1
 

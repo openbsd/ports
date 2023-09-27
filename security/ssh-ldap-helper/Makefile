@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c crypto lber ldap util z
 
-MASTER_SITES =	https://dl.rockylinux.org/pub/rocky/8/BaseOS/source/tree/Packages/o/
+SITES =	https://dl.rockylinux.org/pub/rocky/8/BaseOS/source/tree/Packages/o/
 
 LDAP_PATCH =	${WRKDIR}/openssh-6.7p1-ldap.patch
 

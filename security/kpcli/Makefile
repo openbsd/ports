@@ -9,7 +9,7 @@ HOMEPAGE =	https://kpcli.sourceforge.io/
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kpcli/}
+SITES =		${SITE_SOURCEFORGE:=kpcli/}
 
 MODULES =	perl
 NO_BUILD =	Yes

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} botan-2 bz2 c lzma m sqlite3 z
 
-MASTER_SITES =	http://dist.opendnssec.org/source/
+SITES =		http://dist.opendnssec.org/source/
 
 COMPILER =	base-clang ports-gcc base-gcc
 

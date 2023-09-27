@@ -9,7 +9,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
 DIST_SUBDIR=	${DISTNAME}
-MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/ppgen/
+SITES=		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/ppgen/
 DISTFILES=	${DISTNAME}.tar.gz en.gz
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 

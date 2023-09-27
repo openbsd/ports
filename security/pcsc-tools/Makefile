@@ -15,7 +15,7 @@ COMPILER_LANGS=	c
 
 WANTLIB += c pcsclite pthread
 
-MASTER_SITES=	https://pcsc-tools.apdu.fr/
+SITES=		https://pcsc-tools.apdu.fr/
 
 CONFIGURE_STYLE= gnu
 USE_GMAKE=	Yes

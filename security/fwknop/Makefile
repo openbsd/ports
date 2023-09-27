@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += assuan c gpg-error gpgme iconv intl pcap
 
-MASTER_SITES =		https://www.cipherdyne.org/fwknop/download/
+SITES =			https://www.cipherdyne.org/fwknop/download/
 
 BUILD_DEPENDS =		net/wget \
 			security/gnupg

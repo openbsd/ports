@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 EXTRACT_SUFX =	.tgz
 
 COMPILER =		base-clang ports-gcc

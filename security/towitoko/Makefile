@@ -12,7 +12,7 @@ HOMEPAGE=		http://www.geocities.com/cprados/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread
 
-MASTER_SITES=		http://www.geocities.com/cprados/files/
+SITES=			http://www.geocities.com/cprados/files/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-static

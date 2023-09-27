@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c iconv intl z
 
-MASTER_SITES =		https://github.com/cracklib/cracklib/releases/download/v${V}/
+SITES =		https://github.com/cracklib/cracklib/releases/download/v${V}/
 
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/gettext,-runtime

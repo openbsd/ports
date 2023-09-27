@@ -3,7 +3,7 @@ COMMENT=	simple log monitoring program
 DISTNAME=	swatch-3.2.3
 REVISION =	1
 CATEGORIES=	security sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=swatch/}
+SITES=		${SITE_SOURCEFORGE:=swatch/}
 
 HOMEPAGE=	http://swatch.sourceforge.net/
 

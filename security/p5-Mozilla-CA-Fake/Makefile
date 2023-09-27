@@ -9,7 +9,7 @@ CATEGORIES=	security
 # PD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 NO_TEST=	Yes
 

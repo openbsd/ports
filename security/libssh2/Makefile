@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		crypto ssl z
 
-MASTER_SITES =		https://www.libssh2.org/download/
+SITES =			https://www.libssh2.org/download/
 
 CONFIGURE_STYLE =	gnu
 

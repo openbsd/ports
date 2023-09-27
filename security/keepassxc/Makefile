@@ -16,8 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xtst
 WANTLIB += argon2 botan-2 c m minizip qrencode readline z
 
-MASTER_SITES =	\
-	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
+SITES =	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
 EXTRACT_SUFX =	-src.tar.xz
 
 MODULES =	x11/qt5 \

@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
 
-MASTER_SITES=	https://download.libsodium.org/libsodium/releases/ \
+SITES=		https://download.libsodium.org/libsodium/releases/ \
 		https://download.libsodium.org/libsodium/releases/old/
 
 SEPARATE_BUILD=	Yes

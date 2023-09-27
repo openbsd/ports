@@ -6,7 +6,7 @@ EPOCH =		0
 
 HOMEPAGE =	http://otr.cypherpunks.ca/
 
-MASTER_SITES =	${HOMEPAGE}
+SITES =		${HOMEPAGE}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

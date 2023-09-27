@@ -11,7 +11,7 @@ HOMEPAGE =		https://www.owasp.org/index.php/ZAP
 # Apache v2.0 License
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/zaproxy/zaproxy/releases/download/v${VERSION}/
+SITES =	https://github.com/zaproxy/zaproxy/releases/download/v${VERSION}/
 
 MODULES =               java
 MODJAVA_VER =           1.8+

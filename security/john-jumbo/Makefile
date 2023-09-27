@@ -23,7 +23,7 @@ COMPILER_LANGS =	c
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 smime3
 WANTLIB += nssutil3 ssl ssl3 z
 
-MASTER_SITES =		https://www.openwall.com/john/k/
+SITES =			https://www.openwall.com/john/k/
 
 LIB_DEPENDS =		security/nss
 

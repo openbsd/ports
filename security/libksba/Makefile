@@ -5,7 +5,7 @@ CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 2.0	# 22.4
 
-MASTER_SITES =	${MASTER_SITE_GNUPG:=libksba/}
+SITES =		${SITE_GNUPG:=libksba/}
 
 HOMEPAGE = 	https://www.gnupg.org/software/libksba/index.html
 

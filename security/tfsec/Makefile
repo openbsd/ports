@@ -7,7 +7,7 @@ VERSION =		1.28.4
 DISTNAME =		tfsec-vendored-${VERSION}
 PKGNAME =		tfsec-${VERSION}
 
-MASTER_SITES =		https://distfiles.tristero.se/
+SITES =			https://distfiles.tristero.se/
 
 CATEGORIES =		security
 

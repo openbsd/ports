@@ -12,7 +12,7 @@ MAINTAINER=		Tietoturvamies <main@tietoturvamies.fi>
 # Apache2
 PERMIT_PACKAGE=	yes
 
-MASTER_SITES=		https://launchpad.net/veracrypt/trunk/${V}/+download/
+SITES=			https://launchpad.net/veracrypt/trunk/${V}/+download/
 EXTRACT_SUFX=		.tar.bz2
 FIX_EXTRACT_PERMISSIONS=Yes
 

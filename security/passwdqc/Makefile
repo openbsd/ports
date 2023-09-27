@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	https://www.openwall.com/passwdqc/
+SITES=		https://www.openwall.com/passwdqc/
 FIX_EXTRACT_PERMISSIONS= Yes
 
 NO_TEST=	Yes

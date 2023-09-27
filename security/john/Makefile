@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
 
-MASTER_SITES =		${HOMEPAGE}/j/
+SITES =			${HOMEPAGE}/j/
 
 WRKSRC =		${WRKDIST}/src
 

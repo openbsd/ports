@@ -13,7 +13,7 @@ WANTLIB=	c curses
 
 RUN_DEPENDS=	net/isc-bind
 BUILD_DEPENDS=	net/isc-bind
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc \

@@ -9,7 +9,7 @@ HOMEPAGE=		http://sourceforge.net/projects/snort2pf/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=snort2pf/}
+SITES=			${SITE_SOURCEFORGE:=snort2pf/}
 
 PKG_ARCH=		*
 NO_BUILD=		Yes

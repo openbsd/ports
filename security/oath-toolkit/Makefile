@@ -12,7 +12,7 @@ SHARED_LIBS +=  pskc                      0.1 # 0.1
 CATEGORIES=	security devel
 
 HOMEPAGE=	http://www.nongnu.org/oath-toolkit/
-MASTER_SITES=	${MASTER_SITE_SAVANNAH:=oath-toolkit/}
+SITES=		${SITE_SAVANNAH:=oath-toolkit/}
 
 # libraries: LGPLv2.1+, tools: GPLv3+
 PERMIT_PACKAGE=	 Yes

@@ -4,7 +4,7 @@ DISTNAME=	dsniff-2.3
 REVISION=	17
 CATEGORIES=	security
 
-MASTER_SITES=	http://monkey.org/~dugsong/dsniff/
+SITES=		http://monkey.org/~dugsong/dsniff/
 
 HOMEPAGE=	http://www.monkey.org/~dugsong/dsniff/
 

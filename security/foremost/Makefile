@@ -10,7 +10,7 @@ HOMEPAGE =		http://foremost.sourceforge.net/
 # not copyrighted; see COPYRIGHT in main.h
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		http://foremost.sourceforge.net/pkg/
+SITES =			http://foremost.sourceforge.net/pkg/
 
 WANTLIB +=		c
 

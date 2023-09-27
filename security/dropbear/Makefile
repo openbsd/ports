@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c util z
 
-MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
+SITES=		https://matt.ucc.asn.au/dropbear/releases/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu

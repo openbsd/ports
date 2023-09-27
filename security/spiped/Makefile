@@ -7,7 +7,7 @@ REVISION =		1
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://www.tarsnap.com/spiped.html
-MASTER_SITES =		https://www.tarsnap.com/spiped/
+SITES =			https://www.tarsnap.com/spiped/
 
 # BSD
 PERMIT_PACKAGE =	Yes

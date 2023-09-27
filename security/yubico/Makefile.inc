@@ -6,5 +6,5 @@ HOMEPAGE?=	https://developers.yubico.com/${YK_PROJECT}/
 PERMIT_PACKAGE?=	Yes
 
 .if !defined(GH_ACCOUNT)
-MASTER_SITES?=	https://developers.yubico.com/${YK_PROJECT}/Releases/
+SITES?=		https://developers.yubico.com/${YK_PROJECT}/Releases/
 .endif

@@ -7,7 +7,7 @@ SHARED_LIBS +=		ssh		4.2 # 4.8
 CATEGORIES =		security devel
 
 HOMEPAGE =		https://www.libssh.org/
-MASTER_SITES =		https://www.libssh.org/files/${V:R}/
+SITES =			https://www.libssh.org/files/${V:R}/
 EXTRACT_SUFX =		.tar.xz
 
 # LGPL v2.1

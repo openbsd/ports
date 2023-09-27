@@ -9,7 +9,7 @@ SHARED_LIBS+=	pcscspy		0.0 # 0.0.0
 
 HOMEPAGE=	https://pcsclite.apdu.fr
 
-MASTER_SITES=	https://pcsclite.apdu.fr/files/
+SITES=		https://pcsclite.apdu.fr/files/
 
 EXTRACT_SUFX=	.tar.bz2
 

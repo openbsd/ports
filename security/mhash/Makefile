@@ -7,7 +7,7 @@ MODGNU_SHARED_LIBS=mhash ''
 LIBmhash_ALIAS=	realmhash
 REVISION=	1
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mhash/}
+SITES=		${SITE_SOURCEFORGE:=mhash/}
 
 HOMEPAGE=	http://mhash.sourceforge.net/
 

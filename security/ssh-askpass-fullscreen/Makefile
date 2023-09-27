@@ -4,7 +4,7 @@ DISTNAME =	ssh-askpass-fullscreen-0.4
 REVISION=	7
 CATEGORIES=	security
 
-MASTER_SITES =	http://www.cgabriel.org/download/ssh-askpass-fullscreen/
+SITES =		http://www.cgabriel.org/download/ssh-askpass-fullscreen/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

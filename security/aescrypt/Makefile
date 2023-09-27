@@ -11,8 +11,8 @@ HOMEPAGE=		http://aescrypt.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://aescrypt.sourceforge.net/ \
-			${MASTER_SITE_SOURCEFORGE:=aescrypt/}
+SITES=			http://aescrypt.sourceforge.net/ \
+			${SITE_SOURCEFORGE:=aescrypt/}
 
 AUTOCONF_VERSION=	2.13
 CONFIGURE_STYLE=	autoconf

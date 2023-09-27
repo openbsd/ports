@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += gpg-error iconv intl
 
-MASTER_SITES=		${MASTER_SITE_GNUPG:=libassuan/}
+SITES=			${SITE_GNUPG:=libassuan/}
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		security/libgpg-error

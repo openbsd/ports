@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 # Download is hosted by fossil webui, which accepts requests for any filename
 # and chooses checkin to serve based on "uuid" query key
-MASTER_SITES =		${HOMEPAGE:=tarball/}
+SITES =			${HOMEPAGE:=tarball/}
 _FILENAME =		${DISTNAME}${EXTRACT_SUFX}
 UUID =			ffd35a07693f3216ba0b398cca9c7497a288c7aa
 DISTFILES =		${_FILENAME}{${_FILENAME}?uuid=${UUID}}

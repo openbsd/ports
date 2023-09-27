@@ -12,7 +12,7 @@ WANTLIB =		c iconv intl jpeg m mhash mcrypt ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=steghide/}
+SITES =			${SITE_SOURCEFORGE:=steghide/}
 
 BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/gettext,-runtime \

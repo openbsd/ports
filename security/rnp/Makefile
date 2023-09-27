@@ -6,7 +6,7 @@ GH_TAGNAME =	v0.17.0
 SHARED_LIBS =	rnp 0.3
 
 # upstream extracted libsexpp to a separate repo via submodule, need to use released tarball
-MASTER_SITES =	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
+SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	${DISTNAME:S/v//}
 WRKSRC =	${WRKDIR}/${DISTNAME}

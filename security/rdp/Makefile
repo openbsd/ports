@@ -4,7 +4,7 @@ DISTNAME=	rdp
 PKGNAME=	rdp-1.0
 REVISION =	0
 CATEGORIES=	security
-MASTER_SITES=	http://www.atstake.com/research/tools/
+SITES=		http://www.atstake.com/research/tools/
 
 LIB_DEPENDS=	net/libnet/1.0
 

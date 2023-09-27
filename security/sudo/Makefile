@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://www.sudo.ws/
 
-MASTER_SITES=	https://www.sudo.ws/dist/ \
+SITES=		https://www.sudo.ws/dist/ \
 		https://bigsearcher.com/mirrors/sudo/ \
 		https://mirrors.concertpass.com/sudo/
 

@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcap lib/libnet-1.0/net=0 nids
 
-MASTER_SITES=	${HOMEPAGE} \
+SITES=		${HOMEPAGE} \
 		ftp://ftp.openwall.com/pub/projects/scanlogd/
 
 LIB_DEPENDS=	net/libnet/1.0 \

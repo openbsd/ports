@@ -14,7 +14,7 @@ HOMEPAGE =		https://portswigger.net/burp/
 PERMIT_PACKAGE =	https://portswigger.net/burp/eula/community
 PERMIT_DISTFILES =	https://portswigger.net/burp/eula/community
 
-MASTER_SITES =		https://portswigger.net/Burp/Releases/
+SITES =			https://portswigger.net/Burp/Releases/
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar

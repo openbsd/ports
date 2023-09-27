@@ -10,7 +10,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://git.tozt.net/rbw/about/
 
-MASTER_SITES =	https://git.tozt.net/rbw/snapshot/
+SITES =		https://git.tozt.net/rbw/snapshot/
 
 # MIT X11
 PERMIT_PACKAGE =	Yes

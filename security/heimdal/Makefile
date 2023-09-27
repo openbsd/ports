@@ -37,7 +37,7 @@ PERMIT_PACKAGE=		Yes
 
 MULTI_PACKAGES=		-main -devel-docs -libs
 
-MASTER_SITES=		https://github.com/heimdal/heimdal/releases/download/heimdal-${V}/
+SITES=	https://github.com/heimdal/heimdal/releases/download/heimdal-${V}/
 
 MODULES=		lang/python
 

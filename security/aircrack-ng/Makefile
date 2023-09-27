@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=		c pthread crypto z pcre
 WANTLIB+=		${COMPILER_LIBCXX} m sqlite3
 
-MASTER_SITES=		https://download.aircrack-ng.org/
+SITES=			https://download.aircrack-ng.org/
 
 BUILD_DEPENDS=		devel/shtool \
 			devel/pkgconf

@@ -7,7 +7,7 @@ DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
-MASTER_SITES = 	${MASTER_SITE_GNUPG:=pinentry/}
+SITES = 	${SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
 

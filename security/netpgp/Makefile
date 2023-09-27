@@ -17,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		bz2 c crypto z
 
-MASTER_SITES =		http://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/ \
-			ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/
+SITES =		http://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/ \
+		ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/LOCAL_PORTS/
 
 LIB_DEPENDS =		archivers/bzip2
 TEST_DEPENDS =	devel/autoconf/2.68

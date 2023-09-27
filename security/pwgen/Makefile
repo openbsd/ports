@@ -7,7 +7,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	https://sourceforge.net/projects/pwgen/
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pwgen/}
+SITES=		${SITE_SOURCEFORGE:=pwgen/}
 
 # GPL
 PERMIT_PACKAGE=	Yes

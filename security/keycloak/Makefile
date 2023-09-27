@@ -5,7 +5,7 @@ CATEGORIES =	security
 VERSION =	22.0.1
 DISTNAME =	keycloak-${VERSION}
 
-MASTER_SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
+SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
 
 MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 

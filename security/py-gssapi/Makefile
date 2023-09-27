@@ -9,7 +9,7 @@ CATEGORIES=		security
 # ISC
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/pythongssapi/python-gssapi/releases/download/v${MODPY_EGG_VERSION}/
+SITES=			https://github.com/pythongssapi/python-gssapi/releases/download/v${MODPY_EGG_VERSION}/
 
 WANTLIB += heimdal/lib/gssapi
 

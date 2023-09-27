@@ -30,7 +30,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # see the COPYRIGHT file in package sources
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-${V}/
+SITES=			https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-${V}/
 
 WANTLIB += c crypto
 

@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gpg-error iconv intl
 
-MASTER_SITES=		${MASTER_SITE_GNUPG:=libgcrypt/}
+SITES=			${SITE_GNUPG:=libgcrypt/}
 
 LIB_DEPENDS=		security/libgpg-error
 

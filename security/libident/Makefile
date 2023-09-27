@@ -4,7 +4,7 @@ SHARED_LIBS +=	ident                     0.0 # 0.0
 
 DISTNAME=	libident-0.32
 CATEGORIES=	security devel net
-MASTER_SITES=	https://www.remlab.net/files/libident/
+SITES=		https://www.remlab.net/files/libident/
 REVISION=	2
 
 HOMEPAGE=	https://www.remlab.net/libident/

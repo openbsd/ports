@@ -4,7 +4,7 @@ DISTNAME =	pivy-$V
 
 HOMEPAGE =	https://github.com/arekinath/pivy
 
-MASTER_SITES =	https://github.com/arekinath/pivy/releases/download/v$V/
+SITES =		https://github.com/arekinath/pivy/releases/download/v$V/
 
 CATEGORIES =	security
 

@@ -19,7 +19,7 @@ WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		https://github.com/ssdeep-project/ssdeep/releases/download/release-${VERSION}/
+SITES =			https://github.com/ssdeep-project/ssdeep/releases/download/release-${VERSION}/
 
 CONFIGURE_STYLE =	gnu
 

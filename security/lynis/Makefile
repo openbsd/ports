@@ -11,7 +11,7 @@ MAINTAINER=	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://downloads.cisofy.com/lynis/
+SITES=		https://downloads.cisofy.com/lynis/
 
 PKG_ARCH=	*
 

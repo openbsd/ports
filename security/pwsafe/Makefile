@@ -12,7 +12,7 @@ WANTLIB=		m ncurses crypto c ${COMPILER_LIBCXX} readline curses
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		${HOMEPAGE}releases/
+SITES=			${HOMEPAGE}releases/
 
 CONFIGURE_STYLE=        gnu
 USE_GMAKE=		Yes

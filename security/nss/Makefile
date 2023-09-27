@@ -18,7 +18,7 @@ HOMEPAGE=		https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 PERMIT_PACKAGE=	Yes
 
 #for regular releases
-MASTER_SITES=		https://ftp.mozilla.org/pub/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
+SITES=			https://ftp.mozilla.org/pub/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/nspr>=${NSPR_VERSION}

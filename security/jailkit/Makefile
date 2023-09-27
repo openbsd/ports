@@ -6,7 +6,7 @@ CATEGORIES=		security sysutils
 
 HOMEPAGE=		http://olivier.sessink.nl/jailkit/
 
-MASTER_SITES=		http://olivier.sessink.nl/jailkit/
+SITES=			${HOMEPAGE}
 
 # BSD - LGPLv2
 PERMIT_PACKAGE=	Yes

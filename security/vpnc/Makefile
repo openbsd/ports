@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c gcrypt>=12 gpg-error iconv intl
 
-MASTER_SITES=		${HOMEPAGE}
+SITES=			${HOMEPAGE}
 
 LIB_DEPENDS=		security/libgcrypt>=1.2
 RUN_DEPENDS=		net/vpnc-scripts

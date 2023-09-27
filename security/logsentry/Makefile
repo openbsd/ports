@@ -9,7 +9,7 @@ CATEGORIES=	security
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}
+SITES=		${SITE_SOURCEFORGE:=sentrytools/}
 
 NO_TEST=	Yes
 

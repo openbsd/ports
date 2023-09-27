@@ -14,7 +14,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wapiti/}
+SITES =			${SITE_SOURCEFORGE:=wapiti/}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes

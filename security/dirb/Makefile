@@ -11,7 +11,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dirb/}
+SITES =		${SITE_SOURCEFORGE:=dirb/}
 
 WANTLIB += c crypto curl nghttp2 ssl z
 

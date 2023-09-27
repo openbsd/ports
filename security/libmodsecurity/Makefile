@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z \
 			maxminddb nghttp2 pcre xml2 yajl
 
-MASTER_SITES =		https://github.com/SpiderLabs/ModSecurity/releases/download/v${VERSION}/
+SITES =	https://github.com/SpiderLabs/ModSecurity/releases/download/v${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 

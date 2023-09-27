@@ -13,7 +13,7 @@ WANTLIB += c ssl crypto pcap pcsclite pthread
 
 LIB_DEPENDS=	security/pcsc-lite
 
-MASTER_SITES=	https://w1.fi/releases/
+SITES=		https://w1.fi/releases/
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

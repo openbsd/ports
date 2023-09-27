@@ -7,7 +7,7 @@ CATEGORIES =		security sysutils
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://www.tedunangst.com/flak/post/reop
-MASTER_SITES =		http://www.tedunangst.com/flak/files/
+SITES =			http://www.tedunangst.com/flak/files/
 EXTRACT_SUFX =		.tgz
 
 # ISC

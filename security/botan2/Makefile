@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} bz2 c lzma m z
 
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 
 SUPDISTFILES =		${DISTFILES}.asc
 EXTRACT_SUFX =		.tar.xz

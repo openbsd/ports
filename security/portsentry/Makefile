@@ -8,7 +8,7 @@ REVISION =	0
 PERMIT_PACKAGE=    	Yes
 WANTLIB=		c
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}
+SITES=		${SITE_SOURCEFORGE:=sentrytools/}
 
 WRKDIST=        ${WRKDIR}/portsentry_beta
 

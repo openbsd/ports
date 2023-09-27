@@ -12,7 +12,7 @@ HOMEPAGE =	https://github.com/extremeshok/clamav-unofficial-sigs
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/extremeshok/clamav-unofficial-sigs/archive/
+SITES =		https://github.com/extremeshok/clamav-unofficial-sigs/archive/
 
 RUN_DEPENDS =	net/curl \
 		net/rsync \

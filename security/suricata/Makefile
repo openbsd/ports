@@ -17,7 +17,7 @@ MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://www.openinfosecfoundation.org/download/
+SITES =		https://www.openinfosecfoundation.org/download/
 
 # uses pledge()
 WANTLIB +=  ${COMPILER_LIBCXX} c iconv jansson lz4 lzma m magic

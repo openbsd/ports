@@ -23,7 +23,7 @@ WANTLIB += p11-kit ssl tasn1 unbound unistring z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/ \
+SITES=			https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/ \
 			ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 # needed for tests

@@ -5,8 +5,8 @@ CATEGORIES =	security
 REVISION =	10
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES =	http://monkey.org/~pilot/arirang/ \
-		${MASTER_SITE_PACKETSTORM:=UNIX/cgi-scanners/}
+SITES =		http://monkey.org/~pilot/arirang/ \
+		${SITE_PACKETSTORM:=UNIX/cgi-scanners/}
 
 HOMEPAGE =	http://www.monkey.org/~pilot
 

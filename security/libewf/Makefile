@@ -20,7 +20,7 @@ WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += bfio bz2 c crypto fuse iconv intl m pthread smdev smraw util
 WANTLIB += z
 
-MASTER_SITES =		https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
+SITES =	https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
 
 MODULES =		lang/python
 

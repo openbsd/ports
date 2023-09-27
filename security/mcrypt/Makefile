@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c iconv intl ltdl mcrypt mhash z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
+SITES =			${SITE_SOURCEFORGE:=mcrypt/}
 
 USE_GMAKE =		Yes
 LIB_DEPENDS =		security/libmcrypt \

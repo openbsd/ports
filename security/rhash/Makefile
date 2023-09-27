@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=rhash/}
+SITES =		${SITE_SOURCEFORGE:=rhash/}
 
 TEST_DEPENDS =	sysutils/ggrep
 

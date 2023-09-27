@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto iconv ldns lzma m pthread xml2 z
 
-MASTER_SITES=	https://dist.opendnssec.org/source/
+SITES=		https://dist.opendnssec.org/source/
 
 BUILD_DEPENDS=	devel/cunit
 

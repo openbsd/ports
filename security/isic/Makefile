@@ -10,7 +10,7 @@ HOMEPAGE=	http://isic.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c lib/libnet-1.1/net=11
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=isic/}
+SITES=		${SITE_SOURCEFORGE:=isic/}
 EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	net/libnet/1.1

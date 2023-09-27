@@ -9,7 +9,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/dfwinreg/wiki
 
-MASTER_SITES =	https://github.com/log2timeline/dfwinreg/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/log2timeline/dfwinreg/releases/download/${MODPY_EGG_VERSION}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

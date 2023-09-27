@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses gio-2.0 gobject-2.0 iconv pthread readline z
 
-MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${V}/
+SITES=		https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
 BUILD_DEPENDS=	security/pcsc-lite \
 		shells/bash-completion \

@@ -9,7 +9,7 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += c crypto
 
-MASTER_SITES =	https://ftp.omarpolo.com/
+SITES =		https://ftp.omarpolo.com/
 
 MAKE_FLAGS =	CFLAGS="${CFLAGS}"
 FAKE_FLAGS =	PREFIX="${TRUEPREFIX}"

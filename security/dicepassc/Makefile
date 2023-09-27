@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB =		c
 
-MASTER_SITES =		https://www.nul.space/pub/dicepassc/
+SITES =			https://www.nul.space/pub/dicepassc/
 
 NO_TEST =		Yes
 

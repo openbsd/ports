@@ -13,7 +13,7 @@ MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/old/2.x/
+SITES=		http://lcamtuf.coredump.cx/p0f3/releases/old/2.x/
 
 WRKDIST=	${WRKDIR}/p0f
 

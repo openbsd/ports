@@ -8,7 +8,7 @@ REVISION =		8
 
 SUBST_VARS =		VERSION
 
-MASTER_SITES =		https://crates.io/api/v1/crates/
+SITES =			https://crates.io/api/v1/crates/
 
 DISTFILES +=		cargo/${DISTNAME}.tar.gz{ring/${VERSION}/download}
 

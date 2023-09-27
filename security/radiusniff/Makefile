@@ -7,7 +7,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 EXTRACT_SUFX=		.tgz
-MASTER_SITES=		http://adm.freelsd.net/ADM/
+SITES=			http://adm.freelsd.net/ADM/
 
 WRKSRC=			${WRKDIR}/radiusniff-0.2
 

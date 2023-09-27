@@ -8,7 +8,7 @@ HOMEPAGE=	http://mcrypt.hellug.gr/shash/
 
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
+SITES=		ftp://mcrypt.hellug.gr/pub/mcrypt/shash/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CFLAGS='-I${LOCALBASE}/include -L${LOCALBASE}/lib'

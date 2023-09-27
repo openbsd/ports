@@ -2,8 +2,8 @@ COMMENT=	universal steganography tool
 
 DISTNAME=	outguess-0.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.outguess.org/ \
-		${MASTER_SITE_PACKETSTORM:=crypt/stego/}
+SITES=		http://www.outguess.org/ \
+		${SITE_PACKETSTORM:=crypt/stego/}
 
 HOMEPAGE=	http://www.outguess.org/
 

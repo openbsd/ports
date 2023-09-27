@@ -12,7 +12,7 @@ CATEGORIES =		security
 # Apache2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://github.com/RUB-NDS/TLS-Attacker/releases/download/$V/
+SITES =		https://github.com/RUB-NDS/TLS-Attacker/releases/download/$V/
 EXTRACT_SUFX =		.zip
 
 MODULES =		java

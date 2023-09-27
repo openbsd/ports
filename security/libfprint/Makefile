@@ -9,7 +9,7 @@ CATEGORIES=    		security
 SHARED_LIBS += fprint                    2.0 # 0.0.0
 
 HOMEPAGE=		https://fprint.freedesktop.org/
-MASTER_SITES=		https://gitlab.freedesktop.org/libfprint/libfprint/uploads/4272fab4f37516db5b20d07bb576a4b1/
+SITES=			https://gitlab.freedesktop.org/libfprint/libfprint/uploads/4272fab4f37516db5b20d07bb576a4b1/
 EXTRACT_SUFX=		.tar.xz
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>

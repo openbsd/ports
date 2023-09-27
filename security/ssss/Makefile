@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c gmp
 
-MASTER_SITES=	http://point-at-infinity.org/ssss/
+SITES=		http://point-at-infinity.org/ssss/
 
 BUILD_DEPENDS=	converters/xmltoman
 

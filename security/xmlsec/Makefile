@@ -20,7 +20,7 @@ WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
 WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
 
-MASTER_SITES=	${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}/download/
 
 MULTI_PACKAGES=	-main -docs
 

@@ -12,7 +12,7 @@ MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
 
 HOMEPAGE=	https://www.inet.no/dante/
 
-MASTER_SITES=	${HOMEPAGE}/files/
+SITES=		${HOMEPAGE}/files/
 
 # BSD/CMU
 PERMIT_PACKAGE=	Yes

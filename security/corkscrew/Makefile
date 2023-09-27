@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.agroman.net/corkscrew/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://www.agroman.net/corkscrew/
+SITES=			http://www.agroman.net/corkscrew/
 
 CONFIGURE_STYLE=	gnu
 

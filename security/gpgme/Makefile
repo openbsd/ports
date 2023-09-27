@@ -14,7 +14,7 @@ SHARED_LIBS +=  qgpgme               3.1      # 19.0
 
 HOMEPAGE =		https://www.gnupg.org/software/gpgme/
 
-MASTER_SITES =		${MASTER_SITE_GNUPG:=gpgme/}
+SITES =			${SITE_GNUPG:=gpgme/}
 EXTRACT_SUFX =		.tar.bz2
 
 # GPLv2 - LGPLv2.1

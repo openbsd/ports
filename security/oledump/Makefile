@@ -15,7 +15,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # public domain
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://didierstevens.com/files/software/
+SITES =		https://didierstevens.com/files/software/
 
 EXTRACT_SUFX =	.zip
 

@@ -11,7 +11,7 @@ MAINTAINER =	Gregoire Jadi <gjadi@omecha.info>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://keyringer.pw/releases/
+SITES =			https://keyringer.pw/releases/
 EXTRACT_SUFX =		.tar.bz2
 
 RUN_DEPENDS =		devel/git \

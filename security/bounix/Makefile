@@ -5,7 +5,7 @@ DISTNAME=	bo121unix
 
 CATEGORIES=     security
 
-MASTER_SITES=	http://orifice.rotten.com/cDc/ \
+SITES=		http://orifice.rotten.com/cDc/ \
 		http://www.cultdeadcow.com/tools/
 
 PERMIT_PACKAGE=	Yes

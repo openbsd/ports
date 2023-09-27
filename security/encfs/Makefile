@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto fuse intl m ssl tinyxml2
 
-MASTER_SITES =		https://github.com/vgough/encfs/releases/download/v$V/
+SITES =			https://github.com/vgough/encfs/releases/download/v$V/
 
 COMPILER =		base-clang ports-gcc
 

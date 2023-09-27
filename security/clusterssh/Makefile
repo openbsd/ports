@@ -13,7 +13,7 @@ MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}2.%20ClusterSSH%20Series%204/
+SITES=		${SITE_SOURCEFORGE:=clusterssh/}2.%20ClusterSSH%20Series%204/
 
 MODULES=	cpan
 PKG_ARCH=	*

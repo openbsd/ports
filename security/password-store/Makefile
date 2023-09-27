@@ -11,7 +11,7 @@ MAINTAINER =	David Dahlberg <david+bsd@dahlberg.cologne>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://git.zx2c4.com/password-store/snapshot/
+SITES =		https://git.zx2c4.com/password-store/snapshot/
 EXTRACT_SUFX =	.tar.xz
 
 RUN_DEPENDS =	converters/base64 \

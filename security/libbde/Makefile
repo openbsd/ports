@@ -11,7 +11,7 @@ CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/libyal/libbde/
 
-MASTER_SITES =		https://github.com/libyal/libbde/releases/download/${VERSION}/
+SITES =		https://github.com/libyal/libbde/releases/download/${VERSION}/
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 

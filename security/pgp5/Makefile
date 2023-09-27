@@ -6,7 +6,7 @@ REVISION=	2
 CATEGORIES=	security
 FIX_EXTRACT_PERMISSIONS=Yes
 
-MASTER_SITES=	https://spacehopper.org/mirrors/
+SITES=		https://spacehopper.org/mirrors/
 
 # see apps/common/pgpLicense.c
 PERMIT_PACKAGE=	Yes

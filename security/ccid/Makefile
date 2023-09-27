@@ -6,7 +6,7 @@ CATEGORIES =	security
 
 HOMEPAGE =	https://ccid.apdu.fr/
 
-MASTER_SITES =	https://ccid.apdu.fr/files/
+SITES =		https://ccid.apdu.fr/files/
 
 EXTRACT_SUFX =	.tar.bz2
 

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto curl kvm ssl xml2
 
-MASTER_SITES =	${HOMEPAGE}/releases/download/v${V}/
+SITES =		${HOMEPAGE}/releases/download/v${V}/
 
 MODULES =	devel/cmake
 

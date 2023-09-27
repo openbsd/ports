@@ -5,7 +5,7 @@ CATEGORIES =	security
 REVISION =	4
 
 HOMEPAGE =	http://ipguard.deep.perm.ru/
-MASTER_SITES =	${HOMEPAGE}files/
+SITES =		${HOMEPAGE}files/
 
 # BSD-like
 PERMIT_PACKAGE =	Yes

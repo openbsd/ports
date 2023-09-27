@@ -20,7 +20,7 @@ RUN_DEPENDS=		archivers/p7zip \
 			archivers/unrar \
 			archivers/unzip
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=rarcrack/}
+SITES=			${SITE_SOURCEFORGE:=rarcrack/}
 EXTRACT_SUFX=   	.tar.bz2
 
 MAKE_ENV+=		CC="${CC}" CFLAGS="${CFLAGS}"

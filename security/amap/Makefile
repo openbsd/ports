@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto ssl pcre
 
-MASTER_SITES=	https://github.com/vanhauser-thc/THC-Archive/raw/master/Tools/
+SITES=		https://github.com/vanhauser-thc/THC-Archive/raw/master/Tools/
 
 LIB_DEPENDS=	devel/pcre
 

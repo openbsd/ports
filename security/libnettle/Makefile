@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gmp
 
-MASTER_SITES=		${MASTER_SITE_GNU:=nettle/}
+SITES=			${SITE_GNU:=nettle/}
 
 LIB_DEPENDS=		devel/gmp
 

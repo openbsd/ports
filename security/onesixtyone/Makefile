@@ -10,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 HOMEPAGE=	http://www.phreedom.org/software/onesixtyone/
-MASTER_SITES=	http://www.phreedom.org/software/onesixtyone/releases/
+SITES=		${HOMEPAGE}releases/
 
 NO_TEST=	Yes
 

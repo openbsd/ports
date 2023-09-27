@@ -3,7 +3,7 @@ COMMENT=	simple and easy to use TCP port scanner
 DISTNAME=	PortScanner-1.2
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/scanners/}
+SITES=		${SITE_PACKETSTORM:=UNIX/scanners/}
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c

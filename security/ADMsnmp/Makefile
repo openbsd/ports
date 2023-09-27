@@ -10,9 +10,9 @@ PERMIT_PACKAGE=		no license
 PERMIT_DISTFILES=	no license
 WANTLIB=		c
 
-MASTER_SITES=		ftp://adm.freelsd.net/pub/ADM/ \
+SITES=			ftp://adm.freelsd.net/pub/ADM/ \
 			http://adm.freelsd.net/ADM/ \
-			${MASTER_SITE_PACKETSTORM:=groups/ADM/}
+			${SITE_PACKETSTORM:=groups/ADM/}
 
 WRKDIST=		${WRKDIR}/ADMsnmp
 

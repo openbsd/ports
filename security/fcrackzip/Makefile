@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	http://home.schmorp.de/data/marc/
+SITES =		http://home.schmorp.de/data/marc/
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

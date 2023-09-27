@@ -14,7 +14,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mcrypt/}
+SITES =			${SITE_SOURCEFORGE:=mcrypt/}
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS +=	--enable-static

@@ -8,7 +8,7 @@ SHARED_LIBS +=  otr                  4.1      # 6.0
 
 HOMEPAGE=	https://otr.cypherpunks.ca/
 
-MASTER_SITES=	${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 

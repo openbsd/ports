@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
 
-MASTER_SITES =	https://github.com/dmshaw/paperkey/releases/download/v${VERSION}/
+SITES =	https://github.com/dmshaw/paperkey/releases/download/v${VERSION}/
 
 CONFIGURE_STYLE =	gnu
 

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread ssl crypto expat
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ophcrack/}
+SITES =			${SITE_SOURCEFORGE:=ophcrack/}
 
 EXTRACT_SUFX =		.tar.bz2
 

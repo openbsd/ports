@@ -10,7 +10,7 @@ HOMEPAGE=		http://www.adel.nursat.kz/apg/
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c m
 
-MASTER_SITES=		http://www.adel.nursat.kz/apg/download/
+SITES=			http://www.adel.nursat.kz/apg/download/
 
 MAKE_FLAGS=		CC="${CC}" FLAGS="${CFLAGS}" \
 			LIBS="" USE_SHA=APG_USE_SHA

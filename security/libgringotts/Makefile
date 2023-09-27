@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += bz2 m mcrypt mhash z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gringotts.berlios/}
+SITES=		${SITE_SOURCEFORGE:=gringotts.berlios/}
 
 LIB_DEPENDS=	security/libmcrypt \
 		archivers/bzip2 \

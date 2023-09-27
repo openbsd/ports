@@ -10,7 +10,7 @@ REVISION =		0
 CATEGORIES =		mail security
 
 HOMEPAGE =		https://tratt.net/laurie/src/pizauth/
-MASTER_SITES =		${HOMEPAGE}releases/
+SITES =			${HOMEPAGE}releases/
 EXTRACT_SUFX =		.tgz
 
 MAINTAINER =            Laurence Tratt <laurie@tratt.net>

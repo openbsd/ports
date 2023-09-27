@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 DISTNAME =	plaso-${MODPY_EGG_VERSION}
 
-MASTER_SITES =	https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/log2timeline/plaso/releases/download/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 MODPY_PYBUILD =	setuptools

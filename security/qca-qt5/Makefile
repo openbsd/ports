@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core c crypto m ssl
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/qca/${V}/}
+SITES =			${SITE_KDE:=stable/qca/${V}/}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake \

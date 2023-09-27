@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m mhash pcre z
 
-MASTER_SITES=		https://github.com/aide/aide/releases/download/v${V}/
+SITES=			https://github.com/aide/aide/releases/download/v${V}/
 
 BUILD_DEPENDS=		devel/bison
 LIB_DEPENDS=		devel/pcre \

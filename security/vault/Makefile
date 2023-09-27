@@ -12,7 +12,7 @@ PKGNAME=		vault-${VERSION}
 
 ### Vault UI
 MODGO_FLAGS=		-tags=ui
-MASTER_SITES=		https://distfiles.tristero.se/
+SITES=			https://distfiles.tristero.se/
 
 CATEGORIES=		security net
 

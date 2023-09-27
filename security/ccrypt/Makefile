@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=  c iconv intl
 
-MASTER_SITES=	${HOMEPAGE}/download/${V}/ \
-		${MASTER_SITE_SOURCEFORGE:=ccrypt/}
+SITES=		${HOMEPAGE}/download/${V}/ \
+		${SITE_SOURCEFORGE:=ccrypt/}
 
 MODULES=	textproc/intltool
 

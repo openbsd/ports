@@ -15,7 +15,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gringotts
 WANTLIB += gtk-x11-2.0 harfbuzz intl pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 popt z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gringotts.berlios/}
+SITES=		${SITE_SOURCEFORGE:=gringotts.berlios/}
 
 LIB_DEPENDS=	x11/gtk+2 \
 		security/libgringotts \

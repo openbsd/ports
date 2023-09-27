@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv intl
 
-MASTER_SITES=		${MASTER_SITE_GNUPG:=libgpg-error/}
+SITES=			${SITE_GNUPG:=libgpg-error/}
 
 USE_GMAKE=		Yes
 

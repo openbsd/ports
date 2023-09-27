@@ -15,7 +15,7 @@ WANTLIB += c
 
 # snapshot of
 # https://github.com/DragonFlyBSD/DragonFlyBSD/tree/master/usr.sbin/sshlockout
-MASTER_SITES =	http://si3t.ch/pub/openbsd/distfiles/
+SITES =		http://si3t.ch/pub/openbsd/distfiles/
 
 FAKE_FLAGS =	BINDIR=${PREFIX}/sbin \
 		MANDIR=${PREFIX}/man/man

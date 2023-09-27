@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pcap
 
-MASTER_SITES=	http://lcamtuf.coredump.cx/p0f3/releases/
+SITES=		http://lcamtuf.coredump.cx/p0f3/releases/
 
 MAKE_FLAGS=	CC="${CC}"
 

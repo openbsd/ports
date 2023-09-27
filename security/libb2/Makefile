@@ -15,7 +15,7 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # CC0
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/BLAKE2/libb2/releases/download/v${V}/
+SITES =		https://github.com/BLAKE2/libb2/releases/download/v${V}/
 
 SEPARATE_BUILD =	Yes
 
