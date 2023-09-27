@@ -3,10 +3,8 @@ MASTER_SITES.github ?=	https://github.com/
 MASTER_SITES.gitlab ?=	https://gitlab.com/
 MASTER_SITES.srht ?=	https://git.sr.ht/
 
-# EXTRACT_SUFX.x for each site
-EXTRACT_SUFX.github ?=	.tar.gz
-EXTRACT_SUFX.gitlab ?=	.tar.gz
-EXTRACT_SUFX.srht ?=	.tar.gz
+# set EXTRACT_SUFX.x if different from TEMPLATE_EXTRACT_SUFX
+TEMPLATE_EXTRACT_SUFX ?=	.tar.gz
 
 # templates for the DISTFILES.x; the following strings are substituted based on DIST_TUPLE
 # - <account>
@@ -22,7 +20,8 @@ TEMPLATE_DISTFILES.gitlab ?= \
 TEMPLATE_DISTFILES.srht ?= \
 	<account>-<project>-{~<account>/<project>/archive/}<id>${EXTRACT_SUFX.srht}
 
-# templates for HOMEPAGE; same substitutions as for DISTFILES.x
-TEMPLATE_HOMEPAGE.github ?=	https://github.com/<account>/<project>
-TEMPLATE_HOMEPAGE.gitlab ?=	https://gitlab.com/<account>/<project>
-TEMPLATE_HOMEPAGE.srht ?=	https://git.sr.ht/~<account>/<project>
+# template for HOMEPAGE; same substitutions as for DISTFILES.x
+# Defaults to TEMPLATE_HOMEPAGE. Set TEMPLATE_HOMEPAGE.x to use different pattern.
+# - <site> - substituted, may correspond to MASTER_SITES.x
+TEMPLATE_HOMEPAGE ?=		<site><account>/<project>
+TEMPLATE_HOMEPAGE.srht ?=	<site>~<account>/<project>

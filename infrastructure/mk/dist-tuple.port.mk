@@ -27,16 +27,19 @@ ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 _subdir =
 .    if "${_id}" == "HASH" || "${_id:C/^[0-9a-f]{40}$/HASH/}" != "HASH"
 # set DISTNAME if not done by the port and add refs/tags/ subdir
-DISTNAME ?= ${_project}-${_id:S/^v//}
+DISTNAME ?= ${_project}-${_id:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
 _subdir =	refs/tags/
+WRKDIST ?= ${WRKDIR}/${_project}-${_id:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
+.    else
+WRKDIST ?= ${WRKDIR}/${_project}-${_id}
 .    endif
 
-.    for _subst in S,<account>,${_account},g:S,<project>,${_project},g:S,<id>,${_id},g:S,<subdir>,${_subdir},g
+.    for _subst in S,<account>,${_account},g:S,<project>,${_project},g:S,<id>,${_id},g:S,<subdir>,${_subdir},g:S,<site>,${MASTER_SITES.${_template}},g
 
-DISTFILES.${_template} +=	${TEMPLATE_DISTFILES.${_template}:${_subst}}
-.      if !empty(TEMPLATE_HOMEPAGE.${_template})
+DISTFILES.${_template} +=		${TEMPLATE_DISTFILES.${_template}:${_subst}}
+EXTRACT_SUFX.${_template} ?=		${TEMPLATE_EXTRACT_SUFX}
+TEMPLATE_HOMEPAGE.${_template} ?=	${TEMPLATE_HOMEPAGE}
 HOMEPAGE ?=	${TEMPLATE_HOMEPAGE.${_template}:${_subst}}
-.      endif
 
 .      if "${_targetdir}" != "."
 MODDIST-TUPLE_post-extract += \
