@@ -1,0 +1,3 @@
+lib/openvpn/
+@comment lib/openvpn/openvpn-otp.la
+@so lib/openvpn/openvpn-otp.so

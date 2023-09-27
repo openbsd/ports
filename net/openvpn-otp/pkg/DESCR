@@ -1,0 +1,3 @@
+This plug-in adds support for time-based OTP (totp) and HMAC-based
+OTP (hotp) tokens for OpenVPN. Compatible with Google Authenticator
+software tokens and other software- and hardware-based OTP tokens.
