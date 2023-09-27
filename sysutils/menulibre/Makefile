@@ -1,6 +1,6 @@
 COMMENT =	fd.o-compliant menu editor
 
-MODPY_EGG_VERSION =	2.3.1
+MODPY_EGG_VERSION =	2.3.2
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	bluesabre
 GH_PROJECT =	menulibre
@@ -9,7 +9,7 @@ CATEGORIES =	sysutils x11
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =	https://bluesable.org/projects/menulibre/
+HOMEPAGE =	https://bluesabre.org/projects/menulibre/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
