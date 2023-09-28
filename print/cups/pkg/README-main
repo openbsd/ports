@@ -82,7 +82,7 @@ Browsing for shared printers can be done with multicast DNS (mDNS) using
 the avahi daemon.
 
 On the client side, "avahi-daemon" (from the avahi package) and
-"cups-browsed" (from the cups-filters package) must be running by
+"cups-browsed" (from the cups-browsed package) must be running by
 adding "avahi_daemon" and "cups_browsed" to pkg_scripts in rc.conf.local(8).
 
 One the server side, "avahi-daemon" must be running by adding

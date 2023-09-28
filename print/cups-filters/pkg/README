@@ -1,15 +1,16 @@
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 
 Bonjour broadcasts of shared, remote printers
 =============================================
 
-The cups-browsed(8) daemon can be used to browse Bonjour (mDNS)
-broadcasts of remote printers and create/remove local raw queues
-pointing to these printers. This requires the avahi-daemon(8) to be
-running first. To start it at boot time, the rc.conf.local(8)
-pkg_scripts line can be edited as follow:
+The cups-browsed(8) daemon can be used to browse Bonjour (mDNS) broadcasts of
+remote printers and create/remove local raw queues pointing to these printers.
+This requires the cups-browsed and avahi packages to be installed and the
+messagebus and avahi-daemon(8) to be running first.
+To start it at boot time, the rc.conf.local(8) pkg_scripts line can be edited as
+follow:
 
     pkg_scripts=[...] messagebus avahi_daemon cups_browsed [...]
 

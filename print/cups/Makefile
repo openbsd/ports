@@ -12,6 +12,8 @@ GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.7
 
+REVISION-main=		0
+
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
@@ -47,7 +49,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-libs=${VERSION} \
 			devel/libusb1
 
-RUN_DEPENDS-main=	print/cups-filters
+RUN_DEPENDS-main=	print/cups-browsed \
+			print/cups-filters
 
 # don't enforce dependency on colord; it'll be used if found at runtime
 #RUN_DEPENDS-main +=	graphics/colord

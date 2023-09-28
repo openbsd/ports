@@ -3,7 +3,6 @@
 @conflict foomatic-filters-*
 @pkgpath print/foomatic-filters
 @pkgpath print/cups-filters,ldap
-@rcscript ${RCDIR}/cups_browsed
 bin/driverless
 bin/driverless-fax
 bin/foomatic-rip
