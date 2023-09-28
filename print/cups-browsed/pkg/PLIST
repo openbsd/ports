@@ -1,0 +1,22 @@
+@conflict cups-filters-<2.0.0p0
+@rcscript ${RCDIR}/cups_browsed
+@bin libexec/cups/backend/implicitclass
+@man man/man5/cups-browsed.conf.5
+@man man/man8/cups-browsed.8
+@bin sbin/cups-browsed
+share/doc/cups-browsed/
+share/doc/cups-browsed/ABOUT-NLS
+share/doc/cups-browsed/AUTHORS
+share/doc/cups-browsed/CHANGES-1.x.md
+share/doc/cups-browsed/CHANGES.md
+share/doc/cups-browsed/CONTRIBUTING.md
+share/doc/cups-browsed/COPYING
+share/doc/cups-browsed/DEVELOPING.md
+share/doc/cups-browsed/INSTALL
+share/doc/cups-browsed/LICENSE
+share/doc/cups-browsed/NOTICE
+share/doc/cups-browsed/README.md
+share/examples/cups-filters/
+share/examples/cups-filters/cups/
+share/examples/cups-filters/cups/cups-browsed.conf
+@sample ${SYSCONFDIR}/cups/cups-browsed.conf
