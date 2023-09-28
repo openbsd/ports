@@ -5,7 +5,7 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT=		C++ interface for cairo
 
-DISTNAME=		cairomm-1.14.4
+DISTNAME=		cairomm-1.14.5
 EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS += cairomm-1.0               5.2 # 1.4.0
