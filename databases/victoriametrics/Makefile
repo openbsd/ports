@@ -1,9 +1,8 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.85.0
-GH_ACCOUNT =		VictoriaMetrics
-GH_PROJECT =		VictoriaMetrics
-GH_TAGNAME =		v${V}
+V =			1.93.5
+
+DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V} . # Apache License 2.0
 
 PKGNAME =		victoriametrics-${V}
 
@@ -11,7 +10,7 @@ CATEGORIES =		databases
 
 HOMEPAGE =		https://victoriametrics.com/
 
-MAINTAINER =		Denis Fondras <denis@openbsd.org>
+MAINTAINER =		Lucas Gabriel Vuotto <lucas@sexy.is>
 
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes
@@ -25,7 +24,9 @@ MODGO_GOPATH =		${MODGO_WORKSPACE}
 SUBST_VARS =		LOCALSTATEDIR
 NO_TEST =		Yes
 
-MAKE_ENV =		BUILDINFO_TAG=openbsd PKG_TAG=openbsd
+MAKE_ENV =		BUILDINFO_TAG=tags-v${V} PKG_TAG=tags-v${V}
+
+ALL_TARGET =		github.com/VictoriaMetrics/VictoriaMetrics
 
 do-build:
 	cd ${WRKSRC} && GOOS=openbsd ${MAKE_ENV} ${MAKE_PROGRAM} victoria-metrics-pure
