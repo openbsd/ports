@@ -2,12 +2,12 @@ COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.11.2
+GH_TAGNAME =	2.12.0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
 
-MAINTAINER =	Denis Fondras <denis@openbsd.org>
+MAINTAINER =	Renato Aguiar <renato@renatoaguiar.net>
 
 # Apache 2.0
 PERMIT_PACKAGE = Yes
