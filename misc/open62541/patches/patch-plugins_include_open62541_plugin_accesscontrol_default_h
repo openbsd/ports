@@ -1,0 +1,45 @@
+https://github.com/open62541/open62541/pull/5935
+https://github.com/open62541/open62541/commit/f4b481276a9144da2a3bd9f67026751885fd803e
+
+    feat(plugin): allow custom password validation
+
+    Username password validation in access control plugin allows only
+    passwords stored in plaintext.  Add a callback to implement custom
+    validation.  This allows salted password hashes and timing safe
+    comparison in the server.  Furthermore remote validation could be
+    implemented.  The new function UA_AccessControl_defaultWithLoginCallback()
+    calls existing UA_AccessControl_default() and after that installs
+    the given UA_UsernamePasswordLoginCallback with context.
+
+Index: plugins/include/open62541/plugin/accesscontrol_default.h
+--- plugins/include/open62541/plugin/accesscontrol_default.h.orig
++++ plugins/include/open62541/plugin/accesscontrol_default.h
+@@ -18,6 +18,11 @@ typedef struct {
+     UA_String password;
+ } UA_UsernamePasswordLogin;
+ 
++typedef UA_StatusCode (*UA_UsernamePasswordLoginCallback)
++    (const UA_String *userName, const UA_ByteString *password,
++    size_t usernamePasswordLoginSize, const UA_UsernamePasswordLogin
++    *usernamePasswordLogin, void **sessionContext, void *loginContext);
++
+ /* Default access control. The log-in can be anonymous or username-password. A
+  * logged-in user has all access rights.
+  *
+@@ -30,6 +35,16 @@ UA_AccessControl_default(UA_ServerConfig *config,
+                          const UA_ByteString *userTokenPolicyUri,
+                          size_t usernamePasswordLoginSize,
+                          const UA_UsernamePasswordLogin *usernamePasswordLogin);
++
++UA_EXPORT UA_StatusCode
++UA_AccessControl_defaultWithLoginCallback(UA_ServerConfig *config,
++                         UA_Boolean allowAnonymous,
++                         UA_CertificateVerification *verifyX509,
++                         const UA_ByteString *userTokenPolicyUri,
++                         size_t usernamePasswordLoginSize,
++                         const UA_UsernamePasswordLogin *usernamePasswordLogin,
++                         UA_UsernamePasswordLoginCallback loginCallback,
++                         void *loginContext);
+ 
+ _UA_END_DECLS
+ 
