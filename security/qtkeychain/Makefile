@@ -2,9 +2,9 @@ COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
-GH_TAGNAME =		v0.13.2
+GH_TAGNAME =		0.14.1
 
-SHARED_LIBS +=		qt5keychain	2.0 # 0.4
+SHARED_LIBS +=		qt5keychain	2.1 # 0.4
 
 CATEGORIES =		security
 
@@ -21,8 +21,6 @@ MODULES =		devel/cmake \
 LIB_DEPENDS += 		x11/gnome/libsecret
 
 CONFIGURE_ARGS += 	-DECM_MKSPECS_INSTALL_DIR="${PREFIX}/lib/${QT}/mkspecs/modules"
-
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 
 LIBNAME = 		Qt5Keychain
 LIBNAME_L = 		qt5keychain
