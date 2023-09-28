@@ -3,7 +3,7 @@ COMMENT =	economic and military simulation game
 GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
 GH_TAGNAME = 	v1.0
-REVISION =      1
+REVISION =      2
 
 CATEGORIES =	games
 
