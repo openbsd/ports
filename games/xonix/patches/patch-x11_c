@@ -1,5 +1,6 @@
---- x11.c.orig	Fri Apr 18 17:45:06 2008
-+++ x11.c	Fri Apr 18 17:45:55 2008
+Index: x11.c
+--- x11.c.orig
++++ x11.c
 @@ -52,8 +52,8 @@
  #ifdef __unix
  
@@ -11,3 +12,12 @@
  
  #if defined(__unix) && !defined PATH_RMAIL
  #define PATH_RMAIL "rmail"	/* rely on the $PATH */
+@@ -336,6 +336,8 @@ XonixEventHandler(Widget w,      /* canvas */
+       if(y0 < 0) y0 = 0;
+       x1 = ((exp->x + exp->width + EATER_SIZE - 1) / EATER_SIZE) | 1;
+       y1 = ((exp->y + exp->height + EATER_SIZE - 1) / EATER_SIZE) | 1;
++      if(x1 > H_STEPS) x1 = H_STEPS;
++      if(y1 > V_STEPS) y1 = V_STEPS;
+       for(j = y0; j < y1; j += 2)
+ 	for(i = x0; i < x1; i += 2) {
+ 	  unsigned char c = *(gMyStatusArea + (j * H_STEPS) + i);
