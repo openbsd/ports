@@ -6,6 +6,7 @@
      SUBDIR += brlaser
      SUBDIR += cups
      SUBDIR += cups-bjnp
+     SUBDIR += cups-browsed
      SUBDIR += cups-filters
      SUBDIR += cups-pdf
      SUBDIR += cups-pk-helper
