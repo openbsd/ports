@@ -1,0 +1,15 @@
+Index: ui/scrollprint.py
+--- ui/scrollprint.py.orig
++++ ui/scrollprint.py
+@@ -988,9 +988,9 @@ class ScrollPrintView(ScrollView):
+ 
+                     if utils.which('lpr'):
+                         if alt_nup:
+-                            cmd = ' '.join(['psnup', '-%d' % nup, ''.join(['"', p, '"']), '| lpr -P', self.cur_printer])
++                            cmd = ' '.join(['psnup', '-%d' % nup, ''.join(['"', p, '"']), '| ${LOCALBASE}/bin/lpr -P', self.cur_printer])
+                         else:
+-                            cmd = ' '.join(['lpr -P', self.cur_printer])
++                            cmd = ' '.join(['${LOCALBASE}/bin/lpr -P', self.cur_printer])
+ 
+                         if copies > 1:
+                             cmd = ' '.join([cmd, '-#%d' % copies])

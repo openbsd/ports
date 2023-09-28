@@ -4,6 +4,10 @@
 
 This is a common README for all HPLIP packages.
 
+HPLIP is a complete imaging and printing system for CUPS that includes HPIJS.
+HPIJS is the basic printing driver that supports printing from CUPS, LPD, PPR,
+and other spoolers.
+
 Communication with local printers is done via CUPS over libusb, make
 sure you read the "USB" section of the documentation that comes with the
 cups package (cf. ${LOCALBASE}/share/doc/pkg-readmes/cups-*).

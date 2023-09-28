@@ -18,6 +18,10 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
+REVISION-main =		0
+REVISION-gui =		0
+REVISION-common =	0
+
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
@@ -184,6 +188,7 @@ pre-configure:
 		${WRKSRC}/ui4/devmgr5.py \
 		${WRKSRC}/fax/backend/hpfax.py \
 		${WRKSRC}/base/codes.py \
+		${WRKSRC}/base/device.py \
 		${WRKSRC}/base/g.py \
 		${WRKSRC}/base/queues.py \
 		${WRKSRC}/base/services.py \
@@ -202,8 +207,11 @@ pre-configure:
 		${WRKSRC}/scan.py \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/ui4/nodevicesdialog.py \
+		${WRKSRC}/ui4/printsettingstoolbox.py \
+		${WRKSRC}/ui5/printsettingstoolbox.py \
 		${WRKSRC}/ui/devmgr4.py \
 		${WRKSRC}/ui/nodevicesform.py \
+		${WRKSRC}/ui/scrollprint.py \
 		${WRKSRC}/logcapture.py \
 		${WRKSRC}/createPPD.sh
 

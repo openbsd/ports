@@ -1,0 +1,15 @@
+Index: base/device.py
+--- base/device.py.orig
++++ base/device.py
+@@ -2450,9 +2450,9 @@ Content-length: %d\r
+                 if remove: rem_str = '-r'
+ 
+                 if is_gzip:
+-                    c = 'gunzip -c %s | lpr %s %s -P%s' % (file_name, raw_str, rem_str, printer_name)
++                    c = 'gunzip -c %s | ${LOCALBASE}/bin/lpr %s %s -P%s' % (file_name, raw_str, rem_str, printer_name)
+                 else:
+-                    c = 'lpr -P%s %s %s %s' % (printer_name, raw_str, rem_str, file_name)
++                    c = '${LOCALBASE}/bin/lpr -P%s %s %s %s' % (printer_name, raw_str, rem_str, file_name)
+ 
+                 exit_code = os_utils.execute(c)
+ 
