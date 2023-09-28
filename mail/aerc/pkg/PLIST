@@ -1,4 +1,5 @@
 @bin bin/aerc
+bin/carddav-query
 libexec/aerc/
 libexec/aerc/filters/
 libexec/aerc/filters/calendar
@@ -11,10 +12,12 @@ libexec/aerc/filters/show-ics-details.py
 @bin libexec/aerc/filters/wrap
 @man man/man1/aerc-search.1
 @man man/man1/aerc.1
+@man man/man1/carddav-query.1
 @man man/man5/aerc-accounts.5
 @man man/man5/aerc-binds.5
 @man man/man5/aerc-config.5
 @man man/man5/aerc-imap.5
+@man man/man5/aerc-jmap.5
 @man man/man5/aerc-maildir.5
 @man man/man5/aerc-notmuch.5
 @man man/man5/aerc-sendmail.5
@@ -26,7 +29,6 @@ share/aerc/
 share/aerc/accounts.conf
 share/aerc/aerc.conf
 share/aerc/binds.conf
-share/aerc/filters/
 share/aerc/stylesets/
 share/aerc/stylesets/blue
 share/aerc/stylesets/default

@@ -1,11 +1,11 @@
 MODGO_MODULES =	\
 	cloud.google.com/go/compute/metadata	 v0.2.0 \
+	git.sr.ht/~rockorager/go-jmap		 v0.3.0 \
 	git.sr.ht/~rockorager/tcell-term	 v0.8.0 \
 	git.sr.ht/~sircmpwn/getopt		 v1.0.0 \
 	github.com/!proton!mail/crypto		 v0.0.0-20200420072808-71bec3603bf3 \
 	github.com/!proton!mail/go-crypto	 v0.0.0-20230417170513-8ee5748c52b5 \
 	github.com/arran4/golang-ical		 v0.0.0-20230318005454-19abf92700cc \
-	github.com/brunnre8/go.notmuch		 v0.0.0-20201126061756-caa2daf7093c \
 	github.com/bwesterb/go-ristretto	 v1.2.2 \
 	github.com/cention-sany/utf7		 v0.0.0-20170124080048-26cad61bd60a \
 	github.com/cloudflare/circl		 v1.3.2 \
@@ -16,7 +16,7 @@ MODGO_MODULES =	\
 	github.com/emersion/go-imap-sortthread	 v1.2.0 \
 	github.com/emersion/go-maildir		 v0.3.0 \
 	github.com/emersion/go-mbox		 v1.0.3 \
-	github.com/emersion/go-message		 v0.16.0 \
+	github.com/emersion/go-message		 v0.17.0 \
 	github.com/emersion/go-milter		 v0.3.3 \
 	github.com/emersion/go-msgauth		 v0.6.6 \
 	github.com/emersion/go-pgpmail		 v0.2.0 \
@@ -36,20 +36,16 @@ MODGO_MODULES =	\
 	github.com/google/go-cmp		 v0.5.8 \
 	github.com/google/shlex			 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/hpcloud/tail			 v1.0.0 \
-	github.com/imdario/mergo		 v0.3.15 \
 	github.com/jaytaylor/html2text		 v0.0.0-20211105163654-bc68cce691ba \
 	github.com/jhillyerd/enmime		 v0.11.0 \
 	github.com/kr/pretty			 v0.3.0 \
 	github.com/kr/pty			 v1.1.1 \
 	github.com/kr/text			 v0.2.0 \
-	github.com/kyoh86/xdg			 v1.2.0 \
 	github.com/lithammer/fuzzysearch	 v1.1.5 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/martinlindhe/base36		 v1.0.0 \
 	github.com/mattn/go-isatty		 v0.0.18 \
 	github.com/mattn/go-runewidth		 v0.0.14 \
-	github.com/miolini/datacounter		 v1.0.3 \
-	github.com/mitchellh/go-homedir		 v1.1.0 \
 	github.com/niemeyer/pretty		 v0.0.0-20200227124842-a10e7caefd8e \
 	github.com/olekukonko/tablewriter	 v0.0.5 \
 	github.com/onsi/ginkgo			 v1.7.0 \
@@ -68,7 +64,6 @@ MODGO_MODULES =	\
 	github.com/syndtr/goleveldb		 v1.0.0 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	github.com/yuin/goldmark		 v1.4.13 \
-	github.com/zenhack/go.notmuch		 v0.0.0-20220918173508-0c918632c39e \
 	golang.org/x/crypto			 v0.8.0 \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
 	golang.org/x/mod			 v0.8.0 \
@@ -77,7 +72,7 @@ MODGO_MODULES =	\
 	golang.org/x/sync			 v0.1.0 \
 	golang.org/x/sys			 v0.7.0 \
 	golang.org/x/term			 v0.7.0 \
-	golang.org/x/text			 v0.9.0 \
+	golang.org/x/text			 v0.12.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine		 v1.6.7 \
@@ -88,7 +83,6 @@ MODGO_MODULES =	\
 	gopkg.in/tomb.v1			 v1.0.0-20141024135613-dd632973f1e7 \
 	gopkg.in/yaml.v2			 v2.2.1 \
 	gopkg.in/yaml.v3			 v3.0.1
-
 MODGO_MODFILES =	\
 	github.com/!proton!mail/go-crypto	 v0.0.0-20211112122917-428f8eabeeb3 \
 	github.com/bwesterb/go-ristretto	 v1.2.0 \
@@ -144,8 +138,10 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net			 v0.0.0-20220425223048-2871e0cb64e4 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net			 v0.5.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/net			 v0.7.0 \
+	golang.org/x/oauth2			 v0.4.0 \
 	golang.org/x/sync			 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
@@ -172,6 +168,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text			 v0.3.8 \
 	golang.org/x/text			 v0.5.0 \
 	golang.org/x/text			 v0.7.0 \
+	golang.org/x/text			 v0.9.0 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.1.12 \
@@ -184,4 +181,3 @@ MODGO_MODFILES =	\
 	gopkg.in/check.v1			 v1.0.0-20200227125254-8fa46927fb4f \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c \
 	gopkg.in/yaml.v3			 v3.0.0-20210107192922-496545a6307b
-
