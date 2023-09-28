@@ -1,22 +1,7 @@
-Hunk 1: https://github.com/php/php-src/commit/bf3fb4e5c969db276553eab5c9da9abb792b36e3
-
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -373,11 +373,7 @@ AC_CHECK_LIB(m, sin)
- 
- case $host_alias in
-   riscv64*)
--    AC_CHECK_LIB(atomic, __atomic_exchange_1, [
--      PHP_ADD_LIBRARY(atomic)
--    ], [
--      AC_MSG_ERROR([Problem with enabling atomic. Please check config.log for details.])
--    ])
-+    PHP_CHECK_FUNC(__atomic_exchange_1, atomic)
-     ;;
- esac
- 
-@@ -1159,16 +1155,16 @@ case $php_sapi_module in
+@@ -1159,16 +1159,16 @@ case $php_sapi_module in
      fi
      case $with_pic in
        yes)
@@ -36,7 +21,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1424,7 +1420,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1424,7 +1424,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
