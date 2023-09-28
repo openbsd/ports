@@ -1,11 +1,11 @@
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 
-V =		1.2.48
+V =		1.2.49
 DISTNAME =	tomcat-connectors-${V}-src
 PKGNAME =	ap2-mod_jk-${V}
 CATEGORIES =	www
 
-HOMEPAGE =	http://tomcat.apache.org/connectors-doc/index.html
+HOMEPAGE =	https://tomcat.apache.org/connectors-doc/index.html
 
 # Apache Software License 2.0
 PERMIT_PACKAGE =	Yes
@@ -20,8 +20,8 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
-CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--with-apxs=${LOCALBASE}/sbin/apxs2
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS = --with-apxs=${LOCALBASE}/sbin/apxs2
 
 WRKSRC =	${WRKDIST}/native
 MODGNU_CONFIG_GUESS_DIRS =${WRKSRC}/scripts/build/unix

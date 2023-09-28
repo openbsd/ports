@@ -1,0 +1,12 @@
+Index: native/apache-2.0/Makefile.in
+--- native/apache-2.0/Makefile.in.orig
++++ native/apache-2.0/Makefile.in
+@@ -23,7 +23,7 @@ MKDIR=@MKDIR@
+ APXSCFLAGS=@APXSCFLAGS@
+ APXSCPPFLAGS=@APXSCPPFLAGS@
+ APXSLDFLAGS=@APXSLDFLAGS@
+-JKLDFLAGS=-export-symbols-regexp ^jk_module$
++JKLDFLAGS=-export-symbols-regex ^jk_module$
+ 
+ CC=@CC@
+ SHELL=@SHELL@

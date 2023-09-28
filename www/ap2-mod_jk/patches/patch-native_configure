@@ -1,12 +1,12 @@
 Index: native/configure
 --- native/configure.orig
 +++ native/configure
-@@ -4739,7 +4739,7 @@ for as_dir in $PATH
- do
-   IFS=$as_save_IFS
-   test -z "$as_dir" && as_dir=.
--    for ac_prog in sed gsed; do
-+    for ac_prog in sed; do
+@@ -5342,7 +5342,7 @@ do
+     */) ;;
+     *) as_dir=$as_dir/ ;;
+   esac
+-    for ac_prog in sed gsed
++    for ac_prog in sed
+    do
      for ac_exec_ext in '' $ac_executable_extensions; do
-       ac_path_SED="$as_dir/$ac_prog$ac_exec_ext"
-       as_fn_executable_p "$ac_path_SED" || continue
+       ac_path_SED="$as_dir$ac_prog$ac_exec_ext"
