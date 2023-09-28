@@ -3,8 +3,8 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	118.0
-MOZILLA_PROFDATA_TASKID=UAHLjrloSPW_IJzPaEkwvA
+MOZILLA_VERSION =	118.0.1
+MOZILLA_PROFDATA_TASKID=OYokJckkSc25BBCbYv8Btg
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
