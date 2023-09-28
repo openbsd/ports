@@ -3,7 +3,7 @@ COMMENT =	economic and military simulation game
 GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
 GH_TAGNAME = 	v1.0
-REVISION =      0
+REVISION =      1
 
 CATEGORIES =	games
 
@@ -46,6 +46,8 @@ CONFIGURE_ARGS =	-DWL_INSTALL_DATADIR=${PREFIX}/share/widelands \
 
 CONFIGURE_ENV =	LDFLAGS="${LDFLAGS} -lGL -lexecinfo -lintl -liconv \
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 NO_TEST =	Yes
 
