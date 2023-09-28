@@ -1,12 +1,13 @@
 COMMENT =	economic historical real-time strategy game
 
 MODPY_EGG_VERSION =	2019.1
+DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
 PKGNAME =		unknown-horizons-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	3
 
 GH_ACCOUNT =	unknown-horizons
 GH_PROJECT =	unknown-horizons
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+GH_COMMIT =	d106648463a391a86779b63a2e643ea8301f2683
 
 CATEGORIES =	games
 
@@ -29,7 +30,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			sysutils/py-distro
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-future${MODPY_FLAVOR} \
-			games/fifengine>=0.4.2 \
+			games/fifengine>=0.4.2p3 \
 			textproc/py-yaml${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \

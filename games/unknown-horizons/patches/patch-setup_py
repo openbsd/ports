@@ -1,28 +1,7 @@
-Fix build with python3.8.
-Upstream commit 2fdb225f62f66bf474e19d9b1bcfbaf691672c43
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -32,6 +32,8 @@ from distutils.core import setup
- from distutils.spawn import find_executable
- from shutil import copytree, rmtree
- 
-+import distro
-+
- import horizons
- from horizons.constants import VERSION
- from horizons.ext import polib
-@@ -39,7 +41,7 @@ from horizons.ext import polib
- # Ensure we are in the correct directory
- os.chdir(os.path.realpath(os.path.dirname(__file__)))
- 
--if platform.dist()[0].lower() in ('debian', 'ubuntu'):
-+if distro.linux_distribution(full_distribution_name=False)[0] in ('debian', 'mint', 'ubuntu'):
- 	executable_path = 'games'
- else:
- 	executable_path = 'bin'
-@@ -54,7 +56,7 @@ data = [
+@@ -57,7 +57,7 @@ data = [
    (executable_path, ('unknown-horizons', )),
    ('share/pixmaps', ('content/packages/unknown-horizons.xpm', )),
    ('share/unknown-horizons', ('content/settings-template.xml', )),

@@ -1,0 +1,17 @@
+Index: horizons/constants.py
+--- horizons/constants.py.orig
++++ horizons/constants.py
+@@ -92,10 +92,10 @@ def get_git_version():
+ ##Versioning
+ class VERSION:
+ 	RELEASE_NAME    = "Unknown Horizons %s"
+-	RELEASE_VERSION = get_git_version()
++	#RELEASE_VERSION = get_git_version()
+ 	# change for release:
+-	IS_DEV_VERSION = True
+-	#RELEASE_VERSION = u'2019.1'
++	IS_DEV_VERSION = False
++	RELEASE_VERSION = u'2019.1'
+ 
+ 	REQUIRED_FIFE_MAJOR_VERSION = 0
+ 	REQUIRED_FIFE_MINOR_VERSION = 4
