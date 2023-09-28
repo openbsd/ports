@@ -1,0 +1,17 @@
+disable asm checks on aarch64; unbreak the build: it assumes sys/auxv.h
+(for getauxval) and asm/hwcap.h (for AT_HWCAP.)
+
+Index: lzmasdk/CpuArch.c
+--- lzmasdk/CpuArch.c.orig
++++ lzmasdk/CpuArch.c
+@@ -760,10 +760,6 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
+ 
+ #else // __APPLE__
+ 
+-#include <sys/auxv.h>
+-
+-#define USE_HWCAP
+-
+ #ifdef USE_HWCAP
+ 
+ #include <asm/hwcap.h>
