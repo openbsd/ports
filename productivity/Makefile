@@ -18,7 +18,6 @@
      SUBDIR += homebank
      SUBDIR += impressive
      SUBDIR += jrnlc
-     SUBDIR += kalendar
      SUBDIR += khal
      SUBDIR += khard
      SUBDIR += kmymoney

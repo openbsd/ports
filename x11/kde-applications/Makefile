@@ -135,6 +135,7 @@
      SUBDIR += kontact
      SUBDIR += korganizer
      SUBDIR += kpimtextedit
+     SUBDIR += merkuro
 
      # kdesdk
      SUBDIR += cervisia
@@ -252,7 +253,6 @@
      # net/ktorrent
      # net/libktorrent
      # net/neochat
-     # productivity/kalendar
      # x11/yakuake
 
      # TODO

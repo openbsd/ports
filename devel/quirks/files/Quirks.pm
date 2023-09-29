@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1553 2023/09/22 20:37:12 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1554 2023/09/29 18:19:01 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -785,6 +785,7 @@ my $stem_extensions = {
 	'py-altgraph' => 'py3-altgraph',
 	'pymodbus' => 'py3-pymodbus',
 	'py-yaml' => 'py3-yaml',
+	'kalendar' => 'merkuro',
 };
 
 my $obsolete_reason = {};
