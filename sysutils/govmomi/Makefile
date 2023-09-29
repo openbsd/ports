@@ -2,7 +2,7 @@ COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
 MODGO_MODNAME=		github.com/vmware/govmomi
-MODGO_VERSION=		v0.31.0
+MODGO_VERSION=		v0.32.0
 DISTNAME=		govmomi-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/vmware/govmomi@${MODGO_VERSION}
