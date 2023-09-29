@@ -1,8 +1,7 @@
 COMMENT=		GNOME password manager (Keepass)
 
 GNOME_PROJECT=		secrets
-GNOME_VERSION=		7.3
-REVISION=		0
+GNOME_VERSION=		8.0
 
 # override gnome MODULE
 SITES=			https://gitlab.gnome.org/World/secrets/-/archive/${GNOME_VERSION}/
