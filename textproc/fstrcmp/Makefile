@@ -2,7 +2,7 @@ COMMENT=	library for fuzzy string comparisons
 
 DISTNAME=	fstrcmp-0.7.D001
 CATEGORIES=	textproc
-MASTER_SITES=	${HOMEPAGE}
+SITES=		http://fstrcmp.sourceforge.net/
 
 SHARED_LIBS=	fstrcmp		0.0
 
