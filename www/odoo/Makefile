@@ -2,10 +2,9 @@ PORTROACH=		ignore:1
 
 COMMENT=		all-in-one management software
 
-MV=			15.0
-SV=			20220427
+MV=			16.0
+SV=			20230929
 V=			${MV}.${SV}
-REVISION=		5
 
 DISTNAME=		odoo_${V}
 
@@ -22,6 +21,8 @@ MODULES=		lang/python
 MODPY_PYBUILD =		setuptools
 
 WRKDIST=		${WRKDIR}/odoo-${MV}.post${SV}
+
+SUBST_VARS+=		MV SV
 
 RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			converters/py-num2words${MODPY_FLAVOR} \
