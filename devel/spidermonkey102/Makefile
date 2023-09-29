@@ -11,7 +11,7 @@ SUBST_VARS =		MOZILLA_VERSION
 SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
 SUBST_VARS +=		SO_VERSION
 
-V =			${MOZILLA_VERSION}.15.0
+V =			${MOZILLA_VERSION}.15.1
 DISTNAME =		firefox-${V}esr.source
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
@@ -23,7 +23,7 @@ CATEGORIES =		devel
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE =		https://spidermonkey.dev/
-SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
+SITES =			https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
 EXTRACT_SUFX =		.tar.xz
 
 # MPLv2
