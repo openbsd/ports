@@ -4,6 +4,9 @@
 @bin bin/hpijs
 libexec/cups/filter/foomatic-rip-hplip
 share/cups/drv/hp/hpijs.drv
+share/foomatic/db/source/PPD/HP/hp-Deskjet_2800_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-Deskjet_4200_series.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-Deskjet_4900_series.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax-CDM-hpcups.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/HP-Fax2-hpijs.ppd.gz

@@ -1,6 +1,7 @@
---- prnt/hpcups/ErnieFilter.cpp.orig	Thu Oct 31 12:42:20 2013
-+++ prnt/hpcups/ErnieFilter.cpp	Thu Nov 14 15:44:07 2013
-@@ -50,7 +50,7 @@
+Index: prnt/hpcups/ErnieFilter.cpp
+--- prnt/hpcups/ErnieFilter.cpp.orig
++++ prnt/hpcups/ErnieFilter.cpp
+@@ -34,7 +34,7 @@
  #include "ErnieFilter.h"
  
  

@@ -1,7 +1,7 @@
 Index: scan.py
 --- scan.py.orig
 +++ scan.py
-@@ -1917,7 +1917,7 @@ try:
+@@ -1943,7 +1943,7 @@ try:
              elif d == 'print':
                  hp_print = utils.which("hp-print", True)
                  if not hp_print:
