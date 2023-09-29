@@ -1,42 +1,47 @@
 COMMENT =	network switch style shell
 
-
-GH_ACCOUNT =	yellowman
-GH_PROJECT =	nsh
-GH_TAGNAME =	v1.1
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
+V =		1.2
+DISTNAME =	nsh-${V}
+SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
 
 MAINTAINER =	Tom Smyth <tom.smyth@wirelessconnect.eu>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses edit sqlite3
+# uses pledge()
+WANTLIB += c curses edit sqlite3 util
 
 FLAVORS =	static
 FLAVOR ?=
 
-MAKE_FLAGS =	CC="${CC}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CPPFLAGS =	-I${LOCALBASE}/include \
+		-DNSH_REXEC_PATH=${LOCALBASE}/bin/nsh
+
+MAKE_ENV =	CC="${CC}" \
+		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS =	databases/sqlite3
 
+FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
+
 .if ${FLAVOR:Mstatic}
-MAKE_FLAGS +=	LDADD="-ledit -ltermcap -lsqlite3 -lm -lpthread -static"
+MAKE_FLAGS +=	LDFLAGS="-L${LOCALBASE}/lib -ledit -ltermcap -lsqlite3 -lm -lpthread -static"
 .endif
 
 NO_TEST=	Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/nsh ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIST}/nsh.8 ${PREFIX}/man/man8/
+post-configure:
+	${MAKE} -C ${WRKDIST} obj
+
+post-install:
 .for i in save-ro.sh save-rw.sh
 	${INSTALL_SCRIPT} ${WRKDIST}/${i} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nsh
-	sed -i s,/usr/local,${LOCALBASE},g ${WRKDIST}/MANUAL
-.for i in MANUAL README TODO COPYRIGHT
+.for i in README.md COPYRIGHT
 	${INSTALL_DATA} ${WRKDIST}/${i} ${PREFIX}/share/doc/nsh/
 .endfor
 

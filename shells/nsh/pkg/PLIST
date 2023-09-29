@@ -1,3 +1,4 @@
+@shell bin/bgpnsh
 @shell bin/nsh
 bin/save-ro.sh
 bin/save-rw.sh
@@ -5,12 +6,13 @@ bin/save-rw.sh
 @owner root
 @group bin
 @sample bin/save.sh
-@mode
+@mode 04555
 @owner
 @group
+@bin libexec/nshdoas
+@mode
+@man man/man8/bgpnsh.8
 @man man/man8/nsh.8
 share/doc/nsh/
 share/doc/nsh/COPYRIGHT
-share/doc/nsh/MANUAL
-share/doc/nsh/README
-share/doc/nsh/TODO
+share/doc/nsh/README.md
