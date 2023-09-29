@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 clipboard history panel plugin
 
-XFCE_VERSION=	1.6.4
+XFCE_VERSION=	1.6.5
 XFCE_PLUGIN=	clipman
 
 # GPLv2
@@ -14,6 +14,8 @@ LIB_DEPENDS+=	x11/xfce4/xfconf \
 		x11/xfce4/libxfce4ui \
 		graphics/libqrencode
 
+CONFIGURE_ARGS +=	--disable-wayland-client \
+			--disable-wayland-scanner
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-clipman \
 		actionsdir=${PREFIX}/share/examples/xfce4-clipman
 
