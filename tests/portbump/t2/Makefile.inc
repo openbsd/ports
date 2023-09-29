@@ -22,7 +22,7 @@ SITES=			http://se.php.net/distributions/ \
 SITES.a=		http://spacehopper.org/mirrors/ \
 			http://download.suhosin.org/ \
 			http://blade2k.humppa.hu/ \
-			${MASTER_SITE_FREEBSD}
+			${SITE_FREEBSD}
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
