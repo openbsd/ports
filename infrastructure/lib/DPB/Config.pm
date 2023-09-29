@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.97 2023/08/14 13:35:07 espie Exp $
+# $OpenBSD: Config.pm,v 1.98 2023/09/29 09:12:15 naddy Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -178,7 +178,7 @@ sub parse_command_line($class, $state)
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "MASTER_SITE_BACKUP", "FETCH_CMD");
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "SITE_BACKUP", "FETCH_CMD");
 
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
