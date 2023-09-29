@@ -6,12 +6,15 @@ share/doc/gigolo/AUTHORS
 share/doc/gigolo/COPYING
 share/doc/gigolo/ChangeLog
 share/doc/gigolo/NEWS
+share/doc/gigolo/README.md
 share/doc/gigolo/TODO
 share/icons/hicolor/128x128/apps/org.xfce.gigolo.png
 share/icons/hicolor/16x16/apps/org.xfce.gigolo.png
 share/icons/hicolor/24x24/apps/org.xfce.gigolo.png
 share/icons/hicolor/32x32/apps/org.xfce.gigolo.png
 share/icons/hicolor/48x48/apps/org.xfce.gigolo.png
+share/icons/hicolor/64x64/apps/org.xfce.gigolo.png
+share/icons/hicolor/96x96/apps/org.xfce.gigolo.png
 share/icons/hicolor/scalable/apps/org.xfce.gigolo.svg
 share/locale/am/LC_MESSAGES/gigolo.mo
 share/locale/ar/LC_MESSAGES/gigolo.mo
@@ -25,6 +28,7 @@ share/locale/de/LC_MESSAGES/gigolo.mo
 share/locale/el/LC_MESSAGES/gigolo.mo
 share/locale/en_AU/LC_MESSAGES/gigolo.mo
 share/locale/en_CA/LC_MESSAGES/gigolo.mo
+share/locale/en_GB/LC_MESSAGES/gigolo.mo
 share/locale/eo/LC_MESSAGES/gigolo.mo
 share/locale/es/LC_MESSAGES/gigolo.mo
 share/locale/et/LC_MESSAGES/gigolo.mo
@@ -42,8 +46,6 @@ share/locale/hye/
 share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/gigolo.mo
 share/locale/id/LC_MESSAGES/gigolo.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/gigolo.mo
 share/locale/is/LC_MESSAGES/gigolo.mo
 share/locale/it/LC_MESSAGES/gigolo.mo
