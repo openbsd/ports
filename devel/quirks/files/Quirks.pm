@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1554 2023/09/29 18:19:01 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1555 2023/09/30 13:25:43 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -2073,7 +2073,7 @@ my $cve = {
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.5',
 	'lang/ruby/2.6,-main' => 'ruby->2.6,<2.6.2',
 	'mail/dovecot,-server' => 'dovecot-<2.3.10.1',
-	'mail/exim' => 'exim-<4.83',
+	'mail/exim,-main' => 'exim-<4.97', # ...at least
 	'mail/isync' => 'isync-<1.4.4',
 	'mail/mailman' => 'mailman-<2.1.30',
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.4',
