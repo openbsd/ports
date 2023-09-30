@@ -24,7 +24,9 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
+REVISION-main =		0
 REVISION-utils =	0
+REVISION-pim =		0
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -222,10 +224,8 @@ RUN_DEPENDS-pim = \
 	x11/kde-applications/knotes \
 	x11/kde-applications/kontact \
 	x11/kde-applications/korganizer \
-	x11/kde-applications/kpimtextedit
-
-RUN_DEPENDS-pim = \
-	productivity/kalendar
+	x11/kde-applications/kpimtextedit \
+	x11/kde-applications/merkuro
 
 WANTLIB-utils =
 LIB_DEPENDS-utils =
