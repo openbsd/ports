@@ -1,6 +1,6 @@
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
-DISTNAME =	eltclsh-1.18
+DISTNAME =	eltclsh-1.19
 CATEGORIES =	lang x11
 
 SITES =		https://www.openrobots.org/distfiles/eltclsh/
@@ -28,8 +28,6 @@ CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 
 USE_GMAKE =		Yes
 FAKE_FLAGS =		ELTCL_LIBRARY=${WRKINST}${MODTCL_TCLDIR}/eltcl
-
-NO_TEST =		Yes
 
 LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 

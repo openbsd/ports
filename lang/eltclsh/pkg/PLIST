@@ -6,5 +6,5 @@ lib/tcl/eltcl/init.tcl
 lib/tcl/eltcl/pkgIndex.tcl
 lib/tcl/eltcl/tools.tcl
 lib/tcl/eltcl/version.tcl
-lib/tcl/libeltclsh.so
+@so lib/tcl/libeltclsh.so
 @man man/man1/eltclsh.1
