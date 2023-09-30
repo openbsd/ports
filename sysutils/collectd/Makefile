@@ -30,7 +30,7 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION-main =		0
+REVISION-main =		1
 REVISION-memcachec =	0
 REVISION-mqtt =		0
 REVISION-mysql =	0
@@ -129,8 +129,9 @@ LIB_DEPENDS +=	net/curl \
 		security/libgcrypt \
 		devel/libyajl
 
-WANTLIB += c crypto gpg-error kvm curl xml2 lzma nghttp2
-WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt iconv intl
+WANTLIB += c crypto gpg-error kvm curl xml2 lzma m
+WANTLIB += nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += pcap pthread ssl xml2 z statgrab gcrypt iconv intl
 WANTLIB += yajl
 
 CONFIGURE_STYLE =	autoconf
