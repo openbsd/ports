@@ -3,7 +3,10 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.14.0
-REVISION-main =	0
+REVISION-main =	1
+
+# boost_context 1.80.0 doesn't have landing pads (1.81.0 should fix)
+USE_NOBTCFI =	Yes
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
