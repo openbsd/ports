@@ -1,0 +1,26 @@
+Avoid use-after-free caused by LoadGlobalState() freeing the key
+that was just inserted. Fix this by always copying the key and
+avoiding a leak in the only other caller of insert_metainfo()
+
+https://github.com/fvwmorg/fvwm3/commit/9811e73aa9f67706e5d74ba811adeebadc195639
+
+Index: fvwm/infostore.c
+--- fvwm/infostore.c.orig
++++ fvwm/infostore.c
+@@ -78,7 +78,7 @@ void insert_metainfo(char *key, char *value)
+ 
+ 	/* It's a new item, add it to the list. */
+ 	mi_new = new_metainfo();
+-	mi_new->key = key;
++	mi_new->key = fxstrdup(key);
+ 	CopyString(&mi_new->value, value);
+ 
+ 	mi_new->next = mi_store;
+@@ -192,6 +192,7 @@ void CMD_InfoStoreAdd(F_CMD_ARGS)
+ 	}
+ 
+ 	insert_metainfo(key, value);
++	free(key);
+ 	free(value);
+ 
+ 	return;
