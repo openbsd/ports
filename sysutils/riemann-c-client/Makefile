@@ -5,7 +5,7 @@ GH_ACCOUNT =		algernon
 GH_PROJECT =		riemann-c-client
 GH_TAGNAME =		riemann-c-client-${V}
 DISTNAME =		${GH_PROJECT}-${V}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=		riemann-client 0.0 # 0.0
 
@@ -16,8 +16,8 @@ HOMEPAGE =		https://github.com/algernon/riemann-c-client
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  brotlidec brotlienc c ffi gmp gnutls hogweed iconv idn2 intl
-WANTLIB += json-c nettle p11-kit protobuf-c pthread tasn1 unistring z
+WANTLIB =  brotlidec brotlienc c gmp gnutls hogweed iconv idn2 intl
+WANTLIB += json-c m nettle p11-kit protobuf-c pthread tasn1 unistring z
 WANTLIB += zstd
 
 LIB_DEPENDS =		devel/protobuf-c \
