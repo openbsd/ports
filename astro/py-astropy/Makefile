@@ -21,6 +21,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	astropy
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 BUILD_DEPENDS =		devel/py-extension-helpers${MODPY_FLAVOR} \
 			devel/py-setuptools_scm${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
