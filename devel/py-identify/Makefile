@@ -1,6 +1,6 @@
 COMMENT =		file identification library
 
-MODPY_EGG_VERSION =	2.5.28
+MODPY_EGG_VERSION =	2.5.30
 DISTNAME =		identify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
