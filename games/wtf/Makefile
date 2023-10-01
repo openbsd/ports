@@ -1,6 +1,6 @@
 COMMENT =	translate common internet acronyms
 
-DISTNAME =	wtf-20230804
+DISTNAME =	wtf-20230906
 CATEGORIES =	games
 
 HOMEPAGE =	https://sourceforge.net/projects/bsdwtf/
