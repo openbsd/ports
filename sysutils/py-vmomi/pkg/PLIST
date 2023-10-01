@@ -59,8 +59,6 @@ lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_sms.$
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_sms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vim.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vsan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vsan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vslm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfo_vslm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/${MODPY_PYCACHE}_typeinfos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -73,7 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_pbm.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_query.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_sms.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_vim.py
-lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_vsan.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfo_vslm.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/_typeinfos.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/eam/
@@ -128,6 +125,8 @@ lib/python${MODPY_VERSION}/site-packages/pyVmomi/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/pyVmomiSettings.py
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/auth/
+lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/auth/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/fault/
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/fault/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/sms/fault/replication/

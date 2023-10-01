@@ -1,6 +1,6 @@
 COMMENT =		python SDK for the VMware vSphere API
 
-MODPY_EGG_VERSION =	8.0.1.0.2
+MODPY_EGG_VERSION =	8.0.2.0
 
 DISTNAME =		pyvmomi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
