@@ -2,27 +2,35 @@
 # modern video cards
 ONLY_FOR_ARCHS =		amd64 aarch64 i386
 
+# the koishi coroutine library needs boost 1.81.0+ for BTI
+# https://github.com/taisei-project/koishi/issues/6
+USE_NOBTCFI =		Yes
+
 COMMENT =		clone of the touhou games
 
-VERSION =		v1.3.2
+VERSION =		1.4
 DISTNAME =		taisei-${VERSION}
-PKGNAME =		taisei-${VERSION:S/^v//}
-REVISION =		4
 
 CATEGORIES =		games
 
 HOMEPAGE =		https://taisei-project.org/
 
+MAINTAINER =		Omar Polo <op@openbsd.org>
+
 # MIT
 # Soundtrack: CC-BY 4.0 / Photos: PD and CC-0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += SDL2 SDL2_mixer c crypto freetype m opusfile png webpdecoder
-WANTLIB += z
+# Somehow, even if it links with c++, c++abi and pthread don't end up
+# here.  Maybe the -Wl,--as-needed.
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto freetype m opusfile png
+WANTLIB += shaderc_shared spirv-cross-c-shared webpdecoder z zstd
 
-SITES=	https://github.com/taisei-project/taisei/releases/download/${VERSION}/
+SITES =	https://github.com/taisei-project/taisei/releases/download/v${VERSION}/
 
 EXTRACT_SUFX=		.tar.xz
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson \
 			lang/python
@@ -37,17 +45,24 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		audio/opusfile \
 			devel/sdl2>=2.0.5 \
-			devel/sdl2-mixer>=2.0.4 \
 			graphics/libwebp>=0.5 \
-			graphics/png>=1.5.0
+			graphics/png>=1.5.0 \
+			graphics/shaderc \
+			graphics/spirv-cross
 
-# Don't include docs
-# Don't zip the ressources, it avoids using archivers/libzip
-# Don't call git(1), use upstream version as version string
-CONFIGURE_ARGS +=	-Ddocs=false \
-			-Denable_zip=false \
-			-Dversion_fallback=${VERSION}
+CONFIGURE_ARGS +=	-Ddefault_library=shared \
+			-Ddocs=disabled \
+			-Dinstall_macos_bundle=disabled \
+			-Dinstall_relocatable=disabled \
+			-Dpackage_data=disabled \
+			-Dvfs_zip=disabled
 
-NO_TEST =		Yes
+# don't statically link to these
+.for lib in freetype glslang libpng libwebp libzip libzstd ogg opus opusfile \
+	sdl2 shaderc SPIRV-Cross vorbis zlib
+CONFIGURE_ARGS +=	-D${lib}:default_library=shared
+.endfor
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
