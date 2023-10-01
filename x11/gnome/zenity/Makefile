@@ -12,13 +12,15 @@ WANTLIB += pango-1.0
 MODULES=		devel/meson \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/help2man
+
 LIB_DEPENDS=		x11/gnome/libadwaita
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
+CFLAGS +=		-std=gnu99
 .endif
 
 .include <bsd.port.mk>
