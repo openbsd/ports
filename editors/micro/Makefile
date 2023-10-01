@@ -1,13 +1,13 @@
-BROKEN-aarch64 = pty@v2.0.0+incompatible/doc.go:15:9: undefined: open
-BROKEN-mips64 =	pty@v2.0.0+incompatible/doc.go:15:9: undefined: open
+# github.com/creack/pty only supports these archs
+ONLY_FOR_ARCHS = aarch64 arm amd64 i386 mips64
 
 COMMENT =	modern and intuitive terminal-based text editor
 
 MODGO_MODNAME =	github.com/zyedidia/micro/v2
-MODGO_VERSION =	v2.0.11
+MODGO_VERSION =	v2.0.12
 
 # Snagged from https://github.com/zyedidia/micro/releases/tag/${MODGO_VERSION}
-TAG_HASH =	225927b
+TAG_HASH =	c2cebaa
 
 DISTNAME =	micro-${MODGO_VERSION}
 CATEGORIES =	editors
