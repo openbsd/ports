@@ -1,3 +1,6 @@
+# github.com/creack/pty only supports these archs
+ONLY_FOR_ARCHS = aarch64 arm amd64 i386 mips64
+
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
