@@ -16,7 +16,6 @@ lib/pkgconfig/rofi.pc
 @man man/man5/rofi-keys.5
 @man man/man5/rofi-script.5
 @man man/man5/rofi-theme.5
-share/applications/
 share/applications/rofi-theme-selector.desktop
 share/applications/rofi.desktop
 share/examples/rofi/
@@ -24,8 +23,6 @@ share/examples/rofi/i3_empty_workspace.sh
 share/examples/rofi/i3_switch_workspaces.sh
 share/examples/rofi/rofi-file-browser.sh
 share/examples/rofi/test_script_mode.sh
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/apps/
 share/icons/hicolor/apps/rofi.svg
 share/rofi/

@@ -2,7 +2,7 @@ COMMENT =		window switcher, run dialog and dmenu replacement
 
 V =			1.7.5
 DISTNAME =		rofi-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils x11
 HOMEPAGE =		https://github.com/davatorium/rofi
@@ -35,6 +35,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-check
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			YACC="bison -y"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	sed -i 's,/usr/bin/env bash,/bin/sh,' ${WRKSRC}/script/get_git_rev.sh
