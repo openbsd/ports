@@ -1,3 +1,4 @@
+backport of https://github.com/taisei-project/koishi/commit/4adb18203b
 fix koishi' coroutine stack allocation: needs MAP_STACK
 
 Index: external/koishi/src/stack_alloc.c
