@@ -1,0 +1,15 @@
+honor fetch_all_branches configuration again
+https://git.gameoftrees.org/gitweb/?p=got.git;a=commit;h=107723488a685ddd492f1539cfc13a88a4c34ca1
+
+Index: lib/repository.c
+--- lib/repository.c.orig
++++ lib/repository.c
+@@ -945,6 +945,8 @@ got_repo_remote_repo_dup(struct got_remote_repo **newp
+ 
+ 	new->mirror_references = repo->mirror_references;
+ 
++	new->fetch_all_branches = repo->fetch_all_branches;
++
+ 	new->nfetch_branches = repo->nfetch_branches;
+ 	if (repo->fetch_branches) {
+ 		new->fetch_branches = calloc(repo->nfetch_branches,
