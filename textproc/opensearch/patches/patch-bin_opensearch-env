@@ -21,9 +21,9 @@ Index: bin/opensearch-env
 -OPENSEARCH_CLASSPATH="$OPENSEARCH_HOME/lib/*"
 +OPENSEARCH_CLASSPATH="$OPENSEARCH_HOME/lib/*:${MODJAVA_JAR_DIR}/jna.jar:${MODJAVA_JAR_DIR}/jna-platform.jar"
  
- # now set the path to java: OPENSEARCH_JAVA_HOME -> JAVA_HOME -> bundled JDK
+ # now set the path to java: OPENSEARCH_JAVA_HOME -> JAVA_HOME -> bundled JRE -> bundled JDK
  if [ ! -z "$OPENSEARCH_JAVA_HOME" ]; then
-@@ -96,7 +98,7 @@ fi
+@@ -101,7 +103,7 @@ fi
  export HOSTNAME=$HOSTNAME
  
  if [ -z "$OPENSEARCH_PATH_CONF" ]; then

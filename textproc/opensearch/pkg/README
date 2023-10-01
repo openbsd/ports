@@ -79,7 +79,7 @@ Migrate from ElasticSearch
 
 There are different approaches to migrate from ElasticSearch to
 OpenSearch.  Upstream documents three migration strategies:
-https://opensearch.org/docs/2.0/upgrade-to/index
+https://opensearch.org/docs/latest/upgrade-to/index
 
 Regardless of the approach choosen, to safeguard against data loss, is
 recommend to take a snapshot of all indices prior to any migration.
