@@ -1,12 +1,11 @@
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.96
+VERSION =		4.96.1
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION-eximon =	0
 REVISION-main =		0
 
 CATEGORIES =		mail
@@ -19,8 +18,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		c m
-WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre2-8 spf2 \
-			ssl opendmarc
+WANTLIB-main =		${cWANTLIB} crypto iconv perl pcre2-8 ssl
 WANTLIB-eximon =	${cWANTLIB} X11 Xaw Xext Xmu Xt pcre2-8
 
 SITES =			https://ftp.exim.org/pub/exim/exim4/ \
@@ -31,9 +29,7 @@ SITES =			https://ftp.exim.org/pub/exim/exim4/ \
 			ftp://ftp.exim.org/pub/exim/exim4/old/
 
 LIB_DEPENDS-main =	converters/libiconv \
-			devel/pcre2 \
-			mail/libspf2 \
-			mail/opendmarc
+			devel/pcre2
 RUN_DEPENDS-eximon =	${PKGPATH},-main
 LIB_DEPENDS-eximon =	devel/pcre2
 
