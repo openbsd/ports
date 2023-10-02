@@ -1,7 +1,9 @@
 COMMENT=	greylist milter
 
+# XXX as of 2023/10 this is very outdated.
+# suggest removing if nobody steps up to maintain this.
 DISTNAME=	milter-greylist-4.2.7
-REVISION=	6
+REVISION=	7
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
@@ -11,10 +13,9 @@ EXTRACT_SUFX=	.tgz
 # BSD license
 PERMIT_PACKAGE=		Yes
 
-WANTLIB=	c pthread milter spf2
+WANTLIB=	c pthread milter
 
-LIB_DEPENDS=	mail/libspf2 \
-		mail/sendmail,-libmilter
+LIB_DEPENDS=	mail/sendmail,-libmilter
 
 BUILD_DEPENDS=	devel/bison
 
@@ -27,7 +28,7 @@ SUBST_VARS=	GREYLISTDIR USERNAME
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-user=${USERNAME} \
 			--with-dumpfile=${GREYLISTDIR}/greylist.db \
-			--with-libspf2=${LOCALBASE}
+			--with-libmilter=${LOCALBASE}
 
 NO_TEST=	Yes
 
