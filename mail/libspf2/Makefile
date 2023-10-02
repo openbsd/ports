@@ -1,10 +1,11 @@
 COMMENT=	SPF library
 
-GH_ACCOUNT=	shevek
+#GH_ACCOUNT=	shevek
+GH_ACCOUNT=	nomis
 GH_PROJECT=	libspf2
-GH_COMMIT=	4915c308d57ff3abac9fb241f09c4bed2ab54815
+GH_COMMIT=	0198cc55113c2866e2bf8cffa899404593677e53
 
-DISTNAME=	libspf2-1.2.11pre20210609
+DISTNAME=	libspf2-1.2.11pre20231001
 
 SHARED_LIBS +=	spf2                 4.0      # 3.0
 

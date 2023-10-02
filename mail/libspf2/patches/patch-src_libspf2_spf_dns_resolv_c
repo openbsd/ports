@@ -1,7 +1,7 @@
 Index: src/libspf2/spf_dns_resolv.c
 --- src/libspf2/spf_dns_resolv.c.orig
 +++ src/libspf2/spf_dns_resolv.c
-@@ -609,7 +609,10 @@ SPF_dns_resolv_free(SPF_dns_server_t *spf_dns_server)
+@@ -591,7 +591,10 @@ SPF_dns_resolv_free(SPF_dns_server_t *spf_dns_server)
  	SPF_ASSERT_NOTNULL(spf_dns_server);
  
  #if ! HAVE_DECL_RES_NINIT

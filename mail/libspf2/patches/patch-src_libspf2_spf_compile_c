@@ -1,6 +1,7 @@
---- src/libspf2/spf_compile.c.orig	Mon Feb 20 08:26:43 2012
-+++ src/libspf2/spf_compile.c	Wed Apr 19 18:53:10 2017
-@@ -577,7 +577,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
+Index: src/libspf2/spf_compile.c
+--- src/libspf2/spf_compile.c.orig
++++ src/libspf2/spf_compile.c
+@@ -582,7 +582,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
  		switch (src[idx]) {
  		case '%':
  			if (spf_server->debug > 3)
@@ -9,7 +10,7 @@
  			SPF_ENSURE_STRING_AVAIL(1);
  			*dst++ = '%';
  			ds_len++;
-@@ -586,7 +586,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
+@@ -591,7 +591,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
  			
  		case '_':
  			if (spf_server->debug > 3)
@@ -18,7 +19,7 @@
  			SPF_ENSURE_STRING_AVAIL(1);
  			*dst++ = ' ';
  			ds_len++;
-@@ -595,7 +595,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
+@@ -600,7 +600,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
  
  		case '-':
  			if (spf_server->debug > 3)
@@ -27,14 +28,3 @@
  			SPF_ENSURE_STRING_AVAIL(3);
  			*dst++ = '%'; *dst++ = '2'; *dst++ = '0';
  			ds_len += 3;
-@@ -604,8 +604,8 @@ SPF_c_parse_macro(SPF_server_t *spf_server,
- 
- 		default:
- 			if (spf_server->debug > 3)
--				SPF_debugf("Adding illegal %%-follower '%c' at %d",
--				src[idx], idx);
-+				SPF_debugf("Adding illegal %%-follower '%c' at %lu",
-+				src[idx], (unsigned long)idx);
- 			/* SPF spec says to treat it as a literal, not
- 			 * SPF_E_INVALID_ESC */
- 			/* FIXME   issue a warning? */
