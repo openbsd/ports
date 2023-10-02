@@ -2,7 +2,7 @@ COMMENT=	Google VP8/VP9 video codec
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx
-GH_TAGNAME=	v1.13.0
+GH_TAGNAME=	v1.13.1
 EPOCH=		0
 CATEGORIES=	multimedia
 
