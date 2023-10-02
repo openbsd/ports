@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.20 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.21 2023/10/02 17:52:58 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -51,7 +51,7 @@ sub start($self, $v, $core)
 {
 	my $host = $core->hostname;
 	for my $w ($v->build_path_list) {
-		next if $w->{info}->is_stub;
+		next if !defined $w->{info} or $w->{info}->is_stub;
 		my $fh = $self->open('>', $self->affinity_marker($w));
 		next if !defined $fh;
 		$w->{affinity} = $host;
