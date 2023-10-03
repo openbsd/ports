@@ -4,6 +4,15 @@
 Index: src-util/anthy.el
 --- src-util/anthy.el.orig
 +++ src-util/anthy.el
+@@ -71,7 +71,7 @@
+ (defvar anthy-highlight-face nil)
+ (defvar anthy-underline-face nil)
+ (copy-face 'highlight 'anthy-highlight-face)
+-(set-face-underline-p 'anthy-highlight-face t)
++(set-face-underline 'anthy-highlight-face t)
+ (copy-face 'underline 'anthy-underline-face)
+ 
+ ;;
 @@ -161,11 +161,11 @@
  
  ;; From skk-macs.el From viper-util.el.  Welcome!
