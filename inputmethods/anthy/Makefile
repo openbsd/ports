@@ -6,7 +6,7 @@ DISTNAME =	anthy-$V
 PKGNAME-main =	anthy-$V
 PKGNAME-emacs =	emacs-anthy-$V
 REVISION-main = 3
-REVISION-emacs = 8
+REVISION-emacs = 9
 
 SHARED_LIBS +=	anthydic             1.0      # .1.0
 SHARED_LIBS +=	anthy                1.0      # .1.0
