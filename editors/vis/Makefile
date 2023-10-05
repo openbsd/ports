@@ -2,7 +2,7 @@ COMMENT =		vi-like editor with sam-style structural regex support
 
 V =			0.8
 DISTNAME =		vis-${V}
-REVISION =		0
+REVISION =		1
 
 TEST_V =		0.5
 TEST_DISTNAME =		vis-test-${TEST_V}
@@ -33,6 +33,7 @@ RUN_DEPENDS =		devel/lpeg,${MODLUA_FLAVOR}>=0.12
 TEST_DEPENDS =		editors/vim
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_ENV =		LUA_VER=${MODLUA_FLAVOR}
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--mandir=${PREFIX}/man
 
