@@ -44,6 +44,7 @@ PKGNAME-securelink=	nginx-securelink-${VERSION}
 REVISION-main=		0
 REVISION-passenger=	1
 REVISION-njs=		0
+REVISION-lua=		0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
@@ -97,7 +98,7 @@ WANTLIB-njs=		exslt m xml2 xslt
 WANTLIB-xslt=		exslt xml2 xslt
 WANTLIB-naxsi=
 WANTLIB-ldap_auth=	ldap
-WANTLIB-lua=		${MODLUA_WANTLIB} m
+WANTLIB-lua=		${MODLUA_WANTLIB} m pcre
 WANTLIB-headers_more=
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
@@ -109,7 +110,8 @@ LIB_DEPENDS-xslt=	textproc/libxml \
 LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-geoip2=	net/libmaxminddb
 LIB_DEPENDS-ldap_auth=	databases/openldap
-LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS}
+LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS} \
+			devel/pcre
 LIB_DEPENDS-rtmp=
 LIB_DEPENDS-securelink=
 LIB_DEPENDS-njs=	devel/pcre2 \
@@ -120,7 +122,8 @@ MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
 RUN_DEPENDS-main=	# blank (override default)
 RUN_DEPENDS-lua=	${RUN_DEPENDS} \
-			${_MODLUA_RUN_DEPENDS}
+			${_MODLUA_RUN_DEPENDS} \
+			devel/pcre
 RUN_DEPENDS-passenger=	${RUN_DEPENDS} \
 			ruby*-passenger-*:www/ruby-passenger
 
