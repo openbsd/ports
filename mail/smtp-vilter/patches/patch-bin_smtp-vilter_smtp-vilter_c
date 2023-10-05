@@ -1,5 +1,6 @@
---- bin/smtp-vilter/smtp-vilter.c.orig	Sun Jan 21 13:09:38 2007
-+++ bin/smtp-vilter/smtp-vilter.c	Fri Oct 23 16:35:17 2009
+Index: bin/smtp-vilter/smtp-vilter.c
+--- bin/smtp-vilter/smtp-vilter.c.orig
++++ bin/smtp-vilter/smtp-vilter.c
 @@ -22,6 +22,7 @@
  #include <sys/resource.h>
  #include <sys/stat.h>
@@ -37,17 +38,30 @@
  #endif
  		switch (ch) {
  		case 'A':
-@@ -407,6 +410,13 @@ main(int argc, char *argv[])
- 			break; 
+@@ -408,6 +411,13 @@ main(int argc, char *argv[])
  		case 'g':
  			group = optarg;
-+			break;
+ 			break;
 +		case 'H':
 +			header_options = (unsigned long)strtonum(optarg, 0LL,
 +			    (long long)ULONG_MAX, &errstr);
 +			if (errstr)
 +				errx(1, "header options is %s: %s",
 +				    errstr, optarg);
- 			break;
++			break;
  #ifdef ENABLE_LDAP
  		case 'h':
+ 			ldaphost = optarg;
+@@ -916,9 +926,10 @@ main(int argc, char *argv[])
+ 					time(&now);
+ 					if ((fp = fopen(statfile, "a")) !=
+ 					    NULL) {
+-						fprintf(fp, "%u\t%u\t%u\t%u\t"
++						fprintf(fp, "%lld\t%lld\t%u\t%u\t"
+ 						    "%u\t%u\t%u\t%u\t%u\n",	
+-						    stat_begin, now, n_conn,
++						    (long long)stat_begin,
++						    (long long)now, n_conn,
+ 						    n_aborts, n_msgs,
+ 						    n_virus, n_spam,
+ 						    n_unwanted, n_err);

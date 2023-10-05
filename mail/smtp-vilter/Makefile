@@ -2,7 +2,7 @@ COMMENT=	sendmail milter to scan messages for viruses and spam
 
 DISTNAME=	smtp-vilter-1.3.6
 EPOCH=		0
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail
 
@@ -13,6 +13,8 @@ WANTLIB += c m pthread milter
 
 SITES=		https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 LIB_DEPENDS=	mail/sendmail,-libmilter
 

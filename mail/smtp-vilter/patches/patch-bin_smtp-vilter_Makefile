@@ -1,7 +1,13 @@
 Index: bin/smtp-vilter/Makefile
 --- bin/smtp-vilter/Makefile.orig
 +++ bin/smtp-vilter/Makefile
-@@ -12,7 +12,7 @@ YFLAGS=		-d -p vilter
+@@ -7,12 +7,12 @@ SRCS=		smtp-vilter.c engine.c imsg.c buffer.c pftable.
+ CFLAGS+= 	-pthread -Wall -I{.CURDIR} -I${.CURDIR}/../../include \
+ 		-I/usr/src/gnu/usr.sbin/sendmail/include
+ 
+-LDADD+=		-export-dynamic -lmilter -lpthread -L/usr/local/lib -lm
++LDADD+=		-rdynamic -lmilter -lpthread -L/usr/local/lib -lm
+ YFLAGS=		-d -p vilter
  LFLAGS=		-Pvilter -olex.yy.c
  LINTFLAGS+=	-u
  

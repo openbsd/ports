@@ -1,12 +1,13 @@
 @newgroup _vilter:538
 @newuser _vilter:538:538::smtp-vilter:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/smtp-vilter/*
+@rcscript ${RCDIR}/smtp_vilter
 lib/smtp-vilter/
-lib/smtp-vilter/vilter-attachment.so
-lib/smtp-vilter/vilter-clamd.so
-lib/smtp-vilter/vilter-icap.so
-lib/smtp-vilter/vilter-regex.so
-lib/smtp-vilter/vilter-spamd.so
+@so lib/smtp-vilter/vilter-attachment.so
+@so lib/smtp-vilter/vilter-clamd.so
+@so lib/smtp-vilter/vilter-icap.so
+@so lib/smtp-vilter/vilter-regex.so
+@so lib/smtp-vilter/vilter-spamd.so
 @man man/man5/smtp-vilter.conf.5
 @man man/man8/smtp-vilter.8
 @bin sbin/smtp-vilter
@@ -33,5 +34,3 @@ share/examples/smtp-vilter/spamd.conf
 @sample /var/smtp-vilter/
 @owner _vilter
 @sample /var/smtp-vilter/tmp/
-@owner
-@rcscript ${RCDIR}/smtp_vilter
