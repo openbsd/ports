@@ -226,6 +226,16 @@ Updating
 Before updating to a new release, read:
     https://docs.nextcloud.com/server/${MAJOR}/admin_manual/maintenance/upgrade.html
 
+To update from one major version to the next, "pkg_delete nextcloud"
+and then "pkg_add nextcloud", choosing the next major version from
+the list.
+
+Nextcloud updates are only supported from one major version to the
+next (23->24, 24->25, etc) and the release schedule does not align
+nicely with OpenBSD's. To avoid an unsupported upgrade path, be sure
+to update to the highest available Nextcloud major version before
+upgrading to a new OpenBSD release.
+
 WebDAV access
 =============
 The personal WebDAV share can be accessed using the following URL (e.g. with
