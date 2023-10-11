@@ -1,3 +1,4 @@
+BROKEN=		needs fixing for newer protobuf
 COMMENT=	texas hold'em poker game with online capabilities
 #'
 BROKEN-hppa =	needs atomic ops
