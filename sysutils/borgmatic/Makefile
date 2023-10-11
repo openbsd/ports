@@ -1,6 +1,6 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION=	1.8.2
+MODPY_EGG_VERSION=	1.8.3
 DISTNAME=	borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -31,5 +31,8 @@ post-install:
 	PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 	    ${PREFIX}/bin/borgmatic config generate \
 	    --destination ${PREFIX}/share/examples/borgmatic/config.yaml.dist
+
+pre-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
