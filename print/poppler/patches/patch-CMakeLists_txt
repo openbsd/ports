@@ -1,14 +1,14 @@
-Allow to build against qt-6.0.
+Allow to build against qt-6.5.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -204,7 +204,7 @@ endif()
+@@ -215,7 +215,7 @@ find_soft_mandatory_package(ENABLE_QT5 Qt5Xml ${QT5_VE
+ find_soft_mandatory_package(ENABLE_QT5 Qt5Widgets ${QT5_VERSION})
+ find_soft_mandatory_package(ENABLE_QT5 Qt5Test ${QT5_VERSION})
  
- if (ENABLE_QT6)
-   SET(QT_NO_CREATE_VERSIONLESS_TARGETS ON)
--  find_package(Qt6 6.2 COMPONENTS Core Gui Widgets Test QUIET)
-+  find_package(Qt6 COMPONENTS Core Gui Widgets Test QUIET)
-   if (NOT (Qt6Core_FOUND AND Qt6Gui_FOUND AND Qt6Widgets_FOUND AND Qt6Test_FOUND))
-     message("-- Package Qt6Core or Qt6Gui or Qt6Widgets or Qt6Test not found")
-     set(ENABLE_QT6 OFF)
+-set(QT6_VERSION "6.2")
++set(QT6_VERSION "6")
+ SET(QT_NO_CREATE_VERSIONLESS_TARGETS ON)
+ find_soft_mandatory_package(ENABLE_QT6 Qt6Core ${QT6_VERSION})
+ find_soft_mandatory_package(ENABLE_QT6 Qt6Gui ${QT6_VERSION})

@@ -3,7 +3,7 @@ COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-qt6=	Qt6 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		23.05.0
+V=		23.10.0
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,10 +13,10 @@ PKGNAME-qt6=	poppler-qt6-$V
 
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=	poppler              74.0     # 128.0
-SHARED_LIBS +=	poppler-glib         19.11    # 8.24
-SHARED_LIBS +=	poppler-qt5          8.11     # 1.31
-SHARED_LIBS +=	poppler-qt6          1.2      # 3.2
+SHARED_LIBS +=	poppler              75.0     # 132.0
+SHARED_LIBS +=	poppler-glib         19.12    # 8.26
+SHARED_LIBS +=	poppler-qt5          8.12     # 1.33
+SHARED_LIBS +=	poppler-qt6          1.3      # 3.4
 SHARED_LIBS +=	poppler-cpp          17.1     # 0.11
 
 HOMEPAGE=	https://poppler.freedesktop.org/
@@ -98,7 +98,8 @@ WANTLIB-utils=	${COMPILER_LIBCXX} c cairo freetype lcms2 m poppler
 CONFIGURE_ARGS+=-DENABLE_UNSTABLE_API_ABI_HEADERS=True \
 		-DBUILD_GTK_TESTS=False \
 		-DENABLE_LIBCURL=False \
-		-DCMAKE_DISABLE_FIND_PACKAGE_NSS3=True \
+		-DENABLE_GPGME=False \
+		-DENABLE_NSS3=False \
 		-DOpenJPEG_DIR=${LOCALBASE}/lib/openjp2 \
 		-DX11BASE=${X11BASE}
 

@@ -1,9 +1,9 @@
 Index: poppler/Form.cc
 --- poppler/Form.cc.orig
 +++ poppler/Form.cc
-@@ -42,6 +42,7 @@
- #include <config.h>
+@@ -43,6 +43,7 @@
  
+ #include <array>
  #include <set>
 +#include <ctype.h>
  #include <limits>
