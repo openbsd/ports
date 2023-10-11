@@ -1,7 +1,6 @@
 COMMENT =	PDF parser and analyzer
 
-MODPY_EGG_VERSION =	20211012
-REVISION =		2
+MODPY_EGG_VERSION =	20221105
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
 
@@ -19,7 +18,7 @@ MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \
-			textproc/py-chardet${MODPY_FLAVOR}
+			textproc/py-charset-normalizer${MODPY_FLAVOR}
 
 # tests aren't included in the pypi distfiles
 NO_TEST =		Yes
