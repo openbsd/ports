@@ -114,6 +114,8 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/sta
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/bootstrap/js/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/bootstrap/js/bootstrap.min.js
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/Auto.css
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/Night.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/chartist.min.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/login.css
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/interfaces/Config/templates/staticcfg/css/style.css
