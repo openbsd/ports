@@ -1,8 +1,6 @@
 COMMENT =	unionfs filesystem implementation
 
-GH_ACCOUNT =	rpodgorny
-GH_PROJECT =	unionfs-fuse
-GH_TAGNAME =	v3.3
+DIST_TUPLE =	github rpodgorny unionfs-fuse v3.4 .
 
 CATEGORIES =	sysutils
 
