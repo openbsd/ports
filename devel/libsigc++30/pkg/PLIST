@@ -29,6 +29,7 @@ include/sigc++-3.0/sigc++/limit_reference.h
 include/sigc++-3.0/sigc++/member_method_trait.h
 include/sigc++-3.0/sigc++/reference_wrapper.h
 include/sigc++-3.0/sigc++/retype_return.h
+include/sigc++-3.0/sigc++/scoped_connection.h
 include/sigc++-3.0/sigc++/sigc++.h
 include/sigc++-3.0/sigc++/signal.h
 include/sigc++-3.0/sigc++/signal_base.h

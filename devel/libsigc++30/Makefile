@@ -1,6 +1,6 @@
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		3.4.0
+GNOME_VERSION=		3.6.0
 GNOME_PROJECT=		libsigc++
 PKGNAME=		libsigc++30-${GNOME_VERSION}
 
