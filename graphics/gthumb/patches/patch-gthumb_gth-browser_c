@@ -1,9 +1,6 @@
 ../gthumb-3.12.2/gthumb/gth-browser.c:2460:7: warning:
 using integer absolute value function 'abs' when argument is of floating point type [-Wabsolute-value]
 
-../gthumb-3.12.3/gthumb/gth-browser.c:4456:3: error: expected expression
-                GtkWidget *focus_widget = gtk_window_get_focus (GTK_WINDOW (browser));
-
 Index: gthumb/gth-browser.c
 --- gthumb/gth-browser.c.orig
 +++ gthumb/gth-browser.c
@@ -18,20 +15,3 @@ Index: gthumb/gth-browser.c
  	{
  		if (! browser->priv->pointer_visible) {
  			browser->priv->pointer_visible = TRUE;
-@@ -4440,6 +4440,7 @@ static gboolean
- browser_key_press_cb (GthBrowser  *browser,
- 		      GdkEventKey *event)
- {
-+	GtkWidget *focus_widget;
- 	gboolean result = FALSE;
- 
- 	event->keyval = gth_shortcut_normalize_keycode (event->keyval);
-@@ -4453,7 +4454,7 @@ browser_key_press_cb (GthBrowser  *browser,
- 		break;
- 
- 	case GTH_BROWSER_PAGE_BROWSER:
--		GtkWidget *focus_widget = gtk_window_get_focus (GTK_WINDOW (browser));
-+		focus_widget = gtk_window_get_focus (GTK_WINDOW (browser));
- 		if (! GTK_IS_ENTRY (focus_widget) && ! GTK_IS_TREE_VIEW (focus_widget))
- 			result = gth_browser_file_list_key_press_cb (browser, event);
- 		break;
