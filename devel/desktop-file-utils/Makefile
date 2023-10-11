@@ -1,6 +1,6 @@
 COMMENT=	utilities for dot.desktop entries
 
-DISTNAME=	desktop-file-utils-0.26
+DISTNAME=	desktop-file-utils-0.27
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -13,7 +13,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-# uses pledge()
+# uses pledge() and unveil()
 WANTLIB += c glib-2.0 intl
 
 SITES=		https://freedesktop.org/software/desktop-file-utils/releases/

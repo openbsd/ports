@@ -4,18 +4,16 @@ to be written out to.
 Index: src/update-desktop-database.c
 --- src/update-desktop-database.c.orig
 +++ src/update-desktop-database.c
-@@ -451,8 +451,8 @@ main (int    argc,
-      { NULL }
+@@ -456,7 +456,7 @@ main (int    argc,
     };
  
--#if HAVE_PLEDGE
--  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
-+#ifdef HAVE_PLEDGE
+ #ifdef HAVE_PLEDGE
+-  if (pledge ("stdio rpath wpath cpath fattr", NULL) == -1) {
 +  if (pledge ("stdio rpath wpath cpath fattr unveil", NULL) == -1) {
      g_printerr ("pledge\n");
      return 1;
    }
-@@ -478,9 +478,15 @@ main (int    argc,
+@@ -487,9 +487,15 @@ main (int    argc,
  
    print_desktop_dirs (desktop_dirs);
  
@@ -31,7 +29,7 @@ Index: src/update-desktop-database.c
        error = NULL;
        update_database (desktop_dirs[i], &error);
  
-@@ -495,6 +501,10 @@ main (int    argc,
+@@ -504,6 +510,10 @@ main (int    argc,
          found_processable_dir = TRUE;
      }
    g_option_context_free (context);
