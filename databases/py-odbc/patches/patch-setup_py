@@ -1,8 +1,8 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -246,7 +246,7 @@ def get_compiler_settings(version_str):
- #            settings['define_macros'].append(('SQL_WCHART_CONVERT', '1'))
+@@ -170,7 +170,7 @@ def get_compiler_settings():
+             settings['extra_link_args'].extend(ldflags.split())
  
          # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
 -        settings['libraries'].append('odbc')

@@ -3,7 +3,7 @@ unixodbc vs iodbc
 Index: src/connection.cpp
 --- src/connection.cpp.orig
 +++ src/connection.cpp
-@@ -639,7 +639,9 @@ static const GetInfoType aInfoTypes[] = {
+@@ -521,7 +521,9 @@ static const GetInfoType aInfoTypes[] = {
      { SQL_CONVERT_INTERVAL_YEAR_MONTH, GI_UINTEGER },
      { SQL_CONVERT_WLONGVARCHAR, GI_UINTEGER },
      { SQL_CONVERT_WVARCHAR, GI_UINTEGER },

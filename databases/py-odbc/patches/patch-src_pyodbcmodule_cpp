@@ -3,7 +3,21 @@ unixodbc vs iodbc
 Index: src/pyodbcmodule.cpp
 --- src/pyodbcmodule.cpp.orig
 +++ src/pyodbcmodule.cpp
-@@ -1102,7 +1102,9 @@ static const ConstantDef aConstants[] = {
+@@ -307,7 +307,13 @@ static bool AllocateEnv()
+     if (PyObject_TypeCheck(odbcversion, &PyUnicode_Type)) {
+         if (PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0)
+         {
++#if 0
+             defaultVersion = (SQLPOINTER)SQL_OV_ODBC3_80;
++#else
++            Py_DECREF(odbcversion);
++            PyErr_SetString(PyExc_RuntimeError, "using iODBC - odbcversion cannot be set to 3.8.");
++            return false;
++#endif
+         }
+     }
+     Py_DECREF(odbcversion);
+@@ -1074,7 +1080,9 @@ static const ConstantDef aConstants[] = {
      MAKECONST(SQL_CONVERT_DECIMAL),
      MAKECONST(SQL_CONVERT_DOUBLE),
      MAKECONST(SQL_CONVERT_FLOAT),
