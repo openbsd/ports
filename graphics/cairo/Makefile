@@ -1,15 +1,14 @@
 COMMENT=		vector graphics library
 
 GNOME_PROJECT=		cairo
-GNOME_VERSION=		1.17.8
-REVISION=		0
+GNOME_VERSION=		1.18.0
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 
-SHARED_LIBS += cairo                     13.3 # 2.11708.0
-SHARED_LIBS += cairo-gobject             2.1 # 2.11708.0
-SHARED_LIBS += cairo-script-interpreter  2.1 # 2.11708.0
+SHARED_LIBS += cairo                     13.4 # 2.11800.0
+SHARED_LIBS += cairo-gobject             2.2 # 2.11800.0
+SHARED_LIBS += cairo-script-interpreter  2.2 # 2.11800.0
 
 HOMEPAGE=		http://cairographics.org/
 
@@ -18,7 +17,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE=	Yes
 
-SITES=			https://cairographics.org/snapshots/
+SITES=			https://cairographics.org/releases/ \
+			https://cairographics.org/snapshots/
 
 WANTLIB += X11 Xext Xrender fontconfig freetype glib-2.0 gobject-2.0
 WANTLIB += lzo2 m pixman-1 png pthread xcb xcb-render xcb-shm
