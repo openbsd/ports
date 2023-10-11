@@ -1,5 +1,6 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		9.0
 
@@ -10,7 +11,8 @@ WANTLIB += lib/inotify/inotify
 BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		sysutils/accountsservice
+		sysutils/accountsservice \
+		x11/papirus-icon-theme
 
 LIB_DEPENDS =		devel/libinotify
 
