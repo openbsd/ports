@@ -5,5 +5,4 @@ lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.d
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_EGG_VERSION}.dist-info/top_level.txt

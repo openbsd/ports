@@ -1,24 +1,24 @@
-COMMENT =		C based reader/scanner and emitter for ruamel.yaml
+COMMENT=	C based reader/scanner and emitter for ruamel.yaml
 
-MODPY_EGG_VERSION =	0.2.7
-DISTNAME =		ruamel.yaml.clib-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION=	0.2.8
+DISTNAME=	ruamel.yaml.clib-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-HOMEPAGE =		https://yaml.readthedocs.io
+HOMEPAGE=	https://yaml.readthedocs.io
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB =		${MODPY_WANTLIB} pthread
+WANTLIB=	${MODPY_WANTLIB} pthread
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-NO_TEST =		Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+NO_TEST=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
