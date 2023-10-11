@@ -1,3 +1,4 @@
+BROKEN =	needs fixing for newer protobuf
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
