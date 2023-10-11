@@ -12,7 +12,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-# uses pledge()
+# uses pledge() and unveil()
 WANTLIB += c glib-2.0 xml2
 
 SITES=	https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/

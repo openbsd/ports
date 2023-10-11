@@ -49,6 +49,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
+# uses pledge() and unveil()
 WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-main += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB-main += epoxy fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
