@@ -1,4 +1,5 @@
 V =		0.4.1
+REVISION =	0
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
 
