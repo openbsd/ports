@@ -1,7 +1,7 @@
 COMMENT =		Python library for reading and writing PDF files
 
 # please check pdfarranger if updating, it breaks often
-MODPY_EGG_VERSION =	6.2.9
+MODPY_EGG_VERSION =	8.4.1
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/.post/pl/}
 
@@ -29,10 +29,13 @@ FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-pybind11${MODPY_FLAVOR} \
 			devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
-RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-deprecation${MODPY_FLAVOR} \
+			graphics/py-Pillow${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}
 LIB_DEPENDS =		print/qpdf
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
