@@ -1,8 +1,7 @@
 COMMENT=	interactive accessibility explorer
 
 GNOME_PROJECT=	accerciser
-GNOME_VERSION=	3.40.0
-REVISION=	2
+GNOME_VERSION=	3.42.0
 
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
