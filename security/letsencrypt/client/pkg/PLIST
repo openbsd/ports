@@ -166,8 +166,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}client_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}configuration_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}configuration_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}crypto_util_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}crypto_util_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/${MODPY_PYCACHE}eff_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -218,7 +216,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/filesyst
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/misc_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/compat/os_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/configuration_test.py
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/conftest.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/crypto_util_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/display/__init__.py
@@ -258,8 +255,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}common_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}disco_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}disco_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}dns_common_lexicon_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}dns_common_lexicon_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}dns_common_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}dns_common_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}enhancements_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -280,7 +275,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/${MODPY_PYCACHE}webroot_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/common_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/disco_test.py
-lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/dns_common_lexicon_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/dns_common_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/enhancements_test.py
 lib/python${MODPY_VERSION}/site-packages/certbot/_internal/tests/plugins/manual_test.py
