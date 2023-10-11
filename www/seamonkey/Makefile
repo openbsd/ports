@@ -1,3 +1,4 @@
+BROKEN =		fail to build with lang/rust 1.73.0: error: unrecognized platform-specific intrinsic function
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
 
 COMMENT-main =		Mozilla application suite
