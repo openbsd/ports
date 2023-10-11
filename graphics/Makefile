@@ -199,6 +199,7 @@
      SUBDIR += openvdb
      SUBDIR += optipng
      SUBDIR += orthanc
+     SUBDIR += oxipng
      SUBDIR += p5-Barcode-DataMatrix
      SUBDIR += p5-Barcode-DataMatrix-PNG
      SUBDIR += p5-Cairo
