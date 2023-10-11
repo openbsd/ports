@@ -1,6 +1,6 @@
 COMMENT=	Let's Connect! artwork for vpn-user-portal
 
-V=		3.0.0
+V=		3.0.1
 DISTNAME=	vpn-portal-artwork-LC-$V
 
 # AGPL-3.0
