@@ -6,16 +6,16 @@ This was also a race if MAKE_JOBS > 1.
 Index: gettext-tools/gnulib-lib/Makefile.in
 --- gettext-tools/gnulib-lib/Makefile.in.orig
 +++ gettext-tools/gnulib-lib/Makefile.in
-@@ -4600,7 +4600,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+@@ -4612,7 +4612,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
  	$(LTLIBC32CONV) $(LTLIBICONV) $(LTLIBINTL) $(LTLIBUNISTRING) \
  	$(MBRTOWC_LIB) $(POSIX_SPAWN_LIB) $(POW_LIBM) $(QCOPY_ACL_LIB) \
  	$(SERVENT_LIB) $(SETLOCALE_LIB) $(SETLOCALE_NULL_LIB) \
 -	@INTL_MACOSX_LIBS@ -release @VERSION@ $(am__append_36) \
 +	@INTL_MACOSX_LIBS@ $(am__append_36) \
- 	$(am__append_52) $(am__append_171) $(am__append_172)
+ 	$(am__append_52) $(LTLIBICONV) $(LTLIBICONV) $(am__append_171) \
+ 	$(am__append_172)
  
- # Use this preprocessor expression to decide whether #include_next works.
-@@ -6899,7 +6899,7 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CX
+@@ -6912,7 +6912,7 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CX
  @GL_GENERATE_GETOPT_CDEFS_H_FALSE@	rm -f $@
  
  # No need to install libgettextlib.a, except on AIX.
