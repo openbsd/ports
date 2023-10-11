@@ -1,6 +1,7 @@
 COMMENT=	tabbed DjVu/PDF/PS document viewer
 V=		0.5.0
 DISTNAME=	qpdfview-${V:S/.0//g}
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://launchpad.net/qpdfview
