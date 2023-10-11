@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1555 2023/09/30 13:25:43 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1556 2023/10/11 13:34:52 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -786,6 +786,8 @@ my $stem_extensions = {
 	'pymodbus' => 'py3-pymodbus',
 	'py-yaml' => 'py3-yaml',
 	'kalendar' => 'merkuro',
+# 7.5
+	'py-reportlab' => 'py3-reportlab',
 };
 
 my $obsolete_reason = {};

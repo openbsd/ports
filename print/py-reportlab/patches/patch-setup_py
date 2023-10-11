@@ -1,17 +1,18 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -183,7 +183,8 @@ class inc_lib_dirs:
-             aDir(L, "/usr/local/lib")
-             aDir(I, "/usr/include")
-             aDir(L, "/usr/lib")
--            aDir(I, "/usr/include/freetype2")
-+            aDir(I, "/usr/X11R6/include/freetype2")
-+            aDir(L, "/usr/X11R6/lib")
-             prefix = sysconfig.get_config_var("prefix")
-             if prefix:
-                 aDir(L, pjoin(prefix, "lib"))
-@@ -312,9 +313,8 @@ def get_fonts(PACKAGE_DIR, reportlab_files):
+@@ -279,8 +279,10 @@ class inc_lib_dirs:
+             aDir(I, "/opt/local/include")
+         aDir(I, "/usr/local/include")
+         aDir(L, "/usr/local/lib")
++        aDir(L, "/usr/X11R6/lib")
+         aDir(I, "/usr/include")
+         aDir(L, "/usr/lib")
++        aDir(I, "/usr/X11R6/include/freetype2")
+         aDir(I, "/usr/include/freetype2")
+         if addrSize==64:
+             aDir(L, "/usr/lib/lib64")
+@@ -449,9 +451,8 @@ def get_fonts(PACKAGE_DIR, reportlab_files):
          xitmsg = "not downloading T1 font curve files"
      else:
          try:
@@ -19,16 +20,22 @@ Index: setup.py
 -            zipdata = url2data("http://www.reportlab.com/ftp/pfbfer-20180109.zip")
 -            archive = zipfile.ZipFile(zipdata)
 +            infoline("Extracting standard T1 font curves")
-+            archive = zipfile.ZipFile("${FULLDISTDIR}/${PFBFER}")
++            archive = zipfile.ZipFile("pfbfer-20180109.zip")
              dst = pjoin(rl_dir, 'fonts')
  
              for name in archive.namelist():
-@@ -456,7 +456,7 @@ def main():
+@@ -681,10 +682,13 @@ def main():
+         GT1_DIR=pjoin(RENDERPM,'gt1')
+ 
+         if not usla:
++            infoline('zzzzzz not usla')
              LIBART_INC=None #don't use system libart
          else:
++            infoline('zzzzzz yes usla')
              #check for an installed libart
 -            LIBART_INC = list(sorted(glob.glob('/usr/include/libart-*/libart_lgpl/libart-features.h')))
 +            LIBART_INC = list(sorted(glob.glob('/usr/local/include/libart-*/libart_lgpl/libart-features.h')))
++            infoline('zzzzzz libart %s' % LIBART_INC[-1])
          if LIBART_INC:
              def installed_libart_version(fn):
                  for l in open(fn, 'r').readlines():
