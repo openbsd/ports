@@ -1,4 +1,5 @@
 Use pledge(2), xxhsum(1) only ever reads files or stdin.
+merged https://github.com/Cyan4973/xxHash/pull/880
 
 Index: cli/xsum_os_specific.c
 --- cli/xsum_os_specific.c.orig
