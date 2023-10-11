@@ -3,8 +3,8 @@ Index: src/libmpg123/dct36_avx.S
 +++ src/libmpg123/dct36_avx.S
 @@ -71,6 +71,7 @@ dct36_avx_sign:
  	ALIGN16
- 	.globl ASM_NAME(dct36_avx)
- ASM_NAME(dct36_avx):
+ 	.globl ASM_NAME(INT123_dct36_avx)
+ ASM_NAME(INT123_dct36_avx):
 +	endbr64
  #ifdef IS_MSABI
  	push		%rbp
