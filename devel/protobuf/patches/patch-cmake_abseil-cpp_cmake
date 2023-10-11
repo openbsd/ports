@@ -1,0 +1,13 @@
+absl::debugging depends on leak_check, so isn't in devel/abseil-cpp
+
+Index: cmake/abseil-cpp.cmake
+--- cmake/abseil-cpp.cmake.orig
++++ cmake/abseil-cpp.cmake
+@@ -64,7 +64,6 @@ else()
+     absl::cleanup
+     absl::cord
+     absl::core_headers
+-    absl::debugging
+     absl::die_if_null
+     absl::dynamic_annotations
+     absl::flags
