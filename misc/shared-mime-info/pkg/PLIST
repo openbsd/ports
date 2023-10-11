@@ -45,6 +45,7 @@ share/locale/ia/
 share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/shared-mime-info.mo
 share/locale/id/LC_MESSAGES/shared-mime-info.mo
+share/locale/is/LC_MESSAGES/shared-mime-info.mo
 share/locale/it/LC_MESSAGES/shared-mime-info.mo
 share/locale/ja/LC_MESSAGES/shared-mime-info.mo
 share/locale/ka/LC_MESSAGES/shared-mime-info.mo
@@ -71,6 +72,7 @@ share/locale/pt_BR/LC_MESSAGES/shared-mime-info.mo
 share/locale/ro/LC_MESSAGES/shared-mime-info.mo
 share/locale/ru/LC_MESSAGES/shared-mime-info.mo
 share/locale/rw/LC_MESSAGES/shared-mime-info.mo
+share/locale/si/LC_MESSAGES/shared-mime-info.mo
 share/locale/sk/LC_MESSAGES/shared-mime-info.mo
 share/locale/sl/LC_MESSAGES/shared-mime-info.mo
 share/locale/sq/LC_MESSAGES/shared-mime-info.mo
