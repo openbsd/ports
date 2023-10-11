@@ -1,10 +1,10 @@
 COMMENT =	fast compression/decompression library
 
-GH_TAGNAME =	1.1.9
+GH_TAGNAME =	1.1.10
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
 
-SHARED_LIBS =	snappy	2.0	# 4.1
+SHARED_LIBS =	snappy	3.0
 
 CATEGORIES =	archivers
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 

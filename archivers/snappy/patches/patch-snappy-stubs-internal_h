@@ -4,10 +4,10 @@ Index: snappy-stubs-internal.h
 --- snappy-stubs-internal.h.orig
 +++ snappy-stubs-internal.h
 @@ -99,7 +99,7 @@
- #endif
+ #endif  // HAVE_BUILTIN_EXPECT
  
  // Inlining hints.
--#ifdef HAVE_ATTRIBUTE_ALWAYS_INLINE
+-#if HAVE_ATTRIBUTE_ALWAYS_INLINE
 +#if defined(HAVE_ATTRIBUTE_ALWAYS_INLINE) && defined(__clang__)
  #define SNAPPY_ATTRIBUTE_ALWAYS_INLINE __attribute__((always_inline))
  #else
