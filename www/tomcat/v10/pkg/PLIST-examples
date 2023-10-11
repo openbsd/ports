@@ -542,6 +542,7 @@ webapps/docs/api/org/apache/catalina/security/SecurityClassLoad.html
 webapps/docs/api/org/apache/catalina/security/SecurityConfig.html
 webapps/docs/api/org/apache/catalina/security/SecurityListener.html
 webapps/docs/api/org/apache/catalina/security/SecurityUtil.html
+webapps/docs/api/org/apache/catalina/security/TLSCertificateReloadListener.html
 webapps/docs/api/org/apache/catalina/security/package-summary.html
 webapps/docs/api/org/apache/catalina/security/package-tree.html
 webapps/docs/api/org/apache/catalina/servlets/
