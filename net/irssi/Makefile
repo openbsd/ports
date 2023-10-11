@@ -1,56 +1,55 @@
-MULTI_PACKAGES = -main -otr
+MULTI_PACKAGES=	-main -otr
 
 # XXX -stable package builds can't detect PKGSPEC updates properly;
 # if backporting an update to stable, ensure all ports depending on
 # this are bumped and that -current is same/newer version than -stable
-COMMENT-main =	modular IRC client with many features
-COMMENT-otr =	OTR (off-the-record) plugin for irssi
+COMMENT-main=	modular IRC client with many features
+COMMENT-otr=	OTR (off-the-record) plugin for irssi
 
-V =		1.4.4
-REVISION =	0
-DISTNAME =	irssi-$V
-PKGSPEC-main =	irssi-=$V
-PKGNAME-main =	irssi-$V
-PKGNAME-otr =	irssi-otr-$V
+V=		1.4.5
+DISTNAME=	irssi-$V
+PKGSPEC-main=	irssi-=$V
+PKGNAME-main=	irssi-$V
+PKGNAME-otr=	irssi-otr-$V
 
-CATEGORIES =	net
+CATEGORIES=	net
 
-HOMEPAGE =	https://www.irssi.org/
+HOMEPAGE=	https://www.irssi.org/
 
 # GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 m perl ssl
 
-SITES =		https://github.com/irssi/irssi/releases/download/${V}/
+SITES=		https://github.com/irssi/irssi/releases/download/${V}/
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-MODULES =	devel/meson
+MODULES=	devel/meson
 
-LIB_DEPENDS =	devel/glib2>=2.28.0
+LIB_DEPENDS=	devel/glib2>=2.28.0
 
-MODMESON_CONFIGURE_ARGS +=	-Ddisable-utf8proc=yes \
-				-Dwith-otr=yes \
-				-Dwith-perl=yes \
-				-Dwith-proxy=yes
+CONFIGURE_ARGS=	-Ddisable-utf8proc=yes \
+		-Dwith-otr=yes \
+		-Dwith-perl=yes \
+		-Dwith-proxy=yes
 
 # disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
 # build failures due to undefined references are often seen.
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
-MODMESON_CONFIGURE_ARGS +=      -Db_asneeded=false
+CONFIGURE_ARGS+= -Db_asneeded=false
 .endif
 
-RUN_DEPENDS-otr =	net/irssi,-main
-LIB_DEPENDS-otr =	devel/glib2>=2.28.0 \
-			security/libgcrypt>=1.2.0 \
-			security/libotr>=4.1.0
+RUN_DEPENDS-otr= net/irssi,-main
+LIB_DEPENDS-otr= devel/glib2>=2.28.0 \
+		 security/libgcrypt>=1.2.0 \
+		 security/libotr>=4.1.0
 
-WANTLIB-otr =	gcrypt glib-2.0 otr
+WANTLIB-otr=	gcrypt glib-2.0 otr
 
 # tests write to it
-PORTHOME =	${WRKDIR}
+PORTHOME=	${WRKDIR}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/meson.build
