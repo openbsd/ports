@@ -1,0 +1,12 @@
+This package provides (unofficial) compatibility mixins and function
+adaptors for pydantic v1-v2 cross compatibility. It allows you to
+use either v1 or v2 API names, regardless of the pydantic version
+installed. (Prefer using v2 names when possible).
+
+Pydantic 2 was a major release that completely changed the pydantic API.
+
+For applications, this is not a big deal, as they can pin to whatever
+version of pydantic they need. But for libraries that want to exist
+in a broader environment, pinning to a specific version of pydantic
+is not always an option (as it limits the ability to co-exist with
+other libraries).
