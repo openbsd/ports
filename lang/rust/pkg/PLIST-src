@@ -381,6 +381,7 @@ lib/rustlib/src/rust/library/core/src/iter/adapters/inspect.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/intersperse.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/map.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/map_while.rs
+lib/rustlib/src/rust/library/core/src/iter/adapters/map_windows.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/mod.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/peekable.rs
 lib/rustlib/src/rust/library/core/src/iter/adapters/rev.rs
@@ -566,6 +567,7 @@ lib/rustlib/src/rust/library/core/tests/clone.rs
 lib/rustlib/src/rust/library/core/tests/cmp.rs
 lib/rustlib/src/rust/library/core/tests/const_ptr.rs
 lib/rustlib/src/rust/library/core/tests/convert.rs
+lib/rustlib/src/rust/library/core/tests/error.rs
 lib/rustlib/src/rust/library/core/tests/fmt/
 lib/rustlib/src/rust/library/core/tests/fmt/builders.rs
 lib/rustlib/src/rust/library/core/tests/fmt/float.rs
@@ -593,6 +595,7 @@ lib/rustlib/src/rust/library/core/tests/iter/adapters/fuse.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/inspect.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/intersperse.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/map.rs
+lib/rustlib/src/rust/library/core/tests/iter/adapters/map_windows.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/mod.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/peekable.rs
 lib/rustlib/src/rust/library/core/tests/iter/adapters/scan.rs
@@ -1133,14 +1136,6 @@ lib/rustlib/src/rust/library/std/src/panicking.rs
 lib/rustlib/src/rust/library/std/src/path/
 lib/rustlib/src/rust/library/std/src/path.rs
 lib/rustlib/src/rust/library/std/src/path/tests.rs
-lib/rustlib/src/rust/library/std/src/personality/
-lib/rustlib/src/rust/library/std/src/personality.rs
-lib/rustlib/src/rust/library/std/src/personality/dwarf/
-lib/rustlib/src/rust/library/std/src/personality/dwarf/eh.rs
-lib/rustlib/src/rust/library/std/src/personality/dwarf/mod.rs
-lib/rustlib/src/rust/library/std/src/personality/dwarf/tests.rs
-lib/rustlib/src/rust/library/std/src/personality/emcc.rs
-lib/rustlib/src/rust/library/std/src/personality/gcc.rs
 lib/rustlib/src/rust/library/std/src/prelude/
 lib/rustlib/src/rust/library/std/src/prelude/mod.rs
 lib/rustlib/src/rust/library/std/src/prelude/v1.rs
@@ -1230,6 +1225,14 @@ lib/rustlib/src/rust/library/std/src/sys/itron/time/
 lib/rustlib/src/rust/library/std/src/sys/itron/time.rs
 lib/rustlib/src/rust/library/std/src/sys/itron/time/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/
+lib/rustlib/src/rust/library/std/src/sys/personality/dwarf/
+lib/rustlib/src/rust/library/std/src/sys/personality/dwarf/eh.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/dwarf/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/dwarf/tests.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/emcc.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/gcc.rs
+lib/rustlib/src/rust/library/std/src/sys/personality/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/sgx/
 lib/rustlib/src/rust/library/std/src/sys/sgx/abi/
 lib/rustlib/src/rust/library/std/src/sys/sgx/abi/entry.S
@@ -1499,7 +1502,9 @@ lib/rustlib/src/rust/library/std/tests/common/
 lib/rustlib/src/rust/library/std/tests/common/mod.rs
 lib/rustlib/src/rust/library/std/tests/create_dir_all_bare.rs
 lib/rustlib/src/rust/library/std/tests/env.rs
+lib/rustlib/src/rust/library/std/tests/process_spawning.rs
 lib/rustlib/src/rust/library/std/tests/run-time-detect.rs
+lib/rustlib/src/rust/library/std/tests/switch-stdout.rs
 lib/rustlib/src/rust/library/std/tests/thread.rs
 lib/rustlib/src/rust/library/stdarch/
 lib/rustlib/src/rust/library/stdarch/.cirrus.yml
@@ -1895,7 +1900,6 @@ lib/rustlib/src/rust/src/llvm-project/libunwind/src/UnwindRegistersSave.S
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/UnwindRustSgx.c
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/UnwindRustSgx.h
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/Unwind_AIXExtras.cpp
-lib/rustlib/src/rust/src/llvm-project/libunwind/src/Unwind_AppleExtras.cpp
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/assembly.h
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/cet_unwind.h
 lib/rustlib/src/rust/src/llvm-project/libunwind/src/config.h
@@ -1911,6 +1915,7 @@ lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/apple-libunwind-bac
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/cmake-bridge.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/ibm-libunwind-shared.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-merged.cfg.in
+lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-mingw.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-shared.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/configs/llvm-libunwind-static.cfg.in
 lib/rustlib/src/rust/src/llvm-project/libunwind/test/floatregister.pass.cpp

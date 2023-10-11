@@ -37,7 +37,6 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.rlib
 @so lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBRUST_HASH}18.so
 lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBRUST_HASH}19.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
-@bin libexec/cargo-credential-1password
 @man man/man1/cargo-add.1
 @man man/man1/cargo-bench.1
 @man man/man1/cargo-build.1

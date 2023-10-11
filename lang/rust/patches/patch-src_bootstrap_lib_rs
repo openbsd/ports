@@ -4,7 +4,7 @@ https://github.com/rust-lang/rust/issues/39900
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs
-@@ -1142,7 +1142,6 @@ impl Build {
+@@ -1177,7 +1177,6 @@ impl Build {
              .args()
              .iter()
              .map(|s| s.to_string_lossy().into_owned())
