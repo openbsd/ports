@@ -1,7 +1,7 @@
 COMMENT=	add an OCR text layer to scanned PDF files
 
-MODPY_EGG_VERSION=  14.4.0
-# intentionally no py- prefix
+MODPY_EGG_VERSION=  15.2.0
+# standalone; no py- prefix
 DISTNAME=	ocrmypdf-${MODPY_EGG_VERSION}
 
 CATEGORIES=	print
@@ -32,11 +32,13 @@ RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR} \
 # other deps
 # can also use jbig2enc, not in ports
 RUN_DEPENDS +=	graphics/tesseract/tesseract \
+		graphics/tesseract/tessdata,-osd \
 		graphics/pngquant \
 		print/ghostscript/gnu \
 		print/unpaper
 
-TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR} \
+		devel/py-hypothesis${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} \
