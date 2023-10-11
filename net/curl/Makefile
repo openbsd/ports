@@ -1,10 +1,9 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-8.3.0
-SHARED_LIBS=	curl                 26.22    # 12.0
+DISTNAME=	curl-8.4.0
+SHARED_LIBS=	curl                 26.23    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
