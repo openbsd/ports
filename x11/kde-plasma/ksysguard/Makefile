@@ -1,6 +1,7 @@
 COMMENT =	track and control the processes running in your system
 VERSION =	5.22.0
 DISTNAME =	ksysguard-${VERSION}
+REVISION =	0
 
 SITES = 	${SITE_KDE:=stable/ksysguard/${VERSION}/}
 
