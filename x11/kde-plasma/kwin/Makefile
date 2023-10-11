@@ -19,7 +19,7 @@ WANTLIB += KScreenLocker Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml SM X11 X11-xcb Xext Xi c drm epoxy
 WANTLIB += fontconfig freetype gbm glib-2.0 gthread-2.0 input
-WANTLIB += kdecorations2 kdecorations2private lcms2 m qaccessibilityclient-qt5
+WANTLIB += intl kdecorations2 kdecorations2private lcms2 m qaccessibilityclient-qt5
 WANTLIB += udev wayland-client wayland-server xcb xcb-composite
 WANTLIB += xcb-cursor xcb-damage xcb-glx xcb-icccm xcb-keysyms
 WANTLIB += xcb-present xcb-randr xcb-render xcb-shape xcb-shm
@@ -72,6 +72,13 @@ CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
 
 # Mostly useless tests
 # QVERIFY(waylandServer()->init(s_socketName));
+# 3 - kwin-testClientMachine (Subprocess aborted)
+# 11 - kwin-testXkb (Failed)
+# 27 - kwin-testPointerInput (Failed)
+# 39 - kwin-testXdgShellWindow (Failed)
+# 40 - kwin-testXdgShellWindow-waylandonly (Failed)
+# 114 - kwin-testDbusInterface (Failed)
+# 124 - kwin-testScriptedEffects (Failed)
 CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
