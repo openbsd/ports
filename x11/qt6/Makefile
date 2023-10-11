@@ -30,10 +30,10 @@
      SUBDIR += qttranslations
      SUBDIR += qtvirtualkeyboard
      SUBDIR += qtwayland
-     #SUBDIR += qtwebchannel
-     #SUBDIR += qtwebengine
+     SUBDIR += qtwebchannel
+     SUBDIR += qtwebengine
      SUBDIR += qtwebsockets
-     #SUBDIR += qtwebview
+     SUBDIR += qtwebview
 
 # Windows only
 #     SUBDIR += qtactiveqt
