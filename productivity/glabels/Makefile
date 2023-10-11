@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		17
+REVISION =		18
 
 CATEGORIES =		productivity graphics
 
@@ -21,11 +21,21 @@ WANTLIB += absl_bad_variant_access absl_base absl_city absl_civil_time
 WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
 WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB += absl_exponential_biased absl_graphcycles_internal absl_hash
+WANTLIB += absl_die_if_null absl_examine_stack absl_exponential_biased
+WANTLIB += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash
 WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_log_severity absl_low_level_hash absl_malloc_internal
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_string_view
+WANTLIB += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB += absl_log_internal_format absl_log_internal_globals
+WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
+WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone atk-1.0
 WANTLIB += atk-bridge-2.0 atspi boost_atomic-mt boost_chrono-mt
@@ -40,7 +50,8 @@ WANTLIB += idn2 iec16022 intl jpeg json-glib-1.0 lzma m nghttp2
 WANTLIB += nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 phonenumber pixman-1 plc4 plds4 png protobuf
 WANTLIB += psl qrencode rsvg-2 secret-1 smime3 soup-3.0 sqlite3
-WANTLIB += ssl3 unistring xcb xcb-render xcb-shm xml2 z
+WANTLIB += ssl3 unistring utf8_validity xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

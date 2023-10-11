@@ -5,7 +5,7 @@ V=		3.0.18
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	3
+REVISION-main=	4
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -25,27 +25,49 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-common=	dbus-1 iconv idn intl m pthread
-WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
-		SDL SDL_image SM X11 X11-xcb Xau Xcomposite Xcursor \
-		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
-		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 atspi \
-		avahi-client avahi-common avcodec avformat avutil b2 bluray \
-		brotlidec brotlienc bz2 c cairo cairo-gobject cddb crypto \
-		dav1d double-conversion drm dvbpsi dvdnav dvdread ebml epoxy \
-		execinfo expat ffi fontconfig freetype fribidi gbm gcrypt \
-		gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 \
-		gmp gnutls gobject-2.0 gpg-error graphite2 gsm gthread-2.0 \
-		gtk-3 harfbuzz hogweed icudata icui18n icuuc idn2 jpeg \
-		lcms2 lz4 lzma matroska mp3lame nettle nfs notify ogg \
-		opus p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pcre2-8 pcre2-16 pixman-1 placebo png postproc \
-		protobuf-lite rsvg-2 smb2 sndio soxr speex speexdsp \
-		ssl swresample swscale tag tar tasn1 theoradec theoraenc \
-		tiff udfread unibreak unistring usbhid vorbis vorbisenc \
-		vpx webp x264 x265 xcb xcb-composite xcb-dri2 xcb-dri3 \
-		xcb-glx xcb-keysyms xcb-present xcb-randr xcb-render \
-		xcb-shm xcb-sync xcb-xfixes xcb-xv xml2 xshmfence \
-		xvidcore z zstd ${WANTLIB-common} ${MODLUA_WANTLIB}
+WANTLIB-main += EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
+WANTLIB-main += SDL SDL_image SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB-main += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender
+WANTLIB-main += Xxf86vm absl_bad_optional_access absl_bad_variant_access
+WANTLIB-main += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB-main += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB-main += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB-main += absl_crc_internal absl_debugging_internal absl_demangle_internal
+WANTLIB-main += absl_die_if_null absl_examine_stack absl_exponential_biased
+WANTLIB-main += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB-main += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB-main += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB-main += absl_flags_reflection absl_graphcycles_internal absl_hash
+WANTLIB-main += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB-main += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB-main += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB-main += absl_log_internal_format absl_log_internal_globals
+WANTLIB-main += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB-main += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB-main += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB-main += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
+WANTLIB-main += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB-main += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB-main += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB-main += absl_throw_delegate absl_time absl_time_zone aom archive
+WANTLIB-main += ass atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
+WANTLIB-main += avcodec avformat avutil b2 bluray brotlidec brotlienc
+WANTLIB-main += bz2 c cairo cairo-gobject cddb crypto dav1d double-conversion
+WANTLIB-main += drm dvbpsi dvdnav dvdread ebml epoxy execinfo expat
+WANTLIB-main += ffi fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB-main += gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz
+WANTLIB-main += hogweed icudata icui18n icuuc idn2 jpeg lcms2 lz4 lzma
+WANTLIB-main += matroska mp3lame nettle nfs notify ogg opus p11-kit
+WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-16 pcre2-8
+WANTLIB-main += pixman-1 placebo png postproc protobuf-lite rsvg-2
+WANTLIB-main += sharpyuv smb2 sndio soxr speex speexdsp ssl swresample
+WANTLIB-main += swscale tag tar tasn1 theoradec theoraenc tiff udfread
+WANTLIB-main += unibreak unistring usbhid utf8_range utf8_validity
+WANTLIB-main += vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite
+WANTLIB-main += xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
+WANTLIB-main += xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xml2
+WANTLIB-main += xshmfence xvidcore z zstd ${WANTLIB-common} ${MODLUA_WANTLIB}
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
 

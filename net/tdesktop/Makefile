@@ -9,7 +9,7 @@ V =			4.8.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 DPB_PROPERTIES =	parallel
 
@@ -31,11 +31,12 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
-WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
-WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gobject-2.0
-WANTLIB += hunspell-1.7 jpeg lz4 m openal opus protobuf-lite qrcodegencpp
-WANTLIB += rnnoise sigc-3.0 swresample swscale tg_owt xcb xcb-keysyms
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_bad_optional_access
+WANTLIB += absl_bad_variant_access absl_strings avcodec avfilter
+WANTLIB += avformat avutil c crypto dispatch gio-2.0 giomm-2.68
+WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg
+WANTLIB += lz4 m openal opus protobuf-lite qrcodegencpp rnnoise
+WANTLIB += sigc-3.0 swresample swscale tg_owt xcb xcb-keysyms
 WANTLIB += xcb-record xcb-screensaver xxhash z
 
 # C++20

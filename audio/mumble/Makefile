@@ -4,8 +4,8 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		4
-REVISION-server =	4
+REVISION-main =		5
+REVISION-server =	5
 
 CATEGORIES =		audio net
 
@@ -33,14 +33,57 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} PocoFoundation PocoUtil PocoXML
 WANTLIB-main += PocoZip Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xext Xi c crypto kvm
-WANTLIB-main += m protobuf sndfile speex speexdsp ssl
+WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xext Xi absl_bad_optional_access
+WANTLIB-main += absl_bad_variant_access absl_base absl_city absl_civil_time
+WANTLIB-main += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB-main += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB-main += absl_crc_internal absl_debugging_internal absl_demangle_internal
+WANTLIB-main += absl_die_if_null absl_examine_stack absl_exponential_biased
+WANTLIB-main += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB-main += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB-main += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB-main += absl_flags_reflection absl_graphcycles_internal absl_hash
+WANTLIB-main += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB-main += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB-main += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB-main += absl_log_internal_format absl_log_internal_globals
+WANTLIB-main += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB-main += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB-main += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB-main += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
+WANTLIB-main += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB-main += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB-main += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB-main += absl_throw_delegate absl_time absl_time_zone c crypto
+WANTLIB-main += kvm m protobuf sndfile speex speexdsp ssl
 
 # dlopen()'ed
 WANTLIB-main += opus portaudio
 
 WANTLIB-server += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
-WANTLIB-server += Qt5Xml c crypto m protobuf ssl
+WANTLIB-server += Qt5Xml absl_bad_optional_access absl_bad_variant_access
+WANTLIB-server += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB-server += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB-server += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB-server += absl_crc_internal absl_debugging_internal absl_demangle_internal
+WANTLIB-server += absl_die_if_null absl_examine_stack absl_exponential_biased
+WANTLIB-server += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB-server += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB-server += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB-server += absl_flags_reflection absl_graphcycles_internal absl_hash
+WANTLIB-server += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB-server += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB-server += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB-server += absl_log_internal_format absl_log_internal_globals
+WANTLIB-server += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB-server += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB-server += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB-server += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
+WANTLIB-server += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB-server += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB-server += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB-server += absl_throw_delegate absl_time absl_time_zone c crypto
+WANTLIB-server += m protobuf ssl
 
 WRKDIST =		${WRKDIR}/mumble-${VERSION}.src
 
