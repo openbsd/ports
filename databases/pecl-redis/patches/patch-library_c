@@ -1,7 +1,7 @@
 Index: library.c
 --- library.c.orig
 +++ library.c
-@@ -2380,7 +2380,7 @@ PHP_REDIS_API int redis_sock_connect(RedisSock *redis_
+@@ -3108,7 +3108,7 @@ PHP_REDIS_API int redis_sock_connect(RedisSock *redis_
              }
  
              gettimeofday(&tv, NULL);

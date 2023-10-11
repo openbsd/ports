@@ -1,7 +1,6 @@
 COMMENT=	PHP interface to redis
 
-DISTNAME=	redis-5.3.7
-REVISION=	0
+DISTNAME=	redis-6.0.0
 
 CATEGORIES=	databases
 
