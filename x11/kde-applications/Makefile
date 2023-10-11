@@ -118,6 +118,7 @@
      #SUBDIR += kopete
      SUBDIR += krdc
      SUBDIR += krfb
+     SUBDIR += tokodon
 
      # pim
      SUBDIR += akregator
@@ -281,6 +282,5 @@
      # plasmatube
      # qmlkonsole
      # telly-skout
-     # tokodon
 
 .include <bsd.port.subdir.mk>
