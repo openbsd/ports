@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}_pydantic_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}_pydantic_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}event_auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}event_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}notifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,6 +34,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}server.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}visibility.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/${MODPY_PYCACHE}visibility.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/_pydantic_compat.py
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/
 lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/_scripts/${MODPY_PYCACHE}/
@@ -2039,6 +2042,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/80/02
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/80/02_scheduled_tasks.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/80/03_read_write_locks_triggers.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/80/04_read_write_locks_deadlock.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/02_scheduled_tasks_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/application_services.sql
