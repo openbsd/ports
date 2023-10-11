@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/tflite/features.gni
+--- src/3rdparty/chromium/third_party/tflite/features.gni.orig
++++ src/3rdparty/chromium/third_party/tflite/features.gni
+@@ -7,7 +7,7 @@ import("//build/config/chrome_build.gni")
+ declare_args() {
+   # This enables building TFLite with XNNPACK. Currently only available for
+   # Linux or Windows on x64.
+-  build_tflite_with_xnnpack = (is_win || is_linux) && current_cpu == "x64"
++  build_tflite_with_xnnpack = ((is_win || is_linux) && current_cpu == "x64") && !is_bsd
+ 
+   # Turns on TFLITE_WITH_RUY, using ruy as the gemm backend instead of gemmlowp.
+   build_tflite_with_ruy = true

@@ -1,0 +1,95 @@
+-- Configuration summary shown below. It has also been written to /usr/ports/pobj/qt6-qtwebengine-6.5.2/build-amd64/config.summary
+-- Configure with --log-level=STATUS or higher to increase CMake's message verbosity. The log level does not persist across reconfigurations.
+
+-- Configure summary:
+
+WebEngine Repository Build Options:
+  Build Ninja ............................ no
+  Build Gn ............................... yes
+  Jumbo Build ............................ yes
+  Developer build ........................ no
+  Build QtWebEngine Modules:
+    Build QtWebEngineCore ................ yes
+    Build QtWebEngineWidgets ............. yes
+    Build QtWebEngineQuick ............... yes
+  Build QtPdf Modules:
+    Build QtPdfWidgets ................... yes
+    Build QtPdfQuick ..................... yes
+  Optional system libraries:
+    re2 .................................. no
+    icu .................................. no
+    libwebp, libwebpmux and libwebpdemux . yes
+    opus ................................. yes
+    ffmpeg ............................... no
+    libvpx ............................... yes
+    snappy ............................... yes
+    glib ................................. yes
+    webengine_system_zlib ................ yes
+    webengine_system_minizip ............. yes
+    libevent ............................. yes
+    libxml2 and libxslt .................. no
+    lcms2 ................................ yes
+    png .................................. yes
+    jpeg ................................. yes
+    libopenjpeg2 ......................... yes
+    harfbuzz ............................. yes
+    freetype ............................. yes
+    libpci ............................... yes
+Qt WebEngineCore:
+  Embedded build ......................... no
+  Full debug information ................. no
+  Sanitizer support ...................... no
+  Pepper Plugins ......................... yes
+  Printing and PDF ....................... yes
+  Proprietary Codecs ..................... no
+  Spellchecker ........................... yes
+  Native Spellchecker .................... no
+  WebRTC ................................. yes
+  PipeWire over GIO ...................... no
+  Geolocation ............................ no
+  WebChannel support ..................... no
+  Kerberos Authentication ................ no
+  Extensions ............................. yes
+  Support GLX on qpa-xcb ................. yes
+  Vulkan support ......................... yes
+  Use ALSA ............................... no
+  Use PulseAudio ......................... yes
+  Use sndio .............................. yes
+Qt WebEngineQuick:
+  UI Delegates ........................... yes
+Qt PDF:
+  Support V8 ............................. no
+  Support XFA ............................ no
+  Support XFA-BMP ........................ no
+  Support XFA-GIF ........................ no
+  Support XFA-PNG ........................ no
+  Support XFA-TIFF ....................... no
+  Bitcode support ........................ no
+  Use static runtime ..................... no
+
+
+-- Configuring done (68.8s)
+-- Generating done (0.4s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER_AR
+    CMAKE_ASM_COMPILER_RANLIB
+    CMAKE_Fortran_COMPILER_AR
+    CMAKE_Fortran_COMPILER_RANLIB
+    CMAKE_OBJCXX_COMPILER_AR
+    CMAKE_OBJCXX_COMPILER_RANLIB
+    CMAKE_OBJC_COMPILER_AR
+    CMAKE_OBJC_COMPILER_RANLIB
+    PYTHON_EXECUTABLE
+    PYTHON_INCLUDE_DIR
+    PYTHON_LIBRARY_DIRS
+    Python3_INCLUDE_DIR
+    Python3_LIBRARY_DIRS
+    Python_EXECUTABLE
+    Python_INCLUDE_DIR
+    Python_LIBRARY_DIRS
+
+
+-- Build files have been written to: /usr/ports/pobj/qt6-qtwebengine-6.5.2/build-amd64
+

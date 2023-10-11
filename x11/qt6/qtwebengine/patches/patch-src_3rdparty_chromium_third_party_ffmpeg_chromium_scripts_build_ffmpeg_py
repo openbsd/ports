@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
+--- src/3rdparty/chromium/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
+@@ -42,6 +42,9 @@ ARCH_MAP = {
+     'linux': [
+         'ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64'
+     ],
++    'openbsd': [
++        'ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64'
++    ],
+     'mac': ['x64', 'arm64'],
+     'win': ['ia32', 'x64', 'arm64'],
+ }

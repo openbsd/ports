@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/build/linux/unbundle/zlib.gn
+--- src/3rdparty/chromium/build/linux/unbundle/zlib.gn.orig
++++ src/3rdparty/chromium/build/linux/unbundle/zlib.gn
+@@ -27,7 +27,6 @@ shim_headers("minizip_shim") {
+   root_path = "contrib"
+   headers = [
+     "minizip/crypt.h",
+-    "minizip/ioapi.h",
+     "minizip/iowin32.h",
+     "minizip/mztools.h",
+     "minizip/unzip.h",

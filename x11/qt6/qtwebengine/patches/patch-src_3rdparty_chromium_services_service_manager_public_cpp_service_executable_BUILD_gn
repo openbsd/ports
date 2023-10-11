@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
+--- src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn.orig
++++ src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
+@@ -22,7 +22,7 @@ source_set("support") {
+     "//services/service_manager/public/mojom",
+   ]
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [
+       "//sandbox/linux:sandbox",
+       "//sandbox/linux:sandbox_services",

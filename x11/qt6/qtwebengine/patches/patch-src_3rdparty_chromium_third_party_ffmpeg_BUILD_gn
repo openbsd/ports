@@ -1,0 +1,27 @@
+Index: src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn
+--- src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/BUILD.gn
+@@ -10,8 +10,13 @@ import("//build/config/compiler/compiler.gni")
+ import("//build/config/sanitizers/sanitizers.gni")
+ 
+ # Path to platform configuration files.
+-platform_config_root =
+-    "chromium/config/$ffmpeg_branding/$os_config/$ffmpeg_arch"
++if (!is_bsd) {
++  platform_config_root =
++      "chromium/config/$ffmpeg_branding/$os_config/$ffmpeg_arch"
++} else {
++  platform_config_root =
++      "chromium/config/$ffmpeg_branding/linux/$ffmpeg_arch"
++}
+ 
+ has_nasm_deps =
+     ffmpeg_asm_sources != [] &&
+@@ -357,7 +362,6 @@ target(link_target_type, "ffmpeg_internal") {
+       libs += [
+         "m",
+         "z",
+-        "rt",
+       ]
+     }
+     if (is_component_ffmpeg) {

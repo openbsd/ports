@@ -1,0 +1,21 @@
+Index: src/pdf/CMakeLists.txt
+--- src/pdf/CMakeLists.txt.orig
++++ src/pdf/CMakeLists.txt
+@@ -70,7 +70,7 @@ add_dependencies(docs generate_pdf_attributions)
+ #   TOOLCHAIN SETUP
+ ##
+ 
+-if(LINUX)
++if(UNIX)
+     setup_toolchains()
+ endif()
+ 
+@@ -128,7 +128,7 @@ foreach(arch ${archs})
+           strip_absolute_paths_from_debug_symbols=false
+         )
+ 
+-        if(LINUX OR ANDROID)
++        if(UNIX OR ANDROID)
+             list(APPEND gnArgArg
+                 is_cfi=false
+                 ozone_auto_platforms=false

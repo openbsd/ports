@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/content/common/BUILD.gn
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig
++++ src/3rdparty/chromium/content/common/BUILD.gn
+@@ -447,6 +447,9 @@ if (is_linux || is_chromeos) {
+     public = [ "set_process_title_linux.h" ]
+     sources = [ "set_process_title_linux.cc" ]
+     deps = [ "//base" ]
++    if (is_bsd) {
++      sources -= [ "set_process_title_linux.cc" ]
++    }
+   }
+ }
+ 

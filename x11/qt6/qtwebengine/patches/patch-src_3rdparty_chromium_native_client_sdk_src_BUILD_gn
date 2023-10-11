@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/native_client_sdk/src/BUILD.gn
+--- src/3rdparty/chromium/native_client_sdk/src/BUILD.gn.orig
++++ src/3rdparty/chromium/native_client_sdk/src/BUILD.gn
+@@ -51,7 +51,7 @@ if (enable_nacl) {
+ 
+     # TODO(binji): dump_syms doesn't currently build on Windows. See
+     # http://crbug.com/245456
+-    if (!is_win && target_cpu == "x64") {
++    if (!is_win && target_cpu == "x64" && !is_bsd) {
+       deps += [
+         "//third_party/breakpad:dump_syms($host_toolchain)",
+         "//third_party/breakpad:minidump_dump($host_toolchain)",

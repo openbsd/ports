@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/mojo/core/BUILD.gn
+--- src/3rdparty/chromium/mojo/core/BUILD.gn.orig
++++ src/3rdparty/chromium/mojo/core/BUILD.gn
+@@ -163,7 +163,7 @@ template("core_impl_source_set") {
+         ]
+       }
+ 
+-      if ((is_linux || is_chromeos || is_android) && !is_nacl) {
++      if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
+         sources += [
+           "channel_linux.cc",
+           "channel_linux.h",

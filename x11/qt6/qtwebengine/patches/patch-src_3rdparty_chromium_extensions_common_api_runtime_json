@@ -1,0 +1,13 @@
+Index: src/3rdparty/chromium/extensions/common/api/runtime.json
+--- src/3rdparty/chromium/extensions/common/api/runtime.json.orig
++++ src/3rdparty/chromium/extensions/common/api/runtime.json
+@@ -86,7 +86,8 @@
+           "cros",
+           "linux",
+           "openbsd",
+-          "fuchsia"
++          "fuchsia",
++          "freebsd"
+         ]
+       },
+       {

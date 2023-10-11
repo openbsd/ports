@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/ui/strings/translations/app_locale_settings_th.xtb
+--- src/3rdparty/chromium/ui/strings/translations/app_locale_settings_th.xtb.orig
++++ src/3rdparty/chromium/ui/strings/translations/app_locale_settings_th.xtb
+@@ -6,7 +6,7 @@
+   <translation id="IDS_WEB_FONT_FAMILY">Tahoma,sans-serif</translation>
+   <translation id="IDS_WEB_FONT_FAMILY_XP">Tahoma,sans-serif</translation>
+ </if>
+-<if expr="is_linux">
++<if expr="is_posix">
+   <translation id="IDS_WEB_FONT_FAMILY">Norasi,Waree,Garuda,Loma,sans-serif</translation>
+ </if>
+ <if expr="is_chromeos">

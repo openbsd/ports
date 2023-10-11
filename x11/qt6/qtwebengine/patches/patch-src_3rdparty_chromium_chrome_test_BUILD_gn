@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/chrome/test/BUILD.gn
+--- src/3rdparty/chromium/chrome/test/BUILD.gn.orig
++++ src/3rdparty/chromium/chrome/test/BUILD.gn
+@@ -10145,7 +10145,7 @@ test("chrome_app_unittests") {
+     "//components/heap_profiling/in_process",
+     "//components/safe_browsing:buildflags",
+   ]
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+   if (enable_gwp_asan) {

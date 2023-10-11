@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/net/dns/public/resolv_reader.h
+--- src/3rdparty/chromium/net/dns/public/resolv_reader.h.orig
++++ src/3rdparty/chromium/net/dns/public/resolv_reader.h
+@@ -5,6 +5,7 @@
+ #ifndef NET_DNS_PUBLIC_RESOLV_READER_H_
+ #define NET_DNS_PUBLIC_RESOLV_READER_H_
+ 
++#include <netinet/in.h>
+ #include <resolv.h>
+ 
+ #include <memory>

@@ -1,0 +1,133 @@
+Index: configure.cmake
+--- configure.cmake.orig
++++ configure.cmake
+@@ -66,7 +66,7 @@ if(Python3_EXECUTABLE)
+ endif()
+ 
+ #### Tests
+-if(LINUX)
++if(UNIX)
+    check_for_ulimit()
+ endif()
+ 
+@@ -173,29 +173,7 @@ int main() {
+ }"
+ )
+ 
+-qt_config_compile_test(glibc
+-    LABEL "glibc > 2.16"
+-    CODE
+-"
+-#include <features.h>
+-#if __GLIBC__ < 2 || __GLIBC_MINOR__ < 17
+-#error glibc versions below 2.17 are not supported
+-#endif
+-int main(void) {
+-    return 0;
+-}"
+-)
+ 
+-qt_config_compile_test(khr
+-    LABEL "khr"
+-    CODE
+-"
+-#include <KHR/khrplatform.h>
+-int main(void) {
+-    return 0;
+-}"
+-)
+-
+ qt_config_compile_test(winversion
+     LABEL "winversion"
+     CODE
+@@ -434,7 +412,7 @@ qt_feature("webengine-system-libpci" PRIVATE
+ 
+ qt_feature("webengine-ozone-x11" PRIVATE
+     LABEL "Support GLX on qpa-xcb"
+-    CONDITION LINUX
++    CONDITION UNIX
+         AND TARGET Qt::Gui
+         AND QT_FEATURE_xcb
+         AND X11_FOUND
+@@ -471,15 +449,15 @@ assertTargets(
+ )
+ add_check_for_support(
+    MODULES QtWebEngine
+-   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS
++   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS
+    MESSAGE "Build can be done only on Linux, Windows or macOS."
+ )
+ add_check_for_support(
+    MODULES QtPdf
+-   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32)
++   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32)
+    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android(on non-Windows hosts only)."
+ )
+-if(LINUX AND CMAKE_CROSSCOMPILING)
++if(UNIX AND CMAKE_CROSSCOMPILING)
+    get_gn_arch(testArch ${TEST_architecture_arch})
+    add_check_for_support(
+        MODULES QtWebEngine QtPdf
+@@ -524,37 +502,27 @@ add_check_for_support(
+ )
+ add_check_for_support(
+    MODULES QtWebEngine QtPdf
+-   CONDITION NOT LINUX OR PkgConfig_FOUND
++   CONDITION NOT UNIX OR PkgConfig_FOUND
+    MESSAGE "A pkg-config support is required."
+ )
+ add_check_for_support(
+-   MODULES QtWebEngine QtPdf
+-   CONDITION NOT LINUX OR TEST_glibc
+-   MESSAGE "A suitable version >= 2.17 of glibc is required."
+-)
+-add_check_for_support(
+-   MODULES QtWebEngine QtPdf
+-   CONDITION NOT LINUX OR TEST_khr
+-   MESSAGE "Build requires Khronos development headers for build - see mesa/libegl1-mesa-dev"
+-)
+-add_check_for_support(
+    MODULES QtWebEngine
+-   CONDITION NOT LINUX OR FONTCONFIG_FOUND
++   CONDITION NOT UNIX OR FONTCONFIG_FOUND
+    MESSAGE "Build requires fontconfig."
+ )
+ add_check_for_support(
+    MODULES QtWebEngine
+-   CONDITION NOT LINUX OR NSS_FOUND
++   CONDITION NOT UNIX OR NSS_FOUND
+    MESSAGE "Build requires nss >= 3.26."
+ )
+ add_check_for_support(
+    MODULES QtWebEngine
+-   CONDITION NOT LINUX OR DBUS_FOUND
++   CONDITION NOT UNIX OR DBUS_FOUND
+    MESSAGE "Build requires dbus."
+ )
+ add_check_for_support(
+     MODULES QtWebEngine
+-    CONDITION NOT LINUX OR NOT QT_FEATURE_webengine_system_ffmpeg OR TEST_libavformat
++    CONDITION NOT UNIX OR NOT QT_FEATURE_webengine_system_ffmpeg OR TEST_libavformat
+     MESSAGE "Unmodified ffmpeg >= 5.0 is not supported."
+ )
+ # FIXME: This prevents non XCB Linux builds from building:
+@@ -568,7 +536,7 @@ foreach(xs ${xcbSupport})
+ endforeach()
+ add_check_for_support(
+    MODULES QtWebEngine
+-   CONDITION NOT LINUX OR NOT QT_FEATURE_xcb OR QT_FEATURE_webengine_ozone_x11
++   CONDITION NOT UNIX OR NOT QT_FEATURE_xcb OR QT_FEATURE_webengine_ozone_x11
+    MESSAGE "Could not find all necessary libraries for qpa-xcb support.\
+ ${xcbErrorMessage}"
+ )
+@@ -580,8 +548,8 @@ add_check_for_support(
+ add_check_for_support(
+    MODULES QtWebEngine QtPdf
+    CONDITION
+-       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
+-       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
++       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
++       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
+        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL MSVC) OR
+        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL Clang AND
+           CMAKE_CXX_SIMULATE_ID STREQUAL MSVC) OR
