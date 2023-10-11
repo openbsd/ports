@@ -43,5 +43,8 @@ lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}tes
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}test_basic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}test_dictionary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/${MODPY_PYCACHE}test_dictionary.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/data/
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/data/en_GB-additional.wordlist
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/data/en_US-additional.wordlist
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/test_basic.py
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/tests/test_dictionary.py
