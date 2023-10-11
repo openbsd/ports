@@ -101,6 +101,7 @@ share/examples/rspamd/modules.d/history_redis.conf
 @sample ${ETC}/rspamd/modules.d/history_redis.conf
 share/examples/rspamd/modules.d/http_headers.conf
 @sample ${ETC}/rspamd/modules.d/http_headers.conf
+share/examples/rspamd/modules.d/known_senders.conf
 share/examples/rspamd/modules.d/maillist.conf
 @sample ${ETC}/rspamd/modules.d/maillist.conf
 share/examples/rspamd/modules.d/metadata_exporter.conf
@@ -262,6 +263,7 @@ share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_aws.lua
 share/rspamd/lualib/lua_bayes_learn.lua
 share/rspamd/lualib/lua_cfg_transform.lua
+share/rspamd/lualib/lua_cfg_utils.lua
 share/rspamd/lualib/lua_clickhouse.lua
 share/rspamd/lualib/lua_content/
 share/rspamd/lualib/lua_content/ical.lua
@@ -335,7 +337,6 @@ share/rspamd/lualib/redis_scripts/neural_train_size.lua
 share/rspamd/lualib/redis_scripts/ratelimit_check.lua
 share/rspamd/lualib/redis_scripts/ratelimit_cleanup_pending.lua
 share/rspamd/lualib/redis_scripts/ratelimit_update.lua
-share/rspamd/lualib/rescore_utility.lua
 share/rspamd/lualib/rspamadm/
 share/rspamd/lualib/rspamadm/clickhouse.lua
 share/rspamd/lualib/rspamadm/configgraph.lua
@@ -353,7 +354,6 @@ share/rspamd/lualib/rspamadm/keypair.lua
 share/rspamd/lualib/rspamadm/mime.lua
 share/rspamd/lualib/rspamadm/neural_test.lua
 share/rspamd/lualib/rspamadm/publicsuffix.lua
-share/rspamd/lualib/rspamadm/rescore.lua
 share/rspamd/lualib/rspamadm/stat_convert.lua
 share/rspamd/lualib/rspamadm/statistics_dump.lua
 share/rspamd/lualib/rspamadm/template.lua
@@ -384,6 +384,7 @@ share/rspamd/plugins/hfilter.lua
 share/rspamd/plugins/history_redis.lua
 share/rspamd/plugins/http_headers.lua
 share/rspamd/plugins/ip_score.lua
+share/rspamd/plugins/known_senders.lua
 share/rspamd/plugins/maillist.lua
 share/rspamd/plugins/maps_stats.lua
 share/rspamd/plugins/metadata_exporter.lua
@@ -476,7 +477,7 @@ share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/fontawesome.min.js
 share/rspamd/www/js/lib/footable.min.js
-share/rspamd/www/js/lib/jquery-3.6.3.min.js
+share/rspamd/www/js/lib/jquery-3.7.0.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/linenumbers.min.js
 share/rspamd/www/js/lib/nprogress.min.js
