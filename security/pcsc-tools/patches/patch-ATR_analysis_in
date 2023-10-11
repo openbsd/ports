@@ -1,6 +1,6 @@
-Index: ATR_analysis
---- ATR_analysis.orig
-+++ ATR_analysis
+Index: ATR_analysis.in
+--- ATR_analysis.in.orig
++++ ATR_analysis.in
 @@ -247,14 +247,7 @@ sub update_smartcard_list($$)
  			system("mkdir -p $Cache");
  		}

@@ -1,6 +1,6 @@
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.6.2
+DISTNAME=	pcsc-tools-1.7.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security sysutils
@@ -19,9 +19,11 @@ SITES=		https://pcsc-tools.apdu.fr/
 
 CONFIGURE_STYLE= gnu
 USE_GMAKE=	Yes
+BUILD_DEPENDS=	devel/gettext,-tools
 
-# gscriptor requires p5-Gtk3, intentionally not listed as a hard dep
-RUN_DEPENDS=	security/p5-Chipcard-PCSC
+RUN_DEPENDS=	devel/desktop-file-utils \
+		security/p5-Chipcard-PCSC \
+		x11/p5-Gtk3
 LIB_DEPENDS=	security/pcsc-lite
 
 NO_TEST=	Yes

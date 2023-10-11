@@ -9,4 +9,3 @@ can be called by pcsc_scan.
 - scriptor is a Perl script to send commands to a smart card.
 
 - gscriptor is a Perl script with a Gtk-based graphical interface.
-(Install the p5-Gtk2 package to use this).
