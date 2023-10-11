@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -107,25 +107,25 @@ PKG_CHECK_MODULES([sqlite], [sqlite3])
+@@ -108,25 +108,25 @@ PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([ssl], [libssl])
  PKG_CHECK_MODULES([tinyxml], [tinyxml2 >= 8])
  PKG_CHECK_MODULES([vmime], [vmime >= 0.9.2])

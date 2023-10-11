@@ -1,0 +1,41 @@
+From 1ddf92fea9e1edab5d2c79ddb4b7b9070f4dd31e Mon Sep 17 00:00:00 2001
+From: Jan Engelhardt <jengelh@inai.de>
+Date: Tue, 10 Oct 2023 14:36:52 +0200
+Subject: [PATCH] ews: drop excess constexpr keywords
+
+Index: exch/ews/enums.hpp
+--- exch/ews/enums.hpp.orig
++++ exch/ews/enums.hpp
+@@ -33,12 +33,12 @@ class StrEnum (public)
+ 	constexpr StrEnum(const char* v) : idx(check(v)) {}
+ 	constexpr explicit StrEnum(index_t index) : idx(check(index)) {}
+ 
+-	constexpr operator std::string() const {return s();}
++	operator std::string() const {return s();}
+ 	constexpr operator std::string_view() const {return sv();}
+ 	constexpr operator const char*() const {return c_str();}
+ 	constexpr operator index_t() const {return index();}
+ 
+-	constexpr std::string s() const {return Choices[idx];}
++	std::string s() const {return Choices[idx];}
+ 	constexpr std::string_view sv() const {return Choices[idx];}
+ 	constexpr const char* c_str() const {return Choices[idx];}
+ 	constexpr index_t index() const {return idx;}
+@@ -46,7 +46,7 @@ class StrEnum (public)
+ 	constexpr bool operator==(const char* v) const {return strcmp(v, Choices[idx]) == 0;}
+ 	constexpr bool operator==(const StrEnum& o) const {return idx == o.idx;}
+ 
+-	static constexpr index_t check(const std::string_view& v)
++	static index_t check(const std::string_view& v)
+ 	{
+ 		for(index_t i = 0; i < Choices.size(); ++i)
+ 			if(v == Choices[i])
+@@ -56,7 +56,7 @@ class StrEnum (public)
+ 		throw gromox::EWS::Exceptions::EnumError(msg);
+ 	}
+ 
+-	static constexpr index_t check(index_t value)
++	static index_t check(index_t value)
+ 	{
+ 		if(value < sizeof...(Cs))
+ 			return value;

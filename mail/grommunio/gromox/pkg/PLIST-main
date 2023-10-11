@@ -34,9 +34,6 @@ lib/gromox/libgxm_alias_resolve.la
 @static-lib lib/gromox/libgxm_exmdb_local.a
 lib/gromox/libgxm_exmdb_local.la
 @so lib/gromox/libgxm_exmdb_local.so
-@static-lib lib/gromox/libgxm_mlist_expand.a
-lib/gromox/libgxm_mlist_expand.la
-@so lib/gromox/libgxm_mlist_expand.so
 @static-lib lib/gromox/libgxm_remote_delivery.a
 lib/gromox/libgxm_remote_delivery.la
 @so lib/gromox/libgxm_remote_delivery.so
@@ -129,7 +126,6 @@ libexec/gromox/create_queue.sh
 @bin libexec/gromox/delivery
 @bin libexec/gromox/delivery-queue
 @bin libexec/gromox/event
-@bin libexec/gromox/freebusy
 @bin libexec/gromox/gromox-snapshot
 @bin libexec/gromox/http
 @bin libexec/gromox/imap
@@ -147,6 +143,7 @@ man/man4/autodiscover.4gx
 man/man4/dnsbl_filter.4gx
 man/man4/event_proxy.4gx
 man/man4/event_stub.4gx
+man/man4/ews.4gx
 man/man4/exchange_emsmdb.4gx
 man/man4/exchange_nsp.4gx
 man/man4/exchange_rfr.4gx
@@ -173,7 +170,6 @@ man/man8/cleaner.8gx
 man/man8/delivery-queue.8gx
 man/man8/delivery.8gx
 man/man8/event.8gx
-man/man8/freebusy.8gx
 @man man/man8/gromox-abktconv.8
 @man man/man8/gromox-abktpull.8
 @man man/man8/gromox-compress.8
@@ -677,12 +673,10 @@ share/gromox/gromox.ldif
 share/gromox/http/
 share/gromox/http/php/
 share/gromox/http/php/ews/
-share/gromox/http/php/ews/exchange.php
 share/gromox/http/php/ews/thumbnail.php
 share/gromox/http/php/lib/
 share/gromox/http/php/lib/conf.php
 share/gromox/http/php/lib/db.php
-share/gromox/http/php/lib/util.php
 share/gromox/lang_charset.txt
 share/gromox/lcid.txt
 share/gromox/local_bounce/
