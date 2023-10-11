@@ -1,22 +1,22 @@
-COMMENT =		US-ASCII transliterations of Unicode text
+COMMENT=	US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	1.3.6
-DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME:L}
+MODPY_EGG_VERSION=	1.3.7
+DISTNAME=	Unidecode-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:L}
 
-CATEGORIES =		textproc devel
+CATEGORIES=	textproc devel
 
-HOMEPAGE =		https://pypi.python.org/pypi/Unidecode
+HOMEPAGE=	https://pypi.python.org/pypi/Unidecode
 
 # GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
