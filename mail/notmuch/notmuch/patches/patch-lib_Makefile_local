@@ -24,7 +24,7 @@ Index: lib/Makefile.local
  endif
  ifeq ($(LIBDIR_IN_LDCONFIG),1)
  ifeq ($(DESTDIR),)
-@@ -75,19 +79,23 @@ $(dir)/libnotmuch.a: $(libnotmuch_modules)
+@@ -76,19 +80,23 @@ $(dir)/libnotmuch.a: $(libnotmuch_modules)
  $(dir)/$(LIBNAME): $(libnotmuch_modules) util/libnotmuch_util.a parse-time-string/libparse-time-string.a
  	$(call quiet,CXX $(CXXFLAGS)) $(libnotmuch_modules) $(FINAL_LIBNOTMUCH_LDFLAGS) $(LIBRARY_LINK_FLAG) -o $@ util/libnotmuch_util.a parse-time-string/libparse-time-string.a
  

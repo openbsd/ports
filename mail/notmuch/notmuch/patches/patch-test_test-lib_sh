@@ -4,11 +4,11 @@ Removing the append logic fixes this
 Index: test/test-lib.sh
 --- test/test-lib.sh.orig
 +++ test/test-lib.sh
-@@ -919,7 +919,7 @@ notmuch_with_shim () {
-     base_name="$1"
+@@ -944,7 +944,7 @@ notmuch_with_shim () {
+     base_name=$1
      shift
      shim_file="${base_name}.so"
--    LD_PRELOAD=${LD_PRELOAD:+:$LD_PRELOAD}:./${shim_file} notmuch-shared "$@"
+-    LD_PRELOAD=${LD_PRELOAD:+:$LD_PRELOAD}:./${shim_file} $notmuch_cmd "$@"
 +    LD_PRELOAD=./${shim_file} notmuch-shared "$@"
  }
  
