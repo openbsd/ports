@@ -128,6 +128,8 @@ share/doc/libgusb/method.Device.get_device_class.html
 share/doc/libgusb/method.Device.get_device_protocol.html
 share/doc/libgusb/method.Device.get_device_subclass.html
 share/doc/libgusb/method.Device.get_events.html
+share/doc/libgusb/method.Device.get_hid_descriptor_default.html
+share/doc/libgusb/method.Device.get_hid_descriptors.html
 share/doc/libgusb/method.Device.get_interface.html
 share/doc/libgusb/method.Device.get_interfaces.html
 share/doc/libgusb/method.Device.get_manufacturer_index.html
