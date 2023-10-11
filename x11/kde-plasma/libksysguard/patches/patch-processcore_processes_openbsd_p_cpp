@@ -1,36 +1,122 @@
 Index: processcore/processes_openbsd_p.cpp
 --- processcore/processes_openbsd_p.cpp.orig
 +++ processcore/processes_openbsd_p.cpp
-@@ -75,8 +75,9 @@ void ProcessesLocal::Private::readProcStatus(struct ki
-     process->setGid(p->kp_pgid);
-     process->setName(QString(p->kp_comm ? p->kp_comm : "????"));
- #else
+@@ -11,17 +11,16 @@
+ 
+ #include <QSet>
+ 
++#include <sched.h>
++#include <signal.h>
++#include <stdlib.h>
+ #include <sys/param.h>
+ #include <sys/resource.h>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
++#include <sys/proc.h>
++#include <sched.h>
+ #include <sys/user.h>
+-#if defined(__DragonFly__)
+-#include <err.h>
+-#include <sys/resourcevar.h>
+-#endif
+-#include <signal.h>
+-#include <stdlib.h>
+ #include <unistd.h>
+ 
+ namespace KSysGuard
+@@ -66,63 +65,37 @@ void ProcessesLocal::Private::readProcStatus(struct ki
+     process->setGid(0);
+     process->setTracerpid(-1);
+ 
+-#if defined(__FreeBSD__) && __FreeBSD_version >= 500015
+-    process->setUid(p->ki_uid);
+-    process->setGid(p->ki_pgid);
+-    process->setName(QString(p->ki_comm ? p->ki_comm : "????"));
+-#elif defined(__DragonFly__) && __DragonFly_version >= 190000
+-    process->setUid(p->kp_uid);
+-    process->setGid(p->kp_pgid);
+-    process->setName(QString(p->kp_comm ? p->kp_comm : "????"));
+-#else
 -    process->setUid(p->kp_eproc.e_ucred.cr_uid);
 -    process->setGid(p->kp_eproc.e_pgid);
-+    process->setUid(p->p_uid);
-+    process->setGid(p->p_gid);
-+    process->setName(QString::fromUtf8(p->p_comm));
- #endif
+-#endif
++    process->setEuid(p->p_uid);
++    process->setUid(p->p_ruid);
++    process->setEgid(p->p_svgid);
++    process->setGid(p->p_rgid);
++    process->setName(QString::fromUtf8(p->p_comm ? p->p_comm : "????"));
  }
  
-@@ -100,11 +101,11 @@ void ProcessesLocal::Private::readProcStat(struct kinf
-     ps->setVmRSS(p->kp_vm_rssize * getpagesize());
-     status = p->kp_stat;
- #else
+ void ProcessesLocal::Private::readProcStat(struct kinfo_proc *p, Process *ps)
+ {
+     int status;
+     struct rusage pru;
+-#if defined(__FreeBSD__) && __FreeBSD_version >= 500015
+-    ps->setUserTime(p->ki_runtime / 10000);
+-    ps->setNiceLevel(p->ki_nice);
+-    ps->setVmSize(p->ki_size);
+-    ps->setVmRSS(p->ki_rssize * getpagesize());
+-    status = p->ki_stat;
+-#elif defined(__DragonFly__) && __DragonFly_version >= 190000
+-    if (!getrusage(p->kp_pid, &pru)) {
+-        errx(1, "failed to get rusage info");
+-    }
+-    ps->setUserTime(pru.ru_utime.tv_usec / 1000); /*p_runtime / 1000*/
+-    ps->setNiceLevel(p->kp_nice);
+-    ps->setVmSize(p->kp_vm_map_size);
+-    ps->setVmRSS(p->kp_vm_rssize * getpagesize());
+-    status = p->kp_stat;
+-#else
 -    ps->setUserTime(p->kp_proc.p_rtime.tv_sec * 100 + p->kp_proc.p_rtime.tv_usec / 100);
 -    ps->setNiceLevel(p->kp_proc.p_nice);
 -    ps->setVmSize(p->kp_eproc.e_vm.vm_map.size);
 -    ps->setVmRSS(p->kp_eproc.e_vm.vm_rssize * getpagesize());
 -    status = p->kp_proc.p_stat;
-+    ps->setNiceLevel(p->p_nice);
-+    ps->setVmSize(p->p_vm_map_size);
-+    ps->setVmRSS(p->p_vm_rssize * getpagesize());
-+    status = p->p_stat;
-+    ps->setSysTime(0);
- #endif
-     ps->setSysTime(0);
+-#endif
+-    ps->setSysTime(0);
  
-@@ -153,10 +154,10 @@ bool ProcessesLocal::Private::readProcCmdline(long pid
++    // XXX ps->setUserTime(p->p_rusage.ru_utime.tv_sec * 100 + p->p_rusage.ru_utime.tv_usec / 10000);
++    // XXX ps->setSysTime(p->p_rusage.ru_stime.tv_sec * 100 + p->p_rusage.ru_stime.tv_usec / 10000);
++    ps->setNiceLevel(p->p_nice);
++    // XXX ps->setVmSize(p->p_size / 1024);
++    ps->setVmRSS(p->p_vm_rssize * getpagesize() / 1024);
++    status = p->p_stat;
++
+     // "idle","run","sleep","stop","zombie"
+     switch (status) {
+-    case '0':
+-        ps->setStatus(Process::DiskSleep);
+-        break;
+-    case '1':
++    case SRUN:
+         ps->setStatus(Process::Running);
+         break;
+-    case '2':
++    case SSLEEP:
+         ps->setStatus(Process::Sleeping);
+         break;
+-    case '3':
++    case SSTOP:
+         ps->setStatus(Process::Stopped);
+         break;
+-    case '4':
++    case SZOMB:
+         ps->setStatus(Process::Zombie);
+         break;
+     default:
+@@ -133,10 +106,7 @@ void ProcessesLocal::Private::readProcStat(struct kinf
+ 
+ void ProcessesLocal::Private::readProcStatm(struct kinfo_proc *p, Process *process)
+ {
+-    // TODO
+-
+-    //     unsigned long shared;
+-    //     process->setVmURSS(process->vmRSS - (shared * sysconf(_SC_PAGESIZE) / 1024));
++    process->setVmURSS(-1);
+ }
+ 
+ bool ProcessesLocal::Private::readProcCmdline(long pid, Process *process)
+@@ -153,10 +123,10 @@ bool ProcessesLocal::Private::readProcCmdline(long pid
  
      if (sysctl(mib, 4, buf, &buflen, NULL, 0) == -1 || !buflen)
          return false;
@@ -43,26 +129,97 @@ Index: processcore/processes_openbsd_p.cpp
      process->setCommand(command.trimmed());
  
      return true;
-@@ -178,7 +179,7 @@ long ProcessesLocal::getParentPid(long pid)
- #elif defined(__DragonFly__) && __DragonFly_version >= 190000
-         ppid = p.kp_ppid;
- #else
+@@ -169,17 +139,10 @@ ProcessesLocal::ProcessesLocal()
+ 
+ long ProcessesLocal::getParentPid(long pid)
+ {
+-    Q_ASSERT(pid != 0);
+-    long long ppid = -1;
++    long long ppid = 0;
+     struct kinfo_proc p;
+     if (d->readProc(pid, &p)) {
+-#if defined(__FreeBSD__) && __FreeBSD_version >= 500015
+-        ppid = p.ki_ppid;
+-#elif defined(__DragonFly__) && __DragonFly_version >= 190000
+-        ppid = p.kp_ppid;
+-#else
 -        ppid = p.kp_eproc.e_ppid;
+-#endif
 +        ppid = p.p_ppid;
- #endif
      }
      return ppid;
-@@ -219,7 +220,7 @@ QSet<long> ProcessesLocal::getAllPids()
- #elif defined(__DragonFly__) && __DragonFly_version >= 190000
-         pids.insert(p[num].kp_pid);
- #else
+ }
+@@ -209,18 +172,24 @@ QSet<long> ProcessesLocal::getAllPids()
+     mib[0] = CTL_KERN;
+     mib[1] = KERN_PROC;
+     mib[2] = KERN_PROC_ALL;
+-    sysctl(mib, 3, NULL, &len, NULL, 0);
+-    p = (kinfo_proc *)malloc(len);
+-    sysctl(mib, 3, p, &len, NULL, 0);
++    if (sysctl(mib, 3, NULL, &len, NULL, 0) == -1)
++        return pids;
++    if ((p = (kinfo_proc *)malloc(len)) == NULL)
++        return pids;
++    if (sysctl(mib, 3, p, &len, NULL, 0) == -1) {
++        free(p);
++        return pids;
++    }
+ 
+-    for (num = 0; num < len / sizeof(struct kinfo_proc); num++)
+-#if defined(__FreeBSD__) && __FreeBSD_version >= 500015
+-        pids.insert(p[num].ki_pid);
+-#elif defined(__DragonFly__) && __DragonFly_version >= 190000
+-        pids.insert(p[num].kp_pid);
+-#else
 -        pids.insert(p[num].kp_proc.p_pid);
-+        pids.insert(p[num].p_pid);
- #endif
+-#endif
++    for (num = 0; num < len / sizeof(struct kinfo_proc); num++) {
++        long pid = p[num].p_pid;
++        long long ppid = p[num].p_ppid;
++
++        // skip all process with parent id = 0 but init
++        if (ppid <= 0 && pid != 1)
++            continue;
++        pids.insert(pid);
++    }
      free(p);
      return pids;
-@@ -279,20 +280,6 @@ long long ProcessesLocal::totalPhysicalMemory()
-     return Total /= 1024;
+ }
+@@ -245,11 +214,7 @@ Processes::Error ProcessesLocal::setNiceness(long pid,
+ 
+ Processes::Error ProcessesLocal::setScheduler(long pid, int priorityClass, int priority)
+ {
+-    if (priorityClass == KSysGuard::Process::Other || priorityClass == KSysGuard::Process::Batch)
+-        priority = 0;
+-    if (pid <= 0)
+-        return Processes::InvalidPid; // check the parameters
+-    return Processes::NotSupported;
++    return Processes::NoError;
+ }
+ 
+ Processes::Error ProcessesLocal::setIoNiceness(long pid, int priorityClass, int priority)
+@@ -264,35 +229,13 @@ bool ProcessesLocal::supportsIoNiceness()
+ 
+ long long ProcessesLocal::totalPhysicalMemory()
+ {
+-    static int physmem_mib[] = {CTL_HW, HW_PHYSMEM};
+-    /* get the page size with "getpagesize" and calculate pageshift from
+-     * it */
+-    int pagesize = ::getpagesize();
+-    int pageshift = 0;
+-    while (pagesize > 1) {
+-        pageshift++;
+-        pagesize >>= 1;
+-    }
+-    size_t Total = 0;
+-    size_t size = sizeof(Total);
+-    sysctl(physmem_mib, 2, &Total, &size, NULL, 0);
+-    return Total /= 1024;
++    long phys_pages = sysconf(_SC_PHYS_PAGES);
++    long pagesize = sysconf(_SC_PAGESIZE);
++    if (phys_pages != -1 && pagesize != -1)
++        return ((uint64_t)phys_pages * (uint64_t)pagesize / 1024);
++    return 0;
  }
  
 -long int KSysGuard::ProcessesLocal::numberProcessorCores()
