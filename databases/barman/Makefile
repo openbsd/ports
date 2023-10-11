@@ -1,13 +1,12 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	2.19
+MODPY_EGG_VERSION =	3.9.0
 
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_EGG_VERSION}
 DISTNAME =	barman-${MODPY_EGG_VERSION}
 WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
-REVISION =	3
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
@@ -29,8 +28,18 @@ RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
 TEST_DEPENDS =	devel/py-test-timeout${MODPY_FLAVOR} \
 		devel/py-test-runner${MODPY_FLAVOR}
 
-pre-test:
-	rm ${WRKSRC}/tests/test*cloud* # some deps are not ported
+# some cloud-related deps are not ported (esp for google/azure); pytest's
+# collection of tets errors out if some of these are not ignored, and avoid
+# noise from others
+MODPY_PYTEST_ARGS=	--ignore tests/test_barman_cloud_backup.py \
+			--ignore tests/test_barman_cloud_backup_show.py \
+			--ignore tests/test_barman_cloud_restore.py \
+			--ignore tests/test_barman_cloud_wal_archive.py \
+			--ignore tests/test_cloud.py \
+			--ignore tests/test_cloud_snapshot_interface.py \
+			--ignore tests/test_executor.py \
+			--ignore tests/test_infofile.py \
+			--ignore tests/test_output.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barman

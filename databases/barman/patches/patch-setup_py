@@ -10,7 +10,7 @@ Index: setup.py
              [
                  "doc/barman.1",
                  "doc/barman-cloud-backup.1",
-@@ -76,7 +76,7 @@ setup(
+@@ -77,7 +77,7 @@ setup(
                  "doc/barman-wal-restore.1",
              ],
          ),
