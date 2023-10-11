@@ -1,6 +1,6 @@
 COMMENT =		cPython bindings for the zopfli compression library
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		zopfli-${MODPY_EGG_VERSION}
 PKGNAME =		py-zopfli-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =	.zip
