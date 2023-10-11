@@ -3,6 +3,7 @@ COMMENT =		CUE sheet parser library
 GH_ACCOUNT =		lipnitsk
 GH_PROJECT =		libcue
 GH_TAGNAME =		v2.2.1
+REVISION =		0
 
 CATEGORIES =		audio
 
