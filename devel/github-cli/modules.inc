@@ -178,6 +178,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-runewidth				 v0.0.14 \
 	github.com/mgutz/ansi					 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday			 v1.0.21 \
+	github.com/microsoft/dev-tunnels			 v0.0.21 \
 	github.com/muesli/reflow				 v0.3.0 \
 	github.com/muesli/termenv				 v0.13.0 \
 	github.com/muhammadmuzzammil1998/jsonc			 v0.0.0-20201229145248-615b0916ca38 \
@@ -187,6 +188,7 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/rivo/tview					 v0.0.0-20221029100920-c4a7e501810d \
 	github.com/rivo/uniseg					 v0.4.4 \
+	github.com/rodaine/table				 v1.0.1 \
 	github.com/russross/blackfriday/v2			 v2.1.0 \
 	github.com/shurcoo!l/githubv4				 v0.0.0-20230704064427-599ae7bbf278 \
 	github.com/shurcoo!l/graphql				 v0.0.0-20230722043721-ed46e5a46466 \
@@ -257,6 +259,7 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark	 v1.4.13 \
 	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto		 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto		 v0.0.0-20220321153916-2c7772ba3064 \
 	golang.org/x/mod		 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
 	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/net		 v0.0.0-20190620200207-3b0461eec859 \
@@ -286,6 +289,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys		 v0.0.0-20220728004956-3c1f35247d10 \
 	golang.org/x/sys		 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys		 v0.1.0 \
 	golang.org/x/sys		 v0.4.0 \
 	golang.org/x/sys		 v0.5.0 \
 	golang.org/x/sys		 v0.6.0 \
