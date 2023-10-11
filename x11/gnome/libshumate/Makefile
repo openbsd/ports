@@ -1,7 +1,7 @@
 COMMENT=		GTK4 widget to display maps
 
 GNOME_PROJECT=		libshumate
-GNOME_VERSION=		1.0.5
+GNOME_VERSION=		1.1.0
 
 SHARED_LIBS += shumate-1.0               0.0 # 1.0
 
@@ -20,6 +20,8 @@ MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 LIB_DEPENDS=		devel/libsoup3 \
 			x11/gtk+4
+
+CONFIGURE_ARGS=		-Dsysprof=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
