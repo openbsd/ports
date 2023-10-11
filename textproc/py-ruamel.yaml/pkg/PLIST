@@ -59,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scanner.${M
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}scanner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}tag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}tag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,6 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarint.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scalarstring.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/scanner.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/serializer.py
+lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/tag.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/timestamp.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/tokens.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/util.py

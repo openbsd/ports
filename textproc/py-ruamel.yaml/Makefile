@@ -1,6 +1,6 @@
 COMMENT=	YAML 1.2 loader/dumper package for Python
 
-MODPY_EGG_VERSION=	0.17.28
+MODPY_EGG_VERSION=	0.17.35
 DISTNAME=	ruamel.yaml-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
