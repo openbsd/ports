@@ -1,10 +1,10 @@
 COMMENT=	C-style arbitrary precision calculator
 
-V=		2.14.3.5
+V=		2.15.0.1
 DISTNAME=	calc-$V
 EXTRACT_SUFX=	.tar.bz2
 
-R=		0.0
+R=		1.0
 SHARED_LIBS=	calc $R \
 		custcalc $R
 
