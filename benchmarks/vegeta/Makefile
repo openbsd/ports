@@ -1,7 +1,7 @@
 COMMENT =		HTTP load testing tool and library
 
 MODGO_MODNAME =		github.com/tsenart/vegeta/v12
-MODGO_VERSION =		v12.11.0
+MODGO_VERSION =		v12.11.1
 
 DISTNAME =		vegeta-${MODGO_VERSION}
 
