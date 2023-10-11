@@ -1,10 +1,8 @@
 COMMENT =	optimized library for DEFLATE/zlib/gzip (de)compression
 
-GH_ACCOUNT =	ebiggers
-GH_PROJECT =	libdeflate
-GH_TAGNAME =	v1.18
+DIST_TUPLE =	github ebiggers libdeflate v1.19 .
 
-SHARED_LIBS =	deflate	0.0
+SHARED_LIBS =	deflate	0.1
 
 CATEGORIES =	archivers
 
