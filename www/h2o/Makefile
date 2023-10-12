@@ -1,14 +1,14 @@
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
-SHARED_LIBS +=  h2o-evloop           0.0
-SHARED_LIBS +=  h2o                  0.0
+SHARED_LIBS +=  h2o-evloop           1.0
+SHARED_LIBS +=  h2o                  1.0
 
 CATEGORIES =	www
 
-GH_ACCOUNT =	h2o
+GH_ACCOUNT =	PowerDNS
 GH_PROJECT =	h2o
-GH_TAGNAME =	v2.2.6
-REVISION =	9
+GH_TAGNAME =	v2.2.6-pdns2
+PKGNAME =	h2o-2.2.6pl2
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
