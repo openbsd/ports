@@ -1,8 +1,7 @@
 COMMENT =		open source message queue optimised for performance
 
-V =			4.3.4
+V =			4.3.5
 DISTNAME =		zeromq-${V}
-REVISION =		0
 
 SHARED_LIBS +=  zmq                  5.2      # 7.3
 
@@ -32,7 +31,8 @@ CONFIGURE_ARGS =	--disable-Werror
 CONFIGURE_ARGS +=	--with-libsodium
 
 # XXX libsodium: https://github.com/jedisct1/libsodium/pull/104
-CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}"
+CONFIGURE_ENV =		CXXFLAGS="-Wno-long-long ${CXXFLAGS}" \
+			CODE_COVERAGE_CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
 
 # test_system needs to be able to create at least 496 sockets
 do-test:
