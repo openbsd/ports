@@ -1,6 +1,6 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.8.1
+DISTNAME=		dnsdist-1.8.2
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -13,7 +13,7 @@ MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
-			fstrm h2o-evloop nghttp2 pthread \
+			fstrm h2o-evloop>=1 nghttp2 pthread \
 			z crypto ssl sodium ${COMPILER_LIBCXX}
 
 SITES=			https://downloads.powerdns.com/releases/
