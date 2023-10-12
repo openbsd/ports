@@ -1,12 +1,9 @@
 COMMENT-main=	ODBC 3.x driver manager
 COMMENT-admin=	ODBC 3.x driver manager admin application
-REVISION-admin=	3
-REVISION-main=	3
 
-V=		3.52.12
+V=		3.52.16
 DISTNAME=	libiodbc-$V
 PKGNAME=	iodbc-$V
-REVISION=	3
 
 CATEGORIES=	databases
 
@@ -15,8 +12,8 @@ SHARED_LIBS +=	iodbc		3.16
 SHARED_LIBS +=	iodbcadm	3.15
 SHARED_LIBS +=	drvproxy	3.15
 
-HOMEPAGE=	http://www.iodbc.org/
-SITES=		${SITE_SOURCEFORGE:=iodbc/}
+HOMEPAGE=	https://www.iodbc.org/
+SITES=		https://github.com/openlink/iODBC/releases/download/v$V/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -25,15 +22,17 @@ PERMIT_PACKAGE=	yes
 
 WANTLIB-main += c
 
-WANTLIB-admin += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB-admin += Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig
-WANTLIB-admin += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-admin += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB-admin += harfbuzz iconv intl iodbc iodbcinst m pango-1.0 pangocairo-1.0
-WANTLIB-admin += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render
-WANTLIB-admin += xcb-shm z Xau Xdmcp ${COMPILER_LIBCXX} jpeg
+WANTLIB-admin += ${COMPILER_LIBCXX}
+WANTLIB-admin += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-admin += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi
+WANTLIB-admin += fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-admin += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB-admin += gtk-x11-2.0 harfbuzz iconv intl iodbc iodbcinst jpeg
+WANTLIB-admin += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
+WANTLIB-admin += png xcb xcb-render xcb-shm z
 
-PSEUDO_FLAVORS = bootstrap no_admin
+PSEUDO_FLAVORS=		bootstrap no_admin
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
 			--disable-libodbc
@@ -47,7 +46,7 @@ LIB_DEPENDS-main=	# empty
 
 .include <bsd.port.arch.mk>
 .if !${BUILD_PACKAGES:M-admin}
-CONFIGURE_ARGS += 	--disable-gui
+CONFIGURE_ARGS +=	--disable-gui
 .endif
 
 post-install:

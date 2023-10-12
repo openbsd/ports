@@ -1,0 +1,12 @@
+Index: iodbcinst/dlf.h
+--- iodbcinst/dlf.h.orig
++++ iodbcinst/dlf.h
+@@ -81,7 +81,7 @@
+ 
+ #if defined(HAVE_SHL_LOAD)
+ #define DLDAPI_HP_SHL
+-#elif defined(HAVE_LIBDL)
++#elif defined(HAVE_LIBDL) || defined(__OpenBSD__)
+ #define DLDAPI_SVR4_DLFCN
+ #elif defined(HAVE_DYLD)
+ #define DLDAPI_MACX

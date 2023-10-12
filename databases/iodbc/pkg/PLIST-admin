@@ -1,8 +1,8 @@
 @bin bin/iodbcadm-gtk
-lib/libdrvproxy.a
+@static-lib lib/libdrvproxy.a
 lib/libdrvproxy.la
 @lib lib/libdrvproxy.so.${LIBdrvproxy_VERSION}
-lib/libiodbcadm.a
+@static-lib lib/libiodbcadm.a
 lib/libiodbcadm.la
 @lib lib/libiodbcadm.so.${LIBiodbcadm_VERSION}
 @man man/man1/iodbcadm-gtk.1

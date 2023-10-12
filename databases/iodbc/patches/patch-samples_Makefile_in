@@ -1,7 +1,7 @@
 Index: samples/Makefile.in
 --- samples/Makefile.in.orig
 +++ samples/Makefile.in
-@@ -737,9 +737,9 @@ uninstall-am: uninstall-binPROGRAMS
+@@ -752,9 +752,9 @@ uninstall-am: uninstall-binPROGRAMS
  
  
  install-exec-hook:

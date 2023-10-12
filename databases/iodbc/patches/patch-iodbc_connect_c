@@ -1,7 +1,7 @@
 Index: iodbc/connect.c
 --- iodbc/connect.c.orig
 +++ iodbc/connect.c
-@@ -2605,7 +2605,7 @@ SQLDriverConnect_Internal (
+@@ -2922,7 +2922,7 @@ SQLDriverConnect_Internal (
  # endif
  #else
  

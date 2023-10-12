@@ -14,10 +14,10 @@ include/sql.h
 include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
-lib/libiodbc.a
+@static-lib lib/libiodbc.a
 lib/libiodbc.la
 @lib lib/libiodbc.so.${LIBiodbc_VERSION}
-lib/libiodbcinst.a
+@static-lib lib/libiodbcinst.a
 lib/libiodbcinst.la
 @lib lib/libiodbcinst.so.${LIBiodbcinst_VERSION}
 lib/pkgconfig/libiodbc.pc
