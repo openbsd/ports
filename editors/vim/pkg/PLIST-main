@@ -24,6 +24,7 @@ share/vim/${P}/autoload/RstFold.vim
 share/vim/${P}/autoload/ada.vim
 share/vim/${P}/autoload/adacomplete.vim
 share/vim/${P}/autoload/bitbake.vim
+share/vim/${P}/autoload/cargo.vim
 share/vim/${P}/autoload/ccomplete.vim
 share/vim/${P}/autoload/clojurecomplete.vim
 share/vim/${P}/autoload/context.vim
@@ -531,6 +532,7 @@ share/vim/${P}/ftplugin/jsonnet.vim
 share/vim/${P}/ftplugin/jsp.vim
 share/vim/${P}/ftplugin/julia.vim
 share/vim/${P}/ftplugin/kconfig.vim
+share/vim/${P}/ftplugin/kotlin.vim
 share/vim/${P}/ftplugin/kwt.vim
 share/vim/${P}/ftplugin/ld.vim
 share/vim/${P}/ftplugin/less.vim
@@ -783,6 +785,7 @@ share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/jsonc.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/julia.vim
+share/vim/${P}/indent/kotlin.vim
 share/vim/${P}/indent/krl.vim
 share/vim/${P}/indent/ld.vim
 share/vim/${P}/indent/less.vim
@@ -1404,6 +1407,7 @@ share/vim/${P}/syntax/julia.vim
 share/vim/${P}/syntax/kconfig.vim
 share/vim/${P}/syntax/kivy.vim
 share/vim/${P}/syntax/kix.vim
+share/vim/${P}/syntax/kotlin.vim
 share/vim/${P}/syntax/krl.vim
 share/vim/${P}/syntax/kscript.vim
 share/vim/${P}/syntax/kwt.vim
