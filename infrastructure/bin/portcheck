@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.145 2023/09/05 13:52:44 espie Exp $
+# $OpenBSD: portcheck,v 1.146 2023/10/12 05:41:27 rsadowski Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1191,18 +1191,21 @@ check_plist() {
 	# gtk-update-icon-cache
 	$guic_dep_needed && ! $guic_dep &&
 	    [[ $fullpkgname != gtk-update-icon-cache-* ]] &&
-		err "${portref}missing RDEP on x11/gtk+4,-guic"
+		err "${portref}missing" \
+		    "RUN_DEPENDS${subpkg}+=x11/gtk+4,-guic"
 	local cnt
 
 	# desktop-file-utils (simplier than previous, isn't it?)
 	$mime_dep_needed && ! $mime_dep &&
 	    [[ $fullpkgname != desktop-file-utils-* ]] &&
-		err "${portref}missing RDEP on devel/desktop-file-utils"
+		err "${portref}missing" \
+		    "RUN_DEPENDS${subpkg}+=devel/desktop-file-utils"
 
 	# update-mime-database (same as previous)
 	$mimepkg_dep_needed && ! $mimepkg_dep &&
 	    [[ $fullpkgname != shared-mime-info-* ]] &&
-		err "${portref}missing RDEP on misc/shared-mime-info"
+		err "${portref}missing" \
+		    "RUN_DEPENDS${subpkg}+=misc/shared-mime-info"
 
 	# glib-compile-schemas (almost same as previous)
 	#
