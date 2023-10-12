@@ -42,10 +42,10 @@ SHA256 (cargo/redox_syscall-0.2.16.tar.gz) = +1pYwYVbS2gZ1ZASFVYD8LIq0wytdSYAqt/
 SHA256 (cargo/redox_users-0.4.3.tar.gz) = sDPYN6fPFi15k63tkwTjCoMhPGSLbjidsjMZH4keXCs=
 SHA256 (cargo/regex-1.10.0.tar.gz) = 0RnXx8qBj4pTwwCGPU+HVmqsCZQ671s1W7g5adrnXYc=
 SHA256 (cargo/regex-automata-0.4.1.tar.gz) = RlxvwGIeSrxBh6K9oJN7/U9yLCcwspVi4ZaJ6nlsmks=
-SHA256 (cargo/regex-syntax-0.8.0.tar.gz) = w8uwgbl4SwfM64gkyFg/httIFNFyqwQ/PCP33GAL+D0=
+SHA256 (cargo/regex-syntax-0.8.1.tar.gz) = VthP3UcDawOPyA3TM9ELaqsQ1dMfSjZuIAFN73UyjTM=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
 SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ2VhO82Y=
-SHA256 (cargo/rustix-0.38.18.tar.gz) = WnTuLXwlgc0Tm0JEfX2TibiJvarTpz8euxbyoyN7sZw=
+SHA256 (cargo/rustix-0.38.19.tar.gz) = dF7Pp3jmaytjyIphyzbg7qEJ6AOwuGv5h5+8d8cOhu0=
 SHA256 (cargo/ryu-1.0.15.tar.gz) = GtTMjaTvcj7WC87SARgdg3ka1DMhPYwk7//aHuyF10E=
 SHA256 (cargo/semver-1.0.20.tar.gz) = g2+mo+HlR/mixAQIAuyGW12F9AFO/gBVXXCQo9yqEJA=
 SHA256 (cargo/serde-1.0.188.tar.gz) = z54Py6aaNw7tYbzytyhXX3JrULVcungGR1PXCN3HVJ4=
@@ -74,7 +74,7 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (rust-openssl-tests-20231011-10cee24f.tar.gz) = 7XwjPUKgNV/zR0SZunwsy4t2tBKs582RuxvSZO5dJUw=
+SHA256 (rust-openssl-tests-20231012-9e790732.tar.gz) = ScFnPP19mMRU1klAJMgcByjE6zWTxt5glOaVAjRkXHU=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
@@ -119,10 +119,10 @@ SIZE (cargo/redox_syscall-0.2.16.tar.gz) = 24012
 SIZE (cargo/redox_users-0.4.3.tar.gz) = 15353
 SIZE (cargo/regex-1.10.0.tar.gz) = 252119
 SIZE (cargo/regex-automata-0.4.1.tar.gz) = 616973
-SIZE (cargo/regex-syntax-0.8.0.tar.gz) = 347028
+SIZE (cargo/regex-syntax-0.8.1.tar.gz) = 347291
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
-SIZE (cargo/rustix-0.38.18.tar.gz) = 353642
+SIZE (cargo/rustix-0.38.19.tar.gz) = 357358
 SIZE (cargo/ryu-1.0.15.tar.gz) = 46906
 SIZE (cargo/semver-1.0.20.tar.gz) = 30451
 SIZE (cargo/serde-1.0.188.tar.gz) = 76230
@@ -151,4 +151,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (rust-openssl-tests-20231011-10cee24f.tar.gz) = 350701
+SIZE (rust-openssl-tests-20231012-9e790732.tar.gz) = 350705
