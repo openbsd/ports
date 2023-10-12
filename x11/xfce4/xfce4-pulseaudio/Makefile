@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 pulseaudio control line panel plugin
 
-XFCE_VERSION=	0.4.7
+XFCE_VERSION=	0.4.8
 XFCE_PLUGIN=	pulseaudio
 
 # GPLv2
