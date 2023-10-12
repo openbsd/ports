@@ -37,19 +37,12 @@ CONFIGURE_ARGS +=	-Denable-docs=false \
 			-Dxkb-config-root=${X11BASE}/share/X11/xkb/ \
 			-Denable-xkbregistry=true
 
-TEST_DEPENDS=		devel/bison \
-			shells/bash
-
-TEST_IS_INTERACTIVE=	x11
+TEST_DEPENDS=		devel/bison
 
 # Fix undefined references errors
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
 .endif
-
-# XXX: This test still fails
-pre-test:
-	sed -i 's,bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/test/symbols-leak-test.bash
 
 .include <bsd.port.mk>
