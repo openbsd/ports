@@ -23,3 +23,6 @@ libexec/xkbcommon/
 @man man/man1/xkbcli-interactive-x11.1
 @man man/man1/xkbcli-list.1
 @man man/man1/xkbcli.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/xkbcli
