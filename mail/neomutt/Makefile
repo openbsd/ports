@@ -2,7 +2,7 @@ COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20230517
+GH_TAGNAME=	20231006
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+= --autocrypt \
 		--sqlite
 LIB_DEPENDS+=	databases/sqlite3 \
 		security/gpgme
-WANTLIB+=	assuan gpg-error gpgme sqlite3
+WANTLIB+=	gpg-error gpgme sqlite3
 .endif
 
 .if ${FLAVOR:Msasl}

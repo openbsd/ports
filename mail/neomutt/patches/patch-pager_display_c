@@ -3,7 +3,7 @@ A_ITALIC was only added to curses in 2013.
 Index: pager/display.c
 --- pager/display.c.orig
 +++ pager/display.c
-@@ -217,6 +217,7 @@ static void resolve_color(struct MuttWindow *win, stru
+@@ -225,6 +225,7 @@ static void resolve_color(struct MuttWindow *win, stru
      else
        color.attrs |= A_UNDERLINE;
    }
@@ -11,7 +11,7 @@ Index: pager/display.c
    else if (special & A_ITALIC)
    {
      if (simple_color_is_set(MT_COLOR_ITALIC) && !search)
-@@ -224,6 +225,7 @@ static void resolve_color(struct MuttWindow *win, stru
+@@ -232,6 +233,7 @@ static void resolve_color(struct MuttWindow *win, stru
      else
        color.attrs |= A_ITALIC;
    }
