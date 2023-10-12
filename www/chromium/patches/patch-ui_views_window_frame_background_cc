@@ -8,5 +8,5 @@ Index: ui/views/window/frame_background.cc
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && \
      BUILDFLAG(ENABLE_DESKTOP_AURA)
-   ui::NativeTheme::ExtraParams params;
-   params.frame_top_area.use_custom_frame = use_custom_frame_;
+   ui::NativeTheme::FrameTopAreaExtraParams frame_top_area;
+   frame_top_area.use_custom_frame = use_custom_frame_;

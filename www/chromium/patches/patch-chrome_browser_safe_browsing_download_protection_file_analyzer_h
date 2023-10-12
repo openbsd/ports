@@ -10,7 +10,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
  #include "chrome/services/file_util/public/cpp/sandboxed_document_analyzer.h"
  #endif
  
-@@ -106,7 +106,7 @@ class FileAnalyzer {
+@@ -109,7 +109,7 @@ class FileAnalyzer {
        const safe_browsing::ArchiveAnalyzerResults& archive_results);
  #endif
  
@@ -19,7 +19,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
    void StartExtractDocumentFeatures();
    void OnDocumentAnalysisFinished(
        const DocumentAnalyzerResults& document_results);
-@@ -136,7 +136,7 @@ class FileAnalyzer {
+@@ -139,7 +139,7 @@ class FileAnalyzer {
        dmg_analyzer_{nullptr, base::OnTaskRunnerDeleter(nullptr)};
  #endif
  

@@ -1,7 +1,7 @@
 Index: content/browser/service_worker/service_worker_context_wrapper.cc
 --- content/browser/service_worker/service_worker_context_wrapper.cc.orig
 +++ content/browser/service_worker/service_worker_context_wrapper.cc
-@@ -1406,7 +1406,12 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
+@@ -1409,7 +1409,12 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
      return;
    }
  
