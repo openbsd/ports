@@ -1285,7 +1285,6 @@ zabbix/include/triggers.inc.php
 zabbix/include/users.inc.php
 zabbix/include/validate.inc.php
 zabbix/include/views/
-zabbix/include/views/configuration.copy.elements.php
 zabbix/include/views/configuration.graph.edit.php
 zabbix/include/views/configuration.graph.list.php
 zabbix/include/views/configuration.host.discovery.edit.php
@@ -1313,7 +1312,6 @@ zabbix/include/views/js/
 zabbix/include/views/js/common.init.js.php
 zabbix/include/views/js/common.item.edit.js.php
 zabbix/include/views/js/common.template.edit.js.php
-zabbix/include/views/js/configuration.copy.elements.js.php
 zabbix/include/views/js/configuration.graph.edit.js.php
 zabbix/include/views/js/configuration.graph.list.js.php
 zabbix/include/views/js/configuration.host.discovery.edit.js.php
