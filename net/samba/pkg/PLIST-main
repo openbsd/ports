@@ -1737,7 +1737,6 @@ libexec/samba/
 @bin libexec/samba/rpcd_fsrvp
 @bin libexec/samba/rpcd_lsad
 @bin libexec/samba/rpcd_mdssvc
-@bin libexec/samba/rpcd_rpcecho
 @bin libexec/samba/rpcd_spoolss
 @bin libexec/samba/rpcd_winreg
 @bin libexec/samba/samba-bgqd
