@@ -4,7 +4,6 @@ bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
 bin/nytprofmerge
-bin/nytprofpf
 ${P5ARCH}/Devel/
 @comment ${P5ARCH}/Devel/MemoryProfiling.pod
 ${P5ARCH}/Devel/NYTProf/
@@ -51,7 +50,6 @@ ${P5ARCH}/auto/Devel/NYTProf/
 @man man/man1/nytprofcsv.1
 @man man/man1/nytprofhtml.1
 @man man/man1/nytprofmerge.1
-@man man/man1/nytprofpf.1
 @comment @man man/man3p/Devel::MemoryProfiling.3p
 @man man/man3p/Devel::NYTProf.3p
 @man man/man3p/Devel::NYTProf::Apache.3p
