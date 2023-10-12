@@ -1,0 +1,28 @@
+From 0dfa20e481edbc582caa29c608195d3a206f21d7 Mon Sep 17 00:00:00 2001
+From: John Gehrig <jgehrig@users.noreply.github.com>
+Date: Tue, 21 Feb 2023 21:51:46 -0500
+Subject: [PATCH] Issue 999: Replace Issue 728 with key remap
+
+Many users find the shift-space and shift-backspace behavior in terminal
+frustrating. However, some users still want to map these sequences.
+
+Applying the runtime re-map workaround, since Neovim is unable to fix
+this issue upstream. Neovim still does not report `:terminal` mode.
+
+Index: src/gui/input.cpp
+--- src/gui/input.cpp.orig
++++ src/gui/input.cpp
+@@ -191,13 +191,6 @@ QString convertKey(const QKeyEvent& ev) noexcept
+ 	const QMap<int, QString>& specialKeys { GetSpecialKeysMap() };
+ 
+ 	if (specialKeys.contains(key)) {
+-		// Issue#728: Shift + Space inserts ;2u in `:terminal`. Incorrectly sent as <S-Space>.
+-		// Issue#259: Shift + BackSpace inserts 7;2u in `:terminal`. Incorrectly sent as <S-BS>.
+-		if (key == Qt::Key_Space
+-			|| key == Qt::Key_Backspace) {
+-			mod &= ~Qt::ShiftModifier;
+-		}
+-
+ 		return ToKeyString(GetModifierPrefix(mod), specialKeys.value(key));
+ 	}
+ 
