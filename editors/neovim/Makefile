@@ -11,10 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-GH_ACCOUNT =	neovim
-GH_PROJECT =	neovim
-GH_TAGNAME =	v0.9.1
-REVISION =	0
+DIST_TUPLE =	github neovim neovim v0.9.4 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -24,16 +21,12 @@ HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in cmake.deps/CMakeLists.txt.
-LUV_VER =	093a977b82077591baefe1e880d37dfa2730bd54
-LUAJIT_VER =	505e2c03de35e2718eef0d2d3660712e06dadf1f
-LUACOMPAT_VER =	v0.9
-
-SITES.a =	https://github.com/luvit/luv/archive/
-SITES.b = 	https://github.com/LuaJIT/LuaJIT/archive/
-SITES.c = 	https://github.com/keplerproject/lua-compat-5.3/archive/
-DISTFILES.a = 	luv-{}${LUV_VER}${EXTRACT_SUFX}
-DISTFILES.b = 	luajit-{}${LUAJIT_VER}${EXTRACT_SUFX}
-DISTFILES.c = 	lua-compat-5.3-{}${LUACOMPAT_VER}${EXTRACT_SUFX}
+STATIC_DEPS_WRKSRC =		${WRKDIST}/static-deps/
+DIST_TUPLE +=	github luvit luv 1.45.0-0 ${STATIC_DEPS_WRKSRC}/luv
+DIST_TUPLE +=	github LuaJIT LuaJIT 03c31124cc3b521ef54fe398e10fa55660a5057d \
+		${STATIC_DEPS_WRKSRC}/luajit
+DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.9 \
+		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
@@ -84,7 +77,7 @@ CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
 			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
 .if ${EMBED_LUAJIT} == "Yes"
-CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit-2.1.0-beta3 \
+CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit \
 			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
 			-DLUAJIT_LIBRARY=${STATIC_DEPS_INST}/lib/libluajit-5.1.a
 .else
@@ -104,15 +97,6 @@ MODPY_BUILDDEP =No
 TEST_DEPENDS =	shells/bash \
 		editors/py-neovim \
 		editors/py-neovim${MODPY_FLAVOR}
-
-# Move static deps source code under WRKDIST so that they can be patched.
-STATIC_DEPS_WRKSRC=${WRKDIST}/static-deps/
-post-extract:
-	mkdir ${STATIC_DEPS_WRKSRC}
-	mv ${WRKDIR}/LuaJIT-${LUAJIT_VER} ${STATIC_DEPS_WRKSRC}/luajit
-	mv ${WRKDIR}/luv-${LUV_VER} ${STATIC_DEPS_WRKSRC}/luv
-	mv ${WRKDIR}/lua-compat-5.3-${LUACOMPAT_VER:C/^v//} \
-		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
 
 # Build LuaJIT (if required) and libluv as static libraries.
 #

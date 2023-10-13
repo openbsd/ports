@@ -3,7 +3,7 @@
 Index: static-deps/luajit/src/host/buildvm_asm.c
 --- static-deps/luajit/src/host/buildvm_asm.c.orig
 +++ static-deps/luajit/src/host/buildvm_asm.c
-@@ -327,7 +327,7 @@ void emit_asm(BuildCtx *ctx)
+@@ -330,7 +330,7 @@ void emit_asm(BuildCtx *ctx)
  #if !(LJ_TARGET_PS3 || LJ_TARGET_PSVITA)
      fprintf(ctx->fp, "\t.section .note.GNU-stack,\"\"," ELFASM_PX "progbits\n");
  #endif
