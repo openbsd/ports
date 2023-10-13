@@ -1,6 +1,6 @@
 COMMENT =	engine recreation for Heroes of Might and Magic 2
 
-DIST_TUPLE =	github ihhub fheroes2 1.0.8 .
+DIST_TUPLE =	github ihhub fheroes2 1.0.9 .
 CATEGORIES =	games
 HOMEPAGE =	https://ihhub.github.io/fheroes2/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c m z
 
-# C++11
+# C++17
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/gettext,-tools \
