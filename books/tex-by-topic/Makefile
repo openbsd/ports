@@ -12,8 +12,6 @@ DISTNAME =	tex-by-topic
 
 HOMEPAGE =	https://www.eijkhout.net/tex/tex-by-topic.html
 
-SITES =		https://bitbucket.org/VictorEijkhout/tex-by-topic/get/
-
 BUILD_DEPENDS =	print/texlive/base
 
 # GNU FDL (See top of TeXbyTopic.tex)
