@@ -39,6 +39,7 @@
      SUBDIR += lilypond
      SUBDIR += lout
      SUBDIR += lss
+     SUBDIR += luametatex
      SUBDIR += lyx
      SUBDIR += mftrace
      SUBDIR += mpage
