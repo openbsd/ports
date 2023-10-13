@@ -2,7 +2,18 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-For more information about using scan-build for the static analyser,
+To use different compiler versions for, e.g. release(8), point mk.conf(5)
+at this port:
+
+	AR=${PREFIX}/${LLVM_BASE}/bin/llvm-ar
+	AS=${PREFIX}/${LLVM_BASE}/bin/llvm-as
+	CC=${PREFIX}/${LLVM_BASE}/bin/clang
+	CXX=${PREFIX}/${LLVM_BASE}/bin/clang++
+	CPP=${PREFIX}/${LLVM_BASE}/bin/clang-cpp
+	LD=${PREFIX}/${LLVM_BASE}/bin/ld.lld
+
+
+For more information about using scan-build(1) for the static analyser,
 look at:
 	http://clang-analyzer.llvm.org/scan-build.html
 
