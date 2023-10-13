@@ -1,10 +1,9 @@
 @conflict teTeX_texmf-*
-@conflict texlive_base-<2022
-@conflict texlive_texmf-docs-<2022
-@conflict texlive_texmf-minimal-<2022
-@conflict texlive_texmf-full-<2022
-@conflict texlive_texmf-context-<2022
-@conflict texlive_base,-mktexlsr-<2022p0
+@conflict texlive_base-<2023
+@conflict texlive_texmf-docs-<2023
+@conflict texlive_texmf-minimal-<2023
+@conflict texlive_texmf-full-<2023
+@conflict texlive_texmf-context-<2023
 @pkgpath print/texlive/texmf-minimal
 @pkgpath print/teTeX/texmf
 share/texmf-local/
@@ -4129,6 +4128,7 @@ share/texmf-dist/fonts/tfm/public/mflogo/
 share/texmf-dist/fonts/tfm/public/mflogo/logosl8.tfm
 share/texmf-dist/fonts/tfm/public/pdftex/
 share/texmf-dist/fonts/tfm/public/pdftex/dummy-space.tfm
+share/texmf-dist/fonts/tfm/public/pdftex/pdftexspace.tfm
 share/texmf-dist/fonts/tfm/public/pslatex/
 share/texmf-dist/fonts/tfm/public/pslatex/pcrr7tn.tfm
 share/texmf-dist/fonts/tfm/public/pslatex/pcrr8rn.tfm
@@ -5260,6 +5260,8 @@ share/texmf-dist/fonts/type1/public/lm/lmvtto10.pfb
 share/texmf-dist/fonts/type1/public/lm/lmvtto10.pfm
 share/texmf-dist/fonts/type1/public/pdftex/
 share/texmf-dist/fonts/type1/public/pdftex/dummy-space.pfb
+share/texmf-dist/fonts/type1/public/pdftex/pdftexspace.pfb
+share/texmf-dist/fonts/type1/public/pdftex/pdftexspace.ps
 share/texmf-dist/fonts/type1/public/stmaryrd/
 share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb
 share/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfm
@@ -5856,7 +5858,8 @@ share/texmf-dist/scripts/texlive/mktexlsr.pl
 share/texmf-dist/scripts/texlive/mktexmf
 share/texmf-dist/scripts/texlive/mktexpk
 share/texmf-dist/scripts/texlive/mktextfm
-share/texmf-dist/scripts/texlive/rungs.tlu
+share/texmf-dist/scripts/texlive/rungs.lua
+share/texmf-dist/scripts/texlive/uninstall-windows.pl
 share/texmf-dist/scripts/texlive/updmap-sys.sh
 share/texmf-dist/scripts/texlive/updmap-user.sh
 share/texmf-dist/scripts/texlive/updmap.pl
@@ -5892,6 +5895,12 @@ share/texmf-dist/tex/generic/babel/american.sty
 share/texmf-dist/tex/generic/babel/austrian.sty
 share/texmf-dist/tex/generic/babel/babel-bidi-basic-r.lua
 share/texmf-dist/tex/generic/babel/babel-bidi-basic.lua
+share/texmf-dist/tex/generic/babel/babel-ca-buddhist.tex
+share/texmf-dist/tex/generic/babel/babel-ca-coptic.tex
+share/texmf-dist/tex/generic/babel/babel-ca-ethiopic.tex
+share/texmf-dist/tex/generic/babel/babel-ca-hebrew.tex
+share/texmf-dist/tex/generic/babel/babel-ca-islamic.tex
+share/texmf-dist/tex/generic/babel/babel-ca-persian.tex
 share/texmf-dist/tex/generic/babel/babel-data-bidi.lua
 share/texmf-dist/tex/generic/babel/babel-data-cjk.lua
 share/texmf-dist/tex/generic/babel/babel-transforms.lua
@@ -5940,15 +5949,36 @@ share/texmf-dist/tex/generic/babel/locale/am/babel-am.ini
 share/texmf-dist/tex/generic/babel/locale/am/babel-amharic.tex
 share/texmf-dist/tex/generic/babel/locale/ar/
 share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-DZ.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-EG.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-IQ.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-JO.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-LB.ini
 share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-MA.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-PS.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-SA.ini
 share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-SY.ini
+share/texmf-dist/tex/generic/babel/locale/ar/babel-ar-TN.ini
 share/texmf-dist/tex/generic/babel/locale/ar/babel-ar.ini
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-algeria.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-dz.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-eg.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-egypt.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-iq.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-iraq.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-jo.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-jordan.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-lb.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-lebanon.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-ma.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-morocco.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-palestinianterritories.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-ps.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-sa.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-saudiarabia.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-sy.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-syria.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-tn.tex
+share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic-tunisia.tex
 share/texmf-dist/tex/generic/babel/locale/ar/babel-arabic.tex
 share/texmf-dist/tex/generic/babel/locale/as/
 share/texmf-dist/tex/generic/babel/locale/as/babel-as.ini
@@ -5987,6 +6017,7 @@ share/texmf-dist/tex/generic/babel/locale/bm/
 share/texmf-dist/tex/generic/babel/locale/bm/babel-bambara.tex
 share/texmf-dist/tex/generic/babel/locale/bm/babel-bm.ini
 share/texmf-dist/tex/generic/babel/locale/bn/
+share/texmf-dist/tex/generic/babel/locale/bn/babel-bangla.tex
 share/texmf-dist/tex/generic/babel/locale/bn/babel-bengali.tex
 share/texmf-dist/tex/generic/babel/locale/bn/babel-bn.ini
 share/texmf-dist/tex/generic/babel/locale/bo/
@@ -6074,7 +6105,7 @@ share/texmf-dist/tex/generic/babel/locale/de/babel-german.tex
 share/texmf-dist/tex/generic/babel/locale/de/babel-naustrian.tex
 share/texmf-dist/tex/generic/babel/locale/de/babel-ngerman.tex
 share/texmf-dist/tex/generic/babel/locale/de/babel-nswissgerman.tex
-share/texmf-dist/tex/generic/babel/locale/de/babel-swissgerman.tex
+share/texmf-dist/tex/generic/babel/locale/de/babel-swisshighgerman.tex
 share/texmf-dist/tex/generic/babel/locale/dje/
 share/texmf-dist/tex/generic/babel/locale/dje/babel-dje.ini
 share/texmf-dist/tex/generic/babel/locale/dje/babel-zarma.tex
@@ -6105,9 +6136,13 @@ share/texmf-dist/tex/generic/babel/locale/el/babel-monotonicgreek.tex
 share/texmf-dist/tex/generic/babel/locale/el/babel-polytonicgreek.tex
 share/texmf-dist/tex/generic/babel/locale/en/
 share/texmf-dist/tex/generic/babel/locale/en/babel-american.tex
+share/texmf-dist/tex/generic/babel/locale/en/babel-americanenglish.tex
 share/texmf-dist/tex/generic/babel/locale/en/babel-australian.tex
+share/texmf-dist/tex/generic/babel/locale/en/babel-australianenglish.tex
 share/texmf-dist/tex/generic/babel/locale/en/babel-british.tex
+share/texmf-dist/tex/generic/babel/locale/en/babel-britishenglish.tex
 share/texmf-dist/tex/generic/babel/locale/en/babel-canadian.tex
+share/texmf-dist/tex/generic/babel/locale/en/babel-canadianenglish.tex
 share/texmf-dist/tex/generic/babel/locale/en/babel-en-AU.ini
 share/texmf-dist/tex/generic/babel/locale/en/babel-en-CA.ini
 share/texmf-dist/tex/generic/babel/locale/en/babel-en-GB.ini
@@ -6135,6 +6170,7 @@ share/texmf-dist/tex/generic/babel/locale/es/
 share/texmf-dist/tex/generic/babel/locale/es/babel-es-MX.ini
 share/texmf-dist/tex/generic/babel/locale/es/babel-es.ini
 share/texmf-dist/tex/generic/babel/locale/es/babel-mexican.tex
+share/texmf-dist/tex/generic/babel/locale/es/babel-mexicanspanish.tex
 share/texmf-dist/tex/generic/babel/locale/es/babel-spanish-mexico.tex
 share/texmf-dist/tex/generic/babel/locale/es/babel-spanish-mx.tex
 share/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
@@ -6172,9 +6208,11 @@ share/texmf-dist/tex/generic/babel/locale/fr/babel-french-be.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-belgium.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-ca.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-canada.tex
+share/texmf-dist/tex/generic/babel/locale/fr/babel-french-canadianfrench.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-ch.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-lu.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-luxembourg.tex
+share/texmf-dist/tex/generic/babel/locale/fr/babel-french-swissfrench.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french-switzerland.tex
 share/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
 share/texmf-dist/tex/generic/babel/locale/fur/
@@ -6197,6 +6235,7 @@ share/texmf-dist/tex/generic/babel/locale/grc/babel-ancientgreek.tex
 share/texmf-dist/tex/generic/babel/locale/grc/babel-grc.ini
 share/texmf-dist/tex/generic/babel/locale/gsw/
 share/texmf-dist/tex/generic/babel/locale/gsw/babel-gsw.ini
+share/texmf-dist/tex/generic/babel/locale/gsw/babel-swissgerman.tex
 share/texmf-dist/tex/generic/babel/locale/gu/
 share/texmf-dist/tex/generic/babel/locale/gu/babel-gu.ini
 share/texmf-dist/tex/generic/babel/locale/gu/babel-gujarati.tex
@@ -6280,6 +6319,9 @@ share/texmf-dist/tex/generic/babel/locale/kde/babel-makonde.tex
 share/texmf-dist/tex/generic/babel/locale/kea/
 share/texmf-dist/tex/generic/babel/locale/kea/babel-kabuverdianu.tex
 share/texmf-dist/tex/generic/babel/locale/kea/babel-kea.ini
+share/texmf-dist/tex/generic/babel/locale/kgp/
+share/texmf-dist/tex/generic/babel/locale/kgp/babel-kaingang.tex
+share/texmf-dist/tex/generic/babel/locale/kgp/babel-kgp.ini
 share/texmf-dist/tex/generic/babel/locale/khq/
 share/texmf-dist/tex/generic/babel/locale/khq/babel-khq.ini
 share/texmf-dist/tex/generic/babel/locale/khq/babel-koyrachiini.tex
@@ -6477,6 +6519,7 @@ share/texmf-dist/tex/generic/babel/locale/om/
 share/texmf-dist/tex/generic/babel/locale/om/babel-om.ini
 share/texmf-dist/tex/generic/babel/locale/om/babel-oromo.tex
 share/texmf-dist/tex/generic/babel/locale/or/
+share/texmf-dist/tex/generic/babel/locale/or/babel-odia.tex
 share/texmf-dist/tex/generic/babel/locale/or/babel-or.ini
 share/texmf-dist/tex/generic/babel/locale/or/babel-oriya.tex
 share/texmf-dist/tex/generic/babel/locale/os/
@@ -6502,6 +6545,8 @@ share/texmf-dist/tex/generic/babel/locale/ps/babel-pashto.tex
 share/texmf-dist/tex/generic/babel/locale/ps/babel-ps.ini
 share/texmf-dist/tex/generic/babel/locale/pt/
 share/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian.tex
+share/texmf-dist/tex/generic/babel/locale/pt/babel-brazilianportuguese.tex
+share/texmf-dist/tex/generic/babel/locale/pt/babel-europeanportuguese.tex
 share/texmf-dist/tex/generic/babel/locale/pt/babel-portuguese-br.tex
 share/texmf-dist/tex/generic/babel/locale/pt/babel-portuguese-brazil.tex
 share/texmf-dist/tex/generic/babel/locale/pt/babel-portuguese-portugal.tex
@@ -6520,7 +6565,11 @@ share/texmf-dist/tex/generic/babel/locale/rn/
 share/texmf-dist/tex/generic/babel/locale/rn/babel-rn.ini
 share/texmf-dist/tex/generic/babel/locale/rn/babel-rundi.tex
 share/texmf-dist/tex/generic/babel/locale/ro/
+share/texmf-dist/tex/generic/babel/locale/ro/babel-moldavian.tex
+share/texmf-dist/tex/generic/babel/locale/ro/babel-ro-MD.ini
 share/texmf-dist/tex/generic/babel/locale/ro/babel-ro.ini
+share/texmf-dist/tex/generic/babel/locale/ro/babel-romanian-md.tex
+share/texmf-dist/tex/generic/babel/locale/ro/babel-romanian-moldova.tex
 share/texmf-dist/tex/generic/babel/locale/ro/babel-romanian.tex
 share/texmf-dist/tex/generic/babel/locale/rof/
 share/texmf-dist/tex/generic/babel/locale/rof/babel-rof.ini
@@ -6542,6 +6591,7 @@ share/texmf-dist/tex/generic/babel/locale/sa/babel-sa-Knda.ini
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sa-Mlym.ini
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sa-Telu.ini
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sa.ini
+share/texmf-dist/tex/generic/babel/locale/sa/babel-sanskrit-bangla.tex
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sanskrit-beng.tex
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sanskrit-bengali.tex
 share/texmf-dist/tex/generic/babel/locale/sa/babel-sanskrit-deva.tex
@@ -6564,6 +6614,9 @@ share/texmf-dist/tex/generic/babel/locale/saq/babel-saq.ini
 share/texmf-dist/tex/generic/babel/locale/sbp/
 share/texmf-dist/tex/generic/babel/locale/sbp/babel-sangu.tex
 share/texmf-dist/tex/generic/babel/locale/sbp/babel-sbp.ini
+share/texmf-dist/tex/generic/babel/locale/sc/
+share/texmf-dist/tex/generic/babel/locale/sc/babel-sardinian.tex
+share/texmf-dist/tex/generic/babel/locale/sc/babel-sc.ini
 share/texmf-dist/tex/generic/babel/locale/se/
 share/texmf-dist/tex/generic/babel/locale/se/babel-northernsami.tex
 share/texmf-dist/tex/generic/babel/locale/se/babel-samin.tex
@@ -6726,6 +6779,9 @@ share/texmf-dist/tex/generic/babel/locale/yi/babel-yiddish.tex
 share/texmf-dist/tex/generic/babel/locale/yo/
 share/texmf-dist/tex/generic/babel/locale/yo/babel-yo.ini
 share/texmf-dist/tex/generic/babel/locale/yo/babel-yoruba.tex
+share/texmf-dist/tex/generic/babel/locale/yrl/
+share/texmf-dist/tex/generic/babel/locale/yrl/babel-nheengatu.tex
+share/texmf-dist/tex/generic/babel/locale/yrl/babel-yrl.ini
 share/texmf-dist/tex/generic/babel/locale/yue/
 share/texmf-dist/tex/generic/babel/locale/yue/babel-cantonese.tex
 share/texmf-dist/tex/generic/babel/locale/yue/babel-yue.ini
@@ -6903,8 +6959,6 @@ share/texmf-dist/tex/generic/knuth-lib/
 share/texmf-dist/tex/generic/knuth-lib/null.tex
 share/texmf-dist/tex/generic/kvdefinekeys/
 share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-share/texmf-dist/tex/generic/kvsetkeys/
-share/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 share/texmf-dist/tex/generic/ltxcmds/
 share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 share/texmf-dist/tex/generic/metapost/
@@ -6916,7 +6970,6 @@ share/texmf-dist/tex/generic/oberdiek/eolgrab.sty
 share/texmf-dist/tex/generic/oberdiek/fibnum.sty
 share/texmf-dist/tex/generic/oberdiek/hyphsubst.sty
 share/texmf-dist/tex/generic/oberdiek/iflang.sty
-share/texmf-dist/tex/generic/oberdiek/pdfcol.sty
 share/texmf-dist/tex/generic/oberdiek/pdfcrypt.sty
 share/texmf-dist/tex/generic/oberdiek/pdfrender.sty
 share/texmf-dist/tex/generic/oberdiek/protecteddef.sty
@@ -7183,7 +7236,8 @@ share/texmf-dist/tex/latex/base/cp852.def
 share/texmf-dist/tex/latex/base/cp858.def
 share/texmf-dist/tex/latex/base/cp865.def
 share/texmf-dist/tex/latex/base/decmulti.def
-share/texmf-dist/tex/latex/base/doc-v3beta.sty
+share/texmf-dist/tex/latex/base/doc-2016-02-15.sty
+share/texmf-dist/tex/latex/base/doc-2021-06-01.sty
 share/texmf-dist/tex/latex/base/doc.sty
 share/texmf-dist/tex/latex/base/docstrip.tex
 share/texmf-dist/tex/latex/base/exscale.sty
@@ -7225,6 +7279,7 @@ share/texmf-dist/tex/latex/base/ltluatex.lua
 share/texmf-dist/tex/latex/base/ltluatex.tex
 share/texmf-dist/tex/latex/base/ltnews.cls
 share/texmf-dist/tex/latex/base/ltxcheck.tex
+share/texmf-dist/tex/latex/base/ltxdoc.cfg
 share/texmf-dist/tex/latex/base/ltxdoc.cls
 share/texmf-dist/tex/latex/base/ltxguide.cls
 share/texmf-dist/tex/latex/base/ly1enc.dfu
@@ -7417,6 +7472,7 @@ share/texmf-dist/tex/latex/graphics/graphics.sty
 share/texmf-dist/tex/latex/graphics/graphicx.sty
 share/texmf-dist/tex/latex/graphics/keyval.sty
 share/texmf-dist/tex/latex/graphics/lscape.sty
+share/texmf-dist/tex/latex/graphics/mathcolor.ltx
 share/texmf-dist/tex/latex/graphics/pctex32.def
 share/texmf-dist/tex/latex/graphics/pctexhp.def
 share/texmf-dist/tex/latex/graphics/pctexps.def
@@ -7443,6 +7499,8 @@ share/texmf-dist/tex/latex/hopatch/hopatch.sty
 share/texmf-dist/tex/latex/hycolor/
 share/texmf-dist/tex/latex/hycolor/hycolor.sty
 share/texmf-dist/tex/latex/hycolor/xcolor-patch.sty
+share/texmf-dist/tex/latex/hypdoc/
+share/texmf-dist/tex/latex/hypdoc/hypdoc.sty
 share/texmf-dist/tex/latex/hyperref/
 share/texmf-dist/tex/latex/hyperref/backref.sty
 share/texmf-dist/tex/latex/hyperref/hdvipdfm.def
@@ -7513,6 +7571,8 @@ share/texmf-dist/tex/latex/jknapltx/young.sty
 share/texmf-dist/tex/latex/kvoptions/
 share/texmf-dist/tex/latex/kvoptions/kvoptions-patch.sty
 share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+share/texmf-dist/tex/latex/kvsetkeys/
+share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 share/texmf-dist/tex/latex/l3backend/
 share/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
@@ -7559,6 +7619,15 @@ share/texmf-dist/tex/latex/l3packages/xparse/xparse.ltx
 share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 share/texmf-dist/tex/latex/l3packages/xtemplate/
 share/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+share/texmf-dist/tex/latex/latex-lab/
+share/texmf-dist/tex/latex/latex-lab/documentmetadata-support.ltx
+share/texmf-dist/tex/latex/latex-lab/latex-lab-footmisc.ltx
+share/texmf-dist/tex/latex/latex-lab/latex-lab-footnotes.ltx
+share/texmf-dist/tex/latex/latex-lab/latex-lab-testphase-new-or.sty
+share/texmf-dist/tex/latex/latex-lab/new-or-latex-lab-testphase.ltx
+share/texmf-dist/tex/latex/latex-lab/phase-I-latex-lab-testphase.ltx
+share/texmf-dist/tex/latex/latex-lab/phase-II-latex-lab-testphase.ltx
+share/texmf-dist/tex/latex/latex-lab/tagpdf-latex-lab-testphase.ltx
 share/texmf-dist/tex/latex/latexconfig/
 share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 share/texmf-dist/tex/latex/latexconfig/latex.ini
@@ -7684,6 +7753,19 @@ share/texmf-dist/tex/latex/ncntrsbk/omsunc.fd
 share/texmf-dist/tex/latex/ncntrsbk/ot1unc.fd
 share/texmf-dist/tex/latex/ncntrsbk/t1unc.fd
 share/texmf-dist/tex/latex/ncntrsbk/ts1unc.fd
+share/texmf-dist/tex/latex/ntgclass/
+share/texmf-dist/tex/latex/ntgclass/a4.sty
+share/texmf-dist/tex/latex/ntgclass/artikel1.cls
+share/texmf-dist/tex/latex/ntgclass/artikel2.cls
+share/texmf-dist/tex/latex/ntgclass/artikel3.cls
+share/texmf-dist/tex/latex/ntgclass/boek.cls
+share/texmf-dist/tex/latex/ntgclass/boek3.cls
+share/texmf-dist/tex/latex/ntgclass/brief.cls
+share/texmf-dist/tex/latex/ntgclass/ntg10.clo
+share/texmf-dist/tex/latex/ntgclass/ntg11.clo
+share/texmf-dist/tex/latex/ntgclass/ntg12.clo
+share/texmf-dist/tex/latex/ntgclass/rapport1.cls
+share/texmf-dist/tex/latex/ntgclass/rapport3.cls
 share/texmf-dist/tex/latex/oberdiek/
 share/texmf-dist/tex/latex/oberdiek/aliascnt.sty
 share/texmf-dist/tex/latex/oberdiek/bmpsize-base.sty
@@ -7704,8 +7786,6 @@ share/texmf-dist/tex/latex/oberdiek/hypbmsec.sty
 share/texmf-dist/tex/latex/oberdiek/hypcap.sty
 share/texmf-dist/tex/latex/oberdiek/hypgotoe.sty
 share/texmf-dist/tex/latex/oberdiek/ifdraft.sty
-share/texmf-dist/tex/latex/oberdiek/pagegrid.sty
-share/texmf-dist/tex/latex/oberdiek/pdfcolfoot.sty
 share/texmf-dist/tex/latex/oberdiek/pdfcolparallel.sty
 share/texmf-dist/tex/latex/oberdiek/pdfcolparcolumns.sty
 share/texmf-dist/tex/latex/oberdiek/resizegather.sty
@@ -7893,12 +7973,14 @@ share/texmf-dist/tex/latex/tools/layout.sty
 share/texmf-dist/tex/latex/tools/longtable-2020-01-07.sty
 share/texmf-dist/tex/latex/tools/longtable.sty
 share/texmf-dist/tex/latex/tools/multicol-2017-04-11.sty
+share/texmf-dist/tex/latex/tools/multicol-2019-10-01.sty
 share/texmf-dist/tex/latex/tools/multicol.sty
 share/texmf-dist/tex/latex/tools/q.tex
 share/texmf-dist/tex/latex/tools/r.tex
 share/texmf-dist/tex/latex/tools/rawfonts.sty
 share/texmf-dist/tex/latex/tools/s.tex
 share/texmf-dist/tex/latex/tools/shellesc.sty
+share/texmf-dist/tex/latex/tools/showkeys-2014-10-28.sty
 share/texmf-dist/tex/latex/tools/showkeys.sty
 share/texmf-dist/tex/latex/tools/somedefs.sty
 share/texmf-dist/tex/latex/tools/tabularx.sty
@@ -7951,7 +8033,6 @@ share/texmf-dist/tex/luatex/lualibs/lualibs-extended-merged.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-extended.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-file.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-function.lua
-share/texmf-dist/tex/luatex/lualibs/lualibs-gzip.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-io.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-lpeg.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-lua.lua
@@ -7972,14 +8053,16 @@ share/texmf-dist/tex/luatex/lualibs/lualibs-util-fil.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-jsn.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-lua.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-prs.lua
+share/texmf-dist/tex/luatex/lualibs/lualibs-util-sac.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-sta.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-sto.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-str.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-tab.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs-util-tpl.lua
+share/texmf-dist/tex/luatex/lualibs/lualibs-util-zip.lua
 share/texmf-dist/tex/luatex/lualibs/lualibs.lua
 share/texmf-dist/tex/luatex/luaotfload/
-share/texmf-dist/tex/luatex/luaotfload/fontloader-2022-02-24.lua
+share/texmf-dist/tex/luatex/luaotfload/fontloader-2022-10-03.lua
 share/texmf-dist/tex/luatex/luaotfload/fontloader-basics-chr.lua
 share/texmf-dist/tex/luatex/luaotfload/fontloader-basics-gen.lua
 share/texmf-dist/tex/luatex/luaotfload/fontloader-basics-nod.lua
@@ -8036,6 +8119,7 @@ share/texmf-dist/tex/luatex/luaotfload/fontloader-reference.lua
 share/texmf-dist/tex/luatex/luaotfload/fontloader-util-fil.lua
 share/texmf-dist/tex/luatex/luaotfload/fontloader-util-str.lua
 share/texmf-dist/tex/luatex/luaotfload/luaotfload-auxiliary.lua
+share/texmf-dist/tex/luatex/luaotfload/luaotfload-bcp47.lua
 share/texmf-dist/tex/luatex/luaotfload/luaotfload-blacklist.cnf
 share/texmf-dist/tex/luatex/luaotfload/luaotfload-case.lua
 share/texmf-dist/tex/luatex/luaotfload/luaotfload-characters.lua
@@ -8169,25 +8253,19 @@ share/texmf-var/fonts/map/pdftex/updmap/
 share/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_dl14.map
 share/texmf-var/fonts/map/pdftex/updmap/pdftex_ndl14.map
-share/texmf-var/luatex-cache/
-share/texmf-var/luatex-cache/context/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.fmt
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.lui
-share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/formats/luatex/cont-en.luv
 share/texmf-var/web2c/
 share/texmf-var/web2c/aleph/
 share/texmf-var/web2c/aleph/aleph.fmt
 share/texmf-var/web2c/eptex/
 share/texmf-var/web2c/eptex/eptex.fmt
-share/texmf-var/web2c/eptex/platex-dev.fmt
 share/texmf-var/web2c/eptex/platex.fmt
+share/texmf-var/web2c/eptex/ptex.fmt
 share/texmf-var/web2c/euptex/
 share/texmf-var/web2c/euptex/euptex.fmt
+share/texmf-var/web2c/euptex/platex-dev.fmt
 share/texmf-var/web2c/euptex/uplatex-dev.fmt
 share/texmf-var/web2c/euptex/uplatex.fmt
+share/texmf-var/web2c/euptex/uptex.fmt
 share/texmf-var/web2c/hitex/
 share/texmf-var/web2c/hitex/hilatex.fmt
 share/texmf-var/web2c/hitex/hitex.fmt
@@ -8207,7 +8285,6 @@ share/texmf-var/web2c/metafont/
 share/texmf-var/web2c/metafont/mf.base
 share/texmf-var/web2c/pdftex/
 share/texmf-var/web2c/pdftex/amstex.fmt
-share/texmf-var/web2c/pdftex/cont-en.fmt
 share/texmf-var/web2c/pdftex/cslatex.fmt
 share/texmf-var/web2c/pdftex/csplain.fmt
 share/texmf-var/web2c/pdftex/eplain.fmt
@@ -8231,15 +8308,10 @@ share/texmf-var/web2c/pdftex/pdfxmltex.fmt
 share/texmf-var/web2c/pdftex/texsis.fmt
 share/texmf-var/web2c/pdftex/utf8mex.fmt
 share/texmf-var/web2c/pdftex/xmltex.fmt
-share/texmf-var/web2c/ptex/
-share/texmf-var/web2c/ptex/ptex.fmt
 share/texmf-var/web2c/tex/
 share/texmf-var/web2c/tex/lollipop.fmt
 share/texmf-var/web2c/tex/tex.fmt
-share/texmf-var/web2c/uptex/
-share/texmf-var/web2c/uptex/uptex.fmt
 share/texmf-var/web2c/xetex/
-share/texmf-var/web2c/xetex/cont-en.fmt
 share/texmf-var/web2c/xetex/pdfcsplain.fmt
 share/texmf-var/web2c/xetex/xelatex-dev.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt

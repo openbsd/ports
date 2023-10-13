@@ -4,7 +4,7 @@ Index: texmf-dist/doc/man/man1/convertgls2bib.1
 @@ -134,6 +134,8 @@
  .\"
  .IX Title "CONVERTGLS2BIB 1"
- .TH CONVERTGLS2BIB 1 "2020-02-11" "perl v5.32.1" "convertgls2bib"
+ .TH CONVERTGLS2BIB 1 "2020-02-11" "perl v5.34.1" "convertgls2bib"
 +.SH NAME
 +convertgls2bib \(en convert glossary definitions
  .\" For nroff, turn off justification.  Always turn off hyphenation; it makes

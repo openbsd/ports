@@ -60,6 +60,9 @@ SUBST_INTERPRETERS = {
 
 
 def process_file(dirpath, filename, substs, strip_prefix):
+    if filename.endswith(".orig.port"):
+        return
+
     path = os.path.join(dirpath, filename)
     stripped_path = os.path.relpath(path, strip_prefix)
 

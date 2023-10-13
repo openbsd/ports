@@ -15,8 +15,7 @@ DISTNAME =		texlive-${DIST_V}-texmf
 SITES.pregen =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20220325-tlpdb-full.tar.gz
-
+			texlive-20230311-tlpdb-full.tar.gz
 DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
@@ -24,9 +23,6 @@ PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-
-REVISION-context =	0
-REVISION-buildset =	0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -50,11 +46,13 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
+# XXX: when unbreaking context, see if it can be further towards the top dep
+# chain. Can it depend on only the buildset?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			${MODRUBY_RUN_DEPENDS}
+			print/luametatex
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
-RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}p0:print/texlive/base,-mktexlsr
+RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
 
 MULTI_PACKAGES =	-context -docs -full -main -buildset
 
@@ -112,9 +110,6 @@ pre-configure:
 	    -e 'close ARGV if eof;' ${WRKSRC}/$$F; \
 	done
 
-	# This file contains a lookup table of interpreter paths
-	${SUBST_CMD} ${WRKSRC}/texmf-dist/scripts/context/stubs/unix/mtxrun
-
 # Note that the engine symlinks will cause warnings about dead symlinks at
 # package time. This is because the symlinks point outside of the texmf
 # packages (to texlive_base). The warnings are harmless and can be disregarded.
@@ -132,11 +127,12 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 	# Then create the necessary files with:
 	#   updmap-sys
 	#   fmtutil-sys --all
-	#   context --make
+	#   context --make --all
+	#   mtxrun  --script fonts --reload
 	#
 	# Then you can tar them up and host them as the pregen tarball.
 	#
-	# (Don't forget to remove ls-R files, log files and the luatex cache
+	# (Don't forget to remove ls-R files, log files and the luametatex cache
 	# before making the tarball).
 	mv ${WRKDIR}/texmf-var ${PREFIX}/share
 
@@ -173,6 +169,9 @@ post-install:
 	# selfauto does not work with our legacy texmf paths, patch in paths.
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmf.cnf
 	${SUBST_CMD} ${PREFIX}/share/texmf-dist/web2c/texmfcnf.lua
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/scripts/context/lua/mtxrun.lua
+	${SUBST_CMD} ${PREFIX}/share/texmf-dist/tex/context/base/mkiv/data-res.lua
+
 
 # The following targets are for development only and require Python3.
 

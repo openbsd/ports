@@ -1,0 +1,14 @@
+Fix name clash with english latex2e info page.
+
+Index: texmf-dist/doc/info/latex2e-es.info
+--- texmf-dist/doc/info/latex2e-es.info.orig
++++ texmf-dist/doc/info/latex2e-es.info
+@@ -38,7 +38,7 @@ manual a otro idioma, en las condiciones anteriores pa
+ modificadas.
+ INFO-DIR-SECTION TeX
+ START-INFO-DIR-ENTRY
+-* LaTeX2e: (latex2e).      Manual de referencia extraoficial de LaTeX.
++* LaTeX2e-es: (latex2e-es).      Manual de referencia extraoficial de LaTeX.
+ END-INFO-DIR-ENTRY
+ 
+ 

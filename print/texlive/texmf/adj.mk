@@ -16,6 +16,10 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/biblatex-software/mkbiblatexstubs.sh \
 	texmf-dist/doc/latex/bibunits/bibtexall \
 	texmf-dist/doc/latex/bookshelf/prepdata.sh \
+	texmf-dist/doc/latex/cartonaugh/test.sh \
+	texmf-dist/doc/latex/chinesechess/build.sh \
+	texmf-dist/doc/latex/circledtext/build.sh \
+	texmf-dist/doc/latex/codebox/build.sh \
 	texmf-dist/doc/latex/confproc/buildprocelpb.sh \
 	texmf-dist/doc/latex/confproc/example/buildprocelpb.sh \
 	texmf-dist/doc/latex/confproc/example/exportIndividualPDFs.sh \
@@ -32,6 +36,7 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/exframe/exfsermk.sh \
 	texmf-dist/doc/latex/flabels/makedoc-patched \
 	texmf-dist/doc/latex/ftc-notebook/newmeeting.sh \
+	texmf-dist/doc/latex/gamebooklib/gamebooklib_countpagesperseed.sh \
 	texmf-dist/doc/latex/hepnames/mkmacrotables \
 	texmf-dist/doc/latex/hepthesis/example/getNewBibtex \
 	texmf-dist/doc/latex/hvfloat/runAll.sh \
@@ -43,14 +48,18 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/latex/milog/milog \
 	texmf-dist/doc/latex/multibib/bibtexall \
 	texmf-dist/doc/latex/notes/makedoc \
+	texmf-dist/doc/latex/pascaltriangle/build.sh \
 	texmf-dist/doc/latex/pdfreview/pdfreview.sh \
 	texmf-dist/doc/latex/pdfreview/pdfshrink.sh \
 	texmf-dist/doc/latex/pdftricks/pst2pdf \
+	texmf-dist/doc/latex/photobook/scripts/cls2tex.sh \
+	texmf-dist/doc/latex/photobook/scripts/make-spreads.sh \
 	texmf-dist/doc/latex/seminar/run.sh \
 	texmf-dist/doc/latex/seuthesis/a3cover/a3cover.sh \
 	texmf-dist/doc/latex/shdoc/shreformat.sh \
 	texmf-dist/doc/latex/shipunov/scripts/biokey2html.sh \
 	texmf-dist/doc/latex/tengwarscript/install-tengwar-scripts.sh \
+	texmf-dist/doc/latex/termsim/build.sh \
 	texmf-dist/doc/latex/tlc-article/bin/deploy \
 	texmf-dist/doc/latex/uspace/uspace-ctanify.sh \
 	texmf-dist/doc/lualatex/wallcalendar/doc/examples/diff-cal.sh \
@@ -58,25 +67,26 @@ BASH_ADJ_FILES += \
 	texmf-dist/doc/metapost/featpost/bash/laproof.sh \
 	texmf-dist/doc/metapost/featpost/bash/makehtmlindex.sh \
 	texmf-dist/doc/plain/plipsum/compile.sh \
+	texmf-dist/doc/plain/transparent-io/TrIO.org \
+	texmf-dist/doc/support/arara/htmlmanualtopdf.sh \
+	texmf-dist/doc/support/arara/htmlquickstarttopdf.sh \
 	texmf-dist/doc/support/chklref/release.sh \
 	texmf-dist/doc/support/installfont/installfont \
+	texmf-dist/doc/support/latex2nemeth/contrib/nemeth2odt \
 	texmf-dist/doc/support/latexdiff/contrib/latexdiff-wrap \
 	texmf-dist/doc/support/latexmk/extra-scripts/pst2pdf_for_latexmk \
 	texmf-dist/doc/support/latexmk/extra-scripts/startacroread \
+	texmf-dist/doc/xelatex/hanzibox/build.sh \
 	texmf-dist/doc/xelatex/xecyr/rubibtex-ex-x.sh \
 	texmf-dist/doc/xelatex/xecyr/rumakeindex.sh \
 	texmf-dist/dvips/dvipsconfig/addpsctrl \
-	texmf-dist/scripts/bibexport/bibexport.sh.origy \
 	texmf-dist/scripts/dtxgen/dtxgen \
 	texmf-dist/scripts/git-latexdiff/git-latexdiff \
-	texmf-dist/scripts/installfont/installfont-tl.origy \
-	texmf-dist/scripts/latexfileversion/latexfileversion.origy \
 	texmf-dist/scripts/logicpuzzle/createlpsudoku \
 	texmf-dist/scripts/logicpuzzle/lpsmag \
 	texmf-dist/scripts/ltxfileinfo/ltxfileinfo \
 	texmf-dist/scripts/pdftex-quiet/pdftex-quiet \
 	texmf-dist/scripts/pdfxup/pdfxup \
-	texmf-dist/scripts/pgf/pgfrevisionfile.sh \
 	texmf-dist/scripts/tlcockpit/tlcockpit.sh \
 	texmf-dist/source/fonts/ae/clean \
 	texmf-dist/source/fonts/ae/go \
@@ -87,9 +97,11 @@ BASH_ADJ_FILES += \
 	texmf-dist/source/fonts/arev/makefontfiles \
 	texmf-dist/source/fonts/arev/sfdtokernaccent \
 	texmf-dist/source/latex/avremu/test-suite/test-suite \
+	texmf-dist/source/latex/cjk/utils/pyhyphen/make-patterns.sh \
 	texmf-dist/source/latex/fifinddo-info/makevars/bashvars.sh \
 	texmf-dist/source/latex/fifinddo-info/makevars/texvars.sh \
-	texmf-dist/source/latex/stex/bin/installFonts.sh
+	texmf-dist/source/latex/nwafuthesis/build.sh \
+	texmf-dist/source/support/optexcount/install.sh
 
 FONTFORGE_ADJ_FILES += \
 	texmf-dist/doc/fonts/aesupp/genfonts.pe \
@@ -106,8 +118,9 @@ FONTFORGE_ADJ_FILES += \
 	texmf-dist/source/fonts/gentium-tug/type1/ff-gentium.pe
 
 LUA_ADJ_FILES += \
-	texmf-dist/doc/latex/greek-fontenc/lgr2licr.lua \
+	texmf-dist/doc/support/digestif/bin/digestif \
 	texmf-dist/doc/support/lua-alt-getopt/alt_getopt \
+	texmf-dist/tex/latex/greek-fontenc/lgr2licr.lua \
 	texmf-dist/tex/lualatex/bezierplot/bezierplot.lua \
 	texmf-dist/tex/luatex/luaxml/luaxml-testxml.lua
 
@@ -126,6 +139,7 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/doc/latex/comprehensive/source/makefakefdsymbol \
 	texmf-dist/doc/latex/comprehensive/source/makefakestarfont \
 	texmf-dist/doc/latex/comprehensive/source/makefakestix \
+	texmf-dist/doc/latex/comprehensive/source/makefakeworldflags \
 	texmf-dist/doc/latex/comprehensive/source/makerawtables \
 	texmf-dist/doc/latex/fancytooltips/fancy-preview \
 	texmf-dist/doc/latex/nmbib/nmbibtex.pl \
@@ -166,7 +180,6 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/scripts/glossaries/makeglossaries \
 	texmf-dist/scripts/hyperxmp/hyperxmp-add-bytecount.pl \
 	texmf-dist/scripts/jfmutil/jfmutil.pl \
-	texmf-dist/scripts/jmlr/makejmlrbook \
 	texmf-dist/scripts/ketcindy/ketcindy.pl \
 	texmf-dist/scripts/kotex-utils/jamo-normalize.pl \
 	texmf-dist/scripts/kotex-utils/komkindex.pl \
@@ -211,9 +224,10 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/scripts/texlive/mktexlsr.pl \
 	texmf-dist/scripts/texlive/tlmgr.pl \
 	texmf-dist/scripts/texlive/tlmgrgui.pl \
-	texmf-dist/scripts/texlive/uninstall-win32.pl \
+	texmf-dist/scripts/texlive/uninstall-windows.pl \
 	texmf-dist/scripts/texlive/updmap.pl \
 	texmf-dist/scripts/texloganalyser/texloganalyser \
+	texmf-dist/scripts/texlogfilter/texlogfilter \
 	texmf-dist/scripts/tlaunch/tlaunchmode.pl \
 	texmf-dist/scripts/xindy/texindy.pl \
 	texmf-dist/scripts/xindy/xindy.pl \
@@ -226,6 +240,7 @@ MODPERL_ADJ_FILES += \
 	texmf-dist/source/support/bibtexperllibs/LaTeX-ToUnicode/t/release-synopsis.t
 
 PYTHON2_ADJ_FILES += \
+	texmf-dist/doc/fonts/gentium-tug/GentiumPlus-6.101/documentation/source/makepsmd.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/arabic_test.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/generate_arabic_shaping.py \
 	texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/unicode_joining.py \
@@ -251,11 +266,6 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/scripts/changes/pyMergeChanges.py \
 	texmf-dist/scripts/de-macro/de-macro \
 	texmf-dist/scripts/ebong/ebong.py \
-	texmf-dist/scripts/latex-make/figdepth.py \
-	texmf-dist/scripts/latex-make/gensubfig.py \
-	texmf-dist/scripts/latex-make/latexfilter.py \
-	texmf-dist/scripts/latex-make/svg2dev.py \
-	texmf-dist/scripts/latex-make/svgdepth.py \
 	texmf-dist/scripts/latex-papersize/latex-papersize.py \
 	texmf-dist/scripts/lilyglyphs/lily-glyph-commands.py \
 	texmf-dist/scripts/lilyglyphs/lily-image-commands.py \
@@ -268,11 +278,11 @@ PYTHON2_ADJ_FILES += \
 	texmf-dist/scripts/pythontex/pythontex_2to3.py \
 	texmf-dist/scripts/pythontex/pythontex_install.py \
 	texmf-dist/scripts/texliveonfly/texliveonfly.py \
-	texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
-	texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
-	texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py
+	texmf-dist/source/latex/wargame/utils/wgexport.py \
+	texmf-dist/tex/latex/wargame/wgexport.py
 
 PYTHON3_ADJ_FILES += \
+	texmf-dist/asymptote/GUI/ContextWindow.py \
 	texmf-dist/asymptote/GUI/CustMatTransform.py \
 	texmf-dist/asymptote/GUI/DebugFlags.py \
 	texmf-dist/asymptote/GUI/GuidesManager.py \
@@ -300,11 +310,19 @@ PYTHON3_ADJ_FILES += \
 	texmf-dist/asymptote/GUI/xasyValidator.py \
 	texmf-dist/asymptote/GUI/xasyVersion.py \
 	texmf-dist/asymptote/asymptote.py \
+	texmf-dist/doc/latex/biblatex-gb7714-2015/makeall.py \
+	texmf-dist/doc/latex/songproj/song2tex.py \
 	texmf-dist/doc/metapost/metapost-colorbrewer/make_mp_colorbrewer.py \
 	texmf-dist/doc/support/gitfile-info/gfi-run.py \
 	texmf-dist/doc/support/gitfile-info/post-commit.py \
 	texmf-dist/doc/support/gitfile-info/post-merge.py \
 	texmf-dist/scripts/dviasm/dviasm.py \
+	texmf-dist/scripts/latex-make/figdepth.py \
+	texmf-dist/scripts/latex-make/gensubfig.py \
+	texmf-dist/scripts/latex-make/latexfilter.py \
+	texmf-dist/scripts/latex-make/svg2dev.py \
+	texmf-dist/scripts/latex-make/svgdepth.py \
+	texmf-dist/scripts/optexcount/optexcount \
 	texmf-dist/scripts/pdfbook2/pdfbook2 \
 	texmf-dist/scripts/pygmentex/pygmentex.py \
 	texmf-dist/scripts/pythontex/depythontex3.py \
@@ -313,22 +331,18 @@ PYTHON3_ADJ_FILES += \
 	texmf-dist/scripts/webquiz/webquiz \
 	texmf-dist/scripts/webquiz/webquiz.py \
 	texmf-dist/scripts/webquiz/webquiz_makequiz.py \
-	texmf-dist/scripts/webquiz/webquiz_util.py
+	texmf-dist/scripts/webquiz/webquiz_util.py \
+	texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
+	texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
+	texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py \
+	texmf-dist/source/latex/wargame/utils/wgsvg2tikz.py \
+	texmf-dist/source/support/optexcount/optexcount.py \
+	texmf-dist/tex/latex/wargame/wgsvg2tikz.py
 
 RUBY_ADJ_FILES += \
 	texmf-dist/doc/generic/huhyphen/searchforerrors.rb \
 	texmf-dist/doc/generic/huhyphen/testhyphenation.rb \
 	texmf-dist/doc/latex/cd/parsecd.rb \
-	texmf-dist/scripts/context/ruby/ctxtools.rb \
-	texmf-dist/scripts/context/ruby/imgtopdf.rb \
-	texmf-dist/scripts/context/ruby/pdftools.rb \
-	texmf-dist/scripts/context/ruby/pstopdf.rb \
-	texmf-dist/scripts/context/ruby/rlxtools.rb \
-	texmf-dist/scripts/context/ruby/texexec.rb \
-	texmf-dist/scripts/context/ruby/texmfstart.rb \
-	texmf-dist/scripts/context/ruby/textools.rb \
-	texmf-dist/scripts/context/ruby/tmftools.rb \
-	texmf-dist/scripts/context/ruby/xmltools.rb \
 	texmf-dist/scripts/convbkmk/convbkmk.rb \
 	texmf-dist/scripts/match_parens/match_parens \
 	texmf-dist/source/fonts/gentium-tug/generate-support-files.rb \
@@ -353,20 +367,19 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/doc/support/cluttex/src/cluttex.lua \
 	texmf-dist/scripts/cachepic/cachepic.tlu \
 	texmf-dist/scripts/checkcites/checkcites.lua \
+	texmf-dist/scripts/citation-style-language/citeproc-lua.lua \
 	texmf-dist/scripts/cluttex/cluttex.lua \
 	texmf-dist/scripts/context/lua/mtxrun.lua \
 	texmf-dist/scripts/context/lua/third/rst/mtx-t-rst.lua \
-	texmf-dist/scripts/context/stubs/mswin/mtxrun.lua \
-	texmf-dist/scripts/context/stubs/unix/mtxrun \
-	texmf-dist/scripts/context/stubs/unix/mtxrun.origy \
-	texmf-dist/scripts/context/stubs/win64/mtxrun.lua \
 	texmf-dist/scripts/ctanbib/ctanbib \
 	texmf-dist/scripts/diadia/diadia.lua \
+	texmf-dist/scripts/digestif/digestif.texlua \
 	texmf-dist/scripts/epspdf/epspdf.tlu \
 	texmf-dist/scripts/getmap/getmapdl.lua \
 	texmf-dist/scripts/glossaries/makeglossaries-lite.lua \
 	texmf-dist/scripts/l3build/l3build.lua \
 	texmf-dist/scripts/light-latex-make/llmk.lua \
+	texmf-dist/scripts/luafindfont/luafindfont.lua \
 	texmf-dist/scripts/luaotfload/luaotfload-tool.lua \
 	texmf-dist/scripts/lwarp/lwarpmk.lua \
 	texmf-dist/scripts/m-tx/m-tx.lua \
@@ -381,16 +394,18 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/scripts/splitindex/splitindex_main.tlu \
 	texmf-dist/scripts/tex4ebook/tex4ebook \
 	texmf-dist/scripts/texdoc/texdoc.tlu \
-	texmf-dist/scripts/texlive/rungs.tlu \
-	texmf-dist/scripts/tlgs/gswin32/eps2eps.tlu \
-	texmf-dist/scripts/tlgs/gswin32/pdf2dsc.tlu \
-	texmf-dist/scripts/tlgs/gswin32/pdfopt.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2ascii.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2pdf.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2pdf12.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2pdf13.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2pdf14.tlu \
-	texmf-dist/scripts/tlgs/gswin32/ps2ps.tlu \
+	texmf-dist/scripts/texlive/rungs.lua \
+	texmf-dist/scripts/texlogsieve/texlogsieve \
+	texmf-dist/scripts/tlgs/eps2eps.lua \
+	texmf-dist/scripts/tlgs/pdf2dsc.lua \
+	texmf-dist/scripts/tlgs/pdf2ps.lua \
+	texmf-dist/scripts/tlgs/pdfopt.lua \
+	texmf-dist/scripts/tlgs/ps2ascii.lua \
+	texmf-dist/scripts/tlgs/ps2pdf.lua \
+	texmf-dist/scripts/tlgs/ps2pdf12.lua \
+	texmf-dist/scripts/tlgs/ps2pdf13.lua \
+	texmf-dist/scripts/tlgs/ps2pdf14.lua \
+	texmf-dist/scripts/tlgs/ps2ps.lua \
 	texmf-dist/scripts/xindex/xindex.lua \
 	texmf-dist/source/generic/hyph-utf8/languages/mul-ethi/generate_patterns_mul-ethi.lua \
 	texmf-dist/source/latex/ctex/ctex-zhconv-make.lua \
@@ -404,8 +419,10 @@ TEXLUA_ADJ_FILES += \
 	texmf-dist/tex/context/third/rst/rst_setups.lua \
 	texmf-dist/tex/context/third/transliterator/transliterator.lua \
 	texmf-dist/tex/generic/enigma/enigma.lua \
+	texmf-dist/tex/latex/hvextern/hvextern-checkfile.lua \
 	texmf-dist/tex/latex/media4svg/media4svg.lua \
 	texmf-dist/tex/luatex/lualibs/lualibs-compat.lua
 
 WISH_ADJ_FILES += \
-	texmf-dist/scripts/epspdf/epspdftk.tcl
+	texmf-dist/scripts/epspdf/epspdftk.tcl \
+	texmf-dist/scripts/tlshell/tlshell.tcl

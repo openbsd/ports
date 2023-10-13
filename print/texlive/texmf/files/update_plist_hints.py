@@ -139,7 +139,9 @@ def build_subset_file_lists(tlpdb):
         # math/R
         "inconsolata",
         # books/tex-by-topic
-        "svn-multi", "avantgar", "ncntrsbk", "fontname",
+        "svn-multi", "avantgar", "ncntrsbk", "fontname", "ntgclass",
+	    # print/foiltex, textproc/lgrind
+        "hypdoc",
         ]
     buildset_files, buildset_symlinks = \
         collect_files(runspecs(buildset_pkgs), db)
@@ -152,6 +154,12 @@ def build_subset_file_lists(tlpdb):
     context_pkgs = [p for p in db.pkgs() if p.startswith("context")]
     context_files, context_symlinks = collect_files(
         runspecs(context_pkgs, include_deps=False), db)
+    # All the luametatex stuff isn't in the tlpdb, so we add it ourself.
+    context_symlinks.add(('context', 'luametatex'))
+    context_symlinks.add(('mtxrun', 'luametatex'))
+    context_symlinks.add(('context.lua', '../share/texmf-dist/scripts/context/lua/context.lua'))
+    context_symlinks.add(('mtxrun.lua', '../share/texmf-dist/scripts/context/lua/mtxrun.lua'))
+    context_symlinks.add(('mtx-context.lua', '../share/texmf-dist/scripts/context/lua/mtx-context.lua'))
     context_doc_files, no_symlinks = collect_files(
         docspecs(context_pkgs, include_deps=False), db, MANS_INFOS_RE)
     assert len(no_symlinks) == 0

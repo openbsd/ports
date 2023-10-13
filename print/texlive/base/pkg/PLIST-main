@@ -1,7 +1,7 @@
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
-@conflict texlive_texmf-buildset-<2022
+@conflict texlive_texmf-buildset-<2023
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
@@ -31,6 +31,7 @@ bin/bg5+pdflatex
 bin/bg5latex
 bin/bg5pdflatex
 bin/bib2gls
+bin/bibcop
 bin/bibdoiadd
 bin/bibexport
 bin/bibmradd
@@ -56,13 +57,11 @@ bin/checklistings
 bin/chklref
 @bin bin/chktex
 bin/chkweb
-bin/citeproc
+bin/citeproc-lua
 bin/cjk-gs-integrate
 bin/cllualatex
 bin/cluttex
 bin/clxelatex
-bin/context
-bin/contextjit
 bin/convbkmk
 bin/convertgls2bib
 bin/ctan-o-mat
@@ -80,6 +79,7 @@ bin/depythontex
 @bin bin/devnag
 bin/deweb
 bin/diadia
+bin/digestif
 bin/dosepsbin
 @bin bin/dt2dv
 bin/dtxgen
@@ -199,7 +199,6 @@ bin/luafindfont
 bin/lualatex
 bin/luaotfload-tool
 @bin bin/luatex
-bin/luatools
 bin/lwarpmk
 bin/m-tx
 @bin bin/mag
@@ -234,8 +233,6 @@ bin/mktextfm
 @bin bin/mpost
 bin/mptopdf
 @bin bin/msxlint
-bin/mtxrun
-bin/mtxrunjit
 bin/multibibliography
 bin/musixflx
 bin/musixtex
@@ -251,9 +248,10 @@ bin/ot2kpx
 @bin bin/outocp
 bin/ovf2ovp
 bin/ovp2ovf
+bin/pagelayoutapi
 bin/pamphletangler
 @bin bin/patgen
-@bin bin/pbibtex
+bin/pbibtex
 bin/pdfannotextractor
 bin/pdfatfi
 bin/pdfbook2
@@ -269,7 +267,7 @@ bin/pdftex-quiet
 @bin bin/pdftosrc
 bin/pdfxup
 bin/pdvitomp
-@bin bin/pdvitype
+bin/pdvitype
 bin/pedigree
 bin/perltex
 bin/pfarrei
@@ -285,16 +283,15 @@ bin/pkfix-helper
 bin/pmxchords
 bin/pn2pdf
 @bin bin/pooltype
-@bin bin/ppltotf
+bin/ppltotf
 @bin bin/prepmx
 bin/ps2frag
 @bin bin/ps2pk
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
-@bin bin/ptex
 bin/ptex2pdf
-@bin bin/ptftopl
+bin/ptftopl
 bin/purifyeps
 bin/pygmentex
 bin/pythontex
@@ -324,6 +321,7 @@ bin/svn-multi
 @bin bin/tex2aspc
 bin/tex4ebook
 @bin bin/tex4ht
+bin/texaccents
 bin/texconfig
 bin/texconfig-dialog
 bin/texconfig-sys
@@ -333,7 +331,6 @@ bin/texdiff
 bin/texdirflatten
 bin/texdoc
 bin/texdoctk
-bin/texexec
 bin/texfot
 bin/texhash
 bin/texlinks
@@ -343,11 +340,11 @@ bin/texlogfilter
 bin/texlogsieve
 bin/texlua
 bin/texluac
-bin/texmfstart
 bin/texosquery
 bin/texosquery-jre5
 bin/texosquery-jre8
 bin/texplate
+bin/textestvis
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
@@ -372,7 +369,6 @@ bin/updvitomp
 @bin bin/upmendex
 @bin bin/upmpost
 @bin bin/uppltotf
-@bin bin/uptex
 @bin bin/uptftopl
 bin/urlbst
 @bin bin/vftovp
@@ -417,8 +413,7 @@ lib/pkgconfig/ptexenc.pc
 @tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
-@unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/*
-@unexec-delete if [ -d %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/ ]; then rmdir %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/; fi
+@unexec-delete rm -rf %D/share/texmf-var/luametatex-cache/
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 lib/pkgconfig/texlua53.pc

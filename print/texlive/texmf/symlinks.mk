@@ -29,10 +29,12 @@ tl-symlinks-main:
 		ln -s pdftex pdfmex && \
 		ln -s pdftex pdfxmltex && \
 		ln -s eptex platex && \
-		ln -s eptex platex-dev && \
+		ln -s euptex platex-dev && \
+		ln -s eptex ptex && \
 		ln -s pdftex texsis && \
 		ln -s euptex uplatex && \
 		ln -s euptex uplatex-dev && \
+		ln -s euptex uptex && \
 		ln -s pdftex utf8mex && \
 		ln -s xetex xelatex && \
 		ln -s pdftex xmltex
@@ -47,5 +49,10 @@ tl-symlinks-full:
 		ln -s xetex xelatex-dev
 
 tl-symlinks-context:
-	true
+	cd ${PREFIX}/bin && \
+		ln -s luametatex context && \
+		ln -s ../share/texmf-dist/scripts/context/lua/context.lua context.lua && \
+		ln -s ../share/texmf-dist/scripts/context/lua/mtx-context.lua mtx-context.lua && \
+		ln -s luametatex mtxrun && \
+		ln -s ../share/texmf-dist/scripts/context/lua/mtxrun.lua mtxrun.lua
 

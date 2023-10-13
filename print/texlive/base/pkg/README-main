@@ -9,11 +9,11 @@ There are a number of texmf trees in the OpenBSD packages:
 
 texmf-buildset:
   The smallest of the subsets. This is primarily for building OpenBSD
-  ports (approx 190M).
+  ports (approx 275MB).
 
 texmf-minimal:
   A teTeX like tree, suitable for casual TeX users who do not need many
-  extra macros or ConTeXt (approx 310MB).
+  extra macros or ConTeXt (approx 320MB).
 
 texmf-full:
   Extra macros (approx 1.1GB).
@@ -26,7 +26,7 @@ texmf-context:
   generated only when the conTeXt macros are installed.
 
 texmf-docs:
-  Documentation (approx 1.3GB).
+  Documentation (approx 1.4GB).
 
   To take load off the OpenBSD mirrors this is only the documentation
   for the texmf-minimal and texmf-buildset trees. This should include
@@ -62,7 +62,7 @@ Other Misc. Notes
 Beta-testing Binaries
 ---------------------
 
-TeX Live now includes binaries suffixed with `-dev` (e.g. pdflatex-dev).  These
+TeX Live now includes binaries suffixed with `-dev` (e.g. pdflatex-dev). These
 are beta versions of the typesetters, included in the distribution to encourage
 testing.
 
@@ -108,5 +108,19 @@ Notes for Developers
 
  * If a non-texlive port installs texmf files then they should be installed
    into share/texmf-local, NOT share/texmf or share/texmf-dist.
+
+ConTeXt Broken
+--------------
+
+I was unable to get the new ConTeXt with LuaMetaTeX working on OpenBSD.
+
+After trying to debug it myself with no joy, I tried asking upstream, but got
+no reponse:
+
+  - https://www.mail-archive.com/ntg-context@ntg.nl/msg105219.html
+  - https://github.com/contextgarden/luametatex/issues/7
+
+Note to devs: if fixing context, please regen the pregen tarball after these
+steps: https://texdoc.org/serve/tiptrick.pdf/0
 
 Have fun TeXing.

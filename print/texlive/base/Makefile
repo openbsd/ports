@@ -2,9 +2,6 @@ COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution
 
-REVISION-main =		0
-REVISION-mktexlsr =	0
-
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
@@ -16,7 +13,7 @@ PKGNAME-synctex =	texlive_synctex-${V}
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
-DISTFILES.mk =		mktexlsr-2022.gz
+DISTFILES.mk =		mktexlsr-${V}.gz
 
 SITES.mk =		https://theunixzoo.co.uk/distfiles/
 
@@ -30,15 +27,16 @@ WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
 WANTLIB += crypto cups dbus-1 execinfo expat fontconfig freetype
 WANTLIB += gd glib-2.0 graphite2 gs harfbuzz iconv icudata icui18n
 WANTLIB += icuio icuuc idn ijs intl jbig2dec jpeg kpathsea lzma
-WANTLIB += m openjp2 paper pcre2-8 pixman-1 png ssl tiff webp
-WANTLIB += xcb xcb-render xcb-shm z zstd zzip
+WANTLIB += m openjp2 paper pcre2-8 pixman-1 png sharpyuv ssl tiff
+WANTLIB += webp xcb xcb-render xcb-shm z zstd zzip
 
 
 WANTLIB-mktexlsr += c
 
 WANTLIB-synctex += c m z
 
-RUN_DEPENDS-main =	print/ghostscript/gnu \
+RUN_DEPENDS-main =	graphics/libwebp \
+			print/ghostscript/gnu \
 			print/detex \
 			print/dvi2tty \
 			print/lcdf-typetools \
@@ -106,10 +104,8 @@ PKG_ARGS +=		-Dxindy=1
 PKG_ARGS +=		-Dxindy=0
 .endif
 
-# --with-system-poppler and --with-system-xpdf temporarily removed to
-# build it with the bundled poppler, because xpdftex fails to build
-# without patches and a newer poppler (> 0.58), and it fails at runtime
-# with my current patches to build with the new poppler object API.
+# --with-system-xpdf is omitted because it says it can't find the 'xpdf' library.
+#  We don't package xpdf as a library.
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-freetype2 \
 			--with-system-gd \
@@ -149,6 +145,8 @@ pre-install:
 
 EXTRA_ROOT =	${WRKDIR}/texlive-${DIST_V}-extra
 
+# Note that running `make plist` in the texmf subdir re-generates
+# this file and thus changes what gets installed!
 .include "../texmf/symlinks.mk"
 
 post-install: tl-symlinks-buildset
@@ -162,6 +160,10 @@ post-install: tl-symlinks-buildset
 
 	# Users should not use tlmgr (tex live package manager)
 	rm ${PREFIX}/bin/tlmgr
+
+	# The build installs `ptex` and `uptex` which conflict
+	# with symlinks that get installed by other texmf packages.
+	rm ${PREFIX}/bin/{u,}ptex
 
 	# translate some sylinks from ../texmf* to ../share/texmf*
 	for link in `find ${PREFIX}/bin -type l`; do \
@@ -187,6 +189,7 @@ post-install: tl-symlinks-buildset
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-dist/scripts/texlive
 	${INSTALL_SCRIPT} ${WRKDIR}/mktexlsr-${V} \
 		${PREFIX}/share/texmf-dist/scripts/texlive/mktexlsr
+
 
 .include <bsd.port.mk>
 

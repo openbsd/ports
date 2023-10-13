@@ -4,7 +4,7 @@ Index: texmf-dist/doc/man/man1/bib2gls.1
 @@ -134,6 +134,8 @@
  .\"
  .IX Title "BIB2GLS 1"
- .TH BIB2GLS 1 "2021-11-06" "perl v5.32.1" "bib2gls"
+ .TH BIB2GLS 1 "2022-11-24" "perl v5.34.1" "bib2gls"
 +.SH NAME
 +bib2gls \(en glossary tool
  .\" For nroff, turn off justification.  Always turn off hyphenation; it makes

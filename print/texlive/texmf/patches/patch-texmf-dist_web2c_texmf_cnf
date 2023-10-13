@@ -34,7 +34,7 @@ Index: texmf-dist/web2c/texmf.cnf
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -519,7 +526,7 @@ LUAINPUTS.harflatex-dev = $TEXMFDOTDIR;$TEXMF/scripts/
+@@ -523,7 +530,7 @@ LUAINPUTS.harflatex-dev = $TEXMFDOTDIR;$TEXMF/scripts/
  LUAINPUTS = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,latex,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.
