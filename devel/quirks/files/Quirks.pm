@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1556 2023/10/11 13:34:52 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1557 2023/10/13 23:14:54 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1368,7 +1368,7 @@ setup_obsolete_reason(
 	0 => 'lazarus',
 	13 => 'exaile',
 	3 => 'instead-launcher',
-	3 => qr{^(ruby(19|2[0-7])-|^j?ruby-[^0-9])},
+	3 => qr{^(ruby(19|2[0-7]|30)-|^j?ruby-[^0-9])},
 # 6.9
 	3 => 'py-notify',
 	3 => 'glimpse',
