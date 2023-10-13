@@ -1,43 +1,58 @@
 - fix shebang
+- fix syntax so it runs with ksh (x2)
 - set path to standalone jar
 - set path to java executable
-- use sha1(1)
 
 Index: bin/lein-pkg
 --- bin/lein-pkg.orig
 +++ bin/lein-pkg
 @@ -1,4 +1,4 @@
--#!/bin/bash
+-#!/usr/bin/env bash
 +#!/bin/ksh
  
  # This variant of the lein script is meant for downstream packagers.
  # It has all the cross-platform stuff stripped out as well as the
-@@ -27,7 +27,7 @@ export LEIN_HOME="${LEIN_HOME:-"$HOME/.lein"}"
+@@ -48,19 +48,21 @@ function make_native_path {
+ #  usage : add_path PATH_VAR [PATH]...
+ function add_path {
+     local path_var="$1"
++    local val
++    eval val="\$$path_var"
+     shift
+     while [ -n "$1" ];do
+-        # http://bashify.com/?Useful_Techniques:Indirect_Variables:Indirect_Assignment
+-        if [[ -z ${!path_var} ]]; then
+-          export ${path_var}="$(make_native_path "$1")"
++        if [[ -z "$val" ]]; then
++          val="$(make_native_path "$1")"
+         else
+-          export ${path_var}="${!path_var}${delimiter}$(make_native_path "$1")"
++          val="${val}${delimiter}$(make_native_path "$1")"
+         fi
+     shift
+     done
++    export "${path_var}"="$val"
+ }
  
- # Support $JAVA_OPTS for backwards-compatibility.
- JVM_OPTS=${JVM_OPTS:-"$JAVA_OPTS"}
--JAVA_CMD=${JAVA_CMD:-"java"}
-+JAVA_CMD=${JAVA_CMD:-"${JAVA_HOME}/bin/java"}
+-function run_from_checkout() {
++function run_from_checkout {
+     add_path CLASSPATH "$LEIN_JAR"
  
- for f in "/etc/leinrc" "$LEIN_HOME/leinrc" ".leinrc"; do
-     if [ -e "$f" ]; then
-@@ -43,7 +43,7 @@ LEIN_JVM_OPTS="${LEIN_JVM_OPTS:-'-Xms64m -Xmx512m'}"
+     if [ "$LEIN_USE_BOOTCLASSPATH" != "no" ]; then
+@@ -198,7 +200,7 @@ BIN_DIR="$(dirname "$SCRIPT")"
  # If you're not using an uberjar you'll need to list each dependency
  # and add them individually to the classpath/bootclasspath as well.
  
 -LEIN_JAR=/usr/share/java/leiningen-$LEIN_VERSION-standalone.jar
 +LEIN_JAR=${TRUEPREFIX}/share/leiningen/${JAR_FILE}
  
- # Do not use installed leiningen jar during self-compilation
- if ! { [ "$1" = "compile" ] &&
-@@ -88,8 +88,8 @@ fi
- if [ "$LEIN_FAST_TRAMPOLINE" != "" ] && [ -r project.clj ]; then
-     INPUTS="$* $(cat project.clj) $LEIN_VERSION $(test -f "$LEIN_HOME/profiles.clj" && cat "$LEIN_HOME/profiles.clj") $(test -f profiles.clj && cat profiles.clj)"
+ export LEIN_JVM_OPTS="${LEIN_JVM_OPTS-"-XX:+TieredCompilation -XX:TieredStopAtLevel=1"}"
  
--    if command -v shasum >/dev/null 2>&1; then
--        SUM="shasum"
-+    if command -v sha1 >/dev/null 2>&1; then
-+        SUM="sha1"
-     elif command -v sha1sum >/dev/null 2>&1; then
-         SUM="sha1sum"
-     else
+@@ -221,6 +223,7 @@ grep -E -q '^\s*:eval-in\s+:classloader\s*$' project.c
+ 
+ run_from_checkout "$1"
+ 
++JAVA_CMD=${JAVA_CMD:-"${JAVA_HOME}/bin/java"}
+ if [ ! -x "$JAVA_CMD" ] && ! type -f java >/dev/null
+ then
+     msg "Leiningen couldn't find 'java' executable, which is required."
