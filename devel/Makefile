@@ -1431,6 +1431,7 @@
      SUBDIR += py-greenlet,python3
      SUBDIR += py-hamcrest,python3
      SUBDIR += py-hatch-fancy-pypi-readme,python3
+     SUBDIR += py-hatch-nodejs-version,python3
      SUBDIR += py-hatch-vcs,python3
      SUBDIR += py-hatchling,python3
      SUBDIR += py-helpdev,python3
