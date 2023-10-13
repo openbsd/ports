@@ -1,7 +1,7 @@
 COMMENT =	security checker for Go projects
 
 MODGO_MODNAME =	github.com/securego/gosec/v2
-MODGO_VERSION =	v2.16.0
+MODGO_VERSION =	v2.18.0
 
 DISTNAME =	gosec-${MODGO_VERSION}
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c pthread
 
-MODULES =		lang/go
+MODULES =	lang/go
 
-MODGO_LDFLAGS =		-X main.Version=${MODGO_VERSION:S/v//}
+MODGO_LDFLAGS =	-X main.Version=${MODGO_VERSION:S/v//}
 
 .include "modules.inc"
 
