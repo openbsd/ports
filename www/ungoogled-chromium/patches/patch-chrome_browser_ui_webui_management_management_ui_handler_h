@@ -18,7 +18,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.h
  extern const char kManagementDeviceSignalsDisclosure[];
  #endif  // #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -114,7 +114,7 @@ class StatusCollector;
+@@ -117,7 +117,7 @@ class StatusCollector;
  class SystemLogUploader;
  }  // namespace policy
  
@@ -27,7 +27,7 @@ Index: chrome/browser/ui/webui/management/management_ui_handler.h
  namespace device_signals {
  class UserPermissionService;
  }  // namespace device_signals
-@@ -174,7 +174,7 @@ class ManagementUIHandler : public content::WebUIMessa
+@@ -177,7 +177,7 @@ class ManagementUIHandler : public content::WebUIMessa
    base::Value::List GetManagedWebsitesInfo(Profile* profile) const;
    base::Value::List GetApplicationsInfo(Profile* profile) const;
    virtual policy::PolicyService* GetPolicyService();

@@ -1,7 +1,7 @@
 Index: build/config/ozone.gni
 --- build/config/ozone.gni.orig
 +++ build/config/ozone.gni
-@@ -87,7 +87,15 @@ declare_args() {
+@@ -84,7 +84,15 @@ declare_args() {
      } else if (is_chromeos_lacros) {
        ozone_platform = "wayland"
        ozone_platform_wayland = true

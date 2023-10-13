@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			117.0.5938.149
+V=			118.0.5993.70
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -46,10 +46,11 @@ PERMIT_PACKAGE =	Yes
 SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.u=http://nerd.hu/distfiles/
 
-MODULES=	lang/python x11/qt5
+MODULES=	lang/clang lang/python x11/qt5
 MODQT5_DEPS=	No
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	ports-clang
+MODCLANG_VERSION =	16
 
 MODPY_RUNDEP=		No
 
@@ -262,6 +263,7 @@ pre-patch:
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
+	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	cd ${WRKSRC}/third_party/ffmpeg && \
 		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h

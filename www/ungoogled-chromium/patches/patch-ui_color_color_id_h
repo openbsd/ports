@@ -1,7 +1,7 @@
 Index: ui/color/color_id.h
 --- ui/color/color_id.h.orig
 +++ ui/color/color_id.h
-@@ -543,7 +543,7 @@
+@@ -567,7 +567,7 @@
    E_CPONLY(kColorNativeColor6) \
    E_CPONLY(kColorNativeBaseColor) \
    E_CPONLY(kColorNativeSecondaryColor)

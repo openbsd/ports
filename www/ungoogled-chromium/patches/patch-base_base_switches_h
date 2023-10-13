@@ -1,8 +1,8 @@
 Index: base/base_switches.h
 --- base/base_switches.h.orig
 +++ base/base_switches.h
-@@ -56,7 +56,7 @@ extern const char kEnableIdleTracing[];
- extern const char kForceFieldTrialParams[];
+@@ -62,7 +62,7 @@ extern const char kPackageVersionName[];
+ extern const char kPackageVersionCode[];
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

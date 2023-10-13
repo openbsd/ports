@@ -19,9 +19,9 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_connector_
    return IsDeviceTrustConnectorFeatureEnabled();
  #else
    return false;
-@@ -78,7 +78,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
- 
-   auto* service = new DeviceTrustConnectorService(profile->GetPrefs());
+@@ -80,7 +80,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
+   std::unique_ptr<DeviceTrustConnectorService> service =
+       std::make_unique<DeviceTrustConnectorService>(profile->GetPrefs());
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
