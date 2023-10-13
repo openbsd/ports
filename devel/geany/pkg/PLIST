@@ -22,6 +22,7 @@ include/geany/pluginutils.h
 include/geany/prefs.h
 include/geany/project.h
 include/geany/scintilla/
+include/geany/scintilla/Compat.h
 include/geany/scintilla/SciLexer.h
 include/geany/scintilla/Sci_Position.h
 include/geany/scintilla/Scintilla.h
@@ -43,12 +44,12 @@ include/geany/toolbar.h
 include/geany/ui_utils.h
 include/geany/utils.h
 lib/geany/
-lib/geany/classbuilder.so
-lib/geany/export.so
-lib/geany/filebrowser.so
-lib/geany/htmlchars.so
-lib/geany/saveactions.so
-lib/geany/splitwindow.so
+@so lib/geany/classbuilder.so
+@so lib/geany/export.so
+@so lib/geany/filebrowser.so
+@so lib/geany/htmlchars.so
+@so lib/geany/saveactions.so
+@so lib/geany/splitwindow.so
 lib/libgeany.la
 @lib lib/libgeany.so.${LIBgeany_VERSION}
 lib/pkgconfig/geany.pc
@@ -96,6 +97,7 @@ share/geany/filedefs/filetypes.Graphviz.conf
 share/geany/filedefs/filetypes.Groovy.conf
 share/geany/filedefs/filetypes.JSON.conf
 share/geany/filedefs/filetypes.Kotlin.conf
+share/geany/filedefs/filetypes.Meson.conf
 share/geany/filedefs/filetypes.Nim.conf
 share/geany/filedefs/filetypes.Scala.conf
 share/geany/filedefs/filetypes.Swift.conf
@@ -107,6 +109,7 @@ share/geany/filedefs/filetypes.ada
 share/geany/filedefs/filetypes.asciidoc
 share/geany/filedefs/filetypes.asm
 share/geany/filedefs/filetypes.batch
+share/geany/filedefs/filetypes.bibtex
 share/geany/filedefs/filetypes.c
 share/geany/filedefs/filetypes.caml
 share/geany/filedefs/filetypes.cmake
@@ -133,6 +136,7 @@ share/geany/filedefs/filetypes.haxe
 share/geany/filedefs/filetypes.html
 share/geany/filedefs/filetypes.java
 share/geany/filedefs/filetypes.javascript
+share/geany/filedefs/filetypes.julia
 share/geany/filedefs/filetypes.latex
 share/geany/filedefs/filetypes.lisp
 share/geany/filedefs/filetypes.lua
@@ -152,6 +156,7 @@ share/geany/filedefs/filetypes.restructuredtext
 share/geany/filedefs/filetypes.ruby
 share/geany/filedefs/filetypes.rust
 share/geany/filedefs/filetypes.sh
+share/geany/filedefs/filetypes.smalltalk
 share/geany/filedefs/filetypes.sql
 share/geany/filedefs/filetypes.tcl
 share/geany/filedefs/filetypes.txt2tags
@@ -258,6 +263,7 @@ share/locale/he/LC_MESSAGES/geany.mo
 share/locale/hi/LC_MESSAGES/geany.mo
 share/locale/hu/LC_MESSAGES/geany.mo
 share/locale/id/LC_MESSAGES/geany.mo
+share/locale/ie/LC_MESSAGES/geany.mo
 share/locale/it/LC_MESSAGES/geany.mo
 share/locale/ja/LC_MESSAGES/geany.mo
 share/locale/kk/LC_MESSAGES/geany.mo
