@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.98 2023/09/29 09:12:15 naddy Exp $
+# $OpenBSD: Config.pm,v 1.99 2023/10/13 08:57:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -506,7 +506,11 @@ sub read_exceptions_file($class, $state, $filename, $default = 'build')
 		}
 		for my $p (@properties) {
 			for my $v (@paths) {
-				&{$properties->{$p}}($v);
+				if ($p =~ m/(.*)\:(.*)/) {
+					&{$properties->{$1}}($v, $2);
+				} else {
+					&{$properties->{$p}}($v);
+				}
 			}
 		}
 	}
