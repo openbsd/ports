@@ -1,6 +1,6 @@
 COMMENT =		password recovery tool for PDF-files
 
-DISTNAME =		pdfcrack-0.19
+DISTNAME =		pdfcrack-0.20
 CATEGORIES =		security
 
 HOMEPAGE =		https://pdfcrack.sourceforge.net/
