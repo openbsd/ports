@@ -77,11 +77,15 @@ share/metainfo/
 share/metainfo/net.poedit.Poedit.appdata.xml
 share/poedit/
 share/poedit/icons/
-share/poedit/icons/CrowdinLogoTemplate.png
+share/poedit/icons/AccountCrowdin.png
+share/poedit/icons/AccountLocalazy.png
+share/poedit/icons/CrowdinLogo.png
+share/poedit/icons/CrowdinLogoDark.png
 share/poedit/icons/DownvoteTemplate.png
 share/poedit/icons/ExtractorsGNUgettext.png
 share/poedit/icons/ItemBookmarkTemplate.png
 share/poedit/icons/ItemCommentTemplate.png
+share/poedit/icons/LocalazyLogo.png
 share/poedit/icons/StatusError.png
 share/poedit/icons/StatusErrorBlack.png
 share/poedit/icons/StatusWarning.png
