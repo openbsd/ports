@@ -1,6 +1,6 @@
 COMMENT =	PostgreSQL module for Python
 
-MODPY_EGG_VERSION =	5.2.5
+MODPY_EGG_VERSION =	6.0
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
