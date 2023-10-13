@@ -1,22 +1,24 @@
 COMMENT =	book on TeX typesetting system for experienced audience
 CATEGORIES =	books
 
-V =		1.4
+V =		20230810
+EPOCH =		0
 PKGNAME =	tex-by-topic-${V}
-COMMIT =		c26c982f7f71
-DISTNAME =	${COMMIT}
-REVISION =	1
 
-HOMEPAGE =	http://eijkhout.net/texbytopic/texbytopic.html
+GH_ACCOUNT =	VictorEijkhout
+GH_PROJECT =	tex-by-topic
+GH_COMMIT =	8bbddee39e099a57517d16140a9dc16cf0cfd680
+DISTNAME =	tex-by-topic
+
+HOMEPAGE =	https://www.eijkhout.net/tex/tex-by-topic.html
 
 SITES =		https://bitbucket.org/VictorEijkhout/tex-by-topic/get/
 
 BUILD_DEPENDS =	print/texlive/base
 
-# GNU FDL
+# GNU FDL (See top of TeXbyTopic.tex)
 PERMIT_PACKAGE =	Yes
 
-WRKDIST =	${WRKDIR}/VictorEijkhout-tex-by-topic-${COMMIT}
 INSTALL_LOC =	${PREFIX}/share/doc/tex-by-topic
 NO_TEST =	Yes
 PKG_ARCH =	*

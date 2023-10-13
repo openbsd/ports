@@ -1,0 +1,35 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -18,9 +18,6 @@ pdf : bib
+ 	make onepass
+ 	makeindex TeXbyTopic
+ 	make onepass
+-	if [ "`whoami`" = "eijkhout" ] ; then \
+-	  cp TeXbyTopic.pdf ${HOME}/DropBox/SciComp/TeX ; \
+-	fi
+ 
+ .PHONY: clean
+ info ::
+@@ -32,18 +29,9 @@ clean :
+ ## rules just for the the maintainer of this repo
+ ##
+ info ::
+-	@if [ "$$( whoami )" = "eijkhout" ] ; then \
+-	    echo "make bib : copy bib file" \
+-	     && echo "make bundle" \
+-	 ; fi
++	true
+ .PHONY: bib bundle
+ bib :
+-	@if [ "$$( whoami )" = "eijkhout" ] ; then \
+-	    cp ${HOME}/Projects/TeX/bib/tex.bib . \
+-	; fi
++	true
+ bundle :
+-	@if [ "$$( whoami )" = "eijkhout" ] ; then \
+-	  tar --gzip -f texbytopic.tgz -c \
+-	    README TeXbyTopic.pdf \
+-	    TeXbyTopic.tex figflow.tex glossary.tex  tables.tex tex.bib \
+-	 ; fi
++	true
