@@ -1,8 +1,7 @@
-V =		23.07
+V =		23.10
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}
-REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://fna-xna.github.io/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -18,8 +17,7 @@ DIST_TUPLE += 	github flibitijibibo Vorbisfile-CS \
 SITES =		https://github.com/FNA-XNA/FNA/releases/download/${V}/
 
 EXTRACT_SUFX =	.zip
-MODULES =	dist-tuple \
-		lang/mono
+MODULES =	lang/mono
 RUN_DEPENDS =	audio/faudio \
 		devel/sdl2-image \
 		graphics/fna3d
