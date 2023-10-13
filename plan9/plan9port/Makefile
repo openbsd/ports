@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc powerpc64
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20230123
+DISTNAME =		plan9port-20230913
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		e2a141ae0952c2d28a9f500bb9da6dc72e57be3c
+GH_COMMIT =		984c2824e3569479bace65bdaf9e78a2eb36dd58
 
 CATEGORIES =		plan9
 
