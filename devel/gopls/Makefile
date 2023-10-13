@@ -1,12 +1,13 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.12.4
+MODGO_VERSION =	v0.13.2
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
 CATEGORIES =	devel
 
+# https://github.com/golang/tools/tree/master/gopls
 HOMEPAGE =	https://pkg.go.dev/golang.org/x/tools/gopls
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>

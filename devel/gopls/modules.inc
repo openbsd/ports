@@ -21,12 +21,12 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark	 v1.4.13 \
 	golang.org/x/exp		 v0.0.0-20220722155223-a9213eeb770e \
 	golang.org/x/exp/typeparams	 v0.0.0-20221212164502-fae10dda9338 \
-	golang.org/x/mod		 v0.11.0 \
-	golang.org/x/net		 v0.11.0 \
+	golang.org/x/mod		 v0.12.0 \
+	golang.org/x/net		 v0.12.0 \
 	golang.org/x/sync		 v0.3.0 \
-	golang.org/x/sys		 v0.9.0 \
-	golang.org/x/text		 v0.10.0 \
-	golang.org/x/tools		 v0.10.1-0.20230622221742-0622ad2359a7 \
+	golang.org/x/sys		 v0.10.0 \
+	golang.org/x/text		 v0.11.0 \
+	golang.org/x/tools		 v0.11.2-0.20230810185051-cc6b5804b8cf \
 	golang.org/x/vuln		 v0.0.0-20230110180137-6ad3e3d07815 \
 	golang.org/x/xerrors		 v0.0.0-20200804184101-5ec99f83aff1 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
