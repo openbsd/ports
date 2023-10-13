@@ -1,9 +1,6 @@
 COMMENT =	neo simple X Image Viewer
 
-GH_PROJECT =	nsxiv
-GH_ACCOUNT =	nsxiv
-GH_TAGNAME =	v31
-REVISION =	0
+DIST_TUPLE =	github nsxiv nsxiv v32 .
 
 CATEGORIES =	graphics x11
 
@@ -14,16 +11,14 @@ MAINTAINER =	Thim Cederlund <thim@cederlund.de>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Imlib2 X11 Xft c exif fontconfig gif lib/inotify/inotify
-WANTLIB += webp webpdemux
+WANTLIB += Imlib2 X11 Xft c exif fontconfig lib/inotify/inotify
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/libinotify \
 		graphics/imlib2 \
-		graphics/libexif \
-		graphics/libwebp
+		graphics/libexif
 
 CFLAGS +=	-I${X11BASE}/include \
 		-I${X11BASE}/include/freetype2 \
@@ -34,8 +29,7 @@ LDFLAGS +=	-L${X11BASE}/lib \
 		-L${X11BASE}/lib/freetype2 \
 		-L${LOCALBASE}/lib \
 		-L${LOCALBASE}/lib/inotify \
-		-linotify -Wl,-rpath ${LOCALBASE}/lib/inotify \
-		-lwebp
+		-linotify -Wl,-rpath ${LOCALBASE}/lib/inotify
 
 MAKE_FLAGS =	CC="${CC}" \
 		V=1 \
@@ -50,8 +44,7 @@ NO_TEST =	Yes
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/etc/nsxiv.1
 
-# Git errors break version.h build; this makes it fall back to a
-# hardcoded value
+# don't invoke git at all.
 pre-build:
 	ln -sf /usr/bin/true ${WRKDIR}/bin/git
 
