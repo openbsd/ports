@@ -5,6 +5,7 @@ DISTNAME =	libretro-genesis-plus-gx-1.7.5pl20201208
 GH_ACCOUNT =	ekeeke
 GH_PROJECT =	Genesis-Plus-GX
 GH_COMMIT =	58758aef3d8e12189899d67344db3b95c6379561
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -19,6 +20,8 @@ MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS} -fPIC"
 
 USE_GMAKE =		Yes
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
