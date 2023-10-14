@@ -24,7 +24,7 @@ WANTLIB += glibmm-2.4 gobject-2.0 gtk-3 gtkmm-3.0 harfbuzz intl
 WANTLIB += json-c m pango-1.0 pangocairo-1.0 pangomm-1.4 png sigc-2.0
 WANTLIB += z
 
-BUILD_DEPENDS = devel/gettext \
+BUILD_DEPENDS = devel/gettext,-runtime \
 		math/eigen3
 
 LIB_DEPENDS =	devel/json-c \

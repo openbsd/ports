@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 # uses pledge()
 WANTLIB=	c m iconv intl
-LIB_DEPENDS=	devel/gettext
+LIB_DEPENDS=	devel/gettext,-runtime
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-bash-completion-dir=${PREFIX}/share/bash-completion/completions/

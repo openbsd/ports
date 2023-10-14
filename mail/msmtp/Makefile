@@ -14,7 +14,7 @@ SITES =			https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		devel/libidn2 \
-			devel/gettext
+			devel/gettext,-runtime
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu

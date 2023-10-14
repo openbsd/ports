@@ -25,7 +25,7 @@ MODULES =	devel/meson
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/glib2 \
 		graphics/cgif \
 		graphics/jpeg \

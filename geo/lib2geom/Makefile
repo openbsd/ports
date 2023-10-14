@@ -36,7 +36,7 @@ BUILD_DEPENDS =	devel/boost \
 LIB_DEPENDS =	math/double-conversion \
 		devel/gsl \
 		graphics/cairo \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/glib2
 
 CONFIGURE_ARGS =	-D2GEOM_BOOST_PYTHON=NO \
