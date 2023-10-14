@@ -5,7 +5,7 @@ but we don't have ifunc support in the toolchain, so it fails to link.
 Index: src/common/darktable.h
 --- src/common/darktable.h.orig
 +++ src/common/darktable.h
-@@ -127,18 +127,7 @@ typedef unsigned int u_int;
+@@ -140,18 +140,7 @@ extern "C" {
  /* Create cloned functions for various CPU SSE generations */
  /* See for instructions https://hannes.hauswedell.net/post/2017/12/09/fmv/ */
  /* TL;DR : use only on SIMD functions containing low-level paralellized/vectorized loops */
@@ -22,5 +22,5 @@ Index: src/common/darktable.h
 -#define __DT_CLONE_TARGETS__
 -#endif
  
- /* Helper to force stack vectors to be aligned on 64 bits blocks to enable AVX2 */
- #define DT_IS_ALIGNED(x) __builtin_assume_aligned(x, 64)
+ typedef int32_t dt_imgid_t;
+ #define NO_IMGID (0)

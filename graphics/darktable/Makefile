@@ -2,8 +2,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 
-V=		4.4.1
-REVISION=	1
+V=		4.4.2
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
@@ -41,6 +40,10 @@ BUILD_DEPENDS=	graphics/p5-Image-ExifTool \
 		shells/bash \
 		sysutils/coreutils \
 		textproc/libxslt
+
+# used if present at configure time.
+# python.port.mk is not included, so hardcoded ,python3 not MODPY_FLAVOR
+BUILD_DEPENDS+=	devel/py-jsonschema,python3
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/p5-Image-ExifTool \

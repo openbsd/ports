@@ -142,6 +142,7 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/libmasks.so
 @so lib/darktable/plugins/lighttable/libmetadata.so
 @so lib/darktable/plugins/lighttable/libmetadata_view.so
+@so lib/darktable/plugins/lighttable/libmidi.so
 @so lib/darktable/plugins/lighttable/libmodule_toolbox.so
 @so lib/darktable/plugins/lighttable/libmodulegroups.so
 @so lib/darktable/plugins/lighttable/libnavigation.so
@@ -389,6 +390,7 @@ share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
+share/locale/tr/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
 share/locale/zh_CN/LC_MESSAGES/darktable.mo
 share/locale/zh_TW/LC_MESSAGES/darktable.mo
