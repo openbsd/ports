@@ -1,3 +1,10 @@
+ONLY_FOR_ARCHS =	amd64 aarch64 i386
+
+DPB_PROPERTIES =	parallel parallel2
+.if ${MACHINE_ARCH} == "i386"
+DPB_PROPERTIES +=	lonesome
+.endif
+
 QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
