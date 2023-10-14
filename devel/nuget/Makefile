@@ -1,5 +1,5 @@
 COMMENT =	package manager for .NET
-V =		6.3.1.1
+V =		6.6.1.2
 DISTNAME =	nuget-${V}.bin
 PKGNAME =	nuget-${V}
 CATEGORIES =	devel
