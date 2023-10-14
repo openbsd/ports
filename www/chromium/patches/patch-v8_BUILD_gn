@@ -16,8 +16,8 @@ Index: v8/BUILD.gn
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2358,6 +2366,12 @@ template("run_mksnapshot") {
-       ]
+@@ -2380,6 +2388,12 @@ template("run_mksnapshot") {
+       }
      }
  
 +    if (v8_current_cpu == "x86") {
@@ -26,9 +26,9 @@ Index: v8/BUILD.gn
 +      ]
 +    }
 +
-     if (v8_enable_builtins_profiling) {
-       args += [ "--turbo-profiling" ]
-     }
+     # This is needed to distinguish between generating code for the simulator
+     # and cross-compiling. The latter may need to run code on the host with the
+     # simulator but cannot use simulator-specific instructions.
 @@ -6111,7 +6125,7 @@ v8_component("v8_libbase") {
      }
    }
