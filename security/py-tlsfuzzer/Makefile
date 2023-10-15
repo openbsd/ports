@@ -1,13 +1,13 @@
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_EGG_VERSION =	20230825
+MODPY_EGG_VERSION =	20231014
 DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
-GH_COMMIT =		c4e30e759ef99eb5f7d52ba63550528b9c547928
+GH_COMMIT =		64b422b919d4b3dc4554fef9d84e439f134b3554
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
@@ -28,9 +28,6 @@ MODULES =		lang/python
 TEST_DEPENDS +=         devel/py-mock${MODPY_FLAVOR}
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/src
-
-pre-install:
-	cd ${WRKSRC}/lib/tlsfuzzer && ln -fs ../../tlsfuzzer/utils
 
 SCRIPTS_DIR = ${PREFIX}/share/tlsfuzzer/scripts
 post-install:
