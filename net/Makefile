@@ -46,7 +46,6 @@
      SUBDIR += cgterm
      SUBDIR += clic
      SUBDIR += cnupm
-     SUBDIR += coccinella
      SUBDIR += coredns
      SUBDIR += cppzmq
      SUBDIR += crawl

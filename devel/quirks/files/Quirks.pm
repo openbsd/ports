@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1558 2023/10/15 10:10:34 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1559 2023/10/15 18:49:59 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1858,6 +1858,7 @@ setup_obsolete_reason(
 	6 => 'ipcheck',
 # 7.5
 	56 => 'psi',
+	56 => 'coccinella',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
