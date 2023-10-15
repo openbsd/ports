@@ -6,7 +6,7 @@ COMMENT=	fast FTP and SFTP GUI client with a lot of features
 V=		3.65.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	fzclient-commonui-private	4.1
 SHARED_LIBS+=	fzclient-private		9.0
@@ -35,7 +35,7 @@ WANTLIB += pcre2-32 pcre2-8 pixman-1 png pugixml samplerate secret-1
 WANTLIB += sndio sqlite3 ssl tasn1 tiff unistring usbhid wx_baseu-3.2
 WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_xrc-3.2 xcb xcb-render xcb-shm
-WANTLIB += z zstd
+WANTLIB += z zstd xkbcommon
 
 SITES=		https://download.filezilla-project.org/client/
 EXTRACT_SUFX=	.tar.xz

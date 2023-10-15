@@ -5,7 +5,7 @@ EPOCH=			0
 CATEGORIES=		x11 graphics
 SITES=			${SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  wxsvg                4.1      # 15.6
 
@@ -32,7 +32,7 @@ WANTLIB += speex ssl swresample swscale theoradec theoraenc tiff
 WANTLIB += usbhid vorbis vorbisenc vpx wx_baseu-3.2 wx_baseu_net-3.2
 WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_core-3.2 wx_gtk3u_html-3.2
 WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 x264 x265 xcb xcb-render
-WANTLIB += xcb-shm xml2 xvidcore z zstd
+WANTLIB += xcb-shm xml2 xvidcore z zstd xkbcommon
 
 COMPILER=		base-clang ports-gcc base-gcc
 

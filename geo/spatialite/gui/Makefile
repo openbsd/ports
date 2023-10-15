@@ -1,7 +1,7 @@
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1
-REVISION =	4
+REVISION =	5
 PROJECT =	spatialite_gui
 
 LIB_DEPENDS +=	x11/wxWidgets>=3.0.4 \
@@ -28,7 +28,7 @@ WANTLIB += secret-1 sndio spatialite sqlite3 ssl tiff usbhid virtualpg
 WANTLIB += webp wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_html-3.2
 WANTLIB += wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 xcb xcb-render xcb-shm
-WANTLIB += xml2 z zstd
+WANTLIB += xml2 z zstd sharpyuv xkbcommon
 
 COMPILER =		base-clang ports-gcc base-gcc
 
