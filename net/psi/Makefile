@@ -38,6 +38,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 CONFIGURE_ARGS=		-DUSE_CCACHE=OFF -DUSE_HUNSPELL=OFF
 
+# use bundled version, archivers/minizip is ABI incompatible minizip-ng
+CONFIGURE_ARGS+=       -DCMAKE_DISABLE_FIND_PACKAGE_MINIZIP=ON
+
 # For QSettings to write its setup
 PORTHOME=		${WRKDIST}
 
