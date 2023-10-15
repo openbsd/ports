@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/httpbin-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/httpbin/VERSION
 lib/python${MODPY_VERSION}/site-packages/httpbin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/httpbin/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/httpbin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,9 +25,14 @@ lib/python${MODPY_VERSION}/site-packages/httpbin/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/httpbin/core.py
 lib/python${MODPY_VERSION}/site-packages/httpbin/filters.py
 lib/python${MODPY_VERSION}/site-packages/httpbin/helpers.py
+lib/python${MODPY_VERSION}/site-packages/httpbin/static/
+lib/python${MODPY_VERSION}/site-packages/httpbin/static/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/httpbin/structures.py
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/UTF-8-demo.txt
+lib/python${MODPY_VERSION}/site-packages/httpbin/templates/flasgger/
+lib/python${MODPY_VERSION}/site-packages/httpbin/templates/flasgger/index.html
+lib/python${MODPY_VERSION}/site-packages/httpbin/templates/footer.html
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/forms-post.html
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/httpbin.1.html
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/images/
@@ -39,3 +45,11 @@ lib/python${MODPY_VERSION}/site-packages/httpbin/templates/moby.html
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/sample.xml
 lib/python${MODPY_VERSION}/site-packages/httpbin/templates/trackingscripts.html
 lib/python${MODPY_VERSION}/site-packages/httpbin/utils.py
+lib/python${MODPY_VERSION}/site-packages/tests/
+lib/python${MODPY_VERSION}/site-packages/tests/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_httpbin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tests/${MODPY_PYCACHE}test_httpbin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_httpbin.py
