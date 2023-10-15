@@ -2,9 +2,11 @@ include/KF5/TextAddonsWidgets/
 include/KF5/TextAddonsWidgets/TextAddonsWidgets/
 include/KF5/TextAddonsWidgets/TextAddonsWidgets/LineEditCatchReturnKey
 include/KF5/TextAddonsWidgets/TextAddonsWidgets/SelectSpecialCharDialog
+include/KF5/TextAddonsWidgets/TextAddonsWidgets/SlideContainer
 include/KF5/TextAddonsWidgets/textaddonswidgets/
 include/KF5/TextAddonsWidgets/textaddonswidgets/lineeditcatchreturnkey.h
 include/KF5/TextAddonsWidgets/textaddonswidgets/selectspecialchardialog.h
+include/KF5/TextAddonsWidgets/textaddonswidgets/slidecontainer.h
 include/KF5/TextAddonsWidgets/textaddonswidgets/textaddonswidgets_export.h
 include/KF5/TextAddonsWidgets/textaddonswidgets_version.h
 include/KF5/TextAutoCorrectionCore/
@@ -38,10 +40,39 @@ include/KF5/TextAutoCorrectionWidgets/textautocorrectionwidgets/autocorrectionte
 include/KF5/TextAutoCorrectionWidgets/textautocorrectionwidgets/autocorrectionwidget.h
 include/KF5/TextAutoCorrectionWidgets/textautocorrectionwidgets/textautocorrectionwidgets_export.h
 include/KF5/TextAutoCorrectionWidgets/textautocorrectionwidgets_version.h
+include/KF5/TextCustomEditor/
+include/KF5/TextCustomEditor/TextCustomEditor/
+include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditFindBar
+include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditor
+include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditorWidget
+include/KF5/TextCustomEditor/TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowser
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowserFindBar
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowserWidget
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditFindBar
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditor
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditorWidget
+include/KF5/TextCustomEditor/TextCustomEditor/TextEditFindBarBase
+include/KF5/TextCustomEditor/TextCustomEditor/TextEditorCompleter
+include/KF5/TextCustomEditor/TextCustomEditor/TextGotoLineWidget
+include/KF5/TextCustomEditor/textcustomeditor/
+include/KF5/TextCustomEditor/textcustomeditor/plaintexteditfindbar.h
+include/KF5/TextCustomEditor/textcustomeditor/plaintexteditor.h
+include/KF5/TextCustomEditor/textcustomeditor/plaintexteditorwidget.h
+include/KF5/TextCustomEditor/textcustomeditor/plaintextsyntaxspellcheckinghighlighter.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowser.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowserfindbar.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowserwidget.h
+include/KF5/TextCustomEditor/textcustomeditor/richtexteditfindbar.h
+include/KF5/TextCustomEditor/textcustomeditor/richtexteditor.h
+include/KF5/TextCustomEditor/textcustomeditor/richtexteditorwidget.h
+include/KF5/TextCustomEditor/textcustomeditor/textcustomeditor_export.h
+include/KF5/TextCustomEditor/textcustomeditor/texteditfindbarbase.h
+include/KF5/TextCustomEditor/textcustomeditor/texteditorcompleter.h
+include/KF5/TextCustomEditor/textcustomeditor/textgotolinewidget.h
+include/KF5/TextCustomEditor/textcustomeditor_version.h
 include/KF5/TextEditTextToSpeech/
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/
-include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/AbstractTextToSpeechConfigInterface
-include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/AbstractTextToSpeechInterface
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeech
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeechActions
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeechConfigDialog
@@ -50,8 +81,6 @@ include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeechContainerWidge
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeechInterface
 include/KF5/TextEditTextToSpeech/TextEditTextToSpeech/TextToSpeechWidget
 include/KF5/TextEditTextToSpeech/textedittexttospeech/
-include/KF5/TextEditTextToSpeech/textedittexttospeech/abstracttexttospeechconfiginterface.h
-include/KF5/TextEditTextToSpeech/textedittexttospeech/abstracttexttospeechinterface.h
 include/KF5/TextEditTextToSpeech/textedittexttospeech/textedittexttospeech_export.h
 include/KF5/TextEditTextToSpeech/textedittexttospeech/texttospeech.h
 include/KF5/TextEditTextToSpeech/textedittexttospeech/texttospeechactions.h
@@ -207,6 +236,11 @@ lib/cmake/KF5TextAutoCorrectionWidgets/KF5TextAutoCorrectionWidgetsConfig.cmake
 lib/cmake/KF5TextAutoCorrectionWidgets/KF5TextAutoCorrectionWidgetsConfigVersion.cmake
 lib/cmake/KF5TextAutoCorrectionWidgets/KF5TextAutoCorrectionWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5TextAutoCorrectionWidgets/KF5TextAutoCorrectionWidgetsTargets.cmake
+lib/cmake/KF5TextCustomEditor/
+lib/cmake/KF5TextCustomEditor/KF5TextCustomEditorConfig.cmake
+lib/cmake/KF5TextCustomEditor/KF5TextCustomEditorConfigVersion.cmake
+lib/cmake/KF5TextCustomEditor/KF5TextCustomEditorTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF5TextCustomEditor/KF5TextCustomEditorTargets.cmake
 lib/cmake/KF5TextEditTextToSpeech/
 lib/cmake/KF5TextEditTextToSpeech/KF5TextEditTextToSpeechConfig.cmake
 lib/cmake/KF5TextEditTextToSpeech/KF5TextEditTextToSpeechConfigVersion.cmake
@@ -240,12 +274,14 @@ lib/cmake/KF5TextUtils/KF5TextUtilsTargets.cmake
 @lib lib/libKF5TextAddonsWidgets.so.${LIBKF5TextAddonsWidgets_VERSION}
 @lib lib/libKF5TextAutoCorrectionCore.so.${LIBKF5TextAutoCorrectionCore_VERSION}
 @lib lib/libKF5TextAutoCorrectionWidgets.so.${LIBKF5TextAutoCorrectionWidgets_VERSION}
+@lib lib/libKF5TextCustomEditor.so.${LIBKF5TextCustomEditor_VERSION}
 @lib lib/libKF5TextEditTextToSpeech.so.${LIBKF5TextEditTextToSpeech_VERSION}
 @lib lib/libKF5TextEmoticonsCore.so.${LIBKF5TextEmoticonsCore_VERSION}
 @lib lib/libKF5TextEmoticonsWidgets.so.${LIBKF5TextEmoticonsWidgets_VERSION}
 @lib lib/libKF5TextGrammarCheck.so.${LIBKF5TextGrammarCheck_VERSION}
 @lib lib/libKF5TextTranslator.so.${LIBKF5TextTranslator_VERSION}
 @lib lib/libKF5TextUtils.so.${LIBKF5TextUtils_VERSION}
+@so lib/qt5/plugins/designer/textcustomeditor.so
 @so lib/qt5/plugins/designer/texttranslatorwidgets5.so
 lib/qt5/plugins/kf5/translator/
 @so lib/qt5/plugins/kf5/translator/translator_bing.so
@@ -260,8 +296,10 @@ share/kf5/mkspecs/qt_TextEditTextToSpeech.pri
 share/kf5/mkspecs/qt_TextGrammarCheck.pri
 share/kf5/mkspecs/qt_TextTranslator.pri
 share/kf5/mkspecs/qt_textaddonswidgets.pri
+share/kf5/mkspecs/qt_textcustomeditor.pri
 share/kf5/mkspecs/qt_textemoticonscore.pri
 share/kf5/mkspecs/qt_textemoticonswidgets.pri
+share/kf5/mkspecs/qt_textutils.pri
 share/locale/ar/LC_MESSAGES/libtextautocorrection.mo
 share/locale/ar/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ar/LC_MESSAGES/libtextgrammarcheck.mo
@@ -270,22 +308,26 @@ share/locale/az/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/bg/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/ca/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/ca/LC_MESSAGES/libtextautocorrection.mo
+share/locale/ca/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/ca/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ca/LC_MESSAGES/libtextemoticons.mo
 share/locale/ca/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/ca/LC_MESSAGES/libtexttranslator.mo
 share/locale/ca@valencia/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/ca@valencia/LC_MESSAGES/libtextautocorrection.mo
+share/locale/ca@valencia/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ca@valencia/LC_MESSAGES/libtextemoticons.mo
 share/locale/ca@valencia/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/ca@valencia/LC_MESSAGES/libtexttranslator.mo
+share/locale/cs/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/cs/LC_MESSAGES/libtextautocorrection.mo
 share/locale/cs/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/cs/LC_MESSAGES/libtextemoticons.mo
 share/locale/cs/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/cs/LC_MESSAGES/libtexttranslator.mo
 share/locale/da/LC_MESSAGES/libtextgrammarcheck.mo
+share/locale/de/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/de/LC_MESSAGES/libtextautocorrection.mo
 share/locale/de/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/de/LC_MESSAGES/libtextemoticons.mo
@@ -296,13 +338,22 @@ share/locale/en_GB/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/en_GB/LC_MESSAGES/libtextemoticons.mo
 share/locale/en_GB/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/en_GB/LC_MESSAGES/libtexttranslator.mo
+share/locale/es/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/es/LC_MESSAGES/libtextautocorrection.mo
+share/locale/es/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/es/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/es/LC_MESSAGES/libtextemoticons.mo
 share/locale/es/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/es/LC_MESSAGES/libtexttranslator.mo
 share/locale/et/LC_MESSAGES/libtextgrammarcheck.mo
+share/locale/eu/LC_MESSAGES/libtextaddonswidgets.mo
+share/locale/eu/LC_MESSAGES/libtextautocorrection.mo
+share/locale/eu/LC_MESSAGES/libtextcustomeditor.mo
+share/locale/eu/LC_MESSAGES/libtextedittexttospeech.mo
+share/locale/eu/LC_MESSAGES/libtextemoticons.mo
 share/locale/eu/LC_MESSAGES/libtextgrammarcheck.mo
+share/locale/eu/LC_MESSAGES/libtexttranslator.mo
+share/locale/fi/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/fi/LC_MESSAGES/libtextautocorrection.mo
 share/locale/fi/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/fi/LC_MESSAGES/libtextemoticons.mo
@@ -310,6 +361,7 @@ share/locale/fi/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/fi/LC_MESSAGES/libtexttranslator.mo
 share/locale/fr/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/fr/LC_MESSAGES/libtextautocorrection.mo
+share/locale/fr/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/fr/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/fr/LC_MESSAGES/libtextemoticons.mo
 share/locale/fr/LC_MESSAGES/libtextgrammarcheck.mo
@@ -323,7 +375,9 @@ share/locale/ia/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ia/LC_MESSAGES/libtextemoticons.mo
 share/locale/ia/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/ia/LC_MESSAGES/libtexttranslator.mo
+share/locale/it/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/it/LC_MESSAGES/libtextautocorrection.mo
+share/locale/it/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/it/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/it/LC_MESSAGES/libtextemoticons.mo
 share/locale/it/LC_MESSAGES/libtextgrammarcheck.mo
@@ -335,6 +389,7 @@ share/locale/ka/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ka/LC_MESSAGES/libtextemoticons.mo
 share/locale/ka/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/ka/LC_MESSAGES/libtexttranslator.mo
+share/locale/ko/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/ko/LC_MESSAGES/libtextautocorrection.mo
 share/locale/ko/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/ko/LC_MESSAGES/libtextemoticons.mo
@@ -346,6 +401,7 @@ share/locale/lt/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/lt/LC_MESSAGES/libtexttranslator.mo
 share/locale/nl/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/nl/LC_MESSAGES/libtextautocorrection.mo
+share/locale/nl/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/nl/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/nl/LC_MESSAGES/libtextemoticons.mo
 share/locale/nl/LC_MESSAGES/libtextgrammarcheck.mo
@@ -356,7 +412,9 @@ share/locale/nn/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/nn/LC_MESSAGES/libtextemoticons.mo
 share/locale/nn/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/nn/LC_MESSAGES/libtexttranslator.mo
+share/locale/pl/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/pl/LC_MESSAGES/libtextautocorrection.mo
+share/locale/pl/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/pl/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/pl/LC_MESSAGES/libtextemoticons.mo
 share/locale/pl/LC_MESSAGES/libtextgrammarcheck.mo
@@ -377,12 +435,14 @@ share/locale/sk/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/sk/LC_MESSAGES/libtexttranslator.mo
 share/locale/sl/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/sl/LC_MESSAGES/libtextautocorrection.mo
+share/locale/sl/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/sl/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/sl/LC_MESSAGES/libtextemoticons.mo
 share/locale/sl/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/sl/LC_MESSAGES/libtexttranslator.mo
 share/locale/sv/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/sv/LC_MESSAGES/libtextautocorrection.mo
+share/locale/sv/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/sv/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/sv/LC_MESSAGES/libtextemoticons.mo
 share/locale/sv/LC_MESSAGES/libtextgrammarcheck.mo
@@ -393,15 +453,18 @@ share/locale/tr/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/tr/LC_MESSAGES/libtexttranslator.mo
 share/locale/uk/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/uk/LC_MESSAGES/libtextautocorrection.mo
+share/locale/uk/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/uk/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/uk/LC_MESSAGES/libtextemoticons.mo
 share/locale/uk/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/uk/LC_MESSAGES/libtexttranslator.mo
 share/locale/zh_CN/LC_MESSAGES/libtextaddonswidgets.mo
 share/locale/zh_CN/LC_MESSAGES/libtextautocorrection.mo
+share/locale/zh_CN/LC_MESSAGES/libtextcustomeditor.mo
 share/locale/zh_CN/LC_MESSAGES/libtextedittexttospeech.mo
 share/locale/zh_CN/LC_MESSAGES/libtextemoticons.mo
 share/locale/zh_CN/LC_MESSAGES/libtextgrammarcheck.mo
 share/locale/zh_CN/LC_MESSAGES/libtexttranslator.mo
 share/locale/zh_TW/LC_MESSAGES/libtextgrammarcheck.mo
 share/qlogging-categories5/ktextaddons.categories
+share/qlogging-categories5/ktextaddons.renamecategories
