@@ -3,12 +3,13 @@ COMMENT =	fast compression/decompression library
 GH_TAGNAME =	1.1.10
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
+REVISION =	0
 
 SHARED_LIBS =	snappy	3.0
 
 CATEGORIES =	archivers
 
-HOMEPAGE =	http://google.github.io/snappy/
+HOMEPAGE =	https://google.github.io/snappy/
 
 # BSD
 PERMIT_PACKAGE =	Yes
