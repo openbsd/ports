@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1557 2023/10/13 23:14:54 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.1558 2023/10/15 10:10:34 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1856,6 +1856,8 @@ setup_obsolete_reason(
 	3 => 'freetype',
 	3 => 'freetype-doc',
 	6 => 'ipcheck',
+# 7.5
+	56 => 'psi',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1927,6 +1929,7 @@ my $obsolete_message = {
 	53 => "upstream is dead, consider migrating to picom",
 	54 => "dependencies for recent versions can't be met (dotnet), consider switching to steamctl",
 	55 => "residualvm is dead upstream and has been merged into scummvm",
+	56 => "outdated, fails to establish TLS connections/cannot login, use dino, mcabber, gajim or pidgin",
 };
 
 # ->is_base_system($handle, $state):

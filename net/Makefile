@@ -539,7 +539,6 @@
      SUBDIR += profanity
      SUBDIR += prosody
      SUBDIR += proxychains-ng
-     SUBDIR += psi
      SUBDIR += ptpd
      SUBDIR += pure-ftpd
      SUBDIR += pure-ftpd,ldap
