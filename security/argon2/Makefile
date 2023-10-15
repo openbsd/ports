@@ -1,9 +1,11 @@
 COMMENT =	C implementation of Argon2 - password hashing function
 
+# GH_TAGNAME used in MAKE_FLAGS
 GH_ACCOUNT =	P-H-C
 GH_PROJECT =	phc-winner-argon2
 GH_TAGNAME =	20190702
 DISTNAME =	argon2-${GH_TAGNAME}
+REVISION =	0
 
 SHARED_LIBS +=	argon2                   0.0 # 0.0
 
@@ -17,7 +19,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MAKE_FLAGS =		CC="$(CC)" INSTALL="$(INSTALL)" OPTTARGET=none \
-			PREFIX="${TRUEPREFIX}" ABI_VERSION="${LIBargon2_VERSION}"
+			PREFIX="${TRUEPREFIX}" ABI_VERSION="${LIBargon2_VERSION}" \
+			ARGON2_VERSION="${GH_TAGNAME}"
 TEST_FLAGS =		OPTTARGET=none
 
 USE_GMAKE =		Yes
