@@ -1,2 +1,2 @@
-LibreTLS is a port of LibreSSL libtls but linked against OpenSSL 1.1.
+LibreTLS is a port of LibreSSL libtls but linked against OpenSSL 3.1.
 This port should only be used for testing purposes.
