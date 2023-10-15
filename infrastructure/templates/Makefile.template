@@ -103,7 +103,6 @@ SITES =		???
 #DISTFILES.sufx = ...
 #EXTRACT_ONLY =		???
 
-
 # Needs to be specified if tarball does not end with .tar.gz
 #EXTRACT_SUFX =		.tar.bz2
 
