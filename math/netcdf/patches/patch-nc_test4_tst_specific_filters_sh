@@ -1,0 +1,9 @@
+Index: nc_test4/tst_specific_filters.sh
+--- nc_test4/tst_specific_filters.sh.orig
++++ nc_test4/tst_specific_filters.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash 
++#!/usr/bin/env bash 
+ 
+ # Test the implementations of specific filters
+ # Also test nc_inq_filter_avail

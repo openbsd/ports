@@ -1,6 +1,6 @@
-Index: ncdap_test/tst_remote3.sh
---- ncdap_test/tst_remote3.sh.orig
-+++ ncdap_test/tst_remote3.sh
+Index: ncdump/testpathcvt.sh
+--- ncdump/testpathcvt.sh.orig
++++ ncdump/testpathcvt.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash

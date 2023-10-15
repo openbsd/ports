@@ -1,6 +1,6 @@
-Index: ncdap_test/tst_remote3.sh
---- ncdap_test/tst_remote3.sh.orig
-+++ ncdap_test/tst_remote3.sh
+Index: nc_test4/tst_bloscfail.sh
+--- nc_test4/tst_bloscfail.sh.orig
++++ nc_test4/tst_bloscfail.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/usr/bin/env bash

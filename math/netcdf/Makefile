@@ -4,11 +4,11 @@ V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		9.0 # 21.2
+SHARED_LIBS=	netcdf		10.0 # 21.2
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
@@ -17,12 +17,15 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += bz2 c crypto curl execinfo hdf5 hdf5_hl iconv lzma
-WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls pthread
-WANTLIB += ssl xml2 z zip zstd
+COMPILER=	base-clang ports-gcc base-gcc
+
+WANTLIB+=	${COMPILER_LIBCXX} blosc bz2 c crypto curl execinfo hdf5 hdf5_hl
+WANTLIB+=	iconv lz4 lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB+=	pthread ssl snappy xml2 z zip zstd
 
 # curl is needed for DAP support
-LIB_DEPENDS=		archivers/libzip \
+LIB_DEPENDS=		archivers/blosc \
+			archivers/libzip \
 			math/hdf5 \
 			net/curl \
 			textproc/libxml
@@ -41,6 +44,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--enable-netcdf-4 \
 			--enable-dap \
 			--prefix=${PREFIX}
+
+TEST_ENV=		CC=cc
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes

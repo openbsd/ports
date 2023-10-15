@@ -1,0 +1,9 @@
+Index: nc_test4/findplugin.in
+--- nc_test4/findplugin.in.orig
++++ nc_test4/findplugin.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ # Define a function that attempts to locate a
+ # plugin with a given canonical name.
