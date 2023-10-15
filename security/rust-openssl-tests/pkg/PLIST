@@ -1683,6 +1683,8 @@ share/rust-openssl-tests/modcargo-crates/${VER_regex}/LICENSE-APACHE
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/LICENSE-MIT
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/UNICODE.md
+share/rust-openssl-tests/modcargo-crates/${VER_regex}/bench/
+share/rust-openssl-tests/modcargo-crates/${VER_regex}/bench/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/record/
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/record/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_regex}/record/compile-test/
