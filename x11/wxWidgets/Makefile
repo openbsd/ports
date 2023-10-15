@@ -2,18 +2,14 @@ COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
 COMMENT-webview =	wxWebView class for wxWidgets
 
-V =			3.2.2.1
+V =			3.2.3
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
 
-REVISION-main =		0
-REVISION-media =	1
-REVISION-webview =	1
-
 CATEGORIES =		x11
-SITES =		https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
+SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -69,7 +65,8 @@ LIB_DEPENDS-main =	archivers/libmspack \
 			textproc/enchant2 \
 			textproc/gspell \
 			x11/gnome/libsecret \
-			x11/gtk+3
+			x11/gtk+3 \
+			x11/xkbcommon
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL GLU SDL2 SM X11 Xtst Xxf86vm
 WANTLIB-main += atk-1.0 c cairo cairo-gobject curl enchant-2 expat
@@ -77,6 +74,7 @@ WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB-main += intl jpeg lzma m mspack notify pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z execinfo
+WANTLIB-main += xkbcommon
 
 LIB_DEPENDS-media =	multimedia/gstreamer1/plugins-base \
 			multimedia/gstreamer1/plugins-bad \
@@ -89,6 +87,7 @@ WANTLIB-media += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 gthread-2.0
 WANTLIB-media += gtk-3 harfbuzz iconv intl jpeg lzma m notify pango-1.0
 WANTLIB-media += pangocairo-1.0 pangoft2-1.0 pcre2-32 png secret-1 tiff
 WANTLIB-media += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo gstplayer-1.0
+WANTLIB-media += xkbcommon
 
 LIB_DEPENDS-webview =	www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
@@ -99,7 +98,7 @@ WANTLIB-webview += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-webview += gspell-1 gthread-2.0 gtk-3 harfbuzz iconv intl javascriptcoregtk-4.0
 WANTLIB-webview += jpeg lzma m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-webview += pcre2-32 png secret-1 soup-2.4 tiff webkit2gtk-4.0
-WANTLIB-webview += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo
+WANTLIB-webview += wx_baseu-3.2 wx_gtk3u_core-3.2 z execinfo xkbcommon
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
