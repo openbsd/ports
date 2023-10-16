@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.99 2023/10/13 08:57:13 espie Exp $
+# $OpenBSD: Config.pm,v 1.100 2023/10/16 13:03:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,6 +23,7 @@ use v5.36;
 package DPB::Config;
 use DPB::User;
 use DPB::PortInfo;
+use File::Spec;
 
 sub setup_users($class, $state)
 {
@@ -174,11 +175,12 @@ sub parse_command_line($class, $state)
 	# reparse things properly now that we can chroot
 	my $backup;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $backup, $state->{fetch_cmd}) =
+	    $state->{distdir}, $state->{localbase}, $backup, 
+	    $state->{fetch_cmd}, $state->{portslockdir}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "SITE_BACKUP", "FETCH_CMD");
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", "SITE_BACKUP", "FETCH_CMD", "LOCKDIR");
 
     	if (!defined $state->{portspath}) {
 		$state->usage("Can't obtain vital information from the ports tree");
@@ -203,6 +205,7 @@ sub parse_command_line($class, $state)
 
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
+
 	$state->{logdir} = $state->expand_path($state->{logdir});
 
 	$state->{size_log} = "%f/build-stats/%a-size";
@@ -307,6 +310,10 @@ sub parse_command_line($class, $state)
 	$state->{record} = $state->expand_path($state->{record});
 	$state->{size_log} = $state->expand_path($state->{size_log});
 	$state->{lockdir} = $state->expand_path($state->{lockdir});
+	if (File::Spec->canonpath($state->{portslockdir}) eq
+		File::Spec->canonpath($state->{lockdir})) {
+		$state->fatal("Configuration error: ports and dpb shouldn't use the same lockdir");
+	}
 	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
