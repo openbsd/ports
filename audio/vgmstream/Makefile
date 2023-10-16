@@ -37,4 +37,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cli/vgmstream-cli ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/cli/vgmstream123 ${PREFIX}/bin
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
