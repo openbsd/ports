@@ -3,7 +3,7 @@ Remove libappindicator support.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -22,25 +22,18 @@ find_package(PkgConfig)
+@@ -24,25 +24,18 @@ find_package(Gettext)
  pkg_check_modules(gtk3 REQUIRED "gtk+-3.0 >= 3.22")
  pkg_check_modules(xinput REQUIRED "xi >= 1.3")
  pkg_check_modules(x11 REQUIRED x11)
@@ -29,7 +29,7 @@ Index: CMakeLists.txt
      ${xinput_LIBRARY_DIRS}
      ${x11_LIBRARY_DIRS}
  )
-@@ -62,7 +55,6 @@ add_executable(${target_name} ${sources})
+@@ -66,7 +59,6 @@ add_executable(${target_name} ${sources})
  
  target_link_libraries(${target_name}
      ${gtk3_LIBRARIES}

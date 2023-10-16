@@ -2,11 +2,9 @@ COMMENT =	draw annotations on X11
 
 GH_ACCOUNT =	bk138
 GH_PROJECT =	gromit-mpx
-GH_TAGNAME =	1.4.3
+GH_TAGNAME =	1.5.0
 
 CATEGORIES =	x11
-
-HOMEPAGE =	https://github.com/bk138/gromit-mpx
 
 MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 
@@ -20,6 +18,8 @@ WANTLIB += pango-1.0 pangocairo-1.0
 MODULES =	devel/cmake
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=share/examples
+
+BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

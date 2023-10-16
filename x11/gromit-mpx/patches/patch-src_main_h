@@ -1,10 +1,10 @@
 Remove libappindicator support.
 
-Index: src/gromit-mpx.h
---- src/gromit-mpx.h.orig
-+++ src/gromit-mpx.h
-@@ -28,11 +28,6 @@
- #include <glib.h>
+Index: src/main.h
+--- src/main.h.orig
++++ src/main.h
+@@ -29,11 +29,6 @@
+ #include <glib/gi18n.h>
  #include <gdk/gdk.h>
  #include <gtk/gtk.h>
 -#ifdef APPINDICATOR_IS_LEGACY
@@ -15,7 +15,7 @@ Index: src/gromit-mpx.h
  
  #define GROMIT_MOUSE_EVENTS ( GDK_BUTTON_MOTION_MASK | \
                                GDK_BUTTON_PRESS_MASK | \
-@@ -102,7 +97,6 @@ typedef struct
+@@ -99,7 +94,6 @@ typedef struct
  typedef struct
  {
    GtkWidget   *win;
