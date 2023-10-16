@@ -8,6 +8,8 @@
      SUBDIR += apertium-lex-tools
      SUBDIR += apertium-separable
      SUBDIR += apertium-streamparser
+     SUBDIR += apertium-recursive
+     SUBDIR += apertium-regtest
      SUBDIR += arabica
      SUBDIR += argparse-manpage
      SUBDIR += asciidoc
