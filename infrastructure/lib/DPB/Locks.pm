@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.56 2023/10/16 08:13:17 espie Exp $
+# $OpenBSD: Locks.pm,v 1.57 2023/10/16 12:42:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,8 +24,16 @@ sub new($class, $fh)
 	bless {fh => $fh}, $class;
 }
 
+my $field = {
+	map {($_, 1)}
+	(qw(dpb pid mem start end error status todo host tag parent locked path
+	    wanted needed nojunk cleaned))};
+
 sub write($self, $key, $value = undef)
 {
+	if (!defined $field->{$key}) {
+		DPB::Util->die("Field $key does not exist");
+	}
 	if (defined $value) {
 		print {$self->{fh}} "$key=$value\n";
 	} else {
@@ -126,7 +134,7 @@ sub parse_file($i, $locker, $fh)
 		} elsif (m/^(nojunk|cleaned)$/) {
 			$i->set_field($1, 1);
 		} else {
-			$i->set_bad("Parse error on $_");
+			$i->set_bad("Parse error on $_ at line $.");
 		}
 	}
 	$i->{host} //= DPB::Core::Local->hostname;
