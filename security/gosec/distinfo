@@ -606,7 +606,8 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20201110031124-69a78807bb2b.mod) =
 SHA256 (go_modules/golang.org/x/net/@v/v0.10.0.mod) = 07fiNv8J5jIr5IkXAhbgGNMiGGLxoFPctj5T6rhTPBc=
 SHA256 (go_modules/golang.org/x/net/@v/v0.14.0.mod) = J5QJ9uHSLmOn4Mk3QOYvDhLmTVOnzEi6MpGYxDOCvRI=
 SHA256 (go_modules/golang.org/x/net/@v/v0.16.0.mod) = y6YYS4uODVRWC/WmXxNszXanNMScBm7YA+twvQbBdpY=
-SHA256 (go_modules/golang.org/x/net/@v/v0.16.0.zip) = FLtSKaQ0fI3DLKGAPGg4kMM+5+YJ8dayVP1eZJT1d0o=
+SHA256 (go_modules/golang.org/x/net/@v/v0.17.0.mod) = y6YYS4uODVRWC/WmXxNszXanNMScBm7YA+twvQbBdpY=
+SHA256 (go_modules/golang.org/x/net/@v/v0.17.0.zip) = 2ZQo6Vr2/Y/cIyhdabj258UslkyZApXkUYNxjjPr61o=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.0.0-20180821212333-d2e6202438be.mod) = y7thjah9T5Q7VL/U9NOi//NhApjwT77rPbOIywdfNRo=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.0.0-20190226205417-e64efc72b421.mod) = hp9E5OzVzaUxZVEKMIUVZw3X7ckgBegHnKClyGRSmys=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.0.0-20190604053449-0f29369cfe45.mod) = hp9E5OzVzaUxZVEKMIUVZw3X7ckgBegHnKClyGRSmys=
@@ -876,7 +877,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpCuYufPNlG+cZrfUVo=
-SHA256 (gosec-v2.18.0.zip) = mr9lbWDno3RgcaTETWboKw0eIi0rIvOKTOQ6FDaQSu8=
+SHA256 (gosec-v2.18.1.zip) = RtcWfmszsyy1zlhNAoM+pPxmSNmCM46DXelCNOKEyrA=
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.mod) = 48
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.6.zip) = 8344
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -1485,7 +1486,8 @@ SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20201110031124-69a78807bb2b.mod) = 1
 SIZE (go_modules/golang.org/x/net/@v/v0.10.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.14.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.16.0.mod) = 155
-SIZE (go_modules/golang.org/x/net/@v/v0.16.0.zip) = 1823713
+SIZE (go_modules/golang.org/x/net/@v/v0.17.0.mod) = 155
+SIZE (go_modules/golang.org/x/net/@v/v0.17.0.zip) = 1824828
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.0.0-20180821212333-d2e6202438be.mod) = 27
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.0.0-20190226205417-e64efc72b421.mod) = 233
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.0.0-20190604053449-0f29369cfe45.mod) = 233
@@ -1755,4 +1757,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
-SIZE (gosec-v2.18.0.zip) = 200794
+SIZE (gosec-v2.18.1.zip) = 201259
