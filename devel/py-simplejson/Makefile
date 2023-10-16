@@ -1,6 +1,6 @@
 COMMENT=	JSON encoder/decoder
 
-MODPY_EGG_VERSION=	3.19.1
+MODPY_EGG_VERSION=	3.19.2
 DISTNAME=	simplejson-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -14,11 +14,9 @@ WANTLIB += ${MODPY_WANTLIB} pthread
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST_ARGS=	simplejson/tests
+MODPY_PYBUILD=	setuptools
 
-# security/floss which depends on this is still py2-only
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 .include <bsd.port.mk>
