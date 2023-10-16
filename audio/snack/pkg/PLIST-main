@@ -1,8 +1,8 @@
-lib/libsnackstub2.2.a
+@static-lib lib/libsnackstub2.2.a
 lib/tcl/snack/
-lib/tcl/snack/libsnack.so
-lib/tcl/snack/libsnackogg.so
-lib/tcl/snack/libsound.so
+@so lib/tcl/snack/libsnack.so
+@so lib/tcl/snack/libsnackogg.so
+@so lib/tcl/snack/libsound.so
 lib/tcl/snack/pkgIndex.tcl
 lib/tcl/snack/snack.tcl
 share/doc/snack/
@@ -17,6 +17,7 @@ share/doc/snack/SoundObj.html
 share/doc/snack/SoundProp.html
 share/doc/snack/SoundSamp.html
 share/doc/snack/SphereFile.txt
+@comment share/doc/snack/python-man.html
 share/doc/snack/tcl-man.html
 share/examples/snack/
 share/examples/snack/tcl/
