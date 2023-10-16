@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.67 2023/09/03 12:29:02 espie Exp $
+# $OpenBSD: Vars.pm,v 1.68 2023/10/16 07:55:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -105,6 +105,7 @@ sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors,
 
 	# here's the state machine that parses dump-vars output correctly
 	my @current = ();
+	my @messages = ();
 	my ($o, $info);
 	my $previous = '';
 	while(<$fh>) {
@@ -112,6 +113,7 @@ sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors,
 		chomp;
 		if (m/^\=\=\=\> .* skipped$/) {
 			print $log $_, "\n";
+			@messages = ();
 			next;
 		}
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
@@ -121,7 +123,10 @@ sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors,
 			if (defined $skip) {
 				$dir->add_to_subdirlist($skip);
 			}
-			$dir->break("exiting with an error");
+			$dir->break("exiting with an error:");
+			for my $l (@messages) {
+				$dir->break($l);
+			}
 			$h->{$dir} = $dir;
 			my $quicklog = $grabber->logger->append(
 			    $grabber->logger->log_pkgpath($dir));
@@ -148,6 +153,7 @@ sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors,
 			$category = $subdir;
 			$previous = '';
 			&$reset();
+			@messages = ();
 		} elsif (my ($pkgpath, $var, $value) =
 		    m/^(.*?)\.([A-Z][A-Za-z0-9_.]*)\=\s*(.*)\s*$/) {
 			undef $category;
@@ -179,6 +185,7 @@ sub grab_list($class, $core, $grabber, $subdirs, $skip, $ignore_errors,
 			print $log "Broken ", $dir->fullpkgpath, "\n";
 			&$reset();
 		} else {
+			push(@messages, $_);
 			print $log $_, "\n";
 		}
 	}
