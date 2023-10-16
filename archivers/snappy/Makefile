@@ -3,7 +3,7 @@ COMMENT =	fast compression/decompression library
 GH_TAGNAME =	1.1.10
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	snappy	3.0
 
@@ -24,6 +24,9 @@ MODULES =		devel/cmake
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
 			-DINSTALL_GTEST=OFF \
 			-DSNAPPY_BUILD_BENCHMARKS=OFF
+
+EXTRA_ports-gcc +=	-I${LOCALBASE}/include
+CXXFLAGS +=		${EXTRA_${CHOSEN_COMPILER}}
 
 # expects submodule/cannot use system library
 DIST_TUPLE =		github	google	googletest	e40661d89b051e9ef4eb8a2420b74bf78b39ef41 \
