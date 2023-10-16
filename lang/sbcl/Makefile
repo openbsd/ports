@@ -7,6 +7,7 @@ COMMENT =	high performance Common Lisp compiler
 V =		2.3.9
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -77,14 +78,6 @@ WANTLIB +=		pthread
 EXTRA_PARAMS +=		--without-sb-thread
 .endif
 
-# sb-simd is available on amd64 only
-COMMENT_SB_SIMD-${MACHINE_ARCH} ?=	"@comment "
-COMMENT_SB_SIMD-amd64	=
-COMMENT_SB_SIMD	?=	${COMMENT_SB_SIMD-${MACHINE_ARCH}}
-
-SUBST_VARS +=		COMMENT_SB_SIMD
-UPDATE_PLIST_ARGS +=	-c COMMENT_SB_SIMD
-
 BUILD_DEPENDS +=	print/texinfo
 LIB_DEPENDS +=		archivers/zstd
 TEST_DEPENDS +=		devel/capstone/main \
@@ -106,14 +99,14 @@ do-configure:
 		>${WRKSRC}/version.lisp-expr
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	umask 022 && cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		/bin/sh ./make.sh \
 			--prefix="${PREFIX}" \
 			--xc-host="${XCHOST_CMD}" \
 			--with-sb-core-compression \
 			--with-sb-xref-for-internals \
 			${EXTRA_PARAMS}
-	cd ${WRKSRC}/doc/manual/ && ${SETENV} ${MAKE_ENV} \
+	umask 022 && cd ${WRKSRC}/doc/manual/ && ${SETENV} ${MAKE_ENV} \
 		${GMAKE} info
 
 do-install:
