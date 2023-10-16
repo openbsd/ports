@@ -5,6 +5,7 @@
      SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
      SUBDIR += epte
+     SUBDIR += freedict
      SUBDIR += gamgi
      SUBDIR += gtypist
      SUBDIR += verbiste
