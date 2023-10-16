@@ -1,6 +1,6 @@
 COMMENT =		ORM (Object Relational Manager) for Python
 
-MODPY_EGG_VERSION =	3.10.1
+MODPY_EGG_VERSION =	3.10.2
 DISTNAME =		SQLObject-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlobject-${MODPY_EGG_VERSION}
 
