@@ -1,2 +1,10 @@
 Oniguruma is a BSD licensed regular expression library that supports a
-variety of character encodings.
+variety of character encodings:
+
+ASCII, UTF-8, UTF-16BE, UTF-16LE, UTF-32BE, UTF-32LE, EUC-JP, EUC-TW,
+EUC-KR, EUC-CN, Shift_JIS, Big5, GB18030, KOI8-R, CP1251, ISO-8859-1,
+ISO-8859-2, ISO-8859-3, ISO-8859-4, ISO-8859-5, ISO-8859-6, ISO-8859-7,
+ISO-8859-8, ISO-8859-9, ISO-8859-10, ISO-8859-11, ISO-8859-13,
+ISO-8859-14, ISO-8859-15, ISO-8859-16
+
+Character encoding can be specified per regular expression object.
