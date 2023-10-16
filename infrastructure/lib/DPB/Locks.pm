@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.55 2023/05/06 05:20:31 espie Exp $
+# $OpenBSD: Locks.pm,v 1.56 2023/10/16 08:13:17 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -40,9 +40,13 @@ sub close($self)
 }
 
 package DPB::LockInfo;
-sub new($class, $filename, $logger)
+sub new($class, $filename, $logger, $error = undef)
 {
-	bless { filename => $filename, logger => $logger}, $class;
+	my $o = bless { filename => $filename, logger => $logger }, $class;
+	if (defined $error) {
+		$o->{error} = $error;
+	}
+	return $o;
 }
 
 sub fullpkgpath($self)
@@ -130,7 +134,7 @@ sub parse_file($i, $locker, $fh)
 
 package DPB::LockInfo::Bad;
 our @ISA = qw(DPB::LockInfo);
-sub is_bad($) { 1 }
+sub is_bad($self) { $self->{parseerror} || $self->{error} || 1 }
 
 package DPB::Locks;
 our @ISA = (qw(DPB::UserProxy));
@@ -172,7 +176,7 @@ sub get_info_from_file($self, $f)
 	if (defined $fh) {
 		return $self->get_info_from_fh($fh, $f);
 	} else {
-		return DPB::LockInfo::Bad->new($f, $self->{logger});
+		return DPB::LockInfo::Bad->new($f, $self->{logger}, $!);
 	}
 }
 
@@ -214,8 +218,9 @@ sub clean_old_locks($self, $state)
 	# first we get all live locks that pertain to us a a dpb host
 	$self->scan_lockdir(
 	    sub($i) {
-		if ($i->is_bad) {
-			push @problems, $i->{filename};
+	    	my $e = $i->is_bad;
+		if ($e) {
+			push(@problems, "$i->{filename} ($e)");
 			return;
 		}
 		if (!$i->{same_host} || defined $i->{errored}) {
@@ -256,8 +261,8 @@ sub clean_old_locks($self, $state)
 	# just in case there are weird locks in there
 	if (@problems) {
 		$state->say("Problematic lockfiles I can't parse:\n\t#1\n".
-			"Waiting for ten seconds",
-			join(' ', @problems));
+		    "Waiting for ten seconds",
+		    join(' ', @problems));
 		sleep 10;
 		goto START;
 	}
