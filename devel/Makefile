@@ -1579,7 +1579,6 @@
      SUBDIR += py-sh,python3
      SUBDIR += py-simpleeval,python3
      SUBDIR += py-simplegeneric,python3
-     SUBDIR += py-simplejson
      SUBDIR += py-simplejson,python3
      SUBDIR += py-sip,python3
      SUBDIR += py-six
