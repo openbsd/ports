@@ -1,6 +1,6 @@
 COMMENT =	extract data from Python stack frames and tracebacks
 
-MODPY_EGG_VERSION =	0.6.2
+MODPY_EGG_VERSION =	0.6.3
 
 DISTNAME =	stack_data-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
