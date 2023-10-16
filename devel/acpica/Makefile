@@ -11,6 +11,9 @@ HOMEPAGE =		https://acpica.org/
 # BSD-ish (or GPLv2 or Intel's own license: triple-licensed)
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =		c pthread
 
 SITES =			https://downloadmirror.intel.com/783534/
