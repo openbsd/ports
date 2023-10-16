@@ -1,3 +1,4 @@
+@conflict gcr-<3.41.1p3
 @bin bin/gcr-viewer-gtk4
 include/gck-2/
 include/gck-2/gck/
@@ -39,6 +40,7 @@ lib/girepository-1.0/Gcr-4.typelib
 @lib lib/libgcr-4.so.${LIBgcr-4_VERSION}
 lib/pkgconfig/gck-2.pc
 lib/pkgconfig/gcr-4.pc
+@bin libexec/gcr-ssh-agent
 @bin libexec/gcr4-ssh-askpass
 share/doc/gck-2/
 share/doc/gck-2/RedHatDisplay-Black.woff

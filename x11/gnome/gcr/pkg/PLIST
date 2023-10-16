@@ -76,7 +76,6 @@ lib/pkgconfig/gcr-3.pc
 lib/pkgconfig/gcr-base-3.pc
 lib/pkgconfig/gcr-ui-3.pc
 @bin libexec/gcr-prompter
-@bin libexec/gcr-ssh-agent
 @bin libexec/gcr-ssh-askpass
 share/GConf/
 share/GConf/gsettings/
@@ -540,6 +539,7 @@ share/doc/gcr-3/enum.SystemPrompterMode.html
 share/doc/gcr-3/flags.CertificateChainFlags.html
 share/doc/gcr-3/flags.ColumnFlags.html
 share/doc/gcr-3/fonts.css
+share/doc/gcr-3/func.CERTIFICATE_MIXIN_IMPLEMENT_COMPARABLE.html
 share/doc/gcr-3/func.CHECK_VERSION.html
 share/doc/gcr-3/func.data_error_get_domain.html
 share/doc/gcr-3/func.fingerprint_from_attributes.html
