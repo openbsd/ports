@@ -173,6 +173,7 @@
      SUBDIR += komi
      SUBDIR += late
      SUBDIR += lbreakout2
+     SUBDIR += legendary
      SUBDIR += lgeneral
      SUBDIR += libcsteamworks
      SUBDIR += liberalcrimesquad
