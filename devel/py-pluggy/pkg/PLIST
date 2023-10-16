@@ -28,3 +28,4 @@ lib/python${MODPY_VERSION}/site-packages/pluggy/_manager.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_result.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_tracing.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_version.py
+lib/python${MODPY_VERSION}/site-packages/pluggy/py.typed
