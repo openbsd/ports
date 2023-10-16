@@ -1,10 +1,9 @@
 COMMENT =		Python subprocess interface
 
-MODPY_EGG_VERSION =	1.14.3
+MODPY_EGG_VERSION =	2.0.6
 DISTNAME =		sh-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
 
 HOMEPAGE =		https://github.com/amoffat/sh
 

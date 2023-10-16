@@ -7,5 +7,4 @@ lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}.dist-info/LICEN
 lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sh.py
