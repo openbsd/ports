@@ -1,0 +1,5 @@
+Apertium-recursive is an alternative to apertium-transfer,
+apertium-interchunk, and apertium-postchunk. It uses a GLR parser rather
+than chunking and so can apply rules recursively. Rules can be written in a
+format almost identical to that of apertium-transfer or in a somewhat
+Yacc-like format created for this purpose.

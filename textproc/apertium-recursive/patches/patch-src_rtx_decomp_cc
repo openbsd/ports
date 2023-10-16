@@ -1,0 +1,23 @@
+Index: src/rtx_decomp.cc
+--- src/rtx_decomp.cc.orig
++++ src/rtx_decomp.cc
+@@ -8,6 +8,7 @@
+ #include <fstream>
+ #include <cstring>
+ #include <cstdio>
++#include <unistd.h>
+ 
+ void endProgram(char *name)
+ {
+@@ -215,6 +216,11 @@ void writeRule(wstring rule, FILE* out)
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio wpath rpath cpath", NULL) == -1)
++  {
++    wcerr << "pledge" << endl;
++    exit(EXIT_FAILURE);
++  }
+ #if HAVE_GETOPT_LONG
+   static struct option long_options[]=
+     {

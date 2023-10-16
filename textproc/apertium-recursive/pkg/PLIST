@@ -1,0 +1,8 @@
+bin/apertium-validate-trx
+@bin bin/random-path
+@bin bin/rtx-comp
+@bin bin/rtx-decomp
+@bin bin/rtx-proc
+lib/pkgconfig/apertium-recursive.pc
+share/apertium-recursive/
+share/apertium-recursive/trx.dtd
