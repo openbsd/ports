@@ -1,0 +1,12 @@
+bin/apertium-regtest
+share/apertium-regtest/
+share/apertium-regtest/apertium-regtest.py
+share/apertium-regtest/static/
+share/apertium-regtest/static/bootstrap.css
+share/apertium-regtest/static/bootstrap.js
+share/apertium-regtest/static/diff.js
+share/apertium-regtest/static/index.html
+share/apertium-regtest/static/jquery.js
+share/apertium-regtest/static/regtest.css
+share/apertium-regtest/static/regtest.js
+share/pkgconfig/apertium-regtest.pc
