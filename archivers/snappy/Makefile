@@ -22,6 +22,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
+			-DINSTALL_GTEST=OFF \
 			-DSNAPPY_BUILD_BENCHMARKS=OFF
 
 # expects submodule/cannot use system library
