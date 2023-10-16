@@ -47,6 +47,8 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
+# mach uses pkg_resources
+BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xcursor.5 Xdamage.4 Xfixes.6 Xi.12 Xrender.6
