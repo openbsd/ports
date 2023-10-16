@@ -5,9 +5,9 @@ icinga-web2/modules/director/.github/
 icinga-web2/modules/director/.github/ISSUE_TEMPLATE.md
 icinga-web2/modules/director/.github/workflows/
 icinga-web2/modules/director/.github/workflows/L10n-update.yml
+icinga-web2/modules/director/.github/workflows/php.yml
 icinga-web2/modules/director/.gitignore
 icinga-web2/modules/director/.gitlab-ci.yml
-icinga-web2/modules/director/.travis.yml
 icinga-web2/modules/director/LICENSE
 icinga-web2/modules/director/README.md
 icinga-web2/modules/director/application/
@@ -282,6 +282,14 @@ icinga-web2/modules/director/doc/screenshot/director/74_self-service-api/
 icinga-web2/modules/director/doc/screenshot/director/74_self-service-api/7401-director_self-service-dashboard.png
 icinga-web2/modules/director/doc/screenshot/director/74_self-service-api/7402-director_self-service-choose-source.png
 icinga-web2/modules/director/doc/screenshot/director/74_self-service-api/7403-director_self-service-settings.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-01-cidr_based_filters.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-02-wrap_startup_log_lines.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-03-template_usage.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-04-upload_basket_snapshot.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-05-notification_user-var.png
+icinga-web2/modules/director/doc/screenshot/director/82_changelog/v1.11.0/82-1.11.0-06-notification_user-var_rendered.png
 icinga-web2/modules/director/doc/screenshot/director/93_testing/
 icinga-web2/modules/director/doc/screenshot/director/93_testing/931_director_testing_duration.png
 icinga-web2/modules/director/doc/screenshot/director/93_testing/932_director_testing_output_testdox.png
@@ -295,6 +303,10 @@ icinga-web2/modules/director/library/Director/Application/
 icinga-web2/modules/director/library/Director/Application/Dependency.php
 icinga-web2/modules/director/library/Director/Application/DependencyChecker.php
 icinga-web2/modules/director/library/Director/Application/MemoryLimit.php
+icinga-web2/modules/director/library/Director/Auth/
+icinga-web2/modules/director/library/Director/Auth/MonitoringRestriction.php
+icinga-web2/modules/director/library/Director/Auth/Permission.php
+icinga-web2/modules/director/library/Director/Auth/Restriction.php
 icinga-web2/modules/director/library/Director/CheckPlugin/
 icinga-web2/modules/director/library/Director/CheckPlugin/Check.php
 icinga-web2/modules/director/library/Director/CheckPlugin/CheckResult.php
@@ -429,6 +441,7 @@ icinga-web2/modules/director/library/Director/Data/HostServiceLoader.php
 icinga-web2/modules/director/library/Director/Data/ImportExportDeniedProperties.php
 icinga-web2/modules/director/library/Director/Data/InvalidDataException.php
 icinga-web2/modules/director/library/Director/Data/Json.php
+icinga-web2/modules/director/library/Director/Data/ObjectImporter.php
 icinga-web2/modules/director/library/Director/Data/PropertiesFilter/
 icinga-web2/modules/director/library/Director/Data/PropertiesFilter.php
 icinga-web2/modules/director/library/Director/Data/PropertiesFilter/ArrayCustomVariablesFilter.php
@@ -468,6 +481,7 @@ icinga-web2/modules/director/library/Director/Db/Branch/MergeErrorDeleteMissingO
 icinga-web2/modules/director/library/Director/Db/Branch/MergeErrorModificationForMissingObject.php
 icinga-web2/modules/director/library/Director/Db/Branch/MergeErrorRecreateOnMerge.php
 icinga-web2/modules/director/library/Director/Db/Branch/PlainObjectPropertyDiff.php
+icinga-web2/modules/director/library/Director/Db/Branch/PreferredBranchSupport.php
 icinga-web2/modules/director/library/Director/Db/Branch/UuidLookup.php
 icinga-web2/modules/director/library/Director/Db/Cache/
 icinga-web2/modules/director/library/Director/Db/Cache/CustomVariableCache.php
@@ -491,6 +505,7 @@ icinga-web2/modules/director/library/Director/DirectorObject/
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/Basket.php
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/BasketContent.php
+icinga-web2/modules/director/library/Director/DirectorObject/Automation/BasketDiff.php
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/BasketSnapshot.php
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/BasketSnapshotFieldResolver.php
 icinga-web2/modules/director/library/Director/DirectorObject/Automation/CompareBasketObject.php
@@ -512,6 +527,10 @@ icinga-web2/modules/director/library/Director/Exception/JsonException.php
 icinga-web2/modules/director/library/Director/Exception/NestingError.php
 icinga-web2/modules/director/library/Director/Field/
 icinga-web2/modules/director/library/Director/Field/FieldSpec.php
+icinga-web2/modules/director/library/Director/Field/FormFieldSuggestion.php
+icinga-web2/modules/director/library/Director/Filter/
+icinga-web2/modules/director/library/Director/Filter/CidrExpression.php
+icinga-web2/modules/director/library/Director/Filter/FilterEnrichment.php
 icinga-web2/modules/director/library/Director/Health.php
 icinga-web2/modules/director/library/Director/Hook/
 icinga-web2/modules/director/library/Director/Hook/BranchSupportHook.php
@@ -549,13 +568,15 @@ icinga-web2/modules/director/library/Director/Import/PurgeStrategy/PurgeNothingP
 icinga-web2/modules/director/library/Director/Import/PurgeStrategy/PurgeStrategy.php
 icinga-web2/modules/director/library/Director/Import/Sync.php
 icinga-web2/modules/director/library/Director/Import/SyncUtils.php
+icinga-web2/modules/director/library/Director/Integration/
+icinga-web2/modules/director/library/Director/Integration/MonitoringModule/
+icinga-web2/modules/director/library/Director/Integration/MonitoringModule/Monitoring.php
 icinga-web2/modules/director/library/Director/Job/
 icinga-web2/modules/director/library/Director/Job/ConfigJob.php
 icinga-web2/modules/director/library/Director/Job/HousekeepingJob.php
 icinga-web2/modules/director/library/Director/Job/ImportJob.php
 icinga-web2/modules/director/library/Director/Job/SyncJob.php
 icinga-web2/modules/director/library/Director/KickstartHelper.php
-icinga-web2/modules/director/library/Director/Monitoring.php
 icinga-web2/modules/director/library/Director/Objects/
 icinga-web2/modules/director/library/Director/Objects/DirectorActivityLog.php
 icinga-web2/modules/director/library/Director/Objects/DirectorDatafield.php
@@ -618,7 +639,6 @@ icinga-web2/modules/director/library/Director/Objects/IcingaUserField.php
 icinga-web2/modules/director/library/Director/Objects/IcingaUserGroup.php
 icinga-web2/modules/director/library/Director/Objects/IcingaVar.php
 icinga-web2/modules/director/library/Director/Objects/IcingaZone.php
-icinga-web2/modules/director/library/Director/Objects/ImportExportHelper.php
 icinga-web2/modules/director/library/Director/Objects/ImportRowModifier.php
 icinga-web2/modules/director/library/Director/Objects/ImportRun.php
 icinga-web2/modules/director/library/Director/Objects/ImportSource.php
@@ -733,7 +753,6 @@ icinga-web2/modules/director/library/Director/Web/Controller/Extension/CoreApi.p
 icinga-web2/modules/director/library/Director/Web/Controller/Extension/DirectorDb.php
 icinga-web2/modules/director/library/Director/Web/Controller/Extension/ObjectRestrictions.php
 icinga-web2/modules/director/library/Director/Web/Controller/Extension/RestApi.php
-icinga-web2/modules/director/library/Director/Web/Controller/Extension/SingleObjectApiHandler.php
 icinga-web2/modules/director/library/Director/Web/Controller/ObjectController.php
 icinga-web2/modules/director/library/Director/Web/Controller/ObjectsController.php
 icinga-web2/modules/director/library/Director/Web/Controller/TemplateController.php
@@ -828,6 +847,7 @@ icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableEndpoint.php
 icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableHost.php
 icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableHostTemplateChoice.php
 icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableService.php
+icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableSetMembers.php
 icinga-web2/modules/director/library/Director/Web/Table/ObjectsTableZone.php
 icinga-web2/modules/director/library/Director/Web/Table/PropertymodifierTable.php
 icinga-web2/modules/director/library/Director/Web/Table/QuickTable.php
@@ -879,6 +899,8 @@ icinga-web2/modules/director/library/Director/Web/Widget/UnorderedList.php
 icinga-web2/modules/director/library/Director/Web/Window.php
 icinga-web2/modules/director/module.info
 icinga-web2/modules/director/phpcs.xml
+icinga-web2/modules/director/phpstan-baseline.neon
+icinga-web2/modules/director/phpstan.neon
 icinga-web2/modules/director/phpunit.xml
 icinga-web2/modules/director/public/
 icinga-web2/modules/director/public/css/
@@ -1036,6 +1058,10 @@ icinga-web2/modules/director/schema/mysql-migrations/upgrade_178.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_179.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_180.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_182.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_183.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_184.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_186.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_187.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_63.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_64.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_65.sql
@@ -1159,6 +1185,10 @@ icinga-web2/modules/director/schema/pgsql-migrations/upgrade_179.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_180.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_181.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_182.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_183.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_184.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_186.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_187.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_77.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_78.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_79.sql
@@ -1250,7 +1280,5 @@ icinga-web2/modules/director/test/php/library/Director/Resolver/TemplateTreeTest
 icinga-web2/modules/director/test/php/library/Director/Restriction/
 icinga-web2/modules/director/test/php/library/Director/Restriction/MatchingFilterTest.php
 icinga-web2/modules/director/test/phpunit-compat.php
-icinga-web2/modules/director/test/setup_vendor.sh
-icinga-web2/modules/director/test/travis-prepare.sh
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}
