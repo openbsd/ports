@@ -1,0 +1,12 @@
+Legendary is an open-source game launcher that can download and install games
+from the Epic Games platform on Linux, macOS, Windows, and of course OpenBSD.
+
+Features:
+- Authenticating with Epic's service
+- Downloading and installing your games and their DLC
+- Delta patching/updating of installed games
+- Launching games with online authentication (for multiplayer/DRM)
+- Syncing cloud saves (compatible with EGL)
+- Running games with WINE on Linux/macOS
+- Importing/Exporting installed games from/to the Epic Games Launcher
+  (unsupported on OpenBSD)
