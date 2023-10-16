@@ -147,10 +147,12 @@ CONFIGURE_ARGS +=	-DUSE_THIN_ARCHIVES=FALSE
 DEBUG =			-g1
 .endif
 
-.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "powerpc"
 # Don't make LLVM run out of memory
-DPB_PROPERTIES =       lonesome
+DPB_PROPERTIES =	lonesome
 LDFLAGS +=		-Wl,--no-keep-memory
+.elif ${MACHINE_ARCH} == "i386"
+DPB_PROPERTIES =	parallel parallel2 lonesome
 .endif
 
 FLAVORS =		webkitgtk41 webkitgtk60
