@@ -1,0 +1,16 @@
+https://github.com/DaveDavenport/gpx-viewer/commit/c8664e489c7d3982420a505d2bebfbb3bfe8e250
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -47,6 +47,10 @@ gpx_deps = [
+ 	meson.get_compiler('c').find_library('m'),
+ ]
+ 
++if dependency ('champlain-0.12', version: '>=0.12.21', required: false).found()
++  add_project_arguments('-D', 'CHAMPLAIN_0_12_21', language: 'vala')
++endif
++
+ subdir('libgpx')
+ subdir('src')
+ 

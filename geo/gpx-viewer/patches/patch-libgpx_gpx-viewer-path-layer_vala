@@ -1,0 +1,17 @@
+https://github.com/DaveDavenport/gpx-viewer/commit/c8664e489c7d3982420a505d2bebfbb3bfe8e250
+
+Index: libgpx/gpx-viewer-path-layer.vala
+--- libgpx/gpx-viewer-path-layer.vala.orig
++++ libgpx/gpx-viewer-path-layer.vala
+@@ -256,7 +256,11 @@ namespace Gpx.Viewer
+ 		ulong view_relocate_handler_id = 0U;
+ 		ulong view_latitude_handler_id = 0U;
+ 
++#if CHAMPLAIN_0_12_21
++		public override void set_view (Champlain.View? view)
++#else
+ 		public override void set_view (Champlain.View view)
++#endif
+ 		{
+ 			if (this.view != null) {
+ 				this.view.disconnect (view_relocate_handler_id);
