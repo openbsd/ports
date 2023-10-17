@@ -13,6 +13,8 @@ CATEGORIES?=	security net
 
 HOMEPAGE?=	https://www.openssl.org/
 
+MAINTAINER=	Theo Buehler <tb@openbsd.org>
+
 # OpenSSL
 PERMIT_PACKAGE?=	Yes
 

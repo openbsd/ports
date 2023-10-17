@@ -7,6 +7,7 @@ USE_NOEXECONLY =	Yes
 V=		3.1.3
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.1,<3.2
+REVISION=	0
 
 SHLIBVER=	15.1
 SHARED_LIBS=	crypto ${SHLIBVER} \
