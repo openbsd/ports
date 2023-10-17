@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.112 2023/02/19 15:01:12 sdk Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.113 2023/10/17 22:19:34 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -92,6 +92,13 @@ _SKIP_STUFF+= ; case "$${subdir}" in \
 	*) continue ;; esac
 .endif
 
+RANDOMIZE_SUBDIRS ?= No
+.if ${RANDOMIZE_SUBDIRS:L} == "yes"
+_for_subdir = for s in ${_FULLSUBDIR:QL}; do echo $$s; done|sort -R|while read subdir
+.else
+_for_subdir = for subdir in ${_FULLSUBDIR:QL}
+.endif
+
 _subdir_fragment = \
 	: $${echo_msg:=${ECHO_MSG:Q}}; \
 	: $${target:=${.TARGET}}; \
@@ -101,7 +108,7 @@ _subdir_fragment = \
 	_STARTDIR_SEEN=${_STARTDIR_SEEN}; \
 	unset SUBDIR SUBDIRLIST || true; \
 	export _STARTDIR_SEEN; \
-	for subdir in ${_FULLSUBDIR:QL}; do \
+	${_for_subdir}; do \
 		if ! $${_STARTDIR_SEEN}; then \
 			case "${STARTDIR}" in \
 			$$subdir) \

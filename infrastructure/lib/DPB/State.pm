@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.39 2023/09/02 12:33:54 espie Exp $
+# $OpenBSD: State.pm,v 1.40 2023/10/17 22:19:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -215,6 +215,9 @@ sub make_args($self)
 	my @l = ($self->{make}, "-C", $self->{ports});
 	if ($self->{build_once}) {
 		push(@l, 'BUILD_ONCE=Yes');
+	}
+	if ($self->{random}) {
+		push(@l, 'RANDOMIZE_SUBDIRS=Yes');
 	}
 	# Paradoxically, we don't need privsep at the ports level
 	# since we do our own
