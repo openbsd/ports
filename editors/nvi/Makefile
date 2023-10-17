@@ -13,6 +13,9 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB=	c curses util
 
 MODULES=	devel/cmake
