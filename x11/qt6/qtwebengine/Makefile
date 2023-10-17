@@ -21,8 +21,8 @@ SHARED_LIBS +=  Qt6WebEngineQuick         0.0 # 0.0
 SHARED_LIBS +=  Qt6WebEngineQuickDelegatesQml 0.0 # 0.0
 SHARED_LIBS +=  Qt6WebEngineWidgets       0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6QmlModels
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Designer Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6QuickWidgets Qt6WebChannel Qt6Widgets Qt6Xml
 WANTLIB += X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xi Xrandr
 WANTLIB += Xrender Xtst c cbor crypto dbus-1 drm event execinfo
@@ -64,6 +64,7 @@ LIB_DEPENDS =	archivers/minizip \
 		textproc/libxslt \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtwebchannel \
+		x11/qt6/qttools \
 		x11/xkbcommon
 
 CONFIGURE_ENV =	NINJAFLAGS="-j${MAKE_JOBS}" \
