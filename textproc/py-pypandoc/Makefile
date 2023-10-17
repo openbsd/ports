@@ -1,31 +1,31 @@
-COMMENT =		Python wrapper for pandoc
+COMMENT=	Python wrapper for pandoc
 
-MODPY_EGG_VERSION =	1.10
+MODPY_EGG_VERSION=	1.12
 
-DISTNAME =		pypandoc-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+DISTNAME=	pypandoc-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =		https://github.com/bebraw/pypandoc
+HOMEPAGE=	https://github.com/bebraw/pypandoc
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		poetry-core
-MODPY_PYTEST_ARGS =	tests.py
+MODPY_PI=	Yes
+MODPY_PYBUILD=	poetry-core
+MODPY_PYTEST_ARGS=	tests.py
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS =		textproc/pandoc
+RUN_DEPENDS=	textproc/pandoc
 
-PORTHOME =		${WRKDIR}
+PORTHOME=	${WRKDIR}
 
-TEST_DEPENDS =		print/texlive/texmf,-main \
-			textproc/pandoc
+TEST_DEPENDS=	print/texlive/texmf,-main \
+		textproc/pandoc
 
 .include <bsd.port.mk>
