@@ -1,6 +1,6 @@
 COMMENT=		Python bindings for libsodium/tweetnacl based on ctypes
 
-MODPY_EGG_VERSION=	1.8.0
+MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		libnacl-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
