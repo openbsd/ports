@@ -1,6 +1,6 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_EGG_VERSION =	4.6.1
+MODPY_EGG_VERSION =	4.8.0
 DISTNAME =		typing_extensions-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
