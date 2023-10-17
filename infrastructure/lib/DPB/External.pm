@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.31 2023/08/14 14:01:42 espie Exp $
+# $OpenBSD: External.pm,v 1.32 2023/10/17 08:03:53 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -213,15 +213,15 @@ sub handle_command($self, $line, $fh)
 		}
 	} elsif ($line =~ m/^wipe\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
-			$self->wipe($fh, $1);
+			$self->wipe($fh, $p);
 		}
 	} elsif ($line =~ m/^stub\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
-			$self->stub_out($fh, $1);
+			$self->stub_out($fh, $p);
 		}
 	} elsif ($line =~ m/^wipehost\s+(.*)/) {
 		for my $p (split(/\s+/, $1)) {
-			$self->wipehost($fh, $1);
+			$self->wipehost($fh, $p);
 		}
 	} elsif ($line =~ m/^rescan\b/) {
 		for my $v (DPB::PkgPath->seen) {
