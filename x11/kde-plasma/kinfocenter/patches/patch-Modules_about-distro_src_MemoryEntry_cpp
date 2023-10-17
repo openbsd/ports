@@ -1,7 +1,20 @@
 Index: Modules/about-distro/src/MemoryEntry.cpp
 --- Modules/about-distro/src/MemoryEntry.cpp.orig
 +++ Modules/about-distro/src/MemoryEntry.cpp
-@@ -38,6 +38,11 @@ qlonglong MemoryEntry::calculateTotalRam()
+@@ -9,10 +9,11 @@
+ 
+ #ifdef Q_OS_LINUX
+ #include <sys/sysinfo.h>
+-#elif defined(Q_OS_FREEBSD)
++#elif defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+ // clang-format off
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
++#include <unistd.h>
+ // clang-format on
+ #endif
+ 
+@@ -38,6 +39,11 @@ qlonglong MemoryEntry::calculateTotalRam()
      sysctlbyname("hw.physmem", &memory, &len, NULL, 0);
  
      ret = memory;
