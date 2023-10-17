@@ -74,6 +74,20 @@ do-build:
 	    ${SETENV} ${MAKE_ENV} BL31=${RK3328_BL31} ${MAKE_PROGRAM} \
 	        ${MAKE_FLAGS} O="build/${BOARD}" \
 	        -f ${MAKE_FILE} ${ALL_TARGET}
+.elif "${BOARD:M*-rk3566*}"
+	cd ${WRKSRC}/build/${BOARD} && \
+	    ../../scripts/config --set-val BAUDRATE 115200
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} ROCKCHIP_TPL=${RK3566_TPL} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.elif "${BOARD:M*-rk3568*}"
+	cd ${WRKSRC}/build/${BOARD} && \
+	    ../../scripts/config --set-val BAUDRATE 115200
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} ROCKCHIP_TPL=${RK3568_TPL} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
 .elif "${BOARD:M*sifive_*}"
 	cd ${WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} OPENSBI=${FW_DYNAMIC} ${MAKE_PROGRAM} \

@@ -1,0 +1,89 @@
+share/u-boot/
+share/u-boot/nanopi-r5c-rk3568/
+@comment share/u-boot/nanopi-r5c-rk3568/idbloader.img
+@comment share/u-boot/nanopi-r5c-rk3568/u-boot
+share/u-boot/nanopi-r5c-rk3568/u-boot-rockchip.bin
+@comment share/u-boot/nanopi-r5c-rk3568/u-boot-spl.bin
+@comment share/u-boot/nanopi-r5c-rk3568/u-boot.bin
+@comment share/u-boot/nanopi-r5c-rk3568/u-boot.img
+@comment share/u-boot/nanopi-r5c-rk3568/u-boot.itb
+share/u-boot/nanopi-r5s-rk3568/
+@comment share/u-boot/nanopi-r5s-rk3568/idbloader.img
+@comment share/u-boot/nanopi-r5s-rk3568/u-boot
+share/u-boot/nanopi-r5s-rk3568/u-boot-rockchip.bin
+@comment share/u-boot/nanopi-r5s-rk3568/u-boot-spl.bin
+@comment share/u-boot/nanopi-r5s-rk3568/u-boot.bin
+@comment share/u-boot/nanopi-r5s-rk3568/u-boot.img
+@comment share/u-boot/nanopi-r5s-rk3568/u-boot.itb
+share/u-boot/odroid-m1-rk3568/
+@comment share/u-boot/odroid-m1-rk3568/idbloader.img
+@comment share/u-boot/odroid-m1-rk3568/u-boot
+share/u-boot/odroid-m1-rk3568/u-boot-rockchip.bin
+@comment share/u-boot/odroid-m1-rk3568/u-boot-spl.bin
+@comment share/u-boot/odroid-m1-rk3568/u-boot.bin
+@comment share/u-boot/odroid-m1-rk3568/u-boot.img
+@comment share/u-boot/odroid-m1-rk3568/u-boot.itb
+share/u-boot/quartz64-a-rk3566/
+@comment share/u-boot/quartz64-a-rk3566/idbloader.img
+@comment share/u-boot/quartz64-a-rk3566/u-boot
+share/u-boot/quartz64-a-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/quartz64-a-rk3566/u-boot-spl.bin
+@comment share/u-boot/quartz64-a-rk3566/u-boot.bin
+@comment share/u-boot/quartz64-a-rk3566/u-boot.img
+@comment share/u-boot/quartz64-a-rk3566/u-boot.itb
+share/u-boot/quartz64-b-rk3566/
+@comment share/u-boot/quartz64-b-rk3566/idbloader.img
+@comment share/u-boot/quartz64-b-rk3566/u-boot
+share/u-boot/quartz64-b-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/quartz64-b-rk3566/u-boot-spl.bin
+@comment share/u-boot/quartz64-b-rk3566/u-boot.bin
+@comment share/u-boot/quartz64-b-rk3566/u-boot.img
+@comment share/u-boot/quartz64-b-rk3566/u-boot.itb
+share/u-boot/radxa-cm3-io-rk3566/
+@comment share/u-boot/radxa-cm3-io-rk3566/idbloader.img
+@comment share/u-boot/radxa-cm3-io-rk3566/u-boot
+share/u-boot/radxa-cm3-io-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/radxa-cm3-io-rk3566/u-boot-spl.bin
+@comment share/u-boot/radxa-cm3-io-rk3566/u-boot.bin
+@comment share/u-boot/radxa-cm3-io-rk3566/u-boot.img
+@comment share/u-boot/radxa-cm3-io-rk3566/u-boot.itb
+share/u-boot/radxa-e25-rk3568/
+@comment share/u-boot/radxa-e25-rk3568/idbloader.img
+@comment share/u-boot/radxa-e25-rk3568/u-boot
+share/u-boot/radxa-e25-rk3568/u-boot-rockchip.bin
+@comment share/u-boot/radxa-e25-rk3568/u-boot-spl.bin
+@comment share/u-boot/radxa-e25-rk3568/u-boot.bin
+@comment share/u-boot/radxa-e25-rk3568/u-boot.img
+@comment share/u-boot/radxa-e25-rk3568/u-boot.itb
+share/u-boot/rock-3a-rk3568/
+@comment share/u-boot/rock-3a-rk3568/idbloader.img
+@comment share/u-boot/rock-3a-rk3568/u-boot
+share/u-boot/rock-3a-rk3568/u-boot-rockchip.bin
+@comment share/u-boot/rock-3a-rk3568/u-boot-spl.bin
+@comment share/u-boot/rock-3a-rk3568/u-boot.bin
+@comment share/u-boot/rock-3a-rk3568/u-boot.img
+@comment share/u-boot/rock-3a-rk3568/u-boot.itb
+share/u-boot/soquartz-blade-rk3566/
+@comment share/u-boot/soquartz-blade-rk3566/idbloader.img
+@comment share/u-boot/soquartz-blade-rk3566/u-boot
+share/u-boot/soquartz-blade-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/soquartz-blade-rk3566/u-boot-spl.bin
+@comment share/u-boot/soquartz-blade-rk3566/u-boot.bin
+@comment share/u-boot/soquartz-blade-rk3566/u-boot.img
+@comment share/u-boot/soquartz-blade-rk3566/u-boot.itb
+share/u-boot/soquartz-cm4-rk3566/
+@comment share/u-boot/soquartz-cm4-rk3566/idbloader.img
+@comment share/u-boot/soquartz-cm4-rk3566/u-boot
+share/u-boot/soquartz-cm4-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/soquartz-cm4-rk3566/u-boot-spl.bin
+@comment share/u-boot/soquartz-cm4-rk3566/u-boot.bin
+@comment share/u-boot/soquartz-cm4-rk3566/u-boot.img
+@comment share/u-boot/soquartz-cm4-rk3566/u-boot.itb
+share/u-boot/soquartz-model-a-rk3566/
+@comment share/u-boot/soquartz-model-a-rk3566/idbloader.img
+@comment share/u-boot/soquartz-model-a-rk3566/u-boot
+share/u-boot/soquartz-model-a-rk3566/u-boot-rockchip.bin
+@comment share/u-boot/soquartz-model-a-rk3566/u-boot-spl.bin
+@comment share/u-boot/soquartz-model-a-rk3566/u-boot.bin
+@comment share/u-boot/soquartz-model-a-rk3566/u-boot.img
+@comment share/u-boot/soquartz-model-a-rk3566/u-boot.itb
