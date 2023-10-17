@@ -3,6 +3,7 @@ COMMENT =		user-level RCU implementation
 V =			0.14.0
 DISTNAME =		userspace-rcu-$V
 PKGNAME =		liburcu-$V
+REVISION =		0
 
 SHARED_LIBS +=  urcu-bp                   3.0 # 9.0
 SHARED_LIBS +=  urcu-cds                  2.1 # 9.0
@@ -27,9 +28,8 @@ EXTRACT_SUFX =		.tar.bz2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# atomics, TLS (__thread)
+# atomics, TLS (__thread), C++11
 COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
 
 USE_GMAKE =		Yes
 
