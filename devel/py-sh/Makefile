@@ -15,7 +15,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST_ARGS =	test.py
 
 .include <bsd.port.mk>
