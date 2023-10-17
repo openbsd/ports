@@ -1,7 +1,7 @@
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac
-@@ -663,10 +663,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -675,10 +675,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
  	AC_MSG_RESULT(no)
@@ -15,7 +15,7 @@ Index: src/configure.ac
  	else
  	  AC_MSG_RESULT(no)
  
-@@ -716,9 +716,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -728,9 +728,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
        fi
        if test "X$LUA_INC" != "X"; then
  	dnl Test alternate name including version
