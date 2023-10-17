@@ -1,9 +1,9 @@
 COMMENT =	command-line fuzzy finder
 
 MODGO_MODNAME = github.com/junegunn/fzf
-MODGO_VERSION =	v0.0.0-20230614153741-d471067e3f46
+MODGO_VERSION = v0.0.0-20231014165605-d3311d9f43d0
 
-V =	0.42.0
+V =		0.43.0
 DISTNAME =	fzf-${V}
 
 CATEGORIES =	sysutils
@@ -24,10 +24,8 @@ MODGO_TYPE =	bin
 MODGO_LDFLAGS +=	-X main.version=${V}
 MODGO_LDFLAGS +=	-X main.revision=""
 
-RUN_DEPENDS =	shells/bash
-
 # for patch to apply
-WRKDIST =	${WRKOBJDIR}/${DISTNAME}/${MODGO_MODNAME}@${MODGO_VERSION}
+WRKDIST =	${WRKSRC}
 
 # Note that unlike zsh and fish, bash has no well-defined site functions
 # directory from which to autoload stuff.

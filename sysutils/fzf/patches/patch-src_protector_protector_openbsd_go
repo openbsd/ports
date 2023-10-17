@@ -1,0 +1,13 @@
+Add inet for pledge => see issue#3481
+https://github.com/junegunn/fzf/issues/3481
+
+Index: src/protector/protector_openbsd.go
+--- src/protector/protector_openbsd.go.orig
++++ src/protector/protector_openbsd.go
+@@ -6,5 +6,5 @@ import "golang.org/x/sys/unix"
+ 
+ // Protect calls OS specific protections like pledge on OpenBSD
+ func Protect() {
+-	unix.PledgePromises("stdio rpath tty proc exec")
++	unix.PledgePromises("stdio rpath tty proc exec inet")
+ }
