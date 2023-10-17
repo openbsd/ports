@@ -1,14 +1,14 @@
-Break the "bison.help: bison" dependency to avoid rebuilding bison.info.
+Breaking the "bison.help: bison" dependency is non-trivial with MAKE_JOBS>1;
+instead make the problematic target a NOOP.
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -10432,7 +10432,7 @@ $(srcdir)/$(doc_bison).info.bak: $(srcdir)/$(doc_bison
+@@ -9579,6 +9579,7 @@ doc/$(am__dirstamp):
+ 	@: > doc/$(am__dirstamp)
  
- doc/refcard.pdf: doc/refcard.tex
- 	$(AM_V_GEN) cd doc && pdftex $(abs_top_srcdir)/doc/refcard.tex
--@CROSS_COMPILING_FALSE@$(top_srcdir)/doc/bison.help: src/bison$(EXEEXT)
-+@CROSS_COMPILING_FALSE@$(top_srcdir)/doc/bison.help: #src/bison$(EXEEXT)
- @CROSS_COMPILING_FALSE@	$(AM_V_GEN)$(MKDIR_P) doc
- @CROSS_COMPILING_FALSE@	$(AM_V_at) LC_ALL=C tests/bison --version >doc/bison.help.tmp
- @CROSS_COMPILING_FALSE@	$(AM_V_at) LC_ALL=C tests/bison --help | \
+ $(srcdir)/doc/bison.info: doc/bison.texi $(srcdir)/doc/version.texi $(doc_bison_TEXINFOS)
++neutered-bison-info:
+ 	$(AM_V_MAKEINFO)restore=: && backupdir="$(am__leading_dot)am$$$$" && \
+ 	am__cwd=`pwd` && $(am__cd) $(srcdir) && \
+ 	rm -rf $$backupdir && mkdir $$backupdir && \

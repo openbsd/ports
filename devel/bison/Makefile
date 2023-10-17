@@ -1,6 +1,6 @@
 COMMENT=	GNU parser generator
 
-DISTNAME=	bison-3.7.6
+DISTNAME=	bison-3.8.2
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=bison/}
 EXTRACT_SUFX=	.tar.xz
@@ -19,6 +19,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 RUN_DEPENDS=	devel/m4
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	ac_cv_prog_VALGRIND=no \
+		ac_cv_path_XSLTPROC=no
 CONFIGURE_ARGS=	--disable-yacc
 # Avoid crashes because of bad interactions between bison, libtextstyle
 # from devel/gettext and ncurses
