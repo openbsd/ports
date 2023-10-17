@@ -1,6 +1,6 @@
 COMMENT=	immutable dictionary
 
-MODPY_EGG_VERSION=	2.2.4
+MODPY_EGG_VERSION=	3.0.0
 DISTNAME=	immutabledict-${MODPY_EGG_VERSION}
 PKGNAME=	py-immutabledict-${MODPY_EGG_VERSION}
 
