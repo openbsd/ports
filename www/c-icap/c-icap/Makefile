@@ -3,10 +3,7 @@ COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.10
-REVISION-db=	0
-REVISION-main=	1
-REVISION-ldap=	1
+V=		0.5.11
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -15,6 +12,10 @@ PKGNAME-ldap=	c-icap-ldap-$V
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 
 WANTLIB += brotlicommon brotlidec brotlienc bz2 pcre pthread z
+
+# override ../Makefile.inc
+CONFIGURE_STYLE=  autoconf
+AUTOCONF_VERSION= 2.71
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
