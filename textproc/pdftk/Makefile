@@ -1,10 +1,11 @@
 COMMENT=	pdf swiss army knife
 
 V=		3.3.3
+REVISION=	0
 # https://www.bouncycastle.org/latest_releases.html
-BC=		171
+BC=		174
 # https://commons.apache.org/proper/commons-lang/
-CL3=		3.12.0
+CL3=		3.13.0
 DISTNAME=	pdftk-v$V
 PKGNAME=	pdftk-$V
 EXTRACT_ONLY=	pdftk-v$V.tar.gz \
