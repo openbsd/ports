@@ -609,6 +609,7 @@ go/src/cmd/cgo/internal/testerrors/testdata/
 go/src/cmd/cgo/internal/testerrors/testdata/err1.go
 go/src/cmd/cgo/internal/testerrors/testdata/err2.go
 go/src/cmd/cgo/internal/testerrors/testdata/err4.go
+go/src/cmd/cgo/internal/testerrors/testdata/err5.go
 go/src/cmd/cgo/internal/testerrors/testdata/issue11097a.go
 go/src/cmd/cgo/internal/testerrors/testdata/issue11097b.go
 go/src/cmd/cgo/internal/testerrors/testdata/issue14669.go
@@ -723,6 +724,9 @@ go/src/cmd/cgo/internal/testplugin/testdata/issue53989/main.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/p/
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/p/p.go
 go/src/cmd/cgo/internal/testplugin/testdata/issue53989/plugin.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue62430/
+go/src/cmd/cgo/internal/testplugin/testdata/issue62430/main.go
+go/src/cmd/cgo/internal/testplugin/testdata/issue62430/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/mangle/
 go/src/cmd/cgo/internal/testplugin/testdata/mangle/plugin.go
 go/src/cmd/cgo/internal/testplugin/testdata/method/
@@ -9365,6 +9369,9 @@ go/src/runtime/syscall_windows_test.go
 go/src/runtime/tagptr.go
 go/src/runtime/tagptr_32bit.go
 go/src/runtime/tagptr_64bit.go
+go/src/runtime/test_amd64.go
+go/src/runtime/test_amd64.s
+go/src/runtime/test_stubs.go
 go/src/runtime/testdata/
 go/src/runtime/testdata/testexithooks/
 go/src/runtime/testdata/testexithooks/testexithooks.go
@@ -9515,6 +9522,7 @@ go/src/runtime/trace/trace_test.go
 go/src/runtime/trace_cgo_test.go
 go/src/runtime/traceback.go
 go/src/runtime/traceback_test.go
+go/src/runtime/tracebackx_test.go
 go/src/runtime/type.go
 go/src/runtime/typekind.go
 go/src/runtime/unsafe.go
@@ -12841,6 +12849,7 @@ go/test/fixedbugs/issue61778.go
 go/test/fixedbugs/issue61908.go
 go/test/fixedbugs/issue61992.go
 go/test/fixedbugs/issue62203.go
+go/test/fixedbugs/issue62469.go
 go/test/fixedbugs/issue6247.go
 go/test/fixedbugs/issue6269.go
 go/test/fixedbugs/issue6295.dir/
