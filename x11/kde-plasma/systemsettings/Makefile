@@ -19,7 +19,9 @@ MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_DOCS = Yes
 
 BUILD_DEPENDS =	devel/kf5/kdeclarative
-RUN_DEPENDS =	devel/kf5/kdeclarative
+RUN_DEPENDS =	devel/kf5/kdeclarative \
+		sysutils/lscpu \
+		graphics/vulkan-tools
 
 LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kauth \
