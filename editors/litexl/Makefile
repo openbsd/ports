@@ -13,6 +13,10 @@ MAINTAINER =	Denis Fondras <denis@openbsd.org>
 # MIT
 PERMIT_PACKAGE =Yes
 
+# GNU11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =	c freetype lua5.4 m pcre2-8 SDL2
 
 MODULES =	devel/meson	\
