@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1561 2023/10/16 07:47:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1562 2023/10/18 06:50:52 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1861,6 +1861,7 @@ setup_obsolete_reason(
 	56 => 'psi',
 	56 => 'coccinella',
 	31 => 'py-snack',
+	5 => 'wxglade',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

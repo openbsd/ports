@@ -356,7 +356,6 @@
      SUBDIR += worker
      SUBDIR += wxSVG
      SUBDIR += wxWidgets
-     SUBDIR += wxglade
      SUBDIR += x11vnc
      SUBDIR += x2goclient
      SUBDIR += x2vnc
