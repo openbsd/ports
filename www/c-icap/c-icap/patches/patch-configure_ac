@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -831,7 +831,7 @@ AC_COMPILE_IFELSE(
+ #include <sys/types.h>
+ #include <sys/ipc.h>
+ #include <sys/sem.h>
+-int main(int argc, char *argv[])
++int main(int argc, char **argv[])
+ {
+    union semun a_semun;
+ }
