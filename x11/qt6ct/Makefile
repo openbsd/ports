@@ -2,13 +2,13 @@ COMMENT =	Qt6 configuration tool
 
 GH_ACCOUNT =		trialuser02
 GH_PROJECT =		qt6ct
-GH_TAGNAME =		0.8
+GH_TAGNAME =		0.9
 
 CATEGORIES =		x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-SHARED_LIBS +=		qt6ct-common              0.0 # 0.0
+SHARED_LIBS +=		qt6ct-common              0.1 # 0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c m
 WANTLIB += xkbcommon
@@ -16,7 +16,7 @@ WANTLIB += xkbcommon
 # BSD
 PERMIT_PACKAGE=		Yes
 
-MODULES =		devel/qmake \
+MODULES =		devel/cmake \
 			x11/qt6
 
 BUILD_DEPENDS =		x11/qt6/qttools

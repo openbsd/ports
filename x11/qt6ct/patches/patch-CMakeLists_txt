@@ -1,0 +1,11 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -66,7 +66,6 @@ endif()
+ 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/qt6ct-common)
+ 
+-add_link_options(-Wl,--no-undefined)
+ add_subdirectory(src/qt6ct)
+ add_subdirectory(src/qt6ct-common)
+ add_subdirectory(src/qt6ct-qtplugin)
