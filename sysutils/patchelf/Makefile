@@ -23,8 +23,8 @@ CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.arch.mk>
 
-# 0.18.0 amd64:   TOTAL: 56, PASS: 52, FAIL:  2 (replace-add-needed.sh, shared-rpath.sh)
-# 0.14.5 sparc64: TOTAL: 45, PASS: 33, FAIL: 12 (XXX: mostly 'Abort trap')
+# 0.18.0 amd64:   TOTAL: 56, PASS: 52, FAIL:  2
+# 0.18.0 sparc64: TOTAL: 56, PASS: 48, FAIL:  6 (3 SEGVs)
 TEST_TARGET =		check
 
 .if !${PROPERTIES:Mclang}
