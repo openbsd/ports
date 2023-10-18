@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.32.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	71.0 \
 		qgis_app	46.1 \
@@ -88,7 +89,7 @@ WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite
 WANTLIB += Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
-WANTLIB += Qt5QmlModels pdal_base pdal_util zstd
+WANTLIB += Qt5QmlModels pdalcpp zstd
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
