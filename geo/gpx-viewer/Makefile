@@ -20,6 +20,7 @@ MODULES =	textproc/intltool \
 		devel/meson
 LIB_DEPENDS =	geo/libchamplain>=0.12.0 \
 		x11/gnome/gdl
+BUILD_DEPENDS +=lang/vala
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
