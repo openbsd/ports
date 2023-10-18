@@ -12,7 +12,7 @@ Index: Cargo.toml
  # bumpalo 3.12 requires rust 1.60
  bumpalo = "3.11.1"
  unicode-width = "0.1.9"
-@@ -89,6 +89,3 @@ path = "src/main.rs"
+@@ -92,6 +92,3 @@ path = "src/main.rs"
  
  [features]
  

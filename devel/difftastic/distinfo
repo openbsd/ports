@@ -44,6 +44,7 @@ SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxO
 SHA256 (cargo/libc-0.2.139.tar.gz) = IB3jJ1IN8Ad1fB8K3OboJ/6FYvvCi/2cFVccZsofX3k=
 SHA256 (cargo/libm-0.2.7.tar.gz) = 9wErG7sHGeEJfEdhHTiYVoxUbVl8LnTWb2CH7dUjP/Q=
 SHA256 (cargo/libmimalloc-sys-0.1.24.tar.gz) = dwX8QPbtST9zWEq7syTnT5azWP9g3+Vlmg+PwSxZCmk=
+SHA256 (cargo/line-numbers-0.2.2.tar.gz) = eTp1MV62O4aZFYglveqF1j7rhQ51Q8uDSr7zx7W1N4A=
 SHA256 (cargo/lock_api-0.4.9.tar.gz) = Q1ARNm/lZYOxbPlW+d8AlbQFuC12QlvImBwOIuYOxN8=
 SHA256 (cargo/log-0.4.17.tar.gz) = q7EuaHz7RKpA9B/Dl473ZEj5tgOMrWrvQlnTwJWiOC4=
 SHA256 (cargo/memchr-2.5.0.tar.gz) = Lf/lLs8ndy5gGQW3Uiy073kNLMIDSIu9Di/oX8t0Vm0=
@@ -122,7 +123,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHw
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
 SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJM=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
-SHA256 (difftastic-0.51.1.tar.gz) = kOEvieyZLHHJKIAD3ktBkUGGtk8c+lFme5SWr7ma4II=
+SHA256 (difftastic-0.52.0.tar.gz) = bXE2vkFy73scTZr1ClSmIL6uV2cKcWIv6R5VCQvpcGU=
 SIZE (cargo/ahash-0.7.6.tar.gz) = 38030
 SIZE (cargo/aho-corasick-0.7.20.tar.gz) = 111440
 SIZE (cargo/assert_cmd-2.0.5.tar.gz) = 22683
@@ -169,6 +170,7 @@ SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/libc-0.2.139.tar.gz) = 638983
 SIZE (cargo/libm-0.2.7.tar.gz) = 115688
 SIZE (cargo/libmimalloc-sys-0.1.24.tar.gz) = 1119801
+SIZE (cargo/line-numbers-0.2.2.tar.gz) = 5106
 SIZE (cargo/lock_api-0.4.9.tar.gz) = 25685
 SIZE (cargo/log-0.4.17.tar.gz) = 38028
 SIZE (cargo/memchr-2.5.0.tar.gz) = 65812
@@ -247,4 +249,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
 SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
-SIZE (difftastic-0.51.1.tar.gz) = 57440531
+SIZE (difftastic-0.52.0.tar.gz) = 57517066

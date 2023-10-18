@@ -44,6 +44,7 @@ MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libc	0.2.139	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libm	0.2.7	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libmimalloc-sys	0.1.24	# MIT
+MODCARGO_CRATES +=	line-numbers	0.2.2	# MIT
 MODCARGO_CRATES +=	lock_api	0.4.9	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	log	0.4.17	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	memchr	2.5.0	# Unlicense/MIT
