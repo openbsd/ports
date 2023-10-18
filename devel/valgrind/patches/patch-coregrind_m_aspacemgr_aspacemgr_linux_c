@@ -18,7 +18,41 @@
     = (Addr) 0x04000000; // 64M
  #else
  #endif
-@@ -1550,7 +1550,7 @@
+@@ -685,6 +685,7 @@
+          break;
+ 
+       case SkFileC: case SkFileV:
++#if !defined(VGO_openbsd)
+          if (s1->hasR == s2->hasR 
+              && s1->hasW == s2->hasW && s1->hasX == s2->hasX
+              && s1->dev == s2->dev && s1->ino == s2->ino
+@@ -695,6 +696,25 @@
+             ML_(am_dec_refcount)(s1->fnIdx);
+             return True;
+          }
++         // The following is an excerpt from `readelf -l a.out'.
++         //
++         // LOAD    0x0000000000000e20 0x0000000000002e20 0x0000000000002e20
++         //         0x00000000000001e0 0x00000000000001e0  RW     1000
++         // LOAD    0x0000000000001000 0x0000000000003000 0x0000000000003000
++         //         0x0000000000000000 0x0000000000000055  RW     1000
++         //
++         // The above two areas are determined to be contiguous area in the
++         // above `if' statement, and they are merged by preen_nsegments().
++         // Then, di->fsm.rw_map_count in the following `if' statement in
++         // VG_(di_notify_mmap)() would be 1, which does not match
++         // rw_load_count, and di_notify_ACHIEVE_ACCEPT_STATE() is not called.
++         // In the above program header, rw_load_count is 2.
++         //
++         //   if (di->fsm.have_rx_map &&
++         //       rw_load_count >= 1 &&
++         //       di->fsm.rw_map_count == rw_load_count) {
++         //      return di_notify_ACHIEVE_ACCEPT_STATE ( di );
++#endif
+          break;
+ 
+       case SkShmC:
+@@ -1550,7 +1570,7 @@
     if (filename || (dev != 0 && ino != 0)) 
        seg.kind = SkFileV;
  
@@ -27,7 +61,7 @@
     // GrP fixme no dev/ino on darwin
     if (offset != 0) 
        seg.kind = SkFileV;
-@@ -2697,7 +2697,11 @@
+@@ -2697,7 +2717,11 @@
        a client request to call the outer VG_(am_get_advisory). */
     sres = VG_(am_do_mmap_NO_NOTIFY)( 
               advised, length, 
@@ -39,7 +73,7 @@
               VKI_MAP_FIXED|VKI_MAP_PRIVATE|VKI_MAP_ANONYMOUS, 
               VM_TAG_VALGRIND, 0
            );
-@@ -2742,6 +2746,54 @@
+@@ -2742,6 +2766,54 @@
     return sres;
  }
  
@@ -94,7 +128,7 @@
  /* Really just a wrapper around VG_(am_mmap_anon_float_valgrind). */
  
  SysRes VG_(am_shadow_alloc)(SizeT size)
-@@ -3896,10 +3948,14 @@
+@@ -3896,10 +3968,14 @@
  /*------END-procmaps-parser-for-Darwin---------------------------*/
  
  /*------BEGIN-procmaps-parser-for-Freebsd------------------------*/
@@ -111,7 +145,7 @@
  
  /* static ... to keep it out of the stack frame. */
  static char procmap_buf[M_PROCMAP_BUF];
-@@ -3911,6 +3967,7 @@
+@@ -3911,6 +3987,7 @@
        void (*record_gap)( Addr addr, SizeT len )
     )
  {
@@ -119,7 +153,7 @@
      Addr   start, endPlusOne, gapStart;
      char* filename;
      char   *p;
-@@ -3968,6 +4025,57 @@
+@@ -3968,6 +4045,57 @@
   
      if (record_gap && gapStart < Addr_MAX)
         (*record_gap) ( gapStart, Addr_MAX - gapStart + 1 );

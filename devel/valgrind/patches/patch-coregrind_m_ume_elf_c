@@ -71,8 +71,21 @@
     for (i = 0; i < e->e.e_phnum; i++) {
        ESZ(Phdr) *ph = &e->p[i];
        ESZ(Addr) addr, bss, brkaddr;
-@@ -437,6 +476,11 @@
+@@ -435,8 +474,24 @@
+       filesz  = ph->p_filesz;
+       bss     = addr+filesz;
        memsz   = ph->p_memsz;
++#if defined(VGO_openbsd)
++      // On OpenBSD, p_filesz of the BSS area is set to 0. Also, if the lower
++      // 12 bits of addr is 0, bss and addr have the same value. Therefore,
++      // VG_PGROUNDUP(bss)-VG_PGROUNDDN(addr) = 0, the following
++      // `if (VG_PGROUNDUP(bss)-VG_PGROUNDDN(addr)' statement becomes false,
++      // and VG_(am_mmap_file_fixed_client)() is not called. Additionally,
++      // di_notify_ACHIEVE_ACCEPT_STATE() is not called and the first_epoch
++      // variable in DebugInfo is not set to a valid value.
++      if ((addr & 0xfff) == 0 && filesz == 0)
++         bss += memsz;
++#endif
        brkaddr = addr+memsz;
  
 +#if defined(VGO_openbsd)
@@ -83,7 +96,7 @@
        // Tom says: In the following, do what the Linux kernel does and only
        // map the pages that are required instead of rounding everything to
        // the specified alignment (ph->p_align).  (AMD64 doesn't work if you
-@@ -460,6 +504,7 @@
+@@ -460,6 +515,7 @@
        if (memsz > filesz) {
           UInt bytes;
  
@@ -91,7 +104,7 @@
           bytes = VG_PGROUNDUP(brkaddr)-VG_PGROUNDUP(bss);
           if (bytes > 0) {
              if (0) VG_(debugLog)(0,"ume","mmap_anon_fixed_client #2\n");
-@@ -478,6 +523,42 @@
+@@ -478,6 +534,42 @@
              bytes = VKI_PAGE_SIZE - bytes;
              VG_(memset)((void *)bss, 0, bytes);
           }
@@ -134,7 +147,7 @@
        }
     }
  
-@@ -879,7 +960,7 @@
+@@ -879,7 +971,7 @@
     return 0;
  }
  
