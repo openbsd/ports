@@ -16,6 +16,9 @@ HOMEPAGE=	https://www.aleksey.com/xmlsec/
 # MIT
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
 WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
@@ -49,10 +52,5 @@ CONFIGURE_ENV +=	ac_cv_header_ansidecl_h=no
 TEST_DEPENDS=		converters/base64 \
 			xmlsec-${VERSION}:security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
 
 .include <bsd.port.mk>
