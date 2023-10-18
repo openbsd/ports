@@ -79,6 +79,7 @@ include/pdal/filters/FaceRasterFilter.hpp
 include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
 include/pdal/filters/GeomDistanceFilter.hpp
+include/pdal/filters/GeoreferenceFilter.hpp
 include/pdal/filters/GpsTimeConvert.hpp
 include/pdal/filters/GreedyProjection.hpp
 include/pdal/filters/GroupByFilter.hpp
@@ -124,6 +125,7 @@ include/pdal/filters/SkewnessBalancingFilter.hpp
 include/pdal/filters/SortFilter.hpp
 include/pdal/filters/SplitterFilter.hpp
 include/pdal/filters/StatsFilter.hpp
+include/pdal/filters/StraightenFilter.hpp
 include/pdal/filters/StreamCallbackFilter.hpp
 include/pdal/filters/TailFilter.hpp
 include/pdal/filters/TransformationFilter.hpp
@@ -149,6 +151,10 @@ include/pdal/filters/private/expr/Lexer.hpp
 include/pdal/filters/private/expr/MathExpression.hpp
 include/pdal/filters/private/expr/MathParser.hpp
 include/pdal/filters/private/expr/Token.hpp
+include/pdal/filters/private/georeference/
+include/pdal/filters/private/georeference/LocalCartesian.hpp
+include/pdal/filters/private/georeference/Trajectory.hpp
+include/pdal/filters/private/georeference/Utils.hpp
 include/pdal/filters/private/hexer/
 include/pdal/filters/private/hexer/HexGrid.hpp
 include/pdal/filters/private/hexer/HexInfo.hpp
@@ -170,6 +176,9 @@ include/pdal/filters/private/pnp/Comparison.hpp
 include/pdal/filters/private/pnp/Grid.hpp
 include/pdal/filters/private/pnp/GridPnp.hpp
 include/pdal/filters/private/pnp/VoxelRayTrace.hpp
+include/pdal/filters/private/straighten/
+include/pdal/filters/private/straighten/Polyline.hpp
+include/pdal/filters/private/straighten/Utils.hpp
 include/pdal/io/
 include/pdal/io/BpfCompressor.hpp
 include/pdal/io/BpfHeader.hpp
@@ -180,6 +189,7 @@ include/pdal/io/CopcReader.hpp
 include/pdal/io/CopcWriter.hpp
 include/pdal/io/EptAddonWriter.hpp
 include/pdal/io/EptReader.hpp
+include/pdal/io/EsriReader.hpp
 include/pdal/io/FauxReader.hpp
 include/pdal/io/FbiHeader.hpp
 include/pdal/io/FbiReader.hpp
@@ -188,6 +198,7 @@ include/pdal/io/GDALReader.hpp
 include/pdal/io/GDALWriter.hpp
 include/pdal/io/GltfWriter.hpp
 include/pdal/io/HeaderVal.hpp
+include/pdal/io/I3SReader.hpp
 include/pdal/io/Ilvis2MetadataReader.hpp
 include/pdal/io/Ilvis2Reader.hpp
 include/pdal/io/LasHeader.hpp
@@ -214,6 +225,7 @@ include/pdal/io/SbetCommon.hpp
 include/pdal/io/SbetReader.hpp
 include/pdal/io/SbetSmrmsgReader.hpp
 include/pdal/io/SbetWriter.hpp
+include/pdal/io/SlpkReader.hpp
 include/pdal/io/StacReader.hpp
 include/pdal/io/TIndexReader.hpp
 include/pdal/io/TerrasolidReader.hpp
@@ -252,6 +264,10 @@ include/pdal/io/private/ept/Key.hpp
 include/pdal/io/private/ept/Overlap.hpp
 include/pdal/io/private/ept/TileContents.hpp
 include/pdal/io/private/ept/VectorPointTable.hpp
+include/pdal/io/private/esri/
+include/pdal/io/private/esri/EsriUtil.hpp
+include/pdal/io/private/esri/Obb.hpp
+include/pdal/io/private/esri/PageManager.hpp
 include/pdal/io/private/las/
 include/pdal/io/private/las/Geotiff.hpp
 include/pdal/io/private/las/Header.hpp
@@ -259,6 +275,12 @@ include/pdal/io/private/las/Srs.hpp
 include/pdal/io/private/las/Summary.hpp
 include/pdal/io/private/las/Utils.hpp
 include/pdal/io/private/las/Vlr.hpp
+include/pdal/io/private/stac/
+include/pdal/io/private/stac/Catalog.hpp
+include/pdal/io/private/stac/Collection.hpp
+include/pdal/io/private/stac/Item.hpp
+include/pdal/io/private/stac/ItemCollection.hpp
+include/pdal/io/private/stac/Utils.hpp
 include/pdal/kernels/
 include/pdal/kernels/ChamferKernel.hpp
 include/pdal/kernels/DeltaKernel.hpp
@@ -276,8 +298,11 @@ include/pdal/kernels/TIndexKernel.hpp
 include/pdal/kernels/TileKernel.hpp
 include/pdal/kernels/TranslateKernel.hpp
 include/pdal/kernels/private/
+include/pdal/kernels/private/PointlessLas.hpp
 include/pdal/kernels/private/density/
 include/pdal/kernels/private/density/OGR.hpp
+include/pdal/kernels/private/stac/
+include/pdal/kernels/private/stac/StacInfo.hpp
 include/pdal/pdal.hpp
 include/pdal/pdal_config.hpp
 include/pdal/pdal_export.hpp
@@ -326,12 +351,9 @@ lib/cmake/PDAL/PDALConfigVersion.cmake
 lib/cmake/PDAL/PDALTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/PDAL/PDALTargets.cmake
 lib/cmake/PDAL/pluginmacros.cmake
-@lib lib/libpdal_base.so.${LIBpdal_base_VERSION}
-@lib lib/libpdal_util.so.${LIBpdal_util_VERSION}
-lib/libpdalcpp.so
+@so lib/libpdal_plugin_kernel_fauxplugin.so
+@so lib/libpdal_plugin_reader_pgpointcloud.so
+@so lib/libpdal_plugin_writer_pgpointcloud.so
+@comment lib/libpdalcpp.so
+@lib lib/libpdalcpp.so.${LIBpdalcpp_VERSION}
 lib/pkgconfig/pdal.pc
-share/pdal/
-share/pdal/plugins/
-@so share/pdal/plugins/libpdal_plugin_kernel_fauxplugin.so
-@so share/pdal/plugins/libpdal_plugin_reader_pgpointcloud.so
-@so share/pdal/plugins/libpdal_plugin_writer_pgpointcloud.so
