@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1627 2023/09/27 21:41:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1628 2023/10/18 10:36:46 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1257,7 +1257,7 @@ HOMEPAGE ?= https://github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .else
 # There are two types of ports with DISTFILES but no actionable SITES:
 # - FETCH_MANUALLY
-# - orphaned port, defaults to SITES_BACKUP
+# - orphaned port, defaults to SITE_BACKUP
 SITES ?=
 .endif
 
