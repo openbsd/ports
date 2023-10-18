@@ -3,6 +3,7 @@ COMMENT =	utility for modifying existing ELF executables and libraries
 V =			0.18.0
 DISTNAME =		patchelf-${V}
 SITES =			https://github.com/NixOS/patchelf/releases/download/${V}/
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -44,5 +45,9 @@ pre-test:
 # this unbreaks the test build/allows to run tests in the first place.
 TEST_FLAGS +=		libbuildid_so_LDFLAGS='$$(LDFLAGS_sharedlib)'
 .endif
+
+post-install:
+	# fix manual section for ld.so
+	sed -i -e '/^\.BR ld\.so/s,8,1,' ${PREFIX}/man/man1/patchelf.1
 
 .include <bsd.port.mk>
