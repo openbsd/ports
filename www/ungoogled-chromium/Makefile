@@ -4,7 +4,7 @@ BROKEN-riscv64 =	Unknown current CPU: riscv64
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
-.if ${ARCH:Mi386}
+.if ${MACHINE_ARCH:Mi386}
 DPB_PROPERTIES+=	lonesome
 .endif
 

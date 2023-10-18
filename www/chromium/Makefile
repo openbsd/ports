@@ -3,9 +3,9 @@ BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
-#.if ${ARCH:Mi386}
-#DPB_PROPERTIES+=	lonesome
-#.endif
+.if ${MACHINE_ARCH:Mi386}
+DPB_PROPERTIES+=	lonesome
+.endif
 
 COMMENT=		Chromium browser
 
