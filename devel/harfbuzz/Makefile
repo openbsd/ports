@@ -3,15 +3,15 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			8.2.1
+V=			8.2.2
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  18.6 # 0.60821.0
-SHARED_LIBS += harfbuzz-subset           2.4 # 0.60821.0
-SHARED_LIBS += harfbuzz-cairo            0.1 # 0.60821.0
-SHARED_LIBS += harfbuzz-icu              2.1 # 0.60821.0
-SHARED_LIBS += harfbuzz-gobject          1.1 # 0.60821.0
+SHARED_LIBS += harfbuzz                  18.6 # 0.60822.0
+SHARED_LIBS += harfbuzz-subset           2.4 # 0.60822.0
+SHARED_LIBS += harfbuzz-cairo            0.1 # 0.60822.0
+SHARED_LIBS += harfbuzz-icu              2.1 # 0.60822.0
+SHARED_LIBS += harfbuzz-gobject          1.1 # 0.60822.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -33,7 +33,11 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 # C++11
 COMPILER=		base-clang ports-gcc ports-clang
 
-MODULES=		devel/meson
+MODULES=		devel/meson \
+			lang/python
+
+MODPY_ADJ_FILES=	src/relative_to.py
+MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
