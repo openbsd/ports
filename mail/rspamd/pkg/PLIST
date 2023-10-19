@@ -102,6 +102,7 @@ share/examples/rspamd/modules.d/history_redis.conf
 share/examples/rspamd/modules.d/http_headers.conf
 @sample ${ETC}/rspamd/modules.d/http_headers.conf
 share/examples/rspamd/modules.d/known_senders.conf
+@sample ${ETC}/rspamd/modules.d/known_senders.conf
 share/examples/rspamd/modules.d/maillist.conf
 @sample ${ETC}/rspamd/modules.d/maillist.conf
 share/examples/rspamd/modules.d/metadata_exporter.conf

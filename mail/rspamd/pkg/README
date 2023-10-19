@@ -60,6 +60,7 @@ that chroot - try configuration like this:
     bind_socket = "/var/run/rspamd/normal_socket mode=0600 owner=_rspamd";
 
 - in ${SYSCONFDIR}/rspamd/local.d/worker-proxy.inc
+  (you will also need to mkdir -p /var/spool/postfix/var/run)
 
     bind_socket = "/var/spool/postfix/var/run/rspamd-milter.sock mode=0600 owner=_postfix";
     upstream "local" {
