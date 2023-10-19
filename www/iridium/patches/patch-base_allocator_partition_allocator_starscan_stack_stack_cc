@@ -5,7 +5,7 @@ Index: base/allocator/partition_allocator/starscan/stack/stack.cc
  #include <pthread.h>
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include <pthread_np.h>
 +#endif
 +

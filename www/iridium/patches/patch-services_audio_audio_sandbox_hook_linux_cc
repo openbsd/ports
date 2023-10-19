@@ -5,7 +5,7 @@ Index: services/audio/audio_sandbox_hook_linux.cc
  }
  #endif
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  std::vector<BrokerFilePermission> GetAudioFilePermissions() {
    std::vector<BrokerFilePermission> permissions{
        BrokerFilePermission::ReadOnly("/dev/urandom"),
@@ -18,7 +18,7 @@ Index: services/audio/audio_sandbox_hook_linux.cc
  }  // namespace
  
  bool AudioPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    LoadAudioLibraries();
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
    instance->StartBrokerProcess(MakeBrokerCommandSet({

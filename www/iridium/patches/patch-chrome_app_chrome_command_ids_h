@@ -1,7 +1,7 @@
 Index: chrome/app/chrome_command_ids.h
 --- chrome/app/chrome_command_ids.h.orig
 +++ chrome/app/chrome_command_ids.h
-@@ -69,12 +69,12 @@
+@@ -68,12 +68,12 @@
  #define IDC_TOGGLE_MULTITASK_MENU       34050
  #endif
  

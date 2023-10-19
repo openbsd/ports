@@ -1,11 +1,11 @@
 Index: build/toolchain/toolchain.gni
 --- build/toolchain/toolchain.gni.orig
 +++ build/toolchain/toolchain.gni
-@@ -62,7 +62,7 @@ if (host_os == "mac") {
+@@ -67,7 +67,7 @@ if (host_os == "mac") {
    host_shlib_extension = ".dylib"
  } else if (host_os == "win") {
    host_shlib_extension = ".dll"
--} else if (host_os == "linux") {
+-} else if (host_os == "linux" || host_os == "aix") {
 +} else if (is_posix) {
    host_shlib_extension = ".so"
  } else {

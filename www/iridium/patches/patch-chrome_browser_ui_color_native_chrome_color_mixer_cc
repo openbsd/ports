@@ -8,5 +8,5 @@ Index: chrome/browser/ui/color/native_chrome_color_mixer.cc
 -    !BUILDFLAG(IS_WIN)
 +    !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_BSD)
  void AddNativeChromeColorMixer(ui::ColorProvider* provider,
-                                const ui::ColorProviderManager::Key& key) {}
+                                const ui::ColorProviderKey& key) {}
  #endif

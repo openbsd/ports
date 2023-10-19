@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.09.116.2
+V=			2023.10.118
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -20,7 +20,7 @@ DISTFILES.u= 		libudev-openbsd-20221108-c3330efd.tar.gz
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=		${IRIDIUM_DISTFILES}
 
-PATCHFILES.u=		disable-privacy-sandbox-891b80bbfcdb15e8292143efd1715fa3f30662c4.patch
+PATCHFILES.u=		disable-privacy-sandbox-d1f177cd0006b5c4bf8ce66d9084498085f35843.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -41,10 +41,11 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://downloads.iridiumbrowser.de/source/
 SITES.u=	http://nerd.hu/distfiles/
 
-MODULES=	lang/python x11/qt5
+MODULES=	lang/clang lang/python x11/qt5
 MODQT5_DEPS=	No
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =		ports-clang
+MODCLANG_VERSION =	16
 
 MODPY_RUNDEP=		No
 
@@ -180,7 +181,7 @@ PKG_ARGS+=	-Dswiftshader=0
 .endif
 
 FFMPEG_BRAND=	Chrome
-FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -222,6 +223,7 @@ GN_ARGS+=	use_thin_lto=false \
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
+	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	cd ${WRKSRC}/third_party/ffmpeg && \
 		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h

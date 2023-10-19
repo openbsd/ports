@@ -19,7 +19,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                    prefs.extensions.theme.id.value, systemTheme_)]]"
-@@ -154,7 +154,7 @@
+@@ -172,7 +172,7 @@
            </div>
          </template>
  

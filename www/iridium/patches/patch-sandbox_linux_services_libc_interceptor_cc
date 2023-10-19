@@ -5,7 +5,7 @@ Index: sandbox/linux/services/libc_interceptor.cc
  #include <stddef.h>
  #include <stdint.h>
  #include <string.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/prctl.h>
 +#endif
  #include <sys/socket.h>

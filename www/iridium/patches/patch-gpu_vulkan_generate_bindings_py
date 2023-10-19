@@ -1,7 +1,7 @@
 Index: gpu/vulkan/generate_bindings.py
 --- gpu/vulkan/generate_bindings.py.orig
 +++ gpu/vulkan/generate_bindings.py
-@@ -259,7 +259,7 @@ VULKAN_DEVICE_FUNCTIONS = [
+@@ -260,7 +260,7 @@ VULKAN_DEVICE_FUNCTIONS = [
      ]
    },
    {
