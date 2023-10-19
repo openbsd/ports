@@ -161,6 +161,7 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/refer.h
 include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
@@ -168,7 +169,6 @@ include/asterisk/res_fax.h
 include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
-include/asterisk/res_odbc_transaction.h
 include/asterisk/res_pjproject.h
 include/asterisk/res_pjsip.h
 include/asterisk/res_pjsip_body_generator_types.h
