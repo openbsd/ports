@@ -1,0 +1,21 @@
+From a561d12d24c2c8bb0f825d4a3a55a5e47e845853 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Wed, 4 May 2022 23:55:38 +0300
+Subject: EAP peer status notification for server not supporting RFC 5746
+
+Add a notification message to indicate reason for TLS handshake failure
+due to the server not supporting safe renegotiation (RFC 5746).
+
+Index: src/ap/authsrv.c
+--- src/ap/authsrv.c.orig
++++ src/ap/authsrv.c
+@@ -188,6 +188,9 @@ static void authsrv_tls_event(void *ctx, enum tls_even
+ 			wpa_printf(MSG_DEBUG, "authsrv: remote TLS alert: %s",
+ 				   data->alert.description);
+ 		break;
++	case TLS_UNSAFE_RENEGOTIATION_DISABLED:
++		/* Not applicable to TLS server */
++		break;
+ 	}
+ }
+ #endif /* EAP_TLS_FUNCS */

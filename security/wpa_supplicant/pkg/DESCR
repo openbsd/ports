@@ -1,2 +1,7 @@
 wpa_supplicant is the implementation of an IEEE 802.1X supplicant for
 wired (Ethernet PAE) and wireless (WPA/WPA2) authentication.
+
+Flavour: openssl (built against OpenSSL instead of LibreSSL)
+- supports older TLS protocols which may be needed in order to
+connect to some insecure networks with obsolete authentication
+servers (see pkg-readme).

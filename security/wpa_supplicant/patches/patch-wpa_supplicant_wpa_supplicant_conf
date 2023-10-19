@@ -1,0 +1,27 @@
+From 566ce69a8d0e64093309cbde80235aa522fbf84e Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Thu, 5 May 2022 00:07:44 +0300
+Subject: EAP peer: Workaround for servers that do not support safe TLS
+ renegotiation
+
+Index: wpa_supplicant/wpa_supplicant.conf
+--- wpa_supplicant/wpa_supplicant.conf.orig
++++ wpa_supplicant/wpa_supplicant.conf
+@@ -1,4 +1,4 @@
+-##### Example wpa_supplicant configuration file ###############################
++#### Example wpa_supplicant configuration file ###############################
+ #
+ # This file describes configuration file format and lists all available option.
+ # Please also take a look at simpler configuration examples in 'examples'
+@@ -1304,6 +1304,11 @@ fast_reauth=1
+ # tls_suiteb=0 - do not apply Suite B 192-bit constraints on TLS (default)
+ # tls_suiteb=1 - apply Suite B 192-bit constraints on TLS; this is used in
+ #	particular when using Suite B with RSA keys of >= 3K (3072) bits
++# allow_unsafe_renegotiation=1 - allow connection with a TLS server that does
++#	not support safe renegotiation (RFC 5746); please note that this
++#	workaround should be only when having to authenticate with an old
++#	authentication server that cannot be updated to use secure TLS
++#	implementation.
+ #
+ # Following certificate/private key fields are used in inner Phase2
+ # authentication when using EAP-TTLS or EAP-PEAP.

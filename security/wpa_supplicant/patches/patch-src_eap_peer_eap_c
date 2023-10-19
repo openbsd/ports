@@ -1,0 +1,20 @@
+From a561d12d24c2c8bb0f825d4a3a55a5e47e845853 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Wed, 4 May 2022 23:55:38 +0300
+Subject: EAP peer status notification for server not supporting RFC 5746
+
+Index: src/eap_peer/eap.c
+--- src/eap_peer/eap.c.orig
++++ src/eap_peer/eap.c
+@@ -2108,6 +2108,11 @@ static void eap_peer_sm_tls_event(void *ctx, enum tls_
+ 			eap_notify_status(sm, "remote TLS alert",
+ 					  data->alert.description);
+ 		break;
++	case TLS_UNSAFE_RENEGOTIATION_DISABLED:
++		wpa_printf(MSG_INFO,
++			   "TLS handshake failed due to the server not supporting safe renegotiation (RFC 5746); phase1 parameter allow_unsafe_renegotiation=1 can be used to work around this");
++		eap_notify_status(sm, "unsafe server renegotiation", "failure");
++		break;
+ 	}
+ 
+ 	os_free(hash_hex);

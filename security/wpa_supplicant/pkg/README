@@ -74,3 +74,19 @@ For a 802.1x wired network on ix0:
 
 Then start as normal ("rcctl start wpa_supplicant"). wpa_supplicant should
 automatically authenticate when it notices that the connection is up.
+
+Networks only supporting TLSv1.1 or earlier
+-------------------------------------------
+These obsolete and insecure TLS protocols have been removed from LibreSSL.
+If you must use a legacy network with an insecure authentication server
+which cannot be corrected, you can try installing the "openssl" flavour
+of the wpa_supplicant package and setting some or all of the following
+in wpa_supplicant.conf:
+
+network={
+	# allow ciphers supporting TLSv1.0
+	openssl_ciphers="DEFAULT@SECLEVEL=0"
+	# permit insecure TLS renegotiation (pre-2010)
+	phase1="allow_unsafe_renegotiation=1"
+	...
+}

@@ -408,6 +408,7 @@
      SUBDIR += wesng
      SUBDIR += wfuzz
      SUBDIR += wpa_supplicant
+     SUBDIR += wpa_supplicant,openssl
      SUBDIR += wpscan
      SUBDIR += wycheproof-testvectors
      SUBDIR += xca

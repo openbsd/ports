@@ -1,0 +1,63 @@
+From a561d12d24c2c8bb0f825d4a3a55a5e47e845853 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Wed, 4 May 2022 23:55:38 +0300
+Subject: EAP peer status notification for server not supporting RFC 5746
+
+From 566ce69a8d0e64093309cbde80235aa522fbf84e Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Thu, 5 May 2022 00:07:44 +0300
+Subject: EAP peer: Workaround for servers that do not support safe TLS
+ renegotiation
+
+Index: src/crypto/tls_openssl.c
+--- src/crypto/tls_openssl.c.orig
++++ src/crypto/tls_openssl.c
+@@ -2919,6 +2919,11 @@ static int tls_set_conn_flags(struct tls_connection *c
+ 		SSL_clear_options(ssl, SSL_OP_NO_TICKET);
+ #endif /* SSL_OP_NO_TICKET */
+ 
++#ifdef SSL_OP_LEGACY_SERVER_CONNECT
++	if (flags & TLS_CONN_ALLOW_UNSAFE_RENEGOTIATION)
++		SSL_set_options(ssl, SSL_OP_LEGACY_SERVER_CONNECT);
++#endif /* SSL_OP_LEGACY_SERVER_CONNECT */
++
+ #ifdef SSL_OP_NO_TLSv1
+ 	if (flags & TLS_CONN_DISABLE_TLSv1_0)
+ 		SSL_set_options(ssl, SSL_OP_NO_TLSv1);
+@@ -4133,6 +4138,7 @@ int tls_connection_get_eap_fast_key(void *tls_ctx, str
+ static struct wpabuf *
+ openssl_handshake(struct tls_connection *conn, const struct wpabuf *in_data)
+ {
++	struct tls_context *context = conn->context;
+ 	int res;
+ 	struct wpabuf *out_data;
+ 
+@@ -4162,7 +4168,19 @@ openssl_handshake(struct tls_connection *conn, const s
+ 			wpa_printf(MSG_DEBUG, "SSL: SSL_connect - want to "
+ 				   "write");
+ 		else {
++			unsigned long error = ERR_peek_last_error();
++
+ 			tls_show_errors(MSG_INFO, __func__, "SSL_connect");
++
++			if (context->event_cb &&
++			    ERR_GET_LIB(error) == ERR_LIB_SSL &&
++			    ERR_GET_REASON(error) ==
++			    SSL_R_UNSAFE_LEGACY_RENEGOTIATION_DISABLED) {
++				context->event_cb(
++					context->cb_ctx,
++					TLS_UNSAFE_RENEGOTIATION_DISABLED,
++					NULL);
++			}
+ 			conn->failed++;
+ 			if (!conn->server && !conn->client_hello_generated) {
+ 				/* The server would not understand TLS Alert
+@@ -4185,8 +4203,6 @@ openssl_handshake(struct tls_connection *conn, const s
+ 	if ((conn->flags & TLS_CONN_SUITEB) && !conn->server &&
+ 	    os_strncmp(SSL_get_cipher(conn->ssl), "DHE-", 4) == 0 &&
+ 	    conn->server_dh_prime_len < 3072) {
+-		struct tls_context *context = conn->context;
+-
+ 		/*
+ 		 * This should not be reached since earlier cert_cb should have
+ 		 * terminated the handshake. Keep this check here for extra

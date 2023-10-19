@@ -1,0 +1,20 @@
+From 566ce69a8d0e64093309cbde80235aa522fbf84e Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <quic_jouni@quicinc.com>
+Date: Thu, 5 May 2022 00:07:44 +0300
+Subject: EAP peer: Workaround for servers that do not support safe TLS
+ renegotiation
+
+Index: src/eap_peer/eap_tls_common.c
+--- src/eap_peer/eap_tls_common.c.orig
++++ src/eap_peer/eap_tls_common.c
+@@ -102,6 +102,10 @@ static void eap_tls_params_flags(struct tls_connection
+ 		params->flags |= TLS_CONN_SUITEB_NO_ECDH;
+ 	if (os_strstr(txt, "tls_suiteb_no_ecdh=0"))
+ 		params->flags &= ~TLS_CONN_SUITEB_NO_ECDH;
++	if (os_strstr(txt, "allow_unsafe_renegotiation=1"))
++		params->flags |= TLS_CONN_ALLOW_UNSAFE_RENEGOTIATION;
++	if (os_strstr(txt, "allow_unsafe_renegotiation=0"))
++		params->flags &= ~TLS_CONN_ALLOW_UNSAFE_RENEGOTIATION;
+ }
+ 
+ 
