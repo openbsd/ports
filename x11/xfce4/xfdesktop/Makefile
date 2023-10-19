@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
-XFCE_VERSION=	4.18.1
 REVISION=	0
 
 # GPLv2

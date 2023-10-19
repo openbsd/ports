@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
-XFCE_VERSION=	4.18.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

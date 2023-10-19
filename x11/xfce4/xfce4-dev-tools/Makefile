@@ -1,7 +1,6 @@
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
-XFCE_VERSION =	4.18.1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
