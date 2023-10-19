@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 
-FV =		115.3.2
+FV =		115.3.3
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
