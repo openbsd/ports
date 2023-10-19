@@ -2,6 +2,7 @@ COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
 REVISION=		16
 CATEGORIES=		comms
+BROKEN=			abandonware, uses binaries removed in tiff 4.6
 
 HOMEPAGE=		https://www.HylaFAX.org/
 
