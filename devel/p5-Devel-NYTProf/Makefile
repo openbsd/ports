@@ -1,6 +1,6 @@
 COMMENT =	powerful feature-rich perl source code profiler
 
-DISTNAME =	Devel-NYTProf-6.13
+DISTNAME =	Devel-NYTProf-6.14
 
 CATEGORIES =	devel
 
