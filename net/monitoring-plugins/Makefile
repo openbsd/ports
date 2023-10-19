@@ -9,8 +9,7 @@ COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.3.3
-REVISION-main=	0
+V=		2.3.5
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -49,7 +48,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		www/uriparser
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	setuid_root_mode=0555
 

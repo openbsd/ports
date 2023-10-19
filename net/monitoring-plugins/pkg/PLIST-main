@@ -30,6 +30,7 @@ libexec/nagios/check_log
 libexec/nagios/check_mailq
 @bin libexec/nagios/check_mrtg
 @bin libexec/nagios/check_mrtgtraf
+libexec/nagios/check_mssql
 @bin libexec/nagios/check_nagios
 libexec/nagios/check_nntp
 libexec/nagios/check_nntps

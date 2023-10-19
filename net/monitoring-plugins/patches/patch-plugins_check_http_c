@@ -1,13 +1,10 @@
 #1: avoid segfault with SSL errors, seen when connecting to an
 IIS host that only allowed SNI-based connections
 
-#2: avoid "Failed to unchunk message body" when doing a fetch
-with --no-body from a server using chunked CTE
-
 Index: plugins/check_http.c
 --- plugins/check_http.c.orig
 +++ plugins/check_http.c
-@@ -987,7 +987,7 @@ check_http (void)
+@@ -988,7 +988,7 @@ check_http (void)
      result = np_net_ssl_init_with_hostname_version_and_cert(sd, (use_sni ? host_name : NULL), ssl_version, client_cert, client_privkey);
      if (verbose) printf ("SSL initialized\n");
      if (result != STATE_OK)
@@ -16,12 +13,3 @@ Index: plugins/check_http.c
      microsec_ssl = deltime (tv_temp);
      elapsed_time_ssl = (double)microsec_ssl / 1.0e6;
      if (check_cert == true) {
-@@ -1278,7 +1278,7 @@ check_http (void)
- 
-   regmatch_t chre_pmatch[1]; // We actually do not care about this, since we only want to know IF it was found
- 
--  if (regexec(&chunked_header_regex, header, 1, chre_pmatch, 0) == 0) {
-+  if (!no_body && regexec(&chunked_header_regex, header, 1, chre_pmatch, 0) == 0) {
-     if (verbose) {
-       printf("Found chunked content\n");
-     }
