@@ -318,12 +318,12 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-slug						 v0.12.2 \
 	github.com/hashicorp/go-sockaddr					 v1.0.2 \
 	github.com/hashicorp/go-syslog						 v1.0.0 \
-	github.com/hashicorp/go-tfe						 v1.34.0 \
+	github.com/hashicorp/go-tfe						 v1.36.0 \
 	github.com/hashicorp/go-uuid						 v1.0.3 \
 	github.com/hashicorp/go-version						 v1.6.0 \
 	github.com/hashicorp/golang-lru						 v0.5.1 \
 	github.com/hashicorp/hcl						 v1.0.0 \
-	github.com/hashicorp/hcl/v2						 v2.18.1 \
+	github.com/hashicorp/hcl/v2						 v2.19.1 \
 	github.com/hashicorp/jsonapi						 v0.0.0-20210826224640-ee7dae0fb22d \
 	github.com/hashicorp/logutils						 v1.0.0 \
 	github.com/hashicorp/mdns						 v1.0.4 \
@@ -505,7 +505,7 @@ MODGO_MODULES =	\
 	golang.org/x/mod							 v0.12.0 \
 	golang.org/x/net							 v0.15.0 \
 	golang.org/x/oauth2							 v0.8.0 \
-	golang.org/x/sync							 v0.3.0 \
+	golang.org/x/sync							 v0.4.0 \
 	golang.org/x/sys							 v0.12.0 \
 	golang.org/x/term							 v0.12.0 \
 	golang.org/x/text							 v0.13.0 \
@@ -1251,6 +1251,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync						 v0.0.0-20220722155255-886fb9371eb4 \
 	golang.org/x/sync						 v0.0.0-20220929204114-8fcdb60fdcc0 \
 	golang.org/x/sync						 v0.1.0 \
+	golang.org/x/sync						 v0.3.0 \
 	golang.org/x/sys						 v0.0.0-20180823144017-11551d06cbcc \
 	golang.org/x/sys						 v0.0.0-20180830151530-49385e6e1522 \
 	golang.org/x/sys						 v0.0.0-20180905080454-ebe1bf3edb33 \
