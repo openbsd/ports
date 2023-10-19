@@ -1,5 +1,7 @@
 @option is-branch
+@conflict asterisk->=13.8.0,<16.30.1p0
 include/asterisk/res_odbc.h
+include/asterisk/res_odbc_transaction.h
 @so lib/asterisk/modules/cdr_adaptive_odbc.so
 @so lib/asterisk/modules/cdr_odbc.so
 @so lib/asterisk/modules/cel_odbc.so
