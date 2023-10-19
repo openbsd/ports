@@ -1,1 +1,3 @@
-# nothing
+/usr/lib r
+/usr/local/lib r
+/tmp rwc

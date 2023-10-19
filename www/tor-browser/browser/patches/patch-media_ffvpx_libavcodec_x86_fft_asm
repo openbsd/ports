@@ -6,7 +6,7 @@ read-only by ld.so after relocations have been processed.
 Index: media/ffvpx/libavcodec/x86/fft.asm
 --- media/ffvpx/libavcodec/x86/fft.asm.orig
 +++ media/ffvpx/libavcodec/x86/fft.asm
-@@ -548,10 +548,6 @@ DEFINE_ARGS zc, w, n, o1, o3
+@@ -457,10 +457,6 @@ DEFINE_ARGS zc, w, n, o1, o3
  %macro FFT_DISPATCH 2; clobbers 5 GPRs, 8 XMMs
      lea r2, [dispatch_tab%1]
      mov r2, [r2 + (%2q-2)*gprsize]
@@ -17,9 +17,9 @@ Index: media/ffvpx/libavcodec/x86/fft.asm
      call r2
  %endmacro ; FFT_DISPATCH
  
-@@ -731,11 +727,7 @@ DECL_PASS pass_interleave_3dnow, PASS_BIG 0
- %define pass_interleave_3dnowext pass_interleave_3dnow
- %endif
+@@ -585,11 +581,7 @@ cglobal imdct_calc, 3,5,3
+     jl      .loop
+     RET
  
 -%ifdef PIC
 -%define SECTION_REL - $$
@@ -29,7 +29,7 @@ Index: media/ffvpx/libavcodec/x86/fft.asm
  
  %macro DECL_FFT 1-2 ; nbits, suffix
  %ifidn %0, 1
-@@ -773,8 +765,10 @@ fft %+ n %+ fullsuffix:
+@@ -627,8 +619,10 @@ fft %+ n %+ fullsuffix:
  %endrep
  %undef n
  

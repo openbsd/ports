@@ -4,9 +4,9 @@ Code behind --with-relative-data-dir does not do what we want
 Index: browser/config/mozconfigs/tor-browser
 --- browser/config/mozconfigs/tor-browser.orig
 +++ browser/config/mozconfigs/tor-browser
-@@ -2,7 +2,7 @@
- 
- mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+@@ -8,7 +8,7 @@ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+ # like Firefox does.
+ # export MOZ_APP_REMOTINGNAME="Tor Browser"
  
 -ac_add_options --with-relative-data-dir=TorBrowser/Data/Browser
 +#ac_add_options --with-relative-data-dir=TorBrowser/Data/Browser

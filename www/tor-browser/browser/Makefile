@@ -11,14 +11,14 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-102.15.1esr-12.5-1-build3
+DISTNAME =		src-firefox-tor-browser-115.3.1esr-13.0-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
-			tor-browser-linux64-${TB_VERSION}_ALL.tar.xz \
-			tor-expert-bundle-${TB_VERSION}-linux-x86_64.tar.gz
+			tor-browser-linux-x86_64-${TB_VERSION}.tar.xz \
+			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
 
-SO_VERSION =		8.0
+SO_VERSION =		9.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
@@ -49,6 +49,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/jq
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xcursor.5 Xdamage.4 Xfixes.6 Xi.12 Xrender.6
@@ -67,7 +68,8 @@ CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
-			--with-base-browser-version=${TB_VERSION}
+			--with-base-browser-version=${TB_VERSION}	\
+			--enable-update-channel=release
 
 # for nss build system
 MAKE_ENV +=		BUILD_OPT=1 \
@@ -77,7 +79,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 
 RUN_DEPENDS +=		net/obfs4proxy>=0.0.14 \
 			net/snowflake_proxy>=2.4.1 \
-			net/tor>=0.4.7.13
+			net/tor>=0.4.8.7
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -111,15 +113,11 @@ post-patch:
 	# add default bridges for Pluggable Transports that we support
 .for pt in meek-azure obfs4 snowflake
 	I=1; \
-	cat ${WRKDIR}/tor/pluggable_transports/bridges_list.${pt}.txt | while read -r line ; do \
-		echo "pref(\"extensions.torlauncher.default_bridge.${pt}.$$I\", \"$$line\");" >>${WRKSRC}/browser/app/profile/000-tor-browser.js; \
+	jq ".[\"bridges\"][\"${pt}\"].[]" ${WRKDIR}/tor/pluggable_transports/pt_config.json | while read -r line ; do \
+		echo "pref(\"extensions.torlauncher.default_bridge.${pt}.$$I\", $$line);" >>${WRKSRC}/browser/app/profile/000-tor-browser.js; \
 		I=$$((I + 1)); \
 	done
 .endfor
-
-	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/mp4parse/.cargo-checksum.json
 
 BROWSER_DIR = ${PREFIX}/lib/${BROWSER_NAME}
 TRUEBROWSER_DIR = ${TRUEPREFIX}/lib/${BROWSER_NAME}
@@ -155,7 +153,8 @@ post-install:
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${BROWSER_NAME}.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/firefox.svg ${PREFIX}/share/icons/hicolor/scalable/apps/${BROWSER_NAME}.svg
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/content/tor-browser-logo.svg \
+	    ${PREFIX}/share/icons/hicolor/scalable/apps/${BROWSER_NAME}.svg
 
 	# link default48.png to default.png to be used by default
 	# by non-icccm compliant wm
@@ -181,7 +180,7 @@ post-install:
 	    ${PREFIX}/bin/${BROWSER_NAME}
 
 .for f in unveil pledge
-.for t in content gpu main rdd socket utility utility-audioDecoder
+.for t in content gpu main rdd socket utility
 	${INSTALL_DATA} ${FILESDIR}/${f}.${t} ${BROWSER_DIR}/browser/defaults/preferences/
 .endfor
 .endfor

@@ -29,7 +29,6 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.utility
-lib/${BROWSER_NAME}/browser/defaults/preferences/pledge.utility-audioDecoder
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.gpu
@@ -39,18 +38,19 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.main
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.rdd
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility
-lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility-audioDecoder
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
-lib/${BROWSER_NAME}/browser/features/
-lib/${BROWSER_NAME}/browser/features/onboarding@mozilla.org.xpi
 lib/${BROWSER_NAME}/browser/fontconfig/
 lib/${BROWSER_NAME}/browser/fontconfig/fonts.conf
 lib/${BROWSER_NAME}/browser/fonts/
+lib/${BROWSER_NAME}/browser/fonts/000_README.txt
 lib/${BROWSER_NAME}/browser/fonts/Arimo-Bold.ttf
 lib/${BROWSER_NAME}/browser/fonts/Arimo-BoldItalic.ttf
 lib/${BROWSER_NAME}/browser/fonts/Arimo-Italic.ttf
 lib/${BROWSER_NAME}/browser/fonts/Arimo-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/Cousine-Bold.ttf
+lib/${BROWSER_NAME}/browser/fonts/Cousine-BoldItalic.ttf
+lib/${BROWSER_NAME}/browser/fonts/Cousine-Italic.ttf
 lib/${BROWSER_NAME}/browser/fonts/Cousine-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoNaskhArabic-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSansAdlam-Regular.ttf
@@ -174,14 +174,14 @@ lib/${BROWSER_NAME}/browser/fonts/NotoSerifKhojki-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifLao-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifMalayalam-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifMyanmar-Regular.ttf
-lib/${BROWSER_NAME}/browser/fonts/NotoSerifNyiakengPuachueHmong-Regular.ttf
+lib/${BROWSER_NAME}/browser/fonts/NotoSerifNPHmong-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifSinhala-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifTamil-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifTelugu-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifThai-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifTibetan-Regular.ttf
 lib/${BROWSER_NAME}/browser/fonts/NotoSerifYezidi-Regular.ttf
-lib/${BROWSER_NAME}/browser/fonts/STIXMath-Regular.otf
+lib/${BROWSER_NAME}/browser/fonts/STIXTwoMath-Regular.otf
 lib/${BROWSER_NAME}/browser/fonts/Tinos-Bold.ttf
 lib/${BROWSER_NAME}/browser/fonts/Tinos-BoldItalic.ttf
 lib/${BROWSER_NAME}/browser/fonts/Tinos-Italic.ttf
@@ -196,6 +196,7 @@ lib/${BROWSER_NAME}/distribution/
 lib/${BROWSER_NAME}/distribution/distribution.ini
 lib/${BROWSER_NAME}/fonts/
 lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
+@bin lib/${BROWSER_NAME}/glxtest
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/${BROWSER_NAME}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
