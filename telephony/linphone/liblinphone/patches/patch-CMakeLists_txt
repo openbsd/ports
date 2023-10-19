@@ -1,0 +1,14 @@
+Include bundled libxsd headers before /usr/local/lib to allow building
+with installed devel/xsd.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -277,6 +277,7 @@ include_directories(
+ 	coreapi
+ 	include
+ 	src
++	${LIBXSD_INCLUDE_DIRS}
+ 	${CMAKE_CURRENT_BINARY_DIR}
+ 	${CMAKE_CURRENT_BINARY_DIR}/coreapi/
+ )
