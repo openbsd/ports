@@ -2,8 +2,7 @@ COMMENT=	multi-platform GUI for password-store
 
 GH_ACCOUNT=	IJHack
 GH_PROJECT=	QtPass
-GH_TAGNAME=	v1.3.2
-REVISION=	0
+GH_TAGNAME=	v1.4.0
 PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	security x11
