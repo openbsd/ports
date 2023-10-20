@@ -1,7 +1,6 @@
 COMMENT =	create MaxMind DB database files
 
-DISTNAME =	MaxMind-DB-Writer-0.300003
-REVISION =	1
+DISTNAME =	MaxMind-DB-Writer-0.300004
 
 CATEGORIES =	net
 
