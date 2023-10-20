@@ -7,9 +7,9 @@ include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialport_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qserialportinfo_p.h
-include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtntdll_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtserialport-config_p.h
 include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qtudev_p.h
+include/X11/qt5/QtSerialPort/${VERSION}/QtSerialPort/private/qwinoverlappedionotifier_p.h
 include/X11/qt5/QtSerialPort/QSerialPort
 include/X11/qt5/QtSerialPort/QSerialPortInfo
 include/X11/qt5/QtSerialPort/QtSerialPort

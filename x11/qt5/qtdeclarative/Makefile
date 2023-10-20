@@ -5,7 +5,7 @@ MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =   Qt5Qml                    3.4 # 5.9
-SHARED_LIBS +=  Qt5Quick                  5.0 # 5.9
+SHARED_LIBS +=  Qt5Quick                  6.0 # 5.9
 SHARED_LIBS +=  Qt5QuickParticles         3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickTest              3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickWidgets           3.0 # 5.9
@@ -13,12 +13,13 @@ SHARED_LIBS +=  Qt5QuickShapes            0.0 # 5.13
 SHARED_LIBS +=  Qt5QmlModels              0.0 # 5.15
 SHARED_LIBS +=  Qt5QmlWorkerScript        0.0 # 5.15
 
-WANTLIB-main =		${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main +=		GL Qt5Core Qt5Gui Qt5Network Qt5Sql Qt5Test Qt5Widgets
-WANTLIB-main +=		c m pthread
+WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
+WANTLIB-main += Qt5Test Qt5Widgets c m
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
+
+LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 LIB_DEPENDS-examples =	${LIB_DEPENDS} \
 			x11/qt5/qtxmlpatterns>=${QT5_VERSION},<${QT5_NEXT_VERSION}
@@ -43,7 +44,6 @@ FLAVOR ?=		bootstrap no_examples no_tests
 # avoid circular dependency with qttools
 .if ${FLAVOR:Mno_examples}
 MODQT5_DEPS =		No
-LIB_DEPENDS =		x11/qt5/qtbase>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 .endif
 
 MODQMAKE_RECURSIVE =	No

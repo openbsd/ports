@@ -17,10 +17,10 @@ PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  Qt5Concurrent                4.0 # 5.15
-SHARED_LIBS +=  Qt5Core                      4.0 # 5.15
+SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
+SHARED_LIBS +=  Qt5Core                      5.0 # 5.15
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
-SHARED_LIBS +=  Qt5Gui                       3.0 # 5.15
+SHARED_LIBS +=  Qt5Gui                       4.0 # 5.15
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15

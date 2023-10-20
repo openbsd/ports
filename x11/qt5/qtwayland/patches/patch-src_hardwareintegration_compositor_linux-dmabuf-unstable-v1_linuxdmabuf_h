@@ -3,7 +3,7 @@ fix build with clang 13 by adding <array>
 Index: src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h
 --- src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h.orig
 +++ src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h
-@@ -44,6 +44,8 @@
+@@ -46,6 +46,8 @@
  #include <EGL/egl.h>
  #include <EGL/eglext.h>
  

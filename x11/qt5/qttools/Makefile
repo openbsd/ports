@@ -2,7 +2,6 @@ QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${VERSION}
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -12,14 +11,13 @@ SHARED_LIBS +=  Qt5Designer             3.1 # 5.9
 SHARED_LIBS +=  Qt5DesignerComponents   3.0 # 5.9
 SHARED_LIBS +=  Qt5Help                 3.0 # 5.9
 
-WANTLIB-main =	${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += GL c llvm${MODCLANG_VERSION}/lib/clang m pthread Qt5QmlModels
-WANTLIB-main +=	Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB-main +=	Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Widgets Qt5Xml
+WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB-main += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql
+WANTLIB-main += Qt5Widgets Qt5Xml c m
+WANTLIB-main += llvm${MODCLANG_VERSION}/lib/clang
 
-WANTLIB-webview =  ${WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-webview += GL Qt5Core Qt5Designer Qt5Gui Qt5Network Qt5WebKit
-WANTLIB-webview += Qt5WebKitWidgets Qt5Widgets Qt5Xml m pthread
+WANTLIB-webview += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
+WANTLIB-webview += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml m
 
 # avoid BDEP on ourselves
 MODQT5_DEPS =	No
