@@ -16,7 +16,7 @@ Index: Makefile.in
  CONFIG_FILE		=	$(CONFIG_FILE_PATH)/RT_Config.pm
  SITE_CONFIG_FILE	=	$(CONFIG_FILE_PATH)/RT_SiteConfig.pm
  
-@@ -275,27 +281,23 @@ testdeps:
+@@ -278,27 +284,23 @@ testdeps:
  depends: fixdeps
  
  fixdeps:
@@ -49,7 +49,7 @@ Index: Makefile.in
  
  	chmod 0440 $(DESTDIR)$(CONFIG_FILE)
  	chmod 0640 $(DESTDIR)$(SITE_CONFIG_FILE)
-@@ -363,7 +365,7 @@ clean-mason-cache:
+@@ -366,7 +368,7 @@ clean-mason-cache:
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/etc/*
  	rm -rf $(DESTDIR)$(MASON_DATA_PATH)/obj/*
  
@@ -58,7 +58,7 @@ Index: Makefile.in
  
  files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install po-install static-install
  
-@@ -457,17 +459,17 @@ doc-install:
+@@ -460,17 +462,17 @@ doc-install:
  
  
  etc-install:

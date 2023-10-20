@@ -174,6 +174,7 @@ libdata/perl5/site_perl/RT/Interface/Web/Middleware/StaticHeaders.pm
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder/
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder.pm
 libdata/perl5/site_perl/RT/Interface/Web/QueryBuilder/Tree.pm
+libdata/perl5/site_perl/RT/Interface/Web/ReportsRegistry.pm
 libdata/perl5/site_perl/RT/Interface/Web/Request.pm
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber/
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber.pm
@@ -388,10 +389,12 @@ libdata/perl5/site_perl/RT/Util.pm
 sbin/rt-attributes-viewer
 sbin/rt-clean-attributes
 sbin/rt-clean-sessions
+sbin/rt-clean-shorteners
 sbin/rt-dump-initialdata
 sbin/rt-dump-metadata
 sbin/rt-email-dashboards
 sbin/rt-email-digest
+sbin/rt-email-expiring-auth-tokens
 sbin/rt-email-group-admin
 sbin/rt-externalize-attachments
 sbin/rt-fulltext-indexer
@@ -1270,6 +1273,20 @@ share/examples/rt/upgrade/5.0.4/schema.SQLite
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.SQLite
 share/examples/rt/upgrade/5.0.4/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.4/schema.mysql
+share/examples/rt/upgrade/5.0.5/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/
+share/examples/rt/upgrade/5.0.5/content
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/content
+share/examples/rt/upgrade/5.0.5/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/indexes
+share/examples/rt/upgrade/5.0.5/schema.Oracle
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.Oracle
+share/examples/rt/upgrade/5.0.5/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.Pg
+share/examples/rt/upgrade/5.0.5/schema.SQLite
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.SQLite
+share/examples/rt/upgrade/5.0.5/schema.mysql
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.mysql
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1461,6 +1478,7 @@ share/rt/html/Admin/Scrips/Elements/
 share/rt/html/Admin/Scrips/Elements/EditBasics
 share/rt/html/Admin/Scrips/Elements/EditCustomCode
 share/rt/html/Admin/Scrips/Elements/SelectTemplate
+share/rt/html/Admin/Scrips/Logging.html
 share/rt/html/Admin/Scrips/Modify.html
 share/rt/html/Admin/Scrips/Objects.html
 share/rt/html/Admin/Scrips/index.html
@@ -1757,6 +1775,7 @@ share/rt/html/Elements/RT__User/
 share/rt/html/Elements/RT__User/ColumnMap
 share/rt/html/Elements/Refresh
 share/rt/html/Elements/RefreshHomepage
+share/rt/html/Elements/SavedSearchSelectUser
 share/rt/html/Elements/SavedSearches
 share/rt/html/Elements/ScrubHTML
 share/rt/html/Elements/SearchFilter
@@ -2057,6 +2076,9 @@ share/rt/html/SelfService/Closed.html
 share/rt/html/SelfService/Create.html
 share/rt/html/SelfService/CreateTicketInQueue.html
 share/rt/html/SelfService/Display.html
+share/rt/html/SelfService/Download/
+share/rt/html/SelfService/Download/CustomFieldValue/
+share/rt/html/SelfService/Download/CustomFieldValue/dhandler
 share/rt/html/SelfService/Elements/
 share/rt/html/SelfService/Elements/GotoTicket
 share/rt/html/SelfService/Elements/Header
@@ -2067,6 +2089,7 @@ share/rt/html/SelfService/Elements/SearchArticle
 share/rt/html/SelfService/Helpers/
 share/rt/html/SelfService/Helpers/Autocomplete/
 share/rt/html/SelfService/Helpers/Autocomplete/CustomFieldValues
+share/rt/html/SelfService/Helpers/Autocomplete/Principals
 share/rt/html/SelfService/Helpers/Autocomplete/Users
 share/rt/html/SelfService/Helpers/ShortcutHelp
 share/rt/html/SelfService/Helpers/TextDiff
@@ -2152,6 +2175,7 @@ share/rt/html/Ticket/autohandler
 share/rt/html/Tools/
 share/rt/html/Tools/MyDay.html
 share/rt/html/Tools/MyReminders.html
+share/rt/html/Tools/PreviewSearches.html
 share/rt/html/Tools/index.html
 share/rt/html/Transaction/
 share/rt/html/Transaction/Display.html
