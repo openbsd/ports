@@ -21,7 +21,10 @@ WANTLIB +=	${COMPILER_LIBCXX} GL c m tbb
 
 COMPILER=	base-clang ports-gcc
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake \
+		lang/python
+
+MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	graphics/glfw
 
