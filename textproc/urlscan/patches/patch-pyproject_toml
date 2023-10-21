@@ -1,0 +1,14 @@
+Fix directory for manpage => ${PREFIX}/man instead of ${PREFIX}/share/man
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -51,7 +51,7 @@ version-file = "urlscan/_version.py"
+ [tool.hatch.build.targets.wheel.shared-data]
+ LICENSE = "share/doc/urlscan/LICENSE"
+ "README.md" = "share/doc/urlscan/README.md"
+-"urlscan.1" = "share/man/man1/urlscan.1"
++"urlscan.1" = "man/man1/urlscan.1"
+ 
+ [tool.hatch.build.targets.sdist]
+ include = [

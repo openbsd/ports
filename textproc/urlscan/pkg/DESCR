@@ -1,0 +1,49 @@
+Urlscan is a small program that is designed to integrate with the
+"mutt" mailreader to allow you to easily launch a Web browser for URLs
+contained in email messages. It is a replacement for the "urlview"
+program.
+
+Relative to urlview, urlscan has the following additional features:
+
+* Support for emails in quoted-printable and base64 encodings. No more
+  stripping out =40D from URLs by hand!
+
+* The context of each URL is provided along with the URL. For HTML
+  mails, a crude parser is used to render the HTML into text. Context
+  view can be toggled on/off with c.
+
+* URLs are shortened by default to fit on one line. Viewing full URL
+  (for one or all) is toggled with s or S.
+
+* Jump to a URL by typing the number.
+
+* Incremental case-insensitive search with /.
+
+* Execute an arbitrary function (for example, copy URL to clipboard)
+  instead of opening URL in a browser.
+
+* Use l to cycle through whether URLs are opened using the Python
+  webbrowser module (default), xdg-open (if installed) or opened by a
+  function passed on the command line with --run or --run-safe.
+
+* Configure colors and keybindings via ~/.config/urlscan/config.json.
+  Generate default config file for editing by running urlscan -g. Cycle
+  through available palettes with p. Set display width with --width.
+
+* Copy URL to clipboard with C or to primary selection with P. Requires
+  xsel or xclip.
+
+* Run a command with the selected URL as the argument or pipe the
+  selected URL to a command.
+
+* Show complete help menu with F1. Hide header on startup with --nohelp.
+
+* Use a custom regular expression with -E for matching urls or any other
+  pattern. In junction with -r, this effectively turns urlscan into a
+  general purpose CLI selector-type utility.
+
+* Scan certain email headers for URLs. Currently Link, Archived-At and
+  List-* are scanned when --headers is passed.
+
+* Queue multiple URLs for opening and open them all at once with a and o.
+
