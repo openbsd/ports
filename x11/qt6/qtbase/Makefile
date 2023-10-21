@@ -13,6 +13,8 @@ PKGNAME-psql =		qt6-postgresql-${VERSION}
 
 PKG_ARCH-global =	*
 
+REVISION-main =		0
+
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.5
@@ -115,6 +117,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DBUILD_WITH_PCH=OFF \
 			-DQT_FEATURE_journald=OFF \
 			-DQT_FEATURE_libudev=OFF \
+			-DQT_FEATURE_libinput=OFF \
 			-DQT_FEATURE_openssl_linked=ON \
 			-DQT_FEATURE_dtls=OFF
 
