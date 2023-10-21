@@ -9320,6 +9320,7 @@ nextcloud/apps/activity/composer.json
 nextcloud/apps/activity/composer.lock
 nextcloud/apps/activity/css/
 nextcloud/apps/activity/css/style.css
+nextcloud/apps/activity/cypress.config.ts
 nextcloud/apps/activity/docs/
 nextcloud/apps/activity/docs/create.md
 nextcloud/apps/activity/docs/endpoint-v2.md
@@ -9664,6 +9665,7 @@ nextcloud/apps/activity/templates/settings/admin.php
 nextcloud/apps/activity/templates/settings/personal.php
 nextcloud/apps/activity/templates/stream.app.navigation.php
 nextcloud/apps/activity/templates/stream.body.php
+nextcloud/apps/activity/tsconfig.json
 nextcloud/apps/activity/vendor-bin/
 nextcloud/apps/activity/vendor-bin/cs-fixer/
 nextcloud/apps/activity/vendor-bin/cs-fixer/composer.json
@@ -9788,6 +9790,8 @@ nextcloud/apps/admin_audit/l10n/sr.js
 nextcloud/apps/admin_audit/l10n/sr.json
 nextcloud/apps/admin_audit/l10n/sv.js
 nextcloud/apps/admin_audit/l10n/sv.json
+nextcloud/apps/admin_audit/l10n/th.js
+nextcloud/apps/admin_audit/l10n/th.json
 nextcloud/apps/admin_audit/l10n/tr.js
 nextcloud/apps/admin_audit/l10n/tr.json
 nextcloud/apps/admin_audit/l10n/uk.js
@@ -13931,8 +13935,12 @@ nextcloud/apps/files_reminders/l10n/es.js
 nextcloud/apps/files_reminders/l10n/es.json
 nextcloud/apps/files_reminders/l10n/fi.js
 nextcloud/apps/files_reminders/l10n/fi.json
+nextcloud/apps/files_reminders/l10n/fr.js
+nextcloud/apps/files_reminders/l10n/fr.json
 nextcloud/apps/files_reminders/l10n/gl.js
 nextcloud/apps/files_reminders/l10n/gl.json
+nextcloud/apps/files_reminders/l10n/lt_LT.js
+nextcloud/apps/files_reminders/l10n/lt_LT.json
 nextcloud/apps/files_reminders/l10n/mk.js
 nextcloud/apps/files_reminders/l10n/mk.json
 nextcloud/apps/files_reminders/l10n/nb.js
@@ -13947,6 +13955,8 @@ nextcloud/apps/files_reminders/l10n/sv.js
 nextcloud/apps/files_reminders/l10n/sv.json
 nextcloud/apps/files_reminders/l10n/tr.js
 nextcloud/apps/files_reminders/l10n/tr.json
+nextcloud/apps/files_reminders/l10n/uk.js
+nextcloud/apps/files_reminders/l10n/uk.json
 nextcloud/apps/files_reminders/l10n/zh_HK.js
 nextcloud/apps/files_reminders/l10n/zh_HK.json
 nextcloud/apps/files_reminders/l10n/zh_TW.js
@@ -24035,6 +24045,7 @@ nextcloud/core/Controller/LoginController.php
 nextcloud/core/Controller/LostController.php
 nextcloud/core/Controller/NavigationController.php
 nextcloud/core/Controller/OCJSController.php
+nextcloud/core/Controller/OCMController.php
 nextcloud/core/Controller/OCSController.php
 nextcloud/core/Controller/PreviewController.php
 nextcloud/core/Controller/ProfileApiController.php
@@ -26507,6 +26518,11 @@ nextcloud/lib/private/Notification/
 nextcloud/lib/private/Notification/Action.php
 nextcloud/lib/private/Notification/Manager.php
 nextcloud/lib/private/Notification/Notification.php
+nextcloud/lib/private/OCM/
+nextcloud/lib/private/OCM/Model/
+nextcloud/lib/private/OCM/Model/OCMProvider.php
+nextcloud/lib/private/OCM/Model/OCMResource.php
+nextcloud/lib/private/OCM/OCMDiscoveryService.php
 nextcloud/lib/private/OCS/
 nextcloud/lib/private/OCS/CoreCapabilities.php
 nextcloud/lib/private/OCS/DiscoveryService.php
@@ -27449,6 +27465,13 @@ nextcloud/lib/public/Notification/IDismissableNotifier.php
 nextcloud/lib/public/Notification/IManager.php
 nextcloud/lib/public/Notification/INotification.php
 nextcloud/lib/public/Notification/INotifier.php
+nextcloud/lib/public/OCM/
+nextcloud/lib/public/OCM/Exceptions/
+nextcloud/lib/public/OCM/Exceptions/OCMArgumentException.php
+nextcloud/lib/public/OCM/Exceptions/OCMProviderException.php
+nextcloud/lib/public/OCM/IOCMDiscoveryService.php
+nextcloud/lib/public/OCM/IOCMProvider.php
+nextcloud/lib/public/OCM/IOCMResource.php
 nextcloud/lib/public/OCS/
 nextcloud/lib/public/OCS/IDiscoveryService.php
 nextcloud/lib/public/PreConditionNotMetException.php
@@ -27672,8 +27695,6 @@ nextcloud/lib/public/WorkflowEngine/IRuleMatcher.php
 nextcloud/lib/public/WorkflowEngine/ISpecificOperation.php
 nextcloud/lib/versioncheck.php
 nextcloud/occ
-nextcloud/ocm-provider/
-nextcloud/ocm-provider/index.php
 nextcloud/ocs/
 nextcloud/ocs-provider/
 nextcloud/ocs-provider/index.php
