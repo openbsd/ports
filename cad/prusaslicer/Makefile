@@ -1,7 +1,7 @@
 COMMENT =	g-code generator for 3D printers
 
 V =		2.5.2
-REVISION =	0
+REVISION =	1
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -21,15 +21,16 @@ WANTLIB += ${COMPILER_LIBCXX} CGAL GL GLEW TKBO TKBRep TKCAF TKCDF
 WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
 WANTLIB += TKMesh TKPrim TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase
 WANTLIB += TKService TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF
-WANTLIB += TKXDESTEP TKXSBase TKernel atk-1.0 boost_atomic-mt
+WANTLIB += TKXDE TKXDESTEP TKXSBase TKernel X11 atk-1.0 boost_atomic-mt
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_log_setup-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c cairo
-WANTLIB += cairo-gobject curl dbus-1 expat gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3 harfbuzz hidapi-libusb
-WANTLIB += intl jpeg m mpfr nlopt openvdb pango-1.0 pangocairo-1.0
-WANTLIB += png qhull_r tbb tiff wx_baseu-3.2 wx_gtk3u_core-3.2
-WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 z
+WANTLIB += cairo-gobject curl dbus-1 execinfo expat fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp
+WANTLIB += gobject-2.0 gtk-3 harfbuzz hidapi-libusb intl jpeg
+WANTLIB += m mpfr nlopt openvdb pango-1.0 pangocairo-1.0 png qhull_r
+WANTLIB += tbb tiff wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB += wx_gtk3u_html-3.2 z
 
 COMPILER =		base-clang ports-gcc
 
@@ -45,8 +46,7 @@ BUILD_DEPENDS =		devel/cereal \
 			devel/gmp,-cxx \
 			math/eigen3
 
-LIB_DEPENDS =		archivers/blosc \
-			cad/oce \
+LIB_DEPENDS =		cad/opencascade \
 			comms/libhidapi \
 			devel/gmp \
 			devel/tbb \
