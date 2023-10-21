@@ -15,6 +15,8 @@ PKGNAME-tds =		qt5-tds-${VERSION}
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
+REVISION-main =		0
+
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
@@ -145,6 +147,9 @@ CONFIGURE_ARGS +=	-no-vulkan
 # Let's wait a little until we have more experience and test results
 #LIB_DEPENDS +=		sysutils/libudev-openbsd
 CONFIGURE_ARGS +=	-no-libudev
+
+# wayland/libinput-openbsd
+CONFIGURE_ARGS +=	-no-libinput
 
 # disabled
 CONFIGURE_ARGS +=	-no-compile-examples \
