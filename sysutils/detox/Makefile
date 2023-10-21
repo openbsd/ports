@@ -1,19 +1,18 @@
 COMMENT =		utility designed to clean up filenames
 
-DISTNAME =		detox-1.2.0
+V =			1.4.5
+DISTNAME =		detox-${V}
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://detox.sourceforge.net/
+HOMEPAGE =		https://github.com/dharple/detox
 
 #BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c
 
-SITES =			${SITE_SOURCEFORGE:=detox/}
-
-EXTRACT_SUFX =		.tar.bz2
+SITES =			${HOMEPAGE}/releases/download/v${V}/
 
 USE_GMAKE =		Yes
 
@@ -21,16 +20,6 @@ CONFIGURE_STYLE =	gnu
 
 NO_TEST =		Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/detox
-	${INSTALL_DATA_DIR} ${PREFIX}/share/detox
-	${INSTALL_PROGRAM} ${WRKBUILD}/detox ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/inline-detox ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKBUILD}/detox.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKBUILD}/detoxrc.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKBUILD}/detox.tbl.5 ${PREFIX}/man/man5
-	${INSTALL_DATA} ${WRKBUILD}/detoxrc ${PREFIX}/share/examples/detox
-	${INSTALL_DATA} ${WRKBUILD}/iso8859_1.tbl ${PREFIX}/share/detox
-	${INSTALL_DATA} ${WRKBUILD}/unicode.tbl ${PREFIX}/share/detox
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/detox
 
 .include <bsd.port.mk>
