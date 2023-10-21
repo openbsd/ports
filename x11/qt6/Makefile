@@ -25,6 +25,7 @@
      SUBDIR += qtserialbus
      SUBDIR += qtserialport
      SUBDIR += qtshadertools
+     SUBDIR += qtspeech
      SUBDIR += qtsvg
      SUBDIR += qttools
      SUBDIR += qttranslations
