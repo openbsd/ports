@@ -1,0 +1,12 @@
+Index: libraries/lib-ffmpeg-support/FFmpegFunctions.cpp
+--- libraries/lib-ffmpeg-support/FFmpegFunctions.cpp.orig
++++ libraries/lib-ffmpeg-support/FFmpegFunctions.cpp
+@@ -132,7 +132,7 @@ std::vector<wxString> BuildAVFormatPaths(int version)
+       wxString::Format("libavformat.%d.dylib", version),
+       wxString::Format("ffmpeg.%d.64bit.dylib", version),
+ #else
+-      wxString::Format("libavformat.so.%d", version)
++      wxString::Format("libavformat.so"),
+ #endif
+ };
+ }
