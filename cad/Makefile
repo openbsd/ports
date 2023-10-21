@@ -16,7 +16,7 @@
      SUBDIR += necpp
      SUBDIR += netgen
      SUBDIR += ngspice
-     SUBDIR += oce
+     SUBDIR += opencascade
      SUBDIR += openscad
      SUBDIR += opensta
      SUBDIR += pcb
