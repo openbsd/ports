@@ -1,0 +1,19 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1015,12 +1015,12 @@ else()
+ endif()
+ 
+  # change custom.bat/sh
+-if (EXISTS "${INSTALL_DIR}/${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}")
+-  file (READ "${INSTALL_DIR}/${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" CUSTOM_CONTENT)
++if (EXISTS "${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}")
++  file (READ "${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" CUSTOM_CONTENT)
+ 
+   set (CUSTOM_CONTENT "${CUSTOM_CONTENT} ${ADDITIONAL_CUSTOM_CONTENT}")
+ 
+-  file (WRITE "${INSTALL_DIR}/${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" "${CUSTOM_CONTENT}")
++  file (WRITE "${INSTALL_DIR_SCRIPT}/custom.${SCRIPT_EXT}" "${CUSTOM_CONTENT}")
+ else()
+   OCCT_CONFIGURE_AND_INSTALL ("adm/templates/custom.${SCRIPT_EXT}.main" "custom.${SCRIPT_EXT}" "custom.${SCRIPT_EXT}" "${INSTALL_DIR_SCRIPT}")
+ endif()

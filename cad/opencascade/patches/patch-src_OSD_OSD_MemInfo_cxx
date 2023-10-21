@@ -1,0 +1,14 @@
+Index: src/OSD/OSD_MemInfo.cxx
+--- src/OSD/OSD_MemInfo.cxx.orig
++++ src/OSD/OSD_MemInfo.cxx
+@@ -28,7 +28,9 @@
+   #include <malloc/malloc.h>
+ #else
+   #include <unistd.h>
+-  #include <malloc.h>
++  #ifndef __OpenBSD__
++    #include <malloc.h>
++  #endif
+ #endif
+ 
+ #include <OSD_MemInfo.hxx>
