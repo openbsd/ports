@@ -567,6 +567,7 @@
      SUBDIR += uni
      SUBDIR += unicode
      SUBDIR += unrtf
+     SUBDIR += urlscan
      SUBDIR += urlview
      SUBDIR += urlview,slang
      SUBDIR += validate
