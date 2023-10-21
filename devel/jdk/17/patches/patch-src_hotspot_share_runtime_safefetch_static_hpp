@@ -1,0 +1,14 @@
+Fix implicit conversion error between intptr_t and int *.
+
+Index: src/hotspot/share/runtime/safefetch_static.hpp
+--- src/hotspot/share/runtime/safefetch_static.hpp.orig
++++ src/hotspot/share/runtime/safefetch_static.hpp
+@@ -34,7 +34,7 @@ extern "C" int SafeFetch32_impl(int* adr, int errValue
+ extern "C" intptr_t SafeFetchN_impl(intptr_t* adr, intptr_t errValue);
+ #else
+ inline intptr_t SafeFetchN_impl(intptr_t* adr, intptr_t errValue) {
+-  return SafeFetch32_impl(adr, errValue);
++  return SafeFetch32_impl((int *)adr, errValue);
+ }
+ #endif // _LP64
+ 
