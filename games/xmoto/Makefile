@@ -1,5 +1,7 @@
 COMMENT =	challenging 2D motocross platform game
 
+BROKEN-sparc64 = Always hangs for 8 hours and gets killed
+
 GH_ACCOUNT = 	xmoto
 GH_PROJECT = 	xmoto
 GH_TAGNAME = 	v0.6.2
