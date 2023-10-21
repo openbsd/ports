@@ -1,5 +1,5 @@
 COMMENT =	client for Matrix chat
-MODKDE_VERSION = 23.04.3
+MODKDE_VERSION = 23.08.2
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
 
@@ -54,7 +54,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		security/qtkeychain \
 		textproc/cmark \
 		x11/libqtolm \
-		x11/libquotient \
+		x11/libquotient>=0.7 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2
