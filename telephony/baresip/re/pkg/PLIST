@@ -22,7 +22,6 @@ include/re/re_hmac.h
 include/re/re_http.h
 include/re/re_httpauth.h
 include/re/re_ice.h
-include/re/re_jbuf.h
 include/re/re_json.h
 include/re/re_list.h
 include/re/re_main.h
