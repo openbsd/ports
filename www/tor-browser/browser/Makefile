@@ -12,6 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-115.3.1esr-13.0-1-build2
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -69,7 +70,8 @@ CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
 			--with-base-browser-version=${TB_VERSION}	\
-			--enable-update-channel=release
+			--enable-update-channel=release			\
+			--with-branding=browser/branding/tb-release
 
 # for nss build system
 MAKE_ENV +=		BUILD_OPT=1 \
