@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1562 2023/10/18 06:50:52 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1563 2023/10/21 13:45:43 ian Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -789,6 +789,7 @@ my $stem_extensions = {
 # 7.5
 	'py-reportlab' => 'py3-reportlab',
 	'py-simplejson' => 'py3-simplejson',
+	'oce' => 'opencascade',
 };
 
 my $obsolete_reason = {};
