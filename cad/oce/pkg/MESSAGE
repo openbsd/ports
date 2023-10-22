@@ -1,3 +1,0 @@
-The following should be used to properly initialize and start OpenCascade:
-
-${LOCALBASE}/bin/bash ${LOCALBASE}/bin/oce_draw.sh
