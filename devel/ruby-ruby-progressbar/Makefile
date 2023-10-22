@@ -1,6 +1,6 @@
 COMMENT =		text progress bar library for Ruby
 
-DISTNAME =		ruby-progressbar-1.11.0
+DISTNAME =		ruby-progressbar-1.13.0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/jfelchner/ruby-progressbar
