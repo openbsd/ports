@@ -1,0 +1,13 @@
+add missing setlocale(3) include for LC_ALL
+
+Index: main.cc
+--- main.cc.orig
++++ main.cc
+@@ -2,6 +2,7 @@
+  * Part of GoldenDict. Licensed under GPLv3 or later, see the LICENSE file */
+ 
+ #include <stdio.h>
++#include <locale.h>
+ #include <QIcon>
+ #include "gdappstyle.hh"
+ #include "mainwindow.hh"
