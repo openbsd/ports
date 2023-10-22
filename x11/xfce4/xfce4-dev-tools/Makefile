@@ -1,17 +1,17 @@
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
-REVISION =	0
+REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 
+BUILD_DEPENDS =	textproc/libxslt
 RUN_DEPENDS =	devel/libtool \
 		textproc/gtk-doc \
 		textproc/intltool \
-		textproc/xsltproc \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		shells/bash \
