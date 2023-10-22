@@ -2,6 +2,7 @@
 SITES.codeberg ?= https://codeberg.org/
 SITES.github ?=	https://github.com/
 SITES.gitlab ?=	https://gitlab.com/
+SITES.kde ?=	https://invent.kde.org/
 SITES.srht ?=	https://git.sr.ht/
 
 # set EXTRACT_SUFX.x if different from TEMPLATE_EXTRACT_SUFX
@@ -20,6 +21,9 @@ TEMPLATE_DISTFILES.github ?= \
 
 TEMPLATE_DISTFILES.gitlab ?= \
 	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.gitlab}
+
+TEMPLATE_DISTFILES.kde ?= \
+	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.kde}
 
 TEMPLATE_DISTFILES.srht ?= \
 	<account>-<project>-{~<account>/<project>/archive/}<id>${EXTRACT_SUFX.srht}
