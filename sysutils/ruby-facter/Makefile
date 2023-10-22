@@ -1,6 +1,6 @@
 COMMENT =	system inventory tool
 
-DISTNAME =	facter-4.3.1
+DISTNAME =	facter-4.5.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -21,5 +21,6 @@ CONFIGURE_STYLE =	ruby gem
 post-patch:
 	cp -r ${FILESDIR}/facts ${WRKSRC}/lib/facter/facts/openbsd
 	cp -r ${FILESDIR}/resolvers ${WRKSRC}/lib/facter/resolvers/openbsd
+	find ${WRKSRC}/lib/facter -name CVS -type d -exec rm -rf {} \; || true
 
 .include <bsd.port.mk>

@@ -563,7 +563,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/oel/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/oel/os/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/oel/os/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/lsbdistdescription.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/lsbdistid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/os/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/os/distro/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/os/distro/description.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/os/distro/id.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ol/os/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/augeas/
@@ -788,8 +793,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ubuntu/os/distro/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/ubuntu/os/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/aio_agent_version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/augeas/
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/augeas/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/az_metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/cloud/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/windows/cloud/provider.rb
@@ -941,10 +944,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/models/fact_collection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/models/loaded_fact.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/models/resolved_fact.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/models/searched_fact.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/patches/
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/patches/sysfilesystem/
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/patches/sysfilesystem/sys/
-${GEM_LIB}/gems/${DISTNAME}/lib/facter/patches/sysfilesystem/sys/statvfs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aio_agent_version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aix/

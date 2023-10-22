@@ -37,7 +37,7 @@ module Facter
           def retrieve_sizes_for_mounts
             output = Facter::Core::Execution.execute('df -P', logger: log)
             output.split("\n").drop(1).map do |line|
-              next if line =~ /-\s+-\s+-/
+              next if line.match(/-\s+-\s+-/)
 
               mount_info = line.split("\s")
               mount_info[3] = translate_to_bytes(mount_info[3])
