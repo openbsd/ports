@@ -1,8 +1,8 @@
 Index: spectrwm.c
 --- spectrwm.c.orig
 +++ spectrwm.c
-@@ -331,7 +331,7 @@ uint32_t		swm_debug = 0
- #define SWM_CONF_KEYMAPPING	(1)
+@@ -373,7 +373,7 @@ uint32_t		swm_debug = 0
+ #define SWM_CONF_WHITESPACE	" \t\n"
  
  #ifndef SWM_LIB
 -#define SWM_LIB			"/usr/local/lib/libswmhack.so"

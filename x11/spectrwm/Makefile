@@ -1,9 +1,8 @@
 COMMENT=		small tiling window manager
 
-GH_ACCOUNT=		conformal
-GH_PROJECT=		spectrwm
-GH_COMMIT=		06e3733175969c307a6fd47240a7a37b29d60513
-DISTNAME=		${GH_PROJECT}-3.4.1.20230507
+V=			3.5.0
+DIST_TUPLE=		github conformal spectrwm SPECTRWM_${V:S/./_/g} /
+DISTNAME=		spectrwm-${V}
 
 SHARED_LIBS=		swmhack 1.0
 
@@ -16,8 +15,8 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>, \
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-icccm xcb-keysyms
-WANTLIB += xcb-randr xcb-util xcb-xinput xcb-xtest
+WANTLIB += X11 X11-xcb Xcursor Xft c fontconfig util xcb xcb-icccm
+WANTLIB += xcb-keysyms xcb-randr xcb-util xcb-xinput xcb-xtest
 
 RUN_DEPENDS=	x11/dmenu>=4.5
 
