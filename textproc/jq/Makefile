@@ -30,4 +30,6 @@ CONFIGURE_ARGS +=	--disable-docs
 # makes all tests fail with SIGILL
 CONFIGURE_ARGS +=	--disable-valgrind
 
+TEST_DEPENDS =		shells/bash
+
 .include <bsd.port.mk>

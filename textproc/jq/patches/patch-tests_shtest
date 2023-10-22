@@ -1,0 +1,20 @@
+- use bash(1) as ksh(1) `set -v' behaviour difference causes false positive
+- skip one test expecting script(1) `-e' and `-q'
+
+Index: tests/shtest
+--- tests/shtest.orig
++++ tests/shtest
+@@ -1,4 +1,4 @@
+-#!/bin/sh -x
++#!/usr/local/bin/bash -x
+ 
+ . "${0%/*}/setup" "$@"
+ 
+@@ -506,6 +506,7 @@ cmp $d/warning $d/expect_warning
+ test_no_color=true
+ $msys  && test_no_color=false
+ $mingw && test_no_color=false
++[ "$(uname -s)" = OpenBSD ] && test_no_color=false
+ if $test_no_color && command -v script >/dev/null 2>&1; then
+   unset NO_COLOR
+   if script -qc echo /dev/null >/dev/null 2>&1; then
