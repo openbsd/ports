@@ -64,6 +64,7 @@
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += gi-docgen
+     SUBDIR += goldendict
      SUBDIR += gpresent
      SUBDIR += grepcidr
      SUBDIR += grepcidr3
