@@ -1,6 +1,6 @@
 COMMENT =		lightweight libcurl wrapper
 
-DISTNAME =		ethon-0.15.0
+DISTNAME =		ethon-0.16.0
 
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/typhoeus/ethon
