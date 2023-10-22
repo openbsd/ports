@@ -3,7 +3,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 V =			4.4.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -17,7 +17,7 @@ SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 SITES.eesti =		https://id.eesti.ee/
-CONFIG_NAME =		config-20230904
+CONFIG_NAME =		config-20231018
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
