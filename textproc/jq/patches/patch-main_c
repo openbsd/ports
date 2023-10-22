@@ -1,0 +1,15 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -334,6 +334,11 @@ int main(int argc, char* argv[]) {
+   _setmode(fileno(stderr), _O_TEXT | _O_U8TEXT);
+ #endif
+ 
++  if (pledge("stdio getpw rpath", NULL) == -1) {
++    fprintf(stderr, "pledge\n");
++    die();
++  }
++
+   if (argc) progname = argv[0];
+ 
+   jq = jq_init();
