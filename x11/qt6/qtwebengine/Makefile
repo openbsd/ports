@@ -1,5 +1,8 @@
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
+BROKEN-i386 =		error during build
+# RuntimeError: Command '/usr/local/bin/node ../../../../../qtwebengine-everywhere-src-6.5.2/src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/compress_files.js --file_list __third_party_devtools-frontend_src_compress__pobj_qt6-qtwebengine-6.5.2_build-i386_src_core_target_toolchain_target__rule..rsp' failed
+
 DPB_PROPERTIES =	parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
 DPB_PROPERTIES +=	lonesome
