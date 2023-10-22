@@ -32,18 +32,18 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 NO_TEST=	Yes
 
-post-install:
+# others are already in popper-utils
+PROGS=		xpdf pdfdetach pdftopng
+ALL_TARGET=	${PROGS}
+
+do-install:
+.for prog in ${PROGS}
+	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/${prog} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/${prog}.1 ${PREFIX}/man/man1/
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/xpdfrc.5 ${PREFIX}/man/man5/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xpdf
 	${INSTALL_DATA} ${WRKSRC}/doc/sample-xpdfrc \
 		${PREFIX}/share/examples/xpdf/xpdfrc
-# already in poppler-utils
-.for i in pdffonts pdfimages pdfinfo pdftoppm pdftops pdftotext
-	rm ${PREFIX}/man/man1/$i.1
-	rm ${PREFIX}/bin/$i
-.endfor
-# forgotten in Makefile.in (there's also a pdfthtml, but it conflicts
-# with poppler-utils):
-	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/pdftopng ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/pdftopng.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

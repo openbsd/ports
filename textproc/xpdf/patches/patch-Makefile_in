@@ -1,18 +1,16 @@
---- Makefile.in.orig	Mon Aug 15 23:08:52 2011
-+++ Makefile.in	Thu Aug 18 21:10:22 2011
-@@ -102,13 +102,8 @@ install: dummy
- 	$(INSTALL_DATA) $(srcdir)/doc/pdfimages.1 $(DESTDIR)@mandir@/man1/pdfimages.1
- 	-mkdir -p $(DESTDIR)@mandir@/man5
- 	$(INSTALL_DATA) $(srcdir)/doc/xpdfrc.5 $(DESTDIR)@mandir@/man5/xpdfrc.5
--	-mkdir -p $(DESTDIR)@sysconfdir@
--	@if test ! -f $(DESTDIR)@sysconfdir@/xpdfrc; then \
--		echo "$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(DESTDIR)@sysconfdir@/xpdfrc"; \
--		$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(DESTDIR)@sysconfdir@/xpdfrc; \
--	else \
--		echo "# not overwriting the existing $(DESTDIR)@sysconfdir@/xpdfrc"; \
--	fi
-+	-mkdir -p $(PREFIX)/share/examples/xpdf
-+	$(INSTALL_DATA) $(srcdir)/doc/sample-xpdfrc $(PREFIX)/share/examples/xpdf/xpdfrc
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -67,6 +67,12 @@ pdfdetach:
+ 	cd @UP_DIR@splash; $(MAKE)
+ 	cd @UP_DIR@xpdf; $(MAKE) pdfdetach$(EXE)
  
- clean:
- 	-cd goo; $(MAKE) clean
++pdftopng:
++	cd goo; $(MAKE)
++	cd @UP_DIR@fofi; $(MAKE)
++	cd @UP_DIR@splash; $(MAKE)
++	cd @UP_DIR@xpdf; $(MAKE) pdftopng$(EXE)
++
+ pdftoppm:
+ 	cd goo; $(MAKE)
+ 	cd @UP_DIR@fofi; $(MAKE)
