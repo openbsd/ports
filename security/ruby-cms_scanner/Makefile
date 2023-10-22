@@ -1,7 +1,6 @@
 COMMENT =	framework to implement CMS scanners
 
-DISTNAME =	cms_scanner-0.13.8
-REVISION =	0
+DISTNAME =	cms_scanner-0.13.9
 CATEGORIES =	security
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -16,12 +15,12 @@ NO_TEST =	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 RUN_DEPENDS +=		devel/ruby-get_process_mem,${MODRUBY_FLAVOR},>=0.2.5,<0.3 \
-			devel/ruby-ruby-progressbar,${MODRUBY_FLAVOR},>=1.10,<1.12 \
+			devel/ruby-ruby-progressbar,${MODRUBY_FLAVOR},>=1.10,<1.14 \
 			devel/ruby-opt_parse_validator,${MODRUBY_FLAVOR}>=1.9.5,<1.10 \
 			devel/ruby-yajl,${MODRUBY_FLAVOR},>=1.4.1,<1.5 \
-			net/ruby-public_suffix,${MODRUBY_FLAVOR},>=4.0.3,<4.1 \
-			textproc/ruby-nokogiri,${MODRUBY_FLAVOR},>=1.11.4 \
-			www/ruby-ethon,${MODRUBY_FLAVOR},>=0.14,<0.16 \
+			net/ruby-public_suffix,${MODRUBY_FLAVOR},>=4.0.3,<5.1.0 \
+			textproc/ruby-nokogiri,${MODRUBY_FLAVOR},>=1.11.4,<1.16 \
+			www/ruby-ethon,${MODRUBY_FLAVOR},>=0.14,<0.17 \
 			www/ruby-typhoeus,${MODRUBY_FLAVOR},>=1.3,<1.5 \
 			www/ruby-xmlrpc,${MODRUBY_FLAVOR},>=0.3.2,<0.4
 
