@@ -4,10 +4,10 @@ include/ShowMySky/
 include/ShowMySky/AtmosphereRenderer.hpp
 include/ShowMySky/Exception.hpp
 include/ShowMySky/Settings.hpp
-lib/cmake/ShowMySky-Qt5/
-lib/cmake/ShowMySky-Qt5/ShowMySky-Qt5Config${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/ShowMySky-Qt5/ShowMySky-Qt5Config.cmake
-@lib lib/libShowMySky-Qt5.so.${LIBShowMySky-Qt5_VERSION}
+lib/cmake/ShowMySky-Qt6/
+lib/cmake/ShowMySky-Qt6/ShowMySky-Qt6Config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ShowMySky-Qt6/ShowMySky-Qt6Config.cmake
+@lib lib/libShowMySky-Qt6.so.${LIBShowMySky-Qt6_VERSION}
 share/CalcMySky/
 share/CalcMySky/shaders/
 share/CalcMySky/shaders/accumulate-single-scattering-texture.frag
