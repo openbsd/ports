@@ -1,3 +1,5 @@
+merged after 1.7 release: https://github.com/jqlang/jq/pull/2934
+
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
@@ -5,7 +7,7 @@ Index: src/main.c
    _setmode(fileno(stderr), _O_TEXT | _O_U8TEXT);
  #endif
  
-+  if (pledge("stdio getpw rpath", NULL) == -1) {
++  if (pledge("stdio rpath", NULL) == -1) {
 +    fprintf(stderr, "pledge\n");
 +    die();
 +  }
