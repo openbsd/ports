@@ -1,6 +1,6 @@
 COMMENT =		Jupyter core package
 
-MODPY_EGG_VERSION =	4.7.0
+MODPY_EGG_VERSION =	5.4.0
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -12,16 +12,20 @@ HOMEPAGE =		https://jupyter.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	jupyter_core
-
-RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-nose$(MODPY_FLAVOR)
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		hatchling
+
+RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR} \
+			sysutils/py-platformdirs${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-test-cov${MODPY_FLAVOR} \
+			devel/py-test-timeout${MODPY_FLAVOR}
 
 PORTHOME =		${WRKDIR}
 
