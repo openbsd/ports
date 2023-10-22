@@ -6,9 +6,9 @@ VERSION =	4.1.0
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
 
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE =	http://www.swig.org/
+HOMEPAGE =	https://www.swig.org/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -20,13 +20,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 SITES =		${SITE_SOURCEFORGE:=swig/}
 
 MODULES =	lang/python \
-		lang/ruby \
 		lang/tcl
 
-MODRUBY_RUNDEP = No
-
 MODPY_RUNDEP =	No
-MODPHP_BUILDDEP =	Yes
 
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
@@ -34,25 +30,34 @@ BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 LIB_DEPENDS =	devel/pcre2
 
 # dont run update-plist after make test
-TEST_DEPENDS =	lang/go \
-		lang/node \
-		devel/boost
+TEST_DEPENDS =	devel/boost
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = gnu
+# We can't configure --with-ruby because of a dependency circle,
+# swig -> ruby (yjit) -> rust -> llvm -> swig.
 CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
 		 --with-guilelib=${LOCALBASE}/lib \
-		 --with-php=${MODPHP_BIN} \
 		 --with-python=${MODPY_BIN} \
-		 --with-ruby=${RUBY} \
+		 --without-android \
+		 --without-csharp \
+		 --without-d \
+		 --without-go \
+		 --without-java \
+		 --without-javascript \
+		 --without-lua \
 		 --without-mzscheme \
-		 --without-ocaml
+		 --without-ocaml \
+		 --without-octave \
+		 --without-php \
+		 --without-r \
+		 --without-ruby \
+		 --without-scilab
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
 
 ALL_TARGET =	swig
 
-SWIG_EXAMPLES =	${PREFIX}/share/examples/swig
 SWIG_DOCS =	${PREFIX}/share/doc/swig
 
 PORTHOME =	${WRKDIR}
@@ -61,9 +66,7 @@ pre-test:
 	ln -sf ${MODTCL_BIN} ${WRKDIR}/bin/tclsh
 
 post-install:
-	${INSTALL_DATA_DIR} ${SWIG_EXAMPLES}
 	${INSTALL_DATA_DIR} ${SWIG_DOCS}
-	cp -R ${WRKSRC}/Examples/* ${SWIG_EXAMPLES}
 	cp -R ${WRKSRC}/Doc/* ${SWIG_DOCS}
 	chmod 0644 ${SWIG_DOCS}/Manual/CCache.html
 
