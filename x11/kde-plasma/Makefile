@@ -4,7 +4,7 @@
      SUBDIR += kdecoration
      SUBDIR += oxygen
 
-    # Ported by unhooked
+    # Ported but unhooked
     # SUBDIR += kactivitymanagerd
     # SUBDIR += kde-cli-tools
     # SUBDIR += kde-gtk-config
