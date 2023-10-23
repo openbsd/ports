@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1563 2023/10/21 13:45:43 ian Exp $
+# $OpenBSD: Quirks.pm,v 1.1564 2023/10/23 17:08:06 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1863,6 +1863,7 @@ setup_obsolete_reason(
 	56 => 'coccinella',
 	31 => 'py-snack',
 	5 => 'wxglade',
+	57 => 'barony',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1935,6 +1936,7 @@ my $obsolete_message = {
 	54 => "dependencies for recent versions can't be met (dotnet), consider switching to steamctl",
 	55 => "residualvm is dead upstream and has been merged into scummvm",
 	56 => "outdated, fails to establish TLS connections/cannot login, use dino, mcabber, gajim or pidgin",
+	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
 };
 
 # ->is_base_system($handle, $state):

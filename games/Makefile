@@ -20,7 +20,6 @@
      SUBDIR += asciiquarium
      SUBDIR += astromenace
      SUBDIR += atomix
-     SUBDIR += barony
      SUBDIR += barrage
      SUBDIR += bass
      SUBDIR += bastet
