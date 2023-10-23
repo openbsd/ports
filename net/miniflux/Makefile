@@ -1,6 +1,6 @@
 COMMENT =	minimalist and opinionated feed reader
 
-V =		2.0.47
+V =		2.0.49
 
 MODGO_MODNAME =	miniflux.app/v2
 MODGO_VERSION =	v${V}
