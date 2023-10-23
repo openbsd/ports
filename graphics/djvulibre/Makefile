@@ -1,7 +1,7 @@
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.28
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	djvulibre	27.0	# 28.0
 CATEGORIES=	graphics print
 
@@ -20,8 +20,7 @@ LIB_DEPENDS=	converters/libiconv \
 		graphics/jpeg \
 		graphics/tiff
 
-RUN_DEPENDS+=	misc/shared-mime-info \
-		x11/gtk+4,-guic
+RUN_DEPENDS+=	x11/gtk+4,-guic
 
 BUILD_DEPENDS+=	x11/gnome/librsvg
 

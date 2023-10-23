@@ -75,8 +75,6 @@ share/icons/hicolor/128x128/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/16x16/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/20x20/
 share/icons/hicolor/20x20/mimetypes/
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-mime-database
 share/icons/hicolor/20x20/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/22x22/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/24x24/mimetypes/image-vnd.djvu.png
@@ -87,3 +85,4 @@ share/icons/hicolor/64x64/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/72x72/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/96x96/mimetypes/image-vnd.djvu.png
 share/icons/hicolor/scalable/mimetypes/image-vnd.djvu.svgz
+@tag gtk-update-icon-cache %D/share/icons/hicolor
