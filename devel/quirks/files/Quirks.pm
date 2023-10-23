@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1564 2023/10/23 17:08:06 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1565 2023/10/23 19:17:25 volker Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1864,6 +1864,7 @@ setup_obsolete_reason(
 	31 => 'py-snack',
 	5 => 'wxglade',
 	57 => 'barony',
+	58 => 'exa',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1882,6 +1883,7 @@ my $obsolete_suggestion = {
 	'pdfshuffler' => 'pdfarranger',
 	'gotweb' => 'gotwebd',
 	'compton' => 'picom',
+	'exa' => 'eza',
 };
 
 # reasons for obsolete packages
@@ -1937,6 +1939,7 @@ my $obsolete_message = {
 	55 => "residualvm is dead upstream and has been merged into scummvm",
 	56 => "outdated, fails to establish TLS connections/cannot login, use dino, mcabber, gajim or pidgin",
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
+	58 => "abandoned upstream, use eza as a drop-in replacement",
 };
 
 # ->is_base_system($handle, $state):
