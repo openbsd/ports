@@ -12,12 +12,12 @@ lib/python${MODPY_VERSION}/site-packages/gajim/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gajim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gajim.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gajim_remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gajim_remote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gui_interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}gui_interface.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/
 lib/python${MODPY_VERSION}/site-packages/gajim/common/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}/
@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}cert_store
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}cert_store.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}client_modules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}client_modules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gajim/common/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -108,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/common/application.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/call_manager.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/cert_store.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/client.py
+lib/python${MODPY_VERSION}/site-packages/gajim/common/client_modules.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/commands.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/config.py
 lib/python${MODPY_VERSION}/site-packages/gajim/common/configpaths.py
@@ -879,8 +882,6 @@ lib/python${MODPY_VERSION}/site-packages/gajim/data/style/default-dark.css
 lib/python${MODPY_VERSION}/site-packages/gajim/data/style/default.css
 lib/python${MODPY_VERSION}/site-packages/gajim/data/style/gajim-dark.css
 lib/python${MODPY_VERSION}/site-packages/gajim/data/style/gajim.css
-lib/python${MODPY_VERSION}/site-packages/gajim/gajim.py
-lib/python${MODPY_VERSION}/site-packages/gajim/gajim_remote.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gajim/gtk/${MODPY_PYCACHE}/
@@ -1296,6 +1297,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/gtk/workspace_dialog.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/workspace_side_bar.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gtk/xml_console.py
 lib/python${MODPY_VERSION}/site-packages/gajim/gui_interface.py
+lib/python${MODPY_VERSION}/site-packages/gajim/main.py
 lib/python${MODPY_VERSION}/site-packages/gajim/plugins/
 lib/python${MODPY_VERSION}/site-packages/gajim/plugins/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gajim/plugins/${MODPY_PYCACHE}/
@@ -1323,6 +1325,7 @@ lib/python${MODPY_VERSION}/site-packages/gajim/plugins/pluginmanager.py
 lib/python${MODPY_VERSION}/site-packages/gajim/plugins/plugins_i18n.py
 lib/python${MODPY_VERSION}/site-packages/gajim/plugins/repository.py
 lib/python${MODPY_VERSION}/site-packages/gajim/py.typed
+lib/python${MODPY_VERSION}/site-packages/gajim/remote.py
 @man man/man1/gajim-remote.1
 @man man/man1/gajim.1
 share/applications/org.gajim.Gajim.desktop

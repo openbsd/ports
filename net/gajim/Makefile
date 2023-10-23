@@ -1,5 +1,5 @@
 COMMENT=	fully-featured XMPP client written in Python
-MODPY_EGG_VERSION=	1.8.0
+MODPY_EGG_VERSION=	1.8.1
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	audio/gsound \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
 		graphics/py-qrcode${MODPY_FLAVOR}>=7.3.1 \
-		net/py-nbxmpp${MODPY_FLAVOR}>=4.3.0 \
+		net/py-nbxmpp${MODPY_FLAVOR}>=4.3.3 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-cryptography${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
