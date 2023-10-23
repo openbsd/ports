@@ -20,5 +20,4 @@ lib/pkgconfig/libheif.pc
 @man man/man1/heif-info.1
 @man man/man1/heif-thumbnailer.1
 share/thumbnailers/heif.thumbnailer
-@tag update-mime-database
 @tag update-gdk-pixbuf

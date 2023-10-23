@@ -2,7 +2,7 @@ COMMENT=	HEIF and AVIF file format decoder and encoder
 
 V=		1.16.2
 DISTNAME=	libheif-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  heif 1.6
 
@@ -32,8 +32,6 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 # examples
 LIB_DEPENDS+=	graphics/jpeg \
 		graphics/png
-
-RUN_DEPENDS=	misc/shared-mime-info
 
 CONFIGURE_ARGS= -DWITH_RAV1E=Off \
 		-DWITH_SvtEnc=Off
