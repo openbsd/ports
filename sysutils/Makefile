@@ -93,10 +93,9 @@
      SUBDIR += entr
      SUBDIR += envconsul
      SUBDIR += eventlog
-     SUBDIR += exa
-     SUBDIR += eza
      SUBDIR += exfat-fuse
      SUBDIR += exoscale-cli
+     SUBDIR += eza
      SUBDIR += fabric
      SUBDIR += facette
      SUBDIR += faubackup
