@@ -1,6 +1,6 @@
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	4.3.1
+MODPY_EGG_VERSION =	4.3.3
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
