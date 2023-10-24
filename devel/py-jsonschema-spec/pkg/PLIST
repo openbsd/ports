@@ -16,6 +16,10 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}paths.$
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}readers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}retrievers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}retrievers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/accessors.py
@@ -43,4 +47,6 @@ lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/loaders.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/paths.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/py.typed
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/readers.py
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/retrievers.py
+lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/typing.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema_spec/utils.py
