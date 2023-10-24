@@ -1,10 +1,9 @@
 COMMENT =		library to implement a Unix daemon process
 
-MODPY_EGG_VERSION =	2.3.0
+MODPY_EGG_VERSION =	3.0.1
 DISTNAME =		python-daemon-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemon-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
-REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -25,8 +24,7 @@ BUILD_DEPENDS = 	textproc/py-docutils${MODPY_FLAVOR}
 RUN_DEPENDS =		sysutils/py-lockfile${MODPY_FLAVOR}
 
 # XXX also needs py-testscenarios
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-test${MODPY_FLAVOR} \
 #		devel/py-testscenarios${MODPY_FLAVOR} \
 		devel/py-testtools${MODPY_FLAVOR}
 
