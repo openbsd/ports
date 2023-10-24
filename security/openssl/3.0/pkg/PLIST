@@ -3833,6 +3833,7 @@ ${MAN_PREFIX}/man3/SSL_COMP_get0_name.3
 ${MAN_PREFIX}/man3/SSL_COMP_get_compression_methods.3
 ${MAN_PREFIX}/man3/SSL_COMP_get_id.3
 ${MAN_PREFIX}/man3/SSL_CONF_CTX_clear_flags.3
+${MAN_PREFIX}/man3/SSL_CONF_CTX_finish.3
 ${MAN_PREFIX}/man3/SSL_CONF_CTX_free.3
 ${MAN_PREFIX}/man3/SSL_CONF_CTX_new.3
 ${MAN_PREFIX}/man3/SSL_CONF_CTX_set1_prefix.3

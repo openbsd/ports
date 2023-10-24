@@ -6,11 +6,10 @@ USE_NOEXECONLY =	Yes
 .endif
 
 PORTROACH=	limit:^3\.0
-V=		3.0.11
+V=		3.0.12
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3v0,<3.1v0
 EPOCH=		0
-REVISION=	0
 
 SHLIBVER=	12.4
 SHARED_LIBS=	crypto ${SHLIBVER} \
