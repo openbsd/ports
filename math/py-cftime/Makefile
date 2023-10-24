@@ -1,6 +1,6 @@
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.6.2
+MODPY_EGG_VERSION= 	1.6.3
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -12,8 +12,6 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 
 # MIT
 PERMIT_PACKAGE=		Yes
-
-WANTLIB=		pthread
 
 MODULES=		lang/python
 MODPY_PYBUILD =	setuptools
