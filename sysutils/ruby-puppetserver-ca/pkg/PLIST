@@ -1,9 +1,9 @@
-@comment ${GEM_BIN}/puppetserver-ca31
+@comment ${GEM_BIN}/puppetserver-ca${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
-${GEM_LIB}/gems/${DISTNAME}/.github/workflows/snyk.yaml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/mend.yaml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
@@ -25,6 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/clean.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/delete.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/enable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/generate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/action/import.rb
@@ -49,6 +50,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/cli_parsing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/file_system.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/http_client.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/inventory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/utils/signing_digest.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppetserver/ca/x509_loader.rb
