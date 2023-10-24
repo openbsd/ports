@@ -80,7 +80,6 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
 lib/${MOZILLA_PROJECT}/omni.ja
 @bin lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
-@bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files
 @bin lib/${MOZILLA_PROJECT}/vaapitest
 @man man/man1/${MOZILLA_PROJECT}.1
