@@ -1,5 +1,4 @@
-# bump mail/postfix/stable, mail/postfix/snapshots and sysutils/borgbackup/2.0
-# if updating (static linked)
+# static link, so bump on update: mail/postfix/stable, mail/postfix/snapshots 
 
 .if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY =	Yes
