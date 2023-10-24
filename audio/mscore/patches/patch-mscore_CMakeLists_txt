@@ -1,7 +1,7 @@
 Index: mscore/CMakeLists.txt
 --- mscore/CMakeLists.txt.orig
 +++ mscore/CMakeLists.txt
-@@ -416,7 +416,7 @@ else (MINGW)
+@@ -437,7 +437,7 @@ else (MINGW)
        if (APPLE)
          target_link_libraries(mscoreapp ${OsxFrameworks})
        else (APPLE)
@@ -10,7 +10,7 @@ Index: mscore/CMakeLists.txt
        endif (APPLE)
  
        # 'gold' does not use indirect shared libraries for symbol resolution, Linux only
-@@ -424,7 +424,7 @@ else (MINGW)
+@@ -445,7 +445,7 @@ else (MINGW)
           if(USE_JACK)
              target_link_libraries(mscoreapp ${CMAKE_DL_LIBS})
           endif(USE_JACK)

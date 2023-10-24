@@ -30,12 +30,14 @@ share/mime/packages/musescore.xml
 share/mscore-${MAJ_MIN}/
 share/mscore-${MAJ_MIN}/demos/
 share/mscore-${MAJ_MIN}/demos/Brassed_Up.mscx
+share/mscore-${MAJ_MIN}/demos/Dawn.mscx
 share/mscore-${MAJ_MIN}/demos/Dynamic_Strings.mscx
 share/mscore-${MAJ_MIN}/demos/Fugue_1.mscx
 share/mscore-${MAJ_MIN}/demos/Reunion.mscz
 share/mscore-${MAJ_MIN}/demos/Unclaimed_Gift.mscx
 share/mscore-${MAJ_MIN}/instruments/
 share/mscore-${MAJ_MIN}/instruments/instruments.xml
+share/mscore-${MAJ_MIN}/instruments/orders.xml
 share/mscore-${MAJ_MIN}/plugins/
 share/mscore-${MAJ_MIN}/plugins/abc_import.qml
 share/mscore-${MAJ_MIN}/plugins/colornotes.qml
@@ -58,6 +60,7 @@ share/mscore-${MAJ_MIN}/sound/
 share/mscore-${MAJ_MIN}/sound/MuseScore_General.sf3
 share/mscore-${MAJ_MIN}/sound/MuseScore_General_License.md
 share/mscore-${MAJ_MIN}/styles/
+share/mscore-${MAJ_MIN}/styles/Leland.mss
 share/mscore-${MAJ_MIN}/styles/MuseJazz.mss
 share/mscore-${MAJ_MIN}/styles/cchords_muse.xml
 share/mscore-${MAJ_MIN}/styles/cchords_nrb.xml
@@ -67,6 +70,9 @@ share/mscore-${MAJ_MIN}/styles/chords.xml
 share/mscore-${MAJ_MIN}/styles/chords_jazz.xml
 share/mscore-${MAJ_MIN}/styles/chords_std.xml
 share/mscore-${MAJ_MIN}/styles/jazzchords.xml
+share/mscore-${MAJ_MIN}/styles/legacy-style-defaults-v1.mss
+share/mscore-${MAJ_MIN}/styles/legacy-style-defaults-v2.mss
+share/mscore-${MAJ_MIN}/styles/legacy-style-defaults-v3.mss
 share/mscore-${MAJ_MIN}/styles/stdchords.xml
 share/mscore-${MAJ_MIN}/templates/
 share/mscore-${MAJ_MIN}/templates/01-General/

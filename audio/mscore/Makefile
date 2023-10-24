@@ -1,11 +1,11 @@
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
-V =		3.5
+V =		3.6.2
 COMMENT =	WYSIWYG music notation software (MuseScore)
-DISTNAME =	MuseScore-${V}.0
+GH_ACCOUNT =	musescore
+GH_PROJECT =	MuseScore
+GH_TAGNAME =	v${V}
 PKGNAME =	musescore-${V}
-REVISION =	2
-EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://musescore.org/
@@ -30,6 +30,7 @@ BUILD_DEPENDS =	audio/lame \
 
 LIB_DEPENDS =	audio/portaudio-svn \
 		audio/libsndfile>=1.0.25p0 \
+		audio/portmidi \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtsvg \
@@ -43,14 +44,15 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_ALSA=OFF \
 		-DBUILD_JACK=OFF \
-		-DBUILD_PORTMIDI=OFF \
+		-DBUILD_PORTMIDI=ON \
 		-DBUILD_PULSEAUDIO=OFF \
 		-DBUILD_PCH=OFF \
 		-DBUILD_WEBENGINE=OFF \
 		-DUSE_SYSTEM_FREETYPE=ON \
 		-DBUILD_CRASH_REPORTER=OFF \
 		-DDOWNLOAD_SOUNDFONT=OFF \
-		-DBUILD_TELEMETRY_MODULE=OFF
+		-DBUILD_TELEMETRY_MODULE=OFF \
+		-DMUSESCORE_BUILD_CONFIG=release
 
 CXXFLAGS +=	-Wno-inconsistent-missing-override
 CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
@@ -67,8 +69,5 @@ CXXFLAGS =	-Oz -pipe
 NO_TEST =	Yes
 MAJ_MIN =	${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS +=	MAJ_MIN
-
-# Bad zip file...
-WRKDIST =	${WRKDIR}
 
 .include <bsd.port.mk>
