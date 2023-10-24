@@ -1,30 +1,29 @@
-COMMENT =	character set detector library
+COMMENT=	character set detector library
 
-MODPY_EGG_VERSION =	3.2.0
+MODPY_EGG_VERSION=	3.3.1
+DISTNAME=	charset-normalizer-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =	charset-normalizer-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+CATEGORIES=	textproc
 
-CATEGORIES =	textproc
-
-HOMEPAGE =	https://github.com/ousret/charset_normalizer
+HOMEPAGE=	https://github.com/ousret/charset_normalizer
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MAKE_ENV =		CHARSET_NORMALIZER_USE_MYPYC=1
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MAKE_ENV=	CHARSET_NORMALIZER_USE_MYPYC=1
 
-BUILD_DEPENDS =		devel/py-mypy${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-mypy${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
 
-FLAVOR =		python3
-FLAVORS =		python3
+FLAVOR=		python3
+FLAVORS=	python3
 
 .include <bsd.port.mk>
