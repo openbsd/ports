@@ -1,6 +1,6 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-MODPY_EGG_VERSION=	0.0.5
+MODPY_EGG_VERSION=	0.0.6
 # standalone; no py- prefix/FLAVOR
 DISTNAME=	badkeys-${MODPY_EGG_VERSION}
 
