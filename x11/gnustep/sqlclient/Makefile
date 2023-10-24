@@ -1,11 +1,10 @@
 COMMENT =	GNUstep database abstraction layer
 
-VERSION =	1.8.1
-REVISION =	11
+VERSION =	1.9.0
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
 
-SHLIB_VERSION =	2.0
+SHLIB_VERSION =	2.1
 SHARED_LIBS +=  SQLClient	${SHLIB_VERSION}
 
 CATEGORIES =	databases
@@ -16,6 +15,7 @@ SITES =		${SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI = 	No
+MODGNUSTEP_NEEDS_BACK =	No
 WANTLIB +=		Performance pq ecpg mariadb sqlite3
 WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=		x11/gnustep/performance \
