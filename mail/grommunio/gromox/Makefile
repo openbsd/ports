@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.14
+V=		2.15
 DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
@@ -12,7 +12,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	1217d645d30bdd23e3e816a36433bbb113cead55
+GH_COMMIT=	235f2a7f7243086dd7c6d950baefcb7e4731ca36
 
 CATEGORIES=	mail www productivity
 
