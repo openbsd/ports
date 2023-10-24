@@ -1,8 +1,7 @@
 COMMENT =		BitTorrent client with Qt interface
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c crypto execinfo m ssl torrent-rasterbar
-WANTLIB += z
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c crypto m ssl torrent-rasterbar z
 
 MODULES =		lang/python
 

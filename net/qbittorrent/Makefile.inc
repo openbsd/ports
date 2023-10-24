@@ -1,7 +1,7 @@
 # qmake picks up gcrypt.h even though it's unused
 DPB_PROPERTIES =	nojunk
 
-VER =		4.5.5
+VER =		4.6.0
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent
@@ -27,8 +27,6 @@ LIB_DEPENDS +=		net/libtorrent-rasterbar>=2
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS +=	-DQT6=ON
-# for automatic stacktraces on crash:  autoconf links it, cmake does not
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS='${LDFLAGS} -lexecinfo'
 
 # #error "Boost.Stacktrace requires `_Unwind_Backtrace` function.             \
 #    Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` \
