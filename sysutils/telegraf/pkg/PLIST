@@ -6,8 +6,9 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login.conf.d/telegraf
 @sample ${SYSCONFDIR}/login.conf.d/telegraf
 share/examples/telegraf/
+@mode 750
+@group _telegraf
 @sample ${SYSCONFDIR}/telegraf/
 share/examples/telegraf/telegraf.conf
 @mode 640
-@group _telegraf
 @sample ${SYSCONFDIR}/telegraf/telegraf.conf
