@@ -625,6 +625,7 @@
      SUBDIR += quagga
      SUBDIR += queryperf
      SUBDIR += queso
+     SUBDIR += quiche
      SUBDIR += rabbitmq
      SUBDIR += rabbitmq-c
      SUBDIR += radcli
