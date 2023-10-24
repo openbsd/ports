@@ -23,6 +23,6 @@ FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
-#NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
