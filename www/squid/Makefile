@@ -24,6 +24,7 @@ COMMONLIB=	${COMPILER_LIBCXX} brotlidec brotlienc c execinfo \
 
 # repo at https://github.com/squid-cache/squid
 SITES=		${HOMEPAGE}Versions/v${V:R:R}/ \
+		http://static.squid-cache.org/Versions/v${V:R:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
 # C++17
