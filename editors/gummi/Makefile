@@ -1,6 +1,6 @@
 COMMENT =		simple LaTeX editor
 
-V =			0.8.2
+V =			0.8.3
 DISTNAME =		gummi-$V
 
 CATEGORIES =		editors
