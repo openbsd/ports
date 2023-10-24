@@ -1,0 +1,2 @@
+include/quiche.h
+@static-lib lib/libquiche.a
