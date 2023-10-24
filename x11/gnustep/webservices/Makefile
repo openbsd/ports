@@ -1,11 +1,10 @@
 COMMENT =	GNUstep webservices framework
 
-VERSION =	0.7.3
-REVISION =	7
+VERSION =	0.9.0
 DISTNAME =	WebServices-${VERSION}
 PKGNAME =	gnustep-webservices-${VERSION}
 CATEGORIES =	www
-SHARED_LIBS +=  WebServices	0.4
+SHARED_LIBS +=  WebServices	0.5
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServices
 SITES =		${SITE_GNUSTEP:=libs/}
