@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.7 2023/06/15 12:53:07 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.8 2023/10/25 15:23:59 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -75,12 +75,6 @@ sub change_multi($path, $multi)
 		$tmp->{m} = $multi;
 	}
 	return $tmp->normalize;
-}
-
-sub break($path, $message)
-{
-	$path->{parent} //= '?';
-	say STDERR $path->fullpkgpath, "(", $path->{parent}, "):", $message;
 }
 
 1;

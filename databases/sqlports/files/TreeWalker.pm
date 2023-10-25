@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.20 2023/09/02 10:40:59 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.21 2023/10/25 15:23:59 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,9 +22,37 @@ package TreeWalker;
 use PkgPath;
 use Baseline;
 
-sub new($class, $strict, $startdir)
+sub new($class, $strict, $startdir, $keepgoing)
 {
-	return bless { strict => $strict, startdir => $startdir }, $class;
+	return bless { 
+	    strict => $strict, 
+	    startdir => $startdir,
+	    keepgoing => $keepgoing,
+	    log => [] }, $class;
+}
+
+sub errored($self)
+{
+	return @{$self->{log}} != 0;
+}
+
+sub break($self, $dir, $message)
+{
+	my $text = $dir->fullpkgpath;
+	if (defined $dir->{parent}) {
+		$text .= "($dir->{parent})";
+	}
+	$text .= ":$message";
+	say STDERR $text;
+	push(@{$self->{log}}, $text);
+}
+
+sub dump_errors($self)
+{
+	return if !$self->{keepgoing};
+	for my $text (@{$self->{log}}) {
+		say STDERR $text;
+	}
 }
 
 sub subdirlist($self, $list)
@@ -40,7 +68,7 @@ sub dump_dirs($self, $subdirs = undef)
 	}
 	if ($pid) {
 		$self->parse_dump($fd, $subdirs);
-		close $fd || die $!;
+		close $fd;
 	} else {
 		my %myenv = ();
 		my $portsdir = $ENV{PORTSDIR};
@@ -69,6 +97,7 @@ sub parse_dump($self, $fd, $subdirs)
 	my $h = {};
 	my $seen = {};
 	my $subdir;
+	my @messages = ();
 	my $reset = sub() {
 		$h = PkgPath->handle_equivalences($self, $h, $subdirs);
 		for my $pkgpath (sort values %$h) {
@@ -82,7 +111,11 @@ sub parse_dump($self, $fd, $subdirs)
 		# kill noise
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			my $dir = PkgPath->new($1);
-			$dir->break("exiting with an error");
+			$self->break($dir, "ERROR:");
+			for my $l (@messages) {
+				$self->break($dir, $l);
+			}
+			@messages = ();
 			$h->{$dir} = $dir;
 			$h = {};
 			next;
@@ -90,6 +123,7 @@ sub parse_dump($self, $fd, $subdirs)
 		if (m/^\=\=\=\>\s*(.*)/) {
 			$subdir = PkgPath->new($1);
 			&$reset();
+			@messages = ();
 		} elsif (my ($pkgpath, $var, $arch, $value) =
 		    m/^(.*?)\.([A-Z][A-Za-z0-9_.]*)(?:\-([a-z0-9]+))?\=\s*(.*)\s*$/) {
 			if ($value =~ m/^\"(.*)\"$/) {
@@ -101,9 +135,14 @@ sub parse_dump($self, $fd, $subdirs)
 			# Note we did it !
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = PkgPath->new($1);
-			$dir->break("broken dependency");
+			$self->break($dir, "broken dependency");
 			$h->{$dir} = $dir;
 			$h= {};
+		} else {
+			push(@messages, $_);
+		}
+		if ($self->errored && !$self->{keepgoing}) {
+			last;
 		}
 	}
 	&$reset();
@@ -122,9 +161,16 @@ sub handle_path($, $, $)
 sub dump_all_dirs($self)
 {
 	$self->dump_dirs;
+	$self->dump_closure;
+}
 
+sub dump_closure($self)
+{
 	my $i = 1;
 	while (1) {
+		if ($self->errored && !$self->{keepgoing}) {
+			return;
+		}
 		my $subdirlist = {};
 		for my $v (PkgPath->seen) {
 			if (defined $v->{info}) {
@@ -145,6 +191,14 @@ sub dump_all_dirs($self)
 		say "pass #$i";
 		$self->dump_dirs($subdirlist);
 	}
+}
+
+sub dump_dir($self, $path)
+{
+	my $subdirlist = {};
+	PkgPath->new($path)->add_to_subdirlist($subdirlist);
+	$self->dump_dirs($subdirlist);
+	$self->dump_closure;
 }
 
 1;

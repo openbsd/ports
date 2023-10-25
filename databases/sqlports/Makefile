@@ -1,5 +1,5 @@
 CATEGORIES =		databases
-V =			7.49
+V =			7.50
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT-main =		sqlite database of ports
@@ -20,23 +20,25 @@ RUN_DEPENDS-main =	databases/sqlite3
 FLAVORS =	nonstrict
 FLAVOR =
 
-.if ${FLAVOR:Mnonstrict}
-STRICT =
-.else
-STRICT =-s
-.endif
 
-# for debugging the ports tree purposes, start at this dir
-#STARTDIR = -S games/stepmania
 SCRIPTS = print-ports-index show-reverse-deps rebuild-sqlports-cache
 MANS = show-reverse-deps.1 sqlports.5
 
+MKSQLITE_ARGS += -V $V
+MKSQLITE_ARGS += -k
+MKSQLITE_ARGS += -C ${WRKBUILD}/${SQLCACHE}
+MKSQLITE_ARGS += -w ${WRKBUILD}/${SQLVIEWS}
+
+# for debugging the ports tree purposes, start at this dir
+#MKSQLITE_ARGS += -S games/stepmania
+.if !${FLAVOR:Mnonstrict}
+MKSQLITE_ARGS += -s
+.endif
+
+MKSQLITE_ARGS += ${WRKBUILD}/${DBNAME}
+
 do-build:
-	@PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb -v -V $V -p ${WRKBUILD}/ouch ${STRICT} -C ${WRKBUILD}/${SQLCACHE} -w ${WRKBUILD}/${SQLVIEWS} ${STARTDIR} ${WRKBUILD}/${DBNAME}
-	@if test -s ${WRKBUILD}/ouch; then \
-		cat ${WRKBUILD}/ouch; \
-		exit 1; \
-	fi
+	@PORTSDIR=${PORTSDIR} ${MAKE_ENV} perl ${FILESDIR}/mksqlitedb ${MKSQLITE_ARGS}
 	cd ${WRKBUILD} && sqlite3 <${SQLCACHE} ${DBNAME}
 
 alter-tables:
