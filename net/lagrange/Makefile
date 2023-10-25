@@ -1,5 +1,5 @@
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.16.7
+VERSION =	1.17.1
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -13,8 +13,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 PERMIT_PACKAGE =Yes
 
 WANTLIB +=	ICE SDL2 SM X11 Xext c crypto fribidi harfbuzz m
-WANTLIB +=	mpg123 pcre2-8 pthread sharpyuv ssl unistring
-WANTLIB +=	webp z
+WANTLIB +=	mpg123 pcre2-8 pthread ssl unistring webp z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
