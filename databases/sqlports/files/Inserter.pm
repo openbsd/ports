@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.42 2023/06/16 04:54:20 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.43 2023/10/25 14:05:48 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -117,7 +117,6 @@ sub new_sql($self, $sql)
 	return if defined $self->{created}{$n};
 	$self->{created}{$n} = 1;
 	my $drop = $sql->drop;
-#	print "$drop\n" if $self->{verbose};
 	$self->db->do($drop);
 	my $request = $sql->stringize;
 	print "$request\n" if $self->{verbose};
@@ -132,7 +131,7 @@ sub create_schema($self)
 		}
 		for my $t (Sql::Create->all_tables) {
 			my $i = $t->inserter;
-			print $i, "\n";
+			print $i, "\n" if $self->{verbose};
 			$self->{insert}{$t->name} = $self->prepare($i);
 		}
 		for my $i (Sql::Create->all_indices) {
@@ -298,6 +297,7 @@ sub set_newkey($self, $key)
 	$self->{current_path} = $key;
 }
 
+# GC, unused
 # $self->write_log($fh)
 sub write_log($, $)
 {
