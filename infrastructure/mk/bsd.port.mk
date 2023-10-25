@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1628 2023/10/18 10:36:46 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1629 2023/10/25 18:57:36 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3802,6 +3802,12 @@ verbose-show:
 . endif
 .endfor
 
+check-sqlports:
+	@cd ${PORTSDIR}/databases/sqlports && ${MAKE} prepare
+	@t=`mktemp /tmp/sqlports.XXXXXXXXXX`; \
+	echo "result database in $$t"; \
+	PORTSDIR=${PORTSDIR} perl ${PORTSDIR}/databases/sqlports/files/mksqlitedb -t ${FULLPKGPATH} $$t
+
 _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
 	_build-dir-depends _hook-post-install \
@@ -3833,7 +3839,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
 	_gen-finalize _post-install-modules fix-permissions \
-	_copy-debug-info show-debug-info
+	_copy-debug-info show-debug-info check-sqlports
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
