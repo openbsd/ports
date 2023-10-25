@@ -1,5 +1,7 @@
 Use write(2) not syscall(2)
 
+https://github.com/abseil/abseil-cpp/pull/1553
+
 Index: absl/base/internal/raw_logging.cc
 --- absl/base/internal/raw_logging.cc.orig
 +++ absl/base/internal/raw_logging.cc
