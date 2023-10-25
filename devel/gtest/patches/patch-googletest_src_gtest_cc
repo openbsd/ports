@@ -1,5 +1,7 @@
 Missing include needed for ports-gcc to have raise in scope
 
+https://github.com/google/googletest/pull/4397
+
 Index: googletest/src/gtest.cc
 --- googletest/src/gtest.cc.orig
 +++ googletest/src/gtest.cc
