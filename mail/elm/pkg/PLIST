@@ -36,4 +36,6 @@ lib/elmrc-info
 @man man/man1/printmail.1
 @man man/man1/readmsg.1
 @man man/man1/wnewmail.1
+share/nls/
+share/nls/C/
 share/nls/C/elm2.4me+.cat

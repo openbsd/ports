@@ -1,7 +1,7 @@
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
-REVISION=	4
+REVISION=	5
 CATEGORIES=	mail
 
 SITES=		ftp://ftp.ozone.fmi.fi/KEH/
@@ -42,6 +42,7 @@ post-configure:
 NO_TEST=	Yes
 
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nls/C
 	@cd ${WRKSRC}/nls; make install
 	${INSTALL_DATA} \
 		${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist

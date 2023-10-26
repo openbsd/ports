@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1629 2023/10/25 18:57:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1630 2023/10/26 19:26:56 naddy Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2018,7 +2018,6 @@ _wrap_install_commands += ${_PBUILD} install -m ${BINMODE} ${PORTSDIR}/infrastru
 _cat = {cat1,cat2,cat3,cat3f,cat3p,cat4,cat5,cat6,cat7,cat8,cat9,catl,catn}
 _man = ${_cat:S/cat/man/g}
 _treebase = ${WRKINST}${LOCALBASE}
-_nls = ${_treebase}/share/nls
 _FAKE_TREE_LIST = \
 	${WRKINST}${BASESYSCONFDIR}/{firmware,rc.d} \
 	${_treebase}/bin \
@@ -2035,18 +2034,6 @@ _FAKE_TREE_LIST = \
 	${_treebase}/sbin \
 	${_treebase}/share/{dict,examples,misc,pkgconfig,skel} \
 	${_treebase}/share/doc/pkg-readmes \
-	${_nls}/{C,da_DK.ISO_8859-1,de_AT.ISO_8859-1,de_CH.ISO_8859-1} \
-	${_nls}/{de_DE.ISO_8859-1,el_GR.ISO_8859-7,en_AU.ISO_8859-1} \
-	${_nls}/{en_CA.ISO_8859-1,en_GB.ISO_8859-1,en_US.ISO_8859-1} \
-	${_nls}/{es_ES.ISO_8859-1,et_EE.ISO-8859-1,fi_FI.ISO_8859-1} \
-	${_nls}/{fr_BE.ISO_8859-1,fr_CA.ISO_8859-1,fr_CH.ISO_8859-1} \
-	${_nls}/fr_FR.ISO_8859-1 \
-	${_nls}/{hr_HR.ISO_8859-2,is_IS.ISO_8859-1,it_CH.ISO_8859-1} \
-	${_nls}/{it_IT.ISO_8859-1,ja_JP.EUC,ko_KR.EUC,lt_LN.ASCII} \
-	${_nls}/{lt_LN.ISO_8859-1,lt_LN.ISO_8859-2,nl_BE.ISO_8859-1} \
-	${_nls}/{no_NO.ISO_8859-1,pl_PL.ISO_8859-2,pt_PT.ISO_8859-1} \
-	${_nls}/{ru_RU.CP866,ru_RU.ISO_8859-5,ru_RU.KOI8-R} \
-	${_nls}/{sv_SE.ISO_8859-1,uk_UA.KOI8-U} \
 	${WRKINST}${VARBASE}/{db,games,log,spool,www}
 
 # packing list utilities.  This generates a packing list from the WRKINST
