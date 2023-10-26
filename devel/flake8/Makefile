@@ -2,10 +2,12 @@ COMMENT=	modular python code checker wrapping pep8 and pyflakes
 
 MODPY_EGG_VERSION=	6.1.0
 DISTNAME=	flake8-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	https://github.com/pycqa/flake8
+# https://github.com/pycqa/flake8
+HOMEPAGE=	https://flake8.pycqa.org
 
 # MIT
 PERMIT_PACKAGE=	Yes
