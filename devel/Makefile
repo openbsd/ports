@@ -304,6 +304,7 @@
      SUBDIR += libixp
      SUBDIR += liblognorm
      SUBDIR += liblouis
+     SUBDIR += libmaa
      SUBDIR += libmagic
      SUBDIR += libmemcached
      SUBDIR += libmpack
