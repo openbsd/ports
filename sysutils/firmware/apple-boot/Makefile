@@ -9,7 +9,7 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=	m1n1-=1.3.6:sysutils/m1n1:build \
+BUILD_DEPENDS=	m1n1-=1.4.3:sysutils/m1n1:build \
 		u-boot-asahi-=2023.07.02:sysutils/u-boot-asahi:build
 
 ASAHI_BUILD=	${WRKSRC}/sysutils/u-boot-asahi/u-boot-*/build
