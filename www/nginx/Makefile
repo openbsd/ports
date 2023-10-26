@@ -22,7 +22,7 @@ VERSION=	1.24.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
-VERSION-njs=	0.8.1
+VERSION-njs=	0.8.2
 VERSION-rtmp=	1.2.1
 
 PKGNAME-main=		${DISTNAME}
@@ -43,7 +43,7 @@ PKGNAME-securelink=	nginx-securelink-${VERSION}
 
 REVISION-main=		0
 REVISION-passenger=	1
-REVISION-njs=		0
+REVISION-njs=		1
 REVISION-lua=		0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
