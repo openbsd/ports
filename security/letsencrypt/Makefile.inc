@@ -3,7 +3,7 @@ CATEGORIES?=		security/letsencrypt security
 MODPY_PI?=		Yes
 MODPY_PYBUILD?=		setuptools
 
-MODPY_EGG_VERSION?=	2.7.2
+MODPY_EGG_VERSION?=	2.7.3
 
 MODULES?=		lang/python
 
