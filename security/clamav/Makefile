@@ -1,5 +1,5 @@
 COMMENT=	virus scanner
-DISTNAME=	clamav-1.2.0
+DISTNAME=	clamav-1.2.1
 
 CATEGORIES=	security
 
