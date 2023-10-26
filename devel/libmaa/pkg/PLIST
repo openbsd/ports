@@ -1,0 +1,4 @@
+include/maa.h
+@comment lib/libmaa.a
+@lib lib/libmaa.so.${LIBmaa_VERSION}
+@comment lib/libmaa_p.a

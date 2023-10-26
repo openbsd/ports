@@ -1,0 +1,34 @@
+Replace undefined SIZEOF_LONG with sizeof(long)
+
+Index: maa/bit.c
+--- maa/bit.c.orig
++++ maa/bit.c
+@@ -59,24 +59,21 @@ int bit_cnt(unsigned long *flags)
+ {
+ 	unsigned long x = *flags;
+ 
+-#if SIZEOF_LONG == 4
++    if (sizeof(long) == 4) {
+ 	x = (x >> 1  & 0x55555555) + (x & 0x55555555);
+ 	x = ((x >> 2) & 0x33333333) + (x & 0x33333333);
+ 	x = ((x >> 4) + x) & 0x0f0f0f0f;
+ 	x = ((x >> 8) + x);
+ 	return (x + (x >> 16)) & 0xff;
+-#else
+-#if SIZEOF_LONG == 8
++    } else if(sizeof(long) == 8) {
+ 	x = (x >> 1  & 0x5555555555555555) + (x & 0x5555555555555555);
+ 	x = ((x >> 2) & 0x3333333333333333) + (x & 0x3333333333333333);
+ 	x = ((x >> 4) + x) & 0x0f0f0f0f0f0f0f0f;
+ 	x = ((x >> 8) + x) & 0x00ff00ff00ff00ff;
+ 	x = ((x >> 16) + x) & 0x0000ffff0000ffff;
+ 	return (x + (x >> 32)) & 0xff;
+-#else
++    } else
+ 	err_internal(__func__,
+ 				 "Implemented for 32-bit and 64-bit longs, not %d-bit longs",
+-				 SIZEOF_LONG * 8);
+-#endif
+-#endif
++				 sizeof(long) * 8);
+ }

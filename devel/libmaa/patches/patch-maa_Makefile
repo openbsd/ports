@@ -1,0 +1,11 @@
+Replace unported mk-configure with our own <bsd.lib.mk>
+
+Index: maa/Makefile
+--- maa/Makefile.orig
++++ maa/Makefile
+@@ -47,4 +47,4 @@ EXPORT_SYMBOLS    =	export.sym
+ 
+ ##################################################
+ 
+-.include <mkc.lib.mk>
++.include <bsd.lib.mk>

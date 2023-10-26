@@ -1,0 +1,14 @@
+Add missing include for getrusage(2)
+
+Index: maa/timer.c
+--- maa/timer.c.orig
++++ maa/timer.c
+@@ -29,6 +29,8 @@
+  *
+  */
+ 
++#include <sys/resource.h>
++
+ #include "maaP.h"
+ 
+ static hsh_HashTable _tim_Hash;
