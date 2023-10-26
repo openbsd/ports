@@ -4,6 +4,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/psl-update.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/tests.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
