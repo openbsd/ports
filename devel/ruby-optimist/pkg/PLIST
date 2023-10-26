@@ -1,7 +1,15 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.codeclimate.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ci.yaml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_cc.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_local.yml
+${GEM_LIB}/gems/${DISTNAME}/.whitesource
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/FAQ.txt
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
