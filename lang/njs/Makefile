@@ -2,9 +2,7 @@ COMMENT=	NGINX JavaScript command line utility and static library
 
 GH_ACCOUNT=	nginx
 GH_PROJECT=	njs
-GH_TAGNAME=	0.8.1
-
-REVISION=	0
+GH_TAGNAME=	0.8.2
 
 CATEGORIES=	lang www
 
