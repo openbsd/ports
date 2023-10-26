@@ -1,6 +1,6 @@
 COMMENT =		simple way to write new native resources for puppet
 
-DISTNAME =		puppet-resource_api-1.8.14
+DISTNAME =		puppet-resource_api-1.9.0
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/puppetlabs/puppet-resource_api
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/ruby
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		devel/ruby-hocon,${MODRUBY_FLAVOR}>=1,<2
+RUN_DEPENDS +=		devel/ruby-hocon,${MODRUBY_FLAVOR}>=1
 
 CONFIGURE_STYLE = 	ruby gem
 
