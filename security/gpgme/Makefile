@@ -1,21 +1,21 @@
-COMMENT-main =		GnuPG Made Easy
-COMMENT-qt =		Qt bindings for GPGme
+COMMENT-main =	GnuPG Made Easy
+COMMENT-qt =	Qt bindings for GPGme
 
-VERSION =		1.22.0
-DISTNAME =		gpgme-${VERSION}
-PKGNAME-main =		gpgme-${VERSION}
-PKGNAME-qt =		gpgme-qt-${VERSION}
+VERSION =	1.23.0
+DISTNAME =	gpgme-${VERSION}
+PKGNAME-main =	gpgme-${VERSION}
+PKGNAME-qt =	gpgme-qt-${VERSION}
 
-CATEGORIES =		security devel
+CATEGORIES =	security devel
 
-SHARED_LIBS +=  gpgme                24.1     # 42.0
-SHARED_LIBS +=  gpgmepp              3.2      # 25.0
-SHARED_LIBS +=  qgpgme               3.1      # 19.0
+SHARED_LIBS +=  gpgme                24.2     # 43.0
+SHARED_LIBS +=  gpgmepp              3.3      # 26.0
+SHARED_LIBS +=  qgpgme               3.2      # 20.0
 
-HOMEPAGE =		https://www.gnupg.org/software/gpgme/
+HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
-SITES =			${SITE_GNUPG:=gpgme/}
-EXTRACT_SUFX =		.tar.bz2
+SITES =		${SITE_GNUPG:=gpgme/}
+EXTRACT_SUFX =	.tar.bz2
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
@@ -26,7 +26,7 @@ WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} Qt5Core double-conversion
 WANTLIB-qt +=	execinfo glib-2.0 gpgme gthread-2.0 icudata icui18n icuuc
 WANTLIB-qt +=	m pcre2-8 pcre2-16 z zstd
 
-COMPILER =		base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 MULTI_PACKAGES =	-main -qt
 PSEUDO_FLAVORS =	no_qt
@@ -64,7 +64,7 @@ CONFIGURE_ARGS +=	--enable-languages=''
 USE_GMAKE =		Yes
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lang/cpp/src/GpgmeppConfig.cmake.in.in
-	${SUBST_CMD} ${WRKSRC}/lang/qt/src/QGpgmeConfig.cmake.in.in
+	${SUBST_CMD} ${WRKSRC}/lang/cpp/src/GpgmeppConfig.cmake.in.in \
+	    ${WRKSRC}/lang/qt/src/QGpgmeConfig.cmake.in.in
 
 .include <bsd.port.mk>
