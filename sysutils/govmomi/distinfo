@@ -7,8 +7,8 @@ SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
 SHA256 (go_modules/github.com/dougm/pretty/@v/v0.0.0-20171025230240-2ee9d7453c02.mod) = rLpn0e/o041j0Zuxc5hzKwYwpg80ZEVYKXSJyHB3ONs=
 SHA256 (go_modules/github.com/dougm/pretty/@v/v0.0.0-20171025230240-2ee9d7453c02.zip) = VqB4xhgAW/yvr/QwEfdfR6og3+seCayHOCOSWBREp/Y=
-SHA256 (go_modules/github.com/google/go-cmp/@v/v0.5.9.mod) = 58dmnUod1Ym6PgJLon9D8pPbYR/gdc4g17iENw1j/r0=
-SHA256 (go_modules/github.com/google/go-cmp/@v/v0.5.9.zip) = MkUIdKx1bvXUf2uBkwUQUwS5gZBFoW4/EFKJt88lLFE=
+SHA256 (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 58dmnUod1Ym6PgJLon9D8pPbYR/gdc4g17iENw1j/r0=
+SHA256 (go_modules/github.com/google/go-cmp/@v/v0.6.0.zip) = S06b9sSCEQgGUbSR37SNaLc2xmowW8+UYFYG4bouqko=
 SHA256 (go_modules/github.com/google/uuid/@v/v1.3.1.mod) = c9pHtjOLAKCC/UUao1oyc9OtwJuOm7qY2rAQkeQCr24=
 SHA256 (go_modules/github.com/google/uuid/@v/v1.3.1.zip) = nZ1s+yjObb5LUYxCxrzNZ7tTGhBoWYCPNugqXD+4xk0=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 49XUbS9qyUpmalS16GfsFr8ZnZ9LcAgnzXMWB+/dEJo=
@@ -43,7 +43,7 @@ SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = a4lUgZog7FKYKiBv0+uUYp/1PF
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (govmomi-v0.32.0.zip) = M36aJLl8AK1umIU+FUFFFgc11a7BsCZ/0zmYsim6Q2g=
+SHA256 (govmomi-v0.33.0.zip) = ZADG5yLry5HSkTZrMvkk1vReDbpxyM5HXxB8udeA+0A=
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.mod) = 27
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.zip) = 18668
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
@@ -53,8 +53,8 @@ SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
 SIZE (go_modules/github.com/dougm/pretty/@v/v0.0.0-20171025230240-2ee9d7453c02.mod) = 31
 SIZE (go_modules/github.com/dougm/pretty/@v/v0.0.0-20171025230240-2ee9d7453c02.zip) = 11765
-SIZE (go_modules/github.com/google/go-cmp/@v/v0.5.9.mod) = 41
-SIZE (go_modules/github.com/google/go-cmp/@v/v0.5.9.zip) = 130220
+SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 41
+SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.zip) = 129773
 SIZE (go_modules/github.com/google/uuid/@v/v1.3.1.mod) = 30
 SIZE (go_modules/github.com/google/uuid/@v/v1.3.1.zip) = 26946
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 67
@@ -89,4 +89,4 @@ SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = 15087
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (govmomi-v0.32.0.zip) = 3368681
+SIZE (govmomi-v0.33.0.zip) = 3373117

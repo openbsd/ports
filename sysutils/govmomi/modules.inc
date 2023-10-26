@@ -3,7 +3,7 @@ MODGO_MODULES =	\
 	github.com/creack/pty		 v1.1.9 \
 	github.com/davecgh/go-spew	 v1.1.1 \
 	github.com/dougm/pretty		 v0.0.0-20171025230240-2ee9d7453c02 \
-	github.com/google/go-cmp	 v0.5.9 \
+	github.com/google/go-cmp	 v0.6.0 \
 	github.com/google/uuid		 v1.3.1 \
 	github.com/kr/pretty		 v0.3.0 \
 	github.com/kr/pty		 v1.1.1 \
