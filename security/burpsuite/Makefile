@@ -1,11 +1,11 @@
 COMMENT =		tool for testing security of web applications
 
 VERSION =		2.1.04
-DISTNAME =		burpsuite_free_v${VERSION}
+DISTNAME =		burpsuite_community_v${VERSION}
 PKGNAME =		burpsuite-${VERSION}
 REVISION =		0
 
-DISTFILES=${DISTNAME}${EXTRACT_SUFX}{Download?productId=100\&version=${VERSION}\&type=Jar}
+DISTFILES=${DISTNAME}${EXTRACT_SUFX}{download?product=100&version=${VERSION}&type=Jar}
 
 CATEGORIES =		security
 
@@ -14,7 +14,7 @@ HOMEPAGE =		https://portswigger.net/burp/
 PERMIT_PACKAGE =	https://portswigger.net/burp/eula/community
 PERMIT_DISTFILES =	https://portswigger.net/burp/eula/community
 
-SITES =			https://portswigger.net/Burp/Releases/
+SITES =			https://portswigger-cdn.net/burp/releases/
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
