@@ -1,7 +1,7 @@
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			8.9.0
+V =			8.10.4
 DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
@@ -43,7 +43,7 @@ do-build:
 	rm ${WRKSRC}/bin/*{.bat,.beforesubst,${PATCHORIG},system-install}
 	rm ${WRKSRC}/config/*{.beforesubst,${PATCHORIG}} \
 		${WRKSRC}/config/startup.options
-	rm ${WRKSRC}/vendor/jruby/bin/*.{bash,bat,dll,exe,sh}
+	rm ${WRKSRC}/vendor/jruby/bin/*.{bat,dll,exe,sh}
 	rm -r ${WRKSRC}/vendor/jruby/tmp
 	cd ${WRKSRC}/vendor/jruby/lib/ruby/stdlib/ffi/platform/ && \
 		rm -r *-{aix,cygwin,darwin,dragonflybsd,freebsd,gnu,haiku,linux,msys,netbsd,solaris,windows}*
