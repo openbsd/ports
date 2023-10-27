@@ -89,5 +89,5 @@ share/examples/orthanc/Configuration.json
 @sample ${SYSCONFDIR}/orthanc/Configuration.json
 @owner _orthanc
 @group _orthanc
-@sample ${VARBASE}/orthanc/
+@sample /var/orthanc/
 @sample /var/log/orthanc/
