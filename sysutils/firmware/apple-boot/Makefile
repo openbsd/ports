@@ -1,5 +1,6 @@
 FW_DRIVER=	apple-boot
 FW_VER=		1.1
+REVISION=	0
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
