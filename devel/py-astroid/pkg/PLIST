@@ -18,8 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__pkginfo__.${M
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}__pkginfo__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_ast.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_backport_stdlib_names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}_backport_stdlib_names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}astroid_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}builder.${MODPY
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}constraint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}constraint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,18 +42,12 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}filter_statemen
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}filter_statements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}inference.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}inference.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}inference_tip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}inference_tip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}mixins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}mixins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}modutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}modutils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}node_classes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}node_classes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}protocols.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,8 +56,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}raw_building.${
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}raw_building.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}rebuilder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}rebuilder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}scoped_nodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}scoped_nodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}transforms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,7 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}typing.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/_ast.py
-lib/python${MODPY_VERSION}/site-packages/astroid/_cache.py
+lib/python${MODPY_VERSION}/site-packages/astroid/_backport_stdlib_names.py
 lib/python${MODPY_VERSION}/site-packages/astroid/arguments.py
 lib/python${MODPY_VERSION}/site-packages/astroid/astroid_manager.py
 lib/python${MODPY_VERSION}/site-packages/astroid/bases.py
@@ -98,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_cur
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_curses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dataclasses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dataclasses.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_datetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_fstrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -156,6 +152,8 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_ran
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_random.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_re.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_re.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_regex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_responses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_responses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_scipy_signal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -191,6 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_crypt.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_ctypes.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_curses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dataclasses.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_datetime.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dateutil.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_fstrings.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_functools.py
@@ -220,6 +219,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_pytest.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_qt.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_random.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_re.py
+lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_regex.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_responses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_scipy_signal.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_signal.py
@@ -235,12 +235,12 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_uuid.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/helpers.py
 lib/python${MODPY_VERSION}/site-packages/astroid/builder.py
 lib/python${MODPY_VERSION}/site-packages/astroid/const.py
+lib/python${MODPY_VERSION}/site-packages/astroid/constraint.py
 lib/python${MODPY_VERSION}/site-packages/astroid/context.py
 lib/python${MODPY_VERSION}/site-packages/astroid/decorators.py
 lib/python${MODPY_VERSION}/site-packages/astroid/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/astroid/filter_statements.py
 lib/python${MODPY_VERSION}/site-packages/astroid/helpers.py
-lib/python${MODPY_VERSION}/site-packages/astroid/inference.py
 lib/python${MODPY_VERSION}/site-packages/astroid/inference_tip.py
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/__init__.py
@@ -265,9 +265,7 @@ lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/_import/util.py
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/dunder_lookup.py
 lib/python${MODPY_VERSION}/site-packages/astroid/interpreter/objectmodel.py
 lib/python${MODPY_VERSION}/site-packages/astroid/manager.py
-lib/python${MODPY_VERSION}/site-packages/astroid/mixins.py
 lib/python${MODPY_VERSION}/site-packages/astroid/modutils.py
-lib/python${MODPY_VERSION}/site-packages/astroid/node_classes.py
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/
 lib/python${MODPY_VERSION}/site-packages/astroid/nodes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astroid/nodes/${MODPY_PYCACHE}/
@@ -309,7 +307,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/objects.py
 lib/python${MODPY_VERSION}/site-packages/astroid/protocols.py
 lib/python${MODPY_VERSION}/site-packages/astroid/raw_building.py
 lib/python${MODPY_VERSION}/site-packages/astroid/rebuilder.py
-lib/python${MODPY_VERSION}/site-packages/astroid/scoped_nodes.py
 lib/python${MODPY_VERSION}/site-packages/astroid/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/astroid/transforms.py
 lib/python${MODPY_VERSION}/site-packages/astroid/typing.py
