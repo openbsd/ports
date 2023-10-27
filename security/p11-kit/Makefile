@@ -1,8 +1,8 @@
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
-GH_PROJECT=		p11-kit
-GH_ACCOUNT=		p11-glue
-GH_TAGNAME=		0.25.0
+V=			0.25.1
+DISTNAME=		p11-kit-${V}
+EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
@@ -15,7 +15,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c ffi pthread tasn1
+SITES=			https://github.com/p11-glue/p11-kit/releases/download/${V}/
+
+WANTLIB += c ffi intl pthread tasn1
 
 MODULES=		devel/meson
 
@@ -24,8 +26,12 @@ CFLAGS +=		-pthread
 BUILD_DEPENDS=		devel/gettext,-tools \
 			shells/bash-completion
 
-LIB_DEPENDS=		devel/libffi \
+LIB_DEPENDS=		devel/gettext,-runtime \
+			devel/libffi \
 			security/libtasn1
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		-Dtrust_paths=/etc/ssl/cert.pem \
 			-Dsystemd=disabled
