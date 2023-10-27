@@ -1,0 +1,25 @@
+Avoid syscall(2) usage
+
+Index: lib/libv4l-mplane/libv4l-mplane.c
+--- lib/libv4l-mplane/libv4l-mplane.c.orig
++++ lib/libv4l-mplane/libv4l-mplane.c
+@@ -35,13 +35,18 @@
+ 
+ #include "libv4l-plugin.h"
+ 
++#ifdef CONFIG_SYS_WRAPPER
++#define SYS_IOCTL	ioctl
++#define SYS_READ	read
++#define SYS_WRITE	write
++#else
+ #define SYS_IOCTL(fd, cmd, arg) \
+ 	syscall(SYS_ioctl, (int)(fd), (unsigned long)(cmd), (void *)(arg))
+ #define SYS_READ(fd, buf, len) \
+ 	syscall(SYS_read, (int)(fd), (void *)(buf), (size_t)(len));
+ #define SYS_WRITE(fd, buf, len) \
+ 	syscall(SYS_write, (int)(fd), (const void *)(buf), (size_t)(len));
+-
++#endif
+ 
+ #if HAVE_VISIBILITY
+ #define PLUGIN_PUBLIC __attribute__ ((visibility("default")))

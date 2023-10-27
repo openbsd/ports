@@ -3,7 +3,7 @@ COMMENT =		libv4l userspace library
 VERSION =		1.20.0
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=	v4l1		0.0 # 0.0
 SHARED_LIBS +=	v4l2		0.0 # 0.0
@@ -31,8 +31,13 @@ LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--disable-doxygen-doc \
 			--disable-static
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# CONFIG_SYS_WRAPPER is used to disable some syscall(2) usage
+CPPFLAGS +=	-DCONFIG_SYS_WRAPPER
+CPPFLAGS +=	-I${LOCALBASE}/include
+
 
 AUTOCONF_VERSION =	2.69
 
