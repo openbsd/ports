@@ -291,6 +291,7 @@
      SUBDIR += pv
      SUBDIR += py-analyzemft
      SUBDIR += py-ansible-compat,python3
+     SUBDIR += py-apscheduler,python3
      SUBDIR += py-augeas,python3
      SUBDIR += py-blessed,python3
      SUBDIR += py-command_runner,python3
