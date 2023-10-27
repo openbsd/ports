@@ -1350,6 +1350,7 @@
      SUBDIR += py-buildbot		# subdir; uses python3
      SUBDIR += py-buildslave		# standalone, uses python3
      SUBDIR += py-cached-property,python3
+     SUBDIR += py-cachelib,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi,python3
      SUBDIR += py-calver,python3
