@@ -3,12 +3,14 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/rustic
 share/examples/rustic/
+share/examples/rustic/README.md
 share/examples/rustic/copy_example.toml
 share/examples/rustic/full.toml
 share/examples/rustic/local.toml
 share/examples/rustic/ovh-hot-cold.toml
 share/examples/rustic/par2.toml
 share/examples/rustic/rustic.toml
+share/examples/rustic/simple.toml
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/rustic.fish

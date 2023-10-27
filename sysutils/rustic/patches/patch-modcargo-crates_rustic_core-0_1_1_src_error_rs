@@ -1,0 +1,36 @@
+Unbreak build. Taken from https://github.com/rustic-rs/rustic_core/pull/28.
+
+Index: modcargo-crates/rustic_core-0.1.1/src/error.rs
+--- modcargo-crates/rustic_core-0.1.1/src/error.rs.orig
++++ modcargo-crates/rustic_core-0.1.1/src/error.rs
+@@ -14,7 +14,7 @@ use std::{
+     time::SystemTimeError,
+ };
+ 
+-#[cfg(not(any(windows, target_os = "openbsd")))]
++#[cfg(not(windows))]
+ use nix::errno::Errno;
+ 
+ use aes256ctr_poly1305aes::aead;
+@@ -628,7 +628,7 @@ pub enum LocalErrorKind {
+     FromWalkdirError(#[from] walkdir::Error),
+     /// {0:?}#
+     #[error(transparent)]
+-    #[cfg(not(any(windows, target_os = "openbsd")))]
++    #[cfg(not(windows))]
+     FromErrnoError(#[from] Errno),
+     /// listing xattrs on {1:?}: {0}
+     #[cfg(not(any(windows, target_os = "openbsd")))]
+@@ -670,10 +670,10 @@ pub enum LocalErrorKind {
+     /// failed to sync OS Metadata to disk: `{0:?}`
+     SyncingOfOsMetadataFailed(std::io::Error),
+     /// setting file permissions failed: `{0:?}`
+-    #[cfg(not(any(windows, target_os = "openbsd")))]
++    #[cfg(not(windows))]
+     SettingFilePermissionsFailed(std::io::Error),
+     /// failed to symlink target {linktarget:?} from {filename:?} with {source:?}
+-    #[cfg(not(any(windows, target_os = "openbsd")))]
++    #[cfg(not(windows))]
+     SymlinkingFailed {
+         linktarget: PathBuf,
+         filename: PathBuf,
