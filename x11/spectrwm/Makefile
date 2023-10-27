@@ -14,6 +14,9 @@ MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>, \
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # uses pledge()
 WANTLIB += X11 X11-xcb Xcursor Xft c fontconfig util xcb xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-util xcb-xinput xcb-xtest
