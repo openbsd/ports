@@ -1,36 +1,36 @@
-COMMENT =		lint-like code checker for Python code
+COMMENT=		lint-like code checker for Python code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_EGG_VERSION =	2.15.9
-DISTNAME=		pylint-${MODPY_EGG_VERSION}
-PKGNAME =		pylint3-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	3.0.2
+DISTNAME=	pylint-${MODPY_EGG_VERSION}
+PKGNAME=	pylint3-${MODPY_EGG_VERSION}
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-HOMEPAGE=		https://www.pylint.org/
+HOMEPAGE=	https://www.pylint.org/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		devel/py-dill${MODPY_FLAVOR} \
-			sysutils/py-platformdirs${MODPY_FLAVOR} \
-			devel/py-astroid${MODPY_FLAVOR}>=2.12.12,<=2.14.0 \
-			devel/py-isort${MODPY_FLAVOR}<6 \
-			devel/py-mccabe${MODPY_FLAVOR}<0.8 \
-			textproc/py-tomli${MODPY_FLAVOR} \
-			textproc/py-tomlkit${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-dill${MODPY_FLAVOR} \
+		sysutils/py-platformdirs${MODPY_FLAVOR} \
+		devel/py-astroid${MODPY_FLAVOR}>=3.0.1,<3.1.0 \
+		devel/py-isort${MODPY_FLAVOR}<6 \
+		devel/py-mccabe${MODPY_FLAVOR}<0.8 \
+		textproc/py-tomli${MODPY_FLAVOR} \
+		textproc/py-tomlkit${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR}
 
-# not in pypi distfile
-NO_TEST =		Yes
-#TEST_DEPENDS =		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0 \
-#			devel/py-test-benchmark${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+# tests require data files (tests/regrtest_data/* and maybe others)
+# which aren't in the pypi tar
+NO_TEST=	Yes
+#TEST_DEPENDS=	devel/py-test-benchmark${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
