@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="/usr/local/sbin/dictd"
+daemon_args="--listen-to localhost"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon##*/} .*"
+
+rc_cmd $1

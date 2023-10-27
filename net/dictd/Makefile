@@ -6,10 +6,14 @@ DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
+REVISION-main=0
+REVISION-server=0
 
 CATEGORIES=	net education
 
 HOMEPAGE=	https://www.dict.org
+
+MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE=	Yes
@@ -36,5 +40,6 @@ LDFLAGS +=	-L/usr/local/lib
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLEDIR}/
+	${INSTALL_DATA} ${FILESDIR}/dictd.conf ${EXAMPLEDIR}/
 
 .include <bsd.port.mk>

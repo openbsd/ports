@@ -1,0 +1,17 @@
+use dedicated _dictd user/group
+
+Index: dictd.c
+--- dictd.c.orig
++++ dictd.c
+@@ -1269,9 +1272,9 @@ static void release_root_privileges( void )
+    if (geteuid() == 0) {
+       struct passwd *pwd;
+ 
+-      if ((pwd = getpwnam("dictd"))) {
++      if ((pwd = getpwnam("_dictd"))) {
+          setgid(pwd->pw_gid);
+-         initgroups("dictd",pwd->pw_gid);
++         initgroups("_dictd",pwd->pw_gid);
+          setuid(pwd->pw_uid);
+       } else if ((pwd = getpwnam("nobody"))) {
+          setgid(pwd->pw_gid);

@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.430 2023/08/15 15:54:30 gonzalo Exp $
+$OpenBSD: user.list,v 1.431 2023/10/27 18:51:10 kn Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -147,7 +147,7 @@ id  user		group		port
 636 _ettercap		_ettercap	net/ettercap
 637 _memcached		_memcached	misc/memcached
 638 _prosody		_prosody	net/prosody
-#639 _polkituser		_polkituser	sysutils/policykit
+639 _dictd		_dictd		net/dictd,-server
 640 _astmanproxy	_astmanproxy	telephony/astmanproxy
 641 _ziproxy		_ziproxy	net/ziproxy
 642 _pure-ftpd		_pure-ftpd	net/pure-ftpd
