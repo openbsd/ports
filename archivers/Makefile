@@ -7,6 +7,7 @@
      SUBDIR += cabextract
      SUBDIR += deco
      SUBDIR += deutex
+     SUBDIR += draco
      SUBDIR += fastjar
      SUBDIR += freeze
      SUBDIR += fuse-zip
