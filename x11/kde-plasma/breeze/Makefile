@@ -13,24 +13,25 @@ WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 
-BUILD_DEPENDS =		devel/kf5/kpackage
+BUILD_DEPENDS =	devel/kf5/kpackage
 
-RUN_DEPENDS =		devel/kf5/kpackage \
-			devel/kf5/breeze-icons
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/kpackage \
+		devel/kf5/breeze-icons
 
-LIB_DEPENDS =		devel/kf5/frameworkintegration \
-			devel/kf5/kauth \
-			devel/kf5/kcmutils \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kguiaddons \
-			devel/kf5/ki18n \
-			devel/kf5/kirigami2 \
-			devel/kf5/kservice \
-			devel/kf5/kwindowsystem \
-			x11/kde-plasma/kdecoration \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtx11extras
+LIB_DEPENDS =	devel/kf5/frameworkintegration \
+		devel/kf5/kauth \
+		devel/kf5/kcmutils \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
+		devel/kf5/kguiaddons \
+		devel/kf5/ki18n \
+		devel/kf5/kirigami2 \
+		devel/kf5/kservice \
+		devel/kf5/kwindowsystem \
+		x11/kde-plasma/kdecoration \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtx11extras
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
