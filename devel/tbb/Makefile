@@ -7,6 +7,7 @@ GH_ACCOUNT =		oneapi-src
 GH_PROJECT =		oneTBB
 GH_TAGNAME =		v${V}
 PKGNAME =		tbb-${V}
+REVISION =		0
 
 SHARED_LIBS +=		tbb		1.0	#2020.3
 SHARED_LIBS +=		tbbmalloc	1.0	#2020.3
