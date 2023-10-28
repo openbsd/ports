@@ -1,0 +1,14 @@
+use fork(2) instead of syscall (SYS_fork)
+
+Index: mono/mini/mini-posix.c
+--- mono/mini/mini-posix.c.orig
++++ mono/mini/mini-posix.c
+@@ -940,7 +940,7 @@ fork_crash_safe (void)
+ #if defined(HOST_ANDROID)
+ 	/* SYS_fork is defined to be __NR_fork which is not defined in some ndk versions */
+ 	g_assert_not_reached ();
+-#elif !defined(HOST_DARWIN) && defined(SYS_fork)
++#elif defined(__linux__) && defined(SYS_fork)
+ 	pid = (pid_t) syscall (SYS_fork);
+ #elif HAVE_FORK
+ 	pid = (pid_t) fork ();
