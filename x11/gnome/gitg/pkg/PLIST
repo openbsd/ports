@@ -18,6 +18,7 @@ lib/gitg/plugins/files.plugin
 lib/pkgconfig/libgitg-1.0.pc
 lib/pkgconfig/libgitg-ext-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GitgExt.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GitgExt.${MODPY_PYC_MAGIC_TAG}pyc
 @man man/man1/gitg.1
 share/applications/org.gnome.gitg.desktop
 share/gir-1.0/Gitg-1.0.gir
@@ -34,6 +35,7 @@ share/glade/catalogs/gitg-glade.xml
 share/glib-2.0/schemas/org.gnome.gitg.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.gitg-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.gitg.svg
+share/locale/ab/LC_MESSAGES/gitg.mo
 share/locale/as/LC_MESSAGES/gitg.mo
 share/locale/bg/LC_MESSAGES/gitg.mo
 share/locale/bs/LC_MESSAGES/gitg.mo
@@ -52,10 +54,12 @@ share/locale/fr/LC_MESSAGES/gitg.mo
 share/locale/fur/LC_MESSAGES/gitg.mo
 share/locale/gl/LC_MESSAGES/gitg.mo
 share/locale/he/LC_MESSAGES/gitg.mo
+share/locale/hr/LC_MESSAGES/gitg.mo
 share/locale/hu/LC_MESSAGES/gitg.mo
 share/locale/id/LC_MESSAGES/gitg.mo
 share/locale/it/LC_MESSAGES/gitg.mo
 share/locale/ja/LC_MESSAGES/gitg.mo
+share/locale/ka/LC_MESSAGES/gitg.mo
 share/locale/kk/LC_MESSAGES/gitg.mo
 share/locale/ko/LC_MESSAGES/gitg.mo
 share/locale/lt/LC_MESSAGES/gitg.mo
