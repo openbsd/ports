@@ -39,7 +39,7 @@ MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 INI_TEMPLATES?=		development production
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION?=	2.69
+AUTOCONF_VERSION?=	2.71
 COMPILER=		base-clang ports-gcc
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \

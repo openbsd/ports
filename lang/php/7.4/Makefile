@@ -11,4 +11,6 @@ REVISION-curl=	1
 CONFIGURE_ARGS=	--enable-inline-optimization
 PHP_EXTENSIONS=	-xmlrpc
 
+AUTOCONF_VERSION= 2.69
+
 .include <bsd.port.mk>

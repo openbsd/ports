@@ -7,4 +7,6 @@ REVISION-gd=	0
 # WANTLIB changed (ngtcp2_crypto_openssl to ngtcp2_crypto_quictls)
 REVISION-curl=	0
 
+AUTOCONF_VERSION= 2.69
+
 .include <bsd.port.mk>
