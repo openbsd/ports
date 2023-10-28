@@ -24,10 +24,6 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
-REVISION-main =		0
-REVISION-utils =	0
-REVISION-pim =		0
-
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \

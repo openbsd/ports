@@ -51,7 +51,7 @@ LIB_DEPENDS =	graphics/kdiagram \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/eventviews
 
-
 TEST_IS_INTERACTIVE =	X11
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 .include <bsd.port.mk>

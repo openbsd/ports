@@ -4,21 +4,21 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
-SHARED_LIBS +=  dkimverifyconfigure                      4.0 # 5.13.2
+SHARED_LIBS +=  dkimverifyconfigure                      5.0 # 5.13.2
 SHARED_LIBS +=  grammarcommon                            2.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookimportexportlibprivate       2.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              2.0 # 5.13.2
 SHARED_LIBS +=  kmailgrammalecte                         2.0 # 5.13.2
 SHARED_LIBS +=  kmaillanguagetool                        5.0 # 5.13.2
-SHARED_LIBS +=  kmailmarkdown                            2.0 # 5.13.2
+SHARED_LIBS +=  kmailmarkdown                            3.0 # 5.13.2
 SHARED_LIBS +=  kmailquicktextpluginprivate              2.0 # 5.13.2
 SHARED_LIBS +=  shorturlpluginprivate                    2.0 # 5.13.2
-SHARED_LIBS +=  expireaccounttrashfolderconfig           1.0 # 5.16.1
-SHARED_LIBS +=  folderconfiguresettings                  1.0 # 5.16.1
-SHARED_LIBS +=  kmailconfirmbeforedeleting               2.0 # 5.18.3
-SHARED_LIBS +=  scamconfiguresettings                    1.0 # 5.19.0
-SHARED_LIBS +=  openurlwithconfigure                     1.0 # 5.19.0
-SHARED_LIBS +=  akonadidatasetools                       1.0 # 0.0
+SHARED_LIBS +=  expireaccounttrashfolderconfig           2.0 # 5.16.1
+SHARED_LIBS +=  folderconfiguresettings                  2.0 # 5.16.1
+SHARED_LIBS +=  kmailconfirmbeforedeleting               3.0 # 5.18.3
+SHARED_LIBS +=  scamconfiguresettings                    2.0 # 5.19.0
+SHARED_LIBS +=  openurlwithconfigure                     2.0 # 5.19.0
+SHARED_LIBS +=  akonadidatasetools                       2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarEvents KF5Codecs
@@ -76,7 +76,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/prison \

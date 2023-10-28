@@ -59,23 +59,13 @@ share/doc/HTML/uk/kalarm/index.cache.bz2
 share/doc/HTML/uk/kalarm/index.docbook
 share/examples/kalarm/
 share/examples/kalarm/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/kalarm/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
-share/icons/breeze-dark/16x16/
-share/icons/breeze-dark/16x16/actions/
-share/icons/breeze-dark/16x16/actions/show-today.svg
-share/icons/breeze-dark/22x22/
-share/icons/breeze-dark/22x22/actions/
-share/icons/breeze-dark/22x22/actions/show-today.svg
-share/icons/breeze/16x16/
-share/icons/breeze/16x16/actions/
-share/icons/breeze/16x16/actions/show-today.svg
-share/icons/breeze/22x22/
-share/icons/breeze/22x22/actions/
-share/icons/breeze/22x22/actions/show-today.svg
+share/icons/breeze-dark/actions/16/show-today.svg
+share/icons/breeze-dark/actions/22/show-today.svg
+share/icons/breeze/actions/16/show-today.svg
+share/icons/breeze/actions/22/show-today.svg
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png

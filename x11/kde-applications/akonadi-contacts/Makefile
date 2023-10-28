@@ -3,7 +3,7 @@ DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5AkonadiContact       1.0 # 0.0
-SHARED_LIBS +=  KPim5ContactEditor        1.0 # 0.0
+SHARED_LIBS +=  KPim5ContactEditor        2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

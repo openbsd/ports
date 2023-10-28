@@ -4,7 +4,6 @@ CATEGORIES =	devel graphics
 
 SHARED_LIBS +=  KF5Kipi                   2.0 # 5.2
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Service
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
@@ -23,5 +22,7 @@ BUILD_DEPENDS =		graphics/png \
 			graphics/jpeg \
 			graphics/tiff \
 			x11/kde-applications/libkexiv2
+
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 .include <bsd.port.mk>

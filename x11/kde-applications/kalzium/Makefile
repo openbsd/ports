@@ -1,7 +1,6 @@
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 
@@ -27,13 +26,15 @@ MODULES +=	lang/python \
 
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS =	devel/kf5/karchive \
+BUILD_DEPENDS =	misc/openbabel \
+		devel/kf5/karchive \
 		devel/kf5/kbookmarks \
 		devel/kf5/kparts \
 		devel/kf5/solid \
 		math/eigen3
 
-RUN_DEPENDS =	devel/kf5/karchive \
+RUN_DEPENDS =	misc/openbabel \
+		devel/kf5/karchive \
 		devel/kf5/kbookmarks \
 		devel/kf5/kparts \
 		devel/kf5/solid
@@ -52,7 +53,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/sonnet \
-		misc/openbabel \
 		x11/qt5/qtscript \
 		x11/qt5/qtsvg
 

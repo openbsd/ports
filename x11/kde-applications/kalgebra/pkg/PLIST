@@ -1,6 +1,8 @@
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
+@bin bin/kalgebra
 @bin bin/kalgebramobile
+share/applications/org.kde.kalgebra.desktop
 share/applications/org.kde.kalgebramobile.desktop
 share/doc/HTML/ca/kalgebra/
 share/doc/HTML/ca/kalgebra/commands.docbook
@@ -46,6 +48,7 @@ share/doc/HTML/pt/kalgebra/
 share/doc/HTML/pt/kalgebra/commands.docbook
 share/doc/HTML/pt/kalgebra/index.cache.bz2
 share/doc/HTML/pt/kalgebra/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kalgebra/
 share/doc/HTML/pt_BR/kalgebra/commands.docbook
 share/doc/HTML/pt_BR/kalgebra/index.cache.bz2
@@ -71,6 +74,9 @@ share/doc/HTML/uk/kalgebra/kalgebra-dictionary-window.png
 share/doc/HTML/uk/kalgebra/kalgebra-main-window.png
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
+share/katepart5/
+share/katepart5/syntax/
+share/katepart5/syntax/kalgebra.xml
 share/locale/ar/LC_MESSAGES/kalgebra.mo
 share/locale/ar/LC_MESSAGES/kalgebramobile.mo
 share/locale/be/LC_MESSAGES/kalgebra.mo
@@ -109,6 +115,8 @@ share/locale/hi/LC_MESSAGES/kalgebra.mo
 share/locale/hne/LC_MESSAGES/kalgebra.mo
 share/locale/hr/LC_MESSAGES/kalgebra.mo
 share/locale/hu/LC_MESSAGES/kalgebra.mo
+share/locale/ia/LC_MESSAGES/kalgebra.mo
+share/locale/ia/LC_MESSAGES/kalgebramobile.mo
 share/locale/it/LC_MESSAGES/kalgebra.mo
 share/locale/it/LC_MESSAGES/kalgebramobile.mo
 share/locale/ja/LC_MESSAGES/kalgebra.mo
@@ -164,6 +172,16 @@ share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
 share/metainfo/
+share/metainfo/org.kde.graphsplasmoid.appdata.xml
+share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/plasma/
+share/plasma/plasmoids/
+share/plasma/plasmoids/org.kde.graphsplasmoid/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.json

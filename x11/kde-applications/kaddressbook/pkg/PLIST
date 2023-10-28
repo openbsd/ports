@@ -37,8 +37,6 @@ lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets.cmake
 @lib lib/libKPim5AddressbookImportExport.so.${LIBKPim5AddressbookImportExport_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt5/plugins/kaddressbookpart.so
-lib/qt5/plugins/pim5/kcms/
-lib/qt5/plugins/pim5/kcms/kaddressbook/
 @so lib/qt5/plugins/pim5/kcms/kaddressbook/kaddressbook_config_plugins.so
 @so lib/qt5/plugins/pim5/kcms/kaddressbook/kaddressbook_config_userfeedback.so
 lib/qt5/plugins/pim5/kontact/

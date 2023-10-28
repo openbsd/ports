@@ -2,7 +2,8 @@ COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  pimdataexporterprivate    0.0 # 0.0
+SHARED_LIBS +=  pimdataexporterprivate    1.0 # 0.0
+
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -21,10 +22,6 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
 WANTLIB += Qt5Xml X11 assuan c gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
-
-
-
-
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -50,7 +47,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \

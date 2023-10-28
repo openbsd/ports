@@ -6,7 +6,7 @@ CATEGORIES =	net mail
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
-SHARED_LIBS +=  kmailprivate       7.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       8.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
@@ -45,13 +45,15 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kwallet
 
 RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard \
 		x11/kde-applications/kdepim-runtime \
 		x11/kde-applications/kmail-account-wizard \
 		x11/kde-applications/mbox-importer \
-		x11/kde-applications/pim-sieve-editor
+		x11/kde-applications/pim-sieve-editor \
+		devel/kf5/kwallet
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -77,7 +79,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \

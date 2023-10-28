@@ -2,13 +2,13 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5MessageComposer      1.0 # 0.0
-SHARED_LIBS +=  KPim5MessageCore          1.0 # 0.0
-SHARED_LIBS +=  KPim5MessageList          1.0 # 0.0
-SHARED_LIBS +=  KPim5MessageViewer        1.0 # 0.0
-SHARED_LIBS +=  KPim5MimeTreeParser       0.1 # 0.0
-SHARED_LIBS +=  KPim5TemplateParser       1.0 # 0.0
-SHARED_LIBS +=  KPim5WebEngineViewer      1.0 # 0.0
+SHARED_LIBS +=  KPim5MessageComposer      2.0 # 0.0
+SHARED_LIBS +=  KPim5MessageCore          2.0 # 0.0
+SHARED_LIBS +=  KPim5MessageList          2.0 # 0.0
+SHARED_LIBS +=  KPim5MessageViewer        2.0 # 0.0
+SHARED_LIBS +=  KPim5MimeTreeParser       1.0 # 0.0
+SHARED_LIBS +=  KPim5TemplateParser       1.1 # 0.0
+SHARED_LIBS +=  KPim5WebEngineViewer      2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
@@ -32,12 +32,13 @@ WANTLIB += X11 assuan gpgme gpgmepp m qca-qt5 qgpgme
 
 WANTLIB += lib/inotify/inotify
 
-
-
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+RUN_DEPENDS =	devel/kf5/kwallet
+
+BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kwallet
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -56,7 +57,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \

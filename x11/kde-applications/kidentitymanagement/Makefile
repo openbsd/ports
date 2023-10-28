@@ -28,7 +28,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		textproc/ktextaddons \
 		devel/libinotify \
 		x11/kde-applications/kpimtextedit
 

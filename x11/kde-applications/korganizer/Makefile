@@ -57,11 +57,9 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
-		devel/kf5/knotifications \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \

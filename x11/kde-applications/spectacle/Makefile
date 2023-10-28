@@ -3,7 +3,7 @@ DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
 # XXX Depends on KPipeWire (pipewire)
 VERSION =	22.12.3
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://apps.kde.org/spectacle/
 

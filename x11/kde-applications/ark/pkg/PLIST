@@ -99,7 +99,6 @@ share/doc/HTML/uk/ark/index.cache.bz2
 share/doc/HTML/uk/ark/index.docbook
 share/examples/ark/
 share/examples/ark/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/ark/xdg/arkrc
 @sample ${SYSCONFDIR}/xdg/arkrc
 share/icons/hicolor/128x128/apps/ark.png

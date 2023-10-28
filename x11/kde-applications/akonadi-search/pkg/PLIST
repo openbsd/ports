@@ -1,3 +1,4 @@
+@bin bin/akonadi_html_to_text
 @bin bin/akonadi_indexing_agent
 include/KPim5/AkonadiSearch/
 include/KPim5/AkonadiSearch/Core/

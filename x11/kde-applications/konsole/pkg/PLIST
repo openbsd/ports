@@ -59,7 +59,6 @@ share/doc/HTML/zh_CN/konsole/index.cache.bz2
 share/doc/HTML/zh_CN/konsole/index.docbook
 share/examples/konsole/
 share/examples/konsole/xdg/
-@sample ${SYSCONFDIR}/xdg/
 share/examples/konsole/xdg/konsolerc
 @sample ${SYSCONFDIR}/xdg/konsolerc
 share/kconf_update/konsole.upd

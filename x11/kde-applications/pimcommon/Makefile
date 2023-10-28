@@ -3,7 +3,7 @@ DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5PimCommon            0.0 # 0.0
-SHARED_LIBS +=  KPim5PimCommonAkonadi     0.0 # 0.0
+SHARED_LIBS +=  KPim5PimCommonAkonadi     1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

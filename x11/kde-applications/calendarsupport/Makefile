@@ -40,7 +40,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/libinotify \
-		textproc/ktextaddons \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/akonadi-notes \

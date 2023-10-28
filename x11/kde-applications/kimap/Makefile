@@ -18,4 +18,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		security/cyrus-sasl2 \
 		x11/kde-applications/kmime
 
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
+
 .include <bsd.port.mk>

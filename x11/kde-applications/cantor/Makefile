@@ -6,7 +6,6 @@ USE_NOBTCFI =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                54.1 # 17.08
 
@@ -16,14 +15,14 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5Parts KF5Pty KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
 WANTLIB += X11 c intl luajit-5.1 m poppler poppler-qt5 ${MODPY_WANTLIB}
-WANTLIB += qalculate spectre util
+WANTLIB += spectre util
 
 MODULES +=	fortran \
 		lang/lua \
@@ -47,7 +46,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kparts \
-		devel/kf5/kpty \
 		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
 		devel/kf5/kxmlgui \

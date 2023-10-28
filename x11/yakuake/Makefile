@@ -2,7 +2,6 @@ COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 DISTNAME =	yakuake-${MODKDE_VERSION}
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	x11 sysutils
 

@@ -4,7 +4,7 @@ CATEGORIES =	net x11
 
 # XXX Depends on KPipeWire (pipewire)
 VERSION =	22.12.3
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  krfbprivate               3.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -16,8 +16,6 @@ WANTLIB += c m vncserver xcb xcb-damage xcb-image xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-xfixes
 
 WANTLIB += lib/inotify/inotify
-
-
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krfb
 

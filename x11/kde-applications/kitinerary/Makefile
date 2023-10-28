@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 
-SHARED_LIBS +=  KPim5Itinerary            1.0 # 0.0
+SHARED_LIBS +=  KPim5Itinerary            1.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CalendarCore KF5Codecs
 WANTLIB += KF5Contacts KF5I18n KF5I18nLocaleData KPim5Mime KPim5PkPass

@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5KManageSieve         1.0 # 0.0
 SHARED_LIBS +=  KPim5KSieve               0.0 # 0.0
-SHARED_LIBS +=  KPim5KSieveUi             1.0 # 0.0
+SHARED_LIBS +=  KPim5KSieveUi             2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -38,7 +38,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kservice \
-		devel/kf5/kwallet\
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \

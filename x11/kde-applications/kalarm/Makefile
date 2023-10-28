@@ -1,7 +1,6 @@
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
 
 SHARED_LIBS +=  kalarmcalendar           3.0 # 0.0
 SHARED_LIBS +=  kalarmplugin             2.0 # 0.0
@@ -60,7 +59,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \

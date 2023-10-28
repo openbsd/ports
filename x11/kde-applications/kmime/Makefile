@@ -2,7 +2,7 @@ COMMENT =	library for handling mail messages and newsgroup articles
 DISTNAME =	kmime-${VERSION}
 CATEGORIES =	mail devel
 
-SHARED_LIBS +=  KPim5Mime                 0.0 # 0.0
+SHARED_LIBS +=  KPim5Mime                 0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5I18n Qt5Core m
 

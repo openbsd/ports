@@ -1,9 +1,8 @@
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
-SHARED_LIBS +=  KPim5AkonadiCalendar      1.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiCalendar      2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5CalendarCore KF5Codecs KF5ConfigCore KF5ConfigGui
@@ -36,7 +35,6 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
-		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		security/libassuan \

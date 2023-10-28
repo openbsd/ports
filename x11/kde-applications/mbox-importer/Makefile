@@ -20,6 +20,8 @@ WANTLIB += lib/inotify/inotify
 
 
 
+
+
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DESKTOP_FILE = yes

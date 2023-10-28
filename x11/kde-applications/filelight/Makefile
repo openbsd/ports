@@ -32,11 +32,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kpackage \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \

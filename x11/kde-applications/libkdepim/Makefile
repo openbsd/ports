@@ -22,7 +22,6 @@ BUILD_DEPENDS =	devel/boost \
 		x11/qt5/qttools
 
 LIB_DEPENDS =	devel/kf5/kcompletion \
-		devel/kf5/kconfig \
 		devel/kf5/ki18n \
 		devel/kf5/kwidgetsaddons
 

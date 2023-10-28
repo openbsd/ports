@@ -16,7 +16,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-RUN_DEPENDS =	x11/dbus,-suid
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/dbus,-suid
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

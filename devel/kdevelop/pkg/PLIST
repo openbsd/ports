@@ -344,30 +344,6 @@ include/kdevplatform/sublime/tooldocument.h
 include/kdevplatform/sublime/urldocument.h
 include/kdevplatform/sublime/view.h
 include/kdevplatform/sublime/viewbarcontainer.h
-include/kdevplatform/tests/
-include/kdevplatform/tests/autotestshell.h
-include/kdevplatform/tests/json/
-include/kdevplatform/tests/json/declarationvalidator.h
-include/kdevplatform/tests/json/delayedoutput.h
-include/kdevplatform/tests/json/jsondeclarationtests.h
-include/kdevplatform/tests/json/jsonducontexttests.h
-include/kdevplatform/tests/json/jsontesthelpers.h
-include/kdevplatform/tests/json/jsontypetests.h
-include/kdevplatform/tests/json/testsuite.cpp
-include/kdevplatform/tests/json/testsuite.h
-include/kdevplatform/tests/kdevsignalspy.h
-include/kdevplatform/tests/projectsgenerator.h
-include/kdevplatform/tests/testbreakpointcontroller.h
-include/kdevplatform/tests/testcore.h
-include/kdevplatform/tests/testdebugsession.h
-include/kdevplatform/tests/testfile.h
-include/kdevplatform/tests/testframestackmodel.h
-include/kdevplatform/tests/testhelpers.h
-include/kdevplatform/tests/testlanguagecontroller.h
-include/kdevplatform/tests/testplugincontroller.h
-include/kdevplatform/tests/testproject.h
-include/kdevplatform/tests/testsexport.h
-include/kdevplatform/tests/testvariablecontroller.h
 include/kdevplatform/util/
 include/kdevplatform/util/activetooltip.h
 include/kdevplatform/util/algorithm.h
@@ -460,7 +436,6 @@ lib/cmake/KDevelop/KDevelopTargets.cmake
 @lib lib/libKDevPlatformSerialization.so.${LIBKDevPlatformSerialization_VERSION}
 @lib lib/libKDevPlatformShell.so.${LIBKDevPlatformShell_VERSION}
 @lib lib/libKDevPlatformSublime.so.${LIBKDevPlatformSublime_VERSION}
-@lib lib/libKDevPlatformTests.so.${LIBKDevPlatformTests_VERSION}
 @lib lib/libKDevPlatformUtil.so.${LIBKDevPlatformUtil_VERSION}
 @lib lib/libKDevPlatformVcs.so.${LIBKDevPlatformVcs_VERSION}
 @so lib/libKDevelopSessionsWatch.so
@@ -558,7 +533,7 @@ share/doc/HTML/en/kdevelop/index.docbook
 share/doc/HTML/en/kdevelop/kdevelop-10.png
 share/doc/HTML/en/kdevelop/kdevelop-11.png
 share/doc/HTML/en/kdevelop/kdevelop-12.png
-share/doc/HTML/en/kdevelop/kdevelop-13.png
+share/doc/HTML/en/kdevelop/kdevelop-${MODCLANG_VERSION}.png
 share/doc/HTML/en/kdevelop/kdevelop-14.png
 share/doc/HTML/en/kdevelop/kdevelop-15.png
 share/doc/HTML/en/kdevelop/kdevelop-16.png

@@ -1,7 +1,6 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
 
 SHARED_LIBS +=  kioarchive                4.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08
@@ -13,10 +12,11 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5DNSSD KF5GuiAddons KF5I18n KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KExiv2 KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_2 Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml X11 Xcursor c kdsoap m mtp phonon4qt5 phonon4qt5experimental
-WANTLIB += smbclient ssh tag util z
+WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_2 OpenEXRCore-3_2
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 Xcursor c kdsoap m mtp
+WANTLIB += phonon4qt5 phonon4qt5experimental ssh tag util
+WANTLIB += lib/samba/smbclient
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes

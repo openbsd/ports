@@ -1,7 +1,6 @@
 COMMENT =	general purpose flash card program for KDE
 DISTNAME =	kwordquiz-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
@@ -24,24 +23,15 @@ BUILD_DEPENDS =	graphics/kirigami-addons
 RUN_DEPENDS =	graphics/kirigami-addons
 
 LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kitemviews \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
 		x11/kde-applications/libkeduvocdocument \
-		multimedia/phonon
-
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtquickcontrols2 \
+		x11/qt5/qtsvg
 .include <bsd.port.mk>

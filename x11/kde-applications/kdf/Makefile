@@ -21,10 +21,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kcmutils
-RUN_DEPENDS =	devel/kf5/kcmutils
-
 LIB_DEPENDS =	devel/kf5/kauth \
+		devel/kf5/kcmutils \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -37,6 +35,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui
+		devel/kf5/kxmlgui \
 
 .include <bsd.port.mk>

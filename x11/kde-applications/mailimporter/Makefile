@@ -2,7 +2,7 @@ COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5MailImporter         1.0 # 0.0
+SHARED_LIBS +=  KPim5MailImporter         2.0 # 0.0
 SHARED_LIBS +=  KPim5MailImporterAkonadi  1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs

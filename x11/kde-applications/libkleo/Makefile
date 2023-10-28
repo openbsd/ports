@@ -25,7 +25,6 @@ LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kitemmodels \
 		devel/kf5/kwidgetsaddons \
 		security/gpgme,-qt \
-		textproc/ktextaddons \
 		devel/libinotify \
 		x11/kde-applications/kpimtextedit
 

@@ -50,4 +50,5 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/lokalize/scripts/ \
 		${PREFIX}/share/lokalize/scripts/odf/ || true
+
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
 BROKEN =	base clang/libcstd++ too old, uses too new C++20 code
 
 COMMENT =	client for Matrix chat
-MODKDE_VERSION = 23.08.2
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
 

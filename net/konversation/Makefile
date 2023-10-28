@@ -1,7 +1,6 @@
 COMMENT =	IRC client for KDE
 
 DISTNAME =	konversation-${MODKDE_VERSION}
-REVISION =	0
 
 CATEGORIES =	net
 

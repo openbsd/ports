@@ -8,11 +8,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5CalendarCore KF5Contacts KF5CoreAddons
 WANTLIB += KF5I18n KPim5CalendarUtils Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += m
 
-
 MODKDE5_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf5/kcalendarcore \
-		devel/kf5/kconfig \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \

@@ -2,7 +2,6 @@
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
 @lib lib/libnotesharedprivate.so.${LIBnotesharedprivate_VERSION}
-lib/qt5/plugins/pim5/kcms/
 lib/qt5/plugins/pim5/kcms/knotes/
 @so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_action.so
 @so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_collection.so
@@ -127,7 +126,6 @@ share/knotes/print/themes/default/
 share/knotes/print/themes/default/theme.desktop
 share/knotes/print/themes/default/theme.html
 share/knotifications5/akonadi_notes_agent.notifyrc
-share/knsrcfiles/
 share/knsrcfiles/knotes_printing_theme.knsrc
 share/kxmlgui5/
 share/kxmlgui5/knotes/

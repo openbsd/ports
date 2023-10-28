@@ -4,7 +4,6 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kbreakout
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
@@ -25,7 +24,6 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/ki18n \
 		devel/kf5/kcrash \
-		devel/kf5/kcompletion \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \

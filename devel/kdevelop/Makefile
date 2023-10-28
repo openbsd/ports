@@ -6,8 +6,6 @@ CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
 
-REVISION =	0
-
 HOMEPAGE =	https://www.kdevelop.org/
 
 SHARED_LIBS +=  KDevPlatformDebugger      5.0 # 5.2
@@ -46,11 +44,10 @@ WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
 WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1
-WANTLIB += svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
-WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 apr-1 aprutil-1
+WANTLIB += c komparediff2 m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1
+WANTLIB += svn_subr-1 svn_wc-1
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -124,6 +121,8 @@ TEST_ENV +=	QT_PLUGIN_PATH="${PREFIX}/lib/qt5/plugins"
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_KSysGuard=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5SysGuard=ON \
 			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
+
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
