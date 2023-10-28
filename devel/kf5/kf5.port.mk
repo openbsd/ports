@@ -1,4 +1,4 @@
-MODKF5_VERSION =	5.110.0
+MODKF5_VERSION =	5.111.0
 
 .if empty(GH_ACCOUNT)
 EXTRACT_SUFX ?=		.tar.xz
@@ -30,6 +30,13 @@ CONFIGURE_ARGS += \
 # The module needs more fixes. Also, it's not clear how to deal
 # with multiple Python dependencies.
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration=ON
+
+# Disable for now
+# MODKF5_BUILD_TESTING ?= No
+.if defined(MODKF5_BUILD_TESTING) && ${MODKF5_BUILD_TESTING:L} == "no"
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
+.endif
+
 .endif
 
 # make sure cmake module preceeds qt5, unless we really want qmake

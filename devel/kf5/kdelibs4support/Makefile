@@ -16,7 +16,6 @@ WANTLIB += Qt5Core Qt5DBus Qt5Designer Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Test Qt5Widgets Qt5X11Extras Qt5Xml SM X11
 WANTLIB += Xext c m xcb
 
-
 MODULES =	lang/python
 MODPY_RUNDEP =	No
 

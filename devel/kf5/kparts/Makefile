@@ -31,4 +31,6 @@ PORTHOME =		${WRKDIR}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+MODKF5_BUILD_TESTING =	Yes
+
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		9.0
 
@@ -14,7 +13,7 @@ RUN_DEPENDS =	misc/shared-mime-info \
 		sysutils/accountsservice \
 		x11/papirus-icon-theme
 
-LIB_DEPENDS =		devel/libinotify
+LIB_DEPENDS =	devel/libinotify
 
 # for tests
 PORTHOME =		${WRKDIR}
