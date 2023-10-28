@@ -6,19 +6,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.32.3
+DISTNAME =	qgis-3.34.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	0
 
-SHARED_LIBS =	qgis_core	71.0 \
-		qgis_app	46.1 \
-		qgis_gui	53.2 \
-		qgis_analysis	22.0 \
+SHARED_LIBS =	qgis_core	72.0 \
+		qgis_app	47.0 \
+		qgis_gui	54.0 \
+		qgis_analysis	23.0 \
 		qgis_server	19.0 \
 		qgispython	6.0 \
-		qgis_3d		16.0 \
+		qgis_3d		16.1 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
@@ -82,18 +81,42 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m mdal pq proj ${MODPY_WANTLIB}
-WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt spatialindex
-WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z GL
+WANTLIB += c exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv m
+WANTLIB += mdal minizip pdalcpp pq proj ${MODPY_WANTLIB}
+WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt rttopo spatialindex
+WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z zstd GL
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite
 WANTLIB += Qt5Multimedia Qt5MultimediaWidgets
 WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
-WANTLIB += Qt5QmlModels pdalcpp zstd
+WANTLIB += Qt5QmlModels
+WANTLIB += absl_bad_optional_access absl_bad_variant_access absl_base
+WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
+WANTLIB += absl_die_if_null absl_examine_stack absl_exponential_biased
+WANTLIB += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
+WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash
+WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB += absl_log_internal_format absl_log_internal_globals
+WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
+WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_throw_delegate absl_time absl_time_zone
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
+		-DWITH_DRACO=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE
