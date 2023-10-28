@@ -1,0 +1,15 @@
+Index: boost/fiber/detail/futex.hpp
+--- boost/fiber/detail/futex.hpp.orig
++++ boost/fiber/detail/futex.hpp
+@@ -32,7 +32,11 @@ namespace detail {
+ #if BOOST_OS_LINUX
+ BOOST_FORCEINLINE
+ int sys_futex( void * addr, std::int32_t op, std::int32_t x) {
++if defined(__OpenBSD__)
++    return ::futex(addr, op, x, nullptr, nullptr, 0);
++#else
+     return ::syscall( SYS_futex, addr, op, x, nullptr, nullptr, 0);
++#endif
+ }
+ 
+ BOOST_FORCEINLINE
