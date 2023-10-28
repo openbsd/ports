@@ -1,4 +1,4 @@
-V ?=			1.10.0
+V ?=			1.11.0
 
 CATEGORIES=		misc devel
 

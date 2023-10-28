@@ -1,4 +1,3 @@
-XXX
 ld: error: undefined symbol: _Unwind_Resume
 >>> referenced by osinfo-db-util.c
 >>>               tools/f9d35d4@@osinfo-db-validate@exe/osinfo-db-util.c.o:(osinfo_db_get_system_path)
@@ -6,7 +5,7 @@ ld: error: undefined symbol: _Unwind_Resume
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -206,7 +206,6 @@ osinfo_db_tools_check_cflags = [
+@@ -203,7 +203,6 @@ osinfo_db_tools_check_cflags = [
    '-Wno-overlength-strings',
    '-Wp,-D_FORTIFY_SOURCE=2',
    '--param=ssp-buffer-size=4',

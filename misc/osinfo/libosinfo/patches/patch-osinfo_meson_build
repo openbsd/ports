@@ -4,7 +4,7 @@ Should match b_lundef in meson(1).
 Index: osinfo/meson.build
 --- osinfo/meson.build.orig
 +++ osinfo/meson.build
-@@ -130,11 +130,8 @@ libosinfo_private_headers = [
+@@ -132,11 +132,8 @@ libosinfo_private_headers = [
  ]
  
  libosinfo_link_args = []

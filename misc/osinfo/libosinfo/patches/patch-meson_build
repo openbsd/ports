@@ -4,7 +4,7 @@ it may cause runtime issues on lld archs as well.
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -223,7 +223,6 @@ libosinfo_check_cflags = [
+@@ -225,7 +225,6 @@ libosinfo_check_cflags = [
      '-Wframe-larger-than=4096',
      '-Wno-overlength-strings',
      '--param=ssp-buffer-size=4',
