@@ -1,9 +1,11 @@
-@conflict dictd-server-<1.13.1p1
+@conflict dictd-server-<1.13.1p2
 @conflict p5-Net-Dict-*
 @pkgpath net/dictd
+bin/colorit
 @bin bin/dict
 bin/dict_lookup
 bin/dictl
+@man man/man1/colorit.1
 @man man/man1/dict.1
 @man man/man1/dict_lookup.1
 @man man/man1/dictl.1

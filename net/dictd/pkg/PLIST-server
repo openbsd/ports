@@ -1,7 +1,6 @@
 @newgroup _dictd:639
 @newuser _dictd:639:_dictd::dictd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dictd
-bin/colorit
 bin/dictdplugin-config
 @bin bin/dictfmt
 bin/dictfmt_index2suffix
@@ -9,7 +8,6 @@ bin/dictfmt_index2word
 bin/dictunformat
 @bin bin/dictzip
 include/dictdplugin.h
-@man man/man1/colorit.1
 @man man/man1/dictfmt.1
 @man man/man1/dictfmt_index2suffix.1
 @man man/man1/dictfmt_index2word.1

@@ -6,8 +6,8 @@ DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
-REVISION-main=	1
-REVISION-server=1
+REVISION-main=	2
+REVISION-server=2
 
 CATEGORIES=	net education
 
