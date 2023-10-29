@@ -17,3 +17,25 @@ Index: src/3rdparty/chromium/base/allocator/partition_allocator/spinning_futex_l
  #include <sys/syscall.h>
  #include <unistd.h>
  
+@@ -39,8 +43,8 @@ void SpinningFutex::FutexWait() {
+   // |kLockedContended| anymore. Note that even without spurious wakeups, the
+   // value of |state_| is not guaranteed when this returns, as another thread
+   // may get the lock before we get to run.
+-  int err = syscall(SYS_futex, &state_, FUTEX_WAIT | FUTEX_PRIVATE_FLAG,
+-                    kLockedContended, nullptr, nullptr, 0);
++  int err = futex(reinterpret_cast<volatile unsigned int *>(&state_), FUTEX_WAIT | FUTEX_PRIVATE_FLAG,
++                    kLockedContended, nullptr, nullptr);
+ 
+   if (err) {
+     // These are programming error, check them.
+@@ -52,8 +56,8 @@ void SpinningFutex::FutexWait() {
+ 
+ void SpinningFutex::FutexWake() {
+   int saved_errno = errno;
+-  long retval = syscall(SYS_futex, &state_, FUTEX_WAKE | FUTEX_PRIVATE_FLAG,
+-                        1 /* wake up a single waiter */, nullptr, nullptr, 0);
++  long retval = futex(reinterpret_cast<volatile unsigned int *>(&state_), FUTEX_WAKE | FUTEX_PRIVATE_FLAG,
++                        1 /* wake up a single waiter */, nullptr, nullptr);
+   PA_CHECK(retval != -1);
+   errno = saved_errno;
+ }
