@@ -2,7 +2,7 @@ COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter
 GNOME_VERSION=		1.26.4
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  clutter-1.0          6.1   # 2600.0
 
@@ -14,7 +14,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv intl
 WANTLIB += jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png xcb xcb-dri2 xcb-dri3 xcb-present
-WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z
+WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xshmfence z xcb-randr
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
