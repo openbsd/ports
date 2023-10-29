@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		utilities to work on firmware images and hardware
 
-V =			4.17
+V =			4.21
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
-REVISION =		0
 
 CATEGORIES =		sysutils devel
 
@@ -21,7 +20,7 @@ WANTLIB =		c
 SITES =			https://coreboot.org/releases/
 
 EXTRACT_SUFX =		.tar.xz
-EXTRACT_FILES =		${DISTNAME}/{src/commonlib,util}
+EXTRACT_FILES =		${DISTNAME}/{src/commonlib,src/vendorcode,util,3rdparty}
 
 USE_GMAKE =		Yes
 
@@ -34,7 +33,8 @@ MAKE_FLAGS =		CC=${CC} \
 FAKE_FLAGS =		PREFIX=${PREFIX}
 
 # XXX intelmetool requires unsupported pcilib access methods
-UTILS =			cbmem \
+UTILS =			cbfstool \
+			cbmem \
 			ectool \
 			ifdtool \
 			nvramtool

@@ -3,7 +3,7 @@ Hint at mem(4) in error message
 Index: util/cbmem/cbmem.c
 --- util/cbmem/cbmem.c.orig
 +++ util/cbmem/cbmem.c
-@@ -1582,7 +1582,7 @@ int main(int argc, char** argv)
+@@ -1811,7 +1811,7 @@ int main(int argc, char** argv)
  
  	mem_fd = open("/dev/mem", timestamp_id ? O_RDWR : O_RDONLY, 0);
  	if (mem_fd < 0) {

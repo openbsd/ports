@@ -5,6 +5,7 @@ Source project it provides auditability and maximum control over technology.
 This package contains the following utilities to work on firmware images or to
 communicate with hardware:
 
+* cbfstool     Management utility for CBFS formatted ROM images
 * cbmem        CBMEM parser to read e.g. timestamps and console log
 * ectool       Dump the RAM of a laptop's Embedded/Environmental Controller (EC)
 * ifdtool      Extract and dump Intel Firmware Descriptor information

@@ -1,0 +1,11 @@
+Index: util/cbfstool/Makefile.inc
+--- util/cbfstool/Makefile.inc.orig
++++ util/cbfstool/Makefile.inc
+@@ -134,7 +134,6 @@ TOOLCPPFLAGS += -I$(top)/src
+ TOOLCPPFLAGS += -I$(top)/src/vendorcode/intel/edk2/uefi_2.4/MdePkg/Include
+ 
+ TOOLLDFLAGS ?=
+-HOSTCFLAGS += -fms-extensions
+ 
+ ifeq ($(shell uname -s | cut -c-7 2>/dev/null), MINGW32)
+ TOOLCFLAGS += -mno-ms-bitfields

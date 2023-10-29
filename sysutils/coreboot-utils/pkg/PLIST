@@ -1,4 +1,13 @@
+@comment @bin bin/cbfs-compression-tool
+@bin bin/cbfstool
+@comment @bin bin/cse_fpt
+@comment @bin bin/cse_serger
+@comment @bin bin/elogtool
+@comment @bin bin/fmaptool
 @bin bin/ifdtool
+@comment @bin bin/ifittool
+@comment @bin bin/ifwitool
+@comment @bin bin/rmodtool
 @man man/man8/nvramtool.8
 @bin sbin/cbmem
 @bin sbin/ectool
