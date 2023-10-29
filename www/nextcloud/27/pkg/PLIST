@@ -9700,6 +9700,8 @@ nextcloud/apps/admin_audit/l10n/ca.js
 nextcloud/apps/admin_audit/l10n/ca.json
 nextcloud/apps/admin_audit/l10n/cs.js
 nextcloud/apps/admin_audit/l10n/cs.json
+nextcloud/apps/admin_audit/l10n/cy_GB.js
+nextcloud/apps/admin_audit/l10n/cy_GB.json
 nextcloud/apps/admin_audit/l10n/da.js
 nextcloud/apps/admin_audit/l10n/da.json
 nextcloud/apps/admin_audit/l10n/de.js
@@ -10752,6 +10754,8 @@ nextcloud/apps/cloud_federation_api/composer/composer/installed.php
 nextcloud/apps/cloud_federation_api/l10n/
 nextcloud/apps/cloud_federation_api/l10n/ar.js
 nextcloud/apps/cloud_federation_api/l10n/ar.json
+nextcloud/apps/cloud_federation_api/l10n/ast.js
+nextcloud/apps/cloud_federation_api/l10n/ast.json
 nextcloud/apps/cloud_federation_api/l10n/bg.js
 nextcloud/apps/cloud_federation_api/l10n/bg.json
 nextcloud/apps/cloud_federation_api/l10n/ca.js
@@ -11089,6 +11093,8 @@ nextcloud/apps/contactsinteraction/composer/composer/installed.php
 nextcloud/apps/contactsinteraction/l10n/
 nextcloud/apps/contactsinteraction/l10n/ar.js
 nextcloud/apps/contactsinteraction/l10n/ar.json
+nextcloud/apps/contactsinteraction/l10n/ast.js
+nextcloud/apps/contactsinteraction/l10n/ast.json
 nextcloud/apps/contactsinteraction/l10n/bg.js
 nextcloud/apps/contactsinteraction/l10n/bg.json
 nextcloud/apps/contactsinteraction/l10n/ca.js
@@ -13939,6 +13945,8 @@ nextcloud/apps/files_reminders/l10n/fr.js
 nextcloud/apps/files_reminders/l10n/fr.json
 nextcloud/apps/files_reminders/l10n/gl.js
 nextcloud/apps/files_reminders/l10n/gl.json
+nextcloud/apps/files_reminders/l10n/hu.js
+nextcloud/apps/files_reminders/l10n/hu.json
 nextcloud/apps/files_reminders/l10n/lt_LT.js
 nextcloud/apps/files_reminders/l10n/lt_LT.json
 nextcloud/apps/files_reminders/l10n/mk.js
@@ -15056,6 +15064,8 @@ nextcloud/apps/firstrunwizard/l10n/ca.js
 nextcloud/apps/firstrunwizard/l10n/ca.json
 nextcloud/apps/firstrunwizard/l10n/cs.js
 nextcloud/apps/firstrunwizard/l10n/cs.json
+nextcloud/apps/firstrunwizard/l10n/cy_GB.js
+nextcloud/apps/firstrunwizard/l10n/cy_GB.json
 nextcloud/apps/firstrunwizard/l10n/cy_GB.php
 nextcloud/apps/firstrunwizard/l10n/da.js
 nextcloud/apps/firstrunwizard/l10n/da.json
@@ -15485,6 +15495,8 @@ nextcloud/apps/lookup_server_connector/composer/composer/installed.php
 nextcloud/apps/lookup_server_connector/l10n/
 nextcloud/apps/lookup_server_connector/l10n/ar.js
 nextcloud/apps/lookup_server_connector/l10n/ar.json
+nextcloud/apps/lookup_server_connector/l10n/ast.js
+nextcloud/apps/lookup_server_connector/l10n/ast.json
 nextcloud/apps/lookup_server_connector/l10n/bg.js
 nextcloud/apps/lookup_server_connector/l10n/bg.json
 nextcloud/apps/lookup_server_connector/l10n/ca.js
@@ -16217,6 +16229,8 @@ nextcloud/apps/password_policy/l10n/af.js
 nextcloud/apps/password_policy/l10n/af.json
 nextcloud/apps/password_policy/l10n/ar.js
 nextcloud/apps/password_policy/l10n/ar.json
+nextcloud/apps/password_policy/l10n/ast.js
+nextcloud/apps/password_policy/l10n/ast.json
 nextcloud/apps/password_policy/l10n/az.js
 nextcloud/apps/password_policy/l10n/az.json
 nextcloud/apps/password_policy/l10n/bg.js
@@ -17004,6 +17018,8 @@ nextcloud/apps/provisioning_api/img/app.svg
 nextcloud/apps/provisioning_api/l10n/
 nextcloud/apps/provisioning_api/l10n/ar.js
 nextcloud/apps/provisioning_api/l10n/ar.json
+nextcloud/apps/provisioning_api/l10n/ast.js
+nextcloud/apps/provisioning_api/l10n/ast.json
 nextcloud/apps/provisioning_api/l10n/bg.js
 nextcloud/apps/provisioning_api/l10n/bg.json
 nextcloud/apps/provisioning_api/l10n/ca.js
@@ -17574,6 +17590,8 @@ nextcloud/apps/serverinfo/l10n/ca.js
 nextcloud/apps/serverinfo/l10n/ca.json
 nextcloud/apps/serverinfo/l10n/cs.js
 nextcloud/apps/serverinfo/l10n/cs.json
+nextcloud/apps/serverinfo/l10n/cy_GB.js
+nextcloud/apps/serverinfo/l10n/cy_GB.json
 nextcloud/apps/serverinfo/l10n/da.js
 nextcloud/apps/serverinfo/l10n/da.json
 nextcloud/apps/serverinfo/l10n/de.js
@@ -18004,6 +18022,7 @@ nextcloud/apps/settings/lib/Middleware/SubadminMiddleware.php
 nextcloud/apps/settings/lib/Search/
 nextcloud/apps/settings/lib/Search/AppSearch.php
 nextcloud/apps/settings/lib/Search/SectionSearch.php
+nextcloud/apps/settings/lib/Search/UserSearch.php
 nextcloud/apps/settings/lib/Sections/
 nextcloud/apps/settings/lib/Sections/Admin/
 nextcloud/apps/settings/lib/Sections/Admin/Additional.php
@@ -18704,6 +18723,8 @@ nextcloud/apps/suspicious_login/l10n/tr.js
 nextcloud/apps/suspicious_login/l10n/tr.json
 nextcloud/apps/suspicious_login/l10n/uk.js
 nextcloud/apps/suspicious_login/l10n/uk.json
+nextcloud/apps/suspicious_login/l10n/vi.js
+nextcloud/apps/suspicious_login/l10n/vi.json
 nextcloud/apps/suspicious_login/l10n/zh_CN.js
 nextcloud/apps/suspicious_login/l10n/zh_CN.json
 nextcloud/apps/suspicious_login/l10n/zh_HK.js
@@ -22320,6 +22341,8 @@ nextcloud/apps/twofactor_totp/l10n/af.js
 nextcloud/apps/twofactor_totp/l10n/af.json
 nextcloud/apps/twofactor_totp/l10n/ar.js
 nextcloud/apps/twofactor_totp/l10n/ar.json
+nextcloud/apps/twofactor_totp/l10n/ast.js
+nextcloud/apps/twofactor_totp/l10n/ast.json
 nextcloud/apps/twofactor_totp/l10n/az.js
 nextcloud/apps/twofactor_totp/l10n/az.json
 nextcloud/apps/twofactor_totp/l10n/bg.js
@@ -24027,6 +24050,7 @@ nextcloud/core/Command/User/ListCommand.php
 nextcloud/core/Command/User/Report.php
 nextcloud/core/Command/User/ResetPassword.php
 nextcloud/core/Command/User/Setting.php
+nextcloud/core/Command/User/SyncAccountDataCommand.php
 nextcloud/core/Controller/
 nextcloud/core/Controller/AppPasswordController.php
 nextcloud/core/Controller/AutoCompleteController.php
@@ -25288,24 +25312,14 @@ nextcloud/core/l10n/es_EC.js
 nextcloud/core/l10n/es_EC.json
 nextcloud/core/l10n/es_GT.js
 nextcloud/core/l10n/es_GT.json
-nextcloud/core/l10n/es_HN.js
-nextcloud/core/l10n/es_HN.json
 nextcloud/core/l10n/es_MX.js
 nextcloud/core/l10n/es_MX.json
-nextcloud/core/l10n/es_NI.js
-nextcloud/core/l10n/es_NI.json
-nextcloud/core/l10n/es_PA.js
-nextcloud/core/l10n/es_PA.json
 nextcloud/core/l10n/es_PE.js
 nextcloud/core/l10n/es_PE.json
-nextcloud/core/l10n/es_PR.js
-nextcloud/core/l10n/es_PR.json
 nextcloud/core/l10n/es_PY.js
 nextcloud/core/l10n/es_PY.json
 nextcloud/core/l10n/es_SV.js
 nextcloud/core/l10n/es_SV.json
-nextcloud/core/l10n/es_UY.js
-nextcloud/core/l10n/es_UY.json
 nextcloud/core/l10n/et_EE.js
 nextcloud/core/l10n/et_EE.json
 nextcloud/core/l10n/eu.js
@@ -26371,6 +26385,7 @@ nextcloud/lib/private/Files/Storage/Wrapper/Encoding.php
 nextcloud/lib/private/Files/Storage/Wrapper/EncodingDirectoryWrapper.php
 nextcloud/lib/private/Files/Storage/Wrapper/Encryption.php
 nextcloud/lib/private/Files/Storage/Wrapper/Jail.php
+nextcloud/lib/private/Files/Storage/Wrapper/KnownMtime.php
 nextcloud/lib/private/Files/Storage/Wrapper/PermissionsMask.php
 nextcloud/lib/private/Files/Storage/Wrapper/Quota.php
 nextcloud/lib/private/Files/Storage/Wrapper/Wrapper.php
