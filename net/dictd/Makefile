@@ -6,7 +6,7 @@ DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
-REVISION-main=	2
+REVISION-main=	3
 REVISION-server=2
 
 CATEGORIES=	net education
@@ -39,7 +39,7 @@ TEST_TARGET=	test
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLEDIR}/
-	${INSTALL_DATA} ${FILESDIR}/dictd.conf ${EXAMPLEDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${FILESDIR}/dict{,d}.conf \
+	    ${EXAMPLEDIR}/
 
 .include <bsd.port.mk>
