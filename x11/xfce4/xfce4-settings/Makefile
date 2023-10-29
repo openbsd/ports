@@ -39,6 +39,7 @@ FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \
 		defaultsdir=${PREFIX}/share/examples/xfce4-settings \
 		settingsdir=${PREFIX}/share/examples/xfce4-settings
 
-CONFIGURE_ARGS=	--disable-colord
+CONFIGURE_ARGS=	--disable-colord \
+		--disable-xorg-libinput
 
 .include <bsd.port.mk>
