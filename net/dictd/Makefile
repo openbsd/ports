@@ -30,12 +30,12 @@ CONFIGURE_ENV=	LDFLAGS=${LDFLAGS:Q}
 
 MULTI_PACKAGES=	-main -server
 
-NO_TEST=	Yes
-
 EXAMPLEDIR=	${PREFIX}/share/examples/dictd
 
 CFLAGS +=	-I/usr/local/include
 LDFLAGS +=	-L/usr/local/lib
+
+TEST_TARGET=	test
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
