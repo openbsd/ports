@@ -20,14 +20,13 @@ include/dictdplugin.h
 share/examples/dictd/
 share/examples/dictd/dictd.conf
 @sample ${SYSCONFDIR}/dictd.conf
-share/examples/dictd/dict1.conf
 share/examples/dictd/dictd1.conf
 share/examples/dictd/dictd2.conf
 share/examples/dictd/dictd3.conf
 share/examples/dictd/dictd4.conf
 share/examples/dictd/dictd_complex.conf
 share/examples/dictd/dictd_mime.conf
-share/examples/dictd/dictd_plugin_dbi.conf
-share/examples/dictd/dictd_popen.conf.in
+@comment share/examples/dictd/dictd_plugin_dbi.conf
+@comment share/examples/dictd/dictd_popen.conf.in
 share/examples/dictd/dictd_site.txt
 share/examples/dictd/dictd_virtual.conf
