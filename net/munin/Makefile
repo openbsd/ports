@@ -5,11 +5,10 @@ COMMENT-server =flexible network host monitoring, server
 
 GH_ACCOUNT = 	munin-monitoring
 GH_PROJECT = 	munin
-GH_TAGNAME =	2.0.73
+GH_TAGNAME =	2.0.75
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://munin-monitoring.org/
 
@@ -31,6 +30,11 @@ MODRUBY_BUILDDEP =	No
 
 # called from the build script; doesn't use standard CONFIGURE_STYLE=modbuild
 BUILD_DEPENDS +=	devel/p5-Module-Build
+
+BUILD_DEPENDS +=	devel/p5-Log-Log4perl\
+			net/p5-Net-SNMP \
+			security/p5-Net-SSLeay \
+			www/p5-HTML-Template
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-List-MoreUtils \
