@@ -2,7 +2,7 @@ COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-44-src
 PKGNAME =		${DISTNAME:L:S/-src//}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		games x11
 
