@@ -15,6 +15,7 @@ MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 BUILD_DEPENDS += devel/gobject-introspection lang/vala
+CONFIGURE_ARGS +=	--disable-gudev
 
 LIB_DEPENDS=	x11/xfce4/xfconf>=4.12.0 \
 		x11/xfce4/libxfce4util>=4.13.0 \
