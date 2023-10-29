@@ -1,5 +1,3 @@
-@bin bin/accessibleapps
-@bin bin/dumper
 include/qaccessibilityclient/
 include/qaccessibilityclient/accessibleobject.h
 include/qaccessibilityclient/libqaccessibilityclient-version.h

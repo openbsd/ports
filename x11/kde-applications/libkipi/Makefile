@@ -23,6 +23,4 @@ BUILD_DEPENDS =		graphics/png \
 			graphics/tiff \
 			x11/kde-applications/libkexiv2
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
-
 .include <bsd.port.mk>

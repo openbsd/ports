@@ -28,6 +28,4 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
 		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION}
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
-
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 COMMENT =	Qt-based library for writing accessibility apps
 
 DISTNAME =	libqaccessibilityclient-0.4.1
+REVISION =	0
 
 SHARED_LIBS +=	qaccessibilityclient-qt5  1.0 # 0.3
 

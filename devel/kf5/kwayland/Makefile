@@ -14,6 +14,4 @@ BUILD_DEPENDS =		wayland/wayland-protocols \
 LIB_DEPENDS =		wayland/wayland \
 			x11/qt5/qtwayland
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
-
 .include <bsd.port.mk>

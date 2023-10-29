@@ -10,6 +10,4 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 
 LIB_DEPENDS =	devel/gettext,-tools
 
-CONFIGURE_ARGS =	-DBUILD_TESTING=OFF
-
 .include <bsd.port.mk>

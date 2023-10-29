@@ -1,5 +1,7 @@
 MODKF5_VERSION =	5.111.0
 
+MODKF5_BUILD_TESTING ?= No
+
 .if empty(GH_ACCOUNT)
 EXTRACT_SUFX ?=		.tar.xz
 .endif
@@ -31,9 +33,7 @@ CONFIGURE_ARGS += \
 # with multiple Python dependencies.
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PythonModuleGeneration=ON
 
-# Disable for now
-# MODKF5_BUILD_TESTING ?= No
-.if defined(MODKF5_BUILD_TESTING) && ${MODKF5_BUILD_TESTING:L} == "no"
+.if ${MODKF5_BUILD_TESTING:L} == "no"
 CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 .endif
 

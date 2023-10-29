@@ -122,8 +122,6 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_KSysGuard=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5SysGuard=ON \
 			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
-
 pre-configure:
 	ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 

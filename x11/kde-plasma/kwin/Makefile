@@ -69,17 +69,6 @@ CXXFLAGS +=		-I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
 
-# Mostly useless tests
-# QVERIFY(waylandServer()->init(s_socketName));
-# 3 - kwin-testClientMachine (Subprocess aborted)
-# 11 - kwin-testXkb (Failed)
-# 27 - kwin-testPointerInput (Failed)
-# 39 - kwin-testXdgShellWindow (Failed)
-# 40 - kwin-testXdgShellWindow-waylandonly (Failed)
-# 114 - kwin-testDbusInterface (Failed)
-# 124 - kwin-testScriptedEffects (Failed)
-CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
-
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 TEST_ENV +=		XDG_RUNTIME_DIR=${WRKBUILD}

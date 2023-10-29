@@ -35,6 +35,4 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 TEST_IS_INTERACTIVE =	X11
 
-CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
-
 .include <bsd.port.mk>
