@@ -1,10 +1,8 @@
 COMMENT =	streaming engine for voice/video telephony applications
 
-REVISION =	0
-
 MODULE =	mediastreamer2
 
-SHARED_LIBS += mediastreamer 2.1 # 11
+SHARED_LIBS += mediastreamer 2.2 # 11
 
 MODULES+=	x11/qt5
 

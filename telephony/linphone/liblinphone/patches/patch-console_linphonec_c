@@ -13,7 +13,7 @@ Index: console/linphonec.c
  {
  	LinphoneCore *opm=linphonec;
  
-@@ -1271,7 +1271,7 @@ linphonec_parse_cmdline(int argc, char **argv)
+@@ -1272,7 +1272,7 @@ linphonec_parse_cmdline(int argc, char **argv)
   *	-1 on error
   */
  static int
