@@ -2,7 +2,7 @@
      #SUBDIR += dmenu-wayland
      #SUBDIR += foot
      #SUBDIR += havoc
-     SUBDIR += libinput-openbsd
+     #SUBDIR += libinput-openbsd
      SUBDIR += plasma-wayland-protocols
      #SUBDIR += sway
      #SUBDIR += swaybg
@@ -12,6 +12,6 @@
      SUBDIR += wayland-utils
      #SUBDIR += wev
      #SUBDIR += wlroots
-     SUBDIR += xwayland
+     #SUBDIR += xwayland
 
 .include <bsd.port.subdir.mk>
