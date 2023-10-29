@@ -1,12 +1,36 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -270,7 +270,7 @@ ADD_CUSTOM_TARGET(experiments)
+@@ -322,32 +322,6 @@ INCLUDE(CPackConfig)
  
- ADD_SUBDIRECTORY(src)
- ADD_SUBDIRECTORY(test)
--ADD_SUBDIRECTORY(docsrc)
-+#ADD_SUBDIRECTORY(docsrc)
- 
- IF(WITH_VIGRANUMPY)
-     ADD_SUBDIRECTORY(vigranumpy)
+ ##################################################
+ #
+-#     add target vigra-$version-src.tar.gz
+-#
+-##################################################
+-
+-find_program(GIT_EXECUTABLE
+-              NAMES git git.exe git.cmd
+-              HINTS $ENV{ProgramFiles}/Git/bin
+-              DOC "git command line client")
+-
+-CONFIGURE_FILE(${PROJECT_SOURCE_DIR}/config/package-src.cmake.in
+-                ${PROJECT_BINARY_DIR}/package-src.cmake
+-                @ONLY IMMEDIATE)
+-
+-add_custom_target(PACKAGE_SRC_TAR
+-                   COMMAND ${CMAKE_COMMAND} -P package-src.cmake
+-                   WORKING_DIRECTORY "${PROJECT_BINARY_DIR}"
+-                   COMMENT "Creating ${PROJECT_BINARY_DIR}/vigra-${vigra_version}-src.tar.gz")
+-
+-ADD_DEPENDENCIES(PACKAGE_SRC_TAR check)
+-ADD_DEPENDENCIES(PACKAGE_SRC_TAR doc_cpp)
+-IF(WITH_VIGRANUMPY AND PYTHON_SPHINX)
+-    ADD_DEPENDENCIES(PACKAGE_SRC_TAR doc_python)
+-ENDIF()
+-
+-##################################################
+-#
+ #  enable other non-CMake projects to find Vigra
+ #
+ ##################################################

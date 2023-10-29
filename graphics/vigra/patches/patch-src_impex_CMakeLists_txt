@@ -1,5 +1,6 @@
---- src/impex/CMakeLists.txt.orig	Thu Mar 17 13:22:21 2016
-+++ src/impex/CMakeLists.txt	Fri Nov 11 13:30:56 2016
+Index: src/impex/CMakeLists.txt
+--- src/impex/CMakeLists.txt.orig
++++ src/impex/CMakeLists.txt
 @@ -28,6 +28,15 @@ IF(HDF5_FOUND)
    INCLUDE_DIRECTORIES(${SUPPRESS_WARNINGS} ${HDF5_INCLUDE_DIR})
  ENDIF(HDF5_FOUND)
@@ -16,7 +17,7 @@
  IF (MSVC OR MINGW)
      IF(NOT VIGRA_STATIC_LIB)
          ADD_DEFINITIONS(-DVIGRA_DLL)
-@@ -96,6 +105,13 @@ IF(ZLIB_FOUND)
+@@ -100,6 +109,13 @@ IF(ZLIB_FOUND)
    TARGET_LINK_LIBRARIES(vigraimpex ${ZLIB_LIBRARIES})
  ENDIF(ZLIB_FOUND)
  
