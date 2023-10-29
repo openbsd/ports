@@ -1,0 +1,72 @@
+Index: src/tools/process_stub/main.cpp
+--- src/tools/process_stub/main.cpp.orig
++++ src/tools/process_stub/main.cpp
+@@ -22,11 +22,13 @@
+ #include <unistd.h>
+ #endif
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ #include <sys/ptrace.h>
+ #include <sys/wait.h>
++#if defined(Q_OS_LINUX)
+ #include <sys/prctl.h>
+ #endif
++#endif
+ 
+ #include <iostream>
+ 
+@@ -50,7 +52,7 @@ std::optional<QStringList> environmentVariables;
+ QProcess inferiorProcess;
+ int inferiorId{0};
+ 
+-#ifdef Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_OPENBSD)
+ // A memory mapped helper to retrieve the pid of the inferior process in debugMode
+ static int *shared_child_pid = nullptr;
+ #endif
+@@ -211,7 +213,7 @@ void onInferiorErrorOccurered(QProcess::ProcessError e
+     qCWarning(log) << "Inferior error: " << error << inferiorProcess.errorString();
+ }
+ 
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ QString statusToString(int status)
+ {
+     if (WIFEXITED(status))
+@@ -250,7 +252,7 @@ void onInferiorStarted()
+ #ifdef Q_OS_WIN
+     sendThreadId(win_process_information->dwThreadId);
+     sendPid(inferiorId);
+-#elif defined(Q_OS_DARWIN)
++#elif defined(Q_OS_DARWIN) || defined(Q_OS_OPENBSD)
+     // In debug mode we use the poll timer to send the pid.
+     if (!debugMode)
+         sendPid(inferiorId);
+@@ -279,7 +281,7 @@ void setupUnixInferior()
+ #ifndef Q_OS_WIN
+     if (debugMode) {
+         qCInfo(log) << "Debug mode enabled";
+-#ifdef Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_OPENBSD)
+         // We are using raise(SIGSTOP) to stop the child process, macOS does not support ptrace(...)
+         inferiorProcess.setChildProcessModifier([] {
+             // Let the parent know our pid ...
+@@ -312,7 +314,7 @@ void setupWindowsInferior()
+ 
+ void setupPidPollTimer()
+ {
+-#ifdef Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_OPENBSD)
+     if (!debugMode)
+         return;
+ 
+@@ -520,7 +522,7 @@ std::optional<int> trySetWorkingDir()
+ 
+ void setupSharedPid()
+ {
+-#ifdef Q_OS_DARWIN
++#if defined(Q_OS_DARWIN) || defined(Q_OS_OPENBSD)
+     shared_child_pid = (int *) mmap(NULL,
+                                     sizeof *shared_child_pid,
+                                     PROT_READ | PROT_WRITE,
