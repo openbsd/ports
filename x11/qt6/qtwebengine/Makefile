@@ -11,6 +11,7 @@ DPB_PROPERTIES +=	lonesome
 QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
+REVISION =	0
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
