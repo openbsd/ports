@@ -11,7 +11,7 @@ Index: src/tools/wasm-strip.cc
  #include "wabt/binary-reader-nop.h"
  #include "wabt/binary-reader.h"
  #include "wabt/binary.h"
-@@ -112,6 +115,11 @@ int ProgramMain(int argc, char** argv) {
+@@ -126,6 +129,11 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);
  
