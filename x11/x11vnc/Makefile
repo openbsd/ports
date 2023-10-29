@@ -27,6 +27,7 @@ CONFIGURE_ARGS +=	--with-x \
 			--with-avahi
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
