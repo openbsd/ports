@@ -36,6 +36,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clean
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/clojure
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cmake
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/cmhg
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/codeowners
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/coffeescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/common_lisp
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/conf
@@ -197,6 +198,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ssh
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/stan
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/stata
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/svelte
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/swift
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/systemd
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/syzlang
@@ -281,6 +283,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clean.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/clojure.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cmake.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/cmhg.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/codeowners.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/coffeescript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/common_lisp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/conf.rb
@@ -466,6 +469,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ssh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/stan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/stata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/svelte.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/systemd.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/syzlang.rb
