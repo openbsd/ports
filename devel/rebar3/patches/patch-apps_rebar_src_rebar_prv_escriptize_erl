@@ -8,7 +8,7 @@ Index: apps/rebar/src/rebar_prv_escriptize.erl
      EscriptSections =
          [ {shebang,
 -           def("#!", State, escript_shebang, "#!/usr/bin/env escript\n")}
-+           def("#!", State, escript_shebang, "#!/usr/bin/env escript${ERL_VERSION}\n")}
++           def("#!", State, escript_shebang, "#!/usr/bin/env escript${MODERL_VERSION}\n")}
          , {comment, def("%%", State, escript_comment, "%%\n")}
          , {emu_args, def("%%!", State, escript_emu_args, DefaultEmuArgs)}
          , {archive, Files, []} ],

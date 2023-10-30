@@ -5,7 +5,7 @@ Index: bootstrap
 +++ bootstrap
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env escript
-+#!/usr/bin/env escript${ERL_VERSION}
++#!/usr/bin/env escript${MODERL_VERSION}
  %% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
  %% ex: ft=erlang ts=4 sw=4 et
  

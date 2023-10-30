@@ -8,7 +8,7 @@ Index: vendor/relx/priv/templates/bin
          ERTS_DIR="$__erts_dir";
      else
 -        __erl="$(command -v erl)"
-+        __erl="$(command -v erl${ERL_VERSION})"
++        __erl="$(command -v erl${MODERL_VERSION})"
          code="io:format(\"~s\", [code:root_dir()]), halt()."
          __erl_root="$("$__erl" -boot no_dot_erlang -noshell -eval "$code")"
          ERTS_DIR="$__erl_root/erts-$ERTS_VSN"

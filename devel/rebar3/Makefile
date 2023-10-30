@@ -10,34 +10,14 @@ MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 # APLv2
 PERMIT_PACKAGE =	Yes
 
-FLAVORS =		erlang25 erlang26
-FLAVOR ?=		erlang25
-
-SITES.mod = 	https://repo.hex.pm/tarballs/
-
-.if ${FLAVOR:Merlang25} || ${FLAVOR:Merlang26}
-_EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
-RUN_DEPENDS =           lang/erlang/${_EV}
-ERL_VERSION =           ${_EV}
-.else
-ERRORS +=               "Invalid FLAVOR set: ${FLAVOR}"
-.endif
-
-EXTRACT_ONLY =		rebar3-${GH_TAGNAME}.tar.gz
+MODULES =		lang/erlang
 
 # for tests
-HEX_MODULES += \
-	meck			0.8.13
+MODERL_MODULES += 	meck	0.8.13
+MODERL_HANDLE_FLAVORS=	Yes
+CONFIGURE_STYLE =	None
 
 DISTFILES =		rebar3-{}${GH_TAGNAME}.tar.gz
-.for _m _v in ${HEX_MODULES}
-DISTFILES.mod += ${_m}-${_v}.tar
-.endfor
-
-BUILD_DEPENDS += 	${RUN_DEPENDS}
-
-SUBST_VARS = 		ERL_VERSION
-
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/bootstrap \
@@ -49,18 +29,10 @@ do-build:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${WRKSRC}/bootstrap
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/rebar3 ${PREFIX}/bin/rebar3-${ERL_VERSION}
+	${INSTALL_SCRIPT} ${WRKSRC}/rebar3 ${PREFIX}/bin/rebar3-${MODERL_VERSION}
 
 PORTHOME=	${WRKDIR}
 do-test:
-.for _m _v in ${HEX_MODULES}
-	mkdir -p ${WRKDIR}/${_m}
-	tar xf ${FULLDISTDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${_m}
-
-	mkdir -p ${WRKSRC}/_checkouts/${_m}
-	tar xzf ${WRKDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}
-	cp -r ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/
-.endfor
 	cd ${WRKSRC} && \
 	    ${SETENV} ${ALL_TEST_ENV} ./rebar3 escriptize && \
 	    ${SETENV} ${ALL_TEST_ENV} ./rebar3 ct
