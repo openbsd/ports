@@ -2334,7 +2334,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fcntl.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fcntl_apple.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fcopyfile.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fd.rs
-share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/file_type.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/getpath.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/id.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/ioctl.rs
