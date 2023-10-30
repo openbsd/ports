@@ -1,0 +1,21 @@
+Index: src/iperf_util.c
+--- src/iperf_util.c.orig
++++ src/iperf_util.c
+@@ -57,6 +57,9 @@
+  */
+ int readentropy(void *out, size_t outsize)
+ {
++#if defined(__OpenBSD__)
++    arc4random_buf(out, outsize);
++#else
+     static FILE *frandom;
+     static const char rndfile[] = "/dev/urandom";
+ 
+@@ -75,6 +78,7 @@ int readentropy(void *out, size_t outsize)
+                       rndfile,
+                       feof(frandom) ? "EOF" : strerror(errno));
+     }
++#endif
+     return 0;
+ }
+ 

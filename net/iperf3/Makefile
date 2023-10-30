@@ -1,6 +1,6 @@
 COMMENT=	tool to measure maximum achievable bandwidth on IP networks
 
-V=		3.14
+V=		3.15
 PKGNAME=	iperf3-${V}
 DISTNAME=	iperf-${V}
 
@@ -10,11 +10,10 @@ CATEGORIES=	net
 
 HOMEPAGE=	https://software.es.net/iperf/
 
-MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
-
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
 
+# uses pledge unveil
 WANTLIB += c m
 
 SITES=		https://downloads.es.net/pub/iperf/
