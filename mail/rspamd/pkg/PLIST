@@ -426,6 +426,7 @@ share/rspamd/rules/headers_checks.lua
 share/rspamd/rules/html.lua
 share/rspamd/rules/mid.lua
 share/rspamd/rules/misc.lua
+share/rspamd/rules/parts.lua
 share/rspamd/rules/regexp/
 share/rspamd/rules/regexp/compromised_hosts.lua
 share/rspamd/rules/regexp/headers.lua

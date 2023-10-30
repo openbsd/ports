@@ -2,8 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.7.1
-REVISION=	0
+GH_TAGNAME=	3.7.3
 
 CATEGORIES=	mail
 
@@ -15,10 +14,10 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += blas c crypto glib-2.0 fmt icudata icui18n icuio icuuc
-WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util z zstd
+WANTLIB += c crypto glib-2.0 icudata icui18n icuio icuuc
+WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util xxhash z zstd
 
-# XXX switch to vectorscan for wider arch support?
+# switch to vectorscan for wider arch support?
 # https://github.com/VectorCamp/vectorscan
 FLAVORS=	no_luajit hyperscan
 .if ${MACHINE_ARCH} == "amd64"
@@ -44,18 +43,13 @@ MODPY_RUNDEP=	No
 
 LIB_DEPENDS=	archivers/zstd \
 		databases/sqlite3 \
-		devel/fmt \
 		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/pcre2 \
 		security/libsodium \
+		sysutils/xxhash \
 		textproc/icu4c
 RUN_DEPENDS=	databases/redis
-
-# uses cblas headers; pull this in via LDEP and register an "extra" dependency
-# on cblas lib to make sure rspamd gets updated for major changes in cblas
-LIB_DEPENDS+=	math/cblas
-WANTLIB+=	cblas
 
 BUILD_DEPENDS+=	devel/ragel
 # /var/rspamd needs to exist for tests to run
@@ -73,7 +67,9 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
 
-CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
+# not using SYSTEM_FMT; bundled version is newer, but updating
+# devel/fmt breaks mariadb build
+CONFIGURE_ARGS+= -DSYSTEM_XXHASH=ON \
 		-DSYSTEM_ZSTD=ON \
 		-DENABLE_JEMALLOC=OFF
 
