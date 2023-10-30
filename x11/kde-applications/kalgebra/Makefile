@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -23,6 +24,7 @@ BUILD_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/solid \
+		devel/kf5/plasma-framework \
 		x11/qt5/qtgraphicaleffects
 
 RUN_DEPENDS =	devel/kf5/kbookmarks \
