@@ -30,6 +30,7 @@ SEPARATE_BUILD =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--disable-doxygen-doc \
+			--disable-libdvbv5 \
 			--disable-static
 CONFIGURE_ENV =		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
