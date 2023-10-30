@@ -3,6 +3,7 @@ DPB_PROPERTIES =	parallel
 
 V =			7.7.2
 DISTNAME =		opencascade-${V}
+REVISION =		0
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool \
         TKCAF TKCDF TKDCAF TKDraw TKExpress TKFeat TKFillet TKG2d \

@@ -1,3 +1,4 @@
+@pkgpath cad/oce
 @conflict oce-*
 bin/DRAWEXE
 @bin bin/DRAWEXE-7.7.2
