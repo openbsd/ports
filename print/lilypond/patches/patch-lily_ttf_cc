@@ -1,7 +1,7 @@
 Index: lily/ttf.cc
 --- lily/ttf.cc.orig
 +++ lily/ttf.cc
-@@ -427,7 +427,7 @@ print_trailer (std::ostream &stream, FT_Face face)
+@@ -419,7 +419,7 @@ print_trailer (std::ostream &stream, FT_Face face)
        if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
          {
            FT_ULong ucode = ic_map[i];
@@ -10,7 +10,7 @@ Index: lily/ttf.cc
          }
  
        if (i == 0)
-@@ -436,7 +436,7 @@ print_trailer (std::ostream &stream, FT_Face face)
+@@ -428,7 +428,7 @@ print_trailer (std::ostream &stream, FT_Face face)
          glyph_name[0] = '\0';
  
        if (!glyph_name[0])

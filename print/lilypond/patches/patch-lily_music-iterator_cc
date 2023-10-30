@@ -1,7 +1,7 @@
 Index: lily/music-iterator.cc
 --- lily/music-iterator.cc.orig
 +++ lily/music-iterator.cc
-@@ -199,6 +199,7 @@ Music_iterator::print_smob (SCM port, scm_print_state 
+@@ -191,6 +191,7 @@ Music_iterator::print_smob (SCM port, scm_print_state 
    char s[1000];
  
    sprintf (s, "#<%s>", class_name ());

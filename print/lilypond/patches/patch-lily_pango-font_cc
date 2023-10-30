@@ -1,21 +1,20 @@
 Index: lily/pango-font.cc
 --- lily/pango-font.cc.orig
 +++ lily/pango-font.cc
-@@ -169,19 +169,21 @@ Pango_font::derived_mark () const
+@@ -165,18 +165,18 @@ Pango_font::derived_mark () const
+ }
  
  void
- get_glyph_index_name (char *s,
-+		      size_t size,
-                       FT_ULong code)
+-get_glyph_index_name (char *s, FT_ULong code)
++get_glyph_index_name (char *s, size_t size, FT_ULong code)
  {
 -  sprintf (s, "glyphIndex%lX", code);
 +  snprintf (s, size, "glyphIndex%lX", code);
  }
  
  void
- get_unicode_name (char *s,
-+		  size_t size,
-                   FT_ULong code)
+-get_unicode_name (char *s, FT_ULong code)
++get_unicode_name (char *s, size_t size, FT_ULong code)
  {
    if (code > 0xFFFF)
 -    sprintf (s, "u%lX", code);
@@ -26,21 +25,21 @@ Index: lily/pango-font.cc
  }
  
  Box
-@@ -317,7 +319,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
-           && cmap->find (pg) != cmap->end ())
+@@ -270,7 +270,7 @@ Pango_font::get_glyph_desc (PangoGlyphInfo const &pgi,
+       if (cmap && cmap->find (pg) != cmap->end ())
          {
            FT_ULong char_code = cmap->find (pg)->second;
 -          get_unicode_name (glyph_name, char_code);
 +          get_unicode_name (glyph_name, sizeof(glyph_name), char_code);
          }
+     }
  
-       if (glyph_name[0] == '\0' && has_glyph_names)
-@@ -333,7 +335,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
+@@ -288,7 +288,7 @@ Pango_font::get_glyph_desc (PangoGlyphInfo const &pgi,
  
-       if (glyph_name[0] == '\0' && is_ttf)
-         // Access by glyph index directly.
--        get_glyph_index_name (glyph_name, pg);
-+        get_glyph_index_name (glyph_name, sizeof(glyph_name), pg);
+   if (glyph_name[0] == '\0' && is_ttf)
+     // Access by glyph index directly.
+-    get_glyph_index_name (glyph_name, pg);
++    get_glyph_index_name (glyph_name, sizeof(glyph_name), pg);
  
-       if (glyph_name[0] == '\0')
-         {
+   if (glyph_name[0] == '\0')
+     {
