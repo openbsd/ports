@@ -40,6 +40,7 @@ share/doc/i3/hacking-howto.html
 share/doc/i3/i3-sync-working.png
 share/doc/i3/i3-sync.png
 share/doc/i3/i3bar-protocol.html
+share/doc/i3/i3bar-workspace-protocol.html
 share/doc/i3/ipc.html
 share/doc/i3/keyboard-layer1.png
 share/doc/i3/keyboard-layer2.png

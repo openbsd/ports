@@ -17,12 +17,12 @@ Index: man/i3.man
  
  # change focus
  bindsym Mod1+j focus left
-@@ -319,7 +319,7 @@ ulimit -c unlimited
- 
- # Start i3 and log to ~/.i3/logfile
- echo "Starting at $(date)" >> ~/.i3/logfile
--exec /usr/bin/i3 -V -d all >> ~/.i3/logfile
-+exec ${TRUEPREFIX}/bin/i3 -V -d all >> ~/.i3/logfile
+@@ -320,7 +320,7 @@ ulimit -c unlimited
+ # Start i3 and log to ~/.local/share/i3/log
+ mkdir -p ~/.local/share/i3
+ echo "Starting at $(date)" >> ~/.local/share/i3/log
+-exec /usr/bin/i3 -V -d all >> ~/.local/share/i3/log
++exec ${TRUEPREFIX}/bin/i3 -V -d all >> ~/.local/share/i3/log
  -------------------------------------------------------------
  
  == ENVIRONMENT

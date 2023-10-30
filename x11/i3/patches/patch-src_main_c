@@ -3,7 +3,7 @@ https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -1125,7 +1125,7 @@ int main(int argc, char *argv[]) {
+@@ -1131,7 +1131,7 @@ int main(int argc, char *argv[]) {
          }
      }
  
