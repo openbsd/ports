@@ -9,7 +9,7 @@ USE_NOEXECONLY =	Yes
 #PORTROACH=	limit:^3\.1
 V=		3.1.4
 PKGNAME=	openssl-${V}
-PKGSPEC=	openssl->=3.1,<3.2
+PKGSPEC=	openssl->=3.1v0,<3.2v0
 EPOCH=		0
 
 SHLIBVER=	15.1
