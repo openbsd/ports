@@ -10,9 +10,9 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/beancount.so
 @so share/helix/runtime/grammars/bibtex.so
 @so share/helix/runtime/grammars/bicep.so
+@so share/helix/runtime/grammars/blueprint.so
 @so share/helix/runtime/grammars/c-sharp.so
 @so share/helix/runtime/grammars/c.so
-@so share/helix/runtime/grammars/cairo.so
 @so share/helix/runtime/grammars/capnp.so
 @so share/helix/runtime/grammars/clojure.so
 @so share/helix/runtime/grammars/cmake.so
@@ -38,8 +38,12 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/erlang.so
 @so share/helix/runtime/grammars/esdl.so
 @so share/helix/runtime/grammars/fish.so
+@so share/helix/runtime/grammars/forth.so
 @so share/helix/runtime/grammars/fortran.so
+@so share/helix/runtime/grammars/fsharp.so
+@so share/helix/runtime/grammars/gas.so
 @so share/helix/runtime/grammars/gdscript.so
+@so share/helix/runtime/grammars/gemini.so
 @so share/helix/runtime/grammars/git-commit.so
 @so share/helix/runtime/grammars/git-config.so
 @so share/helix/runtime/grammars/git-rebase.so
@@ -54,6 +58,7 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/gowork.so
 @so share/helix/runtime/grammars/graphql.so
 @so share/helix/runtime/grammars/hare.so
+@so share/helix/runtime/grammars/haskell-persistent.so
 @so share/helix/runtime/grammars/haskell.so
 @so share/helix/runtime/grammars/hcl.so
 @so share/helix/runtime/grammars/heex.so
@@ -64,8 +69,10 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/ini.so
 @so share/helix/runtime/grammars/java.so
 @so share/helix/runtime/grammars/javascript.so
+@so share/helix/runtime/grammars/jinja2.so
 @so share/helix/runtime/grammars/jsdoc.so
 @so share/helix/runtime/grammars/json.so
+@so share/helix/runtime/grammars/json5.so
 @so share/helix/runtime/grammars/jsonnet.so
 @so share/helix/runtime/grammars/julia.so
 @so share/helix/runtime/grammars/just.so
@@ -101,10 +108,12 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/perl.so
 @so share/helix/runtime/grammars/php.so
 @so share/helix/runtime/grammars/po.so
+@so share/helix/runtime/grammars/pod.so
 @so share/helix/runtime/grammars/ponylang.so
 @so share/helix/runtime/grammars/prisma.so
 @so share/helix/runtime/grammars/protobuf.so
 @so share/helix/runtime/grammars/prql.so
+@so share/helix/runtime/grammars/purescript.so
 @so share/helix/runtime/grammars/python.so
 @so share/helix/runtime/grammars/qmljs.so
 @so share/helix/runtime/grammars/r.so
@@ -124,17 +133,22 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/solidity.so
 @so share/helix/runtime/grammars/sql.so
 @so share/helix/runtime/grammars/sshclientconfig.so
+@so share/helix/runtime/grammars/strace.so
 @so share/helix/runtime/grammars/svelte.so
 @so share/helix/runtime/grammars/sway.so
 @so share/helix/runtime/grammars/swift.so
+@so share/helix/runtime/grammars/t32.so
 @so share/helix/runtime/grammars/tablegen.so
 @so share/helix/runtime/grammars/task.so
+@so share/helix/runtime/grammars/templ.so
+@so share/helix/runtime/grammars/todotxt.so
 @so share/helix/runtime/grammars/toml.so
 @so share/helix/runtime/grammars/tsq.so
 @so share/helix/runtime/grammars/tsx.so
 @so share/helix/runtime/grammars/twig.so
 @so share/helix/runtime/grammars/typescript.so
 @so share/helix/runtime/grammars/ungrammar.so
+@so share/helix/runtime/grammars/unison.so
 @so share/helix/runtime/grammars/uxntal.so
 @so share/helix/runtime/grammars/v.so
 @so share/helix/runtime/grammars/vala.so
@@ -146,12 +160,26 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/wat.so
 @so share/helix/runtime/grammars/wgsl.so
 @so share/helix/runtime/grammars/wit.so
+@so share/helix/runtime/grammars/wren.so
 @so share/helix/runtime/grammars/xit.so
 @so share/helix/runtime/grammars/xml.so
 @so share/helix/runtime/grammars/yaml.so
 @so share/helix/runtime/grammars/yuck.so
 @so share/helix/runtime/grammars/zig.so
 share/helix/runtime/queries/
+share/helix/runtime/queries/_javascript/
+share/helix/runtime/queries/_javascript/highlights.scm
+share/helix/runtime/queries/_javascript/locals.scm
+share/helix/runtime/queries/_javascript/tags.scm
+share/helix/runtime/queries/_jsx/
+share/helix/runtime/queries/_jsx/highlights.scm
+share/helix/runtime/queries/_jsx/indents.scm
+share/helix/runtime/queries/_typescript/
+share/helix/runtime/queries/_typescript/highlights.scm
+share/helix/runtime/queries/_typescript/indents.scm
+share/helix/runtime/queries/_typescript/locals.scm
+share/helix/runtime/queries/_typescript/tags.scm
+share/helix/runtime/queries/_typescript/textobjects.scm
 share/helix/runtime/queries/astro/
 share/helix/runtime/queries/astro/highlights.scm
 share/helix/runtime/queries/astro/injections.scm
@@ -163,6 +191,7 @@ share/helix/runtime/queries/bash/
 share/helix/runtime/queries/bash/highlights.scm
 share/helix/runtime/queries/bash/indents.scm
 share/helix/runtime/queries/bash/injections.scm
+share/helix/runtime/queries/bash/textobjects.scm
 share/helix/runtime/queries/bass/
 share/helix/runtime/queries/bass/highlights.scm
 share/helix/runtime/queries/beancount/
@@ -174,6 +203,8 @@ share/helix/runtime/queries/bibtex/locals.scm
 share/helix/runtime/queries/bibtex/tags.scm
 share/helix/runtime/queries/bicep/
 share/helix/runtime/queries/bicep/highlights.scm
+share/helix/runtime/queries/blueprint/
+share/helix/runtime/queries/blueprint/highlights.scm
 share/helix/runtime/queries/c/
 share/helix/runtime/queries/c-sharp/
 share/helix/runtime/queries/c-sharp/highlights.scm
@@ -185,7 +216,10 @@ share/helix/runtime/queries/c/injections.scm
 share/helix/runtime/queries/c/textobjects.scm
 share/helix/runtime/queries/cairo/
 share/helix/runtime/queries/cairo/highlights.scm
+share/helix/runtime/queries/cairo/indents.scm
 share/helix/runtime/queries/cairo/injections.scm
+share/helix/runtime/queries/cairo/locals.scm
+share/helix/runtime/queries/cairo/textobjects.scm
 share/helix/runtime/queries/capnp/
 share/helix/runtime/queries/capnp/folds.scm
 share/helix/runtime/queries/capnp/highlights.scm
@@ -251,6 +285,7 @@ share/helix/runtime/queries/dtd/
 share/helix/runtime/queries/dtd/highlights.scm
 share/helix/runtime/queries/dtd/injections.scm
 share/helix/runtime/queries/ecma/
+share/helix/runtime/queries/ecma/README.md
 share/helix/runtime/queries/ecma/highlights.scm
 share/helix/runtime/queries/ecma/indents.scm
 share/helix/runtime/queries/ecma/injections.scm
@@ -296,16 +331,28 @@ share/helix/runtime/queries/fish/highlights.scm
 share/helix/runtime/queries/fish/indents.scm
 share/helix/runtime/queries/fish/injections.scm
 share/helix/runtime/queries/fish/textobjects.scm
+share/helix/runtime/queries/forth/
+share/helix/runtime/queries/forth/highlights.scm
 share/helix/runtime/queries/fortran/
 share/helix/runtime/queries/fortran/folds.scm
 share/helix/runtime/queries/fortran/highlights.scm
 share/helix/runtime/queries/fortran/indents.scm
+share/helix/runtime/queries/fortran/injections.scm
+share/helix/runtime/queries/fsharp/
+share/helix/runtime/queries/fsharp/highlights.scm
+share/helix/runtime/queries/fsharp/locals.scm
+share/helix/runtime/queries/gas/
+share/helix/runtime/queries/gas/highlights.scm
+share/helix/runtime/queries/gas/injections.scm
+share/helix/runtime/queries/gas/textobjects.scm
 share/helix/runtime/queries/gdscript/
 share/helix/runtime/queries/gdscript/highlights.scm
 share/helix/runtime/queries/gdscript/indents.scm
 share/helix/runtime/queries/gdscript/injections.scm
 share/helix/runtime/queries/gdscript/tags.scm
 share/helix/runtime/queries/gdscript/textobjects.scm
+share/helix/runtime/queries/gemini/
+share/helix/runtime/queries/gemini/highlights.scm
 share/helix/runtime/queries/git-attributes/
 share/helix/runtime/queries/git-attributes/highlights.scm
 share/helix/runtime/queries/git-commit/
@@ -355,6 +402,10 @@ share/helix/runtime/queries/hare/
 share/helix/runtime/queries/hare/highlights.scm
 share/helix/runtime/queries/hare/locals.scm
 share/helix/runtime/queries/haskell/
+share/helix/runtime/queries/haskell-persistent/
+share/helix/runtime/queries/haskell-persistent/folds.scm
+share/helix/runtime/queries/haskell-persistent/highlights.scm
+share/helix/runtime/queries/haskell-persistent/locals.scm
 share/helix/runtime/queries/haskell/highlights.scm
 share/helix/runtime/queries/haskell/injections.scm
 share/helix/runtime/queries/haskell/locals.scm
@@ -384,6 +435,7 @@ share/helix/runtime/queries/ini/
 share/helix/runtime/queries/ini/highlights.scm
 share/helix/runtime/queries/java/
 share/helix/runtime/queries/java/highlights.scm
+share/helix/runtime/queries/java/indents.scm
 share/helix/runtime/queries/java/injections.scm
 share/helix/runtime/queries/java/textobjects.scm
 share/helix/runtime/queries/javascript/
@@ -393,12 +445,17 @@ share/helix/runtime/queries/javascript/injections.scm
 share/helix/runtime/queries/javascript/locals.scm
 share/helix/runtime/queries/javascript/tags.scm
 share/helix/runtime/queries/javascript/textobjects.scm
+share/helix/runtime/queries/jinja/
+share/helix/runtime/queries/jinja/highlights.scm
+share/helix/runtime/queries/jinja/injections.scm
 share/helix/runtime/queries/jsdoc/
 share/helix/runtime/queries/jsdoc/highlights.scm
 share/helix/runtime/queries/jsdoc/injections.scm
 share/helix/runtime/queries/json/
 share/helix/runtime/queries/json/highlights.scm
 share/helix/runtime/queries/json/indents.scm
+share/helix/runtime/queries/json5/
+share/helix/runtime/queries/json5/highlights.scm
 share/helix/runtime/queries/jsonnet/
 share/helix/runtime/queries/jsonnet/highlights.scm
 share/helix/runtime/queries/jsx/
@@ -406,6 +463,7 @@ share/helix/runtime/queries/jsx/highlights.scm
 share/helix/runtime/queries/jsx/indents.scm
 share/helix/runtime/queries/jsx/injections.scm
 share/helix/runtime/queries/jsx/locals.scm
+share/helix/runtime/queries/jsx/tags.scm
 share/helix/runtime/queries/jsx/textobjects.scm
 share/helix/runtime/queries/julia/
 share/helix/runtime/queries/julia/folds.scm
@@ -474,7 +532,13 @@ share/helix/runtime/queries/markdown.inline/injections.scm
 share/helix/runtime/queries/markdown/highlights.scm
 share/helix/runtime/queries/markdown/injections.scm
 share/helix/runtime/queries/matlab/
+share/helix/runtime/queries/matlab/context.scm
+share/helix/runtime/queries/matlab/folds.scm
 share/helix/runtime/queries/matlab/highlights.scm
+share/helix/runtime/queries/matlab/indents.scm
+share/helix/runtime/queries/matlab/injections.scm
+share/helix/runtime/queries/matlab/locals.scm
+share/helix/runtime/queries/matlab/textobjects.scm
 share/helix/runtime/queries/mermaid/
 share/helix/runtime/queries/mermaid/highlights.scm
 share/helix/runtime/queries/meson/
@@ -491,6 +555,7 @@ share/helix/runtime/queries/nasm/textobjects.scm
 share/helix/runtime/queries/nickel/
 share/helix/runtime/queries/nickel/highlights.scm
 share/helix/runtime/queries/nickel/indents.scm
+share/helix/runtime/queries/nickel/injections.scm
 share/helix/runtime/queries/nim/
 share/helix/runtime/queries/nim/highlights.scm
 share/helix/runtime/queries/nim/indents.scm
@@ -499,10 +564,11 @@ share/helix/runtime/queries/nix/
 share/helix/runtime/queries/nix/highlights.scm
 share/helix/runtime/queries/nix/injections.scm
 share/helix/runtime/queries/nu/
-share/helix/runtime/queries/nu/folds.scm
 share/helix/runtime/queries/nu/highlights.scm
 share/helix/runtime/queries/nu/injections.scm
-share/helix/runtime/queries/nu/locals.scm
+share/helix/runtime/queries/nunjucks/
+share/helix/runtime/queries/nunjucks/highlights.scm
+share/helix/runtime/queries/nunjucks/injections.scm
 share/helix/runtime/queries/ocaml/
 share/helix/runtime/queries/ocaml-interface/
 share/helix/runtime/queries/ocaml-interface/highlights.scm
@@ -534,6 +600,7 @@ share/helix/runtime/queries/passwd/highlights.scm
 share/helix/runtime/queries/pem/
 share/helix/runtime/queries/pem/highlights.scm
 share/helix/runtime/queries/perl/
+share/helix/runtime/queries/perl/fold.scm
 share/helix/runtime/queries/perl/highlights.scm
 share/helix/runtime/queries/perl/indents.scm
 share/helix/runtime/queries/perl/injections.scm
@@ -547,6 +614,8 @@ share/helix/runtime/queries/php/textobjects.scm
 share/helix/runtime/queries/po/
 share/helix/runtime/queries/po/highlights.scm
 share/helix/runtime/queries/po/textobjects.scm
+share/helix/runtime/queries/pod/
+share/helix/runtime/queries/pod/highlights.scm
 share/helix/runtime/queries/ponylang/
 share/helix/runtime/queries/ponylang/highlights.scm
 share/helix/runtime/queries/ponylang/indents.scm
@@ -565,6 +634,7 @@ share/helix/runtime/queries/purescript/
 share/helix/runtime/queries/purescript/highlights.scm
 share/helix/runtime/queries/purescript/injections.scm
 share/helix/runtime/queries/purescript/locals.scm
+share/helix/runtime/queries/purescript/textobjects.scm
 share/helix/runtime/queries/python/
 share/helix/runtime/queries/python/highlights.scm
 share/helix/runtime/queries/python/indents.scm
@@ -577,6 +647,19 @@ share/helix/runtime/queries/qml/highlights.scm
 share/helix/runtime/queries/qml/indents.scm
 share/helix/runtime/queries/qml/injections.scm
 share/helix/runtime/queries/queries/
+share/helix/runtime/queries/queries/_javascript/
+share/helix/runtime/queries/queries/_javascript/highlights.scm
+share/helix/runtime/queries/queries/_javascript/locals.scm
+share/helix/runtime/queries/queries/_javascript/tags.scm
+share/helix/runtime/queries/queries/_jsx/
+share/helix/runtime/queries/queries/_jsx/highlights.scm
+share/helix/runtime/queries/queries/_jsx/indents.scm
+share/helix/runtime/queries/queries/_typescript/
+share/helix/runtime/queries/queries/_typescript/highlights.scm
+share/helix/runtime/queries/queries/_typescript/indents.scm
+share/helix/runtime/queries/queries/_typescript/locals.scm
+share/helix/runtime/queries/queries/_typescript/tags.scm
+share/helix/runtime/queries/queries/_typescript/textobjects.scm
 share/helix/runtime/queries/queries/astro/
 share/helix/runtime/queries/queries/astro/highlights.scm
 share/helix/runtime/queries/queries/astro/injections.scm
@@ -588,6 +671,7 @@ share/helix/runtime/queries/queries/bash/
 share/helix/runtime/queries/queries/bash/highlights.scm
 share/helix/runtime/queries/queries/bash/indents.scm
 share/helix/runtime/queries/queries/bash/injections.scm
+share/helix/runtime/queries/queries/bash/textobjects.scm
 share/helix/runtime/queries/queries/bass/
 share/helix/runtime/queries/queries/bass/highlights.scm
 share/helix/runtime/queries/queries/beancount/
@@ -599,6 +683,8 @@ share/helix/runtime/queries/queries/bibtex/locals.scm
 share/helix/runtime/queries/queries/bibtex/tags.scm
 share/helix/runtime/queries/queries/bicep/
 share/helix/runtime/queries/queries/bicep/highlights.scm
+share/helix/runtime/queries/queries/blueprint/
+share/helix/runtime/queries/queries/blueprint/highlights.scm
 share/helix/runtime/queries/queries/c/
 share/helix/runtime/queries/queries/c-sharp/
 share/helix/runtime/queries/queries/c-sharp/highlights.scm
@@ -610,7 +696,10 @@ share/helix/runtime/queries/queries/c/injections.scm
 share/helix/runtime/queries/queries/c/textobjects.scm
 share/helix/runtime/queries/queries/cairo/
 share/helix/runtime/queries/queries/cairo/highlights.scm
+share/helix/runtime/queries/queries/cairo/indents.scm
 share/helix/runtime/queries/queries/cairo/injections.scm
+share/helix/runtime/queries/queries/cairo/locals.scm
+share/helix/runtime/queries/queries/cairo/textobjects.scm
 share/helix/runtime/queries/queries/capnp/
 share/helix/runtime/queries/queries/capnp/folds.scm
 share/helix/runtime/queries/queries/capnp/highlights.scm
@@ -676,6 +765,7 @@ share/helix/runtime/queries/queries/dtd/
 share/helix/runtime/queries/queries/dtd/highlights.scm
 share/helix/runtime/queries/queries/dtd/injections.scm
 share/helix/runtime/queries/queries/ecma/
+share/helix/runtime/queries/queries/ecma/README.md
 share/helix/runtime/queries/queries/ecma/highlights.scm
 share/helix/runtime/queries/queries/ecma/indents.scm
 share/helix/runtime/queries/queries/ecma/injections.scm
@@ -721,16 +811,28 @@ share/helix/runtime/queries/queries/fish/highlights.scm
 share/helix/runtime/queries/queries/fish/indents.scm
 share/helix/runtime/queries/queries/fish/injections.scm
 share/helix/runtime/queries/queries/fish/textobjects.scm
+share/helix/runtime/queries/queries/forth/
+share/helix/runtime/queries/queries/forth/highlights.scm
 share/helix/runtime/queries/queries/fortran/
 share/helix/runtime/queries/queries/fortran/folds.scm
 share/helix/runtime/queries/queries/fortran/highlights.scm
 share/helix/runtime/queries/queries/fortran/indents.scm
+share/helix/runtime/queries/queries/fortran/injections.scm
+share/helix/runtime/queries/queries/fsharp/
+share/helix/runtime/queries/queries/fsharp/highlights.scm
+share/helix/runtime/queries/queries/fsharp/locals.scm
+share/helix/runtime/queries/queries/gas/
+share/helix/runtime/queries/queries/gas/highlights.scm
+share/helix/runtime/queries/queries/gas/injections.scm
+share/helix/runtime/queries/queries/gas/textobjects.scm
 share/helix/runtime/queries/queries/gdscript/
 share/helix/runtime/queries/queries/gdscript/highlights.scm
 share/helix/runtime/queries/queries/gdscript/indents.scm
 share/helix/runtime/queries/queries/gdscript/injections.scm
 share/helix/runtime/queries/queries/gdscript/tags.scm
 share/helix/runtime/queries/queries/gdscript/textobjects.scm
+share/helix/runtime/queries/queries/gemini/
+share/helix/runtime/queries/queries/gemini/highlights.scm
 share/helix/runtime/queries/queries/git-attributes/
 share/helix/runtime/queries/queries/git-attributes/highlights.scm
 share/helix/runtime/queries/queries/git-commit/
@@ -780,6 +882,10 @@ share/helix/runtime/queries/queries/hare/
 share/helix/runtime/queries/queries/hare/highlights.scm
 share/helix/runtime/queries/queries/hare/locals.scm
 share/helix/runtime/queries/queries/haskell/
+share/helix/runtime/queries/queries/haskell-persistent/
+share/helix/runtime/queries/queries/haskell-persistent/folds.scm
+share/helix/runtime/queries/queries/haskell-persistent/highlights.scm
+share/helix/runtime/queries/queries/haskell-persistent/locals.scm
 share/helix/runtime/queries/queries/haskell/highlights.scm
 share/helix/runtime/queries/queries/haskell/injections.scm
 share/helix/runtime/queries/queries/haskell/locals.scm
@@ -809,6 +915,7 @@ share/helix/runtime/queries/queries/ini/
 share/helix/runtime/queries/queries/ini/highlights.scm
 share/helix/runtime/queries/queries/java/
 share/helix/runtime/queries/queries/java/highlights.scm
+share/helix/runtime/queries/queries/java/indents.scm
 share/helix/runtime/queries/queries/java/injections.scm
 share/helix/runtime/queries/queries/java/textobjects.scm
 share/helix/runtime/queries/queries/javascript/
@@ -818,12 +925,17 @@ share/helix/runtime/queries/queries/javascript/injections.scm
 share/helix/runtime/queries/queries/javascript/locals.scm
 share/helix/runtime/queries/queries/javascript/tags.scm
 share/helix/runtime/queries/queries/javascript/textobjects.scm
+share/helix/runtime/queries/queries/jinja/
+share/helix/runtime/queries/queries/jinja/highlights.scm
+share/helix/runtime/queries/queries/jinja/injections.scm
 share/helix/runtime/queries/queries/jsdoc/
 share/helix/runtime/queries/queries/jsdoc/highlights.scm
 share/helix/runtime/queries/queries/jsdoc/injections.scm
 share/helix/runtime/queries/queries/json/
 share/helix/runtime/queries/queries/json/highlights.scm
 share/helix/runtime/queries/queries/json/indents.scm
+share/helix/runtime/queries/queries/json5/
+share/helix/runtime/queries/queries/json5/highlights.scm
 share/helix/runtime/queries/queries/jsonnet/
 share/helix/runtime/queries/queries/jsonnet/highlights.scm
 share/helix/runtime/queries/queries/jsx/
@@ -831,6 +943,7 @@ share/helix/runtime/queries/queries/jsx/highlights.scm
 share/helix/runtime/queries/queries/jsx/indents.scm
 share/helix/runtime/queries/queries/jsx/injections.scm
 share/helix/runtime/queries/queries/jsx/locals.scm
+share/helix/runtime/queries/queries/jsx/tags.scm
 share/helix/runtime/queries/queries/jsx/textobjects.scm
 share/helix/runtime/queries/queries/julia/
 share/helix/runtime/queries/queries/julia/folds.scm
@@ -899,7 +1012,13 @@ share/helix/runtime/queries/queries/markdown.inline/injections.scm
 share/helix/runtime/queries/queries/markdown/highlights.scm
 share/helix/runtime/queries/queries/markdown/injections.scm
 share/helix/runtime/queries/queries/matlab/
+share/helix/runtime/queries/queries/matlab/context.scm
+share/helix/runtime/queries/queries/matlab/folds.scm
 share/helix/runtime/queries/queries/matlab/highlights.scm
+share/helix/runtime/queries/queries/matlab/indents.scm
+share/helix/runtime/queries/queries/matlab/injections.scm
+share/helix/runtime/queries/queries/matlab/locals.scm
+share/helix/runtime/queries/queries/matlab/textobjects.scm
 share/helix/runtime/queries/queries/mermaid/
 share/helix/runtime/queries/queries/mermaid/highlights.scm
 share/helix/runtime/queries/queries/meson/
@@ -916,6 +1035,7 @@ share/helix/runtime/queries/queries/nasm/textobjects.scm
 share/helix/runtime/queries/queries/nickel/
 share/helix/runtime/queries/queries/nickel/highlights.scm
 share/helix/runtime/queries/queries/nickel/indents.scm
+share/helix/runtime/queries/queries/nickel/injections.scm
 share/helix/runtime/queries/queries/nim/
 share/helix/runtime/queries/queries/nim/highlights.scm
 share/helix/runtime/queries/queries/nim/indents.scm
@@ -924,10 +1044,11 @@ share/helix/runtime/queries/queries/nix/
 share/helix/runtime/queries/queries/nix/highlights.scm
 share/helix/runtime/queries/queries/nix/injections.scm
 share/helix/runtime/queries/queries/nu/
-share/helix/runtime/queries/queries/nu/folds.scm
 share/helix/runtime/queries/queries/nu/highlights.scm
 share/helix/runtime/queries/queries/nu/injections.scm
-share/helix/runtime/queries/queries/nu/locals.scm
+share/helix/runtime/queries/queries/nunjucks/
+share/helix/runtime/queries/queries/nunjucks/highlights.scm
+share/helix/runtime/queries/queries/nunjucks/injections.scm
 share/helix/runtime/queries/queries/ocaml/
 share/helix/runtime/queries/queries/ocaml-interface/
 share/helix/runtime/queries/queries/ocaml-interface/highlights.scm
@@ -959,6 +1080,7 @@ share/helix/runtime/queries/queries/passwd/highlights.scm
 share/helix/runtime/queries/queries/pem/
 share/helix/runtime/queries/queries/pem/highlights.scm
 share/helix/runtime/queries/queries/perl/
+share/helix/runtime/queries/queries/perl/fold.scm
 share/helix/runtime/queries/queries/perl/highlights.scm
 share/helix/runtime/queries/queries/perl/indents.scm
 share/helix/runtime/queries/queries/perl/injections.scm
@@ -972,6 +1094,8 @@ share/helix/runtime/queries/queries/php/textobjects.scm
 share/helix/runtime/queries/queries/po/
 share/helix/runtime/queries/queries/po/highlights.scm
 share/helix/runtime/queries/queries/po/textobjects.scm
+share/helix/runtime/queries/queries/pod/
+share/helix/runtime/queries/queries/pod/highlights.scm
 share/helix/runtime/queries/queries/ponylang/
 share/helix/runtime/queries/queries/ponylang/highlights.scm
 share/helix/runtime/queries/queries/ponylang/indents.scm
@@ -990,6 +1114,7 @@ share/helix/runtime/queries/queries/purescript/
 share/helix/runtime/queries/queries/purescript/highlights.scm
 share/helix/runtime/queries/queries/purescript/injections.scm
 share/helix/runtime/queries/queries/purescript/locals.scm
+share/helix/runtime/queries/queries/purescript/textobjects.scm
 share/helix/runtime/queries/queries/python/
 share/helix/runtime/queries/queries/python/highlights.scm
 share/helix/runtime/queries/queries/python/indents.scm
@@ -1051,6 +1176,7 @@ share/helix/runtime/queries/queries/scala/
 share/helix/runtime/queries/queries/scala/highlights.scm
 share/helix/runtime/queries/queries/scala/indents.scm
 share/helix/runtime/queries/queries/scala/injections.scm
+share/helix/runtime/queries/queries/scala/locals.scm
 share/helix/runtime/queries/queries/scheme/
 share/helix/runtime/queries/queries/scheme/highlights.scm
 share/helix/runtime/queries/queries/scheme/injections.scm
@@ -1060,6 +1186,7 @@ share/helix/runtime/queries/queries/scss/injections.scm
 share/helix/runtime/queries/queries/slint/
 share/helix/runtime/queries/queries/slint/highlights.scm
 share/helix/runtime/queries/queries/slint/indents.scm
+share/helix/runtime/queries/queries/slint/injections.scm
 share/helix/runtime/queries/queries/slint/locals.scm
 share/helix/runtime/queries/queries/smithy/
 share/helix/runtime/queries/queries/smithy/highlights.scm
@@ -1076,8 +1203,11 @@ share/helix/runtime/queries/queries/starlark/
 share/helix/runtime/queries/queries/starlark/highlights.scm
 share/helix/runtime/queries/queries/starlark/injections.scm
 share/helix/runtime/queries/queries/starlark/textobjects.scm
+share/helix/runtime/queries/queries/strace/
+share/helix/runtime/queries/queries/strace/highlights.scm
 share/helix/runtime/queries/queries/svelte/
 share/helix/runtime/queries/queries/svelte/highlights.scm
+share/helix/runtime/queries/queries/svelte/indents.scm
 share/helix/runtime/queries/queries/svelte/injections.scm
 share/helix/runtime/queries/queries/sway/
 share/helix/runtime/queries/queries/sway/highlights.scm
@@ -1088,6 +1218,9 @@ share/helix/runtime/queries/queries/sway/textobjects.scm
 share/helix/runtime/queries/queries/swift/
 share/helix/runtime/queries/queries/swift/highlights.scm
 share/helix/runtime/queries/queries/swift/locals.scm
+share/helix/runtime/queries/queries/t32/
+share/helix/runtime/queries/queries/t32/highlights.scm
+share/helix/runtime/queries/queries/t32/injections.scm
 share/helix/runtime/queries/queries/tablegen/
 share/helix/runtime/queries/queries/tablegen/highlights.scm
 share/helix/runtime/queries/queries/tablegen/indents.scm
@@ -1096,11 +1229,16 @@ share/helix/runtime/queries/queries/tablegen/textobjects.scm
 share/helix/runtime/queries/queries/task/
 share/helix/runtime/queries/queries/task/highlights.scm
 share/helix/runtime/queries/queries/task/injections.scm
+share/helix/runtime/queries/queries/templ/
+share/helix/runtime/queries/queries/templ/highlights.scm
+share/helix/runtime/queries/queries/templ/injections.scm
 share/helix/runtime/queries/queries/tfvars/
 share/helix/runtime/queries/queries/tfvars/folds.scm
 share/helix/runtime/queries/queries/tfvars/highlights.scm
 share/helix/runtime/queries/queries/tfvars/indents.scm
 share/helix/runtime/queries/queries/tfvars/injections.scm
+share/helix/runtime/queries/queries/todotxt/
+share/helix/runtime/queries/queries/todotxt/highlights.scm
 share/helix/runtime/queries/queries/toml/
 share/helix/runtime/queries/queries/toml/highlights.scm
 share/helix/runtime/queries/queries/toml/injections.scm
@@ -1111,6 +1249,8 @@ share/helix/runtime/queries/queries/tsx/
 share/helix/runtime/queries/queries/tsx/highlights.scm
 share/helix/runtime/queries/queries/tsx/indents.scm
 share/helix/runtime/queries/queries/tsx/injections.scm
+share/helix/runtime/queries/queries/tsx/locals.scm
+share/helix/runtime/queries/queries/tsx/tags.scm
 share/helix/runtime/queries/queries/tsx/textobjects.scm
 share/helix/runtime/queries/queries/twig/
 share/helix/runtime/queries/queries/twig/highlights.scm
@@ -1124,6 +1264,9 @@ share/helix/runtime/queries/queries/typescript/tags.scm
 share/helix/runtime/queries/queries/typescript/textobjects.scm
 share/helix/runtime/queries/queries/ungrammar/
 share/helix/runtime/queries/queries/ungrammar/highlights.scm
+share/helix/runtime/queries/queries/unison/
+share/helix/runtime/queries/queries/unison/highlights.scm
+share/helix/runtime/queries/queries/unison/injections.scm
 share/helix/runtime/queries/queries/uxntal/
 share/helix/runtime/queries/queries/uxntal/highlights.scm
 share/helix/runtime/queries/queries/v/
@@ -1149,12 +1292,21 @@ share/helix/runtime/queries/queries/wast/
 share/helix/runtime/queries/queries/wast/highlights.scm
 share/helix/runtime/queries/queries/wat/
 share/helix/runtime/queries/queries/wat/highlights.scm
+share/helix/runtime/queries/queries/webc/
+share/helix/runtime/queries/queries/webc/highlights.scm
+share/helix/runtime/queries/queries/webc/injections.scm
 share/helix/runtime/queries/queries/wgsl/
 share/helix/runtime/queries/queries/wgsl/highlights.scm
 share/helix/runtime/queries/queries/wgsl/injections.scm
 share/helix/runtime/queries/queries/wit/
 share/helix/runtime/queries/queries/wit/highlights.scm
 share/helix/runtime/queries/queries/wit/indents.scm
+share/helix/runtime/queries/queries/wren/
+share/helix/runtime/queries/queries/wren/highlights.scm
+share/helix/runtime/queries/queries/wren/indents.scm
+share/helix/runtime/queries/queries/wren/injections.scm
+share/helix/runtime/queries/queries/wren/locals.scm
+share/helix/runtime/queries/queries/wren/textobjects.scm
 share/helix/runtime/queries/queries/xit/
 share/helix/runtime/queries/queries/xit/highlights.scm
 share/helix/runtime/queries/queries/xml/
@@ -1223,6 +1375,7 @@ share/helix/runtime/queries/scala/
 share/helix/runtime/queries/scala/highlights.scm
 share/helix/runtime/queries/scala/indents.scm
 share/helix/runtime/queries/scala/injections.scm
+share/helix/runtime/queries/scala/locals.scm
 share/helix/runtime/queries/scheme/
 share/helix/runtime/queries/scheme/highlights.scm
 share/helix/runtime/queries/scheme/injections.scm
@@ -1232,6 +1385,7 @@ share/helix/runtime/queries/scss/injections.scm
 share/helix/runtime/queries/slint/
 share/helix/runtime/queries/slint/highlights.scm
 share/helix/runtime/queries/slint/indents.scm
+share/helix/runtime/queries/slint/injections.scm
 share/helix/runtime/queries/slint/locals.scm
 share/helix/runtime/queries/smithy/
 share/helix/runtime/queries/smithy/highlights.scm
@@ -1248,8 +1402,11 @@ share/helix/runtime/queries/starlark/
 share/helix/runtime/queries/starlark/highlights.scm
 share/helix/runtime/queries/starlark/injections.scm
 share/helix/runtime/queries/starlark/textobjects.scm
+share/helix/runtime/queries/strace/
+share/helix/runtime/queries/strace/highlights.scm
 share/helix/runtime/queries/svelte/
 share/helix/runtime/queries/svelte/highlights.scm
+share/helix/runtime/queries/svelte/indents.scm
 share/helix/runtime/queries/svelte/injections.scm
 share/helix/runtime/queries/sway/
 share/helix/runtime/queries/sway/highlights.scm
@@ -1260,6 +1417,9 @@ share/helix/runtime/queries/sway/textobjects.scm
 share/helix/runtime/queries/swift/
 share/helix/runtime/queries/swift/highlights.scm
 share/helix/runtime/queries/swift/locals.scm
+share/helix/runtime/queries/t32/
+share/helix/runtime/queries/t32/highlights.scm
+share/helix/runtime/queries/t32/injections.scm
 share/helix/runtime/queries/tablegen/
 share/helix/runtime/queries/tablegen/highlights.scm
 share/helix/runtime/queries/tablegen/indents.scm
@@ -1268,11 +1428,16 @@ share/helix/runtime/queries/tablegen/textobjects.scm
 share/helix/runtime/queries/task/
 share/helix/runtime/queries/task/highlights.scm
 share/helix/runtime/queries/task/injections.scm
+share/helix/runtime/queries/templ/
+share/helix/runtime/queries/templ/highlights.scm
+share/helix/runtime/queries/templ/injections.scm
 share/helix/runtime/queries/tfvars/
 share/helix/runtime/queries/tfvars/folds.scm
 share/helix/runtime/queries/tfvars/highlights.scm
 share/helix/runtime/queries/tfvars/indents.scm
 share/helix/runtime/queries/tfvars/injections.scm
+share/helix/runtime/queries/todotxt/
+share/helix/runtime/queries/todotxt/highlights.scm
 share/helix/runtime/queries/toml/
 share/helix/runtime/queries/toml/highlights.scm
 share/helix/runtime/queries/toml/injections.scm
@@ -1283,6 +1448,8 @@ share/helix/runtime/queries/tsx/
 share/helix/runtime/queries/tsx/highlights.scm
 share/helix/runtime/queries/tsx/indents.scm
 share/helix/runtime/queries/tsx/injections.scm
+share/helix/runtime/queries/tsx/locals.scm
+share/helix/runtime/queries/tsx/tags.scm
 share/helix/runtime/queries/tsx/textobjects.scm
 share/helix/runtime/queries/twig/
 share/helix/runtime/queries/twig/highlights.scm
@@ -1296,6 +1463,9 @@ share/helix/runtime/queries/typescript/tags.scm
 share/helix/runtime/queries/typescript/textobjects.scm
 share/helix/runtime/queries/ungrammar/
 share/helix/runtime/queries/ungrammar/highlights.scm
+share/helix/runtime/queries/unison/
+share/helix/runtime/queries/unison/highlights.scm
+share/helix/runtime/queries/unison/injections.scm
 share/helix/runtime/queries/uxntal/
 share/helix/runtime/queries/uxntal/highlights.scm
 share/helix/runtime/queries/v/
@@ -1321,12 +1491,21 @@ share/helix/runtime/queries/wast/
 share/helix/runtime/queries/wast/highlights.scm
 share/helix/runtime/queries/wat/
 share/helix/runtime/queries/wat/highlights.scm
+share/helix/runtime/queries/webc/
+share/helix/runtime/queries/webc/highlights.scm
+share/helix/runtime/queries/webc/injections.scm
 share/helix/runtime/queries/wgsl/
 share/helix/runtime/queries/wgsl/highlights.scm
 share/helix/runtime/queries/wgsl/injections.scm
 share/helix/runtime/queries/wit/
 share/helix/runtime/queries/wit/highlights.scm
 share/helix/runtime/queries/wit/indents.scm
+share/helix/runtime/queries/wren/
+share/helix/runtime/queries/wren/highlights.scm
+share/helix/runtime/queries/wren/indents.scm
+share/helix/runtime/queries/wren/injections.scm
+share/helix/runtime/queries/wren/locals.scm
+share/helix/runtime/queries/wren/textobjects.scm
 share/helix/runtime/queries/xit/
 share/helix/runtime/queries/xit/highlights.scm
 share/helix/runtime/queries/xml/
@@ -1367,6 +1546,7 @@ share/helix/runtime/themes/catppuccin_frappe.toml
 share/helix/runtime/themes/catppuccin_latte.toml
 share/helix/runtime/themes/catppuccin_macchiato.toml
 share/helix/runtime/themes/catppuccin_mocha.toml
+share/helix/runtime/themes/cyan_light.toml
 share/helix/runtime/themes/darcula-solid.toml
 share/helix/runtime/themes/darcula.toml
 share/helix/runtime/themes/dark_high_contrast.toml
@@ -1392,6 +1572,7 @@ share/helix/runtime/themes/github_light_high_contrast.toml
 share/helix/runtime/themes/github_light_tritanopia.toml
 share/helix/runtime/themes/gruvbox.toml
 share/helix/runtime/themes/gruvbox_dark_hard.toml
+share/helix/runtime/themes/gruvbox_dark_soft.toml
 share/helix/runtime/themes/gruvbox_light.toml
 share/helix/runtime/themes/heisenberg.toml
 share/helix/runtime/themes/hex_lavender.toml
@@ -1400,8 +1581,16 @@ share/helix/runtime/themes/hex_toxic.toml
 share/helix/runtime/themes/ingrid.toml
 share/helix/runtime/themes/jellybeans.toml
 share/helix/runtime/themes/kanagawa.toml
+share/helix/runtime/themes/kaolin-dark.toml
+share/helix/runtime/themes/kaolin-light.toml
+share/helix/runtime/themes/kaolin-valley-dark.toml
+share/helix/runtime/themes/material_darker.toml
+share/helix/runtime/themes/material_deep_ocean.toml
+share/helix/runtime/themes/material_oceanic.toml
+share/helix/runtime/themes/material_palenight.toml
 share/helix/runtime/themes/meliora.toml
 share/helix/runtime/themes/mellow.toml
+share/helix/runtime/themes/merionette.toml
 share/helix/runtime/themes/molokai.toml
 share/helix/runtime/themes/monokai.toml
 share/helix/runtime/themes/monokai_aqua.toml
@@ -1410,10 +1599,13 @@ share/helix/runtime/themes/monokai_pro_machine.toml
 share/helix/runtime/themes/monokai_pro_octagon.toml
 share/helix/runtime/themes/monokai_pro_ristretto.toml
 share/helix/runtime/themes/monokai_pro_spectrum.toml
+share/helix/runtime/themes/naysayer.toml
+share/helix/runtime/themes/new_moon.toml
 share/helix/runtime/themes/night_owl.toml
 share/helix/runtime/themes/nightfox.toml
 share/helix/runtime/themes/noctis.toml
 share/helix/runtime/themes/noctis_bordo.toml
+share/helix/runtime/themes/nord-night.toml
 share/helix/runtime/themes/nord.toml
 share/helix/runtime/themes/nord_light.toml
 share/helix/runtime/themes/onedark.toml
@@ -1437,5 +1629,9 @@ share/helix/runtime/themes/spacebones_light.toml
 share/helix/runtime/themes/tokyonight.toml
 share/helix/runtime/themes/tokyonight_storm.toml
 share/helix/runtime/themes/varua.toml
+share/helix/runtime/themes/vim_dark_high_contrast.toml
+share/helix/runtime/themes/yellowed.toml
+share/helix/runtime/themes/zed_onedark.toml
+share/helix/runtime/themes/zed_onelight.toml
 share/helix/runtime/themes/zenburn.toml
 share/helix/runtime/tutor
