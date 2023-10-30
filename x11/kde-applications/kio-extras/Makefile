@@ -16,7 +16,7 @@ WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_2 OpenEXRCore-3_2
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 Xcursor c kdsoap m mtp
 WANTLIB += phonon4qt5 phonon4qt5experimental ssh tag util
-WANTLIB += lib/samba/smbclient
+WANTLIB += smbclient
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
