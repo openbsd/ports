@@ -5,28 +5,62 @@ CATEGORIES +=		lang/erlang
 USE_GMAKE ?=		Yes
 
 # Default Erlang version to use if MODERL_VERSION is not set.
-# XXX: Keep in sync with devel/rebar3/Makefile
-MODERL_DEFAULT_VERSION =25
+_MODERL_DEFAULT_VERSION =	25
 
-# If the port already has flavors, append ours to it unless the port requires
-# a specific version of Erlang.
-.if !defined(MODERL_VERSION) && !defined(FLAVORS)
-FLAVORS ?=		erlang25
-.else
-FLAVORS +=		erlang25
+# Default Erlang flavor to use if MODERL_VERSION is not set,
+# and MODERL_HANDLE_FLAVORS is set.
+_MODERL_DEFAULT_FLAVOR =	erlang${_MODERL_DEFAULT_VERSION}
+
+# Whether the erlang module should automatically add FLAVORs.
+MODERL_HANDLE_FLAVORS ?=	No
+
+# This permits adding FLAVORS automatically, unless FLAVORS are
+# already defined or the port defines MODERL_VERSION to tie the port
+# to a specific erlang version.
+.if !defined(MODERL_VERSION)
+.  if ${MODERL_HANDLE_FLAVORS:L:Myes}
+
+# If erlang.port.mk should handle FLAVORS, define a separate FLAVOR
+# for each erlang runtime
+.    if !defined(FLAVORS)
+FLAVORS =	erlang25 erlang26
+.    endif
+
+FULLPKGNAME ?=	${MODERL_PKG_PREFIX}-${PKGNAME}
+
+FLAVOR ?=
+.    if empty(FLAVOR)
+FLAVOR =	${MODERL_DEFAULT_FLAVOR}
+.    endif
+.  endif
 .endif
 
-FLAVOR?=		# empty
+MODERL_PKG_PREFIX =	erl${MODERL_VERSION}
 
-# When no flavor is explicitly set, assume MODERL_DEFAULT_VERSION
-MODERL_VERSION ?=	${MODERL_DEFAULT_VERSION}
-_MODERL_FLAVOR ?=	# empty
-
-.if ${MODERL_VERSION} == 25
+.if defined(MODERL_VERSION)
+.  if ${MODERL_VERSION} == 25
 _MODERL_FLAVOR =	erlang25
-.else
+.  elif ${MODERL_VERSION} == 26
+_MODERL_FLAVOR =	erlang26
+.  else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
+.  endif
+.else
+# When only flavour is set, derive version
+.  if !empty(FLAVOR)
+.    if ${FLAVOR} == erlang25
+MODERL_VERSION ?=	25
+_MODERL_FLAVOR ?=	erlang25
+.    elif ${FLAVOR} == erlang26
+MODERL_VERSION ?=	26
+_MODERL_FLAVOR ?=	erlang26
+.    endif
+.  endif
 .endif
+
+# Fall back to default
+MODERL_VERSION ?=	${_MODERL_DEFAULT_VERSION}
+_MODERL_FLAVOR ?=	${_MODERL_DEFAULT_FLAVOR}
 
 # If no configure style is set, then assume "rebar3"
 .if ${CONFIGURE_STYLE} == ""
@@ -53,6 +87,7 @@ _MODERL_RDEPS +=	${r},${_MODERL_FLAVOR}
 .for t in ${MODERL_TEST_DEPENDS}
 _MODERL_TDEPS +=	${t},${_MODERL_FLAVOR}
 .endfor
+
 
 MODERL_BUILDDEP ?=	Yes
 MODERL_RUNDEP ?=	Yes
@@ -94,6 +129,7 @@ MODERL_ERLC =		${LOCALBASE}/bin/erlc${MODERL_VERSION}
 _MODERL_LINKS +=	erl${MODERL_VERSION} erl \
 			erlc${MODERL_VERSION} erlc \
 			erl_call${MODERL_VERSION} erl_call \
+			epmd${MODERL_VERSION} epmd \
 			escript${MODERL_VERSION} escript
 
 .if !empty(_MODERL_LINKS)
