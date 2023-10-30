@@ -1,5 +1,4 @@
 @conflict kdepimlibs-<=4
-@bin bin/akonadi_benchmarker
 include/KPim5/AkonadiMime/
 include/KPim5/AkonadiMime/Akonadi/
 include/KPim5/AkonadiMime/Akonadi/AddressAttribute

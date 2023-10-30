@@ -1,6 +1,7 @@
 COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
+REVISION =	0
 
 SHARED_LIBS +=  KPim5AkonadiMime          1.0 # 0.0
 
