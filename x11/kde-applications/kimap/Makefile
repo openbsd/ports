@@ -1,6 +1,7 @@
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail
+REVISION =	0
 
 SHARED_LIBS +=  KPim5IMAP                 0.0 # 0.0
 
