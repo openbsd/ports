@@ -26,9 +26,9 @@ do-install:
 # cd ../../../tests/isodata/openbsd/
 # mkdir openbsdX.Y+1 && cd openbsdX.Y+1
 # - fetch i386 and amd64 install and boot-only ISOs
-# isoinfo -d -i cd66.iso >openbsd-6.6-amd64-bootonly.txt
-# isoinfo -d -i install66.iso >openbsd-6.6-amd64.txt
-# isoinfo -d -i cd66.iso >openbsd-6.6-i386-bootonly.txt
-# isoinfo -d -i install66.iso >openbsd-6.6-i386.txt
+# isoinfo -d -i cd75.iso >openbsd-7.5-amd64-bootonly.iso.txt
+# isoinfo -d -i install75.iso >openbsd-7.5-amd64.iso.txt
+# isoinfo -d -i cd75.iso >openbsd-7.5-i386-bootonly.iso.txt
+# isoinfo -d -i install75.iso >openbsd-7.5-i386.iso.txt
 
 .include <bsd.port.mk>
