@@ -216,6 +216,8 @@ include/giomm-2.68/giomm/private/socketcontrolmessage_p.h
 include/giomm-2.68/giomm/private/socketlistener_p.h
 include/giomm-2.68/giomm/private/socketservice_p.h
 include/giomm-2.68/giomm/private/srvtarget_p.h
+include/giomm-2.68/giomm/private/subprocess_p.h
+include/giomm-2.68/giomm/private/subprocesslauncher_p.h
 include/giomm-2.68/giomm/private/tcpconnection_p.h
 include/giomm-2.68/giomm/private/tcpwrapperconnection_p.h
 include/giomm-2.68/giomm/private/themedicon_p.h
@@ -266,6 +268,8 @@ include/giomm-2.68/giomm/socketlistener.h
 include/giomm-2.68/giomm/socketservice.h
 include/giomm-2.68/giomm/socketsource.h
 include/giomm-2.68/giomm/srvtarget.h
+include/giomm-2.68/giomm/subprocess.h
+include/giomm-2.68/giomm/subprocesslauncher.h
 include/giomm-2.68/giomm/tcpconnection.h
 include/giomm-2.68/giomm/tcpwrapperconnection.h
 include/giomm-2.68/giomm/themedicon.h
@@ -378,6 +382,7 @@ include/glibmm-2.68/glibmm/timezone.h
 include/glibmm-2.68/glibmm/unicode.h
 include/glibmm-2.68/glibmm/uriutils.h
 include/glibmm-2.68/glibmm/ustring.h
+include/glibmm-2.68/glibmm/ustring_hash.h
 include/glibmm-2.68/glibmm/utility.h
 include/glibmm-2.68/glibmm/value.h
 include/glibmm-2.68/glibmm/value_basictypes.h
