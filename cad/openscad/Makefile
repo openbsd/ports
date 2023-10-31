@@ -1,9 +1,9 @@
-COMMENT =		the programmer's solid 3D CAD modeller#'
+COMMENT =		the programmer's solid 3D CAD modeller
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		cad
 
