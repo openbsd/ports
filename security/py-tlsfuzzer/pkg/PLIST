@@ -57,7 +57,6 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-alpn-negotiation.${MODPY_PYC_MAGIC_
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-atypical-padding.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing-marvin.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing-pregenerate.${MODPY_PYC_MAGIC_TAG}pyc
-share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-timing.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-bleichenbacher-workaround.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ccs.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-certificate-malformed.${MODPY_PYC_MAGIC_TAG}pyc
@@ -80,6 +79,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-dhe-rsa-key-exchange-signatures.${M
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-dhe-rsa-key-exchange-with-bad-messages.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-dhe-rsa-key-exchange.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-downgrade-protection.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-dsa-in-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-early-application-data.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdhe-padded-shared-secret.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-ecdhe-rsa-key-exchange-with-bad-messages.${MODPY_PYC_MAGIC_TAG}pyc
@@ -212,7 +212,6 @@ share/tlsfuzzer/scripts/test-alpn-negotiation.py
 share/tlsfuzzer/scripts/test-atypical-padding.py
 share/tlsfuzzer/scripts/test-bleichenbacher-timing-marvin.py
 share/tlsfuzzer/scripts/test-bleichenbacher-timing-pregenerate.py
-share/tlsfuzzer/scripts/test-bleichenbacher-timing.py
 share/tlsfuzzer/scripts/test-bleichenbacher-workaround.py
 share/tlsfuzzer/scripts/test-ccs.py
 share/tlsfuzzer/scripts/test-certificate-malformed.py
@@ -235,6 +234,7 @@ share/tlsfuzzer/scripts/test-dhe-rsa-key-exchange-signatures.py
 share/tlsfuzzer/scripts/test-dhe-rsa-key-exchange-with-bad-messages.py
 share/tlsfuzzer/scripts/test-dhe-rsa-key-exchange.py
 share/tlsfuzzer/scripts/test-downgrade-protection.py
+share/tlsfuzzer/scripts/test-dsa-in-certificate-verify.py
 share/tlsfuzzer/scripts/test-early-application-data.py
 share/tlsfuzzer/scripts/test-ecdhe-padded-shared-secret.py
 share/tlsfuzzer/scripts/test-ecdhe-rsa-key-exchange-with-bad-messages.py
