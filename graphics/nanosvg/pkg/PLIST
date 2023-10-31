@@ -1,0 +1,11 @@
+include/nanosvg/
+include/nanosvg/nanosvg.h
+include/nanosvg/nanosvgrast.h
+lib/cmake/
+lib/cmake/NanoSVG/
+lib/cmake/NanoSVG/NanoSVGConfig.cmake
+lib/cmake/NanoSVG/NanoSVGConfigVersion.cmake
+lib/cmake/NanoSVG/NanoSVGTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/NanoSVG/NanoSVGTargets.cmake
+@static-lib lib/libnanosvg.a
+@static-lib lib/libnanosvgrast.a

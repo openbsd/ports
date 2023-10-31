@@ -1,0 +1,5 @@
+NanoSVG is a simple stupid single-header-file SVG parser. The output of the
+parser is a list of cubic bezier shapes.
+
+The library suits well for anything from rendering scalable icons in your editor
+application to prototyping a game.
