@@ -455,6 +455,7 @@ share/vim/${P}/ftplugin/cucumber.vim
 share/vim/${P}/ftplugin/cvsrc.vim
 share/vim/${P}/ftplugin/debchangelog.vim
 share/vim/${P}/ftplugin/debcontrol.vim
+share/vim/${P}/ftplugin/debsources.vim
 share/vim/${P}/ftplugin/denyhosts.vim
 share/vim/${P}/ftplugin/desktop.vim
 share/vim/${P}/ftplugin/dictconf.vim
@@ -527,6 +528,7 @@ share/vim/${P}/ftplugin/javascript.vim
 share/vim/${P}/ftplugin/javascriptreact.vim
 share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/json.vim
+share/vim/${P}/ftplugin/json5.vim
 share/vim/${P}/ftplugin/jsonc.vim
 share/vim/${P}/ftplugin/jsonnet.vim
 share/vim/${P}/ftplugin/jsp.vim
@@ -583,6 +585,7 @@ share/vim/${P}/ftplugin/nix.vim
 share/vim/${P}/ftplugin/nroff.vim
 share/vim/${P}/ftplugin/nsis.vim
 share/vim/${P}/ftplugin/objc.vim
+share/vim/${P}/ftplugin/objdump.vim
 share/vim/${P}/ftplugin/obse.vim
 share/vim/${P}/ftplugin/ocaml.vim
 share/vim/${P}/ftplugin/occam.vim
@@ -1240,6 +1243,7 @@ share/vim/${P}/syntax/dart.vim
 share/vim/${P}/syntax/datascript.vim
 share/vim/${P}/syntax/dcd.vim
 share/vim/${P}/syntax/dcl.vim
+share/vim/${P}/syntax/deb822sources.vim
 share/vim/${P}/syntax/debchangelog.vim
 share/vim/${P}/syntax/debcontrol.vim
 share/vim/${P}/syntax/debcopyright.vim
@@ -1401,6 +1405,7 @@ share/vim/${P}/syntax/jgraph.vim
 share/vim/${P}/syntax/jovial.vim
 share/vim/${P}/syntax/jproperties.vim
 share/vim/${P}/syntax/json.vim
+share/vim/${P}/syntax/json5.vim
 share/vim/${P}/syntax/jsonc.vim
 share/vim/${P}/syntax/jsp.vim
 share/vim/${P}/syntax/julia.vim
@@ -1644,6 +1649,7 @@ share/vim/${P}/syntax/shared/context-data-context.vim
 share/vim/${P}/syntax/shared/context-data-interfaces.vim
 share/vim/${P}/syntax/shared/context-data-metafun.vim
 share/vim/${P}/syntax/shared/context-data-tex.vim
+share/vim/${P}/syntax/shared/debversions.vim
 share/vim/${P}/syntax/shared/hgcommitDiff.vim
 share/vim/${P}/syntax/shared/typescriptcommon.vim
 share/vim/${P}/syntax/sicad.vim
