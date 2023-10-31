@@ -358,16 +358,10 @@ share/bash-completion/completions/gdbus
 share/bash-completion/completions/gio
 share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
-share/doc/glib-2.0/
-share/doc/glib-2.0/gvariant-byte-boundaries.svg
-share/doc/glib-2.0/gvariant-integer-and-string-structure.svg
-share/doc/glib-2.0/gvariant-integer-array.svg
-share/doc/glib-2.0/gvariant-specification-1.0.html
-share/doc/glib-2.0/gvariant-string-array.svg
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7600.5-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7600.5-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7800.1-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7800.1-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -383,6 +377,8 @@ share/glib-2.0/codegen/config.py
 share/glib-2.0/codegen/dbustypes.py
 share/glib-2.0/codegen/parser.py
 share/glib-2.0/codegen/utils.py
+share/glib-2.0/dtds/
+share/glib-2.0/dtds/gresource.dtd
 share/glib-2.0/gdb/
 share/glib-2.0/gdb/glib_gdb.py
 share/glib-2.0/gdb/gobject_gdb.py
@@ -490,8 +486,6 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/glib20.mo
 share/locale/it/LC_MESSAGES/glib20.mo
 share/locale/ja/LC_MESSAGES/glib20.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/glib20.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
