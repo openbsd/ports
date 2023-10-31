@@ -1,12 +1,12 @@
 Index: src/slic3r/CMakeLists.txt
 --- src/slic3r/CMakeLists.txt.orig
 +++ src/slic3r/CMakeLists.txt
-@@ -260,11 +260,11 @@ add_library(libslic3r_gui STATIC ${SLIC3R_GUI_SOURCES}
+@@ -330,11 +330,11 @@ endforeach()
  
  encoding_check(libslic3r_gui)
  
--target_link_libraries(libslic3r_gui libslic3r avrdude cereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES})
-+target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL ${HIDAPI_LIBRARIES} libcurl ${wxWidgets_LIBRARIES})
+-target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
++target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL ${HIDAPI_LIBRARIES} libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
  
  if (MSVC)
      target_link_libraries(libslic3r_gui Setupapi.lib)

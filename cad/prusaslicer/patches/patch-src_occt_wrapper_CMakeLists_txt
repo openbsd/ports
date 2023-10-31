@@ -14,7 +14,7 @@ Index: src/occt_wrapper/CMakeLists.txt
      TKXDESTEP
      TKSTEP
      TKSTEP209
-@@ -56,5 +58,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
+@@ -58,5 +60,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
  
  include(GNUInstallDirs)
  

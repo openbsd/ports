@@ -1,8 +1,8 @@
 Index: src/libslic3r/Thread.cpp
 --- src/libslic3r/Thread.cpp.orig
 +++ src/libslic3r/Thread.cpp
-@@ -6,6 +6,10 @@
- 	#include <pthread.h>
+@@ -13,6 +13,10 @@
+ 	#endif // __APPLE__
  #endif
  
 +#ifdef __OpenBSD__
@@ -12,7 +12,7 @@ Index: src/libslic3r/Thread.cpp
  #include <atomic>
  #include <condition_variable>
  #include <mutex>
-@@ -155,6 +159,33 @@ std::optional<std::string> get_current_thread_name()
+@@ -162,6 +166,33 @@ std::optional<std::string> get_current_thread_name()
  //	char buf[16];
  //	return std::string(thread_getname_np(buf, 16) == 0 ? buf : "");
  	return std::nullopt;
