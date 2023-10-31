@@ -1,5 +1,4 @@
 @conflict kdepimlibs-<=4
-@bin bin/kincidenceeditor
 include/KPim5/IncidenceEditor/
 include/KPim5/IncidenceEditor/IncidenceEditor/
 include/KPim5/IncidenceEditor/IncidenceEditor/EditorItemManager

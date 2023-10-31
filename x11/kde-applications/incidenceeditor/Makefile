@@ -1,6 +1,7 @@
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  KPim5IncidenceEditor      1.0 # 0.0
 
