@@ -1,8 +1,9 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
-V=		3.4.4
+V=		3.5.0
 DISTNAME=	vpn-user-portal-$V
 SITES.sh=	https://spacehopper.org/mirrors/
+# to update: comment out DISTFILES.sh, update V, make makesum, make dist
 DISTFILES.sh=	${DISTNAME}-vendor.tar.xz
 # Debian packaging in https://git.sr.ht/~fkooman/vpn-user-portal.deb/tree
 

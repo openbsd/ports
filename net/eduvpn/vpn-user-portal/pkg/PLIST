@@ -49,6 +49,7 @@ vpn-user-portal/src/Cfg/PhpSamlSpAuthConfig.php
 vpn-user-portal/src/Cfg/ProfileConfig.php
 vpn-user-portal/src/Cfg/RadiusAuthConfig.php
 vpn-user-portal/src/Cfg/ShibAuthConfig.php
+vpn-user-portal/src/Cfg/StaticPermissionsConfig.php
 vpn-user-portal/src/Cfg/WireGuardConfig.php
 vpn-user-portal/src/ClientConfigInterface.php
 vpn-user-portal/src/ConfigCheck.php
@@ -179,13 +180,14 @@ vpn-user-portal/src/OpenVpn/Exception/ClientConfigException.php
 vpn-user-portal/src/OpenVpn/ServerConfig.php
 vpn-user-portal/src/OpenVpn/TlsCrypt.php
 vpn-user-portal/src/PermissionSourceInterface.php
+vpn-user-portal/src/PermissionSourceManager.php
 vpn-user-portal/src/Protocol.php
 vpn-user-portal/src/QrCode.php
 vpn-user-portal/src/ScriptConnectionHook.php
 vpn-user-portal/src/ServerConfig.php
 vpn-user-portal/src/ServerInfo.php
 vpn-user-portal/src/ServerList.php
-vpn-user-portal/src/StaticPermissionSource.php
+vpn-user-portal/src/StaticPermissionsSource.php
 vpn-user-portal/src/Storage.php
 vpn-user-portal/src/SysLogger.php
 vpn-user-portal/src/Tpl.php
@@ -358,8 +360,8 @@ vpn-user-portal/web/well-known.php
 @mode
 @owner
 bin/vpn-user-portal-account
-bin/vpn-user-portal-status
 bin/vpn-user-portal-generate-dns-zones
+bin/vpn-user-portal-status
 libexec/vpn-user-portal/
 libexec/vpn-user-portal/daemon-sync
 libexec/vpn-user-portal/db
