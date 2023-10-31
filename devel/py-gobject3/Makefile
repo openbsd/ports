@@ -1,7 +1,7 @@
 COMMENT=		Python bindings for GLib and GObject
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.44.1
+GNOME_VERSION=		3.46.0
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
 
