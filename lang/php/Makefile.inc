@@ -147,6 +147,8 @@ APACHE_DIR=	${SAPI_DIR}
 .endif
 SAPI_SO=	libphp${MV}.so
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Membed}
 BUILD_PACKAGES:=	-embed
@@ -154,8 +156,6 @@ BUILD_PACKAGES:=	-embed
 .if ${BUILD_PACKAGES:M-apache}
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-embed}
 .endif
-
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .if ${BUILD_PACKAGES:M-main}
 CONFIGURE_ARGS+=	--enable-cli \
