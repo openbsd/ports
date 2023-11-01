@@ -1,6 +1,6 @@
 COMMENT=		kubectl authentication plugin for GKE
 
-V=			0.25.3
+V=			28.2.0
 PKGNAME=		gke-gcloud-auth-plugin-${V}
 
 CATEGORIES=		sysutils net
@@ -12,13 +12,13 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache-2.0
 PERMIT_PACKAGE=		Yes
 
-# ftp https://github.com/kubernetes/cloud-provider-gcp/archive/refs/tags/providers/v${V}.tar.gz
+# ftp https://github.com/kubernetes/cloud-provider-gcp/archive/refs/tags/ccm/v${V}.tar.gz
 # tar xzf v${V}.tar.gz
-# cd cloud-provider-gcp-providers-v${V} && go mod tidy && go mod vendor
-# cd .. && tar czf cloud-provider-gcp-${V}.tar.gz cloud-provider-gcp-providers-v${V}
+# cd cloud-provider-gcp-ccm-v${V} && go mod tidy && go mod vendor
+# cd .. && mv cloud-provider-gcp-ccm-v${V} cloud-provider-gcp-ccm-vendored-v${V}
+# tar czf cloud-provider-gcp-ccm-vendored-v${V}.tar.gz cloud-provider-gcp-ccm-vendored-v${V}
 SITES=			https://distfiles.bsdfrog.org/
-DISTNAME=		cloud-provider-gcp-${V}
-WRKDIST=		${WRKDIR}/cloud-provider-gcp-providers-v${V}
+DISTNAME=		cloud-provider-gcp-ccm-vendored-v${V}
 
 WANTLIB += c pthread
 
@@ -33,7 +33,7 @@ LDFLAGS +=		-s -w
 
 # git checkout the corresponding tag then:
 # cd cloud-provider-gcp && bash ./tools/workspace-status.sh | grep gitVersion | cut -d ' ' -f2
-LDFLAGS +=		-X k8s.io/component-base/version.gitVersion=v1.25.3-alpha+3d24dccb9fe6afb401500fc91537af1789b9e07d
+LDFLAGS +=		-X k8s.io/component-base/version.gitVersion=v1.28.2-alpha+66f44aab0946c059f047a52f694b980e7de3b557
 
 do-build:
 	cd ${WRKSRC}/cmd/gke-gcloud-auth-plugin && \
