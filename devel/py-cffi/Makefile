@@ -3,18 +3,17 @@
 
 COMMENT=		Foreign Function Interface for Python calling C code
 
-MODPY_EGG_VERSION=	1.15.1
+MODPY_EGG_VERSION=	1.16.0
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		0
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 MODPY_PI =		Yes
 
-WANTLIB=		ffi pthread ${MODPY_WANTLIB}
+WANTLIB=		ffi
 
 MODULES=		lang/python
 FLAVORS=		python3
