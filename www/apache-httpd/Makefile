@@ -3,6 +3,7 @@ COMMENT=		apache HTTP server
 V=			2.4.58
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
+REVISION=		0
 
 CATEGORIES=		www net
 
@@ -37,7 +38,7 @@ CONFDIR=		${SYSCONFDIR}/apache2
 FLAVOR_COMMA=		${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=		CONFDIR FLAVOR_COMMA
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	simple
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		--enable-authnz-fcgi \
