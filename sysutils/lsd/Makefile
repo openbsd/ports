@@ -2,7 +2,7 @@ COMMENT =	pretty ls alternative with support for icons and colors
 
 GH_ACCOUNT =	lsd-rs
 GH_PROJECT =	lsd
-GH_TAGNAME =	0.23.1
+GH_TAGNAME =	v1.0.0
 
 CATEGORIES =	sysutils
 
@@ -12,13 +12,16 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
-WANTLIB +=	${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m
+WANTLIB +=	${MODCARGO_WANTLIB} git2 m
 
 MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
 BUILD_DEPENDS =		textproc/lowdown
+
+LIB_DEPENDS =		devel/libgit2/libgit2
 
 # Build Shell completion scripts
 MAKE_ENV +=	SHELL_COMPLETIONS_DIR="./completions"
