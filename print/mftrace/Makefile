@@ -1,20 +1,18 @@
 COMMENT=	scalable PostScript fonts generator for MetaFont
 
 CATEGORIES=	fonts print
-DISTNAME=	mftrace-1.2.15
-REVISION =	6
+DISTNAME=	mftrace-1.2.20
 
-HOMEPAGE=	http://lilypond.org/mftrace/
+HOMEPAGE=	https://lilypond.org/mftrace/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://lilypond.org/download/sources/mftrace/
+SITES=		https://lilypond.org/download/sources/mftrace/
 
 WANTLIB=	c
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	graphics/potrace
 RUN_DEPENDS=	graphics/potrace \

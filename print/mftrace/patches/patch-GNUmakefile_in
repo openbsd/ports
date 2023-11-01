@@ -1,6 +1,7 @@
---- GNUmakefile.in.orig	Sat Feb  3 02:34:52 2007
-+++ GNUmakefile.in	Wed Aug 12 11:56:02 2009
-@@ -8,7 +8,7 @@ FILES= mftrace.py GNUmakefile.in \
+Index: GNUmakefile.in
+--- GNUmakefile.in.orig
++++ GNUmakefile.in
+@@ -7,18 +7,18 @@ FILES= mftrace.py GNUmakefile.in \
  	README.texi README.txt ChangeLog \
  	mftrace.spec.in mftrace.spec \
  	$(PY_MODULES) configure configure.in config.h.in
@@ -9,7 +10,11 @@
  
  ## retain during override.
  CFLAGS += -I.
-@@ -19,7 +19,7 @@ MANPAGES=mftrace.1
+ srcdir=@srcdir@
+ VPATH=$(srcdir)
+ NAME=mftrace
+-MANPAGES=mftrace.1 gf2pbm.1
++MANPAGES=mftrace.1
  VERSION=@VERSION@
  distdir=$(NAME)-$(VERSION)
  prefix=@prefix@
@@ -18,12 +23,12 @@
  exec_prefix=@exec_prefix@
  bindir=@bindir@
  mandir=@mandir@
-@@ -76,7 +76,7 @@ install: mftrace gf2pbm $(PYC_MODULES) install-man ins
+@@ -72,7 +72,7 @@ install: mftrace gf2pbm install-man install-py
  
- install-py: $(PY_MODULES) $(PYC_MODULES) 
+ install-py: $(PY_MODULES)
  	install -d $(DESTDIR)$(datadir)
 -	install -m644 $^ $(DESTDIR)$(datadir) 
 +	install -m644 -p $^ $(DESTDIR)$(datadir) 
+ 	$(PYTHON) -m compileall $(DESTDIR)$(datadir)
  
  install-man: $(MANPAGES)
- 	install -d $(DESTDIR)$(mandir)/man1
