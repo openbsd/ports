@@ -63,7 +63,7 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf				 v1.5.3 \
 	github.com/google/btree					 v1.0.0 \
 	github.com/google/certificate-transparency-go		 v1.1.1 \
-	github.com/google/go-cmp				 v0.5.9 \
+	github.com/google/go-cmp				 v0.6.0 \
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/google/martian				 v2.1.0+incompatible \
 	github.com/google/pprof					 v0.0.0-20210407192527-94a9f03dee38 \
@@ -127,8 +127,8 @@ MODGO_MODULES =	\
 	github.com/nishanths/predeclared			 v0.0.0-20190419143655-18a43bb90ffc \
 	github.com/olekukonko/tablewriter			 v0.0.2 \
 	github.com/onsi/ginkgo					 v1.10.3 \
-	github.com/onsi/ginkgo/v2				 v2.12.1 \
-	github.com/onsi/gomega					 v1.28.0 \
+	github.com/onsi/ginkgo/v2				 v2.13.0 \
+	github.com/onsi/gomega					 v1.28.1 \
 	github.com/opentracing/opentracing-go			 v1.1.0 \
 	github.com/pelletier/go-toml				 v1.2.0 \
 	github.com/peterbourgon/diskv				 v2.0.1+incompatible \
@@ -297,6 +297,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp				 v0.4.0 \
 	github.com/google/go-cmp				 v0.5.0 \
 	github.com/google/go-cmp				 v0.5.2 \
+	github.com/google/go-cmp				 v0.5.9 \
 	github.com/google/pprof					 v0.0.0-20181206194817-3ea8567a2e57 \
 	github.com/google/pprof					 v0.0.0-20190515194954-54271f7e092f \
 	github.com/google/pprof					 v0.0.0-20191218002539-d4f498aebedc \
@@ -340,7 +341,6 @@ MODGO_MODFILES =	\
 	github.com/olekukonko/tablewriter			 v0.0.0-20170122224234-a0225b3f23b5 \
 	github.com/olekukonko/tablewriter			 v0.0.1 \
 	github.com/onsi/ginkgo					 v1.6.0 \
-	github.com/onsi/ginkgo/v2				 v2.12.0 \
 	github.com/onsi/gomega					 v1.27.10 \
 	github.com/onsi/gomega					 v1.7.1 \
 	github.com/pkg/errors					 v0.8.0 \
@@ -509,7 +509,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20200615200032-f1bc736245b1 \
 	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
 	golang.org/x/sys					 v0.10.0 \
-	golang.org/x/sys					 v0.11.0 \
 	golang.org/x/sys					 v0.12.0 \
 	golang.org/x/sys					 v0.5.0 \
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
