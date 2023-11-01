@@ -1,9 +1,18 @@
-use dedicated _dictd user/group
+- use dedicated _dictd user/group
+- use pledge(2)
 
 Index: dictd.c
 --- dictd.c.orig
 +++ dictd.c
-@@ -1269,9 +1272,9 @@ static void release_root_privileges( void )
+@@ -37,6 +37,7 @@
+ #include <ctype.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#include <unistd.h>             /* pledge */
+ 
+ #define MAXPROCTITLE 2048       /* Maximum amount of proc title we'll use. */
+ #undef MIN
+@@ -1269,9 +1270,9 @@ static void release_root_privileges( void )
     if (geteuid() == 0) {
        struct passwd *pwd;
  
@@ -15,3 +24,67 @@ Index: dictd.c
           setuid(pwd->pw_uid);
        } else if ((pwd = getpwnam("nobody"))) {
           setgid(pwd->pw_gid);
+@@ -1664,6 +1665,17 @@ int main (int argc, char **argv, char **envp)
+       default:  help(); exit(0);                          break;
+       }
+ 
++#ifdef __OpenBSD__
++   /* no need for "inet dns" when talking to inetd(8) over stdin/out */
++   if (inetd) {
++      if (pledge("stdio rpath wpath cpath getpw proc exec id", NULL) == -1)
++         err_fatal_errno(__func__, "pledge");
++   } else {
++      if (pledge("stdio rpath wpath cpath inet dns getpw proc exec id", NULL) == -1)
++         err_fatal_errno(__func__, "pledge");
++   }
++#endif
++
+    if (inetd)
+       detach = 0;
+ 
+@@ -1714,6 +1726,34 @@ int main (int argc, char **argv, char **envp)
+       pid_file_write ();
+    }
+ 
++#ifdef __OpenBSD__
++   /*
++    * drop "wpath cpath" after pid and/or log file setup
++    * drop "getpw id"    after privilege drop
++    */
++   if (inetd) {
++      /* drop "exec" unless --pp was used */
++      if (preprocessor != NULL) {
++         if (pledge("stdio rpath proc exec", NULL) == -1)
++            err_fatal_errno(__func__, "pledge");
++      } else {
++         if (pledge("stdio rpath", NULL) == -1)
++            err_fatal_errno(__func__, "pledge");
++      }
++   } else if (preprocessor != NULL || !dbg_test(DBG_NOFORK)) {
++      if (preprocessor != NULL) {
++         if (pledge("stdio rpath inet dns proc exec", NULL) == -1)
++            err_fatal_errno(__func__, "pledge");
++      } else {
++         if (pledge("stdio rpath inet dns proc", NULL) == -1)
++            err_fatal_errno(__func__, "pledge");
++      }
++   } else {
++      if (pledge("stdio rpath inet dns", NULL) == -1)
++         err_fatal_errno(__func__, "pledge");
++   }
++#endif
++
+    time(&startTime);
+    log_info(":I: %d starting %s %24.24s\n",
+ 	    getpid(), dict_get_banner(0), ctime(&startTime));
+@@ -1807,6 +1847,10 @@ int main (int argc, char **argv, char **envp)
+       } else {
+ 	 if (_dict_forks - _dict_reaps < _dict_daemon_limit_childs) {
+ 	    if (!start_daemon()) { /* child */
++#ifdef __OpenBSD__
++               if (pledge("stdio rpath inet dns", NULL) == -1)
++                  err_fatal_errno (__func__, "pledge");
++#endif
+ 	       int databases_loaded = (DictConfig != NULL);
+ 
+ 	       alarm(0);

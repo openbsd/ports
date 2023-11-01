@@ -7,7 +7,7 @@ DISTNAME=	dictd-$V
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
 REVISION-main=	3
-REVISION-server=2
+REVISION-server=3
 
 CATEGORIES=	net education
 
@@ -17,6 +17,8 @@ MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
 # GPL v2
 PERMIT_PACKAGE=	Yes
+
+# uses pledge()
 WANTLIB=		c maa z
 
 SITES=		${SITE_SOURCEFORGE:=dict/}
