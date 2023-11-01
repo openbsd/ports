@@ -33,7 +33,7 @@ RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR} \
 
 TEST_DEPENDS+=	devel/py-decorator${MODPY_FLAVOR} \
 		print/py-pypdf${MODPY_FLAVOR} \
-		print/weasyprint \
+		print/weasyprint${MODPY_FLAVOR} \
 		textproc/py-dict2xml${MODPY_FLAVOR} \
 		fonts/noto/fonts
 # also wants fonts/noto/cjk, but seems to trigger a problem with weasyprint??
