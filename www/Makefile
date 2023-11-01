@@ -333,6 +333,7 @@
      SUBDIR += p5-Plack-Test-ExternalServer
      SUBDIR += p5-Plagger
      SUBDIR += p5-PodToHTML
+     SUBDIR += p5-REST-Client
      SUBDIR += p5-Rose-HTML-Objects
      SUBDIR += p5-Rose-HTMLx-Form-Field-Autocomplete
      SUBDIR += p5-Rose-URI
