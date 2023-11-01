@@ -6,7 +6,7 @@ GH_PROJECT =	AFLplusplus
 GH_TAGNAME =	4.05c
 PKGNAME =	afl++-${GH_TAGNAME}
 CATEGORIES=	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	https://aflplus.plus/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
