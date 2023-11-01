@@ -4,6 +4,7 @@ MODPY_EGG_VERSION = 2.9
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
+REVISION=	0
 
 HOMEPAGE=	https://www.mnemosyne-proj.org/
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
 		graphics/py-matplotlib${MODPY_FLAVOR} \
 		www/py-cheroot${MODPY_FLAVOR}>=5 \
 		www/py-webob${MODPY_FLAVOR}>=1.4 \
-		security/py-argon2-cffi${MODPY_FLAVORS} \
+		security/py-argon2-cffi${MODPY_FLAVOR} \
 		devel/desktop-file-utils
 
 NO_TEST=	Yes
