@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v25.0
+GH_TAGNAME =		v25.1
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
