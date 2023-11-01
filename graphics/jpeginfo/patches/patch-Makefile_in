@@ -7,7 +7,7 @@ Index: Makefile.in
 @@ -32,11 +32,11 @@ mandir = $(prefix)/share/man
  CC        = @CC@
  XCPPFLAGS = @CPPFLAGS@
- CFLAGS    = @CFLAGS@ $(XCPPFLAGS) $(DEFS)
+ CFLAGS    = @CFLAGS@ $(XCPPFLAGS) $(DEFS) -I$(srcdir)
 -ifeq ($(CC),gcc)
 -CFLAGS	 += -Wall -Wformat -Werror=format-security
 +#ifeq ($(CC),gcc)
@@ -19,9 +19,9 @@ Index: Makefile.in
  LDFLAGS   = @LDFLAGS@
  LIBS      = @LIBS@
  STRIP     = strip
-@@ -56,6 +56,9 @@ DISTNAME := $(PKGNAME)-$(Version)
- 
- OBJS = $(PKGNAME).o jpegmarker.o misc.o @GNUGETOPT@ md5.o sha256/hash.o sha256/blocks.o \
+@@ -60,6 +60,9 @@ OBJS = $(PKGNAME).o jpegmarker.o misc.o @GNUGETOPT@ \
+ 	md5/md5.o \
+ 	sha256/hash.o sha256/blocks.o \
  	sha512/hash.o sha512/blocks.o
 +
 +.c.o:
