@@ -1,5 +1,4 @@
 COMMENT =	SIP library supporting voice/video calls and text messaging
-V =		5.2.110
 
 MODULE =	liblinphone
 
