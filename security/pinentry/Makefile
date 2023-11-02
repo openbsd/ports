@@ -7,6 +7,8 @@ DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
 
+REVISION-qt5 =	0
+
 SITES = 	${SITE_GNUPG:=pinentry/}
 
 HOMEPAGE = 	https://www.gnupg.org/related_software/pinentry/index.en.html
@@ -36,10 +38,11 @@ LIB_DEPENDS-gnome3 =	${LIB_DEPENDS} \
 			x11/gnome/gcr
 
 WANTLIB-qt5 += ${WANTLIB}
-WANTLIB-qt5 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
-WANTLIB-qt5 += X11 m
+WANTLIB-qt5 += ${COMPILER_LIBCXX} KF5WaylandClient Qt5Core Qt5Gui
+WANTLIB-qt5 += Qt5Widgets Qt5X11Extras X11 m
 
 LIB_DEPENDS-qt5 =	${LIB_DEPENDS} \
+			devel/kf5/kwayland \
 			x11/qt5/qtbase \
 			x11/qt5/qtx11extras
 
