@@ -1,7 +1,9 @@
-@conflict py-acme-<0.22.0${MODPY_FLAVOR}
+@conflict py-acme-*
 @conflict py-josepy-*
 @pkgpath security/py-josepy
 bin/jws
+lib/python${MODPY_VERSION}/site-packages/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/josepy/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
@@ -9,7 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/M
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/josepy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/josepy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
