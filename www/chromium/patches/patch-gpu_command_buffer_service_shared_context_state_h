@@ -1,0 +1,18 @@
+commit 3290d6aee7a53a6b1a811c8b50ff0a3bf84fb6a6
+Author: Le Hoang Quyen <lehoangquyen@chromium.org>
+Date:   Tue Oct 31 08:52:25 2023 +0000
+
+    Crash GPU process and clear shader cache when skia reports compileError.
+
+Index: gpu/command_buffer/service/shared_context_state.h
+--- gpu/command_buffer/service/shared_context_state.h.orig
++++ gpu/command_buffer/service/shared_context_state.h
+@@ -392,6 +392,8 @@ class GPU_GLES2_EXPORT SharedContextState
+   std::vector<uint8_t> scratch_deserialization_buffer_;
+   raw_ptr<gpu::raster::GrShaderCache, DanglingUntriaged> gr_shader_cache_ =
+       nullptr;
++  raw_ptr<GpuProcessShmCount, DanglingUntriaged> use_shader_cache_shm_count_ =
++      nullptr;
+ 
+   // |need_context_state_reset| is set whenever Skia may have altered the
+   // driver's GL state.

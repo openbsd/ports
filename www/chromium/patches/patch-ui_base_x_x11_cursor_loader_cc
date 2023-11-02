@@ -31,9 +31,9 @@ Index: ui/base/x/x11_cursor_loader.cc
      // The toolkit theme has the highest priority.
      LinuxUi::instance() ? LinuxUi::instance()->GetCursorThemeName()
                          : std::string(),
-@@ -443,7 +447,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
-   if (base::StringToInt(GetEnv(kXcursorSizeEnv), &size) && size > 0)
+@@ -448,7 +452,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
      return size;
+   }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
