@@ -4,6 +4,8 @@ DISTNAME =		Pound-2.8a
 REVISION =		1
 PKGNAME =		${DISTNAME:L}
 
+PORTROACH =		site:https://github.com/graygnuorg/pound/archive/
+
 CATEGORIES =		www
 
 HOMEPAGE =		https://www.apsis.ch/pound.html
