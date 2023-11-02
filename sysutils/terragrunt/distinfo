@@ -620,8 +620,9 @@ SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.37.0.mod) = pCJTQ3No31/NNr8Js
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.40.56.mod) = Z2FMAKWjMuRTYwiL/m6MM7i0axTwsjI/J9SlHI7HaOQ=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.43.43.mod) = zSZN+wW0QIqRN+6tYA21lr1o35LsV/lv0vCzzFRNgmY=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.122.mod) = zSZN+wW0QIqRN+6tYA21lr1o35LsV/lv0vCzzFRNgmY=
-SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.122.zip) = UEsV4kiBpP9EHAIxPBs9DElu4cIwqjjfPHCg6xsWBWA=
 SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.48.mod) = zSZN+wW0QIqRN+6tYA21lr1o35LsV/lv0vCzzFRNgmY=
+SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.46.6.mod) = pu9CSJ2Cxf2Bq4jeUb0S+o4sQBcGC5ARtju5VGaRmus=
+SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.46.6.zip) = 1qlGhKrHGO6mzRRWExT77pJhDA2R2khS18oFvBgadFg=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.13.3.mod) = RwZKnOIkureadOCEE6fP+mYhd69WuoVbxFnspDWrw/A=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.13.3.zip) = rNTaWu0EigtnuYdISN8CKr7HNTk00yocLQNf5TdGBMU=
 SHA256 (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.mod) = EUHNOLiCZVlrFnzQU3DBJJRs55a4gZy1YdnjF3WsvcI=
@@ -2289,7 +2290,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = XmRigeM
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.53.0.zip) = tQ5VRY7r5/udWr6Ppcp6LRdY4a5DbcPwKM4ba37+3HI=
+SHA256 (terragrunt-v0.53.1.zip) = c/merY7PvpMZ02BAOT/kc0rkDMI7nGuJcjdMb6ou/Es=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -2912,8 +2913,9 @@ SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.37.0.mod) = 178
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.40.56.mod) = 178
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.43.43.mod) = 178
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.122.mod) = 178
-SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.122.zip) = 26849895
 SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.44.48.mod) = 178
+SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.46.6.mod) = 150
+SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.46.6.zip) = 32377903
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.13.3.mod) = 127
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.13.3.zip) = 191370
 SIZE (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.mod) = 45
@@ -4581,4 +4583,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = 230610
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.53.0.zip) = 2891883
+SIZE (terragrunt-v0.53.1.zip) = 2892041

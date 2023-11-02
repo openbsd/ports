@@ -179,7 +179,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-metrics					 v0.3.10 \
 	github.com/armon/go-radix					 v1.0.0 \
 	github.com/aws/aws-lambda-go					 v1.13.3 \
-	github.com/aws/aws-sdk-go					 v1.44.122 \
+	github.com/aws/aws-sdk-go					 v1.46.6 \
 	github.com/aws/aws-sdk-go-v2					 v1.16.16 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream		 v1.4.3 \
 	github.com/aws/aws-sdk-go-v2/config				 v1.15.13 \
@@ -782,6 +782,7 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go				 v1.37.0 \
 	github.com/aws/aws-sdk-go				 v1.40.56 \
 	github.com/aws/aws-sdk-go				 v1.43.43 \
+	github.com/aws/aws-sdk-go				 v1.44.122 \
 	github.com/aws/aws-sdk-go				 v1.44.48 \
 	github.com/beorn7/perks					 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks					 v1.0.0 \
