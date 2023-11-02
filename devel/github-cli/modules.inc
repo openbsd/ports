@@ -1,124 +1,126 @@
 MODGO_MODULES =	\
-	cloud.google.com/go					 v0.105.0 \
-	cloud.google.com/go/accessapproval			 v1.5.0 \
-	cloud.google.com/go/accesscontextmanager		 v1.4.0 \
-	cloud.google.com/go/aiplatform				 v1.27.0 \
-	cloud.google.com/go/analytics				 v0.12.0 \
-	cloud.google.com/go/apigateway				 v1.4.0 \
-	cloud.google.com/go/apigeeconnect			 v1.4.0 \
-	cloud.google.com/go/appengine				 v1.5.0 \
-	cloud.google.com/go/area120				 v0.6.0 \
-	cloud.google.com/go/artifactregistry			 v1.9.0 \
-	cloud.google.com/go/asset				 v1.10.0 \
-	cloud.google.com/go/assuredworkloads			 v1.9.0 \
-	cloud.google.com/go/automl				 v1.8.0 \
-	cloud.google.com/go/baremetalsolution			 v0.4.0 \
-	cloud.google.com/go/batch				 v0.4.0 \
-	cloud.google.com/go/beyondcorp				 v0.3.0 \
-	cloud.google.com/go/bigquery				 v1.44.0 \
-	cloud.google.com/go/billing				 v1.7.0 \
-	cloud.google.com/go/binaryauthorization			 v1.4.0 \
-	cloud.google.com/go/certificatemanager			 v1.4.0 \
-	cloud.google.com/go/channel				 v1.9.0 \
-	cloud.google.com/go/cloudbuild				 v1.4.0 \
-	cloud.google.com/go/clouddms				 v1.4.0 \
-	cloud.google.com/go/cloudtasks				 v1.8.0 \
-	cloud.google.com/go/compute				 v1.15.1 \
+	cloud.google.com/go					 v0.110.0 \
+	cloud.google.com/go/accessapproval			 v1.6.0 \
+	cloud.google.com/go/accesscontextmanager		 v1.7.0 \
+	cloud.google.com/go/aiplatform				 v1.37.0 \
+	cloud.google.com/go/analytics				 v0.19.0 \
+	cloud.google.com/go/apigateway				 v1.5.0 \
+	cloud.google.com/go/apigeeconnect			 v1.5.0 \
+	cloud.google.com/go/apigeeregistry			 v0.6.0 \
+	cloud.google.com/go/apikeys				 v0.6.0 \
+	cloud.google.com/go/appengine				 v1.7.1 \
+	cloud.google.com/go/area120				 v0.7.1 \
+	cloud.google.com/go/artifactregistry			 v1.13.0 \
+	cloud.google.com/go/asset				 v1.13.0 \
+	cloud.google.com/go/assuredworkloads			 v1.10.0 \
+	cloud.google.com/go/automl				 v1.12.0 \
+	cloud.google.com/go/baremetalsolution			 v0.5.0 \
+	cloud.google.com/go/batch				 v0.7.0 \
+	cloud.google.com/go/beyondcorp				 v0.5.0 \
+	cloud.google.com/go/bigquery				 v1.50.0 \
+	cloud.google.com/go/billing				 v1.13.0 \
+	cloud.google.com/go/binaryauthorization			 v1.5.0 \
+	cloud.google.com/go/certificatemanager			 v1.6.0 \
+	cloud.google.com/go/channel				 v1.12.0 \
+	cloud.google.com/go/cloudbuild				 v1.9.0 \
+	cloud.google.com/go/clouddms				 v1.5.0 \
+	cloud.google.com/go/cloudtasks				 v1.10.0 \
+	cloud.google.com/go/compute				 v1.19.1 \
 	cloud.google.com/go/compute/metadata			 v0.2.3 \
-	cloud.google.com/go/contactcenterinsights		 v1.4.0 \
-	cloud.google.com/go/container				 v1.7.0 \
-	cloud.google.com/go/containeranalysis			 v0.6.0 \
-	cloud.google.com/go/datacatalog				 v1.8.0 \
-	cloud.google.com/go/dataflow				 v0.7.0 \
-	cloud.google.com/go/dataform				 v0.5.0 \
-	cloud.google.com/go/datafusion				 v1.5.0 \
-	cloud.google.com/go/datalabeling			 v0.6.0 \
-	cloud.google.com/go/dataplex				 v1.4.0 \
-	cloud.google.com/go/dataproc				 v1.8.0 \
-	cloud.google.com/go/dataqna				 v0.6.0 \
-	cloud.google.com/go/datastore				 v1.10.0 \
-	cloud.google.com/go/datastream				 v1.5.0 \
-	cloud.google.com/go/deploy				 v1.5.0 \
-	cloud.google.com/go/dialogflow				 v1.19.0 \
-	cloud.google.com/go/dlp					 v1.7.0 \
-	cloud.google.com/go/documentai				 v1.10.0 \
-	cloud.google.com/go/domains				 v0.7.0 \
-	cloud.google.com/go/edgecontainer			 v0.2.0 \
+	cloud.google.com/go/contactcenterinsights		 v1.6.0 \
+	cloud.google.com/go/container				 v1.15.0 \
+	cloud.google.com/go/containeranalysis			 v0.9.0 \
+	cloud.google.com/go/datacatalog				 v1.13.0 \
+	cloud.google.com/go/dataflow				 v0.8.0 \
+	cloud.google.com/go/dataform				 v0.7.0 \
+	cloud.google.com/go/datafusion				 v1.6.0 \
+	cloud.google.com/go/datalabeling			 v0.7.0 \
+	cloud.google.com/go/dataplex				 v1.6.0 \
+	cloud.google.com/go/dataproc				 v1.12.0 \
+	cloud.google.com/go/dataqna				 v0.7.0 \
+	cloud.google.com/go/datastore				 v1.11.0 \
+	cloud.google.com/go/datastream				 v1.7.0 \
+	cloud.google.com/go/deploy				 v1.8.0 \
+	cloud.google.com/go/dialogflow				 v1.32.0 \
+	cloud.google.com/go/dlp					 v1.9.0 \
+	cloud.google.com/go/documentai				 v1.18.0 \
+	cloud.google.com/go/domains				 v0.8.0 \
+	cloud.google.com/go/edgecontainer			 v1.0.0 \
 	cloud.google.com/go/errorreporting			 v0.3.0 \
-	cloud.google.com/go/essentialcontacts			 v1.4.0 \
-	cloud.google.com/go/eventarc				 v1.8.0 \
-	cloud.google.com/go/filestore				 v1.4.0 \
+	cloud.google.com/go/essentialcontacts			 v1.5.0 \
+	cloud.google.com/go/eventarc				 v1.11.0 \
+	cloud.google.com/go/filestore				 v1.6.0 \
 	cloud.google.com/go/firestore				 v1.9.0 \
-	cloud.google.com/go/functions				 v1.9.0 \
-	cloud.google.com/go/gaming				 v1.8.0 \
-	cloud.google.com/go/gkebackup				 v0.3.0 \
-	cloud.google.com/go/gkeconnect				 v0.6.0 \
-	cloud.google.com/go/gkehub				 v0.10.0 \
-	cloud.google.com/go/gkemulticloud			 v0.4.0 \
-	cloud.google.com/go/gsuiteaddons			 v1.4.0 \
-	cloud.google.com/go/iam					 v0.8.0 \
-	cloud.google.com/go/iap					 v1.5.0 \
-	cloud.google.com/go/ids					 v1.2.0 \
-	cloud.google.com/go/iot					 v1.4.0 \
-	cloud.google.com/go/kms					 v1.6.0 \
-	cloud.google.com/go/language				 v1.8.0 \
-	cloud.google.com/go/lifesciences			 v0.6.0 \
-	cloud.google.com/go/logging				 v1.6.1 \
-	cloud.google.com/go/longrunning				 v0.3.0 \
-	cloud.google.com/go/managedidentities			 v1.4.0 \
-	cloud.google.com/go/maps				 v0.1.0 \
-	cloud.google.com/go/mediatranslation			 v0.6.0 \
-	cloud.google.com/go/memcache				 v1.7.0 \
-	cloud.google.com/go/metastore				 v1.8.0 \
-	cloud.google.com/go/monitoring				 v1.8.0 \
-	cloud.google.com/go/networkconnectivity			 v1.7.0 \
-	cloud.google.com/go/networkmanagement			 v1.5.0 \
-	cloud.google.com/go/networksecurity			 v0.6.0 \
-	cloud.google.com/go/notebooks				 v1.5.0 \
-	cloud.google.com/go/optimization			 v1.2.0 \
-	cloud.google.com/go/orchestration			 v1.4.0 \
-	cloud.google.com/go/orgpolicy				 v1.5.0 \
-	cloud.google.com/go/osconfig				 v1.10.0 \
-	cloud.google.com/go/oslogin				 v1.7.0 \
-	cloud.google.com/go/phishingprotection			 v0.6.0 \
-	cloud.google.com/go/policytroubleshooter		 v1.4.0 \
-	cloud.google.com/go/privatecatalog			 v0.6.0 \
-	cloud.google.com/go/pubsub				 v1.27.1 \
-	cloud.google.com/go/pubsublite				 v1.5.0 \
-	cloud.google.com/go/recaptchaenterprise/v2		 v2.5.0 \
-	cloud.google.com/go/recommendationengine		 v0.6.0 \
-	cloud.google.com/go/recommender				 v1.8.0 \
-	cloud.google.com/go/redis				 v1.10.0 \
-	cloud.google.com/go/resourcemanager			 v1.4.0 \
-	cloud.google.com/go/resourcesettings			 v1.4.0 \
-	cloud.google.com/go/retail				 v1.11.0 \
-	cloud.google.com/go/run					 v0.3.0 \
-	cloud.google.com/go/scheduler				 v1.7.0 \
-	cloud.google.com/go/secretmanager			 v1.9.0 \
-	cloud.google.com/go/security				 v1.10.0 \
-	cloud.google.com/go/securitycenter			 v1.16.0 \
-	cloud.google.com/go/servicecontrol			 v1.5.0 \
-	cloud.google.com/go/servicedirectory			 v1.7.0 \
-	cloud.google.com/go/servicemanagement			 v1.5.0 \
-	cloud.google.com/go/serviceusage			 v1.4.0 \
-	cloud.google.com/go/shell				 v1.4.0 \
-	cloud.google.com/go/spanner				 v1.41.0 \
-	cloud.google.com/go/speech				 v1.9.0 \
-	cloud.google.com/go/storagetransfer			 v1.6.0 \
-	cloud.google.com/go/talent				 v1.4.0 \
-	cloud.google.com/go/texttospeech			 v1.5.0 \
-	cloud.google.com/go/tpu					 v1.4.0 \
-	cloud.google.com/go/trace				 v1.4.0 \
-	cloud.google.com/go/translate				 v1.4.0 \
-	cloud.google.com/go/video				 v1.9.0 \
-	cloud.google.com/go/videointelligence			 v1.9.0 \
-	cloud.google.com/go/vision/v2				 v2.5.0 \
-	cloud.google.com/go/vmmigration				 v1.3.0 \
-	cloud.google.com/go/vmwareengine			 v0.1.0 \
-	cloud.google.com/go/vpcaccess				 v1.5.0 \
-	cloud.google.com/go/webrisk				 v1.7.0 \
-	cloud.google.com/go/websecurityscanner			 v1.4.0 \
-	cloud.google.com/go/workflows				 v1.9.0 \
+	cloud.google.com/go/functions				 v1.13.0 \
+	cloud.google.com/go/gaming				 v1.9.0 \
+	cloud.google.com/go/gkebackup				 v0.4.0 \
+	cloud.google.com/go/gkeconnect				 v0.7.0 \
+	cloud.google.com/go/gkehub				 v0.12.0 \
+	cloud.google.com/go/gkemulticloud			 v0.5.0 \
+	cloud.google.com/go/gsuiteaddons			 v1.5.0 \
+	cloud.google.com/go/iam					 v0.13.0 \
+	cloud.google.com/go/iap					 v1.7.1 \
+	cloud.google.com/go/ids					 v1.3.0 \
+	cloud.google.com/go/iot					 v1.6.0 \
+	cloud.google.com/go/kms					 v1.10.1 \
+	cloud.google.com/go/language				 v1.9.0 \
+	cloud.google.com/go/lifesciences			 v0.8.0 \
+	cloud.google.com/go/logging				 v1.7.0 \
+	cloud.google.com/go/longrunning				 v0.4.1 \
+	cloud.google.com/go/managedidentities			 v1.5.0 \
+	cloud.google.com/go/maps				 v0.7.0 \
+	cloud.google.com/go/mediatranslation			 v0.7.0 \
+	cloud.google.com/go/memcache				 v1.9.0 \
+	cloud.google.com/go/metastore				 v1.10.0 \
+	cloud.google.com/go/monitoring				 v1.13.0 \
+	cloud.google.com/go/networkconnectivity			 v1.11.0 \
+	cloud.google.com/go/networkmanagement			 v1.6.0 \
+	cloud.google.com/go/networksecurity			 v0.8.0 \
+	cloud.google.com/go/notebooks				 v1.8.0 \
+	cloud.google.com/go/optimization			 v1.3.1 \
+	cloud.google.com/go/orchestration			 v1.6.0 \
+	cloud.google.com/go/orgpolicy				 v1.10.0 \
+	cloud.google.com/go/osconfig				 v1.11.0 \
+	cloud.google.com/go/oslogin				 v1.9.0 \
+	cloud.google.com/go/phishingprotection			 v0.7.0 \
+	cloud.google.com/go/policytroubleshooter		 v1.6.0 \
+	cloud.google.com/go/privatecatalog			 v0.8.0 \
+	cloud.google.com/go/pubsub				 v1.30.0 \
+	cloud.google.com/go/pubsublite				 v1.7.0 \
+	cloud.google.com/go/recaptchaenterprise/v2		 v2.7.0 \
+	cloud.google.com/go/recommendationengine		 v0.7.0 \
+	cloud.google.com/go/recommender				 v1.9.0 \
+	cloud.google.com/go/redis				 v1.11.0 \
+	cloud.google.com/go/resourcemanager			 v1.7.0 \
+	cloud.google.com/go/resourcesettings			 v1.5.0 \
+	cloud.google.com/go/retail				 v1.12.0 \
+	cloud.google.com/go/run					 v0.9.0 \
+	cloud.google.com/go/scheduler				 v1.9.0 \
+	cloud.google.com/go/secretmanager			 v1.10.0 \
+	cloud.google.com/go/security				 v1.13.0 \
+	cloud.google.com/go/securitycenter			 v1.19.0 \
+	cloud.google.com/go/servicecontrol			 v1.11.1 \
+	cloud.google.com/go/servicedirectory			 v1.9.0 \
+	cloud.google.com/go/servicemanagement			 v1.8.0 \
+	cloud.google.com/go/serviceusage			 v1.6.0 \
+	cloud.google.com/go/shell				 v1.6.0 \
+	cloud.google.com/go/spanner				 v1.45.0 \
+	cloud.google.com/go/speech				 v1.15.0 \
+	cloud.google.com/go/storagetransfer			 v1.8.0 \
+	cloud.google.com/go/talent				 v1.5.0 \
+	cloud.google.com/go/texttospeech			 v1.6.0 \
+	cloud.google.com/go/tpu					 v1.5.0 \
+	cloud.google.com/go/trace				 v1.9.0 \
+	cloud.google.com/go/translate				 v1.7.0 \
+	cloud.google.com/go/video				 v1.15.0 \
+	cloud.google.com/go/videointelligence			 v1.10.0 \
+	cloud.google.com/go/vision/v2				 v2.7.0 \
+	cloud.google.com/go/vmmigration				 v1.6.0 \
+	cloud.google.com/go/vmwareengine			 v0.3.0 \
+	cloud.google.com/go/vpcaccess				 v1.6.0 \
+	cloud.google.com/go/webrisk				 v1.8.0 \
+	cloud.google.com/go/websecurityscanner			 v1.5.0 \
+	cloud.google.com/go/workflows				 v1.10.0 \
 	github.com/!alec!aivazis/survey/v2			 v2.3.7 \
 	github.com/!make!now!just/heredoc			 v1.0.0 \
 	github.com/!netflix/go-expect				 v0.0.0-20220104043353-73e0943537d2 \
@@ -134,28 +136,27 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash/v2				 v2.2.0 \
 	github.com/charmbracelet/glamour			 v0.6.0 \
 	github.com/charmbracelet/lipgloss			 v0.5.0 \
-	github.com/cli/browser					 v1.2.0 \
-	github.com/cli/crypto					 v0.0.0-20210929142629-6be313f59b03 \
-	github.com/cli/go-gh/v2					 v2.3.0 \
+	github.com/cli/browser					 v1.3.0 \
+	github.com/cli/go-gh/v2					 v2.4.1-0.20231024095351-47a83eeb1778 \
 	github.com/cli/oauth					 v1.0.1 \
 	github.com/cli/safeexec					 v1.0.1 \
-	github.com/cli/shurcoo!l-graphql			 v0.0.3 \
+	github.com/cli/shurcoo!l-graphql			 v0.0.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20220112060539-c52dc94e7fbe \
-	github.com/cncf/xds/go					 v0.0.0-20230105202645-06c439db220b \
-	github.com/cpuguy83/go-md2man/v2			 v2.0.2 \
-	github.com/creack/pty					 v1.1.18 \
+	github.com/cncf/xds/go					 v0.0.0-20230607035331-e9ce68804cb4 \
+	github.com/cpuguy83/go-md2man/v2			 v2.0.3 \
+	github.com/creack/pty					 v1.1.20 \
 	github.com/danieljoos/wincred				 v1.2.0 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/dlclark/regexp2				 v1.4.0 \
-	github.com/envoyproxy/go-control-plane			 v0.10.3 \
-	github.com/envoyproxy/protoc-gen-validate		 v0.9.1 \
+	github.com/envoyproxy/go-control-plane			 v0.11.1-0.20230524094728-9239064ad72f \
+	github.com/envoyproxy/protoc-gen-validate		 v0.10.1 \
 	github.com/fatih/color					 v1.7.0 \
 	github.com/gabriel-vasile/mimetype			 v1.4.3 \
 	github.com/gdamore/encoding				 v1.0.0 \
 	github.com/gdamore/tcell/v2				 v2.5.4 \
 	github.com/godbus/dbus/v5				 v5.1.0 \
-	github.com/golang/glog					 v1.0.0 \
-	github.com/golang/protobuf				 v1.5.2 \
+	github.com/golang/glog					 v1.1.0 \
+	github.com/golang/protobuf				 v1.5.3 \
 	github.com/google/go-cmp				 v0.5.9 \
 	github.com/google/shlex					 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/google/uuid					 v1.3.0 \
@@ -176,7 +177,7 @@ MODGO_MODULES =	\
 	github.com/kr/text					 v0.2.0 \
 	github.com/lucasb-eyer/go-colorful			 v1.2.0 \
 	github.com/mattn/go-colorable				 v0.1.13 \
-	github.com/mattn/go-isatty				 v0.0.19 \
+	github.com/mattn/go-isatty				 v0.0.20 \
 	github.com/mattn/go-runewidth				 v0.0.14 \
 	github.com/mgutz/ansi					 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday			 v1.0.26 \
@@ -205,7 +206,7 @@ MODGO_MODULES =	\
 	golang.org/x/crypto					 v0.14.0 \
 	golang.org/x/mod					 v0.8.0 \
 	golang.org/x/net					 v0.17.0 \
-	golang.org/x/oauth2					 v0.4.0 \
+	golang.org/x/oauth2					 v0.7.0 \
 	golang.org/x/sync					 v0.1.0 \
 	golang.org/x/sys					 v0.13.0 \
 	golang.org/x/term					 v0.13.0 \
@@ -213,18 +214,18 @@ MODGO_MODULES =	\
 	golang.org/x/tools					 v0.6.0 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
 	google.golang.org/appengine				 v1.6.7 \
-	google.golang.org/genproto				 v0.0.0-20230110181048-76db0878b65f \
-	google.golang.org/grpc					 v1.53.0 \
-	google.golang.org/protobuf				 v1.28.1 \
+	google.golang.org/genproto				 v0.0.0-20230410155749-daa745c078e1 \
+	google.golang.org/grpc					 v1.56.3 \
+	google.golang.org/protobuf				 v1.30.0 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/h2non/gock.v1					 v1.1.2 \
 	gopkg.in/yaml.v3					 v3.0.1
 
 MODGO_MODFILES =	\
-	cloud.google.com/go/compute		 v1.13.0 \
+	cloud.google.com/go/compute		 v1.19.0 \
 	github.com/cli/browser			 v1.0.0 \
-	github.com/cli/browser			 v1.1.0 \
 	github.com/cli/safeexec			 v1.0.0 \
+	github.com/cpuguy83/go-md2man/v2	 v2.0.2 \
 	github.com/creack/pty			 v1.1.17 \
 	github.com/creack/pty			 v1.1.9 \
 	github.com/davecgh/go-spew		 v1.1.0 \
@@ -236,6 +237,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-colorable		 v0.1.2 \
 	github.com/mattn/go-isatty		 v0.0.14 \
 	github.com/mattn/go-isatty		 v0.0.16 \
+	github.com/mattn/go-isatty		 v0.0.19 \
 	github.com/mattn/go-isatty		 v0.0.8 \
 	github.com/mattn/go-runewidth		 v0.0.10 \
 	github.com/mattn/go-runewidth		 v0.0.12 \
@@ -267,11 +269,10 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20211015210444-4f30a5c0130f \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
-	golang.org/x/net			 v0.0.0-20220923203811-8be639271d50 \
 	golang.org/x/net			 v0.0.0-20221002022538-bcab6841153b \
-	golang.org/x/net			 v0.0.0-20221014081412-f15817d10f9b \
-	golang.org/x/net			 v0.5.0 \
-	golang.org/x/net			 v0.7.0 \
+	golang.org/x/net			 v0.10.0 \
+	golang.org/x/net			 v0.8.0 \
+	golang.org/x/net			 v0.9.0 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync			 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
@@ -281,7 +282,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210309074719-68d13333faf2 \
 	golang.org/x/sys			 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
-	golang.org/x/sys			 v0.0.0-20210616045830-e2b7044e8c71 \
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys			 v0.0.0-20210831042530-f4d43177bf5e \
 	golang.org/x/sys			 v0.0.0-20211019181941-9d821ace8654 \
@@ -290,22 +290,21 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20220728004956-3c1f35247d10 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.1.0 \
-	golang.org/x/sys			 v0.4.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
+	golang.org/x/sys			 v0.7.0 \
 	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
-	golang.org/x/term			 v0.5.0 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.3 \
 	golang.org/x/text			 v0.3.6 \
 	golang.org/x/text			 v0.3.7 \
 	golang.org/x/text			 v0.4.0 \
 	golang.org/x/text			 v0.5.0 \
-	golang.org/x/text			 v0.6.0 \
-	golang.org/x/text			 v0.7.0 \
+	golang.org/x/text			 v0.8.0 \
+	golang.org/x/text			 v0.9.0 \
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools			 v0.1.10 \
@@ -313,7 +312,7 @@ MODGO_MODFILES =	\
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	golang.org/x/xerrors			 v0.0.0-20191011141410-1b5146add898 \
 	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
-	google.golang.org/grpc			 v1.51.0 \
+	google.golang.org/grpc			 v1.54.0 \
 	google.golang.org/protobuf		 v1.26.0 \
 	google.golang.org/protobuf		 v1.26.0-rc.1 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
