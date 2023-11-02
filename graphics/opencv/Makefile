@@ -4,15 +4,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.8.0
+V =			4.8.1
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-
-REVISION-main =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -22,7 +20,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 12.0
+SHARED_LIBS += $i 12.1
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_2 avcodec avformat avutil
