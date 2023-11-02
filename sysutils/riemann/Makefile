@@ -1,8 +1,7 @@
 COMMENT =	network event stream processing system
 
-V =		0.3.8
+V =		0.3.10
 DISTNAME =	riemann-${V}
-REVISION =	2
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://riemann.io
