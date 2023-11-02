@@ -1,0 +1,22 @@
+From deee944f9a12c9fd399ce52f3e2526bb573a9470 Mon Sep 17 00:00:00 2001
+From: Alex Rousskov <rousskov@measurement-factory.com>
+Date: Wed, 25 Oct 2023 19:41:45 +0000
+Subject: [PATCH 3/6] RFC 1123: Fix date parsing (#1538)
+
+Index: src/time/rfc1123.cc
+--- src/time/rfc1123.cc.orig
++++ src/time/rfc1123.cc
+@@ -50,7 +50,13 @@ make_month(const char *s)
+     char month[3];
+ 
+     month[0] = xtoupper(*s);
++    if (!month[0])
++        return -1; // protects *(s + 1) below
++
+     month[1] = xtolower(*(s + 1));
++    if (!month[1])
++        return -1; // protects *(s + 2) below
++
+     month[2] = xtolower(*(s + 2));
+ 
+     for (i = 0; i < 12; i++)

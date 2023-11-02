@@ -1,0 +1,17 @@
+From 2f3efe5d9e1c9444cb3f95fc09cbbf52985f37bf Mon Sep 17 00:00:00 2001
+From: Alex Rousskov <rousskov@measurement-factory.com>
+Date: Wed, 1 Nov 2023 03:16:12 +0000
+Subject: [PATCH 6/6] Remove mem_hdr::freeDataUpto() assertion (#1562)
+
+Index: src/stmem.cc
+--- src/stmem.cc.orig
++++ src/stmem.cc
+@@ -95,8 +95,6 @@ mem_hdr::freeDataUpto(int64_t target_offset)
+             break;
+     }
+ 
+-    assert (lowestOffset () <= target_offset);
+-
+     return lowestOffset ();
+ }
+ 

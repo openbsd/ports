@@ -1,9 +1,8 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		6.3
+V=		6.4
 EPOCH=		0
-REVISION=	0
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -26,7 +25,6 @@ COMMONLIB=	${COMPILER_LIBCXX} brotlidec brotlienc c execinfo \
 
 # repo at https://github.com/squid-cache/squid
 SITES=		${HOMEPAGE}Versions/v${V:R:R}/ \
-		http://static.squid-cache.org/Versions/v${V:R:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
 # C++17
