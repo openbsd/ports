@@ -1,0 +1,11 @@
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/iosevka-etoile-bold.ttc
+share/fonts/iosevka/iosevka-etoile-extrabold.ttc
+share/fonts/iosevka/iosevka-etoile-extralight.ttc
+share/fonts/iosevka/iosevka-etoile-heavy.ttc
+share/fonts/iosevka/iosevka-etoile-light.ttc
+share/fonts/iosevka/iosevka-etoile-medium.ttc
+share/fonts/iosevka/iosevka-etoile-regular.ttc
+share/fonts/iosevka/iosevka-etoile-semibold.ttc
+share/fonts/iosevka/iosevka-etoile-thin.ttc

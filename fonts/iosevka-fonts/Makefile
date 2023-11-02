@@ -14,6 +14,7 @@
 
 SUBDIR =
 SUBDIR += default
+SUBDIR += etoile
 SUBDIR += fixed-slab
 
 .include <bsd.port.subdir.mk>
