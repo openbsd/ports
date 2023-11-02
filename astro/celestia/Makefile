@@ -2,7 +2,7 @@ COMMENT=		free space simulator and planetarium
 
 GH_ACCOUNT=		CelestiaProject
 GH_PROJECT=		Celestia
-GH_TAGNAME=		1.6.3
+GH_TAGNAME=		1.6.4
 PKGNAME=		celestia-${GH_TAGNAME}
 
 CATEGORIES=		astro x11
