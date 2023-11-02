@@ -496,18 +496,18 @@ MODGO_MODULES =	\
 	go.uber.org/goleak							 v1.2.1 \
 	go.uber.org/multierr							 v1.6.0 \
 	go.uber.org/zap								 v1.17.0 \
-	golang.org/x/crypto							 v0.13.0 \
+	golang.org/x/crypto							 v0.14.0 \
 	golang.org/x/exp							 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/exp/typeparams						 v0.0.0-20221208152030-732eee02a75a \
 	golang.org/x/image							 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint							 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile							 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod							 v0.12.0 \
-	golang.org/x/net							 v0.15.0 \
+	golang.org/x/net							 v0.17.0 \
 	golang.org/x/oauth2							 v0.8.0 \
 	golang.org/x/sync							 v0.4.0 \
-	golang.org/x/sys							 v0.12.0 \
-	golang.org/x/term							 v0.12.0 \
+	golang.org/x/sys							 v0.13.0 \
+	golang.org/x/term							 v0.13.0 \
 	golang.org/x/text							 v0.13.0 \
 	golang.org/x/time							 v0.3.0 \
 	golang.org/x/tools							 v0.13.0 \
@@ -1201,6 +1201,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.1.0 \
 	golang.org/x/net						 v0.10.0 \
 	golang.org/x/net						 v0.11.0 \
+	golang.org/x/net						 v0.15.0 \
 	golang.org/x/net						 v0.2.0 \
 	golang.org/x/net						 v0.3.1-0.20221206200815-1e63c2f08a10 \
 	golang.org/x/net						 v0.5.0 \
@@ -1346,6 +1347,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys						 v0.1.0 \
 	golang.org/x/sys						 v0.11.0 \
+	golang.org/x/sys						 v0.12.0 \
 	golang.org/x/sys						 v0.2.0 \
 	golang.org/x/sys						 v0.3.0 \
 	golang.org/x/sys						 v0.4.0 \
