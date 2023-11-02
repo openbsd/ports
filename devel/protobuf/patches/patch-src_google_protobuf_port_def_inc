@@ -1,16 +1,17 @@
 Index: src/google/protobuf/port_def.inc
 --- src/google/protobuf/port_def.inc.orig
 +++ src/google/protobuf/port_def.inc
-@@ -334,7 +334,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
- #ifdef PROTOBUF_TAILCALL
- #error PROTOBUF_TAILCALL was previously defined
+@@ -299,7 +299,8 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
  #endif
--#if __has_cpp_attribute(clang::musttail) && !defined(__arm__) &&      \
-+#if __has_cpp_attribute(clang::musttail) && !defined(__arm__) && !defined(__mips64__) && \
+ #if ABSL_HAVE_CPP_ATTRIBUTE(clang::musttail) && !defined(__arm__) &&  \
      !defined(_ARCH_PPC) && !defined(__wasm__) &&                      \
-     !(defined(_MSC_VER) && defined(_M_IX86)) && !defined(__i386__) && \
-     !(defined(__NDK_MAJOR__) && __NDK_MAJOR <= 24)
-@@ -1004,7 +1004,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
+-    !(defined(_MSC_VER) && defined(_M_IX86)) && !defined(__i386__)
++    !(defined(_MSC_VER) && defined(_M_IX86)) && !defined(__i386__) && \
++    !defined(__mips64__)
+ // Compilation fails on ARM32: b/195943306
+ // Compilation fails on powerpc64le: b/187985113
+ // Compilation fails on X86 Windows:
+@@ -998,7 +999,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
  #undef FALSE
  #endif  // _WIN32
  

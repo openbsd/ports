@@ -1,5 +1,5 @@
 bin/protoc
-@bin bin/protoc-24.4.0
+@bin bin/protoc-25.0.0
 include/google/
 include/google/protobuf/
 include/google/protobuf/any.h
@@ -70,6 +70,7 @@ include/google/protobuf/compiler/java/file.h
 include/google/protobuf/compiler/java/generator.h
 include/google/protobuf/compiler/java/generator_factory.h
 include/google/protobuf/compiler/java/helpers.h
+include/google/protobuf/compiler/java/java_features.pb.h
 include/google/protobuf/compiler/java/kotlin_generator.h
 include/google/protobuf/compiler/java/map_field.h
 include/google/protobuf/compiler/java/map_field_lite.h
@@ -124,14 +125,20 @@ include/google/protobuf/compiler/ruby/
 include/google/protobuf/compiler/ruby/ruby_generator.h
 include/google/protobuf/compiler/rust/
 include/google/protobuf/compiler/rust/accessors/
+include/google/protobuf/compiler/rust/accessors/accessor_generator.h
 include/google/protobuf/compiler/rust/accessors/accessors.h
 include/google/protobuf/compiler/rust/context.h
 include/google/protobuf/compiler/rust/generator.h
 include/google/protobuf/compiler/rust/message.h
 include/google/protobuf/compiler/rust/naming.h
+include/google/protobuf/compiler/rust/oneof.h
+include/google/protobuf/compiler/rust/relative_path.h
 include/google/protobuf/compiler/scc.h
 include/google/protobuf/compiler/subprocess.h
+include/google/protobuf/compiler/versions.h
+include/google/protobuf/compiler/versions_suffix.h
 include/google/protobuf/compiler/zip_writer.h
+include/google/protobuf/cpp_edition_defaults.h
 include/google/protobuf/cpp_features.pb.h
 include/google/protobuf/cpp_features.proto
 include/google/protobuf/descriptor.h
@@ -192,7 +199,6 @@ include/google/protobuf/json/internal/zero_copy_buffered_stream.h
 include/google/protobuf/json/json.h
 include/google/protobuf/map.h
 include/google/protobuf/map_entry.h
-include/google/protobuf/map_entry_lite.h
 include/google/protobuf/map_field.h
 include/google/protobuf/map_field_inl.h
 include/google/protobuf/map_field_lite.h
@@ -246,6 +252,15 @@ include/google/protobuf/wire_format.h
 include/google/protobuf/wire_format_lite.h
 include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
+include/java/
+include/java/core/
+include/java/core/src/
+include/java/core/src/main/
+include/java/core/src/main/java/
+include/java/core/src/main/java/com/
+include/java/core/src/main/java/com/google/
+include/java/core/src/main/java/com/google/protobuf/
+include/java/core/src/main/java/com/google/protobuf/java_features.proto
 include/utf8_range.h
 include/utf8_validity.h
 lib/cmake/protobuf/
