@@ -5,6 +5,7 @@ DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
 CATEGORIES=	devel
 SITES=		https://www.libsdl.org/release/
+REVISION=	0
 
 SHARED_LIBS=	SDL2		0.14	# 2.28.1
 
@@ -46,7 +47,8 @@ CONFIGURE_ARGS+= --disable-alsa \
 		 --disable-wayland-shared \
 		 --disable-x11-shared
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_header_linux_input_h=no
 
 .if ${MACHINE_ARCH} == "hppa"
 CONFIGURE_ARGS+= --disable-atomic
