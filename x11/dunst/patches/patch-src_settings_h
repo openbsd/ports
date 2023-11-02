@@ -5,7 +5,7 @@ Index: src/settings.h
  
  #define LIST_END (-1)
  
-+enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
++enum mouse_button { BTN_LEFT=1, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
 +
  enum alignment { ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT };
  enum vertical_alignment { VERTICAL_TOP, VERTICAL_CENTER, VERTICAL_BOTTOM };
