@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.7
+DISTNAME =	homebank-5.7.1
 
 CATEGORIES =	productivity x11
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz
-WANTLIB += intl m ofx pango-1.0 pangocairo-1.0 pthread soup-2.4
+WANTLIB += intl m ofx pango-1.0 pangocairo-1.0 pthread soup-3.0
 
 SITES =		http://homebank.free.fr/public/sources/
 
@@ -23,7 +23,7 @@ MODULES =	textproc/intltool
 LIB_DEPENDS =	x11/gtk+3 \
 		devel/harfbuzz \
 		devel/libofx \
-		devel/libsoup
+		devel/libsoup3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
