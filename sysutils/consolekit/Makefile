@@ -4,7 +4,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils	
 
@@ -34,6 +34,8 @@ CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-pam-module \
 			--disable-libudev \
 			--with-pam-module-dir=${LOCALBASE}/lib/security \
+
+CONFIGURE_ENV +=	ac_cv_header_linux_input_h=no
 
 # needed for 'make check'
 CONFIGURE_ARGS +=	--enable-docbook-docs
