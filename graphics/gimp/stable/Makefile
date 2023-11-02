@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.34
 PKGSPEC =	gimp->=2,<2.99
-REVISION =	4
+REVISION =	5
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -101,6 +101,7 @@ CONFIGURE_ARGS+= \
 		--disable-check-update \
 		--enable-gimp-console \
 		--with-pdbgen \
+		--without-linux-input \
 		--without-alsa \
 		--without-webkit
 
