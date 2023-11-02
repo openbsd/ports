@@ -3,11 +3,10 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT-main=		International Components for Unicode
 COMMENT-wwwdata=	ICU data file for use with /var/www chroot jails
 
-VERSION=		73.2
+VERSION=		74.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME-main=		icu4c-${VERSION}
 PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
-REVISION-main=		0
 EPOCH-main=		0
 EPOCH-wwwdata=		0
 
@@ -16,7 +15,7 @@ EPOCH-wwwdata=		0
 # LDFLAGS); @lib and LIBicudata_VERSION must be added manually;
 # (see ports/infrastructure/lib/OpenBSD/FS2.pm)
 MAJ_V=			${VERSION:R}
-SO_VERSION=		22.1
+SO_VERSION=		22.2
 .for _lib in icudata icui18n icuio icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -37,6 +36,8 @@ WANTLIB-main=		c m pthread ${COMPILER_LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 SITES=			https://github.com/unicode-org/icu/releases/download/release-${VERSION:S/./-/g}/
+
+FIX_EXTRACT_PERMISSIONS=	Yes
 
 EXTRACT_SUFX=		.tgz
 
