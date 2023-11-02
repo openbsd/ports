@@ -2,7 +2,7 @@ COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.17.2282
+GH_TAGNAME =	3.17.2287
 
 CATEGORIES =	graphics
 
@@ -10,14 +10,14 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                6.0 # 3.3
+SHARED_LIBS +=  nomacsCore                6.1 # 3.3
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core
-WANTLIB += opencv_imgproc quazip1-qt5 raw tiff z
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets bz2 c exiv2 lcms2
+WANTLIB += m opencv_core opencv_imgproc quazip1-qt5 raw tiff z
 
 MODULES =		devel/cmake \
 			x11/qt5
