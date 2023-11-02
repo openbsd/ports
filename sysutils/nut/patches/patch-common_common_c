@@ -1,8 +1,8 @@
 Index: common/common.c
 --- common/common.c.orig
 +++ common/common.c
-@@ -535,6 +535,17 @@ const char * confpath(void)
- 	return path;
+@@ -1429,6 +1429,17 @@ const char * confpath(void)
+ 	return (path != NULL && *path != '\0') ? path : CONFPATH;
  }
  
 +/* return a config path for the CGIs so they can be kept seperate */

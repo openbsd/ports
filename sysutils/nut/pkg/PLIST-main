@@ -56,6 +56,7 @@
 @bin bin/riello_usb
 @bin bin/safenet
 @bin bin/skel
+@bin bin/sms_ser
 @bin bin/solis
 @bin bin/tripplite
 @bin bin/tripplite_usb
@@ -99,6 +100,15 @@ lib/pkgconfig/libnutclient.pc
 lib/pkgconfig/libnutclientstub.pc
 lib/pkgconfig/libnutscan.pc
 lib/pkgconfig/libupsclient.pc
+@comment lib/python2.7/
+@comment lib/python2.7/site-packages/
+@comment lib/python2.7/site-packages/PyNUT.py
+@comment lib/python2.7/site-packages/test_nutclient.py
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/PyNUT.py
+lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
+@bin libexec/sockdebug
 @man man/man3/libnutclient.3
 @man man/man3/libnutclient_commands.3
 @man man/man3/libnutclient_devices.3
@@ -139,7 +149,10 @@ lib/pkgconfig/libupsclient.pc
 @man man/man3/nutscan_add_option_to_device.3
 @man man/man3/nutscan_cidr_to_ip.3
 @man man/man3/nutscan_display_parsable.3
+@man man/man3/nutscan_display_sanity_check.3
+@man man/man3/nutscan_display_sanity_check_serial.3
 @man man/man3/nutscan_display_ups_conf.3
+@man man/man3/nutscan_display_ups_conf_with_sanity_check.3
 @man man/man3/nutscan_free_device.3
 @man man/man3/nutscan_get_serial_ports_list.3
 @man man/man3/nutscan_init.3
@@ -225,6 +238,8 @@ lib/pkgconfig/libupsclient.pc
 @man man/man8/riello_ser.8
 @man man/man8/riello_usb.8
 @man man/man8/safenet.8
+@man man/man8/sms_ser.8
+@man man/man8/sockdebug.8
 @man man/man8/solis.8
 @man man/man8/tripplite.8
 @man man/man8/tripplite_usb.8
@@ -252,16 +267,24 @@ share/doc/nut/
 share/doc/nut/AUTHORS
 share/doc/nut/COPYING
 share/doc/nut/ChangeLog
+share/doc/nut/ChangeLog.txt
+share/doc/nut/FAQ.txt
 share/doc/nut/INSTALL
-share/doc/nut/INSTALL.nut
+share/doc/nut/INSTALL.nut.adoc
+share/doc/nut/LICENSE-DCO
 share/doc/nut/LICENSE-GPL2
 share/doc/nut/LICENSE-GPL3
 share/doc/nut/MAINTAINERS
 share/doc/nut/NEWS
+share/doc/nut/NEWS.adoc
 share/doc/nut/README
-share/doc/nut/TODO
-share/doc/nut/UPGRADING
+share/doc/nut/README.adoc
+share/doc/nut/TODO.adoc
+share/doc/nut/UPGRADING.adoc
+share/doc/nut/acknowledgements.txt
+share/doc/nut/asciidoc.txt
 share/doc/nut/cables/
+share/doc/nut/cables.txt
 share/doc/nut/cables/Makefile
 share/doc/nut/cables/Makefile.am
 share/doc/nut/cables/Makefile.in
@@ -273,6 +296,20 @@ share/doc/nut/cables/mgeups.txt
 share/doc/nut/cables/powerware.txt
 share/doc/nut/cables/repotec.txt
 share/doc/nut/cables/sms.txt
+share/doc/nut/ci-farm-lxc-setup.txt
+share/doc/nut/config-notes.txt
+share/doc/nut/config-prereqs.txt
+share/doc/nut/configure.txt
+share/doc/nut/contact-closure.txt
+share/doc/nut/daisychain.txt
+share/doc/nut/design.txt
+share/doc/nut/developer-guide.txt
+share/doc/nut/developers.txt
+share/doc/nut/documentation.txt
+share/doc/nut/download.txt
+share/doc/nut/features.txt
+share/doc/nut/hid-subdrivers.txt
+share/doc/nut/history.txt
 share/doc/nut/images/
 share/doc/nut/images/advanced.png
 share/doc/nut/images/asciidoc.png
@@ -297,6 +334,24 @@ share/doc/nut/images/nut_layering.png
 share/doc/nut/images/old-cgi.png
 share/doc/nut/images/simple.png
 share/doc/nut/images/warning.png
+share/doc/nut/macros.txt
+share/doc/nut/net-protocol.txt
+share/doc/nut/new-clients.txt
+share/doc/nut/new-drivers.txt
+share/doc/nut/nut-names.txt
+share/doc/nut/nut-qa.txt
+share/doc/nut/nutdrv_qx-subdrivers.txt
+share/doc/nut/outlets.txt
+share/doc/nut/packager-guide.txt
+share/doc/nut/release-notes.txt
+share/doc/nut/scheduling.txt
+share/doc/nut/security.txt
+share/doc/nut/snmp-subdrivers.txt
+share/doc/nut/snmp.txt
+share/doc/nut/sock-protocol.txt
+share/doc/nut/solaris-usb.txt
+share/doc/nut/support.txt
+share/doc/nut/user-manual.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/nut/
 @sample ${SYSCONFDIR}/

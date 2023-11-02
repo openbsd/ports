@@ -1,12 +1,12 @@
 Index: conf/upsmon.conf.sample.in
 --- conf/upsmon.conf.sample.in.orig
 +++ conf/upsmon.conf.sample.in
-@@ -149,7 +149,7 @@ MINSUPPLIES 1
- # such as posting a message with 'logger' or 'wall' or 'mailx'. Do be careful
- # to plug the UPS back into the wall in a timely fashion.
+@@ -157,7 +157,7 @@ MINSUPPLIES 1
+ # Or use the old DOS 8.3 file name, like this:
+ # SHUTDOWNCMD "C:\\PROGRA~1\\SOMECO~1.bat -first_arg -second_arg"
  
 -SHUTDOWNCMD "/sbin/shutdown -h +0"
 +SHUTDOWNCMD "/sbin/shutdown -hp +0"
  
  # --------------------------------------------------------------------------
- # NOTIFYCMD <command>
+ # SHUTDOWNEXIT <boolean|num>

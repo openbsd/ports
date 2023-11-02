@@ -3,7 +3,7 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.0
+V=		2.8.1
 DISTNAME=	nut-${V}
 
 PKGNAME-main=	${PKGNAME}
@@ -11,15 +11,10 @@ PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
 PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
 
-REVISION-main=	1
-REVISION-snmp=	0
-REVISION-xml=	0
-REVISION-cgi=	1
-
-SHARED_LIBS +=	upsclient            4.0      # .4.0
-SHARED_LIBS +=	nutclient            0.0      # .0.0
-SHARED_LIBS +=	nutclientstub        0.0      # .1.0
-SHARED_LIBS +=	nutscan              2.0      # .1.0
+SHARED_LIBS +=	upsclient            4.0      # .6.1
+SHARED_LIBS +=	nutclient            1.0      # .2.2
+SHARED_LIBS +=	nutclientstub        1.0      # .1.1
+SHARED_LIBS +=	nutscan              2.1      # .2.2
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://networkupstools.org/
@@ -31,8 +26,9 @@ COMPILER=	base-clang ports-gcc base-gcc
 
 COMMON +=	c crypto pthread
 WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb-1.0
-WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z
-WANTLIB-snmp +=	${COMMON} m netsnmp
+WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z \
+		nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-snmp +=	${COMMON} m netsnmp ssl
 WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 
@@ -135,9 +131,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
 	cd ${WRKSRC}/docs; cp -R ../[A-LN-Z]* ../MAINTAINERS \
 	    cables images ${PREFIX}/share/doc/nut/
-	-cd ${WRKSRC}/docs; cp -R *html ${PREFIX}/share/doc/nut/
+	-cd ${WRKSRC}/docs; cp -R *txt ${PREFIX}/share/doc/nut/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/avahi/nut.service \
 	    ${PREFIX}/share/examples/nut
-	rm -r ${PREFIX}/share/nut/solaris-init
 
 .include <bsd.port.mk>

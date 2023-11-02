@@ -1,7 +1,7 @@
 Index: clients/Makefile.am
 --- clients/Makefile.am.orig
 +++ clients/Makefile.am
-@@ -55,10 +55,13 @@ upssched_LDADD = $(top_builddir)/common/libcommon.la $
+@@ -79,10 +79,13 @@ upssched_LDADD = $(top_builddir)/common/libcommonclien
  
  upsimage_cgi_SOURCES = upsimage.c upsclient.h upsimagearg.h cgilib.c cgilib.h
  upsimage_cgi_LDADD = $(LDADD) $(LIBGD_LDFLAGS)
@@ -13,5 +13,5 @@ Index: clients/Makefile.am
   upsimagearg.h cgilib.c cgilib.h
 +upsstats_cgi_LDFLAGS = $(LDFLAGS) -all-static
  
- # not LDADD.
+ # not LDADD... why?
  libupsclient_la_SOURCES = upsclient.c upsclient.h

@@ -1,16 +1,15 @@
 Index: conf/ups.conf.sample
 --- conf/ups.conf.sample.orig
 +++ conf/ups.conf.sample
-@@ -127,7 +127,7 @@ maxretry = 3
- #          apcsmart, bestups, and sec are some examples.
- #
+@@ -139,6 +139,7 @@ maxretry = 3
  #    port: REQUIRED.  The serial port where your UPS is connected.
--#          /dev/ttyS0 is usually the first port on Linux boxes, for example.
-+#          /dev/tty00 is usually the first port on OpenBSD boxes, for example.
- #
- # sdorder: OPTIONAL.  When you have multiple UPSes on your system, you
- #          usually need to turn them off in a certain order.  upsdrvctl
-@@ -181,11 +181,11 @@ maxretry = 3
+ #          For example:
+ #            /dev/ttyS0 is usually the first port on Linux boxes.
++#            /dev/tty00 is usually the first port on OpenBSD boxes.
+ #            "\\\\.\\COM1" is the first port on Windows boxes (note that
+ #                the backslash characters themselves must be escaped,
+ #                for the NUT configuration parser to yield "\\.\COM1").
+@@ -195,11 +196,11 @@ maxretry = 3
  # --------
  #
  # A simple example for a UPS called "powerpal" that uses the blazer_ser
@@ -24,7 +23,7 @@ Index: conf/ups.conf.sample
  #   desc = "Web server"
  #
  # If your UPS driver requires additional settings, you can specify them
-@@ -200,3 +200,17 @@ maxretry = 3
+@@ -214,3 +215,17 @@ maxretry = 3
  #
  # To find out if your driver supports any extra settings, start it with
  # the -h option and/or read the driver's documentation.
