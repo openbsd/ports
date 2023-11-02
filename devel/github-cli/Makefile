@@ -20,6 +20,8 @@ WANTLIB +=	c pthread
 MODULES =	lang/go
 MODGO_LDFLAGS +=	-X "${MODGO_MODNAME}/internal/build.Version=$V"
 
+PORTHOME =	${WRKDIR}
+
 do-test:
 	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
