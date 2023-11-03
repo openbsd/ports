@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.32 2023/08/21 00:34:03 sthen Exp $
+# $OpenBSD: config.site,v 1.33 2023/11/03 05:50:25 tb Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -69,7 +69,7 @@ ac_cv_decl_sys_errlist=${ac_cv_decl_sys_errlist=yes}
 ac_cv_decl_sys_nerr_def=${ac_cv_decl_sys_nerr_def=yes}	
 ac_cv_decl_sys_siglist=${ac_cv_decl_sys_siglist=yes}	
 ac_cv_decl_sys_siglist_def=${ac_cv_decl_sys_siglist_def=yes}	
-ac_cv_decl_syscall=${ac_cv_decl_syscall=yes}	
+#ac_cv_decl_syscall=${ac_cv_decl_syscall=no}	
 ac_cv_declared_select=${ac_cv_declared_select=yes}	
 ac_cv_declared_swab=${ac_cv_declared_swab=yes}	
 ac_cv_declared_timezone=${ac_cv_declared_timezone=yes}	
@@ -587,7 +587,7 @@ ac_cv_func_swapctl=${ac_cv_func_swapctl=yes}
 ac_cv_func_symlink=${ac_cv_func_symlink=yes}
 ac_cv_func_sync=${ac_cv_func_sync=yes}	
 ac_cv_func_sys_nerr=${ac_cv_func_sys_nerr=yes}	
-ac_cv_func_syscall=${ac_cv_func_syscall=yes}
+#ac_cv_func_syscall=${ac_cv_func_syscall=no}
 ac_cv_func_sysconf=${ac_cv_func_sysconf=yes}
 ac_cv_func_sysctl=${ac_cv_func_sysctl=yes}	
 ac_cv_func_syslog=${ac_cv_func_syslog=yes}
