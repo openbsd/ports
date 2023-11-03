@@ -5,18 +5,17 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.8.4
+V =			4.10.5
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		2
 
 DPB_PROPERTIES =	parallel
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
-SITES =	https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+SITES =			https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -28,10 +27,12 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # rlottie:	LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # cld3:		Apache 2.0
 # kcoreaddons:	LGPLv2.1+, GPLv2+
+# libprisma:	MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_bad_optional_access
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
+WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_bad_optional_access
 WANTLIB += absl_bad_variant_access absl_strings avcodec avfilter
 WANTLIB += avformat avutil c crypto dispatch gio-2.0 giomm-2.68
 WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg
@@ -54,34 +55,34 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/crc32c \
 			devel/fmt \
 			devel/gobject-introspection \
-			devel/microsoft-gsl \
 			devel/range-v3>=0.11.0p0 \
-			devel/tl-expected \
-			x11/qt6/qtdeclarative
+			devel/tl-expected
 
 # libtgvoip expects either ALSA or PulseAudio to be present, we build against
 # PulseAudio, but nothing in tdesktop then actually links against it.
 #
 # This should probably be patched out upstream so that libtgvoip builds with
 # OpenAL alone...
-BUILD_DEPENDS +=	audio/pulseaudio
+BUILD_DEPENDS +=	audio/pulseaudio \
+			devel/protobuf
 
 LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
 			audio/opus \
 			audio/rnnoise \
 			devel/abseil-cpp \
-			devel/glib2 \
-			devel/glibmm268>=2.76.0 \
+			devel/glib2>=2.78.0 \
+			devel/glibmm268 \
 			devel/libdispatch \
 			devel/libsigc++30 \
-			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20230501p1 \
+			net/tg_owt>=0.0.0.20231101 \
 			sysutils/xxhash \
 			textproc/hunspell \
-			x11/qt6/qtsvg
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtsvg \
+			x11/qt6/qtwayland
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic \
@@ -113,10 +114,13 @@ NO_TEST =		Yes
 NEEDED_BUNDLES +=	minizip
 
 # unported and required
-NEEDED_BUNDLES +=	cld3 rlottie tgcalls libtgvoip
+NEEDED_BUNDLES +=	cld3 rlottie tgcalls libtgvoip libprisma
 
 # exist under Qt5-only devel/kf5/
 NEEDED_BUNDLES +=	kcoreaddons
+
+# tdesktop 4.9.5 forced bundled GSL due to libstdc++ and CMake bugs
+NEEDED_BUNDLES +=	GSL
 
 post-patch:
 	# XXX fix the following on every source file

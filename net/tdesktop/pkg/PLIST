@@ -1,6 +1,7 @@
 @pkgpath net/tdesktop,qt6
 @bin bin/telegram-desktop
 share/applications/org.telegram.desktop.desktop
+share/dbus-1/services/org.telegram.desktop.service
 share/icons/hicolor/128x128/apps/telegram.png
 share/icons/hicolor/16x16/apps/telegram.png
 share/icons/hicolor/256x256/apps/telegram.png
