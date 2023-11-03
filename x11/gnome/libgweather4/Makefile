@@ -1,11 +1,10 @@
 COMMENT=		location, timezone and weather-lookup library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		4.2.0
+GNOME_VERSION=		4.4.0
 PKGNAME=		libgweather4-${GNOME_VERSION}
-REVISION=		0
 
-SHARED_LIBS += gweather-4                0.1 # 0.200.0
+SHARED_LIBS += gweather-4                0.1 # 0.400.0
 
 CATEGORIES=		net
 

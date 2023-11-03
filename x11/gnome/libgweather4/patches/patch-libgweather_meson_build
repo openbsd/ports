@@ -1,0 +1,14 @@
+XXX push upstream
+Needed for alloca(3).
+
+Index: libgweather/meson.build
+--- libgweather/meson.build.orig
++++ libgweather/meson.build
+@@ -1,6 +1,6 @@
+ add_project_arguments([
+   '-DGWEATHER_COMPILATION',
+-  '-D_XOPEN_SOURCE=700',
++  '-D_XOPEN_SOURCE_EXTENDED',
+   '-D_DEFAULT_SOURCE',
+ ], language: 'c')
+ 
