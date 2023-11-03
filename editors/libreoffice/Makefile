@@ -1,3 +1,4 @@
+BROKEN=		doesn't build with icu4c->=74.1
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
