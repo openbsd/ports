@@ -422,6 +422,7 @@ share/locale/hu/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/id/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/it/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/ja/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
+share/locale/ka/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/ko/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/lt/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
 share/locale/lv/LC_MESSAGES/goffice-${GNOME_VERSION}.mo
