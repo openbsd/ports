@@ -37,7 +37,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -3262,7 +3262,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3257,7 +3257,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -46,11 +46,11 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3322,6 +3322,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3317,6 +3317,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
 +    switches::kDisableUnveil,
+     switches::kDisableUseSharedImagesForPepperVideo,
      switches::kDisableV8IdleTasks,
      switches::kDisableVideoCaptureUseGpuMemoryBuffer,
-     switches::kDisableWebGLImageChromium,
