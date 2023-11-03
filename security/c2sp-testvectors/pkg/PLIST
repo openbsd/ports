@@ -1,5 +1,10 @@
 share/c2sp-testvectors/
 share/c2sp-testvectors/CODEOWNERS
+share/c2sp-testvectors/ML-KEM/
+share/c2sp-testvectors/ML-KEM/ML-KEM-1024.txt
+share/c2sp-testvectors/ML-KEM/ML-KEM-512.txt
+share/c2sp-testvectors/ML-KEM/ML-KEM-768.txt
+share/c2sp-testvectors/ML-KEM/README.md
 share/c2sp-testvectors/README.md
 share/c2sp-testvectors/age/
 share/c2sp-testvectors/age/README.md
