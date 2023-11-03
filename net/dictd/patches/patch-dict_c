@@ -1,0 +1,38 @@
+pledge dict(1)
+
+Index: dict.c
+--- dict.c.orig
++++ dict.c
+@@ -22,6 +22,7 @@
+ #include "parse.h"
+ #include "md5.h"
+ #include <stdarg.h>
++#include <unistd.h>
+ 
+ extern int         yy_flex_debug;
+        lst_List    dict_Servers;
+@@ -1375,6 +1376,11 @@ int main( int argc, char **argv )
+    dict_output = stdout;
+    dict_error  = stderr;
+ 
++#ifdef __OpenBSD__
++   if (pledge("stdio rpath inet dns", NULL) == -1)
++      err_fatal_errno(__func__, "pledge");
++#endif
++
+    maa_init (argv[0]);
+ 
+    dbg_register( DBG_VERBOSE, "verbose" );
+@@ -1462,6 +1468,12 @@ int main( int argc, char **argv )
+       if (dict_Servers) client_config_print( NULL, dict_Servers );
+       else              fprintf( stderr, "No configuration\n" );
+    }
++
++#ifdef __OpenBSD__
++   /* drop "rpath" after config file setup */
++   if (pledge("stdio inet dns", NULL) == -1)
++      err_fatal_errno(__func__, "pledge");
++#endif
+ 
+    if (optind < argc && !strncmp(argv[optind],"dict://",7)) {
+       char *p;
