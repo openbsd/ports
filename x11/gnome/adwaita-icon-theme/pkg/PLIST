@@ -11,6 +11,8 @@ share/icons/Adwaita/16x16/emblems/emblem-symbolic-link.png
 share/icons/Adwaita/16x16/emblems/emblem-synchronizing.png
 share/icons/Adwaita/16x16/emblems/emblem-unreadable.png
 share/icons/Adwaita/16x16/mimetypes/
+share/icons/Adwaita/16x16/mimetypes/application-certificate.png
+share/icons/Adwaita/16x16/mimetypes/application-x-addon.png
 share/icons/Adwaita/16x16/mimetypes/application-x-executable.png
 share/icons/Adwaita/16x16/mimetypes/application-x-firmware.png
 share/icons/Adwaita/16x16/mimetypes/application-x-generic.png
@@ -24,6 +26,7 @@ share/icons/Adwaita/16x16/mimetypes/package-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/text-html.png
 share/icons/Adwaita/16x16/mimetypes/text-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/text-x-preview.png
+share/icons/Adwaita/16x16/mimetypes/text-x-script.png
 share/icons/Adwaita/16x16/mimetypes/video-x-generic.png
 share/icons/Adwaita/16x16/mimetypes/x-office-addressbook.png
 share/icons/Adwaita/16x16/mimetypes/x-office-document-template.png
@@ -38,6 +41,7 @@ share/icons/Adwaita/16x16/places/
 share/icons/Adwaita/16x16/places/folder-bookmarks.png
 share/icons/Adwaita/16x16/places/folder-documents.png
 share/icons/Adwaita/16x16/places/folder-download.png
+share/icons/Adwaita/16x16/places/folder-drag-accept.png
 share/icons/Adwaita/16x16/places/folder-music.png
 share/icons/Adwaita/16x16/places/folder-pictures.png
 share/icons/Adwaita/16x16/places/folder-publicshare.png
@@ -78,7 +82,6 @@ share/icons/Adwaita/cursors/bottom_side
 share/icons/Adwaita/cursors/bottom_tee
 share/icons/Adwaita/cursors/c7088f0f3e6c8088236ef8e1e3e70000
 share/icons/Adwaita/cursors/cell
-share/icons/Adwaita/cursors/circle
 share/icons/Adwaita/cursors/col-resize
 share/icons/Adwaita/cursors/context-menu
 share/icons/Adwaita/cursors/copy
@@ -202,6 +205,7 @@ share/icons/Adwaita/scalable/devices/printer.svg
 share/icons/Adwaita/scalable/devices/scanner.svg
 share/icons/Adwaita/scalable/devices/video-display.svg
 share/icons/Adwaita/scalable/mimetypes/
+share/icons/Adwaita/scalable/mimetypes/application-certificate.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-addon.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-executable.svg
 share/icons/Adwaita/scalable/mimetypes/application-x-firmware.svg
@@ -231,6 +235,7 @@ share/icons/Adwaita/scalable/mimetypes/x-package-repository.svg
 share/icons/Adwaita/scalable/places/
 share/icons/Adwaita/scalable/places/folder-documents.svg
 share/icons/Adwaita/scalable/places/folder-download.svg
+share/icons/Adwaita/scalable/places/folder-drag-accept.svg
 share/icons/Adwaita/scalable/places/folder-music.svg
 share/icons/Adwaita/scalable/places/folder-pictures.svg
 share/icons/Adwaita/scalable/places/folder-publicshare.svg
@@ -246,6 +251,7 @@ share/icons/Adwaita/scalable/places/user-home.svg
 share/icons/Adwaita/scalable/places/user-trash.svg
 share/icons/Adwaita/scalable/status/
 share/icons/Adwaita/scalable/status/avatar-default.svg
+share/icons/Adwaita/scalable/status/folder-open.svg
 share/icons/Adwaita/scalable/status/image-loading.svg
 share/icons/Adwaita/scalable/status/image-missing.svg
 share/icons/Adwaita/scalable/status/user-trash-full.svg
@@ -640,6 +646,7 @@ share/icons/Adwaita/symbolic/mimetypes/x-office-spreadsheet-symbolic.svg
 share/icons/Adwaita/symbolic/places/
 share/icons/Adwaita/symbolic/places/folder-documents-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-download-symbolic.svg
+share/icons/Adwaita/symbolic/places/folder-drag-accept-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-music-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-pictures-symbolic.svg
 share/icons/Adwaita/symbolic/places/folder-publicshare-symbolic.svg
@@ -913,5 +920,10 @@ share/icons/Adwaita/symbolic/ui/window-maximize-symbolic.svg
 share/icons/Adwaita/symbolic/ui/window-minimize-symbolic.svg
 share/icons/Adwaita/symbolic/ui/window-new-symbolic.svg
 share/icons/Adwaita/symbolic/ui/window-restore-symbolic.svg
+share/licenses/
+share/licenses/adwaita-icon-theme/
+share/licenses/adwaita-icon-theme/COPYING
+share/licenses/adwaita-icon-theme/COPYING_CCBYSA3
+share/licenses/adwaita-icon-theme/COPYING_LGPL
 share/pkgconfig/adwaita-icon-theme.pc
 @tag gtk-update-icon-cache %D/share/icons/Adwaita
