@@ -1,6 +1,6 @@
 COMMENT=	fast POSIX-compliant awk
 
-DATE =		20230808
+DATE =		20231102
 DISTNAME=	mawk-1.3.4-${DATE}
 PKGNAME=	mawk-1.3.4.${DATE}
 
