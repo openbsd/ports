@@ -1,4 +1,4 @@
-SHA256 (alacritty-0.12.2.tar.gz) = KFtE0tLoMRirf+YdV1gRu4XV4hFHgIFxvQ5YPp55R0g=
+SHA256 (alacritty-0.12.3.tar.gz) = eCVjnZceVhsuo8xB4wtXzejhhaQA/uABhDu2NN9rKKs=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/android-activity-0.4.0.tar.gz) = QWWhrvcDIyAxtApuiQjC+eMU1JXxGqf5jbddOaSXzGo=
 SHA256 (cargo/android-properties-0.2.2.tar.gz) = /H6yCbFRjWu4eyg8IAlfUijs2kYNpwtE8IAlI96m2gQ=
@@ -159,7 +159,7 @@ SHA256 (cargo/signal-hook-registry-1.4.0.tar.gz) = 5R5zMo3ErAx8y9o6SU36A98d4vRgG
 SHA256 (cargo/slab-0.4.7.tar.gz) = RhSnayqL4AWMqp27r2bZiFJ9htADwRqU+9M112Ye3O8=
 SHA256 (cargo/slotmap-1.0.6.tar.gz) = 4eCOJh0Oj1xDEjt63z5MoWkNZVN3rJOgOyydPpjeE0I=
 SHA256 (cargo/smallvec-1.9.0.tar.gz) = L9DbdJWX2R/4Yv0dVeqH94VadEqEJaZGlbb8ojfR2tE=
-SHA256 (cargo/smithay-client-toolkit-0.16.0.tar.gz) = 8wfEfTLScV6y4OzlWJBXgg4OXnDQfCR9EGPoROEH9FQ=
+SHA256 (cargo/smithay-client-toolkit-0.16.1.tar.gz) = hwQn4wuPLL5kv0PsS4boj+ObCoSz8V79nJwtAgvIbrk=
 SHA256 (cargo/smithay-clipboard-0.6.6.tar.gz) = CjRchwofrgsbd5CF6BtR5hR2fCOek1A1iOVMWxf0sOg=
 SHA256 (cargo/spsc-buffer-0.1.1.tar.gz) = vmw/OcN6QoPuS0PRMRyCjy4fsFQeduoMsaKr2e8vWzs=
 SHA256 (cargo/strict-num-0.1.0.tar.gz) = nfZfIGmK7tJF793jYoprVZ6hI5u7hxrxtuO1jEE7K9E=
@@ -219,7 +219,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.42.1.tar.gz) = wQQPIhKF4X68y8JZH/3C1E7h+RhjJN
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHwWjk54gq3Oq+UcNBGM=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
-SHA256 (cargo/winit-0.28.6.tar.gz) = hm2z9xL/+6ddMb8M3s81fIrq/RWMW3q1HboqKy1H8ZY=
+SHA256 (cargo/winit-0.28.7.tar.gz) = lZbZC0U4T1KBOEqyBCJIdujov31YNm2beVrZmqmJS5Q=
 SHA256 (cargo/winreg-0.10.1.tar.gz) = gND04nLIXe8TlHY4CxL5rGCSZondLgHUkjIi9AWAhp0=
 SHA256 (cargo/wio-0.2.2.tar.gz) = XRKZMvRkSsI5bLRWOFy/nmO1swxujcSCC9yk6wggN6U=
 SHA256 (cargo/ws2_32-sys-0.2.1.tar.gz) = 1Zzv69DIkvot1t5YHpNzAdhVLLREic3/A1xhh8tj+l4=
@@ -231,7 +231,7 @@ SHA256 (cargo/xcursor-0.3.4.tar.gz) = RjcFpjMTzUMBGEOBxegELwp+m0u2NlPyFjEdSudGkL
 SHA256 (cargo/xdg-2.4.1.tar.gz) = DEWD21y9TEwDA98tFa+A8FOdtwP6HGiALUy70t0PiPY=
 SHA256 (cargo/xml-rs-0.8.4.tar.gz) = 0tfTlIYT91yY/ZMoz9zEWsxNNgZVKJ0KfU7JMTkiAKM=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SIZE (alacritty-0.12.2.tar.gz) = 1494051
+SIZE (alacritty-0.12.3.tar.gz) = 1494086
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/android-activity-0.4.0.tar.gz) = 235580
 SIZE (cargo/android-properties-0.2.2.tar.gz) = 4563
@@ -392,7 +392,7 @@ SIZE (cargo/signal-hook-registry-1.4.0.tar.gz) = 17912
 SIZE (cargo/slab-0.4.7.tar.gz) = 16647
 SIZE (cargo/slotmap-1.0.6.tar.gz) = 58954
 SIZE (cargo/smallvec-1.9.0.tar.gz) = 28396
-SIZE (cargo/smithay-client-toolkit-0.16.0.tar.gz) = 132020
+SIZE (cargo/smithay-client-toolkit-0.16.1.tar.gz) = 131081
 SIZE (cargo/smithay-clipboard-0.6.6.tar.gz) = 16797
 SIZE (cargo/spsc-buffer-0.1.1.tar.gz) = 3176
 SIZE (cargo/strict-num-0.1.0.tar.gz) = 4692
@@ -452,7 +452,7 @@ SIZE (cargo/windows_x86_64_gnu-0.42.1.tar.gz) = 697614
 SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
-SIZE (cargo/winit-0.28.6.tar.gz) = 407165
+SIZE (cargo/winit-0.28.7.tar.gz) = 407921
 SIZE (cargo/winreg-0.10.1.tar.gz) = 25725
 SIZE (cargo/wio-0.2.2.tar.gz) = 11214
 SIZE (cargo/ws2_32-sys-0.2.1.tar.gz) = 4697
