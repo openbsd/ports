@@ -170,8 +170,6 @@ share/help/C/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/C/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/C/gnome-help/figures/screenshot-tool.png
 share/help/C/gnome-help/figures/shell-activities-dash.png
-share/help/C/gnome-help/figures/shell-appmenu-classic.png
-share/help/C/gnome-help/figures/shell-appmenu-shell.png
 share/help/C/gnome-help/figures/shell-appts-classic.png
 share/help/C/gnome-help/figures/shell-appts.png
 share/help/C/gnome-help/figures/shell-exit-classic-expanded.png
@@ -681,8 +679,6 @@ share/help/as/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/as/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/as/gnome-help/figures/screenshot-tool.png
 share/help/as/gnome-help/figures/shell-activities-dash.png
-share/help/as/gnome-help/figures/shell-appmenu-classic.png
-share/help/as/gnome-help/figures/shell-appmenu-shell.png
 share/help/as/gnome-help/figures/shell-appts-classic.png
 share/help/as/gnome-help/figures/shell-appts.png
 share/help/as/gnome-help/figures/shell-exit-classic-expanded.png
@@ -1134,8 +1130,6 @@ share/help/ca/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ca/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ca/gnome-help/figures/screenshot-tool.png
 share/help/ca/gnome-help/figures/shell-activities-dash.png
-share/help/ca/gnome-help/figures/shell-appmenu-classic.png
-share/help/ca/gnome-help/figures/shell-appmenu-shell.png
 share/help/ca/gnome-help/figures/shell-appts-classic.png
 share/help/ca/gnome-help/figures/shell-appts.png
 share/help/ca/gnome-help/figures/shell-exit-classic-expanded.png
@@ -1645,8 +1639,6 @@ share/help/cs/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/cs/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/cs/gnome-help/figures/screenshot-tool.png
 share/help/cs/gnome-help/figures/shell-activities-dash.png
-share/help/cs/gnome-help/figures/shell-appmenu-classic.png
-share/help/cs/gnome-help/figures/shell-appmenu-shell.png
 share/help/cs/gnome-help/figures/shell-appts-classic.png
 share/help/cs/gnome-help/figures/shell-appts.png
 share/help/cs/gnome-help/figures/shell-exit-classic-expanded.png
@@ -2156,8 +2148,6 @@ share/help/da/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/da/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/da/gnome-help/figures/screenshot-tool.png
 share/help/da/gnome-help/figures/shell-activities-dash.png
-share/help/da/gnome-help/figures/shell-appmenu-classic.png
-share/help/da/gnome-help/figures/shell-appmenu-shell.png
 share/help/da/gnome-help/figures/shell-appts-classic.png
 share/help/da/gnome-help/figures/shell-appts.png
 share/help/da/gnome-help/figures/shell-exit-classic-expanded.png
@@ -2609,8 +2599,6 @@ share/help/de/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/de/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/de/gnome-help/figures/screenshot-tool.png
 share/help/de/gnome-help/figures/shell-activities-dash.png
-share/help/de/gnome-help/figures/shell-appmenu-classic.png
-share/help/de/gnome-help/figures/shell-appmenu-shell.png
 share/help/de/gnome-help/figures/shell-appts-classic.png
 share/help/de/gnome-help/figures/shell-appts.png
 share/help/de/gnome-help/figures/shell-exit-classic-expanded.png
@@ -3120,8 +3108,6 @@ share/help/el/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/el/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/el/gnome-help/figures/screenshot-tool.png
 share/help/el/gnome-help/figures/shell-activities-dash.png
-share/help/el/gnome-help/figures/shell-appmenu-classic.png
-share/help/el/gnome-help/figures/shell-appmenu-shell.png
 share/help/el/gnome-help/figures/shell-appts-classic.png
 share/help/el/gnome-help/figures/shell-appts.png
 share/help/el/gnome-help/figures/shell-exit-classic-expanded.png
@@ -3573,8 +3559,6 @@ share/help/es/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/es/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/es/gnome-help/figures/screenshot-tool.png
 share/help/es/gnome-help/figures/shell-activities-dash.png
-share/help/es/gnome-help/figures/shell-appmenu-classic.png
-share/help/es/gnome-help/figures/shell-appmenu-shell.png
 share/help/es/gnome-help/figures/shell-appts-classic.png
 share/help/es/gnome-help/figures/shell-appts.png
 share/help/es/gnome-help/figures/shell-exit-classic-expanded.png
@@ -4084,8 +4068,6 @@ share/help/fa/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fa/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fa/gnome-help/figures/screenshot-tool.png
 share/help/fa/gnome-help/figures/shell-activities-dash.png
-share/help/fa/gnome-help/figures/shell-appmenu-classic.png
-share/help/fa/gnome-help/figures/shell-appmenu-shell.png
 share/help/fa/gnome-help/figures/shell-appts-classic.png
 share/help/fa/gnome-help/figures/shell-appts.png
 share/help/fa/gnome-help/figures/shell-exit-classic-expanded.png
@@ -4595,8 +4577,6 @@ share/help/fi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fi/gnome-help/figures/screenshot-tool.png
 share/help/fi/gnome-help/figures/shell-activities-dash.png
-share/help/fi/gnome-help/figures/shell-appmenu-classic.png
-share/help/fi/gnome-help/figures/shell-appmenu-shell.png
 share/help/fi/gnome-help/figures/shell-appts-classic.png
 share/help/fi/gnome-help/figures/shell-appts.png
 share/help/fi/gnome-help/figures/shell-exit-classic-expanded.png
@@ -5048,8 +5028,6 @@ share/help/fr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/fr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/fr/gnome-help/figures/screenshot-tool.png
 share/help/fr/gnome-help/figures/shell-activities-dash.png
-share/help/fr/gnome-help/figures/shell-appmenu-classic.png
-share/help/fr/gnome-help/figures/shell-appmenu-shell.png
 share/help/fr/gnome-help/figures/shell-appts-classic.png
 share/help/fr/gnome-help/figures/shell-appts.png
 share/help/fr/gnome-help/figures/shell-exit-classic-expanded.png
@@ -5559,8 +5537,6 @@ share/help/gl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/gl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/gl/gnome-help/figures/screenshot-tool.png
 share/help/gl/gnome-help/figures/shell-activities-dash.png
-share/help/gl/gnome-help/figures/shell-appmenu-classic.png
-share/help/gl/gnome-help/figures/shell-appmenu-shell.png
 share/help/gl/gnome-help/figures/shell-appts-classic.png
 share/help/gl/gnome-help/figures/shell-appts.png
 share/help/gl/gnome-help/figures/shell-exit-classic-expanded.png
@@ -6070,8 +6046,6 @@ share/help/gu/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/gu/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/gu/gnome-help/figures/screenshot-tool.png
 share/help/gu/gnome-help/figures/shell-activities-dash.png
-share/help/gu/gnome-help/figures/shell-appmenu-classic.png
-share/help/gu/gnome-help/figures/shell-appmenu-shell.png
 share/help/gu/gnome-help/figures/shell-appts-classic.png
 share/help/gu/gnome-help/figures/shell-appts.png
 share/help/gu/gnome-help/figures/shell-exit-classic-expanded.png
@@ -6523,8 +6497,6 @@ share/help/he/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/he/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/he/gnome-help/figures/screenshot-tool.png
 share/help/he/gnome-help/figures/shell-activities-dash.png
-share/help/he/gnome-help/figures/shell-appmenu-classic.png
-share/help/he/gnome-help/figures/shell-appmenu-shell.png
 share/help/he/gnome-help/figures/shell-appts-classic.png
 share/help/he/gnome-help/figures/shell-appts.png
 share/help/he/gnome-help/figures/shell-exit-classic-expanded.png
@@ -6976,8 +6948,6 @@ share/help/hi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hi/gnome-help/figures/screenshot-tool.png
 share/help/hi/gnome-help/figures/shell-activities-dash.png
-share/help/hi/gnome-help/figures/shell-appmenu-classic.png
-share/help/hi/gnome-help/figures/shell-appmenu-shell.png
 share/help/hi/gnome-help/figures/shell-appts-classic.png
 share/help/hi/gnome-help/figures/shell-appts.png
 share/help/hi/gnome-help/figures/shell-exit-classic-expanded.png
@@ -7429,8 +7399,6 @@ share/help/hr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hr/gnome-help/figures/screenshot-tool.png
 share/help/hr/gnome-help/figures/shell-activities-dash.png
-share/help/hr/gnome-help/figures/shell-appmenu-classic.png
-share/help/hr/gnome-help/figures/shell-appmenu-shell.png
 share/help/hr/gnome-help/figures/shell-appts-classic.png
 share/help/hr/gnome-help/figures/shell-appts.png
 share/help/hr/gnome-help/figures/shell-exit-classic-expanded.png
@@ -7940,8 +7908,6 @@ share/help/hu/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/hu/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/hu/gnome-help/figures/screenshot-tool.png
 share/help/hu/gnome-help/figures/shell-activities-dash.png
-share/help/hu/gnome-help/figures/shell-appmenu-classic.png
-share/help/hu/gnome-help/figures/shell-appmenu-shell.png
 share/help/hu/gnome-help/figures/shell-appts-classic.png
 share/help/hu/gnome-help/figures/shell-appts.png
 share/help/hu/gnome-help/figures/shell-exit-classic-expanded.png
@@ -8451,8 +8417,6 @@ share/help/id/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/id/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/id/gnome-help/figures/screenshot-tool.png
 share/help/id/gnome-help/figures/shell-activities-dash.png
-share/help/id/gnome-help/figures/shell-appmenu-classic.png
-share/help/id/gnome-help/figures/shell-appmenu-shell.png
 share/help/id/gnome-help/figures/shell-appts-classic.png
 share/help/id/gnome-help/figures/shell-appts.png
 share/help/id/gnome-help/figures/shell-exit-classic-expanded.png
@@ -8962,8 +8926,6 @@ share/help/it/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/it/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/it/gnome-help/figures/screenshot-tool.png
 share/help/it/gnome-help/figures/shell-activities-dash.png
-share/help/it/gnome-help/figures/shell-appmenu-classic.png
-share/help/it/gnome-help/figures/shell-appmenu-shell.png
 share/help/it/gnome-help/figures/shell-appts-classic.png
 share/help/it/gnome-help/figures/shell-appts.png
 share/help/it/gnome-help/figures/shell-exit-classic-expanded.png
@@ -9415,8 +9377,6 @@ share/help/ja/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ja/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ja/gnome-help/figures/screenshot-tool.png
 share/help/ja/gnome-help/figures/shell-activities-dash.png
-share/help/ja/gnome-help/figures/shell-appmenu-classic.png
-share/help/ja/gnome-help/figures/shell-appmenu-shell.png
 share/help/ja/gnome-help/figures/shell-appts-classic.png
 share/help/ja/gnome-help/figures/shell-appts.png
 share/help/ja/gnome-help/figures/shell-exit-classic-expanded.png
@@ -9868,8 +9828,6 @@ share/help/kn/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/kn/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/kn/gnome-help/figures/screenshot-tool.png
 share/help/kn/gnome-help/figures/shell-activities-dash.png
-share/help/kn/gnome-help/figures/shell-appmenu-classic.png
-share/help/kn/gnome-help/figures/shell-appmenu-shell.png
 share/help/kn/gnome-help/figures/shell-appts-classic.png
 share/help/kn/gnome-help/figures/shell-appts.png
 share/help/kn/gnome-help/figures/shell-exit-classic-expanded.png
@@ -10321,8 +10279,6 @@ share/help/ko/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ko/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ko/gnome-help/figures/screenshot-tool.png
 share/help/ko/gnome-help/figures/shell-activities-dash.png
-share/help/ko/gnome-help/figures/shell-appmenu-classic.png
-share/help/ko/gnome-help/figures/shell-appmenu-shell.png
 share/help/ko/gnome-help/figures/shell-appts-classic.png
 share/help/ko/gnome-help/figures/shell-appts.png
 share/help/ko/gnome-help/figures/shell-exit-classic-expanded.png
@@ -10832,8 +10788,6 @@ share/help/lt/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/lt/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/lt/gnome-help/figures/screenshot-tool.png
 share/help/lt/gnome-help/figures/shell-activities-dash.png
-share/help/lt/gnome-help/figures/shell-appmenu-classic.png
-share/help/lt/gnome-help/figures/shell-appmenu-shell.png
 share/help/lt/gnome-help/figures/shell-appts-classic.png
 share/help/lt/gnome-help/figures/shell-appts.png
 share/help/lt/gnome-help/figures/shell-exit-classic-expanded.png
@@ -11285,8 +11239,6 @@ share/help/lv/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/lv/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/lv/gnome-help/figures/screenshot-tool.png
 share/help/lv/gnome-help/figures/shell-activities-dash.png
-share/help/lv/gnome-help/figures/shell-appmenu-classic.png
-share/help/lv/gnome-help/figures/shell-appmenu-shell.png
 share/help/lv/gnome-help/figures/shell-appts-classic.png
 share/help/lv/gnome-help/figures/shell-appts.png
 share/help/lv/gnome-help/figures/shell-exit-classic-expanded.png
@@ -11738,8 +11690,6 @@ share/help/mr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/mr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/mr/gnome-help/figures/screenshot-tool.png
 share/help/mr/gnome-help/figures/shell-activities-dash.png
-share/help/mr/gnome-help/figures/shell-appmenu-classic.png
-share/help/mr/gnome-help/figures/shell-appmenu-shell.png
 share/help/mr/gnome-help/figures/shell-appts-classic.png
 share/help/mr/gnome-help/figures/shell-appts.png
 share/help/mr/gnome-help/figures/shell-exit-classic-expanded.png
@@ -12191,8 +12141,6 @@ share/help/nl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/nl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/nl/gnome-help/figures/screenshot-tool.png
 share/help/nl/gnome-help/figures/shell-activities-dash.png
-share/help/nl/gnome-help/figures/shell-appmenu-classic.png
-share/help/nl/gnome-help/figures/shell-appmenu-shell.png
 share/help/nl/gnome-help/figures/shell-appts-classic.png
 share/help/nl/gnome-help/figures/shell-appts.png
 share/help/nl/gnome-help/figures/shell-exit-classic-expanded.png
@@ -12702,8 +12650,6 @@ share/help/pa/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pa/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pa/gnome-help/figures/screenshot-tool.png
 share/help/pa/gnome-help/figures/shell-activities-dash.png
-share/help/pa/gnome-help/figures/shell-appmenu-classic.png
-share/help/pa/gnome-help/figures/shell-appmenu-shell.png
 share/help/pa/gnome-help/figures/shell-appts-classic.png
 share/help/pa/gnome-help/figures/shell-appts.png
 share/help/pa/gnome-help/figures/shell-exit-classic-expanded.png
@@ -13155,8 +13101,6 @@ share/help/pl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pl/gnome-help/figures/screenshot-tool.png
 share/help/pl/gnome-help/figures/shell-activities-dash.png
-share/help/pl/gnome-help/figures/shell-appmenu-classic.png
-share/help/pl/gnome-help/figures/shell-appmenu-shell.png
 share/help/pl/gnome-help/figures/shell-appts-classic.png
 share/help/pl/gnome-help/figures/shell-appts.png
 share/help/pl/gnome-help/figures/shell-exit-classic-expanded.png
@@ -13608,8 +13552,6 @@ share/help/pt/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pt/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pt/gnome-help/figures/screenshot-tool.png
 share/help/pt/gnome-help/figures/shell-activities-dash.png
-share/help/pt/gnome-help/figures/shell-appmenu-classic.png
-share/help/pt/gnome-help/figures/shell-appmenu-shell.png
 share/help/pt/gnome-help/figures/shell-appts-classic.png
 share/help/pt/gnome-help/figures/shell-appts.png
 share/help/pt/gnome-help/figures/shell-exit-classic-expanded.png
@@ -14061,8 +14003,6 @@ share/help/pt_BR/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/pt_BR/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/pt_BR/gnome-help/figures/screenshot-tool.png
 share/help/pt_BR/gnome-help/figures/shell-activities-dash.png
-share/help/pt_BR/gnome-help/figures/shell-appmenu-classic.png
-share/help/pt_BR/gnome-help/figures/shell-appmenu-shell.png
 share/help/pt_BR/gnome-help/figures/shell-appts-classic.png
 share/help/pt_BR/gnome-help/figures/shell-appts.png
 share/help/pt_BR/gnome-help/figures/shell-exit-classic-expanded.png
@@ -14572,8 +14512,6 @@ share/help/ro/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ro/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ro/gnome-help/figures/screenshot-tool.png
 share/help/ro/gnome-help/figures/shell-activities-dash.png
-share/help/ro/gnome-help/figures/shell-appmenu-classic.png
-share/help/ro/gnome-help/figures/shell-appmenu-shell.png
 share/help/ro/gnome-help/figures/shell-appts-classic.png
 share/help/ro/gnome-help/figures/shell-appts.png
 share/help/ro/gnome-help/figures/shell-exit-classic-expanded.png
@@ -15025,8 +14963,6 @@ share/help/ru/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ru/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ru/gnome-help/figures/screenshot-tool.png
 share/help/ru/gnome-help/figures/shell-activities-dash.png
-share/help/ru/gnome-help/figures/shell-appmenu-classic.png
-share/help/ru/gnome-help/figures/shell-appmenu-shell.png
 share/help/ru/gnome-help/figures/shell-appts-classic.png
 share/help/ru/gnome-help/figures/shell-appts.png
 share/help/ru/gnome-help/figures/shell-exit-classic-expanded.png
@@ -15536,8 +15472,6 @@ share/help/sl/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sl/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sl/gnome-help/figures/screenshot-tool.png
 share/help/sl/gnome-help/figures/shell-activities-dash.png
-share/help/sl/gnome-help/figures/shell-appmenu-classic.png
-share/help/sl/gnome-help/figures/shell-appmenu-shell.png
 share/help/sl/gnome-help/figures/shell-appts-classic.png
 share/help/sl/gnome-help/figures/shell-appts.png
 share/help/sl/gnome-help/figures/shell-exit-classic-expanded.png
@@ -15989,8 +15923,6 @@ share/help/sr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sr/gnome-help/figures/screenshot-tool.png
 share/help/sr/gnome-help/figures/shell-activities-dash.png
-share/help/sr/gnome-help/figures/shell-appmenu-classic.png
-share/help/sr/gnome-help/figures/shell-appmenu-shell.png
 share/help/sr/gnome-help/figures/shell-appts-classic.png
 share/help/sr/gnome-help/figures/shell-appts.png
 share/help/sr/gnome-help/figures/shell-exit-classic-expanded.png
@@ -16442,8 +16374,6 @@ share/help/sr@latin/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sr@latin/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sr@latin/gnome-help/figures/screenshot-tool.png
 share/help/sr@latin/gnome-help/figures/shell-activities-dash.png
-share/help/sr@latin/gnome-help/figures/shell-appmenu-classic.png
-share/help/sr@latin/gnome-help/figures/shell-appmenu-shell.png
 share/help/sr@latin/gnome-help/figures/shell-appts-classic.png
 share/help/sr@latin/gnome-help/figures/shell-appts.png
 share/help/sr@latin/gnome-help/figures/shell-exit-classic-expanded.png
@@ -16895,8 +16825,6 @@ share/help/sv/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/sv/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/sv/gnome-help/figures/screenshot-tool.png
 share/help/sv/gnome-help/figures/shell-activities-dash.png
-share/help/sv/gnome-help/figures/shell-appmenu-classic.png
-share/help/sv/gnome-help/figures/shell-appmenu-shell.png
 share/help/sv/gnome-help/figures/shell-appts-classic.png
 share/help/sv/gnome-help/figures/shell-appts.png
 share/help/sv/gnome-help/figures/shell-exit-classic-expanded.png
@@ -17406,8 +17334,6 @@ share/help/ta/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/ta/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/ta/gnome-help/figures/screenshot-tool.png
 share/help/ta/gnome-help/figures/shell-activities-dash.png
-share/help/ta/gnome-help/figures/shell-appmenu-classic.png
-share/help/ta/gnome-help/figures/shell-appmenu-shell.png
 share/help/ta/gnome-help/figures/shell-appts-classic.png
 share/help/ta/gnome-help/figures/shell-appts.png
 share/help/ta/gnome-help/figures/shell-exit-classic-expanded.png
@@ -17859,8 +17785,6 @@ share/help/te/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/te/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/te/gnome-help/figures/screenshot-tool.png
 share/help/te/gnome-help/figures/shell-activities-dash.png
-share/help/te/gnome-help/figures/shell-appmenu-classic.png
-share/help/te/gnome-help/figures/shell-appmenu-shell.png
 share/help/te/gnome-help/figures/shell-appts-classic.png
 share/help/te/gnome-help/figures/shell-appts.png
 share/help/te/gnome-help/figures/shell-exit-classic-expanded.png
@@ -18312,8 +18236,6 @@ share/help/tr/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/tr/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/tr/gnome-help/figures/screenshot-tool.png
 share/help/tr/gnome-help/figures/shell-activities-dash.png
-share/help/tr/gnome-help/figures/shell-appmenu-classic.png
-share/help/tr/gnome-help/figures/shell-appmenu-shell.png
 share/help/tr/gnome-help/figures/shell-appts-classic.png
 share/help/tr/gnome-help/figures/shell-appts.png
 share/help/tr/gnome-help/figures/shell-exit-classic-expanded.png
@@ -18823,8 +18745,6 @@ share/help/uk/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/uk/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/uk/gnome-help/figures/screenshot-tool.png
 share/help/uk/gnome-help/figures/shell-activities-dash.png
-share/help/uk/gnome-help/figures/shell-appmenu-classic.png
-share/help/uk/gnome-help/figures/shell-appmenu-shell.png
 share/help/uk/gnome-help/figures/shell-appts-classic.png
 share/help/uk/gnome-help/figures/shell-appts.png
 share/help/uk/gnome-help/figures/shell-exit-classic-expanded.png
@@ -19334,8 +19254,6 @@ share/help/vi/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/vi/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/vi/gnome-help/figures/screenshot-tool.png
 share/help/vi/gnome-help/figures/shell-activities-dash.png
-share/help/vi/gnome-help/figures/shell-appmenu-classic.png
-share/help/vi/gnome-help/figures/shell-appmenu-shell.png
 share/help/vi/gnome-help/figures/shell-appts-classic.png
 share/help/vi/gnome-help/figures/shell-appts.png
 share/help/vi/gnome-help/figures/shell-exit-classic-expanded.png
@@ -19787,8 +19705,6 @@ share/help/zh_CN/gnome-help/figures/rotation-allowed-symbolic.svg
 share/help/zh_CN/gnome-help/figures/rotation-locked-symbolic.svg
 share/help/zh_CN/gnome-help/figures/screenshot-tool.png
 share/help/zh_CN/gnome-help/figures/shell-activities-dash.png
-share/help/zh_CN/gnome-help/figures/shell-appmenu-classic.png
-share/help/zh_CN/gnome-help/figures/shell-appmenu-shell.png
 share/help/zh_CN/gnome-help/figures/shell-appts-classic.png
 share/help/zh_CN/gnome-help/figures/shell-appts.png
 share/help/zh_CN/gnome-help/figures/shell-exit-classic-expanded.png
