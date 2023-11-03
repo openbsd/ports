@@ -1,4 +1,3 @@
-BROKEN=		doesn't build with icu4c->=74.1
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
@@ -31,6 +30,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
