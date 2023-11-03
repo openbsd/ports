@@ -5,7 +5,7 @@ COMMENT =		kart racing game with OSS mascots
 V =			1.4
 DISTNAME =		SuperTuxKart-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -17,7 +17,7 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto curl freetype harfbuzz
-WANTLIB += jpeg m openal png sqlite3 vorbisfile z
+WANTLIB += jpeg m openal png shaderc_shared sqlite3 vorbisfile z
 
 SITES =		https://github.com/supertuxkart/stk-code/releases/download/$V/
 EXTRACT_SUFX =		-src.tar.xz
@@ -39,7 +39,8 @@ LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			devel/sdl2 \
 			net/curl \
 			graphics/png \
-			graphics/jpeg
+			graphics/jpeg \
+			graphics/shaderc
 
 CONFIGURE_ARGS +=	-DUSE_WIIUSE=OFF \
 			-DUSE_DNS_C=ON \
