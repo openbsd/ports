@@ -1,6 +1,7 @@
 COMMENT =	TeX engine for ConTeXt
 
 V =		2.10.08
+REVISION =	0
 PKGNAME =	luametatex-${V}
 
 GH_ACCOUNT =	contextgarden
