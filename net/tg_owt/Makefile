@@ -13,7 +13,6 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		71cce98c5fb1d9328892d55f70db711afd5b1aef
 DISTNAME =		${GH_PROJECT}-0.0.0.20231101
-DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -26,9 +25,8 @@ DIST_SUBDIR =		tg_owt
 # https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
-SITES.libyuv =		https://github.com/klemensn/libyuv/archive/
-LIBYUV_COMMIT =		3aae5c7fb15452a2c708db8353041f55dc15e116
-DISTFILES.libyuv =	libyuv-20230918-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}
+DIST_TUPLE =		github	klemensn	libyuv \
+			3aae5c7fb15452a2c708db8353041f55dc15e116	.
 
 SITES.tg_owt =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
@@ -110,9 +108,6 @@ NEEDED_BUNDLES +=	libyuv pffft
 THIRD_SRC =		${WRKSRC}/src/third_party
 
 post-extract:
-	# hook up prefetched submodules
-	rmdir ${THIRD_SRC}/libyuv
-	mv ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
 	# All bundles:
 	@cd ${THIRD_SRC}/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
