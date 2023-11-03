@@ -4,7 +4,7 @@ V=			4.9.1
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -16,9 +16,6 @@ PERMIT_PACKAGE=		Yes
 WANTLIB+=		${COMPILER_LIBCXX} boost_context-mt boost_filesystem-mt
 WANTLIB+=		boost_system-mt boost_thread-mt c crypto curl fstrm m
 WANTLIB+=		sodium ssl z
-
-# boost_context 1.80.0 doesn't have landing pads (1.81.0 should fix)
-USE_NOBTCFI=		Yes
 
 SITES=			https://downloads.powerdns.com/releases/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
@@ -46,7 +43,8 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 USE_GMAKE=		Yes
 
-CONFIGURE_ARGS+=	--disable-botan \
+CONFIGURE_ARGS+=	--disable-hardening \
+			--disable-botan \
 			--disable-libdecaf \
 			--enable-dns-over-tls \
 			--enable-dnstap \
