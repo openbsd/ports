@@ -341,7 +341,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gnm.py
 @man man/man1/ssdiff.1
 @man man/man1/ssgrep.1
 @man man/man1/ssindex.1
-share/applications/gnumeric.desktop
+share/applications/org.gnumeric.gnumeric.desktop
 share/gir-1.0/Gnm-${GNUMERIC_API_VERSION}.gir
 share/glib-2.0/schemas/org.gnome.gnumeric.dialogs.gschema.xml
 share/glib-2.0/schemas/org.gnome.gnumeric.gschema.xml
@@ -2239,12 +2239,12 @@ share/help/sv/gnumeric/figures/worksheet-rows-1.png
 share/help/sv/gnumeric/figures/worksheet-running-calc-1.png
 share/help/sv/gnumeric/gnumeric.xml
 share/help/sv/gnumeric/index.docbook
-share/icons/hicolor/16x16/apps/gnumeric.png
-share/icons/hicolor/22x22/apps/gnumeric.png
-share/icons/hicolor/24x24/apps/gnumeric.png
-share/icons/hicolor/256x256/apps/gnumeric.png
-share/icons/hicolor/32x32/apps/gnumeric.png
-share/icons/hicolor/48x48/apps/gnumeric.png
+share/icons/hicolor/16x16/apps/org.gnumeric.gnumeric.png
+share/icons/hicolor/22x22/apps/org.gnumeric.gnumeric.png
+share/icons/hicolor/24x24/apps/org.gnumeric.gnumeric.png
+share/icons/hicolor/256x256/apps/org.gnumeric.gnumeric.png
+share/icons/hicolor/32x32/apps/org.gnumeric.gnumeric.png
+share/icons/hicolor/48x48/apps/org.gnumeric.gnumeric.png
 share/locale/am/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/am/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/ar/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
@@ -2367,7 +2367,7 @@ share/locale/zh_HK/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/zh_HK/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
-share/metainfo/gnumeric.appdata.xml
+share/metainfo/org.gnumeric.gnumeric.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
