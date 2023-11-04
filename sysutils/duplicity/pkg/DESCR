@@ -15,15 +15,18 @@ additional dependencies (some are available in packages, some not).
 For S3, "pkg_add py3-boto3" and use the URL boto3+s3://bucket/subdir.
 
 Some other options are:
-# azure
-# b2sdk
-# dropbox==6.9.0
-# gdata
-# jottalib
-# mediafire
-# pydrive
-# pyrax
-# python-cloudfiles
-# python-swiftclient
-# requests_oauthlib
-# urllib3
+azure-storage-blob
+boto3
+botocore
+boxsdk[jwt]
+dropbox
+gdata-python3
+google-api-python-client
+google-auth-oauthlib
+mediafire
+megatools
+pydrive2
+pyrax
+python-swiftclient
+python-keystoneclient
+requests-oauthlib

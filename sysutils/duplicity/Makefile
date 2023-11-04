@@ -1,6 +1,6 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	2.1.4
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -10,9 +10,9 @@ HOMEPAGE =		https://www.nongnu.org/duplicity/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += rsync
+SITES =			https://gitlab.com/duplicity/duplicity/uploads/490b3b4bfe0c4c5b9513b121fef78946/
 
-SITES =			${SITE_SAVANNAH:=duplicity/}
+WANTLIB += rsync
 
 MODULES =		lang/python
 
@@ -43,6 +43,6 @@ TEST_DEPENDS =		archivers/gtar \
 
 MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
 
-MODPY_ADJ_FILES =	bin/duplicity bin/rdiffdir
+MODPY_ADJ_FILES =	bin/duplicity
 
 .include <bsd.port.mk>
