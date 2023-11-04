@@ -20,8 +20,6 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		devel/libpeas \
@@ -37,6 +35,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
