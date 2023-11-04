@@ -1,7 +1,7 @@
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		44.0
+GNOME_VERSION=		45.0.2
 
 CATEGORIES=		sysutils
 
@@ -36,6 +36,6 @@ MODGNOME_TOOLS=		desktop-file-utils yelp
 
 CONFIGURE_ARGS=		-Dsystemd=false
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
