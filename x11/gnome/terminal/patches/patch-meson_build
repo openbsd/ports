@@ -1,10 +1,12 @@
 In file included from ../gnome-terminal-3.46.4/src/terminal-screen.cc:36:
 /usr/include/sys/sysctl.h:499:2: error: unknown type name 'u_long'
 
+XXX push upstream
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -162,7 +162,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
+@@ -163,7 +163,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
  # Enable libc features
  
  libc_feature_defines = [
@@ -13,3 +15,16 @@ Index: meson.build
    ['_POSIX_C_SOURCE', '200809L'],
    ['_XOPEN_SOURCE', '700'],
    ['_XOPEN_SOURCE_EXTENDED', '1'],
+@@ -229,7 +229,11 @@ assert(get_option('b_lto') == false, 'LTO not supporte
+ 
+ # Check for functions
+ 
+-libdl_dep = cxx.find_library('dl')
++if build_machine.system() == 'openbsd'
++  libdl_dep = []
++else
++  libdl_dep = cxx.find_library('dl')
++endif
+ 
+ check_dl_functions_required = [
+   'dlsym',
