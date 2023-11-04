@@ -1,6 +1,6 @@
 COMMENT =	USB Chip/Smart Card Interface Devices driver
 
-DISTNAME =	ccid-1.5.2
+DISTNAME =	ccid-1.5.4
 
 CATEGORIES =	security
 
