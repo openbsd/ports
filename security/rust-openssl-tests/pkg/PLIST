@@ -1016,6 +1016,14 @@ share/rust-openssl-tests/modcargo-crates/${VER_libloading}/tests/markers.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libloading}/tests/nagisa32.dll
 share/rust-openssl-tests/modcargo-crates/${VER_libloading}/tests/nagisa64.dll
 share/rust-openssl-tests/modcargo-crates/${VER_libloading}/tests/windows.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/.cargo-checksum.json
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/.gitignore
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/Cargo.toml
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/Cargo.toml.orig
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/LICENSE
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/src/
+share/rust-openssl-tests/modcargo-crates/${VER_libredox}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_linux-raw-sys}/
 share/rust-openssl-tests/modcargo-crates/${VER_linux-raw-sys}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_linux-raw-sys}/CODE_OF_CONDUCT.md
@@ -1632,7 +1640,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/arch/riscv64.r
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/arch/x86.rs
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/arch/x86_64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/call.rs
-share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/daemon.rs
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/data.rs
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/error.rs
 share/rust-openssl-tests/modcargo-crates/${VER_redox_syscall}/src/flag.rs
