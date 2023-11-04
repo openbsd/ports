@@ -1,2 +1,24 @@
 @bin bin/pv
 @man man/man1/pv.1
+share/doc/pv/
+share/doc/pv/ACKNOWLEDGEMENTS.md
+share/doc/pv/COPYING
+share/doc/pv/DEVELOPERS.md
+share/doc/pv/INSTALL
+share/doc/pv/NEWS.md
+share/doc/pv/README.md
+share/doc/pv/TODO.md
+share/doc/pv/benchmark.sh
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/pv.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/pv.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/pv.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
+share/locale/pt/LC_MESSAGES/pv.mo

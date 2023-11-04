@@ -1,6 +1,6 @@
 COMMENT =		monitor the progress of data through a pipeline
 
-DISTNAME =		pv-1.6.20
+DISTNAME =		pv-1.8.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.ivarch.com/programs/pv.shtml
@@ -10,8 +10,11 @@ PERMIT_PACKAGE=	Yes
 
 SITES =			https://www.ivarch.com/programs/sources/
 
-WANTLIB =		c
+WANTLIB =		c iconv intl
 
 CONFIGURE_STYLE =	gnu
+
+LIB_DEPENDS =		converters/libiconv \
+			devel/gettext,-runtime
 
 .include <bsd.port.mk>
