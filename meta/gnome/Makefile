@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=		-main -extras
@@ -79,12 +81,11 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/music \
 			x11/gnome/nautilus \
 			x11/gnome/photos \
+			x11/gnome/system-monitor \
 			x11/gnome/text-editor \
 			x11/gnome/totem \
 			x11/gnome/weather \
 			x11/gnome/yelp
-# replacement for gnome-system-monitor
-RUN_DEPENDS-main +=	x11/gnome/usage
 
 RUN_DEPENDS-extras +=	graphics/simple-scan \
 			www/epiphany \
