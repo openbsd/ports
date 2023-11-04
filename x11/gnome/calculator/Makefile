@@ -1,8 +1,7 @@
 COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
-GNOME_VERSION=		44.0
-REVISION=		0
+GNOME_VERSION=		45.0.2
 
 CATEGORIES=		math
 
