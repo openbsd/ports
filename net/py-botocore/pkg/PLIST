@@ -1430,6 +1430,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2015-03-31/example
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2015-03-31/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2015-03-31/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lambda/2015-03-31/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/launch-wizard/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/2017-04-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/lex-models/2017-04-19/endpoint-rule-set-1.json
