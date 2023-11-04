@@ -1,0 +1,18 @@
+XXX needs fuse3
+REVERT:
+From 62fc62c5ccb7634f0bc87c57a4673877c24c94ed Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Sat, 16 Sep 2023 21:59:54 +0200
+Subject: [PATCH] clipboard: Do not copy pasted files twice
+
+Index: subprojects/gtk-frdp/src/meson.build
+--- subprojects/gtk-frdp/src/meson.build.orig
++++ subprojects/gtk-frdp/src/meson.build
+@@ -56,7 +56,6 @@ gtk_frdp_deps = [
+   dependency('freerdp-client2'),
+   dependency('gio-2.0', version: '>= 2.50'),
+   dependency('gtk+-3.0'),
+-  dependency('fuse3', version: '>= 3.9.1'),
+   cc.find_library('m'),
+ ]
+ 

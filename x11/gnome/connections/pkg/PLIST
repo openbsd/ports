@@ -168,6 +168,13 @@ share/help/uk/gnome-connections/figures/
 share/help/uk/gnome-connections/figures/org.gnome.Connections.svg
 share/help/uk/gnome-connections/index.page
 share/help/uk/gnome-connections/legal.xml
+share/help/zh_CN/
+share/help/zh_CN/gnome-connections/
+share/help/zh_CN/gnome-connections/connect.page
+share/help/zh_CN/gnome-connections/figures/
+share/help/zh_CN/gnome-connections/figures/org.gnome.Connections.svg
+share/help/zh_CN/gnome-connections/index.page
+share/help/zh_CN/gnome-connections/legal.xml
 share/icons/hicolor/scalable/apps/org.gnome.Connections.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Connections-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-connections.mo

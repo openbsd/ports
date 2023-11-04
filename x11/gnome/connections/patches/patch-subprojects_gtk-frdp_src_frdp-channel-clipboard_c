@@ -1,0 +1,871 @@
+XXX needs fuse3
+REVERT:
+From 62fc62c5ccb7634f0bc87c57a4673877c24c94ed Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Sat, 16 Sep 2023 21:59:54 +0200
+Subject: [PATCH] clipboard: Do not copy pasted files twice
+
+Index: subprojects/gtk-frdp/src/frdp-channel-clipboard.c
+--- subprojects/gtk-frdp/src/frdp-channel-clipboard.c.orig
++++ subprojects/gtk-frdp/src/frdp-channel-clipboard.c
+@@ -21,9 +21,6 @@
+ #include <freerdp/freerdp.h>
+ #include <freerdp/client/cliprdr.h>
+ 
+-#define FUSE_USE_VERSION 35
+-#include <fuse_lowlevel.h>
+-
+ typedef struct
+ {
+   guchar   *data;
+@@ -38,47 +35,21 @@ typedef struct
+   FrdpClipboardResponseData *responses;
+ } FrdpClipboardRequest;
+ 
+-typedef enum
+-{
+-  FUSE_GETATTR_OP,
+-  FUSE_LOOKUP_OP,
+-  FUSE_READ_OP
+-} FrdpFuseOp;
+-
+ typedef struct
+ {
+-  gssize     index;
+-  fuse_req_t request;
+-  FrdpFuseOp op;
+-} FrdpRemoteFileRequest;
+-
+-typedef struct
+-{
+   gchar           *uri;
+   FILEDESCRIPTORW *descriptor;
+ } FrdpLocalFileInfo;
+ 
+-typedef struct _FrdpRemoteFileInfo FrdpRemoteFileInfo;
+-
+-struct _FrdpRemoteFileInfo
++typedef struct
+ {
+-  gchar              *uri;
+-  gchar              *path;
+-  gchar              *filename;
++  gchar    *uri;
++  guint     stream_id;
++  gchar    *filename;
++  gboolean  created;
++  gboolean  is_directory;
++} FrdpRemoteFileInfo;
+ 
+-  guint               stream_id;
+-
+-  gboolean            is_directory;
+-  gboolean            is_readonly;
+-
+-  fuse_ino_t          inode;
+-  gssize              parent_index; /* -1 means root directory */
+-  GList              *children;
+-
+-  gboolean            has_size;
+-  uint64_t            size;
+-};
+-
+ typedef struct
+ {
+   CliprdrClientContext        *cliprdr_client_context;
+@@ -94,20 +65,13 @@ typedef struct
+ 
+   gsize                        remote_files_count;
+   FrdpRemoteFileInfo          *remote_files_infos;
+-  GHashTable                  *remote_files_requests;
++  gchar                       *tmp_directory;
+ 
+   gsize                        local_files_count;
+   FrdpLocalFileInfo           *local_files_infos;
+ 
+   guint                        next_stream_id;
+   guint                        fgdw_id;
+-
+-  struct fuse_session         *fuse_session;
+-  GThread                     *fuse_session_thread;
+-  gchar                       *fuse_directory;
+-  GMutex                       fuse_mutex;
+-
+-  fuse_ino_t                   current_inode;
+ } FrdpChannelClipboardPrivate;
+ 
+ G_DEFINE_TYPE_WITH_PRIVATE (FrdpChannelClipboard, frdp_channel_clipboard, FRDP_TYPE_CHANNEL)
+@@ -174,15 +138,8 @@ frdp_channel_clipboard_finalize (GObject *object)
+   FrdpChannelClipboard        *self = (FrdpChannelClipboard *) object;
+   FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+ 
+-  g_hash_table_unref (priv->remote_files_requests);
+-  fuse_session_unmount (priv->fuse_session);
+-  fuse_session_exit (priv->fuse_session);
+-
+   _gtk_clipboard_clear_func (priv->gtk_clipboard, self);
+-  g_clear_pointer (&priv->fuse_directory, g_free);
+ 
+-  g_mutex_clear (&priv->fuse_mutex);
+-
+   G_OBJECT_CLASS (frdp_channel_clipboard_parent_class)->finalize (object);
+ }
+ 
+@@ -203,435 +160,14 @@ frdp_channel_clipboard_class_init (FrdpChannelClipboar
+                                                          G_PARAM_READWRITE));
+ }
+ 
+-static gssize
+-get_remote_file_info_index (FrdpChannelClipboard *self,
+-                            fuse_ino_t            inode)
+-{
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  gssize                       result = -1, i;
+-
+-  for (i = 0; i < priv->remote_files_count; i++) {
+-    if (priv->remote_files_infos[i].inode == inode) {
+-      result = i;
+-      break;
+-    }
+-  }
+-
+-  return result;
+-}
+-
+ static void
+-get_root_attributes (struct stat *attr)
+-{
+-  memset (attr, 0, sizeof (struct stat));
+-
+-  attr->st_ino = FUSE_ROOT_ID;
+-  attr->st_mode = S_IFDIR | 0755;
+-  attr->st_nlink = 2;
+-  attr->st_uid = getuid ();
+-  attr->st_gid = getgid ();
+-  attr->st_atime = attr->st_mtime = attr->st_ctime = time (NULL);
+-}
+-
+-static void
+-get_file_attributes (FrdpRemoteFileInfo  info,
+-                     struct stat        *attr)
+-{
+-  memset (attr, 0, sizeof (struct stat));
+-
+-  attr->st_ino = info.inode;
+-  if (info.is_directory) {
+-    attr->st_mode = S_IFDIR | (info.is_readonly ? 0555 : 0755);
+-    attr->st_nlink = 2;
+-  } else {
+-    attr->st_mode = S_IFREG | (info.is_readonly ? 0444 : 0644);
+-    attr->st_nlink = 1;
+-    attr->st_size = info.size;
+-  }
+-  attr->st_uid = getuid ();
+-  attr->st_gid = getgid ();
+-  attr->st_atime = attr->st_mtime = attr->st_ctime = time (NULL);
+-}
+-
+-static void
+-request_size (FrdpChannelClipboard *self,
+-              fuse_req_t            request,
+-              gsize                 index,
+-              FrdpFuseOp            op)
+-{
+-  CLIPRDR_FILE_CONTENTS_REQUEST  file_contents_request = { 0 };
+-  FrdpChannelClipboardPrivate   *priv = frdp_channel_clipboard_get_instance_private (self);
+-  FrdpRemoteFileRequest         *size_request;
+-
+-  file_contents_request.streamId = priv->next_stream_id++;
+-  file_contents_request.listIndex = index;
+-  file_contents_request.dwFlags = FILECONTENTS_SIZE;
+-  file_contents_request.cbRequested = 8;
+-  file_contents_request.nPositionHigh = 0;
+-  file_contents_request.nPositionLow = 0;
+-
+-  size_request = g_new0 (FrdpRemoteFileRequest, 1);
+-  size_request->index = index;
+-  size_request->request = request;
+-  size_request->op = op;
+-
+-  g_hash_table_insert (priv->remote_files_requests, GUINT_TO_POINTER (file_contents_request.streamId), size_request);
+-
+-  priv->cliprdr_client_context->ClientFileContentsRequest (priv->cliprdr_client_context, &file_contents_request);
+-}
+-
+-static void
+-fuse_lookup (fuse_req_t  request,
+-             fuse_ino_t  parent_inode,
+-             const char *name)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  struct fuse_entry_param      entry = {0};
+-  gboolean                     found = FALSE;
+-  gssize                       parent_index;
+-  gsize                        i, child_index;
+-  GList                       *iter;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  if (parent_inode == FUSE_ROOT_ID) {
+-    for (i = 0; i < priv->remote_files_count && !found; i++) {
+-      if (priv->remote_files_infos[i].parent_index == -1 &&
+-          g_str_equal (name, priv->remote_files_infos[i].filename)) {
+-        found = TRUE;
+-        if (priv->remote_files_infos[i].has_size ||
+-            priv->remote_files_infos[i].is_directory) {
+-          entry.ino = priv->remote_files_infos[i].inode;
+-          get_file_attributes (priv->remote_files_infos[i], &entry.attr);
+-          entry.attr_timeout = 1.0;
+-          entry.entry_timeout = 1.0;
+-
+-          fuse_reply_entry (request, &entry);
+-        } else {
+-          request_size (self, request, i, FUSE_LOOKUP_OP);
+-        }
+-      }
+-    }
+-  } else {
+-    parent_index = get_remote_file_info_index (self, parent_inode);
+-    if (parent_index >= 0 && priv->remote_files_infos[parent_index].is_directory) {
+-      for (iter = priv->remote_files_infos[parent_index].children; iter != NULL && !found; iter = iter->next) {
+-        child_index = *((gsize *) iter->data);
+-        if (g_str_equal (name, priv->remote_files_infos[child_index].filename)) {
+-          found = TRUE;
+-          if (priv->remote_files_infos[child_index].has_size ||
+-              priv->remote_files_infos[child_index].is_directory) {
+-            entry.ino = priv->remote_files_infos[child_index].inode;
+-            get_file_attributes (priv->remote_files_infos[child_index], &entry.attr);
+-            entry.attr_timeout = 1.0;
+-            entry.entry_timeout = 1.0;
+-
+-            fuse_reply_entry (request, &entry);
+-          } else {
+-            request_size (self, request, child_index, FUSE_LOOKUP_OP);
+-          }
+-        }
+-      }
+-    }
+-  }
+-
+-  if (!found)
+-    fuse_reply_err (request, ENOENT);
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-}
+-
+-static void
+-fuse_getattr (fuse_req_t             request,
+-              fuse_ino_t             inode,
+-              struct fuse_file_info *file_info)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  struct stat                  attr = {0};
+-  gssize                       index;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  if (inode == FUSE_ROOT_ID) {
+-    get_root_attributes (&attr);
+-    fuse_reply_attr (request, &attr, 1);
+-  } else {
+-    index = get_remote_file_info_index (self, inode);
+-    if (index >= 0) {
+-      if (priv->remote_files_infos[index].has_size ||
+-          priv->remote_files_infos[index].is_directory) {
+-        get_file_attributes (priv->remote_files_infos[index], &attr);
+-        fuse_reply_attr (request, &attr, 1);
+-      } else {
+-        request_size (self, request, index, FUSE_GETATTR_OP);
+-      }
+-    } else {
+-      fuse_reply_err (request, ENOENT);
+-    }
+-  }
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-}
+-
+-static void
+-fuse_open (fuse_req_t             request,
+-           fuse_ino_t             inode,
+-           struct fuse_file_info *file_info)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  gssize                       index;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  if (inode == FUSE_ROOT_ID) {
+-    fuse_reply_err (request, EISDIR);
+-  } else {
+-    index = get_remote_file_info_index (self, inode);
+-    if (index >= 0) {
+-      if (priv->remote_files_infos[index].is_directory) {
+-        fuse_reply_err (request, EISDIR);
+-      } else {
+-        file_info->direct_io = 1;
+-        fuse_reply_open (request, file_info);
+-      }
+-    } else {
+-      fuse_reply_err (request, ENOENT);
+-    }
+-  }
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-}
+-
+-static void
+-fuse_read (fuse_req_t             request,
+-           fuse_ino_t             inode,
+-           size_t                 size,
+-           off_t                  offset,
+-           struct fuse_file_info *file_info)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  gssize                       index;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  index = get_remote_file_info_index (self, inode);
+-  if (index >= 0) {
+-    if (priv->remote_files_infos[index].is_directory) {
+-      fuse_reply_err (request, EISDIR);
+-    } else {
+-      CLIPRDR_FILE_CONTENTS_REQUEST  file_contents_request = { 0 };
+-      FrdpRemoteFileRequest         *data_request;
+-
+-      size = MIN (size, 8 * 1024 * 1024);
+-      g_assert (size > 0);
+-
+-      file_contents_request.streamId = priv->next_stream_id++;
+-      file_contents_request.listIndex = index;
+-      file_contents_request.dwFlags = FILECONTENTS_RANGE;
+-      file_contents_request.cbRequested = size;
+-      file_contents_request.nPositionHigh = offset >> 32;
+-      file_contents_request.nPositionLow = offset & 0xffffffff;
+-      file_contents_request.haveClipDataId = FALSE;
+-
+-      data_request = g_new0 (FrdpRemoteFileRequest, 1);
+-      data_request->index = index;
+-      data_request->request = request;
+-      data_request->op = FUSE_READ_OP;
+-
+-      g_hash_table_insert (priv->remote_files_requests, GUINT_TO_POINTER (file_contents_request.streamId), data_request);
+-
+-      priv->cliprdr_client_context->ClientFileContentsRequest (priv->cliprdr_client_context, &file_contents_request);
+-    }
+-  } else {
+-    fuse_reply_err (request, ENOENT);
+-  }
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-}
+-
+-static void
+-fuse_opendir (fuse_req_t             request,
+-              fuse_ino_t             inode,
+-              struct fuse_file_info *file_info)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  gssize                       index;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  if (inode == FUSE_ROOT_ID) {
+-    fuse_reply_open (request, file_info);
+-  } else {
+-    index = get_remote_file_info_index (self, inode);
+-    if (index >= 0) {
+-      if (priv->remote_files_infos[index].is_directory) {
+-        fuse_reply_open (request, file_info);
+-      } else {
+-        fuse_reply_err (request, ENOTDIR);
+-      }
+-    } else {
+-      fuse_reply_err (request, ENOENT);
+-    }
+-  }
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-}
+-
+-static void
+-fuse_readdir (fuse_req_t             request,
+-              fuse_ino_t             inode,
+-              size_t                 size,
+-              off_t                  offset,
+-              struct fuse_file_info *file_info)
+-{
+-  FrdpChannelClipboard        *self = fuse_req_userdata (request);
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  struct stat                  attr = {0};
+-  gboolean                     done = FALSE;
+-  gssize                       index, i, j;
+-  GList                       *iter;
+-  gsize                        written = 0, entry_size, child_index;
+-  char                        *buffer;
+-
+-  buffer = g_malloc0 (size);
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-
+-  if (inode == FUSE_ROOT_ID) {
+-    j = -1;
+-    for (i = 0; i < priv->remote_files_count; i++) {
+-      if (priv->remote_files_infos[i].parent_index == -1) {
+-        j++;
+-        if (j <= offset && offset > 0)
+-          continue;
+-
+-        get_file_attributes (priv->remote_files_infos[i], &attr);
+-
+-        entry_size = fuse_add_direntry (request, buffer + written,
+-                                        size - written,
+-                                        priv->remote_files_infos[i].filename, &attr, j + 1);
+-
+-        if (entry_size > size - written)
+-          break;
+-
+-        written += entry_size;
+-
+-        if (i == priv->remote_files_count - 1)
+-          done = TRUE;
+-      }
+-    }
+-    fuse_reply_buf (request, buffer, written);
+-  } else {
+-    index = get_remote_file_info_index (self, inode);
+-    if (index >= 0) {
+-      if (priv->remote_files_infos[index].is_directory) {
+-        for (iter = priv->remote_files_infos[index].children, i = 0; iter != NULL; iter = iter->next, i++) {
+-          child_index = *((gsize *) iter->data);
+-
+-          if (i <= offset && offset > 0)
+-            continue;
+-
+-          get_file_attributes (priv->remote_files_infos[child_index], &attr);
+-
+-          entry_size = fuse_add_direntry (request, buffer + written,
+-                                          size - written,
+-                                          priv->remote_files_infos[child_index].filename, &attr, i + 1);
+-
+-          if (entry_size > size - written)
+-            break;
+-
+-          written += entry_size;
+-
+-          if (iter == NULL)
+-            done = TRUE;
+-        }
+-
+-        fuse_reply_buf (request, buffer, written);
+-      } else {
+-        fuse_reply_err (request, ENOTDIR);
+-      }
+-    } else {
+-      fuse_reply_err (request, ENOENT);
+-    }
+-  }
+-
+-  if (done)
+-    fuse_reply_buf (request, NULL, 0);
+-
+-  g_mutex_unlock (&priv->fuse_mutex);
+-
+-  g_free (buffer);
+-}
+-
+-static const struct fuse_lowlevel_ops fuse_ops =
+-{
+-  .lookup = fuse_lookup,
+-  .getattr = fuse_getattr,
+-  .open = fuse_open,
+-  .read = fuse_read,
+-  .opendir = fuse_opendir,
+-  .readdir = fuse_readdir,
+-};
+-
+-static gpointer
+-fuse_session_thread_func (gpointer data)
+-{
+-  FrdpChannelClipboard        *self = data;
+-  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  gint                         result;
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-  fuse_session_mount (priv->fuse_session,
+-                      priv->fuse_directory);
+-
+-  fuse_daemonize (1);
+-  g_mutex_unlock (&priv->fuse_mutex);
+-
+-  result = fuse_session_loop (priv->fuse_session);
+-
+-  g_mutex_lock (&priv->fuse_mutex);
+-  fuse_session_unmount (priv->fuse_session);
+-  g_mutex_unlock (&priv->fuse_mutex);
+-
+-  return NULL;
+-}
+-
+-static void
+ frdp_channel_clipboard_init (FrdpChannelClipboard *self)
+ {
+   FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
+-  struct fuse_args             args = {0};
+-  gchar                       *argv[2];
+ 
+   priv->gtk_clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+   priv->clipboard_owner_changed_id = g_signal_connect (priv->gtk_clipboard, "owner-change", G_CALLBACK (clipboard_owner_change_cb), self);
+   priv->fgdw_id = CB_FORMAT_TEXTURILIST;
+-  priv->current_inode = FUSE_ROOT_ID + 1;
+-
+-  argv[0] = "gnome-connections";
+-  argv[1] = "-d";
+-  args.argc = 1; /* Set to 2 to see debug logs of Fuse */
+-  args.argv = argv;
+-
+-  priv->remote_files_requests = g_hash_table_new (g_direct_hash, g_direct_equal);
+-
+-  g_mutex_init (&priv->fuse_mutex);
+-
+-  priv->fuse_directory = g_mkdtemp (g_strdup_printf ("%s/clipboard-XXXXXX/", g_get_user_runtime_dir ()));
+-
+-  priv->fuse_session = fuse_session_new (&args, &fuse_ops, sizeof (fuse_ops), self);
+-  if (priv->fuse_session != NULL) {
+-    priv->fuse_session_thread = g_thread_new ("RDP FUSE session thread",
+-                                              fuse_session_thread_func,
+-                                              self);
+-  } else {
+-    g_warning ("Could not initiate FUSE session\n");
+-  }
+ }
+ 
+ static void
+@@ -866,6 +402,21 @@ send_client_format_list_response (FrdpChannelClipboard
+   return priv->cliprdr_client_context->ClientFormatListResponse (priv->cliprdr_client_context, &response);
+ }
+ 
++static gboolean
++files_created (FrdpChannelClipboard *self)
++{
++  FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
++  guint                        i;
++
++  for (i = 0; i < priv->remote_files_count; i++) {
++    if (!priv->remote_files_infos[i].created) {
++      return FALSE;
++    }
++  }
++
++  return TRUE;
++}
++
+ static void
+ replace_ascii_character (gchar *text,
+                          gchar  old_character,
+@@ -932,87 +483,65 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
+                               (guchar *) data,
+                               length);
+     } else if (info == priv->fgdw_id) {
++      g_free (priv->tmp_directory);
++      priv->tmp_directory = g_dir_make_tmp ("clipboard-XXXXXX", NULL);
+       for (guint j = 0; j < current_request->count; j++) {
+         if (current_request->requested_ids[j] == priv->fgdw_id) {
+           FILEDESCRIPTORW  *files = (FILEDESCRIPTORW *) (current_request->responses[j].data + 4);
++          GFile            *file, *parent;
+           GList            *iter, *uri_list = NULL;
+-          gchar            *path, **uri_array, *tmps, *slash, *dir;
++          gchar            *filename, *path, **uri_array;
+           guint             i, count = current_request->responses[j].length / sizeof (FILEDESCRIPTORW);
+ 
+-          g_mutex_lock (&priv->fuse_mutex);
+-
+           priv->remote_files_count = count;
+           priv->remote_files_infos = g_new0 (FrdpRemoteFileInfo, priv->remote_files_count);
+ 
+           for (i = 0; i < count; i++) {
+-            length = ConvertFromUnicode (CP_UTF8, 0, (WCHAR *) files[i].cFileName, (int) (260 / sizeof (WCHAR)), &path, 0, NULL, NULL);
++            length = ConvertFromUnicode (CP_UTF8, 0, (WCHAR *) files[i].cFileName, (int) (260 / sizeof (WCHAR)), &filename, 0, NULL, NULL);
+ 
+-            replace_ascii_character (path, '\\', '/');
++            replace_ascii_character (filename, '\\', '/');
+ 
+-            priv->remote_files_infos[i].path = g_strdup (path);
++            CLIPRDR_FILE_CONTENTS_REQUEST file_contents_request = { 0 };
++            file_contents_request.streamId = priv->next_stream_id++;
++            file_contents_request.listIndex = i;
++            file_contents_request.dwFlags = FILECONTENTS_RANGE;
++
++            priv->remote_files_infos[i].stream_id = file_contents_request.streamId;
++            priv->remote_files_infos[i].filename = g_strdup (filename);
+             priv->remote_files_infos[i].is_directory = (files[i].dwFlags & FD_ATTRIBUTES) && (files[i].dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
+-            priv->remote_files_infos[i].is_readonly = (files[i].dwFlags & FD_ATTRIBUTES) && (files[i].dwFileAttributes & FILE_ATTRIBUTE_READONLY);
+-            priv->remote_files_infos[i].inode = priv->current_inode++;
+-            priv->remote_files_infos[i].uri = g_strdup_printf ("file://%s/%s%s", priv->fuse_directory, path, priv->remote_files_infos[i].is_directory ? "/" : "");
+-            if (files[i].dwFlags & FD_FILESIZE) {
+-              priv->remote_files_infos[i].size = ((guint64) files[i].nFileSizeHigh << 32) + files[i].nFileSizeLow;
+-              priv->remote_files_infos[i].has_size = TRUE;
+-            }
+-            priv->remote_files_infos[i].parent_index = -1;
+ 
+-            g_free (path);
+-          }
+-
+-          for (i = 0; i < count; i++) {
+-            slash = NULL;
+-
+-            tmps = g_strdup (priv->remote_files_infos[i].uri);
+             if (priv->remote_files_infos[i].is_directory) {
+-              if (g_str_has_suffix (tmps, "/"))
+-                tmps[strlen (tmps) - 1] = '\0';
+-            }
+-            slash = g_strrstr (tmps, "/");
++              path = g_strdup_printf ("%s/%s", priv->tmp_directory, filename);
++              file = g_file_new_for_path (path);
++              priv->remote_files_infos[i].created = g_file_make_directory_with_parents (file, NULL, NULL);
++              priv->remote_files_infos[i].uri = g_file_get_uri (file);
++              g_object_unref (file);
++              g_free (path);
++            } else {
++              file_contents_request.cbRequested = files[i].nFileSizeLow;
++              file_contents_request.nPositionHigh = 0;
++              file_contents_request.nPositionLow = 0;
++              file_contents_request.haveClipDataId = FALSE;
+ 
+-            dir = NULL;
+-            if (slash != NULL) {
+-
+-              if (strlen (slash) > 1) {
+-                priv->remote_files_infos[i].filename = g_strdup (slash + 1);
+-                slash[1] = '\0';
+-                dir = g_strdup (tmps);
+-              }
+-
+-              if (dir != NULL) {
+-                if (g_str_equal (dir, priv->fuse_directory)) {
+-                } else {
+-                  for (j = 0; j < count; j++) {
+-                    if (g_str_equal (dir, priv->remote_files_infos[j].uri)) {
+-                      gsize *child_index;
+-                      priv->remote_files_infos[i].parent_index = j;
+-
+-                      child_index = g_new (gsize, 1);
+-                      *child_index = i;
+-                      priv->remote_files_infos[j].children = g_list_append (priv->remote_files_infos[j].children, child_index);
+-                      priv->remote_files_infos[i].parent_index = j;
+-                      break;
+-                    }
+-                  }
+-                }
+-                g_free (dir);
+-              }
++              priv->cliprdr_client_context->ClientFileContentsRequest (priv->cliprdr_client_context, &file_contents_request);
+             }
+-            g_free (tmps);
++
++            g_free (filename);
+           }
+ 
++          while (!files_created (self))
++            gtk_main_iteration ();
++
+           /* Set URIs for topmost items only, the rest will be pasted as part of those. */
++          parent = g_file_new_for_path (priv->tmp_directory);
+           for (i = 0; i < priv->remote_files_count; i++) {
+-            if (priv->remote_files_infos[i].parent_index < 0) {
++            file = g_file_new_for_uri (priv->remote_files_infos[i].uri);
++            if (g_file_has_parent (file, parent))
+               uri_list = g_list_prepend (uri_list, priv->remote_files_infos[i].uri);
+-            }
++            g_object_unref (file);
+           }
++          g_object_unref (parent);
+ 
+-          g_mutex_unlock (&priv->fuse_mutex);
+-
+           uri_array = g_new0 (gchar *, g_list_length (uri_list) + 1);
+           for (iter = uri_list, i = 0; iter != NULL; iter = iter->next, i++)
+             uri_array[i] = iter->data;
+@@ -1030,6 +559,28 @@ _gtk_clipboard_get_func (GtkClipboard     *clipboard,
+   }
+ }
+ 
++static gint
++sort_file_uris (gconstpointer a,
++                gconstpointer b)
++{
++  const gchar *uri_a = a, *uri_b = b;
++  guint        count_a = 0, count_b = 0;
++  gint         i;
++
++  for (i = 0; uri_a[i] != '\0'; i++)
++    if (uri_a[i] == '/') count_a++;
++
++  for (i = 0; uri_b[i] != '\0'; i++)
++    if (uri_b[i] == '/') count_b++;
++
++  if (count_a < count_b)
++    return -1;
++  else if (count_a > count_b)
++    return 1;
++  else
++    return 0;
++}
++
+ static void
+ clear_local_files_infos (FrdpChannelClipboard *self)
+ {
+@@ -1053,23 +604,44 @@ _gtk_clipboard_clear_func (GtkClipboard *clipboard,
+ {
+   FrdpChannelClipboard        *self = (FrdpChannelClipboard *) user_data;
+   FrdpChannelClipboardPrivate *priv = frdp_channel_clipboard_get_instance_private (self);
++  GError                      *error = NULL;
++  GFile                       *file, *directory;
++  GList                       *sorted_uris = NULL, *iter;
+   guint                        i;
++  gchar                       *uri;
+ 
+-  g_mutex_lock (&priv->fuse_mutex);
++  for (i = 0; i < priv->remote_files_count; i++) {
++    if (priv->remote_files_infos != NULL && priv->remote_files_infos[i].created)
++      sorted_uris = g_list_prepend (sorted_uris, priv->remote_files_infos[i].uri);
++  }
+ 
++  sorted_uris = g_list_sort (sorted_uris, sort_file_uris);
++  sorted_uris = g_list_reverse (sorted_uris);
++
++  for (iter = sorted_uris; iter != NULL; iter = iter->next) {
++    uri = iter->data;
++    file = g_file_new_for_uri (uri);
++
++    if (!g_file_delete (file, NULL, &error))
++      g_warning ("Temporary file \"%s\" could not be deleted: %s", uri, error->message);
++
++    g_object_unref (file);
++  }
++
++  if (priv->tmp_directory != NULL) {
++    directory = g_file_new_for_path (priv->tmp_directory);
++    if (!g_file_delete (directory, NULL, &error))
++      g_warning ("Temporary directory \"%s\" could not be deleted: %s", priv->tmp_directory, error->message);
++  }
++
+   if (priv->remote_files_infos != NULL) {
+     for (i = 0; i < priv->remote_files_count; i++) {
+-      g_free (priv->remote_files_infos[i].uri);
+-      g_free (priv->remote_files_infos[i].path);
+       g_free (priv->remote_files_infos[i].filename);
+-      g_list_free_full (priv->remote_files_infos[i].children, g_free);
++      g_free (priv->remote_files_infos[i].uri);
+     }
+     g_clear_pointer (&priv->remote_files_infos, g_free);
+   }
+-  priv->remote_files_count = 0;
+ 
+-  g_mutex_unlock (&priv->fuse_mutex);
+-
+   clear_local_files_infos (self);
+ 
+   priv->remote_data_in_clipboard = FALSE;
+@@ -1359,7 +931,7 @@ clipboard_content_received (GtkClipboard     *clipboar
+       size = (guint32 *) data;
+       size[0] = length;
+ 
+-      g_strfreev (uris);
++      /*g_strfreev (priv->uris);*/
+ 
+       priv->local_files_count = length;
+       priv->local_files_infos = g_new0 (FrdpLocalFileInfo, priv->local_files_count);
+@@ -1549,53 +1121,50 @@ server_file_contents_response (CliprdrClientContext   
+ {
+   FrdpChannelClipboard        *self;
+   FrdpChannelClipboardPrivate *priv;
+-  struct fuse_entry_param      entry = {0};
+-  FrdpRemoteFileRequest       *request;
+-  struct stat                  attr = {0};
++  FrdpClipboardRequest        *current_request;
++  GFileOutputStream           *stream;
++  const guchar                *data;
++  guint32                      stream_id;
++  gsize                        data_length, written = 0, i, j;
++  GFile                       *file;
++  gchar                       *path, *filename;
++  GList                       *iter;
+ 
+   if (context != NULL && file_contents_response->msgFlags & CB_RESPONSE_OK) {
+     self = (FrdpChannelClipboard *) context->custom;
+     priv = frdp_channel_clipboard_get_instance_private (self);
+ 
+-    request = g_hash_table_lookup (priv->remote_files_requests,
+-                                   GUINT_TO_POINTER (file_contents_response->streamId));
+-    if (request != NULL) {
+-      g_mutex_lock (&priv->fuse_mutex);
+-      switch (request->op) {
+-        case FUSE_LOOKUP_OP:
+-          priv->remote_files_infos[request->index].size = *((guint64 *) file_contents_response->requestedData);
+-          priv->remote_files_infos[request->index].has_size = TRUE;
++    stream_id = file_contents_response->streamId;
++    data_length = file_contents_response->cbRequested;
++    data = file_contents_response->requestedData;
+ 
+-          entry.ino = priv->remote_files_infos[request->index].inode;
+-          get_file_attributes (priv->remote_files_infos[request->index], &entry.attr);
+-          entry.attr_timeout = 1.0;
+-          entry.entry_timeout = 1.0;
++    for (iter = priv->requests; iter != NULL; iter = iter->next) {
++      current_request = iter->data;
++      for (j = 0; j < current_request->count; j++) {
++        if (current_request->requested_ids[j] == priv->fgdw_id) {
++          for (i = 0; i < priv->remote_files_count; i++) {
++            if (!priv->remote_files_infos[i].is_directory && priv->remote_files_infos[i].stream_id == stream_id) {
++              filename = priv->remote_files_infos[i].filename;
++              path = g_strdup_printf ("%s/%s", priv->tmp_directory, filename);
+ 
+-          fuse_reply_entry (request->request, &entry);
+-          break;
++              file = g_file_new_for_path (path);
++              stream = g_file_create (file, G_FILE_CREATE_PRIVATE, NULL, NULL);
++              priv->remote_files_infos[i].created = TRUE;
+ 
+-        case FUSE_GETATTR_OP:
+-          priv->remote_files_infos[request->index].size = *((guint64 *) file_contents_response->requestedData);
+-          priv->remote_files_infos[request->index].has_size = TRUE;
++              if (g_output_stream_write_all (G_OUTPUT_STREAM (stream), data, data_length, &written, NULL, NULL)) {
++                priv->remote_files_infos[i].uri = g_file_get_uri (file);
++              } else {
++                g_warning ("Writing of pasted file failed!");
++              }
+ 
+-          get_file_attributes (priv->remote_files_infos[request->index], &attr);
+-          fuse_reply_attr (request->request, &attr, 1);
+-          break;
++              g_output_stream_close (G_OUTPUT_STREAM (stream), NULL, NULL);
+ 
+-        case FUSE_READ_OP:
+-          fuse_reply_buf (request->request,
+-                          (const char *) file_contents_response->requestedData,
+-                          file_contents_response->cbRequested);
+-          break;
+-
+-        default:
+-          g_assert_not_reached ();
++              g_object_unref (file);
++              g_free (path);
++            }
++          }
++        }
+       }
+-
+-      g_hash_table_remove (priv->remote_files_requests,
+-                           GUINT_TO_POINTER (file_contents_response->streamId));
+-      g_free (request);
+-      g_mutex_unlock (&priv->fuse_mutex);
+     }
+   }
+ 
