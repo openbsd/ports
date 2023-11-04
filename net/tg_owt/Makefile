@@ -26,7 +26,8 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 DIST_TUPLE =		github	klemensn	libyuv \
-			3aae5c7fb15452a2c708db8353041f55dc15e116	.
+			3aae5c7fb15452a2c708db8353041f55dc15e116 \
+			src/third_party/libyuv
 
 SITES.tg_owt =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
