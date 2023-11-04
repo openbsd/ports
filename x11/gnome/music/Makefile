@@ -30,7 +30,7 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/tracker3
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			devel/libsoup \
+			devel/libsoup3 \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
 			x11/gnome/libdazzle \
