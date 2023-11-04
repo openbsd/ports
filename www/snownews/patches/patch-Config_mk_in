@@ -6,13 +6,13 @@ Index: Config.mk.in
  localedir	:= @localedir@
  TMPDIR		:= @TMPDIR@
 -builddir	:= @builddir@/${name}
-+builddir	:= @builddir@/build
++builddir	:= @builddir@/name
  O		:= .o/
  
  ################ Compiler options ####################################
  
  #debug		:= 1
- libs		:= @pkg_libs@
+ libs		:= @pkg_libs@ -lintl
 -ifdef debug
 -    cflags	:= -O0 -ggdb3
 -    ldflags	:= -g -rdynamic
@@ -20,6 +20,6 @@ Index: Config.mk.in
 -    cflags	:= -Os -g0 -DNDEBUG=1
 -    ldflags	:= -s
 -endif
- CFLAGS		:= -Wall -Wextra -Wredundant-decls -Wshadow
- cflags		+= -std=c11 @pkg_cflags@ ${CFLAGS}
+ cflags		+= -Wall -Wextra -Wredundant-decls -Wshadow \
+ 		   -std=c11 @pkg_cflags@ ${CFLAGS}
  ldflags		+= @pkg_ldflags@ ${LDFLAGS}

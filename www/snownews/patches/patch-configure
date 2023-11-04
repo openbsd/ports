@@ -12,8 +12,8 @@ Index: configure
 +pkgs="libcurl libxml-2.0 libcrypto"
  # Default pkg flags to substitute when pkg-config is not found
  pkg_libs="-lcurl -lxml2 -lcrypto -lncursesw"
- pkg_cflags="-I\/usr\/include\/libxml2 -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600"
-@@ -152,15 +152,15 @@ done
+ pkg_cflags="-I/usr/include/libxml2 -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=600"
+@@ -149,15 +149,15 @@ done
  
  #### Set directory prefixes ##########################################
  
