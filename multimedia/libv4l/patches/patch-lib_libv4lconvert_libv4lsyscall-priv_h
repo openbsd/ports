@@ -1,5 +1,5 @@
 The redirection of mmap through __syscall(2) is broken in multiple ways.
-Just call mmap directly.
+Just call mmap and other syscalls directly.
 
 Index: lib/libv4lconvert/libv4lsyscall-priv.h
 --- lib/libv4lconvert/libv4lsyscall-priv.h.orig
@@ -16,3 +16,31 @@ Index: lib/libv4lconvert/libv4lsyscall-priv.h
  #else
  #define SYS_MMAP(addr, len, prot, flags, fd, off) \
  	syscall(SYS_mmap2, (void *)(addr), (size_t)(len), \
+@@ -122,6 +119,18 @@ register_t __syscall(quad_t, ...);
+ 
+ #else
+ 
++#if defined(__OpenBSD__)
++
++#define SYS_OPEN	open
++#define SYS_CLOSE	close
++#define SYS_IOCTL	ioctl
++#define SYS_READ	read
++#define SYS_WRITE	write
++#define SYS_MMAP	mmap
++#define SYS_MUNMAP	munmap
++
++#else
++
+ int v4lx_open_wrapper(const char *, int, int);
+ int v4lx_close_wrapper(int);
+ int v4lx_ioctl_wrapper(int, unsigned long, void *);
+@@ -137,6 +146,8 @@ int v4lx_munmap_wrapper(void *, size_t);
+ #define SYS_WRITE(...) v4lx_write_wrapper(__VA_ARGS__)
+ #define SYS_MMAP(...) v4lx_mmap_wrapper(__VA_ARGS__)
+ #define SYS_MUNMAP(...) v4lx_munmap_wrapper(__VA_ARGS__)
++
++#endif
+ 
+ #endif
+ 
