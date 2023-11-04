@@ -163,6 +163,7 @@ include/evolution-data-server/libebook-contacts/e-book-contacts-autocleanups.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-enums.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-enumtypes.h
 include/evolution-data-server/libebook-contacts/e-book-contacts-utils.h
+include/evolution-data-server/libebook-contacts/e-book-indices-updater.h
 include/evolution-data-server/libebook-contacts/e-book-query.h
 include/evolution-data-server/libebook-contacts/e-contact.h
 include/evolution-data-server/libebook-contacts/e-name-western.h
@@ -226,6 +227,9 @@ include/evolution-data-server/libedata-book/e-data-book-cursor-sqlite.h
 include/evolution-data-server/libedata-book/e-data-book-cursor.h
 include/evolution-data-server/libedata-book/e-data-book-direct.h
 include/evolution-data-server/libedata-book/e-data-book-factory.h
+include/evolution-data-server/libedata-book/e-data-book-view-watcher-cache.h
+include/evolution-data-server/libedata-book/e-data-book-view-watcher-memory.h
+include/evolution-data-server/libedata-book/e-data-book-view-watcher-sqlite.h
 include/evolution-data-server/libedata-book/e-data-book-view.h
 include/evolution-data-server/libedata-book/e-data-book.h
 include/evolution-data-server/libedata-book/e-subprocess-book-factory.h

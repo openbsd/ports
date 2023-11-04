@@ -3,7 +3,7 @@ Crank to C++17 to match libphonenumber and abseil-cpp.
 Index: src/addressbook/libebook-contacts/CMakeLists.txt
 --- src/addressbook/libebook-contacts/CMakeLists.txt.orig
 +++ src/addressbook/libebook-contacts/CMakeLists.txt
-@@ -80,7 +80,7 @@ if(ENABLE_PHONENUMBER)
+@@ -82,7 +82,7 @@ if(ENABLE_PHONENUMBER)
  	)
  
  	target_compile_features(ephonenumber-private PUBLIC
