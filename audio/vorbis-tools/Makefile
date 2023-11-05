@@ -1,6 +1,7 @@
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
 DISTNAME=	vorbis-tools-1.4.2
+REVISION=	0
 CATEGORIES=    	audio
 HOMEPAGE=	https://xiph.org/vorbis/
 
