@@ -1,3 +1,14 @@
+# XXX
+# libinput-openbsd is not feature complete that the input works
+# in a usable way in Wayland. There is still too little experience here.
+# In the following ports libinput detection was deactivated
+# devel/sdl2
+# games/bzflag
+# graphics/gimp/stable
+# misc/brltty
+# sysutils/consolekit
+# x11/x11vnc
+
 COMMENT =	wscons(4) and kqueue(2) based port of libinput
 
 CATEGORIES =	x11 wayland
