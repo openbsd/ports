@@ -2,6 +2,7 @@ COMMENT =		open source MPI-3.1 implementation
 
 V =			4.1.5
 DISTNAME =		openmpi-$V
+REVISION =		0
 
 SHARED_LIBS +=  open-pal		8.0 # 70.2
 SHARED_LIBS +=  mca_common_sm		5.0 # 70.0
@@ -41,6 +42,8 @@ CONFIGURE_ARGS +=	--enable-mpi-fortran=usempif08 \
 			--enable-mca-no-build=op-avx \
 			FC=egfortran \
 			CC=egcc
+
+CONFIGURE_ENV +=	enable_libudev=no
 
 MAKE_FLAGS =		V=1
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openmpi/
