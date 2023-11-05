@@ -2,7 +2,7 @@ COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		44.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -16,7 +16,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		audio/gsound \
-			geo/geocode-glib,soup3 \
+			geo/geocode-glib \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/libgweather4 \
 			x11/gnome/libadwaita

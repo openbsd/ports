@@ -2,7 +2,7 @@ COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		44.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -24,7 +24,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		geo/geoclue2 \
-			geo/geocode-glib,soup3 \
+			geo/geocode-glib \
 			inputmethods/ibus \
 			security/libpwquality \
 			www/webkitgtk4,webkitgtk60 \

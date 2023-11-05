@@ -4,7 +4,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		44.1
-REVISION=		0
+REVISION=		1
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -23,7 +23,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio \
 			devel/libnotify \
 			geo/geoclue2 \
-			geo/geocode-glib,soup3 \
+			geo/geocode-glib \
 			graphics/colord \
 			print/cups,-libs \
 			security/nss \

@@ -2,6 +2,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.50.1
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -42,7 +43,7 @@ LIB_DEPENDS=		converters/libpst \
 			converters/libytnef \
 			databases/evolution-data-server \
 			devel/libnotify \
-			geo/geocode-glib,soup3 \
+			geo/geocode-glib \
 			textproc/cmark \
 			textproc/gspell \
 			x11/gnome/autoar \
