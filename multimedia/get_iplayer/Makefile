@@ -1,28 +1,26 @@
-COMMENT=		download/stream programmes from BBC iPlayer
+COMMENT=	download/stream programmes from BBC iPlayer
 
-GH_ACCOUNT=		get-iplayer
-GH_PROJECT=		get_iplayer
-GH_TAGNAME=		v3.33
+DIST_TUPLE=	github get-iplayer get_iplayer v3.34 .
 
-CATEGORIES=		multimedia
+CATEGORIES=	multimedia
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-COMMON_DEPENDS=		textproc/p5-XML-LibXML \
-			www/p5-HTML-Parser>=3.71 \
-			www/p5-LWP-Protocol-https \
-			www/p5-Mojo \
-			www/p5-libwww>=6.0
-BUILD_DEPENDS=		${COMMON_DEPENDS}
-RUN_DEPENDS=		graphics/ffmpeg \
-			multimedia/atomicparsley \
-			${COMMON_DEPENDS}
+COMMON_DEPENDS=	textproc/p5-XML-LibXML \
+		www/p5-HTML-Parser>=3.71 \
+		www/p5-LWP-Protocol-https \
+		www/p5-Mojo \
+		www/p5-libwww>=6.0
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	graphics/ffmpeg \
+		multimedia/atomicparsley \
+		${COMMON_DEPENDS}
 
-NO_TEST=		Yes
-PKG_ARCH=		*
+NO_TEST=	Yes
+PKG_ARCH=	*
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/get_iplayer
