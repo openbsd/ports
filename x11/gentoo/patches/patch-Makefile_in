@@ -1,6 +1,7 @@
---- Makefile.in.orig	Sat Aug 27 06:51:13 2011
-+++ Makefile.in	Mon Mar 12 15:06:18 2012
-@@ -765,7 +765,7 @@ install-dvi: install-dvi-recursive
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -813,7 +813,7 @@ install-dvi: install-dvi-recursive
  
  install-dvi-am:
  

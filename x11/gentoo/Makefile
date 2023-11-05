@@ -1,7 +1,6 @@
-COMMENT=		GTK+2 graphical filemanager
+COMMENT=		GTK+3 graphical filemanager
 
-DISTNAME=		gentoo-0.19.13
-REVISION=		1
+DISTNAME=		gentoo-0.20.7
 
 CATEGORIES=		x11
 
@@ -12,13 +11,11 @@ SITES=			${SITE_SOURCEFORGE:=gentoo/}
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread z
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += intl m pango-1.0 pangocairo-1.0 pthread
 
-LIB_DEPENDS=		x11/gtk+2
+LIB_DEPENDS=		x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
 NO_TEST=		Yes
