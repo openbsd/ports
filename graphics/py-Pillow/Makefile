@@ -1,6 +1,6 @@
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	10.0.1
+MODPY_EGG_VERSION=	10.1.0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -17,9 +17,8 @@ WANTLIB += webp webpdemux webpmux z
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_PI =		Yes
-
 MODULES=		lang/python
+MODPY_PI=		Yes
 MODPY_PYTEST=		Yes
 MODPY_PYBUILD=		setuptools
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
