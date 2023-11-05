@@ -20,6 +20,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-install-root=${WRKINST} \
 		--with-data-directory=${LOCALBASE}/share/brltty \
 		--without-flite --without-x
+CONFIGURE_ENV=	ac_cv_header_linux_input_h=no
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
 NO_TEST=	Yes
