@@ -1,3 +1,8 @@
+@conflict geocode-glib-icons-*
+@conflict geocode-glib-*
+@pkgpath geo/geocode-glib,-main
+@pkgpath geo/geocode-glib,-main,soup3
+@pkgpath geo/geocode-glib,-icons
 include/geocode-glib-2.0/
 include/geocode-glib-2.0/geocode-glib/
 include/geocode-glib-2.0/geocode-glib/geocode-backend.h
@@ -15,3 +20,16 @@ lib/girepository-1.0/GeocodeGlib-2.0.typelib
 @lib lib/libgeocode-glib-2.so.${LIBgeocode-glib-2_VERSION}
 lib/pkgconfig/geocode-glib-2.0.pc
 share/gir-1.0/GeocodeGlib-2.0.gir
+share/icons/hicolor/scalable/places/poi-airport.svg
+share/icons/hicolor/scalable/places/poi-bar.svg
+share/icons/hicolor/scalable/places/poi-building.svg
+share/icons/hicolor/scalable/places/poi-bus-stop.svg
+share/icons/hicolor/scalable/places/poi-car.svg
+share/icons/hicolor/scalable/places/poi-light-rail-station.svg
+share/icons/hicolor/scalable/places/poi-marker.svg
+share/icons/hicolor/scalable/places/poi-place-of-worship.svg
+share/icons/hicolor/scalable/places/poi-railway-station.svg
+share/icons/hicolor/scalable/places/poi-restaurant.svg
+share/icons/hicolor/scalable/places/poi-school.svg
+share/icons/hicolor/scalable/places/poi-town.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
