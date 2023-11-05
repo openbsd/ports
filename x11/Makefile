@@ -286,6 +286,7 @@
      SUBDIR += sndiokeys
      SUBDIR += spectrwm
      SUBDIR += spice-gtk
+     SUBDIR += srandrd
      SUBDIR += sselp
      SUBDIR += st
      SUBDIR += st,scrollback
