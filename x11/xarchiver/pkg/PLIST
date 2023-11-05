@@ -39,6 +39,7 @@ share/doc/xarchiver/index.html
 share/doc/xarchiver/xarchiver.css
 share/icons/hicolor/16x16/apps/xarchiver.png
 share/icons/hicolor/24x24/apps/xarchiver.png
+share/icons/hicolor/32x32/apps/xarchiver.png
 share/icons/hicolor/48x48/apps/xarchiver.png
 share/icons/hicolor/scalable/apps/xarchiver.svg
 share/locale/ar/LC_MESSAGES/xarchiver.mo
@@ -101,3 +102,4 @@ share/pixmaps/xarchiver/xarchiver-html.png
 share/pixmaps/xarchiver/xarchiver-red.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/pixmaps/xarchiver/xarchiver-select.png

@@ -1,6 +1,6 @@
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-DIST_TUPLE =	github	ib	xarchiver	0.5.4.17	.
+DIST_TUPLE =	github	ib	xarchiver	0.5.4.21	.
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
