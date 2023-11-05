@@ -1,0 +1,2 @@
+srandrd is a tool that executes a command on xrandr output change
+events, i.e. if a monitor is plugged or unplugged.
