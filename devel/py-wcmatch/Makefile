@@ -1,6 +1,6 @@
 COMMENT =	file matching and globbing library
 
-MODPY_EGG_VERSION =	8.4.1
+MODPY_EGG_VERSION =	8.5
 DISTNAME =	wcmatch-${MODPY_EGG_VERSION}
 PKGNAME =	py-wcmatch-${MODPY_EGG_VERSION}
 
@@ -21,6 +21,6 @@ MODPY_PYBUILD =	hatchling
 RUN_DEPENDS =	textproc/py-bracex${MODPY_FLAVOR}
 
 # needed for tests
-PORTHOME =		${WRKDIR}
+PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>
