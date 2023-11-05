@@ -1,3 +1,6 @@
+share/unicode/
+share/unicode/cldr/
+share/unicode/cldr/common/
 share/unicode/cldr/common/annotations/
 share/unicode/cldr/common/annotations/af.xml
 share/unicode/cldr/common/annotations/am.xml
@@ -7,6 +10,7 @@ share/unicode/cldr/common/annotations/as.xml
 share/unicode/cldr/common/annotations/ast.xml
 share/unicode/cldr/common/annotations/az.xml
 share/unicode/cldr/common/annotations/be.xml
+share/unicode/cldr/common/annotations/bew.xml
 share/unicode/cldr/common/annotations/bg.xml
 share/unicode/cldr/common/annotations/bgn.xml
 share/unicode/cldr/common/annotations/bn.xml
@@ -18,6 +22,7 @@ share/unicode/cldr/common/annotations/ceb.xml
 share/unicode/cldr/common/annotations/chr.xml
 share/unicode/cldr/common/annotations/ckb.xml
 share/unicode/cldr/common/annotations/cs.xml
+share/unicode/cldr/common/annotations/cv.xml
 share/unicode/cldr/common/annotations/cy.xml
 share/unicode/cldr/common/annotations/da.xml
 share/unicode/cldr/common/annotations/de.xml
@@ -29,6 +34,7 @@ share/unicode/cldr/common/annotations/en.xml
 share/unicode/cldr/common/annotations/en_001.xml
 share/unicode/cldr/common/annotations/en_AU.xml
 share/unicode/cldr/common/annotations/en_CA.xml
+share/unicode/cldr/common/annotations/en_GB.xml
 share/unicode/cldr/common/annotations/en_IN.xml
 share/unicode/cldr/common/annotations/es.xml
 share/unicode/cldr/common/annotations/es_419.xml
@@ -105,6 +111,7 @@ share/unicode/cldr/common/annotations/pt.xml
 share/unicode/cldr/common/annotations/pt_PT.xml
 share/unicode/cldr/common/annotations/qu.xml
 share/unicode/cldr/common/annotations/quc.xml
+share/unicode/cldr/common/annotations/rhg.xml
 share/unicode/cldr/common/annotations/rm.xml
 share/unicode/cldr/common/annotations/ro.xml
 share/unicode/cldr/common/annotations/root.xml
