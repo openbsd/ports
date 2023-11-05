@@ -33,8 +33,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/examples/gentoo
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gentoo
-	@cd ${WRKSRC}/docs && \
-		tar cf - . | (cd ${PREFIX}/share/doc/gentoo; tar xf -) && \
-		rm -f ${PREFIX}/share/doc/gentoo/gentoo.1x
+	@cd ${WRKSRC}/docs && pax -rw . ${PREFIX}/share/doc/gentoo
+	rm -f ${PREFIX}/share/doc/gentoo/gentoo.1x
 
 .include <bsd.port.mk>
