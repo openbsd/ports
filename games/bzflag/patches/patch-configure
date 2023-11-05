@@ -1,0 +1,32 @@
+Disable libinput support for now:
+ - Disable linux rumble joystick support
+ - Disable linux force feedback joystick support
+Index: configure
+--- configure.orig
++++ configure
+@@ -21475,7 +21475,6 @@ for ac_header in \
+ 	fcntl.h \
+ 	inttypes.h \
+ 	limits.h \
+-	linux/input.h \
+ 	process.h \
+ 	sched.h \
+ 	stdint.h \
+@@ -23897,7 +23896,7 @@ struct ff_effect x; x.u.rumble.weak_magnitude = 42; re
+ }
+ _ACEOF
+ if ac_fn_cxx_try_compile "$LINENO"; then :
+-  ac_ff_effect_rumble=yes
++  ac_ff_effect_rumble=no
+ else
+   ac_ff_effect_rumble=no
+ fi
+@@ -23925,7 +23924,7 @@ struct ff_effect x; x.direction = 0x4000; return 0;
+ }
+ _ACEOF
+ if ac_fn_cxx_try_compile "$LINENO"; then :
+-  ac_ff_effect_directional=yes
++  ac_ff_effect_directional=no
+ else
+   ac_ff_effect_directional=no
+ fi
