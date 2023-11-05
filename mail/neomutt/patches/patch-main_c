@@ -3,7 +3,7 @@ Pledge
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -669,6 +669,30 @@ main
+@@ -692,6 +692,30 @@ main
      }
    }
  
