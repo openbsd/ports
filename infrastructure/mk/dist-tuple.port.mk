@@ -25,7 +25,7 @@ ERRORS += "Fatal: invalid choice for DIST_TUPLE: ${_template}"
 .    endif
 
 _subdir =
-.    if "${_id}" == "HASH" || "${_id:C/^[0-9a-f]{40}$/HASH/}" != "HASH"
+.    if "${_id}" == "HASH" || "${_id:C/^[0-9a-f]{10,40}$/HASH/}" != "HASH"
 # set DISTNAME if not done by the port and add refs/tags/ subdir
 DISTNAME ?= ${_project}-${_id:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
 _subdir =	refs/tags/
