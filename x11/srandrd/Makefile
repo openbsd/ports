@@ -1,6 +1,7 @@
 COMMENT =	execute program on xrandr output changes
 
 DIST_TUPLE =	github jceb srandrd v0.6.3 .
+REVISION =	0
 
 CATEGORIES =	x11
 
