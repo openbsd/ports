@@ -1,0 +1,43 @@
+Fix for ghostscript 10.02.1 (finddevice removed) by backporting
+https://gitlab.com/lilypond/lilypond/-/merge_requests/2160/diffs?commit_id=3d1a7fa40fae01c40c60344a09d0bcf01896557a
+
+Index: scm/ps-to-png.scm
+--- scm/ps-to-png.scm.orig
++++ scm/ps-to-png.scm
+@@ -117,7 +117,8 @@
+            (filter
+             string?
+             (list
+-             (format #f "mark /OutputFile (~a)" pngn-gs)
++             "<<"
++             (format #f "/OutputFile (~a)" pngn-gs)
+              "/GraphicsAlphaBits 4 /TextAlphaBits 4"
+              (if fit-page
+                  ;; Get available resolution and magnify it according
+@@ -132,20 +133,12 @@ currentpagedevice /HWResolution get 1 get ~a mul \
+              (format #f "/DownScaleFactor ~a" anti-alias-factor)
+              (if (or (not is-eps) fit-page)
+                  (format #f "/PageSize [~a ~a]" width height))
+-             ;; We use `findprotodevice` because `finddevice` always returns
+-             ;; the same device instance and we can't reset the page number of
+-             ;; the device. `findprotodevice copydevice` creates a new device
+-             ;; instance each time, which can reset the page number.
+-             (format #f "(~a) findprotodevice copydevice" pixmap-format)
+-             "putdeviceprops setdevice"
+-             ;; We want to use `selectdevice` instead of `setdevice` because
+-             ;; `setdevice` doesn't set some defaults. But using `selectdevice`
+-             ;; can't reset the page number because `selectdevice` uses
+-             ;; `finddevice` internally. So, as a workaround, we use an
+-             ;; undocumented `.setdefaultscreen` procedure which is used inside
+-             ;; `selectdevice` to set the defaults. It works in Ghostscript
+-             ;; 9.52 but may not work if the internal implementation of
+-             ;; `selectdevice` is changed in the future.
++             (format #f "/OutputDevice /~a" pixmap-format)
++             ">> setpagedevice"
++             ;; `setpagedevice` does not set some defaults, creating
++             ;; larger output files than necessary.  To fix this we use
++             ;; the undocumented, internal `.setdefaultscreen` procedure
++             ;; (tested with gs 10.02.1).
+              "/.setdefaultscreen where {"
+              "pop .setdefaultscreen"
+              "} {"
