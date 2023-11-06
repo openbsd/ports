@@ -582,7 +582,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/securerandom-0.2.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/shellwords-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/singleton-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/stringio-3.0.8-java.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/strscan-3.0.6-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/strscan-3.0.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/subspawn-posix-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/time-0.2.2.gemspec
@@ -1133,7 +1133,6 @@ jruby/lib/ruby/stdlib/ffi/types.rb
 jruby/lib/ruby/stdlib/ffi/union.rb
 jruby/lib/ruby/stdlib/ffi/variadic.rb
 jruby/lib/ruby/stdlib/ffi/version.rb
-jruby/lib/ruby/stdlib/fiber.rb
 jruby/lib/ruby/stdlib/fiddle/
 jruby/lib/ruby/stdlib/fiddle.rb
 jruby/lib/ruby/stdlib/fiddle/closure.rb
