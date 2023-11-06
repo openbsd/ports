@@ -212,7 +212,7 @@ MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} to use archivers/zstd" ; \
 	sed -i -e 's,^fn main() {,fn main() { println!("cargo:rustc-link-lib=zstd"); return;,' \
 		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
-.    elif "${_cratename}" == "ring"
+.    elif "${_cratename}" == "ring" && "${_cratever:C/0.16\..*/0.16/}" == "0.16"
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Replacing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ; \
