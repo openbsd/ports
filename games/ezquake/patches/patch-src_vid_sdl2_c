@@ -1,0 +1,17 @@
+vid_software_palette 1 causes black screen when resizing game window
+
+see:
+https://github.com/QW-Group/ezquake-source/issues/858
+
+Index: src/vid_sdl2.c
+--- src/vid_sdl2.c.orig
++++ src/vid_sdl2.c
+@@ -222,7 +222,7 @@ cvar_t r_verbose                  = {"vid_verbose",   
+ cvar_t r_showextensions           = {"vid_showextensions",         "0",       CVAR_SILENT };
+ cvar_t gl_multisamples            = {"gl_multisamples",            "0",       CVAR_LATCH_GFX | CVAR_AUTO }; // It's here because it needs to be registered before window creation
+ cvar_t vid_gammacorrection        = {"vid_gammacorrection",        "0",       CVAR_LATCH_GFX };
+-cvar_t vid_software_palette       = {"vid_software_palette",       "1",       CVAR_NO_RESET | CVAR_LATCH_GFX };
++cvar_t vid_software_palette       = {"vid_software_palette",       "0",       CVAR_NO_RESET | CVAR_LATCH_GFX };
+ 
+ cvar_t vid_framebuffer             = {"vid_framebuffer",               "0",       CVAR_NO_RESET | CVAR_LATCH_GFX, conres_changed_callback };
+ cvar_t vid_framebuffer_blit        = {"vid_framebuffer_blit",          "0",       CVAR_NO_RESET };

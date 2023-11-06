@@ -1,0 +1,21 @@
+Index: src/EX_browser_sources.c
+--- src/EX_browser_sources.c.orig
++++ src/EX_browser_sources.c
+@@ -36,7 +36,7 @@ along with this program.  If not, see <http://www.gnu.
+ 
+ #include "EX_browser.h"
+ 
+-#define SOURCES_LIST_FILENAME "sb/sources.txt"
++#define SOURCES_LIST_FILENAME "${GAMEDIR}/sources.txt"
+ 
+ // Used by curl to read server lists from the web
+ struct curl_buf
+@@ -351,7 +351,7 @@ void Update_Source(source_data *s)
+ 	{
+ 		// read servers from file
+ 		char name[1024];
+-		snprintf(name, sizeof (name), "sb/%s", s->address.filename);
++		snprintf(name, sizeof (name), "${GAMEDIR}/%s", s->address.filename);
+ 		should_dump = Update_Source_From_File(s, name, servers, &serversn);
+ 		GetLocalTime(&(s->last_update));
+ 	}
