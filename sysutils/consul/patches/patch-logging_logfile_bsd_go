@@ -1,7 +1,7 @@
 Index: logging/logfile_bsd.go
 --- logging/logfile_bsd.go.orig
 +++ logging/logfile_bsd.go
-@@ -11,6 +11,6 @@ import (
+@@ -13,6 +13,6 @@ import (
  
  func (l *LogFile) createTime(stat os.FileInfo) time.Time {
  	stat_t := stat.Sys().(*syscall.Stat_t)

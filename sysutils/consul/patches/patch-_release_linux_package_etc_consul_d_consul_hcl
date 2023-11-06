@@ -21,7 +21,7 @@ Index: .release/linux/package/etc/consul.d/consul.hcl
  
  # client_addr
  # The address to which Consul will bind client interfaces, including the HTTP and DNS
-@@ -97,3 +101,21 @@ data_dir = "/opt/consul"
+@@ -97,3 +101,15 @@ data_dir = "/opt/consul"
  #retry_join = ["provider=azure tag_name=... tag_value=... tenant_id=... client_id=... subscription_id=... secret_access_key=..."]
  #retry_join = ["provider=gce project_name=... tag_value=..."]
   
@@ -37,9 +37,3 @@ Index: .release/linux/package/etc/consul.d/consul.hcl
 +# Disables automatic checking for security bulletins and new version releases.
 +# This is disabled in Consul Enterprise.
 +disable_update_check = true
-+
-+# This allows users to disable metrics deprecated in 1.9 so they are no longer emitted,
-+# saving on performance and storage in large deployments. Defaults to false.
-+telemetry {
-+  disable_compat_1.9 = true
-+}
