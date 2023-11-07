@@ -6,7 +6,6 @@ include/dlg_config.h
 include/dlg_keys.h
 @static-lib lib/libdialog.a
 @man man/man1/dialog.1
-@man man/man3/dialog.3
 share/locale/an/
 share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/dialog.mo
@@ -57,8 +56,6 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/dialog.mo
 share/locale/it/LC_MESSAGES/dialog.mo
 share/locale/ja/LC_MESSAGES/dialog.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/dialog.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
