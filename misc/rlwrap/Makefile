@@ -1,13 +1,13 @@
 COMMENT=		generic readline wrapper for various programs
 
-V =			0.45.2
+V =			0.46.1
 DISTNAME=		rlwrap-$V
 CATEGORIES=		misc
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://github.com/hanslub42/rlwrap/releases/download/v$V/
+SITES=		https://github.com/hanslub42/rlwrap/releases/download/$V/
 
 WANTLIB=		c curses readline util
 

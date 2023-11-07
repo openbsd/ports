@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri Mar  3 11:16:20 2017
-+++ Makefile.in	Sun Apr  9 13:50:53 2017
-@@ -523,8 +523,8 @@ EXTRA_DIST = BUGS COPYING TODO INSTALL README PLEA src
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -529,8 +529,8 @@ EXTRA_DIST = BUGS COPYING INSTALL README.md  src/rlwra
  
  TESTS = test/testit
  SUBDIRS = doc src filters
