@@ -6,6 +6,7 @@ GH_TAGNAME =		3.22.1
 CATEGORIES =		devel
 HOMEPAGE =		https://www.rebar3.org
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
+REVISION =		0
 
 # APLv2
 PERMIT_PACKAGE =	Yes
