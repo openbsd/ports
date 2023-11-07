@@ -2,6 +2,7 @@ COMMENT =	curses icb and irc client
 DISTNAME =	swirc-3.4.6
 CATEGORIES =	net
 HOMEPAGE =	https://www.nifty-networks.net/swirc/
+REVISION =	0
 
 MAINTAINER =		Markus Uhlin <markus.uhlin@bredband.net>
 

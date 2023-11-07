@@ -1,0 +1,18 @@
+propagate cflags and neuter hardcoded optimizations
+
+Index: posixshell/os_BSD.sh
+--- posixshell/os_BSD.sh.orig
++++ posixshell/os_BSD.sh
+@@ -5,10 +5,10 @@
+ os_BSD () {
+ 	cat <<EOF >>"${MAKE_DEF_FILE}"
+ CC = cc
+-CFLAGS = -O2 -Wall -pipe -std=c17
++CFLAGS = -Wall -std=c17 ${CFLAGS}
+ 
+ CXX = c++
+-CXXFLAGS = -O2 -Wall -pipe -std=c++17
++CXXFLAGS = -Wall -std=c++17 ${CXXFLAGS}
+ 
+ # C preprocessor flags
+ CPPFLAGS = -DBSD=1\\
