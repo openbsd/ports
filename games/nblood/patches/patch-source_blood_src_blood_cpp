@@ -3,7 +3,7 @@ store log file in ~/.config/nblood/
 Index: source/blood/src/blood.cpp
 --- source/blood/src/blood.cpp.orig
 +++ source/blood/src/blood.cpp
-@@ -1568,6 +1568,29 @@ int app_main(int argc, char const * const * argv)
+@@ -1586,6 +1586,29 @@ int app_main(int argc, char const * const * argv)
          Xfree(homedir);
      }
      else

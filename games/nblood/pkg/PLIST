@@ -12,8 +12,10 @@ share/examples/nblood/a.m32
 share/examples/nblood/aspect.map
 share/examples/nblood/dump_used_assets.m32
 share/examples/nblood/m32script_ex.map
+share/examples/nblood/mask_drawing_order.map
 share/examples/nblood/r_usenewshading.map
 share/examples/nblood/ror.map
+share/examples/nblood/screentext.con
 share/examples/nblood/splitscr.con
 share/examples/nblood/spriteclip.txt
 share/examples/nblood/startpos.m32

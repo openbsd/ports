@@ -1,17 +1,17 @@
 COMMENT =	reverse-engineered ports of Build games
 
-DISTNAME =	nblood-1.01.20211205
+DISTNAME =	nblood-1.01.20231020
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
-GH_COMMIT =	cc8d57ee5d6ac8a3c3f400501df25892cb9db6b1
+GH_TAGNAME =	r13919
 CATEGORIES =	games x11
 
 VC_BRANCH =	master
 # git rev-list --count hash
-VC_REV =	12723
+VC_REV =	13919
 # git rev-parse --short=9 hash
-VC_HASH =	cc8d57ee5
+VC_HASH =	ab0d13f00
 
 MAINTAINER =	Jonathan Gray <jsg@openbsd.org>
 

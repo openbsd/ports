@@ -3,7 +3,7 @@ store log file in ~/.config/pcexhumed/
 Index: source/exhumed/src/exhumed.cpp
 --- source/exhumed/src/exhumed.cpp.orig
 +++ source/exhumed/src/exhumed.cpp
-@@ -1860,6 +1860,29 @@ int app_main(int argc, char const* const* argv)
+@@ -1849,6 +1849,29 @@ int app_main(int argc, char const* const* argv)
          Xfree(homedir);
      }
      else

@@ -1,8 +1,8 @@
 Index: Common.mak
 --- Common.mak.orig
 +++ Common.mak
-@@ -188,9 +188,6 @@ ifeq ($(PLATFORM),WII)
-     CCFULLPATH = $(DEVKITPPC)/bin/$(CC)
+@@ -179,9 +179,6 @@ else ifeq ($(PLATFORM),$(filter $(PLATFORM),DINGOO GCW
+     CROSS := mipsel-linux-
  endif
  
 -CC := $(CROSS)gcc$(CROSS_SUFFIX)
@@ -11,7 +11,7 @@ Index: Common.mak
  ifeq ($(PLATFORM),DARWIN)
      CC := $(CROSS)clang$(CROSS_SUFFIX)
      CXX := $(CROSS)clang++$(CROSS_SUFFIX)
-@@ -213,9 +210,6 @@ PKG_CONFIG := pkg-config
+@@ -204,9 +201,6 @@ PKG_CONFIG := pkg-config
  ELF2DOL := elf2dol
  
  # Override defaults that absolutely will not work.
@@ -21,7 +21,16 @@ Index: Common.mak
  ifeq ($(AS),as)
      override AS := nasm
  endif
-@@ -695,7 +689,7 @@ ifeq (0,$(RELEASE))
+@@ -609,7 +603,7 @@ ifneq (0,$(LTO))
+ endif
+ 
+ ifeq (1,$(LLD))
+-    COMMONFLAGS += -fuse-ld=lld
++#    COMMONFLAGS += -fuse-ld=lld
+     LF :=
+ endif
+ 
+@@ -696,7 +690,7 @@ ifeq (0,$(RELEASE))
      F_NO_STACK_PROTECTOR :=
  else
      ifeq (0,$(CLANG))
@@ -30,7 +39,7 @@ Index: Common.mak
      endif
  
      ifeq (0,$(FORCEDEBUG))
-@@ -724,7 +718,7 @@ W_UNINITIALIZED := -Wuninitialized
+@@ -729,7 +723,7 @@ W_UNINITIALIZED := -Wuninitialized
  W_GCC_4_1 := -Wno-attributes
  W_GCC_4_2 := $(W_STRICT_OVERFLOW)
  W_GCC_4_4 := -Wno-unused-result

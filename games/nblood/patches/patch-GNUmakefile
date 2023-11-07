@@ -1,16 +1,16 @@
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -1334,7 +1334,7 @@ endif
+@@ -1212,7 +1212,7 @@ endif
  
- #### Final setup
+ #### Includes
  
 -COMPILERFLAGS += \
 +COMPILERFLAGS := \
      -I$(engine_inc) \
      -I$(mact_inc) \
      -I$(audiolib_inc) \
-@@ -1344,6 +1344,7 @@ COMPILERFLAGS += \
+@@ -1223,6 +1223,7 @@ COMPILERFLAGS += \
      -I$(libsmackerdec_inc) \
      -I$(hmpplay_inc) \
      -MP -MMD \

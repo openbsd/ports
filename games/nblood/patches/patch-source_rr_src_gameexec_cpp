@@ -1,0 +1,14 @@
+compat.h includes debugbreak.h if NDEBUG not defined
+
+Index: source/rr/src/gameexec.cpp
+--- source/rr/src/gameexec.cpp.orig
++++ source/rr/src/gameexec.cpp
+@@ -33,8 +33,6 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include "scriplib.h"
+ #include "cmdline.h"
+ 
+-#include "debugbreak.h"
+-
+ #if KRANDDEBUG
+ # define GAMEEXEC_INLINE
+ # define GAMEEXEC_STATIC
