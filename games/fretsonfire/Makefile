@@ -5,11 +5,11 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		14
+REVISION =		15
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://fretsonfire.sourceforge.net
+HOMEPAGE =		https://fretsonfire.sourceforge.net
 
 # GPLv2 or later
 PERMIT_PACKAGE =	Yes

@@ -1,11 +1,11 @@
 COMMENT=	TCP/IP traffic logging tool
 
 DISTNAME=	iplog-2.2.3
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net security
 SITES=		${SITE_SOURCEFORGE:=ojnk/}
 
-HOMEPAGE=	http://ojnk.sourceforge.net
+HOMEPAGE=	https://ojnk.sourceforge.net
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap pthread

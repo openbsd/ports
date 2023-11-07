@@ -2,9 +2,9 @@ COMMENT =		code browsing program
 
 DISTNAME =		cscope-15.9
 CATEGORIES =     	devel
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://cscope.sourceforge.net/
+HOMEPAGE =		https://cscope.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

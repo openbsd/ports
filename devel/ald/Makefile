@@ -4,9 +4,9 @@ COMMENT=		assembly language debugger
 
 DISTNAME=		ald-0.1.7
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://ald.sourceforge.net/
+HOMEPAGE=		https://ald.sourceforge.net/
 
 MAINTAINER=		Patrick Alken <alken@colorado.edu>
 

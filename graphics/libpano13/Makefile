@@ -1,10 +1,11 @@
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.20
+REVISION =		0
 
 SHARED_LIBS +=		pano13               3.0
 
 CATEGORIES =		graphics
-HOMEPAGE =		http://panotools.sourceforge.net/
+HOMEPAGE =		https://panotools.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

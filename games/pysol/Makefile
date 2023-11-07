@@ -3,10 +3,11 @@ COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.21.0
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://pysolfc.sourceforge.net/
+HOMEPAGE =		https://pysolfc.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

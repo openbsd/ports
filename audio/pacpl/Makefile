@@ -3,10 +3,10 @@ PKG_ARCH=		*
 COMMENT=		PAC (Perl Audio Converter)
 
 DISTNAME=		pacpl-4.0.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio converters perl5
 
-HOMEPAGE=		http://pacpl.sourceforge.net/
+HOMEPAGE=		https://pacpl.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

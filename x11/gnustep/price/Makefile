@@ -1,10 +1,10 @@
 COMMENT =	precision raster image convolution engine
 
-REVISION =	8
+REVISION =	9
 DISTNAME =	PRICE-1.3.0
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://price.sourceforge.net/
+HOMEPAGE =	https://price.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=price/}
 
 MODULES =	x11/gnustep

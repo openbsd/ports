@@ -1,17 +1,17 @@
 COMMENT=		addressbook program with mutt support
 
 DISTNAME=		abook-0.6.1
-REVISION=		3
+REVISION=		4
 CATEGORIES=		mail
 
-HOMEPAGE=		http://abook.sourceforge.net/
+HOMEPAGE=		https://abook.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses iconv intl readline
 
-SITES=			http://abook.sourceforge.net/devel/
+SITES=			https://abook.sourceforge.net/devel/
 
 LIB_DEPENDS=		converters/libiconv \
 			devel/gettext,-runtime

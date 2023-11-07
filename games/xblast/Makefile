@@ -1,7 +1,7 @@
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4
-REVISION=	4
+REVISION=	5
 DIST_SUBDIR=	xblast
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		images-2005-01-06${EXTRACT_SUFX} \
@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		sounds${EXTRACT_SUFX}
 CATEGORIES=	games
 
-HOMEPAGE=	http://xblast.sourceforge.net/
+HOMEPAGE=	https://xblast.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

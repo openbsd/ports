@@ -2,9 +2,9 @@ COMMENT = 	C++ library for scientific computing
 DISTNAME = 	armadillo-9.900.4
 SHARED_LIBS = 	armadillo 3.1	# 9.900.4
 CATEGORIES = 	math
-HOMEPAGE = 	http://arma.sourceforge.net/
+HOMEPAGE = 	https://arma.sourceforge.net/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	0
+REVISION =	1
 
 # MPL v2
 PERMIT_PACKAGE = Yes

@@ -1,7 +1,7 @@
 COMMENT=	pacman clone gone mad
 
 DISTNAME=	pacman-arena-0.15
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.bz2
 DISTDATA=	pacman-data-0.0.zip
@@ -13,7 +13,7 @@ WRKDIST=	${WRKDIR}/pacman
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://pacmanarena.sourceforge.net/
+HOMEPAGE=	https://pacmanarena.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

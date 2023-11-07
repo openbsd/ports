@@ -2,14 +2,14 @@ COMMENT =	remote backup software system
 
 DISTNAME =	BackupPC-3.3.2
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-HOMEPAGE =	http://backuppc.sourceforge.net
+HOMEPAGE =	https://backuppc.sourceforge.net
 
 SITES =		${SITE_SOURCEFORGE:=backuppc/}
 

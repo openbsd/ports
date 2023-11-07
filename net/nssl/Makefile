@@ -2,11 +2,11 @@ COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005
 PKGNAME=		nssl-005
-REVISION=		4
+REVISION=		5
 CATEGORIES=		net
 FIX_EXTRACT_PERMISSIONS=Yes
 
-HOMEPAGE=		http://nssl.sourceforge.net/
+HOMEPAGE=		https://nssl.sourceforge.net/
 
 # None
 PERMIT_PACKAGE=		No

@@ -4,13 +4,13 @@ COMMENT=		C++ wrapper for the libxml XML parser library
 
 GNOME_VERSION=		2.42.2
 GNOME_PROJECT=		libxml++
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += xml++-2.6                 2.1 # 2.0.7
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://libxmlplusplus.sourceforge.net/
+HOMEPAGE=		https://libxmlplusplus.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -1,10 +1,10 @@
 COMMENT=		Nebulous rewrite of Tower Toppler
 
 DISTNAME=		toppler-1.1.6
-REVISION=		5
+REVISION=		6
 CATEGORIES=		games
 
-HOMEPAGE=		http://toppler.sourceforge.net/
+HOMEPAGE=		https://toppler.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

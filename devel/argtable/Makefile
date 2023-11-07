@@ -4,9 +4,9 @@ DISTNAME=		argtable2-13
 PKGNAME=		argtable-2.13
 SHARED_LIBS +=		argtable2            1.2      # .1.8
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://argtable.sourceforge.net/
+HOMEPAGE=		https://argtable.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes

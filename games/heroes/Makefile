@@ -5,7 +5,7 @@ DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
 DISTNAME=	heroes-${VERSION}
-REVISION =	9
+REVISION =	10
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		heroes-sound-tracks-${MUSICVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	heroes
 
-HOMEPAGE=	http://heroes.sourceforge.net/
+HOMEPAGE=	https://heroes.sourceforge.net/
 
 MAINTAINER=	Anthony J. Bentley <anthony@anjbe.name>
 

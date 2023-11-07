@@ -4,8 +4,9 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME=		Net-Telnet-Cisco-1.12
 CATEGORIES=		net
+REVISION=		0
 
-HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
+HOMEPAGE=		https://nettelnetcisco.sourceforge.net/
 
 # Perl
 PERMIT_PACKAGE=	Yes

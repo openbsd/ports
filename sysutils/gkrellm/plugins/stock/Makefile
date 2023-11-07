@@ -2,10 +2,10 @@ COMMENT=	stock ticker for GkrellM2
 
 V=		0.5.1
 DISTNAME=	gkrellstock-${V}
-REVISION=	20
+REVISION=	21
 CATEGORIES=	misc
 
-HOMEPAGE=	http://gkrellstock.sourceforge.net/
+HOMEPAGE=	https://gkrellstock.sourceforge.net/
 SITES=		${SITE_SOURCEFORGE:=gkrellstock/}
 
 EXTRA_WANTLIB=	gthread-2.0

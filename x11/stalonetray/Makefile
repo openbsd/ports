@@ -1,10 +1,10 @@
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
 DISTNAME=		stalonetray-0.8.3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11 sysutils
 
-HOMEPAGE=		http://stalonetray.sourceforge.net/
+HOMEPAGE=		https://stalonetray.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

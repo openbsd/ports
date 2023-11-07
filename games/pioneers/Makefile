@@ -2,11 +2,11 @@ COMMENT=		Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=		pioneers
 GNOME_VERSION=		15.5
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		games
 
-HOMEPAGE=		http://pio.sourceforge.net/
+HOMEPAGE=		https://pio.sourceforge.net/
 
 # program GPLv2+, icons CC-BY-SA-4.0
 PERMIT_PACKAGE=	Yes

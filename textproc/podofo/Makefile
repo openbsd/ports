@@ -1,12 +1,13 @@
 COMMENT=	library and tools to modify and parse PDF documents
 
 DISTNAME=	podofo-0.9.8
+REVISION=	0
 
 SHARED_LIBS +=	podofo                    4.0 # 0.9.8
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://podofo.sourceforge.net/
+HOMEPAGE=	https://podofo.sourceforge.net/
 
 # GPLv2+ (tools) LGPLv2+ (lib)
 PERMIT_PACKAGE=	Yes

@@ -2,11 +2,11 @@ COMMENT =		traditional vi and ex
 
 DISTNAME =		ex-050325
 PKGNAME =		traditional-vi-20050325
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		editors
 
-HOMEPAGE =		http://ex-vi.sourceforge.net/
+HOMEPAGE =		https://ex-vi.sourceforge.net/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 

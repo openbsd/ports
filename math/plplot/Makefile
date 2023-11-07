@@ -14,13 +14,13 @@ SHARED_LIBS =	csirocsa	4.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
-REVISION-c++ =	0
-REVISION-fortran =	0
-REVISION-main =	1
+REVISION-c++ =	1
+REVISION-fortran =	1
+REVISION-main =	2
 
 CATEGORIES =	math graphics
 
-HOMEPAGE =	http://plplot.sourceforge.net/
+HOMEPAGE =	https://plplot.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE =		Yes

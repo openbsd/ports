@@ -3,12 +3,12 @@ CATEGORIES=	devel
 
 V=		5.8.7
 DISTNAME=	autogen-${V}
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=	opts                 27.5     # .27.5
 SHARED_LIBS +=	guileopts            1.0      # .0.1
 
-HOMEPAGE=	http://autogen.sourceforge.net/
+HOMEPAGE=	https://autogen.sourceforge.net/
 SITES=		${SITE_GNU:=autogen/rel${V}/}
 
 # GPLv2

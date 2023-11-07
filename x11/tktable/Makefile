@@ -4,9 +4,9 @@ V =			2.10
 
 DISTNAME =		Tktable${V}
 PKGNAME =		Tktable-${V}
-REVISION =		5
+REVISION =		6
 CATEGORIES =		x11
-HOMEPAGE =		http://tktable.sourceforge.net/
+HOMEPAGE =		https://tktable.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style

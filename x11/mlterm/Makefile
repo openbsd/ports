@@ -1,13 +1,13 @@
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS+=	mef	0.0 # 1.0
 SHARED_LIBS+=	pobl	0.0 # 1.0
 
 CATEGORIES=	x11
 
-HOMEPAGE=	http://mlterm.sourceforge.net/
+HOMEPAGE=	https://mlterm.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

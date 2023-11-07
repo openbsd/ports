@@ -1,10 +1,10 @@
 COMMENT=		command line MPEG audio/video/system file toolbox
 
 DISTNAME=		mpgtx-1.3.1
-REVISION =		2
+REVISION =		3
 CATEGORIES=		multimedia sysutils
 
-HOMEPAGE=		http://mpgtx.sourceforge.net/
+HOMEPAGE=		https://mpgtx.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

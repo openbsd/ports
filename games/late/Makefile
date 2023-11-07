@@ -1,11 +1,11 @@
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
-REVISION=	5
+REVISION=	6
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 SITES=		${SITE_SOURCEFORGE:=late/}
 
-HOMEPAGE=	http://late.sourceforge.net/
+HOMEPAGE=	https://late.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

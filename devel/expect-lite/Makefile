@@ -2,11 +2,11 @@ COMMENT =		mature, quick and easy command line automation tool
 
 DISTNAME =		expect-lite_4.9.0
 PKGNAME =		${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://expect-lite.sourceforge.net/
+HOMEPAGE =		https://expect-lite.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE =	Yes

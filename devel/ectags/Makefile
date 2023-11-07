@@ -1,10 +1,10 @@
 COMMENT=	multilanguage implementation of ctags
 
 DISTNAME=	ctags-5.8
-REVISION=	5
+REVISION=	6
 PKGNAME=	e${DISTNAME}
 CATEGORIES=	devel
-HOMEPAGE=	http://ctags.sourceforge.net/
+HOMEPAGE=	https://ctags.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

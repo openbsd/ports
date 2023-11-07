@@ -1,11 +1,11 @@
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
 DISTNAME=	meanwhile-1.0.2
-REVISION=	7
+REVISION=	8
 SHARED_LIBS=	meanwhile 1.2
 CATEGORIES=	devel net
 
-HOMEPAGE=	http://meanwhile.sourceforge.net/
+HOMEPAGE=	https://meanwhile.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

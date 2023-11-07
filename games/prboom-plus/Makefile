@@ -1,9 +1,9 @@
 COMMENT = 	enhanced version the PrBoom Doom engine
 DISTNAME =	prboom-plus-2.5.1.4
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://prboom-plus.sourceforge.net/
+HOMEPAGE =	https://prboom-plus.sourceforge.net/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 

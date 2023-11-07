@@ -1,11 +1,11 @@
 COMMENT =	simple and fast image viewer for X11
 
 DISTNAME =	gpicview-0.2.5
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	graphics x11
 
-HOMEPAGE =	http://lxde.sourceforge.net/gpicview/
+HOMEPAGE =	https://lxde.sourceforge.net/gpicview/
 
 
 # GPLv2+

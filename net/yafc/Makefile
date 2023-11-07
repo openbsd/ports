@@ -3,9 +3,9 @@ COMMENT=	powerful console ftp client with many features
 DISTNAME=	yafc-1.1
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=yafc/}
-REVISION=	6
+REVISION=	7
 
-HOMEPAGE=	http://yafc.sourceforge.net/
+HOMEPAGE=	https://yafc.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

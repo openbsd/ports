@@ -1,10 +1,10 @@
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11
 
-HOMEPAGE=		http://rox.sourceforge.net/desktop/ROX-Filer
+HOMEPAGE=		https://rox.sourceforge.net/desktop/ROX-Filer
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

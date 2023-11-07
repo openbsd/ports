@@ -7,9 +7,9 @@ DISTNAME =		st-1.9
 PKGNAME =		lib${DISTNAME}
 SHARED_LIBS =		st	2.0
 CATEGORIES =		net devel
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://state-threads.sourceforge.net/
+HOMEPAGE =		https://state-threads.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

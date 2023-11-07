@@ -2,9 +2,9 @@ COMMENT=	download and decode binaries posted to Usenet
 
 DISTNAME=	ubh-2.5
 CATEGORIES=	news
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE=	http://ubh.sourceforge.net/
+HOMEPAGE=	https://ubh.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
 

@@ -1,10 +1,10 @@
 COMMENT=		file integrity checker
 
 DISTNAME=		integrit-4.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		security
 
-HOMEPAGE=		http://sourceforge.net/projects/integrit/
+HOMEPAGE=		https://sourceforge.net/projects/integrit/
 
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 

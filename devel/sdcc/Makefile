@@ -7,8 +7,9 @@ DISTNAME=	sdcc-src-4.2.0
 PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	devel
+REVISION=	0
 
-HOMEPAGE=	http://sdcc.sourceforge.net/
+HOMEPAGE=	https://sdcc.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+

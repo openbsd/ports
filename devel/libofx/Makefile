@@ -2,11 +2,11 @@ COMMENT=	opensource implementation of the OFX specification
 
 V=	0.10.9
 DISTNAME=	libofx-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://libofx.sourceforge.net/
+HOMEPAGE=	https://libofx.sourceforge.net/
 SITES=	https://github.com/libofx/libofx/releases/download/${V}/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>

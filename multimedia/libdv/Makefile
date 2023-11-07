@@ -1,13 +1,13 @@
 COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-1.0.0
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		multimedia
 
 SHARED_LIBS +=  dv                   5.0      # 4.3
 
-HOMEPAGE=		http://libdv.sourceforge.net/
+HOMEPAGE=		https://libdv.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

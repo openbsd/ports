@@ -1,11 +1,11 @@
 COMMENT=	video capture library
 
 DISTNAME=	libvidcap-0.2.1
-REVISION =	3
+REVISION =	4
 SHARED_LIBS=	vidcap	0.0
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://libvidcap.sourceforge.net/
+HOMEPAGE=	https://libvidcap.sourceforge.net/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2.1

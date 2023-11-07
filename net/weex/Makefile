@@ -3,8 +3,9 @@ COMMENT=		noninteractive FTP/FTPS client for updating web pages
 VERSION=		2.8.3
 DISTNAME=		weex-${VERSION}
 CATEGORIES=		net
+REVISION=		0
 
-HOMEPAGE=		http://weex.sourceforge.net
+HOMEPAGE=		https://weex.sourceforge.net
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

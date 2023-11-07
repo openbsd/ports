@@ -2,8 +2,9 @@ COMMENT =		database-independent abstraction layer
 DISTNAME =		libdbi-0.9.0
 CATEGORIES =		databases
 SHARED_LIBS +=		dbi 1.0
+REVISION =		0
 
-HOMEPAGE =		http://libdbi.sourceforge.net/
+HOMEPAGE =		https://libdbi.sourceforge.net/
 SITES =			${SITE_SOURCEFORGE:=libdbi/}
 
 # LGPLv2.1

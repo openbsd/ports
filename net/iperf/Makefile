@@ -2,9 +2,9 @@ COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
 DISTNAME=	iperf-2.0.12
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://sourceforge.net/projects/iperf/
+HOMEPAGE=	https://sourceforge.net/projects/iperf/
 
 MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 

@@ -1,11 +1,11 @@
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.9
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://garden.sourceforge.net
+HOMEPAGE =		https://garden.sourceforge.net
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 

@@ -5,12 +5,12 @@ COMMENT=	programming language with generators, X11 graphics and more
 
 CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
-REVISION=	2
+REVISION=	3
 DISTFILES=	uni.zip
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
-HOMEPAGE=	http://unicon.sourceforge.net/
+HOMEPAGE=	https://unicon.sourceforge.net/
 
 SITES=		http://icon.cs.unlv.edu/v9/
 MAINTAINER=	Marc Espie <espie@openbsd.org>

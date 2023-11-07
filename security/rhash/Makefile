@@ -2,12 +2,13 @@ COMMENT =	utility and library for computing hash sums
 
 DISTNAME =	rhash-1.4.4-src
 PKGNAME =	${DISTNAME:S/-src$//}
+REVISION =	0
 
 SHARED_LIBS =	rhash 1.0
 
 CATEGORIES =	security
 
-HOMEPAGE =	http://rhash.sf.net
+HOMEPAGE =	https://rhash.sourceforge.io/
 
 # BSD
 PERMIT_PACKAGE =	Yes

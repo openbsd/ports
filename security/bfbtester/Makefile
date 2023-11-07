@@ -3,8 +3,9 @@ COMMENT=	brute force binary tester
 DISTNAME=	bfbtester-2.0.1
 CATEGORIES=	security
 SITES=		${SITE_SOURCEFORGE:=bfbtester/}
+REVISION=	0
 
-HOMEPAGE=	http://bfbtester.sourceforge.net/
+HOMEPAGE=	https://bfbtester.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c pthread

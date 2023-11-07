@@ -3,13 +3,13 @@ COMMENT=	UCB/LBNL Network Animator
 V=		1.15
 DISTNAME=	nam-src-$V
 PKGNAME=	nam-$V
-REVISION =	4
+REVISION =	5
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 SITES= 		${SITE_SOURCEFORGE:=nsnam/}
 
-HOMEPAGE=	http://nsnam.sourceforge.net/
+HOMEPAGE=	https://nsnam.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

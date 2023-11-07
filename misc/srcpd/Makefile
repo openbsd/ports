@@ -2,8 +2,9 @@ COMMENT =	daemon to control digital model railroad systems
 
 DISTNAME =	srcpd-2.1.6
 CATEGORIES =	misc net
+REVISION =	0
 
-HOMEPAGE =	http://srcpd.sourceforge.net/
+HOMEPAGE =	https://srcpd.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=srcpd/}
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

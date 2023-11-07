@@ -4,13 +4,13 @@ V =		0.7.5
 # 0.7.5-cvs
 DISTNAME =	a52dec-snapshot
 PKGNAME =	liba52-${V}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	audio
 SITES =		https://comstyle.com/source/
 
 SHARED_LIBS =	a52	1.0
 
-HOMEPAGE =	http://liba52.sourceforge.net/
+HOMEPAGE =	https://liba52.sourceforge.net/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

@@ -3,8 +3,9 @@ COMMENT=	perl debugger built with a PerlTk GUI
 DISTNAME =	Devel-ptkdb-1.234
 EPOCH =		0
 CATEGORIES=	devel
+REVISION =	0
 
-HOMEPAGE=	http://ptkdb.sourceforge.net/
+HOMEPAGE=	https://ptkdb.sourceforge.net/
 
 # perl
 PERMIT_PACKAGE=	Yes

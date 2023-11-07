@@ -27,7 +27,7 @@ LIB_DEPENDS=		graphics/gdk-pixbuf2
 MODGNOME_TOOLS=		gi-docgen gobject-introspection
 
 # XXX "need to install docbook-xsl-ns or similar package"
-# http://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
+# https://docbook.sourceforge.net/release/xsl-ns/current/manpages/docbook.xsl
 #MODGNOME_TOOLS +=	docbook
 CONFIGURE_ARGS +=	-Dman=false
 

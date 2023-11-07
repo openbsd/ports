@@ -4,11 +4,11 @@ REV =			571
 V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		emulators
 
-HOMEPAGE =		http://gambatte.sourceforge.net/
+HOMEPAGE =		https://gambatte.sourceforge.net/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 

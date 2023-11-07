@@ -3,9 +3,9 @@ PKG_ARCH =		*
 
 DISTNAME = 		shared-desktop-ontologies-0.11.0
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
+HOMEPAGE =		https://sourceforge.net/apps/trac/oscaf/
 
 CATEGORIES = 		misc
 

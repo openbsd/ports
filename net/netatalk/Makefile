@@ -6,8 +6,9 @@ DISTNAME=	netatalk-2.2.8
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
-HOMEPAGE=	http://netatalk.sourceforge.net/
+HOMEPAGE=	https://netatalk.sourceforge.net/
 
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE=	Yes

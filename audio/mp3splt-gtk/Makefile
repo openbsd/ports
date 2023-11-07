@@ -1,11 +1,11 @@
 COMMENT=	graphical mp3/ogg file splitter
 
 DISTNAME=	mp3splt-gtk-0.9.2
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	audio
 
-HOMEPAGE=	http://mp3splt.sourceforge.net/
+HOMEPAGE=	https://mp3splt.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

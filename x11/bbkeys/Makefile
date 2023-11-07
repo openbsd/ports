@@ -3,9 +3,9 @@ COMMENT=		X keygrabber for blackbox
 DISTNAME=		bbkeys-0.9.1
 CATEGORIES=		x11
 SITES=			${SITE_SOURCEFORGE:=bbkeys/}
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://bbkeys.sourceforge.net/
+HOMEPAGE=		https://bbkeys.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

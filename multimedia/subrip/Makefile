@@ -1,11 +1,11 @@
 COMMENT=	extract subtitles from dvds
 DISTNAME=	ogmrip-0.10.0
 PKGNAME=	subrip-0.10.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia converters
 SITES=		${SITE_SOURCEFORGE:=ogmrip/}
 
-HOMEPAGE=	http://ogmrip.sourceforge.net/
+HOMEPAGE=	https://ogmrip.sourceforge.net/
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 

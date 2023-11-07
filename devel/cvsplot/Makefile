@@ -2,10 +2,11 @@ COMMENT=		CVS-managed project analyzer
 
 DISTNAME=		cvsplot-1.7.4
 CATEGORIES=		devel
+REVISION=		0
 
 SITES=			${SITE_SOURCEFORGE:=cvsplot/}
 
-HOMEPAGE=		http://cvsplot.sourceforge.net/
+HOMEPAGE=		https://cvsplot.sourceforge.net/
 
 RUN_DEPENDS=		converters/p5-DateManip \
 			textproc/p5-String-ShellQuote \

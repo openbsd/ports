@@ -1,13 +1,13 @@
 COMMENT=	gtk+2 interface to libexif
 
 DISTNAME=	libexif-gtk-0.4.0
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  exif-gtk             1.0      # 6.0
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://libexif.sourceforge.net/
+HOMEPAGE=	https://libexif.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

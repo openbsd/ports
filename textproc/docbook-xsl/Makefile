@@ -1,10 +1,10 @@
 COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1
-REVISION =	7
+REVISION =	8
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/
+HOMEPAGE=	https://docbook.sourceforge.net/projects/xsl/
 
 # MIT/X Consortium License
 PERMIT_PACKAGE=	Yes

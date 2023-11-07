@@ -1,10 +1,10 @@
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		15
+REVISION =		16
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://imagination.sf.net
+HOMEPAGE =		https://imagination.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

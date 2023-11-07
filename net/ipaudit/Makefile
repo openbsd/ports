@@ -1,10 +1,10 @@
 COMMENT=		IP traffic summarizer
 
 DISTNAME=		ipaudit-0.95
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net sysutils
 
-HOMEPAGE=		http://ipaudit.sourceforge.net/
+HOMEPAGE=		https://ipaudit.sourceforge.net/
 
 SITES=			${HOMEPAGE}/download/
 

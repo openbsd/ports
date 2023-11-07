@@ -1,9 +1,9 @@
 COMMENT=		ISO 9660 filesystem and CD/DVD/BD creation tools
 
 DISTNAME=		cdrtools-3.00
-REVISION=		2
+REVISION=		3
 CATEGORIES=		sysutils
-HOMEPAGE=		http://cdrtools.sourceforge.net/private/cdrtools.html
+HOMEPAGE=		https://cdrtools.sourceforge.net/private/cdrtools.html
 
 # mostly CDDL, some components GPL (see COPYING)
 PERMIT_PACKAGE=	Yes

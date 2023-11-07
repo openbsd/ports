@@ -1,8 +1,8 @@
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
-REVISION=		11
+REVISION=		12
 CATEGORIES=		mail
-HOMEPAGE=		http://sourceforge.net/projects/bmf/
+HOMEPAGE=		https://sourceforge.net/projects/bmf/
 
 # GPL
 PERMIT_PACKAGE=	Yes

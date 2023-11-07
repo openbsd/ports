@@ -1,11 +1,11 @@
 COMMENT =		SMTP proxy to verify or add DKIM signatures
 
 DISTNAME =		dkimproxy-1.4.1
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		mail
 
-HOMEPAGE =		http://dkimproxy.sourceforge.net/
+HOMEPAGE =		https://dkimproxy.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

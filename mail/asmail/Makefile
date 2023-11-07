@@ -1,12 +1,12 @@
 COMMENT=	biff-type program, designed to match AfterStep
 
 DISTNAME=	asmail-0.56
-REVISION =	5
+REVISION =	6
 CATEGORIES=	mail
 
 SITES=		${SITE_SOURCEFORGE:=asmail/}
 
-HOMEPAGE=	http://asmail.sourceforge.net/
+HOMEPAGE=	https://asmail.sourceforge.net/
 
 LIB_DEPENDS=	graphics/jpeg
 

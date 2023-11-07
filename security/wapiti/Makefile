@@ -3,11 +3,11 @@ COMMENT =	web-application vulnerability scanner
 MODPY_EGG_VERSION =	3.0.1
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security www
 
-HOMEPAGE =	http://wapiti.sourceforge.net/
+HOMEPAGE =	https://wapiti.sourceforge.net/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 

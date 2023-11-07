@@ -4,7 +4,7 @@ DISTNAME ?=		ngspice-${V}
 
 CATEGORIES ?=		cad
 
-HOMEPAGE ?=		http://ngspice.sourceforge.net/
+HOMEPAGE ?=		https://ngspice.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE ?=	Yes

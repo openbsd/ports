@@ -2,11 +2,11 @@ COMMENT =		compressing non-caching HTTP proxy
 
 DISTNAME =		ziproxy-3.3.2
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net www
 
-HOMEPAGE =		http://ziproxy.sourceforge.net/
+HOMEPAGE =		https://ziproxy.sourceforge.net/
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 

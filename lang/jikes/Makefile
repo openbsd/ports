@@ -3,9 +3,9 @@ COMMENT=compile Java source into .class files (quickly!)
 # Jikes, a fast Java compiler.
 
 DISTNAME=	jikes-1.22
-REVISION =	9
+REVISION =	10
 CATEGORIES=	lang
-HOMEPAGE=	http://jikes.sourceforge.net/
+HOMEPAGE=	https://jikes.sourceforge.net/
 SITES=		${SITE_SOURCEFORGE:=jikes/}
 EXTRACT_SUFX=	.tar.bz2
 

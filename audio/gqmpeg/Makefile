@@ -1,10 +1,10 @@
 COMMENT=		front-end to various audio players
 
 DISTNAME=		gqmpeg-0.91.1
-REVISION=		16
+REVISION=		17
 CATEGORIES=		audio
 
-HOMEPAGE=		http://gqmpeg.sourceforge.net/
+HOMEPAGE=		https://gqmpeg.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

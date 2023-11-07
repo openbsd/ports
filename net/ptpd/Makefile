@@ -7,8 +7,8 @@ COMMENT=	Precision Time Protocol daemon (IEEE 1588-2002)
 
 DISTNAME=	ptpd-1.1.0
 CATEGORIES=	net
-HOMEPAGE=	http://ptpd.sourceforge.net/
-REVISION=	0
+HOMEPAGE=	https://ptpd.sourceforge.net/
+REVISION=	1
 
 # ISC
 PERMIT_PACKAGE=	Yes

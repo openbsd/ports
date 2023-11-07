@@ -1,12 +1,12 @@
 COMMENT =	simple GTK+3 raster painting program
 
 DISTNAME =	mtpaint-3.50
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://mtpaint.sourceforge.net/
+HOMEPAGE =	https://mtpaint.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -2,12 +2,12 @@ COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
 DISTNAME=	sphinx3-0.8
 PKGNAME=	cmu-${DISTNAME}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	audio
 
 SHARED_LIBS=	s3decoder	0.0
 
-HOMEPAGE=	http://cmusphinx.sourceforge.net/
+HOMEPAGE=	https://cmusphinx.sourceforge.net/
 
 # CMU
 PERMIT_PACKAGE=	Yes

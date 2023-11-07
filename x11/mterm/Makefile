@@ -2,9 +2,9 @@ COMMENT=		dockable program launcher
 
 DISTNAME=		mterm-0.4.2b
 CATEGORIES=		x11
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://mterm.sourceforge.net/
+HOMEPAGE=		https://mterm.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,9 +1,9 @@
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.5
-REVISION =		5
+REVISION =		6
 CATEGORIES =		x11 x11/tk
-HOMEPAGE =		http://sourceforge.net/projects/tkcon/
+HOMEPAGE =		https://sourceforge.net/projects/tkcon/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD-like

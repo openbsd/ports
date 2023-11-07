@@ -3,9 +3,9 @@ COMMENT=	dynamic .signature generator
 DISTNAME=	signify-1.11
 CATEGORIES=	mail
 
-HOMEPAGE=	http://signify.sourceforge.net/
+HOMEPAGE=	https://signify.sourceforge.net/
 
-REVISION =	0
+REVISION =	1
 
 # Public domain
 PERMIT_PACKAGE=	Yes

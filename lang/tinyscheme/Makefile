@@ -2,8 +2,9 @@ COMMENT=	lightweight Scheme implementation with subset of R5RS
 
 DISTNAME=	tinyscheme-1.42
 CATEGORIES=	lang
+REVISION=	0
 
-HOMEPAGE=	http://tinyscheme.sourceforge.net/home.html
+HOMEPAGE=	https://tinyscheme.sourceforge.net/home.html
 
 # BSD
 PERMIT_PACKAGE=	Yes

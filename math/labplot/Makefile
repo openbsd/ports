@@ -86,7 +86,7 @@ LIB_DEPENDS +=	devel/kf5/syntax-highlighting \
 
 #-- The following OPTIONAL packages have not been found:
 #* LibOrigin, A library for reading OriginLab project files,
-#  <http://sourceforge.net/projects/liborigin>
+#  <https://sourceforge.net/projects/liborigin>
 #* Qt5Mqtt, Qt Module to implement MQTT protocol version 3.1 and 3.1.1,
 # <https://github.com/qt/qtmqtt>
 #* ReadStat, A command-line tool and library for reading files from

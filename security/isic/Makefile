@@ -1,10 +1,10 @@
 COMMENT=	IP stack integrity checker
 
 DISTNAME=	isic-0.07
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
-HOMEPAGE=	http://isic.sourceforge.net/
+HOMEPAGE=	https://isic.sourceforge.net/
 
 # modified BSD license
 PERMIT_PACKAGE=	Yes

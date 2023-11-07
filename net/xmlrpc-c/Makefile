@@ -8,6 +8,7 @@ CATEGORIES=	net devel textproc
 V=		1.39.13
 DISTNAME=	xmlrpc-c-${V}
 FIX_EXTRACT_PERMISSIONS=Yes
+REVISION=	0
 
 EXTRACT_SUFX=	.tgz
 
@@ -20,7 +21,7 @@ EXTRACT_SUFX=	.tgz
 SHARED_LIBS += $i 2.0
 .endfor
 
-HOMEPAGE=	http://xmlrpc-c.sourceforge.net/
+HOMEPAGE=	https://xmlrpc-c.sourceforge.net/
 
 SITES=		${SITE_SOURCEFORGE:=xmlrpc-c/}
 

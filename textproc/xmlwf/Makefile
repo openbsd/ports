@@ -3,12 +3,13 @@ V=		2.1.0
 
 PKGNAME=	xmlwf-$V
 DISTNAME=	expat-$V
+REVISION=	0
 
 CATEGORIES=	textproc
 
 SITES=		${SITE_SOURCEFORGE:=expat/}
 
-HOMEPAGE=	http://expat.sourceforge.net/
+HOMEPAGE=	https://expat.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

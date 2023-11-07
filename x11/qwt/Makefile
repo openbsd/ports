@@ -2,18 +2,19 @@ COMMENT=	Qt widgets for technical applications
 
 VERSION =	6.2.0
 DISTNAME =	qwt-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	qwt${QTLIBSUFFIX} 8.0
 
 CATEGORIES =	x11
 
-HOMEPAGE =	http://qwt.sourceforge.net/
+HOMEPAGE =	https://qwt.sourceforge.net/
 
 SITES =		${SITE_SOURCEFORGE:=qwt/}
 EXTRACT_SUFX =	.tar.bz2
 
 # Qwt License, Version 1.0
-# http://qwt.sourceforge.net/qwtlicense.html
+# https://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Widgets Qt5Xml

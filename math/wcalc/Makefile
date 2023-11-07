@@ -3,9 +3,9 @@
 COMMENT =		natural-expression command-line calculator
 
 DISTNAME =		wcalc-2.5
-REVISION =		3
+REVISION =		4
 CATEGORIES =		math
-HOMEPAGE =		http://w-calc.sourceforge.net/
+HOMEPAGE =		https://w-calc.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

@@ -2,8 +2,9 @@ COMMENT=		print information about the content and structure of a DVD
 
 DISTNAME=		lsdvd-0.17
 CATEGORIES=		multimedia
+REVISION=		0
 
-HOMEPAGE=		http://lsdvd.sourceforge.net/
+HOMEPAGE=		https://lsdvd.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

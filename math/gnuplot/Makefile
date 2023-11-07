@@ -11,7 +11,7 @@ HOMEPAGE =	http://www.gnuplot.info/
 MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # see Copyright in source
-# http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
+# https://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cerf m curses ereadline ${COMPILER_LIBCXX} z

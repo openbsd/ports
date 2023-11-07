@@ -51,7 +51,7 @@ CONFIGURE_ARGS=		--disable-ssl3-support \
 			--with-unbound-root-key-file=/var/unbound/db/root.key
 
 # requires security/trousers: not committed (aja@), needs kernel support
-# for tpm(4): http://bsssd.sourceforge.net/
+# for tpm(4): https://bsssd.sourceforge.net/
 CONFIGURE_ARGS +=	--without-tpm
 
 .if ${MACHINE_ARCH:Maarch64}

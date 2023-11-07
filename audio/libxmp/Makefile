@@ -2,10 +2,11 @@ COMMENT =	module player library
 
 DISTNAME =	libxmp-4.6.0
 CATEGORIES =	audio
+REVISION =	0
 
 SHARED_LIBS +=	xmp		1.1	# 4.6
 
-HOMEPAGE =	http://xmp.sourceforge.net/
+HOMEPAGE =	https://xmp.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

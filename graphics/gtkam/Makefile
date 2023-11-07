@@ -1,11 +1,11 @@
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-1.0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://gphoto.sourceforge.net/proj/gtkam/
+HOMEPAGE=	https://gphoto.sourceforge.net/proj/gtkam/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

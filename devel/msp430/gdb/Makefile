@@ -2,7 +2,7 @@ TOOL=			gdb
 TOOL_V= 		7.2a
 LTS_V=			20111205
 
-REVISION=		3
+REVISION=		4
 
 GNU_TOOL=		Yes
 

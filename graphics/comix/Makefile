@@ -1,13 +1,13 @@
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.4
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	graphics
 
 # XXX consider replacing with more active fork, 
 # https://sourceforge.net/projects/mcomix/ ?
-HOMEPAGE=	http://comix.sourceforge.net/
+HOMEPAGE=	https://comix.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

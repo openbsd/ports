@@ -3,14 +3,14 @@ COMMENT=		Gtk-based GUI client for the Gnutella Network
 DISTNAME=		gtk-gnutella-0.97.1
 EPOCH=			0
 CATEGORIES=		net
-REVISION=		7
+REVISION=		8
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # this litle shit has its own mkdep that stashes /usr/local dependencies
 # in makefiles
 DPB_PROPERTIES =	nojunk
 
-HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
+HOMEPAGE=		https://gtk-gnutella.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

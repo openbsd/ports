@@ -1,8 +1,9 @@
 COMMENT=		tiny program emulating the detach feature of screen
 DISTNAME=		dtach-0.9
 CATEGORIES=		misc
+REVISION=		0
 
-HOMEPAGE=		http://dtach.sourceforge.net/
+HOMEPAGE=		https://dtach.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

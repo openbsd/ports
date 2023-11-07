@@ -1,13 +1,13 @@
 COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
 VERSION=	3.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	zip${VERSION:S/.//}
 PKGNAME=	zip-${VERSION}
 
 CATEGORIES=	archivers
 
-HOMEPAGE=	http://infozip.sourceforge.net/
+HOMEPAGE=	https://infozip.sourceforge.net/
 
 # Conditional
 PERMIT_PACKAGE=	Yes

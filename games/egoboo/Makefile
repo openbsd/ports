@@ -1,10 +1,10 @@
 COMMENT =		dungeon-crawling action-RPG adventure
 
 DISTNAME =		egoboo-2.8.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		games
 
-HOMEPAGE =		http://egoboo.sourceforge.net
+HOMEPAGE =		https://egoboo.sourceforge.net
 SITES =			${SITE_SOURCEFORGE:=egoboo/}
 
 # GPL v3 or later

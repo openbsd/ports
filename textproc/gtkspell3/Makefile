@@ -3,13 +3,13 @@ COMMENT=	gtk+3 spelling checker
 DISTNAME=	gtkspell3-3.0.10
 EXTRACT_SUFX=	.tar.xz
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  gtkspell3-3          0.3      # 2.0
 
 CATEGORIES=	textproc x11
 
-HOMEPAGE=	http://gtkspell.sourceforge.net/
+HOMEPAGE=	https://gtkspell.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

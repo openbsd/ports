@@ -1,11 +1,11 @@
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.28
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	djvulibre	27.0	# 28.0
 CATEGORIES=	graphics print
 
-HOMEPAGE=	http://djvu.sourceforge.net/
+HOMEPAGE=	https://djvu.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

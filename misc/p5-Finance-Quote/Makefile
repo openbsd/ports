@@ -4,8 +4,9 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME =	Finance-Quote-1.38
 CATEGORIES=	misc
+REVISION =	0
 
-HOMEPAGE=	http://finance-quote.sourceforge.net
+HOMEPAGE=	https://finance-quote.sourceforge.net
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/p5-JSON \

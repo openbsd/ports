@@ -3,10 +3,11 @@ COMMENT =		clone of Galaga, 2D space shooter
 V =			2.1.1.0
 DISTNAME =		xgalaga-sdl-${V}-sdl
 PKGNAME =		xgalaga-sdl-${V}
+REVISION =		0
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://sourceforge.net/projects/xgalaga-sdl/
+HOMEPAGE =		https://sourceforge.net/projects/xgalaga-sdl/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -3,9 +3,9 @@ COMMENT=		ICQ console client with encryption support
 DISTNAME=		ysmv7_2_9_9_1
 PKGNAME=		${DISTNAME:S/_/-/:S/_/./g}
 CATEGORIES=		net
-REVISION=		2
+REVISION=		3
 
-HOMEPAGE=		http://ysmv7.sourceforge.net/
+HOMEPAGE=		https://ysmv7.sourceforge.net/
 
 SITES=			${SITE_SOURCEFORGE:=ysmv7/}
 

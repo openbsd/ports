@@ -4,9 +4,9 @@ VERSION=	5.2.2
 DISTNAME=	xtrkcad-source-${VERSION}GA
 PKGNAME=	xtrkcad-${VERSION}
 CATEGORIES=	cad
-REVISION=	1
+REVISION=	2
 
-HOMEPAGE=	http://xtrkcad-fork.sourceforge.net/Wikka/HomePage
+HOMEPAGE=	https://xtrkcad-fork.sourceforge.net/Wikka/HomePage
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 

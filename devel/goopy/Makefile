@@ -1,9 +1,9 @@
 COMMENT=	Google utilities written in Python
 
 DISTNAME=	goopy-0.1
-REVISION=	9
+REVISION=	10
 CATEGORIES=	devel
-HOMEPAGE=	http://goog-goopy.sourceforge.net/
+HOMEPAGE=	https://goog-goopy.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

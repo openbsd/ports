@@ -2,8 +2,9 @@ COMMENT =	monitor PostgreSQL activity & statistics
 
 DISTNAME =	pg_statsinfo-13.0
 CATEGORIES =	databases
+REVISION =	0
 
-HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
+HOMEPAGE =	https://pgstatsinfo.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

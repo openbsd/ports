@@ -3,12 +3,12 @@ COMMENT =		convert images to cross stitch patterns
 GH_ACCOUNT =		kleintom
 GH_PROJECT =		cstitch
 GH_TAGNAME =		0.9.8
-REVISION =		4
+REVISION =		5
 
 DISTFILES=		${DISTNAME}.tar.gz 
 DISTFILES.icons =	${DISTNAME}-icons{icons}.zip
 
-SITES.icons =	http://sourceforge.net/projects/cstitch/files/Cstitch/Icons/
+SITES.icons =	https://sourceforge.net/projects/cstitch/files/Cstitch/Icons/
 
 MODULES =		devel/qmake lang/python x11/qt5
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
@@ -16,7 +16,7 @@ MODPY_RUNDEP =		No
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://cstitch.sourceforge.net/
+HOMEPAGE =		https://cstitch.sourceforge.net/
 
 MAINTAINER =		Adam Wolk <awolk@openbsd.org>
 

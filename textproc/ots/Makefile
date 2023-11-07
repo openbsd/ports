@@ -2,11 +2,11 @@ COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.5.0
 CATEGORIES=	textproc
 SITES=		${SITE_SOURCEFORGE:=libots/}
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  ots-1                5.0      # 5.0
 
-HOMEPAGE=	http://libots.sourceforge.net/
+HOMEPAGE=	https://libots.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

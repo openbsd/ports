@@ -3,12 +3,12 @@ COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 VERSION=	0.1.8
 DISTNAME=	SDLmm-${VERSION}
 PKGNAME=	sdlmm-${VERSION}
-REVISION=	15
+REVISION=	16
 CATEGORIES=	devel
 
 SHARED_LIBS +=	SDLmm                9.0      # .8.0
 
-HOMEPAGE=	http://sdlmm.sourceforge.net/
+HOMEPAGE=	https://sdlmm.sourceforge.net/
 
 # LGPLv2+
 PERMIT_PACKAGE=	Yes

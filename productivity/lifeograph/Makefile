@@ -2,11 +2,11 @@ COMMENT=	diary and journal application
 
 CATEGORIES=	productivity
 
-HOMEPAGE=	http://lifeograph.sourceforge.net
+HOMEPAGE=	https://lifeograph.sourceforge.net
 
 V=		2.0.2
 DISTNAME=	lifeograph-${V}
-REVISION=	3
+REVISION=	4
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

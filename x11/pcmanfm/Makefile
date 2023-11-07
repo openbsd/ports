@@ -2,11 +2,11 @@ COMMENT=		fast and lightweight file manager
 
 DISTNAME=		pcmanfm-1.3.2
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://pcmanfm.sourceforge.net/
+HOMEPAGE=		https://pcmanfm.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

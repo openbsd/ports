@@ -4,8 +4,9 @@ DISTNAME=	64tass-1.56.2625-src
 PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	devel
+REVISION=	0
 
-HOMEPAGE=	http://tass64.sourceforge.net/
+HOMEPAGE=	https://tass64.sourceforge.net/
 MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
 
 # GPLv2

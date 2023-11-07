@@ -1,13 +1,13 @@
 COMMENT =		library for manipulating IPTC metadata
 
 DISTNAME =		libiptcdata-1.0.4
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  iptcdata             0.0      # 3.3
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://libiptcdata.sourceforge.net/
+HOMEPAGE =		https://libiptcdata.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE =	Yes

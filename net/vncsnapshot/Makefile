@@ -4,11 +4,11 @@ V=			1.2a
 PORTROACH=		ignore:1
 DISTNAME=		vncsnapshot-$V-src
 PKGNAME=		vncsnapshot-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://vncsnapshot.sourceforge.net/
+HOMEPAGE=		https://vncsnapshot.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

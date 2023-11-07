@@ -3,12 +3,12 @@ COMMENT=	Wen Quan Yi bitmap song CJK fonts
 TYPEFACE=	wqy-bitmapfont
 V=		0.9.9-0
 DISTNAME=	${TYPEFACE}-pcf-$V
-REVISION=	2
+REVISION=	3
 PKGNAME=	zh-wqy-bitmapfont-${V:S/-/./}
 
 CATEGORIES=	x11 chinese
 
-HOMEPAGE=	http://wqy.sourceforge.net/en/
+HOMEPAGE=	https://wqy.sourceforge.net/en/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

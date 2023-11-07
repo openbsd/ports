@@ -1,12 +1,12 @@
 COMMENT =		library for manipulating ID3v1 and ID3v2 tags
 
 DISTNAME =		id3lib-3.8.3
-REVISION =		9
+REVISION =		10
 CATEGORIES =		audio
 
 SHARED_LIBS +=	id3                  4.0      # .3.8
 
-HOMEPAGE =		http://id3lib.sourceforge.net/
+HOMEPAGE =		https://id3lib.sourceforge.net/
 
 # LGPLv2+
 PERMIT_PACKAGE =	Yes

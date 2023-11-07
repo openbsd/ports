@@ -3,8 +3,8 @@ COMMENT=	displays text on your screen
 DISTNAME=	xosd-2.2.14
 SHARED_LIBS+=	xosd		4.12	# 4.14
 CATEGORIES=	x11 graphics
-HOMEPAGE=	http://libxosd.sourceforge.net/
-REVISION=	1
+HOMEPAGE=	https://libxosd.sourceforge.net/
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

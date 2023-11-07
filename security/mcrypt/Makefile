@@ -1,10 +1,10 @@
 COMMENT =	extendable encryption program that supports many ciphers
 
 DISTNAME =		mcrypt-2.6.8
-REVISION =		6
+REVISION =		7
 CATEGORIES =		security
 
-HOMEPAGE =		http://mcrypt.sf.net/
+HOMEPAGE =		https://mcrypt.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

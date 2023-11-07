@@ -3,12 +3,12 @@ COMMENT =		font rendering library for OpenGL applications
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
 PKGNAME =		ftgl-$Vrc5
-REVISION =		9
+REVISION =		10
 EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://ftgl.wiki.sourceforge.net
+HOMEPAGE =		https://ftgl.wiki.sourceforge.net
 
 # MIT license or the GNU LGPL, at your option.
 PERMIT_PACKAGE =	Yes

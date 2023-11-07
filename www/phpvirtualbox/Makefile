@@ -5,11 +5,11 @@ GH_ACCOUNT=		phpvirtualbox
 GH_TAGNAME=		5.2-1
 MODPHP_VERSION=		7.4
 PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www sysutils
 
-HOMEPAGE=		http://sourceforge.net/projects/phpvirtualbox/
+HOMEPAGE=		https://sourceforge.net/projects/phpvirtualbox/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3

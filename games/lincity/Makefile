@@ -2,8 +2,8 @@ COMMENT=		Rich city simulation game for X
 
 DISTNAME=		lincity-1.13.1
 CATEGORIES=		games
-HOMEPAGE=		http://lincity.sourceforge.net/
-REVISION=		2
+HOMEPAGE=		https://lincity.sourceforge.net/
+REVISION=		3
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

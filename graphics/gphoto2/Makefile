@@ -3,11 +3,11 @@ COMMENT=		digital camera command-line interface
 VERSION=		2.5.28
 DISTNAME=		gphoto2-${VERSION}
 PKGNAME=		gphoto-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
-HOMEPAGE=		http://gphoto.sourceforge.net/
+HOMEPAGE=		https://gphoto.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

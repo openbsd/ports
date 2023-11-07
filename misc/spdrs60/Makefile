@@ -2,8 +2,9 @@ COMMENT =	graphical SRCP client to control a digital model railway
 
 DISTNAME =	spdrs60-0.6.5
 CATEGORIES =	misc x11
+REVISION =	0
 
-HOMEPAGE =	http://spdrs60.sourceforge.net/
+HOMEPAGE =	https://spdrs60.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=spdrs60/}
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

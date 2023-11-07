@@ -2,9 +2,9 @@ COMMENT=		block "nasty" hosts with pf(4) based on Snort's rules
 
 DISTNAME=		snort2pf-4.5
 CATEGORIES=		security net
-REVISION=		6
+REVISION=		7
 
-HOMEPAGE=		http://sourceforge.net/projects/snort2pf/
+HOMEPAGE=		https://sourceforge.net/projects/snort2pf/
 
 # BSD
 PERMIT_PACKAGE=	Yes

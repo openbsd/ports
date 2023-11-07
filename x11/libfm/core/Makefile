@@ -1,5 +1,5 @@
 COMMENT=		glib/gio-based lib for file management
-REVISION=		2
+REVISION=		3
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0

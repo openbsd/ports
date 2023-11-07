@@ -5,11 +5,11 @@ COMMENT=	interpreted language for scientific computing
 
 VERSION=	2.1.06
 DISTNAME=	yorick-${VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES=	math devel
 
-HOMEPAGE=	http://yorick.sourceforge.net/
+HOMEPAGE=	https://yorick.sourceforge.net/
 
 SITES=		${SITE_SOURCEFORGE:=yorick/}
 EXTRACT_SUFX=	.tgz

@@ -2,10 +2,10 @@ COMMENT=	snapshot and background plugin for Gkrellm2
 
 V=		0.4.4
 DISTNAME=	gkrellshoot-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 
-HOMEPAGE=	http://gkrellshoot.sourceforge.net
+HOMEPAGE=	https://gkrellshoot.sourceforge.net
 SITES=  	${SITE_SOURCEFORGE:=gkrellshoot/}
 
 EXTRA_WANTLIB=	gthread-2.0

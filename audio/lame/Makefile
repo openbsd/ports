@@ -2,13 +2,13 @@ COMMENT=	lame ain't an MP3 encoder
 #'
 
 DISTNAME=	lame-3.100
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  mp3lame              2.2      # 0.0
 
 CATEGORIES=	audio
 
-HOMEPAGE=	http://lame.sourceforge.net/
+HOMEPAGE=	https://lame.sourceforge.net/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

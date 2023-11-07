@@ -3,9 +3,9 @@ COMMENT=	creates DVD file structures
 DISTNAME=	dvdauthor-0.7.2
 CATEGORIES=	multimedia
 SITES=		${SITE_SOURCEFORGE:=dvdauthor/}
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://dvdauthor.sourceforge.net/
+HOMEPAGE=	https://dvdauthor.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

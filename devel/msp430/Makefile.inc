@@ -25,7 +25,7 @@ CATEGORIES+=		devel
 # the different msp430 architectures (uniarch).
 # For a list of changes this uniarch approach brings, please refer to:
 # http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Devel:Uniarch
-HOMEPAGE?=		http://mspgcc.sourceforge.net/
+HOMEPAGE?=		https://mspgcc.sourceforge.net/
 
 # binutils/gcc/gdb: GPLv3
 # libc/msp430mcu: BSD3/ISC

@@ -3,11 +3,11 @@ COMMENT =		simple, portable library for handling UTF-8 strings
 VERSION =		2.3.4
 DISTNAME =		utf8_v${VERSION:S/./_/g}
 PKGNAME =		utfcpp-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://utfcpp.sourceforge.net/
+HOMEPAGE =		https://utfcpp.sourceforge.net/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 

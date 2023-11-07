@@ -2,9 +2,9 @@ COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.1
 CATEGORIES=	games
-REVISION=	1
+REVISION=	2
 
-HOMEPAGE=	http://ri-li.sourceforge.net
+HOMEPAGE=	https://ri-li.sourceforge.net
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

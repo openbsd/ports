@@ -5,8 +5,9 @@ V =		0.9.4
 DISTNAME =	pdf4tcl${V:S/.//g}
 PKGNAME =	pdf4tcl-${V}
 CATEGORIES =	textproc
-HOMEPAGE =	http://sourceforge.net/projects/pdf4tcl/
+HOMEPAGE =	https://sourceforge.net/projects/pdf4tcl/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

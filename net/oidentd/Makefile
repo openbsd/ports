@@ -1,10 +1,10 @@
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=ojnk/}
 
-HOMEPAGE=	http://ojnk.sourceforge.net/
+HOMEPAGE=	https://ojnk.sourceforge.net/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

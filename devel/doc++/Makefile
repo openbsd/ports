@@ -1,10 +1,10 @@
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION =	13
+REVISION =	14
 CATEGORIES=	devel
 
-HOMEPAGE=	http://docpp.sourceforge.net/
+HOMEPAGE=	https://docpp.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

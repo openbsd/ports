@@ -3,13 +3,13 @@ COMMENT =		game based on the Sonic the Hedgehog universe
 V =			0.1.2
 DISTNAME =		opensnc-src${V}
 PKGNAME =		opensonic-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		games
 
-HOMEPAGE =		http://opensnc.sourceforge.net
+HOMEPAGE =		https://opensnc.sourceforge.net
 SITES =			${SITE_SOURCEFORGE:=opensnc/}
-#SITES =		http://downloads.sourceforge.net/project/opensnc/Open%20Sonic/${V}/
+#SITES =		https://downloads.sourceforge.net/project/opensnc/Open%20Sonic/${V}/
 
 # GPLv2 or later
 PERMIT_PACKAGE=	Yes

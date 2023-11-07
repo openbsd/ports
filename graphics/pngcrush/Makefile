@@ -2,8 +2,9 @@ COMMENT =		optimizer for PNG files
 
 DISTNAME =		pngcrush-1.8.13
 CATEGORIES =		graphics
+REVISION =		0
 
-HOMEPAGE =		http://pmt.sourceforge.net/pngcrush/
+HOMEPAGE =		https://pmt.sourceforge.net/pngcrush/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

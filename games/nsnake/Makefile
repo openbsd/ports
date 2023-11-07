@@ -1,11 +1,11 @@
 COMMENT =	classic snake game on the terminal
 
 DISTNAME =	nsnake-3.0.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://nsnake.sourceforge.net/
+HOMEPAGE =	https://nsnake.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

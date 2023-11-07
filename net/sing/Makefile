@@ -2,12 +2,12 @@ COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net security
 SITES=		${SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://sourceforge.net/projects/sing/
+HOMEPAGE=	https://sourceforge.net/projects/sing/
 
 LIB_DEPENDS=	net/libnet/1.0
 

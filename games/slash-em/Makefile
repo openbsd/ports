@@ -1,11 +1,11 @@
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1
-REVISION =	8
+REVISION =	9
 V =		3.4.3.7e7f1
 CATEGORIES =	games
 
-HOMEPAGE =	http://slashem.sourceforge.net
+HOMEPAGE =	https://slashem.sourceforge.net
 #SITES =	http://avrc.city.ac.uk/nethack/slashem/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

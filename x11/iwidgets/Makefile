@@ -5,11 +5,11 @@ COMMENT=	Iwidgets Mega Widget Set
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
 PKGNAME=	iwidgets-${VERSION}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES=	x11 devel
 
-HOMEPAGE=	http://incrtcl.sourceforge.net/iwidgets/
+HOMEPAGE=	https://incrtcl.sourceforge.net/iwidgets/
 
 # BSD style
 PERMIT_PACKAGE=	Yes

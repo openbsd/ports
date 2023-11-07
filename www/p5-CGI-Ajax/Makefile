@@ -4,8 +4,9 @@ MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	CGI-Ajax-0.707
 CATEGORIES =	www
+REVISION =	0
 
-HOMEPAGE =	http://pjax.sourceforge.net/
+HOMEPAGE =	https://pjax.sourceforge.net/
 
 # Perl licence, javascript code is MIT-like
 PERMIT_PACKAGE =	Yes

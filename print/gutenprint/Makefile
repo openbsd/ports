@@ -2,7 +2,7 @@ COMMENT=		suite of printer drivers for UNIX
 
 V=			5.3.4
 DISTNAME=		gutenprint-${V}
-REVISION=		2
+REVISION=		3
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -13,7 +13,7 @@ EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  gutenprint           2.1      # 9.0
 
-HOMEPAGE=		http://gimp-print.sourceforge.net/
+HOMEPAGE=		https://gimp-print.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

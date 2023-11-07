@@ -3,12 +3,12 @@ COMMENT=	common libraries for the CMU speech recognition engines
 VERSION=	0.6
 DISTNAME=	sphinxbase-${VERSION}
 PKGNAME=	cmu-sphinxbase-${VERSION}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	audio
 SHARED_LIBS= 	sphinxbase	1.0 \
 		sphinxad	1.0
 
-HOMEPAGE=	http://cmusphinx.sourceforge.net/
+HOMEPAGE=	https://cmusphinx.sourceforge.net/
 
 # CMU
 PERMIT_PACKAGE=	Yes

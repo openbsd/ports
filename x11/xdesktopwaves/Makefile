@@ -2,8 +2,9 @@ COMMENT=		simulation of water waves on the X Window desktop
 
 DISTNAME=		xdesktopwaves-1.4
 CATEGORIES=		x11
+REVISION=		0
 
-HOMEPAGE=		http://xdesktopwaves.sourceforge.net/
+HOMEPAGE=		https://xdesktopwaves.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

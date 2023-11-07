@@ -3,8 +3,9 @@ COMMENT=		GPL computer algebra system based on DOE Macsyma
 VERSION=		5.46.0
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
+REVISION=		0
 
-HOMEPAGE=		http://maxima.sourceforge.net/
+HOMEPAGE=		https://maxima.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

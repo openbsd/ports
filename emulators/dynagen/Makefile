@@ -1,10 +1,10 @@
 COMMENT=		front-end for dynamips cisco emulator
 
 DISTNAME=		dynagen-0.11.0
-REVISION =		5
+REVISION =		6
 CATEGORIES=		emulators
 
-HOMEPAGE =		http://sourceforge.net/projects/dyna-gen/
+HOMEPAGE =		https://sourceforge.net/projects/dyna-gen/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -3,12 +3,12 @@ COMMENT=		modern look Athena widgets
 VERSION=		1.5
 DISTNAME=		XawM-${VERSION}u
 PKGNAME=		XawMu-${VERSION}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS=		XawM 1.0
 CATEGORIES=		x11 devel
 
-HOMEPAGE=		http://xawm.sourceforge.net/
+HOMEPAGE=		https://xawm.sourceforge.net/
 
 SITES=			http://siag.nu/pub/widgets/
 

@@ -3,9 +3,9 @@
 COMMENT=		IP accounting daemon simulating Cisco ip accounting
 
 DISTNAME=		ipcad-3.7.3
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net
-HOMEPAGE=		http://sourceforge.net/projects/ipcad/
+HOMEPAGE=		https://sourceforge.net/projects/ipcad/
 
 PERMIT_PACKAGE=	Yes
 

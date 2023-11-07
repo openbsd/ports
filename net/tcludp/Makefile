@@ -1,9 +1,9 @@
 COMMENT =	Tcl UDP extension
 
 DISTNAME =	tcludp-1.0.11
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
-HOMEPAGE =	http://sourceforge.net/projects/tcludp/
+HOMEPAGE =	https://sourceforge.net/projects/tcludp/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD

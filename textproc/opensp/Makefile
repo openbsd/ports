@@ -3,13 +3,13 @@ COMMENT=	object-oriented SGML parser
 DISTNAME=	OpenSP-1.5.2
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	textproc
-REVISION=	4
+REVISION=	5
 
 SITES=		${SITE_SOURCEFORGE:=openjade/}
 
 SHARED_LIBS=	osp 0.0 # .4.0
 
-HOMEPAGE=	http://openjade.sourceforge.net/
+HOMEPAGE=	https://openjade.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

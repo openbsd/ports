@@ -4,9 +4,9 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	HTML-Template-Expr-0.07
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://sourceforge.net/projects/html-template/
+HOMEPAGE=	https://sourceforge.net/projects/html-template/
 
 # GPL/Artistic license
 PERMIT_PACKAGE=	Yes

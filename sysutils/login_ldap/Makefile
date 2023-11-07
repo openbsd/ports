@@ -1,10 +1,10 @@
 COMMENT=	provide ldap authentication type
 
 DISTNAME=	login_ldap-3.51
-REVISION=	9
+REVISION=	10
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://sourceforge.net/projects/login-ldap/
+HOMEPAGE=	https://sourceforge.net/projects/login-ldap/
 SITES=		${SITE_SOURCEFORGE:=login-ldap/}
 
 # BSD

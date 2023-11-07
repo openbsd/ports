@@ -12,7 +12,7 @@ SHARED_LIBS +=  fm-extra             1.1      # 5.3
 
 CATEGORIES +=		x11 devel
 
-HOMEPAGE=		http://pcmanfm.sourceforge.net/
+HOMEPAGE=		https://pcmanfm.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

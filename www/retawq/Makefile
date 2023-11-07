@@ -1,10 +1,10 @@
 COMMENT =		interactive, multi-threaded text mode web browser
 
 DISTNAME =		retawq-0.2.6c
-REVISION = 		4
+REVISION = 		5
 CATEGORIES =		www
 
-HOMEPAGE =		http://retawq.sourceforge.net
+HOMEPAGE =		https://retawq.sourceforge.net
 SITES =			${SITE_SOURCEFORGE:=retawq/}
 
 # GPLv2

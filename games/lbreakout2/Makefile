@@ -2,9 +2,9 @@ COMMENT =	breakout game with many levels, powerups, good graphics
 
 DISTNAME =	lbreakout2-2.6.5
 CATEGORIES =	games x11
-REVISION =	2
+REVISION =	3
 
-HOMEPAGE =	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
+HOMEPAGE =	https://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

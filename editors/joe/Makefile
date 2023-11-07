@@ -3,8 +3,9 @@ COMMENT=		Joe's Own Editor
 DISTNAME=		joe-4.6
 CATEGORIES=		editors
 SITES=			${SITE_SOURCEFORGE:=joe-editor/}
+REVISION=		0
 
-HOMEPAGE=		http://joe-editor.sourceforge.net/
+HOMEPAGE=		https://joe-editor.sourceforge.net/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

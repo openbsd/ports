@@ -1,10 +1,10 @@
 COMMENT=	multi-platform cd player development library
 DISTNAME=	libcdaudio-0.99.12
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=	cdaudio              1.1      # .1.0
 CATEGORIES=	audio
 
-HOMEPAGE=	http://libcdaudio.sourceforge.net/
+HOMEPAGE=	https://libcdaudio.sourceforge.net/
 
 # LGPLv2+
 PERMIT_PACKAGE=	Yes

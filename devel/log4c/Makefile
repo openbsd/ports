@@ -3,8 +3,9 @@ DISTNAME =	log4c-1.2.4
 SHARED_LIBS +=  log4c                1.0      # 6.1
 CATEGORIES=	devel
 SITES=		${SITE_SOURCEFORGE:=log4c/}
+REVISION =	0
 
-HOMEPAGE=	http://log4c.sourceforge.net/
+HOMEPAGE=	https://log4c.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

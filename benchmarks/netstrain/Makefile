@@ -2,9 +2,9 @@ COMMENT=	tool to measure TCP throughput
 DISTNAME=	netstrain-3.0
 CATEGORIES=	benchmarks net
 SITES=		${SITE_SOURCEFORGE:=netstrain/}
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE=	http://netstrain.sourceforge.net/
+HOMEPAGE=	https://netstrain.sourceforge.net/
 
 # ISC-like
 PERMIT_PACKAGE=	Yes

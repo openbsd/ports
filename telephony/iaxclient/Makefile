@@ -4,14 +4,14 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	31
+REVISION=	32
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
 		iaxclient 0.0
 
 SITES=		${SITE_SOURCEFORGE:=iaxclient/}
-HOMEPAGE=	http://iaxclient.sourceforge.net/
+HOMEPAGE=	https://iaxclient.sourceforge.net/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2.1

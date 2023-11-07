@@ -1,11 +1,11 @@
 COMMENT=		simple hostname scanner
 
 DISTNAME=		plushs-1.2
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 SITES=			${SITE_SOURCEFORGE:=plushs/}
 
-HOMEPAGE=		http://plushs.sourceforge.net
+HOMEPAGE=		https://plushs.sourceforge.net
 
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c

@@ -1,11 +1,11 @@
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	misc
 
-HOMEPAGE =	http://posixtest.sourceforge.net/
+HOMEPAGE =	https://posixtest.sourceforge.net/
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 

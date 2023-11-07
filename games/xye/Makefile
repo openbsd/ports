@@ -1,9 +1,9 @@
 COMMENT =	puzzle game collecting diamonds and avoiding obstacles
 DISTNAME =	xye-0.12.2
 CATEGORIES =	games x11
-REVISION =	4
+REVISION =	5
 
-HOMEPAGE =	http://xye.sourceforge.net/
+HOMEPAGE =	https://xye.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # zlib

@@ -1,11 +1,11 @@
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.14
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 SITES =		${SITE_SOURCEFORGE:=menumaker/}
 
-HOMEPAGE =	http://menumaker.sourceforge.net/
+HOMEPAGE =	https://menumaker.sourceforge.net/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # BSD

@@ -1,9 +1,9 @@
 COMMENT=	set the root window to the moon in its current phase
 DISTNAME=	xphoon-20000613
-REVISION=	1
+REVISION=	2
 CATEGORIES=	astro x11
 
-HOMEPAGE=	http://xphoon.sourceforge.net/
+HOMEPAGE=	https://xphoon.sourceforge.net/
 SITES=		${SITE_SOURCEFORGE:=xphoon/}
 
 # BSD like

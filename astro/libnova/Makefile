@@ -1,11 +1,11 @@
 COMMENT =	astronomic computations as a library
 
 DISTNAME =	libnova-0.15.0
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=	nova	1.1	# unknown
 CATEGORIES =	astro devel
 
-HOMEPAGE =	http://libnova.sourceforge.net/
+HOMEPAGE =	https://libnova.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE =	Yes

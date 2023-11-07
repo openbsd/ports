@@ -4,8 +4,9 @@ MODULES=		cpan
 PKG_ARCH=		*
 DISTNAME =		Term-ScreenColor-1.20
 CATEGORIES=		devel
+REVISION =		0
 
-HOMEPAGE=		http://p-f-m.sourceforge.net/
+HOMEPAGE=		https://p-f-m.sourceforge.net/
 
 # Artistic
 PERMIT_PACKAGE=	Yes

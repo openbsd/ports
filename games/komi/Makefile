@@ -1,10 +1,10 @@
 COMMENT =	Komi the Space Frog
 
 DISTNAME =	komi-1.04
-REVISION =	2
+REVISION =	3
 CATEGORIES =	games
 
-HOMEPAGE =	http://komi.sourceforge.net/
+HOMEPAGE =	https://komi.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

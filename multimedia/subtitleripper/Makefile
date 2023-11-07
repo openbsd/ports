@@ -2,12 +2,12 @@ COMMENT=	subtitle ripper, used with transcode
 
 DISTNAME=	subtitleripper-0.3-4
 PKGNAME=	subtitleripper-0.3.4
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	multimedia
 FIX_EXTRACT_PERMISSIONS=Yes
 
-HOMEPAGE=	http://subtitleripper.sourceforge.net/
+HOMEPAGE=	https://subtitleripper.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

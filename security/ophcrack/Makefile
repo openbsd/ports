@@ -1,10 +1,10 @@
 COMMENT =		password cracker based on rainbow tables
 
 DISTNAME =		ophcrack-3.8.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		security
 
-HOMEPAGE =		http://ophcrack.sourceforge.net/
+HOMEPAGE =		https://ophcrack.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

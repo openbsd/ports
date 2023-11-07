@@ -1,11 +1,11 @@
 COMMENT=	deductive database system similar to Prolog
 
 DISTNAME=	datalog-2.6
-REVISION=	1
+REVISION=	2
 SHARED_LIBS +=  datalog                   0.0 # 0.0
 CATEGORIES=	lang
 
-HOMEPAGE=	http://datalog.sourceforge.net/
+HOMEPAGE=	https://datalog.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

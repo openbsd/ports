@@ -1,6 +1,6 @@
 CATEGORIES+=	www
 
-HOMEPAGE?=	http://c-icap.sourceforge.net/
+HOMEPAGE?=	https://c-icap.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE?= Yes

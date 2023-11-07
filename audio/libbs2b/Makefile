@@ -1,5 +1,5 @@
 COMMENT=	Bauer stereophonic-to-binaural DSP
-REVISION=	4
+REVISION=	5
 
 DISTNAME=	libbs2b-3.1.0
 
@@ -7,7 +7,7 @@ SHARED_LIBS +=	bs2b                      0.0 # 0.0
 
 CATEGORIES=	audio
 
-HOMEPAGE=	http://bs2b.sourceforge.net/
+HOMEPAGE=	https://bs2b.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,10 @@
 COMMENT =	drag n drop extension for Tk
 
-REVISION =	3
+REVISION =	4
 DISTNAME =	tkdnd-1.0a2
 CATEGORIES =	x11
 
-HOMEPAGE = 	http://tkdnd.sourceforge.net/
+HOMEPAGE = 	https://tkdnd.sourceforge.net/
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 

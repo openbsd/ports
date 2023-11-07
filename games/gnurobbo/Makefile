@@ -3,11 +3,11 @@ COMMENT =		action puzzle game inspired by Robbo
 V =			0.68
 DISTNAME =		gnurobbo-$V-source
 PKGNAME =		gnurobbo-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://gnurobbo.sourceforge.net/
+HOMEPAGE =		https://gnurobbo.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

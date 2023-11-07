@@ -2,16 +2,16 @@ COMMENT=		encrypt/decrypt using Rijndael encryption algorithm
 
 V=			0.7
 DISTNAME=		aescrypt-${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		security
 
-HOMEPAGE=		http://aescrypt.sourceforge.net/
+HOMEPAGE=		https://aescrypt.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 WANTLIB=		c
 
-SITES=			http://aescrypt.sourceforge.net/ \
+SITES=			https://aescrypt.sourceforge.net/ \
 			${SITE_SOURCEFORGE:=aescrypt/}
 
 AUTOCONF_VERSION=	2.13

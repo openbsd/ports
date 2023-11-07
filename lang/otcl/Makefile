@@ -6,9 +6,9 @@ PKGNAME=	otcl-$V
 SHARED_LIBS=	otcl 2.0
 CATEGORIES=	lang
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://otcl-tclcl.sourceforge.net/otcl/
+HOMEPAGE=	https://otcl-tclcl.sourceforge.net/otcl/
 
 # BSD-like
 PERMIT_PACKAGE=	Yes

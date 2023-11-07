@@ -2,11 +2,11 @@ COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://docbook2x.sourceforge.net/
+HOMEPAGE =	https://docbook2x.sourceforge.net/
 
 # MIT-like
 PERMIT_PACKAGE =	Yes

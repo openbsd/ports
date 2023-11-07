@@ -1,10 +1,10 @@
 COMMENT=	powerful and intuitive editor for programmers
 
 DISTNAME=	fte-20090118
-REVISION =	2
+REVISION =	3
 CATEGORIES=	editors devel
 
-HOMEPAGE=	http://fte.sourceforge.net/
+HOMEPAGE=	https://fte.sourceforge.net/
 
 # GPLv2 or later / Artistic License
 PERMIT_PACKAGE=	Yes

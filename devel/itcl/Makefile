@@ -1,7 +1,7 @@
 COMMENT=	object-oriented extensions to Tcl
 
 VERSION =	3.4.1
-REVISION =	2
+REVISION =	3
 EPOCH =		0
 DISTNAME =	itcl${VERSION}
 PKGNAME =	itcl-${VERSION}
@@ -9,7 +9,7 @@ SHARED_LIBS=	itcl34	0.0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://incrtcl.sourceforge.net/itcl/
+HOMEPAGE=	https://incrtcl.sourceforge.net/itcl/
 
 # BSD style
 PERMIT_PACKAGE=	Yes

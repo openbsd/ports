@@ -1,9 +1,9 @@
 COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
-REVISION =	7
+REVISION =	8
 CATEGORIES =	games
 
-HOMEPAGE =	http://zaz.sourceforge.net/
+HOMEPAGE =	https://zaz.sourceforge.net/
 
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 

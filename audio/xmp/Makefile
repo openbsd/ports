@@ -2,8 +2,9 @@ COMMENT=		extended module player
 
 DISTNAME=		xmp-4.2.0
 CATEGORIES=		audio
+REVISION=		0
 
-HOMEPAGE=		http://xmp.sourceforge.net/
+HOMEPAGE=		https://xmp.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

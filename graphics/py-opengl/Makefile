@@ -2,10 +2,10 @@ COMMENT =		Python bindings for OpenGL
 MODPY_EGG_VERSION =	3.1.3b2
 DISTNAME =		PyOpenGL-${MODPY_EGG_VERSION}
 PKGNAME =		py-opengl-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		graphics
-HOMEPAGE =		http://pyopengl.sourceforge.net/
+HOMEPAGE =		https://pyopengl.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE =	Yes

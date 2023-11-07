@@ -6,14 +6,14 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	8
+REVISION =	9
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
 
 CATEGORIES =	multimedia
 
-HOMEPAGE =	http://kguitar.sourceforge.net/
+HOMEPAGE =	https://kguitar.sourceforge.net/
 
 MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 

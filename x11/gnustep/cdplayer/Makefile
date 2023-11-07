@@ -1,10 +1,10 @@
 COMMENT =	GNUstep based CD player
 
 VERSION =	0.5.1
-REVISION =	15
+REVISION =	16
 DISTNAME =	cdplayer-${VERSION}
 
-HOMEPAGE =	http://gsburn.sourceforge.net/
+HOMEPAGE =	https://gsburn.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=gsburn/}
 EXTRACT_SUFX =	.tar.bz2
 

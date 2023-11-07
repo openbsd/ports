@@ -3,10 +3,10 @@ COMMENT =	whois client interface for perl5
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	Net-XWhois-0.90
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 
-HOMEPAGE =	http://sourceforge.net/projects/xwhois/
+HOMEPAGE =	https://sourceforge.net/projects/xwhois/
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
 
 # GPL/Artistic

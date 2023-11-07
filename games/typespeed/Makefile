@@ -2,9 +2,9 @@ COMMENT =		test your typing speed and get your fingers' CPS
 
 DISTNAME =		typespeed-0.6.5
 CATEGORIES =		games
-REVISION =		4
+REVISION =		5
 
-HOMEPAGE =		http://typespeed.sourceforge.net/
+HOMEPAGE =		https://typespeed.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -2,13 +2,13 @@ COMMENT=	Emacs Lisp-like runtime library
 
 VERSION=	0.92.3
 DISTNAME=	librep-${VERSION}
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  rep                  14.0     # .16.0
 
 CATEGORIES=	lang
 
-HOMEPAGE=	http://librep.sourceforge.net/
+HOMEPAGE=	https://librep.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

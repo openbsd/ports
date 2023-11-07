@@ -3,8 +3,9 @@ COMMENT =		GNU PIC assembler and utilities
 VERSION =		1.5.0
 DISTNAME =		gputils-${VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
-HOMEPAGE =		http://gputils.sourceforge.net/
+HOMEPAGE =		https://gputils.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

@@ -1,12 +1,12 @@
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00
-REVISION =	5
+REVISION =	6
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://sourceforge.net/projects/blobwars/
+HOMEPAGE =	https://sourceforge.net/projects/blobwars/
 
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 

@@ -5,11 +5,11 @@ EPOCH=			0
 CATEGORIES=		x11 graphics
 SITES=			${SITE_SOURCEFORGE:=wxsvg/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  wxsvg                4.1      # 15.6
 
-HOMEPAGE=		http://wxsvg.sourceforge.net/
+HOMEPAGE=		https://wxsvg.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

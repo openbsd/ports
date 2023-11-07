@@ -2,10 +2,10 @@ COMMENT=	webcam plugin for GkrellM2
 
 V=		2.0.0
 DISTNAME=	gkrellkam-${V}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://gkrellkam.sourceforge.net
+HOMEPAGE=	https://gkrellkam.sourceforge.net
 
 SITES=		${SITE_SOURCEFORGE:=gkrellkam/}
 DISTFILES=	gkrellkam_${V}.tar.gz

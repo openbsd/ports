@@ -1,10 +1,10 @@
 COMMENT=	little and fast Web crawler
 
 DISTNAME=	larbin-2.6.3
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 
-HOMEPAGE=	http://larbin.sourceforge.net/index-eng.html
+HOMEPAGE=	https://larbin.sourceforge.net/index-eng.html
 
 # GPL
 PERMIT_PACKAGE=	Yes

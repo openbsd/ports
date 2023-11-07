@@ -2,9 +2,9 @@ COMMENT=	nsf (Nintendo sound) file player
 
 DISTNAME=	nosefart-2.3-mls
 PKGNAME=	nosefart-2.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
-HOMEPAGE=	http://nosefart.sourceforge.net/
+HOMEPAGE=	https://nosefart.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

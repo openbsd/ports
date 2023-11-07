@@ -1,8 +1,8 @@
 COMMENT =		test synchronous write workloads
 DISTNAME =		fs_mark-3.3
-REVISION =		1
+REVISION =		2
 CATEGORIES =		benchmarks
-HOMEPAGE =		http://sourceforge.net/projects/fsmark/
+HOMEPAGE =		https://sourceforge.net/projects/fsmark/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 WANTLIB =		c

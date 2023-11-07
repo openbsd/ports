@@ -3,18 +3,18 @@ COMMENT =	convert Mac font formats to/from pfb, ttf, otf and bdf files
 DISTNAME =	fondu_src-060102
 PKGNAME =	${DISTNAME:S/_src//}
 EXTRACT_SUFX =	.tgz
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	converters
 
-HOMEPAGE =	http://fondu.sourceforge.net/
+HOMEPAGE =	https://fondu.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-SITES =		http://fondu.sourceforge.net/
+SITES =		https://fondu.sourceforge.net/
 
 WRKDIST =	${WRKDIR}/${PKGNAME}
 

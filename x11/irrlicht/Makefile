@@ -1,13 +1,13 @@
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.4
-REVISION =		3
+REVISION =		4
 
 SO_VERSION =		3.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
 
 CATEGORIES =		x11 games
 
-HOMEPAGE =		http://irrlicht.sourceforge.net/
+HOMEPAGE =		https://irrlicht.sourceforge.net/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 

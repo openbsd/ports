@@ -2,7 +2,7 @@ COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	textproc
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  ogrove               0.0      # 0.1
 SHARED_LIBS +=  ospgrove             0.0      # 0.1
 SHARED_LIBS +=  ostyle               0.0      # 0.1
 
-HOMEPAGE=	http://openjade.sourceforge.net/
+HOMEPAGE=	https://openjade.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

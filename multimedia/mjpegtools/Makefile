@@ -1,7 +1,7 @@
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		13
+REVISION=		14
 CATEGORIES=		multimedia
 SITES=			${SITE_SOURCEFORGE:=mjpeg/}
 
@@ -12,7 +12,7 @@ SHARED_LIBS=		lavfile		5.0 \
 			mpeg2encpp	6.0 \
 			mplex2		6.0
 
-HOMEPAGE=		http://mjpeg.sourceforge.net/
+HOMEPAGE=		https://mjpeg.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

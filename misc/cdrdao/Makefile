@@ -3,9 +3,9 @@ COMMENT=	write audio/data CD-Rs in disk-at-once mode
 DISTNAME= 	cdrdao-1.2.1
 CATEGORIES=	audio misc
 SITES=		${SITE_SOURCEFORGE:=cdrdao/}
-REVISION=	6
+REVISION=	7
 
-HOMEPAGE=	http://cdrdao.sourceforge.net/
+HOMEPAGE=	https://cdrdao.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
 

@@ -1,10 +1,11 @@
 COMMENT =		source code beautifier
 
 DISTNAME =		uncrustify-0.72.0
+REVISION =		0
 
 CATEGORIES =		textproc devel
 
-HOMEPAGE =		http://uncrustify.sourceforge.net/
+HOMEPAGE =		https://uncrustify.sourceforge.net/
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 

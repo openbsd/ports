@@ -9,11 +9,11 @@ PKGNAME =	${NAME}-${V}
 CATEGORIES=	fonts x11
 USE_X11 =	Yes
 
-REVISION-main=	7
-REVISION-de=	6
-REVISION-se=	6
+REVISION-main=	8
+REVISION-de=	7
+REVISION-se=	7
 
-HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
+HOMEPAGE=	https://artwizaleczapka.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,11 +1,11 @@
 COMMENT=	breakout game for the X Window System
 
 DISTNAME=	xbreaky-0.0.5
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games x11
 SITES=		${HOMEPAGE}
 
-HOMEPAGE=	http://xbreaky.sourceforge.net/
+HOMEPAGE=	https://xbreaky.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

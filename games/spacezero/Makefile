@@ -2,8 +2,9 @@ COMMENT =	2D RTS space combat game
 
 DISTNAME =	spacezero-0.86.01
 CATEGORIES =	games x11
+REVISION =	0
 
-HOMEPAGE =	http://spacezero.sourceforge.net/
+HOMEPAGE =	https://spacezero.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

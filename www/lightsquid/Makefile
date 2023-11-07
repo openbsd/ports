@@ -1,11 +1,11 @@
 COMMENT =		light and fast log analyzer for squid proxy
 
 DISTNAME =		lightsquid-1.8
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://lightsquid.sourceforge.net
+HOMEPAGE =		https://lightsquid.sourceforge.net
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 

@@ -3,8 +3,9 @@ COMMENT =	syntax analysis tool for Tcl
 DISTNAME =	nagelfar132
 PKGNAME =	nagelfar-1.3.2
 CATEGORIES =	devel
-HOMEPAGE =	http://nagelfar.sourceforge.net/
+HOMEPAGE =	https://nagelfar.sourceforge.net/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # GPLv2 (Nagelfar)
 # BSD (textSearch)

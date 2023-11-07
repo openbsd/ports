@@ -5,9 +5,9 @@ COMMENT=	generate patchsets from CVS repositories
 # support, before removing diff support completely, and ceasing development.
 # deliberately holding at 2.1 for now.
 DISTNAME=	cvsps-2.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=     devel
-HOMEPAGE=	http://cvsps.sourceforge.net/
+HOMEPAGE=	https://cvsps.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

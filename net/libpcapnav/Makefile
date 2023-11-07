@@ -1,12 +1,12 @@
 COMMENT=	library for navigating to arbitrary packets in a trace file
 
 DISTNAME=	libpcapnav-0.8
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	pcapnav	1.0
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=netdude/}
 
-HOMEPAGE=	http://netdude.sourceforge.net/doco/libpcapnav/
+HOMEPAGE=	https://netdude.sourceforge.net/doco/libpcapnav/
 
 # BSD
 PERMIT_PACKAGE=	Yes

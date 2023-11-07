@@ -8,6 +8,7 @@ DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
+REVISION=	0
 
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 

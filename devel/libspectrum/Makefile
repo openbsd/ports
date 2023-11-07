@@ -2,9 +2,9 @@ COMMENT =		ZX Spectrum emulator file format library
 DISTNAME =		libspectrum-1.5.0
 SHARED_LIBS =		spectrum 9.0	# 17.15
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://fuse-emulator.sourceforge.net/libspectrum.php
+HOMEPAGE =		https://fuse-emulator.sourceforge.net/libspectrum.php
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

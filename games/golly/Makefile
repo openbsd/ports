@@ -1,14 +1,14 @@
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2
-REVISION =	3
+REVISION =	4
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
 
 SITES =		${SITE_SOURCEFORGE:=golly/}
 
-HOMEPAGE =	http://golly.sourceforge.net/
+HOMEPAGE =	https://golly.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

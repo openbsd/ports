@@ -2,12 +2,12 @@ COMMENT=	library for Chinese language processing
 
 DISTNAME=	libtabe-0.2.6
 PKGNAME=	zh-${DISTNAME}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	chinese
 SHARED_LIBS +=	tabe                 2.1      # .0.0
 SHARED_LIBS +=	bims                 2.1      # .0.0
 
-HOMEPAGE=	http://libtabe.sourceforge.net/
+HOMEPAGE=	https://libtabe.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

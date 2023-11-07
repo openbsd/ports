@@ -1,16 +1,16 @@
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		security
 
-HOMEPAGE =		http://foremost.sourceforge.net/
+HOMEPAGE =		https://foremost.sourceforge.net/
 
 # not copyrighted; see COPYRIGHT in main.h
 PERMIT_PACKAGE =	Yes
 
-SITES =			http://foremost.sourceforge.net/pkg/
+SITES =			https://foremost.sourceforge.net/pkg/
 
 WANTLIB +=		c
 

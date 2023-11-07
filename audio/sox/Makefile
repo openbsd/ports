@@ -5,10 +5,10 @@ V=		14.4.2pl20210509
 GIT_V=		14.4.3git
 DISTNAME=	sox-${V}
 SHARED_LIBS +=	sox 4.1 # 3.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
-HOMEPAGE=	http://sox.sourceforge.net/
+HOMEPAGE=	https://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
 
 # GPLv2+

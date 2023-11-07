@@ -2,7 +2,7 @@ V_MAJOR ?=		5.5
 V ?=			${V_MAJOR}.2.0
 
 CATEGORIES ?=		math devel
-HOMEPAGE ?=		http://lpsolve.sourceforge.net
+HOMEPAGE ?=		https://lpsolve.sourceforge.net
 MAINTAINER ?=		Edd Barrett <edd@openbsd.org>
 SITES ?=		${SITE_SOURCEFORGE:=lpsolve/}
 

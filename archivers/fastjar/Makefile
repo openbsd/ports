@@ -2,8 +2,9 @@ COMMENT =	Sun JDK's jar command written entirely in C
 
 DISTNAME =	fastjar-0.94
 CATEGORIES =	archivers
+REVISION =	0
 
-HOMEPAGE =	http://fastjar.sourceforge.net/
+HOMEPAGE =	https://fastjar.sourceforge.net/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

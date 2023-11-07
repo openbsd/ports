@@ -1,13 +1,13 @@
 COMMENT=	implementation of the OpenGL Character Renderer
 
 DISTNAME=	quesoglc-0.7.2
-REVISION=	9
+REVISION=	10
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=quesoglc/}
 
 SHARED_LIBS=	GLC	0.0
 
-HOMEPAGE=	http://quesoglc.sourceforge.net/
+HOMEPAGE=	https://quesoglc.sourceforge.net/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 

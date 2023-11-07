@@ -2,9 +2,9 @@ COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21p
 CATEGORIES=	archivers
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://arc.sourceforge.net/
+HOMEPAGE=	https://arc.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

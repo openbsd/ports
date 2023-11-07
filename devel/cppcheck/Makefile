@@ -1,10 +1,11 @@
 COMMENT =		C/C++ static checker
 
 DISTNAME =		cppcheck-2.9
+REVISION =		0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://cppcheck.sourceforge.net/
+HOMEPAGE =		https://cppcheck.sourceforge.net/
 
 MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 

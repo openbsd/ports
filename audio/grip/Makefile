@@ -1,11 +1,11 @@
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=		grip-4.2.4
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		audio
 
-HOMEPAGE=		http://sourceforge.net/projects/grip/
+HOMEPAGE=		https://sourceforge.net/projects/grip/
 
 # GPLv2 - LGPLv2+
 PERMIT_PACKAGE=	Yes

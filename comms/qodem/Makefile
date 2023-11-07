@@ -1,10 +1,11 @@
 COMMENT =	Qodem Terminal Emulator
 
 DISTNAME =	qodem-1.0.1
+REVISION =	0
 
 CATEGORIES =	comms
 
-HOMEPAGE =	http://qodem.sourceforge.net/
+HOMEPAGE =	https://qodem.sourceforge.net/
 
 # CC0 (Public Domain)
 # MIT (UTF-8 decoder in source/codepage.c)

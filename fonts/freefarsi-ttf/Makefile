@@ -1,10 +1,10 @@
 COMMENT=		free TrueType Persian fonts
 
 DISTNAME=		freefarsi-ttf-1.0.0b
-REVISION=		1
+REVISION=		2
 CATEGORIES=		fonts x11
 
-HOMEPAGE=		http://sourceforge.net/projects/fpf/
+HOMEPAGE=		https://sourceforge.net/projects/fpf/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

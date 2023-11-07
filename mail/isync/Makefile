@@ -1,12 +1,12 @@
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.4.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail
 SITES=		${SITE_SOURCEFORGE:=isync/}
 
-HOMEPAGE=	http://isync.sourceforge.net/
+HOMEPAGE=	https://isync.sourceforge.net/
 
 MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 

@@ -1,10 +1,10 @@
 COMMENT =	suite of portable game libraries
 
 DISTNAME =	plib-1.8.5
-REVISION =	6
+REVISION =	7
 CATEGORIES =	devel games
 
-HOMEPAGE =	http://plib.sourceforge.net/
+HOMEPAGE =	https://plib.sourceforge.net/
 SITES =		${HOMEPAGE}/dist/
 
 # LGPLv2

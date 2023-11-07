@@ -1,9 +1,9 @@
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
 DISTNAME=	pathological-1.1.3
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
-HOMEPAGE=	http://pathological.sourceforge.net/
+HOMEPAGE=	https://pathological.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

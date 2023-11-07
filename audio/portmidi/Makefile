@@ -2,13 +2,13 @@ COMMENT =	library for real time input and output of MIDI data
 
 DISTNAME =	portmidi-src-217
 PKGNAME =	portmidi-217
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	portmidi	0.0
 
 CATEGORIES =	audio
 
-HOMEPAGE =	http://portmedia.sourceforge.net/
+HOMEPAGE =	https://portmedia.sourceforge.net/
 
 # ISC
 PERMIT_PACKAGE =	Yes

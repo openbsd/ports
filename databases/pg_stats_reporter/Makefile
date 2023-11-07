@@ -1,10 +1,10 @@
 COMMENT =	graphical report tool for PostgreSQL
 
 DISTNAME =	pg_stats_reporter-3.2.1
-REVISION =	3
+REVISION =	4
 CATEGORIES =	databases www
 
-HOMEPAGE =	http://pgstatsinfo.sourceforge.net/
+HOMEPAGE =	https://pgstatsinfo.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -1,11 +1,11 @@
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
-REVISION=		8
+REVISION=		9
 CATEGORIES=		x11
 
 SITES=			${SITE_SOURCEFORGE:=treewm/}
 
-HOMEPAGE=		http://treewm.sourceforge.net/
+HOMEPAGE=		https://treewm.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,10 +1,10 @@
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
-REVISION=		4
+REVISION=		5
 CATEGORIES=		net
 
-HOMEPAGE=		http://ipfreely.sourceforge.net/
+HOMEPAGE=		https://ipfreely.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

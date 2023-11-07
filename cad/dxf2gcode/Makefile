@@ -1,11 +1,11 @@
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
 DISTNAME =		dxf2gcode-20191025
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		cad
 
-HOMEPAGE =		http://dxf2gcode.sourceforge.net/
+HOMEPAGE =		https://dxf2gcode.sourceforge.net/
 
 MAINTAINER =		Tracey Emery <tracey@openbsd.org>
 

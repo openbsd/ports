@@ -1,14 +1,14 @@
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.9
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
 
 CATEGORIES =	converters
 
-HOMEPAGE =	http://wvware.sourceforge.net/
+HOMEPAGE =	https://wvware.sourceforge.net/
 
 PERMIT_PACKAGE =	Yes
 

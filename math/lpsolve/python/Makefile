@@ -3,7 +3,7 @@ DISTNAME =		lp_solve_${V}_Python_source
 # interface version differs from pkg version
 MODPY_EGG_VERSION =	5.5.0.9
 PKGNAME =		py-lpsolve-${V}
-REVISION =		2
+REVISION =		3
 
 LIB_DEPENDS +=		math/lpsolve/core
 BUILD_DEPENDS +=	math/py2-numpy

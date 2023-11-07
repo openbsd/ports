@@ -2,11 +2,11 @@ COMMENT=	utility for mp3 wrapping
 
 DISTNAME=	mp3wrap-0.5-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	audio
 
-HOMEPAGE=	http://mp3wrap.sourceforge.net/
+HOMEPAGE=	https://mp3wrap.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

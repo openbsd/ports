@@ -2,9 +2,9 @@ COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.62
 CATEGORIES=		misc
 SITES=			${SITE_SOURCEFORGE:=lifelines/}
-REVISION=		2
+REVISION=		3
 
-HOMEPAGE=		http://lifelines.sourceforge.net/
+HOMEPAGE=		https://lifelines.sourceforge.net/
 
 # MIT
 PERMIT_PACKAGE=	Yes

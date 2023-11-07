@@ -1,8 +1,8 @@
 COMMENT =		command line converter from Microsoft docx to ASCII text
 DISTNAME =		docx2txt-1.4
 CATEGORIES =		textproc
-HOMEPAGE =		http://docx2txt.sourceforge.net/
-REVISION =		0
+HOMEPAGE =		https://docx2txt.sourceforge.net/
+REVISION =		1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

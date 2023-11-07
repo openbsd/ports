@@ -1,7 +1,7 @@
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	wmf		8.0	\
 		wmf-0.2		8.0	\
 		wmflite		7.1	\
@@ -9,7 +9,7 @@ SHARED_LIBS=	wmf		8.0	\
 
 CATEGORIES=	graphics devel
 
-HOMEPAGE=	http://wvware.sf.net/
+HOMEPAGE=	https://wvware.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

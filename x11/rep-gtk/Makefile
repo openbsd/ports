@@ -3,9 +3,9 @@ COMMENT=	GTK+ binding for librep Lisp environment
 VERSION=	0.90.8.1
 DISTNAME=	rep-gtk-${VERSION}
 CATEGORIES=     x11
-REVISION=	7
+REVISION=	8
 
-HOMEPAGE=       http://rep-gtk.sourceforge.net/
+HOMEPAGE=       https://rep-gtk.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

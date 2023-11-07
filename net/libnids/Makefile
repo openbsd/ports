@@ -2,11 +2,11 @@ COMMENT=	network monitoring library with TCP/IP reassembly
 
 DISTNAME=	libnids-1.24
 SHARED_LIBS=	nids 0.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://libnids.sourceforge.net/
+HOMEPAGE=	https://libnids.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

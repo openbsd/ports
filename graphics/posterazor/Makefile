@@ -6,10 +6,11 @@ GH_ACCOUNT = 	aportale
 GH_PROJECT = 	posterazor
 GH_COMMIT = 	710d969a7c0ed7f1f062d6dd56c1134c34b6660b
 DISTNAME = 	posterazor-1.9.7
+REVISION =      0
 
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://posterazor.sourceforge.net/
+HOMEPAGE =	https://posterazor.sourceforge.net/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 

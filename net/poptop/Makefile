@@ -3,10 +3,10 @@ COMMENT=		PPTP Server
 V=			1.3.4
 DISTNAME=		pptpd-$V
 PKGNAME=		poptop-$V
-REVISION=		8
+REVISION=		9
 CATEGORIES=		net
 
-HOMEPAGE=		http://poptop.sourceforge.net/
+HOMEPAGE=		https://poptop.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

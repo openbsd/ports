@@ -2,9 +2,9 @@ COMMENT=	clone of mpg123, a command-line mp3 player
 
 VERSION=	0.3.2
 PKGNAME=	mpg321-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
-HOMEPAGE=	http://mpg321.sourceforge.net/
+HOMEPAGE=	https://mpg321.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

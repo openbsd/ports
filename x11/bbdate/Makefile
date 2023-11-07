@@ -1,10 +1,10 @@
 COMMENT=	displays the date and resembles the toolbar
 
 DISTNAME=	bbdate-0.2.4
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 SITES=		${SITE_SOURCEFORGE:=bbtools/}
-HOMEPAGE=	http://bbtools.sourceforge.net/download.php?file=3
+HOMEPAGE=	https://bbtools.sourceforge.net/download.php?file=3
 
 # GPL
 PERMIT_PACKAGE=	Yes

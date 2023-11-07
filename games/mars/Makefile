@@ -3,9 +3,9 @@ COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
-REVISION =	9
+REVISION =	10
 
-HOMEPAGE =	http://mars-game.sourceforge.net/
+HOMEPAGE =	https://mars-game.sourceforge.net/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

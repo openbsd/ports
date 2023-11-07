@@ -4,10 +4,11 @@ DISTNAME=		Judy-1.0.5
 WRKDIST=		${WRKDIR}/${DISTNAME:L}
 PKGNAME=		lib${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 SHARED_LIBS +=	Judy                 1.4      # .1.4
 
-HOMEPAGE=		http://judy.sourceforge.net/
+HOMEPAGE=		https://judy.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE=	Yes

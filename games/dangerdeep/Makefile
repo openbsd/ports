@@ -1,11 +1,11 @@
 COMMENT =		WWII German submarine simulator
 
 PKGNAME =		dangerdeep-0.3.99.3327
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://dangerdeep.sourceforge.net/
+HOMEPAGE =		https://dangerdeep.sourceforge.net/
 
 # Code GPLv2+
 # Graphics CC BY-NC-ND 2.5

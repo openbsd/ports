@@ -2,11 +2,11 @@ COMMENT=	decode MS-TNEF MIME attachments
 
 DISTNAME=	tnef-1.4.12
 CATEGORIES=	mail
-REVISION=	2
+REVISION=	3
 
 SITES=		${SITE_SOURCEFORGE:=tnef/}
 
-HOMEPAGE=	http://tnef.sourceforge.net/
+HOMEPAGE=	https://tnef.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

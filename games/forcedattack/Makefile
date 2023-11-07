@@ -3,10 +3,10 @@ COMMENT=	connect four of stones in a straight line
 V=		2.1.4
 DISTNAME=	4stAttack-${V}
 PKGNAME=	forcedattack-${V}
-REVISION =	7
+REVISION =	8
 CATEGORIES=	games
 
-HOMEPAGE=	http://forcedattack.sourceforge.net/
+HOMEPAGE=	https://forcedattack.sourceforge.net/
 
 # GPL 
 PERMIT_PACKAGE=	Yes

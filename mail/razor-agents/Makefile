@@ -1,9 +1,9 @@
 COMMENT=		agent for Razor spam filtering networks
 
 DISTNAME=		razor-agents-2.85
-REVISION=		6
+REVISION=		7
 CATEGORIES=		mail
-HOMEPAGE=		http://razor.sourceforge.net/
+HOMEPAGE=		https://razor.sourceforge.net/
 
 # Artistic License
 PERMIT_PACKAGE=	Yes

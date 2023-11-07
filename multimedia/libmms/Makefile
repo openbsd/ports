@@ -3,11 +3,11 @@ COMMENT =	library for parsing mms:// and mmsh:// type network streams
 DISTNAME =	libmms-0.6.2
 CATEGORIES =	multimedia net
 SITES =		${SITE_SOURCEFORGE:=libmms/}
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS =	mms 1.0 #0.2
 
-HOMEPAGE =	http://libmms.sourceforge.net/
+HOMEPAGE =	https://libmms.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

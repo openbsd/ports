@@ -1,10 +1,10 @@
 COMMENT=		personal file manager
 
 DISTNAME=		pfm-1.92.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		misc
 
-HOMEPAGE=		http://p-f-m.sourceforge.net/
+HOMEPAGE=		https://p-f-m.sourceforge.net/
 
 SITES=			${SITE_SOURCEFORGE:=p-f-m/}
 

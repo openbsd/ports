@@ -2,11 +2,11 @@ COMMENT=	tetrinet server
 
 DISTNAME=	tetrinetx-1.13.16+qirc-1.40c
 PKGNAME=	tetrinetx-1.13.16
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://tetrinetx.sourceforge.net/
+HOMEPAGE=	https://tetrinetx.sourceforge.net/
 
 SITES=		${SITE_SOURCEFORGE:=tetrinetx/}
 

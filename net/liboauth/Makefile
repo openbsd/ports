@@ -3,8 +3,9 @@ COMMENT=		library implementing the OAuth Core RFC 5849 standard
 DISTNAME=		liboauth-1.0.3
 SHARED_LIBS +=  oauth                8.4      # 8.7
 CATEGORIES=		net
+REVISION=		0
 
-HOMEPAGE=		http://liboauth.sourceforge.net/
+HOMEPAGE=		https://liboauth.sourceforge.net/
 
 # MIT or GPLv2+
 PERMIT_PACKAGE=	Yes

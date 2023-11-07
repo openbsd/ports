@@ -2,9 +2,9 @@ COMMENT=	help benchmark random read performance
 
 DISTNAME=	randread-0.2
 CATEGORIES=	benchmarks
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://randread.sourceforge.net/
+HOMEPAGE=	https://randread.sourceforge.net/
 SITES=		${SITE_SOURCEFORGE:=randread/}
 
 # Public Domain

@@ -5,12 +5,13 @@ DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
+REVISION=		0
 
 SHARED_LIBS +=  atalk                16.0     # unknown
 
 CATEGORIES=		net
 
-HOMEPAGE=		http://netatalk.sourceforge.net/
+HOMEPAGE=		https://netatalk.sourceforge.net/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

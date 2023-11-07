@@ -1,13 +1,13 @@
 COMMENT=	library functions to access Microsoft Word/Excel files
 
-REVISION =	4
+REVISION =	5
 DISTNAME=	wv2-0.4.2
 SHARED_LIBS +=	wv2                  4.0      # .1.8
 CATEGORIES=	converters
 SITES=		${SITE_SOURCEFORGE:=wvware/}
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://wvware.sourceforge.net/
+HOMEPAGE=	https://wvware.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes

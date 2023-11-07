@@ -1,10 +1,10 @@
 COMMENT =	GNUstep based trace visualization tool
 
-REVISION =	15
+REVISION =	16
 DISTNAME =	Paje-1.98
 SHARED_LIBS +=	General	0.0
 
-HOMEPAGE =	http://paje.sourceforge.net/
+HOMEPAGE =	https://paje.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=paje/}
 
 MODULES =	x11/gnustep

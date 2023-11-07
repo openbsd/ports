@@ -1,13 +1,13 @@
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	dbus-c++-1	0.1 \
 		dbus-c++-glib-1	0.0
 
 CATEGORIES =	x11 devel
 
-HOMEPAGE =	http://dbus-cplusplus.sourceforge.net/
+HOMEPAGE =	https://dbus-cplusplus.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

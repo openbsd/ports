@@ -5,10 +5,11 @@ EPOCH =			0
 DISTNAME =		uqm-$V-src
 PKGNAME =		uqm-$V
 V =			0.8.0
+REVISION =		0
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		http://sc2.sourceforge.net/
+HOMEPAGE =		https://sc2.sourceforge.net/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 

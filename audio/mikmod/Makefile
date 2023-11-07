@@ -1,10 +1,10 @@
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.8
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio
 
-HOMEPAGE =	http://mikmod.sourceforge.net/
+HOMEPAGE =	https://mikmod.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,10 +1,10 @@
 COMMENT=	web-based front end for the nfdump netflow tools
 
 V=		1.3.8
-REVISION=	8
+REVISION=	9
 DISTNAME=	nfsen-$V
 CATEGORIES=	net www
-HOMEPAGE=	http://nfsen.sourceforge.net/
+HOMEPAGE=	https://nfsen.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

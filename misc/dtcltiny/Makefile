@@ -3,9 +3,9 @@ COMMENT =		small SRCP client to control digital model trains
 EPOCH =			0
 DISTNAME =		dtcltiny-0.4.5
 CATEGORIES =		misc x11
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://dtcltiny.sourceforge.net/
+HOMEPAGE =		https://dtcltiny.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2

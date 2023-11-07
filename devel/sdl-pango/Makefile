@@ -3,13 +3,13 @@ COMMENT=	SDL wrapper around the Pango library
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
 PKGNAME=	sdl-pango-${V}
-REVISION=	16
+REVISION=	17
 
 CATEGORIES=	devel x11
 
 SHARED_LIBS +=  SDL_Pango            0.0      # 2.0
 
-HOMEPAGE=	http://sdlpango.sourceforge.net/
+HOMEPAGE=	https://sdlpango.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

@@ -4,8 +4,9 @@ V =			2.9.11
 DISTNAME =		cracklib-${V}
 SHARED_LIBS =		crack	0.4	# 11.0
 CATEGORIES =		security
+REVISION =		0
 
-HOMEPAGE =		http://sourceforge.net/projects/cracklib/
+HOMEPAGE =		https://sourceforge.net/projects/cracklib/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

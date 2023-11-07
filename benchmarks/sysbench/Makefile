@@ -1,10 +1,10 @@
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
-REVISION =	15
+REVISION =	16
 CATEGORIES =	benchmarks
 SITES =		${SITE_SOURCEFORGE:=sysbench/}
 
-HOMEPAGE =	http://sysbench.sourceforge.net/
+HOMEPAGE =	https://sysbench.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE =	Yes

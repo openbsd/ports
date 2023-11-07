@@ -1,12 +1,13 @@
 COMMENT=		text hyphenation library
 
 DISTNAME=		hyphen-2.8.8
+REVISION=		0
 
 SHARED_LIBS +=	hyphen                    0.0 # 3.0
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://hunspell.sourceforge.net/
+HOMEPAGE=		https://hunspell.sourceforge.net/
 
 # GPLv2+ | LGPLv2.1 | MPL
 PERMIT_PACKAGE=	Yes

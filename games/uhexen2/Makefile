@@ -6,9 +6,10 @@ PKGNAME =		uhexen2-${V}
 EXTRACT_SUFX =		.tgz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			hexen2-${V}-linux-i586.tgz
+REVISION =		0
 
 CATEGORIES =		games
-HOMEPAGE =		http://uhexen2.sourceforge.net/
+HOMEPAGE =		https://uhexen2.sourceforge.net/
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 

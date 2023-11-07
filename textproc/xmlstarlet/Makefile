@@ -1,11 +1,11 @@
 COMMENT =	command line XML toolkit
 
 DISTNAME =	xmlstarlet-1.6.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://xmlstar.sourceforge.net/
+HOMEPAGE =	https://xmlstar.sourceforge.net/
 
 MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 

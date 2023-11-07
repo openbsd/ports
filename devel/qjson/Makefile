@@ -3,11 +3,11 @@ COMMENT=	Qt-based library that maps JSON data to QVariant objects
 GH_ACCOUNT =	flavio
 GH_PROJECT =	qjson
 GH_TAGNAME =	0.9.0
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://qjson.sourceforge.net/
+HOMEPAGE =	https://qjson.sourceforge.net/
 
 SHARED_LIBS = qjson-qt5  0.0
 

@@ -3,11 +3,11 @@ COMMENT=	Tcl/C++ interface used by ns and nam
 V=		1.20
 DISTNAME=	tclcl-src-$V
 PKGNAME=	tclcl-$V
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
-HOMEPAGE=	http://otcl-tclcl.sourceforge.net/tclcl/
+HOMEPAGE=	https://otcl-tclcl.sourceforge.net/tclcl/
 
 # BSD
 PERMIT_PACKAGE=	Yes

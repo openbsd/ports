@@ -1,11 +1,11 @@
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://wordwarvi.sourceforge.net/
+HOMEPAGE =		https://wordwarvi.sourceforge.net/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 

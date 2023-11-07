@@ -1,10 +1,10 @@
 COMMENT=	essentially an Asteroids clone
 
 DISTNAME=	sdlroids-1.3.4
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games
 
-HOMEPAGE=	http://sourceforge.net/projects/sdlroids/
+HOMEPAGE=	https://sourceforge.net/projects/sdlroids/
 
 SITES=		${SITE_SOURCEFORGE:=sdlroids/}
 

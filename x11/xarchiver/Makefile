@@ -1,8 +1,9 @@
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 DIST_TUPLE =	github	ib	xarchiver	0.5.4.21	.
+REVISION =	0
 
-HOMEPAGE =	http://xarchiver.sourceforge.net
+HOMEPAGE =	https://xarchiver.sourceforge.net
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

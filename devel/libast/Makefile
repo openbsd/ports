@@ -2,11 +2,11 @@ COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7
 PKGNAME=		${DISTNAME}
-REVISION =		10
+REVISION =		11
 SHARED_LIBS +=	ast                  3.0      # .2.1
 CATEGORIES=		devel
 
-HOMEPAGE=		http://eterm.sourceforge.net/
+HOMEPAGE=		https://eterm.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -3,12 +3,12 @@ BROKEN-arm=	SIGBUS in ps2pdf
 COMMENT=		collection of tools for manipulating EPROM load files
 
 DISTNAME=		srecord-1.64
-REVISION =		3
+REVISION =		4
 CATEGORIES=		devel
 
 SHARED_LIBS +=  srecord              0.0      # 0.0
 
-HOMEPAGE=		http://srecord.sf.net/
+HOMEPAGE=		https://srecord.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

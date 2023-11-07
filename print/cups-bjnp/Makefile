@@ -1,11 +1,11 @@
 COMMENT=		BJNP protocol backend for CUPS
 
 DISTNAME=		cups-bjnp-2.0.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print
 
-HOMEPAGE=		http://cups-bjnp.sourceforge.net
+HOMEPAGE=		https://cups-bjnp.sourceforge.net
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

@@ -1,9 +1,9 @@
 COMMENT=	command-line MPEG audio decoder and player
 
 DISTNAME=	madplay-0.15.2b
-REVISION=	8
+REVISION=	9
 CATEGORIES=	audio
-HOMEPAGE=	http://mad.sourceforge.net/
+HOMEPAGE=	https://mad.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

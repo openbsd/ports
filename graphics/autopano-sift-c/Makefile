@@ -1,12 +1,12 @@
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1
-REVISION=		4
+REVISION=		5
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://hugin.sourceforge.net/
+HOMEPAGE =		https://hugin.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

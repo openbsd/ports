@@ -3,8 +3,9 @@ COMMENT=	transform bitmaps into vector graphics
 DISTNAME=	potrace-1.16
 SHARED_LIBS +=  potrace              0.1      # 0.3
 CATEGORIES=	graphics
+REVISION=	0
 
-HOMEPAGE=	http://potrace.sourceforge.net
+HOMEPAGE=	https://potrace.sourceforge.net
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

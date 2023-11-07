@@ -1,10 +1,10 @@
 COMMENT=	Java program analyzer and checker
 
 DISTNAME=	jlint-3.1.2
-REVISION =	3
+REVISION =	4
 CATEGORIES=	java
 
-HOMEPAGE=	http://jlint.sourceforge.net/
+HOMEPAGE=	https://jlint.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

@@ -7,10 +7,11 @@ DISTNAME=	w3m_$V+git$P
 PKGNAME=	w3m-$Vpl$P
 WRKDIST=	${WRKDIR}/w3m-$V+git$P
 EXTRACT_SUFX=	.orig.tar.xz
+REVISION=	0
 
 CATEGORIES=	www
 
-HOMEPAGE=	http://w3m.sourceforge.net/
+HOMEPAGE=	https://w3m.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE=	Yes

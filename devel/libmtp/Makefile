@@ -2,10 +2,11 @@ COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-1.1.21
 CATEGORIES=		devel
+REVISION=		0
 
 SHARED_LIBS +=  mtp                  7.2      # 13.0.4
 
-HOMEPAGE=		http://libmtp.sourceforge.net/
+HOMEPAGE=		https://libmtp.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

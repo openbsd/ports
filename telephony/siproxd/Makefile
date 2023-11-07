@@ -2,9 +2,9 @@ COMMENT=	proxy/masquerading daemon for the SIP protocol
 
 DISTNAME=	siproxd-0.8.3
 CATEGORIES=	telephony net
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	http://siproxd.sourceforge.net/
+HOMEPAGE=	https://siproxd.sourceforge.net/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

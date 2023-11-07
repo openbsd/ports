@@ -1,11 +1,11 @@
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2
-REVISION =	5
+REVISION =	6
 CATEGORIES =	textproc
 
 SITES =		${SITE_SOURCEFORGE:=tclxml/}
-HOMEPAGE =	http://tclxml.sourceforge.net/
+HOMEPAGE =	https://tclxml.sourceforge.net/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 SHARED_LIBS +=	Tclxml32	0.0

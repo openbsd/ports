@@ -3,11 +3,11 @@ COMMENT=	UCB/LBNL Network Simulator Version 2
 V=		2.35
 DISTNAME=	ns-src-$V
 PKGNAME=	ns-$V
-REVISION =	5
+REVISION =	6
 CATEGORIES=	net
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
-HOMEPAGE=	http://nsnam.sourceforge.net/
+HOMEPAGE=	https://nsnam.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

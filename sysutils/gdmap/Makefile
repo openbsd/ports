@@ -1,9 +1,9 @@
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11
-REVISION =		6
+REVISION =		7
 
-HOMEPAGE =		http://gdmap.sourceforge.net/
+HOMEPAGE =		https://gdmap.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

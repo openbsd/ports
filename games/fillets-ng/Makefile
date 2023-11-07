@@ -2,8 +2,8 @@ COMMENT =		wonderful puzzle game
 V = 			1.0.1
 DISTNAME = 		fillets-ng-${V}
 CATEGORIES =		games
-HOMEPAGE =		http://fillets.sourceforge.net/
-REVISION =              2
+HOMEPAGE =		https://fillets.sourceforge.net/
+REVISION =              3
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

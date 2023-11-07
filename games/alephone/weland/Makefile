@@ -4,11 +4,11 @@ COMMENT =		marathon / alephone map editor
 V =			211
 DISTNAME =		weland-r${V}-src
 PKGNAME =		weland-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://sourceforge.net/projects/weland/
+HOMEPAGE =		https://sourceforge.net/projects/weland/
 
 # GPL v2-only
 PERMIT_PACKAGE =	Yes

@@ -1,11 +1,11 @@
 COMMENT =		puzzle game featuring dominoes
 
 DISTNAME =		pushover-0.0.5
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://pushover.sourceforge.net/
+HOMEPAGE =		https://pushover.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

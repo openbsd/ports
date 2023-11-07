@@ -1,8 +1,8 @@
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.16.1
 CATEGORIES =		games x11
-HOMEPAGE =		http://chromium-bsu.sourceforge.net/
-REVISION =		3
+HOMEPAGE =		https://chromium-bsu.sourceforge.net/
+REVISION =		4
 
 # Clarified Artistic License
 PERMIT_PACKAGE =	Yes

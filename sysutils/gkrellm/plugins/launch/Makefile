@@ -1,10 +1,10 @@
 COMMENT=	launch commonly used apps from GkrellM2
 
 DISTNAME=	gkrellmlaunch-0.5
-REVISION=	20
+REVISION=	21
 CATEGORIES=	x11
 
-HOMEPAGE=	http://gkrellmlaunch.sourceforge.net/
+HOMEPAGE=	https://gkrellmlaunch.sourceforge.net/
 SITES=		${SITE_SOURCEFORGE:=gkrellmlaunch/}
 
 EXTRA_WANTLIB=	gthread-2.0

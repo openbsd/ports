@@ -1,10 +1,11 @@
 COMMENT =		device firmware update (DFU) USB programmer
 
 DISTNAME =		dfu-util-0.10
+REVISION =		0
 
 CATEGORIES =		comms
 
-HOMEPAGE =		http://dfu-util.sourceforge.net
+HOMEPAGE =		https://dfu-util.sourceforge.net
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

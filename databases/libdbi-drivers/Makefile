@@ -1,5 +1,5 @@
 V =			0.9.0
-REVISION =		6
+REVISION =		7
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite3 =	sqlite3 driver for libdbi
@@ -10,7 +10,7 @@ PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
 
 CATEGORIES =		databases
 
-HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
+HOMEPAGE =		https://libdbi-drivers.sourceforge.net/
 SITES =			${SITE_SOURCEFORGE:=libdbi-drivers/}
 
 MULTI_PACKAGES =	-main -pgsql -sqlite3 -freetds

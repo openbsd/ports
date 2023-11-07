@@ -1,13 +1,13 @@
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	25
+REVISION =	26
 
 SHARED_LIBS =	waei	0.0
 
 CATEGORIES =	japanese
 
-HOMEPAGE =	http://sourceforge.net/projects/gwaei/
+HOMEPAGE =	https://sourceforge.net/projects/gwaei/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

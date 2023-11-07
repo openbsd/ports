@@ -4,9 +4,9 @@ V =		1.97
 DISTNAME =	lpc21isp_${V:S/.//}
 PKGNAME =	lpc21isp-${V}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
-HOMEPAGE =	http://sourceforge.net/projects/lpc21isp/
+HOMEPAGE =	https://sourceforge.net/projects/lpc21isp/
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

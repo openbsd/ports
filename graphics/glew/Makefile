@@ -7,10 +7,11 @@ DISTNAME=	glew-2.2.0
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
+REVISION=	0
 
 SHARED_LIBS=	GLEW	9.0
 
-HOMEPAGE=	http://glew.sourceforge.net/
+HOMEPAGE=	https://glew.sourceforge.net/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 

@@ -6,6 +6,7 @@ UQM_ADDON =	Yes
 
 PKGNAME =	uqm-voice-$V
 DISTFILES =	uqm-$V-voice.uqm
+REVISION =	0
 
 SUBST_VARS +=	V
 

@@ -1,10 +1,10 @@
 COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		graphics x11
 
-HOMEPAGE=		http://sf-xpaint.sourceforge.net/
+HOMEPAGE=		https://sf-xpaint.sourceforge.net/
 
 SITES=			${SITE_SOURCEFORGE:=sf-xpaint/}
 EXTRACT_SUFX=		.tar.bz2

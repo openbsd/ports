@@ -1,12 +1,12 @@
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
-REVISION =		9
+REVISION =		10
 CATEGORIES =		textproc
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-HOMEPAGE =		http://dblatex.sourceforge.net
+HOMEPAGE =		https://dblatex.sourceforge.net
 SITES =			${SITE_SOURCEFORGE:=dblatex/}
 EXTRACT_SUFX =		.tar.bz2
 

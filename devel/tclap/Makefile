@@ -1,10 +1,11 @@
 COMMENT=	templatized C++ command line parser
 
 DISTNAME=	tclap-1.2.2
+REVISION=	0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://tclap.sourceforge.net/
+HOMEPAGE=	https://tclap.sourceforge.net/
 
 # MIT
 PERMIT_PACKAGE=	Yes

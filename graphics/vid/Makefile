@@ -1,10 +1,10 @@
 COMMENT=	get images from USB cameras using the OV511(+) chipsets
 
 DISTNAME=	vid-1.0.1
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://ovtvid-bsd.sourceforge.net/
+HOMEPAGE=	https://ovtvid-bsd.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

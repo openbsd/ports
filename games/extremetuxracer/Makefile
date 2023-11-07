@@ -5,10 +5,11 @@ BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 V =			0.8.1
 DISTNAME =		etr-$V
 PKGNAME =		extremetuxracer-$V
+REVISION =		0
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://sourceforge.net/projects/extremetuxracer/
+HOMEPAGE =		https://sourceforge.net/projects/extremetuxracer/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 

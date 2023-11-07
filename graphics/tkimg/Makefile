@@ -5,8 +5,9 @@ V =			1.4.13
 DISTNAME =		Img-${V}-Source
 PKGNAME =		tkimg-${V}
 CATEGORIES =		graphics
-HOMEPAGE = 		http://tkimg.sourceforge.net/
+HOMEPAGE = 		https://tkimg.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -3,7 +3,8 @@ COMMENT=	toolkit for manipulation and conversion of graphic images
 DISTNAME=	netpbm-11.03.05
 SHARED_LIBS=	netpbm	6.0
 CATEGORIES=	graphics
-HOMEPAGE=	http://netpbm.sourceforge.net/
+HOMEPAGE=	https://netpbm.sourceforge.net/
+REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

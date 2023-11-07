@@ -3,9 +3,9 @@ COMMENT=		library to access data on a CDDB server
 DISTNAME=		libcddb-1.3.2
 CATEGORIES=		audio devel
 SHARED_LIBS +=	cddb                 0.1      # .4.3
-REVISION=		0
+REVISION=		1
 
-HOMEPAGE=		http://libcddb.sourceforge.net/
+HOMEPAGE=		https://libcddb.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE=	Yes

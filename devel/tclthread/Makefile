@@ -1,14 +1,14 @@
 COMMENT =		thread extension for Tcl
 
 V =			2.8.8
-REVISION =		0
+REVISION =		1
 
 DISTNAME =		thread${V}
 DISTFILES =		thread${V}-1{thread${V}}${EXTRACT_SUFX}
 PKGNAME =		tclthread-${V}
 SHARED_LIBS =		tclthread${VER} 0.0
 CATEGORIES =		devel
-HOMEPAGE =		http://tcl.sourceforge.net/
+HOMEPAGE =		https://tcl.sourceforge.net/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD

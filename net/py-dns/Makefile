@@ -4,8 +4,9 @@ MODPY_EGG_VERSION =	2.3.6
 DISTNAME =	pydns-${MODPY_EGG_VERSION}
 PKGNAME =	py-dns-${MODPY_EGG_VERSION}
 CATEGORIES =   	net
+REVISION =	0
 
-HOMEPAGE =	http://pydns.sourceforge.net/
+HOMEPAGE =	https://pydns.sourceforge.net/
 
 # Python License
 PERMIT_PACKAGE =	Yes

@@ -1,11 +1,11 @@
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
 DISTNAME=	wide-dhcpv6-20080615
-REVISION=	9
+REVISION=	10
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=wide-dhcpv6/}
 
-HOMEPAGE=	http://wide-dhcpv6.sourceforge.net/
+HOMEPAGE=	https://wide-dhcpv6.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

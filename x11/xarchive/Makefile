@@ -3,10 +3,10 @@ COMMENT=	GTK+2 front-end for command line archiving tools
 V=		0.2.8-6
 DISTNAME=	xarchive-$V
 PKGNAME=	xarchive-${V:S/-/./}
-REVISION=	9
+REVISION=	10
 CATEGORIES=	x11
 
-HOMEPAGE=	http://xarchive.sourceforge.net/
+HOMEPAGE=	https://xarchive.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

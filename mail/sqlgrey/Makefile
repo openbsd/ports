@@ -2,9 +2,9 @@ COMMENT =	postfix greylist daemon
 
 DISTNAME =	sqlgrey-1.8.0
 CATEGORIES =	mail
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://sqlgrey.sf.net/
+HOMEPAGE =	https://sqlgrey.sourceforge.net/
 SITES =		${SITE_SOURCEFORGE:=sqlgrey/}
 
 # GPLv2

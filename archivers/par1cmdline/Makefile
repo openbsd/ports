@@ -4,12 +4,12 @@ PKGNAME=	par1cmdline-1.1
 CATEGORIES=	archivers
 SITES=		${SITE_SOURCEFORGE:=parchive/}
 
-HOMEPAGE=	http://parchive.sourceforge.net/
+HOMEPAGE=	https://parchive.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-REVISION =	2
+REVISION =	3
 WANTLIB=		c
 
 NO_TEST=	Yes

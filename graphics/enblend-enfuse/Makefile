@@ -10,10 +10,10 @@ BROKEN-alpha =	enblend-enblend.o: .got subsegment exceeds 64K (size 77816)
 COMMENT =	blend seams in panoramic image mosaics
 
 DISTNAME =	enblend-enfuse-4.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics
 
-HOMEPAGE =	http://enblend.sourceforge.net/
+HOMEPAGE =	https://enblend.sourceforge.net/
 
 # GPLv2+, MIT
 PERMIT_PACKAGE =	Yes

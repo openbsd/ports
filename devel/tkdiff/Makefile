@@ -1,10 +1,10 @@
 COMMENT=	graphical front-end to the diff program
 
 DISTNAME=	tkdiff-4.2
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel sysutils
 
-HOMEPAGE=	http://tkdiff.sourceforge.net/
+HOMEPAGE=	https://tkdiff.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

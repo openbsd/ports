@@ -2,14 +2,14 @@ COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 
 V=		16.02
-REVISION-main=	6
-REVISION-rar=	3
+REVISION-main=	7
+REVISION-rar=	4
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 CATEGORIES=	archivers
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-HOMEPAGE=	http://sourceforge.net/projects/p7zip/
+HOMEPAGE=	https://sourceforge.net/projects/p7zip/
 
 # LGPL, except unRar plugin which is licensed as Freeware
 PERMIT_PACKAGE=	Yes

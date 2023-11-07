@@ -1,11 +1,11 @@
 COMMENT =	pretty printing of your mails
 
 DISTNAME =	muttprint-0.73
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	print mail
 
-HOMEPAGE =	http://muttprint.sourceforge.net
+HOMEPAGE =	https://muttprint.sourceforge.net
 
 MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 

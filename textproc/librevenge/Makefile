@@ -2,12 +2,13 @@ COMMENT=	base library for writing document import filters
 
 DISTNAME=	librevenge-0.0.5
 CATEGORIES=	textproc
+REVISION=	0
 
 SHARED_LIBS=	revenge-0.0		0.0 \
 		revenge-generators-0.0	0.0 \
 		revenge-stream-0.0	0.0
 
-HOMEPAGE=	http://libwpd.sourceforge.net/
+HOMEPAGE=	https://libwpd.sourceforge.net/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

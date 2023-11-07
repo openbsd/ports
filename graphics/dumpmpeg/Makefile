@@ -2,10 +2,10 @@ COMMENT=	dump frames from mpeg-1 movies
 
 VERSION=	0.6
 DISTNAME=	dumpmpeg-${VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	graphics x11
 
-HOMEPAGE=	http://sourceforge.net/projects/dumpmpeg/
+HOMEPAGE=	https://sourceforge.net/projects/dumpmpeg/
 
 PERMIT_PACKAGE=	Yes
 

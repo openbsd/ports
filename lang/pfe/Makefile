@@ -6,13 +6,13 @@ NOT_FOR_ARCHS=	arm aarch64 riscv64
 COMMENT=	Portable Forth Environment
 
 DISTNAME=	pfe-0.33.71
-REVISION=	2
+REVISION=	3
 CATEGORIES=    	lang
 
 SHARED_LIBS +=  pfe                  33.71    # .33.71
 SHARED_LIBS +=  pfe-0-forth          33.71    # .33.71
 
-HOMEPAGE=	http://pfe.sourceforge.net/
+HOMEPAGE=	https://pfe.sourceforge.net/
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes

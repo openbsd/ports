@@ -3,9 +3,9 @@ BROKEN-hppa =		OOM or ICE on hqx/src/hq4x_32.c
 COMMENT =		Sega Megadrive/Genesis emulator
 DISTNAME =		dgen-sdl-1.33
 CATEGORIES =		emulators games
-HOMEPAGE =		http://dgen.sourceforge.net/
+HOMEPAGE =		https://dgen.sourceforge.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
-REVISION =		1
+REVISION =		2
 
 FLAVORS =		debugger
 FLAVOR ?=

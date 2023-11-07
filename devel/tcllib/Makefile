@@ -2,8 +2,9 @@ COMMENT =	Tcl Standard Library
 
 DISTNAME =	tcllib-1.21pl0
 CATEGORIES =	devel lang/tcl
-HOMEPAGE =	http://sourceforge.net/projects/tcllib/
+HOMEPAGE =	https://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # BSD style
 PERMIT_PACKAGE =	Yes

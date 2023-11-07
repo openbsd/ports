@@ -1,9 +1,9 @@
 COMMENT =	small standards-compliant window manager
 DISTNAME =	wind-1.5
 CATEGORIES =	x11
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://windwm.sourceforge.net
+HOMEPAGE =	https://windwm.sourceforge.net
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -1,15 +1,15 @@
 COMMENT=		DVD ripper
 
 DISTNAME=		dvdbackup-0.1.1
-REVISION=		3
+REVISION=		4
 CATEGORIES=		multimedia
 
-HOMEPAGE=		http://dvd-create.sourceforge.net/
+HOMEPAGE=		https://dvd-create.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-SITES=			http://dvd-create.sourceforge.net/
+SITES=			https://dvd-create.sourceforge.net/
 
 LIB_DEPENDS=		multimedia/libdvdnav
 WANTLIB=		c dvdnav dvdread pthread

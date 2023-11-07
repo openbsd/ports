@@ -2,10 +2,11 @@ COMMENT=	import and export WordPerfect(tm) documents
 
 DISTNAME=	libwpd-0.10.3
 CATEGORIES=	textproc
+REVISION=	0
 
 SHARED_LIBS=	wpd-0.10	10.0
 
-HOMEPAGE=	http://libwpd.sourceforge.net/
+HOMEPAGE=	https://libwpd.sourceforge.net/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

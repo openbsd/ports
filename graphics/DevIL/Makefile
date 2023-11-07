@@ -1,7 +1,7 @@
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		20
+REVISION=		21
 
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
@@ -9,7 +9,7 @@ SHARED_LIBS+=		ILUT	1.0 # 2.0
 
 CATEGORIES=		graphics devel
 
-HOMEPAGE=		http://openil.sourceforge.net/
+HOMEPAGE=		https://openil.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

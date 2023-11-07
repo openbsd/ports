@@ -2,11 +2,11 @@ COMMENT=	fast-light window manager
 
 DISTNAME=	flwm-1.02
 PKGNAME=	flwm-1.0.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 SITES=		${HOMEPAGE}
 
-HOMEPAGE=	http://flwm.sourceforge.net/
+HOMEPAGE=	https://flwm.sourceforge.net/
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest

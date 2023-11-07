@@ -2,8 +2,9 @@ COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.11.0
 CATEGORIES =	devel
+REVISION =	0
 
-HOMEPAGE =	http://openocd.sourceforge.net/
+HOMEPAGE =	https://openocd.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

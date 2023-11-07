@@ -2,8 +2,9 @@ COMMENT =		TAP LADSPA plugins
 
 DISTNAME =		tap-plugins-0.7.3
 CATEGORIES =		audio
+REVISION =		0
 
-HOMEPAGE =		http://tap-plugins.sourceforge.net/
+HOMEPAGE =		https://tap-plugins.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

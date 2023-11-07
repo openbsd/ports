@@ -1,12 +1,12 @@
 COMMENT=		put clickable icons on the desktop
 
 DISTNAME=		idesk-0.7.5
-REVISION =		8
+REVISION =		9
 CATEGORIES=		x11
 
 SITES=			${SITE_SOURCEFORGE:=idesk/}
 
-HOMEPAGE=		http://idesk.sourceforge.net/
+HOMEPAGE=		https://idesk.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

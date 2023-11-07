@@ -4,7 +4,7 @@ V=		2.15.0
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
 CATEGORIES=	audio
-REVISION=	1
+REVISION=	2
 
 SITES=		${SITE_SOURCEFORGE:=timidity/}
 SITES.nycbug=	https://mirrors.nycbug.org/pub/distfiles/
@@ -12,7 +12,7 @@ SITES.nycbug=	https://mirrors.nycbug.org/pub/distfiles/
 DISTFILES.nycbug=	TimGM6mb-20170802.tar.gz
 DISTFILES=		${DISTNAME}.tar.gz
 
-HOMEPAGE=	http://timidity.sourceforge.net/
+HOMEPAGE=	https://timidity.sourceforge.net/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # timidity: GPLv2+

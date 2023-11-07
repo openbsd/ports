@@ -2,11 +2,11 @@ COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-2.3.3.4
 
-REVISION =	4
+REVISION =	5
 
 SITES =		${SITE_SOURCEFORGE:=clucene/}
 
-HOMEPAGE = 	http://clucene.sourceforge.net/
+HOMEPAGE = 	https://clucene.sourceforge.net/
 
 SHARED_LIBS +=  clucene-contribs-lib      0.0 # 2.3
 SHARED_LIBS +=  clucene-core              0.0 # 2.3

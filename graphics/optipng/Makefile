@@ -1,9 +1,9 @@
 COMMENT =		lossless PNG optimizer
 DISTNAME =		optipng-0.7.7
 CATEGORIES =		graphics
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://optipng.sourceforge.net/
+HOMEPAGE =		https://optipng.sourceforge.net/
 
 # zlib
 PERMIT_PACKAGE =	Yes

@@ -5,11 +5,11 @@ CATEGORIES=	security
 SHARED_LIBS=	mhash	2.1	# .2.1
 MODGNU_SHARED_LIBS=mhash ''
 LIBmhash_ALIAS=	realmhash
-REVISION=	1
+REVISION=	2
 
 SITES=		${SITE_SOURCEFORGE:=mhash/}
 
-HOMEPAGE=	http://mhash.sourceforge.net/
+HOMEPAGE=	https://mhash.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE=	Yes

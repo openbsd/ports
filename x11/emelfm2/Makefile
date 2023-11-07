@@ -1,10 +1,10 @@
 COMMENT =		GTK based file manager with two-pane design
 
 DISTNAME =		emelfm2-0.9.1
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		x11
-HOMEPAGE =		http://emelfm.sourceforge.net/
+HOMEPAGE =		https://emelfm.sourceforge.net/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

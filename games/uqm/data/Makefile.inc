@@ -4,7 +4,7 @@ CATEGORIES ?=		games x11
 DIST_SUBDIR ?=		uqm
 SITES ?=		${SITE_SOURCEFORGE:=sc2/}
 
-HOMEPAGE ?=		http://sc2.sourceforge.net/
+HOMEPAGE ?=		https://sc2.sourceforge.net/
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>
 

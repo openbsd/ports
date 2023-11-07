@@ -2,7 +2,7 @@ COMMENT =		mixed integer linear programming solver
 
 DISTNAME =		lp_solve_${V}_source
 PKGNAME =		lpsolve-${V}
-REVISION =		1
+REVISION =		2
 WRKDIST =		${WRKDIR}/lp_solve_${V_MAJOR}
 
 SHARED_LIBS =		lpsolve55	0.0	# unversioned upstream

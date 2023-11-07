@@ -1,8 +1,9 @@
 COMMENT =	open source 2D real time strategy god game
 DISTNAME =	gigalomania-1.0.1
 CATEGORIES =	games x11
+REVISION =	0
 
-HOMEPAGE =	http://gigalomania.sourceforge.net/
+HOMEPAGE =	https://gigalomania.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+

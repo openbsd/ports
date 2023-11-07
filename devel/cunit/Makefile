@@ -3,13 +3,13 @@ COMMENT =		c unit testing framework
 VER =			2.1-2
 DISTNAME =		CUnit-${VER}
 PKGNAME =		cunit-${VER:S/-/./}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		cunit	1.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://cunit.sourceforge.net/
+HOMEPAGE =		https://cunit.sourceforge.net/
 
 # LGPL
 PERMIT_PACKAGE =	Yes

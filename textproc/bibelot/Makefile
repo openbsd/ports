@@ -4,11 +4,11 @@ VERSION=	0.9.4
 PROG=		bibelot
 DISTNAME=	${PROG}-${VERSION}
 CATEGORIES=	textproc
-REVISION=	2
+REVISION=	3
 
 PERMIT_PACKAGE=	Yes
 
-HOMEPAGE=	http://sourceforge.net/projects/bibelot
+HOMEPAGE=	https://sourceforge.net/projects/bibelot
 
 SITES=		${SITE_SOURCEFORGE:=bibelot/}
 

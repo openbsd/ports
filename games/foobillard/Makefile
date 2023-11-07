@@ -1,10 +1,10 @@
 COMMENT =		OpenGL billard game
 
 DISTNAME =		foobillard-3.0a
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games x11
-HOMEPAGE =		http://foobillard.sourceforge.net/
+HOMEPAGE =		https://foobillard.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

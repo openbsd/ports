@@ -1,9 +1,9 @@
 COMMENT =	Tcl/Tk-based manual browser
 
 DISTNAME =	tkman-2.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	misc 
-HOMEPAGE =	http://www.sourceforge.net/projects/tkman
+HOMEPAGE =	https://www.sourceforge.net/projects/tkman
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # Artistic License

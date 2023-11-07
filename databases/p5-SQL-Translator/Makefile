@@ -4,10 +4,11 @@ DISTNAME =	SQL-Translator-1.62
 CATEGORIES =	databases
 MODULES =	cpan databases/postgresql
 PKG_ARCH =	*
+REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-HOMEPAGE =	http://sqlfairy.sourceforge.net/
+HOMEPAGE =	https://sqlfairy.sourceforge.net/
 
 # perl
 PERMIT_PACKAGE =	Yes

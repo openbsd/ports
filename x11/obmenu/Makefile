@@ -1,10 +1,10 @@
 COMMENT=	Openbox menu editor
 
 DISTNAME=	obmenu-1.0
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11
 
-HOMEPAGE=	http://obmenu.sourceforge.net/
+HOMEPAGE=	https://obmenu.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

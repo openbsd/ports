@@ -2,9 +2,9 @@ COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.40.0
 CATEGORIES=		x11
-REVISION=		3
+REVISION=		4
 
-HOMEPAGE=		http://sourceforge.net/projects/yad-dialog/
+HOMEPAGE=		https://sourceforge.net/projects/yad-dialog/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

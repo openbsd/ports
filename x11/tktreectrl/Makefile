@@ -3,10 +3,10 @@ COMMENT =		tree widget extension for Tk
 V =			2.4.1
 
 DISTNAME =		tktreectrl-${V}
-REVISION =		2
+REVISION =		3
 EPOCH =			0
 CATEGORIES =		x11
-HOMEPAGE =		http://tktreectrl.sourceforge.net/
+HOMEPAGE =		https://tktreectrl.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD

@@ -1,10 +1,10 @@
 COMMENT=		Microsoft TrueType core fonts
 
 DISTNAME=		msttcorefonts-2.0
-REVISION=		3
+REVISION=		4
 CATEGORIES=		fonts x11
 
-HOMEPAGE=		http://corefonts.sourceforge.net/
+HOMEPAGE=		https://corefonts.sourceforge.net/
 
 # Font source files have a restrictive license
 PERMIT_PACKAGE=		Restrictive license, can't distribute modified files

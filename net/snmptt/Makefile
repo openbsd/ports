@@ -2,10 +2,11 @@ COMMENT=	SNMP trap handler (translates traps to friendlier format)
 
 DISTNAME=	snmptt_1.4.2
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://snmptt.sourceforge.net/
+HOMEPAGE=	https://snmptt.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

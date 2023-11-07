@@ -1,9 +1,9 @@
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8.2016
 CATEGORIES =		print
-REVISION =		0
+REVISION =		1
 
-HOMEPAGE =		http://xournal.sourceforge.net/
+HOMEPAGE =		https://xournal.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,12 +1,12 @@
 COMMENT=		communicate with some Creative and Dell audio players
 
 DISTNAME=		libnjb-2.2.7
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio devel
 
 SHARED_LIBS +=  njb                  0.0      # 6.1
 
-HOMEPAGE=		http://libnjb.sourceforge.net/
+HOMEPAGE=		https://libnjb.sourceforge.net/
 
 # BSD
 PERMIT_PACKAGE=	Yes

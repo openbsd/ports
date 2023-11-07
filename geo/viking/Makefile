@@ -1,11 +1,11 @@
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.10
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo x11
 
-HOMEPAGE =	http://viking.sourceforge.net/
+HOMEPAGE =	https://viking.sourceforge.net/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2

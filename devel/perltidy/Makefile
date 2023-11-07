@@ -4,8 +4,9 @@ V =		20230912
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
+REVISION =	0
 
-HOMEPAGE =	http://perltidy.sourceforge.net/
+HOMEPAGE =	https://perltidy.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

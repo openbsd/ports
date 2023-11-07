@@ -3,11 +3,11 @@ COMMENT=		c++ library for common image format
 DISTNAME=		FreeImage3180
 PKGNAME=		freeimage-3.18.0
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS+=		freeimage	3.0
 
-HOMEPAGE=		http://freeimage.sourceforge.net/
+HOMEPAGE=		https://freeimage.sourceforge.net/
 
 # GPL / "FreeImage Public Nons^WLicense"
 PERMIT_PACKAGE=	Yes

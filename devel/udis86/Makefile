@@ -2,11 +2,11 @@ COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS=	udis86		1.0
 
-HOMEPAGE =	http://udis86.sourceforge.net/
+HOMEPAGE =	https://udis86.sourceforge.net/
 
 MAINTAINER =	Paul Irofti <paul@irofti.net>
 

@@ -3,8 +3,9 @@ COMMENT=	modular DSSSL stylesheets for the DocBook DTD
 V=		1.79
 DISTNAME=	docbook-dsssl-${V}
 CATEGORIES=	textproc print
+REVISION=	0
 
-HOMEPAGE=	http://docbook.sourceforge.net/
+HOMEPAGE=	https://docbook.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE=	Yes

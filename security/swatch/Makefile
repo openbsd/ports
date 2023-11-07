@@ -1,11 +1,11 @@
 COMMENT=	simple log monitoring program
 
 DISTNAME=	swatch-3.2.3
-REVISION =	1
+REVISION =	2
 CATEGORIES=	security sysutils
 SITES=		${SITE_SOURCEFORGE:=swatch/}
 
-HOMEPAGE=	http://swatch.sourceforge.net/
+HOMEPAGE=	https://swatch.sourceforge.net/
 
 MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 

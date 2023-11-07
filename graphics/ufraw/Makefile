@@ -5,11 +5,11 @@
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=ufraw/}
-HOMEPAGE=	http://ufraw.sourceforge.net/
+HOMEPAGE=	https://ufraw.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

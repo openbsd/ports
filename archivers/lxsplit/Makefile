@@ -4,8 +4,9 @@ DISTNAME=	lxsplit-0.2.4
 PKGNAME=	lxsplit-1.0.2.4
 CATEGORIES=	archivers
 SITES=		${SITE_SOURCEFORGE:=lxsplit/}
+REVISION=	0
 
-HOMEPAGE=	http://lxsplit.sourceforge.net/
+HOMEPAGE=	https://lxsplit.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes

@@ -1,6 +1,7 @@
 # Check individual packages for overrides when bumping this!
 PKGNAMEBASE=	${DISTNAME:C/aspell[0-9]/aspell/}
 PKGNAME?=	${PKGNAMEBASE:C/-([0-9])$/.\1/}
+REVISION?=	0
 EPOCH?=		1
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -8,7 +9,7 @@ DIST_SUBDIR?=	aspell
 
 EXTRACT_SUFX?=	.tar.bz2
 
-HOMEPAGE?=	http://aspell.sourceforge.net/
+HOMEPAGE?=	https://aspell.sourceforge.net/
 
 # GPLv2 - LGPLv2 - FDL - CC ShareAlike
 PERMIT_PACKAGE?=	Yes

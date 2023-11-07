@@ -1,11 +1,11 @@
 COMMENT=	opensource Napster(tm) server
 
 DISTNAME=	opennap-0.44
-REVISION=	4
+REVISION=	5
 CATEGORIES=	audio net
 SITES=		${SITE_SOURCEFORGE:=opennap/}
 
-HOMEPAGE=	http://opennap.sourceforge.net/
+HOMEPAGE=	https://opennap.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

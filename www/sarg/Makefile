@@ -1,10 +1,10 @@
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.4.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
-HOMEPAGE=		http://sarg.sourceforge.net/
+HOMEPAGE=		https://sarg.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

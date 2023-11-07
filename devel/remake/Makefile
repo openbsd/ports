@@ -3,10 +3,11 @@ COMMENT=		GNU make debugger
 V=			1.6
 PKGNAME=		remake-${V}
 DISTNAME=		remake-4.3+dbg-${V}
+REVISION=		0
 
 CATEGORIES=		devel
 
-HOMEPAGE=		http://bashdb.sourceforge.net/remake/mdb.html
+HOMEPAGE=		https://bashdb.sourceforge.net/remake/mdb.html
 SITES=			${SITE_SOURCEFORGE:=bashdb/}
 
 # GPL

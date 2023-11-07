@@ -2,9 +2,9 @@ COMMENT =		file editor/viewer/analyzer for executables
 
 DISTNAME =		ht-2.1.0
 CATEGORIES =		editors
-REVISION =		7
+REVISION =		8
 
-HOMEPAGE =		http://hte.sourceforge.net/
+HOMEPAGE =		https://hte.sourceforge.net/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 

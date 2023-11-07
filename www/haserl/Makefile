@@ -1,10 +1,11 @@
 COMMENT=	tiny cgi web script handler using shell or Lua
 
 DISTNAME=	haserl-0.9.36
+REVISION=	0
 
 CATEGORIES=	www
 
-HOMEPAGE=	http://haserl.sourceforge.net/
+HOMEPAGE=	https://haserl.sourceforge.net/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
