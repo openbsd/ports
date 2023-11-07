@@ -1,10 +1,34 @@
---- Makefile.orig	Mon Oct 17 00:33:15 2016
-+++ Makefile	Mon Oct 17 00:33:40 2016
-@@ -240,9 +240,7 @@ libpcsxcore/gte_nf.o: libpcsxcore/gte.c
+unbundle libchdr and link against emulators/libchdr
+replace git usage with hardcoded revision
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -150,17 +150,9 @@ endif
+ # cdrcimg
+ OBJS += plugins/cdrcimg/cdrcimg.o
+ #ifeq "$(CHD_SUPPORT)" "1"
+-OBJS += libchdr/src/libchdr_bitstream.o
+-OBJS += libchdr/src/libchdr_cdrom.o
+-OBJS += libchdr/src/libchdr_chd.o
+-OBJS += libchdr/src/libchdr_flac.o
+-OBJS += libchdr/src/libchdr_huffman.o
+-OBJS += libchdr/deps/lzma-19.00/src/Alloc.o libchdr/deps/lzma-19.00/src/Bra86.o libchdr/deps/lzma-19.00/src/BraIA64.o libchdr/deps/lzma-19.00/src/CpuArch.o libchdr/deps/lzma-19.00/src/Delta.o
+-OBJS += libchdr/deps/lzma-19.00/src/LzFind.o libchdr/deps/lzma-19.00/src/Lzma86Dec.o libchdr/deps/lzma-19.00/src/LzmaDec.o libchdr/deps/lzma-19.00/src/LzmaEnc.o libchdr/deps/lzma-19.00/src/Sort.o
+-CFLAGS += -DHAVE_CHD -Ilibchdr/include
++CFLAGS += -DHAVE_CHD -I${LOCALBASE}/include
+ libpcsxcore/cdriso.o: CFLAGS += -Wno-unused-function
+-libchdr/src/%.o: CFLAGS += -Wno-unused -Ilibchdr/deps/lzma-19.00/include
+-libchdr/deps/lzma-19.00/src/%.o: CFLAGS += -Wno-unused -D_7ZIP_ST -Ilibchdr/deps/lzma-19.00/include
++LDFLAGS += -L${LOCALBASE}/lib -lchdr
+ #endif
+ 
+ # dfinput
+@@ -270,9 +262,7 @@ libpcsxcore/gte_nf.o: libpcsxcore/gte.c
  	$(CC) -c -o $@ $^ $(CFLAGS) -DFLAGLESS
  
  frontend/revision.h: FORCE
--	@(git describe || echo) | sed -e 's/.*/#define REV "\0"/' > $@_
+-	@(git describe --always || echo) | sed -e 's/.*/#define REV "\0"/' > $@_
 -	@diff -q $@_ $@ > /dev/null 2>&1 || cp $@_ $@
 -	@rm $@_
 +	@echo '#define REV "0"' > $@
