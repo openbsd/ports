@@ -1,13 +1,10 @@
 FW_DRIVER=	ipw
 FW_VER=		1.3
 DISTNAME=	ipw2100-fw-${FW_VER}
-REVISION=	3
+REVISION=	4
 
 WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz
-
-# license info at https://ipw2100.sourceforge.net/firmware.php?fid=3
-HOMEPAGE=	https://ipw2100.sourceforge.net/firmware.php
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/firmware/ipw-license

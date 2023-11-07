@@ -1,12 +1,9 @@
 FW_DRIVER=	iwi
 FW_VER=		3.1
 DISTNAME=	ipw2200-fw-${FW_VER}
-REVISION=	3
+REVISION=	4
 
 EXTRACT_SUFX=	.tgz
-
-# license info at https://ipw2200.sourceforge.net/firmware.php?fid=8
-HOMEPAGE=	https://ipw2200.sourceforge.net/firmware.php
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.ipw2200-fw ${PREFIX}/firmware/iwi-license
