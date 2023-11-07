@@ -40,4 +40,26 @@ pre-build:
 	    cp ${FULLDISTDIR}/${RK3568_TPL} . && \
 	    ./rkbinpatch ${RK3568_TPL}
 
+do-build:
+.for BOARD in ${BOARDS}
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	        O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig
+	cd ${WRKSRC}/build/${BOARD} && \
+	    ../../scripts/config --set-val BAUDRATE 115200
+.if "${BOARD:M*-rk3566*}"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} ROCKCHIP_TPL=${RK3566_TPL} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.else
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} ROCKCHIP_TPL=${RK3568_TPL} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.endif
+.endfor
+
 .include <bsd.port.mk>

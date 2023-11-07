@@ -46,4 +46,55 @@ SUNXI_H6_BL31=	${LOCALBASE}/share/arm-trusted-firmware/sun50i_h6-bl31.bin
 
 MODPY_ADJ_FILES= arch/arm/mach-rockchip/make_fit_atf.py
 
+do-build:
+.for BOARD in ${BOARDS}
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	        O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig
+.if "${BOARD:M*-rk3399*}"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${RK3399_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.elif "${BOARD:M*-rk3328}"
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${RK3328_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.else
+	cd ${WRKSRC} && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	        O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.endif
+.endfor
+.for BOARD in ${SUNXI64}
+.if "${BOARD:M*_h64*}"
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_H6_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_H6_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.else
+	cd ${WRKSRC} && \
+	    mkdir -p build/${BOARD} && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} "${BOARD}"_defconfig && \
+	    ${SETENV} ${MAKE_ENV} BL31=${SUNXI_BL31} ${MAKE_PROGRAM} \
+	        ${MAKE_FLAGS} O="build/${BOARD}" \
+	        -f ${MAKE_FILE} ${ALL_TARGET}
+.endif
+	if [[ -f ${WRKSRC}/build/${BOARD}/spl/sunxi-spl.bin && \
+	      -f ${WRKSRC}/build/${BOARD}/u-boot.itb ]]; then \
+		cd ${WRKSRC}/build/${BOARD} && \
+		    cat spl/sunxi-spl.bin u-boot.itb > u-boot-sunxi-with-spl.bin ; \
+	fi
+.endfor
+
 .include <bsd.port.mk>
