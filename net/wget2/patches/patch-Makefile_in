@@ -1,0 +1,12 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -2008,7 +2008,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = lib include libwget examples src $(am__append_1) \
+-	$(am__append_2) fuzz unit-tests $(am__append_3)
++	$(am__append_2) unit-tests $(am__append_3)
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libwget.pc
