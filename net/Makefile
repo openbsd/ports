@@ -758,6 +758,7 @@
      SUBDIR += weechat
      SUBDIR += weex
      SUBDIR += wget
+     SUBDIR += wget2
      SUBDIR += whatweb
      SUBDIR += wide-dhcpv6
      SUBDIR += wifind
