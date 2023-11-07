@@ -8,6 +8,7 @@ bin/h5cc
 @bin bin/h5dump
 bin/h5fc
 @bin bin/h5format_convert
+bin/h5fuse.sh
 @bin bin/h5import
 @bin bin/h5jam
 @bin bin/h5ls
@@ -17,6 +18,7 @@ bin/h5redeploy
 @bin bin/h5repack
 @bin bin/h5repart
 @bin bin/h5stat
+@bin bin/h5tools_test_utils
 @bin bin/h5unjam
 @bin bin/h5watch
 @comment bin/mirror_server
@@ -125,6 +127,7 @@ include/H5version.h
 include/h5_gen.mod
 include/h5a.mod
 include/h5d.mod
+include/h5do.mod
 include/h5ds.mod
 include/h5e.mod
 include/h5es.mod
