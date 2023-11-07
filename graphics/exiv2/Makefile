@@ -4,7 +4,7 @@ CATEGORIES=		graphics devel
 
 GH_ACCOUNT=		Exiv2
 GH_PROJECT=		exiv2
-GH_TAGNAME=		v0.28.0
+GH_TAGNAME=		v0.28.1
 EPOCH=			0
 
 SHARED_LIBS +=  exiv2                13.0
