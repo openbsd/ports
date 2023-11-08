@@ -1,8 +1,7 @@
 COMMENT=		finds and then operates on files
 
-DISTNAME=		findutils-4.6.0
+DISTNAME=		findutils-4.9.0
 CATEGORIES=		misc
-REVISION=		1
 
 HOMEPAGE=		https://www.gnu.org/software/findutils/
 
@@ -12,6 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c iconv intl m
 
 SITES=			${SITE_GNU:=findutils/}
+EXTRACT_SUFX=		.tar.xz
 
 LIB_DEPENDS=		devel/gettext,-runtime
 
@@ -23,5 +23,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV+=		PYTHON=:
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db
+
+PORTHOME=		${WRKDIR}
 
 .include <bsd.port.mk>

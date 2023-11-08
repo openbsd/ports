@@ -5,8 +5,6 @@ bin/gupdatedb
 @info info/find-maint.info
 @info info/find.info
 @comment lib/charset.alias
-@bin libexec/gbigram
-@bin libexec/gcode
 @bin libexec/gfrcode
 @man man/man1/gfind.1
 @man man/man1/glocate.1
@@ -49,9 +47,6 @@ share/locale/pt/LC_MESSAGES/findutils.mo
 share/locale/pt_BR/LC_MESSAGES/findutils.mo
 share/locale/ro/LC_MESSAGES/findutils.mo
 share/locale/ru/LC_MESSAGES/findutils.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
-share/locale/rw/LC_MESSAGES/findutils.mo
 share/locale/sk/LC_MESSAGES/findutils.mo
 share/locale/sl/LC_MESSAGES/findutils.mo
 share/locale/sr/LC_MESSAGES/findutils.mo
