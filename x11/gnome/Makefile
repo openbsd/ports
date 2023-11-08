@@ -90,6 +90,7 @@
      SUBDIR += shell-extensions
      SUBDIR += sushi
      SUBDIR += system-monitor
+     SUBDIR += tecla
      SUBDIR += tepl
      SUBDIR += terminal
      SUBDIR += text-editor
