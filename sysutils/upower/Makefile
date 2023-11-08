@@ -5,6 +5,7 @@ COMMENT =	userland power management interface
 V =	v1.90.2
 DISTNAME =	upower-${V}
 PKGNAME =	upower-${V:S/v//}
+REVISION =	0
 
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          3.0
@@ -17,6 +18,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# uses unveil()
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m
 
 MODULES =	devel/meson
