@@ -1,0 +1,11 @@
+Index: js/src/build/moz.build
+--- js/src/build/moz.build.orig
++++ js/src/build/moz.build
+@@ -26,6 +26,7 @@ LIBRARY_DEFINES["MOZ_HAS_MOZGLUE"] = True
+ if CONFIG["JS_SHARED_LIBRARY"]:
+     GeckoSharedLibrary("js", linkage=None)
+     SHARED_LIBRARY_NAME = CONFIG["JS_LIBRARY_NAME"]
++    LDFLAGS += ['-Wl,-soname,lib{}.so.${SO_VERSION}'.format(SHARED_LIBRARY_NAME)]
+ 
+     # Ensure symbol versions of shared library on Linux do not conflict
+     # with those in libxul.
