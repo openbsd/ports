@@ -1,6 +1,6 @@
 COMMENT =	modular Wayland compositor library
 
-V =		20230812
+V =		20231108
 PKGNAME =	wlroots-$V
 CATEGORIES =	wayland
 
