@@ -36,7 +36,7 @@ Index: meson.build
              required: readline.found()))
  endif
  header_conf.set('USE_UNITY_BUILD', get_option('unity'))
-@@ -619,6 +624,7 @@ pkg.generate(libgjs, name: api_name, description: 'JS 
+@@ -618,6 +623,7 @@ pkg.generate(libgjs, name: api_name, description: 'JS 
      requires: [glib, gobject, gio], requires_private: pkg_dependencies,
      libraries_private: libraries_private,
      subdirs: api_name,
