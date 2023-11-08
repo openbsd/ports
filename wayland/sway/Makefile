@@ -1,8 +1,7 @@
 COMMENT =	i3-compatible Wayland compositor
 
-V =		20230812
+V =		20231108
 PKGNAME =	sway-${V}
-REVISION =	1
 
 GH_ACCOUNT =	mherrb
 GH_PROJECT =	sway

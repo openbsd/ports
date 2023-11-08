@@ -30,14 +30,10 @@ share/examples/sway/sway/
 @sample ${SYSCONFDIR}/sway/
 share/examples/sway/sway/config
 @sample ${SYSCONFDIR}/sway/config
-share/fish/
-share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/sway.fish
 share/fish/vendor_completions.d/swaymsg.fish
 share/fish/vendor_completions.d/swaynag.fish
 share/wayland-sessions/
 share/wayland-sessions/sway.desktop
-share/zsh/
-share/zsh/site-functions/
 share/zsh/site-functions/_sway
 share/zsh/site-functions/_swaymsg
