@@ -1,0 +1,5 @@
+sccache is a ccache-like compiler caching tool. It is used as a compiler
+wrapper and avoids compilation when possible, storing cached results
+either on local disk or in one of several cloud storage backends.
+
+sccache includes support for caching the compilation of C/C++ code & Rust.
