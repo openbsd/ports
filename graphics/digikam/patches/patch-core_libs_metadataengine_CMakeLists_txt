@@ -1,0 +1,14 @@
+Fix for exiv2>=0.28.1
+
+Index: core/libs/metadataengine/CMakeLists.txt
+--- core/libs/metadataengine/CMakeLists.txt.orig
++++ core/libs/metadataengine/CMakeLists.txt
+@@ -112,7 +112,7 @@ include_directories(
+     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+ 
+-    $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
++    $<TARGET_PROPERTY:Exiv2::exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
+ )
+ 
+ # Used by digikamcore
