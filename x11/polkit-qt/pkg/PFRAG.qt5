@@ -1,4 +1,4 @@
-@pkgpath x11/polkit-qt,qt5
+@pkgpath x11/polkit-qt5
 include/polkit-qt5-1/
 include/polkit-qt5-1/PolkitQt1/
 include/polkit-qt5-1/PolkitQt1/ActionDescription

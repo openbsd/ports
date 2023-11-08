@@ -236,7 +236,8 @@
      SUBDIR += piewm
      SUBDIR += pmenu
      SUBDIR += podbrowser
-     SUBDIR += polkit-qt5
+     SUBDIR += polkit-qt
+     SUBDIR += polkit-qt,qt5
      SUBDIR += polybar
      SUBDIR += pwm
      SUBDIR += py-gtk2
