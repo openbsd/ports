@@ -1776,6 +1776,7 @@
      SUBDIR += ruby-yajl,ruby32
      SUBDIR += ruby-zeitwerk
      SUBDIR += samurai
+     SUBDIR += sccache
      SUBDIR += scons
      SUBDIR += sdcc
      SUBDIR += sdl
