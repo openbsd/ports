@@ -1,7 +1,7 @@
 COMMENT =	core utility library for all LXQt components
 
 NAME =		liblxqt
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  lxqt                      1.0 # 1.0.0
 
@@ -14,7 +14,7 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 			x11/lxqt/libqtxdg
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools \
-			x11/polkit-qt5
+			x11/polkit-qt,qt5
 
 RUN_DEPENDS +=		x11/polkit-qt5
 
