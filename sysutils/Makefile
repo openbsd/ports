@@ -154,7 +154,9 @@
      SUBDIR += kubectl
      SUBDIR += lf
      SUBDIR += libburn
+     #SUBDIR += libdisplay-info # wayland
      SUBDIR += libesedb
+     #SUBDIR += libevdev-openbsd # wayland
      SUBDIR += libevt
      SUBDIR += libevtx
      SUBDIR += libfsapfs
@@ -381,6 +383,7 @@
      SUBDIR += salt-testing
      SUBDIR += sblim-sfcc
      SUBDIR += screenfetch
+     #SUBDIR += seatd # wayland
      SUBDIR += sec
      SUBDIR += serf
      SUBDIR += setquota

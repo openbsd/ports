@@ -147,6 +147,7 @@
      SUBDIR += libimagequant
      SUBDIR += libiptcdata
      SUBDIR += libjxl
+     #SUBDIR += libliftoff # wayland
      SUBDIR += liblqr
      SUBDIR += libmng
      SUBDIR += libmpeg2

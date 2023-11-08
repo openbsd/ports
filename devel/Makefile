@@ -329,6 +329,7 @@
      SUBDIR += libsoup
      SUBDIR += libsoup3
      SUBDIR += libspectrum
+     #SUBDIR += libstdthreads # wayland
      SUBDIR += libtalloc
      SUBDIR += libtermkey
      SUBDIR += libtool
@@ -1839,6 +1840,7 @@
      SUBDIR += tkdiff
      SUBDIR += tklib
      SUBDIR += tl-expected
+     #SUDIR += tllist  # wayland
      SUBDIR += tradcpp
      SUBDIR += ucpp
      SUBDIR += udis86
