@@ -1,12 +1,12 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.3.1
+VERSION=	1.3.2
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
-SHARED_LIBS=	xmlsec1-gnutls	6.0 \
+SHARED_LIBS=	xmlsec1-gnutls	6.1 \
 		xmlsec1-openssl	5.0 \
 		xmlsec1-gcrypt	1.0 \
 		xmlsec1		9.0
