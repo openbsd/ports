@@ -1,20 +1,19 @@
 COMMENT =		open source MPI-3.1 implementation
 
-V =			4.1.5
+V =			4.1.6
 DISTNAME =		openmpi-$V
-REVISION =		0
 
-SHARED_LIBS +=  open-pal		8.0 # 70.2
+SHARED_LIBS +=  open-pal		9.0 # 70.3
 SHARED_LIBS +=  mca_common_sm		5.0 # 70.0
 SHARED_LIBS +=  mca_common_dstore	3.0 # 1.2
-SHARED_LIBS +=  open-rte		8.0 # 70.2
-SHARED_LIBS +=  mpi			8.0 # 70.2
+SHARED_LIBS +=  open-rte		9.0 # 70.3
+SHARED_LIBS +=  mpi			9.0 # 70.6
 SHARED_LIBS +=  mpi_mpifh		3.0 # 70.0
 SHARED_LIBS +=  mpi_usempi_ignore_tkr	3.0 # 70.0
 SHARED_LIBS +=  mpi_usempif08		5.0 # 70.0
 SHARED_LIBS +=  mca_common_monitoring	3.0 # 70.0
-SHARED_LIBS +=  mca_common_ompio	5.0 # 70.2
-SHARED_LIBS +=  ompitrace		3.0 # 70.0
+SHARED_LIBS +=  mca_common_ompio	6.0 # 70.4
+SHARED_LIBS +=  ompitrace		4.0 # 70.1
 
 CATEGORIES =		devel
 
