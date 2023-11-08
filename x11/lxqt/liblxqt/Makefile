@@ -16,7 +16,7 @@ LIB_DEPENDS +=		x11/qt5/qtx11extras \
 BUILD_DEPENDS +=	x11/lxqt/build-tools \
 			x11/polkit-qt,qt5
 
-RUN_DEPENDS +=		x11/polkit-qt5
+RUN_DEPENDS +=		x11/polkit-qt,qt5
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}/xdg
