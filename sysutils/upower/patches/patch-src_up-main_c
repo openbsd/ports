@@ -1,5 +1,7 @@
-Uncovered apm(4) ioctl(2) prevents pledge(2) usage.
-unveil(2) all files read-write-create to prevent execution.
+Uncovered apm(4) ioctl(2) prevents pledge(2) usage;  unveil(2) to
+- prevent execution
+- limit write to /var/run/dbus/ and /var/db/upower/
+- limit create/delete to /var/db/upower/
 
 Index: src/up-main.c
 --- src/up-main.c.orig
@@ -12,10 +14,11 @@ Index: src/up-main.c
  #include <string.h>
  #include <signal.h>
  #include <sys/types.h>
-@@ -184,6 +185,14 @@ main (gint argc, gchar **argv)
+@@ -183,6 +184,15 @@ main (gint argc, gchar **argv)
+ 	UpState *state;
  	GBusNameOwnerFlags bus_flags;
  	gboolean replace = FALSE;
- 
++
 +	if (unveil("/", "r") == -1)
 +		err(1, "unveil /");
 +	if (unveil("/var/run/dbus", "rw") == -1)
@@ -24,6 +27,6 @@ Index: src/up-main.c
 +		err(1, "unveil /var/db/upower");
 +	if (unveil(NULL, NULL) == -1)
 +		err(1, "unveil NULL");
+ 
  	const GOptionEntry options[] = {
  		{ "timed-exit", '\0', 0, G_OPTION_ARG_NONE, &timed_exit,
- 		  /* TRANSLATORS: exit after we've started up, used for user profiling */
