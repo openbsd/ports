@@ -1814,7 +1814,7 @@
      SUBDIR += sparsehash
      SUBDIR += spdlog
      SUBDIR += spice-protocol
-     SUBDIR += spidermonkey102
+     SUBDIR += spidermonkey115
      SUBDIR += splint
      SUBDIR += spyder
      SUBDIR += sqlc
