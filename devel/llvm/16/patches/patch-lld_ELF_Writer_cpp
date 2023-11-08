@@ -9,6 +9,15 @@ Index: lld/ELF/Writer.cpp
    ElfSym::end1 = add("end", -1);
    ElfSym::end2 = add("_end", -1);
    ElfSym::etext1 = add("etext", -1);
+@@ -652,7 +653,7 @@ static bool shouldKeepInSymtab(const Defined &sym) {
+   // * --discard-locals is used.
+   // * The symbol is in a SHF_MERGE section, which is normally the reason for
+   //   the assembler keeping the .L symbol.
+-  if (sym.getName().startswith(".L") &&
++  if ((sym.getName().startswith(".L") || sym.getName().empty()) &&
+       (config->discard == DiscardPolicy::Locals ||
+        (sym.section && (sym.section->flags & SHF_MERGE))))
+     return false;
 @@ -798,7 +799,11 @@ static bool isRelroSection(const OutputSection *sec) {
    // However, if "-z now" is given, the lazy symbol resolution is
    // disabled, which enables us to put it into RELRO.
