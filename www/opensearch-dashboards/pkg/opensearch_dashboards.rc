@@ -6,7 +6,7 @@ daemon_execdir="${TRUEPREFIX}/opensearch-dashboards"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/opensearch-dashboards/bin/../src/cli/dist${daemon_flags:+ ${daemon_flags}}"
+pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/opensearch-dashboards/src/cli/dist${daemon_flags:+ ${daemon_flags}}"
 rc_bg=YES
 rc_reload=NO
 
