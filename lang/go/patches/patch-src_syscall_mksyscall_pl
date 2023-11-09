@@ -1,0 +1,11 @@
+Index: src/syscall/mksyscall.pl
+--- src/syscall/mksyscall.pl.orig
++++ src/syscall/mksyscall.pl
+@@ -283,6 +283,7 @@ while(<>) {
+ 	}
+ 	if($libc) {
+ 		if($funcname eq "") {
++			$sysname =~ y/A-Z/a-z/;
+ 			$sysname = substr $sysname, 4;
+ 			$funcname = "libc_$sysname";
+ 		}

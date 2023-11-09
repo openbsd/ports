@@ -6942,6 +6942,8 @@ go/src/internal/syscall/unix/getrandom_linux.go
 go/src/internal/syscall/unix/getrandom_netbsd.go
 go/src/internal/syscall/unix/getrandom_solaris.go
 go/src/internal/syscall/unix/ioctl_aix.go
+go/src/internal/syscall/unix/ioctl_bsd.go
+go/src/internal/syscall/unix/ioctl_linux.go
 go/src/internal/syscall/unix/kernel_version_linux.go
 go/src/internal/syscall/unix/kernel_version_other.go
 go/src/internal/syscall/unix/net.go
@@ -9703,7 +9705,6 @@ go/src/syscall/asm_solaris_amd64.s
 go/src/syscall/asm_unix_386.s
 go/src/syscall/asm_unix_amd64.s
 go/src/syscall/bpf_bsd.go
-go/src/syscall/bpf_darwin.go
 go/src/syscall/const_plan9.go
 go/src/syscall/creds_test.go
 go/src/syscall/dir_plan9.go
@@ -9730,15 +9731,14 @@ go/src/syscall/exec_unix.go
 go/src/syscall/exec_unix_test.go
 go/src/syscall/exec_windows.go
 go/src/syscall/exec_windows_test.go
-go/src/syscall/export_darwin_test.go
+go/src/syscall/export_bsd_test.go
 go/src/syscall/export_linux_test.go
 go/src/syscall/export_rlimit_test.go
-go/src/syscall/export_unix_test.go
 go/src/syscall/export_wasip1_test.go
 go/src/syscall/export_windows_test.go
-go/src/syscall/flock.go
 go/src/syscall/flock_aix.go
-go/src/syscall/flock_darwin.go
+go/src/syscall/flock_bsd.go
+go/src/syscall/flock_linux.go
 go/src/syscall/flock_linux_32bit.go
 go/src/syscall/forkpipe.go
 go/src/syscall/forkpipe2.go
