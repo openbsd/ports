@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += WPEBackend-fdo
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd
      SUBDIR += ap2-mod_jk
@@ -86,6 +87,7 @@
      SUBDIR += libsass
      SUBDIR += libwebsockets
      SUBDIR += liferea
+     SUBDIR += libwpe
      SUBDIR += lightsquid
      SUBDIR += lighttpd
      SUBDIR += lighttpd,ldap
