@@ -1,9 +1,8 @@
 COMMENT =	self-contained cryptographic library for Python
 
-MODPY_EGG_VERSION =	3.15.0
+MODPY_EGG_VERSION =	3.19.0
 DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
 
 CATEGORIES =	security
 
@@ -14,7 +13,6 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # BSD + Public Domain
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		pthread
 MODULES =		lang/python
 
 FLAVORS =		python3
