@@ -17,6 +17,7 @@ PERMIT_PACKAGE = Yes
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS = textproc/scdoc \
+		wayland/libinput-openbsd \
 		wayland/wayland-protocols
 
 MAKE_FLAGS =	PREFIX=${TRUEPREFIX} \
