@@ -1,9 +1,8 @@
 COMMENT =		tools to create and extract Squashfs filesystems
 
-GH_TAGNAME =		4.4-git.1
+GH_TAGNAME =		4.6.1
 GH_PROJECT =		squashfs-tools
 GH_ACCOUNT =		plougher
-REVISION =		0
 PKGNAME =		squashfs-tools-${GH_TAGNAME:S/-git//}
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
