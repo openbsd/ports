@@ -1,6 +1,6 @@
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-2.22
+DISTNAME =		fossil-2.23
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -8,7 +8,7 @@ MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://fossil-scm.org/
 SITES =			https://fossil-scm.org/home/tarball/
-DISTFILES =		{66ee0beb9b47d827bde533fe6a1fb2ead4ceb1936468881b4fb621bd6bdfd862/}${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =		{47362306a7dd7c6fc3cab77cebe5d25469b0a9448479d9718eb5c49c8337b29/}${DISTNAME}${EXTRACT_SUFX}
 
 
 # BSD
