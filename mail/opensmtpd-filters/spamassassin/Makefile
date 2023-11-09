@@ -4,7 +4,7 @@ V =		0.7
 FILTER_NAME =	spamassassin
 DISTNAME =	filter-spamassassin-${V}
 HOMEPAGE =	https://www.umaxx.net/
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	mail
 
