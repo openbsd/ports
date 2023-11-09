@@ -1,0 +1,2 @@
+libpeas-2 is a GObject-based plugins engine, and is targeted at giving every
+application the chance to assume its own extensibility.
