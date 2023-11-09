@@ -1,0 +1,57 @@
+No Udisks2 on OpenBSD.
+No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
+
+Index: panels/info-overview/cc-system-details-window.c
+--- panels/info-overview/cc-system-details-window.c.orig
++++ panels/info-overview/cc-system-details-window.c
+@@ -33,8 +33,12 @@
+ #include <glibtop/mountlist.h>
+ #include <glibtop/mem.h>
+ #include <glibtop/sysinfo.h>
++#ifdef HAVE_UDISKS2
+ #include <udisks/udisks.h>
++#endif
++#ifndef __OpenBSD__
+ #include <gudev/gudev.h>
++#endif
+ 
+ #include <gdk/gdk.h>
+ 
+@@ -348,6 +352,7 @@ get_os_type (void)
+ char *
+ get_primary_disk_info (void)
+ {
++#ifdef HAVE_UDISKS2
+   g_autoptr(UDisksClient) client = NULL;
+   GDBusObjectManager *manager;
+   g_autolist(GDBusObject) objects = NULL;
+@@ -386,6 +391,7 @@ get_primary_disk_info (void)
+ 
+   if (total_size > 0)
+       return g_format_size (total_size);
++#endif
+ 
+   return NULL;
+ }
+@@ -647,10 +653,13 @@ get_ram_size_libgtop (void)
+ guint64
+ get_ram_size_dmi (void)
+ {
++#ifndef __OpenBSD__
+   g_autoptr(GUdevClient) client = NULL;
+   g_autoptr(GUdevDevice) dmi = NULL;
+   const gchar * const subsystems[] = {"dmi", NULL };
++#endif
+   guint64 ram_total = 0;
++#ifndef __OpenBSD__
+   guint64 num_ram;
+   guint i;
+ 
+@@ -665,6 +674,7 @@ get_ram_size_dmi (void)
+     prop = g_strdup_printf ("MEMORY_DEVICE_%d_SIZE", i);
+     ram_total += g_udev_device_get_property_as_uint64 (dmi, prop);
+   }
++#endif
+   return ram_total;
+ }
+ 

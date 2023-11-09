@@ -5,7 +5,7 @@ Find libkrb5.so
 Index: shell/meson.build
 --- shell/meson.build.orig
 +++ shell/meson.build
-@@ -98,7 +98,6 @@ libshell_dep = declare_dependency(
+@@ -91,7 +91,6 @@ libshell_dep = declare_dependency(
  shell_sources = common_sources + files('main.c')
  
  shell_deps = common_deps + [
@@ -13,7 +13,7 @@ Index: shell/meson.build
    liblanguage_dep,
    libwidgets_dep,
    x11_dep,
-@@ -116,7 +115,8 @@ executable(
+@@ -109,7 +108,8 @@ executable(
           dependencies : shell_deps,
                 c_args : cflags,
              link_with : panels_libs,

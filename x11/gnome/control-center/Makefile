@@ -3,7 +3,7 @@
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		44.4
+GNOME_VERSION=		45.1
 
 CATEGORIES=		x11
 
@@ -63,8 +63,8 @@ RUN_DEPENDS +=		x11/gnome/color-manager
 RUN_DEPENDS +=		print/cups-pk-helper \
 			print/system-config-printer
 
-# gkbd-keyboard-display
-RUN_DEPENDS +=		x11/gnome/libgnomekbd
+# panels/keyboard/cc-input-list-box.c
+RUN_DEPENDS +=		x11/gnome/tecla
 
 # panels/sound/cc-speaker-test-button.c:
 # return g_strsplit ("audio-channel-front-left;audio-test-signal;bell", ";", -1);
