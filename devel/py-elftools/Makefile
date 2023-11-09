@@ -1,10 +1,9 @@
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.29
+MODPY_EGG_VERSION =	0.30
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		1
 
 HOMEPAGE =		https://github.com/eliben/pyelftools
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>

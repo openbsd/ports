@@ -15,13 +15,10 @@ lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}constru
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}construct_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/elftools/common/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/common/construct_utils.py
 lib/python${MODPY_VERSION}/site-packages/elftools/common/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/elftools/common/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/elftools/common/utils.py
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/
 lib/python${MODPY_VERSION}/site-packages/elftools/construct/__init__.py
