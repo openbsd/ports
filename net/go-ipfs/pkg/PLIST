@@ -1,9 +1,10 @@
+@conflict go-ipfs-*
 @newgroup _go-ipfs:825
 @newuser _go-ipfs:825:825::Kubo IPFS Account:/var/empty:/sbin/nologin
 @mode 750
 @owner _go-ipfs
 @group _go-ipfs
-@sample ${VARBASE}/kubo/
+@sample ${LOCALSTATEDIR}/kubo/
 @mode
 @owner
 @group

@@ -11,7 +11,7 @@ its database first.
 Run as root:
 
 	# su -l -s /bin/sh _go-ipfs -c \
-	    "IPFS_PATH=${VARBASE}/kubo ${LOCALBASE}/bin/ipfs init"
+	    "IPFS_PATH=${LOCALSTATEDIR}/kubo ${LOCALBASE}/bin/ipfs init"
 
 Web Interface
 =============
