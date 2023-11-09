@@ -1,22 +1,21 @@
+# XXX needs Use xdg-desktop-portal to get system clock format
+
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		44.0
-REVISION=		1
+GNOME_VERSION=		45.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c geoclue-2 geocode-glib-2 gio-2.0 glib-2.0
-WANTLIB += gnome-desktop-4 gobject-2.0 gsound gtk-4 gweather-4
-WANTLIB += intl m
+WANTLIB += gnome-desktop-4 gobject-2.0 gtk-4 gweather-4 intl m
 
 MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-LIB_DEPENDS=		audio/gsound \
-			geo/geocode-glib \
+LIB_DEPENDS=		geo/geocode-glib \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/libgweather4 \
 			x11/gnome/libadwaita
