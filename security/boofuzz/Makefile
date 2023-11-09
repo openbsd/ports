@@ -1,6 +1,6 @@
 COMMENT =	extensible network protocol fuzzer
 
-MODPY_EGG_VERSION =	0.4.1
+MODPY_EGG_VERSION =	0.4.2
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		poetry-core
 
 RUN_DEPENDS = 		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
@@ -24,7 +24,6 @@ RUN_DEPENDS = 		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-funcy${MODPY_FLAVOR} \
 			devel/py-future${MODPY_FLAVOR} \
 			devel/py-serial${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
 			graphics/py-dot${MODPY_FLAVOR} \
 			net/py-impacket${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
