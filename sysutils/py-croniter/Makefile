@@ -3,11 +3,9 @@ COMMENT =		datetime-iterator for cron-like formats
 MODPY_EGG_VERSION =	0.3.37
 DISTNAME =		croniter-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

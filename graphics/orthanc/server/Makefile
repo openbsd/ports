@@ -2,7 +2,7 @@ COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.11.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://www.orthanc-server.com/
 

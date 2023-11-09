@@ -3,11 +3,9 @@ COMMENT =		convert dicts and other data types into XML
 MODPY_EGG_VERSION =	1.7.4
 DISTNAME = 		dicttoxml-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -3,11 +3,9 @@ COMMENT =		simple yet flexible natural sorting
 MODPY_EGG_VERSION =	7.1.1
 DISTNAME =		natsort-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc devel
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

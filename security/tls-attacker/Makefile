@@ -3,9 +3,7 @@ COMMENT =		framework for analyzing TLS libraries
 V =			3.5.0
 DISTNAME =		TLS-Attacker-$V
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+REVISION =		1
 
 CATEGORIES =		security
 

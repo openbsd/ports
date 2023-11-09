@@ -2,8 +2,6 @@ CATEGORIES ?=		graphics/orthanc
 
 MODULES +=		devel/cmake
 
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
 # Orthanc is GPLv3, some plugins are AGPLv3
 PERMIT_PACKAGE =	Yes
 
