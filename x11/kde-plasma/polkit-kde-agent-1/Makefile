@@ -1,6 +1,7 @@
 COMMENT =	daemon providing a Polkit authentication UI for Plasma
 DISTNAME =	polkit-kde-agent-1-${VERSION}
 PKGNAME =	polkit-kde-agent-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n KF5IconThemes KF5WidgetsAddons KF5WindowSystem
@@ -19,7 +20,7 @@ LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/kiconthemes \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		x11/polkit-qt5
+		x11/polkit-qt,qt5
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
