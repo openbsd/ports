@@ -313,8 +313,11 @@ share/help/uk/polari/network-connect.page
 share/help/uk/polari/overview.page
 share/help/uk/polari/sharing.page
 share/icons/hicolor/scalable/apps/org.gnome.Polari.Devel.svg
+share/icons/hicolor/scalable/apps/org.gnome.Polari.Devel.svg.license
 share/icons/hicolor/scalable/apps/org.gnome.Polari.svg
+share/icons/hicolor/scalable/apps/org.gnome.Polari.svg.license
 share/icons/hicolor/symbolic/apps/org.gnome.Polari-symbolic.svg
+share/icons/hicolor/symbolic/apps/org.gnome.Polari-symbolic.svg.license
 share/locale/af/LC_MESSAGES/polari.mo
 share/locale/ar/LC_MESSAGES/polari.mo
 share/locale/as/LC_MESSAGES/polari.mo
@@ -341,6 +344,7 @@ share/locale/he/LC_MESSAGES/polari.mo
 share/locale/hr/LC_MESSAGES/polari.mo
 share/locale/hu/LC_MESSAGES/polari.mo
 share/locale/id/LC_MESSAGES/polari.mo
+share/locale/is/LC_MESSAGES/polari.mo
 share/locale/it/LC_MESSAGES/polari.mo
 share/locale/ja/LC_MESSAGES/polari.mo
 share/locale/ka/LC_MESSAGES/polari.mo
