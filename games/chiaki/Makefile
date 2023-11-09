@@ -26,6 +26,7 @@ MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
 
+CONFIGURE_ARGS +=	-DCHIAKI_ENABLE_SETSU=no
 BUILD_DEPENDS =		devel/protobuf-c \
 			devel/py-protobuf,python3
 LIB_DEPENDS =		devel/sdl2 \
