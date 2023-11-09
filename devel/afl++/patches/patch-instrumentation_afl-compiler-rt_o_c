@@ -1,7 +1,18 @@
+https://github.com/AFLplusplus/AFLplusplus/pull/1904
+
 Index: instrumentation/afl-compiler-rt.o.c
 --- instrumentation/afl-compiler-rt.o.c.orig
 +++ instrumentation/afl-compiler-rt.o.c
-@@ -1997,7 +1997,9 @@ static int area_is_valid(void *ptr, size_t len) {
+@@ -48,7 +48,7 @@
+ #include <errno.h>
+ 
+ #include <sys/mman.h>
+-#ifndef __HAIKU__
++#if !defined(__HAIKU__) && !defined(__OpenBSD__)
+   #include <sys/syscall.h>
+ #endif
+ #ifndef USEMMAP
+@@ -2252,7 +2252,9 @@ static int area_is_valid(void *ptr, size_t len) {
  
    if (unlikely(!ptr || __asan_region_is_poisoned(ptr, len))) { return 0; }
  

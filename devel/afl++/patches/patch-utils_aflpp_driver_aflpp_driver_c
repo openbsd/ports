@@ -1,7 +1,7 @@
 Index: utils/aflpp_driver/aflpp_driver.c
 --- utils/aflpp_driver/aflpp_driver.c.orig
 +++ utils/aflpp_driver/aflpp_driver.c
-@@ -216,7 +216,9 @@ static int ExecuteFilesOnyByOne(int argc, char **argv,
+@@ -231,7 +231,9 @@ static int ExecuteFilesOnyByOne(int argc, char **argv,
  
      if (fd == -1) { continue; }
  
