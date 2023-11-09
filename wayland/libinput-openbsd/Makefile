@@ -8,6 +8,7 @@
 # misc/brltty
 # sysutils/consolekit
 # x11/x11vnc
+# x11/gtk+4 (-Dwayland-backend=false)
 
 COMMENT =	wscons(4) and kqueue(2) based port of libinput
 
