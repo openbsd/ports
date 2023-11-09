@@ -11,6 +11,8 @@
 # x11/x11vnc
 # x11/gtk+3 (-Dwayland-backend=false)
 # x11/gtk+4 (-Dwayland-backend=false)
+# x11/kde-applications/kdenlive (cmake patch)
+# x11/kde-applications/krfb (cmake patch)
 
 COMMENT =	wscons(4) and kqueue(2) based port of libinput
 
