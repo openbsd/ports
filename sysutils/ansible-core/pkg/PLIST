@@ -464,6 +464,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}_selectors2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}_selectors2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}datetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}importlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}importlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}paramiko.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -477,6 +479,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/_selectors2.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/datetime.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/importlib.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/paramiko.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/compat/selectors.py
@@ -768,8 +771,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}_include.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}_include.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}add_host.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}add_host.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}apt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -914,7 +915,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}yum.${M
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}yum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}yum_repository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/${MODPY_PYCACHE}yum_repository.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible/modules/_include.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/add_host.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/apt.py
 lib/python${MODPY_VERSION}/site-packages/ansible/modules/apt_key.py
@@ -2220,8 +2220,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integra
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}cs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}digitalocean.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}digitalocean.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}foreman.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}foreman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}galaxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}galaxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/${MODPY_PYCACHE}gcp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2248,7 +2246,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integra
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/cloudscale.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/cs.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/digitalocean.py
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/foreman.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/galaxy.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/gcp.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_internal/commands/integration/cloud/hcloud.py
@@ -2537,11 +2534,14 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}hide_unraisable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}hide_unraisable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}string_format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}string_format.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}unwanted.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/${MODPY_PYCACHE}unwanted.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/deprecated.py
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/hide_unraisable.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/string_format.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/pylint/plugins/unwanted.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/controller/sanity/shellcheck/
@@ -2617,10 +2617,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/injector/virt
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_forked.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_forked.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_pytest_collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_pytest_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_pytest_coverage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/${MODPY_PYCACHE}ansible_pytest_coverage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/ansible_forked.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/ansible_pytest_collections.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/pytest/plugins/ansible_pytest_coverage.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/sanity/
@@ -2635,7 +2638,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/sanity/import
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/sanity/import/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/sanity/import/importer.py
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/setup/
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/setup/ConfigureRemotingForAnsible.ps1
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/setup/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/setup/${MODPY_PYCACHE}probe_cgroups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_util/target/setup/${MODPY_PYCACHE}probe_cgroups.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2672,5 +2674,5 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/config/config.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.networking.template
 lib/python${MODPY_VERSION}/site-packages/ansible_test/config/inventory.winrm.template
 share/doc/ansible/
-share/doc/ansible/CHANGELOG-v2.15.rst
+share/doc/ansible/CHANGELOG-v2.16.rst
 share/doc/ansible/COPYING
