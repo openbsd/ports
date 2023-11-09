@@ -8,7 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -40,7 +41,8 @@ RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 ################################################################################
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-os-services.bst
-RUN_DEPENDS-main +=	sysutils/accountsservice \
+RUN_DEPENDS-main +=	geo/geoclue2 \
+			sysutils/accountsservice \
 			sysutils/upower
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-shell.bst
@@ -64,6 +66,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/shell=${V} \
 			x11/gnome/shell-extensions \
 			x11/gnome/sushi \
+			x11/gnome/tecla  \
 			x11/gnome/tour \
 			x11/gnome/user-docs
 
@@ -90,7 +93,6 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 RUN_DEPENDS-extras +=	graphics/simple-scan \
 			www/epiphany \
 			x11/gnome/baobab \
-			x11/gnome/cheese \
 			x11/gnome/connections \
 			x11/gnome/system-monitor
 
@@ -110,6 +112,7 @@ RUN_DEPENDS-extras +=	devel/glade \
 			net/telepathy/telepathy-glib \
 			net/telepathy/telepathy-logger \
 			net/telepathy/telepathy-mission-control \
+			x11/gnome/cheese \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
 			x11/gnome/endeavour \
