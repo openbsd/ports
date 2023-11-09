@@ -1,0 +1,24 @@
+- d822181467ec41f1ee2d840c3c5b1918c72ffc86 introduced a bunch of gawk-isms.
+- nproc doesn't exist on OpenBSD
+
+Index: afl-cmin
+--- afl-cmin.orig
++++ afl-cmin
+@@ -3,7 +3,7 @@ export AFL_QUIET=1
+ export ASAN_OPTIONS=detect_leaks=0
+ THISPATH=`dirname ${0}`
+ export PATH="${THISPATH}:$PATH"
+-awk -f - -- ${@+"$@"} <<'EOF'
++gawk -f - -- ${@+"$@"} <<'EOF'
+ #!/usr/bin/awk -f
+ 
+ # awk script to minimize a test corpus of input files
+@@ -371,7 +371,7 @@ BEGIN {
+   }
+ 
+   if (threads) {
+-    cmd = "nproc"
++    cmd = "getconf NPROCESSORS_ONLN"
+     cmd | getline nproc
+     close(cmd)
+     if (threads == "all") {

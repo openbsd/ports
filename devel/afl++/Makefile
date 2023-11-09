@@ -6,6 +6,7 @@ GH_PROJECT =	AFLplusplus
 GH_TAGNAME =	v4.08c
 PKGNAME =	afl++-${GH_TAGNAME:S/v//}
 CATEGORIES=	devel
+REVISION =	0
 
 HOMEPAGE=	https://aflplus.plus/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -17,6 +18,7 @@ WANTLIB =		${COMPILER_LIBCXX} c m
 USE_GMAKE=		Yes
 
 MODULES =		lang/clang
+RUN_DEPENDS =		lang/gawk
 
 MAKE_FLAGS =		LLVM_CONFIG=llvm-config-${MODCLANG_VERSION} \
 			NO_PYTHON=1
