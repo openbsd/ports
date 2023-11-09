@@ -1,6 +1,15 @@
 Index: clang/include/clang/Basic/DiagnosticSemaKinds.td
 --- clang/include/clang/Basic/DiagnosticSemaKinds.td.orig
 +++ clang/include/clang/Basic/DiagnosticSemaKinds.td
+@@ -251,7 +251,7 @@ def warn_deprecated_register : Warning<
+   "and incompatible with C++17">, InGroup<DeprecatedRegister>;
+ def ext_register_storage_class : ExtWarn<
+   "ISO C++17 does not allow 'register' storage class specifier">,
+-  DefaultError, InGroup<Register>;
++  InGroup<Register>;
+ 
+ def err_invalid_decl_spec_combination : Error<
+   "cannot combine with previous '%0' declaration specifier">;
 @@ -419,7 +419,7 @@ def warn_implicit_function_decl : Warning<
    InGroup<ImplicitFunctionDeclare>, DefaultIgnore;
  def ext_implicit_function_decl_c99 : ExtWarn<
