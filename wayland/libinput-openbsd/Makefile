@@ -2,6 +2,7 @@
 # libinput-openbsd is not feature complete that the input works
 # in a usable way in Wayland. There is still too little experience here.
 # In the following ports libinput detection was deactivated
+# audio/pulseaudio
 # devel/sdl2
 # games/bzflag
 # graphics/gimp/stable
