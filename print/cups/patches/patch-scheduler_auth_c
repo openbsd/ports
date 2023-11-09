@@ -1,12 +1,68 @@
 Index: scheduler/auth.c
 --- scheduler/auth.c.orig
 +++ scheduler/auth.c
-@@ -641,7 +641,7 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
- #  endif /* HAVE_SHADOW_H */
+@@ -60,6 +60,10 @@ typedef struct sockpeercred cupsd_ucred_t;
+ #  include <snapd-glib/snapd-glib.h>
+ #endif /* HAVE_LIBSNAPDGLIB */
  
++#if defined(__OpenBSD__)
++#include <login_cap.h>
++#include <bsd_auth.h>
++#endif
  
--      pw = getpwnam(username);		/* Get the current password */
-+      pw = getpwnam_shadow(username);		/* Get the current password */
-       endpwent();			/* Close the password file */
+ /*
+  * Local functions...
+@@ -629,6 +633,53 @@ cupsdAuthorize(cupsd_client_t *con)	/* I - Client conn
  
-       if (!pw)
+       pam_end(pamh, PAM_SUCCESS);
+ 
++#elif defined(__OpenBSD__)
++      struct passwd	*pw;		/* User password data */
++      auth_session_t	*as;		/* BSD Auth session */
++      char		*class = NULL, *style = NULL;
++      login_cap_t	*lc;
++
++      if ((as = auth_open()) == NULL)
++      {
++	cupsdLogClient(con, CUPSD_LOG_ERROR, "Unable to initalize BSD authentication backend");
++        return;
++      }
++
++      if ((pw = getpwnam(username)) == NULL)
++      {
++	cupsdLogClient(con, CUPSD_LOG_ERROR, "Unknown username \"%s\".", username);
++	return;
++      }
++
++      if (!pw->pw_passwd[0])
++      {
++       /*
++	* Don't allow blank passwords!
++	*/
++
++	cupsdLogClient(con, CUPSD_LOG_ERROR, "Username \"%s\" has no password.", username);
++	return;
++      }
++
++      /* If the user specified a login class, use it */
++      if (!class && pw && pw->pw_class && pw->pw_class[0] != '\0')
++        class = strdup(pw->pw_class);
++
++      /* Get login class; if invalid style treat like unknown user. */
++      lc = login_getclass(class);
++      if (lc && (style = login_getstyle(lc, style, "auth-cups")) == NULL)
++      {
++        login_close(lc);
++	cupsdLogClient(con, CUPSD_LOG_ERROR, "Unknown username \"%s\".", username);
++	return;
++      }
++      login_close(lc);
++
++      if (!auth_userokay(username, NULL, NULL, password))
++      {
++	cupsdLogClient(con, CUPSD_LOG_ERROR, "Authentication failed for user \"%s\".", username);
++        return;
++      }
+ #else
+      /*
+       * Use normal UNIX password file-based authentication...
