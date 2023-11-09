@@ -79,7 +79,7 @@ share/doc/xapian-core/apidoc/
 share/doc/xapian-core/apidoc/html/
 share/doc/xapian-core/apidoc/html/annotated.html
 share/doc/xapian-core/apidoc/html/bc_s.png
-share/doc/xapian-core/apidoc/html/bdwn.png
+share/doc/xapian-core/apidoc/html/bc_sd.png
 share/doc/xapian-core/apidoc/html/classXapian_1_1AssertionError-members.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1AssertionError.html
 share/doc/xapian-core/apidoc/html/classXapian_1_1AssertionError__inherit__graph.png
@@ -354,7 +354,6 @@ share/doc/xapian-core/apidoc/html/database_8h.html
 share/doc/xapian-core/apidoc/html/dbfactory_8h.html
 share/doc/xapian-core/apidoc/html/deprecated.html
 share/doc/xapian-core/apidoc/html/dir_f63502d618711192f85ccb772536c6ae.html
-share/doc/xapian-core/apidoc/html/doc.png
 share/doc/xapian-core/apidoc/html/document_8h.html
 share/doc/xapian-core/apidoc/html/doxygen.css
 share/doc/xapian-core/apidoc/html/dynsections.js
@@ -364,8 +363,6 @@ share/doc/xapian-core/apidoc/html/errorhandler_8h.html
 share/doc/xapian-core/apidoc/html/eset_8h.html
 share/doc/xapian-core/apidoc/html/expanddecider_8h.html
 share/doc/xapian-core/apidoc/html/files.html
-share/doc/xapian-core/apidoc/html/folderclosed.png
-share/doc/xapian-core/apidoc/html/folderopen.png
 share/doc/xapian-core/apidoc/html/functions.html
 share/doc/xapian-core/apidoc/html/functions_b.html
 share/doc/xapian-core/apidoc/html/functions_c.html
@@ -472,8 +469,10 @@ share/doc/xapian-core/apidoc/html/namespacemembers_type.html
 share/doc/xapian-core/apidoc/html/namespacemembers_vars.html
 share/doc/xapian-core/apidoc/html/namespaces.html
 share/doc/xapian-core/apidoc/html/nav_f.png
+share/doc/xapian-core/apidoc/html/nav_fd.png
 share/doc/xapian-core/apidoc/html/nav_g.png
 share/doc/xapian-core/apidoc/html/nav_h.png
+share/doc/xapian-core/apidoc/html/nav_hd.png
 share/doc/xapian-core/apidoc/html/open.png
 share/doc/xapian-core/apidoc/html/pages.html
 share/doc/xapian-core/apidoc/html/positioniterator_8h.html
@@ -483,15 +482,20 @@ share/doc/xapian-core/apidoc/html/query_8h.html
 share/doc/xapian-core/apidoc/html/queryparser_8h.html
 share/doc/xapian-core/apidoc/html/registry_8h.html
 share/doc/xapian-core/apidoc/html/splitbar.png
+share/doc/xapian-core/apidoc/html/splitbard.png
 share/doc/xapian-core/apidoc/html/stem_8h.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1LatLongCoord-members.html
 share/doc/xapian-core/apidoc/html/structXapian_1_1LatLongCoord.html
 share/doc/xapian-core/apidoc/html/sync_off.png
 share/doc/xapian-core/apidoc/html/sync_on.png
 share/doc/xapian-core/apidoc/html/tab_a.png
+share/doc/xapian-core/apidoc/html/tab_ad.png
 share/doc/xapian-core/apidoc/html/tab_b.png
+share/doc/xapian-core/apidoc/html/tab_bd.png
 share/doc/xapian-core/apidoc/html/tab_h.png
+share/doc/xapian-core/apidoc/html/tab_hd.png
 share/doc/xapian-core/apidoc/html/tab_s.png
+share/doc/xapian-core/apidoc/html/tab_sd.png
 share/doc/xapian-core/apidoc/html/tabs.css
 share/doc/xapian-core/apidoc/html/termgenerator_8h.html
 share/doc/xapian-core/apidoc/html/termiterator_8h.html

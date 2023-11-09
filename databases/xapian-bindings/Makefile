@@ -2,7 +2,7 @@ COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
 COMMENT-ruby=	ruby bindings for Xapian
 
-V=		1.4.23
+V=		1.4.24
 DISTNAME=	xapian-bindings-${V}
 
 PKGNAME-main=	xapian-bindings-perl-${V}
@@ -23,14 +23,14 @@ SITES=		https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 # -std=gnu++11
-COMPILER=		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 # base libtool doesn't support -shrext
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=	gnu
 
-LIB_DEPENDS=		databases/xapian-core
+LIB_DEPENDS=	databases/xapian-core
 
-BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
+BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 
 MODULES=	lang/python \
 		lang/ruby
@@ -40,9 +40,9 @@ MULTI_PACKAGES=	-main -python -ruby
 MODRUBY_RUNDEP=	No
 MODPY_RUNDEP=	No
 
-RUN_DEPENDS-python=	textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
+RUN_DEPENDS-python=	textproc/py-sphinx${MODPY_FLAVOR} \
 			${MODPY_RUN_DEPENDS}
-RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
+RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 SUBST_VARS+=		MODRUBY_BINREV
 
 CONFIGURE_STYLE=	autoconf
