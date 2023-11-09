@@ -319,6 +319,7 @@
      SUBDIR += libotf
      SUBDIR += libowfat
      SUBDIR += libpeas
+     SUBDIR += libpeas2
      SUBDIR += libplist
      SUBDIR += libproplist
      SUBDIR += libsigc++-2
