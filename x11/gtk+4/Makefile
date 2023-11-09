@@ -93,6 +93,7 @@ WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstgl-1.0 gstplayer-1.0
 WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
+TEST_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dman-pages=true
 
