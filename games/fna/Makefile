@@ -1,4 +1,4 @@
-V =		23.10
+V =		23.11
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}

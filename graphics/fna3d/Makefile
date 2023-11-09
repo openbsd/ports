@@ -1,10 +1,10 @@
 # versions are in sync with FNA versions
-V =		23.10
+V =		23.11
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
 
-SHARED_LIBS =	FNA3D		4.0	# 23.10
+SHARED_LIBS =	FNA3D		4.1	# 23.11
 
 CATEGORIES =	graphics
 HOMEPAGE =	https://github.com/FNA-XNA/FNA3D

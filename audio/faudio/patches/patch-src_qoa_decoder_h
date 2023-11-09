@@ -1,0 +1,13 @@
+https://github.com/FNA-XNA/FAudio/pull/325
+
+Index: src/qoa_decoder.h
+--- src/qoa_decoder.h.orig
++++ src/qoa_decoder.h
+@@ -516,7 +516,6 @@ void qoa_decode_entire(qoa *qoa, short *sample_data) {
+ 
+ 	frame_count = (data->size - 64) / data->frame_size;
+ 	sample_index = 0;
+-	sample_count;
+ 
+ 	for (i = 0; i < frame_count; i += 1)
+ 	{
