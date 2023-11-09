@@ -38,6 +38,8 @@ CONFIGURE_ARGS +=	--enable-shared \
 			--without-baseruby \
 			--without-bundled-libffi \
 			--disable-option-checking
+# dwz errors out if it encounters an already compressed debug section
+CONFIGURE_ARGS +=	--with-compress-debug-sections=no
 
 CONFIGURE_ENV +=	LIBruby${BINREV}_VERSION=${LIBruby${BINREV}_VERSION} \
 			PREFIX="${PREFIX}" \
