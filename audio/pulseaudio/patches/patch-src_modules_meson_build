@@ -1,10 +1,25 @@
-2nd chunk:
+1st chunk:
+disable libinput support otherwise module-mmkbd-evdev.so is built
+3nd chunk:
 Should match b_lundef in meson(1).
 
 Index: src/modules/meson.build
 --- src/modules/meson.build.orig
 +++ src/modules/meson.build
-@@ -100,6 +100,14 @@ if cc.has_function('mkfifo')
+@@ -80,12 +80,6 @@ endif
+ 
+ # Modules enabled by headers
+ 
+-if cc.has_header('linux/input.h')
+-  all_modules += [
+-    [ 'module-mmkbd-evdev', 'module-mmkbd-evdev.c' ],
+-  ]
+-endif
+-
+ if cdata.has('HAVE_OSS_OUTPUT')
+   subdir('oss')
+   all_modules += [
+@@ -100,6 +94,14 @@ if cc.has_function('mkfifo')
    ]
  endif
  
@@ -19,7 +34,7 @@ Index: src/modules/meson.build
  # Modules enabled by dependencies
  
  if alsa_dep.found()
-@@ -310,7 +318,7 @@ foreach m : all_modules
+@@ -310,7 +312,7 @@ foreach m : all_modules
      install_rpath : rpath_dirs,
      install_dir : modlibexecdir,
      dependencies : [thread_dep, libpulse_dep, libpulsecommon_dep, libpulsecore_dep, libintl_dep, platform_dep, platform_socket_dep] + extra_deps,

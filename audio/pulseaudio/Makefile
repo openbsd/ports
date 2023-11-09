@@ -6,7 +6,7 @@ VERSION=		16.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += pulse                     7.2 # 0.24.2
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
