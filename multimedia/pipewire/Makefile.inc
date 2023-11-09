@@ -1,6 +1,6 @@
 DISTNAME ?=		${PW_PROJECT}-${PW_VERSION}
 
-CATEGORIES +=		multimedia
+CATEGORIES +=		multimedia multimedia/pipewire
 
 HOMEPAGE ?=		https://pipewire.org/
 

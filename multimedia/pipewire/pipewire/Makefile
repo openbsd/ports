@@ -2,6 +2,7 @@ COMMENT=		server and user space API for multimedia pipelines
 
 PW_PROJECT=		pipewire
 PW_VERSION=		0.3.84
+REVISION=		0
 
 SHARED_LIBS += pipewire-0.3              0.0 # 0.384.0
 
