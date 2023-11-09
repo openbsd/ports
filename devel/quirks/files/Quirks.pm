@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1566 2023/11/08 18:30:01 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1567 2023/11/09 11:48:54 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1866,6 +1866,7 @@ setup_obsolete_reason(
 	5 => 'wxglade',
 	57 => 'barony',
 	58 => 'exa',
+	6 => 'libgnomekbd',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
