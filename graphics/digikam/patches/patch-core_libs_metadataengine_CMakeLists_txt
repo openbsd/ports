@@ -1,14 +1,26 @@
-Fix for exiv2>=0.28.1
+From f5ea91a7f6c1926815ec68f3e0176d6c15b83051 Mon Sep 17 00:00:00 2001
+From: Maik Qualmann <metzpinguin@gmail.com>
+Date: Wed, 8 Nov 2023 23:13:26 +0100
+Subject: [PATCH] fix compile with Exiv2-0.28.1 It should still compile even with smaller Exiv2 versions.
 
 Index: core/libs/metadataengine/CMakeLists.txt
 --- core/libs/metadataengine/CMakeLists.txt.orig
 +++ core/libs/metadataengine/CMakeLists.txt
+@@ -18,7 +18,7 @@ endif()
+ 
+ # Exiv2 version < 0.28 use auto_ptr instead unique_ptr which is deprecated.
+ 
+-if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
++if("${LibExiv2_VERSION}" VERSION_LESS "0.27.99")
+ 
+     DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated")
+ 
 @@ -112,7 +112,7 @@ include_directories(
      $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
      $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
  
 -    $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
-+    $<TARGET_PROPERTY:Exiv2::exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
++    $<TARGET_PROPERTY:LibExiv2_INCLUDE_DIRS>
  )
  
  # Used by digikamcore

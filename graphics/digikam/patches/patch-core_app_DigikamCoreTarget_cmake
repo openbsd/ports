@@ -1,0 +1,17 @@
+From f5ea91a7f6c1926815ec68f3e0176d6c15b83051 Mon Sep 17 00:00:00 2001
+From: Maik Qualmann <metzpinguin@gmail.com>
+Date: Wed, 8 Nov 2023 23:13:26 +0100
+Subject: [PATCH] fix compile with Exiv2-0.28.1 It should still compile even with smaller Exiv2 versions.
+
+Index: core/app/DigikamCoreTarget.cmake
+--- core/app/DigikamCoreTarget.cmake.orig
++++ core/app/DigikamCoreTarget.cmake
+@@ -151,7 +151,7 @@ target_link_libraries(digikamcore
+                       ${TIFF_LIBRARIES}
+                       PNG::PNG
+                       ${JPEG_LIBRARIES}
+-                      exiv2lib
++                      ${LibExiv2_LIBRARIES}
+ 
+                       ${OPENMP_LDFLAGS}
+ 

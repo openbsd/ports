@@ -1,0 +1,26 @@
+From f5ea91a7f6c1926815ec68f3e0176d6c15b83051 Mon Sep 17 00:00:00 2001
+From: Maik Qualmann <metzpinguin@gmail.com>
+Date: Wed, 8 Nov 2023 23:13:26 +0100
+Subject: [PATCH] fix compile with Exiv2-0.28.1 It should still compile even with smaller Exiv2 versions.
+
+Index: core/CMakeLists.txt
+--- core/CMakeLists.txt.orig
++++ core/CMakeLists.txt
+@@ -255,7 +255,7 @@ PRINT_COMPONENT_COMPILE_STATUS("Media Player Support" 
+ # ==============================================================================
+ 
+ PRINT_LIBRARY_STATUS("libboostgraph" "https://github.com/boostorg/boost"                 "(version >= 1.43.0)"                Boost_FOUND)
+-PRINT_LIBRARY_STATUS("libexiv2"      "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
++PRINT_LIBRARY_STATUS("libexiv2"      "https://github.com/Exiv2/exiv2"                    "(version >= ${EXIV2_MIN_VERSION}"   LibExiv2_FOUND)
+ PRINT_LIBRARY_STATUS("libexpat"      "https://libexpat.github.io"                        "(version >= 2.0.0)"                 EXPAT_FOUND)
+ PRINT_LIBRARY_STATUS("libjpeg"       "https://github.com/libjpeg-turbo/libjpeg-turbo"    "(version >= 6b)"                    JPEG_FOUND)
+ PRINT_LIBRARY_STATUS("libkde"        "https://invent.kde.org/frameworks/"                "(version >= ${KF5_MIN_VERSION})"    KF5_FOUND)
+@@ -306,7 +306,7 @@ endif()
+ # ==============================================================================
+ 
+ if(Boost_FOUND                          AND
+-   exiv2_FOUND                          AND
++   LibExiv2_FOUND                       AND
+    EXPAT_FOUND                          AND
+    JPEG_FOUND                           AND
+    KF5_FOUND                            AND
