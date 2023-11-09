@@ -1,24 +1,30 @@
-COMMENT =	general-purpose library for the WPE-flavored port of WebKit
+COMMENT=	general-purpose library for the WPE-flavored port of WebKit
 
-CATEGORIES =	www wayland
+DISTNAME=	libwpe-1.14.1
+REVISION=	0
 
-GH_ACCOUNT =	WebPlatformForEmbedded
-GH_PROJECT =	libwpe
-GH_TAGNAME =	1.14.1
+CATEGORIES=	www wayland
 
-SHARED_LIBS =	wpe-1.0	0.0 # 0.0
+SHARED_LIBS +=	wpe-1.0	0.0 # 0.0
+
+HOMEPAGE=	https://wpewebkit.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE=	Yes
+
+SITES=		https://wpewebkit.org/releases/
+EXTRACT_SUFX=	.tar.xz
 
 WANTLIB += 	xkbcommon c++
 
-# BSD
-PERMIT_PACKAGE = Yes
+MODULES=	devel/meson
 
-MODULES =	devel/meson
+COMPILER=	base-clang ports-gcc
 
-COMPILER =	base-clang ports-gcc
+LIB_DEPENDS=	x11/xkbcommon
 
-LIB_DEPENDS =	x11/xkbcommon
-
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
