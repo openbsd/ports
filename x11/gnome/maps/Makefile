@@ -1,8 +1,7 @@
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		44.5
-REVISION=		0
+GNOME_VERSION=		45.1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
 
