@@ -1,10 +1,9 @@
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 2.3.3
+MODPY_EGG_VERSION = 2.3.4
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	sysutils
 
