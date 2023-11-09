@@ -232,6 +232,7 @@ include/spa-0.2/spa/support/thread.h
 include/spa-0.2/spa/utils/
 include/spa-0.2/spa/utils/ansi.h
 include/spa-0.2/spa/utils/atomic.h
+include/spa-0.2/spa/utils/cleanup.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/dll.h

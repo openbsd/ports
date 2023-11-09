@@ -1,9 +1,9 @@
 COMMENT=		server and user space API for multimedia pipelines
 
 PW_PROJECT=		pipewire
-PW_VERSION=		0.3.80
+PW_VERSION=		0.3.84
 
-SHARED_LIBS += pipewire-0.3              0.0 # 0.357.0
+SHARED_LIBS += pipewire-0.3              0.0 # 0.384.0
 
 CATEGORIES=		audio
 
@@ -31,7 +31,8 @@ CONFIGURE_ARGS=		-Dsystemd=disabled \
 			-Dudev=disabled \
 			-Dlegacy-rtkit=false \
 			-Dalsa=disabled \
-			-Dflatpak=disabled
+			-Dflatpak=disabled \
+			-Dselinux=disabled
 
 # until supported and/or proven useful
 CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \

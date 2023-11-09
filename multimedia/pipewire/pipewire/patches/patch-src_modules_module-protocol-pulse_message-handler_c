@@ -1,0 +1,15 @@
+Index: src/modules/module-protocol-pulse/message-handler.c
+--- src/modules/module-protocol-pulse/message-handler.c.orig
++++ src/modules/module-protocol-pulse/message-handler.c
+@@ -6,7 +6,11 @@
+ #include <stdio.h>
+ 
+ #include <regex.h>
++#ifndef __OpenBSD__
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ 
+ #include <spa/param/props.h>
+ #include <spa/pod/builder.h>
