@@ -1,3 +1,12 @@
+# XXX
+# The libudev detection has been deactivated in the following ports:
+# x11/tigervnc
+# devel/openmpi
+# sysutils/consolekit
+# games/chiaki
+# multimedia/libv4l
+# multimedia/dvdstyler
+
 COMMENT =	library to access udev device information
 
 VERSION =	20230921
