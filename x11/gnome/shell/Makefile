@@ -7,6 +7,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		44.6
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -89,8 +90,8 @@ RUN_DEPENDS +=		x11/gnome/weather
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
 RUN_DEPENDS +=		x11/gnome/user-docs
 
-# gkbd-keyboard-display
-RUN_DEPENDS +=		x11/gnome/libgnomekbd
+# js/ui/status/keyboard.js
+RUN_DEPENDS +=		x11/gnome/tecla
 
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \
