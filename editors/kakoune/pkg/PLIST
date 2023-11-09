@@ -54,6 +54,7 @@ share/kak/rc/detection/editorconfig.kak
 share/kak/rc/detection/file.kak
 share/kak/rc/detection/modeline.kak
 share/kak/rc/filetype/
+share/kak/rc/filetype/apl.kak
 share/kak/rc/filetype/arch-linux.kak
 share/kak/rc/filetype/asciidoc.kak
 share/kak/rc/filetype/awk.kak
@@ -195,4 +196,6 @@ share/kak/rc/windowing/screen.kak
 share/kak/rc/windowing/sway.kak
 share/kak/rc/windowing/tmux.kak
 share/kak/rc/windowing/wayland.kak
+share/kak/rc/windowing/wezterm.kak
 share/kak/rc/windowing/x11.kak
+share/kak/rc/windowing/zellij.kak

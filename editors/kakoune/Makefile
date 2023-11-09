@@ -1,8 +1,7 @@
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2022.10.31
+V =			2023.08.05
 DISTNAME =		kakoune-${V}
-REVISION =		0
 
 CATEGORIES =		editors
 
@@ -10,7 +9,7 @@ HOMEPAGE =		https://kakoune.org/
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
-SITES =		https://github.com/mawww/kakoune/releases/download/v${V}/
+SITES =			https://github.com/mawww/kakoune/releases/download/v${V}/
 
 EXTRACT_SUFX =		.tar.bz2
 
