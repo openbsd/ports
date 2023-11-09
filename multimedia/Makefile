@@ -61,7 +61,7 @@
      SUBDIR += playerctl
      SUBDIR += phonon
      SUBDIR += phonon-backend
-#     SUBDIR += pipewire
+     SUBDIR += pipewire
      SUBDIR += py-caption,python3
      SUBDIR += py-casttube,python3
      SUBDIR += py-chromecast,python3
