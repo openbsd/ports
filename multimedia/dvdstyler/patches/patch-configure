@@ -1,0 +1,87 @@
+disable libudev detection
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -7492,81 +7492,6 @@ fi
+ CXXFLAGS="$CXXFLAGS $FONTCONFIG_CFLAGS"
+ LIBS="$LIBS $FONTCONFIG_LIBS"
+ 
+-
+-pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for libudev" >&5
+-$as_echo_n "checking for libudev... " >&6; }
+-
+-if test -n "$LIBUDEV_CFLAGS"; then
+-    pkg_cv_LIBUDEV_CFLAGS="$LIBUDEV_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libudev\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libudev") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_LIBUDEV_CFLAGS=`$PKG_CONFIG --cflags "libudev" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$LIBUDEV_LIBS"; then
+-    pkg_cv_LIBUDEV_LIBS="$LIBUDEV_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libudev\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "libudev") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_LIBUDEV_LIBS=`$PKG_CONFIG --libs "libudev" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        LIBUDEV_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "libudev" 2>&1`
+-        else
+-	        LIBUDEV_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "libudev" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$LIBUDEV_PKG_ERRORS" >&5
+-
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libudev will not be used to get list of devices" >&5
+-$as_echo "$as_me: WARNING: libudev will not be used to get list of devices" >&2;}
+-elif test $pkg_failed = untried; then
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: libudev will not be used to get list of devices" >&5
+-$as_echo "$as_me: WARNING: libudev will not be used to get list of devices" >&2;}
+-else
+-	LIBUDEV_CFLAGS=$pkg_cv_LIBUDEV_CFLAGS
+-	LIBUDEV_LIBS=$pkg_cv_LIBUDEV_LIBS
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-	CXXFLAGS="$CXXFLAGS $LIBUDEV_CFLAGS -DHAVE_LIBUDEV";LIBS="$LIBS $LIBUDEV_LIBS"
+-fi
+-
+-
+ pkg_failed=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dbus-1" >&5
+ $as_echo_n "checking for dbus-1... " >&6; }
