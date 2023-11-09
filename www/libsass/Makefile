@@ -7,12 +7,11 @@ GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
 GH_TAGNAME =		3.6.5
 EPOCH =			0
+REVISION =		0
 
 SHARED_LIBS +=  sass                      0.1 # 0.0
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
-HOMEPAGE =		http://libsass.org/
+HOMEPAGE =		https://sass-lang.com/libsass/
 
 CATEGORIES =		www
 
