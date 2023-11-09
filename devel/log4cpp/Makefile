@@ -1,10 +1,9 @@
 COMMENT=	library of C++ classes for flexible logging
 
-DISTNAME=	log4cpp-1.1.3
+DISTNAME=	log4cpp-1.1.4
 WRKDIST=	${WRKDIR}/log4cpp
-REVISION=	2
 
-SHARED_LIBS +=	log4cpp              0.0      # 5.6
+SHARED_LIBS +=	log4cpp              1.0      # 5.6
 
 CATEGORIES=	devel
 
