@@ -3,7 +3,7 @@
 COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
-PW_VERSION=		0.4.1
+PW_VERSION=		0.5.1
 
 CATEGORIES=		audio
 
@@ -16,8 +16,7 @@ LIB_DEPENDS=		multimedia/pipewire/pipewire \
 
 # needs eventfd
 LIB_DEPENDS +=		devel/epoll-shim
-#MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib -C link-arg=-lepoll-shim
-MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib -lepoll-shim
+MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib -C link-arg=-lepoll-shim
 
 # libclang.so
 MODULES +=		lang/clang
