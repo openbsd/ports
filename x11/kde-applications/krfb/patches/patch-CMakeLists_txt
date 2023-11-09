@@ -1,0 +1,13 @@
+Stop trying to find libinpu
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -25,7 +25,7 @@ include(ECMDeprecationSettings)
+ include(FeatureSummary)
+ include(CheckIncludeFile)
+ 
+-check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
++#check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
+ 
+ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets X11Extras)
+ 
