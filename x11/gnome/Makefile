@@ -57,7 +57,6 @@
      SUBDIR += libgepub
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
-     SUBDIR += libgnomekbd
      SUBDIR += libgweather4
      SUBDIR += libmediaart
      SUBDIR += libpanel
