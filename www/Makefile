@@ -1,5 +1,4 @@
      SUBDIR =
-     SUBDIR += WPEBackend-fdo
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd
      SUBDIR += ap2-mod_jk
@@ -599,6 +598,7 @@
      SUBDIR += webkitgtk4,webkitgtk60
      SUBDIR += woob
      SUBDIR += wp-cli
+     SUBDIR += wpebackend-fdo
      SUBDIR += wslay
      SUBDIR += wwwcount
      SUBDIR += wwwoffle
