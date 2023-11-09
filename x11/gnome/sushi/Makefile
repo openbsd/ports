@@ -1,7 +1,7 @@
 COMMENT=		quick previewer for Nautilus
 
 GNOME_PROJECT=		sushi
-GNOME_VERSION=		44.2
+GNOME_VERSION=		45.0
 
 # override gnome MODULE
 SITES=			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
