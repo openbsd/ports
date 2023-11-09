@@ -1,7 +1,7 @@
      SUBDIR =
      #SUBDIR += dmenu-wayland
      #SUBDIR += foot
-     #SUBDIR += havoc
+     SUBDIR += havoc
      #SUBDIR += libinput-openbsd
      SUBDIR += plasma-wayland-protocols
      #SUBDIR += sway
