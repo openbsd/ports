@@ -1,8 +1,7 @@
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		44.0
-REVISION=		2
+GNOME_VERSION=		45.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -33,8 +32,8 @@ LIB_DEPENDS=		geo/geoclue2 \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts
 
-# gkbd-keyboard-display
-RUN_DEPENDS +=		x11/gnome/libgnomekbd
+# gnome-initial-setup/pages/keyboard/cc-input-chooser.c
+RUN_DEPENDS +=		x11/gnome/tecla
 
 # runs gnome-tour at the end of an initial setup run
 RUN_DEPENDS +=		x11/gnome/tour

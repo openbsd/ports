@@ -5,6 +5,7 @@
 @bin libexec/gnome-initial-setup-copy-worker
 @bin libexec/gnome-initial-setup-goa-helper
 share/applications/gnome-initial-setup.desktop
+share/dconf/profile/gnome-initial-setup
 share/examples/gnome-initial-setup/
 share/examples/gnome-initial-setup/xdg/
 share/examples/gnome-initial-setup/xdg/autostart/
@@ -12,6 +13,8 @@ share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-copy-worker
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-first-login.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-first-login.desktop
+share/gnome-initial-setup/
+share/gnome-initial-setup/initial-setup-dconf-defaults
 share/gnome-session/sessions/gnome-initial-setup.session
 share/gnome-shell/
 share/gnome-shell/modes/
