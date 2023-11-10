@@ -1,0 +1,6 @@
+libei is a library for Emulated Input, primarily aimed at the Wayland stack.
+It uses a typical client/server separation, with the two parts connected via a
+UNIX socket.
+In libei parlance, the client-side is called "EI client", the server side,
+typically a Wayland compositor, is called the "EIS Implementation" (Emulated
+Input Server). These terms are used throughout this documentation.

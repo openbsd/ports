@@ -1,0 +1,7 @@
+include/libei-1.0/
+include/libei-1.0/libei.h
+include/libei-1.0/libeis.h
+@lib lib/libei.so.${LIBei_VERSION}
+@lib lib/libeis.so.${LIBeis_VERSION}
+lib/pkgconfig/libei-1.0.pc
+lib/pkgconfig/libeis-1.0.pc
