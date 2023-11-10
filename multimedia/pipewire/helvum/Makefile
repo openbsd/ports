@@ -2,6 +2,7 @@ COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
 PW_VERSION=		0.5.1
+REVISION=		0
 
 CATEGORIES=		audio
 

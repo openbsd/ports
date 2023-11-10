@@ -1,5 +1,5 @@
     SUBDIR =
-#    SUBDIR += helvum
+    SUBDIR += helvum
     SUBDIR += pipewire
     SUBDIR += wireplumber
 
