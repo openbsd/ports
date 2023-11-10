@@ -10,8 +10,8 @@ Index: angr/procedures/definitions/__init__.py
 -import itanium_demangler
  
  from ...sim_type import parse_cpp_file, SimTypeFunction
- from ...calling_conventions import SimCC, DEFAULT_CC
-@@ -282,6 +281,7 @@ class SimCppLibrary(SimLibrary):
+ from ...calling_conventions import DEFAULT_CC
+@@ -284,6 +283,7 @@ class SimCppLibrary(SimLibrary):
  
      @staticmethod
      def _try_demangle(name):
@@ -19,7 +19,7 @@ Index: angr/procedures/definitions/__init__.py
          if name[0:2] == "_Z":
              try:
                  ast = itanium_demangler.parse(name)
-@@ -289,6 +289,7 @@ class SimCppLibrary(SimLibrary):
+@@ -291,6 +291,7 @@ class SimCppLibrary(SimLibrary):
                  return name
              if ast:
                  return str(ast)

@@ -4,7 +4,7 @@
 Index: pyvex_c/Makefile
 --- pyvex_c/Makefile.orig
 +++ pyvex_c/Makefile
-@@ -33,18 +33,17 @@ sq = $(subst $(sp),?,$1)
+@@ -38,18 +38,17 @@ sq = $(subst $(sp),?,$1)
  CC?=gcc
  AR=ar
  INCFLAGS=-I "$(VEX_INCLUDE_PATH)"

@@ -1,5 +1,6 @@
 lib/python${MODPY_VERSION}/site-packages/ailment/
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -10,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}block_walker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}block_walker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}converter_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}converter_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}converter_pcode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,7 +27,10 @@ lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}statement.${MOD
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}statement.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}tagged_object.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}tagged_object.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ailment/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ailment/block.py
+lib/python${MODPY_VERSION}/site-packages/ailment/block_walker.py
 lib/python${MODPY_VERSION}/site-packages/ailment/converter_common.py
 lib/python${MODPY_VERSION}/site-packages/ailment/converter_pcode.py
 lib/python${MODPY_VERSION}/site-packages/ailment/converter_vex.py
@@ -32,3 +38,4 @@ lib/python${MODPY_VERSION}/site-packages/ailment/expression.py
 lib/python${MODPY_VERSION}/site-packages/ailment/manager.py
 lib/python${MODPY_VERSION}/site-packages/ailment/statement.py
 lib/python${MODPY_VERSION}/site-packages/ailment/tagged_object.py
+lib/python${MODPY_VERSION}/site-packages/ailment/utils.py

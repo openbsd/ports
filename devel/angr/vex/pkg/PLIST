@@ -10,6 +10,7 @@ include/angr-vex/libvex_guest_mips64.h
 include/angr-vex/libvex_guest_offsets.h
 include/angr-vex/libvex_guest_ppc32.h
 include/angr-vex/libvex_guest_ppc64.h
+include/angr-vex/libvex_guest_riscv64.h
 include/angr-vex/libvex_guest_s390x.h
 include/angr-vex/libvex_guest_tilegx.h
 include/angr-vex/libvex_guest_x86.h

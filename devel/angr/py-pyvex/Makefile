@@ -1,5 +1,4 @@
 COMMENT =		Python interface to libVEX and VEX IR
-REVISION =		2
 
 ANGR_PYTHON_MODULE =	pyvex
 
@@ -13,7 +12,7 @@ BUILD_DEPENDS +=	devel/angr/vex>=9.0 \
 			devel/py-cparser${MODPY_FLAVOR}
 
 # dlopen(3)s libpyvex.so
-RUN_DEPENDS +=		devel/angr/vex>=9.0 \
+RUN_DEPENDS +=		devel/angr/vex>=9.2 \
 			devel/py-cffi${MODPY_FLAVOR} \
 			devel/py-cparser${MODPY_FLAVOR} \
 			devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \

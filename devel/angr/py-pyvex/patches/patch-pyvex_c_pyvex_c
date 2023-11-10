@@ -5,7 +5,7 @@
 Index: pyvex_c/pyvex.c
 --- pyvex_c/pyvex.c.orig
 +++ pyvex_c/pyvex.c
-@@ -175,6 +175,10 @@ int vex_init() {
+@@ -187,6 +187,10 @@ int vex_init() {
  #error "Unsupported host arch"
  #endif
  
@@ -16,7 +16,7 @@ Index: pyvex_c/pyvex.c
  	vta.archinfo_host = vai_host;
  
  	//
-@@ -222,7 +226,6 @@ static void vex_prepare_vai(VexArch arch, VexArchInfo 
+@@ -234,7 +238,6 @@ static void vex_prepare_vai(VexArch arch, VexArchInfo 
  		case VexArchAMD64:
  			vai->hwcaps =   VEX_HWCAPS_AMD64_SSE3 |
  							VEX_HWCAPS_AMD64_CX16 |

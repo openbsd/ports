@@ -1,10 +1,9 @@
 COMMENT =	modified version of Valgrind VEX for PyVEX
 
-GH_COMMIT =	939f423dbb6282cf14bc5d90ff8b37c2c5992e65
+GH_COMMIT =	66fa43edd3a3b214fc028645b86c33cb8c7de888
 GH_ACCOUNT =	angr
 GH_PROJECT =	vex
-DISTNAME =	angr-vex-9.0
-REVISION =	0
+DISTNAME =	angr-vex-9.2
 
 USE_GMAKE =	Yes
 MAKE_FILE =	Makefile-gcc

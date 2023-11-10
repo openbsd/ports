@@ -86,12 +86,6 @@ lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backen
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backend_z3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backend_z3_parallel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backend_z3_parallel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backendremote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}backendremote.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}celeryconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}celeryconfig.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}remotetasks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/${MODPY_PYCACHE}remotetasks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_concrete.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers/
@@ -114,9 +108,6 @@ lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_smtlib_solvers
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_vsa.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_z3.py
 lib/python${MODPY_VERSION}/site-packages/claripy/backends/backend_z3_parallel.py
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/backendremote.py
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/celeryconfig.py
-lib/python${MODPY_VERSION}/site-packages/claripy/backends/remotetasks.py
 lib/python${MODPY_VERSION}/site-packages/claripy/balancer.py
 lib/python${MODPY_VERSION}/site-packages/claripy/bv.py
 lib/python${MODPY_VERSION}/site-packages/claripy/debug.py
@@ -198,6 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/claripy/frontends/light_frontend.py
 lib/python${MODPY_VERSION}/site-packages/claripy/frontends/replacement_frontend.py
 lib/python${MODPY_VERSION}/site-packages/claripy/operations.py
 lib/python${MODPY_VERSION}/site-packages/claripy/ops.py
+lib/python${MODPY_VERSION}/site-packages/claripy/py.typed
 lib/python${MODPY_VERSION}/site-packages/claripy/simplifications.py
 lib/python${MODPY_VERSION}/site-packages/claripy/smtlib_utils.py
 lib/python${MODPY_VERSION}/site-packages/claripy/solvers.py
@@ -207,8 +199,11 @@ lib/python${MODPY_VERSION}/site-packages/claripy/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}deprecated.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}orderedset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/${MODPY_PYCACHE}orderedset.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/claripy/utils/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/claripy/utils/orderedset.py
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/
 lib/python${MODPY_VERSION}/site-packages/claripy/vsa/__init__.py

@@ -1,7 +1,8 @@
 COMMENT =		classes with architecture-specific information
-REVISION =		2
 
 ANGR_PYTHON_MODULE =	archinfo
+
+RUN_DEPENDS =		devel/py-backports-strenum
 
 NO_TEST =		Yes
 
