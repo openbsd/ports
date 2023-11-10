@@ -1,11 +1,12 @@
-COMMENT=	Python Build Reasonableness
+COMMENT=	manage setuptools packaging needs in a consistent manner
 
-MODPY_EGG_VERSION=	5.11.1
+MODPY_EGG_VERSION=	6.0.0
 DISTNAME=	pbr-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME:S/^/py-/}
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 
-HOMEPAGE=	https://github.com/openstack-dev/pbr
+# https://github.com/openstack-dev/pbr
+HOMEPAGE=	https://docs.openstack.org/pbr/latest/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
@@ -18,14 +19,7 @@ FLAVOR=		python3
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-#TEST_DEPENDS=	devel/py-testtools${MODPY_FLAVOR} \
-#		devel/py-fixtures${MODPY_FLAVOR} \
-#		devel/py-virtualenv${MODPY_FLAVOR}
-
-# also needs testscenarios, testresources
+# needs unported deps, at least: testscenarios, testresources, stestr
 NO_TEST=	Yes
-
-post-install:
-	mv ${PREFIX}/bin/pbr ${PREFIX}/bin/pbr${MODPY_BIN_SUFFIX}
 
 .include <bsd.port.mk>

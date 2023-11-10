@@ -16,8 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}__init__.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}builddoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}builddoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}extra_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,7 +39,6 @@ lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}util.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pbr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pbr/build.py
-lib/python${MODPY_VERSION}/site-packages/pbr/builddoc.py
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/
 lib/python${MODPY_VERSION}/site-packages/pbr/cmd/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pbr/cmd/${MODPY_PYCACHE}/
