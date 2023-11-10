@@ -154,7 +154,7 @@
      SUBDIR += kubectl
      SUBDIR += lf
      SUBDIR += libburn
-     #SUBDIR += libdisplay-info # wayland
+     SUBDIR += libdisplay-info
      SUBDIR += libesedb
      #SUBDIR += libevdev-openbsd # wayland
      SUBDIR += libevt

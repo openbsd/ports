@@ -1843,7 +1843,7 @@
      SUBDIR += tkdiff
      SUBDIR += tklib
      SUBDIR += tl-expected
-     #SUDIR += tllist  # wayland
+     SUBDIR += tllist
      SUBDIR += tradcpp
      SUBDIR += ucpp
      SUBDIR += udis86
