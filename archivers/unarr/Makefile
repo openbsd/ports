@@ -1,6 +1,6 @@
 COMMENT =	decompression library for rar, tar, zip and 7z archives
 
-V =		1.1.0
+V =		1.1.1
 DISTNAME =	unarr-${V}
 
 SHARED_LIBS =	unarr	0.1
