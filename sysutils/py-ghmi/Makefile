@@ -1,9 +1,8 @@
 COMMENT =		pure python IPMI protocol library
 
-MODPY_EGG_VERSION =	1.5.29
+MODPY_EGG_VERSION =	1.5.64
 DISTNAME =		pyghmi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
-REVISION =		3
 
 CATEGORIES =		sysutils
 
@@ -26,10 +25,5 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 
 # Requires unported oslotest
 NO_TEST =		Yes
-
-post-install:
-.for s in fakebmc pyghmicons pyghmiutil virshbmc
-	mv ${PREFIX}/bin/$s{,${MODPY_BIN_SUFFIX}}
-.endfor
 
 .include <bsd.port.mk>

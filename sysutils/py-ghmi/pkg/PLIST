@@ -171,6 +171,17 @@ lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}gene
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}generic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}lookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/${MODPY_PYCACHE}lookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}idrac.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}idrac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/idrac.py
+lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/dell/main.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/generic.py
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/
 lib/python${MODPY_VERSION}/site-packages/pyghmi/redfish/oem/lenovo/__init__.py
