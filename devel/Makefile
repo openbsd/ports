@@ -746,6 +746,7 @@
      SUBDIR += p5-File-CreationTime
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-DirCompare
+     SUBDIR += p5-File-FcntlLock
      SUBDIR += p5-File-Find-Object
      SUBDIR += p5-File-Find-Object-Rule
      SUBDIR += p5-File-Find-Rule
