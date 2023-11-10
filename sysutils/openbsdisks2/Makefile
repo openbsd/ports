@@ -2,6 +2,7 @@ COMMENT =	UDisks2 service implementation for OpenBSD
 
 V =		0.3.1
 DISTNAME =	openbsdisks2-${V}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -15,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 # C++
 COMPILER =	base-clang ports-gcc
 
+# uses unveil()
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m util
 
 SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}/
