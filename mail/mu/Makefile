@@ -1,9 +1,6 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V =		1.10.7
 GUILE_V =	3.0
-
-DISTNAME =	mu-$V
 
 FLAVORS =	guile
 FLAVOR ?=
@@ -11,7 +8,7 @@ FLAVOR ?=
 SHARED_LIBS =	guile-mu	0.1
 
 CATEGORIES =	mail
-HOMEPAGE =	http://www.djcbsoftware.nl/code/mu/
+HOMEPAGE =	https://www.djcbsoftware.nl/code/mu/
 
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
@@ -21,7 +18,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c gio-2.0 glib-2.0 gmime-3.0 gobject-2.0
 WANTLIB += m xapian
 
-SITES =		https://github.com/djcb/mu/releases/download/v${V}/
+DIST_TUPLE =	github djcb mu v1.10.8 .
+
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/meson
@@ -50,7 +48,6 @@ pre-configure:
 		${WRKDIST}/guile/*/*.scm
 
 post-install:
-	gunzip ${WRKINST}/${TRUEPREFIX}/share/info/*.info.gz
 	mv ${WRKINST}/${TRUEPREFIX}/share/info/*.info \
 		${WRKINST}/${TRUEPREFIX}/info/
 	rm -r ${WRKINST}/${TRUEPREFIX}/share/info

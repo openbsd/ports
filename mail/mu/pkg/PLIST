@@ -1,5 +1,5 @@
 @bin bin/mu
-info/mu4e.info
+@info info/mu4e.info
 @man man/man1/mu-add.1
 @man man/man1/mu-cfind.1
 @man man/man1/mu-extract.1
