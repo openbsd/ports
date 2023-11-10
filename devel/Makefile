@@ -1342,6 +1342,7 @@
      SUBDIR += py-automat,python3
      SUBDIR += py-babel,python3
      SUBDIR += py-backcall,python3
+     SUBDIR += py-backports-strenum,python3
      SUBDIR += py-bencode,python3
      SUBDIR += py-beniget,python3
      SUBDIR += py-biplist,python3
@@ -1496,6 +1497,7 @@
      SUBDIR += py-munch,python3
      SUBDIR += py-mypy,python3
      SUBDIR += py-mypy-extensions,python3
+     SUBDIR += py-nampa,python3
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
