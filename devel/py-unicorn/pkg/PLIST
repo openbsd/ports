@@ -18,8 +18,16 @@ lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}m68k_const.${MO
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}m68k_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}mips_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}mips_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}ppc_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}ppc_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}riscv_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}riscv_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}s390x_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}s390x_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}sparc_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}sparc_const.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}tricore_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}tricore_const.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/unicorn/${MODPY_PYCACHE}unicorn_const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,14 +43,23 @@ lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/arm64.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/m68k.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/mips.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/platform.h
+lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/ppc.h
+lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/riscv.h
+lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/s390x.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/sparc.h
+lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/tricore.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/unicorn.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/x86.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/lib/
-@so lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.so
+@static-lib lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.a
+@bin lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.so.2
 lib/python${MODPY_VERSION}/site-packages/unicorn/m68k_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/mips_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/ppc_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/riscv_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/s390x_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/sparc_const.py
+lib/python${MODPY_VERSION}/site-packages/unicorn/tricore_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/unicorn.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/unicorn_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/x86_const.py

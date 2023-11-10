@@ -3,10 +3,9 @@ BROKEN-riscv64 = /usr/ports/pobj/py-unicorn-1.0.2-python3/unicorn-1.0.2/src/qemu
 
 COMMENT =	Unicorn CPU emulator engine
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	2.0.1.post1
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
 
 CATEGORIES =	devel
 
@@ -17,8 +16,9 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += m
+WANTLIB =		m pthread
 
+BUILD_DEPENDS =		devel/cmake
 MODULES =		lang/python
 
 MODPY_PI =		Yes
@@ -30,16 +30,5 @@ FLAVOR =		python3
 USE_GMAKE =		Yes
 
 MAKE_ENV +=		V=1
-
-# our ld.bfd has no '-Bsymbolic-functions' option support
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlld}
-MAKE_ENV +=		LD_IS_LLD=1
-.else
-MAKE_ENV +=		LD_IS_LLD=0
-.endif
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>

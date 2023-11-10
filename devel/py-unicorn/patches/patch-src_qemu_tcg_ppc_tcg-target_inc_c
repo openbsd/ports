@@ -1,11 +1,11 @@
 Workaround the lack of _CALL_SYSV with clang on powerpc
 
-Index: src/qemu/tcg/ppc/tcg-target.c
---- src/qemu/tcg/ppc/tcg-target.c.orig
-+++ src/qemu/tcg/ppc/tcg-target.c
-@@ -24,6 +24,11 @@
- 
- #include "tcg-be-ldst.h"
+Index: src/qemu/tcg/ppc/tcg-target.inc.c
+--- src/qemu/tcg/ppc/tcg-target.inc.c.orig
++++ src/qemu/tcg/ppc/tcg-target.inc.c
+@@ -25,6 +25,11 @@
+ #include "elf.h"
+ #include "../tcg-pool.inc.c"
  
 +/* clang does not define _CALL_* */
 +#if defined __clang__ && defined __ELF__
