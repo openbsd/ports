@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1631 2023/11/10 12:34:49 caspar Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1632 2023/11/10 16:47:17 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -326,6 +326,15 @@ CHOSEN_COMPILER ?= base-gcc
 CHOSEN_COMPILER ?= gcc3
 .endif
 COMPILER_LIBCXX ?= ${LIBCXX}
+
+# support for compiler-specific flags.  example usage:
+# CFLAGS_base-gcc =	-std=gnu99
+.if defined(CFLAGS_${CHOSEN_COMPILER})
+CFLAGS += ${CFLAGS_${CHOSEN_COMPILER}}
+.endif
+.if defined(CXXFLAGS_${CHOSEN_COMPILER})
+CXXFLAGS += ${CXXFLAGS_${CHOSEN_COMPILER}}
+.endif
 
 ###
 ### Variable setup that can happen after modules
