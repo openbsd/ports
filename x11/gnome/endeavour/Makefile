@@ -1,9 +1,9 @@
 COMMENT=		task manager for GNOME
 
 DIST_TUPLE=		gnome World Endeavour 43.0 .
-REVISION=		1
+REVISION=		2
 
-WRKDIST=		${WRKDIR}/Endeavour-${GNOME_VERSION}-92706b42784e553d9f841117111a5e14bd201e1c
+WRKDIST=		${WRKDIR}/Endeavour-${GNOME_VERSION}
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
