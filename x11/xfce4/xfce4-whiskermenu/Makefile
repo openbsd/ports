@@ -1,6 +1,6 @@
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
-XFCE_VERSION =	2.8.0
+XFCE_VERSION =	2.8.1
 XFCE_PLUGIN =	whiskermenu
 
 # GPLv2
