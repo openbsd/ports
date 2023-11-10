@@ -27,6 +27,10 @@ LIB_DEPENDS=		audio/libcanberra \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
+# libintl
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=		-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
 			-Dudev=disabled \
@@ -75,9 +79,5 @@ CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 # XXX to be revisited; useful to replace the pulseaudio daemon
 # (audio/pulseaudio) but it seems to depend on systemd activation for now
 CONFIGURE_ARGS +=	-Dlibpulse=disabled
-
-# libintl
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
