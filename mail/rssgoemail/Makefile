@@ -1,13 +1,13 @@
 COMMENT =	send RSS/Atom/Gemini feeds to email
 
-MODGO_MODNAME =	gopkg.abiscuola.org/rssgoemail
-MODGO_VERSION =	v1.0.2
+MODGO_MODNAME =	gopkg.abiscuola.com/rssgoemail
+MODGO_VERSION =	v1.0.3
 
 DISTNAME =	rssgoemail-${MODGO_VERSION}
 
 CATEGORIES =	mail
 
-HOMEPAGE =	https://lab.abiscuola.org/rssgoemail/
+HOMEPAGE =	https://lab.abiscuola.com/rssgoemail/
 
 MAINTAINER =	Omar Polo <op@openbsd.org>
 
