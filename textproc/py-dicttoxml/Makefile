@@ -1,21 +1,20 @@
-COMMENT =		convert dicts and other data types into XML
+COMMENT=	convert dicts and other data types into XML
 
-MODPY_EGG_VERSION =	1.7.4
-DISTNAME = 		dicttoxml-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		5
+MODPY_EGG_VERSION=	1.7.16
+DISTNAME=	dicttoxml-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # GPLv2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
 
-FLAVORS =		python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
