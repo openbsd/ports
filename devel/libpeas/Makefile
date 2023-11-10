@@ -1,3 +1,5 @@
+PORTROACH=	limit:^1
+
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
