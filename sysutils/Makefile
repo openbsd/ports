@@ -180,6 +180,7 @@
      SUBDIR += libsmdev
      SUBDIR += libsmraw
      SUBDIR += libstatgrab
+     #SUBDIR += libudev-openbsd # wayland
      SUBDIR += libvhdi
      SUBDIR += libvirt
      SUBDIR += libvirt-python
