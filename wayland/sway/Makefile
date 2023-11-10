@@ -30,7 +30,7 @@ BUILD_DEPENDS = \
 LIB_DEPENDS =	devel/json-c \
 		devel/pango \
 		devel/pcre2 \
-		sysutils/libevdev-openbsd \
+		wayland/libevdev-openbsd \
 		wayland/libinput-openbsd \
 		wayland/wayland \
 		wayland/wlroots \
