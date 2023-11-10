@@ -9,4 +9,4 @@ Index: Makefile
 +LDLIBS += `pkg-config --libs ncurses 2>/dev/null || echo '-lcurses'`
  PKG = ttyplot_1.4-1
  PKGDIR = $(PKG)/usr/local/bin
- 
+ torture: LDLIBS = -lm

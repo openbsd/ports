@@ -2,7 +2,7 @@ COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7
 GH_PROJECT =	ttyplot
-GH_TAGNAME =	1.5
+GH_TAGNAME =	1.5.1
 
 CATEGORIES =	sysutils
 
