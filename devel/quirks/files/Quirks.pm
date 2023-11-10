@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1567 2023/11/09 11:48:54 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1568 2023/11/10 11:53:42 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1867,6 +1867,7 @@ setup_obsolete_reason(
 	57 => 'barony',
 	58 => 'exa',
 	6 => 'libgnomekbd',
+	59 => 'xmlrpc-c',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1942,6 +1943,7 @@ my $obsolete_message = {
 	56 => "outdated, fails to establish TLS connections/cannot login, use dino, mcabber, gajim or pidgin",
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
 	58 => "abandoned upstream, use eza as a drop-in replacement",
+	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable securittty sensitive code",
 };
 
 # ->is_base_system($handle, $state):

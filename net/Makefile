@@ -768,7 +768,6 @@
      SUBDIR += wol
      SUBDIR += wormhole-william
      SUBDIR += xl2tpd
-     SUBDIR += xmlrpc-c
      SUBDIR += xmlrpc-epi
      SUBDIR += xprobe
      SUBDIR += yafc
