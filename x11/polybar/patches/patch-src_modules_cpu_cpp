@@ -14,7 +14,7 @@ Index: src/modules/cpu.cpp
  #include "drawtypes/label.hpp"
  #include "drawtypes/progressbar.hpp"
  #include "drawtypes/ramp.hpp"
-@@ -127,6 +133,35 @@ namespace modules {
+@@ -128,6 +134,35 @@ namespace modules {
      m_cputimes_prev.swap(m_cputimes);
      m_cputimes.clear();
  
@@ -50,7 +50,7 @@ Index: src/modules/cpu.cpp
      try {
        std::ifstream in(PATH_CPU_INFO);
        string str;
-@@ -151,7 +186,7 @@ namespace modules {
+@@ -152,7 +187,7 @@ namespace modules {
      } catch (const std::ios_base::failure& e) {
        m_log.err("Failed to read CPU values (what: %s)", e.what());
      }

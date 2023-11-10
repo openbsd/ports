@@ -1,0 +1,10 @@
+Index: lib/i3ipcpp/src/ipc.cpp
+--- lib/i3ipcpp/src/ipc.cpp.orig
++++ lib/i3ipcpp/src/ipc.cpp
+@@ -1,5 +1,6 @@
+ #include "i3ipc++/ipc.hpp"
+ 
++#include <sys/wait.h> /* WEXITSTATUS */
+ #include <json/json.h>
+ 
+ #include <auss.hpp>

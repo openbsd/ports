@@ -1,7 +1,7 @@
 Index: include/modules/cpu.hpp
 --- include/modules/cpu.hpp.orig
 +++ include/modules/cpu.hpp
-@@ -10,7 +10,13 @@ namespace modules {
+@@ -11,7 +11,13 @@ namespace modules {
    struct cpu_time {
      unsigned long long user;
      unsigned long long nice;
