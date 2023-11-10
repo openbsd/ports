@@ -93,7 +93,9 @@ CONFIGURE_ARGS +=	\
 # OpenBSD specific options
 CONFIGURE_ARGS +=	\
 	-DLLD_ENABLE_MACHO=OFF \
-	-DLLD_ENABLE_WASM=ON
+	-DLLD_ENABLE_WASM=ON \
+	-DLLD_ENABLE_COFF=ON \
+	-DLLD_ENABLE_MINGW=ON
 
 # Disable some protections in the compiler to regain performance.
 CXXFLAGS-aarch64 =	-fno-ret-protector
