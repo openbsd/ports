@@ -156,7 +156,6 @@
      SUBDIR += libburn
      SUBDIR += libdisplay-info
      SUBDIR += libesedb
-     #SUBDIR += libevdev-openbsd # wayland
      SUBDIR += libevt
      SUBDIR += libevtx
      SUBDIR += libfsapfs

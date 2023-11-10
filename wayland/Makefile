@@ -3,6 +3,7 @@
      #SUBDIR += foot
      SUBDIR += havoc
      SUBDIR += libei
+     #SUBDIR += libevdev-openbsd
      #SUBDIR += libinput-openbsd
      SUBDIR += plasma-wayland-protocols
      #SUBDIR += sway
