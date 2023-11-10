@@ -2,10 +2,7 @@ COMMENT=		quick previewer for Nautilus
 
 GNOME_PROJECT=		sushi
 GNOME_VERSION=		45.0
-
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
