@@ -1,13 +1,13 @@
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.3
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
 SHARED_LIBS=	dsocks	1.3 \
 		socks	1.3
-MODGNU_SHARED_LIBS=dsocks	'-all-dynamic' \
+MODGNU_SHARED_LIBS=dsocks	'-export-dynamic' \
 		socks		''
 
 HOMEPAGE=	https://www.inet.no/dante/
