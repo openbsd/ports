@@ -1,8 +1,9 @@
-COMMENT =		Compiler cache for C/C++/Rust
+COMMENT =		compiler cache for C/C++/Rust
 
 GH_ACCOUNT =		mozilla
 GH_PROJECT =		sccache
 GH_TAGNAME =		v0.7.1
+REVISION =		0
 
 CATEGORIES =		devel
 
