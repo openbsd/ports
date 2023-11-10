@@ -27,11 +27,16 @@ LIB_DEPENDS=		audio/libcanberra \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
+# XXX needs a pipewire-session-manager but there's a cyclic dependency:
+# pipewire -> wireplumber -> pipewire
+#RUN_DEPENDS +=		multimedia/pipewire/wireplumber
+
 # libintl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=		-Dsystemd=disabled \
+CONFIGURE_ARGS=		-Dsession-managers=[] \
+			-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
 			-Dudev=disabled \
 			-Dlegacy-rtkit=false \
@@ -66,9 +71,6 @@ CONFIGURE_ARGS +=	-Dv4l2=disabled
 
 # XXX needs O_TMPFILE
 CONFIGURE_ARGS +=	-Dpipewire-v4l2=disabled
-
-# needs alsa
-CONFIGURE_ARGS +=	-Dsession-managers=[]
 
 # XXX to be revisited; useful to replace Jack (audio/jack)
 # Jack2 client
