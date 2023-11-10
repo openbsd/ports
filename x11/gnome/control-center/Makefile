@@ -64,6 +64,7 @@ RUN_DEPENDS +=		print/cups-pk-helper \
 			print/system-config-printer
 
 # panels/keyboard/cc-input-list-box.c
+BUILD_DEPENDS +=	x11/gnome/tecla
 RUN_DEPENDS +=		x11/gnome/tecla
 
 # panels/sound/cc-speaker-test-button.c:
