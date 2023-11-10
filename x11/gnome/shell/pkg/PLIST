@@ -9,18 +9,18 @@ bin/gnome-extensions-app
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
-bin/gnome-shell-perf-tool
+bin/gnome-shell-test-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-12.typelib
-lib/gnome-shell/St-12.typelib
+lib/gnome-shell/Shell-13.typelib
+lib/gnome-shell/St-13.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgvc.so
-@so lib/gnome-shell/libshell-12.so
+@so lib/gnome-shell/libshell-13.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-12.so
+@so lib/gnome-shell/libst-13.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
@@ -50,8 +50,8 @@ share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-12.gir
-share/gnome-shell/St-12.gir
+share/gnome-shell/Shell-13.gir
+share/gnome-shell/St-13.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
