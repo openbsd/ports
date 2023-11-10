@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1632 2023/11/10 16:47:17 jca Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1633 2023/11/10 17:30:32 jca Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -329,10 +329,10 @@ COMPILER_LIBCXX ?= ${LIBCXX}
 
 # support for compiler-specific flags.  example usage:
 # CFLAGS_base-gcc =	-std=gnu99
-.if defined(CFLAGS_${CHOSEN_COMPILER})
+.if defined(CFLAGS_${CHOSEN_COMPILER}) && ${COMPILER_LANGS:Mc}
 CFLAGS += ${CFLAGS_${CHOSEN_COMPILER}}
 .endif
-.if defined(CXXFLAGS_${CHOSEN_COMPILER})
+.if defined(CXXFLAGS_${CHOSEN_COMPILER})  && ${COMPILER_LANGS:Mc++}
 CXXFLAGS += ${CXXFLAGS_${CHOSEN_COMPILER}}
 .endif
 
