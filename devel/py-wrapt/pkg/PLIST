@@ -10,16 +10,25 @@ lib/python${MODPY_VERSION}/site-packages/wrapt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}__wrapt__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}__wrapt__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}patches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}patches.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}weakrefs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}weakrefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}wrappers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wrapt/${MODPY_PYCACHE}wrappers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wrapt/__wrapt__.py
 @so lib/python${MODPY_VERSION}/site-packages/wrapt/_wrappers.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/wrapt/arguments.py
 lib/python${MODPY_VERSION}/site-packages/wrapt/decorators.py
 lib/python${MODPY_VERSION}/site-packages/wrapt/importer.py
+lib/python${MODPY_VERSION}/site-packages/wrapt/patches.py
+lib/python${MODPY_VERSION}/site-packages/wrapt/weakrefs.py
 lib/python${MODPY_VERSION}/site-packages/wrapt/wrappers.py
