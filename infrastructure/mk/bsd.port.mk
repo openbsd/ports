@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1630 2023/10/26 19:26:56 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1631 2023/11/10 12:34:49 caspar Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -228,6 +228,7 @@ PARALLEL_MAKE_FLAGS ?= -j${MAKE_JOBS}
 TRY_BROKEN ?= No
 
 USE_CCACHE ?= No
+USE_SCCACHE ?= No
 
 WARNINGS ?= no
 
@@ -436,6 +437,7 @@ MAKE_FLAGS += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 .endif
 # log for the SHARED_LIBS override
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
+
 NO_CCACHE ?= No
 CCACHE_ENV ?=
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no" && ${NO_BUILD:L} == "no"
@@ -446,6 +448,18 @@ CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
 COMPILER_WRAPPER += env CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV} ccache
 .  if !exists(${LOCALBASE}/bin/ccache)
 ERRORS += "Fatal: USE_CCACHE is set, but ccache is not installed."
+.  endif
+.endif
+
+NO_SCCACHE ?= No
+SCCACHE_ENV ?=
+.if ${USE_SCCACHE:L} == "yes" && ${NO_SCCACHE:L} == "no" && ${NO_BUILD:L} == "no"
+SCCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.sccache
+MAKE_ENV += SCCACHE_SERVER_PORT=44226 SCCACHE_DIR=${SCCACHE_DIR} ${SCCACHE_ENV}
+MAKE_ENV += RUSTC_WRAPPER=${LOCALBASE}/bin/sccache
+CONFIGURE_ENV += SCCACHE_SERVER_PORT=44226 SCCACHE_DIR=${SCCACHE_DIR}
+.  if !exists(${LOCALBASE}/bin/sccache)
+ERRORS += "Fatal: USE_SCCACHE is set, but sccache is not installed."
 .  endif
 .endif
 
