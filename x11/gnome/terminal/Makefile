@@ -1,14 +1,11 @@
 COMMENT-main=		GNOME terminal
 COMMENT-nautilus=	GNOME Terminal extension for Nautilus
 
-GNOME_PROJECT=		gnome-terminal
-GNOME_VERSION=		3.50.1
+DIST_TUPLE=		gnome GNOME gnome-terminal 3.50.1 .
+REVISION-main=		0
+REVISION-nautilus=	0
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
-
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes

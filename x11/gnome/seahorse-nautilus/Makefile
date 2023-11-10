@@ -1,13 +1,10 @@
 COMMENT=		GnuPG extension for nautilus(1)
 
-GNOME_PROJECT=		seahorse-nautilus
-GNOME_VERSION=		3.11.92.20221209
-
-# override gnome MODULE
 COMMIT=			d59dc92f4f703b734dac82ce0c186c1751133df5
-SITES=           	https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${COMMIT}/
+DIST_TUPLE=		gnome GNOME seahorse-nautilus ${COMMIT} .
+GNOME_VERSION=		3.11.92.20221209
 WRKDIST=                ${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
-EXTRACT_SUFX=           .tar.gz
+REVISION=		0
 
 CATEGORIES=		security
 

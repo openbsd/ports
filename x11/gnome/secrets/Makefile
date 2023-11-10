@@ -1,11 +1,7 @@
 COMMENT=		GNOME password manager (Keepass)
 
-GNOME_PROJECT=		secrets
-GNOME_VERSION=		8.0
-
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/World/secrets/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
+DIST_TUPLE=		gnome World secrets 8.0 .
+REVISION=		0
 
 CATEGORIES=		security
 
