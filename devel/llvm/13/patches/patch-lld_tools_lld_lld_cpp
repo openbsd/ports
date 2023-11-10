@@ -4,10 +4,35 @@ internals.
 Index: lld/tools/lld/lld.cpp
 --- lld/tools/lld/lld.cpp.orig
 +++ lld/tools/lld/lld.cpp
-@@ -148,12 +148,16 @@ static int lldMain(int argc, const char **argv, llvm::
+@@ -70,6 +70,7 @@ static Flavor getFlavor(StringRef s) {
+       .Default(Invalid);
+ }
+ 
++#ifdef LLD_ENABLE_MINGW
+ static cl::TokenizerCallback getDefaultQuotingStyle() {
+   if (Triple(sys::getProcessTriple()).getOS() == Triple::Win32)
+     return cl::TokenizeWindowsCommandLine;
+@@ -102,6 +103,7 @@ static bool isPETarget(std::vector<const char *> &v) {
+   return false;
+ #endif
+ }
++#endif
+ 
+ static Flavor parseProgname(StringRef progname) {
+   // Use GNU driver for "ld" by default.
+@@ -143,17 +145,25 @@ static int lldMain(int argc, const char **argv, llvm::
+   std::vector<const char *> args(argv, argv + argc);
+   switch (parseFlavor(args)) {
+   case Gnu:
++#ifdef LLD_ENABLE_MINGW
+     if (isPETarget(args))
+       return !mingw::link(args, exitEarly, stdoutOS, stderrOS);
++#endif
      return !elf::link(args, exitEarly, stdoutOS, stderrOS);
++#ifdef LLD_ENABLE_COFF
    case WinLink:
      return !coff::link(args, exitEarly, stdoutOS, stderrOS);
++#endif
 +#ifdef LLD_ENABLE_MACHO
    case Darwin:
      return !macho::link(args, exitEarly, stdoutOS, stderrOS);
