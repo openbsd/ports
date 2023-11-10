@@ -81,7 +81,9 @@ post-install:
 		${INSTALL_MAN} `basename $${m%.f}.3f` ${PREFIX}/man/man3f ; done
 
 do-test:
-	cd ${WRKDIST}/TESTING/MATGEN && gmake ${ALL_TEST_FLAGS}
-	cd ${WRKDIST}/TESTING && gmake ${ALL_TEST_FLAGS}
+	cd ${WRKDIST}/TESTING/MATGEN && \
+		${MAKE_ENV} gmake ${ALL_TEST_FLAGS}
+	cd ${WRKDIST}/TESTING && \
+		${MAKE_ENV} gmake ${ALL_TEST_FLAGS}
 
 .include <bsd.port.mk>
