@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1568 2023/11/10 11:53:42 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1569 2023/11/10 14:40:04 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1868,6 +1868,7 @@ setup_obsolete_reason(
 	58 => 'exa',
 	6 => 'libgnomekbd',
 	59 => 'xmlrpc-c',
+	1 => 'pwntools',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

@@ -262,7 +262,6 @@
      SUBDIR += portsentry
      SUBDIR += ppgen
      SUBDIR += pwgen
-     SUBDIR += pwntools
      SUBDIR += pwsafe
      SUBDIR += pwsafe,no_x11
      SUBDIR += py-M2Crypto,python3
