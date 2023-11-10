@@ -71,7 +71,7 @@ original work of mpi@ and additions for proper events translation (for
 mouse buttons and keyboard) so that the input works in a usable way in
 Wayland.
 
-### sysutils/libevdev-openbsd
+### wayland/libevdev-openbsd
 
 [This](https://gitlab.tetaneutral.net/mherrb/libevdev-openbsd.git) is a
 stripped-down version of libevdev, providing just the few functions to handle
