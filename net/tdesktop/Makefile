@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.11.5
+V =			4.11.6
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -35,7 +35,7 @@ WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_bad_optional_access
 WANTLIB += absl_bad_variant_access absl_strings avcodec avfilter
 WANTLIB += avformat avutil c crypto dispatch gio-2.0 giomm-2.68
-WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 lz4 m
+WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4 m
 WANTLIB += openal opus protobuf-lite qrcodegencpp rnnoise sigc-3.0
 WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record
 WANTLIB += xcb-screensaver xxhash z
@@ -76,6 +76,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/libdispatch \
 			devel/libsigc++30 \
 			graphics/ffmpeg \
+			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20231101 \
 			sysutils/xxhash \
