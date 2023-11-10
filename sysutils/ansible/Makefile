@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	8.6.0
+MODPY_EGG_VERSION =	8.6.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
