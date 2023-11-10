@@ -1,12 +1,8 @@
 COMMENT=		task manager for GNOME
 
-GNOME_PROJECT=		endeavor
-GNOME_VERSION=		43.0
-REVISION=		0
+DIST_TUPLE=		gnome World Endeavour 43.0 .
+REVISION=		1
 
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/World/Endeavour/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
 WRKDIST=		${WRKDIR}/Endeavour-${GNOME_VERSION}-92706b42784e553d9f841117111a5e14bd201e1c
 
 # GPLv3+

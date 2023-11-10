@@ -1,4 +1,5 @@
 @conflict gnome-todo-*
+@conflict endeavor-*
 @pkgpath x11/gnome/todo
 @bin bin/endeavour
 include/endeavour/
