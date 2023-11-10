@@ -9,7 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		1
-REVISION-extras=	0
+REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -117,14 +117,11 @@ RUN_DEPENDS-extras +=	devel/glade \
 			x11/gnome/dictionary \
 			x11/gnome/endeavour \
 			x11/gnome/file-roller \
-			x11/gnome/gedit \
 			x11/gnome/ghex \
 			x11/gnome/gitg \
 			x11/gnome/notes \
 			x11/gnome/polari \
-			x11/gnome/screenshot \
 			x11/gnome/seahorse \
-			x11/gnome/terminal \
 			x11/gnome/tweaks \
 			x11/gnome/zenity
 
