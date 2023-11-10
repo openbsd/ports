@@ -1,6 +1,7 @@
 @pkgpath sysutils/py-croniter
 lib/python${MODPY_VERSION}/site-packages/croniter/
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/croniter-${MODPY_EGG_VERSION}.dist-info/WHEEL
