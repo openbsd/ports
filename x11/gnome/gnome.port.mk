@@ -1,5 +1,15 @@
 # Module for GNOME and MATE ports; see gnome-module(5)
 
+# XXX add support for MATE
+.if !empty(DIST_TUPLE)
+.  for _template _account _project _id _targetdir in ${DIST_TUPLE}
+GNOME_PROJECT ?=	${_project:L}
+GNOME_VERSION ?=	${_id}
+EXTRACT_SUFX ?=		.tar.gz
+SITES ?=		# empty
+.  endfor
+.endif
+
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
 EXTRACT_SUFX ?=		.tar.xz
@@ -7,7 +17,6 @@ EXTRACT_SUFX ?=		.tar.xz
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
-# XXX add support for fetching DISTFILES from gitlab
 .    if ${GNOME_VERSION:C/^([0-9]+).*/\1/:M[4-9]?}
 SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
 .    else
