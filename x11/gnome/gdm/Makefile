@@ -7,7 +7,7 @@ GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
 GH_COMMIT=		640bb9cef3d16bffb51c198cefeb9cb83612e735
 EXTRACT_SUFX=		.tar.gz
-REVISION=		1
+REVISION=		2
 
 DISTFILES=		${GH_DISTFILE}
 DISTFILES.puffy =	gdm-puffy.png
