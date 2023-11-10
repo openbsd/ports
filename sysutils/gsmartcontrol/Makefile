@@ -1,8 +1,7 @@
 COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
-DISTNAME=		gsmartcontrol-1.1.3
+DISTNAME=		gsmartcontrol-1.1.4
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		5
 
 CATEGORIES=		sysutils x11
 
