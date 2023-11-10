@@ -1,6 +1,7 @@
 COMMENT =	reverse-engineered ports of Build games
 
 DISTNAME =	nblood-1.01.20231020
+REVISION =	0
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
