@@ -1,5 +1,3 @@
-# XXX needs eventfd from rust libc (there's no epoll-shim rust) and rust pw_sys
-
 COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
@@ -7,16 +5,19 @@ PW_VERSION=		0.5.1
 
 CATEGORIES=		audio
 
+WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 cairo epoll-shim gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 graphene-1.0 gtk-4 pipewire-0.3
+
 MODULES=		devel/cargo
 
-#BUILD_DEPENDS=		devel/appstream-glib
+BUILD_DEPENDS=		devel/appstream-glib
 
 LIB_DEPENDS=		multimedia/pipewire/pipewire \
-			x11/gtk+4
+			x11/gnome/libadwaita
 
 # needs eventfd
 LIB_DEPENDS +=		devel/epoll-shim
-MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib -C link-arg=-lepoll-shim
+MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib -lepoll-shim
 
 # libclang.so
 MODULES +=		lang/clang
