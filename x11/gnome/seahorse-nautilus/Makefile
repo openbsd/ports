@@ -1,9 +1,7 @@
 COMMENT=		GnuPG extension for nautilus(1)
 
-COMMIT=			d59dc92f4f703b734dac82ce0c186c1751133df5
-DIST_TUPLE=		gnome GNOME seahorse-nautilus ${COMMIT} .
+DIST_TUPLE=		gnome GNOME seahorse-nautilus d59dc92f4f703b734dac82ce0c186c1751133df5 .
 GNOME_VERSION=		3.11.92.20221209
-WRKDIST=                ${WRKDIR}/${GNOME_PROJECT}-${COMMIT}
 REVISION=		0
 
 CATEGORIES=		security
