@@ -12,13 +12,13 @@ SHA256 (cargo/ctest2-0.4.7.tar.gz) = 8q36puSQsb/v/TjpCAziIW7obJfpmAh1bi1R6P7+XYQ
 SHA256 (cargo/dirs-2.0.2.tar.gz) = E66omlyTNkqY6bN7L6I37/u2lNXP4BxbcJQffrCH1eM=
 SHA256 (cargo/dirs-sys-0.3.7.tar.gz) = Gx0dkcky70HA8mY6qLDKA0LURNhCwGkUqgp+NS0LraY=
 SHA256 (cargo/either-1.9.0.tar.gz) = omrkPXvMO4FN6UeWpec21AKe+w7pAMEuLVTJk60aHgc=
-SHA256 (cargo/errno-0.3.5.tar.gz) = rD4T9movleMqOeqoH2uV1Ch4yg4dsMdUNyPf4SVX6GA=
+SHA256 (cargo/errno-0.3.6.tar.gz) = fBjuDtZaXx+Bysax0hO2nDX6R9QlKtQfFIbb2CJv424=
 SHA256 (cargo/foreign-types-0.3.2.tar.gz) = 9vM564rcBSzSyniRD9qGmu+jjSLVy2SOZIXk0/wG87E=
 SHA256 (cargo/foreign-types-shared-0.1.1.tar.gz) = ALAihBGQjKhoXbp/ws3XDsmZCm51Pom2rJGoTED7r0s=
 SHA256 (cargo/garando_errors-0.1.0.tar.gz) = GElexKztWSKAnv5NKGKRj/Do114SK95Xu6m65FllJWo=
 SHA256 (cargo/garando_pos-0.1.0.tar.gz) = DJOG/HXcpIba77v1qNLqbzeSN/lcm5gndhWc1m8iCq8=
 SHA256 (cargo/garando_syntax-0.1.0.tar.gz) = DEgoMNfympxr8DjUReMXkhEj+nJ/md6EfxAM0+Sr7NY=
-SHA256 (cargo/getrandom-0.2.10.tar.gz) = vkE2sqFd0xk2C+HAfZkzUXzPC+jxa/YqO+5PDWGN9Cc=
+SHA256 (cargo/getrandom-0.2.11.tar.gz) = /pAGvtdpFwwR+EXPAMfB6Qkq6z8mjgB8PnYKxoAIBw8=
 SHA256 (cargo/glob-0.3.1.tar.gz) = 0vq8+9yH9HWDN8pTX7QabXAbZWk844KH2FbRZ0VR7Js=
 SHA256 (cargo/hex-0.3.2.tar.gz) = gFAmpdAUH/wwq7O+MXOEitRqGxZk/mMkKEeWGaNkTXc=
 SHA256 (cargo/home-0.5.5.tar.gz) = VETCfu9pIwcffrzDPjREUIRmp296K5PaAO1uGfMMHds=
@@ -28,7 +28,7 @@ SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD
 SHA256 (cargo/libc-0.2.150.tar.gz) = idkqR0P5phAC+uGDdO0R55c/UwyzoyVfs1SBgRiyIDw=
 SHA256 (cargo/libloading-0.7.4.tar.gz) = tnOA/TsvvnUnpgbhhynSHG85UWM9BQBXTE3CLS1ji58=
 SHA256 (cargo/libredox-0.0.1.tar.gz) = hcgzyh5mB4hR26KQRodOOPCLLIg3AKopoD3dOyOBTug=
-SHA256 (cargo/linux-raw-sys-0.4.10.tar.gz) = 2iR56MBi5AvwBm/6C8gj3gqTaJdK+ZyfbflB0sIx4D8=
+SHA256 (cargo/linux-raw-sys-0.4.11.tar.gz) = lpSItV+KxAIhTz9f0kPrtyBs+C3mDTFymUcHpLzCuCk=
 SHA256 (cargo/log-0.4.20.tar.gz) = teYWPLjEkIjCw29Xh15YzNjIfHQn9/vVDqZxCy8/Lo8=
 SHA256 (cargo/memchr-2.6.4.tar.gz) = 9mXuQLxKPFWQr7HpZ323SlCGWd/XHhJkINqCdJCaAWc=
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
@@ -49,8 +49,8 @@ SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ
 SHA256 (cargo/rustix-0.38.21.tar.gz) = K0JrBQbl1Qp9ja/PLoFHFADetgI5LH3REIFa+06vAqM=
 SHA256 (cargo/ryu-1.0.15.tar.gz) = GtTMjaTvcj7WC87SARgdg3ka1DMhPYwk7//aHuyF10E=
 SHA256 (cargo/semver-1.0.20.tar.gz) = g2+mo+HlR/mixAQIAuyGW12F9AFO/gBVXXCQo9yqEJA=
-SHA256 (cargo/serde-1.0.191.tar.gz) = qDTEghAZg4IkghRoVSJA1NldFOdRmGRCyBZXLTmggMk=
-SHA256 (cargo/serde_derive-1.0.191.tar.gz) = RvpS1WRrzpG2gBif5bHASdLqONq7Ti58jQDKEs+/vP0=
+SHA256 (cargo/serde-1.0.192.tar.gz) = vKKghISyhdyygtD2eybK3A34sZ+MElAsE9lmv5SC8AE=
+SHA256 (cargo/serde_derive-1.0.192.tar.gz) = 1scgf77J+qSAc/PjB0y+VTr26lEtfCG6RuQ05w6p+8E=
 SHA256 (cargo/serde_json-1.0.108.tar.gz) = PRx+PqxAjRFRAsTCStOT4IIbs6XfTVBqgPhfenQqUms=
 SHA256 (cargo/shlex-1.2.0.tar.gz) = p87gUpptQPWA56XmxJXI+/4ht7Unle1LteYs35K8Y4A=
 SHA256 (cargo/syn-1.0.109.tar.gz) = crZBkbJ1tm/+JGnorywc/juvpntSnq15Km0BYIiLQjc=
@@ -75,7 +75,7 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (rust-openssl-tests-20231106-9db259a1.tar.gz) = srIGPOuUG9vZOl2M47CCZkUhIgztj8e9QpwVs1GaMiQ=
+SHA256 (rust-openssl-tests-20231111-730aaed8.tar.gz) = KLTB/icxqxgH7kiwK6GABhedYFGMadMoTHJqPm9cT1A=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
@@ -90,13 +90,13 @@ SIZE (cargo/ctest2-0.4.7.tar.gz) = 23309
 SIZE (cargo/dirs-2.0.2.tar.gz) = 11779
 SIZE (cargo/dirs-sys-0.3.7.tar.gz) = 10597
 SIZE (cargo/either-1.9.0.tar.gz) = 16660
-SIZE (cargo/errno-0.3.5.tar.gz) = 10576
+SIZE (cargo/errno-0.3.6.tar.gz) = 10595
 SIZE (cargo/foreign-types-0.3.2.tar.gz) = 7504
 SIZE (cargo/foreign-types-shared-0.1.1.tar.gz) = 5672
 SIZE (cargo/garando_errors-0.1.0.tar.gz) = 28604
 SIZE (cargo/garando_pos-0.1.0.tar.gz) = 18670
 SIZE (cargo/garando_syntax-0.1.0.tar.gz) = 266572
-SIZE (cargo/getrandom-0.2.10.tar.gz) = 34955
+SIZE (cargo/getrandom-0.2.11.tar.gz) = 35391
 SIZE (cargo/glob-0.3.1.tar.gz) = 18880
 SIZE (cargo/hex-0.3.2.tar.gz) = 9053
 SIZE (cargo/home-0.5.5.tar.gz) = 8557
@@ -106,7 +106,7 @@ SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
 SIZE (cargo/libc-0.2.150.tar.gz) = 719359
 SIZE (cargo/libloading-0.7.4.tar.gz) = 27580
 SIZE (cargo/libredox-0.0.1.tar.gz) = 4212
-SIZE (cargo/linux-raw-sys-0.4.10.tar.gz) = 1407767
+SIZE (cargo/linux-raw-sys-0.4.11.tar.gz) = 1413981
 SIZE (cargo/log-0.4.20.tar.gz) = 38307
 SIZE (cargo/memchr-2.6.4.tar.gz) = 94439
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
@@ -127,8 +127,8 @@ SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
 SIZE (cargo/rustix-0.38.21.tar.gz) = 358962
 SIZE (cargo/ryu-1.0.15.tar.gz) = 46906
 SIZE (cargo/semver-1.0.20.tar.gz) = 30451
-SIZE (cargo/serde-1.0.191.tar.gz) = 76864
-SIZE (cargo/serde_derive-1.0.191.tar.gz) = 55679
+SIZE (cargo/serde-1.0.192.tar.gz) = 76866
+SIZE (cargo/serde_derive-1.0.192.tar.gz) = 55690
 SIZE (cargo/serde_json-1.0.108.tar.gz) = 146476
 SIZE (cargo/shlex-1.2.0.tar.gz) = 6584
 SIZE (cargo/syn-1.0.109.tar.gz) = 237611
@@ -153,4 +153,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (rust-openssl-tests-20231106-9db259a1.tar.gz) = 352053
+SIZE (rust-openssl-tests-20231111-730aaed8.tar.gz) = 352808

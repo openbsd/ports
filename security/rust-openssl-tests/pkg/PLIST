@@ -549,6 +549,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/error_impls.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/espidf.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/fuchsia.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/hermit.rs
+share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/hurd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/js.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/linux_android.rs
