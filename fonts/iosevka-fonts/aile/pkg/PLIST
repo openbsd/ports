@@ -1,0 +1,11 @@
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/iosevka-aile-bold.ttc
+share/fonts/iosevka/iosevka-aile-extrabold.ttc
+share/fonts/iosevka/iosevka-aile-extralight.ttc
+share/fonts/iosevka/iosevka-aile-heavy.ttc
+share/fonts/iosevka/iosevka-aile-light.ttc
+share/fonts/iosevka/iosevka-aile-medium.ttc
+share/fonts/iosevka/iosevka-aile-regular.ttc
+share/fonts/iosevka/iosevka-aile-semibold.ttc
+share/fonts/iosevka/iosevka-aile-thin.ttc

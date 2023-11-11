@@ -13,6 +13,7 @@
 # Similarly for the PKGNAME suffix.
 
 SUBDIR =
+SUBDIR += aile
 SUBDIR += default
 SUBDIR += etoile
 SUBDIR += fixed-slab
