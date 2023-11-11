@@ -5,6 +5,8 @@
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		bootstrap generator for lang/ghc
+UNLINKED =		ghc-bootstrap
+DESCR =			/dev/null
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
