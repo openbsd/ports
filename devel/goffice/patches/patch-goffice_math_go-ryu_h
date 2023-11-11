@@ -1,0 +1,19 @@
+From 781d10b26c621387885aa409cd52c384049912ff Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Sun, 5 Nov 2023 14:31:29 -0500
+Subject: [PATCH] Compilation: don't include long-double parts of ryu unless
+ --with-long-double
+
+Index: goffice/math/go-ryu.h
+--- goffice/math/go-ryu.h.orig
++++ goffice/math/go-ryu.h
+@@ -9,7 +9,9 @@ G_BEGIN_DECLS
+ /* ------------------------------------------------------------------------- */
+ 
+ int go_ryu_d2s_buffered_n (double d, char *dst);
++#ifdef GOFFICE_WITH_LONG_DOUBLE
+ int go_ryu_ld2s_buffered_n (long double d, char *dst);
++#endif
+ 
+ /* ------------------------------------------------------------------------- */
+ 

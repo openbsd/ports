@@ -2,6 +2,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.56
+REVISION=	0
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -39,7 +40,8 @@ LIB_DEPENDS=		devel/libgsf \
 MODGNOME_TOOLS=		gobject-introspection
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.71
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

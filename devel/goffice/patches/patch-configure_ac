@@ -1,0 +1,36 @@
+From 9ce985d04044d2f1ba910c5717c7e483004b1c81 Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Sun, 5 Nov 2023 15:04:23 -0500
+Subject: [PATCH] Configuration: disable long double support if we lack
+ __uint128_t.
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -560,14 +560,23 @@ GOFFICE_CHECK_FUNC(asinh)
+ GOFFICE_CHECK_FUNC(acosh)
+ GOFFICE_CHECK_FUNC(atanh)
+ 
++AC_TYPE_LONG_DOUBLE
++dnl go-ryu needs __uint128_t for long double support.
++AC_CHECK_TYPES([__uint128_t], [], [], [[#include <inttypes.h>
++#include <stdint.h>]])
++if test $ac_cv_type_long_double.$ac_cv_type___uint128_t = yes.yes; then
++  with_long_double_default=yes
++else
++  with_long_double_default=no
++fi
++
+ float_msg=no
+ AC_ARG_WITH(long-double,
+         [  --without-long-double   disable support for long double],
+-        , [ with_long_double=yes])
++        , [ with_long_double=$with_long_double_default])
+ 
+ if test "x$with_long_double" = "xyes"; then
+-  AC_TYPE_LONG_DOUBLE
+-  if test $ac_cv_type_long_double = yes; then
++  if test $with_long_double_default = yes; then
+     have_mandatory_funcs=yes
+     need_sunmath=0
+     ss_ccprog=`echo $CC | sed -e 's/ .*//'`

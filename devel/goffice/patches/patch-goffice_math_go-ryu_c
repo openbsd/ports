@@ -1,0 +1,211 @@
+From 781d10b26c621387885aa409cd52c384049912ff Mon Sep 17 00:00:00 2001
+From: Morten Welinder <terra@gnome.org>
+Date: Sun, 5 Nov 2023 14:31:29 -0500
+Subject: [PATCH] Compilation: don't include long-double parts of ryu unless
+ --with-long-double
+
+Index: goffice/math/go-ryu.c
+--- goffice/math/go-ryu.c.orig
++++ goffice/math/go-ryu.c
+@@ -3,55 +3,8 @@
+ #define bool int
+ 
+ #include "go-ryu.h"
+-// File ryu.h imported from ryu
+-// Copyright 2018 Ulf Adams
+-//
+-// The contents of this file may be used under the terms of the Apache License,
+-// Version 2.0.
+-//
+-//    (See accompanying file LICENSE-Apache or copy at
+-//     http://www.apache.org/licenses/LICENSE-2.0)
+-//
+-// Alternatively, the contents of this file may be used under the terms of
+-// the Boost Software License, Version 1.0.
+-//    (See accompanying file LICENSE-Boost or copy at
+-//     https://www.boost.org/LICENSE_1_0.txt)
+-//
+-// Unless required by applicable law or agreed to in writing, this software
+-// is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+-// KIND, either express or implied.
+-#ifndef RYU_H
+-#define RYU_H
+-
+-#ifdef __cplusplus
+-extern "C" {
+-#endif
+-
+ #include <inttypes.h>
+ 
+-int go_ryu_d2s_buffered_n(double f, char* result);
+-void go_ryu_d2s_buffered(double f, char* result);
+-char* go_ryu_d2s(double f);
+-
+-int go_ryu_f2s_buffered_n(float f, char* result);
+-void go_ryu_f2s_buffered(float f, char* result);
+-char* go_ryu_f2s(float f);
+-
+-int go_ryu_d2fixed_buffered_n(double d, uint32_t precision, char* result);
+-void go_ryu_d2fixed_buffered(double d, uint32_t precision, char* result);
+-char* go_ryu_d2fixed(double d, uint32_t precision);
+-
+-int go_ryu_d2exp_buffered_n(double d, uint32_t precision, char* result);
+-void go_ryu_d2exp_buffered(double d, uint32_t precision, char* result);
+-char* go_ryu_d2exp(double d, uint32_t precision);
+-
+-#ifdef __cplusplus
+-}
+-#endif
+-
+-#endif // RYU_H
+-// End of file ryu.h imported from ryu
+-
+ // File common.h imported from ryu
+ // Copyright 2018 Ulf Adams
+ //
+@@ -1242,20 +1195,25 @@ int go_ryu_d2s_buffered_n(double f, char* result) {
+   return to_chars(v, ieeeSign, result);
+ }
+ 
+-void go_ryu_d2s_buffered(double f, char* result) {
++#if 0
++static void go_ryu_d2s_buffered(double f, char* result) {
+   const int index = go_ryu_d2s_buffered_n(f, result);
+ 
+   // Terminate the string.
+   result[index] = '\0';
+ }
++#endif
+ 
+-char* go_ryu_d2s(double f) {
++#if 0
++static char* go_ryu_d2s(double f) {
+   char* const result = (char*) malloc(25);
+   go_ryu_d2s_buffered(f, result);
+   return result;
+ }
++#endif
+ // End of file d2s.c imported from ryu
+ 
++#ifdef GOFFICE_WITH_LONG_DOUBLE
+ // File ryu_generic_128.h imported from ryu
+ // Copyright 2018 Ulf Adams
+ //
+@@ -1303,16 +1261,20 @@ struct floating_decimal_128 {
+   bool sign;
+ };
+ 
+-struct floating_decimal_128 go_ryu_float_to_fd128(float f);
+-struct floating_decimal_128 go_ryu_double_to_fd128(double d);
++#if 0
++static struct floating_decimal_128 go_ryu_float_to_fd128(float f);
++#endif
++#if 0
++static struct floating_decimal_128 go_ryu_double_to_fd128(double d);
++#endif
+ 
+ // According to wikipedia (https://en.wikipedia.org/wiki/Long_double), this likely only works on
+ // x86 with specific compilers (clang?). May need an ifdef.
+-struct floating_decimal_128 go_ryu_long_double_to_fd128(long double d);
++static struct floating_decimal_128 go_ryu_long_double_to_fd128(long double d);
+ 
+ // Converts the given binary floating point number to the shortest decimal floating point number
+ // that still accurately represents it.
+-struct floating_decimal_128 go_ryu_generic_binary_to_decimal(
++static struct floating_decimal_128 go_ryu_generic_binary_to_decimal(
+     const __uint128_t bits, const uint32_t mantissaBits, const uint32_t exponentBits, const bool explicitLeadingBit);
+ 
+ // Converts the given decimal floating point number to a string, writing to result, and returning
+@@ -1322,7 +1284,7 @@ struct floating_decimal_128 go_ryu_generic_binary_to_d
+ // Maximal char buffer requirement:
+ // sign + mantissa digits + decimal dot + 'E' + exponent sign + exponent digits
+ // = 1 + 39 + 1 + 1 + 1 + 10 = 53
+-int go_ryu_generic_to_chars(const struct floating_decimal_128 v, char* const result);
++static int go_ryu_generic_to_chars(const struct floating_decimal_128 v, char* const result);
+ 
+ #ifdef __cplusplus
+ }
+@@ -1330,7 +1292,9 @@ int go_ryu_generic_to_chars(const struct floating_deci
+ 
+ #endif // RYU_GENERIC_128_H
+ // End of file ryu_generic_128.h imported from ryu
++#endif // GOFFICE_WITH_LONG_DOUBLE
+ 
++#ifdef GOFFICE_WITH_LONG_DOUBLE
+ // File generic_128.h imported from ryu
+ // Copyright 2018 Ulf Adams
+ //
+@@ -1852,7 +1816,9 @@ static inline uint32_t log10Pow5l(const int32_t e) {
+ 
+ #endif // RYU_GENERIC128_H
+ // End of file generic_128.h imported from ryu
++#endif // GOFFICE_WITH_LONG_DOUBLE
+ 
++#ifdef GOFFICE_WITH_LONG_DOUBLE
+ // File generic_128.c imported from ryu
+ // Copyright 2018 Ulf Adams
+ //
+@@ -1903,25 +1869,29 @@ static char* s(uint128_t v) {
+ #define FLOAT_MANTISSA_BITS 23
+ #define FLOAT_EXPONENT_BITS 8
+ 
+-struct floating_decimal_128 go_ryu_float_to_fd128(float f) {
++#if 0
++static struct floating_decimal_128 go_ryu_float_to_fd128(float f) {
+   uint32_t bits = 0;
+   memcpy(&bits, &f, sizeof(float));
+   return go_ryu_generic_binary_to_decimal(bits, FLOAT_MANTISSA_BITS, FLOAT_EXPONENT_BITS, false);
+ }
++#endif
+ 
+ #define DOUBLE_MANTISSA_BITS 52
+ #define DOUBLE_EXPONENT_BITS 11
+ 
+-struct floating_decimal_128 go_ryu_double_to_fd128(double d) {
++#if 0
++static struct floating_decimal_128 go_ryu_double_to_fd128(double d) {
+   uint64_t bits = 0;
+   memcpy(&bits, &d, sizeof(double));
+   return go_ryu_generic_binary_to_decimal(bits, DOUBLE_MANTISSA_BITS, DOUBLE_EXPONENT_BITS, false);
+ }
++#endif
+ 
+ #define LONG_DOUBLE_MANTISSA_BITS 64
+ #define LONG_DOUBLE_EXPONENT_BITS 15
+ 
+-struct floating_decimal_128 go_ryu_long_double_to_fd128(long double d) {
++static struct floating_decimal_128 go_ryu_long_double_to_fd128(long double d) {
+   uint128_t bits = 0;
+   memcpy(&bits, &d, sizeof(long double));
+ #ifdef RYU_DEBUG
+@@ -1934,7 +1904,7 @@ struct floating_decimal_128 go_ryu_long_double_to_fd12
+   return go_ryu_generic_binary_to_decimal(bits, LONG_DOUBLE_MANTISSA_BITS, LONG_DOUBLE_EXPONENT_BITS, true);
+ }
+ 
+-struct floating_decimal_128 go_ryu_generic_binary_to_decimal(
++static struct floating_decimal_128 go_ryu_generic_binary_to_decimal(
+     const uint128_t bits, const uint32_t mantissaBits, const uint32_t exponentBits, const bool explicitLeadingBit) {
+ #ifdef RYU_DEBUG
+   printf("IN=");
+@@ -2147,7 +2117,7 @@ static inline int copy_special_strl(char * const resul
+   return fd.sign + 8;
+ }
+ 
+-int go_ryu_generic_to_chars(const struct floating_decimal_128 v, char* const result) {
++static int go_ryu_generic_to_chars(const struct floating_decimal_128 v, char* const result) {
+   if (v.exponent == FD128_EXCEPTIONAL_EXPONENT) {
+     return copy_special_strl(result, v);
+   }
+@@ -2200,9 +2170,12 @@ int go_ryu_generic_to_chars(const struct floating_deci
+   return index;
+ }
+ // End of file generic_128.c imported from ryu
++#endif // GOFFICE_WITH_LONG_DOUBLE
+ 
+ 
++#ifdef GOFFICE_WITH_LONG_DOUBLE
+ int go_ryu_ld2s_buffered_n (long double d, char *dst) {
+   struct floating_decimal_128 fd128 = go_ryu_long_double_to_fd128(d);
+   return go_ryu_generic_to_chars(fd128, dst);
+ }
++#endif
