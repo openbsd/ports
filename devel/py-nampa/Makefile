@@ -15,6 +15,6 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_TEST =		Yes
+MODPY_PYTEST =		Yes
 
 .include <bsd.port.mk>
