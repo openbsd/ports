@@ -1,0 +1,9 @@
+@bin bin/swayidle
+@man man/man1/swayidle.1
+share/bash-completion/completions/swayidle
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/swayidle.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_swayidle

@@ -1,0 +1,2 @@
+This is sway's idle management daemon, swayidle. It is compatible with
+any Wayland compositor which implements the ext-idle-notify protocol.
