@@ -1,0 +1,15 @@
+speechPlayer: fix sample type qualification to avoid ambiguity
+https://github.com/espeak-ng/espeak-ng/commit/497c6217d696c1190c3e8b992ff7b9110eb3bedd
+
+Index: src/speechPlayer/src/speechWaveGenerator.cpp
+--- src/speechPlayer/src/speechWaveGenerator.cpp.orig
++++ src/speechPlayer/src/speechWaveGenerator.cpp
+@@ -194,7 +194,7 @@ class SpeechWaveGeneratorImpl: public SpeechWaveGenera
+ 	SpeechWaveGeneratorImpl(int sr): sampleRate(sr), voiceGenerator(sr), fricGenerator(), cascade(sr), parallel(sr), frameManager(NULL) {
+ 	}
+ 
+-	unsigned int generate(const unsigned int sampleCount, sample* sampleBuf) {
++	unsigned int generate(const unsigned int sampleCount, ::sample* sampleBuf) {
+ 		if(!frameManager) return 0; 
+ 		double val=0;
+ 		for(unsigned int i=0;i<sampleCount;++i) {

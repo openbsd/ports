@@ -4,7 +4,7 @@ GH_ACCOUNT=		espeak-ng
 GH_PROJECT=		espeak-ng
 GH_TAGNAME=		1.51
 PKGNAME=		${DISTNAME:S/-ng//}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	espeak-ng                 0.0 # 2.51
 
