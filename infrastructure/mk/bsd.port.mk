@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1633 2023/11/10 17:30:32 jca Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1634 2023/11/11 10:12:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -69,6 +69,9 @@ IGNORE ?=				Yes
 _MAKEFILE_INC_DONE ?=	Yes
 ECHO_MSG ?=				:
 .endif
+
+UNLINKED ?=
+BUILD_UNLINKED ?=
 
 # include guard so that other parts don't include this twice
 _BSD_PORT_MK = Done
@@ -820,6 +823,17 @@ _NONDEFAULT_LD ?= No
 .if ${_NONDEFAULT_LD:L} == "yes"
 .  if !exists(${_LD_PROGRAM})
 IGNORE = "requires ${_LD_PROGRAM}"
+.  endif
+.endif
+_f =
+.if !empty(UNLINKED)
+.  for _e in ${BUILD_UNLINKED}
+.    if !empty(UNLINKED:M${_e})
+_f = build
+.    endif
+.  endfor
+.  if empty(_f)
+IGNORE += "Not built because unlinked (${UNLINKED})"
 .  endif
 .endif
 
