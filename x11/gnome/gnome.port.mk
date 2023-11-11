@@ -1,13 +1,15 @@
 # Module for GNOME and MATE ports; see gnome-module(5)
 
-# XXX add support for MATE
 .if !empty(DIST_TUPLE)
 .  for _template _account _project _id _targetdir in ${DIST_TUPLE}
+# XXX add support for MATE
+.    if "${_template}" == "gnome"
 GNOME_PROJECT ?=	${_project:L}
 GNOME_VERSION ?=	${_id:C/^(v|V)[-._]?([0-9])/\2/}
 WRKDIST ?=		${WRKDIR}/${_project}-${_id}
 EXTRACT_SUFX ?=		.tar.gz
 SITES ?=		# empty
+.    endif
 .  endfor
 .endif
 
