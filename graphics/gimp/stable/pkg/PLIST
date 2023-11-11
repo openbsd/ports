@@ -4445,6 +4445,8 @@ share/gimp/2.0/themes/Dark/ui/gimp-handle-h.png
 share/gimp/2.0/themes/Dark/ui/gimp-handle-v.png
 share/gimp/2.0/themes/Dark/ui/gimp-line-h.png
 share/gimp/2.0/themes/Dark/ui/gimp-line-v.png
+share/gimp/2.0/themes/Dark/ui/gimp-lock-button-active.png
+share/gimp/2.0/themes/Dark/ui/gimp-lock-button-prelight.png
 share/gimp/2.0/themes/Dark/ui/gimp-menu-line-h.png
 share/gimp/2.0/themes/Dark/ui/gimp-tooltip-bg.png
 share/gimp/2.0/themes/Dark/ui/list_header-pressed.png
