@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1576 2023/11/11 12:29:58 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1577 2023/11/11 12:40:48 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -793,6 +793,7 @@ my $stem_extensions = {
 	'spidermonkey102' => 'spidermonkey115',
 	'endeavor' => 'endeavour',
 	'py-cryptodome' => 'py3-cryptodome',
+	'py-yara' => 'py3-yara',
 };
 
 my $obsolete_reason = {};

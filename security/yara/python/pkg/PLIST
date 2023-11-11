@@ -1,3 +1,4 @@
+@pkgpath security/yara/python
 @so lib/python${MODPY_VERSION}/site-packages/yara.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/yara_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/yara_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -5,7 +5,7 @@ GH_PROJECT = 	yara-python
 MODPY_EGG_VERSION =	4.2.0
 PKGNAME =		py-yara-${MODPY_EGG_VERSION}
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -16,7 +16,7 @@ MODULES = lang/python
 MODPY_SETUPTOOLS = Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_DISTUTILS_BUILDARGS = --dynamic-linking
 MAKE_FLAG +=	CPPFLAGS="-I${LOCALBASE}/include/yara/"
