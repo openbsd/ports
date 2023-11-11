@@ -1,7 +1,7 @@
 COMMENT =		PDF viewer for X11
 DISTNAME =		xpdf-4.04
 CATEGORIES =		textproc x11
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 HOMEPAGE =		https://www.xpdfreader.com/
@@ -11,12 +11,13 @@ SITES =			https://dl.xpdfreader.com/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets c cups fontconfig freetype m png z
+WANTLIB += Qt5Widgets c cups fontconfig freetype m paper png z
 
 MODULES =		devel/cmake \
 			x11/qt5
 
-LIB_DEPENDS =		graphics/png
+LIB_DEPENDS =		graphics/png \
+			print/libpaper
 
 RUN_DEPENDS =		print/ghostscript/gnu-fonts
 
