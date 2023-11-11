@@ -148,7 +148,7 @@ CONFIGURE_ARGS +=	--with-system-zlib	\
 
 # firefox >= 46 defaults to gtk+3
 .if !defined(MOZILLA_USE_WAYLAND)
-CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3-x11-only
+CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 .else
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3-x11-wayland
 .endif
