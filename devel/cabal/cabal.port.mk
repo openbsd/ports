@@ -83,6 +83,7 @@ MODCABAL_post-extract += \
 .endfor  # MODCABAL_MANIFEST
 
 MODCABAL_post-extract += \
+	&& echo "package *\n ghc-options: -fdiagnostics-color=never" >> ${WRKSRC}/cabal.project.local \
 	&& echo "package *\n ghc-options: -split-sections\n" >> ${WRKSRC}/cabal.project.local \
 	&& echo "package ${MODCABAL_STEM}\n ld-options: -Wl,--gc-sections,--build-id" >> ${WRKSRC}/cabal.project.local
 
