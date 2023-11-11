@@ -2,7 +2,7 @@ COMMENT=		fingerprint scanning functionality over D-Bus
 
 DISTNAME=		fprintd-0.8.1
 EXTRACT_SUFX=		.tar.xz
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=    		sysutils
 
@@ -26,6 +26,8 @@ USE_GMAKE=		Yes
 LIB_DEPENDS=		security/libfprint \
 			sysutils/polkit \
 			x11/dbus-glib
+
+RUN_DEPENDS=		x11/dbus,-suid
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,6 +1,7 @@
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -33,7 +34,8 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			x11/mate/libmatekbd \
 			x11/mate/libmatemixer
 
-RUN_DEPENDS=		sysutils/consolekit
+RUN_DEPENDS=		sysutils/consolekit \
+			x11/dbus,-suid
 
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-settings-daemon/xdg/autostart \
 			sysconfdir=${PREFIX}/share/examples/mate-settings-daemon \
