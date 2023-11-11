@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1634 2023/11/11 10:12:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1635 2023/11/11 10:52:15 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -833,7 +833,7 @@ _f = build
 .    endif
 .  endfor
 .  if empty(_f)
-IGNORE += "Not built because unlinked (${UNLINKED})"
+IGNORE += "Not built because unlinked \(${UNLINKED}\)"
 .  endif
 .endif
 
