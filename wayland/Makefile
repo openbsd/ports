@@ -9,6 +9,8 @@
      #SUBDIR += sway
      #SUBDIR += swaybg
      #SUBDIR += swayimg
+     SUBDIR += swayidle
+     SUBDIR += swaylock
      SUBDIR += wayland
      SUBDIR += wayland-protocols
      SUBDIR += wayland-utils
