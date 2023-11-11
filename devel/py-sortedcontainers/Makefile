@@ -1,25 +1,25 @@
-COMMENT =	Python Sorted Container Types
+COMMENT=	Python Sorted Container Types
 
-MODPY_EGG_VERSION =	2.4.0
-REVISION =	2
-DISTNAME =	sortedcontainers-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
+MODPY_EGG_VERSION=	2.4.0
+REVISION=	3
+DISTNAME=	sortedcontainers-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	http://www.grantjenks.com/docs/sortedcontainers/
+# https://github.com/grantjenks/python-sortedcontainers
+HOMEPAGE=	https://www.grantjenks.com/docs/sortedcontainers/
 
 # Apache v2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_PI =	Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
 
-FLAVORS =	python3
-FLAVOR ?=
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD=	setuptools
 
 # PyPI tarball doesn't currently include tests
 # https://github.com/grantjenks/python-sortedcontainers/pull/130
