@@ -1422,7 +1422,6 @@
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
      SUBDIR += py-frozenlist,python3
-     SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
      SUBDIR += py-future,python3
