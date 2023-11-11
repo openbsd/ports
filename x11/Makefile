@@ -48,7 +48,6 @@
      SUBDIR += dbusmenu-qt
      SUBDIR += dmenu
      SUBDIR += dragon-drop
-     SUBDIR += driconf
      SUBDIR += dstat
      SUBDIR += dunst
      SUBDIR += dwm
@@ -76,7 +75,6 @@
      SUBDIR += fsv
      SUBDIR += fvwm2
      SUBDIR += fvwm3
-     SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
      SUBDIR += gentoo

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1577 2023/11/11 12:40:48 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1578 2023/11/11 12:42:44 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1879,6 +1879,9 @@ setup_obsolete_reason(
 	3 => 'irc',
 	1 => 'volatility',
 	3 => 'pokerth',
+	3 => 'driconf',
+	3 => 'GAMMApage',
+	3 => 'comix',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

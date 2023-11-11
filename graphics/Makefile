@@ -30,7 +30,6 @@
      SUBDIR += colord
      SUBDIR += colord-gtk
      SUBDIR += colorexplorer
-     SUBDIR += comix
      SUBDIR += cstitch
      SUBDIR += ctl
      SUBDIR += darktable
