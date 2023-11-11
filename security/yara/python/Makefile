@@ -5,15 +5,15 @@ GH_PROJECT = 	yara-python
 MODPY_EGG_VERSION =	4.2.0
 PKGNAME =		py-yara-${MODPY_EGG_VERSION}
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += pthread ${MODPY_WANTLIB} yara
+WANTLIB += yara
 
-MODULES = lang/python
-MODPY_SETUPTOOLS = Yes
+MODULES =	lang/python
+MODPY_PYBUILD =	Yes
 
 FLAVORS =	python3
 FLAVOR =	python3

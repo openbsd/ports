@@ -1,14 +1,23 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -245,6 +245,10 @@ class BuildExtCommand(build_ext):
+@@ -137,7 +137,7 @@ class BuildExtCommand(build_ext):
+   def initialize_options(self):
+ 
+     build_ext.initialize_options(self)
+-    self.dynamic_linking = None
++    self.dynamic_linking = True
+     self.enable_magic = None
+     self.enable_cuckoo = None
+     self.enable_dotnet = None
+@@ -244,6 +244,10 @@ class BuildExtCommand(build_ext):
+ 
      if has_header('stdbool.h'):
        module.define_macros.append(('HAVE_STDBOOL_H', '1'))
- 
++
 +    if 'openbsd' in self.plat_name:
 +      module.include_dirs.append('${LOCALBASE}/include')
 +      module.library_dirs.append('${LOCALBASE}/lib')
-+
+ 
      if has_function('memmem'):
        module.define_macros.append(('HAVE_MEMMEM', '1'))
-     if has_function('strlcpy'):
