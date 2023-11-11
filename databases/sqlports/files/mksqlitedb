@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.65 2023/11/11 11:16:02 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.66 2023/11/11 11:53:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -224,7 +224,7 @@ my $h = sub { # SIGHANDLER
 	kill $sig, $$;
 };
 
-for my $s (qw(INT QUIT __DIE__ TERM HUP)) {
+for my $s (qw(INT QUIT TERM HUP)) {
 	$SIG{$s} = $h;
 }
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.46 2023/09/06 21:07:16 espie Exp $
+# $OpenBSD: Info.pm,v 1.47 2023/11/11 11:53:07 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -111,6 +111,7 @@ our $vars = {
     FIX_CRLF_FILES => 'CRLFFiles',
     MODULESVAR => 'ModulesVarVar',
     DIST_TUPLE => 'DistTupleVar',
+    UNLINKED => 'UnlinkedVar',
 };
 
 my @indexed = qw(FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE

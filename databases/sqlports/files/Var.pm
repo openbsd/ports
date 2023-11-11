@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.74 2023/09/25 17:10:44 espie Exp $
+# $OpenBSD: Var.pm,v 1.75 2023/11/11 11:53:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -1258,6 +1258,10 @@ sub keyword_table($) { '_Keywords2' }
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
 sub keyword_table($) { '_AutoVersion' }
+
+package UnlinkedVar;
+our @ISA = qw(OptKeyVar);
+sub keyword_table($) { '_Unlinked' }
 
 package ModulesVarVar;
 our @ISA = qw(KeyVar);
