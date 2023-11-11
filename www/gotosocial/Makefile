@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.11.1
+MODGO_VERSION =	v0.12.2
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -28,6 +28,7 @@ MODULES =	lang/go
 WRKDIST =	${WRKSRC}
 
 MODGO_LDFLAGS += -X 'main.Version=${MODGO_VERSION:S/v//}'
+MODGO_FLAGS	+= -mod=mod
 
 TEST_ENV +=	GTS_DB_ADDRESS=":memory:" \
 		GTS_DB_TYPE="sqlite"
@@ -41,9 +42,6 @@ post-extract:
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/example/config.yaml
-
-pre-build:
-	rm -rf ${WRKSRC}/vendor
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gotosocial \
