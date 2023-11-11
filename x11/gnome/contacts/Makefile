@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2023/11/04 15:06:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2023/11/11 16:09:55 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		45.0
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -23,14 +24,14 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection gtk-update-icon-cache vala
 
-BUILD_DEPENDS=		sysutils/libportal,-gtk4
+BUILD_DEPENDS=		sysutils/flatpack/libportal,-gtk4
 
 LIB_DEPENDS=		graphics/libqrencode \
 			net/telepathy/folks \
-			sysutils/libportal \
+			sysutils/flatpack/libportal \
 			x11/gnome/libadwaita
 
-RUN_DEPENDS=		sysutils/libportal,-gtk4
+RUN_DEPENDS=		sysutils/flatpack/libportal,-gtk4
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

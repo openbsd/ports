@@ -6,7 +6,7 @@ GNOME_VERSION=		43.0
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-nautilus=	1
 
 CATEGORIES=		archivers
@@ -42,7 +42,7 @@ RUN_DEPENDS-main +=	archivers/unrar
 
 LIB_DEPENDS-main=	archivers/libarchive \
 			devel/json-glib \
-			sysutils/libportal,-gtk3 \
+			sysutils/flatpack/libportal,-gtk3 \
 			x11/libhandy
 
 LIB_DEPENDS-nautilus=	x11/gnome/nautilus

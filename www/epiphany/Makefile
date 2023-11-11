@@ -2,6 +2,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	45.1
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	devel/iso-codes \
 		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	archivers/libarchive \
-		sysutils/libportal,-gtk4 \
+		sysutils/flatpack/libportal,-gtk4 \
 		www/webkitgtk4,webkitgtk60 \
 		x11/gnome/gcr4 \
 		x11/gnome/libadwaita

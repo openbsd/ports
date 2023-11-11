@@ -8,7 +8,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		43.7
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		devel
 
@@ -57,7 +57,7 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			devel/vte3,-gtk4 \
 			editors/editorconfig-core-c \
 			sysutils/dspy \
-			sysutils/libportal,-gtk4 \
+			sysutils/flatpack/libportal,-gtk4 \
 			textproc/cmark \
 			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/libpanel \
