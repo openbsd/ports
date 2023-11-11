@@ -6,15 +6,15 @@
 COMMENT-main=		standard for creating app stores across distributions
 COMMENT-qt5=		Qt5 interface for AppStream
 
-V=			0.16.3
+V=			0.16.4
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt5=		appstream-qt5-${V}
 
-SHARED_LIBS += appstream                 0.0 # 0.16.3
-SHARED_LIBS += appstream-compose         0.0 # 0.16.3
-SHARED_LIBS += AppStreamQt               0.0 # 0.16.3
+SHARED_LIBS += appstream                 0.1 # 0.16.4
+SHARED_LIBS += appstream-compose         0.0 # 0.16.4
+SHARED_LIBS += AppStreamQt               0.0 # 0.16.4
 
 CATEGORIES=		devel
 

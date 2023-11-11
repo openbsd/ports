@@ -25,6 +25,7 @@ include/appstream/as-checksum.h
 include/appstream/as-component.h
 include/appstream/as-content-rating.h
 include/appstream/as-context.h
+include/appstream/as-developer.h
 include/appstream/as-distro-details.h
 include/appstream/as-enum-types.h
 include/appstream/as-enums.h
