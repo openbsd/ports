@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += libportal
+     SUBDIR += xdg-dbus-proxy
      SUBDIR += xdg-desktop-portal
      SUBDIR += xdg-desktop-portal-gnome
      SUBDIR += xdg-desktop-portal-gtk
