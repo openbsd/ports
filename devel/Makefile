@@ -1423,7 +1423,6 @@
      SUBDIR += py-frozendict,python3
      SUBDIR += py-frozenlist,python3
      SUBDIR += py-funcy,python3
-     SUBDIR += py-future
      SUBDIR += py-future,python3
      SUBDIR += py-gast,python3
      SUBDIR += py-gevent,python3
