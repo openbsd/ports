@@ -1,0 +1,21 @@
+Index: xpdf-qt/XpdfWidgetPrint.cc
+--- xpdf-qt/XpdfWidgetPrint.cc.orig
++++ xpdf-qt/XpdfWidgetPrint.cc
+@@ -21,7 +21,7 @@
+ #elif defined(__APPLE__)
+ #  include <CoreFoundation/CoreFoundation.h>
+ #  include <ApplicationServices/ApplicationServices.h>
+-#elif defined(__linux__)
++#elif defined(__Linux__) || defined(__OpenBSD__)
+ #  include "PSOutputDev.h"
+ #  include <cups/cups.h>
+ #endif
+@@ -315,7 +315,7 @@ XpdfWidget::ErrorCode printPDF(PDFDoc *doc, QPrinter *
+ // Linux
+ //------------------------------------------------------------------------
+ 
+-#elif defined(__linux__)
++#elif defined(__Linux__) || defined(__OpenBSD__)
+ 
+ static void fileOut(void *stream, const char *data, int len) {
+   fwrite(data, 1, len, (FILE *)stream);

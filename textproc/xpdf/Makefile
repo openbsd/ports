@@ -1,44 +1,43 @@
-COMMENT=	PDF viewer for X11
+COMMENT =		PDF viewer for X11
+DISTNAME =		xpdf-4.04
+CATEGORIES =		textproc x11
+EPOCH =			0
 
-DISTNAME=	xpdf-3.04
-CATEGORIES=	textproc x11
-EPOCH=		0
-REVISION=	2
-
-SITES=		https://xpdfreader-dl.s3.amazonaws.com/old/
-
-HOMEPAGE=	https://www.xpdfreader.com/
+HOMEPAGE =		https://www.xpdfreader.com/
+SITES =			https://dl.xpdfreader.com/
 
 # GPLv2 only or GPLv3 only or both (at our choice)
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-LIB_DEPENDS+=	graphics/png x11/motif
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-multithreaded \
-		--without-Sgm-library \
-		--without-libpaper-library
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets c cups fontconfig freetype m png z
 
-CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
-MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+MODULES =		devel/cmake \
+			x11/qt5
 
-RUN_DEPENDS=	print/ghostscript/gnu-fonts
+LIB_DEPENDS =		graphics/png
 
-WANTLIB=	ICE SM X11 Xext Xpm Xt freetype Xm \
-		c m png pthread ${COMPILER_LIBCXX} z
+RUN_DEPENDS =		print/ghostscript/gnu-fonts
 
-COMPILER =		base-clang ports-gcc base-gcc
+CONFIGURE_ARGS =	-DOPI_SUPPORT=ON \
+			-DXPDFWIDGET_PRINTING=ON \
+			-DSYSTEM_XPDFRC=/etc/xpdfrc
 
-NO_TEST=	Yes
+# deprecated Qt5 print code fails to build with Qt6
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt6Widgets=ON
 
-# others are already in popper-utils
-PROGS=		xpdf pdfdetach pdftopng
-ALL_TARGET=	${PROGS}
+CXXFLAGS +=		-I${X11BASE}/include \
+			-I/usr/local/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib \
+			-L/usr/local/lib
+
+# other programs conflict with poppler-utils
+PROGS =			xpdf pdfdetach pdftopng
+ALL_TARGET =		${PROGS}
 
 do-install:
 .for prog in ${PROGS}
-	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf/${prog} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/xpdf*/${prog} ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/doc/${prog}.1 ${PREFIX}/man/man1/
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/xpdfrc.5 ${PREFIX}/man/man5/

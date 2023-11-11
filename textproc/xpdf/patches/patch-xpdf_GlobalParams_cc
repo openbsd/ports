@@ -1,6 +1,9 @@
---- xpdf/GlobalParams.cc.orig	Wed May 28 20:50:50 2014
-+++ xpdf/GlobalParams.cc	Fri May 30 14:27:13 2014
-@@ -120,14 +120,7 @@ static const char *displayFontDirs[] = {
+Point font path at GhostScript
+
+Index: xpdf/GlobalParams.cc
+--- xpdf/GlobalParams.cc.orig
++++ xpdf/GlobalParams.cc
+@@ -109,14 +109,7 @@ static const char *displayFontDirs[] = {
  };
  #else
  static const char *displayFontDirs[] = {
@@ -12,7 +15,7 @@
 -#if defined(__sun) && defined(__SVR4)
 -  "/usr/sfw/share/ghostscript/fonts",
 -#endif
-+  LOCALBASE "/share/fonts/ghostscript",
++  "/usr/local/share/fonts/ghostscript",
    NULL
  };
  #endif
