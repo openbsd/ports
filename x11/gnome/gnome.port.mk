@@ -4,7 +4,8 @@
 .if !empty(DIST_TUPLE)
 .  for _template _account _project _id _targetdir in ${DIST_TUPLE}
 GNOME_PROJECT ?=	${_project:L}
-GNOME_VERSION ?=	${_id}
+GNOME_VERSION ?=	${_id:C/^(v|V)[-._]?([0-9])/\2/}
+WRKDIST ?=		${WRKDIR}/${_project}-${_id}
 EXTRACT_SUFX ?=		.tar.gz
 SITES ?=		# empty
 .  endfor
