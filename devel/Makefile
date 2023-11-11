@@ -1448,7 +1448,6 @@
      SUBDIR += py-incremental,python3
      SUBDIR += py-installer,python3
      SUBDIR += py-intelhex,python3
-     SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
      SUBDIR += py-invoke,python3
      SUBDIR += py-ipykernel,python3
