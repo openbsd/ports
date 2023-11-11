@@ -1406,7 +1406,6 @@
      SUBDIR += py-elftools,python3
      SUBDIR += py-enrich,python3
      SUBDIR += py-entrypoints,python3
-     SUBDIR += py-enum34
      SUBDIR += py-esptool,python3
      SUBDIR += py-execnet,python3
      SUBDIR += py-extras,python3

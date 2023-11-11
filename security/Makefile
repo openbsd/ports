@@ -51,7 +51,6 @@
      SUBDIR += exploitdb
      SUBDIR += fcrackzip
      SUBDIR += fierce
-     SUBDIR += floss
      SUBDIR += foremost
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
@@ -319,8 +318,6 @@
      SUBDIR += py-spake2,python3
      SUBDIR += py-tlsfuzzer,python3
      SUBDIR += py-trustme,python3
-     SUBDIR += py-viv_utils
-     SUBDIR += py-vivisect
      SUBDIR += py-yaswfp,python3
      SUBDIR += py-zxcvbn,python3
      SUBDIR += qca-qt5
