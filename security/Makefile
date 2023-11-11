@@ -397,7 +397,6 @@
      SUBDIR += vaultwarden,mysql
      SUBDIR += vaultwarden,postgresql
      SUBDIR += veracrypt
-     SUBDIR += volatility
      SUBDIR += vpnc
      SUBDIR += wapiti
      SUBDIR += web-eid-app
