@@ -1,4 +1,3 @@
-No more parsing strings! - diStorm3 is really a decomposer, which means
-it takes an instruction and returns a binary structure which describes
-it rather than static text, this is great for advanced binary code
-analysis.
+diStorm3 is really a decomposer, which means it takes an instruction and
+returns a binary structure which describes it rather than static text,
+which is great for advanced binary code analysis.
