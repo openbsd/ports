@@ -1586,7 +1586,6 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap,python3
-     SUBDIR += py-sortedcontainers
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-speg,python3
