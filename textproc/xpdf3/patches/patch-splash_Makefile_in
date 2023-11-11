@@ -1,0 +1,11 @@
+--- splash/Makefile.in.orig	Wed May 28 20:50:50 2014
++++ splash/Makefile.in	Fri May 30 14:29:41 2014
+@@ -16,7 +16,7 @@ GOOLIBDIR = ../goo
+ FOFISRCDIR = $(srcdir)/../fofi
+ FOFILIBDIR = ../fofi
+ 
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(srcdir) @freetype2_CFLAGS@
+ 
+ CXX = @CXX@
+ AR = @AR@

@@ -1,0 +1,20 @@
+--- xpdf/Makefile.in.orig	Wed May 28 20:50:50 2014
++++ xpdf/Makefile.in	Fri May 30 14:28:24 2014
+@@ -19,7 +19,7 @@ FOFILIBDIR = ../fofi
+ SPLASHSRCDIR = $(srcdir)/../splash
+ SPLASHLIBDIR = ../splash
+ 
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @libpng_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@ @EXTRA_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(srcdir)/.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @libpng_CFLAGS@ @libpaper_CFLAGS@ @X_CFLAGS@ @EXTRA_CFLAGS@
+ 
+ LDFLAGS = @LDFLAGS@
+ 
+@@ -33,7 +33,7 @@ SPLASHLIBS = -L$(SPLASHLIBDIR) -lsplash
+ 
+ OTHERLIBS = @LIBS@ @libpaper_LIBS@ @EXTRA_LIBS@ \
+ 	-L$(FOFILIBDIR) -lfofi \
+-	-L$(GOOLIBDIR) -lGoo
++	-L$(GOOLIBDIR) -lGoo -pthread
+ 
+ CXX = @CXX@
+ 

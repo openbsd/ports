@@ -1,0 +1,18 @@
+--- xpdf/GlobalParams.cc.orig	Wed May 28 20:50:50 2014
++++ xpdf/GlobalParams.cc	Fri May 30 14:27:13 2014
+@@ -120,14 +120,7 @@ static const char *displayFontDirs[] = {
+ };
+ #else
+ static const char *displayFontDirs[] = {
+-  "/usr/share/ghostscript/fonts",
+-  "/usr/local/share/ghostscript/fonts",
+-  "/usr/share/fonts/default/Type1",
+-  "/usr/share/fonts/default/ghostscript",
+-  "/usr/share/fonts/type1/gsfonts",
+-#if defined(__sun) && defined(__SVR4)
+-  "/usr/sfw/share/ghostscript/fonts",
+-#endif
++  LOCALBASE "/share/fonts/ghostscript",
+   NULL
+ };
+ #endif

@@ -1,0 +1,14 @@
+Add "3" suffix to default user config file
+
+Index: xpdf/config.h
+--- xpdf/config.h.orig
++++ xpdf/config.h
+@@ -55,7 +55,7 @@
+ #if defined(VMS) || defined(_WIN32)
+ #define xpdfUserConfigFile "xpdfrc"
+ #else
+-#define xpdfUserConfigFile ".xpdfrc"
++#define xpdfUserConfigFile ".xpdfrc3"
+ #endif
+ 
+ // system config file name (set via the configure script)

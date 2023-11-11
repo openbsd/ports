@@ -1,0 +1,6 @@
+@bin bin/xpdf3
+@man man/man1/xpdf3.1
+@man man/man5/xpdfrc3.5
+share/examples/xpdf3/
+share/examples/xpdf3/xpdfrc3
+@sample ${SYSCONFDIR}/xpdfrc3

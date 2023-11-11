@@ -1,0 +1,16 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -67,6 +67,12 @@ pdfdetach:
+ 	cd @UP_DIR@splash; $(MAKE)
+ 	cd @UP_DIR@xpdf; $(MAKE) pdfdetach$(EXE)
+ 
++pdftopng:
++	cd goo; $(MAKE)
++	cd @UP_DIR@fofi; $(MAKE)
++	cd @UP_DIR@splash; $(MAKE)
++	cd @UP_DIR@xpdf; $(MAKE) pdftopng$(EXE)
++
+ pdftoppm:
+ 	cd goo; $(MAKE)
+ 	cd @UP_DIR@fofi; $(MAKE)

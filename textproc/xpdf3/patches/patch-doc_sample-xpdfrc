@@ -1,0 +1,18 @@
+--- doc/sample-xpdfrc.orig	Wed May 28 20:50:50 2014
++++ doc/sample-xpdfrc	Fri May 30 14:26:13 2014
+@@ -56,7 +56,7 @@
+ 
+ # Set the default PostScript file or command.
+ 
+-#psFile			"|lpr -Pmyprinter"
++psFile			"|lpr"
+ 
+ # Set the default PostScript paper size -- this can be letter, legal,
+ # A4, or A3.  You can also specify a paper size as width and height
+@@ -87,5 +87,5 @@
+ # Set the command used to run a web browser when a URL hyperlink is
+ # clicked.
+ 
+-#launchCommand  viewer-script
++#urlCommand	"firefox -newtab -url 'openURL(%s)'"
+ #urlCommand	"netscape -remote 'openURL(%s)'"

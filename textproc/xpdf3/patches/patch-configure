@@ -1,0 +1,14 @@
+Add "3" suffix to default user config file
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -2453,7 +2453,7 @@ if test "$sysconfdir" = '${prefix}/etc'; then
+     system_xpdfrc="$prefix/etc/xpdfrc"
+   fi
+ else
+-  system_xpdfrc="$sysconfdir/xpdfrc"
++  system_xpdfrc="$sysconfdir/xpdfrc3"
+ fi
+ cat >>confdefs.h <<_ACEOF
+ #define SYSTEM_XPDFRC "$system_xpdfrc"
