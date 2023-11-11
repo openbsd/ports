@@ -1,11 +1,7 @@
 COMMENT=		simple encrypted backup tool for GNOME
 
-GNOME_VERSION=		45.1
-GNOME_PROJECT=		deja-dup
-
-# override gnome MODULE
-SITES=	https://gitlab.gnome.org/World/deja-dup/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
+DIST_TUPLE=		gnome World deja-dup 45.1 .
+REVISION=		0
 
 CATEGORIES=		sysutils
 
