@@ -146,7 +146,7 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeRegisterContextOpenBSD_arm64.cp
 +    offset = reg_info->byte_offset - GetRegisterInfo().GetPAuthOffset();
 +    reg_value = (uint64_t)m_pacmask[offset > 0];
 +    if (reg_value.GetByteSize() > reg_info->byte_size) {
-+      reg_value.SetType(reg_info);
++      reg_value.SetType(*reg_info);
 +    }
 +
 +    return error;
