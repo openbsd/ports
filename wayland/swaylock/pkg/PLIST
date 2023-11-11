@@ -1,0 +1,13 @@
+@mode g+s
+@group auth
+@bin bin/swaylock
+@mode
+@group
+@man man/man1/swaylock.1
+share/bash-completion/completions/swaylock
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/swaylock.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_swaylock
