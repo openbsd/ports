@@ -1,6 +1,7 @@
 COMMENT =		Python module to read and work with PE files
 
 MODPY_EGG_VERSION =	2023.2.7
+REVISION =		0
 DISTNAME =		pefile-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -12,7 +13,7 @@ HOMEPAGE =		https://github.com/erocarrera/pefile
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS = 	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 FLAVORS =		python3
