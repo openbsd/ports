@@ -1,0 +1,3 @@
+Backend implementation for xdg-desktop-portal that is using GTK and various
+pieces of GNOME infrastructure, such as org.gnome.desktop.* GSettings schemas
+and the org.gnome.SessionManager and org.gnome.Screensaver D-Bus interfaces.
