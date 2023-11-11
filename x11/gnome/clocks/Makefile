@@ -1,9 +1,8 @@
-# XXX needs Use xdg-desktop-portal to get system clock format
-
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		45.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -23,6 +22,9 @@ LIB_DEPENDS=		geo/geocode-glib \
 # geocoding.vala
 BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
+
+# Use xdg-desktop-portal to get system clock format
+RUN_DEPENDS +=		sysutils/flatpack/xdg-desktop-portal
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache vala yelp
 
