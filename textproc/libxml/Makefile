@@ -4,8 +4,8 @@ COMMENT-python=		Python bindings for libxml
 GNOME_VERSION=		2.11.5
 GNOME_PROJECT=		libxml2
 
-PKGNAME-main=		libxml-${VERSION}
-PKGNAME-python=		py3-libxml-${VERSION}
+PKGNAME-main=		libxml-${GNOME_VERSION}
+PKGNAME-python=		py3-libxml-${GNOME_VERSION}
 
 SHARED_LIBS +=  xml2                 19.0     # 13.5
 
