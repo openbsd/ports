@@ -2,7 +2,7 @@ COMMENT=		GNOME backend implementation for xdg-desktop-portal
 
 GNOME_PROJECT=		xdg-desktop-portal-gnome
 GNOME_VERSION=		45.0
-REVISION=		0
+REVISION=		1
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
@@ -25,7 +25,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 # XXX if we don't specify it, we actually need systemd to get systemduserunitdir
 # from pkg-config(1)
-CONFIGURE_ARGS +=	-Dsystemduserunitdir=${PREFIX}/lib/systemd
+CONFIGURE_ARGS +=	-Dsystemduserunitdir=${PREFIX}/lib/systemd/user
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

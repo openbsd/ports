@@ -1,4 +1,4 @@
-lib/systemd/xdg-desktop-portal-gnome.service
+lib/systemd/user/xdg-desktop-portal-gnome.service
 @bin libexec/xdg-desktop-portal-gnome
 share/applications/xdg-desktop-portal-gnome.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.gnome.service
