@@ -2,7 +2,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		45.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -33,7 +33,7 @@ RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \
-			sysutils/flatpack/libportal,-gtk4 \
+			sysutils/flatpak/libportal,-gtk4 \
 			x11/gnome/autoar \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/libadwaita \

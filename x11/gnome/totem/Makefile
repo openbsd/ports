@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -39,7 +39,7 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 LIB_DEPENDS=		devel/gobject-introspection \
 			devel/libpeas \
-			sysutils/flatpack/libportal,-gtk3 \
+			sysutils/flatpak/libportal,-gtk3 \
 			x11/gnome/desktop \
 			x11/gnome/grilo \
 			x11/gnome/totem-pl-parser \

@@ -5,7 +5,7 @@ COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		45.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		devel/libpeas \
 			graphics/lcms2 \
 			graphics/libexif \
-			sysutils/flatpack/libportal,-gtk3 \
+			sysutils/flatpak/libportal,-gtk3 \
 			textproc/exempi \
 			x11/gnome/desktop \
 			x11/libhandy

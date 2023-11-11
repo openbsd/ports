@@ -41,7 +41,7 @@ CONFIGURE_ARGS +=	-Dpytest=disabled
 
 # XXX cyclic dependency: libportal -> xdg-desktop-portal -> libportal;
 # only needed for tests
-#BUILD_DEPENDS +=	sysutils/flatpack/libportal
+#BUILD_DEPENDS +=	sysutils/flatpak/libportal
 CONFIGURE_ARGS +=	-Dlibportal=disabled
 
 # XXX needs org.freedesktop.portal.Flatpak.xml

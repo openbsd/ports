@@ -2,6 +2,7 @@ COMMENT=		GTK backend implementation for xdg-desktop-portal
 
 V=			1.15.1
 DISTNAME=		xdg-desktop-portal-gtk-${V}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -19,12 +20,12 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			sysutils/flatpack/xdg-desktop-portal
+			sysutils/flatpak/xdg-desktop-portal
 
 LIB_DEPENDS=		x11/gnome/desktop
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			sysutils/flatpack/xdg-desktop-portal
+			sysutils/flatpak/xdg-desktop-portal
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

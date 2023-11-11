@@ -2,6 +2,7 @@ COMMENT=		GNOME backend implementation for xdg-desktop-portal
 
 GNOME_PROJECT=		xdg-desktop-portal-gnome
 GNOME_VERSION=		45.0
+REVISION=		0
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
@@ -14,13 +15,13 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-BUILD_DEPENDS=		sysutils/flatpack/xdg-desktop-portal-gtk
+BUILD_DEPENDS=		sysutils/flatpak/xdg-desktop-portal-gtk
 
 LIB_DEPENDS=		x11/gnome/desktop,-gtk4 \
 			x11/gnome/libadwaita
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			sysutils/flatpack/xdg-desktop-portal-gtk
+			sysutils/flatpak/xdg-desktop-portal-gtk
 
 # XXX if we don't specify it, we actually need systemd to get systemduserunitdir
 # from pkg-config(1)
