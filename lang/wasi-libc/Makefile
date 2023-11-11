@@ -7,7 +7,7 @@ DISTNAME =	wasi-libc-0.20220413
 REVISION =	0
 
 DISTFILES =	${GH_DISTFILE}
-DISTFILES.h = 	wasi-libc-llvm${MODCLANG_VERSION}-std-headers.tar.gz
+DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
 SITES.h =	https://nerd.hu/distfiles/
 
 CATEGORIES =	lang
