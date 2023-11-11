@@ -1,6 +1,7 @@
 COMMENT =	self-contained cryptographic library for Python
 
 MODPY_EGG_VERSION =	3.19.0
+REVISION =	0
 DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 
@@ -16,13 +17,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-.if ${FLAVOR:Mpython3}
 TEST_DEPENDS =		security/py-cryptodome-test-vectors${MODPY_FLAVOR}
-.endif
 
 RUN_DEPENDS =		devel/gmp
 

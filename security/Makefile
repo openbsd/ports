@@ -272,7 +272,6 @@
      SUBDIR += py-axolotl,python3
      SUBDIR += py-axolotl-curve25519,python3
      SUBDIR += py-bcrypt,python3
-     SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
      SUBDIR += py-cryptodome-test-vectors,python3
      SUBDIR += py-cryptography,python3

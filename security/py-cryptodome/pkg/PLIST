@@ -1,6 +1,6 @@
+@pkgpath security/py-cryptodome
 ${MODPY_COMMENT}@conflict ${MODPY_PY_PREFIX}crypto-*
 ${MODPY_COMMENT}@pkgpath security/py-crypto,python3
-!%%python3%%
 %%aesni%%
 lib/python${MODPY_VERSION}/site-packages/Crypto/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/
