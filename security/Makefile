@@ -299,7 +299,6 @@
      SUBDIR += py-paramiko,python3
      SUBDIR += py-passlib,python3
      SUBDIR += py-pbkdf2,python3
-     SUBDIR += py-pefile
      SUBDIR += py-pefile,python3
      SUBDIR += py-pgpdump,python3
      SUBDIR += py-potr,python3

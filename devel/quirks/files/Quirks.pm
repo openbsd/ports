@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1578 2023/11/11 12:42:44 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1579 2023/11/11 12:49:57 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -794,6 +794,7 @@ my $stem_extensions = {
 	'endeavor' => 'endeavour',
 	'py-cryptodome' => 'py3-cryptodome',
 	'py-yara' => 'py3-yara',
+	'py-pefile' => 'py3-pefile',
 };
 
 my $obsolete_reason = {};
