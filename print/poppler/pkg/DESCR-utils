@@ -2,6 +2,8 @@ This package contains xpdf-workalike command line utilities for getting
 information of PDF documents, convert them to other formats, or
 manipulate them:
 
+    * pdfattach -- file creator
+    * pdfdetach -- file extractor
     * pdffonts -- font analyzer
     * pdfimages -- image extractor
     * pdfinfo -- document information extractor
