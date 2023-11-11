@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1635 2023/11/11 10:52:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1636 2023/11/11 11:53:38 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1345,7 +1345,8 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	COMPILER COMPILER_LANGS COMPILER_LINKS \
 	SUBST_VARS UPDATE_PLIST_ARGS \
 	PKGPATHS DEBUG_PACKAGES DEBUG_CONFIGURE_ARGS \
-	FIX_CRLF_FILES EXTRACT_FILES DIST_TUPLE DIST_TUPLE_MV
+	FIX_CRLF_FILES EXTRACT_FILES DIST_TUPLE DIST_TUPLE_MV \
+	UNLINKED
 .if !empty(MODULES)
 .  for _m in ${MODULES}
 _ALL_VARIABLES += ${.VARIABLES:MMOD${_m:T:U}*}
