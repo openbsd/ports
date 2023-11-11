@@ -1,7 +1,7 @@
 COMMENT=	logging API for C++
 
 # XXX tried updating to 2.0.4 and 2.1.0 but net/kea doesn't exit properly
-# (no config needed; just install kea and start/stop)
+# (no config needed; just install kea and start/stop). same with kea 2.5.3.
 V=		1_2_2
 DISTNAME=	log4cplus-${V:S/_/./g}
 
