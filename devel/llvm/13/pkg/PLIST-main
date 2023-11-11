@@ -2853,7 +2853,7 @@ ${CLANG_INCLUDE_PATH}/stdatomic.h
 @comment ${CLANG_INCLUDE_PATH}/stdint.h
 ${CLANG_INCLUDE_PATH}/stdnoreturn.h
 ${CLANG_INCLUDE_PATH}/tbmintrin.h
-@comment ${CLANG_INCLUDE_PATH}/tgmath.h
+${CLANG_INCLUDE_PATH}/tgmath.h
 ${CLANG_INCLUDE_PATH}/tmmintrin.h
 ${CLANG_INCLUDE_PATH}/tsxldtrkintrin.h
 ${CLANG_INCLUDE_PATH}/uintrintrin.h

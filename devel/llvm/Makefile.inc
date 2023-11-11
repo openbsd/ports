@@ -187,7 +187,7 @@ post-install:
 	# search and remove headers that might conflict with base
 	# leave unwind.h in place for sparc64
 	cd ${PREFIX}/${CLANG_INCLUDE_PATH} && \
-		find . -name '*.h' | fgrep -v './unwind.h' | sed "s,./,,g" | while read h; \
+		find . -name '*.h' | fgrep -v -e './unwind.h' -e './tgmath.h' | sed "s,./,,g" | while read h; \
 		do \
 			if test -e /usr/include/$${h}; then rm $${h}; fi; \
 		done
