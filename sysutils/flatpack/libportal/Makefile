@@ -10,26 +10,24 @@ PKGNAME-gtk3=		libportal-gtk3-${V}
 PKGNAME-gtk4=		libportal-gtk4-${V}
 PKGNAME-qt5=		libportal-qt5-${V}
 
-REVISION-main=		0
-REVISION-gtk3=		0
-REVISION-gtk4=		0
-REVISION-qt5=		0
+REVISION-main=		1
+REVISION-gtk3=		1
+REVISION-gtk4=		1
+REVISION-qt5=		1
 
 SHARED_LIBS += portal                    0.0 # 1.0.0
 SHARED_LIBS += portal-gtk3               0.0 # 1.0.0
 SHARED_LIBS += portal-gtk4               0.0 # 1.0.0
 SHARED_LIBS += portal-qt5                0.0 # 1.0.0
 
-CATEGORIES=		sysutils devel
+CATEGORIES=		devel
 
 HOMEPAGE=		https://libportal.org/
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE=		Yes
 
-SITES=		https://github.com/flatpak/libportal/releases/download/${V}/
+SITES=			https://github.com/flatpak/libportal/releases/download/${V}/
 EXTRACT_SUFX=		.tar.xz
 
 # C++

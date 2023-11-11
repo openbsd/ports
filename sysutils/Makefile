@@ -106,6 +106,7 @@
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flashrom
+     SUBDIR += flatpack
      SUBDIR += fleetctl
      SUBDIR += flock
      SUBDIR += fprintd
@@ -169,7 +170,6 @@
      SUBDIR += libluksde
      SUBDIR += libmsiecf
      SUBDIR += libolecf
-     SUBDIR += libportal
      SUBDIR += libptytty
      SUBDIR += libqcow
      SUBDIR += libregf

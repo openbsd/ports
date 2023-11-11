@@ -1,3 +1,4 @@
+@pkgpath sysutils/libportal,-gtk3
 include/libportal-gtk3/
 include/libportal-gtk3/portal-gtk3.h
 lib/girepository-1.0/XdpGtk3-1.0.typelib
