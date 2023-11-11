@@ -1,14 +1,8 @@
 COMMENT=		simple note editor
 
-GNOME_PROJECT=		gnome-notes
+DIST_TUPLE=		gnome GNOME gnome-notes BIJIBEN_${GNOME_VERSION:S/./_/} .
 GNOME_VERSION=		40.1
-REVISION=		6
-
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/BIJIBEN_${GNOME_VERSION:S/./_/}/
-DISTFILES=		${GNOME_PROJECT}-BIJIBEN_${GNOME_VERSION:S/./_/}${EXTRACT_SUFX}
-WRKDIST=		${WRKDIR}/${GNOME_PROJECT}-BIJIBEN_${GNOME_VERSION:S/./_/}
-EXTRACT_SUFX=		.tar.gz
+REVISION=		7
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
