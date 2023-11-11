@@ -30,7 +30,7 @@ LIB_DEPENDS=	textproc/opensp \
 BUILD_DEPENDS =	devel/help2man
 
 CONFIGURE_STYLE =	gnu
-CXXFLAGS_base-clang =	-std=c++14
+CXXFLAGS =	-std=gnu++14
 # iconv.h
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
