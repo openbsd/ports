@@ -1,3 +1,5 @@
+@pkgpath net/freeradius,-python
+@pkgpath net/freeradius3,-python
 @pkgpath net/freeradius3,-python3
 @so lib/freeradius/rlm_python3.so
 share/examples/freeradius/mods-available/python3

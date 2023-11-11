@@ -5,7 +5,6 @@ COMMENT-ldap=	freeradius ldap rlm addon
 COMMENT-memcached= freeradius memcached rlm addon
 COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
-COMMENT-python=	freeradius python2 rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
 V=		3.2.3
@@ -19,8 +18,10 @@ PKGNAME-ldap=	freeradius-ldap-$V
 PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
-PKGNAME-python=	freeradius-python-$V
 PKGNAME-python3= freeradius-python3-$V
+
+REVISION-main=	  0
+REVISION-python3= 0
 
 CATEGORIES=	net security
 
@@ -48,7 +49,8 @@ CONFIGURE_ENV=	ac_cv_path_LOCATE= \
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius \
 		--without-rlm_mongo \
 		--without-rlm_oracle \
-		--without-rlm_pam
+		--without-rlm_pam \
+		--without-rlm_python
 # No option to disable collectd; bodged via patch-configure.
 
 TEST_TARGET=	test
@@ -63,7 +65,7 @@ MODULES=	lang/python
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python -python3
+MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python3
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	no#...uses jlibtool, which is compiled during build
@@ -90,14 +92,6 @@ PSEUDO_FLAVORS+= no_${i:S/-//}
 FLAVOR?=
 
 .include <bsd.port.arch.mk>
-
-# rlm_python
-.if ! ${BUILD_PACKAGES:M-python}
-CONFIGURE_ARGS+=	--without-rlm_python
-.endif
-LIB_DEPENDS-python=	lang/python/2.7
-WANTLIB-python=		python2.7 intl m pthread util
-RUN_DEPENDS-python=	lang/python/2.7
 
 # rlm_python3
 .if ${BUILD_PACKAGES:M-python3}
