@@ -1,37 +1,28 @@
+Don't attempt to intercept syscall(2) if not available.
+
 Index: src/lib/syscall.c
 --- src/lib/syscall.c.orig
 +++ src/lib/syscall.c
-@@ -457,7 +457,8 @@ LIBC_SYSCALL_RET_TYPE tsocks_syscall(long int number, 
- 		ret = handle_close(args);
- 		break;
- 	case TSOCKS_NR_MMAP:
--#if (defined(__NetBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__)) && defined(__x86_64)
-+#if (defined(__NetBSD__) || defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || \
-+		defined(__OpenBSD__) && defined(__x86_64))
- 		/*
- 		 * On an 64 bit *BSD system, __syscall(2) should be used for mmap().
- 		 * This is NOT suppose to happen but for protection we deny that call.
-@@ -486,7 +487,7 @@ LIBC_SYSCALL_RET_TYPE tsocks_syscall(long int number, 
- 		 * own memory using mmap() called by syscall(). Same for munmap().
- 		 */
- 		ret = handle_mmap(args);
--#endif /* __NetBSD__, __FreeBSD__, __FreeBSD_kernel__, __x86_64 */
-+#endif /* __NetBSD__, __FreeBSD__, __FreeBSD_kernel__, __x86_64, __OpenBSD__ */
- 		break;
- 	case TSOCKS_NR_MUNMAP:
- 		ret = handle_munmap(args);
-@@ -596,7 +597,7 @@ LIBC_SYSCALL_DECL
- }
+@@ -442,6 +442,7 @@ static LIBC_SYSCALL_RET_TYPE handle_memfd_create(va_li
+ /*
+  * Torsocks call for syscall(2)
+  */
++#ifdef HAVE_SYSCALL
+ LIBC_SYSCALL_RET_TYPE tsocks_syscall(long int number, va_list args)
+ {
+ 	LIBC_SYSCALL_RET_TYPE ret;
+@@ -594,7 +595,9 @@ LIBC_SYSCALL_DECL
  
- /* Only used for *BSD systems. */
--#if (defined(__NetBSD__) || defined(__FreeBSD__))
-+#if (defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__))
- 
- /* __syscall(2) */
- TSOCKS_LIBC_DECL(__syscall, LIBC___SYSCALL_RET_TYPE, LIBC___SYSCALL_SIG)
-@@ -660,4 +661,4 @@ LIBC___SYSCALL_DECL
  	return ret;
  }
++#endif /* HAVE_SYSCALL */
  
--#endif /* __NetBSD__, __FreeBSD__ */
-+#endif /* __NetBSD__, __FreeBSD__, __OpenBSD__ */
++#ifdef HAVE___SYSCALL
+ /* Only used for *BSD systems. */
+ #if (defined(__NetBSD__) || defined(__FreeBSD__))
+ 
+@@ -661,3 +664,4 @@ LIBC___SYSCALL_DECL
+ }
+ 
+ #endif /* __NetBSD__, __FreeBSD__ */
++#endif /* HAVE___SYSCALL */

@@ -1,0 +1,21 @@
+Don't require syscall and __syscall functions.
+
+For upstream: needs an autoheader call to update include/config.h.in
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -53,10 +53,12 @@ AC_CHECK_HEADERS(dlfcn.h sys/syscall.h sys/socket.h ar
+ 
+ dnl Checks for required library functions.
+ AC_CHECK_FUNCS(strcspn strdup strerror strcasecmp strncasecmp mmap munmap \
+-               socket connect close syscall recv send memset memcpy strlen \
++               socket connect close recv send memset memcpy strlen \
+                strncpy strcmp malloc calloc strstr strtoul free,,
+ 	[AC_MSG_ERROR("Required function not found")]
+ )
++dnl Checks for optional library functions
++AC_CHECK_FUNCS(syscall __syscall,,)
+ 
+ ##############################################################################
+ # 3. Determine libraries we need to include when linking libtorsocks.

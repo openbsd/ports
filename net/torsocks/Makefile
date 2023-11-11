@@ -1,8 +1,9 @@
 COMMENT =		socks proxy for use with tor
 
 DISTNAME =		torsocks-2.3.0
+REVISION =		0
 
-SHARED_LIBS =		torsocks	1.0 # 0.0
+SHARED_LIBS =		torsocks	2.0 # 0.0
 
 CATEGORIES =		net
 
@@ -20,21 +21,13 @@ SITES=			https://gitweb.torproject.org/torsocks.git/snapshot/
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 USE_LIBTOOL =		gnu
 
 RUN_DEPENDS =		net/tor
 
 FAKE_FLAGS =		CONFDIR=${PREFIX}/share/examples/torsocks
 
-CONFIGURE_STYLE =	gnu
-
-pre-patch:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+CONFIGURE_STYLE =	autoreconf autoheader
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/bin/torsocks.in
