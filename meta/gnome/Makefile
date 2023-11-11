@@ -8,6 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
 REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -34,6 +35,11 @@ RUN_DEPENDS-main +=	net/avahi
 # ibus IM modules
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
+
+# elements/vm/common-deps.bst / core-deps
+RUN_DEPENDS-main +=	flatpack/xdg-desktop-portal \
+			flatpack/xdg-desktop-portal-gnome \
+			flatpack/xdg-desktop-portal-gtk
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
