@@ -1525,7 +1525,6 @@
      SUBDIR += py-pip,python3
      SUBDIR += py-pkgconfig,python3
      SUBDIR += py-pluggy,python3
-     SUBDIR += py-plugnplay
      SUBDIR += py-plugnplay,python3
      SUBDIR += py-ply,python3
      SUBDIR += py-poetry-core,python3
@@ -1597,7 +1596,6 @@
      SUBDIR += py-straight.plugin,python3
      SUBDIR += py-suds,python3
      SUBDIR += py-sure,python3
-     SUBDIR += py-tabulate
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora,python3
      SUBDIR += py-tenacity,python3
