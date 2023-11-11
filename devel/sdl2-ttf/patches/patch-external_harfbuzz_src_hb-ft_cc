@@ -1,0 +1,30 @@
+Fix build error with clang-16:
+error: cast from 'void (*)(FT_Face)' (aka 'void (*)(FT_FaceRec_ *)') to 'FT_Generic_Finalizer' (aka 'void (*)(void *)') converts to incompatible function type [-Werror,-Wcast-function-type-strict]
+
+Subset of https://github.com/harfbuzz/harfbuzz/commit/d88269c827895b38f99f7cf741fa60210d4d5169
+
+Index: external/harfbuzz/src/hb-ft.cc
+--- external/harfbuzz/src/hb-ft.cc.orig
++++ external/harfbuzz/src/hb-ft.cc
+@@ -729,8 +729,9 @@ hb_ft_face_create_referenced (FT_Face ft_face)
+ }
+ 
+ static void
+-hb_ft_face_finalize (FT_Face ft_face)
++hb_ft_face_finalize (void *arg)
+ {
++  FT_Face ft_face = (FT_Face) arg;
+   hb_face_destroy ((hb_face_t *) ft_face->generic.data);
+ }
+ 
+@@ -949,8 +950,9 @@ get_ft_library ()
+ }
+ 
+ static void
+-_release_blob (FT_Face ft_face)
++_release_blob (void *arg)
+ {
++  FT_Face ft_face = (FT_Face) arg;
+   hb_blob_destroy ((hb_blob_t *) ft_face->generic.data);
+ }
+ 
