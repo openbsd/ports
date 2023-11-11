@@ -2,7 +2,7 @@ COMMENT=	opensource implementation of the OFX specification
 
 V=	0.10.9
 DISTNAME=	libofx-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	textproc/opensp \
 BUILD_DEPENDS =	devel/help2man
 
 CONFIGURE_STYLE =	gnu
-CXXFLAGS =	-std=gnu++14
+CXXFLAGS +=	-std=gnu++14
 # iconv.h
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
