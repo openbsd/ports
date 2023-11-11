@@ -170,7 +170,6 @@
      SUBDIR += ipsvd
      SUBDIR += ipv6-toolkit
      SUBDIR += ipv6calc
-     SUBDIR += irc
      SUBDIR += ircII
      SUBDIR += ircd-hybrid
      SUBDIR += ircd-ratbox

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1572 2023/11/11 12:08:35 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.1573 2023/11/11 12:11:01 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1874,6 +1874,7 @@ setup_obsolete_reason(
 	1 => 'py-enum34',
 	1 => 'py-viv_utils',
 	1 => 'py-vivisect',
+	3 => 'irc',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
