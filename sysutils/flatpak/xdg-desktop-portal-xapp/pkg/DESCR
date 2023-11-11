@@ -1,0 +1,2 @@
+Backend implementation for xdg-desktop-portal that is using GTK and various
+pieces of Cinnamon/MATE/Xfce4 infrastructure.
