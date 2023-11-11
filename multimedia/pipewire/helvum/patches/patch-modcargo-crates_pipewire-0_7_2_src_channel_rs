@@ -1,3 +1,5 @@
+https://gitlab.freedesktop.org/pipewire/pipewire-rs/-/merge_requests/209
+
 Index: modcargo-crates/pipewire-0.7.2/src/channel.rs
 --- modcargo-crates/pipewire-0.7.2/src/channel.rs.orig
 +++ modcargo-crates/pipewire-0.7.2/src/channel.rs
