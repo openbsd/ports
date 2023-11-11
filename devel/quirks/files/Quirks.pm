@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1571 2023/11/11 12:00:22 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1572 2023/11/11 12:08:35 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1949,7 +1949,7 @@ my $obsolete_message = {
 	56 => "outdated, fails to establish TLS connections/cannot login, use dino, mcabber, gajim or pidgin",
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
 	58 => "abandoned upstream, use eza as a drop-in replacement",
-	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable securittty sensitive code",
+	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable security sensitive code",
 };
 
 # ->is_base_system($handle, $state):
