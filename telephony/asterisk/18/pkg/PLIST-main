@@ -1,7 +1,6 @@
 @option is-branch
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
-@conflict asterisk-fax-*
 @conflict asterisk-ogg-*
 @conflict asterisk-jabber-*
 @conflict chan_unistim-*
@@ -9,7 +8,6 @@
 @pkgpath telephony/asterisk,-ogg
 @pkgpath telephony/asterisk,-jabber
 @pkgpath telephony/chan_unistim
-@pkgpath telephony/asterisk,-fax
 @pkgpath telephony/asterisk,-main
 @pkgpath telephony/asterisk,-main,imap
 @ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
@@ -165,7 +163,6 @@ include/asterisk/refer.h
 include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
-include/asterisk/res_fax.h
 include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
@@ -466,8 +463,6 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_convert.so
 @so lib/asterisk/modules/res_crypto.so
 @so lib/asterisk/modules/res_curl.so
-@so lib/asterisk/modules/res_fax.so
-@so lib/asterisk/modules/res_fax_spandsp.so
 @so lib/asterisk/modules/res_format_attr_celt.so
 @so lib/asterisk/modules/res_format_attr_g729.so
 @so lib/asterisk/modules/res_format_attr_h263.so
@@ -761,7 +756,6 @@ share/examples/asterisk/default/res_config_sqlite.conf
 share/examples/asterisk/default/res_config_sqlite3.conf
 share/examples/asterisk/default/res_corosync.conf
 share/examples/asterisk/default/res_curl.conf
-share/examples/asterisk/default/res_fax.conf
 share/examples/asterisk/default/res_http_media_cache.conf
 share/examples/asterisk/default/res_parking.conf
 share/examples/asterisk/default/res_pktccops.conf

@@ -28,8 +28,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-main += c crypto curl curses edit gsm iconv iksemel
-WANTLIB-main += jansson m ogg portaudio pthread radcli spandsp
-WANTLIB-main += sqlite3 srtp2 ssl tiff uriparser unbound uuid
+WANTLIB-main += jansson m ogg portaudio pthread radcli
+WANTLIB-main += sqlite3 srtp2 ssl uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -46,8 +46,8 @@ ONLY_FOR_ARCHS=		${CLANG_ARCHS} ${GCC49_ARCHS}
 SHARED_LIBS+=		asteriskssl ${SHLIB_V}
 SHARED_LIBS+=		asteriskpj ${SHLIB_V}
 
-MULTI_PACKAGES=		-main -calendar -http_post -kqueue -ldap -lua \
-			-odbc -pgsql -snmp -speex -tds
+MULTI_PACKAGES=		-main -calendar -fax -http_post -kqueue \
+			-ldap -lua -odbc -pgsql -snmp -speex -tds
 .if ${SHORTVER} != 16 && ${SHORTVER} != 13
 MULTI_PACKAGES+=	-vm_imap -vm_odbc
 .endif
@@ -70,13 +70,11 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			converters/libiconv \
 			databases/sqlite3 \
 			devel/jansson \
-			graphics/tiff \
 			net/curl \
 			net/libunbound \
 			net/radcli \
 			security/libsrtp \
 			sysutils/e2fsprogs \
-			telephony/spandsp \
 			textproc/iksemel \
 			textproc/libxml \
 			textproc/libxslt \
@@ -187,6 +185,14 @@ LIB_DEPENDS-calendar=	devel/gettext,-runtime \
 CONFIGURE_ARGS+=	--with-ical=no
 .endif
 
+# fax
+COMMENT-fax=		fax support for Asterisk
+LIB_DEPENDS-fax=	telephony/spandsp
+WANTLIB-fax=		pthread spandsp tiff
+.if !${BUILD_PACKAGES:M-fax}
+CONFIGURE_ARGS+=	--with-spandsp=no
+.endif
+
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
 LIB_DEPENDS-http_post=	devel/gettext,-runtime \
@@ -236,6 +242,10 @@ CONFIGURE_ENV+=		LUA_VERSIONS="${MODLUA_VERSION}"
 .endif
 
 # odbc
+# upstream's autoconf script whines about iodbc instead of unixodbc,
+# but it seems the ticket referred to in the warning would be better
+# described as "things break when you compile against the library
+# from unixodbc but headers from iodbc".
 COMMENT-odbc=		ODBC support for Asterisk
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc pthread

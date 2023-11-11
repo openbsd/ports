@@ -147,7 +147,6 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
-include/asterisk/res_fax.h
 include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
@@ -438,8 +437,6 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_convert.so
 @so lib/asterisk/modules/res_crypto.so
 @so lib/asterisk/modules/res_curl.so
-@so lib/asterisk/modules/res_fax.so
-@so lib/asterisk/modules/res_fax_spandsp.so
 @so lib/asterisk/modules/res_format_attr_celt.so
 @so lib/asterisk/modules/res_format_attr_g729.so
 @so lib/asterisk/modules/res_format_attr_h263.so
@@ -728,7 +725,6 @@ share/examples/asterisk/default/res_config_sqlite.conf
 share/examples/asterisk/default/res_config_sqlite3.conf
 share/examples/asterisk/default/res_corosync.conf
 share/examples/asterisk/default/res_curl.conf
-share/examples/asterisk/default/res_fax.conf
 share/examples/asterisk/default/res_parking.conf
 share/examples/asterisk/default/res_pktccops.conf
 share/examples/asterisk/default/res_stun_monitor.conf
