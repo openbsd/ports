@@ -1,13 +1,7 @@
 COMMENT=		powerful newsreader
 
-GNOME_PROJECT=		pan
-GNOME_VERSION=		v0.153
-PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/v//}
-REVISION=		0
-
-# override gnome MODULE
-SITES=		https://gitlab.gnome.org/GNOME/pan/-/archive/${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
+DIST_TUPLE=		gnome GNOME pan v0.153 .
+REVISION=		1
 
 CATEGORIES=		news x11
 
