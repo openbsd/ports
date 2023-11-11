@@ -50,7 +50,7 @@ RUN_DEPENDS-main=
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
-LIB_DEPENDS-python=	textproc/libxml,-main=${VERSION} \
+LIB_DEPENDS-python=	textproc/libxml,-main=${GNOME_VERSION} \
 			converters/libiconv
 WANTLIB-python=		${WANTLIB} pthread xml2
 FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/libxml2
