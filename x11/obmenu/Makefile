@@ -1,3 +1,5 @@
+# old; should be moved to https://github.com/keithbowes/obmenu
+
 COMMENT=	Openbox menu editor
 
 DISTNAME=	obmenu-1.0
