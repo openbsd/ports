@@ -1,8 +1,7 @@
 COMMENT=		services and D-Bus APIs to access UPnP and DLNA devices
 
-GNOME_PROJECT=		dLeyna
-GNOME_VERSION=		0.8.3
-PKGNAME=		dleyna-${GNOME_VERSION}
+DIST_TUPLE=		gnome World dLeyna v0.8.3 .
+REVISION=		0
 
 SHARED_LIBS += dleyna-core-1.0           1.1 # 6.0.0
 SHARED_LIBS += dleyna-renderer-1.0       1.1 # 1.0.3
@@ -11,11 +10,6 @@ SHARED_LIBS += dleyna-server-1.0         1.1 # 1.0.3
 CATEGORIES=		net multimedia
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
-# override gnome MODULE
-SITES=			https://gitlab.gnome.org/World/dLeyna/-/archive/v${GNOME_VERSION}/
-EXTRACT_SUFX=		.tar.gz
-WRKDIST=		${WRKDIR}/dLeyna-v${GNOME_VERSION}-69e5fd6d6314d3987e7b68c8150397cf626950fb
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
