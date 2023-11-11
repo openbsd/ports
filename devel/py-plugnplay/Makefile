@@ -1,22 +1,24 @@
-COMMENT =	a generic plug-in system for python
+COMMENT=	a generic plug-in system for Python
 
-MODPY_EGG_VERSION =	0.5.4
-DISTNAME =	plugnplay-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	3
+MODPY_EGG_VERSION=	0.5.4
+DISTNAME=	plugnplay-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+REVISION=	4
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/daltonmatos/plugnplay
+HOMEPAGE=	https://github.com/daltonmatos/plugnplay
 
 # GPLv2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
-MODPY_PI =	Yes
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS =	python3
-FLAVOR ?=
+NO_TEST=	Yes
+
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
