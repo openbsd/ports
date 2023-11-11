@@ -10,6 +10,7 @@ PKGNAME-main=	poppler-$V
 PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
 PKGNAME-qt6=	poppler-qt6-$V
+REVISION-utils=	0
 
 EXTRACT_SUFX=	.tar.xz
 

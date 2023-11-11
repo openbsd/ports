@@ -1,6 +1,7 @@
 COMMENT =		PDF viewer for X11
 DISTNAME =		xpdf-4.04
 CATEGORIES =		textproc x11
+REVISION =		0
 EPOCH =			0
 
 HOMEPAGE =		https://www.xpdfreader.com/
@@ -32,7 +33,7 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib \
 			-L/usr/local/lib
 
 # other programs conflict with poppler-utils
-PROGS =			xpdf pdfdetach pdftopng
+PROGS =			xpdf pdftopng
 ALL_TARGET =		${PROGS}
 
 do-install:

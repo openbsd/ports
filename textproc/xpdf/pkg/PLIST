@@ -1,10 +1,9 @@
+@conflict poppler-utils-<23.11.0p0
 @conflict xpdf-utils-*
 @pkgpath textproc/xpdf,-main
 @pkgpath textproc/xpdf,-utils
-@bin bin/pdfdetach
 @bin bin/pdftopng
 @bin bin/xpdf
-@man man/man1/pdfdetach.1
 @man man/man1/pdftopng.1
 @man man/man1/xpdf.1
 @man man/man5/xpdfrc.5

@@ -1,8 +1,9 @@
+@conflict xpdf-<4.04p0v0
 @conflict xpdf-utils-*
 @conflict poppler-<0.18.4p0
 @pkgpath textproc/xpdf,-utils
 @bin bin/pdfattach
-@comment bin/pdfdetach
+@bin bin/pdfdetach
 @bin bin/pdffonts
 @bin bin/pdfimages
 @bin bin/pdfinfo
@@ -14,7 +15,7 @@
 @bin bin/pdftotext
 @bin bin/pdfunite
 @man man/man1/pdfattach.1
-@comment man/man1/pdfdetach.1
+@man man/man1/pdfdetach.1
 @man man/man1/pdffonts.1
 @man man/man1/pdfimages.1
 @man man/man1/pdfinfo.1
