@@ -1,0 +1,15 @@
+Index: document-portal/permission-db.c
+--- document-portal/permission-db.c.orig
++++ document-portal/permission-db.c
+@@ -255,7 +255,11 @@ is_on_nfs (const char *path)
+   if (statfs_result != 0)
+     return FALSE;
+ 
++#if defined(__OpenBSD__)
++  return (strncmp(statfs_buffer.f_fstypename, "nfs", MFSNAMELEN) == 0);
++#else
+   return statfs_buffer.f_type == 0x6969;
++#endif
+ }
+ 
+ static gboolean
