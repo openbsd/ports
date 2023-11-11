@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1575 2023/11/11 12:27:37 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1576 2023/11/11 12:29:58 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1877,6 +1877,7 @@ setup_obsolete_reason(
 	5 => 'py-vivisect',
 	3 => 'irc',
 	1 => 'volatility',
+	3 => 'pokerth',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
