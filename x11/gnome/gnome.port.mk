@@ -16,7 +16,6 @@ SITES ?=		# empty
 EXTRACT_SUFX ?=		.tar.xz
 .  if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-VERSION=		${GNOME_VERSION}
 HOMEPAGE ?=		https://wiki.gnome.org/
 .    if ${GNOME_VERSION:C/^([0-9]+).*/\1/:M[4-9]?}
 SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
@@ -27,7 +26,6 @@ SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-
 CATEGORIES +=		x11/gnome
 .  elif (defined(MATE_PROJECT) && defined(MATE_VERSION))
 DISTNAME=		${MATE_PROJECT}-${MATE_VERSION}
-VERSION=		${MATE_VERSION}
 HOMEPAGE ?=		http://mate-desktop.org/
 PORTROACH +=		limitw:1,even
 SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
