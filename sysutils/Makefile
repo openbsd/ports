@@ -106,7 +106,7 @@
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flashrom
-     SUBDIR += flatpack
+     SUBDIR += flatpak
      SUBDIR += fleetctl
      SUBDIR += flock
      SUBDIR += fprintd
