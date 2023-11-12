@@ -5,7 +5,7 @@ COMMENT=	logging API for C++
 V=		1_2_2
 DISTNAME=	log4cplus-${V:S/_/./g}
 
-REVISION=	0
+REVISION=	1
 
 SITES=		https://github.com/log4cplus/log4cplus/releases/download/REL_$V/
 EXTRACT_SUFX=	.tar.bz2
