@@ -44,6 +44,7 @@
      SUBDIR += firefox-esr-i18n
      SUBDIR += firefox-i18n
      SUBDIR += freshrss
+     SUBDIR += gallery-dl
      SUBDIR += gcap
      SUBDIR += geckodriver
      SUBDIR += gitea
