@@ -1,0 +1,43 @@
+From c579fbe0c10d2b761cfe1fe4e825aaa19fe81c77 Mon Sep 17 00:00:00 2001
+From: Alice Mikhaylenko <alicem@gnome.org>
+Date: Mon, 25 Sep 2023 02:00:32 +0400
+Subject: [PATCH] about-window: Fix build with newer libappstream
+
+From 3e3967d5f69180644519936991cad10136e84ca9 Mon Sep 17 00:00:00 2001
+From: Patrick Griffis <pgriffis@igalia.com>
+Date: Wed, 1 Nov 2023 09:52:47 -0500
+Subject: [PATCH] Fix building against libappstream 1.0
+
+Index: src/adw-about-window.c
+--- src/adw-about-window.c.orig
++++ src/adw-about-window.c
+@@ -2004,7 +2004,11 @@ adw_about_window_new_from_appdata (const char *resourc
+     g_free (appid_desktop);
+   }
+ 
++#if AS_CHECK_VERSION (1, 0, 0)
++  releases = as_release_list_get_entries (as_component_get_releases_plain (component));
++#else
+   releases = as_component_get_releases (component);
++#endif
+ 
+   if (release_notes_version) {
+     guint release_index = 0;
+@@ -2038,11 +2042,16 @@ adw_about_window_new_from_appdata (const char *resourc
+   }
+ 
+   name = as_component_get_name (component);
+-  developer_name = as_component_get_developer_name (component);
+   project_license = as_component_get_project_license (component);
+   issue_url = as_component_get_url (component, AS_URL_KIND_BUGTRACKER);
+   support_url = as_component_get_url (component, AS_URL_KIND_HELP);
+   website_url = as_component_get_url (component, AS_URL_KIND_HOMEPAGE);
++
++#if AS_CHECK_VERSION (1, 0, 0)
++  developer_name = as_developer_get_name (as_component_get_developer (component));
++#else
++  developer_name = as_component_get_developer_name (component);
++#endif
+ 
+   adw_about_window_set_application_icon (self, application_id);
+ 
