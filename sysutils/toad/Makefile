@@ -2,8 +2,7 @@ COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 GH_ACCOUNT=		ajacoutot
 GH_PROJECT=		toad
-GH_TAGNAME=		v1.13
-REVISION=		0
+GH_TAGNAME=		v1.14
 
 CATEGORIES=		sysutils
 
