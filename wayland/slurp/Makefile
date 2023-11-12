@@ -1,4 +1,5 @@
 COMMENT =	select a region in a Wayland compositor
+UNLINKED =	wayland
 
 GH_ACCOUNT =	emersion
 GH_PROJECT =	slurp
