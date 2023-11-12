@@ -2,6 +2,8 @@ COMMENT =	core components for the KDE Activity concept
 
 DISTNAME =	kactivitymanagerd-${VERSION}
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5I18n KF5KIOCore KF5Service

@@ -1,6 +1,8 @@
 COMMENT =	KDE daemon listening for wall and write messages
 DISTNAME =	kwrited-${VERSION}
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5Notifications
 WANTLIB += KF5Pty Qt5Core Qt5DBus Qt5Gui Qt5Widgets c m
 

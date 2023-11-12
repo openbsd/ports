@@ -3,6 +3,8 @@ DISTNAME =	polkit-kde-agent-1-${VERSION}
 PKGNAME =	polkit-kde-agent-${VERSION}
 REVISION =	0
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5I18n KF5IconThemes KF5WidgetsAddons KF5WindowSystem
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets X11 c m polkit-qt5-agent-1

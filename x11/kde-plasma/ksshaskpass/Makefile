@@ -1,6 +1,8 @@
 COMMENT =	KDE Plasma ssh-add helper
 DISTNAME =	ksshaskpass-${VERSION}
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5Wallet
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets c m
 

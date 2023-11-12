@@ -1,6 +1,8 @@
 COMMENT =	GTK2 and GTK3 configurator for KDE
 DISTNAME =	kde-gtk-config-${VERSION}
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5GuiAddons KF5WidgetsAddons KF5WindowSystem Qt5Core

@@ -1,6 +1,8 @@
 COMMENT =	KDEs screen management software
 DISTNAME =	kscreen-${VERSION}
 
+UNLINKED =	kde-plasma
+
 MODKDE5_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

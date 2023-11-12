@@ -1,6 +1,8 @@
 COMMENT =	applications useful for Plasma development
 DISTNAME =	plasma-sdk-${VERSION}
 
+UNLINKED =	kde-plasma
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5DBusAddons KF5Declarative KF5I18n

@@ -1,6 +1,8 @@
 COMMENT =	Qt Wayland wl-layer-shell protocol component
 DISTNAME =	layer-shell-qt-${VERSION}
 
+UNLINKED =	kde-plasma
+
 MODKDE5_TRANSLATIONS =	Yes
 
 SHARED_LIBS +=  LayerShellQtInterface    0.0 # 5.22.5
