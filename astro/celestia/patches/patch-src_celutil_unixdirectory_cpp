@@ -1,52 +1,25 @@
+No wordexp(3) on OpenBSD.
+XXX check for the wordexp function instead + push upstream
+
 Index: src/celutil/unixdirectory.cpp
 --- src/celutil/unixdirectory.cpp.orig
 +++ src/celutil/unixdirectory.cpp
-@@ -7,12 +7,20 @@
- // as published by the Free Software Foundation; either version 2
- // of the License, or (at your option) any later version.
- 
-+#if defined(__OpenBSD__)
-+#define NO_WORDEXP
-+#endif
-+
- #include <sys/types.h>
- #include <sys/stat.h>
+@@ -12,7 +12,9 @@
  #include <pwd.h>
  #include <unistd.h>
  #include <dirent.h>
-+#ifdef NO_WORDEXP
-+#include <glob.h>
-+#else
++#ifndef __OpenBSD__
  #include <wordexp.h>
 +#endif
  #include <cstdlib>
  #include "directory.h"
  
-@@ -110,6 +118,19 @@ bool IsDirectory(const std::string& filename)
+@@ -110,7 +112,7 @@ bool IsDirectory(const std::string& filename)
  
  std::string WordExp(const std::string& filename) 
  {
-+#ifdef NO_WORDEXP
-+    glob_t g;
-+    std::string expanded;
-+    glob(filename.c_str(), GLOB_NOSORT | GLOB_TILDE, NULL, &g);
-+    if (g.gl_matchc != 1) {
-+        globfree(&g);
-+        return filename;
-+    } else {
-+        expanded = g.gl_pathv[0];
-+        globfree(&g);
-+        return expanded;
-+    }
-+#else
- #ifndef WORDEXP_PROBLEM   
+-#ifndef WORDEXP_PROBLEM   
++#if !defined(WORDEXP_PROBLEM) && !defined(__OpenBSD__)
      wordexp_t result;
      std::string expanded;
-@@ -139,6 +160,7 @@ std::string WordExp(const std::string& filename) 
-     std::string expanded = filename;
- #endif
-     return expanded;
-+#endif
- }
  
- string HomeDir()

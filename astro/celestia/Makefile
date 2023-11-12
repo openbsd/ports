@@ -4,6 +4,7 @@ GH_ACCOUNT=		CelestiaProject
 GH_PROJECT=		Celestia
 GH_TAGNAME=		1.6.4
 PKGNAME=		celestia-${GH_TAGNAME}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
