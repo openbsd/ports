@@ -3,6 +3,7 @@ COMMENT=		weather library for MATE
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
 MATE_PROJECT=		libmateweather
+MATE_VERSION=		1.26.2
 
 CATEGORIES=		net
 
