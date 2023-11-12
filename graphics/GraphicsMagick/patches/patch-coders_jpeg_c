@@ -1,0 +1,34 @@
+https://sourceforge.net/p/graphicsmagick/code/ci/166bc6d3500ddeb243c7c1b25ca0d9eade8e3b55/
+
+Index: coders/jpeg.c
+--- coders/jpeg.c.orig
++++ coders/jpeg.c
+@@ -954,7 +954,7 @@ EstimateJPEGQuality(const struct jpeg_decompress_struc
+     i;
+ 
+   save_quality=0;
+-#ifdef D_LOSSLESS_SUPPORTED
++#if !defined(LIBJPEG_TURBO_VERSION_NUMBER) && defined(D_LOSSLESS_SUPPORTED)
+   if (image->compression==LosslessJPEGCompression)
+     {
+       save_quality=100;
+@@ -1461,7 +1461,9 @@ static Image *ReadJPEGImage(const ImageInfo *image_inf
+     }
+ #endif
+ #if (JPEG_LIB_VERSION >= 61) && defined(D_PROGRESSIVE_SUPPORTED)
+-#ifdef D_LOSSLESS_SUPPORTED
++#if !defined(LIBJPEG_TURBO_VERSION_NUMBER) && defined(D_LOSSLESS_SUPPORTED)
++  /* This code is based on a patch to IJG JPEG 6b, or somesuch.  Standard
++     library does not have a 'process' member. */
+   image->interlace=
+     jpeg_info.process == JPROC_PROGRESSIVE ? LineInterlace : NoInterlace;
+   image->compression=jpeg_info.process == JPROC_LOSSLESS ?
+@@ -2896,7 +2898,7 @@ static MagickPassFail WriteJPEGImage(const ImageInfo *
+   if ((image->compression == LosslessJPEGCompression) ||
+       (quality > 100))
+     {
+-#if defined(C_LOSSLESS_SUPPORTED)
++#if !defined(LIBJPEG_TURBO_VERSION_NUMBER) && defined(C_LOSSLESS_SUPPORTED)
+       if (quality < 100)
+         ThrowException(&image->exception,CoderWarning,
+                        LosslessToLossyJPEGConversion,(char *) NULL);
