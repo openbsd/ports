@@ -1,12 +1,12 @@
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		2.1.5.1
+V=		3.0.1
 DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
 EPOCH=		0
 
-SHARED_LIBS+=	jpeg		70.1
-SHARED_LIBS+=	turbojpeg	0.1
+SHARED_LIBS+=	jpeg		70.2
+SHARED_LIBS+=	turbojpeg	0.2
 
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
@@ -31,9 +31,6 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/jpeg
-	${INSTALL_DATA} ${WRKSRC}/libjpeg.txt ${WRKSRC}/wizard.txt \
-	    ${PREFIX}/share/doc/jpeg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/jpeg
-	${INSTALL_DATA} ${WRKSRC}/example.txt ${PREFIX}/share/examples/jpeg
+	${INSTALL_DATA} ${WRKSRC}/{libjpeg,wizard}.txt ${PREFIX}/share/doc/jpeg
 
 .include <bsd.port.mk>

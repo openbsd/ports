@@ -33,11 +33,9 @@ share/doc/libjpeg-turbo/
 share/doc/libjpeg-turbo/LICENSE.md
 share/doc/libjpeg-turbo/README.ijg
 share/doc/libjpeg-turbo/README.md
-share/doc/libjpeg-turbo/example.txt
+share/doc/libjpeg-turbo/example.c
 share/doc/libjpeg-turbo/libjpeg.txt
 share/doc/libjpeg-turbo/structure.txt
 share/doc/libjpeg-turbo/tjexample.c
 share/doc/libjpeg-turbo/usage.txt
 share/doc/libjpeg-turbo/wizard.txt
-share/examples/jpeg/
-share/examples/jpeg/example.txt
