@@ -1,6 +1,6 @@
 COMMENT=		RSI prevention tool
 
-V=			1.10.51.1
+V=			1.10.52
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
