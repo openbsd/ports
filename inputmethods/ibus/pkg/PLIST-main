@@ -113,6 +113,7 @@ share/ibus/dicts/emoji-as.dict
 share/ibus/dicts/emoji-ast.dict
 share/ibus/dicts/emoji-az.dict
 share/ibus/dicts/emoji-be.dict
+share/ibus/dicts/emoji-bew.dict
 share/ibus/dicts/emoji-bg.dict
 share/ibus/dicts/emoji-bgn.dict
 share/ibus/dicts/emoji-bn.dict
@@ -124,6 +125,7 @@ share/ibus/dicts/emoji-ceb.dict
 share/ibus/dicts/emoji-chr.dict
 share/ibus/dicts/emoji-ckb.dict
 share/ibus/dicts/emoji-cs.dict
+share/ibus/dicts/emoji-cv.dict
 share/ibus/dicts/emoji-cy.dict
 share/ibus/dicts/emoji-da.dict
 share/ibus/dicts/emoji-de.dict
@@ -135,6 +137,7 @@ share/ibus/dicts/emoji-en.dict
 share/ibus/dicts/emoji-en_001.dict
 share/ibus/dicts/emoji-en_AU.dict
 share/ibus/dicts/emoji-en_CA.dict
+share/ibus/dicts/emoji-en_GB.dict
 share/ibus/dicts/emoji-en_IN.dict
 share/ibus/dicts/emoji-es.dict
 share/ibus/dicts/emoji-es_419.dict
@@ -210,6 +213,7 @@ share/ibus/dicts/emoji-pt.dict
 share/ibus/dicts/emoji-pt_PT.dict
 share/ibus/dicts/emoji-qu.dict
 share/ibus/dicts/emoji-quc.dict
+share/ibus/dicts/emoji-rhg.dict
 share/ibus/dicts/emoji-rm.dict
 share/ibus/dicts/emoji-ro.dict
 share/ibus/dicts/emoji-ru.dict

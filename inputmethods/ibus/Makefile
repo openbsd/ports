@@ -5,7 +5,7 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.29-rc1
+GH_TAGNAME =		1.5.29-rc2
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
@@ -17,6 +17,8 @@ SHARED_LIBS +=  ibus-1.0             4.5      # 5.529
 CATEGORIES =		inputmethods chinese japanese korean
 
 HOMEPAGE =		https://github.com/ibus/ibus/wiki
+
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
