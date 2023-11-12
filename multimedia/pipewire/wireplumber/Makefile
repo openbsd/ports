@@ -2,6 +2,7 @@ COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
 PW_VERSION=		0.4.15
+REVISION=		0
 
 CATEGORIES=		audio
 

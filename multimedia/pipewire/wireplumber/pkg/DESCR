@@ -8,6 +8,6 @@ follows a modular design, having plugins that implement the actual management
 functionality.
 
 The WirePlumber Library provides API that allows you to extend the WirePlumber
-daemon, to write management or status tools for PipeWire (apps that don’t do
+daemon, to write management or status tools for PipeWire (apps that don't do
 actual media streaming) and to write custom session managers for embedded
 devices.
