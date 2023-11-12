@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.21 2023/10/25 15:23:59 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.22 2023/11/12 12:05:50 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ sub break($self, $dir, $message)
 	if (defined $dir->{parent}) {
 		$text .= "($dir->{parent})";
 	}
-	$text .= ":$message";
+	$text .= ": $message";
 	say STDERR $text;
 	push(@{$self->{log}}, $text);
 }
