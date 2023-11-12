@@ -1,12 +1,11 @@
 COMMENT=	GNU implementation of the SASL framework
 
-REVISION=	0
-DISTNAME=	libgsasl-1.8.1
+DISTNAME=	libgsasl-1.10.0
 CATEGORIES=	security
 HOMEPAGE=	https://www.gnu.org/software/gsasl/
 SITES=		${SITE_GNU:=gsasl/}
 
-SHARED_LIBS +=  gsasl 0.0 # 14.6
+SHARED_LIBS +=  gsasl 0.1 # 17.0
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
