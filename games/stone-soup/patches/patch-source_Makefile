@@ -1,7 +1,7 @@
 Index: source/Makefile
 --- source/Makefile.orig
 +++ source/Makefile
-@@ -260,9 +260,6 @@ ifdef msys
+@@ -262,9 +262,6 @@ ifdef msys
  		BUILD_LIBPNG = YesPlease
  		COPY_FONTS = yes
  	endif
@@ -11,7 +11,7 @@ Index: source/Makefile
  endif
  ifeq ($(uname_S),Darwin)
  ifdef MAC_TARGET
-@@ -371,11 +368,8 @@ endif
+@@ -374,11 +371,8 @@ endif
  #
  ifndef NO_APPLE_PLATFORM
  ifeq ($(uname_S),Darwin)
@@ -23,7 +23,7 @@ Index: source/Makefile
  
  
  ifdef WIN32
-@@ -501,15 +495,7 @@ ifneq ($(GCC_VER),)
+@@ -509,15 +503,7 @@ ifneq ($(GCC_VER),)
  GCC_VER_SUFFIX:=-$(GCC_VER)
  endif
  
@@ -39,12 +39,21 @@ Index: source/Makefile
  
  ifneq ($(FORCE_CC),)
  GCC := $(FORCE_CC)
-@@ -1151,51 +1137,6 @@ ifndef NO_OPTIMIZE
+@@ -1177,62 +1163,13 @@ OBJECTS += $(TILEDEFOBJS)
+ 
+ ifdef TILES_ANY
+ ifndef NO_OPTIMIZE
+-  ifneq (,$(shell which advpng))
+-    USE_ADVPNG = y
+-  else
+     ifneq (,$(shell which pngcrush))
+       PNGCRUSH = pngcrush -q -m 113
+       PNGCRUSH_LABEL = PNGCRUSH
      endif
-   endif
+-  endif
  endif
--endif
--
+ endif
+ 
 -ifdef BUILD_PCRE
 -CONTRIBS += pcre
 -CONTRIB_LIBS += $(LIBPCRE)
@@ -88,6 +97,25 @@ Index: source/Makefile
 -ifdef BUILD_SQLITE
 -CONTRIBS += sqlite
 -CONTRIB_LIBS += $(LIBSQLITE)
- endif
- 
+-endif
+-
  EXTRA_OBJECTS += version.o
+ 
+ ifdef CONTRIBS
+@@ -1282,7 +1219,6 @@ LANGUAGES = $(filter-out en, $(notdir $(wildcard dat/d
+ SRC_PKG_BASE  := stone_soup
+ SRC_VERSION   := $(shell git describe $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
+ MAJOR_VERSION = $(shell echo "$(SRC_VERSION)"|$(SED) -r 's/-.*//;s/^([^.]+\.[^.]+).*/\1/')
+-RECENT_TAG    := $(shell git describe --abbrev=0 $(MERGE_BASE))
+ WINARCH := $(shell $(GXX) -dumpmachine | grep -q x64_64 && echo win64 || echo win32)
+ 
+ export SRC_VERSION
+@@ -2090,8 +2026,6 @@ mac-app-console: all
+ #############################################################################
+ # Building the Android package
+ #
+-
+-NPROC := $(shell nproc)
+ 
+ android-project/app/build.gradle: android-project/app/build.gradle.in
+ 	sed -e "s/@ANDROID_VERSION@/${ANDROID}/" -e "s/@CRAWL_VERSION@/${SRC_VERSION}/" -e "s/@NPROC@/${NPROC}/" <android-project/app/build.gradle.in >android-project/app/build.gradle

@@ -33,6 +33,11 @@ share/crawl/dat/database/randbook.txt
 share/crawl/dat/database/randname.txt
 share/crawl/dat/database/shout.txt
 share/crawl/dat/database/wpnnoise.txt
+share/crawl/dat/database/zh/
+share/crawl/dat/database/zh/FAQ.txt
+share/crawl/dat/database/zh/help.txt
+share/crawl/dat/database/zh/monflee.txt
+share/crawl/dat/database/zh/montitle.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
 share/crawl/dat/defaults/glyph_colours.txt
@@ -74,7 +79,9 @@ share/crawl/dat/des/branches/depths_encompass.des
 share/crawl/dat/des/branches/dis.des
 share/crawl/dat/des/branches/elf.des
 share/crawl/dat/des/branches/geh.des
+share/crawl/dat/des/branches/geh_lava_maze.des
 share/crawl/dat/des/branches/hell.des
+share/crawl/dat/des/branches/hells.des
 share/crawl/dat/des/branches/hilbert_zone.des
 share/crawl/dat/des/branches/lair.des
 share/crawl/dat/des/branches/orc.des
@@ -121,6 +128,7 @@ share/crawl/dat/des/builder/shops.des
 share/crawl/dat/des/builder/uniques.des
 share/crawl/dat/des/guide.txt
 share/crawl/dat/des/portals/
+share/crawl/dat/des/portals/arena.des
 share/crawl/dat/des/portals/bailey.des
 share/crawl/dat/des/portals/bazaar.des
 share/crawl/dat/des/portals/desolation.des
@@ -138,6 +146,7 @@ share/crawl/dat/des/serial/bayou.des
 share/crawl/dat/des/serial/column_ruins.des
 share/crawl/dat/des/serial/corridors.des
 share/crawl/dat/des/serial/curves.des
+share/crawl/dat/des/serial/demonic.des
 share/crawl/dat/des/serial/forest.des
 share/crawl/dat/des/serial/glass.des
 share/crawl/dat/des/serial/gnoll_camp.des
@@ -147,6 +156,7 @@ share/crawl/dat/des/serial/park.des
 share/crawl/dat/des/serial/rivers.des
 share/crawl/dat/des/serial/serial_guide.txt
 share/crawl/dat/des/serial/sigils.des
+share/crawl/dat/des/serial/subway.des
 share/crawl/dat/des/serial/undead.des
 share/crawl/dat/des/serial/window.des
 share/crawl/dat/des/sprint/
@@ -386,10 +396,12 @@ share/crawl/dat/descript/lv/tutorial.txt
 share/crawl/dat/descript/lv/unident.txt
 share/crawl/dat/descript/lv/unrand.txt
 share/crawl/dat/descript/monsters.txt
+share/crawl/dat/descript/mutations.txt
 share/crawl/dat/descript/nl/
 share/crawl/dat/descript/nl/ability.txt
 share/crawl/dat/descript/nl/tutorial.txt
 share/crawl/dat/descript/nl/unident.txt
+share/crawl/dat/descript/passives.txt
 share/crawl/dat/descript/pl/
 share/crawl/dat/descript/pl/ability.txt
 share/crawl/dat/descript/pl/backgrounds.txt
@@ -470,10 +482,13 @@ share/crawl/dat/descript/zh/gods.txt
 share/crawl/dat/descript/zh/hints.txt
 share/crawl/dat/descript/zh/items.txt
 share/crawl/dat/descript/zh/monsters.txt
+share/crawl/dat/descript/zh/mutations.txt
+share/crawl/dat/descript/zh/passives.txt
 share/crawl/dat/descript/zh/quotes.txt
 share/crawl/dat/descript/zh/skills.txt
 share/crawl/dat/descript/zh/species.txt
 share/crawl/dat/descript/zh/spells.txt
+share/crawl/dat/descript/zh/status.txt
 share/crawl/dat/descript/zh/tutorial.txt
 share/crawl/dat/descript/zh/unident.txt
 share/crawl/dat/descript/zh/unrand.txt

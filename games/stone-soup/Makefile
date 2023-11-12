@@ -2,15 +2,16 @@ BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
 
-VERSION = 	0.27.1
+VERSION = 	0.30.1
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	1
 
 CATEGORIES = 	games
 
 HOMEPAGE = 	https://crawl.develz.org/
+
+MAINTAINER =	Stefan Moran <ssm@howdoesmycode.work>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -87,7 +88,8 @@ post-install:
 	${INSTALL_DATA} \
 		${PREFIX}/share/crawl/dat/tiles/stone_soup_icon-32x32.png \
 		${PREFIX}/share/pixmaps/stone-soup.png
-	${INSTALL_DATA} ${WRKDIST}/source/debian/crawl-tiles.desktop \
+	${INSTALL_DATA} \
+		${WRKDIST}/source/xdg-data/org.develz.Crawl_tiles.desktop \
 		${PREFIX}/share/applications
 .endif
 
