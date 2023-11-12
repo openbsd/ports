@@ -1,2 +1,0 @@
-@conflict pipewire-<0.3.84p5
-@so lib/gstreamer-1.0/libgstpipewire.so

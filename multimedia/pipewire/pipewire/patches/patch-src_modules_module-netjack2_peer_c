@@ -1,8 +1,8 @@
 Index: src/modules/module-netjack2/peer.c
 --- src/modules/module-netjack2/peer.c.orig
 +++ src/modules/module-netjack2/peer.c
-@@ -1,5 +1,11 @@
--
+@@ -1,5 +1,12 @@
+ 
 +#if __has_include(<byteswap.h>)
  #include <byteswap.h>
 +#else
