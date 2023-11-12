@@ -1,15 +1,23 @@
-COMMENT=		server and user space API for multimedia pipelines
+COMMENT-main=		low-level multimedia framework - client & server
+COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
 PW_VERSION=		0.3.84
-REVISION=		1
+
+PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
+
+REVISION-main=		2
 
 SHARED_LIBS += pipewire-0.3              0.0 # 0.384.0
 
-WANTLIB += X11 Xfixes c canberra curses dbus-1 epoll-shim glib-2.0
-WANTLIB += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m opus pthread readline
-WANTLIB += sndfile
+MULTI_PACKAGES=		-main -libs
+
+WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim glib-2.0
+WANTLIB-main += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-main += gstreamer-1.0 gstvideo-1.0 m opus pthread readline
+WANTLIB-main += pipewire-0.3 sndfile
+
+WANTLIB-libs += intl pthread
 
 MODULES=		devel/meson \
 			lang/python
@@ -19,15 +27,17 @@ MODPY_RUNDEP=		No
 BUILD_DEPENDS=		devel/gettext,-tools \
 			textproc/py-docutils${MODPY_FLAVOR}
 
-LIB_DEPENDS=		audio/libcanberra \
+LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
+			audio/libcanberra \
 			audio/libsndfile \
 			devel/epoll-shim \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
-# XXX needs a pipewire-session-manager but there's a cyclic dependency:
-# pipewire -> wireplumber -> pipewire
-#RUN_DEPENDS +=		multimedia/pipewire/wireplumber
+LIB_DEPENDS-libs=	devel/gettext,-runtime
+
+# needs a pipewire-session-manager
+RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
 
 # libintl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
