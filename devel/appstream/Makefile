@@ -12,6 +12,9 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt5=		appstream-qt5-${V}
 
+REVISION-main=		0
+REVISION-qt5=		0
+
 SHARED_LIBS += appstream                 0.1 # 0.16.4
 SHARED_LIBS += appstream-compose         0.0 # 0.16.4
 SHARED_LIBS += AppStreamQt               0.0 # 0.16.4
