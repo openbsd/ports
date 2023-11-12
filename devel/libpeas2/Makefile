@@ -27,7 +27,7 @@ RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/gnome/gjs
 
-MODGNOME_TOOLS=	gobject-introspection gtk-update-icon-cache
+MODGNOME_TOOLS=	gobject-introspection gtk-update-icon-cache vala
 
 CONFIGURE_ARGS= -Dlua51=false \
 		-Dvapi=true
