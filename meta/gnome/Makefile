@@ -37,9 +37,9 @@ RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 
 # elements/vm/common-deps.bst / core-deps
-RUN_DEPENDS-main +=	flatpak/xdg-desktop-portal \
-			flatpak/xdg-desktop-portal-gnome \
-			flatpak/xdg-desktop-portal-gtk
+RUN_DEPENDS-main +=	sysutils/flatpak/xdg-desktop-portal \
+			sysutils/flatpak/xdg-desktop-portal-gnome \
+			sysutils/flatpak/xdg-desktop-portal-gtk
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
