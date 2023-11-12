@@ -1,7 +1,6 @@
 COMMENT =	Python bindings for PortAudio
 
-MODPY_EGG_VERSION =	0.2.13
-REVISION =	0
+MODPY_EGG_VERSION =	0.2.14
 DISTNAME =	PyAudio-${MODPY_EGG_VERSION}
 PKGNAME =	py-audio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio devel
