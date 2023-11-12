@@ -11,6 +11,8 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 MODULES=		devel/meson
 
+BUILD_DEPENDS=		sysutils/flatpak/xdg-desktop-portal
+
 LIB_DEPENDS=		devel/glib2
 
 RUN_DEPENDS=		devel/desktop-file-utils \
