@@ -1,10 +1,9 @@
 COMMENT =		desktop suite theme for Xfce
 
-GH_TAGNAME =		v3.23.2
+GH_TAGNAME =		v3.23.3
 GH_ACCOUNT =		shimmerproject
 GH_PROJECT =		Greybird
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
 
 CATEGORIES =		x11
 
