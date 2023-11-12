@@ -1,27 +1,20 @@
 COMMENT =	QuakeWorld server
 
-GH_ACCOUNT =	QW-Group
-GH_PROJECT =	mvdsv
-GH_TAGNAME =	0.35
-
 CATEGORIES =	games
 
-HOMEPAGE =	https://sourceforge.net/projects/mvdsv/
-
-MAINTAINER =	Tom Murphy <openbsd@pertho.net>
-
-QWP_COMMIT =	0023db327bc1db00068284b70e1db45857aeee35
-QWP_VERSION =	20120131
-SITES.a = 	https://raw.githubusercontent.com/id-Software/Quake/${QWP_COMMIT}/QW/progs/
+QUAKE_COMMIT =	bf4ac424ce754894ac8f1dae6a3981954bc9852d
+DIST_TUPLE +=	github QW-Group mvdsv 0.36 .
+DIST_TUPLE +=	github QW-Group qwprot 53af547d0608a1507895fc1629cdc3f4820fc0af src/qwprot
+DIST_TUPLE +=	github id-software Quake ${QUAKE_COMMIT} .
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curl m pcre pthread
+MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
-DISTFILES =	mvdsv-{}${GH_TAGNAME}.tar.gz
-DISTFILES.a = 	qwprogs-${QWP_VERSION}{qwprogs}.dat
-EXTRACT_ONLY =	mvdsv-${GH_TAGNAME}.tar.gz
+HOMEPAGE =	https://mvdsv.quake.se/
+
+WANTLIB += c curl m pcre pthread
 
 MODULES =	devel/cmake
 
@@ -36,7 +29,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/mvdsv ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}
 	${INSTALL_DATA} ${FILESDIR}/server.cfg ${SAMPLES_DIR}
-	${INSTALL_DATA} ${DISTDIR}/qwprogs-${QWP_VERSION}.dat \
-	    ${SAMPLES_DIR}/qwprogs.dat
+	${INSTALL_DATA} ${WRKDIR}/Quake-${QUAKE_COMMIT}/QW/progs/qwprogs.dat \
+	${SAMPLES_DIR}/qwprogs.dat
 
 .include <bsd.port.mk>

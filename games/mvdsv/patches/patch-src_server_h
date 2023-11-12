@@ -6,7 +6,7 @@ at: https://github.com/deurk/mvdsv/pull/69
 Index: src/server.h
 --- src/server.h.orig
 +++ src/server.h
-@@ -1087,7 +1087,6 @@ void SV_SetClientConnectionTime(client_t* client);
+@@ -1088,7 +1088,6 @@ void SV_SetClientConnectionTime(client_t* client);
  #ifdef SERVERONLY
  // mvdsv not changed over to enums yet, which was more about documentation
  #define SV_CommandLineEnableCheats() (COM_CheckParm("-cheats"))
@@ -14,7 +14,7 @@ Index: src/server.h
  #define SV_CommandLineDemoCacheArgument() (COM_CheckParm("-democache"))
  #define SV_CommandLineProgTypeArgument() (COM_CheckParm("-progtype"))
  #define SV_CommandLineUseMinimumMemory() (COM_CheckParm("-minmemory"))
-@@ -1095,7 +1094,6 @@ void SV_SetClientConnectionTime(client_t* client);
+@@ -1096,7 +1095,6 @@ void SV_SetClientConnectionTime(client_t* client);
  #define SV_CommandLineHeapSizeMemoryMB() (COM_CheckParm("-mem"))
  #else
  #define SV_CommandLineEnableCheats() (COM_CheckParm(cmdline_param_server_enablecheats))
