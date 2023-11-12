@@ -1,7 +1,7 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		29.1
-REVISION=		0
+REVISION=		1
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors

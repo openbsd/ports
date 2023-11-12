@@ -1,0 +1,15 @@
+If !HAVE_X_WINDOWS unsetenv the DISPLAY variable so that
+xdg-* tools will not open anything in a browser
+
+Index: src/dispnew.c
+--- src/dispnew.c.orig
++++ src/dispnew.c
+@@ -6538,6 +6538,8 @@ init_display_interactive (void)
+ #endif
+       return;
+     }
++#else
++    (void)unsetenv ("DISPLAY");
+ #endif /* HAVE_X_WINDOWS */
+ 
+ #ifdef HAVE_NTGUI
