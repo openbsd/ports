@@ -3,6 +3,7 @@ COMMENT =		fork of prboom+ with a focus on speedrunning
 GH_ACCOUNT =		kraflab
 GH_PROJECT =		dsda-doom
 GH_TAGNAME =		v0.26.2
+REVISION =		0
 
 CATEGORIES =		games x11
 MAINTAINER =		Lucas de Sena <lucas@seninha.org>
@@ -25,7 +26,8 @@ LIB_DEPENDS =		archivers/libzip \
 			devel/sdl2-image
 
 # requires fluidsynth v2.0, currently we have 1.x
-CONFIGURE_ARGS =	-DWITH_FLUIDSYNTH=OFF
+CONFIGURE_ARGS =	-DWITH_DUMB=OFF \
+			-DWITH_FLUIDSYNTH=OFF
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
