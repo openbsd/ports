@@ -1,0 +1,10 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -18,5 +18,5 @@ setup(name='Obmenu',
+       download_url='https://sourceforge.net/projects/obmenu/files/',
+       scripts=['obmenu', 'pipes/obm-xdg','pipes/obm-dir','pipes/obm-nav'],
+       py_modules=['obxml'],
+-      data_files=[(libdir, ['window.glade']), ("%s/icons" % libdir, ['icons/mnu16.png','icons/mnu48.png'])],
++      data_files=[(libdir, ['obmenu.glade', 'obmenu.ui']), ("%s/icons" % libdir, ['icons/mnu16.png','icons/mnu48.png'])],
+       )

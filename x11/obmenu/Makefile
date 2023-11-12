@@ -1,33 +1,20 @@
-# old; should be moved to https://github.com/keithbowes/obmenu
-
 COMMENT=	Openbox menu editor
 
-DISTNAME=	obmenu-1.0
-REVISION=	7
+GH_TAGNAME =	1.1.1
+GH_ACCOUNT =	keithbowes
+GH_PROJECT =	obmenu
 CATEGORIES=	x11
-
-HOMEPAGE=	https://obmenu.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_SOURCEFORGE:=obmenu/}
-
 NO_TEST=	Yes
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-RUN_DEPENDS=	x11/py-gtk2 \
-		x11/openbox
+BUILD_DEPENDS= devel/gobject-introspection
+RUN_DEPENDS=	x11/openbox \
+		x11/gtk+4
 
-pre-configure:
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},g' \
-		${WRKSRC}/obmenu
-.for i in pipes/obm-moz pipes/obm-nav pipes/obm-dir
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKSRC}/${i}
-.endfor
-.for i in pipes/obm-xdg obxml.py obmenu
-	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/${i}
-.endfor
+MODPY_ADJ_FILES =pipes/obm-* obxml.py obmenu
 
 .include <bsd.port.mk>
