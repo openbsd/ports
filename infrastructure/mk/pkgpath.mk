@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.88 2023/11/11 10:16:25 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.89 2023/11/12 12:55:08 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -88,7 +88,7 @@ _pflavor_fragment = \
 			fi; \
 		done; unset IFS; \
 	fi; \
-	$$found_dir || $$reported || broken "$$dir non existent"; \
+	$$found_dir || $$reported || broken "$$subdir non existent"; \
 	$$found_dir
 
 _flavor_fragment = sawflavor=false; ${_pflavor_fragment}
