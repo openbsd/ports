@@ -1,5 +1,6 @@
 COMMENT =	lightweight shipper for hw.sensors data
 
+UNLINKED =	hwsensorsbeat
 BEAT =		hwsensorsbeat
 VERSION =	0.1.2
 REVISION =	4
