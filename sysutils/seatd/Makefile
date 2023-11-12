@@ -1,5 +1,6 @@
 COMMENT	=	minimal seat management daemon and universal library
 
+UNLINKED =	wayland
 V =		20230813
 PKGNAME =	seatd-$V
 DISTNAME =	seatd-openbsd-$V

@@ -383,7 +383,7 @@
      SUBDIR += salt-testing
      SUBDIR += sblim-sfcc
      SUBDIR += screenfetch
-     #SUBDIR += seatd # wayland
+     SUBDIR += seatd
      SUBDIR += sec
      SUBDIR += serf
      SUBDIR += setquota
