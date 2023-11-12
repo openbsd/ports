@@ -1,8 +1,0 @@
-@bin bin/hwsensorsbeat
-share/examples/hwsensorsbeat/
-@sample ${SYSCONFDIR}/hwsensorsbeat/
-share/examples/hwsensorsbeat/hwsensorsbeat.template.json
-@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.template.json
-share/examples/hwsensorsbeat/hwsensorsbeat.yml
-@sample ${SYSCONFDIR}/hwsensorsbeat/hwsensorsbeat.yml
-@rcscript ${RCDIR}/hwsensorsbeat

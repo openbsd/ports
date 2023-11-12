@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1583 2023/11/11 14:53:33 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1584 2023/11/12 14:46:01 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1889,6 +1889,7 @@ setup_obsolete_reason(
 	3 => 'driconf',
 	3 => 'GAMMApage',
 	3 => 'comix',
+	3 => 'hwsensorsbeat',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
