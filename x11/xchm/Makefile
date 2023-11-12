@@ -1,8 +1,7 @@
 COMMENT=	display chm files
 
-V=		1.35
+V=		1.36
 DISTNAME=	xchm-$V
-REVISION=	0
 
 CATEGORIES=	devel textproc x11
 
@@ -19,7 +18,7 @@ WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2
 SITES=		https://github.com/rzvncj/xCHM/releases/download/$V/
 
 LIB_DEPENDS=	devel/chmlib \
-		x11/wxWidgets>=3.0.4
+		x11/wxWidgets
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
