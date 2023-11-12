@@ -36,6 +36,7 @@ SUBDIR += lt
 SUBDIR += nb-NO
 SUBDIR += nl
 SUBDIR += nn-NO
+SUBDIR += pa-IN
 SUBDIR += pl
 SUBDIR += pt-BR
 SUBDIR += pt-PT

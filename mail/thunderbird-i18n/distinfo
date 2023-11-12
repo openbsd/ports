@@ -36,6 +36,7 @@ SHA256 (mozilla/thunderbird-i18n-115.4.2/lt.xpi) = tv3+fsGKCCUTwXg0ybLXTQzQh02xA
 SHA256 (mozilla/thunderbird-i18n-115.4.2/nb-NO.xpi) = SJew3yq9hEtHyO6n20GvzjKwf5FlgPjOgPG00RdTR54=
 SHA256 (mozilla/thunderbird-i18n-115.4.2/nl.xpi) = toBSIhzsR9gM5muznlspnV1731zL4vVLo/jz+KTATgA=
 SHA256 (mozilla/thunderbird-i18n-115.4.2/nn-NO.xpi) = k2/qMjPtd45cKWemOiMWrEhNKE1rokWqt9Plg+X0L9Q=
+SHA256 (mozilla/thunderbird-i18n-115.4.2/pa-IN.xpi) = tNf/qEQwqBsHl/mPoJuhRfKkMwcO8vAFsmgA3Zsg7Js=
 SHA256 (mozilla/thunderbird-i18n-115.4.2/pl.xpi) = kdInyLG12CG+3c2XxQgLUn5LGs/9ol4awSS23n7Ulb4=
 SHA256 (mozilla/thunderbird-i18n-115.4.2/pt-BR.xpi) = 7TnJ+w3w7vP6QtFureMnth02dgxuR2KrEI9/rN9bc90=
 SHA256 (mozilla/thunderbird-i18n-115.4.2/pt-PT.xpi) = tCQHHkjJC6+oET8ClFTHIowVzDYVjMkBP9B4LdfRUmE=
@@ -90,6 +91,7 @@ SIZE (mozilla/thunderbird-i18n-115.4.2/lt.xpi) = 680093
 SIZE (mozilla/thunderbird-i18n-115.4.2/nb-NO.xpi) = 653834
 SIZE (mozilla/thunderbird-i18n-115.4.2/nl.xpi) = 699387
 SIZE (mozilla/thunderbird-i18n-115.4.2/nn-NO.xpi) = 672836
+SIZE (mozilla/thunderbird-i18n-115.4.2/pa-IN.xpi) = 655774
 SIZE (mozilla/thunderbird-i18n-115.4.2/pl.xpi) = 716519
 SIZE (mozilla/thunderbird-i18n-115.4.2/pt-BR.xpi) = 707196
 SIZE (mozilla/thunderbird-i18n-115.4.2/pt-PT.xpi) = 688986
