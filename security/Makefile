@@ -72,7 +72,6 @@
      SUBDIR += integrit
      SUBDIR += ipguard
      SUBDIR += isic
-     SUBDIR += jailkit
      SUBDIR += john
      SUBDIR += john-jumbo
      SUBDIR += kc

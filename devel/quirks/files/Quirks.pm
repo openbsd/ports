@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1584 2023/11/12 14:46:01 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1585 2023/11/12 20:46:34 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1890,6 +1890,7 @@ setup_obsolete_reason(
 	3 => 'GAMMApage',
 	3 => 'comix',
 	3 => 'hwsensorsbeat',
+	60 => 'jailkit',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1966,6 +1967,7 @@ my $obsolete_message = {
 	57 => "frequent breakage with new versions, required openal audio backend has been orphaned for > 1 year",
 	58 => "abandoned upstream, use eza as a drop-in replacement",
 	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable security sensitive code",
+	60 => "unmaintained/outdated for years, setuid python 2 scripts, not recommended",
 };
 
 # ->is_base_system($handle, $state):
