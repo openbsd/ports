@@ -1,59 +1,34 @@
-wordexp(3) vomit
+No wordexp(3) on OpenBSD.
+XXX check for the wordexp function instead + push upstream
 
 Index: src/libide/io/ide-path.c
 --- src/libide/io/ide-path.c.orig
 +++ src/libide/io/ide-path.c
-@@ -24,7 +24,11 @@
+@@ -24,7 +24,9 @@
  
  #include <string.h>
  #include <unistd.h>
-+#if !defined(__OpenBSD__)
++#ifndef __OpenBSD__
  #include <wordexp.h>
-+#else
-+#include <glob.h>
 +#endif
  
  #include <libide-threading.h>
  
-@@ -40,6 +44,7 @@
-  * Returns: (transfer full): A newly allocated string containing the
-  *   expansion. A copy of the input string upon failure to expand.
-  */
-+#if !defined(__OpenBSD__)
+@@ -43,6 +45,7 @@
  gchar *
  ide_path_expand (const gchar *path)
  {
-@@ -86,6 +91,33 @@ ide_path_expand (const gchar *path)
++#ifndef __OpenBSD__
+   wordexp_t state = { 0 };
+   char *replace_home = NULL;
+   char *ret = NULL;
+@@ -85,6 +88,9 @@ ide_path_expand (const gchar *path)
+   g_free (escaped);
  
    return ret;
- }
 +#else
-+gchar *
-+ide_path_expand (const gchar *path)
-+{
-+  glob_t state;
-+  gchar *ret = NULL;
-+  int r;
-+
-+  if (path == NULL)
-+    return NULL;
-+
-+  r = glob (path, GLOB_ERR, NULL, &state);
-+  if(r == 0 && state.gl_pathc == 1 && state.gl_pathv) {
-+    ret = g_strdup (state.gl_pathv[0]);
-+  }
-+  globfree(&state);
-+
-+  if (!g_path_is_absolute (ret))
-+    {
-+      g_autofree gchar *freeme = ret;
-+
-+      ret = g_build_filename (g_get_home_dir (), freeme, NULL);
-+    }
-+
-+  return ret;
-+}
++  return g_strdup (path);
 +#endif
+ }
  
  /**
-  * ide_path_collapse:
