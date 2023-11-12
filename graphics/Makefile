@@ -53,7 +53,7 @@
      SUBDIR += exiftran
      SUBDIR += exiv2
      SUBDIR += farbfeld
-     #SUBDIR += fcft # wayland
+     SUBDIR += fcft
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
