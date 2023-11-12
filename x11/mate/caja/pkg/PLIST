@@ -212,6 +212,9 @@ share/locale/ml/LC_MESSAGES/caja.mo
 share/locale/mn/LC_MESSAGES/caja.mo
 share/locale/mr/LC_MESSAGES/caja.mo
 share/locale/ms/LC_MESSAGES/caja.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/caja.mo
 share/locale/nb/LC_MESSAGES/caja.mo
 share/locale/nds/LC_MESSAGES/caja.mo
 share/locale/ne/LC_MESSAGES/caja.mo
