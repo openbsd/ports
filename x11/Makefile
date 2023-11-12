@@ -158,8 +158,8 @@
      SUBDIR += libgedit-amtk
      SUBDIR += libgedit-gtksourceview
      SUBDIR += libhandy
-     #SUBDIR += libindicator
-     #SUBDIR += libappindicator
+     SUBDIR += libindicator
+     SUBDIR += libappindicator
      SUBDIR += libqaccessibilityclient
      SUBDIR += libqtolm
      SUBDIR += libquotient

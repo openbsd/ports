@@ -1,5 +1,6 @@
 V =		12.10.0
 COMMENT =	library for exporting menus to a desktop environment
+UNLINKED =	indicator
 DISTNAME =	libappindicator-${V}
 CATEGORIES =	x11
 

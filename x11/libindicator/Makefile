@@ -1,5 +1,6 @@
 V =		12.10.1
 COMMENT =	convenience functions for desktop indicators
+UNLINKED =	indicator
 DISTNAME =	libindicator-${V}
 CATEGORIES =	x11
 
