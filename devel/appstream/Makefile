@@ -43,6 +43,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
 			devel/gperf \
 			lang/vala \
+			textproc/gi-docgen \
 			textproc/gtk-doc \
 			textproc/itstool
 
