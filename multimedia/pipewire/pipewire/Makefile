@@ -2,11 +2,9 @@ COMMENT=		server and user space API for multimedia pipelines
 
 PW_PROJECT=		pipewire
 PW_VERSION=		0.3.84
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += pipewire-0.3              0.0 # 0.384.0
-
-CATEGORIES=		audio
 
 WANTLIB += X11 Xfixes c canberra curses dbus-1 epoll-shim glib-2.0
 WANTLIB += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0

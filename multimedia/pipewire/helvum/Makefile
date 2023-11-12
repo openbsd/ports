@@ -2,9 +2,7 @@ COMMENT=		GTK patchbay for pipewire
 
 PW_PROJECT=		helvum
 PW_VERSION=		0.5.1
-REVISION=		0
-
-CATEGORIES=		audio
+REVISION=		1
 
 WANTLIB += ${MODCARGO_WANTLIB} adwaita-1 cairo epoll-shim gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 graphene-1.0 gtk-4 pipewire-0.3
