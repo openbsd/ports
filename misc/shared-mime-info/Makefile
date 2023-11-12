@@ -1,8 +1,7 @@
 COMMENT=		shared mime database for desktops
 
-V=			2.3
+V=			2.4
 DISTNAME=		shared-mime-info-${V}
-REVISION=		0
 
 CATEGORIES=		misc
 
@@ -24,7 +23,7 @@ COMPILER=		base-clang ports-gcc
 EXTRA_ports-gcc=	-lstdc++fs
 LDFLAGS+=		${EXTRA_${CHOSEN_COMPILER}}
 
-SITES=	https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
+SITES=			https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python

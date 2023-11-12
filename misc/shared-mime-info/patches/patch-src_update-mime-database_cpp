@@ -1,16 +1,10 @@
 - unveil: unveil the provided mime_dir
 - pledge: https://bugs.freedesktop.org/show_bug.cgi?id=104368
 
-- 2nd chunk:
-From 12a3a6b1141c704fc594379af1808bb9008d588c Mon Sep 17 00:00:00 2001
-From: Tobias Mayer <tobim@fastmail.fm>
-Date: Sun, 8 Oct 2023 00:11:49 +0200
-Subject: [PATCH] Fix string literal concatenation
-
 Index: src/update-mime-database.cpp
 --- src/update-mime-database.cpp.orig
 +++ src/update-mime-database.cpp
-@@ -2149,6 +2149,11 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2150,6 +2150,11 @@ static void check_in_path_xdg_data(const char *mime_pa
  
  	path = g_path_get_dirname(mime_path);
  
@@ -22,17 +16,8 @@ Index: src/update-mime-database.cpp
  	if (stat(path, &path_info))
  	{
  		g_warning("Can't stat '%s' directory: %s",
-@@ -2158,7 +2163,7 @@ static void check_in_path_xdg_data(const char *mime_pa
+@@ -2174,12 +2179,23 @@ static void check_in_path_xdg_data(const char *mime_pa
  
- 	env = getenv("XDG_DATA_DIRS");
- 	if (!env)
--		env = "/usr/local/share/"PATH_SEPARATOR"/usr/share/";
-+		env = "/usr/local/share/" PATH_SEPARATOR "/usr/share/";
- 	dirs = g_strsplit(env, PATH_SEPARATOR, 0);
- 	g_return_if_fail(dirs != NULL);
- 	for (n = 0; dirs[n]; n++)
-@@ -2173,12 +2178,23 @@ static void check_in_path_xdg_data(const char *mime_pa
- 	
  	for (i = 0; i < n; i++)
  	{
 +		if (unveil(dirs[i], "r") == -1) {
@@ -55,7 +40,7 @@ Index: src/update-mime-database.cpp
  	if (i == n)
  	{
  		g_printerr(_("\nNote that '%s' is not in the search path\n"
-@@ -3683,6 +3699,16 @@ int main(int argc, char **argv)
+@@ -3684,6 +3700,16 @@ int main(int argc, char **argv)
  #endif
  
  	LIBXML_TEST_VERSION;
