@@ -324,6 +324,8 @@ share/liblouis/tables/nl-BE.dis
 share/liblouis/tables/nl-NL-g0.utb
 share/liblouis/tables/nl-chardefs.uti
 share/liblouis/tables/nl-comp8.utb
+share/liblouis/tables/nl-print.dis
+share/liblouis/tables/nl-unicode.dis
 share/liblouis/tables/nl.tbl
 share/liblouis/tables/no-no-8dot-fallback-6dot-g0.utb
 share/liblouis/tables/no-no-8dot.utb
@@ -356,6 +358,7 @@ share/liblouis/tables/pt-pt-g1.utb
 share/liblouis/tables/pt-pt-g2.ctb
 share/liblouis/tables/pt.tbl
 share/liblouis/tables/pu-in-g1.utb
+share/liblouis/tables/ro-g0.utb
 share/liblouis/tables/ro.ctb
 share/liblouis/tables/ro.tbl
 share/liblouis/tables/ru-brf.dis
@@ -407,6 +410,8 @@ share/liblouis/tables/te-in-g1.utb
 share/liblouis/tables/te.tbl
 share/liblouis/tables/telugu.cti
 share/liblouis/tables/text_nabcc.dis
+share/liblouis/tables/th-comp8-backward.utb
+share/liblouis/tables/th-g0.utb
 share/liblouis/tables/tr-g1.ctb
 share/liblouis/tables/tr-g2.ctb
 share/liblouis/tables/tr-g2.tbl
