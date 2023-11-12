@@ -7,6 +7,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		45.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -36,7 +37,7 @@ RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
-			multimedia/pipewire/pipewire \
+			multimedia/pipewire/pipewire,-libs \
 			sysutils/polkit \
 			x11/gnome/autoar \
 			x11/gnome/gcr4 \
@@ -63,6 +64,9 @@ RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome-shell-extension-tool, gnome-shell-perf-tool
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
+
+# needs libgstpipewire.so for screencast recorder
+RUN_DEPENDS +=		multimedia/pipewire/pipewire
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

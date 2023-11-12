@@ -2,7 +2,7 @@ COMMENT=		modular session / policy manager for PipeWire
 
 PW_PROJECT=		wireplumber
 PW_VERSION=		0.4.15
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += wireplumber-0.4           0.0 # 0.4.15
 
@@ -21,7 +21,8 @@ BUILD_DEPENDS=		devel/doxygen \
 			devel/gobject-introspection \
 			textproc/py-lxml${MODPY_FLAVOR}
 
-LIB_DEPENDS=		multimedia/pipewire/pipewire
+LIB_DEPENDS=		devel/glib2 \
+			multimedia/pipewire/pipewire,-libs
 
 # libintl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -4,6 +4,7 @@ COMMENT=		portal frontend service for desktop containment frameworks
 
 V=			1.18.1
 DISTNAME=		xdg-desktop-portal-${V}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -30,7 +31,9 @@ BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/gdk-pixbuf2 \
-			multimedia/pipewire/pipewire
+			multimedia/pipewire/pipewire,-libs
+
+RUN_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dflatpak-interfaces=disabled \
 			-Dsystemd=disabled \
