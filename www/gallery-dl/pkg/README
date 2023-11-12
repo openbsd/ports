@@ -1,0 +1,17 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+All supported websites can be listed with:
+    $ gallery-dl --list-modules
+
+Some features are only available after installing an optional
+dependency:
+
+ffmpeg            - Pixiv Ugoira conversion
+py3-socks         - SOCKS proxy support
+py3-brotli        - Brotli compression support
+py3-yaml          - YAML configuration file support
+py3-toml          - TOML configuration file support for Python<3.11
+py3-secretstorage - Keyring passwords (--cookies-from-browser)
+
