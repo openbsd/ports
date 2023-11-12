@@ -1,0 +1,30 @@
+Grab images from a Wayland compositor.
+
+Screenshoot all outputs:
+
+  grim
+
+Screenshoot a specific output:
+
+  grim -o DP-1
+
+Screenshoot a region:
+
+  grim -g "10,20 300x400"
+
+Select a region and screenshoot it:
+
+  grim -g "$(slurp)"
+
+Use a custom filename:
+
+  grim $(xdg-user-dir PICTURES)/$(date +'%s_grim.png')
+
+Grab a screenshot from the focused window under Sway, using `swaymsg` and
+jq:
+
+  grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')"
+
+Pick a color, using ImageMagick:
+
+  grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:-

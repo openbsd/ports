@@ -1,0 +1,31 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -17,7 +17,7 @@ png = dependency('libpng')
+ jpeg = dependency('libjpeg', required: get_option('jpeg'))
+ math = cc.find_library('m')
+ pixman = dependency('pixman-1')
+-realtime = cc.find_library('rt')
++# realtime = cc.find_library('rt')
+ wayland_client = dependency('wayland-client')
+ wayland_protos = dependency('wayland-protocols', version: '>=1.14')
+ 
+@@ -46,7 +46,7 @@ grim_deps = [
+ 	math,
+ 	pixman,
+ 	png,
+-	realtime,
++#	realtime,
+ 	wayland_client,
+ ]
+ 
+@@ -54,6 +54,9 @@ if jpeg.found()
+ 	grim_files += ['write_jpg.c']
+ 	grim_deps += [jpeg]
+ endif
++
++conf_data = configuration_data()
++conf_data.set10('HAVE_WORDEXP', cc.check_header('wordexp.h'))
+ 
+ executable(
+ 	'grim',

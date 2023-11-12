@@ -1,0 +1,30 @@
+Index: main.c
+--- main.c.orig
++++ main.c
+@@ -9,8 +9,16 @@
+ #include <string.h>
+ #include <time.h>
+ #include <unistd.h>
++#ifdef HAVE_WORDEXP_H
+ #include <wordexp.h>
+-
++#else
++#include <glob.h>
++#define wordexp_t glob_t
++#define wordfree globfree
++#define wordexp(s,p,f) glob((s), GLOB_DOOFFS, NULL, (p))
++#define we_wordc gl_pathc
++#define we_wordv gl_pathv
++#endif
+ #include "buffer.h"
+ #include "grim.h"
+ #include "output-layout.h"
+@@ -211,7 +219,7 @@ static bool default_filename(char *filename, size_t n,
+ 	}
+ 	assert(ext != NULL);
+ 	char tmpstr[32];
+-	sprintf(tmpstr, "%%Y%%m%%d_%%Hh%%Mm%%Ss_grim.%s", ext);
++	snprintf(tmpstr, sizeof(tmpstr), "%%Y%%m%%d_%%Hh%%Mm%%Ss_grim.%s", ext);
+ 	format_str = tmpstr;
+ 	if (strftime(filename, n, format_str, time) == 0) {
+ 		fprintf(stderr, "failed to format datetime with strftime(3)\n");
