@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 SITES =	https://ftp.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/ \
 	http://releases.mozilla.org/pub/firefox/releases/${FV}/linux-i686/xpi/
 
-LANGUAGES =	ach af an ar ast az bg bn br bs ca cs cy da de dsb el en-GB en-US eo \
+LANGUAGES =	ach af an ar ast az be bg bn br bs ca cs cy da de dsb el en-GB en-US eo \
 		es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he \
 		hi-IN hr hsb hu hy-AM id \
 		is it ja kk km kn ko lij lt lv mk mr ms nb-NO nl nn-NO \
