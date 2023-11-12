@@ -1,0 +1,21 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -12,7 +12,7 @@ add_project_arguments('-Wno-unused-parameter', languag
+ cc = meson.get_compiler('c')
+ 
+ cairo = dependency('cairo')
+-realtime = cc.find_library('rt')
++# realtime = cc.find_library('rt')
+ wayland_client = dependency('wayland-client')
+ wayland_cursor = dependency('wayland-cursor')
+ wayland_protos = dependency('wayland-protocols', version: '>=1.14')
+@@ -30,7 +30,7 @@ executable(
+ 	],
+ 	dependencies: [
+ 		cairo,
+-		realtime,
++		# realtime,
+ 		wayland_client,
+ 		wayland_cursor,
+ 		xkbcommon,

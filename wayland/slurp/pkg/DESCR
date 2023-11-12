@@ -1,0 +1,16 @@
+Select a region in a Wayland compositor and print it to the standard output.
+Works well with grim
+
+Example usage
+
+Select a region and print it to stdout:
+
+  slurp
+
+Select a single point instead of a region:
+
+  slurp -p
+
+Select an output and print its name:
+
+  slurp -o -f "%o"
