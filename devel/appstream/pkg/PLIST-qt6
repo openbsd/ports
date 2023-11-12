@@ -1,16 +1,22 @@
+@conflict appstream1-qt5-*
+@pkgpath devel/appstream,-qt5
 include/AppStreamQt/
 include/AppStreamQt/appstreamqt_export.h
 include/AppStreamQt/bundle.h
 include/AppStreamQt/category.h
+include/AppStreamQt/component-box.h
 include/AppStreamQt/component.h
 include/AppStreamQt/contentrating.h
+include/AppStreamQt/developer.h
 include/AppStreamQt/icon.h
 include/AppStreamQt/image.h
 include/AppStreamQt/launchable.h
 include/AppStreamQt/metadata.h
 include/AppStreamQt/pool.h
 include/AppStreamQt/provided.h
+include/AppStreamQt/relation-check-result.h
 include/AppStreamQt/relation.h
+include/AppStreamQt/release-list.h
 include/AppStreamQt/release.h
 include/AppStreamQt/screenshot.h
 include/AppStreamQt/spdx.h

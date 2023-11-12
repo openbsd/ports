@@ -3,21 +3,18 @@
 # for an example, see:
 # https://gitlab.archlinux.org/archlinux/packaging/packages/archlinux-appstream-data/-/blob/main/PKGBUILD
 
-COMMENT-main=		standard for creating app stores across distributions
-COMMENT-qt5=		Qt5 interface for AppStream
+COMMENT-main=		access to machine-readable software metadata
+COMMENT-qt6=		Qt5 interface for AppStream
 
-V=			0.16.4
+V=			1.0.0
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
-PKGNAME-qt5=		appstream-qt5-${V}
+PKGNAME-qt6=		appstream-qt6-${V}
 
-REVISION-main=		0
-REVISION-qt5=		0
-
-SHARED_LIBS += appstream                 0.1 # 0.16.4
-SHARED_LIBS += appstream-compose         0.0 # 0.16.4
-SHARED_LIBS += AppStreamQt               0.0 # 0.16.4
+SHARED_LIBS += appstream                 1.0 # 1.0.0
+SHARED_LIBS += appstream-compose         1.0 # 1.0.0
+SHARED_LIBS += AppStreamQt               1.0 # 1.0.0
 
 CATEGORIES=		devel
 
@@ -30,17 +27,17 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB-main += c cairo curl fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 intl m pango-1.0 rsvg-2 stemmer
-WANTLIB-main += xml2 xmlb yaml-0
+WANTLIB-main += xml2 xmlb yaml-0 zstd
 
-WANTLIB-qt5 += ${COMPILER_LIBCXX} Qt5Core appstream gio-2.0 glib-2.0
-WANTLIB-qt5 += gobject-2.0
+WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core appstream gio-2.0 glib-2.0
+WANTLIB-qt6 += gobject-2.0
 
 SITES=			https://www.freedesktop.org/software/appstream/releases/
 
-MULTI_PACKAGES=		-main -qt5
+MULTI_PACKAGES=		-main -qt6
 
 MODULES=		devel/meson \
-			x11/qt5
+			x11/qt6
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
@@ -56,8 +53,8 @@ LIB_DEPENDS-main=	devel/libyaml \
 			textproc/libxmlb \
 			x11/gnome/librsvg
 
-LIB_DEPENDS-qt5=	${BASE_PKGPATH},-main \
-			${MODQT5_LIB_DEPENDS}
+LIB_DEPENDS-qt6=	${BASE_PKGPATH},-main \
+			${MODQT6_LIB_DEPENDS}
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
@@ -87,9 +84,5 @@ pre-configure:
 		${WRKSRC}/src/as-utils.h \
 		${WRKSRC}/src/as-validator-issue-tag.h
 	sed -i "s,/usr,${LOCALBASE},g" ${WRKSRC}/tools/appstream-compose.c
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/appstream
-	mv ${WRKINST}${SYSCONFDIR}/appstream.conf ${PREFIX}/share/examples/appstream
 
 .include <bsd.port.mk>
