@@ -4,6 +4,7 @@ SUBDIR += en-GB
 SUBDIR += en-US
 SUBDIR += es-AR
 SUBDIR += es-ES
+SUBDIR += fi
 SUBDIR += fr
 SUBDIR += hu
 SUBDIR += it

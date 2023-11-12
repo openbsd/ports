@@ -31,7 +31,7 @@ NO_TEST =	Yes
 EXTRACT_ONLY =
 
 # needed to have all distfiles in distinfo
-LANGUAGES =	cs de en-GB en-US es-AR es-ES fr hu it ja \
+LANGUAGES =	cs de en-GB en-US es-AR es-ES fi fr hu it ja \
 		nb-NO nl pl pt-BR pt-PT ru sk sv-SE zh-CN zh-TW
 
 .for i in ${LANGUAGES}
