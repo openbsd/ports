@@ -1,4 +1,5 @@
 COMMENT =	utility to show Wayland events
+UNLINKED 	= wayland
 
 V =		1.0.0
 DISTNAME =	wev-${V}

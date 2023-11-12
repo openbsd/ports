@@ -17,6 +17,7 @@
 # x11/x11vnc
 
 COMMENT =	wscons(4) and kqueue(2) based port of libinput
+UNLINKED 	= wayland
 
 CATEGORIES =	x11 wayland
 

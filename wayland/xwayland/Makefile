@@ -1,4 +1,5 @@
 COMMENT =	X server running as wayland application
+UNLINKED 	= wayland
 
 DISTNAME =	xwayland-23.2.2
 

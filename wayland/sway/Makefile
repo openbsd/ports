@@ -1,4 +1,5 @@
 COMMENT =	i3-compatible Wayland compositor
+UNLINKED 	= wayland
 
 V =		20231108
 PKGNAME =	sway-${V}
