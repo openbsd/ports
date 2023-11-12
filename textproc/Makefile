@@ -499,6 +499,7 @@
      SUBDIR += qpdfview
      SUBDIR += qxlsx
      SUBDIR += qxlsx,qt6
+     SUBDIR += rapidjson
      SUBDIR += raptor
      SUBDIR += rasqal
      SUBDIR += re2
