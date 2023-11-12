@@ -1,7 +1,10 @@
 QT5NAME =	QtWayland
 COMMENT =	Qt5 module for Wayland support
 
-SHARED_LIBS +=  Qt5WaylandClient          0.0 # 5.15
+KDE_COMMIT =		49c8a8d3c29998a3a160a139948ad8730b35a3d5
+KDE_VERSION =		60
+
+SHARED_LIBS +=  Qt5WaylandClient          1.0 # 5.15
 SHARED_LIBS +=  Qt5WaylandCompositor      0.0 # 5.15
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Core Qt5DBus Qt5Gui Qt5Network
@@ -25,5 +28,6 @@ MODQMAKE_RECURSIVE =	No
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config.tests/wayland_scanner/wayland_scanner.pro \
 		${WRKSRC}/features/wayland-scanner-client-wayland-protocol-include.prf
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

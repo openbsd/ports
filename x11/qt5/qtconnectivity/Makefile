@@ -1,6 +1,9 @@
 QT5NAME =	QtConnectivity
 COMMENT-main =	Bluetooth and NFC support for Qt5
 
+KDE_COMMIT =		e33b82889625b6a72e0be91c5023a30d53136a80
+KDE_VERSION =		6
+
 SHARED_LIBS +=  Qt5Bluetooth          3.0 # 5.9
 SHARED_LIBS +=  Qt5Nfc                3.0 # 5.9
 
@@ -16,5 +19,8 @@ RUN_DEPENDS =	x11/dbus
 FLAVORS =		debug
 
 MODQMAKE_RECURSIVE =	No
+
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

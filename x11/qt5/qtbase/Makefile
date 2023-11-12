@@ -1,5 +1,7 @@
-DISTNAME =		qtbase-everywhere-opensource-src-${DIST_VERSION}
-QT5NAME =		Qt5 core
+QT5NAME =		QtBase
+
+KDE_COMMIT =		ea7a183732c17005f08ca14fd70cdd305c90396d
+KDE_VERSION =		138
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -7,28 +9,26 @@ COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-PKGNAME-mysql =		qt5-mysql-${VERSION}
-PKGNAME-global =	qt5-global-${VERSION}
-PKGNAME-psql =		qt5-postgresql-${VERSION}
-PKGNAME-tds =		qt5-tds-${VERSION}
+PKGNAME-mysql =		qt5-mysql-${QT5_KDE_VERSION}
+PKGNAME-global =	qt5-global-${QT5_KDE_VERSION}
+PKGNAME-psql =		qt5-postgresql-${QT5_KDE_VERSION}
+PKGNAME-tds =		qt5-tds-${QT5_KDE_VERSION}
 
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
-
-REVISION-main =		0
 
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
 SHARED_LIBS +=  Qt5Core                      5.0 # 5.15
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
-SHARED_LIBS +=  Qt5Gui                       4.0 # 5.15
+SHARED_LIBS +=  Qt5Gui                       4.1 # 5.15
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15
 SHARED_LIBS +=  Qt5Sql                       3.0 # 5.15
 SHARED_LIBS +=  Qt5Test                      3.1 # 5.15
-SHARED_LIBS +=  Qt5Widgets                   4.0 # 5.15
+SHARED_LIBS +=  Qt5Widgets                   4.1 # 5.15
 SHARED_LIBS +=  Qt5Xml                       3.0 # 5.15
 SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
@@ -61,7 +61,7 @@ MULTI_PACKAGES =	-main -examples -global -mysql -psql -tds
 
 # qmake module is used only for running tests and setting vars
 MODQT_DEPS =		No
-MODQMAKE_PROJECTS =	tests/tests.pro
+MODQMAKE_PROJECTS =	src/tools/bootstrap src/corelib src/tools/qlalr
 USE_GMAKE =		Yes
 
 # no leveldb dependency, requires -lmemenv; QtWebKit uses internal version
@@ -141,7 +141,7 @@ CONFIGURE_ARGS +=	-confirm-license \
 			-verbose
 
 # We have to wait until arm64 is vulkan ready.
-#BUILD_DEPENDS =		graphics/vulkan-loader
+#BUILD_DEPENDS =	graphics/vulkan-loader
 CONFIGURE_ARGS +=	-no-vulkan
 
 # Let's wait a little until we have more experience and test results
@@ -232,6 +232,12 @@ CONFIGURE_ARGS +=	-platform openbsd-g++
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
+
+WRKDIST =	${WRKDIR}/qtbase-${KDE_COMMIT}
+
+QT5_SYNCQT_BIN = 	${WRKDIST}/bin/syncqt.pl
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 post-extract:
 	mkdir -p ${WRKDIST}/mkspecs/openbsd-{clang,g++}

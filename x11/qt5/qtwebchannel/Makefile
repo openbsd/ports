@@ -1,7 +1,10 @@
 QT5NAME =		QtWebChannel
 COMMENT-main =		Qt5 seamless HTML/JavaScript integration
 
-SHARED_LIBS +=  Qt5WebChannel            2.0 # 5.9
+KDE_COMMIT =		f84887c1aee4ab04af375e639ae965c9ea2186a5
+KDE_VERSION =		3
+
+SHARED_LIBS +=  Qt5WebChannel            2.1 # 5.9
 
 MULTI_PACKAGES =	-main -examples
 
@@ -14,5 +17,8 @@ RUN_DEPENDS =		x11/qt5/qtwebsockets>=${QT5_VERSION:R},<${QT5_NEXT_VERSION}
 LIB_DEPENDS =		x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
+
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

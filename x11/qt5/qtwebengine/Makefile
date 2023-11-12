@@ -13,9 +13,12 @@ DPB_PROPERTIES +=	lonesome
 COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
-DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
+#DISTNAME =		qtwebengine-everywhere-opensource-src-${QT5_WEBENGINE_VERSION}
 QT5NAME =		QtWebEngine
-REVISION =		8
+VERSION =		${QT5_WEBENGINE_VERSION}
+DIST_VERSION =		${QT5_WEBENGINE_VERSION}
+QT5_DIST_VERSION =	${QT5_WEBENGINE_VERSION}
+REVISION =		9
 
 CATEGORIES =		www
 
@@ -130,6 +133,8 @@ pre-configure:
 	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
+	# # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
+	${QT5_GEN_INCLUDES}
 
 pre-build:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \

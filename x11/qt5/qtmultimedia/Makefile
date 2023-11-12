@@ -1,6 +1,9 @@
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
 
+KDE_COMMIT =		f587b18db4abd68cb6d4d77fbcec1b94c38d2a51
+KDE_VERSION =		2
+
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5Multimedia             3.0 # 5.9
@@ -8,11 +11,11 @@ SHARED_LIBS +=  Qt5MultimediaWidgets      3.0 # 5.9
 SHARED_LIBS +=  Qt5MultimediaGstTools     0.0 # 5.13
 SHARED_LIBS +=  Qt5MultimediaQuick        0.0 # 5.13
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
-WANTLIB += Qt5Qml Qt5Quick Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstphotography-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m openal pulse pulse-mainloop-glib
-WANTLIB += Qt5QmlModels gstallocators-1.0 gstgl-1.0
+WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
+WANTLIB-main += Qt5QmlModels Qt5Quick Qt5Widgets glib-2.0 gobject-2.0
+WANTLIB-main += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-main += gstgl-1.0 gstpbutils-1.0 gstphotography-1.0 gstreamer-1.0
+WANTLIB-main += gstvideo-1.0 intl m openal pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =		multimedia/gstreamer1/mm
 
@@ -39,5 +42,8 @@ PSEUDO_FLAVORS =	bootstrap no_examples
 
 MODQMAKE_ARGS =		GST_VERSION=1.0
 MODQMAKE_RECURSIVE =	No
+
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

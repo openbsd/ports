@@ -13,36 +13,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
  
      const long anyVersion =
  #if QT_CONFIG(dtls)
-@@ -408,16 +410,28 @@ init_context:
-         maxVersion = DTLS1_VERSION;
-         break;
-     case QSsl::DtlsV1_0OrLater:
-+#ifdef DTLS_MAX_VERSION
-         minVersion = DTLS1_VERSION;
-         maxVersion = DTLS_MAX_VERSION;
-+#else
-+        Q_UNREACHABLE();
-+#endif // DTLS_MAX_VERSION
-         break;
-     case QSsl::DtlsV1_2:
-+#ifdef DTLS1_2_VERSION
-         minVersion = DTLS1_2_VERSION;
-         maxVersion = DTLS1_2_VERSION;
-+#else
-+        Q_UNREACHABLE();
-+#endif // DTLS1_2_VERSION
-         break;
-     case QSsl::DtlsV1_2OrLater:
-+#if defined(DTLS1_2_VERSION) && defined(DTLS_MAX_VERSION)
-         minVersion = DTLS1_2_VERSION;
-         maxVersion = DTLS_MAX_VERSION;
-+#else
-+        Q_UNREACHABLE();
-+#endif // DTLS1_2_VERSION && DTLS_MAX_VERSION
-         break;
-     case QSsl::TlsV1_3OrLater:
- #ifdef TLS1_3_VERSION
-@@ -722,6 +736,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -722,6 +724,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -50,7 +21,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -768,7 +783,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -768,7 +771,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

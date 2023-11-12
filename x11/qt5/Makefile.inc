@@ -10,11 +10,19 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
+
+.if defined(KDE_VERSION)
+QT5_KDE_VERSION =	${QT5_VERSION}pl${KDE_VERSION}
+PKGNAME ?=		${QT5NAME:L}-${QT5_KDE_VERSION}
+.else
+DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${DIST_VERSION}
+PKGNAME ?=		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
+.endif
+
 DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${DIST_VERSION}
 
 MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
-PKGNAME ?=		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
 PKGNAME-examples ?=	${PKGNAME:C/(-[0-9])/-examples\1/}
 
@@ -40,8 +48,13 @@ RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 # A few components, including QtWebEngine, are LGPLv3 only, no LGPLv2.1.
 PERMIT_PACKAGE ?=	Yes
 
+.if defined(KDE_VERSION) && defined(KDE_COMMIT)
+DIST_TUPLE =		kde qt qt/${QT5NAME:L} ${KDE_COMMIT} .
+.else
 SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
+.endif
+
 DIST_SUBDIR ?=		qt
 EXTRACT_SUFX ?=		.tar.xz
 
@@ -64,7 +77,11 @@ MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
   MAKE_FLAGS +=		LIB${_l}_VERSION=${_v}
 .endfor
 
+.if defined(KDE_COMMIT)
+WRKDIST =		${WRKDIR}/${QT5NAME:L}-${KDE_COMMIT}
+.else
 WRKDIST ?=		${WRKDIR}/${DISTNAME:S/opensource-//}
+.endif
 
 # qmake supports so-called "shadow" builds: it's like normal
 # out-of-source build but build directory is required to be located
@@ -95,6 +112,10 @@ CONFIGURE_ENV +=	MAKE=make \
 ALL_TARGET ?=		first
 FAKE_TARGET ?=		install
 TEST_TARGET ?=		check
+
+QT5_SYNCQT_BIN ?= 	${LOCALBASE}/lib/qt5/bin/syncqt.pl
+QT5_GEN_INCLUDES = cd ${WRKDIST} && \
+	${SETENV} ${QT5_SYNCQT_BIN} -version ${MODQT5_VERSION} -quiet ${WRKDIST}
 
 .include <bsd.port.arch.mk>
 

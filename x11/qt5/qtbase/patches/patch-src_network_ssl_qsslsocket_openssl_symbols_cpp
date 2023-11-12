@@ -63,7 +63,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -872,16 +891,21 @@ bool q_resolveOpenSslSymbols()
+@@ -870,16 +889,21 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EVP_CIPHER_CTX_reset)
      RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
      RESOLVEFUNC(EVP_PKEY_up_ref)
@@ -85,7 +85,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(DH_get0_pqg)
      RESOLVEFUNC(SSL_CTX_set_options)
      RESOLVEFUNC(SSL_CTX_get_security_level)
-@@ -1097,6 +1121,7 @@ bool q_resolveOpenSslSymbols()
+@@ -1095,6 +1119,7 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_CTX_use_PrivateKey)
      RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
@@ -93,7 +93,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(SSL_CTX_get_cert_store);
      RESOLVEFUNC(SSL_CONF_CTX_new);
      RESOLVEFUNC(SSL_CONF_CTX_free);
-@@ -1104,6 +1129,7 @@ bool q_resolveOpenSslSymbols()
+@@ -1102,6 +1127,7 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_CONF_CTX_set_flags);
      RESOLVEFUNC(SSL_CONF_CTX_finish);
      RESOLVEFUNC(SSL_CONF_cmd);

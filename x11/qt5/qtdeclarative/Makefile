@@ -1,16 +1,19 @@
 QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
 
+KDE_COMMIT =		453b1cb207cf3ce35b906c21c9f04a17d66074a7
+KDE_VERSION =		31
+
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =   Qt5Qml                    3.4 # 5.9
-SHARED_LIBS +=  Qt5Quick                  6.0 # 5.9
+SHARED_LIBS =   Qt5Qml                    4.0 # 5.9
+SHARED_LIBS +=  Qt5Quick                  6.1 # 5.9
 SHARED_LIBS +=  Qt5QuickParticles         3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickTest              3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickWidgets           3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickShapes            0.0 # 5.13
-SHARED_LIBS +=  Qt5QmlModels              0.0 # 5.15
+SHARED_LIBS +=  Qt5QmlModels              0.1 # 5.15
 SHARED_LIBS +=  Qt5QmlWorkerScript        0.0 # 5.15
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
@@ -51,5 +54,6 @@ MODQMAKE_RECURSIVE =	No
 pre-configure:
 # Python is used for building, this path does not get into final packages.
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>
