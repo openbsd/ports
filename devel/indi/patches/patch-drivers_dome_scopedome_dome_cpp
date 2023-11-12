@@ -1,57 +1,23 @@
+No wordexp(3) on OpenBSD.
+XXX check for the wordexp function instead + push upstream
+
 Index: drivers/dome/scopedome_dome.cpp
 --- drivers/dome/scopedome_dome.cpp.orig
 +++ drivers/dome/scopedome_dome.cpp
-@@ -44,7 +44,11 @@
+@@ -44,7 +44,16 @@
  #include <memory>
  #include <termios.h>
  #include <unistd.h>
-+#ifdef __OpenBSD__
-+#include <glob.h>
-+#else
++#ifndef __OpenBSD__
  #include <wordexp.h>
++#else
++#include <glob.h>
++#define wordexp_t glob_t
++#define wordfree globfree
++#define wordexp(s,p,f) glob((s), GLOB_ERR | GLOB_TILDE, NULL, (p))
++#define we_wordc gl_pathc
++#define we_wordv gl_pathv
 +#endif
  
  // We declare an auto pointer to ScopeDome.
  std::unique_ptr<ScopeDome> scopeDome(new ScopeDome());
-@@ -63,10 +67,17 @@ ScopeDome::ScopeDome()
-     stepsPerRevolution = ~0;
- 
-     // Load dome inertia table if present
-+#ifdef __OpenBSD__
-+    glob_t wexp;
-+    if (glob("~/.indi/ScopeDome_DomeInertia_Table.txt", GLOB_ERR, NULL, &wexp) == 0)
-+    {
-+        FILE *inertia = fopen(wexp.gl_pathv[0], "r");
-+#else
-     wordexp_t wexp;
-     if (wordexp("~/.indi/ScopeDome_DomeInertia_Table.txt", &wexp, 0) == 0)
-     {
-         FILE *inertia = fopen(wexp.we_wordv[0], "r");
-+#endif
-         if (inertia)
-         {
-             // skip UTF-8 marker bytes
-@@ -93,7 +104,11 @@ ScopeDome::ScopeDome()
-                 lineNum++;
-             }
-             fclose(inertia);
-+#ifdef __OpenBSD__
-+            LOGF_INFO("Read inertia file %s", wexp.gl_pathv[0]);
-+#else
-             LOGF_INFO("Read inertia file %s", wexp.we_wordv[0]);
-+#endif
-         }
-         else
-         {
-@@ -102,7 +117,11 @@ ScopeDome::ScopeDome()
-                      "~/.indi/ScopeDome_DomeInertia_Table.txt");
-         }
-     }
-+#ifdef __OpenBSD__
-+    globfree(&wexp);
-+#else
-     wordfree(&wexp);
-+#endif
- }
- 
- bool ScopeDome::initProperties()

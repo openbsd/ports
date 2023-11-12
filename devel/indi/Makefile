@@ -4,6 +4,7 @@ COMMENT-libs=		INDI client libraries
 GH_TAGNAME=		v1.9.8
 GH_ACCOUNT=		indilib
 GH_PROJECT=		indi
+REVISION=		0
 
 PKGNAME-libs=		lib${PKGNAME}
 
