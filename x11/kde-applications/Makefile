@@ -113,7 +113,7 @@
      SUBDIR += kdenetwork-filesharing
      SUBDIR += kget
      SUBDIR += kio-extras
-     #SUBDIR += kio-gdrive
+     SUBDIR += kio-gdrive
      SUBDIR += kmailtransport
      #SUBDIR += kopete
      SUBDIR += krdc

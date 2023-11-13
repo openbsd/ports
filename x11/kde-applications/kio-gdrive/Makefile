@@ -2,6 +2,8 @@ COMMENT =	KIO Slave to access Google Drive
 DISTNAME =	kio-gdrive-${VERSION}
 CATEGORIES =	www x11
 
+UNLINKED =	kde-applications
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Purpose KF5Service KF5Solid KF5WidgetsAddons
