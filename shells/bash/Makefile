@@ -1,6 +1,6 @@
 COMMENT=	GNU Bourne Again Shell
 
-DISTNAME=	bash-5.2.15
+DISTNAME=	bash-5.2.21
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
@@ -22,6 +22,8 @@ WANTLIB=	c curses iconv intl
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CFLAGS+=	-Wno-parentheses
+# 5.3 will have prototypes
+CFLAGS+=	-Wno-deprecated-non-prototype
 
 ALL_TARGET=	all loadables
 CONFIGURE_STYLE=gnu
