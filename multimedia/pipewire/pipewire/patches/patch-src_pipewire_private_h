@@ -16,10 +16,10 @@ Index: src/pipewire/private.h
  
  	void *user_data;		/**< extra user data */
  
-+#ifdef __OpenBSD__
++#ifndef __OpenBSD__
  	struct ucred ucred;		/**< ucred information */
 +#else
-+	struct sockpeercred ucred;		/**< sockpeercred information */
++	struct sockpeercred ucred;	/**< sockpeercred information */
 +#endif
  	unsigned int registered:1;
  	unsigned int ucred_valid:1;	/**< if the ucred member is valid */
