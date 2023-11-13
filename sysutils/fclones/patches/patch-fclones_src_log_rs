@@ -1,0 +1,17 @@
+Index: fclones/src/log.rs
+--- fclones/src/log.rs.orig
++++ fclones/src/log.rs
+@@ -72,12 +73,7 @@ impl StdLog {
+     pub fn new() -> StdLog {
+         StdLog {
+             progress_bar: Mutex::new(Weak::default()),
+-            program_name: std::env::current_exe()
+-                .unwrap()
+-                .file_name()
+-                .unwrap()
+-                .to_string_lossy()
+-                .to_string(),
++            program_name: "fclones".to_string(),
+             log_stderr_to_stdout: false,
+             no_progress: false,
+         }
