@@ -26,7 +26,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kwayland
+BUILD_DEPENDS =	devel/kf5/kwayland \
+		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
