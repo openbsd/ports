@@ -133,10 +133,8 @@ libexec/gromox/kdb-uidextract
 libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/midb
 @bin libexec/gromox/pop3
-@bin libexec/gromox/rtf2html
 @bin libexec/gromox/timer
 @bin libexec/gromox/zcore
-man/man1/rtf2html.1gx
 man/man4/alias_resolve.4gx
 man/man4/authmgr.4gx
 man/man4/autodiscover.4gx

@@ -1,0 +1,14 @@
+Index: lib/mapi/rop_util.cpp
+--- lib/mapi/rop_util.cpp.orig
++++ lib/mapi/rop_util.cpp
+@@ -200,7 +200,9 @@ gromox::time_point rop_util_nttime_to_unix2(uint64_t n
+ }
+ 
+ gromox::time_point rop_util_rtime_to_unix2(uint32_t t)
+-{return gromox::time_point(nt_dur(rop_util_rtime_to_nttime(t))-nt_offset);}
++{
++	return gromox::time_point(std::chrono::duration_cast<gromox::time_point::duration>(nt_dur(rop_util_rtime_to_nttime(t))-nt_offset));
++}
+ 
+ time_t rop_util_rtime_to_unix(uint32_t t)
+ {
