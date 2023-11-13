@@ -61,6 +61,7 @@ share/scite/fsharp.properties
 share/scite/gap.properties
 share/scite/haskell.properties
 share/scite/hex.properties
+share/scite/hollywood.properties
 share/scite/html.properties
 share/scite/inno.properties
 share/scite/json.properties
@@ -77,7 +78,6 @@ share/scite/metapost.properties
 share/scite/mmixal.properties
 share/scite/modula3.properties
 share/scite/nim.properties
-share/scite/nimrod.properties
 share/scite/nncrontab.properties
 share/scite/nsis.properties
 share/scite/opal.properties
