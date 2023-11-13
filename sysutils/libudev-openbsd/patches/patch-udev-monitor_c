@@ -1,0 +1,13 @@
+Kill the udev monitor thread on exit.
+
+Index: udev-monitor.c
+--- udev-monitor.c.orig
++++ udev-monitor.c
+@@ -334,6 +334,7 @@ udev_monitor_unref(struct udev_monitor *um)
+ 	TRC("(%p) refcount=%d", um, um->refcount);
+ 	if (--um->refcount == 0) {
+ 		close(um->fds[0]);
++		pthread_cancel(um->thread);
+ 		pthread_join(um->thread, NULL);
+ 		close(um->fds[1]);
+ 		udev_filter_free(&um->filters);
