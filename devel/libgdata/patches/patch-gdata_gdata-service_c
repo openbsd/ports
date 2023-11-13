@@ -1,0 +1,14 @@
+https://gitlab.gnome.org/GNOME/libgdata/-/merge_requests/47
+
+Index: gdata/gdata-service.c
+--- gdata/gdata-service.c.orig
++++ gdata/gdata-service.c
+@@ -46,7 +46,7 @@
+ 
+ #ifdef HAVE_GNOME
+ #define GCR_API_SUBJECT_TO_CHANGE
+-#include <gcr/gcr-base.h>
++#include <gcr/gcr.h>
+ #endif /* HAVE_GNOME */
+ 
+ #include "gdata-service.h"
