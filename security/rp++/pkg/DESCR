@@ -1,0 +1,2 @@
+rp++ is a ROP gadget finder for PE/ELF/Mach-O executables and
+x86/x64/ARM/ARM64 architectures.
