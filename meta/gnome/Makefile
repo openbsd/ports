@@ -36,7 +36,7 @@ RUN_DEPENDS-main +=	net/avahi
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 
-# elements/vm/common-deps.bst / core-deps
+# elements/core-deps/
 RUN_DEPENDS-main +=	sysutils/flatpak/xdg-desktop-portal \
 			sysutils/flatpak/xdg-desktop-portal-gnome \
 			sysutils/flatpak/xdg-desktop-portal-gtk
