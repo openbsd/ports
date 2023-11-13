@@ -42,7 +42,7 @@
      SUBDIR += gambit
      SUBDIR += gawk
      SUBDIR += gcc
-#    SUBDIR += gdmd
+     SUBDIR += gdmd
      SUBDIR += gerbil
      SUBDIR += gforth
      SUBDIR += ghc
