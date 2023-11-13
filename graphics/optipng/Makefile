@@ -1,7 +1,6 @@
 COMMENT =		lossless PNG optimizer
-DISTNAME =		optipng-0.7.7
+DISTNAME =		optipng-0.7.8
 CATEGORIES =		graphics
-REVISION =		1
 
 HOMEPAGE =		https://optipng.sourceforge.net/
 
