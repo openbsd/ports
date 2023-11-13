@@ -29,8 +29,8 @@ WANTLIB =		${COMPILER_LIBCXX} c m
 COMPILER =		base-clang ports-clang
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/llvm
-RUN_DEPENDS =		devel/llvm
+BUILD_DEPENDS =		devel/llvm/13
+RUN_DEPENDS =		devel/llvm/13
 
 NO_TEST =		Yes
 

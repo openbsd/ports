@@ -16,7 +16,7 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-BUILD_DEPENDS =	devel/llvm \
+BUILD_DEPENDS =	devel/llvm/13 \
 		${RUN_DEPENDS}
 
 LIB_DEPENDS =	devel/libaio_compat \
