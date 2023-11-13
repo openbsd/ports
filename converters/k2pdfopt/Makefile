@@ -1,5 +1,6 @@
-# if un-breaking, reenable in ../Makefile
 BROKEN =	k2pdfopt uses modified builds of MuPDF, Leptonica, Tesseract; at least some of these have been updated causing mods to fail
+
+BROKEN +=	also depends on graphics/opejpeg which no longer exists
 
 # Notes on updating:
 # - go to https://www.willus.com/k2pdfopt/k2pdfopt_version.txt;
@@ -51,11 +52,13 @@ BUILD_DEPENDS +=	textproc/mupdf:patch \
 LIB_DEPENDS +=	graphics/png \
 		graphics/jpeg \
 		graphics/jbig2dec \
-		graphics/openjpeg \
 		textproc/mupdf \
 		graphics/djvulibre \
 		graphics/leptonica \
 		graphics/tesseract/tesseract
+
+# XXX we no longer have this port
+# LIB_DEPENDS +=	graphics/openjpeg
 
 RUN_DEPENDS +=	print/ghostscript/gnu
 

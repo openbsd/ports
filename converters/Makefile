@@ -11,7 +11,7 @@
      SUBDIR += html2text
      SUBDIR += html2wml
      SUBDIR += ish
-    # SUBDIR += k2pdfopt
+     SUBDIR += k2pdfopt
      SUBDIR += lastools
      SUBDIR += libdvdcss
      SUBDIR += libiconv
