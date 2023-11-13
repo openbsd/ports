@@ -1,0 +1,14 @@
+Automatically start wireplumber (no support for systemd services).
+
+Index: src/daemon/pipewire.conf.in
+--- src/daemon/pipewire.conf.in.orig
++++ src/daemon/pipewire.conf.in
+@@ -304,6 +304,8 @@ context.exec = [
+     #
+     @sm_comment@{ path = "@session_manager_path@" args = "@session_manager_args@"
+     @sm_comment@  condition = [ { exec.session-manager = null } { exec.session-manager = true } ] }
++    { path = "${LOCALBASE}/bin/wireplumber" args = ""
++      condition = [ { exec.session-manager = null } { exec.session-manager = true } ] }
+     #
+     # You can optionally start the pulseaudio-server here as well
+     # but it is better to start it as a systemd service.

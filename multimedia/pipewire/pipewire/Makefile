@@ -6,7 +6,7 @@ PW_VERSION=		0.3.84
 
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		7
+REVISION-main=		8
 REVISION-libs=		0
 
 SHARED_LIBS += pipewire-0.3              0.0 # 0.384.0
@@ -37,7 +37,7 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 
 LIB_DEPENDS-libs=	devel/gettext,-runtime
 
-# needs a pipewire-session-manager
+# needs a pipewire-session-manager; see patch-src_daemon_pipewire_conf_in
 RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
 
 # libintl
@@ -90,5 +90,8 @@ CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 # XXX to be revisited; useful to replace the pulseaudio daemon
 # (audio/pulseaudio) but it seems to depend on systemd activation for now
 CONFIGURE_ARGS +=	-Dlibpulse=disabled
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/daemon/pipewire.conf.in
 
 .include <bsd.port.mk>
