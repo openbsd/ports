@@ -99,6 +99,7 @@
      SUBDIR += fabric
      SUBDIR += facette
      SUBDIR += faubackup
+     SUBDIR += fclones
      SUBDIR += fd
      SUBDIR += fdupes
      SUBDIR += fff
