@@ -27,6 +27,7 @@ WANTLIB +=	xkbcommon
 
 BUILD_DEPENDS =	devel/tllist \
 		textproc/scdoc \
+		wayland/libinput-openbsd \
 		wayland/wayland-protocols
 
 LIB_DEPENDS =	devel/libstdthreads \
