@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =aarch64 amd64 i386
+
 COMMENT =	fast ROP gadget finder for multiple targets
 
 GH_ACCOUNT =	0vercl0k
