@@ -2,10 +2,8 @@
 # It is a maintainer helper to provide a way to build snappy-java.jar
 # with the native module so that it can be rebuilt more easily when
 # libc++ is updated.
-IGNORE=		ignored, helper port only, use NO_IGNORE=Yes to build
 UNLINKED =	snappy-java-bootstrap
-DESCR =		/dev/null
-PLIST =		/dev/null
+STATIC_PLIST =	No
 
 COMMENT=	special helper port to build snappy-java-X.jar for unifi
 
