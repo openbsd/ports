@@ -1,7 +1,6 @@
 COMMENT =		tool for reverse engineering Android apk files
 
-DISTNAME =		apktool_2.4.0
-REVISION =		2
+DISTNAME =		apktool_2.9.0
 PKGNAME =		${DISTNAME:S/_/-/}
 
 CATEGORIES =		devel security java
@@ -18,8 +17,6 @@ SITES =			https://bitbucket.org/iBotPeaches/apktool/downloads/
 EXTRACT_ONLY =
 EXTRACT_SUFX =		.jar
 
-INSTALL_DIR =		${PREFIX}/share/apktool/
-
 SUBST_VARS +=		DISTNAME
 
 MODULES =		java
@@ -27,14 +24,16 @@ MODJAVA_VER =		1.8+
 
 RUN_DEPENDS =		java/javaPathHelper
 
-do-install:
-		${INSTALL_DATA_DIR} ${INSTALL_DIR}
-		cp -r ${FULLDISTDIR}/${DISTFILES}	${INSTALL_DIR}
-		cp ${FILESDIR}/apktool ${PREFIX}/bin/apktool
-		${SUBST_PROGRAM} ${FILESDIR}/apktool ${PREFIX}/bin/apktool
-
 NO_BUILD =		Yes
 NO_TEST =		Yes
+
+INSTALL_DIR =		${PREFIX}/share/apktool/
+
+do-install:
+	${INSTALL_DATA_DIR} ${INSTALL_DIR}
+	cp -r ${FULLDISTDIR}/${DISTFILES} ${INSTALL_DIR}
+	cp ${FILESDIR}/apktool ${PREFIX}/bin/apktool
+	${SUBST_PROGRAM} ${FILESDIR}/apktool ${PREFIX}/bin/apktool
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/apktool/
