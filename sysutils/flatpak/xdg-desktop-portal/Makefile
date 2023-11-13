@@ -29,6 +29,9 @@ BUILD_DEPENDS=		devel/gettext,-tools
 # rst2man
 BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
+# needed for tests
+BUILD_DEPENDS +=	sysutils/flatpak/libportal
+
 LIB_DEPENDS=		devel/json-glib \
 			graphics/gdk-pixbuf2 \
 			multimedia/pipewire/pipewire,-libs
@@ -41,11 +44,6 @@ CONFIGURE_ARGS=		-Dflatpak-interfaces=disabled \
 
 # needs dbusmock
 CONFIGURE_ARGS +=	-Dpytest=disabled
-
-# XXX cyclic dependency: libportal -> xdg-desktop-portal -> libportal;
-# only needed for tests
-#BUILD_DEPENDS +=	sysutils/flatpak/libportal
-CONFIGURE_ARGS +=	-Dlibportal=disabled
 
 # XXX needs org.freedesktop.portal.Flatpak.xml
 #BUILD_DEPENDS +=	textproc/xmlto
