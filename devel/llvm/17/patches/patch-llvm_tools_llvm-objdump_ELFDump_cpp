@@ -1,0 +1,13 @@
+Index: llvm/tools/llvm-objdump/ELFDump.cpp
+--- llvm/tools/llvm-objdump/ELFDump.cpp.orig
++++ llvm/tools/llvm-objdump/ELFDump.cpp
+@@ -282,6 +282,9 @@ template <class ELFT> void ELFDumper<ELFT>::printProgr
+     case ELF::PT_OPENBSD_MUTABLE:
+       outs() << "OPENBSD_MUTABLE ";
+       break;
++    case ELF::PT_OPENBSD_NOBTCFI:
++      outs() << "OPENBSD_NOBTCFI ";
++      break;
+     case ELF::PT_OPENBSD_RANDOMIZE:
+       outs() << "OPENBSD_RANDOMIZE ";
+       break;

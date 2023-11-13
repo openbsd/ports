@@ -1,0 +1,58 @@
+Index: lldb/source/Host/openbsd/HostInfoOpenBSD.cpp
+--- lldb/source/Host/openbsd/HostInfoOpenBSD.cpp.orig
++++ lldb/source/Host/openbsd/HostInfoOpenBSD.cpp
+@@ -7,9 +7,11 @@
+ //===----------------------------------------------------------------------===//
+ 
+ #include "lldb/Host/openbsd/HostInfoOpenBSD.h"
++#include "lldb/Host/FileSystem.h"
+ 
+ #include <cstdio>
+ #include <cstring>
++#include <unistd.h>
+ #include <optional>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+@@ -20,19 +22,23 @@ using namespace lldb_private;
+ llvm::VersionTuple HostInfoOpenBSD::GetOSVersion() {
+   struct utsname un;
+ 
+-  ::memset(&un, 0, sizeof(utsname));
+-  if (uname(&un) < 0)
++  ::memset(&un, 0, sizeof(un));
++  if (::uname(&un) < 0)
+     return llvm::VersionTuple();
+ 
+-  unsigned major, minor;
+-  if (2 == sscanf(un.release, "%u.%u", &major, &minor))
++  uint32_t major, minor;
++  int status = ::sscanf(un.release, "%" PRIu32 ".%" PRIu32, &major, &minor);
++  switch (status) {
++  case 1:
++    return llvm::VersionTuple(major);
++  case 2:
+     return llvm::VersionTuple(major, minor);
++  }
+   return llvm::VersionTuple();
+ }
+ 
+ std::optional<std::string> HostInfoOpenBSD::GetOSBuildString() {
+   int mib[2] = {CTL_KERN, KERN_OSREV};
+-  char osrev_str[12];
+   uint32_t osrev = 0;
+   size_t osrev_len = sizeof(osrev);
+ 
+@@ -45,4 +51,13 @@ std::optional<std::string> HostInfoOpenBSD::GetOSBuild
+ FileSpec HostInfoOpenBSD::GetProgramFileSpec() {
+   static FileSpec g_program_filespec;
+   return g_program_filespec;
++}
++
++bool HostInfoOpenBSD::ComputeSupportExeDirectory(FileSpec &file_spec) {
++  if (HostInfoPosix::ComputeSupportExeDirectory(file_spec) &&
++      file_spec.IsAbsolute() && FileSystem::Instance().Exists(file_spec))
++    return true;
++
++  file_spec.SetDirectory("/usr/bin");
++  return true;
+ }
