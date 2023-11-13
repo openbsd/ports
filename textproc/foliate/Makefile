@@ -1,12 +1,7 @@
-# XXX check for tracker3 support at next update
-#RUN_DEPENDS +=		x11/gnome/tracker3
-
 COMMENT=		simple and modern GTK eBook viewer
 
-GH_ACCOUNT=		johnfactotum
-GH_PROJECT=		foliate
-GH_TAGNAME=		2.6.4
-REVISION=		1
+DIST_TUPLE +=		github johnfactotum foliate 3.0.0 .
+DIST_TUPLE +=		github johnfactotum foliate-js f75fbba096e8fc1c775ea1c162fe1d3322cd5121 src/foliate-js
 
 CATEGORIES=		textproc graphics
 
@@ -22,19 +17,14 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/appstream-glib \
 			devel/gettext,-tools \
-			devel/iso-codes \
-			x11/gnome/gjs
+			www/webkitgtk4,webkitgtk60 \
+			x11/gnome/gjs \
+			x11/gnome/libadwaita
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/iso-codes \
-			textproc/gspell \
-			textproc/hyphen \
-			www/webkitgtk4 \
+			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/gjs \
 			x11/gtk+4,-guic \
-			x11/libhandy
-
-post-install:
-	ln -s com.github.johnfactotum.Foliate ${PREFIX}/bin/foliate
+			x11/gnome/libadwaita
 
 .include <bsd.port.mk>
