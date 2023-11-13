@@ -1,13 +1,9 @@
-# Note: This is meant for building ghc bootstraps only. Don't wire it in
-# /usr/ports/lang/Makefile or expect anything beyond make build to work.
-
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		bootstrap generator for lang/ghc
 UNLINKED =		ghc-bootstrap
-DESCR =			/dev/null
-PLIST =			/dev/null
+STATIC_PLIST =		no
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes

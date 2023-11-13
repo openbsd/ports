@@ -1,0 +1,5 @@
+This is a bootstrap port for ghc.
+There is no package.
+
+The boostrap bindist will be created by running 
+make bootstrap
