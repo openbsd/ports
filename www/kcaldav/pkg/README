@@ -92,23 +92,22 @@ Porting Notes: Write Ahead Logging
 Porting Notes: Debug and Logging
 ================================
 
-  Logging in kcaldav is controlled by the LOGFILE and DEBUG
-  variables in the Makefile. LOGFILE sets the name and location
-  of the file to write to, DEBUG controls the amount of logging.
+  Logging in kcaldav is controlled by the kcaldav.conf(5) configuration
+  file. The configuration file's location is set at compile-time:
 
-  The DEBUG level can only be set at build time. There are four
-  DEBUG levels in ascending order of verbosity: 0 - 3, where 0
-  disables all debugging. This port disables logging by commenting
-  out the Makefile line:
+    /var/www/conf/kcaldav.conf
 
-    CFLAGS  	+= -DLOGFILE=\"$(LOGFILE)\".
+  When sending error reports upstream, set debug=3 in kcaldav.conf(5).
 
-  When sending error reports upstream, re-enable the line above,
-  set DEBUG=3, and rebuild.
+  By default, kcaldav logs to stderr. Logging to a dedicated file can
+  be enabled by setting the logfile variable in kcaldav.conf(5).
+  For example:
 
-  LOGFILE defaults to /var/www/logs/kcaldav-system.log. This file
-  must be created by the user and permissions set:
+    logfile=/logs/kcaldav.log
 
-    touch /var/www/logs/kcaldav-system.log
-    chown www:www /var/www/logs/kcaldav-system.log
-    chmod 644 /var/www/logs/kcaldav-system.log
+  kcaldav will then use the log file /var/www/logs/kcaldav.log.
+  This file must be created by the user and permissions set:
+
+    touch /var/www/logs/kcaldav.log
+    chown www:www /var/www/logs/kcaldav.log
+    chmod 644 /var/www/logs/kcaldav.log
