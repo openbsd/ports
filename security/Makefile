@@ -332,6 +332,7 @@
      SUBDIR += rhash
      SUBDIR += rnp
      SUBDIR += routersploit
+     SUBDIR += rp++
      SUBDIR += ruby-argon2,ruby31
      SUBDIR += ruby-argon2,ruby32
      SUBDIR += ruby-bcrypt,ruby31
