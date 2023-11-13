@@ -22,8 +22,10 @@ set -e
 	-path ./distfiles -prune -o \
 	-path ./logs -prune -o \
 	-path ./mystuff -prune -o \
+	-path ./openbsd-wip -prune -o \
 	-path ./packages -prune -o \
 	-path ./plist -prune -o \
+	-path ./pobj -prune -o \
 	-path ./tests -prune -o \
     	-path ./Makefile -o \
 	-type d -name CVS -prune -o \
