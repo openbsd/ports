@@ -52,6 +52,7 @@ CONFIGURE_ENV =		MAN_DIR=${PREFIX}/man \
 CONFIGURE_ARGS =	--disable-discord \
 			--disable-jack \
 			--disable-wayland \
+			--disable-udev \
 			--disable-pulse \
 			--disable-oss \
 			--disable-v4l2 \
