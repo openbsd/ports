@@ -1,4 +1,4 @@
-Disable document portal (needs fuse3).
+XXX Disable document portal (needs fuse3).
 
 Index: tests/meson.build
 --- tests/meson.build.orig

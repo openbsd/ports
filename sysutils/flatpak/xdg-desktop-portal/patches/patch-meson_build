@@ -1,4 +1,4 @@
-No fuse3 on OpenBSD.
+XXX No fuse3 on OpenBSD.
 
 Index: meson.build
 --- meson.build.orig
