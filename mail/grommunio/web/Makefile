@@ -1,28 +1,22 @@
 COMMENT=	web user interface for grommunio
 
-V=		3.3
+V=		3.6
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=     grommunio-web
-GH_COMMIT=      f7738a0bd76d20c661ecdf6780072f5e21c71e5b
+GH_COMMIT=      d28e88b91b26d8705a495c44a3142074437d91c3
+
+SITES=		https://nerd.hu/distfiles/
 
 CATEGORIES=	mail www
 
 MODULES=	lang/php
 
-.if ${MACHINE_ARCH} == i386
-# java process run during the build uses a lot of ram; avoid scheduling
-# other build jobs at the same time to increase the chance of this build
-# succeeding
-DPB_PROPERTIES=	lonesome
-.endif
-
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/jdk/11 \
-		lang/node \
+BUILD_DEPENDS=	lang/node \
 		devel/gettext,-tools
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
@@ -34,8 +28,7 @@ USE_GMAKE=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-MAKE_ENV+=	JAVA=${LOCALBASE}/jdk-11/bin/java \
-		PHP=${MODPHP_BIN}
+MAKE_ENV+=	PHP=${MODPHP_BIN}
 
 PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/grommunio-web

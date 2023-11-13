@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -8,7 +8,9 @@ JAVA ?= java
+@@ -7,7 +7,9 @@ PHP ?= php
  
  # Variables
  
@@ -12,8 +12,21 @@ Index: Makefile
  
  # Javascript compiler
  
-@@ -102,7 +104,7 @@ js: $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $
- 	# TODO use separate targets
+@@ -95,15 +97,15 @@ clearartifacts:
+ 	find $(DESTDIR) -iname "*gpl*.txt" -exec rm -f {} \;
+ 
+ js: $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $(JSDEPLOY)/grommunio.js $(JSDEPLOY)/extjs-mod/extjs-mod.js $(JSDEPLOY)/extjs/ext-base-all.js $(DESTDIR)/client/third-party/ux-thirdparty.js $(DEPLOYPURIFYJS) $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.sandbox.js $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.worker.js $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.js $(JSDEPLOY)/filepreviewer/pdfjs/web/viewer.js $(JSDEPLOY)/filepreviewer/ViewerJS/ImageViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/MultimediaViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/ODFViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/UnknownFilePlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/viewer.js $(JSDEPLOY)/filepreviewer/ViewerJS/video-js/video.js
+-	cp -rn client/tinymce $(DESTDIR)/client/
+-	cp -rn client/tinymce-languages $(DESTDIR)/client/
+-	cp -rn client/tinymce-plugins $(DESTDIR)/client/
+-	cp -rn client/extjs $(DESTDIR)/client/
+-	cp -rn client/filepreviewer $(DESTDIR)/client/
++	cp -r client/tinymce $(DESTDIR)/client/
++	cp -r client/tinymce-languages $(DESTDIR)/client/
++	cp -r client/tinymce-plugins $(DESTDIR)/client/
++	cp -r client/extjs $(DESTDIR)/client/
++	cp -r client/filepreviewer $(DESTDIR)/client/
+ 	rm $(DESTDIR)/client/extjs/ext-base.js $(DESTDIR)/client/extjs/ext-base-debug.js $(DESTDIR)/client/extjs/ext-all.js $(DESTDIR)/client/filepreviewer/pdfjs/web/debugger.js
  
  $(DESTDIR)/%.php: %.php
 -	php -l $<
@@ -21,7 +34,16 @@ Index: Makefile
  	mkdir -p $$(dirname $@)
  	cp $< $@
  
-@@ -288,11 +290,11 @@ tokenizr: node_modules
+@@ -297,7 +299,7 @@ phplintci:
+ vendor: node_modules
+ 
+ node_modules:
+-	$(NPM) install
++	#$(NPM) install
+ 
+ # Icons
+ 
+@@ -345,11 +347,11 @@ tokenizr: node_modules
  
  .PHONY: plugins
  plugins:
