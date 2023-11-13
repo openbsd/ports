@@ -1,13 +1,14 @@
-Index: data/config.yaml
---- data/config.yaml.orig
-+++ data/config.yaml
-@@ -4,11 +4,11 @@ logging:
+Index: data/config.yaml.in
+--- data/config.yaml.in.orig
++++ data/config.yaml.in
+@@ -4,12 +4,12 @@ logging:
      mi-default:
        format: '[%(asctime)s] [%(levelname)s] (%(module)s): "%(message)s"'
  options:
 -  systemAdminDir: '/usr/share/grommunio-admin-common'
 +  systemAdminDir: '/usr/local/share/grommunio-admin-common'
    licenseFile: '/etc/grommunio-admin-common/license/license.crt'
+   subscriptionFile: '/etc/grommunio-admin-common/license/credentials.txt'
    filePermissions: 0o660
 -  fileUid: 'grommunio'
 -  fileGid: 'gromox'
@@ -16,3 +17,14 @@ Index: data/config.yaml
    vhosts:
      local: 'http://localhost:8080/statusmonitor'
    dashboard:
+@@ -31,8 +31,8 @@ options:
+ mconf:
+   ldapPath: '/etc/gromox/ldap_adaptor.cfg'
+   authmgrPath: '/etc/gromox/authmgr.cfg'
+-  fileUid: 'grommunio'
+-  fileGid: 'gromox'
++  fileUid: '_grommunio'
++  fileGid: '_gromox'
+ logs:
+   Admin API:
+     source: 'grommunio-admin-api.service'

@@ -16,8 +16,8 @@ Index: tools/config.py
              "exmdbHost": "::1",
              "exmdbPort": "5000",
              "domainStorageLevels": 1,
-@@ -87,8 +87,8 @@ def _defaultConfig():
-             "serverPolicy": "round-robin"
+@@ -89,8 +89,8 @@ def _defaultConfig():
+             "updateSkriptPath": "/usr/sbin/grommunio-update",
              },
          "security": {
 -            "jwtPrivateKeyFile": "/var/lib/grommunio-admin-api/auth-private.pem",
