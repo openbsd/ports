@@ -1,4 +1,4 @@
-# Arches suggested by upstream, unsure which work on OpenBSD for sure.
+# Arches suggested by upstream, unsure which work on OpenBSD reliably.
 ONLY_FOR_ARCHS ?=	amd64 i386
 # We need to figure out which of the following arches work and fix ones
 # that don't. We know powerpc is busted.
@@ -6,7 +6,6 @@ ONLY_FOR_ARCHS ?=	amd64 i386
 
 CATEGORIES ?=		devel
 HOMEPAGE ?=		https://www.radare.org/r/
-MAINTAINER ?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE ?=	Yes

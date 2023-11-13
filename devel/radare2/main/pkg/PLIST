@@ -2,7 +2,6 @@ bin/r2
 @bin bin/r2agent
 bin/r2p
 @bin bin/r2pm
-bin/r2pm.sh
 @bin bin/r2r
 @bin bin/rabin2
 @bin bin/radare2
@@ -19,7 +18,10 @@ include/libr/
 include/libr/ptrace_wrap.h
 include/libr/r2naked.h
 include/libr/r_agraph.h
+include/libr/r_anal/
 include/libr/r_anal.h
+include/libr/r_anal/hint.h
+include/libr/r_anal/op.h
 include/libr/r_arch.h
 include/libr/r_asm.h
 include/libr/r_bin.h
@@ -35,12 +37,13 @@ include/libr/r_crypto/
 include/libr/r_crypto.h
 include/libr/r_crypto/r_aes.h
 include/libr/r_crypto/r_des.h
+include/libr/r_crypto/r_sm4.h
 include/libr/r_debug.h
 include/libr/r_drx.h
 include/libr/r_egg.h
 include/libr/r_endian.h
+include/libr/r_esil.h
 include/libr/r_flag.h
-include/libr/r_flist.h
 include/libr/r_fs.h
 include/libr/r_getopt.h
 include/libr/r_hash.h
@@ -49,6 +52,7 @@ include/libr/r_heap_jemalloc.h
 include/libr/r_io.h
 include/libr/r_lang.h
 include/libr/r_lib.h
+include/libr/r_limits.h
 include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_main.h
@@ -77,6 +81,7 @@ include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
 include/libr/r_util/r_axml.h
+include/libr/r_util/r_base36.h
 include/libr/r_util/r_base64.h
 include/libr/r_util/r_base91.h
 include/libr/r_util/r_big.h
@@ -109,6 +114,7 @@ include/libr/r_util/r_punycode.h
 include/libr/r_util/r_queue.h
 include/libr/r_util/r_range.h
 include/libr/r_util/r_rbtree.h
+include/libr/r_util/r_ref.h
 include/libr/r_util/r_sandbox.h
 include/libr/r_util/r_signal.h
 include/libr/r_util/r_spaces.h
@@ -130,6 +136,7 @@ include/libr/r_util/r_utf8.h
 include/libr/r_util/r_w32.h
 include/libr/r_util/r_w32dw.h
 include/libr/r_util/r_x509.h
+include/libr/r_util/r_xml.h
 include/libr/r_vector.h
 include/libr/r_version.h
 include/libr/rvc.h
@@ -139,17 +146,19 @@ include/libr/sdb/cdb.h
 include/libr/sdb/cdb_make.h
 include/libr/sdb/config.h
 include/libr/sdb/dict.h
+include/libr/sdb/heap.h
+include/libr/sdb/ht.h
 include/libr/sdb/ht_inc.h
 include/libr/sdb/ht_pp.h
 include/libr/sdb/ht_pu.h
 include/libr/sdb/ht_up.h
 include/libr/sdb/ht_uu.h
 include/libr/sdb/ls.h
+include/libr/sdb/rangstr.h
 include/libr/sdb/sdb.h
-include/libr/sdb/sdb_version.h
-include/libr/sdb/sdbht.h
 include/libr/sdb/set.h
 include/libr/sdb/types.h
+include/libr/sdb/version.h
 include/libr/sflib/
 include/libr/sflib/common/
 include/libr/sflib/common/sfsocketcall.h
@@ -186,9 +195,8 @@ include/libr/sflib/linux-x86-64/
 include/libr/sflib/linux-x86-64/sflib.h
 include/libr/sflib/linux-x86-64/sfsyscall.h
 include/libr/sflib/linux-x86-64/sfsysnr.h
-lib/arm64dis.a
-lib/armv7dis.a
 @lib lib/libr_anal.so.${LIBr_anal_VERSION}
+@lib lib/libr_arch.so.${LIBr_arch_VERSION}
 @lib lib/libr_asm.so.${LIBr_asm_VERSION}
 @lib lib/libr_bin.so.${LIBr_bin_VERSION}
 @lib lib/libr_bp.so.${LIBr_bp_VERSION}
@@ -198,20 +206,20 @@ lib/armv7dis.a
 @lib lib/libr_crypto.so.${LIBr_crypto_VERSION}
 @lib lib/libr_debug.so.${LIBr_debug_VERSION}
 @lib lib/libr_egg.so.${LIBr_egg_VERSION}
+@lib lib/libr_esil.so.${LIBr_esil_VERSION}
 @lib lib/libr_flag.so.${LIBr_flag_VERSION}
 @lib lib/libr_fs.so.${LIBr_fs_VERSION}
-@lib lib/libr_hash.so.${LIBr_hash_VERSION}
 @lib lib/libr_io.so.${LIBr_io_VERSION}
 @lib lib/libr_lang.so.${LIBr_lang_VERSION}
 @lib lib/libr_magic.so.${LIBr_magic_VERSION}
 @lib lib/libr_main.so.${LIBr_main_VERSION}
-@lib lib/libr_parse.so.${LIBr_parse_VERSION}
 @lib lib/libr_reg.so.${LIBr_reg_VERSION}
 @lib lib/libr_search.so.${LIBr_search_VERSION}
 @lib lib/libr_socket.so.${LIBr_socket_VERSION}
 @lib lib/libr_syscall.so.${LIBr_syscall_VERSION}
 @lib lib/libr_util.so.${LIBr_util_VERSION}
 lib/pkgconfig/r_anal.pc
+lib/pkgconfig/r_arch.pc
 lib/pkgconfig/r_asm.pc
 lib/pkgconfig/r_bin.pc
 lib/pkgconfig/r_bp.pc
@@ -221,13 +229,12 @@ lib/pkgconfig/r_core.pc
 lib/pkgconfig/r_crypto.pc
 lib/pkgconfig/r_debug.pc
 lib/pkgconfig/r_egg.pc
+lib/pkgconfig/r_esil.pc
 lib/pkgconfig/r_flag.pc
 lib/pkgconfig/r_fs.pc
-lib/pkgconfig/r_hash.pc
 lib/pkgconfig/r_io.pc
 lib/pkgconfig/r_lang.pc
 lib/pkgconfig/r_magic.pc
-lib/pkgconfig/r_parse.pc
 lib/pkgconfig/r_reg.pc
 lib/pkgconfig/r_search.pc
 lib/pkgconfig/r_socket.pc
@@ -237,7 +244,6 @@ lib/radare2/
 lib/radare2/${V}/
 @so lib/radare2/${V}/io_shm.so
 lib/radare2/last
-@man man/man1/r2-docker.1
 @man man/man1/r2.1
 @man man/man1/r2agent.1
 @man man/man1/r2pm.1
@@ -254,7 +260,6 @@ lib/radare2/last
 @man man/man1/ravc2.1
 @man man/man1/rax2.1
 @man man/man7/esil.7
-share/doc/pkg-readmes/${PKGSTEM}
 share/doc/radare2/
 share/doc/radare2/abi.md
 share/doc/radare2/all68k.r2
@@ -347,6 +352,7 @@ share/radare2/${V}/cons/darkda
 share/radare2/${V}/cons/focus
 share/radare2/${V}/cons/gb
 share/radare2/${V}/cons/gentoo
+share/radare2/${V}/cons/greepy
 share/radare2/${V}/cons/iaito
 share/radare2/${V}/cons/lima
 share/radare2/${V}/cons/matrix
@@ -370,6 +376,7 @@ share/radare2/${V}/fcnsign/cc-arm-64.sdb
 share/radare2/${V}/fcnsign/cc-avr-8.sdb
 share/radare2/${V}/fcnsign/cc-hexagon-32.sdb
 share/radare2/${V}/fcnsign/cc-m68k-32.sdb
+share/radare2/${V}/fcnsign/cc-mips-16.sdb
 share/radare2/${V}/fcnsign/cc-mips-32.sdb
 share/radare2/${V}/fcnsign/cc-mips-64.sdb
 share/radare2/${V}/fcnsign/cc-ppc-32.sdb
@@ -569,7 +576,9 @@ share/radare2/${V}/magic/cafebabe
 share/radare2/${V}/magic/code
 share/radare2/${V}/magic/compressed
 share/radare2/${V}/magic/database
+share/radare2/${V}/magic/dis
 share/radare2/${V}/magic/elf
+share/radare2/${V}/magic/encoding
 share/radare2/${V}/magic/filesystems
 share/radare2/${V}/magic/firmware
 share/radare2/${V}/magic/flash
@@ -610,20 +619,22 @@ share/radare2/${V}/opcodes/bf.sdb
 share/radare2/${V}/opcodes/bpf.sdb
 share/radare2/${V}/opcodes/chip8.sdb
 share/radare2/${V}/opcodes/dalvik.sdb
+share/radare2/${V}/opcodes/evm.sdb
 share/radare2/${V}/opcodes/i4004.sdb
 share/radare2/${V}/opcodes/i8080.sdb
 share/radare2/${V}/opcodes/java.sdb
 share/radare2/${V}/opcodes/lm32.sdb
 share/radare2/${V}/opcodes/m68k.sdb
-share/radare2/${V}/opcodes/malbolge.sdb
 share/radare2/${V}/opcodes/mips.sdb
 share/radare2/${V}/opcodes/msp430.sdb
 share/radare2/${V}/opcodes/pic18c.sdb
+share/radare2/${V}/opcodes/pickle.sdb
 share/radare2/${V}/opcodes/ppc.sdb
 share/radare2/${V}/opcodes/propeller.sdb
 share/radare2/${V}/opcodes/riscv.sdb
 share/radare2/${V}/opcodes/s390.sdb
 share/radare2/${V}/opcodes/sh.sdb
+share/radare2/${V}/opcodes/sm5xx.sdb
 share/radare2/${V}/opcodes/sparc.sdb
 share/radare2/${V}/opcodes/tms320.sdb
 share/radare2/${V}/opcodes/tricore.sdb
@@ -655,6 +666,11 @@ share/radare2/${V}/syscall/s110-arm-16.sdb
 share/radare2/${V}/syscall/windows-x86-32.sdb
 share/radare2/${V}/syscall/windows-x86-64.sdb
 share/radare2/${V}/www/
+share/radare2/${V}/www/bolt/
+share/radare2/${V}/www/bolt/Makefile
+share/radare2/${V}/www/bolt/index.html
+share/radare2/${V}/www/bolt/r2.js
+share/radare2/${V}/www/bolt/r2bolt.sh
 share/radare2/${V}/www/console.html
 share/radare2/${V}/www/d3/
 share/radare2/${V}/www/d3/d3.js

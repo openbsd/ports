@@ -11,5 +11,5 @@ Index: binr/rules.mk
 -CFLAGS+=-pie
 +#CFLAGS+=-pie
  endif
- CFLAGS:=-I$(LTOP)/include -I$(LTOP)/include/sdb $(CFLAGS)
+ CFLAGS:=-I$(LTOP)/include $(CFLAGS)
  
