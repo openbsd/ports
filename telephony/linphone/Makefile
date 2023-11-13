@@ -1,6 +1,6 @@
 SUBDIR =
 SUBDIR += bctoolbox
-#SUBDIR += bcunit        # not linked to the build; circular dependency with bctoolbox
+SUBDIR += bcunit
 SUBDIR += belcard
 SUBDIR += belle-sip
 SUBDIR += belr

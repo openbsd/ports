@@ -1,5 +1,8 @@
 COMMENT =	Unit testing framework for C
 
+# circular dependency with bctoolbox
+UNLINKED =	bcunit
+
 # take git snapshot because https://gitlab.linphone.org/BC/public/bcunit/-/issues/1
 V =		02f7d73e
 PKGNAME =	${MODULE}-3.0.2pl1
