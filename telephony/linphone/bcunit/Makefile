@@ -16,6 +16,6 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox
 
 WANTLIB += ${COMPILER_LIBCXX} bctoolbox m
 
-NO_TESTS =	Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
