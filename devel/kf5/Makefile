@@ -89,10 +89,6 @@ SUBDIR += kdesignerplugin
 SUBDIR += kross
 SUBDIR += kdelibs4support
 
-# XXX disable for now, remove later
-#SUBDIR += kdewebkit
-#SUBDIR += kjsembed
-
 # tier 4
 SUBDIR += frameworkintegration
 
