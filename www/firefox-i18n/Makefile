@@ -4,6 +4,7 @@ SUBDIR += an
 SUBDIR += ar
 SUBDIR += ast
 SUBDIR += az
+SUBDIR += be
 SUBDIR += bg
 SUBDIR += bn
 SUBDIR += br
