@@ -1,8 +1,7 @@
 COMMENT =	dex to java decompiler
 
-VERSION =	1.1.0
+VERSION =	1.4.7
 DISTNAME =	jadx-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel security
 
