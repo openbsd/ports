@@ -6,6 +6,7 @@ ${P5SITE}/Image/
 ${P5SITE}/Image/ExifTool/
 ${P5SITE}/Image/ExifTool.pm
 ${P5SITE}/Image/ExifTool.pod
+${P5SITE}/Image/ExifTool/7Z.pm
 ${P5SITE}/Image/ExifTool/AES.pm
 ${P5SITE}/Image/ExifTool/AFCP.pm
 ${P5SITE}/Image/ExifTool/AIFF.pm
@@ -99,6 +100,7 @@ ${P5SITE}/Image/ExifTool/ISO.pm
 ${P5SITE}/Image/ExifTool/ITC.pm
 ${P5SITE}/Image/ExifTool/Import.pm
 ${P5SITE}/Image/ExifTool/InDesign.pm
+${P5SITE}/Image/ExifTool/InfiRay.pm
 ${P5SITE}/Image/ExifTool/JPEG.pm
 ${P5SITE}/Image/ExifTool/JPEGDigest.pm
 ${P5SITE}/Image/ExifTool/JSON.pm
@@ -122,6 +124,7 @@ ${P5SITE}/Image/ExifTool/Lang/ko.pm
 ${P5SITE}/Image/ExifTool/Lang/nl.pm
 ${P5SITE}/Image/ExifTool/Lang/pl.pm
 ${P5SITE}/Image/ExifTool/Lang/ru.pm
+${P5SITE}/Image/ExifTool/Lang/sk.pm
 ${P5SITE}/Image/ExifTool/Lang/sv.pm
 ${P5SITE}/Image/ExifTool/Lang/tr.pm
 ${P5SITE}/Image/ExifTool/Lang/zh_cn.pm
@@ -212,6 +215,7 @@ ${P5SITE}/Image/ExifTool/Unknown.pm
 ${P5SITE}/Image/ExifTool/VCard.pm
 ${P5SITE}/Image/ExifTool/Validate.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
+${P5SITE}/Image/ExifTool/WPG.pm
 ${P5SITE}/Image/ExifTool/WTV.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
 ${P5SITE}/Image/ExifTool/WriteExif.pl
@@ -224,6 +228,7 @@ ${P5SITE}/Image/ExifTool/WriteQuickTime.pl
 ${P5SITE}/Image/ExifTool/WriteRIFF.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
+${P5SITE}/Image/ExifTool/XISF.pm
 ${P5SITE}/Image/ExifTool/XMP.pm
 ${P5SITE}/Image/ExifTool/XMP2.pl
 ${P5SITE}/Image/ExifTool/XMPStruct.pl
@@ -233,6 +238,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man1/exiftool.1
 @man man/man3p/File::RandomAccess.3p
 @man man/man3p/Image::ExifTool.3p
+@man man/man3p/Image::ExifTool::7Z.3p
 @man man/man3p/Image::ExifTool::AES.3p
 @man man/man3p/Image::ExifTool::AFCP.3p
 @man man/man3p/Image::ExifTool::AIFF.3p
@@ -292,6 +298,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::ITC.3p
 @man man/man3p/Image::ExifTool::Import.3p
 @man man/man3p/Image::ExifTool::InDesign.3p
+@man man/man3p/Image::ExifTool::InfiRay.3p
 @man man/man3p/Image::ExifTool::JPEG.3p
 @man man/man3p/Image::ExifTool::JPEGDigest.3p
 @man man/man3p/Image::ExifTool::JSON.3p
@@ -314,6 +321,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Lang::nl.3p
 @man man/man3p/Image::ExifTool::Lang::pl.3p
 @man man/man3p/Image::ExifTool::Lang::ru.3p
+@man man/man3p/Image::ExifTool::Lang::sk.3p
 @man man/man3p/Image::ExifTool::Lang::sv.3p
 @man man/man3p/Image::ExifTool::Lang::tr.3p
 @man man/man3p/Image::ExifTool::Lang::zh_cn.3p
@@ -403,6 +411,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::VCard.3p
 @man man/man3p/Image::ExifTool::Validate.3p
 @man man/man3p/Image::ExifTool::Vorbis.3p
+@man man/man3p/Image::ExifTool::WPG.3p
 @man man/man3p/Image::ExifTool::WTV.3p
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
 @man man/man3p/Image::ExifTool::WriteExif.3p
@@ -415,6 +424,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::WriteRIFF.3p
 @man man/man3p/Image::ExifTool::WriteXMP.3p
 @man man/man3p/Image::ExifTool::Writer.3p
+@man man/man3p/Image::ExifTool::XISF.3p
 @man man/man3p/Image::ExifTool::XMP.3p
 @man man/man3p/Image::ExifTool::XMP2.3p
 @man man/man3p/Image::ExifTool::XMPStruct.3p

@@ -1,11 +1,9 @@
 COMMENT=	read and write meta information in image/audio/video files
 
-DISTNAME=	Image-ExifTool-12.50
+DISTNAME=	Image-ExifTool-12.69
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://exiftool.org/
-
-MAINTAINER=	Remi Pointel <rpointel@openbsd.org>
 
 # perl
 PERMIT_PACKAGE=	Yes
