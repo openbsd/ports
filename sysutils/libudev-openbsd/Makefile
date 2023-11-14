@@ -4,6 +4,7 @@
 # devel/openmpi
 # sysutils/consolekit
 # games/chiaki
+# games/flightgear
 # multimedia/libv4l
 # multimedia/dvdstyler
 
