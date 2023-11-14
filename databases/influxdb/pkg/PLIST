@@ -4,9 +4,9 @@
 @extraunexec rm -rf ${VARBASE}/influxdb/
 @bin bin/influxd
 @bin bin/telemetryd
+@mode 0750
 @owner _influx
 @group _influx
-@mode 0750
 @sample ${VARBASE}/influxdb/
 @mode
 @owner
