@@ -1,11 +1,11 @@
 COMMENT=	Sybase database access in Perl
 
-DISTNAME=	sybperl-2.19
-REVISION=	3
+DISTNAME=	sybperl-2.20
+EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	databases perl5
 
-HOMEPAGE=	http://www.peppler.org/freeware/sybperl.html
+HOMEPAGE=	https://github.com/mpeppler/sybperl
 
 # perl
 PERMIT_PACKAGE=	Yes

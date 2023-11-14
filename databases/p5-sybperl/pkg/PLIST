@@ -9,10 +9,10 @@ ${P5ARCH}/Sybase/Sybperl.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Sybase/
 ${P5ARCH}/auto/Sybase/CTlib/
-${P5ARCH}/auto/Sybase/CTlib/CTlib.so
+@so ${P5ARCH}/auto/Sybase/CTlib/CTlib.so
 ${P5ARCH}/auto/Sybase/CTlib/autosplit.ix
 ${P5ARCH}/auto/Sybase/DBlib/
-${P5ARCH}/auto/Sybase/DBlib/DBlib.so
+@so ${P5ARCH}/auto/Sybase/DBlib/DBlib.so
 ${P5ARCH}/auto/Sybase/DBlib/autosplit.ix
 ${P5ARCH}/auto/Sybase/Sybperl/
 ${P5ARCH}/auto/Sybase/Sybperl/DBCMDROW.al
