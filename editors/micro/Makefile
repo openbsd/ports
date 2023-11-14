@@ -4,10 +4,10 @@ ONLY_FOR_ARCHS = aarch64 arm amd64 i386 mips64
 COMMENT =	modern and intuitive terminal-based text editor
 
 MODGO_MODNAME =	github.com/zyedidia/micro/v2
-MODGO_VERSION =	v2.0.12
+MODGO_VERSION =	v2.0.13
 
 # Snagged from https://github.com/zyedidia/micro/releases/tag/${MODGO_VERSION}
-TAG_HASH =	c2cebaa
+TAG_HASH =	68d88b5
 
 DISTNAME =	micro-${MODGO_VERSION}
 CATEGORIES =	editors

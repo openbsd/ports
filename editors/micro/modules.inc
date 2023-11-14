@@ -31,7 +31,7 @@ MODGO_MODULES =	\
 	github.com/zyedidia/go-shellquote	 v0.0.0-20200613203517-eccd813c0655 \
 	github.com/zyedidia/json5		 v0.0.0-20200102012142-2da050b1a98d \
 	github.com/zyedidia/poller		 v1.0.1 \
-	github.com/zyedidia/tcell/v2		 v2.0.10-0.20230831153116-061c5b2c7260 \
+	github.com/zyedidia/tcell/v2		 v2.0.10 \
 	github.com/zyedidia/terminal		 v0.0.0-20230315200948-4b3bcf6dddef \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \

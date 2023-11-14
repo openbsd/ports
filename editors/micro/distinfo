@@ -64,8 +64,8 @@ SHA256 (go_modules/github.com/zyedidia/json5/@v/v0.0.0-20200102012142-2da050b1a9
 SHA256 (go_modules/github.com/zyedidia/json5/@v/v0.0.0-20200102012142-2da050b1a98d.zip) = /RwEIMvzjm88pxds6YwSI9gCYM34ZOYtaN0GpH7NvUU=
 SHA256 (go_modules/github.com/zyedidia/poller/@v/v1.0.1.mod) = qfyqX4JvgpI6mPjq7TFFu1ofUKpuZtTLLhxCJJr8BZY=
 SHA256 (go_modules/github.com/zyedidia/poller/@v/v1.0.1.zip) = +7i0l73UNfSyB6/1fObHHc4RFGVAE4aqTCM3nQi6su8=
-SHA256 (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10-0.20230831153116-061c5b2c7260.mod) = BUtPEhfSo5gLtwq4/xj6DAD8bWYTr4Ivoz5ohWdkO3Q=
-SHA256 (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10-0.20230831153116-061c5b2c7260.zip) = +7CudRFIwfkcofSIrAM+QeqZCYLTNTIK3RQradczMQk=
+SHA256 (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10.mod) = BUtPEhfSo5gLtwq4/xj6DAD8bWYTr4Ivoz5ohWdkO3Q=
+SHA256 (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10.zip) = rqD24B7Q/wzNQHjZjv8aP+/SUuNVfJXPBJide9CHCz4=
 SHA256 (go_modules/github.com/zyedidia/terminal/@v/v0.0.0-20230315200948-4b3bcf6dddef.mod) = 04gYnLFlJ6008gOhP9ODUU7KHVzc0v1Kv8HuL1KHqiM=
 SHA256 (go_modules/github.com/zyedidia/terminal/@v/v0.0.0-20230315200948-4b3bcf6dddef.zip) = TOporc39iLG5y1Uj2ADY9DyYA5R/IoHwnhu/DAfSQ2U=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = M+0HClpm4JYGhaxThkQOG1mJnnTYo4oRgGhecqIZXe0=
@@ -112,7 +112,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.8.mod) = iNl50vCT0jl/dWvIbvosoD9zpg1
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.2.8.zip) = wn8Zi02VgNRBjMb34Ku3Vuu0g0RTS+YB25VHbeUv5tE=
 SHA256 (go_modules/layeh.com/gopher-luar/@v/v1.0.7.mod) = wh2U/nb1LOzEiVZzuq89eUZMxWXUONkTgjQrNbNh2Lw=
 SHA256 (go_modules/layeh.com/gopher-luar/@v/v1.0.7.zip) = H1Rof1T2tTe6JHXd7capH3TjLBkNAQcS7HJ8wD/8yOU=
-SHA256 (micro-v2.0.12.zip) = fH/YsFsdXl67KATdQVEOFBx98SN6yEgUBk6eLyoypO8=
+SHA256 (micro-v2.0.13.zip) = m5n4J4dLVAD4wAgiN5VXMtLb9VFWeRIkp+yPbKZGFxE=
 SIZE (go_modules/github.com/blang/semver/@v/v3.5.1+incompatible.mod) = 31
 SIZE (go_modules/github.com/blang/semver/@v/v3.5.1+incompatible.zip) = 19948
 SIZE (go_modules/github.com/chzyer/logex/@v/v1.1.10.mod) = 31
@@ -179,8 +179,8 @@ SIZE (go_modules/github.com/zyedidia/json5/@v/v0.0.0-20200102012142-2da050b1a98d
 SIZE (go_modules/github.com/zyedidia/json5/@v/v0.0.0-20200102012142-2da050b1a98d.zip) = 81515
 SIZE (go_modules/github.com/zyedidia/poller/@v/v1.0.1.mod) = 34
 SIZE (go_modules/github.com/zyedidia/poller/@v/v1.0.1.zip) = 25272
-SIZE (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10-0.20230831153116-061c5b2c7260.mod) = 348
-SIZE (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10-0.20230831153116-061c5b2c7260.zip) = 194124
+SIZE (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10.mod) = 348
+SIZE (go_modules/github.com/zyedidia/tcell/v2/@v/v2.0.10.zip) = 188027
 SIZE (go_modules/github.com/zyedidia/terminal/@v/v0.0.0-20230315200948-4b3bcf6dddef.mod) = 84
 SIZE (go_modules/github.com/zyedidia/terminal/@v/v0.0.0-20230315200948-4b3bcf6dddef.zip) = 18669
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = 88
@@ -227,4 +227,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.2.8.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.2.8.zip) = 80666
 SIZE (go_modules/layeh.com/gopher-luar/@v/v1.0.7.mod) = 109
 SIZE (go_modules/layeh.com/gopher-luar/@v/v1.0.7.zip) = 36857
-SIZE (micro-v2.0.12.zip) = 696389
+SIZE (micro-v2.0.13.zip) = 696824
