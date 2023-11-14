@@ -147,7 +147,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gda
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_rm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_rmdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_vrtmerge.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_zip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalchksum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalcopyproj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalfilter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -176,6 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}til
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}tolatlong.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}val_repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_cloud_optimized_geotiff.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_geoparquet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_gpkg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}validate_jp2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}vec_tr.${MODPY_PYC_MAGIC_TAG}pyc
@@ -205,7 +205,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_remove_towgs84
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_rm.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_rmdir.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_vrtmerge.py
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_zip.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalchksum.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalcopyproj.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalfilter.py
@@ -234,6 +233,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/tile_extent_from_ra
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/tolatlong.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/val_repl.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_cloud_optimized_geotiff.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_geoparquet.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_gpkg.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/validate_jp2.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/vec_tr.py

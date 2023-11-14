@@ -3,6 +3,7 @@
 bin/gdal-config
 @bin bin/gdal_contour
 @bin bin/gdal_create
+@bin bin/gdal_footprint
 @bin bin/gdal_grid
 @bin bin/gdal_rasterize
 @bin bin/gdal_translate
@@ -77,6 +78,7 @@ include/gdalgrid_priv.h
 include/gdaljp2abstractdataset.h
 include/gdaljp2metadata.h
 include/gdalpansharpen.h
+include/gdalsubdatasetinfo.h
 include/gdalwarper.h
 include/gnm.h
 include/gnm_api.h
@@ -108,6 +110,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/gdal-config.1
 @man man/man1/gdal_contour.1
 @man man/man1/gdal_create.1
+@man man/man1/gdal_footprint.1
 @man man/man1/gdal_grid.1
 @man man/man1/gdal_merge.1
 @man man/man1/gdal_rasterize.1
