@@ -36,17 +36,23 @@ DISTNAME =	???
 #PKGNAME-foo =	???	for multi packages
 
 #
-# github:
-# /releases/ -> preferred. ignore GH_*, just use SITES and DISTNAME.
-# /archive/ ->  GH_ACCOUNT and GH_PROJECT, plus either GH_TAGNAME or GH_COMMIT.
+# On source code hosting platforms use static tarballs over generated ones.
+# It's easy to distinguish between them on github, gitlab and codeberg by
+# looking at the file URL:
+# /releases/ -> preferred. Use SITES and DISTNAME.
+# /archive/ -> use DIST_TUPLE (use only if there is no release version).
 #
-# set DISTNAME if using GH_COMMIT, or if using GH_TAGNAME and the tag is not in
-# the format "v1.00" or "1.00".
-#
-#GH_ACCOUNT =	username
-#GH_PROJECT =	project
-#GH_TAGNAME =	1.0
-#GH_COMMIT =	abab123456789abacafeabab123123b1e4ble4bl
+# platform: codeberg, github, gitlab, kde, srht, gnome
+# account: usually the account or organisation name
+# project: the project or repository name
+# id: either a tag name or commit hash.
+#   Tag names with standard tag formats, like 1.0.1 or v1.0, set an
+#   appropriate PKGNAME automatically. Otherwise, set it yourself.
+#   "make show=PKGNAMES" will help identify if that's needed.
+#   For a commit hash, use the full hash (not shortened), and set PKGNAME.
+# subdir: usually ".", otherwise the extracted files are moved to another
+#   directory under WRKDIST. Mostly useful for git submodules.
+#DIST_TUPLE =	platform account project id subdir
 
 # for any port that creates shared libraries.
 # both libtool and cmake automatically set filenames based on this variable.
