@@ -1,0 +1,18 @@
+From 871ad32ec943c4e81a2a653e25d6625cadffb901 Mon Sep 17 00:00:00 2001
+From: Dmitry Vedenko <dmitry@crsib.me>
+Date: Mon, 13 Nov 2023 13:21:57 +0300
+Subject: [PATCH] Fixes compatibility with wxWidgets 3.2.4 wxWidgets has
+ introduced a breaking API change with
+
+Index: src/prefs/GUIPrefs.cpp
+--- src/prefs/GUIPrefs.cpp.orig
++++ src/prefs/GUIPrefs.cpp
+@@ -68,7 +68,7 @@ void GUIPrefs::GetRangeChoices(
+    int *pDefaultRangeIndex
+ )
+ {
+-   static const auto sCodes = {
++   static const wxArrayStringEx sCodes = {
+       wxT("36") ,
+       wxT("48") ,
+       wxT("60") ,
