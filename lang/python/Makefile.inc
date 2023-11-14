@@ -130,7 +130,9 @@ CONFIGURE_ARGS +=	--with-lto
 .    if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "powerpc"
 # On armv7, clang errors out due to lack of memory.
 # On powerpc, the python binary would crash by "Segmentation fault".
-CONFIGURE_ARGS +=	--enable-optimizations
+# XXX lld from llvm-16 errors out with:
+# ld.lld: error: relocation R_X86_64_PC32 cannot be used against symbol '__profd_isdigit'; recompile with -fPIC
+#CONFIGURE_ARGS +=	--enable-optimizations
 .    endif
 .  endif
 TEST_IS_INTERACTIVE =	Yes
