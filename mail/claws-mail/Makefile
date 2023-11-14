@@ -12,7 +12,7 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 REVISION-bogofilter=	1
-REVISION-gdata=		1
+REVISION-gdata=		2
 REVISION-main=		1
 REVISION-pdfviewer=	1
 REVISION-spamassassin=	1
@@ -60,7 +60,7 @@ WANTLIB-main += tasn1 unistring vorbis vorbisfile xcb-util xml2 zstd
 WANTLIB-main += brotlidec brotlienc db_cxx
 
 WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3
+WANTLIB-gdata += brotlicommon brotlidec gck-2 gcr-4
 WANTLIB-gdata += gcrypt gdata goa-1.0 gpg-error idn2 json-glib-1.0
 WANTLIB-gdata += lzma p11-kit psl soup-2.4 sqlite3 unistring xml2
 
