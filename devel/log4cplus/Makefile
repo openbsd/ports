@@ -22,6 +22,8 @@ WANTLIB += c m pthread ${COMPILER_LIBCXX}
 
 COMPILER=	base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 MODULES=	devel/cmake
 
 .include <bsd.port.mk>
