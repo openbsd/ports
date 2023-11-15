@@ -32,6 +32,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/libdata
 NO_TEST =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++11
 
 LIB_DEPENDS =	audio/libvorbis \
 		audio/libmad \
