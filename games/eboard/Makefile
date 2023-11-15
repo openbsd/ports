@@ -17,6 +17,7 @@ WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		sndio ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++11
 
 SITES=		${SITE_SOURCEFORGE:=eboard/}
 
