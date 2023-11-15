@@ -1,0 +1,12 @@
+Index: src/ptlib/common/object.cxx
+--- src/ptlib/common/object.cxx.orig
++++ src/ptlib/common/object.cxx
+@@ -949,7 +949,7 @@ void PMemoryHeap::SetAllocationBreakpoint(DWORD object
+ 
+ #if !defined(P_VXWORKS) && !defined(_WIN32_WCE)
+ 
+-#if (__GNUC__ >= 3) || ((__GNUC__ == 2)&&(__GNUC_MINOR__ >= 95)) //2.95.X & 3.X
++#if ((__GNUC__ >= 3) || ((__GNUC__ == 2)&&(__GNUC_MINOR__ >= 95))) && !(defined(__clang__) && (__clang_major__ >= 16)) //2.95.X & 3.X
+ void * operator new[](size_t nSize) throw ()
+ #else
+ void * operator new[](size_t nSize)

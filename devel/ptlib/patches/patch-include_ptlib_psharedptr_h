@@ -1,0 +1,15 @@
+Index: include/ptlib/psharedptr.h
+--- include/ptlib/psharedptr.h.orig
++++ include/ptlib/psharedptr.h
+@@ -60,7 +60,11 @@ class PSharedPtr : public PContainer
+       : PContainer(c)
+     { CopyContents(c); } 
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++    PSharedPtr(std::unique_ptr<element_type> & v)
++#else
+     PSharedPtr(std::auto_ptr<element_type> & v)
++#endif
+     { ptr = v.release(); }
+ 
+     PSharedPtr & operator=(const PSharedPtr & c) 
