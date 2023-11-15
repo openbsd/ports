@@ -19,6 +19,8 @@ FIX_CRLF_FILES =	include/Taggle/impl/html/HTMLScanner.hpp \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS =	devel/boost
