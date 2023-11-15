@@ -1,10 +1,9 @@
-V=		4.5.1
+V=		4.6.0
 COMMENT=	motion detection software for video
 
 GH_ACCOUNT=	Motion-Project
 GH_PROJECT=	motion
 GH_TAGNAME=	release-$V
-REVISION=	1
 
 CATEGORIES=	multimedia
 
@@ -32,8 +31,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 			www/libmicrohttpd
 
 FAKE_FLAGS=		docdir=${PREFIX}/share/doc/motion \
-			examplesdir=${PREFIX}/share/examples/motion \
-			sysconfdir=${PREFIX}/share/examples/motion
+			sysconfdir=${PREFIX}/share/examples
 FAKE_TARGET=		install install-data
 
 USE_GMAKE=		Yes
