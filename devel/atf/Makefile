@@ -19,6 +19,8 @@ SITES =		https://github.com/jmmv/atf/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=gnu++11
+
 CONFIGURE_STYLE =	gnu
 # Don't pickup bash
 CONFIGURE_ENV =		ATF_SHELL=/bin/sh
