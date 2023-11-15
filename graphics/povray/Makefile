@@ -11,6 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ICE SM X11 Xpm c jpeg m ${COMPILER_LIBCXX} tiff z
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++14
 
 SITES=	http://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
 EXTRACT_SUFX=		.tar.bz2
@@ -37,7 +38,7 @@ CONFIGURE_ARGS+=	--with-x \
 CONFIGURE_ARGS+=	ac_cv_search_png_get_libpng_ver=no	
 CONFIGURE_ENV+= 	COMPILED_BY="OpenBSD Ports <ports@openbsd.org>" \
 			CPPFLAGS="-I${LOCALBASE}/include -DPNG_NO_MMX_CODE" \
-			CXXFLAGS="-I${LOCALBASE}/include" \
+			CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
 MAKE_FLAGS+=		povconfdir=${PREFIX}/share/examples/povray/ \
