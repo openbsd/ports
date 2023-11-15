@@ -22,6 +22,9 @@ WANTLIB += Xau Xdmcp jpeg
 SITES =			https://calf-studio-gear.org/files/
 
 COMPILER =		base-clang ports-gcc
+
+CXXFLAGS_base-clang =	-std=c++14
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 LIB_DEPENDS =		audio/jack \
