@@ -12,6 +12,8 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang=	-std=c++14
+
 SITES=			ftp://ftp.cnidr.org/pub/software/Isearch/
 
 CONFIGURE_STYLE=	gnu
