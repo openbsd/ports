@@ -1,0 +1,24 @@
+ext_external_objects: return a NULL struct to fix the build
+https://gitlab.freedesktop.org/mesa/piglit/-/commit/a8d880196c639aa2bb1e6872a57ec1bf65b22548
+
+Index: tests/spec/ext_external_objects/vk.c
+--- tests/spec/ext_external_objects/vk.c.orig
++++ tests/spec/ext_external_objects/vk.c
+@@ -339,7 +339,7 @@ get_aspect_from_depth_format(VkFormat depth_format)
+ 	default:
+ 		break;
+ 	}
+-	return VK_NULL_HANDLE;
++	return 0;
+ }
+ 
+ static VkPipelineStageFlags
+@@ -1443,7 +1443,7 @@ vk_draw(struct vk_ctx *ctx,
+ 			barrier->sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
+ 
+ 			bool is_depth =
+-				get_aspect_from_depth_format(att->props.format) != VK_NULL_HANDLE;
++				get_aspect_from_depth_format(att->props.format) != 0;
+ 
+ 			barrier->oldLayout = is_depth ?
+ 				VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL :
