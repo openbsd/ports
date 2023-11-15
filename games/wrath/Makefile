@@ -1,14 +1,12 @@
 COMMENT =		client of wrath-darkplaces engine
 
-DISTNAME =		wrath-0.0.0.20210114
+DISTNAME =		wrath-0.0.0.20210608
 
 GH_ACCOUNT =		KillPixelGames
 GH_PROJECT =		wrath-darkplaces
-GH_COMMIT =		2e4c399f3b6428d313d408d84f9e3ac6355a857e
+GH_COMMIT =		e0770286b39bb137f3457b05acbd4c6a46044488
 
 CATEGORIES =		games
-
-MAINTAINER =		Paul Valencia <reivyr@enmadechi.com>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
