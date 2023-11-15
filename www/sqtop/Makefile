@@ -18,6 +18,8 @@ WANTLIB += ${COMPILER_LIBCXX} c curses m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
