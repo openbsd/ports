@@ -1,3 +1,5 @@
+BROKEN =	needs an update for LLVM 16. latest current upstream version (0.41.1) only supports 14.x.
+
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
 MODPY_EGG_VERSION =	0.39.1
