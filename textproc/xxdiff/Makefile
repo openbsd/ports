@@ -14,6 +14,8 @@ HOMEPAGE=	https://furius.ca/xxdiff/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+CXXFLAGS_base-clang =	-std=c++14
+
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 
 WRKSRC=		${WRKDIST}/src
