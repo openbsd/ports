@@ -30,7 +30,6 @@
      SUBDIR += dkimproxy
      SUBDIR += dma
      SUBDIR += dovecot
-     SUBDIR += dovecot,gssapi
      SUBDIR += dovecot-fts-flatcurve
      SUBDIR += dovecot-fts-xapian
      SUBDIR += dovecot-pigeonhole
