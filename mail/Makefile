@@ -2,7 +2,7 @@
      SUBDIR += abook
      SUBDIR += adcomplain
      SUBDIR += aerc
-     SUBDIR += aerc,notmutch
+     SUBDIR += aerc,notmuch
      SUBDIR += alpine
      SUBDIR += altermime
      SUBDIR += amavisd-new
