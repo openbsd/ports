@@ -18,6 +18,8 @@ WANTLIB += freetype fribidi iconv m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++11
+
 SITES =		${SITE_SOURCEFORGE:=fluxbox/}
 
 LIB_DEPENDS=	converters/libiconv \
