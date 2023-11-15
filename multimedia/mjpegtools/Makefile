@@ -28,6 +28,8 @@ WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS=		devel/sdl \
 			devel/sdl-gfx \
 			graphics/jpeg \
