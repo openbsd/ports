@@ -131,7 +131,6 @@
      SUBDIR += p5-Tie-DBI
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
-     SUBDIR += p5-sybperl
      SUBDIR += patroni
      SUBDIR += pecl-redis,php74
      SUBDIR += pecl-redis,php80
