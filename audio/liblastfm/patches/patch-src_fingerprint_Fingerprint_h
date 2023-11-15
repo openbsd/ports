@@ -1,0 +1,28 @@
+From d51ad3e759331d7d79c6675c5d22541280bf9a70 Mon Sep 17 00:00:00 2001
+From: Xeonacid <h.dwwwwww@gmail.com>
+Date: Tue, 5 Oct 2021 00:04:08 +0800
+Subject: [PATCH] Remove dynamic exception specifications
+
+ISO C++17 does not allow dynamic exception specifications.
+
+Index: src/fingerprint/Fingerprint.h
+--- src/fingerprint/Fingerprint.h.orig
++++ src/fingerprint/Fingerprint.h
+@@ -71,7 +71,7 @@ namespace lastfm
+         };
+ 
+         /** This is CPU intensive, do it in a thread in your GUI application */
+-        void generate( FingerprintableSource* ) throw( Error );
++        void generate( FingerprintableSource* );
+ 
+         /** Submits the fingerprint data to Last.fm in order to get a FingerprintId
+           * back. You need to wait for the QNetworkReply to finish before you can
+@@ -82,7 +82,7 @@ namespace lastfm
+           * will be valid. Otherwise we will throw. You always get a valid id
+           * or a throw.
+           */
+-        void decode( QNetworkReply*, bool* lastfm_needs_a_complete_fingerprint = 0 ) throw( Error );
++        void decode( QNetworkReply*, bool* lastfm_needs_a_complete_fingerprint = 0 );
+     };
+ 
+ 

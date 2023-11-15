@@ -1,6 +1,9 @@
---- src/CMakeLists.txt.orig	Tue Nov 27 19:54:59 2012
-+++ src/CMakeLists.txt	Tue Nov 27 19:58:55 2012
-@@ -1,7 +1,11 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -1,9 +1,13 @@
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/global.h.in ${CMAKE_CURRENT_BINARY_DIR}/global.h)
+ 
  
 +find_package(Threads REQUIRED)
 +

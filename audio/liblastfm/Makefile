@@ -4,6 +4,8 @@ DISTNAME =	$V
 PKGNAME =	liblastfm-$V
 CATEGORIES =	audio devel net
 
+REVISION =	0
+
 HOMEPAGE =	https://github.com/lastfm/liblastfm
 
 SHARED_LIBS =  lastfm5                  0.0
