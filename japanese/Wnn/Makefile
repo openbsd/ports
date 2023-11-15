@@ -77,6 +77,8 @@ CDOC_FROM =	${WRKSRC}/cWnn
 BUILD_DEPENDS =	devel/imake \
 		japanese/nkf
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 do-distpatch:
 	cd ${WRKDIR} && tar zxf ${FULLDISTDIR}/Wnn4.2.patch.tar.gz
 	cd ${WRKSRC} && patch ${PATCH_DIST_ARGS} < ${WRKDIR}/Wnn4.2.patch
@@ -110,7 +112,9 @@ do-configure:
 
 # Xfree4 believes it can build html documentation, fat chance...
 #MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=_wnn
-MAKE_FLAGS =	IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn COPTS="${COPTS}"  CONFIGSRC=${LOCALBASE}/lib/X11/config 
+MAKE_FLAGS =	IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn \
+		COPTS="${COPTS} ${CFLAGS}"  \
+		CONFIGSRC=${LOCALBASE}/lib/X11/config 
 FAKE_FLAGS =	WNNOWNER_INDIRECT=bin
 
 MAKE_ENV =	IMAKEINCLUDE=-I${WRKSRC}/config
