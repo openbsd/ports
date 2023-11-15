@@ -4,7 +4,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
 GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		3
+REVISION=		4
 EPOCH=			0
 
 CATEGORIES=		devel telephony
@@ -23,6 +23,8 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 sndio ssl
 
 COMPILER=		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-Wno-error=dynamic-exception-spec
+
 BUILD_DEPENDS=		devel/bison
 
 LIB_DEPENDS=		security/cyrus-sasl2
@@ -36,7 +38,7 @@ MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC}/plugins
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 # https://www.gnugk.org/gnugk-manual-14.html
