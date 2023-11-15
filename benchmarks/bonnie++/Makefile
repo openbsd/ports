@@ -15,6 +15,9 @@ WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf dest
 AUTOCONF_VERSION= 2.67
