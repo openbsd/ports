@@ -26,6 +26,8 @@ WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
 WANTLIB +=		objc2 gnustep-base curl oath sodium ytnef zip
 WANTLIB += ${COMPILER_LIBCXX}
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 LIB_DEPENDS +=		archivers/libzip \
 			converters/libytnef \
 			devel/libmemcached \
