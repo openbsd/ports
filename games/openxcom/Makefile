@@ -21,6 +21,7 @@ SITES =			${HOMEPAGE}/wp-content/uploads/downloads/2014/06/
 MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
+CXXFLAGS_base-clang =	-std=c++11
 
 RUN_DEPENDS =		audio/timidity \
 			devel/desktop-file-utils \
