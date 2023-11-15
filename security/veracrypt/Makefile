@@ -19,6 +19,8 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # C++11
 COMPILER=		base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 WANTLIB += ${COMPILER_LIBCXX} c m fuse wx_baseu-3.2 wx_gtk3u_core-3.2
 
 BUILD_DEPENDS=		devel/yasm \
