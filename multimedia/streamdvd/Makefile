@@ -16,12 +16,13 @@ LIB_DEPENDS=	devel/libdvdread>=4.2.0
 WANTLIB=	c m ${COMPILER_LIBCXX} dvdread
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++14
 
 WRKDIST=	${WRKDIR}/StreamDVD-0.4
 
 ALL_TARGET=all addon
 
-MAKE_ENV+= CC=${CC} CXX=${CXX}
+MAKE_ENV+= CC=${CC} CXX=${CXX} CXXFLAGS="${CXXFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamdvd ${PREFIX}/bin
