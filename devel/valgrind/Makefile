@@ -24,6 +24,8 @@ AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 AUTORECONF =		/bin/sh ./autogen.sh
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 .include <bsd.port.mk>
 
 .if ${PROPERTIES:Mclang}
