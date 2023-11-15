@@ -26,6 +26,7 @@ WANTLIB += c curl expat m mad png sndfile speex speexdsp swscale
 WANTLIB += vorbisfile z zzip
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++14
 
 BUILD_DEPENDS =		devel/automake/${AUTOMAKE_VER} \
 			devel/autoconf/${AUTOCONF_VER}
