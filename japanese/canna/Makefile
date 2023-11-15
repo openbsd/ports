@@ -34,6 +34,8 @@ PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES=-main -dict -server
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 BUILD_DEPENDS=		japanese/nkf
 
 PREFIX-dict=		${VARBASE}/dict
@@ -54,7 +56,7 @@ MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBRKC16_VERSION=$(LIBRKC16_VERSION) \
 		LIBcanna_VERSION=$(LIBcanna_VERSION) \
 		LIBcanna16_VERSION=$(LIBcanna16_VERSION) \
-		COPTS="${COPTS}"
+		COPTS="${COPTS} ${CFLAGS}"
 
 NO_TEST=	Yes
 
