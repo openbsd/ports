@@ -20,6 +20,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets c m pulse
 WANTLIB += pulse-mainloop-glib
 
+CXXFLAGS_base-clang =	-Wno-error=enum-constexpr-conversion
+
 SITES =			${SITE_KDE:=stable/phonon/${VERSION}/}
 
 MODULES =		devel/kf5
