@@ -20,6 +20,8 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 WANTLIB += c crypto m nspr4 nss3 pcap plc4 plds4 smime3
 WANTLIB += nssutil3 ssl ssl3 z
 
