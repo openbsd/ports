@@ -8,6 +8,7 @@ MODGO_VERSION =	v0.0.0-20230927211642-61bca76423ee
 
 V =		0.16.0
 DISTNAME =	aerc-$V
+REVISION =	0
 
 CATEGORIES =	mail
 
@@ -18,7 +19,7 @@ MAINTAINER =	Thim Cederlund <thim@cederlund.de>
 # MIT
 PERMIT_PACKAGE = Yes
 
-WANTLIB += c pthread notmuch
+WANTLIB += c pthread
 
 MODULES =	lang/go
 
@@ -27,13 +28,19 @@ USE_GMAKE =	yes
 BUILD_DEPENDS =	converters/base64 \
 		textproc/scdoc
 
-LIB_DEPENDS =	mail/notmuch/notmuch
-
 RUN_DEPENDS =	devel/desktop-file-utils
+
+FLAVORS =	notmuch
+FLAVOR ?=
+
+.if ${FLAVOR:Mnotmuch}
+MODGO_FLAGS +=	-tags=notmuch
+LIB_DEPENDS =	mail/notmuch/notmuch
+WANTLIB += notmuch
+.endif
 
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L ${LOCALBASE}/lib
-MODGO_FLAGS +=	-tags=notmuch
 
 MAKE_FLAGS =	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
