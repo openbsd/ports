@@ -30,6 +30,8 @@ RUN_DEPENDS=		archivers/gtar \
 LIB_DEPENDS=		devel/json-glib \
 			x11/mate/caja
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 CONFIGURE_ARGS=		--disable-packagekit
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
