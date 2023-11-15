@@ -23,6 +23,8 @@ WANTLIB += boost_system-mt boost_thread-mt bz2 c expat m tbb z
 
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-Wno-error=unused-but-set-variable
+
 MODULES =		devel/cmake \
 			lang/lua
 MODLUA_VERSION =	5.3
