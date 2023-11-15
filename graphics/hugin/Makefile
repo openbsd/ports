@@ -2,9 +2,8 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2022.0.0
+DISTNAME =	hugin-2023.0.0
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	4
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
@@ -12,8 +11,8 @@ WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0
-SHARED_LIBS +=  huginbase                 7.0
-SHARED_LIBS +=  huginbasewx               6.0
+SHARED_LIBS +=  huginbase                 8.0
+SHARED_LIBS +=  huginbasewx               7.0
 SHARED_LIBS +=  icpfindlib                5.0
 SHARED_LIBS +=  localfeatures             4.0
 SHARED_LIBS +=  hugin_python_interface    4.0
@@ -27,12 +26,13 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Iex-3_2 OpenEXR-3_2
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_2 OpenEXR-3_2
 WANTLIB += IlmThread-3_2 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
-WANTLIB += c exiv2 fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
+WANTLIB += c exiv2 epoxy fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
-WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_xrc-3.2 z
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
+WANTLIB += wx_gtk3u_xrc-3.2 z
 # lensfun is dlopened, so don't remove it from WANTLIB and LIB_DEPENDS
 WANTLIB += lensfun
 
@@ -50,7 +50,6 @@ RUN_DEPENDS +=		x11/py-wxPython${MODPY_FLAVOR} # required for launching python s
 
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
-			graphics/glew \
 			graphics/lcms2 \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
@@ -64,6 +63,7 @@ COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ENV =		MANDIR=man
 CONFIGURE_ARGS +=	-DBUILD_HSI=ON \
+			-DBUILD_WITH_EPOXY=ON \
 			-Wno-dev
 NO_TEST =		Yes
 
