@@ -24,6 +24,8 @@ WANTLIB += expat pcre sqlite3 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS =	databases/iodbc \
 		databases/mariadb \
 		databases/sqlite3 \
