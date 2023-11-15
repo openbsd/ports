@@ -14,6 +14,8 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 WANTLIB += glib-2.0 gsf-1 iconv m ${COMPILER_LIBCXX} z
 
 MODULES=	devel/cmake
