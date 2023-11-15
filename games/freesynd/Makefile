@@ -12,6 +12,8 @@ PERMIT_PACKAGE =  Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer c m png
 WANTLIB += z
 
+CXXFLAGS_base-clang =	-std=c++11
+
 SITES =		${SITE_SOURCEFORGE:=freesynd/}
 
 MODULES =	devel/cmake
