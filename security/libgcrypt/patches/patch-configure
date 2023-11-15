@@ -3,12 +3,16 @@ https://dev.gnupg.org/T6442
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18809,7 +18809,7 @@ _ACEOF
- fi
- done
+@@ -20029,6 +20029,12 @@ then :
+   printf "%s\n" "#define HAVE_GETENTROPY 1" >>confdefs.h
  
--for ac_func in explicit_bzero explicit_memset getentropy
-+for ac_func in explicit_bzero explicit_memset getentropy getrandom
- do :
-   as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
- ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
+ fi
++ac_fn_c_check_func "$LINENO" "getrandom" "ac_cv_func_getrandom"
++if test "x$ac_cv_func_getrandom" = xyes
++then :
++  printf "%s\n" "#define HAVE_GETRANDOM 1" >>confdefs.h
++
++fi
+ 
+ 
+  ac_fn_c_check_func "$LINENO" "mlock" "ac_cv_func_mlock"
