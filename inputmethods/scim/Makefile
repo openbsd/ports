@@ -24,6 +24,8 @@ WANTLIB += xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 SITES =		${SITE_SOURCEFORGE:=scim/}
 
 MODULES =	textproc/intltool
