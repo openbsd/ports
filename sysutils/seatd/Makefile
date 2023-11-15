@@ -1,13 +1,12 @@
 COMMENT	=	minimal seat management daemon and universal library
 
 UNLINKED =	wayland
-V =		20230813
-PKGNAME =	seatd-$V
-DISTNAME =	seatd-openbsd-$V
+V =		0.8.0
+DISTNAME =	seatd-$V
 CATEGORIES =	sysutils
-REVISION =	0
 
-SITES =	https://gitlab.tetaneutral.net/mherrb/seatd/-/archive/openbsd-${V}/
+SITES =		https://git.sr.ht/~kennylevinsen/seatd/archive/
+DISTFILES =     seatd-{}${V}${EXTRACT_SUFX}
 
 SHARED_LIBS+=	seat 0.0 # 0.0
 

@@ -1,0 +1,16 @@
+OpenBSD support
+
+Index: tests/poller.c
+--- tests/poller.c.orig
++++ tests/poller.c
+@@ -123,6 +123,10 @@ static int test_signal_event(int signal, void *data) {
+ 	return 0;
+ }
+ 
++#ifdef __OpenBSD__
++#define SIGRTMIN  SIGUSR1
++#endif
++
+ static void test_poller_single_signal(void) {
+ 	struct poller poller;
+ 	test_assert(poller_init(&poller) == 0);

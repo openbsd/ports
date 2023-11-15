@@ -1,0 +1,29 @@
+OpenBSD support for socket peer credentials 
+
+Index: seatd/client.c
+--- seatd/client.c.orig
++++ seatd/client.c
+@@ -55,6 +55,23 @@ static int get_peer(int fd, pid_t *pid, uid_t *uid, gi
+ 	*uid = cred.unp_euid;
+ 	*gid = cred.unp_egid;
+ 	return 0;
++#elif defined(__OpenBSD__)
++	struct sockpeercred peercred;
++	socklen_t len = sizeof(peercred);
++	if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &peercred, &len) == -1) {
++		// assume builtin backend
++		if (errno == EINVAL) {
++			*pid = getpid();
++			*uid = getuid();
++			*gid = getgid();
++			return 0;
++		}
++		return -1;
++	}
++	*pid = peercred.pid;
++	*uid = peercred.uid;
++	*gid = peercred.gid;
++	return 0;
+ #elif defined(__FreeBSD__)
+ 	struct xucred cred;
+ 	socklen_t len = sizeof cred;

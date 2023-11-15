@@ -1,0 +1,41 @@
+build on OpenBSD : no -lrt, set _BSD_SOURCE
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -29,7 +29,7 @@ cc = meson.get_compiler('c')
+ add_project_arguments(
+ 	[
+ 		'-D_XOPEN_SOURCE=700',
+-		'-D__BSD_VISIBLE',
++		'-D_BSD_SOURCE',
+ 		'-D_NETBSD_SOURCE',
+ 		'-DSEATD_VERSION="@0@"'.format(meson.project_version()),
+ 		'-DSEATD_DEFAULTPATH="@0@"'.format(defaultpath),
+@@ -158,8 +158,8 @@ if get_option('libseat-logind') != 'disabled'
+ endif
+ 
+ # needed for cross-compilation
+-realtime = meson.get_compiler('c').find_library('rt')
+-private_deps += realtime
++# realtime = meson.get_compiler('c').find_library('rt')
++# private_deps += realtime
+ 
+ if with_builtin
+ 	libseat_c_args += '-DBUILTIN_ENABLED=1'
+@@ -220,14 +220,14 @@ if with_server
+ 		[ server_files, 'seatd/seatd.c' ],
+ 		include_directories: [include_directories('.', 'include')],
+ 		install: true,
+-		dependencies: [realtime],
++#		dependencies: [realtime],
+ 	)
+ 	executable(
+ 		'seatd-launch',
+ 		[ 'seatd-launch/seatd-launch.c' ],
+ 		include_directories: [include_directories('.', 'include')],
+ 		install: true,
+-		dependencies: [realtime],
++#		dependencies: [realtime],
+ 	)
+ endif
+ 

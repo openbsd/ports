@@ -1,0 +1,38 @@
+OpenBSD console support 
+
+Index: common/terminal.c
+--- common/terminal.c.orig
++++ common/terminal.c
+@@ -21,7 +21,7 @@
+ #define K_ENABLE  K_XLATE
+ #define K_DISABLE K_RAW
+ #define FRSIG     SIGIO
+-#elif defined(__NetBSD__)
++#elif defined(__NetBSD__) || defined(__OpenBSD__)
+ #include <dev/wscons/wsdisplay_usl_io.h>
+ #define K_ENABLE  K_XLATE
+ #define K_DISABLE K_RAW
+@@ -147,6 +147,14 @@ static int get_tty_path(int tty, char path[static TTYP
+ 	}
+ 	return 0;
+ }
++#elif defined(__OpenBSD__)
++static int get_tty_path(int tty, char path[static TTYPATHLEN]) {
++	assert(tty >= 0);
++	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty) == -1) {
++		return -1;
++	}
++	return 0;
++}
+ #else
+ #error Unsupported platform
+ #endif
+@@ -175,7 +183,7 @@ int terminal_current_vt(int fd) {
+ 		return -1;
+ 	}
+ 	return st.v_active;
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	int vt;
+ 	int res = ioctl(fd, VT_GETACTIVE, &vt);
+ 	close(fd);

@@ -1,0 +1,14 @@
+OpenBSD support
+
+Index: common/wscons.c
+--- common/wscons.c.orig
++++ common/wscons.c
+@@ -10,7 +10,7 @@
+ 
+ #define STRLEN(s) ((sizeof(s) / sizeof(s[0])) - 1)
+ 
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ int path_is_wscons(const char *path) {
+ 	static const char wskbd[] = "/dev/wskbd";
+ 	static const char wsmouse[] = "/dev/wsmouse";
