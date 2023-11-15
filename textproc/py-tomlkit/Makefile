@@ -1,6 +1,6 @@
 COMMENT=	style-preserving TOML library for Python
 
-MODPY_EGG_VERSION=	0.12.2
+MODPY_EGG_VERSION=	0.12.3
 DISTNAME=	tomlkit-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
