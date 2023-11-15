@@ -14,3 +14,21 @@ Index: gcc/config/avr32/avr32.c
  const struct part_type_s *avr32_part;
  const struct arch_type_s *avr32_arch;
  
+@@ -2190,7 +2186,7 @@ static bool has_attribute_p (tree decl, const char *na
+     {
+       return (lookup_attribute (name, DECL_ATTRIBUTES(decl)) != NULL_TREE);
+     }
+-  return NULL_TREE;    
++  return FALSE;
+ }
+ 
+ 
+@@ -7276,7 +7272,7 @@ get_next_insn_cond (rtx cur_insn)
+ /* Check if the next insn is a conditional insn that will emit a compare
+    for itself.
+ */
+-rtx
++bool
+ next_insn_emits_cmp (rtx cur_insn)
+ {
+   rtx next_insn = next_nonnote_insn (cur_insn);

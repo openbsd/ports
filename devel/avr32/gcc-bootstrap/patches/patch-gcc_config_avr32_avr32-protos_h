@@ -1,0 +1,12 @@
+Index: gcc/config/avr32/avr32-protos.h
+--- gcc/config/avr32/avr32-protos.h.orig
++++ gcc/config/avr32/avr32-protos.h
+@@ -167,7 +167,7 @@ extern rtx avr32_output_cmp (rtx cond, enum machine_mo
+ 
+ rtx get_next_insn_cond (rtx cur_insn);
+ int set_next_insn_cond (rtx cur_insn, rtx cond);
+-rtx next_insn_emits_cmp (rtx cur_insn);
++bool next_insn_emits_cmp (rtx cur_insn);
+ void avr32_override_options (void);
+ void avr32_load_pic_register (void);
+ #ifdef GCC_BASIC_BLOCK_H
