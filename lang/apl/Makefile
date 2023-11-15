@@ -24,6 +24,7 @@ WANTLIB += xcb-shm z Xau Xdmcp jpeg
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER =	base-clang ports-gcc
+CXXFLAGS_base-clang =	-std=c++14
 
 SITES =		${SITE_GNU:=apl/}
 
