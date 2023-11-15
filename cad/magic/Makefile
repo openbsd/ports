@@ -18,6 +18,8 @@ SITES =		http://opencircuitdesign.com/magic/archive/
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 MODULES =	lang/python \
 		x11/tk
 MODPY_RUNDEP =	No
