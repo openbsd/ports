@@ -19,6 +19,8 @@ WANTLIB=	crypto ssl z m ${COMPILER_LIBCXX} pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang=	-std=c++98
+
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS+= --without-nat \
