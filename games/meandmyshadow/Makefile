@@ -24,6 +24,7 @@ WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf archive c crypto
 WANTLIB += curl m pthread ssl ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++11
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
