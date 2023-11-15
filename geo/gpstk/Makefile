@@ -27,6 +27,9 @@ CXXFLAGS+=             -O0
 .endif
 
 COMPILER=		base-clang ports-gcc
+
+CXXFLAGS_base-clang +=	-std=c++14
+
 CONFIGURE_ARGS=		-DBUILD_EXT=on
 
 .include <bsd.port.mk>
