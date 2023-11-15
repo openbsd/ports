@@ -28,6 +28,8 @@ LIB_DEPENDS= 		devel/gettext,-runtime \
 
 USE_GMAKE=		Yes
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
