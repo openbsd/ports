@@ -19,6 +19,8 @@ WANTLIB += xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--enable-double-precision
