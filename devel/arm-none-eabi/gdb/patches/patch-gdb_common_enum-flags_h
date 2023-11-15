@@ -1,0 +1,22 @@
+From 12e3f3bc6ec74eb50e04675f5bcf962482d3ff25 Mon Sep 17 00:00:00 2001
+From: Simon Marchi <simon.marchi@efficios.com>
+Date: Thu, 23 Feb 2023 12:35:40 -0500
+Subject: [PATCH] gdbsupport: ignore -Wenum-constexpr-conversion in
+ enum-flags.h
+
+Index: gdb/common/enum-flags.h
+--- gdb/common/enum-flags.h.orig
++++ gdb/common/enum-flags.h
+@@ -81,9 +81,12 @@ template<> struct integer_for_size<8, 1> { typedef int
+ template<typename T>
+ struct enum_underlying_type
+ {
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wenum-constexpr-conversion"
+   typedef typename
+     integer_for_size<sizeof (T), static_cast<bool>(T (-1) < T (0))>::type
+     type;
++#pragma clang diagnostic pop
+ };
+ 
+ template <typename E>
