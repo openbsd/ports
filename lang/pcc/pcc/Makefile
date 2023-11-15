@@ -12,4 +12,6 @@ CONFIGURE_ENV =	YACC=/usr/bin/yacc
 
 RUN_DEPENDS =	lang/pcc/pcc-libs>=${PKGVER}
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 .include <bsd.port.mk>
