@@ -14,6 +14,9 @@ WANTLIB+=	c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14 \
+			-Wno-error=enum-constexpr-conversion
+
 HOMEPAGE=	https://embed.cs.utah.edu/csmith/
 SITES=		${HOMEPAGE}
 
