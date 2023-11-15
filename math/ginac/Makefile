@@ -22,6 +22,8 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS=	devel/cln
 
 USE_GMAKE=	Yes
