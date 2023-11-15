@@ -22,6 +22,8 @@ WANTLIB += OpenEXR-3_2 m tiff
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/openexr \
 			graphics/tiff
