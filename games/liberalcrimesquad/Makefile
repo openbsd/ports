@@ -18,6 +18,8 @@ SITES =		https://github.com/Kamal-Sadek/Liberal-Crime-Squad/archive/
 # C++11
 COMPILER =	base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++11
+
 LIB_DEPENDS =	converters/libiconv
 
 RUN_DEPENDS =	devel/desktop-file-utils
