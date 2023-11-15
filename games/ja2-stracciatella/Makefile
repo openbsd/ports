@@ -15,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	boost_filesystem boost_system c m pthread SDL ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++14
 
 LIB_DEPENDS =	devel/sdl \
 		devel/boost
