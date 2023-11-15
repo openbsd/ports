@@ -1,13 +1,13 @@
 COMMENT =	cron-like daemon but reacting to filesystem events
 
 DISTNAME =	incron-0.5.10
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	http://inotify.aiken.cz/
+HOMEPAGE =	https://inotify.aiken.cz/
 
-SITES =		http://inotify.aiken.cz/download/incron/
+SITES =		https://inotify.aiken.cz/download/incron/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -19,6 +19,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 BUILD_DEPENDS =	devel/argp-standalone
 LIB_DEPENDS =	devel/libinotify
 
+CXXFLAGS +=	-std=c++14
 MAKE_FLAGS =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify" \
 		CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" \
