@@ -17,6 +17,8 @@ WANTLIB += ${COMPILER_LIBCXX} bz2 c curses m readline z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		devel/bison
