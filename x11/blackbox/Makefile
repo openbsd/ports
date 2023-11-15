@@ -16,6 +16,8 @@ WANTLIB += ${COMPILER_LIBCXX} xcb z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS=		converters/libiconv
 
 LIBTOOL_FLAGS=		--tag=disable-shared
