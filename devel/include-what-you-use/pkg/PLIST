@@ -13,6 +13,8 @@ share/doc/include-what-you-use/WhyIWYUIsDifficult.md
 share/include-what-you-use/
 share/include-what-you-use/boost-1.64-all-private.imp
 share/include-what-you-use/boost-1.64-all.imp
+share/include-what-you-use/boost-1.75-all-private.imp
+share/include-what-you-use/boost-1.75-all.imp
 share/include-what-you-use/boost-all-private.imp
 share/include-what-you-use/boost-all.imp
 share/include-what-you-use/clang-6.intrinsics.imp
@@ -22,6 +24,8 @@ share/include-what-you-use/gcc.stl.headers.imp
 share/include-what-you-use/gcc.symbols.imp
 share/include-what-you-use/iwyu.gcc.imp
 share/include-what-you-use/libcxx.imp
+share/include-what-you-use/python2.7.imp
+share/include-what-you-use/python3.8.imp
 share/include-what-you-use/qt4.imp
 share/include-what-you-use/qt5_11.imp
 share/include-what-you-use/qt5_4.imp

@@ -1,8 +1,7 @@
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
-DISTNAME=	include-what-you-use-0.17.src
+DISTNAME=	include-what-you-use-0.20.src
 PKGNAME=	${DISTNAME:.src=}
-REVISION=	1
 
 HOMEPAGE=	https://include-what-you-use.org
 SITES=		${HOMEPAGE}/downloads/
@@ -19,6 +18,7 @@ MODULES=		devel/cmake lang/clang lang/python
 MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	*.py
 
+MODCLANG_VERSION=		16
 MODCLANG_COMPILER_LINKS=	No
 MODCLANG_RUNDEP=		Yes
 
