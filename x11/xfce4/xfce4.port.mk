@@ -90,6 +90,10 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			x11/xfce4/xfce4-dev-tools
 
+# maintainer-mode turns on debug
+.ifndef(DEBUG)
+CONFIGURE_ARGS +=	--disable-debug
+.endif
 .endif
 
 .if defined(DEBUG)
