@@ -5,7 +5,7 @@ USE_NOEXECONLY=Yes
 COMMENT =		TI's open source compiler for MSP430 microcontrollers#'
 
 V =			3_03_04_00
-REVISION =		7
+REVISION =		8
 PKGNAME =		ti-msp430gcc-${V:S/_/./g}
 GCC_V =			4.9.1
 CATEGORIES =		devel
@@ -31,6 +31,8 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			devel/autogen
 BUILD_DEPENDS +=	sysutils/coreutils # autoconf picks up gmkdir
 LIB_DEPENDS =		devel/libmpc
+
+CXXFLAGS_base-clang =	-std=c++14
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--target=msp430-none-elf \
