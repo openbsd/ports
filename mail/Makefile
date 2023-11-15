@@ -30,6 +30,7 @@
      SUBDIR += dkimproxy
      SUBDIR += dma
      SUBDIR += dovecot
+     SUBDIR += dovecot,gssapi
      SUBDIR += dovecot-fts-flatcurve
      SUBDIR += dovecot-fts-xapian
      SUBDIR += dovecot-pigeonhole
@@ -209,7 +210,6 @@
      SUBDIR += rmail
      SUBDIR += roundcubemail
      SUBDIR += rspamd
-     SUBDIR += rspamd,hyperscan
      SUBDIR += rss2email
      SUBDIR += rssgoemail
      SUBDIR += ruby-mini_mime

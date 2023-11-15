@@ -1,3 +1,4 @@
+@pkgpath mail/rspamd,hyperscan${FLAVOR_COMMA}
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd::Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd
@@ -441,6 +442,7 @@ share/rspamd/www/browserconfig.xml
 share/rspamd/www/css/
 share/rspamd/www/css/FooTable.Glyphicons.css
 share/rspamd/www/css/bootstrap.min.css
+share/rspamd/www/css/codejar-linenumbers.css
 share/rspamd/www/css/d3evolution.css
 share/rspamd/www/css/d3pie.css
 share/rspamd/www/css/font-glyphicons.css
@@ -473,6 +475,7 @@ share/rspamd/www/js/app/symbols.js
 share/rspamd/www/js/app/upload.js
 share/rspamd/www/js/lib/
 share/rspamd/www/js/lib/bootstrap.bundle.min.js
+share/rspamd/www/js/lib/codejar-linenumbers.min.js
 share/rspamd/www/js/lib/codejar.min.js
 share/rspamd/www/js/lib/d3.min.js
 share/rspamd/www/js/lib/d3evolution.min.js
@@ -481,7 +484,6 @@ share/rspamd/www/js/lib/fontawesome.min.js
 share/rspamd/www/js/lib/footable.min.js
 share/rspamd/www/js/lib/jquery-3.7.0.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
-share/rspamd/www/js/lib/linenumbers.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/prism.js
 share/rspamd/www/js/lib/require.min.js

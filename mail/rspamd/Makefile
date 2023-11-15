@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.7.3
+GH_TAGNAME=	3.7.4
 
 CATEGORIES=	mail
 
@@ -14,23 +14,18 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c crypto glib-2.0 icudata icui18n icuio icuuc
+WANTLIB += c crypto glib-2.0 hs icudata icui18n icuio icuuc
 WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util xxhash z zstd
 
-# switch to vectorscan for wider arch support?
-# https://github.com/VectorCamp/vectorscan
-FLAVORS=	no_luajit hyperscan
-.if ${MACHINE_ARCH} == "amd64"
-# amd64: any flavour
+FLAVORS=	no_luajit
+.if ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "arm" || \
+    ${MACHINE_ARCH} == "i386" || \
+    ${MACHINE_ARCH} == "powerpc"
+# luajit archs: no_luajit or unflavoured
 FLAVOR?=
-.elif ${MACHINE_ARCH} == "arm" || \
-      ${MACHINE_ARCH} == "i386" || \
-      ${MACHINE_ARCH} == "powerpc"
-# other luajit arches: no_luajit or unflavoured
-FLAVOR?=
-FLAVOR:=	${FLAVOR:Nhyperscan}
 .else
-# others: no_luajit only
+# others: luajit is not available, so must use no_luajit
 FLAVOR=		no_luajit
 .endif
 
@@ -49,6 +44,9 @@ LIB_DEPENDS=	archivers/zstd \
 		security/libsodium \
 		sysutils/xxhash \
 		textproc/icu4c
+# switch to vectorscan for wider arch support?
+# https://github.com/VectorCamp/vectorscan
+LIB_DEPENDS+=	textproc/hyperscan
 RUN_DEPENDS=	databases/redis
 
 BUILD_DEPENDS+=	devel/ragel
@@ -71,11 +69,14 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 # devel/fmt breaks mariadb build
 CONFIGURE_ARGS+= -DSYSTEM_XXHASH=ON \
 		-DSYSTEM_ZSTD=ON \
+		-DENABLE_HYPERSCAN=ON \
 		-DENABLE_JEMALLOC=OFF
 
 # to line up @samples in plist
 ETC=		${SYSCONFDIR}
-SUBST_VARS+=	ETC
+
+FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS=	ETC FLAVOR_COMMA
 
 .if ${FLAVOR:Mno_luajit}
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
@@ -88,12 +89,6 @@ WANTLIB+=	${MODLUA_WANTLIB}
 LIB_DEPENDS+=	lang/luajit
 WANTLIB+=	luajit-5.1
 USE_NOBTCFI=	Yes
-.endif
-
-.if ${FLAVOR:Mhyperscan}
-CONFIGURE_ARGS+= -DENABLE_HYPERSCAN=ON
-LIB_DEPENDS+=	textproc/hyperscan
-WANTLIB+=	hs
 .endif
 
 NO_TEST=	Yes
