@@ -23,6 +23,8 @@ WANTLIB += iconv m pcre util xcb xcb-shm z
 LIB_DEPENDS=	converters/libiconv \
 		devel/libast \
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-trans \
 		--enable-utmp \
