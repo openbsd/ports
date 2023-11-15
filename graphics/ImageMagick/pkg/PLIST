@@ -550,8 +550,12 @@ share/examples/ImageMagick/magic.xml
 @sample ${SYSCONFDIR}/ImageMagick/magic.xml
 share/examples/ImageMagick/mime.xml
 @sample ${SYSCONFDIR}/ImageMagick/mime.xml
-share/examples/ImageMagick/policy.xml
+share/examples/ImageMagick/policy-limited.xml
 @sample ${SYSCONFDIR}/ImageMagick/policy.xml
+share/examples/ImageMagick/policy-open.xml
+share/examples/ImageMagick/policy-secure.xml
+share/examples/ImageMagick/policy-websafe.xml
+share/examples/ImageMagick/policy.xml
 share/examples/ImageMagick/quantization-table.xml
 @sample ${SYSCONFDIR}/ImageMagick/quantization-table.xml
 share/examples/ImageMagick/thresholds.xml
