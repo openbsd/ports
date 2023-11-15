@@ -17,6 +17,8 @@ WANTLIB=	GL SDL X11 c iconv intl m pthread ${COMPILER_LIBCXX} xcb z \
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS=	devel/sdl-gfx \
 		devel/sdl-image \
 		devel/sdl-mixer \
