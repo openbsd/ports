@@ -24,6 +24,8 @@ WANTLIB += X11 Xext Xrender fontconfig freetype iconv intl m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 MULTI_PACKAGES=		-main -gtk -gtk3
 
 MODULES=		textproc/intltool
