@@ -19,6 +19,8 @@ WANTLIB += ${COMPILER_LIBCXX} SDL c m z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 SITES =			${SITE_SOURCEFORGE:=gambatte/}
 
 MODULES =		lang/python
