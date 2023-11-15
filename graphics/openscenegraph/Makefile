@@ -44,6 +44,8 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_2 IlmThread-3_2
 WANTLIB += SDL X11 Xinerama Xrandr fontconfig OpenEXRCore-3_2
 WANTLIB += avcodec avdevice avformat avutil c cairo
