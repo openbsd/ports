@@ -20,6 +20,8 @@ SITES=		${SITE_SOURCEFORGE:=fldigi/}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=gnu++0x
+
 RUN_DEPENDS=	devel/desktop-file-utils
 BUILD_DEPENDS=	textproc/asciidoc
 LIB_DEPENDS=	audio/libsamplerate \
