@@ -20,6 +20,8 @@ EXTRACT_SUFX =		.tar.bz2
 # C++11
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++11
+
 BUILD_DEPENDS =		misc/findutils \
 			print/ghostscript/gnu \
 			shells/bash
