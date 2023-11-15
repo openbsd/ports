@@ -1,0 +1,12 @@
+Index: configure-al.m4
+--- configure-al.m4.orig
++++ configure-al.m4
+@@ -91,7 +91,7 @@ if test "x$enable_openaltest" = "xyes" ; then
+ 
+ 		int main(int argc, char *argv[])
+ 		{
+-			alutInit(argc, argv);
++			alutInit(&argc, argv);
+ 			return 0;
+ 		}
+ #undef  main
