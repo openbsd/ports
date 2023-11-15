@@ -1,6 +1,6 @@
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
-V=			2.8.82
+V=			2.8.131
 DISTNAME=		gsoap_${V}
 PKGNAME=		gsoap-${V}
 EXTRACT_SUFX=		.zip

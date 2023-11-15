@@ -1,22 +1,22 @@
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h
-lib/libgsoap++.a
+@static-lib lib/libgsoap++.a
 lib/libgsoap++.la
 @lib lib/libgsoap++.so.${LIBgsoap++_VERSION}
-lib/libgsoap.a
+@static-lib lib/libgsoap.a
 lib/libgsoap.la
 @lib lib/libgsoap.so.${LIBgsoap_VERSION}
-lib/libgsoapck++.a
+@static-lib lib/libgsoapck++.a
 lib/libgsoapck++.la
 @lib lib/libgsoapck++.so.${LIBgsoapck++_VERSION}
-lib/libgsoapck.a
+@static-lib lib/libgsoapck.a
 lib/libgsoapck.la
 @lib lib/libgsoapck.so.${LIBgsoapck_VERSION}
-lib/libgsoapssl++.a
+@static-lib lib/libgsoapssl++.a
 lib/libgsoapssl++.la
 @lib lib/libgsoapssl++.so.${LIBgsoapssl++_VERSION}
-lib/libgsoapssl.a
+@static-lib lib/libgsoapssl.a
 lib/libgsoapssl.la
 @lib lib/libgsoapssl.so.${LIBgsoapssl_VERSION}
 lib/pkgconfig/gsoap++.pc

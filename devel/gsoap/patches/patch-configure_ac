@@ -1,42 +1,53 @@
+
 from Fedora: gsoap-libtool.patch (creates shared libraries)
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -16,8 +16,7 @@ AM_PROG_CC_C_O
- AM_PROG_LEX
+@@ -15,8 +15,8 @@ AM_PROG_CC_C_O
+ AM_PROG_LEX([noyywrap])
  AC_PROG_YACC
  AC_PROG_CPP
 -AC_PROG_RANLIB
 -#AM_PROG_LIBTOOL
++#AC_PROG_RANLIB
 +AM_PROG_LIBTOOL
  AC_PROG_LN_S
  AC_PROG_AWK
  AC_PROG_INSTALL
-@@ -303,7 +302,7 @@ if test "x$with_openssl" = "xyes"; then
+@@ -310,7 +310,7 @@ if test "x$with_openssl" = "xyes"; then
      WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lgnutls -lgcrypt -lgpg-error -lz"
      SAMPLE_INCLUDES=
      SAMPLE_SSL_LIBS="-lgnutls -lgcrypt -lgpg-error -lz"
 -    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
 +    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
    else
-     AC_MSG_RESULT(no)
-     WSDL2H_EXTRA_FLAGS="-DWITH_OPENSSL -DWITH_GZIP"
-@@ -311,7 +310,7 @@ if test "x$with_openssl" = "xyes"; then
-     WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lssl -lcrypto -lz"
-     SAMPLE_INCLUDES=
-     SAMPLE_SSL_LIBS="-lssl -lcrypto -lz"
--    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
-+    WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
+     if test "x$with_wolfssl" = "xyes"; then
+       AC_MSG_RESULT(yes)
+@@ -318,7 +318,7 @@ if test "x$with_openssl" = "xyes"; then
+       WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lwolfssl -lz"
+       SAMPLE_INCLUDES=
+       SAMPLE_SSL_LIBS="-lwolfssl -lz"
+-      WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
++      WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
+     else
+       AC_MSG_RESULT(no)
+       WSDL2H_EXTRA_FLAGS="-DWITH_OPENSSL -DWITH_GZIP"
+@@ -326,7 +326,7 @@ if test "x$with_openssl" = "xyes"; then
+       WSDL2H_EXTRA_LIBS="${WSDL2H_EXTRA_LIBS} -lssl -lcrypto -lz"
+       SAMPLE_INCLUDES=
+       SAMPLE_SSL_LIBS="-lssl -lcrypto -lz"
+-      WSDL2H_SOAP_CPP_LIB="libgsoapssl++.a"
++      WSDL2H_SOAP_CPP_LIB="libgsoapssl++.la"
+     fi
    fi
    if test -n "$ZLIB"; then
-     WSDL2H_EXTRA_FLAGS="-I${ZLIB}/include ${WSDL2H_EXTRA_FLAGS}"
-@@ -330,7 +329,7 @@ else
+@@ -346,7 +346,7 @@ else
    WSDL2H_EXTRA_FLAGS=
    SAMPLE_SSL_LIBS=
    SAMPLE_INCLUDES=
 -  WSDL2H_SOAP_CPP_LIB="libgsoap++.a"
 +  WSDL2H_SOAP_CPP_LIB="libgsoap++.la"
  fi
- AM_CONDITIONAL(WITH_OPENSSL, test "x$with_openssl" = "xyes" -a "x$with_gnutls" != "xyes")
- AC_SUBST(WITH_OPENSSL)
+ AM_CONDITIONAL([WITH_OPENSSL], [test "x$with_openssl" = "xyes" -a "x$with_gnutls" != "xyes" -a "x$with_wolfssl" != "xyes"])
+ AC_SUBST(WSDL2H_EXTRA_FLAGS)
