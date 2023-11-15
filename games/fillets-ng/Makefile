@@ -12,6 +12,7 @@ WANTLIB = 		SDL SDL_image SDL_mixer SDL_ttf c fribidi \
 			${MODLUA_WANTLIB} m pthread smpeg ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=c++11
 
 SITES =			${SITE_SOURCEFORGE:=fillets/}
 DISTFILES = 		fillets-ng-${V}.tar.gz \
