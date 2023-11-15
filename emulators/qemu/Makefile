@@ -128,6 +128,12 @@ PKG_ARGS+=	-Dplugins=1
 PKG_ARGS+=	-Dplugins=0
 .endif
 
+# XXX: Remove when updating.
+# https://gitlab.com/qemu-project/qemu/-/commit/8c0e8ed327c8ff7b48a5f2b7f5295c0541fcdbf4
+pre-configure:
+	perl -pi -e 's,tricore_feature,tricore_has_feature,g' ${WRKSRC}/target/tricore/cpu.c \
+		${WRKSRC}/target/tricore/cpu.h ${WRKSRC}/target/tricore/op_helper.c
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
