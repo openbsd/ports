@@ -41,6 +41,8 @@ DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 BUILD_DEPENDS =		devel/gperf
 LIB_DEPENDS-main =	net/libcares \
 			net/radcli
