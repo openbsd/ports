@@ -3,7 +3,7 @@ PKGSPEC-main=	tomcat->=10,<11
 
 MAJ_VER=	10
 MIN_VER=	1
-MICRO_VER=	15
+MICRO_VER=	16
 
 MODJAVA_VER=	11+
 
