@@ -30,6 +30,8 @@ MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 LIB_DEPENDS =		audio/openal \
 			audio/libvorbis \
 			audio/flac
