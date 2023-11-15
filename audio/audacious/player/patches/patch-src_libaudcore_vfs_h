@@ -1,0 +1,11 @@
+Index: src/libaudcore/vfs.h
+--- src/libaudcore/vfs.h.orig
++++ src/libaudcore/vfs.h
+@@ -51,6 +51,7 @@ enum VFSReadOptions
+ 
+ enum VFSSeekType
+ {
++    VFS_SEEK_UNK = -1,
+     VFS_SEEK_SET = 0,
+     VFS_SEEK_CUR = 1,
+     VFS_SEEK_END = 2
