@@ -2,7 +2,7 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 
 COMMENT=	use a JPL ephemeris to predict planet positions
 
-MODPY_EGG_VERSION=	2.19
+MODPY_EGG_VERSION=	2.20
 
 DISTNAME=	jplephem-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
