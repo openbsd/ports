@@ -2,7 +2,7 @@ COMMENT =	RE platform powered by radare2
 
 GH_ACCOUNT =	radareorg
 GH_PROJECT =	iaito
-GH_TAGNAME =	5.7.2
+GH_TAGNAME =	5.8.8
 
 CATEGORIES =	devel
 
@@ -12,12 +12,12 @@ HOMEPAGE =	https://www.radare.org/n/iaito.html
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Svg
-WANTLIB += Qt5Widgets c capstone crypto m ssl z zip
+WANTLIB += Qt5Widgets c capstone m ssl
 
 MODULES =	x11/qt5
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/radare2/main>=5.7.4 \
+RUN_DEPENDS =	devel/radare2/main>=5.8.8 \
 		math/graphviz
 LIB_DEPENDS =	archivers/libzip \
 		devel/capstone/main \

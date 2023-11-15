@@ -1,6 +1,9 @@
+# XXX: Sync with devel/iaito when updating.
+
 COMMENT =		libre and portable reverse engineering framework
 
 V =			5.8.8
+REVISION =		0
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2
@@ -25,18 +28,16 @@ SHARED_LIBS+=		${_lib} ${LIBV}
 .endfor
 
 # uses pledge()
-WANTLIB =		c capstone kvm m pthread z zip
+WANTLIB =		c capstone kvm m pthread
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-LIB_DEPENDS =		archivers/libzip \
-			devel/capstone/main
+LIB_DEPENDS =		devel/capstone/main
 
 # --with-sysmagic triggers build error
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-libversion=${LIBV} \
-			--with-syscapstone \
-			--with-syszip
+			--with-syscapstone
 
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV =		HOST_CC="${CC}" HOST_CFLAGS="${CFLAGS}"
