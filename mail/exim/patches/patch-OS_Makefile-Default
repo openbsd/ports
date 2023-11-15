@@ -1,7 +1,7 @@
 Index: OS/Makefile-Default
 --- OS/Makefile-Default.orig
 +++ OS/Makefile-Default
-@@ -71,7 +71,7 @@ PERL_COMMAND=/usr/bin/perl
+@@ -74,7 +74,7 @@ PERL_COMMAND=/usr/bin/perl
  
  # CC contains the name of the C compiler to be used.
  
@@ -10,7 +10,7 @@ Index: OS/Makefile-Default
  
  
  # CFLAGS contains flags to be passed to the compiler. Nothing is defaulted
-@@ -84,7 +84,7 @@ CC=gcc
+@@ -87,7 +87,7 @@ CC=gcc
  # here; instead each OS-dependent Makefile contains a default setting if one
  # is needed.
  

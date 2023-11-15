@@ -1,7 +1,7 @@
 Index: scripts/exim_install
 --- scripts/exim_install.orig
 +++ scripts/exim_install
-@@ -216,7 +216,7 @@ while [ $# -gt 0 ]; do
+@@ -219,7 +219,7 @@ while [ $# -gt 0 ]; do
  
    # The exim binary is handled specially
  

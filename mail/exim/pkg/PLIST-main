@@ -20,7 +20,9 @@ bin/exim_checkaccess
 @bin bin/exim_dbmbuild
 @bin bin/exim_dumpdb
 @bin bin/exim_fixdb
+bin/exim_id_update
 @bin bin/exim_lock
+bin/exim_msgdate
 @bin bin/exim_tidydb
 bin/eximstats
 bin/exinext

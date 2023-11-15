@@ -1,7 +1,7 @@
 Index: src/spf.h
 --- src/spf.h.orig
 +++ src/spf.h
-@@ -10,10 +10,6 @@
+@@ -11,10 +11,6 @@
  
  #ifdef SUPPORT_SPF
  

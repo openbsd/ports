@@ -1,7 +1,7 @@
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.96.2
+VERSION =		4.97
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -27,12 +27,14 @@ SITES =			https://ftp.exim.org/pub/exim/exim4/ \
 			ftp://ftp.exim.org/pub/exim/exim4/fixes/ \
 			ftp://ftp.exim.org/pub/exim/exim4/old/
 
+BUILD_DEPENDS =		devel/p5-File-FcntlLock
+
 LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre2
 RUN_DEPENDS-eximon =	${PKGPATH},-main
 LIB_DEPENDS-eximon =	devel/pcre2
 
-MAKE_FLAGS +=		FULLECHO= CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS +=		FULLECHO= CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="-lexecinfo"
 
 PSEUDO_FLAVORS =	no_eximon
 FLAVORS =		mysql postgresql sqlite3 ldap sasl
