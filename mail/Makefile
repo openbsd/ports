@@ -210,6 +210,7 @@
      SUBDIR += rmail
      SUBDIR += roundcubemail
      SUBDIR += rspamd
+     SUBDIR += rspamd,hyperscan
      SUBDIR += rss2email
      SUBDIR += rssgoemail
      SUBDIR += ruby-mini_mime
