@@ -28,6 +28,8 @@ WANTLIB += xcb-xfixes xshmfence z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
+CXXFLAGS_base-clang =	-std=c++14
+
 MODULES=		lang/lua
 
 USE_GMAKE=		Yes
