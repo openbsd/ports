@@ -18,6 +18,8 @@ HOMEPAGE =	https://ezquake.github.io/
 WANTLIB += GL SDL2 c curl expat freetype jansson jpeg m minizip pcre2-8 png
 WANTLIB += pthread sndfile speex speexdsp z
 
+CFLAGS_base-clang =	-Wno-error=int-conversion
+
 LIB_DEPENDS =	archivers/minizip \
 		audio/libsndfile \
 		audio/speex \
