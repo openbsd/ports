@@ -21,4 +21,11 @@ CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 
 TEST_IS_INTERACTIVE=	Yes
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CFLAGS_base-clang =	-Wno-error=int-conversion
+CONFIGURE_ARGS +=	CCFLAGS="${OCFLAGS} ${CFLAGS}"
+PCFLAGS:=		$(/usr/bin/perl -V:ccflags | cut -d '='  -f2`)
+.endif
+
 .include <bsd.port.mk>
