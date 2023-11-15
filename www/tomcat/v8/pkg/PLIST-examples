@@ -1025,6 +1025,7 @@ webapps/docs/api/org/apache/coyote/ActionHook.html
 webapps/docs/api/org/apache/coyote/Adapter.html
 webapps/docs/api/org/apache/coyote/AsyncContextCallback.html
 webapps/docs/api/org/apache/coyote/AsyncStateMachine.html
+webapps/docs/api/org/apache/coyote/BadRequestException.html
 webapps/docs/api/org/apache/coyote/CloseNowException.html
 webapps/docs/api/org/apache/coyote/CompressionConfig.html
 webapps/docs/api/org/apache/coyote/Constants.html
