@@ -34,6 +34,8 @@ CONFIGURE_ARGS=		-Dprofile=release \
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
+CFLAGS_base-clang=	-Wno-error=int-conversion
+
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
 CFLAGS +=		-std=gnu99
