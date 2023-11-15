@@ -10,3 +10,27 @@ Index: CGRuntime.cpp
  
  #ifdef CODEWORKER_GNU_READLINE
  #	include <stdio.h> // fix for Red Hat 9 - thanks to Justin Cinkelj
+@@ -356,7 +358,11 @@ namespace CodeWorker {
+ 		return externalFunction;
+ 	}
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++	void CGRuntime::throwBNFExecutionError(const std::string& sBNFToken, const char* tcComment) noexcept(false) {
++#else
+ 	void CGRuntime::throwBNFExecutionError(const std::string& sBNFToken, const char* tcComment) throw(UtlException) {
++#endif
+ 		std::string sText;
+ 		if (!_pInputStream->readIdentifier(sText)) {
+ 			int iChar = _pInputStream->readChar();
+@@ -415,7 +421,11 @@ namespace CodeWorker {
+ 		return 0;
+ 	}
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++	bool CGRuntime::executeScript(int iNargs, char** tsArgs, EXECUTE_FUNCTION* executeFunction) noexcept(false) {
++#else
+ 	bool CGRuntime::executeScript(int iNargs, char** tsArgs, EXECUTE_FUNCTION* executeFunction) throw(UtlException) {
++#endif
+ 		UtlTraceSession traceSession;
+ 		Workspace workspace;
+ 		if (workspace.checkArguments(iNargs, tsArgs, executeFunction)) {

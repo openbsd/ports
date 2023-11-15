@@ -1,0 +1,19 @@
+Index: CppParsingTree.h
+--- CppParsingTree.h.orig
++++ CppParsingTree.h
+@@ -318,9 +318,15 @@ namespace CodeWorker {
+ 			void addElements(const CppParsingTree_var& theValue) const;
+ 			const std::list<DtaScriptVariable*>* getArray() const;
+ 			const std::map<std::string, DtaScriptVariable*>* getSortedArray() const;
++#if defined(__clang__) && (__clang_major__ >= 16)
++			std::unique_ptr<std::vector<DtaScriptVariable*> > getSortedNoCaseArray() const;
++			std::unique_ptr<std::vector<DtaScriptVariable*> > getSortedArrayOnValue() const;
++			std::unique_ptr<std::vector<DtaScriptVariable*> > getSortedNoCaseArrayOnValue() const;
++#else
+ 			std::auto_ptr<std::vector<DtaScriptVariable*> > getSortedNoCaseArray() const;
+ 			std::auto_ptr<std::vector<DtaScriptVariable*> > getSortedArrayOnValue() const;
+ 			std::auto_ptr<std::vector<DtaScriptVariable*> > getSortedNoCaseArrayOnValue() const;
++#endif
+ 
+ 			std::list<std::string> getAttributeNames() const;
+ 

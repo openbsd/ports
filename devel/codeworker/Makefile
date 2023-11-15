@@ -2,7 +2,7 @@ COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4
 PKGNAME =		codeworker-${V}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 
@@ -14,6 +14,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
+
+CXXFLAGS_base-clang =	-std=c++14 \
+			-Wno-error=dynamic-exception-spec
 
 SITES =			${SITE_GOOGLECODE:=codeworker/} \
 			http://codeworker.free.fr/downloads/

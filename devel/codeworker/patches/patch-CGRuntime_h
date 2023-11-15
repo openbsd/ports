@@ -11,3 +11,22 @@ Index: CGRuntime.h
  
  #include "UtlException.h"
  #include "CppParsingTree.h"
+@@ -123,10 +125,18 @@ namespace CodeWorker {
+ 			static void registerExternalTemplateDispatcherFunction(const std::string& sKey, EXTERNAL_TEMPLATE_DISPATCHER_FUNCTION externalFunction);
+ 			static EXTERNAL_FUNCTION getExternalFunction(const std::string& sKey);
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++			static void throwBNFExecutionError(const std::string& sBNFToken, const char* tcComment = NULL) noexcept(false);
++#else
+ 			static void throwBNFExecutionError(const std::string& sBNFToken, const char* tcComment = NULL) throw(UtlException);
++#endif
+ 
+ 			static int entryPoint(int iNargs, char** tsArgs, EXECUTE_FUNCTION* executeFunction);
++#if defined(__clang__) && (__clang_major__ >= 16)
++			static bool executeScript(int iNargs, char** tsArgs, EXECUTE_FUNCTION* executeFunction) noexcept(false);
++#else
+ 			static bool executeScript(int iNargs, char** tsArgs, EXECUTE_FUNCTION* executeFunction) throw(UtlException);
++#endif
+ 			static void registerScript(const char* sRegistration, EXECUTE_FUNCTION* executeFunction);
+ 			static void registerReadonlyHook(READONLYHOOK_FUNCTION readonlyHook);
+ 			static void registerWritefileHook(WRITEFILEHOOK_FUNCTION writefileHook);

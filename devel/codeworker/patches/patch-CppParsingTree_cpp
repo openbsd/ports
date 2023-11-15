@@ -10,3 +10,33 @@ Index: CppParsingTree.cpp
  #endif
  
  #include "ScpStream.h"
+@@ -246,17 +247,29 @@ namespace CodeWorker {
+ 		return _pInternalNode->getSortedArray();
+ 	}
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++	std::unique_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedNoCaseArray() const {
++#else
+ 	std::auto_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedNoCaseArray() const {
++#endif
+ 		if (_pInternalNode == NULL) return std::auto_ptr<std::vector<DtaScriptVariable*> >(new std::vector<DtaScriptVariable*>());
+ 		return _pInternalNode->getSortedNoCaseArray();
+ 	}
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++	std::unique_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedArrayOnValue() const {
++#else
+ 	std::auto_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedArrayOnValue() const {
++#endif
+ 		if (_pInternalNode == NULL) return std::auto_ptr<std::vector<DtaScriptVariable*> >(new std::vector<DtaScriptVariable*>());
+ 		return _pInternalNode->getSortedArrayOnValue();
+ 	}
+ 
++#if defined(__clang__) && (__clang_major__ >= 16)
++	std::unique_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedNoCaseArrayOnValue() const {
++#else
+ 	std::auto_ptr<std::vector<DtaScriptVariable*> > CppParsingTree_var::getSortedNoCaseArrayOnValue() const {
++#endif
+ 		if (_pInternalNode == NULL) return std::auto_ptr<std::vector<DtaScriptVariable*> >(new std::vector<DtaScriptVariable*>());
+ 		return _pInternalNode->getSortedNoCaseArrayOnValue();
+ 	}
