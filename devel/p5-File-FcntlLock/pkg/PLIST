@@ -5,10 +5,10 @@ ${P5ARCH}/File/FcntlLock.pm
 ${P5ARCH}/File/FcntlLock.pod
 ${P5ARCH}/File/FcntlLock/Core.pm
 ${P5ARCH}/File/FcntlLock/Errors.pm
-${P5ARCH}/File/FcntlLock/Inline.pm
-${P5ARCH}/File/FcntlLock/Inline.pod
-${P5ARCH}/File/FcntlLock/Pure.pm
-${P5ARCH}/File/FcntlLock/Pure.pod
+${LP64_ONLY}${P5ARCH}/File/FcntlLock/Inline.pm
+${LP64_ONLY}${P5ARCH}/File/FcntlLock/Inline.pod
+${LP64_ONLY}${P5ARCH}/File/FcntlLock/Pure.pm
+${LP64_ONLY}${P5ARCH}/File/FcntlLock/Pure.pod
 ${P5ARCH}/File/FcntlLock/XS.pm
 ${P5ARCH}/File/FcntlLock/XS.pod
 ${P5ARCH}/auto/
@@ -16,6 +16,6 @@ ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/FcntlLock/
 @so ${P5ARCH}/auto/File/FcntlLock/FcntlLock.so
 @man man/man3p/File::FcntlLock.3p
-@man man/man3p/File::FcntlLock::Inline.3p
-@man man/man3p/File::FcntlLock::Pure.3p
+${LP64_ONLY}@man man/man3p/File::FcntlLock::Inline.3p
+${LP64_ONLY}@man man/man3p/File::FcntlLock::Pure.3p
 @man man/man3p/File::FcntlLock::XS.3p

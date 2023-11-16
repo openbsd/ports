@@ -14,4 +14,13 @@ WANTLIB =	c perl
 
 MODULES =	cpan
 
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mlp64}
+LP64_ONLY =
+.else
+LP64_ONLY =	"@comment "
+.endif
+SUBST_VARS =	LP64_ONLY
+
 .include <bsd.port.mk>
