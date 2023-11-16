@@ -42,6 +42,10 @@ LIB_DEPENDS=		audio/libcanberra \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon
 
+# XXX wayland is disabled???
+# src/wayland/meta-wayland-text-input.h:22:10: fatal error: 'wayland-server.h' file not found
+BUILD_DEPENDS +=	wayland/wayland
+
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon
 
