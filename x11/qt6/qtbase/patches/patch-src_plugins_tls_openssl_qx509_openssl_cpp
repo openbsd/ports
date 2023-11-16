@@ -1,3 +1,5 @@
+ASN1_time_parse() will become internal-only. Use q_ASN1_TIME_to_tm() instead.
+
 Index: src/plugins/tls/openssl/qx509_openssl.cpp
 --- src/plugins/tls/openssl/qx509_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qx509_openssl.cpp
@@ -19,7 +21,7 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
      QDateTime result;
      tm lTime;
  
-+#ifdef LIBRESSL_VERSION_NUMBER
++#if defined(LIBRESSL_VERSION_NUMBER) && (LIBRESSL_VERSION_NUMBER < 0x3060000fL)
 +    const char *data;
 +    size_t len;
 +    int type;
