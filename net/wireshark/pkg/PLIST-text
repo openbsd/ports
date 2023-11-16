@@ -665,12 +665,6 @@ include/wireshark/wsutil/xtea.h
 lib/pkgconfig/wireshark.pc
 lib/wireshark/
 lib/wireshark/cmake/
-lib/wireshark/cmake/FindGLIB2.cmake
-lib/wireshark/cmake/FindWSLibrary.cmake
-lib/wireshark/cmake/FindWSWinLibs.cmake
-lib/wireshark/cmake/LocatePythonModule.cmake
-lib/wireshark/cmake/UseAsn2Wrs.cmake
-lib/wireshark/cmake/UseMakePluginReg.cmake
 lib/wireshark/cmake/WiresharkConfig.cmake
 lib/wireshark/cmake/WiresharkConfigVersion.cmake
 lib/wireshark/cmake/WiresharkTargets${MODCMAKE_BUILD_SUFFIX}
