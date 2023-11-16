@@ -10,6 +10,8 @@ BUILD_DEPENDS +=	lang/wasi-libc>=0.20220413p0
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
+SUBST_VARS +=	MODCLANG_VERSION
+
 CONFIGURE_ARGS=	\
 		-DLLVM_MAIN_SRC_DIR=${WRKDIR}/llvm-${LLVM_V}.src \
 		-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \

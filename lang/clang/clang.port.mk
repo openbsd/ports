@@ -74,5 +74,3 @@ WANTLIB += ${MODCLANG_CPPWANTLIB}
 .    endif
 .  endif
 .endif
-
-SUBST_VARS+=	MODCLANG_VERSION
