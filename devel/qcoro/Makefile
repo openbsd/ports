@@ -3,6 +3,7 @@ COMMENT =	C++ coroutines for Qt
 GH_ACCOUNT =	danvratil
 GH_PROJECT =	qcoro
 GH_TAGNAME =	v0.9.0
+REVISION =	0
 
 CATEGORIES =	devel
 
