@@ -1,0 +1,15 @@
+Fix llvm16 build
+
+https://invent.kde.org/libraries/phonon/-/commit/069d5a3eb81bcbc730e44c27a0d060a85cf9213d
+Index: phonon/objectdescription.h
+--- phonon/objectdescription.h.orig
++++ phonon/objectdescription.h
+@@ -43,7 +43,7 @@ namespace Phonon
+      *
+      * \ingroup Backend
+      */
+-    enum ObjectDescriptionType
++    enum ObjectDescriptionType  : unsigned
+     {
+         /**
+          * Audio output devices. This can be soundcards (with different drivers), soundservers or
