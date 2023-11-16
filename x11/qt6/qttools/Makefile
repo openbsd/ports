@@ -1,7 +1,7 @@
 QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Qt6Designer             2.0 # 6.5
 SHARED_LIBS +=  Qt6DesignerComponents   1.0 # 6.5
@@ -26,5 +26,6 @@ LIB_DEPENDS =	x11/qt6/qtdeclarative \
 BUILD_DEPENDS =	graphics/vulkan-loader
 
 CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
+MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 .include <bsd.port.mk>
