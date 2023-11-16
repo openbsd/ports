@@ -2,11 +2,14 @@ COMMENT=	implementation of the RFC 9000 QUIC protocol
 
 V=		1.0.1
 DISTNAME=	ngtcp2-$V
+REVISION=	0
 
 SHARED_LIBS+=	ngtcp2			3.0	# 16.0
 SHARED_LIBS+=	ngtcp2_crypto_quictls	0.0	# 2.0
 
 CATEGORIES=	net
+
+MAINTAINER=	Theo Buehler <tb@openbsd.org>
 
 HOMEPAGE=	https://nghttp2.org/ngtcp2/
 
