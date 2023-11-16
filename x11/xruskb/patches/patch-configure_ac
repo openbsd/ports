@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -67,7 +67,7 @@ AC_DEFUN([XRUS_CHECK_XAW],
+    AC_CHECK_LIB($1,main,[
+ 	TOOLKIT_LIBS="-l$1"
+ 	AC_DEFINE([HAVE_LIBXAW])
+-	],[],[-lXt -lXmu -Xext -lX11 $X_PRE_LIBS $X_LIBS $X_EXTRA_LIBS])
++	],[],[-lXt -lXmu -lXext -lX11 $X_PRE_LIBS $X_LIBS $X_EXTRA_LIBS])
+ ])
+ 
+ 
