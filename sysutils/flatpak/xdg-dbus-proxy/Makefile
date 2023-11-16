@@ -18,7 +18,8 @@ EXTRACT_SUFX=		.tar.xz
 MODULES=		devel/meson
 
 # xsltproc(1) for man pages
-BUILD_DEPENDS +=	textproc/libxslt
+BUILD_DEPENDS +=	textproc/libxslt \
+			textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/glib2
 
