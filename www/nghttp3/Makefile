@@ -2,10 +2,13 @@ COMMENT=	implementation of HTTP/3
 
 V=		1.0.0
 DISTNAME=	nghttp3-$V
+REVISION=	0
 
 SHARED_LIBS +=	nghttp3              2.0     # 9.0
 
 CATEGORIES=	www
+
+MAINTAINER=	Theo Buehler <tb@openbsd.org>
 
 HOMEPAGE=	https://nghttp2.org/nghttp3/
 
