@@ -18,7 +18,7 @@ SITES=		https://download.libsodium.org/libsodium/releases/ \
 
 SEPARATE_BUILD=	Yes
 
-WRKSRC=			${WRKDIR}/libsodium-stable
+WRKDIST=		${WRKDIR}/libsodium-stable
 CONFIGURE_STYLE=	gnu
 
 post-install:
