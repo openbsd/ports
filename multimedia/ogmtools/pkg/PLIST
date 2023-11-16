@@ -1,9 +1,9 @@
-bin/dvdxchap
-bin/ogmcat
-bin/ogmdemux
-bin/ogminfo
-bin/ogmmerge
-bin/ogmsplit
+@bin bin/dvdxchap
+@bin bin/ogmcat
+@bin bin/ogmdemux
+@bin bin/ogminfo
+@bin bin/ogmmerge
+@bin bin/ogmsplit
 @man man/man1/dvdxchap.1
 @man man/man1/ogmcat.1
 @man man/man1/ogmdemux.1

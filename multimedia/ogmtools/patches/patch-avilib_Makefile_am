@@ -1,0 +1,12 @@
+Index: avilib/Makefile.am
+--- avilib/Makefile.am.orig
++++ avilib/Makefile.am
+@@ -7,7 +7,7 @@ noinst_LIBRARIES = libavi.a
+ 
+ INCLUDES = -I./
+ 
+-CFLAGS=-O3 -funroll-loops -ffast-math -DLINUX -Wall @CFLAGS@
++CFLAGS= -ffast-math -DLINUX -Wall @CFLAGS@
+ libavi_a_SOURCES = avilib.c avidump.c avimisc.c xio.c
+ 
+ EXTRA_DIST = avilib.h README.avilib
