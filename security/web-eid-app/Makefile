@@ -8,7 +8,8 @@ GH_TAGNAME =		v2.4.0
 DISTFILES =		${GH_DISTFILE}
 PKGNAME-main =		${PKGNAME:S/app/native/}
 PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
-REVISION-main =		0
+REVISION-main =		1
+REVISION-chrome =	0
 
 MULTI_PACKAGES =	-main -chrome
 
@@ -35,6 +36,16 @@ MOCK_REPO =	libpcsc-mock
 MOCK_COMMIT =	488cb42301a42d8ced964a0aaafe4be0d258126d
 MOCK_DIR =	${PCSC_DIR}/tests/lib/${MOCK_REPO}
 DIST_TUPLE +=	github	${GH_ACCOUNT}	${MOCK_REPO}	${MOCK_COMMIT}	${MOCK_DIR}	# MIT
+
+SITES.pcsc =		https://github.com/${GH_ACCOUNT}/${PCSC_REPO}/commit/
+PCSC_FIX_COMMIT =	d51bd26ee80e62965eb32ec56982a868d6074471
+# upstream "Fix build with recent compilers"
+PATCHFILES.pcsc =	libpcsc-fix-compilers-{}${PCSC_FIX_COMMIT}.patch
+PATCH_DIST_STRIP =	-p1
+
+PATCH_CASES =		*-${PCSC_FIX_COMMIT}.patch) \
+				${PATCH} ${PATCH_DIST_ARGS} \
+				    -d ${WRKSRC}/${PCSC_DIR}/ < $$patchfile;;
 
 # MIT
 PERMIT_PACKAGE =	Yes
