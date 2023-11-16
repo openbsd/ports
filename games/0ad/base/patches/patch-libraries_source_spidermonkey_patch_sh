@@ -1,0 +1,12 @@
+Pick up new patch (applied during do-build)
+
+Index: libraries/source/spidermonkey/patch.sh
+--- libraries/source/spidermonkey/patch.sh.orig
++++ libraries/source/spidermonkey/patch.sh
+@@ -85,3 +85,6 @@ then
+     # https://svnweb.freebsd.org/ports/head/lang/spidermonkey78/files/patch-third__party_rust_cc_src_lib.rs?view=log
+     patch -p1 < ../FixFreeBSDRustThirdPartyOSDetection.diff
+ fi
++
++# Fix compiler errors
++patch -p1 < ../FixNewClang.diff
