@@ -1,6 +1,6 @@
 COMMENT=	user and admin portal for Let's Connect/eduVPN
 
-V=		3.5.0
+V=		3.5.1
 DISTNAME=	vpn-user-portal-$V
 SITES.sh=	https://spacehopper.org/mirrors/
 # to update: comment out DISTFILES.sh, update V, make makesum, make dist
@@ -74,7 +74,7 @@ dist:
 	@set -x; t=`mktemp -d /tmp/vendor.XXXXXXXXXX`; \
 	f=$$t/${DISTNAME}-vendor.tar.xz; \
 	cd $$t; \
-	bsdtar xjf ${FULLDISTDIR}/${DISTNAME}.tar.xz; \
+	xzcat ${FULLDISTDIR}/${DISTNAME}.tar.xz | tar xf -; \
 	cd ${WRKDIST:C,^.*/,,}; \
 	composer install --no-dev --ignore-platform-req=ext-gmp --ignore-platform-req=ext-pdo_sqlite; \
 	echo tarring; tar cf - vendor | xz -T 0 > $$f; \
