@@ -1,7 +1,7 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 # bump and test textproc/zathura/plugins/mupdf if updating
-V =		1.23.4
+V =		1.23.6
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -11,9 +11,11 @@ HOMEPAGE =	https://mupdf.com/
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
-# code: Affero v3 (UGH!)
-# font maps: Adobe (redist ok, see headers).
-# droid font: Apache.
+# code: Affero v3
+# CMap resources (Adobe): BSD
+# fonts -
+#   Droid: Apache
+#   Charis SIL, Noto, Source Han Serif, URW Dingbats/Nimbus: OFL
 PERMIT_PACKAGE =	Yes
 
 # uses pledge(2)
@@ -55,7 +57,7 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		build=release verbose=yes
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
