@@ -1,12 +1,12 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.1
+V=			3.8.2
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               47.7     # 65.0
+SHARED_LIBS +=  gnutls               47.8     # 67.0
 SHARED_LIBS +=  gnutlsxx             30.2     # 30.0
 SHARED_LIBS +=  gnutls-dane          1.1      # 4.1
 
