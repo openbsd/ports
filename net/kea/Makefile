@@ -44,6 +44,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 COMPILER=	base-clang ports-gcc
 
+CXXFLAGS_base-clang=	-std=c++14
+
 .include <bsd.port.arch.mk>
 
 .if ${FLAVOR:Mmysql}
