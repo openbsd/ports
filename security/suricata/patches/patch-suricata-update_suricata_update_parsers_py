@@ -1,7 +1,7 @@
 Index: suricata-update/suricata/update/parsers.py
 --- suricata-update/suricata/update/parsers.py.orig
 +++ suricata-update/suricata/update/parsers.py
-@@ -41,7 +41,7 @@ global_arg = [
+@@ -46,7 +46,7 @@ global_arg = [
        'help': "Be quiet, warning and error messages only"}),
      (("-D", "--data-dir"),
       {'metavar': '<directory>', 'dest': 'data_dir',

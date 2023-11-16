@@ -27,7 +27,6 @@ include/htp/htp_version.h
 include/htp/lzma/
 include/htp/lzma/7zTypes.h
 include/htp/lzma/LzmaDec.h
-include/suricata-plugin.h
 @static-lib lib/libhtp.a
 lib/libhtp.la
 @lib lib/libhtp.so.${LIBhtp_VERSION}
@@ -119,6 +118,12 @@ lib/suricata/python/suricata/update/configs/
 lib/suricata/python/suricata/update/configs/__init__.py
 ${MODPY_COMMENT}lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}/
 lib/suricata/python/suricata/update/configs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/suricata/python/suricata/update/configs/disable.conf
+lib/suricata/python/suricata/update/configs/drop.conf
+lib/suricata/python/suricata/update/configs/enable.conf
+lib/suricata/python/suricata/update/configs/modify.conf
+lib/suricata/python/suricata/update/configs/threshold.in
+lib/suricata/python/suricata/update/configs/update.yaml
 lib/suricata/python/suricata/update/data/
 lib/suricata/python/suricata/update/data/__init__.py
 ${MODPY_COMMENT}lib/suricata/python/suricata/update/data/${MODPY_PYCACHE}/
@@ -176,6 +181,7 @@ share/suricata/rules/dns-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/dns-events.rules
 share/suricata/rules/files.rules
 @sample ${SYSCONFDIR}/suricata/rules/files.rules
+share/suricata/rules/ftp-events.rules
 share/suricata/rules/http-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/http-events.rules
 share/suricata/rules/http2-events.rules
@@ -190,6 +196,8 @@ share/suricata/rules/nfs-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/nfs-events.rules
 share/suricata/rules/ntp-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/ntp-events.rules
+share/suricata/rules/quic-events.rules
+share/suricata/rules/rfb-events.rules
 share/suricata/rules/smb-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/smb-events.rules
 share/suricata/rules/smtp-events.rules

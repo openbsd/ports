@@ -9,7 +9,7 @@ about downloading rules.
 Index: suricata.yaml.in
 --- suricata.yaml.in.orig
 +++ suricata.yaml.in
-@@ -80,6 +80,7 @@ outputs:
+@@ -84,6 +84,7 @@ outputs:
    - fast:
        enabled: yes
        filename: fast.log
@@ -17,15 +17,15 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -88,6 +89,7 @@ outputs:
+@@ -92,6 +93,7 @@ outputs:
        enabled: @e_enable_evelog@
        filetype: regular #regular|syslog|unix_dgram|unix_stream|redis
        filename: eve.json
 +      filemode: 664
        # Enable for multi-threaded eve.json output; output files are amended with
-       # with an identifier, e.g., eve.9.json
+       # an identifier, e.g., eve.9.json
        #threaded: false
-@@ -307,6 +309,7 @@ outputs:
+@@ -334,6 +336,7 @@ outputs:
    - http-log:
        enabled: no
        filename: http.log
@@ -33,7 +33,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # enable this for extended logging information
        #custom: yes       # enable the custom logging format (defined by customformat)
-@@ -317,6 +320,7 @@ outputs:
+@@ -344,6 +347,7 @@ outputs:
    - tls-log:
        enabled: no  # Log TLS connections.
        filename: tls.log # File to store TLS logs.
@@ -41,7 +41,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # Log extended information like fingerprint
        #custom: yes       # enabled the custom logging format (defined by customformat)
-@@ -364,6 +368,7 @@ outputs:
+@@ -391,6 +395,7 @@ outputs:
    - pcap-log:
        enabled: no
        filename: log.pcap
@@ -49,7 +49,7 @@ Index: suricata.yaml.in
  
        # File size limit.  Can be specified in kb, mb, gb.  Just a number
        # is parsed as bytes.
-@@ -399,6 +404,7 @@ outputs:
+@@ -429,6 +434,7 @@ outputs:
    - alert-debug:
        enabled: no
        filename: alert-debug.log
@@ -57,7 +57,7 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -414,6 +420,7 @@ outputs:
+@@ -436,6 +442,7 @@ outputs:
    - stats:
        enabled: yes
        filename: stats.log
@@ -65,7 +65,7 @@ Index: suricata.yaml.in
        append: yes       # append to file (yes) or overwrite it (no)
        totals: yes       # stats for all threads merged together
        threads: no       # per thread stats
-@@ -507,6 +514,7 @@ outputs:
+@@ -529,6 +536,7 @@ outputs:
        enabled: no
        type: file
        filename: tcp-data.log
@@ -73,7 +73,7 @@ Index: suricata.yaml.in
  
    # Log HTTP body data after normalization, de-chunking and unzipping.
    # Two types: file or dir.
-@@ -520,6 +528,7 @@ outputs:
+@@ -542,6 +550,7 @@ outputs:
        enabled: no
        type: file
        filename: http-data.log
@@ -81,22 +81,7 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -566,12 +575,12 @@ logging:
-       enabled: yes
-       # type: json
-   - file:
--      enabled: yes
-+      enabled: no
-       level: info
-       filename: suricata.log
-       # type: json
-   - syslog:
--      enabled: no
-+      enabled: yes
-       facility: local5
-       format: "[%i] <%d> -- "
-       # type: json
-@@ -1010,9 +1019,9 @@ asn1-max-frames: 256
+@@ -1189,9 +1198,9 @@ datasets:
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -107,9 +92,9 @@ Index: suricata.yaml.in
 +  user: _suricata
 +  group: _suricata
  
- # Some logging modules will use that name in event as identifier. The default
- # value is the hostname
-@@ -1021,7 +1030,7 @@ asn1-max-frames: 256
+ security:
+   # if true, prevents process creation from Suricata by calling
+@@ -1221,7 +1230,7 @@ security:
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -118,7 +103,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1920,14 +1929,38 @@ napatech:
+@@ -2137,14 +2146,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  

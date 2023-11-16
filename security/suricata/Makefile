@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	powerpc64 riscv64
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	6.0.12
+SURICATA_V =	7.0.2
 SUPDATE_V =	1.2.7
 
 DISTNAME =	suricata-${SURICATA_V}
@@ -20,9 +20,8 @@ PERMIT_PACKAGE=	Yes
 SITES =		https://www.openinfosecfoundation.org/download/
 
 # uses pledge()
-WANTLIB +=  ${COMPILER_LIBCXX} c iconv jansson lz4 lzma m magic
-WANTLIB +=  maxminddb net nspr4 nss3 nssutil3 pcap pcre plc4 plds4
-WANTLIB +=  smime3 ssl3 yaml-0 z
+WANTLIB += ${COMPILER_LIBCXX} c elf iconv jansson lz4 m magic maxminddb
+WANTLIB += net pcap pcre2-8 yaml-0 z
 
 MODULES =	lang/python
 
@@ -34,22 +33,19 @@ BUILD_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR} \
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 
 LIB_DEPENDS =	archivers/lz4 \
-		archivers/xz \
 		converters/libiconv \
 		devel/jansson \
-		devel/nspr \
 		devel/libyaml \
 		devel/libmagic \
-		devel/pcre \
+		devel/pcre2 \
 		net/libnet/1.1 \
-		net/libmaxminddb \
-		security/nss
+		net/libmaxminddb
 
 COMPILER =	base-clang ports-gcc
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.15
 
 CONFIGURE_ENV =		ac_cv_path_HAVE_PDFLATEX= \
