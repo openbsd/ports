@@ -103,6 +103,8 @@ icinga-php/ipl/asset/static/img/select-icon-text-color.svg
 icinga-php/ipl/asset/static/img/select-icon.svg
 icinga-php/ipl/composer.json
 icinga-php/ipl/composer.lock
+icinga-php/ipl/patches/
+icinga-php/ipl/patches/ramsey-collection.patch
 icinga-php/ipl/vendor/
 icinga-php/ipl/vendor/autoload.php
 icinga-php/ipl/vendor/brick/
@@ -141,6 +143,13 @@ icinga-php/ipl/vendor/composer/autoload_static.php
 icinga-php/ipl/vendor/composer/installed.json
 icinga-php/ipl/vendor/composer/installed.php
 icinga-php/ipl/vendor/composer/platform_check.php
+icinga-php/ipl/vendor/cweagans/
+icinga-php/ipl/vendor/cweagans/composer-patches/
+icinga-php/ipl/vendor/cweagans/composer-patches/composer.json
+icinga-php/ipl/vendor/cweagans/composer-patches/src/
+icinga-php/ipl/vendor/cweagans/composer-patches/src/PatchEvent.php
+icinga-php/ipl/vendor/cweagans/composer-patches/src/PatchEvents.php
+icinga-php/ipl/vendor/cweagans/composer-patches/src/Patches.php
 icinga-php/ipl/vendor/doctrine/
 icinga-php/ipl/vendor/doctrine/collections/
 icinga-php/ipl/vendor/doctrine/collections/.doctrine-project.json
