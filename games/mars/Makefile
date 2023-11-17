@@ -3,7 +3,7 @@ COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}
 PKGNAME =	mars-${V}
 CATEGORIES =	games x11
-REVISION =	10
+REVISION =	11
 
 HOMEPAGE =	https://mars-game.sourceforge.net/
 
@@ -14,6 +14,8 @@ WANTLIB += GL GLU X11 Xrandr c fribidi m pthread sfml-audio sfml-graphics
 WANTLIB += sfml-system sfml-window ${COMPILER_LIBCXX} tag
 
 COMPILER =		base-clang ports-gcc base-gcc
+# uses std;:random_shuffle
+CXXFLAGS_base-clang =	-std=gnu++14
 
 # Not using the GH_* variables on purpose. The tarball was generated
 # separately. Will update to use GH_* next time M.A.R.S. is updated.
