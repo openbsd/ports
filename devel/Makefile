@@ -34,7 +34,6 @@
      SUBDIR += atf
      SUBDIR += atk2mm
      SUBDIR += atkmm236
-     SUBDIR += atlas
      SUBDIR += attinycore
      SUBDIR += autoconf
      SUBDIR += autoconf-archive
