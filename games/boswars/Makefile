@@ -5,7 +5,7 @@ DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
 SITES=		https://www.boswars.org/dist/releases/
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://www.boswars.org/
 
@@ -15,11 +15,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL SDL X11 c m ogg png theora vorbis z
 WANTLIB += ${MODLUA_WANTLIB}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES=	devel/scons \
 		lang/lua
 MODSCONS_FLAGS=	CPPPATH="${LOCALBASE}/include ${X11BASE}/include" \
+		CXX="c++ -std=gnu++14" \
 		opengl=1
 
 BUILD_DEPENDS=	devel/sdl-image \
