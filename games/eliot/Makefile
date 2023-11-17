@@ -22,6 +22,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	x11/qt5
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=gnu++14
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
