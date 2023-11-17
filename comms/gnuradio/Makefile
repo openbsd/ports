@@ -110,6 +110,8 @@ CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 MAKE_ENV =	VERBOSE=1
 
+CFLAGS =	-Wno-implicit-const-int-float-conversion
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,mime}
 	mv ${PREFIX}/share/gnuradio/examples/* ${PREFIX}/share/examples/gnuradio
