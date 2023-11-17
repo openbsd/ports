@@ -35,7 +35,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/cunit \
 		textproc/docbook-xsl \
 		textproc/wdg-sgml-lib \
-		graphics/ImageMagick
+		graphics/GraphicsMagick
 TEST_DEPENDS =	devel/cunit
 
 USE_GMAKE=	Yes
@@ -48,6 +48,11 @@ CONFIGURE_ARGS=	--with-xsldir=${PREFIX}/share/xsl/docbook/ \
 		--libdir=${PREFIX}/lib/postgresql
 
 SUBST_VARS +=	V
+
+# ImageMagick fails policy checks with the convert command used in build.
+# https://trac.osgeo.org/postgis/ticket/5593
+pre-build:
+	ln -s ${LOCALBASE}/bin/gm ${WRKDIR}/bin/convert
 
 post-install:
 	cd ${WRKSRC}/doc && WRKINST=${WRKINST} ${MAKE_PROGRAM} docs-install man-install
