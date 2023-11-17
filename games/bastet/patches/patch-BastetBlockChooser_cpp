@@ -1,0 +1,23 @@
+std::bind2nd was removed in C++17
+
+Index: BastetBlockChooser.cpp
+--- BastetBlockChooser.cpp.orig
++++ BastetBlockChooser.cpp
+@@ -115,7 +115,7 @@ namespace Bastet{
+     
+     //otherwise, returns the pos-th block, where pos is random
+     static const boost::array<int,nBlockTypes> blockPercentages={{80, 92, 98, 100, 100, 100, 100}};
+-    int pos=find_if(blockPercentages.begin(),blockPercentages.end(),bind2nd(greater_equal<int>(),random()%100)) - blockPercentages.begin();
++    int pos=find_if(blockPercentages.begin(),blockPercentages.end(),bind(greater_equal<int>(),placeholders::_1,random()%100)) - blockPercentages.begin();
+     assert(pos>=0 && pos<nBlockTypes);
+ 
+     int chosenBlock=find(finalScores.begin(),finalScores.end(),temp[pos])-finalScores.begin();
+@@ -211,7 +211,7 @@ namespace Bastet{
+ 
+     //returns the pos-th block, where pos is random
+     static const boost::array<int,nBlockTypes> blockPercentages={{80, 92, 98, 100, 100, 100, 100}};
+-    int pos=find_if(blockPercentages.begin(),blockPercentages.end(),bind2nd(greater_equal<int>(),random()%100)) - blockPercentages.begin();
++    int pos=find_if(blockPercentages.begin(),blockPercentages.end(),bind(greater_equal<int>(),placeholders::_1,random()%100)) - blockPercentages.begin();
+     assert(pos>=0 && pos<nBlockTypes);
+ 
+     int chosenBlock=find(finalScores.begin(),finalScores.end(),temp[pos])-finalScores.begin();
