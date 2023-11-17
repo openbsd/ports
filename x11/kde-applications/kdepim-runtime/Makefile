@@ -94,4 +94,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 TEST_IS_INTERACTIVE =	X11
 
+CXXFLAGS =	-Wno-enum-constexpr-conversion
+
 .include <bsd.port.mk>
