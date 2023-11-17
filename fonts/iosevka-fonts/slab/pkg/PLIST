@@ -1,0 +1,13 @@
+@conflict iosevka-fixed-slab-*
+@pkgpath fonts/iosevka-fonts/fixed-slab
+share/fonts/
+@fontdir share/fonts/iosevka/
+share/fonts/iosevka/iosevka-slab-bold.ttc
+share/fonts/iosevka/iosevka-slab-extrabold.ttc
+share/fonts/iosevka/iosevka-slab-extralight.ttc
+share/fonts/iosevka/iosevka-slab-heavy.ttc
+share/fonts/iosevka/iosevka-slab-light.ttc
+share/fonts/iosevka/iosevka-slab-medium.ttc
+share/fonts/iosevka/iosevka-slab-regular.ttc
+share/fonts/iosevka/iosevka-slab-semibold.ttc
+share/fonts/iosevka/iosevka-slab-thin.ttc
