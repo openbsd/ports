@@ -1,7 +1,7 @@
 COMMENT=	cute and addictive action-puzzle game
 
 DISTNAME= 	amoebax-0.2.1
-REVISION=       3
+REVISION=       4
 
 CATEGORIES=	games
 EXTRACT_SUFX=	.tar.bz2
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	SDL c m pthread ${COMPILER_LIBCXX} SDL_image SDL_mixer
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=gnu++14
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer
