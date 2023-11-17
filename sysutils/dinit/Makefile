@@ -1,4 +1,4 @@
-V =		0.12.0
+V =		0.17.1
 COMMENT =	service monitoring / "init" system
 DISTNAME =	dinit-${V}
 SITES =		https://github.com/davmac314/dinit/releases/download/v${V}/
