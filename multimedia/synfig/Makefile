@@ -6,7 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.1
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -32,8 +32,8 @@ WANTLIB += xml++-2.6 xml2 xvidcore z zstd deflate
 
 SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
 
-# c++11
 COMPILER =		base-clang ports-gcc
+CXXFLAGS_base-clang =	-std=gnu++14
 
 MODULES =		textproc/intltool
 
