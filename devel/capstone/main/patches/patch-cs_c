@@ -4,7 +4,7 @@ conflict.
 Index: cs.c
 --- cs.c.orig
 +++ cs.c
-@@ -1312,8 +1312,8 @@ int CAPSTONE_API cs_op_count(csh ud, const cs_insn *in
+@@ -1365,8 +1365,8 @@ int CAPSTONE_API cs_op_count(csh ud, const cs_insn *in
  					count++;
  			break;
  		case CS_ARCH_MIPS:
@@ -15,7 +15,7 @@ Index: cs.c
  					count++;
  			break;
  		case CS_ARCH_PPC:
-@@ -1420,8 +1420,8 @@ int CAPSTONE_API cs_op_index(csh ud, const cs_insn *in
+@@ -1493,8 +1493,8 @@ int CAPSTONE_API cs_op_index(csh ud, const cs_insn *in
  			}
  			break;
  		case CS_ARCH_MIPS:

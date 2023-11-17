@@ -6,7 +6,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -38,7 +38,7 @@ ifneq (,$(findstring yes,$(CAPSTONE_DIET)))
+@@ -42,7 +42,7 @@ ifneq (,$(findstring yes,$(CAPSTONE_DIET)))
  CFLAGS ?= -Os
  CFLAGS += -DCAPSTONE_DIET
  else
@@ -14,8 +14,8 @@ Index: Makefile
 +CFLAGS ?= 
  endif
  
- ifneq (,$(findstring yes,$(CAPSTONE_X86_ATT_DISABLE)))
-@@ -100,8 +100,11 @@ INSTALL_DATA ?= $(INSTALL_BIN) -m0644
+ # C99 has been enforced elsewhere like xcode
+@@ -114,8 +114,11 @@ INSTALL_DATA ?= $(INSTALL_BIN) -m0644
  INSTALL_LIB ?= $(INSTALL_BIN) -m0755
  
  LIBNAME = capstone
@@ -28,7 +28,7 @@ Index: Makefile
  DEP_ARM =
  DEP_ARM += $(wildcard arch/ARM/ARM*.inc)
  
-@@ -320,7 +323,7 @@ else
+@@ -394,7 +397,7 @@ else
  EXT = so
  VERSION_EXT = $(EXT).$(API_MAJOR)
  AR_EXT = a
@@ -37,16 +37,16 @@ Index: Makefile
  endif
  endif
  endif
-@@ -331,7 +334,7 @@ LIBRARY = $(BLDIR)/$(LIBNAME).$(VERSION_EXT)
+@@ -405,7 +408,7 @@ LIBRARY = $(BLDIR)/$(LIBNAME).$(VERSION_EXT)
  else ifeq ($(IS_CYGWIN),1)
- LIBRARY = $(BLDIR)/$(LIBNAME).$(VERSION_EXT)
+ LIBRARY = $(BLDIR)/$(LIBNAME).$(EXT)
  else	# *nix
 -LIBRARY = $(BLDIR)/lib$(LIBNAME).$(VERSION_EXT)
 +LIBRARY = $(BLDIR)/lib$(LIBNAME).$(EXT).$(LIBVER)
  CFLAGS += -fvisibility=hidden
  endif
  endif
-@@ -501,10 +504,6 @@ endif
+@@ -597,10 +600,6 @@ endif
  ifeq ($(CAPSTONE_SHARED),yes)
  define install-library
  	$(INSTALL_LIB) $(LIBRARY) $1

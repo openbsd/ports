@@ -1,7 +1,7 @@
 Index: cstool/cstool_mips.c
 --- cstool/cstool_mips.c.orig
 +++ cstool/cstool_mips.c
-@@ -17,7 +17,7 @@ void print_insn_detail_mips(csh handle, cs_insn *ins)
+@@ -16,7 +16,7 @@ void print_insn_detail_mips(csh handle, cs_insn *ins)
  	if (ins->detail == NULL)
  		return;
  

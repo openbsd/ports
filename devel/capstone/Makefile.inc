@@ -1,4 +1,4 @@
-GH_TAGNAME =	4.0.2
+GH_TAGNAME =	5.0
 GH_ACCOUNT =	aquynh
 GH_PROJECT =	capstone
 
@@ -10,4 +10,4 @@ MAINTAINER ?=	Benoit Lecocq <benoit@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
-_SHLIB_VERSION =	3.0
+_SHLIB_VERSION =	4.0

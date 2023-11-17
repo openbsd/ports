@@ -1,7 +1,7 @@
 Index: capstone/__init__.py
 --- capstone/__init__.py.orig
 +++ capstone/__init__.py
-@@ -275,7 +275,7 @@ if sys.platform == 'darwin':
+@@ -335,7 +335,7 @@ if sys.platform == 'darwin':
  elif sys.platform in ('win32', 'cygwin'):
      _lib = "capstone.dll"
  else:
@@ -10,7 +10,7 @@ Index: capstone/__init__.py
  
  _found = False
  
-@@ -307,7 +307,7 @@ _path_list = [os.getenv('LIBCAPSTONE_PATH', None),
+@@ -367,7 +367,7 @@ _path_list = [os.getenv('LIBCAPSTONE_PATH', None),
                distutils.sysconfig.get_python_lib(),
                "/usr/local/lib/" if sys.platform == 'darwin' else '/usr/lib64']
  

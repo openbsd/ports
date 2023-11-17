@@ -3,7 +3,6 @@ COMMENT =	Python bindings for capstone
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
 
 MODULES =	lang/python
 USE_GMAKE =	Yes
@@ -11,7 +10,7 @@ USE_GMAKE =	Yes
 WRKDIST =	${WRKDIR}/${DISTNAME}/bindings/python
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 RUN_DEPENDS =	devel/capstone/main
 
