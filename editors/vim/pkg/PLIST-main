@@ -35,6 +35,8 @@ share/vim/${P}/autoload/dist/
 share/vim/${P}/autoload/dist/ft.vim
 share/vim/${P}/autoload/dist/man.vim
 share/vim/${P}/autoload/dist/script.vim
+share/vim/${P}/autoload/dist/vim.vim
+share/vim/${P}/autoload/dist/vim9.vim
 share/vim/${P}/autoload/dist/vimindent.vim
 share/vim/${P}/autoload/freebasic.vim
 share/vim/${P}/autoload/getscript.vim
@@ -693,9 +695,10 @@ share/vim/${P}/ftplugin/vhdl.vim
 share/vim/${P}/ftplugin/vim.vim
 share/vim/${P}/ftplugin/vroom.vim
 share/vim/${P}/ftplugin/vue.vim
-share/vim/${P}/ftplugin/wast.vim
+share/vim/${P}/ftplugin/wat.vim
 share/vim/${P}/ftplugin/wget.vim
 share/vim/${P}/ftplugin/wget2.vim
+share/vim/${P}/ftplugin/xcompose.vim
 share/vim/${P}/ftplugin/xdefaults.vim
 share/vim/${P}/ftplugin/xf86conf.vim
 share/vim/${P}/ftplugin/xhtml.vim
@@ -865,7 +868,7 @@ share/vim/${P}/indent/vhdl.vim
 share/vim/${P}/indent/vim.vim
 share/vim/${P}/indent/vroom.vim
 share/vim/${P}/indent/vue.vim
-share/vim/${P}/indent/wast.vim
+share/vim/${P}/indent/wat.vim
 share/vim/${P}/indent/xf86conf.vim
 share/vim/${P}/indent/xhtml.vim
 share/vim/${P}/indent/xinetd.vim
@@ -1787,7 +1790,7 @@ share/vim/${P}/syntax/vrml.vim
 share/vim/${P}/syntax/vroom.vim
 share/vim/${P}/syntax/vsejcl.vim
 share/vim/${P}/syntax/vue.vim
-share/vim/${P}/syntax/wast.vim
+share/vim/${P}/syntax/wat.vim
 share/vim/${P}/syntax/wdiff.vim
 share/vim/${P}/syntax/wdl.vim
 share/vim/${P}/syntax/web.vim
@@ -1801,6 +1804,7 @@ share/vim/${P}/syntax/wsh.vim
 share/vim/${P}/syntax/wsml.vim
 share/vim/${P}/syntax/wvdial.vim
 share/vim/${P}/syntax/xbl.vim
+share/vim/${P}/syntax/xcompose.vim
 share/vim/${P}/syntax/xdefaults.vim
 share/vim/${P}/syntax/xf86conf.vim
 share/vim/${P}/syntax/xhtml.vim
