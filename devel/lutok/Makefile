@@ -1,6 +1,6 @@
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.4
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		lutok                     0.0 # 2.0
 CATEGORIES =		devel
@@ -16,6 +16,7 @@ WANTLIB += atf-c atf-c++ c ${MODLUA_WANTLIB} m ${COMPILER_LIBCXX}
 SITES =		https://github.com/jmmv/lutok/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
+CXXFLAGS_base-clang =	-std=gnu++14
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes
