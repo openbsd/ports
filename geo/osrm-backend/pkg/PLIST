@@ -1,6 +1,6 @@
+@conflict flatbuffers-*
 @newgroup _osrm_routed:815
 @newuser _osrm_routed:815:815::OSRM Router:/var/empty:/sbin/nologin
-@conflict flatbuffers-*
 @rcscript ${RCDIR}/osrm_routed
 @bin bin/osrm-components
 @bin bin/osrm-contract
@@ -41,6 +41,7 @@ include/osrm/contractor_config.hpp
 include/osrm/coordinate.hpp
 include/osrm/customizer.hpp
 include/osrm/customizer_config.hpp
+include/osrm/datasets.hpp
 include/osrm/engine/
 include/osrm/engine/api/
 include/osrm/engine/api/base_parameters.hpp
@@ -104,6 +105,9 @@ include/osrm/util/typedefs.hpp
 @static-lib lib/libosrm_update.a
 lib/pkgconfig/libosrm.pc
 share/osrm/
+share/osrm/data/
+share/osrm/data/driving_side.geojson
+share/osrm/data/maxheight.geojson
 share/osrm/profiles/
 share/osrm/profiles/bicycle.lua
 share/osrm/profiles/car.lua
