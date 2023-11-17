@@ -1,5 +1,5 @@
 # Arches suggested by upstream, unsure which work on OpenBSD reliably.
-ONLY_FOR_ARCHS ?=	amd64 i386
+ONLY_FOR_ARCHS ?=	aarch64 amd64 i386
 # We need to figure out which of the following arches work and fix ones
 # that don't. We know powerpc is busted.
 #ONLY_FOR_ARCHS ?=	arm mips64 mips64el powerpc sparc64
