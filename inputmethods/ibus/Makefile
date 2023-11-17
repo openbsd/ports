@@ -5,7 +5,7 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.29-rc2
+GH_TAGNAME =		1.5.29
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
@@ -50,10 +50,10 @@ WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
 WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd dbus-1
 
 MODULES =		devel/dconf \
-			lang/python \
-			textproc/intltool
+			lang/python
 
-BUILD_DEPENDS =		devel/iso-codes \
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/iso-codes \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			lang/vala \
 			textproc/unicode/cldr,-annotations \
