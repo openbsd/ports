@@ -1,7 +1,7 @@
 Index: misc/config_definitions.json
 --- misc/config_definitions.json.orig
 +++ misc/config_definitions.json
-@@ -4306,7 +4306,7 @@
+@@ -4337,7 +4337,7 @@
          },
          "nfsen_rrds": {
              "default": [
