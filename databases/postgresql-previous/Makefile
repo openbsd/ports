@@ -1,7 +1,7 @@
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
 VERSION=	14.6
-REVISION=	0
+REVISION=	1
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
@@ -60,14 +60,6 @@ CONFIGURE_ARGS=	--with-openssl=/usr \
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "riscv64"
 CONFIGURE_ARGS+=--disable-spinlocks
 .endif
-
-# To avoid problems with missed floating point overflow checks.
-# pgsql 10.6+ refuses to build on i386 clang unless -msse2 is set.
-# If clang gains "-fexcess-precision=standard" support then this
-# should be removed.
-MODULES+=	gcc4
-MODGCC4_ARCHS=	i386
-MODGCC4_LANGS=	c
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
