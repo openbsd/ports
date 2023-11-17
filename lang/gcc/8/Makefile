@@ -9,6 +9,11 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 # .sdata.DW.ref.__gxx_personality_v0
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
+.elif ${MACHINE_ARCH:Mi386}
+MODULES +=			lang/clang
+MODCLANG_VERSION =		13
+MODCLANG_COMPILER_LINKS =	No
+USE_LLD =			ports
 .endif
 
 DPB_PROPERTIES = parallel

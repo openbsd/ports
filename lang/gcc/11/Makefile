@@ -132,6 +132,11 @@ MAKE_ENV += ${EXTRA_ENV}
 # .sdata.DW.ref.__gxx_personality_v0
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
+.elif ${MACHINE_ARCH:Mi386}
+MODULES +=			lang/clang
+MODCLANG_VERSION =		13
+MODCLANG_COMPILER_LINKS =	No
+USE_LLD =			ports
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
