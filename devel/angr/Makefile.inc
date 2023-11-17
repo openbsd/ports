@@ -1,5 +1,6 @@
-# vex is amd64-only; sync with security/angrop
-ONLY_FOR_ARCHS =	amd64
+# vex contains a limited number of architecture backends
+# sync with security/angrop where applicable
+ONLY_FOR_ARCHS =	aarch64 amd64
 
 CATEGORIES =		devel security
 
