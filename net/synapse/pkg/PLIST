@@ -2045,6 +2045,9 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/80/04
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/02_scheduled_tasks_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/04_add_indices_for_purging_rooms.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/82/05gaps.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/83/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/83/03_instance_name_receipts.sql.sqlite
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/application_services.sql
