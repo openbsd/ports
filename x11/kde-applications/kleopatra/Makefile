@@ -57,6 +57,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/libkleo
 
 CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/Libkleo/
+CXXFLAGS +=	-Wno-enum-constexpr-conversion
 CFLAGS +=	-I${LOCALBASE}/include/KPim5/Libkleo/
+CFLAGS +=	-Wno-enum-constexpr-conversion
 
 .include <bsd.port.mk>
