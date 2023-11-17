@@ -4,7 +4,7 @@ COMMENT=		portal frontend service for desktop containment frameworks
 
 V=			1.18.1
 DISTNAME=		xdg-desktop-portal-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -24,7 +24,8 @@ MODULES=		devel/meson \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/gettext,-tools
+BUILD_DEPENDS=		devel/gettext,-tools \
+			geo/geoclue2
 
 # rst2man
 BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
@@ -36,7 +37,8 @@ LIB_DEPENDS=		devel/json-glib \
 			graphics/gdk-pixbuf2 \
 			multimedia/pipewire/pipewire,-libs
 
-RUN_DEPENDS=		multimedia/pipewire/pipewire
+RUN_DEPENDS=		geo/geoclue2 \
+			multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dflatpak-interfaces=disabled \
 			-Dsystemd=disabled \
