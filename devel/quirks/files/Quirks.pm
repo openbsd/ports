@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1588 2023/11/17 11:54:29 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1589 2023/11/17 12:29:14 edd Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -802,6 +802,7 @@ my $stem_extensions = {
 	'py-sortedcontainers' => 'py3-sortedcontainers',
 	'py-future' => 'py3-future',
 	'py-capstone' => 'py3-capstone',
+        'iosevka-fixed-slab' => 'iosevka-slab',
 };
 
 my $obsolete_reason = {};
