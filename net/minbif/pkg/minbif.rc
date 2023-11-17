@@ -1,9 +1,0 @@
-#!/bin/ksh
-
-daemon="${TRUEPREFIX}/bin/minbif -m 2"
-daemon_flags="${SYSCONFDIR}/minbif.conf"
-daemon_user="_minbif"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1

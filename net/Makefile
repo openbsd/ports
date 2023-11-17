@@ -270,7 +270,6 @@
      SUBDIR += megatools
      SUBDIR += mfi
      SUBDIR += microblog-purple
-     SUBDIR += minbif
      SUBDIR += miniflux
      SUBDIR += mininet
      SUBDIR += minio

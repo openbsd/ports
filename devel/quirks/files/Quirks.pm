@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1590 2023/11/17 12:46:53 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1591 2023/11/17 15:53:38 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1895,6 +1895,7 @@ setup_obsolete_reason(
 	60 => 'jailkit',
 	13 => 'p5-sybperl',
 	61 => 'xprobe2',
+	3 => 'minbif',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
