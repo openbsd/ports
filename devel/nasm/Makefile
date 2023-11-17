@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS=	amd64 i386
-
 COMMENT=	general-purpose multi-platform x86 assembler
 
 VERSION=	2.16.01
