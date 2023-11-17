@@ -437,7 +437,7 @@ MODGO_MODULES =	\
 	github.com/pkg/errors						 v0.9.1 \
 	github.com/pkg/sftp						 v1.13.1 \
 	github.com/pmezard/go-difflib					 v1.0.0 \
-	github.com/posener/complete					 v1.2.1 \
+	github.com/posener/complete					 v1.2.3 \
 	github.com/pquerna/otp						 v1.2.1-0.20191009055518-468c2dd2b58d \
 	github.com/prometheus/client_golang				 v1.4.0 \
 	github.com/prometheus/client_model				 v0.2.0 \
@@ -1054,6 +1054,7 @@ MODGO_MODFILES =	\
 	github.com/pkg/errors					 v0.8.1 \
 	github.com/pmezard/go-difflib				 v0.0.0-20151028094244-d8ed2627bdf0 \
 	github.com/posener/complete				 v1.1.1 \
+	github.com/posener/complete				 v1.2.1 \
 	github.com/pquerna/otp					 v1.2.0 \
 	github.com/prometheus/client_golang			 v0.9.1 \
 	github.com/prometheus/client_golang			 v0.9.3-0.20190127221311-3c4408c8b829 \
