@@ -768,7 +768,6 @@
      SUBDIR += wormhole-william
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-epi
-     SUBDIR += xprobe
      SUBDIR += yafc
      SUBDIR += yaz
      SUBDIR += yersinia

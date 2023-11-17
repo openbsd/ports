@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1587 2023/11/17 11:44:09 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1588 2023/11/17 11:54:29 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1893,6 +1893,7 @@ setup_obsolete_reason(
 	3 => 'hwsensorsbeat',
 	60 => 'jailkit',
 	13 => 'p5-sybperl',
+	61 => 'xprobe',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1970,6 +1971,7 @@ my $obsolete_message = {
 	58 => "abandoned upstream, use eza as a drop-in replacement",
 	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable security sensitive code",
 	60 => "unmaintained/outdated for years, setuid python 2 scripts, not recommended",
+	61 => "long dead upstream/unmaintained, fails to build with clang 16",
 };
 
 # ->is_base_system($handle, $state):

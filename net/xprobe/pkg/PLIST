@@ -1,6 +1,0 @@
-@bin bin/xprobe2
-@man man/man1/xprobe2.1
-share/examples/xprobe2/
-share/examples/xprobe2/xprobe2.conf
-@sample ${SYSCONFDIR}/xprobe2/
-@sample ${SYSCONFDIR}/xprobe2/xprobe2.conf
