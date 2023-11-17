@@ -1,6 +1,6 @@
 # librz/debug/p/native/reg.c
 # #error "Unsupported BSD architecture"
-ONLY_FOR_ARCHS = amd64 i386
+ONLY_FOR_ARCHS = aarch64 amd64 i386
 
 COMMENT =	free and open source reverse engineering framework
 

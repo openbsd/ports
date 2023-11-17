@@ -1,0 +1,12 @@
+Index: librz/debug/p/native/reg.c
+--- librz/debug/p/native/reg.c.orig
++++ librz/debug/p/native/reg.c
+@@ -34,6 +34,8 @@ static char *rz_debug_native_reg_profile(RzDebug *dbg)
+ #include "reg/netbsd-x86.h"
+ #elif __x86_64__
+ #include "reg/netbsd-x64.h"
++#elif __aarch64__
++#include "reg/netbsd-arm64.h"
+ #else
+ #error "Unsupported BSD architecture"
+ #endif
