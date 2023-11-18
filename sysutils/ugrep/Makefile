@@ -3,19 +3,21 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v4.1.0
+GH_TAGNAME =	v4.3.3
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c lz4 lzma m pcre2-8 z zstd
+WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc bz2 c lz4 lzma
+WANTLIB += m pcre2-8 z zstd
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	archivers/lz4 \
+LIB_DEPENDS =	archivers/brotli \
+		archivers/lz4 \
 		archivers/xz \
 		archivers/zstd \
 		devel/pcre2
