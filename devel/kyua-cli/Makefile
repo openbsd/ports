@@ -15,6 +15,8 @@ WANTLIB += ${MODLUA_WANTLIB} atf-c atf-c++ c lutok m pthread sqlite3 ${COMPILER_
 SITES =		https://github.com/jmmv/kyua/releases/download/${DISTNAME}/
 
 COMPILER =		base-clang ports-gcc base-gcc
+# auto_ptr
+CXXFLAGS_base-clang =	-std=gnu++14
 
 MODULES =		lang/lua
 MODLUA_SA =		Yes
