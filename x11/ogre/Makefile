@@ -52,6 +52,8 @@ CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
 
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
+# uses auto_ptr
+CXXFLAGS_base-clang =	-std=gnu++14
 LIB_DEPENDS =		graphics/freeimage \
 			archivers/zziplib \
 			devel/boost
