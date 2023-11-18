@@ -1,7 +1,15 @@
 Index: src/kssl/kopenssl.cpp
 --- src/kssl/kopenssl.cpp.orig
 +++ src/kssl/kopenssl.cpp
-@@ -269,7 +269,7 @@ static QString findMostRecentLib(QString dir, QString 
+@@ -75,6 +75,7 @@ extern "C" {
+     static X509_NAME *(*K_X509_get_subject_name)(X509 *) = nullptr;
+     static X509_NAME *(*K_X509_get_issuer_name)(X509 *) = nullptr;
+     static void (*K_X509_get0_signature)(const ASN1_BIT_STRING **psig, const X509_ALGOR **palg, const X509 *x) = nullptr;
++    static void (*K_X509_ALGOR_get0)(const ASN1_OBJECT **paobj, int *ptype, const void **ppval, const X509_ALGOR *alg);
+     static X509_LOOKUP *(*K_X509_STORE_add_lookup)(X509_STORE *, X509_LOOKUP_METHOD *) = nullptr;
+     static X509_LOOKUP_METHOD *(*K_X509_LOOKUP_file)(void) = nullptr;
+     static void (*K_X509_LOOKUP_free)(X509_LOOKUP *) = nullptr;
+@@ -269,7 +270,7 @@ static QString findMostRecentLib(QString dir, QString 
      QString best = 0L;
      // where do we start
      uint s = filter.length() - 1;
@@ -10,3 +18,25 @@ Index: src/kssl/kopenssl.cpp
          QString numberpart = (*it).mid(s);
          uint endmaj = numberpart.indexOf('.');
          if (endmaj == -1) {
+@@ -447,6 +448,7 @@ KOpenSSLProxy::KOpenSSLProxy()
+         K_X509_get_subject_name = (X509_NAME * (*)(X509 *)) d->cryptoLib->resolve("X509_get_subject_name");
+         K_X509_get_issuer_name = (X509_NAME * (*)(X509 *)) d->cryptoLib->resolve("X509_get_issuer_name");
+         K_X509_get0_signature = (void (*)(const ASN1_BIT_STRING **, const X509_ALGOR **, const X509 *)) d->cryptoLib->resolve("X509_get0_signature");
++        K_X509_ALGOR_get0 = (void (*)(const ASN1_OBJECT **, int *, const void **, const X509_ALGOR *)) d->cryptoLib->resolve("X509_ALGOR_get0");
+         K_X509_STORE_add_lookup = (X509_LOOKUP * (*)(X509_STORE *, X509_LOOKUP_METHOD *)) d->cryptoLib->resolve("X509_STORE_add_lookup");
+         K_X509_LOOKUP_file = (X509_LOOKUP_METHOD * (*)(void)) d->cryptoLib->resolve("X509_LOOKUP_file");
+         K_X509_LOOKUP_free = (void (*)(X509_LOOKUP *)) d->cryptoLib->resolve("X509_LOOKUP_free");
+@@ -1055,6 +1057,13 @@ void KOpenSSLProxy::X509_get0_signature(const ASN1_BIT
+         return (K_X509_get0_signature)(psig, algor, x);
+     }
+ #endif
++}
++
++void KOpenSSLProxy::X509_ALGOR_get0(const ASN1_OBJECT **paobj, int *ptype, const void **ppval, const X509_ALGOR *algor)
++{
++    if (K_X509_ALGOR_get0) {
++        return (K_X509_ALGOR_get0)(paobj, ptype, ppval, algor);
++    }
+ }
+ 
+ X509_LOOKUP *KOpenSSLProxy::X509_STORE_add_lookup(X509_STORE *v, X509_LOOKUP_METHOD *m)
