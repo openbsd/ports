@@ -16,7 +16,7 @@ Index: src/rp/elf_struct.hpp
 +  }
 +
 +  case 0x65a3dbe7: {
-+    return "OPENBSD_RANDOMIZE";
++    return "OPENBSD_WXNEEDED";
 +  }
 +
 +  case 0x65a3dbe8: {

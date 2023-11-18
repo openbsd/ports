@@ -5,6 +5,7 @@ COMMENT =	fast ROP gadget finder for multiple targets
 GH_ACCOUNT =	0vercl0k
 GH_PROJECT =	rp
 GH_TAGNAME =	v2.1.2
+REVISION =	0
 PKGNAME =	rp++-${GH_TAGNAME:S/v//}
 
 CATEGORIES =	security
