@@ -14,6 +14,7 @@ DPB_PROPERTIES +=	lonesome
 .else
 DPB_PROPERTIES +=	parallel
 .endif
+MODCLANG_VERSION =	16
 
 .for _lib in ${MOZILLA_LIBS}
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
