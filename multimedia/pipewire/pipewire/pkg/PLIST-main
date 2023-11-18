@@ -173,6 +173,7 @@ share/pipewire/pipewire.conf
 share/pipewire/pipewire.conf.avail/
 share/pipewire/pipewire.conf.avail/10-rates.conf
 share/pipewire/pipewire.conf.avail/20-upmix.conf
+@sample ${SYSCONFDIR}/pipewire/
 @sample ${SYSCONFDIR}/pipewire/client-rt.conf.d/
 @sample ${SYSCONFDIR}/pipewire/client.conf.d/
 @sample ${SYSCONFDIR}/pipewire/filter-chain.conf.d/

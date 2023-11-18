@@ -3,8 +3,9 @@ COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
 PW_VERSION=		0.3.85
-
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
+
+REVISION-main=		0
 
 SHARED_LIBS += pipewire-0.3              0.0 # 0.385.0
 
