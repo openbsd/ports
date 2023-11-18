@@ -1,6 +1,7 @@
 COMMENT =		library set for simulations, games and visualizations
 
 DISTNAME =		simgear-2020.3.17
+REVISION =		0
 
 SHARED_LIBS +=  SimGearCore               6.0 # 2.10
 SHARED_LIBS +=  SimGearScene              6.0 # 2.10
