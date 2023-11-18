@@ -1,0 +1,12 @@
+Index: src/inlines.hpp
+--- src/inlines.hpp.orig
++++ src/inlines.hpp
+@@ -23,6 +23,8 @@
+ #ifndef c6d28b7452ec699b_INLINES_H
+ #define c6d28b7452ec699b_INLINES_H
+ 
++#include <array>
++
+ namespace CG3 {
+ 
+ constexpr double NUMERIC_MIN = static_cast<double>(-(1ll << 48ll));
