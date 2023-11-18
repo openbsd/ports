@@ -1,6 +1,6 @@
 COMMENT = 	X.509 library
 
-DISTNAME = 	libksba-1.6.4
+DISTNAME = 	libksba-1.6.5
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 2.0	# 22.4
