@@ -1,0 +1,11 @@
+Index: tools/libime_prediction.cpp
+--- tools/libime_prediction.cpp.orig
++++ tools/libime_prediction.cpp
+@@ -7,6 +7,7 @@
+ #include "libime/core/constants.h"
+ #include "libime/core/datrie.h"
+ #include "libime/core/languagemodel.h"
++#include <array>
+ #include <boost/algorithm/string.hpp>
+ #include <cmath>
+ #include <fcitx-utils/log.h>
