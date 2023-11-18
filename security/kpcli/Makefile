@@ -1,6 +1,6 @@
 COMMENT =	cli browser for keepassx databases
 
-DISTNAME =	kpcli-3.8.1
+DISTNAME =	kpcli-4.0
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
@@ -21,6 +21,7 @@ RUN_DEPENDS =	security/p5-Crypt-Rijndael \
 		p5-Term-ReadLine-Perl-*|p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \
 		devel/p5-Sort-Naturally \
 		textproc/p5-Data-Password \
+		textproc/p5-File-KDBX \
 		textproc/p5-File-KeePass
 
 do-install:
