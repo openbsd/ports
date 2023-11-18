@@ -1,3 +1,4 @@
+@bin bin/bctoolbox_tester
 include/bctoolbox/
 include/bctoolbox/charconv.h
 include/bctoolbox/compiler.h
@@ -13,12 +14,15 @@ include/bctoolbox/param_string.h
 include/bctoolbox/parser.h
 include/bctoolbox/port.h
 include/bctoolbox/regex.h
+include/bctoolbox/tester.h
 include/bctoolbox/utils.hh
 include/bctoolbox/vconnect.h
 include/bctoolbox/vfs.h
 include/bctoolbox/vfs_encrypted.hh
 include/bctoolbox/vfs_standard.h
+@lib lib/libbctoolbox-tester.so.${LIBbctoolbox-tester_VERSION}
 @lib lib/libbctoolbox.so.${LIBbctoolbox_VERSION}
+lib/pkgconfig/bctoolbox-tester.pc
 lib/pkgconfig/bctoolbox.pc
 share/bctoolbox/
 share/bctoolbox/cmake/
