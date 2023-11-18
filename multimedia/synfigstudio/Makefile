@@ -7,7 +7,7 @@ COMMENT =		2D animation software studio
 V =			1.5.1
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=  synfigapp                 3.0 # 0.0
 
@@ -43,6 +43,7 @@ MODULES =		textproc/intltool
 
 # c++11
 COMPILER =		base-clang ports-gcc
+CXXFLAGS_base-clang =	-std=gnu++14
 
 BUILD_DEPENDS =		devel/etl>=${V}
 
