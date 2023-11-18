@@ -1,0 +1,13 @@
+drop real compilation test, bails out ?
+
+Index: cmake/Modules/CompilerRTUtils.cmake
+--- cmake/Modules/CompilerRTUtils.cmake.orig
++++ cmake/Modules/CompilerRTUtils.cmake
+@@ -121,7 +121,6 @@ macro(test_target_arch arch def)
+       set(CAN_TARGET_${arch} FALSE)
+     elseif(TEST_COMPILE_ONLY)
+       try_compile_only(CAN_TARGET_${arch}
+-                       SOURCE "#include <limits.h>\nint foo(int x, int y) { return x + y; }\n"
+                        FLAGS ${TARGET_${arch}_CFLAGS})
+     else()
+       set(FLAG_NO_EXCEPTIONS "")

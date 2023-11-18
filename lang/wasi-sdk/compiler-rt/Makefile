@@ -2,9 +2,10 @@ COMMENT =	LLVM runtime library for WebAssembly System Interface
 
 DISTNAME =	compiler-rt-${LLVM_V}.src
 PKGNAME =	wasi-compiler-rt-${LLVM_V}
-REVISION =	0
 LIBPATH =	wasi/libclang_rt.builtins-wasm32.a
 BUILDSUBDIR =	lib/builtins
+LLVM_V =	16.0.6
+MODCLANG_VERSION =	16
 BUILD_DEPENDS +=	lang/wasi-libc>=0.20220413p0
 
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
@@ -14,10 +15,12 @@ SUBST_VARS +=	MODCLANG_VERSION
 
 CONFIGURE_ARGS=	\
 		-DLLVM_MAIN_SRC_DIR=${WRKDIR}/llvm-${LLVM_V}.src \
+		-DCMAKE_MODULE_PATH=${WRKDIR}/cmake-${LLVM_V}.src/Modules \
 		-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
+		-DLLVM_CMAKE_DIR=${WRKDOR}/${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/llvm \
 		-DCMAKE_C_COMPILER_WORKS=1 \
 		-DCMAKE_CXX_COMPILER_WORKS=1 \
-		-DCMAKE_STAGING_PREFIX=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/clang/${LLVM_V} \
+		-DCMAKE_STAGING_PREFIX=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION} \
 		-DCMAKE_SYSROOT=${WASI_SYSROOT} \
 		-DUNIX:BOOL=ON \
 		-DCOMPILER_RT_BAREMETAL_BUILD=ON \
