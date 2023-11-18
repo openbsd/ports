@@ -1,0 +1,14 @@
+Fix build with boost >= 1.83
+
+Index: src/cpp/core/system/PosixProcess.cpp
+--- src/cpp/core/system/PosixProcess.cpp.orig
++++ src/cpp/core/system/PosixProcess.cpp
+@@ -23,6 +23,8 @@
+ 
+ #include <core/system/PosixSystem.hpp>
+ 
++#include <set>
++
+ namespace rstudio {
+ namespace core {
+ namespace system {
