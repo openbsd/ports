@@ -16,6 +16,7 @@ COMMENT-src =		Rust source component
 
 V =			1.74.0
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.74.0-20231115
@@ -80,7 +81,7 @@ TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
 
-USE_EMB_LLVM ?=	Yes
+USE_EMB_LLVM ?=		No
 
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
