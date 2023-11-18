@@ -1,0 +1,29 @@
+These LIBRESSL_VERSION_NUMBER should be removed unless they really
+want to care about unsupported LibreSSL.
+
+hunk 1: we added these constants specifically for this software
+hunk 2: this has been available since LibreSSL 3.6.
+
+https://codeberg.org/skyjake/the_Foundation/pulls/16
+
+Index: lib/the_Foundation/src/tlsrequest.c
+--- lib/the_Foundation/src/tlsrequest.c.orig
++++ lib/the_Foundation/src/tlsrequest.c
+@@ -452,7 +452,7 @@ iTlsCertificate *newSelfSignedRSA_TlsCertificate(
+     d->pkey = EVP_PKEY_new();
+     EVP_PKEY_assign_RSA(d->pkey, rsa);
+     X509_set_pubkey(d->cert, d->pkey);
+-#if !defined (LIBRESSL_VERSION_NUMBER)
++#if !defined (LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER < 0x3060000fL
+     /* Random serial number. */ {
+         BIGNUM *big = BN_new();
+         if (BN_rand(big, 64, BN_RAND_TOP_ANY, BN_RAND_BOTTOM_ANY)) {
+@@ -554,7 +554,7 @@ void validUntil_TlsCertificate(const iTlsCertificate *
+     iZap(*untilDate_out);
+     if (d->cert) {
+         struct tm time;
+-#if defined (LIBRESSL_VERSION_NUMBER)
++#if defined (LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x3060000fL
+         const ASN1_TIME *notAfter = X509_get0_notAfter(d->cert);
+         ASN1_time_parse((const char *) ASN1_STRING_get0_data(notAfter),
+                         ASN1_STRING_length(notAfter),
