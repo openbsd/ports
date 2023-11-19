@@ -33,8 +33,14 @@ MAKE_FLAGS +=	LDFLAGS="-L${LOCALBASE}/lib -ledit -ltermcap -lsqlite3 -lm -lpthre
 
 NO_TEST=	Yes
 
+MAKE_FLAGS += BSDSRCDIR=${WRKDIST} BSDOBJDIR=${WRKDIST}/obj
+
+post-gen:
+	mkdir -p ${WKRDIST}/obj
+
 post-configure:
-	${MAKE} -C ${WRKDIST} obj
+	${MAKE} ${MAKE_FLAGS} -C ${WRKDIST} obj
+
 
 post-install:
 .for i in save-ro.sh save-rw.sh
