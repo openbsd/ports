@@ -5,7 +5,7 @@ V =		3.1.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
