@@ -7,7 +7,7 @@ CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
 
 MODPY_PYTEST =		Yes
 
-BUILD_DEPENDS +=	devel/angr/vex>=9.0 \
+BUILD_DEPENDS +=	devel/angr/vex>=9.2 \
 			devel/py-cffi${MODPY_FLAVOR} \
 			devel/py-cparser${MODPY_FLAVOR}
 

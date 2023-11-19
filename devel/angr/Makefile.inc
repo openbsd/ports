@@ -9,6 +9,8 @@ CATEGORIES =		devel security
 # rest: BSD
 PERMIT_PACKAGE ?=	Yes
 
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+
 .if defined(ANGR_PYTHON_MODULE)
 HOMEPAGE ?=		https://github.com/angr/${ANGR_PYTHON_MODULE}/
 
@@ -16,7 +18,16 @@ MODULES ?=		lang/python
 MODPY_PI ?=		Yes
 MODPY_PYBUILD ?=	setuptools
 
-MODPY_EGG_VERSION ?=	9.2.76
+# order when updating:
+# py-z3-solver
+# py-claripy
+# py-archinfo
+# vex
+# py-pyvex
+# py-ailment
+# py-cle
+# py-angr
+MODPY_EGG_VERSION ?=	9.2.77
 DISTNAME ?=		${ANGR_PYTHON_MODULE}-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 .endif

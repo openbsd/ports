@@ -3627,12 +3627,15 @@ lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}page_backer_mixins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}paged_memory_mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}paged_memory_mixin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}paged_memory_multivalue_mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}paged_memory_multivalue_mixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}privileged_mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}privileged_mixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}stack_allocation_mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/${MODPY_PYCACHE}stack_allocation_mixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/page_backer_mixins.py
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/paged_memory_mixin.py
+lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/paged_memory_multivalue_mixin.py
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/pages/
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/pages/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/paged_memory/pages/${MODPY_PYCACHE}/

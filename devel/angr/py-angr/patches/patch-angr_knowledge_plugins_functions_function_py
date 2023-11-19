@@ -12,7 +12,7 @@ Index: angr/knowledge_plugins/functions/function.py
  from cle.backends.symbol import Symbol
  from archinfo.arch_arm import get_real_address_if_arm
  import claripy
-@@ -1542,6 +1540,7 @@ class Function(Serializable):
+@@ -1550,6 +1548,7 @@ class Function(Serializable):
  
      @property
      def demangled_name(self):
@@ -20,7 +20,7 @@ Index: angr/knowledge_plugins/functions/function.py
          if self.name[0:2] == "_Z":
              try:
                  ast = parse(self.name)
-@@ -1549,6 +1548,7 @@ class Function(Serializable):
+@@ -1557,6 +1556,7 @@ class Function(Serializable):
                  return self.name
              if ast:
                  return ast.__str__()
