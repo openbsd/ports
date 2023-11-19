@@ -8,7 +8,7 @@ COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		43.7
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		devel
 
@@ -29,8 +29,9 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+SUBST_VARS +=		MODCLANG_VERSION
 MODCLANG_COMPILER_LINKS=No
-MODCLANG_BUILDDEP=	No 
+MODCLANG_VERSION=	16
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
@@ -80,8 +81,9 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 CONFIGURE_ARGS +=	-Db_asneeded=false
 .endif
 
-# don't pick up llvm-config(1) from base
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/plugins/clang/meson.build
+# don't pick up llvm-config(1) from base
 	ln -sf ${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
 		${WRKDIR}/bin/llvm-config
 

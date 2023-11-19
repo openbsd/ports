@@ -1,0 +1,14 @@
+Find libclang.so
+
+Index: src/plugins/clang/meson.build
+--- src/plugins/clang/meson.build.orig
++++ src/plugins/clang/meson.build
+@@ -63,7 +63,7 @@ executable('gnome-builder-clang', gnome_builder_clang_
+        install_dir: get_option('libexecdir'),
+             c_args: exe_c_args,
+                pie: true,
+-     install_rpath: pkglibdir_abs,
++     install_rpath: pkglibdir_abs + ':${LOCALBASE}/llvm${MODCLANG_VERSION}/lib',
+ )
+ 
+ executable('test-daemon', ['test-daemon.c'],
