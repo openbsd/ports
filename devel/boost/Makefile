@@ -8,17 +8,16 @@ COMMENT-md=	machine-dependent libraries for boost
 # if updating >=1.81.0 review ports using boost_context that have USE_NOBTCFI
 # set and see if it can be removed (definite problems seen with pdns_recursor);
 # sqlite3 /usr/local/share/sqlports "select * from wantlib where value like 'boost_context%'"
-VERSION=	1.80.0
-EPOCH =		0
+VERSION=	1.83.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION-main=	4
+EPOCH =		0
 CATEGORIES=	devel
 SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	21.0
+SO_VERSION=	22.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -53,6 +52,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_timer-mt boost_timer \
 		boost_type_erasure-mt boost_type_erasure \
 		boost_unit_test_framework-mt boost_unit_test_framework \
+		boost_url-mt boost_url \
 		boost_wserialization-mt boost_wserialization \
 		boost_wave-mt boost_wave
 
@@ -129,6 +129,10 @@ CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}" \
 NO_TEST=	Yes
 
 SUBST_VARS+=	SO_VERSION
+
+# Revert back to Boost::Context 1.80.0 ASM code for i386
+post-extract:
+	cp -f ${FILESDIR}/*_i386_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
 
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam
