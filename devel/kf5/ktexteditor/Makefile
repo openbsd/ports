@@ -1,7 +1,8 @@
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
+REVISION =	0
 
-SHARED_LIBS =	KF5TextEditor		21.0
+SHARED_LIBS =	KF5TextEditor		21.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -10,7 +11,7 @@ WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Parts KF5Service
 WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Widgets Qt5Xml X11 c m
+WANTLIB += Qt5Qml Qt5Widgets Qt5Xml X11 c editorconfig m
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools \
@@ -39,7 +40,8 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
 		devel/kf5/kxmlgui>=${MODKF5_VERSION} \
 		devel/kf5/sonnet>=${MODKF5_VERSION} \
-		devel/kf5/syntax-highlighting>=${MODKF5_VERSION}
+		devel/kf5/syntax-highlighting>=${MODKF5_VERSION} \
+		editors/editorconfig-core-c
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
