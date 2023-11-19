@@ -1,0 +1,24 @@
+Do not reach into X509_ALGOR.
+
+Index: common/util.c
+--- common/util.c.orig
++++ common/util.c
+@@ -372,6 +372,7 @@ bool set_component(unsigned char *in_ptr, const BIGNUM
+ bool prepare_rsa_signature(const unsigned char *in, unsigned int in_len, unsigned char *out, unsigned int *out_len, int nid) {
+   X509_SIG *digestInfo;
+   X509_ALGOR *algor;
++  ASN1_OBJECT *obj;
+   ASN1_OCTET_STRING *digest;
+   unsigned char data[1024] = {0};
+ 
+@@ -382,8 +383,8 @@ bool prepare_rsa_signature(const unsigned char *in, un
+ 
+   digestInfo = X509_SIG_new();
+   X509_SIG_getm(digestInfo, &algor, &digest);
+-  algor->algorithm = OBJ_nid2obj(nid);
+-  if(X509_ALGOR_set0(algor, OBJ_nid2obj(nid), V_ASN1_NULL, NULL) == 0) {
++  obj = OBJ_nid2obj(nid);
++  if(X509_ALGOR_set0(algor, obj, V_ASN1_NULL, NULL) == 0) {
+     fprintf(stderr, "Failed to set X509 Algorithm\n");
+     X509_SIG_free(digestInfo);
+     return false;
