@@ -7,6 +7,7 @@ GL_PROJECT =	goldberg_emulator
 GL_COMMIT =	475342f0d8b2bd7eb0d93bd7cfdd61e3ae7cda24
 DISTNAME =	${GL_PROJECT}-${GL_V}{${GL_COMMIT}}
 PKGNAME =	${GL_PROJECT}-${GL_V}
+REVISION =	0
 
 SHARED_LIBS +=	steam_api	3.0	# 2023-05-08 (sdk 1.57)
 CATEGORIES =	games
@@ -22,8 +23,9 @@ FIX_CRLF_FILES =	sdk_includes/isteamuser.h \
 			sdk_includes/steamclientpublic.h \
 			sdk_includes/steam_gameserver.h
 
-# C++14
+# C++17 (abseil)
 COMPILER =		base-clang ports-gcc
+CXXFLAGS +=		-std=c++17
 
 LIB_DEPENDS =		devel/protobuf
 USE_GMAKE =		Yes

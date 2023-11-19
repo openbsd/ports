@@ -14,7 +14,7 @@ Index: Makefile
 -CXX_FLAGS += -fPIC -std=c++14
 -LD_FLAGS += -shared -lprotobuf-lite -ldl -Wl,--no-undefined
 +CXX=c++
-+CXX_FLAGS += ${CXXFLAGS} -fPIC -std=c++14 -I${LOCALBASE}/include
++CXX_FLAGS += ${CXXFLAGS} -fPIC -I${LOCALBASE}/include
 +LD_FLAGS += -shared -L${LOCALBASE}/lib -lprotobuf-lite
  LIBRARY_NAME=libsteam_api.so
  RM = rm -f
