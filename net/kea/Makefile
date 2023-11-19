@@ -43,7 +43,7 @@ USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 COMPILER=	base-clang ports-gcc
-
+# inherited from the devel/log4cplus depencency
 CXXFLAGS_base-clang=	-std=c++14
 
 .include <bsd.port.arch.mk>
