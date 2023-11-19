@@ -4,7 +4,7 @@ CATEGORIES =	net x11
 
 # XXX Depends on KPipeWire (pipewire)
 VERSION =	22.12.3
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  krfbprivate               3.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -45,5 +45,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtx11extras
 
 CXXFLAGS +=	-I${LOCALBASE}/include
+
+CONFIGURE_ARGS =	-DDISABLE_PIPEWIRE=ON
 
 .include <bsd.port.mk>
