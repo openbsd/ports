@@ -1,0 +1,17 @@
+Do not reach into X509_ALGOR.
+
+Index: alpine/smime.c
+--- alpine/smime.c.orig
++++ alpine/smime.c
+@@ -292,7 +292,10 @@ format_smime_info(int pass, BODY *body, long msgno, gf
+ 		    gf_puts(_("The algorithm used to encrypt was "), pc);
+ 
+ 		    if(alg){
+-			char *n = (char *) OBJ_nid2sn( OBJ_obj2nid(alg->algorithm));
++			const ASN1_OBJECT *obj;
++			const char *n;
++			X509_ALGOR_get0(&obj, NULL, NULL, alg);
++			n = OBJ_nid2sn(OBJ_obj2nid(obj));
+ 
+ 			gf_puts(n ? n : "<unknown>", pc);
+ 
