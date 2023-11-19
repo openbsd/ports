@@ -1,34 +1,34 @@
-COMMENT =	Python driver for mongodb
+COMMENT=	Python driver for mongodb
 
-MODPY_EGG_VERSION = 4.5.0
-DISTNAME =	pymongo-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:S/py//}
+MODPY_EGG_VERSION= 4.6.0
+DISTNAME=	pymongo-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:S/py//}
 
-CATEGORIES =	databases devel
+CATEGORIES=	databases devel
 
-HOMEPAGE =	https://github.com/mongodb/mongo-python-driver/
+HOMEPAGE=	https://github.com/mongodb/mongo-python-driver/
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB =	pthread ${MODPY_WANTLIB}
+WANTLIB=	pthread ${MODPY_WANTLIB}
 
-MODPY_PI =	Yes
+MODPY_PI=	Yes
 
-MODULES =	lang/python
-FLAVORS =	python3
-FLAVOR =	python3
+MODULES=	lang/python
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=	setuptools
 
 # unported dep
-MODPY_PYTEST_ARGS =	--ignore test/mockupdb \
-			--ignore test/auth_aws/test_auth_aws.py
+MODPY_PYTEST_ARGS= --ignore test/mockupdb \
+		--ignore test/auth_aws/test_auth_aws.py
 
-# needs a running mongodb instance in 127.0.0.1:27017,
+# needs a running mongodb instance at 127.0.0.1:27017,
 # and increased kern.somaxconn, various missing files from the tar.gz
 # too it seems
-TEST_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE= Yes
 
 .include <bsd.port.arch.mk>
 
