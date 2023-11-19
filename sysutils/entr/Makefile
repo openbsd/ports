@@ -1,6 +1,6 @@
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-5.4
+DISTNAME =	entr-5.5
 
 CATEGORIES =	sysutils
 
@@ -9,6 +9,7 @@ HOMEPAGE =	https://eradman.com/entrproject/
 # ISC
 PERMIT_PACKAGE = Yes
 
+# uses pledge()
 WANTLIB += c
 
 SITES =		${HOMEPAGE}code/
