@@ -3,6 +3,7 @@ BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 COMMENT=		H.323 gatekeeper
 
 V=			5.11
+REVISION=		0
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
@@ -22,6 +23,8 @@ WANTLIB += maxminddb netsnmp netsnmpagent netsnmpmibs pt sasl2
 WANTLIB += ssh ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc
+# uses std::mem_fun
+CXXFLAGS_base-clang =	-std=gnu++14
 
 MODULES=		lang/lua
 
@@ -44,6 +47,7 @@ NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			STDCCFLAGS="${CXXFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			OPENH323DIR=${LOCALBASE}/include/openh323 \
 			OPENH323MAKEDIR=${LOCALBASE}/share/openh323 \
