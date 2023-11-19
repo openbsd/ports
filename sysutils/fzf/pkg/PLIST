@@ -1,4 +1,5 @@
 @bin bin/fzf
+bin/fzf-preview.sh
 bin/fzf-tmux
 @man man/man1/fzf-tmux.1
 @man man/man1/fzf.1
