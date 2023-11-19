@@ -1,5 +1,6 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		9.0
 
@@ -20,6 +21,9 @@ PORTHOME =		${WRKDIR}
 TESTS_IS_INTERACTIVE =	X11
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# TODO impl
+# src/lib/util/kprocesslist_unix.cpp
 
 # gamin is totally unmaintained low quality software
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FAM=ON

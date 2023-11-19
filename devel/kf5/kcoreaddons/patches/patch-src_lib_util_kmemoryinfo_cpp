@@ -1,0 +1,101 @@
+https://invent.kde.org/frameworks/kcoreaddons/-/merge_requests/397
+Index: src/lib/util/kmemoryinfo.cpp
+--- src/lib/util/kmemoryinfo.cpp.orig
++++ src/lib/util/kmemoryinfo.cpp
+@@ -27,6 +27,17 @@ Q_LOGGING_CATEGORY(LOG_KMEMORYINFO, "kf.coreaddons.kme
+     #include <fcntl.h>
+     #include <kvm.h>
+     #include <sys/sysctl.h>
++#elif defined(Q_OS_OPENBSD)
++     #include <sys/mount.h>
++     #include <sys/param.h>	/* DEV_BSIZE PZERO */
++     #include <sys/swap.h>
++     #include <sys/syscall.h>
++     #include <sys/sysctl.h>
++
++     #include <stdio.h>
++     #include <stdlib.h>
++     #include <strings.h>
++     #include <unistd.h>
+ #endif
+ // clang-format on
+ 
+@@ -418,6 +429,78 @@ bool KMemoryInfo::update()
+     return true;
+ }
+ 
++#elif defined(Q_OS_OPENBSD)
++/*****************************************************************************
++ * OpenBSD
++ ****************************************************************************/
++// From src/usr.bin/top/machine.c
++static int
++swap_usage(int *used, int *total)
++{
++    struct swapent *swdev;
++    int nswap, rnswap, i;
++
++    nswap = swapctl(SWAP_NSWAP, nullptr, 0);
++    if (nswap == 0)
++        return 0;
++
++    swdev = static_cast<struct swapent*>(calloc(nswap, sizeof(*swdev)));
++    if (swdev == NULL)
++        return 0;
++
++    rnswap = swapctl(SWAP_STATS, swdev, nswap);
++    if (rnswap == -1) {
++        free(swdev);
++        return 0;
++    }
++    /* Total things up */
++    *total = *used = 0;
++    for (i = 0; i < nswap; i++) {
++        if (swdev[i].se_flags & SWF_ENABLE) {
++            *used += (swdev[i].se_inuse / (1024 / DEV_BSIZE));
++            *total += (swdev[i].se_nblks / (1024 / DEV_BSIZE));
++        }
++    }
++    free(swdev);
++    return 1;
++}
++
++bool KMemoryInfo::update()
++{
++    // total available phsycial memory
++    const long phys_pages = sysconf(_SC_PHYS_PAGES);
++    const long pagesize = sysconf(_SC_PAGESIZE);
++    if (phys_pages != -1 && pagesize != -1)
++        d->m_availablePhysical = ((uint64_t)phys_pages * (uint64_t)pagesize / 1024);
++
++    int swap_free = 0;
++    int swap_tot = 0;
++    if (swap_usage(&swap_free, &swap_tot))
++    {
++        d->m_totalSwapFile = swap_tot;
++        d->m_freeSwapFile = swap_free;
++    }
++
++    int uvmexp_mib[] = {CTL_VM, VM_UVMEXP};
++    struct uvmexp uvmexp;
++    size_t size= sizeof(uvmexp);
++    if (sysctl(uvmexp_mib, 2, &uvmexp, &size, NULL, 0) == -1) {
++        bzero(&uvmexp, sizeof(uvmexp));
++        return false;
++    }
++    d->m_freePhysical = uvmexp.free * pagesize / 1024;
++
++    int bcstats_mib[] = {CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT};
++    struct bcachestats bcstats;
++    size = sizeof(bcstats);
++    if (sysctl(bcstats_mib, 3, &bcstats, &size, NULL, 0) == -1) {
++        bzero(&bcstats, sizeof(bcstats));
++        return false;
++    }
++    d->m_cached = bcstats.numbufpages * pagesize / 1024;
++
++    return true;
++}
+ #else
+ /*****************************************************************************
+  * Unsupported platform
