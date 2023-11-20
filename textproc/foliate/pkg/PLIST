@@ -11,6 +11,9 @@ share/locale/de/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/el/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/es/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/eu/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
+share/locale/fa_IR/
+share/locale/fa_IR/LC_MESSAGES/
+share/locale/fa_IR/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/fr/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/he/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
 share/locale/hi/LC_MESSAGES/com.github.johnfactotum.Foliate.mo
