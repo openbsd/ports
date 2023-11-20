@@ -21,6 +21,8 @@ COMPILER =	base-clang ports-gcc
 
 # make sure we dont pickup minizip from ports as its not the same
 CONFIGURE_ARGS+=-DASSIMP_BUILD_MINIZIP:bool=true
+# arm64 emits a warning about unaligned access
+CONFIGURE_ARGS+=-DASSIMP_WARNINGS_AS_ERRORS:bool=false
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/boost
