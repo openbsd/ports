@@ -1,5 +1,4 @@
 COMMENT		= minimal set of libevedev functions for Wayland on OpenBSD
-UNLINKED 	= wayland
 
 V		= 20231111
 DISTNAME	= libevdev-openbsd-$V

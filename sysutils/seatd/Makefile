@@ -1,6 +1,5 @@
 COMMENT	=	minimal seat management daemon and universal library
 
-UNLINKED =	wayland
 V =		0.8.0
 DISTNAME =	seatd-$V
 CATEGORIES =	sysutils

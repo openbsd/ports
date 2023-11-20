@@ -1,5 +1,4 @@
 COMMENT =	modular Wayland compositor library
-UNLINKED 	= wayland
 
 V =		20231108
 PKGNAME =	wlroots-$V
