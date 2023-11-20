@@ -12,7 +12,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
                       : Args.getLastArg(options::OPT_mbranch_protection_EQ);
 -  if (!A)
 +  if (!A) {
-+    if (Triple.isOSOpenBSD()) {
++    if (Triple.isOSOpenBSD() && isAArch64) {
 +      CmdArgs.push_back("-msign-return-address=non-leaf");
 +      CmdArgs.push_back("-msign-return-address-key=a_key");
 +      CmdArgs.push_back("-mbranch-target-enforce");
@@ -30,7 +30,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
            << A->getSpelling() << Scope;
      Key = "a_key";
 -    IndirectBranches = false;
-+    if (Triple.isOSOpenBSD())
++    if (Triple.isOSOpenBSD() && isAArch64)
 +      IndirectBranches = true;
 +    else
 +      IndirectBranches = false;
