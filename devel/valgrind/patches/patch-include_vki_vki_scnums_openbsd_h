@@ -1,6 +1,6 @@
 --- include/vki/vki-scnums-openbsd.h.orig
 +++ include/vki/vki-scnums-openbsd.h
-@@ -0,0 +1,269 @@
+@@ -0,0 +1,265 @@
 +
 +/*
 +   This file is part of Valgrind, a dynamic binary instrumentation
@@ -31,12 +31,9 @@
 +#define __VKI_UNISTD_OPENBSD_H
 +
 +#define VG_OPENBSD_SYSCALL_STD	0
-+#define VG_OPENBSD_SYSCALL0	1
-+#define VG_OPENBSD_SYSCALL198	2
 +
 +// From sys/syscall.h
 +
-+#define	__NR_syscall		0
 +#define	__NR_exit		1
 +#define	__NR_fork		2
 +#define	__NR_read		3
@@ -200,7 +197,6 @@
 +#define	__NR_getrlimit		194
 +#define	__NR_setrlimit		195
 +#define	__NR_pad_mmap		197
-+#define	__NR___syscall		198
 +#define	__NR_pad_lseek		199
 +#define	__NR_pad_truncate	200
 +#define	__NR_pad_ftruncate	201

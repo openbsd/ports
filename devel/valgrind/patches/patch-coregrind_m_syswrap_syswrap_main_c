@@ -18,17 +18,12 @@
     Int real_syscallno;
  #  endif
  #  if defined(VGO_linux)
-@@ -369,6 +369,17 @@
+@@ -369,6 +369,12 @@
              real_syscallno, &tst->arch.vex,
              syscall_mask, &saved, sizeof(vki_sigset_t)
           );
 +#  elif defined(VGO_openbsd)
-+   if (tst->arch.vex.guest_SC_CLASS == VG_OPENBSD_SYSCALL0)
-+      real_syscallno = __NR_syscall;
-+   else if (tst->arch.vex.guest_SC_CLASS == VG_OPENBSD_SYSCALL198)
-+      real_syscallno = __NR___syscall;
-+   else
-+      real_syscallno = syscallno;
++   real_syscallno = syscallno;
 +   err = ML_(do_syscall_for_client_WRK)(
 +            real_syscallno, &tst->arch.vex,
 +            syscall_mask, &saved, sizeof(vki_sigset_t)
@@ -36,7 +31,7 @@
  #  elif defined(VGO_darwin)
     switch (VG_DARWIN_SYSNO_CLASS(syscallno)) {
        case VG_DARWIN_SYSCALL_CLASS_UNIX:
-@@ -623,6 +634,153 @@
+@@ -623,6 +629,112 @@
        canonical->arg8  = stack[2];
     }
  
@@ -117,23 +112,8 @@
 +   VexGuestX86State* gst = (VexGuestX86State*)gst_vanilla;
 +   UWord *stack = (UWord *)gst->guest_ESP;
 +
-+   // OpenBSD supports different calling conventions
-+   switch (gst->guest_EAX) {
-+   case __NR_syscall:
-+      canonical->class = VG_OPENBSD_SYSCALL0;
-+      canonical->sysno = stack[1];
-+      stack += 1;
-+      break;
-+   case __NR___syscall:
-+      canonical->class = VG_OPENBSD_SYSCALL198;
-+      canonical->sysno = stack[1];
-+      stack += 2;
-+      break;
-+   default:
-+      canonical->class = 0;
-+      canonical->sysno = gst->guest_EAX;
-+      break;
-+   }
++   canonical->class = 0;
++   canonical->sysno = gst->guest_EAX;
 +   // stack[0] is a (fake) return address
 +   canonical->arg1  = stack[1];
 +   canonical->arg2  = stack[2];
@@ -148,49 +128,23 @@
 +   VexGuestAMD64State* gst = (VexGuestAMD64State*)gst_vanilla;
 +   UWord *stack = (UWord *)gst->guest_RSP;
 +
-+   // OpenBSD supports different calling conventions
-+   switch (gst->guest_RAX) {
-+   case __NR_syscall:
-+      canonical->klass = VG_OPENBSD_SYSCALL0;
-+      canonical->sysno = gst->guest_RDI;
-+      break;
-+   case __NR___syscall:
-+      canonical->klass = VG_OPENBSD_SYSCALL198;
-+      canonical->sysno = gst->guest_RDI;
-+      break;
-+   default:
-+      canonical->klass = 0;
-+      canonical->sysno = gst->guest_RAX;
-+      break;
-+   }
-+   // stack[0] is a (fake) return address
-+   if (canonical->klass != VG_OPENBSD_SYSCALL0 && canonical->klass != VG_OPENBSD_SYSCALL198) {
-+      // stack[0] is return address
-+      canonical->arg1  = gst->guest_RDI;
-+      canonical->arg2  = gst->guest_RSI;
-+      canonical->arg3  = gst->guest_RDX;
-+      canonical->arg4  = gst->guest_R10;
-+      canonical->arg5  = gst->guest_R8;
-+      canonical->arg6  = gst->guest_R9;
-+      canonical->arg7  = stack[1];
-+      canonical->arg8  = stack[2];
-+   } else {
-+      // stack[0] is return address
-+      canonical->arg1  = gst->guest_RSI;
-+      canonical->arg2  = gst->guest_RDX;
-+      canonical->arg3  = gst->guest_R10;
-+      canonical->arg4  = gst->guest_R8;
-+      canonical->arg5  = gst->guest_R9;
-+      canonical->arg6  = stack[1];
-+      canonical->arg7  = stack[2];
-+      canonical->arg8  = stack[3];
-+   }
++   canonical->klass = 0;
++   canonical->sysno = gst->guest_RAX;
++   // stack[0] is return address
++   canonical->arg1  = gst->guest_RDI;
++   canonical->arg2  = gst->guest_RSI;
++   canonical->arg3  = gst->guest_RDX;
++   canonical->arg4  = gst->guest_R10;
++   canonical->arg5  = gst->guest_R8;
++   canonical->arg6  = gst->guest_R9;
++   canonical->arg7  = stack[1];
++   canonical->arg8  = stack[2];
 +
 +
  #elif defined(VGP_arm_linux)
     VexGuestARMState* gst = (VexGuestARMState*)gst_vanilla;
     canonical->sysno = gst->guest_R7;
-@@ -1015,6 +1173,79 @@
+@@ -1015,6 +1127,36 @@
         stack[2]       = canonical->arg8;
     }
  
@@ -199,21 +153,7 @@
 +   UWord *stack = (UWord *)gst->guest_ESP;
 +
 +   // stack[0] is a (fake) return address
-+   switch (canonical->klass) {
-+   case VG_OPENBSD_SYSCALL0:
-+      gst->guest_EAX = __NR_syscall;
-+      stack[1] = canonical->sysno;
-+      stack++;
-+      break;
-+   case VG_OPENBSD_SYSCALL198:
-+      gst->guest_EAX = __NR___syscall;
-+      stack[1] = canonical->sysno;
-+      stack += 2;
-+      break;
-+   default:
-+      gst->guest_EAX = canonical->sysno;
-+      break;
-+   }
++   gst->guest_EAX = canonical->sysno;
 +   stack[1] = canonical->arg1;
 +   stack[2] = canonical->arg2;
 +   stack[3] = canonical->arg3;
@@ -228,49 +168,20 @@
 +   UWord *stack = (UWord *)gst->guest_RSP;
 +
 +   // stack[0] is a (fake) return address
-+   switch (canonical->klass) {
-+   case VG_OPENBSD_SYSCALL0:
-+      gst->guest_RAX = __NR_syscall;
-+      gst->guest_RDI = canonical->sysno;
-+      gst->guest_RSI = canonical->arg1;
-+      gst->guest_RDX = canonical->arg2;
-+      gst->guest_R10 = canonical->arg3;
-+      gst->guest_R8  = canonical->arg4;
-+      gst->guest_R9  = canonical->arg5;
-+      stack[1]       = canonical->arg6;
-+      stack[2]       = canonical->arg7;
-+      stack[3]       = canonical->arg8;
-+      break;
-+   case VG_OPENBSD_SYSCALL198:
-+      gst->guest_RAX = __NR___syscall;
-+      gst->guest_RDI = canonical->sysno;
-+      gst->guest_RSI = canonical->arg1;
-+      gst->guest_RDX = canonical->arg2;
-+      gst->guest_R10 = canonical->arg3;
-+      gst->guest_R8  = canonical->arg4;
-+      gst->guest_R9  = canonical->arg5;
-+      stack[1]       = canonical->arg6;
-+      stack[2]       = canonical->arg7;
-+      stack[3]       = canonical->arg8;
-+      break;
-+   default:
-+      gst->guest_RAX = canonical->sysno;
-+      gst->guest_RDI = canonical->arg1;
-+      gst->guest_RSI = canonical->arg2;
-+      gst->guest_RDX = canonical->arg3;
-+      gst->guest_R10 = canonical->arg4;
-+      gst->guest_R8  = canonical->arg5;
-+      gst->guest_R9  = canonical->arg6;
-+      stack[1]       = canonical->arg7;
-+      stack[2]       = canonical->arg8;
-+      break;
-+   }
-+
++   gst->guest_RAX = canonical->sysno;
++   gst->guest_RDI = canonical->arg1;
++   gst->guest_RSI = canonical->arg2;
++   gst->guest_RDX = canonical->arg3;
++   gst->guest_R10 = canonical->arg4;
++   gst->guest_R8  = canonical->arg5;
++   gst->guest_R9  = canonical->arg6;
++   stack[1]       = canonical->arg7;
++   stack[2]       = canonical->arg8;
 +
  #elif defined(VGP_arm_linux)
     VexGuestARMState* gst = (VexGuestARMState*)gst_vanilla;
     gst->guest_R7 = canonical->sysno;
-@@ -1209,6 +1440,15 @@
+@@ -1209,6 +1351,15 @@
                          (flags & 1) != 0 ? True : False);
     canonical->what = SsComplete;
  
@@ -286,7 +197,7 @@
  #  elif defined(VGP_arm_linux)
     VexGuestARMState* gst = (VexGuestARMState*)gst_vanilla;
     canonical->sres = VG_(mk_SysRes_arm_linux)( gst->guest_R0 );
-@@ -1248,6 +1488,14 @@
+@@ -1248,6 +1399,14 @@
                          (flags & 1) != 0 ? True : False);
     canonical->what = SsComplete;
  
@@ -301,7 +212,7 @@
  #  elif defined(VGP_x86_darwin)
     /* duplicates logic in m_signals.VG_UCONTEXT_SYSCALL_SYSRES */
     VexGuestX86State* gst = (VexGuestX86State*)gst_vanilla;
-@@ -1451,7 +1699,7 @@
+@@ -1451,7 +1610,7 @@
     VG_TRACK( post_reg_write, Vg_CoreSysCall, tid, 
               OFFSET_arm64_X0, sizeof(UWord) );
  
@@ -310,7 +221,7 @@
     VexGuestX86State* gst = (VexGuestX86State*)gst_vanilla;
     vg_assert(canonical->what == SsComplete);
     if (sr_isError(canonical->sres)) {
-@@ -1470,13 +1718,18 @@
+@@ -1470,13 +1629,18 @@
     VG_TRACK( post_reg_write, Vg_CoreSysCall, tid,
        offsetof(VexGuestX86State, guest_CC_DEP1), sizeof(UInt) );
   
@@ -330,7 +241,7 @@
        gst->guest_RAX = sr_Res(canonical->sres);
        gst->guest_RDX = sr_ResHI(canonical->sres);
        LibVEX_GuestAMD64_put_rflag_c(0, gst);
-@@ -1719,7 +1972,7 @@
+@@ -1719,7 +1883,7 @@
     layout->o_arg7   = OFFSET_ppc64_GPR9;
     layout->uu_arg8  = -1; /* impossible value */
  
@@ -339,7 +250,7 @@
     layout->o_sysno  = OFFSET_x86_EAX;
     // syscall parameters are on stack in C convention
     layout->s_arg1   = sizeof(UWord) * 1;
-@@ -1731,7 +1984,7 @@
+@@ -1731,7 +1895,7 @@
     layout->s_arg7   = sizeof(UWord) * 7;
     layout->s_arg8   = sizeof(UWord) * 8;
   
@@ -348,7 +259,7 @@
     layout->o_sysno  = OFFSET_amd64_RAX;
     layout->o_arg1   = OFFSET_amd64_RDI;
     layout->o_arg2   = OFFSET_amd64_RSI;
-@@ -1923,6 +2176,9 @@
+@@ -1923,6 +2087,9 @@
  #  elif defined(VGO_freebsd)
     sys = ML_(get_freebsd_syscall_entry)( syscallno );
  
@@ -358,7 +269,7 @@
  #  elif defined(VGO_darwin)
     Int idx = VG_DARWIN_SYSNO_INDEX(syscallno);
  
-@@ -2564,7 +2820,7 @@
+@@ -2564,7 +2731,7 @@
  /* These are addresses within ML_(do_syscall_for_client_WRK).  See
     syscall-$PLAT.S for details. 
  */
@@ -367,7 +278,7 @@
    extern const Addr ML_(blksys_setup);
    extern const Addr ML_(blksys_restart);
    extern const Addr ML_(blksys_complete);
-@@ -2745,7 +3001,7 @@
+@@ -2745,7 +2912,7 @@
        vg_assert(p[0] == 0x01 && p[1] == 0x00 && p[2] == 0x00 && p[3] == 0xD4);
     }
  
@@ -376,7 +287,7 @@
     /* XXX: we support different syscall methods. */
     arch->vex.guest_EIP -= 2;             // sizeof(int $0x80)
  
-@@ -2765,7 +3021,7 @@
+@@ -2765,7 +2932,7 @@
        vg_assert(p[0] == 0xcd && p[1] == 0x80);
     }
  
@@ -385,7 +296,7 @@
     /* XXX: we support different syscall methods. */
     arch->vex.guest_RIP -= 2;             // sizeof(syscall)
  
-@@ -3035,7 +3291,7 @@
+@@ -3035,7 +3202,7 @@
     th_regs = &tst->arch;
     sci     = & syscallInfo[tid];
  
@@ -394,7 +305,7 @@
     outside_range
        = ip < ML_(blksys_setup) || ip >= ML_(blksys_finished);
     in_setup_to_restart
-@@ -3057,10 +3313,20 @@
+@@ -3057,10 +3224,20 @@
        = (ip >= ML_(blksys_complete) && ip < ML_(blksys_committed)) ||
        ((ip+8) == ML_(blksys_complete));
  #else
