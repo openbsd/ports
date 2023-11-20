@@ -1,0 +1,25 @@
+Clang 16 support
+
+Index: common/autoconf/flags.m4
+--- common/autoconf/flags.m4.orig
++++ common/autoconf/flags.m4
+@@ -443,6 +443,19 @@ AC_DEFUN_ONCE([FLAGS_SETUP_COMPILER_FLAGS_FOR_JDK],
+     $2CXXFLAGS_JDK="${$2CXXFLAGS_JDK} ${$2CXXSTD_CXXFLAG}"
+     $2JVM_CFLAGS="${$2JVM_CFLAGS} ${$2CXXSTD_CXXFLAG}"
+     AC_SUBST($2CXXSTD_CXXFLAG)
++  elif test "x$TOOLCHAIN_TYPE" = xclang; then
++    LEGACY_EXTRA_CFLAGS="$LEGACY_EXTRA_CFLAGS -fstack-protector"
++    LEGACY_EXTRA_CXXFLAGS="$LEGACY_EXTRA_CXXFLAGS -fstack-protector"
++    if test "x$OPENJDK_TARGET_OS" != xmacosx; then
++      LDFLAGS_JDK="$LDFLAGS_JDK -Wl,-z,relro"
++      LEGACY_EXTRA_LDFLAGS="$LEGACY_EXTRA_LDFLAGS -Wl,-z,relro"
++    fi
++    $2CXXSTD_CXXFLAG="-std=c++11"
++    FLAGS_CXX_COMPILER_CHECK_ARGUMENTS([[$]$2CXXSTD_CXXFLAG -Werror],
++                                       [], [$2CXXSTD_CXXFLAG=""])
++    $2CXXFLAGS_JDK="${$2CXXFLAGS_JDK} ${$2CXXSTD_CXXFLAG}"
++    $2JVM_CFLAGS="${$2JVM_CFLAGS} ${$2CXXSTD_CXXFLAG}"
++    AC_SUBST($2CXXSTD_CXXFLAG)
+   fi
+ 
+   if test "x$CFLAGS" != "x${ADDED_CFLAGS}"; then

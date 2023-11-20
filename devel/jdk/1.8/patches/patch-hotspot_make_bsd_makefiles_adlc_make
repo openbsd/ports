@@ -1,0 +1,14 @@
+Clang 16 support
+
+Index: hotspot/make/bsd/makefiles/adlc.make
+--- hotspot/make/bsd/makefiles/adlc.make.orig
++++ hotspot/make/bsd/makefiles/adlc.make
+@@ -59,7 +59,7 @@ Src_Dirs_I += $(GAMMADIR)/src/share/vm/adlc $(GENERATE
+ INCLUDES += $(Src_Dirs_I:%=-I%)
+ 
+ # set flags for adlc compilation
+-CXXFLAGS = $(SYSDEFS) $(INCLUDES)
++CXXFLAGS = $(SYSDEFS) $(INCLUDES) $(CXXSTD_CXXFLAG)
+ 
+ # Force assertions on.
+ CXXFLAGS += -DASSERT
