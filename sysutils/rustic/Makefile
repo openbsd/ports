@@ -5,7 +5,7 @@ COMMENT =		fast, encrypted, deduplicated backups
 
 GH_ACCOUNT =		rustic-rs
 GH_PROJECT =		rustic
-GH_TAGNAME =		v0.6.0
+GH_TAGNAME =		v0.6.1
 
 CATEGORIES =		sysutils
 
@@ -15,8 +15,6 @@ MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODCARGO_WANTLIB} m zstd
-
-FIX_CRLF_FILES =	modcargo-crates/rustic_core-0.1.1/src/error.rs
 
 MODULES =		devel/cargo
 MODCARGO_RUSTFLAGS =	-L${PREFIX}/lib
