@@ -39,7 +39,6 @@
      SUBDIR += cyrus-sasl2,pgsql
      SUBDIR += cyrus-sasl2,sqlite3
      SUBDIR += dante
-     SUBDIR += dicepassc
      SUBDIR += dirb
      SUBDIR += distorm3
      SUBDIR += dropbear

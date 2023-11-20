@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1593 2023/11/17 20:40:25 sdk Exp $
+# $OpenBSD: Quirks.pm,v 1.1594 2023/11/20 11:53:55 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1897,6 +1897,7 @@ setup_obsolete_reason(
 	61 => 'xprobe2',
 	3 => 'minbif',
 	3 => 'atlas',
+	62 => 'dicepassc',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1975,6 +1976,7 @@ my $obsolete_message = {
 	59 => "unmaintained/outdated for years, no consumers in over a decade, questionable security sensitive code",
 	60 => "unmaintained/outdated for years, setuid python 2 scripts, not recommended",
 	61 => "long dead upstream/unmaintained, fails to build with clang 16",
+	62 => "not maintained, upstream suggests using passphraseme or pwgen",
 };
 
 # ->is_base_system($handle, $state):
