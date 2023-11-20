@@ -1,13 +1,12 @@
 Index: lib/openssl_compat.h
 --- lib/openssl_compat.h.orig
 +++ lib/openssl_compat.h
-@@ -120,7 +120,8 @@ static inline void EVP_CIPHER_CTX_free(EVP_CIPHER_CTX 
+@@ -16,7 +16,7 @@
  
- #endif
+ #include <openssl/opensslv.h>
  
 -#if OPENSSL_VERSION_NUMBER < 0x10101000L || defined LIBRESSL_VERSION_NUMBER
-+#if OPENSSL_VERSION_NUMBER < 0x10101000L || \
-+    (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x3040000fL)
++#if OPENSSL_VERSION_NUMBER < 0x10101000L
  
  static inline int
  EVP_DigestSign(EVP_MD_CTX *ctx, unsigned char *sigret,
