@@ -10,7 +10,7 @@ Index: src/syscall/zsyscall_openbsd_arm64.s
  TEXT ·libc_pipe2_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_pipe2(SB)
  TEXT ·libc_accept4_trampoline(SB),NOSPLIT,$0-0
-@@ -207,6 +209,8 @@ TEXT ·libc_mmap_trampoline(SB),NOSPLIT,$0-0
+@@ -207,10 +209,10 @@ TEXT ·libc_mmap_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_mmap(SB)
  TEXT ·libc_munmap_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_munmap(SB)
@@ -18,8 +18,12 @@ Index: src/syscall/zsyscall_openbsd_arm64.s
 +	JMP	libc_getfsstat(SB)
  TEXT ·libc_utimensat_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_utimensat(SB)
- TEXT ·libc_syscall_trampoline(SB),NOSPLIT,$0-0
-@@ -219,8 +223,6 @@ TEXT ·libc_sysctl_trampoline(SB),NOSPLIT,$0-0
+-TEXT ·libc_syscall_trampoline(SB),NOSPLIT,$0-0
+-	JMP	libc_syscall(SB)
+ TEXT ·libc_lseek_trampoline(SB),NOSPLIT,$0-0
+ 	JMP	libc_lseek(SB)
+ TEXT ·libc_getcwd_trampoline(SB),NOSPLIT,$0-0
+@@ -219,8 +221,6 @@ TEXT ·libc_sysctl_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_sysctl(SB)
  TEXT ·libc_fork_trampoline(SB),NOSPLIT,$0-0
  	JMP	libc_fork(SB)
