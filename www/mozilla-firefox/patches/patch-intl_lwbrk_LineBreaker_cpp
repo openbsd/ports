@@ -1,5 +1,7 @@
 https://bugzilla.mozilla.org/show_bug.cgi?id=1862601
-https://hg.mozilla.org/try/rev/d5f3b0c4f08a426ce00a153c04e177eecb6820e2
+https://bugzilla.mozilla.org/show_bug.cgi?id=1859752
+https://hg.mozilla.org/integration/autoland/rev/0e7eefda2425
+ICU 74 backed out from 121 cf https://bugzilla.mozilla.org/show_bug.cgi?id=1864612
 
 Index: intl/lwbrk/LineBreaker.cpp
 --- intl/lwbrk/LineBreaker.cpp.orig
