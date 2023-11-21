@@ -10,7 +10,7 @@ Index: ui/base/x/x11_cursor_factory.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -62,7 +62,7 @@ scoped_refptr<PlatformCursor> X11CursorFactory::Create
+@@ -70,7 +70,7 @@ scoped_refptr<PlatformCursor> X11CursorFactory::Create
  }
  
  void X11CursorFactory::ObserveThemeChanges() {

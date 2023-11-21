@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.10.118
-REVISION=		0
+V=			2023.11.119
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -21,7 +20,7 @@ DISTFILES.u= 		libudev-openbsd-20221108-c3330efd.tar.gz
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=		${IRIDIUM_DISTFILES}
 
-PATCHFILES.u=		disable-privacy-sandbox-d1f177cd0006b5c4bf8ce66d9084498085f35843.patch
+PATCHFILES.u=		disable-privacy-sandbox-13fc15e4ec454e3397f11bdc1bf2627c121a37e8.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -42,11 +41,8 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://downloads.iridiumbrowser.de/source/
 SITES.u=	http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5
+MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No
-
-COMPILER =		ports-clang
-MODCLANG_VERSION =	16
 
 MODPY_RUNDEP=		No
 

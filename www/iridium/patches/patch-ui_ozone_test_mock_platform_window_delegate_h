@@ -9,4 +9,4 @@ Index: ui/ozone/test/mock_platform_window_delegate.h
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    MOCK_METHOD1(OnWindowTiledStateChanged,
                 void(WindowTiledEdges new_tiled_edges));
- #endif
+   MOCK_METHOD0(OnFullscreenModeChanged, void());
