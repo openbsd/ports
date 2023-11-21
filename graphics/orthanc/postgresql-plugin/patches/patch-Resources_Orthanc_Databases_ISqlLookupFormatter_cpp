@@ -1,0 +1,12 @@
+Index: Resources/Orthanc/Databases/ISqlLookupFormatter.cpp
+--- Resources/Orthanc/Databases/ISqlLookupFormatter.cpp.orig
++++ Resources/Orthanc/Databases/ISqlLookupFormatter.cpp
+@@ -50,7 +50,7 @@
+ #include "DatabaseConstraint.h"
+ 
+ #include <boost/lexical_cast.hpp>
+-
++#include <cassert>
+ 
+ namespace Orthanc
+ {

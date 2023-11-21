@@ -1,0 +1,14 @@
+Fix build with boost 1.84
+
+Index: OrthancServer/Sources/Search/ISqlLookupFormatter.cpp
+--- OrthancServer/Sources/Search/ISqlLookupFormatter.cpp.orig
++++ OrthancServer/Sources/Search/ISqlLookupFormatter.cpp
+@@ -39,7 +39,7 @@
+ #include "DatabaseConstraint.h"
+ 
+ #include <boost/lexical_cast.hpp>
+-
++#include <cassert>
+ 
+ namespace Orthanc
+ {

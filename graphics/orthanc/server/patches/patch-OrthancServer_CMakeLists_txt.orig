@@ -1,0 +1,72 @@
+Index: OrthancServer/CMakeLists.txt
+--- OrthancServer/CMakeLists.txt.orig
++++ OrthancServer/CMakeLists.txt
+@@ -482,14 +482,13 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
+ 
+   set_target_properties(
+     ServeFolders PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libServeFolders.so"
+     )
+ 
+   install(
+     TARGETS ServeFolders
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -525,14 +524,13 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
+ 
+   set_target_properties(
+     ModalityWorklists PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libModalityWorklists.so"
+     )
+ 
+   install(
+     TARGETS ModalityWorklists
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -608,7 +606,7 @@ if (ENABLE_PLUGINS AND BUILD_CONNECTIVITY_CHECKS)
+     install(FILES
+       ${CMAKE_CURRENT_BINARY_DIR}/${Prefix}ConnectivityChecks${Suffix}
+       ${CMAKE_CURRENT_BINARY_DIR}/${Prefix}ConnectivityChecks${Suffix}.${ORTHANC_VERSION}
+-      DESTINATION "share/orthanc/plugins")
++      DESTINATION "libexec/orthanc/plugins")
+   endif()
+ endif()
+ 
+@@ -678,7 +676,7 @@ if (ENABLE_PLUGINS AND BUILD_DELAYED_DELETION)
+     install(FILES
+       ${CMAKE_CURRENT_BINARY_DIR}/${Prefix}DelayedDeletion${Suffix}
+       ${CMAKE_CURRENT_BINARY_DIR}/${Prefix}DelayedDeletion${Suffix}.${ORTHANC_VERSION}
+-      DESTINATION "share/orthanc/plugins")
++      DESTINATION "libexec/orthanc/plugins")
+   endif()
+ endif()
+ 
+@@ -715,14 +713,13 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
+   
+   set_target_properties(
+     Housekeeper PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libHousekeeper.so"
+     )
+   
+   install(
+     TARGETS Housekeeper
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
