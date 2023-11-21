@@ -1,12 +1,9 @@
 Use standard shared library versioning.
 
-Do not remove static library after building.  
-This was also a race if MAKE_JOBS > 1.
-
 Index: gettext-tools/src/Makefile.in
 --- gettext-tools/src/Makefile.in.orig
 +++ gettext-tools/src/Makefile.in
-@@ -3936,7 +3936,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
+@@ -3949,7 +3949,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().
@@ -15,12 +12,3 @@ Index: gettext-tools/src/Makefile.in
  	../gnulib-lib/libgettextlib.la $(LTLIBUNISTRING) \
  	$(LT_LIBTEXTSTYLE) @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined \
  	$(am__append_3) $(am__append_5) $(am__append_7)
-@@ -5398,7 +5398,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-libLTLIB
- @USE_INSTALLED_LIBTEXTSTYLE_FALSE@	  $(MAKE) install-nobase_includeHEADERS install-nobase_nodist_includeHEADERS includedir="$$here"
- 
- # No need to install libgettextsrc.a, except on AIX.
--install-exec-hook: install-exec-clean
-+install-exec-hook:
- install-exec-clean:
- 	case "@host_os@" in \
- 	  aix*) ;; \
