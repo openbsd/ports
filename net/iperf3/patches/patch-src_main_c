@@ -3,28 +3,16 @@ Add pledge and unveil
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -59,6 +59,15 @@ main(int argc, char **argv)
- {
-     struct iperf_test *test;
+@@ -122,6 +122,51 @@ sigend_handler(int sig)
+     longjmp(sigend_jmp_buf, 1);
+ }
  
++static void
++setup_pledge(struct iperf_test *test)
++{
 +#if defined(__OpenBSD__)
 +    int needwr = 0;
 +
-+    if (pledge("stdio tmppath rpath cpath wpath inet dns unveil", NULL) == -1) {
-+	fprintf(stderr, "pledge: %s\n", strerror(errno));
-+	exit(1);
-+    }
-+#endif
-+
-     // XXX: Setting the process affinity requires root on most systems.
-     //      Is this a feature we really need?
- #ifdef TEST_PROC_AFFINITY
-@@ -104,6 +113,45 @@ main(int argc, char **argv)
-         usage();
-         exit(1);
-     }
-+
-+#if defined(__OpenBSD__)
 +    /* Check for options which require filesystem access */
 +    if (test->diskfile_name) {
 +	if (unveil(test->diskfile_name, "crw") == -1) {
@@ -62,6 +50,24 @@ Index: src/main.c
 +	exit(1);
 +    }
 +#endif
- 
-     if (run(test) < 0)
-         iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
++}
++
+ /**************************************************************************/
+ static int
+ run(struct iperf_test *test)
+@@ -144,6 +189,7 @@ run(struct iperf_test *test)
+ 		    iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
+ 		}
+ 	    }
++	    setup_pledge(test);
+ 	    if (iperf_create_pidfile(test) < 0) {
+ 		i_errno = IEPIDFILE;
+ 		iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
+@@ -176,6 +222,7 @@ run(struct iperf_test *test)
+ 	    iperf_delete_pidfile(test);
+             break;
+ 	case 'c':
++	    setup_pledge(test);
+ 	    if (iperf_create_pidfile(test) < 0) {
+ 		i_errno = IEPIDFILE;
+ 		iperf_errexit(test, "error - %s", iperf_strerror(i_errno));
