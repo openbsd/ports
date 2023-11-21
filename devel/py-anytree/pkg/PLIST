@@ -1,18 +1,18 @@
 @pkgpath devel/py-anytree
-bin/ebt
 lib/python${MODPY_VERSION}/site-packages/anytree/
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/anytree/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}cachedsearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}cachedsearch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}dotexport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}dotexport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}render.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}search.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}walker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}walker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/cachedsearch.py
+lib/python${MODPY_VERSION}/site-packages/anytree/config.py
 lib/python${MODPY_VERSION}/site-packages/anytree/dotexport.py
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/__init__.py
@@ -36,9 +37,12 @@ lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}dotexp
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}dotexporter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}jsonexporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}jsonexporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}mermaidexporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/anytree/exporter/${MODPY_PYCACHE}mermaidexporter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/dictexporter.py
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/dotexporter.py
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/jsonexporter.py
+lib/python${MODPY_VERSION}/site-packages/anytree/exporter/mermaidexporter.py
 lib/python${MODPY_VERSION}/site-packages/anytree/importer/
 lib/python${MODPY_VERSION}/site-packages/anytree/importer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anytree/importer/${MODPY_PYCACHE}/
@@ -82,6 +86,8 @@ lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}anynode.${
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}anynode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}lightnodemixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}lightnodemixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}nodemixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -94,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}util.${MOD
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/anynode.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/anytree/node/lightnodemixin.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/node.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/nodemixin.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/symlinknode.py
