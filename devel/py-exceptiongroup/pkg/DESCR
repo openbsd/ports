@@ -1,0 +1,2 @@
+This is a backport of the BaseExceptionGroup and ExceptionGroup
+classes from Python 3.11.
