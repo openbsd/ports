@@ -1,7 +1,5 @@
 @option is-branch
 @conflict puppet-*
-@pkgpath sysutils/ruby-puppet/6
-@pkgpath sysutils/ruby-puppet/8
 @newgroup _puppet:580
 @newuser _puppet:580:580::Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppetlabs/puppet/*
