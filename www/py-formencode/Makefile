@@ -9,7 +9,7 @@ CATEGORIES =		www
 
 HOMEPAGE =		https://www.formencode.org/
 
-# PSF
+# MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
