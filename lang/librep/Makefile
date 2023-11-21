@@ -30,6 +30,11 @@ MAKE_FLAGS=		rep_LIBTOOL=${LIBTOOL}
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-static \
 			--with-aclocaldir=${PREFIX}/share/aclocal
+.if ${MACHINE_ARCH} == hppa
+CONFIGURE_ARGS+=	--with-stack-direction=+1
+.else
+CONFIGURE_ARGS+=	--with-stack-direction=-1
+.endif
 
 # -pthread is needed for opening libglib-2.0:
 # rep:/usr/local/lib/libglib-2.0.so.3200.0: undefined symbol 'pthread_mutex_trylock'
