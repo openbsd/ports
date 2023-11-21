@@ -6,6 +6,7 @@ COMMENT-mapi=	gromox MAPI extensions for PHP
 
 V=		2.17
 DISTNAME=	gromox-${V}
+REVISION-main=	0
 
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
@@ -51,9 +52,10 @@ WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
+# can't use MODPY_FLAVOR, doesn't pull in MODULES=lang/python
 RUN_DEPENDS-main=	textproc/catdoc \
-			sysutils/py-daemon${MODPY_FLAVOR} \
-			www/py-jwt${MODPY_FLAVOR}
+			sysutils/py-daemon,python3 \
+			www/py-jwt,python3
 LIB_DEPENDS-main= 	archivers/zstd \
 			databases/mariadb \
 			databases/openldap \
