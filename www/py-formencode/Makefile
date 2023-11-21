@@ -3,7 +3,7 @@ COMMENT =		HTML form validation, generation, and conversion
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -21,6 +21,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-country${MODPY_FLAVOR} \
 			net/py-dnspython${MODPY_FLAVOR}
 
