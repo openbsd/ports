@@ -1,22 +1,23 @@
-COMMENT=	perl multi-level hash/array DBM that supports transactions
+COMMENT =	perl multi-level hash/array DBM that supports transactions
 
-DISTNAME =	DBM-Deep-2.0016
-REVISION =	0
+DISTNAME =	DBM-Deep-2.0019
 
-CATEGORIES=	databases
+CATEGORIES =	databases
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-MODULES=	cpan
-PKG_ARCH=	*
+MODULES =		cpan
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Test-Deep \
-		devel/p5-Test-Warn
-TEST_DEPENDS=	devel/p5-Test-Exception
+TEST_DEPENDS =		devel/p5-Test-Deep>=0.095 \
+			devel/p5-Test-Exception>=0.21 \
+			devel/p5-Test-Warn>=0.08
 
-MAKE_ENV=	LONG_TESTS=Yes \
-		TEST_POD=Yes
+MAKE_ENV =		LONG_TESTS=Yes \
+			TEST_POD=Yes
+
+CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
