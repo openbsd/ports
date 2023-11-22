@@ -13,6 +13,8 @@ MODXFCE_ICON_CACHE=	Yes
 LIB_DEPENDS=	x11/xfce4/libxfce4ui \
 		x11/xfce4/xfconf \
 		devel/vte3
+CONFIGURE_ARGS=	--disable-gtk-layer-shell \
+		--disable-wayland
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
