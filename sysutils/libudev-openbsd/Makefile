@@ -27,6 +27,10 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+# uses -std=c11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += pthread
 
 MODULES =	devel/meson
