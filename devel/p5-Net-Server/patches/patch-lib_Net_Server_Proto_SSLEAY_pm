@@ -1,9 +1,21 @@
+LibreSSL has no engine functions anymore.  Do not use them to check
+whether loading the Net::SSLeay module was successful.
+
 Non blocking SSL does not use read or write properly.  With TLS 1.2
 it works by accident.  Do not use TLS 1.3.
 
 Index: lib/Net/Server/Proto/SSLEAY.pm
 --- lib/Net/Server/Proto/SSLEAY.pm.orig
 +++ lib/Net/Server/Proto/SSLEAY.pm
+@@ -27,7 +27,7 @@ use Socket ();
+ BEGIN {
+     eval { require Net::SSLeay; 1 }
+         or warn "Module Net::SSLeay is required for SSLeay.";
+-    for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms ENGINE_load_builtin_engines ENGINE_register_all_complete randomize)) {
++    for my $sub (qw(load_error_strings SSLeay_add_ssl_algorithms randomize)) {
+         Net::SSLeay->can($sub)->();
+     }
+     eval { [Fcntl::F_GETFL(), Fcntl::F_SETFL(), Fcntl::O_NONBLOCK()] } || die "Could not access Fcntl constant while loading ".__PACKAGE__.": $@";
 @@ -153,6 +153,7 @@ sub bind_SSL {
      my $ctx = Net::SSLeay::CTX_new();  $sock->SSLeay_check_fatal("SSLeay bind_SSL CTX_new");
  

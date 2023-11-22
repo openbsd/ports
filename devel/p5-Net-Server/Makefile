@@ -1,6 +1,7 @@
 COMMENT =	extensible Perl internet server
 
 DISTNAME =	Net-Server-2.014
+REVISION =	0
 
 CATEGORIES =	devel net
 
