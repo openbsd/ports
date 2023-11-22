@@ -423,6 +423,7 @@
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
      SUBDIR += py-inflect,python3
+     SUBDIR += py-inflection,python3
      SUBDIR += py-iniconfig,python3
      SUBDIR += py-ini2toml,python3
      SUBDIR += py-iso8601,python3
@@ -490,6 +491,7 @@
      SUBDIR += py-unpaddedbase64,python3
      SUBDIR += py-vobject,python3
      SUBDIR += py-webencodings,python3
+     SUBDIR += py-whatthepatch,python3
      SUBDIR += py-xlrd,python3
      SUBDIR += py-xlwt,python3
      SUBDIR += py-xmldiff		# unflavoured (standalone?) but uses python3
