@@ -1372,6 +1372,7 @@
      SUBDIR += py-codestyle,python3
      SUBDIR += py-colorama,python3
      SUBDIR += py-colorlog,python3
+     SUBDIR += py-comm,python3
      SUBDIR += py-configargparse,python3
      SUBDIR += py-configobj,python3
      SUBDIR += py-constantly,python3
@@ -1395,6 +1396,7 @@
      SUBDIR += py-dispatcher,python3
      SUBDIR += py-distutils-extra,python3
      SUBDIR += py-docopt,python3
+     SUBDIR += py-docstring-to-markdown,python3
      SUBDIR += py-doit			# standalone, uses python3
      SUBDIR += py-dtfabric,python3
      SUBDIR += py-dulwich,python3
@@ -1404,6 +1406,7 @@
      SUBDIR += py-enrich,python3
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-esptool,python3
+     SUBDIR += py-exceptiongroup,python3
      SUBDIR += py-execnet,python3
      SUBDIR += py-executing,python3
      SUBDIR += py-extension-helpers,python3
@@ -1418,6 +1421,7 @@
      SUBDIR += py-flexmock,python3
      SUBDIR += py-flit,python3
      SUBDIR += py-flit_core,python3
+     SUBDIR += py-flit_scm,python3
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
      SUBDIR += py-frozenlist,python3
@@ -1496,6 +1500,7 @@
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
+     SUBDIR += py-nest-asyncio,python3
      SUBDIR += py-nose,python3
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover,python3
@@ -1540,6 +1545,7 @@
      SUBDIR += py-pydantic-compat,python3
      SUBDIR += py-pydocstyle,python3
      SUBDIR += py-pyinotify,python3
+     SUBDIR += py-pylint_venv,python3
      SUBDIR += py-pyls-black,python3
      SUBDIR += py-pyls-spyder,python3
      SUBDIR += py-pyprof2calltree,python3
@@ -1562,6 +1568,7 @@
      SUBDIR += py-rich,python3
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
+     SUBDIR += py-rtree,python3
      SUBDIR += py-rx,python3
      SUBDIR += py-schema,python3
      SUBDIR += py-semantic-version,python3
