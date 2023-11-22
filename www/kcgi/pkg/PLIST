@@ -45,6 +45,7 @@ lib/pkgconfig/kcgi.pc
 @man man/man3/khttp_epoch2str.3
 @man man/man3/khttp_epoch2tms.3
 @man man/man3/khttp_fcgi_free.3
+@man man/man3/khttp_fcgi_getfd.3
 @man man/man3/khttp_fcgi_init.3
 @man man/man3/khttp_fcgi_parse.3
 @man man/man3/khttp_fcgi_test.3

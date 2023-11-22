@@ -1,6 +1,6 @@
 COMMENT =		minimal CGI library for web applications
 
-DISTNAME =		kcgi-0.13.0
+DISTNAME =		kcgi-0.13.1
 CATEGORIES =		www
 
 MAINTAINER =		James Turner <james@calminferno.net>
