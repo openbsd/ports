@@ -1,6 +1,6 @@
 COMMENT =	Perl SSL sockets with IO::Socket interface
 
-DISTNAME =	IO-Socket-SSL-2.083
+DISTNAME =	IO-Socket-SSL-2.084
 
 CATEGORIES =	security
 
@@ -10,6 +10,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
 RUN_DEPENDS =		security/p5-Net-SSLeay>=1.88
 TEST_DEPENDS =		net/p5-IO-Socket-INET6>=2.62 \
 			converters/p5-Net-IDN-Encode \
