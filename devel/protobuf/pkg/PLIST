@@ -1,5 +1,5 @@
 bin/protoc
-@bin bin/protoc-25.0.0
+@bin bin/protoc-${PROTOBUF_VERSION}.0
 include/google/
 include/google/protobuf/
 include/google/protobuf/any.h
