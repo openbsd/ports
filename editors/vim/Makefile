@@ -3,7 +3,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.2112
+V=		9.0.2122
 
 DIST_TUPLE+=	github vim vim v$V . \
 		github vim colorschemes	22986fa2a3d2f7229efd4019fcbca411caa6afbb .
