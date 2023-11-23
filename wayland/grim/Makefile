@@ -12,6 +12,9 @@ PERMIT_PACKAGE = Yes
 
 WRKDIST =	${WRKDIR}/grim-v${V}
 
+COMPILER =      base-clang ports-gcc
+COMPILER_LANGS = c
+
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	wayland/wayland-protocols \

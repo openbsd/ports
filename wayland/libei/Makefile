@@ -16,6 +16,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += epoll-shim
 
 SITES=		https://gitlab.freedesktop.org/libinput/libei/-/archive/${V}/
