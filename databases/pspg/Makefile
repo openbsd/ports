@@ -1,8 +1,6 @@
 COMMENT =	UNIX pager optimized for tabular data
 
-GH_ACCOUNT =	okbob
-GH_PROJECT =	pspg
-GH_TAGNAME =	5.8.0
+DIST_TUPLE =	github okbob pspg 5.8.1 .
 
 CATEGORIES =	databases
 
