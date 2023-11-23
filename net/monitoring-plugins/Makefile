@@ -10,7 +10,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.3.5
-REVISION-main=	0
+REVISION-main=	1
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
