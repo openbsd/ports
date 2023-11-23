@@ -1,5 +1,5 @@
 COMMENT =	manage passwords
-DISTNAME =	plass-0.6
+DISTNAME =	plass-0.7
 CATEGORIES =	security
 HOMEPAGE =	https://projects.omarpolo.com/plass.html
 MAINTAINER =	Omar Polo <op@openbsd.org>
