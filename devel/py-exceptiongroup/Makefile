@@ -15,8 +15,6 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		flit_core
-
-BUILD_DEPENDS =		devel/py-flit_scm${MODPY_FLAVOR}
+MODPY_PYBUILD =		flit_scm
 
 .include <bsd.port.mk>
