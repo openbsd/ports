@@ -1,6 +1,7 @@
 COMMENT =	interface to the Argon2 key derivation functions
 
 DISTNAME =	Crypt-Argon2-0.019
+REVISION =	0
 
 CATEGORIES =	security
 
