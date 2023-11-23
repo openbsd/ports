@@ -1,0 +1,87 @@
+Remove unused cares with more gusto
+
+Add a missing include causing grpc to fail building due to missing type definitions.
+
+Index: third_party/grpc/grpc_1.47.0.patch
+--- third_party/grpc/grpc_1.47.0.patch.orig
++++ third_party/grpc/grpc_1.47.0.patch
+@@ -11,6 +11,26 @@ index 7bb6b8bdb9..7644107b70 100644
+ 
+  # The set of pollers to test against if a test exercises polling
+  POLLERS = ["epoll1", "poll"]
++@@ -60,8 +60,7 @@
++             ret.append("//third_party/xxhash")
++         elif dep == "cares":
++             ret += select({
++-                "//:grpc_no_ares": [],
++-                "//conditions:default": ["//external:cares"],
+++                "//conditions:default": [],
++             })
++         elif dep == "cronet_c_for_grpc":
++             ret.append("//third_party/objective_c/Cronet:cronet_c_for_grpc")
++@@ -162,8 +162,7 @@
++         srcs = srcs,
++         defines = defines +
++                   select({
++-                      "//:grpc_no_ares": ["GRPC_ARES=0"],
++-                      "//conditions:default": [],
+++                      "//conditions:default": ["GRPC_ARES=0"],
++                   }) +
++                   select({
++                       "//:remote_execution": ["GRPC_PORT_ISOLATED_RUNTIME=1"],
+ @@ -237,10 +235,6 @@
+      test_lib_ios = name + "_test_lib_ios"
+      ios_tags = tags + ["manual", "ios_cc_test"]
+@@ -57,6 +77,37 @@ index 09fcad95a2..9b737e5deb 100644
+      )
+ 
+      native.bind(
++@@ -106,11 +106,6 @@
++     )
++ 
++     native.bind(
++-        name = "cares",
++-        actual = "@com_github_cares_cares//:ares",
++-    )
++-
++-    native.bind(
++         name = "gtest",
++         actual = "@com_google_googletest//:gtest",
++     )
++@@ -276,18 +271,6 @@
++             urls = [
++                 "https://storage.googleapis.com/grpc-bazel-mirror/github.com/google/re2/archive/8e08f47b11b413302749c0d8b17a1c94777495d5.tar.gz",
++                 "https://github.com/google/re2/archive/8e08f47b11b413302749c0d8b17a1c94777495d5.tar.gz",
++-            ],
++-        )
++-
++-    if "com_github_cares_cares" not in native.existing_rules():
++-        http_archive(
++-            name = "com_github_cares_cares",
++-            build_file = "@com_github_grpc_grpc//third_party:cares/cares.BUILD",
++-            sha256 = "ec76c5e79db59762776bece58b69507d095856c37b81fd35bfb0958e74b61d93",
++-            strip_prefix = "c-ares-6654436a307a5a686b008c1d4c93b0085da6e6d8",
++-            urls = [
++-                "https://storage.googleapis.com/grpc-bazel-mirror/github.com/c-ares/c-ares/archive/6654436a307a5a686b008c1d4c93b0085da6e6d8.tar.gz",
++-                "https://github.com/c-ares/c-ares/archive/6654436a307a5a686b008c1d4c93b0085da6e6d8.tar.gz",
++             ],
++         )
++ 
+ diff --git a/bazel/grpc_extra_deps.bzl b/bazel/grpc_extra_deps.bzl
+ index 09fcad95a2..9b737e5deb 100644
+ --- a/bazel/grpc_extra_deps.bzl
+@@ -97,3 +148,14 @@ index 09fcad95a2..9b737e5deb 100644
+      # Initialize Google APIs with only C++ and Python targets
+      switched_rules_by_language(
+          name = "com_google_googleapis_imports",
++
++--- a/src/core/lib/iomgr/sockaddr_utils_posix.cc~	Tue Jun 21 13:39:47 2022
+++++ b/src/core/lib/iomgr/sockaddr_utils_posix.cc	Mon Nov 20 08:04:24 2023
++@@ -26,6 +26,7 @@
++ #ifdef GRPC_LINUX_TCP_H
++ #include <linux/tcp.h>
++ #else
+++#include <netinet/in.h>
++ #include <netinet/tcp.h>
++ #endif
++ #include <stdio.h>

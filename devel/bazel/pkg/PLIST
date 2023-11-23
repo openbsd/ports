@@ -1,0 +1,3 @@
+@bin bin/bazel
+share/examples/bazel/
+share/examples/bazel/bazel.bazelrc

@@ -1,0 +1,17 @@
+upb needs a patch to get rid of offsetof warnings
+
+Index: third_party/upb/upb.patch
+--- third_party/upb/upb.patch.orig
++++ third_party/upb/upb.patch
+@@ -0,0 +1,11 @@
++--- bazel/build_defs.bzl.port.orig	Fri Sep 23 08:09:48 2022
+++++ bazel/build_defs.bzl	Mon Nov 20 07:34:51 2023
++@@ -41,7 +41,7 @@
++     "-std=c99",
++     "-pedantic",
++     "-Werror=pedantic",
++-    "-Wall",
+++    "-Wno-gnu-offsetof-extensions",
++     "-Wstrict-prototypes",
++     # GCC (at least) emits spurious warnings for this that cannot be fixed
++     # without introducing redundant initialization (with runtime cost):

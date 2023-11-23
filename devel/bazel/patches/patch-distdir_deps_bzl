@@ -1,0 +1,62 @@
+c-ares fails to build and seems unused, remove it
+
+abseil is too old, update it
+
+upb needs a patch to get rid of offsetof warnings
+
+Index: distdir_deps.bzl
+--- distdir_deps.bzl.orig
++++ distdir_deps.bzl
+@@ -196,6 +196,10 @@ DIST_DEPS = {
+             "https://mirror.bazel.build/github.com/protocolbuffers/upb/archive/a5477045acaa34586420942098f5fecd3570f577.tar.gz",
+             "https://github.com/protocolbuffers/upb/archive/a5477045acaa34586420942098f5fecd3570f577.tar.gz",
+         ],
++        "patch_args": ["-p0"],
++        "patches": [
++            "//third_party/upb:upb.patch",
++        ],
+         "used_in": [
+             "additional_distfiles",
+             "test_WORKSPACE_files",
+@@ -204,18 +208,6 @@ DIST_DEPS = {
+             "@rules_license//licenses/generic:notice",
+         ],
+     },
+-    "c-ares": {
+-        "archive": "6654436a307a5a686b008c1d4c93b0085da6e6d8.tar.gz",
+-        "sha256": "ec76c5e79db59762776bece58b69507d095856c37b81fd35bfb0958e74b61d93",
+-        "urls": [
+-            "https://mirror.bazel.build/github.com/c-ares/c-ares/archive/6654436a307a5a686b008c1d4c93b0085da6e6d8.tar.gz",
+-            "https://github.com/c-ares/c-ares/archive/6654436a307a5a686b008c1d4c93b0085da6e6d8.tar.gz",
+-        ],
+-        "used_in": [
+-            "additional_distfiles",
+-            "test_WORKSPACE_files",
+-        ],
+-    },
+     "re2": {
+         "archive": "aecba11114cf1fac5497aeb844b6966106de3eb6.tar.gz",
+         "sha256": "9f385e146410a8150b6f4cb1a57eab7ec806ced48d427554b1e754877ff26c3e",
+@@ -229,17 +221,17 @@ DIST_DEPS = {
+         ],
+     },
+     "com_google_absl": {
+-        "archive": "20211102.0.tar.gz",
+-        "sha256": "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
++        "archive": "20230802.1.tar.gz",
++        "sha256": "987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed",
+         "urls": [
+-            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
+-            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
++            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
++            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
+         ],
+         "used_in": [
+             "additional_distfiles",
+             "test_WORKSPACE_files",
+         ],
+-        "strip_prefix": "abseil-cpp-20211102.0",
++        "strip_prefix": "abseil-cpp-20230802.1",
+     },
+     "zstd-jni": {
+         "archive": "v1.5.2-3.zip",

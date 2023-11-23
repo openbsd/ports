@@ -1,0 +1,32 @@
+Suppress
+java.lang.reflect.InaccessibleObjectException: Unable to make protected final java.lang.Class java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain) throws java.lang.ClassFormatError accessible: module java.base does not "opens java.lang" to unnamed module @1941a8ff
+
+bazel issue:
+https://github.com/bazelbuild/bazel/issues/14548
+
+Maybe could use this instead, but it's ultimately an upstream problem.
+https://stackoverflow.com/questions/41265266/how-to-solve-inaccessibleobjectexception-unable-to-make-member-accessible-m
+
+Index: src/main/java/com/google/devtools/build/lib/actions/ParameterFile.java
+--- src/main/java/com/google/devtools/build/lib/actions/ParameterFile.java.orig
++++ src/main/java/com/google/devtools/build/lib/actions/ParameterFile.java
+@@ -116,11 +116,6 @@ public class ParameterFile {
+ 
+   private static void writeContent(
+       OutputStream outputStream, Iterable<String> arguments, Charset charset) throws IOException {
+-    if (charset.equals(ISO_8859_1)) {
+-      writeContentLatin1(outputStream, arguments);
+-    } else if (charset.equals(UTF_8)) {
+-      writeContentUtf8(outputStream, arguments);
+-    } else {
+       // Generic charset support
+       OutputStreamWriter out = new OutputStreamWriter(outputStream, charset);
+       for (String line : arguments) {
+@@ -128,7 +123,6 @@ public class ParameterFile {
+         out.write('\n');
+       }
+       out.flush();
+-    }
+   }
+ 
+   /**

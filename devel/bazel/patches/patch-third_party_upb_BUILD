@@ -1,0 +1,14 @@
+upb needs a patch to get rid of offsetof warnings
+
+Index: third_party/upb/BUILD
+--- third_party/upb/BUILD.orig
++++ third_party/upb/BUILD
+@@ -22,4 +22,8 @@ filegroup(
+     visibility = ["//third_party:__pkg__"],
+ )
+ 
++exports_files([
++    "upb.patch",
++])
++
+ package(default_visibility = ["//visibility:public"])

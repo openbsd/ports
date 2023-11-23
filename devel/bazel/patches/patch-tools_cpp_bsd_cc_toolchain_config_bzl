@@ -1,0 +1,25 @@
+Suppress volumnous complaints about deprecated build-ins in abseil
+
+abseil needs c++14
+
+Index: tools/cpp/bsd_cc_toolchain_config.bzl
+--- tools/cpp/bsd_cc_toolchain_config.bzl.orig
++++ tools/cpp/bsd_cc_toolchain_config.bzl
+@@ -132,7 +132,7 @@ def _impl(ctx):
+                             "-U_FORTIFY_SOURCE",
+                             "-D_FORTIFY_SOURCE=1",
+                             "-fstack-protector",
+-                            "-Wall",
++                            "-Wno-deprecated-builtins",
+                             "-fno-omit-frame-pointer",
+                         ],
+                     ),
+@@ -160,7 +160,7 @@ def _impl(ctx):
+             ),
+             flag_set(
+                 actions = all_cpp_compile_actions + [ACTION_NAMES.lto_backend],
+-                flag_groups = [flag_group(flags = ["-std=c++0x"])],
++                flag_groups = [flag_group(flags = ["-std=c++14"])],
+             ),
+         ],
+     )
