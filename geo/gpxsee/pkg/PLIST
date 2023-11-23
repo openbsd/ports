@@ -38,12 +38,14 @@ share/gpxsee/symbols/Crossing.png
 share/gpxsee/symbols/Dam.png
 share/gpxsee/symbols/Drinking Water.png
 share/gpxsee/symbols/Fastfood.png
+share/gpxsee/symbols/Ferry.png
 share/gpxsee/symbols/Fishing Area.png
 share/gpxsee/symbols/Flag, Blue.png
 share/gpxsee/symbols/Flag, Green.png
 share/gpxsee/symbols/Flag, Red.png
 share/gpxsee/symbols/Flag.png
 share/gpxsee/symbols/Forest.png
+share/gpxsee/symbols/Funicular.png
 share/gpxsee/symbols/Furbearer.png
 share/gpxsee/symbols/Gas Station.png
 share/gpxsee/symbols/Geocache Found.png
@@ -57,6 +59,7 @@ share/gpxsee/symbols/Iceskating.png
 share/gpxsee/symbols/Information.png
 share/gpxsee/symbols/Library.png
 share/gpxsee/symbols/Live Theater.png
+share/gpxsee/symbols/Lodge.png
 share/gpxsee/symbols/Lodging.png
 share/gpxsee/symbols/Marina.png
 share/gpxsee/symbols/Medical Facility.png
@@ -70,10 +73,12 @@ share/gpxsee/symbols/Park.png
 share/gpxsee/symbols/Parking Area.png
 share/gpxsee/symbols/Pharmacy.png
 share/gpxsee/symbols/Picnic Area.png
+share/gpxsee/symbols/Pizza.png
 share/gpxsee/symbols/Police Station.png
 share/gpxsee/symbols/Post Office.png
 share/gpxsee/symbols/RV Park.png
 share/gpxsee/symbols/Radio Beacon.png
+share/gpxsee/symbols/Railway.png
 share/gpxsee/symbols/Residence.png
 share/gpxsee/symbols/Restaurant.png
 share/gpxsee/symbols/Restroom.png
@@ -81,6 +86,7 @@ share/gpxsee/symbols/Scenic Area.png
 share/gpxsee/symbols/School.png
 share/gpxsee/symbols/Shipwreck.png
 share/gpxsee/symbols/Shopping Center.png
+share/gpxsee/symbols/Shower.png
 share/gpxsee/symbols/Ski Resort.png
 share/gpxsee/symbols/Skiing Area.png
 share/gpxsee/symbols/Skull and Crossbones.png
