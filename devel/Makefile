@@ -667,6 +667,7 @@
      SUBDIR += p5-DateTime-Format-SQLite
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
+     SUBDIR += p5-DateTime-HiRes
      SUBDIR += p5-DateTime-Locale
      SUBDIR += p5-DateTime-Precise
      SUBDIR += p5-DateTime-Set
