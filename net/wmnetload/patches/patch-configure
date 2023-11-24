@@ -1,4 +1,6 @@
-Hunk #2, 3: fix the build with libdockapp>=0.7
+- permit build on OpenBSD
+- RPATH isn't need (all paths are standard)
+- fix the build with libdockapp>=0.7
 
 Index: configure
 --- configure.orig
@@ -13,6 +15,18 @@ Index: configure
  *)
  	echo ""
  	echo "Sorry, $host_os is not supported yet."
+@@ -4270,10 +4273,10 @@ else
+ 	RPATH=
+ 	echo "WARNING: do not know how to set RPATH with this compiler"
+ fi
++RPATH=
+ 
+ 
+ 
+-
+ X_LIBRARY_PATH=$x_libraries
+ XCFLAGS="$X_CFLAGS"
+ XLFLAGS="$X_LIBS"
 @@ -4713,7 +4716,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */

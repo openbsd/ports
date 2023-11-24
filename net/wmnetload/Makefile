@@ -1,7 +1,7 @@
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
 DISTNAME=		wmnetload-1.3
-REVISION=		5
+REVISION=		6
 CATEGORIES=		net x11 x11/windowmaker
 
 HOMEPAGE=		http://freshmeat.net/projects/wmnetload
