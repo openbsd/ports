@@ -10,7 +10,7 @@ Index: scripts/xdg-screensaver.in
     # We can securely move files in /tmp with mv -T
     DEBUG 1 "mv -T available"
     MV="mv -T"
-@@ -378,7 +378,9 @@ screensaver_kde3()
+@@ -363,7 +363,9 @@ screensaver_kde3()
  
  xset_screensaver_timeout()
  {

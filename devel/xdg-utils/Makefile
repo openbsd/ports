@@ -4,14 +4,14 @@
 
 COMMENT=		utilities to assist desktop integration tasks
 
-DISTNAME=		xdg-utils-1.1.3.20210805
-REVISION=		0
+V=			1.2.0-beta1
+DISTNAME=		xdg-utils-${V:S/-//}
 
 # use a git checkout; releases are not made regularly
 COMMIT=			1a58bc28f6844898532daf9ee1bf6da7764955a9
-SITES=	https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/${COMMIT}/
-WRKDIST=		${WRKDIR}/xdg-utils-${COMMIT}
-EXTRACT_SUFX=		.tar.gz
+SITES=			https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v${V}/
+WRKDIST=		${WRKDIR}/xdg-utils-v${V}-f8bc7454112899413a60996b7b5d9aebfa4e6864
+#EXTRACT_SUFX=		.tar.gz
 
 CATEGORIES=		devel
 
