@@ -82,6 +82,14 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/constants.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/entities.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/overlays.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/poll.py
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}richtext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/${MODPY_PYCACHE}richtext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/richtext.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/scroll.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/timeline.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/utils.py
