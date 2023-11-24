@@ -1,4 +1,5 @@
-BROKEN-i386 =		broken following move to LLVM 16
+BROKEN-i386 =		uses ld.bfd which is broken following move to LLVM 16
+# /usr/bin/ld.bfd: /usr/lib/crtbegin.o: unrecognized relocation (0x2b) in section `.text'
 
 ONLY_FOR_ARCHS =	amd64 i386
 
