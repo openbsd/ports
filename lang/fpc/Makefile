@@ -1,3 +1,5 @@
+BROKEN-i386 =		broken following move to LLVM 16
+
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal

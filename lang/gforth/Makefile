@@ -1,3 +1,5 @@
+BROKEN-i386 =		broken following move to LLVM 16
+
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
 
 USE_WXNEEDED =		Yes
