@@ -351,6 +351,7 @@
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
      SUBDIR += p5-URI-Find
+     SUBDIR += p5-URI-Query
      SUBDIR += p5-URI-ws
      SUBDIR += p5-URL-Encode
      SUBDIR += p5-W3C-LinkChecker
