@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -272,7 +272,7 @@ else()
+@@ -301,7 +301,7 @@ else()
  
  	if ( UNIX )
  		include(CheckSymbolExists)
