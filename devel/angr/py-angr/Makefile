@@ -54,6 +54,8 @@ MAKE_ENV =	CXX=${CXX} CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include/angr-vex/"
 
 DOCDIR =	${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}
 
+NO_TEST =	Yes
+
 # Remove tests otherwise they'll get installed...
 post-extract:
 	rm -fr ${WRKSRC}/tests/

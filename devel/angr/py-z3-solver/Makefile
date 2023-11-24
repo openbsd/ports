@@ -13,4 +13,6 @@ WANTLIB +=		${COMPILER_LIBCXX} c m
 # C++11
 COMPILER =		base-clang ports-gcc
 
+NO_TEST =		Yes
+
 .include <bsd.port.mk>
