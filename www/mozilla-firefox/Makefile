@@ -51,7 +51,7 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
-CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} -Wl,-z,nobtcfi"
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
