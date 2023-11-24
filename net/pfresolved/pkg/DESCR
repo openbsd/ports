@@ -1,0 +1,4 @@
+Convert files with FQDN into IP addreses and write them into pf
+tables.  The daemon pfresolved allows to consume lists of hostnames
+that can be used in pf rules.  Thses lists are updated dynamically
+using DNS.

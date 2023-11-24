@@ -1,0 +1,3 @@
+@bin bin/pfresolved
+@man man/man5/pfresolved.conf.5
+@man man/man8/pfresolved.8
