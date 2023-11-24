@@ -13,6 +13,7 @@ share/doc/grisbi/C/translation.html
 share/doc/grisbi/de/
 share/doc/grisbi/de/grisbi-manuel.css
 share/doc/grisbi/de/grisbi-manuel.html
+share/doc/grisbi/de/grisbi-manuel.pdf
 share/doc/grisbi/de/quickstart.html
 share/doc/grisbi/en/
 share/doc/grisbi/en/contents_motif.gif
@@ -26,6 +27,7 @@ share/doc/grisbi/fr/
 share/doc/grisbi/fr/contents_motif.gif
 share/doc/grisbi/fr/grisbi-manuel.css
 share/doc/grisbi/fr/grisbi-manuel.html
+share/doc/grisbi/fr/grisbi-manuel.pdf
 share/doc/grisbi/fr/grisbi-manuel001.html
 share/doc/grisbi/fr/grisbi-manuel002.html
 share/doc/grisbi/fr/grisbi-manuel003.html
@@ -204,7 +206,6 @@ share/doc/grisbi/fr/previous_motif.gif
 share/doc/grisbi/fr/quickstart.html
 share/doc/grisbi/fr/topic.dat
 share/doc/grisbi/fr/translation.html
-share/glib-2.0/schemas/org.gtk.grisbi.gschema.xml
 share/grisbi/
 share/grisbi/categories/
 share/grisbi/categories/C/
@@ -233,7 +234,6 @@ share/grisbi/categories/ru/
 share/grisbi/categories/ru/00_general.cgsb
 share/grisbi/categories/ru/empty.cgsb
 share/grisbi/ui/
-share/grisbi/ui/bet_graph.ui
 share/grisbi/ui/csv_template_rule.ui
 share/grisbi/ui/etats_prefs.ui
 share/grisbi/ui/grisbi-dark.css
@@ -242,33 +242,6 @@ share/grisbi/ui/grisbi.css
 share/grisbi/ui/grisbi_menu.ui
 share/grisbi/ui/grisbi_prefs.ui
 share/grisbi/ui/grisbi_win.ui
-share/grisbi/ui/prefs_page_accueil.ui
-share/grisbi/ui/prefs_page_archives.ui
-share/grisbi/ui/prefs_page_bank.ui
-share/grisbi/ui/prefs_page_bet_account.ui
-share/grisbi/ui/prefs_page_bet_general.ui
-share/grisbi/ui/prefs_page_currency.ui
-share/grisbi/ui/prefs_page_currency_link.ui
-share/grisbi/ui/prefs_page_display_adr.ui
-share/grisbi/ui/prefs_page_display_fonts.ui
-share/grisbi/ui/prefs_page_display_form.ui
-share/grisbi/ui/prefs_page_display_gui.ui
-share/grisbi/ui/prefs_page_display_ope.ui
-share/grisbi/ui/prefs_page_divers.ui
-share/grisbi/ui/prefs_page_files.ui
-share/grisbi/ui/prefs_page_form_completion.ui
-share/grisbi/ui/prefs_page_form_options.ui
-share/grisbi/ui/prefs_page_fyear.ui
-share/grisbi/ui/prefs_page_import.ui
-share/grisbi/ui/prefs_page_metatree.ui
-share/grisbi/ui/prefs_page_msg_delete.ui
-share/grisbi/ui/prefs_page_msg_warning.ui
-share/grisbi/ui/prefs_page_options_ope.ui
-share/grisbi/ui/prefs_page_payment_method.ui
-share/grisbi/ui/prefs_page_reconcile.ui
-share/grisbi/ui/prefs_page_reconcile_sort.ui
-share/grisbi/ui/prefs_widget_loan.ui
-share/grisbi/ui/search_transaction.ui
 share/icons/hicolor/scalable/apps/grisbi.svg
 share/icons/hicolor/scalable/mimetypes/application-x-grisbi.svg
 share/locale/cs/LC_MESSAGES/grisbi.mo
@@ -293,6 +266,8 @@ share/locale/ro/LC_MESSAGES/grisbi.mo
 share/locale/ru/LC_MESSAGES/grisbi.mo
 share/locale/sv/LC_MESSAGES/grisbi.mo
 share/locale/zh_CN/LC_MESSAGES/grisbi.mo
+share/metainfo/
+share/metainfo/grisbi.metainfo.xml
 share/mime-info/
 share/mime-info/grisbi.keys
 share/mime-info/grisbi.mime
@@ -535,7 +510,6 @@ share/pixmaps/grisbi/gsb-graph-sectors-24.png
 share/pixmaps/grisbi/gsb-grille-16.png
 share/pixmaps/grisbi/gsb-help-16.png
 share/pixmaps/grisbi/gsb-import-16.png
-share/pixmaps/grisbi/gsb-import-24.png
 share/pixmaps/grisbi/gsb-import-32.png
 share/pixmaps/grisbi/gsb-jump-16.png
 share/pixmaps/grisbi/gsb-new-categ-16.png
@@ -575,8 +549,6 @@ share/pixmaps/grisbi/gsb-transfer-32.png
 share/pixmaps/grisbi/gsb-warnings-32.png
 share/pixmaps/grisbi/gsb-web-browser-16.png
 share/pixmaps/grisbi/gtk-about-16.png
-share/pixmaps/grisbi/gtk-add-16.png
-share/pixmaps/grisbi/gtk-apply-16.png
 share/pixmaps/grisbi/gtk-close-16.png
 share/pixmaps/grisbi/gtk-copy-16.png
 share/pixmaps/grisbi/gtk-copy-24.png
@@ -599,10 +571,8 @@ share/pixmaps/grisbi/gtk-refresh-16.png
 share/pixmaps/grisbi/gtk-remove-16.png
 share/pixmaps/grisbi/gtk-save-16.png
 share/pixmaps/grisbi/gtk-save-as-16.png
-share/pixmaps/grisbi/gtk-search-16.png
 share/pixmaps/grisbi/gtk-select-color-24.png
 share/pixmaps/grisbi/gtk-window-new-16.png
-@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database
