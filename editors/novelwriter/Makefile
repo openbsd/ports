@@ -1,5 +1,5 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_EGG_VERSION =	2.1
+MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		novelWriter-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		editors
