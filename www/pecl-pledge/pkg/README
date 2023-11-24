@@ -34,6 +34,8 @@ If PHP runs with mod_php, using pledge/unveil impacts an entire Apache child
 process. If pledge/unveil is used in php_fpm, it will impact the entire process
 for the whole lifetime of the process, not just one request.
 
+You might want to set pm.max_requests = 1 in php_fpm config.
+
 Architectural tips
 ==================
 
@@ -82,3 +84,134 @@ pass out proto tcp to $some_rest_api port 443 user your_fpm_user
 But again, in the example above network calls can be avoided in the web SAPI if
 mysql runs on a domain socket and work involving API's is scheduled and
 processed by a CLI job instead. You can use this technique for CLI jobs as well.
+
+Example configuration
+=====================
+
+You can set promises and unveils in your PHP-FPM config.
+
+An simplified httpd example /etc/httpd.conf:
+
+    chroot "/var/www"
+
+    server "example.com" {
+        listen on * port 80
+        root "/htdocs/public"
+        directory index "index.php"
+
+        # Assets not served by PHP
+        location match "\.(css|gif|jpg|png|js)$" {
+            pass
+        }
+
+        location match "/specific-path-1" {
+            request rewrite "/index.php/%1"
+            fastcgi socket "/run/php-fpm-specific-path-1.sock"
+        }
+
+        location match "/specific-path-2" {
+            request rewrite "/index.php/%1"
+            fastcgi socket "/run/php-fpm-specific-path-2.sock"
+        }
+
+        # The default PHP handler
+        location match "^/(.+)$" {
+            request rewrite "/index.php/%1"
+            fastcgi socket "/run/php-fpm.sock"
+        }
+    }
+
+With a simplified PHP-FPM /etc/php-fpm.conf:
+
+    [global]
+    include=/etc/php-fpm.d/*.conf
+
+    [specific-path-1]
+    user = www
+    group = www
+    listen.owner = www
+    listen.group = www
+    listen.mode = 0660
+
+    pm = dynamic
+    pm.max_children = 5
+    pm.start_servers = 2
+    pm.min_spare_servers = 1
+    pm.max_spare_servers = 3
+
+    chroot = /var/www
+    pm.max_requests = 1
+
+    listen = /var/www/run/php-fpm-specific-path-1.sock
+    php_admin_value[openbsd.pledge_promises] = stdio rpath wpath cpath fattr flock unveil
+    php_admin_value[openbsd.unveil] = /:r,/tmp:rwc,/htdocs/var/log:rwc,/htdocs/var/cache:rwc
+
+    [specific-path-2]
+    user = www
+    group = www
+    listen.owner = www
+    listen.group = www
+    listen.mode = 0660
+
+    pm = dynamic
+    pm.max_children = 5
+    pm.start_servers = 2
+    pm.min_spare_servers = 1
+    pm.max_spare_servers = 3
+
+    chroot = /var/www
+    pm.max_requests = 1
+
+    listen = /var/www/run/php-fpm-specific-path-2.sock
+    php_admin_value[openbsd.pledge_promises] = stdio rpath wpath cpath fattr flock unveil
+    php_admin_value[openbsd.unveil] = /:r,/tmp:rwc,/htdocs/var/log:rwc,/htdocs/var/cache:rwc
+
+    [www]
+    user = www
+    group = www
+    listen.owner = www
+    listen.group = www
+    listen.mode = 0660
+
+    pm = dynamic
+    pm.max_children = 5
+    pm.start_servers = 2
+    pm.min_spare_servers = 1
+    pm.max_spare_servers = 3
+
+    chroot = /var/www
+    pm.max_requests = 1
+
+    listen = /var/www/run/php-fpm.sock
+    php_admin_value[openbsd.pledge_promises] = stdio rpath wpath cpath fattr flock unveil inet
+    php_admin_value[openbsd.unveil] = /:r,/tmp:rwc,/htdocs/var/log:rwc,/htdocs/var/cache:rwc
+
+Don't forget to call `unveil(null, null);` in your PHP userland to
+disallow future unveil calls, or specify null:null as the last argument
+e.g.
+
+php_admin_value[openbsd.unveil] = /:r,/tmp:rwc,/htdocs/var/log:rwc,/htdocs/var/cache:rwc,null:null
+
+From the CLI, you can also provide promises or unveils:
+
+    $ php \
+        -dopenbsd.unveil='/var/empty:r,null:null' \
+        -dopenbsd.pledge_promises='stdio dns' \
+        -r 'echo gethostbyname("openbsd.org");'
+    199.185.178.80
+
+    $ php \
+        -dopenbsd.unveil='/var/empty:r,null:null' \
+        -dopenbsd.pledge_promises='stdio error' \
+        -r 'echo gethostbyname("openbsd.org");'
+    openbsd.org
+
+    $ php \
+        -dopenbsd.unveil='/var/empty:r,null:null' \
+        -dopenbsd.pledge_promises='stdio' \
+        -r 'echo gethostbyname("openbsd.org");'
+    Abort trap (core dumped)
+
+See https://packagist.org/packages/ctors/pledge-symfony-routing for Symfony
+framework support.
+
