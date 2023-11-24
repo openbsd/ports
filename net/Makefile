@@ -513,6 +513,7 @@
      SUBDIR += pchar
      SUBDIR += pdnsd
      SUBDIR += pen
+     SUBDIR += pfresolved
      SUBDIR += pfstat
      SUBDIR += php-weathermap
      SUBDIR += pidgin
