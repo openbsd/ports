@@ -12,6 +12,9 @@ RUN_DEPENDS =		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 
 DOCDIR =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}${ANGR_PYTHON_MODULE}
 
+# Requires angr/binaries to be downloaded.
+NO_TEST =		Yes
+
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}/
