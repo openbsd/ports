@@ -1,0 +1,4 @@
+@option always-update
+@option updatedb
+@conflict quirks-<7.0
+share/update.db
