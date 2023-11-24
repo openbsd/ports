@@ -1,12 +1,12 @@
 Index: src/options.hpp
 --- src/options.hpp.orig
 +++ src/options.hpp
-@@ -144,7 +144,7 @@ class options_t (public)
+@@ -112,7 +112,7 @@ struct options_t
      /// Minimum zoom level for tile expiry list
      uint32_t expire_tiles_zoom_min = 0;
  
 -    int cache = 800; ///< Memory usable for cache in MB
 +    int cache = 100; ///< Memory usable for cache in MB
  
-     unsigned int num_procs;
+     unsigned int num_procs = 1;
  

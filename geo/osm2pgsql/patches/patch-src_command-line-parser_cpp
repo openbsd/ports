@@ -1,7 +1,7 @@
-Index: src/options.cpp
---- src/options.cpp.orig
-+++ src/options.cpp
-@@ -137,7 +137,7 @@ Common options:\n\
+Index: src/command-line-parser.cpp
+--- src/command-line-parser.cpp.orig
++++ src/command-line-parser.cpp
+@@ -136,7 +136,7 @@ Common options:\n\
                      required if you want to update with --append later.\n\
          --drop      Only with --slim: drop temporary tables after import\n\
                      (no updates are possible).\n\

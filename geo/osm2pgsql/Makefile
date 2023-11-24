@@ -1,8 +1,8 @@
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		1.8.1
+GH_TAGNAME =		1.10.0
 GH_PROJECT =		osm2pgsql
-GH_ACCOUNT =		openstreetmap
+GH_ACCOUNT =		osm2pgsql-dev
 
 CATEGORIES =		geo databases
 
@@ -29,7 +29,8 @@ LIB_DEPENDS =		databases/postgresql	\
 BUILD_DEPENDS =		devel/libtool \
 			devel/fmt \
 			devel/protozero \
-			geo/libosmium>=2.17.0
+			geo/libosmium>=2.17.0 \
+			textproc/nlohmann-json
 
 RUN_DEPENDS +=		geo/py-osmium${MODPY_FLAVOR} \
 			databases/py-psycopg2${MODPY_FLAVOR}
@@ -63,6 +64,6 @@ pre-configure:
 	rm -f ${WRKSRC}/cmake/FindLua.cmake
 
 post-patch:
-	@${SUBST_CMD} ${WRKSRC}/docs/osm2pgsql.1
+	@${SUBST_CMD} ${WRKSRC}/man/osm2pgsql.1
 
 .include <bsd.port.mk>

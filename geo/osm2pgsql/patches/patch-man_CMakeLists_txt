@@ -1,0 +1,16 @@
+Index: man/CMakeLists.txt
+--- man/CMakeLists.txt.orig
++++ man/CMakeLists.txt
+@@ -62,9 +62,9 @@ if(MANPAGE_TARGETS)
+ endif()
+ 
+ if(ENABLE_INSTALL)
+-    install(FILES osm2pgsql.1 DESTINATION share/man/man1)
+-    install(FILES osm2pgsql-replication.1 DESTINATION share/man/man1)
++    install(FILES osm2pgsql.1 DESTINATION man/man1)
++    install(FILES osm2pgsql-replication.1 DESTINATION man/man1)
+     if (BUILD_GEN)
+-        install(FILES osm2pgsql-gen.1 COMPONENT gen EXCLUDE_FROM_ALL DESTINATION share/man/man1)
++        install(FILES osm2pgsql-gen.1 COMPONENT gen EXCLUDE_FROM_ALL DESTINATION man/man1)
+     endif()
+ endif()
