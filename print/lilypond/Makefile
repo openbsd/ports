@@ -1,13 +1,12 @@
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.24.2
+VERSION=		2.24.3
 DISTNAME=		lilypond-v${VERSION}
 DISTNAME-docs=		lilypond-${VERSION}-documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION=		0
 
 URW_V=			20200910
 DISTFILES=		${DISTNAME}.tar.bz2
