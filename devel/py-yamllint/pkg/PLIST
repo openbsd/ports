@@ -36,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}anchors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}anchors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}braces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}braces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}brackets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}empty_li
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}empty_lines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}empty_values.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}empty_values.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}float_values.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}float_values.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}hyphens.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}hyphens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}indentation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -80,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}trailing
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}trailing_spaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}truthy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/${MODPY_PYCACHE}truthy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/anchors.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/braces.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/brackets.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/colons.py
@@ -91,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/yamllint/rules/document_end.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/document_start.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/empty_lines.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/empty_values.py
+lib/python${MODPY_VERSION}/site-packages/yamllint/rules/float_values.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/hyphens.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/indentation.py
 lib/python${MODPY_VERSION}/site-packages/yamllint/rules/key_duplicates.py
