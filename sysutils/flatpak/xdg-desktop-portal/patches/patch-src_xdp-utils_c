@@ -33,7 +33,7 @@ Index: src/xdp-utils.c
  
    if (app_info == NULL)
      app_info = xdp_app_info_new_host (pid);
-@@ -1175,6 +1185,10 @@ xdp_app_info_get_path_for_fd (XdpAppInfo *app_info,
+@@ -1188,6 +1198,10 @@ xdp_app_info_get_path_for_fd (XdpAppInfo *app_info,
                                gboolean *writable_out,
                                GError **error)
  {
@@ -44,7 +44,7 @@ Index: src/xdp-utils.c
    g_autofree char *proc_path = NULL;
    int fd_flags;
    struct stat st_buf_store;
-@@ -1338,6 +1352,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo *app_info,
+@@ -1351,6 +1365,7 @@ xdp_app_info_get_path_for_fd (XdpAppInfo *app_info,
      *writable_out = writable;
  
    return g_steal_pointer (&path);

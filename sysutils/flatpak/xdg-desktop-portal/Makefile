@@ -2,9 +2,8 @@ PORTROACH ?=		limitw:1,even
 
 COMMENT=		portal frontend service for desktop containment frameworks
 
-V=			1.18.1
+V=			1.18.2
 DISTNAME=		xdg-desktop-portal-${V}
-REVISION=		2
 
 CATEGORIES=		x11
 
