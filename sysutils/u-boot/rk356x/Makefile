@@ -1,4 +1,5 @@
 VERSION=	2023.10
+REVISION=	0
 
 SOC=		rk356x
 
