@@ -1,6 +1,6 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_EGG_VERSION=	3.0.1
+MODPY_EGG_VERSION=	4.1.10
 DISTNAME=	ansible-compat-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -24,7 +24,8 @@ RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
 
 # some tests require network
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-flaky${MODPY_FLAVOR} \
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-flaky${MODPY_FLAVOR} \
 		devel/py-test-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
