@@ -14,8 +14,8 @@ FRAMEWORK_DISTFILE ?=	Orthanc-${FRAMEWORK_VERSION}.tar.gz
 DISTNAME ?=		Orthanc${PLUGIN}-${VERSION}
 PKGNAME ?=		orthanc-plugin-${PLUGIN:L}-${VERSION}
 
-HOMEPAGE ?=		https://www.orthanc-server.com/static.php?page=plugin-${PLUGIN:L}
-SITES ?=		https://www.orthanc-server.com/downloads/get.php\?path=/plugin-${PLUGIN:L}/
+HOMEPAGE ?=		https://www.orthanc-server.com/static.php?page=${PLUGIN:L}
+SITES ?=		https://orthanc.uclouvain.be/downloads/sources/orthanc-${PLUGIN:L}/
 
 pre-configure:
 	sed -i 's,share/orthanc/plugins,libexec/orthanc/plugins,g' \

@@ -6,7 +6,7 @@ REVISION =		6
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
-SITES =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+SITES =			https://orthanc.uclouvain.be/downloads/sources/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt

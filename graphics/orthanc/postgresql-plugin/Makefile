@@ -2,13 +2,13 @@ COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		4.0
 PLUGIN =		PostgreSQL
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 DISTFILES.f =		${FRAMEWORK_DISTFILE}
-SITES.f =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+SITES.f =		https://orthanc.uclouvain.be/downloads/sources/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
