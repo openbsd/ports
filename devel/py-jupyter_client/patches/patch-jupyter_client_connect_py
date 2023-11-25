@@ -1,20 +1,20 @@
 Index: jupyter_client/connect.py
 --- jupyter_client/connect.py.orig
 +++ jupyter_client/connect.py
-@@ -15,6 +15,7 @@ import socket
+@@ -13,6 +13,7 @@ import socket
  import stat
  import tempfile
  import warnings
 +import sys
  from getpass import getpass
- from contextlib import contextmanager
- 
-@@ -138,7 +139,7 @@ def write_connection_file(fname=None, shell_port=0, io
+ from typing import Any
+ from typing import cast
+@@ -164,7 +165,7 @@ def write_connection_file(
      with secure_write(fname) as f:
          f.write(json.dumps(cfg, indent=2))
  
--    if hasattr(stat, 'S_ISVTX'):
-+    if hasattr(stat, 'S_ISVTX') and not sys.platform.startswith('openbsd'):
-         # set the sticky bit on the file and its parent directory
-         # to avoid periodic cleanup
-         paths = [fname]
+-    if hasattr(stat, "S_ISVTX"):
++    if hasattr(stat, "S_ISVTX") and not sys.platform.startswith('openbsd'):
+         # set the sticky bit on the parent directory of the file
+         # to ensure only owner can remove it
+         runtime_dir = os.path.dirname(fname)
