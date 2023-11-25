@@ -1,0 +1,11 @@
+Index: ext/ae/ae/framebuffer.cpp
+--- ext/ae/ae/framebuffer.cpp.orig
++++ ext/ae/ae/framebuffer.cpp
+@@ -19,6 +19,7 @@
+ *******************************************************************************/
+ #include <ae/framebuffer.h>
+ #include <stdexcept>
++#include <string>
+ 
+ namespace ae {
+ 

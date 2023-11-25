@@ -1,0 +1,12 @@
+Index: src/save.cpp
+--- src/save.cpp.orig
++++ src/save.cpp
+@@ -347,7 +347,7 @@ void _Save::LoadPlayer(_Player *Player) {
+ 
+ 	// Initialize
+ 	Player->AddMissingBackpacks();
+-	Player->ActiveBackpack = std::min(Player->ActiveBackpack, Player->Inventory->Containers[(size_t)BagType::BACKPACK].size() - 1);
++	Player->ActiveBackpack = std::min<uint64_t>(Player->ActiveBackpack, Player->Inventory->Containers[(size_t)BagType::BACKPACK].size() - 1);
+ 	Player->CheckpointIndex = 0;
+ 	Player->CalculateExperienceStats();
+ 	Player->CalculateSkillsRemaining();

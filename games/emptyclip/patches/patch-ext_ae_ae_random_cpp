@@ -1,0 +1,10 @@
+Index: ext/ae/ae/random.cpp
+--- ext/ae/ae/random.cpp.orig
++++ ext/ae/ae/random.cpp
+@@ -37,5 +37,6 @@ template int32_t GetRandomInt<int32_t>(int32_t Min, in
+ template int64_t GetRandomInt<int64_t>(int64_t Min, int64_t Max);
+ template uint32_t GetRandomInt<uint32_t>(uint32_t Min, uint32_t Max);
+ template uint64_t GetRandomInt<uint64_t>(uint64_t Min, uint64_t Max);
++template u_long GetRandomInt<u_long>(u_long Min, u_long Max);
+ 
+ }
