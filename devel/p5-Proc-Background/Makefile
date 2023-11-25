@@ -2,7 +2,7 @@ COMMENT =	peek at lexical variables
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Proc-Background-1.30
+DISTNAME =	Proc-Background-1.32
 CATEGORIES =	devel
 
 # perl
