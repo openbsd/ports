@@ -160,6 +160,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}ast_mod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}ast_mod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}basic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -188,6 +190,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}pyl
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/ast_mod.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/auto.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/basic.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/magics/code.py
@@ -259,6 +262,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_displayhook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_events.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_exceptiongroup_tb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_exceptiongroup_tb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_extension.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/${MODPY_PYCACHE}test_formatters.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -338,6 +343,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_debugger.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_display.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_displayhook.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_events.py
+lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_exceptiongroup_tb.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_extension.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_formatters.py
 lib/python${MODPY_VERSION}/site-packages/IPython/core/tests/test_guarded_eval.py

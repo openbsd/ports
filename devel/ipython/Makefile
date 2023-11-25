@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.13.2
+MODPY_EGG_VERSION =	8.18.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -20,10 +20,12 @@ MODPY_PI =		Yes
 # causing race conditions under dpb. Pull it in to avoid this possibility.
 BUILD_DEPENDS =		www/py-mako${MODPY_FLAVOR}
 
+# XXX: pickleshare is optional as of 8.17, but keep as RDEP for now.
+# If pickleshare is ever removed as an RDEP, it needs to become a TDEP
 RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
-			devel/py-backcall${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
+			devel/py-exceptiongroup${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.16 \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
 			devel/py-prompt_toolkit${MODPY_FLAVOR}>=3.0.30v1,<3.1.0v1 \
@@ -35,7 +37,6 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 # Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR}>=0.10.1 \
 			devel/py-testpath${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}>=1.17 \
 			textproc/py-pygments${MODPY_FLAVOR} \
