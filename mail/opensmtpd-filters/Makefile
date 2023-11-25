@@ -7,5 +7,6 @@ SUBDIR += mimedefang
 SUBDIR += rspamd
 SUBDIR += senderscore
 SUBDIR += spamassassin
+SUBDIR += spfgreylist
 
 .include <bsd.port.subdir.mk>
