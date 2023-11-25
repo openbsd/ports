@@ -1,0 +1,17 @@
+unbreak powerpc build: https://sourceforge.net/p/sbcl/sbcl/ci/8d883c0713256e28b0bb34d4185e9fdd89b4f419/
+
+Index: make-config.sh
+--- make-config.sh.orig
++++ make-config.sh
+@@ -610,7 +610,10 @@ case "$sbcl_os" in
+                 ;;
+             openbsd)
+                 printf ' :openbsd' >> $ltf
+-                printf ' :gcc-tls' >> $ltf
++                case "$sbcl_arch" in
++                  arm64 | x86 | x86-64)
++                  	printf ' :gcc-tls' >> $ltf
++                esac
+                 link_or_copy Config.$sbcl_arch-openbsd Config
+                 ;;
+             netbsd)
