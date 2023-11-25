@@ -1,0 +1,11 @@
+otherwise makedev() function isnt found
+
+Index: render/vulkan/vulkan.c
+--- render/vulkan/vulkan.c.orig
++++ render/vulkan/vulkan.c
+@@ -1,4 +1,4 @@
+-#if !defined(__FreeBSD__)
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #define _POSIX_C_SOURCE 200809L
+ #endif
+ #include <assert.h>

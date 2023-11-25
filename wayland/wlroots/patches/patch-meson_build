@@ -1,0 +1,19 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -145,7 +145,6 @@ pixman = dependency('pixman-1',
+ 	default_options: ['werror=false'],
+ )
+ math = cc.find_library('m')
+-rt = cc.find_library('rt')
+ 
+ wlr_files = []
+ wlr_deps = [
+@@ -154,7 +153,6 @@ wlr_deps = [
+ 	xkbcommon,
+ 	pixman,
+ 	math,
+-	rt,
+ ]
+ 
+ subdir('protocol')

@@ -1,11 +1,11 @@
 COMMENT =	modular Wayland compositor library
 
-V =		20231108
-PKGNAME =	wlroots-$V
+V =		0.17.0
+EPOCH =		0
+DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
 
-SITES =	https://gitlab.freedesktop.org/mherrb/wlroots/-/archive/wlroots-obsd-$V/
-DISTFILES =	wlroots-wlroots-obsd-${V}${EXTRACT_SUFX}
+SITES =		${HOMEPAGE}/wlroots/-/releases/${V}/downloads/
 
 HOMEPAGE =	https://gitlab.freedesktop.org/wlroots
 
@@ -13,8 +13,6 @@ HOMEPAGE =	https://gitlab.freedesktop.org/wlroots
 PERMIT_PACKAGE = Yes
 
 SHARED_LIBS +=  wlroots 0.0 # 0.0
-
-WRKSRC =	${WRKDIR}/wlroots-wlroots-obsd-${V}
 
 MODULES =	devel/meson
 
