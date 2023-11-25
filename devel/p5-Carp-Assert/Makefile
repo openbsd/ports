@@ -2,9 +2,8 @@ COMMENT=	Perl module implementing assertions
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Carp-Assert-0.21
+DISTNAME =	Carp-Assert-0.22
 CATEGORIES=	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
