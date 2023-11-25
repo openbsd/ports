@@ -1,0 +1,15 @@
+Index: inc/avoffset.c
+
+Backport llvm fix from 3.01
+
+--- inc/avoffset.c.orig
++++ inc/avoffset.c
+@@ -103,7 +103,7 @@ main(ac, av)
+ 	 * Note: Scanning the stack to look for argc/argv
+ 	 *	 works only in the main thread.
+ 	 */
+-	while (fp->fr_savfp) {
++	while (i <= 1000 && fp->fr_savfp) {
+ 		if (fp->fr_savpc == 0)
+ 			break;
+ 
