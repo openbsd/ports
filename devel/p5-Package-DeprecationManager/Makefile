@@ -2,9 +2,8 @@ COMMENT =	manage deprecation warnings for your distribution
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Package-DeprecationManager-0.17
+DISTNAME =	Package-DeprecationManager-0.18
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
