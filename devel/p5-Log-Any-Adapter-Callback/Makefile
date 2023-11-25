@@ -2,7 +2,7 @@ COMMENT=		module to send Log::Any logs to a subroutine
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Log-Any-Adapter-Callback-0.101
+DISTNAME =		Log-Any-Adapter-Callback-0.102
 CATEGORIES=		devel
 
 # perl
