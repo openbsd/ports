@@ -1,7 +1,6 @@
-Index: inc/avoffset.c
-
 Backport llvm fix from 3.01
 
+Index: inc/avoffset.c
 --- inc/avoffset.c.orig
 +++ inc/avoffset.c
 @@ -103,7 +103,7 @@ main(ac, av)
