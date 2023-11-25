@@ -2,7 +2,7 @@ Dont show switchuser & menueditor by default since they wont work on openbsd
 Index: panel-plugin/settings.cpp
 --- panel-plugin/settings.cpp.orig
 +++ panel-plugin/settings.cpp
-@@ -185,6 +185,8 @@ void Settings::load(gchar* file)
+@@ -195,6 +195,8 @@ void Settings::load(const gchar* file, bool is_default
  {
  	if (!file)
  	{
