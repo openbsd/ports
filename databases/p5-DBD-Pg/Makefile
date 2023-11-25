@@ -1,7 +1,7 @@
 COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan databases/postgresql
-DISTNAME=	DBD-Pg-3.15.0
+DISTNAME=	DBD-Pg-3.17.0
 CATEGORIES=	databases
 
 LIB_DEPENDS=	databases/postgresql
