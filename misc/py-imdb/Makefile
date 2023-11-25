@@ -1,15 +1,14 @@
-COMMENT =	python package to retrieve data of the IMDb movie database
+COMMENT =	python package to access the IMDb movie database
 
-PORTROACH =	site:https://github.com/alberanid/imdbpy/releases/
+PORTROACH =	site:https://github.com/cinemagoer/cinemagoer/releases/
 
-MODPY_EGG_VERSION = 2021.4.18
-DISTNAME =	IMDbPY-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION = 2023.5.1
+DISTNAME =	cinemagoer-${MODPY_EGG_VERSION}
 PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	misc devel
 
-HOMEPAGE =	https://imdbpy.github.io/
+HOMEPAGE =	https://cinemagoer.github.io/
 
 MAINTAINER =	Todd C. Miller <millert@openbsd.org>
 

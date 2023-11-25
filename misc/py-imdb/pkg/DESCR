@@ -1,4 +1,2 @@
-IMDbPY aims to provide an easy way to access the IMDb's database using a
-Python script.  Platform-independent and written in pure Python, it's
-theoretically independent from the data source (since IMDb provides two
-or three different interfaces to their database).
+Cinemagoer aims to provide an easy way to access the IMDb movie
+database using Python.

@@ -1,9 +1,9 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -92,7 +92,7 @@ params = {
-     'classifiers': [_f for _f in classifiers.split("\n") if _f],
-     'url': home_page,
+@@ -82,7 +82,7 @@ params = {
+         'Source': 'https://github.com/cinemagoer/cinemagoer',
+     },
      'download_url': dwnl_url,
 -    'scripts': scripts,
 +    #'scripts': scripts,
