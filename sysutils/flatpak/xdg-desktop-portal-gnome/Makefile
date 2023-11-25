@@ -2,14 +2,14 @@ COMMENT=		GNOME backend implementation for xdg-desktop-portal
 
 GNOME_PROJECT=		xdg-desktop-portal-gnome
 GNOME_VERSION=		45.0
-REVISION=		1
+REVISION=		2
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 adwaita-1 c cairo fontconfig gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gobject-2.0 gtk-4
-WANTLIB += intl
+WANTLIB += intl wayland-client
 
 MODULES=		devel/dconf \
 			devel/meson \
