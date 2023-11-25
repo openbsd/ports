@@ -1,7 +1,7 @@
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
-REVISION =		0
+REVISION =		1
 
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
@@ -46,6 +46,7 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-bs2b \
 			--disable-jack \
 			--disable-lirc \
+			--disable-openmpt \
 			--disable-pulse \
 			--disable-qtaudio \
 			--disable-sdlout \
