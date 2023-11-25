@@ -77,6 +77,18 @@ include/gstreamer-${API}/gst/uridownloader/gstfragment.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-${API}/gst/uridownloader/uridownloader-prelude.h
+include/gstreamer-${API}/gst/wayland/
+include/gstreamer-${API}/gst/wayland/gstwl_fwd.h
+include/gstreamer-${API}/gst/wayland/gstwlbuffer.h
+include/gstreamer-${API}/gst/wayland/gstwlcontext.h
+include/gstreamer-${API}/gst/wayland/gstwldisplay.h
+include/gstreamer-${API}/gst/wayland/gstwllinuxdmabuf.h
+include/gstreamer-${API}/gst/wayland/gstwlshmallocator.h
+include/gstreamer-${API}/gst/wayland/gstwlvideobufferpool.h
+include/gstreamer-${API}/gst/wayland/gstwlvideoformat.h
+include/gstreamer-${API}/gst/wayland/gstwlwindow.h
+include/gstreamer-${API}/gst/wayland/wayland-prelude.h
+include/gstreamer-${API}/gst/wayland/wayland.h
 include/gstreamer-${API}/gst/webrtc/
 include/gstreamer-${API}/gst/webrtc/datachannel.h
 include/gstreamer-${API}/gst/webrtc/dtlstransport.h
@@ -177,6 +189,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstvideoparsersbad.so
 @so lib/gstreamer-${API}/libgstvideosignal.so
 @so lib/gstreamer-${API}/libgstvmnc.so
+@so lib/gstreamer-${API}/libgstwaylandsink.so
 @so lib/gstreamer-${API}/libgsty4mdec.so
 @lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-${API}_VERSION}
 @lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-${API}_VERSION}
@@ -192,6 +205,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @lib lib/libgstsctp-${API}.so.${LIBgstsctp-${API}_VERSION}
 @lib lib/libgsttranscoder-${API}.so.${LIBgsttranscoder-${API}_VERSION}
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
+@lib lib/libgstwayland-${API}.so.${LIBgstwayland-${API}_VERSION}
 @lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
 lib/pkgconfig/gstreamer-codecparsers-${API}.pc
@@ -203,6 +217,7 @@ lib/pkgconfig/gstreamer-player-${API}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${API}.pc
 lib/pkgconfig/gstreamer-sctp-${API}.pc
 lib/pkgconfig/gstreamer-transcoder-${API}.pc
+lib/pkgconfig/gstreamer-wayland-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
 share/gir-${API}/GstBadAudio-${API}.gir
 share/gir-${API}/GstCodecs-${API}.gir

@@ -110,6 +110,9 @@ include/gstreamer-${API}/gst/gl/gstglupload.h
 include/gstreamer-${API}/gst/gl/gstglutils.h
 include/gstreamer-${API}/gst/gl/gstglviewconvert.h
 include/gstreamer-${API}/gst/gl/gstglwindow.h
+include/gstreamer-${API}/gst/gl/wayland/
+include/gstreamer-${API}/gst/gl/wayland/gstgldisplay_wayland.h
+include/gstreamer-${API}/gst/gl/wayland/wayland.h
 include/gstreamer-${API}/gst/gl/x11/
 include/gstreamer-${API}/gst/gl/x11/gstgldisplay_x11.h
 include/gstreamer-${API}/gst/gl/x11/x11.h
@@ -213,6 +216,7 @@ lib/girepository-${API}/GstApp-${API}.typelib
 lib/girepository-${API}/GstAudio-${API}.typelib
 lib/girepository-${API}/GstGL-${API}.typelib
 lib/girepository-${API}/GstGLEGL-${API}.typelib
+lib/girepository-${API}/GstGLWayland-${API}.typelib
 lib/girepository-${API}/GstGLX11-${API}.typelib
 lib/girepository-${API}/GstPbutils-${API}.typelib
 lib/girepository-${API}/GstRtp-${API}.typelib
@@ -274,6 +278,7 @@ lib/pkgconfig/gstreamer-fft-${API}.pc
 lib/pkgconfig/gstreamer-gl-${API}.pc
 lib/pkgconfig/gstreamer-gl-egl-${API}.pc
 lib/pkgconfig/gstreamer-gl-prototypes-${API}.pc
+lib/pkgconfig/gstreamer-gl-wayland-${API}.pc
 lib/pkgconfig/gstreamer-gl-x11-${API}.pc
 lib/pkgconfig/gstreamer-pbutils-${API}.pc
 lib/pkgconfig/gstreamer-plugins-base-${API}.pc
@@ -291,6 +296,7 @@ share/gir-${API}/GstApp-${API}.gir
 share/gir-${API}/GstAudio-${API}.gir
 share/gir-${API}/GstGL-${API}.gir
 share/gir-${API}/GstGLEGL-${API}.gir
+share/gir-${API}/GstGLWayland-${API}.gir
 share/gir-${API}/GstGLX11-${API}.gir
 share/gir-${API}/GstPbutils-${API}.gir
 share/gir-${API}/GstRtp-${API}.gir

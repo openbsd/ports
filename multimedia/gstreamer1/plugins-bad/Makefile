@@ -2,6 +2,7 @@ COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS += gsturidownloader-1.0      5.1 # 0.2207.0
 SHARED_LIBS += gstadaptivedemux-1.0      4.1 # 0.2207.0
@@ -17,16 +18,17 @@ SHARED_LIBS += gstplay-1.0               0.1 # 0.2207.0
 SHARED_LIBS += gstplayer-1.0             3.1 # 0.2207.0
 SHARED_LIBS += gstsctp-1.0               3.1 # 0.2207.0
 SHARED_LIBS += gsttranscoder-1.0         1.1 # 0
+SHARED_LIBS += gstwayland-1.0            0.0 # 0.2207.0
 SHARED_LIBS += gstwebrtc-1.0             3.1 # 0.2207.0
 
 COMPILER_LANGS = c c++
 
 WANTLIB += ${COMPILER_LIBCXX} SoundTouch X11 ass bs2b bz2 c cairo
-WANTLIB += crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstnet-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += intl lcms2 m nettle opus orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB += rsvg-2 xml2
+WANTLIB += crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstallocators-1.0
+WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstnet-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gstrtp-1.0 gstsdp-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 intl lcms2 m nettle opus orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 rsvg-2 wayland-client xml2
 
 SITES =			${SITE_GST:=gst-plugins-bad/}
 
@@ -45,7 +47,7 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			x11/gnome/librsvg
 
 # each plugin that has an external dependency is disabled unless proven useful
-DISABLED += 		opencv wayland aom androidmedia applemedia bluez ldac
+DISABLED += 		opencv aom androidmedia applemedia bluez ldac
 DISABLED +=		chromaprint curl curl-ssh2 dc1394 decklink directfb
 DISABLED +=		dtls dts dvb faac faad fbdev fdkaac flite fluidsynth
 DISABLED +=		gme gsm iqa kate ladspa libde265 lv2 modplug mpeg2enc

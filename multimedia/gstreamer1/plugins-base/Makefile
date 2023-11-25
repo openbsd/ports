@@ -3,6 +3,8 @@ COMMENT=		base elements for GStreamer
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
+REVISION=		0
+
 SHARED_LIBS += gsttag-1.0                7.1 # 0.2207.0
 SHARED_LIBS += gstfft-1.0                7.1 # 0.2207.0
 SHARED_LIBS += gstvideo-1.0              7.1 # 0.2207.0
@@ -23,7 +25,8 @@ WANTLIB += cdda_paranoia gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphene-1.0 gstbase-1.0 gstcontroller-1.0 gstnet-1.0
 WANTLIB += gstreamer-1.0 intl jpeg m ogg opus orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 png sndio theoradec theoraenc vorbis
-WANTLIB += vorbisenc xcb z
+WANTLIB += vorbisenc wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb z
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gobject-introspection
@@ -38,15 +41,15 @@ LIB_DEPENDS=		${P}/core=${V} \
 			devel/pango \
 			graphics/graphene \
 			graphics/jpeg \
-			multimedia/libtheora
+			multimedia/libtheora \
+			wayland/wayland
 
 # optional dependency for the the gio plugin;
 # disabled because of cyclic build dependency:
 # x11/gtk+4 -> gst-plugins-{bad,base} -> gvfs -> gtk+4,-guic -> x11/gtk+4
 #RUN_DEPENDS +=		x11/gnome/gvfs
 
-CONFIGURE_ARGS=		-Dalsa=disabled \
-			-Dgl_winsys=x11
+CONFIGURE_ARGS=		-Dalsa=disabled
 
 #XXX libvisual needs to be ported
 CONFIGURE_ARGS +=	-Dlibvisual=disabled
