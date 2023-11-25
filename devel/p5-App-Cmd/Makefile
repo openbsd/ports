@@ -2,7 +2,7 @@ COMMENT =		write command line apps with less suffering
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		App-Cmd-0.335
+DISTNAME =		App-Cmd-0.336
 CATEGORIES =		devel
 
 # Perl
