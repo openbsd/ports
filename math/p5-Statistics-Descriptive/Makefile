@@ -1,6 +1,6 @@
 COMMENT =		basic descriptive statistical functions
 
-DISTNAME =		Statistics-Descriptive-3.0800
+DISTNAME =		Statistics-Descriptive-3.0801
 CATEGORIES =		math
 
 # perl
