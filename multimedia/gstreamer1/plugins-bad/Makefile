@@ -32,7 +32,8 @@ WANTLIB += pango-1.0 pangocairo-1.0 rsvg-2 wayland-client xml2
 
 SITES =			${SITE_GST:=gst-plugins-bad/}
 
-BUILD_DEPENDS=		devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection \
+			wayland/wayland-protocols
 
 # needed for ${WRKSRC}/tests/
 BUILD_DEPENDS +=	graphics/libexif
