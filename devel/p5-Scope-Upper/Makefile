@@ -1,7 +1,7 @@
 COMMENT =	act on upper scopes
 
 MODULES =	cpan
-DISTNAME =	Scope-Upper-0.33
+DISTNAME =	Scope-Upper-0.34
 CATEGORIES =	devel
 
 # Perl
