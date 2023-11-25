@@ -1,7 +1,6 @@
 COMMENT =	database URIs
 
-DISTNAME =	URI-db-0.20
-REVISION =	0
+DISTNAME =	URI-db-0.21
 
 CATEGORIES =	devel
 
