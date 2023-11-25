@@ -1,6 +1,6 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_EGG_VERSION =	5.4.4
+MODPY_EGG_VERSION =	5.5.1
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,12 +17,11 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
-			devel/py-ipykernel${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR}>=4.1 \
 			devel/py-jupyter_client${MODPY_FLAVOR}>=4.1 \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR} \
+			devel/py-traitlets${MODPY_FLAVOR}>=5.2.2 \
 			net/py-zmq${MODPY_FLAVOR}>=17.1 \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
