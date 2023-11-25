@@ -29,7 +29,8 @@ WANTLIB += vorbisenc wayland-client wayland-cursor wayland-egl
 WANTLIB += xcb z
 
 BUILD_DEPENDS=		devel/iso-codes \
-			devel/gobject-introspection
+			devel/gobject-introspection \
+			wayland/wayland-protocols
 
 RUN_DEPENDS=		devel/iso-codes
 
