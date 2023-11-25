@@ -62,6 +62,16 @@ include/gtk-4.0/gdk/gdkvulkancontext.h
 include/gtk-4.0/gdk/version/
 include/gtk-4.0/gdk/version/gdk-visibility.h
 include/gtk-4.0/gdk/version/gdkversionmacros.h
+include/gtk-4.0/gdk/wayland/
+include/gtk-4.0/gdk/wayland/gdkwayland.h
+include/gtk-4.0/gdk/wayland/gdkwaylanddevice.h
+include/gtk-4.0/gdk/wayland/gdkwaylanddisplay.h
+include/gtk-4.0/gdk/wayland/gdkwaylandglcontext.h
+include/gtk-4.0/gdk/wayland/gdkwaylandmonitor.h
+include/gtk-4.0/gdk/wayland/gdkwaylandpopup.h
+include/gtk-4.0/gdk/wayland/gdkwaylandseat.h
+include/gtk-4.0/gdk/wayland/gdkwaylandsurface.h
+include/gtk-4.0/gdk/wayland/gdkwaylandtoplevel.h
 include/gtk-4.0/gdk/x11/
 include/gtk-4.0/gdk/x11/gdkx-autocleanups.h
 include/gtk-4.0/gdk/x11/gdkx.h
@@ -385,6 +395,7 @@ include/gtk-4.0/unix-print/gtk/print/gtkprinter.h
 include/gtk-4.0/unix-print/gtk/print/gtkprintjob.h
 include/gtk-4.0/unix-print/gtk/print/gtkprintunixdialog.h
 lib/girepository-1.0/Gdk-4.0.typelib
+lib/girepository-1.0/GdkWayland-4.0.typelib
 lib/girepository-1.0/GdkX11-4.0.typelib
 lib/girepository-1.0/Gsk-4.0.typelib
 lib/girepository-1.0/Gtk-4.0.typelib
@@ -395,6 +406,7 @@ lib/gtk-4.0/4.0.0/printbackends/
 @so lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
 @lib lib/libgtk-4.so.${LIBgtk-4_VERSION}
 lib/pkgconfig/gtk4-unix-print.pc
+lib/pkgconfig/gtk4-wayland.pc
 lib/pkgconfig/gtk4-x11.pc
 lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-broadwayd.1
@@ -407,6 +419,7 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/gettext/its/gtk4builder.its
 share/gettext/its/gtk4builder.loc
 share/gir-1.0/Gdk-4.0.gir
+share/gir-1.0/GdkWayland-4.0.gir
 share/gir-1.0/GdkX11-4.0.gir
 share/gir-1.0/Gsk-4.0.gir
 share/gir-1.0/Gtk-4.0.gir
