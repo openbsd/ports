@@ -1,6 +1,6 @@
 COMMENT =		guess C++ compiler and flags
 
-DISTNAME =		ExtUtils-CppGuess-0.26
+DISTNAME =		ExtUtils-CppGuess-0.27
 
 CATEGORIES =		devel
 
