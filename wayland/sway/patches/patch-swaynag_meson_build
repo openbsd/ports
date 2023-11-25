@@ -1,0 +1,11 @@
+Index: swaynag/meson.build
+--- swaynag/meson.build.orig
++++ swaynag/meson.build
+@@ -12,7 +12,6 @@ executable(
+ 		cairo,
+ 		pango,
+ 		pangocairo,
+-		rt,
+ 		wayland_client,
+ 		wayland_cursor,
+ 	],

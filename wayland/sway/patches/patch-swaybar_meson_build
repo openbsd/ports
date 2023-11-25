@@ -1,0 +1,11 @@
+Index: swaybar/meson.build
+--- swaybar/meson.build.orig
++++ swaybar/meson.build
+@@ -13,7 +13,6 @@ swaybar_deps = [
+ 	math,
+ 	pango,
+ 	pangocairo,
+-	rt,
+ 	wayland_client,
+ 	wayland_cursor
+ ]

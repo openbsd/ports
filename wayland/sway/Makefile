@@ -1,13 +1,10 @@
 COMMENT =	i3-compatible Wayland compositor
 UNLINKED 	= wayland
 
-V =		20231108
-PKGNAME =	sway-${V}
-
-GH_ACCOUNT =	mherrb
+GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
-GH_TAGNAME =	sway-obsd-${V}
-
+GH_COMMIT =	bff991dfdc63ca3785a810ff4d913ddfd71677a1
+DISTNAME =	${GH_PROJECT}-1.8.1pl20231121
 CATEGORIES =	wayland
 
 HOMEPAGE =	https://github.com/swaywm/sway

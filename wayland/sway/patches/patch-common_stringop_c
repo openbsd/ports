@@ -1,0 +1,20 @@
+Index: common/stringop.c
+--- common/stringop.c.orig
++++ common/stringop.c
+@@ -6,7 +6,16 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <strings.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#else
++#include <glob.h>
++#define wordexp_t glob_t
++#define wordfree globfree
++#define wordexp(s,p,f) glob((s), GLOB_DOOFFS, NULL, (p))
++#define we_wordc gl_pathc
++#define we_wordv gl_pathv
++#endif
+ #include "list.h"
+ #include "log.h"
+ #include "stringop.h"

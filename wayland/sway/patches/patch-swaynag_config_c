@@ -1,0 +1,44 @@
+Index: swaynag/config.c
+--- swaynag/config.c.orig
++++ swaynag/config.c
+@@ -2,7 +2,11 @@
+ #include <getopt.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#else
++#include <glob.h>
++#endif
+ #include <unistd.h>
+ #include "log.h"
+ #include "list.h"
+@@ -378,6 +382,7 @@ char *swaynag_get_config_path(void) {
+ 		config_paths[1] = "$HOME/.config/swaynag/config";
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	wordexp_t p;
+ 	for (size_t i = 0; i < sizeof(config_paths) / sizeof(char *); ++i) {
+ 		if (wordexp(config_paths[i], &p, 0) == 0) {
+@@ -389,7 +394,19 @@ char *swaynag_get_config_path(void) {
+ 			free(path);
+ 		}
+ 	}
+-
++#else
++	glob_t p;
++	for (size_t i = 0; i < sizeof(config_paths) / sizeof(char *); ++i) {
++		if (glob(config_paths[i], GLOB_DOOFFS, NULL, &p) == 0) {
++			char *path = strdup(p.gl_pathv[0]);
++			globfree(&p);
++			if (file_exists(path)) {
++				return path;
++			}
++			free(path);
++		}
++	}
++#endif
+ 	return NULL;
+ }
+ 

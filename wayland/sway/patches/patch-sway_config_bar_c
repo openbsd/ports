@@ -1,0 +1,13 @@
+Index: sway/config/bar.c
+--- sway/config/bar.c.orig
++++ sway/config/bar.c
+@@ -9,7 +9,9 @@
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <unistd.h>
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#endif
+ #include "sway/config.h"
+ #include "sway/input/keyboard.h"
+ #include "sway/output.h"
