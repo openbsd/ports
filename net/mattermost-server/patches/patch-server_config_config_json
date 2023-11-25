@@ -106,7 +106,7 @@ Index: server/config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.calls": {
-@@ -633,11 +633,11 @@
+@@ -632,11 +632,11 @@
      "StreamlinedMarketplace": true
    },
    "ImportSettings": {
