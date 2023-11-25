@@ -91,6 +91,7 @@
      SUBDIR += egoboo
      SUBDIR += einstein
      SUBDIR += eliot
+     SUBDIR += emptyclip
      SUBDIR += endless-sky
      SUBDIR += enigma
      SUBDIR += extremetuxracer
