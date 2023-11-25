@@ -1,0 +1,12 @@
+This filter implements greylisting, allowing OpenSMTPD to temporarily
+reject sessions of clients it has not seen before. Unlike many
+implementations, this one is SPF-aware so it will properly handle
+greylisting for domains doing relaying through multiple MX, as long as
+they publish a valid SPF record.
+
+The filter currently supports:
+
+* IPv4 and IPv6 address greylisting
+* SPF greylisting
+* startup whitelisting of IP and domains
+* automatically renewed whitelisting
