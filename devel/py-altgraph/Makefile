@@ -1,9 +1,8 @@
 COMMENT=	Python graph (network) package
 
-MODPY_EGG_VERSION =	0.17.3
+MODPY_EGG_VERSION =	0.17.4
 DISTNAME=	altgraph-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	devel
 
