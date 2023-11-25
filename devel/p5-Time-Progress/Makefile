@@ -1,8 +1,7 @@
 COMMENT =	elapsed and estimated finish time reporting
 
-DISTNAME =	Time-Progress-2.12
+DISTNAME =	Time-Progress-2.14
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
