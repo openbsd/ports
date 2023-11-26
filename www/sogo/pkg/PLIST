@@ -1,5 +1,5 @@
 @newgroup _sogo:659
-@newuser _sogo:659:_sogo::SOGo user:${VARBASE}/sogo:/bin/sh
+@newuser _sogo:659:_sogo::SOGo user:${LOCALSTATEDIR}/sogo:/bin/sh
 @rcscript ${RCDIR}/sogod
 include/GDLContentStore/
 include/GDLContentStore/EOAdaptorChannel+GCS.h
@@ -2901,6 +2901,6 @@ share/examples/login.conf.d/sogod
 @mode 750
 @owner _sogo
 @group _sogo
-@sample ${VARBASE}/sogo/
-@sample ${VARBASE}/log/sogo/
-@sample ${VARBASE}/spool/sogo/
+@sample ${LOCALSTATEDIR}/sogo/
+@sample ${LOCALSTATEDIR}/log/sogo/
+@sample ${LOCALSTATEDIR}/spool/sogo/
