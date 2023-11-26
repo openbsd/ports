@@ -2,9 +2,8 @@ COMMENT=	extract structure of quoted HTML mail message
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	HTML-Quoted-0.04
+DISTNAME =	HTML-Quoted-0.05
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
 
 CATEGORIES=	www
 
