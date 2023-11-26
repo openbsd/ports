@@ -145,6 +145,7 @@
      SUBDIR += gnurobbo
      SUBDIR += gnushogi
      SUBDIR += godot
+     SUBDIR += godot4
      SUBDIR += gogrepo
      SUBDIR += goldberg_emulator
      SUBDIR += golly
