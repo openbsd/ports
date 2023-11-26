@@ -243,6 +243,7 @@ ${P5SITE}/Rex/Pkg/SunOS/
 ${P5SITE}/Rex/Pkg/SunOS.pm
 ${P5SITE}/Rex/Pkg/SunOS/OpenCSW.pm
 ${P5SITE}/Rex/Pkg/SunOS/pkg.pm
+${P5SITE}/Rex/Pkg/Test.pm
 ${P5SITE}/Rex/Pkg/Ubuntu.pm
 ${P5SITE}/Rex/Pkg/VoidLinux.pm
 ${P5SITE}/Rex/PkgConf/
