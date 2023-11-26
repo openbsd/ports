@@ -1,6 +1,6 @@
 COMMENT=	cross-platform tool to add locations to the user's PATH
 
-MODPY_EGG_VERSION=	1.9.0
+MODPY_EGG_VERSION=	1.9.1
 DISTNAME=	userpath-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
