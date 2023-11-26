@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.67 2023/11/26 09:32:10 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.68 2023/11/26 18:05:09 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -68,12 +68,14 @@ sub create_missing_vars($self, $o)
 	}
 }
 
-sub handle_path($self, $pkgpath, $equivs)
+sub handle_path($self, $pkgpath, $equivs, $todo)
 {
 	$self->create_missing_vars($pkgpath);
 	my $key = $pkgpath->fullpkgpath;
+	delete $todo->{$key};
 	while (defined $equivs->{$key}) {
 		$key = $equivs->{$key};
+		delete $todo->{$key};
 	}
 	if ($pkgpath->{info}{done}) {
 		say "--- $key (already done)";

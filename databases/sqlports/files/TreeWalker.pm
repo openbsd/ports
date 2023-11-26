@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.22 2023/11/12 12:05:50 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.23 2023/11/26 18:05:09 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -96,12 +96,13 @@ sub parse_dump($self, $fd, $subdirs)
 {
 	my $h = {};
 	my $seen = {};
+	my $todo = { map {($_, 1)} keys %$subdirs};
 	my $subdir;
 	my @messages = ();
 	my $reset = sub() {
 		$h = PkgPath->handle_equivalences($self, $h, $subdirs);
 		for my $pkgpath (sort values %$h) {
-			$self->handle_path($pkgpath, $self->{equivs});
+			$self->handle_path($pkgpath, $self->{equivs}, $todo);
 		}
 		$h = {};
 	};
@@ -146,6 +147,9 @@ sub parse_dump($self, $fd, $subdirs)
 		}
 	}
 	&$reset();
+	for my $k (keys %$todo) {
+		$self->break(PkgPath->new($k), "unaccounted for");
+	}
 }
 
 # $self->handle_value($o, $var, $value, $arch)
