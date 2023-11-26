@@ -1,7 +1,6 @@
 COMMENT =	recursive DNS client for POE
 
-DISTNAME =	POE-Component-Client-DNS-Recursive-1.12
-REVISION =	0
+DISTNAME =	POE-Component-Client-DNS-Recursive-1.14
 
 CATEGORIES =	net
 
