@@ -14,7 +14,7 @@ Index: Makefile
  SHARE_DIR=$(PREFIX)/share/kore
  INCLUDE_DIR=$(PREFIX)/include/kore
  TLS_BACKEND?=openssl
-@@ -30,10 +30,10 @@ S_SRC+= src/tls_$(TLS_BACKEND).c
+@@ -31,10 +31,10 @@ S_SRC+= src/tls_$(TLS_BACKEND).c
  FEATURES=
  FEATURES_INC=
  
@@ -27,7 +27,7 @@ Index: Makefile
  CFLAGS+=-DPREFIX='"$(PREFIX)"' -fstack-protector-all
  
  LDFLAGS+=-rdynamic
-@@ -67,8 +67,6 @@ endif
+@@ -68,8 +68,6 @@ endif
  
  ifneq ("$(NOOPT)", "")
  	CFLAGS+=-O0
