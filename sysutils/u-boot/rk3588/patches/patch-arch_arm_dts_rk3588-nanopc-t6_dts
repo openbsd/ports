@@ -1,0 +1,12 @@
+Index: arch/arm/dts/rk3588-nanopc-t6.dts
+--- arch/arm/dts/rk3588-nanopc-t6.dts.orig
++++ arch/arm/dts/rk3588-nanopc-t6.dts
+@@ -23,7 +23,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	leds {

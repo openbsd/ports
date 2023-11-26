@@ -1,0 +1,12 @@
+Index: arch/arm/dts/rk3588s-rock-5a.dts
+--- arch/arm/dts/rk3588s-rock-5a.dts.orig
++++ arch/arm/dts/rk3588s-rock-5a.dts
+@@ -32,7 +32,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	leds {

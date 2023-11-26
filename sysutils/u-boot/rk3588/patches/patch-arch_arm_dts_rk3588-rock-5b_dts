@@ -1,0 +1,12 @@
+Index: arch/arm/dts/rk3588-rock-5b.dts
+--- arch/arm/dts/rk3588-rock-5b.dts.orig
++++ arch/arm/dts/rk3588-rock-5b.dts
+@@ -18,7 +18,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	analog-sound {
