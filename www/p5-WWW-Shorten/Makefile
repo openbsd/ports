@@ -1,8 +1,7 @@
 COMMENT=		interface to URL shortening sites
 
-DISTNAME =		WWW-Shorten-3.093
+DISTNAME =		WWW-Shorten-3.094
 CATEGORIES=		www
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE=	Yes
