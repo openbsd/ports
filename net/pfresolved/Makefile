@@ -11,6 +11,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB =		c crypto event execinfo pthread ssl unbound util
 
 SITES =	https://github.com/genua/pfresolved/releases/download/v${VERSION}/
