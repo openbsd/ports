@@ -1,10 +1,9 @@
 COMMENT =	library to apply JSON Patches according to RFC 6902
 
-MODPY_EGG_VERSION =	1.32
+MODPY_EGG_VERSION =	1.33
 
 DISTNAME =	jsonpatch-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	textproc
 
