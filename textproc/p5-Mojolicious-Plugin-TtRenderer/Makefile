@@ -2,7 +2,7 @@ COMMENT =	Template Renderer Plugin for Mojolicious
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-Plugin-TtRenderer-1.61
+DISTNAME =	Mojolicious-Plugin-TtRenderer-1.62
 CATEGORIES =	textproc
 
 # Perl
