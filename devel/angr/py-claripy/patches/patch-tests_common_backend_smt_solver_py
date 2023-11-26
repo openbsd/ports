@@ -1,12 +1,11 @@
 File missing from distribution tarball.
 
-Index: tests/common_backend_smt_solver.py
---- tests/common_backend_smt_solver.py.orig
-+++ tests/common_backend_smt_solver.py
-@@ -1 +1,349 @@
+--- /dev/null	Sun Nov 26 09:47:46 2023
++++ tests/common_backend_smt_solver.py	Sun Nov 26 09:47:10 2023
+@@ -0,0 +1,349 @@
 +from unittest import skip
 +from decorator import decorator
- 
++
 +import claripy
 +from test_backend_smt import TestSMTLibBackend
 +
