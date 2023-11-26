@@ -5,7 +5,7 @@
 @mode 750
 @owner _litecoind
 @group _litecoind
-@sample ${VARBASE}/litecoin/
+@sample ${LOCALSTATEDIR}/litecoin/
 @comment @bin bin/test_bitcoin
 @mode
 @owner

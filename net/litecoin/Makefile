@@ -84,8 +84,6 @@ LIB_DEPENDS +=		archivers/zstd \
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
-SUBST_VARS +=		VARBASE
-
 post-install:
 	cd ${WRKBUILD}/src/univalue && \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} install
