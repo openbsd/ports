@@ -1,5 +1,6 @@
 COMMENT =	manage passwords
 DISTNAME =	plass-0.7
+REVISION =	0
 CATEGORIES =	security
 HOMEPAGE =	https://projects.omarpolo.com/plass.html
 MAINTAINER =	Omar Polo <op@openbsd.org>
@@ -15,7 +16,8 @@ MAKE_FLAGS =	CFLAGS="${CFLAGS}"
 FAKE_FLAGS =	PREFIX="${TRUEPREFIX}"
 
 RUN_DEPENDS =	devel/got \
-		security/gnupg
+		security/gnupg \
+		textproc/p5-Encode-Locale
 
 NO_TEST =	Yes
 
