@@ -38,6 +38,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-wayland
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
