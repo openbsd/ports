@@ -2,6 +2,7 @@ COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
 MODGO_VERSION =	v1.15.10
+REVISION =	0
 
 DISTNAME =	gopass-${MODGO_VERSION}
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 HOMEPAGE =	https://www.gopass.pw/
+
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MODULES =	lang/go
 MODGO_LDFLAGS =	-X "main.version=${MODGO_VERSION}"
