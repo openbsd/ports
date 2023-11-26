@@ -37,7 +37,7 @@ SHA256 (cargo/once_cell-1.18.0.tar.gz) = 3Ytd0q5e1xRixUAli+3LUZZRI61+fM9Lmoyvqkp
 SHA256 (cargo/openssl-src-300.1.6+3.1.4.tar.gz) = Q5+sU+CSzXRCo2YMhd3kZDqztb05BAkSOI3Nq/a4gIU=
 SHA256 (cargo/peeking_take_while-0.1.2.tar.gz) = GbF83b5+w/i8gAiHurXnFzSMleosoLG/CDf7lk3GcJk=
 SHA256 (cargo/pkg-config-0.3.27.tar.gz) = JgcoYLqSTL+pjqOcjBm03WpKJUI9vfIZweypGqDPaWQ=
-SHA256 (cargo/proc-macro2-1.0.69.tar.gz) = E0wYn+tJVrIPb1R9LPcn1MD+BnIrIKDuyH7URal/kto=
+SHA256 (cargo/proc-macro2-1.0.70.tar.gz) = OSePu/X7T2Rs5lFpCHf4nRxYEaPUrLJ3AMHLPNt4/Ts=
 SHA256 (cargo/quote-1.0.33.tar.gz) = Umf8pElgKGKKlRYPxCOjPosuavilMCV54yLktSApPK4=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
 SHA256 (cargo/redox_users-0.4.4.tar.gz) = oYR5IAd5YB5JitpOjB4fUOPuGd6wJZwlglqYtWA7LLQ=
@@ -75,7 +75,7 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (rust-openssl-tests-20231123-8f4b97ae.tar.gz) = mOV6KcRn8xkFv5+0Q9YmagT2RQwnKfna8/ACBC/T0uY=
+SHA256 (rust-openssl-tests-20231126-5b5b8c9e.tar.gz) = /Oh1nMznNuOxhlI3LolWdQWxDrFzln8tXCbKotCgkeA=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/bindgen-0.64.0.tar.gz) = 204700
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
@@ -115,7 +115,7 @@ SIZE (cargo/once_cell-1.18.0.tar.gz) = 32969
 SIZE (cargo/openssl-src-300.1.6+3.1.4.tar.gz) = 8839739
 SIZE (cargo/peeking_take_while-0.1.2.tar.gz) = 6697
 SIZE (cargo/pkg-config-0.3.27.tar.gz) = 18838
-SIZE (cargo/proc-macro2-1.0.69.tar.gz) = 44271
+SIZE (cargo/proc-macro2-1.0.70.tar.gz) = 44343
 SIZE (cargo/quote-1.0.33.tar.gz) = 28090
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
 SIZE (cargo/redox_users-0.4.4.tar.gz) = 15438
@@ -153,4 +153,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (rust-openssl-tests-20231123-8f4b97ae.tar.gz) = 354157
+SIZE (rust-openssl-tests-20231126-5b5b8c9e.tar.gz) = 354154
