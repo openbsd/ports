@@ -24,7 +24,7 @@ RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=2.5.2 \
 			www/py-gunicorn${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
-PREFIX=			${VARBASE}/www
+PREFIX=			${LOCALSTATEDIR}/www
 INSTDIR=		${PREFIX}/puppetboard
 SUBST_VARS+=		INSTDIR
 
