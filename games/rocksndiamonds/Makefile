@@ -2,10 +2,11 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
-DISTNAME =	rocksndiamonds-4.3.2.1
+DISTNAME =	rocksndiamonds-4.3.7.1
+EXTRACT_SUFX =	-linux.tar.gz
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
+HOMEPAGE =	https://www.artsoft.org/rocksndiamonds/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	SDL2 c m SDL2_mixer SDL2_image SDL2_net z
 
-SITES =		http://www.artsoft.org/RELEASES/unix/rocksndiamonds/
+SITES =		https://www.artsoft.org/RELEASES/unix/rocksndiamonds/
 
 LIB_DEPENDS =	devel/sdl2-mixer \
 		devel/sdl2-image \
