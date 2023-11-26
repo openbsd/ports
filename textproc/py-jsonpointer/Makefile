@@ -1,10 +1,9 @@
 COMMENT =	library to resolve JSON Pointers according to RFC 6901
 
-MODPY_EGG_VERSION =	2.3
+MODPY_EGG_VERSION =	2.4
 
 DISTNAME =	jsonpointer-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	textproc
 
