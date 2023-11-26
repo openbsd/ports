@@ -3,7 +3,8 @@ lib/python${MODPY_VERSION}/site-packages/MysticMine-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/monorail/
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.py
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.pyc
-@so lib/python${MODPY_VERSION}/site-packages/monorail/ai.so
+lib/python${MODPY_VERSION}/site-packages/monorail/ai.py
+lib/python${MODPY_VERSION}/site-packages/monorail/ai.pyc
 lib/python${MODPY_VERSION}/site-packages/monorail/control.py
 lib/python${MODPY_VERSION}/site-packages/monorail/control.pyc
 lib/python${MODPY_VERSION}/site-packages/monorail/controlview.py
