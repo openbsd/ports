@@ -4,7 +4,7 @@
 @mode 750
 @owner _bitcoind
 @group _bitcoind
-@sample ${VARBASE}/bitcoin/
+@sample ${LOCALSTATEDIR}/bitcoin/
 @mode
 @owner
 @group

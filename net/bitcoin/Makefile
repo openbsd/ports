@@ -80,8 +80,6 @@ CONFIGURE_ARGS +=	--with-gui=qt5
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
-SUBST_VARS +=		VARBASE
-
 post-install:
 	cd ${WRKBUILD}/src/secp256k1 && \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} install
