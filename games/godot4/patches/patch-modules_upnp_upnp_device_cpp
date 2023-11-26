@@ -1,0 +1,14 @@
+fix include path for miniupnpc
+
+Index: modules/upnp/upnp_device.cpp
+--- modules/upnp/upnp_device.cpp.orig
++++ modules/upnp/upnp_device.cpp
+@@ -32,7 +32,7 @@
+ 
+ #include "upnp.h"
+ 
+-#include <upnpcommands.h>
++#include <miniupnpc/upnpcommands.h>
+ 
+ String UPNPDevice::query_external_address() const {
+ 	ERR_FAIL_COND_V_MSG(!is_valid_gateway(), "", "The Internet Gateway Device must be valid.");

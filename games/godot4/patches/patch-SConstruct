@@ -1,0 +1,15 @@
+disable hardcoded compiler/linker flags.  We handle stripping and debug
+(-g), as well as optimizations (-On), by ourselves.
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -581,7 +581,7 @@ if selected_platform in platform_list:
+             env.Append(LINKFLAGS=["/OPT:REF"])
+         elif env["optimize"] == "debug" or env["optimize"] == "none":
+             env.Append(CCFLAGS=["/Od"])
+-    else:
++    elif False: # disable -g/-O/-s flags; we handle them ourselves
+         if env["debug_symbols"]:
+             # Adding dwarf-4 explicitly makes stacktraces work with clang builds,
+             # otherwise addr2line doesn't understand them

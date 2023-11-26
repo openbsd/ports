@@ -1,0 +1,14 @@
+adjust include path for miniupnpc
+
+Index: modules/upnp/upnp.h
+--- modules/upnp/upnp.h.orig
++++ modules/upnp/upnp.h
+@@ -35,7 +35,7 @@
+ 
+ #include "core/object/ref_counted.h"
+ 
+-#include <miniupnpc.h>
++#include <miniupnpc/miniupnpc.h>
+ 
+ class UPNP : public RefCounted {
+ 	GDCLASS(UPNP, RefCounted);

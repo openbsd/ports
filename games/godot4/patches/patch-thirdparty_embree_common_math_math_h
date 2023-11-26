@@ -1,0 +1,21 @@
+add min/max implementation for `long'
+
+Index: thirdparty/embree/common/math/math.h
+--- thirdparty/embree/common/math/math.h.orig
++++ thirdparty/embree/common/math/math.h
+@@ -239,6 +239,7 @@ namespace embree
+     __forceinline T twice(const T& a) { return a+a; }
+ 
+   __forceinline      int min(int      a, int      b) { return a<b ? a:b; }
++  __forceinline     long min(long     a, long     b) { return a<b ? a:b; }
+   __forceinline unsigned min(unsigned a, unsigned b) { return a<b ? a:b; }
+   __forceinline  int64_t min(int64_t  a, int64_t  b) { return a<b ? a:b; }
+   __forceinline    float min(float    a, float    b) { return a<b ? a:b; }
+@@ -259,6 +260,7 @@ namespace embree
+   template<typename T> __forceinline T mini(const T& a, const T& b, const T& c, const T& d, const T& e) { return mini(mini(mini(a,b),mini(c,d)),e); }
+ 
+   __forceinline      int max(int      a, int      b) { return a<b ? b:a; }
++  __forceinline     long max(long     a, long     b) { return a<b ? b:a; }
+   __forceinline unsigned max(unsigned a, unsigned b) { return a<b ? b:a; }
+   __forceinline  int64_t max(int64_t  a, int64_t  b) { return a<b ? b:a; }
+   __forceinline    float max(float    a, float    b) { return a<b ? b:a; }

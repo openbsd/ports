@@ -1,0 +1,12 @@
+Index: platform/linuxbsd/x11/detect_prime_x11.cpp
+--- platform/linuxbsd/x11/detect_prime_x11.cpp.orig
++++ platform/linuxbsd/x11/detect_prime_x11.cpp
+@@ -60,6 +60,8 @@ typedef GLXContext (*GLXCREATECONTEXTATTRIBSARBPROC)(D
+ // To prevent shadowing warnings
+ #undef glGetString
+ 
++#define quick_exit(_n) _exit((_n))
++
+ struct vendor {
+ 	const char *glxvendor = nullptr;
+ 	int priority = 0;

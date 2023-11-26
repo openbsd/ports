@@ -1,0 +1,43 @@
+- stub some functions implementation so it compiles
+- we don't seem to have pthread_getaffinity_np in pthread_np.h; use
+  sysctl like macos and andoid then
+
+Index: thirdparty/embree/common/sys/sysinfo.cpp
+--- thirdparty/embree/common/sys/sysinfo.cpp.orig
++++ thirdparty/embree/common/sys/sysinfo.cpp
+@@ -597,6 +597,26 @@ namespace embree
+ 
+ #endif
+ 
++#if defined(__OpenBSD__)
++namespace embree
++{
++	std::string getExecutableFileName()
++	{
++		return "";
++	}
++
++	size_t getVirtualMemoryBytes()
++	{
++		return 0;
++	}
++
++	size_t getResidentMemoryBytes()
++	{
++		return 0;
++	}
++}
++#endif
++
+ ////////////////////////////////////////////////////////////////////////////////
+ /// Mac OS X Platform
+ ////////////////////////////////////////////////////////////////////////////////
+@@ -655,7 +675,7 @@ namespace embree
+     static int nThreads = -1;
+     if (nThreads != -1) return nThreads;
+ 
+-#if defined(__MACOSX__) || defined(__ANDROID__)
++#if defined(__MACOSX__) || defined(__ANDROID__) || defined(__OpenBSD__)
+     nThreads = sysconf(_SC_NPROCESSORS_ONLN); // does not work in Linux LXC container
+     assert(nThreads);
+ #elif defined(__EMSCRIPTEN__)
