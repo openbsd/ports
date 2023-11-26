@@ -17,6 +17,8 @@ DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
 
+REVISION =		0
+
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
@@ -93,7 +95,7 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 #CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=ON
 #CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY_B3JIT=ON
 
-# XXX broken at run time
+# XXX broken at runtime
 #CONFIGURE_ARGS +=	-DUSE_SYSTEM_MALLOC=ON
 
 # required for faking a better user-agent
@@ -104,10 +106,6 @@ CPUARCH =		${ARCH}
 .endif
 #XXXTODO CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}; OpenBSD ${ARCH}"
 CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}"
-
-# needs Wayland (libwpe -> WPEBackend-fdo -> Wayland)
-CONFIGURE_ARGS +=	-DUSE_WPE_RENDERER=OFF
-CONFIGURE_ARGS +=	-DENABLE_WAYLAND_TARGET=OFF
 
 # Needs GUdev
 CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
@@ -165,11 +163,16 @@ WANTLIB += atk-1.0 gdk-3 gtk-3 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
-			-DENABLE_WEBDRIVER=OFF
+			-DENABLE_WEBDRIVER=OFF \
+			-DUSE_WPE_RENDERER=OFF \
+			-DENABLE_WAYLAND_TARGET=OFF
 .elif ${FLAVOR:Mwebkitgtk60}
 API =			6.0
-WANTLIB += graphene-1.0 gtk-4 soup-3.0
+WANTLIB += graphene-1.0 gtk-4 soup-3.0 WPEBackend-fdo-1.0
+WANTLIB += wayland-client wayland-egl wayland-server wpe-1.0
+BUILD_DEPENDS +=	wayland/wayland-protocols
 LIB_DEPENDS +=		devel/libsoup3 \
+			www/wpebackend-fdo \
 			x11/gtk+4
 CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
 			-DUSE_GTK4=ON
@@ -179,7 +182,9 @@ WANTLIB += atk-1.0 gdk-3 gtk-3 soup-2.4
 LIB_DEPENDS +=		devel/libsoup \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=ON \
-			-DENABLE_WEBDRIVER=OFF
+			-DENABLE_WEBDRIVER=OFF \
+			-DUSE_WPE_RENDERER=OFF \
+			-DENABLE_WAYLAND_TARGET=OFF
 .endif
 
 post-extract:
