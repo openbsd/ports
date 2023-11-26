@@ -17,8 +17,6 @@ MODGO_LDFLAGS =	-s -w \
 		-X github.com/minio/minio/cmd.CommitID=${CID} \
 		-X github.com/minio/minio/cmd.ShortCommitID=${SHORTCID}
 
-SUBST_VARS =	VARBASE
-
 .include "modules.inc"
 
 .include <bsd.port.mk>
