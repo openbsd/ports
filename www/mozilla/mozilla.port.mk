@@ -59,7 +59,7 @@ DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}
 SITES.profdata =	https://rhaalovely.net/stuff/
 .else
 DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}{profdata${EXTRACT_SUFX}}
-SITES.prof =		https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/${MOZILLA_PROFDATA_TASKID}/runs/0/artifacts/public/build/
+SITES.profdata =	https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/${MOZILLA_PROFDATA_TASKID}/runs/0/artifacts/public/build/
 .endif
 CONFIGURE_ARGS +=	--enable-profile-use
 CONFIGURE_ARGS +=	--with-pgo-profile-path=${WRKDIR}/merged.profdata
