@@ -28,8 +28,6 @@ MAKE_ENV +=	CGO_CFLAGS=-I${LOCALBASE}/include \
 
 NO_TEST =	Yes
 
-SUBST_VARS +=	VARBASE
-
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/mautrix-whatsapp \
 	${PREFIX}/bin
