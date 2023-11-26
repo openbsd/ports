@@ -210,6 +210,6 @@ share/suricata/rules/tls-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/tls-events.rules
 @owner _suricata
 @group _suricata
-@sample ${VARBASE}/suricata/
-@sample ${VARBASE}/log/suricata/
-@sample ${VARBASE}/run/suricata/
+@sample ${LOCALSTATEDIR}/suricata/
+@sample ${LOCALSTATEDIR}/log/suricata/
+@sample ${LOCALSTATEDIR}/run/suricata/

@@ -62,7 +62,7 @@ CONFIGURE_ARGS =	--disable-gccmarch-native \
 			--enable-geoip \
 			--enable-ipfw
 
-SUBST_VARS =		VARBASE SURICATA_V SUPDATE_V
+SUBST_VARS =		SURICATA_V SUPDATE_V
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure \
