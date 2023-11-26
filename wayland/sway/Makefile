@@ -23,7 +23,8 @@ WANTLIB +=	c m
 
 BUILD_DEPENDS = \
 		graphics/gdk-pixbuf2 \
-		textproc/scdoc
+		textproc/scdoc \
+		wayland/wayland-protocols
 
 LIB_DEPENDS =	devel/json-c \
 		devel/pango \
