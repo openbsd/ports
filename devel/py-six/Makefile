@@ -3,7 +3,7 @@ COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.16.0
 DISTNAME =	six-${MODPY_EGG_VERSION}
 PKGNAME =	py-six-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -17,14 +17,12 @@ MODPY_PI =	Yes
 MODULES =	lang/python
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	-v
 
-.if ${FLAVOR:Mpython3}
 TEST_DEPENDS =	devel/py-py${MODPY_FLAVOR}
-.endif
 
 .include <bsd.port.mk>
