@@ -1,6 +1,5 @@
 @bin bin/minitube
 share/applications/minitube.desktop
-share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/minitube.png
 share/icons/hicolor/16x16/apps/minitube.png
 share/icons/hicolor/22x22/apps/minitube.png
