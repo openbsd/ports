@@ -1,9 +1,13 @@
 COMMENT =		CloudFlare PKI/TLS command-line toolkit and HTTP API server
 
-GH_ACCOUNT =		cloudflare
+GH_ACCO7BT =		cloudflare
 GH_PROJECT =		cfssl
-VERSION =		1.6.3
-GH_TAGNAME =		v${VERSION}
+GH_TAGNAME =		v$V
+
+MODGO_MODNAME =		github.com/cloudflare/cfssl
+V =			1.6.4
+MODGO_VERSION =		v$V
+#DISTNAME =		cfssl-$V
 
 CATEGORIES =		security
 
@@ -17,10 +21,14 @@ WANTLIB =		c pthread
 USE_GMAKE =		Yes
 
 MODULES=		lang/go
-MODGO_LDFLAGS +=	-X github.com/cloudflare/cfssl/cli/version.version=${VERSION}
+
+.include "modules.inc"
+
+MODGO_LDFLAGS +=	-X github.com/cloudflare/cfssl/cli/version.version=$V
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 do-build:
+	rm -r ${WRKSRC}/vendor
 	cd ${WRKSRC}; ${MODGO_BUILD_CMD} github.com/cloudflare/cfssl/...
 
 post-build:
