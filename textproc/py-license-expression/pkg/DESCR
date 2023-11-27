@@ -1,0 +1,9 @@
+license-expression is a comprehensive utility library to parse, compare,
+simplify and normalize license expressions (such as SPDX license
+expressions) using boolean logic.
+
+Software project licenses are often a combination of several free and
+open source software licenses. License expressions -- as specified by
+SPDX -- provide a concise and human readable way to express these
+licenses without having to read long license texts, while still being
+machine-readable.
