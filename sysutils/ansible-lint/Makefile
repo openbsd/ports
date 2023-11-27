@@ -1,7 +1,6 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	6.13.1
-REVISION =		0
+MODPY_EGG_VERSION =	6.22.0
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -25,6 +24,7 @@ RUN_DEPENDS =		devel/git \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			devel/py-rich${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
+			sysutils/py-ansible-compat${MODPY_FLAVOR}>=4.1.10 \
 			sysutils/py-subprocess-tee${MODPY_FLAVOR} \
 			devel/py-yamllint${MODPY_FLAVOR} \
 			devel/py-wcmatch${MODPY_FLAVOR} \
@@ -40,6 +40,8 @@ TEST_DEPENDS =		devel/flake8 \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			textproc/py-tomli${MODPY_FLAVOR} \
+			textproc/py-license-expression${MODPY_FLAVOR} \
+			sysutils/py-ansible-compat${MODPY_FLAVOR} \
 			shells/bash \
 			misc/findutils
 
