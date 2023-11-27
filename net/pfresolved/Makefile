@@ -1,6 +1,7 @@
 COMMENT =	pf table DNS update daemon
 
 VERSION =	1.00
+REVISION =	0
 DISTNAME =	pfresolved-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
 
@@ -18,6 +19,9 @@ SITES =	https://github.com/genua/pfresolved/releases/download/v${VERSION}/
 
 LIB_DEPENDS =		net/libunbound
 TEST_DEPENDS =		net/ldns,-utils
+
+# install in sbin instead of bin
+FAKE_FLAGS =		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/man
 
 # regress tests need root via SUDO environment to write pf table
 TEST_ENV =		SUDO=doas
