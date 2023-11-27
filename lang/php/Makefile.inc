@@ -132,6 +132,7 @@ FLAVOR ?=
 # adding the dep.
 BUILD_DEPENDS+=		devel/capstone/main \
 			sysutils/xxhash
+CONFIGURE_ARGS+=	--with-capstone
 LIB_DEPENDS-main+=	devel/capstone/main
 WANTLIB-main+=		capstone
 .endif

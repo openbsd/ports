@@ -2,7 +2,7 @@
 
 MODULES +=	lang/php
 
-FLAVORS ?= php74 php80 php81 php82
+FLAVORS ?= php74 php80 php81 php82 php83
 
 .if ${MACHINE_ARCH} == sparc64
 FLAVOR ?=	php80
