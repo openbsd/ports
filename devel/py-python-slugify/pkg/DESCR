@@ -1,0 +1,5 @@
+Best attempt to create slugs (human readable, unique ID) from unicode
+strings while keeping it DRY.
+
+For the etymology of the term slug, see:
+  https://en.wikipedia.org/wiki/Clean_URL#Slug
