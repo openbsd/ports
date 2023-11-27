@@ -20,7 +20,17 @@ Index: lld/ELF/Symbols.h
  
    void overwrite(Symbol &sym, Kind k) const {
      if (sym.traced)
-@@ -490,6 +493,9 @@ struct ElfSym {
+@@ -292,6 +295,9 @@ class Symbol { (public)
+   // True if defined in a DSO as protected visibility.
+   uint8_t dsoProtected : 1;
+ 
++  // True if targeted by a range extension thunk.
++  uint8_t thunkAccessed : 1;
++
+   // Temporary flags used to communicate which symbol entries need PLT and GOT
+   // entries during postScanRelocations();
+   std::atomic<uint16_t> flags;
+@@ -490,6 +496,9 @@ struct ElfSym {
    // __bss_start
    static Defined *bss;
  
@@ -30,7 +40,7 @@ Index: lld/ELF/Symbols.h
    // etext and _etext
    static Defined *etext1;
    static Defined *etext2;
-@@ -546,6 +552,8 @@ void reportDuplicate(const Symbol &sym, const InputFil
+@@ -546,6 +555,8 @@ void reportDuplicate(const Symbol &sym, const InputFil
                       InputSectionBase *errSec, uint64_t errOffset);
  void maybeWarnUnorderableSymbol(const Symbol *sym);
  bool computeIsPreemptible(const Symbol &sym);
