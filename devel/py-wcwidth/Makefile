@@ -1,6 +1,7 @@
 COMMENT=	measures number of terminal column cells of wide-char code
 
-MODPY_EGG_VERSION=	0.2.9
+MODPY_EGG_VERSION=	0.2.12
+
 DISTNAME=	wcwidth-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
