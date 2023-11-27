@@ -1,0 +1,16 @@
+fix failing test
+
+https://github.com/binaryornot/binaryornot/commit/38dee57986c6679d9936a1da6f6c8182da3734f8
+
+Index: tests/test_check.py
+--- tests/test_check.py.orig
++++ tests/test_check.py
+@@ -216,7 +216,7 @@ def bytes_in_file(data):
+ 
+ 
+ class TestDetectionProperties(unittest.TestCase):
+-    @given(binary(average_size=512))
++    @given(binary(max_size=512))
+     def test_never_crashes(self, data):
+         with bytes_in_file(data) as f:
+             is_binary(f)
