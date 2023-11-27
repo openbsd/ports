@@ -3,6 +3,7 @@
 @bin bin/yggdrasil-genkeys
 @bin bin/yggdrasilctl
 share/doc/yggdrasil/
+share/doc/yggdrasil/README.md
 share/examples/yggdrasil/
 share/examples/yggdrasil/yggdrasil.conf
 @sample ${SYSCONFDIR}/yggdrasil.conf
