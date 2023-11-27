@@ -64,4 +64,4 @@ share/doc/gdnsd/INSTALL
 share/doc/gdnsd/NEWS
 share/doc/gdnsd/README.md
 share/doc/gdnsd/gdnsd_manual.txt
-@sample ${VARBASE}/gdnsd/
+@sample ${LOCALSTATEDIR}/gdnsd/

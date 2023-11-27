@@ -41,13 +41,11 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS+=	--with-rundir=${VARBASE}/run/ \
-			--with-rootdir=${VARBASE}/gdnsd \
+CONFIGURE_ARGS+=	--with-rundir=${LOCALSTATEDIR}/run/ \
+			--with-rootdir=${LOCALSTATEDIR}/gdnsd \
 			--without-urcu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-
-SUBST_VARS+=		VARBASE
 
 # XXX: Hangs, though doesn't seem to be gdnsd's fault
 pre-test:
