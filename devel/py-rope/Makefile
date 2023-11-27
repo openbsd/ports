@@ -1,6 +1,6 @@
 COMMENT =		refactoring library
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		rope-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
