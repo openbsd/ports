@@ -1,90 +1,12 @@
-#1, hardcoded /bin/bash, needs nl
-#2, disable tests new in 4.8 which hangs
-
 Index: tests/test_expect.py
 --- tests/test_expect.py.orig
 +++ tests/test_expect.py
-@@ -411,7 +411,7 @@ class ExpectTestCase (PexpectTestCase.PexpectTestCase)
+@@ -485,7 +485,7 @@ class ExpectTestCase (PexpectTestCase.PexpectTestCase)
      def test_before_across_chunks(self):
          # https://github.com/pexpect/pexpect/issues/478
          child = pexpect.spawn(
--            '''/bin/bash -c "openssl rand -base64 {} 2>/dev/null | head -500 | nl --number-format=rz --number-width=5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
-+            '''/bin/sh -c "openssl rand -base64 {} 2>/dev/null | head -500 | gnl --number-format=rz --number-width=5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
+-            '''/bin/sh -c "openssl rand -base64 {} 2>/dev/null | head -500 | nl -n rz -w 5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
++            '''/bin/sh -c "openssl rand -base64 {} 2>/dev/null | head -500 | gnl -n rz -w 5 2>&1 ; echo 'PATTERN!!!'"'''.format(1024 * 1024 * 2),
              searchwindowsize=128
          )
          child.expect(['PATTERN'])
-@@ -451,40 +451,40 @@ class ExpectTestCase (PexpectTestCase.PexpectTestCase)
-         p.expect = p.expect_exact
-         self._before_after(p)
- 
--    def test_before_after_timeout(self):
--        '''Tests that timeouts do not truncate before, a bug in 4.4-4.7.'''
--        child = pexpect.spawn('cat', echo=False)
--        child.sendline('BEGIN')
--        for i in range(100):
--            child.sendline('foo' * 100)
--        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
--                         searchwindowsize=10, timeout=0.001)
--        self.assertEqual(e, 1)
--        child.sendline('xyzzy')
--        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
--                         searchwindowsize=10, timeout=30)
--        self.assertEqual(e, 0)
--        self.assertEqual(child.before[0:5], b'BEGIN')
--        child.sendeof()
--        child.expect(pexpect.EOF)
--
--    def test_increasing_searchwindowsize(self):
--        '''Tests that the search window can be expanded, a bug in 4.4-4.7.'''
--        child = pexpect.spawn('cat', echo=False)
--        child.sendline('BEGIN')
--        for i in range(100):
--            child.sendline('foo' * 100)
--        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
--                         searchwindowsize=10, timeout=0.5)
--        self.assertEqual(e, 1)
--        e = child.expect([b'BEGIN', pexpect.TIMEOUT],
--                         searchwindowsize=10, timeout=0.5)
--        self.assertEqual(e, 1)
--        e = child.expect([b'BEGIN', pexpect.TIMEOUT],
--                         searchwindowsize=40000, timeout=30.0)
--        self.assertEqual(e, 0)
--        child.sendeof()
--        child.expect(pexpect.EOF)
-+#    def test_before_after_timeout(self):
-+#        '''Tests that timeouts do not truncate before, a bug in 4.4-4.7.'''
-+#        child = pexpect.spawn('cat', echo=False)
-+#        child.sendline('BEGIN')
-+#        for i in range(100):
-+#            child.sendline('foo' * 100)
-+#        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
-+#                         searchwindowsize=10, timeout=0.001)
-+#        self.assertEqual(e, 1)
-+#        child.sendline('xyzzy')
-+#        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
-+#                         searchwindowsize=10, timeout=30)
-+#        self.assertEqual(e, 0)
-+#        self.assertEqual(child.before[0:5], b'BEGIN')
-+#        child.sendeof()
-+#        child.expect(pexpect.EOF)
-+#
-+#    def test_increasing_searchwindowsize(self):
-+#        '''Tests that the search window can be expanded, a bug in 4.4-4.7.'''
-+#        child = pexpect.spawn('cat', echo=False)
-+#        child.sendline('BEGIN')
-+#        for i in range(100):
-+#            child.sendline('foo' * 100)
-+#        e = child.expect([b'xyzzy', pexpect.TIMEOUT],
-+#                         searchwindowsize=10, timeout=0.5)
-+#        self.assertEqual(e, 1)
-+#        e = child.expect([b'BEGIN', pexpect.TIMEOUT],
-+#                         searchwindowsize=10, timeout=0.5)
-+#        self.assertEqual(e, 1)
-+#        e = child.expect([b'BEGIN', pexpect.TIMEOUT],
-+#                         searchwindowsize=40000, timeout=30.0)
-+#        self.assertEqual(e, 0)
-+#        child.sendeof()
-+#        child.expect(pexpect.EOF)
- 
-     def test_searchwindowsize(self):
-         '''Tests that we don't match outside the window, a bug in 4.4-4.7.'''
