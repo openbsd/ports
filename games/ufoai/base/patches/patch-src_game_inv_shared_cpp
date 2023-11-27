@@ -1,0 +1,29 @@
+Fix segfault on determining reactionfire mode
+Upstream commit:
+https://github.com/ufoaiorg/ufoai/commit/1258171073b5049c5699c80bbfad52362b4f3b80
+
+Index: src/game/inv_shared.cpp
+--- src/game/inv_shared.cpp.orig
++++ src/game/inv_shared.cpp
+@@ -633,9 +633,6 @@ const fireDef_t* Item::getSlowestFireDef () const
+  */
+ const objDef_t* Item::getReactionFireWeaponType () const
+ {
+-	if (!this)
+-		return nullptr;
+-
+ 	if (def()) {
+ 		const fireDef_t* fd = getFiredefs();
+ 		if (fd && fd->reaction)
+@@ -999,9 +996,9 @@ Item* Inventory::findInContainer (const containerIndex
+  */
+ bool Inventory::holdsReactionFireWeapon () const
+ {
+-	if (getRightHandContainer()->getReactionFireWeaponType())
++	if (getRightHandContainer() != nullptr && getRightHandContainer()->getReactionFireWeaponType())
+ 		return true;
+-	if (getLeftHandContainer()->getReactionFireWeaponType())
++	if (getLeftHandContainer() != nullptr && getLeftHandContainer()->getReactionFireWeaponType())
+ 		return true;
+ 	return false;
+ }
