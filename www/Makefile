@@ -459,6 +459,7 @@
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2,python3
+     SUBDIR += py-jinja2-time,python3
      SUBDIR += py-jwt,python3
      SUBDIR += py-macaroons,python3
      SUBDIR += py-mako,python3
