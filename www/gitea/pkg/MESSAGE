@@ -14,3 +14,7 @@ If you are upgrading from ${PKGSTEM}-<1.7.1, please note the following changes:
 
 * Default ROOT_PATH for logs has changed from ${LOCALSTATEDIR}/${PKGSTEM}/log
   to ${LOCALSTATEDIR}/log/${PKGSTEM}
+
+If you are upgrading from ${PKGSTEM}-<1.21.0 and serve static assets
+via httpd(8), make sure that httpd.conf(5) configuration reflects changes
+in static files location, see pkg README for example configuration.

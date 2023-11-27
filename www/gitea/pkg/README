@@ -42,8 +42,8 @@ Relevant configuration directives in ${SYSCONFDIR}/httpd.conf:
 		root "/gitea"
 		listen on * tls port 443
 		log style forwarded
-		location match "/assets/(.*)" { request rewrite "/public/%1" }
-		location "/public/*" { no fastcgi }
+		location "/.well-known/*" { no fastcgi }
+		location "/assets/*" { no fastcgi }
 		location "*" { fastcgi socket "run/gitea/gitea.sock" }
 	}
 

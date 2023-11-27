@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.20.5
+VERSION =		1.21.1
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -41,9 +41,9 @@ do-install:
 .for _d in custom/conf options templates
 	cp -Rp ${WRKSRC}/${_d} ${PREFIX}/share/gitea
 .endfor
-	${INSTALL_DATA_DIR} ${WRKINST}${VARBASE}/www/gitea
+	${INSTALL_DATA_DIR} ${WRKINST}${VARBASE}/www
 	cp -Rp ${WRKSRC}/public ${WRKINST}${VARBASE}/www/gitea
-	ln -s ${VARBASE}/www/gitea/public ${PREFIX}/share/gitea/public
+	ln -s ${VARBASE}/www/gitea ${PREFIX}/share/gitea/public
 
 post-install:
 	@find ${WRKINST}/ -type f \
