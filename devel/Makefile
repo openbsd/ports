@@ -1334,6 +1334,7 @@
      SUBDIR += py-arrow,python3
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules,python3
+     SUBDIR += py-astor,python3
      SUBDIR += py-astroid,python3
      SUBDIR += py-asttokens,python3
      SUBDIR += py-astunparse,python3
@@ -1347,6 +1348,7 @@
      SUBDIR += py-backports-strenum,python3
      SUBDIR += py-bencode,python3
      SUBDIR += py-beniget,python3
+     SUBDIR += py-binaryornot,python3
      SUBDIR += py-biplist,python3
      SUBDIR += py-bitcoinlib,python3
      SUBDIR += py-bitstring,python3
@@ -1381,6 +1383,7 @@
      SUBDIR += py-configobj,python3
      SUBDIR += py-constantly,python3
      SUBDIR += py-construct,python3
+     SUBDIR += py-cookiecutter,python3
      SUBDIR += py-cooldict,python3
      SUBDIR += py-country,python3
      SUBDIR += py-coverage,python3
@@ -1390,10 +1393,12 @@
      SUBDIR += py-crayons,python3
      SUBDIR += py-crc32c,python3
      SUBDIR += py-cstruct,python3
+     SUBDIR += py-curio,python3
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil,python3
      SUBDIR += py-dbus-deviation,python3
      SUBDIR += py-ddt,python3
+     SUBDIR += py-debugpy,python3
      SUBDIR += py-decorator,python3
      SUBDIR += py-deprecation,python3
      SUBDIR += py-dill,python3
@@ -1513,6 +1518,7 @@
      SUBDIR += py-openapi-schema-validator,python3
      SUBDIR += py-openapi-spec-validator,python3
      SUBDIR += py-ordered-set,python3
+     SUBDIR += py-outcome,python3
      SUBDIR += py-parallel,python3
      SUBDIR += py-parameterized,python3
      SUBDIR += py-parse,python3
@@ -1558,7 +1564,11 @@
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
      SUBDIR += py-python-language-server,python3
+     SUBDIR += py-python-lsp-server,python3
+     SUBDIR += py-python-lsp-black,python3
+     SUBDIR += py-python-slugify,python3
      SUBDIR += py-qdarkstyle,python3
+     SUBDIR += py-qstylizer,python3
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix,python3
@@ -1594,6 +1604,7 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap,python3
+     SUBDIR += py-sniffio,python3
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-speg,python3
@@ -1644,6 +1655,7 @@
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
      SUBDIR += py-traitlets,python3
+     SUBDIR += py-trio,python3
      SUBDIR += py-trove-classifiers,python3
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
@@ -1653,6 +1665,7 @@
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
+     SUBDIR += py-untangle,python3
      SUBDIR += py-urwid,python3
      SUBDIR += py-validators,python3
      SUBDIR += py-vcversioner,python3
