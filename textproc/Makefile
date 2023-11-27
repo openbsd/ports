@@ -379,6 +379,7 @@
      SUBDIR += pecl-yaml,php80
      SUBDIR += pecl-yaml,php81
      SUBDIR += pecl-yaml,php82
+     SUBDIR += pecl-yaml,php83
      SUBDIR += pinfo
      SUBDIR += pod2mdoc
      SUBDIR += podofo

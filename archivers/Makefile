@@ -54,10 +54,12 @@
      SUBDIR += pecl-lzf,php80
      SUBDIR += pecl-lzf,php81
      SUBDIR += pecl-lzf,php82
+     SUBDIR += pecl-lzf,php83
      SUBDIR += pecl-rar,php74
      SUBDIR += pecl-rar,php80
      #SUBDIR += pecl-rar,php81	# fails
      #SUBDIR += pecl-rar,php82	# fails
+     #SUBDIR += pecl-rar,php83	# fails
      SUBDIR += pigz
      SUBDIR += py-brotli,python3
      SUBDIR += py-compressed_rtf,python3
