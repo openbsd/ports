@@ -1350,6 +1350,7 @@
      SUBDIR += py-bitcoinlib,python3
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings,python3
+     SUBDIR += py-boolean.py,python3
      SUBDIR += py-blinker,python3
      SUBDIR += py-build,python3
      SUBDIR += py-buildbot		# subdir; uses python3
