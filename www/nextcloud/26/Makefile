@@ -1,4 +1,3 @@
-NC_VERSION=	26.0.7
-REVISION=	0
+NC_VERSION=	26.0.9
 
 .include <bsd.port.mk>
