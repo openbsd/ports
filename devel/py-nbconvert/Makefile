@@ -3,7 +3,7 @@ COMMENT =		converting Jupyter notebooks
 MODPY_EGG_VERSION =	5.6.1
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -22,6 +22,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-entrypoints${MODPY_FLAVOR}>=0.2.2 \
+			devel/py-ipython_genutils${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR}>=4.4 \
 			devel/py-testpath${MODPY_FLAVOR} \
