@@ -1,0 +1,2 @@
+Outcome provides a function for capturing the outcome of a Python
+function call, so that it can be passed around.
