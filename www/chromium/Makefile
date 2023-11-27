@@ -10,6 +10,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Chromium browser
 
 V=			119.0.6045.159
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -46,11 +47,10 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5
+MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No
 
-COMPILER =		ports-clang
-MODCLANG_VERSION =	16
+COMPILER=		base-clang ports-clang
 
 MODPY_RUNDEP=		No
 

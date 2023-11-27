@@ -12,6 +12,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			119.0.6045.159
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -49,11 +50,10 @@ PERMIT_PACKAGE =	Yes
 SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.u=http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5
+MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No
 
-COMPILER =	ports-clang
-MODCLANG_VERSION =	16
+COMPILER=		base-clang ports-clang
 
 MODPY_RUNDEP=		No
 
