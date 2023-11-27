@@ -1,12 +1,12 @@
 Index: spectrwm.1
 --- spectrwm.1.orig
 +++ spectrwm.1
-@@ -164,7 +164,7 @@ For example, starting
- via
- .Xr xinit 1 :
+@@ -1990,7 +1990,7 @@ via
+ .Pa LD_PRELOAD
+ must be specified.
  .Bd -literal -offset indent
 -LD_PRELOAD=/usr/lib/libswmhack.so.0.0 urxvtd -q -o -f
 +LD_PRELOAD=${PREFIX}/lib/libswmhack.so.${LIBswmhack_VERSION} urxvtd -q -o -f
  .Ed
  .Pp
- Spawned programs automatically have
+ Note that some operating systems may ignore
