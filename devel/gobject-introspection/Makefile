@@ -17,6 +17,9 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m
 
 LIB_DEPENDS=		devel/glib2
