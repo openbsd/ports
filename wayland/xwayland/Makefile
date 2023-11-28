@@ -29,6 +29,7 @@ LIB_DEPENDS =		wayland/wayland
 SEPARATE_BUILD =	yes
 
 CONFIGURE_ARGS =	-Dxdm-auth-1=false \
+			-Dxwayland_ei=false \
 			-Dsecure-rpc=false
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
