@@ -1,3 +1,6 @@
+# ./src/tools/singlejar/mapped_file_posix.inc only supports 64-bit UNIX.
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 VERSION =		6.3.2
 
 COMMENT =		polyglot build tool
