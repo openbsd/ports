@@ -3,7 +3,7 @@ Find the right version of Lua.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -327,7 +327,7 @@ ENDIF ()
+@@ -342,7 +342,7 @@ SET(TeXworks_LIBS
  # -------------------------------
  
  IF ( WITH_LUA )
