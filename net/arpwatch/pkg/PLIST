@@ -5,13 +5,13 @@
 @bin sbin/arpsnmp
 @bin sbin/arpwatch
 @owner _arpwatch
-@sample ${VARBASE}/arpwatch/
+@sample ${LOCALSTATEDIR}/arpwatch/
 @owner
 share/examples/arpwatch/
 share/examples/arpwatch/arp.dat
 @mode 644
 @owner _arpwatch
-@sample ${VARBASE}/arpwatch/arp.dat
+@sample ${LOCALSTATEDIR}/arpwatch/arp.dat
 @mode
 @owner
 share/examples/arpwatch/arp2ethers

@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=		c pcap
 
 CONFIGURE_STYLE=	gnu
-MAKE_FLAGS+=		ARPDIR=${VARBASE}/arpwatch
+MAKE_FLAGS+=		ARPDIR=${LOCALSTATEDIR}/arpwatch
 
 # this provides an up-to-date pregenerated ethercodes.dat file
 RUN_DEPENDS=	net/arp-scan,-mac
@@ -22,7 +22,6 @@ RUN_DEPENDS=	net/arp-scan,-mac
 NO_TEST=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/arpwatch
-SUBST_VARS +=	VARBASE
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/arpsnmp.8 ${WRKSRC}/arpwatch.8
