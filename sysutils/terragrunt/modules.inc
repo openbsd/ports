@@ -274,7 +274,7 @@ MODGO_MODULES =	\
 	github.com/godbus/dbus/v5					 v5.0.6 \
 	github.com/gofrs/uuid						 v3.3.0+incompatible \
 	github.com/gogo/protobuf					 v1.3.2 \
-	github.com/golang-jwt/jwt/v4					 v4.3.0 \
+	github.com/golang-jwt/jwt/v4					 v4.5.0 \
 	github.com/golang/glog						 v1.1.2 \
 	github.com/golang/groupcache					 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/mock						 v1.6.0 \
@@ -842,6 +842,7 @@ MODGO_MODFILES =	\
 	github.com/gogo/protobuf				 v1.2.2-0.20190723190241-65acae22fc9d \
 	github.com/golang-jwt/jwt/v4				 v4.0.0 \
 	github.com/golang-jwt/jwt/v4				 v4.2.0 \
+	github.com/golang-jwt/jwt/v4				 v4.3.0 \
 	github.com/golang/glog					 v0.0.0-20160126235308-23def4e6c14b \
 	github.com/golang/groupcache				 v0.0.0-20160516000752-02826c3e7903 \
 	github.com/golang/groupcache				 v0.0.0-20190702054246-869f871628b6 \
