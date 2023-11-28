@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.18.0
+MODPY_EGG_VERSION =	8.18.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -28,7 +28,7 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/py-exceptiongroup${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.16 \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
-			devel/py-prompt_toolkit${MODPY_FLAVOR}>=3.0.30v1,<3.1.0v1 \
+			devel/py-prompt_toolkit${MODPY_FLAVOR}>=3.0.41v1,<3.1.0v1 \
 			devel/py-stack_data${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR}>=5 \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
