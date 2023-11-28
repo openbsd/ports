@@ -1,0 +1,17 @@
+force-disable udev detection
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -140,11 +140,6 @@ if(CapsImage_FOUND)
+ 	set(HAVE_CAPSIMAGE 1)
+ endif(CapsImage_FOUND)
+ 
+-find_package(Udev)
+-if(Udev_FOUND)
+-	set(HAVE_UDEV 1)
+-endif(Udev_FOUND)
+-
+ # Check if Large File Support is available with the standard POSIX flags
+ set (HATARI_LFS_FLAGS "-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64")
+ check_large_file()
