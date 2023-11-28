@@ -1,0 +1,16 @@
+Drop "cpath" under -c (no file creation)
+
+Index: truncate.c
+--- truncate.c.orig
++++ truncate.c
+@@ -84,6 +84,10 @@ main(int argc, char **argv)
+ 	argv += optind;
+ 	argc -= optind;
+ 
++	if (no_create)
++		if (pledge("stdio rpath wpath", NULL) == -1)
++			err(1, "pledge");
++
+ 	/*
+ 	 * Exactly one of do_refer or got_size must be specified.  Since
+ 	 * do_relative implies got_size, do_relative and do_refer are
