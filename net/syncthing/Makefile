@@ -17,7 +17,6 @@ SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/
 
 WRKDIST =		${WRKDIR}/syncthing
 WRKSRC =		${WRKDIR}/go/src/github.com/syncthing/syncthing
-SUBST_VARS +=		VARBASE
 
 MODULES =		lang/go
 MODGO_TYPE =		bin

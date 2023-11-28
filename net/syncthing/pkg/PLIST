@@ -1,12 +1,12 @@
 @newgroup _syncthing:768
-@newuser _syncthing:768:_syncthing::Syncthing user:${VARBASE}/syncthing:/sbin/nologin
+@newuser _syncthing:768:_syncthing::Syncthing user:${LOCALSTATEDIR}/syncthing:/sbin/nologin
 @rcscript ${RCDIR}/syncthing
 @rcscript ${RCDIR}/syncthing_discovery
 @rcscript ${RCDIR}/syncthing_relay
 @owner _syncthing
 @group _syncthing
-@sample ${VARBASE}/syncthing/
-@extraunexec rm -rf ${VARBASE}/syncthing/{.,}*
+@sample ${LOCALSTATEDIR}/syncthing/
+@extraunexec rm -rf ${LOCALSTATEDIR}/syncthing/{.,}*
 @owner
 @group
 @bin bin/stdiscosrv
