@@ -20,8 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}arguments.${M
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}arguments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}ast.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}astutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}astutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}change.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}history.${MOD
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}libutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}libutils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}nameanalyze.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}nameanalyze.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}prefs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}prefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}project.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,17 +58,20 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}resourceobser
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}resourceobserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}serializer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}simplify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}simplify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}stdmods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}stdmods.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}taskhandle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}taskhandle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}versioning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}worder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/${MODPY_PYCACHE}worder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/arguments.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/ast.py
-lib/python${MODPY_VERSION}/site-packages/rope/base/astutils.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/builtins.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/change.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/codeanalyze.py
@@ -77,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/fscommands.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/history.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/libutils.py
+lib/python${MODPY_VERSION}/site-packages/rope/base/nameanalyze.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/
 lib/python${MODPY_VERSION}/site-packages/rope/base/oi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rope/base/oi/${MODPY_PYCACHE}/
@@ -170,6 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/pyobjectsdef.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/pyscopes.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/resourceobserver.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/resources.py
+lib/python${MODPY_VERSION}/site-packages/rope/base/serializer.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/simplify.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/stdmods.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/taskhandle.py
@@ -180,10 +185,8 @@ lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}datastructures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}datastructures.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/rope/base/utils/${MODPY_PYCACHE}pycompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rope/base/utils/datastructures.py
-lib/python${MODPY_VERSION}/site-packages/rope/base/utils/pycompat.py
+lib/python${MODPY_VERSION}/site-packages/rope/base/versioning.py
 lib/python${MODPY_VERSION}/site-packages/rope/base/worder.py
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/
 lib/python${MODPY_VERSION}/site-packages/rope/contrib/__init__.py
