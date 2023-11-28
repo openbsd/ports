@@ -1530,6 +1530,7 @@
      SUBDIR += py-pathable,python3
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr,python3
+     SUBDIR += py-pdm-backend,python3
      SUBDIR += py-pebble,python3
      SUBDIR += py-pep517,python3
      SUBDIR += py-pexpect,python3
@@ -1567,6 +1568,7 @@
      SUBDIR += py-python-lsp-server,python3
      SUBDIR += py-python-lsp-black,python3
      SUBDIR += py-python-slugify,python3
+     SUBDIR += py-pytoolconfig,python3
      SUBDIR += py-qdarkstyle,python3
      SUBDIR += py-qstylizer,python3
      SUBDIR += py-qt-builder,python3
