@@ -4,8 +4,8 @@
 @mode 755
 @owner _navidrome
 @group _navidrome
-@sample ${VARBASE}/navidrome/
-@sample ${VARBASE}/navidrome/music/
+@sample ${LOCALSTATEDIR}/navidrome/
+@sample ${LOCALSTATEDIR}/navidrome/music/
 @mode
 @owner
 @group

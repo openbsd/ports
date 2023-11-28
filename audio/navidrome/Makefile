@@ -31,7 +31,7 @@ RUN_DEPENDS =		graphics/ffmpeg
 
 MODULES =		lang/go
 
-SUBST_VARS =		VARBASE
+SUBST_VARS =		LOCALSTATEDIR
 
 post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \
