@@ -1,6 +1,7 @@
 COMMENT =	X server running as wayland application
 
 DISTNAME =	xwayland-23.2.2
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -12,7 +13,7 @@ MAINTAINER =	matthieu@openbsd.org
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL Xau Xdmcp Xfont2 gbm xcvt drm kvm pthread c m
-WANTLIB +=		pixman-1 xshmfence epoxy wayland-client
+WANTLIB +=		pixman-1 xshmfence ei epoxy wayland-client
 
 SITES =			${SITE_XORG:=xserver/}
 EXTRACT_SUFX =		.tar.xz
@@ -24,12 +25,12 @@ BUILD_DEPENDS =		wayland/libinput-openbsd \
 
 RUN_DEPENDS =		devel/desktop-file-utils
 
-LIB_DEPENDS =		wayland/wayland
+LIB_DEPENDS =		wayland/wayland \
+			wayland/libei
 
 SEPARATE_BUILD =	yes
 
 CONFIGURE_ARGS =	-Dxdm-auth-1=false \
-			-Dxwayland_ei=false \
 			-Dsecure-rpc=false
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
