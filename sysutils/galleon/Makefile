@@ -1,6 +1,6 @@
-COMMENT = tool to manage JBoss Wildfly installations
+COMMENT = tool to manage JBoss software, e.g. Wildfly
 
-V =			4.2.8
+V =			5.2.2
 PKGNAME =		galleon-${V}
 DISTNAME =		${PKGNAME}.Final
 PKG_ARCH =		*

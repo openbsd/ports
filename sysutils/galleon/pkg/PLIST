@@ -5,4 +5,5 @@ lib/galleon/bin/galleon-cli-logging.properties
 lib/galleon/bin/galleon-cli.jar
 lib/galleon/bin/galleon.sh
 @man man/man8/galleon.8
+share/doc/galleon/
 share/doc/galleon/index.html
