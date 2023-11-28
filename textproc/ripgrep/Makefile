@@ -3,6 +3,7 @@ COMMENT =		line oriented search tool using Rust's regex library
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		14.0.1
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
 
