@@ -1,9 +1,9 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =         sparc64
 
 COMMENT =		OAuth2 authentication daemon
 
-V =			1.0.2
+V =			1.0.3
 DISTNAME =		pizauth-$V
 
 CATEGORIES =		mail security
@@ -18,8 +18,6 @@ MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODCARGO_WANTLIB} m
-
-BUILD_DEPENDS +=	security/rust-ring
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo
