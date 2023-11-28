@@ -1,10 +1,9 @@
 COMMENT =	graphical music player focused on a clean ui
-V =		1.10.1
+V =		1.11
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
-REVISION =	3
 
-HOMEPAGE =	http://flavio.tordini.org/musique/
+HOMEPAGE =	https://flavio.tordini.org/musique/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -24,6 +23,8 @@ LIB_DEPENDS =	audio/taglib \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
+
+MODQMAKE_ARGS =	QMAKE_LRELEASE=${MODQT_LRELEASE}
 
 NO_TEST =	Yes
 
