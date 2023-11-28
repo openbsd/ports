@@ -1,10 +1,10 @@
 @newgroup _miniflux:859
-@newuser _miniflux:859:_miniflux::Miniflux user:${VARBASE}/miniflux:/sbin/nologin
+@newuser _miniflux:859:_miniflux::Miniflux user:${LOCALSTATEDIR}/miniflux:/sbin/nologin
 @rcscript ${RCDIR}/miniflux
 @owner _miniflux
 @group _miniflux
-@sample ${VARBASE}/miniflux/
-@extraunexec rm -rf ${VARBASE}/miniflux/{.,}*
+@sample ${LOCALSTATEDIR}/miniflux/
+@extraunexec rm -rf ${LOCALSTATEDIR}/miniflux/{.,}*
 @owner
 @group
 @bin bin/miniflux

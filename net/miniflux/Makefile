@@ -23,9 +23,6 @@ ALL_TARGET =		${MODGO_MODNAME}/...
 
 MODGO_LDFLAGS +=	-X miniflux.app/v2/internal/version.Version=${V}
 
-SUBST_VARS =		VARBASE \
-			SYSCONFDIR
-
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/miniflux.app \
 		${PREFIX}/bin/miniflux
