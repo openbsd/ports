@@ -94,8 +94,9 @@ CONFIGURE_ARGS +=	--with-system-icu
 .if !defined(MOZILLA_USE_DBUS)
 CONFIGURE_ARGS +=	--disable-dbus
 .else
-MODMOZ_LIB_DEPENDS +=	x11/dbus-glib
-MODMOZ_WANTLIB +=	dbus-1 dbus-glib-1
+# filepickers via portals need dbus
+MODMOZ_LIB_DEPENDS +=	x11/dbus
+MODMOZ_WANTLIB +=	dbus-1
 CONFIGURE_ARGS +=	--enable-dbus
 .endif
 
