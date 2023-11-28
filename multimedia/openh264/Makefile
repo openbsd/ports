@@ -1,7 +1,7 @@
 COMMENT =		Cisco implementation of H.264 codec
 GH_ACCOUNT =		cisco
 GH_PROJECT =		openh264
-GH_TAGNAME =		v2.3.1
+GH_TAGNAME =		v2.4.0
 CATEGORIES =		multimedia
 
 SHARED_LIBS =		openh264	1.0	# 7.0
