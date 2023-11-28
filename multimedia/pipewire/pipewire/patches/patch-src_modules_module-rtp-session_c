@@ -10,7 +10,7 @@ Index: src/modules/module-rtp-session.c
  #define ifr_ifindex ifr_index
  #endif
  
-@@ -1099,9 +1099,9 @@ static int make_socket(const struct sockaddr_storage* 
+@@ -1103,9 +1103,9 @@ static int make_socket(const struct sockaddr_storage* 
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

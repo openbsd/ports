@@ -1,7 +1,7 @@
 Index: src/modules/module-protocol-native.c
 --- src/modules/module-protocol-native.c.orig
 +++ src/modules/module-protocol-native.c
-@@ -567,6 +567,8 @@ static struct client_data *client_new(struct server *s
+@@ -571,6 +571,8 @@ static struct client_data *client_new(struct server *s
  	socklen_t len;
  #if defined(__FreeBSD__) || defined(__MidnightBSD__)
  	struct xucred xucred;
@@ -10,7 +10,7 @@ Index: src/modules/module-protocol-native.c
  #else
  	struct ucred ucred;
  #endif
-@@ -582,7 +584,7 @@ static struct client_data *client_new(struct server *s
+@@ -586,7 +588,7 @@ static struct client_data *client_new(struct server *s
  
  	pw_properties_set(props, PW_KEY_SEC_SOCKET, s->socket_info.name);
  

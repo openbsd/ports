@@ -10,7 +10,7 @@ Index: src/modules/module-rtp-source.c
  #define ifr_ifindex ifr_index
  #endif
  
-@@ -238,9 +238,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -242,9 +242,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

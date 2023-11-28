@@ -2,12 +2,10 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		0.3.85
+PW_VERSION=		1.0.0
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		0
-
-SHARED_LIBS += pipewire-0.3              0.0 # 0.385.0
+SHARED_LIBS += pipewire-0.3              0.1 # 0.1000.0
 
 MULTI_PACKAGES=		-main -libs
 
@@ -23,7 +21,8 @@ MODULES=		devel/meson \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/gettext,-tools \
+BUILD_DEPENDS=		devel/doxygen \
+			devel/gettext,-tools \
 			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
@@ -42,7 +41,8 @@ RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS=		-Dsession-managers=[] \
+CONFIGURE_ARGS=		-Dman=enabled \
+			-Dsession-managers=[] \
 			-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
 			-Dudev=disabled \

@@ -10,7 +10,7 @@ Index: src/modules/module-vban-recv.c
  #define ifr_ifindex ifr_index
  #endif
  
-@@ -233,9 +233,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -237,9 +237,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
