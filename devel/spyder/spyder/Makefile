@@ -1,4 +1,3 @@
-BROKEN =	tight version constraints
 COMMENT =	Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	5.5.0
