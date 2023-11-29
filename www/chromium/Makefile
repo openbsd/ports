@@ -9,8 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			119.0.6045.159
-REVISION=		0
+V=			119.0.6045.199
 
 DISTNAME=		chromium-${V}
 
@@ -22,7 +21,7 @@ DISTFILES.a+=		${PROFILE_DISTFILES} \
 			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
-PROFILE_DISTFILES+=	chrome-linux-${V}-llvm13.profdata${EXTRACT_SUFX}
+PROFILE_DISTFILES+=	chrome-linux-${V}-llvm16.profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a+=	test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz
 
