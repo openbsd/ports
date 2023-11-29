@@ -1,6 +1,6 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	2.4.0
+VERSION=	2.4.1
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
@@ -30,6 +30,7 @@ BUILD_DEPENDS+=	devel/bison
 
 FLAVOR?=
 FLAVORS=	mysql postgresql
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 
