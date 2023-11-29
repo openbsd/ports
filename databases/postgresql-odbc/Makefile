@@ -1,5 +1,5 @@
 COMMENT=	ODBC driver for PostgreSQL
-VERSION=	13.02.0000
+VERSION=	16.00.0000
 PKGNAME=	postgresql-odbc-${VERSION}
 DISTNAME=	psqlodbc-${VERSION}
 CATEGORIES=	databases
