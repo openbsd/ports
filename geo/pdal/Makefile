@@ -1,6 +1,6 @@
 COMMENT =	translator library for point cloud formats
 
-V =	2.6.0
+V =	2.6.1
 DISTNAME =	PDAL-${V}-src
 PKGNAME =	pdal-${V}
 EXTRACT_SUFX =	.tar.bz2
