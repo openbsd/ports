@@ -9,6 +9,9 @@ CATEGORIES =	wayland
 # MIT
 PERMIT_PACKAGE = Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 HOMEPAGE =	https://github.com/emersion/slurp.git
 
 MODULES =	devel/meson

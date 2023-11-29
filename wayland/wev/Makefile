@@ -14,6 +14,9 @@ WANTLIB =	epoll-shim ffi wayland-client xkbcommon c
 # MIT
 PERMIT_PACKAGE = Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS = textproc/scdoc \
