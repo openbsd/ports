@@ -1,4 +1,5 @@
 @option always-update
+@option updatedb
 libdata/perl5/site_perl/OpenBSD/
 libdata/perl5/site_perl/OpenBSD/Quirks/
 libdata/perl5/site_perl/OpenBSD/Quirks.pm
