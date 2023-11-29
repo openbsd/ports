@@ -18,6 +18,17 @@ MAINTAINER?=	Theo Buehler <tb@openbsd.org>
 # OpenSSL
 PERMIT_PACKAGE?=	Yes
 
+.if ${DISTNAME:Mopenssl*}
+EOPENSSL_V=	eopenssl${V:R:S/.//}
+SUBST_VARS+=	EOPENSSL_V
+.endif
+
+.if ${V:M1*}
 SITES?=		https://www.openssl.org/source/ \
 		https://www.openssl.org/source/old/${V:C/.$//}/ \
 		ftp://ftp.openssl.org/source/
+.else
+SITES?=		https://www.openssl.org/source/ \
+		https://www.openssl.org/source/old/${V:R}/ \
+		ftp://ftp.openssl.org/source/
+.endif
