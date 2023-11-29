@@ -25,7 +25,7 @@ ABSEIL_VER =		20230802.1
 DIST_TUPLE =		github abseil abseil-cpp ${ABSEIL_VER} .
 
 MODULES =		java lang/python
-MODJAVA_VER =		17
+MODJAVA_VER =		11
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
