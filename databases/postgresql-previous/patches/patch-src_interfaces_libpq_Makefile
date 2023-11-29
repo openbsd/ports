@@ -1,7 +1,7 @@
 Index: src/interfaces/libpq/Makefile
 --- src/interfaces/libpq/Makefile.orig
 +++ src/interfaces/libpq/Makefile
-@@ -18,8 +18,8 @@ PGFILEDESC = "PostgreSQL Access Library"
+@@ -19,8 +19,8 @@ PGFILEDESC = "PostgreSQL Access Library"
  
  # shared library parameters
  NAME= pq

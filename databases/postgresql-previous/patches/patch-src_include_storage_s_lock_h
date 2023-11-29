@@ -1,7 +1,7 @@
 Index: src/include/storage/s_lock.h
 --- src/include/storage/s_lock.h.orig
 +++ src/include/storage/s_lock.h
-@@ -763,6 +763,29 @@ typedef unsigned char slock_t;
+@@ -802,6 +802,29 @@ tas(volatile slock_t *lock)
  	do { __asm__ __volatile__("" : : : "memory");  *(lock) = 0; } while (0)
  #endif
  

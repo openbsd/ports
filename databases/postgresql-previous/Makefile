@@ -1,7 +1,6 @@
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	14.6
-REVISION=	1
+VERSION=	15.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
 
@@ -9,7 +8,7 @@ CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
 		ecpg_compat	4.10 \
 		pgtypes		4.9 \
-		pq		6.13
+		pq		6.14
 
 HOMEPAGE=	https://www.postgresql.org/
 
