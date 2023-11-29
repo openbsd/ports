@@ -4,10 +4,20 @@ include/kcgijson.h
 include/kcgiregress.h
 include/kcgixml.h
 @static-lib lib/libkcgi.a
+@comment @so lib/libkcgi.so
+@comment lib/libkcgi.so.1
 @static-lib lib/libkcgihtml.a
+@comment @so lib/libkcgihtml.so
+@comment lib/libkcgihtml.so.1
 @static-lib lib/libkcgijson.a
+@comment @so lib/libkcgijson.so
+@comment lib/libkcgijson.so.1
 @static-lib lib/libkcgiregress.a
+@comment @so lib/libkcgiregress.so
+@comment lib/libkcgiregress.so.1
 @static-lib lib/libkcgixml.a
+@comment @so lib/libkcgixml.so
+@comment lib/libkcgixml.so.1
 lib/pkgconfig/kcgi-html.pc
 lib/pkgconfig/kcgi-json.pc
 lib/pkgconfig/kcgi-regress.pc
@@ -20,6 +30,11 @@ lib/pkgconfig/kcgi.pc
 @man man/man3/kcgi_buf_write.3
 @man man/man3/kcgi_strerror.3
 @man man/man3/kcgi_writer_disable.3
+@man man/man3/kcgi_writer_free.3
+@man man/man3/kcgi_writer_get.3
+@man man/man3/kcgi_writer_putc.3
+@man man/man3/kcgi_writer_puts.3
+@man man/man3/kcgi_writer_write.3
 @man man/man3/kcgihtml.3
 @man man/man3/kcgijson.3
 @man man/man3/kcgiregress.3
