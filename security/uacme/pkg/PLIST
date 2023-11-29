@@ -1,11 +1,7 @@
 @bin bin/uacme
-@bin bin/ualpn
 @man man/man1/uacme.1
-@man man/man1/ualpn.1
 share/doc/uacme/
 share/doc/uacme/uacme.html
-share/doc/uacme/ualpn.html
 share/uacme/
 share/uacme/nsupdate.sh
 share/uacme/uacme.sh
-share/uacme/ualpn.sh

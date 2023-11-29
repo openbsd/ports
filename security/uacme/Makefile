@@ -7,6 +7,8 @@ GH_TAGNAME=	upstream/$V
 DISTNAME=	uacme-$V
 WRKDIST=	${WRKDIR}/uacme-upstream-$V
 
+REVISION=	0
+
 CATEGORIES=	security www
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -14,16 +16,12 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curl ev gnutls pthread
+WANTLIB += c crypto curl ssl
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--with-openssl
 
-# can also use mbedTLS or OpenSSL 1.1.1 - requires ECDSA_SIG_get0_[rs],
-# EC_POINT_get_affine_coordinates, RSA_get0_[ne], ASN1_TIME_diff which
-# libressl doesn't have yet
-LIB_DEPENDS=	devel/libev \
-		net/curl \
-		security/gnutls
+LIB_DEPENDS=	net/curl
 BUILD_DEPENDS=	textproc/asciidoc
 USE_GMAKE=	Yes
 
