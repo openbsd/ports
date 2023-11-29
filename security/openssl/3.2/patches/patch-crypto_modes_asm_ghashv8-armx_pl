@@ -1,0 +1,11 @@
+Index: crypto/modes/asm/ghashv8-armx.pl
+--- crypto/modes/asm/ghashv8-armx.pl.orig
++++ crypto/modes/asm/ghashv8-armx.pl
+@@ -810,6 +810,7 @@ ___
+ }
+ 
+ $code.=<<___;
++.rodata
+ .asciz  "GHASH for ARMv8, CRYPTOGAMS by <appro\@openssl.org>"
+ .align  2
+ #endif

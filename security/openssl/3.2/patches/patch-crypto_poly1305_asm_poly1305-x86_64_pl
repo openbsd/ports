@@ -1,0 +1,19 @@
+Index: crypto/poly1305/asm/poly1305-x86_64.pl
+--- crypto/poly1305/asm/poly1305-x86_64.pl.orig
++++ crypto/poly1305/asm/poly1305-x86_64.pl
+@@ -3778,6 +3778,7 @@ poly1305_emit_base2_44:
+ ___
+ }	}	}
+ $code.=<<___;
++.rodata
+ .align	64
+ .Lconst:
+ .Lmask24:
+@@ -3809,6 +3810,7 @@ $code.=<<___;
+ .Lx_mask42:
+ .quad	0x3ffffffffff,0x3ffffffffff,0x3ffffffffff,0x3ffffffffff
+ .quad	0x3ffffffffff,0x3ffffffffff,0x3ffffffffff,0x3ffffffffff
++.previous
+ ___
+ }
+ $code.=<<___;
