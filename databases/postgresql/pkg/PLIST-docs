@@ -39,7 +39,6 @@ share/doc/postgresql/html/app-pgrestore.html
 share/doc/postgresql/html/app-pgrewind.html
 share/doc/postgresql/html/app-pgverifybackup.html
 share/doc/postgresql/html/app-postgres.html
-share/doc/postgresql/html/app-postmaster.html
 share/doc/postgresql/html/app-psql.html
 share/doc/postgresql/html/app-reindexdb.html
 share/doc/postgresql/html/app-vacuumdb.html
@@ -260,6 +259,7 @@ share/doc/postgresql/html/dml-returning.html
 share/doc/postgresql/html/dml-update.html
 share/doc/postgresql/html/dml.html
 share/doc/postgresql/html/docguide-authoring.html
+share/doc/postgresql/html/docguide-build-meson.html
 share/doc/postgresql/html/docguide-build.html
 share/doc/postgresql/html/docguide-docbook.html
 share/doc/postgresql/html/docguide-style.html
@@ -492,10 +492,10 @@ share/doc/postgresql/html/infoschema-view-table-usage.html
 share/doc/postgresql/html/infoschema-views.html
 share/doc/postgresql/html/install-binaries.html
 share/doc/postgresql/html/install-getsource.html
+share/doc/postgresql/html/install-make.html
+share/doc/postgresql/html/install-meson.html
 share/doc/postgresql/html/install-post.html
-share/doc/postgresql/html/install-procedure.html
 share/doc/postgresql/html/install-requirements.html
-share/doc/postgresql/html/install-short.html
 share/doc/postgresql/html/install-windows-full.html
 share/doc/postgresql/html/install-windows.html
 share/doc/postgresql/html/installation-platform-notes.html
@@ -715,11 +715,8 @@ share/doc/postgresql/html/regress-run.html
 share/doc/postgresql/html/regress-tap.html
 share/doc/postgresql/html/regress-variant.html
 share/doc/postgresql/html/regress.html
-share/doc/postgresql/html/release-15-1.html
-share/doc/postgresql/html/release-15-2.html
-share/doc/postgresql/html/release-15-3.html
-share/doc/postgresql/html/release-15-4.html
-share/doc/postgresql/html/release-15.html
+share/doc/postgresql/html/release-16-1.html
+share/doc/postgresql/html/release-16.html
 share/doc/postgresql/html/release-prior.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/replication-origins.html
@@ -1037,6 +1034,7 @@ share/doc/postgresql/html/storage-toast.html
 share/doc/postgresql/html/storage-vm.html
 share/doc/postgresql/html/storage.html
 share/doc/postgresql/html/stylesheet.css
+share/doc/postgresql/html/subxacts.html
 share/doc/postgresql/html/supported-platforms.html
 share/doc/postgresql/html/system-catalog-declarations.html
 share/doc/postgresql/html/system-catalog-initial-data.html
@@ -1058,7 +1056,9 @@ share/doc/postgresql/html/textsearch-parsers.html
 share/doc/postgresql/html/textsearch-psql.html
 share/doc/postgresql/html/textsearch-tables.html
 share/doc/postgresql/html/textsearch.html
+share/doc/postgresql/html/transaction-id.html
 share/doc/postgresql/html/transaction-iso.html
+share/doc/postgresql/html/transactions.html
 share/doc/postgresql/html/trigger-datachanges.html
 share/doc/postgresql/html/trigger-definition.html
 share/doc/postgresql/html/trigger-example.html
@@ -1090,6 +1090,7 @@ share/doc/postgresql/html/tutorial-update.html
 share/doc/postgresql/html/tutorial-views.html
 share/doc/postgresql/html/tutorial-window.html
 share/doc/postgresql/html/tutorial.html
+share/doc/postgresql/html/two-phase.html
 share/doc/postgresql/html/typeconv-func.html
 share/doc/postgresql/html/typeconv-oper.html
 share/doc/postgresql/html/typeconv-overview.html
@@ -1149,6 +1150,7 @@ share/doc/postgresql/html/wal.html
 share/doc/postgresql/html/warm-standby-failover.html
 share/doc/postgresql/html/warm-standby.html
 share/doc/postgresql/html/when-can-parallel-query-be-used.html
+share/doc/postgresql/html/xact-locking.html
 share/doc/postgresql/html/xaggr.html
 share/doc/postgresql/html/xfunc-c.html
 share/doc/postgresql/html/xfunc-internal.html

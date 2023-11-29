@@ -11,4 +11,4 @@ Index: src/interfaces/ecpg/compatlib/Makefile
 +SO_MINOR_VERSION= ${LIBecpg_compat_MINOR}
  
  override CPPFLAGS := -I../include -I$(top_srcdir)/src/interfaces/ecpg/include \
- 	-I$(libpq_srcdir) -DFRONTEND $(CPPFLAGS)
+ 	-I$(libpq_srcdir) $(CPPFLAGS)

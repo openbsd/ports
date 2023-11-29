@@ -5,11 +5,10 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	15.4
-PREV_MAJOR=	14
+VERSION=	16.1
+PREV_MAJOR=	15
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
-REVISION=	1
 
 DPB_PROPERTIES=	parallel
 
@@ -17,7 +16,7 @@ CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
 		ecpg_compat	4.10 \
 		pgtypes		4.9 \
-		pq		6.14
+		pq		6.15
 
 HOMEPAGE=	https://www.postgresql.org/
 
@@ -84,8 +83,9 @@ LIB_DEPENDS-main=	textproc/libxml
 WANTLIB-main=		${WANTLIB} execinfo xml2
 
 LIB_DEPENDS-server=	databases/postgresql=${VERSION} \
+			textproc/icu4c \
 			${LIB_DEPENDS-main}
-WANTLIB-server=		${WANTLIB-main} perl pq
+WANTLIB-server=		${WANTLIB-main} icudata icui18n icuuc perl pq
 
 RUN_DEPENDS-contrib=	databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib=	databases/postgresql=${VERSION} \
