@@ -3,6 +3,7 @@ COMMENT =		IPython kernel for Jupyter
 MODPY_EGG_VERSION =	6.23.2
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 PORTROACH=		limit:^6
 
@@ -43,7 +44,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		hatchling
 
 PORTHOME =		${WRKDIR}
 
