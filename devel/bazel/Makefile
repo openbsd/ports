@@ -39,9 +39,12 @@ INSTALL_STRIP =
 MAKE_ENV =		VERBOSE=yes
 
 # The bundled verison of abseil is from 2021 and isn't compatible with clang-16.
+# It also needs some patches we copy from devel/abseil.
 post-patch:
 	cp ${FULLDISTDIR}/abseil-abseil-cpp-${ABSEIL_VER}.tar.gz \
 		${WRKSRC}/derived/distdir/${ABSEIL_VER}.tar.gz
+	mkdir ${WRKSRC}/third_party/abseil
+	cp ${PATCHDIR}/abseil/* ${WRKSRC}/third_party/abseil
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

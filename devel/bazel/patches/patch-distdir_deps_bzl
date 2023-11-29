@@ -37,7 +37,7 @@ Index: distdir_deps.bzl
      "re2": {
          "archive": "aecba11114cf1fac5497aeb844b6966106de3eb6.tar.gz",
          "sha256": "9f385e146410a8150b6f4cb1a57eab7ec806ced48d427554b1e754877ff26c3e",
-@@ -229,17 +221,17 @@ DIST_DEPS = {
+@@ -229,17 +221,24 @@ DIST_DEPS = {
          ],
      },
      "com_google_absl": {
@@ -51,6 +51,13 @@ Index: distdir_deps.bzl
 +            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
 +            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
          ],
++        "patch_args": ["-p0"],
++        "patches": [ "//third_party:abseil/" + f for f in [
++                "patch-absl_base_internal_raw_logging_cc",
++                "patch-absl_status_status_cc",
++                "patch-absl_base_internal_unscaledcycleclock_config_h"
++            ]
++        ],
          "used_in": [
              "additional_distfiles",
              "test_WORKSPACE_files",
