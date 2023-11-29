@@ -12,6 +12,9 @@ SHARED_LIBS+=	seat 0.0 # 0.0
 # MIT
 PERMIT_PACKAGE = Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB	=	c
 
 MODULES	=	devel/meson
