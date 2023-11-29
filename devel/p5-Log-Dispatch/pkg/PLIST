@@ -19,6 +19,8 @@ ${P5SITE}/Log/Dispatch/Null.pm
 ${P5SITE}/Log/Dispatch/Output.pm
 ${P5SITE}/Log/Dispatch/Screen.pm
 ${P5SITE}/Log/Dispatch/Syslog.pm
+${P5SITE}/Log/Dispatch/Types.pm
+${P5SITE}/Log/Dispatch/Vars.pm
 @man man/man3p/Log::Dispatch.3p
 @man man/man3p/Log::Dispatch::ApacheLog.3p
 @man man/man3p/Log::Dispatch::Base.3p
@@ -35,3 +37,5 @@ ${P5SITE}/Log/Dispatch/Syslog.pm
 @man man/man3p/Log::Dispatch::Output.3p
 @man man/man3p/Log::Dispatch::Screen.3p
 @man man/man3p/Log::Dispatch::Syslog.3p
+@man man/man3p/Log::Dispatch::Types.3p
+@man man/man3p/Log::Dispatch::Vars.3p
