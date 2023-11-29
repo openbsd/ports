@@ -25,7 +25,7 @@ SHA256 (cargo/pem-1.1.1.tar.gz) = qINcJzp2qQRV1zRIibCWRZjjMW4qee3o428Wvc8iKLg=
 SHA256 (cargo/pkg-config-0.3.27.tar.gz) = JgcoYLqSTL+pjqOcjBm03WpKJUI9vfIZweypGqDPaWQ=
 SHA256 (cargo/proc-macro-error-1.0.4.tar.gz) = 2iVJD/mJKqs/z3w28Iz7kC3T5xyg+flRe+oCpzpc44w=
 SHA256 (cargo/proc-macro-error-attr-1.0.4.tar.gz) = ob5AGA5S7MmK2AsYSTS689DSn5eVdOQ5r1pVJ0s1+Gk=
-SHA256 (cargo/proc-macro2-1.0.59.tar.gz) = auyhi4a0E8Zgt4GqMZ5OJkij5vnq3JtH6QOOb+nzRRs=
+SHA256 (cargo/proc-macro2-1.0.64.tar.gz) = eIA7Ysvx9G/egNfA6AMRFSS5h3GEz+fDAzZZSQrHp9o=
 SHA256 (cargo/pyo3-0.18.3.tar.gz) = 47GsWzcxujT9qpeF+NdNF0SM0Y8wzxngx+ex/bUnIQk=
 SHA256 (cargo/pyo3-build-config-0.18.3.tar.gz) = nLlG9axhu2GlAUkkkQ2Tbr0rI7cF96SjxAsFxyCweaM=
 SHA256 (cargo/pyo3-ffi-0.18.3.tar.gz) = /U18UzeCGRbqKh0h0QkuhEPPNIeeU6CsZT+7mPRP9lw=
@@ -51,7 +51,7 @@ SHA256 (cargo/windows_i686_msvc-0.42.2.tar.gz) = RNhAtuxkn0gKQcjYD5xlEIuS2JNF3ZQ
 SHA256 (cargo/windows_x86_64_gnu-0.42.2.tar.gz) = jekSuLj+tVwGSGfPBH3aCX+S1R761bSR37mPa7twyzY=
 SHA256 (cargo/windows_x86_64_gnullvm-0.42.2.tar.gz) = JtQbRqNtRTdIrt7xSG1ceoXbIuVq/zRkOYTqhVFOlKM=
 SHA256 (cargo/windows_x86_64_msvc-0.42.2.tar.gz) = muxdozFSQVjG0aSsCrFUEUnAuVBf3gZCOwL17wEGufA=
-SHA256 (cryptography-41.0.1.tar.gz) = 00V5CFQB0/SXYtL31mNNa2wq4SQiAuhg9NJrBG46EAY=
+SHA256 (cryptography-41.0.6.tar.gz) = Qi4+MdY3Q4VeQ+Wm/Mi0rKuGD1YPkyGw7mJpzH7XDMM=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/aliasable-0.1.3.tar.gz) = 6169
 SIZE (cargo/asn1-0.15.2.tar.gz) = 34002
@@ -79,7 +79,7 @@ SIZE (cargo/pem-1.1.1.tar.gz) = 11352
 SIZE (cargo/pkg-config-0.3.27.tar.gz) = 18838
 SIZE (cargo/proc-macro-error-1.0.4.tar.gz) = 25293
 SIZE (cargo/proc-macro-error-attr-1.0.4.tar.gz) = 7971
-SIZE (cargo/proc-macro2-1.0.59.tar.gz) = 44360
+SIZE (cargo/proc-macro2-1.0.64.tar.gz) = 44848
 SIZE (cargo/pyo3-0.18.3.tar.gz) = 420236
 SIZE (cargo/pyo3-build-config-0.18.3.tar.gz) = 29137
 SIZE (cargo/pyo3-ffi-0.18.3.tar.gz) = 64474
@@ -105,4 +105,4 @@ SIZE (cargo/windows_i686_msvc-0.42.2.tar.gz) = 724951
 SIZE (cargo/windows_x86_64_gnu-0.42.2.tar.gz) = 699373
 SIZE (cargo/windows_x86_64_gnullvm-0.42.2.tar.gz) = 364068
 SIZE (cargo/windows_x86_64_msvc-0.42.2.tar.gz) = 666936
-SIZE (cryptography-41.0.1.tar.gz) = 629124
+SIZE (cryptography-41.0.6.tar.gz) = 630763

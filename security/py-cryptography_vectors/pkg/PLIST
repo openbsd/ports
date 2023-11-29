@@ -142,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/dsa-p256.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-dsa.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-ed25519-non-singular-crit-opt-val.pub
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-ed25519-non-singular-ext-val.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-broken-signature-key-type.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-duplicate-crit-opts.pub
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/OpenSSH/certs/p256-p256-duplicate-extension.pub

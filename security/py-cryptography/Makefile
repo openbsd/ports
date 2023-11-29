@@ -1,10 +1,9 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	41.0.1
+MODPY_EGG_VERSION=	41.0.6
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION=	0
 
 .include "crates.inc"
 
