@@ -3,12 +3,11 @@ COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
-V =			0.93
+V =			0.94
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
 PKGNAME-gitwrapper =	gitwrapper-${V}
-REVISION-main =		0
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
