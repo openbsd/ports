@@ -3,7 +3,7 @@ COMMENT =	utility for modifying existing ELF executables and libraries
 V =			0.18.0
 DISTNAME =		patchelf-${V}
 SITES =			https://github.com/NixOS/patchelf/releases/download/${V}/
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -12,6 +12,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB +=		${COMPILER_LIBCXX} c m
 
 # -std=c++17
