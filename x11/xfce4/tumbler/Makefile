@@ -1,7 +1,7 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
-REVISION=	1
+XFCE_VERSION=	4.18.2
 
 SHARED_LIBS+=	tumbler-1 1.0
 
