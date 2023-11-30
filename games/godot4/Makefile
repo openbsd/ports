@@ -118,7 +118,7 @@ BINSUFFIX =		rv64
 .elif ${PROPERTIES:Mlp64}
 BINSUFFIX =		x86_64
 .else
-BINSUFFIX =		x86
+BINSUFFIX =		x86_32
 .endif
 
 .if ${MACHINE_ARCH:Mhppa}
