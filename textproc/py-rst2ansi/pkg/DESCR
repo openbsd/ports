@@ -1,0 +1,2 @@
+A python module dedicated to rendering RST (reStructuredText) documents 
+to ansi-escaped strings suitable for display in a terminal.
