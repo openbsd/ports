@@ -19,7 +19,7 @@ MAINTAINER?=	Theo Buehler <tb@openbsd.org>
 PERMIT_PACKAGE?=	Yes
 
 .if ${DISTNAME:Mopenssl*}
-EOPENSSL_V=	eopenssl${V:R:S/.//}
+EOPENSSL_V?=	eopenssl${V:R:S/.//}
 SUBST_VARS+=	EOPENSSL_V
 .endif
 
