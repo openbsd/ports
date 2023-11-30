@@ -6,6 +6,9 @@
 @group _navidrome
 @sample ${LOCALSTATEDIR}/navidrome/
 @sample ${LOCALSTATEDIR}/navidrome/music/
+share/examples/navidrome/
+share/examples/navidrome/navidrome.toml
+@sample ${SYSCONFDIR}/navidrome.toml
 @mode
 @owner
 @group

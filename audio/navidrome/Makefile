@@ -2,6 +2,7 @@ COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
 MODGO_VERSION =	v0.49.3
+REVISION =	0
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
@@ -31,11 +32,14 @@ RUN_DEPENDS =		graphics/ffmpeg
 
 MODULES =		lang/go
 
-SUBST_VARS =		LOCALSTATEDIR
-
 post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \
 		${FULLDISTDIR}/navidrome-build-${MODGO_VERSION}.tar.gz
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/navidrome
+	${SUBST_CMD} -c -m 755 ${FILESDIR}/navidrome.toml \
+		${PREFIX}/share/examples/navidrome/navidrome.toml
 
 .include "modules.inc"
 

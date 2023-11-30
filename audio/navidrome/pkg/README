@@ -2,20 +2,24 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
+Config File
+===========
+
+When using the included rc.d(8) script, ${PKGSTEM} uses the config file at
+`${SYSCONFDIR}/navidrome.toml`.
+
 Adding Music
 =============
 
-Music can be added by copying it to ${VARBASE}/navidrome/music/ or by changing
-the `--datafolder` directory used.
+Music can be added by copying it to `${LOCALSTATEDIR}/navidrome/music/` or
+by changing `MusicFolder` in the config file.
 
 Web Interface
 =============
 
-${PKGSTEM} serves up a web interface on:
+By default, ${PKGSTEM} serves up a web interface on:
 
-	 http://localhost:4533
+	 http://127.0.0.1:4533
 
-If you wish to listen on a different interface or change the location
-${PKGSTEM} looks for music, you can modify it via rcctl:
-
-         # rcctl set navidrome flags -a 0.0.0.0 --datafolder /home/music
+If you wish to listen on a different address, change the `Address` setting in
+the config file.

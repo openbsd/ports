@@ -1,0 +1,15 @@
+# The address to bind to.
+#
+# To allow other hosts to connect, comment this line out.
+Address = "127.0.0.1"
+
+# Where Navidrome finds music.
+#
+# Make sure the _navidrome user has read access to the music files.
+MusicFolder = "${LOCALSTATEDIR}/navidrome/music"
+
+# Where Navidrome stores its database etc.
+DataFolder = "${LOCALSTATEDIR}/navidrome/"
+
+# Uncomment to make logging more verbose.
+#LogLevel = 'DEBUG'

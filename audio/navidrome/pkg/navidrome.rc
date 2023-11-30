@@ -2,7 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/navidrome"
 daemon_user="_navidrome"
-daemon_flags="-a localhost --datafolder ${VARBASE}/navidrome --musicfolder ${VARBASE}/navidrome/music"
+daemon_flags="-c ${SYSCONFDIR}/navidrome.toml"
 
 . /etc/rc.d/rc.subr
 
