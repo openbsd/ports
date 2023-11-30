@@ -1,0 +1,7 @@
+This is a fork of OpenSSL to enable QUIC with the BoringSSL QUIC API
+everyone else uses while OpenSSL are busy implementing a worse API.
+
+This package is not intended for general-purpose use in OpenBSD - it
+is present for test/comparison purposes. Do not use this as a dependency.
+If your application uses the BoringSSL QUIC API it should use LibreSSL if
+at all possible, otherwise use BoringSSL.
