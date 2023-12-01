@@ -1,7 +1,7 @@
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=		github.com/hashicorp/terraform
-MODGO_VERSION=		v1.6.4
+MODGO_VERSION=		v1.6.5
 DISTNAME=		terraform-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -12,7 +12,7 @@ HOMEPAGE=		https://www.terraform.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# MPLv2
+# BSL-1.1 (https://www.hashicorp.com/bsl)
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
