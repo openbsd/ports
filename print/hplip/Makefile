@@ -7,7 +7,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.23.8
+V=			3.23.12
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
