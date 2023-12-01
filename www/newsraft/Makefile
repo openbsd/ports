@@ -1,6 +1,6 @@
 COMMENT=	lightweight feed reader for text terminals
 
-DISTNAME=	newsraft-0.21
+DISTNAME=	newsraft-0.22
 WRKDIST=	${WRKDIR}/newsraft
 
 CATEGORIES=	www
