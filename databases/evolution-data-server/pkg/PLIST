@@ -450,12 +450,14 @@ libexec/evolution-data-server/
 @bin libexec/evolution-data-server/addressbook-export
 libexec/evolution-data-server/csv2vcard
 @bin libexec/evolution-data-server/evolution-alarm-notify
+@bin libexec/evolution-data-server/evolution-oauth2-handler
 @bin libexec/evolution-data-server/list-sources
 @bin libexec/evolution-scan-gconf-tree-xml
 @bin libexec/evolution-source-registry
 @bin libexec/evolution-user-prompter
 share/GConf/gsettings/evolution-data-server.convert
 share/applications/org.gnome.Evolution-alarm-notify.desktop
+share/applications/org.gnome.evolution-data-server.OAuth2-handler.desktop
 share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook10.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar8.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Sources5.service
