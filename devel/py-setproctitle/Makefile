@@ -1,25 +1,24 @@
-COMMENT =		library for getting/setting process names
+COMMENT=	library for getting/setting process names
 
-MODPY_EGG_VERSION =	1.3.2
-DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_EGG_VERSION=	1.3.3
+DISTNAME=	setproctitle-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/dvarrazzo/py-setproctitle
+HOMEPAGE=	https://github.com/dvarrazzo/py-setproctitle
 
 # BSD 3-clause
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
-WANTLIB +=		pthread
+WANTLIB +=	pthread
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
