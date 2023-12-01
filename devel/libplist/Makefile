@@ -1,11 +1,10 @@
 COMMENT =		library to handle Apple Property List files
 
-V=			2.2.0
+V=			2.3.0
 DISTNAME =		libplist-${V}
-REVISION =		0
 
-SHARED_LIBS +=  plist-2.0            0.0      # 6.0
-SHARED_LIBS +=  plist++-2.0          0.0      # 6.0
+SHARED_LIBS +=  plist-2.0            1.0      # 6.0
+SHARED_LIBS +=  plist++-2.0          1.0      # 6.0
 
 CATEGORIES =		devel audio
 
