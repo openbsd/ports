@@ -1,8 +1,6 @@
 COMMENT =	Xfce4 media player
-REVISION =	0
 
 XFCE_GOODIE =	parole
-XFCE_VERSION =	4.18.0
 
 CATEGORIES +=	audio
 
