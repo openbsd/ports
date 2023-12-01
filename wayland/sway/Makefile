@@ -1,5 +1,5 @@
 COMMENT =	i3-compatible Wayland compositor
-UNLINKED 	= wayland
+REVISION = 	0
 
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
@@ -35,8 +35,9 @@ LIB_DEPENDS =	devel/json-c \
 		wayland/wlroots \
 		x11/xkbcommon
 
-RUN_DEPENDS =	x11/gnome/themes-extra \
-		wayland/foot
+RUN_DEPENDS =	wayland/dmenu-wayland \
+		wayland/swaybg \
+		x11/gnome/themes-extra
 
 CONFIGURE_ARGS = -Dtray=disabled
 
@@ -45,5 +46,6 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sway
 	mv ${WRKINST}${SYSCONFDIR}/sway ${PREFIX}/share/examples/sway/
+	${INSTALL_SCRIPT} ${FILESDIR}/startsway.sh ${PREFIX}/bin
 
 .include <bsd.port.mk>

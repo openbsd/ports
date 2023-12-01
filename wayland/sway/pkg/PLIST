@@ -1,3 +1,4 @@
+bin/startsway.sh
 @bin bin/sway
 @bin bin/swaybar
 @bin bin/swaymsg
@@ -30,6 +31,8 @@ share/examples/sway/sway/
 @sample ${SYSCONFDIR}/sway/
 share/examples/sway/sway/config
 @sample ${SYSCONFDIR}/sway/config
+share/fish/
+share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/sway.fish
 share/fish/vendor_completions.d/swaymsg.fish
 share/fish/vendor_completions.d/swaynag.fish
