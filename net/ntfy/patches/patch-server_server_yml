@@ -1,0 +1,45 @@
+Use OpenBSD paths in config.
+
+Index: server/server.yml
+--- server/server.yml.orig
++++ server/server.yml
+@@ -22,7 +22,7 @@
+ # listen-http: ":80"
+ # listen-https:
+ 
+-# Listen on a Unix socket, e.g. /var/lib/ntfy/ntfy.sock
++# Listen on a Unix socket, e.g. /var/ntfy/ntfy.sock
+ # This can be useful to avoid port issues on local systems, and to simplify permissions.
+ #
+ # listen-unix: <socket-path>
+@@ -64,6 +64,10 @@
+ #   Use /var/cache/ntfy/cache.db as cache file to avoid permission issues. The package
+ #   creates this folder for you.
+ #
++# OpenBSD package users:
++#   Use /var/ntfy/cache.db as cache file to avoid permission issues. The package
++#   creates this folder for you.
++#
+ # Check your permissions:
+ #   If you are running ntfy with systemd, make sure this cache file is owned by the
+ #   ntfy user and group by running: chown ntfy.ntfy <filename>.
+@@ -87,6 +91,10 @@
+ #   Use /var/lib/ntfy/user.db as user database to avoid permission issues. The package
+ #   creates this folder for you.
+ #
++# OpenBSD package users:
++#   Use /var/ntfy/user.db as user database to avoid permission issues. The package
++#   creates this folder for you.
++#
+ # Check your permissions:
+ #   If you are running ntfy with systemd, make sure this user database file is owned by the
+ #   ntfy user and group by running: chown ntfy.ntfy <filename>.
+@@ -155,7 +163,7 @@
+ #
+ # - web-push-public-key is the generated VAPID public key, e.g. AA1234BBCCddvveekaabcdfqwertyuiopasdfghjklzxcvbnm1234567890
+ # - web-push-private-key is the generated VAPID private key, e.g. AA2BB1234567890abcdefzxcvbnm1234567890
+-# - web-push-file is a database file to keep track of browser subscription endpoints, e.g. `/var/cache/ntfy/webpush.db`
++# - web-push-file is a database file to keep track of browser subscription endpoints, e.g. `/var/ntfy/webpush.db`
+ # - web-push-email-address is the admin email address send to the push provider, e.g. `sysadmin@example.com`
+ # - web-push-startup-queries is an optional list of queries to run on startup`
+ #

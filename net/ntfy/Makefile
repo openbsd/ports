@@ -1,7 +1,7 @@
 COMMENT =	send push notifications to your phone or desktop
 
-MODGO_MODNAME =	heckel.io/ntfy
-MODGO_VERSION =	v1.31.0
+MODGO_MODNAME =	heckel.io/ntfy/v2
+MODGO_VERSION =	v2.8.0
 
 DISTNAME =	ntfy-${MODGO_VERSION}
 
@@ -19,12 +19,14 @@ MODULES =	lang/go
 WANTLIB +=	c pthread
 WRKDIST =	${WRKSRC}
 
-# stub doc and app html files; build fails because of failure to embed them.
+# Stub docs and app HTML files; build fails because of failure to embed them.
+# Building the app fails because esbuild SIGILLs. Building the docs requires
+# mkdocs, not currently ported.
 post-extract:
-	mkdir ${WRKSRC}/server/site
-	touch ${WRKSRC}/server/site/app.html
-	mkdir ${WRKSRC}/server/docs
-	touch ${WRKSRC}/server/docs/index.html
+	mkdir -p ${WRKSRC}/server/site
+	${INSTALL_DATA} ${FILESDIR}/app.html ${WRKSRC}/server/site
+	mkdir -p ${WRKSRC}/server/docs
+	${INSTALL_DATA} ${FILESDIR}/index.html ${WRKSRC}/server/docs
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ntfy/

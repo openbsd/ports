@@ -3,7 +3,7 @@
 daemon="${TRUEPREFIX}/bin/ntfy"
 daemon_logger="daemon.info"
 daemon_user="_ntfy"
-daemon_flags="serve --listen-http :8080"
+daemon_flags="serve"
 
 . /etc/rc.d/rc.subr
 

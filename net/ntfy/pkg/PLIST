@@ -3,6 +3,7 @@
 @rcscript ${RCDIR}/ntfy
 @bin bin/ntfy
 share/examples/ntfy/
+@sample ${SYSCONFDIR}/ntfy/
 share/examples/ntfy/example-sse.html
 share/examples/ntfy/main.go
 share/examples/ntfy/notify-desktop.sh
@@ -11,5 +12,10 @@ share/examples/ntfy/pam_sshd
 share/examples/ntfy/publish.php
 share/examples/ntfy/publish.py
 share/examples/ntfy/server.yml
+@sample ${SYSCONFDIR}/ntfy/server.yml
 share/examples/ntfy/subscribe.php
 share/examples/ntfy/subscribe.py
+@mode 770
+@owner _ntfy
+@group _ntfy
+@sample /var/nfty/
