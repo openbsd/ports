@@ -1,14 +1,13 @@
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
-DISTNAME=		libvirt-glib-4.0.0
+DISTNAME=		libvirt-glib-5.0.0
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 CATEGORIES=		devel sysutils
 
-SHARED_LIBS += virt-glib-1.0             2.3 # 0.4000.0
-SHARED_LIBS += virt-gconfig-1.0          2.3 # 0.4000.0
-SHARED_LIBS += virt-gobject-1.0          2.3 # 0.4000.0
+SHARED_LIBS += virt-glib-1.0             2.3 # 0.5000.0
+SHARED_LIBS += virt-gconfig-1.0          2.3 # 0.5000.0
+SHARED_LIBS += virt-gobject-1.0          2.3 # 0.5000.0
 
 HOMEPAGE=		https://libvirt.org/
 
