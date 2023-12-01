@@ -252,8 +252,12 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1360,7 +1360,7 @@ LEVEL = Info
- ;ISSUE_INDEXER_TYPE = bleve
+@@ -1357,10 +1357,10 @@ LEVEL = Info
+ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+ ;;
+ ;; Issue indexer type, currently support: bleve, db, elasticsearch or meilisearch default is bleve
+-;ISSUE_INDEXER_TYPE = bleve
++ISSUE_INDEXER_TYPE = db
  ;;
  ;; Issue indexer storage path, available when ISSUE_INDEXER_TYPE is bleve
 -;ISSUE_INDEXER_PATH = indexers/issues.bleve ; Relative paths will be made absolute against _`AppWorkPath`_.
