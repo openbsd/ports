@@ -1,7 +1,6 @@
 COMMENT =	format terminal output using String::Tagged
 
-DISTNAME =	String-Tagged-Terminal-0.06
-REVISION =	0
+DISTNAME =	String-Tagged-Terminal-0.07
 
 CATEGORIES =	devel
 
