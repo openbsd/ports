@@ -44,7 +44,7 @@ post-patch:
 	cp ${FULLDISTDIR}/abseil-abseil-cpp-${ABSEIL_VER}.tar.gz \
 		${WRKSRC}/derived/distdir/${ABSEIL_VER}.tar.gz
 	mkdir ${WRKSRC}/third_party/abseil
-	cp ${PATCHDIR}/abseil/* ${WRKSRC}/third_party/abseil
+	cp ${FILESDIR}/patch-absl* ${WRKSRC}/third_party/abseil
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
