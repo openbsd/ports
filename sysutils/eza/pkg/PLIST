@@ -1,9 +1,14 @@
 @bin bin/eza
 @man man/man1/eza.1
+@man man/man5/eza_colors-explanation.5
 @man man/man5/eza_colors.5
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/eza
+share/examples/eza/
+share/examples/eza/completions/
+share/examples/eza/completions/nushell/
+share/examples/eza/completions/nushell/eza.nu
 share/fish/
 share/fish/completions/
 share/fish/completions/eza.fish
