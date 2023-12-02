@@ -4,25 +4,27 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-3.3.3
+GH_TAGNAME=	Audacity-3.4.2
 DISTNAME=	${GH_TAGNAME:L}
-REVISION=	2
 
 CATEGORIES=	audio
 
 HOMEPAGE=	https://www.audacityteam.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC FLAC++ SoundTouch atk-1.0 c
 WANTLIB += cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl m mpg123
-WANTLIB += ogg opus pango-1.0 pangocairo-1.0 portaudio portmidi
-WANTLIB += sndfile soxr sqlite3 uuid vamp-hostsdk vorbis vorbisenc
+WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz id3tag intl lilv-0
+WANTLIB += m mp3lame mpg123 ogg opus opusfile pango-1.0 pangocairo-1.0
+WANTLIB += portaudio portmidi serd-0 sndfile sord-0 soxr sqlite3
+WANTLIB += sratom-0 suil-0 uuid vamp-hostsdk vorbis vorbisenc
 WANTLIB += vorbisfile wavpack wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_html-3.2 wx_gtk3u_qa-3.2
-WANTLIB += z mp3lame
+WANTLIB += z
 # dlopened
 WANTLIB += avcodec avformat avutil
 
@@ -34,7 +36,8 @@ MODULES=	devel/cmake \
 MODCMAKE_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/audacity
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools \
+		textproc/rapidjson
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS +=	devel/nasm
@@ -43,12 +46,15 @@ BUILD_DEPENDS +=	devel/nasm
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
 		audio/libid3tag \
+		audio/lilv \
 		audio/libsndfile \
 		audio/libsoxr \
 		audio/libvorbis \
+		audio/opusfile \
 		audio/portaudio-svn \
 		audio/portmidi \
 		audio/soundtouch \
+		audio/suil \
 		audio/vamp-plugin-sdk \
 		audio/wavpack \
 		graphics/ffmpeg \
@@ -74,6 +80,7 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_libogg:STRING=system \
 		-Daudacity_use_libsndfile:STRING=system \
 		-Daudacity_use_libvorbis:STRING=system \
+		-Daudacity_use_lv2:STRING=system \
 		-Daudacity_use_midi:STRING=system \
 		-Daudacity_use_pch:STRING=off \
 		-Daudacity_use_portaudio:STRING=system \
@@ -90,14 +97,11 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 CONFIGURE_ARGS +=	-Daudacity_use_libmad:STRING=off
 
 # don't use conan (no port available)
-CONFIGURE_ARGS +=	-Daudacity_conan_enabled:STRING=off
+CONFIGURE_ARGS +=	-Daudacity_conan_enabled:BOOL=OFF
 
 # disable portmixer that requires Pa_GetStreamHostApiType which our
 # audio/portaudio does not provide
 CONFIGURE_ARGS +=	-Daudacity_use_portmixer:STRING=off
-
-# requires gtk+2
-CONFIGURE_ARGS +=	-Daudacity_use_lv2:STRING=off
 
 # prevent picking up ccache:
 # ccache: error: Failed to create directory /audacity-2.4.2_writes_to_HOME/.cache/ccache/tmp: Permission denied

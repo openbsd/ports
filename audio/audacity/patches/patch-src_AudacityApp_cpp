@@ -3,7 +3,7 @@ Don't hardcode shared libraries version number.
 Index: src/AudacityApp.cpp
 --- src/AudacityApp.cpp.orig
 +++ src/AudacityApp.cpp
-@@ -721,12 +721,12 @@ class GnomeShutdown
+@@ -720,12 +720,12 @@ class GnomeShutdown
     {
        mArgv[0].reset(strdup("Audacity"));
  

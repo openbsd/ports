@@ -4,17 +4,24 @@ lib/audacity/
 @so lib/audacity/lib-audio-graph.so
 @so lib/audacity/lib-audio-io.so
 @so lib/audacity/lib-basic-ui.so
+@so lib/audacity/lib-channel.so
 @so lib/audacity/lib-command-parameters.so
 @so lib/audacity/lib-components.so
 @so lib/audacity/lib-effects.so
 @so lib/audacity/lib-exceptions.so
+@so lib/audacity/lib-export-ui.so
 @so lib/audacity/lib-ffmpeg-support.so
+@so lib/audacity/lib-file-formats.so
 @so lib/audacity/lib-files.so
 @so lib/audacity/lib-graphics.so
+@so lib/audacity/lib-import-export.so
 @so lib/audacity/lib-ipc.so
+@so lib/audacity/lib-lv2.so
 @so lib/audacity/lib-math.so
+@so lib/audacity/lib-mixer.so
 @so lib/audacity/lib-module-manager.so
 @so lib/audacity/lib-numeric-formats.so
+@so lib/audacity/lib-playable-track.so
 @so lib/audacity/lib-preferences.so
 @so lib/audacity/lib-project-file-io.so
 @so lib/audacity/lib-project-history.so
@@ -26,11 +33,13 @@ lib/audacity/
 @so lib/audacity/lib-screen-geometry.so
 @so lib/audacity/lib-shuttlegui.so
 @so lib/audacity/lib-snapping.so
+@so lib/audacity/lib-stretching-sequence.so
 @so lib/audacity/lib-string-utils.so
 @so lib/audacity/lib-strings.so
 @so lib/audacity/lib-tags.so
 @so lib/audacity/lib-theme-resources.so
 @so lib/audacity/lib-theme.so
+@so lib/audacity/lib-time-and-pitch.so
 @so lib/audacity/lib-time-frequency-selection.so
 @so lib/audacity/lib-time-track.so
 @so lib/audacity/lib-track-selection.so
@@ -38,12 +47,24 @@ lib/audacity/
 @so lib/audacity/lib-transactions.so
 @so lib/audacity/lib-utility.so
 @so lib/audacity/lib-uuid.so
+@so lib/audacity/lib-vst.so
 @so lib/audacity/lib-wave-track.so
 @so lib/audacity/lib-wx-init.so
 @so lib/audacity/lib-wx-wrappers.so
 @so lib/audacity/lib-xml.so
 lib/audacity/modules/
+@so lib/audacity/modules/mod-aup.so
+@so lib/audacity/modules/mod-cl.so
+@so lib/audacity/modules/mod-ffmpeg.so
+@so lib/audacity/modules/mod-flac.so
+@so lib/audacity/modules/mod-lof.so
+@so lib/audacity/modules/mod-mp3.so
+@so lib/audacity/modules/mod-mpg123.so
+@so lib/audacity/modules/mod-ogg.so
+@so lib/audacity/modules/mod-opus.so
+@so lib/audacity/modules/mod-pcm.so
 @so lib/audacity/modules/mod-script-pipe.so
+@so lib/audacity/modules/mod-wavpack.so
 @man man/man1/audacity.1
 share/applications/audacity.desktop
 share/audacity/
