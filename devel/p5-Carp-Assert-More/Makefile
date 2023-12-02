@@ -3,7 +3,7 @@ COMMENT=	convenience wrappers around Carp::Assert
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	Carp-Assert-More-2.0.1
+DISTNAME =	Carp-Assert-More-2.3.0
 CATEGORIES=	devel
 
 # Artistic 2.0
