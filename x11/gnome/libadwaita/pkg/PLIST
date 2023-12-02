@@ -119,7 +119,6 @@ share/locale/uk/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
 share/locale/zh_CN/LC_MESSAGES/libadwaita.mo
 share/locale/zh_TW/LC_MESSAGES/libadwaita.mo
-share/metainfo/
 share/metainfo/org.gnome.Adwaita1.Demo.metainfo.xml
 share/vala/vapi/libadwaita-1.deps
 share/vala/vapi/libadwaita-1.vapi
