@@ -2,6 +2,7 @@
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 VERSION =		6.3.2
+REVISION =		0
 
 COMMENT =		polyglot build tool
 HOMEPAGE =		https://bazel.build/
