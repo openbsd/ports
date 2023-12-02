@@ -1,0 +1,36 @@
+64bit time_t
+
+Index: src/qemu/qemu_nbdkit.c
+--- src/qemu/qemu_nbdkit.c.orig
++++ src/qemu/qemu_nbdkit.c
+@@ -547,17 +547,17 @@ qemuNbdkitCapsFormatCache(qemuNbdkitCaps *nbdkitCaps)
+ 
+     virBufferEscapeString(&buf, "<path>%s</path>\n",
+                           nbdkitCaps->path);
+-    virBufferAsprintf(&buf, "<nbdkitctime>%lu</nbdkitctime>\n",
++    virBufferAsprintf(&buf, "<nbdkitctime>%lld</nbdkitctime>\n",
+                       nbdkitCaps->ctime);
+     virBufferEscapeString(&buf, "<plugindir>%s</plugindir>\n",
+                           nbdkitCaps->pluginDir);
+-    virBufferAsprintf(&buf, "<plugindirmtime>%lu</plugindirmtime>\n",
++    virBufferAsprintf(&buf, "<plugindirmtime>%lld</plugindirmtime>\n",
+                       nbdkitCaps->pluginDirMtime);
+     virBufferEscapeString(&buf, "<filterdir>%s</filterdir>\n",
+                           nbdkitCaps->filterDir);
+-    virBufferAsprintf(&buf, "<filterdirmtime>%lu</filterdirmtime>\n",
++    virBufferAsprintf(&buf, "<filterdirmtime>%lld</filterdirmtime>\n",
+                       nbdkitCaps->filterDirMtime);
+-    virBufferAsprintf(&buf, "<selfctime>%lu</selfctime>\n",
++    virBufferAsprintf(&buf, "<selfctime>%lld</sefctime>\n",
+                       nbdkitCaps->libvirtCtime);
+     virBufferAsprintf(&buf, "<selfvers>%u</selfvers>\n",
+                       nbdkitCaps->libvirtVersion);
+@@ -596,7 +596,7 @@ virNbdkitCapsSaveFile(void *data,
+         return -1;
+     }
+ 
+-    VIR_DEBUG("Saved caps '%s' for '%s' with (%lu, %lu)",
++    VIR_DEBUG("Saved caps '%s' for '%s' with (%lld, %lld)",
+               filename, nbdkitCaps->path,
+               nbdkitCaps->ctime,
+               nbdkitCaps->libvirtCtime);

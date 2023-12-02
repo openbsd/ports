@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-9.9.0
+DISTNAME=		libvirt-9.10.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.4 # 0.9009.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.9009.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.9009.0
-SHARED_LIBS += virt-admin                2.2 # 0.9009.0
+SHARED_LIBS += virt                      2.4 # 0.9010.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.9010.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.9010.0
+SHARED_LIBS += virt-admin                2.2 # 0.9010.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -25,6 +25,10 @@ EXTRACT_SUFX=		.tar.xz
 # "#error You need at least GCC v4.8 to compile libvirt"
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
+
+# scripts/rpcgen/tests/test_demo.c and also needed because rpcgen is used to
+# create some .c and .h files which use this type
+CFLAGS +=		-Dxdr_uint64_t=xdr_u_int64_t
 
 MODULES=		devel/meson
 
