@@ -1,7 +1,6 @@
 COMMENT =	provide an interface to create pseudo ttys
 
-DISTNAME =	IO-Tty-1.17
-REVISION =	0
+DISTNAME =	IO-Tty-1.18
 
 CATEGORIES =	devel
 
