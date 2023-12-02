@@ -1,7 +1,6 @@
 COMMENT =	perl extension for libconfig
 
-DISTNAME =	Conf-Libconfig-0.101
-REVISION =	0
+DISTNAME =	Conf-Libconfig-1.0.3
 
 CATEGORIES =	devel
 
