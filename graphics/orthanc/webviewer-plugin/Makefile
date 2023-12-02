@@ -25,6 +25,11 @@ WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt jsoncpp
 WANTLIB += m sqlite3 uuid
 
+MODULES =		lang/python
+MODPY_RUNDEP =		No
+# don't override the cmake MODULE
+CONFIGURE_STYLE =	cmake
+
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		graphics/orthanc/server \
