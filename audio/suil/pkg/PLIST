@@ -1,0 +1,5 @@
+include/suil-0/
+include/suil-0/suil/
+include/suil-0/suil/suil.h
+@lib lib/libsuil-0.so.${LIBsuil-0_VERSION}
+lib/pkgconfig/suil-0.pc

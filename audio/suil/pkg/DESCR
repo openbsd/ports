@@ -1,0 +1,9 @@
+Suil is a lightweight C library for loading and wrapping LV2 plugin UIs.
+
+Suil makes it possible to load a UI of any toolkit in a host using any other
+toolkit (assuming the toolkits are both supported by Suil). Hosts do not need to
+build against or link to foreign toolkit libraries to use UIs written with that
+toolkit; all the necessary magic is performed by dynamically loaded modules. The
+API is designed such that hosts do not need to explicitly support specific
+toolkits at all - if Suil supports a particular toolkit, then UIs in that
+toolkit will work in all hosts that use Suil automatically.
