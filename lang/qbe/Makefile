@@ -2,8 +2,7 @@
 ONLY_FOR_ARCHS =	amd64 arm64 riscv64
 
 COMMENT =	small, quick compiler backend
-DISTNAME =	qbe-1.1
-EXTRACT_SUFX =	.tar.xz
+DISTNAME =	qbe-1.1pl20230925
 CATEGORIES =	lang devel
 
 HOMEPAGE =	https://c9x.me/compile/
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-SITES =		https://c9x.me/compile/release/
+SITES =	https://github.com/ibara/ports/releases/download/v1.0/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
