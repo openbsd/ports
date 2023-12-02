@@ -943,6 +943,8 @@ share/inkscape/extensions/other/extension-xaml/inkxaml/xaml2svg/properties.xsl
 share/inkscape/extensions/other/extension-xaml/inkxaml/xaml2svg/shapes.xsl
 share/inkscape/extensions/other/extension-xaml/inkxaml/xaml2svg/transform.xsl
 share/inkscape/extensions/other/extension-xaml/inkxaml/xamlobjects.py
+share/inkscape/extensions/other/extension-xaml/poetry.lock
+share/inkscape/extensions/other/extension-xaml/pyproject.toml
 share/inkscape/extensions/other/extension-xaml/readme.md
 share/inkscape/extensions/other/extension-xaml/tox.ini
 share/inkscape/extensions/other/gcodetools/

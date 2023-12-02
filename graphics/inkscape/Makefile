@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.3
+VERSION =	1.3.2
 DISTNAME =	inkscape-${VERSION}
-REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -72,7 +71,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests${MODPY_FLAVOR} \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2023-07-21_0e150ed6c4
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2023-11-25_091e20ef0f
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
