@@ -1,7 +1,7 @@
 COMMENT-main =	Lisp dialect that runs on Lua ${MODLUA_VERSION}
 COMMENT-docs =	Documentation for fennel
 
-V =			1.3.1
+V =			1.4.0
 DIST_TUPLE =		srht technomancy fennel $V .
 FULLPKGPATH-main =	lang/fennel,-main,${FLAVOR}
 FULLPKGNAME-main =	fennel-${FLAVOR}-${V}
@@ -36,7 +36,7 @@ MAKE_FLAGS +=	LUA=${MODLUA_BIN} \
 FAKE_FLAGS +=	PREFIX=${TRUEPREFIX} \
 		MAN_DIR=${PREFIX}
 
-RUN_DEPENDS-main+= lang/fennel,-docs
+RUN_DEPENDS-main = ${RUN_DEPENDS} lang/fennel,-docs
 RUN_DEPENDS-docs =
 
 post-install:
