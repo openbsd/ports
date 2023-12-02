@@ -19,7 +19,7 @@ HOMEPAGE=		https://www.consul.io/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# MPLv2.0
+# BSL-1.1 (https://www.hashicorp.com/bsl)
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c pthread
