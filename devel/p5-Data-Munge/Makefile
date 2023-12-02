@@ -2,14 +2,14 @@ COMMENT =		various utility functions
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Data-Munge-0.097
+DISTNAME =		Data-Munge-0.10
 CATEGORIES =		devel
-REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =		devel/p5-Test-Warnings
+TEST_DEPENDS =		devel/p5-Test-Warnings \
+			devel/p5-Test2-Suite
 
 CPAN_AUTHOR =		MAUKE
 
