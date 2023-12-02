@@ -237,6 +237,7 @@
      SUBDIR += sratom
      SUBDIR += streamripper
      SUBDIR += subsonic-cli
+     SUBDIR += suil
      SUBDIR += swh-plugins
      SUBDIR += taglib
      SUBDIR += tagtool
