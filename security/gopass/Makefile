@@ -1,8 +1,7 @@
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass
-MODGO_VERSION =	v1.15.10
-REVISION =	0
+MODGO_VERSION =	v1.15.11
 
 DISTNAME =	gopass-${MODGO_VERSION}
 
