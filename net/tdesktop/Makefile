@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.11.7
+V =			4.12.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -32,13 +32,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_bad_optional_access
-WANTLIB += absl_bad_variant_access absl_strings avcodec avfilter
-WANTLIB += avformat avutil c crypto dispatch gio-2.0 giomm-2.68
-WANTLIB += glib-2.0 glibmm-2.68 gobject-2.0 hunspell-1.7 jpeg lz4 m
-WANTLIB += openal opus protobuf-lite qrcodegencpp rnnoise sigc-3.0
-WANTLIB += swresample swscale tg_owt xcb xcb-keysyms xcb-record
-WANTLIB += xcb-screensaver xxhash z
+WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
+WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
+WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gobject-2.0
+WANTLIB += hunspell-1.7 jpeg lz4 m openal opus protobuf-lite qrcodegencpp
+WANTLIB += rnnoise sigc-3.0 swresample swscale tg_owt xcb xcb-keysyms
+WANTLIB += xcb-record xcb-screensaver xxhash z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -100,7 +99,7 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
 
 # disable unported/unwanted components
-CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_SCUDO=ON \
 			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
 			-DLIBTGVOIP_DISABLE_ALSA=ON
 
