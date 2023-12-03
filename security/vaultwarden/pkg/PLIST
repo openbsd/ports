@@ -4,7 +4,7 @@
 @mode 750
 @owner _vaultwarden
 @group _vaultwarden
-@sample ${VARBASE}/vaultwarden/data/
+@sample ${LOCALSTATEDIR}/vaultwarden/data/
 @mode
 @owner
 @group
@@ -14,4 +14,4 @@ share/doc/vaultwarden/.env.template
 @mode 640
 @owner _vaultwarden
 @group _vaultwarden
-@sample ${VARBASE}/vaultwarden/.env
+@sample ${LOCALSTATEDIR}/vaultwarden/.env

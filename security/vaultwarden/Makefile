@@ -47,7 +47,7 @@ WANTLIB +=		pq
 LIB_DEPENDS +=		databases/postgresql
 .endif
 
-SUBST_VARS +=		WRKSRC VARBASE
+SUBST_VARS +=		WRKSRC
 
 post-configure:
 	mv ${WRKDIR}/myvendordir ${WRKSRC}
