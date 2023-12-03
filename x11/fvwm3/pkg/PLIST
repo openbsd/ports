@@ -185,3 +185,5 @@ share/fvwm3/perllib/FVWM/Tracker/WindowList.pm
 share/fvwm3/perllib/General/
 share/fvwm3/perllib/General/FileSystem.pm
 share/fvwm3/perllib/General/Parse.pm
+share/xsessions/
+share/xsessions/fvwm3.desktop
