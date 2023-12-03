@@ -20,7 +20,7 @@ MODGO_MODULES =	\
 	github.com/cncf/udpa/go					 v0.0.0-20201120205902-5459f2c99403 \
 	github.com/coreos/go-semver				 v0.3.0 \
 	github.com/coreos/go-systemd/v22			 v22.3.2 \
-	github.com/cpuguy83/go-md2man/v2			 v2.0.2 \
+	github.com/cpuguy83/go-md2man/v2			 v2.0.3 \
 	github.com/davecgh/go-spew				 v1.1.2-0.20180830191138-d8f796af33cc \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20201210154907-fd9021fe5dad \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
@@ -50,7 +50,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
 	github.com/hashicorp/go-hclog				 v1.5.0 \
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
-	github.com/hashicorp/go-retryablehttp			 v0.7.4 \
+	github.com/hashicorp/go-retryablehttp			 v0.7.5 \
 	github.com/hashicorp/go-rootcerts			 v1.0.2 \
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
@@ -90,13 +90,13 @@ MODGO_MODULES =	\
 	github.com/sourcegraph/conc				 v0.3.0 \
 	github.com/spf13/afero					 v1.10.0 \
 	github.com/spf13/cast					 v1.5.1 \
-	github.com/spf13/cobra					 v1.7.0 \
+	github.com/spf13/cobra					 v1.8.0 \
 	github.com/spf13/pflag					 v1.0.5 \
 	github.com/spf13/viper					 v1.17.0 \
 	github.com/stretchr/objx				 v0.5.0 \
 	github.com/stretchr/testify				 v1.8.4 \
 	github.com/subosito/gotenv				 v1.6.0 \
-	github.com/vultr/govultr/v3				 v3.3.4 \
+	github.com/vultr/govultr/v3				 v3.4.1 \
 	github.com/yuin/goldmark				 v1.2.1 \
 	go.etcd.io/etcd/api/v3					 v3.5.9 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.9 \
@@ -106,18 +106,18 @@ MODGO_MODULES =	\
 	go.uber.org/atomic					 v1.9.0 \
 	go.uber.org/multierr					 v1.9.0 \
 	go.uber.org/zap						 v1.21.0 \
-	golang.org/x/crypto					 v0.14.0 \
+	golang.org/x/crypto					 v0.16.0 \
 	golang.org/x/exp					 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.12.0 \
-	golang.org/x/net					 v0.17.0 \
-	golang.org/x/oauth2					 v0.13.0 \
+	golang.org/x/net					 v0.19.0 \
+	golang.org/x/oauth2					 v0.15.0 \
 	golang.org/x/sync					 v0.3.0 \
-	golang.org/x/sys					 v0.13.0 \
-	golang.org/x/term					 v0.13.0 \
-	golang.org/x/text					 v0.13.0 \
+	golang.org/x/sys					 v0.15.0 \
+	golang.org/x/term					 v0.15.0 \
+	golang.org/x/text					 v0.14.0 \
 	golang.org/x/time					 v0.3.0 \
 	golang.org/x/tools					 v0.13.0 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
@@ -335,7 +335,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net			 v0.15.0 \
-	golang.org/x/net			 v0.16.0 \
 	golang.org/x/oauth2			 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2			 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2			 v0.0.0-20190604053449-0f29369cfe45 \
@@ -397,6 +396,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text			 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text			 v0.12.0 \
+	golang.org/x/text			 v0.13.0 \
 	golang.org/x/text			 v0.3.0 \
 	golang.org/x/text			 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text			 v0.3.2 \
