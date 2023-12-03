@@ -1,3 +1,4 @@
+${P5SITE}/GD/
 ${P5SITE}/GD/Barcode/
 ${P5SITE}/GD/Barcode.pm
 ${P5SITE}/GD/Barcode/COOP2of5.pm
