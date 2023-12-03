@@ -1,6 +1,6 @@
 COMMENT =	terminal frontend for fossil
 
-V =		0.15
+V =		0.16
 DISTNAME =	fnc-${V}
 CATEGORIES =	devel
 
