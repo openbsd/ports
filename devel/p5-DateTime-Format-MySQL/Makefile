@@ -5,6 +5,8 @@ PKG_ARCH=		*
 DISTNAME =		DateTime-Format-MySQL-0.08
 CATEGORIES=		devel converters
 
+EPOCH =			0
+
 # perl
 PERMIT_PACKAGE=	Yes
 
