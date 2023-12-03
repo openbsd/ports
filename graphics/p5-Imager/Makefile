@@ -1,6 +1,6 @@
 COMMENT=	generate and manipulate images
 
-DISTNAME =	Imager-1.019
+DISTNAME =	Imager-1.022
 CATEGORIES=	graphics
 MODULES=	cpan
 
