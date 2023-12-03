@@ -1,5 +1,6 @@
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
+REVISION =		0
 
 MULTI_PACKAGES =	-main -examples
 SHARED_LIBS +=  Qt5Script                 3.0 # 5.9
@@ -10,5 +11,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets m
 RUN_DEPENDS-examples =	x11/qt5/qtdeclarative>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
 FLAVORS =		debug
+
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265989
+CXXFLAGS +=		-O0
 
 .include <bsd.port.mk>
