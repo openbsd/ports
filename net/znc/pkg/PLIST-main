@@ -4,8 +4,8 @@
 @rcscript ${RCDIR}/znc
 @owner _znc
 @group _znc
-@sample ${VARBASE}/znc/
-@sample ${VARBASE}/znc/configs/
+@sample ${LOCALSTATEDIR}/znc/
+@sample ${LOCALSTATEDIR}/znc/configs/
 @owner
 @group
 @bin bin/znc

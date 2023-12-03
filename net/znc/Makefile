@@ -36,6 +36,4 @@ CXXFLAGS+=	-DHAVE_OPAQUE_SSL
 
 NO_TEST=	Yes
 
-SUBST_VARS+=	VARBASE
-
 .include <bsd.port.mk>
