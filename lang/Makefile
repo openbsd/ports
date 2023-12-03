@@ -56,6 +56,7 @@
      SUBDIR += guile
      SUBDIR += guile2
      SUBDIR += guile3
+     SUBDIR += hare
      SUBDIR += hashlink
      SUBDIR += icon
      SUBDIR += intel2gas
