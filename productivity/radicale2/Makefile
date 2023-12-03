@@ -21,7 +21,6 @@ RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR}>=2.7.3 \
 		textproc/py-vobject${MODPY_FLAVOR}
 
 NO_TEST =	Yes
-SUBST_VARS +=	VARBASE
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/radicale/config.py
