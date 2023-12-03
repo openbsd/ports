@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
-XFCE_VERSION=	1.2.8
+XFCE_VERSION=	1.2.10
 XFCE_PLUGIN=	cpugraph
 
 # GPLv2+
