@@ -1,0 +1,340 @@
+Verbose build
+
+Index: makefiles/openbsd.x86_64.mk
+--- makefiles/openbsd.x86_64.mk.orig
++++ makefiles/openbsd.x86_64.mk
+@@ -6,251 +6,209 @@ OBJS = $(HARECACHE)/rt.o $(HARECACHE)/encoding_utf8.o 
+ 
+ rt_ha = rt/+openbsd/env.ha rt/+openbsd/errno.ha rt/+openbsd/libc.ha rt/+openbsd/platform_abort.ha rt/+openbsd/signal.ha rt/+openbsd/socket.ha rt/+openbsd/start.ha rt/+openbsd/syscalls.ha rt/+openbsd/types.ha rt/+x86_64/arch_jmp.ha rt/+x86_64/backtrace.ha rt/+x86_64/cpuid.ha rt/abort.ha rt/ensure.ha rt/fenv_defs.ha rt/jmp.ha rt/malloc+libc.ha rt/memcpy.ha rt/memfunc_ptr.ha rt/memmove.ha rt/memset.ha rt/strcmp.ha rt/u64tos.ha rt/unknown_errno.ha
+ $(HARECACHE)/rt.ssa: $(rt_ha)
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/rt.ssa -t $(HARECACHE)/rt.td.tmp -N rt $(rt_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/rt.ssa -t $(HARECACHE)/rt.td.tmp -N rt $(rt_ha)
+ 
+ rt_s = $(HARECACHE)/rt.s rt/+openbsd/start.s rt/+x86_64/cpuid.s rt/+x86_64/fenv.s rt/+x86_64/getfp.s rt/+x86_64/longjmp.s rt/+x86_64/restore.s rt/+x86_64/setjmp.s
+ $(HARECACHE)/rt.o: $(rt_s)
+-	@printf 'AS\t%s\n' "$@"
+-	@$(AS) $(ASFLAGS) -o $@ $(rt_s)
++	$(AS) $(ASFLAGS) -o $@ $(rt_s)
+ 
+ encoding_utf8_ha = encoding/utf8/decode.ha encoding/utf8/decodetable.ha encoding/utf8/encode.ha encoding/utf8/rune.ha encoding/utf8/types.ha
+ $(HARECACHE)/encoding_utf8.ssa: $(encoding_utf8_ha)
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/encoding_utf8.ssa -t $(HARECACHE)/encoding_utf8.td.tmp -N encoding::utf8 $(encoding_utf8_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/encoding_utf8.ssa -t $(HARECACHE)/encoding_utf8.td.tmp -N encoding::utf8 $(encoding_utf8_ha)
+ 
+ types_ha = types/arch+x86_64.ha types/classes.ha types/limits.ha
+ $(HARECACHE)/types.ssa: $(types_ha)
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/types.ssa -t $(HARECACHE)/types.td.tmp -N types $(types_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/types.ssa -t $(HARECACHE)/types.td.tmp -N types $(types_ha)
+ 
+ bytes_ha = bytes/contains.ha bytes/equal.ha bytes/index.ha bytes/reverse.ha bytes/tokenize.ha bytes/trim.ha bytes/two_way.ha bytes/zero.ha
+ $(HARECACHE)/bytes.ssa: $(bytes_ha) $(HARECACHE)/rt.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/bytes.ssa -t $(HARECACHE)/bytes.td.tmp -N bytes $(bytes_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/bytes.ssa -t $(HARECACHE)/bytes.td.tmp -N bytes $(bytes_ha)
+ 
+ sort_cmp_ha = sort/cmp/cmp.ha
+ $(HARECACHE)/sort_cmp.ssa: $(sort_cmp_ha)
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/sort_cmp.ssa -t $(HARECACHE)/sort_cmp.td.tmp -N sort::cmp $(sort_cmp_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/sort_cmp.ssa -t $(HARECACHE)/sort_cmp.td.tmp -N sort::cmp $(sort_cmp_ha)
+ 
+ strings_ha = strings/compare.ha strings/concat.ha strings/contains.ha strings/dup.ha strings/index.ha strings/iter.ha strings/replace.ha strings/runes.ha strings/sub.ha strings/suffix.ha strings/tokenize.ha strings/trim.ha strings/utf8.ha
+ $(HARECACHE)/strings.ssa: $(strings_ha) $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/sort_cmp.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/strings.ssa -t $(HARECACHE)/strings.td.tmp -N strings $(strings_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/strings.ssa -t $(HARECACHE)/strings.td.tmp -N strings $(strings_ha)
+ 
+ ascii_ha = ascii/ctype.ha ascii/string.ha ascii/valid.ha
+ $(HARECACHE)/ascii.ssa: $(ascii_ha) $(HARECACHE)/encoding_utf8.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/ascii.ssa -t $(HARECACHE)/ascii.td.tmp -N ascii $(ascii_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/ascii.ssa -t $(HARECACHE)/ascii.td.tmp -N ascii $(ascii_ha)
+ 
+ errors_ha = errors/common.ha errors/opaque.ha errors/rt.ha errors/string.ha
+ $(HARECACHE)/errors.ssa: $(errors_ha) $(HARECACHE)/rt.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/errors.ssa -t $(HARECACHE)/errors.td.tmp -N errors $(errors_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/errors.ssa -t $(HARECACHE)/errors.td.tmp -N errors $(errors_ha)
+ 
+ io_ha = io/+openbsd/dup.ha io/+openbsd/mmap.ha io/+openbsd/platform_file.ha io/+openbsd/vector.ha io/arch+x86_64.ha io/copy.ha io/drain.ha io/empty.ha io/file.ha io/handle.ha io/limit.ha io/stream.ha io/tee.ha io/types.ha io/util.ha io/zero.ha
+ $(HARECACHE)/io.ssa: $(io_ha) $(HARECACHE)/bytes.td $(HARECACHE)/errors.td $(HARECACHE)/rt.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/io.ssa -t $(HARECACHE)/io.td.tmp -N io $(io_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/io.ssa -t $(HARECACHE)/io.td.tmp -N io $(io_ha)
+ 
+ bufio_ha = bufio/scanner.ha bufio/stream.ha
+ $(HARECACHE)/bufio.ssa: $(bufio_ha) $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/errors.td $(HARECACHE)/io.td $(HARECACHE)/strings.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/bufio.ssa -t $(HARECACHE)/bufio.td.tmp -N bufio $(bufio_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/bufio.ssa -t $(HARECACHE)/bufio.td.tmp -N bufio $(bufio_ha)
+ 
+ crypto_math_ha = crypto/math/arithm.ha crypto/math/bits.ha
+ $(HARECACHE)/crypto_math.ssa: $(crypto_math_ha) $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/crypto_math.ssa -t $(HARECACHE)/crypto_math.td.tmp -N crypto::math $(crypto_math_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/crypto_math.ssa -t $(HARECACHE)/crypto_math.td.tmp -N crypto::math $(crypto_math_ha)
+ 
+ endian_ha = endian/big.ha endian/endian.ha endian/host+x86_64.ha endian/little.ha endian/network.ha
+ $(HARECACHE)/endian.ssa: $(endian_ha)
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/endian.ssa -t $(HARECACHE)/endian.td.tmp -N endian $(endian_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/endian.ssa -t $(HARECACHE)/endian.td.tmp -N endian $(endian_ha)
+ 
+ hash_ha = hash/hash.ha
+ $(HARECACHE)/hash.ssa: $(hash_ha) $(HARECACHE)/io.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hash.ssa -t $(HARECACHE)/hash.td.tmp -N hash $(hash_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hash.ssa -t $(HARECACHE)/hash.td.tmp -N hash $(hash_ha)
+ 
+ crypto_sha256_ha = crypto/sha256/sha256.ha
+ $(HARECACHE)/crypto_sha256.ssa: $(crypto_sha256_ha) $(HARECACHE)/bytes.td $(HARECACHE)/crypto_math.td $(HARECACHE)/endian.td $(HARECACHE)/hash.td $(HARECACHE)/io.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/crypto_sha256.ssa -t $(HARECACHE)/crypto_sha256.td.tmp -N crypto::sha256 $(crypto_sha256_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/crypto_sha256.ssa -t $(HARECACHE)/crypto_sha256.td.tmp -N crypto::sha256 $(crypto_sha256_ha)
+ 
+ math_ha = math/fenv+x86_64.ha math/fenv_func.ha math/floats.ha math/ints.ha math/math.ha math/trig.ha math/uints.ha
+ $(HARECACHE)/math.ssa: $(math_ha) $(HARECACHE)/rt.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/math.ssa -t $(HARECACHE)/math.td.tmp -N math $(math_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/math.ssa -t $(HARECACHE)/math.td.tmp -N math $(math_ha)
+ 
+ memio_ha = memio/ops.ha memio/stream.ha
+ $(HARECACHE)/memio.ssa: $(memio_ha) $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/errors.td $(HARECACHE)/io.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/memio.ssa -t $(HARECACHE)/memio.td.tmp -N memio $(memio_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/memio.ssa -t $(HARECACHE)/memio.td.tmp -N memio $(memio_ha)
+ 
+ path_ha = path/+openbsd.ha path/buffer.ha path/error.ha path/ext_stack.ha path/iter.ha path/posix.ha path/prefix.ha path/stack.ha
+ $(HARECACHE)/path.ssa: $(path_ha) $(HARECACHE)/bytes.td $(HARECACHE)/rt.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/path.ssa -t $(HARECACHE)/path.td.tmp -N path $(path_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/path.ssa -t $(HARECACHE)/path.td.tmp -N path $(path_ha)
+ 
+ time_ha = time/+openbsd/functions.ha time/arithm.ha time/conv.ha time/types.ha
+ $(HARECACHE)/time.ssa: $(time_ha) $(HARECACHE)/math.td $(HARECACHE)/rt.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time.ssa -t $(HARECACHE)/time.td.tmp -N time $(time_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time.ssa -t $(HARECACHE)/time.td.tmp -N time $(time_ha)
+ 
+ fs_ha = fs/fs.ha fs/types.ha fs/util.ha
+ $(HARECACHE)/fs.ssa: $(fs_ha) $(HARECACHE)/errors.td $(HARECACHE)/io.td $(HARECACHE)/path.td $(HARECACHE)/strings.td $(HARECACHE)/time.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/fs.ssa -t $(HARECACHE)/fs.td.tmp -N fs $(fs_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/fs.ssa -t $(HARECACHE)/fs.td.tmp -N fs $(fs_ha)
+ 
+ types_c_ha = types/c/arch+x86_64.ha types/c/strings.ha types/c/types.ha
+ $(HARECACHE)/types_c.ssa: $(types_c_ha) $(HARECACHE)/encoding_utf8.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/types_c.ssa -t $(HARECACHE)/types_c.td.tmp -N types::c $(types_c_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/types_c.ssa -t $(HARECACHE)/types_c.td.tmp -N types::c $(types_c_ha)
+ 
+ os_ha = os/+openbsd/dirfdfs.ha os/+openbsd/exit.ha os/+openbsd/fs.ha os/+openbsd/platform_environ.ha os/+openbsd/status.ha os/+openbsd/stdfd.ha os/environ.ha os/os.ha
+ $(HARECACHE)/os.ssa: $(os_ha) $(HARECACHE)/bufio.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/errors.td $(HARECACHE)/fs.td $(HARECACHE)/io.td $(HARECACHE)/math.td $(HARECACHE)/path.td $(HARECACHE)/rt.td $(HARECACHE)/strings.td $(HARECACHE)/time.td $(HARECACHE)/types_c.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/os.ssa -t $(HARECACHE)/os.td.tmp -N os $(os_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/os.ssa -t $(HARECACHE)/os.td.tmp -N os $(os_ha)
+ 
+ strconv_ha = strconv/ftos.ha strconv/ftos_multiprecision.ha strconv/ftos_ryu.ha strconv/itos.ha strconv/numeric.ha strconv/stof.ha strconv/stof_data.ha strconv/stoi.ha strconv/stou.ha strconv/types.ha strconv/utos.ha
+ $(HARECACHE)/strconv.ssa: $(strconv_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/io.td $(HARECACHE)/math.td $(HARECACHE)/memio.td $(HARECACHE)/strings.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/strconv.ssa -t $(HARECACHE)/strconv.td.tmp -N strconv $(strconv_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/strconv.ssa -t $(HARECACHE)/strconv.td.tmp -N strconv $(strconv_ha)
+ 
+ fmt_ha = fmt/iter.ha fmt/print.ha fmt/wrappers.ha
+ $(HARECACHE)/fmt.ssa: $(fmt_ha) $(HARECACHE)/ascii.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/io.td $(HARECACHE)/math.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/fmt.ssa -t $(HARECACHE)/fmt.td.tmp -N fmt $(fmt_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/fmt.ssa -t $(HARECACHE)/fmt.td.tmp -N fmt $(fmt_ha)
+ 
+ encoding_hex_ha = encoding/hex/hex.ha
+ $(HARECACHE)/encoding_hex.ssa: $(encoding_hex_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bytes.td $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/encoding_hex.ssa -t $(HARECACHE)/encoding_hex.td.tmp -N encoding::hex $(encoding_hex_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/encoding_hex.ssa -t $(HARECACHE)/encoding_hex.td.tmp -N encoding::hex $(encoding_hex_ha)
+ 
+ sort_ha = sort/bisect.ha sort/search.ha sort/sort.ha sort/types.ha
+ $(HARECACHE)/sort.ssa: $(sort_ha) $(HARECACHE)/math.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/sort.ssa -t $(HARECACHE)/sort.td.tmp -N sort $(sort_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/sort.ssa -t $(HARECACHE)/sort.td.tmp -N sort $(sort_ha)
+ 
+ hare_lex_ha = hare/lex/lex.ha hare/lex/token.ha
+ $(HARECACHE)/hare_lex.ssa: $(hare_lex_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bufio.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/fmt.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/path.td $(HARECACHE)/sort.td $(HARECACHE)/sort_cmp.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_lex.ssa -t $(HARECACHE)/hare_lex.td.tmp -N hare::lex $(hare_lex_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_lex.ssa -t $(HARECACHE)/hare_lex.td.tmp -N hare::lex $(hare_lex_ha)
+ 
+ hare_ast_ha = hare/ast/decl.ha hare/ast/expr.ha hare/ast/ident.ha hare/ast/import.ha hare/ast/type.ha hare/ast/unit.ha
+ $(HARECACHE)/hare_ast.ssa: $(hare_ast_ha) $(HARECACHE)/hare_lex.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_ast.ssa -t $(HARECACHE)/hare_ast.td.tmp -N hare::ast $(hare_ast_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_ast.ssa -t $(HARECACHE)/hare_ast.td.tmp -N hare::ast $(hare_ast_ha)
+ 
+ hare_parse_ha = hare/parse/decl.ha hare/parse/expr.ha hare/parse/ident.ha hare/parse/import.ha hare/parse/parse.ha hare/parse/type.ha hare/parse/unit.ha
+ $(HARECACHE)/hare_parse.ssa: $(hare_parse_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bufio.td $(HARECACHE)/fmt.td $(HARECACHE)/hare_ast.td $(HARECACHE)/hare_lex.td $(HARECACHE)/io.td $(HARECACHE)/math.td $(HARECACHE)/memio.td $(HARECACHE)/strings.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_parse.ssa -t $(HARECACHE)/hare_parse.td.tmp -N hare::parse $(hare_parse_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_parse.ssa -t $(HARECACHE)/hare_parse.td.tmp -N hare::parse $(hare_parse_ha)
+ 
+ hare_unparse_ha = hare/unparse/decl.ha hare/unparse/expr.ha hare/unparse/ident.ha hare/unparse/import.ha hare/unparse/syn.ha hare/unparse/type.ha hare/unparse/unit.ha hare/unparse/util.ha
+ $(HARECACHE)/hare_unparse.ssa: $(hare_unparse_ha) $(HARECACHE)/fmt.td $(HARECACHE)/hare_ast.td $(HARECACHE)/hare_lex.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_unparse.ssa -t $(HARECACHE)/hare_unparse.td.tmp -N hare::unparse $(hare_unparse_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_unparse.ssa -t $(HARECACHE)/hare_unparse.td.tmp -N hare::unparse $(hare_unparse_ha)
+ 
+ time_chrono_ha = time/chrono/+openbsd.ha time/chrono/arithmetic.ha time/chrono/chronology.ha time/chrono/error.ha time/chrono/leapsec.ha time/chrono/timescale.ha time/chrono/timezone.ha time/chrono/tzdb.ha
+ $(HARECACHE)/time_chrono.ssa: $(time_chrono_ha) $(HARECACHE)/bufio.td $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/endian.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/io.td $(HARECACHE)/os.td $(HARECACHE)/path.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td $(HARECACHE)/time.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time_chrono.ssa -t $(HARECACHE)/time_chrono.td.tmp -N time::chrono $(time_chrono_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time_chrono.ssa -t $(HARECACHE)/time_chrono.td.tmp -N time::chrono $(time_chrono_ha)
+ 
+ time_date_ha = time/date/constants.ha time/date/date.ha time/date/daydate.ha time/date/daytime.ha time/date/error.ha time/date/format.ha time/date/locality.ha time/date/observe.ha time/date/parithm.ha time/date/parse.ha time/date/period.ha time/date/reckon.ha time/date/tarithm.ha time/date/virtual.ha
+ $(HARECACHE)/time_date.ssa: $(time_date_ha) $(HARECACHE)/ascii.td $(HARECACHE)/fmt.td $(HARECACHE)/io.td $(HARECACHE)/math.td $(HARECACHE)/memio.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td $(HARECACHE)/time.td $(HARECACHE)/time_chrono.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time_date.ssa -t $(HARECACHE)/time_date.td.tmp -N time::date $(time_date_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/time_date.ssa -t $(HARECACHE)/time_date.td.tmp -N time::date $(time_date_ha)
+ 
+ hare_module_ha = hare/module/cache.ha hare/module/deps.ha hare/module/format.ha hare/module/srcs.ha hare/module/types.ha hare/module/util.ha
+ $(HARECACHE)/hare_module.ssa: $(hare_module_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bufio.td $(HARECACHE)/bytes.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/hare_ast.td $(HARECACHE)/hare_lex.td $(HARECACHE)/hare_parse.td $(HARECACHE)/hare_unparse.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/path.td $(HARECACHE)/sort.td $(HARECACHE)/sort_cmp.td $(HARECACHE)/strings.td $(HARECACHE)/time.td $(HARECACHE)/time_chrono.td $(HARECACHE)/time_date.td $(HARECACHE)/types.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_module.ssa -t $(HARECACHE)/hare_module.td.tmp -N hare::module $(hare_module_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/hare_module.ssa -t $(HARECACHE)/hare_module.td.tmp -N hare::module $(hare_module_ha)
+ 
+ unix_ha = unix/+openbsd/getuid.ha unix/+openbsd/groups.ha unix/+openbsd/nice.ha unix/+openbsd/pipe.ha unix/+openbsd/setuid.ha unix/+openbsd/umask.ha
+ $(HARECACHE)/unix.ssa: $(unix_ha) $(HARECACHE)/errors.td $(HARECACHE)/fs.td $(HARECACHE)/io.td $(HARECACHE)/rt.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix.ssa -t $(HARECACHE)/unix.td.tmp -N unix $(unix_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix.ssa -t $(HARECACHE)/unix.td.tmp -N unix $(unix_ha)
+ 
+ unix_signal_ha = unix/signal/+openbsd.ha unix/signal/types.ha
+ $(HARECACHE)/unix_signal.ssa: $(unix_signal_ha) $(HARECACHE)/io.td $(HARECACHE)/rt.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix_signal.ssa -t $(HARECACHE)/unix_signal.td.tmp -N unix::signal $(unix_signal_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix_signal.ssa -t $(HARECACHE)/unix_signal.td.tmp -N unix::signal $(unix_signal_ha)
+ 
+ os_exec_ha = os/exec/+openbsd/exec.ha os/exec/+openbsd/platform_cmd.ha os/exec/+openbsd/process.ha os/exec/cmd.ha os/exec/types.ha
+ $(HARECACHE)/os_exec.ssa: $(os_exec_ha) $(HARECACHE)/ascii.td $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/io.td $(HARECACHE)/os.td $(HARECACHE)/path.td $(HARECACHE)/rt.td $(HARECACHE)/strings.td $(HARECACHE)/time.td $(HARECACHE)/types_c.td $(HARECACHE)/unix.td $(HARECACHE)/unix_signal.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/os_exec.ssa -t $(HARECACHE)/os_exec.td.tmp -N os::exec $(os_exec_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/os_exec.ssa -t $(HARECACHE)/os_exec.td.tmp -N os::exec $(os_exec_ha)
+ 
+ shlex_ha = shlex/escape.ha shlex/split.ha
+ $(HARECACHE)/shlex.ssa: $(shlex_ha) $(HARECACHE)/ascii.td $(HARECACHE)/encoding_utf8.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/shlex.ssa -t $(HARECACHE)/shlex.td.tmp -N shlex $(shlex_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/shlex.ssa -t $(HARECACHE)/shlex.td.tmp -N shlex $(shlex_ha)
+ 
+ unix_tty_ha = unix/tty/+openbsd/isatty.ha unix/tty/+openbsd/open.ha unix/tty/+openbsd/pty.ha unix/tty/+openbsd/termios.ha unix/tty/+openbsd/winsize.ha unix/tty/pty_test.ha unix/tty/types.ha
+ $(HARECACHE)/unix_tty.ssa: $(unix_tty_ha) $(HARECACHE)/bufio.td $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/io.td $(HARECACHE)/os.td $(HARECACHE)/rt.td $(HARECACHE)/strings.td $(HARECACHE)/types_c.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix_tty.ssa -t $(HARECACHE)/unix_tty.td.tmp -N unix::tty $(unix_tty_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/unix_tty.ssa -t $(HARECACHE)/unix_tty.td.tmp -N unix::tty $(unix_tty_ha)
+ 
+ cmd_hare_build_ha = cmd/hare/build/gather.ha cmd/hare/build/platform.ha cmd/hare/build/queue.ha cmd/hare/build/types.ha cmd/hare/build/util.ha
+ $(HARECACHE)/cmd_hare_build.ssa: $(cmd_hare_build_ha) $(HARECACHE)/crypto_sha256.td $(HARECACHE)/encoding_hex.td $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/hare_ast.td $(HARECACHE)/hare_module.td $(HARECACHE)/hare_unparse.td $(HARECACHE)/hash.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/os_exec.td $(HARECACHE)/path.td $(HARECACHE)/shlex.td $(HARECACHE)/sort.td $(HARECACHE)/strings.td $(HARECACHE)/unix_tty.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/cmd_hare_build.ssa -t $(HARECACHE)/cmd_hare_build.td.tmp -N cmd::hare::build $(cmd_hare_build_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/cmd_hare_build.ssa -t $(HARECACHE)/cmd_hare_build.td.tmp -N cmd::hare::build $(cmd_hare_build_ha)
+ 
+ dirs_ha = dirs/xdg.ha
+ $(HARECACHE)/dirs.ssa: $(dirs_ha) $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/os.td $(HARECACHE)/path.td $(HARECACHE)/unix.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/dirs.ssa -t $(HARECACHE)/dirs.td.tmp -N dirs $(dirs_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/dirs.ssa -t $(HARECACHE)/dirs.td.tmp -N dirs $(dirs_ha)
+ 
+ getopt_ha = getopt/getopts.ha
+ $(HARECACHE)/getopt.ssa: $(getopt_ha) $(HARECACHE)/fmt.td $(HARECACHE)/io.td $(HARECACHE)/os.td $(HARECACHE)/strings.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/getopt.ssa -t $(HARECACHE)/getopt.td.tmp -N getopt $(getopt_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -o $(HARECACHE)/getopt.ssa -t $(HARECACHE)/getopt.td.tmp -N getopt $(getopt_ha)
+ 
+ cmd_hare_ha = cmd/hare/arch.ha cmd/hare/build.ha cmd/hare/cache.ha cmd/hare/deps.ha cmd/hare/error.ha cmd/hare/main.ha cmd/hare/util.ha cmd/hare/version.ha
+ $(HARECACHE)/cmd_hare.ssa: $(cmd_hare_ha) $(HARECACHE)/ascii.td $(HARECACHE)/bufio.td $(HARECACHE)/cmd_hare_build.td $(HARECACHE)/dirs.td $(HARECACHE)/errors.td $(HARECACHE)/fmt.td $(HARECACHE)/fs.td $(HARECACHE)/getopt.td $(HARECACHE)/hare_ast.td $(HARECACHE)/hare_lex.td $(HARECACHE)/hare_module.td $(HARECACHE)/hare_parse.td $(HARECACHE)/io.td $(HARECACHE)/memio.td $(HARECACHE)/os.td $(HARECACHE)/os_exec.td $(HARECACHE)/path.td $(HARECACHE)/sort.td $(HARECACHE)/sort_cmp.td $(HARECACHE)/strconv.td $(HARECACHE)/strings.td $(HARECACHE)/unix_tty.td
+-	@mkdir -p -- "$(HARECACHE)"
+-	@printf 'HAREC\t%s\n' "$@"
+-	@$(TDENV) $(HAREC) $(HARECFLAGS) -N "" -o $(HARECACHE)/cmd_hare.ssa -t $(HARECACHE)/cmd_hare.td.tmp $(HARE_DEFINES)  $(cmd_hare_ha)
++	mkdir -p -- "$(HARECACHE)"
++	$(TDENV) $(HAREC) $(HARECFLAGS) -N "" -o $(HARECACHE)/cmd_hare.ssa -t $(HARECACHE)/cmd_hare.td.tmp $(HARE_DEFINES)  $(cmd_hare_ha)

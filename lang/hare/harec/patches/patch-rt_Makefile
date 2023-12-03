@@ -1,0 +1,25 @@
+Verbose build
+
+Index: rt/Makefile
+--- rt/Makefile.orig
++++ rt/Makefile
+@@ -13,13 +13,12 @@ libhart_srcs+=\
+ hare_env+=HARE_TD_rt=$(HARECACHE)/rt/rt.td
+ 
+ libhart.a: harec $(libhart_srcs) $(libhart_objs) $(rtstart)
+-	@printf 'HAREC\t$@\n'
+-	@mkdir -p $(HARECACHE)/rt
+-	@$(hare_env) ./harec -Nrt -t$(HARECACHE)/rt/rt.td -o $@.ssa $(libhart_srcs)
+-	@$(QBE) -o $@.s $@.ssa
+-	@$(AS) -o $@.o $@.s
+-	@$(AR) -csr $@ $@.o $(libhart_objs)
+-	@rm $@.o $@.s $@.ssa
++	mkdir -p $(HARECACHE)/rt
++	$(hare_env) ./harec -Nrt -t$(HARECACHE)/rt/rt.td -o $@.ssa $(libhart_srcs)
++	$(QBE) -o $@.s $@.ssa
++	$(AS) -o $@.o $@.s
++	$(AR) -csr $@ $@.o $(libhart_objs)
++	rm $@.o $@.s $@.ssa
+ 
+ clean-rt:
+ 	@rm -f libhart.a $(libhart_objs) $(rtstart)
