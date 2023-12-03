@@ -59,7 +59,6 @@ MODGO_FLAGS +=	-tags assets
 
 # for patches to apply
 WRKDIST =	${WRKSRC}
-SUBST_VARS =	VARBASE
 
 NO_TEST =	Yes
 
