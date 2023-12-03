@@ -16,13 +16,12 @@ MODULES=	devel/meson
 SITES=		https://download.drobilla.net/
 EXTRACT_SUFX=	.tar.xz
 
-BUILD_DEPENDS=	audio/lv2 \
-		x11/gtk+2
+BUILD_DEPENDS=	audio/lv2
 
 CONFIGURE_ARGS=	-Dgtk2=disabled
 
 # needs gtk+2
-CONFIGURE_ARGS=	-Dx11=disabled
+CONFIGURE_ARGS +=	-Dx11=disabled
 
 # subpackage?
 CONFIGURE_ARGS +=	-Dgtk3=disabled \
