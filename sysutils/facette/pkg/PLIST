@@ -1,5 +1,5 @@
 @newgroup _facette:774
-@newuser _facette:774:774::Facette Daemon:${VARBASE}/empty:/sbin/nologin
+@newuser _facette:774:774::Facette Daemon:${LOCALSTATEDIR}/empty:/sbin/nologin
 @rcscript ${RCDIR}/facette
 @bin bin/facette
 @bin bin/facettectl
@@ -9,4 +9,4 @@ share/examples/facette/facette.yaml
 @sample ${SYSCONFDIR}/facette/facette.yaml
 @owner _facette
 @group _facette
-@sample ${VARBASE}/facette/
+@sample ${LOCALSTATEDIR}/facette/

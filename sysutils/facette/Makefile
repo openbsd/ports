@@ -1,5 +1,3 @@
-BROKEN =	fetches from internet during build
-
 COMMENT =	time series data visualization and graphing software
 
 GH_ACCOUNT =	facette
@@ -33,7 +31,6 @@ WANTLIB +=	c pthread rrd
 PORTHOME =		${WRKDIR}
 MAKE_ENV =		CGO_LDFLAGS="-Wl,-rpath -Wl,${X11BASE}/lib"
 USE_GMAKE =		Yes
-SUBST_VARS +=	VARBASE
 
 post-patch:
 	ln -s ${WRKDIR}/node_modules ${WRKSRC}/ui/node_modules
