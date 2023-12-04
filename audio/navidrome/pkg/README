@@ -23,3 +23,16 @@ By default, ${PKGSTEM} serves up a web interface on:
 
 If you wish to listen on a different address, change the `Address` setting in
 the config file.
+
+Jukebox Mode
+============
+
+${PKGSTEM} supports Subsonic's "Jukebox mode", where audio is played through
+the server's audio hardware, instead of being streamed to the client.
+
+This requires a client that supports jukebox mode (the built-in web interface
+does not).
+
+To use jukebox mode, install mpv (multimedia/mpv), set `Jukebox.Enabled = true`
+in the config file, and make sure that the `_navidrome` user can play audio via
+sndio.
