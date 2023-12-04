@@ -1,6 +1,6 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_EGG_VERSION=	1.3.1
+MODPY_EGG_VERSION=	1.3.2
 DISTNAME=	pipx-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 
 FLAVORS=	python3
 FLAVOR=		python3
