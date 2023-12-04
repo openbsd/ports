@@ -1,3 +1,5 @@
+BROKEN =	fetches from internet during build
+
 COMMENT =	time series data visualization and graphing software
 
 GH_ACCOUNT =	facette
