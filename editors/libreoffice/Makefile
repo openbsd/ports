@@ -20,17 +20,16 @@ SHARED_LIBS +=  uno_purpenvhelpergcc3     3.0 # 3.0
 SHARED_LIBS +=  uno_sal                   3.0 # 3.0
 SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
-SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
+SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		7.6
-VERSION=	${BV}.2.1
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -99,10 +98,10 @@ DISTFILES.a += culmus-0.133.tar.gz
 DISTFILES.a += dragonbox-1.1.3.tar.gz
 DISTFILES.a += dtoa-20180411.tgz
 DISTFILES.a += frozen-1.1.1.tar.gz
-DISTFILES.a += language-subtag-registry-2023-05-11.tar.bz2
+DISTFILES.a += language-subtag-registry-2023-08-02.tar.bz2
 DISTFILES.a += libabw-0.1.3.tar.xz
 DISTFILES.a += libcdr-0.1.7.tar.xz
-DISTFILES.a += libcmis-0.5.2.tar.xz
+DISTFILES.a += libcmis-0.6.1.tar.xz
 DISTFILES.a += libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz
 DISTFILES.a += libe-book-0.1.3.tar.xz
 DISTFILES.a += libepubgen-0.1.1.tar.xz
@@ -122,7 +121,7 @@ DISTFILES.a += libre-hebrew-1.0.tar.gz
 DISTFILES.a += libstaroffice-0.0.7.tar.xz
 DISTFILES.a += libvisio-0.1.7.tar.xz
 DISTFILES.a += libwpg-0.3.4.tar.xz
-DISTFILES.a += libwps-0.4.12.tar.xz
+DISTFILES.a += libwps-0.4.14.tar.xz
 DISTFILES.a += libzmf-0.0.2.tar.xz
 DISTFILES.a += mdds-2.1.1.tar.xz
 DISTFILES.a += noto-fonts-20171024.tar.gz
