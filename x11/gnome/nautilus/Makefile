@@ -1,8 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		45.1
-REVISION=		1
+GNOME_VERSION=		45.2
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
