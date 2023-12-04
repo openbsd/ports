@@ -1,6 +1,6 @@
 COMMENT =		let your Python tests travel through time
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		freezegun-${MODPY_EGG_VERSION}
 PKGNAME =		py-freezegun-${MODPY_EGG_VERSION}
 
