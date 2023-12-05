@@ -173,29 +173,29 @@ MODGO_MODULES =	\
 	github.com/armon/go-radix								 v1.0.0 \
 	github.com/asaskevich/govalidator							 v0.0.0-20200907205600-7a23bdc65eef \
 	github.com/aws/aws-sdk-go								 v1.44.122 \
-	github.com/aws/aws-sdk-go-v2								 v1.22.2 \
-	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.5.0 \
-	github.com/aws/aws-sdk-go-v2/config							 v1.20.0 \
-	github.com/aws/aws-sdk-go-v2/credentials						 v1.16.0 \
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds						 v1.14.3 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources					 v1.2.2 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2					 v2.5.2 \
-	github.com/aws/aws-sdk-go-v2/internal/ini						 v1.4.0 \
-	github.com/aws/aws-sdk-go-v2/internal/v4a						 v1.2.2 \
+	github.com/aws/aws-sdk-go-v2								 v1.23.2 \
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.5.1 \
+	github.com/aws/aws-sdk-go-v2/config							 v1.25.8 \
+	github.com/aws/aws-sdk-go-v2/credentials						 v1.16.6 \
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds						 v1.14.6 \
+	github.com/aws/aws-sdk-go-v2/internal/configsources					 v1.2.5 \
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2					 v2.5.5 \
+	github.com/aws/aws-sdk-go-v2/internal/ini						 v1.7.1 \
+	github.com/aws/aws-sdk-go-v2/internal/v4a						 v1.2.5 \
 	github.com/aws/aws-sdk-go-v2/service/appconfig						 v1.4.2 \
-	github.com/aws/aws-sdk-go-v2/service/dynamodb						 v1.25.1 \
-	github.com/aws/aws-sdk-go-v2/service/iam						 v1.27.1 \
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding				 v1.10.0 \
-	github.com/aws/aws-sdk-go-v2/service/internal/checksum					 v1.2.2 \
-	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery			 v1.8.2 \
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url				 v1.10.2 \
-	github.com/aws/aws-sdk-go-v2/service/internal/s3shared					 v1.16.2 \
-	github.com/aws/aws-sdk-go-v2/service/s3							 v1.42.1 \
-	github.com/aws/aws-sdk-go-v2/service/sqs						 v1.28.0 \
-	github.com/aws/aws-sdk-go-v2/service/sso						 v1.17.1 \
-	github.com/aws/aws-sdk-go-v2/service/ssooidc						 v1.19.1 \
-	github.com/aws/aws-sdk-go-v2/service/sts						 v1.25.1 \
-	github.com/aws/smithy-go								 v1.16.0 \
+	github.com/aws/aws-sdk-go-v2/service/dynamodb						 v1.25.5 \
+	github.com/aws/aws-sdk-go-v2/service/iam						 v1.27.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding				 v1.10.1 \
+	github.com/aws/aws-sdk-go-v2/service/internal/checksum					 v1.2.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery			 v1.8.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url				 v1.10.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/s3shared					 v1.16.5 \
+	github.com/aws/aws-sdk-go-v2/service/s3							 v1.46.0 \
+	github.com/aws/aws-sdk-go-v2/service/sqs						 v1.28.4 \
+	github.com/aws/aws-sdk-go-v2/service/sso						 v1.17.5 \
+	github.com/aws/aws-sdk-go-v2/service/ssooidc						 v1.20.3 \
+	github.com/aws/aws-sdk-go-v2/service/sts						 v1.25.6 \
+	github.com/aws/smithy-go								 v1.17.0 \
 	github.com/aymerick/douceur								 v0.2.0 \
 	github.com/beorn7/perks									 v1.0.1 \
 	github.com/bgentry/go-netrc								 v0.0.0-20140422174119-9fd32a8b3d3d \
@@ -297,7 +297,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/grpc-gateway							 v1.16.0 \
 	github.com/grpc-ecosystem/grpc-gateway/v2						 v2.16.0 \
 	github.com/h2non/parth									 v0.0.0-20190131123155-b4df798d6542 \
-	github.com/hashicorp/aws-sdk-go-base/v2							 v2.0.0-beta.41 \
+	github.com/hashicorp/aws-sdk-go-base/v2							 v2.0.0-beta.43 \
 	github.com/hashicorp/consul/api								 v1.13.0 \
 	github.com/hashicorp/consul/sdk								 v0.8.0 \
 	github.com/hashicorp/copywrite								 v0.16.3 \
@@ -482,7 +482,7 @@ MODGO_MODULES =	\
 	go.mongodb.org/mongo-driver								 v1.11.6 \
 	go.opencensus.io									 v0.24.0 \
 	go.opentelemetry.io/contrib/exporters/autoexport					 v0.0.0-20230703072336-9a582bd098a2 \
-	go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws	 v0.46.0 \
+	go.opentelemetry.io/contrib/instrumentation/github.com/aws/aws-sdk-go-v2/otelaws	 v0.46.1 \
 	go.opentelemetry.io/otel								 v1.21.0 \
 	go.opentelemetry.io/otel/exporters/otlp/internal/retry					 v1.16.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace					 v1.21.0 \
@@ -497,18 +497,18 @@ MODGO_MODULES =	\
 	go.uber.org/goleak									 v1.3.0 \
 	go.uber.org/multierr									 v1.6.0 \
 	go.uber.org/zap										 v1.17.0 \
-	golang.org/x/crypto									 v0.14.0 \
+	golang.org/x/crypto									 v0.16.0 \
 	golang.org/x/exp									 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/exp/typeparams								 v0.0.0-20221208152030-732eee02a75a \
 	golang.org/x/image									 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint									 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile									 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod									 v0.12.0 \
-	golang.org/x/net									 v0.17.0 \
+	golang.org/x/net									 v0.19.0 \
 	golang.org/x/oauth2									 v0.11.0 \
 	golang.org/x/sync									 v0.4.0 \
-	golang.org/x/sys									 v0.14.0 \
-	golang.org/x/term									 v0.13.0 \
+	golang.org/x/sys									 v0.15.0 \
+	golang.org/x/term									 v0.15.0 \
 	golang.org/x/text									 v0.14.0 \
 	golang.org/x/time									 v0.3.0 \
 	golang.org/x/tools									 v0.13.0 \
@@ -764,29 +764,22 @@ MODGO_MODFILES =	\
 	github.com/armon/circbuf						 v0.0.0-20150827004946-bbbad097214e \
 	github.com/armon/go-radix						 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/asaskevich/govalidator					 v0.0.0-20190424111038-f61b66f89f4a \
-	github.com/aws/aws-sdk-go-v2						 v1.22.0 \
-	github.com/aws/aws-sdk-go-v2						 v1.22.1 \
+	github.com/aws/aws-sdk-go-v2						 v1.22.2 \
 	github.com/aws/aws-sdk-go-v2						 v1.9.2 \
 	github.com/aws/aws-sdk-go-v2/config					 v1.8.3 \
-	github.com/aws/aws-sdk-go-v2/credentials				 v1.14.0 \
 	github.com/aws/aws-sdk-go-v2/credentials				 v1.4.3 \
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds				 v1.14.0 \
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds				 v1.6.0 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.0 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.1 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.0 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.1 \
+	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.2 \
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.2 \
 	github.com/aws/aws-sdk-go-v2/internal/ini				 v1.2.4 \
-	github.com/aws/aws-sdk-go-v2/service/dynamodb				 v1.25.0 \
-	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery	 v1.8.1 \
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url		 v1.10.0 \
+	github.com/aws/aws-sdk-go-v2/service/dynamodb				 v1.25.1 \
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding		 v1.10.0 \
+	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery	 v1.8.2 \
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url		 v1.3.2 \
-	github.com/aws/aws-sdk-go-v2/service/sqs				 v1.26.0 \
-	github.com/aws/aws-sdk-go-v2/service/sso				 v1.16.0 \
+	github.com/aws/aws-sdk-go-v2/service/sqs				 v1.28.0 \
 	github.com/aws/aws-sdk-go-v2/service/sso				 v1.4.2 \
-	github.com/aws/aws-sdk-go-v2/service/ssooidc				 v1.18.0 \
-	github.com/aws/aws-sdk-go-v2/service/sts				 v1.24.0 \
 	github.com/aws/aws-sdk-go-v2/service/sts				 v1.7.2 \
+	github.com/aws/smithy-go						 v1.16.0 \
 	github.com/aws/smithy-go						 v1.8.0 \
 	github.com/beorn7/perks							 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks							 v1.0.0 \
@@ -1077,15 +1070,12 @@ MODGO_MODFILES =	\
 	go.opencensus.io							 v0.22.5 \
 	go.opencensus.io							 v0.23.0 \
 	go.opentelemetry.io/otel						 v1.16.0 \
-	go.opentelemetry.io/otel						 v1.20.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace			 v1.16.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc		 v1.16.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp		 v1.16.0 \
 	go.opentelemetry.io/otel/metric						 v1.16.0 \
-	go.opentelemetry.io/otel/metric						 v1.20.0 \
 	go.opentelemetry.io/otel/sdk						 v1.16.0 \
 	go.opentelemetry.io/otel/trace						 v1.16.0 \
-	go.opentelemetry.io/otel/trace						 v1.20.0 \
 	go.opentelemetry.io/proto/otlp						 v0.20.0 \
 	go.opentelemetry.io/proto/otlp						 v0.7.0 \
 	golang.org/x/crypto							 v0.0.0-20180904163835-0709b304e793 \
@@ -1215,6 +1205,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net							 v0.11.0 \
 	golang.org/x/net							 v0.14.0 \
 	golang.org/x/net							 v0.15.0 \
+	golang.org/x/net							 v0.17.0 \
 	golang.org/x/net							 v0.2.0 \
 	golang.org/x/net							 v0.5.0 \
 	golang.org/x/net							 v0.6.0 \
@@ -1361,7 +1352,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys							 v0.1.0 \
 	golang.org/x/sys							 v0.11.0 \
 	golang.org/x/sys							 v0.12.0 \
-	golang.org/x/sys							 v0.13.0 \
+	golang.org/x/sys							 v0.14.0 \
 	golang.org/x/sys							 v0.2.0 \
 	golang.org/x/sys							 v0.3.0 \
 	golang.org/x/sys							 v0.5.0 \
