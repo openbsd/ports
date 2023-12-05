@@ -1,0 +1,7 @@
+The rpkitouch utility sets the last data modification time of file to
+the timestamp internal to the contained RPKI object. Deterministic
+timestamps help minimize RP synchronisation times.
+
+This utility is useful for RPKI Publication Point operators who
+serialize RPKI objects from data sources lacking file modification
+times (like RRDP) to a disk hierachy for public consumption via RSYNC.

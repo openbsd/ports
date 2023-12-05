@@ -1,0 +1,2 @@
+@bin bin/rpkitouch
+@man man/man8/rpkitouch.8
