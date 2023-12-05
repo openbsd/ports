@@ -1,8 +1,9 @@
 COMMENT	=	dynamic menu for Wayland
 
 DISTNAME =	dmenu-wayland-20230902
+REVISION =	0
 CATEGORIES =	wayland
-HOMEPAGE =	https://github.com/nyyManni/wayland
+HOMEPAGE =	https://github.com/nyyManni/dmenu-wayland
 
 GH_ACCOUNT =	nyyManni
 GH_PROJECT = 	dmenu-wayland
