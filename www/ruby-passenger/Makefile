@@ -5,7 +5,7 @@ BROKEN-hppa =		rake fails when linking PassengerHelperAgent
 PASS_VERSION =		6.0.18
 NGINX_VERSION =		1.24.0
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		0
+REVISION =		1
 
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 
@@ -22,18 +22,22 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem ext
 
-WANTLIB =	${MODRUBY_WANTLIB} crypto curl kvm nghttp2 pcre pthread ssl ${COMPILER_LIBCXX} z
+WANTLIB =	${MODRUBY_WANTLIB} crypto curl kvm nghttp2 pcre2-8 pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 # Make devel/gmake a BUILD_DEPEND instead of USE_GMAKE, as the port also uses
 # BSD make. Depend on gsed as embedded libuv picks it up if present.
+# The passenger build infrastructure checks for pcre header, but the
+# embedded nginx actually links against pcre2 and not pcre if pcre2
+# is available, so make pcre a build depends.
 BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/pcre \
 			devel/gmake \
 			textproc/gsed
 RUN_DEPENDS =		www/ruby-rack,${MODRUBY_FLAVOR}
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS} \
-			devel/pcre \
+			devel/pcre2 \
 			net/curl
 
 CONFIGURE_ENV +=	CC=${CC} CXX=${CXX} \

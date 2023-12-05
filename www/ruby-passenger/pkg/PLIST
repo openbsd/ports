@@ -6,6 +6,7 @@ ${GEM_BIN}/passenger-status${GEM_BIN_SUFFIX}
 ${GEM_BIN}/passenger${GEM_BIN_SUFFIX}
 lib/phusion-passenger${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
+@comment ${GEM_EXTENSIONS_DIR}/gem_make.out
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTING.md
