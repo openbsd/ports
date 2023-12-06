@@ -30,6 +30,8 @@ MODULES =	lang/clang devel/cmake
 
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_RUNDEP =		No
+# Needs update to >= 1.34 to support llvm 16
+MODCLANG_VERSION =		13
 
 # COMPILE_D_MODULES_SEPARATELY=ON lets ldc compile with sane memory limits.
 CONFIGURE_ARGS =	-DCOMPILE_D_MODULES_SEPARATELY=ON \
