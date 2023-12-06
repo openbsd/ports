@@ -1,0 +1,15 @@
+See https://gitlab.gnome.org/GNOME/gimp/-/issues/9994
+and https://gitlab.gnome.org/GNOME/gtk/-/commit/c1fa916e88de20fc61dc06d3ff9f26722effa0df#note_1852594
+Index: gtk/gtkpathbar.c
+--- gtk/gtkpathbar.c.orig
++++ gtk/gtkpathbar.c
+@@ -1659,7 +1659,8 @@ gtk_path_bar_get_info_callback (GCancellable *cancella
+     }
+ 
+   display_name = g_file_info_get_display_name (info);
+-  is_hidden = g_file_info_get_is_hidden (info) || g_file_info_get_is_backup (info);
++  is_hidden = g_file_info_get_attribute_boolean (info, "standard::is-hidden") ||
++              g_file_info_get_attribute_boolean (info, "standard::is-backup");
+ 
+   gtk_widget_push_composite_child ();
+   button_data = make_directory_button (file_info->path_bar, display_name,

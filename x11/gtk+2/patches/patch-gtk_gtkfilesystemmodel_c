@@ -1,0 +1,25 @@
+See https://gitlab.gnome.org/GNOME/gimp/-/issues/9994
+and https://gitlab.gnome.org/GNOME/gtk/-/commit/c1fa916e88de20fc61dc06d3ff9f26722effa0df#note_1852594
+Index: gtk/gtkfilesystemmodel.c
+--- gtk/gtkfilesystemmodel.c.orig
++++ gtk/gtkfilesystemmodel.c
+@@ -444,13 +444,18 @@ static gboolean
+ node_should_be_visible (GtkFileSystemModel *model, guint id, gboolean filtered_out)
+ {
+   FileModelNode *node = get_node (model, id);
++  gboolean has_is_hidden, has_is_backup;
+   gboolean result;
+ 
+   if (node->info == NULL)
+     return FALSE;
++    
++  has_is_hidden = g_file_info_has_attribute (node->info, "standard::is-hidden");
++  has_is_backup = g_file_info_has_attribute (node->info, "standard::is-backup");
+ 
+   if (!model->show_hidden &&
+-      (g_file_info_get_is_hidden (node->info) || g_file_info_get_is_backup (node->info)))
++      ((has_is_hidden && g_file_info_get_is_hidden (node->info)) ||
++       (has_is_backup && g_file_info_get_is_backup (node->info))))
+     return FALSE;
+ 
+   if (_gtk_file_info_consider_as_directory (node->info))
