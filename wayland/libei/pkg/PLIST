@@ -1,3 +1,4 @@
+@bin bin/ei-debug-events
 include/libei-1.0/
 include/libei-1.0/libei.h
 include/libei-1.0/libeis.h

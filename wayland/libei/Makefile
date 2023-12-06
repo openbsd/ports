@@ -1,11 +1,10 @@
 COMMENT=	library for Emulated Input
 
-V=		1.1.0
+V=		1.2.0
 DISTNAME=	libei-${V}
-REVISION=	0
 
-SHARED_LIBS += ei                        0.0 # 1.1.0
-SHARED_LIBS += eis                       0.0 # 1.1.0
+SHARED_LIBS += ei                        0.0 # 1.2.0
+SHARED_LIBS += eis                       0.0 # 1.2.0
 
 CATEGORIES=	wayland devel
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB += epoll-shim
+WANTLIB += c epoll-shim
 
 SITES=		https://gitlab.freedesktop.org/libinput/libei/-/archive/${V}/
 
@@ -30,6 +29,9 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/py-attrs${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
+
+# needed for tools/
+BUILD_DEPENDS +=	wayland/libinput-openbsd
 
 LIB_DEPENDS=	devel/epoll-shim
 
