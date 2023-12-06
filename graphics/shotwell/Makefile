@@ -1,11 +1,11 @@
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.32.3
+GNOME_VERSION =		0.32.4
 GNOME_PROJECT =		shotwell
 
-SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.1
-SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.1
-SHARED_LIBS += shotwell-authenticator    0.0 # 0.32.1
+SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.4
+SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.4
+SHARED_LIBS += shotwell-authenticator    0.0 # 0.32.4
 
 CATEGORIES =		graphics
 
@@ -18,9 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cairo cairo-gobject exif gcr-base-3 gcr-ui-3 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstreamer-1.0 gtk-3
-WANTLIB += intl json-glib-1.0 m pango-1.0 pangocairo-1.0 portal
-WANTLIB += portal-gtk3 raw secret-1 soup-3.0 sqlite3 webkit2gtk-4.1
+WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += portal portal-gtk3 raw secret-1 soup-3.0 sqlite3 webkit2gtk-4.1
 WANTLIB += webp webpdemux xml2
 
 MODULES =		devel/dconf \
