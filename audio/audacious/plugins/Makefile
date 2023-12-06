@@ -47,6 +47,7 @@ CONFIGURE_ARGS =	--disable-alsa \
 			--disable-jack \
 			--disable-lirc \
 			--disable-openmpt \
+			--disable-pipewire \
 			--disable-pulse \
 			--disable-qtaudio \
 			--disable-sdlout \
