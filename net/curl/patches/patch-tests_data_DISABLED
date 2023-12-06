@@ -1,0 +1,13 @@
+Index: tests/data/DISABLED
+--- tests/data/DISABLED.orig
++++ tests/data/DISABLED
+@@ -46,6 +46,9 @@
+ # fnmatch differences are just too common to make testing them sensible
+ 1307
+ 1316
++# tests/errorcodes.pl was accidentally omitted from the 8.5.0 release tarball
++# https://github.com/curl/curl/issues/12462
++1477
+ # test 1510 causes problems on the CI on github
+ # example: https://travis-ci.org/curl/curl/builds/81633600
+ 1510
