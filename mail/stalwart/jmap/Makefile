@@ -17,6 +17,10 @@ MODCARGO_CRATES_KEEP +=	libz-sys
 MODULES +=	lang/clang
 MODCLANG_COMPILER_LINKS =	No
 
+# Likely needs update for llvm 16. Fails to build:
+# error: failed to run custom build command for `librocksdb-sys v0.8.0+7.4.4`
+MODCLANG_VERSION =		13
+
 # for rocksdb bindings
 MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 MAKE_ENV +=	DEP_BZIP2_INCLUDE=${LOCALBASE}/include
