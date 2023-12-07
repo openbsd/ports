@@ -242,7 +242,7 @@
      SUBDIR += p5-PPI-HTML
      SUBDIR += p5-PPIx-QuoteLike
      SUBDIR += p5-PPIx-Regexp
-     SUBDIR += p5-PPIx-Utilities
+     SUBDIR += p5-PPIx-Utils
      SUBDIR += p5-PatchReader
      SUBDIR += p5-PerlIO-utf8_strict
      SUBDIR += p5-Pod-Cpandoc
