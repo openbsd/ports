@@ -10,13 +10,15 @@ Index: lld/ELF/InputFiles.cpp
  // Returns "<internal>", "foo.a(bar.o)" or "baz.o".
  std::string lld::toString(const InputFile *f) {
    static std::mutex mu;
-@@ -63,6 +65,17 @@ std::string lld::toString(const InputFile *f) {
+@@ -63,6 +65,19 @@ std::string lld::toString(const InputFile *f) {
    return std::string(f->toStringCache);
  }
  
 +// .gnu.warning.SYMBOL are treated as warning symbols for the given symbol
 +void lld::parseGNUWarning(StringRef name, ArrayRef<char> data, size_t size) {
++  static std::mutex mu;
 +  if (!name.empty() && name.startswith(".gnu.warning.")) {
++    std::lock_guard<std::mutex> lock(mu);
 +    StringRef wsym = name.substr(13);
 +    StringRef s(data.begin());
 +    StringRef wng(s.substr(0, size));
@@ -28,7 +30,7 @@ Index: lld/ELF/InputFiles.cpp
  static ELFKind getELFKind(MemoryBufferRef mb, StringRef archiveName) {
    unsigned char size;
    unsigned char endian;
-@@ -747,6 +760,14 @@ void ObjFile<ELFT>::initializeSections(bool ignoreComd
+@@ -747,6 +762,14 @@ void ObjFile<ELFT>::initializeSections(bool ignoreComd
      case SHT_RELA:
      case SHT_NULL:
        break;
@@ -43,7 +45,7 @@ Index: lld/ELF/InputFiles.cpp
      case SHT_LLVM_SYMPART:
        ctx.hasSympart.store(true, std::memory_order_relaxed);
        [[fallthrough]];
-@@ -1349,6 +1370,9 @@ template <class ELFT> void SharedFile::parse() {
+@@ -1349,6 +1372,9 @@ template <class ELFT> void SharedFile::parse() {
    const ELFFile<ELFT> obj = this->getObj<ELFT>();
    ArrayRef<Elf_Shdr> sections = getELFShdrs<ELFT>();
  
@@ -53,7 +55,7 @@ Index: lld/ELF/InputFiles.cpp
    const Elf_Shdr *versymSec = nullptr;
    const Elf_Shdr *verdefSec = nullptr;
    const Elf_Shdr *verneedSec = nullptr;
-@@ -1371,6 +1395,13 @@ template <class ELFT> void SharedFile::parse() {
+@@ -1371,6 +1397,13 @@ template <class ELFT> void SharedFile::parse() {
      case SHT_GNU_verneed:
        verneedSec = &sec;
        break;
