@@ -1,7 +1,6 @@
 COMMENT =	critique Perl source code for best-practices
 
-# 1.150 needs new dep, PPIx::Utils instead of PPIx::Utilities
-DISTNAME =	Perl-Critic-1.148
+DISTNAME =	Perl-Critic-1.152
 
 CATEGORIES =	devel
 
@@ -29,7 +28,7 @@ RUN_DEPENDS =		devel/p5-B-Keywords>=1.05 \
 			textproc/p5-PPI>=1.265 \
 			textproc/p5-PPIx-QuoteLike \
 			textproc/p5-PPIx-Regexp>=0.068 \
-			textproc/p5-PPIx-Utilities>=1.001 \
+			textproc/p5-PPIx-Utils \
 			textproc/p5-Pod-Parser \
 			textproc/p5-Pod-Spell>=1
 TEST_DEPENDS =		devel/p5-Test-Deep \
