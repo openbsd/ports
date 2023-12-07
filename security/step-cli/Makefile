@@ -3,7 +3,7 @@ BROKEN-aarch64 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/int
 
 COMMENT =	swiss army knife for working with X509, OAuth, JWT, OATH OTP
 
-V =		0.24.4
+V =		0.25.1
 MODGO_MODNAME =	github.com/smallstep/cli
 MODGO_VERSION =	v${V}
 DISTNAME =	step-cli-${V}
