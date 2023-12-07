@@ -1,7 +1,7 @@
 QT5NAME =		QtBase
 
-KDE_COMMIT =		ea7a183732c17005f08ca14fd70cdd305c90396d
-KDE_VERSION =		138
+KDE_COMMIT =		56faf7249c3857f80f6483c5070e7408c2d53961
+KDE_VERSION =		147
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
