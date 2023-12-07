@@ -1,0 +1,11 @@
+${P5SITE}/PPIx/
+${P5SITE}/PPIx/Utils/
+${P5SITE}/PPIx/Utils.pm
+${P5SITE}/PPIx/Utils/Classification.pm
+${P5SITE}/PPIx/Utils/Language.pm
+${P5SITE}/PPIx/Utils/Traversal.pm
+${P5SITE}/PPIx/Utils/_Common.pm
+@man man/man3p/PPIx::Utils.3p
+@man man/man3p/PPIx::Utils::Classification.3p
+@man man/man3p/PPIx::Utils::Language.3p
+@man man/man3p/PPIx::Utils::Traversal.3p
