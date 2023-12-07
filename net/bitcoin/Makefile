@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v25.1
+GH_TAGNAME =		v26.0
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -90,7 +90,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/share/examples/bitcoin.conf \
 		${PREFIX}/share/examples/bitcoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/bitcoin
-	${INSTALL_DATA} ${WRKDIST}/contrib/completions/bash/*.bash-completion \
+	${INSTALL_DATA} ${WRKDIST}/contrib/completions/bash/*.bash \
 		${PREFIX}/share/bash-completion/completions/bitcoin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bitcoin
 	${INSTALL_DATA} ${WRKDIST}/doc/{assets-attribution.md,benchmarking.md} \
