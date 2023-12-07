@@ -1,0 +1,15 @@
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/VERSION
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/static/
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/static/scripts.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_react_console_view/static/styles.css
