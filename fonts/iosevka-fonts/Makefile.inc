@@ -18,3 +18,7 @@ WRKDIST =		${WRKDIR}
 PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/iosevka
+
+do-install:
+	${INSTALL_DATA_DIR} ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/*.ttc ${FONTDIR}
