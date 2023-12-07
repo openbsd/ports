@@ -1,7 +1,8 @@
 ONLY_FOR_ARCHS =	${LLVM_ARCHS}
-LLVM_V ?=	13.0.0
+LLVM_V ?=	16.0.6
 CATEGORIES =	lang
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
+MODCLANG_VERSION =	16
 EXTRACT_SUFX =	.tar.xz
 COMPILER =	ports-clang
 MODULES =		devel/cmake
@@ -11,7 +12,8 @@ CFLAGS +=	-fno-exceptions
 CXXFLAGS +=	-fno-exceptions
 WRKSRC =	${WRKDIR}/${DISTNAME}/${BUILDSUBDIR}
 
-DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX}
+DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
+		cmake-${LLVM_V}.src${EXTRACT_SUFX}
 # wasi-libcxx build needs libcxxabi source for c++abi.h only ?
 .if ${PKGNAME:Mwasi-libcxx*}
 DISTFILES +=	libcxx-${LLVM_V}.src${EXTRACT_SUFX} \
@@ -23,7 +25,6 @@ post-extract:
 
 .else
 DISTFILES +=	compiler-rt-${LLVM_V}.src${EXTRACT_SUFX}
-DISTFILES +=	cmake-${LLVM_V}.src${EXTRACT_SUFX}
 .endif
 
 post-build:

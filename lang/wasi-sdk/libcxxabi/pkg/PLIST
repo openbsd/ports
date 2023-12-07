@@ -1,4 +1,10 @@
+@conflict wasi-libcxx-<16
 share/wasi-sysroot/
+share/wasi-sysroot/include/
+share/wasi-sysroot/include/c++/
+share/wasi-sysroot/include/c++/v1/
+share/wasi-sysroot/include/c++/v1/__cxxabi_config.h
+share/wasi-sysroot/include/c++/v1/cxxabi.h
 share/wasi-sysroot/lib/
 share/wasi-sysroot/lib/wasm32-wasi/
 @static-lib share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a

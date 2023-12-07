@@ -8,10 +8,14 @@ BUILDSUBDIR =	libcxxabi
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS +=	lang/wasi-libc>=0.20220413p0
-BUILD_DEPENDS +=	lang/wasi-sdk/libcxx
+BUILD_DEPENDS +=	lang/wasi-libc>=0.20231121
+BUILD_DEPENDS +=	lang/wasi-sdk/libcxx>=16
 
-CONFIGURE_ARGS=	-DLLVM_PATH=${WRKDIR}/${DISTNAME} \
+CONFIGURE_ARGS=	\
+		-DLLVM_MAIN_SRC_DIR=${WRKDIR}/llvm-${LLVM_V}.src \
+		-DCMAKE_MODULE_PATH=${WRKDIR}/cmake-${LLVM_V}.src/Modules \
+		-DLLVM_CONFIG_PATH=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
+		-DLLVM_CMAKE_DIR=${WRKDOR}/${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/llvm \
 		-DCMAKE_C_COMPILER_WORKS=1 \
 		-DCMAKE_CXX_COMPILER_WORKS=1 \
 		-DCMAKE_CXX_COMPILER_TARGET=wasm32-wasi \
