@@ -2,9 +2,8 @@ COMMENT =	C standard library for WebAssembly System Interface
 
 GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
-GH_COMMIT =	05cd0af0af4b5a191117d47a182adff1d6546b87
-DISTNAME =	wasi-libc-0.20220413
-REVISION =	0
+GH_COMMIT =	9c17f5235c7977cb2a000990eb8c605a25a80adf
+DISTNAME =	wasi-libc-0.20231121
 
 DISTFILES =	${GH_DISTFILE}
 DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
@@ -19,8 +18,7 @@ COMPILER =	ports-clang
 USE_GMAKE =	yes
 ALL_TARGET =	finish
 
-# The entire wasi stack needs some work to be able to build with llvm 16
-MODCLANG_VERSION = 13
+MODCLANG_VERSION = 16
 MAKE_ENV +=	AR=${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} \
 		NM=${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} \
 		INSTALL_DIR=${WRKINST}${PREFIX}/share/wasi-sysroot

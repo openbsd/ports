@@ -4,10 +4,11 @@ avoid rebuilding everything in fake
 wasi-libc requires some compiler headers that we remove from our
 llvm ports so we include them here instead
 
+chunk 2: adapt regex for our grep
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -224,7 +224,7 @@ endif
+@@ -346,7 +346,7 @@ endif
  #    should come earlier in the search path, so they can "override"
  #    and/or `#include_next` the public headers. `-isystem` (like
  #    `-idirafter`) comes later in the search path than `-I`.
@@ -16,9 +17,20 @@ Index: Makefile
  
  # These variables describe the locations of various files and directories in
  # the build tree.
-@@ -565,7 +565,7 @@ check-symbols: startup_files libc
+@@ -789,8 +789,8 @@ check-symbols: startup_files libc
+ 	    -U__FLT_EVAL_METHOD__ -Wno-builtin-macro-redefined \
+ 	    | sed -e 's/__[[:upper:][:digit:]]*_ATOMIC_\([[:upper:][:digit:]_]*\)_LOCK_FREE/__compiler_ATOMIC_\1_LOCK_FREE/' \
+ 	    | sed -e 's/__GNUC_VA_LIST $$/__GNUC_VA_LIST 1/' \
+-	    | grep -v '^#define __\(BOOL\|INT_\(LEAST\|FAST\)\(8\|16\|32\|64\)\|INT\|LONG\|LLONG\|SHRT\)_WIDTH__' \
+-	    | grep -v '^#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_\(1\|2\|4\|8\)' \
++	    | egrep -v '^#define __(BOOL|INT_(LEAST|FAST)(8|16|32|64)|INT|LONG|LLONG|SHRT)_WIDTH__' \
++	    | egrep -v '^#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_(1|2|4|8)' \
+ 	    | grep -v '^#define __FPCLASS_' \
+ 	    | grep -v '^#define __FLT128_' \
+ 	    | grep -v '^#define NDEBUG' \
+@@ -803,7 +803,7 @@ check-symbols: startup_files libc
  	# This ignores whitespace because on Windows the output has CRLF line endings.
- 	diff -wur "$(CURDIR)/expected/$(MULTIARCH_TRIPLE)" "$(SYSROOT_SHARE)"
+ 	diff -wur "expected/$(TARGET_TRIPLE)" "$(SYSROOT_SHARE)"
  
 -install: finish
 +install:
