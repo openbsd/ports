@@ -1,0 +1,12 @@
+FLINT is a C library for doing number theory, freely available under
+the GNU LGPL.
+
+At its core, FLINT provides arithmetic in standard rings such as the
+integers, rationals, algebraic, real, complex and p-adic numbers,
+finite fields, and number fields. It also provides polynomials
+(univariate and multivariate), power series, and matrices.
+
+FLINT covers a wide range of functionality: primality testing, integer
+factorisation, multivariate polynomial GCD and factorisation, FFTs,
+multimodular reconstruction, special functions, exact and approximate
+linear algebra, LLL, finite field embeddings, and more. 
