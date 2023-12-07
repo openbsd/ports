@@ -1,0 +1,12 @@
+Index: deps/ada/ada.h
+--- deps/ada/ada.h.orig
++++ deps/ada/ada.h
+@@ -1219,7 +1219,7 @@ enum class state {
+   SPECIAL_AUTHORITY_IGNORE_SLASHES,
+   SPECIAL_AUTHORITY_SLASHES,
+   SPECIAL_RELATIVE_OR_AUTHORITY,
+-  QUERY,
++  ADAQUERY,
+   PATH,
+   PATH_START,
+   OPAQUE_PATH,

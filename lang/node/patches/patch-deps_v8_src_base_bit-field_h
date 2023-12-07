@@ -1,7 +1,7 @@
-Index: deps/v8/src/base/bit-field.h
 
 Workaround for clang 16.  known to not workaround in clang 17.
 
+Index: deps/v8/src/base/bit-field.h
 --- deps/v8/src/base/bit-field.h.orig
 +++ deps/v8/src/base/bit-field.h
 @@ -39,8 +39,11 @@ class BitField final {

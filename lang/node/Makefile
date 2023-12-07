@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v18.18.2
+NODE_VERSION =		v18.19.0
 PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
@@ -98,7 +98,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
 		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
-	rm -r ${PREFIX}/lib/node_modules/npm/node_modules/node-pledge/build/node_gyp_bins
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \
 		mv $$x ../..; \
 		ln -s ../../$$x $$x; \
