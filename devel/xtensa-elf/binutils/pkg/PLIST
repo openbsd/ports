@@ -14,7 +14,7 @@
 @bin bin/xtensa-elf-size
 @bin bin/xtensa-elf-strings
 @bin bin/xtensa-elf-strip
-@info info/as.info
+@comment @info info/as.info
 @comment @info info/bfd.info
 @comment @info info/binutils.info
 @comment @info info/gprof.info
