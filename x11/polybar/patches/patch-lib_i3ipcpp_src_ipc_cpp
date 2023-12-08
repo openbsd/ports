@@ -6,5 +6,5 @@ Index: lib/i3ipcpp/src/ipc.cpp
  
 +#include <sys/wait.h> /* WEXITSTATUS */
  #include <json/json.h>
+ #include <sys/wait.h>
  
- #include <auss.hpp>
