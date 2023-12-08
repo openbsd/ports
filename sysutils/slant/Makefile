@@ -25,8 +25,6 @@ LIB_DEPENDS = databases/sqlite3
 
 SITES =		https://kristaps.bsd.lv/slant/snapshots/
 
-SUBST_VARS = VARBASE
-
 CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS += 	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

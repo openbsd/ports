@@ -7,7 +7,7 @@
 sbin/slant-upgrade
 share/slant/
 share/slant/slant.kwbp
-@cwd ${VARBASE}/www
+@cwd ${LOCALSTATEDIR}/www
 @rcscript ${RCDIR}/slant_collectd
 @bin cgi-bin/slant-cgi
 @exec slant-upgrade
