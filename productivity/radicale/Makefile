@@ -20,7 +20,6 @@ MODPY_PYBUILD =	setuptools
 RUN_DEPENDS =	security/py-passlib${MODPY_FLAVOR}
 
 NO_TEST =	Yes
-SUBST_VARS +=	VARBASE
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/radicale/config.py

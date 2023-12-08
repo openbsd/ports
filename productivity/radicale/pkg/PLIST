@@ -93,9 +93,9 @@ share/examples/radicale/log
 @mode 640
 @owner _radicale
 @group _radicale
-@sample ${VARBASE}/log/radicale
+@sample ${LOCALSTATEDIR}/log/radicale
 @mode 700
-@sample ${VARBASE}/db/radicale/
+@sample ${LOCALSTATEDIR}/db/radicale/
 @sample ${SYSCONFDIR}/radicale/private/
 @mode
 @owner
