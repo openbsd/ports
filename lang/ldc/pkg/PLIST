@@ -234,6 +234,8 @@ include/d/core/sys/linux/execinfo.d
 include/d/core/sys/linux/fcntl.d
 include/d/core/sys/linux/fs.d
 include/d/core/sys/linux/ifaddrs.d
+include/d/core/sys/linux/input.d
+include/d/core/sys/linux/input_event_codes.d
 include/d/core/sys/linux/io_uring.d
 include/d/core/sys/linux/link.d
 include/d/core/sys/linux/netinet/
@@ -260,6 +262,7 @@ include/d/core/sys/linux/termios.d
 include/d/core/sys/linux/time.d
 include/d/core/sys/linux/timerfd.d
 include/d/core/sys/linux/tipc.d
+include/d/core/sys/linux/uinput.d
 include/d/core/sys/linux/unistd.d
 include/d/core/sys/netbsd/
 include/d/core/sys/netbsd/dlfcn.d
@@ -573,6 +576,8 @@ include/d/etc/c/zlib/doc/
 include/d/etc/c/zlib/test/
 include/d/etc/linux/
 include/d/etc/linux/memoryerror.d
+include/d/etc/valgrind/
+include/d/etc/valgrind/valgrind.d
 include/d/importc.h
 include/d/ldc/
 include/d/ldc/asan.d

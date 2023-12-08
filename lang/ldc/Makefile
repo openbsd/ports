@@ -2,13 +2,12 @@
 # Can use GDC to create said bootstrap compiler.
 ONLY_FOR_ARCHS =	amd64
 
-V =		1.33.0
+V =		1.35.0
 COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz
 DISTFILES.boot= ldc-${V}-bootstrap.tar.gz
 PKGNAME =	ldc-${V}
 CATEGORIES =	lang
-REVISION =	0
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -30,8 +29,7 @@ MODULES =	lang/clang devel/cmake
 
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_RUNDEP =		No
-# Needs update to >= 1.34 to support llvm 16
-MODCLANG_VERSION =		13
+MODCLANG_VERSION =		16
 
 # COMPILE_D_MODULES_SEPARATELY=ON lets ldc compile with sane memory limits.
 CONFIGURE_ARGS =	-DCOMPILE_D_MODULES_SEPARATELY=ON \
@@ -61,13 +59,9 @@ post-patch:
 #   Replace the shared LLVM.so library with the static libraries.
 #   Fixes runtime warnings about symbol size mismatches.
 #   Revisit on occasion (maybe these warning go away someday?)
-#   We're using LLVM 13 now, but LLVM 15 is coming.
 post-configure:
 	sed -i \
-	's,-lLLVM-13,`${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} --libs all --link-static --ignore-libllvm` -lz,g' \
-	${WRKBUILD}/build.ninja
-	sed -i \
-	's,-lLLVM-15,`${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} --libs all --link-static --ignore-libllvm` -lz,g' \
+	's,-lLLVM ,`${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} --libs all --link-static --ignore-libllvm` -lz ,g' \
 	${WRKBUILD}/build.ninja
 
 # Move the default ldc2.conf to its proper packaging location.
