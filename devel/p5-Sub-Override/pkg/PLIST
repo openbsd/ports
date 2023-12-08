@@ -1,2 +1,3 @@
+${P5SITE}/Sub/
 ${P5SITE}/Sub/Override.pm
 @man man/man3p/Sub::Override.3p

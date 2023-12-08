@@ -1,10 +1,9 @@
-COMMENT=	extension for easily overriding subroutines
+COMMENT =	extension for easily overriding subroutines
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME =	Sub-Override-0.09
-CATEGORIES=	devel
-REVISION =	0
+MODULES =	cpan
+PKG_ARCH =	*
+DISTNAME =	Sub-Override-0.10
+CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -13,6 +12,6 @@ PERMIT_PACKAGE=	Yes
 
 TEST_DEPENDS =	devel/p5-Test-Fatal
 
-MAKE_ENV=	TEST_POD=Yes
+MAKE_ENV =	TEST_POD=Yes
 
 .include <bsd.port.mk>
