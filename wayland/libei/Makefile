@@ -31,7 +31,8 @@ BUILD_DEPENDS=	devel/py-attrs${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
 
 # needed for tools/
-BUILD_DEPENDS +=	wayland/libinput-openbsd
+BUILD_DEPENDS +=	wayland/libinput-openbsd \
+			x11/xkbcommon
 
 LIB_DEPENDS=	devel/epoll-shim
 
