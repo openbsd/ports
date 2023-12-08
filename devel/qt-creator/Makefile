@@ -2,29 +2,28 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			11.0.3
+V =			12.0.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
 SHARED_LIBS +=  Aggregation               2.0 # 0.0
-SHARED_LIBS +=  CPlusPlus                 7.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           7.0 # 0.0
+SHARED_LIBS +=  CPlusPlus                 8.0 # 0.0
+SHARED_LIBS +=  ExtensionSystem           8.0 # 0.0
 SHARED_LIBS +=  GLSL                      1.1 # 0.0
-SHARED_LIBS +=  LanguageUtils             1.1 # 0.0
+SHARED_LIBS +=  LanguageUtils             2.0 # 0.0
 SHARED_LIBS +=  QmlDebug                  6.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          2.0 # 0.0
-SHARED_LIBS +=  QmlJS                     10.0 # 0.0
-SHARED_LIBS +=  QtcSsh                    2.0 # 0.0
+SHARED_LIBS +=  QmlJS                     11.0 # 0.0
 SHARED_LIBS +=  Utils                     11.0 # 0.0
-SHARED_LIBS +=  Sqlite                    8.0 # 1.0
-SHARED_LIBS +=  Modeling                  7.0 # 1.0
-SHARED_LIBS +=  ClangSupport              2.0 # 4.5
+SHARED_LIBS +=  Sqlite                    9.0 # 1.0
+SHARED_LIBS +=  Modeling                  8.0 # 1.0
 SHARED_LIBS +=  Tracing                   3.0 # 4.7
-SHARED_LIBS +=  LanguageServerProtocol    6.0 # 4.8
-SHARED_LIBS +=  AdvancedDockingSystem     2.0 # 4.12
-SHARED_LIBS +=  qlitehtml                 2.0 # 4.15
-SHARED_LIBS +=  ProParser                 2.0 # 4.15
+SHARED_LIBS +=  LanguageServerProtocol    7.0 # 4.8
+SHARED_LIBS +=  AdvancedDockingSystem     3.0 # 4.12
+SHARED_LIBS +=  qlitehtml                 3.0 # 4.15
+SHARED_LIBS +=  ProParser                 3.0 # 4.15
 SHARED_LIBS +=  KSyntaxHighlighting       0.0 # 0.0
+SHARED_LIBS +=  TerminalLib               0.0 # 0.0
 
 CATEGORIES =	devel editors
 
@@ -47,13 +46,8 @@ SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
 	https://mirrors.ocf.berkeley.edu/qt/official_releases/qtcreator/${V:R}/${V}/
 
 MODULES =	x11/qt6 \
-		lang/clang \
 		lang/python \
 		devel/cmake
-
-MODCLANG_VERSION =		16
-MODCLANG_COMPILER_LINKS =	No
-MODCLANG_RUNDEP =		Yes
 
 CONFIGURE_STYLE = cmake
 
@@ -78,17 +72,16 @@ LIB_DEPENDS =	devel/yaml-cpp \
 
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
 			-DENABLE_SVG_SUPPORT=ON \
-			-DBUILD_WITH_PCH=OFF \
-			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
+			-DBUILD_WITH_PCH=OFF
 
 GDB_ADJ_FILES = \
+	src/plugins/debugger/debugger.qbs  \
+	src/plugins/debugger/debuggeritem.cpp \
 	src/plugins/debugger/debuggeritemmanager.cpp \
 	src/tools/qtcreatorcrashhandler/backtracecollector.cpp \
 	src/tools/qtpromaker/main.cpp \
 	tests/auto/debugger/tst_dumpers.cpp \
-	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
-
-MODCMAKE_LDFLAGS +=	-lc
+	tests/system/suite_general/tst_default_settings/test.py
 
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
