@@ -1,6 +1,6 @@
 COMMENT =	Ruby binding for the argon2 password hashing algorithm
 
-DISTNAME =	argon2-2.2.0
+DISTNAME =	argon2-2.3.0
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
