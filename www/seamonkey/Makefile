@@ -1,4 +1,3 @@
-BROKEN =		fail to build with lang/rust 1.73.0: error: unrecognized platform-specific intrinsic function
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
 
 COMMENT-main =		Mozilla application suite
@@ -6,13 +5,13 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.17.1
+MOZILLA_VERSION =	2.53.18
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.17.1
+PKGNAME-lightning =	lightning-seamonkey-5.8.18
 EPOCH-lightning =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
@@ -55,7 +54,7 @@ WANTLIB += Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
-MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd_2,encoding_rs"
+MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
