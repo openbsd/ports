@@ -55,7 +55,8 @@ MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
 
 .include <bsd.port.arch.mk>
 
-.if !${PROPERTIES:Mlld}
+# riscv64 bug: https://github.com/llvm/llvm-project/issues/61991
+.if !${PROPERTIES:Mlld} || ${MACHINE_ARCH} == riscv64
 MAKE_FLAGS +=	LTO=0
 .endif
 
