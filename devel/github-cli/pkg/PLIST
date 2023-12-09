@@ -10,6 +10,7 @@
 @man man/man1/gh-auth-refresh.1
 @man man/man1/gh-auth-setup-git.1
 @man man/man1/gh-auth-status.1
+@man man/man1/gh-auth-switch.1
 @man man/man1/gh-auth-token.1
 @man man/man1/gh-auth.1
 @man man/man1/gh-browse.1
