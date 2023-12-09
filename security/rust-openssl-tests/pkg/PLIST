@@ -2468,6 +2468,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/ugi
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/vdso.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/vdso_wrappers.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/bitcast.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/buffer.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/check_types.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/clockid.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/cstr.rs
