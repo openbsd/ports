@@ -60,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}IBus.${MOD
 @bin libexec/ibus-portal
 @bin libexec/ibus-ui-emojier
 @bin libexec/ibus-ui-gtk3
+@bin libexec/ibus-wayland
 @bin libexec/ibus-x11
 @man man/man1/ibus-daemon.1
 @man man/man1/ibus-setup.1
@@ -72,6 +73,7 @@ share/GConf/gsettings/
 share/GConf/gsettings/ibus.convert
 share/applications/org.freedesktop.IBus.Panel.Emojier.desktop
 share/applications/org.freedesktop.IBus.Panel.Extension.Gtk3.desktop
+share/applications/org.freedesktop.IBus.Panel.Wayland.Gtk3.desktop
 share/applications/org.freedesktop.IBus.Setup.desktop
 share/dbus-1/services/org.freedesktop.IBus.service
 share/dbus-1/services/org.freedesktop.portal.IBus.service

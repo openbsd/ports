@@ -12,6 +12,10 @@ PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
+REVISION-main =		0
+REVISION-gtk3 =		0
+REVISION-gtk4 =		0
+
 SHARED_LIBS +=  ibus-1.0             4.5      # 5.529
 
 CATEGORIES =		inputmethods chinese japanese korean
@@ -35,7 +39,8 @@ WANTLIB += xcb-shm z execinfo jpeg
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
 WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify atspi dbus-1
-WANTLIB-main += dbusmenu-glib dbusmenu-gtk3
+WANTLIB-main += dbusmenu-glib dbusmenu-gtk3 xkbcommon
+WANTLIB-main += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
@@ -43,11 +48,13 @@ WANTLIB-gtk2 += Xcomposite
 
 WANTLIB-gtk3 += ${WANTLIB}
 WANTLIB-gtk3 += Xcomposite atk-1.0 atk-bridge-2.0 cairo-gobject dbus-1
-WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi
+WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0 atspi xkbcommon
+WANTLIB-gtk3 += epoll-shim wayland-client wayland-cursor wayland-egl
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
 WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd dbus-1
+WANTLIB-gtk4 += epoll-shim wayland-client wayland-egl xkbcommon
 
 MODULES =		devel/dconf \
 			lang/python
@@ -95,7 +102,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS =	--disable-python2 \
 			--disable-systemd-services \
-			--disable-wayland \
 			--enable-gtk4 \
 			--with-ucd-dir=${LOCALBASE}/share/unicode/ucd \
 			--with-unicode-emoji-dir=${LOCALBASE}/share/unicode/emoji \
