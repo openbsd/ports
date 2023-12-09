@@ -4,6 +4,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		45.0
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -12,7 +13,7 @@ WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 colord
 WANTLIB += cups fontconfig gck-2 gdk-3 geoclue-2 geocode-glib-2
 WANTLIB += gio-2.0 glib-2.0 gnome-desktop-3 gobject-2.0 gtk-3
 WANTLIB += gweather-4 intl m notify p11-kit polkit-gobject-1 pulse
-WANTLIB += pulse-mainloop-glib upower-glib
+WANTLIB += pulse-mainloop-glib upower-glib wayland-client
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -53,7 +54,6 @@ CONFIGURE_ARGS= 	-Dalsa=false \
 			-Dnetwork_manager=false \
 			-Drfkill=false \
 			-Dsystemd=false \
-			-Dwayland=false \
 			-Dwwan=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
