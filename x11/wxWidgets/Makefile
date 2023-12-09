@@ -8,6 +8,8 @@ PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
 
+REVISION-main =		0
+
 CATEGORIES =		x11
 SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =		.tar.bz2
@@ -62,7 +64,7 @@ WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gspell-1 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB-main += intl jpeg lzma m mspack notify pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pcre2-32 png secret-1 tiff z execinfo
-WANTLIB-main += xkbcommon
+WANTLIB-main += wayland-client wayland-egl xkbcommon
 
 LIB_DEPENDS-media =	multimedia/gstreamer1/plugins-base \
 			multimedia/gstreamer1/plugins-bad \
@@ -118,8 +120,7 @@ CONFIGURE_ARGS +=	--disable-webviewwebkit
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
-			WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib" \
-			wx_cv_gdk_wayland=false
+			WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib"
 
 # XXX: When used in conjunction with PIE, symbol versioning triggers
 # weird linking problems in dependent ports
