@@ -27,11 +27,11 @@ post-install:
 	    ${PREFIX}/share/zsh/site-functions \
 	    ${PREFIX}/share/fish/vendor_completions.d
 
-	${WRKDIR}/go/bin/step completion bash > \
+	env HOME=${WRKDIR} ${WRKDIR}/go/bin/step completion bash > \
 	    ${PREFIX}/share/bash-completion/completions/step
-	${WRKDIR}/go/bin/step completion zsh > \
+	env HOME=${WRKDIR} ${WRKDIR}/go/bin/step completion zsh > \
 	    ${PREFIX}/share/zsh/site-functions/_step
-	${WRKDIR}/go/bin/step completion fish > \
+	env HOME=${WRKDIR} ${WRKDIR}/go/bin/step completion fish > \
 	    ${PREFIX}/share/fish/vendor_completions.d/step.fish
 
 .include "modules.inc"
