@@ -2,6 +2,7 @@ COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.42
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		x11 net
 
@@ -18,7 +19,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 c cairo crypto epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gtk-3 intl jpeg json-glib-1.0
-WANTLIB += lz4 m opus pixman-1 sasl2 ssl z
+WANTLIB += lz4 m opus pixman-1 sasl2 ssl wayland-client wayland-server
+WANTLIB += z
 
 SITES=			https://gitlab.freedesktop.org/spice/spice-gtk/uploads/e41347144c5d2f9947e215c894969f0e/
 
@@ -38,7 +40,8 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			lang/vala \
 			sysutils/usbutils \
 			textproc/asciidoc \
-			textproc/gtk-doc
+			textproc/gtk-doc \
+			wayland/wayland-protocols
 
 RUN_DEPENDS=		sysutils/usbutils
 
@@ -56,7 +59,6 @@ LIB_DEPENDS=		archivers/lz4 \
 
 CONFIGURE_ARGS=		-Dsmartcard=disabled \
 			-Dusbredir=disabled \
-			-Dwayland-protocols=disabled \
 			-Dlibcap-ng=disabled
 
 # XXX requires new phodav port
@@ -70,6 +72,9 @@ CONFIGURE_ARGS +=	-Dcoroutine=gthread
 
 # base-gcc doesn't default to c99
 CFLAGS +=		-std=gnu99
+
+# Has header "gtk-3.0/gdk/gdkwayland.h" : NO 
+CFLAGS +=		-I${LOCALBASE}/include
 
 # Has header "X11/XKBlib.h" : NO
 CFLAGS +=		-I${X11BASE}/include
