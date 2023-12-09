@@ -29,7 +29,8 @@ COMPILER_LANGS=		c
 
 WANTLIB += c wayland-client xcb xcb-xkb xml2
 
-BUILD_DEPENDS=		devel/bison
+BUILD_DEPENDS=		devel/bison \
+			wayland/wayland-protocols
 
 LIB_DEPENDS=		textproc/libxml \
 			wayland/wayland
