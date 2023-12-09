@@ -1,7 +1,7 @@
 COMMENT =	KDE XML-RPC client
 DISTNAME =	kxmlrpcclient-${VERSION}
 
-SHARED_LIBS =	KF5XmlRpcClient		6.0
+SHARED_LIBS =	KF5XmlRpcClient		6.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
 WANTLIB += KF5KIOCore KF5Service Qt5Concurrent Qt5Core Qt5DBus

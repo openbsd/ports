@@ -1,6 +1,5 @@
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5TextEditor		21.1
 

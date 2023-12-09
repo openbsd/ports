@@ -1,6 +1,5 @@
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=	KF5Auth		6.0 # 5.54
 SHARED_LIBS +=	KF5AuthCore	3.0 # 5.67
