@@ -1,0 +1,12 @@
+Index: daemon/gdm-local-display-factory.c
+--- daemon/gdm-local-display-factory.c.orig
++++ daemon/gdm-local-display-factory.c
+@@ -253,7 +253,7 @@ struct GdmDisplayServerConfiguration {
+         const char *session_type;
+ } display_server_configuration[] = {
+ #ifdef ENABLE_WAYLAND_SUPPORT
+-        { "wayland", GDM_KEY_WAYLAND_ENABLE, "/usr/bin/Xwayland", "wayland" },
++        { "wayland", GDM_KEY_WAYLAND_ENABLE, "${LOCALBASE}/bin/Xwayland", "wayland" },
+ #endif
+         { "xorg", GDM_KEY_XORG_ENABLE, X_SERVER, "x11" },
+         { NULL, NULL, NULL },

@@ -2,7 +2,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		45.0.1
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -92,7 +92,6 @@ CONFIGURE_ARGS=		-Ddefault-pam-config=none \
 			-Dscreenshot-dir=/var/run/gdm/greeter \
 			-Dsysconfsubdir=gdm \
 			-Dsystemd-journal=false \
-			-Dwayland-support=false \
 			-Dworking-dir=/var/db/gdm \
 			-Dxauth-dir=/var/run/gdm
 
@@ -110,6 +109,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/etc/pam.d
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
+	${SUBST_CMD} ${WRKSRC}/daemon/gdm-local-display-factory.c
 	${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${FILESDIR}/10_org.gnome.login-screen.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
