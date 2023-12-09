@@ -1,5 +1,3 @@
-PKGNAME = 	vcmi-1.3.2.20230919
-
 COMMENT =	HoMM3 engine rewrite
 
 CATEGORIES =	games
@@ -8,19 +6,16 @@ HOMEPAGE =	https://vcmi.eu/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
-DIST_TUPLE += github vcmi vcmi \
-		b7de6854836373b1f77e24e94c1a933e782f3d34 .
+DIST_TUPLE += github vcmi vcmi 1.4.0 .
 DIST_TUPLE += github fuzzylite fuzzylite \
 		7aee562d6ca17f3cf42588ffb5116e03017c3c50 AI/FuzzyLite
 DIST_TUPLE += github google googletest \
 		b796f7d44681514f58a683a3a71ff17c94edb0c1 test/googletest
 
-WRKDIST=        ${WRKDIR}/vcmi-b7de6854836373b1f77e24e94c1a933e782f3d34
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS =		vcmi	0.0 # 0.0
+SHARED_LIBS =		vcmi	1.0
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
