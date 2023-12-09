@@ -15,6 +15,15 @@ Index: main.c
  
  #include <xkbcommon/xkbcommon-compose.h>
  #include <wayland-client-core.h>
+@@ -182,7 +188,7 @@ static struct {
+ 		[TSM_COLOR_LIGHT_CYAN]    = {   0, 255, 255 },
+ 		[TSM_COLOR_WHITE]         = { 255, 255, 255 },
+ 		[TSM_COLOR_FOREGROUND]    = { 229, 229, 229 },
+-		[TSM_COLOR_BACKGROUND]    = {   0,   0,   0 },
++		[TSM_COLOR_BACKGROUND]    = {   0,   0,   1 },
+ 	},
+ 	.opt.app_id = "havoc"
+ };
 @@ -191,7 +197,7 @@ static void wcb(struct tsm_vte *vte, const char *u8, s
  {
  	assert(len <= PIPE_BUF);

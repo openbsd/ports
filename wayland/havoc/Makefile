@@ -3,6 +3,7 @@ COMMENT =	minimal terminal emulator for wayland
 GH_ACCOUNT =	ii8
 GH_PROJECT =	havoc
 GH_TAGNAME =	0.4.0
+REVISION =	0
 
 CATEGORIES =	wayland
 HOMEPAGE =	https://github.com/ii8/havoc
@@ -20,8 +21,6 @@ BUILD_DEPENDS = wayland/wayland-protocols
 LIB_DEPENDS =	devel/epoll-shim \
 		wayland/wayland \
 		x11/xkbcommon
-
-RUN_DEPENDS =	shells/bash
 
 ALL_TARGET =
 
