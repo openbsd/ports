@@ -35,3 +35,4 @@ lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/_logger.py
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/_media_file.py
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/_streams.py
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/_version.py
+lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/py.typed
