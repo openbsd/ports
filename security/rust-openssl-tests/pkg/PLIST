@@ -2668,6 +2668,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_ryu}/src/s2d.rs
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/src/s2f.rs
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/common_test.rs
+share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/d2s_intrinsics_test.rs
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/d2s_table_test.rs
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/d2s_test.rs
 share/rust-openssl-tests/modcargo-crates/${VER_ryu}/tests/exhaustive.rs
