@@ -62,8 +62,16 @@ include/gtk-3.0/gdk/gdkthreads.h
 include/gtk-3.0/gdk/gdktypes.h
 include/gtk-3.0/gdk/gdkversionmacros.h
 include/gtk-3.0/gdk/gdkvisual.h
+include/gtk-3.0/gdk/gdkwayland.h
 include/gtk-3.0/gdk/gdkwindow.h
 include/gtk-3.0/gdk/gdkx.h
+include/gtk-3.0/gdk/wayland/
+include/gtk-3.0/gdk/wayland/gdkwaylanddevice.h
+include/gtk-3.0/gdk/wayland/gdkwaylanddisplay.h
+include/gtk-3.0/gdk/wayland/gdkwaylandglcontext.h
+include/gtk-3.0/gdk/wayland/gdkwaylandmonitor.h
+include/gtk-3.0/gdk/wayland/gdkwaylandselection.h
+include/gtk-3.0/gdk/wayland/gdkwaylandwindow.h
 include/gtk-3.0/gdk/x11/
 include/gtk-3.0/gdk/x11/gdkx-autocleanups.h
 include/gtk-3.0/gdk/x11/gdkx11applaunchcontext.h
@@ -437,6 +445,7 @@ lib/gtk-3.0/3.0.0/immodules/
 @so lib/gtk-3.0/3.0.0/immodules/im-ti-er.so
 @so lib/gtk-3.0/3.0.0/immodules/im-ti-et.so
 @so lib/gtk-3.0/3.0.0/immodules/im-viqr.so
+@so lib/gtk-3.0/3.0.0/immodules/im-wayland.so
 @so lib/gtk-3.0/3.0.0/immodules/im-xim.so
 lib/gtk-3.0/3.0.0/printbackends/
 @so lib/gtk-3.0/3.0.0/printbackends/libprintbackend-file.so
@@ -447,9 +456,11 @@ lib/gtk-3.0/modules/
 @lib lib/libgtk-3.so.${LIBgtk-3_VERSION}
 lib/pkgconfig/gail-3.0.pc
 lib/pkgconfig/gdk-3.0.pc
+lib/pkgconfig/gdk-wayland-3.0.pc
 lib/pkgconfig/gdk-x11-3.0.pc
 lib/pkgconfig/gtk+-3.0.pc
 lib/pkgconfig/gtk+-unix-print-3.0.pc
+lib/pkgconfig/gtk+-wayland-3.0.pc
 lib/pkgconfig/gtk+-x11-3.0.pc
 @man man/man1/gtk-builder-tool.1
 @man man/man1/gtk-encode-symbolic-svg.1
