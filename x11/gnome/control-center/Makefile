@@ -4,6 +4,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		45.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -79,8 +80,6 @@ MODGNOME_TOOLS +=	desktop-file-utils docbook
 MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-
-CONFIGURE_ARGS=		-Dwayland=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
