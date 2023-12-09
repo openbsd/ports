@@ -1,6 +1,7 @@
 COMMENT=	WPE Backend for Wayland
 
 DISTNAME=	wpebackend-fdo-1.14.2
+REVISION=	0
 
 CATEGORIES=	www wayland
 
