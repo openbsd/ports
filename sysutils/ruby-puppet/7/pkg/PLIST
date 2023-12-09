@@ -19,7 +19,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/puppet
 ${GEM_LIB}/gems/${DISTNAME}/conf/
-@sample ${SYSCONFDIR}/puppetlabs/
 @sample ${SYSCONFDIR}/puppetlabs/puppet/
 ${GEM_LIB}/gems/${DISTNAME}/conf/environment.conf
 @sample ${SYSCONFDIR}/puppetlabs/puppet/environment.conf
@@ -2829,6 +2828,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/base_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/certificate_request_attributes_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/certificate_request_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/certificate_signer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/certificate_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/digest_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/ssl/oids_spec.rb
