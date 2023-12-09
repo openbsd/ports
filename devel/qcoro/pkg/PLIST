@@ -32,6 +32,15 @@ include/qcoro5/qcoro/
 include/qcoro5/qcoro/concepts_p.h
 include/qcoro5/qcoro/config.h
 include/qcoro5/qcoro/coroutine.h
+include/qcoro5/qcoro/impl/
+include/qcoro5/qcoro/impl/connect.h
+include/qcoro5/qcoro/impl/isqprivatesignal.h
+include/qcoro5/qcoro/impl/task.h
+include/qcoro5/qcoro/impl/taskawaiterbase.h
+include/qcoro5/qcoro/impl/taskfinalsuspend.h
+include/qcoro5/qcoro/impl/taskpromise.h
+include/qcoro5/qcoro/impl/taskpromisebase.h
+include/qcoro5/qcoro/impl/waitfor.h
 include/qcoro5/qcoro/macros_p.h
 include/qcoro5/qcoro/qcoro.h
 include/qcoro5/qcoro/qcoroabstractsocket.h
