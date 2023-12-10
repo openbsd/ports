@@ -3,6 +3,8 @@ COMMENT =	terminal Matrix client written in Go
 MODGO_MODNAME =	maunium.net/go/gomuks
 MODGO_VERSION =	v0.3.0
 
+REVISION = 0
+
 DISTNAME =	gomuks-${MODGO_VERSION}
 
 CATEGORIES =	net
@@ -22,6 +24,8 @@ MAKE_ENV +=		CGO_CFLAGS=-I${LOCALBASE}/include \
 			CGO_LDFLAGS=-L${LOCALBASE}/lib
 
 MODULES =		lang/go
+
+WRKDIST =	${WRKSRC}
 
 .include "modules.inc"
 

@@ -31,7 +31,7 @@ MODGO_MODULES =	\
 	github.com/tulir/go-runewidth		 v0.0.14-0.20221113132156-dc2fc6d28246 \
 	github.com/yuin/goldmark		 v1.5.3 \
 	github.com/zyedidia/clipboard		 v1.0.4 \
-	go.etcd.io/bbolt			 v1.3.6 \
+	go.etcd.io/bbolt			 v1.3.8 \
 	go.mau.fi/cbind				 v0.0.0-20220415094356-e1d579b7925e \
 	go.mau.fi/mauview			 v0.2.1 \
 	go.mau.fi/tcell				 v0.4.0 \
@@ -40,7 +40,7 @@ MODGO_MODULES =	\
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/net			 v0.2.0 \
 	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
-	golang.org/x/sys			 v0.2.0 \
+	golang.org/x/sys			 v0.15.0 \
 	golang.org/x/term			 v0.2.0 \
 	golang.org/x/text			 v0.4.0 \
 	golang.org/x/tools			 v0.1.12 \
@@ -76,13 +76,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net		 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/sync		 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys		 v0.0.0-20190215142949-d0b11bdaac8a \
-	golang.org/x/sys		 v0.0.0-20200923182605-d9f96fdee20d \
-	golang.org/x/sys		 v0.0.0-20201119102817-f84b799fce68 \
-	golang.org/x/sys		 v0.0.0-20210615035016-665e8c7367d1 \
-	golang.org/x/sys		 v0.0.0-20220412211240-33da011f77ad \
-	golang.org/x/sys		 v0.0.0-20220520151302-bc2c85ada10a \
-	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/term		 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term		 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term		 v0.0.0-20220411215600-e5f449aeb171 \
