@@ -1,7 +1,7 @@
 Index: gdb/amd64-obsd-tdep.c
 --- gdb/amd64-obsd-tdep.c.orig
 +++ gdb/amd64-obsd-tdep.c
-@@ -39,8 +39,40 @@
+@@ -39,8 +39,44 @@
  /* Support for signal handlers.  */
  
  /* Default page size.  */
@@ -19,6 +19,10 @@ Index: gdb/amd64-obsd-tdep.c
 +
 +static const amd64obsd_sigreturn_info_t
 +  amd64obsd_sigreturn_info[] = {
++  /* OpenBSD 7.4 */
++  { 13, { 0x48, 0xc7, 0xc0,
++         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
++         0x0f, 0x05 } },         /* syscall */
 +  /* OpenBSD 6.4 */
 +  { 9, { 0x48, 0xc7, 0xc0,
 +         0x67, 0x00, 0x00, 0x00, /* movq $SYS_sigreturn, %rax */
@@ -43,7 +47,7 @@ Index: gdb/amd64-obsd-tdep.c
  /* Return whether THIS_FRAME corresponds to an OpenBSD sigtramp
     routine.  */
  
-@@ -49,20 +81,8 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
+@@ -49,20 +85,8 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
  {
    CORE_ADDR pc = get_frame_pc (this_frame);
    CORE_ADDR start_pc = (pc & ~(amd64obsd_page_size - 1));
@@ -66,7 +70,7 @@ Index: gdb/amd64-obsd-tdep.c
    const char *name;
  
    /* If the function has a valid symbol name, it isn't a
-@@ -76,22 +96,22 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
+@@ -76,22 +100,21 @@ amd64obsd_sigtramp_p (struct frame_info *this_frame)
    if (find_pc_section (pc) != NULL)
      return 0;
  
@@ -76,6 +80,10 @@ Index: gdb/amd64-obsd-tdep.c
 -    return 0;
 +  for (info = amd64obsd_sigreturn_info; info->offset != -1; info++)
 +    {
++      /* If we can't read the instructions, return zero.  */
++      if (!safe_frame_unwind_memory (this_frame,
++        start_pc + info->offset, buf, sizeof buf))
++        continue;
  
 -  /* Check for sigreturn(2).  Depending on how the assembler encoded
 -     the `movq %rsp, %rdi' instruction, the code starts at offset 6 or
@@ -86,16 +94,11 @@ Index: gdb/amd64-obsd-tdep.c
 -      && memcmp (buf, osigreturn, sizeof osigreturn)
 -      && memcmp (buf + 1, osigreturn, sizeof osigreturn))
 -    return 0;
-+      /* If we can't read the instructions at return zero.  */
-+      if (!safe_frame_unwind_memory (this_frame,
-+        start_pc + info->offset, buf, sizeof buf))
-+        continue;
- 
--  return 1;
 +      /* Check for sigreturn(2).  */
 +      if (memcmp (buf, info->sigreturn, sizeof buf))
 +        continue;
-+
+ 
+-  return 1;
 +      return 1;
 +    }
 +
@@ -103,3 +106,41 @@ Index: gdb/amd64-obsd-tdep.c
  }
  
  /* Assuming THIS_FRAME is for a BSD sigtramp routine, return the
+@@ -101,7 +124,10 @@ static CORE_ADDR
+ amd64obsd_sigcontext_addr (struct frame_info *this_frame)
+ {
+   CORE_ADDR pc = get_frame_pc (this_frame);
++  CORE_ADDR start_pc = (pc & ~(amd64obsd_page_size - 1));
+   ULONGEST offset = (pc & (amd64obsd_page_size - 1));
++  const amd64obsd_sigreturn_info_t *info;
++  gdb_byte buf[SIGRETURN_INSN_LEN];
+ 
+   /* The %rsp register points at `struct sigcontext' upon entry of a
+      signal trampoline.  The relevant part of the trampoline is
+@@ -115,10 +141,22 @@ amd64obsd_sigcontext_addr (struct frame_info *this_fra
+      (see /usr/src/sys/arch/amd64/amd64/locore.S).  The `pushq'
+      instruction clobbers %rsp, but its value is saved in `%rdi'.  */
+ 
+-  if (offset > 5)
+-    return get_frame_register_unsigned (this_frame, AMD64_RDI_REGNUM);
+-  else
+-    return get_frame_register_unsigned (this_frame, AMD64_RSP_REGNUM);
++  for (info = amd64obsd_sigreturn_info; info->offset != -1; info++)
++    {
++      /* If we can't read the instructions, return %rsp.  */
++      if (!safe_frame_unwind_memory (this_frame,
++        start_pc + info->offset, buf, sizeof buf))
++        continue;
++
++      /* Check for sigreturn(2).  */
++      if (memcmp (buf, info->sigreturn, sizeof buf))
++        continue;
++
++      if (offset > info->offset - 4 && offset < info->offset + 9)
++	return get_frame_register_unsigned (this_frame, AMD64_RDI_REGNUM);
++    }
++
++  return get_frame_register_unsigned (this_frame, AMD64_RSP_REGNUM);
+ }
+ 
+ /* OpenBSD 3.5 or later.  */
