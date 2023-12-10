@@ -8,5 +8,5 @@ Index: third_party/blink/renderer/modules/webgpu/gpu_queue.cc
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    bool forceReadback = true;
- #elif BUILDFLAG(IS_WIN)
-   bool forceReadback =
+ #elif BUILDFLAG(IS_ANDROID)
+   // TODO(crbug.com/dawn/1969): Some Android devices don't fail to copy from

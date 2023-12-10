@@ -9,7 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			119.0.6045.199
+V=			120.0.6099.62
 
 DISTNAME=		chromium-${V}
 
@@ -17,7 +17,6 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 
 DISTFILES.a+=		${PROFILE_DISTFILES} \
-			libudev-openbsd-20221108-c3330efd.tar.gz \
 			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
@@ -49,8 +48,6 @@ SITES.a=	http://nerd.hu/distfiles/
 MODULES=	lang/python x11/qt5
 MODQT5_DEPS=	No
 
-COMPILER=		base-clang ports-clang
-
 MODPY_RUNDEP=		No
 
 # uses pledge()
@@ -62,13 +59,14 @@ WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	snappy sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
+		sysutils/libudev-openbsd \
 		x11/gtk+3,-main \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
@@ -89,6 +87,7 @@ LIB_DEPENDS=	archivers/snappy \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -97,8 +96,6 @@ LIB_DEPENDS=	archivers/snappy \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
-
-BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
 
 USE_GMAKE=	Yes
 
@@ -144,6 +141,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		libevent \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -330,8 +328,6 @@ do-install:
     unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
-		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 pre-test:
 .for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}

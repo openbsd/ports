@@ -1,7 +1,7 @@
 Index: chrome/test/chromedriver/chrome_launcher.cc
 --- chrome/test/chromedriver/chrome_launcher.cc.orig
 +++ chrome/test/chromedriver/chrome_launcher.cc
-@@ -69,6 +69,7 @@
+@@ -73,6 +73,7 @@
  #include <fcntl.h>
  #include <sys/stat.h>
  #include <sys/types.h>
