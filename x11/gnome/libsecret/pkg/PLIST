@@ -89,6 +89,7 @@ share/doc/libsecret-1/fonts.css
 share/doc/libsecret-1/func.CHECK_VERSION.html
 share/doc/libsecret-1/func.attributes_build.html
 share/doc/libsecret-1/func.attributes_buildv.html
+share/doc/libsecret-1/func.attributes_validate.html
 share/doc/libsecret-1/func.get_schema.html
 share/doc/libsecret-1/func.password_clear.html
 share/doc/libsecret-1/func.password_clear_finish.html
