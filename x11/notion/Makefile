@@ -1,8 +1,7 @@
 COMMENT=	light, keyboard friendly static tiling window manager
 
-GH_ACCOUNT=	raboof
-GH_PROJECT=	notion
-GH_TAGNAME=	4.0.2
+DIST_TUPLE=	github raboof notion 4.0.2 .
+REVISION=	0
 
 CATEGORIES=	x11
 

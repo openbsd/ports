@@ -30,3 +30,12 @@ Index: system-autodetect.mk
  
  # Cygwin needs this. Also when you disable _BSD_SOURCE you may need it.
  #DEFINES += -DCF_NO_GETLOADAVG
+@@ -205,7 +205,7 @@ POSIX_SOURCE?=-D_POSIX_C_SOURCE=200112L
+ BSD_SOURCE?=-D_BSD_SOURCE
+ 
+ # Most systems
+-XOPEN_SOURCE=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED
++#XOPEN_SOURCE=-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED
+ # SunOS, (Irix)
+ #XOPEN_SOURCE=-D__EXTENSIONS__
+ 
