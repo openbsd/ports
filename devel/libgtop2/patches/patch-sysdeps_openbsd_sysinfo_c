@@ -1,0 +1,12 @@
+Index: sysdeps/openbsd/sysinfo.c
+--- sysdeps/openbsd/sysinfo.c.orig
++++ sysdeps/openbsd/sysinfo.c
+@@ -49,7 +49,7 @@ init_sysinfo (glibtop *server)
+ 	mib[0] = CTL_HW;
+ 
+ 	/* Get the number of CPU's present */
+-	mib[1] = HW_NCPU;
++	mib[1] = HW_NCPUONLINE;
+ 
+ 	len = sizeof(ncpus);
+ 	if (sysctl(mib, 2, &ncpus, &len, NULL, 0) != 0)
