@@ -1,8 +1,6 @@
 COMMENT =	UDisks2 service implementation for OpenBSD
 
-V =		0.3.1
-DISTNAME =	openbsdisks2-${V}
-REVISION =	0
+DIST_TUPLE=    github sizeofvoid openbsdisks2 v0.4.0 .
 
 CATEGORIES =	sysutils
 
@@ -18,8 +16,6 @@ COMPILER =	base-clang ports-gcc
 
 # uses unveil()
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus c m util
-
-SITES =	https://github.com/sizeofvoid/openbsdisks2/releases/download/v${V}/
 
 MODULES =	devel/cmake \
 		x11/qt5
