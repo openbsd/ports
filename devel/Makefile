@@ -882,6 +882,7 @@
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Mixin-Linewise
      SUBDIR += p5-Mock-Config
+     SUBDIR += p5-Mock-Sub
      SUBDIR += p5-Modern-Perl
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-Build-Pluggable
