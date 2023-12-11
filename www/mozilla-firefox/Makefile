@@ -8,13 +8,14 @@ MOZILLA_PROFDATA_TASKID=BVc_N9ikTuywYnzDXpD3YQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
 SO_VERSION =	132.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey gkcodecs lgpllibs mozsqlite3 ipcclientcerts
+MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3 ipcclientcerts
 
 CATEGORIES =	www
 
