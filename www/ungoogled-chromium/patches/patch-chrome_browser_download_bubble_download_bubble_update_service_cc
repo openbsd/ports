@@ -13,7 +13,7 @@ Index: chrome/browser/download/bubble/download_bubble_update_service.cc
    CHECK(!cache.empty());
    auto it = cache.end();
    return std::prev(it);
-@@ -1029,9 +1033,17 @@ bool DownloadBubbleUpdateService::CacheManager::Remove
+@@ -1089,9 +1093,17 @@ bool DownloadBubbleUpdateService::CacheManager::Remove
  }
  
  template <typename Id, typename Item>

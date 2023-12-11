@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 --- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1936,7 +1936,7 @@
+@@ -2006,7 +2006,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
        origin_trial_feature_name: "FullscreenPopupWindows",
@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      {
        name: "GamepadButtonAxisEvents",
-@@ -2849,7 +2849,7 @@
+@@ -2929,7 +2929,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -19,7 +19,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "stable",
      },
      {
-@@ -3874,7 +3874,7 @@
+@@ -3976,7 +3976,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -27,8 +27,8 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
      },
      {
-       name: "URLPatternCompareComponent",
-@@ -4077,12 +4077,12 @@
+       // This flag makes IDL reflected attributes with the "URL" IDL attribute
+@@ -4194,12 +4194,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

@@ -10,7 +10,7 @@ Index: components/feature_engagement/public/feature_constants.h
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelRegionSearchFeature);
-@@ -226,7 +226,7 @@ extern const base::FeatureParam<int>
+@@ -233,7 +233,7 @@ extern const base::FeatureParam<int>
      kDefaultBrowserEligibilitySlidingWindowParam;
  #endif  // BUILDFLAG(IS_IOS)
  

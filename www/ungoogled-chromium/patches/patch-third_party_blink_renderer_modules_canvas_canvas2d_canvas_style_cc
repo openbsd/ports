@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/modules/canvas/canvas2d/canvas_style.cc
 --- third_party/blink/renderer/modules/canvas/canvas2d/canvas_style.cc.orig
 +++ third_party/blink/renderer/modules/canvas/canvas2d/canvas_style.cc
-@@ -76,6 +76,9 @@ bool ParseCanvasColorString(const String& color_string
+@@ -83,6 +83,9 @@ bool ParseCanvasColorString(const String& color_string
  
  void CanvasStyle::ApplyToFlags(cc::PaintFlags& flags,
                                 float global_alpha) const {
@@ -11,7 +11,7 @@ Index: third_party/blink/renderer/modules/canvas/canvas2d/canvas_style.cc
    switch (type_) {
      case kColor:
        ApplyColorToFlags(flags, global_alpha);
-@@ -83,12 +86,20 @@ void CanvasStyle::ApplyToFlags(cc::PaintFlags& flags,
+@@ -90,12 +93,20 @@ void CanvasStyle::ApplyToFlags(cc::PaintFlags& flags,
      case kGradient:
        GetCanvasGradient()->GetGradient()->ApplyToFlags(flags, SkMatrix::I(),
                                                         ImageDrawOptions());

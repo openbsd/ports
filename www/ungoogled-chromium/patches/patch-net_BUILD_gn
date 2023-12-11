@@ -10,8 +10,8 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1244,6 +1244,19 @@ component("net") {
-     deps += [ "//third_party/xdg_shared_mime_info" ]
+@@ -1242,6 +1242,19 @@ component("net") {
+     ]
    }
  
 +  if (is_bsd) {
@@ -30,7 +30,7 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1400,7 +1413,7 @@ component("net") {
+@@ -1398,7 +1411,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -39,7 +39,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2893,7 +2906,7 @@ test("net_unittests") {
+@@ -2888,7 +2901,7 @@ test("net_unittests") {
      ]
    }
  
@@ -48,9 +48,9 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2965,6 +2978,10 @@ test("net_unittests") {
-     "//url:buildflags",
-   ]
+@@ -2976,6 +2989,10 @@ test("net_unittests") {
+     ]
+   }
  
 +  if (is_bsd) {
 +    deps += [ "//sandbox/policy" ]

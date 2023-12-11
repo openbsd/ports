@@ -26,7 +26,7 @@ Index: ui/gl/BUILD.gn
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -578,7 +574,6 @@ test("gl_unittests") {
+@@ -582,7 +578,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

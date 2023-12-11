@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			119.0.6045.199
+V=			120.0.6099.71
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -18,8 +18,7 @@ DISTNAME=		ungoogled-chromium-${V}
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 
-DISTFILES.u=	 	libudev-openbsd-20221108-c3330efd.tar.gz \
-			${UGOOGLE_DISTFILES} \
+DISTFILES.u=		${UGOOGLE_DISTFILES} \
 			${REGRESS_DISTFILES.u}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
@@ -72,6 +71,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
+		sysutils/libudev-openbsd \
 		x11/gtk+3,-main \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
@@ -93,6 +93,7 @@ LIB_DEPENDS=	archivers/snappy \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -101,8 +102,6 @@ LIB_DEPENDS=	archivers/snappy \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
-
-BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
 
 USE_GMAKE=	Yes
 
@@ -147,6 +146,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		libevent \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -350,8 +350,6 @@ do-install:
     unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/ungoogled-chromium
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
-		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 pre-test:
 .for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}

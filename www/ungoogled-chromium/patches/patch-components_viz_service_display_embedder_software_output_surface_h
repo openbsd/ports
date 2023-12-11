@@ -10,7 +10,7 @@ Index: components/viz/service/display_embedder/software_output_surface.h
    void SetNeedsSwapSizeNotifications(
        bool needs_swap_size_notifications) override;
  #endif
-@@ -69,7 +69,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
+@@ -70,7 +70,7 @@ class VIZ_SERVICE_EXPORT SoftwareOutputSurface : publi
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
