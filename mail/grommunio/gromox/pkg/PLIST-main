@@ -205,6 +205,7 @@ sbin/gromox-ical2mt
 @bin sbin/gromox-kdb2mt
 @bin sbin/gromox-mailq
 @bin sbin/gromox-mbop
+sbin/gromox-mbox2mt
 @bin sbin/gromox-mkmidb
 @bin sbin/gromox-mkprivate
 @bin sbin/gromox-mkpublic
