@@ -9,6 +9,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+REVISION =	0
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -19,7 +20,7 @@ SO_VERSION =	38.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 xul
+MOZILLA_LIBS = lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 mozwayland xul
 
 CATEGORIES=	mail news
 

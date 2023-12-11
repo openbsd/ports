@@ -43,6 +43,7 @@ lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
 @lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
+@lib lib/${MOZILLA_PROJECT}/libmozwayland.so.${LIBmozwayland_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}/omni.ja
 @bin lib/${MOZILLA_PROJECT}/pingsender
