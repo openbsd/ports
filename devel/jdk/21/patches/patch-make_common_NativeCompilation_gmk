@@ -1,0 +1,19 @@
+Keep full bin/lib with debug in debuginfo file so it can be restored
+later in post-build. This results in jmod's without debuginfo so we
+get the debug package without bloating the size of the jdk package.
+
+Index: make/common/NativeCompilation.gmk
+--- make/common/NativeCompilation.gmk.orig
++++ make/common/NativeCompilation.gmk
+@@ -1066,9 +1066,8 @@ define SetupNativeCompilationBody
+           # so we can run it after strip is called, since strip can sometimes mangle the
+           # embedded debuglink, which we want to avoid.
+           $1_CREATE_DEBUGINFO_CMDS := \
+-              $$($1_OBJCOPY) --only-keep-debug $$($1_TARGET) $$($1_DEBUGINFO_FILES) $$(NEWLINE)
+-          $1_CREATE_DEBUGLINK_CMDS := $(CD) $$($1_SYMBOLS_DIR) && \
+-              $$($1_OBJCOPY) --add-gnu-debuglink=$$($1_DEBUGINFO_FILES) $$($1_TARGET)
++              $(CP) $$($1_TARGET) $$($1_DEBUGINFO_FILES)
++          $1_CREATE_DEBUGLINK_CMDS := 
+ 
+         else ifeq ($(call isTargetOs, aix), true)
+           # AIX does not provide the equivalent of OBJCOPY to extract debug symbols,
