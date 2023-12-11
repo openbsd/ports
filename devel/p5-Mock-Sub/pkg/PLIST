@@ -1,0 +1,6 @@
+${P5SITE}/Mock/
+${P5SITE}/Mock/Sub/
+${P5SITE}/Mock/Sub.pm
+${P5SITE}/Mock/Sub/Child.pm
+@man man/man3p/Mock::Sub.3p
+@man man/man3p/Mock::Sub::Child.3p
