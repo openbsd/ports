@@ -1534,6 +1534,7 @@
      SUBDIR += py-pebble,python3
      SUBDIR += py-pep517,python3
      SUBDIR += py-pexpect,python3
+     SUBDIR += py-phx-class-registry,python3
      SUBDIR += py-pip,python3
      SUBDIR += py-pkgconfig,python3
      SUBDIR += py-pluggy,python3
