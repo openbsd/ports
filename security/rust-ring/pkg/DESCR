@@ -1,2 +1,3 @@
 Bundles the source of the ring crate patched to work with OpenBSD's
-execute only policy.
+execute only policy. Use this as a BUILD_DEPENDS for ports depending
+on ring 0.16. It is not needed for ring >= 0.17.
