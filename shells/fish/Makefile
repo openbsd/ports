@@ -1,6 +1,6 @@
 COMMENT =		friendly interactive shell
 
-V =			3.6.1
+V =			3.6.4
 
 DISTNAME =		fish-$V
 
@@ -45,7 +45,14 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 PORTHOME =		${WRKDIR}
 
+# Test #96: check-completions.fish fails on systems without synaptics
+# driver loaded.
+
+TEST_DEPENDS =		sysutils/coreutils \
+			${PKGPATH}=${V}
+
 do-test:
+	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
 
 post-install:
