@@ -1,8 +1,7 @@
 COMMENT =		standards based terminal calendar
 
-MODPY_EGG_VERSION =	0.10.4
+MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		khal-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		productivity
 
@@ -31,7 +30,8 @@ RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
 			devel/py-urwid${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			productivity/vdirsyncer
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
+			devel/py-freezegun${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
