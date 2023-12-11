@@ -7,6 +7,7 @@ COMMENT =		modified version of Firefox ESR for browsing over Tor
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -19,7 +20,7 @@ DISTFILES +=		${DISTNAME}.tar.xz \
 			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
 
 SO_VERSION =		9.0
-MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
+MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozwayland
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
 MOZILLA_LIBS +=		mozsqlite3 ipcclientcerts
