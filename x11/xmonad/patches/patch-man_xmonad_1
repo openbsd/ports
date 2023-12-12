@@ -1,12 +1,12 @@
 Index: man/xmonad.1
 --- man/xmonad.1.orig
 +++ man/xmonad.1
-@@ -87,7 +87,7 @@ Display detailed version of \f[I]xmonad\f[R]
+@@ -87,7 +87,7 @@ mod-shift-return
  Launch terminal
  .TP
- .B mod\-p
+ mod-p
 -Launch dmenu
 +Launch dmenu_run
  .TP
- .B mod\-shift\-p
+ mod-shift-p
  Launch gmrun
