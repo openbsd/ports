@@ -17,7 +17,7 @@ do-gen:
 	cp ${WRKSRC}/configs/openbsd.mk ${WRKSRC}/config.mk
 	sed -i "s/aarch64-//g" ${WRKSRC}/config.mk
 	sed -i "s/riscv64-//g" ${WRKSRC}/config.mk
-.if ${MACHINE_ARCH:Marm64}
+.if ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Mriscv64}
 	echo "ARCH = $$(arch -s)" >> ${WRKSRC}/config.mk
 .endif
 
