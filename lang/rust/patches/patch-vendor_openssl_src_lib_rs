@@ -1,0 +1,21 @@
+Part of https://github.com/sfackler/rust-openssl/pull/2121
+
+Index: vendor/openssl/src/lib.rs
+--- vendor/openssl/src/lib.rs.orig
++++ vendor/openssl/src/lib.rs
+@@ -204,6 +204,15 @@ fn cvt_p<T>(r: *mut T) -> Result<*mut T, ErrorStack> {
+ }
+ 
+ #[inline]
++fn cvt_p_const<T>(r: *const T) -> Result<*const T, ErrorStack> {
++    if r.is_null() {
++        Err(ErrorStack::get())
++    } else {
++        Ok(r)
++    }
++}
++
++#[inline]
+ fn cvt(r: c_int) -> Result<c_int, ErrorStack> {
+     if r <= 0 {
+         Err(ErrorStack::get())
