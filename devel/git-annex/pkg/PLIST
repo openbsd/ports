@@ -5,10 +5,13 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-addunused.1
 @man man/man1/${MODCABAL_STEM}-addurl.1
 @man man/man1/${MODCABAL_STEM}-adjust.1
+@man man/man1/${MODCABAL_STEM}-assist.1
 @man man/man1/${MODCABAL_STEM}-assistant.1
+@man man/man1/${MODCABAL_STEM}-backends.1
 @man man/man1/${MODCABAL_STEM}-calckey.1
 @man man/man1/${MODCABAL_STEM}-checkpresentkey.1
 @man man/man1/${MODCABAL_STEM}-config.1
+@man man/man1/${MODCABAL_STEM}-configremote.1
 @man man/man1/${MODCABAL_STEM}-contentlocation.1
 @man man/man1/${MODCABAL_STEM}-copy.1
 @man man/man1/${MODCABAL_STEM}-dead.1
@@ -26,6 +29,7 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-export.1
 @man man/man1/${MODCABAL_STEM}-filter-branch.1
 @man man/man1/${MODCABAL_STEM}-find.1
+@man man/man1/${MODCABAL_STEM}-findkeys.1
 @man man/man1/${MODCABAL_STEM}-findref.1
 @man man/man1/${MODCABAL_STEM}-fix.1
 @man man/man1/${MODCABAL_STEM}-forget.1
@@ -60,6 +64,8 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-pre-commit.1
 @man man/man1/${MODCABAL_STEM}-preferred-content.1
 @man man/man1/${MODCABAL_STEM}-proxy.1
+@man man/man1/${MODCABAL_STEM}-pull.1
+@man man/man1/${MODCABAL_STEM}-push.1
 @man man/man1/${MODCABAL_STEM}-readpresentkey.1
 @man man/man1/${MODCABAL_STEM}-registerurl.1
 @man man/man1/${MODCABAL_STEM}-reinit.1
@@ -70,7 +76,9 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-repair.1
 @man man/man1/${MODCABAL_STEM}-required.1
 @man man/man1/${MODCABAL_STEM}-resolvemerge.1
+@man man/man1/${MODCABAL_STEM}-restage.1
 @man man/man1/${MODCABAL_STEM}-rmurl.1
+@man man/man1/${MODCABAL_STEM}-satisfy.1
 @man man/man1/${MODCABAL_STEM}-schedule.1
 @man man/man1/${MODCABAL_STEM}-semitrust.1
 @man man/man1/${MODCABAL_STEM}-setkey.1
