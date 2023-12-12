@@ -38,4 +38,4 @@ Index: cabal.project
 --- Warp without x509
 -constraints: warp -x509
 -
-+packages: ../gentle-introduction-2022.5
++packages: ../gentle-introduction-2023.4
