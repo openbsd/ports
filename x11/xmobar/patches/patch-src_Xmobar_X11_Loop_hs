@@ -1,0 +1,11 @@
+Index: src/Xmobar/X11/Loop.hs
+--- src/Xmobar/X11/Loop.hs.orig
++++ src/Xmobar/X11/Loop.hs
+@@ -22,6 +22,7 @@ import Prelude hiding (lookup)
+ 
+ import Control.Concurrent as Concurrent
+ import Control.Concurrent.STM as STM
++import Control.Monad as MR
+ import Control.Monad.Reader as MR
+ 
+ import Data.Bits (Bits((.|.)))

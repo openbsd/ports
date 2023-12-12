@@ -1,0 +1,39 @@
+From e9f82e6e9b14dc30ed5ed14cafc060674b4b14d0 Mon Sep 17 00:00:00 2001
+From: Greg Steuck <greg@nest.cx>
+Date: Sat, 11 Nov 2023 11:51:00 -0800
+Subject: [PATCH] Make compatible with ghc 9.6
+
+---
+ libmpd.cabal                      | 2 +-
+ src/Network/MPD/Commands/Parse.hs | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/libmpd.cabal b/libmpd.cabal
+index 37a61f1..df60120 100644
+--- a/libmpd.cabal
++++ b/libmpd.cabal
+@@ -45,7 +45,7 @@ Library
+       , containers >= 0.3 && < 1
+       , filepath >= 1 && < 2
+       , mtl >= 2.2.2 && < 3
+-      , text >= 0.11 && < 2
++      , text >= 0.11 && <= 2.2
+       , time >= 1.5 && < 2
+ 
+         -- Additional dependencies
+diff --git a/src/Network/MPD/Commands/Parse.hs b/src/Network/MPD/Commands/Parse.hs
+index 49f23cb..887b5d1 100644
+--- a/src/Network/MPD/Commands/Parse.hs
++++ b/src/Network/MPD/Commands/Parse.hs
+@@ -12,7 +12,7 @@ module Network.MPD.Commands.Parse where
+ 
+ import           Network.MPD.Commands.Types
+ 
+-import           Control.Monad.Except
++import           Control.Monad
+ import           Data.Maybe (fromMaybe)
+ 
+ import           Network.MPD.Util
+-- 
+2.42.0
+
