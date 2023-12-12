@@ -3,6 +3,7 @@ COMMENT =		GNU assembler
 V =			2.31.1
 DISTNAME =		binutils-$V
 PKGNAME =		gas-$V
+REVISION =		0
 
 CATEGORIES =		devel
 
