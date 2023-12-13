@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.433 2023/11/27 18:07:58 bluhm Exp $
+$OpenBSD: user.list,v 1.434 2023/12/13 20:08:58 sdk Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -402,3 +402,4 @@ id  user		group		port
 891 _kiwix-serve	_kiwix-serve	www/kiwix/kiwix-tools
 892 _shiori		_shiori		www/shiori
 893 _azorius		_azorius	www/azorius
+894 _gonic		_gonic		audio/gonic
