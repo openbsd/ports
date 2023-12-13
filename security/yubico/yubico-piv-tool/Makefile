@@ -3,11 +3,10 @@ COMMENT=	Yubico Personal Identity Verification (PIV) Tool
 HOMEPAGE=	https://developers.yubico.com/yubico-piv-tool/
 
 YK_PROJECT=	yubico-piv-tool
-DISTNAME=	yubico-piv-tool-2.3.1
-REVISION=	0
+DISTNAME=	yubico-piv-tool-2.4.1
 
-SHARED_LIBS +=  ykcs11                    1.0 # 5.4
-SHARED_LIBS +=  ykpiv                     1.0 # 5.4
+SHARED_LIBS +=  ykcs11                    1.0
+SHARED_LIBS +=  ykpiv                     1.1
 
 CATEGORIES=	sysutils
 
