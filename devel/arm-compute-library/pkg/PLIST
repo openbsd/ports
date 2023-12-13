@@ -82,8 +82,6 @@ include/arm_compute/core/Window.h
 include/arm_compute/core/Window.inl
 include/arm_compute/core/WindowIterator.h
 include/arm_compute/core/experimental/
-include/arm_compute/core/experimental/IPostOp.h
-include/arm_compute/core/experimental/PostOps.h
 include/arm_compute/core/experimental/Types.h
 include/arm_compute/core/utils/
 include/arm_compute/core/utils/ActivationFunctionUtils.h
@@ -132,6 +130,7 @@ include/arm_compute/dynamic_fusion/sketch/attributes/CastAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/ClampAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/Conv2dAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/DepthwiseConv2dAttributes.h
+include/arm_compute/dynamic_fusion/sketch/attributes/MatMulAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/Pool2dAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/ReshapeAttributes.h
 include/arm_compute/dynamic_fusion/sketch/attributes/ResizeAttributes.h
@@ -145,6 +144,7 @@ include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuCast.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuClamp.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuConv2d.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuDepthwiseConv2d.h
+include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuMatMul.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuMul.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuOutput.h
 include/arm_compute/dynamic_fusion/sketch/gpu/operators/GpuPool2d.h
@@ -199,7 +199,6 @@ include/arm_compute/graph/backends/CL/CLSubTensorHandle.h
 include/arm_compute/graph/backends/CL/CLTensorHandle.h
 include/arm_compute/graph/backends/FunctionHelpers.h
 include/arm_compute/graph/backends/FusedConvolutionBatchNormalizationFunction.h
-include/arm_compute/graph/backends/FusedConvolutionBatchNormalizationWithPostOpsFunction.h
 include/arm_compute/graph/backends/FusedDepthwiseConvolutionBatchNormalizationFunction.h
 include/arm_compute/graph/backends/NEON/
 include/arm_compute/graph/backends/NEON/NEDeviceBackend.h
@@ -249,8 +248,6 @@ include/arm_compute/graph/nodes/EltwiseLayerNode.h
 include/arm_compute/graph/nodes/FlattenLayerNode.h
 include/arm_compute/graph/nodes/FullyConnectedLayerNode.h
 include/arm_compute/graph/nodes/FusedConvolutionBatchNormalizationNode.h
-include/arm_compute/graph/nodes/FusedConvolutionBatchNormalizationWithPostOpsNode.h
-include/arm_compute/graph/nodes/FusedConvolutionWithPostOpNode.h
 include/arm_compute/graph/nodes/FusedDepthwiseConvolutionBatchNormalizationNode.h
 include/arm_compute/graph/nodes/GenerateProposalsLayerNode.h
 include/arm_compute/graph/nodes/InputNode.h
@@ -546,6 +543,9 @@ include/arm_compute/runtime/common/LSTMParams.h
 include/arm_compute/runtime/experimental/
 include/arm_compute/runtime/experimental/Types.h
 include/half/
+include/half/ChangeLog.txt
+include/half/LICENSE.txt
+include/half/README.txt
 include/half/half.hpp
 include/libnpy/
 include/libnpy/npy.hpp
