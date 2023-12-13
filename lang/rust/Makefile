@@ -14,9 +14,8 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.74.0
+V =			1.74.1
 DISTNAME =		rustc-${V}-src
-REVISION =		1
 
 # rustc bootstrap version
 BV-aarch64 =		1.74.0-20231115
