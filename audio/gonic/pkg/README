@@ -1,0 +1,28 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Config File
+===========
+
+When using the included rc.d(8) script, ${PKGSTEM} uses the config file
+at `${SYSCONFDIR}/gonic.toml`.
+
+Adding Music
+=============
+
+Music can be added by copying it to `${LOCALSTATEDIR}/gonic/music/` or
+by changing `music-path` in the config file.
+
+Web Interface
+=============
+
+By default, ${PKGSTEM} serves up a web interface on:
+
+http://127.0.0.1:4747
+
+The default username is `admin`
+The default password is `admin`
+
+If you wish to listen on a different address, change the `listen-addr`
+setting in the config file.

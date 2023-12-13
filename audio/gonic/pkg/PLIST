@@ -1,0 +1,20 @@
+@newgroup _gonic:894
+@newuser _gonic:894:894::Gonic Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/gonic
+@mode 755
+@owner _gonic
+@group _gonic
+@sample ${LOCALSTATEDIR}/gonic/
+@sample ${LOCALSTATEDIR}/gonic/music/
+@sample ${LOCALSTATEDIR}/gonic/lib/
+@sample ${LOCALSTATEDIR}/gonic/playlists/
+@sample ${LOCALSTATEDIR}/gonic/podcasts/
+@sample ${LOCALSTATEDIR}/gonic/cache/
+share/examples/gonic/
+share/examples/gonic/gonic.toml
+@sample ${SYSCONFDIR}/gonic.toml
+@mode
+@owner
+@group
+@bin bin/gonic
+share/doc/pkg-readmes/${PKGSTEM}

@@ -1,0 +1,68 @@
+# This is the gonic server system-wide configuration file. For other
+# administrative and per user settings go to the web UI.
+#
+# The strategy used for options in the default config shipped with gonic is to
+# specify options with their default value where possible, and leave optional
+# ones commented. Uncommented options override the default value. Options that
+# are mandatory and need setting before first run have a placeholder for their
+# values in <angle brackets>.
+
+# Interface and port to listen on. Defaults to 0.0.0.0:4747
+listen-addr                 localhost:4747
+
+# HTTP(S) request logging
+#http-log                    true
+# URL path prefix to use if behind reverse proxy
+#proxy-prefix                <prefix>
+
+# Secure connection settings. Recommended to set up unless gonic sits behind an
+# SSL enabled reverse proxy server. Disabled by default.
+#tls-cert                    <path to TLS certificate>
+#tls-key                     <path to TLS private key>
+
+# gonic's internal state database location
+db-path                     ${LOCALSTATEDIR}/gonic/lib/gonic.db	
+
+# Path to music files. Must be specified at least once, but can be specified
+# multiple times if the collection is split into different
+# directories. E.g.:
+music-path                  ${LOCALSTATEDIR}/gonic/music
+
+# Path to downloaded podcast files. Must be specified. E.g.:
+podcast-path                ${LOCALSTATEDIR}/gonic/podcasts
+
+# gonic manages playlists as m3u files. This way users can also edit these
+# playlists themselves or add custom ones via other tools. Items in the
+# directory should be placed in subdirectories matching user IDs in the
+# database, in the format `<userid>/<name>.m3u`. For example the admin user could
+# have 1/my-playlist.m3u. E.g.:
+playlists-path              ${LOCALSTATEDIR}/gonic/playlists
+
+# Age (in days) to purge podcast episodes if not accessed. Disabled by default.
+#podcast-purge-age           0
+
+# Directory where transcoded audio files and covers are stored. It's safe to
+# delete contents periodically (see tmpfilesd configuration), as it will be
+# regenerated.
+cache-path                  ${LOCALSTATEDIR}/gonic/cache
+
+# Interval (in minutes) to check for new music. Default: don't scan
+#scan-interval               0
+#scan-at-start-enabled       false
+#scan-watcher-enabled        false
+#jukebox-enabled             false
+#jukebox-mpv-extra-args      <extra command line arguments to pass to the jukebox mpv daemon>
+
+# Metadata multi-value handling
+# gonic supports parsing mult-valued tags in the metadata thus assigning a song
+# to several genres or album artists. This improves search and reduces clutter
+# in the artist/genre listing. Accepted options are:
+#   multi: gonic will explicitly look for multi value fields the audio metadata
+#   delim <delimiter character>: gonic will look at the regular audio metadata
+#                                fields like "genre" or "album_artist", but split
+#                                them on a delimiter. For example to split on
+#                                semicolon set the option value to be "delim ;"
+#   none: default setting, gonic won't attempt to do any multi value parsing
+#multi-value-genre          none
+#multi-value-album-artist   none
+
