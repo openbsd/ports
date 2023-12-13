@@ -1,0 +1,14 @@
+Find default dictionaries
+
+Index: ding
+--- ding.orig
++++ ding
+@@ -85,7 +85,7 @@ set param(noticefile) [expr {$param(isunix) == 1 ? "$e
+ # The provided German-English dictionary:
+ set default_searchmeth(0,name) {Dictionary}
+ set default_searchmeth(0,grepcmds) {tre-agrep agrep egrep internal_search}
+-set default_searchmeth(0,dictfile) [expr {$param(isunix) ?  "/usr/share/dict/de-en.txt" : "[file dirname argv0]/de-en.txt"}]
++set default_searchmeth(0,dictfile) [expr {$param(isunix) ?  "${LOCALBASE}/share/ding/de-en.txt" : "[file dirname argv0]/de-en.txt"}]
+ set default_searchmeth(0,separator) { :: }
+ set default_searchmeth(0,language1) {Deutsch}
+ set default_searchmeth(0,language2) {English}

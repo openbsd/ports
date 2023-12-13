@@ -1,0 +1,8 @@
+bin/ding
+@man man/man1/ding.1
+share/applications/ding.desktop
+share/ding/
+share/ding/de-en.txt
+share/pixmaps/
+share/pixmaps/ding.png
+@tag update-desktop-database
