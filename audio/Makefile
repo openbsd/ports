@@ -51,6 +51,7 @@
      SUBDIR += gmpc-plugins
      SUBDIR += goattracker
      SUBDIR += gogglesmm
+     SUBDIR += gonic
      SUBDIR += gqmpeg
      SUBDIR += gradio
      SUBDIR += grip
