@@ -40,6 +40,7 @@
      SUBDIR += der-ascii
      SUBDIR += diction
      SUBDIR += diffstat
+     SUBDIR += ding
      SUBDIR += discount
      SUBDIR += docbook
      SUBDIR += docbook-dsssl
