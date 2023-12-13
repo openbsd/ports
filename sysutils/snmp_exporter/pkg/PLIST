@@ -36,6 +36,8 @@ share/examples/snmp_exporter/mibs/ARISTA-ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SMI-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SW-IP-FORWARDING-MIB
 share/examples/snmp_exporter/mibs/CyberPower.MIB
+share/examples/snmp_exporter/mibs/EAP-Client.MIB
+share/examples/snmp_exporter/mibs/EAP.MIB
 share/examples/snmp_exporter/mibs/ENTITY-MIB
 share/examples/snmp_exporter/mibs/ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ENTITY-STATE-MIB
@@ -47,6 +49,7 @@ share/examples/snmp_exporter/mibs/IANA-IFTYPE-MIB.txt
 share/examples/snmp_exporter/mibs/IANA-PRINTER-MIB.txt
 share/examples/snmp_exporter/mibs/IF-MIB
 share/examples/snmp_exporter/mibs/INET-ADDRESS-MIB
+share/examples/snmp_exporter/mibs/IP-MIB
 share/examples/snmp_exporter/mibs/IPV6-TC
 share/examples/snmp_exporter/mibs/ISDN-MIB
 share/examples/snmp_exporter/mibs/Infrapower-MIB.mib
@@ -96,6 +99,8 @@ share/examples/snmp_exporter/mibs/UCD-SNMP-MIB
 share/examples/snmp_exporter/mibs/VRRP-MIB
 share/examples/snmp_exporter/mibs/VRRPv3-MIB
 share/examples/snmp_exporter/mibs/apc-powernet-mib
+share/examples/snmp_exporter/mibs/readydataos
+share/examples/snmp_exporter/mibs/readynas
 share/examples/snmp_exporter/mibs/servertech-sentry3-mib
 share/examples/snmp_exporter/mibs/servertech-sentry4-mib
 share/examples/snmp_exporter/snmp.yml
