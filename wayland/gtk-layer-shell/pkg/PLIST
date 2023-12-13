@@ -1,0 +1,9 @@
+@bin bin/gtk-layer-demo
+include/gtk-layer-shell/
+include/gtk-layer-shell/gtk-layer-shell.h
+lib/girepository-1.0/GtkLayerShell-0.1.typelib
+@lib lib/libgtk-layer-shell.so.${LIBgtk-layer-shell_VERSION}
+lib/pkgconfig/gtk-layer-shell-0.pc
+share/gir-1.0/GtkLayerShell-0.1.gir
+share/vala/vapi/gtk-layer-shell-0.deps
+share/vala/vapi/gtk-layer-shell-0.vapi
