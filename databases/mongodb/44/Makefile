@@ -1,6 +1,6 @@
 PORTROACH =	limitw:1,even
 
-V =		4.4.26
+V =		4.4.27
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
@@ -19,6 +19,7 @@ BUILD_DEPENDS =	sysutils/py-psutil${MODPY_FLAVOR}
 
 post-extract:
 	cd ${WRKSRC}/src/third_party/mozjs-60/platform/x86_64/ && cp -R freebsd openbsd
+	rm -r ${WRKSRC}/src/mongo/db/modules/enterprise
 
 do-install:
 .for bin in mongo mongod mongos
