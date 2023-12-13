@@ -1,7 +1,7 @@
 COMMENT =		various tools for the Go programming language
 
 MODGO_MODNAME =		golang.org/x/tools
-MODGO_VERSION =		v0.15.0
+MODGO_VERSION =		v0.16.1
 
 DISTNAME =		go-tools-${MODGO_VERSION}
 EPOCH =			0
