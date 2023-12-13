@@ -1,9 +1,8 @@
 COMMENT =		country, language, currency and scripts definitions
 
-MODPY_EGG_VERSION =	22.3.5
+MODPY_EGG_VERSION =	23.12.7
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST_ARGS =	src
 
 FLAVORS =		python3
