@@ -1,2 +1,4 @@
-SHA256 (icu4c-74_1-src.tgz) = hs6OYGgZcuYOTcskkMaXRj/Oxg3UAKX5v/uibQtSuNA=
-SIZE (icu4c-74_1-src.tgz) = 26625850
+SHA256 (icu4c/LICENSE) = F1EM96WLSHm4h+wFpF1yzxtzVE3Z7H5y8gEQ7RBCKe4=
+SHA256 (icu4c/icu4c-74_2-src.tgz) = Xk+xHWo+a4WvtV3o2opxU48dj9ZPzok5hrN9YOW7AJE=
+SIZE (icu4c/LICENSE) = 25185
+SIZE (icu4c/icu4c-74_2-src.tgz) = 26618071
