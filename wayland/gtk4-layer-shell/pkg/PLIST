@@ -1,0 +1,9 @@
+@bin bin/gtk4-layer-demo
+include/gtk4-layer-shell/
+include/gtk4-layer-shell/gtk4-layer-shell.h
+lib/girepository-1.0/Gtk4LayerShell-1.0.typelib
+@lib lib/libgtk4-layer-shell.so.${LIBgtk4-layer-shell_VERSION}
+lib/pkgconfig/gtk4-layer-shell-0.pc
+share/gir-1.0/Gtk4LayerShell-1.0.gir
+share/vala/vapi/gtk4-layer-shell-0.deps
+share/vala/vapi/gtk4-layer-shell-0.vapi
