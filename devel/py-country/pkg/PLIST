@@ -924,6 +924,7 @@ lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/iso3166-1.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/iso3166-3.mo
 lib/python${MODPY_VERSION}/site-packages/pycountry/locales/zu/LC_MESSAGES/iso639-3.mo
+lib/python${MODPY_VERSION}/site-packages/pycountry/py.typed
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycountry/tests/${MODPY_PYCACHE}test_general.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
