@@ -2,6 +2,8 @@
      SUBDIR += dmenu-wayland
      SUBDIR += foot
      SUBDIR += grim
+     SUBDIR += gtk-layer-shell
+     SUBDIR += gtk4-layer-shell
      SUBDIR += havoc
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
