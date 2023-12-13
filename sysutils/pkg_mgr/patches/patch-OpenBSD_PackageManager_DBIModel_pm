@@ -1,7 +1,12 @@
 Index: OpenBSD/PackageManager/DBIModel.pm
 --- OpenBSD/PackageManager/DBIModel.pm.orig
 +++ OpenBSD/PackageManager/DBIModel.pm
-@@ -50,7 +50,8 @@ sub init
+@@ -46,11 +46,12 @@ sub init
+ 	$self->{ports} = undef; # key=port id
+ 	$self->{categories} = undef; # key=category id, value=category name
+ 	$self->{installed} = (); # list of installed ids
+-	$self->{installed_repo} = OpenBSD::PackageRepository::Installed->new;
++	$self->{installed_repo} = OpenBSD::PackageRepository::Installed->new(0,0);
  	$self->{orphaned} = (); # list of orphaned ids
  	$self->{portslist} = undef; # key=category id, value=port id array
  	$self->{dbh}->disconnect if defined $self->{dbh};
