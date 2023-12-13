@@ -1,25 +1,19 @@
-BROKEN=		SIGSEGV on startup
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	redeclipse client
 COMMENT-data=	redeclipse data
 CATEGORIES=	games x11
-SITES=		https://github.com/red-eclipse/
 
 HOMEPAGE=	http://www.redeclipse.net/
-MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
-V=		1.6.0
+V=		2.0.0
 PKGNAME=	${N}-${V}
 SITES=		https://github.com/red-eclipse/base/releases/download/v${V}/
 DISTNAME=	redeclipse_${V}_combined
 EXTRACT_SUFX=	.tar.bz2
-REVISION-main=	3
-REVISION-data=	1
 
 PKG_ARCH-data=	*
 

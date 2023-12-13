@@ -1,6 +1,7 @@
---- engine/serverbrowser.cpp.orig	Sat Apr 11 19:41:14 2015
-+++ engine/serverbrowser.cpp	Sat Apr 11 21:59:33 2015
-@@ -39,12 +39,10 @@ int resolverloop(void * data)
+Index: engine/serverbrowser.cpp
+--- engine/serverbrowser.cpp.orig
++++ engine/serverbrowser.cpp
+@@ -38,12 +38,10 @@ int resolverloop(void * data)
          while(resolverqueries.empty()) SDL_CondWait(querycond, resolvermutex);
          rt->query = resolverqueries.pop();
          rt->starttime = totalmillis;

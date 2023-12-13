@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -31,8 +31,8 @@ TOOLSET_PREFIX=x86_64-w64-mingw32-
+@@ -42,8 +42,8 @@ TOOLSET_PREFIX=x86_64-w64-mingw32-
  else
  TOOLSET_PREFIX=i686-w64-mingw32-
  endif
@@ -12,68 +12,71 @@ Index: Makefile
  endif
  
  CXX_TEMP:=$(CXX)
-@@ -40,7 +40,7 @@ CC_TEMP:=$(CC)
+@@ -51,7 +51,7 @@ CC_TEMP:=$(CC)
  override CXX=$(TOOLSET_PREFIX)$(CXX_TEMP)
  override CC=$(TOOLSET_PREFIX)$(CC_TEMP)
  
--INCLUDES= -I. -Ishared -Iengine -Igame -Ienet/include -Isupport
-+INCLUDES= -I. -Ishared -Iengine -Igame `pkg-config --cflags libenet` -Isupport
- 
- STRIP=
- ifeq (,$(findstring -g,$(CXXFLAGS)))
-@@ -77,13 +77,13 @@ ifneq (,$(findstring linux,$(PLATFORM)))
+-INCLUDES= -DVERSION_BUILD=$(PLATFORM_BUILD) -DVERSION_BRANCH=\"$(PLATFORM_BRANCH)\" -DVERSION_REVISION=\"$(PLATFORM_REVISION)\" -I. -Ishared -Iengine -Igame -Ienet/include -Isupport
++INCLUDES= -DVERSION_BUILD=$(PLATFORM_BUILD) -DVERSION_BRANCH=\"$(PLATFORM_BRANCH)\" -DVERSION_REVISION=\"$(PLATFORM_REVISION)\" -I. -Ishared -Iengine -Igame `pkg-config --cflags libenet` -Isupport
+ ifneq (,$(WANT_STEAM))
+ override INCLUDES+= -DUSE_STEAM=1 -Isteam
+ endif
+@@ -109,7 +109,7 @@ ifneq (,$(findstring linux,$(PLATFORM)))
  BIN_SUFFIX=_linux
  else
  ifneq (,$(findstring bsd,$(PLATFORM)))
 -BIN_SUFFIX=_bsd
 +BIN_SUFFIX=
+ ifneq (,$(findstring openbsd,$(PLATFORM)))
+ RMFLAGS= -f
+ endif
+@@ -118,7 +118,7 @@ BIN_SUFFIX=_native
+ endif
+ endif
+ CLIENT_INCLUDES= $(INCLUDES) `$(PKG_CONFIG) --cflags x11 sdl2 SDL2_image SDL2_mixer zlib gl`
+-CLIENT_LIBS= -Lenet -lenet `$(PKG_CONFIG) --libs x11 sdl2 SDL2_image SDL2_mixer zlib gl`
++CLIENT_LIBS= `pkg-config --libs libenet` `$(PKG_CONFIG) --libs x11 sdl2 SDL2_image SDL2_mixer zlib gl`
+ ifneq (,$(WANT_STEAM))
+ override CLIENT_LIBS+= -L../bin/$(PLATFORM_BIN) -lsteam_api
+ endif
+@@ -216,7 +216,7 @@ endif
+ endif
  else
- BIN_SUFFIX=_native
- endif
- endif
--CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl2-config --cflags`
--CLIENT_LIBS= -Lenet -lenet -L/usr/X11R6/lib -lX11 `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lGL
-+CLIENT_INCLUDES= $(INCLUDES) `sdl2-config --cflags`
-+CLIENT_LIBS= `pkg-config --libs libenet` `sdl2-config --libs` -lSDL2_image -lSDL2_mixer -lz -lX11 -lGL
- endif
- ifneq (,$(findstring linux,$(PLATFORM)))
- CLIENT_LIBS+= -lrt
-@@ -161,7 +161,7 @@ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) -Iinclude
- SERVER_LIBS= -mwindows $(STD_LIBS) -L$(WINDLL) -L$(WINLIB) -lzlib1 -lenet -lws2_32 -lwinmm
- else
- SERVER_INCLUDES= -DSTANDALONE $(INCLUDES)
--SERVER_LIBS= -Lenet -lenet -lz
-+SERVER_LIBS= `pkg-config --libs libenet` -lz
- endif
- SERVER_OBJS= \
- 	shared/crypto-standalone.o \
-@@ -176,16 +176,12 @@ SERVER_OBJS= \
+ SERVER_INCLUDES= -DSTANDALONE $(INCLUDES) `pkg-config --cflags zlib`
+-SERVER_LIBS= -Lenet -lenet `pkg-config --libs zlib`
++SERVER_LIBS= `pkg-config --libs libenet` `pkg-config --libs zlib`
+ CTFONT_INCLUDES= -DSTANDALONE `pkg-config --cflags zlib freetype2`
+ CTFONT_LIBS= `pkg-config --libs zlib freetype2`
+ ifneq (,$(WANT_STEAM))
+@@ -239,8 +239,6 @@ SERVER_OBJS= \
  	engine/server-standalone.o \
  	game/server-standalone.o
  
 -LIBENET= enet/libenet.a
 -
- GENKEY_OBJS= engine/genkey.o shared/crypto-standalone.o
+ GENKEY_OBJS= shared/genkey.o shared/crypto-standalone.o
+ CTFONT_OBJS= shared/cube2font.o
  
- all:
+@@ -248,9 +246,6 @@ all:
  
  default: all
  
 -clean-enet:
 -	$(MAKE) -C enet clean
- 
+-
  clean-client:
- 	@rm -fv $(CLIENT_PCH) $(CLIENT_OBJS) $(APPCLIENT)$(BIN_SUFFIX)
-@@ -196,7 +192,7 @@ clean-server:
- clean-genkey:
- 	@rm -fv $(GENKEY_OBJS) genkey$(BIN_SUFFIX)
+ 	@rm $(RMFLAGS) $(CLIENT_PCH) $(CLIENT_OBJS) $(APPCLIENT)$(BIN_SUFFIX)
  
--clean: clean-enet clean-client clean-server clean-genkey
-+clean: clean-client clean-server clean-genkey
+@@ -263,7 +258,7 @@ clean-genkey:
+ clean-cube2font:
+ 	@rm $(RMFLAGS) $(CTFONT_OBJS) cube2font$(BIN_SUFFIX)
+ 
+-clean: clean-enet clean-client clean-server clean-genkey clean-cube2font
++clean: clean-client clean-server clean-genkey clean-cube2font
  
  %.h.gch: %.h
  	$(CXX) $(CXXFLAGS) -x c++-header -o $(subst .h.gch,.tmp.h.gch,$@) $(subst .h.gch,.h,$@)
-@@ -223,10 +219,10 @@ $(APPSERVER)_windows$(BIN_SUFFIX): $(SERVER_OBJS)
+@@ -293,10 +288,10 @@ $(APPSERVER)_windows$(BIN_SUFFIX): $(SERVER_OBJS)
  	$(WINDRES) -i $(APPNAME).rc -J rc -o $(APPNAME).res -O coff
  	$(CXX) $(CXXFLAGS) -o $@ $(APPNAME).res $(SERVER_OBJS) $(SERVER_LIBS)
  
@@ -86,9 +89,9 @@ Index: Makefile
  	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(SERVER_OBJS) $(SERVER_LIBS)
  
  client: $(APPCLIENT)$(APPMODIFIER)$(BIN_SUFFIX)
-@@ -275,9 +271,6 @@ endif
+@@ -350,9 +345,6 @@ install-cube2font: $(INSTDIR)/cube2font$(BIN_SUFFIX)
  
- install: install-client install-server install-genkey
+ install: install-client install-server install-genkey install-cube2font
  
 -$(LIBENET):
 -	$(MAKE) -C enet
@@ -96,8 +99,8 @@ Index: Makefile
  depend:
  	makedepend -Y -I. -Ishared -Iengine -Igame -Isupport $(subst .o,.cpp,$(CLIENT_OBJS))
  	makedepend -a -o-standalone.o -Y -I. -Ishared -Iengine -Igame -Isupport -DSTANDALONE $(subst -standalone.o,.cpp,$(SERVER_OBJS))
-@@ -286,7 +279,7 @@ depend:
- all: client server genkey
+@@ -361,7 +353,7 @@ depend:
+ all: client server genkey cube2font
  
  include system-install.mk
 -include dist.mk
