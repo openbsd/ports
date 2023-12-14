@@ -9,8 +9,8 @@ PERMIT_PACKAGE ?=	Yes
 
 RUN_DEPENDS ?=		devel/desktop-file-utils \
 			textproc/zathura/core
-LIB_DEPENDS +=		x11/girara>=0.3.2
-BUILD_DEPENDS ?=	textproc/zathura/core>=0.5.2
+LIB_DEPENDS +=		x11/girara>=0.4.1
+BUILD_DEPENDS ?=	textproc/zathura/core>=0.5.4
 
 MODULES ?=		devel/meson
 NO_TEST ?=		Yes

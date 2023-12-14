@@ -1,9 +1,8 @@
-V =			0.5.2
+V =			0.5.4
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
 HOMEPAGE =		https://pwmt.org/projects/zathura/
 
@@ -11,7 +10,7 @@ HOMEPAGE =		https://pwmt.org/projects/zathura/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c cairo gio-2.0 girara-gtk3 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gdk-3 gtk-3 intl m magic pango-1.0 sqlite3 synctex
+WANTLIB += gdk-3 gtk-3 intl json-glib-1.0 m magic pango-1.0 sqlite3 synctex
 
 SITES =		https://pwmt.org/projects/zathura/download/
 
@@ -23,7 +22,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libmagic \
-		x11/girara>=0.3.4 \
+		x11/girara>=0.4.1 \
 		print/texlive/base,-synctex
 
 COMPILER =	base-clang ports-gcc
