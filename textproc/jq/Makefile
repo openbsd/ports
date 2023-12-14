@@ -1,10 +1,9 @@
 COMMENT =		lightweight and flexible command-line JSON processor
 
-V =			1.7
+V =			1.7.1
 DISTNAME =		jq-$V
-REVISION =		0
 
-SHARED_LIBS +=	jq                        2.0 # 1.4
+SHARED_LIBS +=	jq                        2.1 # 1.4
 
 CATEGORIES =		textproc
 

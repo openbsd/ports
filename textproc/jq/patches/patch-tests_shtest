@@ -1,6 +1,3 @@
-- use bash(1) as ksh(1) `set -v' behaviour difference causes false positive
-- skip one test expecting script(1) `-e' and `-q'
-
 Index: tests/shtest
 --- tests/shtest.orig
 +++ tests/shtest
