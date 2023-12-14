@@ -1,0 +1,23 @@
+https://gitlab.gnome.org/GNOME/gnome-tetravex/-/commit/2b4fc00c961c6e43049479e555e138f2c85560b3
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -34,7 +34,7 @@ endif
+ 
+ # Desktop file
+ if get_option('build_gui')
+-  desktop_file = i18n.merge_file ('desktop-file',
++  desktop_file = i18n.merge_file (
+                            input: project_id + '.desktop.in',
+                           output: project_id + '.desktop',
+                          install: true,
+@@ -56,7 +56,7 @@ endif
+ 
+ # AppData file
+ if get_option('build_gui')
+-  appdata_file = i18n.merge_file ('appdata-file',
++  appdata_file = i18n.merge_file (
+                            input: project_id + '.appdata.xml.in',
+                           output: project_id + '.appdata.xml',
+                          install: true,

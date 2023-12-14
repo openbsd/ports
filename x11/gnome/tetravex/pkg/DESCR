@@ -1,0 +1,14 @@
+The game window is divided into two boxes: the one on the right side of
+the window contains the pieces that needs to be arranged; the one on the
+left side of the window is where the pieces from the right box will be
+arranged and moved. Each piece is divided into four little triangles
+containing a number.
+
+The scope of the game is to position the pieces so that only two
+identical numbers are next to each other.
+
+It is not possible to position the pieces so that different number are
+next to each other.
+
+The game is completed when you have positioned all the pieces in their
+right positions.
