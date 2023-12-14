@@ -92,6 +92,7 @@
      SUBDIR += tecla
      SUBDIR += tepl
      SUBDIR += terminal
+     SUBDIR += tetravex
      SUBDIR += text-editor
      SUBDIR += themes-extra
      SUBDIR += totem
