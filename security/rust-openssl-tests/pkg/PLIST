@@ -2980,6 +2980,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_iterators.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_lit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_meta.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_parse_buffer.rs
+share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_parse_quote.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_parse_stream.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_pat.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_path.rs
