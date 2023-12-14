@@ -1,8 +1,8 @@
 COMMENT = 	C graph library
-V =		0.10.4
+V =		0.10.8
 DISTNAME =	igraph-$V
 
-SHARED_LIBS =	igraph 2.0	# 0.0
+SHARED_LIBS =	igraph 3.0	# 0.0
 
 CATEGORIES =	math
 
@@ -39,4 +39,11 @@ CONFIGURE_ARGS += 	-DIGRAPH_ENABLE_LTO=ON
 
 DEBUG_PACKAGES = 	${BUILD_PACKAGES}
 .endif
+
+do-test:
+	cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
+		cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} \
+			-j ${MAKE_JOBS} \
+			--target check
+
 .include <bsd.port.mk>
