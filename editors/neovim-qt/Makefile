@@ -2,7 +2,7 @@ COMMENT =	Qt5 GUI front-end for neovim
 
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
-GH_TAGNAME = v0.2.17
+GH_TAGNAME = v0.2.18
 
 CATEGORIES = editors
 
@@ -34,6 +34,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_MSGPACK=On \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On
+CONFIGURE_ENV =		QT_DIR=${LOCALBASE}/lib/qt5/cmake/Qt5/
 
 TEST_IS_INTERACTIVE = X11
 
