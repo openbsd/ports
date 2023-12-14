@@ -7,6 +7,7 @@ COMMENT =	LLVM D Compiler
 DISTFILES =	ldc-${V}-src.tar.gz
 DISTFILES.boot= ldc-${V}-bootstrap.tar.gz
 PKGNAME =	ldc-${V}
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://wiki.dlang.org/LDC
@@ -53,7 +54,7 @@ post-patch:
 	sed -i 's#"/usr/local/lib",#"/usr/local/lib","${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}",#g' \
 		${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ldc2.conf
 	chmod 644 ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/lib*.so* # XXX
-	cp /usr/lib/libc.so.97.* ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ # XXX
+	cp /usr/lib/libc.so.98.* ${WRKDIR}/ldc-${V}-bootstrap/${MACHINE_ARCH}/ # XXX
 
 # Same trick as with flang:
 #   Replace the shared LLVM.so library with the static libraries.
