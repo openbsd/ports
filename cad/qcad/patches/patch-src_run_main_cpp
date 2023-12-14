@@ -3,7 +3,7 @@ don't overwrite the plugins directory: remove the applicationDir and add the plu
 Index: src/run/main.cpp
 --- src/run/main.cpp.orig
 +++ src/run/main.cpp
-@@ -285,7 +285,11 @@ int main(int argc, char *argv[]) {
+@@ -326,7 +326,11 @@ int main(int argc, char *argv[]) {
          qWarning() << "No plugin paths found";
          return -1;
      }

@@ -4,8 +4,8 @@ have in our libc.
 Index: src/core/RDebug.cpp
 --- src/core/RDebug.cpp.orig
 +++ src/core/RDebug.cpp
-@@ -35,7 +35,7 @@ QMap<QString, int> RDebug::counter;
- QString RDebug::prefix;
+@@ -37,7 +37,7 @@ QString RDebug::prefix;
+ QMutex RDebug::mutexCounter;
  
  void RDebug::printBacktrace(const QString& prefix) {
 -#if !defined(Q_OS_WIN) && !defined(Q_OS_ANDROID)

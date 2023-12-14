@@ -2,7 +2,7 @@ COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.27.9.0
+GH_TAGNAME =	v3.28.2.2
 
 SO_VERSION =	2.0
 QCAD_LIBS =	qcadcore \
@@ -62,8 +62,7 @@ pre-configure:
            ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${MODQT5_VERSION}/qt-labs-qtscriptgenerator-${MODQT5_VERSION}.pro
 	${SUBST_CMD} ${WRKSRC}/src/core/RS.cpp \
 		${WRKSRC}/src/core/RSettings.cpp \
-		${WRKSRC}/scripts/Help/ShowReadme/ShowReadme.js \
-		${WRKSRC}/scripts/Widgets/LibraryBrowser/LibraryBrowser.js
+		${WRKSRC}/scripts/Help/ShowReadme/ShowReadme.js
 
 
 do-install:
