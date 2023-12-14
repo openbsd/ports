@@ -1,7 +1,7 @@
 COMMENT=	clone of rxvt with Unicode and Xft support
 
 DISTNAME=	rxvt-unicode-9.31
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	x11
