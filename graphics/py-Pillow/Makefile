@@ -19,7 +19,8 @@ FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
+# PyQt-related tests segfault
+MODPY_PYTEST_ARGS=	--ignore test_qt_image_*.py
 MODPY_PYBUILD=		setuptools
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -28,6 +29,7 @@ LIB_DEPENDS=		graphics/lcms2 \
 			graphics/libimagequant \
 			graphics/libwebp
 TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			${MODPY_TKINTER_DEPENDS} \
 			devel/py-test-timeout${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 
@@ -36,8 +38,6 @@ INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 pre-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py
-	# Removing PyQt-related tests that segfault
-	cd ${WRKSRC}/Tests; rm -f test_qt_image_*.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_INCDIR}
