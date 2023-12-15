@@ -33,8 +33,7 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-test-timeout${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 
-SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
-INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
+SUBST_VARS+=		MODPY_FLAVOR
 
 pre-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py

@@ -1,6 +1,6 @@
 @pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
-${INCL_DIR}/ImPlatform.h
-${INCL_DIR}/Imaging.h
+include/python${MODPY_VERSION}/ImPlatform.h
+include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BlpImagePlugin.py
