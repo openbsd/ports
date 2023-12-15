@@ -60,6 +60,7 @@
      SUBDIR += xcopilot
      SUBDIR += xhomer
      SUBDIR += xnp2
+     SUBDIR += xnp21kai
      SUBDIR += xroar
 
 .include <bsd.port.subdir.mk>
