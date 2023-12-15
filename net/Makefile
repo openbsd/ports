@@ -730,6 +730,7 @@
      SUBDIR += transmission-remote-gtk
      SUBDIR += tremc
      SUBDIR += trickle
+     SUBDIR += trippy
      SUBDIR += ttg
      SUBDIR += tut
      SUBDIR += twirssi
