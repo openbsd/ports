@@ -2,7 +2,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			12.0.0
+V =			12.0.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
