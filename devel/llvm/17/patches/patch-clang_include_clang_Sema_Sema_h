@@ -1,7 +1,7 @@
 Index: clang/include/clang/Sema/Sema.h
 --- clang/include/clang/Sema/Sema.h.orig
 +++ clang/include/clang/Sema/Sema.h
-@@ -13727,6 +13727,7 @@ class Sema final { (public)
+@@ -13730,6 +13730,7 @@ class Sema final { (public)
      FST_FreeBSDKPrintf,
      FST_OSTrace,
      FST_OSLog,

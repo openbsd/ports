@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/ToolChains/Clang.cpp
 --- clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ clang/lib/Driver/ToolChains/Clang.cpp
-@@ -1587,15 +1587,21 @@ void AddUnalignedAccessWarning(ArgStringList &CmdArgs)
+@@ -1584,15 +1584,21 @@ void AddUnalignedAccessWarning(ArgStringList &CmdArgs)
  
  static void CollectARMPACBTIOptions(const ToolChain &TC, const ArgList &Args,
                                      ArgStringList &CmdArgs, bool isAArch64) {
@@ -12,7 +12,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
                       : Args.getLastArg(options::OPT_mbranch_protection_EQ);
 -  if (!A)
 +  if (!A) {
-+    if (Triple.isOSOpenBSD()) {
++    if (Triple.isOSOpenBSD() && isAArch64) {
 +      CmdArgs.push_back("-msign-return-address=non-leaf");
 +      CmdArgs.push_back("-msign-return-address-key=a_key");
 +      CmdArgs.push_back("-mbranch-target-enforce");
@@ -25,19 +25,19 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    if (!(isAArch64 || (Triple.isArmT32() && Triple.isArmMClass())))
      D.Diag(diag::warn_incompatible_branch_protection_option)
          << Triple.getArchName();
-@@ -1609,7 +1615,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
+@@ -1606,7 +1612,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
        D.Diag(diag::err_drv_unsupported_option_argument)
            << A->getSpelling() << Scope;
      Key = "a_key";
 -    IndirectBranches = false;
-+    if (Triple.isOSOpenBSD())
++    if (Triple.isOSOpenBSD() && isAArch64)
 +      IndirectBranches = true;
 +    else
 +      IndirectBranches = false;
    } else {
      StringRef DiagMsg;
      llvm::ARM::ParsedBranchProtection PBP;
-@@ -2640,6 +2649,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2637,6 +2646,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
            CmdArgs.push_back("-soft-float");
            continue;
          }
@@ -49,7 +49,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
          MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
                                  .Case("-mips1", "+mips1")
-@@ -5469,9 +5483,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5466,9 +5480,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
    // We turn strict aliasing off by default if we're in CL mode, since MSVC
    // doesn't do any TBAA.
@@ -64,7 +64,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
      CmdArgs.push_back("-relaxed-aliasing");
    if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
                      options::OPT_fno_struct_path_tbaa, true))
-@@ -6473,7 +6490,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6470,7 +6487,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -74,7 +74,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -6494,7 +6512,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6491,7 +6509,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -124,7 +124,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -6569,6 +6628,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6566,6 +6625,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
      CmdArgs.push_back(
          Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
@@ -136,7 +136,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -7041,6 +7105,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7038,6 +7102,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
