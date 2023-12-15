@@ -17,11 +17,11 @@ MODPY_PI =		Yes
 RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
 			print/py-pikepdf${MODPY_FLAVOR}
 
-# some tests fail as they require pdfrw (overall this is optional for
-# img2pdf and autodetected at runtime; we don't have it in ports yet)
+# assert failures in some compare_ghostscript tests
 TEST_DEPENDS =		graphics/colord \
 			graphics/p5-Image-ExifTool \
 			math/py-scipy${MODPY_FLAVOR} \
+			print/ghostscript/gnu \
 			sysutils/coreutils \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/mupdf
