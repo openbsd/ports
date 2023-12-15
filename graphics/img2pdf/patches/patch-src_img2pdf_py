@@ -1,0 +1,11 @@
+Index: src/img2pdf.py
+--- src/img2pdf.py.orig
++++ src/img2pdf.py
+@@ -3842,6 +3842,7 @@ def validate_icc(fname):
+ 
+ def get_default_icc_profile():
+     for profile in [
++        "/usr/local/share/color/icc/colord/sRGB.icc",
+         "/usr/share/color/icc/sRGB.icc",
+         "/usr/share/color/icc/OpenICC/sRGB.icc",
+         "/usr/share/color/icc/colord/sRGB.icc",

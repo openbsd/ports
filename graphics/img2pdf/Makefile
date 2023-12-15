@@ -19,8 +19,14 @@ RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
 
 # some tests fail as they require pdfrw (overall this is optional for
 # img2pdf and autodetected at runtime; we don't have it in ports yet)
-TEST_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR} \
+TEST_DEPENDS =		graphics/colord \
+			graphics/p5-Image-ExifTool \
 			math/py-scipy${MODPY_FLAVOR} \
-			graphics/p5-Image-ExifTool
+			sysutils/coreutils \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			textproc/mupdf
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
 
 .include <bsd.port.mk>

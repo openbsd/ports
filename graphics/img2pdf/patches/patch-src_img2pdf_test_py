@@ -1,0 +1,11 @@
+Index: src/img2pdf_test.py
+--- src/img2pdf_test.py.orig
++++ src/img2pdf_test.py
+@@ -26,6 +26,7 @@ img2pdfprog = os.getenv("img2pdfprog", default="src/im
+ 
+ ICC_PROFILE = None
+ ICC_PROFILE_PATHS = (
++    "/usr/local/share/color/icc/colord/sRGB.icc",
+     # Debian
+     "/usr/share/color/icc/ghostscript/srgb.icc",
+     # Fedora
