@@ -1,0 +1,35 @@
+Trippy combines the functionality of traceroute and ping (supporting
+ICMP, UDP, TCP over IPv4 and IPv6) and is designed to assist with the
+analysis of networking issues.
+
+Customizable tracing options:
+    packet size & payload pattern
+    start and maximum time-to-live (TTL)
+    minimum and maximum round duration
+    round end grace period & maximum number of unknown hops
+    source & destination port (TCP & UDP)
+    source address and source interface
+    TOS (aka DSCP + ECN)
+Identification of Equal Cost Multi-path Routing
+RFC4884 ICMP Multi-Part Messages
+    Generic Extension Objects
+    MPLS Label Stacks
+Tui (curses-style) interface:
+    Trace multiple targets simultaneously from a single instance
+    Per hop stats (sent, rcvd, loss%, last, avg, best, worst, stddev & status)
+    Per hop round-trip-time (RTT) history and frequency distributing charts
+    Interactive chart of RTT for all hops in a trace with zooming capability
+    Interactive GeoIp world map (needs local mmdb files)
+    Isolate and filter by individual tracing flows
+    Customizable color theme & key bindings
+    Show multiple hosts per hop
+    Show hop details and navigate hosts within each hop
+    Responsive UI with adjustable refresh rate
+DNS:
+    Lazy reverse DNS queries
+    Lookup autonomous system number (ASN) and name
+Generate tracing reports:
+    json, csv & tabular (pretty-printed and markdown)
+    Tracing flows report
+    Graphviz dot charts
+    configurable reporting cycles
