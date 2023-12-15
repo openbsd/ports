@@ -1,6 +1,7 @@
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
 MODPY_EGG_VERSION=	10.1.0
+REVISION=		0
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -11,8 +12,8 @@ HOMEPAGE=		https://python-pillow.org/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += freetype imagequant jpeg lcms2 openjp2 pthread tiff
-WANTLIB += webp webpdemux webpmux z
+WANTLIB += freetype imagequant jpeg lcms2 openjp2 tiff
+WANTLIB += webp webpdemux webpmux xcb z
 
 FLAVORS=		python3
 FLAVOR=			python3
@@ -34,6 +35,9 @@ TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 
 SUBST_VARS+=		MODPY_FLAVOR
+# fail if libs aren't found
+MODPY_PYBUILD_ARGS=	-C tiff=enable -C xcb=enable
+# can also use -C debug=true
 
 pre-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./selftest.py

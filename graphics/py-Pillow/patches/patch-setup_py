@@ -1,0 +1,32 @@
+hunk 1: allow finding X libs
+
+hunk 2: find_library_file (which comes from distutils via setuptools)
+doesn't search for .so.X.Y extensions, only .so or .a, so is unable to
+locate libtiff since graphics/tiff stopped building the static library.
+patch to workaround.
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -589,6 +589,12 @@ class pil_build_ext(build_ext):
+                     ),
+                 )
+ 
++        elif sys.platform.startswith("openbsd"):
++            _add_directory(library_dirs, "/usr/X11R6/lib")
++            _add_directory(library_dirs, "/usr/local/lib")
++            _add_directory(include_dirs, "/usr/X11R6/include")
++            _add_directory(include_dirs, "/usr/local/include")
++
+         elif sys.platform.startswith("netbsd"):
+             _add_directory(library_dirs, "/usr/pkg/lib")
+             _add_directory(include_dirs, "/usr/pkg/include")
+@@ -702,7 +708,7 @@ class pil_build_ext(build_ext):
+         if feature.want("tiff"):
+             _dbg("Looking for tiff")
+             if _find_include_file(self, "tiff.h"):
+-                if _find_library_file(self, "tiff"):
++                if sys.platform.startswith("openbsd") or _find_library_file(self, "tiff"):
+                     feature.tiff = "tiff"
+                 if sys.platform in ["win32", "darwin"] and _find_library_file(
+                     self, "libtiff"
