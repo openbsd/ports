@@ -1,0 +1,9 @@
+@bin bin/xnp21kai
+man/ja/
+man/ja/man1/
+@man man/ja/man1/xnp21kai.1j
+@man man/man1/xnp21kai.1
+share/applications/xnp21kai.desktop
+share/icons/hicolor/scalable/apps/np2.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

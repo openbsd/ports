@@ -1,0 +1,42 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -280,9 +280,9 @@ if(NOT CMAKE_BUILD_TYPE)
+ endif()
+ if(NOT EMSCRIPTEN)
+ set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g -Wall -DDEBUG -DTRACE")
+-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -Wall -DNDEBUG")
++set(CMAKE_CXX_FLAGS_RELEASE "-Wall -DNDEBUG")
+ set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os -Wall")
+-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Og -g -Wall -DNDEBUG")
++set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Wall -DNDEBUG")
+ endif()
+ set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+ 
+@@ -379,7 +379,7 @@ if(NOT CMAKE_CROSSCOMPILING)
+ 
+ 	# SDL
+ 	if(NOT MSVC_VERSION)
+-		find_package(SDL)
++		find_package(SDL2)
+ 		if(USE_SDL AND (USE_SDL_VERSION EQUAL 1))
+ 			if(NOT SDL_FOUND)
+ 				message(FATAL_ERROR "-- Not found SDL")
+@@ -421,7 +421,7 @@ if(NOT CMAKE_CROSSCOMPILING)
+ 
+ 	# SDL_mixer
+ 	if(NOT MSVC_VERSION)
+-		find_package(SDL_mixer)
++		find_package(SDL2_mixer)
+ 		if(USE_SDL_MIXER AND (USE_SDL_VERSION EQUAL 1))
+ 			if(NOT SDL_mixer_FOUND)
+ 				message(FATAL_ERROR "-- Not found SDL_mixer")
+@@ -458,7 +458,7 @@ if(NOT CMAKE_CROSSCOMPILING)
+ 
+ 	# SDL_ttf
+ 	if(NOT MSVC_VERSION)
+-		find_package(SDL_ttf)
++		find_package(SDL2_ttf)
+ 		if(USE_SDL_TTF AND (USE_SDL_VERSION EQUAL 1))
+ 			if(NOT SDL_ttf_FOUND)
+ 				message(FATAL_ERROR "-- Not found SDL_ttf")
