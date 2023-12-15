@@ -332,8 +332,9 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ]; then \
 	echo "*** Port appears to require setuptools_scm" && sleep 2; \
 	fi
 .  endif
+MODPY_PYBUILD_ARGS ?=
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
-	${_MODPY_RUNBIN} -sBm build -w --no-isolation
+	${_MODPY_RUNBIN} -sBm build -w --no-isolation ${MODPY_PYBUILD_ARGS}
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
 	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
