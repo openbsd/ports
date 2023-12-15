@@ -10,6 +10,7 @@ share/ECM/cmake/ECMConfig.cmake
 share/ECM/cmake/ECMConfigVersion.cmake
 share/ECM/find-modules/
 share/ECM/find-modules/ECMFindModuleHelpersStub.cmake
+share/ECM/find-modules/Find7Zip.cmake
 share/ECM/find-modules/Find7z.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
@@ -147,6 +148,7 @@ share/doc/ECM/ExtraCMakeModules.qch
 share/doc/ECM/html/
 share/doc/ECM/html/_sources/
 share/doc/ECM/html/_sources/find-module/
+share/doc/ECM/html/_sources/find-module/Find7Zip.rst.txt
 share/doc/ECM/html/_sources/find-module/Find7z.rst.txt
 share/doc/ECM/html/_sources/find-module/FindCanberra.rst.txt
 share/doc/ECM/html/_sources/find-module/FindEGL.rst.txt
@@ -252,6 +254,7 @@ share/doc/ECM/html/_static/searchtools.js
 share/doc/ECM/html/_static/sidebar.js
 share/doc/ECM/html/_static/sphinx_highlight.js
 share/doc/ECM/html/find-module/
+share/doc/ECM/html/find-module/Find7Zip.html
 share/doc/ECM/html/find-module/Find7z.html
 share/doc/ECM/html/find-module/FindCanberra.html
 share/doc/ECM/html/find-module/FindEGL.html
