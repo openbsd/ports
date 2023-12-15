@@ -1,8 +1,7 @@
 COMMENT =		losslessly convert images to PDF
 
-MODPY_EGG_VERSION =	0.4.4
+MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		img2pdf-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		graphics
 
