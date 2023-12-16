@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.119.0
+MODGO_VERSION =	v0.121.1
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -11,7 +11,6 @@ CATEGORIES =	www
 
 HOMEPAGE =	https://gohugo.io/
 
-MAINTAINER =	Paco Esteban <paco@openbsd.org>
 #Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
