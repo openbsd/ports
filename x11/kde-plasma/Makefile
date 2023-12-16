@@ -24,6 +24,7 @@
      SUBDIR += libksysguard
      SUBDIR += milou
      SUBDIR += oxygen-sounds
+     SUBDIR += plasma-browser-integration
      SUBDIR += plasma-desktop
      SUBDIR += plasma-nano
      SUBDIR += plasma-pa
@@ -31,6 +32,7 @@
      SUBDIR += plasma-workspace
      SUBDIR += plasma-workspace-wallpapers
      SUBDIR += polkit-kde-agent-1
+     SUBDIR += powerdevil
      SUBDIR += qqc2-breeze-style
      SUBDIR += systemsettings
      SUBDIR += xdg-desktop-portal-kde
