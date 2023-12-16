@@ -1,6 +1,6 @@
 COMMENT =	translator library for point cloud formats
 
-V =	2.6.1
+V =	2.6.2
 DISTNAME =	PDAL-${V}-src
 PKGNAME =	pdal-${V}
 EXTRACT_SUFX =	.tar.bz2
@@ -27,7 +27,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		databases/postgresql \
 		net/curl
 
-WANTLIB +=	c crypto curl gdal geotiff m proj pq pthread
+WANTLIB +=	c crypto curl execinfo gdal geotiff m proj pq pthread
 WANTLIB +=	ssl xml2 z zstd
 WANTLIB += ${COMPILER_LIBCXX}
 
