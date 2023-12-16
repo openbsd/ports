@@ -1,7 +1,6 @@
 COMMENT =	Python bindings for notmuch
 
 PKGNAME =	py-notmuch-${V}
-REVISION =	1
 
 MODULES =	lang/python
 MODPY_EGG_VERSION = ${V}
