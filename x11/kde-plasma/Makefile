@@ -48,7 +48,6 @@
     # SUBDIR +=kwallet-pam
     # SUBDIR +=plank-player
     # SUBDIR +=plasma-bigscreen
-    # SUBDIR +=plasma-browser-integration
     # SUBDIR +=plasma-disks
     # SUBDIR +=plasma-firewall
     # SUBDIR +=plasma-integration
@@ -61,7 +60,6 @@
     # SUBDIR +=plasma-vault
     # SUBDIR +=plasma-welcome
     # SUBDIR +=plymouth-kcm
-    # SUBDIR +=powerdevil
     # SUBDIR +=sddm-kcm
 
     # out-of-scope
