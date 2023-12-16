@@ -287,7 +287,7 @@ SHA256 (cargo/wasm-bindgen-macro-0.2.87.tar.gz) = 3uSV5VmCo71IEFp7lH/SqbSorjAQBB
 SHA256 (cargo/wasm-bindgen-macro-support-0.2.87.tar.gz) = VGgbGKRnZfCVdYOI8tDPFuuNQWm2OatXWo9Wk68hDHs=
 SHA256 (cargo/wasm-bindgen-shared-0.2.87.tar.gz) = ymrQWkhwsr9f6ZURfTcoQ3vSfXzV8G8TwXRD7zaXdaE=
 SHA256 (cargo/web-sys-0.3.64.tar.gz) = m4XL74wiCmq8Aq79iS38D8I6+xxqQmMW7DMlOjh3JJs=
-SHA256 (cargo/webpki-0.22.0.tar.gz) = 8JXXgZLiCBgwgcwHvFUV71UhY5evSLhz5e3NcmN/ob0=
+SHA256 (cargo/webpki-0.22.4.tar.gz) = 7WOupc5z0P9AWYQQLELelPxVprdXZdYhxlJiRps8m1M=
 SHA256 (cargo/webpki-roots-0.22.6.tar.gz) = tsceQNfSw0pRBjAftjInTKNyQs0MnT5k2+zjcaQKLYc=
 SHA256 (cargo/webpki-roots-0.24.0.tar.gz) = spFUbV2dHqt08GnHd0nyy4UEoSyqIPDy3pPdv29BGIg=
 SHA256 (cargo/webpki-roots-0.25.2.tar.gz) = FCR7tXvk83ffuUxygwuM6Pxr6sA89L97lzLq3UFBI/w=
@@ -310,7 +310,7 @@ SHA256 (cargo/xpath_reader-0.5.3.tar.gz) = 620e4uMnB6xON4IgsmsN6NjBEojamrhvepfSd
 SHA256 (cargo/zerocopy-0.7.25.tar.gz) = jNNppnwO3+8VAQ+YDDy+Rdf2Ud6sLNZ84JfNgB3hZVc=
 SHA256 (cargo/zerocopy-derive-0.7.25.tar.gz) = wvFAvaIZomzMDNsD26WK9yWQxTsiZCV32IqSe8XIfWs=
 SHA256 (cargo/zeroize-1.6.0.tar.gz) = KglW8bp8eQm/tmwunkEkq29kglYPZii1quujkgfJqtk=
-SHA256 (notify_push-0.6.5.tar.gz) = hGIzWb1NYz46l4/OAoBEJnd+wEQWy4Vcfr5maOih1t0=
+SHA256 (notify_push-0.6.6.tar.gz) = 4stw2BHo56rZhLM8XnIGzhWAyGWtiWKdjPDqA7ir/mg=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.7.7.tar.gz) = 38508
@@ -600,7 +600,7 @@ SIZE (cargo/wasm-bindgen-macro-0.2.87.tar.gz) = 13897
 SIZE (cargo/wasm-bindgen-macro-support-0.2.87.tar.gz) = 20006
 SIZE (cargo/wasm-bindgen-shared-0.2.87.tar.gz) = 7248
 SIZE (cargo/web-sys-0.3.64.tar.gz) = 725584
-SIZE (cargo/webpki-0.22.0.tar.gz) = 58663
+SIZE (cargo/webpki-0.22.4.tar.gz) = 63472
 SIZE (cargo/webpki-roots-0.22.6.tar.gz) = 242386
 SIZE (cargo/webpki-roots-0.24.0.tar.gz) = 245632
 SIZE (cargo/webpki-roots-0.25.2.tar.gz) = 250405
@@ -623,4 +623,4 @@ SIZE (cargo/xpath_reader-0.5.3.tar.gz) = 10569
 SIZE (cargo/zerocopy-0.7.25.tar.gz) = 127666
 SIZE (cargo/zerocopy-derive-0.7.25.tar.gz) = 528380
 SIZE (cargo/zeroize-1.6.0.tar.gz) = 19049
-SIZE (notify_push-0.6.5.tar.gz) = 109223
+SIZE (notify_push-0.6.6.tar.gz) = 109234

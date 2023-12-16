@@ -10,7 +10,7 @@ COMMENT =		update notifications for nextcloud clients
 
 GH_ACCOUNT =		nextcloud
 GH_PROJECT =		notify_push
-GH_TAGNAME =		v0.6.5
+GH_TAGNAME =		v0.6.6
 
 CATEGORIES =		www
 
