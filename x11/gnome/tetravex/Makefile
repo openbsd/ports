@@ -12,7 +12,7 @@ MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala yelp
 
 LIB_DEPENDS =		x11/gtk+3
 
