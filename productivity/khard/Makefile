@@ -1,6 +1,6 @@
 COMMENT =		console vCard address book
 
-MODPY_EGG_VERSION =	0.18.0
+MODPY_EGG_VERSION =	0.19.1
 DISTNAME =		khard-${MODPY_EGG_VERSION}
 
 CATEGORIES =		productivity
