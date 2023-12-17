@@ -1,7 +1,7 @@
 COMMENT=	monitor arp & rarp requests
 
 DISTNAME=	arpwatch-2.1a15
-REVISION=	20
+REVISION=	21
 CATEGORIES=	net
 
 SITES=		ftp://ftp.ee.lbl.gov/
