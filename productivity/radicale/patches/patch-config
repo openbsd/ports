@@ -42,7 +42,7 @@ Index: config
  
  # Folder for storing local collections, created if not present
 -#filesystem_folder = ~/.config/radicale/collections
-+filesystem_folder = ${VARBASE}/db/radicale/calendars
++filesystem_folder = ${LOCALSTATEDIR}/db/radicale/calendars
  
  # Database URL for SQLAlchemy
  # dialect+driver://user:password@host/dbname[?key=value..]
