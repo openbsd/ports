@@ -46,7 +46,7 @@ Index: config
  
  # Folder for storing local collections, created if not present
 -#filesystem_folder = /var/lib/radicale/collections
-+#filesystem_folder = ${VARBASE}/db/radicale/collections
++#filesystem_folder = ${LOCALSTATEDIR}/db/radicale/collections
  
  # Lock the storage. Never start multiple instances of Radicale or edit the
  # storage externally while Radicale is running if disabled.

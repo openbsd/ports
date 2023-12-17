@@ -42,7 +42,7 @@ Storage must be exported from Radicale 1.x before upgrading. This README
 file is supplied with Radicale 2, so if you are reading it on an installed
 system, start by uninstalling and reinstalling radicale 1.x, then export:
 
-# doas -u _radicale ${PREFIX}/bin/radicale --export-storage ${VARBASE}/db/radicale/collections
+# doas -u _radicale ${PREFIX}/bin/radicale --export-storage ${LOCALSTATEDIR}/db/radicale/collections
 
 Then install radicale 2.x which can use the exported storage directly.
 For more information, refer to https://radicale.org/1to2/

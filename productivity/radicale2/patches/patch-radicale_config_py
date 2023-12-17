@@ -39,7 +39,7 @@ Index: radicale/config.py
          ("filesystem_folder", {
              "value": os.path.expanduser(
 -                "/var/lib/radicale/collections"),
-+                "${VARBASE}/db/radicale/collections"),
++                "${LOCALSTATEDIR}/db/radicale/collections"),
              "help": "path where collections are stored",
              "type": str}),
          ("max_sync_token_age", {
