@@ -23,12 +23,12 @@ and quicker to use one of the available tools to do this.
 suricata-update
 ---------------
 suricata-update is the recommended way to install and update rules.
-By default it will download the new rules into ${VARBASE}/suricata/rules
+By default it will download the new rules into ${LOCALSTATEDIR}/suricata/rules
 
 Edit ${SYSCONFDIR}/suricata/suricata.yaml and replace the existing
 default-rule-path and rule-files sections with this:
 
-    default-rule-path: ${VARBASE}/suricata/rules/
+    default-rule-path: ${LOCALSTATEDIR}/suricata/rules/
     rule-files:
       - suricata.rules
 

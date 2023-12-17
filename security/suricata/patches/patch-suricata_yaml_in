@@ -114,7 +114,7 @@ Index: suricata.yaml.in
  ##
  ## Configure Suricata to load Suricata-Update managed rules.
  ##
-+#default-rule-path: ${VARBASE}/suricata/rules
++#default-rule-path: ${LOCALSTATEDIR}/suricata/rules
 +#rule-files:
 +#  - suricata.rules
  

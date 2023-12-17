@@ -6,7 +6,7 @@ Index: suricata-update/suricata/update/config.py
  logger = logging.getLogger()
  
 -DEFAULT_DATA_DIRECTORY = "/var/lib/suricata"
-+DEFAULT_DATA_DIRECTORY = "${VARBASE}/suricata"
++DEFAULT_DATA_DIRECTORY = "${LOCALSTATEDIR}/suricata"
  
  # Cache directory - relative to the data directory.
  CACHE_DIRECTORY = os.path.join("update", "cache")

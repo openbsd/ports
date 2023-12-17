@@ -6,7 +6,7 @@ Index: suricata-update/suricata/update/parsers.py
      (("-D", "--data-dir"),
       {'metavar': '<directory>', 'dest': 'data_dir',
 -      'help': "Data directory (default: /var/lib/suricata)"}),
-+      'help': "Data directory (default: ${VARBASE}/suricata)"}),
++      'help': "Data directory (default: ${LOCALSTATEDIR}/suricata)"}),
      (("-c", "--config"),
       {'metavar': '<filename>',
        'help': "configuration file (default: %s)" % (default_update_yaml)}),
