@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/minio server"
-daemon_flags="${VARBASE}/minio/export"
+daemon_flags="/var/minio/export"
 daemon_user="_minio"
 
 . /etc/rc.d/rc.subr
