@@ -3,6 +3,7 @@ COMMENT =		optimising static compiler for Python and Cython
 MODPY_EGG_VERSION =	0.29.34
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		py-cython-${MODPY_EGG_VERSION}
+REVISION =		0
 CATEGORIES =		lang
 
 EPOCH =			0
@@ -17,18 +18,14 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_git${MODPY_FLAVOR}
 
-.if ${FLAVOR:Mpython3}
 TEST_DEPENDS +=		math/py-numpy${MODPY_FLAVOR}
-.else
-NO_TEST =		Yes
-.endif
 
 PORTHOME =		${WRKDIR}
 
@@ -39,10 +36,5 @@ MAKE_ENV +=		PYTHON=${MODPY_BIN}
 do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} TESTOPTS=-j${MAKE_JOBS} \
 		${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
-
-post-install:
-.for i in cygdb cython cythonize
-	mv ${PREFIX}/bin/$i{,${MODPY_BIN_SUFFIX}}
-.endfor
 
 .include <bsd.port.mk>

@@ -18,7 +18,6 @@
      SUBDIR += compcert
      SUBDIR += cparser
      SUBDIR += crystal
-     SUBDIR += cython
      SUBDIR += cython,python3
      SUBDIR += datalog
      SUBDIR += deno
