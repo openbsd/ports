@@ -41,7 +41,7 @@ respective documentation.
 The SOGo system user
 ====================
 The system user and group intended to run the SOGo application server
-is called _sogo. The users home directory is ${VARBASE}/sogo.
+is called _sogo. The users home directory is ${LOCALSTATEDIR}/sogo.
 
 The SOPE database adaptor
 =========================
@@ -58,15 +58,15 @@ and SOGo is listening on its default port 20000.
 Nginx runs in a chroot environment on OpenBSD, therefore you have to
 copy some files into the server's chroot environment:
 
-# mkdir -p ${VARBASE}/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
+# mkdir -p ${LOCALSTATEDIR}/www/lib/sogo
+# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${LOCALSTATEDIR}/www/lib/sogo/www
 
 Edit /etc/nginx/nginx.conf
 
 server {
 
     listen 80;
-    root ${VARBASE}/www/lib/sogo/www/;
+    root ${LOCALSTATEDIR}/www/lib/sogo/www/;
     proxy_http_version 1.1;
 
     location = /
@@ -120,24 +120,24 @@ server {
 
     location /SOGo.woa/WebServerResources/
     {
-        alias ${VARBASE}/www/lib/sogo/www/;
+        alias ${LOCALSTATEDIR}/www/lib/sogo/www/;
         allow all;
     }
 
     location /SOGo/WebServerResources/
     {
-        alias ${VARBASE}/www/lib/sogo/www/;
+        alias ${LOCALSTATEDIR}/www/lib/sogo/www/;
         allow all;
     }
 
     location ^/SOGo/so/ControlPanel/Products/([^/]*)/Resources/(.*)$
     {
-        alias ${VARBASE}/www/lib/sogo/$1.SOGo/Resources/$2;
+        alias ${LOCALSTATEDIR}/www/lib/sogo/$1.SOGo/Resources/$2;
     }
 
     location ^/SOGo/so/ControlPanel/Products/[^/]*UI/Resources/.*\.(jpg|png|gif|css|js)$
     {
-        alias ${VARBASE}/www/lib/sogo/$1.SOGo/Resources/$2;
+        alias ${LOCALSTATEDIR}/www/lib/sogo/$1.SOGo/Resources/$2;
     }
 }
 
@@ -149,7 +149,7 @@ A note on using CAS
 ===================
 Using CAS is not tested by the maintainer. You have to copy
 ${TRUEPREFIX}/share/doc/sogo/cas-proxy-validate.py to
-${VARBASE}/www/cgi-bin. Within the script, you have to edit the config
+${LOCALSTATEDIR}/www/cgi-bin. Within the script, you have to edit the config
 array and the path to your python to fit your configurtaion.
 The script also requires Python memcached, provided by
 the py-memcached package.
@@ -158,7 +158,7 @@ A note on using Thunderbird integrator
 ======================================
 If you are going to use Thunderbird integrator you will need the php
 script installed on ${TRUEPREFIX}/share/doc/sogo/updates.php.
-You should copy it under ${VARBASE}/www/htdocs, install the php package and
+You should copy it under ${LOCALSTATEDIR}/www/htdocs, install the php package and
 follow the instuctions in the SOGo manual.
 
 SOGo configuration example
@@ -194,8 +194,8 @@ sogod SOGoTimeZone Europe/Berlin
 sogod SOGoFoldersSendEMailNotifications YES
 sogod SOGoMemcachedHost localhost
 sogod SOGoMailingMechanism smtp
-sogod WOLogFile ${VARBASE}/log/sogo/sogod.log
-sogod WOPidFile ${VARBASE}/sogo/sogod.pid
+sogod WOLogFile ${LOCALSTATEDIR}/log/sogo/sogod.log
+sogod WOPidFile ${LOCALSTATEDIR}/sogo/sogod.pid
 sogod SOGoMailDomain my-domain.com
 sogod OCSFolderInfoURL postgresql://_sogo:sogo@localhost:5432/sogo/sogo_folder_info
 sogod SOGoProfileURL postgresql://_sogo:sogo@localhost:5432/sogo/sogo_user_profile
@@ -213,9 +213,9 @@ Upgrading from older SOGo versions
 ==================================
 Update the files in the chroot environment of apache as root:
 
-# rm -rf ${VARBASE}/www/lib/sogo
-# mkdir -p ${VARBASE}/www/lib/sogo
-# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
+# rm -rf ${LOCALSTATEDIR}/www/lib/sogo
+# mkdir -p ${LOCALSTATEDIR}/www/lib/sogo
+# cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${LOCALSTATEDIR}/www/lib/sogo/www
 
 Upgrade SOGo from < 2.3.0
 ==========================
