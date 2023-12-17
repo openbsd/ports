@@ -1,0 +1,18 @@
+@newgroup _soju:895
+@newuser _soju:895:_soju::soju user:${LOCALSTATEDIR}/soju:/sbin/nologin
+@rcscript ${RCDIR}/soju
+@bin bin/soju
+@bin bin/sojuctl
+@bin bin/sojudb
+@man man/man1/soju.1
+@man man/man1/sojuctl.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/soju/
+@sample ${SYSCONFDIR}/soju/
+@mode 644
+@owner _soju
+@group _soju
+share/examples/soju/config
+@sample ${SYSCONFDIR}/soju/config
+@mode 755
+@sample ${LOCALSTATEDIR}/soju/

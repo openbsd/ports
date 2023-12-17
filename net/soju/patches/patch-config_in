@@ -1,0 +1,10 @@
+Index: config.in
+--- config.in.orig
++++ config.in
+@@ -1,4 +1,4 @@
+-db sqlite3 /var/lib/soju/main.db
+-message-store fs /var/lib/soju/logs/
++db sqlite3 /var/soju/main.db
++message-store fs /var/soju/logs/
+ listen ircs://
+ listen unix+admin://

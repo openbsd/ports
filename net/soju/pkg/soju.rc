@@ -1,0 +1,16 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/soju"
+daemon_flags="-config ${SYSCONFDIR}/soju/config"
+daemon_logger=daemon.info
+daemon_user=_soju
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_pre() {
+	install -d -o _soju /var/run/soju
+}
+
+rc_cmd $1

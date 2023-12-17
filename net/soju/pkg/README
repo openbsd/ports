@@ -1,0 +1,29 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Creating a database
+===================
+
+soju requires a database to be created before starting the daemon.
+This can be done as follows:
+
+$ doas -u _soju sojudb -config ${SYSCONFDIR}/soju/config create-user <username> -admin
+
+This will create the database under ${LOCALSTATEDIR}/soju/main.db or as specified
+in ${SYSCONFDIR}/soju/config.
+
+
+Using TLS
+=========
+
+By default, soju listens with TLS over TCP on port 6679. However
+for this to work, it is necessary to first configure certificates
+under ${SYSCONFDIR}/soju/config e.g.:
+
+...
+listen ircs://
+tls ${SYSCONFDIR}/ssl/example.com.fullchain.pem ${SYSCONFDIR}/ssl/private/example.com.key
+...
+
+Note that certificate and key should be readable by the _soju user.
