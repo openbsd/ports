@@ -6,7 +6,7 @@ Fetching access/secret
 ======================
 
 By default minio server runs as _minio user, and creates its configuration file
-at first startup in ${VARBASE}/minio/export/.minio.sys/config/config.json. This
+at first startup in ${LOCALSTATEDIR}/minio/export/.minio.sys/config/config.json. This
 file contains the randomly generated accessKey and secretKey tokens that should
 be used by minioc/S3-compatible clients to authenticate to the server.
 
