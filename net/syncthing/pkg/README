@@ -23,7 +23,7 @@ Syncthing can be started via the included RC script, thus running
 Syncthing as a system service. This is fine for single user
 configurations. Under this mode of operation, Syncthing will run as the
 _syncthing user and store the default 'Sync' folder under
-${VARBASE}/syncthing.
+${LOCALSTATEDIR}/syncthing.
 
 Starting Manually
 -----------------
