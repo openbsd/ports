@@ -31,7 +31,6 @@ MODULES=		devel/dconf \
 
 SUBST_VARS +=		MODCLANG_VERSION
 MODCLANG_COMPILER_LINKS=No
-MODCLANG_VERSION=	16
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
