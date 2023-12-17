@@ -1,0 +1,6 @@
+@bin bin/senpai
+@comment @bin bin/test
+@man man/man1/senpai.1
+@man man/man5/senpai.5
+share/applications/senpai.desktop
+@tag update-desktop-database
