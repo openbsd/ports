@@ -4,7 +4,7 @@ COMMENT-sasl=	SASL module for ZNC
 DISTNAME=	znc-1.8.2
 CATEGORIES=	net
 SITES=		${HOMEPAGE}releases/
-REVISION-main=	5
+REVISION-main=	6
 REVISION-sasl=	0
 
 HOMEPAGE=	https://znc.in/

@@ -6,6 +6,6 @@ Configuration file
 ==================
 
 The default configuration file for ZNC on OpenBSD is to be stored
-at ${VARBASE}/znc/configs/znc.conf and can be created interactively by
+at ${LOCALSTATEDIR}/znc/configs/znc.conf and can be created interactively by
 
-$ su -s /bin/ksh _znc -c "${LOCALBASE}/bin/znc -d ${VARBASE}/znc --makeconf"
+$ su -s /bin/ksh _znc -c "${LOCALBASE}/bin/znc -d ${LOCALSTATEDIR}/znc --makeconf"
