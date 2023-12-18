@@ -487,6 +487,7 @@
      SUBDIR += py-responses,python3
      SUBDIR += py-selenium,python3
      SUBDIR += py-soupsieve,python3
+     SUBDIR += py-spotipy,python3
      SUBDIR += py-tempita,python3
      SUBDIR += py-terminado,python3
      SUBDIR += py-tornado,python3
