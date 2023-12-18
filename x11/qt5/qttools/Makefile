@@ -3,6 +3,7 @@ QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin
 PKGNAME-webview =	qwebview-${QT5_KDE_VERSION}
+REVISION =		0
 
 KDE_COMMIT =		16d0a9944bbd4a05edfb364bc5c28f19533a7449
 KDE_VERSION =		4

@@ -4,7 +4,7 @@ COMMENT =	static source code analyzer for Qt-based C++
 
 V =		1.11
 DISTNAME =	clazy-${V}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	lang devel
 
