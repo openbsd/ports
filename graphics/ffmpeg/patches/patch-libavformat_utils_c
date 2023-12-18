@@ -6,6 +6,10 @@ av_unit() is complete batshittery:
 
 https://marc.info/?l=openbsd-ports&m=170284868209618&w=2
 
+Turns out the same commit has landed upstream:
+
+https://github.com/FFmpeg/FFmpeg/commit/ab792634197e364ca1bb194f9abe36836e42f12d
+
 Index: libavformat/utils.c
 --- libavformat/utils.c.orig
 +++ libavformat/utils.c
