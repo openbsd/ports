@@ -657,6 +657,7 @@
      SUBDIR += scapy
      SUBDIR += seafile
      SUBDIR += sendxmpp
+     SUBDIR += senpai
      SUBDIR += serf
      SUBDIR += si
      SUBDIR += sic
@@ -675,6 +676,7 @@
      SUBDIR += snowflake_proxy
      SUBDIR += socat
      SUBDIR += softflowd
+     SUBDIR += soju
      SUBDIR += spectrum-tools
      SUBDIR += sping
      SUBDIR += srain
