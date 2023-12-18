@@ -1,0 +1,17 @@
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Deprecated-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/deprecated/
+lib/python${MODPY_VERSION}/site-packages/deprecated/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}classic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/deprecated/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/deprecated/classic.py
+lib/python${MODPY_VERSION}/site-packages/deprecated/sphinx.py
