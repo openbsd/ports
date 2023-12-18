@@ -1,3 +1,5 @@
+BROKEN-i386 =	i386c/ia32/paging.h:368:14: error: function with no prototype cannot use the fastcall calling convention
+
 COMMENT =	PC-9801 emulator
 
 DISTNAME =	NP21kai-0.0.20231030
