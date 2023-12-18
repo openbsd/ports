@@ -1,16 +1,15 @@
 COMMENT=	X11 Go Toolset
 
-DISTNAME=	cgoban-1.9.12
-REVISION =	3
+DISTNAME=	cgoban-1.9.14
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://www.igoweb.org/~wms/comp/cgoban/
+HOMEPAGE=	https://cgoban1.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	X11 c m xcb
+WANTLIB=	X11 ICE SM c m
 
-SITES=		${HOMEPAGE}
+SITES=		${SITE_SOURCEFORGE:=cgoban1/}
 
 CONFIGURE_STYLE=gnu
 ALL_TARGET=
