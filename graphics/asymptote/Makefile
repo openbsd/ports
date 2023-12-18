@@ -5,7 +5,7 @@ COMMENT=		powerful descriptive vector graphics language
 DISTNAME=		asymptote-2.82
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		https://asymptote.sourceforge.io/
 
@@ -17,12 +17,12 @@ WANTLIB += GL c curl curses fftw3 gc glut gsl gslcblas m readline sigsegv z
 
 SITES=			${SITE_SOURCEFORGE:=asymptote/}
 
-MODULES=		lang/clang \
-			lang/python
+MODULES=		lang/python
 
-MODCLANG_VERSION=	13
+CFLAGS_base-clang =	-O0
+CXXFLAGS_base-clang =	-O0
 
-COMPILER =		ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS=		graphics/glm \
 			print/texinfo \
