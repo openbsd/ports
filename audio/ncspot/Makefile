@@ -1,5 +1,5 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =         sparc64
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -7,8 +7,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v0.13.4
-REVISION =		0
+GH_TAGNAME =		v1.0.0
 
 CATEGORIES =		audio
 
@@ -20,7 +19,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		${MODCARGO_WANTLIB} crypto curses dbus-1 m portaudio ssl	
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		security/rust-ring
 LIB_DEPENDS=		audio/portaudio-svn \
 			x11/dbus,-main
 
