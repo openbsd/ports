@@ -14,7 +14,7 @@ Index: dmd/druntime/posix.mak
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -470,7 +468,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
+@@ -474,7 +472,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################

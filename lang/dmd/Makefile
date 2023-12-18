@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64
 # No BT CFI yet.
 USE_NOBTCFI =	Yes
 
-V =		2.104.0
+V =		2.106.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =		dmd-${V}{v${V}}.tar.gz
 DISTFILES.boot= 	dmd-${V}-bootstrap.tar.gz

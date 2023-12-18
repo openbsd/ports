@@ -69,6 +69,7 @@ include/dmd/druntime/import/core/internal/gc/proxy.d
 include/dmd/druntime/import/core/internal/hash.d
 include/dmd/druntime/import/core/internal/lifetime.d
 include/dmd/druntime/import/core/internal/moving.d
+include/dmd/druntime/import/core/internal/newaa.d
 include/dmd/druntime/import/core/internal/parseoptions.d
 include/dmd/druntime/import/core/internal/postblit.d
 include/dmd/druntime/import/core/internal/qsort.d
@@ -197,6 +198,9 @@ include/dmd/druntime/import/core/sys/freebsd/config.d
 include/dmd/druntime/import/core/sys/freebsd/dlfcn.d
 include/dmd/druntime/import/core/sys/freebsd/err.d
 include/dmd/druntime/import/core/sys/freebsd/execinfo.d
+include/dmd/druntime/import/core/sys/freebsd/ifaddrs.d
+include/dmd/druntime/import/core/sys/freebsd/net/
+include/dmd/druntime/import/core/sys/freebsd/net/if_dl.d
 include/dmd/druntime/import/core/sys/freebsd/netinet/
 include/dmd/druntime/import/core/sys/freebsd/netinet/in_.d
 include/dmd/druntime/import/core/sys/freebsd/pthread_np.d
@@ -214,7 +218,9 @@ include/dmd/druntime/import/core/sys/freebsd/sys/event.d
 include/dmd/druntime/import/core/sys/freebsd/sys/link_elf.d
 include/dmd/druntime/import/core/sys/freebsd/sys/mman.d
 include/dmd/druntime/import/core/sys/freebsd/sys/mount.d
+include/dmd/druntime/import/core/sys/freebsd/sys/socket.d
 include/dmd/druntime/import/core/sys/freebsd/sys/sysctl.d
+include/dmd/druntime/import/core/sys/freebsd/sys/types.d
 include/dmd/druntime/import/core/sys/freebsd/time.d
 include/dmd/druntime/import/core/sys/freebsd/unistd.d
 include/dmd/druntime/import/core/sys/linux/
@@ -230,6 +236,9 @@ include/dmd/druntime/import/core/sys/linux/fs.d
 include/dmd/druntime/import/core/sys/linux/ifaddrs.d
 include/dmd/druntime/import/core/sys/linux/io_uring.d
 include/dmd/druntime/import/core/sys/linux/link.d
+include/dmd/druntime/import/core/sys/linux/linux/
+include/dmd/druntime/import/core/sys/linux/linux/if_arp.d
+include/dmd/druntime/import/core/sys/linux/linux/if_packet.d
 include/dmd/druntime/import/core/sys/linux/netinet/
 include/dmd/druntime/import/core/sys/linux/netinet/in_.d
 include/dmd/druntime/import/core/sys/linux/netinet/tcp.d
@@ -554,6 +563,8 @@ include/dmd/druntime/import/core/volatile.d
 include/dmd/druntime/import/etc/
 include/dmd/druntime/import/etc/linux/
 include/dmd/druntime/import/etc/linux/memoryerror.d
+include/dmd/druntime/import/etc/valgrind/
+include/dmd/druntime/import/etc/valgrind/valgrind.d
 include/dmd/druntime/import/importc.h
 include/dmd/druntime/import/object.d
 include/dmd/phobos/
