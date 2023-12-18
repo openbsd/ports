@@ -2,7 +2,6 @@ ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 LLVM_V ?=	16.0.6
 CATEGORIES =	lang
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
-MODCLANG_VERSION =	16
 EXTRACT_SUFX =	.tar.xz
 COMPILER =	ports-clang
 MODULES =		devel/cmake

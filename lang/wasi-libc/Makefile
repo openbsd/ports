@@ -18,7 +18,6 @@ COMPILER =	ports-clang
 USE_GMAKE =	yes
 ALL_TARGET =	finish
 
-MODCLANG_VERSION = 16
 MAKE_ENV +=	AR=${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} \
 		NM=${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} \
 		INSTALL_DIR=${WRKINST}${PREFIX}/share/wasi-sysroot
