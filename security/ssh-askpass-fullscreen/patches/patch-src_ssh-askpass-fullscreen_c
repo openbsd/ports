@@ -1,0 +1,12 @@
+Index: src/ssh-askpass-fullscreen.c
+--- src/ssh-askpass-fullscreen.c.orig
++++ src/ssh-askpass-fullscreen.c
+@@ -230,7 +230,7 @@ enter_callback(GtkWidget *widget ATTR_UNUSED,
+ 
+ 	puts(passphrase);
+ 		
+-	memset((void*)passphrase, '\0', strlen(passphrase)); 
++	memset((void*)passphrase, '\b', strlen(passphrase)); 
+ 	gtk_entry_set_text(GTK_ENTRY(entry), passphrase);
+ 	gtk_main_quit();
+ }
