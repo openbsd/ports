@@ -1,0 +1,6 @@
+tinytag is a library for reading music meta data of most common audio files
+in pure Python.
+
+tinytag only provides the minimum needed for _reading_ meta-data.
+It can determine track number, total tracks, title, artist, album, year,
+duration and any more.
