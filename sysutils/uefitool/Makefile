@@ -2,10 +2,7 @@
 PORTROACH =		limit:^A
 
 COMMENT =		UEFI firmware image viewer and editor
-
-GH_ACCOUNT =		LongSoft
-GH_PROJECT =		UEFITool
-GH_TAGNAME =		A66
+DIST_TUPLE =		github	LongSoft	UEFITool	A68	.
 PKGNAME =		${DISTNAME:S/A//}
 
 CATEGORIES =		sysutils
