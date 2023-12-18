@@ -1401,6 +1401,7 @@
      SUBDIR += py-ddt,python3
      SUBDIR += py-debugpy,python3
      SUBDIR += py-decorator,python3
+     SUBDIR += py-deprecated,python3
      SUBDIR += py-deprecation,python3
      SUBDIR += py-dill,python3
      SUBDIR += py-dispatcher,python3
