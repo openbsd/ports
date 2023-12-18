@@ -558,6 +558,7 @@
      SUBDIR += svndumptool
      SUBDIR += swish-e
      SUBDIR += sword
+     SUBDIR += syrics
      SUBDIR += tcpdf
      SUBDIR += tdom
      SUBDIR += terraform-docs
