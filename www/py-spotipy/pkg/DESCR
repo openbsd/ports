@@ -1,0 +1,6 @@
+Spotipy is a lightweight Python library for the Spotify Web API.  With Spotipy
+you get full access to all of the music data provided by the Spotify platform.
+
+Spotipy supports all of the features of the Spotify Web API including access to
+all end points, and support for user authorization.  For details on the
+capabilities you are encouraged to review the Spotify Web API documentation.
