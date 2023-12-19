@@ -1,0 +1,37 @@
+Unbreak on riscv64, we don't have sys/auxv.h or getauxval().
+
+OpenBSD/riscv64 assumes RV64GC, aka RV64IMAFDC.
+Our kernel provides no support for the V extension.
+
+Index: Common/RiscVCPUDetect.cpp
+--- Common/RiscVCPUDetect.cpp.orig
++++ Common/RiscVCPUDetect.cpp
+@@ -27,7 +27,6 @@
+ #include <cstring>
+ #include <set>
+ #include <sstream>
+-#include <sys/auxv.h>
+ #include <vector>
+ #include "Common/Common.h"
+ #include "Common/CPUDetect.h"
+@@ -201,13 +200,13 @@ void CPUInfo::Detect()
+ 	}
+ #endif
+ 
+-	unsigned long hwcap = getauxval(AT_HWCAP);
+-	RiscV_M = ExtensionSupported(hwcap, 'M');
+-	RiscV_A = ExtensionSupported(hwcap, 'A');
+-	RiscV_F = ExtensionSupported(hwcap, 'F');
+-	RiscV_D = ExtensionSupported(hwcap, 'D');
+-	RiscV_C = ExtensionSupported(hwcap, 'C');
+-	RiscV_V = ExtensionSupported(hwcap, 'V');
++	/* OpenBSD uses rv64gc */
++	RiscV_M = true;
++	RiscV_A = true;
++	RiscV_F = true;
++	RiscV_D = true;
++	RiscV_C = true;
++	RiscV_V = false;
+ 	// We assume as in RVA20U64 that F means Zicsr is available.
+ 	RiscV_Zicsr = RiscV_F;
+ 
