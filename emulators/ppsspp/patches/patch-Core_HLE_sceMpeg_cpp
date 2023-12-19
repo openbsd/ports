@@ -11,7 +11,7 @@ Index: Core/HLE/sceMpeg.cpp
  #include "libavformat/avformat.h"
  #include "libavutil/imgutils.h"
  #include "libswscale/swscale.h"
-@@ -801,7 +802,7 @@ static bool InitPmp(MpegContext * ctx){
+@@ -802,7 +803,7 @@ static bool InitPmp(MpegContext * ctx){
  	pmp_want_pix_fmt = AV_PIX_FMT_RGBA;
  
  	// Create H264 video codec
