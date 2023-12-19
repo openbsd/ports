@@ -1,8 +1,8 @@
 COMMENT =	reference implementation of the ZIM specification
 
-DISTNAME =	libzim-8.2.1
+DISTNAME =	libzim-9.0.0
 
-SHARED_LIBS +=  zim                       1.0 # 0.0
+SHARED_LIBS +=  zim                       2.0 # 0.0
 
 CATEGORIES =	archivers
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} icui18n icuuc lzma xapian zstd
 
 SITES =			https://download.openzim.org/release/libzim/
-
 EXTRACT_SUFX =		.tar.xz
 
 # C++11
@@ -27,5 +26,7 @@ LIB_DEPENDS =		archivers/xz \
 			archivers/zstd \
 			databases/xapian-core \
 			textproc/icu4c
+
+TEST_ENV =		TMPDIR=${WRKDIR}
 
 .include <bsd.port.mk>
