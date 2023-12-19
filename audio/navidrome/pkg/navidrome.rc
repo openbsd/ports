@@ -3,6 +3,7 @@
 daemon="${TRUEPREFIX}/bin/navidrome"
 daemon_user="_navidrome"
 daemon_flags="-c ${SYSCONFDIR}/navidrome.toml"
+daemon_logger="daemon.info"
 
 . /etc/rc.d/rc.subr
 
