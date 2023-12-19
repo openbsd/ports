@@ -10,6 +10,7 @@ EMBED_LUAJIT =	No
 .endif
 
 COMMENT =	continuation and extension of Vim
+REVISION =	0
 
 DIST_TUPLE =	github neovim neovim v0.9.4 .
 
@@ -27,6 +28,11 @@ DIST_TUPLE +=	github LuaJIT LuaJIT 03c31124cc3b521ef54fe398e10fa55660a5057d \
 		${STATIC_DEPS_WRKSRC}/luajit
 DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.9 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
+
+SITES.fix =		https://github.com/neovim/neovim/commit/
+# fix(stream): do not close handle if it is already closing (#26537)
+PATCHFILES.fix =	1907abb4c27857fe7f4e7394f32e130f9955a2e7.patch
+PATCH_DIST_STRIP =	-p1
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
