@@ -25,7 +25,6 @@ lib/libopensc.la
 lib/libsmm-local.la
 @lib lib/libsmm-local.so.${LIBsmm-local_VERSION}
 lib/pkcs11/
-@so lib/pkcs11/onepin-opensc-pkcs11.so
 @so lib/pkcs11/opensc-pkcs11.so
 @so lib/pkcs11/pkcs11-spy.so
 lib/pkgconfig/libopensc.pc
@@ -83,9 +82,6 @@ share/examples/opensc/opensc.conf
 @mode 644
 @sample ${SYSCONFDIR}/opensc.conf
 @mode
-share/examples/opensc/xdg/
-share/examples/opensc/xdg/autostart/
-share/examples/opensc/xdg/autostart/pkcs11-register.desktop
 share/opensc/
 share/opensc/asepcos.profile
 share/opensc/authentic.profile

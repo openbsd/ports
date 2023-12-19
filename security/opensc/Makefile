@@ -1,10 +1,9 @@
 COMMENT=	set of libraries and utilities to access smart cards
 
-V=		0.23.0
+V=		0.24.0
 DISTNAME=	opensc-${V}
-REVISION=	0
 
-SHARED_LIBS +=	opensc 8.0	# 9.0
+SHARED_LIBS +=	opensc 8.1	# 10.1
 SHARED_LIBS +=	smm-local 3.1
 
 CATEGORIES=	security
@@ -14,7 +13,8 @@ HOMEPAGE=	https://github.com/OpenSC/OpenSC/wiki
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto curses gio-2.0 gobject-2.0 iconv pthread readline z
+WANTLIB += c crypto curses gio-2.0 gobject-2.0 iconv intl pthread
+WANTLIB += readline z
 
 SITES=		https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
@@ -47,8 +47,8 @@ CONFIGURE_ENV+=	LDL_LIBS=' '
 FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 		sysconfdir="${PREFIX}/share/examples/opensc/"
 
-AUTOCONF_VERSION = 2.69
-AUTOMAKE_VERSION = 1.15
+AUTOCONF_VERSION = 2.71
+AUTOMAKE_VERSION = 1.16
 
 # Allow building with base-gcc
 CFLAGS +=	-Wno-error
