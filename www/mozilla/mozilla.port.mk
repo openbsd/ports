@@ -14,7 +14,6 @@ DPB_PROPERTIES +=	lonesome
 .else
 DPB_PROPERTIES +=	parallel
 .endif
-MODCLANG_VERSION =	16
 
 .for _lib in ${MOZILLA_LIBS}
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
@@ -54,7 +53,7 @@ EXTRACT_SUFX ?=	.tar.xz
 DIST_SUBDIR ?=	mozilla
 
 .if defined(MOZILLA_PROFDATA_TASKID)
-.if ${MOZILLA_PROJECT:Mfirefox*}
+.if 0
 DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}
 SITES.profdata =	https://rhaalovely.net/stuff/
 .else
