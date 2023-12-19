@@ -44,7 +44,7 @@ post-extract:
 	mv ${WRKSRC}/dmd-${V} ${WRKSRC}/dmd
 	mv ${WRKSRC}/phobos-${V} ${WRKSRC}/phobos
 	chmod 644 ${WRKDIR}/dmd-bootstrap/openbsd/bin64/lib*.so* # XXX
-	cp /usr/lib/libc.so.97.* ${WRKDIR}/dmd-bootstrap/openbsd/bin64/ # XXX
+	cp /usr/lib/libc.so.98.* ${WRKDIR}/dmd-bootstrap/openbsd/bin64/ # XXX
 
 # We need to do this manually.
 # Yes, this is all really correct.
