@@ -1,0 +1,9 @@
+Index: plugins/inputs/sql/drivers_sqlite.go
+--- plugins/inputs/sql/drivers_sqlite.go.orig
++++ plugins/inputs/sql/drivers_sqlite.go
+@@ -1,4 +1,4 @@
+-//go:build !mips && !mipsle && !mips64 && !ppc64 && !riscv64 && !loong64 && !mips64le && !(windows && (386 || arm))
++//go:build !mips && !mipsle && !mips64 && !ppc64 && !riscv64 && !loong64 && !mips64le && !(windows && (386 || arm)) && !openbsd
+ 
+ package sql
+ 

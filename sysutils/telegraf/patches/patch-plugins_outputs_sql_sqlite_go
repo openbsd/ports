@@ -1,0 +1,9 @@
+Index: plugins/outputs/sql/sqlite.go
+--- plugins/outputs/sql/sqlite.go.orig
++++ plugins/outputs/sql/sqlite.go
+@@ -1,4 +1,4 @@
+-//go:build !mips && !mipsle && !mips64 && !ppc64 && !riscv64 && !loong64 && !mips64le && !(windows && (386 || arm))
++//go:build !mips && !mipsle && !mips64 && !ppc64 && !riscv64 && !loong64 && !mips64le && !(windows && (386 || arm)) && !openbsd
+ 
+ package sql
+ 
