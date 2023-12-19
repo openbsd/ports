@@ -1,6 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		2.0.0
+V=		2.0.1
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -37,6 +37,7 @@ CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS=	--disable-libudev \
 		--disable-libsystemd \
+		--disable-polkit \
 		--without-systemdsystemunitdir \
 		--enable-libusb \
 		--enable-confdir=${SYSCONFDIR}/ccid \
