@@ -1,0 +1,14 @@
+Use const for ASN1_STRING_TABLE
+
+Index: lib/func.cpp
+--- lib/func.cpp.orig
++++ lib/func.cpp
+@@ -434,7 +434,7 @@ ASN1_STRING *QStringToAsn1(const QString s, int nid)
+ 	unsigned long global_mask = ASN1_STRING_get_default_mask();
+ 	unsigned long mask = DIRSTRING_TYPE & global_mask;
+ 	ASN1_STRING *out = NULL;
+-	ASN1_STRING_TABLE *tbl;
++	const ASN1_STRING_TABLE *tbl;
+ 
+ 	tbl = ASN1_STRING_TABLE_get(nid);
+ 	if (tbl) {

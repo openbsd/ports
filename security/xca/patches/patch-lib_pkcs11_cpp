@@ -1,15 +1,7 @@
 Index: lib/pkcs11.cpp
 --- lib/pkcs11.cpp.orig
 +++ lib/pkcs11.cpp
-@@ -19,6 +19,7 @@
- #include <openssl/rand.h>
- #include <openssl/engine.h>
- #include <openssl/evp.h>
-+#include <openssl/opensslfeatures.h>
- #include <QThread>
- 
- #include "PwDialogCore.h"
-@@ -654,6 +655,7 @@ int pkcs11::encrypt(int flen, const unsigned char *fro
+@@ -654,6 +654,7 @@ int pkcs11::encrypt(int flen, const unsigned char *fro
  	return size;
  }
  
@@ -17,7 +9,7 @@ Index: lib/pkcs11.cpp
  // Shared between libressl and openssl
  static int eng_idx = -1;
  static int eng_finish(ENGINE *e)
-@@ -663,6 +665,7 @@ static int eng_finish(ENGINE *e)
+@@ -663,6 +664,7 @@ static int eng_finish(ENGINE *e)
  	ENGINE_set_ex_data(e, eng_idx, NULL);
  	return 1;
  }
@@ -25,7 +17,7 @@ Index: lib/pkcs11.cpp
  
  #if (OPENSSL_VERSION_NUMBER >= 0x30000000L)
  static int eng_pmeth_copy(EVP_PKEY_CTX *dst, const EVP_PKEY_CTX *src)
-@@ -675,7 +678,7 @@ static int eng_pmeth_copy(EVP_PKEY_CTX *dst, EVP_PKEY_
+@@ -675,7 +677,7 @@ static int eng_pmeth_copy(EVP_PKEY_CTX *dst, EVP_PKEY_
  	return 1;
  }
  
@@ -34,7 +26,7 @@ Index: lib/pkcs11.cpp
  static int rsa_privdata_free(RSA *rsa)
  {
  	pkcs11 *priv = (pkcs11*)RSA_get_app_data(rsa);
-@@ -835,7 +838,7 @@ static EC_KEY_METHOD *setup_ec_key_meth()
+@@ -835,7 +837,7 @@ static EC_KEY_METHOD *setup_ec_key_meth()
  }
  #endif
  
@@ -43,7 +35,7 @@ Index: lib/pkcs11.cpp
  
  static EVP_PKEY_METHOD *p11_eddsa_method;
  
-@@ -909,7 +912,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
+@@ -909,7 +911,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
  	static EC_KEY_METHOD *ec_key_meth = NULL;
  	EC_KEY *ec;
  #endif
@@ -52,7 +44,7 @@ Index: lib/pkcs11.cpp
  	static ENGINE *e = NULL;
  
  	if (!e) {
-@@ -993,7 +996,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
+@@ -993,7 +995,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
  		EVP_PKEY_assign_EC_KEY(evp, ec);
  		break;
  #endif
