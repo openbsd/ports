@@ -1,6 +1,6 @@
 COMMENT=	modern, extensible Python build backend used by Hatch
 
-MODPY_EGG_VERSION=	1.19.1
+MODPY_EGG_VERSION=	1.21.0
 
 DISTNAME=	hatchling-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
