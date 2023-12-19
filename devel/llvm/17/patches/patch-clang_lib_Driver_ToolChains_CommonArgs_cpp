@@ -1,0 +1,19 @@
+commit 4d5a8ccf25a6c43930c332e75ecead287778af6b
+Author: Brad Smith <brad@comstyle.com>
+Date:   Mon Nov 13 02:42:14 2023 -0500
+
+    [Driver] Add LTO support for Haiku and OpenBSD (#72047)
+
+Index: clang/lib/Driver/ToolChains/CommonArgs.cpp
+--- clang/lib/Driver/ToolChains/CommonArgs.cpp.orig
++++ clang/lib/Driver/ToolChains/CommonArgs.cpp
+@@ -597,7 +597,8 @@ void tools::addLTOOptions(const ToolChain &ToolChain, 
+   const char *Linker = Args.MakeArgString(ToolChain.GetLinkerPath());
+   const Driver &D = ToolChain.getDriver();
+   if (llvm::sys::path::filename(Linker) != "ld.lld" &&
+-      llvm::sys::path::stem(Linker) != "ld.lld") {
++      llvm::sys::path::stem(Linker) != "ld.lld" &&
++      !ToolChain.getTriple().isOSOpenBSD()) {
+     // Tell the linker to load the plugin. This has to come before
+     // AddLinkerInputs as gold requires -plugin and AIX ld requires -bplugin to
+     // come before any -plugin-opt/-bplugin_opt that -Wl might forward.
