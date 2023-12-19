@@ -2,7 +2,7 @@ llvm 16 optimizations lead to a segfault when seeking in opus files because
 checks that could leave pos_max uninitialized are optimized away, leading
 to out-of-bounds reads from the guard pages.
 
-av_unit() is complete batshittery:
+av_uninit() is complete batshittery:
 
 https://marc.info/?l=openbsd-ports&m=170284868209618&w=2
 
