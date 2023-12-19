@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -119,25 +119,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
+@@ -122,25 +122,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
  PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([tinyxml2], [tinyxml2 >= 8])
  PKG_CHECK_MODULES([vmime], [vmime >= 0.9.2])
@@ -25,5 +25,5 @@ Index: configure.ac
 -	AC_MSG_ERROR([vmime is still too old. See doc/install.rst.])
 -])
  PKG_CHECK_MODULES([zlib], [zlib])
+ dnl Linux-PAM only gained a .pc file in v1.5.1-41-gb4f0e2e1 (2021)
  have_pamheader=""
- AC_CHECK_HEADERS([crypt.h endian.h syslog.h])
