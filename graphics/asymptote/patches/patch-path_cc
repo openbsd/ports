@@ -1,0 +1,11 @@
+Index: path.cc
+--- path.cc.orig
++++ path.cc
+@@ -601,6 +601,7 @@ double arcLength(const pair& z0, const pair& c0, const
+   return integral;
+ }
+ 
++__attribute__((optnone))
+ double path::cubiclength(Int i, double goal) const
+ {
+   const pair& z0=point(i);

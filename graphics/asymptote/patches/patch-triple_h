@@ -1,0 +1,43 @@
+Index: triple.h
+--- triple.h.orig
++++ triple.h
+@@ -55,6 +55,7 @@ class triple : virtual public gc { (public)
+   double getz() const { return z; }
+ 
+   // transform by row-major matrix
++  __attribute__((optnone))
+   friend triple operator* (const double* t, const triple& v) {
+     if(t == NULL)
+       return v;
+@@ -71,6 +72,7 @@ class triple : virtual public gc { (public)
+     return 0.0;
+   }
+ 
++  __attribute__((optnone))
+   friend triple operator* (const triple& v, const double* t) {
+     if(t == NULL)
+       return v;
+@@ -99,6 +101,7 @@ class triple : virtual public gc { (public)
+   }
+ 
+   // return x and y components of v*t.
++  __attribute__((optnone))
+   friend pair Transform2T(const double* t, const triple& v)
+   {
+     double f=t[3]*v.x+t[7]*v.y+t[11]*v.z+t[15];
+@@ -196,6 +199,7 @@ class triple : virtual public gc { (public)
+     return triple(z.x*s, z.y*s, z.z*s);
+   }
+ 
++  __attribute__((optnone))
+   friend triple operator/ (const triple& z, double s)
+   {
+     if (s == 0.0)
+@@ -267,6 +271,7 @@ class triple : virtual public gc { (public)
+     return angle(x,y,warn);
+   }
+ 
++  __attribute__((optnone))
+   friend triple unit(const triple& v)
+   {
+     double scale=v.length();

@@ -2,7 +2,7 @@ Index: doc/asymptote.texi
 --- doc/asymptote.texi.orig
 +++ doc/asymptote.texi
 @@ -23,7 +23,7 @@ file LICENSE in the top-level source directory).
-      
+ 
  @dircategory Languages
  @direntry
 -* asymptote: (asymptote/asymptote). Vector graphics language.
