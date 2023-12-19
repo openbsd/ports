@@ -1,8 +1,6 @@
 COMMENT =	fish like syntax highlighting for zsh
 
-GH_ACCOUNT =	zsh-users
-GH_PROJECT =	zsh-syntax-highlighting
-GH_TAGNAME =	0.7.1
+DIST_TUPLE =	github zsh-users zsh-syntax-highlighting 0.8.0 .
 
 CATEGORIES =	shells
 
