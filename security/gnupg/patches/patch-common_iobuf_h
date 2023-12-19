@@ -1,0 +1,16 @@
+gpg: Report BEGIN_* status before examining the input.
+https://dev.gnupg.org/rG960877b10f42ba664af4fb29130a3ba48141e64a
+
+Index: common/iobuf.h
+--- common/iobuf.h.orig
++++ common/iobuf.h
+@@ -625,6 +625,9 @@ void iobuf_set_partial_body_length_mode (iobuf_t a, si
+    from the following filter (which may or may not return EOF).  */
+ void iobuf_skip_rest (iobuf_t a, unsigned long n, int partial);
+ 
++/* Check if the file is compressed, by peeking the iobuf.  */
++int is_file_compressed (iobuf_t inp);
++
+ #define iobuf_where(a)	"[don't know]"
+ 
+ /* Each time a filter is allocated (via iobuf_alloc()), a

@@ -1,0 +1,15 @@
+gpg: Report BEGIN_* status before examining the input.
+https://dev.gnupg.org/rG960877b10f42ba664af4fb29130a3ba48141e64a
+
+Index: common/util.h
+--- common/util.h.orig
++++ common/util.h
+@@ -360,8 +360,6 @@ char *try_make_printable_string (const void *p, size_t
+ char *make_printable_string (const void *p, size_t n, int delim);
+ char *decode_c_string (const char *src);
+ 
+-int is_file_compressed (const byte *buf, unsigned int buflen);
+-
+ int match_multistr (const char *multistr,const char *match);
+ 
+ int gnupg_compare_version (const char *a, const char *b);
