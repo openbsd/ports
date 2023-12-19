@@ -1,6 +1,6 @@
 COMMENT=	DHCPv4/IPv4LL/IPv6RS/DHCPv6 quad stack client
 
-V=		10.0.5
+V=		10.0.6
 DISTNAME=	dhcpcd-$V
 EXTRACT_SUFX=	.tar.xz
 
