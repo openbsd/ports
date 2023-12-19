@@ -1,5 +1,5 @@
 COMMENT =	graphical music player focused on a clean ui
-V =		1.11
+V =		1.12
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
 
@@ -8,18 +8,18 @@ HOMEPAGE =	https://flavio.tordini.org/musique/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Sql Qt5Widgets c m mpv tag
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Sql Qt6Widgets c m mpv tag
 
 SITES =		https://github.com/flaviotordini/musique/releases/download/$V/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/qmake \
-		x11/qt5
+		x11/qt6
 
 LIB_DEPENDS =	audio/taglib \
 		multimedia/mpv \
-		x11/qt5/qtdeclarative
+		x11/qt6/qtdeclarative
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
