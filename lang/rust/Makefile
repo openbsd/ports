@@ -23,7 +23,7 @@ BV-amd64 =		1.74.1-20231214
 BV-i386 =		1.74.0-20231214
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.74.0-20231201
-BV-sparc64 =		1.73.0-20231113
+BV-sparc64 =		1.74.1-20231219
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -306,7 +306,7 @@ do-test:
 STRIP ?=	strip
 # Try to avoid strip from our ancient binutils-2.17
 .if ${LINKER_VERSION} != "lld"
-STRIP =		llvm-strip
+STRIP =		llvm-strip-${MODCLANG_VERSION}
 .endif
 
 # bootstrap target permits to regenerate the bootstrap archive
