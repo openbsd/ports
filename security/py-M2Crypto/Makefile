@@ -1,9 +1,10 @@
 COMMENT =		crypto and TLS toolkit for Python
 
-MODPY_EGG_VERSION =	0.38.0
+# 0.40.0 no longer imports everything with "import M2Crypto"; py-tlslite-ng
+# needs tweaks to adapt to this
+MODPY_EGG_VERSION =	0.39.0
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
 
 CATEGORIES =		security
 
@@ -26,6 +27,5 @@ MAKE_ENV =		SWIG_FEATURES=-I/usr/include
 
 # skip tests which hang
 MODPY_PYTEST_ARGS =	-k 'not test_do_handshake_succeed and not test_verify_cb_old'
-TEST_DEPENDS =		devel/py-parameterized${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
