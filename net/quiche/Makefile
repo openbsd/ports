@@ -1,9 +1,9 @@
 COMMENT	=		library implementing QUIC and HTTP/3
 
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
-V =			0.18.0
+V =			0.20.0
 PKG_NAME =		quiche-${V}
 CATEGORIES =		net
 HOMEPAGE =		https://github.com/cloudflare/quiche
@@ -17,8 +17,6 @@ GH_ACCOUNT =		cloudflare
 GH_PROJECT =		quiche
 GH_TAGNAME =		${V}
 EXTRACT_SUFX =		.tar.gz
-
-BUILD_DEPENDS +=	security/rust-ring
 
 MODCARGO_BUILD_ARGS +=	--no-default-features --features ffi --package quiche
 
