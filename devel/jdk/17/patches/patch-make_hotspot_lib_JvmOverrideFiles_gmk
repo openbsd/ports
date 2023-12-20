@@ -1,0 +1,19 @@
+Reduce optimization on parse2.cpp to correct asserts hit with
+fastdebug build on i386.
+
+Index: make/hotspot/lib/JvmOverrideFiles.gmk
+--- make/hotspot/lib/JvmOverrideFiles.gmk.orig
++++ make/hotspot/lib/JvmOverrideFiles.gmk
+@@ -185,9 +185,9 @@ else ifeq ($(call isTargetOs, bsd), true)
+ 
+     ifneq ($(DEBUG_LEVEL), slowdebug)
+       ifeq ($(call isTargetCpu, x86), true)
+-        # hotspot/jtreg/compiler/c2/Test8062950.java test fails on x86
+-        # with clang when parse2.cpp is optimized above -O1
+-        BUILD_LIBJVM_parse2.cpp_CXXFLAGS := -O1
++        # multiple tests fail with assert(taken_cnt <= total_cnt) failed
++        # with clang 16 when parse2.cpp is optimized above -O0
++        BUILD_LIBJVM_parse2.cpp_CXXFLAGS := -O0
+ 
+         JVM_PRECOMPILED_HEADER_EXCLUDE += \
+             parse2.cpp \
