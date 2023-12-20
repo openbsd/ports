@@ -1,7 +1,7 @@
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		5.4
+GNOME_VERSION =		5.5
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-core-utils       1.1      # unknown
@@ -24,9 +24,9 @@ WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt c cairo cairo-gobject
 WANTLIB += dbi gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-3 guile-3.0 gwengui-gtk3 gwenhywfar
-WANTLIB += harfbuzz icudata icui18n icuuc intl javascriptcoregtk-4.0
-WANTLIB += m ofx pango-1.0 pangocairo-1.0 secret-1 soup-2.4
-WANTLIB += webkit2gtk-4.0 xml2 xslt z
+WANTLIB += harfbuzz icudata icui18n icuuc intl javascriptcoregtk-4.1
+WANTLIB += m ofx pango-1.0 pangocairo-1.0 secret-1 soup-3.0
+WANTLIB += webkit2gtk-4.1 xml2 xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -55,7 +55,7 @@ LIB_DEPENDS =		databases/libdbi \
 			devel/libofx \
 			lang/guile3 \
 			productivity/aqbanking \
-			www/webkitgtk4
+			www/webkitgtk4,webkitgtk41
 
 CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF \
 			-DCOMPILE_GSCHEMAS=OFF \
