@@ -29,6 +29,6 @@ RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-tomli${MODPY_FLAVOR}
 
-MODPY_PYBUILD=	Yes
+MODPY_PYBUILD=	bootstrap
 
 .include <bsd.port.mk>
