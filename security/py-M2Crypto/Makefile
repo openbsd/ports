@@ -1,8 +1,6 @@
 COMMENT =		crypto and TLS toolkit for Python
 
-# 0.40.0 no longer imports everything with "import M2Crypto"; py-tlslite-ng
-# needs tweaks to adapt to this
-MODPY_EGG_VERSION =	0.39.0
+MODPY_EGG_VERSION =	0.40.1
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
