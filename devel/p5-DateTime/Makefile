@@ -1,7 +1,7 @@
 COMMENT =		date and time object for Perl
 
 MODULES =		cpan
-DISTNAME =		DateTime-1.59
+DISTNAME =		DateTime-1.65
 EPOCH =			0
 CATEGORIES =		devel
 

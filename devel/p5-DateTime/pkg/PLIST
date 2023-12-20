@@ -11,6 +11,7 @@ ${P5ARCH}/DateTime/Types.pm
 ${P5ARCH}/auto/DateTime/
 @so ${P5ARCH}/auto/DateTime/DateTime.so
 @man man/man3p/DateTime.3p
+@man man/man3p/DateTime::Conflicts.3p
 @man man/man3p/DateTime::Duration.3p
 @man man/man3p/DateTime::Infinite.3p
 @man man/man3p/DateTime::LeapSecond.3p
