@@ -90,6 +90,7 @@ eboringssl/include/openssl/type_check.h
 eboringssl/include/openssl/x509.h
 eboringssl/include/openssl/x509_vfy.h
 eboringssl/include/openssl/x509v3.h
+eboringssl/include/openssl/x509v3_errors.h
 eboringssl/lib/
 eboringssl/lib/cmake/
 eboringssl/lib/cmake/OpenSSL/
