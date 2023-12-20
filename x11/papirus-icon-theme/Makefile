@@ -1,10 +1,5 @@
 COMMENT=	papirus icon theme
-
-GH_ACCOUNT=	PapirusDevelopmentTeam
-GH_PROJECT=	papirus-icon-theme
-GH_TAGNAME=	20221201
-REVISION=	0
-
+DIST_TUPLE=	github PapirusDevelopmentTeam papirus-icon-theme 20231201 .
 CATEGORIES=	x11
 
 MAINTAINER=	David Demelier <markand@malikania.fr>
