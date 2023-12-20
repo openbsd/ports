@@ -1,9 +1,9 @@
-COMMENT =		crypto and ssl toolkit for python
+COMMENT =		crypto and TLS toolkit for Python
 
 MODPY_EGG_VERSION =	0.38.0
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		6
 
 CATEGORIES =		security
 
@@ -14,18 +14,18 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		crypto pthread ssl ${MODPY_WANTLIB}
 
-MODPY_PI =		Yes
-
 MODULES =		lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
 
+BUILD_DEPENDS =		devel/swig
 MAKE_ENV =		SWIG_FEATURES=-I/usr/include
 
-BUILD_DEPENDS =		devel/swig
-
-# XXX tests need "parameterized", dep was added in 0.37.0
+# skip tests which hang
+MODPY_PYTEST_ARGS =	-k 'not test_do_handshake_succeed and not test_verify_cb_old'
+TEST_DEPENDS =		devel/py-parameterized${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
