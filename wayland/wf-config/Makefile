@@ -1,0 +1,28 @@
+COMMENT =	configuration files library for wayfire
+
+V =		0.8.0
+DISTNAME =	wf-config-${V}
+
+SHARED_LIBS +=	wf-config 0.0 # 0.0
+CATEGORIES =	wayland
+
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
+# MIT
+PERMIT_PACKAGE =Yes
+
+SITES =		https://github.com/WayfireWM/wf-config/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
+
+MODULES =	devel/meson
+
+CONFIGURE_ARGS =-Dtests=disabled
+
+BUILD_DEPENDS =	wayland/wayland \
+		wayland/wayland-protocols\
+		graphics/glm
+LIB_DEPENDS =	textproc/libxml \
+		wayland/libevdev-openbsd>=20231111
+
+WANTLIB +=	${COMPILER_LIBCXX} evdev m xml2
+
+.include <bsd.port.mk>

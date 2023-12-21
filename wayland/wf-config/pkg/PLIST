@@ -1,0 +1,17 @@
+include/wayfire/
+include/wayfire/config/
+include/wayfire/config/compound-option.hpp
+include/wayfire/config/config-manager.hpp
+include/wayfire/config/file.hpp
+include/wayfire/config/option-types.hpp
+include/wayfire/config/option-wrapper.hpp
+include/wayfire/config/option.hpp
+include/wayfire/config/section.hpp
+include/wayfire/config/types.hpp
+include/wayfire/config/xml.hpp
+include/wayfire/util/
+include/wayfire/util/duration.hpp
+include/wayfire/util/log.hpp
+include/wayfire/util/stringify.hpp
+@lib lib/libwf-config.so.${LIBwf-config_VERSION}
+lib/pkgconfig/wf-config.pc
