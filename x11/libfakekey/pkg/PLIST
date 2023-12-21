@@ -1,6 +1,6 @@
 include/fakekey/
 include/fakekey/fakekey.h
-lib/libfakekey.a
+@static-lib lib/libfakekey.a
 lib/libfakekey.la
 @lib lib/libfakekey.so.${LIBfakekey_VERSION}
 lib/pkgconfig/libfakekey.pc
