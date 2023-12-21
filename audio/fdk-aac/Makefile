@@ -1,13 +1,12 @@
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
-DISTNAME =		fdk-aac-0.1.6
+DISTNAME =		fdk-aac-2.0.3
 CATEGORIES =		audio
 HOMEPAGE =		https://sourceforge.net/projects/opencore-amr/
-REVISION =		0
 
 # Custom
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS =		fdk-aac                   1.0 # 0.4
+SHARED_LIBS =		fdk-aac                   1.0 # 2.3
 WANTLIB =		c m
 
 SITES =			${SITE_SOURCEFORGE:=opencore-amr/fdk-aac/}

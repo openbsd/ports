@@ -5,6 +5,7 @@ include/fdk-aac/aacdecoder_lib.h
 include/fdk-aac/aacenc_lib.h
 include/fdk-aac/genericStds.h
 include/fdk-aac/machine_type.h
+include/fdk-aac/syslib_channelMapDescr.h
 @static-lib lib/libfdk-aac.a
 lib/libfdk-aac.la
 @lib lib/libfdk-aac.so.${LIBfdk-aac_VERSION}
