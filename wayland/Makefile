@@ -15,10 +15,14 @@
      SUBDIR += swayimg
      SUBDIR += swayidle
      SUBDIR += swaylock
+     SUBDIR += wayfire
      SUBDIR += wayland
      SUBDIR += wayland-protocols
      SUBDIR += wayland-utils
+     SUBDIR += wcm
      SUBDIR += wev
+     SUBDIR += wf-config
+     SUBDIR += wf-shell
      SUBDIR += wlroots
      SUBDIR += xwayland
 
