@@ -1,5 +1,6 @@
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
+PORTROACH=	site:https://github.com/trusteddomainproject/OpenDKIM/archive/
 DISTNAME=	opendkim-2.10.3
 REVISION=	3
 
