@@ -20,4 +20,7 @@ MODULES =	lang/python
 
 NO_TEST =	Yes
 
+FLAVOR =	python3
+FLAVORS =	python3
+
 .include <bsd.port.mk>

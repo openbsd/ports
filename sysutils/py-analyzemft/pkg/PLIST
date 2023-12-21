@@ -1,3 +1,5 @@
+@conflict py-analyzemft-*
+@pkgpath sysutils/py-analyzemft
 bin/analyzeMFT.py
 lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/analyzemft/

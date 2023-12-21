@@ -293,7 +293,7 @@
      SUBDIR += pstree
      SUBDIR += puppetserver
      SUBDIR += pv
-     SUBDIR += py-analyzemft
+     SUBDIR += py-analyzemft,python3
      SUBDIR += py-ansible-compat,python3
      SUBDIR += py-apscheduler,python3
      SUBDIR += py-augeas,python3
