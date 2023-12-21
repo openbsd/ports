@@ -1,0 +1,210 @@
+bin/startwayfire.sh
+@bin bin/wayfire
+include/wayfire/action/
+include/wayfire/action/action.hpp
+include/wayfire/action/action_interface.hpp
+include/wayfire/bindings-repository.hpp
+include/wayfire/bindings.hpp
+include/wayfire/compositor-view.hpp
+include/wayfire/condition/
+include/wayfire/condition/access_interface.hpp
+include/wayfire/condition/condition.hpp
+include/wayfire/condition/logic_condition.hpp
+include/wayfire/condition/test_condition.hpp
+include/wayfire/config-backend.hpp
+include/wayfire/config.h
+include/wayfire/core.hpp
+include/wayfire/dassert.hpp
+include/wayfire/debug.hpp
+include/wayfire/geometry.hpp
+include/wayfire/idle.hpp
+include/wayfire/img.hpp
+include/wayfire/input-device.hpp
+include/wayfire/lexer/
+include/wayfire/lexer/lexer.hpp
+include/wayfire/lexer/literal.hpp
+include/wayfire/lexer/symbol.hpp
+include/wayfire/matcher.hpp
+include/wayfire/nonstd/
+include/wayfire/nonstd/observer_ptr.h
+include/wayfire/nonstd/reverse.hpp
+include/wayfire/nonstd/safe-list.hpp
+include/wayfire/nonstd/tracking-allocator.hpp
+include/wayfire/nonstd/wlroots-full.hpp
+include/wayfire/nonstd/wlroots.hpp
+include/wayfire/object.hpp
+include/wayfire/opengl.hpp
+include/wayfire/option-wrapper.hpp
+include/wayfire/output-layout.hpp
+include/wayfire/output.hpp
+include/wayfire/parser/
+include/wayfire/parser/action_parser.hpp
+include/wayfire/parser/condition_parser.hpp
+include/wayfire/parser/lambda_rule_parser.hpp
+include/wayfire/parser/rule_parser.hpp
+include/wayfire/per-output-plugin.hpp
+include/wayfire/plugin.hpp
+include/wayfire/plugins/
+include/wayfire/plugins/blur/
+include/wayfire/plugins/blur/blur.hpp
+include/wayfire/plugins/common/
+include/wayfire/plugins/common/cairo-util.hpp
+include/wayfire/plugins/common/geometry-animation.hpp
+include/wayfire/plugins/common/input-grab.hpp
+include/wayfire/plugins/common/key-repeat.hpp
+include/wayfire/plugins/common/move-drag-interface.hpp
+include/wayfire/plugins/common/preview-indication.hpp
+include/wayfire/plugins/common/shared-core-data.hpp
+include/wayfire/plugins/common/simple-texture.hpp
+include/wayfire/plugins/common/util.hpp
+include/wayfire/plugins/common/workspace-wall.hpp
+include/wayfire/plugins/crossfade.hpp
+include/wayfire/plugins/grid.hpp
+include/wayfire/plugins/ipc/
+include/wayfire/plugins/ipc/ipc-activator.hpp
+include/wayfire/plugins/ipc/ipc-helpers.hpp
+include/wayfire/plugins/ipc/ipc-method-repository.hpp
+include/wayfire/plugins/ipc/ipc.hpp
+include/wayfire/plugins/scale-signal.hpp
+include/wayfire/plugins/vswitch.hpp
+include/wayfire/plugins/wm-actions-signals.hpp
+include/wayfire/plugins/wobbly/
+include/wayfire/plugins/wobbly/wobbly-signal.hpp
+include/wayfire/region.hpp
+include/wayfire/render-manager.hpp
+include/wayfire/rule/
+include/wayfire/rule/lambda_rule.hpp
+include/wayfire/rule/rule.hpp
+include/wayfire/scene-input.hpp
+include/wayfire/scene-operations.hpp
+include/wayfire/scene-render.hpp
+include/wayfire/scene.hpp
+include/wayfire/seat.hpp
+include/wayfire/signal-definitions.hpp
+include/wayfire/signal-provider.hpp
+include/wayfire/toplevel-view.hpp
+include/wayfire/toplevel.hpp
+include/wayfire/touch/
+include/wayfire/touch/touch.hpp
+include/wayfire/txn/
+include/wayfire/txn/transaction-manager.hpp
+include/wayfire/txn/transaction-object.hpp
+include/wayfire/txn/transaction.hpp
+include/wayfire/unstable/
+include/wayfire/unstable/translation-node.hpp
+include/wayfire/unstable/wlr-surface-node.hpp
+include/wayfire/unstable/wlr-view-events.hpp
+include/wayfire/unstable/wlr-view-keyboard-interaction.hpp
+include/wayfire/unstable/xdg-toplevel-base.hpp
+include/wayfire/unstable/xwl-toplevel-base.hpp
+include/wayfire/util.hpp
+include/wayfire/utils.hpp
+include/wayfire/variant.hpp
+include/wayfire/view-access-interface.hpp
+include/wayfire/view-helpers.hpp
+include/wayfire/view-transform.hpp
+include/wayfire/view.hpp
+include/wayfire/window-manager.hpp
+include/wayfire/workarea.hpp
+include/wayfire/workspace-set.hpp
+include/wayfire/workspace-stream.hpp
+@so lib/libwayfire-blur-base.so
+@lib lib/libwf-utils.so.${LIBwf-utils_VERSION}
+@static-lib lib/libwftouch.a
+lib/pkgconfig/wayfire.pc
+lib/pkgconfig/wf-utils.pc
+lib/wayfire/
+@so lib/wayfire/libalpha.so
+@so lib/wayfire/libanimate.so
+@so lib/wayfire/libautostart.so
+@so lib/wayfire/libblur.so
+@so lib/wayfire/libcommand.so
+@so lib/wayfire/libcube.so
+@so lib/wayfire/libdecoration.so
+@so lib/wayfire/libdefault-config-backend.so
+@so lib/wayfire/libdemo-ipc.so
+@so lib/wayfire/libexpo.so
+@so lib/wayfire/libextra-gestures.so
+@so lib/wayfire/libfast-switcher.so
+@so lib/wayfire/libfisheye.so
+@so lib/wayfire/libforeign-toplevel.so
+@so lib/wayfire/libgrid.so
+@so lib/wayfire/libgtk-shell.so
+@so lib/wayfire/libidle.so
+@so lib/wayfire/libinvert.so
+@so lib/wayfire/libipc-rules.so
+@so lib/wayfire/libipc.so
+@so lib/wayfire/libmove.so
+@so lib/wayfire/liboswitch.so
+@so lib/wayfire/libplace.so
+@so lib/wayfire/libpreserve-output.so
+@so lib/wayfire/libresize.so
+@so lib/wayfire/libscale-title-filter.so
+@so lib/wayfire/libscale.so
+@so lib/wayfire/libshortcuts-inhibit.so
+@so lib/wayfire/libsimple-tile.so
+@so lib/wayfire/libstipc.so
+@so lib/wayfire/libswitcher.so
+@so lib/wayfire/libvswipe.so
+@so lib/wayfire/libvswitch.so
+@so lib/wayfire/libwayfire-shell.so
+@so lib/wayfire/libwindow-rules.so
+@so lib/wayfire/libwm-actions.so
+@so lib/wayfire/libwobbly.so
+@so lib/wayfire/libwrot.so
+@so lib/wayfire/libwsets.so
+@so lib/wayfire/libxdg-activation.so
+@so lib/wayfire/libzoom.so
+@man man/man1/wayfire.1
+share/examples/wayfire/
+share/examples/wayfire/wayfire.ini
+share/wayfire/
+share/wayfire/metadata/
+share/wayfire/metadata/alpha.xml
+share/wayfire/metadata/animate.xml
+share/wayfire/metadata/autostart.xml
+share/wayfire/metadata/blur.xml
+share/wayfire/metadata/command.xml
+share/wayfire/metadata/core.xml
+share/wayfire/metadata/cube.xml
+share/wayfire/metadata/decoration.xml
+share/wayfire/metadata/expo.xml
+share/wayfire/metadata/extra-gestures.xml
+share/wayfire/metadata/fast-switcher.xml
+share/wayfire/metadata/fisheye.xml
+share/wayfire/metadata/foreign-toplevel.xml
+share/wayfire/metadata/grid.xml
+share/wayfire/metadata/gtk-shell.xml
+share/wayfire/metadata/idle.xml
+share/wayfire/metadata/input-device.xml
+share/wayfire/metadata/input.xml
+share/wayfire/metadata/invert.xml
+share/wayfire/metadata/ipc-rules.xml
+share/wayfire/metadata/ipc.xml
+share/wayfire/metadata/move.xml
+share/wayfire/metadata/oswitch.xml
+share/wayfire/metadata/output.xml
+share/wayfire/metadata/place.xml
+share/wayfire/metadata/preserve-output.xml
+share/wayfire/metadata/resize.xml
+share/wayfire/metadata/scale-title-filter.xml
+share/wayfire/metadata/scale.xml
+share/wayfire/metadata/shortcuts-inhibit.xml
+share/wayfire/metadata/simple-tile.xml
+share/wayfire/metadata/switcher.xml
+share/wayfire/metadata/vswipe.xml
+share/wayfire/metadata/vswitch.xml
+share/wayfire/metadata/wayfire-shell.xml
+share/wayfire/metadata/window-rules.xml
+share/wayfire/metadata/wm-actions.xml
+share/wayfire/metadata/wobbly.xml
+share/wayfire/metadata/workarounds.xml
+share/wayfire/metadata/wrot.xml
+share/wayfire/metadata/wsets.xml
+share/wayfire/metadata/xdg-activation.xml
+share/wayfire/metadata/zoom.xml
+share/wayfire/protocols/
+share/wayfire/protocols/unstable/
+share/wayfire/protocols/unstable/wayfire-shell-unstable-v2.xml
+share/wayland-sessions/
+share/wayland-sessions/wayfire.desktop

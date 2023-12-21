@@ -1,0 +1,6 @@
+Index: subprojects/wf-touch/meson_options.txt
+--- subprojects/wf-touch/meson_options.txt.orig
++++ subprojects/wf-touch/meson_options.txt
+@@ -1 +1 @@
+-option('tests', type: 'feature', value: 'auto', description: 'Enable unit tests')
++option('tests', type: 'feature', value: 'disabled', description: 'Enable unit tests')
