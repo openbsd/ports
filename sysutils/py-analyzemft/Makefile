@@ -1,6 +1,11 @@
 COMMENT =	parse the MFT file from an NTFS filesystem
 
-MODPY_EGG_VERSION =	2.0.19
+MODPY_EGG_VERSION =	3.0.1
+
+GH_ACCOUNT =	dkovar
+GH_PROJECT =	analyzeMFT
+GH_COMMIT =	16d12822563cd5cae8675788134ac0ff6e9f5c01
+
 DISTNAME =	analyzeMFT-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -12,8 +17,6 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-MODPY_PI =	Yes
 
 NO_TEST =	Yes
 
