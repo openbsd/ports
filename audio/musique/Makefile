@@ -17,6 +17,8 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/qmake \
 		x11/qt6
 
+BUILD_DEPENDS =	x11/qt6/qttools
+
 LIB_DEPENDS =	audio/taglib \
 		multimedia/mpv \
 		x11/qt6/qtdeclarative
