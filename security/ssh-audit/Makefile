@@ -1,6 +1,6 @@
 COMMENT =		ssh configuration security auditing tool
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	3.1.0
 
 DISTNAME =		ssh-audit-${MODPY_EGG_VERSION}
 
