@@ -1,6 +1,5 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
-REVISION =	1
 
 UNLINKED =	kde-plasma
 
@@ -17,11 +16,11 @@ WANTLIB += KF5GlobalAccel KF5GlobalAccelPrivate KF5I18n KF5IdleTime
 WANTLIB += KF5KCMUtils KF5KCMUtilsCore KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5NewStuffWidgets KF5Notifications KF5Package KF5Plasma
 WANTLIB += KF5QuickAddons KF5Runner KF5Service KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KScreenLocker
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 X11-xcb Xext Xi c drm epoxy fontconfig freetype
-WANTLIB += gbm glib-2.0 gthread-2.0 input intl kdecorations2 kdecorations2private
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Widgets Qt5X11Extras Qt5Xml SM X11 X11-xcb
+WANTLIB += Xext Xi c drm epoxy fontconfig freetype gbm glib-2.0
+WANTLIB += gthread-2.0 input intl kdecorations2 kdecorations2private
 WANTLIB += lcms2 m qaccessibilityclient-qt5 udev wayland-client
 WANTLIB += wayland-server xcb xcb-composite xcb-cursor xcb-damage
 WANTLIB += xcb-glx xcb-icccm xcb-keysyms xcb-present xcb-randr
@@ -34,14 +33,15 @@ MODKDE5_DOCS =		Yes
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	x11/kde-plasma/breeze \
+BUILD_DEPENDS =	x11/kde-plasma/breeze>=${VERSION} \
+		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		wayland/plasma-wayland-protocols \
 		wayland/xwayland \
 		misc/hwdata
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
-		x11/kde-plasma/breeze
+		x11/kde-plasma/breeze>=${VERSION}
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
@@ -55,6 +55,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/ki18n \
 		devel/kf5/knewstuff \
 		devel/kf5/kpackage \
+		devel/kf5/kidletime \
 		devel/kf5/krunner \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
@@ -63,8 +64,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		graphics/lcms2 \
 		sysutils/libudev-openbsd \
 		wayland/libinput-openbsd \
-		x11/kde-plasma/kdecoration \
-		x11/kde-plasma/kscreenlocker \
+		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/libqaccessibilityclient \
 		x11/qt5/qtdeclarative
 

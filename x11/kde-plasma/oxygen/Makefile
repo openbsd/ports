@@ -27,7 +27,7 @@ LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/ki18n \
 			devel/kf5/kservice \
 			devel/kf5/kwindowsystem \
-			x11/kde-plasma/kdecoration \
+			x11/kde-plasma/kdecoration>=${VERSION} \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtx11extras
 

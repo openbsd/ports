@@ -42,7 +42,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
-		x11/kde-plasma/libksysguard
+		x11/kde-plasma/libksysguard>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -29,7 +29,7 @@ MODKDE5_DOCS =		Yes
 
 BUILD_DEPENDS =	textproc/intltool \
 		productivity/kuserfeedback \
-		x11/kde-plasma/kwin \
+		x11/kde-plasma/kwin>=${VERSION} \
 		devel/kf5/kirigami2 \
 		devel/kf5/qqc2-desktop-style
 
@@ -84,8 +84,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		x11/kde-applications/kaccounts-integration \
-		x11/kde-plasma/libksysguard \
-		x11/kde-plasma/plasma-workspace \
+		x11/kde-plasma/libksysguard>=${VERSION} \
+		x11/kde-plasma/plasma-workspace>=${VERSION} \
 
 
 CONFIGURE_ARGS = \

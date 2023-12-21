@@ -597,6 +597,8 @@ share/knsrcfiles/kwineffect.knsrc
 share/knsrcfiles/kwinscripts.knsrc
 share/knsrcfiles/kwinswitcher.knsrc
 share/knsrcfiles/window-decorations.knsrc
+share/kpackage/
+share/kpackage/kcms/
 share/kpackage/kcms/kcm_kwin_effects/
 share/kpackage/kcms/kcm_kwin_effects/contents/
 share/kpackage/kcms/kcm_kwin_effects/contents/ui/

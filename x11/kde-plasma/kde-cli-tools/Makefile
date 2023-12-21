@@ -35,6 +35,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		x11/kde-plasma/plasma-workspace
+		x11/kde-plasma/plasma-workspace>=${VERSION}
 
 .include <bsd.port.mk>

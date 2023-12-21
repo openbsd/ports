@@ -21,4 +21,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+WRKDIST =	${WRKDIR}/kgamma-${VERSION}
+
 .include <bsd.port.mk>

@@ -47,7 +47,7 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		sysutils/libudev-openbsd \
-		x11/kde-plasma/plasma-workspace \
+		x11/kde-plasma/plasma-workspace>=${VERSION} \
 		x11/qt5/qtx11extras
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}

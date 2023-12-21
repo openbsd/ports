@@ -32,8 +32,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
-		x11/kde-plasma/libkscreen \
-		x11/kde-plasma/layer-shell-qt \
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsensors
 

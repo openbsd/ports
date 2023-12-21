@@ -41,7 +41,7 @@ MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 MODKDE5_DOCS = Yes
 
-BUILD_DEPENDS =		x11/kde-plasma/kwin \
+BUILD_DEPENDS =		x11/kde-plasma/kwin>=${VERSION} \
 			devel/kf5/kquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -49,7 +49,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			multimedia/phonon-backend/gstreamer \
 			sysutils/coreutils \
 			x11/dbus,-suid \
-			x11/kde-plasma/kwin
+			x11/kde-plasma/kwin>=${VERSION}
 
 LIB_DEPENDS =		devel/kf5/attica \
 			devel/kf5/baloo \
@@ -110,9 +110,9 @@ LIB_DEPENDS =		devel/kf5/attica \
 			multimedia/phonon \
 			x11/qt5/qtdeclarative \
 			x11/kde-applications/libkexiv2 \
-			x11/kde-plasma/kscreenlocker \
-			x11/kde-plasma/libkscreen \
-			x11/kde-plasma/libksysguard
+			x11/kde-plasma/kscreenlocker>=${VERSION} \
+			x11/kde-plasma/libkscreen>=${VERSION} \
+			x11/kde-plasma/libksysguard>=${VERSION}
 
 CONFIGURE_ARGS = \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes

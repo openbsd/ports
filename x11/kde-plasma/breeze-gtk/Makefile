@@ -6,9 +6,9 @@ MODULES =		lang/python
 BUILD_DEPENDS =		www/sassc \
 			graphics/py-cairo${MODPY_FLAVOR} \
 			x11/gtk+2 \
-			x11/kde-plasma/breeze
+			x11/kde-plasma/breeze>=${VERSION}
 
-RUN_DEPENDS =		x11/kde-plasma/breeze
+RUN_DEPENDS =		x11/kde-plasma/breeze>=${VERSION}
 
 NO_TEST =		Yes
 

@@ -50,7 +50,7 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtdeclarative \
-		x11/kde-plasma/plasma-workspace
+		x11/kde-plasma/plasma-workspace>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

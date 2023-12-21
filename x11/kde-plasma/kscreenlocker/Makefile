@@ -21,7 +21,7 @@ WANTLIB += xcb-keysyms
 RUN_DEPENDS =	devel/desktop-file-utils
 
 BUILD_DEPENDS =	wayland/wayland-protocols \
-		x11/kde-plasma/kscreen
+		x11/kde-plasma/kscreen>=${VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -40,8 +40,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		security/openpam \
 		wayland/wayland \
-		x11/kde-plasma/libkscreen \
-		x11/kde-plasma/layer-shell-qt \
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtx11extras
 

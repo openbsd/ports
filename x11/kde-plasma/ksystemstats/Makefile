@@ -18,7 +18,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kservice \
 		devel/kf5/solid \
 		sysutils/libudev-openbsd \
-		x11/kde-plasma/libksysguard
+		x11/kde-plasma/libksysguard>=${VERSION}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

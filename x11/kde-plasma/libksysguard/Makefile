@@ -14,14 +14,14 @@ SHARED_LIBS +=  processcore                0.0 # 5.22.5
 SHARED_LIBS +=  processui                  0.0 # 5.22.5
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigQml
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5GlobalAccel KF5I18n
-WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui KF5Package
-WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 XRes Xext c m z
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigQml KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5GlobalAccel KF5I18n KF5IconThemes
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5Package KF5Service
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += SM X11 XRes Xext c m z
 
 MODKDE5_TRANSLATIONS =	Yes
 
