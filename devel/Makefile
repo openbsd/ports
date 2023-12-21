@@ -1482,6 +1482,7 @@
      SUBDIR += py-jsonschema-spec,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
+     SUBDIR += py-jupyter_packaging,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy,python3
