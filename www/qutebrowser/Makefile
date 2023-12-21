@@ -2,6 +2,7 @@ COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -41,7 +42,9 @@ post-install:
 .include <bsd.port.arch.mk>
 # adblock is rust+python; selectively add the dependency to avoid
 # knocking out qutebrowser where it would otherwise work.
-.if ${PROPERTIES:Mrust} && ${MACHINE_ARCH} != sparc64 && ${MACHINE_ARCH} != i386
+# adblock has BDEP on ring, which is not for powerpc64 riscv64 sparc64
+# adblock is broken on i386.
+.if ${PROPERTIES:Mrust} && ${MACHINE_ARCH} != sparc64 && ${MACHINE_ARCH} != i386 && ${MACHINE_ARCH} != powerpc64 && ${MACHINE_ARCH} != riscv64
 RUN_DEPENDS +=		www/py-adblock${MODPY_FLAVOR}
 .endif
 
