@@ -1,0 +1,15 @@
+XXX push upstream
+webkitgtk_dep is used unconditionally in src/meson.build
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -80,6 +80,8 @@ if get_option('webkitgtk')
+   else
+     error(opt_missing_str.format('webkitgtk'))
+   endif
++else
++  webkitgtk_dep = []
+ endif
+ 
+ configure_file(
