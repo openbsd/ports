@@ -1,18 +1,18 @@
 COMMENT =		Jupyter notebook format
 
-MODPY_EGG_VERSION =	5.0.7
+MODPY_EGG_VERSION =	5.3.0
 DISTNAME =		nbformat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org
 
-RUN_DEPENDS =		devel/py-ipython_genutils${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR}>=4.1 \
+RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR}>=2.6 \
 			devel/py-jupyter_core${MODPY_FLAVOR} \
-			devel/py-jsonschema${MODPY_FLAVOR}>=2.4
+			devel/py-traitlets${MODPY_FLAVOR}>=4.1 \
+			textproc/py-fastjsonschema${MODPY_FLAVOR}
+
 TEST_DEPENDS =		devel/py-testpath${MODPY_FLAVOR}
 
 # BSD
