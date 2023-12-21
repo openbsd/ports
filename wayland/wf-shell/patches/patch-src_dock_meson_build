@@ -1,0 +1,9 @@
+Index: src/dock/meson.build
+--- src/dock/meson.build.orig
++++ src/dock/meson.build
+@@ -1,3 +1,4 @@
+ executable('wf-dock', ['dock.cpp', 'dock-app.cpp', 'toplevel.cpp', 'toplevel-icon.cpp'],
+-        dependencies: [gtkmm, wayland_client, libutil, wf_protos, wfconfig, gtklayershell],
++        dependencies: [gtkmm, wayland_client, libutil, libinotify, wf_protos, wfconfig, gtklayershell],
++        install_rpath : '/usr/local/lib/inotify',
+         install: true)

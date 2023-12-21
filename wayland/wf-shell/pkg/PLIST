@@ -1,0 +1,13 @@
+@bin bin/wf-background
+@bin bin/wf-dock
+@bin bin/wf-panel
+lib/pkgconfig/wf-shell.pc
+share/wayfire/
+share/wayfire/icons/
+share/wayfire/icons/wayfire.png
+share/wayfire/metadata/
+share/wayfire/metadata/wf-shell/
+share/wayfire/metadata/wf-shell/background.xml
+share/wayfire/metadata/wf-shell/dock.xml
+share/wayfire/metadata/wf-shell/panel.xml
+share/wayfire/wallpaper.jpg

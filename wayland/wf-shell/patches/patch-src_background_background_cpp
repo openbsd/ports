@@ -1,0 +1,35 @@
+Index: src/background/background.cpp
+--- src/background/background.cpp.orig
++++ src/background/background.cpp
+@@ -1,4 +1,3 @@
+-#include <wordexp.h>
+ #include <glibmm/main.h>
+ #include <gtkmm/drawingarea.h>
+ #include <gtkmm/window.h>
+@@ -117,16 +116,7 @@ bool WayfireBackground::change_background(int timer)
+ 
+ bool WayfireBackground::load_images_from_dir(std::string path)
+ {
+-    wordexp_t exp;
+-
+-    /* Expand path */
+-    wordexp(path.c_str(), &exp, 0);
+-    if (!exp.we_wordv)
+-    {
+-        return false;
+-    }
+-
+-    auto dir = opendir(exp.we_wordv[0]);
++    auto dir = opendir(path.c_str());
+     if (!dir)
+     {
+         return false;
+@@ -142,7 +132,7 @@ bool WayfireBackground::load_images_from_dir(std::stri
+             continue;
+         }
+ 
+-        auto fullpath = std::string(exp.we_wordv[0]) + "/" + file->d_name;
++        auto fullpath = std::string(path.c_str()) + "/" + file->d_name;
+ 
+         struct stat next;
+         if (stat(fullpath.c_str(), &next) == 0)
