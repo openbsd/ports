@@ -26,7 +26,8 @@ HOMEPAGE =	https://wayfire.org
 
 MODULES =	devel/meson
 BUILD_DEPENDS =	graphics/glm \
-		textproc/nlohmann-json
+		textproc/nlohmann-json \
+		wayland/wayland-protocols
 
 CONFIGURE_ARGS =-Duse_system_wfconfig=enabled \
 		-Duse_system_wlroots=enabled \
