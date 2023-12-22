@@ -1,6 +1,6 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2023.2.3
+V=			2023.3.2
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -23,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/idea-IC-232.10072.27
+WRKDIST=		${WRKDIR}/idea-IC-233.13135.103
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -35,14 +35,14 @@ do-install:
 	${INSTALL_DATA_DIR} ${IJ}
 	@cd ${WRKDIST} && pax -rw . ${IJ}
 	@rm -rf ${IJ}/jbr
-	@rm -rf ${IJ}/bin/libdbm64.so
-	@rm -rf ${IJ}/plugins/android
-	@rm -rf ${IJ}/plugins/design-tools
+	find ${IJ}/lib ${IJ}/plugins -name '*.so' -delete
+	find ${IJ}/lib ${IJ}/plugins -name '*.dll' -delete
+	find ${IJ}/lib ${IJ}/plugins -name '*.pdb' -delete
+	find ${IJ}/lib ${IJ}/plugins -name '*.exe' -delete
+	find ${IJ}/lib ${IJ}/plugins -type d -empty -delete
+
 .for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
 	@rm -rf ${IJ}/plugins/cwm-plugin/quiche-native/${PLUGIN}
-.endfor
-.for PLUGIN in windows32 windows64 osx
-	@rm -rf ${IJ}/plugins/maven/lib/maven3/lib/jansi-native/${PLUGIN}
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 .for PROG in idea idea-lightedit
