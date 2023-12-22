@@ -1,6 +1,6 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2023.2.1
+V=			2023.3.2
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
@@ -35,8 +35,12 @@ do-install:
 	${INSTALL_DATA_DIR} ${PC}
 	@cd ${WRKDIST} && pax -rw . ${PC}
 	@rm -rf ${PC}/jbr
-	@rm -rf ${PC}/plugins/android
-	@rm -rf ${PC}/lib/pty4j-native
+	find ${PC}/lib ${PC}/plugins -name '*.so' -delete
+	find ${PC}/lib ${PC}/plugins -name '*.dll' -delete
+	find ${PC}/lib ${PC}/plugins -name '*.pdb' -delete
+	find ${PC}/lib ${PC}/plugins -name '*.exe' -delete
+	find ${PC}/lib ${PC}/plugins -type d -empty -delete
+
 .for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
 	@rm -rf ${PC}/plugins/cwm-plugin/quiche-native/${PLUGIN}
 .endfor
