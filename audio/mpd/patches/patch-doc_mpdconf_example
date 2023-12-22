@@ -79,7 +79,7 @@ Index: doc/mpdconf.example
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -330,11 +333,11 @@ input {
+@@ -331,11 +334,11 @@ input {
  #
  # An example of an sndio output.
  #
