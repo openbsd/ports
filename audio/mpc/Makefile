@@ -1,6 +1,6 @@
 COMMENT=		command line client for mpd
 
-VER=			0.34
+VER=			0.35
 DISTNAME=		mpc-${VER}
 CATEGORIES=		audio
 EXTRACT_SUFX=		.tar.xz

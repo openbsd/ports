@@ -3,7 +3,7 @@ only build manpage, and install it in correct dir
 Index: doc/meson.build
 --- doc/meson.build.orig
 +++ doc/meson.build
-@@ -1,31 +1,9 @@
+@@ -1,34 +1,9 @@
 -sphinx_output = custom_target(
 -  'HTML documentation',
 -  output: 'html',
@@ -14,19 +14,22 @@ Index: doc/meson.build
 -  install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
 -)
 -
- custom_target(
--  'upload',
--  input: sphinx_output,
--  output: 'upload',
--  build_always_stale: true,
--  command: [
--    'rsync', '-vpruz', '--delete', '@INPUT@',
--    'www.musicpd.org:/var/www/mpd/doc/mpc/',
--    '--chmod=a+rX',
--  ],
--)
+-rsync = find_program('rsync', required: false)
+-if rsync.found()
+-  custom_target(
+-    'upload',
+-    input: sphinx_output,
+-    output: 'upload',
+-    build_always_stale: true,
+-    command: [
+-      rsync, '-vpruz', '--delete', '@INPUT@',
+-      'www.musicpd.org:/var/www/mpd/doc/mpc/',
+-      '--chmod=a+rX',
+-    ],
+-  )
+-endif
 -
--custom_target(
+ custom_target(
    'Manpage documentation',
 -  output: 'man',
 +  output: 'man1',
