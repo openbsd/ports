@@ -1,6 +1,6 @@
 COMMENT =	GIS WMTS/TMS tile caching server
 
-MODPY_EGG_VERSION =	1.16.0
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		MapProxy-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 
@@ -15,7 +15,6 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MODULES =	lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_ADJ_FILES =	mapproxy/test/system/fixture/cgi.py
 
 RUN_DEPENDS =	geo/py-proj${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
