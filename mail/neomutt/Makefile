@@ -2,7 +2,7 @@ COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20231103
+GH_TAGNAME=	20231221
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
