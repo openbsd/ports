@@ -1,9 +1,25 @@
-https://github.com/Icinga/icinga2/pull/9882
+first hunk: https://github.com/Icinga/icinga2/pull/9943
+second:
+
+From 1f06589f7afeed119b041ca62d745063e600b1a6 Mon Sep 17 00:00:00 2001
+From: Theo Buehler <tb@openbsd.org>
+Date: Fri, 20 Oct 2023 18:29:10 +0200
+Subject: [PATCH] Remove dead code in GetSignatureAlgorithm()
 
 Index: lib/base/tlsutility.cpp
 --- lib/base/tlsutility.cpp.orig
 +++ lib/base/tlsutility.cpp
-@@ -1012,16 +1012,7 @@ int GetCertificateVersion(const std::shared_ptr<X509>&
+@@ -100,7 +100,9 @@ static void InitSslContext(const Shared<boost::asio::s
+ 		}
+ 	});
+ #else /* OPENSSL_VERSION_NUMBER < 0x10100000L */
++#	ifdef SSL_OP_NO_RENEGOTIATION
+ 	flags |= SSL_OP_NO_RENEGOTIATION;
++#	endif /* SSL_OP_NO_RENEGOTIATION */
+ #endif /* OPENSSL_VERSION_NUMBER < 0x10100000L */
+ 
+ 	SSL_CTX_set_options(sslContext, flags);
+@@ -1037,16 +1039,7 @@ int GetCertificateVersion(const std::shared_ptr<X509>&
  
  String GetSignatureAlgorithm(const std::shared_ptr<X509>& cert)
  {
