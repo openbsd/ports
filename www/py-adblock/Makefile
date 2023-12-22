@@ -1,6 +1,3 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
-
 BROKEN-i386 =	fatal runtime error: Rust cannot catch foreign exceptions
 #.if ${MACHINE_ARCH} == i386
 #DPB_PROPERTIES = lonesome
@@ -12,8 +9,9 @@ GH_ACCOUNT =	ArniDagur
 GH_PROJECT =	python-adblock
 GH_TAGNAME =	0.6.0
 DISTNAME =	py-adblock-${GH_TAGNAME}
-MODPY_EGG_VERSION = ${GH_TAGNAME}
-REVISION =	1
+#MODPY_EGG_VERSION = ${GH_TAGNAME}
+MODPY_EGG_VERSION = 0.0.0
+REVISION =	2
 
 CATEGORIES =	www
 
@@ -31,8 +29,7 @@ MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
 BUILD_DEPENDS =	devel/maturin \
-		devel/py-pip${MODPY_FLAVOR} \
-		security/rust-ring
+		devel/py-pip${MODPY_FLAVOR}
 
 TEST_DEPENDS =	textproc/py-toml${MODPY_FLAVOR}
 

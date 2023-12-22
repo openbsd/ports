@@ -1,0 +1,21 @@
+https://gitlab.archlinux.org/archlinux/packaging/packages/python-adblock/-/blob/main/pep-621-compatibility.patch?ref_type=heads
+
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -9,15 +9,6 @@ readme = "README.md"
+ homepage = "https://github.com/ArniDagur/python-adblock"
+ repository = "https://github.com/ArniDagur/python-adblock"
+ 
+-[package.metadata.maturin]
+-classifier = [
+-    "Programming Language :: Python",
+-    "Programming Language :: Rust",
+-    "License :: OSI Approved :: MIT License",
+-    "License :: OSI Approved :: Apache Software License",
+-]
+-requires-python = ">=3.7"
+-
+ [profile.release]
+ debug = true
+ 

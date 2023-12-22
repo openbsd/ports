@@ -1,0 +1,26 @@
+https://gitlab.archlinux.org/archlinux/packaging/packages/python-adblock/-/blob/main/pep-621-compatibility.patch?ref_type=heads
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,8 +1,18 @@
+-[tool.poetry]
++[project]
+ name = "adblock"
+ version = "0.0.0"
+ description = "Brave's adblocking in Python"
+-authors = ["Árni Dagur <arni@dagur.eu>"]
++requires-python = ">=3.7"
++authors = [
++    {email = "arni@dagur.eu"},
++    {name = "Árni Dagur"}
++]
++classifiers = [
++    "Programming Language :: Python",
++    "Programming Language :: Rust",
++    "License :: OSI Approved :: MIT License",
++    "License :: OSI Approved :: Apache Software License",
++]
+ 
+ [tool.poetry.dependencies]
+ python = "^3.6"
