@@ -1,9 +1,10 @@
 COMMENT=		debugger for use with MSP 430 MCUs
 
+V =			0.25pl20220518
 GH_ACCOUNT=		dlbeer
 GH_PROJECT=		mspdebug
-GH_TAGNAME=		v0.23
-REVISION=		1
+GH_COMMIT=		985b390ba22f4229aeca9f02e273a54eb4a76a9a
+DISTNAME =		${GH_PROJECT}-${V}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://dlbeer.co.nz/mspdebug/
