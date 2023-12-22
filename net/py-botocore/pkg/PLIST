@@ -1759,6 +1759,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune-graph/2023-11-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune-graph/2023-11-29/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune-graph/2023-11-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune-graph/2023-11-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune-graph/2023-11-29/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/neptune/2014-10-31/examples-1.json
