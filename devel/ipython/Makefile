@@ -3,13 +3,13 @@ COMMENT =		enhanced interactive Python shell
 MODPY_EGG_VERSION =	8.18.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
 
-MAINTAINER =		Daniel Dickman <didickman@gmail.com>
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
