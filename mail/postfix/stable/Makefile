@@ -1,5 +1,4 @@
-VERSION=	3.7.3
-REVISION=	13
+VERSION=	3.7.9
 
 PORTROACH=	site:http://ftp.porcupine.org/mirrors/postfix-release/official/
 SITES=		${SITE_POSTFIX:=official/}
