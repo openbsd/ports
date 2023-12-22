@@ -140,6 +140,7 @@ share/calc/help/btrunc
 share/calc/help/bug
 share/calc/help/bugs
 share/calc/help/builtin
+share/calc/help/calc
 share/calc/help/calc_tty
 share/calc/help/calclevel
 share/calc/help/calcpath
@@ -335,7 +336,6 @@ share/calc/help/logn
 share/calc/help/lowbit
 share/calc/help/ltol
 share/calc/help/makelist
-share/calc/help/man
 share/calc/help/mat
 share/calc/help/matdim
 share/calc/help/matfill
@@ -470,7 +470,6 @@ share/calc/help/trunc
 share/calc/help/type
 share/calc/help/types
 share/calc/help/unexpected
-share/calc/help/usage
 share/calc/help/usertime
 share/calc/help/variable
 share/calc/help/vercos
