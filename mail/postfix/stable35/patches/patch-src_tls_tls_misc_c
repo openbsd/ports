@@ -1,0 +1,29 @@
+Index: src/tls/tls_misc.c
+--- src/tls/tls_misc.c.orig
++++ src/tls/tls_misc.c
+@@ -657,7 +657,7 @@ void    tls_param_init(void)
+ 
+ int     tls_library_init(void)
+ {
+-    OPENSSL_INIT_SETTINGS *init_settings;
++    // OPENSSL_INIT_SETTINGS *init_settings;
+     char   *conf_name = *var_tls_cnf_name ? var_tls_cnf_name : 0;
+     char   *conf_file = 0;
+     unsigned long init_opts = 0;
+@@ -681,6 +681,7 @@ int     tls_library_init(void)
+ 	    msg_info("tls_library_init: using backwards-compatible defaults");
+ 	return (init_res = TLS_LIB_INIT_OK);
+     }
++#if 0
+     if ((init_settings = OPENSSL_INIT_new()) == 0) {
+ 	msg_warn("error allocating OpenSSL init settings, "
+ 		 "disabling TLS support");
+@@ -763,6 +764,8 @@ int     tls_library_init(void)
+ 	TLS_LIB_INIT_RETURN(TLS_LIB_INIT_ERR);
+     }
+     TLS_LIB_INIT_RETURN(TLS_LIB_INIT_OK);
++#endif
++    return init_res = TLS_LIB_INIT_OK;
+ }
+ 
+ /* tls_pre_jail_init - Load TLS related pre-jail tables */
