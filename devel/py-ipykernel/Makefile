@@ -3,13 +3,18 @@ COMMENT =		IPython kernel for Jupyter
 MODPY_EGG_VERSION =	6.23.2
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 PORTROACH=		limit:^6
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
+
+# BSD
+PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
 			devel/py-jupyter_core${MODPY_FLAVOR}>=4.2 \
@@ -34,9 +39,6 @@ TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
 			devel/py-flaky${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
-
-# BSD
-PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 

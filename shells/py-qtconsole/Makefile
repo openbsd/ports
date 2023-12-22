@@ -3,8 +3,11 @@ COMMENT =		Jupyter Qt console
 MODPY_EGG_VERSION =	5.5.1
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		shells
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

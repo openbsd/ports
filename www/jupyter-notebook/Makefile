@@ -3,11 +3,13 @@ COMMENT =		web-based notebook for interactive computing
 MODPY_EGG_VERSION =	6.3.0
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 
 HOMEPAGE =		https://jupyter.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

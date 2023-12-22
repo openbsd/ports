@@ -3,10 +3,13 @@ COMMENT =		configuration system for Python applications
 MODPY_EGG_VERSION =	5.13.0
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ipython.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

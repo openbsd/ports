@@ -3,10 +3,13 @@ COMMENT =		Jupyter packaging utilities
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		jupyter_packaging-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -1,13 +1,16 @@
 COMMENT =		converting Jupyter notebooks
 
+# XXX: upgrading to 6.x+ requires nbclient
 MODPY_EGG_VERSION =	5.6.1
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

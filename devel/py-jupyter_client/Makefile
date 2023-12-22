@@ -3,10 +3,13 @@ COMMENT =		Jupyter protocol implementation and client libraries
 MODPY_EGG_VERSION =	7.4.9
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

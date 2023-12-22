@@ -3,11 +3,13 @@ COMMENT =		IPython vestigial utilities
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		ipython_genutils-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://ipython.org/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
