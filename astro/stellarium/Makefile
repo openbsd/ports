@@ -2,9 +2,8 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-V=			23.3
+V=			23.4
 DISTNAME=		stellarium-${V}
-REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -19,8 +18,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL QXlsxQt6 Qt6Charts Qt6Concurrent
 WANTLIB += Qt6Core Qt6Gui Qt6Multimedia Qt6MultimediaWidgets Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6SerialPort Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets c gps
-WANTLIB += m xkbcommon z
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets c exiv2
+WANTLIB += gps m nlopt xkbcommon z
 
 SITES=			https://github.com/Stellarium/stellarium/releases/download/v${V}/
 
@@ -34,7 +33,9 @@ MODPY_RUNDEP=		No
 BUILD_DEPENDS=		astro/calcmysky>=0.3.1p0 \
 			devel/indi,-libs
 
-LIB_DEPENDS=		misc/gpsd \
+LIB_DEPENDS=		graphics/exiv2 \
+			math/nlopt \
+			misc/gpsd \
 			textproc/qxlsx,qt6 \
 			x11/qt6/qtcharts \
 			x11/qt6/qtmultimedia \
