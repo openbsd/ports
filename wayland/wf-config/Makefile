@@ -17,7 +17,8 @@ MODULES =	devel/meson
 
 CONFIGURE_ARGS =-Dtests=disabled
 
-BUILD_DEPENDS =	wayland/wayland \
+BUILD_DEPENDS =	wayland/libinput-openbsd \
+		wayland/wayland \
 		wayland/wayland-protocols\
 		graphics/glm
 LIB_DEPENDS =	textproc/libxml \
