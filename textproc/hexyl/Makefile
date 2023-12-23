@@ -2,7 +2,7 @@ COMMENT =		simple console hex viewer
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		hexyl
-GH_TAGNAME =		v0.13.1
+GH_TAGNAME =		v0.14.0
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
