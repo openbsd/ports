@@ -14,7 +14,8 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/meson
 
-BUILD_DEPENDS =	wayland/wayfire
+BUILD_DEPENDS =	wayland/wayfire \
+		wayland/wayland-protocols
 
 LIB_DEPENDS =	x11/gtk3mm \
 		x11/libdbusmenu \
