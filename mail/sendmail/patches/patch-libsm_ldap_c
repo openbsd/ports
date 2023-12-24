@@ -8,7 +8,7 @@ Also, fix a debug printout of a time_t field on ILP32 architectures where the
 Index: libsm/ldap.c
 --- libsm/ldap.c.orig
 +++ libsm/ldap.c
-@@ -79,6 +79,9 @@ sm_ldap_clear(lmap)
+@@ -81,6 +81,9 @@ sm_ldap_clear(lmap)
  	lmap->ldap_options = 0;
  # endif
  	lmap->ldap_attrsep = '\0';
@@ -18,15 +18,15 @@ Index: libsm/ldap.c
  	lmap->ldap_binddn = NULL;
  	lmap->ldap_secret = NULL;
  	lmap->ldap_method = LDAP_AUTH_SIMPLE;
-@@ -439,9 +442,9 @@ sm_ldap_start(name, lmap)
- 			lmap->ldap_method);
- 	save_errno = errno;
+@@ -462,9 +465,9 @@ sm_ldap_start(name, lmap)
  	if (sm_debug_active(&SmLDAPTrace, 9))
--		sm_dprintf("ldap_bind(%s)=%d, errno=%d, tmo=%ld\n",
-+		sm_dprintf("ldap_bind(%s)=%d, errno=%d, tmo=%lld\n",
- 			lmap->ldap_uri, msgid, save_errno,
--			(long) tmo.tv_sec);
-+			(long long) tmo.tv_sec);
- 	if (-1 == msgid)
  	{
- 		r = -1;
+ 		errmsg = sm_ldap_geterror(ld);
+-		sm_dprintf("ldap_bind(%s)=%d, errno=%d, ldaperr=%d, ld_error=%s, tmo=%ld\n",
++		sm_dprintf("ldap_bind(%s)=%d, errno=%d, ldaperr=%d, ld_error=%s, tmo=%lld\n",
+ 			lmap->ldap_uri, msgid, save_errno,
+-			sm_ldap_geterrno(ld), errmsg, (long) tmo.tv_sec);
++			sm_ldap_geterrno(ld), errmsg, (long long) tmo.tv_sec);
+ 		if (NULL != errmsg)
+ 		{
+ 			ldap_memfree(errmsg);

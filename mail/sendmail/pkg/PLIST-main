@@ -185,6 +185,7 @@ share/sendmail/feature/delay_checks.m4
 share/sendmail/feature/dnsbl.m4
 share/sendmail/feature/domaintable.m4
 share/sendmail/feature/enhdnsbl.m4
+share/sendmail/feature/fips3.m4
 share/sendmail/feature/generics_entire_domain.m4
 share/sendmail/feature/genericstable.m4
 share/sendmail/feature/greet_pause.m4

@@ -1,14 +1,12 @@
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
 
-V=			8.17.2
+V=			8.18.0.2
 DISTNAME =		sendmail.${V}
 PKGNAME-main =		sendmail-${V}
 PKGNAME-libmilter =	libmilter-${V}
 FULLPKGNAME-libmilter =	libmilter-${V}
 FULLPKGPATH-libmilter =	mail/sendmail,-libmilter
-
-REVISION-main =		0
 
 SHARED_LIBS =		milter	4.0
 
@@ -26,9 +24,8 @@ MULTI_PACKAGES =	-main -libmilter
 WANTLIB-main =		c crypto ssl
 WANTLIB-libmilter =	pthread
 
-SITES =			ftp://ftp.sendmail.org/pub/sendmail/ \
-			ftp://ftp.bit.nl/mirror/sendmail/ \
-			http://negi.ipv6labs.jp/pub/sendmail/
+SITES =			https://ftp.sendmail.org/snapshots/ \
+			https://ftp.sendmail.org/
 
 BUILD_DEPENDS =		textproc/groff
 
