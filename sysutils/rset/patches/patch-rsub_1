@@ -1,0 +1,14 @@
+fix command in EXAMPLES section
+
+Index: rsub.1
+--- rsub.1.orig
++++ rsub.1
+@@ -76,7 +76,7 @@ File not found
+ .Sh EXAMPLES
+ Ensure a single configuration parameter is set
+ .Pp
+-.Dl $SD./rsub -r '^AllowTcpForwarding .+' -l 'AllowTcpForwarding yes' /etc/ssh/sshd_config
++.Dl $SD/rsub -r '^AllowTcpForwarding .+' -l 'AllowTcpForwarding yes' /etc/ssh/sshd_config
+ .Pp
+ Update a managed block of text
+ .Pp
