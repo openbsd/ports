@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: src/plugins/xml-pack/ide-xml-validator.c
+--- src/plugins/xml-pack/ide-xml-validator.c.orig
++++ src/plugins/xml-pack/ide-xml-validator.c
+@@ -63,7 +63,7 @@ ide_xml_validator_get_kind (IdeXmlValidator *self)
+ static IdeDiagnostic *
+ create_diagnostic (IdeXmlValidator        *self,
+                    GFile                  *file,
+-                   xmlError               *error,
++                   const xmlError         *error,
+                    IdeDiagnosticSeverity   severity)
+ {
+   g_autoptr(IdeLocation) loc = NULL;

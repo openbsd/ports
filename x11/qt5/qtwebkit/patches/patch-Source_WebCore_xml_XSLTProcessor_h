@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: Source/WebCore/xml/XSLTProcessor.h
+--- Source/WebCore/xml/XSLTProcessor.h.orig
++++ Source/WebCore/xml/XSLTProcessor.h
+@@ -64,7 +64,7 @@ class XSLTProcessor : public RefCounted<XSLTProcessor>
+ 
+     void reset();
+ 
+-    static void parseErrorFunc(void* userData, xmlError*);
++    static void parseErrorFunc(void* userData, const xmlError*);
+     static void genericErrorFunc(void* userData, const char* msg, ...);
+     
+     // Only for libXSLT callbacks

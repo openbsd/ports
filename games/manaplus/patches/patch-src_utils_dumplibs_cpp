@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: src/utils/dumplibs.cpp
+--- src/utils/dumplibs.cpp.orig
++++ src/utils/dumplibs.cpp
+@@ -140,7 +140,7 @@ void dumpLibs()
+     LIBXML_TEST_VERSION
+ #endif  // LIBXML_TEST_VERSION
+ #ifdef ENABLE_LIBXML
+-    const char **xmlVersion = __xmlParserVersion();
++    const char *const *xmlVersion = __xmlParserVersion();
+     if (xmlVersion != nullptr)
+         logger->log(" libxml2: %s", *xmlVersion);
+ #endif  // ENABLE_LIBXML

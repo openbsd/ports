@@ -1,0 +1,25 @@
+From ffb327376f5bb69e8dfe7f805529e45a40118c2b Mon Sep 17 00:00:00 2001
+From: lsh123 <aleksey@aleksey.com>
+Date: Mon, 20 Nov 2023 11:50:43 -0500
+Subject: [PATCH] Fix libxml2 v2.12.0 includes  (#729)
+
+Index: apps/xmlsec.c
+--- apps/xmlsec.c.orig
++++ apps/xmlsec.c
+@@ -22,6 +22,7 @@
+ #include <libxml/xmlmemory.h>
+ #include <libxml/parser.h>
+ #include <libxml/xpath.h>
++#include <libxml/xmlsave.h>
+ #include <libxml/xpathInternals.h>
+ 
+ #ifndef XMLSEC_NO_XSLT
+@@ -3030,7 +3031,7 @@ xmlSecAppInit(void) {
+     /* Init libxml */
+     xmlInitParser();
+     LIBXML_TEST_VERSION
+-    xmlTreeIndentString = "\t";
++    xmlThrDefTreeIndentString("\t");
+ #ifndef XMLSEC_NO_XSLT
+     xmlIndentTreeOutput = 1;
+ #endif /* XMLSEC_NO_XSLT */

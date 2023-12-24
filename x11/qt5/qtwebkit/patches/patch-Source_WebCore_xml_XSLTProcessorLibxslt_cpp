@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: Source/WebCore/xml/XSLTProcessorLibxslt.cpp
+--- Source/WebCore/xml/XSLTProcessorLibxslt.cpp.orig
++++ Source/WebCore/xml/XSLTProcessorLibxslt.cpp
+@@ -78,7 +78,7 @@ void XSLTProcessor::genericErrorFunc(void*, const char
+     // It would be nice to do something with this error message.
+ }
+ 
+-void XSLTProcessor::parseErrorFunc(void* userData, xmlError* error)
++void XSLTProcessor::parseErrorFunc(void* userData, const xmlError* error)
+ {
+     PageConsoleClient* console = static_cast<PageConsoleClient*>(userData);
+     if (!console)

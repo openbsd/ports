@@ -1,0 +1,11 @@
+Index: src/node_type.h
+--- src/node_type.h.orig
++++ src/node_type.h
+@@ -23,6 +23,7 @@
+ 
+ #include "node.h"
+ 
++#include <libxml/HTMLparser.h> /* xmlNodePtr */
+ #include <libxml/xmlmemory.h>
+ #include <gtk/gtk.h>
+ 

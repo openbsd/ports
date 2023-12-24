@@ -1,0 +1,16 @@
+From ffb327376f5bb69e8dfe7f805529e45a40118c2b Mon Sep 17 00:00:00 2001
+From: lsh123 <aleksey@aleksey.com>
+Date: Mon, 20 Nov 2023 11:50:43 -0500
+Subject: [PATCH] Fix libxml2 v2.12.0 includes  (#729)
+
+Index: apps/crypto.c
+--- apps/crypto.c.orig
++++ apps/crypto.c
+@@ -12,6 +12,7 @@
+ #endif
+ 
+ #include <string.h>
++#include <stdlib.h>
+ 
+ #include <xmlsec/xmlsec.h>
+ #include <xmlsec/keys.h>

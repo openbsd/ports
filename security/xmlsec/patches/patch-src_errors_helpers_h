@@ -1,0 +1,53 @@
+From ffb327376f5bb69e8dfe7f805529e45a40118c2b Mon Sep 17 00:00:00 2001
+From: lsh123 <aleksey@aleksey.com>
+Date: Mon, 20 Nov 2023 11:50:43 -0500
+Subject: [PATCH] Fix libxml2 v2.12.0 includes  (#729)
+
+Index: src/errors_helpers.h
+--- src/errors_helpers.h.orig
++++ src/errors_helpers.h
+@@ -136,7 +136,7 @@ extern "C" {
+  */
+ #define xmlSecXmlError(errorFunction, errorObject) \
+     {                                                 \
+-        xmlErrorPtr error = xmlGetLastError();        \
++        const xmlError * error = xmlGetLastError();        \
+         int code = (error != NULL) ? error->code : 0; \
+         const char* message = (error != NULL) ? error->message : NULL; \
+         xmlSecError(XMLSEC_ERRORS_HERE,               \
+@@ -159,7 +159,7 @@ extern "C" {
+  */
+ #define xmlSecXmlError2(errorFunction, errorObject, msg, param) \
+     {                                                 \
+-        xmlErrorPtr error = xmlGetLastError();        \
++        const xmlError * error = xmlGetLastError();        \
+         int code = (error != NULL) ? error->code : 0; \
+         const char* message = (error != NULL) ? error->message : NULL; \
+         xmlSecError(XMLSEC_ERRORS_HERE,               \
+@@ -181,7 +181,7 @@ extern "C" {
+  */
+ #define xmlSecXmlParserError(errorFunction, ctxt, errorObject) \
+     {                                                 \
+-        xmlErrorPtr error = xmlCtxtGetLastError(ctxt);\
++        const xmlError * error = xmlCtxtGetLastError(ctxt);\
+         int code = (error != NULL) ? error->code : 0; \
+         const char* message = (error != NULL) ? error->message : NULL; \
+         xmlSecError(XMLSEC_ERRORS_HERE,               \
+@@ -205,7 +205,7 @@ extern "C" {
+  */
+ #define xmlSecXmlParserError2(errorFunction, ctxt, errorObject, msg, param) \
+     {                                                 \
+-        xmlErrorPtr error = xmlCtxtGetLastError(ctxt);\
++        const xmlError * error = xmlCtxtGetLastError(ctxt);\
+         int code = (error != NULL) ? error->code : 0; \
+         const char* message = (error != NULL) ? error->message : NULL; \
+         xmlSecError(XMLSEC_ERRORS_HERE,               \
+@@ -227,7 +227,7 @@ extern "C" {
+  */
+ #define xmlSecXsltError(errorFunction, ctxt, errorObject) \
+     {                                                 \
+-        xmlErrorPtr error = xmlGetLastError();        \
++        const xmlError * error = xmlGetLastError();        \
+         int code = (error != NULL) ? error->code : 0; \
+         const char* message = (error != NULL) ? error->message : NULL; \
+         xmlSecError(XMLSEC_ERRORS_HERE,               \

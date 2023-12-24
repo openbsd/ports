@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: src/plugins/xml-pack/ide-xml-parser.c
+--- src/plugins/xml-pack/ide-xml-parser.c.orig
++++ src/plugins/xml-pack/ide-xml-parser.c
+@@ -362,7 +362,7 @@ ide_xml_parser_error_sax_cb (ParserState    *state,
+ {
+   IdeDiagnostic *diagnostic;
+   xmlParserCtxt *context;
+-  xmlError *error;
++  const xmlError *error;
+   const gchar *base;
+   const gchar *current;
+   g_autofree gchar *msg = NULL;

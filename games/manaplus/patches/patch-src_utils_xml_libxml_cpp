@@ -1,0 +1,14 @@
+Unbreak build with libxml >=2.12.0
+
+Index: src/utils/xml/libxml.cpp
+--- src/utils/xml/libxml.cpp.orig
++++ src/utils/xml/libxml.cpp
+@@ -36,6 +36,8 @@
+ 
+ #include <fstream>
+ 
++#include <libxml/parser.h>
++
+ #include "debug.h"
+ 
+ namespace
