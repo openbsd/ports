@@ -1,0 +1,35 @@
+From c8f7408db73d2f2ccacb25a2b4fef8dfebdfc6cb Mon Sep 17 00:00:00 2001
+From: Miklos Vajna <vmiklos@collabora.com>
+Date: Mon, 27 Nov 2023 08:02:59 +0100
+Subject: [PATCH] tdf#158302 fix build against system-libxml-2.12
+
+Index: sc/source/filter/xml/xmlfilti.cxx
+--- sc/source/filter/xml/xmlfilti.cxx.orig
++++ sc/source/filter/xml/xmlfilti.cxx
+@@ -370,7 +370,7 @@ void ScXMLConditionContext::GetOperator(
+         rEntry.eOp = SC_BOTPERC;
+     else if (IsXMLToken(aOpStr, XML_BOTTOM_VALUES))
+         rEntry.eOp = SC_BOTVAL;
+-    else if (IsXMLToken(aOpStr, XML_EMPTY))
++    else if (IsXMLToken(aOpStr, XML_TOKEN_EMPTY))
+         rEntry.SetQueryByEmpty();
+     else if (aOpStr == u">")
+         rEntry.eOp = SC_GREATER;
+@@ -422,7 +422,7 @@ void SAL_CALL ScXMLConditionContext::endFastElement( s
+     if (maQueryItems.empty())
+     {
+         ScQueryEntry::Item& rItem = rEntry.GetQueryItem();
+-        if (IsXMLToken(sOperator, XML_EMPTY))
++        if (IsXMLToken(sOperator, XML_TOKEN_EMPTY))
+             return;
+         if (IsXMLToken(sDataType, XML_NUMBER))
+         {
+@@ -753,7 +753,7 @@ void SAL_CALL ScXMLDPConditionContext::endFastElement(
+     else
+         aFilterField.eConnect = SC_AND;
+     pFilterContext->SetIsCaseSensitive(bIsCaseSensitive);
+-    if (IsXMLToken(sOperator, XML_EMPTY))
++    if (IsXMLToken(sOperator, XML_TOKEN_EMPTY))
+         aFilterField.SetQueryByEmpty();
+     else if (IsXMLToken(sOperator, XML_NOEMPTY))
+         aFilterField.SetQueryByNonEmpty();

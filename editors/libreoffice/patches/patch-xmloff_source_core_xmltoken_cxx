@@ -1,0 +1,17 @@
+From c8f7408db73d2f2ccacb25a2b4fef8dfebdfc6cb Mon Sep 17 00:00:00 2001
+From: Miklos Vajna <vmiklos@collabora.com>
+Date: Mon, 27 Nov 2023 08:02:59 +0100
+Subject: [PATCH] tdf#158302 fix build against system-libxml-2.12
+
+Index: xmloff/source/core/xmltoken.cxx
+--- xmloff/source/core/xmltoken.cxx.orig
++++ xmloff/source/core/xmltoken.cxx
+@@ -754,7 +754,7 @@ namespace xmloff::token {
+         TOKEN( "embedded-visible-area",           XML_EMBEDDED_VISIBLE_AREA ),
+         TOKEN( "embossed",                        XML_EMBOSSED ),
+         TOKEN( "emissive-color",                  XML_EMISSIVE_COLOR ),
+-        TOKEN( "empty",                           XML_EMPTY ),
++        TOKEN( "empty",                           XML_TOKEN_EMPTY ),
+         TOKEN( "empty-line-refresh",              XML_EMPTY_LINE_REFRESH ),
+         TOKEN( "enable-numbering",                XML_ENABLE_NUMBERING ),
+         TOKEN( "enabled",                         XML_ENABLED ),

@@ -50,7 +50,7 @@ SHA256 (libreoffice/liberation-narrow-fonts-ttf-1.07.6.tar.gz) = iHnYm1/3tQbJ/Cj
 SHA256 (libreoffice/libetonyek-0.1.10.tar.xz) = tDBDWm6Eh4iLdh3ISLeYFibrgUiElj/+JesmoTkwHpo=
 SHA256 (libreoffice/libexttextcat-3.4.6.tar.xz) = bXfqziDp6hBsEzDiaO3nDJpKiXRN3CVxVoJ1TsozaN8=
 SHA256 (libreoffice/libfreehand-0.1.2.tar.xz) = DkItFWSm2/IqmvWYU1QlJx5YNRTA97p9kJFnZCDeNKw=
-SHA256 (libreoffice/liblangtag-0.6.3.tar.bz2) = HxKiCgLsOo0i5U3tuLaDpDycFgvaG6M3vxBgYHrnM70=
+SHA256 (libreoffice/liblangtag-0.6.7.tar.bz2) = Xta81K4/PAXJEuYvIWzRpEEjhGFH9ymkn7VmjaUeAw4=
 SHA256 (libreoffice/libmspub-0.1.4.tar.xz) = 7zbBoaq7K6Owvtqq/nF79EgL4rqN5vOJS+X9NwKwE7o=
 SHA256 (libreoffice/libmwaw-0.3.21.tar.xz) = 6HUBI6eNYblDzveLdzbIp/ILsKZJqhEkAhJPunlPwhw=
 SHA256 (libreoffice/libnumbertext-1.0.11.tar.xz) = XctNs7I0D4H2Ac6G2NdraeNNcPhPgEGSyQHkt/hNX7A=
@@ -129,7 +129,7 @@ SIZE (libreoffice/liberation-narrow-fonts-ttf-1.07.6.tar.gz) = 300832
 SIZE (libreoffice/libetonyek-0.1.10.tar.xz) = 1494000
 SIZE (libreoffice/libexttextcat-3.4.6.tar.xz) = 1111320
 SIZE (libreoffice/libfreehand-0.1.2.tar.xz) = 516132
-SIZE (libreoffice/liblangtag-0.6.3.tar.bz2) = 755492
+SIZE (libreoffice/liblangtag-0.6.7.tar.bz2) = 757041
 SIZE (libreoffice/libmspub-0.1.4.tar.xz) = 377472
 SIZE (libreoffice/libmwaw-0.3.21.tar.xz) = 1457212
 SIZE (libreoffice/libnumbertext-1.0.11.tar.xz) = 302676

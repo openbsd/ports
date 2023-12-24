@@ -1,5 +1,3 @@
-BROKEN=		does not build with libxml >=2.12.0
-
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
@@ -48,6 +46,7 @@ SITES.a=	http://dev-www.libreoffice.org/src/ \
 		http://www.numbertext.org/linux/ \
 		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
 SITES.b=	http://dev-www.libreoffice.org/src/libgltf/
+SITES.c=	https://distfiles.bsdfrog.org/
 
 TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-${VERSION}.tar.xz
@@ -112,7 +111,7 @@ DISTFILES.a += liberation-narrow-fonts-ttf-1.07.6.tar.gz
 DISTFILES.a += libetonyek-0.1.10.tar.xz
 DISTFILES.a += libexttextcat-3.4.6.tar.xz
 DISTFILES.a += libfreehand-0.1.2.tar.xz
-DISTFILES.a += liblangtag-0.6.3.tar.bz2
+DISTFILES.c += liblangtag-0.6.7.tar.bz2
 DISTFILES.a += libmspub-0.1.4.tar.xz
 DISTFILES.a += libmwaw-0.3.21.tar.xz
 DISTFILES.a += libodfgen-0.1.8.tar.xz
