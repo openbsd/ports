@@ -11,6 +11,7 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
+REVISION=	0
 EPOCH =		0
 CATEGORIES=	devel
 SITES=		https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
