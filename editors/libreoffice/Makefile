@@ -1,3 +1,5 @@
+BROKEN=		does not build with libxml >=2.12.0
+
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 
