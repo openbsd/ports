@@ -3,6 +3,7 @@ COMMENT =	Qt5 library for writing cross-platform Matrix clients
 GH_ACCOUNT =	quotient-im
 GH_PROJECT =	libQuotient
 GH_TAGNAME =	0.8.1.2
+REVISION =	0
 
 SHARED_LIBS +=  Quotient                  2.0 # 0.8
 
