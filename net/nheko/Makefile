@@ -1,9 +1,3 @@
-# broken with LLVM 16
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-BROKEN=		cannot initialize '__va_list_tag *' with 'va_list'
-.endif
-
 COMMENT =	desktop client for Matrix using Qt and C++20
 
 GH_ACCOUNT =	Nheko-Reborn
@@ -54,5 +48,6 @@ LIB_DEPENDS =	databases/lmdb \
 
 # -DCMAKE_DISABLE_FIND_PACKAGE_GIT=ON (or _Git or _git) do not work
 CONFIGURE_ARGS +=	-DGIT=OFF
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 
 .include <bsd.port.mk>
