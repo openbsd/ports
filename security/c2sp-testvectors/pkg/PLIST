@@ -24,6 +24,8 @@ share/c2sp-testvectors/ML-KEM/unluckysample/go.mod
 share/c2sp-testvectors/ML-KEM/unluckysample/go.sum
 share/c2sp-testvectors/ML-KEM/unluckysample/unluckysample.go
 share/c2sp-testvectors/README.md
+share/c2sp-testvectors/RFC6979/
+share/c2sp-testvectors/RFC6979/README.md
 share/c2sp-testvectors/age/
 share/c2sp-testvectors/age/README.md
 share/c2sp-testvectors/age/age.go
