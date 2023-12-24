@@ -4,7 +4,7 @@ as equivalent, ours does not.
 Index: Makefile.am
 --- Makefile.am.orig
 +++ Makefile.am
-@@ -112,7 +112,7 @@ if WITH_XPTR_SOURCES
+@@ -113,7 +113,7 @@ if WITH_XPTR_SOURCES
  libxml2_la_SOURCES += xlink.c xpointer.c
  endif
  

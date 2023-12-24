@@ -41,6 +41,7 @@ share/examples/libxml2/relaxng.py
 share/examples/libxml2/resolver.py
 share/examples/libxml2/schema.py
 share/examples/libxml2/serialize.py
+share/examples/libxml2/setup_test.py
 share/examples/libxml2/sync.py
 share/examples/libxml2/test.dtd
 share/examples/libxml2/thread2.py

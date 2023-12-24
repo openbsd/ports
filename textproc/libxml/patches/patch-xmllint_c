@@ -1,7 +1,7 @@
 Index: xmllint.c
 --- xmllint.c.orig
 +++ xmllint.c
-@@ -83,7 +83,7 @@
+@@ -82,7 +82,7 @@
  #endif
  
  #ifndef XML_XML_DEFAULT_CATALOG
