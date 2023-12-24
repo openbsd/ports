@@ -1,0 +1,16 @@
+From d242631245edb66816ef9960bdb2c61b68e56cec Mon Sep 17 00:00:00 2001
+From: phosit <phosit@3db68df2-c116-0410-a063-a993310a9797>
+Date: Wed, 13 Dec 2023 19:42:00 +0000
+Subject: [PATCH] Fix build with libxml2 v2.12.1
+
+Index: libraries/source/fcollada/src/FColladaPlugins/FArchiveXML/FArchiveXML.cpp
+--- libraries/source/fcollada/src/FColladaPlugins/FArchiveXML/FArchiveXML.cpp.orig
++++ libraries/source/fcollada/src/FColladaPlugins/FArchiveXML/FArchiveXML.cpp
+@@ -77,6 +77,7 @@
+ #include "FCDocument/FCDVersion.h"
+ #include "FUtils/FUXmlDocument.h"
+ 
++#include <libxml/xmlIO.h>
+ 
+ //
+ // Constants

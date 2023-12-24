@@ -1,0 +1,25 @@
+From d242631245edb66816ef9960bdb2c61b68e56cec Mon Sep 17 00:00:00 2001
+From: phosit <phosit@3db68df2-c116-0410-a063-a993310a9797>
+Date: Wed, 13 Dec 2023 19:42:00 +0000
+Subject: [PATCH] Fix build with libxml2 v2.12.1
+
+Index: source/collada/CommonConvert.cpp
+--- source/collada/CommonConvert.cpp.orig
++++ source/collada/CommonConvert.cpp
+@@ -1,4 +1,4 @@
+-/* Copyright (C) 2018 Wildfire Games.
++/* Copyright (C) 2023 Wildfire Games.
+  * This file is part of 0 A.D.
+  *
+  * 0 A.D. is free software: you can redistribute it and/or modify
+@@ -28,8 +28,9 @@
+ #include "FUtils/FUDaeSyntax.h"
+ #include "FUtils/FUFileManager.h"
+ 
+-#include <cassert>
+ #include <algorithm>
++#include <cassert>
++#include <libxml/xmlerror.h>
+ 
+ void require_(int line, bool value, const char* type, const char* message)
+ {
