@@ -1,6 +1,3 @@
-# broken with boost 1.84
-BROKEN=		cannot initialize '__va_list_tag *' with 'va_list'
-
 # ships a dynarmic copy, and dynarmic only supports x86-64 and AArch64
 ONLY_FOR_ARCHS =	amd64 arm64
 
@@ -56,7 +53,9 @@ CONFIGURE_ARGS =	-DENABLE_CUBEB=OFF \
 			-DUSE_SYSTEM_SDL2=ON \
 			-DENABLE_FFMPEG_AUDIO_DECODER=ON \
 			-DENABLE_FFMPEG_VIDEO_DUMPER=ON \
-			-DCITRA_USE_PRECOMPILED_HEADERS=OFF
+			-DCITRA_USE_PRECOMPILED_HEADERS=OFF \
+			-DDYNARMIC_USE_PRECOMPILED_HEADERS=OFF
+
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
