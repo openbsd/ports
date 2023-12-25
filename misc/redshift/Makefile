@@ -41,4 +41,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-gui \
 			--disable-geoclue
 
+# --enable-gui runs gtk-update-icon-cache(1)
+FAKE_FLAGS =		UPDATE_ICON_CACHE=true
+
 .include <bsd.port.mk>
