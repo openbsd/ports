@@ -84,6 +84,9 @@ lib/pkgconfig/libqpdf.pc
 share/doc/qpdf/
 share/doc/qpdf/README-doc.txt
 share/doc/qpdf/examples/
+share/doc/qpdf/examples/extend-c-api-impl.cc
+share/doc/qpdf/examples/extend-c-api.c
+share/doc/qpdf/examples/extend-c-api.h
 share/doc/qpdf/examples/pdf-attach-file.cc
 share/doc/qpdf/examples/pdf-bookmarks.cc
 share/doc/qpdf/examples/pdf-c-objects.c
