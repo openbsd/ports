@@ -3,10 +3,13 @@ COMMENT=		modular geoinformation service on top of D-Bus
 VERSION=		2.7.1
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
+REVISION=		0
 
 CATEGORIES=		geo devel
 
 SHARED_LIBS += geoclue-2                 0.2 # 0.0.0
+
+HOMEPAGE=		https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -41,7 +44,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 CONFIGURE_ARGS=		-Dgtk-doc=false \
 			-Ddbus-srv-user=_geoclue
 
-# disable all components requiring ModemManager                                 
+# disable all components requiring ModemManager
 CONFIGURE_ARGS +=	-D3g-source=false \
 			-Dcdma-source=false \
 			-Dmodem-gps-source=false
