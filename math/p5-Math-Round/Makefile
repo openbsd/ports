@@ -2,9 +2,8 @@ COMMENT=	Perl extension for rounding numbers
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Math-Round-0.07
+DISTNAME =	Math-Round-0.08
 CATEGORIES=	math
-REVISION =	0
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
