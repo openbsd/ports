@@ -7,8 +7,7 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-3.3.7
-REVISION =	0
+DISTNAME =	blender-3.3.14
 
 CATEGORIES =	graphics
 
@@ -25,7 +24,7 @@ WANTLIB += avfilter avformat avutil blosc boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c expat
 WANTLIB += fftw3 freetype gmp gmpxx jpeg m openal openjp2 openvdb
-WANTLIB += osdCPU osdGPU png potrace pugixml pystring sndfile
+WANTLIB += osdCPU osdGPU png potrace pugixml pystring sharpyuv sndfile
 WANTLIB += swresample swscale tbb tiff util webp webpdemux webpmux
 WANTLIB += yaml-cpp z zstd
 

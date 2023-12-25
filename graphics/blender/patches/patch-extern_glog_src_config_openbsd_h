@@ -1,7 +1,105 @@
 Index: extern/glog/src/config_openbsd.h
 --- extern/glog/src/config_openbsd.h.orig
 +++ extern/glog/src/config_openbsd.h
-@@ -0,0 +1,192 @@
+@@ -95,6 +95,198 @@
+ #define HAVE_SYS_STAT_H
+ 
+ /* Define to 1 if you have the <sys/syscall.h> header file. */
++/* #undef HAVE_SYS_SYSCALL_H */
++
++/* Define to 1 if you have the <sys/time.h> header file. */
++#define HAVE_SYS_TIME_H
++
++/* Define to 1 if you have the <sys/types.h> header file. */
++#define HAVE_SYS_TYPES_H 1
++
++/* Define to 1 if you have the <sys/ucontext.h> header file. */
++/* #undef HAVE_SYS_UCONTEXT_H */
++
++/* Define to 1 if you have the <sys/utsname.h> header file. */
++#define HAVE_SYS_UTSNAME_H
++
++/* Define to 1 if you have the <ucontext.h> header file. */
++/* #undef HAVE_UCONTEXT_H */
++
++/* Define to 1 if you have the <unistd.h> header file. */
++#define HAVE_UNISTD_H 1
++
++/* Define to 1 if you have the <unwind.h> header file. */
++#define HAVE_UNWIND_H 1
++
++/* define if the compiler supports using expression for operator */
++#define HAVE_USING_OPERATOR
++
++/* define if your compiler has __attribute__ */
++#define HAVE___ATTRIBUTE__
++
++/* define if your compiler has __builtin_expect */
++#define HAVE___BUILTIN_EXPECT 1
++
++/* define if your compiler has __sync_val_compare_and_swap */
++#define HAVE___SYNC_VAL_COMPARE_AND_SWAP
++
++/* Define to the sub-directory in which libtool stores uninstalled libraries.
++   */
++/* #undef LT_OBJDIR */
++
++/* Name of package */
++/* #undef PACKAGE */
++
++/* Define to the address where bug reports for this package should be sent. */
++/* #undef PACKAGE_BUGREPORT */
++
++/* Define to the full name of this package. */
++/* #undef PACKAGE_NAME */
++
++/* Define to the full name and version of this package. */
++/* #undef PACKAGE_STRING */
++
++/* Define to the one symbol short name of this package. */
++/* #undef PACKAGE_TARNAME */
++
++/* Define to the home page for this package. */
++/* #undef PACKAGE_URL */
++
++/* Define to the version of this package. */
++/* #undef PACKAGE_VERSION */
++
++/* How to access the PC from a struct ucontext */
++/* #undef PC_FROM_UCONTEXT */
++
++/* Define to necessary symbol if this constant uses a non-standard name on
++   your system. */
++/* #undef PTHREAD_CREATE_JOINABLE */
++
++/* The size of `void *', as computed by sizeof. */
++#define SIZEOF_VOID_P 8
++
++/* Define to 1 if you have the ANSI C header files. */
++#define STDC_HEADERS 1
++
++/* the namespace where STL code like vector<> is defined */
++#define STL_NAMESPACE std
++
++/* location of source code */
++#define TEST_SRC_DIR "."
++
++/* Version number of package */
++/* #undef VERSION */
++
++/* Stops putting the code inside the Google namespace */
++#define _END_GOOGLE_NAMESPACE_ }
++
++/* Puts following code inside the Google namespace */
++#define _START_GOOGLE_NAMESPACE_ namespace google {
++
++#define GOOGLE_GLOG_DLL_DECL
++
++/* isn't getting defined by configure script when clang compilers are used
++   and cuases compilation errors in stactrace/unwind modules */
++#ifdef __clang__
++#  define NO_FRAME_POINTER
++#endif
 +/* define if glog doesn't use RTTI */
 +/* #undef DISABLE_RTTI */
 +
@@ -99,98 +197,6 @@ Index: extern/glog/src/config_openbsd.h
 +#define HAVE_SYS_STAT_H
 +
 +/* Define to 1 if you have the <sys/syscall.h> header file. */
-+/* #undef HAVE_SYS_SYSCALL_H */
-+
-+/* Define to 1 if you have the <sys/time.h> header file. */
-+#define HAVE_SYS_TIME_H
-+
-+/* Define to 1 if you have the <sys/types.h> header file. */
-+#define HAVE_SYS_TYPES_H 1
-+
-+/* Define to 1 if you have the <sys/ucontext.h> header file. */
-+/* #undef HAVE_SYS_UCONTEXT_H */
-+
-+/* Define to 1 if you have the <sys/utsname.h> header file. */
-+#define HAVE_SYS_UTSNAME_H
-+
-+/* Define to 1 if you have the <ucontext.h> header file. */
-+/* #undef HAVE_UCONTEXT_H */
-+
-+/* Define to 1 if you have the <unistd.h> header file. */
-+#define HAVE_UNISTD_H 1
-+
-+/* Define to 1 if you have the <unwind.h> header file. */
-+#define HAVE_UNWIND_H 1
-+
-+/* define if the compiler supports using expression for operator */
-+#define HAVE_USING_OPERATOR
-+
-+/* define if your compiler has __attribute__ */
-+#define HAVE___ATTRIBUTE__
-+
-+/* define if your compiler has __builtin_expect */
-+#define HAVE___BUILTIN_EXPECT 1
-+
-+/* define if your compiler has __sync_val_compare_and_swap */
-+#define HAVE___SYNC_VAL_COMPARE_AND_SWAP
-+
-+/* Define to the sub-directory in which libtool stores uninstalled libraries.
-+   */
-+/* #undef LT_OBJDIR */
-+
-+/* Name of package */
-+/* #undef PACKAGE */
-+
-+/* Define to the address where bug reports for this package should be sent. */
-+/* #undef PACKAGE_BUGREPORT */
-+
-+/* Define to the full name of this package. */
-+/* #undef PACKAGE_NAME */
-+
-+/* Define to the full name and version of this package. */
-+/* #undef PACKAGE_STRING */
-+
-+/* Define to the one symbol short name of this package. */
-+/* #undef PACKAGE_TARNAME */
-+
-+/* Define to the home page for this package. */
-+/* #undef PACKAGE_URL */
-+
-+/* Define to the version of this package. */
-+/* #undef PACKAGE_VERSION */
-+
-+/* How to access the PC from a struct ucontext */
-+/* #undef PC_FROM_UCONTEXT */
-+
-+/* Define to necessary symbol if this constant uses a non-standard name on
-+   your system. */
-+/* #undef PTHREAD_CREATE_JOINABLE */
-+
-+/* The size of `void *', as computed by sizeof. */
-+#define SIZEOF_VOID_P 8
-+
-+/* Define to 1 if you have the ANSI C header files. */
-+#define STDC_HEADERS 1
-+
-+/* the namespace where STL code like vector<> is defined */
-+#define STL_NAMESPACE std
-+
-+/* location of source code */
-+#define TEST_SRC_DIR "."
-+
-+/* Version number of package */
-+/* #undef VERSION */
-+
-+/* Stops putting the code inside the Google namespace */
-+#define _END_GOOGLE_NAMESPACE_ }
-+
-+/* Puts following code inside the Google namespace */
-+#define _START_GOOGLE_NAMESPACE_ namespace google {
-+
-+#define GOOGLE_GLOG_DLL_DECL
-+
-+/* isn't getting defined by configure script when clang compilers are used
-+   and cuases compilation errors in stactrace/unwind modules */
-+#ifdef __clang__
-+#  define NO_FRAME_POINTER
-+#endif
+ #define HAVE_SYS_SYSCALL_H
+ 
+ /* Define to 1 if you have the <sys/time.h> header file. */
