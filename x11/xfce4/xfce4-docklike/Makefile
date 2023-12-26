@@ -1,10 +1,9 @@
 COMMENT=	modern and minimalist taskbar for Xfce
 
-XFCE_VERSION=	0.4.1
+XFCE_VERSION=	0.4.2
 XFCE_PLUGIN=	docklike
 # GPLv3
 PERMIT_PACKAGE=	Yes
-REVISION=	0
 
 MODULES=	x11/xfce4
 MODXFCE_ICON_CACHE=	Yes
@@ -18,5 +17,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png startup-notification-1 wnck-3 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 .include <bsd.port.mk>
