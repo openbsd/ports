@@ -1,16 +1,20 @@
-COMMENT=		parse regular expressions
+COMMENT =	parse regular expressions
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME =		PPIx-Regexp-0.084
-CATEGORIES=		textproc
+DISTNAME =	PPIx-Regexp-0.088
+CPAN_AUTHOR =	WYANT
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	textproc
 
-CPAN_AUTHOR=		WYANT
+# Perl
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=		devel/p5-Task-Weaken \
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Task-Weaken \
 			textproc/p5-PPI>=1.238
+
+CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
