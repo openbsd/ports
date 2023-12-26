@@ -1,8 +1,6 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  KScreenLocker         0.0 # 5.22.5
 
 MODKDE5_TRANSLATIONS =	Yes

@@ -1,8 +1,6 @@
 COMMENT =	minimal Plasma shell package
 DISTNAME =	plasma-nano-${VERSION}
 
-UNLINKED =	kde-plasma
-
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Service
 WANTLIB += KF5WaylandClient KF5WindowSystem Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets X11 m

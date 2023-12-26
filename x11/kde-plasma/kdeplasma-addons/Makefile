@@ -2,8 +2,6 @@ COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kdeplasma-addons-kf5-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  plasmapotdprovidercore    0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5CalendarEvents

@@ -2,8 +2,6 @@ COMMENT =	KDE Plasma control center
 DISTNAME =	systemsettings-${VERSION}
 PKGNAME =	systemsettings-kf5-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  systemsettingsview        0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore

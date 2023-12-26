@@ -2,8 +2,6 @@ COMMENT =	screen management library for KDE Plasma Workspaces
 DISTNAME =	libkscreen-${VERSION}
 PKGNAME =	libkscreen-kf5-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  KF5Screen         0.0 # 5.22.0 5
 SHARED_LIBS +=  KF5ScreenDpms     0.0 # 5.22.0 5
 

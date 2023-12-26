@@ -1,8 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
 
-UNLINKED =	kde-plasma
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ActivitiesStats
 WANTLIB += KF5Attica KF5Auth KF5AuthCore KF5Baloo KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

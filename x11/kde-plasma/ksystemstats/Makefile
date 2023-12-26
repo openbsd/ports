@@ -1,8 +1,6 @@
 COMMENT =	plugin based system monitoring daemon
 DISTNAME =	ksystemstats-${VERSION}
 
-UNLINKED =	kde-plasma
-
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5I18n KF5KIOCore KF5Service KF5Solid KSysGuardFormatter
 WANTLIB += KSysGuardSystemStats Qt5Concurrent Qt5Core Qt5DBus

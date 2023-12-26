@@ -1,8 +1,6 @@
 COMMENT =	Plasma browser integration
 DISTNAME =	plasma-browser-integration-${VERSION}
 
-UNLINKED =	kde-plasma
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5FileMetaData KF5I18n KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5Notifications

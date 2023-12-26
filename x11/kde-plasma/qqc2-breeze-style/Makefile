@@ -1,8 +1,6 @@
 COMMENT =	Breeze QQC2 Style
 DISTNAME =	qqc2-breeze-style-${VERSION}
 
-UNLINKED =	kde-plasma
-
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 

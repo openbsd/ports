@@ -1,8 +1,6 @@
 COMMENT =	integration kwayland plugins
 DISTNAME =	kwayland-integration-${VERSION}
 
-UNLINKED =	kde-plasma
-
 WANTLIB += ${COMPILER_LIBCXX} GL KF5WaylandClient KF5WindowSystem
 WANTLIB += Qt5Core Qt5Gui Qt5WaylandClient Qt5Widgets X11 m wayland-client
 WANTLIB += xkbcommon

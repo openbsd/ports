@@ -1,8 +1,6 @@
 COMMENT =	KDE5 Plasma Search and Launch
 DISTNAME =	milou-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS =		milou		0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n

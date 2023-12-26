@@ -1,8 +1,6 @@
 COMMENT =	KDE Plasma hotkeys
 DISTNAME =	khotkeys-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  khotkeysprivate           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks

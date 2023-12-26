@@ -1,8 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  colorcorrect              0.0 # 0.0
 SHARED_LIBS +=  kfontinst                 0.0 # 0.0
 SHARED_LIBS +=  kfontinstui               0.0 # 0.0

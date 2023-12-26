@@ -2,8 +2,6 @@ COMMENT =	track and control the processes running in your system
 VERSION =	5.22.0
 DISTNAME =	ksysguard-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SITES = 	${SITE_KDE:=stable/ksysguard/${VERSION}/}
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs

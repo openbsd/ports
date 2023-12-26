@@ -1,8 +1,6 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  kcmkwincommon             0.0 # 0.0
 SHARED_LIBS +=  kwin                      0.0 # 0.0
 SHARED_LIBS +=  kwineffects               0.0 # 0.0

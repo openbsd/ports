@@ -1,8 +1,6 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
 
-UNLINKED =	kde-plasma
-
 SHARED_LIBS +=  powerdevilconfigcommonprivate 0.0 # 0.0
 SHARED_LIBS +=  powerdevilcore                0.0 # 0.0
 SHARED_LIBS +=  powerdevilui                  0.0 # 0.0
