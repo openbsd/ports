@@ -12,6 +12,9 @@ COMMENT-pim =		KDE PIM personal information managemen applications
 COMMENT-development =	KDE development applications
 COMMENT-utils =		KDE utilities
 
+COMMENT-plasma =	KDE Plasma desktop meta-package (base installation)
+COMMENT-plasma-extras =	KDE Plasma desktop meta-package (full installation)
+
 PKGNAME-accessibility =	kde-accessibility-${MODKDE_VERSION}
 PKGNAME-admin =		kde-admin-${MODKDE_VERSION}
 PKGNAME-education =	kde-education-${MODKDE_VERSION}
@@ -24,6 +27,10 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
+PLASMA_VERSION =	5.27.10
+PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
+PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -35,6 +42,9 @@ MULTI_PACKAGES +=	-main \
 			-multimedia \
 			-development \
 			-utils
+
+MULTI_PACKAGES +=	-plasma \
+			-plasma-extras
 
 HOMEPAGE =	https://kde.org
 
@@ -336,5 +346,64 @@ RUN_DEPENDS-main = \
 	${BUILD_PKGPATH},-network=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-pim=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-utils=${MODKDE_VERSION}
+
+WANTLIB-plasma =
+LIB_DEPENDS-plasma =
+RUN_DEPENDS-plasma += \
+		x11/kde-plasma/breeze \
+		x11/kde-plasma/breeze-gtk \
+		x11/kde-plasma/kactivitymanagerd \
+		x11/kde-plasma/kde-cli-tools \
+		x11/kde-plasma/kde-gtk-config \
+		x11/kde-plasma/kdecoration \
+		x11/kde-plasma/kdeplasma-addons \
+		x11/kde-plasma/kgamma5 \
+		x11/kde-plasma/khotkeys \
+		x11/kde-plasma/kinfocenter \
+		x11/kde-plasma/kmenuedit \
+		x11/kde-plasma/kscreen \
+		x11/kde-plasma/kscreenlocker \
+		x11/kde-plasma/ksshaskpass \
+		x11/kde-plasma/ksysguard \
+		x11/kde-plasma/ksystemstats \
+		x11/kde-plasma/kwayland-integration \
+		x11/kde-plasma/kwin \
+		x11/kde-plasma/kwrited \
+		x11/kde-plasma/layer-shell-qt \
+		x11/kde-plasma/libkscreen \
+		x11/kde-plasma/libksysguard \
+		x11/kde-plasma/milou \
+		x11/kde-plasma/oxygen \
+		x11/kde-plasma/oxygen-sounds \
+		x11/kde-plasma/plasma-browser-integration \
+		x11/kde-plasma/plasma-desktop \
+		x11/kde-plasma/plasma-nano \
+		x11/kde-plasma/plasma-pa \
+		x11/kde-plasma/plasma-sdk \
+		x11/kde-plasma/plasma-workspace \
+		x11/kde-plasma/plasma-workspace-wallpapers \
+		x11/kde-plasma/polkit-kde-agent-1 \
+		x11/kde-plasma/powerdevil \
+		x11/kde-plasma/qqc2-breeze-style \
+		x11/kde-plasma/systemsettings \
+		x11/kde-plasma/xdg-desktop-portal-kde
+
+RUN_DEPENDS-plasma += \
+		x11/kde-applications/dolphin \
+		x11/kde-applications/kdesdk-thumbnailers \
+		x11/kde-applications/kmix \
+		x11/kde-applications/konsole
+
+# extra apps
+RUN_DEPENDS-plasma-extras += \
+		${BUILD_PKGPATH},-plasma=${PLASMA_VERSION} \
+		net/kdeconnect-kde \
+		x11/kde-applications/ark \
+		x11/kde-applications/gwenview \
+		x11/kde-applications/kate \
+		x11/kde-applications/kcalc \
+		x11/kde-applications/merkuro \
+		x11/kde-applications/okular \
+		x11/kde-applications/spectacle
 
 .include <bsd.port.mk>

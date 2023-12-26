@@ -1,0 +1,143 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+X11 Startup
+===========
+KDE Plasma desktop environment is launched through the 'startplasma-x11'
+executable. Simply add '${LOCALBASE}/bin/startplasma-x11' to your .xinitrc
+or .xsession script if you use startx(1) or xenodm(1), respectively. You can
+find an example below. The 'XDG_RUNTIME_DIR' should be present before calling
+'startplasma-x11'
+
+export XDG_RUNTIME_DIR=/tmp/run/$(id -u)
+if [ ! -d $XDG_RUNTIME_DIR ]; then
+    mkdir -m 700 -p $XDG_RUNTIME_DIR
+fi
+
+export QT_FORCE_STDERR_LOGGING=1
+export XDG_CURRENT_DESKTOP=KDE
+export DESKTOP_SESSION=plasma
+export QT_FORCE_STDERR_LOGGING=1
+${LOCALBASE}/bin/startplasma-x11 > ~/.startplasma-x11.log 2>&1
+
+Logging out and shutting down the computer
+==========================================
+If your user is part of the _shutdown group and thus can execute shutdown(8),
+you should be able to shutdown/logout without further configuration.
+
+Otherwise, halting and rebooting from KDE Plasma require consolekit2 and
+polkit-kde-agent: you'll need to run a systemwide D-BUS service (# rcctl enable
+messagebus) and start with 'startplasma-x11' with
+'${LOCALBASE}/bin/ck-launch-session':
+
+${LOCALBASE}/bin/ck-launch-session ${LOCALBASE}/bin/startplasma-x11
+
+If you don't want to use messagebus/polkit-kde-agent, you can still configure
+doas(1) to allow your user to run shutdown/halt -p without having to enter a
+password, and create a launcher executing 'doas shutdown -p' (or doas halt -p).
+
+Power management
+================
+If you use KDE Plasma on a laptop, you can install the powerdevil package,
+which will provide battery levels/information, and will allow to configure
+actions upon low battery level or AC plugging. For proper function, it requires
+messagebus and upowerd running. If using consolekit2 and polkit-kde-agent, it
+will also allow you to suspend the laptop from the logout dialog.
+
+Screen compositor
+=================
+The KDE compositor does not seem to run properly by default. It is recommended
+to deactivate this under: "System Setting" -> "Display Configuration" ->
+"Compositor" or in `~/.config/kwinrc":
+
+[Compositing]
+Enabled=false
+
+It is also possible to use a window manager other than KWin with Plasma.
+
+export KDEWM=${LOCALBASE}/bin/picom
+
+Desktop search
+==============
+Baloo file indexer is disabled by default on OpenBSD. To enable it go to
+"Search" -> "File Search in system settings or execute:
+
+${LOCALBASE}/bin/balooctl enable
+
+Wayland
+=======
+The KDE Plasma Wayland support is currently experimental and **does not work
+out-of-box yet**. You can use the following script to test it:
+
+#! /bin/sh
+
+export XDG_RUNTIME_DIR=/tmp/run/$(id -u)
+if [ ! -d $XDG_RUNTIME_DIR ]; then
+    mkdir -m 700 -p $XDG_RUNTIME_DIR
+fi
+
+# You can try and play with this options:
+#export WLR_DRM_DEVICES=/dev/dri/card0
+#export LIBSEAT_BACKEND=noop
+#export XCURSOR_THEME=redglass
+#export QT_QPA_PLATFORM=wayland
+#export XDG_SESSION_TYPE=wayland
+
+${LOCALBASE}/bin/ck-launch-session dbus-run-session ${LOCALBASE}/bin/startplasma-wayland
+
+Known issues
+============
+- No compositor seem to run by default. (Read "Screen compositor"
+- You can't unlock your session when the screensaver has locked it. I get the
+  graphical message "Something wrong happened. Run # ck-unlock-session ...".
+  So you will end up with a freezen session that you have to completely kill.
+  **It is recommended to disable KDE screen locking** for now.
+- The first start may take a little longer.
+- The sound mixer Kmix works only on the main channel.
+
+Not yet ported Plasma applications/plugins
+==========================================
+ - aura-browser
+ - kpipewire
+ - bluedevil
+ - breeze-plymouth
+ - discover
+ - drkonqi
+ - flatpak-kcm
+ - kwallet-pam
+ - plank-player
+ - plasma-bigscreen
+ - plasma-disks
+ - plasma-firewall
+ - plasma-integration
+ - plasma-mobile
+ - plasma-nm
+ - plasma-pa
+ - plasma-remotecontrollers
+ - plasma-systemmonitor
+ - plasma-thunderbolt
+ - plasma-vault
+ - plasma-welcome
+ - plymouth-kcm
+ - sddm-kcm
+
+Cheat sheet
+===========
+# Replace plasmashell and kwin
+$ plasmashell --replace
+$ kwin --replace
+
+Support
+=======
+Please help to improve this situation and report what works well and what does
+not. So that issues are known and a solution can be worked on. Please provide
+reports with debugging information:
+
+${LOCALBASE}/bin/qdbus-qt5 org.kde.KWin /KWin supportInformation
+
+You can also output all error/info messages by starting `startplasma-x11` with
+the following options and provide a full error log.
+
+export QT_FORCE_STDERR_LOGGING=1
+export QT_LOGGING_RULES="*=true"

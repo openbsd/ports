@@ -1,0 +1,2 @@
+@pkgpath ${BASE_PKGPATH},-plasma
+share/doc/pkg-readmes/${PKGSTEM}-plasma

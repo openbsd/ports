@@ -1,0 +1,5 @@
+The KDE Plasma Desktop Environment, base installation.
+Contains core KDE Plasma plus:
+ * Dolphin - file manager
+ * Konsole - terminal emulator
+ * Kmix - sound channel mixer and volume control
