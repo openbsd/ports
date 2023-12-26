@@ -26,7 +26,6 @@ WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml SM X11 Xext c m
 
-
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -37,7 +36,7 @@ MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kauth \
@@ -70,18 +69,18 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/akonadi-search \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kcalutils \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kontactinterface \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtx11extras
 
 TEST_IS_INTERACTIVE =	X11

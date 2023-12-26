@@ -2,7 +2,7 @@ COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  sieveeditor       4.0 # 5.13.2
+SHARED_LIBS +=  sieveeditor       4.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -34,9 +34,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		productivity/kuserfeedback \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/libksieve \
-		x11/kde-applications/pimcommon
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

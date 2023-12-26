@@ -24,7 +24,7 @@ MODKDE5_DOCS = yes
 BUILD_DEPENDS =	devel/kf5/kinit
 
 RUN_DEPENDS =	devel/kf5/kinit \
-		x11/kde-applications/kio-extras
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kauth \

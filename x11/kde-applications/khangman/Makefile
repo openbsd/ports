@@ -12,12 +12,6 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
 
 WANTLIB += lib/inotify/inotify
 
-
-
-
-
-
-
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -41,7 +35,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/libinotify \
-		x11/kde-applications/libkeduvocdocument \
+		x11/kde-applications/libkeduvocdocument>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative
 
 .include <bsd.port.mk>

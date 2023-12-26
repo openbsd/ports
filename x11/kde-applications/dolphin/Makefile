@@ -34,10 +34,10 @@ BUILD_DEPENDS =	print/poppler,-qt5 \
 RUN_DEPENDS =	devel/kf5/kfilemetadata \
 		devel/kf5/kinit \
 		misc/shared-mime-info \
-		x11/kde-applications/ffmpegthumbs \
-		x11/kde-applications/kdesdk-thumbnailers \
-		x11/kde-applications/kio-extras \
-		x11/kde-applications/konsole
+		x11/kde-applications/ffmpegthumbs>=${MODKDE_VERSION} \
+		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_VERSION} \
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
+		x11/kde-applications/konsole>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kactivities \
@@ -66,7 +66,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/sonnet \
 		multimedia/phonon \
 		productivity/kuserfeedback \
-		x11/kde-applications/baloo-widgets
+		x11/kde-applications/baloo-widgets>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

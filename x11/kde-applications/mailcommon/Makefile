@@ -50,17 +50,17 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/syntax-highlighting \
 		security/gpgme,-qt \
 		devel/libinotify \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/libkleo \
-		x11/kde-applications/mailimporter \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
+		x11/kde-applications/mailimporter>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11

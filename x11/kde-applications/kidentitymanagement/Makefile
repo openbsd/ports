@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/libinotify \
-		x11/kde-applications/kpimtextedit
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

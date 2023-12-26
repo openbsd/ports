@@ -1,7 +1,6 @@
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
 SHARED_LIBS +=  KPim5IMAP                 0.0 # 0.0
 
@@ -17,6 +16,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		security/cyrus-sasl2 \
-		x11/kde-applications/kmime
+		x11/kde-applications/kmime>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

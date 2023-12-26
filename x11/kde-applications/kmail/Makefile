@@ -6,7 +6,7 @@ CATEGORIES =	net mail
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
-SHARED_LIBS +=  kmailprivate       8.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate       8.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
@@ -48,11 +48,11 @@ MODKF5_I18N_CONFLICT = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf5/kwallet
 
-RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard \
-		x11/kde-applications/kdepim-runtime \
-		x11/kde-applications/kmail-account-wizard \
-		x11/kde-applications/mbox-importer \
-		x11/kde-applications/pim-sieve-editor \
+RUN_DEPENDS =	x11/kde-applications/akonadi-import-wizard>=${MODKDE_VERSION} \
+		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
+		x11/kde-applications/kmail-account-wizard>=${MODKDE_VERSION} \
+		x11/kde-applications/mbox-importer>=${MODKDE_VERSION} \
+		x11/kde-applications/pim-sieve-editor>=${MODKDE_VERSION} \
 		devel/kf5/kwallet
 
 LIB_DEPENDS =	devel/kf5/kauth \
@@ -88,26 +88,26 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/libinotify \
 		security/gpgme,-qt \
 		productivity/kuserfeedback \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/akonadi-search \
-		x11/kde-applications/kcalutils \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kldap \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kontactinterface \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/ktnef \
-		x11/kde-applications/libgravatar \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/libkleo \
-		x11/kde-applications/libksieve \
-		x11/kde-applications/mailcommon \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kldap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/ktnef>=${MODKDE_VERSION} \
+		x11/kde-applications/libgravatar>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
+		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \

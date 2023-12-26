@@ -16,7 +16,6 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
 WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml accounts-qt5
 WANTLIB += m signon-qt5
 
-
 BUILD_DEPENDS =	devel/kf5/kcmutils \
 		devel/qcoro
 

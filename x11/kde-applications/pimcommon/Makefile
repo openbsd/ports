@@ -43,14 +43,14 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/purpose \
 		devel/kf5/kcmutils \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/akonadi-search \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kldap \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kldap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,7 +1,6 @@
 COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
-REVISION =	0
 
 SHARED_LIBS +=  KPim5AkonadiMime          1.0 # 0.0
 
@@ -31,8 +30,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/kmime
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -25,11 +25,10 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		productivity/libphonenumber \
 		textproc/libxml \
 		graphics/zxing-cpp \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpkpass \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpkpass>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
-
 
 .include <bsd.port.mk>

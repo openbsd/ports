@@ -45,10 +45,10 @@ WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
 WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 apr-1 aprutil-1
-WANTLIB += c komparediff2 m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1
-WANTLIB += svn_subr-1 svn_wc-1
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebChannel
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
+WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1 svn_fs-1
+WANTLIB += svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -77,8 +77,8 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		lang/clazy \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic \
-		x11/kde-applications/kate \
-		x11/kde-applications/kio-extras \
+		x11/kde-applications/kate>=${MODKDE_VERSION} \
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
 		x11/kde-applications/konsole
 
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
@@ -107,7 +107,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		devel/kf5/threadweaver \
 		devel/subversion \
 		x11/grantlee-qt5>=5.3 \
-		x11/kde-applications/libkomparediff2 \
+		x11/kde-applications/libkomparediff2>=${MODKDE_VERSION} \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qttools \

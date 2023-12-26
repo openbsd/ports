@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	scientific calculator for KDE
 DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -48,7 +47,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/readline \
-		x11/kde-applications/analitza \
+		x11/kde-applications/analitza>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebengine
 

@@ -4,7 +4,6 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/knetwalk
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5SonnetUi KF5TextWidgets
@@ -33,6 +32,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kconfigwidgets \
 		x11/qt5/qtdeclarative \
-		x11/kde-applications/libkdegames
+		x11/kde-applications/libkdegames>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

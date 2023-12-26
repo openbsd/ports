@@ -17,7 +17,7 @@ LIB_DEPENDS +=	devel/kf5/kcodecs \
 		devel/kf5/kiconthemes \
 		devel/kf5/kwidgetsaddons \
 		x11/grantlee-qt5>=5.3 \
-		x11/kde-applications/kidentitymanagement
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

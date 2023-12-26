@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  KPim5KManageSieve         1.0 # 0.0
 SHARED_LIBS +=  KPim5KSieve               0.0 # 0.0
-SHARED_LIBS +=  KPim5KSieveUi             2.0 # 0.0
+SHARED_LIBS +=  KPim5KSieveUi             2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -42,13 +42,13 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
 		security/cyrus-sasl2 \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebengine
 

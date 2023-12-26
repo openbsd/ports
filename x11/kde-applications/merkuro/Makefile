@@ -64,14 +64,14 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kitemmodels \
 		devel/kf5/kwidgetsaddons  \
 		devel/kf5/kxmlgui \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/pimcommon \
-		x11/kde-applications/mailcommon \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kcalutils \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kmime \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg
 

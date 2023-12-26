@@ -31,8 +31,8 @@ RUN_DEPENDS =	devel/kf5/kinit \
 		devel/kf5/kactivities \
 		devel/kf5/sonnet,-aspell \
 		devel/kf5/syntax-highlighting \
-		x11/kde-applications/kio-extras \
-		x11/kde-applications/konsole
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
+		x11/kde-applications/konsole>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kactivities \

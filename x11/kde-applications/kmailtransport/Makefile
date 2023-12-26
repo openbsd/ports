@@ -36,8 +36,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		security/qtkeychain \
-		x11/kde-applications/ksmtp \
-		x11/kde-applications/libkgapi
+		x11/kde-applications/ksmtp>=${MODKDE_VERSION} \
+		x11/kde-applications/libkgapi>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

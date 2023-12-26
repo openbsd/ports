@@ -11,12 +11,6 @@ WANTLIB += Qt5Gui Qt5Network Qt5Svg Qt5Widgets Qt5Xml c m phonon4qt5
 
 WANTLIB += lib/inotify/inotify
 
-
-
-
-
-
-
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

@@ -5,9 +5,9 @@ CATEGORIES =	databases productivity
 HOMEPAGE =	https://kontact.kde.org
 
 SHARED_LIBS +=  KPim5AkonadiAgentBase     0.0 # 0.0
-SHARED_LIBS +=  KPim5AkonadiCore          1.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiCore          1.1 # 0.0
 SHARED_LIBS +=  KPim5AkonadiPrivate       0.0 # 0.0
-SHARED_LIBS +=  KPim5AkonadiWidgets       2.0 # 0.0
+SHARED_LIBS +=  KPim5AkonadiWidgets       2.1 # 0.0
 SHARED_LIBS +=  KPim5AkonadiXml           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
@@ -58,7 +58,7 @@ LIB_DEPENDS =		devel/kf5/kconfig \
 			devel/kf5/kxmlgui \
 			net/libaccounts-qt \
 			textproc/libxml \
-			x11/kde-applications/kaccounts-integration
+			x11/kde-applications/kaccounts-integration>=${MODKDE_VERSION}
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 

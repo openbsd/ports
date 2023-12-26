@@ -26,6 +26,6 @@ LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kwidgetsaddons \
 		security/gpgme,-qt \
 		devel/libinotify \
-		x11/kde-applications/kpimtextedit
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

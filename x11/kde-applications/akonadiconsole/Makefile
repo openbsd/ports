@@ -21,11 +21,6 @@ WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
 
 WANTLIB += lib/inotify/inotify
 
-
-
-
-
-
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -51,15 +46,15 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/sonnet \
 		devel/libinotify \
 		security/gpgme,-qt \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/calendarsupport \
-		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

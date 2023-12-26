@@ -189,7 +189,8 @@ RUN_DEPENDS-network = \
 	x11/kde-applications/kio-extras \
 	x11/kde-applications/kmailtransport \
 	x11/kde-applications/krdc \
-	x11/kde-applications/krfb
+	x11/kde-applications/krfb \
+	x11/kde-applications/tokodon
 
 # Not yet ported
 #x11/kde-applications/kopete

@@ -27,9 +27,9 @@ MODKDE5_DOCS = yes
 BUILD_DEPENDS =	wayland/wayland-protocols
 
 RUN_DEPENDS =	devel/kf5/kfilemetadata \
-		x11/kde-applications/ffmpegthumbs \
-		x11/kde-applications/kdesdk-thumbnailers \
-		x11/kde-applications/kio-extras
+		x11/kde-applications/ffmpegthumbs>=${MODKDE_VERSION} \
+		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_VERSION} \
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/baloo \
 		devel/kf5/kactivities \
@@ -58,7 +58,7 @@ LIB_DEPENDS =	devel/kf5/baloo \
 		graphics/lcms2 \
 		graphics/png \
 		math/cfitsio \
-		x11/kde-applications/libkdcraw \
+		x11/kde-applications/libkdcraw>=${MODKDE_VERSION} \
 		graphics/kimageannotator \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras \

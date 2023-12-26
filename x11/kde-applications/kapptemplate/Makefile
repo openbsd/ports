@@ -18,7 +18,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =		archivers/gtar
+BUILD_DEPENDS =	archivers/gtar
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

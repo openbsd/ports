@@ -27,11 +27,11 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/akonadi-contacts \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		devel/kf5/kitemmodels
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime \
-		x11/kde-applications/akonadi-contacts \
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		devel/kf5/kitemmodels
 
 LIB_DEPENDS =	devel/kf5/kauth \
@@ -53,10 +53,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kontactinterface \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \

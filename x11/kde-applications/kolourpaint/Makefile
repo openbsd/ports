@@ -34,6 +34,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		x11/kde-applications/libksane
+		x11/kde-applications/libksane>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

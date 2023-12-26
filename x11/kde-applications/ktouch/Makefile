@@ -18,7 +18,7 @@ MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 
-RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=5 \
+RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION} \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtquickcontrols
 

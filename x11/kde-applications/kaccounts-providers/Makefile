@@ -23,7 +23,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		devel/kf5/kio \
 		devel/kf5/kpackage \
 		devel/kf5/kservice \
-		x11/kde-applications/kaccounts-integration \
+		x11/kde-applications/kaccounts-integration>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine

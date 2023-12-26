@@ -34,6 +34,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui\
 		devel/kf5/sonnet \
-		x11/kde-applications/dolphin
+		x11/kde-applications/dolphin>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

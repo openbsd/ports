@@ -37,7 +37,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		security/qca-qt5 \
-		x11/kde-applications/libkdegames \
+		x11/kde-applications/libkdegames>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
 		multimedia/phonon

@@ -4,21 +4,21 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2
-SHARED_LIBS +=  dkimverifyconfigure                      5.0 # 5.13.2
+SHARED_LIBS +=  dkimverifyconfigure                      5.1 # 5.13.2
 SHARED_LIBS +=  grammarcommon                            2.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookimportexportlibprivate       2.0 # 5.13.2
 SHARED_LIBS +=  kaddressbookmergelibprivate              2.0 # 5.13.2
 SHARED_LIBS +=  kmailgrammalecte                         2.0 # 5.13.2
 SHARED_LIBS +=  kmaillanguagetool                        5.0 # 5.13.2
-SHARED_LIBS +=  kmailmarkdown                            3.0 # 5.13.2
+SHARED_LIBS +=  kmailmarkdown                            3.1 # 5.13.2
 SHARED_LIBS +=  kmailquicktextpluginprivate              2.0 # 5.13.2
 SHARED_LIBS +=  shorturlpluginprivate                    2.0 # 5.13.2
-SHARED_LIBS +=  expireaccounttrashfolderconfig           2.0 # 5.16.1
-SHARED_LIBS +=  folderconfiguresettings                  2.0 # 5.16.1
-SHARED_LIBS +=  kmailconfirmbeforedeleting               3.0 # 5.18.3
-SHARED_LIBS +=  scamconfiguresettings                    2.0 # 5.19.0
-SHARED_LIBS +=  openurlwithconfigure                     2.0 # 5.19.0
-SHARED_LIBS +=  akonadidatasetools                       2.0 # 0.0
+SHARED_LIBS +=  expireaccounttrashfolderconfig           2.1 # 5.16.1
+SHARED_LIBS +=  folderconfiguresettings                  2.1 # 5.16.1
+SHARED_LIBS +=  kmailconfirmbeforedeleting               3.1 # 5.18.3
+SHARED_LIBS +=  scamconfiguresettings                    2.1 # 5.19.0
+SHARED_LIBS +=  openurlwithconfigure                     2.1 # 5.19.0
+SHARED_LIBS +=  akonadidatasetools                       2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarEvents KF5Codecs
@@ -86,34 +86,34 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		security/gpgme,-qt \
 		security/gpgme \
 		textproc/discount \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/akonadi-import-wizard \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/calendarsupport \
-		x11/kde-applications/eventviews \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/incidenceeditor \
-		x11/kde-applications/kaddressbook \
-		x11/kde-applications/kcalutils \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kitinerary \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/kpkpass \
-		x11/kde-applications/ktnef \
-		x11/kde-applications/libgravatar \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/libkleo \
-		x11/kde-applications/libksieve \
-		x11/kde-applications/mailcommon \
-		x11/kde-applications/mailimporter \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-import-wizard>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
+		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
+		x11/kde-applications/eventviews>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/incidenceeditor>=${MODKDE_VERSION} \
+		x11/kde-applications/kaddressbook>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kitinerary>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/kpkpass>=${MODKDE_VERSION} \
+		x11/kde-applications/ktnef>=${MODKDE_VERSION} \
+		x11/kde-applications/libgravatar>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
+		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/mailimporter>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		security/libassuan \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \

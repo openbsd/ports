@@ -22,10 +22,10 @@ MODKDE5_DOCS = yes
 BUILD_DEPENDS =	devel/kf5/kitemviews \
 		devel/kf5/solid \
 		devel/kf5/kirigami2 \
-		x11/kde-applications/kqtquickcharts
+		x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION}
 
 RUN_DEPENDS =	devel/kf5/kirigami2 \
-		x11/kde-applications/kqtquickcharts
+		x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

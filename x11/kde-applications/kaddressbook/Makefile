@@ -30,7 +30,7 @@ MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcmutils \
@@ -53,13 +53,13 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/prison \
 		devel/kf5/sonnet \
 		productivity/kuserfeedback \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kontactinterface \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/pimcommon
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

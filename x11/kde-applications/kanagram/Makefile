@@ -38,7 +38,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
-		x11/kde-applications/libkeduvocdocument \
+		x11/kde-applications/libkeduvocdocument>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtspeech
 

@@ -31,6 +31,8 @@ WANTLIB += lib/inotify/inotify
 
 
 
+
+
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -43,18 +45,18 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf5/kitemviews \
 		devel/kf5/ktexteditor \
 		devel/kf5/solid  \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/kimap \
-		x11/kde-applications/mailcommon \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	devel/kf5/kitemviews \
 		devel/kf5/ktexteditor \
 		devel/kf5/solid  \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/kdepim-runtime \
-		x11/kde-applications/kimap \
-		x11/kde-applications/mailcommon \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/kauth \
@@ -82,16 +84,16 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/libinotify \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kontactinterface \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine

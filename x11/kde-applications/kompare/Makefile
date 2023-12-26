@@ -31,7 +31,7 @@ LIB_DEPENDS =	devel/kf5/kcodecs \
 		devel/kf5/kparts  \
 		devel/kf5/ktexteditor \
 		devel/kf5/kwidgetsaddons \
-		x11/kde-applications/libkomparediff2
+		x11/kde-applications/libkomparediff2>=${MODKDE_VERSION}
 
 SUBST_VARS +=	LIBkompareinterface_VERSION \
 		LIBkomparedialogpages_VERSION

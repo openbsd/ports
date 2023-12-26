@@ -31,6 +31,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtdeclarative \
-		x11/kde-applications/libkdegames
+		x11/kde-applications/libkdegames>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

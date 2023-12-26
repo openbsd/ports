@@ -58,7 +58,7 @@ LIB_DEPENDS =	audio/taglib \
 		net/kdsoap \
 		net/samba \
 		security/libssh \
-		x11/kde-applications/libkexiv2 \
+		x11/kde-applications/libkexiv2>=${MODKDE_VERSION} \
 		x11/qt5/qtsvg
 
 TEST_IS_INTERACTIVE =	X11

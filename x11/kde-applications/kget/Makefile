@@ -35,7 +35,7 @@ BUILD_DEPENDS =	databases/sqlite3 \
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/kf5/kinit \
 		devel/kf5/kitemmodels \
-		x11/kde-applications/kio-extras \
+		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
 		x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =	devel/kf5/karchive \

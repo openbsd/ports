@@ -52,7 +52,6 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		textproc/libxslt \
 		x11/qt5/qtsvg \
 
-
 CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang

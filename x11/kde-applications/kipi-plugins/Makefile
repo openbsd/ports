@@ -33,6 +33,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		x11/qt5/qtxmlpatterns \
-		x11/kde-applications/libkipi
+		x11/kde-applications/libkipi>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

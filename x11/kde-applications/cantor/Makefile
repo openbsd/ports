@@ -22,7 +22,7 @@ WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
 WANTLIB += X11 c intl luajit-5.1 m poppler poppler-qt5 ${MODPY_WANTLIB}
-WANTLIB += spectre util
+WANTLIB += spectre util qalculate
 
 MODULES +=	fortran \
 		lang/lua \
@@ -55,7 +55,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \
-		x11/kde-applications/analitza \
+		x11/kde-applications/analitza>=${MODKDE_VERSION} \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebengine \
 		x11/qt5/qtxmlpatterns

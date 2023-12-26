@@ -8,7 +8,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Wallet Qt5Core Qt5Gui m signon-extension
 
 MODULES +=	textproc/intltool
 
-RUN_DEPENDS =	x11/kde-applications/kaccounts-providers
+RUN_DEPENDS =	x11/kde-applications/kaccounts-providers>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kwallet \
 		net/signond

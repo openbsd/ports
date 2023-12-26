@@ -72,19 +72,19 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		security/cyrus-sasl2 \
 		security/qca-qt5 \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kimap \
-		x11/kde-applications/kldap \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/kmbox \
-		x11/kde-applications/kmime \
-		x11/kde-applications/libkdepim \
-		x11/kde-applications/libkgapi \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kldap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmbox>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkgapi>=${MODKDE_VERSION} \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtnetworkauth \

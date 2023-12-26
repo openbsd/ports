@@ -32,7 +32,7 @@ LIB_DEPENDS =	audio/cdparanoia \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kservice \
-		x11/kde-applications/libkcddb \
-		x11/kde-applications/libkcompactdisc
+		x11/kde-applications/libkcddb>=${MODKDE_VERSION} \
+		x11/kde-applications/libkcompactdisc>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

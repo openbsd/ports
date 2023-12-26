@@ -4,7 +4,6 @@ CATEGORIES =	productivity
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kteatime
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5Notifications

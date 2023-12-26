@@ -129,6 +129,10 @@ include/KPim5/KIMAP/kimap/storejob.h
 include/KPim5/KIMAP/kimap/subscribejob.h
 include/KPim5/KIMAP/kimap/unsubscribejob.h
 include/KPim5/KIMAP/kimap_version.h
+include/KPim5/KIMAPTest/
+include/KPim5/KIMAPTest/kimaptest/
+include/KPim5/KIMAPTest/kimaptest/fakeserver.h
+include/KPim5/KIMAPTest/kimaptest/mockjob.h
 lib/cmake/KF5IMAP/
 lib/cmake/KF5IMAP/KF5IMAPConfig.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake
@@ -140,6 +144,7 @@ lib/cmake/KPim5IMAP/KPim5IMAPConfigVersion.cmake
 lib/cmake/KPim5IMAP/KPim5IMAPTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim5IMAP/KPim5IMAPTargets.cmake
 @lib lib/libKPim5IMAP.so.${LIBKPim5IMAP_VERSION}
+@static-lib lib/libkimaptest.a
 share/kf5/mkspecs/qt_KIMAP.pri
 share/locale/ar/LC_MESSAGES/libkimap5.mo
 share/locale/bs/LC_MESSAGES/libkimap5.mo

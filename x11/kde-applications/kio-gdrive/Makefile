@@ -26,7 +26,7 @@ LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/purpose \
 		devel/kf5/solid \
 		net/libaccounts-qt \
-		x11/kde-applications/kaccounts-integration \
-		x11/kde-applications/libkgapi
+		x11/kde-applications/kaccounts-integration>=${MODKDE_VERSION} \
+		x11/kde-applications/libkgapi>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

@@ -16,13 +16,6 @@ WANTLIB += Qt5Xml X11 c m
 
 WANTLIB += lib/inotify/inotify
 
-
-
-
-
-
-
-
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -59,8 +52,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/libinotify \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

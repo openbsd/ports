@@ -23,10 +23,6 @@ WANTLIB += gpgme gpgmepp m qgpgme
 
 WANTLIB += lib/inotify/inotify
 
-
-
-
-
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 
@@ -36,7 +32,7 @@ MODKF5_I18N_CONFLICT = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf5/ktexteditor
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -58,13 +54,13 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/syntax-highlighting \
 		devel/libinotify \
 		security/gpgme,-qt \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine

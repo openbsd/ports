@@ -71,8 +71,8 @@ LIB_DEPENDS =	devel/chmlib \
 		print/libspectre \
 		textproc/discount \
 		textproc/ebook-tools \
-		x11/kde-applications/kdegraphics-mobipocket \
-		x11/kde-applications/libkexiv2 \
+		x11/kde-applications/kdegraphics-mobipocket>=${MODKDE_VERSION} \
+		x11/kde-applications/libkexiv2>=${MODKDE_VERSION} \
 		x11/qt5/qtspeech \
 		x11/qt5/qtsvg
 

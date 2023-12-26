@@ -21,6 +21,6 @@ LIB_DEPENDS =		devel/kf5/kauth \
 BUILD_DEPENDS =		graphics/png \
 			graphics/jpeg \
 			graphics/tiff \
-			x11/kde-applications/libkexiv2
+			x11/kde-applications/libkexiv2>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

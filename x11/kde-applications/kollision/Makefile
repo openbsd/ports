@@ -4,7 +4,6 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kollision
 
-
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5WidgetsAddons
@@ -32,6 +31,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kwidgetsaddons \
 		x11/qt5/qtdeclarative \
-		x11/kde-applications/libkdegames
+		x11/kde-applications/libkdegames>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

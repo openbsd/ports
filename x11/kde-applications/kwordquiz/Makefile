@@ -30,7 +30,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
-		x11/kde-applications/libkeduvocdocument \
+		x11/kde-applications/libkeduvocdocument>=${MODKDE_VERSION} \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtsvg

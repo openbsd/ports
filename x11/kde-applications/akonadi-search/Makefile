@@ -17,8 +17,6 @@ WANTLIB += Qt5Xml c m xapian
 
 WANTLIB += lib/inotify/inotify
 
-
-
 MODKDE5_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/boost
@@ -41,9 +39,9 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/plasma-framework \
 		devel/libinotify \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-mime \
-		x11/kde-applications/kmime
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

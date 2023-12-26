@@ -30,11 +30,11 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml X11 c m phonon4qt5
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/mailcommon
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
 
 RUN_DEPENDS =	x11/dbus,-suid \
-		x11/kde-applications/kdepim-runtime \
-		x11/kde-applications/mailcommon
+		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -66,13 +66,14 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		textproc/ktextaddons \
 		multimedia/phonon \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/kcalutils \
-		x11/kde-applications/kidentitymanagement \
-		x11/kde-applications/kmailtransport \
-		x11/kde-applications/kpimtextedit \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/qt5/qtx11extras
 
 .include <bsd.port.mk>

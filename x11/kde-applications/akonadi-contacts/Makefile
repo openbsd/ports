@@ -36,9 +36,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/prison \
 		devel/kf5/sonnet \
 		x11/grantlee-qt5 \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kmime
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 
