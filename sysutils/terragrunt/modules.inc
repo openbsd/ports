@@ -549,7 +549,7 @@ MODGO_MODULES =	\
 	go.uber.org/atomic						 v1.9.0 \
 	go.uber.org/multierr						 v1.1.0 \
 	go.uber.org/zap							 v1.9.1 \
-	golang.org/x/crypto						 v0.14.0 \
+	golang.org/x/crypto						 v0.17.0 \
 	golang.org/x/exp						 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/image						 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint						 v0.0.0-20210508222113-6edffad5e616 \
@@ -558,9 +558,9 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.17.0 \
 	golang.org/x/oauth2						 v0.13.0 \
 	golang.org/x/sync						 v0.4.0 \
-	golang.org/x/sys						 v0.13.0 \
-	golang.org/x/term						 v0.13.0 \
-	golang.org/x/text						 v0.13.0 \
+	golang.org/x/sys						 v0.15.0 \
+	golang.org/x/term						 v0.15.0 \
+	golang.org/x/text						 v0.14.0 \
 	golang.org/x/time						 v0.0.0-20220224211638-0e9765cccd65 \
 	golang.org/x/tools						 v0.13.0 \
 	golang.org/x/xerrors						 v0.0.0-20220907171357-04be3eba64a2 \
@@ -1240,6 +1240,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.10.0 \
 	golang.org/x/crypto					 v0.12.0 \
 	golang.org/x/crypto					 v0.13.0 \
+	golang.org/x/crypto					 v0.14.0 \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp					 v0.0.0-20190306152737-a1d7652674e8 \
 	golang.org/x/exp					 v0.0.0-20190510132918-efd6b22b2522 \
@@ -1486,6 +1487,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.1.0 \
 	golang.org/x/sys					 v0.11.0 \
 	golang.org/x/sys					 v0.12.0 \
+	golang.org/x/sys					 v0.13.0 \
 	golang.org/x/sys					 v0.5.0 \
 	golang.org/x/sys					 v0.6.0 \
 	golang.org/x/sys					 v0.7.0 \
@@ -1500,11 +1502,13 @@ MODGO_MODFILES =	\
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term					 v0.0.0-20220411215600-e5f449aeb171 \
 	golang.org/x/term					 v0.1.0 \
+	golang.org/x/term					 v0.13.0 \
 	golang.org/x/term					 v0.6.0 \
 	golang.org/x/text					 v0.0.0-20160726164857-2910a502d2bf \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text					 v0.10.0 \
 	golang.org/x/text					 v0.12.0 \
+	golang.org/x/text					 v0.13.0 \
 	golang.org/x/text					 v0.3.0 \
 	golang.org/x/text					 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text					 v0.3.1-0.20181227161524-e6919f6577db \
