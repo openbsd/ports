@@ -1,14 +1,17 @@
-COMMENT=	extension for generating XML
+COMMENT =	perl extension for generating XML
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	XML-Generator-1.09
-CATEGORIES=	textproc
+DISTNAME =	XML-Generator-1.13
+
+CATEGORIES =	textproc
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=	textproc/p5-XML-DOM
-TEST_DEPENDS=	devel/p5-Tie-IxHash
+MODULES =		cpan
+
+RUN_DEPENDS =		textproc/p5-XML-DOM>=1.46
+TEST_DEPENDS =		devel/p5-Tie-IxHash
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
