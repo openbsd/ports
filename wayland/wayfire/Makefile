@@ -5,7 +5,7 @@ DISTNAME =	wayfire-${V}
 GH_ACCOUNT = 	WayfireWM
 GH_PROJECT =	wayfire
 GH_COMMIT =	c48194e055219dcb3a603b59ca37f330a64cac12
-REVISION =	0
+REVISION =	1
 
 # git submodules when not building a release
 DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 15f8e16721585ae3eaf278ba71d7064237eb23f5 subprojects/wf-utils
@@ -31,7 +31,7 @@ BUILD_DEPENDS =	graphics/glm \
 		wayland/wayland-protocols
 
 # include/wayfire/config/types.hpp needs glm/vec4.hpp
-BUILD_DEPENDS +=	graphics/glm
+RUN_DEPENDS +=	graphics/glm
 
 CONFIGURE_ARGS =-Duse_system_wfconfig=enabled \
 		-Duse_system_wlroots=enabled \
