@@ -1,18 +1,20 @@
 COMMENT =	perl interface to libev
 
-MODULES =	cpan
-DISTNAME =	EV-4.33
-CATEGORIES =	devel
+DISTNAME =	EV-4.34
 CPAN_AUTHOR =	MLEHMANN
 
-# Perl
+CATEGORIES =	devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
+
+# Perl, 2-clause BSD embedded libev
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c perl pthread
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/libev \
-			devel/p5-common-sense \
-			devel/p5-Canary-Stability
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-Canary-Stability
+RUN_DEPENDS =		devel/p5-common-sense
 
 .include <bsd.port.mk>
