@@ -1,11 +1,9 @@
 COMMENT-main ?=		object oriented script language with threads
-COMMENT-gdbm ?=		gdbm interface for ruby
 COMMENT-ri_docs ?=	ri documentation files for ruby
 
 DISTNAME ?=	ruby-${VERSION}
 
 PKGNAME-main ?=		ruby-${VERSION}
-PKGNAME-gdbm ?=		ruby${BINREV}-gdbm-${VERSION}
 PKGNAME-ri_docs ?=	ruby${BINREV}-ri_docs-${VERSION}
 
 PKG_ARCH-ri_docs ?=	*
@@ -25,6 +23,7 @@ PERMIT_PACKAGE?= Yes
 SITES ?=		https://cache.ruby-lang.org/pub/ruby/${VERSION:R}/
 SITES.p ?=		https://github.com/ruby/ruby/commit/
 PATCH_DIST_STRIP ?=	-p1
+PATCHORIG =		.orig
 
 CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	--enable-shared \
@@ -43,6 +42,7 @@ CONFIGURE_ARGS +=	--with-compress-debug-sections=no
 
 CONFIGURE_ENV +=	LIBruby${BINREV}_VERSION=${LIBruby${BINREV}_VERSION} \
 			PREFIX="${PREFIX}" \
+			optflags="" \
 			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			DLDFLAGS="-L${LOCALBASE}/lib" \
@@ -51,17 +51,10 @@ CONFIGURE_ENV +=	LIBruby${BINREV}_VERSION=${LIBruby${BINREV}_VERSION} \
 
 MAKE_ENV +=		DLDFLAGS="-I${LOCALBASE}/lib"
 
-WANTLIB-main +=		c crypto ffi gmp m ncurses pthread readline ssl \
-			util yaml z
+WANTLIB-main +=		c crypto ffi gmp m pthread ssl util yaml-0 z
 LIB_DEPENDS-main +=	devel/gmp \
 			devel/libyaml \
 			devel/libffi
-
-WANTLIB-gdbm +=		c m gdbm gmp pthread ruby${BINREV}
-LIB_DEPENDS-gdbm +=	databases/gdbm \
-			devel/gmp \
-			lang/ruby/${REV},-main>=${VERSION},<${NEXTVER}
-RUN_DEPENDS-gdbm ?=
 
 DEBUG_PACKAGES ?=	-main
 

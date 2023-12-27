@@ -4,6 +4,8 @@ SHARED_LIBS =		ruby31	0.0
 NEXTVER =		3.2
 PKGSPEC-main ?=         ruby->=3.1.0,<${NEXTVER}
 
+REVISION-main =		0
+
 SITES.p1 ?=		https://github.com/ruby/openssl/commit/
 
 # Backport fix for fixnum*fixnum multiplication on octeon
@@ -37,7 +39,7 @@ CONFIGURE_ENV +=	ac_cv_path_MJIT_CC=`which ${CC}`
 GEM_EXTENSIONS_DIR = lib/ruby/gems/${REV}/extensions/${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}-openbsd
 SUBST_VARS += GEM_EXTENSIONS_DIR
 
-WANTLIB-main +=	curses yaml-0
+WANTLIB-main +=	curses readline
 
 post-extract:
 	${POST_EXTRACT}

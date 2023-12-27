@@ -3,7 +3,7 @@ DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby32	0.0
 NEXTVER =		3.3
 PKGSPEC-main ?=         ruby->=3.2.0,<${NEXTVER}
-REVISION-main =		1
+REVISION-main =		2
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
@@ -36,7 +36,7 @@ CONFIGURE_ENV +=	ac_cv_path_MJIT_CC=`which ${CC}`
 GEM_EXTENSIONS_DIR = lib/ruby/gems/${REV}/extensions/${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}-openbsd
 SUBST_VARS += GEM_EXTENSIONS_DIR
 
-WANTLIB-main +=	curses yaml-0
+WANTLIB-main +=	curses readline
 
 TEST_ENV =	RUBYGEMS_SYSTEM_UPDATE_MESSAGE=enable
 TEST_TARGET =	check TESTOPTS="-v -q"
