@@ -30,7 +30,8 @@ BUILD_DEPENDS =	graphics/glm \
 		textproc/nlohmann-json \
 		wayland/wayland-protocols
 
-# include/wayfire/config/types.hpp needs glm/vec4.hpp
+# include/wayfire/touch/touch.hpp needs glm/vec2.hpp
+# include/wayfire/opengl.hpp needs glm/vec4.hpp
 RUN_DEPENDS +=	graphics/glm
 
 CONFIGURE_ARGS =-Duse_system_wfconfig=enabled \
