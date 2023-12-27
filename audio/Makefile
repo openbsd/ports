@@ -234,6 +234,8 @@
      SUBDIR += speech-dispatcher
      SUBDIR += speex
      SUBDIR += speexdsp
+     SUBDIR += spotify-qt
+     SUBDIR += spotifyd
      SUBDIR += squeezecenter
      SUBDIR += squeezelite
      SUBDIR += sratom
