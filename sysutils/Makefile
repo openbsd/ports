@@ -361,11 +361,14 @@
      SUBDIR += rtty
      SUBDIR += ruby-augeas,ruby31
      SUBDIR += ruby-augeas,ruby32
+     SUBDIR += ruby-augeas,ruby33
      SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby31
      SUBDIR += ruby-libvirt,ruby32
+     SUBDIR += ruby-libvirt,ruby33
      SUBDIR += ruby-posix-spawn,ruby31
      SUBDIR += ruby-posix-spawn,ruby32
+     SUBDIR += ruby-posix-spawn,ruby33
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppetserver-ca
      SUBDIR += ruby-puppet-lint
@@ -373,6 +376,7 @@
      SUBDIR += ruby-r10k
      SUBDIR += ruby-shadow,ruby31
      SUBDIR += ruby-shadow,ruby32
+     SUBDIR += ruby-shadow,ruby33
      SUBDIR += ruby-serverengine
      SUBDIR += ruby-sigdump
      SUBDIR += ruby-tzinfo

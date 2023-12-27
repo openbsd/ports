@@ -270,6 +270,7 @@
      SUBDIR += ruby-dbus
      SUBDIR += ruby-tk,ruby31
      SUBDIR += ruby-tk,ruby32
+     SUBDIR += ruby-tk,ruby33
      SUBDIR += rxvt-unicode
      SUBDIR += rxvt-unicode,small
      SUBDIR += rxvt-unicode,everything
