@@ -2,6 +2,7 @@ COMMENT =		PostgreSQL backup & restore tool
 
 V =			2.49
 DISTNAME =		pgbackrest-${V}
+REVISION =		0
 
 CATEGORIES = 		databases
 HOMEPAGE = 		https://pgbackrest.org/
@@ -16,7 +17,7 @@ DISTFILES =		pgbackrest-{}${V}.tar.gz
 WRKDIST =		${WRKDIR}/pgbackrest-release-${V}
 WRKSRC =		${WRKDIST}/src
 
-WANTLIB += 		bz2 c crypto lz4 pq ssl xml2 z zstd
+WANTLIB += 		bz2 c crypto lz4 pq ssh2 ssl xml2 z zstd
 
 BUILD_DEPENDS =		devel/libyaml
 
@@ -26,6 +27,7 @@ LIB_DEPENDS = 		archivers/bzip2 \
 		  	archivers/lz4 \
 			archivers/zstd \
 			databases/postgresql \
+			security/libssh2 \
 			textproc/libxml
 
 USE_GMAKE =		Yes
