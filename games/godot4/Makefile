@@ -6,6 +6,7 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 V =		4.1.3
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot4-${V}
+REVISION =	0
 
 CATEGORIES =	games
 

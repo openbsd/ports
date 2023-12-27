@@ -3,13 +3,12 @@ _B is already defined in ctype.h
 Index: thirdparty/oidn/mkl-dnn/src/cpu/simple_reorder.hpp
 --- thirdparty/oidn/mkl-dnn/src/cpu/simple_reorder.hpp.orig
 +++ thirdparty/oidn/mkl-dnn/src/cpu/simple_reorder.hpp
-@@ -80,6 +80,9 @@ struct conv_s8s8 {};
-         const float alpha = pd->alpha(); MAYBE_UNUSED(alpha); \
-         const float beta = pd->beta(); MAYBE_UNUSED(beta);
+@@ -17,6 +17,8 @@
+ #ifndef CPU_SIMPLE_REORDER_HPP
+ #define CPU_SIMPLE_REORDER_HPP
  
-+// *finger crossed*
++#include <ctype.h>
 +#undef _B
-+
- /* specific reorders: common template */
- template <SIMPLE_REORDER_TEMPL_DECL, typename spec = void>
- struct simple_reorder_impl {};
+ #include <assert.h>
+ 
+ #include "c_types_map.hpp"
