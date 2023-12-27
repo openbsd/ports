@@ -1,6 +1,6 @@
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION =	4.3.3
+MODPY_EGG_VERSION =	4.5.3
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
@@ -16,7 +16,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/glib2>=2.60.0 \
+RUN_DEPENDS =		devel/glib2>=2.66.0 \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
