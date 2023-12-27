@@ -1,0 +1,2 @@
+@bin bin/spotifyd
+share/doc/pkg-readmes/${PKGSTEM}

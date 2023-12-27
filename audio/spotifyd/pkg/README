@@ -1,0 +1,8 @@
+With credentials in an XDG configuration file spotifyd is ready to run, e.g.
+as daemon in ~/.xsession or on-demand via clients such as "spotify-qt":
+
+  [global]
+  username = "user@example.com"
+  password = "secret"
+
+See https://docs.spotifyd.rs/ for more information.
