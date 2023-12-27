@@ -1,0 +1,5 @@
+@bin bin/spotify-qt
+share/applications/spotify-qt.desktop
+share/icons/hicolor/scalable/apps/spotify-qt.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
