@@ -1,8 +1,5 @@
 COMMENT=	extract, list, and test RAR archives
 
-# beta
-PORTROACH=	skipv:6.2.11
-
 # NB: The software version is different from the distfile version.
 # Check version.hpp or the banner printed when running unrar
 # for the version to use in PKGNAME.  In particular, RARVER_BETA
@@ -10,9 +7,9 @@ PORTROACH=	skipv:6.2.11
 # to 0 for a non-beta release, e.g., "5.00 beta 8" was succeeded
 # by "5.00".
 
-PKGNAME=	unrar-6.23
+PKGNAME=	unrar-6.24
 EPOCH=		2
-DISTNAME=	unrarsrc-6.2.10
+DISTNAME=	unrarsrc-6.2.12
 CATEGORIES=	archivers
 
 HOMEPAGE=	https://www.rarlab.com/
