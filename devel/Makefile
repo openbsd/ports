@@ -1696,7 +1696,6 @@
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting,python3
-     SUBDIR += py2-parsing
      SUBDIR += py2-pip
      SUBDIR += py2-setuptools
      SUBDIR += py3c
