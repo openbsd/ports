@@ -1,0 +1,20 @@
+If you want to use this package as your default system ruby, as root
+create symbolic links like so (overwriting any previous default):
+
+ ln -sf ${PREFIX}/bin/ruby33 ${PREFIX}/bin/ruby
+ ln -sf ${PREFIX}/bin/bundle33 ${PREFIX}/bin/bundle
+ ln -sf ${PREFIX}/bin/bundler33 ${PREFIX}/bin/bundler
+ ln -sf ${PREFIX}/bin/erb33 ${PREFIX}/bin/erb
+ ln -sf ${PREFIX}/bin/gem33 ${PREFIX}/bin/gem
+ ln -sf ${PREFIX}/bin/irb33 ${PREFIX}/bin/irb
+ ln -sf ${PREFIX}/bin/racc33 ${PREFIX}/bin/racc
+ ln -sf ${PREFIX}/bin/rake33 ${PREFIX}/bin/rake
+ ln -sf ${PREFIX}/bin/rbs33 ${PREFIX}/bin/rbs
+ ln -sf ${PREFIX}/bin/rdbg33 ${PREFIX}/bin/rdbg
+ ln -sf ${PREFIX}/bin/rdoc33 ${PREFIX}/bin/rdoc
+ ln -sf ${PREFIX}/bin/ri33 ${PREFIX}/bin/ri
+ ln -sf ${PREFIX}/bin/syntax_suggest33 ${PREFIX}/bin/syntax_suggest
+ ln -sf ${PREFIX}/bin/typeprof33 ${PREFIX}/bin/typeprof
+
+The ruby-shims package is also available to automatically select an
+appropriate Ruby version per-project directory or system-wide.
