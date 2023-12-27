@@ -1,6 +1,6 @@
 COMMENT =	run a subprocess
 
-DISTNAME =	IPC-Run-20200505.0
+DISTNAME =	IPC-Run-20231003.0
 
 CATEGORIES =	devel
 
