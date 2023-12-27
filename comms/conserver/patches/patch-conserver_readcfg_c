@@ -1,0 +1,45 @@
+Index: conserver/readcfg.c
+--- conserver/readcfg.c.orig
++++ conserver/readcfg.c
+@@ -57,6 +57,7 @@ GRPENT *pGEstage = (GRPENT *)0;
+ GRPENT *pGE = (GRPENT *)0;
+ static unsigned int groupID = 1;
+ REMOTE **ppRC = (REMOTE **)0;
++char *ucomnames;
+ 
+ /* 'task' handling (plus) */
+ void
+@@ -2456,6 +2457,7 @@ CheckSubst(char *label, char *subst)
+ void
+ ConsoleEnd(void)
+ {
++    char *ucom;
+     int invalid = 0;
+ 
+     CONSENT *c = (CONSENT *)0;
+@@ -2506,6 +2508,14 @@ ConsoleEnd(void)
+ 		    parserConsoleTemp->devicesubst = (char *)0;
+ 		}
+ 	    }
++	    if (parserConsoleTemp->device && ucomnames &&
++		strncasecmp(parserConsoleTemp->device, "usb", 3) == 0) {
++		ucom = find_ucom(parserConsoleTemp->device, ucomnames);
++		free(parserConsoleTemp->device);
++		parserConsoleTemp->device = ucom;
++	        if (parserConsoleTemp->device == (char *)0)
++			invalid = 1;
++	    }
+ 	    break;
+ #if HAVE_FREEIPMI
+ 	case IPMI:
+@@ -5057,7 +5067,10 @@ ReadCfg(char *filename, FILE *fp)
+     InitSubstCallback();
+ 
+     /* ready to read in the data */
++    ucomnames = get_ucomnames();
+     ParseFile(filename, fp, 0);
++    free(ucomnames);
++    ucomnames = NULL;
+ 
+ #if HAVE_DMALLOC && DMALLOC_MARK_READCFG
+     CONDDEBUG((1, "ReadCfg(): dmalloc / MarkReadCfg"));

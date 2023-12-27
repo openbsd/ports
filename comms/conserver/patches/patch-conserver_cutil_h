@@ -1,0 +1,9 @@
+Index: conserver/cutil.h
+--- conserver/cutil.h.orig
++++ conserver/cutil.h
+@@ -223,3 +223,5 @@ extern int SSLVerifyCallback(int, X509_STORE_CTX *);
+ extern int FileSSLAccept(CONSFILE *);
+ extern int FileCanSSLAccept(CONSFILE *, fd_set *, fd_set *);
+ #endif
++extern char *get_ucomnames(void);
++extern char *find_ucom(const char *, const char *);

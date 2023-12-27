@@ -3,7 +3,15 @@ fix unaligned access on strict-alignment 64-bit
 Index: conserver/cutil.c
 --- conserver/cutil.c.orig
 +++ conserver/cutil.c
-@@ -1852,7 +1852,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -5,6 +5,7 @@
+  */
+ 
+ #include <compat.h>
++#include <sys/sysctl.h>
+ 
+ #include <cutil.h>
+ #include <version.h>
+@@ -1852,7 +1853,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  {
  # ifdef SIOCGIFCONF
      struct ifconf ifc;
@@ -12,7 +20,7 @@ Index: conserver/cutil.c
  #  ifdef SIOCGIFFLAGS
      struct ifreq ifrcopy;
  #  endif
-@@ -1921,7 +1921,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1921,7 +1922,7 @@ ProbeInterfaces(in_addr_t bindAddr)
       * than loop through looking for valid interfaces that are up
       * twice, huh?
       */
@@ -21,7 +29,7 @@ Index: conserver/cutil.c
      CONDDEBUG((1, "ProbeInterfaces(): ifc_len==%d max_count==%d",
  	       ifc.ifc_len, count));
  
-@@ -1940,21 +1940,21 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1940,21 +1941,21 @@ ProbeInterfaces(in_addr_t bindAddr)
  
      for (m = r = 0; r < ifc.ifc_len;) {
  	struct sockaddr *sa;
@@ -50,7 +58,7 @@ Index: conserver/cutil.c
  
  	if (sa->sa_family == AF_INET) {
  	    struct sockaddr_in *sin = (struct sockaddr_in *)sa;
-@@ -1975,14 +1975,14 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1975,14 +1976,14 @@ ProbeInterfaces(in_addr_t bindAddr)
  
  #  ifdef SIOCGIFFLAGS
  	    /* make sure the interface is up */
@@ -67,7 +75,7 @@ Index: conserver/cutil.c
  
  #  if HAVE_MEMCPY
  	    memcpy(&myAddrs[m], &(sin->sin_addr), sizeof(struct in_addr));
-@@ -1991,7 +1991,7 @@ ProbeInterfaces(in_addr_t bindAddr)
+@@ -1991,7 +1992,7 @@ ProbeInterfaces(in_addr_t bindAddr)
  #  endif
  
  	    Verbose("interface address %s (%s)", inet_ntoa(myAddrs[m]),
@@ -76,3 +84,69 @@ Index: conserver/cutil.c
  	    m++;
  	}
      }
+@@ -3101,4 +3102,65 @@ Sleep(useconds_t usec)
+ #else
+     usleep(usec);
+ #endif
++}
++
++char *
++get_ucomnames(void)
++{
++	char *names;
++	int mib[2];
++	size_t size;
++
++	mib[0] = CTL_HW;
++	mib[1] = HW_UCOMNAMES;
++	names = NULL;
++	size = 0;
++	for (;;) {
++		if (sysctl(mib, 2, NULL, &size, NULL, 0) == -1 || size == 0)
++			Error("get_ucomnames(): hw.ucomnames");
++		if ((names = realloc(names, size)) == NULL)
++			Error("get_ucomnames(): realloc(%zu)", size);
++		if (sysctl(mib, 2, names, &size, NULL, 0) != -1)
++			break;
++		if (errno != ENOMEM)
++			Error("get_ucomnames(): hw.ucomnames");
++	}
++	return names;
++}
++
++char *
++find_ucom(const char *usbid, const char *names)
++{
++	char *cua, *id, *ucom, *namescopy, *n;
++
++	if (names == NULL) {
++		Error("find_ucom(): names is NULL");
++		return NULL;
++	}
++	CONDDEBUG((1, "find_ucom: '%s' [%s]", usbid, names));
++	if ((namescopy = strdup(names)) == NULL) {
++		Error("find_ucom(): strdup");
++		return NULL;
++	}
++
++	/* names is a comma separated list of "ucom<unit#>:<usb id>". */
++	cua = NULL;
++	n = namescopy;
++	for (ucom = strsep(&n, ","); ucom; ucom = strsep(&n, ",")) {
++		CONDDEBUG((1, "find_ucom loop: '%s'", ucom));
++		if (*ucom == '\0' || strncasecmp(ucom, "ucom", 4))
++			continue;
++		ucom += 4;
++		id = strchr(ucom, ':');
++		if (id == NULL)
++			continue;
++		*id++ = '\0';
++		if (strcasecmp(id, usbid) == 0) {
++			if (asprintf(&cua, "/dev/cuaU%s", ucom) == -1)
++				Error("find_ucom(): asprintf(/dev/cuaU%s)", ucom);
++			break;
++		}
++	}
++	free(namescopy);
++	return cua;
+ }
