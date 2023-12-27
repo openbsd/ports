@@ -422,6 +422,7 @@
      SUBDIR += py-fastjsonschema,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
+     SUBDIR += py-gTTS,python3
      SUBDIR += py-humanfriendly,python3
      SUBDIR += py-humanize,python3
      SUBDIR += py-ijson,python3
