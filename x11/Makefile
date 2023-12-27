@@ -29,6 +29,7 @@
      SUBDIR += bgs
      SUBDIR += blackbox
      SUBDIR += blast
+     SUBDIR += blueprint-compiler
      SUBDIR += bricons
      SUBDIR += bspwm
      SUBDIR += bwidget
