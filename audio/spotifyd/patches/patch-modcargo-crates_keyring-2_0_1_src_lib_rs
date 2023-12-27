@@ -1,0 +1,18 @@
+Recognise OpenBSD to unbreak/build "dbus_keyring" feature
+https://github.com/hwchen/keyring-rs/pull/156
+
+Index: modcargo-crates/keyring-2.0.1/src/lib.rs
+--- modcargo-crates/keyring-2.0.1/src/lib.rs.orig
++++ modcargo-crates/keyring-2.0.1/src/lib.rs
+@@ -122,9 +122,9 @@ use crate::secret_service as default;
+ #[cfg(all(target_os = "linux", feature = "linux-default-keyutils"))]
+ use keyutils as default;
+ 
+-#[cfg(target_os = "freebsd")]
++#[cfg(any(target_os = "freebsd", target_os = "openbsd"))]
+ pub mod secret_service;
+-#[cfg(target_os = "freebsd")]
++#[cfg(any(target_os = "freebsd", target_os = "openbsd"))]
+ use crate::secret_service as default;
+ 
+ #[cfg(target_os = "windows")]

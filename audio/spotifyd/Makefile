@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 COMMENT =		Spotify client running as UNIX daemon
 DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
 CATEGORIES =		audio net
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -25,10 +26,8 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
-# "dbus_keyring" breaks build:
-#   error[E0433]: failed to resolve: use of undeclared crate or module `default`
-#     --> ${MODCARGO_VENDOR_DIR}/modcargo-crates/keyring-2.0.1/src/lib.rs:176:54
-MODCARGO_FEATURES =	dbus_mpris \
+MODCARGO_FEATURES =	dbus_keyring \
+			dbus_mpris \
 			portaudio_backend
 
 .include "crates.inc"
