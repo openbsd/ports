@@ -1,44 +1,44 @@
 Index: boost/atomic/detail/futex.hpp
 --- boost/atomic/detail/futex.hpp.orig
 +++ boost/atomic/detail/futex.hpp
-@@ -23,7 +23,7 @@
- #pragma once
- #endif
+@@ -25,6 +25,7 @@
  
--#if defined(__linux__) || defined(__OpenBSD__) || defined(__NETBSD__) || defined(__NetBSD__)
-+#if defined(__linux__) || defined(__NETBSD__) || defined(__NetBSD__)
+ #if defined(__linux__) || defined(__OpenBSD__) || defined(__NETBSD__) || defined(__NetBSD__)
  
++#ifndef __OpenBSD__
  #include <sys/syscall.h>
  
-@@ -45,8 +45,9 @@
+ #if defined(SYS_futex)
+@@ -44,9 +45,10 @@
+ #define BOOST_ATOMIC_DETAIL_SYS_FUTEX SYS___futex
  #define BOOST_ATOMIC_DETAIL_NETBSD_FUTEX
  #endif
++#endif
  
 -#if defined(BOOST_ATOMIC_DETAIL_SYS_FUTEX)
  
 +#if defined(BOOST_ATOMIC_DETAIL_SYS_FUTEX) || defined(__OpenBSD__)
-+
  #include <cstddef>
  #if defined(__linux__)
  #include <linux/futex.h>
-@@ -74,7 +75,9 @@ namespace detail {
+@@ -74,7 +76,9 @@ namespace detail {
  //! Invokes an operation on the futex
  BOOST_FORCEINLINE int futex_invoke(void* addr1, int op, unsigned int val1, const void* timeout = NULL, void* addr2 = NULL, unsigned int val3 = 0) BOOST_NOEXCEPT
  {
 -#if !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
 +#if defined(__OpenBSD__)
-+    return ::futex(addr1, op, val1, timeout, addr2, 0u, val3);
++    return ::futex(static_cast < volatile uint32_t * >(addr1), op, val1, static_cast < const struct timespec * >(timeout), static_cast < volatile uint32_t * >(addr2));
 +#elif !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
      return ::syscall(BOOST_ATOMIC_DETAIL_SYS_FUTEX, addr1, op, val1, timeout, addr2, val3);
  #else
      // Pass 0 in val2.
-@@ -85,7 +88,9 @@ BOOST_FORCEINLINE int futex_invoke(void* addr1, int op
+@@ -85,7 +89,9 @@ BOOST_FORCEINLINE int futex_invoke(void* addr1, int op
  //! Invokes an operation on the futex
  BOOST_FORCEINLINE int futex_invoke(void* addr1, int op, unsigned int val1, unsigned int val2, void* addr2 = NULL, unsigned int val3 = 0) BOOST_NOEXCEPT
  {
 -#if !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
 +#if defined(__OpenBSD__)
-+    return futex(addr1, op, val1, static_cast< void* >(NULL), addr2, val2, val3);
++    return futex(static_cast < volatile uint32_t * >(addr1), op, val1, nullptr, static_cast < volatile uint32_t * >(addr2));
 +#elif !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
      return ::syscall(BOOST_ATOMIC_DETAIL_SYS_FUTEX, addr1, op, val1, static_cast< atomics::detail::uintptr_t >(val2), addr2, val3);
  #else

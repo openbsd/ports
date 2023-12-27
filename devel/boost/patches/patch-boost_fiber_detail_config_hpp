@@ -1,0 +1,12 @@
+Index: boost/fiber/detail/config.hpp
+--- boost/fiber/detail/config.hpp.orig
++++ boost/fiber/detail/config.hpp
+@@ -38,7 +38,7 @@
+ # include <boost/config/auto_link.hpp>
+ #endif
+ 
+-#if BOOST_OS_LINUX || BOOST_OS_WINDOWS
++#if BOOST_OS_LINUX || BOOST_OS_BSD_OPEN || BOOST_OS_WINDOWS
+ # define BOOST_FIBERS_HAS_FUTEX
+ #endif
+ 

@@ -11,8 +11,8 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	0
-EPOCH =		0
+REVISION=	1
+EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
@@ -151,7 +151,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/boost
 	${INSTALL_DATA} ${WRKSRC}/stage/lib/lib!(*.so) ${PREFIX}/lib
 	cd ${WRKSRC}/boost && \
-		pax -rw -s ':^.*\.orig$$::' . ${PREFIX}/include/boost
+		pax -rw -s ':^.*${PATCHORIG}$$::' . ${PREFIX}/include/boost
 	find ${PREFIX}/include/boost -type d -exec chmod ${DIRMODE} {} +
 	find ${PREFIX}/include/boost -type f -exec chmod ${SHAREMODE} {} +
 	# boost-build:
@@ -159,11 +159,11 @@ do-install:
 		${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/b2
 	@cd ${WRKSRC}/tools/build/src && \
-		pax -r -w -p pm -s ':^./engine.*$$::' -s ':^.*\.orig$$::' . \
+		pax -r -w -p pm -s ':^./engine.*$$::' -s ':^.*${PATCHORIG}$$::' . \
 		${PREFIX}/share/b2
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/b2
 	@cd ${WRKSRC}/tools/build/example && \
-		pax -r -w -p pm -s ':^.*\.orig$$::' . \
+		pax -r -w -p pm -s ':^.*${PATCHORIG}$$::' . \
 		${PREFIX}/share/examples/b2
 
 .include <bsd.port.mk>
