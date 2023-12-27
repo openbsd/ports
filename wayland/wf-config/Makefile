@@ -2,6 +2,7 @@ COMMENT =	configuration files library for wayfire
 
 V =		0.8.0
 DISTNAME =	wf-config-${V}
+REVISION =	0
 
 SHARED_LIBS +=	wf-config 0.0 # 0.0
 CATEGORIES =	wayland
@@ -17,6 +18,8 @@ MODULES =	devel/meson
 
 CONFIGURE_ARGS =-Dtests=disabled
 
+# include/wayfire/config/types.hpp needs glm/vec4.hpp
+RUN_DEPENDS +=	graphics/glm
 BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland \
 		wayland/wayland-protocols\
