@@ -1,10 +1,10 @@
 COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
-DISTNAME =		knot-3.2.9
+DISTNAME =		knot-3.3.3
 
 SHARED_LIBS +=	dnssec               3.1      # .9.0
-SHARED_LIBS +=	knot                 8.0      # .13.0
+SHARED_LIBS +=	knot                 9.0      # .14.0
 SHARED_LIBS +=	zscanner             1.1      # .4.0
 
 CATEGORIES =		net
@@ -40,6 +40,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
+			--enable-quic=embedded \
 			--disable-dnstap \
 			--disable-maxminddb
 

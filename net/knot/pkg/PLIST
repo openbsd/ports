@@ -53,6 +53,9 @@ include/libknot/packet/wire.h
 include/libknot/probe/
 include/libknot/probe/data.h
 include/libknot/probe/probe.h
+include/libknot/quic/
+include/libknot/quic/quic.h
+include/libknot/quic/quic_conn.h
 include/libknot/rdata.h
 include/libknot/rdataset.h
 include/libknot/rrset-dump.h
