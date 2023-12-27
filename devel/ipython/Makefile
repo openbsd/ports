@@ -1,9 +1,8 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.18.1
+MODPY_EGG_VERSION =	8.19.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -41,7 +40,7 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			devel/py-testpath${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}>=1.17 \
+			math/py-numpy${MODPY_FLAVOR}>=1.23 \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
