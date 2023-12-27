@@ -8,6 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 aarch64
 MOZILLA_VERSION =	2.53.18
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
+REVISION =	0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -48,6 +49,8 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=2"
 # make sure we dont look for libatomic from gcc-libs
 CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 .endif
+# unbreak hunspell glue build with libcxx 16.0.6
+CONFIGURE_ENV +=	CPPFLAGS=-Dalloc_hooks_h__
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB += Xt gthread-2.0 pangoft2-1.0
