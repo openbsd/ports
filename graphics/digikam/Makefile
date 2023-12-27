@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		8.1.0
+V =		8.2.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
@@ -102,11 +102,11 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		graphics/tiff \
 		multimedia/libheif \
 		multimedia/x265 \
-		x11/kde-applications/akonadi \
-		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/libksane \
-		x11/kde-applications/marble \
-		x11/kde-applications/grantleetheme \
+		x11/kde-applications/akonadi>=23.08.4 \
+		x11/kde-applications/akonadi-contacts>=23.08.4 \
+		x11/kde-applications/libksane>=23.08.4 \
+		x11/kde-applications/marble>=23.08.4 \
+		x11/kde-applications/grantleetheme>=23.08.4 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtnetworkauth \
 		x11/qt5/qtwebchannel \
