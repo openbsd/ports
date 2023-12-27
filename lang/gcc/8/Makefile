@@ -23,7 +23,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 18
+REVISION = 19
 
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -214,13 +214,6 @@ LIB_DEPENDS-libs =
 
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG = x86_64-unknown-openbsd${OSREV}
-.endif
-
-.if ${MACHINE_ARCH} == "riscv64"
-# lld complains about .gcc_except_table referencing
-# symbols in discarded sections.  Tell gcc to split .gcc_except_table
-# so that its unused parts can also be discarded.
-EXTRA_ENV +=	PORTS_FORCE_SPLIT_SECTIONS="-ffunction-sections -fdata-sections"
 .endif
 
 post-extract:

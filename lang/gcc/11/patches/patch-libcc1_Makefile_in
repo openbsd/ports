@@ -1,19 +1,6 @@
-First hunk: lld complains about .gcc_except_table referencing
-symbols in discarded sections.  Tell gcc to split .gcc_except_table
-so that its unused parts can also be discarded.
-
 Index: libcc1/Makefile.in
 --- libcc1/Makefile.in.orig
 +++ libcc1/Makefile.in
-@@ -387,7 +387,7 @@ CPPFLAGS_FOR_C_FAMILY = -I $(srcdir)/../gcc/c-family \
- CPPFLAGS_FOR_C = $(CPPFLAGS_FOR_C_FAMILY) -I $(srcdir)/../gcc/c
- CPPFLAGS_FOR_CXX = $(CPPFLAGS_FOR_C_FAMILY) -I $(srcdir)/../gcc/cp
- AM_CXXFLAGS = $(WARN_FLAGS) $(WERROR) $(visibility) $(CET_HOST_FLAGS) \
--	$(am__append_1)
-+	$(am__append_1) $(PORTS_FORCE_SPLIT_SECTIONS)
- # Can be simplified when libiberty becomes a normal convenience library.
- libiberty_normal = ../libiberty/libiberty.a
- libiberty_noasan = ../libiberty/noasan/libiberty.a
 @@ -405,6 +405,8 @@ cc1libdir = $(libdir)/$(libsuffix)
  shared_source = callbacks.cc callbacks.hh connection.cc connection.hh \
      marshall.cc marshall.hh rpc.hh status.hh
