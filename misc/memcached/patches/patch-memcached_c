@@ -1,7 +1,7 @@
 Index: memcached.c
 --- memcached.c.orig
 +++ memcached.c
-@@ -5309,8 +5309,8 @@ int main (int argc, char **argv) {
+@@ -5632,8 +5632,8 @@ int main (int argc, char **argv) {
                  start_lru_maintainer = false;
                  break;
              case NO_DROP_PRIVILEGES:

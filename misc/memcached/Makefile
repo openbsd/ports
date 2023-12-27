@@ -1,8 +1,7 @@
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.6.15
+DISTNAME=	memcached-1.6.22
 CATEGORIES=	misc
-REVISION=	0
 
 HOMEPAGE=	https://www.memcached.org/
 
@@ -24,6 +23,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-coverage \
 			--disable-docs \
+			--disable-werror \
 			--enable-tls
 TEST_TARGET=		test
 TEST_DEPENDS=		devel/p5-Test-MockSleep
