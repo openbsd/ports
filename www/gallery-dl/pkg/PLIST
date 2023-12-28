@@ -336,6 +336,8 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}po
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}pornhub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}pornpics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}pornpics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}postmill.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}postmill.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}pururin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}pururin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}reactor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -564,6 +566,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/plurk.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/poipiku.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/pornhub.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/pornpics.py
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/postmill.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/pururin.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/reactor.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/readcomiconline.py
