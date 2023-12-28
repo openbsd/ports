@@ -1,2 +1,4 @@
-SHA256 (nlohmann-json-3.11.2.tar.gz) = 1p+d62p14lgEZcbExREbicTcL6lOOoX80v/NmhQ9knM=
-SIZE (nlohmann-json-3.11.2.tar.gz) = 8097673
+SHA256 (nlohmann-json-v3.11.2.tar.gz) = 1p+d62p14lgEZcbExREbicTcL6lOOoX80v/NmhQ9knM=
+SHA256 (nlohmann-json_test_data-v3.1.0.tar.gz) = iEseIfOM/WpiwVnxt+Co9RaK5dqqOE7U3AwPpmYPIb0=
+SIZE (nlohmann-json-v3.11.2.tar.gz) = 8097673
+SIZE (nlohmann-json_test_data-v3.1.0.tar.gz) = 115036393
