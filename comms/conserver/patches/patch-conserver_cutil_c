@@ -1,4 +1,6 @@
-fix unaligned access on strict-alignment 64-bit
+ifr-related hunks: fix unaligned access on strict-alignment 64-bit
+
+first+last hunks: handle usb serial devices via ucomnames
 
 Index: conserver/cutil.c
 --- conserver/cutil.c.orig

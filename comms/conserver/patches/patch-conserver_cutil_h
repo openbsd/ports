@@ -1,3 +1,5 @@
+handle usb serial devices via ucomnames
+
 Index: conserver/cutil.h
 --- conserver/cutil.h.orig
 +++ conserver/cutil.h
