@@ -1,0 +1,22 @@
+__decay conflicts with libcxx internals, so move it out of the way:
+
+/tmp/pobj/hydrogen-1.0.2/hydrogen-1.0.2/src/core/include/hydrogen/basics/adsr.h:134:2: error: a type
+ specifier is required for all declarations
+        __decay = value;
+        ^
+
+upstream appears to have fixed this in
+https://github.com/hydrogen-music/hydrogen/commit/f9858e3931cd53f9dbad0869cb7dcd3dddcc1354
+
+Index: src/core/include/hydrogen/basics/adsr.h
+--- src/core/include/hydrogen/basics/adsr.h.orig
++++ src/core/include/hydrogen/basics/adsr.h
+@@ -25,6 +25,8 @@
+ 
+ #include <hydrogen/object.h>
+ 
++#define __decay __hydrogen_decay
++
+ namespace H2Core
+ {
+ 
