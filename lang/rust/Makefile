@@ -5,7 +5,7 @@ BROKEN-powerpc64 =	needs new bootstrap
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
 .else
-DPB_PROPERTIES =	parallel parallel2
+DPB_PROPERTIES =	parallel
 .endif
 
 COMMENT-main =		compiler for Rust Language
@@ -14,13 +14,13 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.74.1
+V =			1.75.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.74.1-20231214
-BV-amd64 =		1.74.1-20231214
-BV-i386 =		1.74.0-20231214
+BV-aarch64 =		1.75.0-20231223
+BV-amd64 =		1.75.0-20231222
+BV-i386 =		1.75.0-20231223
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.74.1-20231227
 BV-sparc64 =		1.74.1-20231219

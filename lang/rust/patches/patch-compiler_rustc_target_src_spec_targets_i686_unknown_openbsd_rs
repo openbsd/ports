@@ -1,12 +1,12 @@
 i386 should be pentiumpro (no SSE2, no ...)
 
-Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
---- compiler/rustc_target/src/spec/i686_unknown_openbsd.rs.orig
-+++ compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
-@@ -2,7 +2,7 @@ use crate::spec::{Cc, LinkerFlavor, Lld, StackProbeTyp
+Index: compiler/rustc_target/src/spec/targets/i686_unknown_openbsd.rs
+--- compiler/rustc_target/src/spec/targets/i686_unknown_openbsd.rs.orig
++++ compiler/rustc_target/src/spec/targets/i686_unknown_openbsd.rs
+@@ -2,7 +2,7 @@ use crate::spec::{base, Cc, LinkerFlavor, Lld, StackPr
  
  pub fn target() -> Target {
-     let mut base = super::openbsd_base::opts();
+     let mut base = base::openbsd::opts();
 -    base.cpu = "pentium4".into();
 +    base.cpu = "pentiumpro".into();
      base.max_atomic_width = Some(64);

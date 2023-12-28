@@ -3,7 +3,7 @@ Do not pass -Bsymbolic-functions on sparc64, the linker doesn't support it
 Index: src/llvm-project/llvm/tools/llvm-shlib/CMakeLists.txt
 --- src/llvm-project/llvm/tools/llvm-shlib/CMakeLists.txt.orig
 +++ src/llvm-project/llvm/tools/llvm-shlib/CMakeLists.txt
-@@ -51,7 +51,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
+@@ -53,7 +53,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
        # Solaris ld does not accept global: *; so there is no way to version *all* global symbols
        set(LIB_NAMES -Wl,--version-script,${LLVM_LIBRARY_DIR}/tools/llvm-shlib/simple_version_script.map ${LIB_NAMES})
      endif()

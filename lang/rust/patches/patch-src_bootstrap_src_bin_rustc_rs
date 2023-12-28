@@ -1,11 +1,11 @@
 try to reduce memory usage on aarch64 and i386:
  - reduce memory use by retaining fewer names within compilation artifacts
- - divise (with codegen-units) the unit in smaller parts to manipulate it
+ - divise (with codegen-units) the unit in smaller parts to manipulate it 
 
-Index: src/bootstrap/bin/rustc.rs
---- src/bootstrap/bin/rustc.rs.orig
-+++ src/bootstrap/bin/rustc.rs
-@@ -107,6 +107,19 @@ fn main() {
+Index: src/bootstrap/src/bin/rustc.rs
+--- src/bootstrap/src/bin/rustc.rs.orig
++++ src/bootstrap/src/bin/rustc.rs
+@@ -114,6 +114,19 @@ fn main() {
          {
              cmd.arg("-Ztls-model=initial-exec");
          }
@@ -23,5 +23,5 @@ Index: src/bootstrap/bin/rustc.rs
 +        }
 +            
      } else {
-         // FIXME(rust-lang/cargo#5754) we shouldn't be using special env vars
-         // here, but rather Cargo should know what flags to pass rustc itself.
+         // Find any host flags that were passed by bootstrap.
+         // The flags are stored in a RUSTC_HOST_FLAGS variable, separated by spaces.

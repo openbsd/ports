@@ -1,0 +1,14 @@
+let us compilation choice to be honored.
+https://github.com/rust-lang/rust/issues/39900 
+
+Index: src/bootstrap/src/lib.rs
+--- src/bootstrap/src/lib.rs.orig
++++ src/bootstrap/src/lib.rs
+@@ -1195,7 +1195,6 @@ impl Build {
+             .args()
+             .iter()
+             .map(|s| s.to_string_lossy().into_owned())
+-            .filter(|s| !s.starts_with("-O") && !s.starts_with("/O"))
+             .collect::<Vec<String>>();
+ 
+         // If we're compiling C++ on macOS then we add a flag indicating that
