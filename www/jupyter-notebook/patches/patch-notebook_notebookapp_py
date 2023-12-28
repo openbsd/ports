@@ -3,7 +3,7 @@ repair with traitlets 5.10
 Index: notebook/notebookapp.py
 --- notebook/notebookapp.py.orig
 +++ notebook/notebookapp.py
-@@ -1388,7 +1388,6 @@ class NotebookApp(JupyterApp):
+@@ -1386,7 +1386,6 @@ class NotebookApp(JupyterApp):
              # and allow jupyter_server contents managers to pass
              # through. If jupyter_server is not installed, this class
              # will be ignored.

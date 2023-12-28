@@ -27,8 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}_version.${MOD
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}config_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}config_manager.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}extensions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/${MODPY_PYCACHE}jstest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,7 +133,6 @@ lib/python${MODPY_VERSION}/site-packages/notebook/bundler/tests/test_bundlerexte
 lib/python${MODPY_VERSION}/site-packages/notebook/bundler/tools.py
 lib/python${MODPY_VERSION}/site-packages/notebook/bundler/zip_bundler.py
 lib/python${MODPY_VERSION}/site-packages/notebook/config_manager.py
-lib/python${MODPY_VERSION}/site-packages/notebook/conftest.py
 lib/python${MODPY_VERSION}/site-packages/notebook/edit/
 lib/python${MODPY_VERSION}/site-packages/notebook/edit/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notebook/edit/${MODPY_PYCACHE}/
@@ -1879,6 +1876,8 @@ lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs-pl
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs-text/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs-text/text.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/requirejs/require.js
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/sanitizer/
+lib/python${MODPY_VERSION}/site-packages/notebook/static/components/sanitizer/index.js
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/lib/
 lib/python${MODPY_VERSION}/site-packages/notebook/static/components/text-encoding/lib/encoding.js
