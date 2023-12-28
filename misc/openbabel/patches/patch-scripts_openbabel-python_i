@@ -1,0 +1,20 @@
+Remove std::binary_function, which is removed in C++17. Taken from
+https://github.com/openbabel/openbabel/pull/2464
+
+Index: scripts/openbabel-python.i
+--- scripts/openbabel-python.i.orig
++++ scripts/openbabel-python.i
+@@ -266,13 +266,6 @@ CAST_GENERICDATA_TO(SquarePlanarStereo)
+ 
+ %include <openbabel/chains.h>
+ %include <openbabel/typer.h>
+-
+-// To avoid warning in plugin.h about "Nothing known about std::binary_function"
+-namespace std {
+-        template <T1, T2, T3>
+-        class binary_function {};
+-}
+-%template(dummy) std::binary_function <const char *, const char *, bool>;
+ %include <openbabel/plugin.h>
+ 
+ // To avoid warning in oberror.h about "Nothing known about std::stringbuf"
