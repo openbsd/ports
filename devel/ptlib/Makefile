@@ -4,12 +4,12 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
 GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		4
+REVISION=		5
 EPOCH=			0
 
 CATEGORIES=		devel telephony
 
-SHARED_LIBS +=		pt	8.0
+SHARED_LIBS +=		pt	9.0
 
 # original: http://www.opalvoip.org/
 HOMEPAGE=		https://github.com/willamowius/ptlib/
