@@ -1,3 +1,5 @@
+PORTROACH=		skipv:0.377-2
+
 COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
