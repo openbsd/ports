@@ -23,6 +23,10 @@ MODULES=	devel/qmake \
 LIB_DEPENDS=	misc/openbabel>=3.0.0 \
 		x11/qt5/qtsvg
 
+# Workaround to fix the build with libcxx 16.0.6 until openbabel is updated
+# to include https://github.com/openbabel/openbabel/pull/2464
+CXXFLAGS=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
+
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/xdrawchem-v1.11.0-53047f64b571b5f01623bf897eb9e2b212778031
