@@ -1,7 +1,7 @@
 COMMENT=	Java program analyzer and checker
 
 DISTNAME=	jlint-3.1.2
-REVISION =	4
+REVISION =	5
 CATEGORIES=	java
 
 HOMEPAGE=	https://jlint.sourceforge.net/
@@ -22,5 +22,7 @@ MAKE_ENV+=	CC="${CC}" CPP="${CXX}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
 NO_TEST=	Yes
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 .include <bsd.port.mk>

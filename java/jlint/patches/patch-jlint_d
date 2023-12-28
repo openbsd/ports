@@ -1,0 +1,20 @@
+./jlint.d:117:16: error: redefinition of 'drem'
+JAVA_INSN(115, drem, 1)
+               ^
+/usr/include/math.h:266:8: note: previous definition is here
+double drem(double, double);
+
+https://github.com/freebsd/freebsd-ports/commit/2162d07aedf86833acc7076d01f1080f182ca442
+
+Index: jlint.d
+--- jlint.d.orig
++++ jlint.d
+@@ -114,7 +114,7 @@ JAVA_INSN(111, ddiv, 1)
+ JAVA_INSN(112, irem, 1)
+ JAVA_INSN(113, lrem, 1)
+ JAVA_INSN(114, frem, 1)
+-JAVA_INSN(115, drem, 1)
++JAVA_INSN(115, Jdrem, 1)
+ JAVA_INSN(116, ineg, 1)
+ JAVA_INSN(117, lneg, 1)
+ JAVA_INSN(118, fneg, 1)
