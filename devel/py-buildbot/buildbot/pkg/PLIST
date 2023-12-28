@@ -1183,6 +1183,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}httpclien
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}httpclientservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}identifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}identifiers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}importlib_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}importlib_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}kubeclientservice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}kubeclientservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}latent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1247,6 +1249,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/git.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/giturlparse.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/httpclientservice.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/identifiers.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/importlib_compat.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/kubeclientservice.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/latent.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/lineboundaries.py
