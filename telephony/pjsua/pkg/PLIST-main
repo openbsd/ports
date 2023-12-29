@@ -20,6 +20,7 @@ include/pj/assert.h
 include/pj/compat/
 include/pj/compat/assert.h
 include/pj/compat/cc_armcc.h
+include/pj/compat/cc_clang.h
 include/pj/compat/cc_codew.h
 include/pj/compat/cc_gcc.h
 include/pj/compat/cc_gcce.h
