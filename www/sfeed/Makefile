@@ -1,5 +1,5 @@
 COMMENT =		RSS/Atom newsreader and formatting programs
-DISTNAME =		sfeed-1.9
+DISTNAME =		sfeed-2.0
 CATEGORIES =		www
 
 HOMEPAGE =		https://codemadness.org/sfeed.html
