@@ -1,6 +1,6 @@
 COMMENT =		CLI and TUI tool to interact with Mastodon instances
 
-MODPY_EGG_VERSION =	0.39.0
+MODPY_EGG_VERSION =	0.40.2
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
@@ -17,11 +17,14 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 # skip tests which require a local test instance of mastodon,
 # plus databases/py-psycopg2
-MODPY_PYTEST_ARGS =	--ignore tests/integration
+# also richtext tests, requiring "urwidgets" (not urwid)
+MODPY_PYTEST_ARGS =	--ignore tests/integration \
+			--ignore tests/tui/test_rich_text.py
 
-RUN_DEPENDS =		devel/py-wcwidth${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
+			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			devel/py-wcwidth${MODPY_FLAVOR} \
 			devel/py-urwid${MODPY_FLAVOR} \
 			textproc/py-tomlkit${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
