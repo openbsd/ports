@@ -3,13 +3,12 @@ COMMENT =	plugin-driven server agent for collecting metrics
 BROKEN-arm =	build fails, no error message
 BROKEN-i386 =	/usr/local/go/pkg/tool/openbsd_386/link: mapping output file failed: cannot allocate memory
 
-MODGO_VERSION=	v1.28.3
+MODGO_VERSION=	v1.29.1
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
 GH_TAGNAME =	${MODGO_VERSION}
 HOMEPAGE =	https://www.influxdata.com/time-series-platform/telegraf/
-REVISION =	0
 
 MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 
