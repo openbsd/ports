@@ -8,8 +8,10 @@ SHARED_LIBS +=  LayerShellQtInterface    0.0 # 5.22.5
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5WaylandClient
 WANTLIB += m wayland-client xkbcommon
 
-LIB_DEPENDS +=	x11/qt5/qtwayland \
-		x11/xkbcommon
+BUILD_DEPENDS +=	wayland/wayland-protocols
+
+LIB_DEPENDS +=		x11/qt5/qtwayland \
+			x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 
