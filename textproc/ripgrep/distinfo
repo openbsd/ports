@@ -47,7 +47,7 @@ SHA256 (cargo/winapi-0.3.9.tar.gz) = XIOaZ0/NepiVLlkyQupACr6TmSdGdh44ZBQF0osA9Bk
 SHA256 (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = rDuHxjYgQm3ZuZHlzgMp7/VFvMu7NPO+Cf9vtqtRt7Y=
 SHA256 (cargo/winapi-util-0.1.6.tar.gz) = 8p5vkZi6DSa0yfB9vm+e1jPh89W4tBQJAIQ0nkalJZY=
 SHA256 (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = cS4ieEHQV8HuHNL7Ivp+WlRhro5I+iynnsQs/BkxGD8=
-SHA256 (ripgrep-14.0.1.tar.gz) = hFy/R3KYCf6C/R+Tj3iAopwc1ccdg+D+uUKVUuBWi/Y=
+SHA256 (ripgrep-14.0.3.tar.gz) = 9XlDZN39oeBBGrbK1t1jq+OmtCHWWNn+4BdUDqTDGg4=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/anyhow-1.0.75.tar.gz) = 43901
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
@@ -97,4 +97,4 @@ SIZE (cargo/winapi-0.3.9.tar.gz) = 1200382
 SIZE (cargo/winapi-i686-pc-windows-gnu-0.4.0.tar.gz) = 2918815
 SIZE (cargo/winapi-util-0.1.6.tar.gz) = 12234
 SIZE (cargo/winapi-x86_64-pc-windows-gnu-0.4.0.tar.gz) = 2947998
-SIZE (ripgrep-14.0.1.tar.gz) = 583282
+SIZE (ripgrep-14.0.3.tar.gz) = 583882
