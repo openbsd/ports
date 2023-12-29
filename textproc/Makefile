@@ -38,6 +38,7 @@
      SUBDIR += dblatex
      SUBDIR += delta
      SUBDIR += der-ascii
+     SUBDIR += dialect
      SUBDIR += diction
      SUBDIR += diffstat
      SUBDIR += ding
