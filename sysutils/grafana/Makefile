@@ -1,6 +1,6 @@
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		10.2.0
+V =		10.2.3
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
@@ -36,9 +36,11 @@ MODGO_FLAGS += -ldflags="-w -X main.version=$V"
 
 BUILD_DEPENDS =	archivers/gtar
 
-# remove linux binaries from grafana-$V.linux-amd64.tar.gz
 post-extract:
-	rm ${WRKDIST}/bin/*
+	mv ${WRKDIR}/grafana-v${V}/public/build \
+		${WRKDIR}/grafana-${V}/public
+	cp -R ${WRKDIR}/grafana-v${V}/public/lib \
+		${WRKDIR}/grafana-${V}/public/
 
 do-build:
 	mkdir -p ${WRKDIR}/go/src/github.com/grafana
