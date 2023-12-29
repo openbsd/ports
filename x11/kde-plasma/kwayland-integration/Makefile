@@ -12,7 +12,8 @@ LIB_DEPENDS =	wayland/wayland \
 		devel/kf5/kwindowsystem \
 		x11/qt5/qtwayland
 
-BUILD_DEPENDS =	wayland/wayland-protocols \
+BUILD_DEPENDS =	devel/kf5/kidletime \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 TEST_DEPENDS =	devel/kf5/kidletime
