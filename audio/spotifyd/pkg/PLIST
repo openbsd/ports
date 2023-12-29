@@ -1,2 +1,5 @@
 @bin bin/spotifyd
+doc/
+doc/spotifyd/
+doc/spotifyd/File.md
 share/doc/pkg-readmes/${PKGSTEM}

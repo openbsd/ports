@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 COMMENT =		Spotify client running as UNIX daemon
 DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
 CATEGORIES =		audio net
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -29,6 +29,12 @@ MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =	dbus_keyring \
 			dbus_mpris \
 			portaudio_backend
+
+DOC_DIR =		${PREFIX}/doc/${PKGSTEM}
+
+post-install:
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/src/config/File.md ${DOC_DIR}/
 
 .include "crates.inc"
 .include <bsd.port.mk>
