@@ -5,7 +5,7 @@ https://github.com/willamowius/ptlib/commit/87728760efd5dc966374ff65e0e97b1cf5d7
 Index: include/ptlib/pprocess.h
 --- include/ptlib/pprocess.h.orig
 +++ include/ptlib/pprocess.h
-@@ -191,12 +191,25 @@ class PTimerList : public PObject
+@@ -191,12 +191,23 @@ class PTimerList : public PObject
        PAtomicInteger::IntegerType m_serialNumber;
      };
  
@@ -19,8 +19,6 @@ Index: include/ptlib/pprocess.h
 +		  {	return (_Left.m_expireTime < _Right.m_expireTime); }
 +	  };
 +#else
-+	  {	
-+
 +	  struct TimerExpiryInfo_compare
  		  : public binary_function<TimerExpiryInfo, TimerExpiryInfo, bool>
  	  {	
