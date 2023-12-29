@@ -5,11 +5,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.14.2
-REVISION-main=		0
-REVISION-ruby=		0
-REVISION-python=	1
-REVISION-gnome-keyring=	1
+VERSION=		1.14.3
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}
@@ -232,8 +228,6 @@ post-build:
 		${MAKE_FLAGS} svn-populate-node-origins-index
 
 do-test:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} check FS_TYPE=bdb CLEANUP=1
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_TEST_FLAGS} check FS_TYPE=fsfs CLEANUP=1
 .if ${BUILD_PACKAGES:M-perl}
