@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
@@ -75,5 +76,7 @@ LIB_DEPENDS =		audio/taglib \
 			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine \
 			multimedia/phonon
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace=ON
 
 .include <bsd.port.mk>
