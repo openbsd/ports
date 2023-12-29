@@ -1,5 +1,6 @@
 COMMENT =	KSysGuard library
 DISTNAME =	libksysguard-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KSysGuardFormatter         0.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSensorFaces       0.0 # 5.22.5
@@ -23,7 +24,10 @@ WANTLIB += SM X11 XRes Xext c m z
 
 MODKDE5_TRANSLATIONS =	Yes
 
-RUN_DEPENDS =	x11/dbus,-suid
+RUN_DEPENDS =	devel/kf5/knewstuff \
+		x11/dbus,-suid
+
+BUILD_DEPENDS =	devel/kf5/knewstuff
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
