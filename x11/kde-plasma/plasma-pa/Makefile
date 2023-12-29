@@ -1,5 +1,6 @@
 COMMENT =	KDE Plasma PulseAudio support
 DISTNAME =	plasma-pa-${VERSION}
+REVISION =	0
 
 MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_DOCS = Yes
@@ -11,9 +12,11 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets Qt5Xml canberra
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m pulse pulse-mainloop-glib
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols2 \
+		devel/kf5/kcmutils \
 		x11/gtk-vnc
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols2 \
+		devel/kf5/kcmutils \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	audio/libcanberra \
