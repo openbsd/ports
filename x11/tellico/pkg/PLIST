@@ -266,6 +266,7 @@ share/locale/gl/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
+share/locale/ja/LC_MESSAGES/tellico.mo
 share/locale/ka/LC_MESSAGES/tellico.mo
 share/locale/kk/LC_MESSAGES/tellico.mo
 share/locale/ko/LC_MESSAGES/tellico.mo
@@ -353,6 +354,7 @@ share/tellico/pics/collectorz.png
 share/tellico/pics/comic.png
 share/tellico/pics/datacrow.png
 share/tellico/pics/deliciouslibrary.png
+share/tellico/pics/discogs.png
 share/tellico/pics/file.png
 share/tellico/pics/game.png
 share/tellico/pics/gcstar.png
