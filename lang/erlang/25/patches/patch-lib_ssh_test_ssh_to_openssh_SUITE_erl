@@ -1,0 +1,12 @@
+Index: lib/ssh/test/ssh_to_openssh_SUITE.erl
+--- lib/ssh/test/ssh_to_openssh_SUITE.erl.orig
++++ lib/ssh/test/ssh_to_openssh_SUITE.erl
+@@ -23,7 +23,7 @@
+ 
+ -include_lib("common_test/include/ct.hrl").
+ -include("ssh_test_lib.hrl").
+--include_lib("ssh/src/ssh_transport.hrl").
++-include_lib("ssh_transport.hrl").
+ 
+ -export([
+          suite/0,
