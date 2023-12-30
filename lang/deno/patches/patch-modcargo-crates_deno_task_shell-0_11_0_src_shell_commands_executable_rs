@@ -15,7 +15,7 @@ Index: modcargo-crates/deno_task_shell-0.13.2/src/shell/commands/executable.rs
 -            return ExecuteResult::Continue(1, Vec::new(), Vec::new());
 -          }
 -        };
-+      let command_path = "${LOCALBASE}/bin/deno";
++      let command_path = "${PREFIX}/bin/deno";
  
        let mut sub_command = tokio::process::Command::new(&command_path);
        let child = sub_command
@@ -24,7 +24,7 @@ Index: modcargo-crates/deno_task_shell-0.13.2/src/shell/commands/executable.rs
        let file_stem = exe_path.file_stem().map(|s| s.to_string_lossy());
        if file_stem.map(|s| s.to_string()) == Some("deno".to_string()) {
 -        return Ok(exe_path);
-+        return Ok(PathBuf::from("${LOCALBASE}/bin/deno"));
++        return Ok(PathBuf::from("${PREFIX}/bin/deno"));
        }
      }
    }
@@ -33,10 +33,10 @@ Index: modcargo-crates/deno_task_shell-0.13.2/src/shell/commands/executable.rs
      );
      let path =
 -      resolve_command_path("deno", &state, || Ok(PathBuf::from("/bin/deno")))
-+      resolve_command_path("deno", &state, || Ok(PathBuf::from("${LOCALBASE}/bin/deno")))
++      resolve_command_path("deno", &state, || Ok(PathBuf::from("${PREFIX}/bin/deno")))
          .unwrap();
 -    assert_eq!(path, PathBuf::from("/bin/deno"));
-+    assert_eq!(path, PathBuf::from("${LOCALBASE}/bin/deno"));
++    assert_eq!(path, PathBuf::from("${PREFIX}/bin/deno"));
  
      let path = resolve_command_path("deno", &state, || {
        Ok(PathBuf::from("/bin/deno.exe"))

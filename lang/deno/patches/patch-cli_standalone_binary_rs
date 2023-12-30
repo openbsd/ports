@@ -7,7 +7,7 @@ Index: cli/standalone/binary.rs
  pub fn load_npm_vfs(root_dir_path: PathBuf) -> Result<FileBackedVfs, AnyError> {
 -  let file_path = current_exe().unwrap();
 +  let file_path =
-+    current_exe().unwrap_or(PathBuf::from("${LOCALBASE}/bin/deno"));
++    current_exe().unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
    let mut file = std::fs::File::open(file_path)?;
    file.seek(SeekFrom::End(-(TRAILER_SIZE as i64)))?;
    let mut trailer = [0; TRAILER_SIZE];
@@ -16,7 +16,7 @@ Index: cli/standalone/binary.rs
    ) -> Result<Vec<u8>, AnyError> {
      if compile_flags.target.is_none() {
 -      let path = std::env::current_exe()?;
-+      let path = PathBuf::from("${LOCALBASE}/bin/deno");
++      let path = PathBuf::from("${PREFIX}/bin/deno");
        return Ok(std::fs::read(path)?);
      }
  

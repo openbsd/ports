@@ -8,6 +8,7 @@ USE_WXNEEDED =		Yes
 
 VERSION =		1.36.4
 HOMEPAGE =		https://deno.com/runtime
+REVISION =		0
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}

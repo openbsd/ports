@@ -7,7 +7,7 @@ Index: cli/main.rs
    let future = async move {
 -    let current_exe_path = current_exe()?;
 +    let current_exe_path = current_exe()
-+      .unwrap_or(PathBuf::from("${LOCALBASE}/bin/deno"));
++      .unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
      let standalone_res =
        match standalone::extract_standalone(&current_exe_path, args.clone())
          .await

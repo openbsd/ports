@@ -15,7 +15,7 @@ Index: cli/standalone/mod.rs
    let main_module = &metadata.entrypoint;
 -  let current_exe_path = std::env::current_exe().unwrap();
 +  let current_exe_path =
-+    std::env::current_exe().unwrap_or(PathBuf::from("${LOCALBASE}/bin/deno"));
++    std::env::current_exe().unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
    let current_exe_name =
      current_exe_path.file_name().unwrap().to_string_lossy();
    let deno_dir_provider = Arc::new(DenoDirProvider::new(None));

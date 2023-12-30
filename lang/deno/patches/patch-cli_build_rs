@@ -1,7 +1,7 @@
 Index: cli/build.rs
 --- cli/build.rs.orig
 +++ cli/build.rs
-@@ -435,6 +435,13 @@ fn main() {
+@@ -424,6 +424,13 @@ fn main() {
      symbols_path.display()
    );
  
@@ -14,4 +14,4 @@ Index: cli/build.rs
 +
    #[cfg(target_os = "linux")]
    {
-     let ver = glibc_version::get_version().unwrap();
+     // If a custom compiler is set, the glibc version is not reliable.
