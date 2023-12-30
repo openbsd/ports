@@ -18,7 +18,8 @@ MODKDE5_TRANSLATIONS =	Yes
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kirigami2
 
-BUILD_DEPENDS =	devel/kf5/kirigami2
+BUILD_DEPENDS =	devel/kf5/kirigami2 \
+		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \

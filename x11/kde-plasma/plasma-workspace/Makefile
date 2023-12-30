@@ -40,6 +40,7 @@ MODKDE5_ICON_CACHE = Yes
 MODKDE5_DOCS = Yes
 
 BUILD_DEPENDS =		x11/kde-plasma/kwin>=${VERSION} \
+			wayland/plasma-wayland-protocols \
 			devel/kf5/kquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
