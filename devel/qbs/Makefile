@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT =	declarative cross-platform build tool
 
-V =		2.1.2
+V =		2.2.1
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
 
-SHARED_LIBS =	qbscore		13.0
+SHARED_LIBS =	qbscore		14.0
 
 CATEGORIES =	devel
 
@@ -23,11 +23,16 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml c m
 
 MODULES =		devel/cmake \
-			x11/qt6
+			x11/qt6 \
+			lang/python
 
 BUILD_DEPENDS =		x11/qt6/qtdeclarative
 RUN_DEPENDS =		x11/qt6/qtdeclarative
 
 LIB_DEPENDS =		x11/qt6/qt5compat
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/qbs/python/{dmgbuild,ds_store,mac_alias}
 
 .include <bsd.port.mk>
