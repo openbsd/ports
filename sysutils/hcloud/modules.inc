@@ -55,7 +55,7 @@ MODGO_MODULES =	\
 	github.com/vburenin/ifacemaker				 v1.2.1 \
 	github.com/xhit/go-str2duration/v2			 v2.1.0 \
 	github.com/yuin/goldmark				 v1.4.13 \
-	golang.org/x/crypto					 v0.16.0 \
+	golang.org/x/crypto					 v0.17.0 \
 	golang.org/x/mod					 v0.9.0 \
 	golang.org/x/net					 v0.19.0 \
 	golang.org/x/oauth2					 v0.8.0 \
@@ -96,6 +96,7 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark		 v1.3.5 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20191011191535-87dc89f01550 \
+	golang.org/x/crypto			 v0.16.0 \
 	golang.org/x/crypto			 v0.7.0 \
 	golang.org/x/mod			 v0.2.0 \
 	golang.org/x/mod			 v0.4.2 \

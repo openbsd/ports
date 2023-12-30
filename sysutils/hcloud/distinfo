@@ -135,7 +135,8 @@ SHA256 (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = u0GmArF0NF/aOSyK2D
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = M+0HClpm4JYGhaxThkQOG1mJnnTYo4oRgGhecqIZXe0=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20191011191535-87dc89f01550.mod) = OrnwH0YQ/ns5vYXWjo2XglNR5+KCw5zaQUV8KidvO+M=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.16.0.mod) = 3ECGe+88pReVacwvh0K7YYuMxoSw0lp1MlDoHW3ClEI=
-SHA256 (go_modules/golang.org/x/crypto/@v/v0.16.0.zip) = AsK0p7hzpwHeRBZiOHyKbC/GXrJu0aiUFVCYuQirkGo=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.17.0.mod) = 3ECGe+88pReVacwvh0K7YYuMxoSw0lp1MlDoHW3ClEI=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.17.0.zip) = l+qR33Eqwco5wSJIBIm+UytDe/SutdeBRlyxzzmCQIM=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.7.0.mod) = yJ/iLnPawmoAplasEf9MbhprbNKrzFftzazew/va2C0=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.2.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.2.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
@@ -209,7 +210,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (hcloud-v1.41.0.zip) = Gl8W59vKh/rXXAjvX0EPECCZTuwBrUAi5WPo/mq9k7A=
+SHA256 (hcloud-v1.41.1.zip) = 9oNrhwl2RG6mLN/nLIGyKDG4VuGJklbSGxOoKb/AIUw=
 SIZE (go_modules/github.com/!vivid!cortex/ewma/@v/v1.2.0.mod) = 44
 SIZE (go_modules/github.com/!vivid!cortex/ewma/@v/v1.2.0.zip) = 9548
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.3.2.mod) = 352
@@ -347,7 +348,8 @@ SIZE (go_modules/github.com/yuin/goldmark/@v/v1.4.13.zip) = 229017
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20190308221718-c2843e01d9a2.mod) = 88
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20191011191535-87dc89f01550.mod) = 146
 SIZE (go_modules/golang.org/x/crypto/@v/v0.16.0.mod) = 190
-SIZE (go_modules/golang.org/x/crypto/@v/v0.16.0.zip) = 1796035
+SIZE (go_modules/golang.org/x/crypto/@v/v0.17.0.mod) = 190
+SIZE (go_modules/golang.org/x/crypto/@v/v0.17.0.zip) = 1798689
 SIZE (go_modules/golang.org/x/crypto/@v/v0.7.0.mod) = 171
 SIZE (go_modules/golang.org/x/mod/@v/v0.2.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.2.mod) = 214
@@ -421,4 +423,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (hcloud-v1.41.0.zip) = 385095
+SIZE (hcloud-v1.41.1.zip) = 385785
