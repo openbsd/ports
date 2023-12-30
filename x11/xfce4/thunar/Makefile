@@ -2,23 +2,24 @@ COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
 XFCE_VERSION=	4.18.9
+REVISION=	0
 
 SHARED_LIBS=	thunarx-3	0.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
-WANTLIB += execinfo exif epoxy exo-2 expat ffi fontconfig freetype fribidi gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl jpeg m
-WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
-WANTLIB += xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z
-WANTLIB += Xau Xdmcp pcre2-8 atspi dbus-1 xkcommon epoll-shim
-WANTLIB += wayland-client wayland-cursor wayland-egl
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += dbus-1 epoll-shim epoxy execinfo exif exo-2 expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 harfbuzz iconv intl jpeg m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render
+WANTLIB += xcb-shm xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util
+WANTLIB += xfconf-0 xkbcommon z
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
