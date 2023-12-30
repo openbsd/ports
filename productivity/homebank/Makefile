@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.7.1
+DISTNAME =	homebank-5.7.2
 
 CATEGORIES =	productivity x11
 

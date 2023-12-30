@@ -102,6 +102,7 @@ share/homebank/help/images/dlg-prefs6.png
 share/homebank/help/images/dlg-prefs7.png
 share/homebank/help/images/dlg-prefs8.png
 share/homebank/help/images/dlg-prefs9.png
+share/homebank/help/images/dlg-prefsA.png
 share/homebank/help/images/dlg-prefsF.png
 share/homebank/help/images/dlg-properties1.png
 share/homebank/help/images/dlg-split1.png
@@ -277,6 +278,7 @@ share/homebank/icons/hicolor/24x24/actions/hb-view-stack.png
 share/homebank/icons/hicolor/24x24/actions/hb-view-stack100.png
 share/homebank/icons/hicolor/48x48/
 share/homebank/icons/hicolor/48x48/status/
+share/homebank/icons/hicolor/48x48/status/prf-advanced.png
 share/homebank/icons/hicolor/48x48/status/prf-backup.png
 share/homebank/icons/hicolor/48x48/status/prf-columns.png
 share/homebank/icons/hicolor/48x48/status/prf-euro.png
