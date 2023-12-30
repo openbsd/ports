@@ -19,3 +19,4 @@ lib/python${MODPY_VERSION}/site-packages/blinker/${MODPY_PYCACHE}base.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/blinker/_saferef.py
 lib/python${MODPY_VERSION}/site-packages/blinker/_utilities.py
 lib/python${MODPY_VERSION}/site-packages/blinker/base.py
+lib/python${MODPY_VERSION}/site-packages/blinker/py.typed
