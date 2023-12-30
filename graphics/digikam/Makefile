@@ -10,6 +10,7 @@ V =		8.2.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -38,8 +39,8 @@ WANTLIB += Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11
 WANTLIB += Xext Xv ass avcodec avdevice avfilter avformat avutil
 WANTLIB += c exiv2 expat exslt glib-2.0 gphoto2 gphoto2_port heif
-WANTLIB += intl jasper jpeg lcms2 lensfun lqr-1 m marblewidget-qt5
-WANTLIB += openal opencv_calib3d opencv_core opencv_dnn opencv_features2d
+WANTLIB += jasper jpeg lcms2 lensfun m marblewidget-qt5 openal
+WANTLIB += opencv_calib3d opencv_core opencv_dnn opencv_features2d
 WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_ml
 WANTLIB += opencv_objdetect png portaudio pulse swresample swscale
 WANTLIB += tiff usb-1.0 x265 xml2 xslt z
@@ -96,7 +97,6 @@ LIB_DEPENDS =	audio/portaudio-svn \
 		graphics/lcms2 \
 		graphics/lensfun \
 		graphics/libgphoto2 \
-		graphics/liblqr \
 		graphics/opencv \
 		graphics/png \
 		graphics/tiff \
