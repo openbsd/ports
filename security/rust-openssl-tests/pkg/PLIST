@@ -3050,6 +3050,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_term}/tests/terminfo.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.github/
+share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.github/FUNDING.yml
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.github/workflows/ci.yml
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/.gitignore
