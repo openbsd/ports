@@ -1,3 +1,5 @@
+disable opencv dependency
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -10,3 +12,11 @@ Index: CMakeLists.txt
          include_directories(SYSTEM ${LUA_INCLUDE_DIR})
      endif()
      add_definitions(-DHAVE_LUA=1)
+@@ -212,6 +212,7 @@ find_path(POTRACE_INCLUDE_DIR potracelib.h)
+ find_library(POTRACE_LIBRARY NAMES potrace)
+ 
+ find_package(OpenCV QUIET OPTIONAL_COMPONENTS core imgcodecs imgproc)
++set(OPENCV_CORE_FOUND 0)
+ 
+ ############### Libraries are found now ########################
+ 
