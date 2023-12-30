@@ -17,6 +17,7 @@ include/ZXing/Point.h
 include/ZXing/Quadrilateral.h
 include/ZXing/Range.h
 include/ZXing/ReadBarcode.h
+include/ZXing/ReaderOptions.h
 include/ZXing/Result.h
 include/ZXing/StructuredAppend.h
 include/ZXing/TextUtfEncoding.h
