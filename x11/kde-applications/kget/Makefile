@@ -1,6 +1,7 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kget
 
@@ -65,5 +66,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		net/libktorrent \
 		security/gpgme,-qt \
 		security/qca-qt5
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace=ON
 
 .include <bsd.port.mk>
