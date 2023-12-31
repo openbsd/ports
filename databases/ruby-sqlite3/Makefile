@@ -1,6 +1,6 @@
 COMMENT=	access a SQLite3 database from ruby
 
-DISTNAME=	sqlite3-1.6.4
+DISTNAME=	sqlite3-1.7.0
 CATEGORIES=	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>

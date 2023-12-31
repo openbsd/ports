@@ -26,9 +26,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/translator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/value.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sqlite3/version.rb
-${GEM_LIB}/gems/${DISTNAME}/ports/
-${GEM_LIB}/gems/${DISTNAME}/ports/archives/
-${GEM_LIB}/gems/${DISTNAME}/ports/archives/sqlite-autoconf-3430000.tar.gz
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_backup.rb
