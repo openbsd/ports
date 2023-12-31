@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 COMMENT =		Spotify client running as UNIX daemon
 DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
 CATEGORIES =		audio net
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

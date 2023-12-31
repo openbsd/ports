@@ -142,7 +142,7 @@ SHA256 (cargo/jni-0.19.0.tar.gz) = xt8YwuPbfkU9PGrFs+nVGCZk0oeIEm05uR8tHiKwF+w=
 SHA256 (cargo/jni-sys-0.3.0.tar.gz) = jq9LwC0Xy91/9MdDjK/N9/uaRhMxOtEbT4/v59P6ATA=
 SHA256 (cargo/jobserver-0.1.26.tar.gz) = k2z9ISoBVZA7y8Bg4xb7bMfL8uGQcyk5HrrcH+DOd8I=
 SHA256 (cargo/js-sys-0.3.61.tar.gz) = RF3eIVDFXkg/PYQWcGuX7I6CN8MH5be0uN0V5q8qBzA=
-SHA256 (cargo/keyring-2.0.1.tar.gz) = W/1vFWtTtIzYkiOiexHxzdql2b0pi0ivO2RMQ6iuXw8=
+SHA256 (cargo/keyring-2.3.0.tar.gz) = tSodMgtV6swC1FYf7ZcUr06Yt5ic9OaWvuGSsD/JlyA=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
 SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD1U=
 SHA256 (cargo/lewton-0.10.2.tar.gz) = d3tI35qqsVVHWoOn3zBwOV6hrGkC9c0GK48rAoB1wDA=
@@ -518,7 +518,7 @@ SIZE (cargo/jni-0.19.0.tar.gz) = 65890
 SIZE (cargo/jni-sys-0.3.0.tar.gz) = 10232
 SIZE (cargo/jobserver-0.1.26.tar.gz) = 22645
 SIZE (cargo/js-sys-0.3.61.tar.gz) = 80158
-SIZE (cargo/keyring-2.0.1.tar.gz) = 48227
+SIZE (cargo/keyring-2.3.0.tar.gz) = 53412
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
 SIZE (cargo/lewton-0.10.2.tar.gz) = 68807

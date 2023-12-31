@@ -1,0 +1,18 @@
+Bump keyring to latest release 2.3.0 to add OpenBSD support
+https://github.com/Spotifyd/spotifyd/pull/1254
+
+Index: Cargo.lock
+--- Cargo.lock.orig
++++ Cargo.lock
+@@ -1442,9 +1442,9 @@ dependencies = [
+ 
+ [[package]]
+ name = "keyring"
+-version = "2.0.1"
++version = "2.3.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "5bfd6f156b53b48cd89223a27b11f1cddaa5d9bd298b48af3b644c43a8ae5f0f"
++checksum = "b52a1d320b55eacc02d4561fed9714af4e98b7989cf4e696bee192b03fc99720"
+ dependencies = [
+  "byteorder",
+  "lazy_static",
