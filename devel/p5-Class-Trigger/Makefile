@@ -1,12 +1,16 @@
 COMMENT =	add / call inheritable triggers
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Class-Trigger-0.14
-CATEGORIES =	devel
-REVISION =	0
+DISTNAME =	Class-Trigger-0.15
 
-# perl
+CATEGORIES =	devel
+
+# Perl
 PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-IO-stringy
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
