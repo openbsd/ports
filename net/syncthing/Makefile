@@ -1,9 +1,8 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.26.1
+V =		1.27.1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
-REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
