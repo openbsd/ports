@@ -1,2 +1,4 @@
-Spreadsheet::ParseExcel lets you get information from Excel95, Excel97
-and Excel2000 files.
+The Spreadsheet::ParseExcel module can be used to read information
+from Excel 95-2003 binary files.  The module cannot read files in
+the Excel 2007 Open XML XLSX format.  See the Spreadsheet::XLSX
+module instead.

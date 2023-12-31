@@ -1,4 +1,3 @@
-${P5SITE}/Spreadsheet/
 ${P5SITE}/Spreadsheet/ParseExcel/
 ${P5SITE}/Spreadsheet/ParseExcel.pm
 ${P5SITE}/Spreadsheet/ParseExcel/Cell.pm
