@@ -13,15 +13,14 @@ DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
 # gnome-tour source code results in effective GPLv3+ for the resulting binary
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += adwaita-1 c c++abi gio-2.0 glib-2.0 gobject-2.0 gtk-4
-WANTLIB += intl m pthread
+WANTLIB += ${MODRUST_WANTLIB}
+WANTLIB += adwaita-1 gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl m
 
 MODULES=		devel/meson \
+			lang/rust \
 			x11/gnome
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
-
-BUILD_DEPENDS=		lang/rust
 
 LIB_DEPENDS=		x11/gnome/libadwaita
 

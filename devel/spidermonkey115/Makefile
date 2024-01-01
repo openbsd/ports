@@ -30,9 +30,10 @@ EXTRACT_SUFX =		.tar.xz
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} ${MODRUST_WANTLIB}
 
-MODULES =		lang/python
+MODULES =		lang/python \
+			lang/rust
 
 MODPY_RUNDEP =		No
 
@@ -47,8 +48,7 @@ LIB_DEPENDS =		devel/libffi \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-BUILD_DEPENDS =		devel/cbindgen \
-			lang/rust
+BUILD_DEPENDS =		devel/cbindgen
 
 SEPARATE_BUILD =	Yes
 WRKDIST =		${WRKDIR}/firefox-${V}
