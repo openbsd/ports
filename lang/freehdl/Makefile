@@ -24,6 +24,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 USE_GMAKE=	Yes
 CXXFLAGS +=	-Wno-parentheses-equality
+CXXFLAGS +=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 # Configure checks for gnu libtool, but the build will use "our" libtool
 BUILD_DEPENDS=  devel/libtool
