@@ -3,6 +3,7 @@ COMMENT =	third person, 3D physics game
 DISTNAME =	irrlamb-$Vr613-src
 PKGNAME =	irrlamb-$V
 CATEGORIES =	games x11
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE =		Yes
@@ -36,6 +37,8 @@ SSE_FLAGS =	-msse -mfpmath=sse
 SSE_FLAGS =
 .endif
 SUBST_VARS +=	SSE_FLAGS
+
+FIX_CRLF_FILES += ./src/ode/src/lcp.cpp
 
 post-extract:
 	rm -rf ${WRKSRC}/src/irrlicht
