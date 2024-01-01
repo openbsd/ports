@@ -23,6 +23,9 @@ LIB_DEPENDS =	devel/sdl2
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-asm
 
+# XXX - the port doesn't respect CXXFLAGS and its build system is a mess.
+CFLAGS +=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
+
 USE_GMAKE =	Yes
 
 post-patch:
