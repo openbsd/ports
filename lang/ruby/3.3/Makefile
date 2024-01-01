@@ -16,7 +16,7 @@ FLAVOR?=
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Maarch64}
 # Support YJIT JIT compiler on arches Ruby supports
-BUILD_DEPENDS +=	lang/rust
+MODULES +=		lang/rust
 WANTLIB-main +=		c++abi
 MAKE_ENV +=		LIBRUBY_DLDFLAGS="-lc++abi"
 .endif
