@@ -3,6 +3,7 @@ COMMENT =	   ML language with complete class-based objective system
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
 VERSION=	4.13.1
+REVISION=	0
 
 # if the ocaml compiler gains support for BTI, as well as
 # removing USE_NOBTCFI here (or changing to an arch-dependent

@@ -309,9 +309,6 @@ lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/emitcode.cmt
 lib/ocaml/compiler-libs/emitcode.cmti
 lib/ocaml/compiler-libs/emitcode.mli
-lib/ocaml/compiler-libs/emitenv.cmi
-lib/ocaml/compiler-libs/emitenv.cmti
-lib/ocaml/compiler-libs/emitenv.mli
 lib/ocaml/compiler-libs/env.cmi
 lib/ocaml/compiler-libs/env.cmt
 lib/ocaml/compiler-libs/env.cmti

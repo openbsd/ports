@@ -255,6 +255,9 @@ lib/ocaml/compiler-libs/emitaux.cmx
 lib/ocaml/compiler-libs/emitaux.mli
 lib/ocaml/compiler-libs/emitcode.cmx
 lib/ocaml/compiler-libs/env.cmx
+lib/ocaml/compiler-libs/emitenv.cmi
+lib/ocaml/compiler-libs/emitenv.cmti
+lib/ocaml/compiler-libs/emitenv.mli
 lib/ocaml/compiler-libs/envaux.cmx
 lib/ocaml/compiler-libs/errors.cmx
 lib/ocaml/compiler-libs/errortrace.cmx
