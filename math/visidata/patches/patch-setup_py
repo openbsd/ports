@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -27,7 +27,7 @@ setup(name='visidata',
-           'importlib-metadata >= 3.6',
-       ],
-       packages=['visidata', 'visidata.loaders', 'visidata.vendor', 'visidata.tests', 'visidata.ddw', 'visidata.man'],
--      data_files=[('share/man/man1', ['visidata/man/vd.1', 'visidata/man/visidata.1'])],
-+      data_files=[('man/man1', ['visidata/man/vd.1', 'visidata/man/visidata.1'])],
-       package_data={'visidata.man': ['vd.1', 'vd.txt'], 'visidata.ddw': ['input.ddw'], 'visidata.tests': ['sample.tsv']},
-       license='GPLv3',
-       classifiers=[
+@@ -45,7 +45,7 @@ setup(
+         "visidata.desktop",
+     ],
+     data_files=[
+-        ("share/man/man1", ["visidata/man/vd.1", "visidata/man/visidata.1"]),
++        ("man/man1", ["visidata/man/vd.1", "visidata/man/visidata.1"]),
+         ("share/applications", ["visidata/desktop/visidata.desktop"]),
+     ],
+     package_data={
