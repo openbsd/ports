@@ -274,15 +274,12 @@ MODCARGO_configure += ;
 .endif
 
 # Build dependencies.
-MODCARGO_BUILD_DEPENDS = lang/rust
 
 # devel/cargo-generate-vendor is mandatory for hooks.
 BUILD_DEPENDS +=	devel/cargo-generate-vendor
 
-MODCARGO_BUILDDEP ?=	Yes
-.if ${MODCARGO_BUILDDEP:L} == "yes"
-BUILD_DEPENDS +=	${MODCARGO_BUILD_DEPENDS}
-.endif
+# using devel/cargo modules implies using lang/rust to build
+BUILD_DEPENDS +=	lang/rust
 
 # Location of cargo binary (default to devel/cargo binary)
 MODCARGO_CARGO_BIN ?=	${LOCALBASE}/bin/cargo
