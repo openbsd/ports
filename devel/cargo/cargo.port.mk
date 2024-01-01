@@ -24,20 +24,10 @@ MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
 MODCARGO_CARGOTOML ?= ${WRKSRC}/Cargo.toml
 
 # WANTLIB for Rust compiled code
-# it should be kept in sync with lang/rust code
-# - c/pthread : all syscalls
-# - c++abi / libgcc.a : unwind
-MODCARGO_WANTLIB = c pthread
-
-.if "${MARCHINE_ARCH}" != "sparc64"
-MODCARGO_WANTLIB +=	c++abi
-.else
-# libgcc.a is static
-MODCARGO_WANTLIB +=
-.endif
+# TODO: c++abi shouldn't be present on sparc64
+MODCARGO_WANTLIB = c pthread c++abi
 
 CHECK_LIB_DEPENDS_ARGS += -S MODCARGO_WANTLIB="${MODCARGO_WANTLIB}"
-CHECK_LIB_DEPENDS_ARGS += -F c++abi
 
 # Define SITES_CRATESIO for crates.io
 SITES.cargo =	https://crates.io/api/v1/crates/
