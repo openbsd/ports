@@ -9,7 +9,7 @@ GH_TAGNAME =	v${V}
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-${DISTNAME}
 HOMEPAGE =	https://github.com/ocaml/num/
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	Christopher Zimmermann <chrisz@openbsd.org>
 

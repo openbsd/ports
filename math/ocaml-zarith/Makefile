@@ -7,7 +7,7 @@ GH_PROJECT =	Zarith
 GH_TAGNAME =	release-${V}
 DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	ocaml-zarith-${V}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/ocaml/num/
 

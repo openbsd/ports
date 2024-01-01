@@ -4,7 +4,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	ocaml-community
 GH_PROJECT =	cppo
 GH_TAGNAME =	v1.6.6
-REVISION =	6
+REVISION =	7
 PKGNAME =	ocaml-${DISTNAME}
 
 # 3-clause BSD

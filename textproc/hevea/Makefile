@@ -10,7 +10,7 @@ DISTNAME =	hevea-2.34
 SITES =		http://hevea.inria.fr/distri/ \
 		http://hevea.inria.fr/old/ \
 		https://spacehopper.org/mirrors/
-REVISION =	3
+REVISION =	4
 USE_NOEXECONLY =	Yes
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}

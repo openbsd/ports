@@ -8,6 +8,7 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 HOMEPAGE =		https://compcert.org/
 

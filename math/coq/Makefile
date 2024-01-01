@@ -4,7 +4,7 @@ V=			8.13.2
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		math
 HOMEPAGE=		https://coq.inria.fr/
