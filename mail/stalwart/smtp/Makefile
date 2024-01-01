@@ -22,7 +22,7 @@ MODCARGO_CRATES_KEEP += libsqlite3-sys
 BUILD_DEPENDS = devel/protobuf
 LIB_DEPENDS =	archivers/zstd \
 		archivers/bzip2
-WANTLIB += bz2 c c++abi m pthread zstd
+WANTLIB +=	${MOCARGO_WANTLIB} bz2 m zstd
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/smtp

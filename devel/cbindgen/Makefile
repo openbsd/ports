@@ -15,7 +15,7 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 
-WANTLIB += c c++abi pthread
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 TEST_ENV =	CC=${CC} CXX=${CXX}
 

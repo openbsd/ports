@@ -9,7 +9,7 @@ MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${MODCARGO_WANTLIB} m pthread
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 

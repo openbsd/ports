@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 LIB_DEPENDS =		databases/sqlite3 security/libsodium ${MODLUA_LIB_DEPENDS}
-WANTLIB +=		c c++abi m pthread sqlite3 sodium ${MODLUA_WANTLIB}
+WANTLIB +=		m sqlite3 sodium ${MODLUA_WANTLIB} ${MODCARGO_WANTLIB}
 
 MODLUA_VERSION =	5.2
 MODLUA_SA =		Yes

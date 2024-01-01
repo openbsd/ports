@@ -13,7 +13,7 @@ MODCARGO_CRATES +=	jmap-client	0.2.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	mail-parser	0.7.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	reqwest		0.11.11 # MIT/Apache-2.0
 
-WANTLIB += c c++abi pthread
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/imap

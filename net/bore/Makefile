@@ -10,7 +10,7 @@ MAINTAINER =		Delan Azabani <delan@azabani.com>
 PERMIT_PACKAGE =	Yes
 
 # uses pledge(2)
-WANTLIB += c c++abi pthread
+WANTLIB +=		${MODCARGO_WANTLIB}
 
 SITES =			https://bitbucket.org/delan/nonymous/get/
 

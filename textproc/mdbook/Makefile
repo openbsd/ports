@@ -12,7 +12,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # MPL-2.0 + dependencies below.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi m pthread
+WANTLIB += ${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 

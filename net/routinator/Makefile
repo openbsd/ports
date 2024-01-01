@@ -27,7 +27,7 @@ CATEGORIES =		net
 PERMIT_PACKAGE =	Yes
 PERMIT_DISTFILES =	includes bundled ARIN TAL which requires agreement with https://www.arin.net/resources/manage/rpki/rpa.pdf
 
-WANTLIB += c c++abi m pthread
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 

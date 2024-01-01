@@ -10,7 +10,7 @@ CATEGORIES =		net
 # EUPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi crypto pthread ssl
+WANTLIB +=		${MODCARGO_WANTLIB} crypto ssl
 
 MODULES =		devel/cargo
 

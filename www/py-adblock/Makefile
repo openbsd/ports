@@ -18,7 +18,7 @@ CATEGORIES =	www
 # MIT
 PERMIT_PACKAGE =Yes
 
-WANTLIB += c c++abi pthread
+WANTLIB += ${MODCARGO_WANTLIB}
 
 MODULES =	devel/cargo \
 		lang/python

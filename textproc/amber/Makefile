@@ -11,7 +11,7 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi pthread
+WANTLIB +=		${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo

@@ -13,7 +13,7 @@ HOMEPAGE=		https://git.sr.ht/~julienxx/castor
 # MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c c++abi crypto gdk-3 glib-2.0 gobject-2.0 gtk-3 pthread
+WANTLIB += ${MODCARGO_WANTLIB} crypto gdk-3 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += ssl
 
 SITES=			https://git.sr.ht/~julienxx/

@@ -13,7 +13,7 @@ MODULES =		devel/cargo
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	cc
 
-WANTLIB += c c++abi git2 m onig pthread
+WANTLIB += ${MODCARGO_WANTLIB} git2 m onig
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes

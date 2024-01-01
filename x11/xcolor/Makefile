@@ -16,7 +16,7 @@ MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi m pthread xcb xcb-shape X11 X11-xcb Xcursor
+WANTLIB += ${MODCARGO_WANTLIB} m xcb xcb-shape X11 X11-xcb Xcursor
 
 MODULES =		devel/cargo \
 			lang/python

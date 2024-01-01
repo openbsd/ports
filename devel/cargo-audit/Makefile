@@ -17,7 +17,7 @@ HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi crypto git2 m pthread ssh2 ssl
+WANTLIB += ${MODCARGO_WANTLIB} crypto git2 m ssh2 ssl
 
 LIB_DEPENDS =		devel/libgit2/libgit2 \
 			security/libssh2

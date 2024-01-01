@@ -14,7 +14,7 @@ HOMEPAGE=	https://cryptography.io/
 # dual: BSD or Apache 2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${MODPY_WANTLIB} c crypto c++abi pthread ssl
+WANTLIB=	${MODPY_WANTLIB} ${MODCARGO_WANTLIB} crypto ssl
 
 FLAVORS=	python3
 FLAVOR=		python3

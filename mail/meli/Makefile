@@ -30,7 +30,7 @@ LIB_DEPENDS =	devel/pcre2 \
 		net/curl \
 		databases/sqlite3
 
-WANTLIB +=	c c++abi crypto curl m pcre2-8 pthread sqlite3 ssl
+WANTLIB +=	${MODCARGO_WANTLIB} crypto curl m pcre2-8 sqlite3 ssl
 PORTHOME =	${WRKDIR}
 
 post-install:

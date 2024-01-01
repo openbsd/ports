@@ -18,6 +18,6 @@ SEPARATE_BUILD =	Yes
 .include "modules.inc"
 
 LIB_DEPENDS +=	archivers/bzip2
-WANTLIB += c c++abi m pthread bz2
+WANTLIB += ${MODCARGO_WANTLIB} m bz2
 
 .include <bsd.port.mk>

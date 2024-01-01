@@ -10,7 +10,7 @@ CATEGORIES =		textproc
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi pthread xcb
+WANTLIB += ${MODCARGO_WANTLIB} xcb
 
 HOMEPAGE =		https://jless.io/
 

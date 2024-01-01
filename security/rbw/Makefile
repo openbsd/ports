@@ -15,7 +15,7 @@ SITES =		https://git.tozt.net/rbw/snapshot/
 # MIT X11
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi crypto m pthread ssl
+WANTLIB += ${MODCARGO_WANTLIB} crypto m ssl
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 

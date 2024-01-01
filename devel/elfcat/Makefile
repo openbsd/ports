@@ -10,9 +10,9 @@ CATEGORIES =	devel
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi m pthread
+WANTLIB += 	${MODCARGO_WANTLIB} m
 
-MODULES =		devel/cargo
+MODULES =	devel/cargo
 
 CONFIGURE_STYLE =	cargo
 

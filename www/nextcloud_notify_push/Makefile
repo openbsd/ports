@@ -27,7 +27,7 @@ MODULES =		devel/cargo
 .include "crates.inc"
 
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
-WANTLIB += c c++abi m pthread
+WANTLIB += ${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes

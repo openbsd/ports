@@ -6,6 +6,6 @@ REVISION =		1
 
 .include "crates.inc"
 
-WANTLIB += c c++abi m pthread
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ HOMEPAGE =	https://alacritty.org/
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi fontconfig freetype m pthread util
+WANTLIB += ${MODCARGO_WANTLIB} fontconfig freetype m util
 # xcb is dlopen()'d
 WANTLIB += xcb
 

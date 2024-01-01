@@ -11,7 +11,7 @@ HOMEPAGE =		https://dystroy.org/broot/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi m onig pthread z
+WANTLIB += ${MODCARGO_WANTLIB} m onig z
 
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP += libgit2-sys

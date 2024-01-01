@@ -14,7 +14,7 @@ MAINTAINER =            Laurence Tratt <laurie@tratt.net>
 # Apache-2.0/MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c c++abi m pthread
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo

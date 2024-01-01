@@ -22,7 +22,7 @@ BUILD_DEPENDS =	textproc/xmlto \
 
 #some dists have -w
 FIX_CLEANUP_PERMISSIONS =	Yes
-WANTLIB +=	c c++abi pthread
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 COMPILER =		base-clang ports-gcc
 MODCARGO_BUILD =	No
