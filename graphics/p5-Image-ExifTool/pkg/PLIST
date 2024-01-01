@@ -7,6 +7,7 @@ ${P5SITE}/Image/ExifTool/
 ${P5SITE}/Image/ExifTool.pm
 ${P5SITE}/Image/ExifTool.pod
 ${P5SITE}/Image/ExifTool/7Z.pm
+${P5SITE}/Image/ExifTool/AAC.pm
 ${P5SITE}/Image/ExifTool/AES.pm
 ${P5SITE}/Image/ExifTool/AFCP.pm
 ${P5SITE}/Image/ExifTool/AIFF.pm
@@ -239,6 +240,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/File::RandomAccess.3p
 @man man/man3p/Image::ExifTool.3p
 @man man/man3p/Image::ExifTool::7Z.3p
+@man man/man3p/Image::ExifTool::AAC.3p
 @man man/man3p/Image::ExifTool::AES.3p
 @man man/man3p/Image::ExifTool::AFCP.3p
 @man man/man3p/Image::ExifTool::AIFF.3p
