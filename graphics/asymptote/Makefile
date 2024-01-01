@@ -1,5 +1,3 @@
-BROKEN-riscv64=		assertion "q.pre == 0 && q.piv != 0" failed: file "knot.cc", line 317, function "scale"
-
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.82
