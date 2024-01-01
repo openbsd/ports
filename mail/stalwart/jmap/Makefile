@@ -29,7 +29,7 @@ MAKE_ENV +=	DEP_BZIP2_INCLUDE=${LOCALBASE}/include
 LIB_DEPENDS +=	archivers/zstd \
 		archivers/bzip2
 
-WANTLIB += ${COMPILER_LIBCXX} bz2 c m zstd
+WANTLIB += ${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} bz2 m zstd
 
 post-install:
 	mv ${PREFIX}/bin/export ${PREFIX}/bin/stalwart-export

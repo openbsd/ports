@@ -1,4 +1,4 @@
-CATEGORIES +=	lang/rust
+MODULES +=	lang/rust
 
 # List of static dependencies. The format is cratename-version.
 # MODCARGO_CRATES will be downloaded from SITES_CRATESIO.
@@ -24,8 +24,7 @@ MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
 MODCARGO_CARGOTOML ?= ${WRKSRC}/Cargo.toml
 
 # WANTLIB for Rust compiled code
-# TODO: c++abi shouldn't be present on sparc64
-MODCARGO_WANTLIB = c pthread c++abi
+MODCARGO_WANTLIB = ${MODRUST_WANTLIB}
 
 CHECK_LIB_DEPENDS_ARGS += -S MODCARGO_WANTLIB="${MODCARGO_WANTLIB}"
 
@@ -268,9 +267,6 @@ MODCARGO_configure += ;
 # devel/cargo-generate-vendor is mandatory for hooks.
 BUILD_DEPENDS +=	devel/cargo-generate-vendor
 
-# using devel/cargo modules implies using lang/rust to build
-BUILD_DEPENDS +=	lang/rust
-
 # Location of cargo binary (default to devel/cargo binary)
 MODCARGO_CARGO_BIN ?=	${LOCALBASE}/bin/cargo
 
@@ -292,8 +288,8 @@ MODCARGO_ENV += \
 	CARGO_BUILD_JOBS=${MAKE_JOBS} \
 	CARGO_TARGET_DIR=${MODCARGO_TARGET_DIR} \
 	RUST_BACKTRACE=full \
-	RUSTC=${LOCALBASE}/bin/rustc \
-	RUSTDOC=${LOCALBASE}/bin/rustdoc \
+	RUSTC=${MODRUST_RUSTC_BIN} \
+	RUSTDOC=${MODRUST_RUSTDOC_BIN} \
 	RUSTFLAGS="${MODCARGO_RUSTFLAGS}"
 
 # Helper to shorten cargo calls.

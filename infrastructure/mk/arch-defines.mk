@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.100 2023/11/20 19:20:32 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.101 2024/01/01 14:14:49 semarie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -104,6 +104,10 @@ _SYSTEM_VERSION-clang = 2
 .if defined(MODULES) && ${MODULES:Mlang/go}
 _SYSTEM_VERSION-go = ${_MODGO_SYSTEM_VERSION}
 .endif
+
+# defined in rust.port.mk; added to version for all rust arches so that
+# rust-compiled packages can be updated easily for a new rust compiler/stdlib
+_SYSTEM_VERSION-rust ?= 0
 
 # @version = ${_SYSTEM_VERSION} + ${_SYSTEM_VERSION-${MACHINE_ARCH}}
 _PKG_ARGS_VERSION += -V ${_SYSTEM_VERSION} -V ${_SYSTEM_VERSION-${MACHINE_ARCH}}

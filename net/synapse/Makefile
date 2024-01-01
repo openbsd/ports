@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	devel/cargo \
 		lang/python
 
-WANTLIB +=	${COMPILER_LIBCXX}
+WANTLIB +=	${MODCARGO_WANTLIB}
 
 MODPY_PYBUILD =	poetry-core
 

@@ -31,7 +31,7 @@ BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
-WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
+WANTLIB += ${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
 .else
 ### old
 REVISION=		5

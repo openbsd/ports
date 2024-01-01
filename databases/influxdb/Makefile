@@ -29,9 +29,12 @@ MODCARGO_BUILD =	No
 MODCARGO_INSTALL =	No
 MODCARGO_CARGOTOML =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/Cargo.toml
 MODCARGO_TARGET_DIR =	${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/target
+
+.if ${MACHINE_ARCH} != "sparc64"
 # needed to make sure unwind* symbols are found
-MODCARGO_RUSTFLAGS +=-C link-arg=-lc++abi
 CGO_LDFLAGS=-lc++abi
+.endif
+
 MAKE_ENV +=	${MODCARGO_ENV} CGO_LDFLAGS=${CGO_LDFLAGS}
 MAKE_ENV +=	PKG_CONFIG=${WRKSRC}/scripts/pkg-config.sh
 .include "crates.inc"

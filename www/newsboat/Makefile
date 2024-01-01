@@ -12,7 +12,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c crypto curl curses iconv intl
+WANTLIB +=	${COMPILER_LIBCXX} ${MODCARGO_WANTLIB} crypto curl curses iconv intl
 WANTLIB +=	json-c m sqlite3 ssl stfl xml2
 
 SITES =		https://www.newsboat.org/releases/$V/
