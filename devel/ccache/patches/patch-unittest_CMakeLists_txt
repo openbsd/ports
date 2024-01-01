@@ -3,7 +3,7 @@ don't build tests by default
 Index: unittest/CMakeLists.txt
 --- unittest/CMakeLists.txt.orig
 +++ unittest/CMakeLists.txt
-@@ -47,7 +47,7 @@ endif()
+@@ -50,7 +50,7 @@ endif()
  file(GLOB headers *.hpp)
  list(APPEND source_files ${headers})
  

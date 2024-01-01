@@ -1,7 +1,7 @@
 Index: cmake/config.h.in
 --- cmake/config.h.in.orig
 +++ cmake/config.h.in
-@@ -20,6 +20,10 @@
+@@ -19,6 +19,10 @@
  #define _GNU_SOURCE 1
  
  // The later definition of _XOPEN_SOURCE and _POSIX_C_SOURCE disables certain
@@ -12,7 +12,7 @@ Index: cmake/config.h.in
  // features on NetBSD, so we need _NETBSD_SOURCE to re-enable them.
  #define _NETBSD_SOURCE 1
  
-@@ -40,7 +44,7 @@
+@@ -39,7 +43,7 @@
  
  #if defined(__SunOS_5_8) || defined(__SunOS_5_9) || defined(__SunOS_5_10)
  #  define _XOPEN_SOURCE 500
