@@ -36,7 +36,6 @@
      SUBDIR += flang
      SUBDIR += fpc
      SUBDIR += freebasic
-     SUBDIR += freehdl
      SUBDIR += fsharp
      SUBDIR += gambit
      SUBDIR += gawk
