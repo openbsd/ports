@@ -26,7 +26,10 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/gtest
 LIB_DEPENDS =		devel/boost
 
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
+# Remove after update to >= 3.0.8
+CXXFLAGS +=		-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 do-test:
 	cd ${WRKBUILD} && ./src/test/lucene++-tester \
