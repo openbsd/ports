@@ -92,7 +92,6 @@
      SUBDIR += coxpcall
      SUBDIR += coxpcall,lua52
      SUBDIR += coxpcall,lua53
-     SUBDIR += cpp-hocon
      SUBDIR += cppcheck
      SUBDIR += cpphs
      SUBDIR += cpptest
@@ -252,7 +251,6 @@
      SUBDIR += kreport
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
-     SUBDIR += leatherman
      SUBDIR += legit
      SUBDIR += leiningen
      SUBDIR += libHX
