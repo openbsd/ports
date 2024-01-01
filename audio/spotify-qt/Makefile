@@ -1,5 +1,5 @@
 COMMENT =		lightweight Spotify client using Qt
-DIST_TUPLE =		github	kraxarn	spotify-qt	v3.10	.
+DIST_TUPLE =		github	kraxarn	spotify-qt	v3.11	.
 CATEGORIES =		audio x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
