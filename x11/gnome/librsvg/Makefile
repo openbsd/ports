@@ -27,8 +27,7 @@ MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 MODPY_RUNDEP=		No
-BUILD_DEPENDS=		lang/rust \
-			textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1

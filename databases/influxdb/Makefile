@@ -17,8 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/go \
 		devel/cargo
 
-BUILD_DEPENDS =	${MODCARGO_BUILD_DEPENDS} \
-		textproc/xmlto \
+BUILD_DEPENDS =	textproc/xmlto \
 		textproc/asciidoc
 
 #some dists have -w

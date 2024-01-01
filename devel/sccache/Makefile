@@ -19,8 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		crypto m ssl zstd ${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		lang/rust \
-			security/rust-ring
+BUILD_DEPENDS =		security/rust-ring
 
 SEPARATE_BUILD =	Yes
 
