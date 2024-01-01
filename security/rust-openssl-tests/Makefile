@@ -17,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo
 
+MODRUST_BUILDDEP =	No
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
