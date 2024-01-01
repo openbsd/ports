@@ -289,6 +289,10 @@ lib/ocaml/compiler-libs/depend.cmi
 lib/ocaml/compiler-libs/depend.cmt
 lib/ocaml/compiler-libs/depend.cmti
 lib/ocaml/compiler-libs/depend.mli
+lib/ocaml/compiler-libs/diffing.cmi
+lib/ocaml/compiler-libs/diffing.cmt
+lib/ocaml/compiler-libs/diffing.cmti
+lib/ocaml/compiler-libs/diffing.mli
 lib/ocaml/compiler-libs/dll.cmi
 lib/ocaml/compiler-libs/dll.cmt
 lib/ocaml/compiler-libs/dll.cmti
@@ -305,6 +309,9 @@ lib/ocaml/compiler-libs/emitcode.cmi
 lib/ocaml/compiler-libs/emitcode.cmt
 lib/ocaml/compiler-libs/emitcode.cmti
 lib/ocaml/compiler-libs/emitcode.mli
+lib/ocaml/compiler-libs/emitenv.cmi
+lib/ocaml/compiler-libs/emitenv.cmti
+lib/ocaml/compiler-libs/emitenv.mli
 lib/ocaml/compiler-libs/env.cmi
 lib/ocaml/compiler-libs/env.cmt
 lib/ocaml/compiler-libs/env.cmti
@@ -317,6 +324,10 @@ lib/ocaml/compiler-libs/errors.cmi
 lib/ocaml/compiler-libs/errors.cmt
 lib/ocaml/compiler-libs/errors.cmti
 lib/ocaml/compiler-libs/errors.mli
+lib/ocaml/compiler-libs/errortrace.cmi
+lib/ocaml/compiler-libs/errortrace.cmt
+lib/ocaml/compiler-libs/errortrace.cmti
+lib/ocaml/compiler-libs/errortrace.mli
 lib/ocaml/compiler-libs/expunge.cmi
 lib/ocaml/compiler-libs/expunge.cmt
 lib/ocaml/compiler-libs/genprintval.cmi
@@ -343,6 +354,10 @@ lib/ocaml/compiler-libs/includemod.cmi
 lib/ocaml/compiler-libs/includemod.cmt
 lib/ocaml/compiler-libs/includemod.cmti
 lib/ocaml/compiler-libs/includemod.mli
+lib/ocaml/compiler-libs/includemod_errorprinter.cmi
+lib/ocaml/compiler-libs/includemod_errorprinter.cmt
+lib/ocaml/compiler-libs/includemod_errorprinter.cmti
+lib/ocaml/compiler-libs/includemod_errorprinter.mli
 lib/ocaml/compiler-libs/instruct.cmi
 lib/ocaml/compiler-libs/instruct.cmt
 lib/ocaml/compiler-libs/instruct.cmti
@@ -355,6 +370,10 @@ lib/ocaml/compiler-libs/lambda.cmi
 lib/ocaml/compiler-libs/lambda.cmt
 lib/ocaml/compiler-libs/lambda.cmti
 lib/ocaml/compiler-libs/lambda.mli
+lib/ocaml/compiler-libs/lazy_backtrack.cmi
+lib/ocaml/compiler-libs/lazy_backtrack.cmt
+lib/ocaml/compiler-libs/lazy_backtrack.cmti
+lib/ocaml/compiler-libs/lazy_backtrack.mli
 lib/ocaml/compiler-libs/lexer.cmi
 lib/ocaml/compiler-libs/lexer.cmt
 lib/ocaml/compiler-libs/lexer.cmti
@@ -426,9 +445,6 @@ lib/ocaml/compiler-libs/oprint.mli
 lib/ocaml/compiler-libs/optcompile.mli
 lib/ocaml/compiler-libs/opterrors.mli
 lib/ocaml/compiler-libs/optmaindriver.mli
-lib/ocaml/compiler-libs/opttopdirs.mli
-lib/ocaml/compiler-libs/opttoploop.mli
-lib/ocaml/compiler-libs/opttopmain.mli
 lib/ocaml/compiler-libs/outcometree.cmi
 lib/ocaml/compiler-libs/outcometree.cmti
 lib/ocaml/compiler-libs/outcometree.mli
@@ -511,6 +527,10 @@ lib/ocaml/compiler-libs/runtimedef.cmi
 lib/ocaml/compiler-libs/runtimedef.cmt
 lib/ocaml/compiler-libs/runtimedef.cmti
 lib/ocaml/compiler-libs/runtimedef.mli
+lib/ocaml/compiler-libs/signature_group.cmi
+lib/ocaml/compiler-libs/signature_group.cmt
+lib/ocaml/compiler-libs/signature_group.cmti
+lib/ocaml/compiler-libs/signature_group.mli
 lib/ocaml/compiler-libs/simplif.cmi
 lib/ocaml/compiler-libs/simplif.cmt
 lib/ocaml/compiler-libs/simplif.cmti
@@ -555,10 +575,18 @@ lib/ocaml/compiler-libs/terminfo.cmi
 lib/ocaml/compiler-libs/terminfo.cmt
 lib/ocaml/compiler-libs/terminfo.cmti
 lib/ocaml/compiler-libs/terminfo.mli
+lib/ocaml/compiler-libs/topcommon.cmi
+lib/ocaml/compiler-libs/topcommon.cmt
+lib/ocaml/compiler-libs/topcommon.cmti
+lib/ocaml/compiler-libs/topcommon.mli
 lib/ocaml/compiler-libs/topdirs.cmi
 lib/ocaml/compiler-libs/topdirs.cmt
 lib/ocaml/compiler-libs/topdirs.cmti
 lib/ocaml/compiler-libs/topdirs.mli
+lib/ocaml/compiler-libs/topeval.cmi
+lib/ocaml/compiler-libs/topeval.cmt
+lib/ocaml/compiler-libs/topeval.cmti
+lib/ocaml/compiler-libs/topeval.mli
 lib/ocaml/compiler-libs/toploop.cmi
 lib/ocaml/compiler-libs/toploop.cmt
 lib/ocaml/compiler-libs/toploop.cmti
@@ -819,170 +847,170 @@ lib/ocaml/stdlib.cmt
 lib/ocaml/stdlib.cmti
 lib/ocaml/stdlib.ml
 lib/ocaml/stdlib.mli
-lib/ocaml/stdlib__arg.cmi
-lib/ocaml/stdlib__arg.cmt
-lib/ocaml/stdlib__arg.cmti
-lib/ocaml/stdlib__array.cmi
-lib/ocaml/stdlib__array.cmt
-lib/ocaml/stdlib__array.cmti
-lib/ocaml/stdlib__arrayLabels.cmi
-lib/ocaml/stdlib__arrayLabels.cmt
-lib/ocaml/stdlib__arrayLabels.cmti
-lib/ocaml/stdlib__atomic.cmi
-lib/ocaml/stdlib__atomic.cmt
-lib/ocaml/stdlib__atomic.cmti
-lib/ocaml/stdlib__bigarray.cmi
-lib/ocaml/stdlib__bigarray.cmt
-lib/ocaml/stdlib__bigarray.cmti
-lib/ocaml/stdlib__bool.cmi
-lib/ocaml/stdlib__bool.cmt
-lib/ocaml/stdlib__bool.cmti
-lib/ocaml/stdlib__buffer.cmi
-lib/ocaml/stdlib__buffer.cmt
-lib/ocaml/stdlib__buffer.cmti
-lib/ocaml/stdlib__bytes.cmi
-lib/ocaml/stdlib__bytes.cmt
-lib/ocaml/stdlib__bytes.cmti
-lib/ocaml/stdlib__bytesLabels.cmi
-lib/ocaml/stdlib__bytesLabels.cmt
-lib/ocaml/stdlib__bytesLabels.cmti
-lib/ocaml/stdlib__callback.cmi
-lib/ocaml/stdlib__callback.cmt
-lib/ocaml/stdlib__callback.cmti
-lib/ocaml/stdlib__char.cmi
-lib/ocaml/stdlib__char.cmt
-lib/ocaml/stdlib__char.cmti
-lib/ocaml/stdlib__complex.cmi
-lib/ocaml/stdlib__complex.cmt
-lib/ocaml/stdlib__complex.cmti
-lib/ocaml/stdlib__digest.cmi
-lib/ocaml/stdlib__digest.cmt
-lib/ocaml/stdlib__digest.cmti
-lib/ocaml/stdlib__either.cmi
-lib/ocaml/stdlib__either.cmt
-lib/ocaml/stdlib__either.cmti
-lib/ocaml/stdlib__ephemeron.cmi
-lib/ocaml/stdlib__ephemeron.cmt
-lib/ocaml/stdlib__ephemeron.cmti
-lib/ocaml/stdlib__filename.cmi
-lib/ocaml/stdlib__filename.cmt
-lib/ocaml/stdlib__filename.cmti
-lib/ocaml/stdlib__float.cmi
-lib/ocaml/stdlib__float.cmt
-lib/ocaml/stdlib__float.cmti
-lib/ocaml/stdlib__format.cmi
-lib/ocaml/stdlib__format.cmt
-lib/ocaml/stdlib__format.cmti
-lib/ocaml/stdlib__fun.cmi
-lib/ocaml/stdlib__fun.cmt
-lib/ocaml/stdlib__fun.cmti
-lib/ocaml/stdlib__gc.cmi
-lib/ocaml/stdlib__gc.cmt
-lib/ocaml/stdlib__gc.cmti
-lib/ocaml/stdlib__genlex.cmi
-lib/ocaml/stdlib__genlex.cmt
-lib/ocaml/stdlib__genlex.cmti
-lib/ocaml/stdlib__hashtbl.cmi
-lib/ocaml/stdlib__hashtbl.cmt
-lib/ocaml/stdlib__hashtbl.cmti
-lib/ocaml/stdlib__int.cmi
-lib/ocaml/stdlib__int.cmt
-lib/ocaml/stdlib__int.cmti
-lib/ocaml/stdlib__int32.cmi
-lib/ocaml/stdlib__int32.cmt
-lib/ocaml/stdlib__int32.cmti
-lib/ocaml/stdlib__int64.cmi
-lib/ocaml/stdlib__int64.cmt
-lib/ocaml/stdlib__int64.cmti
-lib/ocaml/stdlib__lazy.cmi
-lib/ocaml/stdlib__lazy.cmt
-lib/ocaml/stdlib__lazy.cmti
-lib/ocaml/stdlib__lexing.cmi
-lib/ocaml/stdlib__lexing.cmt
-lib/ocaml/stdlib__lexing.cmti
-lib/ocaml/stdlib__list.cmi
-lib/ocaml/stdlib__list.cmt
-lib/ocaml/stdlib__list.cmti
-lib/ocaml/stdlib__listLabels.cmi
-lib/ocaml/stdlib__listLabels.cmt
-lib/ocaml/stdlib__listLabels.cmti
-lib/ocaml/stdlib__map.cmi
-lib/ocaml/stdlib__map.cmt
-lib/ocaml/stdlib__map.cmti
-lib/ocaml/stdlib__marshal.cmi
-lib/ocaml/stdlib__marshal.cmt
-lib/ocaml/stdlib__marshal.cmti
-lib/ocaml/stdlib__moreLabels.cmi
-lib/ocaml/stdlib__moreLabels.cmt
-lib/ocaml/stdlib__moreLabels.cmti
-lib/ocaml/stdlib__nativeint.cmi
-lib/ocaml/stdlib__nativeint.cmt
-lib/ocaml/stdlib__nativeint.cmti
-lib/ocaml/stdlib__obj.cmi
-lib/ocaml/stdlib__obj.cmt
-lib/ocaml/stdlib__obj.cmti
-lib/ocaml/stdlib__oo.cmi
-lib/ocaml/stdlib__oo.cmt
-lib/ocaml/stdlib__oo.cmti
-lib/ocaml/stdlib__option.cmi
-lib/ocaml/stdlib__option.cmt
-lib/ocaml/stdlib__option.cmti
-lib/ocaml/stdlib__parsing.cmi
-lib/ocaml/stdlib__parsing.cmt
-lib/ocaml/stdlib__parsing.cmti
-lib/ocaml/stdlib__pervasives.cmi
-lib/ocaml/stdlib__pervasives.cmt
-lib/ocaml/stdlib__printexc.cmi
-lib/ocaml/stdlib__printexc.cmt
-lib/ocaml/stdlib__printexc.cmti
-lib/ocaml/stdlib__printf.cmi
-lib/ocaml/stdlib__printf.cmt
-lib/ocaml/stdlib__printf.cmti
-lib/ocaml/stdlib__queue.cmi
-lib/ocaml/stdlib__queue.cmt
-lib/ocaml/stdlib__queue.cmti
-lib/ocaml/stdlib__random.cmi
-lib/ocaml/stdlib__random.cmt
-lib/ocaml/stdlib__random.cmti
-lib/ocaml/stdlib__result.cmi
-lib/ocaml/stdlib__result.cmt
-lib/ocaml/stdlib__result.cmti
-lib/ocaml/stdlib__scanf.cmi
-lib/ocaml/stdlib__scanf.cmt
-lib/ocaml/stdlib__scanf.cmti
-lib/ocaml/stdlib__seq.cmi
-lib/ocaml/stdlib__seq.cmt
-lib/ocaml/stdlib__seq.cmti
-lib/ocaml/stdlib__set.cmi
-lib/ocaml/stdlib__set.cmt
-lib/ocaml/stdlib__set.cmti
-lib/ocaml/stdlib__stack.cmi
-lib/ocaml/stdlib__stack.cmt
-lib/ocaml/stdlib__stack.cmti
-lib/ocaml/stdlib__stdLabels.cmi
-lib/ocaml/stdlib__stdLabels.cmt
-lib/ocaml/stdlib__stdLabels.cmti
-lib/ocaml/stdlib__stream.cmi
-lib/ocaml/stdlib__stream.cmt
-lib/ocaml/stdlib__stream.cmti
-lib/ocaml/stdlib__string.cmi
-lib/ocaml/stdlib__string.cmt
-lib/ocaml/stdlib__string.cmti
-lib/ocaml/stdlib__stringLabels.cmi
-lib/ocaml/stdlib__stringLabels.cmt
-lib/ocaml/stdlib__stringLabels.cmti
-lib/ocaml/stdlib__sys.cmi
-lib/ocaml/stdlib__sys.cmt
-lib/ocaml/stdlib__sys.cmti
-lib/ocaml/stdlib__uchar.cmi
-lib/ocaml/stdlib__uchar.cmt
-lib/ocaml/stdlib__uchar.cmti
-lib/ocaml/stdlib__unit.cmi
-lib/ocaml/stdlib__unit.cmt
-lib/ocaml/stdlib__unit.cmti
-lib/ocaml/stdlib__weak.cmi
-lib/ocaml/stdlib__weak.cmt
-lib/ocaml/stdlib__weak.cmti
+lib/ocaml/stdlib__Arg.cmi
+lib/ocaml/stdlib__Arg.cmt
+lib/ocaml/stdlib__Arg.cmti
+lib/ocaml/stdlib__Array.cmi
+lib/ocaml/stdlib__Array.cmt
+lib/ocaml/stdlib__Array.cmti
+lib/ocaml/stdlib__ArrayLabels.cmi
+lib/ocaml/stdlib__ArrayLabels.cmt
+lib/ocaml/stdlib__ArrayLabels.cmti
+lib/ocaml/stdlib__Atomic.cmi
+lib/ocaml/stdlib__Atomic.cmt
+lib/ocaml/stdlib__Atomic.cmti
+lib/ocaml/stdlib__Bigarray.cmi
+lib/ocaml/stdlib__Bigarray.cmt
+lib/ocaml/stdlib__Bigarray.cmti
+lib/ocaml/stdlib__Bool.cmi
+lib/ocaml/stdlib__Bool.cmt
+lib/ocaml/stdlib__Bool.cmti
+lib/ocaml/stdlib__Buffer.cmi
+lib/ocaml/stdlib__Buffer.cmt
+lib/ocaml/stdlib__Buffer.cmti
+lib/ocaml/stdlib__Bytes.cmi
+lib/ocaml/stdlib__Bytes.cmt
+lib/ocaml/stdlib__Bytes.cmti
+lib/ocaml/stdlib__BytesLabels.cmi
+lib/ocaml/stdlib__BytesLabels.cmt
+lib/ocaml/stdlib__BytesLabels.cmti
+lib/ocaml/stdlib__Callback.cmi
+lib/ocaml/stdlib__Callback.cmt
+lib/ocaml/stdlib__Callback.cmti
+lib/ocaml/stdlib__Char.cmi
+lib/ocaml/stdlib__Char.cmt
+lib/ocaml/stdlib__Char.cmti
+lib/ocaml/stdlib__Complex.cmi
+lib/ocaml/stdlib__Complex.cmt
+lib/ocaml/stdlib__Complex.cmti
+lib/ocaml/stdlib__Digest.cmi
+lib/ocaml/stdlib__Digest.cmt
+lib/ocaml/stdlib__Digest.cmti
+lib/ocaml/stdlib__Either.cmi
+lib/ocaml/stdlib__Either.cmt
+lib/ocaml/stdlib__Either.cmti
+lib/ocaml/stdlib__Ephemeron.cmi
+lib/ocaml/stdlib__Ephemeron.cmt
+lib/ocaml/stdlib__Ephemeron.cmti
+lib/ocaml/stdlib__Filename.cmi
+lib/ocaml/stdlib__Filename.cmt
+lib/ocaml/stdlib__Filename.cmti
+lib/ocaml/stdlib__Float.cmi
+lib/ocaml/stdlib__Float.cmt
+lib/ocaml/stdlib__Float.cmti
+lib/ocaml/stdlib__Format.cmi
+lib/ocaml/stdlib__Format.cmt
+lib/ocaml/stdlib__Format.cmti
+lib/ocaml/stdlib__Fun.cmi
+lib/ocaml/stdlib__Fun.cmt
+lib/ocaml/stdlib__Fun.cmti
+lib/ocaml/stdlib__Gc.cmi
+lib/ocaml/stdlib__Gc.cmt
+lib/ocaml/stdlib__Gc.cmti
+lib/ocaml/stdlib__Genlex.cmi
+lib/ocaml/stdlib__Genlex.cmt
+lib/ocaml/stdlib__Genlex.cmti
+lib/ocaml/stdlib__Hashtbl.cmi
+lib/ocaml/stdlib__Hashtbl.cmt
+lib/ocaml/stdlib__Hashtbl.cmti
+lib/ocaml/stdlib__Int.cmi
+lib/ocaml/stdlib__Int.cmt
+lib/ocaml/stdlib__Int.cmti
+lib/ocaml/stdlib__Int32.cmi
+lib/ocaml/stdlib__Int32.cmt
+lib/ocaml/stdlib__Int32.cmti
+lib/ocaml/stdlib__Int64.cmi
+lib/ocaml/stdlib__Int64.cmt
+lib/ocaml/stdlib__Int64.cmti
+lib/ocaml/stdlib__Lazy.cmi
+lib/ocaml/stdlib__Lazy.cmt
+lib/ocaml/stdlib__Lazy.cmti
+lib/ocaml/stdlib__Lexing.cmi
+lib/ocaml/stdlib__Lexing.cmt
+lib/ocaml/stdlib__Lexing.cmti
+lib/ocaml/stdlib__List.cmi
+lib/ocaml/stdlib__List.cmt
+lib/ocaml/stdlib__List.cmti
+lib/ocaml/stdlib__ListLabels.cmi
+lib/ocaml/stdlib__ListLabels.cmt
+lib/ocaml/stdlib__ListLabels.cmti
+lib/ocaml/stdlib__Map.cmi
+lib/ocaml/stdlib__Map.cmt
+lib/ocaml/stdlib__Map.cmti
+lib/ocaml/stdlib__Marshal.cmi
+lib/ocaml/stdlib__Marshal.cmt
+lib/ocaml/stdlib__Marshal.cmti
+lib/ocaml/stdlib__MoreLabels.cmi
+lib/ocaml/stdlib__MoreLabels.cmt
+lib/ocaml/stdlib__MoreLabels.cmti
+lib/ocaml/stdlib__Nativeint.cmi
+lib/ocaml/stdlib__Nativeint.cmt
+lib/ocaml/stdlib__Nativeint.cmti
+lib/ocaml/stdlib__Obj.cmi
+lib/ocaml/stdlib__Obj.cmt
+lib/ocaml/stdlib__Obj.cmti
+lib/ocaml/stdlib__Oo.cmi
+lib/ocaml/stdlib__Oo.cmt
+lib/ocaml/stdlib__Oo.cmti
+lib/ocaml/stdlib__Option.cmi
+lib/ocaml/stdlib__Option.cmt
+lib/ocaml/stdlib__Option.cmti
+lib/ocaml/stdlib__Parsing.cmi
+lib/ocaml/stdlib__Parsing.cmt
+lib/ocaml/stdlib__Parsing.cmti
+lib/ocaml/stdlib__Pervasives.cmi
+lib/ocaml/stdlib__Pervasives.cmt
+lib/ocaml/stdlib__Printexc.cmi
+lib/ocaml/stdlib__Printexc.cmt
+lib/ocaml/stdlib__Printexc.cmti
+lib/ocaml/stdlib__Printf.cmi
+lib/ocaml/stdlib__Printf.cmt
+lib/ocaml/stdlib__Printf.cmti
+lib/ocaml/stdlib__Queue.cmi
+lib/ocaml/stdlib__Queue.cmt
+lib/ocaml/stdlib__Queue.cmti
+lib/ocaml/stdlib__Random.cmi
+lib/ocaml/stdlib__Random.cmt
+lib/ocaml/stdlib__Random.cmti
+lib/ocaml/stdlib__Result.cmi
+lib/ocaml/stdlib__Result.cmt
+lib/ocaml/stdlib__Result.cmti
+lib/ocaml/stdlib__Scanf.cmi
+lib/ocaml/stdlib__Scanf.cmt
+lib/ocaml/stdlib__Scanf.cmti
+lib/ocaml/stdlib__Seq.cmi
+lib/ocaml/stdlib__Seq.cmt
+lib/ocaml/stdlib__Seq.cmti
+lib/ocaml/stdlib__Set.cmi
+lib/ocaml/stdlib__Set.cmt
+lib/ocaml/stdlib__Set.cmti
+lib/ocaml/stdlib__Stack.cmi
+lib/ocaml/stdlib__Stack.cmt
+lib/ocaml/stdlib__Stack.cmti
+lib/ocaml/stdlib__StdLabels.cmi
+lib/ocaml/stdlib__StdLabels.cmt
+lib/ocaml/stdlib__StdLabels.cmti
+lib/ocaml/stdlib__Stream.cmi
+lib/ocaml/stdlib__Stream.cmt
+lib/ocaml/stdlib__Stream.cmti
+lib/ocaml/stdlib__String.cmi
+lib/ocaml/stdlib__String.cmt
+lib/ocaml/stdlib__String.cmti
+lib/ocaml/stdlib__StringLabels.cmi
+lib/ocaml/stdlib__StringLabels.cmt
+lib/ocaml/stdlib__StringLabels.cmti
+lib/ocaml/stdlib__Sys.cmi
+lib/ocaml/stdlib__Sys.cmt
+lib/ocaml/stdlib__Sys.cmti
+lib/ocaml/stdlib__Uchar.cmi
+lib/ocaml/stdlib__Uchar.cmt
+lib/ocaml/stdlib__Uchar.cmti
+lib/ocaml/stdlib__Unit.cmi
+lib/ocaml/stdlib__Unit.cmt
+lib/ocaml/stdlib__Unit.cmti
+lib/ocaml/stdlib__Weak.cmi
+lib/ocaml/stdlib__Weak.cmt
+lib/ocaml/stdlib__Weak.cmti
 lib/ocaml/str.cma
 lib/ocaml/str.cmi
 lib/ocaml/str.cmti
@@ -1133,6 +1161,7 @@ lib/ocaml/weak.mli
 @man man/man3/CamlinternalMenhirLib.InspectionTableInterpreter.3o
 @man man/man3/CamlinternalMenhirLib.InspectionTableInterpreter.Make.3o
 @man man/man3/CamlinternalMenhirLib.InspectionTableInterpreter.Symbols.3o
+@man man/man3/CamlinternalMenhirLib.LexerUtil.3o
 @man man/man3/CamlinternalMenhirLib.LinearizedArray.3o
 @man man/man3/CamlinternalMenhirLib.PackedIntArray.3o
 @man man/man3/CamlinternalMenhirLib.Printers.3o
@@ -1159,6 +1188,7 @@ lib/ocaml/weak.mli
 @man man/man3/Consistbl.Make.3o
 @man man/man3/Depend.3o
 @man man/man3/Depend.String.3o
+@man man/man3/Diffing.3o
 @man man/man3/Digest.3o
 @man man/man3/Docstrings.3o
 @man man/man3/Docstrings.WithMenhir.3o
@@ -1185,6 +1215,7 @@ lib/ocaml/weak.mli
 @man man/man3/Float.Array.3o
 @man man/man3/Float.ArrayLabels.3o
 @man man/man3/Format.3o
+@man man/man3/Format_tutorial.3o
 @man man/man3/Fun.3o
 @man man/man3/Gc.3o
 @man man/man3/Gc.Memprof.3o
@@ -1216,6 +1247,7 @@ lib/ocaml/weak.mli
 @man man/man3/Int64.3o
 @man man/man3/Int_replace_polymorphic_compare.3o
 @man man/man3/Lazy.3o
+@man man/man3/Lazy_backtrack.3o
 @man man/man3/Lexer.3o
 @man man/man3/Lexing.3o
 @man man/man3/List.3o
@@ -1232,7 +1264,6 @@ lib/ocaml/weak.mli
 @man man/man3/Marshal.3o
 @man man/man3/Misc.3o
 @man man/man3/Misc.Color.3o
-@man man/man3/Misc.EnvLazy.3o
 @man man/man3/Misc.Error_style.3o
 @man man/man3/Misc.Int_literal_converter.3o
 @man man/man3/Misc.LongString.3o
@@ -1422,6 +1453,7 @@ share/doc/ocaml/html/extn.html
 share/doc/ocaml/html/firstclassmodules.html
 share/doc/ocaml/html/flambda.html
 share/doc/ocaml/html/foreword.html
+share/doc/ocaml/html/gadts-tutorial.html
 share/doc/ocaml/html/gadts.html
 share/doc/ocaml/html/generalizedopens.html
 share/doc/ocaml/html/generativefunctors.html
@@ -1485,6 +1517,7 @@ share/doc/ocaml/html/libref/Float.Array.html
 share/doc/ocaml/html/libref/Float.ArrayLabels.html
 share/doc/ocaml/html/libref/Float.html
 share/doc/ocaml/html/libref/Format.html
+share/doc/ocaml/html/libref/Format_tutorial.html
 share/doc/ocaml/html/libref/Fun.html
 share/doc/ocaml/html/libref/Gc.Memprof.html
 share/doc/ocaml/html/libref/Gc.html
@@ -1693,6 +1726,7 @@ share/doc/ocaml/html/libref/type_Float.Array.html
 share/doc/ocaml/html/libref/type_Float.ArrayLabels.html
 share/doc/ocaml/html/libref/type_Float.html
 share/doc/ocaml/html/libref/type_Format.html
+share/doc/ocaml/html/libref/type_Format_tutorial.html
 share/doc/ocaml/html/libref/type_Fun.html
 share/doc/ocaml/html/libref/type_Gc.Memprof.html
 share/doc/ocaml/html/libref/type_Gc.html
@@ -1847,9 +1881,9 @@ share/doc/ocaml/html/libthreads.html
 share/doc/ocaml/html/libunix.html
 share/doc/ocaml/html/locallyabstract.html
 share/doc/ocaml/html/manual.css
+share/doc/ocaml/html/manual.html
 share/doc/ocaml/html/manual001.html
-share/doc/ocaml/html/manual024.html
-share/doc/ocaml/html/manual067.html
+share/doc/ocaml/html/manual069.html
 share/doc/ocaml/html/modtypes.html
 share/doc/ocaml/html/modulealias.html
 share/doc/ocaml/html/moduleexamples.html
@@ -1865,9 +1899,11 @@ share/doc/ocaml/html/overridingopen.html
 share/doc/ocaml/html/parsing.html
 share/doc/ocaml/html/patterns.html
 share/doc/ocaml/html/polymorphism.html
+share/doc/ocaml/html/polyvariant.html
 share/doc/ocaml/html/previous_motif.gif
 share/doc/ocaml/html/privatetypes.html
 share/doc/ocaml/html/profil.html
+share/doc/ocaml/html/recursivemodules.html
 share/doc/ocaml/html/runtime.html
 share/doc/ocaml/html/signaturesubstitution.html
 share/doc/ocaml/html/stdlib.html
