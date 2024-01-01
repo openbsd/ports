@@ -1,11 +1,13 @@
 COMMENT =	monospaced bitmap fonts for consoles and terminals
 
-V =		2.0.1
+V =		2.0.2
 DISTNAME =	spleen-${V}
 
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://github.com/fcambus/spleen
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE = Yes
