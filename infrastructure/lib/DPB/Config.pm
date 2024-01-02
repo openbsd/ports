@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.100 2023/10/16 13:03:42 espie Exp $
+# $OpenBSD: Config.pm,v 1.101 2024/01/02 15:39:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -477,13 +477,39 @@ sub parse_hosts_file($class, $filename, $state, $rdefault, $override)
 	}
 }
 
-sub read_exceptions_file($class, $state, $filename, $default = 'build')
+# this is where the actual callbacks happen
+my $properties = {};
+
+sub apply_properties($class, $state, $path, @properties)
 {
-	my $properties = {};
-	open my $fh, '<', $filename or
-		$state->fatal("Can't read exceptions file #1: #2", 
-		    $filename, $!);
-	$state->{adjuncts} = {};
+	my $v = DPB::PkgPath->new($path);
+	for my $d (@{$state->{portspath}}) {
+		if (-d join('/', $d , $v->pkgpath)) {
+			for my $p (@properties) {
+				if ($p =~ m/(.*)\:(.*)/) {
+					&{$properties->{$1}}($v, $2);
+				} else {
+					&{$properties->{$p}}($v);
+				} 
+			}
+			return;
+		}
+	}
+	push(@{$state->{bad_paths}}, $path);
+}
+
+sub handle_exception_data($class, $state, $param, $default = 'build')
+{
+	my $fh = $state->logger->open('<', $param);
+	if (defined $fh) {
+		$class->read_exceptions_fh($state, $fh, $param, $default);
+	} else {
+		$class->apply_properties($state, $param, $default);
+	}
+}
+
+sub read_exceptions_fh($class, $state, $fh, $filename, $default = 'build')
+{
 	my @defaults = $default;
 	while(<$fh>) {
 		chomp;
@@ -511,14 +537,8 @@ sub read_exceptions_file($class, $state, $filename, $default = 'build')
 			$state->fatal("No path in file #1 at #2: #3",
 			    $filename, $., $_);
 		}
-		for my $p (@properties) {
-			for my $v (@paths) {
-				if ($p =~ m/(.*)\:(.*)/) {
-					&{$properties->{$1}}($v, $2);
-				} else {
-					&{$properties->{$p}}($v);
-				}
-			}
+		for my $v (@paths) {
+			$class->apply_properties($state, $v, @properties);
 		}
 	}
 }
