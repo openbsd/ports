@@ -1,0 +1,17 @@
+fixes opening passwordless (eg keyfile-only) kdbx
+https://sourceforge.net/p/kpcli/bugs/52/
+Index: kpcli-4.0.pl
+--- kpcli-4.0.pl.orig
++++ kpcli-4.0.pl
+@@ -7495,7 +7495,10 @@ sub composite_master_pass_FileKeePass($$) {
+ }
+ sub composite_master_pass_FileKDBX($$) {
+   my ($pass, $key_file) = @_;
+-  my @components = ( File::KDBX::Key->new({ password => $pass }) );
++  my @components = ();
++  if (defined $pass and length($pass)) {
++    push @components, File::KDBX::Key->new({ password => $pass });
++  }
+   if (defined $key_file and length($key_file) and -f $key_file) {
+     push @components, File::KDBX::Key->new({ file => $key_file });
+   }
