@@ -32,7 +32,7 @@ SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_ASCIIDOC=no
-CXXFLAGS=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
+CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 # audiofile-config is still needed by audio/normalize and devel/libspectrum
 post-install:
