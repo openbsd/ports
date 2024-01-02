@@ -112,7 +112,8 @@ MODMOZ_BUILD_DEPENDS +=	devel/nasm
 .endif
 
 # 53 needs rust
-MODMOZ_BUILD_DEPENDS +=	lang/rust
+MODULES +=		lang/rust
+MODMOZ_WANTLIB +=	${MODRUST_WANTLIB}
 #1670807
 MODMOZ_BUILD_DEPENDS +=	devel/m4
 
