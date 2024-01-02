@@ -1,0 +1,24 @@
+C++17 compliance
+
+Index: src/utils/dtor.h
+--- src/utils/dtor.h.orig
++++ src/utils/dtor.h
+@@ -30,7 +30,7 @@
+ #include "localconsts.h"
+ 
+ template<typename T>
+-struct dtor final : public std::unary_function <T, void>
++struct dtor final
+ {
+     A_DEFAULT_COPY(dtor)
+ 
+@@ -39,8 +39,7 @@ struct dtor final : public std::unary_function <T, voi
+ };
+ 
+ template<typename T1, typename T2>
+-struct dtor<std::pair<T1, T2> > :
+-public std::unary_function <std::pair<T1, T2>, void>
++struct dtor<std::pair<T1, T2> >
+ {
+     void operator()(std::pair<T1, T2> &pair)
+     { delete pair.second; }
