@@ -6,6 +6,7 @@ V=		2.14
 GH_ACCOUNT=	pjsip
 GH_PROJECT=	pjproject
 GH_TAGNAME=	$V
+REVISION=	0
 
 PKGNAME-main=	pjsip-$V
 PKGNAME-pjsua=	pjsua-$V
