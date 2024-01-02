@@ -16,8 +16,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += hiredis intl mariadb pq pthread sqlite3 ssl m z
 
-SITES =			http://turnserver.open-sys.org/downloads/v${V}/ \
-			http://coturn.net/turnserver/v${V}/
+PORTROACH =		site:https://github.com/coturn/coturn/releases/
+SITES =			https://coturn.net/turnserver/v${V}/
 
 LIB_DEPENDS =		databases/mariadb \
 			databases/postgresql \
