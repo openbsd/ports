@@ -2,7 +2,7 @@ COMMENT =		SMTP server
 
 GH_PROJECT =		smtp-server
 GH_TAGNAME =		v0.1.2
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =	https://smtp.stalw.art/
 
@@ -22,7 +22,7 @@ MODCARGO_CRATES_KEEP += libsqlite3-sys
 BUILD_DEPENDS = devel/protobuf
 LIB_DEPENDS =	archivers/zstd \
 		archivers/bzip2
-WANTLIB +=	${MOCARGO_WANTLIB} bz2 m zstd
+WANTLIB +=	${MODCARGO_WANTLIB} bz2 m zstd
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/smtp
