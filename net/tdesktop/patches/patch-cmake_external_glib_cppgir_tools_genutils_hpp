@@ -1,0 +1,15 @@
+https://gitlab.com/mnauw/cppgir/-/merge_requests/26
+Include missing <sstream>
+  error: implicit instantiation of undefined template 'std::basic_istringstream<char>'
+
+Index: cmake/external/glib/cppgir/tools/genutils.hpp
+--- cmake/external/glib/cppgir/tools/genutils.hpp.orig
++++ cmake/external/glib/cppgir/tools/genutils.hpp
+@@ -7,6 +7,7 @@
+ #include <regex>
+ #include <set>
+ #include <string>
++#include <sstream>
+ 
+ class skip : public std::runtime_error
+ {
