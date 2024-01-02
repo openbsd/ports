@@ -53,6 +53,8 @@ SEPARATE_BUILD =	No
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
+CXXFLAGS +=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
+
 pre-configure:
 	# Do not require specific Qt version
 	sed -i "s|\$$\$${QT_VERSION}|${MODQT5_VERSION}|g" \
