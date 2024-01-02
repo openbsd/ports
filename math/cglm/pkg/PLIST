@@ -1,4 +1,5 @@
 include/cglm/
+include/cglm/aabb2d.h
 include/cglm/affine-mat.h
 include/cglm/affine-post.h
 include/cglm/affine-pre.h
@@ -9,6 +10,7 @@ include/cglm/bezier.h
 include/cglm/box.h
 include/cglm/call/
 include/cglm/call.h
+include/cglm/call/aabb2d.h
 include/cglm/call/affine.h
 include/cglm/call/affine2d.h
 include/cglm/call/bezier.h
@@ -80,6 +82,9 @@ include/cglm/curve.h
 include/cglm/ease.h
 include/cglm/euler.h
 include/cglm/frustum.h
+include/cglm/handed/
+include/cglm/handed/euler_to_quat_lh.h
+include/cglm/handed/euler_to_quat_rh.h
 include/cglm/io.h
 include/cglm/ivec2.h
 include/cglm/ivec3.h
@@ -125,6 +130,7 @@ include/cglm/simd/x86.h
 include/cglm/sphere.h
 include/cglm/struct/
 include/cglm/struct.h
+include/cglm/struct/aabb2d.h
 include/cglm/struct/affine-mat.h
 include/cglm/struct/affine-post.h
 include/cglm/struct/affine-pre.h
@@ -151,6 +157,9 @@ include/cglm/struct/color.h
 include/cglm/struct/curve.h
 include/cglm/struct/euler.h
 include/cglm/struct/frustum.h
+include/cglm/struct/handed/
+include/cglm/struct/handed/euler_to_quat_lh.h
+include/cglm/struct/handed/euler_to_quat_rh.h
 include/cglm/struct/io.h
 include/cglm/struct/mat2.h
 include/cglm/struct/mat2x3.h

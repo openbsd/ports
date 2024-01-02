@@ -1,10 +1,8 @@
 COMMENT =	highly optimized graphics math library
 
-GH_ACCOUNT =	recp
-GH_PROJECT =	cglm
-GH_TAGNAME =	v0.9.1
+DIST_TUPLE =	github recp cglm v0.9.2 .
 
-SHARED_LIBS =	cglm	0.4
+SHARED_LIBS =	cglm	0.5
 
 CATEGORIES =	math
 
