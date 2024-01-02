@@ -1,6 +1,6 @@
 COMMENT=	simple, fast and efficient podcast parser
 
-MODPY_EGG_VERSION=	0.6.9
+MODPY_EGG_VERSION=	0.6.10
 DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
