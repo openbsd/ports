@@ -1,5 +1,5 @@
 COMMENT=	graphics and text browser
-VER=		2.28
+VER=		2.29
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www

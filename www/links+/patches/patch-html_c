@@ -1,7 +1,7 @@
 Index: html.c
 --- html.c.orig
 +++ html.c
-@@ -1004,6 +1004,7 @@ static void html_a(unsigned char *a)
+@@ -1010,6 +1010,7 @@ static void html_a(unsigned char *a)
  			format_.target = stracpy(format_.target_base);
  		}
  		/*format_.attr ^= AT_BOLD;*/
