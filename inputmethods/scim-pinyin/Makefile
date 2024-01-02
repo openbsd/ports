@@ -31,5 +31,6 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
 		--disable-skim-support
+CXXFLAGS+=-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 .include <bsd.port.mk>
