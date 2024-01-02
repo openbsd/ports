@@ -1,5 +1,6 @@
 COMMENT =	GTK2 and GTK3 configurator for KDE
 DISTNAME =	kde-gtk-config-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
@@ -11,6 +12,11 @@ WANTLIB += kdecorations2private m pango-1.0 pangocairo-1.0
 
 BUILD_DEPENDS =	www/libsass \
 		www/sass \
+		x11/xsettingsd \
+		devel/gsettings-desktop-schemas
+
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		x11/xsettingsd
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
