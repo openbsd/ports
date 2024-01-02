@@ -15,13 +15,12 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += bz2 c crypto curl curses execinfo iconv json-c m milter
+WANTLIB += ${COMPILER_LIBCXX} ${MODRUST_WANTLIB}
+WANTLIB += bz2 crypto curl curses execinfo iconv json-c m milter
 WANTLIB += mspack pcre2-8 ssl util xml2 z
 
 COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS=	lang/rust
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/libmspack \
 		devel/json-c \
@@ -33,7 +32,8 @@ TEST_DEPENDS=	security/clamav
 
 SITES=		https://www.clamav.net/downloads/production/
 
-MODULES=	devel/cmake
+MODULES=	devel/cmake \
+		lang/rust
 CONFIGURE_ARGS=	-DCLAMAV_USER=_clamav \
 		-DCLAMAV_GROUP=_clamav \
 		-DENABLE_EXTERNAL_MSPACK=ON \
