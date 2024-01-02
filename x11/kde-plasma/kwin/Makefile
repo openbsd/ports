@@ -33,6 +33,7 @@ MODULES +=	lang/python
 
 BUILD_DEPENDS =	x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols \
 		wayland/xwayland \
 		misc/hwdata

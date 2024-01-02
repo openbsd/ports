@@ -19,6 +19,7 @@ WANTLIB += xcb-keysyms
 RUN_DEPENDS =	devel/desktop-file-utils
 
 BUILD_DEPENDS =	wayland/wayland-protocols \
+		wayland/plasma-wayland-protocols \
 		x11/kde-plasma/kscreen>=${VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \

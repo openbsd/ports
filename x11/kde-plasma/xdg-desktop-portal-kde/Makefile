@@ -1,6 +1,6 @@
 COMMENT =	xdg-desktop-portal Qt/KF5 backend
 DISTNAME =	xdg-desktop-portal-kde-${VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
@@ -19,7 +19,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kirigami2
 
 BUILD_DEPENDS =	devel/kf5/kirigami2 \
-		wayland/plasma-wayland-protocols
+		wayland/plasma-wayland-protocols \
+		wayland/wayland-protocols
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -41,6 +42,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwayland \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
+		devel/kf5/plasma-framework \
 		devel/kf5/kxmlgui \
 		x11/qt5/qtdeclarative
 

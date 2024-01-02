@@ -12,6 +12,7 @@ RUN_DEPENDS =	devel/kf5/plasma-framework \
 		x11/qt5/qtquickcontrols2
 
 BUILD_DEPENDS =	devel/kf5/plasma-framework \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols \
 		x11/qt5/qtquickcontrols2
 

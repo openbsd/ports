@@ -41,6 +41,7 @@ MODKDE5_DOCS = Yes
 
 BUILD_DEPENDS =		x11/kde-plasma/kwin>=${VERSION} \
 			wayland/plasma-wayland-protocols \
+			wayland/wayland-protocols \
 			devel/kf5/kquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
