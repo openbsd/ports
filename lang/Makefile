@@ -123,6 +123,7 @@
      SUBDIR += tinyscheme
      SUBDIR += ucblogo
      SUBDIR += unicon
+     SUBDIR += v
      SUBDIR += vala,
      SUBDIR += verilator
      SUBDIR += wabt
