@@ -1,3 +1,6 @@
+# "cannot use uint64(dir.Fd()) (value of type uint64) as uint32 value in struct literal" in vendor/humungus.tedunangst.com/r/gonix/kqueue.go
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		link aggregator and comment site via ActivityPub
 
 DISTNAME =		azorius-0.3.2
