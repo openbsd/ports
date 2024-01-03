@@ -1518,6 +1518,7 @@
      SUBDIR += py-olefile,python3
      SUBDIR += py-openapi-schema-validator,python3
      SUBDIR += py-openapi-spec-validator,python3
+     SUBDIR += py-openbsd,python3
      SUBDIR += py-ordered-set,python3
      SUBDIR += py-outcome,python3
      SUBDIR += py-parallel,python3
