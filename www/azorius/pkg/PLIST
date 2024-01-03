@@ -71,6 +71,8 @@ share/examples/azorius/views/formpost.html
 @sample ${LOCALSTATEDIR}/azorius/views/formpost.html
 share/examples/azorius/views/fragcomment.html
 @sample ${LOCALSTATEDIR}/azorius/views/fragcomment.html
+share/examples/azorius/views/fragpost.html
+@sample ${LOCALSTATEDIR}/azorius/views/fragpost.html
 share/examples/azorius/views/groupchat.html
 @sample ${LOCALSTATEDIR}/azorius/views/groupchat.html
 share/examples/azorius/views/groupreports.html
@@ -113,5 +115,7 @@ share/examples/azorius/views/reply.html
 @sample ${LOCALSTATEDIR}/azorius/views/reply.html
 share/examples/azorius/views/report.html
 @sample ${LOCALSTATEDIR}/azorius/views/report.html
+share/examples/azorius/views/searchhelp.html
+@sample ${LOCALSTATEDIR}/azorius/views/searchhelp.html
 share/examples/azorius/views/style.css
 @sample ${LOCALSTATEDIR}/azorius/views/style.css
