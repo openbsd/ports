@@ -16,6 +16,7 @@ MODPY_PYBUILD =		setuptools
 FLAVORS =		python3
 FLAVOR =		python3
 
+BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
