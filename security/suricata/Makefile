@@ -21,15 +21,16 @@ PERMIT_PACKAGE=	Yes
 SITES =		https://www.openinfosecfoundation.org/download/
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} c elf iconv jansson lz4 m magic maxminddb
+WANTLIB += ${COMPILER_LIBCXX} ${MODRUST_WANTLIB}
+WANTLIB += elf iconv jansson lz4 m magic maxminddb
 WANTLIB += net pcap pcre2-8 yaml-0 z
 
-MODULES =	lang/python
+MODULES =	lang/python \
+		lang/rust
 
 BUILD_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR} \
 		textproc/py-sphinx${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		lang/rust
+		textproc/py-yaml${MODPY_FLAVOR}
 
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 
