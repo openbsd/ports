@@ -1,6 +1,6 @@
 COMMENT =		C implementations of functions for use within SABnzbd
 
-MODPY_EGG_VERSION =	7.1.2
+MODPY_EGG_VERSION =	8.1.0
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabctools-${MODPY_EGG_VERSION}
