@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export VEXE="${TRUEPREFIX}/lib/vlang/v"
+export VMODULES="$HOME/.vmodules"
+
+${VEXE} $@

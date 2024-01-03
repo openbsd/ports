@@ -1,0 +1,12 @@
+Index: vlib/v/util/util.v
+--- vlib/v/util/util.v.orig
++++ vlib/v/util/util.v
+@@ -409,7 +409,7 @@ and the existing module `${modulename}` may still work
+ 		return error_with_code('git is not installed, error: ${cloning_res.output}', cloning_res.exit_code)
+ 	}
+ 	if cloning_res.exit_code != 0 {
+-		return error_with_code('cloning failed, details: ${cloning_res.output}', cloning_res.exit_code)
++		return error_with_code('cloning ${murl} to ${mpath} failed, details: ${cloning_res.output}', cloning_res.exit_code)
+ 	}
+ 	if !os.exists(mod_v_file) {
+ 		return error('even after cloning, ${mod_v_file} is still missing')
