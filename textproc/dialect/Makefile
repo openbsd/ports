@@ -3,8 +3,11 @@ V =			2.2.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
+
+HOMEPAGE =		https://dialectapp.org/
 
 # GPLv3.0
 PERMIT_PACKAGE =	Yes
