@@ -358,7 +358,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}emailer
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}getipaddress.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}happyeyeballs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}internetspeed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}lang.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}newsunpack.${MODPY_PYC_MAGIC_TAG}pyc
@@ -399,7 +401,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/emailer.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/encoding.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/getipaddress.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/happyeyeballs.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/interface.py
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/internetspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/lang.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/misc.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/newsunpack.py
@@ -430,8 +434,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}diskspeed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}file_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}getperformance.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}happyeyeballs.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}internetspeed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}kronos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pathbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pybonjour.${MODPY_PYC_MAGIC_TAG}pyc
@@ -448,8 +450,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/checkdir.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/diskspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/file_extension.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/getperformance.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/happyeyeballs.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/internetspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/kronos.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pathbrowser.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pybonjour.py
