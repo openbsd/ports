@@ -19,6 +19,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kirigami2
 
 BUILD_DEPENDS =	devel/kf5/kirigami2 \
+		wayland/libinput-openbsd \
 		wayland/plasma-wayland-protocols \
 		wayland/wayland-protocols
 
