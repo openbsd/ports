@@ -6,6 +6,7 @@ include/libxmlb-2/libxmlb/xb-builder-node.h
 include/libxmlb-2/libxmlb/xb-builder-source-ctx.h
 include/libxmlb-2/libxmlb/xb-builder-source.h
 include/libxmlb-2/libxmlb/xb-builder.h
+include/libxmlb-2/libxmlb/xb-compile.h
 include/libxmlb-2/libxmlb/xb-machine.h
 include/libxmlb-2/libxmlb/xb-node-query.h
 include/libxmlb-2/libxmlb/xb-node-silo.h
