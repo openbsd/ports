@@ -1,6 +1,6 @@
 COMMENT =	LastPass command line interface tool
 
-V =		1.3.6
+V =		1.3.7
 DISTNAME =	lastpass-cli-${V}
 
 CATEGORIES =	security
@@ -24,7 +24,8 @@ TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
 
 do-test:
-	cd ${WRKSRC}/test && sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' *
+	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/test/*
+	chmod +x ${WRKSRC}/test/tests ${WRKSRC}/test/*.sh
 	cd ${WRKSRC} && make test
 
 .include <bsd.port.mk>
