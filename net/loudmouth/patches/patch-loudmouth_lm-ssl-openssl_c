@@ -1,5 +1,18 @@
---- loudmouth/lm-ssl-openssl.c.orig	Mon Jan 19 11:50:51 2009
-+++ loudmouth/lm-ssl-openssl.c	Mon Jan 19 11:51:45 2009
+Index: loudmouth/lm-ssl-openssl.c
+--- loudmouth/lm-ssl-openssl.c.orig
++++ loudmouth/lm-ssl-openssl.c
+@@ -295,9 +295,9 @@ _lm_ssl_initialize (LmSSL *ssl) 
+ 		initialized = TRUE;
+ 	}
+ 
+-	ssl->ssl_method = TLSv1_client_method();
++	ssl->ssl_method = TLS_client_method();
+ 	if (ssl->ssl_method == NULL) {
+-		g_warning ("TLSv1_client_method() == NULL");
++		g_warning ("TLS_client_method() == NULL");
+ 		abort();
+ 	}
+ 	ssl->ssl_ctx = SSL_CTX_new(ssl->ssl_method);
 @@ -305,6 +305,14 @@ _lm_ssl_initialize (LmSSL *ssl) 
  		g_warning ("SSL_CTX_new() == NULL");
  		abort();
