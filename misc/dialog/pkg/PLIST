@@ -6,6 +6,7 @@ include/dlg_config.h
 include/dlg_keys.h
 @static-lib lib/libdialog.a
 @man man/man1/dialog.1
+@man man/man3/dialog.3
 share/locale/an/
 share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/dialog.mo
