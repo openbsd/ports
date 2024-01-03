@@ -1,6 +1,6 @@
 COMMENT =	ARP level ping utility
 
-DISTNAME =	arping-2.23
+DISTNAME =	arping-2.24
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.habets.pp.se/synscan/programs.php?prog=ARPing
