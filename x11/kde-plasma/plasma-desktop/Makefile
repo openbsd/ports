@@ -28,6 +28,8 @@ MODKDE5_DOCS =		Yes
 BUILD_DEPENDS =	textproc/intltool \
 		productivity/kuserfeedback \
 		x11/kde-plasma/kwin>=${VERSION} \
+		wayland/wayland-protocols \
+		wayland/plasma-wayland-protocols \
 		devel/kf5/kirigami2 \
 		devel/kf5/qqc2-desktop-style
 
@@ -91,8 +93,8 @@ CONFIGURE_ARGS = \
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-CFLAGS +=  -I${LOCALBASE}/include/
-CXXFLAGS +=        -I${LOCALBASE}/include/
+CFLAGS +=		-I${LOCALBASE}/include/
+CXXFLAGS +=		-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
