@@ -1,6 +1,6 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION =	1.81
+MODPY_EGG_VERSION =	1.82
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
@@ -19,8 +19,6 @@ MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-WANTLIB +=	pthread
 
 BUILD_DEPENDS =	devel/swig \
 		math/py-numpy${MODPY_FLAVOR}

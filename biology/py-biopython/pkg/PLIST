@@ -49,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}a2m.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}a2m.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}analysis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bigbed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bigmaf.${MODP
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bigmaf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bigpsl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}bigpsl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}chain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}chain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}clustal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}clustal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}emboss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,13 +91,17 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}stockholm.${M
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}stockholm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}tabular.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/${MODPY_PYCACHE}tabular.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Align/_aligners.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/Align/_aligners.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/_codonaligner.c
+@so lib/python${MODPY_VERSION}/site-packages/Bio/Align/_codonaligner.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/_pairwisealigner.c
+@so lib/python${MODPY_VERSION}/site-packages/Bio/Align/_pairwisealigner.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/a2m.py
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/analysis.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/bed.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/bigbed.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/bigmaf.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/bigpsl.py
+lib/python${MODPY_VERSION}/site-packages/Bio/Align/chain.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/clustal.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/emboss.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Align/exonerate.py
@@ -194,7 +202,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Blast/
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Applications.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/NCBIWWW.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/NCBIXML.py
-lib/python${MODPY_VERSION}/site-packages/Bio/Blast/ParseBlastTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/Record.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}/
@@ -204,8 +211,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}NCBIWWW.${MOD
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}NCBIWWW.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}NCBIXML.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}NCBIXML.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}ParseBlastTable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}ParseBlastTable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}Record.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}Record.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Blast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -233,7 +238,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Data/
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/CodonTable.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/IUPACData.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/PDBData.py
-lib/python${MODPY_VERSION}/site-packages/Bio/Data/SCOPData.py
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}CodonTable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -242,8 +246,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}IUPACData.${MO
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}IUPACData.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}PDBData.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}PDBData.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}SCOPData.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}SCOPData.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/Data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/Emboss/
@@ -778,13 +780,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/PDB/PDBParser.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/PICIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/PSEA.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Polypeptide.py
-lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/
-lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.c
-@so lib/python${MODPY_VERSION}/site-packages/Bio/PDB/QCPSuperimposer/qcprotmodule.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/Residue.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/ResidueDepth.py
 lib/python${MODPY_VERSION}/site-packages/Bio/PDB/SASA.py
@@ -1076,12 +1071,9 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_tab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_tab.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_xml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/${MODPY_PYCACHE}blast_xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/blast_tab.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/blast_text.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlastIO/blast_xml.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/BlatIO.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/ExonerateIO/
@@ -1151,17 +1143,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/${MODPY_PYCACHE}_index.${M
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_index.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/NCBIStandalone.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/ParserSupport.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}NCBIStandalone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}NCBIStandalone.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}ParserSupport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}ParserSupport.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_legacy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_model/
 lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_model/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/SearchIO/_model/${MODPY_PYCACHE}/
@@ -1255,8 +1236,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqIO/_twoBitIO.c
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqRecord.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CheckSum.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CodonUsage.py
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/CodonUsageIndices.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/IsoelectricPoint.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/MeltingTemp.py
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/ProtParam.py
@@ -1265,10 +1244,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CheckSum.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CheckSum.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CodonUsage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CodonUsage.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CodonUsageIndices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}CodonUsageIndices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}IsoelectricPoint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}IsoelectricPoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/SeqUtils/${MODPY_PYCACHE}MeltingTemp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1333,17 +1308,6 @@ lib/python${MODPY_VERSION}/site-packages/Bio/UniProt/${MODPY_PYCACHE}GOA.${MODPY
 lib/python${MODPY_VERSION}/site-packages/Bio/UniProt/${MODPY_PYCACHE}GOA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/UniProt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Bio/UniProt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}dnal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}dnal.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}psw.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/${MODPY_PYCACHE}psw.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/dnal.py
-lib/python${MODPY_VERSION}/site-packages/Bio/Wise/psw.py
 lib/python${MODPY_VERSION}/site-packages/Bio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Bio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Bio/${MODPY_PYCACHE}File.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1453,6 +1417,7 @@ lib/python${MODPY_VERSION}/site-packages/Bio/phenotype/${MODPY_PYCACHE}pm_fittin
 lib/python${MODPY_VERSION}/site-packages/Bio/phenotype/${MODPY_PYCACHE}pm_fitting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Bio/phenotype/phen_micro.py
 lib/python${MODPY_VERSION}/site-packages/Bio/phenotype/pm_fitting.py
+lib/python${MODPY_VERSION}/site-packages/Bio/py.typed
 lib/python${MODPY_VERSION}/site-packages/BioSQL/
 lib/python${MODPY_VERSION}/site-packages/BioSQL/BioSeq.py
 lib/python${MODPY_VERSION}/site-packages/BioSQL/BioSeqDatabase.py
@@ -1470,6 +1435,7 @@ lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}Loader.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}Loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/BioSQL/py.typed
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
