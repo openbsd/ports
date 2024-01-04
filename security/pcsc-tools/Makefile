@@ -1,6 +1,6 @@
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.7.0
+DISTNAME=	pcsc-tools-1.7.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security sysutils
@@ -22,6 +22,7 @@ USE_GMAKE=	Yes
 BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/p5-libintl \
 		security/p5-Chipcard-PCSC \
 		x11/p5-Gtk3
 LIB_DEPENDS=	security/pcsc-lite
