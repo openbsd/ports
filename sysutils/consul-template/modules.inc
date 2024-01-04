@@ -19,7 +19,7 @@ MODGO_MODULES =	\
 	github.com/docker/go-units				 v0.5.0 \
 	github.com/fatih/color					 v1.14.1 \
 	github.com/frankban/quicktest				 v1.14.3 \
-	github.com/go-jose/go-jose/v3				 v3.0.0 \
+	github.com/go-jose/go-jose/v3				 v3.0.1 \
 	github.com/go-kit/kit					 v0.9.0 \
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-stack/stack				 v1.8.0 \
@@ -102,13 +102,13 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify				 v1.8.4 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
 	github.com/yuin/goldmark				 v1.4.13 \
-	golang.org/x/crypto					 v0.14.0 \
+	golang.org/x/crypto					 v0.17.0 \
 	golang.org/x/exp					 v0.0.0-20230817173708-d852ddb80c63 \
 	golang.org/x/mod					 v0.12.0 \
 	golang.org/x/net					 v0.17.0 \
 	golang.org/x/sync					 v0.2.0 \
-	golang.org/x/sys					 v0.14.0 \
-	golang.org/x/term					 v0.13.0 \
+	golang.org/x/sys					 v0.15.0 \
+	golang.org/x/term					 v0.15.0 \
 	golang.org/x/text					 v0.14.0 \
 	golang.org/x/time					 v0.3.0 \
 	golang.org/x/tools					 v0.12.1-0.20230815132531-74c255bcf846 \
@@ -131,6 +131,7 @@ MODGO_MODFILES =	\
 	github.com/fatih/color				 v1.13.0 \
 	github.com/fatih/color				 v1.7.0 \
 	github.com/fatih/color				 v1.9.0 \
+	github.com/go-jose/go-jose/v3			 v3.0.0 \
 	github.com/go-kit/kit				 v0.8.0 \
 	github.com/go-logfmt/logfmt			 v0.3.0 \
 	github.com/golang/protobuf			 v1.2.0 \
@@ -218,6 +219,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.0.0-20190911031432-227b76d455e7 \
 	golang.org/x/crypto				 v0.0.0-20190923035154-9ee001bba392 \
 	golang.org/x/crypto				 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto				 v0.14.0 \
 	golang.org/x/crypto				 v0.3.0 \
 	golang.org/x/crypto				 v0.6.0 \
 	golang.org/x/mod				 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
@@ -272,6 +274,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.5.0 \
 	golang.org/x/term				 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term				 v0.0.0-20210927222741-03fcf44c2211 \
+	golang.org/x/term				 v0.13.0 \
 	golang.org/x/term				 v0.2.0 \
 	golang.org/x/term				 v0.5.0 \
 	golang.org/x/text				 v0.13.0 \
