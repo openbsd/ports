@@ -1,7 +1,7 @@
 Index: cmake/OpenCVCompilerOptions.cmake
 --- cmake/OpenCVCompilerOptions.cmake.orig
 +++ cmake/OpenCVCompilerOptions.cmake
-@@ -373,7 +373,7 @@ endif()
+@@ -391,7 +391,7 @@ endif()
  
  # Apply "-Wl,--no-undefined" linker flags: https://github.com/opencv/opencv/pull/21347
  if(NOT OPENCV_SKIP_LINK_NO_UNDEFINED)
