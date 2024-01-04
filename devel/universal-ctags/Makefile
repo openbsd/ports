@@ -1,6 +1,6 @@
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
-V =		6.0.0
+V =		6.1.0
 DISTNAME =	universal-ctags-${V}
 
 CATEGORIES =	devel
@@ -11,7 +11,7 @@ SITES =	https://github.com/universal-ctags/ctags/releases/download/v${V}/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c pcre2-8 pthread xml2 yaml-0
+WANTLIB += c m pcre2-8 pthread xml2 yaml-0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
