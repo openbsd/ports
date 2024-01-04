@@ -38,7 +38,7 @@ Index: boost/atomic/detail/futex.hpp
  {
 -#if !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
 +#if defined(__OpenBSD__)
-+    return futex(static_cast < volatile uint32_t * >(addr1), op, val1, nullptr, static_cast < volatile uint32_t * >(addr2));
++    return ::futex(static_cast < volatile uint32_t * >(addr1), op, val1, nullptr, static_cast < volatile uint32_t * >(addr2));
 +#elif !defined(BOOST_ATOMIC_DETAIL_NETBSD_FUTEX)
      return ::syscall(BOOST_ATOMIC_DETAIL_SYS_FUTEX, addr1, op, val1, static_cast< atomics::detail::uintptr_t >(val2), addr2, val3);
  #else

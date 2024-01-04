@@ -1,6 +1,8 @@
 Fix powerpc and powerpc64, where clang defines __POWERPC__ but rejects
 Darwin's "r27" syntax with "error: invalid operand for instruction".
 
+https://github.com/boostorg/fiber/commit/4d776f7e5ddf7821f8e3541a6ab7bc36ed00932b
+
 Index: boost/fiber/detail/cpu_relax.hpp
 --- boost/fiber/detail/cpu_relax.hpp.orig
 +++ boost/fiber/detail/cpu_relax.hpp
