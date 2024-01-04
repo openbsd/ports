@@ -187,7 +187,6 @@
      SUBDIR += libvmdk
      SUBDIR += libvshadow
      SUBDIR += libvslvm
-     SUBDIR += llama
      SUBDIR += lockfile
      SUBDIR += logfmon
      SUBDIR += login_duo
@@ -468,6 +467,7 @@
      SUBDIR += vmwh
      SUBDIR += vorta
      SUBDIR += vultr-cli
+     SUBDIR += walk
      SUBDIR += whowatch
      SUBDIR += wmapm
      SUBDIR += wmcube
