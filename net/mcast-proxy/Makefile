@@ -1,9 +1,7 @@
 COMMENT =		multicast proxy daemon
 
-GH_ACCOUNT =		bket
-GH_PROJECT =		mcast-proxy
-GH_COMMIT =		6222960d03eb7911918388d39c687b75aca9ee59
-DISTNAME =		${GH_PROJECT}-1.0.20230329
+DIST_TUPLE =		github bket mcast-proxy 07978f1151e827ed94d007057e8892272fb4204d /
+DISTNAME =		mcast-proxy-1.0.20231121
 
 CATEGORIES =		net
 
