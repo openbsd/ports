@@ -1,0 +1,4 @@
+@conflict llama-*
+@pkgpath sysutils/llama
+bin/llama
+@bin bin/walk
