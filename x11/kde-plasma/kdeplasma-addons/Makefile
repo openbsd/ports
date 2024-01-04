@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kdeplasma-addons-kf5-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    0.0 # 0.0
 
@@ -18,6 +19,9 @@ WANTLIB += icui18n icuuc m
 
 MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_ICON_CACHE = Yes
+
+BUILD_DEPENDS =	archivers/gtar \
+		devel/kf5/purpose
 
 LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/kauth \
@@ -43,6 +47,7 @@ LIB_DEPENDS +=	devel/kf5/attica \
 		devel/kf5/plasma-framework \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		devel/kf5/knotifications \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
@@ -53,5 +58,8 @@ CFLAGS +=	-I${LOCALBASE}/include/
 CXXFLAGS +=	-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
