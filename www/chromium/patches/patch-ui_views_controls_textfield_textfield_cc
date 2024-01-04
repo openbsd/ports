@@ -46,7 +46,7 @@ Index: ui/views/controls/textfield/textfield.cc
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2454,14 +2454,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2437,14 +2437,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }
