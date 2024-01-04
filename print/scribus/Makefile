@@ -1,9 +1,8 @@
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.5.8
+DISTNAME=	scribus-1.6.0
 CATEGORIES=	print
-REVISION=	2
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -45,8 +44,6 @@ LIB_DEPENDS=	graphics/lcms2 \
 		graphics/jpeg \
 		${MODPY_LIB_DEPENDS}
 
-# XXX - remove after update to >=1.7.0
-CXXFLAGS+=	-D _LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 CXXFLAGS+=	-D CMS_NO_REGISTER_KEYWORD
 CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
 			-DWANT_NOOSG=1 \

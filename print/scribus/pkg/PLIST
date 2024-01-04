@@ -1785,16 +1785,22 @@ share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/scribus.png
 share/icons/hicolor/128x128/apps/scribus.png
+share/icons/hicolor/128x128/mimetypes/application-vnd.scribus.png
 share/icons/hicolor/16x16/apps/scribus.png
+share/icons/hicolor/16x16/mimetypes/application-vnd.scribus.png
 share/icons/hicolor/256x256/apps/scribus.png
+share/icons/hicolor/256x256/mimetypes/application-vnd.scribus.png
 share/icons/hicolor/32x32/apps/scribus.png
+share/icons/hicolor/32x32/mimetypes/application-vnd.scribus.png
 share/icons/hicolor/512x512/apps/scribus.png
+share/icons/hicolor/64x64/mimetypes/application-vnd.scribus.png
 share/metainfo/
 share/metainfo/scribus.appdata.xml
 share/mime/packages/scribus.xml
 share/scribus/
 share/scribus/dicts/
 share/scribus/dicts/hyph/
+share/scribus/dicts/hyph/README_NL.txt
 share/scribus/dicts/hyph/README_ca_ES.txt
 share/scribus/dicts/hyph/README_cs_CZ.txt
 share/scribus/dicts/hyph/README_cy_GB.txt
@@ -1853,7 +1859,7 @@ share/scribus/dicts/hyph/hyph_ku.dic
 share/scribus/dicts/hyph/hyph_lt.dic
 share/scribus/dicts/hyph/hyph_ml_IN.dic
 share/scribus/dicts/hyph/hyph_nb_NO.dic
-share/scribus/dicts/hyph/hyph_nl.dic
+share/scribus/dicts/hyph/hyph_nl_NL.dic
 share/scribus/dicts/hyph/hyph_nn_NO.dic
 share/scribus/dicts/hyph/hyph_pl.dic
 share/scribus/dicts/hyph/hyph_pt.dic
@@ -2488,6 +2494,7 @@ share/scribus/icons/1_5_1/16/draw-triangle1.png
 share/scribus/icons/1_5_1/16/draw-triangle2.png
 share/scribus/icons/1_5_1/16/draw-triangle3.png
 share/scribus/icons/1_5_1/16/draw-triangle4.png
+share/scribus/icons/1_5_1/16/dropdown-menu.png
 share/scribus/icons/1_5_1/16/edit-clear.png
 share/scribus/icons/1_5_1/16/edit-copy.png
 share/scribus/icons/1_5_1/16/edit-cut.png
@@ -2881,6 +2888,7 @@ share/scribus/icons/1_5_1_dark/16/draw-triangle1.png
 share/scribus/icons/1_5_1_dark/16/draw-triangle2.png
 share/scribus/icons/1_5_1_dark/16/draw-triangle3.png
 share/scribus/icons/1_5_1_dark/16/draw-triangle4.png
+share/scribus/icons/1_5_1_dark/16/dropdown-menu.png
 share/scribus/icons/1_5_1_dark/16/edit-clear.png
 share/scribus/icons/1_5_1_dark/16/edit-copy.png
 share/scribus/icons/1_5_1_dark/16/edit-cut.png
@@ -3125,6 +3133,8 @@ share/scribus/icons/1_5_1_dark/ellipsis.png
 share/scribus/icons/1_5_1_dark/exit.png
 share/scribus/icons/1_5_1_dark/exit22.png
 share/scribus/icons/1_5_1_dark/expand.png
+share/scribus/icons/1_5_1_dark/fill-rule-even-odd.png
+share/scribus/icons/1_5_1_dark/fill-rule-nonzero.png
 share/scribus/icons/1_5_1_dark/find.png
 share/scribus/icons/1_5_1_dark/find16.png
 share/scribus/icons/1_5_1_dark/firstline.png
@@ -3182,6 +3192,7 @@ share/scribus/icons/1_5_1_dark/rgb.png
 share/scribus/icons/1_5_1_dark/rightindent.png
 share/scribus/icons/1_5_1_dark/rotate_ccw.png
 share/scribus/icons/1_5_1_dark/rotate_cw.png
+share/scribus/icons/1_5_1_dark/round-corners.png
 share/scribus/icons/1_5_1_dark/scrap_16.png
 share/scribus/icons/1_5_1_dark/scribus.png
 share/scribus/icons/1_5_1_dark/scribus16.png
@@ -3612,6 +3623,7 @@ share/scribus/translations/scribus.ja.qm
 share/scribus/translations/scribus.kab.qm
 share/scribus/translations/scribus.kn_IN.qm
 share/scribus/translations/scribus.ko.qm
+share/scribus/translations/scribus.lb.qm
 share/scribus/translations/scribus.lt_LT.qm
 share/scribus/translations/scribus.ml.qm
 share/scribus/translations/scribus.mn_MN.qm

@@ -1,12 +1,10 @@
 Index: scribus/util.cpp
 --- scribus/util.cpp.orig
 +++ scribus/util.cpp
-@@ -41,8 +41,10 @@ for which a new license (GPL+exception) is in place.
- 
+@@ -44,7 +44,9 @@ for which a new license (GPL+exception) is in place.
  #include <csignal>
  
--#if !defined(_WIN32) && !defined(Q_OS_MAC) 
-+#if !defined(_WIN32) && !defined(Q_OS_MAC)
+ #if !defined(_WIN32) && !defined(Q_OS_MACOS) 
 +#ifndef __OpenBSD__
  #include <execinfo.h>
 +#endif
