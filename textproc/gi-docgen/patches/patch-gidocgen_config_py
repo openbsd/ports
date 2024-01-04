@@ -1,0 +1,15 @@
+Index: gidocgen/config.py
+--- gidocgen/config.py.orig
++++ gidocgen/config.py
+@@ -195,6 +195,11 @@ class GIDocConfig:
+ 
+     @property
+     def show_class_hierarchy(self):
++        # don't depend on dot(1) for ports builds; if around it will be used and
++        # potentially junked by dpb(1) so just pretend it's not there by
++        # checking for BSD_INSTALL_PROGRAM which is defined in bsd.port.mk(5)
++        if os.getenv('BSD_INSTALL_PROGRAM') is not None:
++            return False
+         if utils.find_program('dot') is None:
+             return False
+         return self.theme.get('show_class_hierarchy', False)

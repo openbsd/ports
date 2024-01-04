@@ -2,6 +2,7 @@ COMMENT=		documentation generator for GObject-based libraries
 
 GNOME_PROJECT=		gi-docgen
 GNOME_VERSION=		2023.3
+REVISION=		0
 
 # override gnome MODULE
 SITES ?=         	${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+)\..*/\1/}/}
