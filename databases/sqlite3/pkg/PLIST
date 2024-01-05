@@ -121,6 +121,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_finalize.3
 @man man/man3/sqlite3_get_autocommit.3
 @man man/man3/sqlite3_get_auxdata.3
+@man man/man3/sqlite3_get_clientdata.3
 @man man/man3/sqlite3_get_table.3
 @man man/man3/sqlite3_index_info.3
 @man man/man3/sqlite3_initialize.3
@@ -228,6 +229,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3changegroup_delete.3
 @man man/man3/sqlite3changegroup_new.3
 @man man/man3/sqlite3changegroup_output.3
+@man man/man3/sqlite3changegroup_schema.3
 @man man/man3/sqlite3changeset_apply.3
 @man man/man3/sqlite3changeset_apply_strm.3
 @man man/man3/sqlite3changeset_concat.3
@@ -241,6 +243,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3changeset_op.3
 @man man/man3/sqlite3changeset_pk.3
 @man man/man3/sqlite3changeset_start.3
+@man man/man3/sqlite3changeset_upgrade.3
 @man man/man3/sqlite3rebaser_configure.3
 @man man/man3/sqlite3rebaser_create.3
 @man man/man3/sqlite3rebaser_delete.3
