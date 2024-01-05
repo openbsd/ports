@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="/usr/local/bin/spotifyd"
+daemon="${TRUEPREFIX}/bin/spotifyd"
 daemon_user="_spotifyd"
 
 . /etc/rc.d/rc.subr
