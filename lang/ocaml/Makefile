@@ -3,7 +3,7 @@ COMMENT =	   ML language with complete class-based objective system
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
 VERSION=	4.13.1
-REVISION=	0
+REVISION=	1
 
 # if the ocaml compiler gains support for BTI, as well as
 # removing USE_NOBTCFI here (or changing to an arch-dependent
@@ -45,8 +45,10 @@ CONFIGURE_ARGS +=	--disable-force-safe-string \
 CFLAGS +=	-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
 
-# non-PIC assembly in asmrun/i386.S
 .if ${MACHINE_ARCH} == "i386"
+# configure: error: fma does not work, enable emulation with --enable-imprecise-c99-float-ops
+CONFIGURE_ARGS +=	--enable-imprecise-c99-float-ops
+# non-PIC assembly in asmrun/i386.S
 LDFLAGS+=		-Wl,-z,notext
 .endif
 
