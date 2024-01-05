@@ -2,12 +2,10 @@ COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
 PORTROACH=	limit:^7
-V=		7.12.1
+V=		7.15.0
 DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
-
-REVISION-main=	0
 
 HOMEPAGE=	https://puppet.com/docs/puppetdb/
 
@@ -20,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	java \
 		lang/ruby
-MODJAVA_VER=	1.8+
+MODJAVA_VER=	11+
 
 MULTI_PACKAGES= -main -plugin
 
