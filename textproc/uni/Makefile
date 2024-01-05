@@ -1,9 +1,10 @@
 COMMENT =	query the unicode database from the commandline
 
-MODGO_MODNAME =	arp242.net/uni
-MODGO_VERSION =	v1.1.1
+MODGO_MODNAME =	zgo.at/uni/v2
+MODGO_VERSION =	v2.6.0
 DISTNAME =	uni-${MODGO_VERSION}
-REVISION =	0
+
+HOMEPAGE =	https://github.com/arp242/uni
 
 CATEGORIES =	textproc
 
@@ -13,7 +14,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MODULES =	lang/go
-MODGO_MODULES =	\
-	golang.org/x/sys	v0.0.0-20191120155948-bd437916bb0e
 
+.include "modules.inc"
 .include <bsd.port.mk>
