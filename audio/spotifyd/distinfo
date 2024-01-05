@@ -219,6 +219,7 @@ SHA256 (cargo/petgraph-0.6.3.tar.gz) = TdfSjuk35U/jCAyR+qHDpGwG3mJSmIp/RZK6IxDvI
 SHA256 (cargo/pin-project-lite-0.2.9.tar.gz) = 4KeuOsLxFzCF05hTHHBXVslKTFaEN4XfhaYMGgr6wRY=
 SHA256 (cargo/pin-utils-0.1.0.tar.gz) = i4cNjBUbby+5PoShMUYTjwXQLtEcfnxU+IJqqvfJ8YQ=
 SHA256 (cargo/pkg-config-0.3.26.tar.gz) = asmln3NHPxuNhSQh5Z5kgJ8CWZSDfvdDYVxtDFswUWA=
+SHA256 (cargo/pledge-0.4.2.tar.gz) = JSWZQXt9mkO3/cY915CwhIZmqJELLr4aJRGDCcPJgeU=
 SHA256 (cargo/polling-2.6.0.tar.gz) = fh+HmymYCZwtaauWBdFF1bZhGVYn7MxoAALEkYp/tvo=
 SHA256 (cargo/portaudio-rs-0.3.2.tar.gz) = zba17/lszJv0TTTDeasDrpREJtg9FpQ0W9+BWdVh1WI=
 SHA256 (cargo/portaudio-sys-0.1.1.tar.gz) = UZSk+pU7T/2FHDIO9vBITNcnjLcWnqnWxDPkmyP3t/U=
@@ -595,6 +596,7 @@ SIZE (cargo/petgraph-0.6.3.tar.gz) = 185740
 SIZE (cargo/pin-project-lite-0.2.9.tar.gz) = 27713
 SIZE (cargo/pin-utils-0.1.0.tar.gz) = 7580
 SIZE (cargo/pkg-config-0.3.26.tar.gz) = 18662
+SIZE (cargo/pledge-0.4.2.tar.gz) = 4779
 SIZE (cargo/polling-2.6.0.tar.gz) = 41714
 SIZE (cargo/portaudio-rs-0.3.2.tar.gz) = 13267
 SIZE (cargo/portaudio-sys-0.1.1.tar.gz) = 2327

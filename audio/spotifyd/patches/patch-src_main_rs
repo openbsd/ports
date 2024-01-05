@@ -1,0 +1,65 @@
+use pledge(2)
+
+Index: src/main.rs
+--- src/main.rs.orig
++++ src/main.rs
+@@ -9,6 +9,8 @@ use daemonize::Daemonize;
+ use log::{error, info, trace, LevelFilter};
+ use structopt::StructOpt;
+ use tokio::runtime::Runtime;
++#[cfg(target_os = "openbsd")]
++use pledge::{pledge, pledge_promises, Promise, ToPromiseString};
+ 
+ #[cfg(feature = "alsa_backend")]
+ mod alsa_mixer;
+@@ -60,6 +62,11 @@ fn setup_logger(log_target: LogTarget, verbose: bool) 
+ }
+ 
+ fn main() -> eyre::Result<()> {
++    // Start with superset of all potential promises.
++    // Drop later after CLI arguments and configuration files were parsed.
++    #[cfg(target_os = "openbsd")]
++    pledge_promises![Stdio Rpath Wpath Cpath Inet Mcast Flock Chown Unix Dns Proc Exec Audio].unwrap();
++
+     color_eyre::install().wrap_err("Couldn't initialize error reporting")?;
+ 
+     let mut cli_config: CliConfig = CliConfig::from_args();
+@@ -100,6 +107,38 @@ fn main() -> eyre::Result<()> {
+             Ok(_) => info!("Detached from shell, now running in background."),
+             Err(e) => error!("Something went wrong while daemonizing: {}", e),
+         };
++    }
++
++    if cfg!(target_os = "openbsd") {
++        // At this point:
++        //   * --username-cmd, --password-cmd were handled
++        //     => no "proc exec"
++        //   * --pid, daemon(3) were handled
++        //     => no "cpath flock chown" for PID file
++        //     => no "proc" for double-fork(2)
++        //
++        // Minimum subset of permanent promises:
++        let mut promises = vec![
++            Promise::Stdio,  // logging
++            Promise::Rpath,  // 1. ${TMPDIR}/.tmp*  O_RDWR|O_CREAT|O_EXCL|O_CLOEXEC
++            Promise::Wpath,  // ...
++            Promise::Cpath,  // 2. --cache-path aka. "cache_path"
++            Promise::Inet,   // internet Spotify
++            Promise::Mcast,  // local Zeroconf Discovery
++            Promise::Unix,   // sndio(7), D-Bus (keyring, MPRIS)
++            Promise::Dns,    // internet Spotify
++            Promise::Audio,  // sndio(7)
++        ];
++
++        // --on-song-change-hook aka. "onevent"
++        if internal_config.onevent.is_some() {
++            promises.push(Promise::Proc); // always run through --shell aka. "shell"
++            promises.push(Promise::Exec); // defaults to "sh"
++        }
++
++        // Second and final pledge before runtime starts.
++        // "mcast" could go if a) username is given and b) password/keyring worked.
++        pledge(&*promises.to_promise_string(), None).unwrap();
+     }
+ 
+     let runtime = Runtime::new().unwrap();

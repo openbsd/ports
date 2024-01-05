@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 COMMENT =		Spotify client running as UNIX daemon
 DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
 CATEGORIES =		audio net
-REVISION =		3
+REVISION =		4
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -13,6 +13,7 @@ HOMEPAGE =		https://spotifyd.rs
 # GPLv3.0
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
 
 MODULES =		devel/cargo

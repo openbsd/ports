@@ -218,6 +218,7 @@ MODCARGO_CRATES +=	petgraph	0.6.3	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	pin-project-lite	0.2.9	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	pin-utils	0.1.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	pkg-config	0.3.26	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	pledge	0.4.2	# MIT
 MODCARGO_CRATES +=	polling	2.6.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	portaudio-rs	0.3.2	# MIT
 MODCARGO_CRATES +=	portaudio-sys	0.1.1	# MIT
