@@ -2,9 +2,8 @@ PORTROACH =		limit:^7
 
 COMMENT =		Puppet server
 
-VERSION =		7.9.5
+VERSION =		7.14.0
 DISTNAME =		puppetserver-${VERSION}
-REVISION =		0
 
 
 CATEGORIES =		sysutils
@@ -17,7 +16,7 @@ SITES =			https://downloads.puppetlabs.com/puppet/
 
 MODULES =		java \
 			lang/ruby
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 
 RUN_DEPENDS =		databases/puppetdb/7,-plugin \
 			java/javaPathHelper \
