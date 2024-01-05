@@ -29,7 +29,6 @@ BUILD_DEPENDS +=	devel/py-pkgconfig${MODPY_FLAVOR} \
 RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR}
 
 PORTHOME =		${WRKDIR}
