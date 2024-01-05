@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.435 2023/12/17 21:25:50 mbuhl Exp $
+$OpenBSD: user.list,v 1.436 2024/01/05 14:40:32 kn Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -105,7 +105,7 @@ id  user		group		port
 #594 _ejabberd		_ejabberd	net/ejabberd
 595 _poppassd		_poppassd	sysutils/openpoppassd
 #596 _heartbeat		_heartbeat	sysutils/heartbeat
-#597			_kqemu		emulators/kqemu
+597 _spotifyd		_spotifyd	audio/spotifyd
 598 _iodine		_iodine		net/iodine
 599 _bacula-sd				sysutils/bacula
 #600 _ntlmaps		_ntlmaps	www/ntlmaps
