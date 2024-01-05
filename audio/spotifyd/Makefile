@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
 COMMENT =		Spotify client running as UNIX daemon
 DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
 CATEGORIES =		audio net
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -31,10 +31,15 @@ MODCARGO_FEATURES =	dbus_keyring \
 			portaudio_backend
 
 DOC_DIR =		${PREFIX}/doc/${PKGSTEM}
+EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
+HOME_DIR =		${LOCALSTATEDIR}/${PKGSTEM}
+SUBST_VARS =		HOME_DIR
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/src/config/File.md ${DOC_DIR}/
+	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
+	${SUBST_DATA} {${FILESDIR},${EXAMPLES_DIR}}/${PKGSTEM}.conf
 
 .include "crates.inc"
 .include <bsd.port.mk>
