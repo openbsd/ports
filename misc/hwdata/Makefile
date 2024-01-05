@@ -4,9 +4,7 @@ COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.377-2
-# XXX drop at next release
-PKGNAME=		hwdata-0.377
+GH_TAGNAME=		v0.378
 
 CATEGORIES=		misc
 
