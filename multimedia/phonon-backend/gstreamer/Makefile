@@ -2,7 +2,7 @@ COMMENT =	GStreamer-based Phonon backend
 
 VERSION =	4.10.0
 DISTNAME =	phonon-backend-gstreamer-${VERSION}
-REVISION =	2
+REVISION =	3
 
 SITES =		${SITE_KDE:=stable/phonon/phonon-backend-gstreamer/${VERSION}/}
 EXTRACT_SUFX = .tar.xz

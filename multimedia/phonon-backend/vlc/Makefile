@@ -1,7 +1,6 @@
 COMMENT =	VLC-based Phonon backend
-VERSION =	0.11.2
+VERSION =	0.12.0
 DISTNAME =	phonon-backend-vlc-${VERSION}
-REVISION =	0
 
 SITES =		${SITE_KDE:=stable/phonon/phonon-backend-vlc/${VERSION}/}
 EXTRACT_SUFX = .tar.xz
@@ -16,5 +15,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		x11/vlc
 
 NO_TEST =		Yes
+
+CONFIGURE_ARGS =	-DPHONON_BUILD_QT6=OFF
 
 .include <bsd.port.mk>
