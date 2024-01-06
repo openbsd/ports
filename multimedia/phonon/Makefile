@@ -2,7 +2,7 @@ COMMENT =	multimedia layer for Qt5/KDE5
 
 CATEGORIES =	multimedia devel
 
-VERSION =	4.11.1
+VERSION =	4.12.0
 DISTNAME =	phonon-${VERSION}
 
 # XXX major should be tweaked on any update, to unbreak
@@ -34,5 +34,8 @@ RUN_DEPENDS =		x11/qt5/qtdeclarative
 
 # Clashes with the one provided by Qt itself.
 CONFIGURE_ARGS +=	-DPHONON_BUILD_DESIGNER_PLUGIN=OFF
+
+# Qt5 only port
+CONFIGURE_ARGS +=	-DPHONON_BUILD_QT6=OFF
 
 .include <bsd.port.mk>
