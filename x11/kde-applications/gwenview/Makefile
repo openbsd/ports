@@ -1,6 +1,7 @@
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               59.4 # 4.97
 
@@ -24,7 +25,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	wayland/wayland-protocols
+BUILD_DEPENDS =	wayland/wayland-protocols \
+		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/kf5/kfilemetadata \
 		x11/kde-applications/ffmpegthumbs>=${MODKDE_VERSION} \
@@ -55,14 +57,15 @@ LIB_DEPENDS =	devel/kf5/baloo \
 		devel/kf5/sonnet \
 		graphics/exiv2 \
 		graphics/jpeg \
+		graphics/kimageannotator \
 		graphics/lcms2 \
 		graphics/png \
 		math/cfitsio \
+		multimedia/phonon \
 		x11/kde-applications/libkdcraw>=${MODKDE_VERSION} \
-		graphics/kimageannotator \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras \
-		multimedia/phonon
+		wayland/wayland
 
 TEST_IS_INTERACTIVE =	X11
 
