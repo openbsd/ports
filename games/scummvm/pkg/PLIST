@@ -1,6 +1,8 @@
 @bin bin/scummvm
 @man man/man6/scummvm.6
-share/applications/scummvm.desktop
+share/applications/org.scummvm.scummvm.desktop
+share/applications/scummvm.desktop/
+share/applications/scummvm.desktop/org.scummvm.scummvm.desktop
 share/doc/scummvm/
 share/doc/scummvm/AUTHORS
 share/doc/scummvm/CONTRIBUTING.md
@@ -12,36 +14,44 @@ share/doc/scummvm/COPYING.ISC
 share/doc/scummvm/COPYING.LGPL
 share/doc/scummvm/COPYING.LUA
 share/doc/scummvm/COPYING.MIT
+share/doc/scummvm/COPYING.MKV
 share/doc/scummvm/COPYING.OFL
 share/doc/scummvm/COPYING.TINYGL
 share/doc/scummvm/COPYRIGHT
+share/doc/scummvm/COPYRIGHT.Roland_SC-55
+share/doc/scummvm/CatharonLicense.txt
 share/doc/scummvm/NEWS.md
 share/doc/scummvm/README.md
-share/icons/hicolor/scalable/apps/scummvm.svg
+share/icons/hicolor/scalable/apps/org.scummvm.scummvm.svg
 share/metainfo/
-share/metainfo/scummvm.appdata.xml
+share/metainfo/org.scummvm.scummvm.metainfo.xml
 share/pixmaps/
-share/pixmaps/scummvm.xpm
+share/pixmaps/org.scummvm.scummvm.xpm
 share/scummvm/
+share/scummvm/Roland_SC-55.sf2
 share/scummvm/access.dat
 share/scummvm/achievements.dat
 share/scummvm/classicmacfonts.dat
 share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
 share/scummvm/encoding.dat
+share/scummvm/fonts-cjk.dat
 share/scummvm/fonts.dat
 share/scummvm/freescape.dat
 share/scummvm/grim-patch.lab
 share/scummvm/gui-icons.dat
 share/scummvm/hadesch_translations.dat
+share/scummvm/helpdialog.zip
 share/scummvm/hugo.dat
 share/scummvm/kyra.dat
 share/scummvm/lure.dat
 share/scummvm/macgui.dat
 share/scummvm/mort.dat
 share/scummvm/myst3.dat
+share/scummvm/nancy.dat
 share/scummvm/neverhood.dat
 share/scummvm/pred.dic
+share/scummvm/prince_translation.dat
 share/scummvm/queen.tbl
 share/scummvm/residualvm.zip
 share/scummvm/scummclassic.zip
@@ -97,6 +107,8 @@ share/scummvm/shaders/stark_shadow.fragment
 share/scummvm/shaders/stark_shadow.vertex
 share/scummvm/shaders/stark_surface.fragment
 share/scummvm/shaders/stark_surface.vertex
+share/scummvm/shaders/stark_surface_fill.fragment
+share/scummvm/shaders/stark_surface_fill.vertex
 share/scummvm/shaders/wme_fade.fragment
 share/scummvm/shaders/wme_fade.vertex
 share/scummvm/shaders/wme_flat_shadow_mask.fragment
@@ -123,7 +135,7 @@ share/scummvm/tony.dat
 share/scummvm/toon.dat
 share/scummvm/translations.dat
 share/scummvm/ultima.dat
+share/scummvm/ultima8.dat
 share/scummvm/wintermute.zip
-share/scummvm/xeen.ccs
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

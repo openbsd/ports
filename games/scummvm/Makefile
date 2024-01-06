@@ -1,5 +1,5 @@
 COMMENT=	game interpreter
-V=		2.7.1
+V=		2.8.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 SITES=		https://downloads.scummvm.org/frs/scummvm/${V}/
@@ -51,6 +51,9 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-sdlnet \
 		--disable-system-dialogs \
 		--disable-tts \
+		--disable-enet \
+		--disable-mikmod \
+		--disable-vpx \
 		--enable-release \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
@@ -63,8 +66,8 @@ USE_GMAKE=	Yes
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1 USE_CURL=
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/dists/scummvm.desktop \
-	    ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/scummvm.desktop
+	${INSTALL_DATA} ${WRKSRC}/dists/org.scummvm.scummvm.desktop \
+	    ${PREFIX}/share/applications/scummvm.desktop/
 
 .include <bsd.port.mk>
