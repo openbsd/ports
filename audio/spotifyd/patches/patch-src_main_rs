@@ -3,8 +3,8 @@ use pledge(2)
 Index: src/main.rs
 --- src/main.rs.orig
 +++ src/main.rs
-@@ -9,6 +9,8 @@ use daemonize::Daemonize;
- use log::{error, info, trace, LevelFilter};
+@@ -14,6 +14,8 @@ use log::{info, trace, LevelFilter};
+ use std::fs;
  use structopt::StructOpt;
  use tokio::runtime::Runtime;
 +#[cfg(target_os = "openbsd")]
@@ -12,7 +12,7 @@ Index: src/main.rs
  
  #[cfg(feature = "alsa_backend")]
  mod alsa_mixer;
-@@ -60,6 +62,11 @@ fn setup_logger(log_target: LogTarget, verbose: bool) 
+@@ -85,6 +87,11 @@ fn setup_logger(log_target: LogTarget, verbose: bool) 
  }
  
  fn main() -> eyre::Result<()> {
@@ -24,13 +24,13 @@ Index: src/main.rs
      color_eyre::install().wrap_err("Couldn't initialize error reporting")?;
  
      let mut cli_config: CliConfig = CliConfig::from_args();
-@@ -100,6 +107,38 @@ fn main() -> eyre::Result<()> {
-             Ok(_) => info!("Detached from shell, now running in background."),
-             Err(e) => error!("Something went wrong while daemonizing: {}", e),
-         };
-+    }
+@@ -165,6 +172,40 @@ fn main() -> eyre::Result<()> {
+             exit(0);
+         }
+     }
 +
-+    if cfg!(target_os = "openbsd") {
++    #[cfg(target_os = "openbsd")]
++    {
 +        // At this point:
 +        //   * --username-cmd, --password-cmd were handled
 +        //     => no "proc exec"
@@ -60,6 +60,8 @@ Index: src/main.rs
 +        // Second and final pledge before runtime starts.
 +        // "mcast" could go if a) username is given and b) password/keyring worked.
 +        pledge(&*promises.to_promise_string(), None).unwrap();
-     }
++    }
++
  
      let runtime = Runtime::new().unwrap();
+     runtime.block_on(async {

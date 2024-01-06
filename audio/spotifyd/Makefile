@@ -1,10 +1,13 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Spotify client running as UNIX daemon
-DIST_TUPLE =		github	Spotifyd	spotifyd	v0.3.5	.
+# 06.01.2024 for merged patches and ring>=0.17
+HEAD_COMMIT =		059f5f3356a4e5e0fe4e623ea45485dd588a7aed
+DIST_TUPLE =		github	spotifyd	spotifyd	${HEAD_COMMIT}	.
+WRKDIST =		${WRKDIR}/spotifyd-${HEAD_COMMIT}
+DISTNAME =		spotifyd-0.3.5pl1
 CATEGORIES =		audio net
-REVISION =		4
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -17,8 +20,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
 
 MODULES =		devel/cargo
-
-BUILD_DEPENDS =		security/rust-ring
 
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main

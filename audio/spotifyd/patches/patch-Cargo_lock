@@ -1,25 +1,10 @@
-Bump keyring to latest release 2.3.0 to add OpenBSD support
-https://github.com/Spotifyd/spotifyd/pull/1254
-
 use pledge(2)
 
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -1442,9 +1442,9 @@ dependencies = [
- 
- [[package]]
- name = "keyring"
--version = "2.0.1"
-+version = "2.3.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "5bfd6f156b53b48cd89223a27b11f1cddaa5d9bd298b48af3b644c43a8ae5f0f"
-+checksum = "b52a1d320b55eacc02d4561fed9714af4e98b7989cf4e696bee192b03fc99720"
- dependencies = [
-  "byteorder",
-  "lazy_static",
-@@ -2277,6 +2277,15 @@ source = "registry+https://github.com/rust-lang/crates
- checksum = "6ac9a59f73473f1b8d852421e59e64809f025994837ef743615c6d0c5b305160"
+@@ -2292,6 +2292,15 @@ source = "registry+https://github.com/rust-lang/crates
+ checksum = "26072860ba924cbfa98ea39c8c19b4dd6a4a25423dbdf219c1eca91aa0cf6964"
  
  [[package]]
 +name = "pledge"
@@ -32,9 +17,9 @@ Index: Cargo.lock
 +
 +[[package]]
  name = "polling"
- version = "2.6.0"
+ version = "2.8.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2905,6 +2914,7 @@ dependencies = [
+@@ -2963,6 +2972,7 @@ dependencies = [
   "librespot-discovery",
   "librespot-playback",
   "log",
