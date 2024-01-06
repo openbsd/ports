@@ -1,3 +1,5 @@
+https://github.com/pjsip/pjproject/pull/3822
+
 Index: pjlib/src/pj/ssl_sock_ossl.c
 --- pjlib/src/pj/ssl_sock_ossl.c.orig
 +++ pjlib/src/pj/ssl_sock_ossl.c
