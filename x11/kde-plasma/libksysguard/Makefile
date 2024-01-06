@@ -1,6 +1,6 @@
 COMMENT =	KSysGuard library
 DISTNAME =	libksysguard-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KSysGuardFormatter         0.0 # 5.22.5
 SHARED_LIBS +=  KSysGuardSensorFaces       0.0 # 5.22.5
@@ -25,13 +25,14 @@ WANTLIB += SM X11 XRes Xext c m z
 MODKDE5_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/kf5/knewstuff \
+		devel/kf5/kcompletion \
 		x11/dbus,-suid
 
-BUILD_DEPENDS =	devel/kf5/knewstuff
+BUILD_DEPENDS =	devel/kf5/knewstuff \
+		devel/kf5/kcompletion
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
@@ -39,6 +40,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
+		devel/kf5/kiconthemes \
 		devel/kf5/kpackage \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
@@ -46,7 +48,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/solid \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebengine \
+		x11/qt5/qtwebchannel \
 		x11/qt5/qtx11extras
+
+TEST_DEPENDS =	devel/kf5/plasma-framework
 
 TEST_IS_INTERACTIVE =	X11
 
