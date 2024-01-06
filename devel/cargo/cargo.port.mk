@@ -340,16 +340,22 @@ do-build:
 	@${MODCARGO_BUILD_TARGET}
 .endif
 
-MODCARGO_INSTALL_TARGET_PATH ?= .
+MODCARGO_INSTALL_TARGET_PATHS ?= .
 
 # Define the install target.
-MODCARGO_INSTALL_TARGET = \
+MODCARGO_INSTALL_TARGET = :;
+
+.for _p in ${MODCARGO_INSTALL_TARGET_PATHS}
+MODCARGO_INSTALL_TARGET += \
 	${MODCARGO_CARGO_RUN} install \
 		--root="${PREFIX}" \
-		--path ${MODCARGO_INSTALL_TARGET_PATH} \
+		--path ${_p} \
 		--offline \
 		--verbose \
-		${MODCARGO_INSTALL_ARGS} ; \
+		${MODCARGO_INSTALL_ARGS} ;
+.endfor
+
+MODCARGO_INSTALL_TARGET += \
 	rm -- "${PREFIX}/.crates.toml" "${PREFIX}/.crates2.json" ;
 
 .if !target(do-install) && ${MODCARGO_INSTALL:L} == "yes"

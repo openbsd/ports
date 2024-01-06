@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo
 MODCARGO_FEATURES +=	jmap
-MODCARGO_INSTALL_TARGET_PATH =	meli
+MODCARGO_INSTALL_TARGET_PATHS =	meli
 
 .include "crates.inc"
 

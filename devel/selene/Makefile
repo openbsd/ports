@@ -23,7 +23,7 @@ SEPARATE_BUILD =		Yes
 
 BUILD_DEPENDS =			security/rust-ring
 
-MODCARGO_INSTALL_TARGET_PATH =	selene
+MODCARGO_INSTALL_TARGET_PATHS =	selene
 
 .include "crates.inc"
 
