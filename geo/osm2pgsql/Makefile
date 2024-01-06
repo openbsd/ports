@@ -1,3 +1,7 @@
+# CMake Error at CMakeLists.txt:20 (message):
+# osm2pgsql needs a 64 bit architecture
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		OSM data to PostgreSQL converter
 
 GH_TAGNAME =		1.10.0
