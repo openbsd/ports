@@ -1,6 +1,6 @@
 COMMENT =	typeface carefully crafted & designed for computer screens
 
-V =		0.051
+V =		0.053
 DISTNAME =	JuliaMono
 PKGNAME =	juliamono-$V
 
@@ -8,7 +8,7 @@ CATEGORIES =	fonts
 
 HOMEPAGE =	https://juliamono.netlify.app/
 
-MAINTAINER =    Laurence Tratt <laurie@tratt.net>
+MAINTAINER =    Justin Berthault <justin.berthault@zaclys.net>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
