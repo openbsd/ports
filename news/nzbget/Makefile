@@ -1,12 +1,10 @@
 COMMENT =	binary newsreader supporting NZB files
 
-VERSION =	21.1
-REVISION =	2
-DISTNAME =	nzbget-${VERSION}
+DIST_TUPLE =	github nzbgetcom nzbget v22.0 .
 
 CATEGORIES =	news
 
-HOMEPAGE =	https://nzbget.net/
+HOMEPAGE =	https://nzbget.com/
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
@@ -14,9 +12,6 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c crypto curses m ssl xml2 z
-
-SITES =		https://github.com/nzbget/nzbget/releases/download/v${VERSION}/
-EXTRACT_SUFX =	-src.tar.gz
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -31,6 +26,7 @@ FAKE_FLAGS =	exampleconfdir=${PREFIX}/share/examples/nzbget \
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libcurses-includes=/usr/include \
 			--with-libcurses-libraries=/usr/lib
