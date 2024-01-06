@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.0.5
+V=		4.1.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -39,6 +39,8 @@ MODULES=	devel/cmake \
 		lang/python \
 		lang/ruby \
 		lang/tcl
+
+MODTCL_VERSION =	8.6
 
 MODLUA_RUNDEP=	No
 MODPY_RUNDEP=	No
@@ -79,8 +81,6 @@ CONFIGURE_ARGS+=	-DENABLE_GUILE=OFF \
 CONFIGURE_ARGS+=	-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
-
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
