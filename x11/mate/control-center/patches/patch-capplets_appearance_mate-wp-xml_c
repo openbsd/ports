@@ -1,0 +1,12 @@
+Index: capplets/appearance/mate-wp-xml.c
+--- capplets/appearance/mate-wp-xml.c.orig
++++ capplets/appearance/mate-wp-xml.c
+@@ -461,6 +461,8 @@ void mate_wp_xml_load_list(AppearanceData* data)
+ 
+ 	mate_wp_xml_load_from_dir(WALLPAPER_DATADIR, data);
+ 
++	mate_wp_xml_load_from_dir(GNOME_WALLPAPER_DATADIR, data);
++
+ 	mate_wp_load_legacy(data);
+ }
+ 

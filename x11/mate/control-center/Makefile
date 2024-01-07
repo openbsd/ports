@@ -5,6 +5,8 @@ SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
 
+REVISION=		0
+
 CATEGORIES=		x11
 
 # GPLv2
@@ -46,6 +48,7 @@ FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-control-center
 
 CONFIGURE_STYLE=	gnu
 
-CFLAGS +=		-std=gnu99
+CFLAGS +=		-std=gnu99 \
+			-DGNOME_WALLPAPER_DATADIR='\"${TRUEPREFIX}/share/gnome-background-properties\"'
 
 .include <bsd.port.mk>
