@@ -1,5 +1,8 @@
-# has deps that can build only on OpenBSD/amd64
-ONLY_FOR_ARCHS = amd64
+# amd64 aarch64 known to build as of 0.12.2. others may possibly work,
+# but did not with an earlier version.
+ONLY_FOR_ARCHS = amd64 aarch64
+
+BROKEN =	fails at runtime with lang/go syscall removal patches (go-1.21.3p1) due to problems in modernc.org/libc
 
 COMMENT =	ActivityPub social network server
 
