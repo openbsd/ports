@@ -1,10 +1,12 @@
 COMMENT =	simple text-based game of interstellar trading
 
-DISTNAME =	trader-7.18
+DISTNAME =	trader-7.19
 
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.zap.org.au/projects/trader/
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

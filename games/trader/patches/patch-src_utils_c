@@ -1,7 +1,7 @@
 Index: src/utils.c
 --- src/utils.c.orig
 +++ src/utils.c
-@@ -682,8 +682,7 @@ ssize_t xwcsfmon (wchar_t *restrict buf, size_t maxsiz
+@@ -789,8 +789,7 @@ ssize_t xwcsfmon (wchar_t *restrict buf, size_t maxsiz
         produce "12345" instead of something like "-$123.45"!  The
         following code overcomes these limitations by using snprintf(). */
  

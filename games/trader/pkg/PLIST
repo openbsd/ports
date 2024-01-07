@@ -21,9 +21,12 @@ share/locale/fr/LC_MESSAGES/trader.mo
 share/locale/hr/LC_MESSAGES/trader.mo
 share/locale/hu/LC_MESSAGES/trader.mo
 share/locale/nb/LC_MESSAGES/trader.mo
+share/locale/pl/LC_MESSAGES/trader.mo
 share/locale/pt_BR/LC_MESSAGES/trader.mo
+share/locale/ro/LC_MESSAGES/trader.mo
 share/locale/ru/LC_MESSAGES/trader.mo
 share/locale/sr/LC_MESSAGES/trader.mo
 share/locale/sv/LC_MESSAGES/trader.mo
+share/locale/uk/LC_MESSAGES/trader.mo
 share/metainfo/
-share/metainfo/trader.appdata.xml
+share/metainfo/au.org.zap.trader.metainfo.xml
