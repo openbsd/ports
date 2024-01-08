@@ -11,6 +11,9 @@
 doc/
 doc/spotifyd/
 doc/spotifyd/File.md
+share/dbus-1/system.d/
+share/dbus-1/system.d/${DBUS_SVC}.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/${DBUS_SVC}.conf
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/spotifyd/
 share/examples/spotifyd/spotifyd.conf

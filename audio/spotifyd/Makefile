@@ -8,6 +8,7 @@ DIST_TUPLE =		github	spotifyd	spotifyd	${HEAD_COMMIT}	.
 WRKDIST =		${WRKDIR}/spotifyd-${HEAD_COMMIT}
 DISTNAME =		spotifyd-0.3.5pl1
 CATEGORIES =		audio net
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -32,12 +33,17 @@ MODCARGO_FEATURES =	dbus_keyring \
 			dbus_mpris \
 			portaudio_backend
 
+DBUS_SVC =		org.mpris.MediaPlayer2.${PKGSTEM}
+DBUS_DIR =		${PREFIX}/share/dbus-1/system.d/
 DOC_DIR =		${PREFIX}/doc/${PKGSTEM}
 EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
 HOME_DIR =		${LOCALSTATEDIR}/${PKGSTEM}
-SUBST_VARS =		HOME_DIR
+SUBST_VARS =		DBUS_SVC \
+			HOME_DIR
 
 post-install:
+	${INSTALL_DATA_DIR} ${DBUS_DIR}
+	${SUBST_DATA} {${FILESDIR},${DBUS_DIR}}/${DBUS_SVC}.conf
 	${INSTALL_DATA_DIR} ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/src/config/File.md ${DOC_DIR}/
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}

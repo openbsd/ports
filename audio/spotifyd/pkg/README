@@ -5,8 +5,8 @@ as daemon in ~/.xsession or on-demand via clients such as "spotify-qt":
   username = "user@example.com"
   password = "secret"
 
-Alternatively, the rc.d(8) script runs as dedicated user, but lacks D-Bus
-configuration, hence features like the MPRIS interface do not work (yet).
+Alternatively, the rc.d(8) script runs as dedicated user on the system D-Bus
+where user keyring services (running on its session D-Bus) are unavailable.
 
 Follow sndio(7) Authentication if both dedicated and your own user shall be
 able to play audio at the same time, e.g. on a desktop system:
