@@ -140,6 +140,7 @@ librenms/LibreNMS/Enum/AlertScheduleStatus.php
 librenms/LibreNMS/Enum/AlertState.php
 librenms/LibreNMS/Enum/CheckStatus.php
 librenms/LibreNMS/Enum/ImageFormat.php
+librenms/LibreNMS/Enum/IntegerType.php
 librenms/LibreNMS/Enum/LegacyAuthLevel.php
 librenms/LibreNMS/Enum/PortAssociationMode.php
 librenms/LibreNMS/Enum/PowerState.php
@@ -384,6 +385,7 @@ librenms/LibreNMS/OS/Extremeware.php
 librenms/LibreNMS/OS/F5.php
 librenms/LibreNMS/OS/Fabos.php
 librenms/LibreNMS/OS/Fortiadc.php
+librenms/LibreNMS/OS/Fortiap.php
 librenms/LibreNMS/OS/Fortigate.php
 librenms/LibreNMS/OS/Fortios.php
 librenms/LibreNMS/OS/Fortiwlc.php
@@ -1124,6 +1126,7 @@ librenms/app/Models/Ipv4Network.php
 librenms/app/Models/Ipv6Address.php
 librenms/app/Models/Ipv6Network.php
 librenms/app/Models/IsisAdjacency.php
+librenms/app/Models/Link.php
 librenms/app/Models/LoadbalancerRserver.php
 librenms/app/Models/LoadbalancerVserver.php
 librenms/app/Models/Location.php
@@ -1603,6 +1606,9 @@ librenms/database/migrations/2023_10_31_074901_ospf_instances_unsigned.php
 librenms/database/migrations/2023_10_31_075239_ospf_nbrs_unsigned.php
 librenms/database/migrations/2023_10_31_080052_ospf_ports_unsigned.php
 librenms/database/migrations/2023_11_04_125846_packages_increase_name_column_length.php
+librenms/database/migrations/2023_11_21_172239_increase_vminfo.vmwvmguestos_column_length.php
+librenms/database/migrations/2023_12_08_184652_mpls_addrtype_fix.php
+librenms/database/migrations/2023_12_15_105529_access_points_nummonbssid_integer.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.sql
 librenms/database/schema/testing-schema.sql
@@ -1982,6 +1988,7 @@ librenms/html/images/logos/exalt.png
 librenms/html/images/logos/exinda.png
 librenms/html/images/logos/exterity.svg
 librenms/html/images/logos/extrahop.png
+librenms/html/images/logos/forcepoint.png
 librenms/html/images/logos/fortinet.svg
 librenms/html/images/logos/fujifilm.svg
 librenms/html/images/logos/geist.png
@@ -2022,6 +2029,7 @@ librenms/html/images/logos/open-e.svg
 librenms/html/images/logos/openaccess.png
 librenms/html/images/logos/opengear.svg
 librenms/html/images/logos/opensuse.svg
+librenms/html/images/logos/orolia.svg
 librenms/html/images/logos/osag.svg
 librenms/html/images/logos/packetflux.png
 librenms/html/images/logos/packetlight.png
@@ -2051,6 +2059,7 @@ librenms/html/images/logos/sensatronics.png
 librenms/html/images/logos/siae.png
 librenms/html/images/logos/siemens.svg
 librenms/html/images/logos/sixnet.png
+librenms/html/images/logos/skyhigh.png
 librenms/html/images/logos/smartoptics.svg
 librenms/html/images/logos/solidoptics.png
 librenms/html/images/logos/sophos.png
@@ -2231,6 +2240,7 @@ librenms/html/images/os/fiberhome.svg
 librenms/html/images/os/fibernet.svg
 librenms/html/images/os/firebrick.svg
 librenms/html/images/os/force10.svg
+librenms/html/images/os/forcepoint.png
 librenms/html/images/os/fortinet.svg
 librenms/html/images/os/foundry.png
 librenms/html/images/os/freebsd.svg
@@ -2357,6 +2367,7 @@ librenms/html/images/os/opensuse.svg
 librenms/html/images/os/openwrt.svg
 librenms/html/images/os/opnsense.svg
 librenms/html/images/os/oracle.svg
+librenms/html/images/os/orolia.svg
 librenms/html/images/os/orvaldi.png
 librenms/html/images/os/osag.svg
 librenms/html/images/os/osmc.png
@@ -2432,6 +2443,7 @@ librenms/html/images/os/siklu.png
 librenms/html/images/os/silverpeak.png
 librenms/html/images/os/siteboss.png
 librenms/html/images/os/sixnet.png
+librenms/html/images/os/skyhigh.png
 librenms/html/images/os/slackware.png
 librenms/html/images/os/smartoptics.png
 librenms/html/images/os/snr.png
@@ -2670,6 +2682,7 @@ librenms/includes/definitions/acs.yaml
 librenms/includes/definitions/acsw.yaml
 librenms/includes/definitions/adtran-aos.yaml
 librenms/includes/definitions/adva_fsp150.yaml
+librenms/includes/definitions/adva_fsp150cm.yaml
 librenms/includes/definitions/adva_fsp3kr7.yaml
 librenms/includes/definitions/adva_xg300.yaml
 librenms/includes/definitions/advantech.yaml
@@ -2842,6 +2855,7 @@ librenms/includes/definitions/discovery/acos.yaml
 librenms/includes/definitions/discovery/acs.yaml
 librenms/includes/definitions/discovery/adtran-aos.yaml
 librenms/includes/definitions/discovery/adva_fsp150.yaml
+librenms/includes/definitions/discovery/adva_fsp150cm.yaml
 librenms/includes/definitions/discovery/adva_fsp3kr7.yaml
 librenms/includes/definitions/discovery/adva_xg300.yaml
 librenms/includes/definitions/discovery/advantech.yaml
@@ -3039,7 +3053,9 @@ librenms/includes/definitions/discovery/firebox.yaml
 librenms/includes/definitions/discovery/firebrick.yaml
 librenms/includes/definitions/discovery/fireware.yaml
 librenms/includes/definitions/discovery/flareos.yaml
+librenms/includes/definitions/discovery/forcepoint.yaml
 librenms/includes/definitions/discovery/fortiadc.yaml
+librenms/includes/definitions/discovery/fortiap.yaml
 librenms/includes/definitions/discovery/fortiauthenticator.yaml
 librenms/includes/definitions/discovery/fortigate.yaml
 librenms/includes/definitions/discovery/fortimail.yaml
@@ -3164,6 +3180,7 @@ librenms/includes/definitions/discovery/logmaster.yaml
 librenms/includes/definitions/discovery/loop-telecom.yaml
 librenms/includes/definitions/discovery/luminato.yaml
 librenms/includes/definitions/discovery/mbg-ltos6.yaml
+librenms/includes/definitions/discovery/mbg-meinbergos.yaml
 librenms/includes/definitions/discovery/mcafeewebgateway.yaml
 librenms/includes/definitions/discovery/mellanox.yaml
 librenms/includes/definitions/discovery/merakimr.yaml
@@ -3225,6 +3242,7 @@ librenms/includes/definitions/discovery/opengear.yaml
 librenms/includes/definitions/discovery/opensolaris.yaml
 librenms/includes/definitions/discovery/opnsense.yaml
 librenms/includes/definitions/discovery/oracle-ilom.yaml
+librenms/includes/definitions/discovery/orolia-securesync.yaml
 librenms/includes/definitions/discovery/orvaldi-ups.yaml
 librenms/includes/definitions/discovery/packetlight.yaml
 librenms/includes/definitions/discovery/panasonic-ns.yaml
@@ -3323,6 +3341,8 @@ librenms/includes/definitions/discovery/siteboss.yaml
 librenms/includes/definitions/discovery/siteboss550.yaml
 librenms/includes/definitions/discovery/siteboss571.yaml
 librenms/includes/definitions/discovery/sixnet.yaml
+librenms/includes/definitions/discovery/skyhighwebprotect.yaml
+librenms/includes/definitions/discovery/slms.yaml
 librenms/includes/definitions/discovery/slxos.yaml
 librenms/includes/definitions/discovery/sm-os.yaml
 librenms/includes/definitions/discovery/smartax.yaml
@@ -3477,7 +3497,9 @@ librenms/includes/definitions/fibernet-xmux4-plus.yaml
 librenms/includes/definitions/firebrick.yaml
 librenms/includes/definitions/fireware.yaml
 librenms/includes/definitions/flareos.yaml
+librenms/includes/definitions/forcepoint.yaml
 librenms/includes/definitions/fortiadc.yaml
+librenms/includes/definitions/fortiap.yaml
 librenms/includes/definitions/fortiauthenticator.yaml
 librenms/includes/definitions/fortigate.yaml
 librenms/includes/definitions/fortimail.yaml
@@ -3624,6 +3646,7 @@ librenms/includes/definitions/macosx.yaml
 librenms/includes/definitions/magnum.yaml
 librenms/includes/definitions/marathonups.yaml
 librenms/includes/definitions/mbg-ltos6.yaml
+librenms/includes/definitions/mbg-meinbergos.yaml
 librenms/includes/definitions/mcafeewebgateway.yaml
 librenms/includes/definitions/mellanox.yaml
 librenms/includes/definitions/merakimr.yaml
@@ -3698,6 +3721,7 @@ librenms/includes/definitions/openvms.yaml
 librenms/includes/definitions/openwrt.yaml
 librenms/includes/definitions/opnsense.yaml
 librenms/includes/definitions/oracle-ilom.yaml
+librenms/includes/definitions/orolia-securesync.yaml
 librenms/includes/definitions/orvaldi-ups.yaml
 librenms/includes/definitions/osag.yaml
 librenms/includes/definitions/packetlight.yaml
@@ -3817,6 +3841,7 @@ librenms/includes/definitions/siteboss550.yaml
 librenms/includes/definitions/siteboss571.yaml
 librenms/includes/definitions/sitemonitor.yaml
 librenms/includes/definitions/sixnet.yaml
+librenms/includes/definitions/skyhighwebprotect.yaml
 librenms/includes/definitions/slms.yaml
 librenms/includes/definitions/slxos.yaml
 librenms/includes/definitions/sm-os.yaml
@@ -4001,6 +4026,7 @@ librenms/includes/discovery/ports/loop-telecom.inc.php
 librenms/includes/discovery/ports/luminato.inc.php
 librenms/includes/discovery/ports/mlos-nsp.inc.php
 librenms/includes/discovery/ports/moxa-etherdevice.inc.php
+librenms/includes/discovery/ports/slms.inc.php
 librenms/includes/discovery/ports/zynos.inc.php
 librenms/includes/discovery/printer-supplies.inc.php
 librenms/includes/discovery/processors.inc.php
@@ -4336,7 +4362,6 @@ librenms/includes/discovery/sensors/temperature/extendair.inc.php
 librenms/includes/discovery/sensors/temperature/f5.inc.php
 librenms/includes/discovery/sensors/temperature/ftos.inc.php
 librenms/includes/discovery/sensors/temperature/geist-watchdog.inc.php
-librenms/includes/discovery/sensors/temperature/hirschmann.inc.php
 librenms/includes/discovery/sensors/temperature/hpblmos.inc.php
 librenms/includes/discovery/sensors/temperature/hytera.inc.php
 librenms/includes/discovery/sensors/temperature/ibm-amm.inc.php
@@ -4455,6 +4480,7 @@ librenms/includes/discovery/storage/eltex-mes21xx.inc.php
 librenms/includes/discovery/storage/eltex-mes23xx.inc.php
 librenms/includes/discovery/storage/enterasys.inc.php
 librenms/includes/discovery/storage/eql-storage.inc.php
+librenms/includes/discovery/storage/forcepoint.inc.php
 librenms/includes/discovery/storage/freenas-dataset.inc.php
 librenms/includes/discovery/storage/freenas-zpool.inc.php
 librenms/includes/discovery/storage/hikvision-cam.inc.php
@@ -6490,6 +6516,7 @@ librenms/includes/polling/ports/os/mlos-nsp.inc.php
 librenms/includes/polling/ports/os/moxa-etherdevice.inc.php
 librenms/includes/polling/ports/os/nokia-isam.inc.php
 librenms/includes/polling/ports/os/procera.inc.php
+librenms/includes/polling/ports/os/slms.inc.php
 librenms/includes/polling/ports/os/timos.inc.php
 librenms/includes/polling/ports/os/zynos.inc.php
 librenms/includes/polling/ports/port-etherlike.inc.php
@@ -6523,7 +6550,6 @@ librenms/includes/polling/sensors/temperature/aos-emu2.inc.php
 librenms/includes/polling/sensors/temperature/cambium.inc.php
 librenms/includes/polling/sensors/temperature/eds.inc.php
 librenms/includes/polling/sensors/temperature/geist-watchdog.inc.php
-librenms/includes/polling/sensors/temperature/hirschmann.inc.php
 librenms/includes/polling/sensors/temperature/hytera.inc.php
 librenms/includes/polling/sensors/temperature/netapp.inc.php
 librenms/includes/polling/sensors/temperature/quantastor.inc.php
@@ -6540,6 +6566,7 @@ librenms/includes/polling/storage/eltex-mes21xx.inc.php
 librenms/includes/polling/storage/eltex-mes23xx.inc.php
 librenms/includes/polling/storage/enterasys.inc.php
 librenms/includes/polling/storage/eql-storage.inc.php
+librenms/includes/polling/storage/forcepoint.inc.php
 librenms/includes/polling/storage/freenas-dataset.inc.php
 librenms/includes/polling/storage/freenas-zpool.inc.php
 librenms/includes/polling/storage/hpe-ilo.inc.php
@@ -7077,6 +7104,7 @@ librenms/mibs/adva/F3-FPM-MIB
 librenms/mibs/adva/F3-JDSU-MIB
 librenms/mibs/adva/F3-L3-MIB
 librenms/mibs/adva/F3-LAG-MIB
+librenms/mibs/adva/F3-NTP-MIB
 librenms/mibs/adva/F3-OSPF-MIB
 librenms/mibs/adva/F3-OTN-MIB
 librenms/mibs/adva/F3-PBB-MIB
@@ -7343,6 +7371,7 @@ librenms/mibs/avtech/ROOMALERT12E-MIB
 librenms/mibs/avtech/ROOMALERT24E-MIB
 librenms/mibs/avtech/ROOMALERT26W-MIB
 librenms/mibs/avtech/ROOMALERT32E-MIB
+librenms/mibs/avtech/ROOMALERT32S-MIB
 librenms/mibs/avtech/ROOMALERT3E-MIB
 librenms/mibs/avtech/ROOMALERT4E-MIB
 librenms/mibs/avtech/ROOMALERT7E-MIB
@@ -8965,9 +8994,14 @@ librenms/mibs/firebrick/FIREBRICK-MIB
 librenms/mibs/firebrick/FIREBRICK-MONITORING
 librenms/mibs/firebrick/FIREBRICK-RUNSTATS-MIB
 librenms/mibs/firebrick/FIREBRICK-VOIP-MIB
+librenms/mibs/forcepoint/
+librenms/mibs/forcepoint/STONESOFT-FIREWALL-MIB
+librenms/mibs/forcepoint/STONESOFT-NETNODE-MIB
+librenms/mibs/forcepoint/STONESOFT-SMI-MIB
 librenms/mibs/fortinet/
 librenms/mibs/fortinet/FORTINET-CORE-MIB
 librenms/mibs/fortinet/FORTINET-FORTIADC-MIB
+librenms/mibs/fortinet/FORTINET-FORTIAP-MIB
 librenms/mibs/fortinet/FORTINET-FORTIAUTHENTICATOR-MIB
 librenms/mibs/fortinet/FORTINET-FORTIGATE-MIB
 librenms/mibs/fortinet/FORTINET-FORTIMAIL-MIB
@@ -10137,6 +10171,7 @@ librenms/mibs/meinberg/MBG-SNMP-LT-MIB
 librenms/mibs/meinberg/MBG-SNMP-LTNG-MIB
 librenms/mibs/meinberg/MBG-SNMP-ROOT-MIB
 librenms/mibs/meinberg/MBG-SNMP-XPT-MIB
+librenms/mibs/meinberg/MEINBERG-OS-MIB
 librenms/mibs/microsemi/
 librenms/mibs/microsemi/DATUM-MIB
 librenms/mibs/microsemi/MICROSEMI-PDSINE-MIB
@@ -11004,6 +11039,9 @@ librenms/mibs/silverpeak/SILVERPEAK-SMI
 librenms/mibs/silverpeak/SILVERPEAK-TC
 librenms/mibs/sinetica/
 librenms/mibs/sinetica/HAWK-I2-MIB
+librenms/mibs/skyhigh/
+librenms/mibs/skyhigh/SKYHIGHSECURITY-SMI
+librenms/mibs/skyhigh/SKYHIGHSECURITY-SWG-MIB
 librenms/mibs/smartoptics/
 librenms/mibs/smartoptics/DCP-ALARM-MIB
 librenms/mibs/smartoptics/DCP-INTERFACE-MIB
@@ -11032,6 +11070,12 @@ librenms/mibs/sonicwall/SONICWALL-FIREWALL-IP-STATISTICS-MIB
 librenms/mibs/sonicwall/SONICWALL-SMI
 librenms/mibs/sophos/
 librenms/mibs/sophos/SFOS-FIREWALL-MIB
+librenms/mibs/spectracom/
+librenms/mibs/spectracom/SPECTRACOM-GLOBAL-MIB
+librenms/mibs/spectracom/SPECTRACOM-NTP-V4-MIB
+librenms/mibs/spectracom/SPECTRACOM-PTP-MIB
+librenms/mibs/spectracom/SPECTRACOM-PTPBASE-MIB
+librenms/mibs/spectracom/SPECTRACOM-XSYNC-MIB
 librenms/mibs/stormshield/
 librenms/mibs/stormshield/STORMSHIELD-ALARM-MIB
 librenms/mibs/stormshield/STORMSHIELD-ASQ-STATS-MIB
@@ -11463,6 +11507,11 @@ librenms/mibs/wut/WebGraph-Thermo-Hygrometer-MIB
 librenms/mibs/wut/WebGraph-Thermo-Hygrometer-US-MIB
 librenms/mibs/xirrus_aos/
 librenms/mibs/xirrus_aos/XIRRUS-MIB
+librenms/mibs/zhone/
+librenms/mibs/zhone/ZHONE-CARD-RESOURCES-MIB
+librenms/mibs/zhone/ZHONE-INTERFACE-TRANSLATION-MIB
+librenms/mibs/zhone/ZHONE-MIB
+librenms/mibs/zhone/ZHONE-TC-MIB
 librenms/mibs/zmtel/
 librenms/mibs/zmtel/ZMTEL-ODU-MIB
 librenms/mibs/zte/
@@ -18249,6 +18298,7 @@ librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/XML.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Keys/libsodium.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/ASN1.php
+librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/IEEE.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/Raw.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Formats/Signature/SSH2.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Crypt/EC/Parameters.php
