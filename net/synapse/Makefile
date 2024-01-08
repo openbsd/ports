@@ -7,6 +7,8 @@ GH_PROJECT =	synapse
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 CATEGORIES =	net
 
+REVISION =	0
+
 HOMEPAGE =	https://matrix.org/
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
