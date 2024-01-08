@@ -5,7 +5,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v26.0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -64,7 +64,7 @@ WANTLIB += Qt5Widgets X11 X11-xcb Xau Xdmcp Xext Xfixes Xxf86vm
 WANTLIB += c crypto db_cxx dbus-1 double-conversion drm event_core
 WANTLIB += event_extra event_pthreads execinfo expat freetype
 WANTLIB += glapi glib-2.0 graphite2 gthread-2.0 harfbuzz iconv
-WANTLIB += icudata icui18n icuuc intl m miniupnpc pcre2-16 pcre2-8
+WANTLIB += icudata icui18n icuuc intl m miniupnpc natpmp pcre2-16 pcre2-8
 WANTLIB += png qrencode sodium sqlite3 ssl xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-glx xcb-present xcb-randr xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xshmfence z zmq zstd
@@ -74,6 +74,7 @@ MODULES +=		x11/qt5
 LIB_DEPENDS +=		archivers/zstd \
 			graphics/libqrencode \
 			math/double-conversion \
+			net/miniupnp/libnatpmp \
 			net/miniupnp/miniupnpc
 
 CONFIGURE_ARGS +=	--with-gui=qt5
