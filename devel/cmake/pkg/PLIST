@@ -6655,7 +6655,7 @@ share/doc/cmake/html/prop_tgt/XCTEST.html
 share/doc/cmake/html/release/
 share/doc/cmake/html/release/3.0.html
 share/doc/cmake/html/release/3.1.html
-share/doc/cmake/html/release/${MODPY_VERSION}.html
+share/doc/cmake/html/release/3.10.html
 share/doc/cmake/html/release/3.11.html
 share/doc/cmake/html/release/3.12.html
 share/doc/cmake/html/release/3.13.html

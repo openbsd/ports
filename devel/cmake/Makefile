@@ -66,6 +66,8 @@ SUBST_FILES =	${WRKSRC}/Source/cmLocalGenerator.cxx \
 		${WRKSRC}/Source/CPack/cmCPackGenerator.cxx \
 		${WRKSRC}/bootstrap
 
+UPDATE_PLIST_ARGS =	-i MODPY_VERSION
+
 post-patch:
 	find ${WRKSRC}/Modules -name "*.cmake" \
 		-exec sed -i -e 's,/usr/local,${LOCALBASE},g' \
