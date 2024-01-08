@@ -2,11 +2,10 @@
 
 COMMENT=	U-Boot firmware for Apple Silicon
 
-VERSION=	2023.07.02
+VERSION=	2024.01
 GH_ACCOUNT=	AsahiLinux
 GH_PROJECT=	u-boot
-GH_TAGNAME=	openbsd-v${VERSION}-1
-REVISION=	1
+GH_TAGNAME=	openbsd-v${VERSION}
 
 PKGNAME=	u-boot-asahi-${VERSION:S/-/./g}
 
