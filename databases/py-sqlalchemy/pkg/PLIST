@@ -768,6 +768,8 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}langhel
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}langhelpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}tool_support.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}tool_support.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}topological.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/${MODPY_PYCACHE}topological.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/_collections.py
@@ -779,6 +781,7 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/concurrency.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/deprecations.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/langhelpers.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/queue.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/tool_support.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/util/topological.py
 share/doc/py-sqlalchemy/
 share/doc/py-sqlalchemy/_images/
