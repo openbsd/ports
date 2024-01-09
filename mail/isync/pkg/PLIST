@@ -9,5 +9,6 @@ share/doc/isync/ChangeLog
 share/doc/isync/NEWS
 share/doc/isync/README
 share/doc/isync/TODO
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/isync/
 share/examples/isync/mbsyncrc.sample

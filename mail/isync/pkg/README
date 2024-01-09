@@ -1,0 +1,17 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Using XOAUTH2
+=============
+
+If you need to use the `XOAUTH2` authentication mechanism, then you will need
+to install the cyrus-sasl-xoauth2 package:
+
+# pkg_add cyrus-sasl-xoauth2
+
+Failure to do so gives a cryptic error message like:
+
+  IMAP error: selected SASL mechanism(s) not available;
+     selected: XOAUTH2
+     available: SCRAM-SHA-512 SCRAM-SHA-384...
