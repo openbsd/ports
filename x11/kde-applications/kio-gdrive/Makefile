@@ -13,6 +13,8 @@ WANTLIB += X11 accounts-qt5 kaccounts m
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
+BUILD_DEPENDS =	textproc/intltool
+
 LIB_DEPENDS =	devel/kf5/kcompletion \
 		devel/kf5/kconfig \
 		devel/kf5/kcoreaddons \
