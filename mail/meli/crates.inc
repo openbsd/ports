@@ -1,7 +1,6 @@
-
 MODCARGO_CRATES +=	abnf-core	0.6.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
-MODCARGO_CRATES +=	ahash	0.8.3	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	ahash	0.8.5	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	1.0.4	# Unlicense OR MIT
 MODCARGO_CRATES +=	allocator-api2	0.2.16	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	android-tzdata	0.1.1	# MIT OR Apache-2.0
@@ -145,7 +144,7 @@ MODCARGO_CRATES +=	net2	0.2.39	# MIT/Apache-2.0
 MODCARGO_CRATES +=	nix	0.24.3	# MIT
 MODCARGO_CRATES +=	nom	7.1.3	# MIT
 MODCARGO_CRATES +=	notify	4.0.17	# CC0-1.0
-MODCARGO_CRATES +=	notify-rust	4.9.0	# MIT/Apache-2.0
+MODCARGO_CRATES +=	notify-rust	4.10.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	num-traits	0.2.16	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	num_cpus	1.16.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	numtoa	0.1.0	# MIT OR Apache-2.0
@@ -276,3 +275,5 @@ MODCARGO_CRATES +=	windows_x86_64_msvc	0.39.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	windows_x86_64_msvc	0.48.5	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	ws2_32-sys	0.2.1	# MIT
 MODCARGO_CRATES +=	xdg	2.5.2	# Apache-2.0 OR MIT
+MODCARGO_CRATES +=	zerocopy	0.7.3	# BSD-2-Clause
+MODCARGO_CRATES +=	zerocopy-derive	0.7.3	# BSD-2-Clause

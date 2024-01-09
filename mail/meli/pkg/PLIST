@@ -1,4 +1,3 @@
-@bin bin/managesieve-client
 @bin bin/meli
 @man man/man1/meli.1
 @man man/man5/meli-themes.5

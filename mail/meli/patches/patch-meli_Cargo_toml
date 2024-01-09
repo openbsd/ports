@@ -1,0 +1,14 @@
+disable "static" (vendored TLS libraries, libcurl, libsqlite3, libz, and libdbus)
+
+Index: meli/Cargo.toml
+--- meli/Cargo.toml.orig
++++ meli/Cargo.toml
+@@ -69,7 +69,7 @@ regex = "1"
+ tempfile = "3.3"
+ 
+ [features]
+-default = ["sqlite3", "notmuch", "smtp", "dbus-notifications", "gpgme", "cli-docs", "jmap", "text-processing", "static"]
++default = ["sqlite3", "notmuch", "smtp", "dbus-notifications", "gpgme", "cli-docs", "jmap", "text-processing"]
+ notmuch = ["melib/notmuch"]
+ jmap = ["melib/jmap"]
+ sqlite3 = ["melib/sqlite3"]
