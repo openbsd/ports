@@ -106,7 +106,6 @@
      SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
-     SUBDIR += freetalk
      SUBDIR += ftpcopy
      SUBDIR += ftpsesame
      SUBDIR += gajim

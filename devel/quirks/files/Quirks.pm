@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1601 2024/01/04 09:14:57 gonzalo Exp $
+# $OpenBSD: Quirks.pm,v 1.1602 2024/01/09 11:09:51 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1903,6 +1903,7 @@ setup_obsolete_reason(
 	62 => 'dicepassc',
 	5 => 'py-parsing',
 	3 => 'freehdl',
+	63 => 'freetalk',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1982,6 +1983,7 @@ my $obsolete_message = {
 	60 => "unmaintained/outdated for years, setuid python 2 scripts, not recommended",
 	61 => "long dead upstream/unmaintained, fails to build with clang 16",
 	62 => "not maintained, upstream suggests using passphraseme or pwgen",
+	63 => "outdated, unmaintained, crashes on startup",
 };
 
 # ->is_base_system($handle, $state):
