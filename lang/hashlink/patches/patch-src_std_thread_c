@@ -21,7 +21,7 @@ Index: src/std/thread.c
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
  #else
-@@ -940,7 +943,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+@@ -945,7 +948,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
  #elif defined(HL_MAC)
  	// pthread_setname_np only possible for current thread
  #else

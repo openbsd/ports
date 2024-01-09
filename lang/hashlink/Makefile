@@ -5,14 +5,12 @@ USE_NOBTCFI =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-V =		1.13
-DISTNAME =	hashlink-${V}
-GH_ACCOUNT =	HaxeFoundation
-GH_PROJECT =	hashlink
-GH_TAGNAME =	${V}
-REVISION =	2
+V =		1.14
+PKGNAME =	hashlink-${V}
 
-SHARED_LIBS +=	hl		1.0	# 1.12
+DIST_TUPLE =	github HaxeFoundation hashlink ${V} .
+
+SHARED_LIBS +=	hl		2.0	# 1.14
 SHARED_LIBS +=	hl_module	0.0	# 1.13
 
 CATEGORIES =	lang

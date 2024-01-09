@@ -9,7 +9,7 @@ install headers (and hlc_main.c) in include/hl/
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,20 +1,19 @@
+@@ -1,21 +1,20 @@
  
 -LBITS := $(shell getconf LONG_BIT)
 -MARCH ?= $(LBITS)
@@ -21,11 +21,11 @@ Index: Makefile
 +INSTALL_INCLUDE_DIR ?= $(PREFIX)/include/hl
  
  LIBS=fmt sdl ssl openal ui uv mysql sqlite
+ ARCH ?= $(shell uname -m)
  
--CFLAGS = -Wall -O3 -I src -msse2 -mfpmath=sse -std=c11 -D LIBHL_EXPORTS
--LFLAGS = -L. -lhl
-+CFLAGS = -O2 -pipe   -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -I include -I include/pcre -I include/mikktspace -I include/minimp3 -D LIBHL_EXPORTS
-+LFLAGS = -L. -L/usr/local -lhl
+-CFLAGS = -Wall -O3 -I src -std=c11 -D LIBHL_EXPORTS
++CFLAGS = ${CFLAGS}  -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
+ LFLAGS = -L. -lhl
  EXTRA_LFLAGS ?=
 -LIBFLAGS =
 -HLFLAGS = -ldl
@@ -36,8 +36,8 @@ Index: Makefile
 +LIBEXT_MODULE = so.${LIBhl_module_VERSION}
  LIBTURBOJPEG = -lturbojpeg
  
- PCRE_FLAGS = -I include/pcre
-@@ -32,6 +31,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
+ PCRE_FLAGS = -I include/pcre -D HAVE_CONFIG_H -D PCRE2_CODE_UNIT_WIDTH=16
+@@ -38,6 +37,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
  	src/std/track.o
  
  HL = src/code.o src/jit.o src/main.o src/module.o src/debugger.o src/profile.o
@@ -45,7 +45,16 @@ Index: Makefile
  
  FMT_INCLUDE = -I include/mikktspace -I include/minimp3
  
-@@ -105,16 +105,9 @@ LIB += ${HL_DEBUG}
+@@ -73,8 +73,6 @@ RELEASE_NAME=win
+ VS_RUNTIME_LIBRARY ?= c:/windows/system32/vcruntime140.dll
+ 
+ ifeq ($(MARCH),32)
+-CFLAGS += -msse2 -mfpmath=sse
+-CC=i686-pc-cygwin-gcc
+ BUILD_DIR = Release
+ VS_SDL_LIBRARY ?= include/sdl/lib/x86/SDL2.dll
+ VS_OPENAL_LIBRARY ?= include/openal/bin/Win32/soft_oal.dll
+@@ -139,16 +137,9 @@ LFLAGS += -arch $(ARCH)
  else
  
  # Linux
@@ -54,7 +63,7 @@ Index: Makefile
  LFLAGS += -lm -Wl,-rpath,.:'$$ORIGIN':$(INSTALL_LIB_DIR) -Wl,--export-dynamic -Wl,--no-undefined
  
 -ifeq ($(MARCH),32)
--CFLAGS += -I /usr/include/i386-linux-gnu
+-CFLAGS += -I /usr/include/i386-linux-gnu -msse2 -mfpmath=sse
 -LIBFLAGS += -L/opt/libjpeg-turbo/lib
 -else
 -LIBFLAGS += -L/opt/libjpeg-turbo/lib64
@@ -63,7 +72,7 @@ Index: Makefile
  LIBOPENAL = -lopenal
  LIBOPENGL = -lGL
  RELEASE_NAME = linux
-@@ -130,17 +123,18 @@ ifdef DEBUG
+@@ -164,17 +155,18 @@ ifdef DEBUG
  CFLAGS += -g
  endif
  
@@ -84,7 +93,7 @@ Index: Makefile
  
  uninstall:
  	rm -f $(INSTALL_BIN_DIR)/hl $(INSTALL_LIB_DIR)/libhl.${LIBEXT} $(INSTALL_LIB_DIR)/*.hdll
-@@ -149,46 +143,49 @@ uninstall:
+@@ -183,46 +175,49 @@ uninstall:
  libs: $(LIBS)
  
  ./include/pcre/%.o: include/pcre/%.c
@@ -96,8 +105,8 @@ Index: Makefile
 +	${CC} $(CFLAGS) -o $@ -c $< ${PCRE_FLAGS}
  
  libhl: ${LIB}
--	${CC} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} -shared ${LIB} -lpthread -lm
-+	${CC} -o libhl.$(LIBEXT) ${LIBFLAGS} -shared ${LIB} -lpthread -lm
+-	${CC} ${CFLAGS} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} -shared ${LIB} -lpthread -lm
++	${CC} $(CFLAGS) -o libhl.$(LIBEXT) ${LIBFLAGS} -shared ${LIB} -lpthread -lm
  
  hlc: ${BOOT}
 -	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
@@ -148,7 +157,7 @@ Index: Makefile
  
  mesa:
  	(cd libs/mesa && ${MAKE})
-@@ -249,7 +246,7 @@ codesign_osx:
+@@ -283,7 +278,7 @@ codesign_osx:
  .SUFFIXES : .c .o
  
  .c.o :
