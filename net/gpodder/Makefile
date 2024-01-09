@@ -1,7 +1,6 @@
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.11.1
-REVISION=		0
+MODPY_EGG_VERSION=	3.11.4
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -35,7 +34,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-minimock${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+			devel/py-test-cov${MODPY_FLAVOR} \
+			textproc/py-podcastparser${MODPY_FLAVOR} \
+			net/mygpoclient
 
 USE_GMAKE=		Yes
 MAKE_FILE=		makefile
