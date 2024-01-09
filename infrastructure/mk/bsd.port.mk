@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1636 2023/11/11 11:53:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1637 2024/01/09 11:58:11 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -821,7 +821,7 @@ _NONDEFAULT_LD = Yes
 .endif
 _NONDEFAULT_LD ?= No
 .if ${_NONDEFAULT_LD:L} == "yes"
-.  if !exists(${_LD_PROGRAM})
+.  if !exists(${_LD_PROGRAM}) && ${USE_LLD:L} != "ports"
 IGNORE = "requires ${_LD_PROGRAM}"
 .  endif
 .endif
