@@ -1,6 +1,6 @@
 COMMENT=	extended C-shell with many useful features
 
-DISTNAME=	tcsh-6.24.07
+DISTNAME=	tcsh-6.24.10
 CATEGORIES=	shells
 HOMEPAGE=	https://www.tcsh.org/
 
