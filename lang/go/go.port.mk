@@ -1,6 +1,6 @@
 # increment after a go compiler update to trigger updates of
 # compiled go packages (see arch-defines.mk)
-_MODGO_SYSTEM_VERSION =	6
+_MODGO_SYSTEM_VERSION =	7
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
