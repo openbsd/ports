@@ -1785,6 +1785,7 @@
      SUBDIR += ruby-puppet-resource_api
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
+     SUBDIR += ruby-rb_sys
      SUBDIR += ruby-rbtree,ruby31
      SUBDIR += ruby-rbtree,ruby32
      SUBDIR += ruby-rbtree,ruby33
