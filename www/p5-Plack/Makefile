@@ -2,7 +2,7 @@ COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Plack-1.0048
+DISTNAME =		Plack-1.0051
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
