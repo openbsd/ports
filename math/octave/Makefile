@@ -2,7 +2,7 @@ COMMENT =      Scientific Programming Language
 
 VERSION =	7.3.0
 DISTNAME =	octave-${VERSION}
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
@@ -16,6 +16,23 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU GraphicsMagick GraphicsMagick++
+WANTLIB += ICE Qt5Core Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Sql Qt5Widgets Qt5Xml SM X11 X11-xcb Xau Xdmcp Xext
+WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd arpack
+WANTLIB += blas bz2 c camd ccolamd cholmod colamd crypto curl
+WANTLIB += curses cxsparse double-conversion drm ereadline execinfo
+WANTLIB += expat fftw3 fftw3_threads fftw3f fftw3f_threads fontconfig
+WANTLIB += freetype gl2ps glapi glib-2.0 glpk glut gmp graphite2
+WANTLIB += gthread-2.0 harfbuzz hdf5 iconv icudata icui18n icuuc
+WANTLIB += intl lapack lcms2 ltdl m mp3lame mpg123 nghttp2 nghttp3
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls ogg opus pcre pcre2-16
+WANTLIB += pcre2-8 png portaudio qhull_r qrupdate qscintilla2_qt5
+WANTLIB += sndfile sndio spqr ssl suitesparseconfig umfpack util
+WANTLIB += vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
+WANTLIB += xcb-randr xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
+WANTLIB += ${MODFORTRAN_WANTLIB}
 
 SITES =		${SITE_GNU:=octave/}
 
@@ -57,25 +74,6 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		textproc/icu4c \
 		print/gl2ps \
 		x11/qt5/qttools,-main
-
-WANTLIB += ${MODFORTRAN_WANTLIB}
-WANTLIB += FLAC GL GLU GraphicsMagick GraphicsMagick++ ICE
-WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Widgets Qt5Core
-WANTLIB += Qt5Help Qt5Xml Qt5Sql qscintilla2_qt5 SM X11 X11-xcb
-WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd
-WANTLIB += arpack blas bz2 c camd ccolamd cholmod colamd crypto curl
-WANTLIB += curses cxsparse double-conversion drm ereadline expat
-WANTLIB += execinfo fftw3 fftw3_threads fftw3f fftw3f_threads
-WANTLIB += fontconfig freetype gl2ps glapi glpk glut
-WANTLIB += glib-2.0 graphite2 gthread-2.0 harfbuzz icudata icui18n icuuc
-WANTLIB += gmp hdf5 iconv intl lapack lcms2 ltdl
-WANTLIB += m nghttp2 ogg pcre pcre2-16 png portaudio pthread
-WANTLIB += qrupdate sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
-WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx
-WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z zstd
-WANTLIB += Xau Xdmcp opus xcb-shm
-WANTLIB += mp3lame mpg123 qhull_r spqr
-
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
