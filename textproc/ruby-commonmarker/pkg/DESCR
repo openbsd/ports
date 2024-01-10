@@ -1,5 +1,6 @@
-Ruby wrapper for libcmark-gfm, GitHub's fork of the reference parser for
-CommonMark. It passes all of the C tests, and is therefore
+Ruby wrapper for Rust's comrak crate.
+
+It passes all of the CommonMark test suite, and is therefore
 spec-complete. It also includes extensions to the CommonMark spec as
 documented in the GitHub Flavored Markdown spec, such as support for
 tables, strikethroughs, and autolinking.

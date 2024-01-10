@@ -1,22 +1,19 @@
-${GEM_BIN}/commonmarker${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.cargo/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.cargo/config.toml
+@comment ${GEM_LIB}/gems/${DISTNAME}/Cargo.lock
+@comment ${GEM_LIB}/gems/${DISTNAME}/Cargo.toml
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/bin/
-${GEM_LIB}/gems/${DISTNAME}/bin/commonmarker
-${GEM_LIB}/gems/${DISTNAME}/commonmarker.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/commonmarker.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/config.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node/
-${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node/inspect.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/renderer/
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/constants.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/extension.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/renderer.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/renderer/html_renderer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/version.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
