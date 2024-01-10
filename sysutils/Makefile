@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += aarch64-esr-decoder
      SUBDIR += accountsservice
      SUBDIR += alertmanager
      SUBDIR += amazon-ecs-cli
