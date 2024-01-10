@@ -225,11 +225,22 @@ MODCARGO_post-patch += \
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
-	echo "[net]" >${WRKDIR}/.cargo/config; \
+	echo "[build]" >${WRKDIR}/.cargo/config; \
+	echo "rustc = '${MODRUST_RUSTC_BIN}'" >>${WRKDIR}/.cargo/config; \
+	echo "rustdoc = '${MODRUST_RUSTDOC_BIN}'" >>${WRKDIR}/.cargo/config; \
+	\
+	echo "[net]" >>${WRKDIR}/.cargo/config; \
 	echo "offline = true" >>${WRKDIR}/.cargo/config; \
+	\
+	echo "[term]" >>${WRKDIR}/.cargo/config; \
+	echo "verbose = true" >>${WRKDIR}/.cargo/config; \
+	echo "color = 'never'" >>${WRKDIR}/.cargo/config; \
+	echo "progress.when = 'never'" >>${WRKDIR}/.cargo/config; \
+	\
 	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config; \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
 		>>${WRKDIR}/.cargo/config; \
+	\
 	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
 	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config;
 
@@ -277,6 +288,8 @@ MODCARGO_TARGET_DIR ?=	${WRKBUILD}/target
 #  - CARGO_HOME: local cache of the registry index
 #  - CARGO_BUILD_JOBS: configure number of jobs to run
 #  - CARGO_TARGET_DIR: location of where to place all generated artifacts
+#  - CARGO_NET_OFFLINE: avoid accessing the network
+#  - CARGO_TERM_*: output configuration (verbose, no color, no progress bar)
 #  - RUST_BACKTRACE: enable backtrace on error
 #  - RUSTC: path of rustc binary (default to lang/rust)
 #  - RUSTDOC: path of rustdoc binary (default to lang/rust)
@@ -287,6 +300,10 @@ MODCARGO_ENV += \
 	CARGO_HOME=${WRKDIR}/cargo-home \
 	CARGO_BUILD_JOBS=${MAKE_JOBS} \
 	CARGO_TARGET_DIR=${MODCARGO_TARGET_DIR} \
+	CARGO_NET_OFFLINE=true \
+	CARGO_TERM_VERBOSE=true \
+	CARGO_TERM_COLOR=never \
+	CARGO_TERM_PROGRESS_WHEN=never \
 	RUST_BACKTRACE=full \
 	RUSTC=${MODRUST_RUSTC_BIN} \
 	RUSTDOC=${MODRUST_RUSTDOC_BIN} \
@@ -318,8 +335,7 @@ MODCARGO_TEST_ARGS +=		--no-default-features
 # Helper for updating a crate.
 MODCARGO_CARGO_UPDATE = \
 	${MODCARGO_CARGO_RUN} update \
-		--manifest-path ${MODCARGO_CARGOTOML} \
-		--verbose
+		--manifest-path ${MODCARGO_CARGOTOML}
 
 # Use module targets ?
 MODCARGO_BUILD ?=	Yes
@@ -330,9 +346,7 @@ MODCARGO_TEST ?=	Yes
 MODCARGO_BUILD_TARGET = \
 	${MODCARGO_CARGO_RUN} build \
 		--manifest-path ${MODCARGO_CARGOTOML} \
-		--offline \
 		--release \
-		--verbose \
 		${MODCARGO_BUILD_ARGS} ;
 
 .if !target(do-build) && ${MODCARGO_BUILD:L} == "yes"
@@ -350,8 +364,6 @@ MODCARGO_INSTALL_TARGET += \
 	${MODCARGO_CARGO_RUN} install \
 		--root="${PREFIX}" \
 		--path ${_p} \
-		--offline \
-		--verbose \
 		${MODCARGO_INSTALL_ARGS} ;
 .endfor
 
@@ -367,9 +379,7 @@ do-install:
 MODCARGO_TEST_TARGET = \
 	${MODCARGO_CARGO_RUN} test \
 		--manifest-path ${MODCARGO_CARGOTOML} \
-		--offline \
 		--release \
-		--verbose \
 		${MODCARGO_TEST_ARGS} ;
 
 .if !target(do-test) && ${MODCARGO_TEST:L} == "yes"
