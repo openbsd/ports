@@ -25,6 +25,8 @@ share/examples/smarc/logo-small.html
 share/examples/smarc/schema.sql
 share/examples/smarc/search-header.html
 @sample ${SYSCONFDIR}/smarc/search-header.html
+share/examples/smarc/search-link.html
+@sample ${SYSCONFDIR}/smarc/search-link.html
 share/examples/smarc/search.html
 @sample ${SYSCONFDIR}/smarc/search.html
 share/examples/smarc/style.css
