@@ -1,10 +1,9 @@
 COMMENT=	perl interface to PC/SC smartcards
 
-V=		1.4.14
-DISTNAME=	pcsc-perl-$V
-PKGNAME=	p5-Chipcard-PCSC-$V
-EXTRACT_SUFX=	.tar.bz2
-REVISION=	2
+DISTNAME=	Chipcard-PCSC-v1.4.16
+PKGNAME=	p5-${DISTNAME:S/v//}
+
+HOMEPAGE=	https://pcsc-perl.apdu.fr/
 
 CATEGORIES=	security
 

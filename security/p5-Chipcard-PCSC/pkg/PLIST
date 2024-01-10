@@ -8,7 +8,7 @@ ${P5ARCH}/Chipcard/PCSC/Card.pod
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Chipcard/
 ${P5ARCH}/auto/Chipcard/PCSC/
-${P5ARCH}/auto/Chipcard/PCSC/PCSC.so
+@so ${P5ARCH}/auto/Chipcard/PCSC/PCSC.so
 @man man/man3p/Chipcard::PCSC.3p
 @man man/man3p/Chipcard::PCSC::Card.3p
 share/examples/p5-Chipcard-PCSC/

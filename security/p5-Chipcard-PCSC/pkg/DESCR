@@ -3,7 +3,7 @@ a communication layer with a wide variety of smart card readers through
 a standardized API.
 
 This PCSC perl module implements the Chipcard::PCSC class. Objects of
-this class are used to communicate with the PCSC-lite daemon (see pcscd(1)
+this class are used to communicate with the PCSC-lite daemon (see pcscd(8)
 for more information).
 
 A PCSC object can be used to communicate with more than one reader
