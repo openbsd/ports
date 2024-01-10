@@ -1,0 +1,10 @@
+The primary goal of rb-sys is to make building native Ruby extensions in
+Rust easier than it would be in C. If it's not easy, it's a bug.
+
+Features:
+
+* Battle-tested Rust bindings for the Ruby C API
+* Support for Ruby 2.4+
+* Supports all major platforms (Linux, macOS, Windows)
+* Cross compilation of gems
+* Integration with rake-compiler
