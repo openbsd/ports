@@ -1,6 +1,7 @@
-COMMENT =	converts XML to Python objects
+COMMENT=	library for async concurrency and I/O
 
 MODPY_EGG_VERSION=	0.23.1
+REVISION=	0
 DISTNAME=	trio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,7 +18,7 @@ FLAVOR=		python3
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =	devel/py-attrs${MODPY_FLAVOR}>=20.1.0 \
+RUN_DEPENDS=	devel/py-attrs${MODPY_FLAVOR}>=20.1.0 \
 		devel/py-exceptiongroup${MODPY_FLAVOR}>=1.0.1 \
 		devel/py-outcome${MODPY_FLAVOR} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
@@ -25,7 +26,7 @@ RUN_DEPENDS =	devel/py-attrs${MODPY_FLAVOR}>=20.1.0 \
 		net/py-idna${MODPY_FLAVOR}
 
 # XXX: needs ruff, pyright
-TEST_DEPENDS =	devel/py-astor${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-astor${MODPY_FLAVOR} \
 		devel/py-isort${MODPY_FLAVOR} \
 		devel/py-jedi${MODPY_FLAVOR} \
 		devel/py-mypy${MODPY_FLAVOR} \
