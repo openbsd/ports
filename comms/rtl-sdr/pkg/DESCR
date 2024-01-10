@@ -9,10 +9,7 @@ rtl_fm:		general purpose analogue demodulator
 		(narrow band FM, wide band FM, AM and SSB)
 rtl_sdr:	tunes the device and captures raw data to a file
 rtl_test:	check the possible tuning range
-
-Asynchronous mode is NOT currently supported on OpenBSD; some programs
-have been modified to force synchronous mode, the following are not yet
-available:
-
+rtl_biast:	turn the RTL-SDR.com bias tee or any GPIO ON and OFF
+rtl_power:	simple FFT logger
 rtl_adsb:	simple ADS-B decoder (aircraft tracking)
 rtl_tcp:	provides a network server for remote access to an SDR

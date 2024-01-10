@@ -1,9 +1,19 @@
+@bin bin/rtl_adsb
+@bin bin/rtl_biast
 @bin bin/rtl_eeprom
 @bin bin/rtl_fm
+@bin bin/rtl_power
 @bin bin/rtl_sdr
+@bin bin/rtl_tcp
 @bin bin/rtl_test
 include/rtl-sdr.h
 include/rtl-sdr_export.h
-lib/librtlsdr.a
+lib/cmake/
+lib/cmake/rtlsdr/
+lib/cmake/rtlsdr/rtlsdrConfig.cmake
+lib/cmake/rtlsdr/rtlsdrConfigVersion.cmake
+lib/cmake/rtlsdr/rtlsdrTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/rtlsdr/rtlsdrTargets.cmake
+@static-lib lib/librtlsdr.a
 @lib lib/librtlsdr.so.${LIBrtlsdr_VERSION}
 lib/pkgconfig/librtlsdr.pc

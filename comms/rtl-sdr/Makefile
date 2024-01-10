@@ -1,32 +1,26 @@
 COMMENT=	software to turn RTL2832U into an SDR
 
-DISTNAME=	rtl-sdr-0.20130412
-REVISION=	3
+GH_ACCOUNT =	osmocom
+GH_PROJECT =	rtl-sdr
+GH_TAGNAME =	v2.0.1
 
-SHARED_LIBS=	rtlsdr 0.1
+SHARED_LIBS=	rtlsdr 0.2
 
 CATEGORIES=	comms
 
-HOMEPAGE=	http://sdr.osmocom.org/trac/wiki/rtl-sdr
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+HOMEPAGE=	https://osmocom.org/projects/rtl-sdr/wiki
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c m pthread usb-1.0
 
-# http://cgit.osmocom.org/rtl-sdr
-SITES=		https://spacehopper.org/mirrors/
-
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/libusb1
 
-NO_TEST=	Yes
+MODCMAKE_LDFLAGS=-L${LOCALBASE}/lib
 
-# rtl_tcp, rtl_adsb and rtl_fm require asynchronous mode which is
-# not currently working. additionally, rtl_adsb and rtl_fm have mutex
-# issues (unlocking already-unlocked mutex). other programs have been
-# patched to force synchronous mode.   update DESCR if fixing these.
-post-install:
-	cd ${PREFIX}/bin && rm rtl_adsb rtl_tcp
+CONFIGURE_ARGS += -DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 .include <bsd.port.mk>
