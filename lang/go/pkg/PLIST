@@ -2686,6 +2686,7 @@ go/src/cmd/go/testdata/script/mod_domain_root.txt
 go/src/cmd/go/testdata/script/mod_dot.txt
 go/src/cmd/go/testdata/script/mod_download.txt
 go/src/cmd/go/testdata/script/mod_download_concurrent_read.txt
+go/src/cmd/go/testdata/script/mod_download_exec_toolchain.txt
 go/src/cmd/go/testdata/script/mod_download_git_bareRepository.txt
 go/src/cmd/go/testdata/script/mod_download_git_decorate_full.txt
 go/src/cmd/go/testdata/script/mod_download_hash.txt
@@ -2813,6 +2814,7 @@ go/src/cmd/go/testdata/script/mod_init_glide.txt
 go/src/cmd/go/testdata/script/mod_init_invalid_major.txt
 go/src/cmd/go/testdata/script/mod_init_path.txt
 go/src/cmd/go/testdata/script/mod_init_tidy.txt
+go/src/cmd/go/testdata/script/mod_insecure_issue63845.txt
 go/src/cmd/go/testdata/script/mod_install_hint.txt
 go/src/cmd/go/testdata/script/mod_install_pkg_version.txt
 go/src/cmd/go/testdata/script/mod_install_versioned.txt
@@ -8340,6 +8342,7 @@ go/src/path/filepath/export_windows_test.go
 go/src/path/filepath/match.go
 go/src/path/filepath/match_test.go
 go/src/path/filepath/path.go
+go/src/path/filepath/path_nonwindows.go
 go/src/path/filepath/path_plan9.go
 go/src/path/filepath/path_test.go
 go/src/path/filepath/path_unix.go
@@ -12851,6 +12854,10 @@ go/test/fixedbugs/issue61992.go
 go/test/fixedbugs/issue62203.go
 go/test/fixedbugs/issue62469.go
 go/test/fixedbugs/issue6247.go
+go/test/fixedbugs/issue62498.dir/
+go/test/fixedbugs/issue62498.dir/a.go
+go/test/fixedbugs/issue62498.dir/main.go
+go/test/fixedbugs/issue62498.go
 go/test/fixedbugs/issue6269.go
 go/test/fixedbugs/issue6295.dir/
 go/test/fixedbugs/issue6295.dir/p0.go
@@ -12858,12 +12865,16 @@ go/test/fixedbugs/issue6295.dir/p1.go
 go/test/fixedbugs/issue6295.dir/p2.go
 go/test/fixedbugs/issue6295.go
 go/test/fixedbugs/issue6298.go
+go/test/fixedbugs/issue63657.go
+go/test/fixedbugs/issue63955.go
 go/test/fixedbugs/issue6399.go
 go/test/fixedbugs/issue6402.go
 go/test/fixedbugs/issue6403.go
 go/test/fixedbugs/issue6405.go
 go/test/fixedbugs/issue6406.go
 go/test/fixedbugs/issue6428.go
+go/test/fixedbugs/issue64565.go
+go/test/fixedbugs/issue64565.out
 go/test/fixedbugs/issue6500.go
 go/test/fixedbugs/issue6513.dir/
 go/test/fixedbugs/issue6513.dir/a.go
