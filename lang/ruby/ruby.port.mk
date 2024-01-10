@@ -192,8 +192,8 @@ _GEM_MAKE=	"make V=1"
 # signatures.
 EXTRACT_CASES += *.gem) \
     mkdir ${WRKDIST} ${_GEM_CONTENT}; \
-    cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/$$archive; \
-    cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm -f ${_GEM_DATAFILE}; \
+    tar -xf ${FULLDISTDIR}/$$archive -C ${_GEM_CONTENT}; \
+    tar -xzf ${_GEM_DATAFILE} -C ${WRKDIST} && rm -f ${_GEM_DATAFILE}; \
     gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata; \
     rm -f ${_GEM_CONTENT}/*.gz.sig ${_GEM_CONTENT}/checksums.yaml.gz;;
 
