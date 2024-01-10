@@ -249,6 +249,7 @@
      SUBDIR += timescaledb
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
+     SUBDIR += updatedb
      SUBDIR += victoriametrics
      SUBDIR += web2ldap
      SUBDIR += xapian-bindings
