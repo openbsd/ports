@@ -3,7 +3,7 @@ COMMENT=	web-based LDAP browser to manage LDAP servers
 CATEGORIES=	www
 
 GH_ACCOUNT=	leenooks
-GH_TAGNAME=	1.2.6.5
+GH_TAGNAME=	1.2.6.7
 GH_PROJECT=	phpLDAPadmin
 PKGNAME=	${DISTNAME:L}
 
