@@ -621,6 +621,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/fuchsia.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/hermit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/hurd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/js.rs
+share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/lazy.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/linux_android.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/macos.rs
@@ -803,6 +804,10 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/fr
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd14/b64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd14/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd14/x86_64.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd15/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd15/b64.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd15/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/freebsd15/x86_64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/powerpc.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/bsd/freebsdlike/freebsd/powerpc64.rs
