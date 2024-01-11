@@ -27,6 +27,7 @@ HOMEPAGE =	https://wayfire.org
 
 MODULES =	devel/meson
 BUILD_DEPENDS =	graphics/glm \
+		devel/cmake \
 		textproc/nlohmann-json \
 		wayland/wayland-protocols
 
