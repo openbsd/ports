@@ -1,6 +1,5 @@
 COMMENT =	simple gemini server
-V =		1.8.6
-DISTNAME =	gmid-${V}
+DISTNAME =	gmid-2.0
 
 CATEGORIES =	net
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE = Yes
 # uses unveil()
 WANTLIB += c crypto event ssl tls util
 
-SITES = 	https://github.com/omar-polo/gmid/releases/download/$V/
+SITES = 	https://ftp.omarpolo.com/
 
 CONFIGURE_STYLE = simple
 

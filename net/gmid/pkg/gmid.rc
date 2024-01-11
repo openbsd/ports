@@ -1,7 +1,6 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/gmid"
-daemon_flags="-c ${SYSCONFDIR}/gmid.conf"
 
 . /etc/rc.d/rc.subr
 
