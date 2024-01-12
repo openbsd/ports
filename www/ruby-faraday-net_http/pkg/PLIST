@@ -1,0 +1,12 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.md
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/adapter/
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/adapter/net_http.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/net_http/
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/net_http.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/faraday/net_http/version.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
