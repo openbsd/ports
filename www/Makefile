@@ -517,7 +517,8 @@
      SUBDIR += ruby-capybara-webkit,ruby33
      SUBDIR += ruby-ethon
      SUBDIR += ruby-faraday
-     SUBDIR += ruby-faraday_middleware
+     SUBDIR += ruby-faraday-follow_redirects
+     SUBDIR += ruby-faraday-net_http
      SUBDIR += ruby-fcgi,ruby31
      SUBDIR += ruby-fcgi,ruby32
      SUBDIR += ruby-fcgi,ruby33
