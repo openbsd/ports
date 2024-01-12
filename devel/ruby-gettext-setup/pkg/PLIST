@@ -39,11 +39,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/string_changes/change.pot
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/string_changes/non_string_changes.pot
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/string_changes/old.pot
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/string_changes/remove.pot
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tmp_locales/
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tmp_locales/config.yaml
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tmp_locales/de/
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tmp_locales/de/sinatra-i18n.po
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/tmp_locales/sinatra-i18n.pot
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/gettext-setup/
 ${GEM_LIB}/gems/${DISTNAME}/spec/lib/gettext-setup/gettext_setup_spec.rb
