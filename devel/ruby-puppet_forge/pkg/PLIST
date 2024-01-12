@@ -1,12 +1,18 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/pull_request_template.md
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/labeller.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release_prep.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ruby-rspec.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/snyk_merge.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/CODEOWNERS
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/History.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -19,8 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/connection/connection_failure.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/lazy_accessors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/lazy_relations.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/middleware/
-${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/middleware/symbolify_json.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/lru_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/tar/mini.rb
@@ -36,8 +41,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/module.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/v3/user.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet_forge/version.rb
-${GEM_LIB}/gems/${DISTNAME}/locales/
-${GEM_LIB}/gems/${DISTNAME}/locales/config.yaml
 ${GEM_LIB}/gems/${DISTNAME}/puppet_forge.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/
@@ -91,8 +94,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/connection/connection_failure_spec.r
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/connection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/lazy_accessors_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/lazy_relations_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/middleware/
-${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/middleware/symbolify_json_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/lru_cache_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar/mini_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/forge/tar_spec.rb
