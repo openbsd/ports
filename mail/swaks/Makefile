@@ -1,6 +1,6 @@
 COMMENT=	swiss army knife SMTP transaction tester
 
-DISTNAME=	swaks-20201014.0
+DISTNAME=	swaks-20240103.0
 
 CATEGORIES=	mail
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE=	Yes
 RUN_DEPENDS=	net/p5-Net-DNS \
 		security/p5-Net-SSLeay \
 		security/p5-Authen-SASL \
-		security/p5-Authen-NTLM \
-		net/p5-IO-Socket-INET6
+		security/p5-Authen-NTLM
 
 NO_TEST=	Yes
 
