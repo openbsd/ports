@@ -522,6 +522,7 @@
      SUBDIR += ruby-commonmarker,ruby31
      SUBDIR += ruby-commonmarker,ruby32
      SUBDIR += ruby-commonmarker,ruby33
+     SUBDIR += ruby-erubi
      SUBDIR += ruby-erubis
      SUBDIR += ruby-fast-stemmer,ruby31
      SUBDIR += ruby-fast-stemmer,ruby32
