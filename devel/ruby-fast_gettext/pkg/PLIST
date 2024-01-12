@@ -1,6 +1,7 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Readme.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/
@@ -19,6 +20,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/db_models/
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/db_models/translation_key.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/db_models/translation_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/merge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/mo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/po.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_gettext/translation_repository/yaml.rb
