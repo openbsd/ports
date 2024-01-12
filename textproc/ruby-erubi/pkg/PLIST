@@ -1,0 +1,11 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/erubi/
+${GEM_LIB}/gems/${DISTNAME}/lib/erubi.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/erubi/capture_end.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

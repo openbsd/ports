@@ -1,0 +1,2 @@
+Erubi is a ERB template engine for ruby. It is a simplified fork of
+Erubis, using the same basic algorithm, with a few differences.
