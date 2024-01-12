@@ -1,6 +1,6 @@
 COMMENT =	network event stream processing system
 
-V =		0.3.10
+V =		0.3.11
 DISTNAME =	riemann-${V}
 CATEGORIES =	sysutils
 
