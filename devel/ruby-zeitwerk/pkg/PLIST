@@ -8,12 +8,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/explicit_namespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/gem_inflector.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/gem_loader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/inflector.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/internal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/kernel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/callbacks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/config.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/eager_load.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/real_mod_name.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/registry.rb
