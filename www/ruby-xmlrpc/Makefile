@@ -1,6 +1,6 @@
 COMMENT = 	remote procedure calls over HTTP
 
-DISTNAME = 	xmlrpc-0.3.2
+DISTNAME = 	xmlrpc-0.3.3
 CATEGORIES = 	www
 
 HOMEPAGE =	https://github.com/ruby/xmlrpc
