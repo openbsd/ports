@@ -1,6 +1,6 @@
 COMMENT =		compare semantic versioning
 
-DISTNAME =		semantic_puppet-1.0.4
+DISTNAME =		semantic_puppet-1.1.0
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/puppetlabs/semantic_puppet-gem	
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
