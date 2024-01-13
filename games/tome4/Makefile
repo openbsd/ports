@@ -4,6 +4,7 @@
 # ../src/luajit2/src/lj_arch.h:55:2: error: #error "No support for
 # this architecture (yet)"
 ONLY_FOR_ARCHS = i386 amd64
+USE_NOBTCFI =	Yes
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -11,7 +12,7 @@ COMMENT-data =	data for Tales of Maj'Eyal
 V =		1.7.4
 PKGNAME =	tome4-${V}
 CATEGORIES =	games x11
-REVISION =	0
+REVISION =	1
 
 SITES =		https://te4.org/dl/t-engine/
 
