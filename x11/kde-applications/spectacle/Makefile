@@ -32,6 +32,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
+		devel/kf5/kirigami2 \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
@@ -39,9 +40,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
-		devel/kf5/kirigami2 \
-		x11/qt5/qtquickcontrols2 \
 		x11/kde-plasma/kpipewire \
+		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtx11extras
 
 post-install:

@@ -36,11 +36,11 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/knotifications \
 		devel/kf5/kwallet \
+		devel/kf5/kwayland \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		devel/kf5/kwayland \
-		net/libvncserver \
 		devel/libinotify \
+		net/libvncserver \
 		x11/kde-plasma/kpipewire \
 		x11/qt5/qtx11extras
 
