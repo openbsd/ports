@@ -1,6 +1,6 @@
 COMMENT=		Ruby interface to gettext
 
-DISTNAME=		gettext-3.4.7
+DISTNAME=		gettext-3.4.9
 CATEGORIES=		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
