@@ -60,7 +60,7 @@ MODCABAL_post-extract = \
 # Some packages need an updated .cabal file from hackage to overwrite
 # the one in the tar ball.
 .if defined(MODCABAL_REVISION)
-DISTFILES.hs += ${DISTNAME}_${MODCABAL_REVISION}{revision/${MODCABAL_REVISION}}.cabal
+DISTFILES.hs += ${DISTNAME}_${MODCABAL_REVISION}{${DISTNAME}/revision/${MODCABAL_REVISION}}.cabal
 MODCABAL_post-extract += \
 	&& cp ${FULLDISTDIR}/${DISTNAME}_${MODCABAL_REVISION}.cabal \
 		${WRKSRC}/${MODCABAL_STEM}.cabal
