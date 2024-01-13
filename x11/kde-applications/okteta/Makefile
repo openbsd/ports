@@ -1,5 +1,5 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.13
+VERSION =	0.26.15
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
@@ -32,9 +32,9 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-RUN_DEPENDS +=	misc/shared-mime-info
+RUN_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS +=	devel/kf5/kbookmarks \
+LIB_DEPENDS =	devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfigwidgets \
