@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  colorcorrect              0.0 # 0.0
 SHARED_LIBS +=  kfontinst                 0.0 # 0.0
@@ -23,17 +24,17 @@ WANTLIB += KF5Plasma KF5PlasmaQuick KF5Prison KF5QuickAddons KF5Runner
 WANTLIB += KF5Screen KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5UnitConversion KF5Wallet
 WANTLIB += KF5WaylandClient KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KScreenLocker KSysGuardFormatter KSysGuardSensorFaces
+WANTLIB += KPipeWire KScreenLocker KSysGuardFormatter KSysGuardSensorFaces
 WANTLIB += KSysGuardSensors KUserFeedbackCore LayerShellQtInterface
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5Svg Qt5WaylandClient Qt5Widgets Qt5X11Extras Qt5Xml
 WANTLIB += SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst
 WANTLIB += c fontconfig freetype icui18n icuuc ksgrd m phonon4qt5
-WANTLIB += phonon4qt5experimental processcore processui qalculate
-WANTLIB += wayland-client xcb xcb-composite xcb-damage xcb-image
-WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes
-WANTLIB += xkbcommon z
+WANTLIB += phonon4qt5experimental pipewire-0.3 processcore processui
+WANTLIB += qalculate wayland-client xcb xcb-composite xcb-damage
+WANTLIB += xcb-image xcb-randr xcb-render xcb-shape xcb-shm xcb-util
+WANTLIB += xcb-xfixes xkbcommon z
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
@@ -110,6 +111,7 @@ LIB_DEPENDS =		devel/kf5/attica \
 			multimedia/phonon \
 			x11/qt5/qtdeclarative \
 			x11/kde-applications/libkexiv2 \
+			x11/kde-plasma/kpipewire>=${VERSION} \
 			x11/kde-plasma/kscreenlocker>=${VERSION} \
 			x11/kde-plasma/libkscreen>=${VERSION} \
 			x11/kde-plasma/libksysguard>=${VERSION}
