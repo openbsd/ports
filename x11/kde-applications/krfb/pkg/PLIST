@@ -5,7 +5,9 @@
 lib/qt5/plugins/krfb/
 lib/qt5/plugins/krfb/events/
 @so lib/qt5/plugins/krfb/events/x11.so
+@so lib/qt5/plugins/krfb/events/xdp.so
 lib/qt5/plugins/krfb/framebuffer/
+@so lib/qt5/plugins/krfb/framebuffer/pw.so
 @so lib/qt5/plugins/krfb/framebuffer/qt.so
 @so lib/qt5/plugins/krfb/framebuffer/xcb.so
 share/applications/org.kde.krfb.desktop
