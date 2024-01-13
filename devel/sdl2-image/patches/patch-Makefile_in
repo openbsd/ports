@@ -1,8 +1,8 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -571,7 +571,6 @@ EXTRA_DIST = \
- 
+@@ -604,7 +604,6 @@ EXTRA_DIST = \
+ libSDL2_image_la_CPPFLAGS = -I$(srcdir)/include
  libSDL2_image_la_LDFLAGS = \
  	-no-undefined		\
 -	-release $(LT_RELEASE)	\
