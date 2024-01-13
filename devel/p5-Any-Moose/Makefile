@@ -1,22 +1,25 @@
 COMMENT =	use Moose or Mouse modules
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Any-Moose-0.18
+DISTNAME =	Any-Moose-0.27
+FIX_EXTRACT_PERMISSIONS =	Yes
+
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-Mouse>=0.40
+MODULES =		cpan
 
-TEST_DEPENDS =	devel/p5-Class-Load \
-		devel/p5-Devel-GlobalDestruction \
-		devel/p5-Module-Runtime \
-		devel/p5-Moose \
-		devel/p5-MooseX-Types \
-		devel/p5-MouseX-Types \
-		devel/p5-MRO-Compat
+RUN_DEPENDS =		devel/p5-Mouse>=0.40
+
+TEST_DEPENDS =		devel/p5-Module-Runtime \
+			devel/p5-Moo \
+			devel/p5-Moose \
+			devel/p5-MooseX-Types \
+			devel/p5-MouseX-Types>=0.03 \
+			devel/p5-Role-Tiny \
+			devel/p5-Sub-Name
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
