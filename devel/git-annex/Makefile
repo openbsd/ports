@@ -115,7 +115,6 @@ MODCABAL_MANIFEST	= \
 	cryptonite	0.30	0	\
 	cryptonite-conduit	0.2.2	1	\
 	css-text	0.1.3.0	0	\
-	data-array-byte	0.1.0.1	2	\
 	data-default	0.7.1.1	0	\
 	data-default-class	0.1.2.0	0	\
 	data-default-instances-containers	0.0.1	0	\
@@ -134,13 +133,12 @@ MODCABAL_MANIFEST	= \
 	feed	1.3.2.1	2	\
 	file-embed	0.0.15.0	0	\
 	filepath-bytestring	1.4.2.1.13	0	\
-	foldable1-classes-compat	0.1	4	\
 	free	5.2	3	\
 	generically	0.1.1	2	\
 	git-lfs	1.2.1	0	\
 	happy	1.20.1.1	0	\
 	hashable	1.4.3.0	1	\
-	hjsmin	0.2.0.4	2	\
+	hjsmin	0.2.1	0	\
 	hourglass	0.2.12	0	\
 	hsc2hs	0.68.10	1	\
 	http-api-data	0.6	1	\
