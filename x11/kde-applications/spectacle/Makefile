@@ -1,23 +1,20 @@
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-# XXX Depends on KPipeWire (pipewire)
-VERSION =	22.12.3
-REVISION =	1
 
 HOMEPAGE =	https://apps.kde.org/spectacle/
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5DBusAddons KF5GlobalAccel KF5GuiAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Purpose
-WANTLIB += KF5PurposeWidgets KF5Service KF5Solid KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c kImageAnnotator
-WANTLIB += m xcb xcb-cursor xcb-image xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-util xcb-xfixes
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GuiAddons KF5I18n KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Kirigami2 KF5Notifications
+WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KPipeWire KPipeWireRecord
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5QuickTemplates2
+WANTLIB += Qt5WaylandClient Qt5Widgets Qt5X11Extras Qt5Xml X11
+WANTLIB += c m wayland-client xcb xcb-cursor xcb-image xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -26,9 +23,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
 
-LIB_DEPENDS =	graphics/kimageannotator>=0.6.0 \
-		devel/kf5/attica \
-		devel/kf5/kauth \
+LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -38,14 +33,15 @@ LIB_DEPENDS =	graphics/kimageannotator>=0.6.0 \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
-		devel/kf5/kwayland \
+		devel/kf5/kirigami2 \
+		x11/qt5/qtquickcontrols2 \
+		x11/kde-plasma/kpipewire \
 		x11/qt5/qtx11extras
 
 post-install:
