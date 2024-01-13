@@ -1,9 +1,11 @@
 @rcscript ${RCDIR}/tailscaled
 @comment bin/addlicense
+@comment bin/build-webclient
 @comment bin/cloner
 @bin bin/derper
 @bin bin/derpprobe
 @comment bin/dist
+@comment bin/generate
 @comment bin/get-authkey
 @comment bin/gitops-pusher
 @comment bin/hello
@@ -26,4 +28,5 @@
 @comment bin/testcontrol
 @comment bin/testwrapper
 @comment bin/tsconnect
+@bin bin/tsidp
 @comment bin/viewer
