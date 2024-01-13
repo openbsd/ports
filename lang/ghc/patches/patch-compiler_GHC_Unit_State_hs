@@ -5,7 +5,7 @@ Uses $topdir/include as the very first place to find DerivedConstants.h
 Index: compiler/GHC/Unit/State.hs
 --- compiler/GHC/Unit/State.hs.orig
 +++ compiler/GHC/Unit/State.hs
-@@ -613,7 +613,13 @@ initUnits logger dflags cached_dbs = do
+@@ -661,7 +661,13 @@ initUnits logger dflags cached_dbs home_units = do
        -- really need to use the platform constants but they have not been loaded.
        case lookupUnitId unit_state rtsUnitId of
          Nothing   -> return Nothing

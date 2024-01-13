@@ -3,12 +3,12 @@ With 8k of stack, this test fails for WAY=normal.
 Index: testsuite/tests/codeGen/should_run/all.T
 --- testsuite/tests/codeGen/should_run/all.T.orig
 +++ testsuite/tests/codeGen/should_run/all.T
-@@ -98,7 +98,7 @@ test('T2080', normal, compile_and_run, [''])
+@@ -97,7 +97,7 @@ test('T2080', normal, compile_and_run, [''])
  test('T2838', normal, compile_and_run, [''])
  test('T3207', normal, compile_and_run, [''])
  test('T3561', normal, compile_and_run, [''])
 -test('T3677', extra_run_opts('+RTS -K8k -RTS'), compile_and_run, [''])
 +test('T3677', extra_run_opts('+RTS -K10k -RTS'), compile_and_run, [''])
  test('T4441', normal, compile_and_run, [''])
- test('T5149', omit_ways(['ghci']), multi_compile_and_run,
+ test('T5149', [omit_ways(['ghci']), js_skip], multi_compile_and_run,
                   ['T5149', [('T5149_cmm.cmm', '')], ''])

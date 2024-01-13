@@ -1,0 +1,16 @@
+Quick hack to avoid rebuilding bootstrap. We can do better by not munging VERSION
+
+Index: hadrian/bootstrap/bootstrap.py
+--- hadrian/bootstrap/bootstrap.py.orig
++++ hadrian/bootstrap/bootstrap.py
+@@ -149,8 +149,8 @@ def read_bootstrap_info(path: Path) -> BootstrapInfo:
+     return BootstrapInfo(dependencies=deps, builtin=builtin)
+ 
+ def check_builtin(dep: BuiltinDep, ghc: Compiler) -> None:
+-    subprocess_run([str(ghc.ghc_pkg_path), 'describe', f'{dep.package}-{dep.version}'],
+-                   check=True, stdout=subprocess.DEVNULL)
++#    subprocess_run([str(ghc.ghc_pkg_path), 'describe', f'{dep.package}-{dep.version}.20220830'],
++#                   check=True, stdout=subprocess.DEVNULL)
+     print(f'Using {dep.package}-{dep.version} from GHC...')
+     return
+ 

@@ -13,19 +13,18 @@ USE_NOEXECONLY =	Yes
 
 USE_NOBTCFI =		Yes
 
-GHC_VERSION =		9.2.7
-REVISION =		5
+GHC_VERSION =		9.6.4
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.10.7.20231222
+BIN_VER =		9.6.4.20240111
 
-# lang/python needed for regression tests.
+# lang/python needed to bootstrap hadrian.
 MODULES =		lang/python
 
-MODPY_BUILDDEP =	No
+MODPY_BUILDDEP =	Yes
 MODPY_RUNDEP =		No
 
 # BSD w/o advertising clause.
@@ -50,7 +49,7 @@ SITES.boot =		https://openbsd.dead-parrot.de/distfiles/
 DIST_SUBDIR =		ghc
 
 .for m in amd64
-BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz \
+BINDISTFILE-$m =	ghc-${BIN_VER}-$m.tar.xz \
 			ghc-${BIN_VER}-shlibs-$m.tar.gz
 SUPDISTFILES.boot +=	${BINDISTFILE-$m}
 .endfor
@@ -58,6 +57,9 @@ SUPDISTFILES.boot +=	${BINDISTFILE-$m}
 DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
 			ghc-${GHC_VERSION}-testsuite.tar.xz
 DISTFILES.boot = 	${BINDISTFILE-${MACHINE_ARCH}}
+
+DISTFILES.noextract =	hadrian-sources-${BIN_VER}.tar.gz
+SITES.noextract =	https://openbsd.dead-parrot.de/distfiles/
 
 # sphinx-rtd-theme update patch set
 # mirrored from https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.patch
@@ -74,34 +76,35 @@ pre-patch:
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-	CABAL			3.6.3.0		 \
-	ARRAY			0.5.4.0		 \
-	BASE			4.16.4.0	 \
-	BINARY			0.8.9.0		 \
-	BYTESTRING		0.11.4.0	 \
-	CONTAINERS		0.6.5.1		 \
-	DEEPSEQ			1.4.6.1		 \
-	DIRECTORY		1.3.6.2		 \
-	EXCEPTIONS		0.10.4		 \
-	FILEPATH		1.4.2.2		 \
-	GHC			9.2.7		 \
-	GHC_BIGNUM		1.2		 \
+	CABAL			3.10.1.0	 \
+	ARRAY			0.5.6.0		 \
+	BASE			4.18.2.0	 \
+	BINARY			0.8.9.1		 \
+	BYTESTRING		0.11.5.3	 \
+	CONTAINERS		0.6.7		 \
+	DEEPSEQ			1.4.8.1		 \
+	DIRECTORY		1.3.8.1		 \
+	EXCEPTIONS		0.10.7		 \
+	FILEPATH		1.4.200.1	 \
+	GHC			9.6.4		 \
+	GHC_BIGNUM		1.3		 \
 	GHC_COMPACT		0.1.0.0		 \
-	GHC_PRIM		0.8.0		 \
-	HASKELINE		0.8.2		 \
-	HPC			0.6.1.0		 \
+	GHC_PRIM		0.10.0		 \
+	HASKELINE		0.8.2.1		 \
+	HPC			0.6.2.0		 \
 	INTEGER_GMP		1.1		 \
-	MTL			2.2.2		 \
-	PARSEC			3.1.15.0	 \
+	MTL			2.3.1		 \
+	PARSEC			3.1.16.1	 \
 	PRETTY			1.1.3.6		 \
-	PROCESS			1.6.16.0	 \
-	STM			2.5.0.2		 \
-	TEMPLATE-HASKELL	2.18.0.0	 \
-	TERMINFO		0.4.1.5		 \
-	TEXT			1.2.5.0		 \
-	TIME			1.11.1.1	 \
-	TRANSFORMERS		0.5.6.2		 \
-	UNIX			2.7.2.2		 \
+	PROCESS			1.6.17.0	 \
+	RTS			1.0.2		 \
+	STM			2.5.1.0		 \
+	TEMPLATE-HASKELL	2.20.0.0	 \
+	TERMINFO		0.4.1.6		 \
+	TEXT			2.0.2		 \
+	TIME			1.12.2		 \
+	TRANSFORMERS		0.6.1.0		 \
+	UNIX			2.8.4.0		 \
 	XHTML			3000.2.2.1
 
 .for _i _v in ${GHC_ITEMS}
@@ -150,7 +153,7 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
 post-extract:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} ./boot
+	cd ${WRKSRC} && ${AUTOCONF_ENV} ${MODPY_BIN} ./boot.source
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
@@ -171,9 +174,27 @@ post-patch:
 		echo 'LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \' && \
 		printf 'exec ${WRKDIR}/bootstrap/bin/%s "$$@"\n' "$$f"; \
 	done
-	cp ${WRKSRC}/mk/build.mk{.sample,}
-	echo libraries/base_CONFIGURE_OPTS+=--configure-option=--with-libcharset=no >> ${WRKSRC}/mk/build.mk
-	echo HADDOCK_DOCS=YES >> ${WRKSRC}/mk/build.mk
+# - Build hadrian
+	cd ${WRKSRC} && \
+	${MODPY_BIN} hadrian/bootstrap/bootstrap.py --no-archive -w ../bin/ghc \
+		-s ${FULLDISTDIR}/hadrian-sources-${BIN_VER}.tar.gz
+do-build:
+	cd ${WRKSRC} && \
+	${AUTOCONF_ENV} \
+	_build/bin/hadrian '*.*.ghc.link.opts+=-optl-Wl,--no-execute-only' \
+		'*.*.ghc.link.opts+=-optl-Qunused-arguments' \
+		'*.*.ghc.link.opts+=-L/usr/local/lib' \
+		--docs=none \
+		--flavour=release${TRANSFORMER} \
+		--no-color \
+		--jobs=${MAKE_JOBS} \
+		binary-dist-dir
+	ln -sf ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}{-x86_64-unknown-openbsd,}
+
+do-install:
+	cd ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION} && \
+	CONFIGURE_ENV=${CONFIGURE_ENV}  ./configure && \
+	env -i ${MAKE_ENV} ${FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 do-test:
 	ulimit -c 0 -n 1024 && \
@@ -182,45 +203,35 @@ do-test:
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		PYTHON="${MODPY_BIN}"
 
-
-
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20220830
+BOOTSTRAP_DATE =	20240111
 
-# Create a bootstrapper. This compiles a stripped-down version of
-# ghc and creates a `bindist', i.e. a tarball with binaries that
-# can be used for bootstrapping.
-bootstrap: patch
-	@if [ ! -x ${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION} ]; then \
-		echo Please install autoconf-${AUTOCONF_VERSION}.; \
-		false; \
-	fi
-	@if [ ! -x ${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION} ]; then \
-		echo Please install automake-${AUTOMAKE_VERSION}; \
-		false; \
-	fi
-
-	$(_PBUILD) $(MAKE) _bootstrap_prepare
-
-	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
-
-	${MAKE} build ALL_TARGET="all binary-dist" \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
+# Create a bootstrapper. This compiles a stripped-down version of ghc
+# and creates a `bindist', i.e. a tarball with binaries that can be
+# used for bootstrapping. Additionally it builds a bundle of required
+# shared libraries and the sources required for building hadrian.
+bootstrap:
+	$(MAKE) rebuild 'TRANSFORMER=+no_profiled_libs'
 	$(_PBUILD) $(MAKE) _bootstrap_finish
-
-_bootstrap_prepare:
-	cp ${FILESDIR}/bootstrap.mk ${WRKSRC}/mk/build.mk
-	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
+	${MODPY_BIN} ${WRKSRC}/hadrian/bootstrap/bootstrap.py -w ${WRKSRC}/_build/stage1/bin/ghc \
+		-d ${WRKSRC}/hadrian/bootstrap/plan-bootstrap-${GHC_VERSION:S/./_/g:S/4/2/}.json fetch \
+		-o hadrian-sources-${GHC_VERSION}.${BOOTSTRAP_DATE}
+	ln -sf ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}*.?z .
+	@sha256 -b *.?z
+	@perl -e 'for (@ARGV) { $$s = (stat $$_)[7]; print "SIZE (ghc/$$_) = $$s\n"; }' *.?z
 
 _bootstrap_finish:
 	mkdir -p ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
-	ldd ${WRKBUILD}/ghc/stage2/build/tmp/ghc-stage2 | \
-	awk '$$NF ~ /^\/usr\/(local\/)?lib\// { print $$NF }' | \
-	xargs -J % cp -p % ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
+	ldd ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}/bin/ghc | \
+		awk '$$NF ~ /^\/usr\/(local\/)?lib\// { print $$NF }' | \
+		xargs -J % cp -fp % ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)
 	cd ${WRKBUILD} && \
-	pax -wzf ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
+		pax -wzf ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s){.tar.gz,}
+	cd ${WRKSRC}/_build/bindist && \
+		ln -sf ghc-${GHC_VERSION}{,.${BOOTSTRAP_DATE}} && \
+		pax -w ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}/* | \
+		xz -9 > ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}-$$(arch -s).tar.xz
 
 .include <bsd.port.mk>
