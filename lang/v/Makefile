@@ -2,12 +2,13 @@ ONLY_FOR_ARCHS =amd64 arm64
 
 COMMENT =	simple, fast, safe, compiled language
 
-V_V =		0.4.3
-VC_V =		5005c4ecf03b65d64fca73ff12e360c5ea11ed02
+V_V =		0.4.4
+VC_V =		f33c54ece86140792e054bf33afd6c4b76637234
+MARKDOWN_V =	0c280130cb7ec410b7d21810d1247956c15b72fc
 
 DIST_TUPLE =	github	vlang	v	${V_V}	.
 DIST_TUPLE +=	github	vlang	vc	${VC_V}	vc
-DIST_TUPLE +=	github	vlang	markdown 0c280130cb7ec410b7d21810d1247956c15b72fc .vmodules/markdown
+DIST_TUPLE +=	github	vlang	markdown ${MARKDOWN_V} .vmodules/markdown
 
 CATEGORIES =	lang
 
@@ -34,6 +35,7 @@ pre-build:
 # Instructions on preparing V for packaging
 # https://github.com/vlang/v/blob/master/doc/packaging_v_for_distributions.md
 do-build:
+	cp ${FILESDIR}/v{self,up}.v ${WRKSRC}/cmd/tools/
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v -prod -o v cmd/v && \
 		${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v -prod build-tools
