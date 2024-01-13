@@ -3,8 +3,8 @@ COMMENT =	liberalised reimplementation of cpp in Haskell
 MODCABAL_STEM =		cpphs
 MODCABAL_VERSION	= 1.20.9.1
 MODCABAL_REVISION	= 1
-MODCABAL_MANIFEST	= polyparse	1.13	4
-REVISION =		2
+MODCABAL_MANIFEST	= polyparse	1.13	9
+REVISION =		3
 CATEGORIES =		devel
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
