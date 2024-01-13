@@ -1,0 +1,4 @@
+KPipeWire: offers the main components to connect to and render PipeWire
+KPipeWireRecord: using FFmpeg, helps to record a PipeWire video
+stream into a file.
+
