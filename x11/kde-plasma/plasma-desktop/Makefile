@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ActivitiesStats
 WANTLIB += KF5Attica KF5Auth KF5AuthCore KF5Baloo KF5Bookmarks
@@ -41,7 +42,6 @@ RUN_DEPENDS =	devel/kf5/kirigami2 \
 
 LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/baloo \
-		devel/kf5/baloo \
 		devel/kf5/kactivities \
 		devel/kf5/kactivities-stats \
 		devel/kf5/kauth \
@@ -53,7 +53,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
 		devel/kf5/kdbusaddons \
 		devel/kf5/kdeclarative \
 		devel/kf5/kfilemetadata \
@@ -69,13 +68,11 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
-		devel/kf5/knotifyconfig \
 		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/krunner \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kunitconversion \
 		devel/kf5/kunitconversion \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
@@ -83,10 +80,12 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/plasma-framework \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols2 \
+		x11/qt5/qtsvg \
 		x11/kde-applications/kaccounts-integration \
 		x11/kde-plasma/libksysguard>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
-
 
 CONFIGURE_ARGS = \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
