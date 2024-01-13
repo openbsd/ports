@@ -11,6 +11,7 @@
      SUBDIR += khotkeys
      SUBDIR += kinfocenter
      SUBDIR += kmenuedit
+     SUBDIR += kpipewire
      SUBDIR += kscreen
      SUBDIR += kscreenlocker
      SUBDIR += ksshaskpass
@@ -39,7 +40,6 @@
 
     # Not ported yet
     # SUBDIR += aura-browser
-    # SUBDIR +=kpipewire
     # SUBDIR +=bluedevil
     # SUBDIR +=breeze-plymouth
     # SUBDIR +=discover
