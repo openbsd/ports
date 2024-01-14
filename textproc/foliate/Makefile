@@ -1,7 +1,7 @@
 COMMENT=		simple and modern GTK eBook viewer
 
-DIST_TUPLE +=		github johnfactotum foliate 3.0.1 .
-DIST_TUPLE +=		github johnfactotum foliate-js 2ea63929c73b6a3b98fc772abf6b9249b3bfadab src/foliate-js
+DIST_TUPLE +=		github johnfactotum foliate 3.1.0 .
+DIST_TUPLE +=		github johnfactotum foliate-js 35f749dd7cf8a2e9ee6d34b06d83c92ccd999ba9 src/foliate-js
 
 CATEGORIES=		textproc graphics print
 
