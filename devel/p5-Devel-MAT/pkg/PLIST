@@ -78,6 +78,7 @@ ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-REGEXP.svg
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-SCALAR.svg
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-STASH.svg
 ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
+@man man/man1/pmat-diff.1
 @man man/man1/pmat.1
 @man man/man3p/Devel::MAT.3p
 @man man/man3p/Devel::MAT::Cmd.3p
