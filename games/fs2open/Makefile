@@ -3,11 +3,8 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
-V =		23.0.0
-DISTNAME =	fs2open-${V}
-GH_ACCOUNT =	scp-fs2open
-GH_PROJECT =	fs2open.github.com
-GH_TAGNAME =	release_${V:S/./_/g}
+V =		23.2.1
+PKGNAME =	fs2open-${V}
 
 CATEGORIES =	games
 
@@ -17,21 +14,18 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	no license at all
 PERMIT_DISTFILES =	no license at all
 
-# if running with vulkan backend, dlopen's vulkan in vulkan.hpp
-WANTLIB += ${COMPILER_LIBCXX} SDL2 avcodec avformat avutil c freetype
+# GL is dlopen'd
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 avcodec avformat avutil c freetype iconv
 WANTLIB += jansson jpeg ${MODLUA_WANTLIB} m openal png swresample swscale
-WANTLIB += vulkan z
+WANTLIB += usb-1.0 vulkan z
 
-RPAVLIK_CMAKE_MOD =	7cef9577d6fc35057ea57f46b4986a8a28aeff50
-LIBROCKET =		ecd648a43aff8a9f3daf064d75ca5725237d5b38
-
-SITES.a =	https://github.com/asarium/cmake-modules/archive/
-SITES.b =	https://github.com/asarium/libRocket/archive/
-
-DISTFILES.a =		${RPAVLIK_CMAKE_MOD}.tar.gz
-DISTFILES.b = 		${LIBROCKET}.tar.gz
-
-DIST_SUBDIR =		fs2open-${V}
+DIST_TUPLE +=	github scp-fs2open fs2open.github.com release_${V:S/./_/g} .
+DIST_TUPLE +=	github asarium cmake-modules \
+		7cef9577d6fc35057ea57f46b4986a8a28aeff50 \
+		cmake/external/rpavlik-cmake-modules # Boost License 1.0
+DIST_TUPLE +=	github asarium libRocket \
+		ecd648a43aff8a9f3daf064d75ca5725237d5b38 \
+		lib/libRocket # MIT
 
 # c++11
 COMPILER =		base-clang ports-gcc
@@ -39,6 +33,7 @@ MODULES =		devel/cmake \
 			lang/lua
 LIB_DEPENDS =		audio/openal \
 			devel/jansson \
+			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			graphics/png \
@@ -47,25 +42,18 @@ LIB_DEPENDS =		audio/openal \
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-# Disable Vulkan because of build failure, since upgrade to 1.3.224.1:
-# code/graphics/vulkan/VulkanRenderer.cpp:794:21: error: no viable overloaded '='
-# m_graphicsPipeline = m_device->createGraphicsPipelineUnique(nullptr, pipelineInfo);
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
-			-DFSO_BUILD_WITH_VULKAN=Off
+			-DFSO_BUILD_WITH_VULKAN=On
 
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
 
+WRKDIST =		${WRKDIR}/fs2open.github.com-release_${V:S/./_/g}
+
 # remove bundled SDL
 post-extract:
 	rm -rf	${WRKSRC}/lib/libsdl
-	rmdir	${WRKSRC}/cmake/external/rpavlik-cmake-modules
-	ln -s	${WRKDIR}/cmake-modules-${RPAVLIK_CMAKE_MOD} \
-		${WRKSRC}/cmake/external/rpavlik-cmake-modules
-	rmdir	${WRKSRC}/lib/libRocket
-	ln -s	${WRKDIR}/libRocket-${LIBROCKET} \
-		${WRKSRC}/lib/libRocket
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

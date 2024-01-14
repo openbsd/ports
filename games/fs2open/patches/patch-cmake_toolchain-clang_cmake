@@ -1,4 +1,4 @@
-remove hardcoded -O{0,2} flags
+remove hardcoded optimization flags
 
 Index: cmake/toolchain-clang.cmake
 --- cmake/toolchain-clang.cmake.orig
@@ -10,7 +10,7 @@ Index: cmake/toolchain-clang.cmake
 -set(COMPILER_FLAGS_RELEASE "-O2 -Wno-unused-variable -Wno-unused-parameter")
 +set(COMPILER_FLAGS_RELEASE "-Wno-unused-variable -Wno-unused-parameter")
  
--set(COMPILER_FLAGS_DEBUG "-O0 -g -Wshadow")
+-set(COMPILER_FLAGS_DEBUG "-Og -g -Wshadow")
 +set(COMPILER_FLAGS_DEBUG "-g -Wshadow")
  
  # Always use the base flags and add our compiler flags at the bacl

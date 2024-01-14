@@ -3,7 +3,7 @@ correct capitalization for libSDL2
 Index: code/CMakeLists.txt
 --- code/CMakeLists.txt.orig
 +++ code/CMakeLists.txt
-@@ -28,7 +28,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
+@@ -31,7 +31,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
  TARGET_LINK_LIBRARIES(code PUBLIC ${JPEG_LIBS})
  TARGET_LINK_LIBRARIES(code PUBLIC lz4)
  
