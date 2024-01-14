@@ -6,7 +6,7 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 V =		4.1.3
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot4-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
@@ -28,7 +28,7 @@ WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
 
 WANTLIB-editor = ${WANTLIB-main}
 
-# C++14
+# C++17
 COMPILER =	base-clang ports-gcc
 
 SITES =		https://downloads.tuxfamily.org/godotengine/${V}/
@@ -113,15 +113,6 @@ NO_TEST =		Yes
 
 DPB_PROPERTIES =	parallel
 
-.include <bsd.port.arch.mk>
-.if ${MACHINE_ARCH} == "riscv64"
-BINSUFFIX =		rv64
-.elif ${PROPERTIES:Mlp64}
-BINSUFFIX =		x86_64
-.else
-BINSUFFIX =		x86_32
-.endif
-
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
 WANTLIB +=     atomic
@@ -138,9 +129,9 @@ do-build:
 	@${MODSCONS_BUILD_TARGET} target=editor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release.${BINSUFFIX} \
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.template_release \
 		${PREFIX}/bin/godot4
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor.${BINSUFFIX} \
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.linuxbsd.editor \
 		${PREFIX}/bin/godot4-editor
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
