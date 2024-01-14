@@ -2,10 +2,9 @@ PORTROACH=		limit:^4\.0
 
 COMMENT=		C++ bindings for libxml2
 
-GNOME_VERSION=		4.0.2
+GNOME_VERSION=		4.0.3
 GNOME_PROJECT=		libxml++
 PKGNAME=		libxml++40-${GNOME_VERSION}
-REVISION=		0
 
 SHARED_LIBS += xml++-4.0                 0.0 # 1.0.0
 
