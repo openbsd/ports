@@ -3,7 +3,7 @@ OpenBSD does not have an rt library.
 Index: lib/libv4lconvert/Makefile.in
 --- lib/libv4lconvert/Makefile.in.orig
 +++ lib/libv4lconvert/Makefile.in
-@@ -545,7 +545,7 @@ libv4lconvert_la_SOURCES = libv4lconvert.c tinyjpeg.c 
+@@ -548,7 +548,7 @@ libv4lconvert_la_SOURCES = libv4lconvert.c tinyjpeg.c 
  	libv4lconvert-priv.h libv4lsyscall-priv.h tinyjpeg.h \
  	tinyjpeg-internal.h $(am__append_1) $(am__append_2)
  libv4lconvert_la_CPPFLAGS = $(CFLAG_VISIBILITY) $(ENFORCE_LIBV4L_STATIC)

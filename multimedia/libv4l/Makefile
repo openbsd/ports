@@ -1,14 +1,14 @@
 COMMENT =		libv4l userspace library
 
-VERSION =		1.20.0
+# 1.24 fails to build, 1.26 dropped auto* for meson
+VERSION =		1.22.1
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
-REVISION =		5
 
-SHARED_LIBS +=	v4l1		0.0 # 0.0
-SHARED_LIBS +=	v4l2		0.0 # 0.0
-SHARED_LIBS +=	v4l2rds		0.0 # 0.0
-SHARED_LIBS +=	v4lconvert	0.0 # 0.0
+SHARED_LIBS +=	v4l1		0.1 # 0.0
+SHARED_LIBS +=	v4l2		0.1 # 0.0
+SHARED_LIBS +=	v4l2rds		0.1 # 0.0
+SHARED_LIBS +=	v4lconvert	0.1 # 0.0
 
 CATEGORIES =		multimedia
 
@@ -40,6 +40,6 @@ CPPFLAGS +=	-DCONFIG_SYS_WRAPPER
 CPPFLAGS +=	-I${LOCALBASE}/include
 
 
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 
 .include <bsd.port.mk>
