@@ -1,9 +1,8 @@
 COMMENT = 	web based groupware server
 
-VERSION =	5.8.4
+VERSION =	5.9.1
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=	GDLContentStore 3.0
 SHARED_LIBS +=	NGCards		3.1
