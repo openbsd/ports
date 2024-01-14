@@ -42,6 +42,9 @@ BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash
+# needed to get the value of 'completionsdir' in gio/meson.build; otherwise
+# dpb(1) may junk the pkg-config file before we try to use it
+BUILD_DEPENDS +=	shells/bash-completion
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			devel/pcre2 \
