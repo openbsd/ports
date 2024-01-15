@@ -180,7 +180,7 @@ post-patch:
 		-s ${FULLDISTDIR}/hadrian-sources-${BIN_VER}.tar.gz
 do-build:
 	cd ${WRKSRC} && \
-	${AUTOCONF_ENV} \
+	env -i ${AUTOCONF_ENV} ${MAKE_ENV} \
 	_build/bin/hadrian '*.*.ghc.link.opts+=-optl-Wl,--no-execute-only' \
 		'*.*.ghc.link.opts+=-optl-Qunused-arguments' \
 		'*.*.ghc.link.opts+=-L/usr/local/lib' \
