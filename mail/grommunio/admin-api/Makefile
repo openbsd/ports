@@ -5,7 +5,9 @@ DISTNAME=	grommunio-admin-api-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
-GH_COMMIT=	7c32a584094ff9e6cae8b99e088c2f0e953e1e1f
+GH_COMMIT=	63c43b5e4256c67b5a77bf29d3b85f08cdfc783b
+
+REVISION=	0
 
 CATEGORIES=	mail www productivity
 
