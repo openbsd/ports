@@ -79,9 +79,6 @@ lib/gromox/libgxs_user_filter.la
 @static-lib lib/libgromox_common.a
 lib/libgromox_common.la
 @lib lib/libgromox_common.so.${LIBgromox_common_VERSION}
-@static-lib lib/libgromox_cplus.a
-lib/libgromox_cplus.la
-@lib lib/libgromox_cplus.so.${LIBgromox_cplus_VERSION}
 @static-lib lib/libgromox_dbop.a
 lib/libgromox_dbop.la
 @lib lib/libgromox_dbop.so.${LIBgromox_dbop_VERSION}
@@ -121,8 +118,6 @@ lib/tmpfiles.d/
 lib/tmpfiles.d/tmpfiles-gromox.conf
 libexec/gromox/
 @bin libexec/gromox/cgkrepair
-libexec/gromox/cleaner
-libexec/gromox/create_queue.sh
 @bin libexec/gromox/delivery
 @bin libexec/gromox/delivery-queue
 @bin libexec/gromox/event
@@ -164,7 +159,6 @@ man/man4/user_filter.4gx
 @man man/man7/gromox.7
 man/man7/mapi.7gx
 man/man8/cgkrepair.8gx
-man/man8/cleaner.8gx
 man/man8/delivery-queue.8gx
 man/man8/delivery.8gx
 man/man8/event.8gx
