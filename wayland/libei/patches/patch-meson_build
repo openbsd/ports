@@ -1,0 +1,14 @@
+Hide libevdev-openbsd from build 
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -77,7 +77,7 @@ dep_math = cc.find_library('m', required: false)
+ dep_epoll = dependency('epoll-shim', required: false)
+ dep_libxkbcommon = dependency('xkbcommon', required: false)
+ config_h.set10('HAVE_LIBXKBCOMMON', dep_libxkbcommon.found())
+-dep_libevdev = dependency('libevdev', required: false)
++dep_libevdev = dependency('libevdev-nonexistent', required: false)
+ config_h.set10('HAVE_LIBEVDEV', dep_libevdev.found())
+ 
+ if not get_option('liboeffis').disabled()
