@@ -6,7 +6,7 @@ Should match b_lundef in meson(1).
 Index: src/modules/meson.build
 --- src/modules/meson.build.orig
 +++ src/modules/meson.build
-@@ -80,12 +80,6 @@ endif
+@@ -87,12 +87,6 @@ endif
  
  # Modules enabled by headers
  
@@ -19,7 +19,7 @@ Index: src/modules/meson.build
  if cdata.has('HAVE_OSS_OUTPUT')
    subdir('oss')
    all_modules += [
-@@ -100,6 +94,14 @@ if cc.has_function('mkfifo')
+@@ -107,6 +101,14 @@ if cc.has_function('mkfifo')
    ]
  endif
  
@@ -34,12 +34,12 @@ Index: src/modules/meson.build
  # Modules enabled by dependencies
  
  if alsa_dep.found()
-@@ -310,7 +312,7 @@ foreach m : all_modules
-     install_rpath : rpath_dirs,
-     install_dir : modlibexecdir,
-     dependencies : [thread_dep, libpulse_dep, libpulsecommon_dep, libpulsecore_dep, libintl_dep, platform_dep, platform_socket_dep] + extra_deps,
--    link_args : [nodelete_link_args, '-Wl,--no-undefined' ],
-+    link_args : [nodelete_link_args],
-     link_with : extra_libs,
-     name_prefix : '',
-     implicit_include_directories : false)
+@@ -305,7 +307,7 @@ all_modules += [
+ # FIXME: meson doesn't support multiple RPATH arguments currently
+ rpath_dirs = join_paths(privlibdir) + ':' + join_paths(modlibexecdir)
+ 
+-if host_machine.system() != 'windows' and host_machine.system() != 'darwin'
++if host_machine.system() != 'windows' and host_machine.system() != 'darwin' and host_machine.system() != 'openbsd'
+   no_undefined_args = ['-Wl,--no-undefined']
+ else
+   no_undefined_args = []

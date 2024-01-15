@@ -2,13 +2,11 @@ PORTROACH=		skipv:16.99.1
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		16.1
+VERSION=		17.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-REVISION=		1
-
-SHARED_LIBS += pulse                     7.2 # 0.24.2
+SHARED_LIBS += pulse                     7.2 # 0.24.3
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
 SHARED_LIBS += pulse-mainloop-glib       1.2 # 0.0.6
 
@@ -113,7 +111,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pulseaudio
-	mv ${WRKINST}${SYSCONFDIR}/{dbus-1,pulse,xdg} ${PREFIX}/share/examples/pulseaudio
+	mv ${WRKINST}${SYSCONFDIR}/{pulse,xdg} ${PREFIX}/share/examples/pulseaudio
 # remove this linux-centric bash script
 	rm ${PREFIX}/bin/pa-info
 	

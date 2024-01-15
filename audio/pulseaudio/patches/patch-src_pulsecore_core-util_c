@@ -4,7 +4,7 @@ page size varies between systems.
 Index: src/pulsecore/core-util.c
 --- src/pulsecore/core-util.c.orig
 +++ src/pulsecore/core-util.c
-@@ -3845,6 +3845,10 @@ bool pa_running_in_vm(void) {
+@@ -3846,6 +3846,10 @@ bool pa_running_in_vm(void) {
      return false;
  }
  
