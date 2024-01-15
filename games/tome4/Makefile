@@ -9,10 +9,9 @@ USE_NOBTCFI =	Yes
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
 
-V =		1.7.4
+V =		1.7.6
 PKGNAME =	tome4-${V}
 CATEGORIES =	games x11
-REVISION =	1
 
 SITES =		https://te4.org/dl/t-engine/
 
