@@ -3,7 +3,7 @@ COMMENT=	create and manage certificates, CSRs, keys, etc
 V=		2.5.0
 DISTNAME=	xca-$V
 CATEGORIES=	security x11
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://hohnstaedt.de/xca/
 
