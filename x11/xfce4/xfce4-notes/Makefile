@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 sticky notes panel plugin
 
-XFCE_VERSION=	1.10.0
+XFCE_VERSION=	1.11.0
 XFCE_PLUGIN=	notes
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,8 +18,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util
-WANTLIB += xfconf-0 z
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon xfconf-0 z Xau Xdmcp execinfo jpeg atspi dbus-1
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-notes
 
