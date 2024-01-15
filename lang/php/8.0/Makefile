@@ -1,5 +1,6 @@
 PHP_VERSION=	8.0.30
 PHP_PKGSPEC=	>=8.0,<8.1
+REVISION-main=	0
 
 # keep these REVISIONs >= -stable for 7.3 cycle;
 # libwebp gained additional WANTLIB
