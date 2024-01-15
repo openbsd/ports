@@ -8,7 +8,7 @@ Index: src/main.rs
  use structopt::StructOpt;
  use tokio::runtime::Runtime;
 +#[cfg(target_os = "openbsd")]
-+use pledge::{pledge, pledge_promises, Promise, ToPromiseString};
++use pledge::pledge;
  
  #[cfg(feature = "alsa_backend")]
  mod alsa_mixer;
@@ -19,12 +19,12 @@ Index: src/main.rs
 +    // Start with superset of all potential promises.
 +    // Drop later after CLI arguments and configuration files were parsed.
 +    #[cfg(target_os = "openbsd")]
-+    pledge_promises![Stdio Rpath Wpath Cpath Inet Mcast Flock Chown Unix Dns Proc Exec Audio].unwrap();
++    pledge("stdio rpath wpath cpath inet mcast flock chown unix dns proc exec audio", None).unwrap();
 +
      color_eyre::install().wrap_err("Couldn't initialize error reporting")?;
  
      let mut cli_config: CliConfig = CliConfig::from_args();
-@@ -165,6 +172,40 @@ fn main() -> eyre::Result<()> {
+@@ -165,6 +172,34 @@ fn main() -> eyre::Result<()> {
              exit(0);
          }
      }
@@ -38,28 +38,22 @@ Index: src/main.rs
 +        //     => no "cpath flock chown" for PID file
 +        //     => no "proc" for double-fork(2)
 +        //
-+        // Minimum subset of permanent promises:
-+        let mut promises = vec![
-+            Promise::Stdio,  // logging
-+            Promise::Rpath,  // 1. ${TMPDIR}/.tmp*  O_RDWR|O_CREAT|O_EXCL|O_CLOEXEC
-+            Promise::Wpath,  // ...
-+            Promise::Cpath,  // 2. --cache-path aka. "cache_path"
-+            Promise::Inet,   // internet Spotify
-+            Promise::Mcast,  // local Zeroconf Discovery
-+            Promise::Unix,   // sndio(7), D-Bus (keyring, MPRIS)
-+            Promise::Dns,    // internet Spotify
-+            Promise::Audio,  // sndio(7)
-+        ];
-+
-+        // --on-song-change-hook aka. "onevent"
-+        if internal_config.onevent.is_some() {
-+            promises.push(Promise::Proc); // always run through --shell aka. "shell"
-+            promises.push(Promise::Exec); // defaults to "sh"
-+        }
-+
++        // "stdio"      stdout/err, syslog(3)
++        // "[rwc]path"  ${TMPDIR}/.tmp* and cache
++        // "inet dns"   Internet, Spotify 
++        // "unix audio" D-Bus, sndio(7)
++        // "mcast"      Zeroconf Discovery
++        //
 +        // Second and final pledge before runtime starts.
 +        // "mcast" could go if a) username is given and b) password/keyring worked.
-+        pledge(&*promises.to_promise_string(), None).unwrap();
++
++        // --on-song-change-hook aka. "onevent"
++        // always run through --shell aka. "shell", defaults to "sh"
++        if internal_config.onevent.is_some() {
++            pledge("stdio rpath wpath cpath inet mcast unix dns proc exec audio", None).unwrap();
++        } else {
++            pledge("stdio rpath wpath cpath inet mcast unix dns audio", None).unwrap();
++        }
 +    }
 +
  

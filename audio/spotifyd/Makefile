@@ -8,7 +8,7 @@ DIST_TUPLE =		github	spotifyd	spotifyd	${HEAD_COMMIT}	.
 WRKDIST =		${WRKDIR}/spotifyd-${HEAD_COMMIT}
 DISTNAME =		spotifyd-0.3.5pl1
 CATEGORIES =		audio net
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
