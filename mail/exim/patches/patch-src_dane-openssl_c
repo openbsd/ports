@@ -34,3 +34,19 @@ Index: src/dane-openssl.c
  
  # define CRYPTO_ONCE_STATIC_INIT 0
  # define CRYPTO_THREAD_run_once	 run_once
+@@ -1636,6 +1639,7 @@ if (err_lib_dane > 0)
+   }
+ #endif
+ 
++#ifndef LIBRESSL_VERSION_NUMBER
+ /*
+  * Register SHA-2 digests, if implemented and not already registered.
+  */
+@@ -1646,6 +1650,7 @@ if (!EVP_get_digestbyname(LN_sha256)) EVP_add_digest(E
+ #if defined(LN_sha512) && defined(NID_sha512) && !defined(OPENSSL_NO_SHA512)
+ if (!EVP_get_digestbyname(LN_sha384)) EVP_add_digest(EVP_sha384());
+ if (!EVP_get_digestbyname(LN_sha512)) EVP_add_digest(EVP_sha512());
++#endif
+ #endif
+ 
+ /*
