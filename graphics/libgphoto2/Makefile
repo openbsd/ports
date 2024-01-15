@@ -3,7 +3,7 @@ COMMENT=		digital camera library
 VERSION=		2.5.31
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
-REVISION=		0
+REVISION=		1
 
 GPHOTO2_PORT_API=	0.12.2
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
@@ -27,8 +27,6 @@ WANTLIB += usb usb-1.0 webp xml2 z zstd
 
 SITES=			${SITE_SOURCEFORGE:=gphoto/}
 
-BUILD_DEPENDS=		devel/doxygen
-
 LIB_DEPENDS=		graphics/gd \
 			graphics/libexif \
 			devel/libusb-compat \
@@ -38,8 +36,14 @@ LIB_DEPENDS=		graphics/gd \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			ac_cv_path_DOXYGEN=false
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+# Force the deactivation of Doxygen
+# --disable-internal-docs does not help here
+# Doxygen 1.10.0 produce md5 checksum issues
+CONFIGURE_ENV+=		DOXYGEN=no \
+			ac_cv_path_DOXYGEN=false \
+			ac_cv_path_DOT=false
 
 CONFIGURE_ARGS=		--enable-static \
 			--without-hal \
