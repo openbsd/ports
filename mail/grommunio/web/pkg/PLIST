@@ -1536,7 +1536,7 @@ grommunio-web/plugins/desktopnotifications/manifest.xml
 grommunio-web/plugins/desktopnotifications/php/
 grommunio-web/plugins/desktopnotifications/php/plugin.desktopnotifications.php
 grommunio-web/plugins/desktopnotifications/resources/
-grommunio-web/plugins/desktopnotifications/resources/audio.ogg
+grommunio-web/plugins/desktopnotifications/resources/audio.webm
 grommunio-web/plugins/desktopnotifications/resources/desktopnotifications.css
 grommunio-web/plugins/desktopnotifications/resources/notification.svg
 grommunio-web/plugins/files/
