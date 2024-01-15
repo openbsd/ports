@@ -17,6 +17,7 @@
 @man man/man1/restic-prune.1
 @man man/man1/restic-recover.1
 @man man/man1/restic-repair-index.1
+@man man/man1/restic-repair-packs.1
 @man man/man1/restic-repair-snapshots.1
 @man man/man1/restic-repair.1
 @man man/man1/restic-restore.1
