@@ -1,3 +1,10 @@
+# XXX
+# libevdev-openbsd only a place holder for a few utility functions
+# needed by Wayland and found in libevdev on Linux. 
+# The detection of libevedev has been deactivated in the following ports
+# to avoid them to expect full libevdev functionnality
+# wayland/libei
+
 COMMENT		= minimal set of libevedev functions for Wayland on OpenBSD
 
 V		= 20231111
