@@ -27,3 +27,19 @@ Index: src/tls/tls_misc.c
  }
  
  /* tls_pre_jail_init - Load TLS related pre-jail tables */
+@@ -1644,6 +1647,7 @@ int     tls_validate_digest(const char *dgst)
+      * Improves interoperability with clients and servers that prematurely
+      * deploy SHA-2 certificates.  Also facilitates DANE and TA support.
+      */
++#ifndef LIBRESSL_VERSION_NUMBER
+ #if defined(LN_sha256) && defined(NID_sha256) && !defined(OPENSSL_NO_SHA256)
+     if (!tls_digest_byname(LN_sha224, NULL))
+ 	EVP_add_digest(EVP_sha224());
+@@ -1655,6 +1659,7 @@ int     tls_validate_digest(const char *dgst)
+ 	EVP_add_digest(EVP_sha384());
+     if (!tls_digest_byname(LN_sha512, NULL))
+ 	EVP_add_digest(EVP_sha512());
++#endif
+ #endif
+ 
+     /*
