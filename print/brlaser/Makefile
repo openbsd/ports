@@ -1,8 +1,8 @@
 COMMENT=	CUPS printer driver for some Brother laser printers
 
-GH_ACCOUNT=	QORTEC
+GH_ACCOUNT=	Owl-Maintain
 GH_PROJECT=	brlaser
-GH_TAGNAME=	v6.2
+GH_TAGNAME=	v6.2.6
 
 CATEGORIES=	print
 
