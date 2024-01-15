@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_static.php
 --- vendor/composer/autoload_static.php.orig
 +++ vendor/composer/autoload_static.php
-@@ -17,10 +17,10 @@ class ComposerStaticInit2702ec2a5742b1162f093c8e12b5dc
+@@ -17,10 +17,10 @@ class ComposerStaticInit9f295aa3e34bdab516725cd2042987
          '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
          '777dc149d682152f9ab0caaeffcdbb27' => __DIR__ . '/../..' . '/config.php',
          '32a4f751fbcde8755e5f28bd96eed397' => __DIR__ . '/../..' . '/version.php',
@@ -16,7 +16,7 @@ Index: vendor/composer/autoload_static.php
      );
  
      public static $prefixLengthsPsr4 = array (
-@@ -107,15 +107,15 @@ class ComposerStaticInit2702ec2a5742b1162f093c8e12b5dc
+@@ -107,17 +107,17 @@ class ComposerStaticInit9f295aa3e34bdab516725cd2042987
      );
  
      public static $classMap = array (
@@ -26,17 +26,21 @@ Index: vendor/composer/autoload_static.php
 +        'BaseRecurrence' => UMAPI_PATH . '/class.baserecurrence.php',
          'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
 -        'FreeBusy' => '/var/www/grommunio-mapi-header-php/class.freebusy.php',
+-        'KeyCloak' => '/var/www/grommunio-mapi-header-php/class.keycloak.php',
 -        'MAPIException' => '/var/www/grommunio-mapi-header-php/class.mapiexception.php',
 -        'Meetingrequest' => '/var/www/grommunio-mapi-header-php/class.meetingrequest.php',
 -        'Recurrence' => '/var/www/grommunio-mapi-header-php/class.recurrence.php',
 -        'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
 -        'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
+-        'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
 +        'FreeBusy' => UMAPI_PATH . '/class.freebusy.php',
++        'KeyCloak' => UMAPI_PATH . '/class.keycloak.php',
 +        'MAPIException' => UMAPI_PATH . '/class.mapiexception.php',
 +        'Meetingrequest' => UMAPI_PATH . '/class.meetingrequest.php',
 +        'Recurrence' => UMAPI_PATH . '/class.recurrence.php',
 +        'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +        'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
++        'Token' => UMAPI_PATH . '/class.token.php',
      );
  
      public static function getInitializer(ClassLoader $loader)
