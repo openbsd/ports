@@ -92,6 +92,10 @@ MODCABAL_post-extract += \
 	&& (test -f ${FILESDIR}/cabal.project \
 	    && cp -v ${FILESDIR}/cabal.project ${WRKSRC}; true)
 
+# Works around https://gitlab.haskell.org/ghc/ghc/-/issues/17755
+# It shows up in multiple places, e.g. when reading pkg-config output.
+MAKE_ENV +=	LC_ALL=en_US.UTF-8
+
 # Invokes cabal with HOME set up to use .cabal directory created in
 # post-extract.
 _MODCABAL_CABAL = ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} ${LOCALBASE}/bin/cabal

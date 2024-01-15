@@ -21,9 +21,6 @@ BUILD_DEPENDS =		devel/git
 
 MODULES =       	devel/cabal
 
-# happy: ... hGetContents: invalid argument (invalid byte sequence)
-MAKE_ENV =	LC_ALL=en_US.UTF-8
-
 MODCABAL_STEM		= git-annex
 MODCABAL_VERSION	= 10.20230802
 MAN1_STAGING_DIR = ${WRKBUILD}/man1_staging

@@ -13,10 +13,6 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
 			devel/libffi
 
-# Exception when trying to run compile-time code:
-#  ... hledger.info: hGetContents: invalid argument (invalid byte sequence)
-MAKE_ENV =	LC_ALL=en_US.UTF-8
-
 MODULES =		devel/cabal
 MODCABAL_STEM =		hledger
 MODCABAL_VERSION =	1.31
