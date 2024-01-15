@@ -4,8 +4,8 @@ V=		1.3
 DISTNAME=	grommunio-dav-${V}
 
 GH_ACCOUNT=	grommunio
-GH_PROJECT=     grommunio-dav
-GH_COMMIT=      e16f8a2e909c0b064a456266034696949218e5df
+GH_PROJECT=	grommunio-dav
+GH_COMMIT=	e16f8a2e909c0b064a456266034696949218e5df
 
 REVISION=	0
 

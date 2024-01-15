@@ -4,7 +4,7 @@ V=		1.3
 DISTNAME=	grommunio-mapi-header-php-${V}
 
 GH_ACCOUNT=	grommunio
-GH_PROJECT=     mapi-header-php
+GH_PROJECT=	mapi-header-php
 GH_COMMIT=	a04f1afc4c22b067a700872e61e785a422645372
 
 CATEGORIES=	mail www

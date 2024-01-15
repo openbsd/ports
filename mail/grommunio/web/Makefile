@@ -4,8 +4,8 @@ V=		3.6
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
-GH_PROJECT=     grommunio-web
-GH_COMMIT=      42597875807573cad1a160bbc6b8de5d49e148b1
+GH_PROJECT=	grommunio-web
+GH_COMMIT=	42597875807573cad1a160bbc6b8de5d49e148b1
 
 REVISION=	0
 
