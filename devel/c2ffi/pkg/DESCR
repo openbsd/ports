@@ -1,0 +1,24 @@
+This is a tool for extracting definitions from C, C++, and Objective C
+headers for use with foreign function call interfaces.
+
+There are generally two steps to using `c2ffi`:
+
+- Generate output for a particular header or file, gathering macro
+  definitions (with the `-M <file>.c` parameter)
+
+- Generate output for macro definitions by running `c2ffi` again on
+  the *generated* file (without `-M`)
+
+Currently JSON is the default output.  This is in a rather wordy
+hierarchical format, with each object having a "tag" field which
+describes it.  All objects are contained in an array.  This should
+make it fairly easy (or at least far easier than parsing C yourself)
+to transform into language-specific bindings.
+
+The following language bindings exist for `c2ffi`:
+
+- [cl-autowrap](https://github.com/rpav/cl-autowrap/): Create bindings
+  in Common Lisp from a `.h` with `c2ffi` using a simple `(c-include "file.h")`
+
+- [c2ffi-ruby](https://github.com/rpav/c2ffi-ruby): Uses the JSON
+  from c2ffi to produce a nicely-formatted Ruby file for ruby-ffi.

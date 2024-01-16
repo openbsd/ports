@@ -1,0 +1,18 @@
+link with static libLLVMcore and libLLVMoption instead of whole libLLVM-16.so
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -64,7 +64,11 @@ target_include_directories(c2ffi PUBLIC
+   ${LLVM_INCLUDE_DIRS}
+   ${SOURCE_ROOT}/src/include
+   )
+-target_link_libraries(c2ffi PUBLIC clang-cpp LLVM)
++
++llvm_map_components_to_libnames(llvm_libs core option)
++target_link_libraries(c2ffi PRIVATE ${llvm_libs})
++
++target_link_libraries(c2ffi PUBLIC clang-cpp)
+ 
+ set(APP_BIN_DIR "${CMAKE_BINARY_DIR}/bin")
+ set_target_properties(c2ffi PROPERTIES

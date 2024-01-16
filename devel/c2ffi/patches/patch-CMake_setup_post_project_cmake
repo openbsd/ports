@@ -1,0 +1,14 @@
+avoid -O3
+
+Index: CMake/setup_post_project.cmake
+--- CMake/setup_post_project.cmake.orig
++++ CMake/setup_post_project.cmake
+@@ -11,7 +11,7 @@ set(msvc_rwdi "/DNDEBUG /MDd /Zi /D_ITERATOR_DEBUG_LEV
+ 
+ set(gnu_debug "-O1 -ggdb2 -fno-omit-frame-pointer")
+ set(gnu_rwdi "-O2 -ggdb2 -fno-omit-frame-pointer -DNDEBUG")
+-set(gnu_release "-O3 -DNDEBUG")
++set(gnu_release "-DNDEBUG")
+ 
+ if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+   set(X64 1)
