@@ -3,10 +3,13 @@ COMMENT=	high performance, multi-platform VNC client and server
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.13.1
-REVISION=	0
+REVISION=	1
 
-# update the post-patch target if moving to a new major branch of xorg-server
-DISTFILES.x=	xorg-server-21.1.1.tar.xz
+XORG_V=		21.1.10
+
+# update the patch filename in the post-patch target if moving to a new
+# major branch of xorg-server
+DISTFILES.x=	xorg-server-${XORG_V}.tar.xz
 
 CATEGORIES=	x11 net
 EPOCH=		0
@@ -33,7 +36,7 @@ SITES.x=	https://www.x.org/releases/individual/xserver/
 # dependencies) so fetch an old working one from the v1.10.1 tag.
 SCRIPTV=	1.10.1
 SITES.t=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
-EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-21.1.1.tar.xz
+EXTRACT_ONLY=	${GH_DISTFILE} ${DISTFILES.x}
 DISTFILES.t=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver} \
 		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}
 
