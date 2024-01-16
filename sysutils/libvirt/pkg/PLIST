@@ -299,6 +299,7 @@ share/doc/libvirt/html/kbase/
 share/doc/libvirt/html/kbase/backing_chains.html
 share/doc/libvirt/html/kbase/debuglogs.html
 share/doc/libvirt/html/kbase/domainstatecapture.html
+share/doc/libvirt/html/kbase/failed_connection_after_install.html
 share/doc/libvirt/html/kbase/index.html
 share/doc/libvirt/html/kbase/internals/
 share/doc/libvirt/html/kbase/internals/command.html
