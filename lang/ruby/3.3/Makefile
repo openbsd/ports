@@ -14,11 +14,16 @@ FLAVOR?=		no_ri_docs bootstrap
 FLAVOR?=
 .endif
 
-.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Maarch64}
+.if ${MACHINE_ARCH:Mamd64}
 # Support YJIT JIT compiler on arches Ruby supports
 MODULES +=		lang/rust
 WANTLIB-main +=		c++abi
 MAKE_ENV +=		LIBRUBY_DLDFLAGS="-lc++abi"
+.endif
+
+.if ${MACHINE_ARCH:Maarch64}
+# Disable YJIT on arm64 until it is fixed
+CONFIGURE_ARGS +=	--disable-yjit
 .endif
 
 MULTI_PACKAGES =	-main -ri_docs
