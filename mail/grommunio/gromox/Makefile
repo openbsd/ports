@@ -14,6 +14,8 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
 GH_COMMIT=	4b2cea53f9413bdac11f75a69424cfb4f31cd9e5
 
+REVISION-main=	0
+
 CATEGORIES=	mail www productivity
 
 SHARED_LIBS +=  gromox_common             0.0 # 0.0
@@ -53,8 +55,7 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 # can't use MODPY_FLAVOR, doesn't pull in MODULES=lang/python
 RUN_DEPENDS-main=	textproc/catdoc \
-			sysutils/py-daemon,python3 \
-			www/py-jwt,python3
+			sysutils/py-daemon,python3
 LIB_DEPENDS-main= 	archivers/zstd \
 			databases/mariadb \
 			databases/openldap \
