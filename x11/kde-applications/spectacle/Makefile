@@ -1,6 +1,7 @@
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/spectacle/
 
@@ -23,6 +24,10 @@ MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
 
+BUILD_DEPENDS =	wayland/libinput-openbsd \
+		wayland/wayland-protocols \
+		wayland/plasma-wayland-protocols
+
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -36,6 +41,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
+		devel/kf5/kwayland \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
