@@ -1,28 +1,24 @@
-COMMENT =	Python interface to memcached
+COMMENT=	Python interface to memcached
 
-MODPY_EGG_VERSION = 1.59
-DISTNAME =	python-memcached-${MODPY_EGG_VERSION}
-PKGNAME =	${DISTNAME:S/python-/py-/}
-CATEGORIES =	misc
-REVISION =	2
+MODPY_EGG_VERSION= 1.62
+DISTNAME=	python-memcached-${MODPY_EGG_VERSION}
+PKGNAME=	py-memcached-${MODPY_EGG_VERSION}
+CATEGORIES=	misc
 
-HOMEPAGE =	https://github.com/linsomniac/python-memcached
+HOMEPAGE=	https://github.com/linsomniac/python-memcached
 
 # Python
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_ADJ_FILES =	memcache.py
-MODPY_PYBUILD =	setuptools
-MODPY_PI =	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-NO_TEST =	Yes
-
-BUILD_DEPENDS =	devel/py-six${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR}
+# tests/__init__.py, tests/utils.py missing from pypi distribution
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
