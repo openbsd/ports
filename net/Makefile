@@ -103,6 +103,7 @@
      SUBDIR += flowd
      SUBDIR += flvstreamer
      SUBDIR += fmirror
+     SUBDIR += fort
      SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
