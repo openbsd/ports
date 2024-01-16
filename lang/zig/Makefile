@@ -1,13 +1,12 @@
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 
-BROKEN-arm64 =		generated binary segfault
 BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.11.0
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
