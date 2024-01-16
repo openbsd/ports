@@ -1,6 +1,7 @@
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
+REVISION =	0
 
 SHARED_LIBS +=  krfbprivate               3.0 # 5.0
 
@@ -25,6 +26,8 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf5/kwayland \
+		wayland/libinput-openbsd \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf5/kauth \
