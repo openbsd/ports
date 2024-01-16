@@ -1,7 +1,6 @@
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.3.1
-REVISION =	0
+DISTNAME =	scrypt-1.3.2
 
 SHARED_LIBS +=	scrypt-kdf                0.0 # 1.0
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c crypto
 
-SITES =		${HOMEPAGE}
+SITES =		https://www.tarsnap.com/scrypt/
 EXTRACT_SUFX =	.tgz
 
 COMPILER =		base-clang ports-gcc
