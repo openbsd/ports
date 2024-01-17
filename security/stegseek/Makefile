@@ -23,6 +23,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 			security/mhash
 
 CXXFLAGS +=	-I${LOCALBASE}/include
+CXXFLAGS +=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
