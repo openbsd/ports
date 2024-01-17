@@ -8,7 +8,7 @@ GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_COMMIT =	be64c707dea6b3250bd4355bf5c825d25920087d
 DISTNAME =	fifengine-0.4.2
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	games
 
@@ -36,7 +36,8 @@ LIB_DEPENDS =		audio/libvorbis \
 			games/fifechan>=0.1.5 \
 			graphics/glew \
 			textproc/tinyxml
-RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR}
 
 CONFIGURE_ARGS += 	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-Wno-dev
