@@ -2,7 +2,7 @@ V =		2.22.6
 COMMENT =	command line parser for c programs
 DISTNAME =	gengetopt-${V}
 CATEGORIES =	devel
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://www.gnu.org/software/gengetopt/
 
