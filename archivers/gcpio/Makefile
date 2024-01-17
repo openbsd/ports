@@ -1,6 +1,6 @@
 COMMENT=	GNU cpio copies files to and from archives
 
-DISTNAME=	cpio-2.14
+DISTNAME=	cpio-2.15
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.gnu.org/software/cpio/
