@@ -1,7 +1,7 @@
 COMMENT =		run a subprocess in a pseudo terminal
 
 MODPY_EGG_VERSION =	0.7.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		ptyprocess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -13,7 +13,9 @@ HOMEPAGE =		https://github.com/pexpect/ptyprocess
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+
 MODPY_PI =		Yes
+MODPY_PYBUILD =		flit_core
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
