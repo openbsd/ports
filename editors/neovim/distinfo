@@ -2,9 +2,9 @@ SHA256 (1907abb4c27857fe7f4e7394f32e130f9955a2e7.patch) = S4noaSfaWLlWIdHz4R0dWo
 SHA256 (LuaJIT-LuaJIT-03c31124cc3b521ef54fe398e10fa55660a5057d.tar.gz) = YdzHrj9UOuPMMOZtsGDjHip35L407mXjcMlT0RK01gw=
 SHA256 (keplerproject-lua-compat-5.3-v0.9.tar.gz) = rQVUDS2WpIclu3mh3vNc9mUqTi7CY3biYXyM4rqm9BY=
 SHA256 (luvit-luv-1.45.0-0.tar.gz) = l+iZQPnuqo37NPHBn4DdNzKZxCcZ0VIo7HkPQV1OSWU=
-SHA256 (neovim-neovim-v0.9.4.tar.gz) = FINWAn7o1Yat67ZROpTXaszHnalZcQms5cRFsJ04MJM=
+SHA256 (neovim-neovim-v0.9.5.tar.gz) = /nQ2n8MKMux6CGsQE6zQ6s1nTnVw6xrMUgpmGAyelxk=
 SIZE (1907abb4c27857fe7f4e7394f32e130f9955a2e7.patch) = 3029
 SIZE (LuaJIT-LuaJIT-03c31124cc3b521ef54fe398e10fa55660a5057d.tar.gz) = 1073919
 SIZE (keplerproject-lua-compat-5.3-v0.9.tar.gz) = 53599
 SIZE (luvit-luv-1.45.0-0.tar.gz) = 130334
-SIZE (neovim-neovim-v0.9.4.tar.gz) = 11585425
+SIZE (neovim-neovim-v0.9.5.tar.gz) = 11590180
