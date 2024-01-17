@@ -52,7 +52,7 @@ DISTNAME =	???
 #   For a commit hash, use the full hash (not shortened), and set PKGNAME.
 # subdir: usually ".", otherwise the extracted files are moved to another
 #   directory under WRKDIST. Mostly useful for git submodules.
-#DIST_TUPLE =	platform account project id subdir
+#DIST_TUPLE +=	platform account project id subdir
 
 # for any port that creates shared libraries.
 # both libtool and cmake automatically set filenames based on this variable.
