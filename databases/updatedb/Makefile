@@ -5,6 +5,7 @@ DISTFILES =
 # API.rev
 PKGNAME =	updatedb-0
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+PKG_ARCH =	*
 
 # BSD
 PERMIT_PACKAGE =	Yes
