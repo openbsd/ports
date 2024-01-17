@@ -1,10 +1,10 @@
-SHARED_LIBS+=	scamperfile               5.0 # 7.0
-SHARED_LIBS +=  scamperctrl               1.1 # 3.0
+SHARED_LIBS +=	scamperfile               6.0 # 8.0
+SHARED_LIBS +=  scamperctrl               2.0 # 3.2
 
 COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
-V=		20230614d
+V=		20240117
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 

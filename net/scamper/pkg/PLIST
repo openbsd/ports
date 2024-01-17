@@ -42,6 +42,7 @@ include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
 include/scamper_host.h
+include/scamper_http.h
 include/scamper_icmpext.h
 include/scamper_list.h
 include/scamper_neighbourdisc.h
@@ -51,6 +52,7 @@ include/scamper_sting.h
 include/scamper_tbit.h
 include/scamper_trace.h
 include/scamper_tracelb.h
+include/scamper_udpprobe.h
 @static-lib lib/libscamperctrl.a
 lib/libscamperctrl.la
 @lib lib/libscamperctrl.so.${LIBscamperctrl_VERSION}
