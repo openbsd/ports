@@ -1,12 +1,11 @@
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 
-VERSION =		4.97
+VERSION =		4.97.1
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION =		0
 
 CATEGORIES =		mail
 
@@ -28,7 +27,10 @@ SITES =			https://ftp.exim.org/pub/exim/exim4/ \
 			ftp://ftp.exim.org/pub/exim/exim4/fixes/ \
 			ftp://ftp.exim.org/pub/exim/exim4/old/
 
+# only used for exim_id_update (which is run as part of the build,
+# ./exim_id_update -v 2>&1 >/dev/null)
 BUILD_DEPENDS =		devel/p5-File-FcntlLock
+RUN_DEPENDS =		devel/p5-File-FcntlLock
 
 LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre2
