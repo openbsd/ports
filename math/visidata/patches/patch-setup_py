@@ -9,4 +9,4 @@ Index: setup.py
 +        ("man/man1", ["visidata/man/vd.1", "visidata/man/visidata.1"]),
          ("share/applications", ["visidata/desktop/visidata.desktop"]),
      ],
-     package_data={
+     extras_require={
