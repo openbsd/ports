@@ -1,5 +1,6 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kcmkwincommon             0.0 # 0.0
 SHARED_LIBS +=  kwin                      0.0 # 0.0
@@ -61,6 +62,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
 		graphics/lcms2 \
+		multimedia/pipewire/pipewire,-libs \
 		sysutils/libudev-openbsd \
 		wayland/libinput-openbsd \
 		x11/kde-plasma/kdecoration>=${VERSION} \
