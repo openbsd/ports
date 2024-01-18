@@ -1,7 +1,7 @@
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=		github.com/hashicorp/terraform
-MODGO_VERSION=		v1.6.6
+MODGO_VERSION=		v1.7.0
 DISTNAME=		terraform-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/hashicorp/terraform@${MODGO_VERSION}
@@ -18,6 +18,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
+
+MODGO_LDFLAGS +=	-X github.com/hashicorp/terraform/version.dev=no
 
 .include "modules.inc"
 
