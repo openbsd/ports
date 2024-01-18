@@ -2,14 +2,14 @@ COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7
 GH_PROJECT =	ttyplot
-GH_TAGNAME =	1.5.2
+GH_TAGNAME =	1.6.1
 
 CATEGORIES =	sysutils
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c curses
+WANTLIB +=	c curses m
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 

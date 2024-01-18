@@ -1,0 +1,14 @@
+OpenBSD also needs the _XOPEN_SOURCE_EXTENDED define.
+
+Index: ttyplot.c
+--- ttyplot.c.orig
++++ ttyplot.c
+@@ -8,7 +8,7 @@
+ //
+ 
+ // This is needed on macOS to get the ncurses widechar API, and pkg-config fails to define it.
+-#ifdef __APPLE__
++#if defined (__APPLE__) || defined (__OpenBSD__)
+ #define _XOPEN_SOURCE_EXTENDED
+ #endif
+ 
