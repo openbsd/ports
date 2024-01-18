@@ -1,6 +1,6 @@
 COMMENT=		framework for granting privileged operations to users
 
-V=			123
+V=			124
 DISTNAME=		polkit-${V}
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
