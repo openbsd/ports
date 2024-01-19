@@ -1811,6 +1811,7 @@
      SUBDIR += ruby-yajl,ruby32
      SUBDIR += ruby-yajl,ruby33
      SUBDIR += ruby-zeitwerk
+     SUBDIR += rust-analyzer
      SUBDIR += samurai
      SUBDIR += sccache
      SUBDIR += scons
