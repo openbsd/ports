@@ -3,9 +3,10 @@
 COMMENT=	GNUstep makefile package
 
 CATEGORIES=	devel x11/gnustep
-GH_TAGNAME=	2.9.1
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	tools-make
+GH_TAGNAME=	2.9.1
+REVISION=	0
 DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 
@@ -39,12 +40,11 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 
 #		--with-runtime-abi=gnustep-2.0
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+# base-clang
 LIBRARY_COMBO =		"ng-gnu-gnu"
 CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as
-.else
-LIBRARY_COMBO =		"gnu-gnu-gnu"
-.endif
+# XXX ports-gcc?
+#LIBRARY_COMBO =	"gnu-gnu-gnu"
 
 pre-configure:
 	${SUBST_CMD} -c -m 444 ${FILESDIR}/openbsd \
