@@ -261,6 +261,7 @@
      SUBDIR += pstoedit
      SUBDIR += py-Pillow,python3
      SUBDIR += py-blurhash,python3
+     SUBDIR += py-bdfparser,python3
      SUBDIR += py-cairo,python3
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot,python3
