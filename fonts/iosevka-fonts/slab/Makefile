@@ -1,6 +1,5 @@
 COMMENT =	slender typeface for code (slab variant)
 PKGNAME =	iosevka-slab-${V}
-DISTFILES =	ttc-iosevka-slab-${V}${EXTRACT_SUFX}
-REVISION =	0
+DISTFILES =	PkgTTC-IosevkaSlab-${V}${EXTRACT_SUFX}
 
 .include <bsd.port.mk>

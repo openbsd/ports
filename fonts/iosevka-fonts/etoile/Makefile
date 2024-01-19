@@ -1,5 +1,5 @@
 COMMENT =		slender typeface for code (etoile variant)
 PKGNAME =		iosevka-etoile-${V}
-DISTFILES =		ttc-iosevka-etoile-${V}${EXTRACT_SUFX}
+DISTFILES =		PkgTTC-IosevkaEtoile-${V}${EXTRACT_SUFX}
 
 .include <bsd.port.mk>

@@ -4,12 +4,12 @@
 @pkgpath fonts/iosevka-fonts,-term
 share/fonts/
 @fontdir share/fonts/iosevka/
-share/fonts/iosevka/iosevka-bold.ttc
-share/fonts/iosevka/iosevka-extrabold.ttc
-share/fonts/iosevka/iosevka-extralight.ttc
-share/fonts/iosevka/iosevka-heavy.ttc
-share/fonts/iosevka/iosevka-light.ttc
-share/fonts/iosevka/iosevka-medium.ttc
-share/fonts/iosevka/iosevka-regular.ttc
-share/fonts/iosevka/iosevka-semibold.ttc
-share/fonts/iosevka/iosevka-thin.ttc
+share/fonts/iosevka/Iosevka-Bold.ttc
+share/fonts/iosevka/Iosevka-ExtraBold.ttc
+share/fonts/iosevka/Iosevka-ExtraLight.ttc
+share/fonts/iosevka/Iosevka-Heavy.ttc
+share/fonts/iosevka/Iosevka-Light.ttc
+share/fonts/iosevka/Iosevka-Medium.ttc
+share/fonts/iosevka/Iosevka-Regular.ttc
+share/fonts/iosevka/Iosevka-SemiBold.ttc
+share/fonts/iosevka/Iosevka-Thin.ttc
