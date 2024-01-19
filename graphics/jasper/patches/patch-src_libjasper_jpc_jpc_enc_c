@@ -1,7 +1,7 @@
 Index: src/libjasper/jpc/jpc_enc.c
 --- src/libjasper/jpc/jpc_enc.c.orig
 +++ src/libjasper/jpc/jpc_enc.c
-@@ -964,7 +964,8 @@ static int jpc_enc_encodemainhdr(jpc_enc_t *enc)
+@@ -972,7 +972,8 @@ static int jpc_enc_encodemainhdr(jpc_enc_t *enc)
  		jas_logerrorf("cannot create COM marker\n");
  		return -1;
  	}
