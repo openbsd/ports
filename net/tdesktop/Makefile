@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.14.8
+V =			4.14.9
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -17,11 +16,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 SITES =			https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-SITES.fix =		https://github.com/telegramdesktop/tdesktop/commit/
-# "Try to request dependent messages on demand." crashes when opening some chats
-PATCHFILES.fix =	ce6fc19b8.patch
-PATCH_DIST_STRIP =	-R -p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
