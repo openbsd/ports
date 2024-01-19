@@ -7,7 +7,7 @@ DISTNAME=	w3m_$V+git$P
 PKGNAME=	w3m-$Vpl$P
 WRKDIST=	${WRKDIR}/w3m-$V+git$P
 EXTRACT_SUFX=	.orig.tar.xz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
