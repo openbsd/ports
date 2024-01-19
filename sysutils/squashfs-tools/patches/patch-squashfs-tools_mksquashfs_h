@@ -1,4 +1,4 @@
-missing from actions.c, read_fs.c, sort.c 
+https://github.com/plougher/squashfs-tools/commit/fa862f08f15f1beadfeb39122cb976057160bf14
 
 Index: squashfs-tools/mksquashfs.h
 --- squashfs-tools/mksquashfs.h.orig

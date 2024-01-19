@@ -1,4 +1,8 @@
-Emulate lutimes() with utimensat().
+first two hunks:
+https://github.com/plougher/squashfs-tools/commit/fa862f08f15f1beadfeb39122cb976057160bf14
+
+last hunk:
+inode->time is a time_t, fix format string accordingly
 
 Index: squashfs-tools/unsquashfs.c
 --- squashfs-tools/unsquashfs.c.orig
