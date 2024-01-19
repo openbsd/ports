@@ -93,6 +93,8 @@ share/icewm/icons/gimp_32x32.xpm
 share/icewm/icons/gnome_16x16.xpm
 share/icewm/icons/help_16x16.xpm
 share/icewm/icons/help_32x32.xpm
+share/icewm/icons/hibernate_16x16.xpm
+share/icewm/icons/hibernate_32x32.xpm
 share/icewm/icons/icewm_16x16.png
 share/icewm/icons/icewm_32x32.png
 share/icewm/icons/java_16x16.xpm
