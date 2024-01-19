@@ -3,10 +3,9 @@ ONLY_FOR_ARCHS= i386 amd64
 COMMENT=	improved version of afl
 GH_ACCOUNT =	AFLplusplus
 GH_PROJECT =	AFLplusplus
-GH_TAGNAME =	v4.08c
+GH_TAGNAME =	v4.09c
 PKGNAME =	afl++-${GH_TAGNAME:S/v//}
 CATEGORIES=	devel
-REVISION =	0
 
 HOMEPAGE=	https://aflplus.plus/
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

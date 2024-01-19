@@ -1,4 +1,5 @@
 @conflict afl-*
+bin/afl-addseeds
 @bin bin/afl-analyze
 bin/afl-c++
 @bin bin/afl-cc
@@ -46,6 +47,7 @@ libexec/afl/dynamic_list.txt
 @static-lib libexec/afl/libAFLQemuDriver.a
 @so libexec/afl/split-compares-pass.so
 @so libexec/afl/split-switches-pass.so
+@man man/man8/afl-addseeds.8
 @man man/man8/afl-analyze.8
 @man man/man8/afl-as.8
 @man man/man8/afl-c++.8

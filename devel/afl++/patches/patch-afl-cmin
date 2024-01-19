@@ -13,7 +13,7 @@ Index: afl-cmin
  #!/usr/bin/awk -f
  
  # awk script to minimize a test corpus of input files
-@@ -371,7 +371,7 @@ BEGIN {
+@@ -369,7 +369,7 @@ BEGIN {
    }
  
    if (threads) {
