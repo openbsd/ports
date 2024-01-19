@@ -1,0 +1,6 @@
+BDF format bitmap font file parser library in Python. It has Font,
+Glyph and Bitmap classes providing more than 30 chainable API methods
+of parsing BDF fonts, getting their meta information, rendering text
+in any writing direction, adding special effects and manipulating
+bitmap images. It works seamlessly with PIL / Pillow and NumPy, and
+has detailed documentation / tutorials / API reference.
