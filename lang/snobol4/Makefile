@@ -2,8 +2,9 @@ V =		2.2.1
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-${V}
 CATEGORIES =	lang
+REVISION =	0
 
-HOMEPAGE =	http://www.snobol4.org/csnobol4/curr/
+HOMEPAGE =	https://www.regressive.org/snobol4/csnobol4/
 MAINTAINER =	STeve Andre <steve@wb8wsf.org>
 
 # BSD
@@ -11,8 +12,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto ffi m readline sqlite3 ssl util z
 
-SITES =		ftp://ftp.snobol4.org/snobol/ \
-		ftp://ftp.snobol4.org/snobol/old/
+SITES =		https://ftp.regressive.org/snobol4/ \
+		https://ftp.regressive.org/snobol4/old/
 
 COMPILER =	base-clang ports-gcc
 
