@@ -174,6 +174,7 @@
      SUBDIR += ircII
      SUBDIR += ircd-hybrid
      SUBDIR += ircd-ratbox
+     SUBDIR += irctk
      SUBDIR += irrtoolset
      SUBDIR += irssi
      SUBDIR += irssi-icb
