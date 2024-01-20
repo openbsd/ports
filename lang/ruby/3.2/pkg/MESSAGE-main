@@ -13,6 +13,7 @@ create symbolic links like so (overwriting any previous default):
  ln -sf ${PREFIX}/bin/rdbg32 ${PREFIX}/bin/rdbg
  ln -sf ${PREFIX}/bin/rdoc32 ${PREFIX}/bin/rdoc
  ln -sf ${PREFIX}/bin/ri32 ${PREFIX}/bin/ri
+ ln -sf ${PREFIX}/bin/syntax_suggest32 ${PREFIX}/bin/syntax_suggest
  ln -sf ${PREFIX}/bin/typeprof32 ${PREFIX}/bin/typeprof
 
 The ruby-shims package is also available to automatically select an

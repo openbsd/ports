@@ -13,4 +13,5 @@ ruby, don't forget to remove the following files:
  rm ${PREFIX}/bin/rdbg
  rm ${PREFIX}/bin/rdoc
  rm ${PREFIX}/bin/ri
+ rm ${PREFIX}/bin/syntax_suggest
  rm ${PREFIX}/bin/typeprof
