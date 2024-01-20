@@ -1,6 +1,6 @@
 COMMENT =	C-style structs for Python
 
-MODPY_EGG_VERSION =	5.2
+MODPY_EGG_VERSION =	5.3
 
 DISTNAME =	cstruct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
