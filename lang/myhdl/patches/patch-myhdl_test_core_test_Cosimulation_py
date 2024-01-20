@@ -1,9 +1,9 @@
 Index: myhdl/test/core/test_Cosimulation.py
 --- myhdl/test/core/test_Cosimulation.py.orig
 +++ myhdl/test/core/test_Cosimulation.py
-@@ -40,7 +40,7 @@ random.seed(1)  # random, but deterministic
- MAXLINE = 4096
+@@ -36,7 +36,7 @@ random.seed(1)  # random, but deterministic
  
+ MAXLINE = 4096
  
 -exe = "python {0} ".format(os.path.abspath(__file__))
 +exe = "${MODPY_BIN} {0} ".format(os.path.abspath(__file__))

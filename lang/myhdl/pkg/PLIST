@@ -34,8 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_bin.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_bin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_block.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_block.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_concat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_concat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_delay.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_misc.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_modbv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_modbv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_openport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_openport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_resolverefs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_resolverefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/${MODPY_PYCACHE}_simulator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -77,7 +77,6 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_always_comb.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_always_seq.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_bin.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_block.py
-lib/python${MODPY_VERSION}/site-packages/myhdl/_compat.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_concat.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_delay.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_enum.py
@@ -89,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_intbv.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_join.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_misc.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_modbv.py
+lib/python${MODPY_VERSION}/site-packages/myhdl/_openport.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_resolverefs.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_simulator.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_traceSignals.py
@@ -113,6 +113,8 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVHD
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVHDLPackage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog_ansi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog_ansi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_verify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_verify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_analyze.py
@@ -120,6 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_misc.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVHDL.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVHDLPackage.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVerilog.py
+lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVerilog_ansi.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_verify.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/debug.py
 share/examples/myhdl/
