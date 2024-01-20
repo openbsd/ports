@@ -32,6 +32,7 @@ RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 		devel/py-protobuf${MODPY_FLAVOR}>=3.9.1 \
 		devel/py-rich${MODPY_FLAVOR} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
+		devel/py-unique-log-filter${MODPY_FLAVOR} \
 		math/py-networkx${MODPY_FLAVOR} \
 		math/py-sympy${MODPY_FLAVOR} \
 		net/py-dpkt${MODPY_FLAVOR} \

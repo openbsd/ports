@@ -1,14 +1,19 @@
+bin/angr
 lib/python${MODPY_VERSION}/site-packages/angr/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/angr-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/angr/__init__.py
+lib/python${MODPY_VERSION}/site-packages/angr/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}annocfg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}annocfg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/${MODPY_PYCACHE}blade.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -328,8 +333,6 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}const_derefs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}div_simplifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}div_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}eager_returns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}eager_returns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}engine_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}engine_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}expr_op_swapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -354,6 +357,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}ret_addr_save_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}ret_deduplicator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}ret_deduplicator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}return_duplicator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}return_duplicator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}stack_canary_simplifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}stack_canary_simplifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/${MODPY_PYCACHE}win_stack_canary_simplifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -363,7 +368,6 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/base_ptr_save_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/const_derefs.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/div_simplifier.py
-lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/eager_returns.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/engine_base.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/expr_op_swapper.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/flip_boolean_cmp.py
@@ -376,6 +380,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_p
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/register_save_area_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/ret_addr_save_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/ret_deduplicator.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/return_duplicator.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/stack_canary_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/win_stack_canary_simplifier.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/optimization_passes/x86_gcc_getpc_simplifier.py
@@ -424,6 +429,10 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optim
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}eager_eval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}extended_byte_and_mask.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}extended_byte_and_mask.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}inlined_strcpy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}inlined_strcpy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}inlined_strcpy_consolidation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}inlined_strcpy_consolidation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}invert_negated_logical_conjuction_disjunction.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}invert_negated_logical_conjuction_disjunction.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/${MODPY_PYCACHE}one_sub_bool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -486,6 +495,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optim
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/conv_shl_shr.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/eager_eval.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/extended_byte_and_mask.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/inlined_strcpy.py
+lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/inlined_strcpy_consolidation.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/invert_negated_logical_conjuction_disjunction.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/one_sub_bool.py
 lib/python${MODPY_VERSION}/site-packages/angr/analyses/decompiler/peephole_optimizations/remove_cascading_conversions.py
@@ -1334,6 +1345,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}callsite_prototypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}comments.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}custom_strings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}custom_strings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/${MODPY_PYCACHE}debug_variables.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1370,6 +1383,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/cfg_node.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/indirect_jump.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/cfg/memory_data.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/comments.py
+lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/custom_strings.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/data.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/debug_variables.py
 lib/python${MODPY_VERSION}/site-packages/angr/knowledge_plugins/functions/
@@ -1598,6 +1612,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}msvcr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}ntdll.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}ntdll.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}ntoskrnl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}ntoskrnl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}parse_syscalls_from_local_system.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}parse_syscalls_from_local_system.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/${MODPY_PYCACHE}parse_win32json.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2216,6 +2232,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/linux_kerne
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/linux_loader.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/msvcr.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/ntdll.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/ntoskrnl.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/parse_syscalls_from_local_system.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/parse_win32json.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/definitions/user32.py
@@ -3349,6 +3366,17 @@ lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32/local_storage.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32/mutex.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32/sim_time.py
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32/system_paths.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/ExAllocatePool.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/ExFreePoolWithTag.py
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}ExAllocatePool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}ExAllocatePool.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}ExFreePoolWithTag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}ExFreePoolWithTag.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/procedures/win32_kernel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/win_user32/
 lib/python${MODPY_VERSION}/site-packages/angr/procedures/win_user32/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/procedures/win_user32/${MODPY_PYCACHE}/
@@ -3407,6 +3435,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}linux.${MODP
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}linux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}simos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}simos.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}snimmuc_nxp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}snimmuc_nxp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}userland.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}userland.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/simos/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3415,6 +3445,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/simos/cgc.py
 lib/python${MODPY_VERSION}/site-packages/angr/simos/javavm.py
 lib/python${MODPY_VERSION}/site-packages/angr/simos/linux.py
 lib/python${MODPY_VERSION}/site-packages/angr/simos/simos.py
+lib/python${MODPY_VERSION}/site-packages/angr/simos/snimmuc_nxp.py
 lib/python${MODPY_VERSION}/site-packages/angr/simos/userland.py
 lib/python${MODPY_VERSION}/site-packages/angr/simos/windows.py
 lib/python${MODPY_VERSION}/site-packages/angr/slicer.py
@@ -3545,6 +3576,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/storage/${MODPY_PYCACHE}pcap.${MOD
 lib/python${MODPY_VERSION}/site-packages/angr/storage/file.py
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/__init__.py
+lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/storage/memory_mixins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -3730,6 +3762,8 @@ lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}env.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}funcid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}funcid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/angr/utils/${MODPY_PYCACHE}lazy_import.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3751,6 +3785,7 @@ lib/python${MODPY_VERSION}/site-packages/angr/utils/dynamic_dictlist.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/enums_conv.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/env.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/formatting.py
+lib/python${MODPY_VERSION}/site-packages/angr/utils/funcid.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/graph.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/lazy_import.py
 lib/python${MODPY_VERSION}/site-packages/angr/utils/library.py

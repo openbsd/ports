@@ -3,7 +3,7 @@ Drop itanium_demangler dependency
 Index: angr/knowledge_plugins/functions/function.py
 --- angr/knowledge_plugins/functions/function.py.orig
 +++ angr/knowledge_plugins/functions/function.py
-@@ -7,8 +7,6 @@ from collections import defaultdict
+@@ -6,8 +6,6 @@ from collections import defaultdict
  from typing import Union, Optional, Iterable, Set
  from typing import Type
  
@@ -12,7 +12,7 @@ Index: angr/knowledge_plugins/functions/function.py
  from cle.backends.symbol import Symbol
  from archinfo.arch_arm import get_real_address_if_arm
  import claripy
-@@ -1550,6 +1548,7 @@ class Function(Serializable):
+@@ -1570,6 +1568,7 @@ class Function(Serializable):
  
      @property
      def demangled_name(self):
@@ -20,11 +20,11 @@ Index: angr/knowledge_plugins/functions/function.py
          if self.name[0:2] == "_Z":
              try:
                  ast = parse(self.name)
-@@ -1557,6 +1556,7 @@ class Function(Serializable):
+@@ -1577,6 +1576,7 @@ class Function(Serializable):
                  return self.name
              if ast:
                  return ast.__str__()
 +        """
          return self.name
  
-     def apply_definition(self, definition: str, calling_convention: Optional[Union[SimCC, Type[SimCC]]] = None) -> None:
+     def get_unambiguous_name(self, display_name: Optional[str] = None) -> str:

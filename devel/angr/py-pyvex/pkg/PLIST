@@ -9,6 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}_register_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}_register_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}arches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}arches.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}const.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,10 +29,14 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}native.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}stmt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}stmt.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}vex_ffi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/${MODPY_PYCACHE}vex_ffi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyvex/_register_info.py
+lib/python${MODPY_VERSION}/site-packages/pyvex/arches.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/block.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/const.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/data_ref.py
@@ -79,8 +87,6 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}instr_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}instr_helper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}irsb_postprocess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}irsb_postprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}lifter_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}lifter_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}syntax_wrapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -88,7 +94,6 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}synt
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}vex_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/${MODPY_PYCACHE}vex_helper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/instr_helper.py
-lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/irsb_postprocess.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/lifter_helper.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/syntax_wrapper.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/util/vex_helper.py
@@ -96,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvex/lifting/zerodivision.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/native.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyvex/stmt.py
+lib/python${MODPY_VERSION}/site-packages/pyvex/types.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/utils.py
 lib/python${MODPY_VERSION}/site-packages/pyvex/vex_ffi.py
 share/doc/py-pyvex/
