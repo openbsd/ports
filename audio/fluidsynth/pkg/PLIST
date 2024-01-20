@@ -4,11 +4,11 @@ include/fluidsynth.h
 include/fluidsynth/audio.h
 include/fluidsynth/event.h
 include/fluidsynth/gen.h
+include/fluidsynth/ladspa.h
 include/fluidsynth/log.h
 include/fluidsynth/midi.h
 include/fluidsynth/misc.h
 include/fluidsynth/mod.h
-include/fluidsynth/ramsfont.h
 include/fluidsynth/seq.h
 include/fluidsynth/seqbind.h
 include/fluidsynth/settings.h
@@ -18,8 +18,11 @@ include/fluidsynth/synth.h
 include/fluidsynth/types.h
 include/fluidsynth/version.h
 include/fluidsynth/voice.h
-@static-lib lib/libfluidsynth.a
-lib/libfluidsynth.la
+lib/cmake/fluidsynth/
+lib/cmake/fluidsynth/FluidSynthConfig.cmake
+lib/cmake/fluidsynth/FluidSynthConfigVersion.cmake
+lib/cmake/fluidsynth/FluidSynthTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/fluidsynth/FluidSynthTargets.cmake
 @lib lib/libfluidsynth.so.${LIBfluidsynth_VERSION}
 lib/pkgconfig/fluidsynth.pc
 @man man/man1/fluidsynth.1

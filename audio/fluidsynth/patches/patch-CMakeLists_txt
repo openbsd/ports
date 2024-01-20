@@ -1,0 +1,41 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -95,6 +95,7 @@ option ( enable-waveout "compile Windows WaveOut suppo
+ option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
+ option ( enable-sdl2 "compile SDL2 audio support (if it is available)" on )
+ option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
++option ( enable-sndio "compile sndio support (if it is available)" on )
+ option ( enable-pipewire "compile PipeWire support (if it is available)" on )
+ option ( enable-readline "compile readline lib line editing (if it is available)" on )
+ option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
+@@ -201,8 +202,8 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
+   if ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
+     set ( CMAKE_EXE_LINKER_FLAGS
+           "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed" )
+-    set ( CMAKE_SHARED_LINKER_FLAGS
+-          "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined" )
++    #set ( CMAKE_SHARED_LINKER_FLAGS
++    #      "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined" )
+   endif ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
+ 
+   # define some warning flags
+@@ -544,6 +545,18 @@ if ( enable-libsndfile )
+         endif (SndFile_WITH_EXTERNAL_LIBS)
+     endif ( LIBSNDFILE_SUPPORT )
+ endif ( enable-libsndfile )
++
++unset ( SNDIO_SUPPORT CACHE )
++if ( enable-sndio )
++    pkg_check_modules(SNDIO REQUIRED sndio)
++    if ( SNDIO_FOUND AND SNDIO_LIBRARIES )
++        set ( SNDIO_SUPPORT TRUE )
++        set ( SNDIO_LIBRARIES ${SNDIO_LIBRARIES} ${SNDIO_LIBRARIES} )
++        message ( STATUS "Found sndio: ${SNDIO_LIBRARIES}" )
++    else ( SNDIO_FOUND AND SNDIO_LIBRARIES )
++        message( FATAL_ERROR "Could NOT find sndio" )
++    endif ( SNDIO_FOUND AND SNDIO_LIBRARIES )
++endif ( enable-sndio )
+ 
+ unset ( PULSE_SUPPORT CACHE )
+ if ( enable-pulseaudio )

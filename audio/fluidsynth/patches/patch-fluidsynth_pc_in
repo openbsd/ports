@@ -1,9 +1,0 @@
---- fluidsynth.pc.in.orig	Thu Aug 16 05:01:13 2012
-+++ fluidsynth.pc.in	Sun Mar 24 23:55:55 2013
-@@ -6,5 +6,5 @@ includedir=@includedir@
- Name: FluidSynth
- Description: Software SoundFont synth
- Version: @VERSION@
--Libs: -L${libdir} -lfluidsynth
-+Libs: -L${libdir} -lfluidsynth @READLINE_LIBS@ @LIBFLUID_LIBS@ @LIBS@
- Cflags: -I${includedir}
