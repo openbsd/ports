@@ -1,0 +1,15 @@
+if the install target depends on all, then all the code is "regenerated"
+using the PREFIX at fake-time which includes DESTDIR too.
+
+Index: Makefile
+--- Makefile.m4.orig
++++ Makefile.m4
+@@ -17,7 +17,7 @@ main.tcl:
+ global.tcl:
+ 	m4 -DPREFIX=${PREFIX} global.m4 >global.tcl
+ 
+-install: all
++install:
+ 	install -Dm 0444 global.tcl ${PREFIX}/share/irctk/global.tcl
+ 	install -Dm 0444 uuid.tcl ${PREFIX}/share/irctk/uuid.tcl
+ 	install -Dm 0444 main.tcl ${PREFIX}/share/irctk/main.tcl

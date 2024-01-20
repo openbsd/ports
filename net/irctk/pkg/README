@@ -1,0 +1,30 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Quickstart
+==========
+
+IRCTk uses an external program to connect to the IRC server.  On
+OpenBSD, nc(1) can be used.  When adding a server, use something like:
+
+	nc -c irc.libera.chat 6697
+
+as the "Connection string".
+
+Authentication with CertFP can be done by setting an empty password and
+using the nc(1) -C and -K flags.
+
+There's a comprensive quickstart guide available at:
+<https://lab.abiscuola.com/irctk/doc/1.0.0/www/wiki/quickstart.wiki>
+
+
+Extensions
+==========
+
+Some extensions are installed in ${PREFIX}/share/irctk/extensions/ and
+are not enabled automatically.  Read their README files to see what they
+do.  The extensions often have dependencies on other programs.
+
+Use "Edit" -> "Extensions" and then the "Load" button to load an
+extension.

@@ -1,0 +1,34 @@
+bin/irctk
+@man man/man1/irctk.1
+@man man/man7/irctk-extensions.7
+@man man/mann/irctk-exts.n
+@man man/mann/irctk-gui.n
+@man man/mann/irctk-irc.n
+@man man/mann/irctk-irctk.n
+@man man/mann/irctk-log.n
+share/doc/pkg-readmes/${PKGSTEM}
+share/irctk/
+share/irctk/extensions/
+share/irctk/extensions/identify/
+share/irctk/extensions/identify/README
+share/irctk/extensions/identify/identify.tcl
+share/irctk/extensions/joiner/
+share/irctk/extensions/joiner/README
+share/irctk/extensions/joiner/joiner.tcl
+share/irctk/extensions/plumb/
+share/irctk/extensions/plumb/README
+share/irctk/extensions/plumb/plumb.tcl
+share/irctk/extensions/search/
+share/irctk/extensions/search/README
+share/irctk/extensions/search/search.tcl
+share/irctk/extensions/xnotify/
+share/irctk/extensions/xnotify/README
+share/irctk/extensions/xnotify/xnotify.tcl
+share/irctk/exts.tcl
+share/irctk/global.tcl
+share/irctk/gui.tcl
+share/irctk/irc.tcl
+share/irctk/irctk.tcl
+share/irctk/log.tcl
+share/irctk/main.tcl
+share/irctk/uuid.tcl
