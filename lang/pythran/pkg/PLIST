@@ -3073,6 +3073,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/math/tan.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/math/tanh.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/math/trunc.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/NINF.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/abs.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/include/numpy/absolute.hpp
@@ -3798,6 +3799,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/math/tan.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/math/tanh.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/math/trunc.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/
+lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/NINF.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/abs.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/pythonic/numpy/absolute.hpp
@@ -4589,7 +4591,14 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx2.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512bw.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512cd.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512dq.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512er.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512f.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512ifma.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512pf.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512vbmi.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512vnni_avx512bw.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avx512vnni_avx512vbmi.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_avxvnni.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_constants.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3_avx.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_fma3_avx2.hpp
@@ -4600,6 +4609,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_generic_fwd.hp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_isa.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_neon.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_neon64.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_rvv.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_scalar.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse2.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse3.hpp
@@ -4607,6 +4617,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse4_1.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sse4_2.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_ssse3.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_sve.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/arch/xsimd_wasm.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_arch.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/config/xsimd_config.hpp
@@ -4623,8 +4634,15 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx2_register
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512bw_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512cd_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512dq_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512er_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512f_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512ifma_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512pf_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512vbmi_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512vnni_avx512bw_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx512vnni_avx512vbmi_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avx_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_avxvnni_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_batch.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_batch_constant.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_fma3_avx2_register.hpp
@@ -4635,6 +4653,7 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_generic_arch.
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_neon64_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_neon_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_register.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_rvv_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse2_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse3_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sse4_1_register.hpp
@@ -4643,4 +4662,5 @@ lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_ssse3_registe
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_sve_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_traits.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_utils.hpp
+lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/types/xsimd_wasm_register.hpp
 lib/python${MODPY_VERSION}/site-packages/pythran/xsimd/xsimd.hpp
