@@ -1671,6 +1671,7 @@
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
+     SUBDIR += py-unique-log-filter,python3
      SUBDIR += py-untangle,python3
      SUBDIR += py-urwid,python3
      SUBDIR += py-validators,python3
