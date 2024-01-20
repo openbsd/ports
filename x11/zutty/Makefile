@@ -1,12 +1,14 @@
 COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
-GH_ACCOUNT =	tomszilagyi
-GH_PROJECT =	zutty
-GH_TAGNAME =	0.14
+V =		0.15
+DISTNAME =	zutty-$V
 
 CATEGORIES =	x11
 
 HOMEPAGE =	https://tomscii.sig7.se/zutty
+
+SITES =		https://git.hq.sig7.se/zutty.git/snapshot/
+DISTFILES =	${DISTNAME}{${V}}${EXTRACT_SUFX}
 
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
@@ -23,6 +25,9 @@ COMPILER=	base-clang ports-gcc
 CONFIGURE_ENV =	CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+
+post-extract:
+	cd ${WRKDIR} && mv ${DISTNAME}-* ${DISTNAME}
 
 do-configure:
 	cd ${WRKSRC} && env -i ${CONFIGURE_ENV} \
