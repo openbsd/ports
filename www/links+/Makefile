@@ -3,6 +3,7 @@ VER=		2.29
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	http://links.twibright.com/
 
@@ -29,11 +30,12 @@ LIB_DEPENDS+=	graphics/jpeg \
 		graphics/png \
 		x11/gnome/librsvg \
 		graphics/tiff \
-		graphics/libwebp
+		graphics/libwebp \
+		graphics/libavif
 CONFIGURE_ARGS+= --with-x --enable-graphics
 WANTLIB+=	X11 jpeg>=62 m png tiff>=35
 WANTLIB+=	cairo freetype fontconfig gdk_pixbuf-2.0 gio-2.0
-WANTLIB+=	glib-2.0 gobject-2.0 intl rsvg-2 webp
+WANTLIB+=	glib-2.0 gobject-2.0 intl rsvg-2 webp avif
 
 MESSAGE=	${PKGDIR}/MESSAGE.x11
 .endif
