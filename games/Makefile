@@ -37,6 +37,7 @@
      SUBDIR += brogue
      SUBDIR += brumbrumrally
      SUBDIR += bugdom
+     SUBDIR += bugdom2
      SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += candycrisis
