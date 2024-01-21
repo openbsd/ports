@@ -1,7 +1,7 @@
 COMMENT =	enable all of the features of Modern Perl with one import
 
 CPAN_AUTHOR =	CHROMATIC
-DISTNAME =	Modern-Perl-1.20230106
+DISTNAME =	Modern-Perl-1.20240120
 
 CATEGORIES =	devel
 
