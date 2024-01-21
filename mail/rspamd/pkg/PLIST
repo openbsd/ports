@@ -263,6 +263,7 @@ share/rspamd/lualib/lpegre.lua
 share/rspamd/lualib/lua_auth_results.lua
 share/rspamd/lualib/lua_aws.lua
 share/rspamd/lualib/lua_bayes_learn.lua
+share/rspamd/lualib/lua_bayes_redis.lua
 share/rspamd/lualib/lua_cfg_transform.lua
 share/rspamd/lualib/lua_cfg_utils.lua
 share/rspamd/lualib/lua_clickhouse.lua
@@ -331,6 +332,11 @@ share/rspamd/lualib/plugins/neural.lua
 share/rspamd/lualib/plugins/rbl.lua
 share/rspamd/lualib/plugins_stats.lua
 share/rspamd/lualib/redis_scripts/
+share/rspamd/lualib/redis_scripts/bayes_cache_check.lua
+share/rspamd/lualib/redis_scripts/bayes_cache_learn.lua
+share/rspamd/lualib/redis_scripts/bayes_classify.lua
+share/rspamd/lualib/redis_scripts/bayes_learn.lua
+share/rspamd/lualib/redis_scripts/bayes_stat.lua
 share/rspamd/lualib/redis_scripts/neural_maybe_invalidate.lua
 share/rspamd/lualib/redis_scripts/neural_maybe_lock.lua
 share/rspamd/lualib/redis_scripts/neural_save_unlock.lua
@@ -349,6 +355,7 @@ share/rspamd/lualib/rspamadm/dkim_keygen.lua
 share/rspamd/lualib/rspamadm/dmarc_report.lua
 share/rspamd/lualib/rspamadm/dns_tool.lua
 share/rspamd/lualib/rspamadm/fuzzy_convert.lua
+share/rspamd/lualib/rspamadm/fuzzy_ping.lua
 share/rspamd/lualib/rspamadm/fuzzy_stat.lua
 share/rspamd/lualib/rspamadm/grep.lua
 share/rspamd/lualib/rspamadm/keypair.lua
@@ -464,9 +471,11 @@ share/rspamd/www/img/rspamd_logo_navbar.png
 share/rspamd/www/index.html
 share/rspamd/www/js/
 share/rspamd/www/js/app/
+share/rspamd/www/js/app/common.js
 share/rspamd/www/js/app/config.js
 share/rspamd/www/js/app/graph.js
 share/rspamd/www/js/app/history.js
+share/rspamd/www/js/app/libft.js
 share/rspamd/www/js/app/rspamd.js
 share/rspamd/www/js/app/selectors.js
 share/rspamd/www/js/app/stats.js
@@ -481,7 +490,7 @@ share/rspamd/www/js/lib/d3evolution.min.js
 share/rspamd/www/js/lib/d3pie.min.js
 share/rspamd/www/js/lib/fontawesome.min.js
 share/rspamd/www/js/lib/footable.min.js
-share/rspamd/www/js/lib/jquery-3.7.0.min.js
+share/rspamd/www/js/lib/jquery-3.7.1.min.js
 share/rspamd/www/js/lib/jquery.stickytabs.min.js
 share/rspamd/www/js/lib/nprogress.min.js
 share/rspamd/www/js/lib/prism.js
