@@ -1,6 +1,6 @@
 COMMENT =	minimalistic music player
 
-DISTNAME =	amused-0.13
+DISTNAME =	amused-0.14
 
 CATEGORIES =	audio
 
@@ -8,7 +8,7 @@ HOMEPAGE =	https://projects.omarpolo.com/amused.html
 
 MAINTAINER =	Omar Polo <op@openbsd.org>
 
-# ISC
+# ISC, Public Domain
 PERMIT_PACKAGE = Yes
 
 # uses pledge
