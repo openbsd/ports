@@ -1,0 +1,12 @@
+Index: Source/Boot.cpp
+--- Source/Boot.cpp.orig
++++ Source/Boot.cpp
+@@ -54,7 +54,7 @@ tryAgain:
+ 			break;
+ 
+ 		case 2:
+-			dataPath = "Data";
++			dataPath = "${TRUEPREFIX}/share/bugdom2";
+ 			break;
+ 
+ 		default:
