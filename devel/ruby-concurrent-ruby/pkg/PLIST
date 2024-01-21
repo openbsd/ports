@@ -45,7 +45,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/copy_on_wr
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/java_non_concurrent_priority_queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/lock_free_stack.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/
-${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/atomic_reference_map_backend.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/mri_map_backend.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/non_concurrent_map_backend.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/collection/map/synchronized_map_backend.rb
@@ -121,7 +120,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/synchroni
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/adder.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/cheap_lockable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/data_structures.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/power_of_two_tuple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/concurrent-ruby/concurrent/thread_safe/util/striped64.rb
