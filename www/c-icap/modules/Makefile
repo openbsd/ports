@@ -2,12 +2,10 @@ MULTI_PACKAGES=	-main -urlcheck
 COMMENT-main=	libclamav-based virus scanner for c-icap
 COMMENT-urlcheck= basic URL filtering service for c-icap
 
-V=		0.5.5
+V=		0.5.6
 DISTNAME=	c_icap_modules-$V
 PKGNAME-main=	c-icap-clamav-$V
-REVISION-main=	1
 PKGNAME-urlcheck= c-icap-urlcheck-$V
-REVISION-urlcheck= 0
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69

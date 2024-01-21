@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -300,14 +300,12 @@ AC_TRY_COMPILE(
+@@ -303,14 +303,12 @@ AC_TRY_COMPILE(
        #include <sys/un.h>
         ],
        [
