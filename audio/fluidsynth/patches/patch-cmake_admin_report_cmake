@@ -1,0 +1,16 @@
+Index: cmake_admin/report.cmake
+--- cmake_admin/report.cmake.orig
++++ cmake_admin/report.cmake
+@@ -85,6 +85,12 @@ else ( SDL2_SUPPORT )
+     set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  SDL2:                  no\n" )
+ endif ( SDL2_SUPPORT )
+ 
++if ( SNDIO_SUPPORT )
++    set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  sndio                  yes\n" )
++else ( SNDIO_SUPPORT )
++    set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  sndio                  no\n" )
++endif ( SNDIO_SUPPORT )
++
+ if ( WASAPI_SUPPORT )
+     set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  WASAPI:                yes\n" )
+ else ( WASAPI_SUPPORT )

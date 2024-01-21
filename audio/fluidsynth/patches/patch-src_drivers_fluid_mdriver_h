@@ -1,0 +1,19 @@
+Index: src/drivers/fluid_mdriver.h
+--- src/drivers/fluid_mdriver.h.orig
++++ src/drivers/fluid_mdriver.h
+@@ -38,6 +38,15 @@ struct _fluid_midi_driver_t
+ 
+ void fluid_midi_driver_settings(fluid_settings_t *settings);
+ 
++/* sndio */
++#if SNDIO_SUPPORT
++fluid_midi_driver_t *new_fluid_sndio_midi_driver(fluid_settings_t *settings,
++        handle_midi_event_func_t handler,
++        void *event_handler_data);
++void delete_fluid_sndio_midi_driver(fluid_midi_driver_t *p);
++void fluid_sndio_midi_driver_settings(fluid_settings_t *settings);
++#endif
++
+ /* ALSA */
+ #if ALSA_SUPPORT
+ fluid_midi_driver_t *new_fluid_alsa_rawmidi_driver(fluid_settings_t *settings,

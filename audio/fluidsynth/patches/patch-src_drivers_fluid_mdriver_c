@@ -1,0 +1,18 @@
+Index: src/drivers/fluid_mdriver.c
+--- src/drivers/fluid_mdriver.c.orig
++++ src/drivers/fluid_mdriver.c
+@@ -38,6 +38,14 @@ struct _fluid_mdriver_definition_t
+ 
+ static const fluid_mdriver_definition_t fluid_midi_drivers[] =
+ {
++#if SNDIO_SUPPORT
++    {
++        "sndio",
++        new_fluid_sndio_midi_driver,
++        delete_fluid_sndio_midi_driver,
++        fluid_sndio_midi_driver_settings
++    },
++#endif
+ #if ALSA_SUPPORT
+     {
+         "alsa_seq",

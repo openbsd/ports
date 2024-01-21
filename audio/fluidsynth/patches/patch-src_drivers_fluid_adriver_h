@@ -1,0 +1,19 @@
+Index: src/drivers/fluid_adriver.h
+--- src/drivers/fluid_adriver.h.orig
++++ src/drivers/fluid_adriver.h
+@@ -43,6 +43,15 @@ void fluid_audio_driver_settings(fluid_settings_t *set
+ /* Defined in fluid_filerenderer.c */
+ void fluid_file_renderer_settings(fluid_settings_t *settings);
+ 
++#if SNDIO_SUPPORT
++fluid_audio_driver_t *new_fluid_sndio_audio_driver(fluid_settings_t *settings,
++        fluid_synth_t *synth);
++fluid_audio_driver_t *new_fluid_sndio_audio_driver2(fluid_settings_t *settings,
++        fluid_audio_func_t func, void *data);
++void delete_fluid_sndio_audio_driver(fluid_audio_driver_t *p);
++void fluid_sndio_audio_driver_settings(fluid_settings_t *settings);
++#endif
++
+ #if PULSE_SUPPORT
+ fluid_audio_driver_t *new_fluid_pulse_audio_driver(fluid_settings_t *settings,
+         fluid_synth_t *synth);

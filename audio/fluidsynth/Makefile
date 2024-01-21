@@ -3,6 +3,7 @@ COMMENT =		SoundFont2 software synthesizer
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
 GH_TAGNAME =		v2.3.4
+REVISION =		0
 
 SHARED_LIBS +=	fluidsynth           3.0      # 6.0
 

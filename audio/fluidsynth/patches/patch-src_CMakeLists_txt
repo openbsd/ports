@@ -6,13 +6,21 @@ Index: src/CMakeLists.txt
  # ************ library ************
  
 +if ( SNDIO_SUPPORT )
-+  set ( fluid_pulse_SOURCES drivers/fluid_sndio.c )
++  set ( fluid_sndio_SOURCES drivers/fluid_sndio.c )
 +endif ( SNDIO_SUPPORT )
 +
  if ( PULSE_SUPPORT )
    set ( fluid_pulse_SOURCES drivers/fluid_pulse.c )
  endif ( PULSE_SUPPORT )
-@@ -366,6 +370,11 @@ target_link_libraries ( libfluidsynth-OBJ PUBLIC GLib2
+@@ -249,6 +253,7 @@ add_library ( libfluidsynth-OBJ OBJECT
+     ${fluid_waveout_SOURCES}
+     ${fluid_winmidi_SOURCES}
+     ${fluid_sdl2_SOURCES}
++    ${fluid_sndio_SOURCES}
+     ${fluid_libinstpatch_SOURCES}
+     ${libfluidsynth_SOURCES}
+     ${public_HEADERS}
+@@ -366,6 +371,11 @@ target_link_libraries ( libfluidsynth-OBJ PUBLIC GLib2
  
  if ( TARGET SndFile::sndfile AND LIBSNDFILE_SUPPORT )
      target_link_libraries ( libfluidsynth-OBJ PUBLIC SndFile::sndfile )
