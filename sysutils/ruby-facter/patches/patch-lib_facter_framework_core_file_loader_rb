@@ -3,7 +3,7 @@ Add support for OpenBSD
 Index: lib/facter/framework/core/file_loader.rb
 --- lib/facter/framework/core/file_loader.rb.orig
 +++ lib/facter/framework/core/file_loader.rb
-@@ -647,6 +647,65 @@ os_hierarchy.each do |os|
+@@ -649,6 +649,65 @@ os_hierarchy.each do |os|
      require_relative '../../facts/ol/os/distro/description.rb'
      require_relative '../../facts/ol/os/distro/id.rb'
  

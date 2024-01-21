@@ -1,6 +1,6 @@
 COMMENT =	system inventory tool
 
-DISTNAME =	facter-4.5.1
+DISTNAME =	facter-4.5.2
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/facter
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

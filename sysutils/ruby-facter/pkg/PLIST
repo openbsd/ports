@@ -964,6 +964,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aix/os_level.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aix/partitions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aix/processors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/aix/serialnumber.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/amzn/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/amzn/os_release_rpm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/augeas.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/az.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/resolvers/base_resolver.rb
