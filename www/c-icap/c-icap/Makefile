@@ -3,12 +3,11 @@ COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.11
+V=		0.5.12
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
-REVISION=	0
 
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 
