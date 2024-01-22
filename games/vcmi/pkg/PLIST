@@ -152,6 +152,8 @@ share/vcmi/Mods/vcmi/Sprites/lobby/checkboxOn.png
 share/vcmi/Mods/vcmi/Sprites/lobby/dropdown.json
 share/vcmi/Mods/vcmi/Sprites/lobby/dropdownNormal.png
 share/vcmi/Mods/vcmi/Sprites/lobby/dropdownPressed.png
+share/vcmi/Mods/vcmi/Sprites/lobby/selectionTabSortDate.json
+share/vcmi/Mods/vcmi/Sprites/lobby/selectionTabSortDate.png
 share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/
 share/vcmi/Mods/vcmi/Sprites/mapFormatIcons/vcmi1.png
 share/vcmi/Mods/vcmi/Sprites/settingsWindow/
