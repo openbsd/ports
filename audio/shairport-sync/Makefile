@@ -3,7 +3,12 @@ COMMENT =	AirPlay audio player
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
 GH_TAGNAME =	3.3.9
-REVISION =	1
+REVISION =	2
+
+SITES.fix =		https://github.com/mikebrady/shairport-sync/commit/
+# "avoid recursive mutex acquisition in sndio backend" to fix crash on pause
+PATCHFILES.fix =	57af5f3c10c54947cf160fe46a580cf40669d412.patch
+PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	audio
 
