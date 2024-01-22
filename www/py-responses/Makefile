@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.17.0
 
 DISTNAME =		responses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -22,7 +22,6 @@ MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	responses/test_responses.py
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			www/py-cookies${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/flake8 \
 			devel/py-coverage${MODPY_FLAVOR} \
