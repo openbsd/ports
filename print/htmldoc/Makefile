@@ -1,6 +1,6 @@
 COMMENT =		convert HTML pages to PDF/PS format
 
-V =			1.9.16
+V =			1.9.17
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
 
@@ -11,7 +11,7 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto m ssl z jpeg png ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c cups jpeg m png z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -19,7 +19,8 @@ DISTFILES =		${DISTNAME}-source${EXTRACT_SUFX}
 SITES =	https://github.com/michaelrsweet/htmldoc/releases/download/v${V}/
 
 LIB_DEPENDS =		graphics/jpeg \
-			graphics/png
+			graphics/png \
+			print/cups,-libs
 
 CONFIGURE_STYLE =	gnu dest
 CONFIGURE_ARGS +=	--without-gui --disable-gnutls
