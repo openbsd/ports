@@ -24,6 +24,8 @@ COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/cmake textproc/intltool
 
+BUILD_DEPENDS =		devel/abseil-cpp
+
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
