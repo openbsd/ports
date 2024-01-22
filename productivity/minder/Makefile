@@ -4,7 +4,7 @@ PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
 
 GH_ACCOUNT =	phase1geo
 GH_PROJECT =	Minder
-GH_TAGNAME =	1.16.1
+GH_TAGNAME =	1.16.2
 
 CATEGORIES =	productivity
 
