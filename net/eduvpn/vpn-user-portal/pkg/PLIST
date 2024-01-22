@@ -69,6 +69,7 @@ vpn-user-portal/src/Crypto/Minisign/PublicKey.php
 vpn-user-portal/src/Crypto/Minisign/Signature.php
 vpn-user-portal/src/Crypto/Minisign/Verifier.php
 vpn-user-portal/src/Crypto/VerifierInterface.php
+vpn-user-portal/src/Dns.php
 vpn-user-portal/src/DnsZoneGenerator.php
 vpn-user-portal/src/Dt.php
 vpn-user-portal/src/Exception/
@@ -367,6 +368,7 @@ libexec/vpn-user-portal/
 libexec/vpn-user-portal/daemon-sync
 libexec/vpn-user-portal/db
 libexec/vpn-user-portal/fetch-server-list
+libexec/vpn-user-portal/generate-prefix
 libexec/vpn-user-portal/generate-secrets
 libexec/vpn-user-portal/housekeeping
 libexec/vpn-user-portal/stats
