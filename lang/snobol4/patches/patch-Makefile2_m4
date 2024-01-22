@@ -1,7 +1,7 @@
 Index: Makefile2.m4
 --- Makefile2.m4.orig
 +++ Makefile2.m4
-@@ -735,9 +735,9 @@ install_notiming: build_all
+@@ -748,9 +748,9 @@ install_notiming: build_all
  	$(INSTALL) sdb $(BINDIR)/sdb-$(VERS)
  	$(INSTALL) snopea $(BINDIR)/snopea-$(VERS)
  	rm -f $(BINDIR)/snobol4 $(BINDIR)/sdb $(BINDIR)/snopea

@@ -1,8 +1,7 @@
-V =		2.2.1
+V =		2.3.2
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-${V}
 CATEGORIES =	lang
-REVISION =	0
 
 HOMEPAGE =	https://www.regressive.org/snobol4/csnobol4/
 MAINTAINER =	STeve Andre <steve@wb8wsf.org>
