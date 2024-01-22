@@ -1,6 +1,6 @@
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	3.7.3
+MODPY_EGG_VERSION =	3.8.2
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -28,8 +28,7 @@ NO_TEST =		Yes
 BUILD_DEPENDS =	devel/py-certifi${MODPY_FLAVOR}>=2020.06.20 \
 		devel/py-pybind11${MODPY_FLAVOR}>=2.6 \
 		math/qhull \
-		math/py-numpy${MODPY_FLAVOR}>=1.21 \
-		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR}>=1.25,<2 \
 		textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
@@ -38,7 +37,7 @@ RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-parsing${MODPY_FLAVOR}>=2.3.1 \
 		devel/py-gobject3${MODPY_FLAVOR} \
 		math/py-contourpy${MODPY_FLAVOR}>=1.0.1 \
-		math/py-numpy${MODPY_FLAVOR}>=1.21 \
+		math/py-numpy${MODPY_FLAVOR}>=1.25,<2 \
 		graphics/py-Pillow${MODPY_FLAVOR}>=8.0.0 \
 		graphics/py-cairo${MODPY_FLAVOR} \
 		graphics/py-cycler${MODPY_FLAVOR}>=0.10 \
@@ -60,11 +59,11 @@ post-patch:
 	cp ${WRKSRC}/mplsetup.cfg{.template,}
 
 pre-configure:
-	@find ${WRKSRC}/examples -name \*.py -exec ${MODPY_BIN_ADJ} {} +
+	find ${WRKSRC}/galleries/examples -name \*.py -exec ${MODPY_BIN_ADJ} {} +
 	${SUBST_CMD} ${WRKSRC}/setupext.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLESDIR}
+	cd ${WRKSRC}/galleries/examples && pax -rw * ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
