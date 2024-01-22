@@ -11,7 +11,7 @@ PERMIT_PACKAGE =Yes
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	flit_core
 
 FLAVORS =	python3
 FLAVOR =	python3
