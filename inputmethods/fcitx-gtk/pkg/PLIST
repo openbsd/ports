@@ -1,3 +1,4 @@
+@bin bin/fcitx5-gtk3-immodule-probing
 include/Fcitx5/GClient/
 include/Fcitx5/GClient/fcitx-gclient/
 include/Fcitx5/GClient/fcitx-gclient/fcitxgclient.h

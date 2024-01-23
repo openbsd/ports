@@ -1,6 +1,6 @@
 COMMENT =	GTK IM module for fcitx5
 
-DISTNAME =	fcitx5-gtk-5.0.23
+DISTNAME =	fcitx5-gtk-5.1.1
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 SHARED_LIBS =	Fcitx5GClient			0.0 # 0.0
@@ -14,7 +14,7 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} atk-1.0 gdk-3 gtk-3 xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c gdk-3 gtk-3 xkbcommon
 WANTLIB += X11 cairo cairo-gobject harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl m
 
