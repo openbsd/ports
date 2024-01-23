@@ -505,6 +505,7 @@
      SUBDIR += py-xmlschema,python3
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml,python3
+     SUBDIR += py-yamlordereddictloader,python3
      SUBDIR += qpdfview
      SUBDIR += qxlsx
      SUBDIR += qxlsx,qt6
