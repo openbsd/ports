@@ -2,14 +2,14 @@ COMMENT=	set file modification times to internal RPKI timestamps
 
 GH_ACCOUNT=	job
 GH_PROJECT=	rpkitouch
-GH_TAGNAME=	v1.0
+GH_TAGNAME=	v1.1
 
 CATEGORIES=	net
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c
+WANTLIB += c crypto
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rpkitouch ${PREFIX}/bin
