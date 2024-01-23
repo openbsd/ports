@@ -1,6 +1,6 @@
 COMMENT =	convert between traditional and simplified Chinese
 
-V =		1.1.6
+V =		1.1.7
 DISTNAME =	opencc-$V
 
 GH_ACCOUNT =	BYVoid
@@ -28,7 +28,8 @@ LIB_DEPENDS =		textproc/libmarisa,-main
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_MARISA=ON
 
-CXXFLAGS +=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CXXFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS +=	-L${LOCALBASE}/lib
 
 MODPY_RUNDEP =		No
 

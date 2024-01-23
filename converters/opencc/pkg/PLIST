@@ -30,6 +30,12 @@ include/opencc/UTF8StringSlice.hpp
 include/opencc/UTF8Util.hpp
 include/opencc/opencc.h
 include/opencc/opencc_config.h
+lib/cmake/
+lib/cmake/opencc/
+lib/cmake/opencc/OpenCCConfig.cmake
+lib/cmake/opencc/OpenCCConfigVersion.cmake
+lib/cmake/opencc/OpenCCTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/opencc/OpenCCTargets.cmake
 @lib lib/libopencc.so.${LIBopencc_VERSION}
 lib/pkgconfig/opencc.pc
 share/opencc/
