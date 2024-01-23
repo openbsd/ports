@@ -66,6 +66,10 @@ then select and add your preferred input method from the Avaliable
 Input Method panel. You might need to uncheck 'Only Show Current
 Language' to find your preferred input method.
 
+If using KDE Plasma, you can also setup your input method via:
+
+  System Settings -> Regional Settings -> Input Method
+
 For more information, please refer to Fcitx's wiki page:
 https://www.fcitx-im.org/wiki/Setup_Fcitx_5
 
