@@ -9,6 +9,7 @@ share/doc/dnscontrol/providers/axfrddns.md
 share/doc/dnscontrol/providers/azure_dns.md
 share/doc/dnscontrol/providers/azure_private_dns.md
 share/doc/dnscontrol/providers/bind.md
+share/doc/dnscontrol/providers/bunny_dns.md
 share/doc/dnscontrol/providers/cloudflareapi.md
 share/doc/dnscontrol/providers/cloudns.md
 share/doc/dnscontrol/providers/cscglobal.md
@@ -18,6 +19,7 @@ share/doc/dnscontrol/providers/dnsimple.md
 share/doc/dnscontrol/providers/dnsmadeeasy.md
 share/doc/dnscontrol/providers/dnsoverhttps.md
 share/doc/dnscontrol/providers/domainnameshop.md
+share/doc/dnscontrol/providers/dynadot.md
 share/doc/dnscontrol/providers/easyname.md
 share/doc/dnscontrol/providers/exoscale.md
 share/doc/dnscontrol/providers/gandi_v5.md
@@ -45,6 +47,7 @@ share/doc/dnscontrol/providers/ovh.md
 share/doc/dnscontrol/providers/packetframe.md
 share/doc/dnscontrol/providers/porkbun.md
 share/doc/dnscontrol/providers/powerdns.md
+share/doc/dnscontrol/providers/realtimeregister.md
 share/doc/dnscontrol/providers/route53.md
 share/doc/dnscontrol/providers/rwth.md
 share/doc/dnscontrol/providers/softlayer.md
