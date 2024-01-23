@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 aarch64
 MOZILLA_VERSION =	2.53.18
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
-REVISION =	0
+REVISION =	1
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
