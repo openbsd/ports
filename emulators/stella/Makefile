@@ -1,6 +1,6 @@
 COMMENT =		Atari 2600 VCS emulator
 
-V =			6.7
+V =			6.7.1
 DISTNAME =		stella-$V
 CATEGORIES =		emulators
 EXTRACT_SUFX =		-src.tar.xz
@@ -13,14 +13,15 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} c m z pthread SDL2 png
+WANTLIB =		${COMPILER_LIBCXX} c m z pthread SDL2 png sqlite3
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 SITES =		https://github.com/stella-emu/stella/releases/download/$V/
 
 LIB_DEPENDS =		devel/sdl2 \
-			graphics/png
+			graphics/png \
+			databases/sqlite3
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS += 		-L${LOCALBASE}/lib
