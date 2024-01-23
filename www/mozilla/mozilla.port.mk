@@ -53,8 +53,8 @@ EXTRACT_SUFX ?=	.tar.xz
 DIST_SUBDIR ?=	mozilla
 
 .if defined(MOZILLA_PROFDATA_TASKID)
-.if 0
-DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}
+.if ${MOZILLA_PROJECT:Mfirefox}
+DISTFILES.profdata =	${DISTNAME}-profdata-repacked-16${EXTRACT_SUFX}
 SITES.profdata =	https://rhaalovely.net/stuff/
 .else
 DISTFILES.profdata =	${DISTNAME}-profdata${EXTRACT_SUFX}{profdata${EXTRACT_SUFX}}
@@ -73,7 +73,7 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.92
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.97
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
