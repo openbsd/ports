@@ -1660,6 +1660,7 @@
      SUBDIR += py-toposort,python3
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
+     SUBDIR += py-transitions,python3
      SUBDIR += py-traitlets,python3
      SUBDIR += py-trio,python3
      SUBDIR += py-trove-classifiers,python3
