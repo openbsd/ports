@@ -1,6 +1,6 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION =	1.82
+MODPY_EGG_VERSION =	1.83
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
