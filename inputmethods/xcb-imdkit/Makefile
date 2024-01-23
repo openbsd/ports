@@ -1,6 +1,6 @@
 COMMENT =	implementation of xim protocol in xcb
 
-DISTNAME =	xcb-imdkit-1.0.5
+DISTNAME =	xcb-imdkit-1.0.6
 
 SHARED_LIBS +=  xcb-imdkit		1.0 # 1.0
 
