@@ -51,18 +51,15 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c++
 MODULES =		devel/cmake
 
-CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
+			-DABSL_USE_EXTERNAL_GOOGLETEST=${LOCALBASE}/include/gtest \
+			-DBUILD_TESTING=ON \
+			-DABSL_BUILD_TESTING=ON
 
 # A future Abseil release will default ABSL_PROPAGATE_CXX_STD=ON
 # for CMake >= 3.8. Abseil developers recommend enabling this option
 # to ensure that our project builds correctly.
 CONFIGURE_ARGS +=      -DABSL_PROPAGATE_CXX_STD=ON
-
-# use googletest from ports
-CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST=${LOCALBASE}/include/gtest
-# turn on tests builds
-CONFIGURE_ARGS +=	-DBUILD_TESTING=ON \
-			-DABSL_BUILD_TESTING=ON
 
 LIB_DEPENDS +=		devel/gtest>=1.14.0
 
