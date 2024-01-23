@@ -389,6 +389,7 @@ include/zeek/analyzer/protocol/login/events.bif.h
 include/zeek/analyzer/protocol/login/functions.bif.h
 include/zeek/analyzer/protocol/mime/
 include/zeek/analyzer/protocol/mime/MIME.h
+include/zeek/analyzer/protocol/mime/consts.bif.h
 include/zeek/analyzer/protocol/mime/events.bif.h
 include/zeek/analyzer/protocol/modbus/
 include/zeek/analyzer/protocol/modbus/Modbus.h
@@ -1234,6 +1235,8 @@ share/btest/data/pcaps/dnssec/
 share/btest/data/pcaps/dnssec/dnskey.pcap
 share/btest/data/pcaps/dnssec/dnskey2.pcap
 share/btest/data/pcaps/dnssec/ds.pcap
+share/btest/data/pcaps/dnssec/ed25519.no.pcap
+share/btest/data/pcaps/dnssec/ed448.no.pcap
 share/btest/data/pcaps/dnssec/nsec.pcap
 share/btest/data/pcaps/dnssec/nsec3.pcap
 share/btest/data/pcaps/dnssec/nsec3param.pcap
@@ -1283,6 +1286,7 @@ share/btest/data/pcaps/http/content-range-gap-skip.trace
 share/btest/data/pcaps/http/content-range-gap.trace
 share/btest/data/pcaps/http/content-range-less-than-len.pcap
 share/btest/data/pcaps/http/curl_http_09.pcap
+share/btest/data/pcaps/http/deeply-nested-mime.pcap
 share/btest/data/pcaps/http/entity_gap.trace
 share/btest/data/pcaps/http/entity_gap2.trace
 share/btest/data/pcaps/http/fake-content-length.pcap
@@ -1294,6 +1298,7 @@ share/btest/data/pcaps/http/http-09-content-length-confusion.pcap
 share/btest/data/pcaps/http/http-11-request-then-cruft.pcap
 share/btest/data/pcaps/http/http-bad-content-range-01.pcap
 share/btest/data/pcaps/http/http-bad-request-with-version.trace
+share/btest/data/pcaps/http/http-body-match.pcap
 share/btest/data/pcaps/http/http-filename.pcap
 share/btest/data/pcaps/http/http-large-gap.pcap
 share/btest/data/pcaps/http/http-post-large.pcap
@@ -1471,6 +1476,7 @@ share/btest/data/pcaps/smb/smb3.pcap
 share/btest/data/pcaps/smb/smb311.pcap
 share/btest/data/pcaps/smb/smb3_multichannel.pcap
 share/btest/data/pcaps/smb/smb3_negotiate_context.pcap
+share/btest/data/pcaps/smb/smb_many_open_files_500.pcap.gz
 share/btest/data/pcaps/smtp-attachment-msg.pcap
 share/btest/data/pcaps/smtp-mail-transactions-invalid.pcap
 share/btest/data/pcaps/smtp-multi-addr.pcap
@@ -1593,6 +1599,7 @@ share/btest/data/pcaps/tls/tls-fragmented-handshake.pcap.gz
 share/btest/data/pcaps/tls/tls1.2-protocol-violation.pcap
 share/btest/data/pcaps/tls/tls1.2.trace
 share/btest/data/pcaps/tls/tls12-decryption.pcap
+share/btest/data/pcaps/tls/tls13-ech.pcap
 share/btest/data/pcaps/tls/tls13_psk_succesfull.pcap
 share/btest/data/pcaps/tls/tls13_wolfssl.pcap
 share/btest/data/pcaps/tls/tls13draft16-chrome55.0.2879.0-canary-aborted.pcap
@@ -1774,6 +1781,7 @@ share/zeek/base/bif/plugins/Zeek_KRB.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_KRB.types.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Login.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_Login.functions.bif.zeek
+share/zeek/base/bif/plugins/Zeek_MIME.consts.bif.zeek
 share/zeek/base/bif/plugins/Zeek_MIME.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_MQTT.events.bif.zeek
 share/zeek/base/bif/plugins/Zeek_MQTT.types.bif.zeek
