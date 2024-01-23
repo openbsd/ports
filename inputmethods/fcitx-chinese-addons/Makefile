@@ -1,9 +1,8 @@
 COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
-V =		5.0.17
+V =		5.1.3
 DISTNAME =	fcitx5-chinese-addons-$V
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -14,9 +13,9 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt5DBusAddons
+WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core
 WANTLIB += Fcitx5Qt5WidgetsAddons Fcitx5Utils IMECore IMEPinyin
-WANTLIB += IMETable Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Widgets
+WANTLIB += IMETable Qt5Concurrent Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
