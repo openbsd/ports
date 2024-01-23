@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -7,4 +7,6 @@ if (ENABLE_CONFIG_QT)
+@@ -7,7 +7,9 @@ if (ENABLE_CONFIG_QT)
      add_subdirectory(configtool)
  endif()
  
@@ -9,3 +9,6 @@ Index: src/CMakeLists.txt
 +if (ENABLE_MIGRATOR)
 +    add_subdirectory(migrator)
 +endif()
+ 
+ if (ENABLE_KCM)
+     add_subdirectory(plasmathemegenerator)
