@@ -33,6 +33,7 @@ include/LibIME/libime/pinyin/pinyinencoder.h
 include/LibIME/libime/pinyin/pinyinime.h
 include/LibIME/libime/pinyin/pinyinmatchstate.h
 include/LibIME/libime/pinyin/pinyinmatchstate_p.h
+include/LibIME/libime/pinyin/pinyinprediction.h
 include/LibIME/libime/pinyin/shuangpindata.h
 include/LibIME/libime/pinyin/shuangpinprofile.h
 include/LibIME/libime/table/
