@@ -226,6 +226,7 @@ share/locale/id/LC_MESSAGES/colord.mo
 share/locale/is/LC_MESSAGES/colord.mo
 share/locale/it/LC_MESSAGES/colord.mo
 share/locale/ja/LC_MESSAGES/colord.mo
+share/locale/ka/LC_MESSAGES/colord.mo
 share/locale/kk/LC_MESSAGES/colord.mo
 share/locale/kn/LC_MESSAGES/colord.mo
 share/locale/ko/LC_MESSAGES/colord.mo
@@ -243,8 +244,10 @@ share/locale/pt/LC_MESSAGES/colord.mo
 share/locale/pt_BR/LC_MESSAGES/colord.mo
 share/locale/ro/LC_MESSAGES/colord.mo
 share/locale/ru/LC_MESSAGES/colord.mo
+share/locale/si/LC_MESSAGES/colord.mo
 share/locale/sk/LC_MESSAGES/colord.mo
 share/locale/sl/LC_MESSAGES/colord.mo
+share/locale/sq/LC_MESSAGES/colord.mo
 share/locale/sr/LC_MESSAGES/colord.mo
 share/locale/sr@latin/LC_MESSAGES/colord.mo
 share/locale/sv/LC_MESSAGES/colord.mo

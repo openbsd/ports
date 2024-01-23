@@ -23,7 +23,7 @@ Index: meson.build
  endif
  
  if get_option('systemd')
-@@ -234,7 +235,7 @@ conf.set_quoted('LIBEXECDIR', libexecdir)
+@@ -239,7 +240,7 @@ conf.set_quoted('LIBEXECDIR', libexecdir)
  conf.set_quoted('LOCALSTATEDIR', localstatedir)
  
  cd_system_profiles_dir = join_paths(localstatedir,
