@@ -58,7 +58,6 @@
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flameshot
-     SUBDIR += fna3d
      SUBDIR += fotowall
      SUBDIR += freeglut
      SUBDIR += freeimage
