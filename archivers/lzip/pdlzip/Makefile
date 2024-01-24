@@ -1,6 +1,6 @@
 COMMENT =		public domain implementation of the lzip data compressor
 
-DISTNAME =		pdlzip-1.12
+DISTNAME =		pdlzip-1.13
 
 HOMEPAGE =		http://lzip.nongnu.org/pdlzip.html
 SITES =			${SITE_SAVANNAH:=lzip/pdlzip/}
