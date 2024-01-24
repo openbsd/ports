@@ -1,6 +1,6 @@
 COMMENT =		decompressor written in C for lzip files
 
-DISTNAME =		lunzip-1.13
+DISTNAME =		lunzip-1.14
 
 HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
 SITES =			${SITE_SAVANNAH:=lzip/lunzip/}
