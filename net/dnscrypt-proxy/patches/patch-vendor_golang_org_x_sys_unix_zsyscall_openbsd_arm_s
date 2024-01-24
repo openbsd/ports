@@ -1,0 +1,17 @@
+https://github.com/golang/sys/commit/ec230dae7fd9abe06a61e3e05310d935e7e32b12.patch
+
+Index: vendor/golang.org/x/sys/unix/zsyscall_openbsd_arm.s
+--- vendor/golang.org/x/sys/unix/zsyscall_openbsd_arm.s.orig
++++ vendor/golang.org/x/sys/unix/zsyscall_openbsd_arm.s
+@@ -178,6 +178,11 @@ TEXT libc_sysctl_trampoline<>(SB),NOSPLIT,$0-0
+ GLOBL	·libc_sysctl_trampoline_addr(SB), RODATA, $4
+ DATA	·libc_sysctl_trampoline_addr(SB)/4, $libc_sysctl_trampoline<>(SB)
+ 
++TEXT libc_fcntl_trampoline<>(SB),NOSPLIT,$0-0
++	JMP	libc_fcntl(SB)
++GLOBL	·libc_fcntl_trampoline_addr(SB), RODATA, $4
++DATA	·libc_fcntl_trampoline_addr(SB)/4, $libc_fcntl_trampoline<>(SB)
++
+ TEXT libc_ppoll_trampoline<>(SB),NOSPLIT,$0-0
+ 	JMP	libc_ppoll(SB)
+ GLOBL	·libc_ppoll_trampoline_addr(SB), RODATA, $4

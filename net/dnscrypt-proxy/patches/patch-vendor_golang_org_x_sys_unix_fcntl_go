@@ -1,0 +1,17 @@
+similar to
+https://github.com/golang/sys/commit/ec230dae7fd9abe06a61e3e05310d935e7e32b12.patch
+
+Index: vendor/golang.org/x/sys/unix/fcntl.go
+--- vendor/golang.org/x/sys/unix/fcntl.go.orig
++++ vendor/golang.org/x/sys/unix/fcntl.go
+@@ -2,8 +2,8 @@
+ // Use of this source code is governed by a BSD-style
+ // license that can be found in the LICENSE file.
+ 
+-//go:build dragonfly || freebsd || linux || netbsd || openbsd
+-// +build dragonfly freebsd linux netbsd openbsd
++//go:build dragonfly || freebsd || linux || netbsd
++// +build dragonfly freebsd linux netbsd
+ 
+ package unix
+ 

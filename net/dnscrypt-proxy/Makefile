@@ -3,6 +3,7 @@ COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	dnscrypt-proxy
 GH_TAGNAME =	2.1.5
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -25,7 +26,7 @@ pre-configure:
 		${MODGO_SUBDIR}/dnscrypt-proxy/example-dnscrypt-proxy.toml
 
 do-build:
-	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} build
+	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} build ${MODGO_FLAGS}
 
 do-test:
 	cd ${WRKSRC}/dnscrypt-proxy && ${MODGO_CMD} test
