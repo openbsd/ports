@@ -1,6 +1,6 @@
 COMMENT=	redirect programs through one or more proxies
 
-VERSION=	4.15
+VERSION=	4.17
 DISTNAME=	proxychains-ng-${VERSION}
 CATEGORIES=	net security
 GH_ACCOUNT=	rofl0r
