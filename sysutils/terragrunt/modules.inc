@@ -183,7 +183,7 @@ MODGO_MODULES =	\
 	github.com/atomicgo/cursor					 v0.0.1 \
 	github.com/atotto/clipboard					 v0.1.4 \
 	github.com/aws/aws-lambda-go					 v1.13.3 \
-	github.com/aws/aws-sdk-go					 v1.49.17 \
+	github.com/aws/aws-sdk-go					 v1.50.0 \
 	github.com/aws/aws-sdk-go-v2					 v1.16.16 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream		 v1.4.3 \
 	github.com/aws/aws-sdk-go-v2/config				 v1.15.13 \
