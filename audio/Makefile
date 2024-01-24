@@ -37,7 +37,6 @@
      SUBDIR += easytag
      SUBDIR += espeak
      SUBDIR += faad
-     SUBDIR += faudio
      SUBDIR += fdk-aac
      SUBDIR += ffmpeg-normalize
      SUBDIR += flac
