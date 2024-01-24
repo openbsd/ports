@@ -1,0 +1,44 @@
+work around Axiom Verge spec violation
+https://gist.github.com/flibitijibibo/ffdd7c6fe32b9846a83807dab24be8fd
+
+Index: src/Color.cs
+--- src/Color.cs.orig
++++ src/Color.cs
+@@ -1392,6 +1392,25 @@ namespace Microsoft.Xna.Framework
+ 			private set;
+ 		}
+ 
++		/* The following custom colors are to support Axiom Verge */
++		public static Color CustomRed
++		{
++			get;
++			private set;
++		}
++
++		public static Color CustomGreen
++		{
++			get;
++			private set;
++		}
++
++		public static Color CustomBlue
++		{
++			get;
++			private set;
++		}
++
+ 		#endregion
+ 
+ 		#region Internal Properties
+@@ -1422,6 +1441,11 @@ namespace Microsoft.Xna.Framework
+ 
+ 		static Color()
+ 		{
++			/* The following custom colors are for support for Axiom Verge */
++			CustomRed = new Color(255, 141, 160);
++			CustomGreen = new Color(144, 238, 144);
++			CustomBlue = new Color(113, 231, 255);
++
+ 			Transparent = new Color(0);
+ 			AliceBlue = new Color(0xfffff8f0);
+ 			AntiqueWhite = new Color(0xffd7ebfa);

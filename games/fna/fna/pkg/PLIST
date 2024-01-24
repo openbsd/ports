@@ -1,0 +1,14 @@
+@pkgpath games/fna
+share/FNA/
+share/FNA/FNA.NetStub.dll
+share/FNA/FNA.dll
+share/FNA/FNA.dll.config
+share/FNA/Microsoft.Xna.Framework.Game.dll
+share/FNA/Microsoft.Xna.Framework.GamerServices.dll
+share/FNA/Microsoft.Xna.Framework.Graphics.dll
+share/FNA/Microsoft.Xna.Framework.Input.Touch.dll
+share/FNA/Microsoft.Xna.Framework.Net.dll
+share/FNA/Microsoft.Xna.Framework.Storage.dll
+share/FNA/Microsoft.Xna.Framework.Video.dll
+share/FNA/Microsoft.Xna.Framework.Xact.dll
+share/FNA/Microsoft.Xna.Framework.dll

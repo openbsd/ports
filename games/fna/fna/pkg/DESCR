@@ -1,0 +1,5 @@
+This is FNA, an XNA4 reimplementation that focuses solely on developing a fully
+accurate XNA4 runtime for the desktop.
+The port includes FNA.NetStub and the XNA 4.0 ABI bridge for compatibility with
+XNA games, as well as bindings for Vorbisfile and SDL2_image for backwards
+compatibility.
