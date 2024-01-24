@@ -107,7 +107,6 @@ baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/AddressBooks.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/User/Calendars.html
 baikal/Core/Frameworks/BaikalAdmin/Resources/Templates/Users.html
-baikal/Core/Frameworks/BaikalAdmin/Resources/html5.js
 baikal/Core/Frameworks/BaikalAdmin/Resources/main.js
 baikal/Core/Frameworks/BaikalAdmin/Route/
 baikal/Core/Frameworks/BaikalAdmin/Route/Dashboard.php
@@ -278,7 +277,6 @@ baikal/Core/Resources/Web/BaikalAdmin/Templates/User/
 baikal/Core/Resources/Web/BaikalAdmin/Templates/User/AddressBooks.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/User/Calendars.html
 baikal/Core/Resources/Web/BaikalAdmin/Templates/Users.html
-baikal/Core/Resources/Web/BaikalAdmin/html5.js
 baikal/Core/Resources/Web/BaikalAdmin/main.js
 baikal/Core/Resources/Web/README.md
 baikal/Core/Resources/Web/TwitterBootstrap/
@@ -363,7 +361,6 @@ baikal/html/res/core/BaikalAdmin/Templates/User/
 baikal/html/res/core/BaikalAdmin/Templates/User/AddressBooks.html
 baikal/html/res/core/BaikalAdmin/Templates/User/Calendars.html
 baikal/html/res/core/BaikalAdmin/Templates/Users.html
-baikal/html/res/core/BaikalAdmin/html5.js
 baikal/html/res/core/BaikalAdmin/main.js
 baikal/html/res/core/README.md
 baikal/html/res/core/TwitterBootstrap/
@@ -422,11 +419,6 @@ baikal/vendor/psr/log/README.md
 baikal/vendor/psr/log/composer.json
 baikal/vendor/sabre/
 baikal/vendor/sabre/dav/
-baikal/vendor/sabre/dav/.github/
-baikal/vendor/sabre/dav/.github/workflows/
-baikal/vendor/sabre/dav/.github/workflows/ci.yml
-baikal/vendor/sabre/dav/.php_cs.dist
-baikal/vendor/sabre/dav/.travis.yml
 baikal/vendor/sabre/dav/LICENSE
 baikal/vendor/sabre/dav/README.md
 baikal/vendor/sabre/dav/bin/
@@ -619,6 +611,7 @@ baikal/vendor/sabre/dav/lib/DAV/IFile.php
 baikal/vendor/sabre/dav/lib/DAV/IMoveTarget.php
 baikal/vendor/sabre/dav/lib/DAV/IMultiGet.php
 baikal/vendor/sabre/dav/lib/DAV/INode.php
+baikal/vendor/sabre/dav/lib/DAV/INodeByPath.php
 baikal/vendor/sabre/dav/lib/DAV/IProperties.php
 baikal/vendor/sabre/dav/lib/DAV/IQuota.php
 baikal/vendor/sabre/dav/lib/DAV/Locks/
@@ -813,6 +806,7 @@ baikal/vendor/sabre/http/tests/bootstrap.php
 baikal/vendor/sabre/http/tests/phpunit.xml
 baikal/vendor/sabre/http/tests/www/
 baikal/vendor/sabre/http/tests/www/bar.php
+baikal/vendor/sabre/http/tests/www/connection_aborted.php
 baikal/vendor/sabre/http/tests/www/foo
 baikal/vendor/sabre/http/tests/www/large.php
 baikal/vendor/sabre/uri/
@@ -983,6 +977,7 @@ baikal/vendor/symfony/polyfill-mbstring/Mbstring.php
 baikal/vendor/symfony/polyfill-mbstring/README.md
 baikal/vendor/symfony/polyfill-mbstring/Resources/
 baikal/vendor/symfony/polyfill-mbstring/Resources/unidata/
+baikal/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 baikal/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 baikal/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 baikal/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
