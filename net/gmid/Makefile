@@ -1,5 +1,5 @@
 COMMENT =	simple gemini server
-DISTNAME =	gmid-2.0
+DISTNAME =	gmid-2.0.1
 
 CATEGORIES =	net
 
@@ -11,7 +11,6 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 PERMIT_PACKAGE = Yes
 
 # uses pledge()
-# uses unveil()
 WANTLIB += c crypto event ssl tls util
 
 SITES = 	https://ftp.omarpolo.com/
