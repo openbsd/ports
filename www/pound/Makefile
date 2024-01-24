@@ -1,35 +1,29 @@
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
-DISTNAME =		Pound-2.8a
-REVISION =		1
+V =			4.11
+DISTNAME =		pound-$V
 PKGNAME =		${DISTNAME:L}
 
-PORTROACH =		site:https://github.com/graygnuorg/pound/archive/
+PORTROACH =		site:https://github.com/graygnuorg/pound/releases/
 
 CATEGORIES =		www
 
-HOMEPAGE =		https://www.apsis.ch/pound.html
+HOMEPAGE =		https://maucher-online.com/pound/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c crypto m pcreposix pthread ssl
+WANTLIB +=		c crypto pcre2-8 pcre2-posix pthread ssl
 
-SITES =			https://www.apsis.ch/pound/
-EXTRACT_SUFX =		.tgz
+SITES =			https://github.com/graygnuorg/pound/releases/download/v$V/
 
-LIB_DEPENDS =		devel/pcre
+LIB_DEPENDS =		devel/pcre2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ARGS +=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 			--with-owner=root \
 			--with-group=bin
-
-NO_TEST =		Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/pound.8
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pound

@@ -1,0 +1,43 @@
+Index: src/log.c
+--- src/log.c.orig
++++ src/log.c
+@@ -543,8 +543,8 @@ i_process_time_ms (struct stringbuf *sb, struct http_l
+ 		   POUND_HTTP *phttp)
+ {
+   struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
+-  stringbuf_printf (sb, "%ld",
+-		    (unsigned long) diff.tv_sec * MILLI + diff.tv_nsec / MICRO);
++  stringbuf_printf (sb, "%lld",
++		    (long long) diff.tv_sec * MILLI + diff.tv_nsec / MICRO);
+ }
+ 
+ static void
+@@ -552,8 +552,8 @@ i_process_time_us (struct stringbuf *sb, struct http_l
+ 		   POUND_HTTP *phttp)
+ {
+   struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
+-  stringbuf_printf (sb, "%ld",
+-		    (unsigned long) diff.tv_sec * MICRO + diff.tv_nsec / MILLI);
++  stringbuf_printf (sb, "%lld",
++		    (long long) diff.tv_sec * MICRO + diff.tv_nsec / MILLI);
+ }
+ 
+ static void
+@@ -561,7 +561,7 @@ i_process_time_s (struct stringbuf *sb, struct http_lo
+ 		  POUND_HTTP *phttp)
+ {
+   struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
+-  stringbuf_printf (sb, "%ld", diff.tv_sec);
++  stringbuf_printf (sb, "%lld", (long long)diff.tv_sec);
+ }
+ 
+ static void
+@@ -569,7 +569,7 @@ i_process_time_f (struct stringbuf *sb, struct http_lo
+ 		  POUND_HTTP *phttp)
+ {
+   struct timespec diff = timespec_sub (&phttp->end_req, &phttp->start_req);
+-  stringbuf_printf (sb, "%ld.%03ld", diff.tv_sec, diff.tv_nsec / MICRO);
++  stringbuf_printf (sb, "%lld.%03ld", (long long)diff.tv_sec, diff.tv_nsec / MICRO);
+ }
+ 
+ static struct argprt proctimeprt[] = {

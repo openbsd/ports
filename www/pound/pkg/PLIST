@@ -1,10 +1,14 @@
 @newgroup _pound:626
 @newuser _pound:626:_pound::pound user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/pound
+@bin bin/poundctl
+@man man/man5/poundctl.tmpl.5
 @man man/man8/pound.8
 @man man/man8/poundctl.8
 @bin sbin/pound
-@bin sbin/poundctl
 share/examples/pound/
 share/examples/pound/pound.cfg
 @sample ${SYSCONFDIR}/pound.cfg
-@rcscript ${RCDIR}/pound
+share/pound/
+share/pound/mvh.inc
+share/pound/poundctl.tmpl

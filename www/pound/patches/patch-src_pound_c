@@ -1,0 +1,21 @@
+Index: src/pound.c
+--- src/pound.c.orig
++++ src/pound.c
+@@ -21,6 +21,8 @@
+ #include "json.h"
+ #include "extern.h"
+ 
++#include <openssl/rand.h>
++
+ /* common variables */
+ char *user;			/* user to run as */
+ char *group;			/* group to run as */
+@@ -141,7 +143,7 @@ abend (char const *fmt, ...)
+ /*
+  * OpenSSL thread support stuff
+  */
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ #define l_init()
+ #else
+ static pthread_mutex_t *l_array;
