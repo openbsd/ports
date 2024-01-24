@@ -1,6 +1,6 @@
 COMMENT =		data recovery tool and decompressor for lzip files
 
-DISTNAME =		lziprecover-1.23
+DISTNAME =		lziprecover-1.24
 
 HOMEPAGE =		http://lzip.nongnu.org/lziprecover.html
 SITES =			${SITE_SAVANNAH:=lzip/lziprecover/}
