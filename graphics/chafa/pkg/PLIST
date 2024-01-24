@@ -4,6 +4,9 @@ include/chafa/chafa-canvas-config.h
 include/chafa/chafa-canvas.h
 include/chafa/chafa-common.h
 include/chafa/chafa-features.h
+include/chafa/chafa-frame.h
+include/chafa/chafa-image.h
+include/chafa/chafa-placement.h
 include/chafa/chafa-symbol-map.h
 include/chafa/chafa-term-db.h
 include/chafa/chafa-term-info.h
@@ -20,11 +23,15 @@ lib/libchafa.la
 lib/pkgconfig/chafa.pc
 @man man/man1/chafa.1
 share/gtk-doc/html/chafa/
+share/gtk-doc/html/chafa/api-index-deprecated.html
 share/gtk-doc/html/chafa/api-index-full.html
 share/gtk-doc/html/chafa/ch01.html
 share/gtk-doc/html/chafa/ch02.html
 share/gtk-doc/html/chafa/chafa-ChafaCanvas.html
 share/gtk-doc/html/chafa/chafa-ChafaCanvasConfig.html
+share/gtk-doc/html/chafa/chafa-ChafaFrame.html
+share/gtk-doc/html/chafa/chafa-ChafaImage.html
+share/gtk-doc/html/chafa/chafa-ChafaPlacement.html
 share/gtk-doc/html/chafa/chafa-ChafaSymbolMap.html
 share/gtk-doc/html/chafa/chafa-ChafaTermDb.html
 share/gtk-doc/html/chafa/chafa-ChafaTermInfo.html
@@ -37,6 +44,13 @@ share/gtk-doc/html/chafa/home.png
 share/gtk-doc/html/chafa/index.html
 share/gtk-doc/html/chafa/left-insensitive.png
 share/gtk-doc/html/chafa/left.png
+share/gtk-doc/html/chafa/new-api-index-1.10.html
+share/gtk-doc/html/chafa/new-api-index-1.12.html
+share/gtk-doc/html/chafa/new-api-index-1.14.html
+share/gtk-doc/html/chafa/new-api-index-1.2.html
+share/gtk-doc/html/chafa/new-api-index-1.4.html
+share/gtk-doc/html/chafa/new-api-index-1.6.html
+share/gtk-doc/html/chafa/new-api-index-1.8.html
 share/gtk-doc/html/chafa/right-insensitive.png
 share/gtk-doc/html/chafa/right.png
 share/gtk-doc/html/chafa/style.css
