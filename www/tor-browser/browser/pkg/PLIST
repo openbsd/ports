@@ -219,6 +219,7 @@ lib/${BROWSER_NAME}/removed-files
 @bin lib/${BROWSER_NAME}/${BROWSER_NAME}
 @bin lib/${BROWSER_NAME}/${BROWSER_NAME}-bin
 lib/${BROWSER_NAME}/${BROWSER_NAME}.cfg
+@bin lib/${BROWSER_NAME}/vaapitest
 share/applications/${BROWSER_NAME}.desktop
 share/icons/hicolor/128x128/apps/${BROWSER_NAME}.png
 share/icons/hicolor/16x16/apps/${BROWSER_NAME}.png
