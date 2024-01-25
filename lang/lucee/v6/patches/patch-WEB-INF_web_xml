@@ -1,0 +1,75 @@
+- Strip anything outside of <web-app> tag so this file can be used
+directly as an include in the main tomcat web.xml <web-app> section.
+
+- Specifically set server-root/web-configuration directories rather
+than defaulting to lib/. These must be writable by _tomcat.
+
+- Also note the servlet names are renamed via a regex in the port's
+Makefile. This is because this package installs servlets globally for
+use on multiple hosts, and avoids conflicting servlet names with any
+alternative versions of Lucee that are installed via .WAR files in
+a single host.
+http://jamiekrug.com/blog/index.cfm/2009/4/1/railo-jars-on-jboss-or-tomcat-tips-and-tricks
+
+
+--- WEB-INF/web.xml.orig	Sat Nov 12 16:20:47 2016
++++ WEB-INF/web.xml	Sat Nov 12 16:22:58 2016
+@@ -1,9 +1,3 @@
+-<?xml version="1.0" encoding="ISO-8859-1"?>
+-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+-	metadata-complete="true"
+-	version="2.5">
+ 
+ 
+ 
+@@ -11,31 +5,16 @@
+         <servlet-name>PKG_LuceeServlet</servlet-name>
+         <servlet-class>lucee.loader.servlet.LuceeServlet</servlet-class>
+ 
+-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+-    <!-- to specify the location of the Lucee Server config and libraries,   -->
+-    <!-- uncomment the init-param below.  make sure that the param-value     -->
+-    <!-- points to a valid folder, and that the process that runs Lucee has  -->
+-    <!-- write permissions to that folder.  leave commented for defaults.    -->
+-    <!--
+     <init-param>
+       <param-name>lucee-server-directory</param-name>
+-      <param-value>/var/Lucee/config/server/</param-value>
++      <param-value>/var/tomcat/lucee/config/server/</param-value>
+       <description>Lucee Server configuration directory (for Server-wide configurations, settings, and libraries)</description>
+     </init-param>
+-    !-->
+-    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+-    <!-- to specify the location of the Web Contexts' config and libraries,  -->
+-    <!-- uncomment the init-param below.  make sure that the param-value     -->
+-    <!-- points to a valid folder, and that the process that runs Lucee has  -->
+-    <!-- write permissions to that folder.  the {web-context-label} can be   -->
+-    <!-- set in Lucee Server Admin homepage.  leave commented for defaults.  -->
+-    <!--
+     <init-param>
+       <param-name>lucee-web-directory</param-name>
+-      <param-value>/var/Lucee/config/web/{web-context-label}/</param-value>
++      <param-value>/var/tomcat/lucee/config/web/{web-context-label}/</param-value>
+       <description>Lucee Web Directory (for Website-specific configurations, settings, and libraries)</description>
+     </init-param>
+-    !-->
+     <load-on-startup>1</load-on-startup>
+ 
+     </servlet>
+@@ -135,11 +114,11 @@
+ 
+ 
+ 	<!-- default file to execute if directory is called with no file name, e.g. http://mysite.com/ !-->
+-	<welcome-file-list>
++	<!-- welcome-file-list>
+ 		<welcome-file>index.cfm</welcome-file>
+ 		<welcome-file>index.lucee</welcome-file>
+ 		<welcome-file>index.html</welcome-file>
+ 		<welcome-file>index.htm</welcome-file>
+-	</welcome-file-list>
++	</welcome-file-list -->
+ 
+-</web-app>
++<!-- /web-app -->

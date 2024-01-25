@@ -1,5 +1,8 @@
+@option is-branch
+@conflict lucee-*
 @conflict railo-*
 @pkgpath lang/railo
+@pkgpath lang/lucee
 @extraunexec rm -rf %D/lucee/config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
 @extraunexec rm -rf %D/webapps/manager/WEB-INF/flex
