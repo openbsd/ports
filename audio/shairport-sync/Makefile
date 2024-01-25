@@ -3,7 +3,7 @@ COMMENT =	AirPlay audio player
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
 GH_TAGNAME =	3.3.9
-REVISION =	2
+REVISION =	3
 
 SITES.fix =		https://github.com/mikebrady/shairport-sync/commit/
 # "avoid recursive mutex acquisition in sndio backend" to fix crash on pause
@@ -35,6 +35,9 @@ CONFIGURE_ARGS +=	--with-ssl=openssl \
 			--with-sndio \
 			--with-os=openbsd
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/shairport-sync
+
+HOME_DIR =		${LOCALSTATEDIR}/spool/${PKGSTEM}
+SUBST_VARS =		HOME_DIR
 
 post-install:
 	mv ${PREFIX}/man/man7/shairport-sync.7 \
