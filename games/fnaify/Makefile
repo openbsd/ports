@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS =	${MONO_ARCHS}
 V =		3.1
 COMMENT =	run FNA/XNA games on OpenBSD
 DISTNAME =	fnaify-${V}
+REVISION=	0
 CATEGORIES =	games
 
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -15,14 +16,14 @@ SITES =		https://github.com/rfht/fnaify/releases/download/${V}/
 
 # it may be possible to drop audio/openal and a few others when FAudio
 # has been disseminated to all FNA games
-RUN_DEPENDS =	audio/faudio \
-		audio/libogg \
+RUN_DEPENDS =	audio/libogg \
 		audio/libvorbis \
 		audio/openal \
 		devel/sdl2-image \
-		games/fna \
+		games/fna/faudio \
+		games/fna/fna \
+		games/fna/fna3d \
 		games/steamworks-nosteam \
-		graphics/fna3d \
 		graphics/jpeg \
 		graphics/png \
 		lang/mono \
