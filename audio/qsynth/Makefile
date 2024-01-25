@@ -1,6 +1,7 @@
 COMMENT =		Qt GUI Interface for FluidSynth
 
 DISTNAME =		qsynth-0.9.12
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -19,6 +20,7 @@ WANTLIB += Qt6Widgets c fluidsynth m
 MODULES =		x11/qt6 \
 			devel/cmake
 
+BUILD_DEPENDS +=	x11/qt6/qttools
 LIB_DEPENDS +=		audio/fluidsynth>=2.3.2 \
 			x11/qt6/qtsvg
 
