@@ -25,6 +25,7 @@ share/doc/honk/README
 share/doc/honk/activitypub.7.html
 @sample ${LOCALSTATEDIR}/honk/docs/activitypub.7.html
 share/doc/honk/changelog.txt
+share/doc/honk/encrypted-messages.txt
 share/doc/honk/hfcs.1.html
 @sample ${LOCALSTATEDIR}/honk/docs/hfcs.1.html
 share/doc/honk/honk.1.html

@@ -1,9 +1,6 @@
-# "cannot use uint64(dir.Fd()) (value of type uint64) as uint32 value in struct literal" in vendor/humungus.tedunangst.com/r/gonix/kqueue.go
-ONLY_FOR_ARCHS =	${LP64_ARCHS}
-
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-1.2.0
+DISTNAME =		honk-1.2.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
