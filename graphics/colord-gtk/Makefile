@@ -1,10 +1,10 @@
 COMMENT=	Gtk helper library for colord
 
-V=		0.3.0
+V=		0.3.1
 DISTNAME=	colord-gtk-${V}
 PKGNAME=	colord-gtk4-${V}
 
-SHARED_LIBS +=	colord-gtk4               0.0 # 0.0
+SHARED_LIBS += colord-gtk4               0.0 # 1.0.3
 
 CATEGORIES=	graphics print
 
