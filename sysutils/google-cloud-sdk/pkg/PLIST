@@ -4135,6 +4135,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCAC
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}parsing.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}pkix.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}sigstore_image.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/${MODPY_PYCACHE}validation.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/arg_parsers.py
@@ -4142,6 +4143,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/flags.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/parsing.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/pkix.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/sigstore_image.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/binauthz/validation.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/container/builds/
@@ -6034,7 +6036,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}container_pa
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}deletion.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}messages_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}name_generator.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/${MODPY_PYCACHE}op_pollers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -6058,7 +6059,6 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/container_parser.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/deletion.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/exceptions.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/flags.py
-google-cloud-sdk/lib/googlecloudsdk/command_lib/run/functions.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/run/integrations/${MODPY_PYCACHE}/
@@ -6135,6 +6135,12 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resource_name_conversion.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/resources.yaml
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/secrets_mapping.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/serverless_operations.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/${MODPY_PYCACHE}builders.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/run/sourcedeploys/builders.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/stages.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/streaming.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/run/volumes.py
@@ -18071,11 +18077,13 @@ google-cloud-sdk/lib/surface/container/fleet/rollouts/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}pause.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/${MODPY_PYCACHE}resume.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/container/fleet/rollouts/create.py
+google-cloud-sdk/lib/surface/container/fleet/rollouts/delete.py
 google-cloud-sdk/lib/surface/container/fleet/rollouts/describe.py
 google-cloud-sdk/lib/surface/container/fleet/rollouts/list.py
 google-cloud-sdk/lib/surface/container/fleet/rollouts/pause.py
@@ -23574,6 +23582,7 @@ google-cloud-sdk/lib/surface/recaptcha/firewall_policies/create.yaml
 google-cloud-sdk/lib/surface/recaptcha/firewall_policies/delete.yaml
 google-cloud-sdk/lib/surface/recaptcha/firewall_policies/describe.yaml
 google-cloud-sdk/lib/surface/recaptcha/firewall_policies/list.yaml
+google-cloud-sdk/lib/surface/recaptcha/firewall_policies/reorder.yaml
 google-cloud-sdk/lib/surface/recaptcha/firewall_policies/update.yaml
 google-cloud-sdk/lib/surface/recaptcha/keys/
 google-cloud-sdk/lib/surface/recaptcha/keys/__init__.py
@@ -24214,6 +24223,11 @@ google-cloud-sdk/lib/surface/scc/findings/list_marks.py
 google-cloud-sdk/lib/surface/scc/findings/set_mute.py
 google-cloud-sdk/lib/surface/scc/findings/update.py
 google-cloud-sdk/lib/surface/scc/findings/update_marks.py
+google-cloud-sdk/lib/surface/scc/iac_validation_reports/
+google-cloud-sdk/lib/surface/scc/iac_validation_reports/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/scc/iac_validation_reports/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/scc/iac_validation_reports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/scc/iac_validation_reports/create.yaml
 google-cloud-sdk/lib/surface/scc/manage/
 google-cloud-sdk/lib/surface/scc/manage/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/scc/manage/${MODPY_PYCACHE}/
@@ -24832,6 +24846,7 @@ google-cloud-sdk/lib/surface/spanner/databases/
 google-cloud-sdk/lib/surface/spanner/databases/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}change_quorum.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24842,6 +24857,7 @@ google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}restore.${MODPY_P
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}set_iam_policy.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/spanner/databases/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/spanner/databases/add_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/spanner/databases/change_quorum.py
 google-cloud-sdk/lib/surface/spanner/databases/config/
 google-cloud-sdk/lib/surface/spanner/databases/config/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/spanner/databases/config/${MODPY_PYCACHE}/
