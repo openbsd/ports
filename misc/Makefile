@@ -95,6 +95,7 @@
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind
+     SUBDIR += remindcal
      SUBDIR += rlwrap
      SUBDIR += rocrail
      SUBDIR += screen
