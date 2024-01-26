@@ -1,4 +1,4 @@
-PORTROACH=		skipv:6.1.0
+PORTROACH=		skipv:6.1.0,6.1.1
 
 BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
