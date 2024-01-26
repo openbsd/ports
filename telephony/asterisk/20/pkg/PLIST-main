@@ -626,7 +626,6 @@ share/doc/asterisk/README-SERIOUSLY.bestpractices.md
 share/doc/asterisk/README-addons.txt
 share/doc/asterisk/README.md
 share/doc/asterisk/README.txt
-share/doc/asterisk/UPGRADE.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/asterisk/
 @mode 750

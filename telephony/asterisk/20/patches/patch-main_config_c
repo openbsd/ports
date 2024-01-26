@@ -1,0 +1,11 @@
+Index: main/config.c
+--- main/config.c.orig
++++ main/config.c
+@@ -44,6 +44,7 @@
+ #include <libgen.h>
+ #include <time.h>
+ #include <sys/stat.h>
++#include <sys/wait.h>
+ 
+ #include <math.h>	/* HUGE_VAL */
+ #include <regex.h>
