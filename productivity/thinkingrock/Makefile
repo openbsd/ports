@@ -3,11 +3,11 @@ COMMENT=	collecting and processing thoughts according to GTD
 V=		2.2.1
 DISTNAME=	tr-$V
 PKGNAME=	thinkingrock-${V}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	productivity
 
-HOMEPAGE=	http://www.trgtd.com.au/
+HOMEPAGE=	https://www.trgtd.com.au/
 
 # CDDL
 PERMIT_PACKAGE=	Yes
