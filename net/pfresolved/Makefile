@@ -1,7 +1,6 @@
 COMMENT =	pf table DNS update daemon
 
-VERSION =	1.00
-REVISION =	0
+VERSION =	1.01
 DISTNAME =	pfresolved-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
 
