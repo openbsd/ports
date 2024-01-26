@@ -46,6 +46,8 @@ CONFIGURE_ARGS=		-Dsession_tracking=ConsoleKit \
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 CONFIGURE_ARGS +=	-Dman=true
+# XXX sparc64: fix netgrent() detection and implicit getgrouplist() declaration
+CONFIGURE_ARGS +=	-Dc_args="${CFLAGS} -Werror-implicit-function-declaration -D_BSD_SOURCE"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
