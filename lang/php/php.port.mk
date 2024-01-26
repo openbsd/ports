@@ -15,7 +15,7 @@ MODPHP_VERSION?=	8.1
 .endif
 
 # for ports which force a newer MODPHP_VERSION, disable on sparc64.
-.if (${MODPHP_VERSION} == 8.1 || ${MODPHP_VERSION} == 8.2)
+.if (${MODPHP_VERSION} != 7.4 && ${MODPHP_VERSION} != 8.0)
 NOT_FOR_ARCHS+=		sparc64
 .endif
 
