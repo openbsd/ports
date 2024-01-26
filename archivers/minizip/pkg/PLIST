@@ -1,6 +1,7 @@
 @bin bin/minigzip
 @bin bin/minizip
 include/minizip/
+include/minizip/ioapi.h
 include/minizip/mz.h
 include/minizip/mz_compat.h
 include/minizip/mz_crypt.h
