@@ -1,35 +1,30 @@
-revert some of the changes in 0.3.8 to unbreak runtime
-
-mupdf library linking is Very Annoying; mupdf upstream refuse to support
-building as a shared library ("We do not intend to support building
-MuPDF as a shared library. Shared libraries are a lot more trouble than
-they are worth"), and don't provide la/pc files with information about
-required dependencies, so software depending on the static lib needs to
-provide that itself.
+cope with mupdf's newer upstream support for building a shared lib
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -19,7 +19,7 @@ zathura = dependency('zathura', version: '>=0.5.2')
+@@ -19,8 +19,7 @@ zathura = dependency('zathura', version: '>=0.5.2')
  girara = dependency('girara-gtk3')
  glib = dependency('glib-2.0')
  cairo = dependency('cairo')
 -mupdf = dependency('mupdf', required: false)
+-mupdfthird = cc.find_library('mupdf-third')
 +mupdf = cc.find_library('mupdf')
- mupdfthird = cc.find_library('mupdf-third')
  
  build_dependencies = [
-@@ -29,32 +29,19 @@ build_dependencies = [
+   zathura,
+@@ -29,32 +28,19 @@ build_dependencies = [
    cairo,
  ]
  
 -if not mupdf.found()
 -  # normal build of mupdf
 -  mupdf = cc.find_library('mupdf')
-   build_dependencies += [mupdf, mupdfthird]
+-  build_dependencies += [mupdf, mupdfthird]
 -else
 -  # build from Debian's libmupdf-dev
 -  build_dependencies += [mupdf, mupdfthird]
++  build_dependencies += [mupdf]
  
    libjpeg = dependency('libjpeg')
    libjbig2dec = cc.find_library('jbig2dec')
