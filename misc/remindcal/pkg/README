@@ -1,0 +1,9 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuration Notes
+===================
+
+${PKGSTEM} looks for vim by default. Set EDITOR environment variable to
+use a different editor.
