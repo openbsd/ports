@@ -7,6 +7,8 @@ daemon_user="_trac"
 . /etc/rc.d/rc.subr
 
 pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+# --auth/-A can take '*' as part of the parameter; escape it for regex matching
+pexp=$(echo "$pexp" | sed 's,\*,\\*,g')
 rc_reload=NO
 
 rc_cmd $1
