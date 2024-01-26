@@ -64,8 +64,11 @@ lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}json_he
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}json_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}recordings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/picard/acoustid/${MODPY_PYCACHE}recordings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/json_helpers.py
 lib/python${MODPY_VERSION}/site-packages/picard/acoustid/manager.py
+lib/python${MODPY_VERSION}/site-packages/picard/acoustid/recordings.py
 lib/python${MODPY_VERSION}/site-packages/picard/album.py
 lib/python${MODPY_VERSION}/site-packages/picard/audit.py
 lib/python${MODPY_VERSION}/site-packages/picard/browser/
