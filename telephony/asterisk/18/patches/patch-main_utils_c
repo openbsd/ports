@@ -9,4 +9,4 @@ Index: main/utils.c
 +	ret = getthrid();
  #elif defined(__NetBSD__)
  	ret = _lwp_self();
- #endif
+ #elif defined(__OpenBSD__)

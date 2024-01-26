@@ -9,4 +9,4 @@ Index: build_tools/cflags.xml
 +			<defaultenabled>no</defaultenabled>
  			<depend>native_arch</depend>
  		</member>
- 	</category>
+ 		<member name="ADD_CFLAGS_TO_BUILDOPTS_H" displayname="Add ALL of the flags on this page to buildopts.h. Useful for IDEs but may cause slightly longer compile times after flags are changed.">
