@@ -1,7 +1,7 @@
 Index: src/libstat/backends/redis_backend.cxx
 --- src/libstat/backends/redis_backend.cxx.orig
 +++ src/libstat/backends/redis_backend.cxx
-@@ -26,6 +26,8 @@
+@@ -28,6 +28,8 @@
  #include <vector>
  #include <optional>
  
