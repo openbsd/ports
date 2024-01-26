@@ -1,10 +1,11 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
+SHARED_LIBS +=  mupdf                 9.0
+
 # bump and test textproc/zathura/plugins/mupdf if updating
-V =		1.23.7
+V =		1.23.9
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -55,9 +56,13 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		USE_SYSTEM_LIBS=yes \
 		SYS_FREETYPE_LIBS=-lfreetype \
 		HAVE_TESSERACT=no HAVE_LEPTONICA=no \
-		build=release verbose=yes
+		SO_VERSION=.${LIBmupdf_VERSION:R}.${LIBmupdf_VERSION:E} \
+		build=release shared=yes verbose=yes
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
+
+# build=release shared=yes verbose=yes
+
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 pre-configure:

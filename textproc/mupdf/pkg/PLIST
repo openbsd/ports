@@ -77,8 +77,7 @@ include/mupdf/pdf/parse.h
 include/mupdf/pdf/resource.h
 include/mupdf/pdf/xref.h
 include/mupdf/ucdn.h
-@static-lib lib/libmupdf-third.a
-@static-lib lib/libmupdf.a
+@lib lib/libmupdf.so.${LIBmupdf_VERSION}
 @man man/man1/mupdf.1
 @man man/man1/mutool.1
 share/applications/mupdf.desktop

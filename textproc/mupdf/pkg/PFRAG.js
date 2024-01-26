@@ -12,4 +12,5 @@ share/examples/mupdf/pdf-extract-rich-media.js
 share/examples/mupdf/pdf-merge.js
 share/examples/mupdf/pdf-portfolio.js
 share/examples/mupdf/pdf-trace.js
+share/examples/mupdf/storytest.js
 share/examples/mupdf/trace-device.js
