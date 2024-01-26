@@ -210,6 +210,7 @@
      SUBDIR += mvdsv
      SUBDIR += mysticmine
      SUBDIR += naev
+     SUBDIR += nanosaur2
      SUBDIR += nblood
      SUBDIR += nethack
      SUBDIR += netris
