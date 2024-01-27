@@ -1,6 +1,6 @@
 COMMENT =	socket splicing network benchmarking tool
 
-VERSION =	1.02
+VERSION =	1.03
 DISTNAME =	splicebench-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
 
