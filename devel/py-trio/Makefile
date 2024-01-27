@@ -1,6 +1,7 @@
 COMMENT=	library for async concurrency and I/O
 
 MODPY_EGG_VERSION=	0.24.0
+REVISION=	0
 DISTNAME=	trio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -10,6 +11,8 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+
+HOMEPAGE=	https://github.com/python-trio/trio
 
 FLAVORS=	python3
 FLAVOR=		python3
