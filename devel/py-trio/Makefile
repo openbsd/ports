@@ -1,7 +1,6 @@
 COMMENT=	library for async concurrency and I/O
 
-MODPY_EGG_VERSION=	0.23.1
-REVISION=	0
+MODPY_EGG_VERSION=	0.24.0
 DISTNAME=	trio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	devel/py-attrs${MODPY_FLAVOR}>=20.1.0 \
 		devel/py-sniffio${MODPY_FLAVOR}>=1.3.0 \
 		net/py-idna${MODPY_FLAVOR}
 
-# XXX: needs ruff, pyright
+# XXX lots fail: needs ruff, pyright, maybe py-test-trio
 TEST_DEPENDS=	devel/py-astor${MODPY_FLAVOR} \
 		devel/py-isort${MODPY_FLAVOR} \
 		devel/py-jedi${MODPY_FLAVOR} \
