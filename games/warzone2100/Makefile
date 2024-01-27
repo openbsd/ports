@@ -45,7 +45,8 @@ BUILD_DEPENDS=	archivers/libzip \
 		devel/gettext,-tools \
 		devel/sdl2 \
 		textproc/asciidoc \
-		textproc/asciidoctor
+		textproc/asciidoctor \
+		textproc/nlohmann-json
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
