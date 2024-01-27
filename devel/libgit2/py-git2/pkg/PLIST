@@ -1,7 +1,7 @@
 @pkgpath devel/libgit2/py-git2,python3
 lib/python${MODPY_VERSION}/site-packages/pygit2/
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/AUTHORS.md
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pygit2-${MODPY_EGG_VERSION}.dist-info/RECORD
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}blame.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}blame.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}blob.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}blob.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}branches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}branches.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}callbacks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}callbacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,18 +37,22 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}filter.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}index.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}legacyenums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}legacyenums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}packbuilder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}packbuilder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}references.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}references.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}refspec.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}refspec.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}remotes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}remotes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}repository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}repository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}submodules.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/_build.py
@@ -56,6 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/_pygit2.pyi
 lib/python${MODPY_VERSION}/site-packages/pygit2/_run.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/blame.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/blob.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/branches.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/callbacks.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/config.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.py
@@ -94,10 +101,12 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/errors.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/ffi.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/filter.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/index.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/legacyenums.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/packbuilder.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/references.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.py
-lib/python${MODPY_VERSION}/site-packages/pygit2/remote.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/remotes.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
-lib/python${MODPY_VERSION}/site-packages/pygit2/submodule.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/submodules.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/utils.py
