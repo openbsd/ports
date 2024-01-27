@@ -53,7 +53,7 @@ davical/dba/patches/1.3.2.sql
 davical/dba/patches/1.3.3.sql
 davical/dba/patches/1.3.4.sql
 davical/dba/patches/1.3.5.sql
-davical/dba/rrule_functions-${MODPHP_VERSION}.sql
+davical/dba/rrule_functions-8.1.sql
 davical/dba/rrule_functions.sql
 davical/dba/rrule_tests.sql
 davical/dba/supported_locales.sql
