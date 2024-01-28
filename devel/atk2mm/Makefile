@@ -3,9 +3,8 @@ PORTROACH=		limit:^2\.28
 COMMENT=		C++ binding for the ATK library
 
 GNOME_PROJECT=		atkmm
-GNOME_VERSION=		2.28.3
+GNOME_VERSION=		2.28.4
 PKGNAME=		atk2mm-${GNOME_VERSION}
-REVISION=		0
 
 CATEGORIES=		devel
 
