@@ -1,8 +1,7 @@
-BROKEN =	base clang/libcstd++ too old, uses too new C++20 code
-
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
+REVISION =	0
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -18,7 +17,7 @@ WANTLIB += KF5KIOGui KF5KIOWidgets KF5Kirigami2 KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5QuickControls2 Qt5Widgets Qt5Xml QtOlm Quotient
+WANTLIB += Qt5QuickControls2 Qt5Sql Qt5Widgets Qt5Xml Quotient
 WANTLIB += X11 c cmark m olm qt5keychain
 
 MODULES =	x11/kde-applications \

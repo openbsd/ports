@@ -51,3 +51,4 @@ share/metainfo/
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 share/metainfo/org.kde.neochat.appdata.xml
+share/qlogging-categories5/neochat.categories
