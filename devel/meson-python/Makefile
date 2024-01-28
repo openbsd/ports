@@ -1,0 +1,29 @@
+COMMENT=		meson PEP 517 Python build backend
+
+MODPY_EGG_VERSION=	0.15.0
+DIST_TUPLE=		github mesonbuild meson-python ${MODPY_EGG_VERSION} .
+
+CATEGORIES=		devel
+
+HOMEPAGE=		https://meson-python.readthedocs.io/en/latest/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE=		Yes
+
+MODULES=		lang/python
+
+MODPY_PYBUILD=		setuptools
+
+BUILD_DEPENDS=		devel/meson \
+			devel/py-pyproject-metadata${MODPY_FLAVOR}
+
+RUN_DEPENDS=		devel/meson \
+			devel/py-pyproject-metadata${MODPY_FLAVOR}
+
+# XXX drop once default python3 version is bumped to >=3.11
+BUILD_DEPENDS +=	textproc/py-tomli${MODPY_FLAVOR}
+RUN_DEPENDS +=		textproc/py-tomli${MODPY_FLAVOR}
+
+.include <bsd.port.mk>
