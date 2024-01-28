@@ -428,6 +428,7 @@
      SUBDIR += mcs
      SUBDIR += mercurial
      SUBDIR += meson
+     SUBDIR += meson-python
      SUBDIR += metaauto
      SUBDIR += microsoft-gsl
      SUBDIR += mklittlefs
@@ -1565,6 +1566,7 @@
      SUBDIR += py-pyls-spyder,python3
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyproject-api,python3
+     SUBDIR += py-pyproject-metadata,python3
      SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
