@@ -14,6 +14,7 @@ FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 REVISION-proxy =	0
 REVISION-server =	0
+REVISION-web =		0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
