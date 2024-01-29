@@ -14,13 +14,15 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		bootstrap
 
 BUILD_DEPENDS=		devel/meson \
 			devel/py-pyproject-metadata${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/meson \
 			devel/py-pyproject-metadata${MODPY_FLAVOR}
+
+TEST_DEPENDS=		lang/cython${MODPY_FLAVOR}
 
 # XXX drop once default python3 version is bumped to >=3.11
 BUILD_DEPENDS +=	textproc/py-tomli${MODPY_FLAVOR}
