@@ -1,6 +1,5 @@
 - avoid using glib (only useful for spotlight?)
 - use more generic check for OpenBSD.
-- avoid nested function error with clang
 
 Index: source3/wscript
 --- source3/wscript.orig
