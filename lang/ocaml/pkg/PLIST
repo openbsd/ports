@@ -115,6 +115,7 @@ lib/ocaml/caml/ui.h
 lib/ocaml/caml/unixsupport.h
 lib/ocaml/caml/version.h
 lib/ocaml/caml/weak.h
+lib/ocaml/caml/winsupport.h
 lib/ocaml/camlheader
 lib/ocaml/camlheader_ur
 lib/ocaml/camlheaderd
@@ -293,6 +294,10 @@ lib/ocaml/compiler-libs/diffing.cmi
 lib/ocaml/compiler-libs/diffing.cmt
 lib/ocaml/compiler-libs/diffing.cmti
 lib/ocaml/compiler-libs/diffing.mli
+lib/ocaml/compiler-libs/diffing_with_keys.cmi
+lib/ocaml/compiler-libs/diffing_with_keys.cmt
+lib/ocaml/compiler-libs/diffing_with_keys.cmti
+lib/ocaml/compiler-libs/diffing_with_keys.mli
 lib/ocaml/compiler-libs/dll.cmi
 lib/ocaml/compiler-libs/dll.cmt
 lib/ocaml/compiler-libs/dll.cmti
@@ -524,6 +529,10 @@ lib/ocaml/compiler-libs/runtimedef.cmi
 lib/ocaml/compiler-libs/runtimedef.cmt
 lib/ocaml/compiler-libs/runtimedef.cmti
 lib/ocaml/compiler-libs/runtimedef.mli
+lib/ocaml/compiler-libs/shape.cmi
+lib/ocaml/compiler-libs/shape.cmt
+lib/ocaml/compiler-libs/shape.cmti
+lib/ocaml/compiler-libs/shape.mli
 lib/ocaml/compiler-libs/signature_group.cmi
 lib/ocaml/compiler-libs/signature_group.cmt
 lib/ocaml/compiler-libs/signature_group.cmti
@@ -572,6 +581,10 @@ lib/ocaml/compiler-libs/terminfo.cmi
 lib/ocaml/compiler-libs/terminfo.cmt
 lib/ocaml/compiler-libs/terminfo.cmti
 lib/ocaml/compiler-libs/terminfo.mli
+lib/ocaml/compiler-libs/tmc.cmi
+lib/ocaml/compiler-libs/tmc.cmt
+lib/ocaml/compiler-libs/tmc.cmti
+lib/ocaml/compiler-libs/tmc.mli
 lib/ocaml/compiler-libs/topcommon.cmi
 lib/ocaml/compiler-libs/topcommon.cmt
 lib/ocaml/compiler-libs/topcommon.cmti
@@ -701,7 +714,6 @@ lib/ocaml/ephemeron.ml
 lib/ocaml/ephemeron.mli
 lib/ocaml/eventlog_metadata
 lib/ocaml/expunge
-lib/ocaml/extract_crc
 lib/ocaml/filename.ml
 lib/ocaml/filename.mli
 lib/ocaml/float.ml
@@ -716,6 +728,8 @@ lib/ocaml/genlex.ml
 lib/ocaml/genlex.mli
 lib/ocaml/hashtbl.ml
 lib/ocaml/hashtbl.mli
+lib/ocaml/in_channel.ml
+lib/ocaml/in_channel.mli
 lib/ocaml/int.ml
 lib/ocaml/int.mli
 lib/ocaml/int32.ml
@@ -807,6 +821,8 @@ lib/ocaml/oo.ml
 lib/ocaml/oo.mli
 lib/ocaml/option.ml
 lib/ocaml/option.mli
+lib/ocaml/out_channel.ml
+lib/ocaml/out_channel.mli
 lib/ocaml/parsing.ml
 lib/ocaml/parsing.mli
 lib/ocaml/pervasives.ml
@@ -910,6 +926,9 @@ lib/ocaml/stdlib__Genlex.cmti
 lib/ocaml/stdlib__Hashtbl.cmi
 lib/ocaml/stdlib__Hashtbl.cmt
 lib/ocaml/stdlib__Hashtbl.cmti
+lib/ocaml/stdlib__In_channel.cmi
+lib/ocaml/stdlib__In_channel.cmt
+lib/ocaml/stdlib__In_channel.cmti
 lib/ocaml/stdlib__Int.cmi
 lib/ocaml/stdlib__Int.cmt
 lib/ocaml/stdlib__Int.cmti
@@ -952,6 +971,9 @@ lib/ocaml/stdlib__Oo.cmti
 lib/ocaml/stdlib__Option.cmi
 lib/ocaml/stdlib__Option.cmt
 lib/ocaml/stdlib__Option.cmti
+lib/ocaml/stdlib__Out_channel.cmi
+lib/ocaml/stdlib__Out_channel.cmt
+lib/ocaml/stdlib__Out_channel.cmti
 lib/ocaml/stdlib__Parsing.cmi
 lib/ocaml/stdlib__Parsing.cmt
 lib/ocaml/stdlib__Parsing.cmti
@@ -1186,6 +1208,17 @@ lib/ocaml/weak.mli
 @man man/man3/Depend.3o
 @man man/man3/Depend.String.3o
 @man man/man3/Diffing.3o
+@man man/man3/Diffing.Define.3o
+@man man/man3/Diffing.Define.Left_variadic.3o
+@man man/man3/Diffing.Define.Parameters.3o
+@man man/man3/Diffing.Define.Right_variadic.3o
+@man man/man3/Diffing.Define.S.3o
+@man man/man3/Diffing.Define.Simple.3o
+@man man/man3/Diffing.Defs.3o
+@man man/man3/Diffing_with_keys.3o
+@man man/man3/Diffing_with_keys.Define.3o
+@man man/man3/Diffing_with_keys.Define.Parameters.3o
+@man man/man3/Diffing_with_keys.Define.Simple.3o
 @man man/man3/Digest.3o
 @man man/man3/Docstrings.3o
 @man man/man3/Docstrings.WithMenhir.3o
@@ -1196,12 +1229,15 @@ lib/ocaml/weak.mli
 @man man/man3/Ephemeron.GenHashTable.3o
 @man man/man3/Ephemeron.GenHashTable.MakeSeeded.3o
 @man man/man3/Ephemeron.K1.3o
+@man man/man3/Ephemeron.K1.Bucket.3o
 @man man/man3/Ephemeron.K1.Make.3o
 @man man/man3/Ephemeron.K1.MakeSeeded.3o
 @man man/man3/Ephemeron.K2.3o
+@man man/man3/Ephemeron.K2.Bucket.3o
 @man man/man3/Ephemeron.K2.Make.3o
 @man man/man3/Ephemeron.K2.MakeSeeded.3o
 @man man/man3/Ephemeron.Kn.3o
+@man man/man3/Ephemeron.Kn.Bucket.3o
 @man man/man3/Ephemeron.Kn.Make.3o
 @man man/man3/Ephemeron.Kn.MakeSeeded.3o
 @man man/man3/Ephemeron.S.3o
@@ -1239,6 +1275,7 @@ lib/ocaml/weak.mli
 @man man/man3/Identifiable.Tbl.3o
 @man man/man3/Identifiable.Tbl.T.3o
 @man man/man3/Identifiable.Thing.3o
+@man man/man3/In_channel.3o
 @man man/man3/Int.3o
 @man man/man3/Int32.3o
 @man man/man3/Int64.3o
@@ -1303,6 +1340,7 @@ lib/ocaml/weak.mli
 @man man/man3/Ocaml_operators.3o
 @man man/man3/Oo.3o
 @man man/man3/Option.3o
+@man man/man3/Out_channel.3o
 @man man/man3/Parse.3o
 @man man/man3/Parser.3o
 @man man/man3/Parser.Incremental.3o
@@ -1359,6 +1397,7 @@ lib/ocaml/weak.mli
 @man man/man3/Stdlib.Gc.3o
 @man man/man3/Stdlib.Genlex.3o
 @man man/man3/Stdlib.Hashtbl.3o
+@man man/man3/Stdlib.In_channel.3o
 @man man/man3/Stdlib.Int.3o
 @man man/man3/Stdlib.Int32.3o
 @man man/man3/Stdlib.Int64.3o
@@ -1374,6 +1413,7 @@ lib/ocaml/weak.mli
 @man man/man3/Stdlib.Obj.3o
 @man man/man3/Stdlib.Oo.3o
 @man man/man3/Stdlib.Option.3o
+@man man/man3/Stdlib.Out_channel.3o
 @man man/man3/Stdlib.Parsing.3o
 @man man/man3/Stdlib.Pervasives.3o
 @man man/man3/Stdlib.Printexc.3o
@@ -1424,6 +1464,8 @@ lib/ocaml/weak.mli
 share/doc/ocaml/
 share/doc/ocaml/Changes
 share/doc/ocaml/LICENSE
+share/doc/ocaml/README.adoc
+share/doc/ocaml/README.win32.adoc
 share/doc/ocaml/html/
 share/doc/ocaml/html/advexamples.html
 share/doc/ocaml/html/afl-fuzz.html
@@ -1496,12 +1538,15 @@ share/doc/ocaml/html/libref/Dynlink.html
 share/doc/ocaml/html/libref/Either.html
 share/doc/ocaml/html/libref/Ephemeron.GenHashTable.MakeSeeded.html
 share/doc/ocaml/html/libref/Ephemeron.GenHashTable.html
+share/doc/ocaml/html/libref/Ephemeron.K1.Bucket.html
 share/doc/ocaml/html/libref/Ephemeron.K1.Make.html
 share/doc/ocaml/html/libref/Ephemeron.K1.MakeSeeded.html
 share/doc/ocaml/html/libref/Ephemeron.K1.html
+share/doc/ocaml/html/libref/Ephemeron.K2.Bucket.html
 share/doc/ocaml/html/libref/Ephemeron.K2.Make.html
 share/doc/ocaml/html/libref/Ephemeron.K2.MakeSeeded.html
 share/doc/ocaml/html/libref/Ephemeron.K2.html
+share/doc/ocaml/html/libref/Ephemeron.Kn.Bucket.html
 share/doc/ocaml/html/libref/Ephemeron.Kn.Make.html
 share/doc/ocaml/html/libref/Ephemeron.Kn.MakeSeeded.html
 share/doc/ocaml/html/libref/Ephemeron.Kn.html
@@ -1526,6 +1571,7 @@ share/doc/ocaml/html/libref/Hashtbl.S.html
 share/doc/ocaml/html/libref/Hashtbl.SeededHashedType.html
 share/doc/ocaml/html/libref/Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/Hashtbl.html
+share/doc/ocaml/html/libref/In_channel.html
 share/doc/ocaml/html/libref/Int.html
 share/doc/ocaml/html/libref/Int32.html
 share/doc/ocaml/html/libref/Int64.html
@@ -1563,6 +1609,7 @@ share/doc/ocaml/html/libref/Obj.html
 share/doc/ocaml/html/libref/Ocaml_operators.html
 share/doc/ocaml/html/libref/Oo.html
 share/doc/ocaml/html/libref/Option.html
+share/doc/ocaml/html/libref/Out_channel.html
 share/doc/ocaml/html/libref/Parsing.html
 share/doc/ocaml/html/libref/Printexc.Slot.html
 share/doc/ocaml/html/libref/Printexc.html
@@ -1609,6 +1656,7 @@ share/doc/ocaml/html/libref/Stdlib.Fun.html
 share/doc/ocaml/html/libref/Stdlib.Gc.html
 share/doc/ocaml/html/libref/Stdlib.Genlex.html
 share/doc/ocaml/html/libref/Stdlib.Hashtbl.html
+share/doc/ocaml/html/libref/Stdlib.In_channel.html
 share/doc/ocaml/html/libref/Stdlib.Int.html
 share/doc/ocaml/html/libref/Stdlib.Int32.html
 share/doc/ocaml/html/libref/Stdlib.Int64.html
@@ -1624,6 +1672,7 @@ share/doc/ocaml/html/libref/Stdlib.Nativeint.html
 share/doc/ocaml/html/libref/Stdlib.Obj.html
 share/doc/ocaml/html/libref/Stdlib.Oo.html
 share/doc/ocaml/html/libref/Stdlib.Option.html
+share/doc/ocaml/html/libref/Stdlib.Out_channel.html
 share/doc/ocaml/html/libref/Stdlib.Parsing.html
 share/doc/ocaml/html/libref/Stdlib.Pervasives.html
 share/doc/ocaml/html/libref/Stdlib.Printexc.html
@@ -1705,12 +1754,15 @@ share/doc/ocaml/html/libref/type_Dynlink.html
 share/doc/ocaml/html/libref/type_Either.html
 share/doc/ocaml/html/libref/type_Ephemeron.GenHashTable.MakeSeeded.html
 share/doc/ocaml/html/libref/type_Ephemeron.GenHashTable.html
+share/doc/ocaml/html/libref/type_Ephemeron.K1.Bucket.html
 share/doc/ocaml/html/libref/type_Ephemeron.K1.Make.html
 share/doc/ocaml/html/libref/type_Ephemeron.K1.MakeSeeded.html
 share/doc/ocaml/html/libref/type_Ephemeron.K1.html
+share/doc/ocaml/html/libref/type_Ephemeron.K2.Bucket.html
 share/doc/ocaml/html/libref/type_Ephemeron.K2.Make.html
 share/doc/ocaml/html/libref/type_Ephemeron.K2.MakeSeeded.html
 share/doc/ocaml/html/libref/type_Ephemeron.K2.html
+share/doc/ocaml/html/libref/type_Ephemeron.Kn.Bucket.html
 share/doc/ocaml/html/libref/type_Ephemeron.Kn.Make.html
 share/doc/ocaml/html/libref/type_Ephemeron.Kn.MakeSeeded.html
 share/doc/ocaml/html/libref/type_Ephemeron.Kn.html
@@ -1735,6 +1787,7 @@ share/doc/ocaml/html/libref/type_Hashtbl.S.html
 share/doc/ocaml/html/libref/type_Hashtbl.SeededHashedType.html
 share/doc/ocaml/html/libref/type_Hashtbl.SeededS.html
 share/doc/ocaml/html/libref/type_Hashtbl.html
+share/doc/ocaml/html/libref/type_In_channel.html
 share/doc/ocaml/html/libref/type_Int.html
 share/doc/ocaml/html/libref/type_Int32.html
 share/doc/ocaml/html/libref/type_Int64.html
@@ -1772,6 +1825,7 @@ share/doc/ocaml/html/libref/type_Obj.html
 share/doc/ocaml/html/libref/type_Ocaml_operators.html
 share/doc/ocaml/html/libref/type_Oo.html
 share/doc/ocaml/html/libref/type_Option.html
+share/doc/ocaml/html/libref/type_Out_channel.html
 share/doc/ocaml/html/libref/type_Parsing.html
 share/doc/ocaml/html/libref/type_Printexc.Slot.html
 share/doc/ocaml/html/libref/type_Printexc.html
@@ -1818,6 +1872,7 @@ share/doc/ocaml/html/libref/type_Stdlib.Fun.html
 share/doc/ocaml/html/libref/type_Stdlib.Gc.html
 share/doc/ocaml/html/libref/type_Stdlib.Genlex.html
 share/doc/ocaml/html/libref/type_Stdlib.Hashtbl.html
+share/doc/ocaml/html/libref/type_Stdlib.In_channel.html
 share/doc/ocaml/html/libref/type_Stdlib.Int.html
 share/doc/ocaml/html/libref/type_Stdlib.Int32.html
 share/doc/ocaml/html/libref/type_Stdlib.Int64.html
@@ -1833,6 +1888,7 @@ share/doc/ocaml/html/libref/type_Stdlib.Nativeint.html
 share/doc/ocaml/html/libref/type_Stdlib.Obj.html
 share/doc/ocaml/html/libref/type_Stdlib.Oo.html
 share/doc/ocaml/html/libref/type_Stdlib.Option.html
+share/doc/ocaml/html/libref/type_Stdlib.Out_channel.html
 share/doc/ocaml/html/libref/type_Stdlib.Parsing.html
 share/doc/ocaml/html/libref/type_Stdlib.Pervasives.html
 share/doc/ocaml/html/libref/type_Stdlib.Printexc.html
@@ -1880,7 +1936,7 @@ share/doc/ocaml/html/locallyabstract.html
 share/doc/ocaml/html/manual.css
 share/doc/ocaml/html/manual.html
 share/doc/ocaml/html/manual001.html
-share/doc/ocaml/html/manual069.html
+share/doc/ocaml/html/manual070.html
 share/doc/ocaml/html/modtypes.html
 share/doc/ocaml/html/modulealias.html
 share/doc/ocaml/html/moduleexamples.html
@@ -1904,6 +1960,7 @@ share/doc/ocaml/html/recursivemodules.html
 share/doc/ocaml/html/runtime.html
 share/doc/ocaml/html/signaturesubstitution.html
 share/doc/ocaml/html/stdlib.html
+share/doc/ocaml/html/tail_mod_cons.html
 share/doc/ocaml/html/toplevel.html
 share/doc/ocaml/html/typedecl.html
 share/doc/ocaml/html/types.html

@@ -2,14 +2,25 @@ COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=	4.13.1
-REVISION=	1
+VERSION=	4.14.1
 
 # if the ocaml compiler gains support for BTI, as well as
 # removing USE_NOBTCFI here (or changing to an arch-dependent
 # USE_NOBTCFI-xxx), sync in ocaml.port.mk and bump REVISION
 # for ports using MODULES=lang/ocaml
 USE_NOBTCFI =	Yes
+
+# It's possible to check PLISTs for non-native archs from a
+# native arch. To do so on amd64, edit:
+#
+#      /usr/ports/infrastructure/mk/arch-defines.mk
+#
+# and remove "amd64" from OCAML_NATIVE_ARCHS. Then:
+#
+# $ make clean=all
+# $ make package
+#
+# and check if packaging worked.
 
 PKGNAME =	ocaml-${VERSION:C/\+//}
 
@@ -31,8 +42,9 @@ PERMIT_PACKAGE=	Yes
 
 .include <bsd.port.arch.mk>
 
-AUTOCONF_VERSION =	2.69
-CONFIGURE_STYLE =	gnu autoconf no-autoheader
+# XXX: cannot run autoconf due to use of gnu m4 feature
+# that isn't in base m4
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
 			CPPFLAGS="${CFLAGS} ${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
@@ -91,9 +103,6 @@ post-install:
 	@${INSTALL_DATA} \
 		${WRKSRC}/{LICENSE,Changes} \
 		${PREFIX}/share/doc/ocaml
-
-# PFRAG.native was generated from PLIST with:
-# egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'
 
 # One test in the suite (testsocket.ml) requires an active
 # connection to internet

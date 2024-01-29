@@ -235,6 +235,7 @@ lib/ocaml/compiler-libs/deadcode.mli
 lib/ocaml/compiler-libs/debuginfo.cmx
 lib/ocaml/compiler-libs/depend.cmx
 lib/ocaml/compiler-libs/diffing.cmx
+lib/ocaml/compiler-libs/diffing_with_keys.cmx
 lib/ocaml/compiler-libs/dll.cmx
 lib/ocaml/compiler-libs/docstrings.cmx
 lib/ocaml/compiler-libs/domainstate.cmx
@@ -254,10 +255,10 @@ lib/ocaml/compiler-libs/emitaux.cmti
 lib/ocaml/compiler-libs/emitaux.cmx
 lib/ocaml/compiler-libs/emitaux.mli
 lib/ocaml/compiler-libs/emitcode.cmx
-lib/ocaml/compiler-libs/env.cmx
 lib/ocaml/compiler-libs/emitenv.cmi
 lib/ocaml/compiler-libs/emitenv.cmti
 lib/ocaml/compiler-libs/emitenv.mli
+lib/ocaml/compiler-libs/env.cmx
 lib/ocaml/compiler-libs/envaux.cmx
 lib/ocaml/compiler-libs/errors.cmx
 lib/ocaml/compiler-libs/errortrace.cmx
@@ -321,6 +322,7 @@ lib/ocaml/compiler-libs/freshening.cmt
 lib/ocaml/compiler-libs/freshening.cmti
 lib/ocaml/compiler-libs/freshening.cmx
 lib/ocaml/compiler-libs/freshening.mli
+lib/ocaml/compiler-libs/genprintval.cmx
 lib/ocaml/compiler-libs/id_types.cmi
 lib/ocaml/compiler-libs/id_types.cmt
 lib/ocaml/compiler-libs/id_types.cmti
@@ -487,6 +489,8 @@ lib/ocaml/compiler-libs/ocamlmiddleend.cmxa
 lib/ocaml/compiler-libs/ocamloptcomp.a
 lib/ocaml/compiler-libs/ocamloptcomp.cma
 lib/ocaml/compiler-libs/ocamloptcomp.cmxa
+lib/ocaml/compiler-libs/ocamltoplevel.a
+lib/ocaml/compiler-libs/ocamltoplevel.cmxa
 lib/ocaml/compiler-libs/opcodes.cmx
 lib/ocaml/compiler-libs/oprint.cmx
 lib/ocaml/compiler-libs/optcompile.cmi
@@ -650,6 +654,7 @@ lib/ocaml/compiler-libs/set_of_closures_origin.cmt
 lib/ocaml/compiler-libs/set_of_closures_origin.cmti
 lib/ocaml/compiler-libs/set_of_closures_origin.cmx
 lib/ocaml/compiler-libs/set_of_closures_origin.mli
+lib/ocaml/compiler-libs/shape.cmx
 lib/ocaml/compiler-libs/share_constants.cmi
 lib/ocaml/compiler-libs/share_constants.cmt
 lib/ocaml/compiler-libs/share_constants.cmti
@@ -720,6 +725,17 @@ lib/ocaml/compiler-libs/targetint.cmx
 lib/ocaml/compiler-libs/tast_iterator.cmx
 lib/ocaml/compiler-libs/tast_mapper.cmx
 lib/ocaml/compiler-libs/terminfo.cmx
+lib/ocaml/compiler-libs/tmc.cmx
+lib/ocaml/compiler-libs/topcommon.cmx
+lib/ocaml/compiler-libs/topdirs.cmx
+lib/ocaml/compiler-libs/topeval.cmx
+lib/ocaml/compiler-libs/tophooks.cmi
+lib/ocaml/compiler-libs/tophooks.cmx
+lib/ocaml/compiler-libs/toploop.cmx
+lib/ocaml/compiler-libs/topmain.cmx
+lib/ocaml/compiler-libs/topstart.cmx
+lib/ocaml/compiler-libs/topstart.o
+lib/ocaml/compiler-libs/trace.cmx
 lib/ocaml/compiler-libs/translattribute.cmx
 lib/ocaml/compiler-libs/translclass.cmx
 lib/ocaml/compiler-libs/translcore.cmx
@@ -888,6 +904,7 @@ lib/ocaml/stdlib__Fun.cmx
 lib/ocaml/stdlib__Gc.cmx
 lib/ocaml/stdlib__Genlex.cmx
 lib/ocaml/stdlib__Hashtbl.cmx
+lib/ocaml/stdlib__In_channel.cmx
 lib/ocaml/stdlib__Int.cmx
 lib/ocaml/stdlib__Int32.cmx
 lib/ocaml/stdlib__Int64.cmx
@@ -902,6 +919,7 @@ lib/ocaml/stdlib__Nativeint.cmx
 lib/ocaml/stdlib__Obj.cmx
 lib/ocaml/stdlib__Oo.cmx
 lib/ocaml/stdlib__Option.cmx
+lib/ocaml/stdlib__Out_channel.cmx
 lib/ocaml/stdlib__Parsing.cmx
 lib/ocaml/stdlib__Pervasives.cmx
 lib/ocaml/stdlib__Printexc.cmx
