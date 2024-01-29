@@ -11,7 +11,7 @@ CATEGORIES+=		lang/php
 .if ${MACHINE_ARCH} == sparc64
 MODPHP_VERSION?=	8.0
 .else
-MODPHP_VERSION?=	8.1
+MODPHP_VERSION?=	8.2
 .endif
 
 # for ports which force a newer MODPHP_VERSION, disable on sparc64.
