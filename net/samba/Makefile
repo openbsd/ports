@@ -1,4 +1,5 @@
 VERSION =		4.19.4
+REVISION =		0
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -42,7 +43,7 @@ CATEGORIES =		net sysutils security
 HOMEPAGE =		https://www.samba.org/
 
 MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
-			Jeremie Courreges-Anglas <jca@wxcvbn.org>
+			Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv3, LGPLv3
 PERMIT_PACKAGE =	Yes
