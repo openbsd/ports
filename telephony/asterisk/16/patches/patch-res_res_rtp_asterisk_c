@@ -1,4 +1,5 @@
-libressl *does* have this now
+#1 libressl *does* have this now
+#2 cope with openbsd ancient nameser.h
 
 Index: res/res_rtp_asterisk.c
 --- res/res_rtp_asterisk.c.orig
