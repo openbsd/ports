@@ -649,3 +649,4 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/leapseconds
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/tzdata.zi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone.tab
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zone1970.tab
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/zonenow.tab
