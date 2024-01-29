@@ -1,7 +1,7 @@
 Index: libfreeipmi/Makefile.in
 --- libfreeipmi/Makefile.in.orig
 +++ libfreeipmi/Makefile.in
-@@ -498,7 +498,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
+@@ -675,7 +675,7 @@ LIBIPMIMONITORING_VERSION_MAJOR = @LIBIPMIMONITORING_V
  LIBIPMIMONITORING_VERSION_MINOR = @LIBIPMIMONITORING_VERSION_MINOR@
  LIBIPMIMONITORING_VERSION_PATCH = @LIBIPMIMONITORING_VERSION_PATCH@
  LIBOBJS = @LIBOBJS@
@@ -10,7 +10,7 @@ Index: libfreeipmi/Makefile.in
  LIBTOOL = @LIBTOOL@
  LIPO = @LIPO@
  LN_S = @LN_S@
-@@ -620,7 +620,7 @@ libfreeipmi_la_CPPFLAGS = \
+@@ -798,7 +798,7 @@ libfreeipmi_la_CPPFLAGS = \
  	-I$(top_builddir)/libfreeipmi/include \
  	-I$(top_srcdir)/libfreeipmi/include \
  	-I$(top_srcdir)/libfreeipmi \
