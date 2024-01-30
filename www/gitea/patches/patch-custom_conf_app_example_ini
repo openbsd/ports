@@ -225,7 +225,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Comma-separated list of allowed file extensions (`.zip`), mime types (`text/plain`) or wildcard type (`image/*`, `audio/*`, `video/*`). Empty value or `*/*` allows all types.
  ;ALLOWED_TYPES =
-@@ -1182,7 +1182,7 @@ LEVEL = Info
+@@ -1176,7 +1176,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -234,7 +234,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1214,7 +1214,7 @@ LEVEL = Info
+@@ -1208,7 +1208,7 @@ LEVEL = Info
  ;AMBIGUOUS_UNICODE_DETECTION = true
  ;;
  ;; Whether the email of the user should be shown in the Explore Users page
@@ -243,7 +243,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set the default theme for the Gitea install
  ;DEFAULT_THEME = auto
-@@ -1357,7 +1357,7 @@ LEVEL = Info
+@@ -1351,7 +1351,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -252,7 +252,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1365,10 +1365,10 @@ LEVEL = Info
+@@ -1359,10 +1359,10 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
  ;; Issue indexer type, currently support: bleve, db, elasticsearch or meilisearch default is bleve
@@ -265,7 +265,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Issue indexer connection string, available when ISSUE_INDEXER_TYPE is elasticsearch (e.g. http://elastic:password@localhost:9200) or meilisearch (e.g. http://:apikey@localhost:7700)
  ;ISSUE_INDEXER_CONN_STR =
-@@ -1395,7 +1395,7 @@ LEVEL = Info
+@@ -1389,7 +1389,7 @@ LEVEL = Info
  ;REPO_INDEXER_TYPE = bleve
  ;;
  ;; Index file used for code search. available when `REPO_INDEXER_TYPE` is bleve
@@ -274,7 +274,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Code indexer connection string, available when `REPO_INDEXER_TYPE` is elasticsearch. i.e. http://elastic:changeme@localhost:9200
  ;REPO_INDEXER_CONN_STR =
-@@ -1452,19 +1452,19 @@ LEVEL = Info
+@@ -1446,19 +1446,19 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -297,7 +297,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1485,7 +1485,7 @@ LEVEL = Info
+@@ -1479,7 +1479,7 @@ LEVEL = Info
  ;;  - <username>.livejournal.com
  ;;
  ;; Whether to allow signin in via OpenID
@@ -306,7 +306,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Whether to allow registering via OpenID
  ;; Do not include to rely on rhw DISABLE_REGISTRATION setting
-@@ -1570,7 +1570,7 @@ LEVEL = Info
+@@ -1564,7 +1564,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -315,7 +315,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1593,7 +1593,7 @@ LEVEL = Info
+@@ -1587,7 +1587,7 @@ LEVEL = Info
  ;; If your provider does not explicitly say which protocol it uses but does provide a port,
  ;; you can set SMTP_PORT instead and this will be inferred.
  ;; (Before 1.18, see the notice, this was controlled via MAILER_TYPE and IS_TLS_ENABLED.)
@@ -324,7 +324,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Mail server address, e.g. smtp.gmail.com.
  ;; For smtp+unix, this should be a path to a unix socket instead.
-@@ -1621,11 +1621,11 @@ LEVEL = Info
+@@ -1615,11 +1615,11 @@ LEVEL = Info
  ;;
  ;; Use client certificate in connection.
  ;USE_CLIENT_CERT = false
@@ -339,7 +339,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Sometimes it is helpful to use a different address on the envelope. Set this to use ENVELOPE_FROM as the from on the envelope. Set to `<>` to send an empty address.
  ;ENVELOPE_FROM =
-@@ -1637,10 +1637,10 @@ LEVEL = Info
+@@ -1631,10 +1631,10 @@ LEVEL = Info
  ;PASSWD =
  ;;
  ;; Send mails only in plain text, without HTML alternative
@@ -352,7 +352,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;; WARNING: if your sendmail program interprets options you should set this to "--" or terminate these args with "--"
-@@ -1738,13 +1738,13 @@ LEVEL = Info
+@@ -1732,13 +1732,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -368,7 +368,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Provider config options
  ;; memory: doesn't have any config yet
-@@ -1752,7 +1752,7 @@ LEVEL = Info
+@@ -1746,7 +1746,7 @@ LEVEL = Info
  ;; redis: `redis://127.0.0.1:6379/0?pool_size=100&idle_timeout=180s`
  ;; redis-cluster: `redis+cluster://127.0.0.1:6379/0?pool_size=100&idle_timeout=180s`
  ;; mysql: go-sql-driver/mysql dsn config string, e.g. `root:password@/session_table`
@@ -377,7 +377,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -1771,12 +1771,12 @@ LEVEL = Info
+@@ -1765,12 +1765,12 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -393,7 +393,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -1804,7 +1804,7 @@ LEVEL = Info
+@@ -1798,7 +1798,7 @@ LEVEL = Info
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; This value will always be true in offline mode.
@@ -402,7 +402,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1813,7 +1813,7 @@ LEVEL = Info
+@@ -1807,7 +1807,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -411,7 +411,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1839,7 +1839,7 @@ LEVEL = Info
+@@ -1833,7 +1833,7 @@ LEVEL = Info
  ;;
  ;; Path for attachments. Defaults to `attachments`. Only available when STORAGE_TYPE is `local`
  ;; Relative paths will be resolved to `${AppDataPath}/${attachment.PATH}`
@@ -420,7 +420,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -2186,10 +2186,10 @@ LEVEL = Info
+@@ -2180,10 +2180,10 @@ LEVEL = Info
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;; Check for new Gitea versions
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -433,7 +433,7 @@ Index: custom/conf/app.example.ini
  ;RUN_AT_START = false
  ;ENABLE_SUCCESS_NOTICE = false
  ;SCHEDULE = @every 168h
-@@ -2280,13 +2280,13 @@ LEVEL = Info
+@@ -2274,13 +2274,13 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -450,7 +450,7 @@ Index: custom/conf/app.example.ini
  ;; Generate sitemap. Defaults to `true`.
  ;ENABLE_SITEMAP = true
  ;; Enable/Disable RSS/Atom feed
-@@ -2419,7 +2419,7 @@ LEVEL = Info
+@@ -2413,7 +2413,7 @@ LEVEL = Info
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -459,7 +459,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -2431,7 +2431,7 @@ LEVEL = Info
+@@ -2425,7 +2425,7 @@ LEVEL = Info
  ;MINIO_BASE_PATH = packages/
  ;;
  ;; Path for chunked uploads. Defaults to APP_DATA_PATH + `tmp/package-upload`
@@ -468,7 +468,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Maximum count of package versions a single owner can have (`-1` means no limits)
  ;LIMIT_TOTAL_OWNER_COUNT = -1
-@@ -2521,7 +2521,7 @@ LEVEL = Info
+@@ -2515,7 +2515,7 @@ LEVEL = Info
  ;STORAGE_TYPE = local
  ;;
  ;; Where your lfs files reside, default is data/lfs.
@@ -477,7 +477,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; override the minio base path if storage type is minio
  ;MINIO_BASE_PATH = lfs/
-@@ -2571,9 +2571,9 @@ LEVEL = Info
+@@ -2565,9 +2565,9 @@ LEVEL = Info
  ;; Comma separated list of host names requiring proxy. Glob patterns (*) are accepted; use ** to match all hosts.
  ;PROXY_HOSTS =
  
