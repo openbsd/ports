@@ -1,12 +1,12 @@
 Index: contrib/slapd-modules/passwd/totp/Makefile
 --- contrib/slapd-modules/passwd/totp/Makefile.orig
 +++ contrib/slapd-modules/passwd/totp/Makefile
-@@ -36,7 +36,7 @@ man5dir = $(mandir)/man5
- all:		$(PROGRAMS)
+@@ -9,7 +9,7 @@ LDAP_LIB = $(LDAP_BUILD)/libraries/libldap/libldap.la 
+ PLAT = UNIX
+ NT_LIB = -L$(LDAP_BUILD)/servers/slapd -lslapd
+ NT_LDFLAGS = -no-undefined -avoid-version
+-UNIX_LDFLAGS = -version-info $(LTVER)
++UNIX_LDFLAGS = -avoid-version
  
- pw-totp.la:	slapd-totp.lo
--	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -version-info $(LTVER) \
-+	$(LIBTOOL) --mode=link $(CC) $(LDFLAGS) -avoid-version \
- 	-rpath $(moduledir) -module -o $@ $? $(LIBS)
- 
- clean:
+ LIBTOOL = $(LDAP_BUILD)/libtool
+ INSTALL = /usr/bin/install
