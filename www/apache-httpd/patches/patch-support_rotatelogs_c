@@ -1,7 +1,7 @@
 Index: support/rotatelogs.c
 --- support/rotatelogs.c.orig
 +++ support/rotatelogs.c
-@@ -128,7 +128,7 @@ static void usage(const char *argv0, const char *reaso
+@@ -129,7 +129,7 @@ static void usage(const char *argv0, const char *reaso
              "or \n\nTransferLog \"|%s /some/where 5M\"\n\n", argv0);
  #endif
      fprintf(stderr,
