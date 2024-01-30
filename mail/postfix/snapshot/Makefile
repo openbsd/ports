@@ -1,5 +1,5 @@
 VERSION=	3.8-20221007
-REVISION=	13
+REVISION=	14
 
 PORTROACH=	site:http://ftp.porcupine.org/mirrors/postfix-release/experimental/
 SITES=		${SITE_POSTFIX:=experimental/}
