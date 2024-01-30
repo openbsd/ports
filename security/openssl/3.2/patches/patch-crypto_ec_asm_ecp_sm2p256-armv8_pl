@@ -4,7 +4,7 @@ Index: crypto/ec/asm/ecp_sm2p256-armv8.pl
 @@ -42,7 +42,8 @@ $code.=<<___;
  	adc $t4,xzr,xzr
  
- 	# Load polynomial
+ 	// Load polynomial
 -	adr x2,$mod
 +	adrp x2,$mod
 +	add x2,x2,:lo12:$mod
@@ -14,7 +14,7 @@ Index: crypto/ec/asm/ecp_sm2p256-armv8.pl
 @@ -88,7 +89,8 @@ $code.=<<___;
  	sbc $t4,xzr,xzr
  
- 	# Load polynomial
+ 	// Load polynomial
 -	adr x2,$mod
 +	adrp x2,$mod
 +	add x2,x2,:lo12:$mod
@@ -24,7 +24,7 @@ Index: crypto/ec/asm/ecp_sm2p256-armv8.pl
 @@ -134,7 +136,8 @@ $code.=<<___;
  	lsr $s3,$s3,#1
  
- 	# Load mod
+ 	// Load mod
 -	adr x2,$mod
 +	adrp x2,$mod
 +	add x2,x2,:lo12:$mod
@@ -52,7 +52,7 @@ Index: crypto/ec/asm/ecp_sm2p256-armv8.pl
 @@ -272,7 +277,8 @@ ecp_sm2p256_mul_by_3:
  	mov $t3,$s3
  
- 	# Sub polynomial
+ 	// Sub polynomial
 -	adr x2,.Lpoly
 +	adrp x2,.Lpoly
 +	add x2,x2,:lo12:.Lpoly
@@ -62,7 +62,7 @@ Index: crypto/ec/asm/ecp_sm2p256-armv8.pl
 @@ -302,7 +308,8 @@ ecp_sm2p256_mul_by_3:
  	mov $t3,$s3
  
- 	# Sub polynomial
+ 	// Sub polynomial
 -	adr x2,.Lpoly
 +	adrp x2,.Lpoly
 +	add x2,x2,:lo12:.Lpoly
