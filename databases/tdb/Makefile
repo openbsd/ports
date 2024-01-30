@@ -3,6 +3,7 @@ COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 
 # Keep in sync with the version bundled in net/samba
 V=		1.4.9
+REVISION=	0
 
 DISTNAME=	tdb-$V
 PKGNAME-python=	py3-${DISTNAME}
@@ -17,8 +18,6 @@ SHARED_LIBS+=	tdb	4.4
 CATEGORIES=	databases
 
 HOMEPAGE=	https://tdb.samba.org/
-
-MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes

@@ -7,11 +7,9 @@ GH_ACCOUNT =		readthedocs
 GH_PROJECT =		recommonmark
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-recommonmark-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc devel
-
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

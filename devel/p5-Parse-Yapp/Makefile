@@ -1,11 +1,9 @@
 COMMENT =		compiles yacc-like LALR grammars to Perl OO parser modules
 
 DISTNAME =		Parse-Yapp-1.21
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
-
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 PERMIT_PACKAGE =	Yes
 

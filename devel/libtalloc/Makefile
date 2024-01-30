@@ -3,6 +3,7 @@ COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
 V=		2.4.1
+REVISION=	0
 
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
@@ -19,8 +20,6 @@ SUBST_VARS+=			PYTALLOC_UTIL_LIBSUFFIX
 CATEGORIES=	devel
 
 HOMEPAGE=	https://talloc.samba.org/
-
-MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
