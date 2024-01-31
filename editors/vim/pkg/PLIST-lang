@@ -1,4 +1,4 @@
-@conflict vim-<8.2.1805
+@conflict vim-<9.1.0065
 man/da/
 man/da.ISO8859-1/
 man/da.ISO8859-1/man1/
@@ -362,6 +362,9 @@ share/vim/${P}/lang/fr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/ga/
 share/vim/${P}/lang/ga/LC_MESSAGES/
 share/vim/${P}/lang/ga/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/hu/
+share/vim/${P}/lang/hu/LC_MESSAGES/
+share/vim/${P}/lang/hu/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/it/
 share/vim/${P}/lang/it/LC_MESSAGES/
 share/vim/${P}/lang/it/LC_MESSAGES/vim.mo
@@ -479,7 +482,11 @@ share/vim/${P}/lang/menu_pt_br.vim
 share/vim/${P}/lang/menu_pt_pt.latin1.vim
 share/vim/${P}/lang/menu_pt_pt.utf-8.vim
 share/vim/${P}/lang/menu_pt_pt.vim
+share/vim/${P}/lang/menu_ru.cp1251.vim
+share/vim/${P}/lang/menu_ru.koi8-r.vim
 share/vim/${P}/lang/menu_ru.utf-8.vim
+share/vim/${P}/lang/menu_ru.vim
+share/vim/${P}/lang/menu_ru_ru.cp1251.vim
 share/vim/${P}/lang/menu_ru_ru.koi8-r.vim
 share/vim/${P}/lang/menu_ru_ru.utf-8.vim
 share/vim/${P}/lang/menu_ru_ru.vim
@@ -596,6 +603,7 @@ share/vim/${P}/lang/zh_TW/LC_MESSAGES/
 share/vim/${P}/lang/zh_TW/LC_MESSAGES/vim.mo
 share/vim/${P}/tutor/README.el.cp737.txt
 share/vim/${P}/tutor/README.el.txt
+share/vim/${P}/tutor/README.ru.utf-8.txt
 share/vim/${P}/tutor/tutor.bar
 share/vim/${P}/tutor/tutor.bar.utf-8
 share/vim/${P}/tutor/tutor.bg.utf-8

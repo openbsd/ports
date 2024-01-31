@@ -3,7 +3,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.0.2122
+V=		9.1.0065
 
 DIST_TUPLE+=	github vim vim v$V . \
 		github vim colorschemes	22986fa2a3d2f7229efd4019fcbca411caa6afbb .
@@ -127,7 +127,7 @@ WANTLIB-lang=
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
-.if ${P} != vim90
+.if ${P} != vim91
 ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
 .endif
 
