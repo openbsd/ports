@@ -11,7 +11,7 @@ HOMEPAGE=	https://cryptography.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 MODPY_PI_DIR=	c/cryptography-vectors
 NO_TEST=	Yes
