@@ -490,6 +490,7 @@ share/tuxpaint/stamps/animals/birds/silver-gull_desc_fr.ogg
 share/tuxpaint/stamps/animals/birds/silver-gull_desc_nn.ogg
 share/tuxpaint/stamps/animals/birds/silver-gull_desc_ro.ogg
 share/tuxpaint/stamps/animals/birds/silver-gull_desc_ru.ogg
+share/tuxpaint/stamps/animals/birds/swallow.png
 share/tuxpaint/stamps/animals/birds/swallow.svg
 share/tuxpaint/stamps/animals/birds/swallow.txt
 share/tuxpaint/stamps/animals/birds/swallow_desc_be.ogg
@@ -728,6 +729,7 @@ share/tuxpaint/stamps/animals/insects/bee_desc_ro.ogg
 share/tuxpaint/stamps/animals/insects/bee_desc_ru.ogg
 share/tuxpaint/stamps/animals/insects/brownslug_desc_el.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/
+share/tuxpaint/stamps/animals/insects/cartoon/ant.png
 share/tuxpaint/stamps/animals/insects/cartoon/ant.svg
 share/tuxpaint/stamps/animals/insects/cartoon/ant.txt
 share/tuxpaint/stamps/animals/insects/cartoon/ant_desc_be.ogg
@@ -794,6 +796,7 @@ share/tuxpaint/stamps/animals/insects/cartoon/ladybug_desc_fr.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/ladybug_desc_nn.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/ladybug_desc_ro.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/ladybug_desc_ru.ogg
+share/tuxpaint/stamps/animals/insects/cartoon/monarchbutterfly.png
 share/tuxpaint/stamps/animals/insects/cartoon/monarchbutterfly.svg
 share/tuxpaint/stamps/animals/insects/cartoon/monarchbutterfly.txt
 share/tuxpaint/stamps/animals/insects/cartoon/monarchbutterfly_desc_be.ogg
@@ -820,8 +823,10 @@ share/tuxpaint/stamps/animals/insects/cartoon/snail_desc_fr.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/snail_desc_nn.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/snail_desc_ro.ogg
 share/tuxpaint/stamps/animals/insects/cartoon/snail_desc_ru.ogg
+share/tuxpaint/stamps/animals/insects/cartoon/spider.png
 share/tuxpaint/stamps/animals/insects/cartoon/spider.svg
 share/tuxpaint/stamps/animals/insects/cartoon/spider.txt
+share/tuxpaint/stamps/animals/insects/cartoon/spider2.png
 share/tuxpaint/stamps/animals/insects/cartoon/spider2.svg
 share/tuxpaint/stamps/animals/insects/cartoon/spider2.txt
 share/tuxpaint/stamps/animals/insects/cartoon/spider2_desc_be.ogg
@@ -1379,6 +1384,7 @@ share/tuxpaint/stamps/animals/mammals/cats/cartoon/lion_desc_es.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cartoon/lion_desc_fr.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cartoon/lion_desc_ro.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cartoon/lion_desc_ru.ogg
+share/tuxpaint/stamps/animals/mammals/cats/cheetah.png
 share/tuxpaint/stamps/animals/mammals/cats/cheetah.svg
 share/tuxpaint/stamps/animals/mammals/cats/cheetah.txt
 share/tuxpaint/stamps/animals/mammals/cats/cheetah_desc_be.ogg
@@ -1388,6 +1394,7 @@ share/tuxpaint/stamps/animals/mammals/cats/cheetah_desc_es.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cheetah_desc_fr.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cheetah_desc_ro.ogg
 share/tuxpaint/stamps/animals/mammals/cats/cheetah_desc_ru.ogg
+share/tuxpaint/stamps/animals/mammals/cats/kitten.png
 share/tuxpaint/stamps/animals/mammals/cats/kitten.svg
 share/tuxpaint/stamps/animals/mammals/cats/kitten.txt
 share/tuxpaint/stamps/animals/mammals/cats/kitten_desc_be.ogg
@@ -1613,6 +1620,7 @@ share/tuxpaint/stamps/animals/mammals/equines/zebra.dat
 share/tuxpaint/stamps/animals/mammals/equines/zebra.ogg
 share/tuxpaint/stamps/animals/mammals/equines/zebra.png
 share/tuxpaint/stamps/animals/mammals/equines/zebra.txt
+share/tuxpaint/stamps/animals/mammals/equines/zebra2.png
 share/tuxpaint/stamps/animals/mammals/equines/zebra2.svg
 share/tuxpaint/stamps/animals/mammals/equines/zebra2.txt
 share/tuxpaint/stamps/animals/mammals/equines/zebra2_desc_be.ogg
@@ -1951,6 +1959,7 @@ share/tuxpaint/stamps/clothes/armor/cartoon/knight_helmet_desc_es.ogg
 share/tuxpaint/stamps/clothes/armor/cartoon/knight_helmet_desc_fr.ogg
 share/tuxpaint/stamps/clothes/armor/cartoon/knight_helmet_desc_ro.ogg
 share/tuxpaint/stamps/clothes/armor/cartoon/knight_helmet_desc_ru.ogg
+share/tuxpaint/stamps/clothes/bellbottoms.png
 share/tuxpaint/stamps/clothes/bellbottoms.svg
 share/tuxpaint/stamps/clothes/bellbottoms.txt
 share/tuxpaint/stamps/clothes/bellbottoms_desc_be.ogg
@@ -1960,6 +1969,7 @@ share/tuxpaint/stamps/clothes/bellbottoms_desc_es.ogg
 share/tuxpaint/stamps/clothes/bellbottoms_desc_fr.ogg
 share/tuxpaint/stamps/clothes/bellbottoms_desc_ro.ogg
 share/tuxpaint/stamps/clothes/bellbottoms_desc_ru.ogg
+share/tuxpaint/stamps/clothes/bikini.png
 share/tuxpaint/stamps/clothes/bikini.svg
 share/tuxpaint/stamps/clothes/bikini.txt
 share/tuxpaint/stamps/clothes/bikini_desc_be.ogg
@@ -1969,6 +1979,7 @@ share/tuxpaint/stamps/clothes/bikini_desc_es.ogg
 share/tuxpaint/stamps/clothes/bikini_desc_fr.ogg
 share/tuxpaint/stamps/clothes/bikini_desc_ro.ogg
 share/tuxpaint/stamps/clothes/bikini_desc_ru.ogg
+share/tuxpaint/stamps/clothes/black_dress.png
 share/tuxpaint/stamps/clothes/black_dress.svg
 share/tuxpaint/stamps/clothes/black_dress.txt
 share/tuxpaint/stamps/clothes/black_dress_desc_be.ogg
@@ -1978,6 +1989,7 @@ share/tuxpaint/stamps/clothes/black_dress_desc_es.ogg
 share/tuxpaint/stamps/clothes/black_dress_desc_fr.ogg
 share/tuxpaint/stamps/clothes/black_dress_desc_ro.ogg
 share/tuxpaint/stamps/clothes/black_dress_desc_ru.ogg
+share/tuxpaint/stamps/clothes/bluejeans1.png
 share/tuxpaint/stamps/clothes/bluejeans1.svg
 share/tuxpaint/stamps/clothes/bluejeans1.txt
 share/tuxpaint/stamps/clothes/bluejeans1_desc_be.ogg
@@ -1987,6 +1999,7 @@ share/tuxpaint/stamps/clothes/bluejeans1_desc_es.ogg
 share/tuxpaint/stamps/clothes/bluejeans1_desc_fr.ogg
 share/tuxpaint/stamps/clothes/bluejeans1_desc_ro.ogg
 share/tuxpaint/stamps/clothes/bluejeans1_desc_ru.ogg
+share/tuxpaint/stamps/clothes/bluejeans2.png
 share/tuxpaint/stamps/clothes/bluejeans2.svg
 share/tuxpaint/stamps/clothes/bluejeans2.txt
 share/tuxpaint/stamps/clothes/bluejeans2_desc_be.ogg
@@ -1996,6 +2009,7 @@ share/tuxpaint/stamps/clothes/bluejeans2_desc_es.ogg
 share/tuxpaint/stamps/clothes/bluejeans2_desc_fr.ogg
 share/tuxpaint/stamps/clothes/bluejeans2_desc_ro.ogg
 share/tuxpaint/stamps/clothes/bluejeans2_desc_ru.ogg
+share/tuxpaint/stamps/clothes/bowtie.png
 share/tuxpaint/stamps/clothes/bowtie.svg
 share/tuxpaint/stamps/clothes/bowtie.txt
 share/tuxpaint/stamps/clothes/bowtie_desc_be.ogg
@@ -2007,6 +2021,7 @@ share/tuxpaint/stamps/clothes/bowtie_desc_ro.ogg
 share/tuxpaint/stamps/clothes/bowtie_desc_ru.ogg
 share/tuxpaint/stamps/clothes/button.png
 share/tuxpaint/stamps/clothes/button.txt
+share/tuxpaint/stamps/clothes/clotheshanger.png
 share/tuxpaint/stamps/clothes/clotheshanger.svg
 share/tuxpaint/stamps/clothes/clotheshanger.txt
 share/tuxpaint/stamps/clothes/clotheshanger_desc_be.ogg
@@ -2036,6 +2051,7 @@ share/tuxpaint/stamps/clothes/clothespin_old_desc_es.ogg
 share/tuxpaint/stamps/clothes/clothespin_old_desc_fr.ogg
 share/tuxpaint/stamps/clothes/clothespin_old_desc_ro.ogg
 share/tuxpaint/stamps/clothes/clothespin_old_desc_ru.ogg
+share/tuxpaint/stamps/clothes/glasses1.png
 share/tuxpaint/stamps/clothes/glasses1.svg
 share/tuxpaint/stamps/clothes/glasses1.txt
 share/tuxpaint/stamps/clothes/glasses1_desc_be.ogg
@@ -2045,6 +2061,7 @@ share/tuxpaint/stamps/clothes/glasses1_desc_es.ogg
 share/tuxpaint/stamps/clothes/glasses1_desc_fr.ogg
 share/tuxpaint/stamps/clothes/glasses1_desc_ro.ogg
 share/tuxpaint/stamps/clothes/glasses1_desc_ru.ogg
+share/tuxpaint/stamps/clothes/glasses2.png
 share/tuxpaint/stamps/clothes/glasses2.svg
 share/tuxpaint/stamps/clothes/glasses2.txt
 share/tuxpaint/stamps/clothes/glasses2_desc_be.ogg
@@ -2067,8 +2084,10 @@ share/tuxpaint/stamps/clothes/hats/blue_fedora_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/blue_fedora_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/blue_fedora_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/blue_fedora_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/brownhat.png
 share/tuxpaint/stamps/clothes/hats/brownhat.svg
 share/tuxpaint/stamps/clothes/hats/brownhat.txt
+share/tuxpaint/stamps/clothes/hats/brownhat2.png
 share/tuxpaint/stamps/clothes/hats/brownhat2.svg
 share/tuxpaint/stamps/clothes/hats/brownhat2.txt
 share/tuxpaint/stamps/clothes/hats/brownhat2_desc_be.ogg
@@ -2085,6 +2104,7 @@ share/tuxpaint/stamps/clothes/hats/brownhat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/brownhat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/brownhat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/brownhat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/cowboy_hat.png
 share/tuxpaint/stamps/clothes/hats/cowboy_hat.svg
 share/tuxpaint/stamps/clothes/hats/cowboy_hat.txt
 share/tuxpaint/stamps/clothes/hats/cowboy_hat_desc_be.ogg
@@ -2094,6 +2114,7 @@ share/tuxpaint/stamps/clothes/hats/cowboy_hat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/cowboy_hat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/cowboy_hat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/cowboy_hat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/crown1.png
 share/tuxpaint/stamps/clothes/hats/crown1.svg
 share/tuxpaint/stamps/clothes/hats/crown1.txt
 share/tuxpaint/stamps/clothes/hats/crown1_desc_be.ogg
@@ -2103,6 +2124,7 @@ share/tuxpaint/stamps/clothes/hats/crown1_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/crown1_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/crown1_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/crown1_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/crown2.png
 share/tuxpaint/stamps/clothes/hats/crown2.svg
 share/tuxpaint/stamps/clothes/hats/crown2.txt
 share/tuxpaint/stamps/clothes/hats/crown2_desc_be.ogg
@@ -2112,6 +2134,7 @@ share/tuxpaint/stamps/clothes/hats/crown2_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/crown2_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/crown2_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/crown2_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/elfhat.png
 share/tuxpaint/stamps/clothes/hats/elfhat.svg
 share/tuxpaint/stamps/clothes/hats/elfhat.txt
 share/tuxpaint/stamps/clothes/hats/elfhat_desc_be.ogg
@@ -2145,6 +2168,7 @@ share/tuxpaint/stamps/clothes/hats/green_fedora_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/green_fedora_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/green_fedora_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/green_fedora_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/greenhat.png
 share/tuxpaint/stamps/clothes/hats/greenhat.svg
 share/tuxpaint/stamps/clothes/hats/greenhat.txt
 share/tuxpaint/stamps/clothes/hats/greenhat_desc_be.ogg
@@ -2154,6 +2178,7 @@ share/tuxpaint/stamps/clothes/hats/greenhat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/greenhat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/greenhat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/greenhat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/hardhat.png
 share/tuxpaint/stamps/clothes/hats/hardhat.svg
 share/tuxpaint/stamps/clothes/hats/hardhat.txt
 share/tuxpaint/stamps/clothes/hats/hardhat_desc_be.ogg
@@ -2163,6 +2188,7 @@ share/tuxpaint/stamps/clothes/hats/hardhat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/hardhat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/hardhat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/hardhat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/mortarboard.png
 share/tuxpaint/stamps/clothes/hats/mortarboard.svg
 share/tuxpaint/stamps/clothes/hats/mortarboard.txt
 share/tuxpaint/stamps/clothes/hats/mortarboard_desc_be.ogg
@@ -2184,6 +2210,7 @@ share/tuxpaint/stamps/clothes/hats/propeller_hat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/propeller_hat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/propeller_hat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/propeller_hat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/purplehat.png
 share/tuxpaint/stamps/clothes/hats/purplehat.svg
 share/tuxpaint/stamps/clothes/hats/purplehat.txt
 share/tuxpaint/stamps/clothes/hats/purplehat_desc_be.ogg
@@ -2217,6 +2244,7 @@ share/tuxpaint/stamps/clothes/hats/tophat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/tophat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/tophat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/tophat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hats/wizardhat.png
 share/tuxpaint/stamps/clothes/hats/wizardhat.svg
 share/tuxpaint/stamps/clothes/hats/wizardhat.txt
 share/tuxpaint/stamps/clothes/hats/wizardhat_desc_be.ogg
@@ -2226,6 +2254,7 @@ share/tuxpaint/stamps/clothes/hats/wizardhat_desc_es.ogg
 share/tuxpaint/stamps/clothes/hats/wizardhat_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hats/wizardhat_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hats/wizardhat_desc_ru.ogg
+share/tuxpaint/stamps/clothes/hikingboot.png
 share/tuxpaint/stamps/clothes/hikingboot.svg
 share/tuxpaint/stamps/clothes/hikingboot.txt
 share/tuxpaint/stamps/clothes/hikingboot_desc_be.ogg
@@ -2235,6 +2264,7 @@ share/tuxpaint/stamps/clothes/hikingboot_desc_es.ogg
 share/tuxpaint/stamps/clothes/hikingboot_desc_fr.ogg
 share/tuxpaint/stamps/clothes/hikingboot_desc_ro.ogg
 share/tuxpaint/stamps/clothes/hikingboot_desc_ru.ogg
+share/tuxpaint/stamps/clothes/jacket.png
 share/tuxpaint/stamps/clothes/jacket.svg
 share/tuxpaint/stamps/clothes/jacket.txt
 share/tuxpaint/stamps/clothes/jacket_desc_be.ogg
@@ -2244,6 +2274,7 @@ share/tuxpaint/stamps/clothes/jacket_desc_es.ogg
 share/tuxpaint/stamps/clothes/jacket_desc_fr.ogg
 share/tuxpaint/stamps/clothes/jacket_desc_ro.ogg
 share/tuxpaint/stamps/clothes/jacket_desc_ru.ogg
+share/tuxpaint/stamps/clothes/red_handbag.png
 share/tuxpaint/stamps/clothes/red_handbag.svg
 share/tuxpaint/stamps/clothes/red_handbag.txt
 share/tuxpaint/stamps/clothes/red_handbag_desc_be.ogg
@@ -2253,6 +2284,7 @@ share/tuxpaint/stamps/clothes/red_handbag_desc_es.ogg
 share/tuxpaint/stamps/clothes/red_handbag_desc_fr.ogg
 share/tuxpaint/stamps/clothes/red_handbag_desc_ro.ogg
 share/tuxpaint/stamps/clothes/red_handbag_desc_ru.ogg
+share/tuxpaint/stamps/clothes/red_highheel.png
 share/tuxpaint/stamps/clothes/red_highheel.svg
 share/tuxpaint/stamps/clothes/red_highheel.txt
 share/tuxpaint/stamps/clothes/red_highheel_desc_be.ogg
@@ -2263,6 +2295,7 @@ share/tuxpaint/stamps/clothes/red_highheel_desc_fr.ogg
 share/tuxpaint/stamps/clothes/red_highheel_desc_ro.ogg
 share/tuxpaint/stamps/clothes/red_highheel_desc_ru.ogg
 share/tuxpaint/stamps/clothes/sunglasses_01.dat
+share/tuxpaint/stamps/clothes/sunglasses_01.png
 share/tuxpaint/stamps/clothes/sunglasses_01.svg
 share/tuxpaint/stamps/clothes/sunglasses_01.txt
 share/tuxpaint/stamps/clothes/sunglasses_01_desc_be.ogg
@@ -2274,6 +2307,7 @@ share/tuxpaint/stamps/clothes/sunglasses_01_desc_fr.ogg
 share/tuxpaint/stamps/clothes/sunglasses_01_desc_ro.ogg
 share/tuxpaint/stamps/clothes/sunglasses_01_desc_ru.ogg
 share/tuxpaint/stamps/clothes/sunglasses_02.dat
+share/tuxpaint/stamps/clothes/sunglasses_02.png
 share/tuxpaint/stamps/clothes/sunglasses_02.svg
 share/tuxpaint/stamps/clothes/sunglasses_02.txt
 share/tuxpaint/stamps/clothes/sunglasses_02_desc_be.ogg
@@ -2285,6 +2319,7 @@ share/tuxpaint/stamps/clothes/sunglasses_02_desc_fr.ogg
 share/tuxpaint/stamps/clothes/sunglasses_02_desc_ro.ogg
 share/tuxpaint/stamps/clothes/sunglasses_02_desc_ru.ogg
 share/tuxpaint/stamps/clothes/t-shirt_01.dat
+share/tuxpaint/stamps/clothes/t-shirt_01.png
 share/tuxpaint/stamps/clothes/t-shirt_01.svg
 share/tuxpaint/stamps/clothes/t-shirt_01.txt
 share/tuxpaint/stamps/clothes/t-shirt_01_desc_be.ogg
@@ -2385,6 +2420,7 @@ share/tuxpaint/stamps/clothes/t_tshirt_desc_es.ogg
 share/tuxpaint/stamps/clothes/t_tshirt_desc_fr.ogg
 share/tuxpaint/stamps/clothes/t_tshirt_desc_ro.ogg
 share/tuxpaint/stamps/clothes/t_tshirt_desc_ru.ogg
+share/tuxpaint/stamps/clothes/top_skirt.png
 share/tuxpaint/stamps/clothes/top_skirt.svg
 share/tuxpaint/stamps/clothes/top_skirt.txt
 share/tuxpaint/stamps/clothes/top_skirt_desc_be.ogg
@@ -2394,6 +2430,7 @@ share/tuxpaint/stamps/clothes/top_skirt_desc_es.ogg
 share/tuxpaint/stamps/clothes/top_skirt_desc_fr.ogg
 share/tuxpaint/stamps/clothes/top_skirt_desc_ro.ogg
 share/tuxpaint/stamps/clothes/top_skirt_desc_ru.ogg
+share/tuxpaint/stamps/clothes/white_pants.png
 share/tuxpaint/stamps/clothes/white_pants.svg
 share/tuxpaint/stamps/clothes/white_pants.txt
 share/tuxpaint/stamps/clothes/white_pants_desc_be.ogg
@@ -2404,6 +2441,7 @@ share/tuxpaint/stamps/clothes/white_pants_desc_fr.ogg
 share/tuxpaint/stamps/clothes/white_pants_desc_ro.ogg
 share/tuxpaint/stamps/clothes/white_pants_desc_ru.ogg
 share/tuxpaint/stamps/food/
+share/tuxpaint/stamps/food/bread.png
 share/tuxpaint/stamps/food/bread.svg
 share/tuxpaint/stamps/food/bread.txt
 share/tuxpaint/stamps/food/bread_desc_be.ogg
@@ -2413,6 +2451,7 @@ share/tuxpaint/stamps/food/bread_desc_fr.ogg
 share/tuxpaint/stamps/food/bread_desc_nn.ogg
 share/tuxpaint/stamps/food/bread_desc_ro.ogg
 share/tuxpaint/stamps/food/bread_desc_ru.ogg
+share/tuxpaint/stamps/food/cheese.png
 share/tuxpaint/stamps/food/cheese.svg
 share/tuxpaint/stamps/food/cheese.txt
 share/tuxpaint/stamps/food/cheese_desc_bg.ogg
@@ -2452,6 +2491,7 @@ share/tuxpaint/stamps/food/dessert/cartoon/pink_cake_desc_fr.ogg
 share/tuxpaint/stamps/food/dessert/cartoon/pink_cake_desc_nn.ogg
 share/tuxpaint/stamps/food/dessert/cartoon/pink_cake_desc_ro.ogg
 share/tuxpaint/stamps/food/dessert/cartoon/pink_cake_desc_ru.ogg
+share/tuxpaint/stamps/food/dessert/smallcake.png
 share/tuxpaint/stamps/food/dessert/smallcake.svg
 share/tuxpaint/stamps/food/dessert/smallcake.txt
 share/tuxpaint/stamps/food/dessert/smallcake_desc_be.ogg
@@ -2603,6 +2643,7 @@ share/tuxpaint/stamps/food/fruit/cartoon/apple.txt
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core.dat
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core.png
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core.txt
+share/tuxpaint/stamps/food/fruit/cartoon/apple_core_01.png
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core_01.svg
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core_01.txt
 share/tuxpaint/stamps/food/fruit/cartoon/apple_core_01_desc_be.ogg
@@ -2665,6 +2706,7 @@ share/tuxpaint/stamps/food/fruit/cartoon/cherries.dat
 share/tuxpaint/stamps/food/fruit/cartoon/cherries.png
 share/tuxpaint/stamps/food/fruit/cartoon/cherries.svg
 share/tuxpaint/stamps/food/fruit/cartoon/cherries.txt
+share/tuxpaint/stamps/food/fruit/cartoon/cherries2.png
 share/tuxpaint/stamps/food/fruit/cartoon/cherries2.svg
 share/tuxpaint/stamps/food/fruit/cartoon/cherries2.txt
 share/tuxpaint/stamps/food/fruit/cartoon/cherries2_desc_bg.ogg
@@ -2824,6 +2866,7 @@ share/tuxpaint/stamps/food/fruit/cartoon/strawberry_desc_fr.ogg
 share/tuxpaint/stamps/food/fruit/cartoon/strawberry_desc_nn.ogg
 share/tuxpaint/stamps/food/fruit/cartoon/strawberry_desc_ro.ogg
 share/tuxpaint/stamps/food/fruit/cartoon/strawberry_desc_ru.ogg
+share/tuxpaint/stamps/food/fruit/cartoon/watermelon.png
 share/tuxpaint/stamps/food/fruit/cartoon/watermelon.svg
 share/tuxpaint/stamps/food/fruit/cartoon/watermelon.txt
 share/tuxpaint/stamps/food/fruit/cartoon/watermelon_desc_be.ogg
@@ -3019,6 +3062,7 @@ share/tuxpaint/stamps/food/fruit/strawberry_desc_fr.ogg
 share/tuxpaint/stamps/food/fruit/strawberry_desc_nn.ogg
 share/tuxpaint/stamps/food/fruit/strawberry_desc_ro.ogg
 share/tuxpaint/stamps/food/fruit/strawberry_desc_ru.ogg
+share/tuxpaint/stamps/food/loaf_of_bread.png
 share/tuxpaint/stamps/food/loaf_of_bread.svg
 share/tuxpaint/stamps/food/loaf_of_bread.txt
 share/tuxpaint/stamps/food/loaf_of_bread_desc_be.ogg
@@ -3347,6 +3391,7 @@ share/tuxpaint/stamps/hobbies/camera_35mm_desc_fr.ogg
 share/tuxpaint/stamps/hobbies/camera_35mm_desc_nn.ogg
 share/tuxpaint/stamps/hobbies/camera_35mm_desc_ro.ogg
 share/tuxpaint/stamps/hobbies/camera_35mm_desc_ru.ogg
+share/tuxpaint/stamps/hobbies/kite.png
 share/tuxpaint/stamps/hobbies/kite.svg
 share/tuxpaint/stamps/hobbies/kite.txt
 share/tuxpaint/stamps/hobbies/kite_desc_be.ogg
@@ -3357,6 +3402,7 @@ share/tuxpaint/stamps/hobbies/kite_desc_fr.ogg
 share/tuxpaint/stamps/hobbies/kite_desc_nn.ogg
 share/tuxpaint/stamps/hobbies/kite_desc_ro.ogg
 share/tuxpaint/stamps/hobbies/kite_desc_ru.ogg
+share/tuxpaint/stamps/hobbies/knitting.png
 share/tuxpaint/stamps/hobbies/knitting.svg
 share/tuxpaint/stamps/hobbies/knitting.txt
 share/tuxpaint/stamps/hobbies/knitting_desc_be.ogg
@@ -3463,6 +3509,7 @@ share/tuxpaint/stamps/hobbies/music/string/guitar_electric.txt
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass.dat
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass.png
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass.txt
+share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass2.png
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass2.svg
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass2.txt
 share/tuxpaint/stamps/hobbies/music/string/guitar_electric_bass2_desc_be.ogg
@@ -3494,6 +3541,7 @@ share/tuxpaint/stamps/hobbies/music/string/violin.dat
 share/tuxpaint/stamps/hobbies/music/string/violin.ogg
 share/tuxpaint/stamps/hobbies/music/string/violin.png
 share/tuxpaint/stamps/hobbies/music/string/violin.txt
+share/tuxpaint/stamps/hobbies/music/string/violin2.png
 share/tuxpaint/stamps/hobbies/music/string/violin2.svg
 share/tuxpaint/stamps/hobbies/music/string/violin2.txt
 share/tuxpaint/stamps/hobbies/music/string/violin2_desc_be.ogg
@@ -3538,6 +3586,7 @@ share/tuxpaint/stamps/household/Lightbulb_desc_nn.ogg
 share/tuxpaint/stamps/household/Lightbulb_desc_ro.ogg
 share/tuxpaint/stamps/household/Lightbulb_desc_ru.ogg
 share/tuxpaint/stamps/household/Washing-machine.ogg
+share/tuxpaint/stamps/household/Washing-machine.png
 share/tuxpaint/stamps/household/Washing-machine.svg
 share/tuxpaint/stamps/household/Washing-machine.txt
 share/tuxpaint/stamps/household/Washing-machine_desc_be.ogg
@@ -3549,6 +3598,7 @@ share/tuxpaint/stamps/household/Washing-machine_desc_nn.ogg
 share/tuxpaint/stamps/household/Washing-machine_desc_ro.ogg
 share/tuxpaint/stamps/household/Washing-machine_desc_ru.ogg
 share/tuxpaint/stamps/household/arttools/
+share/tuxpaint/stamps/household/arttools/Pencil.png
 share/tuxpaint/stamps/household/arttools/Pencil.svg
 share/tuxpaint/stamps/household/arttools/Pencil.txt
 share/tuxpaint/stamps/household/arttools/Pencil_desc_be.ogg
@@ -3559,6 +3609,7 @@ share/tuxpaint/stamps/household/arttools/Pencil_desc_fr.ogg
 share/tuxpaint/stamps/household/arttools/Pencil_desc_nn.ogg
 share/tuxpaint/stamps/household/arttools/Pencil_desc_ro.ogg
 share/tuxpaint/stamps/household/arttools/Pencil_desc_ru.ogg
+share/tuxpaint/stamps/household/arttools/ballpointpen.png
 share/tuxpaint/stamps/household/arttools/ballpointpen.svg
 share/tuxpaint/stamps/household/arttools/ballpointpen.txt
 share/tuxpaint/stamps/household/arttools/ballpointpen_desc_be.ogg
@@ -3569,6 +3620,7 @@ share/tuxpaint/stamps/household/arttools/ballpointpen_desc_fr.ogg
 share/tuxpaint/stamps/household/arttools/ballpointpen_desc_nn.ogg
 share/tuxpaint/stamps/household/arttools/ballpointpen_desc_ro.ogg
 share/tuxpaint/stamps/household/arttools/ballpointpen_desc_ru.ogg
+share/tuxpaint/stamps/household/arttools/biro.png
 share/tuxpaint/stamps/household/arttools/biro.svg
 share/tuxpaint/stamps/household/arttools/biro.txt
 share/tuxpaint/stamps/household/arttools/biro_desc_be.ogg
@@ -3592,6 +3644,7 @@ share/tuxpaint/stamps/household/arttools/highlighter_desc_nn.ogg
 share/tuxpaint/stamps/household/arttools/highlighter_desc_ro.ogg
 share/tuxpaint/stamps/household/arttools/highlighter_desc_ru.ogg
 share/tuxpaint/stamps/household/arttools/painttube.dat
+share/tuxpaint/stamps/household/arttools/painttube.png
 share/tuxpaint/stamps/household/arttools/painttube.svg
 share/tuxpaint/stamps/household/arttools/painttube.txt
 share/tuxpaint/stamps/household/arttools/painttube_desc_be.ogg
@@ -3614,6 +3667,7 @@ share/tuxpaint/stamps/household/arttools/pen_dryerase_desc_fr.ogg
 share/tuxpaint/stamps/household/arttools/pen_dryerase_desc_nn.ogg
 share/tuxpaint/stamps/household/arttools/pen_dryerase_desc_ro.ogg
 share/tuxpaint/stamps/household/arttools/pen_dryerase_desc_ru.ogg
+share/tuxpaint/stamps/household/arttools/pencil2.png
 share/tuxpaint/stamps/household/arttools/pencil2.svg
 share/tuxpaint/stamps/household/arttools/pencil2.txt
 share/tuxpaint/stamps/household/arttools/pencil2_desc_be.ogg
@@ -3648,6 +3702,7 @@ share/tuxpaint/stamps/household/arttools/scissors_small_open_desc_fr.ogg
 share/tuxpaint/stamps/household/arttools/scissors_small_open_desc_nn.ogg
 share/tuxpaint/stamps/household/arttools/scissors_small_open_desc_ro.ogg
 share/tuxpaint/stamps/household/arttools/scissors_small_open_desc_ru.ogg
+share/tuxpaint/stamps/household/clothes_iron.png
 share/tuxpaint/stamps/household/clothes_iron.svg
 share/tuxpaint/stamps/household/clothes_iron.txt
 share/tuxpaint/stamps/household/clothes_iron_desc_be.ogg
@@ -3670,6 +3725,7 @@ share/tuxpaint/stamps/household/cylinder_desc_ru.ogg
 share/tuxpaint/stamps/household/dishes/
 share/tuxpaint/stamps/household/dishes/bottle.dat
 share/tuxpaint/stamps/household/dishes/bottle.ogg
+share/tuxpaint/stamps/household/dishes/bottle.png
 share/tuxpaint/stamps/household/dishes/bottle.svg
 share/tuxpaint/stamps/household/dishes/bottle.txt
 share/tuxpaint/stamps/household/dishes/bottle_desc_be.ogg
@@ -3682,6 +3738,7 @@ share/tuxpaint/stamps/household/dishes/bottle_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/bottle_desc_ru.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/
 share/tuxpaint/stamps/household/dishes/cartoon/fork.dat
+share/tuxpaint/stamps/household/dishes/cartoon/fork.png
 share/tuxpaint/stamps/household/dishes/cartoon/fork.svg
 share/tuxpaint/stamps/household/dishes/cartoon/fork.txt
 share/tuxpaint/stamps/household/dishes/cartoon/fork_desc_be.ogg
@@ -3717,6 +3774,7 @@ share/tuxpaint/stamps/household/dishes/cartoon/pressure_cooker_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/pressure_cooker_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/pressure_cooker_desc_ru.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/spoon.dat
+share/tuxpaint/stamps/household/dishes/cartoon/spoon.png
 share/tuxpaint/stamps/household/dishes/cartoon/spoon.svg
 share/tuxpaint/stamps/household/dishes/cartoon/spoon.txt
 share/tuxpaint/stamps/household/dishes/cartoon/spoon_desc_be.ogg
@@ -3727,6 +3785,7 @@ share/tuxpaint/stamps/household/dishes/cartoon/spoon_desc_fr.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/spoon_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/spoon_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/cartoon/spoon_desc_ru.ogg
+share/tuxpaint/stamps/household/dishes/coffeecup.png
 share/tuxpaint/stamps/household/dishes/coffeecup.svg
 share/tuxpaint/stamps/household/dishes/coffeecup.txt
 share/tuxpaint/stamps/household/dishes/coffeecup_desc_be.ogg
@@ -3737,6 +3796,7 @@ share/tuxpaint/stamps/household/dishes/coffeecup_desc_fr.ogg
 share/tuxpaint/stamps/household/dishes/coffeecup_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/coffeecup_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/coffeecup_desc_ru.ogg
+share/tuxpaint/stamps/household/dishes/expresso.png
 share/tuxpaint/stamps/household/dishes/expresso.svg
 share/tuxpaint/stamps/household/dishes/expresso.txt
 share/tuxpaint/stamps/household/dishes/expresso_desc_be.ogg
@@ -3747,6 +3807,7 @@ share/tuxpaint/stamps/household/dishes/expresso_desc_fr.ogg
 share/tuxpaint/stamps/household/dishes/expresso_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/expresso_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/expresso_desc_ru.ogg
+share/tuxpaint/stamps/household/dishes/fork.png
 share/tuxpaint/stamps/household/dishes/fork.svg
 share/tuxpaint/stamps/household/dishes/fork.txt
 share/tuxpaint/stamps/household/dishes/fork_desc_be.ogg
@@ -3770,6 +3831,7 @@ share/tuxpaint/stamps/household/dishes/glass_desc_fr.ogg
 share/tuxpaint/stamps/household/dishes/glass_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/glass_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/glass_desc_ru.ogg
+share/tuxpaint/stamps/household/dishes/knife.png
 share/tuxpaint/stamps/household/dishes/knife.svg
 share/tuxpaint/stamps/household/dishes/knife.txt
 share/tuxpaint/stamps/household/dishes/knife_desc_be.ogg
@@ -3804,6 +3866,7 @@ share/tuxpaint/stamps/household/dishes/pitcher_small_desc_fr.ogg
 share/tuxpaint/stamps/household/dishes/pitcher_small_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/pitcher_small_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/pitcher_small_desc_ru.ogg
+share/tuxpaint/stamps/household/dishes/spoon.png
 share/tuxpaint/stamps/household/dishes/spoon.svg
 share/tuxpaint/stamps/household/dishes/spoon.txt
 share/tuxpaint/stamps/household/dishes/spoon_desc_be.ogg
@@ -3851,6 +3914,7 @@ share/tuxpaint/stamps/household/dishes/utensils/pepper_grinder_desc_nn.ogg
 share/tuxpaint/stamps/household/dishes/utensils/pepper_grinder_desc_ro.ogg
 share/tuxpaint/stamps/household/dishes/utensils/pepper_grinder_desc_ru.ogg
 share/tuxpaint/stamps/household/electronics/
+share/tuxpaint/stamps/household/electronics/DSLR_Camera.png
 share/tuxpaint/stamps/household/electronics/DSLR_Camera.svg
 share/tuxpaint/stamps/household/electronics/DSLR_Camera.txt
 share/tuxpaint/stamps/household/electronics/DSLR_Camera_desc_be.ogg
@@ -3861,6 +3925,7 @@ share/tuxpaint/stamps/household/electronics/DSLR_Camera_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/DSLR_Camera_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/DSLR_Camera_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/DSLR_Camera_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/calculator.png
 share/tuxpaint/stamps/household/electronics/calculator.svg
 share/tuxpaint/stamps/household/electronics/calculator.txt
 share/tuxpaint/stamps/household/electronics/calculator_desc_be.ogg
@@ -3871,6 +3936,7 @@ share/tuxpaint/stamps/household/electronics/calculator_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/calculator_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/calculator_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/calculator_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/camera.png
 share/tuxpaint/stamps/household/electronics/camera.svg
 share/tuxpaint/stamps/household/electronics/camera.txt
 share/tuxpaint/stamps/household/electronics/camera_desc_be.ogg
@@ -3881,6 +3947,7 @@ share/tuxpaint/stamps/household/electronics/camera_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/camera_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/camera_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/camera_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/compact_disc.png
 share/tuxpaint/stamps/household/electronics/compact_disc.svg
 share/tuxpaint/stamps/household/electronics/compact_disc.txt
 share/tuxpaint/stamps/household/electronics/compact_disc_desc_be.ogg
@@ -3891,6 +3958,7 @@ share/tuxpaint/stamps/household/electronics/compact_disc_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/compact_disc_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/compact_disc_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/compact_disc_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/digitalcamera.png
 share/tuxpaint/stamps/household/electronics/digitalcamera.svg
 share/tuxpaint/stamps/household/electronics/digitalcamera.txt
 share/tuxpaint/stamps/household/electronics/digitalcamera_desc_be.ogg
@@ -3901,6 +3969,7 @@ share/tuxpaint/stamps/household/electronics/digitalcamera_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/digitalcamera_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/digitalcamera_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/digitalcamera_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/inkjet_printer.png
 share/tuxpaint/stamps/household/electronics/inkjet_printer.svg
 share/tuxpaint/stamps/household/electronics/inkjet_printer.txt
 share/tuxpaint/stamps/household/electronics/inkjet_printer_desc_be.ogg
@@ -3911,6 +3980,7 @@ share/tuxpaint/stamps/household/electronics/inkjet_printer_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/inkjet_printer_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/inkjet_printer_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/inkjet_printer_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/laptop.png
 share/tuxpaint/stamps/household/electronics/laptop.svg
 share/tuxpaint/stamps/household/electronics/laptop.txt
 share/tuxpaint/stamps/household/electronics/laptop_desc_be.ogg
@@ -3921,6 +3991,7 @@ share/tuxpaint/stamps/household/electronics/laptop_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/laptop_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/laptop_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/laptop_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/laser_printer.png
 share/tuxpaint/stamps/household/electronics/laser_printer.svg
 share/tuxpaint/stamps/household/electronics/laser_printer.txt
 share/tuxpaint/stamps/household/electronics/laser_printer_desc_be.ogg
@@ -3931,6 +4002,7 @@ share/tuxpaint/stamps/household/electronics/laser_printer_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/laser_printer_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/laser_printer_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/laser_printer_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/mobile.png
 share/tuxpaint/stamps/household/electronics/mobile.svg
 share/tuxpaint/stamps/household/electronics/mobile.txt
 share/tuxpaint/stamps/household/electronics/mobile_desc_be.ogg
@@ -3941,6 +4013,7 @@ share/tuxpaint/stamps/household/electronics/mobile_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/mobile_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/mobile_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/mobile_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/monitor.png
 share/tuxpaint/stamps/household/electronics/monitor.svg
 share/tuxpaint/stamps/household/electronics/monitor.txt
 share/tuxpaint/stamps/household/electronics/monitor_desc_be.ogg
@@ -3951,6 +4024,7 @@ share/tuxpaint/stamps/household/electronics/monitor_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/monitor_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/monitor_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/monitor_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/mouse.png
 share/tuxpaint/stamps/household/electronics/mouse.svg
 share/tuxpaint/stamps/household/electronics/mouse.txt
 share/tuxpaint/stamps/household/electronics/mouse_desc_be.ogg
@@ -3961,6 +4035,7 @@ share/tuxpaint/stamps/household/electronics/mouse_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/mouse_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/mouse_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/mouse_desc_ru.ogg
+share/tuxpaint/stamps/household/electronics/phone.png
 share/tuxpaint/stamps/household/electronics/phone.svg
 share/tuxpaint/stamps/household/electronics/phone.txt
 share/tuxpaint/stamps/household/electronics/phone_desc_be.ogg
@@ -3971,6 +4046,7 @@ share/tuxpaint/stamps/household/electronics/phone_desc_fr.ogg
 share/tuxpaint/stamps/household/electronics/phone_desc_nn.ogg
 share/tuxpaint/stamps/household/electronics/phone_desc_ro.ogg
 share/tuxpaint/stamps/household/electronics/phone_desc_ru.ogg
+share/tuxpaint/stamps/household/fridge.png
 share/tuxpaint/stamps/household/fridge.svg
 share/tuxpaint/stamps/household/fridge.txt
 share/tuxpaint/stamps/household/fridge_desc_be.ogg
@@ -3993,6 +4069,7 @@ share/tuxpaint/stamps/household/garbagecan_desc_fr.ogg
 share/tuxpaint/stamps/household/garbagecan_desc_nn.ogg
 share/tuxpaint/stamps/household/garbagecan_desc_ro.ogg
 share/tuxpaint/stamps/household/garbagecan_desc_ru.ogg
+share/tuxpaint/stamps/household/globe.png
 share/tuxpaint/stamps/household/globe.svg
 share/tuxpaint/stamps/household/globe.txt
 share/tuxpaint/stamps/household/globe_desc_be.ogg
@@ -4040,6 +4117,7 @@ share/tuxpaint/stamps/household/key_desc_nn.ogg
 share/tuxpaint/stamps/household/key_desc_ro.ogg
 share/tuxpaint/stamps/household/key_desc_ru.ogg
 share/tuxpaint/stamps/household/lightbulb_desc_el.ogg
+share/tuxpaint/stamps/household/microwave.png
 share/tuxpaint/stamps/household/microwave.svg
 share/tuxpaint/stamps/household/microwave.txt
 share/tuxpaint/stamps/household/microwave_desc_be.ogg
@@ -4050,6 +4128,7 @@ share/tuxpaint/stamps/household/microwave_desc_fr.ogg
 share/tuxpaint/stamps/household/microwave_desc_nn.ogg
 share/tuxpaint/stamps/household/microwave_desc_ro.ogg
 share/tuxpaint/stamps/household/microwave_desc_ru.ogg
+share/tuxpaint/stamps/household/padlock_closed.png
 share/tuxpaint/stamps/household/padlock_closed.svg
 share/tuxpaint/stamps/household/padlock_closed.txt
 share/tuxpaint/stamps/household/padlock_closed_desc_be.ogg
@@ -4060,6 +4139,7 @@ share/tuxpaint/stamps/household/padlock_closed_desc_fr.ogg
 share/tuxpaint/stamps/household/padlock_closed_desc_nn.ogg
 share/tuxpaint/stamps/household/padlock_closed_desc_ro.ogg
 share/tuxpaint/stamps/household/padlock_closed_desc_ru.ogg
+share/tuxpaint/stamps/household/padlock_open.png
 share/tuxpaint/stamps/household/padlock_open.svg
 share/tuxpaint/stamps/household/padlock_open.txt
 share/tuxpaint/stamps/household/padlock_open_desc_be.ogg
@@ -4070,8 +4150,10 @@ share/tuxpaint/stamps/household/padlock_open_desc_fr.ogg
 share/tuxpaint/stamps/household/padlock_open_desc_nn.ogg
 share/tuxpaint/stamps/household/padlock_open_desc_ro.ogg
 share/tuxpaint/stamps/household/padlock_open_desc_ru.ogg
+share/tuxpaint/stamps/household/recyclingbox.png
 share/tuxpaint/stamps/household/recyclingbox.svg
 share/tuxpaint/stamps/household/recyclingbox.txt
+share/tuxpaint/stamps/household/recyclingbox2.png
 share/tuxpaint/stamps/household/recyclingbox2.svg
 share/tuxpaint/stamps/household/recyclingbox2.txt
 share/tuxpaint/stamps/household/recyclingbox2_desc_be.ogg
@@ -4101,6 +4183,7 @@ share/tuxpaint/stamps/household/rubberduck_desc_fr.ogg
 share/tuxpaint/stamps/household/rubberduck_desc_nn.ogg
 share/tuxpaint/stamps/household/rubberduck_desc_ro.ogg
 share/tuxpaint/stamps/household/rubberduck_desc_ru.ogg
+share/tuxpaint/stamps/household/tealight.png
 share/tuxpaint/stamps/household/tealight.svg
 share/tuxpaint/stamps/household/tealight.txt
 share/tuxpaint/stamps/household/tealight_desc_be.ogg
@@ -4135,6 +4218,7 @@ share/tuxpaint/stamps/household/tools/cementmixer_desc_ru.ogg
 share/tuxpaint/stamps/household/tools/hammer.ogg
 share/tuxpaint/stamps/household/tools/hammer.png
 share/tuxpaint/stamps/household/tools/hammer.txt
+share/tuxpaint/stamps/household/tools/hammer2.png
 share/tuxpaint/stamps/household/tools/hammer2.svg
 share/tuxpaint/stamps/household/tools/hammer2.txt
 share/tuxpaint/stamps/household/tools/hammer2_desc_be.ogg
@@ -4212,6 +4296,7 @@ share/tuxpaint/stamps/household/tools/saw_desc_fr.ogg
 share/tuxpaint/stamps/household/tools/saw_desc_nn.ogg
 share/tuxpaint/stamps/household/tools/saw_desc_ro.ogg
 share/tuxpaint/stamps/household/tools/saw_desc_ru.ogg
+share/tuxpaint/stamps/household/tools/screwdriver.png
 share/tuxpaint/stamps/household/tools/screwdriver.svg
 share/tuxpaint/stamps/household/tools/screwdriver.txt
 share/tuxpaint/stamps/household/tools/screwdriver_desc_be.ogg
@@ -4276,6 +4361,7 @@ share/tuxpaint/stamps/household/tools/wrench_plumbers_desc_fr.ogg
 share/tuxpaint/stamps/household/tools/wrench_plumbers_desc_nn.ogg
 share/tuxpaint/stamps/household/tools/wrench_plumbers_desc_ro.ogg
 share/tuxpaint/stamps/household/tools/wrench_plumbers_desc_ru.ogg
+share/tuxpaint/stamps/household/trash_can.png
 share/tuxpaint/stamps/household/trash_can.svg
 share/tuxpaint/stamps/household/trash_can.txt
 share/tuxpaint/stamps/household/trash_can_desc_be.ogg
@@ -4286,6 +4372,7 @@ share/tuxpaint/stamps/household/trash_can_desc_fr.ogg
 share/tuxpaint/stamps/household/trash_can_desc_nn.ogg
 share/tuxpaint/stamps/household/trash_can_desc_ro.ogg
 share/tuxpaint/stamps/household/trash_can_desc_ru.ogg
+share/tuxpaint/stamps/household/umbrella.png
 share/tuxpaint/stamps/household/umbrella.svg
 share/tuxpaint/stamps/household/umbrella.txt
 share/tuxpaint/stamps/household/umbrella_desc_be.ogg
@@ -4298,6 +4385,7 @@ share/tuxpaint/stamps/household/umbrella_desc_ro.ogg
 share/tuxpaint/stamps/household/umbrella_desc_ru.ogg
 share/tuxpaint/stamps/household/vacuum_cleaner.dat
 share/tuxpaint/stamps/household/vacuum_cleaner.ogg
+share/tuxpaint/stamps/household/vacuum_cleaner.png
 share/tuxpaint/stamps/household/vacuum_cleaner.svg
 share/tuxpaint/stamps/household/vacuum_cleaner.txt
 share/tuxpaint/stamps/household/vacuum_cleaner_desc_be.ogg
@@ -4331,6 +4419,7 @@ share/tuxpaint/stamps/medical/bandage_adhesive_desc_fr.ogg
 share/tuxpaint/stamps/medical/bandage_adhesive_desc_nn.ogg
 share/tuxpaint/stamps/medical/bandage_adhesive_desc_ro.ogg
 share/tuxpaint/stamps/medical/bandage_adhesive_desc_ru.ogg
+share/tuxpaint/stamps/medical/digitalthermometer.png
 share/tuxpaint/stamps/medical/digitalthermometer.svg
 share/tuxpaint/stamps/medical/digitalthermometer.txt
 share/tuxpaint/stamps/medical/digitalthermometer_desc_be.ogg
@@ -4378,6 +4467,7 @@ share/tuxpaint/stamps/medical/tooth.txt
 share/tuxpaint/stamps/medical/tooth_desc_nn.ogg
 share/tuxpaint/stamps/military/
 share/tuxpaint/stamps/military/ammunition/
+share/tuxpaint/stamps/military/ammunition/bullet.png
 share/tuxpaint/stamps/military/ammunition/bullet.svg
 share/tuxpaint/stamps/military/ammunition/bullet.txt
 share/tuxpaint/stamps/military/ammunition/bullet_desc_be.ogg
@@ -4416,6 +4506,7 @@ share/tuxpaint/stamps/military/fireman240a_desc_es.ogg
 share/tuxpaint/stamps/military/fireman240a_desc_fr.ogg
 share/tuxpaint/stamps/military/fireman240a_desc_ro.ogg
 share/tuxpaint/stamps/military/fireman240a_desc_ru.ogg
+share/tuxpaint/stamps/military/longsword.png
 share/tuxpaint/stamps/military/longsword.svg
 share/tuxpaint/stamps/military/longsword.txt
 share/tuxpaint/stamps/military/longsword_desc_be.ogg
@@ -4468,6 +4559,7 @@ share/tuxpaint/stamps/military/vehicles/infantry-stryker_desc_es.ogg
 share/tuxpaint/stamps/military/vehicles/infantry-stryker_desc_fr.ogg
 share/tuxpaint/stamps/military/vehicles/infantry-stryker_desc_ro.ogg
 share/tuxpaint/stamps/military/vehicles/infantry-stryker_desc_ru.ogg
+share/tuxpaint/stamps/military/vehicles/mustang.png
 share/tuxpaint/stamps/military/vehicles/mustang.svg
 share/tuxpaint/stamps/military/vehicles/mustang.txt
 share/tuxpaint/stamps/military/vehicles/mustang_desc_be.ogg
@@ -4529,6 +4621,7 @@ share/tuxpaint/stamps/people/
 share/tuxpaint/stamps/people/body_parts/
 share/tuxpaint/stamps/people/body_parts/eye.png
 share/tuxpaint/stamps/people/body_parts/eye.txt
+share/tuxpaint/stamps/people/body_parts/eye2_drawing.png
 share/tuxpaint/stamps/people/body_parts/eye2_drawing.svg
 share/tuxpaint/stamps/people/body_parts/eye2_drawing.txt
 share/tuxpaint/stamps/people/body_parts/eye2_drawing_desc_be.ogg
@@ -4539,6 +4632,7 @@ share/tuxpaint/stamps/people/body_parts/eye2_drawing_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/eye2_drawing_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/eye2_drawing_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/eye2_drawing_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/eye_blue_left.png
 share/tuxpaint/stamps/people/body_parts/eye_blue_left.svg
 share/tuxpaint/stamps/people/body_parts/eye_blue_left.txt
 share/tuxpaint/stamps/people/body_parts/eye_blue_left_desc_be.ogg
@@ -4549,6 +4643,7 @@ share/tuxpaint/stamps/people/body_parts/eye_blue_left_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/eye_blue_left_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/eye_blue_left_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/eye_blue_left_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/eye_brown_left.png
 share/tuxpaint/stamps/people/body_parts/eye_brown_left.svg
 share/tuxpaint/stamps/people/body_parts/eye_brown_left.txt
 share/tuxpaint/stamps/people/body_parts/eye_brown_left_desc_be.ogg
@@ -4560,6 +4655,7 @@ share/tuxpaint/stamps/people/body_parts/eye_brown_left_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/eye_brown_left_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/eye_brown_left_desc_ru.ogg
 share/tuxpaint/stamps/people/body_parts/eye_desc_nn.ogg
+share/tuxpaint/stamps/people/body_parts/eye_green_left.png
 share/tuxpaint/stamps/people/body_parts/eye_green_left.svg
 share/tuxpaint/stamps/people/body_parts/eye_green_left.txt
 share/tuxpaint/stamps/people/body_parts/eye_green_left_desc_be.ogg
@@ -4570,6 +4666,7 @@ share/tuxpaint/stamps/people/body_parts/eye_green_left_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/eye_green_left_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/eye_green_left_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/eye_green_left_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/eye_yellow.png
 share/tuxpaint/stamps/people/body_parts/eye_yellow.svg
 share/tuxpaint/stamps/people/body_parts/eye_yellow.txt
 share/tuxpaint/stamps/people/body_parts/eye_yellow_desc_be.ogg
@@ -4580,6 +4677,7 @@ share/tuxpaint/stamps/people/body_parts/eye_yellow_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/eye_yellow_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/eye_yellow_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/eye_yellow_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/girlface.png
 share/tuxpaint/stamps/people/body_parts/girlface.svg
 share/tuxpaint/stamps/people/body_parts/girlface.txt
 share/tuxpaint/stamps/people/body_parts/girlface_desc_be.ogg
@@ -4589,8 +4687,10 @@ share/tuxpaint/stamps/people/body_parts/girlface_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/girlface_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/girlface_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/girlface_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/hair_manga.png
 share/tuxpaint/stamps/people/body_parts/hair_manga.svg
 share/tuxpaint/stamps/people/body_parts/hair_manga.txt
+share/tuxpaint/stamps/people/body_parts/hair_manga_2.png
 share/tuxpaint/stamps/people/body_parts/hair_manga_2.svg
 share/tuxpaint/stamps/people/body_parts/hair_manga_2.txt
 share/tuxpaint/stamps/people/body_parts/hair_manga_2_desc_be.ogg
@@ -4608,6 +4708,7 @@ share/tuxpaint/stamps/people/body_parts/hair_manga_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/hair_manga_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/hair_manga_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/hair_manga_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/head_female.png
 share/tuxpaint/stamps/people/body_parts/head_female.svg
 share/tuxpaint/stamps/people/body_parts/head_female.txt
 share/tuxpaint/stamps/people/body_parts/head_female_desc_be.ogg
@@ -4618,6 +4719,7 @@ share/tuxpaint/stamps/people/body_parts/head_female_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/head_female_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/head_female_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/head_female_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/manga_eye_left.png
 share/tuxpaint/stamps/people/body_parts/manga_eye_left.svg
 share/tuxpaint/stamps/people/body_parts/manga_eye_left.txt
 share/tuxpaint/stamps/people/body_parts/manga_eye_left_desc_be.ogg
@@ -4628,6 +4730,7 @@ share/tuxpaint/stamps/people/body_parts/manga_eye_left_desc_fr.ogg
 share/tuxpaint/stamps/people/body_parts/manga_eye_left_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/manga_eye_left_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/manga_eye_left_desc_ru.ogg
+share/tuxpaint/stamps/people/body_parts/manga_eye_right.png
 share/tuxpaint/stamps/people/body_parts/manga_eye_right.svg
 share/tuxpaint/stamps/people/body_parts/manga_eye_right.txt
 share/tuxpaint/stamps/people/body_parts/manga_eye_right_desc_bg.ogg
@@ -4638,6 +4741,7 @@ share/tuxpaint/stamps/people/body_parts/manga_eye_right_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/manga_eye_right_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/manga_eye_right_desc_ru.ogg
 share/tuxpaint/stamps/people/body_parts/moustache.dat
+share/tuxpaint/stamps/people/body_parts/moustache.png
 share/tuxpaint/stamps/people/body_parts/moustache.svg
 share/tuxpaint/stamps/people/body_parts/moustache.txt
 share/tuxpaint/stamps/people/body_parts/moustache_desc_be.ogg
@@ -4649,9 +4753,11 @@ share/tuxpaint/stamps/people/body_parts/moustache_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/moustache_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/moustache_desc_ru.ogg
 share/tuxpaint/stamps/people/body_parts/wig.dat
+share/tuxpaint/stamps/people/body_parts/wig.png
 share/tuxpaint/stamps/people/body_parts/wig.svg
 share/tuxpaint/stamps/people/body_parts/wig.txt
 share/tuxpaint/stamps/people/body_parts/wig2.dat
+share/tuxpaint/stamps/people/body_parts/wig2.png
 share/tuxpaint/stamps/people/body_parts/wig2.svg
 share/tuxpaint/stamps/people/body_parts/wig2.txt
 share/tuxpaint/stamps/people/body_parts/wig2_desc_be.ogg
@@ -4663,6 +4769,7 @@ share/tuxpaint/stamps/people/body_parts/wig2_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/wig2_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/wig2_desc_ru.ogg
 share/tuxpaint/stamps/people/body_parts/wig3.dat
+share/tuxpaint/stamps/people/body_parts/wig3.png
 share/tuxpaint/stamps/people/body_parts/wig3.svg
 share/tuxpaint/stamps/people/body_parts/wig3.txt
 share/tuxpaint/stamps/people/body_parts/wig3_desc_be.ogg
@@ -4682,6 +4789,7 @@ share/tuxpaint/stamps/people/body_parts/wig_desc_nn.ogg
 share/tuxpaint/stamps/people/body_parts/wig_desc_ro.ogg
 share/tuxpaint/stamps/people/body_parts/wig_desc_ru.ogg
 share/tuxpaint/stamps/people/cartoon/
+share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair.png
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair.svg
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair.txt
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair_desc_be.ogg
@@ -4692,6 +4800,7 @@ share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair_desc_fr.ogg
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/girl_in_wheelchair_desc_ru.ogg
+share/tuxpaint/stamps/people/cartoon/man_in_suit.png
 share/tuxpaint/stamps/people/cartoon/man_in_suit.svg
 share/tuxpaint/stamps/people/cartoon/man_in_suit.txt
 share/tuxpaint/stamps/people/cartoon/man_in_suit_desc_be.ogg
@@ -4704,6 +4813,7 @@ share/tuxpaint/stamps/people/cartoon/man_in_suit_desc_ru.ogg
 share/tuxpaint/stamps/people/cartoon/mermaid.png
 share/tuxpaint/stamps/people/cartoon/mermaid.txt
 share/tuxpaint/stamps/people/cartoon/mermaid_desc_nn.ogg
+share/tuxpaint/stamps/people/cartoon/scarecrow.png
 share/tuxpaint/stamps/people/cartoon/scarecrow.svg
 share/tuxpaint/stamps/people/cartoon/scarecrow.txt
 share/tuxpaint/stamps/people/cartoon/scarecrow_desc_be.ogg
@@ -4718,6 +4828,7 @@ share/tuxpaint/stamps/people/cartoon/scarecrow_desc_ru.ogg
 share/tuxpaint/stamps/people/cartoon/snowman.png
 share/tuxpaint/stamps/people/cartoon/snowman.txt
 share/tuxpaint/stamps/people/cartoon/snowman_desc_nn.ogg
+share/tuxpaint/stamps/people/cartoon/woman_chemist.png
 share/tuxpaint/stamps/people/cartoon/woman_chemist.svg
 share/tuxpaint/stamps/people/cartoon/woman_chemist.txt
 share/tuxpaint/stamps/people/cartoon/woman_chemist_desc_be.ogg
@@ -4729,6 +4840,7 @@ share/tuxpaint/stamps/people/cartoon/woman_chemist_desc_fr.ogg
 share/tuxpaint/stamps/people/cartoon/woman_chemist_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/woman_chemist_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/woman_chemist_desc_ru.ogg
+share/tuxpaint/stamps/people/cartoon/woman_dancing.png
 share/tuxpaint/stamps/people/cartoon/woman_dancing.svg
 share/tuxpaint/stamps/people/cartoon/woman_dancing.txt
 share/tuxpaint/stamps/people/cartoon/woman_dancing_desc_be.ogg
@@ -4740,6 +4852,7 @@ share/tuxpaint/stamps/people/cartoon/woman_dancing_desc_fr.ogg
 share/tuxpaint/stamps/people/cartoon/woman_dancing_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/woman_dancing_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/woman_dancing_desc_ru.ogg
+share/tuxpaint/stamps/people/cartoon/woman_doctor.png
 share/tuxpaint/stamps/people/cartoon/woman_doctor.svg
 share/tuxpaint/stamps/people/cartoon/woman_doctor.txt
 share/tuxpaint/stamps/people/cartoon/woman_doctor_desc_be.ogg
@@ -4751,6 +4864,7 @@ share/tuxpaint/stamps/people/cartoon/woman_doctor_desc_fr.ogg
 share/tuxpaint/stamps/people/cartoon/woman_doctor_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/woman_doctor_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/woman_doctor_desc_ru.ogg
+share/tuxpaint/stamps/people/cartoon/woman_nurse.png
 share/tuxpaint/stamps/people/cartoon/woman_nurse.svg
 share/tuxpaint/stamps/people/cartoon/woman_nurse.txt
 share/tuxpaint/stamps/people/cartoon/woman_nurse_desc_be.ogg
@@ -4763,6 +4877,7 @@ share/tuxpaint/stamps/people/cartoon/woman_nurse_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/woman_nurse_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/woman_nurse_desc_ru.ogg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer2_desc_el.ogg
+share/tuxpaint/stamps/people/cartoon/woman_police_officer_1.png
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1.svg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1.txt
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1_desc_be.ogg
@@ -4773,6 +4888,7 @@ share/tuxpaint/stamps/people/cartoon/woman_police_officer_1_desc_fr.ogg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1_desc_nn.ogg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1_desc_ro.ogg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_1_desc_ru.ogg
+share/tuxpaint/stamps/people/cartoon/woman_police_officer_2.png
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_2.svg
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_2.txt
 share/tuxpaint/stamps/people/cartoon/woman_police_officer_2_desc_be.ogg
@@ -5128,6 +5244,7 @@ share/tuxpaint/stamps/plants/thyme_desc_es.ogg
 share/tuxpaint/stamps/plants/thyme_desc_fr.ogg
 share/tuxpaint/stamps/plants/thyme_desc_ro.ogg
 share/tuxpaint/stamps/plants/thyme_desc_ru.ogg
+share/tuxpaint/stamps/plants/toadstool.png
 share/tuxpaint/stamps/plants/toadstool.svg
 share/tuxpaint/stamps/plants/toadstool.txt
 share/tuxpaint/stamps/plants/toadstool_desc_be.ogg
@@ -5212,6 +5329,7 @@ share/tuxpaint/stamps/plants/trees/tree336_desc_ro.ogg
 share/tuxpaint/stamps/plants/trees/tree336_desc_ru.ogg
 share/tuxpaint/stamps/seasonal/
 share/tuxpaint/stamps/seasonal/balloon.dat
+share/tuxpaint/stamps/seasonal/balloon.png
 share/tuxpaint/stamps/seasonal/balloon.svg
 share/tuxpaint/stamps/seasonal/balloon.txt
 share/tuxpaint/stamps/seasonal/balloon_desc_be.ogg
@@ -5341,6 +5459,7 @@ share/tuxpaint/stamps/seasonal/christmas/candy_cane_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/christmas/candy_cane_desc_ru.ogg
 share/tuxpaint/stamps/seasonal/christmas/christmas_pudding_desc_el.ogg
 share/tuxpaint/stamps/seasonal/christmas/christmas_tree_desc_el.ogg
+share/tuxpaint/stamps/seasonal/christmas/elfhat.png
 share/tuxpaint/stamps/seasonal/christmas/elfhat.svg
 share/tuxpaint/stamps/seasonal/christmas/elfhat.txt
 share/tuxpaint/stamps/seasonal/christmas/elfhat_desc_be.ogg
@@ -5399,9 +5518,11 @@ share/tuxpaint/stamps/seasonal/christmas/lamp_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/christmas/lamp_desc_ru.ogg
 share/tuxpaint/stamps/seasonal/christmas/mince_pie_desc_el.ogg
 share/tuxpaint/stamps/seasonal/christmas/present.dat
+share/tuxpaint/stamps/seasonal/christmas/present.png
 share/tuxpaint/stamps/seasonal/christmas/present.svg
 share/tuxpaint/stamps/seasonal/christmas/present.txt
 share/tuxpaint/stamps/seasonal/christmas/present_desc_nn.ogg
+share/tuxpaint/stamps/seasonal/christmas/rudolf_reindeer.png
 share/tuxpaint/stamps/seasonal/christmas/rudolf_reindeer.svg
 share/tuxpaint/stamps/seasonal/christmas/rudolf_reindeer.txt
 share/tuxpaint/stamps/seasonal/christmas/rudolf_reindeer_desc_be.ogg
@@ -5415,6 +5536,7 @@ share/tuxpaint/stamps/seasonal/christmas/rudolf_reindeer_desc_ru.ogg
 share/tuxpaint/stamps/seasonal/christmas/santahat.ogg
 share/tuxpaint/stamps/seasonal/christmas/santahat.png
 share/tuxpaint/stamps/seasonal/christmas/santahat.txt
+share/tuxpaint/stamps/seasonal/christmas/santahat2.png
 share/tuxpaint/stamps/seasonal/christmas/santahat2.svg
 share/tuxpaint/stamps/seasonal/christmas/santahat2.txt
 share/tuxpaint/stamps/seasonal/christmas/santahat2_desc_be.ogg
@@ -5493,6 +5615,7 @@ share/tuxpaint/stamps/seasonal/christmas/xmaswreath_desc_fr.ogg
 share/tuxpaint/stamps/seasonal/christmas/xmaswreath_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/christmas/xmaswreath_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/christmas/xmaswreath_desc_ru.ogg
+share/tuxpaint/stamps/seasonal/clover.png
 share/tuxpaint/stamps/seasonal/clover.svg
 share/tuxpaint/stamps/seasonal/clover.txt
 share/tuxpaint/stamps/seasonal/clover_desc_be.ogg
@@ -5914,6 +6037,7 @@ share/tuxpaint/stamps/seasonal/hanukkah/menorah_desc_fr.ogg
 share/tuxpaint/stamps/seasonal/hanukkah/menorah_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/hanukkah/menorah_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/hanukkah/menorah_desc_ru.ogg
+share/tuxpaint/stamps/seasonal/leafrake.png
 share/tuxpaint/stamps/seasonal/leafrake.svg
 share/tuxpaint/stamps/seasonal/leafrake.txt
 share/tuxpaint/stamps/seasonal/leafrake_desc_be.ogg
@@ -5997,6 +6121,7 @@ share/tuxpaint/stamps/seasonal/newyears/party-horn-out_desc_fr.ogg
 share/tuxpaint/stamps/seasonal/newyears/party-horn-out_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/newyears/party-horn-out_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/newyears/party-horn-out_desc_ru.ogg
+share/tuxpaint/stamps/seasonal/shamrock.png
 share/tuxpaint/stamps/seasonal/shamrock.svg
 share/tuxpaint/stamps/seasonal/shamrock.txt
 share/tuxpaint/stamps/seasonal/shamrock_desc_be.ogg
@@ -6008,6 +6133,7 @@ share/tuxpaint/stamps/seasonal/shamrock_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/shamrock_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/shamrock_desc_ru.ogg
 share/tuxpaint/stamps/seasonal/winter/
+share/tuxpaint/stamps/seasonal/winter/sledge.png
 share/tuxpaint/stamps/seasonal/winter/sledge.svg
 share/tuxpaint/stamps/seasonal/winter/sledge.txt
 share/tuxpaint/stamps/seasonal/winter/sledge_desc_be.ogg
@@ -6018,6 +6144,7 @@ share/tuxpaint/stamps/seasonal/winter/sledge_desc_fr.ogg
 share/tuxpaint/stamps/seasonal/winter/sledge_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/winter/sledge_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/winter/sledge_desc_ru.ogg
+share/tuxpaint/stamps/seasonal/winter/snowflake.png
 share/tuxpaint/stamps/seasonal/winter/snowflake.svg
 share/tuxpaint/stamps/seasonal/winter/snowflake.txt
 share/tuxpaint/stamps/seasonal/winter/snowflake_desc_be.ogg
@@ -6028,8 +6155,10 @@ share/tuxpaint/stamps/seasonal/winter/snowflake_desc_fr.ogg
 share/tuxpaint/stamps/seasonal/winter/snowflake_desc_nn.ogg
 share/tuxpaint/stamps/seasonal/winter/snowflake_desc_ro.ogg
 share/tuxpaint/stamps/seasonal/winter/snowflake_desc_ru.ogg
+share/tuxpaint/stamps/seasonal/winter/snowman.png
 share/tuxpaint/stamps/seasonal/winter/snowman.svg
 share/tuxpaint/stamps/seasonal/winter/snowman.txt
+share/tuxpaint/stamps/seasonal/winter/snowman2.png
 share/tuxpaint/stamps/seasonal/winter/snowman2.svg
 share/tuxpaint/stamps/seasonal/winter/snowman2.txt
 share/tuxpaint/stamps/seasonal/winter/snowman2_desc_be.ogg
@@ -6213,21 +6342,27 @@ share/tuxpaint/stamps/space/planets/9_pluto_desc_fr.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_nn.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_ro.ogg
 share/tuxpaint/stamps/space/planets/9_pluto_desc_ru.ogg
+share/tuxpaint/stamps/space/rocket1.png
 share/tuxpaint/stamps/space/rocket1.svg
 share/tuxpaint/stamps/space/rocket1.txt
 share/tuxpaint/stamps/space/rocket1_desc_nn.ogg
+share/tuxpaint/stamps/space/rocket2.png
 share/tuxpaint/stamps/space/rocket2.svg
 share/tuxpaint/stamps/space/rocket2.txt
 share/tuxpaint/stamps/space/rocket2_desc_nn.ogg
+share/tuxpaint/stamps/space/rocket3.png
 share/tuxpaint/stamps/space/rocket3.svg
 share/tuxpaint/stamps/space/rocket3.txt
 share/tuxpaint/stamps/space/rocket3_desc_nn.ogg
+share/tuxpaint/stamps/space/rocket4.png
 share/tuxpaint/stamps/space/rocket4.svg
 share/tuxpaint/stamps/space/rocket4.txt
 share/tuxpaint/stamps/space/rocket4_desc_nn.ogg
+share/tuxpaint/stamps/space/rocket5.png
 share/tuxpaint/stamps/space/rocket5.svg
 share/tuxpaint/stamps/space/rocket5.txt
 share/tuxpaint/stamps/space/rocket5_desc_nn.ogg
+share/tuxpaint/stamps/space/satellite.png
 share/tuxpaint/stamps/space/satellite.svg
 share/tuxpaint/stamps/space/satellite.txt
 share/tuxpaint/stamps/space/satellite_desc_nn.ogg
@@ -6243,6 +6378,7 @@ share/tuxpaint/stamps/space/spacewalk_desc_fr.ogg
 share/tuxpaint/stamps/space/spacewalk_desc_nn.ogg
 share/tuxpaint/stamps/space/spacewalk_desc_ro.ogg
 share/tuxpaint/stamps/space/spacewalk_desc_ru.ogg
+share/tuxpaint/stamps/space/toyrocket.png
 share/tuxpaint/stamps/space/toyrocket.svg
 share/tuxpaint/stamps/space/toyrocket.txt
 share/tuxpaint/stamps/space/toyrocket_desc_be.ogg
@@ -6367,6 +6503,7 @@ share/tuxpaint/stamps/sports/soccer_desc_fr.ogg
 share/tuxpaint/stamps/sports/soccer_desc_nn.ogg
 share/tuxpaint/stamps/sports/soccer_desc_ro.ogg
 share/tuxpaint/stamps/sports/soccer_desc_ru.ogg
+share/tuxpaint/stamps/sports/stopwatch.png
 share/tuxpaint/stamps/sports/stopwatch.svg
 share/tuxpaint/stamps/sports/stopwatch.txt
 share/tuxpaint/stamps/sports/stopwatch_desc_be.ogg
@@ -6777,6 +6914,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/a_filled_en_GB.ogg
@@ -6789,6 +6927,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/b_filled_en_GB.ogg
@@ -6801,6 +6940,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/c_filled_en_GB.ogg
@@ -6813,6 +6953,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/d_filled_en_GB.ogg
@@ -6825,6 +6966,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/e_filled_en_GB.ogg
@@ -6837,6 +6979,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/f_filled_en_GB.ogg
@@ -6849,6 +6992,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/g_filled_en_GB.ogg
@@ -6861,6 +7005,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/h_filled_en_GB.ogg
@@ -6873,6 +7018,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/i_filled_en_GB.ogg
@@ -6885,6 +7031,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/j_filled_en_GB.ogg
@@ -6897,6 +7044,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/k_filled_en_GB.ogg
@@ -6909,6 +7057,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/l_filled_en_GB.ogg
@@ -6921,6 +7070,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/m_filled_en_GB.ogg
@@ -6933,6 +7083,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/n_filled_en_GB.ogg
@@ -6945,6 +7096,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/o_filled_en_GB.ogg
@@ -6957,6 +7109,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/p_filled_en_GB.ogg
@@ -6968,6 +7121,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/q_filled_en_GB.ogg
@@ -6980,6 +7134,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/r_filled_en_GB.ogg
@@ -6992,6 +7147,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/s_filled_en_GB.ogg
@@ -7004,6 +7160,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/t_filled_en_GB.ogg
@@ -7016,6 +7173,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/u_filled_en_GB.ogg
@@ -7028,6 +7186,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/v_filled_en_GB.ogg
@@ -7039,6 +7198,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/w_filled_en_GB.ogg
@@ -7050,6 +7210,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/x_filled_en_GB.ogg
@@ -7062,6 +7223,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/y_filled_en_GB.ogg
@@ -7073,6 +7235,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/lowercase/z_filled_en_GB.ogg
@@ -7086,6 +7249,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/A_filled_en_GB.ogg
@@ -7098,6 +7262,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/B_filled_en_GB.ogg
@@ -7110,6 +7275,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/C_filled_en_GB.ogg
@@ -7122,6 +7288,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/D_filled_en_GB.ogg
@@ -7134,6 +7301,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/E_filled_en_GB.ogg
@@ -7146,6 +7314,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/F_filled_en_GB.ogg
@@ -7158,6 +7327,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/G_filled_en_GB.ogg
@@ -7170,6 +7340,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/H_filled_en_GB.ogg
@@ -7182,6 +7353,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/I_filled_en_GB.ogg
@@ -7194,6 +7366,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/J_filled_en_GB.ogg
@@ -7206,6 +7379,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/K_filled_en_GB.ogg
@@ -7218,6 +7392,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/L_filled_en_GB.ogg
@@ -7230,6 +7405,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/M_filled_en_GB.ogg
@@ -7242,6 +7418,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/N_filled_en_GB.ogg
@@ -7254,6 +7431,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/O_filled_en_GB.ogg
@@ -7266,6 +7444,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/P_filled_en_GB.ogg
@@ -7277,6 +7456,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Q_filled_en_GB.ogg
@@ -7289,6 +7469,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/R_filled_en_GB.ogg
@@ -7301,6 +7482,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/S_filled_en_GB.ogg
@@ -7313,6 +7495,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/T_filled_en_GB.ogg
@@ -7325,6 +7508,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/U_filled_en_GB.ogg
@@ -7337,6 +7521,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/V_filled_en_GB.ogg
@@ -7348,6 +7533,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/W_filled_en_GB.ogg
@@ -7359,6 +7545,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/X_filled_en_GB.ogg
@@ -7371,6 +7558,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_e
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Y_filled_en_GB.ogg
@@ -7382,6 +7570,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_c
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/filled/uppercase/Z_filled_en_GB.ogg
@@ -7396,6 +7585,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/a_outline_en_GB.ogg
@@ -7408,6 +7598,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/b_outline_en_GB.ogg
@@ -7420,6 +7611,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/c_outline_en_GB.ogg
@@ -7432,6 +7624,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/d_outline_en_GB.ogg
@@ -7444,6 +7637,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/e_outline_en_GB.ogg
@@ -7456,6 +7650,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/f_outline_en_GB.ogg
@@ -7468,6 +7663,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/g_outline_en_GB.ogg
@@ -7480,6 +7676,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/h_outline_en_GB.ogg
@@ -7492,6 +7689,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/i_outline_en_GB.ogg
@@ -7504,6 +7702,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/j_outline_en_GB.ogg
@@ -7516,6 +7715,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/k_outline_en_GB.ogg
@@ -7528,6 +7728,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/l_outline_en_GB.ogg
@@ -7540,6 +7741,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/m_outline_en_GB.ogg
@@ -7552,6 +7754,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/n_outline_en_GB.ogg
@@ -7564,6 +7767,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/o_outline_en_GB.ogg
@@ -7576,6 +7780,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/p_outline_en_GB.ogg
@@ -7587,6 +7792,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/q_outline_en_GB.ogg
@@ -7599,6 +7805,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/r_outline_en_GB.ogg
@@ -7611,6 +7818,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/s_outline_en_GB.ogg
@@ -7623,6 +7831,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/t_outline_en_GB.ogg
@@ -7635,6 +7844,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/u_outline_en_GB.ogg
@@ -7647,6 +7857,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/v_outline_en_GB.ogg
@@ -7658,6 +7869,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/w_outline_en_GB.ogg
@@ -7669,6 +7881,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/x_outline_en_GB.ogg
@@ -7681,6 +7894,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/y_outline_en_GB.ogg
@@ -7692,6 +7906,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/lowercase/z_outline_en_GB.ogg
@@ -7705,6 +7920,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/A_outline_en_GB.ogg
@@ -7717,6 +7933,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/B_outline_en_GB.ogg
@@ -7729,6 +7946,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/C_outline_en_GB.ogg
@@ -7741,6 +7959,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/D_outline_en_GB.ogg
@@ -7753,6 +7972,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/E_outline_en_GB.ogg
@@ -7765,6 +7985,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/F_outline_en_GB.ogg
@@ -7777,6 +7998,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/G_outline_en_GB.ogg
@@ -7789,6 +8011,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/H_outline_en_GB.ogg
@@ -7801,6 +8024,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/I_outline_en_GB.ogg
@@ -7813,6 +8037,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/J_outline_en_GB.ogg
@@ -7825,6 +8050,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/K_outline_en_GB.ogg
@@ -7837,6 +8063,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/L_outline_en_GB.ogg
@@ -7849,6 +8076,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/M_outline_en_GB.ogg
@@ -7861,6 +8089,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/N_outline_en_GB.ogg
@@ -7873,6 +8102,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/O_outline_en_GB.ogg
@@ -7885,6 +8115,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/P_outline_en_GB.ogg
@@ -7896,6 +8127,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Q_outline_en_GB.ogg
@@ -7908,6 +8140,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/R_outline_en_GB.ogg
@@ -7920,6 +8153,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/S_outline_en_GB.ogg
@@ -7932,6 +8166,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/T_outline_en_GB.ogg
@@ -7944,6 +8179,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/U_outline_en_GB.ogg
@@ -7956,6 +8192,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/V_outline_en_GB.ogg
@@ -7967,6 +8204,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/W_outline_en_GB.ogg
@@ -7978,6 +8216,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/X_outline_en_GB.ogg
@@ -7990,6 +8229,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_fr.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_lt.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Y_outline_en_GB.ogg
@@ -8001,6 +8241,7 @@ share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_des
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_el.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_es.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_fr.ogg
+share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_nn.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_ro.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_desc_ru.ogg
 share/tuxpaint/stamps/symbols/alphabets/english/outlined/uppercase/Z_outline_en_GB.ogg
@@ -8325,6 +8566,7 @@ share/tuxpaint/stamps/symbols/chess/w_6_pawn_desc_es.ogg
 share/tuxpaint/stamps/symbols/chess/w_6_pawn_desc_fr.ogg
 share/tuxpaint/stamps/symbols/chess/w_6_pawn_desc_ro.ogg
 share/tuxpaint/stamps/symbols/chess/w_6_pawn_desc_ru.ogg
+share/tuxpaint/stamps/symbols/clock.png
 share/tuxpaint/stamps/symbols/clock.svg
 share/tuxpaint/stamps/symbols/clock.txt
 share/tuxpaint/stamps/symbols/clock_desc_be.ogg
@@ -9120,6 +9362,7 @@ share/tuxpaint/stamps/symbols/music/clef0_treble_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/clef0_treble_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/clef0_treble_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/clef0_treble_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/clef0_treble_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/clef0_treble_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/clef0_treble_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass.dat
@@ -9130,6 +9373,7 @@ share/tuxpaint/stamps/symbols/music/clef1_bass_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/clef1_bass_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/clef1_bass_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/key_flat.dat
@@ -9141,6 +9385,7 @@ share/tuxpaint/stamps/symbols/music/key_flat_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/key_flat_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/key_flat_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/key_flat_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/key_flat_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/key_flat_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/key_flat_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp.dat
@@ -9151,6 +9396,7 @@ share/tuxpaint/stamps/symbols/music/key_sharp_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/key_sharp_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/key_sharp_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a.dat
@@ -9162,6 +9408,7 @@ share/tuxpaint/stamps/symbols/music/note_012_a_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_012_a_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_012_a_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b.dat
@@ -9172,6 +9419,7 @@ share/tuxpaint/stamps/symbols/music/note_012_b_desc_bg.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_012_b_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_012_b_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a.dat
@@ -9183,6 +9431,7 @@ share/tuxpaint/stamps/symbols/music/note_025_a_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_025_a_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_025_a_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b.dat
@@ -9193,6 +9442,7 @@ share/tuxpaint/stamps/symbols/music/note_025_b_desc_bg.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_025_b_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_025_b_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a.dat
@@ -9204,6 +9454,7 @@ share/tuxpaint/stamps/symbols/music/note_050_a_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_050_a_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_050_a_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b.dat
@@ -9214,6 +9465,7 @@ share/tuxpaint/stamps/symbols/music/note_050_b_desc_bg.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_050_b_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_050_b_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/note_100.dat
@@ -9224,6 +9476,7 @@ share/tuxpaint/stamps/symbols/music/note_100_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/note_100_desc_el.ogg
 share/tuxpaint/stamps/symbols/music/note_100_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/note_100_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/note_100_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/note_100_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/note_100_desc_ru.ogg
 share/tuxpaint/stamps/symbols/music/rest_025.dat
@@ -9234,6 +9487,7 @@ share/tuxpaint/stamps/symbols/music/rest_025_desc_bg.ogg
 share/tuxpaint/stamps/symbols/music/rest_025_desc_ca.ogg
 share/tuxpaint/stamps/symbols/music/rest_025_desc_es.ogg
 share/tuxpaint/stamps/symbols/music/rest_025_desc_fr.ogg
+share/tuxpaint/stamps/symbols/music/rest_025_desc_nn.ogg
 share/tuxpaint/stamps/symbols/music/rest_025_desc_ro.ogg
 share/tuxpaint/stamps/symbols/music/rest_025_desc_ru.ogg
 share/tuxpaint/stamps/symbols/recycle.dat
@@ -9255,9 +9509,11 @@ share/tuxpaint/stamps/symbols/shapes/hand_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/hand_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/hand_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/hand_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/hand_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/hand_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/hand_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/heart.dat
+share/tuxpaint/stamps/symbols/shapes/heart.png
 share/tuxpaint/stamps/symbols/shapes/heart.svg
 share/tuxpaint/stamps/symbols/shapes/heart.txt
 share/tuxpaint/stamps/symbols/shapes/heart_desc_be.ogg
@@ -9266,6 +9522,7 @@ share/tuxpaint/stamps/symbols/shapes/heart_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/heart_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/heart_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/heart_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/heart_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/heart_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/heart_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint.dat
@@ -9277,6 +9534,7 @@ share/tuxpaint/stamps/symbols/shapes/pawprint_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/pawprint_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/pawprint_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon.dat
@@ -9289,6 +9547,7 @@ share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/scream_balloon_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon.dat
@@ -9301,6 +9560,7 @@ share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/speech_balloon_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/star.dat
@@ -9312,6 +9572,7 @@ share/tuxpaint/stamps/symbols/shapes/star_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/star_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/star_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/star_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/star_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/star_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/star_desc_ru.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon.dat
@@ -9324,6 +9585,7 @@ share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_ca.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_el.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_es.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_fr.ogg
+share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_nn.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_ro.ogg
 share/tuxpaint/stamps/symbols/shapes/thought_balloon_desc_ru.ogg
 share/tuxpaint/stamps/town/
@@ -9701,6 +9963,7 @@ share/tuxpaint/stamps/town/houses/cartoon/jailhouse_desc_fr.ogg
 share/tuxpaint/stamps/town/houses/cartoon/jailhouse_desc_nn.ogg
 share/tuxpaint/stamps/town/houses/cartoon/jailhouse_desc_ro.ogg
 share/tuxpaint/stamps/town/houses/cartoon/jailhouse_desc_ru.ogg
+share/tuxpaint/stamps/town/houses/cartoon/lighthouse.png
 share/tuxpaint/stamps/town/houses/cartoon/lighthouse.svg
 share/tuxpaint/stamps/town/houses/cartoon/lighthouse.txt
 share/tuxpaint/stamps/town/houses/cartoon/lighthouse_desc_be.ogg
@@ -9940,6 +10203,7 @@ share/tuxpaint/stamps/town/monuments/
 share/tuxpaint/stamps/town/monuments/cartoon/
 share/tuxpaint/stamps/town/monuments/cartoon/eiffel_tower.png
 share/tuxpaint/stamps/town/monuments/cartoon/eiffel_tower.txt
+share/tuxpaint/stamps/town/monuments/cartoon/eiffel_tower_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard.png
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard.svg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard.txt
@@ -9950,6 +10214,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/graveyard_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones.png
@@ -9962,6 +10227,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/magic_stones_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk.png
@@ -9974,6 +10240,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/obelisk_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid.png
@@ -9986,6 +10253,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/pyramid_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue.png
@@ -9998,6 +10266,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/statue_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone.png
@@ -10009,6 +10278,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_ca.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_in_the_stone_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/sword_stone_desc_el.ogg
@@ -10022,6 +10292,7 @@ share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_el.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_fr.ogg
+share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_nn.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_ro.ogg
 share/tuxpaint/stamps/town/monuments/cartoon/totem_desc_ru.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-outline.dat
@@ -10041,7 +10312,7 @@ share/tuxpaint/stamps/town/monuments/inukshuk-photo.txt
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_be.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_bg.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_ca.ogg
-share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_da.ogg.ogg
+share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_da.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_es.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_fr.ogg
 share/tuxpaint/stamps/town/monuments/inukshuk-photo_desc_ro.ogg
@@ -10059,6 +10330,7 @@ share/tuxpaint/stamps/town/roadsigns/arrow_desc_fr.ogg
 share/tuxpaint/stamps/town/roadsigns/arrow_desc_nn.ogg
 share/tuxpaint/stamps/town/roadsigns/arrow_desc_ro.ogg
 share/tuxpaint/stamps/town/roadsigns/arrow_desc_ru.ogg
+share/tuxpaint/stamps/town/roadsigns/blankroadsign.png
 share/tuxpaint/stamps/town/roadsigns/blankroadsign.svg
 share/tuxpaint/stamps/town/roadsigns/blankroadsign.txt
 share/tuxpaint/stamps/town/roadsigns/blankroadsign_desc_be.ogg
@@ -10373,6 +10645,7 @@ share/tuxpaint/stamps/vehicles/auto/sedan_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/auto/sedan_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/auto/sedan_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/auto/sedan_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/auto/sportscar.png
 share/tuxpaint/stamps/vehicles/auto/sportscar.svg
 share/tuxpaint/stamps/vehicles/auto/sportscar.txt
 share/tuxpaint/stamps/vehicles/auto/sportscar2.dat
@@ -10387,6 +10660,7 @@ share/tuxpaint/stamps/vehicles/auto/sportscar2_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/auto/sportscar2_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/auto/sportscar2_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/auto/sportscar2_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/auto/sportscar3.png
 share/tuxpaint/stamps/vehicles/auto/sportscar3.svg
 share/tuxpaint/stamps/vehicles/auto/sportscar3.txt
 share/tuxpaint/stamps/vehicles/auto/sportscar3_desc_be.ogg
@@ -10421,6 +10695,7 @@ share/tuxpaint/stamps/vehicles/auto/truck_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/auto/truck_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/auto/truck_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/auto/truck_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/bikewheel.png
 share/tuxpaint/stamps/vehicles/bikewheel.svg
 share/tuxpaint/stamps/vehicles/bikewheel.txt
 share/tuxpaint/stamps/vehicles/bikewheel_desc_be.ogg
@@ -10432,6 +10707,7 @@ share/tuxpaint/stamps/vehicles/bikewheel_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/bikewheel_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/bikewheel_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/bikewheel_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/blue_truck.png
 share/tuxpaint/stamps/vehicles/blue_truck.svg
 share/tuxpaint/stamps/vehicles/blue_truck.txt
 share/tuxpaint/stamps/vehicles/blue_truck_desc_be.ogg
@@ -10445,6 +10721,7 @@ share/tuxpaint/stamps/vehicles/blue_truck_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/blue_truck_desc_ru.ogg
 share/tuxpaint/stamps/vehicles/construction/
 share/tuxpaint/stamps/vehicles/construction/cartoon/
+share/tuxpaint/stamps/vehicles/construction/cartoon/bulldozer.png
 share/tuxpaint/stamps/vehicles/construction/cartoon/bulldozer.svg
 share/tuxpaint/stamps/vehicles/construction/cartoon/bulldozer.txt
 share/tuxpaint/stamps/vehicles/construction/cartoon/bulldozer_desc_be.ogg
@@ -10469,8 +10746,10 @@ share/tuxpaint/stamps/vehicles/construction/cartoon/cementMixer_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/construction/cartoon/cementMixer_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/construction/cartoon/cementMixer_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/construction/cartoon/cementMixer_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/construction/cartoon/forklift.png
 share/tuxpaint/stamps/vehicles/construction/cartoon/forklift.svg
 share/tuxpaint/stamps/vehicles/construction/cartoon/forklift.txt
+share/tuxpaint/stamps/vehicles/construction/cartoon/forklift2.png
 share/tuxpaint/stamps/vehicles/construction/cartoon/forklift2.svg
 share/tuxpaint/stamps/vehicles/construction/cartoon/forklift2.txt
 share/tuxpaint/stamps/vehicles/construction/cartoon/forklift2_desc_be.ogg
@@ -10531,6 +10810,7 @@ share/tuxpaint/stamps/vehicles/construction/dumper_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/construction/dumper_desc_ru.ogg
 share/tuxpaint/stamps/vehicles/construction/dumper_mirror.png
 share/tuxpaint/stamps/vehicles/cycle/
+share/tuxpaint/stamps/vehicles/cycle/bluebike.png
 share/tuxpaint/stamps/vehicles/cycle/bluebike.svg
 share/tuxpaint/stamps/vehicles/cycle/bluebike.txt
 share/tuxpaint/stamps/vehicles/cycle/bluebike_desc_be.ogg
@@ -10542,6 +10822,7 @@ share/tuxpaint/stamps/vehicles/cycle/bluebike_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/cycle/bluebike_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/cycle/bluebike_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/cycle/bluebike_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/cycle/motorbike.png
 share/tuxpaint/stamps/vehicles/cycle/motorbike.svg
 share/tuxpaint/stamps/vehicles/cycle/motorbike.txt
 share/tuxpaint/stamps/vehicles/cycle/motorbike_desc_be.ogg
@@ -10610,6 +10891,7 @@ share/tuxpaint/stamps/vehicles/emergency/sedan_police_desc_ru.ogg
 share/tuxpaint/stamps/vehicles/emergency/sedan_police_mirror.png
 share/tuxpaint/stamps/vehicles/farming/
 share/tuxpaint/stamps/vehicles/farming/cartoon/
+share/tuxpaint/stamps/vehicles/farming/cartoon/tractor.png
 share/tuxpaint/stamps/vehicles/farming/cartoon/tractor.svg
 share/tuxpaint/stamps/vehicles/farming/cartoon/tractor.txt
 share/tuxpaint/stamps/vehicles/farming/cartoon/tractor_desc_be.ogg
@@ -10686,6 +10968,7 @@ share/tuxpaint/stamps/vehicles/flight/planes/cartoon/plane_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/flight/planes/cartoon/plane_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/flight/planes/cartoon/plane_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/flight/planes/cartoon/plane_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/flight/planes/plane.png
 share/tuxpaint/stamps/vehicles/flight/planes/plane.svg
 share/tuxpaint/stamps/vehicles/flight/planes/plane.txt
 share/tuxpaint/stamps/vehicles/flight/planes/plane_desc_be.ogg
@@ -10708,6 +10991,7 @@ share/tuxpaint/stamps/vehicles/garbagetruck_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/garbagetruck_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/garbagetruck_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/garbagetruck_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_bus.png
 share/tuxpaint/stamps/vehicles/iso_bus.svg
 share/tuxpaint/stamps/vehicles/iso_bus.txt
 share/tuxpaint/stamps/vehicles/iso_bus_desc_be.ogg
@@ -10719,6 +11003,7 @@ share/tuxpaint/stamps/vehicles/iso_bus_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/iso_bus_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/iso_bus_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/iso_bus_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_fireengine.png
 share/tuxpaint/stamps/vehicles/iso_fireengine.svg
 share/tuxpaint/stamps/vehicles/iso_fireengine.txt
 share/tuxpaint/stamps/vehicles/iso_fireengine_desc_be.ogg
@@ -10730,6 +11015,7 @@ share/tuxpaint/stamps/vehicles/iso_fireengine_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/iso_fireengine_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/iso_fireengine_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/iso_fireengine_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_lorry1.png
 share/tuxpaint/stamps/vehicles/iso_lorry1.svg
 share/tuxpaint/stamps/vehicles/iso_lorry1.txt
 share/tuxpaint/stamps/vehicles/iso_lorry1_desc_be.ogg
@@ -10741,6 +11027,7 @@ share/tuxpaint/stamps/vehicles/iso_lorry1_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry1_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry1_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry1_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_lorry2.png
 share/tuxpaint/stamps/vehicles/iso_lorry2.svg
 share/tuxpaint/stamps/vehicles/iso_lorry2.txt
 share/tuxpaint/stamps/vehicles/iso_lorry2_desc_be.ogg
@@ -10752,6 +11039,7 @@ share/tuxpaint/stamps/vehicles/iso_lorry2_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry2_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry2_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry2_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_lorry3.png
 share/tuxpaint/stamps/vehicles/iso_lorry3.svg
 share/tuxpaint/stamps/vehicles/iso_lorry3.txt
 share/tuxpaint/stamps/vehicles/iso_lorry3_desc_be.ogg
@@ -10763,6 +11051,7 @@ share/tuxpaint/stamps/vehicles/iso_lorry3_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry3_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry3_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/iso_lorry3_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/iso_lorry4.png
 share/tuxpaint/stamps/vehicles/iso_lorry4.svg
 share/tuxpaint/stamps/vehicles/iso_lorry4.txt
 share/tuxpaint/stamps/vehicles/iso_lorry4_desc_be.ogg
@@ -10858,6 +11147,7 @@ share/tuxpaint/stamps/vehicles/locomotive/cartoon/trainSign_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/locomotive/cartoon/trainSign_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/locomotive/cartoon/trainSign_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/locomotive/cartoon/trainSign_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/locomotive/white_train.png
 share/tuxpaint/stamps/vehicles/locomotive/white_train.svg
 share/tuxpaint/stamps/vehicles/locomotive/white_train.txt
 share/tuxpaint/stamps/vehicles/locomotive/white_train_desc_be.ogg
@@ -10884,6 +11174,7 @@ share/tuxpaint/stamps/vehicles/masstransit/cartoon/double_decker_bus_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/double_decker_bus_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/double_decker_bus_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/double_decker_bus_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/masstransit/cartoon/schoolbus.png
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/schoolbus.svg
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/schoolbus.txt
 share/tuxpaint/stamps/vehicles/masstransit/cartoon/schoolbus_desc_be.ogg
@@ -10909,6 +11200,7 @@ share/tuxpaint/stamps/vehicles/masstransit/green_korean_bus_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/masstransit/green_korean_bus_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/masstransit/green_korean_bus_desc_ru.ogg
 share/tuxpaint/stamps/vehicles/race/
+share/tuxpaint/stamps/vehicles/race/f1_car.png
 share/tuxpaint/stamps/vehicles/race/f1_car.svg
 share/tuxpaint/stamps/vehicles/race/f1_car.txt
 share/tuxpaint/stamps/vehicles/race/f1_car_desc_be.ogg
@@ -10975,6 +11267,7 @@ share/tuxpaint/stamps/vehicles/ship/chineseJunk_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/ship/chineseJunk_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/ship/chineseJunk_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/ship/chineseJunk_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/ship/sail_boat1.png
 share/tuxpaint/stamps/vehicles/ship/sail_boat1.svg
 share/tuxpaint/stamps/vehicles/ship/sail_boat1.txt
 share/tuxpaint/stamps/vehicles/ship/sail_boat1_desc_be.ogg
@@ -10986,6 +11279,7 @@ share/tuxpaint/stamps/vehicles/ship/sail_boat1_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/ship/sail_boat1_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/ship/sail_boat1_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/ship/sail_boat1_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/ship/sail_boat2.png
 share/tuxpaint/stamps/vehicles/ship/sail_boat2.svg
 share/tuxpaint/stamps/vehicles/ship/sail_boat2.txt
 share/tuxpaint/stamps/vehicles/ship/sail_boat2_desc_be.ogg
@@ -11010,6 +11304,7 @@ share/tuxpaint/stamps/vehicles/ship/walnutBoat_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/ship/walnutBoat_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/ship/walnutBoat_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/ship/walnutBoat_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/toy_truck.png
 share/tuxpaint/stamps/vehicles/toy_truck.svg
 share/tuxpaint/stamps/vehicles/toy_truck.txt
 share/tuxpaint/stamps/vehicles/toy_truck_desc_be.ogg
@@ -11021,6 +11316,7 @@ share/tuxpaint/stamps/vehicles/toy_truck_desc_fr.ogg
 share/tuxpaint/stamps/vehicles/toy_truck_desc_nn.ogg
 share/tuxpaint/stamps/vehicles/toy_truck_desc_ro.ogg
 share/tuxpaint/stamps/vehicles/toy_truck_desc_ru.ogg
+share/tuxpaint/stamps/vehicles/tyre_with_rim.png
 share/tuxpaint/stamps/vehicles/tyre_with_rim.svg
 share/tuxpaint/stamps/vehicles/tyre_with_rim.txt
 share/tuxpaint/stamps/vehicles/tyre_with_rim_desc_be.ogg
