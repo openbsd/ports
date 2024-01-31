@@ -1,0 +1,12 @@
+Index: src/Main.cpp
+--- src/Main.cpp.orig
++++ src/Main.cpp
+@@ -58,7 +58,7 @@ tryAgain:
+ 			break;
+ 
+ 		case 2:
+-			dataPath = "Data";
++			dataPath = "${TRUEPREFIX}/share/ottomatic";
+ 			break;
+ 
+ 		default:
