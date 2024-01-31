@@ -11,8 +11,11 @@ PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
-REVISION-mysql=		0
-REVISION-pgsql=		0
+REVISION-main=		0
+REVISION-mysql=		1
+REVISION-pgsql=		1
+REVISION-python=	0
+REVISION-redis=		0
 EPOCH=			0
 
 CATEGORIES=		mail
