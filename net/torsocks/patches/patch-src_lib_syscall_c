@@ -3,7 +3,7 @@ Don't attempt to intercept syscall(2) if not available.
 Index: src/lib/syscall.c
 --- src/lib/syscall.c.orig
 +++ src/lib/syscall.c
-@@ -442,6 +442,7 @@ static LIBC_SYSCALL_RET_TYPE handle_memfd_create(va_li
+@@ -483,6 +483,7 @@ static LIBC_SYSCALL_RET_TYPE handle_passthrough(long n
  /*
   * Torsocks call for syscall(2)
   */
@@ -11,7 +11,7 @@ Index: src/lib/syscall.c
  LIBC_SYSCALL_RET_TYPE tsocks_syscall(long int number, va_list args)
  {
  	LIBC_SYSCALL_RET_TYPE ret;
-@@ -594,7 +595,9 @@ LIBC_SYSCALL_DECL
+@@ -636,7 +637,9 @@ LIBC_SYSCALL_DECL
  
  	return ret;
  }
@@ -21,7 +21,7 @@ Index: src/lib/syscall.c
  /* Only used for *BSD systems. */
  #if (defined(__NetBSD__) || defined(__FreeBSD__))
  
-@@ -661,3 +664,4 @@ LIBC___SYSCALL_DECL
+@@ -703,3 +706,4 @@ LIBC___SYSCALL_DECL
  }
  
  #endif /* __NetBSD__, __FreeBSD__ */

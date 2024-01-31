@@ -3,7 +3,7 @@ Don't attempt to intercept syscall(2) if not available.
 Index: src/lib/torsocks.c
 --- src/lib/torsocks.c.orig
 +++ src/lib/torsocks.c
-@@ -232,11 +232,15 @@ static void init_libc_symbols(void)
+@@ -240,11 +240,15 @@ static void init_libc_symbols(void)
  	tsocks_libc_connect = dlsym(libc_ptr, LIBC_CONNECT_NAME_STR);
  	tsocks_libc_close = dlsym(libc_ptr, LIBC_CLOSE_NAME_STR);
  	tsocks_libc_socket = dlsym(libc_ptr, LIBC_SOCKET_NAME_STR);
