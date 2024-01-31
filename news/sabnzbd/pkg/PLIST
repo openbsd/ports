@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-es.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-fi.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-fr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-he.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-it.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-nb.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-nl.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-pl.tmpl
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-es.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-fi.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-fr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-he.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-it.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-nb.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-nl.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-pl.tmpl
@@ -62,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-es.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-fi.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-fr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-he.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-it.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-nb.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-nl.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-pl.tmpl
@@ -250,6 +253,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/fr/LC_MESSAGES/SABnzbd.m
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/he/LC_MESSAGES/SABnzbd.mo
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/it/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/it/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/it/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/nb/LC_MESSAGES/SABnzbd.mo
@@ -288,6 +294,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/es.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/fi.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/fr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/he.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/it.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/nb.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/nl.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/pl.po
@@ -307,6 +314,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/es.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/fi.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/fr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/he.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/it.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/nb.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/nl.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/pl.po
@@ -326,6 +334,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/es.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/fi.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/fr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/he.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/it.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/nb.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/nl.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/pl.po
