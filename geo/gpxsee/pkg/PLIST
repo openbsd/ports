@@ -7,12 +7,12 @@ share/gpxsee/CRS/gcs.csv
 share/gpxsee/CRS/pcs.csv
 share/gpxsee/CRS/projections.csv
 share/gpxsee/maps/
-share/gpxsee/maps/4UMaps.xml
 share/gpxsee/maps/Antarctica.xml
 share/gpxsee/maps/OpenStreetMap.xml
 share/gpxsee/maps/OpenTopoMap.xml
 share/gpxsee/maps/USGS-imagery.xml
 share/gpxsee/maps/USGS-topo.xml
+share/gpxsee/maps/mtbmap-cz.xml
 share/gpxsee/symbols/
 share/gpxsee/symbols/ATV.png
 share/gpxsee/symbols/Airport.png
