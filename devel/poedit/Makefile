@@ -24,9 +24,6 @@ WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_xrc-3.2 wx_gtk3u_webview-3.2
 # C++17
 COMPILER=	base-clang ports-gcc
 
-# Remove once lucene++ is updated to >= 3.0.8
-CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
-
 BUILD_DEPENDS=	textproc/nlohmann-json
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/gettext,-tools \
