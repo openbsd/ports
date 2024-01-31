@@ -6,4 +6,5 @@ daemon_user="_shairport"
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
+
 rc_cmd $1

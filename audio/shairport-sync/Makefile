@@ -1,14 +1,6 @@
 COMMENT =	AirPlay audio player
 
-GH_ACCOUNT =	mikebrady
-GH_PROJECT =	shairport-sync
-GH_TAGNAME =	3.3.9
-REVISION =	3
-
-SITES.fix =		https://github.com/mikebrady/shairport-sync/commit/
-# "avoid recursive mutex acquisition in sndio backend" to fix crash on pause
-PATCHFILES.fix =	57af5f3c10c54947cf160fe46a580cf40669d412.patch
-PATCH_DIST_STRIP =	-p1
+DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.2	.
 
 CATEGORIES =	audio
 
@@ -27,13 +19,15 @@ LIB_DEPENDS =	devel/libconfig \
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
 
 CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.69
+SEPARATE_BUILD =	Yes
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_ARGS +=	--with-ssl=openssl \
 			--with-avahi \
 			--with-sndio \
 			--with-os=openbsd
+
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/shairport-sync
 
 HOME_DIR =		${LOCALSTATEDIR}/spool/${PKGSTEM}

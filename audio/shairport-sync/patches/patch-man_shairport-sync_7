@@ -1,4 +1,5 @@
-We install the manpage into section 1, this updates the file to reflect that.
+We install the manpage into section 1, this updates the file to reflect that
+(merged upstream)
 
 Index: man/shairport-sync.7
 --- man/shairport-sync.7.orig
@@ -7,5 +8,5 @@ Index: man/shairport-sync.7
 -.TH shairport-sync 7 User Manuals
 +.TH shairport-sync 1 User Manuals
  .SH NAME
- shairport-sync \- Synchronised Audio Player for iTunes / AirPlay
+ shairport-sync \- AirPlay and AirPlay 2 Audio Player
  .SH SYNOPSIS
