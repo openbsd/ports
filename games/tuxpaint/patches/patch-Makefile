@@ -64,7 +64,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -808,18 +807,16 @@ uninstall:	uninstall-i18n
+@@ -793,18 +792,16 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -87,7 +87,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -827,7 +824,7 @@ install-bash-completion:
+@@ -812,7 +809,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -96,7 +96,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -877,7 +874,10 @@ $(THUMB_STARTERS):
+@@ -862,7 +859,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
@@ -108,7 +108,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -1000,36 +1000,23 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-full
+@@ -985,36 +985,23 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-full
  install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
  	@echo ""
  	@echo "...Installing launcher icon into desktop environment..."
@@ -162,7 +162,7 @@ Index: Makefile
  #do package path related stuff, ie use destdir
  
  # Install the PNG icon (for KDE desktop, etc.)
-@@ -1040,12 +1027,9 @@ install-icon:
+@@ -1025,12 +1012,9 @@ install-icon:
  	@if [ "x$(PACKAGE_ONLY)" != "xyes" ]; then \
  	  echo; \
  	  echo "...Installing launcher icon graphics..."; \
@@ -178,7 +178,7 @@ Index: Makefile
  	fi
  
  
-@@ -1054,9 +1038,8 @@ install-icon:
+@@ -1039,9 +1023,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -190,7 +190,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -1088,8 +1071,7 @@ install-haiku:
+@@ -1073,8 +1056,7 @@ install-haiku:
  install-importscript: install-bin
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -200,7 +200,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -1097,12 +1079,14 @@ install-importscript: install-bin
+@@ -1082,12 +1064,14 @@ install-importscript: install-bin
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -217,7 +217,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -1122,7 +1106,7 @@ install-osk:
+@@ -1107,7 +1091,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -226,7 +226,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
  	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
-@@ -1146,27 +1130,19 @@ install-man:
+@@ -1132,27 +1116,19 @@ install-man:
  	@echo
  	@echo "...Installing English man pages..."
  	@# man1 directory...
