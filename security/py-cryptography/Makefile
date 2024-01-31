@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	41.0.7
+MODPY_EGG_VERSION=	42.0.2
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -43,7 +43,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2
 
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-certifi${MODPY_FLAVOR} \
+		devel/py-coverage${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR} \
 		devel/py-test-benchmark${MODPY_FLAVOR} \

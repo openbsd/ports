@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSIO
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/nist-800-38b-3des.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/nist-800-38b-aes128.txt
@@ -99,6 +98,13 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/FIP
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/DSA/FIPS_186-3/SigVer.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/compressed_points.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/explicit_parameters_private_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/explicit_parameters_wap_wsg_idm_ecid_wtls11_private_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/secp128r1_private_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect163k1-spki.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect163r2-spki.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect233k1-spki.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/EC/sect233r1-spki.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_KDFConcat_NOKC_init.fax
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/ECDH/KASValidityTest_ECCStaticUnified_KDFConcat_NOKC_resp.fax
@@ -188,9 +194,11 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Ser
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_private_key_encrypted.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_public_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_public_key_rsa_delimiter.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa-bad-1025-q-is-2.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa_public_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa_wrong_delimiter_public_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/bad-encryption-oid.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/bad-oid-dsa-key.pem
@@ -501,6 +509,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/ECB/EC
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/ECB/ECBVarTxt192.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/ECB/ECBVarTxt256.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM-SIV/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM-SIV/aes-192-gcm-siv.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM-SIV/openssl.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/gcmDecrypt128.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/gcmDecrypt192.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/gcmDecrypt256.rsp
@@ -566,6 +577,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/c
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-cfb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/Camellia/camellia-ofb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/counter-overflow.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20/rfc7539.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/ChaCha20Poly1305/boringssl.txt
@@ -586,6 +598,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/SM4/draft-
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/SM4/draft-ribose-cfrg-sm4-10-ctr.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/SM4/draft-ribose-cfrg-sm4-10-ecb.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/SM4/draft-ribose-cfrg-sm4-10-ofb.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/SM4/rfc8998.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/fernet/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/fernet/generate.json
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/fernet/invalid.json
@@ -687,6 +700,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvect
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvectors/TKW_AE.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/keywrap/kwtestvectors/TKW_AE_inv.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/ca/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/ca/ca.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/ca/ca_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/cert-aes256cbc-no-key.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/cert-key-aes256cbc.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/cert-none-key-none.p12
@@ -724,6 +740,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped.pe
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/isrg.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/poly1305/rfc7539.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/py.typed
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/twofactor/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/twofactor/rfc-4226.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/twofactor/rfc-6238.txt
@@ -2359,6 +2376,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_md
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_no_next_update.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_unrecognized_extension.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/crl_unsupported_reason.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/dsa_null_alg_params.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/dsa_selfsigned_ca.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ec_no_named_curve.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/ecdsa_null_alg.pem
