@@ -239,6 +239,7 @@
      SUBDIR += opentyrian
      SUBDIR += openxcom
      SUBDIR += orthorobot
+     SUBDIR += ottomatic
      SUBDIR += pacman-arena
      SUBDIR += pathological
      SUBDIR += pentobi
