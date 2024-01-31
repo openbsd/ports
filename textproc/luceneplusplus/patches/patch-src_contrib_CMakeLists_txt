@@ -3,12 +3,12 @@ disable cotire as it's deprecated and breaks the build with newer libc++
 Index: src/contrib/CMakeLists.txt
 --- src/contrib/CMakeLists.txt.orig
 +++ src/contrib/CMakeLists.txt
-@@ -50,8 +50,6 @@ target_link_libraries(lucene++-contrib
-   lucene++
- )
- 
+@@ -85,8 +85,6 @@ set_target_properties(lucene++
+     VERSION ${lucene++_VERSION}
+     SOVERSION ${lucene++_SOVERSION})
+     
 -cotire(lucene++-contrib)
 -
  install(TARGETS lucene++-contrib
    DESTINATION "${LIB_DESTINATION}"
-   COMPONENT runtime
+   COMPONENT runtime)

@@ -3,11 +3,13 @@ disable cotire as it's deprecated and breaks the build with newer libc++
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
 +++ src/core/CMakeLists.txt
-@@ -39,7 +39,6 @@ if(WIN32)
- endif()
+@@ -79,9 +79,6 @@ set_target_properties(lucene++
+     VERSION ${lucene++_VERSION}
+     SOVERSION ${lucene++_SOVERSION})
  
- set_target_properties(lucene++ PROPERTIES COTIRE_CXX_PREFIX_HEADER_INIT "include/LuceneInc.h")
 -cotire(lucene++)
- 
- set_target_properties(lucene++ PROPERTIES
-   VERSION ${lucene++_VERSION}
+-
+-
+ install(TARGETS lucene++
+   DESTINATION "${LIB_DESTINATION}"
+   COMPONENT runtime)
