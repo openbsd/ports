@@ -3,7 +3,7 @@ LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		sl sv sw tet tl tn uk yi zu
 
 HOMEPAGE =	https://www.vim.org/
-VERSION =	9.0
+VERSION =	9.1
 P =		${VERSION:C/[\.]//g}
 CATEGORIES =	editors
 SITES =		http://ftp.vim.org/pub/vim/runtime/spell/ \
