@@ -115,6 +115,8 @@ share/examples/azorius/views/reply.html
 @sample ${LOCALSTATEDIR}/azorius/views/reply.html
 share/examples/azorius/views/report.html
 @sample ${LOCALSTATEDIR}/azorius/views/report.html
+share/examples/azorius/views/script.js
+@sample ${LOCALSTATEDIR}/azorius/views/script.js
 share/examples/azorius/views/searchhelp.html
 @sample ${LOCALSTATEDIR}/azorius/views/searchhelp.html
 share/examples/azorius/views/style.css

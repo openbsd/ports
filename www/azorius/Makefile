@@ -1,9 +1,6 @@
-# "cannot use uint64(dir.Fd()) (value of type uint64) as uint32 value in struct literal" in vendor/humungus.tedunangst.com/r/gonix/kqueue.go
-ONLY_FOR_ARCHS =	${LP64_ARCHS}
-
 COMMENT =		link aggregator and comment site via ActivityPub
 
-DISTNAME =		azorius-0.3.2
+DISTNAME =		azorius-0.3.3
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/azorius
@@ -31,12 +28,9 @@ EXAMPLESDIR =		${PREFIX}/share/examples/azorius
 post-install:
 	${INSTALL_MAN} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/docs/azorius.8 \
 		${PREFIX}/man/man8
-.for p in 1 7 8
-	rm ${MODGO_WORKSPACE}/src/${ALL_TARGET}/docs/*.${p}
-.endfor
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} \
-		${MODGO_WORKSPACE}/src/${ALL_TARGET}/{LICENSE,README,docs/*} \
+		${MODGO_WORKSPACE}/src/${ALL_TARGET}/{LICENSE,README,docs/*.html} \
 		${DOCDIR}/
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/views
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/views/* \
