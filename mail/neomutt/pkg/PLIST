@@ -96,8 +96,8 @@ share/neomutt/logo/neomutt-64.png
 share/neomutt/logo/neomutt.svg
 share/neomutt/mime.types
 share/neomutt/oauth2/
+share/neomutt/oauth2/README.md
 share/neomutt/oauth2/mutt_oauth2.py
-share/neomutt/oauth2/mutt_oauth2.py.README
 share/neomutt/vim-keys/
 share/neomutt/vim-keys/README.md
 share/neomutt/vim-keys/vim-keys.rc
