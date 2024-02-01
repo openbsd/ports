@@ -14,7 +14,7 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
 GH_COMMIT=	4b2cea53f9413bdac11f75a69424cfb4f31cd9e5
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-mapi=	0
 
 CATEGORIES=	mail www productivity
