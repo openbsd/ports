@@ -1,6 +1,6 @@
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.27
+DISTNAME =		ddrescue-1.28
 
 CATEGORIES =		sysutils
 
@@ -21,10 +21,13 @@ EXTRACT_SUFX =		.tar.lz
 
 BUILD_DEPENDS =		devel/help2man
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}"
+			CXXFLAGS="${CXXFLAGS}" \
+			--mandir="${PREFIX}/man" \
+			--infodir="${PREFIX}/info"
 
 ALL_TARGET =		all doc
+TEST_TARGET =		check
 
 .include <bsd.port.mk>
