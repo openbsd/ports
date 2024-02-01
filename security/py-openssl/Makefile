@@ -26,7 +26,7 @@ MODPY_PYBUILD=	setuptools
 # - test_it_works_*: DTLS tests which error out and stop others from running
 # - test_shutdown which hangs
 # (add -v to see individual test names)
-MODPY_PYTEST_ARGS= -k 'not test_it_works_at_all and not test_it_works_with_srtp and not test_shutdown'
+MODPY_PYTEST_ARGS= -k 'not test_it_works_at_all and not test_it_works_with_srtp'
 
 TEST_DEPENDS=	devel/py-flaky${MODPY_FLAVOR} \
 		devel/py-pretend${MODPY_FLAVOR}
