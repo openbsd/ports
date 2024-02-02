@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
-GH_TAGNAME =	20230802.1
+GH_TAGNAME =	20240116.0
 
 HOMEPAGE =	https://abseil.io/
 
@@ -14,12 +14,12 @@ MAINTAINER =	Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 ABSL_LIBS = \
-    scoped_mock_log atomic_hook_test_helper bad_any_cast_impl \
+    scoped_mock_log atomic_hook_test_helper                   \
     bad_optional_access bad_variant_access base city civil_time cord \
     cord_internal cordz_functions cordz_handle cordz_info cordz_sample_token \
     crc32c crc_cord_state crc_cpu_detect crc_internal debugging_internal \
     demangle_internal die_if_null examine_stack exception_safety_testing \
-    exponential_biased failure_signal_handler flags flags_commandlineflag \
+    exponential_biased failure_signal_handler       flags_commandlineflag \
     flags_commandlineflag_internal flags_config flags_internal \
     flags_marshalling flags_parse flags_private_handle_accessor \
     flags_program_name flags_reflection flags_usage flags_usage_internal \
@@ -39,9 +39,10 @@ ABSL_LIBS = \
     stack_consumption stacktrace status statusor str_format_internal strerror \
     strings strings_internal symbolize synchronization test_instance_tracker \
     throw_delegate time time_internal_test_util time_zone \
+    log_internal_fnmatch vlog_config_internal \
     kernel_timeout_internal string_view
 .for _lib in ${ABSL_LIBS}
-SHARED_LIBS +=		absl_${_lib}	3.0	# 2308.0.0
+SHARED_LIBS +=		absl_${_lib}	4.0	# 2401.0.0
 .endfor
 
 WANTLIB += ${COMPILER_LIBCXX} execinfo gmock gtest m

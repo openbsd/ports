@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		18
+REVISION =		19
 
 CATEGORIES =		productivity graphics
 
@@ -22,14 +22,14 @@ WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
 WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
 WANTLIB += absl_die_if_null absl_examine_stack absl_exponential_biased
-WANTLIB += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
 WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
 WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash
 WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
 WANTLIB += absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
-WANTLIB += absl_log_internal_format absl_log_internal_globals
+WANTLIB += absl_log_internal_fnmatch absl_log_internal_format absl_log_internal_globals
 WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
 WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
 WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
@@ -37,7 +37,7 @@ WANTLIB += absl_malloc_internal absl_raw_hash_set absl_raw_logging_internal
 WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
 WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone atk-1.0
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_vlog_config_internal atk-1.0
 WANTLIB += atk-bridge-2.0 atspi boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_system-mt boost_thread-mt
 WANTLIB += brotlicommon brotlidec c cairo cairo-gobject camel-1.2

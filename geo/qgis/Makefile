@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.34.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	72.1 \
 		qgis_app	47.1 \
@@ -97,7 +98,7 @@ WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
 WANTLIB += absl_die_if_null absl_examine_stack absl_exponential_biased
-WANTLIB += absl_flags absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
 WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
 WANTLIB += absl_flags_reflection absl_graphcycles_internal absl_hash

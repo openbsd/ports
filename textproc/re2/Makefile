@@ -3,6 +3,7 @@ GH_ACCOUNT =		google
 GH_PROJECT =		re2
 GH_TAGNAME =		2023-11-01
 PKGNAME =		${GH_PROJECT}-${GH_TAGNAME:S/-//g}
+REVISION =		0
 
 SHARED_LIBS =		re2	1.0	# 10.0.0
 
@@ -16,7 +17,7 @@ WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB += absl_exponential_biased absl_flags absl_flags_commandlineflag
+WANTLIB += absl_exponential_biased absl_flags_commandlineflag
 WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal

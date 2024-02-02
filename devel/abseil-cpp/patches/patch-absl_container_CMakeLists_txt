@@ -1,0 +1,38 @@
+Disable all tests that require a leak sanitizer because
+OpenBSD does not support it.
+
+Index: absl/container/CMakeLists.txt
+--- absl/container/CMakeLists.txt.orig
++++ absl/container/CMakeLists.txt
+@@ -101,6 +101,7 @@ absl_cc_library(
+   PUBLIC
+ )
+ 
++if (NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ absl_cc_test(
+   NAME
+     compressed_tuple_test
+@@ -117,6 +118,7 @@ absl_cc_test(
+     absl::utility
+     GTest::gmock_main
+ )
++endif()
+ 
+ absl_cc_library(
+   NAME
+@@ -294,6 +296,7 @@ absl_cc_library(
+   PUBLIC
+ )
+ 
++if (NOT CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
+ absl_cc_test(
+   NAME
+     flat_hash_map_test
+@@ -313,6 +316,7 @@ absl_cc_test(
+     absl::unordered_map_modifiers_test
+     GTest::gmock_main
+ )
++endif()
+ 
+ absl_cc_library(
+   NAME

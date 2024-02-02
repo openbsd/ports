@@ -14,6 +14,7 @@ GH_PROJECT =		tg_owt
 GH_COMMIT =		71cce98c5fb1d9328892d55f70db711afd5b1aef
 DISTNAME =		${GH_PROJECT}-0.0.0.20231101
 CATEGORIES =		net
+REVISION =		0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -51,7 +52,7 @@ WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB += absl_exponential_biased absl_flags absl_flags_commandlineflag
+WANTLIB += absl_exponential_biased absl_flags_commandlineflag
 WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_parse
 WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
