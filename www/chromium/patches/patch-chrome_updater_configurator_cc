@@ -2,7 +2,7 @@ Index: chrome/updater/configurator.cc
 --- chrome/updater/configurator.cc.orig
 +++ chrome/updater/configurator.cc
 @@ -63,7 +63,7 @@ Configurator::Configurator(scoped_refptr<UpdaterPrefs>
-         return absl::nullopt;
+         return std::nullopt;
  #endif
        }()) {
 -#if BUILDFLAG(IS_LINUX)

@@ -23,7 +23,7 @@ Index: tools/gn/build/gen.py
        'haiku': 'build_haiku.ninja.template',
        'solaris': 'build_linux.ninja.template',
        'netbsd': 'build_linux.ninja.template',
-@@ -512,6 +518,9 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -514,6 +520,9 @@ def WriteGNNinja(path, platform, host, options, args_l
  
      if platform.is_posix() and not platform.is_haiku():
        ldflags.append('-pthread')

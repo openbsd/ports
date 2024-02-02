@@ -1,7 +1,7 @@
 Index: cc/base/features.cc
 --- cc/base/features.cc.orig
 +++ cc/base/features.cc
-@@ -84,7 +84,7 @@ BASE_FEATURE(kNormalPriorityImageDecoding,
+@@ -88,7 +88,7 @@ BASE_FEATURE(kNormalPriorityImageDecoding,
  // be using a separate flag to control the launch on GL.
  BASE_FEATURE(kUseDMSAAForTiles,
               "UseDMSAAForTiles",

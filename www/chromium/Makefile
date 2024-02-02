@@ -9,7 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			120.0.6099.224
+V=			121.0.6167.139
 
 DISTNAME=		chromium-${V}
 
@@ -20,7 +20,7 @@ DISTFILES.a+=		${PROFILE_DISTFILES} \
 			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
-PROFILE_DISTFILES+=	chrome-linux-${V}-llvm16.profdata${EXTRACT_SUFX}
+PROFILE_DISTFILES+=	chrome-linux-${V}-llvm17.profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 REGRESS_DISTFILES.a+=	test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz
 
@@ -45,10 +45,13 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	http://nerd.hu/distfiles/
 
-MODULES=	lang/python x11/qt5
-MODQT5_DEPS=	No
+MODULES=	lang/clang lang/python x11/qt5
 
+MODCLANG_VERSION=	17
+MODQT5_DEPS=		No
 MODPY_RUNDEP=		No
+
+COMPILER=		ports-clang
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
@@ -59,7 +62,7 @@ WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	snappy sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
@@ -82,8 +85,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	archivers/snappy \
-		audio/opus \
+LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
@@ -145,8 +147,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		libxml \
 		libxslt \
 		openh264 \
-		opus \
-		snappy
+		opus
 
 GN_ARGS=	enable_nacl=false \
 		is_official_build=true \
@@ -155,6 +156,7 @@ GN_ARGS=	enable_nacl=false \
 		optimize_webui=true \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
+		enable_log_error_not_reached=true \
 		enable_rust=false \
 		use_bundled_fontconfig=false \
 		use_kerberos=false \
@@ -176,8 +178,10 @@ GN_ARGS=	enable_nacl=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
-		use_custom_libcxx=false \
-		use_udev=true
+		use_custom_libcxx=true \
+		use_custom_libunwind=true \
+		use_udev=true \
+		v8_enable_cet_ibt=true
 
 # notyet
 GN_ARGS+=	use_vaapi=false

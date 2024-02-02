@@ -11,7 +11,7 @@ Index: chrome/browser/memory_details.cc
  #endif
  
 @@ -335,7 +335,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
-           std::ref(process)));
+           });
      }
  
 -#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)

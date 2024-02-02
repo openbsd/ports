@@ -1,9 +1,9 @@
 Index: content/common/features.h
 --- content/common/features.h.orig
 +++ content/common/features.h
-@@ -37,7 +37,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
+@@ -38,7 +38,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDeviceMonitorMac)
+ #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
- CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnumerateDevicesHideDeviceIDs);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableBackForwardCacheForScreenReader);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
