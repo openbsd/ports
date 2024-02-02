@@ -1,5 +1,5 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		compiler cache for C/C++/Rust
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		crypto m ssl zstd ${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		security/rust-ring
 
 SEPARATE_BUILD =	Yes
 
