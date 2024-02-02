@@ -60,6 +60,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/cubestorm
 @bin libexec/xscreensaver/cubetwist
 @bin libexec/xscreensaver/cubicgrid
+@bin libexec/xscreensaver/cubocteversion
 @bin libexec/xscreensaver/cwaves
 @bin libexec/xscreensaver/cynosure
 @bin libexec/xscreensaver/dangerball
@@ -72,6 +73,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/discrete
 @bin libexec/xscreensaver/distort
 @bin libexec/xscreensaver/drift
+@comment SEGV at startup @bin libexec/xscreensaver/droste
 @bin libexec/xscreensaver/dymaxionmap
 @bin libexec/xscreensaver/endgame
 @bin libexec/xscreensaver/energystream
@@ -125,6 +127,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/helix
 @bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hexstrut
+@bin libexec/xscreensaver/hextrail
 @bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
 @bin libexec/xscreensaver/hydrostat
@@ -171,6 +174,7 @@ libexec/xscreensaver/mapscroller.pl
 @bin libexec/xscreensaver/noof
 @bin libexec/xscreensaver/noseguy
 @bin libexec/xscreensaver/pacman
+@bin libexec/xscreensaver/papercube
 @bin libexec/xscreensaver/pedal
 @bin libexec/xscreensaver/peepers
 @bin libexec/xscreensaver/penetrate
@@ -208,6 +212,7 @@ libexec/xscreensaver/mapscroller.pl
 @bin libexec/xscreensaver/shadebobs
 @bin libexec/xscreensaver/sierpinski
 @bin libexec/xscreensaver/sierpinski3d
+@bin libexec/xscreensaver/skulloop
 @bin libexec/xscreensaver/skytentacles
 @bin libexec/xscreensaver/slidescreen
 @bin libexec/xscreensaver/slip
@@ -232,7 +237,6 @@ libexec/xscreensaver/mapscroller.pl
 @bin libexec/xscreensaver/swirl
 @bin libexec/xscreensaver/tangram
 @bin libexec/xscreensaver/tessellimage
-@bin libexec/xscreensaver/thornbird
 @bin libexec/xscreensaver/timetunnel
 @bin libexec/xscreensaver/topblock
 @bin libexec/xscreensaver/triangle
@@ -321,6 +325,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/cubestorm.6
 @man man/man6/cubetwist.6
 @man man/man6/cubicgrid.6
+@man man/man6/cubocteversion.6
 @man man/man6/cwaves.6
 @man man/man6/cynosure.6
 @man man/man6/dangerball.6
@@ -332,6 +337,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/discrete.6
 @man man/man6/distort.6
 @man man/man6/drift.6
+@comment SEGV at startup @man man/man6/droste.6
 @man man/man6/dymaxionmap.6
 @man man/man6/endgame.6
 @man man/man6/energystream.6
@@ -385,6 +391,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/helix.6
 @man man/man6/hexadrop.6
 @man man/man6/hexstrut.6
+@man man/man6/hextrail.6
 @man man/man6/hilbert.6
 @man man/man6/hopalong.6
 @man man/man6/hydrostat.6
@@ -429,6 +436,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/noof.6
 @man man/man6/noseguy.6
 @man man/man6/pacman.6
+@man man/man6/papercube.6
 @man man/man6/pedal.6
 @man man/man6/peepers.6
 @man man/man6/penetrate.6
@@ -465,6 +473,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/shadebobs.6
 @man man/man6/sierpinski.6
 @man man/man6/sierpinski3d.6
+@man man/man6/skulloop.6
 @man man/man6/skytentacles.6
 @man man/man6/slidescreen.6
 @man man/man6/slip.6
@@ -489,7 +498,6 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/swirl.6
 @man man/man6/tangram.6
 @man man/man6/tessellimage.6
-@man man/man6/thornbird.6
 @man man/man6/timetunnel.6
 @man man/man6/topblock.6
 @man man/man6/triangle.6
@@ -580,6 +588,7 @@ share/applications/screensavers/cubestack.desktop
 share/applications/screensavers/cubestorm.desktop
 share/applications/screensavers/cubetwist.desktop
 share/applications/screensavers/cubicgrid.desktop
+share/applications/screensavers/cubocteversion.desktop
 share/applications/screensavers/cwaves.desktop
 share/applications/screensavers/cynosure.desktop
 share/applications/screensavers/dangerball.desktop
@@ -593,6 +602,7 @@ share/applications/screensavers/discrete.desktop
 share/applications/screensavers/distort.desktop
 share/applications/screensavers/dnalogo.desktop
 share/applications/screensavers/drift.desktop
+@comment SEGV at startup share/applications/screensavers/droste.desktop
 share/applications/screensavers/dymaxionmap.desktop
 share/applications/screensavers/endgame.desktop
 share/applications/screensavers/energystream.desktop
@@ -649,6 +659,7 @@ share/applications/screensavers/headroom.desktop
 share/applications/screensavers/helix.desktop
 share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hexstrut.desktop
+share/applications/screensavers/hextrail.desktop
 share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
 share/applications/screensavers/hydrostat.desktop
@@ -703,6 +714,7 @@ share/applications/screensavers/nerverot.desktop
 share/applications/screensavers/noof.desktop
 share/applications/screensavers/noseguy.desktop
 share/applications/screensavers/pacman.desktop
+share/applications/screensavers/papercube.desktop
 share/applications/screensavers/pedal.desktop
 share/applications/screensavers/peepers.desktop
 share/applications/screensavers/penetrate.desktop
@@ -741,6 +753,7 @@ share/applications/screensavers/scooter.desktop
 share/applications/screensavers/shadebobs.desktop
 share/applications/screensavers/sierpinski.desktop
 share/applications/screensavers/sierpinski3d.desktop
+share/applications/screensavers/skulloop.desktop
 share/applications/screensavers/skytentacles.desktop
 share/applications/screensavers/slidescreen.desktop
 share/applications/screensavers/slip.desktop
@@ -803,7 +816,7 @@ share/applications/xscreensaver-settings.desktop
 share/applications/xscreensaver.desktop
 share/fonts/
 @fontdir share/fonts/xscreensaver/
-share/fonts/xscreensaver/OCRAStd.otf
+share/fonts/xscreensaver/OCRA.ttf
 share/fonts/xscreensaver/SpecialElite.ttf
 share/fonts/xscreensaver/clacon.ttf
 share/fonts/xscreensaver/gallant12x22.ttf
@@ -862,6 +875,7 @@ share/xscreensaver/config/cubestack.xml
 share/xscreensaver/config/cubestorm.xml
 share/xscreensaver/config/cubetwist.xml
 share/xscreensaver/config/cubicgrid.xml
+share/xscreensaver/config/cubocteversion.xml
 share/xscreensaver/config/cwaves.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
@@ -874,6 +888,7 @@ share/xscreensaver/config/discoball.xml
 share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
+@comment SEGV at startup share/xscreensaver/config/droste.xml
 share/xscreensaver/config/dymaxionmap.xml
 share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/energystream.xml
@@ -927,6 +942,7 @@ share/xscreensaver/config/headroom.xml
 share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hexstrut.xml
+share/xscreensaver/config/hextrail.xml
 share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
 share/xscreensaver/config/hydrostat.xml
@@ -972,6 +988,7 @@ share/xscreensaver/config/nerverot.xml
 share/xscreensaver/config/noof.xml
 share/xscreensaver/config/noseguy.xml
 share/xscreensaver/config/pacman.xml
+share/xscreensaver/config/papercube.xml
 share/xscreensaver/config/pedal.xml
 share/xscreensaver/config/peepers.xml
 share/xscreensaver/config/penetrate.xml
@@ -1009,6 +1026,7 @@ share/xscreensaver/config/scooter.xml
 share/xscreensaver/config/shadebobs.xml
 share/xscreensaver/config/sierpinski.xml
 share/xscreensaver/config/sierpinski3d.xml
+share/xscreensaver/config/skulloop.xml
 share/xscreensaver/config/skytentacles.xml
 share/xscreensaver/config/slidescreen.xml
 share/xscreensaver/config/slip.xml
@@ -1033,7 +1051,6 @@ share/xscreensaver/config/surfaces.xml
 share/xscreensaver/config/swirl.xml
 share/xscreensaver/config/tangram.xml
 share/xscreensaver/config/tessellimage.xml
-share/xscreensaver/config/thornbird.xml
 share/xscreensaver/config/timetunnel.xml
 share/xscreensaver/config/topblock.xml
 share/xscreensaver/config/triangle.xml

@@ -8,8 +8,7 @@ COMMENT=	screen saver and locker for the X Window System
 #
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
-DISTNAME=	xscreensaver-6.05.1
-WRKDIST=	${WRKDIR}/xscreensaver-6.05
+DISTNAME=	xscreensaver-6.08
 
 CATEGORIES=	x11
 
@@ -27,6 +26,7 @@ WANTLIB += pthread util xml2
 SITES=		${HOMEPAGE}
 
 COMPILER=	base-clang ports-gcc
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	textproc/intltool
 
