@@ -1,5 +1,5 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS = powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
@@ -31,7 +31,5 @@ WANTLIB += ${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-
-BUILD_DEPENDS +=	security/rust-ring
 
 .include <bsd.port.mk>
