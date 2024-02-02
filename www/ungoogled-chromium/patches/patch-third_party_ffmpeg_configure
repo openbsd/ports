@@ -1,7 +1,7 @@
 Index: third_party/ffmpeg/configure
 --- third_party/ffmpeg/configure.orig
 +++ third_party/ffmpeg/configure
-@@ -5604,6 +5604,7 @@ case $target_os in
+@@ -5615,6 +5615,7 @@ case $target_os in
          disable symver
          ;;
      freebsd)

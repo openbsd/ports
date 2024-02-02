@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			120.0.6099.224
+V=			121.0.6167.139
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -48,12 +48,13 @@ PERMIT_PACKAGE =	Yes
 SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.u=http://nerd.hu/distfiles/
 
-MODULES=	lang/python x11/qt5
-MODQT5_DEPS=	No
+MODULES=	lang/clang lang/python x11/qt5
 
-COMPILER=		base-clang ports-clang
-
+MODCLANG_VERSION=	17
+MODQT5_DEPS=		No
 MODPY_RUNDEP=		No
+
+COMPILER=		ports-clang
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
@@ -64,7 +65,7 @@ WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
@@ -88,8 +89,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
-LIB_DEPENDS=	archivers/snappy \
-		audio/opus \
+LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
@@ -150,13 +150,13 @@ GN_SYSTEM_LIBS=	dav1d \
 		libxml \
 		libxslt \
 		openh264 \
-		opus \
-		snappy
+		opus
 
 GN_ARGS=	is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
 		optimize_webui=true \
+		enable_log_error_not_reached=true \
 		enable_rust=false \
 		use_bundled_fontconfig=false \
 		use_kerberos=false \
@@ -175,8 +175,10 @@ GN_ARGS=	is_official_build=true \
 		enable_backup_ref_ptr_support=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
-		use_custom_libcxx=false \
-		use_udev=true
+		use_custom_libcxx=true \
+		use_custom_libunwind=true \
+		use_udev=true \
+		v8_enable_cet_ibt=true
 
 # notyet
 GN_ARGS+=	use_vaapi=false

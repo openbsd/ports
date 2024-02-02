@@ -1,7 +1,7 @@
 Index: components/supervised_user/core/common/features.cc
 --- components/supervised_user/core/common/features.cc.orig
 +++ components/supervised_user/core/common/features.cc
-@@ -91,7 +91,7 @@ BASE_FEATURE(kEnableManagedByParentUi,
+@@ -85,7 +85,7 @@ BASE_FEATURE(kEnableManagedByParentUi,
               "EnableManagedByParentUi",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -10,7 +10,7 @@ Index: components/supervised_user/core/common/features.cc
  BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
               "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -149,7 +149,7 @@ bool IsChildAccountSupervisionEnabled() {
+@@ -143,7 +143,7 @@ bool IsChildAccountSupervisionEnabled() {
    return base::FeatureList::IsEnabled(
               supervised_user::
                   kFilterWebsitesForSupervisedUsersOnDesktopAndIOS) ||

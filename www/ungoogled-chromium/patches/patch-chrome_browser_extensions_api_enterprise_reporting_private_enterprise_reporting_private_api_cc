@@ -28,7 +28,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -593,7 +593,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -592,7 +592,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  

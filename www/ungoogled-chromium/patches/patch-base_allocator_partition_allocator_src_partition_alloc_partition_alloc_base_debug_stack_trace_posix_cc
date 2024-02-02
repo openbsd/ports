@@ -12,10 +12,10 @@ Index: base/allocator/partition_allocator/src/partition_alloc/partition_alloc_ba
  
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)
- #define HAVE_DLADDR
  #include <dlfcn.h>
  #endif
-@@ -25,7 +25,7 @@ namespace partition_alloc::internal::base::debug {
+ 
+@@ -24,7 +24,7 @@ namespace partition_alloc::internal::base::debug {
  
  namespace {
  
@@ -24,7 +24,7 @@ Index: base/allocator/partition_allocator/src/partition_alloc/partition_alloc_ba
  
  constexpr size_t kBufferSize = 4096u;
  
-@@ -359,7 +359,7 @@ void PrintStackTraceInternal(const void** trace, size_
+@@ -358,7 +358,7 @@ void PrintStackTraceInternal(const void** trace, size_
  }
  #endif  // !BUILDFLAG(IS_APPLE)
  

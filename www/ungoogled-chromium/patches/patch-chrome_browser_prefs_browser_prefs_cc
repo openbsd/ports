@@ -1,7 +1,7 @@
 Index: chrome/browser/prefs/browser_prefs.cc
 --- chrome/browser/prefs/browser_prefs.cc.orig
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -482,18 +482,18 @@
+@@ -490,18 +490,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -23,7 +23,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -525,7 +525,7 @@
+@@ -533,7 +533,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -32,7 +32,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -649,7 +649,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
+@@ -657,7 +657,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
  const char kPluginsShowDetails[] = "plugins.show_details";
  
  // Deprecated 02/2023.
@@ -41,7 +41,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -979,7 +979,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
+@@ -1017,7 +1017,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Deprecated 02/2023.
@@ -50,7 +50,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1952,12 +1952,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2022,12 +2022,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -65,7 +65,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
    enterprise_signin::RegisterProfilePrefs(registry);
  #endif
-@@ -2114,7 +2114,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+@@ -2187,7 +2187,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Added 02/2023

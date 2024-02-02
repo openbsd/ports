@@ -120,7 +120,7 @@ Index: remoting/host/remoting_me2me_host.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   absl::optional<bool> host_username_match_required =
+   std::optional<bool> host_username_match_required =
        policies.FindBool(policy::key::kRemoteAccessHostMatchUsername);
    if (!host_username_match_required.has_value()) {
 @@ -1800,7 +1800,7 @@ void HostProcess::StartHost() {
