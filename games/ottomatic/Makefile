@@ -2,6 +2,7 @@ COMMENT =         family-friendly 3D third person sci-fi action arcade
 
 V =               4.0.1
 PKGNAME =         ottomatic-${V}
+REVISION =	0
 DIST_TUPLE +=     github jorio OttoMatic ${V} .
 DIST_TUPLE +=     github jorio Pomme ef94150e2dcec522e3099f4d03a4e8f2639f7232 \
                   extern/Pomme
@@ -22,13 +23,9 @@ COMPILER =        base-clang ports-gcc
 
 MODULES =         devel/cmake
 
-BUILD_DEPENDS =   audio/libsamplerate
 LIB_DEPENDS =     devel/sdl2
-RUN_DEPENDS =     audio/libsamplerate \
-                  devel/desktop-file-utils \
+RUN_DEPENDS =     devel/desktop-file-utils \
                   x11/gtk+4,-guic
-
-NO_TEST =         Yes
 
 CFLAGS +=         -I${X11BASE}/include
 CXXFLAGS +=       -I${X11BASE}/include
