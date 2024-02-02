@@ -1,8 +1,8 @@
 MODGO_MODULES =	\
 	cloud.google.com/go/compute/metadata	 v0.2.0 \
+	git.sr.ht/~rjarry/go-opt		 v1.3.0 \
 	git.sr.ht/~rockorager/go-jmap		 v0.3.0 \
-	git.sr.ht/~rockorager/tcell-term	 v0.8.0 \
-	git.sr.ht/~sircmpwn/getopt		 v1.0.0 \
+	git.sr.ht/~rockorager/tcell-term	 v0.10.0 \
 	github.com/!proton!mail/crypto		 v0.0.0-20200420072808-71bec3603bf3 \
 	github.com/!proton!mail/go-crypto	 v0.0.0-20230417170513-8ee5748c52b5 \
 	github.com/arran4/golang-ical		 v0.0.0-20230318005454-19abf92700cc \
@@ -14,7 +14,7 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/emersion/go-imap		 v1.2.1 \
 	github.com/emersion/go-imap-sortthread	 v1.2.0 \
-	github.com/emersion/go-maildir		 v0.3.0 \
+	github.com/emersion/go-maildir		 v0.4.1 \
 	github.com/emersion/go-mbox		 v1.0.3 \
 	github.com/emersion/go-message		 v0.17.0 \
 	github.com/emersion/go-milter		 v0.3.3 \
@@ -34,7 +34,6 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf		 v1.5.3 \
 	github.com/golang/snappy		 v0.0.4 \
 	github.com/google/go-cmp		 v0.5.8 \
-	github.com/google/shlex			 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/hpcloud/tail			 v1.0.0 \
 	github.com/jaytaylor/html2text		 v0.0.0-20211105163654-bc68cce691ba \
 	github.com/jhillyerd/enmime		 v0.11.0 \
@@ -60,7 +59,7 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/go-internal		 v1.8.1 \
 	github.com/ssor/bom			 v0.0.0-20170718123548-6386211fdfcf \
 	github.com/stretchr/objx		 v0.5.0 \
-	github.com/stretchr/testify		 v1.8.2 \
+	github.com/stretchr/testify		 v1.8.4 \
 	github.com/syndtr/goleveldb		 v1.0.0 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	github.com/yuin/goldmark		 v1.4.13 \
@@ -83,6 +82,7 @@ MODGO_MODULES =	\
 	gopkg.in/tomb.v1			 v1.0.0-20141024135613-dd632973f1e7 \
 	gopkg.in/yaml.v2			 v2.2.1 \
 	gopkg.in/yaml.v3			 v3.0.1
+
 MODGO_MODFILES =	\
 	github.com/!proton!mail/go-crypto	 v0.0.0-20211112122917-428f8eabeeb3 \
 	github.com/bwesterb/go-ristretto	 v1.2.0 \
@@ -124,6 +124,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
 	github.com/stretchr/testify		 v1.8.0 \
+	github.com/stretchr/testify		 v1.8.2 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210322153248-0c34fe9e7dc2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
@@ -181,3 +182,4 @@ MODGO_MODFILES =	\
 	gopkg.in/check.v1			 v1.0.0-20200227125254-8fa46927fb4f \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c \
 	gopkg.in/yaml.v3			 v3.0.0-20210107192922-496545a6307b
+

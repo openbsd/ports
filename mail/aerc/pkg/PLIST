@@ -22,6 +22,7 @@ libexec/aerc/filters/show-ics-details.py
 @man man/man5/aerc-notmuch.5
 @man man/man5/aerc-sendmail.5
 @man man/man5/aerc-smtp.5
+@man man/man7/aerc-patch.7
 @man man/man7/aerc-stylesets.7
 @man man/man7/aerc-templates.7
 @man man/man7/aerc-tutorial.7
