@@ -1,11 +1,10 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		fast, encrypted, deduplicated backups
 
-GH_ACCOUNT =		rustic-rs
-GH_PROJECT =		rustic
-GH_TAGNAME =		v0.6.1
+DIST_TUPLE =		github rustic-rs rustic v0.6.1 .
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -20,7 +19,6 @@ MODULES =		devel/cargo
 MODCARGO_RUSTFLAGS =	-L${PREFIX}/lib
 
 LIB_DEPENDS =		archivers/zstd
-BUILD_DEPENDS =		security/rust-ring
 
 CONFIGURE_STYLE =	cargo
 
