@@ -1,0 +1,19 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ enable_testing()
+ 
+ if(UNIX)
+-    set(CMAKE_C_FLAGS "-g -O2 -Wall -fPIC ${CMAKE_C_FLAGS}")
++    set(CMAKE_C_FLAGS "-Wall -fPIC ${CMAKE_C_FLAGS}")
+     add_compile_definitions(UNDER_POSIX PIC)
+ endif()
+ 
+@@ -338,4 +338,4 @@ set(CPACK_PACKAGE_CHECKSUM SHA256)
+ set(CPACK_SOURCE_IGNORE_FILES "/out" "/\\\\..*")
+ set(CPACK_SOURCE_GENERATOR TXZ)
+ set(CPACK_SOURCE_PACKAGE_FILE_NAME libchewing-${CMAKE_PROJECT_VERSION})
+-include(CPack)
+\ No newline at end of file
++include(CPack)

@@ -1,11 +1,10 @@
 COMMENT =	intelligent phonetic input method library
 
-V =		0.5.1
+V =		0.6.0
 DISTNAME =	libchewing-$V
 PKGNAME =	zh-libchewing-$V
-REVISION =	0
 
-SHARED_LIBS =	chewing	0.1	# .3.3
+SHARED_LIBS =	chewing	0.2	# .3.3.1
 
 CATEGORIES =	chinese inputmethods
 
@@ -16,19 +15,16 @@ MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 # LGPLv2.1 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	m pthread sqlite3 z
+WANTLIB +=	c sqlite3
 
 SITES =		https://github.com/chewing/libchewing/releases/download/v$V/
 
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
 
-BUILD_DEPENDS =	print/texinfo
+MODULES =	devel/cmake
 LIB_DEPENDS =	databases/sqlite3
 
-MAKE_FLAGS =	MAKEINFO=${LOCALBASE}/bin/gmakeinfo
-
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =      -L${LOCALBASE}/lib -lc
 
 .include <bsd.port.mk>

@@ -4,9 +4,6 @@ include/chewing/chewing.h
 include/chewing/chewingio.h
 include/chewing/global.h
 include/chewing/mod_aux.h
-@info info/libchewing.info
-lib/libchewing.a
-lib/libchewing.la
 @lib lib/libchewing.so.${LIBchewing_VERSION}
 lib/pkgconfig/chewing.pc
 share/libchewing/
