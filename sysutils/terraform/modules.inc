@@ -318,7 +318,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-retryablehttp							 v0.7.5 \
 	github.com/hashicorp/go-rootcerts							 v1.0.2 \
 	github.com/hashicorp/go-safetemp							 v1.0.0 \
-	github.com/hashicorp/go-slug								 v0.13.3 \
+	github.com/hashicorp/go-slug								 v0.13.4 \
 	github.com/hashicorp/go-sockaddr							 v1.0.2 \
 	github.com/hashicorp/go-syslog								 v1.0.0 \
 	github.com/hashicorp/go-tfe								 v1.41.0 \
@@ -510,7 +510,7 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.19.0 \
 	golang.org/x/oauth2									 v0.11.0 \
 	golang.org/x/sync									 v0.5.0 \
-	golang.org/x/sys									 v0.15.0 \
+	golang.org/x/sys									 v0.16.0 \
 	golang.org/x/term									 v0.15.0 \
 	golang.org/x/text									 v0.14.0 \
 	golang.org/x/time									 v0.5.0 \
@@ -956,6 +956,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-retryablehttp					 v0.5.4 \
 	github.com/hashicorp/go-retryablehttp					 v0.7.0 \
 	github.com/hashicorp/go-rootcerts					 v1.0.1 \
+	github.com/hashicorp/go-slug						 v0.13.3 \
 	github.com/hashicorp/go-sockaddr					 v1.0.0 \
 	github.com/hashicorp/go-uuid						 v1.0.0 \
 	github.com/hashicorp/go-uuid						 v1.0.1 \
@@ -1369,6 +1370,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys							 v0.12.0 \
 	golang.org/x/sys							 v0.13.0 \
 	golang.org/x/sys							 v0.14.0 \
+	golang.org/x/sys							 v0.15.0 \
 	golang.org/x/sys							 v0.2.0 \
 	golang.org/x/sys							 v0.3.0 \
 	golang.org/x/sys							 v0.4.0 \
