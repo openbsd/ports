@@ -19,6 +19,9 @@ WANTLIB =		m pthread gmp mpfr
 
 SITES =			https://flintlib.org/
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf
 AUTORECONF =		${WRKSRC}/bootstrap.sh
