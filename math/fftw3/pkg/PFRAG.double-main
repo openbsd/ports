@@ -3,6 +3,7 @@
 @bin bin/fftw-wisdom
 lib/cmake/fftw3/FFTW3Config.cmake
 lib/cmake/fftw3/FFTW3ConfigVersion.cmake
+lib/cmake/fftw3/FFTW3LibraryDepends.cmake
 @static-lib lib/libfftw3.a
 lib/libfftw3.la
 @lib lib/libfftw3.so.${LIBfftw3_VERSION}

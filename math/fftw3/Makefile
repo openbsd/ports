@@ -14,6 +14,9 @@ SHARED_LIBS=	fftw3	7.1 \
 		fftw3f_threads	1.2
 CATEGORIES=	math
 
+REVISION-main=		0
+REVISION-common=	0
+
 HOMEPAGE=	https://www.fftw.org/
 
 # GPL
@@ -34,8 +37,11 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-threads
 
+FFTW3_SUFX=
+
 .if ${FLAVOR} == "float"
-CONFIGURE_ARGS+=--enable-float
+FFTW3_SUFX=		f
+CONFIGURE_ARGS+=	--enable-float
 FULLPKGNAME-main=	fftw3-float-${V}
 .endif
 
@@ -44,8 +50,17 @@ RUN_DEPENDS-main=	${FULLPKGPATH-common}
 WANTLIB-main=		c m pthread
 PKG_ARCH-common=	*
 
+SUBST_VARS +=	FFTW3_SUFX
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/fftw3
 	${INSTALL_DATA} ${WRKSRC}/doc/fftw3.pdf ${PREFIX}/share/doc/fftw3
+.if ${FLAVOR} == "float"
+	mv ${WRKINST}/${LOCALBASE}/lib/cmake/fftw3/ ${PREFIX}/lib/cmake/fftw3${FFTW3_SUFX}
+.endif
+	# https://github.com/FFTW/fftw3/issues/130
+	${INSTALL_DATA} ${FILESDIR}/FFTW3LibraryDepends.cmake.in \
+		${PREFIX}/lib/cmake/fftw3${FFTW3_SUFX}/FFTW3LibraryDepends.cmake
+	${SUBST_CMD} ${PREFIX}/lib/cmake/fftw3${FFTW3_SUFX}/FFTW3LibraryDepends.cmake
 
 .include <bsd.port.mk>
