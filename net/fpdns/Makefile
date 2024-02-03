@@ -4,10 +4,9 @@ GH_ACCOUNT =	kirei
 GH_PROJECT =	fpdns
 GH_TAGNAME =	20190131
 DISTNAME =	${GH_PROJECT}-0.10.0.${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	net
-
-HOMEPAGE =	https://code.google.com/p/fpdns/
 
 # BSD
 PERMIT_PACKAGE =	Yes
