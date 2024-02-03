@@ -1,11 +1,11 @@
 COMMENT=	tools for managing samba ldap
 
 DISTNAME=	smbldap-tools-0.9.2a
-REVISION =	3
+REVISION =	4
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://gna.org/projects/smbldap-tools/
+HOMEPAGE=	https://github.com/fumiyas/smbldap-tools
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
