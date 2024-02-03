@@ -1,6 +1,6 @@
 COMMENT=	library used to interact with Git repositories
 
-MODPY_EGG_VERSION=	3.1.38
+MODPY_EGG_VERSION=	3.1.41
 DISTNAME=	GitPython-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
