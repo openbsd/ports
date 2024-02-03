@@ -239,7 +239,6 @@
      SUBDIR += t-prot
      SUBDIR += thunderbird-i18n
      SUBDIR += tnef
-     SUBDIR += trojita
      SUBDIR += vrfy
      SUBDIR += xlbiff
      SUBDIR += z-push
