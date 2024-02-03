@@ -5,7 +5,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	source code documentation generator tool
 
-VERSION=	1.9.8
+VERSION=	1.10.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
 
@@ -23,31 +23,31 @@ WANTLIB += ${COMPILER_LIBCXX} c iconv m xapian z
 COMPILER =	base-clang ports-gcc base-gcc
 
 SITES=		https://doxygen.nl/files/
-TAR =		${LOCALBASE}/bin/gtar
-
-BUILD_DEPENDS = archivers/gtar
-
-LIB_DEPENDS=	converters/libiconv \
-		databases/xapian-core
 
 MODULES=	devel/cmake \
 		lang/python
 
 MODPY_RUNDEP=	No
 
+LIB_DEPENDS=	converters/libiconv \
+		databases/xapian-core
+
+
+BUILD_DEPENDS=	devel/bison \
+		devel/git
+
+RUN_DEPENDS=	print/ghostscript/gnu \
+		math/graphviz
+
+CONFIGURE_ARGS=		-Dbuild_doc=ON \
+			-Dbuild_app=ON \
+			-Dbuild_search=ON
+
+CONFIGURE_ARGS+=	-DCMAKE_DISABLE_FIND_PACKAGE_Javacc=ON
+
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS+=	-mxgot
 .endif
-
-BUILD_DEPENDS+=	devel/bison \
-		devel/git
-
-RUN_DEPENDS+=	print/ghostscript/gnu \
-		math/graphviz
-
-CONFIGURE_ARGS+=-Dbuild_doc=ON \
-		-Dbuild_app=ON \
-		-Dbuild_search=ON
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 

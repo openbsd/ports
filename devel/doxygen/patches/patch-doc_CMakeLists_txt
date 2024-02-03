@@ -14,25 +14,26 @@ Index: doc/CMakeLists.txt
  include(GNUInstallDirs)
  
  if (doxygen_BINARY_DIR)
-@@ -160,9 +157,6 @@ endforeach()
+@@ -157,9 +154,6 @@ endforeach()
  configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty COPYONLY)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex COPYONLY)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxywizard.1       ${PROJECT_BINARY_DIR}/man/doxywizard.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxysearch.1       ${PROJECT_BINARY_DIR}/man/doxysearch.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxyindexer.1      ${PROJECT_BINARY_DIR}/man/doxyindexer.1)
+ configure_file(${PROJECT_SOURCE_DIR}/templates/icon/doxygen.ico ${PROJECT_BINARY_DIR}/doc/doxygen.ico COPYONLY)
  
  # Call the main page "Introduction" in LaTeX, which is more appropriate for that format.
- set(MAINPAGE_TITLE Doxygen)
-@@ -188,42 +182,7 @@ add_custom_command(
+@@ -185,43 +179,7 @@ add_custom_command(
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
  )
- set_source_files_properties(config.doc PROPERTIES GENERATED 1)
- ################################################################################
+ set_source_files_properties(config.dox PROPERTIES GENERATED 1)
+-################################################################################
 -add_custom_target(run_doxygen
 -        COMMENT "Generating Latex and HTML documentation."
--        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_html.doc GENERATE_HTML=YES GENERATE_LATEX=NO ${DOXYGEN_EXECUTABLE}
--        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_latex.doc GENERATE_HTML=NO GENERATE_LATEX=YES ${DOXYGEN_EXECUTABLE}
--        DEPENDS ${PROJECT_BINARY_DIR}/doc/language.doc ${PROJECT_BINARY_DIR}/doc/config.doc
+-        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_html.dox GENERATE_HTML=YES GENERATE_LATEX=NO ${DOXYGEN_EXECUTABLE}
+-        COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} INDEX_DOC=index_latex.dox GENERATE_HTML=NO GENERATE_LATEX=YES ${DOXYGEN_EXECUTABLE}
+-        DEPENDS ${PROJECT_BINARY_DIR}/doc/language.dox ${PROJECT_BINARY_DIR}/doc/config.dox
 -        DEPENDS ${OUT_DOC_FILES}
 -        DEPENDS examples
 -        DEPENDS doxygen
@@ -67,7 +68,7 @@ Index: doc/CMakeLists.txt
  # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
  # output is redirected to "nul" as we are on windows no problem
  if (build_doc_chm)
-@@ -251,35 +210,5 @@ endif ()
+@@ -249,35 +207,5 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
