@@ -5,7 +5,7 @@ PKGNAME = 	avr32-gcc-bootstrap-${V}
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
-REVISION =		3
+REVISION =		4
 
 WANTLIB = 		c gmp mpfr
 DIST_SUBDIR = 		gcc

@@ -1,6 +1,6 @@
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
-REVISION =	0
+REVISION =	1
 DISTNAME = 	avr32-binutils-${V}
 
 # GPLv3

@@ -2,7 +2,7 @@ COMMENT = 	Atmel AVR 32-bit header files
 V = 		6.1.3.1475
 DISTNAME = 	atmel-headers-${V}
 PKGNAME = 	avr32-headers-${V}
-SITES = 	http://www.atmel.com/Images/
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes

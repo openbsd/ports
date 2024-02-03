@@ -1,7 +1,7 @@
 COMMENT = 	Atmel AVR 32-bit gcc
 V = 		4.4.7
 DISTNAME = 	avr32-gcc-${V}
-REVISION =	2
+REVISION =	3
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

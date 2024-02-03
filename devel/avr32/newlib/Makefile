@@ -1,6 +1,7 @@
 COMMENT = 	Atmel AVR 32-bit C library
 V = 		1.16.0
 DISTNAME = 	avr32-newlib-${V}
+REVISION =	0
 
 # GPLv3/GPLv2/BSD
 PERMIT_PACKAGE =	Yes
