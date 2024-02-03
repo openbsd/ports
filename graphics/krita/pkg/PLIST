@@ -120,10 +120,12 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaraindropsfilter.so
 @so lib/kritaplugins/kritarandompickfilter.so
 @so lib/kritaplugins/kritarecorderdocker.so
+@so lib/kritaplugins/kritaresettransparent.so
 @so lib/kritaplugins/kritaresourcemanager.so
 @so lib/kritaplugins/kritarotateimage.so
 @so lib/kritaplugins/kritaroundcornersfilter.so
 @so lib/kritaplugins/kritaroundmarkerpaintop.so
+@so lib/kritaplugins/kritasamplescreencolor.so
 @so lib/kritaplugins/kritascreentonegenerator.so
 @so lib/kritaplugins/kritaselectiontools.so
 @so lib/kritaplugins/kritaseparatechannels.so
@@ -160,6 +162,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritawaveletdecompose.so
 @so lib/kritaplugins/kritawebpexport.so
 @so lib/kritaplugins/kritawebpimport.so
+@so lib/kritaplugins/kritawgcolorselector.so
 @so lib/kritaplugins/kritaxcfimport.so
 @so lib/kritaplugins/kritaxmp.so
 @lib lib/libkritabasicflakes.so.${LIBkritabasicflakes_VERSION}
@@ -176,6 +179,7 @@ lib/kritaplugins/
 @lib lib/libkritalibkra.so.${LIBkritalibkra_VERSION}
 @lib lib/libkritalibpaintop.so.${LIBkritalibpaintop_VERSION}
 @lib lib/libkritametadata.so.${LIBkritametadata_VERSION}
+@lib lib/libkritamultiarch.so.${LIBkritamultiarch_VERSION}
 @lib lib/libkritapigment.so.${LIBkritapigment_VERSION}
 @lib lib/libkritaplugin.so.${LIBkritaplugin_VERSION}
 @lib lib/libkritapsd.so.${LIBkritapsd_VERSION}
@@ -348,6 +352,7 @@ share/krita/actions/KisToolTransform.action
 share/krita/actions/MoveTool.action
 share/krita/actions/PathTool.action
 share/krita/actions/SvgTextTool.action
+share/krita/actions/WGColorSelector.action
 share/krita/actions/asccdl.action
 share/krita/actions/colorsfilters.action
 share/krita/actions/convertheightnormalmap.action
@@ -419,6 +424,7 @@ share/krita/images/krita-tangentnormal-preview.png
 share/krita/images/krita-tangentnormal.png
 share/krita/images/krita_roundmarkerop.svg
 share/krita/input/
+share/krita/input/clipstudiopaintcompatible.profile
 share/krita/input/kritadefault.profile
 share/krita/input/painttoolsaicompatible.profile
 share/krita/input/photoshopcompatible.profile
@@ -747,8 +753,8 @@ share/krita/preset_icons/tool_icons/09_03_knife.png
 share/krita/preset_icons/tool_icons/09_04_knife-rake.png
 share/krita/preset_icons/tool_icons/09_05_paint-roller.png
 share/krita/preset_icons/tool_icons/10_01_color-effect.png
-share/krita/preset_icons/tool_icons/10_02_adjustement-contrast.png
-share/krita/preset_icons/tool_icons/10_03_adjustement-dark.png
+share/krita/preset_icons/tool_icons/10_02_adjustment-contrast.png
+share/krita/preset_icons/tool_icons/10_03_adjustment-dark.png
 share/krita/preset_icons/tool_icons/10_04_filter.png
 share/krita/preset_icons/tool_icons/10_05_deform.png
 share/krita/preset_icons/tool_icons/10_06_clone.png
@@ -918,6 +924,7 @@ share/krita/qmlthemes/default/images/shadow.png
 share/krita/qmlthemes/default/sizes.js
 share/krita/qmlthemes/default/theme.qml
 share/krita/shortcuts/
+share/krita/shortcuts/clip_studio_paint_compatible.shortcuts
 share/krita/shortcuts/krita_default.shortcuts
 share/krita/shortcuts/paint_tool_sai_compatible.shortcuts
 share/krita/shortcuts/photoshop_compatible.shortcuts
@@ -1033,6 +1040,7 @@ share/kritaplugins/modify_selection.xmlgui
 share/kritaplugins/offsetimage.xmlgui
 share/kritaplugins/resourcemanager.xmlgui
 share/kritaplugins/rotateimage.xmlgui
+share/kritaplugins/samplescreencolor.xmlgui
 share/kritaplugins/shearimage.xmlgui
 share/kritaplugins/waveletdecompose.xmlgui
 share/locale/af/LC_MESSAGES/krita.mo
