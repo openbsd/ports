@@ -1,3 +1,4 @@
+BROKEN-sparc64=	build-script-build` (signal: 11, SIGSEGV: invalid memory reference)
 COMMENT=	virus scanner
 DISTNAME=	clamav-1.2.1
 
