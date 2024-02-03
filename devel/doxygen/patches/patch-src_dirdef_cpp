@@ -1,0 +1,16 @@
+Doxygen encodes the source directory path into some of the output filenames.
+This is problematic in a ports context as it means WRKDIR pathnames can appear
+in generated filenames.
+
+Index: src/dirdef.cpp
+--- src/dirdef.cpp.orig
++++ src/dirdef.cpp
+@@ -220,7 +220,7 @@ static QCString encodeDirName(const QCString &anchor)
+ 
+ QCString DirDefImpl::getOutputFileBase() const
+ {
+-  QCString dir = "dir_"+encodeDirName(m_diskName);
++  QCString dir = "dir_"+encodeDirName(m_shortName);
+   AUTO_TRACE("diskName={} result={}",m_diskName,dir);
+   return dir;
+ }

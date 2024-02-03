@@ -8,6 +8,7 @@ COMMENT=	source code documentation generator tool
 VERSION=	1.10.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-${VERSION}
+REVISION=	0
 
 CATEGORIES=	devel textproc
 
