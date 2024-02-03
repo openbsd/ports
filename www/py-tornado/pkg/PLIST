@@ -126,6 +126,8 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}auth_test.
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}auth_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}autoreload_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}autoreload_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}circlerefs_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}circlerefs_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}concurrent_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}concurrent_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}curl_httpclient_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -193,6 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}wsgi_test.
 lib/python${MODPY_VERSION}/site-packages/tornado/test/asyncio_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/auth_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/autoreload_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/circlerefs_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/concurrent_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/fr_FR.csv
