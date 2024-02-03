@@ -12,6 +12,9 @@ GH_COMMIT =	91e732bb6953489077430572f43fc802bf2c75b2
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 WANTLIB +=	${COMPILER_LIBCXX} m SDL2
 
 MODULES =	devel/cmake
