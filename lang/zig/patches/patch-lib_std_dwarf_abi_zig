@@ -1,3 +1,5 @@
+proper support for aarch64 https://github.com/ziglang/zig/commit/7d81c952d57a76454c31b13b3ec8e21388f02171
+
 Index: lib/std/dwarf/abi.zig
 --- lib/std/dwarf/abi.zig.orig
 +++ lib/std/dwarf/abi.zig
