@@ -11,10 +11,16 @@ lib/python${MODPY_VERSION}/site-packages/yarl/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}quoting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}quoting.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.c
-@so lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.pyx
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_quoting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_quoting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_quoting_py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_quoting_py.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_url.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yarl/${MODPY_PYCACHE}_url.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yarl/_quoting.py
+@so lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.pyi
+lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_c.pyx
+lib/python${MODPY_VERSION}/site-packages/yarl/_quoting_py.py
+lib/python${MODPY_VERSION}/site-packages/yarl/_url.py
 lib/python${MODPY_VERSION}/site-packages/yarl/py.typed
-lib/python${MODPY_VERSION}/site-packages/yarl/quoting.py
