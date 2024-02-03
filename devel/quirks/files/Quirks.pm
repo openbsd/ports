@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1602 2024/01/09 11:09:51 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1603 2024/02/03 20:52:09 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1904,6 +1904,7 @@ setup_obsolete_reason(
 	5 => 'py-parsing',
 	3 => 'freehdl',
 	63 => 'freetalk',
+	2 => 'trojita',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
