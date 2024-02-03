@@ -25,7 +25,7 @@ Index: CMakeLists.txt
    set(CMAKE_SHARED_LIBRARY_LINK_C_FLAGS "-rdynamic")
    include_directories(/usr/local/include /usr/include)
    link_directories(/usr/local/lib /usr/lib)
-@@ -412,36 +412,17 @@ if(NOT GTK3_FOUND)
+@@ -414,36 +414,17 @@ if(NOT GTK3_FOUND)
  endif()
  include_directories(${GTK3_INCLUDE_DIRS})
  

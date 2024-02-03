@@ -1,8 +1,8 @@
 COMMENT=		GTK+ remote desktop client
 
-V=			1.4.31
-DISTNAME=		remmina-${V}
-WRKDIST=		${WRKDIR}/Remmina-v${V}-7407cc3a27eb25ba4ddddeab565f67fd688324ed
+V=			1.4.33
+DISTNAME=		Remmina-v.${V}
+PKGNAME=		${DISTNAME:L:S/v.//}
 
 CATEGORIES=		x11 net
 
@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 intl
 WANTLIB += json-glib-1.0 pango-1.0 pthread secret-1 sodium spice-client-glib-2.0
 WANTLIB += spice-client-gtk-3.0 ssh ssl vncclient vncserver vte-2.91 winpr2
 
-SITES=			https://gitlab.com/Remmina/Remmina/-/archive/v${V}/
+SITES=			https://gitlab.com/Remmina/Remmina/-/archive/v.${V}/
 
 MODULES=		devel/cmake \
 			lang/python
