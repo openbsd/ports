@@ -13,6 +13,9 @@ HOMEPAGE=	https://software.es.net/iperf/
 # BSD 3-clause
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # uses pledge unveil
 WANTLIB += c m pthread
 
