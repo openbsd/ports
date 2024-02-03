@@ -1,0 +1,21 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ cmake_policy(SET CMP0048 NEW) # enable project VERSION
+ cmake_policy(SET CMP0056 NEW) # honor link flags in try_compile()
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+-project(lager VERSION 0.1.0)
++project(lager VERSION 0.1.1)
+ 
+ if(MSVC)
+   set(CMAKE_CXX_STANDARD 20)
+@@ -43,7 +43,7 @@ if (NOT lager_BUILD_EXAMPLES AND lager_BUILD_DEBUGGER_
+     set(lager_BUILD_DEBUGGER_EXAMPLES OFF)
+ endif()
+ 
+-find_program(CCACHE ccache)
++#find_program(CCACHE ccache)
+ if (CCACHE)
+   message(STATUS "Using ccache: ${CCACHE}")
+   set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ${CCACHE})
