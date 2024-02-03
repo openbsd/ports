@@ -10,6 +10,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Chromium browser
 
 V=			121.0.6167.139
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -312,6 +313,7 @@ do-install:
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_DATA} ${BUILDDIR}/vk_swiftshader_icd.json ${PREFIX}/${DIST_TARGET_DIR}
 .endif
 
 .if ${FLAVOR:Mcomponent}

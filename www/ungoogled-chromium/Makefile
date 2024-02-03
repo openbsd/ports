@@ -13,6 +13,8 @@ COMMENT=		Chromium browser sans integration with Google
 V=			121.0.6167.139
 UGV=			${V}-1
 
+REVISION=		0
+
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
@@ -332,6 +334,7 @@ do-install:
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_DATA} ${BUILDDIR}/vk_swiftshader_icd.json ${PREFIX}/${DIST_TARGET_DIR}
 .endif
 
 .if ${FLAVOR:Mcomponent}
