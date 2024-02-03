@@ -24,7 +24,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 # deselect a few tests which cause problems:
 # - test_it_works_*: DTLS tests which error out and stop others from running
-# - test_shutdown which hangs
 # (add -v to see individual test names)
 MODPY_PYTEST_ARGS= -k 'not test_it_works_at_all and not test_it_works_with_srtp'
 
