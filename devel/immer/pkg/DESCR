@@ -1,0 +1,3 @@
+immer is a library of persistent and immutable data structures written in C++.
+These enable whole new kinds of architectures for interactive and concurrent
+programs of striking simplicity, correctness, and performance.
