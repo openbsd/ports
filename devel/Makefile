@@ -223,6 +223,7 @@
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf
+     SUBDIR += immer
      SUBDIR += include-what-you-use
      SUBDIR += indi
      SUBDIR += iniparser
@@ -252,6 +253,7 @@
      SUBDIR += kreport
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
+     SUBDIR += lager
      SUBDIR += legit
      SUBDIR += leiningen
      SUBDIR += libHX
@@ -1917,5 +1919,6 @@
      SUBDIR += z80ex
      SUBDIR += zeal
      SUBDIR += zmac
+     SUBDIR += zug
 
 .include <bsd.port.subdir.mk>
