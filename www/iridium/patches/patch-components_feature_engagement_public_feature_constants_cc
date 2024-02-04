@@ -10,7 +10,7 @@ Index: components/feature_engagement/public/feature_constants.cc
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -539,7 +539,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
+@@ -560,7 +560,7 @@ constexpr base::FeatureParam<int> kDefaultBrowserEligi
      /*default_value=*/365};
  #endif  // BUILDFLAG(IS_IOS)
  

@@ -1,11 +1,3 @@
-reverted:
-
-commit 460111ca5b8a855359eabe3e9743f196de3ba4fd
-Author: Ian Barkley-Yeung <iby@chromium.org>
-Date:   Sat Sep 30 01:42:16 2023 +0000
-
-    Ensure CrashKeyWithName is not copied, moved, or deleted
-
 Index: chrome/common/crash_keys.cc
 --- chrome/common/crash_keys.cc.orig
 +++ chrome/common/crash_keys.cc

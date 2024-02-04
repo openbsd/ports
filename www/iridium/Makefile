@@ -10,18 +10,16 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2023.11.119
-REVISION=		1
+V=			2024.01.120
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES+=		${IRIDIUM_DISTFILES}
-DISTFILES.u= 		libudev-openbsd-20221108-c3330efd.tar.gz
 
 IRIDIUM_DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=		${IRIDIUM_DISTFILES}
 
-PATCHFILES.u=		disable-privacy-sandbox-13fc15e4ec454e3397f11bdc1bf2627c121a37e8.patch
+PATCHFILES.u=		disable-privacy-sandbox-0d41e31bb75e6171a36f4797d3719fe7a99ceae7.patch
 PATCH_DIST_STRIP=	-p1
 
 CATEGORIES=		www
@@ -56,13 +54,14 @@ WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	snappy sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
+		sysutils/libudev-openbsd \
 		x11/gtk+3,-main \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
@@ -83,6 +82,7 @@ LIB_DEPENDS=	archivers/snappy \
 		devel/pango \
 		graphics/jpeg \
 		multimedia/dav1d \
+		multimedia/libvpx \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
@@ -91,8 +91,6 @@ LIB_DEPENDS=	archivers/snappy \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
-
-BUILD_DEPENDS+=	sysutils/libudev-openbsd:build
 
 USE_GMAKE=	Yes
 
@@ -119,6 +117,7 @@ GN_SYSTEM_LIBS=	dav1d \
 		libevent \
 		libjpeg \
 		libpng \
+		libvpx \
 		libxml \
 		libxslt \
 		openh264 \
@@ -241,7 +240,7 @@ pre-configure:
 # 3. run gn with the appropriate configuration arguments
 do-configure:
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
-	@cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
@@ -285,6 +284,7 @@ do-install:
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_DATA} ${BUILDDIR}/vk_swiftshader_icd.json ${PREFIX}/${DIST_TARGET_DIR}
 .endif
 
 .if ${FLAVOR:Mcomponent}
@@ -305,7 +305,5 @@ do-install:
     unveil.gpu unveil.main unveil.utility_audio unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/iridium
 .endfor
-	${INSTALL_DATA} ${WRKDIR}/sysutils/libudev-openbsd/build-${MACHINE_ARCH}/libudev.so.0.0 \
-		${PREFIX}/${DIST_TARGET_DIR}/libudev.so.0
 
 .include <bsd.port.mk>

@@ -1,5 +1,3 @@
-Unbreak build with libxml >=2.12.0
-
 Index: third_party/blink/renderer/core/xml/xslt_processor.h
 --- third_party/blink/renderer/core/xml/xslt_processor.h.orig
 +++ third_party/blink/renderer/core/xml/xslt_processor.h

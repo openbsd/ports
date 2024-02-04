@@ -10,7 +10,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
  #include "chrome/browser/safe_browsing/download_protection/document_analysis_service.h"
  #endif
  
-@@ -81,7 +81,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
+@@ -83,7 +83,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
    } else if (inspection_type == DownloadFileType::DMG) {
      StartExtractDmgFeatures();
  #endif
