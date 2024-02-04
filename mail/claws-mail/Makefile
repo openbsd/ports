@@ -2,20 +2,9 @@ COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
-COMMENT-gdata=		gdata plugin
 
-V=			4.1.1
+V=			4.2.0
 DISTNAME=		claws-mail-${V}
-PKGNAME-main=		${DISTNAME}
-PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
-PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
-PKGNAME-gdata=		claws-mail-gdata-${V}
-REVISION-bogofilter=	1
-REVISION-gdata=		2
-REVISION-main=		1
-REVISION-pdfviewer=	1
-REVISION-spamassassin=	1
 
 CATEGORIES=		mail news
 
@@ -28,7 +17,7 @@ SITES=			https://www.claws-mail.org/releases/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer -gdata
+MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer
 FLAVORS=		jpilot ldap
 FLAVOR?=
 
@@ -40,37 +29,32 @@ RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += cairo cairo-gobject crypto curl dbus-1 epoxy etpan execinfo
-WANTLIB += expat ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gtk-3 harfbuzz iconv intl jpeg m nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png sasl2 ssl xcb xcb-render xcb-shm z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 epoll-shim
+WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png wayland-client
+WANTLIB += wayland-cursor wayland-egl xcb xcb-render xcb-shm xkbcommon z
 
-WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2 bz2 c canberra
-WANTLIB-main += canberra-gtk3 db dbus-glib-1 enchant-2 gmp gnutls
-WANTLIB-main += gpg-error gpgme gthread-2.0 gumbo hogweed ical icalss
-WANTLIB-main += icalvcal icudata icui18n icuuc idn2 ltdl lz4 lzma nettle
-WANTLIB-main += notify ogg p11-kit perl rsvg-2 startup-notification-1
-WANTLIB-main += tasn1 unistring vorbis vorbisfile xcb-util xml2 zstd
-WANTLIB-main += brotlidec brotlienc db_cxx
+WANTLIB-bogofilter = ${WANTLIB}
 
-WANTLIB-gdata = ${WANTLIB}
-WANTLIB-gdata += brotlicommon brotlidec gck-2 gcr-4
-WANTLIB-gdata += gcrypt gdata goa-1.0 gpg-error idn2 json-glib-1.0
-WANTLIB-gdata += lzma p11-kit psl soup-2.4 sqlite3 unistring xml2
+WANTLIB-main = ${WANTLIB}
+WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2 brotlidec brotlienc
+WANTLIB-main += bz2 c canberra canberra-gtk3 crypto curl db db_cxx
+WANTLIB-main += dbus-glib-1 enchant-2 etpan gmp gnutls gpg-error gpgme
+WANTLIB-main += gthread-2.0 gumbo hogweed ical icalss icalvcal icudata
+WANTLIB-main += icui18n icuuc idn2 ltdl lz4 lzma nettle nghttp2 nghttp3
+WANTLIB-main += ngtcp2 ngtcp2_crypto_quictls notify ogg p11-kit perl
+WANTLIB-main += rsvg-2 sasl2 ssl startup-notification-1 tasn1 unistring
+WANTLIB-main += vorbis vorbisfile xcb-util xml2 zstd
 
-WANTLIB-pdfviewer =  ${WANTLIB}
+WANTLIB-pdfviewer = ${WANTLIB}
 WANTLIB-pdfviewer += lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
 
 
 LIB_DEPENDS=		devel/glib2 \
-			mail/libetpan \
-			security/cyrus-sasl2 \
 			x11/gtk+3
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
@@ -85,6 +69,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/glib2 \
 			devel/libnotify \
 			devel/startup-notification \
+			mail/libetpan \
+			security/cyrus-sasl2 \
 			security/gnutls>=2.2 \
 			security/gpgme \
 			security/libb2 \
@@ -97,9 +83,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
-
-LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
-			devel/libgdata
 
 CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-compface \
