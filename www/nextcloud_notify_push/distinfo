@@ -137,7 +137,7 @@ SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livj
 SHA256 (cargo/miniz_oxide-0.7.1.tar.gz) = 54EOC+VbQoraQQQcQfMsnxpCgXkBtMz0X6PUtlYedMc=
 SHA256 (cargo/mio-0.8.10.tar.gz) = jz0LKW43Sk5vPHsKH1pR10ig00yF59xI/D+pqHZX/gk=
 SHA256 (cargo/multer-2.1.0.tar.gz) = Aay9wjRp/Y/gerE1kjNx1fWkIvv5xSIVhnfI6xW8UcI=
-SHA256 (cargo/nextcloud-config-parser-0.9.0.tar.gz) = WHsuUuB59L6gaciMGbbOhUj+9Fw5i/uKrGcQpURNXrM=
+SHA256 (cargo/nextcloud-config-parser-0.9.1.tar.gz) = Z8CqLoplWvj7naP/HcsD/PrgTjZTfjIDhrAGbGjZdr8=
 SHA256 (cargo/nextcloud_appinfo-0.6.0.tar.gz) = nVnFt+MbZ7qQGNvmOhraTqMzwPCufhYCY8FWSvsSFc8=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
 SHA256 (cargo/nu-ansi-term-0.49.0.tar.gz) = wHPTwZMNB1F3Ss9J5mZTrOy0FsOlTG7AlamxHK3bWmg=
@@ -330,7 +330,7 @@ SHA256 (cargo/xpath_reader-0.5.3.tar.gz) = 620e4uMnB6xON4IgsmsN6NjBEojamrhvepfSd
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (notify_push-0.6.8.tar.gz) = Ad2JofhNvMo30aVymCARIxCeOrkUlPJzWjbio4dtWh4=
+SHA256 (notify_push-0.6.9.tar.gz) = HWIyjCKeZZkSzCKNYSs8+zuTQdt4k+4Gf+wgQ9i0rUQ=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.7.tar.gz) = 42894
@@ -470,7 +470,7 @@ SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/miniz_oxide-0.7.1.tar.gz) = 55194
 SIZE (cargo/mio-0.8.10.tar.gz) = 102345
 SIZE (cargo/multer-2.1.0.tar.gz) = 23976
-SIZE (cargo/nextcloud-config-parser-0.9.0.tar.gz) = 23705
+SIZE (cargo/nextcloud-config-parser-0.9.1.tar.gz) = 23896
 SIZE (cargo/nextcloud_appinfo-0.6.0.tar.gz) = 15344
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
 SIZE (cargo/nu-ansi-term-0.49.0.tar.gz) = 28211
@@ -663,4 +663,4 @@ SIZE (cargo/xpath_reader-0.5.3.tar.gz) = 10569
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (notify_push-0.6.8.tar.gz) = 111779
+SIZE (notify_push-0.6.9.tar.gz) = 111790
