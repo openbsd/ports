@@ -24,6 +24,9 @@ MODSCONS_INSTALL_TARGET = \
 		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${INSTALL_TARGET} \
 		DESTDIR=${WRKINST}
 
+# XXX scons include parser is bogus
+DPB_PROPERTIES += nojunk
+
 .if !target(do-build)
 do-build:
 	@${MODSCONS_BUILD_TARGET}
