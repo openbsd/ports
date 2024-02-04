@@ -3,16 +3,16 @@ Fix sed(1), grep(1) usage (i.e. !GNU).
 Index: scripts/xdg-open.in
 --- scripts/xdg-open.in.orig
 +++ scripts/xdg-open.in
-@@ -387,7 +387,7 @@ DEBUG 3 "$xdg_user_dir:$xdg_system_dirs"
+@@ -483,7 +483,7 @@ open_generic()
+         check_input_file "$file"
  
- open_generic_xdg_file_mime()
- {
--    filetype=`xdg-mime query filetype "$1" | sed "s/;.*//"`
-+    filetype=`xdg-mime query filetype "$1" | sed "s/[ ;].*//"`
-     open_generic_xdg_mime "$1" "$filetype"
- }
- 
-@@ -485,7 +485,7 @@ open_generic()
+         if has_display; then
+-            filetype="$(xdg-mime query filetype "$file" | sed "s/;.*//")"
++            filetype="$(xdg-mime query filetype "$file" | sed "s/[ ;].*//")"
+             # passing a path a url is okay too,
+             # see desktop file specification for '%u'
+             open_generic_xdg_mime "$file" "$filetype" "$1"
+@@ -516,7 +516,7 @@ open_generic()
      if [ x"$BROWSER" = x"" ]; then
          BROWSER=www-browser:links2:elinks:links:lynx:w3m
          if has_display; then
