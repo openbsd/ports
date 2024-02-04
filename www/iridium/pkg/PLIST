@@ -11,7 +11,6 @@ iridium/headless_lib_strings.pak
 @so iridium/libEGL.so
 @so iridium/libGLESv2.so
 @so iridium/libVkICD_mock_icd.so
-iridium/libudev.so.0
 @so iridium/libvulkan.so
 iridium/locales/
 iridium/locales/af.pak
