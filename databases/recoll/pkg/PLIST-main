@@ -1,6 +1,32 @@
 @pkgpath databases/recoll
 @bin bin/recollindex
 @bin bin/recollq
+include/recoll/
+include/recoll/Filter.h
+include/recoll/docseq.h
+include/recoll/docseqdb.h
+include/recoll/hldata.h
+include/recoll/idxstatus.h
+include/recoll/internfile.h
+include/recoll/log.h
+include/recoll/mimehandler.h
+include/recoll/pathut.h
+include/recoll/plaintorich.h
+include/recoll/qresultstore.h
+include/recoll/rclconfig.h
+include/recoll/rcldb.h
+include/recoll/rcldoc.h
+include/recoll/rclinit.h
+include/recoll/rclquery.h
+include/recoll/rclutil.h
+include/recoll/readfile.h
+include/recoll/reslistpager.h
+include/recoll/searchdata.h
+include/recoll/smallut.h
+include/recoll/wasatorcl.h
+@so lib/librecoll-${MODPY_EGG_VERSION}.so
+lib/librecoll.la
+@so lib/librecoll.so
 lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -19,16 +45,12 @@ lib/python${MODPY_VERSION}/site-packages/recoll/conftree.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
-lib/recoll/
-@so lib/recoll/librecoll-${MODPY_EGG_VERSION}.so
-@static-lib lib/recoll/librecoll.a
-lib/recoll/librecoll.la
-@so lib/recoll/librecoll.so
 @man man/man1/recollindex.1
 @man man/man1/recollq.1
 @man man/man5/recoll.conf.5
 share/recoll/
 share/recoll/examples/
+share/recoll/examples/backends
 share/recoll/examples/fields
 share/recoll/examples/fragment-buttons.xml
 share/recoll/examples/mimeconf
@@ -47,6 +69,7 @@ share/recoll/examples/recollindex@.service
 share/recoll/filters/
 share/recoll/filters/abiword.xsl
 share/recoll/filters/cmdtalk.py
+share/recoll/filters/cnsplitter.py
 share/recoll/filters/conftree.py
 share/recoll/filters/fb2.xsl
 share/recoll/filters/gnumeric.xsl
@@ -63,6 +86,7 @@ share/recoll/filters/openxml-xls-body.xsl
 share/recoll/filters/ppt-dump.py
 share/recoll/filters/rcl7z.py
 share/recoll/filters/rclaptosidman
+share/recoll/filters/rclaspell-sugg.py
 share/recoll/filters/rclaudio.py
 share/recoll/filters/rclbasehandler.py
 share/recoll/filters/rclbibtex.sh
@@ -86,6 +110,7 @@ share/recoll/filters/rclimg
 share/recoll/filters/rclimg.py
 share/recoll/filters/rclinfo.py
 share/recoll/filters/rclipynb.py
+share/recoll/filters/rcljoplin.py
 share/recoll/filters/rclkar.py
 share/recoll/filters/rclkwd
 share/recoll/filters/rcllatinclass.py
@@ -108,6 +133,7 @@ share/recoll/filters/rclpython.py
 share/recoll/filters/rclrar.py
 share/recoll/filters/rclrtf.py
 share/recoll/filters/rclscribus
+share/recoll/filters/rclsfz.py
 share/recoll/filters/rclshowinfo
 share/recoll/filters/rcltar.py
 share/recoll/filters/rcltex
@@ -128,3 +154,4 @@ share/recoll/filters/xls-dump.py
 share/recoll/filters/xlsxmltocsv.py
 share/recoll/filters/xml.xsl
 share/recoll/translations/recoll_ja.qm
+share/recoll/translations/recoll_ru.qm

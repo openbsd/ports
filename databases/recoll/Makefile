@@ -1,9 +1,11 @@
+DPB_PROPERTIES=	parallel
+
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.33.4
+V=		1.37.0
 DISTNAME=	recoll-${V}
 
 CATEGORIES=	databases sysutils
@@ -18,8 +20,8 @@ SITES=		https://www.lesbonscomptes.com/recoll/
 # C++11
 COMPILER=	base-clang ports-gcc
 
-WANTLIB=	${COMPILER_LIBCXX} c iconv m xapian z
-WANTLIB-main=	${WANTLIB} c iconv lzma m xapian xml2 xslt z
+WANTLIB=	${COMPILER_LIBCXX} c iconv m xapian xml2 xslt z
+WANTLIB-main=	${WANTLIB} c iconv lzma m xapian z
 WANTLIB-gui=	${WANTLIB} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport \
 		Qt5Widgets Qt5Xml
 
@@ -32,7 +34,7 @@ MODPY_EGG_VERSION=	$V
 MODPY_ADJ_FILES=	filters/*.py filters/rclepub
 
 USE_GMAKE=		Yes
-DPB_PROPERTIES=		parallel
+LIBTOOL_FLAGS=		--tag=disable-static
 
 BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR} \
 			textproc/aspell/core
@@ -55,7 +57,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			QMAKE="${MODQT_QMAKE}"
 
-CONFIGURE_ARGS=		--disable-python-chm \
+CONFIGURE_ARGS=		--disable-python-aspell \
+			--disable-python-chm \
 			--disable-userdoc \
 			--without-inotify \
 			--without-fam \

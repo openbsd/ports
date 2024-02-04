@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -2802,16 +2802,12 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2970,16 +2970,12 @@ CXXFLAGS ?= @CXXFLAGS@
  @MAKEPYTHON_TRUE@clean-local:: recollpython-clean
  @MAKEPYTHON_TRUE@recollpython: librecoll.la
  @MAKEPYTHON_TRUE@	(cd python/recoll; set -x; \
@@ -20,7 +20,7 @@ Index: Makefile.in
  @MAKEPYTHON_TRUE@         )
  @MAKEPYTHON_TRUE@recollpython-clean:
  @MAKEPYTHON_TRUE@	rm -f python/recoll/*.pyc
-@@ -2827,14 +2823,11 @@ PicStatic: $(librecoll_la_OBJECTS)
+@@ -2992,14 +2988,11 @@ CXXFLAGS ?= @CXXFLAGS@
  @MAKEPYTHONCHM_TRUE@clean-local:: rclpychm-clean
  @MAKEPYTHONCHM_TRUE@rclpychm:
  @MAKEPYTHONCHM_TRUE@	(cd python/pychm; set -x; \
