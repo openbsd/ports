@@ -1,2 +1,2 @@
 @so ungoogled-chromium/libvk_swiftshader.so
-chrome/vk_swiftshader_icd.json
+ungoogled-chromium/vk_swiftshader_icd.json
