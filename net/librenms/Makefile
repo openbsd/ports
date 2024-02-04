@@ -1,9 +1,13 @@
 COMMENT=	auto-discovering network management/monitoring system
 
+# requires PHP 8.1+; sparc64 is 8.0-only
+NOT_FOR_ARCHS=	sparc64
+
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	24.1.0
+REVISION=	0
 
 DISTFILES.deps=	${PKGNAME}-vendor.tar.xz
 EPOCH=		0
@@ -22,9 +26,6 @@ SITES.deps=	https://spacehopper.org/mirrors/
 MODULES=	lang/php \
 		lang/python
 MODPY_BUILDDEP= No
-# requires 8.1+; sparc64 is 8.0-only so setting MODPHP_VERSION
-# here makes sure this is knocked out on sparc64
-MODPHP_VERSION=	8.1
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
