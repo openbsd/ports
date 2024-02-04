@@ -1,6 +1,6 @@
 COMMENT=	module wrapper for os.path
 
-MODPY_EGG_VERSION=	16.7.1
+MODPY_EGG_VERSION=	16.10.0
 DISTNAME=	path-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,7 +17,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST=	Yes
 
-TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
+		devel/py-more-itertools${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3
