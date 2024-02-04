@@ -716,6 +716,7 @@ share/examples/asterisk/default/mgcp.conf
 share/examples/asterisk/default/minivm.conf
 @comment share/examples/asterisk/default/misdn.conf
 share/examples/asterisk/default/modules.conf
+@sample ${SYSCONFDIR}/asterisk/modules.conf
 share/examples/asterisk/default/motif.conf
 share/examples/asterisk/default/musiconhold.conf
 @comment share/examples/asterisk/default/ooh323.conf
@@ -758,6 +759,12 @@ share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
 share/examples/asterisk/default/xmpp.conf
+share/examples/asterisk/sip_to_pjsip/
+share/examples/asterisk/sip_to_pjsip/astconfigparser.py
+share/examples/asterisk/sip_to_pjsip/astdicts.py
+share/examples/asterisk/sip_to_pjsip/sip_to_pjsip.py
+share/examples/asterisk/sip_to_pjsip/sip_to_pjsql.py
+share/examples/asterisk/sip_to_pjsip/sqlconfigparser.py
 @mode 750
 @owner _asterisk
 @group _asterisk

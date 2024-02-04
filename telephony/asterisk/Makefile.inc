@@ -92,6 +92,7 @@ BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
 MODULES+=		lang/python
 MODPY_RUNDEP=		No
+MODPY_ADJ_FILES=	contrib/scripts/sip_to_pjsip/sip_to_pj*.py
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
@@ -359,7 +360,7 @@ post-install:
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/doc/*.{pdf,txt} \
 		${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/basic-pbx
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/{basic-pbx,sip_to_pjsip}
 	${INSTALL_DATA} ${WRKSRC}/configs/basic-pbx/* ${EXAMPLEDIR}/basic-pbx
 .if ${OLD_SAMPLECONF:L:Myes}
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
@@ -370,7 +371,10 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \
 	    ${WRKSRC}/contrib/scripts/asterisk.ldap-schema \
-	    ${PREFIX}/share/examples/asterisk/
+	    ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/sip_to_pjsip/* \
+	    ${EXAMPLEDIR}/sip_to_pjsip
+	chmod +x ${EXAMPLEDIR}/sip_to_pjsip/sip_to_pj*.py
 	@sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
 	    ${PREFIX}/sbin/astversion
 	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default

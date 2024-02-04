@@ -794,8 +794,18 @@ share/examples/asterisk/openbsd/voicemail.conf.sample
 @sample ${LOCALSTATEDIR}/spool/asterisk/outgoing/
 @sample ${LOCALSTATEDIR}/spool/asterisk/system/
 @sample ${LOCALSTATEDIR}/spool/asterisk/tmp/
+@mode
+@owner
+@group
+share/examples/asterisk/sip_to_pjsip/
+share/examples/asterisk/sip_to_pjsip/astconfigparser.py
+share/examples/asterisk/sip_to_pjsip/astdicts.py
+share/examples/asterisk/sip_to_pjsip/sip_to_pjsip.py
+share/examples/asterisk/sip_to_pjsip/sip_to_pjsql.py
+share/examples/asterisk/sip_to_pjsip/sqlconfigparser.py
 @mode 770
 @owner root
+@group _asterisk
 @sample ${LOCALSTATEDIR}/db/asterisk/
 @sample ${LOCALSTATEDIR}/log/asterisk/
 @sample ${LOCALSTATEDIR}/log/asterisk/cdr-csv/
