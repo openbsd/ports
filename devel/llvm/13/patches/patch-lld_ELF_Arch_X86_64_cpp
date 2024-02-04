@@ -70,3 +70,22 @@ Index: lld/ELF/Arch/X86_64.cpp
  }
  
  static TargetInfo *getTargetInfo() {
+@@ -1141,6 +1142,10 @@ static TargetInfo *getTargetInfo() {
+     return &t;
+   }
+ 
++#ifdef __OpenBSD__
++  static IntelIBT t;
++  return &t;
++#else
+   if (config->andFeatures & GNU_PROPERTY_X86_FEATURE_1_IBT) {
+     static IntelIBT t;
+     return &t;
+@@ -1148,6 +1153,7 @@ static TargetInfo *getTargetInfo() {
+ 
+   static X86_64 t;
+   return &t;
++#endif
+ }
+ 
+ TargetInfo *elf::getX86_64TargetInfo() { return getTargetInfo(); }

@@ -1,10 +1,7 @@
-- Don't create IBT .plt if there are no PLT entries.  Cherry picked from
-  upstream.
-
 Index: lld/ELF/SyntheticSections.cpp
 --- lld/ELF/SyntheticSections.cpp.orig
 +++ lld/ELF/SyntheticSections.cpp
-@@ -2567,6 +2567,10 @@ PltSection::PltSection()
+@@ -2518,6 +2518,10 @@ PltSection::PltSection()
    if ((config->emachine == EM_386 || config->emachine == EM_X86_64) &&
        (config->andFeatures & GNU_PROPERTY_X86_FEATURE_1_IBT))
      name = ".plt.sec";
@@ -15,12 +12,3 @@ Index: lld/ELF/SyntheticSections.cpp
  
    // The PLT needs to be writable on SPARC as the dynamic linker will
    // modify the instructions in the PLT entries.
-@@ -2728,6 +2732,8 @@ size_t IBTPltSection::getSize() const {
-   // 16 is the header size of .plt.
-   return 16 + in.plt->getNumEntries() * target->pltEntrySize;
- }
-+
-+bool IBTPltSection::isNeeded() const { return in.plt->getNumEntries() > 0; }
- 
- // The string hash function for .gdb_index.
- static uint32_t computeGdbHash(StringRef s) {
