@@ -24,6 +24,7 @@ V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 REVISION = 19
+REVISION-c++ = 20
 
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz

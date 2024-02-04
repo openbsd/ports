@@ -19,6 +19,7 @@ V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 REVISION = 10
+REVISION-c++ = 11
 
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
