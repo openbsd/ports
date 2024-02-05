@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	22.10.0
 
 DISTNAME =		Automat-${MODPY_EGG_VERSION}
 PKGNAME =		py-automat-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,7 +18,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 #MODPY_PYTEST_ARGS =	lib/automat/_test/
 
-BUILD_DEPENDS =		textproc/py-m2r${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR}
 
