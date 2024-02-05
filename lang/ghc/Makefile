@@ -132,7 +132,7 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			BUILD_SPHINX_PDF=NO
 
 # haddock: ... <stdout>: commitBuffer: invalid argument (invalid character)
-MAKE_ENV =	LC_ALL=en_US.UTF-8
+MAKE_ENV +=	LC_ALL=en_US.UTF-8
 
 TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
@@ -162,17 +162,20 @@ post-patch:
 	cd ${WRKSRC} && \
 	${MODPY_BIN} hadrian/bootstrap/bootstrap.py --no-archive -w ../bin/ghc \
 		-s ${FULLDISTDIR}/hadrian-sources-${BIN_VER}.tar.gz
-do-build:
-	cd ${WRKSRC} && \
+
+HADRIAN = \
 	env -i ${AUTOCONF_ENV} ${MAKE_ENV} \
 	_build/bin/hadrian '*.*.ghc.link.opts+=-optl-Wl,--no-execute-only' \
-		'*.*.ghc.link.opts+=-optl-Qunused-arguments' \
-		'*.*.ghc.link.opts+=-L/usr/local/lib' \
-		--docs=none \
-		--flavour=release${TRANSFORMER} \
-		--no-color \
-		--jobs=${MAKE_JOBS} \
-		binary-dist-dir
+	'*.*.ghc.link.opts+=-optl-Qunused-arguments' \
+	'*.*.ghc.link.opts+=-L/usr/local/lib' \
+	--docs=none \
+	--flavour=release${TRANSFORMER} \
+	--no-color \
+	--jobs=${MAKE_JOBS}
+
+do-build:
+	cd ${WRKSRC} && \
+	${HADRIAN} binary-dist-dir
 	ln -sf ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}{-x86_64-unknown-openbsd,}
 
 do-install:
@@ -181,11 +184,9 @@ do-install:
 	env -i ${MAKE_ENV} ${FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 
 do-test:
-	ulimit -c 0 -n 1024 && \
-	cd ${WRKSRC}/testsuite/tests && \
-	exec ${SETENV} ${MAKE_ENV} LC_CTYPE=en_US.UTF-8 \
-		${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		PYTHON="${MODPY_BIN}"
+	ln -sf /usr/bin/false ${WRKDIR}/bin/git
+	cd ${WRKSRC} && \
+	ulimit -s 8192 -d 10485760 -n 1024 && env  ${HADRIAN} test
 
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
