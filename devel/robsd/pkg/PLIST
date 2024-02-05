@@ -4,7 +4,6 @@ libexec/robsd/robsd-checkflist.sh
 @bin libexec/robsd/robsd-config
 libexec/robsd/robsd-cross-dirs.sh
 libexec/robsd/robsd-cross-distrib.sh
-@bin libexec/robsd/robsd-cross-exec
 libexec/robsd/robsd-cross-tools.sh
 libexec/robsd/robsd-cvs.sh
 libexec/robsd/robsd-distrib.sh
@@ -20,10 +19,8 @@ libexec/robsd/robsd-patch.sh
 libexec/robsd/robsd-ports-clean.sh
 libexec/robsd/robsd-ports-distrib.sh
 libexec/robsd/robsd-ports-dpb.sh
-@bin libexec/robsd/robsd-ports-exec
 libexec/robsd/robsd-ports-proot.sh
 libexec/robsd/robsd-reboot.sh
-@bin libexec/robsd/robsd-regress-exec
 libexec/robsd/robsd-regress-exec.sh
 @bin libexec/robsd/robsd-regress-log
 libexec/robsd/robsd-regress-mount.sh
@@ -32,12 +29,13 @@ libexec/robsd/robsd-regress-pkg-add.sh
 libexec/robsd/robsd-regress-pkg-del.sh
 libexec/robsd/robsd-regress-umount.sh
 libexec/robsd/robsd-release.sh
+@bin libexec/robsd/robsd-report
 libexec/robsd/robsd-revert.sh
 @bin libexec/robsd/robsd-stat
 @bin libexec/robsd/robsd-step
+@bin libexec/robsd/robsd-wait
 libexec/robsd/robsd-xbase.sh
 libexec/robsd/robsd-xrelease.sh
-libexec/robsd/util-cross.sh
 libexec/robsd/util-ports.sh
 libexec/robsd/util-regress.sh
 libexec/robsd/util.sh
@@ -51,6 +49,7 @@ libexec/robsd/util.sh
 @man man/man8/robsd-cross.8
 @man man/man8/robsd-crossenv.8
 @man man/man8/robsd-kill.8
+@man man/man8/robsd-ls.8
 @man man/man8/robsd-ports.8
 @man man/man8/robsd-regress-html.8
 @man man/man8/robsd-regress-log.8
