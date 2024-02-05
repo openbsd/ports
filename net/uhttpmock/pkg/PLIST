@@ -5,33 +5,8 @@ include/libuhttpmock-0.0/uhttpmock/uhm-server.h
 include/libuhttpmock-0.0/uhttpmock/uhm-version.h
 include/libuhttpmock-0.0/uhttpmock/uhm.h
 lib/girepository-1.0/Uhm-0.0.typelib
-@static-lib lib/libuhttpmock-0.0.a
-lib/libuhttpmock-0.0.la
 @lib lib/libuhttpmock-0.0.so.${LIBuhttpmock-0.0_VERSION}
 lib/pkgconfig/libuhttpmock-0.0.pc
 share/gir-1.0/Uhm-0.0.gir
-share/gtk-doc/html/libuhttpmock-0.0/
-share/gtk-doc/html/libuhttpmock-0.0/UhmResolver.html
-share/gtk-doc/html/libuhttpmock-0.0/UhmServer.html
-share/gtk-doc/html/libuhttpmock-0.0/annotation-glossary.html
-share/gtk-doc/html/libuhttpmock-0.0/ch01.html
-share/gtk-doc/html/libuhttpmock-0.0/ch02.html
-share/gtk-doc/html/libuhttpmock-0.0/ch03.html
-share/gtk-doc/html/libuhttpmock-0.0/ch04.html
-share/gtk-doc/html/libuhttpmock-0.0/home.png
-share/gtk-doc/html/libuhttpmock-0.0/index.html
-share/gtk-doc/html/libuhttpmock-0.0/left-insensitive.png
-share/gtk-doc/html/libuhttpmock-0.0/left.png
-share/gtk-doc/html/libuhttpmock-0.0/libuhttpmock-0.0-Version-Information.html
-share/gtk-doc/html/libuhttpmock-0.0/libuhttpmock-0.0.devhelp2
-share/gtk-doc/html/libuhttpmock-0.0/pt01.html
-share/gtk-doc/html/libuhttpmock-0.0/pt02.html
-share/gtk-doc/html/libuhttpmock-0.0/pt03.html
-share/gtk-doc/html/libuhttpmock-0.0/pt04.html
-share/gtk-doc/html/libuhttpmock-0.0/right-insensitive.png
-share/gtk-doc/html/libuhttpmock-0.0/right.png
-share/gtk-doc/html/libuhttpmock-0.0/style.css
-share/gtk-doc/html/libuhttpmock-0.0/up-insensitive.png
-share/gtk-doc/html/libuhttpmock-0.0/up.png
 share/vala/vapi/libuhttpmock-0.0.deps
 share/vala/vapi/libuhttpmock-0.0.vapi

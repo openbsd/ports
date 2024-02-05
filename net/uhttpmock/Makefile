@@ -1,24 +1,24 @@
 COMMENT =		HTTP web service mocking library
 
-DISTNAME =		uhttpmock-0.5.3
-SHARED_LIBS +=	uhttpmock-0.0        0.1      # 2.0
+VERSION =		0.5.5
+DISTNAME =		uhttpmock-${VERSION}
+SHARED_LIBS +=	uhttpmock-0.0        0.1      # 2.3
 
 CATEGORIES =		net devel
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+HOMEPAGE =		https://gitlab.freedesktop.org/pwithnall/uhttpmock
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 soup-2.4
-SITES =			https://tecnocode.co.uk/downloads/uhttpmock/
-EXTRACT_SUFX =		.tar.xz
+SITES =			https://gitlab.freedesktop.org/pwithnall/uhttpmock/-/archive/${VERSION}/
+EXTRACT_SUFX =		.tar.bz2
 
+MODULES =		devel/meson \
+			x11/gnome
 
-MODULES =		x11/gnome
-
-USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	-Dgtk_doc=false
 
 MODGNOME_TOOLS =	gobject-introspection vala
 
