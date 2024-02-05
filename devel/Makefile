@@ -262,6 +262,7 @@
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libbfio
+     SUBDIR += libbgcode
      SUBDIR += libbinio
      SUBDIR += libcdada
      SUBDIR += libcoap
