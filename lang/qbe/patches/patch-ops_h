@@ -1,0 +1,16 @@
+dbgloc: add column argument
+
+backport of 85287081c4a25785dec1ec48c488a5879b3c37ac
+
+Index: ops.h
+--- ops.h.orig
++++ ops.h
+@@ -122,7 +122,7 @@ O(vastart, T(m,e,e,e, x,e,e,e), 0) X(0, 0, 0) V(0)
+ O(copy,    T(w,l,s,d, x,x,x,x), 0) X(0, 0, 1) V(0)
+ 
+ /* Debug */
+-O(dbgloc,  T(w,l,s,d, x,x,x,x), 0) X(0, 0, 1) V(0)
++O(dbgloc,  T(w,e,e,e, w,e,e,e), 0) X(0, 0, 1) V(0)
+ 
+ /****************************************/
+ /* INTERNAL OPERATIONS (keep nop first) */

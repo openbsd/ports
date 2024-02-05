@@ -1,0 +1,16 @@
+dbgloc: add column argument
+
+backport of 85287081c4a25785dec1ec48c488a5879b3c37ac
+
+Index: arm64/emit.c
+--- arm64/emit.c.orig
++++ arm64/emit.c
+@@ -447,7 +447,7 @@ emitins(Ins *i, E *e)
+ 			emitf("mov %=, sp", i, e);
+ 		break;
+ 	case Odbgloc:
+-		emitdbgloc(i->arg[0].val, e->f);
++		emitdbgloc(i->arg[0].val, i->arg[1].val, e->f);
+ 		break;
+ 	}
+ }

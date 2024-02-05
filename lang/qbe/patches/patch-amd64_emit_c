@@ -1,0 +1,16 @@
+dbgloc: add column argument
+
+backport of 85287081c4a25785dec1ec48c488a5879b3c37ac
+
+Index: amd64/emit.c
+--- amd64/emit.c.orig
++++ amd64/emit.c
+@@ -548,7 +548,7 @@ emitins(Ins i, Fn *fn, FILE *f)
+ 		emitcopy(i.arg[1], TMP(XMM0+15), i.cls, fn, f);
+ 		break;
+ 	case Odbgloc:
+-		emitdbgloc(i.arg[0].val, f);
++		emitdbgloc(i.arg[0].val, i.arg[1].val, f);
+ 		break;
+ 	}
+ }
