@@ -8,7 +8,7 @@ REVISION =	6
 
 SITES.p =	https://github.com/tmate-io/tmate/commit/
 PATCHFILES.p =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch \
-		tmate-include-errno{339e6c43575244f72831654e5dda41c037febde7}.patch
+		tmate-include-errno-b{339e6c43575244f72831654e5dda41c037febde7}.patch
 PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =	https://tmate.io
