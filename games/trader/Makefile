@@ -1,6 +1,6 @@
 COMMENT =	simple text-based game of interstellar trading
 
-DISTNAME =	trader-7.19
+DISTNAME =	trader-7.20
 
 CATEGORIES =	games
 
