@@ -1,6 +1,0 @@
-SHA256 (ghc/ghc-8.10.7-src.tar.xz) = 4+72IpzpkI3+HqQUNr77BFX++xkyVZ6GCtTGBrDQPJ0=
-SHA256 (ghc/ghc-8.10.7.20230613-amd64-unknown-openbsd.tar.xz) = /QCac6kB92pFCO9fzn90h/bFJysRl8GUQjOHBVA/5SA=
-SHA256 (ghc/ghc-8.10.7.20230613-shlibs-amd64.tar.gz) = LpQDN0fV+YASghLoGTjn0yzEeuYPNW9gtUasieUgu+g=
-SIZE (ghc/ghc-8.10.7-src.tar.xz) = 19932668
-SIZE (ghc/ghc-8.10.7.20230613-amd64-unknown-openbsd.tar.xz) = 48998912
-SIZE (ghc/ghc-8.10.7.20230613-shlibs-amd64.tar.gz) = 2941676
