@@ -9,13 +9,13 @@ REVISION-main =		0
 SITES.p1 ?=		https://github.com/ruby/openssl/commit/
 
 # Backport fix for fixnum*fixnum multiplication on octeon
-PATCHFILES.p =		ruby-octeon-fix-1{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch
+PATCHFILES.p =		ruby-octeon-fix-2{fe6245b4309c855e6aca5b786ad50a72d53d278a}.patch
 # Backport fix for ASN.1 time test
-PATCHFILES.p1 +=	ruby-asn1time-fix{bbc540fe83195e2a54cf40fab448cea2afe4df1d}.patch
+PATCHFILES.p1 +=	ruby-asn1time-fix-1{bbc540fe83195e2a54cf40fab448cea2afe4df1d}.patch
 # Enable HKDF
-PATCHFILES.p1 +=	ruby-enable-hkdf{9bdd39a7e2a5851c9090889727f54859e63a4ec9}.patch
+PATCHFILES.p1 +=	ruby-enable-hkdf-1{9bdd39a7e2a5851c9090889727f54859e63a4ec9}.patch
 # Fix Ed25519 support
-PATCHFILES.p1 +=	ruby-ed25519-fix{475b2bf766d6093370e49abd5dce5436cc0034ca}.patch
+PATCHFILES.p1 +=	ruby-ed25519-fix-1{475b2bf766d6093370e49abd5dce5436cc0034ca}.patch
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

@@ -16,15 +16,15 @@ SITES = https://github.com/mumble-voip/mumble/releases/download/v${VERSION}/
 SITES.p =		https://github.com/mumble-voip/mumble/commit/
 # "Bug fixes on master missing in 1.4.x branch"
 # https://github.com/mumble-voip/mumble/issues/5888
-PATCHFILES.p =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch \
-			mumble-kvm_getprocs-pass-elemsize-{}ccbacbf.patch \
-			mumble-struct_procinfo-member_prefix-{}a707213.patch \
-			mumble-audiowizard-fix_Werror-{}0c769d8.patch \
-			mumble-enable-xinput2-{}904bae1.patch
+PATCHFILES.p =		mumble-kvm_getprocs-ALL_arg-1-{}42ad5ed.patch \
+			mumble-kvm_getprocs-pass-elemsize-1-{}ccbacbf.patch \
+			mumble-struct_procinfo-member_prefix-1-{}a707213.patch \
+			mumble-audiowizard-fix_Werror-1-{}0c769d8.patch \
+			mumble-enable-xinput2-1-{}904bae1.patch
 
 # pending "BUILD(cmake): Build/install celt as module"
 # https://github.com/mumble-voip/mumble/pull/5592
-PATCHFILES.p +=		mumble-celt-module-{}43176a1.patch
+PATCHFILES.p +=		mumble-celt-module-1-{}43176a1.patch
 
 PATCH_DIST_STRIP =	-p1
 
