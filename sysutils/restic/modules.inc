@@ -177,7 +177,7 @@ MODGO_MODULES =	\
 	github.com/inconshreveable/mousetrap						 v1.1.0 \
 	github.com/josharian/intern							 v1.0.0 \
 	github.com/json-iterator/go							 v1.1.12 \
-	github.com/klauspost/compress							 v1.17.4 \
+	github.com/klauspost/compress							 v1.17.2 \
 	github.com/klauspost/cpuid/v2							 v2.2.6 \
 	github.com/kr/fs								 v0.1.0 \
 	github.com/kr/pretty								 v0.1.0 \

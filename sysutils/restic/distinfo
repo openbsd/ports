@@ -411,8 +411,8 @@ SHA256 (go_modules/github.com/josharian/intern/@v/v1.0.0.mod) = tQJ6Z/XBJ7tGuf+s
 SHA256 (go_modules/github.com/josharian/intern/@v/v1.0.0.zip) = Vnm/0RwUrczbRb0aD5z0tEW5XK7tb7UHupbsztEcJI0=
 SHA256 (go_modules/github.com/json-iterator/go/@v/v1.1.12.mod) = UY5Xwi0XgcWaszeIyan8LtxDWD73yfyIkqNJDBLWEiY=
 SHA256 (go_modules/github.com/json-iterator/go/@v/v1.1.12.zip) = 0AHqVwga/Q43hGfI9Km2pRJZmWu4u3Y/eBB+rxL5lQE=
-SHA256 (go_modules/github.com/klauspost/compress/@v/v1.17.4.mod) = JjAqEltaUlSr5G4mgdVhv+p9yqndtbF8fkRxNHUIEBg=
-SHA256 (go_modules/github.com/klauspost/compress/@v/v1.17.4.zip) = 3RrMY8QL82zPsqen3UZXnqZ1heN/HS27BgJrVu9iWQM=
+SHA256 (go_modules/github.com/klauspost/compress/@v/v1.17.2.mod) = yOP+9EEikCVHrQ3ClSmVLDvtrQGRB5lj0sFEQxOkW8g=
+SHA256 (go_modules/github.com/klauspost/compress/@v/v1.17.2.zip) = O4YgaVX1tb3+VeA3oZlqa7gMPmXd0ZwmHmtxtT2jEaE=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.0.1.mod) = ZhgLxWPIiQ4otpumT75uHSh5qFdKP/zn5ZfxkV94vGw=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.3.mod) = nG/GHSQ1hCexvtSPaJTbOCyik2H0DQNojUsKvHVd0rI=
 SHA256 (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.6.mod) = fIBPgjIsz5kn6FDo97qOMvVY81t0bYAjEzrYdx+qiHc=
@@ -674,7 +674,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (restic-v0.16.3.zip) = iteXFAFLruH6q5ZvXN26iciuWXlDYtHyoUlGIPIVXP0=
+SHA256 (restic-v0.16.4.zip) = 2HFVRgyHtPFDOL3iQiDlculfWun4sMS9kKYQ8VthmOA=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = 1150
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.7.mod) = 1308
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.mod) = 1308
@@ -1088,8 +1088,8 @@ SIZE (go_modules/github.com/josharian/intern/@v/v1.0.0.mod) = 43
 SIZE (go_modules/github.com/josharian/intern/@v/v1.0.0.zip) = 2648
 SIZE (go_modules/github.com/json-iterator/go/@v/v1.1.12.mod) = 267
 SIZE (go_modules/github.com/json-iterator/go/@v/v1.1.12.zip) = 139706
-SIZE (go_modules/github.com/klauspost/compress/@v/v1.17.4.mod) = 137
-SIZE (go_modules/github.com/klauspost/compress/@v/v1.17.4.zip) = 38841301
+SIZE (go_modules/github.com/klauspost/compress/@v/v1.17.2.mod) = 137
+SIZE (go_modules/github.com/klauspost/compress/@v/v1.17.2.zip) = 39030530
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.0.1.mod) = 46
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.3.mod) = 107
 SIZE (go_modules/github.com/klauspost/cpuid/v2/@v/v2.2.6.mod) = 79
@@ -1351,4 +1351,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (restic-v0.16.3.zip) = 24443318
+SIZE (restic-v0.16.4.zip) = 24448953
