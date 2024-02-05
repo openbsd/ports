@@ -18,6 +18,7 @@
      SUBDIR += gtar
      SUBDIR += gtar,static
      SUBDIR += ha
+     SUBDIR += heatshrink
      SUBDIR += innoextract
      SUBDIR += laszip
      SUBDIR += lha
