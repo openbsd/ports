@@ -1,8 +1,8 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1593,10 +1593,10 @@ uninstall-man: uninstall-man1 uninstall-man5
- 
+@@ -1600,10 +1600,10 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
+ 	mv $@.tmp $@
  
  .1.html:
 -	groff -mandoc -Thtml $< > $@
