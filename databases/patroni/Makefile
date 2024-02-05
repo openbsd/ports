@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL HA cluster management tool
 
-MODPY_EGG_VERSION =	3.2.1
+MODPY_EGG_VERSION =	3.2.2
 DISTNAME =		patroni-${MODPY_EGG_VERSION}
 
 CATEGORIES =		databases
