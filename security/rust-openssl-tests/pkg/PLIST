@@ -2942,6 +2942,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_shlex}/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_shlex}/src/
 share/rust-openssl-tests/modcargo-crates/${VER_shlex}/src/bytes.rs
 share/rust-openssl-tests/modcargo-crates/${VER_shlex}/src/lib.rs
+share/rust-openssl-tests/modcargo-crates/${VER_shlex}/src/quoting_warning.md
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/Cargo.toml
