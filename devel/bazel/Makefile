@@ -39,7 +39,7 @@ INSTALL_STRIP =
 
 MAKE_ENV =		VERBOSE=yes
 
-# The bundled verison of abseil is from 2021 and isn't compatible with clang-16.
+# The bundled version of abseil is from 2021 and isn't compatible with clang-16.
 # It also needs some patches we copy from devel/abseil.
 post-patch:
 	cp ${FULLDISTDIR}/abseil-abseil-cpp-${ABSEIL_VER}.tar.gz \
