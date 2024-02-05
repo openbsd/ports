@@ -28,6 +28,7 @@ ${P5SITE}/URI/file/QNX.pm
 ${P5SITE}/URI/file/Unix.pm
 ${P5SITE}/URI/file/Win32.pm
 ${P5SITE}/URI/ftp.pm
+${P5SITE}/URI/geo.pm
 ${P5SITE}/URI/gopher.pm
 ${P5SITE}/URI/http.pm
 ${P5SITE}/URI/https.pm
@@ -67,6 +68,7 @@ ${P5SITE}/URI/urn/oid.pm
 @man man/man3p/URI::_punycode.3p
 @man man/man3p/URI::data.3p
 @man man/man3p/URI::file.3p
+@man man/man3p/URI::geo.3p
 @man man/man3p/URI::icap.3p
 @man man/man3p/URI::icaps.3p
 @man man/man3p/URI::ldap.3p
