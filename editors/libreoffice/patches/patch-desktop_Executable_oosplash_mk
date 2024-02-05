@@ -10,6 +10,6 @@ Index: desktop/Executable_oosplash.mk
 +    -I/usr/X11R6/include \
 +))
 +
- ifneq ($(USE_XINERAMA),)
- 
- $(eval $(call gb_Executable_add_defs,oosplash,\
+ ifneq ($(USING_X11),)
+ $(eval $(call gb_Executable_add_libs,oosplash,\
+     -lXinerama \

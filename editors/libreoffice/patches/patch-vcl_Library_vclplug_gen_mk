@@ -1,9 +1,9 @@
 Index: vcl/Library_vclplug_gen.mk
 --- vcl/Library_vclplug_gen.mk.orig
 +++ vcl/Library_vclplug_gen.mk
-@@ -148,10 +148,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
+@@ -144,10 +144,10 @@ $(eval $(call gb_Library_add_libs,vclplug_gen,\
  endif
- endif # USE_XINERAMA
+ endif # USING_X11
  
 -ifeq ($(OS),LINUX)
 +ifneq (,$(filter LINUX OPENBSD,$(OS)))

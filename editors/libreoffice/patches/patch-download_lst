@@ -3,7 +3,7 @@ Needed to build with libxml >=2.12.0
 Index: download.lst
 --- download.lst.orig
 +++ download.lst
-@@ -319,8 +319,8 @@ LIBGPGERROR_TARBALL := libgpg-error-1.43.tar.bz2
+@@ -399,8 +399,8 @@ LIBGPGERROR_TARBALL := libgpg-error-1.47.tar.bz2
  # three static lines
  # so that git cherry-pick
  # will not run into conflicts

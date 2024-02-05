@@ -9,7 +9,7 @@ Index: RepositoryExternal.mk
  $(call gb_LinkTarget_set_include,$(1),\
  	$$(INCLUDE) \
  	$(BOOST_CPPFLAGS) \
-@@ -3697,6 +3698,10 @@ gb_LinkTarget__use_libgpg-error :=
+@@ -3753,6 +3754,10 @@ gb_LinkTarget__use_libgpg-error :=
  endif # ENABLE_GPGMEPP
  
  define gb_LinkTarget__use_dconf

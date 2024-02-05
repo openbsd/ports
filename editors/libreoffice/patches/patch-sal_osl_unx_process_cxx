@@ -1,0 +1,12 @@
+Index: sal/osl/unx/process.cxx
+--- sal/osl/unx/process.cxx.orig
++++ sal/osl/unx/process.cxx
+@@ -45,7 +45,7 @@
+ #include <machine/param.h>
+ #endif
+ 
+-#ifdef IOS
++#if defined(IOS) || defined(__OpenBSD__)
+ #include <signal.h>
+ #endif
+ 

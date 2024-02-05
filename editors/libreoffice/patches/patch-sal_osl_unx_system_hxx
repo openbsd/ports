@@ -1,7 +1,7 @@
 Index: sal/osl/unx/system.hxx
 --- sal/osl/unx/system.hxx.orig
 +++ sal/osl/unx/system.hxx
-@@ -159,7 +159,6 @@
+@@ -128,7 +128,6 @@
  #endif
  
  #ifdef OPENBSD
@@ -9,7 +9,7 @@ Index: sal/osl/unx/system.hxx
  #   include <pthread.h>
  #   include <sys/sem.h>
  #   include <dlfcn.h>
-@@ -169,17 +168,15 @@
+@@ -138,17 +137,15 @@
  #   include <sys/time.h>
  #   include <sys/uio.h>
  #   include <sys/exec.h>
