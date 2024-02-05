@@ -16,8 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_termui_impl.${MO
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_termui_impl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_textwrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_textwrap.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_unicodefun.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_unicodefun.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_winconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}_winconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,7 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/click/${MODPY_PYCACHE}utils.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/click/_compat.py
 lib/python${MODPY_VERSION}/site-packages/click/_termui_impl.py
 lib/python${MODPY_VERSION}/site-packages/click/_textwrap.py
-lib/python${MODPY_VERSION}/site-packages/click/_unicodefun.py
 lib/python${MODPY_VERSION}/site-packages/click/_winconsole.py
 lib/python${MODPY_VERSION}/site-packages/click/core.py
 lib/python${MODPY_VERSION}/site-packages/click/decorators.py
