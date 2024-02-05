@@ -1,0 +1,14 @@
+libbgcode is a library to operate (read / write / convert) on Binary
+G-Code, which is a new G-code file format featuring the following
+improvements over the legacy G-code:
+
+1. Block structure with distinct blocks for metadata vs. G-code
+
+2. Faster navigation
+
+3. Coding & compression for smaller file size
+
+4. Checksum for data validity
+
+5. Extensivity through new (custom) blocks. For example, a file
+signature block may be welcome by corporate customers.

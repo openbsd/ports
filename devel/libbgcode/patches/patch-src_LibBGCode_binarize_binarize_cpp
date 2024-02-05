@@ -1,0 +1,14 @@
+Index: src/LibBGCode/binarize/binarize.cpp
+--- src/LibBGCode/binarize/binarize.cpp.orig
++++ src/LibBGCode/binarize/binarize.cpp
+@@ -4,8 +4,8 @@
+ #include "core/core_impl.hpp"
+ 
+ extern "C" {
+-#include <heatshrink/heatshrink_encoder.h>
+-#include <heatshrink/heatshrink_decoder.h>
++#include <heatshrink_encoder.h>
++#include <heatshrink_decoder.h>
+ }
+ #include <zlib.h>
+ 

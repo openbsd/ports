@@ -1,0 +1,24 @@
+@bin bin/bgcode
+include/LibBGCode/
+include/LibBGCode/binarize/
+include/LibBGCode/binarize/binarize.hpp
+include/LibBGCode/binarize/export.h
+include/LibBGCode/convert/
+include/LibBGCode/convert/convert.hpp
+include/LibBGCode/convert/export.h
+include/LibBGCode/core/
+include/LibBGCode/core/core.hpp
+include/LibBGCode/core/export.h
+lib/cmake/
+lib/cmake/LibBGCode/
+lib/cmake/LibBGCode/LibBGCodeBinarizeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibBGCode/LibBGCodeBinarizeTargets.cmake
+lib/cmake/LibBGCode/LibBGCodeConfig.cmake
+lib/cmake/LibBGCode/LibBGCodeConfigVersion.cmake
+lib/cmake/LibBGCode/LibBGCodeConvertTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibBGCode/LibBGCodeConvertTargets.cmake
+lib/cmake/LibBGCode/LibBGCodeCoreTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibBGCode/LibBGCodeCoreTargets.cmake
+@lib lib/libbgcode_binarize.so.${LIBbgcode_binarize_VERSION}
+@lib lib/libbgcode_convert.so.${LIBbgcode_convert_VERSION}
+@lib lib/libbgcode_core.so.${LIBbgcode_core_VERSION}
