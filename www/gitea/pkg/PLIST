@@ -1237,6 +1237,7 @@ share/gitea/templates/repo/issue/view_content/attachments.tmpl
 share/gitea/templates/repo/issue/view_content/comments.tmpl
 share/gitea/templates/repo/issue/view_content/comments_delete_time.tmpl
 share/gitea/templates/repo/issue/view_content/context_menu.tmpl
+share/gitea/templates/repo/issue/view_content/conversation.tmpl
 share/gitea/templates/repo/issue/view_content/pull.tmpl
 share/gitea/templates/repo/issue/view_content/pull_merge_instruction.tmpl
 share/gitea/templates/repo/issue/view_content/reactions.tmpl
@@ -1909,7 +1910,7 @@ gitea/assets/js/dropzone.2e37d03b.js
 gitea/assets/js/easymde.58e747ca.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.62f65343.map
+gitea/assets/js/index.js.e65ef4b3.map
 gitea/assets/js/katex.25d07669.js
 gitea/assets/js/mcaptcha-vanilla-glue.149786ce.js
 gitea/assets/js/mermaid.83a93d40.js
