@@ -37,7 +37,6 @@ share/examples/perltidy/perllinetype.pl
 share/examples/perltidy/perlmask.pl
 share/examples/perltidy/perltidy_hide.pl
 share/examples/perltidy/perltidy_okw.pl
-share/examples/perltidy/perltidyrc_dump.pl
 share/examples/perltidy/perlxmltok.pl
 @comment share/examples/perltidy/pt.bat
 share/examples/perltidy/testfa.t

@@ -1,10 +1,9 @@
 COMMENT =	tool to indent and reformat perl scripts
 
-V =		20230912
+V =		20240202
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://perltidy.sourceforge.net/
 
