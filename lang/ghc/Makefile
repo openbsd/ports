@@ -39,8 +39,8 @@ LIB_DEPENDS =		converters/libiconv \
 			devel/libffi
 
 BUILD_DEPENDS =		archivers/bzip2 \
-			archivers/gtar \
-			textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
+			archivers/gtar
+
 RUN_DEPENDS =
 
 SITES =			https://downloads.haskell.org/ghc/${GHC_VERSION}/
@@ -61,17 +61,7 @@ DISTFILES.boot = 	${BINDISTFILE-${MACHINE_ARCH}}
 DISTFILES.noextract =	hadrian-sources-${BIN_VER}.tar.gz
 SITES.noextract =	https://openbsd.dead-parrot.de/distfiles/
 
-# sphinx-rtd-theme update patch set
-# mirrored from https://gitlab.haskell.org/ghc/ghc/-/commit/70526f5bd8886126f49833ef20604a2c6477780a.patch
-# "GIT binary patch" (gpatch doesn't handle it, patch segfaults)
-# (sorry! -sthen)
-SITES.p =		https://spacehopper.org/mirrors/
-DISTFILES.p +=		ghc-rtd-update-70526f5bd8.diff
 EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.boot}
-BUILD_DEPENDS +=	devel/git
-pre-patch:
-	cd ${WRKSRC}; env -i git apply ${FULLDISTDIR}/ghc-rtd-update-70526f5bd8.diff
-
 
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.
@@ -136,9 +126,6 @@ CONFIGURE_ENV +=	CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}" \
 			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}"
 
-# Do not pick up gpatch
-CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
-
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO \
@@ -146,9 +133,6 @@ MAKE_FLAGS +=		StripLibraries=YES \
 
 # haddock: ... <stdout>: commitBuffer: invalid argument (invalid character)
 MAKE_ENV =	LC_ALL=en_US.UTF-8
-
-# For mktexpk (via dvips when building the PostScript documentation):
-PORTHOME =		${WRKDIR}
 
 TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
