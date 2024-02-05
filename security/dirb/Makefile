@@ -1,12 +1,9 @@
 COMMENT =	web content scanner
 
 DISTNAME =	dirb222
-PKGNAME =	dirb-2.2.2
-REVISION =	0
+PKGNAME =	dirb-2.22
 
 CATEGORIES =	security www
-
-MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
