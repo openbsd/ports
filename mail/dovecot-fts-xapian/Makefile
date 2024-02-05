@@ -2,8 +2,7 @@ COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
-GH_TAGNAME=		1.5.5
-REVISION=		1
+GH_TAGNAME=		1.5.9
 
 PKGNAME=		dovecot-${DISTNAME}
 
@@ -12,7 +11,7 @@ CATEGORIES=		mail
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m xapian z
+WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3 xapian z
 
 COMPILER=		base-clang ports-gcc
 
