@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
-
 COMMENT=	Yamagi Quake II
 N=		yquake2
 V=		8.00
