@@ -67,7 +67,7 @@ Index: base/BUILD.gn
    # iOS
    if (is_ios) {
      sources += [
-@@ -2207,6 +2235,29 @@ component("base") {
+@@ -2207,6 +2235,31 @@ component("base") {
      }
    }
  
@@ -85,6 +85,8 @@ Index: base/BUILD.gn
 +      "profiler/thread_delegate_posix.cc",
 +      "profiler/thread_delegate_posix.h",
 +      "threading/platform_thread_linux.cc",
++      "stack_canary_linux.cc",
++      "stack_canary_linux.h",
 +    ]
 +    sources += [
 +      "files/file_path_watcher_kqueue.cc",
@@ -97,7 +99,7 @@ Index: base/BUILD.gn
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2217,7 +2268,7 @@ component("base") {
+@@ -2217,7 +2270,7 @@ component("base") {
    }
  
    if (dep_libevent) {
@@ -106,7 +108,16 @@ Index: base/BUILD.gn
    }
  
    if (use_libevent) {
-@@ -3615,7 +3666,7 @@ test("base_unittests") {
+@@ -2983,7 +3036,7 @@ if (is_apple) {
+   }
+ }
+ 
+-if (!is_nacl && (is_linux || is_chromeos)) {
++if (!is_nacl && !is_bsd && (is_linux || is_chromeos)) {
+   # This test must compile with -fstack-protector-all
+   source_set("stack_canary_linux_unittests") {
+     testonly = true
+@@ -3615,14 +3668,14 @@ test("base_unittests") {
      ]
    }
  
@@ -115,7 +126,15 @@ Index: base/BUILD.gn
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3637,7 +3688,7 @@ test("base_unittests") {
+       "nix/mime_util_xdg_unittest.cc",
+     ]
+ 
+-    if (!is_nacl) {
++    if (!is_nacl && !is_bsd) {
+       deps += [ ":stack_canary_linux_unittests" ]
+     }
+   }
+@@ -3637,7 +3690,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -124,7 +143,7 @@ Index: base/BUILD.gn
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3648,7 +3699,7 @@ test("base_unittests") {
+@@ -3648,7 +3701,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -133,7 +152,7 @@ Index: base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3909,7 +3960,7 @@ test("base_unittests") {
+@@ -3909,7 +3962,7 @@ test("base_unittests") {
      }
    }
  
