@@ -247,7 +247,7 @@ MODGO_MODULES =	\
 	github.com/coreos/pkg						 v0.0.0-20180928190104-399ea9e2e55f \
 	github.com/cpuguy83/go-md2man/v2				 v2.0.2 \
 	github.com/creack/pty						 v1.1.17 \
-	github.com/cyphar/filepath-securejoin				 v0.2.3 \
+	github.com/cyphar/filepath-securejoin				 v0.2.4 \
 	github.com/davecgh/go-spew					 v1.1.1 \
 	github.com/dgrijalva/jwt-go					 v3.2.0+incompatible \
 	github.com/dimchansky/utfbom					 v1.1.1 \
@@ -445,7 +445,7 @@ MODGO_MODULES =	\
 	github.com/modern-go/concurrent					 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2					 v1.0.1 \
 	github.com/mozillazg/go-httpheader				 v0.2.1 \
-	github.com/mrunalp/fileutils					 v0.5.0 \
+	github.com/mrunalp/fileutils					 v0.5.1 \
 	github.com/muesli/ansi						 v0.0.0-20211018074035-2e021307bc4b \
 	github.com/muesli/cancelreader					 v0.2.2 \
 	github.com/muesli/reflow					 v0.3.0 \
@@ -460,7 +460,7 @@ MODGO_MODULES =	\
 	github.com/onsi/gomega						 v1.5.0 \
 	github.com/opencontainers/go-digest				 v1.0.0 \
 	github.com/opencontainers/image-spec				 v1.0.2 \
-	github.com/opencontainers/runc					 v1.1.9 \
+	github.com/opencontainers/runc					 v1.1.12 \
 	github.com/opencontainers/runtime-spec				 v1.0.3-0.20210326190908-1c3f411f0417 \
 	github.com/opencontainers/selinux				 v1.10.0 \
 	github.com/oracle/oci-go-sdk					 v7.1.0+incompatible \
