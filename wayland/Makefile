@@ -25,6 +25,7 @@
      SUBDIR += wf-shell
      SUBDIR += wlroots
      SUBDIR += wlr-randr
+     SUBDIR += wmenu
      SUBDIR += xwayland
 
 .include <bsd.port.subdir.mk>
