@@ -5,14 +5,13 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	392
-BUILD_VER=	b08
+UPDATE_VER=	402
+BUILD_VER=	b06
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
@@ -52,7 +51,7 @@ COMPILER=	base-clang base-gcc
 .if ${FLAVOR:Mnative_bootstrap}
 INSTALLED!= (pkg_info -qe "jdk->=1.8.0.00v0,<1.9v0" && echo yes) || echo no
 .  if ${INSTALLED:L} != "yes"
-ERRORS += "Fatal: This flavor requires an installed 1.8.0.00v0 or greater jdk package"
+ERRORS+= "Fatal: This flavor requires an installed 1.8v0 or greater jdk package"
 .  endif
 BUILD_DEPENDS+=	jdk->=1.8.0.00v0,<1.9v0:devel/jdk/1.8
 BOOT_JDK=	${LOCALBASE}/jdk-1.8.0
@@ -75,7 +74,8 @@ BUILD_DEPENDS+=	archivers/zip \
 LIB_DEPENDS=	converters/libiconv \
 		graphics/giflib
 
-WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv m pthread ${COMPILER_LIBCXX} z
+WANTLIB=	X11 Xext Xi Xrender Xtst c freetype gif iconv m pthread \
+		${COMPILER_LIBCXX} z
 
 USE_GMAKE=	Yes
 GMAKE=		${LOCALBASE}/bin/gmake
@@ -126,8 +126,9 @@ LIBARCH=	${MACHINE_ARCH:S/sparc64/sparcv9/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-normal-server-release/images
 JDKIMAGEDIR=	${BUILDDIR}/j2sdk-image
 WRKTMP=		${WRKDIR}/tmp
+BOOTLIB=	${WRKTMP}/bootjdk/jre/lib
 ALL_TARGET=	images
- 
+
 SUBST_VARS=	JDKHOME LIBARCH
 
 post-extract:
@@ -138,7 +139,7 @@ post-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}
-	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf - 
+	cd ${JDKIMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${JDKHOME} -xf -
 
 # The bootjdk is the jdk image with some parts deleted
 # and a copy of the system shared libs needed to run it.
@@ -151,7 +152,7 @@ build-bootjdk: build
 	@${_PBUILD} mkdir -p ${WRKTMP}/bootjdk-libs
 	@cd ${JDKIMAGEDIR} && \
 		tar -cf - * | \
-		${_PBUILD} tar -C ${WRKTMP}/bootjdk -xf - 
+		${_PBUILD} tar -C ${WRKTMP}/bootjdk -xf -
 	@cd ${WRKTMP}/bootjdk && \
 		${_PBUILD} rm -rf demo sample
 	@cd ${WRKTMP}/bootjdk && \
@@ -162,7 +163,7 @@ build-bootjdk: build
 	@find ${WRKTMP}/bootjdk/jre/lib ${WRKTMP}/bootjdk/jre/bin \
 		-exec sh -c 'file {} | grep -q ELF && \
 		${_PBUILD} strip -S {}' \;
-	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${LIBARCH}:${WRKTMP}/bootjdk/jre/lib/${LIBARCH}/server" \
+	@LD_LIBRARY_PATH="${BOOTLIB}/${LIBARCH}:${BOOTLIB}/${LIBARCH}/server" \
 		find ${WRKTMP}/bootjdk -type f -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
 		xargs -I % ${_PBUILD} cp /% ${WRKTMP}/bootjdk-libs
