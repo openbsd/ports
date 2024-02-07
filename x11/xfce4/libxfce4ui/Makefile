@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
-XFCE_VERSION=	4.18.4
+XFCE_VERSION=	4.18.5
 
 SHARED_LIBS=	xfce4ui-2		0.3	\
 		xfce4kbd-private-3	0.1	# 0.0
@@ -34,6 +34,9 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4util xfconf-0 xml2 z Xau gtop-2.0 kvm execinfo jpeg
 WANTLIB += Xdmcp ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
+
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
 
