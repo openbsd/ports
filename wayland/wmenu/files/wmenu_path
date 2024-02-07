@@ -1,0 +1,5 @@
+#! /bin/ksh
+IFS=:
+for i in $PATH; do
+    (cd $i && find -L . \( -type f -o -type l \) -perm -100 -maxdepth 1) 
+done | sed -e s,^./,, | sort -u

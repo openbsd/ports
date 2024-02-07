@@ -1,0 +1,32 @@
+OpenBSD: no -lrt ; add epoll-shim
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -12,6 +12,8 @@ project(
+ 
+ cc = meson.get_compiler('c')
+ 
++is_openbsd = host_machine.system().startswith('openbsd')
++
+ add_project_arguments(cc.get_supported_arguments([
+ 	'-DVERSION="@0@"'.format(meson.project_version()),
+ 
+@@ -28,7 +30,8 @@ wayland_client  = dependency('wayland-client')
+ wayland_protos  = dependency('wayland-protocols')
+ xkbcommon       = dependency('xkbcommon')
+ 
+-rt = cc.find_library('rt')
++epoll = dependency('epoll-shim', required: is_openbsd)
++rt = cc.find_library('rt', required: not is_openbsd)
+ 
+ subdir('protocols')
+ subdir('docs')
+@@ -46,6 +49,7 @@ executable(
+ 		pango,
+ 		pangocairo,
+ 		rt,
++		epoll,
+ 		wayland_client,
+ 		wayland_protos,
+ 		xkbcommon,
