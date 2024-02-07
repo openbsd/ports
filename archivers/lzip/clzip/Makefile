@@ -1,6 +1,6 @@
 COMMENT =		C implementation of lzip
 
-DISTNAME =		clzip-1.13
+DISTNAME =		clzip-1.14
 
 HOMEPAGE =		http://lzip.nongnu.org/clzip.html
 SITES =			${SITE_SAVANNAH:=lzip/clzip/}
