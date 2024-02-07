@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-REVISION =	0
+XFCE_VERSION =	4.18.2
 
 SHARED_LIBS +=	garcon-1	0.1
 SHARED_LIBS +=	garcon-gtk3-1	0.1 # 0.0
@@ -24,6 +24,8 @@ WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util
 WANTLIB += xfconf-0 Xau Xdmcp execinfo jpeg z atspi dbus-1
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/garcon
 

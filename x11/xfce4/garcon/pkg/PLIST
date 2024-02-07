@@ -89,6 +89,7 @@ share/gtk-doc/html/garcon/style.css
 share/gtk-doc/html/garcon/up-insensitive.png
 share/gtk-doc/html/garcon/up.png
 share/icons/hicolor/32x32/apps/org.xfce.garcon.png
+share/icons/hicolor/64x64/apps/org.xfce.garcon.png
 share/locale/am/LC_MESSAGES/garcon.mo
 share/locale/ar/LC_MESSAGES/garcon.mo
 share/locale/ast/LC_MESSAGES/garcon.mo
