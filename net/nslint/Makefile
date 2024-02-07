@@ -1,17 +1,17 @@
-COMMENT=		performs consistency checks on BIND files
+COMMENT=	performs consistency checks on BIND zone files
 
-DISTNAME=		nslint-3.1
-CATEGORIES=		net
+DISTNAME=	nslint-3.2
+CATEGORIES=	net
 
 PERMIT_PACKAGE=	Yes
 
-SITES=			ftp://ftp.ee.lbl.gov/
+SITES=		ftp://ftp.ee.lbl.gov/
 
-WANTLIB=		c
+WANTLIB=	c
 
-CONFIGURE_STYLE=	gnu
-ALL_TARGET=		nslint
+CONFIGURE_STYLE= gnu
+ALL_TARGET=	nslint
 
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
