@@ -1,0 +1,21 @@
+Index: src/slic3r/GUI/BitmapCache.cpp
+--- src/slic3r/GUI/BitmapCache.cpp.orig
++++ src/slic3r/GUI/BitmapCache.cpp
+@@ -73,7 +73,7 @@ wxBitmapBundle* BitmapCache::insert_bndl(const std::st
+     wxVector<wxBitmap> bitmaps;
+ 
+     std::set<double> scales = {1.0};
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(__OpenBSD__)
+ 
+ #ifdef __APPLE__
+     scales.emplace(m_scale);
+@@ -552,7 +552,7 @@ wxBitmapBundle BitmapCache::mksolid(size_t width_in, s
+     wxVector<wxBitmap> bitmaps;
+ 
+     std::set<double> scales = { 1.0 };
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(__OpenBSD__)
+ 
+ #ifdef __APPLE__
+     scales.emplace(m_scale);
