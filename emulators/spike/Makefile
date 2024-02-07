@@ -6,12 +6,10 @@ BROKEN-powerpc=	internal 'exception trap_instruction_page_fault' at runtime
 
 COMMENT =	RISC-V ISA simulator
 
-GH_COMMIT =	ec6ded4f2f21cb7aef4a0b31b82b91ef91d22c36
-GH_ACCOUNT =	riscv
+GH_TAGNAME =	v1.1.0
+GH_ACCOUNT =	riscv-software-src
 GH_PROJECT =	riscv-isa-sim
-REVISION =	1
-
-DISTNAME =	spike-1.0.0
+PKGNAME =	spike-${GH_TAGNAME:S/v//}
 
 CATEGORIES =	emulators
 
@@ -20,12 +18,14 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += ${COMPILER_LIBCXX} c m boost_regex-mt boost_system-mt
 
 # C++11
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/dtc
+RUN_DEPENDS =	devel/dtc
+LIB_DEPENDS =	devel/boost
 
 USE_GMAKE =	Yes
 SEPARATE_BUILD =Yes

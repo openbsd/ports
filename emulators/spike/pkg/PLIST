@@ -5,6 +5,8 @@
 @bin bin/termios-xspike
 @bin bin/xspike
 include/fesvr/
+include/fesvr/byteorder.h
+include/fesvr/config.h
 include/fesvr/context.h
 include/fesvr/device.h
 include/fesvr/dtm.h

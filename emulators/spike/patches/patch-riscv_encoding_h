@@ -1,7 +1,7 @@
 Index: riscv/encoding.h
 --- riscv/encoding.h.orig
 +++ riscv/encoding.h
-@@ -221,55 +221,6 @@
+@@ -228,55 +228,6 @@
  
  #define PTE_TABLE(PTE) (((PTE) & (PTE_V | PTE_R | PTE_W | PTE_X)) == PTE_V)
  
