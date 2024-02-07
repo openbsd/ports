@@ -1,7 +1,7 @@
 Index: Source/cmGlobalGenerator.cxx
 --- Source/cmGlobalGenerator.cxx.orig
 +++ Source/cmGlobalGenerator.cxx
-@@ -2798,6 +2798,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
+@@ -2879,6 +2879,9 @@ void cmGlobalGenerator::AddGlobalTarget_Test(
    cmCustomCommandLine singleLine;
    singleLine.push_back(cmSystemTools::GetCTestCommand());
    singleLine.push_back("--force-new-ctest-process");

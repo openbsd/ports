@@ -1,7 +1,7 @@
 Index: Source/cmMessenger.cxx
 --- Source/cmMessenger.cxx.orig
 +++ Source/cmMessenger.cxx
-@@ -62,7 +62,7 @@ static bool printMessagePreamble(MessageType t, std::o
+@@ -63,7 +63,7 @@ static bool printMessagePreamble(MessageType t, std::o
    if (t == MessageType::FATAL_ERROR) {
      msg << "CMake Error";
    } else if (t == MessageType::INTERNAL_ERROR) {
@@ -10,7 +10,7 @@ Index: Source/cmMessenger.cxx
    } else if (t == MessageType::LOG) {
      msg << "CMake Debug Log";
    } else if (t == MessageType::DEPRECATION_ERROR) {
-@@ -115,19 +115,6 @@ static void displayMessage(MessageType t, std::ostring
+@@ -116,19 +116,6 @@ static void displayMessage(MessageType t, std::ostring
  
    // Add a terminating blank line.
    msg << "\n";
