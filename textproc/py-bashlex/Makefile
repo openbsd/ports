@@ -15,4 +15,7 @@ MODPY_PYBUILD=	setuptools
 
 MODULES=	lang/python
 
+FLAVOR=		python3
+FLAVORS=	python3
+
 .include <bsd.port.mk>
