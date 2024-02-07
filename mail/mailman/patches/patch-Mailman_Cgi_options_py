@@ -1,0 +1,16 @@
+Fix HTTP/500 when attempting to unsubscribe a user that does not exist
+https://bazaar.launchpad.net/~mailman-coders/mailman/2.1/revision/1887
+
+--- Mailman/Cgi/options.py.orig	Tue Dec 14 07:36:11 2021
++++ Mailman/Cgi/options.py	Tue Feb  6 13:29:13 2024
+@@ -169,8 +169,8 @@
+     if not mlist.isMember(user):
+         if mlist.private_roster == 0:
+             doc.addError(_('No such member: %(safeuser)s.'))
+-            loginpage(mlist, doc, None, language)
+-            print doc.Format()
++        loginpage(mlist, doc, None, language)
++        print doc.Format()
+         return
+ 
+     # Avoid cross-site scripting attacks
