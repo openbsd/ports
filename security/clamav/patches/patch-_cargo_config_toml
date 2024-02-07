@@ -1,7 +1,7 @@
-Index: libclamav_rust/.cargo/config.toml
---- libclamav_rust/.cargo/config.toml.orig
-+++ libclamav_rust/.cargo/config.toml
-@@ -5,3 +5,13 @@ replace-with = "vendored-sources"
+Index: .cargo/config.toml
+--- .cargo/config.toml.orig
++++ .cargo/config.toml
+@@ -10,3 +10,13 @@ replace-with = "vendored-sources"
  [source.vendored-sources]
  directory = ".cargo/vendor"
  

@@ -32,6 +32,8 @@ include/clamav-version.h
 include/clamav.h
 include/libfreshclam.h
 @lib lib/libclamav.so.${LIBclamav_VERSION}
+@comment @static-lib lib/libclamav_rust.a
+@static-lib lib/libclamav_rust.a
 @lib lib/libclamunrar.so.${LIBclamunrar_VERSION}
 @lib lib/libclamunrar_iface.so.${LIBclamunrar_iface_VERSION}
 @lib lib/libfreshclam.so.${LIBfreshclam_VERSION}
@@ -120,6 +122,7 @@ share/doc/clamav/html/fonts/open-sans-v17-all-charsets-800italic.woff2
 share/doc/clamav/html/fonts/open-sans-v17-all-charsets-italic.woff2
 share/doc/clamav/html/fonts/open-sans-v17-all-charsets-regular.woff2
 share/doc/clamav/html/fonts/source-code-pro-v11-all-charsets-500.woff2
+share/doc/clamav/html/googled62299e9391332c4.html
 share/doc/clamav/html/highlight.css
 share/doc/clamav/html/highlight.js
 share/doc/clamav/html/images/
@@ -189,6 +192,7 @@ share/doc/clamav/html/print.html
 share/doc/clamav/html/searcher.js
 share/doc/clamav/html/searchindex.js
 share/doc/clamav/html/searchindex.json
+share/doc/clamav/html/sitemap.xml
 share/doc/clamav/html/theme-dawn.js
 share/doc/clamav/html/theme-tomorrow_night.js
 share/doc/clamav/html/tomorrow-night.css

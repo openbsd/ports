@@ -1,6 +1,6 @@
 BROKEN-sparc64=	build-script-build` (signal: 11, SIGSEGV: invalid memory reference)
 COMMENT=	virus scanner
-DISTNAME=	clamav-1.2.1
+DISTNAME=	clamav-1.3.0
 
 CATEGORIES=	security
 
@@ -10,6 +10,7 @@ SHARED_LIBS +=	clamunrar_iface      6.0
 SHARED_LIBS +=	freshclam            3.0
 
 HOMEPAGE=	https://www.clamav.net/
+SITES=		https://www.clamav.net/downloads/production/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -30,8 +31,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 		net/curl \
 		textproc/libxml
 TEST_DEPENDS=	security/clamav
-
-SITES=		https://www.clamav.net/downloads/production/
 
 MODULES=	devel/cmake \
 		lang/rust
