@@ -1,6 +1,0 @@
-include/xmlbird.h
-@lib lib/libxmlbird.so.${LIBxmlbird_VERSION}
-lib/pkgconfig/xmlbird.pc
-share/vala/
-share/vala/vapi/
-share/vala/vapi/xmlbird.vapi
