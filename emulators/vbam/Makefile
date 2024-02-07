@@ -5,7 +5,7 @@ COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
 GH_ACCOUNT =		visualboyadvance-m
 GH_PROJECT =		${GH_ACCOUNT}
-GH_TAGNAME =		v2.1.8
+GH_TAGNAME =		v2.1.9
 PKGNAME =		vbam-${GH_TAGNAME:S/v//}
 
 CATEGORIES =		emulators
