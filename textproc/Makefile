@@ -393,6 +393,7 @@
      SUBDIR += py-PEG2,python3
      SUBDIR += py-PyPDF2,python3
      SUBDIR += py-alabaster,python3
+     SUBDIR += py-bashlex,python3
      SUBDIR += py-black,python3
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
