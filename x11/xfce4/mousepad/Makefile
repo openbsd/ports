@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 simple text editor
 
-XFCE_VERSION=	0.6.1
+XFCE_VERSION=	0.6.2
 XFCE_GOODIE=	mousepad
 
 SHARED_LIBS +=	mousepad	1.0 # 0.0
@@ -32,5 +32,8 @@ WANTLIB += xml2 z ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo atspi dbus-1
 WANTLIB += ICE SM X11-xcb gthread-2.0 startup-notification-1 xcb-util
 WANTLIB += xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
+
 
 .include <bsd.port.mk>
