@@ -3,7 +3,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 SHARED_LIBS +=  mupdf                 9.0
 
 # bump and test textproc/zathura/plugins/mupdf if updating
-V =		1.23.9
+V =		1.23.10
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
