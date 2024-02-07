@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/system/sys_info_posix.cc
 --- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig
 +++ src/3rdparty/chromium/base/system/sys_info_posix.cc
-@@ -182,12 +182,12 @@ absl::optional<int> NumberOfPhysicalProcessors() {
+@@ -165,12 +165,12 @@ int NumberOfProcessors() {
  
  }  // namespace internal
  
@@ -16,7 +16,7 @@ Index: src/3rdparty/chromium/base/system/sys_info_posix.cc
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -277,6 +277,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -260,6 +260,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";
@@ -25,10 +25,12 @@ Index: src/3rdparty/chromium/base/system/sys_info_posix.cc
    } else if (std::string(info.sysname) == "AIX") {
      arch = "ppc64";
    }
-@@ -300,4 +302,4 @@ void SysInfo::SetIsCpuSecurityMitigationsEnabled(bool 
- 
- #endif  // BUILDFLAG(IS_MAC)
- 
--}  // namespace base
-\ No newline at end of file
+@@ -283,7 +285,7 @@ int SysInfo::NumberOfEfficientProcessorsImpl() {
+   std::vector<uint32_t> max_core_frequencies_khz(static_cast<size_t>(num_cpus),
+                                                  0);
+   for (int core_index = 0; core_index < num_cpus; ++core_index) {
+-    std::string content;
 +}  // namespace base
+     auto path = StringPrintf(
+         "/sys/devices/system/cpu/cpu%d/cpufreq/cpuinfo_max_freq", core_index);
+     if (!ReadFileToStringNonBlocking(FilePath(path), &content))

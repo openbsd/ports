@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
+@@ -140,6 +140,8 @@ EmbeddedTargetOs ToEmbeddedTargetOs(const char* s) {
+     return EmbeddedTargetOs::kMac;
+   } else if (string == "win") {
+     return EmbeddedTargetOs::kWin;
++  } else if (string == "openbsd") {
++    return EmbeddedTargetOs::kOpenBSD;
+   } else if (string == "starboard") {
+     return EmbeddedTargetOs::kStarboard;
+   } else {

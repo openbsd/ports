@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
 --- src/3rdparty/chromium/sandbox/policy/sandbox_type.cc.orig
 +++ src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
-@@ -38,7 +38,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
+@@ -39,7 +39,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
  #endif
      case Sandbox::kAudio:
        return false;
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
        return false;
  #endif
-@@ -61,7 +61,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
+@@ -62,7 +62,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
      case Sandbox::kMirroring:
      case Sandbox::kNaClLoader:
  #endif
@@ -19,7 +19,7 @@ Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
      case Sandbox::kHardwareVideoDecoding:
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -126,7 +126,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -128,7 +128,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
  #endif
      case Sandbox::kPrintCompositor:
      case Sandbox::kAudio:
@@ -28,16 +28,16 @@ Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -137,7 +137,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
-     case Sandbox::kMediaFoundationCdm:
+@@ -140,7 +140,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
      case Sandbox::kWindowsSystemProxyResolver:
+     case Sandbox::kFileUtil:
  #endif  // BUILDFLAG(IS_WIN)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
      case Sandbox::kHardwareVideoDecoding:
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -256,7 +256,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+@@ -262,7 +262,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        return switches::kUtilitySandbox;
      case Sandbox::kAudio:
        return switches::kAudioSandbox;
@@ -46,7 +46,7 @@ Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
        return switches::kVideoCaptureSandbox;
  #endif
-@@ -286,7 +286,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -292,7 +292,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
      case Sandbox::kMirroring:
        return switches::kMirroringSandbox;
  #endif
@@ -55,7 +55,7 @@ Index: src/3rdparty/chromium/sandbox/policy/sandbox_type.cc
      case Sandbox::kHardwareVideoDecoding:
        return switches::kHardwareVideoDecodingSandbox;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -374,11 +374,11 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+@@ -391,11 +391,11 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
    if (sandbox_string == switches::kScreenAISandbox)
      return Sandbox::kScreenAI;
  #endif

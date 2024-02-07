@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 --- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc.orig
 +++ src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,413 @@
+@@ -0,0 +1,405 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -23,8 +23,6 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/command_line.h"
 +#include "base/debug/stack_trace.h"
 +#include "base/feature_list.h"
@@ -64,10 +62,7 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
 +
-+#include "ui/gfx/x/connection.h"
 +#include "ui/gfx/font_util.h"
-+
-+#include <X11/Xlib.h>
 +
 +#define MAXTOKENS	3
 +
@@ -134,15 +129,6 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +  if (process_type.empty())
 +    CRYPTO_pre_sandbox_init();
 +
-+  // cache the XErrorDB by forcing a read on it
-+  {
-+    auto* connection = x11::Connection::Get();
-+    auto* display = connection->GetXlibDisplay().display();
-+
-+    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
-+  }
-+
 +  if (process_type.empty()) {
 +    base::FilePath cache_directory, local_directory;
 +
@@ -164,8 +150,11 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +  if (process_type == switches::kRendererProcess)
 +    gfx::InitializeFonts();
 +
++  // XXX PORTING no pledge support in QtWebEngine
++  /*
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type, sandbox_type);
++  */
 +
 +  pre_initialized_ = true;
 +}
@@ -322,6 +311,9 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +    PCHECK(limited_as);
 +  }
 +
++  // XXX PORTING no pledge support in QtWebEngine
++  return true;
++
 +  if (process_type.empty()) {
 +    // XXX use a file for listing pledges of the main process for now
 +    // XXX not having the file is not a fatal error
@@ -331,7 +323,7 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +    // flock needed by sqlite3 locking
 +    SetPledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL);
 +  } else if (process_type == switches::kGpuProcess) {
-+    SetPledge("stdio rpath cpath wpath getpw drm prot_exec recvfd sendfd tmppath", NULL);
++    SetPledge("stdio rpath flock cpath wpath getpw drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    // prot_exec needed by v8
 +    SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);

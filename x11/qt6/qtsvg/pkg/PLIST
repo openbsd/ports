@@ -10,6 +10,7 @@ include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgexports_p.h
+include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
 include/X11/qt6/QtSvg/QSvgGenerator
 include/X11/qt6/QtSvg/QSvgRenderer
 include/X11/qt6/QtSvg/QtSvg

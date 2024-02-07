@@ -1,8 +1,8 @@
 Index: src/3rdparty/chromium/components/feature_engagement/public/feature_list.cc
 --- src/3rdparty/chromium/components/feature_engagement/public/feature_list.cc.orig
 +++ src/3rdparty/chromium/components/feature_engagement/public/feature_list.cc
-@@ -120,7 +120,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHOverflowMenuTipFeature,
+@@ -128,7 +128,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSAppStorePromoFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/components/feature_engagement/public/feature_list.c
      &kIPHBatterySaverModeFeature,
      &kIPHDesktopTabGroupsNewGroupFeature,
      &kIPHExtensionsMenuFeature,
-@@ -152,7 +152,8 @@ const base::Feature* const kAllFeatures[] = {
+@@ -160,7 +160,8 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

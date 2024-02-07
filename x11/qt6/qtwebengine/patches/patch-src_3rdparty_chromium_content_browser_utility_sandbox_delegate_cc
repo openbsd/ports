@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/browser/utility_sandbox_delegate.cc
 --- src/3rdparty/chromium/content/browser/utility_sandbox_delegate.cc.orig
 +++ src/3rdparty/chromium/content/browser/utility_sandbox_delegate.cc
-@@ -63,10 +63,10 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -64,10 +64,10 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(ENABLE_PPAPI)
        sandbox_type_ == sandbox::mojom::Sandbox::kPpapi ||
  #endif
@@ -13,8 +13,8 @@ Index: src/3rdparty/chromium/content/browser/utility_sandbox_delegate.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -109,7 +109,7 @@ ZygoteHandle UtilitySandboxedProcessLauncherDelegate::
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+@@ -117,7 +117,7 @@ ZygoteCommunication* UtilitySandboxedProcessLauncherDe
    // unsandboxed zygote and then apply their actual sandboxes in the forked
    // process upon startup.
    if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
@@ -22,4 +22,4 @@ Index: src/3rdparty/chromium/content/browser/utility_sandbox_delegate.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

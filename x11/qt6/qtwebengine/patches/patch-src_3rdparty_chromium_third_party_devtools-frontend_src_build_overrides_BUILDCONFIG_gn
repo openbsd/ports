@@ -1,0 +1,14 @@
+Index: src/3rdparty/chromium/third_party/devtools-frontend/src/build_overrides/BUILDCONFIG.gn
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/build_overrides/BUILDCONFIG.gn.orig
++++ src/3rdparty/chromium/third_party/devtools-frontend/src/build_overrides/BUILDCONFIG.gn
+@@ -77,7 +77,9 @@ is_android = current_os == "android"
+ is_chromeos = current_os == "chromeos"
+ is_fuchsia = current_os == "fuchsia"
+ is_ios = current_os == "ios"
+-is_linux = current_os == "chromeos" || current_os == "linux"
++is_linux = current_os == "chromeos" || current_os == "linux" || current_os == "openbsd"
++is_bsd = current_os == "openbsd"
++is_openbsd = current_os == "openbsd"
+ is_mac = current_os == "mac"
+ is_nacl = current_os == "nacl"
+ is_win = current_os == "win" || current_os == "winuwp"

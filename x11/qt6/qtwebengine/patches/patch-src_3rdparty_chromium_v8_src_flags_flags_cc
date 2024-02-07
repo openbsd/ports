@@ -3,7 +3,7 @@ on it when v8 "freezes" the v8 flags
 Index: src/3rdparty/chromium/v8/src/flags/flags.cc
 --- src/3rdparty/chromium/v8/src/flags/flags.cc.orig
 +++ src/3rdparty/chromium/v8/src/flags/flags.cc
-@@ -12,6 +12,11 @@
+@@ -12,6 +12,10 @@
  #include <iomanip>
  #include <sstream>
  
@@ -11,11 +11,10 @@ Index: src/3rdparty/chromium/v8/src/flags/flags.cc
 +#include <sys/mman.h>
 +#endif
 +
-+
  #include "src/base/functional.h"
  #include "src/base/logging.h"
  #include "src/base/platform/platform.h"
-@@ -31,8 +36,13 @@
+@@ -31,7 +35,11 @@
  namespace v8::internal {
  
  // Define {v8_flags}, declared in flags.h.
@@ -25,11 +24,9 @@ Index: src/3rdparty/chromium/v8/src/flags/flags.cc
  FlagValues v8_flags;
 +#endif
  
-+
  // {v8_flags} needs to be aligned to a memory page, and the size needs to be a
  // multiple of a page size. This is required for memory-protection of the memory
- // holding the {v8_flags} struct.
-@@ -787,6 +797,10 @@ void FlagList::FreezeFlags() {
+@@ -822,6 +830,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

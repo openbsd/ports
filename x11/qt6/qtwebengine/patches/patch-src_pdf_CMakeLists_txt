@@ -1,16 +1,16 @@
 Index: src/pdf/CMakeLists.txt
 --- src/pdf/CMakeLists.txt.orig
 +++ src/pdf/CMakeLists.txt
-@@ -70,7 +70,7 @@ add_dependencies(docs generate_pdf_attributions)
+@@ -71,7 +71,7 @@ add_dependencies(docs generate_pdf_attributions)
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX)
-+if(UNIX)
+-if(LINUX OR MINGW)
++if(UNIX OR MINGW)
      setup_toolchains()
  endif()
  
-@@ -128,7 +128,7 @@ foreach(arch ${archs})
+@@ -134,7 +134,7 @@ foreach(arch ${archs})
            strip_absolute_paths_from_debug_symbols=false
          )
  

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/content/public/common/BUILD.gn
+--- src/3rdparty/chromium/content/public/common/BUILD.gn.orig
++++ src/3rdparty/chromium/content/public/common/BUILD.gn
+@@ -317,7 +317,7 @@ jumbo_source_set("common_sources") {
+     ]
+   }
+ 
+-  if (use_zygote) {
++  if (!is_bsd) {
+     sources += [ "zygote/zygote_handle.h" ]
+   }
+ 

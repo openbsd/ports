@@ -48,7 +48,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  qssloptions q_SSL_CTX_set_options(SSL_CTX *ctx, qssloptions op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -238,9 +262,15 @@ void q_DH_get0_pqg(const DH *dh, const BIGNUM **p, con
+@@ -237,8 +261,13 @@ STACK_OF(X509) *q_X509_STORE_CTX_get0_chain(X509_STORE
  # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
                                                         | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  
@@ -60,11 +60,9 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
 +#define q_SKM_sk_value(type, st,i) ((type * (*)(const STACK_OF(type) *, int))q_sk_value)(st, i)
 +#endif // LIBRESSL_VERSION_NUMBER
  
-+
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
-                                                                    | OPENSSL_INIT_LOAD_CONFIG, NULL)
-@@ -425,12 +455,14 @@ int q_SSL_CTX_use_certificate_file(SSL_CTX *a, const c
+@@ -423,12 +452,14 @@ int q_SSL_CTX_use_certificate_file(SSL_CTX *a, const c
  int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -79,7 +77,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -532,14 +564,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
+@@ -536,14 +567,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
  #define q_BIO_get_mem_data(b, pp) (int)q_BIO_ctrl(b,BIO_CTRL_INFO,0,(char *)pp)
  #define q_BIO_pending(b) (int)q_BIO_ctrl(b,BIO_CTRL_PENDING,0,NULL)
  #define q_SSL_CTX_set_mode(ctx,op) q_SSL_CTX_ctrl((ctx),SSL_CTRL_MODE,(op),NULL)
@@ -106,7 +104,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  #define q_sk_SSL_CIPHER_value(st, i) q_SKM_sk_value(SSL_CIPHER, (st), (i))
  #define q_SSL_CTX_add_extra_chain_cert(ctx,x509) \
          q_SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
-@@ -641,7 +685,11 @@ int q_OCSP_check_validity(ASN1_GENERALIZEDTIME *thisup
+@@ -645,7 +688,11 @@ int q_OCSP_check_validity(ASN1_GENERALIZEDTIME *thisup
  int q_OCSP_id_get0_info(ASN1_OCTET_STRING **piNameHash, ASN1_OBJECT **pmd, ASN1_OCTET_STRING **pikeyHash,
                          ASN1_INTEGER **pserial, OCSP_CERTID *cid);
  
@@ -118,11 +116,10 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
  OCSP_CERTID *q_OCSP_cert_to_id(const EVP_MD *dgst, X509 *subject, X509 *issuer);
  void q_OCSP_CERTID_free(OCSP_CERTID *cid);
  int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
-@@ -660,8 +708,14 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
+@@ -664,8 +711,13 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
  
  void *q_CRYPTO_malloc(size_t num, const char *file, int line);
  #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
-+
 +#ifndef LIBRESSL_VERSION_NUMBER
  void q_CRYPTO_free(void *str, const char *file, int line);
  # define q_OPENSSL_free(addr) q_CRYPTO_free(addr, "", 0)
@@ -130,10 +127,10 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
 +void q_CRYPTO_free(void *a);
 +# define q_OPENSSL_free(addr) q_CRYPTO_free(addr)
 +#endif
+ int q_CRYPTO_memcmp(const void * in_a, const void * in_b, size_t len);
  
  void q_SSL_set_info_callback(SSL *ssl, void (*cb) (const SSL *ssl, int type, int val));
- const char *q_SSL_alert_type_string(int value);
-@@ -724,7 +778,11 @@ int q_EVP_PKEY_set1_DH(EVP_PKEY *a, DH *b);
+@@ -729,7 +781,11 @@ int q_EVP_PKEY_set1_DH(EVP_PKEY *a, DH *b);
  
  int q_DH_bits(DH *dh);
  int q_RSA_bits(RSA *a);

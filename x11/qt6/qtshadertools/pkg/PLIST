@@ -2,13 +2,14 @@ include/X11/qt6/QtShaderTools/
 include/X11/qt6/QtShaderTools/${VERSION}/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/
-include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderbaker_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderrewriter_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvcompiler_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshader_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshaderremap_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qtshadertoolsexports_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qtshadertoolsglobal_p.h
+include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/rhi/
+include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/rhi/qshaderbaker.h
 include/X11/qt6/QtShaderTools/QtShaderTools
 include/X11/qt6/QtShaderTools/QtShaderToolsDepends
 include/X11/qt6/QtShaderTools/QtShaderToolsVersion

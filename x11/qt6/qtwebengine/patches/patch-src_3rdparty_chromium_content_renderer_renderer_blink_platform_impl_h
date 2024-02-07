@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.h
 --- src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.h.orig
 +++ src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.h
-@@ -30,7 +30,7 @@
+@@ -32,7 +32,7 @@
  #include "third_party/blink/public/common/user_agent/user_agent_metadata.h"
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
  
@@ -19,7 +19,7 @@ Index: src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.h
    void SetThreadType(base::PlatformThreadId thread_id,
                       base::ThreadType) override;
  #endif
-@@ -241,7 +241,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -245,7 +245,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -28,7 +28,7 @@ Index: src/3rdparty/chromium/content/renderer/renderer_blink_platform_impl.h
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -261,7 +261,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -265,7 +265,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mutable base::WaitableEvent io_thread_id_ready_event_;
    base::PlatformThreadId io_thread_id_ = base::kInvalidThreadId;
  

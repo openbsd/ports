@@ -42,7 +42,9 @@ include/X11/qt6/QtSerialBus/QModbusReply
 include/X11/qt6/QtSerialBus/QModbusRequest
 include/X11/qt6/QtSerialBus/QModbusResponse
 include/X11/qt6/QtSerialBus/QModbusRtuSerialClient
+include/X11/qt6/QtSerialBus/QModbusRtuSerialMaster
 include/X11/qt6/QtSerialBus/QModbusRtuSerialServer
+include/X11/qt6/QtSerialBus/QModbusRtuSerialSlave
 include/X11/qt6/QtSerialBus/QModbusServer
 include/X11/qt6/QtSerialBus/QModbusTcpClient
 include/X11/qt6/QtSerialBus/QModbusTcpConnectionObserver

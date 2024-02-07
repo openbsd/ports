@@ -10,7 +10,7 @@ Index: src/core/CMakeLists.txt
      setup_toolchains()
  endif()
  
-@@ -399,14 +399,13 @@ foreach(arch ${archs})
+@@ -405,14 +405,13 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webengine_embedded_build
          )
  
@@ -25,8 +25,8 @@ Index: src/core/CMakeLists.txt
 -                use_bundled_fontconfig=false
                  use_glib=false
                  use_bluez=false
-                 use_vaapi=false
-@@ -465,6 +464,10 @@ foreach(arch ${archs})
+                 use_udev=true
+@@ -474,6 +473,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio
@@ -36,4 +36,4 @@ Index: src/core/CMakeLists.txt
 +                CONDITION QT_FEATURE_webengine_system_sndio
              )
              extend_gn_list(gnArgArg
-                 ARGS ozone_platform_x11 use_xkbcommon
+                 ARGS use_vaapi

@@ -38,6 +38,7 @@ include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualk
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardabstractinputmethod_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardfeatures_namespace_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardinputcontext_p.h
+include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardnamespace_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/settings_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shadowinputcontext_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shifthandler_p.h
@@ -65,7 +66,6 @@ include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboarddictionary.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboarddictionarymanager.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardinputcontext.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
-include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardnamespace.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardobserver.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardtrace.h

@@ -6,9 +6,13 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qabstractvideobuffe
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiodevice_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudioengine_pulse_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiohelpers_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiostatemachine_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiostatemachineutils_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qaudiosystem_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcamera_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcameradevice_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcapturablewindow_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qerrorinfo_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaplayer_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediarecorder_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediastoragelocation_p.h
@@ -18,6 +22,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudiodecod
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudioinput_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudiooutput_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformcamera_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformcapturablewindows_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformimagecapture_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediacapture_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediadevices_p.h
@@ -26,7 +31,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediainteg
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediaplayer_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediaplugin_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformmediarecorder_p.h
-include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformscreencapture_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformsurfacecapture_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideodevices_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideosink_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformvideosource_p.h
@@ -56,6 +61,7 @@ include/X11/qt6/QtMultimedia/QAudioSource
 include/X11/qt6/QtMultimedia/QCamera
 include/X11/qt6/QtMultimedia/QCameraDevice
 include/X11/qt6/QtMultimedia/QCameraFormat
+include/X11/qt6/QtMultimedia/QCapturableWindow
 include/X11/qt6/QtMultimedia/QImageCapture
 include/X11/qt6/QtMultimedia/QMediaCaptureSession
 include/X11/qt6/QtMultimedia/QMediaDevices
@@ -70,6 +76,7 @@ include/X11/qt6/QtMultimedia/QVideoFrame
 include/X11/qt6/QtMultimedia/QVideoFrameFormat
 include/X11/qt6/QtMultimedia/QVideoSink
 include/X11/qt6/QtMultimedia/QWaveDecoder
+include/X11/qt6/QtMultimedia/QWindowCapture
 include/X11/qt6/QtMultimedia/QtMultimedia
 include/X11/qt6/QtMultimedia/QtMultimediaDepends
 include/X11/qt6/QtMultimedia/QtMultimediaVersion
@@ -84,6 +91,7 @@ include/X11/qt6/QtMultimedia/qaudiosink.h
 include/X11/qt6/QtMultimedia/qaudiosource.h
 include/X11/qt6/QtMultimedia/qcamera.h
 include/X11/qt6/QtMultimedia/qcameradevice.h
+include/X11/qt6/QtMultimedia/qcapturablewindow.h
 include/X11/qt6/QtMultimedia/qimagecapture.h
 include/X11/qt6/QtMultimedia/qmediacapturesession.h
 include/X11/qt6/QtMultimedia/qmediadevices.h
@@ -96,6 +104,7 @@ include/X11/qt6/QtMultimedia/qmediatimerange.h
 include/X11/qt6/QtMultimedia/qscreencapture.h
 include/X11/qt6/QtMultimedia/qsoundeffect.h
 include/X11/qt6/QtMultimedia/qtmultimedia-config.h
+include/X11/qt6/QtMultimedia/qtmultimediadefs.h
 include/X11/qt6/QtMultimedia/qtmultimediaexports.h
 include/X11/qt6/QtMultimedia/qtmultimediaglobal.h
 include/X11/qt6/QtMultimedia/qtmultimediaversion.h
@@ -103,6 +112,7 @@ include/X11/qt6/QtMultimedia/qvideoframe.h
 include/X11/qt6/QtMultimedia/qvideoframeformat.h
 include/X11/qt6/QtMultimedia/qvideosink.h
 include/X11/qt6/QtMultimedia/qwavedecoder.h
+include/X11/qt6/QtMultimedia/qwindowcapture.h
 include/X11/qt6/QtMultimediaQuick/
 include/X11/qt6/QtMultimediaQuick/${VERSION}/
 include/X11/qt6/QtMultimediaQuick/${VERSION}/QtMultimediaQuick/
@@ -133,6 +143,7 @@ include/X11/qt6/QtMultimediaWidgets/QtMultimediaWidgets
 include/X11/qt6/QtMultimediaWidgets/QtMultimediaWidgetsDepends
 include/X11/qt6/QtMultimediaWidgets/QtMultimediaWidgetsVersion
 include/X11/qt6/QtMultimediaWidgets/qgraphicsvideoitem.h
+include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetdefs.h
 include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsexports.h
 include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsglobal.h
 include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsversion.h

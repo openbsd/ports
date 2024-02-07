@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/swiftshader/src/WSI/libXCB.cpp
 --- src/3rdparty/chromium/third_party/swiftshader/src/WSI/libXCB.cpp.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/src/WSI/libXCB.cpp
-@@ -55,7 +55,7 @@ LibXcbExports *LibXCB::loadExports()
+@@ -57,7 +57,7 @@ LibXcbExports *LibXCB::loadExports()
  		}
  		else
  		{
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/third_party/swiftshader/src/WSI/libXCB.cpp
  		}
  
  		if(getProcAddress(RTLD_DEFAULT, "xcb_shm_query_version"))  // Search the global scope for pre-loaded XCB library.
-@@ -64,7 +64,7 @@ LibXcbExports *LibXCB::loadExports()
+@@ -66,7 +66,7 @@ LibXcbExports *LibXCB::loadExports()
  		}
  		else
  		{

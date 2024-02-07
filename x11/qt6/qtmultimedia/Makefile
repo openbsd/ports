@@ -2,10 +2,10 @@ QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Multimedia             4.0 # 6.5
-SHARED_LIBS +=  Qt6MultimediaQuick        3.0 # 6.5
-SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.5
-SHARED_LIBS +=  Qt6SpatialAudio           1.0 # 6.5
+SHARED_LIBS +=  Qt6Multimedia             5.0 # 6.6
+SHARED_LIBS +=  Qt6MultimediaQuick        3.1 # 6.6
+SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.6
+SHARED_LIBS +=  Qt6SpatialAudio           1.0 # 6.6
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Core Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets X11

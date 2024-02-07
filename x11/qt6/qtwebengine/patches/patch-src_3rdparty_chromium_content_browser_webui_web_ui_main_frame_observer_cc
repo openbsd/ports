@@ -7,8 +7,8 @@ Index: src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "base/callback_helpers.h"
  #include "base/feature_list.h"
+ #include "base/functional/callback_helpers.h"
  #include "base/logging.h"
 @@ -31,7 +31,7 @@ namespace content {
  
@@ -24,7 +24,7 @@ Index: src/3rdparty/chromium/content/browser/webui/web_ui_main_frame_observer.cc
  WebUIMainFrameObserver::~WebUIMainFrameObserver() = default;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)  || BUILDFLAG(IS_BSD)
  void WebUIMainFrameObserver::OnDidAddMessageToConsole(
      RenderFrameHost* source_frame,
      blink::mojom::ConsoleMessageLevel log_level,

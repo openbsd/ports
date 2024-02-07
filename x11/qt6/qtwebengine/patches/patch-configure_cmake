@@ -1,7 +1,7 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -66,7 +66,7 @@ if(Python3_EXECUTABLE)
+@@ -67,7 +67,7 @@ if(Python3_EXECUTABLE)
  endif()
  
  #### Tests
@@ -10,7 +10,7 @@ Index: configure.cmake
     check_for_ulimit()
  endif()
  
-@@ -173,29 +173,7 @@ int main() {
+@@ -174,29 +174,6 @@ int main() {
  }"
  )
  
@@ -26,7 +26,7 @@ Index: configure.cmake
 -    return 0;
 -}"
 -)
- 
+-
 -qt_config_compile_test(khr
 -    LABEL "khr"
 -    CODE
@@ -40,7 +40,7 @@ Index: configure.cmake
  qt_config_compile_test(winversion
      LABEL "winversion"
      CODE
-@@ -434,7 +412,7 @@ qt_feature("webengine-system-libpci" PRIVATE
+@@ -439,7 +416,7 @@ qt_feature("webengine-system-libpci" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support GLX on qpa-xcb"
@@ -49,7 +49,7 @@ Index: configure.cmake
          AND TARGET Qt::Gui
          AND QT_FEATURE_xcb
          AND X11_FOUND
-@@ -471,15 +449,15 @@ assertTargets(
+@@ -476,15 +453,15 @@ assertTargets(
  )
  add_check_for_support(
     MODULES QtWebEngine
@@ -68,7 +68,7 @@ Index: configure.cmake
     get_gn_arch(testArch ${TEST_architecture_arch})
     add_check_for_support(
         MODULES QtWebEngine QtPdf
-@@ -524,37 +502,27 @@ add_check_for_support(
+@@ -536,37 +513,27 @@ add_check_for_support(
  )
  add_check_for_support(
     MODULES QtWebEngine QtPdf
@@ -111,7 +111,7 @@ Index: configure.cmake
      MESSAGE "Unmodified ffmpeg >= 5.0 is not supported."
  )
  # FIXME: This prevents non XCB Linux builds from building:
-@@ -568,7 +536,7 @@ foreach(xs ${xcbSupport})
+@@ -580,15 +547,15 @@ foreach(xs ${xcbSupport})
  endforeach()
  add_check_for_support(
     MODULES QtWebEngine
@@ -120,14 +120,24 @@ Index: configure.cmake
     MESSAGE "Could not find all necessary libraries for qpa-xcb support.\
  ${xcbErrorMessage}"
  )
-@@ -580,8 +548,8 @@ add_check_for_support(
  add_check_for_support(
-    MODULES QtWebEngine QtPdf
-    CONDITION
+    MODULES QtWebEngine
+    CONDITION MSVC OR
 -       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
 -       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
 +       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
 +       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
-        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL MSVC) OR
-        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL Clang AND
-           CMAKE_CXX_SIMULATE_ID STREQUAL MSVC) OR
+        (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL AppleClang)
+    MESSAGE
+        "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
+@@ -597,8 +564,8 @@ add_check_for_support(
+ add_check_for_support(
+    MODULES QtPdf
+    CONDITION MSVC OR
+-       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
+-       (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
++       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
++       (UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
+        (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL AppleClang) OR
+        (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
+        (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR

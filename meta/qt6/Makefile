@@ -1,7 +1,6 @@
 COMMENT =	C++ application and widget toolkit, meta-package
 
 PKGNAME =	qt6-${MODQT6_VERSION}
-REVISION =	0
 
 MODULES =	x11/qt6
 

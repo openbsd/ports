@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/remoting/host/it2me/BUILD.gn
 --- src/3rdparty/chromium/remoting/host/it2me/BUILD.gn.orig
 +++ src/3rdparty/chromium/remoting/host/it2me/BUILD.gn
-@@ -94,7 +94,7 @@ source_set("common") {
+@@ -97,7 +97,7 @@ source_set("common") {
      "//services/network/public/cpp:cpp",
    ]
  

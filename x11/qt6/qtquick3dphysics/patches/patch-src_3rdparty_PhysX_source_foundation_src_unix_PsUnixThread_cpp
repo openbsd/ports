@@ -5,8 +5,8 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include "PsThread.h"
  
  #include <math.h>
--#if !PX_APPLE_FAMILY && !defined(ANDROID) && !defined(__CYGWIN__) && !PX_PS4 && !PX_EMSCRIPTEN
-+#if !PX_APPLE_FAMILY && !defined(ANDROID) && !defined(__CYGWIN__) && !PX_PS4 && !PX_EMSCRIPTEN && !PX_OPENBSD
+-#if !PX_APPLE_FAMILY && !defined(ANDROID) && !defined(__CYGWIN__) && !PX_PS4 && !PX_EMSCRIPTEN && __GLIBC__
++#if !PX_APPLE_FAMILY && !defined(ANDROID) && !defined(__CYGWIN__) && !PX_PS4 && !PX_EMSCRIPTEN && __GLIBC__ && !PX_OPENBSD
  #include <bits/local_lim.h> // PTHREAD_STACK_MIN
  #endif
  #include <stdio.h>
@@ -19,7 +19,7 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include <asm/unistd.h>
  #include <sys/resource.h>
  #endif
-@@ -111,11 +111,11 @@ _ThreadImpl* getThread(ThreadImpl* impl)
+@@ -111,12 +111,13 @@ _ThreadImpl* getThread(ThreadImpl* impl)
  static void setTid(_ThreadImpl& threadImpl)
  {
  // query TID
@@ -27,14 +27,17 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
 +#if PX_PS4 || (defined (TARGET_OS_TV) && TARGET_OS_TV) || PX_OPENBSD
  // AM: TODO: neither of the below are implemented
 -#elif PX_APPLE_FAMILY
-+#elif PX_APPLE_FAMILY || !PX_OPENBSD
++#elif PX_APPLE_FAMILY && !PX_OPENBSD
  	threadImpl.tid = syscall(SYS_gettid);
 -#elif PX_EMSCRIPTEN
+-	threadImpl.tid = pthread_self();
 +#elif PX_EMSCRIPTEN || PX_OPENBSD
- 	threadImpl.tid = pthread_self();
++	// XXX set tid
++	threadImpl.thread = pthread_self();
  #else
  	threadImpl.tid = syscall(__NR_gettid);
-@@ -311,7 +311,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
+ #endif
+@@ -311,7 +312,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
  	{
  #if PX_PS4
  		prevMask = setAffinityMaskPS4(getThread(this)->thread, mask);

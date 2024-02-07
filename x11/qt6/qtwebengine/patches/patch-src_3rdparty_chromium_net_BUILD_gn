@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/net/BUILD.gn
 --- src/3rdparty/chromium/net/BUILD.gn.orig
 +++ src/3rdparty/chromium/net/BUILD.gn
-@@ -107,7 +107,7 @@ net_configs = [
+@@ -108,7 +108,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1218,6 +1218,15 @@ component("net") {
+@@ -1228,6 +1228,15 @@ component("net") {
      deps += [ "//third_party/xdg_shared_mime_info" ]
    }
  
@@ -26,7 +26,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1352,7 +1361,7 @@ component("net") {
+@@ -1360,7 +1369,7 @@ component("net") {
      }
    }
  
@@ -35,7 +35,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1385,7 +1394,7 @@ component("net") {
+@@ -1393,7 +1402,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -44,8 +44,8 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4397,7 +4406,7 @@ test("net_unittests") {
-     ]
+@@ -2837,7 +2846,7 @@ test("net_unittests") {
+     sources += [ "proxy_resolution/proxy_config_service_linux_unittest.cc" ]
    }
  
 -  if (is_linux || is_chromeos) {
@@ -53,7 +53,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4473,6 +4482,10 @@ test("net_unittests") {
+@@ -2909,6 +2918,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -64,7 +64,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -4540,7 +4553,7 @@ test("net_unittests") {
+@@ -2976,7 +2989,7 @@ test("net_unittests") {
      ]
    }
  
@@ -73,7 +73,7 @@ Index: src/3rdparty/chromium/net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -4680,7 +4693,7 @@ test("net_unittests") {
+@@ -3101,7 +3114,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

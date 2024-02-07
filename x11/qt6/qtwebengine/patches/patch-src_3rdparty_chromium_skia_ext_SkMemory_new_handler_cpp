@@ -10,3 +10,12 @@ Index: src/3rdparty/chromium/skia/ext/SkMemory_new_handler.cpp
    result = malloc(size);
  #else
    // It's the responsibility of the caller to check the return value.
+@@ -99,7 +99,7 @@ static void* calloc_nothrow(size_t size) {
+   // TODO(b.kelemen): we should always use UncheckedCalloc but currently it
+   // doesn't work as intended everywhere.
+   void* result;
+-#if BUILDFLAG(IS_IOS)
++#if BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+   result = calloc(1, size);
+ #else
+   // It's the responsibility of the caller to check the return value.

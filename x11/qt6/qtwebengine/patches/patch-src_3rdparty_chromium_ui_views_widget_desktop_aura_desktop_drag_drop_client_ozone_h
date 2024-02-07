@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h
 --- src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h.orig
 +++ src/3rdparty/chromium/ui/views/widget/desktop_aura/desktop_drag_drop_client_ozone.h
-@@ -68,7 +68,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
+@@ -66,7 +66,7 @@ class VIEWS_EXPORT DesktopDragDropClientOzone
      // The offset of |drag_widget_| relative to the mouse position.
      gfx::Vector2d offset;
  

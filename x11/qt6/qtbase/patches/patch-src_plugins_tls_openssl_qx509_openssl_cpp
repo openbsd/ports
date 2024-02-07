@@ -3,7 +3,7 @@ ASN1_time_parse() will become internal-only. Use q_ASN1_TIME_to_tm() instead.
 Index: src/plugins/tls/openssl/qx509_openssl.cpp
 --- src/plugins/tls/openssl/qx509_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qx509_openssl.cpp
-@@ -64,7 +64,12 @@ QMultiMap<QByteArray, QString> mapFromX509Name(X509_NA
+@@ -64,7 +64,11 @@ QMultiMap<QByteArray, QString> mapFromX509Name(X509_NA
          unsigned char *data = nullptr;
          int size = q_ASN1_STRING_to_UTF8(&data, q_X509_NAME_ENTRY_get_data(e));
          info.insert(name, QString::fromUtf8((char*)data, size));
@@ -13,11 +13,10 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
 +#else
 +         q_CRYPTO_free(data);
 +#endif
-+
      }
  
      return info;
-@@ -75,11 +80,27 @@ QDateTime dateTimeFromASN1(const ASN1_TIME *aTime)
+@@ -75,11 +79,27 @@ QDateTime dateTimeFromASN1(const ASN1_TIME *aTime)
      QDateTime result;
      tm lTime;
  
@@ -45,21 +44,27 @@ Index: src/plugins/tls/openssl/qx509_openssl.cpp
  
      return result;
  }
-@@ -190,7 +211,7 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
+@@ -190,7 +210,11 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
          QVariantList list;
          bool isMap = false;
  
--        for (int j = 0; j < q_SKM_sk_num(val); j++) {
++#if defined(LIBRESSL_VERSION_NUMBER)
 +        for (int j = 0; j < q_SKM_sk_num(CONF_VALUE, val); j++) {
++#else
+         for (int j = 0; j < q_SKM_sk_num(val); j++) {
++#endif
              CONF_VALUE *nval = q_SKM_sk_value(CONF_VALUE, val, j);
              if (nval->name && nval->value) {
                  isMap = true;
-@@ -286,7 +307,7 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
+@@ -286,7 +310,11 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
              if (!info)
                  return {};
              QVariantMap result;
--            for (int i=0; i < q_SKM_sk_num(info); i++) {
++#if defined(LIBRESSL_VERSION_NUMBER)
 +            for (int i=0; i < q_SKM_sk_num(ACCESS_DESCRIPTION, info); i++) {
++#else
+             for (int i=0; i < q_SKM_sk_num(info); i++) {
++#endif
                  ACCESS_DESCRIPTION *ad = q_SKM_sk_value(ACCESS_DESCRIPTION, info, i);
  
                  GENERAL_NAME *name = ad->location;

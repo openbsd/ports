@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc
 --- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc.orig
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc
-@@ -18,20 +18,20 @@
+@@ -19,20 +19,20 @@
  #include "net/proxy_resolution/proxy_config_service_ios.h"
  #elif BUILDFLAG(IS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"

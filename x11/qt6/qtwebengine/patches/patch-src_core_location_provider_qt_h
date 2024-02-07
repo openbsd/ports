@@ -1,0 +1,12 @@
+Index: src/core/location_provider_qt.h
+--- src/core/location_provider_qt.h.orig
++++ src/core/location_provider_qt.h
+@@ -9,7 +9,7 @@
+ #include "services/device/public/cpp/geolocation/geoposition.h"
+ #include "services/device/public/cpp/geolocation/location_provider.h"
+ 
+-QT_FORWARD_DECLARE_CLASS(QThread)
++#include <QThread>
+ 
+ namespace QtWebEngineCore {
+ class QtPositioningHelper;

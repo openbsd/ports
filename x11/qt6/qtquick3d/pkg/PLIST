@@ -12,6 +12,7 @@ include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddebugsettings_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddefaultmaterial_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3ddirectionallight_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3deffect_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dextensionhelpers_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dfog_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dfrustumcamera_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dgeometry_p.h
@@ -36,6 +37,7 @@ include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dprincipledmateria
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dquaternionanimation_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dquaternionutils_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dreflectionprobe_p.h
+include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3drenderextensions_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3drenderstats_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3drepeater_p.h
 include/X11/qt6/QtQuick3D/${VERSION}/QtQuick3D/private/qquick3dresourceloader_p.h
@@ -134,7 +136,9 @@ include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/heightfield
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/infinitegrid_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/instancerepeater_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/lookatnode_p.h
+include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/proceduralmesh_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/proceduralskytexturedata_p.h
+include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qquick3dtexturedatafrontend_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qtquick3dhelpersexports_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/qtquick3dhelpersglobal_p.h
 include/X11/qt6/QtQuick3DHelpers/${VERSION}/QtQuick3DHelpers/private/randominstancing_p.h
@@ -231,8 +235,10 @@ include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendereffect_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderer_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendererutil_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderextensions_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendergeometry_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrendergraphobject_p.h
+include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderhelpers_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderimage_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderimagetexture_p.h
 include/X11/qt6/QtQuick3DRuntimeRender/${VERSION}/QtQuick3DRuntimeRender/private/qssgrenderinstancetable_p.h

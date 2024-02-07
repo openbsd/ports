@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/allocator/partition_allocator/BUILD.gn
+--- src/3rdparty/chromium/base/allocator/partition_allocator/BUILD.gn.orig
++++ src/3rdparty/chromium/base/allocator/partition_allocator/BUILD.gn
+@@ -164,8 +164,6 @@ component("partition_alloc") {
+     "partition_tag_bitmap.h",
+     "partition_tag_types.h",
+     "partition_tls.h",
+-    "pkey.cc",
+-    "pkey.h",
+     "random.cc",
+     "random.h",
+     "reservation_offset_table.cc",

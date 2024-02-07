@@ -1,0 +1,19 @@
+Index: src/3rdparty/chromium/www/chromium/patches/patch-v8_src_maglev_x64_maglev-assembler-x64-inl_h
+--- src/3rdparty/chromium/www/chromium/patches/patch-v8_src_maglev_x64_maglev-assembler-x64-inl_h.orig
++++ src/3rdparty/chromium/www/chromium/patches/patch-v8_src_maglev_x64_maglev-assembler-x64-inl_h
+@@ -0,0 +1,15 @@
++Index: v8/src/maglev/x64/maglev-assembler-x64-inl.h
++--- v8/src/maglev/x64/maglev-assembler-x64-inl.h.orig
+++++ v8/src/maglev/x64/maglev-assembler-x64-inl.h
++@@ -202,7 +202,10 @@ void MaglevAssembler::PushReverse(T... vals) {
++   detail::PushAllHelper<T...>::PushReverse(this, vals...);
++ }
++ 
++-inline void MaglevAssembler::BindJumpTarget(Label* label) { bind(label); }
+++inline void MaglevAssembler::BindJumpTarget(Label* label) {
+++  bind(label);
+++  endbr64();
+++}
++ 
++ inline void MaglevAssembler::BindBlock(BasicBlock* block) {
++   bind(block->label());
