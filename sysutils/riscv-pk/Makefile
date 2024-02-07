@@ -1,11 +1,11 @@
 COMMENT =	RISC-V Proxy Kernel
 
 GH_COMMIT =	a4d4298ca10527a51fad86c53a93c48e6f510092
-GH_ACCOUNT =	riscv
+GH_ACCOUNT =	riscv-software-src
 GH_PROJECT =	riscv-pk
 
 DISTNAME =	riscv-pk-1.0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
