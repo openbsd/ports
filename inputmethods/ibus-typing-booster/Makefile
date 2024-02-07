@@ -1,6 +1,6 @@
 COMMENT =		completion input-method to speed up typing
 
-VERSION =		2.24.12
+VERSION =		2.25.0
 DISTNAME =		ibus-typing-booster-${VERSION}
 
 CATEGORIES =		inputmethods
