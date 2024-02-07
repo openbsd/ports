@@ -49,8 +49,16 @@ share/PrusaSlicer/icons/browse.svg
 share/PrusaSlicer/icons/bullet_black.png
 share/PrusaSlicer/icons/bullet_blue.png
 share/PrusaSlicer/icons/bullet_white.png
+share/PrusaSlicer/icons/burn.svg
 share/PrusaSlicer/icons/cancel.svg
 share/PrusaSlicer/icons/change_extruder.svg
+share/PrusaSlicer/icons/check_off.svg
+share/PrusaSlicer/icons/check_off_disabled.svg
+share/PrusaSlicer/icons/check_off_focused.svg
+share/PrusaSlicer/icons/check_on.svg
+share/PrusaSlicer/icons/check_on_disabled.svg
+share/PrusaSlicer/icons/check_on_focused.svg
+share/PrusaSlicer/icons/checked.svg
 share/PrusaSlicer/icons/cog.svg
 share/PrusaSlicer/icons/cog_.svg
 share/PrusaSlicer/icons/cog_go.png
@@ -62,12 +70,22 @@ share/PrusaSlicer/icons/colorchange_add_m.svg
 share/PrusaSlicer/icons/colorchange_del.svg
 share/PrusaSlicer/icons/colorchange_del_f.svg
 share/PrusaSlicer/icons/compare.svg
+share/PrusaSlicer/icons/convert_file.svg
 share/PrusaSlicer/icons/cooling.svg
 share/PrusaSlicer/icons/copy.svg
 share/PrusaSlicer/icons/copy_menu.svg
 share/PrusaSlicer/icons/cross.svg
 share/PrusaSlicer/icons/cross_focus.svg
 share/PrusaSlicer/icons/cross_focus_large.svg
+share/PrusaSlicer/icons/custom-gcode_gcode.svg
+share/PrusaSlicer/icons/custom-gcode_measure.svg
+share/PrusaSlicer/icons/custom-gcode_object-info.svg
+share/PrusaSlicer/icons/custom-gcode_single.svg
+share/PrusaSlicer/icons/custom-gcode_slicing-state.svg
+share/PrusaSlicer/icons/custom-gcode_slicing-state_global.svg
+share/PrusaSlicer/icons/custom-gcode_stats.svg
+share/PrusaSlicer/icons/custom-gcode_vector-index.svg
+share/PrusaSlicer/icons/custom-gcode_vector.svg
 share/PrusaSlicer/icons/cut.svg
 share/PrusaSlicer/icons/cut_.svg
 share/PrusaSlicer/icons/cut_connectors.svg
@@ -78,6 +96,7 @@ share/PrusaSlicer/icons/dot.svg
 share/PrusaSlicer/icons/dot_small.svg
 share/PrusaSlicer/icons/dot_white.svg
 share/PrusaSlicer/icons/dowel.svg
+share/PrusaSlicer/icons/drop_down.svg
 share/PrusaSlicer/icons/drop_to_bed.svg
 share/PrusaSlicer/icons/edit.svg
 share/PrusaSlicer/icons/edit_button.svg
@@ -210,6 +229,9 @@ share/PrusaSlicer/icons/re_slice.svg
 share/PrusaSlicer/icons/redo.svg
 share/PrusaSlicer/icons/redo_menu.svg
 share/PrusaSlicer/icons/redo_toolbar.svg
+share/PrusaSlicer/icons/reflection_x.svg
+share/PrusaSlicer/icons/reflection_y.svg
+share/PrusaSlicer/icons/refresh.svg
 share/PrusaSlicer/icons/remove.svg
 share/PrusaSlicer/icons/remove_copies.svg
 share/PrusaSlicer/icons/remove_menu.svg
@@ -217,6 +239,7 @@ share/PrusaSlicer/icons/resin.svg
 share/PrusaSlicer/icons/revert_all_.svg
 share/PrusaSlicer/icons/rotate.svg
 share/PrusaSlicer/icons/save.svg
+share/PrusaSlicer/icons/scalar_param.svg
 share/PrusaSlicer/icons/scale.svg
 share/PrusaSlicer/icons/seam.svg
 share/PrusaSlicer/icons/seam_.svg
@@ -234,6 +257,10 @@ share/PrusaSlicer/icons/sla_supports.svg
 share/PrusaSlicer/icons/sla_view_original.svg
 share/PrusaSlicer/icons/sla_view_processed.svg
 share/PrusaSlicer/icons/snap.svg
+share/PrusaSlicer/icons/spin_dec.svg
+share/PrusaSlicer/icons/spin_dec_act.svg
+share/PrusaSlicer/icons/spin_inc.svg
+share/PrusaSlicer/icons/spin_inc_act.svg
 share/PrusaSlicer/icons/splashscreen-gcodepreview.jpg
 share/PrusaSlicer/icons/splashscreen.jpg
 share/PrusaSlicer/icons/split_object_SMALL.svg
@@ -245,6 +272,9 @@ share/PrusaSlicer/icons/stl.icns
 share/PrusaSlicer/icons/support.svg
 share/PrusaSlicer/icons/support_blocker.svg
 share/PrusaSlicer/icons/support_enforcer.svg
+share/PrusaSlicer/icons/svg_modifier.svg
+share/PrusaSlicer/icons/svg_negative.svg
+share/PrusaSlicer/icons/svg_part.svg
 share/PrusaSlicer/icons/switch_presets.svg
 share/PrusaSlicer/icons/test.svg
 share/PrusaSlicer/icons/thumb_down.svg
@@ -255,6 +285,8 @@ share/PrusaSlicer/icons/tick_mark.svg
 share/PrusaSlicer/icons/time.svg
 share/PrusaSlicer/icons/timer_dot.svg
 share/PrusaSlicer/icons/timer_dot_empty.svg
+share/PrusaSlicer/icons/toggle_off.svg
+share/PrusaSlicer/icons/toggle_on.svg
 share/PrusaSlicer/icons/toolbar_arrow.svg
 share/PrusaSlicer/icons/toolbar_arrow_2.svg
 share/PrusaSlicer/icons/toolbar_background.png
@@ -262,6 +294,8 @@ share/PrusaSlicer/icons/undo.svg
 share/PrusaSlicer/icons/undo_menu.svg
 share/PrusaSlicer/icons/undo_toolbar.svg
 share/PrusaSlicer/icons/upload_queue.svg
+share/PrusaSlicer/icons/vector_filament_param.svg
+share/PrusaSlicer/icons/vector_param.svg
 share/PrusaSlicer/icons/wrench.svg
 share/PrusaSlicer/icons/wrench_white.svg
 share/PrusaSlicer/localization/
@@ -405,6 +439,7 @@ share/PrusaSlicer/profiles/Anycubic/I3MEGAS_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/I3MEGA_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/MEGA0_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/PHOTON MONO SE_thumbnail.png
+share/PrusaSlicer/profiles/Anycubic/PHOTON MONO X 6K_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/PHOTON MONO X_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/PHOTON MONO_thumbnail.png
 share/PrusaSlicer/profiles/Anycubic/PREDATOR_thumbnail.png
@@ -436,6 +471,12 @@ share/PrusaSlicer/profiles/BIQU.ini
 share/PrusaSlicer/profiles/BIQU/BIQUBX_thumbnail.png
 share/PrusaSlicer/profiles/BIQU/BX_Bed.stl
 share/PrusaSlicer/profiles/BIQU/BX_Texture.png
+share/PrusaSlicer/profiles/CocoaPress/
+share/PrusaSlicer/profiles/CocoaPress.idx
+share/PrusaSlicer/profiles/CocoaPress.ini
+share/PrusaSlicer/profiles/CocoaPress/CocoaPress_MiniChef.png
+share/PrusaSlicer/profiles/CocoaPress/minichef_bed.stl
+share/PrusaSlicer/profiles/CocoaPress/minichef_texture.svg
 share/PrusaSlicer/profiles/Creality/
 share/PrusaSlicer/profiles/Creality.idx
 share/PrusaSlicer/profiles/Creality.ini
@@ -615,6 +656,9 @@ share/PrusaSlicer/profiles/Jubilee/Jubilee_thumbnail.png
 share/PrusaSlicer/profiles/LNL3D/
 share/PrusaSlicer/profiles/LNL3D.idx
 share/PrusaSlicer/profiles/LNL3D.ini
+share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_V2_bed.stl
+share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_V2_texture.svg
+share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_V2_thumbnail.png
 share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_VULCAN_bed.stl
 share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_VULCAN_texture.svg
 share/PrusaSlicer/profiles/LNL3D/LNL3D_D3_VULCAN_thumbnail.png
@@ -660,6 +704,9 @@ share/PrusaSlicer/profiles/Print4Taste/MC2.0_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/
 share/PrusaSlicer/profiles/PrusaResearch.idx
 share/PrusaSlicer/profiles/PrusaResearch.ini
+share/PrusaSlicer/profiles/PrusaResearch/MINIIS_ALPHA_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MINIIS_BETA_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MINIIS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MINI_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2.5MMU2_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2.5SMMU2S_thumbnail.png
@@ -667,8 +714,11 @@ share/PrusaSlicer/profiles/PrusaResearch/MK2.5S_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2.5_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2SMM_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2S_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MK39IS_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MK39_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK3MMU2_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK3SMMU2S_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MK3SMMU3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK3S_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail.png
@@ -676,12 +726,26 @@ share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail_v2.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/SL1S_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/SL1_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL2IS_alpha_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL2IS_beta_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL2IS_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL2_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL5IS_alpha_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL5IS_beta_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL5IS_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XL5_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XLIS_alpha_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XLIS_beta_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/XLIS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/mini.svg
+share/PrusaSlicer/profiles/PrusaResearch/miniIS.svg
+share/PrusaSlicer/profiles/PrusaResearch/miniISbeta.svg
 share/PrusaSlicer/profiles/PrusaResearch/mini_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk2.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk2_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk3.svg
+share/PrusaSlicer/profiles/PrusaResearch/mk39.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk3_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk4_bed.stl
@@ -692,6 +756,8 @@ share/PrusaSlicer/profiles/PrusaResearch/sl1s.svg
 share/PrusaSlicer/profiles/PrusaResearch/sl1s_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/xl.svg
 share/PrusaSlicer/profiles/PrusaResearch/xl_bed.stl
+share/PrusaSlicer/profiles/PrusaResearch/xlis_alpha.svg
+share/PrusaSlicer/profiles/PrusaResearch/xlis_beta.svg
 share/PrusaSlicer/profiles/RatRig/
 share/PrusaSlicer/profiles/RatRig.idx
 share/PrusaSlicer/profiles/RatRig.ini
@@ -948,6 +1014,8 @@ share/PrusaSlicer/shaders/ES/variable_layer_height.vs
 share/PrusaSlicer/shaders/ES/wireframe.fs
 share/PrusaSlicer/shaders/ES/wireframe.vs
 share/PrusaSlicer/shapes/
+share/PrusaSlicer/shapes/3DBenchy.png
+share/PrusaSlicer/shapes/3DBenchy.stl
 share/PrusaSlicer/shapes/M3_hex_nut.png
 share/PrusaSlicer/shapes/M3_hex_nut.stl
 share/PrusaSlicer/shapes/M3x10_screw.png
@@ -970,6 +1038,10 @@ share/PrusaSlicer/shapes/helper_disk.png
 share/PrusaSlicer/shapes/helper_disk.stl
 share/PrusaSlicer/shapes/pyramid.png
 share/PrusaSlicer/shapes/pyramid.stl
+share/PrusaSlicer/shapes/sign_base.png
+share/PrusaSlicer/shapes/sign_base.stl
+share/PrusaSlicer/shapes/sign_base_rounded.png
+share/PrusaSlicer/shapes/sign_base_rounded.stl
 share/PrusaSlicer/shapes/sphere.png
 share/PrusaSlicer/shapes/sphere.stl
 share/PrusaSlicer/shapes/torus.png

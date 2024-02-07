@@ -10,7 +10,7 @@ Index: src/slic3r/GUI/BitmapCache.cpp
  
  #ifdef __APPLE__
      scales.emplace(m_scale);
-@@ -552,7 +552,7 @@ wxBitmapBundle BitmapCache::mksolid(size_t width_in, s
+@@ -554,7 +554,7 @@ wxBitmapBundle BitmapCache::mksolid(size_t width_in, s
      wxVector<wxBitmap> bitmaps;
  
      std::set<double> scales = { 1.0 };
