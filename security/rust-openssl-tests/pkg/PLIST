@@ -1,5 +1,6 @@
 share/rust-openssl-tests/
 share/rust-openssl-tests/.github/
+share/rust-openssl-tests/.github/dependabot.yml
 share/rust-openssl-tests/.github/workflows/
 share/rust-openssl-tests/.github/workflows/ci.yml
 share/rust-openssl-tests/.gitignore
