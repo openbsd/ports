@@ -1,6 +1,6 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_EGG_VERSION = 0.0.8
+MODPY_EGG_VERSION = 0.1.2
 DISTNAME =	fickling-${MODPY_EGG_VERSION}
 PKGNAME =       py-${DISTNAME}
 CATEGORIES =	security
@@ -11,13 +11,13 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		flit_core
 MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
+#BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 # Only needed for python3.8, it's part of python3.9
 RUN_DEPENDS +=		devel/py-astunparse${MODPY_FLAVOR}
 
