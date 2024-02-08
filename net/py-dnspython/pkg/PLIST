@@ -437,10 +437,11 @@ lib/python${MODPY_VERSION}/site-packages/dns/zone.py
 lib/python${MODPY_VERSION}/site-packages/dns/zonefile.py
 lib/python${MODPY_VERSION}/site-packages/dns/zonetypes.py
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/dnspython-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
 share/examples/${MODPY_PY_PREFIX}dnspython/
 share/examples/${MODPY_PY_PREFIX}dnspython/async_dns.py
 share/examples/${MODPY_PY_PREFIX}dnspython/ddns.py
@@ -458,5 +459,7 @@ share/examples/${MODPY_PY_PREFIX}dnspython/query_specific.py
 share/examples/${MODPY_PY_PREFIX}dnspython/receive_notify.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse_name.py
+share/examples/${MODPY_PY_PREFIX}dnspython/send_notify.py
+share/examples/${MODPY_PY_PREFIX}dnspython/wire_read_tcp.py
 share/examples/${MODPY_PY_PREFIX}dnspython/xfr.py
 share/examples/${MODPY_PY_PREFIX}dnspython/zonediff.py
