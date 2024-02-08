@@ -4,9 +4,9 @@ USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	21.0.1
-PATCH_VER=	12
-BSD_PORT_REL=	2
+BASE_VER=	21.0.2
+PATCH_VER=	13
+BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
@@ -141,7 +141,7 @@ JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-server-release
 IMAGEDIR=	${BUILDDIR}/images/jdk
 WRKTMP=		${WRKDIR}/tmp
- 
+
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
 	chmod +x ${WRKDIST}/configure
@@ -160,7 +160,7 @@ post-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${PKGSTEM}
-	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf - 
+	cd ${IMAGEDIR} && tar -cf - * | tar -C ${PREFIX}/${PKGSTEM} -xf -
 
 # The bootjdk is the jdk image with some parts deleted
 # and a copy of the system shared libs needed to run it.
@@ -173,12 +173,13 @@ build-bootjdk: build
 	@${_PBUILD} mkdir -p ${WRKTMP}/bootjdk-libs
 	@cd ${IMAGEDIR} && \
 		tar -cf - * | \
-		${_PBUILD} tar -C ${WRKTMP}/bootjdk -xf - 
+		${_PBUILD} tar -C ${WRKTMP}/bootjdk -xf -
 	@cd ${WRKTMP}/bootjdk && \
 		${_PBUILD} rm -rf demo jmods man sample
 	@cd ${WRKTMP}/bootjdk/lib && \
 		${_PBUILD} rm libsplashscreen.so libinstrument.so \
-		libawt_xawt.so liblcms.so libfontmanager.so libjdwp.so libjavajpeg.so
+		libawt_xawt.so liblcms.so libfontmanager.so libjdwp.so \
+		libjavajpeg.so
 	@find ${WRKTMP}/bootjdk/lib ${WRKTMP}/bootjdk/bin \
 		-exec sh -c 'file {} | grep -q ELF && \
 		${_PBUILD} strip -S {}' \;
