@@ -2,6 +2,7 @@ COMMENT =	simple, lightweight XMPP C library
 
 V =		0.13.0
 DISTNAME =	libstrophe-${V}
+REVISION =	0
 
 SHARED_LIBS =	strophe                 4.0 # 13.0
 
@@ -14,7 +15,7 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += crypto expat ssl
+WANTLIB += crypto expat ssl z
 
 SITES =		https://github.com/strophe/libstrophe/releases/download/${V}/
 
