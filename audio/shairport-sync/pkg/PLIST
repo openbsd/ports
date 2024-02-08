@@ -9,6 +9,7 @@
 @group
 @bin bin/shairport-sync
 @man man/man1/shairport-sync.1
+share/dbus-1/system.d/${DBUS_SVC}.conf
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/shairport-sync/
 share/examples/shairport-sync/shairport-sync.conf
