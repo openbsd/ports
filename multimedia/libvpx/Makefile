@@ -6,6 +6,8 @@ GH_TAGNAME=	v1.13.1
 EPOCH=		0
 CATEGORIES=	multimedia
 
+REVISION=	0
+
 SHARED_LIBS=	vpx	16.0
 
 HOMEPAGE=	https://www.webmproject.org/
@@ -35,13 +37,13 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-vp9-highbitdepth \
 		--prefix=${PREFIX} \
 		--disable-optimizations \
-		--disable-unit-tests
+		--enable-unit-tests \
+		--enable-decode-perf-tests \
+		--enable-encode-perf-tests
 
 .if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ARGS+=--disable-neon
 .endif
-
-NO_TEST=	Yes
 
 ALL_TARGET=
 
