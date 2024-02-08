@@ -6,7 +6,7 @@ GH_TAGNAME=	v1.13.1
 EPOCH=		0
 CATEGORIES=	multimedia
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	vpx	16.0
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-runtime-cpu-detect \
 		--enable-vp9-highbitdepth \
 		--prefix=${PREFIX} \
-		--disable-optimizations \
+		--enable-optimizations \
 		--enable-unit-tests \
 		--enable-decode-perf-tests \
 		--enable-encode-perf-tests
@@ -56,5 +56,12 @@ post-install:
 	@chmod ${SHAREMODE} ${PREFIX}/lib/lib*
 	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/pkgconfig/vpx.pc
 	@chmod ${SHAREMODE} ${PREFIX}/lib/pkgconfig/vpx.pc
+
+pre-test:
+	@if ! [ -e ${WRKBUILD}/screendata.y4m ]; then \
+		echo "\n>>> Tests require additional downloads. Please run:"; \
+		echo ">>> ${GMAKE} -C ${WRKBUILD} testdata\n"; \
+		exit 1; \
+	fi
 
 .include <bsd.port.mk>

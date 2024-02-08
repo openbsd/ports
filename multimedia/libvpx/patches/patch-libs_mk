@@ -59,10 +59,11 @@ Index: libs.mk
  $(LIBVPX_TEST_BIN): $(TEST_LIBS)
  $(eval $(call linkerxx_template,$(LIBVPX_TEST_BIN), \
                $(LIBVPX_TEST_OBJS) \
-@@ -715,6 +702,7 @@ test_shard.$(1) test_shard_ndc.$(1): $(LIBVPX_TEST_BIN
+@@ -715,6 +702,8 @@ test_shard.$(1) test_shard_ndc.$(1): $(LIBVPX_TEST_BIN
  	@set -e; \
  	 export GTEST_SHARD_INDEX=$(1); \
  	 export GTEST_TOTAL_SHARDS=$(2); \
++	 export LIBVPX_TEST_DATA_PATH=$(LIBVPX_TEST_DATA_PATH); \
 +	 export LD_LIBRARY_PATH=$(CURDIR); \
  	 $(LIBVPX_TEST_BIN)
  test_shard.$(1): testdata
