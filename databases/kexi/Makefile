@@ -5,7 +5,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -38,8 +38,7 @@ WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui KPropertyCore3 KPropertyWidgets3 KReport3
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c glib-2.0 iconv m mariadb X11
+WANTLIB += Qt5Widgets Qt5Xml X11 c glib-2.0 iconv m mariadb
 
 SITES =		${SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -75,13 +74,16 @@ LIB_DEPENDS =		databases/kdb>=3.2.0 \
 			devel/kf5/kxmlgui \
 			devel/kproperty>=3.2.0 \
 			devel/kreport>=3.2.0 \
-			databases/mariadb \
-			x11/qt5/qtwebkit
+			databases/mariadb
 
 CONFIGURE_ARGS =	-DBUILD_TESTING=On \
 			-DBUILD_EXAMPLES=On \
 			-DKEXI_QTGUI_RUNTIME_AVAILABLE=On \
 			-DKEXI_ENABLE_QTGUI_FOR_TESTS=Off
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebKit=ON
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Qt5WebKitWidgets=ON
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 TEST_IS_INTERACTIVE =	X11
 

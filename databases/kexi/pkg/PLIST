@@ -18,7 +18,6 @@ lib/qt5/plugins/kexi/3.2/
 lib/qt5/plugins/kexi/3.2/forms/
 lib/qt5/plugins/kexi/3.2/forms/widgets/
 @so lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.main.so
-@so lib/qt5/plugins/kexi/3.2/forms/widgets/org.kexi-project.form.widgets.web-browser.so
 @so lib/qt5/plugins/kexi/3.2/kexi_csvimportexportplugin.so
 @so lib/qt5/plugins/kexi/3.2/kexi_formplugin.so
 @so lib/qt5/plugins/kexi/3.2/kexi_migrationplugin.so
@@ -80,7 +79,6 @@ share/kexi/3.2/examples/Simple_Database.kexi
 share/kexi/3.2/icons/
 share/kexi/3.2/icons/kexi_breeze.rcc
 share/kexi/3.2/icons/org.kexi-project.form.widgets.main_breeze.rcc
-share/kexi/3.2/icons/org.kexi-project.form.widgets.web-browser_breeze.rcc
 share/kexi/3.2/status/
 share/kexi/3.2/status/contribution_details.ui
 share/kexi/3.2/status/contribution_help.ui
