@@ -150,7 +150,7 @@ Index: chrome/browser/chrome_content_browser_client.cc
    MaybeAddThrottle(browser_switcher::BrowserSwitcherNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -7183,7 +7185,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
+@@ -7187,7 +7189,7 @@ bool ChromeContentBrowserClient::ShouldSandboxNetworkS
  bool ChromeContentBrowserClient::ShouldRunOutOfProcessSystemDnsResolution() {
  // This enterprise policy is supported on Android, but the feature will not be
  // launched there.
