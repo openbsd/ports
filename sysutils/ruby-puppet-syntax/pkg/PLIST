@@ -1,10 +1,13 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_todo.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
@@ -32,7 +35,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/hiera_3.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/data/test/hiera_4.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.eyaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad.yaml
-${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_bad_18.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_badkey.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_good.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/hiera/hiera_key_empty.yaml
