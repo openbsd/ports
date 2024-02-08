@@ -1,15 +1,19 @@
+disable EVP_PKEY_param_check(),
+use the old versions of sk_new(), ..., sk_value()
+use the old signature of CRYPTO_free()
+disable SSL_CONF_CTX
+
 Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
 --- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols.cpp
-@@ -145,21 +145,34 @@ DEFINEFUNC(const BIO_METHOD *, BIO_s_mem, void, DUMMYA
- DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
+@@ -146,16 +146,27 @@ DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w,
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, return 0, return)
-+#ifdef OPENSSL_NO_DEPRECATED_3_0
  DEFINEFUNC2(EVP_PKEY_CTX *, EVP_PKEY_CTX_new, EVP_PKEY *pkey, pkey, ENGINE *e, e, return nullptr, return)
++#ifndef LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, EVP_PKEY_param_check, EVP_PKEY_CTX *ctx, ctx, return 0, return)
++#endif
  DEFINEFUNC(void, EVP_PKEY_CTX_free, EVP_PKEY_CTX *ctx, ctx, return, return)
-+#endif // OPENSSL_NO_DEPRECATED_3_0
  DEFINEFUNC(int, RSA_bits, RSA *a, a, return 0, return)
  DEFINEFUNC(int, DSA_bits, DSA *a, a, return 0, return)
 +#ifndef LIBRESSL_VERSION_NUMBER
@@ -29,14 +33,8 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
 +#endif // LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, SSL_session_reused, SSL *a, a, return 0, return)
  DEFINEFUNC2(qssloptions, SSL_CTX_set_options, SSL_CTX *ctx, ctx, qssloptions op, op, return 0, return)
-+#ifndef LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, SSL_CTX_get_security_level, const SSL_CTX *ctx, ctx, return -1, return)
- DEFINEFUNC2(void, SSL_CTX_set_security_level, SSL_CTX *ctx, ctx, int level, level, return, return)
-+#endif // LIBRESSL_VERSION_NUMBER
- #ifdef TLS1_3_VERSION
- DEFINEFUNC2(int, SSL_CTX_set_ciphersuites, SSL_CTX *ctx, ctx, const char *str, str, return 0, return)
- DEFINEFUNC2(void, SSL_set_psk_use_session_callback, SSL *ssl, ssl, q_SSL_psk_use_session_cb_func_t callback, callback, return, DUMMYARG)
-@@ -185,7 +198,11 @@ DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE
+@@ -185,7 +196,11 @@ DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE
  DEFINEFUNC3(int, X509_STORE_set_ex_data, X509_STORE *a, a, int idx, idx, void *data, data, return 0, return)
  DEFINEFUNC2(void *, X509_STORE_get_ex_data, X509_STORE *r, r, int idx, idx, return nullptr, return)
  DEFINEFUNC(STACK_OF(X509) *, X509_STORE_CTX_get0_chain, X509_STORE_CTX *a, a, return nullptr, return)
@@ -48,7 +46,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(long, OpenSSL_version_num, void, DUMMYARG, return 0, return)
  DEFINEFUNC(const char *, OpenSSL_version, int a, a, return nullptr, return)
  DEFINEFUNC(unsigned long, SSL_SESSION_get_ticket_lifetime_hint, const SSL_SESSION *session, session, return 0, return)
-@@ -358,12 +375,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
+@@ -358,12 +373,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
  DEFINEFUNC2(int, SSL_CTX_use_RSAPrivateKey, SSL_CTX *a, a, RSA *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
@@ -63,16 +61,15 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -870,16 +889,21 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(EVP_CIPHER_CTX_reset)
+@@ -871,15 +888,20 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
      RESOLVEFUNC(EVP_PKEY_up_ref)
-+#ifdef OPENSSL_NO_DEPRECATED_3_0
      RESOLVEFUNC(EVP_PKEY_CTX_new)
++#ifdef LIBRESSL_VERSION_NUMBER
      RESOLVEFUNC(EVP_PKEY_param_check)
++#endif
      RESOLVEFUNC(EVP_PKEY_CTX_free)
      RESOLVEFUNC(RSA_bits)
-+#endif // OPENSSL_NO_DEPRECATED_3_0
 +
 +#ifndef LIBRESSL_VERSION_NUMBER
      RESOLVEFUNC(OPENSSL_sk_new_null)
@@ -85,15 +82,14 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(DH_get0_pqg)
      RESOLVEFUNC(SSL_CTX_set_options)
      RESOLVEFUNC(SSL_CTX_get_security_level)
-@@ -1095,6 +1119,7 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(SSL_CTX_use_PrivateKey)
+@@ -1096,12 +1118,14 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
-+#ifndef LIBRESSL_VERSION_NUMBER
      RESOLVEFUNC(SSL_CTX_get_cert_store);
++#ifndef LIBRESSL_VERSION_NUMBER
      RESOLVEFUNC(SSL_CONF_CTX_new);
      RESOLVEFUNC(SSL_CONF_CTX_free);
-@@ -1102,6 +1127,7 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(SSL_CONF_CTX_set_ssl_ctx);
      RESOLVEFUNC(SSL_CONF_CTX_set_flags);
      RESOLVEFUNC(SSL_CONF_CTX_finish);
      RESOLVEFUNC(SSL_CONF_cmd);

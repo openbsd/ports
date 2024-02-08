@@ -17,6 +17,8 @@ PKGNAME-tds =		qt5-tds-${QT5_KDE_VERSION}
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
+REVISION-main =		0
+
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15

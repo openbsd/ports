@@ -1,7 +1,13 @@
+use compat defines for STACK and INIT_SETTINGS
+disable EVP_PKEY_param_check
+map q_OPENSSL_sk_*() to q_sk_*()
+disable SSL_CONF_CTX
+use old signature of CRYPTO_free()
+
 Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 --- src/network/ssl/qsslsocket_openssl_symbols_p.h.orig
 +++ src/network/ssl/qsslsocket_openssl_symbols_p.h
-@@ -80,6 +80,14 @@ QT_BEGIN_NAMESPACE
+@@ -80,6 +80,13 @@ QT_BEGIN_NAMESPACE
  
  #define DUMMYARG
  
@@ -9,22 +15,19 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
 +typedef _STACK STACK;
 +typedef STACK OPENSSL_STACK;
 +typedef void OPENSSL_INIT_SETTINGS; 
-+typedef int (*X509_STORE_CTX_verify_cb)(int ok,X509_STORE_CTX *ctx);
 +#endif
 +
 +
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -234,16 +242,33 @@ int q_DSA_bits(DSA *a);
- void q_AUTHORITY_INFO_ACCESS_free(AUTHORITY_INFO_ACCESS *a);
- int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
+@@ -236,14 +243,31 @@ int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  Q_AUTOTEST_EXPORT int q_EVP_PKEY_up_ref(EVP_PKEY *a);
-+#ifdef OPENSSL_NO_DEPRECATED_3_0
  EVP_PKEY_CTX *q_EVP_PKEY_CTX_new(EVP_PKEY *pkey, ENGINE *e);
  void q_EVP_PKEY_CTX_free(EVP_PKEY_CTX *ctx);
++#ifndef LIBRESSL_VERSION_NUMBER
  int q_EVP_PKEY_param_check(EVP_PKEY_CTX *ctx);
-+#endif // OPENSSL_NO_DEPRECATED_3_0
++#endif
  int q_RSA_bits(RSA *a);
 +#ifndef LIBRESSL_VERSION_NUMBER
  Q_AUTOTEST_EXPORT int q_OPENSSL_sk_num(OPENSSL_STACK *a);
@@ -50,7 +53,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  
  #if OPENSSL_VERSION_MAJOR < 3
-@@ -515,12 +540,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+@@ -515,12 +539,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -65,7 +68,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -761,8 +788,14 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
+@@ -761,8 +787,14 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
  
  void *q_CRYPTO_malloc(size_t num, const char *file, int line);
  #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)

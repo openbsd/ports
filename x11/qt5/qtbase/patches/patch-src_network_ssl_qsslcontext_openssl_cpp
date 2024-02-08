@@ -1,19 +1,7 @@
 Index: src/network/ssl/qsslcontext_openssl.cpp
 --- src/network/ssl/qsslcontext_openssl.cpp.orig
 +++ src/network/ssl/qsslcontext_openssl.cpp
-@@ -351,9 +351,11 @@ init_context:
-         return;
-     }
- 
-+#ifndef LIBRESSL_VERSION_NUMBER
-     // A nasty hacked OpenSSL using a level that will make our auto-tests fail:
-     if (q_SSL_CTX_get_security_level(sslContext->ctx) > 1 && *forceSecurityLevel())
-         q_SSL_CTX_set_security_level(sslContext->ctx, 1);
-+#endif // LIBRESSL_VERSION_NUMBER
- 
-     const long anyVersion =
- #if QT_CONFIG(dtls)
-@@ -722,6 +724,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -722,6 +722,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -21,7 +9,7 @@ Index: src/network/ssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -768,7 +771,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -768,7 +769,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }
