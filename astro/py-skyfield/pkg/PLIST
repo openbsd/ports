@@ -117,6 +117,8 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}stellariu
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}stellarium.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}text_pck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}text_pck.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}tycho2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/${MODPY_PYCACHE}tycho2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/constellations.gz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/constellations.npz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/delta_t.npz
@@ -133,6 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/data/nutation.npz
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/spice.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/stellarium.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/data/text_pck.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/data/tycho2.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/descriptorlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/accuracy-efficiency.rst
@@ -260,6 +263,8 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_sea
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_searchlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_stars.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_stars.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_stars_tycho2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_stars_tycho2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_strs_and_reprs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_strs_and_reprs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_text_pck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -308,6 +313,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_positions.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_satellite_events.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_searchlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_stars.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_stars_tycho2.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_strs_and_reprs.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_text_pck.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_timelib.py
