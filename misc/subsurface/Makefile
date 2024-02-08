@@ -1,16 +1,12 @@
-# Qt5Webkit
-USE_WXNEEDED =	Yes
-
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	4
+REVISION =	5
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
 CATEGORIES =	misc
 HOMEPAGE =	https://subsurface-divelog.org
-MAINTAINER =	Kristaps Dzonsons <kristaps@bsd.lv>
 
 # GPLv2, and LGPLv2.1 for libdivecomputer
 # The content of mobile-widgets/qml/icons/ is Apache 2, but not installed.
@@ -18,10 +14,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates Qt5Concurrent
 WANTLIB += Qt5Core Qt5Gui Qt5Location Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c crypto curl
-WANTLIB += git2 m sqlite3 ssh2 ssl usb-1.0 xml2 xslt zip
-WANTLIB += Qt5PositioningQuick Qt5QmlModels
+WANTLIB += Qt5PositioningQuick Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Svg Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets c crypto curl git2 m
+WANTLIB += sqlite3 ssh2 ssl usb-1.0 xml2 xslt zip
 
 SITES =		https://subsurface-divelog.org/downloads/
 EXTRACT_SUFX =	.tgz
@@ -50,11 +46,12 @@ LIB_DEPENDS =	archivers/libzip \
 		x11/grantlee-qt5 \
 		x11/qt5/qtbase \
 		x11/qt5/qtsvg \
-		x11/qt5/qtwebkit
+		x11/qt5/qtwebengine
 
 USE_GMAKE =	Yes
 
 CONFIGURE_ARGS +=	-DNO_DOCS:Bool=ON \
+			-DUSE_WEBENGINE=ON \
 			-DBTSUPPORT:Bool=OFF
 
 # many "undefined reference to `dc_*" when tests are enabled
