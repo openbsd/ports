@@ -4,7 +4,7 @@
 
 COMMENT=		utilities to assist desktop integration tasks
 
-V=			1.2.0
+V=			1.2.1
 DISTNAME=		xdg-utils-${V}
 
 CATEGORIES=		devel
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 SITES=			https://gitlab.freedesktop.org/xdg/xdg-utils/-/archive/v${V}/
-WRKDIST=		${WRKDIR}/xdg-utils-v${V}-b5188f34647c6ff76402e3d907879264e9bc3409
+WRKDIST=		${WRKDIR}/xdg-utils-v${V}-356c380ad6fecc9ce6bea1f6a77986ba67402c80
 
 PKG_ARCH=		*
 USE_GMAKE=		Yes
