@@ -9,7 +9,7 @@ SHARED_LIBS +=  pcre2-posix               1.0 # 2.3
 
 CATEGORIES =	devel
 
-REVISION =	1
+REVISION =	2
 
 SITES = 	https://github.com/PCRE2Project/pcre2/releases/download/${DISTNAME}/ \
 		https://ftp.pcre.org/pub/pcre/ \
@@ -18,7 +18,7 @@ SITES = 	https://github.com/PCRE2Project/pcre2/releases/download/${DISTNAME}/ \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 
 HOMEPAGE =	https://www.pcre.org/
-MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
+MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

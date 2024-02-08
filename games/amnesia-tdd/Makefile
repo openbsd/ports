@@ -6,6 +6,7 @@ COMMENT =	first person survival horror game
 
 V =		0.3.2
 DISTNAME =	amnesia-tdd-${V}
+REVISION =	0
 
 GH_ACCOUNT =	shamazmazum
 GH_PROJECT =	AmnesiaTheDarkDescent
@@ -15,7 +16,7 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.amnesiagame.com/
 
-MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
+MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 
 # GPLv3+: amnesia-tdd
 # zlib: AngelScript, Newton Dynamics and OALWrapper

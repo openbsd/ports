@@ -8,13 +8,13 @@ COMMENT =	emulator for Sega Dreamcast and Sega Naomi based on reicast
 V =		2.1pl20230303
 DISTNAME =	flycast-${V}
 COMMIT =	27b6bafd0f003c8f8bcd1fb3bfd48a3523b298f5
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators games
 
 HOMEPAGE =	https://github.com/flyinghead/flycast
 
-MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
+MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 
 # GPLv2 (flycast, picoTCP), GPLv3 (glslang, picoTCP, xbrz),
 # Apache 2.0 (Vulkan-Headers, glslang),
@@ -28,7 +28,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SPIRV ao c curl chdr glslang
 WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse vulkan xxhash z zip
 
-SITES =		https://namtsui.com/source/
+SITES =		https://messagemode2.com/source/
 
 NO_TEST =	Yes
 

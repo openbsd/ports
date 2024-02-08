@@ -2,13 +2,13 @@ COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-2.1.2-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors print x11
 
 HOMEPAGE=	https://texmacs.org/
 
-MAINTAINER=	Nam Nguyen <namn@berkeley.edu>
+MAINTAINER=	Nam Nguyen <namn@openbsd.org>
 
 SITES=		http://texmacs.org/Download/ftp/tmftp/source/
 

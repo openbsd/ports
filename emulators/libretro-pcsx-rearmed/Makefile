@@ -2,6 +2,7 @@ COMMENT =	Sony PlayStation core for retroarch
 
 V =		23
 DISTNAME =	libretro-pcsx-rearmed-$V
+REVISION =	0
 
 GH_ACCOUNT =	notaz
 GH_PROJECT =	pcsx_rearmed
@@ -9,7 +10,7 @@ GH_TAGNAME =	r$V
 
 CATEGORIES =	emulators
 
-MAINTAINER =	Nam Nguyen <namn@berkeley.edu>
+MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 
 # GPLv2+, LGPLv2.1+
 PERMIT_PACKAGE =	Yes
