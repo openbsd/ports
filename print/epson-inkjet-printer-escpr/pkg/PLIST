@@ -125,6 +125,8 @@ share/ppd/epson-inkjet-printer-escpr/Epson-ET-M1100_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-M1120_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-ET-M2120_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EW-052A_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-EW-056A_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-EW-456A_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EW-M5071FT_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EW-M571T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-EW-M660FT_Series-epson-escpr-en.ppd
