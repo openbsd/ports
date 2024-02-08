@@ -1,6 +1,6 @@
 COMMENT=	US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION=	1.3.7
+MODPY_EGG_VERSION=	1.3.8
 DISTNAME=	Unidecode-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 
