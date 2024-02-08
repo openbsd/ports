@@ -1,0 +1,11 @@
+--- src/Boot.cpp.orig	Thu Feb  1 12:44:08 2024
++++ src/Boot.cpp	Thu Feb  1 12:44:55 2024
+@@ -48,7 +48,7 @@
+ 	dataPath = pathbuf;
+ 	dataPath = dataPath.parent_path().parent_path() / "Resources";
+ #else
+-	dataPath = "Data";
++	dataPath = "${TRUEPREFIX}/share/nanosaur";
+ #endif
+ 
+ 	dataPath = dataPath.lexically_normal();
