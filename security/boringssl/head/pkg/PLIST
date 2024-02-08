@@ -68,6 +68,7 @@ eboringssl/include/openssl/pkcs7.h
 eboringssl/include/openssl/pkcs8.h
 eboringssl/include/openssl/poly1305.h
 eboringssl/include/openssl/pool.h
+eboringssl/include/openssl/posix_time.h
 eboringssl/include/openssl/rand.h
 eboringssl/include/openssl/rc4.h
 eboringssl/include/openssl/ripemd.h
