@@ -1,7 +1,7 @@
 COMMENT =	AirPlay audio player
 
 DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.2	.
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio net
 
