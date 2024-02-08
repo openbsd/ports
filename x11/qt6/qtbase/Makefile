@@ -13,6 +13,8 @@ PKGNAME-psql =		qt6-postgresql-${VERSION}
 
 PKG_ARCH-global =	*
 
+REVISION-main =		0
+
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.6
