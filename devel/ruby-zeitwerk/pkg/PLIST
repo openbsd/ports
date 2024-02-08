@@ -18,6 +18,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/callbacks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/eager_load.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/loader/helpers.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/null_inflector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/real_mod_name.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/registry.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/version.rb
