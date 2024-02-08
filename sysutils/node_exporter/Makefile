@@ -2,6 +2,7 @@ COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter
 MODGO_VERSION =		v1.7.0
+REVISION =		0
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
 
@@ -32,5 +33,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${PREFIX}/share/doc/node_exporter/
 
 .include "modules.inc"
+# updated from upstream's old version, also see patches
+MODGO_MODULES +=	golang.org/x/sys	v0.15.0
 
 .include <bsd.port.mk>

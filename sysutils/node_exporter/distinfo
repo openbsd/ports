@@ -188,6 +188,8 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.11.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7
 SHA256 (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.13.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.13.0.zip) = PRSa/Jk5mANUN0wNR0Ydzb0dOYDrL3fmAwSyP+5vPTc=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.15.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.15.0.zip) = hhLrQWxznDsEzkjcvmVjLG+8QnAx/Zgcrs7sZBDR4fw=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.2.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -430,6 +432,8 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.11.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.13.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.13.0.zip) = 1901653
+SIZE (go_modules/golang.org/x/sys/@v/v0.15.0.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.15.0.zip) = 1901954
 SIZE (go_modules/golang.org/x/sys/@v/v0.2.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 33
