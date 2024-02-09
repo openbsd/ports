@@ -1,5 +1,5 @@
 @bin bin/CroMagRally
-share/applications/cromagrally.desktop
+share/applications/io.jor.cromagrally.desktop
 share/cromagrally/
 share/cromagrally/Audio/
 share/cromagrally/Audio/Announcer/
@@ -51,7 +51,7 @@ share/cromagrally/Audio/EuroSong.aiff
 share/cromagrally/Audio/IceSong.aiff
 share/cromagrally/Audio/JungleSong.aiff
 share/cromagrally/Audio/LevelSpecific/
-share/cromagrally/Audio/LevelSpecific/Blowdart.aiff
+share/cromagrally/Audio/LevelSpecific/BlowDart.aiff
 share/cromagrally/Audio/LevelSpecific/Bubbles.aiff
 share/cromagrally/Audio/LevelSpecific/Catapult.aiff
 share/cromagrally/Audio/LevelSpecific/Chant.aiff
@@ -109,7 +109,6 @@ share/cromagrally/Images/TrackSelectScreen.png
 share/cromagrally/Images/VehicleSelectScreen.jpg
 share/cromagrally/Images/Vignette.png
 share/cromagrally/Models/
-share/cromagrally/Models/Winners.bg3d
 share/cromagrally/Models/atlantis.bg3d
 share/cromagrally/Models/aztec.bg3d
 share/cromagrally/Models/carparts.bg3d
@@ -128,6 +127,7 @@ share/cromagrally/Models/scandinavia.bg3d
 share/cromagrally/Models/stonehenge.bg3d
 share/cromagrally/Models/tarpits.bg3d
 share/cromagrally/Models/weapons.bg3d
+share/cromagrally/Models/winners.bg3d
 share/cromagrally/Skeletons/
 share/cromagrally/Skeletons/Beetle.bg3d
 share/cromagrally/Skeletons/Beetle.skeleton.rsrc
@@ -159,8 +159,8 @@ share/cromagrally/Skeletons/Mummy.bg3d
 share/cromagrally/Skeletons/Mummy.skeleton.rsrc
 share/cromagrally/Skeletons/PolarBear.bg3d
 share/cromagrally/Skeletons/PolarBear.skeleton.rsrc
-share/cromagrally/Skeletons/Pteradactyl.skeleton.rsrc
 share/cromagrally/Skeletons/Pterodactyl.bg3d
+share/cromagrally/Skeletons/Pterodactyl.skeleton.rsrc
 share/cromagrally/Skeletons/Shark.bg3d
 share/cromagrally/Skeletons/Shark.skeleton.rsrc
 share/cromagrally/Skeletons/Troll.bg3d
@@ -248,7 +248,6 @@ share/cromagrally/Sprites/trackselectsp.txt
 share/cromagrally/Sprites/wallfont.png
 share/cromagrally/Sprites/wallfont.txt
 share/cromagrally/System/
-share/cromagrally/System/Application.rsrc
 share/cromagrally/System/gamecontrollerdb.txt
 share/cromagrally/System/kerning.txt
 share/cromagrally/System/strings.csv
@@ -294,6 +293,6 @@ share/doc/CroMagRally/CHANGELOG.md
 share/doc/CroMagRally/LICENSE.md
 share/doc/CroMagRally/README.md
 share/doc/CroMagRally/SECRETS.md
-share/icons/hicolor/512x512/apps/cromagrally-desktopicon.png
+share/icons/hicolor/512x512/apps/io.jor.cromagrally.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

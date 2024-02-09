@@ -1,11 +1,10 @@
 COMMENT =	family-friendly bronze age kart game
 
-V =		3.0.0pl0
-GAME_COMMIT =	5983de40c180b50bbbec8b04f5f5f1ceccd1901b
+V =		3.0.1
 PKGNAME =	cromagrally-${V}
-DISTNAME =	CroMagRally-${GAME_COMMIT}
-DIST_TUPLE +=	github jorio CroMagRally ${GAME_COMMIT} .
-DIST_TUPLE +=	github jorio Pomme d57c28e205462e51063e787f9ebddaadff592f1e \
+DISTNAME =	CroMagRally-${V}
+DIST_TUPLE +=	github jorio CroMagRally ${V} .
+DIST_TUPLE +=	github jorio Pomme ef94150e2dcec522e3099f4d03a4e8f2639f7232 \
 		extern/Pomme
 
 CATEGORIES =	games
@@ -35,7 +34,7 @@ CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Source/Main.cpp
+	${SUBST_CMD} ${WRKSRC}/Source/Boot.cpp
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/CroMagRally/
@@ -44,9 +43,9 @@ do-install:
 	cp -R ${WRKBUILD}/Data ${PREFIX}/share/cromagrally
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/512x512/apps/ \
 		${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/packaging/cromagrally-desktopicon.png \
+	${INSTALL_DATA} ${WRKSRC}/packaging/io.jor.cromagrally.png \
 		${PREFIX}/share/icons/hicolor/512x512/apps/
-	${INSTALL_DATA} ${WRKSRC}/packaging/cromagrally.desktop \
+	${INSTALL_DATA} ${WRKSRC}/packaging/io.jor.cromagrally.desktop \
 		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

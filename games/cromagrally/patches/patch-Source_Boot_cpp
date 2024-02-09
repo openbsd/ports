@@ -1,0 +1,12 @@
+Index: Source/Boot.cpp
+--- Source/Boot.cpp.orig
++++ Source/Boot.cpp
+@@ -58,7 +58,7 @@ tryAgain:
+ 			break;
+ 
+ 		case 2:
+-			dataPath = "Data";
++			dataPath = "${TRUEPREFIX}/share/cromagrally";
+ 			break;
+ 
+ 		default:
