@@ -8750,6 +8750,7 @@ share/rust-openssl-tests/openssl-sys/src/handwritten/kdf.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/mod.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/object.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/ocsp.rs
+share/rust-openssl-tests/openssl-sys/src/handwritten/params.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/pem.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/pkcs12.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/pkcs7.rs

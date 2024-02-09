@@ -87,7 +87,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (rust-openssl-tests-20240208-5e10531a.tar.gz) = nWkZZ/LSZJjjhEWDw2Z5lD4xOhZPGN2jgBQ4quzwTiE=
+SHA256 (rust-openssl-tests-20240209-84162bf7.tar.gz) = uOiRGKB/nytOvIgBLnBqJ7FIv0hd8ZriJw6JE3cx1CU=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/annotate-snippets-0.9.2.tar.gz) = 32065
 SIZE (cargo/bindgen-0.65.1.tar.gz) = 213479
@@ -177,4 +177,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = 430165
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (rust-openssl-tests-20240208-5e10531a.tar.gz) = 358728
+SIZE (rust-openssl-tests-20240209-84162bf7.tar.gz) = 360052
