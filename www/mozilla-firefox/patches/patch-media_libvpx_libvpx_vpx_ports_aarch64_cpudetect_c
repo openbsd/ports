@@ -1,7 +1,6 @@
-Index: media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c
-
 Backport multimedia/libvpx/patches/patch-vpx_ports_arm_cpudetect_c
 
+Index: media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c
 --- media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c.orig
 +++ media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c
 @@ -15,7 +15,7 @@
