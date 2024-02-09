@@ -148,7 +148,7 @@ MODGO_MODULES =	\
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cloudflare/circl				 v1.3.7 \
 	github.com/cncf/udpa/go					 v0.0.0-20220112060539-c52dc94e7fbe \
-	github.com/cncf/xds/go					 v0.0.0-20230607035331-e9ce68804cb4 \
+	github.com/cncf/xds/go					 v0.0.0-20231109132714-523115ebc101 \
 	github.com/creack/pty					 v1.1.9 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/envoyproxy/go-control-plane			 v0.11.1 \
@@ -173,7 +173,7 @@ MODGO_MODULES =	\
 	github.com/google/pprof					 v0.0.0-20210720184732-4bb14d4b1be1 \
 	github.com/google/renameio				 v0.1.0 \
 	github.com/google/s2a-go				 v0.1.7 \
-	github.com/google/uuid					 v1.5.0 \
+	github.com/google/uuid					 v1.6.0 \
 	github.com/googleapis/enterprise-certificate-proxy	 v0.3.2 \
 	github.com/googleapis/gax-go/v2				 v2.12.0 \
 	github.com/googleapis/go-type-adapters			 v1.0.0 \
@@ -239,7 +239,7 @@ MODGO_MODULES =	\
 	github.com/xeipuuv/gojsonreference			 v0.0.0-20180127040603-bd5ef7bd5415 \
 	github.com/xeipuuv/gojsonschema				 v1.2.0 \
 	github.com/yuin/goldmark				 v1.4.13 \
-	github.com/zclconf/go-cty				 v1.14.1 \
+	github.com/zclconf/go-cty				 v1.14.2 \
 	github.com/zclconf/go-cty-debug				 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml				 v1.0.3 \
 	go.opencensus.io					 v0.24.0 \
@@ -265,7 +265,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20231106174013-bbf56f31fb17 \
 	google.golang.org/genproto/googleapis/bytestream	 v0.0.0-20231120223509-83a465c0220f \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231120223509-83a465c0220f \
-	google.golang.org/grpc					 v1.60.1 \
+	google.golang.org/grpc					 v1.61.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc		 v1.1.0 \
 	google.golang.org/protobuf				 v1.31.0 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
@@ -621,6 +621,7 @@ MODGO_MODFILES =	\
 	github.com/zclconf/go-cty				 v1.13.0 \
 	github.com/zclconf/go-cty				 v1.13.1 \
 	github.com/zclconf/go-cty				 v1.13.2 \
+	github.com/zclconf/go-cty				 v1.14.1 \
 	go.opencensus.io					 v0.21.0 \
 	go.opencensus.io					 v0.22.0 \
 	go.opencensus.io					 v0.22.2 \
@@ -726,7 +727,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.12.0 \
 	golang.org/x/net					 v0.13.0 \
 	golang.org/x/net					 v0.14.0 \
-	golang.org/x/net					 v0.16.0 \
 	golang.org/x/net					 v0.17.0 \
 	golang.org/x/net					 v0.18.0 \
 	golang.org/x/net					 v0.19.0 \
@@ -1103,21 +1103,19 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto				 v0.0.0-20230526161137-0005af68ea54 \
 	google.golang.org/genproto				 v0.0.0-20230530153820-e85fd2cbaebc \
 	google.golang.org/genproto				 v0.0.0-20230822172742-b8732ec3820d \
-	google.golang.org/genproto				 v0.0.0-20231002182017-d307bd883b97 \
 	google.golang.org/genproto				 v0.0.0-20231016165738-49dd2c1f3d0b \
 	google.golang.org/genproto				 v0.0.0-20231030173426-d783a09b4405 \
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20230525234035-dd9d682886f9 \
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20230530153820-e85fd2cbaebc \
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20230822172742-b8732ec3820d \
-	google.golang.org/genproto/googleapis/api		 v0.0.0-20231002182017-d307bd883b97 \
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20231016165738-49dd2c1f3d0b \
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20231030173426-d783a09b4405 \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20230525234030-28d5490b6b19 \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20230530153820-e85fd2cbaebc \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20230822172742-b8732ec3820d \
-	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231002182017-d307bd883b97 \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231016165738-49dd2c1f3d0b \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231030173426-d783a09b4405 \
+	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231106174013-bbf56f31fb17 \
 	google.golang.org/grpc					 v1.19.0 \
 	google.golang.org/grpc					 v1.20.1 \
 	google.golang.org/grpc					 v1.21.1 \
