@@ -1,0 +1,11 @@
+--- Source/Boot.cpp.orig	Sat Feb  3 12:09:37 2024
++++ Source/Boot.cpp	Sat Feb  3 12:10:03 2024
+@@ -55,7 +55,7 @@
+ 			break;
+ 
+ 		case 2:
+-			dataPath = "Data";
++			dataPath = "${TRUEPREFIX}/share/billyfrontier";
+ 			break;
+ 
+ 		default:
