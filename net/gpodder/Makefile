@@ -1,6 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.11.4
+REVISION=		0
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -51,6 +52,8 @@ TEST_TARGET=		unittest
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=/ ${MAKE_PROGRAM} \
 		-f ${MAKE_FILE} install
+	sed -i s,${PREFIX},${TRUEPREFIX}, \
+		${PREFIX}/share/applications/*.desktop
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/gpodder/extensions/
 
