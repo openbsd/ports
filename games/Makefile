@@ -26,6 +26,7 @@
      SUBDIR += batrachians
      SUBDIR += belooted
      SUBDIR += beret
+     SUBDIR += billyfrontier
      SUBDIR += blobby
      SUBDIR += blobwars
      SUBDIR += blockgame
@@ -198,6 +199,7 @@
      SUBDIR += meandmyshadow
      SUBDIR += megaglest
      SUBDIR += micropolis
+     SUBDIR += mightymike
      SUBDIR += minecraft
      SUBDIR += minetest
      SUBDIR += mirrormagic
