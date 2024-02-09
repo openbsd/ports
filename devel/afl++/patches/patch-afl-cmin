@@ -4,16 +4,16 @@
 Index: afl-cmin
 --- afl-cmin.orig
 +++ afl-cmin
-@@ -3,7 +3,7 @@ export AFL_QUIET=1
+@@ -8,7 +8,7 @@ export AFL_QUIET=1
  export ASAN_OPTIONS=detect_leaks=0
  THISPATH=`dirname ${0}`
  export PATH="${THISPATH}:$PATH"
 -awk -f - -- ${@+"$@"} <<'EOF'
 +gawk -f - -- ${@+"$@"} <<'EOF'
  #!/usr/bin/awk -f
- 
  # awk script to minimize a test corpus of input files
-@@ -369,7 +369,7 @@ BEGIN {
+ #
+@@ -373,7 +373,7 @@ BEGIN {
    }
  
    if (threads) {

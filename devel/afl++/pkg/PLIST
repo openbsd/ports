@@ -43,6 +43,7 @@ libexec/afl/as
 @so libexec/afl/cmplog-switches-pass.so
 @so libexec/afl/compare-transform-pass.so
 libexec/afl/dynamic_list.txt
+@so libexec/afl/injection-pass.so
 @static-lib libexec/afl/libAFLDriver.a
 @static-lib libexec/afl/libAFLQemuDriver.a
 @so libexec/afl/split-compares-pass.so
@@ -156,6 +157,7 @@ share/afl/dictionaries/xslt.dict
 share/afl/dictionaries/yaml.dict
 share/afl/dictionaries/yara.dict
 share/afl/dictionaries/zip.dict
+share/afl/injections.dic
 share/afl/testcases/
 share/afl/testcases/README.md
 share/afl/testcases/archives/
@@ -245,6 +247,7 @@ share/doc/afl/FAQ.md
 share/doc/afl/INSTALL.md
 share/doc/afl/README.cmplog.md
 share/doc/afl/README.gcc_plugin.md
+share/doc/afl/README.injections.md
 share/doc/afl/README.instrument_list.md
 share/doc/afl/README.laf-intel.md
 share/doc/afl/README.llvm.md
