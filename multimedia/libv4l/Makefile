@@ -1,7 +1,7 @@
 COMMENT =		libv4l userspace library
 
-# 1.24 fails to build, 1.26 dropped auto* for meson
-VERSION =		1.22.1
+# 1.26 dropped auto* for meson
+VERSION =		1.24.1
 DISTNAME =		v4l-utils-${VERSION}
 PKGNAME =		libv4l-${VERSION}
 

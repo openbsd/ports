@@ -1,0 +1,31 @@
+Hide unsupported V4L2_PIX_FMT_SN9C20X_I420 format.
+
+Index: lib/libv4lconvert/libv4lconvert.c
+--- lib/libv4lconvert/libv4lconvert.c.orig
++++ lib/libv4lconvert/libv4lconvert.c
+@@ -138,7 +138,9 @@ static const struct v4lconvert_pixfmt supported_src_pi
+ 	{ V4L2_PIX_FMT_KONICA420,	12,	 6,	 3,	1 },
+ 	{ V4L2_PIX_FMT_SN9C20X_I420,	12,	 6,	 3,	1 },
+ 	{ V4L2_PIX_FMT_M420,		12,	 6,	 3,	1 },
++#if !defined(__OpenBSD__)
+ 	{ V4L2_PIX_FMT_NV12_16L16,	12,	 6,	 3,	1 },
++#endif
+ 	{ V4L2_PIX_FMT_NV12,		12,	 6,	 3,	1 },
+ 	{ V4L2_PIX_FMT_CPIA1,		 0,	 6,	 3,	1 },
+ 	/* JPEG and variants */
+@@ -915,6 +917,7 @@ static int v4lconvert_convert_pixfmt(struct v4lconvert
+ 		break;
+ 	}
+ 
++#if !defined(__OpenBSD__)
+ 		/* Conexant cx2341x raw video macroblock format */
+ 	case V4L2_PIX_FMT_NV12_16L16:
+ 		switch (dest_pix_fmt) {
+@@ -932,6 +935,7 @@ static int v4lconvert_convert_pixfmt(struct v4lconvert
+ 			break;
+ 		}
+ 		break;
++#endif
+ 
+ 		/* NV12 formats */
+ 	case V4L2_PIX_FMT_NV12:
