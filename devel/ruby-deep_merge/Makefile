@@ -1,8 +1,8 @@
-COMMENT=		recursively merge hashes
+COMMENT=	recursively merge hashes
 
-DISTNAME=		deep_merge-1.2.1
-REVISION=		0
-CATEGORIES=		devel
+DISTNAME =	deep_merge-1.2.2
+CATEGORIES =	devel
+MAINTAINER =    Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
