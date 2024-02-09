@@ -1,13 +1,10 @@
 COMMENT=	auto-discovering network management/monitoring system
 
-# requires PHP 8.1+; sparc64 is 8.0-only
-NOT_FOR_ARCHS=	sparc64
-
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	24.1.0
-REVISION=	0
+REVISION=	1
 
 DISTFILES.deps=	${PKGNAME}-vendor.tar.xz
 EPOCH=		0
