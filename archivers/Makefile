@@ -66,6 +66,7 @@
      SUBDIR += py-compressed_rtf,python3
      SUBDIR += py-libarchive-c,python3
      SUBDIR += py-lz4,python3
+     SUBDIR += py-lzo,python3
      SUBDIR += py-rarfile,python3
      SUBDIR += py-vpk,python3
      SUBDIR += py-zopfli,python3
