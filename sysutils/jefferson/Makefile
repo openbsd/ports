@@ -1,22 +1,20 @@
 COMMENT =		JFFS2 filesystem extraction tool
 
-MODPY_EGG_VERSION =	0.2
-GH_COMMIT =		d1aff710928f05e889b0ae23d97d1b9640eecbd0
-GH_PROJECT =		jefferson
-GH_ACCOUNT =		wittrup
+MODPY_EGG_VERSION =	0.4.2
 DISTNAME =		jefferson-${MODPY_EGG_VERSION}
-REVISION =		3
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_PI =		Yes
+MODPY_PYBUILD =		poetry-core
 
-RUN_DEPENDS =		devel/py-cstruct${MODPY_FLAVOR}
+RUN_DEPENDS =		archivers/py-lzo${MODPY_FLAVOR} \
+			devel/py-cstruct${MODPY_FLAVOR} \
+			devel/py-click${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
