@@ -2,13 +2,8 @@
 
 MODULES +=	lang/php
 
-FLAVORS ?= php74 php80 php81 php82 php83
-
-.if ${MACHINE_ARCH} == sparc64
-FLAVOR ?=	php80
-.else
-FLAVOR ?=	php81
-.endif
+FLAVORS ?=	php74 php80 php81 php82 php83
+FLAVOR ?=	php82
 
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
 # applied for packages built against the "ports default" version of PHP,
@@ -16,7 +11,7 @@ FLAVOR ?=	php81
 # flavour PFRAG files.
 MODPECL_DEFAULTV ?= "@comment "
 MODPHP_VERSION = ${FLAVOR:C/php([0-9])([0-9])/\1.\2/}
-.if ${FLAVOR} == php80
+.if ${FLAVOR} == php82
 MODPECL_DEFAULTV = ""
 .endif
 MODPHP_BUILDDEP = Yes

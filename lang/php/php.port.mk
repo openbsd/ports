@@ -1,23 +1,6 @@
 CATEGORIES+=		lang/php
 
-# PHP 8.1+ has non-optional "fibers" code which requires either
-# MD code (which PHP doesn't have for sparc64) or ucontext,
-# which OpenBSD doesn't have.
-#
-# also see DEFAULT_PHP setting in subdirs, which controls whether
-# to install /usr/local/bin/php and similar symlinks (which can't
-# really handle sparc64 being different because that needs conflicts)
-#
-.if ${MACHINE_ARCH} == sparc64
-MODPHP_VERSION?=	8.0
-.else
 MODPHP_VERSION?=	8.2
-.endif
-
-# for ports which force a newer MODPHP_VERSION, disable on sparc64.
-.if (${MODPHP_VERSION} != 7.4 && ${MODPHP_VERSION} != 8.0)
-NOT_FOR_ARCHS+=		sparc64
-.endif
 
 .if ${MODPHP_VERSION} == 7.4
 MODPHP_FLAVOR = ,php74
