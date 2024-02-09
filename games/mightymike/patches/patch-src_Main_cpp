@@ -1,0 +1,11 @@
+--- src/Main.cpp.orig	Thu Feb  1 18:39:55 2024
++++ src/Main.cpp	Thu Feb  1 18:41:03 2024
+@@ -51,7 +51,7 @@
+ 			break;
+ 
+ 		case 2:
+-			dataPath = "Data";
++			dataPath = "${TRUEPREFIX}/share/mightymike";
+ 			break;
+ 
+ 		default:
