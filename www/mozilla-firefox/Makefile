@@ -1,5 +1,5 @@
 COMMENT =	Firefox web browser
-ONLY_FOR_ARCHS =	amd64 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
@@ -56,15 +56,25 @@ CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+# LTO eats too much RAM on riscv64
+.if ${MACHINE_ARCH} != riscv64
+CONFIGURE_ARGS +=	--enable-lto=thin
+.endif
 
 # XXX badly formed debug ?
 DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+# not built on riscv64
+COMMENT_FFVPX ?=
+.if ${MACHINE_ARCH} == riscv64
+COMMENT_FFVPX =		@comment 
+.endif
+SUBST_VARS +=		COMMENT_FFVPX
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
