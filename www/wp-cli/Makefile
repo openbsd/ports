@@ -1,8 +1,7 @@
 COMMENT =	command line tool for wordpress
 
-V =		2.6.0
+V =		2.10.0
 DISTNAME =	wp-cli-${V}
-REVISION =	2
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar
@@ -16,7 +15,6 @@ HOMEPAGE =	https://wp-cli.org/
 PERMIT_PACKAGE = Yes
 
 MODULES =	lang/php
-RUN_DEPENDS =	lang/php/${MODPHP_VERSION}
 
 NO_BUILD =	Yes
 
