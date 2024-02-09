@@ -442,7 +442,6 @@
      SUBDIR += py-markdown,python3
      SUBDIR += py-markdown-it,python3
      SUBDIR += py-mdurl,python3
-     SUBDIR += py-m2r,python3
      SUBDIR += py-mistune,python3
      SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3

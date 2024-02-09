@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1604 2024/02/07 20:03:29 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.1605 2024/02/09 02:40:36 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1907,6 +1907,7 @@ setup_obsolete_reason(
 	2 => 'trojita',
 	5 => 'birdfont',
 	5 => 'libxmlbird',
+	5 => 'py-m2r',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
