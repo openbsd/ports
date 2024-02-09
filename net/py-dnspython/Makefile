@@ -16,7 +16,7 @@ FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	poetry-core
+MODPY_PYBUILD=	hatchling
 MODPY_ADJ_FILES= examples/*.py
 
 TEST_DEPENDS=	security/py-ecdsa${MODPY_FLAVOR}
