@@ -1,7 +1,7 @@
 COMMENT=	lightweight CalDAV and CardDAV server
 
 VERSION=	0.9.4
-REVISION=	0
+REVISION=	1
 DISTNAME=	baikal-${VERSION}
 SITES=		https://github.com/sabre-io/Baikal/releases/download/${VERSION}/
 DISTFILES=	${DISTNAME}.zip

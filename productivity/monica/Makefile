@@ -3,6 +3,7 @@ COMMENT =	self hosted personal CRM system
 CATEGORIES =	productivity
 
 VERSION =	4.0.0
+REVISION =	0
 PKGNAME =	monica-${VERSION}
 
 SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/

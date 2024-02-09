@@ -1,7 +1,7 @@
 COMMENT=	PHP support for chroot(2)
 
 DISTNAME=	pecl-chroot-1.0
-REVISION=	18
+REVISION=	19
 
 SITES=		${SITE_BACKUP}
 
