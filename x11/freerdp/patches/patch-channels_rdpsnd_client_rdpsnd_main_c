@@ -3,7 +3,7 @@ Default /sound (without parameters) to :sys:sndio
 Index: channels/rdpsnd/client/rdpsnd_main.c
 --- channels/rdpsnd/client/rdpsnd_main.c.orig
 +++ channels/rdpsnd/client/rdpsnd_main.c
-@@ -966,7 +966,8 @@ static UINT rdpsnd_process_addin_args(rdpsndPlugin* rd
+@@ -986,7 +986,8 @@ static UINT rdpsnd_process_addin_args(rdpsndPlugin* rd
  			}
  			CommandLineSwitchEnd(arg)
  		} while ((arg = CommandLineFindNextArgumentA(arg)) != NULL);
