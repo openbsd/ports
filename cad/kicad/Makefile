@@ -9,7 +9,7 @@ V =			6.0.11
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		kicad_3dsg                1.0 # 2.0
 
@@ -21,16 +21,15 @@ HOMEPAGE =		https://www.kicad.org
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU TKBO TKBRep TKBin TKBinL
-WANTLIB += TKBinTObj TKBinXCAF TKBool TKCAF TKCDF TKFeat TKFillet
-WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIGES TKLCAF
-WANTLIB += TKMath TKMesh TKMeshVS TKOffset TKOpenGl TKPrim TKSTEP
-WANTLIB += TKSTEP209 TKSTEPAttr TKSTEPBase TKSTL TKService TKShHealing
-WANTLIB += TKTObj TKTopAlgo TKV3d TKVRML TKXCAF TKXDEIGES TKXDESTEP
-WANTLIB += TKXMesh TKXSBase TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
-WANTLIB += atk-1.0 c cairo cairo-gobject curl gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m
-WANTLIB += ngspice pango-1.0 pangocairo-1.0 pixman-1 ${MODPY_WANTLIB}
-WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += TKBinTObj TKBinXCAF TKBool TKCAF TKCDF TKDEIGES TKDESTEP
+WANTLIB += TKDESTL TKDEVRML TKFeat TKFillet TKG2d TKG3d TKGeomAlgo
+WANTLIB += TKGeomBase TKHLR TKLCAF TKMath TKMesh TKMeshVS TKOffset
+WANTLIB += TKOpenGl TKPrim TKService TKShHealing TKTObj TKTopAlgo
+WANTLIB += TKV3d TKXCAF TKXMesh TKXSBase TKXml TKXmlL TKXmlTObj
+WANTLIB += TKXmlXCAF TKernel atk-1.0 c cairo cairo-gobject curl
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB += harfbuzz intl m ngspice pango-1.0 pangocairo-1.0 pixman-1
+WANTLIB += python3.10 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
 WANTLIB += wx_gtk3u_stc-3.2 z
