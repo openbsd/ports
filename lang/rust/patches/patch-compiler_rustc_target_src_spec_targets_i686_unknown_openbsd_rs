@@ -11,4 +11,4 @@ Index: compiler/rustc_target/src/spec/targets/i686_unknown_openbsd.rs
 +    base.cpu = "pentiumpro".into();
      base.max_atomic_width = Some(64);
      base.add_pre_link_args(LinkerFlavor::Gnu(Cc::Yes, Lld::No), &["-m32", "-fuse-ld=lld"]);
-     base.stack_probes = StackProbeType::X86;
+     base.stack_probes = StackProbeType::Inline;
