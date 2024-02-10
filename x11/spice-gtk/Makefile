@@ -2,14 +2,14 @@ COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.42
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11 net
 
 SHARED_LIBS += spice-client-glib-2.0     6.2 # 8.8.2
 SHARED_LIBS += spice-client-gtk-3.0      4.2 # 5.1.1
 
-HOMEPAGE=		http://www.spice-space.org/page/Spice-Gtk
+HOMEPAGE=		https://www.spice-space.org/spice-gtk.html
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
