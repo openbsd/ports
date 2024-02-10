@@ -9,7 +9,7 @@ x11/gnustep/cynthiune
 Index: src/libproxy/meson.build
 --- src/libproxy/meson.build.orig
 +++ src/libproxy/meson.build
-@@ -43,7 +43,7 @@ install_headers(libproxy_headers, subdir: 'libproxy')
+@@ -44,7 +44,7 @@ install_headers(libproxy_headers, subdir: 'libproxy')
  
  pkg = import('pkgconfig')
  pkg.generate(
