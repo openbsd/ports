@@ -4,6 +4,7 @@ DPB_PROPERTIES = parallel
 
 V =		2.7.1
 PKGNAME =	prusaslicer-${V}
+REVISION =	0
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer
@@ -19,10 +20,9 @@ MAINTAINER =	Renato Aguiar <renato@renatoaguiar.net>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLEW TKBO TKBRep TKCAF TKCDF
-WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
-WANTLIB += TKMesh TKPrim TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase
-WANTLIB += TKService TKShHealing TKTopAlgo TKV3d TKVCAF TKXCAF
-WANTLIB += TKXDE TKXDESTEP TKXSBase TKernel X11 atk-1.0 bgcode_binarize
+WANTLIB += TKDE TKDESTEP TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
+WANTLIB += TKLCAF TKMath TKMesh TKPrim TKService TKShHealing TKTopAlgo
+WANTLIB += TKV3d TKVCAF TKXCAF TKXSBase TKernel X11 atk-1.0 bgcode_binarize
 WANTLIB += bgcode_convert bgcode_core boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_locale-mt boost_log-mt boost_log_setup-mt boost_regex-mt

@@ -1,7 +1,7 @@
 Index: src/occt_wrapper/CMakeLists.txt
 --- src/occt_wrapper/CMakeLists.txt.orig
 +++ src/occt_wrapper/CMakeLists.txt
-@@ -19,9 +19,11 @@ include(GenerateExportHeader)
+@@ -19,14 +19,12 @@ include(GenerateExportHeader)
  
  generate_export_header(OCCTWrapper)
  
@@ -9,12 +9,18 @@ Index: src/occt_wrapper/CMakeLists.txt
 +find_package(OpenCASCADE REQUIRED)
  
  set(OCCT_LIBS
+-    TKXDESTEP
+-    TKSTEP
+-    TKSTEP209
+-    TKSTEPAttr
+-    TKSTEPBase
 +    -L${CMAKE_INSTALL_PREFIX}/lib
 +    -L/usr/X11R6/lib
-     TKXDESTEP
-     TKSTEP
-     TKSTEP209
-@@ -58,5 +60,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
++    TKDESTEP
+     TKXCAF
+     TKXSBase
+     TKVCAF
+@@ -58,5 +56,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
  
  include(GNUInstallDirs)
  
