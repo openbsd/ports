@@ -1,0 +1,6 @@
+@bin bin/2048-qt
+@man man/man6/2048-qt.6
+share/applications/2048-qt.desktop
+share/icons/hicolor/scalable/apps/2048-qt.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
