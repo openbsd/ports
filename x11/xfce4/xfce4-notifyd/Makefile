@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 notification daemon
 
-XFCE_VERSION=	0.9.3
+XFCE_VERSION=	0.9.4
 XFCE_GOODIE=	xfce4-notifyd
 
 # GPLv2
@@ -30,6 +30,8 @@ WANTLIB += sqlite3 startup-notification-1 xcb xcb-util xcb-render
 WANTLIB += xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 notify iconv intl fribidi
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
