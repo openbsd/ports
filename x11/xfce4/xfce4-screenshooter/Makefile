@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
-XFCE_VERSION=	1.10.4
+XFCE_VERSION=	1.10.5
 XFCE_GOODIE=	xfce4-screenshooter
 
 PORTROACH=	limitw:1,even
@@ -12,6 +12,10 @@ MODULES=	x11/xfce4
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libsoup3
+RUN_DEPENDS=	x11/xclip \
+		x11/gnome/zenity \
+		net/curl \
+		textproc/jq
 
 # Build picks up help2man automatically
 CONFIGURE_ENV +=	ac_cv_prog_HELP2MAN=
@@ -32,6 +36,8 @@ WANTLIB += xcb-shm xfce4panel-2.0 xfce4util xfconf-0 xml2 z
 WANTLIB += harfbuzz xfce4ui-2 brotlicommon brotlidec
 WANTLIB += graphite2 lzma sqlite3 iconv intl jpeg atspi dbus-1 nghttp2
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy exo-2 idn2 psl unistring
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

@@ -1,5 +1,9 @@
 @bin bin/xfce4-screenshooter
 @so lib/xfce4/panel/plugins/libscreenshooterplugin.so
+libexec/xfce4/
+libexec/xfce4/screenshooter/
+libexec/xfce4/screenshooter/scripts/
+libexec/xfce4/screenshooter/scripts/imgur-upload.sh
 @man man/man1/xfce4-screenshooter.1
 share/applications/xfce4-screenshooter.desktop
 share/icons/hicolor/128x128/apps/org.xfce.screenshooter.png
