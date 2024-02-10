@@ -1,9 +1,8 @@
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	0.29.34
+MODPY_EGG_VERSION =	0.29.36
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		py-cython-${MODPY_EGG_VERSION}
-REVISION =		1
 CATEGORIES =		lang
 
 EPOCH =			0
