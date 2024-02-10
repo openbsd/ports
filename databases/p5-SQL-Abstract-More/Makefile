@@ -1,6 +1,6 @@
 COMMENT =	extension of SQL::Abstract with more constructs
 
-DISTNAME =	SQL-Abstract-More-1.40
+DISTNAME =	SQL-Abstract-More-1.42
 
 CATEGORIES =	databases
 
