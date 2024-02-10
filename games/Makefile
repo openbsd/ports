@@ -2,6 +2,7 @@
      SUBDIR += 0ad
      SUBDIR += 1oom
      SUBDIR += 2048-cli
+     SUBDIR += 2048-qt
      SUBDIR += abuse
      SUBDIR += ace
      SUBDIR += afternoonstalker
