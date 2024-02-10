@@ -16,6 +16,7 @@ lib/babl-${API_VERSION}/
 @so lib/babl-${API_VERSION}/double.so
 @so lib/babl-${API_VERSION}/fast-float.so
 @so lib/babl-${API_VERSION}/float.so
+@so lib/babl-${API_VERSION}/formats.so
 @so lib/babl-${API_VERSION}/gegl-fixups.so
 @so lib/babl-${API_VERSION}/gggl-lies.so
 @so lib/babl-${API_VERSION}/gggl-table-lies.so
