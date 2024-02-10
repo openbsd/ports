@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1015,12 +1015,12 @@ else()
+@@ -1031,12 +1031,12 @@ else()
  endif()
  
   # change custom.bat/sh

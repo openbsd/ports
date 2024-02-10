@@ -1,21 +1,21 @@
 COMMENT =		platform for 3D CAD, CAM, and CAE
 DPB_PROPERTIES =	parallel
 
-V =			7.7.2
+V =			7.8.0
 DISTNAME =		opencascade-${V}
-REVISION =		0
 
-.for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool \
-        TKCAF TKCDF TKDCAF TKDraw TKExpress TKFeat TKFillet TKG2d \
-        TKG3d TKGeomAlgo TKGeomBase TKHLR TKIGES TKLCAF TKMath \
-        TKMesh TKMeshVS TKOffset TKOpenGl TKOpenGlTest TKPrim \
-        TKQADraw TKRWMesh TKSTEP TKSTEP209 TKSTEPAttr TKSTEPBase \
-        TKSTL TKService TKShHealing TKStd TKStdL TKTObj TKTObjDRAW \
-        TKTopAlgo TKTopTest TKV3d TKVCAF TKVRML TKViewerTest TKXCAF \
-        TKXDE TKXDECascade TKXDEDRAW TKXDEIGES TKXDESTEP TKXMesh \
-        TKXSBase TKXSDRAW TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
-SHARED_LIBS +=		${LIB} 2.0
+.for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
+	TKDCAF TKDE TKDECascade TKDEGLTF TKDEIGES TKDEOBJ TKDEPLY TKDESTEP \
+	TKDESTL TKDEVRML TKDraw TKExpress TKFeat TKFillet TKG2d TKG3d \
+	TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath TKMesh TKMeshVS TKOffset \
+	TKOpenGl TKOpenGlTest TKPrim TKQADraw TKRWMesh TKService TKShHealing \
+	TKStd TKStdL TKTObj TKTObjDRAW TKTopAlgo TKTopTest TKV3d TKVCAF \
+	TKViewerTest TKXCAF TKXDEDRAW TKXMesh TKXSBase TKXSDRAW TKXSDRAWDE \
+	TKXSDRAWGLTF TKXSDRAWIGES TKXSDRAWOBJ TKXSDRAWPLY TKXSDRAWSTEP \
+	TKXSDRAWSTL TKXSDRAWVRML TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel
+SHARED_LIBS +=		${LIB} 3.0
 .endfor
+
 
 CATEGORIES =		cad
 HOMEPAGE =		https://www.opencascade.com/
@@ -77,13 +77,13 @@ SUBST_VARS += BITS COMP
 
 # fix bash and make installed script names less generic
 pre-configure:
-	sed -i "s,custom,occt_custom,g" \
+	sed -i "s,env\.sh,occt_env\.sh,g" \
 		${WRKSRC}/adm/templates/*.sh*
-	sed -i "s,env,occt_env,g" \
+	sed -i "s,custom\.sh,occt_custom\.sh,g" \
 		${WRKSRC}/adm/templates/*.sh*
-	sed -i "s,env,occt_env,g" \
+	sed -i "s,env\.sh,occt_env\.sh,g" \
 		${WRKSRC}/gen*
-	sed -i "s,custom,occt_custom,g" \
+	sed -i "s,custom\.sh,occt_custom\.sh,g" \
 		${WRKSRC}/gen*
 	sed -i "s,env\.,occt_env\.,g" \
 		${WRKSRC}/CMakeLists.txt

@@ -1,9 +1,9 @@
-@pkgpath cad/oce
 @conflict oce-*
+@pkgpath cad/oce
 bin/DRAWEXE
-@bin bin/DRAWEXE-7.7.2
+@bin bin/DRAWEXE-7.8.0
 bin/ExpToCasExe
-@bin bin/ExpToCasExe-7.7.2
+@bin bin/ExpToCasExe-7.8.0
 bin/occt_custom.sh
 bin/occt_custom_${COMP}_${BITS}.sh
 bin/occt_draw.sh
@@ -381,12 +381,9 @@ include/opencascade/BOPDS_PDS.hxx
 include/opencascade/BOPDS_PIterator.hxx
 include/opencascade/BOPDS_PIteratorSI.hxx
 include/opencascade/BOPDS_Pair.hxx
-include/opencascade/BOPDS_PairMapHasher.hxx
 include/opencascade/BOPDS_Pave.hxx
 include/opencascade/BOPDS_Pave.lxx
 include/opencascade/BOPDS_PaveBlock.hxx
-include/opencascade/BOPDS_PaveMapHasher.hxx
-include/opencascade/BOPDS_PaveMapHasher.lxx
 include/opencascade/BOPDS_Point.hxx
 include/opencascade/BOPDS_Point.lxx
 include/opencascade/BOPDS_ShapeInfo.hxx
@@ -430,8 +427,6 @@ include/opencascade/BOPTools_MapOfSet.hxx
 include/opencascade/BOPTools_PairSelector.hxx
 include/opencascade/BOPTools_Parallel.hxx
 include/opencascade/BOPTools_Set.hxx
-include/opencascade/BOPTools_SetMapHasher.hxx
-include/opencascade/BOPTools_SetMapHasher.lxx
 include/opencascade/BRepAdaptor_Array1OfCurve.hxx
 include/opencascade/BRepAdaptor_CompCurve.hxx
 include/opencascade/BRepAdaptor_Curve.hxx
@@ -1236,7 +1231,6 @@ include/opencascade/CDM_Application.hxx
 include/opencascade/CDM_CanCloseStatus.hxx
 include/opencascade/CDM_DataMapIteratorOfMetaDataLookUpTable.hxx
 include/opencascade/CDM_Document.hxx
-include/opencascade/CDM_DocumentHasher.hxx
 include/opencascade/CDM_DocumentPointer.hxx
 include/opencascade/CDM_ListIteratorOfListOfDocument.hxx
 include/opencascade/CDM_ListIteratorOfListOfReferences.hxx
@@ -1414,6 +1408,7 @@ include/opencascade/DEXCAFCascade_ConfigurationNode.hxx
 include/opencascade/DEXCAFCascade_Provider.hxx
 include/opencascade/DE_ConfigurationContext.hxx
 include/opencascade/DE_ConfigurationNode.hxx
+include/opencascade/DE_PluginHolder.hxx
 include/opencascade/DE_Provider.hxx
 include/opencascade/DE_Wrapper.hxx
 include/opencascade/DNaming.hxx
@@ -3402,7 +3397,6 @@ include/opencascade/IntPolyh_ArrayOfSectionLines.hxx
 include/opencascade/IntPolyh_ArrayOfTangentZones.hxx
 include/opencascade/IntPolyh_ArrayOfTriangles.hxx
 include/opencascade/IntPolyh_Couple.hxx
-include/opencascade/IntPolyh_CoupleMapHasher.hxx
 include/opencascade/IntPolyh_Edge.hxx
 include/opencascade/IntPolyh_Intersection.hxx
 include/opencascade/IntPolyh_ListOfCouples.hxx
@@ -3479,8 +3473,6 @@ include/opencascade/IntTools_Context.hxx
 include/opencascade/IntTools_Curve.hxx
 include/opencascade/IntTools_CurveRangeLocalizeData.hxx
 include/opencascade/IntTools_CurveRangeSample.hxx
-include/opencascade/IntTools_CurveRangeSampleMapHasher.hxx
-include/opencascade/IntTools_DataMapIteratorOfDataMapOfCurveSampleBox.hxx
 include/opencascade/IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox.hxx
 include/opencascade/IntTools_DataMapOfCurveSampleBox.hxx
 include/opencascade/IntTools_DataMapOfSurfaceSampleBox.hxx
@@ -3514,7 +3506,6 @@ include/opencascade/IntTools_SurfaceRangeLocalizeData.hxx
 include/opencascade/IntTools_SurfaceRangeLocalizeData.lxx
 include/opencascade/IntTools_SurfaceRangeSample.hxx
 include/opencascade/IntTools_SurfaceRangeSample.lxx
-include/opencascade/IntTools_SurfaceRangeSampleMapHasher.hxx
 include/opencascade/IntTools_Tools.hxx
 include/opencascade/IntTools_TopolTool.hxx
 include/opencascade/IntTools_WLineTool.hxx
@@ -3577,7 +3568,6 @@ include/opencascade/Interface_JaggedArray.gxx
 include/opencascade/Interface_LineBuffer.hxx
 include/opencascade/Interface_MSG.hxx
 include/opencascade/Interface_Macros.hxx
-include/opencascade/Interface_MapAsciiStringHasher.hxx
 include/opencascade/Interface_NodeOfGeneralLib.hxx
 include/opencascade/Interface_NodeOfReaderLib.hxx
 include/opencascade/Interface_ParamList.hxx
@@ -3746,8 +3736,6 @@ include/opencascade/MAT2d_DataMapOfIntegerConnexion.hxx
 include/opencascade/MAT2d_DataMapOfIntegerPnt2d.hxx
 include/opencascade/MAT2d_DataMapOfIntegerSequenceOfConnexion.hxx
 include/opencascade/MAT2d_DataMapOfIntegerVec2d.hxx
-include/opencascade/MAT2d_MapBiIntHasher.hxx
-include/opencascade/MAT2d_MapBiIntHasher.lxx
 include/opencascade/MAT2d_Mat2d.hxx
 include/opencascade/MAT2d_MiniPath.hxx
 include/opencascade/MAT2d_SequenceOfConnexion.hxx
@@ -3849,9 +3837,7 @@ include/opencascade/MeshVS_SymmetricPairHasher.hxx
 include/opencascade/MeshVS_TextPrsBuilder.hxx
 include/opencascade/MeshVS_Tool.hxx
 include/opencascade/MeshVS_TwoColors.hxx
-include/opencascade/MeshVS_TwoColorsHasher.hxx
 include/opencascade/MeshVS_TwoNodes.hxx
-include/opencascade/MeshVS_TwoNodesHasher.hxx
 include/opencascade/MeshVS_VectorPrsBuilder.hxx
 include/opencascade/Message.hxx
 include/opencascade/Message_Alert.hxx
@@ -3897,13 +3883,10 @@ include/opencascade/MoniTool_DataMapIteratorOfDataMapOfShapeTransient.hxx
 include/opencascade/MoniTool_DataMapIteratorOfDataMapOfTimer.hxx
 include/opencascade/MoniTool_DataMapOfShapeTransient.hxx
 include/opencascade/MoniTool_DataMapOfTimer.hxx
-include/opencascade/MoniTool_ElemHasher.hxx
 include/opencascade/MoniTool_Element.hxx
 include/opencascade/MoniTool_HSequenceOfElement.hxx
 include/opencascade/MoniTool_IndexedDataMapOfShapeTransient.hxx
 include/opencascade/MoniTool_IntVal.hxx
-include/opencascade/MoniTool_MTHasher.hxx
-include/opencascade/MoniTool_MTHasher.lxx
 include/opencascade/MoniTool_Macros.hxx
 include/opencascade/MoniTool_RealVal.hxx
 include/opencascade/MoniTool_SequenceOfElement.hxx
@@ -3922,32 +3905,25 @@ include/opencascade/MoniTool_ValueType.hxx
 include/opencascade/NCollection_AccAllocator.hxx
 include/opencascade/NCollection_AliasedArray.hxx
 include/opencascade/NCollection_AlignedAllocator.hxx
+include/opencascade/NCollection_Allocator.hxx
 include/opencascade/NCollection_Array1.hxx
 include/opencascade/NCollection_Array2.hxx
 include/opencascade/NCollection_BaseAllocator.hxx
 include/opencascade/NCollection_BaseList.hxx
 include/opencascade/NCollection_BaseMap.hxx
+include/opencascade/NCollection_BasePointerVector.hxx
 include/opencascade/NCollection_BaseSequence.hxx
-include/opencascade/NCollection_BaseVector.hxx
 include/opencascade/NCollection_Buffer.hxx
 include/opencascade/NCollection_CellFilter.hxx
 include/opencascade/NCollection_DataMap.hxx
 include/opencascade/NCollection_DefaultHasher.hxx
 include/opencascade/NCollection_DefineAlloc.hxx
-include/opencascade/NCollection_DefineArray1.hxx
-include/opencascade/NCollection_DefineArray2.hxx
-include/opencascade/NCollection_DefineDataMap.hxx
-include/opencascade/NCollection_DefineDoubleMap.hxx
 include/opencascade/NCollection_DefineHArray1.hxx
 include/opencascade/NCollection_DefineHArray2.hxx
 include/opencascade/NCollection_DefineHSequence.hxx
-include/opencascade/NCollection_DefineIndexedDataMap.hxx
-include/opencascade/NCollection_DefineIndexedMap.hxx
-include/opencascade/NCollection_DefineList.hxx
-include/opencascade/NCollection_DefineMap.hxx
-include/opencascade/NCollection_DefineSequence.hxx
-include/opencascade/NCollection_DefineVector.hxx
+include/opencascade/NCollection_DefineHasher.hxx
 include/opencascade/NCollection_DoubleMap.hxx
+include/opencascade/NCollection_DynamicArray.hxx
 include/opencascade/NCollection_EBTree.hxx
 include/opencascade/NCollection_HArray1.hxx
 include/opencascade/NCollection_HArray2.hxx
@@ -3957,7 +3933,9 @@ include/opencascade/NCollection_Handle.hxx
 include/opencascade/NCollection_HeapAllocator.hxx
 include/opencascade/NCollection_IncAllocator.hxx
 include/opencascade/NCollection_IndexedDataMap.hxx
+include/opencascade/NCollection_IndexedIterator.hxx
 include/opencascade/NCollection_IndexedMap.hxx
+include/opencascade/NCollection_Iterator.hxx
 include/opencascade/NCollection_Lerp.hxx
 include/opencascade/NCollection_List.hxx
 include/opencascade/NCollection_ListNode.hxx
@@ -3965,11 +3943,11 @@ include/opencascade/NCollection_LocalArray.hxx
 include/opencascade/NCollection_Map.hxx
 include/opencascade/NCollection_Mat3.hxx
 include/opencascade/NCollection_Mat4.hxx
+include/opencascade/NCollection_OccAllocator.hxx
 include/opencascade/NCollection_Sequence.hxx
 include/opencascade/NCollection_Shared.hxx
 include/opencascade/NCollection_SparseArray.hxx
 include/opencascade/NCollection_SparseArrayBase.hxx
-include/opencascade/NCollection_StdAllocator.hxx
 include/opencascade/NCollection_StlIterator.hxx
 include/opencascade/NCollection_String.hxx
 include/opencascade/NCollection_TListIterator.hxx
@@ -4366,9 +4344,7 @@ include/opencascade/QANCollection_ListIteratorOfListOfPnt.hxx
 include/opencascade/QANCollection_ListOfPnt.hxx
 include/opencascade/Quantity_Array1OfColor.hxx
 include/opencascade/Quantity_Color.hxx
-include/opencascade/Quantity_ColorHasher.hxx
 include/opencascade/Quantity_ColorRGBA.hxx
-include/opencascade/Quantity_ColorRGBAHasher.hxx
 include/opencascade/Quantity_Date.hxx
 include/opencascade/Quantity_DateDefinitionError.hxx
 include/opencascade/Quantity_HArray1OfColor.hxx
@@ -5122,6 +5098,7 @@ include/opencascade/RWStepVisual_RWTextStyle.hxx
 include/opencascade/RWStepVisual_RWTextStyleForDefinedFont.hxx
 include/opencascade/RWStepVisual_RWTextStyleWithBoxCharacteristics.hxx
 include/opencascade/RWStepVisual_RWTriangulatedFace.hxx
+include/opencascade/RWStepVisual_RWTriangulatedSurfaceSet.hxx
 include/opencascade/RWStepVisual_RWViewVolume.hxx
 include/opencascade/RWStl.hxx
 include/opencascade/RWStl_ConfigurationNode.hxx
@@ -5166,8 +5143,6 @@ include/opencascade/STEPConstruct_DataMapOfAsciiStringTransient.hxx
 include/opencascade/STEPConstruct_DataMapOfPointTransient.hxx
 include/opencascade/STEPConstruct_ExternRefs.hxx
 include/opencascade/STEPConstruct_Part.hxx
-include/opencascade/STEPConstruct_PointHasher.hxx
-include/opencascade/STEPConstruct_PointHasher.lxx
 include/opencascade/STEPConstruct_Styles.hxx
 include/opencascade/STEPConstruct_Tool.hxx
 include/opencascade/STEPConstruct_Tool.lxx
@@ -5452,7 +5427,6 @@ include/opencascade/ShapeUpgrade_UnifySameDomain.hxx
 include/opencascade/ShapeUpgrade_WireDivide.hxx
 include/opencascade/Standard.hxx
 include/opencascade/Standard_AbortiveTransaction.hxx
-include/opencascade/Standard_Address.hxx
 include/opencascade/Standard_ArrayStreamBuffer.hxx
 include/opencascade/Standard_Assert.hxx
 include/opencascade/Standard_Atomic.hxx
@@ -5460,6 +5434,7 @@ include/opencascade/Standard_Boolean.hxx
 include/opencascade/Standard_Byte.hxx
 include/opencascade/Standard_CLocaleSentry.hxx
 include/opencascade/Standard_CString.hxx
+include/opencascade/Standard_CStringHasher.hxx
 include/opencascade/Standard_Character.hxx
 include/opencascade/Standard_Condition.hxx
 include/opencascade/Standard_ConstructionError.hxx
@@ -5473,11 +5448,12 @@ include/opencascade/Standard_DomainError.hxx
 include/opencascade/Standard_Dump.hxx
 include/opencascade/Standard_ErrorHandler.hxx
 include/opencascade/Standard_ExtCharacter.hxx
-include/opencascade/Standard_ExtString.hxx
 include/opencascade/Standard_Failure.hxx
 include/opencascade/Standard_GUID.hxx
 include/opencascade/Standard_Handle.hxx
 include/opencascade/Standard_HandlerStatus.hxx
+include/opencascade/Standard_HashUtils.hxx
+include/opencascade/Standard_HashUtils.lxx
 include/opencascade/Standard_IStream.hxx
 include/opencascade/Standard_ImmutableObject.hxx
 include/opencascade/Standard_Integer.hxx
@@ -5485,10 +5461,9 @@ include/opencascade/Standard_JmpBuf.hxx
 include/opencascade/Standard_LicenseError.hxx
 include/opencascade/Standard_LicenseNotFound.hxx
 include/opencascade/Standard_MMgrOpt.hxx
-include/opencascade/Standard_MMgrRaw.hxx
 include/opencascade/Standard_MMgrRoot.hxx
-include/opencascade/Standard_MMgrTBBalloc.hxx
 include/opencascade/Standard_Macro.hxx
+include/opencascade/Standard_MemoryUtils.hxx
 include/opencascade/Standard_MultiplyDefined.hxx
 include/opencascade/Standard_Mutex.hxx
 include/opencascade/Standard_NegativeValue.hxx
@@ -5515,7 +5490,6 @@ include/opencascade/Standard_ReadLineBuffer.hxx
 include/opencascade/Standard_Real.hxx
 include/opencascade/Standard_SStream.hxx
 include/opencascade/Standard_ShortReal.hxx
-include/opencascade/Standard_Size.hxx
 include/opencascade/Standard_Std.hxx
 include/opencascade/Standard_Stream.hxx
 include/opencascade/Standard_ThreadId.hxx
@@ -5530,8 +5504,6 @@ include/opencascade/Standard_Version.hxx
 include/opencascade/Standard_WarningDisableFunctionCast.hxx
 include/opencascade/Standard_WarningsDisable.hxx
 include/opencascade/Standard_WarningsRestore.hxx
-include/opencascade/Standard_math.hxx
-include/opencascade/Standard_values.h
 include/opencascade/StdDrivers.hxx
 include/opencascade/StdDrivers_DocumentRetrievalDriver.hxx
 include/opencascade/StdFail_InfiniteSolutions.hxx
@@ -5926,12 +5898,14 @@ include/opencascade/StepBasic_VolumeUnit.hxx
 include/opencascade/StepBasic_WeekOfYearAndDayDate.hxx
 include/opencascade/StepData.hxx
 include/opencascade/StepData_Array1OfField.hxx
+include/opencascade/StepData_ConfParameters.hxx
 include/opencascade/StepData_DefaultGeneral.hxx
 include/opencascade/StepData_Described.hxx
 include/opencascade/StepData_ECDescr.hxx
 include/opencascade/StepData_EDescr.hxx
 include/opencascade/StepData_ESDescr.hxx
 include/opencascade/StepData_EnumTool.hxx
+include/opencascade/StepData_Factors.hxx
 include/opencascade/StepData_Field.hxx
 include/opencascade/StepData_FieldList.hxx
 include/opencascade/StepData_FieldList1.hxx
@@ -5941,7 +5915,6 @@ include/opencascade/StepData_FileProtocol.hxx
 include/opencascade/StepData_FileRecognizer.hxx
 include/opencascade/StepData_FreeFormEntity.hxx
 include/opencascade/StepData_GeneralModule.hxx
-include/opencascade/StepData_GlobalFactors.hxx
 include/opencascade/StepData_GlobalNodeOfWriterLib.hxx
 include/opencascade/StepData_HArray1OfField.hxx
 include/opencascade/StepData_Logical.hxx
@@ -6628,7 +6601,6 @@ include/opencascade/StepToGeom.hxx
 include/opencascade/StepToTopoDS.hxx
 include/opencascade/StepToTopoDS_Builder.hxx
 include/opencascade/StepToTopoDS_BuilderError.hxx
-include/opencascade/StepToTopoDS_CartesianPointHasher.hxx
 include/opencascade/StepToTopoDS_DataMapIteratorOfDataMapOfRI.hxx
 include/opencascade/StepToTopoDS_DataMapIteratorOfDataMapOfRINames.hxx
 include/opencascade/StepToTopoDS_DataMapIteratorOfDataMapOfTRI.hxx
@@ -6643,7 +6615,6 @@ include/opencascade/StepToTopoDS_MakeTransformed.hxx
 include/opencascade/StepToTopoDS_NMTool.hxx
 include/opencascade/StepToTopoDS_PointEdgeMap.hxx
 include/opencascade/StepToTopoDS_PointPair.hxx
-include/opencascade/StepToTopoDS_PointPairHasher.hxx
 include/opencascade/StepToTopoDS_PointVertexMap.hxx
 include/opencascade/StepToTopoDS_Root.hxx
 include/opencascade/StepToTopoDS_Root.lxx
@@ -6842,6 +6813,7 @@ include/opencascade/StepVisual_TextStyle.hxx
 include/opencascade/StepVisual_TextStyleForDefinedFont.hxx
 include/opencascade/StepVisual_TextStyleWithBoxCharacteristics.hxx
 include/opencascade/StepVisual_TriangulatedFace.hxx
+include/opencascade/StepVisual_TriangulatedSurfaceSet.hxx
 include/opencascade/StepVisual_ViewVolume.hxx
 include/opencascade/StlAPI.hxx
 include/opencascade/StlAPI_Reader.hxx
@@ -6980,7 +6952,6 @@ include/opencascade/TColStd_ListOfAsciiString.hxx
 include/opencascade/TColStd_ListOfInteger.hxx
 include/opencascade/TColStd_ListOfReal.hxx
 include/opencascade/TColStd_ListOfTransient.hxx
-include/opencascade/TColStd_MapIntegerHasher.hxx
 include/opencascade/TColStd_MapIteratorOfMapOfAsciiString.hxx
 include/opencascade/TColStd_MapIteratorOfMapOfInteger.hxx
 include/opencascade/TColStd_MapIteratorOfMapOfReal.hxx
@@ -6990,8 +6961,6 @@ include/opencascade/TColStd_MapOfAsciiString.hxx
 include/opencascade/TColStd_MapOfInteger.hxx
 include/opencascade/TColStd_MapOfReal.hxx
 include/opencascade/TColStd_MapOfTransient.hxx
-include/opencascade/TColStd_MapRealHasher.hxx
-include/opencascade/TColStd_MapTransientHasher.hxx
 include/opencascade/TColStd_PackedMapOfInteger.hxx
 include/opencascade/TColStd_SequenceOfAddress.hxx
 include/opencascade/TColStd_SequenceOfAsciiString.hxx
@@ -7127,7 +7096,6 @@ include/opencascade/TDF_LabelIndexedMap.hxx
 include/opencascade/TDF_LabelIntegerMap.hxx
 include/opencascade/TDF_LabelList.hxx
 include/opencascade/TDF_LabelMap.hxx
-include/opencascade/TDF_LabelMapHasher.hxx
 include/opencascade/TDF_LabelNode.hxx
 include/opencascade/TDF_LabelNodePtr.hxx
 include/opencascade/TDF_LabelSequence.hxx
@@ -7298,7 +7266,6 @@ include/opencascade/TNaming_Name.hxx
 include/opencascade/TNaming_NameType.hxx
 include/opencascade/TNaming_NamedShape.hxx
 include/opencascade/TNaming_NamedShape.lxx
-include/opencascade/TNaming_NamedShapeHasher.hxx
 include/opencascade/TNaming_Naming.hxx
 include/opencascade/TNaming_NamingTool.hxx
 include/opencascade/TNaming_NewShapeIterator.hxx
@@ -7325,7 +7292,6 @@ include/opencascade/TObjDRAW.hxx
 include/opencascade/TObj_Application.hxx
 include/opencascade/TObj_Assistant.hxx
 include/opencascade/TObj_CheckModel.hxx
-include/opencascade/TObj_Common.hxx
 include/opencascade/TObj_Container.hxx
 include/opencascade/TObj_DeletingMode.hxx
 include/opencascade/TObj_HiddenPartition.hxx
@@ -7393,7 +7359,6 @@ include/opencascade/TopLoc_ItemLocation.hxx
 include/opencascade/TopLoc_Location.hxx
 include/opencascade/TopLoc_Location.lxx
 include/opencascade/TopLoc_MapIteratorOfMapOfLocation.hxx
-include/opencascade/TopLoc_MapLocationHasher.hxx
 include/opencascade/TopLoc_MapOfLocation.hxx
 include/opencascade/TopLoc_SListNodeOfItemLocation.hxx
 include/opencascade/TopLoc_SListNodeOfItemLocation.lxx
@@ -7691,11 +7656,8 @@ include/opencascade/TopTools_MapIteratorOfMapOfShape.hxx
 include/opencascade/TopTools_MapOfOrientedShape.hxx
 include/opencascade/TopTools_MapOfShape.hxx
 include/opencascade/TopTools_MutexForShapeProvider.hxx
-include/opencascade/TopTools_OrientedShapeMapHasher.hxx
-include/opencascade/TopTools_OrientedShapeMapHasher.lxx
 include/opencascade/TopTools_SequenceOfShape.hxx
 include/opencascade/TopTools_ShapeMapHasher.hxx
-include/opencascade/TopTools_ShapeMapHasher.lxx
 include/opencascade/TopTools_ShapeSet.hxx
 include/opencascade/TopTrans_Array2OfOrientation.hxx
 include/opencascade/TopTrans_CurveTransition.hxx
@@ -7730,13 +7692,9 @@ include/opencascade/TopoDS_AlertWithShape.hxx
 include/opencascade/TopoDS_Builder.hxx
 include/opencascade/TopoDS_Builder.lxx
 include/opencascade/TopoDS_CompSolid.hxx
-include/opencascade/TopoDS_CompSolid.lxx
 include/opencascade/TopoDS_Compound.hxx
-include/opencascade/TopoDS_Compound.lxx
 include/opencascade/TopoDS_Edge.hxx
-include/opencascade/TopoDS_Edge.lxx
 include/opencascade/TopoDS_Face.hxx
-include/opencascade/TopoDS_Face.lxx
 include/opencascade/TopoDS_FrozenShape.hxx
 include/opencascade/TopoDS_HShape.hxx
 include/opencascade/TopoDS_HShape.lxx
@@ -7746,9 +7704,7 @@ include/opencascade/TopoDS_ListOfShape.hxx
 include/opencascade/TopoDS_LockedShape.hxx
 include/opencascade/TopoDS_Shape.hxx
 include/opencascade/TopoDS_Shell.hxx
-include/opencascade/TopoDS_Shell.lxx
 include/opencascade/TopoDS_Solid.hxx
-include/opencascade/TopoDS_Solid.lxx
 include/opencascade/TopoDS_TCompSolid.hxx
 include/opencascade/TopoDS_TCompSolid.lxx
 include/opencascade/TopoDS_TCompound.hxx
@@ -7768,13 +7724,10 @@ include/opencascade/TopoDS_TWire.hxx
 include/opencascade/TopoDS_TWire.lxx
 include/opencascade/TopoDS_UnCompatibleShapes.hxx
 include/opencascade/TopoDS_Vertex.hxx
-include/opencascade/TopoDS_Vertex.lxx
 include/opencascade/TopoDS_Wire.hxx
-include/opencascade/TopoDS_Wire.lxx
 include/opencascade/TransferBRep.hxx
 include/opencascade/TransferBRep_BinderOfShape.hxx
 include/opencascade/TransferBRep_HSequenceOfTransferResultInfo.hxx
-include/opencascade/TransferBRep_OrientedShapeMapper.hxx
 include/opencascade/TransferBRep_Reader.hxx
 include/opencascade/TransferBRep_SequenceOfTransferResultInfo.hxx
 include/opencascade/TransferBRep_ShapeBinder.hxx
@@ -7783,7 +7736,6 @@ include/opencascade/TransferBRep_ShapeListBinder.hxx
 include/opencascade/TransferBRep_ShapeMapper.hxx
 include/opencascade/TransferBRep_TransferResultInfo.hxx
 include/opencascade/TransferBRep_TransferResultInfo.lxx
-include/opencascade/Transfer_Actor.gxx
 include/opencascade/Transfer_ActorDispatch.hxx
 include/opencascade/Transfer_ActorOfFinderProcess.hxx
 include/opencascade/Transfer_ActorOfProcessForFinder.hxx
@@ -7798,11 +7750,9 @@ include/opencascade/Transfer_Finder.hxx
 include/opencascade/Transfer_FinderProcess.hxx
 include/opencascade/Transfer_HSequenceOfBinder.hxx
 include/opencascade/Transfer_HSequenceOfFinder.hxx
-include/opencascade/Transfer_Iterator.gxx
 include/opencascade/Transfer_IteratorOfProcessForFinder.hxx
 include/opencascade/Transfer_IteratorOfProcessForTransient.hxx
 include/opencascade/Transfer_MapContainer.hxx
-include/opencascade/Transfer_Mapper.gxx
 include/opencascade/Transfer_MultipleBinder.hxx
 include/opencascade/Transfer_ProcessForFinder.hxx
 include/opencascade/Transfer_ProcessForTransient.hxx
@@ -7821,7 +7771,6 @@ include/opencascade/Transfer_TransferIterator.hxx
 include/opencascade/Transfer_TransferMapOfProcessForFinder.hxx
 include/opencascade/Transfer_TransferMapOfProcessForTransient.hxx
 include/opencascade/Transfer_TransferOutput.hxx
-include/opencascade/Transfer_TransferProcess.gxx
 include/opencascade/Transfer_TransientListBinder.hxx
 include/opencascade/Transfer_TransientMapper.hxx
 include/opencascade/Transfer_TransientProcess.hxx
@@ -8130,16 +8079,17 @@ include/opencascade/XSControl_Vars.hxx
 include/opencascade/XSControl_WorkSession.hxx
 include/opencascade/XSControl_Writer.hxx
 include/opencascade/XSDRAW.hxx
+include/opencascade/XSDRAWDE.hxx
+include/opencascade/XSDRAWGLTF.hxx
 include/opencascade/XSDRAWIGES.hxx
+include/opencascade/XSDRAWOBJ.hxx
+include/opencascade/XSDRAWPLY.hxx
 include/opencascade/XSDRAWSTEP.hxx
-include/opencascade/XSDRAWSTLVRML.hxx
-include/opencascade/XSDRAWSTLVRML_CoordsMap.hxx
-include/opencascade/XSDRAWSTLVRML_DataMapIteratorOfCoordsMap.hxx
-include/opencascade/XSDRAWSTLVRML_DataMapIteratorOfElemNodesMap.hxx
-include/opencascade/XSDRAWSTLVRML_DataSource.hxx
-include/opencascade/XSDRAWSTLVRML_DataSource3D.hxx
-include/opencascade/XSDRAWSTLVRML_DrawableMesh.hxx
-include/opencascade/XSDRAWSTLVRML_ElemNodesMap.hxx
+include/opencascade/XSDRAWSTL.hxx
+include/opencascade/XSDRAWSTL_DataSource.hxx
+include/opencascade/XSDRAWSTL_DataSource3D.hxx
+include/opencascade/XSDRAWSTL_DrawableMesh.hxx
+include/opencascade/XSDRAWVRML.hxx
 include/opencascade/XSDRAW_Functions.hxx
 include/opencascade/XSDRAW_Vars.hxx
 include/opencascade/XmlDrivers.hxx
@@ -8392,6 +8342,8 @@ include/opencascade/math_Uzawa.hxx
 include/opencascade/math_Uzawa.lxx
 include/opencascade/math_ValueAndWeight.hxx
 include/opencascade/math_Vector.hxx
+include/opencascade/math_VectorBase.hxx
+include/opencascade/math_VectorBase.lxx
 include/opencascade/step.tab.hxx
 lib/cmake/
 lib/cmake/opencascade/
@@ -8424,6 +8376,15 @@ lib/cmake/opencascade/OpenCASCADEVisualizationTargets.cmake
 @lib lib/libTKCAF.so.${LIBTKCAF_VERSION}
 @lib lib/libTKCDF.so.${LIBTKCDF_VERSION}
 @lib lib/libTKDCAF.so.${LIBTKDCAF_VERSION}
+@lib lib/libTKDE.so.${LIBTKDE_VERSION}
+@lib lib/libTKDECascade.so.${LIBTKDECascade_VERSION}
+@lib lib/libTKDEGLTF.so.${LIBTKDEGLTF_VERSION}
+@lib lib/libTKDEIGES.so.${LIBTKDEIGES_VERSION}
+@lib lib/libTKDEOBJ.so.${LIBTKDEOBJ_VERSION}
+@lib lib/libTKDEPLY.so.${LIBTKDEPLY_VERSION}
+@lib lib/libTKDESTEP.so.${LIBTKDESTEP_VERSION}
+@lib lib/libTKDESTL.so.${LIBTKDESTL_VERSION}
+@lib lib/libTKDEVRML.so.${LIBTKDEVRML_VERSION}
 @lib lib/libTKDraw.so.${LIBTKDraw_VERSION}
 @lib lib/libTKExpress.so.${LIBTKExpress_VERSION}
 @lib lib/libTKFeat.so.${LIBTKFeat_VERSION}
@@ -8433,7 +8394,6 @@ lib/cmake/opencascade/OpenCASCADEVisualizationTargets.cmake
 @lib lib/libTKGeomAlgo.so.${LIBTKGeomAlgo_VERSION}
 @lib lib/libTKGeomBase.so.${LIBTKGeomBase_VERSION}
 @lib lib/libTKHLR.so.${LIBTKHLR_VERSION}
-@lib lib/libTKIGES.so.${LIBTKIGES_VERSION}
 @lib lib/libTKLCAF.so.${LIBTKLCAF_VERSION}
 @lib lib/libTKMath.so.${LIBTKMath_VERSION}
 @lib lib/libTKMesh.so.${LIBTKMesh_VERSION}
@@ -8444,11 +8404,6 @@ lib/cmake/opencascade/OpenCASCADEVisualizationTargets.cmake
 @lib lib/libTKPrim.so.${LIBTKPrim_VERSION}
 @lib lib/libTKQADraw.so.${LIBTKQADraw_VERSION}
 @lib lib/libTKRWMesh.so.${LIBTKRWMesh_VERSION}
-@lib lib/libTKSTEP.so.${LIBTKSTEP_VERSION}
-@lib lib/libTKSTEP209.so.${LIBTKSTEP209_VERSION}
-@lib lib/libTKSTEPAttr.so.${LIBTKSTEPAttr_VERSION}
-@lib lib/libTKSTEPBase.so.${LIBTKSTEPBase_VERSION}
-@lib lib/libTKSTL.so.${LIBTKSTL_VERSION}
 @lib lib/libTKService.so.${LIBTKService_VERSION}
 @lib lib/libTKShHealing.so.${LIBTKShHealing_VERSION}
 @lib lib/libTKStd.so.${LIBTKStd_VERSION}
@@ -8459,17 +8414,20 @@ lib/cmake/opencascade/OpenCASCADEVisualizationTargets.cmake
 @lib lib/libTKTopTest.so.${LIBTKTopTest_VERSION}
 @lib lib/libTKV3d.so.${LIBTKV3d_VERSION}
 @lib lib/libTKVCAF.so.${LIBTKVCAF_VERSION}
-@lib lib/libTKVRML.so.${LIBTKVRML_VERSION}
 @lib lib/libTKViewerTest.so.${LIBTKViewerTest_VERSION}
 @lib lib/libTKXCAF.so.${LIBTKXCAF_VERSION}
-@lib lib/libTKXDE.so.${LIBTKXDE_VERSION}
-@lib lib/libTKXDECascade.so.${LIBTKXDECascade_VERSION}
 @lib lib/libTKXDEDRAW.so.${LIBTKXDEDRAW_VERSION}
-@lib lib/libTKXDEIGES.so.${LIBTKXDEIGES_VERSION}
-@lib lib/libTKXDESTEP.so.${LIBTKXDESTEP_VERSION}
 @lib lib/libTKXMesh.so.${LIBTKXMesh_VERSION}
 @lib lib/libTKXSBase.so.${LIBTKXSBase_VERSION}
 @lib lib/libTKXSDRAW.so.${LIBTKXSDRAW_VERSION}
+@lib lib/libTKXSDRAWDE.so.${LIBTKXSDRAWDE_VERSION}
+@lib lib/libTKXSDRAWGLTF.so.${LIBTKXSDRAWGLTF_VERSION}
+@lib lib/libTKXSDRAWIGES.so.${LIBTKXSDRAWIGES_VERSION}
+@lib lib/libTKXSDRAWOBJ.so.${LIBTKXSDRAWOBJ_VERSION}
+@lib lib/libTKXSDRAWPLY.so.${LIBTKXSDRAWPLY_VERSION}
+@lib lib/libTKXSDRAWSTEP.so.${LIBTKXSDRAWSTEP_VERSION}
+@lib lib/libTKXSDRAWSTL.so.${LIBTKXSDRAWSTL_VERSION}
+@lib lib/libTKXSDRAWVRML.so.${LIBTKXSDRAWVRML_VERSION}
 @lib lib/libTKXml.so.${LIBTKXml_VERSION}
 @lib lib/libTKXmlL.so.${LIBTKXmlL_VERSION}
 @lib lib/libTKXmlTObj.so.${LIBTKXmlTObj_VERSION}
