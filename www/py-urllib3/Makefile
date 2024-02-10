@@ -17,7 +17,8 @@ FLAVOR=		python3
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
 		net/py-socks${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		security/py-trustme${MODPY_FLAVOR} \
