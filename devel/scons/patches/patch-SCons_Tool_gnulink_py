@@ -1,7 +1,7 @@
 Index: SCons/Tool/gnulink.py
 --- SCons/Tool/gnulink.py.orig
 +++ SCons/Tool/gnulink.py
-@@ -55,7 +55,7 @@ def generate(env):
+@@ -58,7 +58,7 @@ def generate(env) -> None:
  
  def exists(env):
      # TODO: sync with link.smart_link() to choose a linker

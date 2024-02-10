@@ -1,7 +1,7 @@
 Index: setup.cfg
 --- setup.cfg.orig
 +++ setup.cfg
-@@ -60,7 +60,7 @@ console_scripts = 
+@@ -61,7 +61,7 @@ console_scripts = 
  SCons.Tool.docbook = *.*
  
  [options.data_files]

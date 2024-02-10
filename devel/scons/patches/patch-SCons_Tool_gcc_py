@@ -1,7 +1,7 @@
 Index: SCons/Tool/gcc.py
 --- SCons/Tool/gcc.py.orig
 +++ SCons/Tool/gcc.py
-@@ -37,7 +37,7 @@ import subprocess
+@@ -37,7 +37,7 @@ from subprocess import PIPE
  
  import SCons.Util
  
@@ -9,4 +9,4 @@ Index: SCons/Tool/gcc.py
 +compilers = ['cc']
  
  
- def generate(env):
+ def generate(env) -> None:

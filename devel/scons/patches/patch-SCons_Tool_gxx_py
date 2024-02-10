@@ -9,4 +9,4 @@ Index: SCons/Tool/gxx.py
 +compilers = ['c++']
  
  
- def generate(env):
+ def generate(env) -> None:
