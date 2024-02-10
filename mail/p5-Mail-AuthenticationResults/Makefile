@@ -1,11 +1,10 @@
 COMMENT =	object oriented Authentication-Results headers
 
-DISTNAME =	Mail-AuthenticationResults-2.20230112
+DISTNAME =	Mail-AuthenticationResults-2.20231031
 
 CATEGORIES =	mail
 
 MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
-REVISION = 0
 
 # Perl
 PERMIT_PACKAGE =	Yes
