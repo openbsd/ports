@@ -575,6 +575,7 @@ include/postgresql/server/pgstat.h
 include/postgresql/server/pgtar.h
 include/postgresql/server/pgtime.h
 include/postgresql/server/plperl.h
+include/postgresql/server/plperl_system.h
 include/postgresql/server/plpgsql.h
 include/postgresql/server/plpy_cursorobject.h
 include/postgresql/server/plpy_elog.h
@@ -587,6 +588,7 @@ include/postgresql/server/plpy_resultobject.h
 include/postgresql/server/plpy_spi.h
 include/postgresql/server/plpy_subxactobject.h
 include/postgresql/server/plpy_typeio.h
+include/postgresql/server/plpython_system.h
 include/postgresql/server/port/
 include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
