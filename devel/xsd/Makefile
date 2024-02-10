@@ -4,6 +4,7 @@ V =			4.1.0.a11
 DISTNAME =		xsd-${V}+dep
 PKGNAME =		xsd-${V}
 CATEGORIES =		devel textproc
+REVISION =		0
 
 HOMEPAGE = 		https://www.codesynthesis.com/products/xsd
 
@@ -57,10 +58,20 @@ LDFLAGS +=		${XERCES_LIBS}
 MAKE_FLAGS +=		install_prefix=${DESTDIR}${PREFIX} \
 			install_man_dir=${DESTDIR}${PREFIX}/man
 
+# overwrite libcutl/cutl/{config.hxx,makefile}
+CXXFLAGS +=		-DLIBCUTL_EXTERNAL_EXPAT
+MAKE_FLAGS +=		expat_sources='' \
+			expat_headers='' \
+			expat_dist=''
+
 post-extract:
 	# avoid conflict with C++20 <version> by adding suffix
 	mv ${WRKSRC}/libxsd-frontend/version{,.txt}
 	mv ${WRKSRC}/libcutl/version{,.txt}
+
+pre-build:
+	# neuter prehistoric libexpat bundle
+	rm -rf ${WRKSRC}/libcutl/cutl/details/expat/
 
 # provide `find ... -printf'
 pre-test:
