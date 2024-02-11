@@ -15,7 +15,6 @@ share/lite-xl/core/commands/command.lua
 share/lite-xl/core/commands/core.lua
 share/lite-xl/core/commands/dialog.lua
 share/lite-xl/core/commands/doc.lua
-share/lite-xl/core/commands/drawwhitespace.lua
 share/lite-xl/core/commands/files.lua
 share/lite-xl/core/commands/findreplace.lua
 share/lite-xl/core/commands/log.lua

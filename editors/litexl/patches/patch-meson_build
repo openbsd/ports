@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -82,6 +82,7 @@ if not get_option('source-only')
+@@ -78,6 +78,7 @@ if not get_option('source-only')
      # Lua has no official .pc file
      # so distros come up with their own names
      lua_names = [
