@@ -1,4 +1,4 @@
-@conflict recoll-<1.33.1
+@conflict recoll-<1.37.0p0
 @bin bin/recoll
 @man man/man1/recoll.1
 share/applications/recoll-searchgui.desktop
@@ -43,12 +43,14 @@ share/recoll/translations/recoll_es.qm
 share/recoll/translations/recoll_fr.qm
 share/recoll/translations/recoll_hu.qm
 share/recoll/translations/recoll_it.qm
+share/recoll/translations/recoll_ja.qm
 share/recoll/translations/recoll_ko.qm
 share/recoll/translations/recoll_lt.qm
 share/recoll/translations/recoll_nl.qm
 share/recoll/translations/recoll_pl.qm
 share/recoll/translations/recoll_sv.qm
 share/recoll/translations/recoll_tr.qm
+share/recoll/translations/recoll_ru.qm
 share/recoll/translations/recoll_uk.qm
 share/recoll/translations/recoll_xx.qm
 share/recoll/translations/recoll_zh.qm

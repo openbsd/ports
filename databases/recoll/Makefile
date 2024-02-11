@@ -4,8 +4,11 @@ COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
+ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
+PSEUDO_FLAVORS=	no_gui
 
 V=		1.37.0
+REVISION=	0
 DISTNAME=	recoll-${V}
 
 CATEGORIES=	databases sysutils
@@ -24,6 +27,8 @@ WANTLIB=	${COMPILER_LIBCXX} c iconv m xapian xml2 xslt z
 WANTLIB-main=	${WANTLIB} c iconv lzma m xapian z
 WANTLIB-gui=	${WANTLIB} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport \
 		Qt5Widgets Qt5Xml
+
+PSEUDO_FLACORS=	no_gui
 
 # partially works, but the Qt application doesn't get symbols
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -49,7 +54,10 @@ RUN_DEPENDS-main=	archivers/unzip \
 			print/poppler,-utils \
 			textproc/unrtf
 RUN_DEPENDS-gui=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
-LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS}
+LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS} \
+			x11/qt5/qtwebengine
+WANTLIB-gui=		Qt5Positioning Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel \
+			Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
 
 CONFIGURE_STYLE=	gnu
 
@@ -65,14 +73,11 @@ CONFIGURE_ARGS=		--disable-python-aspell \
 			--without-qzeitgeist \
 			--enable-recollq
 
-.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Maarch64} || ${MACHINE_ARCH:Mi386}
+.include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-gui}
 CONFIGURE_ARGS+=	--enable-webengine
-LIB_DEPENDS-gui+=	x11/qt5/qtwebengine
-WANTLIB-gui+=	Qt5Positioning Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel \
-		Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
 .else
-LIB_DEPENDS-gui+=	x11/qt5/qtwebkit
-WANTLIB-gui+=	Qt5WebKit Qt5WebKitWidgets
+CONFIGURE_ARGS+=	--disable-qtgui
 .endif
 
 pre-configure:

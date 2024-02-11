@@ -153,5 +153,3 @@ share/recoll/filters/thunderbird-open-message.sh
 share/recoll/filters/xls-dump.py
 share/recoll/filters/xlsxmltocsv.py
 share/recoll/filters/xml.xsl
-share/recoll/translations/recoll_ja.qm
-share/recoll/translations/recoll_ru.qm
