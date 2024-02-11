@@ -10,7 +10,7 @@ DISTNAME =	qgis-3.34.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	qgis_core	72.1 \
 		qgis_app	47.1 \
@@ -67,6 +67,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		security/qtkeychain \
 		security/qca-qt5 \
 		www/fcgi \
+		x11/qt5/qtwebkit \
 		x11/qt5/qt3d \
 		x11/qwt \
 		geo/gdal \
@@ -81,7 +82,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
-WANTLIB += Qt5Test Qt5Widgets Qt5Xml
+WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv m
 WANTLIB += mdal minizip pdalcpp pq proj ${MODPY_WANTLIB}
 WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt rttopo spatialindex
@@ -117,7 +118,6 @@ WANTLIB += absl_throw_delegate absl_time absl_time_zone
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
-		-DWITH_QTWEBKIT=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
 		-DWITH_SERVER=TRUE -DWITH_SERVER_PLUGINS=TRUE -DWITH_QSPATIALITE=TRUE

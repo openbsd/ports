@@ -1805,7 +1805,6 @@ include/qgis/qgsvtpkvectortiledataprovider.h
 include/qgis/qgsvtpkvectortileguiprovider.h
 include/qgis/qgsvtpkvectortilesourcewidget.h
 include/qgis/qgsweakrelation.h
-include/qgis/qgswebframe.h
 include/qgis/qgswebpage.h
 include/qgis/qgswebview.h
 include/qgis/qgswidgetwrapper.h
