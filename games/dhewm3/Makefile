@@ -4,6 +4,8 @@ GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
 GH_TAGNAME =		1.5.2
 
+REVISION =		0
+
 COMMENT =		open-source version of Doom 3
 
 CATEGORIES =		games
@@ -24,6 +26,8 @@ COMPILER =		base-clang ports-gcc
 LIB_DEPENDS =		devel/sdl2 \
 			audio/openal \
 			net/curl
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
