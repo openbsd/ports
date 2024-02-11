@@ -480,6 +480,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_either}/LICENSE-MIT
 share/rust-openssl-tests/modcargo-crates/${VER_either}/README-crates.io.md
 share/rust-openssl-tests/modcargo-crates/${VER_either}/README.rst
 share/rust-openssl-tests/modcargo-crates/${VER_either}/src/
+share/rust-openssl-tests/modcargo-crates/${VER_either}/src/iterator.rs
 share/rust-openssl-tests/modcargo-crates/${VER_either}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_either}/src/serde_untagged.rs
 share/rust-openssl-tests/modcargo-crates/${VER_either}/src/serde_untagged_optional.rs

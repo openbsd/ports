@@ -12,7 +12,7 @@ SHA256 (cargo/clang-sys-1.7.0.tar.gz) = Z1I6O0vjzhmJ1geoKNA2JJUi3Zwcjef03S2uQ6Nz
 SHA256 (cargo/ctest2-0.4.7.tar.gz) = 8q36puSQsb/v/TjpCAziIW7obJfpmAh1bi1R6P7+XYQ=
 SHA256 (cargo/dirs-2.0.2.tar.gz) = E66omlyTNkqY6bN7L6I37/u2lNXP4BxbcJQffrCH1eM=
 SHA256 (cargo/dirs-sys-0.3.7.tar.gz) = Gx0dkcky70HA8mY6qLDKA0LURNhCwGkUqgp+NS0LraY=
-SHA256 (cargo/either-1.9.0.tar.gz) = omrkPXvMO4FN6UeWpec21AKe+w7pAMEuLVTJk60aHgc=
+SHA256 (cargo/either-1.10.0.tar.gz) = ERV6wJT/vd6ZqmeyNBfr3YAYQoUrUA45WkWpwKrAPko=
 SHA256 (cargo/errno-0.3.8.tar.gz) = oljkbNwGPrhRnAC5/IRfxHvPykEw4vCOiGZc7ahHQkU=
 SHA256 (cargo/foreign-types-0.3.2.tar.gz) = 9vM564rcBSzSyniRD9qGmu+jjSLVy2SOZIXk0/wG87E=
 SHA256 (cargo/foreign-types-shared-0.1.1.tar.gz) = ALAihBGQjKhoXbp/ws3XDsmZCm51Pom2rJGoTED7r0s=
@@ -87,7 +87,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = GmV+Hp0/UUdFpXKmhG08eqfb4W
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (rust-openssl-tests-20240209-84162bf7.tar.gz) = uOiRGKB/nytOvIgBLnBqJ7FIv0hd8ZriJw6JE3cx1CU=
+SHA256 (rust-openssl-tests-20240211-3acf2eff.tar.gz) = 2XgsBttY9oKjM8vkxhCeHGsyaScFf4YEbBMRpx2uHvU=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/annotate-snippets-0.9.2.tar.gz) = 32065
 SIZE (cargo/bindgen-0.65.1.tar.gz) = 213479
@@ -102,7 +102,7 @@ SIZE (cargo/clang-sys-1.7.0.tar.gz) = 42088
 SIZE (cargo/ctest2-0.4.7.tar.gz) = 23309
 SIZE (cargo/dirs-2.0.2.tar.gz) = 11779
 SIZE (cargo/dirs-sys-0.3.7.tar.gz) = 10597
-SIZE (cargo/either-1.9.0.tar.gz) = 16660
+SIZE (cargo/either-1.10.0.tar.gz) = 18334
 SIZE (cargo/errno-0.3.8.tar.gz) = 10645
 SIZE (cargo/foreign-types-0.3.2.tar.gz) = 7504
 SIZE (cargo/foreign-types-shared-0.1.1.tar.gz) = 5672
@@ -177,4 +177,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.52.0.tar.gz) = 430165
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (rust-openssl-tests-20240209-84162bf7.tar.gz) = 360052
+SIZE (rust-openssl-tests-20240211-3acf2eff.tar.gz) = 360058
