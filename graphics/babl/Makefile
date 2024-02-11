@@ -25,7 +25,7 @@ SITES=			http://download.gimp.org/pub/babl/${V:R}/
 MODULES=		devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 COMPILER=		base-clang ports-gcc
 
