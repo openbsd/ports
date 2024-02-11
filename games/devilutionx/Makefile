@@ -4,7 +4,7 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_TAGNAME =	1.5.1
+GH_TAGNAME =	1.5.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
