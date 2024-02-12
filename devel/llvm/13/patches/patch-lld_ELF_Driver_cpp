@@ -1,4 +1,3 @@
-- enable retpoline by default
 - enable PIE by default.
 - arm64 and riscv64 can now do --execute-only by default
 - enable --exec-only as default on AMD64
@@ -89,20 +88,7 @@ Index: lld/ELF/Driver.cpp
    config->zNodefaultlib = hasZOption(args, "nodefaultlib");
    config->zNodelete = hasZOption(args, "nodelete");
    config->zNodlopen = hasZOption(args, "nodlopen");
-@@ -1188,7 +1206,11 @@ static void readConfigs(opt::InputArgList &args) {
-   config->zOrigin = hasZOption(args, "origin");
-   config->zPacPlt = hasZOption(args, "pac-plt");
-   config->zRelro = getZFlag(args, "relro", "norelro", true);
--  config->zRetpolineplt = hasZOption(args, "retpolineplt");
-+#ifndef __OpenBSD__
-+  config->zRetpolineplt = getZFlag(args, "retpolineplt", "noretpolineplt", false);
-+#else
-+  config->zRetpolineplt = getZFlag(args, "retpolineplt", "noretpolineplt", true);
-+#endif
-   config->zRodynamic = hasZOption(args, "rodynamic");
-   config->zSeparate = getZSeparate(args);
-   config->zShstk = hasZOption(args, "shstk");
-@@ -1459,6 +1481,23 @@ static void setConfigs(opt::InputArgList &args) {
+@@ -1459,6 +1477,23 @@ static void setConfigs(opt::InputArgList &args) {
        args.hasFlag(OPT_toc_optimize, OPT_no_toc_optimize, m == EM_PPC64);
    config->pcRelOptimize =
        args.hasFlag(OPT_pcrel_optimize, OPT_no_pcrel_optimize, m == EM_PPC64);
@@ -126,7 +112,7 @@ Index: lld/ELF/Driver.cpp
  }
  
  // Returns a value of "-format" option.
-@@ -1596,7 +1635,7 @@ void LinkerDriver::inferMachineType() {
+@@ -1596,7 +1631,7 @@ void LinkerDriver::inferMachineType() {
  }
  
  // Parse -z max-page-size=<value>. The default value is defined by
@@ -135,7 +121,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getMaxPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
                                         target->defaultMaxPageSize);
-@@ -1611,7 +1650,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
+@@ -1611,7 +1646,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
  }
  
  // Parse -z common-page-size=<value>. The default value is defined by
@@ -144,7 +130,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getCommonPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
                                         target->defaultCommonPageSize);
-@@ -1628,6 +1667,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
+@@ -1628,6 +1663,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
    return val;
  }
  
@@ -161,7 +147,7 @@ Index: lld/ELF/Driver.cpp
  // Parses -image-base option.
  static Optional<uint64_t> getImageBase(opt::InputArgList &args) {
    // Because we are using "Config->maxPageSize" here, this function has to be
-@@ -2414,6 +2463,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
+@@ -2414,6 +2459,11 @@ template <class ELFT> void LinkerDriver::link(opt::Inp
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    config->commonPageSize = getCommonPageSize(args);
