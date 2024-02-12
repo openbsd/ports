@@ -13,9 +13,9 @@ Index: src/Makefile
  endif
  
  ifneq ($(or $(FHEROES2_WITH_ASAN),$(FHEROES2_WITH_TSAN)),)
-@@ -70,6 +68,9 @@ ifeq ($(OS),Windows_NT)
- PLATFORM := mingw
+@@ -67,6 +65,9 @@ OS := $(shell uname)
  endif
+ 
  ifeq ($(OS),FreeBSD)
 +PLATFORM := bsd
 +endif
