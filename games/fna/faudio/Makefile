@@ -11,16 +11,13 @@ PERMIT_PACKAGE = Yes
 WANTLIB +=	SDL2
 
 COMPILER =	base-clang ports-gcc
-
 MODULES =	devel/cmake
-
 LIB_DEPENDS =	devel/sdl2
 
 USE_GMAKE =	Yes
+CONFIGURE_ARGS += -DBUILD_TESTS=ON
 
-CONFIGURE_ARGS +=	-DBUILD_TESTS=ON
-
-WRKDIST =		${WRKDIR}/FNA/lib/FAudio
+WRKDIST =	${WRKDIR}/FNA/lib/FAudio
 
 do-test:
 	cd ${WRKBUILD} && ./faudio_tests

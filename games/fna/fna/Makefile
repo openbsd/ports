@@ -2,7 +2,7 @@ COMMENT =	XNA4 reimplementation for open platforms
 PKGNAME =	fna-${V}
 
 # MS-PL, includes lzxdecoder (dual MSPL/LGPL) and Mono.Xna (MIT)
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
 DIST_TUPLE += 	github FNA-XNA FNA.NetStub ebff244074bb3c28aeeb8cf7b383b5a029d7e28d \
 		../FNA.NetStub # Ms-PL
