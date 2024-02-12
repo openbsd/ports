@@ -68,7 +68,7 @@ CONFIGURE_STYLE =	rebar3
 .endif
 
 .if ${CONFIGURE_STYLE} == "rebar3"
-MODERL_BUILD_DEPENDS +=	devel/rebar3
+MODERL_BUILD_DEPENDS +=	devel/rebar3,${_MODERL_FLAVOR}
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar3-${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar3', otherwise escript tries to call the
 # binary name (e.g. rebar3-25) as the script entrypoint.
