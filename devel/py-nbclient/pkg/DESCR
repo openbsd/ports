@@ -1,0 +1,4 @@
+nbclient is a client library for executing notebooks that was spun
+out from nbconvert's ExecutePreprocessor. This tool allows running
+of Jupyter Notebooks from the command line or other execution
+environments.
