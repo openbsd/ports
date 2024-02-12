@@ -1,2 +1,4 @@
-SHA256 (expat-2.1.0.tar.gz) = gjcFRy+BbfIcj2qgJt0WKygIBoOLtVs0MrD7H8yn64Y=
-SIZE (expat-2.1.0.tar.gz) = 562616
+SHA256 (expat-2.6.0.tar.bz2) = /2DmprbOVwrgEtx7cxacf99La/CMEu0OxvVXNreNhbo=
+SHA256 (expat-2.6.0.tar.bz2.asc) = kLH5F7KDyqReHufznQ0OZbjZT6jSUzCE8eW2sJfa6lc=
+SIZE (expat-2.6.0.tar.bz2) = 611170
+SIZE (expat-2.6.0.tar.bz2.asc) = 833

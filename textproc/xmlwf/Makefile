@@ -1,25 +1,33 @@
-COMMENT=	verifies XML documents
-V=		2.1.0
+COMMENT =	verifies XML documents
 
-PKGNAME=	xmlwf-$V
-DISTNAME=	expat-$V
-REVISION=	0
+VERSION =	2.6.0
+PKGNAME =	xmlwf-${VERSION}
+DISTNAME =	expat-${VERSION}
+SUPDISTFILES =	${DISTFILES}.asc
 
-CATEGORIES=	textproc
+CATEGORIES =	textproc
 
-SITES=		${SITE_SOURCEFORGE:=expat/}
+HOMEPAGE =	https://libexpat.github.io/
 
-HOMEPAGE=	https://expat.sourceforge.net/
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# BSD
-PERMIT_PACKAGE=	Yes
+# MIT
+PERMIT_PACKAGE =	Yes
 
-WRKSRC=			${WRKDIR}/expat-$V/xmlwf
-WANTLIB=		c expat
-NO_TEST=		Yes
+WANTLIB =		c expat
+
+SITES =			https://github.com/libexpat/libexpat/releases/download/R_${VERSION:S/./_/g}/
+
+EXTRACT_SUFX =		.tar.bz2
+
+NO_TEST =		Yes
+
+CFLAGS =		-I${WRKDIR}/expat-${VERSION}/lib
+WRKSRC =		${WRKDIR}/expat-${VERSION}/xmlwf
 
 do-configure:
-	ln -s ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+	ln -s ${FILESDIR}/Makefile ${WRKSRC}/
+	cp ${FILESDIR}/expat_config.h ${WRKSRC}/
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/../doc/xmlwf.1 ${PREFIX}/man/man1

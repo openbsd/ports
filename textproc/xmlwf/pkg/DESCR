@@ -1,4 +1,4 @@
-xmlwf  uses the Expat library to determine if an XML document is well-formed.  
+xmlwf uses the Expat library to determine if an XML document is well-formed.
 It is non-validating.
 
 xmlwf is normally distributed with the expat library.
