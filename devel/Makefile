@@ -1512,6 +1512,7 @@
      SUBDIR += py-mypy,python3
      SUBDIR += py-mypy-extensions,python3
      SUBDIR += py-nampa,python3
+     SUBDIR += py-nbclient,python3
      SUBDIR += py-nbconvert,python3
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
