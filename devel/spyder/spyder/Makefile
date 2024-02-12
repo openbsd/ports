@@ -1,9 +1,8 @@
 COMMENT =	Scientific PYthon Development EnviRonment
 
-MODPY_EGG_VERSION =	5.5.0
+MODPY_EGG_VERSION =	5.5.1
 DISTNAME =	spyder-${MODPY_EGG_VERSION}
 PKGNAME =	spyder3-${MODPY_EGG_VERSION}
-REVISION =	0
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
 
@@ -22,17 +21,17 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR}>=0.4 \
 		devel/py-nbconvert${MODPY_FLAVOR}>=4.0 \
 		devel/py-parso${MODPY_FLAVOR}>=0.7.0,<0.9.0 \
 		devel/py-pexpect${MODPY_FLAVOR}>=4.4.0 \
-		devel/py-python-lsp-black${MODPY_FLAVOR}>=1.2.0,<3.0.0 \
+		devel/py-python-lsp-black${MODPY_FLAVOR}>=2.0.0,<3.0.0 \
 		devel/py-pylint_venv${MODPY_FLAVOR}>=3.0.2 \
 		devel/py-pyls-spyder${MODPY_FLAVOR}>=0.4.0 \
-		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.9.0,<1.10.0 \
+		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.10.0,<1.11.0 \
 		devel/py-qdarkstyle${MODPY_FLAVOR}>=3.2.0,<3.3.0 \
 		devel/py-qstylizer${MODPY_FLAVOR}>=0.2.2 \
 		devel/py-rtree${MODPY_FLAVOR}>=0.9.7 \
 		devel/py-three-merge${MODPY_FLAVOR}>=0.1.1 \
 		devel/pylint${MODPY_FLAVOR}>=2.5.0,<3.1 \
 		net/py-zmq${MODPY_FLAVOR}>=22.1.0 \
-		shells/py-qtconsole${MODPY_FLAVOR}>=5.5.0,<5.6.0 \
+		shells/py-qtconsole${MODPY_FLAVOR}>=5.5.1,<5.6.0 \
 		security/py-keyring${MODPY_FLAVOR}>=17.0.0 \
 		sysutils/py-psutil${MODPY_FLAVOR}>=5.3 \
 		sysutils/py-watchdog${MODPY_FLAVOR}>=0.10.3 \

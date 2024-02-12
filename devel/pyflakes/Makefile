@@ -1,11 +1,13 @@
 COMMENT=	passive checker of Python programs
 
-MODPY_EGG_VERSION=	3.1.0
+MODPY_EGG_VERSION=	3.2.0
 DISTNAME=	pyflakes-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/PyCQA/pyflakes
+
+MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

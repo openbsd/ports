@@ -1,10 +1,12 @@
 COMMENT =		black plugin for the Python Language Server
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		python-lsp-black-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -18,7 +20,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.4.0 \
-			textproc/py-black${MODPY_FLAVOR}>=22.3.0 \
+			textproc/py-black${MODPY_FLAVOR}>=23.11.0 \
 			textproc/py-tomli${MODPY_FLAVOR}
 
 NO_TEST =		Yes
