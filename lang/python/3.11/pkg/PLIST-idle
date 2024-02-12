@@ -23,8 +23,8 @@ lib/python3.11/idlelib/Icons/openfolder.gif
 lib/python3.11/idlelib/Icons/plusnode.gif
 lib/python3.11/idlelib/Icons/python.gif
 lib/python3.11/idlelib/Icons/tk.gif
-lib/python3.11/idlelib/NEWS.txt
 lib/python3.11/idlelib/NEWS2x.txt
+lib/python3.11/idlelib/News3.txt
 lib/python3.11/idlelib/README.txt
 lib/python3.11/idlelib/TODO.txt
 lib/python3.11/idlelib/__init__.py

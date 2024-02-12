@@ -1870,7 +1870,7 @@ lib/python3.11/ensurepip/__pycache__/_uninstall.cpython-311.opt-1.pyc
 lib/python3.11/ensurepip/__pycache__/_uninstall.cpython-311.opt-2.pyc
 lib/python3.11/ensurepip/__pycache__/_uninstall.cpython-311.pyc
 lib/python3.11/ensurepip/_bundled/
-lib/python3.11/ensurepip/_bundled/pip-23.2.1-py3-none-any.whl
+lib/python3.11/ensurepip/_bundled/pip-24.0-py3-none-any.whl
 lib/python3.11/ensurepip/_bundled/setuptools-65.5.0-py3-none-any.whl
 lib/python3.11/ensurepip/_uninstall.py
 lib/python3.11/enum.py
@@ -1926,6 +1926,7 @@ lib/python3.11/http/client.py
 lib/python3.11/http/cookiejar.py
 lib/python3.11/http/cookies.py
 lib/python3.11/http/server.py
+lib/python3.11/idlelib/News3.txt
 lib/python3.11/imaplib.py
 lib/python3.11/imghdr.py
 lib/python3.11/imp.py
@@ -2633,16 +2634,16 @@ lib/python3.11/site-packages/_distutils_hack/__pycache__/override.cpython-311.py
 lib/python3.11/site-packages/_distutils_hack/override.py
 lib/python3.11/site-packages/distutils-precedence.pth
 lib/python3.11/site-packages/pip/
-lib/python3.11/site-packages/pip-23.2.1.dist-info/
-lib/python3.11/site-packages/pip-23.2.1.dist-info/AUTHORS.txt
-lib/python3.11/site-packages/pip-23.2.1.dist-info/INSTALLER
-lib/python3.11/site-packages/pip-23.2.1.dist-info/LICENSE.txt
-lib/python3.11/site-packages/pip-23.2.1.dist-info/METADATA
-lib/python3.11/site-packages/pip-23.2.1.dist-info/RECORD
-lib/python3.11/site-packages/pip-23.2.1.dist-info/REQUESTED
-lib/python3.11/site-packages/pip-23.2.1.dist-info/WHEEL
-lib/python3.11/site-packages/pip-23.2.1.dist-info/entry_points.txt
-lib/python3.11/site-packages/pip-23.2.1.dist-info/top_level.txt
+lib/python3.11/site-packages/pip-24.0.dist-info/
+lib/python3.11/site-packages/pip-24.0.dist-info/AUTHORS.txt
+lib/python3.11/site-packages/pip-24.0.dist-info/INSTALLER
+lib/python3.11/site-packages/pip-24.0.dist-info/LICENSE.txt
+lib/python3.11/site-packages/pip-24.0.dist-info/METADATA
+lib/python3.11/site-packages/pip-24.0.dist-info/RECORD
+lib/python3.11/site-packages/pip-24.0.dist-info/REQUESTED
+lib/python3.11/site-packages/pip-24.0.dist-info/WHEEL
+lib/python3.11/site-packages/pip-24.0.dist-info/entry_points.txt
+lib/python3.11/site-packages/pip-24.0.dist-info/top_level.txt
 lib/python3.11/site-packages/pip/__init__.py
 lib/python3.11/site-packages/pip/__main__.py
 lib/python3.11/site-packages/pip/__pip-runner__.py
@@ -2930,7 +2931,6 @@ lib/python3.11/site-packages/pip/_internal/utils/__pycache__/filesystem.cpython-
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/filetypes.cpython-311.pyc
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/glibc.cpython-311.pyc
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/hashes.cpython-311.pyc
-lib/python3.11/site-packages/pip/_internal/utils/__pycache__/inject_securetransport.cpython-311.pyc
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/logging.cpython-311.pyc
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/misc.cpython-311.pyc
 lib/python3.11/site-packages/pip/_internal/utils/__pycache__/models.cpython-311.pyc
@@ -2957,7 +2957,6 @@ lib/python3.11/site-packages/pip/_internal/utils/filesystem.py
 lib/python3.11/site-packages/pip/_internal/utils/filetypes.py
 lib/python3.11/site-packages/pip/_internal/utils/glibc.py
 lib/python3.11/site-packages/pip/_internal/utils/hashes.py
-lib/python3.11/site-packages/pip/_internal/utils/inject_securetransport.py
 lib/python3.11/site-packages/pip/_internal/utils/logging.py
 lib/python3.11/site-packages/pip/_internal/utils/misc.py
 lib/python3.11/site-packages/pip/_internal/utils/models.py
@@ -2997,7 +2996,6 @@ lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/__init__.cpyth
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/_cmd.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/adapter.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/cache.cpython-311.pyc
-lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/compat.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/controller.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/filewrapper.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/__pycache__/heuristics.cpython-311.pyc
@@ -3014,10 +3012,10 @@ lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/file_ca
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/__pycache__/redis_cache.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py
-lib/python3.11/site-packages/pip/_vendor/cachecontrol/compat.py
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/controller.py
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/filewrapper.py
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/heuristics.py
+lib/python3.11/site-packages/pip/_vendor/cachecontrol/py.typed
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/serialize.py
 lib/python3.11/site-packages/pip/_vendor/cachecontrol/wrapper.py
 lib/python3.11/site-packages/pip/_vendor/certifi/
@@ -3029,6 +3027,7 @@ lib/python3.11/site-packages/pip/_vendor/certifi/__pycache__/__main__.cpython-31
 lib/python3.11/site-packages/pip/_vendor/certifi/__pycache__/core.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/certifi/cacert.pem
 lib/python3.11/site-packages/pip/_vendor/certifi/core.py
+lib/python3.11/site-packages/pip/_vendor/certifi/py.typed
 lib/python3.11/site-packages/pip/_vendor/chardet/
 lib/python3.11/site-packages/pip/_vendor/chardet/__init__.py
 lib/python3.11/site-packages/pip/_vendor/chardet/__pycache__/
@@ -3123,6 +3122,7 @@ lib/python3.11/site-packages/pip/_vendor/chardet/metadata/__pycache__/
 lib/python3.11/site-packages/pip/_vendor/chardet/metadata/__pycache__/__init__.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/chardet/metadata/__pycache__/languages.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/chardet/metadata/languages.py
+lib/python3.11/site-packages/pip/_vendor/chardet/py.typed
 lib/python3.11/site-packages/pip/_vendor/chardet/resultdict.py
 lib/python3.11/site-packages/pip/_vendor/chardet/sbcharsetprober.py
 lib/python3.11/site-packages/pip/_vendor/chardet/sbcsgroupprober.py
@@ -3187,6 +3187,7 @@ lib/python3.11/site-packages/pip/_vendor/distro/__pycache__/__init__.cpython-311
 lib/python3.11/site-packages/pip/_vendor/distro/__pycache__/__main__.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/distro/__pycache__/distro.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/distro/distro.py
+lib/python3.11/site-packages/pip/_vendor/distro/py.typed
 lib/python3.11/site-packages/pip/_vendor/idna/
 lib/python3.11/site-packages/pip/_vendor/idna/__init__.py
 lib/python3.11/site-packages/pip/_vendor/idna/__pycache__/
@@ -3204,6 +3205,7 @@ lib/python3.11/site-packages/pip/_vendor/idna/core.py
 lib/python3.11/site-packages/pip/_vendor/idna/idnadata.py
 lib/python3.11/site-packages/pip/_vendor/idna/intranges.py
 lib/python3.11/site-packages/pip/_vendor/idna/package_data.py
+lib/python3.11/site-packages/pip/_vendor/idna/py.typed
 lib/python3.11/site-packages/pip/_vendor/idna/uts46data.py
 lib/python3.11/site-packages/pip/_vendor/msgpack/
 lib/python3.11/site-packages/pip/_vendor/msgpack/__init__.py
@@ -3234,6 +3236,7 @@ lib/python3.11/site-packages/pip/_vendor/packaging/_manylinux.py
 lib/python3.11/site-packages/pip/_vendor/packaging/_musllinux.py
 lib/python3.11/site-packages/pip/_vendor/packaging/_structures.py
 lib/python3.11/site-packages/pip/_vendor/packaging/markers.py
+lib/python3.11/site-packages/pip/_vendor/packaging/py.typed
 lib/python3.11/site-packages/pip/_vendor/packaging/requirements.py
 lib/python3.11/site-packages/pip/_vendor/packaging/specifiers.py
 lib/python3.11/site-packages/pip/_vendor/packaging/tags.py
@@ -3258,6 +3261,7 @@ lib/python3.11/site-packages/pip/_vendor/platformdirs/__pycache__/windows.cpytho
 lib/python3.11/site-packages/pip/_vendor/platformdirs/android.py
 lib/python3.11/site-packages/pip/_vendor/platformdirs/api.py
 lib/python3.11/site-packages/pip/_vendor/platformdirs/macos.py
+lib/python3.11/site-packages/pip/_vendor/platformdirs/py.typed
 lib/python3.11/site-packages/pip/_vendor/platformdirs/unix.py
 lib/python3.11/site-packages/pip/_vendor/platformdirs/version.py
 lib/python3.11/site-packages/pip/_vendor/platformdirs/windows.py
@@ -3363,6 +3367,7 @@ lib/python3.11/site-packages/pip/_vendor/pyparsing/diagram/__pycache__/
 lib/python3.11/site-packages/pip/_vendor/pyparsing/diagram/__pycache__/__init__.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/pyparsing/exceptions.py
 lib/python3.11/site-packages/pip/_vendor/pyparsing/helpers.py
+lib/python3.11/site-packages/pip/_vendor/pyparsing/py.typed
 lib/python3.11/site-packages/pip/_vendor/pyparsing/results.py
 lib/python3.11/site-packages/pip/_vendor/pyparsing/testing.py
 lib/python3.11/site-packages/pip/_vendor/pyparsing/unicode.py
@@ -3434,6 +3439,7 @@ lib/python3.11/site-packages/pip/_vendor/resolvelib/compat/__pycache__/__init__.
 lib/python3.11/site-packages/pip/_vendor/resolvelib/compat/__pycache__/collections_abc.cpython-311.pyc
 lib/python3.11/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py
 lib/python3.11/site-packages/pip/_vendor/resolvelib/providers.py
+lib/python3.11/site-packages/pip/_vendor/resolvelib/py.typed
 lib/python3.11/site-packages/pip/_vendor/resolvelib/reporters.py
 lib/python3.11/site-packages/pip/_vendor/resolvelib/resolvers.py
 lib/python3.11/site-packages/pip/_vendor/resolvelib/structs.py
@@ -3575,6 +3581,7 @@ lib/python3.11/site-packages/pip/_vendor/rich/progress.py
 lib/python3.11/site-packages/pip/_vendor/rich/progress_bar.py
 lib/python3.11/site-packages/pip/_vendor/rich/prompt.py
 lib/python3.11/site-packages/pip/_vendor/rich/protocol.py
+lib/python3.11/site-packages/pip/_vendor/rich/py.typed
 lib/python3.11/site-packages/pip/_vendor/rich/region.py
 lib/python3.11/site-packages/pip/_vendor/rich/repr.py
 lib/python3.11/site-packages/pip/_vendor/rich/rule.py
@@ -3614,6 +3621,7 @@ lib/python3.11/site-packages/pip/_vendor/tenacity/after.py
 lib/python3.11/site-packages/pip/_vendor/tenacity/before.py
 lib/python3.11/site-packages/pip/_vendor/tenacity/before_sleep.py
 lib/python3.11/site-packages/pip/_vendor/tenacity/nap.py
+lib/python3.11/site-packages/pip/_vendor/tenacity/py.typed
 lib/python3.11/site-packages/pip/_vendor/tenacity/retry.py
 lib/python3.11/site-packages/pip/_vendor/tenacity/stop.py
 lib/python3.11/site-packages/pip/_vendor/tenacity/tornadoweb.py
@@ -3628,6 +3636,22 @@ lib/python3.11/site-packages/pip/_vendor/tomli/__pycache__/_types.cpython-311.py
 lib/python3.11/site-packages/pip/_vendor/tomli/_parser.py
 lib/python3.11/site-packages/pip/_vendor/tomli/_re.py
 lib/python3.11/site-packages/pip/_vendor/tomli/_types.py
+lib/python3.11/site-packages/pip/_vendor/tomli/py.typed
+lib/python3.11/site-packages/pip/_vendor/truststore/
+lib/python3.11/site-packages/pip/_vendor/truststore/__init__.py
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/__init__.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/_api.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/_macos.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/_openssl.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/_ssl_constants.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/__pycache__/_windows.cpython-311.pyc
+lib/python3.11/site-packages/pip/_vendor/truststore/_api.py
+lib/python3.11/site-packages/pip/_vendor/truststore/_macos.py
+lib/python3.11/site-packages/pip/_vendor/truststore/_openssl.py
+lib/python3.11/site-packages/pip/_vendor/truststore/_ssl_constants.py
+lib/python3.11/site-packages/pip/_vendor/truststore/_windows.py
+lib/python3.11/site-packages/pip/_vendor/truststore/py.typed
 lib/python3.11/site-packages/pip/_vendor/typing_extensions.py
 lib/python3.11/site-packages/pip/_vendor/urllib3/
 lib/python3.11/site-packages/pip/_vendor/urllib3/__init__.py
