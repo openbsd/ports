@@ -1,0 +1,20 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Create a watch list file ${LOCALSTATEDIR}/certspotter/.certspotter/watchlist
+containing the DNS names you want to monitor, one per line. To monitor an
+entire domain tree (including the domain itself and all sub-domains) prefix the
+domain (including the domain itself and all sub-domains) prefix the domain name
+with a dot (e.g. .example.com). To monitor a single DNS name only, do not
+prefix the name with a dot.
+
+Place one or more email addresses in
+${LOCALSTATEDIR}/certspotter/.certspotter/email_recipients file
+(one per line), and/or place one or more executable scripts in
+${LOCALSTATEDIR}/certspotter/.certspotter/hooks.d directory. certspotter
+will email the listed addresses (requires your system to have a working
+sendmail command) and execute the provided scripts when it detects a
+certificate for a domain on your watch list. The location of those files is
+kept in a .certspotter to ensure compatibility with the non daemonized
+version.
