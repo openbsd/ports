@@ -1669,6 +1669,8 @@ share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/i686-linux
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/i686-linux-android/Dockerfile
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/i686-unknown-linux-gnu/
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/i686-unknown-linux-gnu/Dockerfile
+share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/riscv64gc-unknown-linux-gnu/
+share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/riscv64gc-unknown-linux-gnu/Dockerfile
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/wasm32-wasi/
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/wasm32-wasi/Dockerfile
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/ci/docker/x86_64-linux-android/
