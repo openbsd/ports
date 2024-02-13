@@ -1,0 +1,34 @@
+Index: libs/context/build/Jamfile.v2
+--- libs/context/build/Jamfile.v2.orig
++++ libs/context/build/Jamfile.v2
+@@ -508,6 +508,30 @@ alias asm_sources
+      <toolset>gcc
+    ;
+ 
++# SPARC64
++# SPARC64/SYSV/ELF
++alias asm_sources
++   : asm/make_sparc64_sysv_elf_gas.S
++     asm/jump_sparc64_sysv_elf_gas.S
++     asm/ontop_sparc64_sysv_elf_gas.S
++   : <abi>sysv
++     <address-model>64
++     <architecture>sparc
++     <binary-format>elf
++     <toolset>clang
++   ;
++
++alias asm_sources
++   : asm/make_sparc64_sysv_elf_gas.S
++     asm/jump_sparc64_sysv_elf_gas.S
++     asm/ontop_sparc64_sysv_elf_gas.S
++   : <abi>sysv
++     <address-model>64
++     <architecture>sparc
++     <binary-format>elf
++     <toolset>gcc
++   ;
++
+ # S390X
+ # S390X/SYSV/ELF
+ alias asm_sources

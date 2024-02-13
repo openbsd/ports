@@ -1,4 +1,4 @@
-NOT_FOR_ARCHS-md = alpha hppa sparc64
+NOT_FOR_ARCHS-md = alpha hppa
 
 DPB_PROPERTIES=	parallel
 
@@ -132,7 +132,7 @@ SUBST_VARS+=	SO_VERSION
 
 # Revert back to Boost::Context 1.80.0 ASM code for i386
 post-extract:
-	cp -f ${FILESDIR}/*_i386_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
+	cp -f ${FILESDIR}/*_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
 
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam
