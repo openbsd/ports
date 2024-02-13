@@ -21,6 +21,7 @@
      SUBDIR += c2sp-testvectors
      SUBDIR += ccid
      SUBDIR += ccrypt
+     SUBDIR += certspotter
      SUBDIR += cfssl
      SUBDIR += cgichk
      SUBDIR += chrootuid
