@@ -13,6 +13,10 @@ MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# stdatomic.h
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 SITES =			https://github.com/NICMx/FORT-validator/releases/download/$V/
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
