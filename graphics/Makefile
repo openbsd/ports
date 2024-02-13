@@ -75,6 +75,7 @@
      SUBDIR += gifsicle
      SUBDIR += giftrans
      SUBDIR += gimp
+     SUBDIR += glad
      SUBDIR += gle
      SUBDIR += glew
      SUBDIR += glfw
