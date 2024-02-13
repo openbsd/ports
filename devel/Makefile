@@ -151,6 +151,7 @@
      SUBDIR += etl
      SUBDIR += expect-lite
      SUBDIR += fasm
+     SUBDIR += fast-float
      SUBDIR += ffcall
      SUBDIR += flake8
      SUBDIR += flatbuffers
