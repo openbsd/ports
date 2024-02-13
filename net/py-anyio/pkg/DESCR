@@ -1,0 +1,13 @@
+AnyIO is a asynchronous compatibility API that allows applications and libraries
+written against it to run unmodified on asyncio, curio and trio.
+
+It bridges the following functionality:
+- Task groups
+- Cancellation
+- Threads
+- Signal handling
+- Asynchronous file I/O
+- Subprocesses
+- Inter-task synchronization and communication (locks, conditions, events,
+  semaphores, object streams)
+- High level networking (TCP, UDP and UNIX sockets)
