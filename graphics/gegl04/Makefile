@@ -1,11 +1,11 @@
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.46
+V=			0.4.48
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.445.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.447.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -31,7 +31,7 @@ SITES=			http://download.gimp.org/pub/gegl/${API_VERSION}/
 MODULES=		devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		vala gobject-introspection
+MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			graphics/libgexiv2 \
