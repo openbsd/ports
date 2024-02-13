@@ -2,7 +2,7 @@ COMMENT =	fast, memory-efficient, header-only hashtable
 
 GH_ACCOUNT =	martinus
 GH_PROJECT =	robin-hood-hashing
-GH_TAGNAME =	3.11.4
+GH_TAGNAME =	3.11.5
 
 CATEGORIES =	devel
 
