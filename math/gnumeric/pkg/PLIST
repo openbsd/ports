@@ -229,6 +229,9 @@ lib/gnumeric/${GNOME_VERSION}/plugins/fn-erlang/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-financial/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/fn-financial/plugin.so
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-financial/plugin.xml
+lib/gnumeric/${GNOME_VERSION}/plugins/fn-flt/
+@so lib/gnumeric/${GNOME_VERSION}/plugins/fn-flt/plugin.so
+lib/gnumeric/${GNOME_VERSION}/plugins/fn-flt/plugin.xml
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-hebrew-date/
 @so lib/gnumeric/${GNOME_VERSION}/plugins/fn-hebrew-date/plugin.so
 lib/gnumeric/${GNOME_VERSION}/plugins/fn-hebrew-date/plugin.xml
@@ -2283,6 +2286,8 @@ share/locale/et/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/et/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/eu/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/eu/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
+share/locale/fa/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
+share/locale/fa/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/fi/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/fi/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/fr/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
