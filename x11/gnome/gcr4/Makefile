@@ -1,9 +1,8 @@
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
-GNOME_VERSION=		4.1.0
+GNOME_VERSION=		4.2.0
 PKGNAME=		${GNOME_PROJECT}4-${GNOME_VERSION}
-REVISION=		0
 
 SHARED_LIBS += gck-2                     0.1 # 2.1.0
 SHARED_LIBS += gcr-4                     0.1 # 4.1.0
