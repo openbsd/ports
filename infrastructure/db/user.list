@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.436 2024/01/05 14:40:32 kn Exp $
+$OpenBSD: user.list,v 1.437 2024/02/13 11:45:31 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -404,3 +404,4 @@ id  user		group		port
 893 _azorius		_azorius	www/azorius
 894 _gonic		_gonic		audio/gonic
 895 _soju		_soju		net/soju
+896 _certspotter	_certspotter	security/certspotter
