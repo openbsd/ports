@@ -131,6 +131,7 @@ NO_TEST=	Yes
 SUBST_VARS+=	SO_VERSION
 
 # Revert back to Boost::Context 1.80.0 ASM code for i386
+# and add new support for sparc64
 post-extract:
 	cp -f ${FILESDIR}/*_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
 
