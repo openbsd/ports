@@ -1,0 +1,15 @@
+Index: src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc
+--- src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc.orig
++++ src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc
+@@ -137,7 +137,11 @@ void EmbeddedFileWriter::WriteCodeSection(PlatformEmbe
+   w->Comment(
+       "The embedded blob code section starts here. It contains the builtin");
+   w->Comment("instruction streams.");
++#if V8_TARGET_OS_OPENBSD
++  w->SectionRoData();
++#else
+   w->SectionText();
++#endif
+ 
+ #if V8_TARGET_ARCH_IA32 || V8_TARGET_ARCH_X64
+   // UMA needs an exposed function-type label at the start of the embedded

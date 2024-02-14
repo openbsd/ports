@@ -8,7 +8,6 @@ BROKEN-i386 =		error during build
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
-USE_NOEXECONLY=		Yes
 
 DPB_PROPERTIES =	parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
@@ -19,6 +18,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Pdf                        1.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
