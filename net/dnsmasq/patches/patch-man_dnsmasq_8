@@ -17,7 +17,7 @@ Index: man/dnsmasq.8
  .TP
  .B \-v, --version
  Print the version number.
-@@ -2231,7 +2230,7 @@ dig +short chaos txt cachesize.bind
+@@ -2276,7 +2275,7 @@ handle each TCP request. The default maximum is 20.
  
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -26,7 +26,7 @@ Index: man/dnsmasq.8
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -2681,7 +2680,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -2726,7 +2725,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
