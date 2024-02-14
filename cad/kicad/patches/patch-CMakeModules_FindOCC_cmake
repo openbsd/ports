@@ -1,0 +1,34 @@
+Index: CMakeModules/FindOCC.cmake
+--- CMakeModules/FindOCC.cmake.orig
++++ CMakeModules/FindOCC.cmake
+@@ -45,7 +45,7 @@ set( OCC_LIBS
+     TKGeomAlgo
+     TKGeomBase
+     TKHLR
+-    TKIGES
++    TKDEIGES
+     TKLCAF
+     TKMath
+     TKMesh
+@@ -55,18 +55,13 @@ set( OCC_LIBS
+     TKPrim
+     TKService
+     TKShHealing
+-    TKSTEP209
+-    TKSTEPAttr
+-    TKSTEPBase
+-    TKSTEP
+-    TKSTL
++    TKDESTEP
++    TKDESTL
+     TKTObj
+     TKTopAlgo
+     TKV3d
+-    TKVRML
++    TKDEVRML
+     TKXCAF
+-    TKXDEIGES
+-    TKXDESTEP
+     TKXMesh
+     TKXmlL
+     TKXml
