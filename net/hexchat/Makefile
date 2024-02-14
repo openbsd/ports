@@ -1,10 +1,11 @@
 COMMENT =		GTK+2 IRC Client
-DISTNAME =		hexchat-2.16.1
+V =			2.16.2
+DISTNAME =		hexchat-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		1
 
 HOMEPAGE =		https://hexchat.github.io/
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
@@ -19,7 +20,7 @@ WANTLIB += ${MODPY_WANTLIB}
 # libproxy requires libestdc++
 COMPILER =		base-clang ports-gcc
 
-SITES =			https://dl.hexchat.net/hexchat/
+SITES =			https://github.com/hexchat/hexchat/releases/download/v$V/
 
 MODULES =		devel/meson \
 			lang/python \
