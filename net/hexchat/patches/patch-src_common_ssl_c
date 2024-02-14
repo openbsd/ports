@@ -1,0 +1,27 @@
+Do not reach into X509_ALGOR unnecessarily.
+
+Index: src/common/ssl.c
+--- src/common/ssl.c.orig
++++ src/common/ssl.c
+@@ -153,7 +153,7 @@ _SSL_get_cert_info (struct cert_info *cert_info, SSL *
+ {
+ 	X509 *peer_cert;
+ 	X509_PUBKEY *key;
+-	X509_ALGOR *algor = NULL;
++	ASN1_OBJECT *obj = NULL;
+ 	EVP_PKEY *peer_pkey;
+ 	char notBefore[64];
+ 	char notAfter[64];
+@@ -172,10 +172,10 @@ _SSL_get_cert_info (struct cert_info *cert_info, SSL *
+ 	broke_oneline (cert_info->issuer, cert_info->issuer_word);
+ 
+ 	key = X509_get_X509_PUBKEY(peer_cert);
+-	if (!X509_PUBKEY_get0_param(NULL, NULL, 0, &algor, key))
++	if (!X509_PUBKEY_get0_param(&obj, NULL, 0, NULL, key))
+ 		return 1;
+ 
+-	alg = OBJ_obj2nid (algor->algorithm);
++	alg = OBJ_obj2nid (obj);
+ #ifndef HAVE_X509_GET_SIGNATURE_NID
+ 	sign_alg = OBJ_obj2nid (peer_cert->sig_alg->algorithm);
+ #else

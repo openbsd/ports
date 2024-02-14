@@ -3,6 +3,7 @@ V =			2.16.2
 DISTNAME =		hexchat-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
+REVISION =		0
 
 HOMEPAGE =		https://hexchat.github.io/
 
