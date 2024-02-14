@@ -1,9 +1,8 @@
 COMMENT =		configuration system for Python applications
 
-MODPY_EGG_VERSION =	5.13.0
+MODPY_EGG_VERSION =	5.14.1
 DISTNAME =		traitlets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -23,7 +22,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 MODPY_PYTEST_ARGS =	traitlets
 
-# no tests in pypi distfile
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
+			devel/py-argcomplete${MODPY_FLAVOR} \
+			devel/py-mypy${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
