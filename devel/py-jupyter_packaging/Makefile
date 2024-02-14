@@ -1,6 +1,6 @@
 COMMENT =		Jupyter packaging utilities
 
-MODPY_EGG_VERSION =	0.12.2
+MODPY_EGG_VERSION =	0.12.3
 DISTNAME =		jupyter_packaging-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
