@@ -1,2 +1,4 @@
-SHA256 (zeal-0.6.1.tar.xz) = +7knkjPSuCRbSd4CKK4NBEWEqK50z9UjnBbVCIsfx4s=
-SIZE (zeal-0.6.1.tar.xz) = 671432
+SHA256 (9630cc94c155d87295e51b41fbab2bd5798f8229.patch) = 5AzvKb1jzWiDHwtLJ0KciN0ySarfALJVnMMmuz2urmE=
+SHA256 (zeal-0.7.0.tar.xz) = Qs7+iydnvZTly3ANpKN9mM+xhp3W8EOxD3cx3zGcr0w=
+SIZE (9630cc94c155d87295e51b41fbab2bd5798f8229.patch) = 4768
+SIZE (zeal-0.7.0.tar.xz) = 784204

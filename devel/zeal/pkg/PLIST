@@ -1,5 +1,5 @@
 @bin bin/zeal
-share/applications/org.zealdocs.Zeal.desktop
+share/applications/org.zealdocs.zeal.desktop
 share/icons/hicolor/128x128/apps/zeal.png
 share/icons/hicolor/16x16/apps/zeal.png
 share/icons/hicolor/24x24/apps/zeal.png
@@ -8,4 +8,4 @@ share/icons/hicolor/64x64/apps/zeal.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/metainfo/
-share/metainfo/org.zealdocs.Zeal.appdata.xml
+share/metainfo/org.zealdocs.zeal.appdata.xml
