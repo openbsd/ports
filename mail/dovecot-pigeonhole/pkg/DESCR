@@ -1,1 +1,4 @@
 Sieve mail filtering for Dovecot.
+
+Flavor:
+	ldap	support for LDAP storage of Sieve scripts

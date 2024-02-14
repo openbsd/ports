@@ -1,6 +1,6 @@
 COMMENT=	Sieve mail filtering for Dovecot
 
-V_SIEVE=	0.5.20
+V_SIEVE=	0.5.21
 V_DOVECOT=	2.3
 
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
@@ -32,6 +32,17 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+FLAVORS =	ldap
+FLAVOR ?=
+
+.if ${FLAVOR:Mldap}
+CONFIGURE_ARGS+= --with-ldap
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+LIB_DEPENDS+=	databases/openldap
+WANTLIB+=	lber ldap sasl2 pthread
+.endif
 
 post-install:
 	@find ${PREFIX}/lib/dovecot \( -name '*.a' -o -name '*.la' \) -delete
