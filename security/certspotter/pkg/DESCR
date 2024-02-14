@@ -14,3 +14,6 @@ You can use Cert Spotter to detect:
   authority and want to impersonate your site.
 - Certificates issued in violation of your corporate policy or outside
   of your centralized certificate procurement process.
+
+N.B. Cert Spotter fetches the entire set of CT logs, using a large
+amount of bandwidth while doing so, possibly for a week or more.
