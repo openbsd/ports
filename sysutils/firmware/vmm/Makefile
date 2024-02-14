@@ -13,7 +13,7 @@ COMPILER_LANGS=	c
 # alignments.  As a result, this project can not be built.
 
 FW_DRIVER=	vmm
-FW_VER=		1.16.2
+FW_VER=		1.16.3
 SB_VER=		20180715
 DISTNAME=	seabios-${FW_VER}
 DIST_TUPLE=	github qemu sgabios 72f39d48bedf044e202fd51fecf3e2218fc2ae66 sgabios

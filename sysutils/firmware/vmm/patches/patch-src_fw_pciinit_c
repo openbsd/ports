@@ -4,7 +4,7 @@ not be upstreamed.
 Index: src/fw/pciinit.c
 --- src/fw/pciinit.c.orig
 +++ src/fw/pciinit.c
-@@ -142,6 +142,11 @@ static int mch_pci_slot_get_irq(struct pci_device *pci
+@@ -147,6 +147,11 @@ static int mch_pci_slot_get_irq(struct pci_device *pci
      return pci_irqs[(pin - 1 + pin_addend) & 3];
  }
  
@@ -16,7 +16,7 @@ Index: src/fw/pciinit.c
  /* PIIX3/PIIX4 PCI to ISA bridge */
  static void piix_isa_bridge_setup(struct pci_device *pci, void *arg)
  {
-@@ -505,11 +510,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
+@@ -510,11 +515,18 @@ static void mch_mem_addr_setup(struct pci_device *dev,
          pci_io_low_end = acpi_pm_base;
  }
  
