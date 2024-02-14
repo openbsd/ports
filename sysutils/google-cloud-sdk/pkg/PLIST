@@ -388,10 +388,12 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}audit_reports.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}audit_scopes.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}enrollments.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}operations.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/audit_reports.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/audit_scopes.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/enrollments.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/operations.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/audit_manager/util.py
@@ -13921,6 +13923,7 @@ google-cloud-sdk/lib/surface/artifacts/docker/upgrade/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/artifacts/docker/upgrade/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/artifacts/docker/upgrade/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/artifacts/docker/upgrade/${MODPY_PYCACHE}print_iam_policy.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/artifacts/docker/upgrade/migrate.yaml
 google-cloud-sdk/lib/surface/artifacts/docker/upgrade/print_iam_policy.py
 google-cloud-sdk/lib/surface/artifacts/files/
 google-cloud-sdk/lib/surface/artifacts/files/__init__.py
@@ -14178,6 +14181,12 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/audit_manager/audit_reports/${MODPY
 google-cloud-sdk/lib/surface/audit_manager/audit_reports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/audit_manager/audit_reports/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/audit_manager/audit_reports/generate.py
+google-cloud-sdk/lib/surface/audit_manager/audit_scopes/
+google-cloud-sdk/lib/surface/audit_manager/audit_scopes/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/audit_manager/audit_scopes/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/audit_manager/audit_scopes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/audit_manager/audit_scopes/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/audit_manager/audit_scopes/generate.py
 google-cloud-sdk/lib/surface/audit_manager/enrollments/
 google-cloud-sdk/lib/surface/audit_manager/enrollments/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/audit_manager/enrollments/${MODPY_PYCACHE}/
@@ -16977,6 +16986,12 @@ google-cloud-sdk/lib/surface/compute/ssl_policies/list.py
 google-cloud-sdk/lib/surface/compute/ssl_policies/list_available_features.py
 google-cloud-sdk/lib/surface/compute/ssl_policies/update.py
 google-cloud-sdk/lib/surface/compute/start_iap_tunnel.py
+google-cloud-sdk/lib/surface/compute/storage_pool_types/
+google-cloud-sdk/lib/surface/compute/storage_pool_types/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/compute/storage_pool_types/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/compute/storage_pool_types/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/compute/storage_pool_types/describe.yaml
+google-cloud-sdk/lib/surface/compute/storage_pool_types/list.yaml
 google-cloud-sdk/lib/surface/compute/storage_pools/
 google-cloud-sdk/lib/surface/compute/storage_pools/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/compute/storage_pools/${MODPY_PYCACHE}/
@@ -21118,6 +21133,7 @@ google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/${MODPY_PYCAC
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/create_aws.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/create_oidc.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/create_saml.yaml
+google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/create_x509.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/delete.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/describe.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/keys/
@@ -21144,6 +21160,7 @@ google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/undelete.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/update_aws.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/update_oidc.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/update_saml.yaml
+google-cloud-sdk/lib/surface/iam/workload_identity_pools/providers/update_x509.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/undelete.yaml
 google-cloud-sdk/lib/surface/iam/workload_identity_pools/update.yaml
 google-cloud-sdk/lib/surface/iap/
