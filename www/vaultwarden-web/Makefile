@@ -1,15 +1,19 @@
 COMMENT =	Web vault builds for vaultwarden
 
-CATEGORIES =	www
-
-VERSION =	2023.10.0
-SITES =		https://github.com/dani-garcia/bw_web_builds/releases/download/v${VERSION}/
+VERSION =	2024.1.2
 DISTNAME =	bw_web_v${VERSION}
 PKGNAME =	vaultwarden-web-${VERSION}
 
+CATEGORIES =	www
+
+HOMEPAGE =	https://github.com/dani-garcia/bw_web_builds
+
 MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
+
 # GPLv3
 PERMIT_PACKAGE =	Yes
+
+SITES =		${HOMEPAGE}/releases/download/v${VERSION}/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
