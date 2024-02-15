@@ -5,7 +5,7 @@ COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
 # XXX 4.2.x breaks termshark
-V =		4.0.12
+V =		4.0.13
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
