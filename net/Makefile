@@ -624,7 +624,6 @@
      SUBDIR += py-zeroconf,python3
      SUBDIR += py-zmq,python3
      SUBDIR += qbittorrent
-     SUBDIR += qsyncthingtray
      SUBDIR += quagga
      SUBDIR += queryperf
      SUBDIR += queso

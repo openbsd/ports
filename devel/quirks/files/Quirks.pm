@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1605 2024/02/09 02:40:36 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1606 2024/02/15 12:35:18 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1908,6 +1908,7 @@ setup_obsolete_reason(
 	5 => 'birdfont',
 	5 => 'libxmlbird',
 	5 => 'py-m2r',
+	64 => 'qsyncthingtray',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1988,6 +1989,7 @@ my $obsolete_message = {
 	61 => "long dead upstream/unmaintained, fails to build with clang 16",
 	62 => "not maintained, upstream suggests using passphraseme or pwgen",
 	63 => "outdated, unmaintained, crashes on startup",
+	64 => "dead upstream, crashes when showing the Syncthing web interface, use a browser",
 };
 
 # ->is_base_system($handle, $state):
