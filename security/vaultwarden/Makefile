@@ -1,14 +1,11 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =		sparc64
 
 BROKEN-i386 =		raw-cpuid-10.2.0/src/lib.rs:80:37 "could not find `arch` in `self`"
 
 COMMENT =		unofficial bitwarden compatible server
 
-GH_ACCOUNT =		dani-garcia
-GH_PROJECT =		vaultwarden
-GH_TAGNAME =		1.30.1
-REVISION =		0
+DIST_TUPLE =		github dani-garcia vaultwarden 1.30.3 .
 
 CATEGORIES =		security
 
@@ -17,26 +14,21 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 # AGPLv3 only
 PERMIT_PACKAGE =	Yes
 
-FLAVORS =		mysql postgresql
-FLAVOR ?=
-
-WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
-
-SITES.deps =		https://files.bsd.ac/openbsd-distfiles/
-DISTFILES.deps +=	vaultwarden-deps-${GH_TAGNAME}.tgz
+WANTLIB =		${MODCARGO_WANTLIB} crypto m ssl
 
 MODULES =		devel/cargo
-
-CONFIGURE_STYLE =	cargo
-
-SEPARATE_BUILD =	Yes
-
-BUILD_DEPENDS =		security/rust-ring
+MODCARGO_CRATES_KEEP =	libsqlite3-sys
+MODCARGO_FEATURES =	sqlite
 
 RUN_DEPENDS =		www/vaultwarden-web
 
-MODCARGO_CRATES_KEEP +=	libsqlite3-sys
-MODCARGO_FEATURES =	sqlite
+SEPARATE_BUILD =	Yes
+
+CONFIGURE_STYLE =	cargo
+
+FLAVORS =		mysql postgresql
+FLAVOR ?=
+
 .if ${FLAVOR:Mmysql}
 MODCARGO_FEATURES +=	mysql
 WANTLIB +=		mariadb
@@ -47,13 +39,6 @@ MODCARGO_FEATURES +=	postgresql
 WANTLIB +=		pq
 LIB_DEPENDS +=		databases/postgresql
 .endif
-
-SUBST_VARS +=		WRKSRC
-
-post-configure:
-	mv ${WRKDIR}/myvendordir ${WRKSRC}
-	${SUBST_CMD} -m 644 -c ${FILESDIR}/config.vendor ${WRKDIR}/config.vendor
-	cat ${WRKDIR}/config.vendor >> ${WRKDIR}/.cargo/config
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vaultwarden
