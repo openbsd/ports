@@ -3,10 +3,13 @@ COMMENT =		easy whitelist-based HTML-sanitizing tool
 MODPY_EGG_VERSION =	5.0.1
 DISTNAME =		bleach-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		1
+
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		https://github.com/mozilla/bleach
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

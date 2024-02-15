@@ -4,7 +4,11 @@ COMMENT=	common base representation of Python source code
 MODPY_EGG_VERSION=	3.0.1
 DISTNAME=	astroid-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
+
 CATEGORIES=	devel
+
+MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

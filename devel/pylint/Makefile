@@ -4,10 +4,13 @@ COMMENT=		lint-like code checker for Python code
 MODPY_EGG_VERSION=	3.0.2
 DISTNAME=	pylint-${MODPY_EGG_VERSION}
 PKGNAME=	pylint3-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.pylint.org/
+
+MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
