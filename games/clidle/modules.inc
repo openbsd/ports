@@ -14,7 +14,7 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/emirpasic/gods				 v1.12.0 \
 	github.com/flynn/go-shlex				 v0.0.0-20150515145356-3f9db97f8568 \
-	github.com/gliderlabs/ssh				 v0.3.3 \
+	github.com/gliderlabs/ssh				 v0.3.6 \
 	github.com/go-git/gcfg					 v1.5.0 \
 	github.com/go-git/go-billy/v5				 v5.3.1 \
 	github.com/go-git/go-git-fixtures/v4			 v4.2.1 \
@@ -47,12 +47,16 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/testify				 v1.7.0 \
 	github.com/xanzy/ssh-agent				 v0.3.0 \
-	golang.org/x/crypto					 v0.0.0-20210817164053-32db794688a5 \
-	golang.org/x/net					 v0.0.0-20210326060303-6b1517762897 \
-	golang.org/x/sys					 v0.0.0-20211025201205-69cdffdb9359 \
-	golang.org/x/term					 v0.0.0-20210422114643-f5beecf764ed \
-	golang.org/x/text					 v0.3.3 \
-	golang.org/x/tools					 v0.0.0-20180917221912-90fa682c2a6e \
+	github.com/yuin/goldmark				 v1.4.13 \
+	golang.org/x/crypto					 v0.17.0 \
+	golang.org/x/mod					 v0.8.0 \
+	golang.org/x/net					 v0.10.0 \
+	golang.org/x/sync					 v0.1.0 \
+	golang.org/x/sys					 v0.15.0 \
+	golang.org/x/term					 v0.15.0 \
+	golang.org/x/text					 v0.14.0 \
+	golang.org/x/tools					 v0.6.0 \
+	golang.org/x/xerrors					 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/warnings.v0					 v0.1.2 \
 	gopkg.in/yaml.v2					 v2.3.0 \
@@ -64,6 +68,7 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/bubbletea	 v0.19.0 \
 	github.com/davecgh/go-spew		 v1.1.0 \
 	github.com/gliderlabs/ssh		 v0.2.2 \
+	github.com/gliderlabs/ssh		 v0.3.3 \
 	github.com/go-git/go-billy/v5		 v5.2.0 \
 	github.com/kr/pretty			 v0.1.0 \
 	github.com/kr/text			 v0.1.0 \
@@ -79,11 +84,22 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.4.0 \
 	golang.org/x/crypto			 v0.0.0-20190219172222-a4c6cb3142f2 \
+	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210322153248-0c34fe9e7dc2 \
 	golang.org/x/crypto			 v0.0.0-20210421170649-83a5a9bb288b \
 	golang.org/x/crypto			 v0.0.0-20210616213533-5ff15b29337e \
+	golang.org/x/crypto			 v0.0.0-20210817164053-32db794688a5 \
+	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net			 v0.0.0-20210326060303-6b1517762897 \
+	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net			 v0.6.0 \
+	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
+	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
 	golang.org/x/sys			 v0.0.0-20180905080454-ebe1bf3edb33 \
+	golang.org/x/sys			 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys			 v0.0.0-20190507160741-ecd444e8653b \
 	golang.org/x/sys			 v0.0.0-20190916202348-b4ddaad3f8a3 \
 	golang.org/x/sys			 v0.0.0-20200116001909-b77594299b42 \
@@ -97,7 +113,24 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys			 v0.0.0-20210616094352-59db8d763f22 \
 	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
+	golang.org/x/sys			 v0.0.0-20211025201205-69cdffdb9359 \
+	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
+	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/sys			 v0.5.0 \
+	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
+	golang.org/x/term			 v0.0.0-20210422114643-f5beecf764ed \
+	golang.org/x/term			 v0.0.0-20210927222741-03fcf44c2211 \
+	golang.org/x/term			 v0.5.0 \
+	golang.org/x/term			 v0.8.0 \
+	golang.org/x/text			 v0.3.0 \
+	golang.org/x/text			 v0.3.3 \
+	golang.org/x/text			 v0.3.7 \
+	golang.org/x/text			 v0.7.0 \
+	golang.org/x/text			 v0.9.0 \
+	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
+	golang.org/x/tools			 v0.0.0-20191119224855-298f0cb1881e \
+	golang.org/x/tools			 v0.1.12 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1			 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/check.v1			 v1.0.0-20200227125254-8fa46927fb4f \
