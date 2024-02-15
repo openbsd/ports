@@ -5,8 +5,8 @@ USE_NOEXECONLY =	Yes
 # skip PORTROACH limit for newest version
 #PORTROACH=	limit:^3\.1
 
-V=		3.1.4
-DISTNAME=	openssl-${V}-quic1
+V=		3.1.5
+DISTNAME=	opernssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
 EOPENSSL_V=	qopenssl31
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	no-asm
 
 INSTALL_TARGET=		install_sw install_ssldirs install_man_docs
 
-SUBST_VARS+=		SHLIBVER
+SUBST_VARS+=		EOPENSSL_V SHLIBVER
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.

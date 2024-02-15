@@ -6,7 +6,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl31'; \
++	    echo 'includedir=$${prefix}/include/qopenssl31'; \
  	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
  	    echo 'modulesdir=$${libdir}/ossl-modules'; \
  	    echo ''; \
@@ -15,7 +15,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl31'; \
++	    echo 'includedir=$${prefix}/include/qopenssl31'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libssl'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries'; \
@@ -30,7 +30,7 @@ Index: Configurations/unix-Makefile.tmpl
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
 -	    echo 'includedir=$${prefix}/include'; \
-+	    echo 'includedir=$${prefix}/include/eopenssl31'; \
++	    echo 'includedir=$${prefix}/include/qopenssl31'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL'; \
  	    echo 'Description: Secure Sockets Layer and cryptography libraries and tools'; \
