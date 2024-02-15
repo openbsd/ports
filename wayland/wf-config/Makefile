@@ -23,6 +23,7 @@ RUN_DEPENDS +=	graphics/glm
 BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland \
 		wayland/wayland-protocols\
+		devel/cmake \
 		graphics/glm
 LIB_DEPENDS =	textproc/libxml \
 		wayland/libevdev-openbsd>=20231111
