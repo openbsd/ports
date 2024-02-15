@@ -1,6 +1,6 @@
 COMMENT =		digital photo organizer
 
-GNOME_VERSION =		0.32.4
+GNOME_VERSION =		0.32.6
 GNOME_PROJECT =		shotwell
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.4
@@ -20,8 +20,8 @@ WANTLIB += c cairo cairo-gobject exif gcr-base-3 gcr-ui-3 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gexiv2 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gtk-3 intl json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += portal portal-gtk3 raw secret-1 soup-3.0 sqlite3 webkit2gtk-4.1
-WANTLIB += webp webpdemux xml2
+WANTLIB += portal portal-gtk3 raw secret-1 soup-3.0 sqlite3 webp
+WANTLIB += webpdemux xml2
 
 MODULES =		devel/dconf \
 			devel/meson \
@@ -34,7 +34,6 @@ LIB_DEPENDS =		devel/libgee \
 			graphics/libgphoto2 \
 			graphics/libraw \
 			sysutils/flatpak/libportal,-gtk3 \
-			www/webkitgtk4,webkitgtk41 \
 			x11/gnome/gcr
 
 CONFIGURE_ARGS =	-Dinstall_apport_hook=false \

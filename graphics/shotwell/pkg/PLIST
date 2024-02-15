@@ -8,11 +8,13 @@ lib/shotwell/plugins/builtin/
 @so lib/shotwell/plugins/builtin/libshotwell-publishing.so
 @so lib/shotwell/plugins/builtin/libshotwell-transitions.so
 libexec/shotwell/
+@bin libexec/shotwell/shotwell-authenticator
 libexec/shotwell/shotwell-settings-migrator
 @bin libexec/shotwell/shotwell-video-metadata-handler
 @bin libexec/shotwell/shotwell-video-thumbnailer
 @man man/man1/shotwell.1
 share/applications/org.gnome.Shotwell-Viewer.desktop
+share/applications/org.gnome.Shotwell.Auth.desktop
 share/applications/org.gnome.Shotwell.desktop
 share/glib-2.0/schemas/org.gnome.shotwell-extras.gschema.xml
 share/glib-2.0/schemas/org.gnome.shotwell.gschema.xml
@@ -655,6 +657,7 @@ share/icons/hicolor/24x24/apps/org.gnome.Shotwell.png
 share/icons/hicolor/256x256/apps/org.gnome.Shotwell.png
 share/icons/hicolor/32x32/apps/org.gnome.Shotwell.png
 share/icons/hicolor/48x48/apps/org.gnome.Shotwell.png
+share/icons/hicolor/scalable/apps/org.gnome.Shotwell.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Shotwell-symbolic.svg
 share/locale/af/LC_MESSAGES/shotwell.mo
 share/locale/ar/LC_MESSAGES/shotwell.mo
