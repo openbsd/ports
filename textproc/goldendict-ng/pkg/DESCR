@@ -1,0 +1,16 @@
+The Next Generation GoldenDict.
+A feature-rich open-source dictionary lookup program,
+supporting multiple dictionary formats and online dictionaries.
+
+Some significant features of this fork
+
+    webengine with latest html/css feature support
+    support >4GB dictionary
+    support highdpi screen resolution
+    built with xapian as fulltext engine
+    support latest Qt
+    performance optimization (eg. >10000000 headwords support)
+    anki integration
+    dark theme
+    daily auto release support
+    lots of bug fixes and improvements
