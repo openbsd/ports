@@ -1,5 +1,6 @@
 @conflict py-nbconvert-*
 @pkgpath devel/py-nbconvert
+bin/jupyter-dejavu
 bin/jupyter-nbconvert
 lib/python${MODPY_VERSION}/site-packages/nbconvert/
 lib/python${MODPY_VERSION}/site-packages/nbconvert-${MODPY_EGG_VERSION}.dist-info/
@@ -18,9 +19,12 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}__main__.${MO
 lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}nbconvertapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/${MODPY_PYCACHE}nbconvertapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/_version.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/conftest.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}/
@@ -30,12 +34,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}asc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}asciidoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}exporter.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}exporter_locator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}exporter_locator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}html.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}latex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,11 +56,11 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}sli
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}slides.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}templateexporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}templateexporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}webpdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/${MODPY_PYCACHE}webpdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/asciidoc.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/base.py
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/export.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/exporter.py
-lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/exporter_locator.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/html.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/latex.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/markdown.py
@@ -106,11 +106,15 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCACHE}test_slides.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCACHE}test_templateexporter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCACHE}test_templateexporter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCACHE}test_webpdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/${MODPY_PYCACHE}test_webpdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/cheese.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/attachment.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/lablike.html.j2
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/notebook2.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/notebook3.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/pngmetadata.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/prompt_numbers.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/files/rawtest.ipynb
@@ -128,6 +132,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_rst.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_script.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_slides.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_templateexporter.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/tests/test_webpdf.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/exporters/webpdf.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}/
@@ -155,6 +161,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}pando
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}pandoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}widgetsdatatypefilter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/${MODPY_PYCACHE}widgetsdatatypefilter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/ansi.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/citation.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/datatypefilter.py
@@ -195,6 +203,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/tests/test_latex.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/tests/test_markdown.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/tests/test_metadata.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/tests/test_strings.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/filters/widgetsdatatypefilter.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/nbconvertapp.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/postprocessors/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/postprocessors/__init__.py
@@ -298,28 +307,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/fake_kernelmanager.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Check History in Memory.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Clear Output.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Disable Stdin.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Empty Cell.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Factorials.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/HelloWorld.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Inline Image.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Interrupt-IPY6.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Interrupt.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/JupyterWidgets.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Parallel Execute A.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Parallel Execute B.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/SVG.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions with Cell Tags-IPY6.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions with Cell Tags.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions-IPY6.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Skip Exceptions.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Sleep One.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/Unicode.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/UnicodePy3.ipynb
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/python.png
-lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/update-display-id.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/files/MixedMarkdown.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_clearmetadata.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_clearoutput.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/preprocessors/tests/test_coalescestreams.py
@@ -337,37 +326,10 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbconvert/resources/style.min.css
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/README.md
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/asciidoc.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/basic.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/celltags.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/full.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/mathjax.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/html/slides_reveal.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/article.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/base.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/document_contents.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/report.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/skeleton/
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/skeleton/display_priority.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/skeleton/null.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_bw_ipython.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_bw_python.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_ipython.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_jupyter.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/latex/style_python.tplx
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/markdown.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/python.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/rst.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/script.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/skeleton/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/skeleton/README.md
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/skeleton/display_priority.tpl
-lib/python${MODPY_VERSION}/site-packages/nbconvert/templates/skeleton/null.tpl
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/${MODPY_PYCACHE}/
@@ -391,6 +353,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/ept
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/exporter_entrypoint/eptest.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/fake_exporters.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/Unexecuted_widget.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/Unexecuted_widget_2.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/Widget_List.ipynb
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/${MODPY_PYCACHE}hello.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -404,10 +368,12 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/hello.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/jupyter_nbconvert_config.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/latex-linked-image.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/markdown_display_priority.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook1.html
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook1.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook2.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook3_with_errors.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook4_jpeg.ipynb
+lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook5_embed_images.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook_jl.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/notebook_tags.ipynb
 lib/python${MODPY_VERSION}/site-packages/nbconvert/tests/files/override.py
@@ -419,6 +385,8 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}_contextlib_chdir.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}_contextlib_chdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -429,8 +397,11 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}lexers.
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}lexers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}pandoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}pandoc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/_contextlib_chdir.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/io.py
@@ -450,6 +421,7 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/${MODPY_PYCACHE}t
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_pandoc.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/tests/test_version.py
+lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/text.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/utils/version.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/__init__.py
@@ -482,3 +454,69 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/tests/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/tests/test_debug.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/tests/test_files.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/tests/test_stdout.py
+share/jupyter/
+share/jupyter/nbconvert/
+share/jupyter/nbconvert/templates/
+share/jupyter/nbconvert/templates/asciidoc/
+share/jupyter/nbconvert/templates/asciidoc/conf.json
+share/jupyter/nbconvert/templates/asciidoc/index.asciidoc.j2
+share/jupyter/nbconvert/templates/base/
+share/jupyter/nbconvert/templates/base/celltags.j2
+share/jupyter/nbconvert/templates/base/display_priority.j2
+share/jupyter/nbconvert/templates/base/jupyter_widgets.html.j2
+share/jupyter/nbconvert/templates/base/mathjax.html.j2
+share/jupyter/nbconvert/templates/base/null.j2
+share/jupyter/nbconvert/templates/basic/
+share/jupyter/nbconvert/templates/basic/conf.json
+share/jupyter/nbconvert/templates/basic/index.html.j2
+share/jupyter/nbconvert/templates/classic/
+share/jupyter/nbconvert/templates/classic/base.html.j2
+share/jupyter/nbconvert/templates/classic/conf.json
+share/jupyter/nbconvert/templates/classic/index.html.j2
+share/jupyter/nbconvert/templates/classic/static/
+share/jupyter/nbconvert/templates/classic/static/style.css
+share/jupyter/nbconvert/templates/compatibility/
+share/jupyter/nbconvert/templates/compatibility/display_priority.tpl
+share/jupyter/nbconvert/templates/compatibility/full.tpl
+share/jupyter/nbconvert/templates/lab/
+share/jupyter/nbconvert/templates/lab/base.html.j2
+share/jupyter/nbconvert/templates/lab/conf.json
+share/jupyter/nbconvert/templates/lab/index.html.j2
+share/jupyter/nbconvert/templates/lab/static/
+share/jupyter/nbconvert/templates/lab/static/index.css
+share/jupyter/nbconvert/templates/lab/static/theme-dark.css
+share/jupyter/nbconvert/templates/lab/static/theme-light.css
+share/jupyter/nbconvert/templates/latex/
+share/jupyter/nbconvert/templates/latex/base.tex.j2
+share/jupyter/nbconvert/templates/latex/conf.json
+share/jupyter/nbconvert/templates/latex/display_priority.j2
+share/jupyter/nbconvert/templates/latex/document_contents.tex.j2
+share/jupyter/nbconvert/templates/latex/index.tex.j2
+share/jupyter/nbconvert/templates/latex/null.j2
+share/jupyter/nbconvert/templates/latex/report.tex.j2
+share/jupyter/nbconvert/templates/latex/style_bw_ipython.tex.j2
+share/jupyter/nbconvert/templates/latex/style_bw_python.tex.j2
+share/jupyter/nbconvert/templates/latex/style_ipython.tex.j2
+share/jupyter/nbconvert/templates/latex/style_jupyter.tex.j2
+share/jupyter/nbconvert/templates/latex/style_python.tex.j2
+share/jupyter/nbconvert/templates/markdown/
+share/jupyter/nbconvert/templates/markdown/conf.json
+share/jupyter/nbconvert/templates/markdown/index.md.j2
+share/jupyter/nbconvert/templates/python/
+share/jupyter/nbconvert/templates/python/conf.json
+share/jupyter/nbconvert/templates/python/index.py.j2
+share/jupyter/nbconvert/templates/reveal/
+share/jupyter/nbconvert/templates/reveal/base.html.j2
+share/jupyter/nbconvert/templates/reveal/conf.json
+share/jupyter/nbconvert/templates/reveal/index.html.j2
+share/jupyter/nbconvert/templates/reveal/static/
+share/jupyter/nbconvert/templates/reveal/static/custom_reveal.css
+share/jupyter/nbconvert/templates/rst/
+share/jupyter/nbconvert/templates/rst/conf.json
+share/jupyter/nbconvert/templates/rst/index.rst.j2
+share/jupyter/nbconvert/templates/script/
+share/jupyter/nbconvert/templates/script/conf.json
+share/jupyter/nbconvert/templates/script/script.j2
+share/jupyter/nbconvert/templates/webpdf/
+share/jupyter/nbconvert/templates/webpdf/conf.json
+share/jupyter/nbconvert/templates/webpdf/index.pdf.j2
