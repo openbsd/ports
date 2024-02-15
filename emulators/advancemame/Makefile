@@ -2,9 +2,8 @@ BROKEN-powerpc =	clang-10 hangs indefinitely
 
 COMMENT =	MAME port with advanced video support for monitors and TVs
 
-V =		3.9
+V =		3.10
 DISTNAME =	advancemame-$V
-REVISION =	2
 
 CATEGORIES =	emulators games
 
