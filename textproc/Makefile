@@ -437,6 +437,7 @@
      SUBDIR += py-jellyfish,python3
      SUBDIR += py-jsonpatch,python3
      SUBDIR += py-jsonpointer,python3
+     SUBDIR += py-jupyterlab_pygments,python3
      SUBDIR += py-lark,python3
      SUBDIR += py-license-expression,python3
      SUBDIR += py-lxml,python3
