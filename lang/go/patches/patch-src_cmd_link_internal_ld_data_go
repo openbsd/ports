@@ -1,40 +1,31 @@
 Index: src/cmd/link/internal/ld/data.go
 --- src/cmd/link/internal/ld/data.go.orig
 +++ src/cmd/link/internal/ld/data.go
-@@ -273,6 +273,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
- 		}
+@@ -76,13 +76,16 @@ func maxSizeTrampolines(ctxt *Link, ldr *loader.Loader
+ 		return 0
+ 	}
  
- 		var o int64
-+		var archReloc bool
- 		switch rt {
- 		default:
- 			switch siz {
-@@ -287,6 +288,7 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
- 			case 8:
- 				o = int64(target.Arch.ByteOrder.Uint64(P[off:]))
- 			}
-+			archReloc = true
- 			out, n, ok := thearch.Archreloc(target, ldr, syms, r, s, o)
- 			if target.IsExternal() {
- 				nExtReloc += n
-@@ -580,17 +582,17 @@ func (st *relocSymState) relocsym(s loader.Sym, P []by
- 		case 1:
- 			P[off] = byte(int8(o))
- 		case 2:
--			if o != int64(int16(o)) {
-+			if !archReloc && o != int64(int16(o)) {
- 				st.err.Errorf(s, "relocation address for %s is too big: %#x", ldr.SymName(rs), o)
- 			}
- 			target.Arch.ByteOrder.PutUint16(P[off:], uint16(o))
- 		case 4:
- 			if rt == objabi.R_PCREL || rt == objabi.R_CALL {
--				if o != int64(int32(o)) {
-+				if !archReloc && o != int64(int32(o)) {
- 					st.err.Errorf(s, "pc-relative relocation address for %s is too big: %#x", ldr.SymName(rs), o)
- 				}
- 			} else {
--				if o != int64(int32(o)) && o != int64(uint32(o)) {
-+				if !archReloc && o != int64(int32(o)) && o != int64(uint32(o)) {
- 					st.err.Errorf(s, "non-pc-relative relocation address for %s is too big: %#x", ldr.SymName(rs), uint64(o))
- 				}
- 			}
+-	n := uint64(0)
++	n, sdn := uint64(0), uint64(0)
+ 	relocs := ldr.Relocs(s)
+ 	for ri := 0; ri < relocs.Count(); ri++ {
+ 		r := relocs.At(ri)
+ 		if r.Type().IsDirectCallOrJump() {
+ 			n++
+ 		}
++		if rs := r.Sym(); rs != 0 && ldr.SymType(rs) == sym.SDYNIMPORT {
++			sdn++
++		}
+ 	}
+ 
+ 	switch {
+@@ -94,6 +97,9 @@ func maxSizeTrampolines(ctxt *Link, ldr *loader.Loader
+ 		return n * 16 // Trampolines in PPC64 are 4 instructions.
+ 	case ctxt.IsRISCV64():
+ 		return n * 8 // Trampolines in RISCV64 are 2 instructions.
++	}
++	if ctxt.IsMIPS64() {
++		return sdn * 28 // Trampolines (SDYNIMPORT) for MIPS64 are 7 instructions.
+ 	}
+ 	panic("unreachable")
+ }

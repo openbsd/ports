@@ -10,13 +10,3 @@ Index: src/internal/platform/supported.go
  		return goarch == "amd64"
  	default:
  		return false
-@@ -86,8 +86,7 @@ func MustLinkExternal(goos, goarch string, withCgo boo
- 	if withCgo {
- 		switch goarch {
- 		case "loong64",
--			"mips", "mipsle", "mips64", "mips64le",
--			"riscv64":
-+			"mips", "mipsle", "mips64", "mips64le":
- 			// Internally linking cgo is incomplete on some architectures.
- 			// https://go.dev/issue/14449
- 			return true

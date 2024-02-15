@@ -1,57 +1,7 @@
 Index: src/cmd/internal/objabi/reloctype.go
 --- src/cmd/internal/objabi/reloctype.go.orig
 +++ src/cmd/internal/objabi/reloctype.go
-@@ -277,14 +277,43 @@ const (
- 	// AUIPC + S-type instruction pair.
- 	R_RISCV_PCREL_STYPE
- 
--	// R_RISCV_TLS_IE_ITYPE resolves a 32-bit TLS initial-exec TOC offset
--	// address using an AUIPC + I-type instruction pair.
--	R_RISCV_TLS_IE_ITYPE
-+	// R_RISCV_TLS_IE resolves a 32-bit TLS initial-exec address using an
-+	// AUIPC + I-type instruction pair.
-+	R_RISCV_TLS_IE
- 
--	// R_RISCV_TLS_IE_STYPE resolves a 32-bit TLS initial-exec TOC offset
--	// address using an AUIPC + S-type instruction pair.
--	R_RISCV_TLS_IE_STYPE
-+	// R_RISCV_TLS_LE_ITYPE resolves a 32-bit TLS local-exec address using an
-+	// LUI + I-type instruction sequence.
-+	R_RISCV_TLS_LE
- 
-+	// R_RISCV_GOT_HI20 resolves the high 20 bits of a 32-bit PC-relative GOT
-+	// address.
-+	R_RISCV_GOT_HI20
-+
-+	// R_RISCV_PCREL_32 resolves a 32-bit PC-relative address to an absolute
-+	// value.
-+	R_RISCV_PCREL_32
-+
-+	// R_RISCV_PCREL_HI20 resolves the high 20 bits of a 32-bit PC-relative
-+	// address.
-+	R_RISCV_PCREL_HI20
-+
-+	// R_RISCV_PCREL_LO12_I resolves the low 12 bits of a 32-bit PC-relative
-+	// address using an I-type instruction.
-+	R_RISCV_PCREL_LO12_I
-+
-+	// R_RISCV_PCREL_LO12_S resolves the low 12 bits of a 32-bit PC-relative
-+	// address using an S-type instruction.
-+	R_RISCV_PCREL_LO12_S
-+
-+	// R_RISCV_BRANCH resolves a 12-bit PC-relative branch offset.
-+	R_RISCV_BRANCH
-+
-+	// R_RISCV_RVC_BRANCH resolves an 8-bit PC-relative branch offset.
-+	R_RISCV_RVC_BRANCH
-+
-+	// R_RISCV_RVC_JUMP resolves an 11-bit PC-relative jump offset.
-+	R_RISCV_RVC_JUMP
-+
- 	// R_PCRELDBL relocates s390x 2-byte aligned PC-relative addresses.
- 	// TODO(mundaym): remove once variants can be serialized - see issue 14218.
- 	R_PCRELDBL
-@@ -323,9 +352,24 @@ const (
+@@ -357,9 +357,24 @@ const (
  	// R_ADDRMIPSU (only used on mips/mips64) resolves to the sign-adjusted "upper" 16
  	// bits (bit 16-31) of an external address, by encoding it into the instruction.
  	R_ADDRMIPSU
@@ -66,12 +16,12 @@ Index: src/cmd/internal/objabi/reloctype.go
 +	// R_MIPS_GPREL_LO16 resolves to the lower 16 bits of a GP relative address.
 +	R_MIPS_GPREL_LO16
 +
-+	// R_MIPS_CALL16 resolves to the lower 16 bits of a PLT entry address, for a
-+	// call made via the GOT.
++	// R_MIPS_CALL16 resolves to a 16 bit offset into the GOT, which contains the
++	// the address for a PLT entry.
 +	R_MIPS_CALL16
 +
 +	// R_MIPS_JALR marks a JALR instruction of an external call, which may be
-+	// optimized by the linker.
++	// optimized by the external linker.
 +	R_MIPS_JALR
  
  	// R_ADDRCUOFF resolves to a pointer-sized offset from the start of the

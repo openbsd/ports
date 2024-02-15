@@ -1,7 +1,7 @@
 Index: src/runtime/defs_openbsd_mips64.go
 --- src/runtime/defs_openbsd_mips64.go.orig
 +++ src/runtime/defs_openbsd_mips64.go
-@@ -40,6 +40,8 @@ const (
+@@ -41,6 +41,8 @@ const (
  	_SA_RESTART = 0x2
  	_SA_ONSTACK = 0x1
  
@@ -10,7 +10,7 @@ Index: src/runtime/defs_openbsd_mips64.go
  	_SIGHUP    = 0x1
  	_SIGINT    = 0x2
  	_SIGQUIT   = 0x3
-@@ -168,3 +170,10 @@ type keventt struct {
+@@ -169,3 +171,10 @@ type keventt struct {
  	data   int64
  	udata  *byte
  }

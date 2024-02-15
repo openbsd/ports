@@ -9,7 +9,7 @@ Index: src/cmd/link/internal/mips64/asm.go
  )
  
  var (
-@@ -135,56 +136,71 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+@@ -135,50 +136,65 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  
  	// mips64 ELF relocation (endian neutral)
  	//		offset	uint64
@@ -89,14 +89,7 @@ Index: src/cmd/link/internal/mips64/asm.go
  	out.Write64(uint64(addend))
  
  	return true
- }
- 
--func elfsetupplt(ctxt *ld.Link, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
-+func elfsetupplt(ctxt *ld.Link, ldr *loader.Loader, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
- 	if plt.Size() != 0 {
- 		return
- 	}
-@@ -275,6 +291,97 @@ func machoreloc1(*sys.Arch, *ld.OutBuf, *loader.Loader
+@@ -275,6 +291,88 @@ func machoreloc1(*sys.Arch, *ld.OutBuf, *loader.Loader
  	return false
  }
  
@@ -159,42 +152,33 @@ Index: src/cmd/link/internal/mips64/asm.go
 +}
 +
 +func genCallTramp(arch *sys.Arch, linkmode ld.LinkMode, ldr *loader.Loader, tramp *loader.SymbolBuilder, target loader.Sym, offset int64) {
-+	// Generate a trampoline that loads register 25 (t9) and jumps to that address.
-+	// The JALR is needed for the relocation and PIC code requires that t9 contain
++	// Generate a trampoline that loads register $25 and jumps to that address.
++	// The JALR is needed for the relocation and PIC code requires that $25 contain
 +	// the function address when called. The offset is based off the value that gp
-+	// was initialised to via the dynamic linker. This is loaded into register 23
-+	// (s7) via a pair of GP relative relocations.
++	// was initialised to via the dynamic linker. This is loaded into register $23
++	// via a pair of GP relative relocations. The address of the trampoline is
++	// expected to already be in $25 from the call to the trampoline.
 +
-+	// Determine address of trampoline (our t9), preserving RA.
-+	// The bal instruction gives us the address three instructions
-+	// or 12 bytes into the trampoline.
-+	tramp.AddUint32(arch, 0x03e0b825) // move   s7,ra
-+	tramp.AddUint32(arch, 0x04110001) // bal    1(pc)
-+	tramp.AddUint32(arch, 0x00000000) // nop
-+	tramp.AddUint32(arch, 0x03e0c825) // move   t9,ra
-+	tramp.AddUint32(arch, 0x02e0f825) // move   ra,s7
-+	tramp.AddUint32(arch, 0x6339fff4) // daddi  t9,t9,-12
-+
-+	// Load R23 (aka REGTMP aka s7) with gp address.
++	// Load R23 (aka REGTMP) with gp address.
 +	tramp.AddSymRef(arch, tramp.Sym(), 0, objabi.R_MIPS_GPREL_HI16, 4)
-+	tramp.SetUint32(arch, tramp.Size()-4, 0x3c170000) // lui    s7,0x0
-+	tramp.AddUint32(arch, 0x02f9b82d)                 // daddu  s7,s7,t9
++	tramp.SetUint32(arch, tramp.Size()-4, 0x3c170000) // lui    $23, 0
++	tramp.AddUint32(arch, 0x02f9b82d)                 // daddu  $23, $23, $25
 +	tramp.AddSymRef(arch, tramp.Sym(), 0, objabi.R_MIPS_GPREL_LO16, 4)
-+	tramp.SetUint32(arch, tramp.Size()-4, 0x66f70000) // daddiu s7,s7,0
-+	tramp.AddUint32(arch, 0x02e0e025)                 // move   gp,s7
++	tramp.SetUint32(arch, tramp.Size()-4, 0x66f70000) // daddiu $23, $23, 0
++	tramp.AddUint32(arch, 0x02e0e025)                 // move   $gp, $23
 +
-+	// Load R25 (aka t9) with function address and indirect call.
++	// Load R25 with function address and indirect call.
 +	tramp.AddSymRef(arch, target, offset, objabi.R_MIPS_CALL16, 4)
-+	tramp.SetUint32(arch, tramp.Size()-4, 0xdef90000) // ld     t9,0(s7)
++	tramp.SetUint32(arch, tramp.Size()-4, 0xdef90000) // ld     $25, 0($23)
 +	tramp.AddSymRef(arch, target, offset, objabi.R_MIPS_JALR, 4)
-+	tramp.SetUint32(arch, tramp.Size()-4, 0x03200009) // jalr   zero,t9
++	tramp.SetUint32(arch, tramp.Size()-4, 0x03200009) // jalr   $0, $25
 +	tramp.AddUint32(arch, 0x00000000)                 // nop
 +}
 +
  func archreloc(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, r loader.Reloc, s loader.Sym, val int64) (o int64, nExtReloc int, ok bool) {
  	if target.IsExternal() {
  		switch r.Type() {
-@@ -285,7 +392,11 @@ func archreloc(target *ld.Target, ldr *loader.Loader, 
+@@ -285,7 +383,11 @@ func archreloc(target *ld.Target, ldr *loader.Loader, 
  			objabi.R_ADDRMIPSU,
  			objabi.R_ADDRMIPSTLS,
  			objabi.R_CALLMIPS,
@@ -207,7 +191,7 @@ Index: src/cmd/link/internal/mips64/asm.go
  			return val, 1, true
  		}
  	}
-@@ -335,7 +446,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
+@@ -335,7 +437,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
  
  	case objabi.R_ADDRMIPSTLS,
  		objabi.R_CALLMIPS,

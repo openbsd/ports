@@ -1,7 +1,7 @@
 Index: src/runtime/asm_mips64x.s
 --- src/runtime/asm_mips64x.s.orig
 +++ src/runtime/asm_mips64x.s
-@@ -479,9 +479,12 @@ TEXT ·cgocallback(SB),NOSPLIT,$24-24
+@@ -502,9 +502,12 @@ TEXT ·cgocallback(SB),NOSPLIT,$24-24
  
  loadg:
  	// Load m and g from thread-local storage.

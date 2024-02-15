@@ -1,7 +1,7 @@
 Index: src/runtime/proc.go
 --- src/runtime/proc.go.orig
 +++ src/runtime/proc.go
-@@ -1492,10 +1492,8 @@ func startTheWorldWithSema() int64 {
+@@ -1624,10 +1624,8 @@ func startTheWorldWithSema(now int64, w worldStop) int
  // via libcall.
  func usesLibcall() bool {
  	switch GOOS {
@@ -9,11 +9,11 @@ Index: src/runtime/proc.go
 +	case "aix", "darwin", "illumos", "ios", "openbsd", "solaris", "windows":
  		return true
 -	case "openbsd":
--		return GOARCH == "386" || GOARCH == "amd64" || GOARCH == "arm" || GOARCH == "arm64"
+-		return GOARCH != "mips64"
  	}
  	return false
  }
-@@ -1504,13 +1502,8 @@ func usesLibcall() bool {
+@@ -1636,10 +1634,8 @@ func usesLibcall() bool {
  // system-allocated stack.
  func mStackIsSystemAllocated() bool {
  	switch GOOS {
@@ -21,10 +21,7 @@ Index: src/runtime/proc.go
 +	case "aix", "darwin", "illumos", "ios", "openbsd", "plan9", "solaris", "windows":
  		return true
 -	case "openbsd":
--		switch GOARCH {
--		case "386", "amd64", "arm", "arm64":
--			return true
--		}
+-		return GOARCH != "mips64"
  	}
  	return false
  }
