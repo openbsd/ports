@@ -1,7 +1,6 @@
 @pkgpath www/py-betamax
 lib/python${MODPY_VERSION}/site-packages/betamax/
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/betamax-${MODPY_EGG_VERSION}.dist-info/RECORD
