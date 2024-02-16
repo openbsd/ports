@@ -1,0 +1,2 @@
+A fork of the Flask-cache extension which adds easy cache support to
+Flask.
