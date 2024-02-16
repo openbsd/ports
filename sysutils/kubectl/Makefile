@@ -1,6 +1,6 @@
 COMMENT =		command line tool for controlling Kubernetes clusters
 
-V =			1.29.1
+V =			1.29.2
 GH_ACCOUNT =		kubernetes
 GH_PROJECT =		kubernetes
 GH_TAGNAME =		v${V}
