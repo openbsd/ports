@@ -51,7 +51,6 @@
      SUBDIR += goaccess
      SUBDIR += gotosocial
      SUBDIR += gumbo
-     SUBDIR += h2o
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
      SUBDIR += haserl,no_lua,static
