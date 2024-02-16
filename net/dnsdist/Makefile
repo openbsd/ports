@@ -1,6 +1,6 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.8.3
+DISTNAME=		dnsdist-1.9.0
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
@@ -10,17 +10,27 @@ HOMEPAGE=		https://dnsdist.org/
 MAINTAINER=		Otto Moerbeek <otto@drijf.net>
 
 # GPLv2 only
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-WANTLIB +=		${MODLUA_WANTLIB} c curses edit m \
-			fstrm h2o-evloop>=1 nghttp2 pthread \
-			z crypto ssl sodium ${COMPILER_LIBCXX}
+FLAVORS=		h3
+FLAVOR?=
+
+WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} curses crypto edit m \
+			fstrm nghttp2 pthread sodium 
 
 SITES=			https://downloads.powerdns.com/releases/
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 USE_GMAKE=		Yes
+
+SYSCONFDIR=		${BASESYSCONFDIR}/dnsdist
+
+COMPILER =		base-clang ports-gcc
+
+MODULES+=		lang/lua
+MODLUA_VERSION=		5.3
+
 
 CONFIGURE_ARGS+=	--without-gnutls \
 			--disable-hardening \
@@ -34,27 +44,43 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--enable-dnscrypt \
 			--enable-dnstap \
 			--enable-dns-over-https
-#
-# On at least amd64 using clang13 dnsdist-lua-bindings.cc gets
-# miscompiled with -O2, resulting in a segfault on startup
-#
+
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBEDIT_LIBS='-ledit -lcurses' \
-			LIBEDIT_CFLAGS=' '
-SYSCONFDIR=		${BASESYSCONFDIR}/dnsdist
-
-COMPILER =		base-clang ports-gcc
-
-MODULES+=		lang/lua
-MODLUA_VERSION=		5.3
+			LIBEDIT_LIBS="-ledit -lcurses" \
+			LIBEDIT_CFLAGS=" "
 
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
 			security/libsodium \
 			net/libfstrm \
-			www/h2o \
 			www/nghttp2
+
+
+.if ${FLAVOR:L:Mh3}
+
+# Lua module overrides FULLPKGNAME
+FULLPKGNAME=		${PKGNAME}-${FLAVOR}
+CONFIGURE_ARGS+=	--with-libcrypto=${LOCALBASE}/eboringssl \
+			--with-quiche \
+			--enable-dns-over-quic \
+			--enable-dns-over-http3 \
+
+# OpenBSD libtool seems to leave out boringssl libs, because they have the same
+# name as system libs, so explicitly refer to the .a files.
+CONFIGURE_ENV+=		LIBSSL_CFLAGS="-I${LOCALBASE}/eboringssl/include \
+				-DDISABLE_OCSP_STAPLING" \
+			LIBSSL_LIBS="${LOCALBASE}/eboringssl/lib/libssl.a \
+				${LOCALBASE}/eboringssl/lib/libcrypto.a" \
+			QUICHE_CFLAGS=" " \
+			QUICHE_LIBS='-lquiche'
+BUILD_DEPENDS+=		net/quiche \
+			security/boringssl/head
+.else
+
+WANTLIB+=		ssl
+
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/dnsdist

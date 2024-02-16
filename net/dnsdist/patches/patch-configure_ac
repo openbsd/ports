@@ -11,4 +11,4 @@ Index: configure.ac
 +CXXFLAGS="-g -Wall -Wextra -Wshadow -Wno-unused-parameter -Wmissing-declarations -Wredundant-decls -fvisibility=hidden $CXXFLAGS"
  
  PDNS_WITH_LIBSODIUM
- PDNS_CHECK_DNSTAP([auto])
+ PDNS_WITH_QUICHE
