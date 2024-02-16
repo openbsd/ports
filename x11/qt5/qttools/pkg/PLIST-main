@@ -1,4 +1,6 @@
 @conflict qt5-<5.6
+@conflict qwebview-*
+@pkgpath x11/qt5/qttools,-webview
 bin/assistant-qt5
 bin/designer-qt5
 bin/linguist-qt5
