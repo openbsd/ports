@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1606 2024/02/15 12:35:18 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1607 2024/02/16 15:33:55 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1909,6 +1909,7 @@ setup_obsolete_reason(
 	5 => 'libxmlbird',
 	5 => 'py-m2r',
 	64 => 'qsyncthingtray',
+	3 => 'h2o',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
