@@ -1,14 +1,12 @@
 Index: OpenGL/__init__.py
 --- OpenGL/__init__.py.orig
 +++ OpenGL/__init__.py
-@@ -212,6 +212,10 @@ TYPE_ANNOTATIONS = False
- from OpenGL.plugins import PlatformPlugin, FormatHandler
- PlatformPlugin( 'nt', 'OpenGL.platform.win32.Win32Platform' )
- PlatformPlugin( 'linux2', 'OpenGL.platform.glx.GLXPlatform' )
-+PlatformPlugin( 'openbsd4', 'OpenGL.platform.glx.GLXPlatform' )
-+PlatformPlugin( 'openbsd5', 'OpenGL.platform.glx.GLXPlatform' )
-+PlatformPlugin( 'openbsd6', 'OpenGL.platform.glx.GLXPlatform' )
-+PlatformPlugin( 'openbsd7', 'OpenGL.platform.glx.GLXPlatform' )
- PlatformPlugin( 'darwin', 'OpenGL.platform.darwin.DarwinPlatform' )
- PlatformPlugin( 'posix', 'OpenGL.platform.glx.GLXPlatform' )
- PlatformPlugin( 'osmesa', 'OpenGL.platform.osmesa.OSMesaPlatform')
+@@ -222,6 +222,8 @@ PlatformPlugin("glx", "OpenGL.platform.glx.GLXPlatform
+ PlatformPlugin("posix", "OpenGL.platform.glx.GLXPlatform")
+ PlatformPlugin("x11", "OpenGL.platform.glx.GLXPlatform")  # xdg session type
+ PlatformPlugin("osmesa", "OpenGL.platform.osmesa.OSMesaPlatform")
++PlatformPlugin("openbsd7", "OpenGL.platform.glx.GLXPlatform")
++PlatformPlugin("openbsd8", "OpenGL.platform.glx.GLXPlatform")
+ PlatformPlugin("egl", "OpenGL.platform.egl.EGLPlatform")
+ PlatformPlugin("wayland", "OpenGL.platform.egl.EGLPlatform")  # xdg session type
+ PlatformPlugin(

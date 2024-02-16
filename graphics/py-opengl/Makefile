@@ -1,8 +1,7 @@
 COMMENT =		Python bindings for OpenGL
-MODPY_EGG_VERSION =	3.1.3b2
+MODPY_EGG_VERSION =	3.1.7
 DISTNAME =		PyOpenGL-${MODPY_EGG_VERSION}
 PKGNAME =		py-opengl-${MODPY_EGG_VERSION}
-REVISION =		6
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://pyopengl.sourceforge.net/
@@ -12,6 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+# py2 still used by fretsonfire
 FLAVORS=		python3
 FLAVOR?=
 
