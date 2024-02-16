@@ -440,6 +440,8 @@
      SUBDIR += py-feedgenerator,python3
      SUBDIR += py-flasgger,python3
      SUBDIR += py-flask,python3
+     SUBDIR += py-flask-apscheduler,python3
+     SUBDIR += py-flask-caching,python3
      SUBDIR += py-flask-cors,python3
      SUBDIR += py-flask-login,python3
      SUBDIR += py-flask-principal,python3
