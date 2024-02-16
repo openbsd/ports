@@ -1,6 +1,7 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	4.9.3
+# 5.x needs Cython 3.0.7+
+MODPY_EGG_VERSION=	4.9.4
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 
