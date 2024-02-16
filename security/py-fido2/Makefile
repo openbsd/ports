@@ -1,6 +1,6 @@
 COMMENT =		Python module to communicate with USB FIDO devices
 
-MODPY_EGG_VERSION =	1.1.1
+MODPY_EGG_VERSION =	1.1.2
 
 DISTNAME =		fido2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
