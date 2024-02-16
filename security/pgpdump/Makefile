@@ -1,19 +1,19 @@
-COMMENT=		PGP packet visualizer
+COMMENT=	PGP packet visualizer
 
-DISTNAME=		pgpdump-0.35
-CATEGORIES=		security
+DISTNAME=	pgpdump-0.36
+CATEGORIES=	security
 
 # https://github.com/kazu-yamamoto/pgpdump
-HOMEPAGE=		https://www.mew.org/~kazu/proj/pgpdump/
+HOMEPAGE=	https://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c z
 
-SITES=			${HOMEPAGE}
+SITES=		${HOMEPAGE}
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE= gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
