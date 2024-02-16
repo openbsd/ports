@@ -62,13 +62,26 @@ Syncthing more file descriptors by adding the following to login.conf(5):
                 :openfiles-max=4096:\
                 :tc=daemon:
 
+If you run Syncthing manually, you can add the following to the appropriate
+login class. If you're in the staff login class, you can add the following
+lines under the staff section:
+
+       staff:\
+                [...]
+                :openfiles-cur=4096:\
+                :openfiles-max=4096:\
+                [...]
+
 Don't forget to rebuild the login.conf.db file (if necessary):
 
-        # [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+       # [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
 
 Note that in addition to ulimits, there is a kernel-level file descriptor limit
 which may also need to be adjusted. This limit is managed through the
-kern.maxfiles sysctl(8).
+kern.maxfiles sysctl(8):
+
+       # sysctl kern.maxfiles=4096
+       # echo "kern.maxfiles=4096" >> /etc/sysctl.conf
 
 Another option is to turn off the file watcher and use only periodic scans.
 This will result in much reduced file descriptor usage at the cost of a
