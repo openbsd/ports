@@ -125,6 +125,10 @@ puppetboard/puppetboard/templates/catalog.html
 puppetboard/puppetboard/templates/catalog_compare.html
 puppetboard/puppetboard/templates/catalogs.html
 puppetboard/puppetboard/templates/catalogs.json.tpl
+puppetboard/puppetboard/templates/class.html
+puppetboard/puppetboard/templates/class_resource.json.tpl
+puppetboard/puppetboard/templates/classes.html
+puppetboard/puppetboard/templates/classes.json.tpl
 puppetboard/puppetboard/templates/fact.html
 puppetboard/puppetboard/templates/facts.html
 puppetboard/puppetboard/templates/failures.html
@@ -146,6 +150,7 @@ puppetboard/puppetboard/utils.py
 puppetboard/puppetboard/version.py
 puppetboard/puppetboard/views/
 puppetboard/puppetboard/views/catalogs.py
+puppetboard/puppetboard/views/classes.py
 puppetboard/puppetboard/views/dailychart.py
 puppetboard/puppetboard/views/facts.py
 puppetboard/puppetboard/views/failures.py
