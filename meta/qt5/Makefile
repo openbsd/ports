@@ -4,8 +4,6 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
-REVISION-examples =	0
-REVISION-main =		1
 
 MULTI_PACKAGES =	-main -examples
 
