@@ -1,6 +1,6 @@
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	8.10.1
+MODPY_EGG_VERSION =	8.13.0
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/.post/pl/}
 
