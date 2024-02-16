@@ -4,30 +4,7 @@ https://invent.kde.org/frameworks/kcoreaddons/-/merge_requests/420
 Index: src/lib/util/kprocesslist_unix.cpp
 --- src/lib/util/kprocesslist_unix.cpp.orig
 +++ src/lib/util/kprocesslist_unix.cpp
-@@ -40,17 +40,40 @@ bool isUnixProcessId(const QString &procname)
-     });
- }
- 
-+// Determine UNIX processes info by running ps
-+bool getUnixProcessInfo(qint64 procId, KProcessInfo &processInfo)
-+{
-+    KProcessList::KProcessInfoList plist = processInfoList();
-+    auto foundInfo = std::find_if(plist.begin(),
-+                                  plist.end(),
-+                                  [&procId](const KProcessList::KProcessInfo &info) {
-+        return procId == info.pid();
-+    });
-+    if (foundInfo != plist.end()) {
-+        const auto &info = *foundInfo;
-+        processInfo = KProcessInfo(info.pid(), info.command(), info.name(), info.user());
-+        return true;
-+    }
-+    return false;
-+}
-+
- // Determine UNIX processes by running ps
- KProcessInfoList unixProcessListPS()
- {
+@@ -63,11 +63,17 @@ KProcessInfoList unixProcessListPS()
      KProcessInfoList rc;
      QProcess psProcess;
      const QStringList args{
@@ -45,23 +22,3 @@ Index: src/lib/util/kprocesslist_unix.cpp
  #else
          QStringLiteral("pid,state,user,comm,cmd"),
  #endif
-@@ -170,13 +193,15 @@ KProcessInfoList KProcessList::processInfoList()
- }
- 
- // Determine UNIX process by reading "/proc".
--//
--// TODO: Use ps if "/proc" does not exist or is bogus; use code
--//       from unixProcessListPS() but add a `-p pid` argument.
--//
- KProcessInfo KProcessList::processInfo(qint64 pid)
- {
-     KProcessInfo processInfo;
-     getProcessInfo(QString::number(pid), processInfo);
-+    const QDir procDir(QStringLiteral("/proc/"));
-+    if (procDir.exists()) {
-+        getProcessInfo(QString::number(pid), processInfo);
-+    } else {
-+        getUnixProcessInfo(pid, processInfo);
-+    }
-     return processInfo;
- }
