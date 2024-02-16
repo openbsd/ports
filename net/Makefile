@@ -72,6 +72,7 @@
      SUBDIR += dnscontrol
      SUBDIR += dnscrypt-proxy
      SUBDIR += dnsdist
+     SUBDIR += dnsdist,h3
      SUBDIR += dnsmasq
      SUBDIR += dnsperf
      SUBDIR += dnsreflector
