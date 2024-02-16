@@ -1,6 +1,7 @@
---- impressive.py.orig	Sat Mar 26 11:10:53 2022
-+++ impressive.py	Sat Mar 26 11:34:40 2022
-@@ -1059,9 +1059,9 @@
+Index: impressive.py
+--- impressive.py.orig
++++ impressive.py
+@@ -1059,9 +1059,9 @@ def StopMPlayer():
      # first, ask politely
      try:
          if Platform.use_omxplayer and VideoPlaying:
@@ -12,7 +13,7 @@
          MPlayerProcess.stdin.flush()
          for i in range(10):
              if MPlayerProcess.poll() is None:
-@@ -5571,7 +5571,7 @@
+@@ -5576,7 +5576,7 @@ class VideoActions(BaseDisplayActions):
          cmd = omxplayer_cmd if Platform.use_omxplayer else (mplayer_cmd + '\n')
          if not cmd: return
          try:
