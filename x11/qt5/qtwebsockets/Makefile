@@ -1,7 +1,7 @@
 QT5NAME =		QtWebSockets
 COMMENT-main =		Qt5 implementation of WebSocket protocol
 
-KDE_COMMIT =		d41bb9f4f7ab9d5ff184ef94cf2f6ff7cf01de00
+KDE_COMMIT =		9a7b9972a54137d5f2e0d49559fe58d07c90662e
 KDE_VERSION =		2
 
 SHARED_LIBS +=  Qt5WebSockets                3.0 # 5.9

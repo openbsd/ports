@@ -1,7 +1,7 @@
 QT5NAME =		QtBase
 
-KDE_COMMIT =		2ddd05e762c1ce382db0bdacfe2bd754ad173815
-KDE_VERSION =		148
+KDE_COMMIT =		f2e586366678383a0fe25fbcd4ecd5d55e7b61cd
+KDE_VERSION =		150
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -17,14 +17,12 @@ PKGNAME-tds =		qt5-tds-${QT5_KDE_VERSION}
 PKG_ARCH-global =	*
 PKG_ARCH-examples =	*
 
-REVISION-main =		0
-
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                4.1 # 5.15
-SHARED_LIBS +=  Qt5Core                      5.0 # 5.15
+SHARED_LIBS +=  Qt5Core                      6.0 # 5.15
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
-SHARED_LIBS +=  Qt5Gui                       4.1 # 5.15
+SHARED_LIBS +=  Qt5Gui                       4.2 # 5.15
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15

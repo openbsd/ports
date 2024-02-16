@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
 --- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
-@@ -7,7 +7,7 @@ import("//build/shim_headers.gni")
+@@ -8,7 +8,7 @@ import("//build/shim_headers.gni")
  
  declare_args() {
    use_system_zlib = false
@@ -10,25 +10,7 @@ Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
    use_qt_zlib = false
    qt_zlib_includes = []
    qt_zlib = ""
-@@ -115,7 +115,7 @@ if (use_arm_neon_optimizations) {
-     # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
-     #  "All implementations of the ARMv8.1 architecture are required to
-     #   implement the CRC32* instructions. These are optional in ARMv8.0."
--    if (!is_ios) {
-+    if (!is_ios && !is_openbsd) {
-       defines = [ "CRC32_ARMV8_CRC32" ]
-       if (is_android) {
-         defines += [ "ARMV8_OS_ANDROID" ]
-@@ -136,7 +136,7 @@ if (use_arm_neon_optimizations) {
-   source_set("zlib_arm_crc32") {
-     visibility = [ ":*" ]
- 
--    if (!is_ios) {
-+    if (!is_ios && !is_openbsd) {
-       include_dirs = [ "." ]
- 
-       if (!is_win && !is_clang) {
-@@ -438,7 +438,7 @@ static_library("bundled_minizip") {
+@@ -455,7 +455,7 @@ static_library("bundled_minizip") {
      ]
    }
  
@@ -37,7 +19,7 @@ Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
      # use fopen, ftell, and fseek instead on these systems.
      defines = [ "USE_FILE32API" ]
-@@ -462,7 +462,6 @@ shim_headers("minizip_shim") {
+@@ -479,7 +479,6 @@ shim_headers("minizip_shim") {
    prefix = "minizip/"
    headers = [
      "crypt.h",

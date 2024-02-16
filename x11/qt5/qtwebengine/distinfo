@@ -1,2 +1,4 @@
-SHA256 (qt/qtwebengine-everywhere-opensource-src-5.15.10.tar.xz) = CBNUknE+OZh3fQGLQ4vAyop9vL71K696rM2rkOva5uc=
-SIZE (qt/qtwebengine-everywhere-opensource-src-5.15.10.tar.xz) = 316141752
+SHA256 (qt/qt-qt/qtwebengine-224806a7022eed6d5c75b486bec8715a618cb314.tar.gz) = 66+OnXPZL/gaAupBs5fF3vPBS/KjntHfOxqDFQAcfJs=
+SHA256 (qt/qt-qt/qtwebengine-chromium-207c2ac45ca3386d153770c6b0d2ea2ec21ca880.tar.gz) = cl9bNfU2HOBfIl5wOuAt+AiinaQIrxblmbgDn0+veU8=
+SIZE (qt/qt-qt/qtwebengine-224806a7022eed6d5c75b486bec8715a618cb314.tar.gz) = 3777338
+SIZE (qt/qt-qt/qtwebengine-chromium-207c2ac45ca3386d153770c6b0d2ea2ec21ca880.tar.gz) = 463365153

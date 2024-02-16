@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/sqlite/BUILD.gn
 --- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
-@@ -138,7 +138,7 @@ config("sqlite_warnings") {
+@@ -142,7 +142,7 @@ config("sqlite_warnings") {
        ]
      }
    }

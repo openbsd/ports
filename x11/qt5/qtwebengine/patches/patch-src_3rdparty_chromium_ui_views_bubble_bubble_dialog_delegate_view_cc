@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate_view.cc
 --- src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate_view.cc.orig
 +++ src/3rdparty/chromium/ui/views/bubble/bubble_dialog_delegate_view.cc
-@@ -319,7 +319,7 @@ Widget* BubbleDialogDelegate::CreateBubble(
+@@ -326,7 +326,7 @@ Widget* BubbleDialogDelegate::CreateBubble(
    bubble_delegate->SetAnchorView(bubble_delegate->GetAnchorView());
    Widget* bubble_widget = CreateBubbleWidget(bubble_delegate);
  

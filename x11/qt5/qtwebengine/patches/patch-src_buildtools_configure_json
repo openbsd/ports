@@ -9,7 +9,7 @@ Index: src/buildtools/configure.json
              "sources": [
                  { "type": "pkgConfig", "args": "minizip" }
              ]
-@@ -295,9 +296,9 @@
+@@ -316,9 +317,9 @@
              "label": "system ninja",
              "type": "detectNinja"
          },
@@ -22,7 +22,7 @@ Index: src/buildtools/configure.json
              "log": "location"
          },
          "webengine-winversion": {
-@@ -364,47 +365,12 @@
+@@ -385,47 +386,12 @@
      "features": {
          "webengine-core-support": {
              "label": "Support Qt WebEngine Core",
@@ -72,7 +72,7 @@ Index: src/buildtools/configure.json
              "output": [ "privateFeature" ]
          },
          "build-qtwebengine-core": {
-@@ -423,12 +389,12 @@
+@@ -444,12 +410,12 @@
              "autoDetect": "features.private_tests",
              "output": [ "privateFeature" ]
          },
@@ -89,7 +89,7 @@ Index: src/buildtools/configure.json
              ]
          },
          "webengine-gperf": {
-@@ -519,7 +485,7 @@
+@@ -540,7 +506,7 @@
          },
          "webengine-system-glibc": {
              "label": "glibc",
@@ -98,7 +98,7 @@ Index: src/buildtools/configure.json
              "output": [ "privateFeature" ]
          },
          "webengine-system-x11" : {
-@@ -639,7 +605,7 @@
+@@ -660,7 +626,7 @@
          },
          "webengine-system-ffmpeg": {
              "label": "ffmpeg",
@@ -107,7 +107,7 @@ Index: src/buildtools/configure.json
              "condition": "libs.webengine-ffmpeg && features.webengine-system-opus && features.webengine-system-libwebp",
              "output": [ "privateFeature" ]
          },
-@@ -708,7 +674,7 @@
+@@ -729,7 +695,7 @@
          },
          "webengine-arm-thumb": {
              "label": "Thumb instruction set",

@@ -18,14 +18,14 @@ Index: src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp
 -      pInfo->AddPath("/usr/share/X11/fonts/Type1");
 -      pInfo->AddPath("/usr/share/X11/fonts/TTF");
 +#if defined(OS_BSD)
-+      pInfo->AddPath("${X11BASE}/X11/fonts/Type1");
-+      pInfo->AddPath("${X11BASE}/X11/fonts/TTF");
-+      pInfo->AddPath("${LOCALBASE}/share/fonts/noto");
-+      pInfo->AddPath("${LOCALBASE}/share/fonts");
++      pInfo->AddPath("/usr/X11R6/X11/fonts/Type1");
++      pInfo->AddPath("/usr/X11R6/X11/fonts/TTF");
++      pInfo->AddPath("/usr/local/share/fonts/noto");
+       pInfo->AddPath("/usr/local/share/fonts");
 +#else
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
-       pInfo->AddPath("/usr/local/share/fonts");
++      pInfo->AddPath("/usr/local/share/fonts");
 +#endif
      }
      return pInfo;

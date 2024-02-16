@@ -49,7 +49,7 @@ RUN_DEPENDS-examples +=	${BUILD_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION}
 PERMIT_PACKAGE ?=	Yes
 
 .if defined(KDE_VERSION) && defined(KDE_COMMIT)
-DIST_TUPLE =		kde qt qt/${QT5NAME:L} ${KDE_COMMIT} .
+DIST_TUPLE +=		kde qt qt/${QT5NAME:L} ${KDE_COMMIT} .
 .else
 SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/ \
 			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/

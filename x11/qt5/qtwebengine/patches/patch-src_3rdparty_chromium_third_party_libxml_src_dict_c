@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/libxml/src/dict.c
 --- src/3rdparty/chromium/third_party/libxml/src/dict.c.orig
 +++ src/3rdparty/chromium/third_party/libxml/src/dict.c
-@@ -34,7 +34,7 @@
+@@ -37,7 +37,7 @@
   *  list we will use the BigKey algo as soon as the hash size grows
   *  over MIN_DICT_SIZE so this actually works
   */
@@ -10,8 +10,8 @@ Index: src/3rdparty/chromium/third_party/libxml/src/dict.c
  #define DICT_RANDOMIZATION
  #endif
  
-@@ -135,7 +135,7 @@ static xmlRMutexPtr xmlDictMutex = NULL;
- static int xmlDictInitialized = 0;
+@@ -133,7 +133,7 @@ struct _xmlDict {
+ static xmlMutex xmlDictMutex;
  
  #ifdef DICT_RANDOMIZATION
 -#ifdef HAVE_RAND_R
@@ -19,34 +19,12 @@ Index: src/3rdparty/chromium/third_party/libxml/src/dict.c
  /*
   * Internal data for random function, protected by xmlDictMutex
   */
-@@ -176,7 +176,7 @@ int __xmlInitializeDict(void) {
-         return(0);
-     xmlRMutexLock(xmlDictMutex);
+@@ -160,7 +160,7 @@ int xmlInitializeDict(void) {
+ int __xmlInitializeDict(void) {
+     xmlInitMutex(&xmlDictMutex);
  
 -#ifdef DICT_RANDOMIZATION
 +#if defined(DICT_RANDOMIZATION) && !defined(HAVE_ARC4RANDOM)
  #ifdef HAVE_RAND_R
      rand_seed = time(NULL);
      rand_r(& rand_seed);
-@@ -195,14 +195,17 @@ int __xmlRandom(void) {
- 
-     if (xmlDictInitialized == 0)
-         __xmlInitializeDict();
--
-+#ifdef HAVE_ARC4RANDOM
-+    ret = arc4random();
-+#else
-     xmlRMutexLock(xmlDictMutex);
--#ifdef HAVE_RAND_R
-+#  ifdef HAVE_RAND_R
-     ret = rand_r(& rand_seed);
--#else
-+#   else
-     ret = rand();
--#endif
-+#   endif
-     xmlRMutexUnlock(xmlDictMutex);
-+#endif
-     return(ret);
- }
- #endif

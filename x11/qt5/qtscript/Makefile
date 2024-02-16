@@ -1,6 +1,5 @@
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
-REVISION =		1
 
 MULTI_PACKAGES =	-main -examples
 SHARED_LIBS +=  Qt5Script                 3.0 # 5.9
