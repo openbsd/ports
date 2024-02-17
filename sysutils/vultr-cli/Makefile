@@ -1,7 +1,7 @@
 COMMENT =	Vultr Command Line Interface
 
-MODGO_MODNAME =	github.com/vultr/vultr-cli/v2
-MODGO_VERSION =	v2.22.0
+MODGO_MODNAME =	github.com/vultr/vultr-cli/v3
+MODGO_VERSION =	v3.0.0
 
 DISTNAME =	vultr-cli-${MODGO_VERSION}
 
