@@ -1,11 +1,11 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
+# ring-v0.17.7 does not support this arch
+NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	RPKI "relying party" software
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	routinator
-GH_TAGNAME =	v0.13.0
+GH_TAGNAME =	v0.13.1
 
 UI =		0.3.4
 SITES.ui =	https://github.com/NLnetLabs/routinator-ui/releases/download/v${UI}/
@@ -32,8 +32,6 @@ WANTLIB +=		${MODCARGO_WANTLIB} m
 MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
-
-BUILD_DEPENDS =		security/rust-ring
 
 RUN_DEPENDS =		net/rsync
 SEPARATE_BUILD =	Yes
