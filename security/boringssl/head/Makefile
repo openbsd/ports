@@ -33,6 +33,11 @@ TEST_ENV =		GOPROXY=file://${DISTDIR}/go_modules
 
 FIX_CLEANUP_PERMISSIONS =	Yes
 
+.if ${MACHINE_ARCH} == i386
+CFLAGS +=		-msse2
+CXXFLAGS +=		-msse2
+.endif
+
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ninja -C ${WRKBUILD} -j ${MAKE_JOBS} run_tests
 
