@@ -2,6 +2,7 @@
 @comment bin/addlicense
 @comment bin/build-webclient
 @comment bin/cloner
+@comment bin/connector-gen
 @bin bin/derper
 @bin bin/derpprobe
 @comment bin/dist
@@ -22,6 +23,7 @@
 @comment bin/speedtest
 @comment bin/ssh-auth-none-demo
 @comment bin/stunc
+@comment bin/stund
 @comment bin/sync-containers
 @bin bin/tailscale
 @bin bin/tailscaled
