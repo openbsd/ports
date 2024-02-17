@@ -1,9 +1,8 @@
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
-DISTNAME=	ginac-1.7.4
-SHARED_LIBS +=	ginac	7.0	# 8.0
+DISTNAME=	ginac-1.8.7
+SHARED_LIBS +=	ginac	8.0	# 12.6
 CATEGORIES=	math
-REVISION=	1
 
 HOMEPAGE=	https://www.ginac.de/
 
@@ -12,13 +11,12 @@ MAINTAINER=	Paul Irofti <paul@irofti.net>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=		${HOMEPAGE}
+SITES=		https://www.ginac.de/
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	${COMPILER_LIBCXX} c cln curses gmp m readline
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 COMPILER =	base-clang ports-gcc
 

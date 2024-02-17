@@ -27,6 +27,7 @@ include/ginac/idx.h
 include/ginac/indexed.h
 include/ginac/inifcns.h
 include/ginac/integral.h
+include/ginac/integration_kernel.h
 include/ginac/lst.h
 include/ginac/matrix.h
 include/ginac/mul.h
@@ -50,7 +51,7 @@ include/ginac/version.h
 include/ginac/wildcard.h
 @info info/ginac-examples.info
 @info info/ginac.info
-lib/libginac.a
+@static-lib lib/libginac.a
 lib/libginac.la
 @lib lib/libginac.so.${LIBginac_VERSION}
 lib/pkgconfig/ginac.pc

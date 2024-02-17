@@ -1,52 +1,54 @@
---- configure.orig	Sun Apr 23 20:10:28 2017
-+++ configure	Sun Apr 23 20:12:42 2017
-@@ -12145,7 +12145,7 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+Index: configure
+--- configure.orig
++++ configure
+@@ -13093,7 +13093,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldl  $LIBS"
 +LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -12206,7 +12206,7 @@ if ${ac_cv_lib_dld_shl_load+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+@@ -13155,7 +13155,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldld  $LIBS"
 +LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -12249,7 +12249,7 @@ if ${ac_cv_lib_dl_dlopen+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+@@ -13199,7 +13199,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldl  $LIBS"
 +LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -12327,7 +12327,7 @@ if ${ac_cv_lib_dld_dld_link+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+@@ -13277,7 +13277,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldld  $LIBS"
 +LIBS="$LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18302,14 +18302,14 @@ fi
+@@ -20179,7 +20179,7 @@ fi
  
  if test "$CONFIG_EXCOMPILER" = "yes"; then
  			found_dlopen_lib="no"
 -	DL_LIBS="-ldl"
 +	DL_LIBS=""
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
- $as_echo_n "checking for dlopen in -ldl... " >&6; }
- if ${ac_cv_lib_dl_dlopen+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+ printf %s "checking for dlopen in -ldl... " >&6; }
+ if test ${ac_cv_lib_dl_dlopen+y}
+@@ -20187,7 +20187,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldl  $LIBS"
 +LIBS="$LIBS"
