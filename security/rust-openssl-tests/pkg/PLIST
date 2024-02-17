@@ -561,7 +561,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/ast.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/attr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/codemap.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/config.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/diagnostic_list.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/diagnostics/
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/diagnostics/macros.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/diagnostics/metadata.rs
@@ -582,7 +581,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/ext/tt/quoted
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/ext/tt/transcribe.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/feature_gate.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/fold.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/json.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/parse/
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/parse/attr.rs
@@ -603,20 +601,15 @@ share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/print/pprust.
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/ptr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/blake2b.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/indexed_vec.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/leb128.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/rustc_data_structures/stable_hasher.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/show_span.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/std_inject.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/str.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/test.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/test_snippet.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/tokenstream.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/lev_distance.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/move_map.rs
-share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/node_count.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/parser.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/parser_testing.rs
 share/rust-openssl-tests/modcargo-crates/${VER_garando_syntax}/src/util/rc_slice.rs
