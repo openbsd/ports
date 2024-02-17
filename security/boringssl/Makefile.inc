@@ -12,5 +12,5 @@ PERMIT_PACKAGE ?=	Yes
 
 PORTHOME ?=		${WRKDIR}
 
-# XXX go pullutes /tmp and binaries need 'wxallowed' for BTI transition
+# XXX go pollutes /tmp and binaries need 'wxallowed' for BTI transition
 MAKE_ENV ?=		TMPDIR=${WRKBUILD}
