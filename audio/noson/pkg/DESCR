@@ -1,0 +1,2 @@
+noson is a client interface library to drive SONOS players.
+The API supports browsing the music index and controlling playback in any zone.
