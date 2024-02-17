@@ -142,6 +142,8 @@
      SUBDIR += ncspot
      SUBDIR += normalize
      SUBDIR += nosefart
+     SUBDIR += noson
+     SUBDIR += noson-app
      SUBDIR += nspmod
      SUBDIR += ocp
      SUBDIR += openal
