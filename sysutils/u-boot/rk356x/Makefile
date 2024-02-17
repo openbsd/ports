@@ -1,20 +1,24 @@
-VERSION=	2023.10
-REVISION=	0
+VERSION=	2024.01
 
 SOC=		rk356x
 
 BOARDS=\
+	anbernic-rgxx3-rk3566 \
+	bpi-r2-pro-rk3568 \
+	evb-rk3568 \
+	generic-rk3568 \
+	lubancat-2-rk3568 \
+	nanopi-r5c-rk3568 \
+	nanopi-r5s-rk3568 \
 	odroid-m1-rk3568 \
 	quartz64-a-rk3566 \
 	quartz64-b-rk3566 \
 	radxa-cm3-io-rk3566 \
+	radxa-e25-rk3568 \
+	rock-3a-rk3568 \
 	soquartz-blade-rk3566 \
 	soquartz-cm4-rk3566 \
-	soquartz-model-a-rk3566 \
-	nanopi-r5c-rk3568 \
-	nanopi-r5s-rk3568 \
-	radxa-e25-rk3568 \
-	rock-3a-rk3568
+	soquartz-model-a-rk3566
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
 		devel/py-elftools${MODPY_FLAVOR} \
