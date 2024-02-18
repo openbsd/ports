@@ -34,6 +34,7 @@
      SUBDIR += darktable
      SUBDIR += dcmtk
      SUBDIR += dcraw
+     SUBDIR += decker
      SUBDIR += delaboratory
      SUBDIR += dia
      SUBDIR += dibuja
