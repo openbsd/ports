@@ -1,3 +1,5 @@
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/foot/
 @bin bin/foot
 @bin bin/footclient
 @man man/man1/foot.1
@@ -14,8 +16,6 @@ share/doc/foot/CHANGELOG.md
 share/doc/foot/LICENSE
 share/doc/foot/README.md
 share/examples/foot/
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/foot/
 share/examples/foot/foot.ini
 @sample ${SYSCONFDIR}/xdg/foot/foot.ini
 share/fish/
@@ -47,6 +47,7 @@ share/foot/themes/nightfly
 share/foot/themes/nord
 share/foot/themes/nordiq
 share/foot/themes/onedark
+share/foot/themes/panda
 share/foot/themes/paper-color-dark
 share/foot/themes/paper-color-light
 share/foot/themes/rezza
