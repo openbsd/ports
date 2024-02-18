@@ -268,6 +268,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-3
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/arc-zonal-shift/2022-10-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/2017-05-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/2017-05-18/endpoint-rule-set-1.json
