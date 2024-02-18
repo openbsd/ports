@@ -154,7 +154,7 @@ EXTRACT_SUFX=	.gem
 
 .  if ${CONFIGURE_STYLE:L:Mext}
 # Use ports-gcc for ruby32 extensions if base does not use clang
-.    if ${FLAVOR:Mruby32}
+.    if ${FLAVOR:Mruby32} || ${FLAVOR:Mruby33}
 COMPILER ?= 	base-clang ports-gcc
 COMPILER_LANGS ?= c
 .    endif
