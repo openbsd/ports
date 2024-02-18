@@ -1,6 +1,6 @@
 COMMENT=	implementation of the RFC 9000 QUIC protocol
 
-V=		1.2.0
+V=		1.3.0
 DISTNAME=	ngtcp2-$V
 
 SHARED_LIBS+=	ngtcp2			4.0	# 17.0
@@ -24,16 +24,5 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-openssl
-
-# Don't pull this in as BUILD_DEPENDS to reduce dependencies on
-# the path to building curl->cmake.
-pre-test:
-	@if ! [ -f ${LOCALBASE}/lib/libcunit.a ]; then echo; \
-	    echo "====================================================="; \
-	    echo "To run tests, install the cunit package and re-build."; \
-	    echo "Dependency is not forced to avoid restricting arches."; \
-	    echo "====================================================="; \
-	    echo; exit 1; \
-	fi
 
 .include <bsd.port.mk>
