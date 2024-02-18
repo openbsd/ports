@@ -5,6 +5,7 @@ USE_NOEXECONLY=	Yes
 .endif
 
 DIST_TUPLE=	github rbsec sslscan 2.1.1 .
+REVISION=	0
 
 CATEGORIES=	security net
 
