@@ -9,7 +9,7 @@ Index: crypto/camellia/asm/cmll-x86_64.pl
  .align	64
  .LCamellia_SIGMA:
  .long	0x3bcc908b, 0xa09e667f, 0x4caa73b2, 0xb67ae858
-@@ -680,6 +681,7 @@ $_ivp="40(%rsp)";
+@@ -680,11 +681,13 @@ $_ivp="40(%rsp)";
  $_rsp="48(%rsp)";
  
  $code.=<<___;
@@ -17,3 +17,9 @@ Index: crypto/camellia/asm/cmll-x86_64.pl
  .globl	Camellia_cbc_encrypt
  .type	Camellia_cbc_encrypt,\@function,6
  .align	16
+ Camellia_cbc_encrypt:
+ .cfi_startproc
++	endbranch
+ 	cmp	\$0,%rdx
+ 	je	.Lcbc_abort
+ 	push	%rbx

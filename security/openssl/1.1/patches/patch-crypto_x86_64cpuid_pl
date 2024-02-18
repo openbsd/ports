@@ -1,0 +1,19 @@
+Index: crypto/x86_64cpuid.pl
+--- crypto/x86_64cpuid.pl.orig
++++ crypto/x86_64cpuid.pl
+@@ -237,6 +237,7 @@ OPENSSL_ia32_cpuid:
+ .align  16
+ OPENSSL_cleanse:
+ .cfi_startproc
++	endbranch
+ 	xor	%rax,%rax
+ 	cmp	\$15,$arg2
+ 	jae	.Lot
+@@ -274,6 +275,7 @@ OPENSSL_cleanse:
+ .align  16
+ CRYPTO_memcmp:
+ .cfi_startproc
++	endbranch
+ 	xor	%rax,%rax
+ 	xor	%r10,%r10
+ 	cmp	\$0,$arg3

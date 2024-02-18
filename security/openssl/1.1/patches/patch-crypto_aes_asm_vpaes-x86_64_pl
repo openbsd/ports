@@ -1,7 +1,47 @@
 Index: crypto/aes/asm/vpaes-x86_64.pl
 --- crypto/aes/asm/vpaes-x86_64.pl.orig
 +++ crypto/aes/asm/vpaes-x86_64.pl
-@@ -998,6 +998,7 @@ _vpaes_preheat:
+@@ -696,6 +696,7 @@ _vpaes_schedule_mangle:
+ .align	16
+ ${PREFIX}_set_encrypt_key:
+ .cfi_startproc
++	endbranch
+ ___
+ $code.=<<___ if ($win64);
+ 	lea	-0xb8(%rsp),%rsp
+@@ -746,6 +747,7 @@ $code.=<<___;
+ .align	16
+ ${PREFIX}_set_decrypt_key:
+ .cfi_startproc
++	endbranch
+ ___
+ $code.=<<___ if ($win64);
+ 	lea	-0xb8(%rsp),%rsp
+@@ -801,6 +803,7 @@ $code.=<<___;
+ .align	16
+ ${PREFIX}_encrypt:
+ .cfi_startproc
++	endbranch
+ ___
+ $code.=<<___ if ($win64);
+ 	lea	-0xb8(%rsp),%rsp
+@@ -846,6 +849,7 @@ $code.=<<___;
+ .align	16
+ ${PREFIX}_decrypt:
+ .cfi_startproc
++	endbranch
+ ___
+ $code.=<<___ if ($win64);
+ 	lea	-0xb8(%rsp),%rsp
+@@ -897,6 +901,7 @@ $code.=<<___;
+ .align	16
+ ${PREFIX}_cbc_encrypt:
+ .cfi_startproc
++	endbranch
+ 	xchg	$key,$len
+ ___
+ ($len,$key)=($key,$len);
+@@ -998,6 +1003,7 @@ _vpaes_preheat:
  ##                     Constants                      ##
  ##                                                    ##
  ########################################################
@@ -9,7 +49,7 @@ Index: crypto/aes/asm/vpaes-x86_64.pl
  .type	_vpaes_consts,\@object
  .align	64
  _vpaes_consts:
-@@ -1097,6 +1098,7 @@ _vpaes_consts:
+@@ -1097,6 +1103,7 @@ _vpaes_consts:
  .asciz	"Vector Permutation AES for x86_64/SSSE3, Mike Hamburg (Stanford University)"
  .align	64
  .size	_vpaes_consts,.-_vpaes_consts
