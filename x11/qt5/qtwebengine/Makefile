@@ -9,6 +9,7 @@ USE_NOBTCFI =		Yes
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		224806a7022eed6d5c75b486bec8715a618cb314
 KDE_VERSION =		5
+REVISION =		0
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
@@ -141,5 +142,12 @@ pre-build:
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
+
+pre-fake:
+# Fix version mismatches for CMake
+.for module in WebEngine WebEngineCore WebEngineWidgets
+	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},${QT5_DIST_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},g' \
+		${WRKBUILD}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake
+.endfor
 
 .include <bsd.port.mk>
