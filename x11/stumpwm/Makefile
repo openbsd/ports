@@ -1,8 +1,7 @@
 COMMENT=		easily hackable Common LISP window manager
 
-VERSION=		22.11
+VERSION=		23.11
 DISTNAME=		stumpwm-${VERSION}
-REVISION=		2
 
 CATEGORIES=		x11
 
@@ -29,7 +28,7 @@ BUILD_DEPENDS=		lang/sbcl \
 			print/texinfo
 LIB_DEPENDS=		archivers/zstd
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 CONFIGURE_STYLE=	autoconf no-autoheader
 CONFIGURE_ARGS+=	--with-module-dir=${LOCALBASE}/share/stumpwm/modules \
 			--enable-compression
