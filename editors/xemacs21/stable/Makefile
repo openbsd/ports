@@ -1,6 +1,6 @@
 BRANCH=		21.4
 VERSION=	22
-REVISION=	35
+REVISION=	36
 
 WANTLIB=	c m curses util
 

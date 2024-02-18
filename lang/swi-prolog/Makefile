@@ -4,7 +4,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			7.6.0
-REVISION =		18
+REVISION =		19
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang

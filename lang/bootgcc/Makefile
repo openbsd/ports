@@ -5,7 +5,7 @@ DPB_PROPERTIES = parallel
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 5
+REVISION = 6
 
 COMMENT =	GNU Compiler Collection; bootstrap package
 PKGNAME =	bootgcc-${FULL_PKGVERSION}
