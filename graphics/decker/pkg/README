@@ -1,0 +1,23 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Decker comes with a quickstart guide when you launch decker. More
+examples are available in ${TRUEPREFIX}/share/examples/decker and
+you can see them by passing them as an argument:
+
+$ decker ${TRUEPREFIX}/share/examples/decker/chickenwave.deck
+
+Decker comes with its own scripting language called the Lil programming
+language. A standalone version of the Lil interpreter is installed
+as `lilt`. You can find examples of Lil programs by in the same
+directory. Try out the following:
+
+$ lilt ${TRUEPREFIX}/share/examples/decker/mandel.lil
+
+Manuals
+=======
+
+Beyond the examples provided, you also have access to offline HTML
+manuals. You can open them by navigating your browser to
+${TRUEPREFIX}/share/doc/decker/
