@@ -3,6 +3,7 @@ COMMENT=	PolicyKit authentication agent for Qt
 V=		0.175.0
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt5-${V}
+REVISION=	0
 
 SHARED_LIBS +=  polkit-qt5-agent-1        3.0 # 0.99
 SHARED_LIBS +=  polkit-qt5-core-1         3.0 # 0.99
@@ -40,10 +41,12 @@ RUN_DEPENDS +=	sysutils/consolekit
 .if ${FLAVOR:Mqt5}
 FULLPKGNAME=	polkit-qt5-${V}
 MODULES +=	x11/qt5
+QT_VERSION =	qt5
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 .else
 PKGNAME=	polkit-qt6-${V}
 MODULES +=	x11/qt6
+QT_VERSION =	qt6
 WANTLIB += GL Qt6Core Qt6DBus Qt6Gui Qt6Widgets
 CONFIGURE_ARGS +=	-DQT_MAJOR_VERSION=6
 .endif
@@ -51,6 +54,8 @@ CONFIGURE_ARGS +=	-DQT_MAJOR_VERSION=6
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 
 NO_TEST=	Yes
+
+SUBST_VARS =	QT_VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/PolkitQt-1Config.cmake.in
