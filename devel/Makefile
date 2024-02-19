@@ -472,6 +472,7 @@
      SUBDIR += ophis
      SUBDIR += orc
      SUBDIR += orcania
+     SUBDIR += or1k-elf
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
