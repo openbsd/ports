@@ -1,6 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  colorcorrect              0.0 # 0.0
 SHARED_LIBS +=  kfontinst                 0.0 # 0.0
@@ -47,7 +47,7 @@ BUILD_DEPENDS =		x11/kde-plasma/kwin>=${VERSION} \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kquickcharts \
-			multimedia/phonon-backend/gstreamer \
+			multimedia/phonon-backend/vlc \
 			sysutils/coreutils \
 			x11/dbus,-suid \
 			x11/kde-plasma/kwin>=${VERSION}
