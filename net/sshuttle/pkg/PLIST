@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}.dist-info
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sshuttle/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}/
@@ -79,4 +78,3 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/ssnet.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssyslog.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/sudoers.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/version.py
-@man man/man1/sshuttle.1
