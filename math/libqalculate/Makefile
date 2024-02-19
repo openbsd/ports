@@ -1,12 +1,11 @@
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
-V =		4.8.0
+V =		4.9.0
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
-REVISION =	0
 
-SHARED_LIBS +=  qalculate            6.0      # 42.0
+SHARED_LIBS +=  qalculate            6.1      # 42.1
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
