@@ -1,10 +1,10 @@
 COMMENT=	themed window manager
 
-V=		1.0.25
+V=		1.0.29
 DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
-THEMES=		e16-themes-1.0.2
+THEMES=		e16-themes-1.0.3
 
 CATEGORIES=	x11
 
