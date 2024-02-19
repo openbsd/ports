@@ -1604,7 +1604,6 @@
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools,python3
      SUBDIR += py-setuptools-rust,python3
-     SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-setuptools_scm_git_archive,python3
