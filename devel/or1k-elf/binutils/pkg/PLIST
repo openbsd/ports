@@ -1,0 +1,58 @@
+@bin bin/${CONFIG}-addr2line
+@bin bin/${CONFIG}-ar
+@bin bin/${CONFIG}-as
+@bin bin/${CONFIG}-c++filt
+@bin bin/${CONFIG}-elfedit
+@bin bin/${CONFIG}-gprof
+@bin bin/${CONFIG}-ld
+@bin bin/${CONFIG}-ld.bfd
+@bin bin/${CONFIG}-nm
+@bin bin/${CONFIG}-objcopy
+@bin bin/${CONFIG}-objdump
+@bin bin/${CONFIG}-ranlib
+@bin bin/${CONFIG}-readelf
+@bin bin/${CONFIG}-size
+@bin bin/${CONFIG}-strings
+@bin bin/${CONFIG}-strip
+@man man/man1/${CONFIG}-addr2line.1
+@man man/man1/${CONFIG}-ar.1
+@man man/man1/${CONFIG}-as.1
+@man man/man1/${CONFIG}-c++filt.1
+@man man/man1/${CONFIG}-dlltool.1
+@man man/man1/${CONFIG}-elfedit.1
+@man man/man1/${CONFIG}-gprof.1
+@man man/man1/${CONFIG}-ld.1
+@man man/man1/${CONFIG}-nm.1
+@man man/man1/${CONFIG}-objcopy.1
+@man man/man1/${CONFIG}-objdump.1
+@man man/man1/${CONFIG}-ranlib.1
+@man man/man1/${CONFIG}-readelf.1
+@man man/man1/${CONFIG}-size.1
+@man man/man1/${CONFIG}-strings.1
+@man man/man1/${CONFIG}-strip.1
+@man man/man1/${CONFIG}-windmc.1
+@man man/man1/${CONFIG}-windres.1
+${CONFIG}/
+${CONFIG}/bin/
+@bin ${CONFIG}/bin/ar
+@bin ${CONFIG}/bin/as
+@bin ${CONFIG}/bin/ld
+@bin ${CONFIG}/bin/ld.bfd
+@bin ${CONFIG}/bin/nm
+@bin ${CONFIG}/bin/objcopy
+@bin ${CONFIG}/bin/objdump
+@bin ${CONFIG}/bin/ranlib
+@bin ${CONFIG}/bin/readelf
+@bin ${CONFIG}/bin/strip
+${CONFIG}/lib/
+${CONFIG}/lib/ldscripts/
+${CONFIG}/lib/ldscripts/elf32or1k.x
+${CONFIG}/lib/ldscripts/elf32or1k.xbn
+${CONFIG}/lib/ldscripts/elf32or1k.xc
+${CONFIG}/lib/ldscripts/elf32or1k.xce
+${CONFIG}/lib/ldscripts/elf32or1k.xe
+${CONFIG}/lib/ldscripts/elf32or1k.xn
+${CONFIG}/lib/ldscripts/elf32or1k.xr
+${CONFIG}/lib/ldscripts/elf32or1k.xu
+${CONFIG}/lib/ldscripts/elf32or1k.xw
+${CONFIG}/lib/ldscripts/elf32or1k.xwe
