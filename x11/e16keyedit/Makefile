@@ -1,9 +1,8 @@
 COMMENT=	edit enlightenment's keybindings
 
-DISTNAME=	e16-keyedit-0.9
+DISTNAME=	e16-keyedit-0.10
 PKGNAME=	${DISTNAME:S/-//}
-CATEGORIES=    	x11
-REVISION=	1
+CATEGORIES=	x11
 
 # X11
 PERMIT_PACKAGE=	Yes
