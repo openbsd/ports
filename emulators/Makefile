@@ -36,6 +36,7 @@
      SUBDIR += mame
      SUBDIR += mednafen
      SUBDIR += mednaffe
+     SUBDIR += melonds
      SUBDIR += mgba
      SUBDIR += mupen64plus
      SUBDIR += nestopia
