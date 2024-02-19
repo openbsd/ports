@@ -1,10 +1,9 @@
-Index: rtengine/rtthumbnail.cc
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtengine/rtthumbnail.cc
 --- rtengine/rtthumbnail.cc.orig
 +++ rtengine/rtthumbnail.cc
-@@ -2057,7 +2057,7 @@ bool Thumbnail::readImage (const Glib::ustring& fname)
+@@ -2173,7 +2173,7 @@ bool Thumbnail::readImage (const Glib::ustring& fname)
  
  bool Thumbnail::readData  (const Glib::ustring& fname)
  {

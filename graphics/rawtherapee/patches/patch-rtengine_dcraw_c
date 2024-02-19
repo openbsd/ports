@@ -1,7 +1,6 @@
-Index: rtengine/dcraw.c
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtengine/dcraw.c
 --- rtengine/dcraw.c.orig
 +++ rtengine/dcraw.c
 @@ -9853,8 +9853,8 @@ int CLASS main (int argc, const char **argv)

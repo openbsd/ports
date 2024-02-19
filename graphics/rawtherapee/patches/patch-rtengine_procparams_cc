@@ -1,10 +1,9 @@
-Index: rtengine/procparams.cc
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtengine/procparams.cc
 --- rtengine/procparams.cc.orig
 +++ rtengine/procparams.cc
-@@ -7606,7 +7606,7 @@ int ProcParams::save(const Glib::ustring& fname, const
+@@ -7849,7 +7849,7 @@ int ProcParams::save(const Glib::ustring& fname, const
  
  int ProcParams::load(const Glib::ustring& fname, ParamsEdited* pedited)
  {

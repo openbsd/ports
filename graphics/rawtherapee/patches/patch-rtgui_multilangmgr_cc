@@ -1,10 +1,9 @@
-Index: rtgui/multilangmgr.cc
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtgui/multilangmgr.cc
 --- rtgui/multilangmgr.cc.orig
 +++ rtgui/multilangmgr.cc
-@@ -138,8 +138,8 @@ void setGtkLanguage(const Glib::ustring &language)
+@@ -142,8 +142,8 @@ void setGtkLanguage(const Glib::ustring &language)
          lang = lang + ".UTF-8"; // According to Apple documentation, UTF-8 is a built-in encoding on all platforms on which macOS runs
  
          g_setenv("LANG", lang.c_str(), true);
@@ -15,7 +14,7 @@ https://github.com/Beep6581/RawTherapee/issues/6452
  
  #else
  
-@@ -300,9 +300,9 @@ Glib::ustring MultiLangMgr::getOSUserLanguage ()
+@@ -394,9 +394,9 @@ Glib::ustring MultiLangMgr::getOSUserLanguage ()
  
      // Set locale environment data
      locale = locale + ".UTF-8"; // According to Apple documentation, UTF-8 is a built-in encoding on all platforms on which macOS runs

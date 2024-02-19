@@ -1,10 +1,9 @@
-Index: rtgui/options.cc
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtgui/options.cc
 --- rtgui/options.cc.orig
 +++ rtgui/options.cc
-@@ -712,7 +712,7 @@ void Options::filterOutParsedExtensions()
+@@ -722,7 +722,7 @@ void Options::filterOutParsedExtensions()
  
  void Options::readFromFile(Glib::ustring fname)
  {

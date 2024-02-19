@@ -1,10 +1,9 @@
-Index: rtgui/cacheimagedata.cc
-
 https://github.com/Beep6581/RawTherapee/issues/6452
 
+Index: rtgui/cacheimagedata.cc
 --- rtgui/cacheimagedata.cc.orig
 +++ rtgui/cacheimagedata.cc
-@@ -65,7 +65,7 @@ CacheImageData::CacheImageData() :
+@@ -76,7 +76,7 @@ CacheImageData::CacheImageData() :
   */
  int CacheImageData::load (const Glib::ustring& fname)
  {
