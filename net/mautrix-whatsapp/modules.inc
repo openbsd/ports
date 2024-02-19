@@ -23,7 +23,7 @@ MODGO_MODULES =	\
 	github.com/lib/pq					 v1.10.9 \
 	github.com/mattn/go-colorable				 v0.1.13 \
 	github.com/mattn/go-isatty				 v0.0.19 \
-	github.com/mattn/go-sqlite3				 v1.14.18 \
+	github.com/mattn/go-sqlite3				 v1.14.19 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.4 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.2 \
@@ -48,19 +48,19 @@ MODGO_MODULES =	\
 	go.mau.fi/libsignal					 v0.1.0 \
 	go.mau.fi/util						 v0.2.1 \
 	go.mau.fi/webp						 v0.1.0 \
-	go.mau.fi/whatsmeow					 v0.0.0-20231116213319-217e0c985fd6 \
+	go.mau.fi/whatsmeow					 v0.0.0-20231216213200-9d803dd92735 \
 	go.mau.fi/zeroconfig					 v0.1.2 \
-	golang.org/x/crypto					 v0.15.0 \
-	golang.org/x/exp					 v0.0.0-20231110203233-9a3e6036ecaa \
+	golang.org/x/crypto					 v0.16.0 \
+	golang.org/x/exp					 v0.0.0-20231214170342-aacd6d4b4611 \
 	golang.org/x/image					 v0.14.0 \
 	golang.org/x/mod					 v0.14.0 \
-	golang.org/x/net					 v0.18.0 \
+	golang.org/x/net					 v0.19.0 \
 	golang.org/x/oauth2					 v0.8.0 \
 	golang.org/x/sync					 v0.3.0 \
-	golang.org/x/sys					 v0.14.0 \
-	golang.org/x/term					 v0.14.0 \
+	golang.org/x/sys					 v0.15.0 \
+	golang.org/x/term					 v0.15.0 \
 	golang.org/x/text					 v0.14.0 \
-	golang.org/x/tools					 v0.15.0 \
+	golang.org/x/tools					 v0.16.0 \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.6.7 \
 	google.golang.org/protobuf				 v1.31.0 \
@@ -80,6 +80,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-colorable		 v0.1.12 \
 	github.com/mattn/go-isatty		 v0.0.14 \
 	github.com/mattn/go-isatty		 v0.0.16 \
+	github.com/mattn/go-sqlite3		 v1.14.18 \
 	github.com/prometheus/client_golang	 v1.15.1 \
 	github.com/prometheus/client_model	 v0.4.0 \
 	github.com/prometheus/procfs		 v0.9.0 \
@@ -88,15 +89,19 @@ MODGO_MODFILES =	\
 	github.com/tidwall/gjson		 v1.14.2 \
 	github.com/tidwall/gjson		 v1.14.4 \
 	go.mau.fi/util				 v0.2.0 \
+	golang.org/x/crypto			 v0.15.0 \
 	golang.org/x/crypto			 v0.4.0 \
+	golang.org/x/exp			 v0.0.0-20231110203233-9a3e6036ecaa \
 	golang.org/x/image			 v0.0.0-20211028202545-6944b10bf410 \
 	golang.org/x/mod			 v0.8.0 \
 	golang.org/x/net			 v0.10.0 \
+	golang.org/x/net			 v0.18.0 \
 	golang.org/x/sync			 v0.0.0-20181221193216-37e7f081c4d4 \
 	golang.org/x/sys			 v0.0.0-20210927094055-39ccf1dd6fa6 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.11.0 \
 	golang.org/x/sys			 v0.12.0 \
+	golang.org/x/sys			 v0.14.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/sys			 v0.8.0 \
