@@ -1,0 +1,9 @@
+Tamzen is a fork of the Tamsyn bitmapped console font.
+
+It's programmatically forked from Tamsyn version 1.11 by the Rakefile
+script which backports glyphs from older versions while deleting
+deliberately empty glyphs (which serve as unimplemented markers) to
+allow secondary fallback fonts to provide real glyphs at those code
+points.
+
+The "TamzenForPowerline" fonts contain additional Powerline symbols.
