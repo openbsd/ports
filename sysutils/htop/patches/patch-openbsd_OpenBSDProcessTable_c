@@ -1,12 +1,12 @@
 Include thread names in COMM
 
-Index: openbsd/OpenBSDProcessList.c
---- openbsd/OpenBSDProcessList.c.orig
-+++ openbsd/OpenBSDProcessList.c
-@@ -211,7 +211,13 @@ static void OpenBSDProcessList_updateCwd(const struct 
+Index: openbsd/OpenBSDProcessTable.c
+--- openbsd/OpenBSDProcessTable.c.orig
++++ openbsd/OpenBSDProcessTable.c
+@@ -71,7 +71,13 @@ static void OpenBSDProcessTable_updateCwd(const struct
  }
  
- static void OpenBSDProcessList_updateProcessName(kvm_t* kd, const struct kinfo_proc* kproc, Process* proc) {
+ static void OpenBSDProcessTable_updateProcessName(kvm_t* kd, const struct kinfo_proc* kproc, Process* proc) {
 -   Process_updateComm(proc, kproc->p_comm);
 +   char buf[50]; /* procname/threadname (each MAXCOMLEN) + NUL */
 +   if (kproc->p_name[0] != '\0') {
