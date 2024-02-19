@@ -3,7 +3,7 @@ COMMENT=	PolicyKit authentication agent for Qt
 V=		0.175.0
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt5-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  polkit-qt5-agent-1        3.0 # 0.99
 SHARED_LIBS +=  polkit-qt5-core-1         3.0 # 0.99
@@ -55,7 +55,13 @@ MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 
 NO_TEST=	Yes
 
-SUBST_VARS =	QT_VERSION
+LIBpolkit-Qt-core-1_VERSION= "${LIBpolkit-${QT_VERSION}-core-1_VERSION}"
+LIBpolkit-Qt-agent-1_VERSION= "${LIBpolkit-${QT_VERSION}-agent-1_VERSION}"
+LIBpolkit-Qt-gui-1_VERSION= "${LIBpolkit-${QT_VERSION}-gui-1_VERSION}"
+
+SUBST_VARS +=	LIBpolkit-Qt-core-1_VERSION \
+		LIBpolkit-Qt-agent-1_VERSION \
+		LIBpolkit-Qt-gui-1_VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/PolkitQt-1Config.cmake.in
