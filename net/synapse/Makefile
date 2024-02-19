@@ -1,13 +1,11 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.98.0
+MODPY_EGG_VERSION =	1.101.0
 
-GH_ACCOUNT =	matrix-org
+GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 CATEGORIES =	net
-
-REVISION =	0
 
 HOMEPAGE =	https://matrix.org/
 
