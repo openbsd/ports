@@ -9,6 +9,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_asyncio_backend.${
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_asyncio_backend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_ddr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_ddr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_immutable_ctx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_immutable_ctx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}_trio_backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -112,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/${MODPY_PYCACHE}zonetypes.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/dns/_asyncbackend.py
 lib/python${MODPY_VERSION}/site-packages/dns/_asyncio_backend.py
 lib/python${MODPY_VERSION}/site-packages/dns/_ddr.py
+lib/python${MODPY_VERSION}/site-packages/dns/_features.py
 lib/python${MODPY_VERSION}/site-packages/dns/_immutable_ctx.py
 lib/python${MODPY_VERSION}/site-packages/dns/_trio_backend.py
 lib/python${MODPY_VERSION}/site-packages/dns/asyncbackend.py
