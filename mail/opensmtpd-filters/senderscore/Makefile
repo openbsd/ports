@@ -1,9 +1,8 @@
 COMMENT =	SenderScore integration to the OpenSMTPD daemon
 
-V =		0.1.1
+V =		0.1.2
 FILTER_NAME =	senderscore
 DISTNAME =	filter-senderscore-${V}
-REVISION =	0
 
 CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-senderscore/
