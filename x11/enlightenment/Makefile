@@ -1,6 +1,7 @@
 COMMENT=	themed window manager
 
 V=		1.0.29
+REVISION=	0
 DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
@@ -36,6 +37,10 @@ RUN_DEPENDS=	devel/desktop-file-utils
 SEPARATE_BUILD=	Yes
 
 USE_GMAKE=	Yes
+
+MODULES=	lang/python
+MODPY_BUILDDEP=	No
+MODPY_ADJ_FILES= scripts/e_gen_menu
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-sound=sndio \
