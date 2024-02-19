@@ -1,4 +1,7 @@
-https://github.com/WebKit/WebKit/pull/23066#issuecomment-1930060999
+From 3d5373575695b293b8559155431d0079a6153aff Mon Sep 17 00:00:00 2001
+From: Michael Catanzaro <mcatanzaro@redhat.com>
+Date: Mon, 5 Feb 2024 11:00:49 -0600
+Subject: [PATCH] [GTK] [2.42.5] LowLevelInterpreter.cpp:339:21: error: 't6' was not declared in this scope https://bugs.webkit.org/show_bug.cgi?id=268739
 
 Index: Source/JavaScriptCore/llint/LowLevelInterpreter.cpp
 --- Source/JavaScriptCore/llint/LowLevelInterpreter.cpp.orig
