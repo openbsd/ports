@@ -1,0 +1,17 @@
+https://github.com/melonDS-emu/melonDS/pull/1979
+
+Index: src/frontend/duckstation/gl/context.cpp
+--- src/frontend/duckstation/gl/context.cpp.orig
++++ src/frontend/duckstation/gl/context.cpp
+@@ -3,11 +3,7 @@
+ #include "loader.h"
+ #include <cstdlib>
+ #include <cstring>
+-#ifdef __APPLE__
+ #include <stdlib.h>
+-#else
+-#include <malloc.h>
+-#endif
+ Log_SetChannel(GL::Context);
+ 
+ #if defined(_WIN32) && !defined(_M_ARM64)
