@@ -1,0 +1,16 @@
+clang on powerpc64 defines vec_step already which collides with the
+symbol in gcc, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=239266#c23
+renaming suggested at https://gcc.gnu.org/legacy-ml/gcc/2019-07/msg00131.html
+
+Index: gcc/tree-vect-loop.cc
+--- gcc/tree-vect-loop.cc.orig
++++ gcc/tree-vect-loop.cc
+@@ -56,6 +56,8 @@ along with GCC; see the file COPYING3.  If not see
+ #include "tree-eh.h"
+ #include "case-cfn-macros.h"
+ 
++#define vec_step vec_step_
++
+ /* Loop Vectorization Pass.
+ 
+    This pass tries to vectorize loops.

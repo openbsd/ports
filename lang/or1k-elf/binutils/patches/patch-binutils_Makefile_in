@@ -1,0 +1,12 @@
+Index: binutils/Makefile.in
+--- binutils/Makefile.in.orig
++++ binutils/Makefile.in
+@@ -404,7 +404,7 @@ AM_V_texidevnull = $(am__v_texidevnull_@AM_V@)
+ am__v_texidevnull_ = $(am__v_texidevnull_@AM_DEFAULT_V@)
+ am__v_texidevnull_0 = > /dev/null
+ am__v_texidevnull_1 = 
+-INFO_DEPS = doc/binutils.info
++INFO_DEPS =
+ am__TEXINFO_TEX_DIR = $(srcdir)
+ DVIS = doc/binutils.dvi
+ PDFS = doc/binutils.pdf
