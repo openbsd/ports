@@ -8,7 +8,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			13.0.3
+V=			13.0.4
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -162,7 +162,7 @@ CONFIGURE_ARGS +=	--with-postgresql
 
 pre-configure:
 	cd ${WRKSRC}; ${SUBST_CMD} manpages/bat.1 \
-		src/qt-console/main.cpp scripts/baculabackupreport.in \
+		src/qt-console/main.cpp \
 		src/qt-console/tray-monitor/tray-monitor.pro.in
 
 post-install:
