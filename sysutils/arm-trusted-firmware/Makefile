@@ -2,12 +2,14 @@ PKG_ARCH=		*
 
 COMMENT=	ARM Trusted Firmware
 
+VERSION=	2.10.2
+PKGNAME=	arm-trusted-firmware-${VERSION}
+
 GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
-GH_TAGNAME=	v2.7.0
+GH_TAGNAME=	lts-v${VERSION}
 
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -32,24 +34,27 @@ PLATFORMS=\
 	rk3328 \
 	rk3399 \
 	sun50i_a64 \
-	sun50i_h6
+	sun50i_h6 \
+	sun50i_h616
 
 do-build:
 .for P in ${PLATFORMS}
 	cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-	    V=1 PLAT=${P} DEBUG=1 bl31
+	    V=1 PLAT=${P} DEBUG=0 bl31
 .endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/arm-trusted-firmware/
-	${INSTALL_DATA} ${WRKBUILD}/build/rk3328/debug/bl31/bl31.elf \
+	${INSTALL_DATA} ${WRKBUILD}/build/rk3328/release/bl31/bl31.elf \
 	    ${PREFIX}/share/arm-trusted-firmware/rk3328-bl31.elf
-	${INSTALL_DATA} ${WRKBUILD}/build/rk3399/debug/bl31/bl31.elf \
+	${INSTALL_DATA} ${WRKBUILD}/build/rk3399/release/bl31/bl31.elf \
 	    ${PREFIX}/share/arm-trusted-firmware/rk3399-bl31.elf
-	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_a64/debug/bl31.bin \
+	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_a64/release/bl31.bin \
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_a64-bl31.bin
-	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h6/debug/bl31.bin \
+	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h6/release/bl31.bin \
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h6-bl31.bin
+	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h616/release/bl31.bin \
+	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h616-bl31.bin
 
 .include <bsd.port.mk>

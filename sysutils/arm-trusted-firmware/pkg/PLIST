@@ -4,3 +4,4 @@ share/arm-trusted-firmware/rk3328-bl31.elf
 share/arm-trusted-firmware/rk3399-bl31.elf
 share/arm-trusted-firmware/sun50i_a64-bl31.bin
 share/arm-trusted-firmware/sun50i_h6-bl31.bin
+share/arm-trusted-firmware/sun50i_h616-bl31.bin
