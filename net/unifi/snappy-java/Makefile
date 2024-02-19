@@ -3,6 +3,7 @@
 # with the native module so that it can be rebuilt more easily when
 # libc++ is updated.
 UNLINKED =	snappy-java-bootstrap
+PORTROACH =	ignore=1
 STATIC_PLIST =	No
 
 COMMENT=	special helper port to build snappy-java-X.jar for unifi
