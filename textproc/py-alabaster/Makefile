@@ -1,6 +1,6 @@
 COMMENT=	configurable sidebar-enabled Sphinx theme
 
-MODPY_EGG_VERSION=	0.7.13
+MODPY_EGG_VERSION=	0.7.16
 DISTNAME=	alabaster-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 
 FLAVORS=	python3
 FLAVOR=		python3
