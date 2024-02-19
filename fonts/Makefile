@@ -98,6 +98,7 @@
      SUBDIR += tagmukay
      SUBDIR += taiwan-cns11643-fonts
      SUBDIR += tamsyn-font
+     SUBDIR += tamzen-font
      SUBDIR += taviraj
      SUBDIR += terminus-font
      SUBDIR += terminus-font,centered_tilde
