@@ -4,7 +4,7 @@ V =		4.0.4.28
 DISTNAME =	tacacs-F${V}
 PKGNAME =	tacacs+-${V}
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  tacacs                    1.0
 
@@ -20,7 +20,7 @@ WANTLIB += c pthread
 SITES =		ftp://ftp.shrubbery.net/pub/tac_plus/
 
 MODULES =	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_ADJ_FILES = do_auth.py
 
 BUILD_DEPENDS =	devel/bison
@@ -35,6 +35,9 @@ CONFIGURE_ARGS =	--with-libwrap=no \
 CONFIGURE_ENV =	ac_cv_lib_pam_pam_start=false \
 		MAKE=/usr/bin/make \
 		YACC=bison
+
+post-extract:
+	cd ${WRKSRC} && 2to3 -w do_auth.py
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.sample ${PREFIX}/share/tacacs

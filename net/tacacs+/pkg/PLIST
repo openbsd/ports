@@ -3,7 +3,7 @@
 @extraunexec rm -f /var/log/tac_plus/*
 @rcscript ${RCDIR}/tac_plus
 include/tacacs.h
-lib/libtacacs.a
+@static-lib lib/libtacacs.a
 lib/libtacacs.la
 @lib lib/libtacacs.so.${LIBtacacs_VERSION}
 @man man/man5/tac_plus.conf.5
