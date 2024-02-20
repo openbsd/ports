@@ -17,6 +17,7 @@ DIST_TUPLE =	github neovim neovim v0.9.5 .
 USE_NOBTCFI =	Yes
 
 CATEGORIES =	editors devel
+REVISION =	0
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
@@ -40,7 +41,7 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += c iconv intl m msgpackc pthread termkey
+WANTLIB += c iconv intl m msgpack-c pthread termkey
 WANTLIB += tree-sitter unibilium util uv vterm
 
 .if ${EMBED_LUAJIT} != "Yes"
