@@ -19,11 +19,11 @@ include/msgpack/vrefbuffer.h
 include/msgpack/zbuffer.h
 include/msgpack/zone.h
 lib/cmake/
-lib/cmake/msgpackc/
-lib/cmake/msgpackc/msgpackc-config-version.cmake
-lib/cmake/msgpackc/msgpackc-config.cmake
-lib/cmake/msgpackc/msgpackc-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/msgpackc/msgpackc-targets.cmake
-@static-lib lib/libmsgpackc.a
-@lib lib/libmsgpackc.so.${LIBmsgpackc_VERSION}
-lib/pkgconfig/msgpack.pc
+lib/cmake/msgpack-c/
+lib/cmake/msgpack-c/msgpack-c-config-version.cmake
+lib/cmake/msgpack-c/msgpack-c-config.cmake
+lib/cmake/msgpack-c/msgpack-c-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/msgpack-c/msgpack-c-targets.cmake
+@static-lib lib/libmsgpack-c.a
+@lib lib/libmsgpack-c.so.${LIBmsgpack-c_VERSION}
+lib/pkgconfig/msgpack-c.pc
