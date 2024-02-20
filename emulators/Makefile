@@ -14,6 +14,7 @@
      SUBDIR += dynagen
      SUBDIR += dynamips
      SUBDIR += emulationstation
+     SUBDIR += es-de
      SUBDIR += fceux
      SUBDIR += flycast
      SUBDIR += frodo
