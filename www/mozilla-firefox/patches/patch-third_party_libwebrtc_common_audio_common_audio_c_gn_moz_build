@@ -1,5 +1,6 @@
 Zap duplicated lines that break the build on riscv64.
 https://bugzilla.mozilla.org/show_bug.cgi?id=1876554
+https://hg.mozilla.org/mozilla-central/rev/3b6d2e1cea3c
 
 Index: third_party/libwebrtc/common_audio/common_audio_c_gn/moz.build
 --- third_party/libwebrtc/common_audio/common_audio_c_gn/moz.build.orig

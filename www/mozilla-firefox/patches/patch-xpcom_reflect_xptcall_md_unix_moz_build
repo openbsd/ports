@@ -1,5 +1,8 @@
 Add files missing on riscv64.
 
+https://bugzilla.mozilla.org/show_bug.cgi?id=1879656
+https://hg.mozilla.org/mozilla-central/rev/1555c860fada
+
 Index: xpcom/reflect/xptcall/md/unix/moz.build
 --- xpcom/reflect/xptcall/md/unix/moz.build.orig
 +++ xpcom/reflect/xptcall/md/unix/moz.build
