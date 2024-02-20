@@ -9,14 +9,14 @@ Index: crypto/modes/asm/ghash-x86_64.pl
  .L_init_clmul:
  ___
  $code.=<<___ if ($win64);
-@@ -1026,6 +1027,7 @@ $code.=<<___;
- .type	gcm_init_avx,\@abi-omnipotent
+@@ -1027,6 +1028,7 @@ $code.=<<___;
  .align	32
  gcm_init_avx:
-+	endbranch
  .cfi_startproc
++	endbranch
  ___
  if ($avx) {
+ my ($Htbl,$Xip)=@_4args;
 @@ -1609,6 +1611,7 @@ ___
  }
  
