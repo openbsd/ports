@@ -4,8 +4,7 @@ COMMENT=	fast hash map and hash set
 
 GH_ACCOUNT=	Tessil
 GH_PROJECT=	robin-map
-GH_TAGNAME=	v0.6.3
-REVISION =	0
+GH_TAGNAME=	v1.2.1
 
 CATEGORIES=	devel
 
@@ -13,16 +12,15 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
-
 TEST_DEPENDS=	devel/boost
 
 do-test:
-	cd ${WRKSRC}/tests && ${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} \
-		${LOCALBASE}/bin/cmake -G ${_MODCMAKE_GEN} ${WRKSRC}/tests
-	cd ${WRKSRC}/tests && exec ${SETENV} ${ALL_TEST_ENV} \
-        	${NINJA} ${NINJA_FLAGS}
-	cd ${WRKSRC}/tests && ./tsl_robin_map_tests
+	cd ${WRKSRC}/tests && mkdir -p build && cd build && \
+		export CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} \
+		&& ${LOCALBASE}/bin/cmake -G ${_MODCMAKE_GEN} .. \
+		&& ${LOCALBASE}/bin/cmake --build . \
+		&& ./tsl_robin_map_tests
 
 post-install:
 	mv ${PREFIX}/share/cmake/ ${PREFIX}/lib/
