@@ -1,15 +1,13 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.18
+V=		3.0.20
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	6
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-jack=	0
 
 USE_NOBTCFI=	Yes
 
@@ -76,7 +74,7 @@ WANTLIB-main+=	v4l2
 
 WANTLIB-jack=	db execinfo jack vlccore ${WANTLIB-common}
 
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 AUTOMAKE_VERSION= 1.16
 AUTORECONF=	./bootstrap
 
