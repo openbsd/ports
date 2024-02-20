@@ -1,0 +1,11 @@
+Libre SCP firmware for Allwinner sunxi SoCs.
+
+Crust improves battery life and thermal performance by implementing a
+deep sleep state. During deep sleep, the CPU cores, the DRAM
+controller, and most onboard peripherals are powered down, reducing
+power consumption by 80% or more compared to an idle device. On boards
+without a PMIC, Crust is also responsible for orderly power-off and
+power-on of the device.
+
+This package provides SCP firware builds for boards supported by
+OpenBSD.

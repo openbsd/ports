@@ -1,0 +1,12 @@
+Index: 3rdparty/kconfig/confdata.c
+--- 3rdparty/kconfig/confdata.c.orig
++++ 3rdparty/kconfig/confdata.c
+@@ -71,7 +71,7 @@ static bool is_same(const char *file1, const char *fil
+ 	if (map2 == MAP_FAILED)
+ 		goto close2;
+ 
+-	if (bcmp(map1, map2, st1.st_size))
++	if (memcmp(map1, map2, st1.st_size))
+ 		goto close2;
+ 
+ 	ret = true;

@@ -1,0 +1,11 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -27,7 +27,6 @@ COMMON_CFLAGS	 = -Os -pipe -std=c11 \
+ 		   -ffunction-sections \
+ 		   -fno-builtin \
+ 		   -fno-common \
+-		   -fvar-tracking-assignments \
+ 		   -g$(if $(CONFIG_DEBUG_INFO),gdb,0) \
+ 		   -Wall -Wextra -Wformat=2 -Wpedantic -Wshadow \
+ 		   -Werror=implicit-function-declaration \
