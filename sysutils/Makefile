@@ -61,6 +61,7 @@
      SUBDIR += cpdup
      SUBDIR += cpuid
      SUBDIR += crashme
+     SUBDIR += crust
      SUBDIR += curlftpfs
      SUBDIR += czkawka
      SUBDIR += dateutils
