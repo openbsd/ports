@@ -3,6 +3,7 @@ COMMENT =	Qt5 GUI front-end for neovim
 GH_ACCOUNT = equalsraf
 GH_PROJECT = neovim-qt
 GH_TAGNAME = v0.2.18
+REVISION = 0
 
 CATEGORIES = editors
 
@@ -14,7 +15,7 @@ MAINTAINER = Laurence Tratt <laurie@tratt.net>
 PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Svg
-WANTLIB += Qt5Widgets c m msgpackc
+WANTLIB += Qt5Widgets c m msgpack-c
 
 MODULES =	devel/cmake \
 		lang/python \
