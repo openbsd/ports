@@ -4,7 +4,7 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
-REVISION =	6
+REVISION =	7
 
 SITES.p =	https://github.com/tmate-io/tmate/commit/
 PATCHFILES.p =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch \
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB =  c curses event_core event_extra execinfo msgpackc ssh util
+WANTLIB =  c curses event_core event_extra execinfo msgpack-c ssh util
 
 LIB_DEPENDS =	devel/libevent2 \
 		devel/msgpack \

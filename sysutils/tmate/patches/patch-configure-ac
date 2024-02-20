@@ -1,0 +1,20 @@
+--- configure.ac.orig	Sun Nov 17 07:09:38 2019
++++ configure.ac	Sat Feb  3 15:47:48 2024
+@@ -201,7 +201,7 @@ fi
+ 
+ PKG_CHECK_MODULES(
+   MSGPACK,
+-  msgpack >= 1.1.0,
++  msgpack-c >= 1.1.0,
+   [
+     CPPFLAGS="$MSGPACK_CFLAGS $CPPFLAGS"
+     LIBS="$MSGPACK_LIBS $LIBS"
+@@ -210,7 +210,7 @@ PKG_CHECK_MODULES(
+   found_msgpack=no
+ )
+ if test "x$found_msgpack" = xno; then
+-  AC_MSG_ERROR("msgpack >= 1.1.0 not found")
++  AC_MSG_ERROR("msgpack-c >= 1.1.0 not found")
+ fi
+ 
+ PKG_CHECK_MODULES(
