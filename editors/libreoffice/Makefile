@@ -29,6 +29,8 @@ WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
+REVISION-main=	0
+
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -378,6 +380,9 @@ CONFIGURE_ARGS+=--without-java
 # XXX libreoffice has its own way to build things in parallel
 PARALLEL_MAKE_FLAGS =
 CONFIGURE_ARGS+=--with-parallelism=${MAKE_JOBS}
+
+# Make sure to use our ld wrapper to pickup nobtcfi and wxneeded
+CONFIGURE_ARGS+=--enable-ld=lld:${WRKDIR}/bin/ld
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--enable-debug
