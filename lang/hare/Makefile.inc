@@ -5,7 +5,7 @@ COMMENT ?=	simple, stable, and robust systems programming language
 CATEGORIES ?=	lang devel
 
 HOMEPAGE ?=	https://harelang.org/
-MAINTAINER ?=	Brian Callahan <bcallah@openbsd.org>
+MAINTAINER ?=	Tobias Heider <tobhe@openbsd.org>
 
 # Compiler: GPLv3 only
 # Runtime: MPL 2.0
