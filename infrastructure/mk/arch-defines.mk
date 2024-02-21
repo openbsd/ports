@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.102 2024/02/21 13:11:34 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.103 2024/02/21 16:26:30 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -22,12 +22,13 @@ LE_ARCHS = aarch64 alpha amd64 arm i386 mips64el riscv64 sh
 LP64_ARCHS = aarch64 alpha amd64 mips64 mips64el powerpc64 riscv64 sparc64
 GCC4_ARCHS = alpha hppa sh sparc64
 GCC3_ARCHS = m88k
-# XXX easier for ports that depend on mono
+# arches where certain ports are available
 MONO_ARCHS = aarch64 amd64 i386
-OCAML_NATIVE_ARCHS = aarch64 amd64 i386
-OCAML_NATIVE_DYNLINK_ARCHS = aarch64 amd64 i386
 GO_ARCHS = aarch64 amd64 arm armv7 i386 mips64 riscv64
 RUST_ARCHS = aarch64 amd64 i386 powerpc64 riscv64 sparc64
+# arch-specific features that ocaml ports need to know about
+OCAML_NATIVE_ARCHS = aarch64 amd64 i386
+OCAML_NATIVE_DYNLINK_ARCHS = aarch64 amd64 i386
 
 # arches where the base compiler is clang
 CLANG_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64
