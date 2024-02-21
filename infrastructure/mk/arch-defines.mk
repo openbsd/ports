@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.101 2024/01/01 14:14:49 semarie Exp $
+# $OpenBSD: arch-defines.mk,v 1.102 2024/02/21 13:11:34 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -85,9 +85,9 @@ LLD_EMUL =
 # system version wide specifics
 _SYSTEM_VERSION = 1
 _SYSTEM_VERSION-aarch64 = 8
-_SYSTEM_VERSION-amd64 = 8
+_SYSTEM_VERSION-amd64 = 9
 _SYSTEM_VERSION-arm = 6
-_SYSTEM_VERSION-i386 = 4
+_SYSTEM_VERSION-i386 = 5
 _SYSTEM_VERSION-mips64 = 5
 _SYSTEM_VERSION-mips64el = 4
 _SYSTEM_VERSION-powerpc = 4
