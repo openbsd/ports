@@ -1,6 +1,7 @@
---- lib/Poppler.pm.orig	Thu Jan  7 15:15:21 2016
-+++ lib/Poppler.pm	Tue Jan 12 16:17:40 2016
-@@ -101,7 +101,6 @@ use warnings;
+Index: lib/Poppler.pm
+--- lib/Poppler.pm.orig
++++ lib/Poppler.pm
+@@ -103,7 +103,6 @@ use warnings;
  use Carp qw/croak/;
  use Cwd qw/abs_path/;
  use Exporter;
@@ -8,7 +9,7 @@
  use Glib::Object::Introspection;
  use URI::file;
  use FindBin;
-@@ -202,7 +201,7 @@ my @_POPPLER_HANDLE_SENTINEL_BOOLEAN_FOR = qw/
+@@ -204,7 +203,7 @@ my @_POPPLER_HANDLE_SENTINEL_BOOLEAN_FOR = qw/
  sub import {
  
    Glib::Object::Introspection->setup (

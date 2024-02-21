@@ -1,6 +1,6 @@
 COMMENT=	PDF manipulation library
 
-DISTNAME=	Poppler-1.0101
+DISTNAME=	Poppler-1.0103
 
 CATEGORIES=	print
 
