@@ -1,6 +1,6 @@
 COMMENT =		C++ library implementing a BitTorrent client
 
-V =			2.0.9
+V =			2.0.10
 DISTNAME =		libtorrent-rasterbar-${V}
 
 SHARED_LIBS +=		torrent-rasterbar 9.0	# 10.0.0
