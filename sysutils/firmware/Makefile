@@ -29,6 +29,7 @@
      SUBDIR += iwx
      SUBDIR += malo
      SUBDIR += mtw
+     SUBDIR += mwx
      SUBDIR += ogx
      SUBDIR += otus
      SUBDIR += pgt
