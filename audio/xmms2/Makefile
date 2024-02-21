@@ -3,7 +3,7 @@ COMMENT =		audio player daemon with library management
 V =			0.8
 DISTNAME =		xmms2-${V}DrO_o
 PKGNAME =		xmms2-${V}
-REVISION =		17
+REVISION =		18
 
 SHARED_LIBS +=		xmmsclient++		2.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	1.0 # 1.0.0
@@ -12,7 +12,8 @@ SHARED_LIBS +=		xmmsclient		2.0 # 6.0.0
 
 CATEGORIES =		audio
 
-HOMEPAGE =		https://xmms2.org/
+HOMEPAGE =		https://github.com/xmms2
+PORTROACH =		site:https://github.com/xmms2/xmms2-devel/releases/
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
