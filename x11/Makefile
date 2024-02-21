@@ -283,7 +283,6 @@
      SUBDIR += skippy
      SUBDIR += slock
      SUBDIR += smplayer
-     SUBDIR += smtube
      SUBDIR += sndiokeys
      SUBDIR += spectrwm
      SUBDIR += spice-gtk
