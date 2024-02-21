@@ -1,0 +1,13 @@
+Index: codec/common/x86/asm_inc.asm
+--- codec/common/x86/asm_inc.asm.orig
++++ codec/common/x86/asm_inc.asm
+@@ -501,6 +501,9 @@ SECTION .note.GNU-stack noalloc noexec nowrite progbit
+         %endif
+     %endif
+     %1:
++    %ifndef X86_32
++        endbr64
++    %endif
+ %endmacro
+ 
+ %macro WELS_AbsW 2
