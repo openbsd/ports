@@ -1,8 +1,6 @@
 COMMENT=	event-driven spam filtering system in C/Lua
 
-GH_ACCOUNT=	vstakhov
-GH_PROJECT=	rspamd
-GH_TAGNAME=	3.8.1
+DIST_TUPLE=	github vstakhov rspamd 3.8.2 .
 
 CATEGORIES=	mail
 
