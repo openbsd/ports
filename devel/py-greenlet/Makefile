@@ -1,6 +1,6 @@
 COMMENT=	lightweight in-process concurrent programming
 
-MODPY_EGG_VERSION= 2.0.2
+MODPY_EGG_VERSION= 3.0.3
 DISTNAME=	greenlet-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

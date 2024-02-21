@@ -10,6 +10,15 @@ lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}.dist-info
 lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/greenlet-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/greenlet/TBrokenGreenlet.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TExceptionState.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TGreenlet.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TGreenletGlobals.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TMainGreenlet.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TPythonState.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TStackState.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TThreadStateDestroy.cpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/TUserGreenlet.cpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet.cpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_allocator.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_compiler_compat.hpp
+lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_cpython_add_pending.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_cpython_compat.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_exceptions.hpp
 lib/python${MODPY_VERSION}/site-packages/greenlet/greenlet_greenlet.hpp
@@ -43,6 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_arm64_masm.asm
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_arm64_masm.obj
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_arm64_msvc.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_csky_gcc.h
+lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_loongarch64_linux.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_m68k_gcc.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_mips_unix.h
 lib/python${MODPY_VERSION}/site-packages/greenlet/platform/switch_ppc64_aix.h
@@ -66,6 +77,20 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_clearing_run_switches.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_clearing_run_switches.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_cpp_exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_cpp_exception.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_initialstub_already_started.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_initialstub_already_started.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_slp_switch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_slp_switch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_three_greenlets2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_two_greenlets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}fail_switch_two_greenlets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}leakcheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}leakcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/${MODPY_PYCACHE}test_contextvars.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,6 +125,13 @@ lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension.c
 @so lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension_cpp.cpp
 @so lib/python${MODPY_VERSION}/site-packages/greenlet/tests/_test_extension_cpp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_clearing_run_switches.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_cpp_exception.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_initialstub_already_started.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_slp_switch.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_three_greenlets.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_three_greenlets2.py
+lib/python${MODPY_VERSION}/site-packages/greenlet/tests/fail_switch_two_greenlets.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/leakcheck.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/test_contextvars.py
 lib/python${MODPY_VERSION}/site-packages/greenlet/tests/test_cpp.py
