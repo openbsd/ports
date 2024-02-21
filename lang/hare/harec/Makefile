@@ -1,5 +1,6 @@
 V =		0.24.0
 DISTNAME =	harec-${V}
+DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
 WANTLIB += c m
 
@@ -7,8 +8,6 @@ WANTLIB += c m
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-
-DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
 RUN_DEPENDS =	lang/qbe
 
