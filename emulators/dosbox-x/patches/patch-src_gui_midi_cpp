@@ -1,0 +1,13 @@
+--- src/gui/midi.cpp.orig	Thu Nov  2 18:58:55 2023
++++ src/gui/midi.cpp	Fri Nov  3 05:13:47 2023
+@@ -115,6 +115,10 @@ static struct {
+ 
+ #include "midi_win32.h"
+ 
++#elif defined (HAVE_SNDIO)
++
++#include "midi_sndio.h"
++
+ #else
+ 
+ #include "midi_oss.h"

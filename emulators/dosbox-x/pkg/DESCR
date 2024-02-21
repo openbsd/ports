@@ -1,0 +1,12 @@
+DOSBox-X is a fork of DOSBox cross-platform DOS emulator.
+
+This is a platform for running DOS applications, including emulating the
+environments to run Windows 3.x, 9x and ME and software written for those
+versions of Windows. Moreover, DOSBox-X supports DOS/V and NEC PC-98
+emulations so that you can play DOS/V and PC-98 games with it.
+
+Compared with DOSBox, DOSBox-X focuses more on general emulation and accuracy.
+The goal of this project is to make a complete emulation package that covers
+all pre-2000 DOS and Windows 9x based system scenarios, including peripherals,
+motherboards, CPUs, and all manner of hardware that was made for PC hardware
+of that time.

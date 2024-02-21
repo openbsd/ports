@@ -1,0 +1,27 @@
+--- configure.ac.orig	Thu Nov  2 18:58:53 2023
++++ configure.ac	Fri Nov  3 05:04:23 2023
+@@ -97,6 +97,24 @@ AC_PREFIX_DEFAULT([/usr/local])
+ dnl this code needs large file support on 32-bit systems
+ AC_SYS_LARGEFILE
+ 
++dnl enable disable sndio and pass it's cflags to CXXFLAGS
++AH_TEMPLATE([HAVE_SNDIO],[Determines if sndio is available on the system.])
++AC_ARG_ENABLE(sndio-midi,
++AC_HELP_STRING([--enable-sndio-midi],[compile with sndio midi support (default yes)]),
++[ case "${enableval}" in
++ yes) sndio_midi=true;;
++ no)  sndio_midi=false;;
++esac],
++[sndio_midi=true])
++if test x$sndio_midi = xtrue ; then 
++  AC_CHECK_HEADER(sndio.h,have_sndio_h=yes,)
++  AC_CHECK_LIB(sndio, sio_initpar, have_sndio_lib=yes, , )
++  if test x$have_sndio_lib = xyes -a x$have_sndio_h = xyes ; then
++    LIBS="$LIBS -lsndio"
++    AC_DEFINE(HAVE_SNDIO,1)
++  fi
++fi
++
+ #Check for big endian machine, should #define WORDS_BIGENDIAN if so
+ AC_C_BIGENDIAN
+ 
