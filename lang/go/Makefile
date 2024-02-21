@@ -11,6 +11,7 @@ VERSION =		1.22.0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
+REVISION =		0
 
 CATEGORIES =		lang
 
