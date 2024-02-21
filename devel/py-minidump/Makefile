@@ -1,10 +1,9 @@
 COMMENT =		library to parse Windows minidump file format
 
-MODPY_EGG_VERSION =	0.0.21
+MODPY_EGG_VERSION =	0.0.23
 
 DISTNAME =		minidump-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
