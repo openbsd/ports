@@ -1,4 +1,6 @@
-DISTNAME =	hare-0.0.0pl20231202
+V =		0.24.0
+DISTNAME =	hare-${V}
+DISTFILES =	hare-{hare/archive/}${V}${EXTRACT_SUFX}
 
 WANTLIB += c
 

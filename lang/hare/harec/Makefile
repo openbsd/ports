@@ -1,5 +1,5 @@
-DISTNAME =	harec-0.0.0pl20231202
-REVISION =	0
+V =		0.24.0
+DISTNAME =	harec-${V}
 
 WANTLIB += c m
 
@@ -7,6 +7,8 @@ WANTLIB += c m
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
+
+DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
 RUN_DEPENDS =	lang/qbe
 
@@ -18,9 +20,10 @@ RUN_DEPENDS +=	devel/binutils
 RUN_DEPENDS +=	devel/gas
 .endif
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--sysconfdir="${SYSCONFDIR}"
 CONFIGURE_ENV =		AS="gas"
+
+do-gen:
+	cp ${WRKSRC}/configs/openbsd.mk ${WRKSRC}/config.mk
 
 TEST_TARGET =	check
 

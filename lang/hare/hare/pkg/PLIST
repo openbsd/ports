@@ -7,8 +7,8 @@
 @man man/man1/hare-test.1
 @man man/man1/hare.1
 @man man/man1/haredoc.1
-@man man/man5/hare-doc.5
 @man man/man5/hare-module.5
+@man man/man5/haredoc.5
 src/
 src/hare/
 src/hare/stdlib/
@@ -33,10 +33,6 @@ src/hare/stdlib/bytes/tokenize.ha
 src/hare/stdlib/bytes/trim.ha
 src/hare/stdlib/bytes/two_way.ha
 src/hare/stdlib/bytes/zero.ha
-src/hare/stdlib/configs/
-src/hare/stdlib/configs/freebsd.mk
-src/hare/stdlib/configs/linux.mk
-src/hare/stdlib/configs/openbsd.mk
 src/hare/stdlib/crypto/
 src/hare/stdlib/crypto/+test/
 src/hare/stdlib/crypto/+test/authenc_test.ha
@@ -180,6 +176,66 @@ src/hare/stdlib/crypto/x25519/
 src/hare/stdlib/crypto/x25519/+test.ha
 src/hare/stdlib/crypto/x25519/README
 src/hare/stdlib/crypto/x25519/x25519.ha
+src/hare/stdlib/debug/
+src/hare/stdlib/debug/+aarch64/
+src/hare/stdlib/debug/+aarch64/getfp.s
+src/hare/stdlib/debug/+aarch64/walk.ha
+src/hare/stdlib/debug/+freebsd/
+src/hare/stdlib/debug/+freebsd/+aarch64/
+src/hare/stdlib/debug/+freebsd/+aarch64/ucontext.ha
+src/hare/stdlib/debug/+freebsd/+riscv64/
+src/hare/stdlib/debug/+freebsd/+riscv64/ucontext.ha
+src/hare/stdlib/debug/+freebsd/+x86_64/
+src/hare/stdlib/debug/+freebsd/+x86_64/ucontext.ha
+src/hare/stdlib/debug/+freebsd/translate.ha
+src/hare/stdlib/debug/+linux/
+src/hare/stdlib/debug/+linux/+aarch64/
+src/hare/stdlib/debug/+linux/+aarch64/ucontext.ha
+src/hare/stdlib/debug/+linux/+riscv64/
+src/hare/stdlib/debug/+linux/+riscv64/ucontext.ha
+src/hare/stdlib/debug/+linux/+x86_64/
+src/hare/stdlib/debug/+linux/+x86_64/ucontext.ha
+src/hare/stdlib/debug/+linux/translate.ha
+src/hare/stdlib/debug/+openbsd/
+src/hare/stdlib/debug/+openbsd/+aarch64/
+src/hare/stdlib/debug/+openbsd/+aarch64/ucontext.ha
+src/hare/stdlib/debug/+openbsd/+riscv64/
+src/hare/stdlib/debug/+openbsd/+riscv64/ucontext.ha
+src/hare/stdlib/debug/+openbsd/+x86_64/
+src/hare/stdlib/debug/+openbsd/+x86_64/ucontext.ha
+src/hare/stdlib/debug/+openbsd/translate.ha
+src/hare/stdlib/debug/+riscv64/
+src/hare/stdlib/debug/+riscv64/getfp.s
+src/hare/stdlib/debug/+riscv64/walk.ha
+src/hare/stdlib/debug/+x86_64/
+src/hare/stdlib/debug/+x86_64/getfp.s
+src/hare/stdlib/debug/+x86_64/walk.ha
+src/hare/stdlib/debug/README
+src/hare/stdlib/debug/abort.ha
+src/hare/stdlib/debug/altstack.s
+src/hare/stdlib/debug/backtrace.ha
+src/hare/stdlib/debug/constants.ha
+src/hare/stdlib/debug/dwarf/
+src/hare/stdlib/debug/dwarf/README
+src/hare/stdlib/debug/dwarf/abbrev.ha
+src/hare/stdlib/debug/dwarf/addr_to_line.ha
+src/hare/stdlib/debug/dwarf/aranges.ha
+src/hare/stdlib/debug/dwarf/constant.ha
+src/hare/stdlib/debug/dwarf/info.ha
+src/hare/stdlib/debug/dwarf/line.ha
+src/hare/stdlib/debug/dwarf/reader.ha
+src/hare/stdlib/debug/dwarf/strings.ha
+src/hare/stdlib/debug/fault.ha
+src/hare/stdlib/debug/ident.ha
+src/hare/stdlib/debug/image/
+src/hare/stdlib/debug/image/README
+src/hare/stdlib/debug/image/open.ha
+src/hare/stdlib/debug/image/sections.ha
+src/hare/stdlib/debug/image/self+freebsd.ha
+src/hare/stdlib/debug/image/self+linux.ha
+src/hare/stdlib/debug/image/self+openbsd.ha
+src/hare/stdlib/debug/image/self_argv.ha
+src/hare/stdlib/debug/symbols.ha
 src/hare/stdlib/dirs/
 src/hare/stdlib/dirs/README
 src/hare/stdlib/dirs/xdg.ha
@@ -297,6 +353,7 @@ src/hare/stdlib/hare/parse/README
 src/hare/stdlib/hare/parse/decl.ha
 src/hare/stdlib/hare/parse/doc/
 src/hare/stdlib/hare/parse/doc/+test.ha
+src/hare/stdlib/hare/parse/doc/README
 src/hare/stdlib/hare/parse/doc/doc.ha
 src/hare/stdlib/hare/parse/expr.ha
 src/hare/stdlib/hare/parse/ident.ha
@@ -583,13 +640,10 @@ src/hare/stdlib/regex/regex.ha
 src/hare/stdlib/rt/
 src/hare/stdlib/rt/+aarch64/
 src/hare/stdlib/rt/+aarch64/arch_jmp.ha
-src/hare/stdlib/rt/+aarch64/backtrace.ha
 src/hare/stdlib/rt/+aarch64/cpuid.ha
 src/hare/stdlib/rt/+aarch64/cpuid.s
 src/hare/stdlib/rt/+aarch64/fenv.s
-src/hare/stdlib/rt/+aarch64/getfp.s
 src/hare/stdlib/rt/+aarch64/longjmp.s
-src/hare/stdlib/rt/+aarch64/restore.s
 src/hare/stdlib/rt/+aarch64/setjmp.s
 src/hare/stdlib/rt/+freebsd/
 src/hare/stdlib/rt/+freebsd/+aarch64.ha
@@ -601,7 +655,7 @@ src/hare/stdlib/rt/+freebsd/hare+libc.sc
 src/hare/stdlib/rt/+freebsd/hare.sc
 src/hare/stdlib/rt/+freebsd/initfini.ha
 src/hare/stdlib/rt/+freebsd/platform_abort.ha
-src/hare/stdlib/rt/+freebsd/platformstart.ha
+src/hare/stdlib/rt/+freebsd/platformstart-libc.ha
 src/hare/stdlib/rt/+freebsd/segmalloc.ha
 src/hare/stdlib/rt/+freebsd/signal.ha
 src/hare/stdlib/rt/+freebsd/socket.ha
@@ -630,6 +684,9 @@ src/hare/stdlib/rt/+linux/initfini.ha
 src/hare/stdlib/rt/+linux/platform_abort.ha
 src/hare/stdlib/rt/+linux/platformstart-libc.ha
 src/hare/stdlib/rt/+linux/prctl.ha
+src/hare/stdlib/rt/+linux/restore+aarch64.s
+src/hare/stdlib/rt/+linux/restore+riscv64.s
+src/hare/stdlib/rt/+linux/restore+x86_64.s
 src/hare/stdlib/rt/+linux/segmalloc.ha
 src/hare/stdlib/rt/+linux/signal.ha
 src/hare/stdlib/rt/+linux/socket.ha
@@ -650,6 +707,10 @@ src/hare/stdlib/rt/+linux/syscallno+x86_64.ha
 src/hare/stdlib/rt/+linux/syscalls.ha
 src/hare/stdlib/rt/+linux/types.ha
 src/hare/stdlib/rt/+openbsd/
+src/hare/stdlib/rt/+openbsd/+aarch64.ha
+src/hare/stdlib/rt/+openbsd/+riscv64.ha
+src/hare/stdlib/rt/+openbsd/+x86_64.ha
+src/hare/stdlib/rt/+openbsd/dynamic_linker.ha
 src/hare/stdlib/rt/+openbsd/env.ha
 src/hare/stdlib/rt/+openbsd/errno.ha
 src/hare/stdlib/rt/+openbsd/hare+test.sc
@@ -665,23 +726,17 @@ src/hare/stdlib/rt/+openbsd/syscalls.ha
 src/hare/stdlib/rt/+openbsd/types.ha
 src/hare/stdlib/rt/+riscv64/
 src/hare/stdlib/rt/+riscv64/arch_jmp.ha
-src/hare/stdlib/rt/+riscv64/backtrace.ha
 src/hare/stdlib/rt/+riscv64/cpuid.ha
 src/hare/stdlib/rt/+riscv64/cpuid.s
 src/hare/stdlib/rt/+riscv64/fenv.s
-src/hare/stdlib/rt/+riscv64/getfp.s
 src/hare/stdlib/rt/+riscv64/longjmp.s
-src/hare/stdlib/rt/+riscv64/restore.s
 src/hare/stdlib/rt/+riscv64/setjmp.s
 src/hare/stdlib/rt/+x86_64/
 src/hare/stdlib/rt/+x86_64/arch_jmp.ha
-src/hare/stdlib/rt/+x86_64/backtrace.ha
 src/hare/stdlib/rt/+x86_64/cpuid.ha
 src/hare/stdlib/rt/+x86_64/cpuid.s
 src/hare/stdlib/rt/+x86_64/fenv.s
-src/hare/stdlib/rt/+x86_64/getfp.s
 src/hare/stdlib/rt/+x86_64/longjmp.s
-src/hare/stdlib/rt/+x86_64/restore.s
 src/hare/stdlib/rt/+x86_64/setjmp.s
 src/hare/stdlib/rt/README
 src/hare/stdlib/rt/abort+test.ha
@@ -738,6 +793,7 @@ src/hare/stdlib/strings/contains.ha
 src/hare/stdlib/strings/dup.ha
 src/hare/stdlib/strings/index.ha
 src/hare/stdlib/strings/iter.ha
+src/hare/stdlib/strings/pad.ha
 src/hare/stdlib/strings/replace.ha
 src/hare/stdlib/strings/runes.ha
 src/hare/stdlib/strings/sub.ha
@@ -816,6 +872,7 @@ src/hare/stdlib/types/classes.ha
 src/hare/stdlib/types/limits.ha
 src/hare/stdlib/unix/
 src/hare/stdlib/unix/+freebsd/
+src/hare/stdlib/unix/+freebsd/getpid.ha
 src/hare/stdlib/unix/+freebsd/getuid.ha
 src/hare/stdlib/unix/+freebsd/groups.ha
 src/hare/stdlib/unix/+freebsd/nice.ha
@@ -823,6 +880,7 @@ src/hare/stdlib/unix/+freebsd/pipe.ha
 src/hare/stdlib/unix/+freebsd/setuid.ha
 src/hare/stdlib/unix/+freebsd/umask.ha
 src/hare/stdlib/unix/+linux/
+src/hare/stdlib/unix/+linux/getpid.ha
 src/hare/stdlib/unix/+linux/getuid.ha
 src/hare/stdlib/unix/+linux/groups.ha
 src/hare/stdlib/unix/+linux/nice.ha
@@ -830,6 +888,7 @@ src/hare/stdlib/unix/+linux/pipe.ha
 src/hare/stdlib/unix/+linux/setuid.ha
 src/hare/stdlib/unix/+linux/umask.ha
 src/hare/stdlib/unix/+openbsd/
+src/hare/stdlib/unix/+openbsd/getpid.ha
 src/hare/stdlib/unix/+openbsd/getuid.ha
 src/hare/stdlib/unix/+openbsd/groups.ha
 src/hare/stdlib/unix/+openbsd/nice.ha

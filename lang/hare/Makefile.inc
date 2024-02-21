@@ -11,6 +11,6 @@ MAINTAINER ?=	Tobias Heider <tobhe@openbsd.org>
 # Runtime: MPL 2.0
 PERMIT_PACKAGE ?=	Yes
 
-SITES ?=	https://github.com/ibara/ports/releases/download/v1.0/
+SITES ?=	https://git.sr.ht/~sircmpwn/
 
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
