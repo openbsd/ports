@@ -4,6 +4,7 @@ share/applications/org.kde.gcompris.desktop
 share/gcompris-qt/
 share/gcompris-qt/rcc/
 share/gcompris-qt/rcc/activities.rcc
+share/gcompris-qt/rcc/adjacent_numbers.rcc
 share/gcompris-qt/rcc/advanced_colors.rcc
 share/gcompris-qt/rcc/algebra_by.rcc
 share/gcompris-qt/rcc/algebra_div.rcc
@@ -27,6 +28,7 @@ share/gcompris-qt/rcc/bargame_2players.rcc
 share/gcompris-qt/rcc/binary_bulb.rcc
 share/gcompris-qt/rcc/braille_alphabets.rcc
 share/gcompris-qt/rcc/braille_fun.rcc
+share/gcompris-qt/rcc/calcudoku.rcc
 share/gcompris-qt/rcc/calendar.rcc
 share/gcompris-qt/rcc/canal_lock.rcc
 share/gcompris-qt/rcc/categorization.rcc
@@ -67,6 +69,7 @@ share/gcompris-qt/rcc/followline.rcc
 share/gcompris-qt/rcc/football.rcc
 share/gcompris-qt/rcc/fractions_create.rcc
 share/gcompris-qt/rcc/fractions_find.rcc
+share/gcompris-qt/rcc/frieze.rcc
 share/gcompris-qt/rcc/geo-country.rcc
 share/gcompris-qt/rcc/geography.rcc
 share/gcompris-qt/rcc/gletters.rcc
@@ -75,8 +78,13 @@ share/gcompris-qt/rcc/gnumch-factors.rcc
 share/gcompris-qt/rcc/gnumch-inequality.rcc
 share/gcompris-qt/rcc/gnumch-multiples.rcc
 share/gcompris-qt/rcc/gnumch-primes.rcc
+share/gcompris-qt/rcc/graduated_line_read.rcc
+share/gcompris-qt/rcc/graduated_line_use.rcc
+share/gcompris-qt/rcc/grammar_analysis.rcc
+share/gcompris-qt/rcc/grammar_classes.rcc
 share/gcompris-qt/rcc/graph-coloring.rcc
 share/gcompris-qt/rcc/gravity.rcc
+share/gcompris-qt/rcc/guess24.rcc
 share/gcompris-qt/rcc/guesscount.rcc
 share/gcompris-qt/rcc/guessnumber.rcc
 share/gcompris-qt/rcc/hangman.rcc
@@ -193,6 +201,7 @@ share/gcompris-qt/translations/
 share/gcompris-qt/translations/gcompris_ar.qm
 share/gcompris-qt/translations/gcompris_az.qm
 share/gcompris-qt/translations/gcompris_be.qm
+share/gcompris-qt/translations/gcompris_bg.qm
 share/gcompris-qt/translations/gcompris_br.qm
 share/gcompris-qt/translations/gcompris_ca.qm
 share/gcompris-qt/translations/gcompris_ca@valencia.qm
@@ -207,6 +216,7 @@ share/gcompris-qt/translations/gcompris_et.qm
 share/gcompris-qt/translations/gcompris_eu.qm
 share/gcompris-qt/translations/gcompris_fi.qm
 share/gcompris-qt/translations/gcompris_fr.qm
+share/gcompris-qt/translations/gcompris_gl.qm
 share/gcompris-qt/translations/gcompris_he.qm
 share/gcompris-qt/translations/gcompris_hr.qm
 share/gcompris-qt/translations/gcompris_hu.qm
@@ -226,6 +236,7 @@ share/gcompris-qt/translations/gcompris_sk.qm
 share/gcompris-qt/translations/gcompris_sl.qm
 share/gcompris-qt/translations/gcompris_sq.qm
 share/gcompris-qt/translations/gcompris_sv.qm
+share/gcompris-qt/translations/gcompris_sw.qm
 share/gcompris-qt/translations/gcompris_tr.qm
 share/gcompris-qt/translations/gcompris_uk.qm
 share/gcompris-qt/translations/gcompris_zh_TW.qm
