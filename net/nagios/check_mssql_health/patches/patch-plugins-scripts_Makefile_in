@@ -1,7 +1,7 @@
 Index: plugins-scripts/Makefile.in
 --- plugins-scripts/Makefile.in.orig
 +++ plugins-scripts/Makefile.in
-@@ -283,8 +283,8 @@ EXTRA_MODULES = \
+@@ -286,8 +286,8 @@ EXTRA_MODULES = \
    Classes/Sybase.pm \
    Classes/Device.pm
  
