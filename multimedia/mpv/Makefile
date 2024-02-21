@@ -2,10 +2,10 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.36.0
+GH_TAGNAME =		v0.37.0
 USE_NOBTCFI =		Yes
 
-SHARED_LIBS +=		mpv		1.0 # 2.0
+SHARED_LIBS +=		mpv		2.0
 
 CATEGORIES =		multimedia x11
 
@@ -14,11 +14,11 @@ HOMEPAGE =		https://mpv.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL SDL2 X11 Xext Xinerama Xpresent Xrandr Xss Xv archive
+WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += EGL SDL2 X11 Xext Xpresent Xrandr Xss Xv archive
 WANTLIB += ass avcodec avdevice avfilter avformat avutil bluray
 WANTLIB += c cdio cdio_cdda cdio_paranoia dvdnav iconv jpeg lcms2
-WANTLIB += ${MODLUA_WANTLIB} m placebo pthread sndio swresample
-WANTLIB += swscale z zimg
+WANTLIB += m placebo pthread sndio swresample swscale vulkan z zimg
 
 MODULES =		devel/meson \
 			lang/lua \
@@ -41,6 +41,7 @@ LIB_DEPENDS =		archivers/libarchive \
 			graphics/jpeg \
 			graphics/lcms2 \
 			graphics/libplacebo \
+			graphics/vulkan-loader \
 			graphics/zimg \
 			multimedia/libass \
 			multimedia/libbluray \
@@ -48,6 +49,7 @@ LIB_DEPENDS =		archivers/libarchive \
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
+			graphics/vulkan-loader \
 			www/yt-dlp \
 			x11/gtk+4,-guic
 
@@ -83,10 +85,6 @@ CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dios-gl=disabled \
 			-Djack=disabled \
 			-Djavascript=disabled \
-			-Dlibplacebo-next=disabled \
-			-Dmacos-10-11-features=disabled \
-			-Dmacos-10-12-2-features=disabled \
-			-Dmacos-10-14-features=disabled \
 			-Dmacos-cocoa-cb=disabled \
 			-Dmacos-media-player=disabled \
 			-Dmacos-touchbar=disabled \
@@ -100,28 +98,30 @@ CONFIGURE_ARGS =	-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dshaderc=disabled \
 			-Dsixel=disabled \
 			-Dswift-build=disabled \
+			-Dswift-flags=disabled \
 			-Dsdl2-audio=disabled \
 			-Dspirv-cross=disabled \
 			-Duchardet=disabled \
 			-Dvaapi=disabled \
 			-Dvaapi-drm=disabled \
-			-Dvaapi-x-egl=disabled \
 			-Dvaapi-x11=disabled \
 			-Dvaapi-wayland=disabled \
 			-Dvapoursynth=disabled \
 			-Dvdpau=disabled \
 			-Dvdpau-gl-x11=disabled \
 			-Dvideotoolbox-gl=disabled \
-			-Dvulkan=disabled \
+			-Dvideotoolbox-pl=disabled \
+			-Dvulkan=enabled \
 			-Dvulkan-interop=disabled \
 			-Dwayland=disabled \
-			-Dwin32-internal-pthreads=disabled \
+			-Dwin32-threads=disabled \
 			-Dwasapi=disabled
 
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 
-MODMESON_CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
+MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
+					LDFLAGS="${LDFLAGS}"
 
 NO_TEST =		Yes
 

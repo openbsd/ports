@@ -4,11 +4,11 @@ time if present at all, rather than only if needed)
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -720,7 +720,19 @@ if features['sdl2-gamepad']
-     sources += files('input/sdl_gamepad.c')
+@@ -342,7 +342,19 @@ if features['libdl']
  endif
- 
--stdatomic_dep = cc.find_library('atomic', required: false)
+
+ # C11 atomics are mandatory but linking to the library is not always required.
+-dependencies += cc.find_library('atomic', required: false)
 +if cc.links('''
 +#include <stdint.h>
 +int main(void) {
@@ -22,6 +22,6 @@ Index: meson.build
 +else
 +    stdatomic_dep = cc.find_library('atomic')
 +endif
- features += {'stdatomic': cc.has_header_symbol('stdatomic.h', 'atomic_int', dependencies: stdatomic_dep,
-                                                required: get_option('stdatomic'))}
- if features['stdatomic']
+
+ cplugins = get_option('cplugins').require(
+     win32 or (features['libdl'] and cc.has_link_argument('-rdynamic')),
