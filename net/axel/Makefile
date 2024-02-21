@@ -1,6 +1,6 @@
 COMMENT=	tiny download accelerator
 
-V=		2.17.11
+V=		2.17.13
 DISTNAME=	axel-$V
 
 CATEGORIES=	net
@@ -17,6 +17,11 @@ WANTLIB += c crypto pthread ssl
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
+
+BUILD_DEPENDS=	devel/gettext,-tools
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 pre-configure:
 	@sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/doc/axel.1
