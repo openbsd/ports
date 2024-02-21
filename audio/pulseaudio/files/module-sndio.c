@@ -708,6 +708,9 @@ pa__init(pa_module *m)
 		pa_sink_set_get_volume_callback(u->sink, sndio_get_volume);
 		pa_sink_set_set_volume_callback(u->sink, sndio_set_volume);
 		u->sink->n_volume_steps = SIO_MAXVOL + 1;
+
+		pa_log_debug("buffer: frame=%u bytes=%zu msec=%u", u->par.bufsz,
+		    u->bufsz, (unsigned int) pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
 	}
 
 	if (mode & SIO_REC) {
@@ -764,9 +767,6 @@ pa__init(pa_module *m)
 		    pa_bytes_to_usec(u->in_hwbuf_size, &u->source->sample_spec));
 */
 	}
-
-	pa_log_debug("buffer: frame=%u bytes=%zu msec=%u", u->par.bufsz,
-	    u->bufsz, (unsigned int) pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
 
 	pa_memchunk_reset(&u->memchunk);
 

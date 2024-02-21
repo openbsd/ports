@@ -5,6 +5,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		17.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS += pulse                     7.2 # 0.24.3
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
@@ -96,6 +97,8 @@ CONFIGURE_ARGS=		-Ddoxygen=false \
 # Recommended when using GNOME.
 # See https://gitlab.freedesktop.org/pulseaudio/pulseaudio/-/issues/832'
 CONFIGURE_ARGS +=	-Dstream-restore-clear-old-devices=false
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
