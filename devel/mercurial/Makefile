@@ -1,7 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =	6.4.4
+MODPY_EGG_VERSION =	6.6.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -15,6 +15,7 @@ SITES =			https://www.mercurial-scm.org/release/ \
 			ftp://download.tuxfamily.org/jod/devel/mercurial/
 
 MODULES =		lang/python x11/tk
+MODPY_PYBUILD =		setuptools
 
 USE_GMAKE =		Yes
 
@@ -42,7 +43,7 @@ SCRIPTS =		hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
 			undumprevlog simplemerge
 
-WANTLIB-main +=		${MODPY_WANTLIB} c pthread
+WANTLIB-main +=		c
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
 
@@ -56,6 +57,7 @@ MODPY_ADJ_FILES =	hgweb.cgi \
 			contrib/hg-ssh \
 			contrib/simplemerge \
 			contrib/undumprevlog
+
 pre-configure:
 	${MODTCL_WISH_ADJ} ${WRKSRC}/contrib/hgk
 
