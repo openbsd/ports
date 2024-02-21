@@ -1,6 +1,7 @@
 COMMENT =		QtWebKit with a more modern WebKit code base
 
 USE_WXNEEDED =		Yes
+USE_NOBTCFI =		Yes
 FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =		www

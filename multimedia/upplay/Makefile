@@ -1,7 +1,8 @@
 COMMENT =		UPnP audio control point
 
 DISTNAME =		upplay-1.3.3
-REVISION =		1
+REVISION =		2
+USE_NOBTCFI =		Yes
 
 CATEGORIES =		multimedia net
 
