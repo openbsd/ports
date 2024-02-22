@@ -11,7 +11,8 @@ CATEGORIES=	sysutils
 # BSD
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=	devel/or1k-elf/gcc
+BUILD_DEPENDS=	devel/bison \
+		devel/or1k-elf/gcc
 
 MAKE_ENV=	CROSS_COMPILE="or1k-unknown-elf-"
 MAKE_FLAGS=	V=1
