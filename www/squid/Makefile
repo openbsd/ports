@@ -9,9 +9,9 @@ EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
 
 # subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME-ldap= squid-ldap-$V
+FULLPKGNAME-ldap= squid-ldap-$Vpl0
 FULLPKGPATH-ldap= ${PKGPATH},-ldap
-RUN_DEPENDS-ldap += squid-$Vv0:www/squid
+RUN_DEPENDS-ldap += squid-$Vpl0v0:www/squid
 
 EPOCH=		0
 CATEGORIES=	www
