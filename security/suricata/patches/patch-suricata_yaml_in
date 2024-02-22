@@ -81,7 +81,7 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -1189,9 +1198,9 @@ datasets:
+@@ -1195,9 +1204,9 @@ datasets:
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -94,7 +94,7 @@ Index: suricata.yaml.in
  
  security:
    # if true, prevents process creation from Suricata by calling
-@@ -1221,7 +1230,7 @@ security:
+@@ -1227,7 +1236,7 @@ security:
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -103,7 +103,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -2137,14 +2146,38 @@ napatech:
+@@ -2143,14 +2152,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  
