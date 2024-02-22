@@ -1,7 +1,6 @@
-VERSION=	3.7.9
-REVISION=	3
+VERSION=	3.8.5
 
-PORTROACH=	site:http://ftp.porcupine.org/mirrors/postfix-release/official/
+PORTROACH=	site:https://ftp.fu-berlin.de/unix/mail/postfix/official/
 SITES=		${SITE_POSTFIX:=official/}
 
 NEEDS_OPENSSL=	Yes

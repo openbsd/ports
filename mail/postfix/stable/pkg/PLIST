@@ -241,6 +241,7 @@ share/doc/postfix/html/postcat.1.html
 share/doc/postfix/html/postconf.1.html
 share/doc/postfix/html/postconf.5.html
 share/doc/postfix/html/postdrop.1.html
+share/doc/postfix/html/postfix-doc.css
 share/doc/postfix/html/postfix-logo.jpg
 share/doc/postfix/html/postfix-manuals.html
 share/doc/postfix/html/postfix-tls.1.html
