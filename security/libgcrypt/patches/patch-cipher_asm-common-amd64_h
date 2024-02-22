@@ -1,0 +1,21 @@
+Index: cipher/asm-common-amd64.h
+--- cipher/asm-common-amd64.h.orig
++++ cipher/asm-common-amd64.h
+@@ -68,7 +68,7 @@
+ 
+ #ifdef HAVE_GCC_ASM_CFI_DIRECTIVES
+ /* CFI directives to emit DWARF stack unwinding information. */
+-# define CFI_STARTPROC()            .cfi_startproc
++# define CFI_STARTPROC()            .cfi_startproc; endbr64
+ # define CFI_ENDPROC()              .cfi_endproc
+ # define CFI_REMEMBER_STATE()       .cfi_remember_state
+ # define CFI_RESTORE_STATE()        .cfi_restore_state
+@@ -136,7 +136,7 @@
+ 	    DW_SLEB128_28BIT(rsp_offs)
+ 
+ #else
+-# define CFI_STARTPROC()
++# define CFI_STARTPROC() endbr64
+ # define CFI_ENDPROC()
+ # define CFI_REMEMBER_STATE()
+ # define CFI_RESTORE_STATE()
