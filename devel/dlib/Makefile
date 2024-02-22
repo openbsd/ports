@@ -45,9 +45,9 @@ pre-test:
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
 	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=True \
+	-DCMAKE_VERBOSE_MAKEFILE=ON \
 		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}/dlib/test
-	cd ${WRKBUILD}/dlib/test && exec ${SETENV} ${MAKE_ENV} \
-	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET}
+	cd ${WRKBUILD}/dlib/test && ${LOCALBASE}/bin/cmake --build .
 
 do-test:
 	cd ${WRKBUILD}/dlib/test && ./dtest --runall
