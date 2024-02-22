@@ -18,7 +18,8 @@ do-test:
 	cd ${WRKSRC}/tests && mkdir -p build && cd build && \
 		export CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS}" ${CONFIGURE_ENV} \
-		&& ${LOCALBASE}/bin/cmake -G ${_MODCMAKE_GEN} .. \
+		&& ${LOCALBASE}/bin/cmake -DCMAKE_VERBOSE_MAKEFILE=ON \
+		-G ${_MODCMAKE_GEN} .. \
 		&& ${LOCALBASE}/bin/cmake --build . \
 		&& ./tsl_robin_map_tests
 
