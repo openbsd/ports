@@ -8,7 +8,7 @@ HOMEPAGE =	https://telescope.omarpolo.com
 
 MAINTAINER =	Omar Polo <op@openbsd.org>
 
-# ISC
+# ISC, Public Domain, 3BSD and MIT
 PERMIT_PACKAGE =	Yes
 
 # use pledge()
