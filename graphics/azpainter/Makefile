@@ -1,4 +1,4 @@
-V =		3.0.6
+V =		3.0.7
 COMMENT =	full color painting software for illustrations
 DISTNAME =	azpainter-v${V}
 PKGNAME =	azpainter-${V}

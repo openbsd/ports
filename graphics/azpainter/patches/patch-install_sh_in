@@ -1,0 +1,17 @@
+No -v in install
+
+Index: install.sh.in
+--- install.sh.in.orig
++++ install.sh.in
+@@ -11,9 +11,9 @@ package_name="@PACKAGE_NAME@"
+ package_version="@PACKAGE_VERSION@"
+ package_full=${package_name}-${package_version}
+ 
+-inst_exe="install -m 755 -v"
++inst_exe="install -m 755"
+ inst_dir="install -m 755 -d"
+-inst_file="install -m 644 -v"
++inst_file="install -m 644"
+ 
+ update_cache() {
+ 	if test -z "$DESTDIR";then
