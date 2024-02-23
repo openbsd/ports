@@ -1,7 +1,15 @@
 Index: vacall/vacall-x86_64.s
 --- vacall/vacall-x86_64.s.orig
 +++ vacall/vacall-x86_64.s
-@@ -203,42 +203,4 @@ __vacall:
+@@ -5,6 +5,7 @@
+ 	.type	__vacall,@function
+ __vacall:
+ .LFB1:
++	endbr64
+ 	pushq	%r12
+ .LCFI0:
+ 	subq	$192, %rsp
+@@ -203,42 +204,4 @@ __vacall:
  .L53:
  	movsbq	40(%rsp),%rax
  	jmp	.L1

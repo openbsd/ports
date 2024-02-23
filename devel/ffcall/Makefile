@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc64
 COMMENT=	foreign function call libraries
 
 DISTNAME=	ffcall-1.10
-REVISION =	5
+REVISION =	6
 SHARED_LIBS=	avcall		1.0 \
 		callback	1.0
 CATEGORIES=	devel

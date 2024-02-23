@@ -1,7 +1,15 @@
 Index: avcall/avcall-x86_64.s
 --- avcall/avcall-x86_64.s.orig
 +++ avcall/avcall-x86_64.s
-@@ -326,50 +326,4 @@ __builtin_avcall:
+@@ -5,6 +5,7 @@
+ 	.type	__builtin_avcall,@function
+ __builtin_avcall:
+ .LFB1:
++	endbr64
+ 	pushq	%r12
+ .LCFI0:
+ 	xorl	%r11d, %r11d
+@@ -326,50 +327,4 @@ __builtin_avcall:
  	movq	16(%rbx), %rax
  	movss	%xmm0, (%rax)
  	jmp	.L24
