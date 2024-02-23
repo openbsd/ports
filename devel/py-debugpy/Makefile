@@ -1,6 +1,6 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_EGG_VERSION=	1.7.0
+MODPY_EGG_VERSION=	1.8.1
 DISTNAME=	debugpy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EXTRACT_SUFX=	.zip
@@ -9,6 +9,8 @@ CATEGORIES=	devel
 
 # MIT
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 
