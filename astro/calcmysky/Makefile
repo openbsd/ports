@@ -1,3 +1,6 @@
+# ld: error: relocation R_386_PC32 cannot be used against symbol 'QString::QString(char const*)'; recompile with -fPIC
+BROKEN-i386=		broken after Qt6 update
+
 COMMENT=		simulator of light scattering by planetary atmospheres
 
 GH_TAGNAME=		v0.3.1
