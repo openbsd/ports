@@ -323,27 +323,26 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/LICENSE-APACHE
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/LICENSE-MIT
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/bin/
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/bin/gcc-shim.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/com.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/command_helpers.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/lib.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/os_pipe/
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/os_pipe.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/os_pipe/unix.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/os_pipe/windows.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/registry.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/setup_config.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/vs_instances.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/winapi.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows_registry.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows_sys.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/cc_env.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/cflags.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/cxxflags.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/support/
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/support/mod.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/tests/test.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/async_executor.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token/
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token/unix.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token/windows.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/stderr.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tool.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/com.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/find_tools.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/registry.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/setup_config.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/vs_instances.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/winapi.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/windows_sys.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/.github/
@@ -8524,7 +8523,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/Cargo.to
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/lib/
-@static-lib share/rust-openssl-tests/modcargo-crates/windows_aarch64_gnullvm-0.52.0/lib/libwindows.0.52.0.a
+@static-lib share/rust-openssl-tests/modcargo-crates/windows_aarch64_gnullvm-0.52.3/lib/libwindows.0.52.0.a
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_gnullvm}/src/
@@ -8546,7 +8545,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/lib/
-share/rust-openssl-tests/modcargo-crates/windows_aarch64_msvc-0.52.0/lib/windows.0.52.0.lib
+share/rust-openssl-tests/modcargo-crates/windows_aarch64_msvc-0.52.3/lib/windows.0.52.0.lib
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_aarch64_msvc}/src/
@@ -8568,7 +8567,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/lib/
-@static-lib share/rust-openssl-tests/modcargo-crates/windows_i686_gnu-0.52.0/lib/libwindows.0.52.0.a
+@static-lib share/rust-openssl-tests/modcargo-crates/windows_i686_gnu-0.52.3/lib/libwindows.0.52.0.a
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_gnu}/src/
@@ -8590,7 +8589,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/lib/
-share/rust-openssl-tests/modcargo-crates/windows_i686_msvc-0.52.0/lib/windows.0.52.0.lib
+share/rust-openssl-tests/modcargo-crates/windows_i686_msvc-0.52.3/lib/windows.0.52.0.lib
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_i686_msvc}/src/
@@ -8612,7 +8611,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/lib/
-@static-lib share/rust-openssl-tests/modcargo-crates/windows_x86_64_gnu-0.52.0/lib/libwindows.0.52.0.a
+@static-lib share/rust-openssl-tests/modcargo-crates/windows_x86_64_gnu-0.52.3/lib/libwindows.0.52.0.a
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnu}/src/
@@ -8634,7 +8633,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/Cargo.tom
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/lib/
-@static-lib share/rust-openssl-tests/modcargo-crates/windows_x86_64_gnullvm-0.52.0/lib/libwindows.0.52.0.a
+@static-lib share/rust-openssl-tests/modcargo-crates/windows_x86_64_gnullvm-0.52.3/lib/libwindows.0.52.0.a
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_gnullvm}/src/
@@ -8656,7 +8655,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/lib/
-share/rust-openssl-tests/modcargo-crates/windows_x86_64_msvc-0.52.0/lib/windows.0.52.0.lib
+share/rust-openssl-tests/modcargo-crates/windows_x86_64_msvc-0.52.3/lib/windows.0.52.0.lib
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/license-apache-2.0
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/license-mit
 share/rust-openssl-tests/modcargo-crates/${VER_windows_x86_64_msvc}/src/
