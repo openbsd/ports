@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -815,7 +815,6 @@ HARFBUZZ_SOURCES = \
+@@ -835,7 +835,6 @@ HARFBUZZ_SOURCES = \
  @USE_BUILTIN_HARFBUZZ_FALSE@LINKER = $(LINK)
  libSDL2_ttf_la_LDFLAGS = \
  	-no-undefined		\

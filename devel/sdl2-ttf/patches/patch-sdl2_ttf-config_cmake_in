@@ -1,7 +1,7 @@
 Index: sdl2_ttf-config.cmake.in
 --- sdl2_ttf-config.cmake.in.orig
 +++ sdl2_ttf-config.cmake.in
-@@ -55,7 +55,7 @@ if(NOT TARGET SDL2_ttf::SDL2_ttf)
+@@ -56,7 +56,7 @@ if(NOT TARGET SDL2_ttf::SDL2_ttf)
          unset(_sdl2ttf_dll)
          unset(_sdl2ttf_imp)
      else()
