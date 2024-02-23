@@ -1,2 +1,4 @@
 @bin bin/telescope
+@bin bin/telescope-identity
+@man man/man1/telescope-identity.1
 @man man/man1/telescope.1

@@ -1,5 +1,5 @@
 COMMENT =	multi-protocol browser for the small internet
-V =		0.8.1
+V =		0.9
 DISTNAME =	telescope-${V}
 
 CATEGORIES =	net
@@ -13,9 +13,12 @@ PERMIT_PACKAGE =	Yes
 
 # use pledge()
 # use unveil()
-WANTLIB += c curses event tls util
+WANTLIB += c crypto curses grapheme ssl tls util
 
-SITES = 	https://github.com/omar-polo/telescope/releases/download/${V}/
+LIB_DEPENDS =	textproc/libgrapheme
+
+SITES = 	https://ftp.omarpolo.com/ \
+		https://github.com/omar-polo/telescope/releases/download/${V}/
 
 CONFIGURE_STYLE =	gnu
 
