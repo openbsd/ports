@@ -9,6 +9,7 @@ GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
 GH_TAGNAME=	lts-v${VERSION}
 
+REVISION=	0
 EPOCH=		0
 
 CATEGORIES=	sysutils
@@ -39,6 +40,18 @@ PLATFORMS=\
 
 do-build:
 .for P in ${PLATFORMS}
+.  if "$P" == "sun50i_h6"
+	# ATF's Makefile looks not easy to tweak, rename directory name that
+	# stores compiled objects. First, make with SUNXI_SETUP_REGULATORS=0.
+	rm -rf ${WRKBUILD}/build/sun50i_h6.noreg
+	cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+	    V=1 PLAT=${P} DEBUG=0 SUNXI_SETUP_REGULATORS=0 bl31
+	mv ${WRKBUILD}/build/sun50i_h6 ${WRKBUILD}/build/sun50i_h6.noreg
+
+	# Second, make default (SUNXI_SETUP_REGULATORS=1).
+	# (FALLTHROUGH)
+.  endif
 	cd ${WRKSRC} && \
 	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
 	    V=1 PLAT=${P} DEBUG=0 bl31
@@ -54,6 +67,8 @@ do-install:
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_a64-bl31.bin
 	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h6/release/bl31.bin \
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h6-bl31.bin
+	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h6.noreg/release/bl31.bin \
+	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h6-bl31-noreg.bin
 	${INSTALL_DATA} ${WRKBUILD}/build/sun50i_h616/release/bl31.bin \
 	    ${PREFIX}/share/arm-trusted-firmware/sun50i_h616-bl31.bin
 
