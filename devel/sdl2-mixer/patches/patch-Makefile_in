@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -78,7 +78,7 @@ LT_CURRENT  = @LT_CURRENT@
+@@ -79,7 +79,7 @@ LT_CURRENT  = @LT_CURRENT@
  LT_RELEASE  = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  LT_EXTRA    = @LT_EXTRA@

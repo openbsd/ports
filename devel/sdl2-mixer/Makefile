@@ -1,10 +1,10 @@
-V =		2.6.3
+V =		2.8.0
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
 CATEGORIES =	devel audio
 
-SHARED_LIBS +=  SDL2_mixer		1.0	# 2.2
+SHARED_LIBS +=  SDL2_mixer		1.1	# 2.8.0
 
 HOMEPAGE =	https://www.libsdl.org/projects/SDL_mixer/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -13,13 +13,13 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
-WANTLIB += c m modplug ogg opus opusfile pthread samplerate sndio
+WANTLIB += c iconv m ogg opus opusfile pthread samplerate sndio
 WANTLIB += usbhid xcb
 
 SITES =		https://www.libsdl.org/projects/SDL_mixer/release/
 
-LIB_DEPENDS =	audio/libmodplug \
-		audio/opusfile \
+LIB_DEPENDS =	audio/opusfile \
+		converters/libiconv \
 		devel/sdl2
 
 CONFIGURE_STYLE =	gnu
