@@ -49,7 +49,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
  #endif
  
  struct report
-@@ -711,6 +682,18 @@ static void BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -716,6 +687,18 @@ static void BSD_JoystickUpdate(SDL_Joystick *joy)
                          /* scaleaxe */
                          v = (Sint32)hid_get_data(REP_BUF_DATA(rep), &hitem);
                          v = (((SDL_JOYSTICK_AXIS_MAX - SDL_JOYSTICK_AXIS_MIN) * (v - hitem.logical_minimum)) / (hitem.logical_maximum - hitem.logical_minimum)) + SDL_JOYSTICK_AXIS_MIN;
@@ -68,7 +68,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
                          SDL_PrivateJoystickAxis(joy, naxe, v);
                      } else if (usage == HUG_HAT_SWITCH) {
                          v = (Sint32)hid_get_data(REP_BUF_DATA(rep), &hitem);
-@@ -719,19 +702,29 @@ static void BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -724,19 +707,29 @@ static void BSD_JoystickUpdate(SDL_Joystick *joy)
                                                     hitem.logical_minimum);
                      }
  #ifdef __OpenBSD__

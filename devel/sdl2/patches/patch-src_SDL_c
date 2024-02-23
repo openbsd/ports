@@ -1,9 +1,9 @@
-- Allow custom SDL GetPlatform name with env var SDL_PLATFORM
+allow custom SDL GetPlatform name with env var SDL_PLATFORM
 
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -544,6 +544,10 @@ int SDL_GetRevisionNumber(void)
+@@ -566,6 +566,10 @@ int SDL_GetRevisionNumber(void)
  /* Get the name of the platform */
  const char *SDL_GetPlatform(void)
  {
@@ -11,6 +11,6 @@ Index: src/SDL.c
 +    if (platform = SDL_getenv("SDL_PLATFORM")) {
 +        return platform;
 +    }
- #if __AIX__
+ #if defined(__AIX__)
      return "AIX";
- #elif __ANDROID__
+ #elif defined(__ANDROID__)
