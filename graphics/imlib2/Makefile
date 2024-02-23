@@ -1,6 +1,7 @@
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.12.2
+REVISION=	0
 SHARED_LIBS=	Imlib2	9.0	# 13.2
 CATEGORIES=	graphics
 
