@@ -63,5 +63,5 @@ include/libfirm/timing.h
 include/libfirm/tv.h
 include/libfirm/typerep.h
 include/libfirm/vrp.h
-lib/libfirm.a
+@static-lib lib/libfirm.a
 @lib lib/libfirm.so.${LIBfirm_VERSION}

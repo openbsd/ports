@@ -3,13 +3,13 @@ ONLY_FOR_ARCHS =	amd64 arm i386
 
 # Must keep version number in sync with devel/libfirm
 COMMENT =	C99 parser and frontend for libFirm
-DISTNAME =	${GH_PROJECT}-1.22.1pl2
+DISTNAME =	${GH_PROJECT}-1.22.1pl3
 CATEGORIES =	lang
 
 # Upstream expects you to use tags.
 GH_ACCOUNT =	libfirm
 GH_PROJECT =	cparser
-GH_COMMIT =	3e00440a231132c09af2927300bfdf57111e5564
+GH_COMMIT =	51b173e673d80bc219ec898f5255d0cb9304ce80
 
 HOMEPAGE =	https://pp.ipd.kit.edu/firm/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

@@ -4,7 +4,7 @@ It compiles the vast majority of OpenBSD C code just fine.
 Index: ir/be/amd64/amd64_bearch.c
 --- ir/be/amd64/amd64_bearch.c.orig
 +++ ir/be/amd64/amd64_bearch.c
-@@ -763,7 +763,6 @@ static void amd64_init(void)
+@@ -777,7 +777,6 @@ static void amd64_init(void)
  	amd64_cconv_init();
  	x86_set_be_asm_constraint_support(&amd64_asm_constraints);
  
