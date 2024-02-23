@@ -813,6 +813,8 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_b
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_basic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_bbox_tight.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_bbox_tight.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_bezier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_bezier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_category.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_category.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/${MODPY_PYCACHE}test_cbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -3369,6 +3371,7 @@ lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backend_webagg.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_backends_interactive.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_basic.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_bbox_tight.py
+lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_bezier.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_category.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_cbook.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/tests/test_collections.py
@@ -3848,6 +3851,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/color/color_demo.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/colorbar_basics.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/colormap_reference.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/custom_cmap.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/color/individual_colors_from_cmap.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/named_colors.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/color/set_alpha.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/event_handling/
@@ -4258,6 +4262,7 @@ share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/date_precision_and_epochs.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/dollar_ticks.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/fig_axes_customize_simple.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/major_minor_demo.py
+share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/multilevel_ticks.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/scalarformatter.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/tick-formatters.py
 share/examples/${MODPY_PY_PREFIX}matplotlib/ticks/tick-locators.py
