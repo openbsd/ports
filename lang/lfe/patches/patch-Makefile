@@ -3,7 +3,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -142,7 +142,11 @@ install-bin:
+@@ -148,7 +148,11 @@ install-bin:
  		$(BINDIR)/lfescript \
  		$(DESTBINDIR)
  	$(INSTALL_DIR) $(PREFIX)/bin
