@@ -10,7 +10,7 @@ Index: libraries/text/cbits/measure_off.c
 +  uint64_t xcr0;
    __get_cpuid_count(7, 0, &eax, &ebx, &ecx, &edx);
    // https://en.wikipedia.org/wiki/CPUID#EAX=7,_ECX=0:_Extended_Features
-+  // __asm__("xgetbv\n\t" : "=a" (xcr0) : "c" (0));
++  __asm__("xgetbv\n\t" : "=a" (xcr0) : "c" (0));
    const bool has_avx512_bw = ebx & (1 << 30);
    const bool has_avx512_vl = ebx & (1 << 31);
 +  // XCR0 bits 5, 6, and 7
