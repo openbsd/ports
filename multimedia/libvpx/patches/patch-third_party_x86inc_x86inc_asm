@@ -1,3 +1,5 @@
+opcode for endbr64 (yasm doesn't handle it directly) 
+
 Index: third_party/x86inc/x86inc.asm
 --- third_party/x86inc/x86inc.asm.orig
 +++ third_party/x86inc/x86inc.asm
