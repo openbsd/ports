@@ -1,0 +1,9 @@
+include/volk.c
+include/volk.h
+lib/cmake/
+lib/cmake/volk/
+lib/cmake/volk/volkConfig.cmake
+lib/cmake/volk/volkConfigVersion.cmake
+lib/cmake/volk/volkTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/volk/volkTargets.cmake
+@static-lib lib/libvolk.a
