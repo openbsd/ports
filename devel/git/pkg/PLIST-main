@@ -143,6 +143,7 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-remote-https
 @bin libexec/git/git-repack
 @bin libexec/git/git-replace
+@bin libexec/git/git-replay
 libexec/git/git-request-pull
 @bin libexec/git/git-rerere
 @bin libexec/git/git-reset
@@ -325,6 +326,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-remote.1
 @man man/man1/git-repack.1
 @man man/man1/git-replace.1
+@man man/man1/git-replay.1
 @man man/man1/git-request-pull.1
 @man man/man1/git-rerere.1
 @man man/man1/git-reset.1
