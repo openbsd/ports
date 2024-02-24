@@ -1,0 +1,166 @@
+@conflict u-boot-aarch64-<2021.10p9
+share/u-boot/
+share/u-boot/a64-olinuxino/
+share/u-boot/a64-olinuxino/sunxi-spl.bin
+@comment share/u-boot/a64-olinuxino/u-boot
+@comment share/u-boot/a64-olinuxino/u-boot-spl.bin
+share/u-boot/a64-olinuxino/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/a64-olinuxino/u-boot.bin
+@comment share/u-boot/a64-olinuxino/u-boot.img
+share/u-boot/bananapi_m64/
+share/u-boot/bananapi_m64/sunxi-spl.bin
+@comment share/u-boot/bananapi_m64/u-boot
+@comment share/u-boot/bananapi_m64/u-boot-spl.bin
+share/u-boot/bananapi_m64/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/firefly-rk3399/u-boot
+@comment share/u-boot/firefly-rk3399/u-boot-spl.bin
+@comment share/u-boot/firefly-rk3399/u-boot.bin
+@comment share/u-boot/firefly-rk3399/u-boot.img
+@comment share/u-boot/nanopc-t4-rk3399/u-boot
+@comment share/u-boot/nanopc-t4-rk3399/u-boot-spl.bin
+@comment share/u-boot/nanopc-t4-rk3399/u-boot.bin
+@comment share/u-boot/nanopc-t4-rk3399/u-boot.img
+@comment share/u-boot/nanopi-neo4-rk3399/u-boot
+@comment share/u-boot/nanopi-neo4-rk3399/u-boot-spl.bin
+@comment share/u-boot/nanopi-neo4-rk3399/u-boot.bin
+@comment share/u-boot/nanopi-neo4-rk3399/u-boot.img
+@comment share/u-boot/nanopi-r2s-rk3328/u-boot
+@comment share/u-boot/nanopi-r2s-rk3328/u-boot-spl.bin
+@comment share/u-boot/nanopi-r2s-rk3328/u-boot.bin
+@comment share/u-boot/nanopi-r2s-rk3328/u-boot.img
+@comment share/u-boot/nanopi-r4s-rk3399/u-boot
+@comment share/u-boot/nanopi-r4s-rk3399/u-boot-spl.bin
+@comment share/u-boot/nanopi-r4s-rk3399/u-boot.bin
+@comment share/u-boot/nanopi-r4s-rk3399/u-boot.img
+@comment share/u-boot/bananapi_m64/u-boot.bin
+@comment share/u-boot/bananapi_m64/u-boot.img
+share/u-boot/nanopi_a64/
+share/u-boot/nanopi_a64/sunxi-spl.bin
+@comment share/u-boot/nanopi_a64/u-boot
+@comment share/u-boot/nanopi_a64/u-boot-spl.bin
+share/u-boot/nanopi_a64/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/nanopi_a64/u-boot.bin
+@comment share/u-boot/nanopi_a64/u-boot.img
+share/u-boot/nanopi_neo2/
+share/u-boot/nanopi_neo2/sunxi-spl.bin
+@comment share/u-boot/nanopi_neo2/u-boot
+@comment share/u-boot/nanopi_neo2/u-boot-spl.bin
+share/u-boot/nanopi_neo2/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/nanopi_neo2/u-boot.bin
+@comment share/u-boot/nanopi_neo2/u-boot.img
+share/u-boot/orangepi_pc2/
+share/u-boot/orangepi_pc2/sunxi-spl.bin
+@comment share/u-boot/orangepi_pc2/u-boot
+@comment share/u-boot/orangepi_pc2/u-boot-spl.bin
+share/u-boot/orangepi_pc2/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/orangepi_pc2/u-boot.bin
+@comment share/u-boot/orangepi_pc2/u-boot.img
+share/u-boot/orangepi_prime/
+share/u-boot/orangepi_prime/sunxi-spl.bin
+@comment share/u-boot/orangepi_prime/u-boot
+@comment share/u-boot/orangepi_prime/u-boot-spl.bin
+share/u-boot/orangepi_prime/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/orangepi_prime/u-boot.bin
+@comment share/u-boot/orangepi_prime/u-boot.img
+share/u-boot/orangepi_win/
+share/u-boot/orangepi_win/sunxi-spl.bin
+@comment share/u-boot/orangepi_win/u-boot
+@comment share/u-boot/orangepi_win/u-boot-spl.bin
+share/u-boot/orangepi_win/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/orangepi_win/u-boot.bin
+@comment share/u-boot/orangepi_win/u-boot.img
+share/u-boot/orangepi_zero2/
+share/u-boot/orangepi_zero2/sunxi-spl.bin
+share/u-boot/orangepi_zero2/u-boot
+share/u-boot/orangepi_zero2/u-boot-spl.bin
+share/u-boot/orangepi_zero2/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_zero2/u-boot.bin
+share/u-boot/orangepi_zero2/u-boot.img
+share/u-boot/orangepi_zero3/
+share/u-boot/orangepi_zero3/sunxi-spl.bin
+share/u-boot/orangepi_zero3/u-boot
+share/u-boot/orangepi_zero3/u-boot-spl.bin
+share/u-boot/orangepi_zero3/u-boot-sunxi-with-spl.bin
+share/u-boot/orangepi_zero3/u-boot.bin
+share/u-boot/orangepi_zero3/u-boot.img
+share/u-boot/orangepi_zero_plus/
+share/u-boot/orangepi_zero_plus/sunxi-spl.bin
+@comment share/u-boot/orangepi_zero_plus/u-boot
+@comment share/u-boot/orangepi_zero_plus/u-boot-spl.bin
+share/u-boot/orangepi_zero_plus/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/orangepi_zero_plus/u-boot.bin
+@comment share/u-boot/orangepi_zero_plus/u-boot.img
+share/u-boot/pine64-lts/
+share/u-boot/pine64-lts/sunxi-spl.bin
+@comment share/u-boot/pine64-lts/u-boot
+@comment share/u-boot/pine64-lts/u-boot-spl.bin
+share/u-boot/pine64-lts/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/pine64-lts/u-boot.bin
+@comment share/u-boot/pine64-lts/u-boot.img
+share/u-boot/pine64_plus/
+share/u-boot/pine64_plus/sunxi-spl.bin
+@comment share/u-boot/pine64_plus/u-boot
+@comment share/u-boot/pine64_plus/u-boot-spl.bin
+share/u-boot/pine64_plus/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/pine64_plus/u-boot.bin
+@comment share/u-boot/pine64_plus/u-boot.img
+share/u-boot/pine_h64/
+share/u-boot/pine_h64-model-b/
+share/u-boot/pine_h64-model-b/sunxi-spl.bin
+@comment share/u-boot/pine_h64-model-b/u-boot
+@comment share/u-boot/pine_h64-model-b/u-boot-spl.bin
+share/u-boot/pine_h64-model-b/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/pine_h64-model-b/u-boot.bin
+@comment share/u-boot/pine_h64-model-b/u-boot.img
+share/u-boot/pine_h64/sunxi-spl.bin
+share/u-boot/pine_h64/u-boot
+share/u-boot/pine_h64/u-boot-spl.bin
+share/u-boot/pine_h64/u-boot-sunxi-with-spl.bin
+share/u-boot/pine_h64/u-boot.bin
+share/u-boot/pine_h64/u-boot.img
+share/u-boot/pinebook/
+@comment share/u-boot/pinebook-pro-rk3399/u-boot
+@comment share/u-boot/pinebook-pro-rk3399/u-boot-spl.bin
+@comment share/u-boot/pinebook-pro-rk3399/u-boot.bin
+@comment share/u-boot/pinebook-pro-rk3399/u-boot.img
+share/u-boot/pinebook/sunxi-spl.bin
+@comment share/u-boot/pinebook/u-boot
+@comment share/u-boot/pinebook/u-boot-spl.bin
+share/u-boot/pinebook/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/rock-pi-4-rk3399/u-boot
+@comment share/u-boot/rock-pi-4-rk3399/u-boot-spl.bin
+@comment share/u-boot/rock-pi-4-rk3399/u-boot.bin
+@comment share/u-boot/rock-pi-4-rk3399/u-boot.img
+@comment share/u-boot/rock-pi-n10-rk3399pro/u-boot
+@comment share/u-boot/rock-pi-n10-rk3399pro/u-boot-spl.bin
+@comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.bin
+@comment share/u-boot/rock-pi-n10-rk3399pro/u-boot.img
+@comment share/u-boot/rock64-rk3328/u-boot
+@comment share/u-boot/rock64-rk3328/u-boot-spl.bin
+@comment share/u-boot/rock64-rk3328/u-boot.bin
+@comment share/u-boot/rock64-rk3328/u-boot.img
+@comment share/u-boot/rock960-rk3399/u-boot
+@comment share/u-boot/rock960-rk3399/u-boot-spl.bin
+@comment share/u-boot/rock960-rk3399/u-boot.bin
+@comment share/u-boot/rock960-rk3399/u-boot.img
+@comment share/u-boot/rockpro64-rk3399/u-boot
+@comment share/u-boot/rockpro64-rk3399/u-boot-spl.bin
+@comment share/u-boot/rockpro64-rk3399/u-boot.bin
+@comment share/u-boot/rockpro64-rk3399/u-boot.img
+@comment share/u-boot/rpi_arm64/u-boot
+@comment share/u-boot/pinebook/u-boot.bin
+@comment share/u-boot/pinebook/u-boot.img
+share/u-boot/sopine_baseboard/
+share/u-boot/sopine_baseboard/sunxi-spl.bin
+@comment share/u-boot/sopine_baseboard/u-boot
+@comment share/u-boot/sopine_baseboard/u-boot-spl.bin
+share/u-boot/sopine_baseboard/u-boot-sunxi-with-spl.bin
+@comment share/u-boot/sopine_baseboard/u-boot.bin
+@comment share/u-boot/sopine_baseboard/u-boot.img
+share/u-boot/x96_mate/
+share/u-boot/x96_mate/sunxi-spl.bin
+share/u-boot/x96_mate/u-boot
+share/u-boot/x96_mate/u-boot-spl.bin
+share/u-boot/x96_mate/u-boot-sunxi-with-spl.bin
+share/u-boot/x96_mate/u-boot.bin
+share/u-boot/x96_mate/u-boot.img
