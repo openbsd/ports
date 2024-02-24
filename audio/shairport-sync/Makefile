@@ -1,9 +1,11 @@
 COMMENT =	AirPlay audio player
 
 DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.2	.
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	audio net
+
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # BSD?
 PERMIT_PACKAGE =	Yes
@@ -40,6 +42,8 @@ EXAMPLES_DIR =		${PREFIX}/share/examples/${PKGSTEM}
 HOME_DIR =		${LOCALSTATEDIR}/spool/${PKGSTEM}
 SUBST_VARS =		DBUS_SVC \
 			HOME_DIR
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	mv ${PREFIX}/man/man7/shairport-sync.7 \
