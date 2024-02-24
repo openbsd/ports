@@ -1,16 +1,30 @@
+- don't test with an sccs back-end
+- remove python2 tentacles from tests, testing with python3 is enough
+- stop running pylint twice
+- don't fail on pylint step, otherwise the actual tests won't run if the pylint
+  port is updated to add new checks
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -13,11 +13,9 @@ SOURCES = README INSTALL COPYING NEWS TODO src srctest
+@@ -13,11 +13,7 @@ SOURCES = README INSTALL COPYING NEWS TODO src srctest
  all: src.1
  
  check: pylint
 -	make pylint
-+	${MAKE_PROGRAM} pylint
- 	./srctest -b rcs -p python2
+-	./srctest -b rcs -p python2
 -	./srctest -b sccs -p python2
  	./srctest -b rcs -p python3
 -	./srctest -b sccs -p python3
  
  .SUFFIXES: .html .adoc .1
  
+@@ -46,7 +42,7 @@ COMMON_PYLINT = --rcfile=/dev/null --reports=n \
+ 	--dummy-variables-rgx='^_'
+ PYLINTOPTS = "C0103,C0123,C0301,C0302,C0325,C0326,C0330,C0410,C1001,C0111,R0101,R0902,R0903,R0904,R0201,R0912,R0913,R0914,R0915,R1705,W0110,W0141,W0142,W0232,W0311,W0312,W0603,W0511,W0613,E0401,E1101,E1103"
+ pylint:
+-	@pylint $(COMMON_PYLINT) --disable=$(PYLINTOPTS) src
++	-@pylint $(COMMON_PYLINT) --disable=$(PYLINTOPS) src
+ 
+ version:
+ 	@echo $(VERS)

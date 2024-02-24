@@ -1,7 +1,7 @@
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.28
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -19,10 +19,8 @@ RUN_DEPENDS =		devel/grcs \
 			devel/rcs-fast-import
 
 TEST_DEPENDS =		devel/git \
-			devel/pylint \
+			devel/pylint${MODPY_FLAVOR} \
 			shells/bash
-# tests run with both py2+3
-TEST_DEPENDS +=		lang/python/2.7
 
 USE_GMAKE =		Yes
 NO_BUILD =		Yes
