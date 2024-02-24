@@ -8,7 +8,6 @@
      SUBDIR += calligra
      SUBDIR += calligraplan
      SUBDIR += cooledit
-     SUBDIR += cooledit,python
      SUBDIR += dhex
      SUBDIR += dte
      SUBDIR += editorconfig-core-c
