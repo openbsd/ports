@@ -2,6 +2,7 @@ COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.32.6
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.4
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.4
@@ -29,10 +30,13 @@ MODULES =		devel/dconf \
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache vala yelp
 
-LIB_DEPENDS =		devel/libgee \
+LIB_DEPENDS =		devel/json-glib \
+			devel/libsoup3 \
+			devel/libgee \
 			graphics/libgexiv2 \
 			graphics/libgphoto2 \
 			graphics/libraw \
+			multimedia/gstreamer1/plugins-base \
 			sysutils/flatpak/libportal,-gtk3 \
 			x11/gnome/gcr
 
