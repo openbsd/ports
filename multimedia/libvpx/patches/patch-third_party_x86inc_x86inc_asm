@@ -1,0 +1,13 @@
+Index: third_party/x86inc/x86inc.asm
+--- third_party/x86inc/x86inc.asm.orig
++++ third_party/x86inc/x86inc.asm
+@@ -860,6 +860,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+     %endif
+     align function_align
+     %2:
++    %if VPX_ARCH_X86_64
++        dd 0xfa1e0ff3
++    %endif
+     RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
+     %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
+     %assign stack_offset 0      ; stack pointer offset relative to the return address
