@@ -1,0 +1,31 @@
+@option is-branch
+@conflict puppetdb-termini-*
+share/puppetlabs/puppet/
+share/puppetlabs/puppet/puppet/
+share/puppetlabs/puppet/puppet/face/
+share/puppetlabs/puppet/puppet/face/node/
+share/puppetlabs/puppet/puppet/face/node/deactivate.rb
+share/puppetlabs/puppet/puppet/face/node/status.rb
+share/puppetlabs/puppet/puppet/functions/
+share/puppetlabs/puppet/puppet/functions/puppetdb_query.rb
+share/puppetlabs/puppet/puppet/indirector/
+share/puppetlabs/puppet/puppet/indirector/catalog/
+share/puppetlabs/puppet/puppet/indirector/catalog/puppetdb.rb
+share/puppetlabs/puppet/puppet/indirector/facts/
+share/puppetlabs/puppet/puppet/indirector/facts/puppetdb.rb
+share/puppetlabs/puppet/puppet/indirector/facts/puppetdb_apply.rb
+share/puppetlabs/puppet/puppet/indirector/node/
+share/puppetlabs/puppet/puppet/indirector/node/puppetdb.rb
+share/puppetlabs/puppet/puppet/indirector/resource/
+share/puppetlabs/puppet/puppet/indirector/resource/puppetdb.rb
+share/puppetlabs/puppet/puppet/reports/
+share/puppetlabs/puppet/puppet/reports/puppetdb.rb
+share/puppetlabs/puppet/puppet/util/
+share/puppetlabs/puppet/puppet/util/puppetdb/
+share/puppetlabs/puppet/puppet/util/puppetdb.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/atom.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/char_encoding.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/command.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/command_names.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/config.rb
+share/puppetlabs/puppet/puppet/util/puppetdb/http.rb

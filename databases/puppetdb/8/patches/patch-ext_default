@@ -1,0 +1,31 @@
+Index: ext/default
+--- ext/default.orig
++++ ext/default
+@@ -3,7 +3,7 @@
+ ###########################################
+ 
+ # Location of your Java binary (version 8)
+-JAVA_BIN="/usr/bin/java"
++JAVA_BIN="$(javaPathHelper -c puppetdb)"
+ 
+ # Modify this if you'd like to change the memory allocation, enable JMX, etc
+ JAVA_ARGS="-Xmx192m -Djdk.tls.ephemeralDHKeySize=2048"
+@@ -15,13 +15,13 @@ JAVA_ARGS_CLI="${JAVA_ARGS_CLI:-}"
+ TK_ARGS=""
+ 
+ # These normally shouldn't need to be edited if using OS packages
+-USER="puppetdb"
+-GROUP="puppetdb"
+-INSTALL_DIR="/opt/puppetlabs/server/apps/puppetdb"
+-CONFIG="/etc/puppetlabs/puppetdb/conf.d"
++USER="_puppetdb"
++GROUP="_puppetdb"
++INSTALL_DIR="${PREFIX}/share/puppetlabs/puppetdb"
++CONFIG="${SYSCONFDIR}/puppetlabs/puppetdb/conf.d"
+ 
+ # Bootstrap path
+-BOOTSTRAP_CONFIG="/etc/puppetlabs/puppetdb/bootstrap.cfg"
++BOOTSTRAP_CONFIG="${SYSCONFDIR}/puppetlabs/puppetdb/bootstrap.cfg"
+ 
+ # SERVICE_STOP_RETRIES can be set here to alter the default stop timeout in
+ # seconds.  For systemd, the shorter of this setting or 'TimeoutStopSec' in

@@ -1,0 +1,14 @@
+Index: ext/bin/puppetdb
+--- ext/bin/puppetdb.orig
++++ ext/bin/puppetdb
+@@ -13,8 +13,8 @@ elif [ `uname` == "OpenBSD" ] ; then
+     JAVA_ARGS="-Xmx192m -Djdk.tls.ephemeralDHKeySize=2048"
+     TK_ARGS=""
+     USER="_puppetdb"
+-    INSTALL_DIR="/opt/puppetlabs/server/apps/puppetdb"
+-    CONFIG="/etc/puppetlabs/puppetdb/conf.d"
++    INSTALL_DIR="${PREFIX}/share/puppetlabs/puppetdb"
++    CONFIG="${SYSCONFDIR}/puppetlabs/puppetdb/conf.d"
+ else
+     echo "You seem to be missing some important configuration files; could not find /etc/default/puppetdb or /etc/sysconfig/puppetdb" >&2
+     exit 1

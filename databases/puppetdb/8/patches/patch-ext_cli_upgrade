@@ -1,0 +1,10 @@
+Index: ext/cli/upgrade
+--- ext/cli/upgrade.orig
++++ ext/cli/upgrade
+@@ -29,5 +29,5 @@ cmd=($(printf "%q %s -Dlogappender=STDOUT -cp %q cloju
+ if test "$(id -un)" = "$USER"; then
+     exec "${cmd[@]}" "$@"
+ else
+-    exec su "$USER" -s /bin/sh -c "${cmd[*]} ${*}"
++    exec su -s /bin/sh "$USER" -c "${cmd[*]} ${*}"
+ fi
