@@ -1,7 +1,7 @@
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -11479,7 +11479,7 @@ test("chrome_app_unittests") {
+@@ -11604,7 +11604,7 @@ test("chrome_app_unittests") {
      "//components/heap_profiling/in_process",
      "//components/safe_browsing:buildflags",
    ]

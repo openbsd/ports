@@ -1,7 +1,7 @@
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig
 +++ content/common/BUILD.gn
-@@ -404,20 +404,29 @@ source_set("common") {
+@@ -442,20 +442,29 @@ source_set("common") {
    }
  
    if (is_linux || is_chromeos) {
@@ -36,7 +36,7 @@ Index: content/common/BUILD.gn
      if (use_v4l2_codec) {
        deps += [ "//media/gpu/v4l2" ]
      }
-@@ -487,6 +496,9 @@ if (is_linux || is_chromeos) {
+@@ -525,6 +534,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
