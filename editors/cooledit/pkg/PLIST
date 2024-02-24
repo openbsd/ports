@@ -1,9 +1,10 @@
+@pkgpath editors/cooledit,python
 @bin bin/cooledit
 bin/cooledit-gdb
 @bin bin/coolman
 bin/coolproject
 @bin bin/smalledit
-lib/libCw.a
+@static-lib lib/libCw.a
 lib/libCw.la
 @lib lib/libCw.so.${LIBCw_VERSION}
 @man man/man1/cooledit.1

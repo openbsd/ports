@@ -1,7 +1,7 @@
 COMMENT =	easy to use, graphical editor
 
 DISTNAME =	cooledit-3.17.17
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	editors
 
@@ -11,22 +11,12 @@ SHARED_LIBS =	Cw	1.0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-FLAVORS =	python
-FLAVOR ?=
-
 WANTLIB =	X11 c iconv intl util xcb
 
 SITES =		http://fossies.org/linux/misc/
 
-.if ${FLAVOR:Mpython}
-MODULES +=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
-CONFIGURE_ENV += PYTHON_VER=${MODPY_VERSION} LOCALBASE=${LOCALBASE}
-WANTLIB +=	pthread m ${MODPY_WANTLIB}
-.else
+# not compatible with Python 3
 CONFIGURE_ENV +=NOPYTHON=Yes
-.endif
 
 BUILD_DEPENDS += devel/gettext,-tools
 LIB_DEPENDS +=	devel/gettext,-runtime
