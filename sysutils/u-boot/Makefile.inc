@@ -59,7 +59,7 @@ FILES=\
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot
-.for BOARD in ${BOARDS} ${SUNXI64}
+.for BOARD in ${BOARDS}
 	@[ -d ${WRKSRC}/build/${BOARD} ] && \
 	echo ${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD} && \
 	${INSTALL_DATA_DIR} ${PREFIX}/share/u-boot/${BOARD} && \
