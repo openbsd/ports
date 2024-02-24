@@ -1,0 +1,11 @@
+@pkgpath net/unison/2.4x,no_x11
+@pkgpath net/unison/2.5x,no_x11
+@pkgpath net/unison/snapshot,no_x11
+@pkgpath net/unison/stable,no_x11
+@pkgpath net/unison,no_x11
+@bin bin/unison
+@man man/man1/unison.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/unison/
+share/doc/unison/NEWS.md
+share/doc/unison/README.md

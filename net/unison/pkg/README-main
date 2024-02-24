@@ -15,9 +15,11 @@ with the same version of the OCaml compiler on all machines:
 
 doas pkg_add opam
 export OPAMROOT=~/opam_unison
-opam init --no-setup --compiler ocaml-base-compiler.4.09.0
+opam init --no-setup --compiler ocaml-base-compiler.%VERSION%
 opam install unison lablgtk  # To build without the gui, remove lablgtk
 $(opam var bin)/unison
+
+Where %VERSION% is the OCaml version that is used on all machines.
 
 Common issue
 =============

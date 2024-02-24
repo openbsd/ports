@@ -4,5 +4,4 @@ different hosts (or different disks on the same host), modified
 separately, and then brought up to date by propagating the changes in
 each replica to the other.
 
-Flavors:
-	no_x11 	- build without X support
+This packages contains the command-line tool and the manpage.

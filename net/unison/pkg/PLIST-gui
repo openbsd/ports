@@ -1,0 +1,11 @@
+@pkgpath net/unison/2.4x
+@pkgpath net/unison/2.5x
+@pkgpath net/unison/snapshot
+@pkgpath net/unison/stable
+@pkgpath net/unison
+@bin bin/unison-gui
+share/applications/
+share/applications/unison.desktop
+share/pixmaps/
+share/pixmaps/unison.svg
+@tag update-desktop-database
