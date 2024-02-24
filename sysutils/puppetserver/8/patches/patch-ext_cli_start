@@ -1,0 +1,49 @@
+Index: ext/cli/start
+--- ext/cli/start.orig
++++ ext/cli/start
+@@ -3,7 +3,7 @@ set +e
+ 
+ pid="$(pgrep -f "puppet-server-release.jar.* -m puppetlabs.trapperkeeper.main")"
+ 
+-restartfile="/opt/puppetlabs/server/data/puppetserver/restartcounter"
++restartfile="/var/puppetlabs/puppetserver/data/restartcounter"
+ start_timeout="${START_TIMEOUT:-300}"
+ 
+ real_name="puppetserver"
+@@ -18,13 +18,20 @@ app_logdir=${app_logdir:=/var/log/puppetlabs/${real_na
+ PIDFILE="${rundir}/${real_name}.pid"
+ 
+ cli_defaults=${INSTALL_DIR}/cli/cli-defaults.sh
++if [ -e "$cli_defaults" ]; then
++  . $cli_defaults
++  if [ $? -ne 0 ]; then
++    echo "Unable to initialize cli defaults, failing start." 1>&2
++    exit 1
++  fi
++fi
+ 
+ if [ ! -e "${INSTALL_DIR}/ezbake-functions.sh" ]; then
+     echo "Unable to find ${INSTALL_DIR}/ezbake-functions.sh script, failing start." 1>&2
+     exit 1
+ fi
+ 
+-/usr/bin/install --directory --owner=$USER --group=$GROUP --mode=755 "$rundir"
++/usr/bin/install -d -o $USER -g $GROUP -m 755 "$rundir"
+ if [ $? -ne 0 ]; then
+     echo "Unable to create/set permissions for rundir: ${rundir}" 1>&2
+     exit 1
+@@ -57,14 +64,6 @@ rm -f "$PIDFILE"
+ init_restart_file "$restartfile" || exit $?
+ 
+ CLASSPATH=${INSTALL_DIR}/puppet-server-release.jar
+-
+-if [ -e "$cli_defaults" ]; then
+-  . $cli_defaults
+-  if [ $? -ne 0 ]; then
+-    echo "Unable to initialize cli defaults, failing start." 1>&2
+-    exit 1
+-  fi
+-fi
+ 
+ java_version=$($JAVA_BIN -version 2>&1 | head -1 | awk -F\" '{ print $2 }')
+ java_major_version=$(echo $java_version | awk -F. '{ print $1 }')

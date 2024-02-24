@@ -1,0 +1,31 @@
+Index: ext/default
+--- ext/default.orig
++++ ext/default
+@@ -3,7 +3,7 @@
+ ###########################################
+ 
+ # Location of your Java binary (version 8)
+-JAVA_BIN="/usr/bin/java"
++JAVA_BIN="$(/usr/local/bin/javaPathHelper -c puppetserver)"
+ 
+ # Modify this if you'd like to change the memory allocation, enable JMX, etc
+ JAVA_ARGS="-Xms2g -Xmx2g -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"
+@@ -15,13 +15,13 @@ JAVA_ARGS_CLI="${JAVA_ARGS_CLI:-}"
+ TK_ARGS=""
+ 
+ # These normally shouldn't need to be edited if using OS packages
+-USER="puppet"
+-GROUP="puppet"
+-INSTALL_DIR="/opt/puppetlabs/server/apps/puppetserver"
+-CONFIG="/etc/puppetlabs/puppetserver/conf.d"
++USER="_puppet"
++GROUP="_puppet"
++INSTALL_DIR="${LOCALBASE}/share/puppetlabs/puppetserver"
++CONFIG="${SYSCONFDIR}/puppetlabs/puppetserver/conf.d"
+ 
+ # Bootstrap path
+-BOOTSTRAP_CONFIG="/etc/puppetlabs/puppetserver/services.d/,/opt/puppetlabs/server/apps/puppetserver/config/services.d/"
++BOOTSTRAP_CONFIG="${SYSCONFDIR}/puppetlabs/puppetserver/services.d/,${LOCALBASE}/share/puppetlabs/puppetserver/config/services.d/"
+ 
+ # SERVICE_STOP_RETRIES can be set here to alter the default stop timeout in
+ # seconds.  For systemd, the shorter of this setting or 'TimeoutStopSec' in

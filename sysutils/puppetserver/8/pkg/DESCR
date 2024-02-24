@@ -1,0 +1,7 @@
+Puppet is configured in an agent-server architecture, in which a primary
+server node manages the configuration information for a fleet of agent
+nodes. Puppet Server acts as the primary server node. Puppet Server is a
+Ruby and Clojure application that runs on the Java Virtual Machine
+(JVM). Puppet Server runs Ruby code for compiling Puppet catalogs and
+for serving files in several JRuby interpreters. It also provides a
+certificate authority through Clojure.

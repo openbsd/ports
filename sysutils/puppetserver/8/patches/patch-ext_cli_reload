@@ -1,0 +1,12 @@
+Index: ext/cli/reload
+--- ext/cli/reload.orig
++++ ext/cli/reload
+@@ -1,7 +1,7 @@
+ #!/usr/bin/env bash
+ set +e
+ 
+-restartfile="/opt/puppetlabs/server/data/puppetserver/restartcounter"
++restartfile="/var/puppetlabs/puppetserver/data/restartcounter"
+ reload_timeout="${RELOAD_TIMEOUT:-120}"
+ timeout="$reload_timeout"
+ realname="puppetserver"
