@@ -3,10 +3,10 @@ install qgis_server additional files to share/qgis
 Index: src/server/CMakeLists.txt
 --- src/server/CMakeLists.txt.orig
 +++ src/server/CMakeLists.txt
-@@ -181,7 +181,7 @@ install(TARGETS
+@@ -179,7 +179,7 @@ install(TARGETS
+ )
+ 
  install(FILES
-   admin.sld
-   wms_metadata.xml
 -  DESTINATION ${QGIS_CGIBIN_DIR}
 +  DESTINATION ${QGIS_DATA_DIR}
  )

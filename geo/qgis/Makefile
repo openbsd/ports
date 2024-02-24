@@ -6,19 +6,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.34.3
+DISTNAME =	qgis-3.36.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	2
 
-SHARED_LIBS =	qgis_core	72.1 \
-		qgis_app	47.1 \
-		qgis_gui	55.0 \
-		qgis_analysis	23.0 \
-		qgis_server	19.0 \
+SHARED_LIBS =	qgis_core	73.0 \
+		qgis_app	48.0 \
+		qgis_gui	56.0 \
+		qgis_analysis	24.0 \
+		qgis_server	19.1 \
 		qgispython	6.0 \
-		qgis_3d		16.1 \
+		qgis_3d		17.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
@@ -114,6 +113,7 @@ WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
 WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone
+WANTLIB += absl_log_internal_fnmatch absl_vlog_config_internal
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
