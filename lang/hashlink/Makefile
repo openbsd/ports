@@ -5,10 +5,12 @@ USE_NOBTCFI =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-V =		1.14
+V =		1.14pl0
 PKGNAME =	hashlink-${V}
 
-DIST_TUPLE =	github HaxeFoundation hashlink ${V} .
+# commit from 2024-02-13; tagged as 'latest'
+DIST_TUPLE +=	github HaxeFoundation hashlink \
+		20df6529c932f7e9ab4e1c528a0321723f2d09ae .
 
 SHARED_LIBS +=	hl		2.0	# 1.14
 SHARED_LIBS +=	hl_module	0.0	# 1.13

@@ -24,7 +24,7 @@ Index: Makefile
  ARCH ?= $(shell uname -m)
  
 -CFLAGS = -Wall -O3 -I src -std=c11 -D LIBHL_EXPORTS
-+CFLAGS = ${CFLAGS}  -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
++CFLAGS = -O2 -pipe    -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
  LFLAGS = -L. -lhl
  EXTRA_LFLAGS ?=
 -LIBFLAGS =
@@ -32,12 +32,12 @@ Index: Makefile
 -LIBEXT = so
 +LIBFLAGS = -L/usr/local/lib -L/usr/X11R6/lib
 +HLFLAGS =
-+LIBEXT = so.${LIBhl_VERSION}
-+LIBEXT_MODULE = so.${LIBhl_module_VERSION}
++LIBEXT = so.2.0
++LIBEXT_MODULE = so.0.0
  LIBTURBOJPEG = -lturbojpeg
  
- PCRE_FLAGS = -I include/pcre -D HAVE_CONFIG_H -D PCRE2_CODE_UNIT_WIDTH=16
-@@ -38,6 +37,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
+ LHL_LINK_FLAGS =
+@@ -40,6 +39,7 @@ STD = src/std/array.o src/std/buffer.o src/std/bytes.o
  	src/std/track.o
  
  HL = src/code.o src/jit.o src/main.o src/module.o src/debugger.o src/profile.o
@@ -45,7 +45,7 @@ Index: Makefile
  
  FMT_INCLUDE = -I include/mikktspace -I include/minimp3
  
-@@ -73,8 +73,6 @@ RELEASE_NAME=win
+@@ -75,8 +75,6 @@ RELEASE_NAME=win
  VS_RUNTIME_LIBRARY ?= c:/windows/system32/vcruntime140.dll
  
  ifeq ($(MARCH),32)
@@ -54,7 +54,7 @@ Index: Makefile
  BUILD_DIR = Release
  VS_SDL_LIBRARY ?= include/sdl/lib/x86/SDL2.dll
  VS_OPENAL_LIBRARY ?= include/openal/bin/Win32/soft_oal.dll
-@@ -139,16 +137,9 @@ LFLAGS += -arch $(ARCH)
+@@ -144,16 +142,9 @@ LHL_LINK_FLAGS += -install_name @rpath/libhl.dylib
  else
  
  # Linux
@@ -72,7 +72,7 @@ Index: Makefile
  LIBOPENAL = -lopenal
  LIBOPENGL = -lGL
  RELEASE_NAME = linux
-@@ -164,17 +155,18 @@ ifdef DEBUG
+@@ -169,17 +160,18 @@ ifdef DEBUG
  CFLAGS += -g
  endif
  
@@ -93,7 +93,7 @@ Index: Makefile
  
  uninstall:
  	rm -f $(INSTALL_BIN_DIR)/hl $(INSTALL_LIB_DIR)/libhl.${LIBEXT} $(INSTALL_LIB_DIR)/*.hdll
-@@ -183,46 +175,49 @@ uninstall:
+@@ -188,46 +180,49 @@ uninstall:
  libs: $(LIBS)
  
  ./include/pcre/%.o: include/pcre/%.c
@@ -105,8 +105,8 @@ Index: Makefile
 +	${CC} $(CFLAGS) -o $@ -c $< ${PCRE_FLAGS}
  
  libhl: ${LIB}
--	${CC} ${CFLAGS} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} -shared ${LIB} -lpthread -lm
-+	${CC} $(CFLAGS) -o libhl.$(LIBEXT) ${LIBFLAGS} -shared ${LIB} -lpthread -lm
+-	${CC} ${CFLAGS} -o libhl.$(LIBEXT) -m${MARCH} ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared ${LIB} -lpthread -lm
++	${CC} $(CFLAGS) -o libhl.$(LIBEXT) ${LIBFLAGS} ${LHL_LINK_FLAGS} -shared ${LIB} -lpthread -lm
  
  hlc: ${BOOT}
 -	${CC} ${CFLAGS} -o hlc ${BOOT} ${LFLAGS} ${EXTRA_LFLAGS}
@@ -157,7 +157,7 @@ Index: Makefile
  
  mesa:
  	(cd libs/mesa && ${MAKE})
-@@ -283,7 +278,7 @@ codesign_osx:
+@@ -288,7 +283,7 @@ codesign_osx:
  .SUFFIXES : .c .o
  
  .c.o :
