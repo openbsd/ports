@@ -5,7 +5,7 @@ DISTNAME =	chiaki-${V}-src
 PKGNAME =	${DISTNAME:S/-v/-/g:S/-src//g}
 REVISION =	1
 
-WRKSRC =	${WRKDIR}/chiaki
+WRKDIST =	${WRKDIR}/chiaki
 
 CATEGORIES =	games
 
