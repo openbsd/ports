@@ -4212,14 +4212,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-channel.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-start-viewer-session-revocation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-playback-restriction-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-playback-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-playback-restriction-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-playback-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-playback-restriction-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream-session.rst
@@ -4227,6 +4230,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/get-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/import-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-channels.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-playback-key-pairs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-playback-restriction-policies.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-recording-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-stream-keys.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/list-stream-sessions.rst
@@ -4238,6 +4242,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/stop-stream.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/update-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/update-playback-restriction-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivschat/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivschat/create-chat-token.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivschat/create-logging-configuration.rst
