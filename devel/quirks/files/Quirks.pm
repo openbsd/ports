@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1610 2024/02/24 15:39:44 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1611 2024/02/25 16:35:49 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1913,6 +1913,7 @@ setup_obsolete_reason(
 	64 => 'qsyncthingtray',
 	3 => 'h2o',
 	3 => 'smtube',
+	65 => 'goldendict',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1994,6 +1995,7 @@ my $obsolete_message = {
 	62 => "not maintained, upstream suggests using passphraseme or pwgen",
 	63 => "outdated, unmaintained, crashes on startup",
 	64 => "dead upstream, crashes when showing the Syncthing web interface, use a browser",
+	65 => "superseded by goldendict-ng",
 };
 
 # ->is_base_system($handle, $state):
