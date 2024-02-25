@@ -378,6 +378,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/endpoint-ru
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ce/2017-10-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chatbot/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chatbot/2017-10-11/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chatbot/2017-10-11/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chatbot/2017-10-11/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chatbot/2017-10-11/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/
