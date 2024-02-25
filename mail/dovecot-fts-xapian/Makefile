@@ -1,36 +1,34 @@
-COMMENT=		full text search plugin for Dovecot using Xapian
+COMMENT=	full text search plugin for Dovecot using Xapian
 
-GH_ACCOUNT=		grosjo
-GH_PROJECT=		fts-xapian
-GH_TAGNAME=		1.6.0
+DIST_TUPLE=	github grosjo fts-xapian 1.7.0 .
 
-PKGNAME=		dovecot-${DISTNAME}
+PKGNAME=	dovecot-${DISTNAME}
 
-CATEGORIES=		mail
+CATEGORIES=	mail
 
 # LGPLv2.1
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3 xapian z
 
-COMPILER=		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS=		mail/dovecot
-RUN_DEPENDS=		mail/dovecot
+BUILD_DEPENDS=	mail/dovecot
+RUN_DEPENDS=	mail/dovecot
 
-LIB_DEPENDS=		databases/xapian-core>=1.4.0 \
-			textproc/icu4c>=63.0
+LIB_DEPENDS=	databases/xapian-core>=1.4.0 \
+		textproc/icu4c>=63.0
 
-SEPARATE_BUILD=		Yes
+SEPARATE_BUILD=	Yes
 
-CONFIGURE_STYLE=	autoreconf
-CONFIGURE_ARGS=		--with-dovecot=${LOCALBASE}/lib/dovecot
-LIBTOOL_FLAGS=		--tag=disable-static
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
+CONFIGURE_ARGS=	--with-dovecot=${LOCALBASE}/lib/dovecot
+LIBTOOL_FLAGS=	--tag=disable-static
 
-NO_TEST=		Yes
+NO_TEST=	Yes
 
 post-install:
 	find ${PREFIX}/lib/dovecot -name '*.la' -delete
