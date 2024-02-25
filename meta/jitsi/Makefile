@@ -10,9 +10,6 @@ MAINTAINER=	Philipp Buehler <pb-openbsd@sysfive.com>, \
 
 PKGNAME=	jitsi-${VERSION}
 
-# ISC
-PERMIT_PACKAGE=	Yes
-
 RUN_DEPENDS=	net/jitsi/jicofo \
 		net/jitsi/meet \
 		net/jitsi/prosody-plugins \
