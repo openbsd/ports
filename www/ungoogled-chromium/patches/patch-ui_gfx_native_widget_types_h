@@ -1,7 +1,7 @@
 Index: ui/gfx/native_widget_types.h
 --- ui/gfx/native_widget_types.h.orig
 +++ ui/gfx/native_widget_types.h
-@@ -103,7 +103,7 @@ class SkBitmap;
+@@ -104,7 +104,7 @@ class SkBitmap;
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -10,7 +10,7 @@ Index: ui/gfx/native_widget_types.h
  extern "C" {
  struct _AtkObject;
  using AtkObject = struct _AtkObject;
-@@ -221,7 +221,7 @@ using NativeViewAccessible = struct objc_object*;
+@@ -220,7 +220,7 @@ using NativeViewAccessible = struct objc_object*;
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,7 +1,7 @@
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -83,7 +83,7 @@
+@@ -85,7 +85,7 @@
  #include "gin/public/cppgc.h"
  #endif
  

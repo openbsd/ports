@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			121.0.6167.184
+V=			122.0.6261.69
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -59,7 +59,7 @@ COMPILER=		ports-clang
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
-WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
+WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
@@ -143,6 +143,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	dav1d \
+		fontconfig \
 		icu \
 		libevent \
 		libjpeg \
@@ -159,7 +160,6 @@ GN_ARGS=	is_official_build=true \
 		optimize_webui=true \
 		enable_log_error_not_reached=true \
 		enable_rust=false \
-		use_bundled_fontconfig=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \

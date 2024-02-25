@@ -5,8 +5,8 @@ Index: content/browser/utility_process_host.h
  class Thread;
  }  // namespace base
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
  namespace viz {
  class GpuClient;
  }  // namespace viz
@@ -14,8 +14,8 @@ Index: content/browser/utility_process_host.h
    std::vector<RunServiceDeprecatedCallback> pending_run_service_callbacks_;
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
    std::unique_ptr<viz::GpuClient, base::OnTaskRunnerDeleter> gpu_client_;
  #endif
  

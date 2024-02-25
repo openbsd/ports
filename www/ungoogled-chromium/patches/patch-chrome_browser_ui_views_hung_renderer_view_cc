@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/hung_renderer_view.cc
 --- chrome/browser/ui/views/hung_renderer_view.cc.orig
 +++ chrome/browser/ui/views/hung_renderer_view.cc
-@@ -405,7 +405,7 @@ void HungRendererDialogView::ForceCrashHungRenderer() 
+@@ -406,7 +406,7 @@ void HungRendererDialogView::ForceCrashHungRenderer() 
    content::RenderProcessHost* rph =
        hung_pages_table_model_->GetRenderWidgetHost()->GetProcess();
    if (rph) {

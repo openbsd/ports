@@ -10,7 +10,16 @@ Index: chrome/browser/ui/webui/settings/accessibility_main_handler.cc
  #include "ui/accessibility/accessibility_features.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
-@@ -49,7 +49,7 @@ void AccessibilityMainHandler::OnJavascriptAllowed() {
+@@ -39,7 +39,7 @@ void AccessibilityMainHandler::RegisterMessages() {
+       base::BindRepeating(
+           &AccessibilityMainHandler::HandleCheckAccessibilityImageLabels,
+           base::Unretained(this)));
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   web_ui()->RegisterMessageCallback(
+       "getScreenAiInstallState",
+       base::BindRepeating(
+@@ -56,7 +56,7 @@ void AccessibilityMainHandler::OnJavascriptAllowed() {
            base::Unretained(this)));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -19,7 +28,7 @@ Index: chrome/browser/ui/webui/settings/accessibility_main_handler.cc
    if (features::IsPdfOcrEnabled()) {
      CHECK(!component_ready_observer_.IsObserving());
      component_ready_observer_.Observe(
-@@ -63,14 +63,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
+@@ -70,14 +70,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
    accessibility_subscription_ = {};
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  

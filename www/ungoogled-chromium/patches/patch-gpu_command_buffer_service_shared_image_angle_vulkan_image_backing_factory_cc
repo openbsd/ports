@@ -9,4 +9,4 @@ Index: gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factor
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      SHARED_IMAGE_USAGE_SCANOUT |
  #endif
-     SHARED_IMAGE_USAGE_GLES2 | SHARED_IMAGE_USAGE_GLES2_FRAMEBUFFER_HINT |
+     SHARED_IMAGE_USAGE_GLES2_READ | SHARED_IMAGE_USAGE_GLES2_WRITE |
