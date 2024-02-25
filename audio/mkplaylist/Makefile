@@ -2,14 +2,14 @@ COMMENT=		creates playlists from directory trees
 
 MODPY_EGG_VERSION=	0.4.5
 DISTNAME=		mkplaylist-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 CATEGORIES=		audio
-HOMEPAGE=		http://bj.spline.de/software.html
+HOMEPAGE=		http://blog.marc.rintsch.de/software.html
 
 # GPL
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://bj.spline.de/download/mkplaylist/
+SITES=		http://marc.rintsch.de/download/mkplaylist/
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
