@@ -1,6 +1,6 @@
 COMMENT=	number theory-oriented computer algebra system
 
-V=		2.15.4
+V=		2.15.5
 DISTNAME=	pari-$V
 CATEGORIES=	math
 
