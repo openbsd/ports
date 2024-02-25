@@ -1,8 +1,9 @@
---- include/allegro/platform/alunixac.hin.orig	Tue Jan 12 02:01:05 2010
-+++ include/allegro/platform/alunixac.hin	Tue Jan 12 02:01:34 2010
-@@ -153,6 +153,9 @@
- /* Define if JACK DIGI driver is supported. */
- #undef ALLEGRO_WITH_JACKDIGI
+Index: include/allegro/platform/alunixac.hin
+--- include/allegro/platform/alunixac.hin.orig
++++ include/allegro/platform/alunixac.hin
+@@ -73,6 +73,9 @@
+ /* Define if constructor attribute is supported. */
+ #undef ALLEGRO_USE_CONSTRUCTOR
  
 +/* Define if SNDIO DIGI driver is supported. */
 +#undef ALLEGRO_WITH_SNDIODIGI

@@ -4,7 +4,7 @@ COMMENT =	game programming library for C/C++ developers
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-REVISION =	7
+REVISION =	8
 CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 

@@ -1,0 +1,12 @@
+Index: src/amd64/asmdefs.inc
+--- src/amd64/asmdefs.inc.orig
++++ src/amd64/asmdefs.inc
+@@ -25,7 +25,7 @@
+ #endif
+ 
+ #if defined ALLEGRO_UNIX
+-  #define FUNC(name)            .globl name ; _align_ ; .type name,@function ; name:
++  #define FUNC(name)            .globl name ; _align_ ; .type name,@function ; name: ; endbr64
+ #else
+   #define FUNC(name)            .globl name ; _align_ ; name:
+ #endif
