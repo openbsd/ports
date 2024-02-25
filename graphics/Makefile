@@ -335,6 +335,7 @@
      SUBDIR += vulkan-headers
      SUBDIR += vulkan-loader
      SUBDIR += vulkan-tools
+     SUBDIR += vulkan-utility-libraries
      SUBDIR += vulkan-validation-layers
      SUBDIR += waffle
      SUBDIR += webp-pixbuf-loader
