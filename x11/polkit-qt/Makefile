@@ -1,9 +1,8 @@
 COMMENT=	PolicyKit authentication agent for Qt
 
-V=		0.175.0
+V=		0.200.0
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt5-${V}
-REVISION=	1
 
 SHARED_LIBS +=  polkit-qt5-agent-1        3.0 # 0.99
 SHARED_LIBS +=  polkit-qt5-core-1         3.0 # 0.99
@@ -23,7 +22,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_KDE:=unstable/polkit-qt-1/}
+SITES=		${SITE_KDE:=stable/polkit-qt-1/}
 
 WANTLIB += ${COMPILER_LIBCXX} gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += intl m polkit-agent-1 polkit-gobject-1
