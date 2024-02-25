@@ -1,7 +1,6 @@
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
-V=		3.0.1
-REVISION=	0
+V=		3.0.2
 DISTNAME=	libjpeg-turbo-${V}
 PKGNAME=	jpeg-${V}
 EPOCH=		0
@@ -17,7 +16,7 @@ HOMEPAGE=	https://libjpeg-turbo.org/
 # BSD-style
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_SOURCEFORGE:=libjpeg-turbo/}
+SITES=		https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/$V/
 
 WANTLIB=	c m
 
