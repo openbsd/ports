@@ -6,7 +6,7 @@
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt5 interface for AppStream
 
-V=			1.0.1
+V=			1.0.2
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}

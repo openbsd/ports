@@ -956,6 +956,7 @@ share/doc/appstream/html/chap-AppStream-Misc.html
 share/doc/appstream/html/chap-CatalogData.html
 share/doc/appstream/html/chap-Metadata.html
 share/doc/appstream/html/chap-Quickstart.html
+share/doc/appstream/html/chap-Validation.html
 share/doc/appstream/html/compose-api/
 share/doc/appstream/html/compose-api/RedHatDisplay-Black.woff
 share/doc/appstream/html/compose-api/RedHatDisplay-Black.woff2
@@ -1103,7 +1104,9 @@ share/doc/appstream/html/compose-api/method.Hint.is_valid.html
 share/doc/appstream/html/compose-api/method.Hint.set_explanation_template.html
 share/doc/appstream/html/compose-api/method.Hint.set_severity.html
 share/doc/appstream/html/compose-api/method.Hint.set_tag.html
+share/doc/appstream/html/compose-api/method.IconPolicy.from_string.html
 share/doc/appstream/html/compose-api/method.IconPolicy.set_policy.html
+share/doc/appstream/html/compose-api/method.IconPolicy.to_string.html
 share/doc/appstream/html/compose-api/method.IconPolicyIter.init.html
 share/doc/appstream/html/compose-api/method.IconPolicyIter.next.html
 share/doc/appstream/html/compose-api/method.Image.get_height.html
@@ -1170,6 +1173,8 @@ share/doc/appstream/html/compose-api/struct.IconPolicyIter.html
 share/doc/appstream/html/compose-api/style.css
 share/doc/appstream/html/compose-api/type_func.CanvasError.quark.html
 share/doc/appstream/html/compose-api/type_func.ComposeError.quark.html
+share/doc/appstream/html/compose-api/type_func.IconState.from_string.html
+share/doc/appstream/html/compose-api/type_func.IconState.to_string.html
 share/doc/appstream/html/compose-api/type_func.Image.supported_format_names.html
 share/doc/appstream/html/compose-api/type_func.ImageError.quark.html
 share/doc/appstream/html/compose-api/type_func.ImageFormat.from_filename.html
