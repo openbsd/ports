@@ -8,7 +8,12 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+REVISION-extras=	0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+
+HOMEPAGE=		https://www.gnome.org/
 
 MULTI_PACKAGES=		-main -extras
 
