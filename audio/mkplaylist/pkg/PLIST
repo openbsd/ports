@@ -1,3 +1,0 @@
-bin/mkplaylist
-lib/python${MODPY_VERSION}/site-packages/mkplaylist.${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-@man man/man1/mkplaylist.1

@@ -112,7 +112,6 @@
      SUBDIR += midish
      SUBDIR += mikmod
      SUBDIR += milkytracker
-     SUBDIR += mkplaylist
      SUBDIR += moc
      SUBDIR += morseplayer
      SUBDIR += mp3applygain

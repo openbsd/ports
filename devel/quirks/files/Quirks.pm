@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1611 2024/02/25 16:35:49 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1612 2024/02/25 20:42:58 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1914,6 +1914,7 @@ setup_obsolete_reason(
 	3 => 'h2o',
 	3 => 'smtube',
 	65 => 'goldendict',
+	31 => 'mkplaylist',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
