@@ -6,6 +6,8 @@ VERSION=	3.0.9
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 
+REVISION-client=	0
+
 CATEGORIES=	games
 
 HOMEPAGE=	https://www.freeciv.org/
@@ -26,7 +28,7 @@ WANTLIB-client += ${cWANTLIB}
 WANTLIB-client += SDL2 SDL2_mixer X11 Xcursor Xext Xfixes Xi Xrandr
 WANTLIB-client += Xrender Xss atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB-client += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-client += modplug ogg opus opusfile pango-1.0 pangocairo-1.0
+WANTLIB-client += ogg opus opusfile pango-1.0 pangocairo-1.0
 WANTLIB-client += samplerate sndio usbhid xcb
 
 WANTLIB-share=
@@ -40,11 +42,7 @@ LIB_DEPENDS-main=	archivers/xz \
 			net/curl \
 			textproc/icu4c
 LIB_DEPENDS-client=	archivers/xz \
-			audio/flac \
-			audio/libmikmod \
 			audio/libogg \
-			audio/libvorbis \
-			audio/mpg123 \
 			databases/sqlite3 \
 			devel/sdl2-mixer \
 			net/curl \
