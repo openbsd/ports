@@ -1,2 +1,7 @@
+lib/cmake/
+lib/cmake/VulkanLoader/
+lib/cmake/VulkanLoader/VulkanLoaderConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/VulkanLoader/VulkanLoaderConfig.cmake
+lib/cmake/VulkanLoader/VulkanLoaderConfigVersion.cmake
 @lib lib/libvulkan.so.${LIBvulkan_VERSION}
 lib/pkgconfig/vulkan.pc

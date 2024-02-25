@@ -3,7 +3,7 @@ Hack to inject -lstdc++fs for lang/gcc
 Index: StandAlone/CMakeLists.txt
 --- StandAlone/CMakeLists.txt.orig
 +++ StandAlone/CMakeLists.txt
-@@ -62,7 +62,7 @@ if(WIN32)
+@@ -67,7 +67,7 @@ if(WIN32)
      set(LIBRARIES ${LIBRARIES} psapi)
  elseif(UNIX)
      if(NOT ANDROID AND NOT QNX)

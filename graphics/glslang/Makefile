@@ -2,13 +2,13 @@ PORTROACH =	limit:^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	13.0.0
+GH_TAGNAME =	14.0.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
 
-SHARED_LIBS +=	glslang				4.0 # 13.0
-SHARED_LIBS +=	HLSL				0.0 # 12.1
-SHARED_LIBS +=	SPIRV				3.0 # 13.0
+SHARED_LIBS +=	glslang				5.0 # 14.0
+SHARED_LIBS +=	glslang-default-resource-limits 0.0 # 14.0
+SHARED_LIBS +=	SPIRV				4.0 # 14.0
 SHARED_LIBS +=	SPVRemapper			1.0 # 13.0
 
 CATEGORIES =	devel graphics
@@ -26,10 +26,12 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
+BUILD_DEPENDS =	graphics/spirv-tools
 TEST_DEPENDS =	graphics/spirv-tools \
 		shells/bash
 
-CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
+CONFIGURE_ARGS +=	-DALLOW_EXTERNAL_SPIRV_TOOLS=ON \
+			-DBUILD_SHARED_LIBS=ON
 
 SUBST_VARS +=	ADDITIONAL_LIBRARIES
 

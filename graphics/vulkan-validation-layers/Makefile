@@ -1,8 +1,8 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.3.261.1
+V =		1.3.275.0
 PKGNAME =	vulkan-validation-layers-${V}
-GH_TAGNAME =	sdk-${V}
+GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
 
@@ -23,14 +23,16 @@ MODULES =	devel/cmake \
 		lang/python
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	devel/robin-hood-hashing \
+BUILD_DEPENDS =	graphics/spirv-headers \
+		graphics/spirv-tools \
 		graphics/vulkan-headers \
-		graphics/spirv-headers \
-		graphics/spirv-tools
+		graphics/vulkan-utility-libraries
 
-CONFIGURE_ARGS +=	-DBUILD_WSI_WAYLAND_SUPPORT=False \
+# needs robin_hood cmake package to build with robing hood hashing
+CONFIGURE_ARGS +=	-DBUILD_WERROR=False \
+			-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
-			-DBUILD_WERROR=False
+			-DUSE_ROBIN_HOOD_HASHING=False
 
 # Tests only build if Google Test framework is in directory external/
 NO_TEST =	Yes

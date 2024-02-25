@@ -25,11 +25,13 @@ include/vulkan/vulkan_funcs.hpp
 include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_handles.hpp
 include/vulkan/vulkan_hash.hpp
+include/vulkan/vulkan_hpp_macros.hpp
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
 include/vulkan/vulkan_raii.hpp
 include/vulkan/vulkan_screen.h
+include/vulkan/vulkan_shared.hpp
 include/vulkan/vulkan_static_assertions.hpp
 include/vulkan/vulkan_structs.hpp
 include/vulkan/vulkan_to_string.hpp
@@ -49,7 +51,6 @@ share/vulkan/registry/
 share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
-share/vulkan/registry/genvk.py
 share/vulkan/registry/parse_dependency.py
 share/vulkan/registry/profiles/
 share/vulkan/registry/profiles/VP_KHR_roadmap_2022.json
