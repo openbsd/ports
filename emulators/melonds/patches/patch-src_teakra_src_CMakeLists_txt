@@ -1,0 +1,24 @@
+From upstream 21e2a876ec7392eb3d8d2c4d0f0aee5cd9a298f0.
+
+Index: src/teakra/src/CMakeLists.txt
+--- src/teakra/src/CMakeLists.txt.orig
++++ src/teakra/src/CMakeLists.txt
+@@ -32,10 +32,15 @@ add_library(teakra
+     register.h
+     shared_memory.h
+     teakra.cpp
+-    test.h
+-    test_generator.cpp
+-    test_generator.h
+ )
++
++if (TEAKRA_BUILD_UNIT_TESTS)
++    target_sources(teakra PUBLIC
++        test.h
++        test_generator.cpp
++        test_generator.h
++    )
++endif()
+ 
+ create_target_directory_groups(teakra)
+ 

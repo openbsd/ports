@@ -2,6 +2,7 @@ COMMENT =	Nintendo DS emulator
 
 PKGNAME =	melonds-$V
 V =		0.9.5
+REVISION =	0
 
 DIST_TUPLE +=	github melonDS-emu melonDS $V .
 
