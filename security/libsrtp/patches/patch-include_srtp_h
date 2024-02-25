@@ -5,7 +5,7 @@ https://gitlab.linphone.org/BC/public/external/srtp/-/commit/c48e27278e656dc4b88
 Index: include/srtp.h
 --- include/srtp.h.orig
 +++ include/srtp.h
-@@ -667,6 +667,31 @@ srtp_err_status_t srtp_update_stream(srtp_t session,
+@@ -684,6 +684,31 @@ srtp_err_status_t srtp_update_stream(srtp_t session,
                                       const srtp_policy_t *policy);
  
  /**
