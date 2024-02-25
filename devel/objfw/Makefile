@@ -1,6 +1,6 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.0.8
+DISTNAME =	objfw-1.0.10
 
 SHARED_LIBS +=	objfw		0.0
 SHARED_LIBS +=	objfwrt		0.0
