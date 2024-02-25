@@ -11,3 +11,13 @@ Index: common/x86/x86inc.asm
      RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
      %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
      %assign stack_offset 0      ; stack pointer offset relative to the return address
+@@ -823,6 +826,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+         global current_function %+ %1
+     %endif
+     %1:
++    %if ARCH_X86_64
++        endbr64
++    %endif
+ %endmacro
+ 
+ %macro cextern 1
