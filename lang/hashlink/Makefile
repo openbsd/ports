@@ -6,11 +6,11 @@ USE_NOBTCFI =	Yes
 COMMENT =	virtual machine for Haxe
 
 V =		1.14pl0
+COMMIT =	20df6529c932f7e9ab4e1c528a0321723f2d09ae
 PKGNAME =	hashlink-${V}
 
 # commit from 2024-02-13; tagged as 'latest'
-DIST_TUPLE +=	github HaxeFoundation hashlink \
-		20df6529c932f7e9ab4e1c528a0321723f2d09ae .
+DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .
 
 SHARED_LIBS +=	hl		2.0	# 1.14
 SHARED_LIBS +=	hl_module	0.0	# 1.13
@@ -47,6 +47,8 @@ FIX_CRLF_FILES = libs/uv/uv.c \
 		src/std/thread.c
 
 NO_TEST =	Yes
+
+WRKDIST =	${WRKDIR}/hashlink-${COMMIT}
 
 post-extract:
 	rm -rf ${WRKSRC}/include/{fmt,turbojpeg}
