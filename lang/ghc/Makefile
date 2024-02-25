@@ -42,7 +42,7 @@ LIB_DEPENDS =		converters/libiconv \
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/gtar
 
-RUN_DEPENDS =
+TEST_DEPENDS =		shells/bash
 
 SITES =			https://downloads.haskell.org/ghc/${GHC_VERSION}/
 SITES.boot =		https://openbsd.dead-parrot.de/distfiles/
