@@ -1,0 +1,15 @@
+include/vulkan/
+include/vulkan/layer/
+include/vulkan/layer/vk_layer_settings.h
+include/vulkan/layer/vk_layer_settings.hpp
+include/vulkan/utility/
+include/vulkan/utility/vk_dispatch_table.h
+include/vulkan/utility/vk_format_utils.h
+include/vulkan/utility/vk_struct_helper.hpp
+include/vulkan/vk_enum_string_helper.h
+lib/cmake/
+lib/cmake/VulkanUtilityLibraries/
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibraries-targets.cmake
+lib/cmake/VulkanUtilityLibraries/VulkanUtilityLibrariesConfig.cmake
+@static-lib lib/libVulkanLayerSettings.a
