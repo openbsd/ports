@@ -106,6 +106,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}tar_cmds.
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}tar_cmds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}transfer_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}transfer_cmd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}version_cmd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/${MODPY_PYCACHE}version_cmd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/_common.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/benchmark_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/check_cmd.py
@@ -133,6 +135,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/archiver/rlist_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/serve_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/tar_cmds.py
 lib/python${MODPY_VERSION}/site-packages/borg/archiver/transfer_cmd.py
+lib/python${MODPY_VERSION}/site-packages/borg/archiver/version_cmd.py
 lib/python${MODPY_VERSION}/site-packages/borg/cache.py
 @so lib/python${MODPY_VERSION}/site-packages/borg/checksums.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/borg/checksums.pyi
@@ -255,6 +258,8 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}chunker_
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}chunker_slow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}compress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}compress.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}crypto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}crypto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/${MODPY_PYCACHE}efficient_collection_queue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -415,6 +420,7 @@ lib/python${MODPY_VERSION}/site-packages/borg/testsuite/chunker.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/chunker_pytest.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/chunker_slow.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/compress.py
+lib/python${MODPY_VERSION}/site-packages/borg/testsuite/conftest.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/crypto.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/efficient_collection_queue.py
 lib/python${MODPY_VERSION}/site-packages/borg/testsuite/file_integrity.py
@@ -491,6 +497,7 @@ lib/python${MODPY_VERSION}/site-packages/borgbackup-${MODPY_EGG_VERSION}.dist-in
 @man man/man1/borg-transfer.1
 @man man/man1/borg-umount.1
 @man man/man1/borg-upgrade.1
+@man man/man1/borg-version.1
 @man man/man1/borg-with-lock.1
 @man man/man1/borg.1
 @man man/man1/borgfs.1

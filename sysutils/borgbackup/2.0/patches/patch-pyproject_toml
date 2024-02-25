@@ -1,25 +1,14 @@
-Exclude source files which have been compiled. Taken from
-https://github.com/borgbackup/borg/pull/7832
+Build with the Cython version that we have in ports.
 
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -53,6 +53,18 @@ nofuse = []
- borg = "borg.archiver:main"
- borgfs = "borg.archiver:main"
+@@ -65,7 +65,7 @@ where = ["src"]
+ "*" = ["*.c", "*.h", "*.pyx"]
  
-+[tool.setuptools]
-+# See also the MANIFEST.in file.
-+# We want to install all the files in the package directories...
-+include-package-data = true
-+
-+[tool.setuptools.packages.find]
-+where = ["src"]
-+
-+[tool.setuptools.exclude-package-data]
-+# ...except the source files which have been compiled (C extensions):
-+"*" = ["*.c", "*.h", "*.pyx"]
-+
  [build-system]
- requires = ["setuptools", "wheel", "pkgconfig", "Cython", "setuptools_scm[toml]>=6.2"]
+-requires = ["setuptools", "wheel", "pkgconfig", "Cython>=3", "setuptools_scm[toml]>=6.2"]
++requires = ["setuptools", "wheel", "pkgconfig", "Cython>=0.29.36", "setuptools_scm[toml]>=6.2"]
  build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
