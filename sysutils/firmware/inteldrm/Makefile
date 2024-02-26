@@ -1,9 +1,8 @@
 FW_DRIVER=	inteldrm
-FW_VER=		20231211
+FW_VER=		20240220
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,i915}
-REVISION=	0
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
