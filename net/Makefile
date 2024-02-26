@@ -75,6 +75,7 @@
      SUBDIR += dnsdist,h3
      SUBDIR += dnsmasq
      SUBDIR += dnsperf
+     SUBDIR += dnsq
      SUBDIR += dnsreflector
      SUBDIR += dnstop
      SUBDIR += dnstracer
