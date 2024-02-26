@@ -1,0 +1,13 @@
+Index: gst/deinterlace/x86/x86inc.asm
+--- gst/deinterlace/x86/x86inc.asm.orig
++++ gst/deinterlace/x86/x86inc.asm
+@@ -732,6 +732,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+     %endif
+     align function_align
+     %2:
++    %if ARCH_X86_64
++        endbr64
++    %endif
+     RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
+     %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
+     %assign stack_offset 0      ; stack pointer offset relative to the return address
