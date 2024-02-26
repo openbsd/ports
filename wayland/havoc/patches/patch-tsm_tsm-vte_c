@@ -1,0 +1,15 @@
+Index: tsm/tsm-vte.c
+--- tsm/tsm-vte.c.orig
++++ tsm/tsm-vte.c
+@@ -439,9 +439,9 @@ static void vte_write_fnkey(struct tsm_vte *vte, bool 
+ 	if (fnmod > 1) {
+ 		if (index <= 0)
+ 			index = 1;
+-		len = sprintf(buf, "\e[%d;%d%c", index, fnmod, c);
++		len = snprintf(buf, sizeof(buf), "\e[%d;%d%c", index, fnmod, c);
+ 	} else {
+-		len = sprintf(buf, "\e%c%.0d%c", ss3 ? 'O' : '[', index, c);
++		len = snprintf(buf, sizeof(buf), "\e%c%.0d%c", ss3 ? 'O' : '[', index, c);
+ 	}
+ 	vte_write(vte, buf, len);
+ }

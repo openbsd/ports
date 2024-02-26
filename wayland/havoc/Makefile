@@ -2,8 +2,8 @@ COMMENT =	minimal terminal emulator for wayland
 
 GH_ACCOUNT =	ii8
 GH_PROJECT =	havoc
-GH_TAGNAME =	0.4.0
-REVISION =	0
+GH_TAGNAME =	0.5.0
+
 
 CATEGORIES =	wayland
 HOMEPAGE =	https://github.com/ii8/havoc
