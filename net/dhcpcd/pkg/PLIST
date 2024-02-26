@@ -29,8 +29,3 @@ share/examples/dhcpcd/dhcpcd.conf
 @owner _dhcpcd
 @group _dhcpcd
 @sample ${LOCALSTATEDIR}/db/dhcpcd/
-@comment handle DUID file move for a smoother transition to 7.0
-@exec-update [[ ! -f ${LOCALSTATEDIR}/db/dhcpcd/duid ]] && [[ -r ${SYSCONFDIR}/dhcpcd.duid ]] && cp ${SYSCONFDIR}/dhcpcd.duid ${LOCALSTATEDIR}/db/dhcpcd/duid; true
-@comment fix dir ownership for upgrades from before privsep was added in 9.0
-@exec-update [[ -d ${LOCALSTATEDIR}/db/dhcpcd ]] && chown -R _dhcpcd:_dhcpcd ${LOCALSTATEDIR}/db/dhcpcd
-@exec-update getent passwd _dhcpcd | grep -q /var/dhcpcd && usermod -d /var/empty _dhcpcd || true
