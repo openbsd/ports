@@ -3,6 +3,7 @@ COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
 CATEGORIES =	devel graphics
+REVISION =	0
 
 SHARED_LIBS +=	SDL2_image		1.1 # 2.8.2
 
@@ -14,7 +15,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender
-WANTLIB += Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy jpeg jxl
+WANTLIB += Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy jpeg jxl jxl_cms
 WANTLIB += lcms2 lzma m pthread samplerate sharpyuv sndio tiff usbhid webp
 WANTLIB += webpdemux xcb z zstd
 
