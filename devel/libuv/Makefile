@@ -16,6 +16,10 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += pthread
 
+# stdatomic.h
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
+
 BUILD_DEPENDS =	textproc/py-sphinx
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
