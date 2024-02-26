@@ -1,8 +1,10 @@
 VERSION=	2024.01-rc3
+REVISION=	0
 
 SOC=		rk3588
 
 BOARDS=\
+	nanopi-r6s-rk3588s \
 	nanopc-t6-rk3588 \
 	orangepi-5-plus-rk3588 \
 	orangepi-5-rk3588s \
