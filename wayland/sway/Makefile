@@ -1,13 +1,12 @@
 COMMENT =	i3-compatible Wayland compositor
-REVISION = 	0
 
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
-GH_COMMIT =	bff991dfdc63ca3785a810ff4d913ddfd71677a1
-DISTNAME =	${GH_PROJECT}-1.8.1pl20231121
+GH_TAGNAME =	1.9
+
 CATEGORIES =	wayland
 
-HOMEPAGE =	https://github.com/swaywm/sway
+HOMEPAGE =	https://swaywm.org/
 
 # MIT
 PERMIT_PACKAGE = Yes
@@ -21,8 +20,7 @@ WANTLIB +=	wayland-server wlroots
 WANTLIB +=	xcb-icccm xcb xkbcommon
 WANTLIB +=	c m
 
-BUILD_DEPENDS = \
-		graphics/gdk-pixbuf2 \
+BUILD_DEPENDS = graphics/gdk-pixbuf2 \
 		textproc/scdoc \
 		wayland/wayland-protocols
 
@@ -35,7 +33,7 @@ LIB_DEPENDS =	devel/json-c \
 		wayland/wlroots \
 		x11/xkbcommon
 
-RUN_DEPENDS =	wayland/dmenu-wayland \
+RUN_DEPENDS =	wayland/wmenu \
 		wayland/swaybg \
 		x11/gnome/themes-extra
 
