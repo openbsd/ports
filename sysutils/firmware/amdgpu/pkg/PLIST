@@ -112,6 +112,7 @@ firmware/amdgpu/gc_11_0_0_mes1.bin
 firmware/amdgpu/gc_11_0_0_mes_2.bin
 firmware/amdgpu/gc_11_0_0_pfp.bin
 firmware/amdgpu/gc_11_0_0_rlc.bin
+firmware/amdgpu/gc_11_0_0_rlc_1.bin
 firmware/amdgpu/gc_11_0_1_imu.bin
 firmware/amdgpu/gc_11_0_1_me.bin
 firmware/amdgpu/gc_11_0_1_mec.bin
@@ -143,6 +144,8 @@ firmware/amdgpu/gc_11_0_4_mes1.bin
 firmware/amdgpu/gc_11_0_4_mes_2.bin
 firmware/amdgpu/gc_11_0_4_pfp.bin
 firmware/amdgpu/gc_11_0_4_rlc.bin
+firmware/amdgpu/gc_9_4_3_mec.bin
+firmware/amdgpu/gc_9_4_3_rlc.bin
 firmware/amdgpu/green_sardine_asd.bin
 firmware/amdgpu/green_sardine_ce.bin
 firmware/amdgpu/green_sardine_dmcub.bin
@@ -362,6 +365,8 @@ firmware/amdgpu/psp_13_0_4_toc.bin
 firmware/amdgpu/psp_13_0_5_asd.bin
 firmware/amdgpu/psp_13_0_5_ta.bin
 firmware/amdgpu/psp_13_0_5_toc.bin
+firmware/amdgpu/psp_13_0_6_sos.bin
+firmware/amdgpu/psp_13_0_6_ta.bin
 firmware/amdgpu/psp_13_0_7_sos.bin
 firmware/amdgpu/psp_13_0_7_ta.bin
 firmware/amdgpu/psp_13_0_8_asd.bin
@@ -403,6 +408,7 @@ firmware/amdgpu/renoir_rlc.bin
 firmware/amdgpu/renoir_sdma.bin
 firmware/amdgpu/renoir_ta.bin
 firmware/amdgpu/renoir_vcn.bin
+firmware/amdgpu/sdma_4_4_2.bin
 firmware/amdgpu/sdma_5_2_6.bin
 firmware/amdgpu/sdma_5_2_7.bin
 firmware/amdgpu/sdma_6_0_0.bin
@@ -424,6 +430,7 @@ firmware/amdgpu/sienna_cichlid_ta.bin
 firmware/amdgpu/sienna_cichlid_vcn.bin
 firmware/amdgpu/smu_13_0_0.bin
 firmware/amdgpu/smu_13_0_10.bin
+firmware/amdgpu/smu_13_0_6.bin
 firmware/amdgpu/smu_13_0_7.bin
 firmware/amdgpu/stoney_ce.bin
 firmware/amdgpu/stoney_me.bin
@@ -479,6 +486,7 @@ firmware/amdgpu/vangogh_vcn.bin
 firmware/amdgpu/vcn_3_1_2.bin
 firmware/amdgpu/vcn_4_0_0.bin
 firmware/amdgpu/vcn_4_0_2.bin
+firmware/amdgpu/vcn_4_0_3.bin
 firmware/amdgpu/vcn_4_0_4.bin
 firmware/amdgpu/vega10_acg_smc.bin
 firmware/amdgpu/vega10_asd.bin
