@@ -1,10 +1,10 @@
 COMMENT =	miscellaneous unix tools
 
-V =		0.67
+V =		0.69
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
 WRKDIST =	${WRKDIR}/moreutils-$V
-EXTRACT_SUFX =	.tar.gz
+EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	sysutils
 
