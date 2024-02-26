@@ -190,6 +190,7 @@ include/mysql/server/private/gcalc_tools.h
 include/mysql/server/private/grant.h
 include/mysql/server/private/group_by_handler.h
 include/mysql/server/private/gstream.h
+include/mysql/server/private/ha_handler_stats.h
 include/mysql/server/private/ha_partition.h
 include/mysql/server/private/ha_sequence.h
 include/mysql/server/private/handle_connections_win.h
@@ -532,6 +533,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/simple_password_check.so
 @so lib/mysql/plugin/sql_errlog.so
 @so lib/mysql/plugin/type_mysql_json.so
+@so lib/mysql/plugin/type_mysql_timestamp.so
 @so lib/mysql/plugin/wsrep_info.so
 @so lib/mysql/plugin/zstd.so
 @bin libexec/mariadbd
