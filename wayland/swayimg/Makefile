@@ -2,7 +2,7 @@ COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
-GH_TAGNAME =	v1.12
+GH_TAGNAME =	v2.1
 
 CATEGORIES =	wayland
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE = Yes
 
 MODULES =	devel/meson
 
-WANTLIB =	OpenEXRCore-3_2 cairo epoll-shim exif fontconfig freetype
+WANTLIB =	OpenEXRCore-3_2 avif cairo epoll-shim exif fontconfig freetype
 WANTLIB +=	gif gobject-2.0 heif jpeg json-c jxl png rsvg-2 tiff
 WANTLIB +=	wayland-client webp webpdemux xkbcommon
 WANTLIB +=	pthread c
@@ -24,6 +24,7 @@ LIB_DEPENDS =	devel/epoll-shim \
 		graphics/cairo \
 		graphics/giflib \
 		graphics/jpeg \
+		graphics/libavif \
 		graphics/libexif \
 		graphics/libjxl \
 		graphics/libwebp \
