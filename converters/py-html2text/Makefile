@@ -1,9 +1,8 @@
 COMMENT =		HTML to markdown-formatted text converter
 
-MODPY_EGG_VERSION =	2020.1.16
+MODPY_EGG_VERSION =	2024.2.25
 DISTNAME =		html2text-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		converters
 HOMEPAGE =		http://alir3z4.github.io/html2text/
