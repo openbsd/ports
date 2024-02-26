@@ -1,0 +1,4 @@
+bin/dnsq
+@bin bin/q
+share/doc/dnsq/
+share/doc/dnsq/README.md
