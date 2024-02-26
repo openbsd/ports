@@ -17,7 +17,7 @@ Index: qga/commands-posix.c
  static void ga_wait_child(pid_t pid, int *status, Error **errp)
  {
      pid_t rpid;
-@@ -2743,7 +2748,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
+@@ -2747,7 +2752,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
      return head;
  }
  
@@ -26,7 +26,7 @@ Index: qga/commands-posix.c
  
  void qmp_guest_suspend_disk(Error **errp)
  {
-@@ -2762,10 +2767,99 @@ void qmp_guest_suspend_hybrid(Error **errp)
+@@ -2766,10 +2771,99 @@ void qmp_guest_suspend_hybrid(Error **errp)
  
  GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
  {
@@ -126,7 +126,7 @@ Index: qga/commands-posix.c
  int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -3060,11 +3154,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3064,11 +3158,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
  
  #if !defined(CONFIG_FSFREEZE)
  
@@ -372,7 +372,7 @@ Index: qga/commands-posix.c
  
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
-@@ -3130,12 +3458,21 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
+@@ -3134,12 +3462,21 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  {
  #if !defined(__linux__)
      {
@@ -394,7 +394,7 @@ Index: qga/commands-posix.c
          char **p = (char **)list;
  
          while (*p) {
-@@ -3151,11 +3488,19 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
+@@ -3155,11 +3492,19 @@ GList *ga_command_init_blockedrpcs(GList *blockedrpcs)
  
  #if !defined(CONFIG_FSFREEZE)
      {

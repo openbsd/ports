@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
+ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64
 DPB_PROPERTIES=	parallel
 
 USE_NOBTCFI=	Yes
@@ -6,12 +6,11 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	8.0.2
+VERSION=	8.2.1
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -21,10 +20,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c glib-2.0 pthread
-WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone curl \
-		curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls \
-		gobject-2.0 gtk-3 iconv intl iscsi jpeg lzo2 m nfs pixman-1 \
-		png slirp sndio ssh usb-1.0 util vte-2.91 xkbcommon z zstd
+WANTLIB-main=	${WANTLIB} SDL2 X11 bz2 cairo capstone curl curses epoxy fdt \
+		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 gnutls gobject-2.0 \
+		gtk-3 iconv intl iscsi jpeg lzo2 m nfs pixman-1 png slirp sndio \
+		ssh usb-1.0 util vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga
@@ -115,24 +114,8 @@ TEST_TARGET=	check
 
 # XXX Optimizer bug, using -O2 causes segfaults, -O1 linking errors
 .if ${MACHINE_ARCH:Mpowerpc}
-CFLAGS+=	-O0
+#CFLAGS+=	-O0
 .endif
-
-.include <bsd.port.arch.mk>
-
-# Only lld has --dynamic-list
-.if ${PROPERTIES:Mlld}
-WANTLIB-main+=	gmodule-2.0
-PKG_ARGS+=	-Dplugins=1
-.else
-PKG_ARGS+=	-Dplugins=0
-.endif
-
-# XXX: Remove when updating.
-# https://gitlab.com/qemu-project/qemu/-/commit/8c0e8ed327c8ff7b48a5f2b7f5295c0541fcdbf4
-pre-configure:
-	perl -pi -e 's,tricore_feature,tricore_has_feature,g' ${WRKSRC}/target/tricore/cpu.c \
-		${WRKSRC}/target/tricore/cpu.h ${WRKSRC}/target/tricore/op_helper.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu

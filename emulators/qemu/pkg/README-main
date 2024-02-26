@@ -6,13 +6,13 @@
 
 1. Get a bootable CDROM image:
 
-    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/i386/cd70.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/i386/cd74.iso
 
-   or to use a 64-bit client OS or SPARC, respectively:
+   or to use a 64-bit client OS or SPARC64, respectively:
 
-    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/amd64/cd70.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/amd64/cd74.iso
 
-    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/sparc/cd70.iso
+    $ ftp https://cdn.openbsd.org/pub/OpenBSD/snapshots/sparc64/cd74.iso
 
 2. Create a virtual disk image:
 
@@ -20,16 +20,17 @@
 
 3. Install the OS:
 
-    $ qemu-system-i386 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd70.iso -boot d
+    $ qemu-system-i386 -m 64 -monitor stdio -no-fd-bootchk \
+	-hda virtual.img -cdrom cd74.iso -boot d
 
    or:
 
-    $ qemu-system-x86_64 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd70.iso -boot d
+    $ qemu-system-x86_64 -m 64 -monitor stdio -no-fd-bootchk \
+	-hda virtual.img -cdrom cd74.iso -boot d
 
-    $ qemu-system-sparc -m 32 -monitor stdio \
-	-hda virtual.img -cdrom cd70.iso -boot d
+    $ qemu-system-sparc64 -m 64 -monitor stdio \
+	-hda virtual.img -cdrom cd74.iso -boot d \
+        -net nic,model=ne2k_pci -net user
 
    NOTE: start this inside an xterm or equivalent.
    NOTE: be sure to choose serial console during install.
@@ -48,13 +49,14 @@
 
 5. Boot normally from the virtual disk:
 
-    $ qemu-system-i386 -m 32 -nographic -no-fd-bootchk -hda virtual.img
+    $ qemu-system-i386 -m 64 -nographic -no-fd-bootchk -hda virtual.img
 
    or:
 
-    $ qemu-system-x86_64 -m 32 -nographic -no-fd-bootchk -hda virtual.img
+    $ qemu-system-x86_64 -m 64 -nographic -no-fd-bootchk -hda virtual.img
 
-    $ qemu-system-sparc -m 32 -nographic -hda virtual.img
+    $ qemu-system-sparc64 -m 64 -nographic -hda virtual.img \
+	-net nic,model=ne2k_pci -net user
 
 ==> Networking
 
@@ -196,7 +198,7 @@
    accomplish this, both in effect the same solution:
 
     a. qemu-system-i386 -vnc :0 -serial stdio .. virtual.img \
-         -cdrom install52.iso -boot d
+         -cdrom install74.iso -boot d
 
 	- this option permits you to use VNC from some system to
           connect to the QEMU instance and 'set tty com0' at the
@@ -204,7 +206,7 @@
 	- you may then disconnect VNC and use the terminal from
           which you started QEMU to do the install.
 
-    b. qemu-system-i386 -nographic .. virtual.img -fda floppy52.fs -boot a
+    b. qemu-system-i386 -nographic .. virtual.img -fda floppy74.fs -boot a
 
 	- this maps both the serial port and the (qemu) monitor
           prompt to the terminal QEMU was started on.
@@ -213,7 +215,7 @@
 	- preparation of the floppy image to force serial console
           mode is straightforward:
 
-		vnconfig vnd0 floppy52.fs
+		vnconfig vnd0 floppy74.fs
 		mount /dev/vnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf
