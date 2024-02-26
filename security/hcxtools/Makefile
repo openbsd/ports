@@ -2,7 +2,7 @@ COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
-GH_TAGNAME =	6.3.2
+GH_TAGNAME =	6.3.4
 DISTNAME =	hcxtools-${GH_TAGNAME}
 
 CATEGORIES =	security
