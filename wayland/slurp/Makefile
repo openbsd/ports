@@ -2,7 +2,7 @@ COMMENT =	select a region in a Wayland compositor
 
 GH_ACCOUNT =	emersion
 GH_PROJECT =	slurp
-GH_TAGNAME =	v1.4.0
+GH_TAGNAME =	v1.5.0
 
 CATEGORIES =	wayland
 
