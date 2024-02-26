@@ -1,7 +1,7 @@
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.12.2
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	Imlib2	9.0	# 13.2
 CATEGORIES=	graphics
 
@@ -16,7 +16,7 @@ SITES=		${SITE_SOURCEFORGE:=enlightenment/}
 
 WANTLIB += ${COMPILER_LIBCXX} X11 X11-xcb Xau Xdmcp Xext aom brotlicommon
 WANTLIB += brotlidec brotlienc bz2 c dav1d de265 freetype gif
-WANTLIB += heif hwy id3tag jasper jpeg jxl jxl_threads lcms2 lzma
+WANTLIB += heif hwy id3tag jasper jpeg jxl jxl_cms jxl_threads lcms2 lzma
 WANTLIB += m openjp2 png raw sharpyuv tiff webp webpdemux x265
 WANTLIB += xcb xcb-shm z zstd
 
