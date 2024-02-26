@@ -4,14 +4,15 @@ supported by clang 13 nor by our kernel.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -241,8 +241,8 @@ else()
-       # Not yet supported by GCC. When runtime dispatch is supported and
-       # implemented, we will remove v from the required flags. Until then, using
-       # clang for RISC-V will require the CPU to support the V extension (1.0).
+@@ -293,9 +293,9 @@ else()
+     # we add the gcv compiler flag, which then requires the CPU (now when using
+     # either compiler) to support V.
+     if(HWY_CMAKE_RVV)
 -      list(APPEND HWY_FLAGS -march=rv64gcv1p0)
--      list(APPEND HWY_FLAGS -menable-experimental-extensions)
 +      #list(APPEND HWY_FLAGS -march=rv64gcv1p0)
-+      #list(APPEND HWY_FLAGS -menable-experimental-extensions)
+       if(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
+-        list(APPEND HWY_FLAGS -menable-experimental-extensions)
++        #list(APPEND HWY_FLAGS -menable-experimental-extensions)
+       endif()
      endif()
    endif()
- 
