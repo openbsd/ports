@@ -1,0 +1,28 @@
+Index: plugins/ffap/x86inc.asm
+--- plugins/ffap/x86inc.asm.orig
++++ plugins/ffap/x86inc.asm
+@@ -28,6 +28,16 @@
+     %endif
+ %endif
+ 
++%ifdef ARCH_X86_64
++%imacro _endbr64 0
++    dd 0xfa1e0ff3
++%endmacro
++%else
++%imacro _endbr64 0
++; empty
++%endmacro
++%endif
++
+ ; FIXME: All of the 64bit asm functions that take a stride as an argument
+ ; via register, assume that the high dword of that register is filled with 0.
+ ; This is true in practice (since we never do any 64bit arithmetic on strides,
+@@ -446,6 +456,7 @@ DECLARE_REG 6, ebp, ebp, bp, null, [esp + stack_offset
+     %endif
+     align function_align
+     %1:
++    _endbr64
+     RESET_MM_PERMUTATION ; not really needed, but makes disassembly somewhat nicer
+     %assign stack_offset 0
+     %if %0 > 1
