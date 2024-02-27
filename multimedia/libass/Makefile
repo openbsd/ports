@@ -5,6 +5,7 @@ DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 SITES=		https://github.com/libass/libass/releases/download/${VER}/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	ass	3.1
 
