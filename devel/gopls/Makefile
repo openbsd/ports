@@ -1,7 +1,7 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.13.2
+MODGO_VERSION =	v0.15.0
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c pthread
 
 MODULES =	lang/go
+
+MODGO_LDFLAGS +=	-X main.version=${MODGO_VERSION}
 
 DOCDIR =	${PREFIX}/share/doc/gopls
 

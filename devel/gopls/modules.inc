@@ -1,72 +1,53 @@
 MODGO_MODULES =	\
 	github.com/!burnt!sushi/toml	 v1.2.1 \
-	github.com/client9/misspell	 v0.3.4 \
-	github.com/davecgh/go-spew	 v1.1.1 \
-	github.com/frankban/quicktest	 v1.14.3 \
+	github.com/frankban/quicktest	 v1.14.6 \
 	github.com/google/go-cmdtest	 v0.4.1-0.20220921163831-55ab3332a786 \
-	github.com/google/go-cmp	 v0.5.9 \
+	github.com/google/go-cmp	 v0.6.0 \
 	github.com/google/renameio	 v0.1.0 \
 	github.com/google/safehtml	 v0.1.0 \
 	github.com/jba/printsrc		 v0.2.2 \
 	github.com/jba/templatecheck	 v0.6.0 \
-	github.com/kr/pretty		 v0.3.0 \
-	github.com/kr/pty		 v1.1.1 \
+	github.com/kr/pretty		 v0.3.1 \
 	github.com/kr/text		 v0.2.0 \
-	github.com/pkg/diff		 v0.0.0-20210226163009-20ebb0f2a09e \
-	github.com/pmezard/go-difflib	 v1.0.0 \
-	github.com/rogpeppe/go-internal	 v1.9.0 \
-	github.com/sergi/go-diff	 v1.1.0 \
-	github.com/stretchr/objx	 v0.1.0 \
-	github.com/stretchr/testify	 v1.4.0 \
+	github.com/rogpeppe/go-internal	 v1.12.0 \
 	github.com/yuin/goldmark	 v1.4.13 \
-	golang.org/x/exp		 v0.0.0-20220722155223-a9213eeb770e \
 	golang.org/x/exp/typeparams	 v0.0.0-20221212164502-fae10dda9338 \
-	golang.org/x/mod		 v0.12.0 \
-	golang.org/x/net		 v0.12.0 \
-	golang.org/x/sync		 v0.3.0 \
-	golang.org/x/sys		 v0.10.0 \
-	golang.org/x/text		 v0.11.0 \
-	golang.org/x/tools		 v0.11.2-0.20230810185051-cc6b5804b8cf \
-	golang.org/x/vuln		 v0.0.0-20230110180137-6ad3e3d07815 \
-	golang.org/x/xerrors		 v0.0.0-20200804184101-5ec99f83aff1 \
+	golang.org/x/mod		 v0.15.0 \
+	golang.org/x/net		 v0.21.0 \
+	golang.org/x/sync		 v0.6.0 \
+	golang.org/x/sys		 v0.17.0 \
+	golang.org/x/telemetry		 v0.0.0-20240209200032-7b892fcb8a78 \
+	golang.org/x/text		 v0.14.0 \
+	golang.org/x/tools		 v0.18.1-0.20240221145400-a220b3b5ba60 \
+	golang.org/x/vuln		 v1.0.1 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
-	gopkg.in/errgo.v2		 v2.1.0 \
-	gopkg.in/yaml.v2		 v2.2.4 \
 	gopkg.in/yaml.v3		 v3.0.1 \
-	honnef.co/go/tools		 v0.4.2 \
-	mvdan.cc/gofumpt		 v0.4.0 \
-	mvdan.cc/unparam		 v0.0.0-20211214103731-d0ef000c54e5 \
-	mvdan.cc/xurls/v2		 v2.4.0
+	honnef.co/go/tools		 v0.4.6 \
+	mvdan.cc/gofumpt		 v0.6.0 \
+	mvdan.cc/unparam		 v0.0.0-20230312165513-e84e2d14e3b8 \
+	mvdan.cc/xurls/v2		 v2.5.0
 
 MODGO_MODFILES =	\
-	github.com/!burnt!sushi/toml	 v0.3.1 \
-	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/google/go-cmp	 v0.5.8 \
 	github.com/google/safehtml	 v0.0.2 \
-	github.com/kr/pretty		 v0.1.0 \
-	github.com/kr/text		 v0.1.0 \
-	github.com/rogpeppe/go-internal	 v1.8.1 \
+	github.com/rogpeppe/go-internal	 v1.10.0 \
 	golang.org/x/exp/typeparams	 v0.0.0-20221208152030-732eee02a75a \
-	golang.org/x/mod		 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
-	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
-	golang.org/x/mod		 v0.7.0 \
+	golang.org/x/mod		 v0.10.0 \
+	golang.org/x/mod		 v0.12.0 \
+	golang.org/x/mod		 v0.14.0 \
 	golang.org/x/mod		 v0.8.0 \
-	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sync		 v0.0.0-20220819030929-7fc1605a5dde \
 	golang.org/x/sync		 v0.1.0 \
-	golang.org/x/sys		 v0.0.0-20211019181941-9d821ace8654 \
-	golang.org/x/sys		 v0.0.0-20220829200755-d48e67d00261 \
-	golang.org/x/sys		 v0.3.0 \
+	golang.org/x/sync		 v0.3.0 \
+	golang.org/x/sys		 v0.11.0 \
+	golang.org/x/sys		 v0.16.0 \
 	golang.org/x/sys		 v0.5.0 \
+	golang.org/x/telemetry		 v0.0.0-20240208230135-b75ee8823808 \
 	golang.org/x/text		 v0.3.3 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
-	golang.org/x/tools		 v0.1.10 \
-	golang.org/x/tools		 v0.1.12 \
-	golang.org/x/tools		 v0.4.1-0.20221208213631-3f74d914ae6d \
-	golang.org/x/tools		 v0.4.1-0.20221217013628-b4dfc36097e2 \
+	golang.org/x/tools		 v0.12.1-0.20230815132531-74c255bcf846 \
+	golang.org/x/tools		 v0.12.1-0.20230825192346-2191a27a6dc5 \
+	golang.org/x/tools		 v0.13.0 \
+	golang.org/x/tools		 v0.17.0 \
 	golang.org/x/tools		 v0.6.0 \
-	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
-	gopkg.in/check.v1		 v1.0.0-20180628173108-788fd7840127 \
-	gopkg.in/yaml.v2		 v2.2.2 \
-	honnef.co/go/tools		 v0.2.2
+	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405
 
