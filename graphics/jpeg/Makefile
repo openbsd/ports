@@ -23,7 +23,7 @@ WANTLIB=	c m
 MODULES=	devel/cmake
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS=	devel/yasm
+BUILD_DEPENDS=	devel/nasm
 .endif
 
 CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX="${PREFIX}"
