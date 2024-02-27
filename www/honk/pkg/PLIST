@@ -22,6 +22,7 @@
 share/doc/honk/
 share/doc/honk/LICENSE
 share/doc/honk/README
+share/doc/honk/TODO
 share/doc/honk/activitypub.7.html
 @sample ${LOCALSTATEDIR}/honk/docs/activitypub.7.html
 share/doc/honk/changelog.txt
