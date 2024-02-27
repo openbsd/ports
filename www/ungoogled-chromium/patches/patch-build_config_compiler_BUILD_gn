@@ -23,7 +23,7 @@ Index: build/config/compiler/BUILD.gn
      ]
    }
 +  if (current_cpu == "x86" && is_openbsd) {
-+    ldflags = [ "-Wl,-z,notext" ]
++    ldflags = [ "-Wl,-z,notext", "-Wl,--strip-all" ]
 +  }
  }
  
