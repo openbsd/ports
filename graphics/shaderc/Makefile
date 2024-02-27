@@ -1,15 +1,17 @@
 COMMENT =	SL/HLSL to SPIR-V shader compiler
 
-DIST_TUPLE =	github google shaderc v2023.6 .
+DIST_TUPLE =	github google shaderc v2023.8 .
 
-SHARED_LIBS +=	shaderc_shared		0.0 # 0.0
+SHARED_LIBS +=	shaderc_shared		1.0
 
 CATEGORIES =	graphics
+
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # Apache 2
 PERMIT_PACKAGE = Yes
 
-WANTLIB += ${COMPILER_LIBCXX} HLSL SPIRV c glslang m
+WANTLIB += ${COMPILER_LIBCXX} SPIRV c glslang m
 
 COMPILER =	base-clang ports-gcc
 
