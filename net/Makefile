@@ -121,6 +121,7 @@
      SUBDIR += gmudix
      SUBDIR += gnugk
      SUBDIR += go-ipfs
+     SUBDIR += go-sendxmpp
      SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
