@@ -1,6 +1,6 @@
 COMMENT =	configure systems using any scripting language
 
-DISTNAME =	rset-2.9
+DISTNAME =	rset-3.0
 
 CATEGORIES =	sysutils
 
