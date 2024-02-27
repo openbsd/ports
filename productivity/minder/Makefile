@@ -1,10 +1,7 @@
 COMMENT =	Mind-mapping application
 
-PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME}
-
-GH_ACCOUNT =	phase1geo
-GH_PROJECT =	Minder
-GH_TAGNAME =	1.16.2
+DIST_TUPLE =	github phase1geo Minder 1.16.3 .
+PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	productivity
 
