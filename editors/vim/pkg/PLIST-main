@@ -423,6 +423,7 @@ share/vim/${P}/ftplugin/ant.vim
 share/vim/${P}/ftplugin/apache.vim
 share/vim/${P}/ftplugin/arch.vim
 share/vim/${P}/ftplugin/art.vim
+share/vim/${P}/ftplugin/asciidoc.vim
 share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/automake.vim
