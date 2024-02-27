@@ -1,0 +1,3 @@
+@bin bin/go-sendxmpp
+@man man/man1/go-sendxmpp.1
+@man man/man5/go-sendxmpp.5
