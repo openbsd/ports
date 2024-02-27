@@ -6,13 +6,13 @@ Index: test/cli.fnl
 @@ -8,8 +8,10 @@
  (local test-all? (os.getenv :FNL_TESTALL)) ; set by `make testall`
  
- (local host-lua (match _VERSION
--                  "Lua 5.1" (if _G.jit :luajit :lua5.1)
--                  _ (.. :lua (_VERSION:sub 5))))
-+                  "Lua 5.1" (if _G.jit :luajit51 :lua51)
-+                  _ (.. :lua (-> _VERSION
-+                                 (string.sub 5)
-+                                 (string.gsub "(%w).(%w)" "%1%2")))))
- 
- (fn file-exists? [filename]
-   (let [f (io.open filename)]
+ (local host-lua (let [long (match _VERSION
+-                             "Lua 5.1" (if _G.jit :luajit :lua5.1)
+-                             _ (.. :lua (_VERSION:sub 5)))
++                             "Lua 5.1" (if _G.jit :luajit51 :lua51)
++                             _ (.. :lua (-> _VERSION
++                                            (string.sub 5)
++                                            (string.gsub "(%w).(%w)" "%1%2"))))
+                       p (io.popen (.. long " -v"))]
+                   (p:read :*all)
+                   (if (p:close)
