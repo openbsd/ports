@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1612 2024/02/25 20:42:58 daniel Exp $
+# $OpenBSD: Quirks.pm,v 1.1613 2024/02/27 13:29:58 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -810,6 +810,7 @@ my $stem_extensions = {
 	'llama' => 'walk',
 	'py-setuptools-git' => 'py3-setuptools-git',
 	'unison' => 'unison-gui',
+	'sendxmpp' => 'go-sendxmpp',
 };
 
 my $obsolete_reason = {};

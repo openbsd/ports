@@ -663,7 +663,6 @@
      SUBDIR += scamper
      SUBDIR += scapy
      SUBDIR += seafile
-     SUBDIR += sendxmpp
      SUBDIR += senpai
      SUBDIR += serf
      SUBDIR += si

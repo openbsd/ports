@@ -1,5 +1,0 @@
-bin/sendxmpp
-@man man/man1/sendxmpp.1
-share/examples/sendxmpp/
-share/examples/sendxmpp/send-url.xml
-share/examples/sendxmpp/sendxmpp-raw-messages
