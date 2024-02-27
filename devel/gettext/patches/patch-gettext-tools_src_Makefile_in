@@ -3,7 +3,7 @@ Use standard shared library versioning.
 Index: gettext-tools/src/Makefile.in
 --- gettext-tools/src/Makefile.in.orig
 +++ gettext-tools/src/Makefile.in
-@@ -3949,7 +3949,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
+@@ -3965,7 +3965,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
  # use iconv().

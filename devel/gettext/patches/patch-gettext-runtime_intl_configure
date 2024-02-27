@@ -4,7 +4,7 @@ https://savannah.gnu.org/bugs/index.php?64536
 Index: gettext-runtime/intl/configure
 --- gettext-runtime/intl/configure.orig
 +++ gettext-runtime/intl/configure
-@@ -6709,7 +6709,7 @@ fi
+@@ -6791,7 +6791,7 @@ fi
  
  
  

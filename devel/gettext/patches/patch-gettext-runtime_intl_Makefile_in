@@ -4,7 +4,7 @@ https://git.savannah.gnu.org/gitweb/?p=gettext.git;a=commit;h=97a6a63ad619496632
 Index: gettext-runtime/intl/Makefile.in
 --- gettext-runtime/intl/Makefile.in.orig
 +++ gettext-runtime/intl/Makefile.in
-@@ -2617,8 +2617,8 @@ dngettext.lo:        ../config.h $(srcdir)/gettextP.h 
+@@ -2621,8 +2621,8 @@ dngettext.lo:        ../config.h $(srcdir)/gettextP.h 
  ngettext.lo:         ../config.h $(srcdir)/gettextP.h libgnuintl.h $(srcdir)/gmo.h $(srcdir)/loadinfo.h
  plural.lo:           ../config.h $(srcdir)/plural-exp.h $(PLURAL_DEPS)
  plural-exp.lo:       ../config.h $(srcdir)/plural-exp.h
