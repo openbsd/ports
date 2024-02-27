@@ -1,19 +1,16 @@
 COMMENT =	lightweight compositor for X11
 
-GH_ACCOUNT =	yshui
-GH_PROJECT =	picom
-GH_TAGNAME =	v10.2
-REVISION =	0
+DIST_TUPLE =   github yshui picom v11.2 .
 
 CATEGORIES =	x11
 
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += EGL GL X11 X11-xcb c config dbus-1 ev m pcre pixman-1
-WANTLIB += xcb-composite xcb-damage xcb-glx xcb-image xcb-present
+WANTLIB += EGL epoxy GL X11 X11-xcb c config dbus-1 ev m pcre2-8 pixman-1
+WANTLIB += pthread xcb-composite xcb-damage xcb-glx xcb-image xcb-present
 WANTLIB += xcb-randr xcb-render-util xcb-render xcb-shape xcb-sync
-WANTLIB += xcb-xfixes xcb-xinerama xcb
+WANTLIB += xcb-xfixes xcb-util xcb
 
 MODULES =		devel/meson
 
@@ -29,7 +26,7 @@ RUN_DEPENDS =		x11/gtk+4,-guic \
 
 LIB_DEPENDS =		devel/libconfig \
 			devel/libev \
-			devel/pcre \
+			devel/pcre2 \
 			x11/dbus
 
 CONFIGURE_ARGS	+=	-Dwith_docs=true \
