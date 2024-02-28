@@ -1161,6 +1161,7 @@ share/gitea/templates/repo/diff/comment_form_datahandler.tmpl
 share/gitea/templates/repo/diff/comments.tmpl
 share/gitea/templates/repo/diff/compare.tmpl
 share/gitea/templates/repo/diff/conversation.tmpl
+share/gitea/templates/repo/diff/conversation_outdated.tmpl
 share/gitea/templates/repo/diff/csv_diff.tmpl
 share/gitea/templates/repo/diff/escape_title.tmpl
 share/gitea/templates/repo/diff/image_diff.tmpl
@@ -1910,7 +1911,7 @@ gitea/assets/js/dropzone.2e37d03b.js
 gitea/assets/js/easymde.58e747ca.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.e65ef4b3.map
+gitea/assets/js/index.js.f4067aca.map
 gitea/assets/js/katex.25d07669.js
 gitea/assets/js/mcaptcha-vanilla-glue.149786ce.js
 gitea/assets/js/mermaid.83a93d40.js
