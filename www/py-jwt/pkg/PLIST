@@ -28,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}jwk_set_cache.${MOD
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}jwk_set_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}jwks_client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}jwks_client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jwt/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -41,5 +43,6 @@ lib/python${MODPY_VERSION}/site-packages/jwt/help.py
 lib/python${MODPY_VERSION}/site-packages/jwt/jwk_set_cache.py
 lib/python${MODPY_VERSION}/site-packages/jwt/jwks_client.py
 lib/python${MODPY_VERSION}/site-packages/jwt/py.typed
+lib/python${MODPY_VERSION}/site-packages/jwt/types.py
 lib/python${MODPY_VERSION}/site-packages/jwt/utils.py
 lib/python${MODPY_VERSION}/site-packages/jwt/warnings.py

@@ -1,11 +1,10 @@
 COMMENT =	JSON Web Token implementation in Python
 
-MODPY_EGG_VERSION = 2.6.0
+MODPY_EGG_VERSION = 2.8.0
 DISTNAME =	PyJWT-${MODPY_EGG_VERSION}
 PKGNAME =	py-jwt-${MODPY_EGG_VERSION}
 CATEGORIES =	www
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	2
 
 HOMEPAGE =	http://github.com/jpadilla/pyjwt
 
