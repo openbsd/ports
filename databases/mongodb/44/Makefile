@@ -1,6 +1,6 @@
 PORTROACH =	limitw:1,even
 
-V =		4.4.28
+V =		4.4.29
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
