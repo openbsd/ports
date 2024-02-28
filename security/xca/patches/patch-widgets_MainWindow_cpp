@@ -3,7 +3,7 @@ Adding digest aliases is no longer supported
 Index: widgets/MainWindow.cpp
 --- widgets/MainWindow.cpp.orig
 +++ widgets/MainWindow.cpp
-@@ -100,12 +100,14 @@ MainWindow::MainWindow() : QMainWindow()
+@@ -103,12 +103,14 @@ MainWindow::MainWindow() : QMainWindow()
  	ERR_load_crypto_strings();
  	OpenSSL_add_all_algorithms();
  

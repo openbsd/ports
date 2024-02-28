@@ -3,7 +3,7 @@ const for ASN1_STRING_TABLE
 Index: widgets/NewX509.cpp
 --- widgets/NewX509.cpp.orig
 +++ widgets/NewX509.cpp
-@@ -329,7 +329,7 @@ void NewX509::setupExtDNwidget(const QString &s, QLine
+@@ -327,7 +327,7 @@ void NewX509::setupExtDNwidget(const QString &s, QLine
  
  void NewX509::setupLineEditByNid(int nid, QLineEdit *l)
  {

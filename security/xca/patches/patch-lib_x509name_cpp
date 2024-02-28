@@ -3,7 +3,7 @@ const for ASN1_STRING_TABLE
 Index: lib/x509name.cpp
 --- lib/x509name.cpp.orig
 +++ lib/x509name.cpp
-@@ -219,7 +219,7 @@ int x509name::getNidByName(const QString &nid_name)
+@@ -204,7 +204,7 @@ int x509name::getNidByName(const QString &nid_name)
  
  QString x509name::checkLength() const
  {

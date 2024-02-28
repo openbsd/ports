@@ -1,55 +1,14 @@
 Index: lib/pkcs11.cpp
 --- lib/pkcs11.cpp.orig
 +++ lib/pkcs11.cpp
-@@ -654,6 +654,7 @@ int pkcs11::encrypt(int flen, const unsigned char *fro
- 	return size;
- }
+@@ -28,6 +28,10 @@
+ #include "ui_SelectToken.h"
+ #include <QPushButton>
  
-+#ifndef OPENSSL_NO_ENGINE
- // Shared between libressl and openssl
- static int eng_idx = -1;
- static int eng_finish(ENGINE *e)
-@@ -663,6 +664,7 @@ static int eng_finish(ENGINE *e)
- 	ENGINE_set_ex_data(e, eng_idx, NULL);
- 	return 1;
- }
++#ifdef OPENSSL_NO_ENGINE
++#undef EVP_PKEY_ED25519
 +#endif
- 
- #if (OPENSSL_VERSION_NUMBER >= 0x30000000L)
- static int eng_pmeth_copy(EVP_PKEY_CTX *dst, const EVP_PKEY_CTX *src)
-@@ -675,7 +677,7 @@ static int eng_pmeth_copy(EVP_PKEY_CTX *dst, EVP_PKEY_
- 	return 1;
- }
- 
--#ifndef LIBRESSL_VERSION_NUMBER
-+#if 1
- static int rsa_privdata_free(RSA *rsa)
++
+ void waitcursor(int start, int line)
  {
- 	pkcs11 *priv = (pkcs11*)RSA_get_app_data(rsa);
-@@ -835,7 +837,7 @@ static EC_KEY_METHOD *setup_ec_key_meth()
- }
- #endif
- 
--#ifdef EVP_PKEY_ED25519
-+#if defined(EVP_PKEY_ED25519) && !defined(OPENSSL_NO_ENGINE)
- 
- static EVP_PKEY_METHOD *p11_eddsa_method;
- 
-@@ -909,7 +911,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
- 	static EC_KEY_METHOD *ec_key_meth = NULL;
- 	EC_KEY *ec;
- #endif
--#ifdef EVP_PKEY_ED25519
-+#if defined(EVP_PKEY_ED25519) && !defined(OPENSSL_NO_ENGINE)
- 	static ENGINE *e = NULL;
- 
- 	if (!e) {
-@@ -993,7 +995,7 @@ EVP_PKEY *pkcs11::getPrivateKey(EVP_PKEY *pub, CK_OBJE
- 		EVP_PKEY_assign_EC_KEY(evp, ec);
- 		break;
- #endif
--#ifdef EVP_PKEY_ED25519
-+#if defined(EVP_PKEY_ED25519) && !defined(OPENSSL_NO_ENGINE)
- 	case EVP_PKEY_ED25519:
- 		size_t len;
- 		if (ENGINE_get_ex_data(e, eng_idx))
+ 	qDebug() << "Waitcursor" << (start ? "start" : "end") << line;
