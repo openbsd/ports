@@ -1,0 +1,67 @@
+Index: vp8/common/x86/subpixel_ssse3.asm
+--- vp8/common/x86/subpixel_ssse3.asm.orig
++++ vp8/common/x86/subpixel_ssse3.asm
+@@ -37,6 +37,7 @@ SECTION .text
+ ;)
+ globalsym(vp8_filter_block1d8_h6_ssse3)
+ sym(vp8_filter_block1d8_h6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -180,6 +181,7 @@ vp8_filter_block1d8_h4_ssse3:
+ ;)
+ globalsym(vp8_filter_block1d16_h6_ssse3)
+ sym(vp8_filter_block1d16_h6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -287,6 +289,7 @@ sym(vp8_filter_block1d16_h6_ssse3):
+ ;)
+ globalsym(vp8_filter_block1d4_h6_ssse3)
+ sym(vp8_filter_block1d4_h6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -417,6 +420,7 @@ sym(vp8_filter_block1d4_h6_ssse3):
+ ;)
+ globalsym(vp8_filter_block1d16_v6_ssse3)
+ sym(vp8_filter_block1d16_v6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -605,6 +609,7 @@ sym(vp8_filter_block1d16_v6_ssse3):
+ ;)
+ globalsym(vp8_filter_block1d8_v6_ssse3)
+ sym(vp8_filter_block1d8_v6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -745,6 +750,7 @@ sym(vp8_filter_block1d8_v6_ssse3):
+ ;)
+ globalsym(vp8_filter_block1d4_v6_ssse3)
+ sym(vp8_filter_block1d4_v6_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -884,6 +890,7 @@ sym(vp8_filter_block1d4_v6_ssse3):
+ ;)
+ globalsym(vp8_bilinear_predict16x16_ssse3)
+ sym(vp8_bilinear_predict16x16_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6
+@@ -1147,6 +1154,7 @@ sym(vp8_bilinear_predict16x16_ssse3):
+ ;)
+ globalsym(vp8_bilinear_predict8x8_ssse3)
+ sym(vp8_bilinear_predict8x8_ssse3):
++    _endbr64
+     push        rbp
+     mov         rbp, rsp
+     SHADOW_ARGS_TO_STACK 6

@@ -1,0 +1,12 @@
+Index: vp8/encoder/x86/copy_sse3.asm
+--- vp8/encoder/x86/copy_sse3.asm.orig
++++ vp8/encoder/x86/copy_sse3.asm
+@@ -94,6 +94,8 @@ SECTION .text
+ globalsym(vp8_copy32xn_sse3)
+ sym(vp8_copy32xn_sse3):
+ 
++    _endbr64
++
+     STACK_FRAME_CREATE_X3
+ 
+ .block_copy_sse3_loopx4:

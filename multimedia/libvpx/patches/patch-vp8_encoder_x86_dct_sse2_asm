@@ -1,0 +1,21 @@
+Index: vp8/encoder/x86/dct_sse2.asm
+--- vp8/encoder/x86/dct_sse2.asm.orig
++++ vp8/encoder/x86/dct_sse2.asm
+@@ -66,6 +66,8 @@ SECTION .text
+ globalsym(vp8_short_fdct4x4_sse2)
+ sym(vp8_short_fdct4x4_sse2):
+ 
++    _endbr64
++
+     STACK_FRAME_CREATE
+ 
+     movq        xmm0, MMWORD PTR[input        ] ;03 02 01 00
+@@ -170,6 +172,8 @@ sym(vp8_short_fdct4x4_sse2):
+ ;void vp8_short_fdct8x4_sse2(short *input, short *output, int pitch)
+ globalsym(vp8_short_fdct8x4_sse2)
+ sym(vp8_short_fdct8x4_sse2):
++
++    _endbr64
+ 
+     STACK_FRAME_CREATE
+ 
