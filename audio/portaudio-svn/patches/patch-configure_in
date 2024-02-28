@@ -1,3 +1,6 @@
+Add support for sndio (#878)
+45c12e8d18ae4434000ed1521e49d9b5ef91dedf
+
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
@@ -18,7 +21,7 @@ Index: configure.in
  fi
 +have_sndio=no
 +if test "x$with_sndio" != "xno"; then
-+    AC_CHECK_LIB(sndio, sio_open, have_sndio=yes, have_sndio=no)
++    PKG_CHECK_MODULES(SNDIO, sndio, have_sndio=yes, have_sndio=no)
 +fi
  have_asihpi=no
  if test "x$with_asihpi" != "xno"; then
@@ -28,8 +31,8 @@ Index: configure.in
          fi
  
 +        if [[ "$have_sndio" = "yes" -a "$with_sndio" != "no" ]] ; then
-+           DLL_LIBS="$DLL_LIBS -lsndio"
-+           LIBS="$LIBS -lsndio"
++           DLL_LIBS="$DLL_LIBS $SNDIO_LIBS"
++           CFLAGS="$CFLAGS $SNDIO_CFLAGS"
 +           OTHER_OBJS="$OTHER_OBJS src/hostapi/sndio/pa_sndio.o"
 +           AC_DEFINE(PA_USE_SNDIO,1)
 +        fi
@@ -37,11 +40,11 @@ Index: configure.in
          if [[ "$have_jack" = "yes" ] && [ "$with_jack" != "no" ]] ; then
             DLL_LIBS="$DLL_LIBS $JACK_LIBS"
             CFLAGS="$CFLAGS $JACK_CFLAGS"
-@@ -504,6 +519,7 @@ case "$target_os" in
-         ;;
-      *)
+@@ -506,6 +521,7 @@ case "$target_os" in
  	AC_MSG_RESULT([
-+  Sndio ....................... $have_sndio
    OSS ......................... $have_oss
    JACK ........................ $have_jack
++  Sndio ....................... $have_sndio
  ])
+         ;;
+ esac

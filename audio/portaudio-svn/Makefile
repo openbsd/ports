@@ -2,7 +2,7 @@ COMMENT=		portable cross-platform audio API
 
 DISTNAME =		pa_stable_v190700_20210406
 PKGNAME =		portaudio-svn-1970
-REVISION =		0
+REVISION =		1
 CATEGORIES=		audio
 SITES =			http://files.portaudio.com/archives/
 EXTRACT_SUFX =		.tgz

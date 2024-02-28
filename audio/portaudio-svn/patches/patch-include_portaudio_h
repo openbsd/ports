@@ -1,3 +1,6 @@
+Add support for sndio (#878)
+45c12e8d18ae4434000ed1521e49d9b5ef91dedf
+
 Index: include/portaudio.h
 --- include/portaudio.h.orig
 +++ include/portaudio.h
