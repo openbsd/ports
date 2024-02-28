@@ -1,9 +1,0 @@
-Index: tests/fff_print/test_trianglemesh.cpp
---- tests/fff_print/test_trianglemesh.cpp.orig
-+++ tests/fff_print/test_trianglemesh.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include "libslic3r/TriangleMesh.hpp"
- #include "libslic3r/TriangleMeshSlicer.hpp"

@@ -1,9 +1,0 @@
-Index: tests/fff_print/test_print.cpp
---- tests/fff_print/test_print.cpp.orig
-+++ tests/fff_print/test_print.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include "libslic3r/libslic3r.h"
- #include "libslic3r/Print.hpp"

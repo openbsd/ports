@@ -1,9 +1,0 @@
-Index: tests/libslic3r/test_jump_point_search.cpp
---- tests/libslic3r/test_jump_point_search.cpp.orig
-+++ tests/libslic3r/test_jump_point_search.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include "libslic3r/BoundingBox.hpp"
- #include "libslic3r/JumpPointSearch.hpp"
- 

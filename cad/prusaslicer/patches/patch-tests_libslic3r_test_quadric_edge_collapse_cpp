@@ -1,12 +1,6 @@
 Index: tests/libslic3r/test_quadric_edge_collapse.cpp
 --- tests/libslic3r/test_quadric_edge_collapse.cpp.orig
 +++ tests/libslic3r/test_quadric_edge_collapse.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include <test_utils.hpp>
- 
- #include <libslic3r/QuadricEdgeCollapse.hpp>
 @@ -240,7 +240,7 @@ TEST_CASE("Simplify frog_legs.obj to 5% by Quadric edg
  }
  

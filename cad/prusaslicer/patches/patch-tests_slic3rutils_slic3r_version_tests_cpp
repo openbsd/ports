@@ -1,9 +1,0 @@
-Index: tests/slic3rutils/slic3r_version_tests.cpp
---- tests/slic3rutils/slic3r_version_tests.cpp.orig
-+++ tests/slic3rutils/slic3r_version_tests.cpp
-@@ -1,4 +1,4 @@
--#include "catch2/catch.hpp"
-+#include <catch2/catch_all.hpp>
- 
- #include "slic3r/Config/Version.hpp"
- 

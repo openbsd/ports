@@ -1,12 +1,6 @@
 Index: tests/libslic3r/test_voronoi.cpp
 --- tests/libslic3r/test_voronoi.cpp.orig
 +++ tests/libslic3r/test_voronoi.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include <test_utils.hpp>
- 
- #include <libslic3r/Polygon.hpp>
 @@ -340,7 +340,7 @@ TEST_CASE("Voronoi division by zero 12903", "[Voronoi]
  // Funny sample from a dental industry?
  // Vojtech confirms this test fails and rightly so, because the input data contain self intersections.

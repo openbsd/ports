@@ -1,9 +1,0 @@
-Index: tests/libslic3r/test_surface_mesh.cpp
---- tests/libslic3r/test_surface_mesh.cpp.orig
-+++ tests/libslic3r/test_surface_mesh.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include <test_utils.hpp>
- 
- 

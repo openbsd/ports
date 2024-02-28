@@ -1,9 +1,0 @@
-Index: tests/libslic3r/test_config.cpp
---- tests/libslic3r/test_config.cpp.orig
-+++ tests/libslic3r/test_config.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include "libslic3r/Config.hpp"
- #include "libslic3r/PrintConfig.hpp"

@@ -1,9 +1,0 @@
-Index: tests/libslic3r/test_color.cpp
---- tests/libslic3r/test_color.cpp.orig
-+++ tests/libslic3r/test_color.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include "libslic3r/libslic3r.h"
- 
- #include "libslic3r/Color.hpp"

@@ -1,11 +1,7 @@
 Index: tests/libslic3r/test_cut_surface.cpp
 --- tests/libslic3r/test_cut_surface.cpp.orig
 +++ tests/libslic3r/test_cut_surface.cpp
-@@ -1,10 +1,10 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include <libslic3r/CutSurface.hpp>
+@@ -4,7 +4,7 @@
  #include <libslic3r/TriangleMesh.hpp> // its_make_cube + its_merge
  
  using namespace Slic3r;

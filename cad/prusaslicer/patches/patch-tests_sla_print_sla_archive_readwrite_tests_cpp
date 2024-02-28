@@ -1,9 +1,0 @@
-Index: tests/sla_print/sla_archive_readwrite_tests.cpp
---- tests/sla_print/sla_archive_readwrite_tests.cpp.orig
-+++ tests/sla_print/sla_archive_readwrite_tests.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include <test_utils.hpp>
- 
- #include "libslic3r/SLAPrint.hpp"

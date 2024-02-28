@@ -4,7 +4,7 @@ DPB_PROPERTIES = parallel
 
 V =		2.7.1
 PKGNAME =	prusaslicer-${V}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer

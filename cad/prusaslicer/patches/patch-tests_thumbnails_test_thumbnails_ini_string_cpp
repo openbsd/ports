@@ -1,9 +1,0 @@
-Index: tests/thumbnails/test_thumbnails_ini_string.cpp
---- tests/thumbnails/test_thumbnails_ini_string.cpp.orig
-+++ tests/thumbnails/test_thumbnails_ini_string.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include "libslic3r/Config.hpp"
- #include "libslic3r/PrintConfig.hpp"

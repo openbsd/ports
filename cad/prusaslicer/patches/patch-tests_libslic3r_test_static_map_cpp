@@ -1,9 +1,0 @@
-Index: tests/libslic3r/test_static_map.cpp
---- tests/libslic3r/test_static_map.cpp.orig
-+++ tests/libslic3r/test_static_map.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- #include <string_view>
- 
- #include "libslic3r/StaticMap.hpp"

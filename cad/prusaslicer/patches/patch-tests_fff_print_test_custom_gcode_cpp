@@ -1,9 +1,0 @@
-Index: tests/fff_print/test_custom_gcode.cpp
---- tests/fff_print/test_custom_gcode.cpp.orig
-+++ tests/fff_print/test_custom_gcode.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include <exception>
- #include <numeric>

@@ -1,9 +1,0 @@
-Index: tests/fff_print/test_perimeters.cpp
---- tests/fff_print/test_perimeters.cpp.orig
-+++ tests/fff_print/test_perimeters.cpp
-@@ -1,4 +1,4 @@
--#include <catch2/catch.hpp>
-+#include <catch2/catch_all.hpp>
- 
- #include <numeric>
- #include <sstream>
