@@ -1,0 +1,35 @@
+Index: src/libcryptobox/chacha20/sse2.S
+--- src/libcryptobox/chacha20/sse2.S.orig
++++ src/libcryptobox/chacha20/sse2.S
+@@ -3,6 +3,7 @@
+ SECTION_TEXT
+ 
+ GLOBAL_HIDDEN_FN chacha_blocks_sse2
++endbr64
+ chacha_blocks_sse2_local:
+ pushq %rbx
+ pushq %rbp
+@@ -605,6 +606,7 @@ ret
+ FN_END chacha_blocks_sse2
+ 
+ GLOBAL_HIDDEN_FN hchacha_sse2
++endbr64
+ hchacha_sse2_local:
+ movq $0x3320646e61707865, %rax
+ movq $0x6b20657479622d32, %r8
+@@ -673,6 +675,7 @@ ret
+ FN_END hchacha_sse2
+ 
+ GLOBAL_HIDDEN_FN_EXT chacha_sse2, 6, 16
++endbr64
+ pushq %rbp
+ movq %rsp, %rbp
+ subq $64, %rsp
+@@ -701,6 +704,7 @@ ret
+ FN_END chacha_sse2
+ 
+ GLOBAL_HIDDEN_FN_EXT xchacha_sse2, 6, 16
++endbr64
+ pushq %rbp
+ pushq %rbx
+ movq %rsp, %rbp

@@ -1,6 +1,6 @@
 COMMENT=	event-driven spam filtering system in C/Lua
 
-DIST_TUPLE=	github vstakhov rspamd 3.8.2 .
+DIST_TUPLE=	github vstakhov rspamd 3.8.4 .
 
 CATEGORIES=	mail
 

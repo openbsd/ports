@@ -1,0 +1,35 @@
+Index: src/libcryptobox/chacha20/avx.S
+--- src/libcryptobox/chacha20/avx.S.orig
++++ src/libcryptobox/chacha20/avx.S
+@@ -3,6 +3,7 @@
+ SECTION_TEXT
+ 
+ GLOBAL_HIDDEN_FN chacha_blocks_avx
++endbr64
+ chacha_blocks_avx_local:
+ pushq %rbx
+ pushq %rbp
+@@ -498,6 +499,7 @@ ret
+ FN_END chacha_blocks_avx
+ 
+ GLOBAL_HIDDEN_FN hchacha_avx
++endbr64
+ hchacha_avx_local:
+ LOAD_VAR_PIC chacha_constants, %rax
+ vmovdqa 0(%rax), %xmm0
+@@ -553,6 +555,7 @@ ret
+ FN_END hchacha_avx
+ 
+ GLOBAL_HIDDEN_FN_EXT chacha_avx, 6, 16
++endbr64
+ pushq %rbp
+ movq %rsp, %rbp
+ subq $64, %rsp
+@@ -581,6 +584,7 @@ ret
+ FN_END chacha_avx
+ 
+ GLOBAL_HIDDEN_FN_EXT xchacha_avx, 6, 16
++endbr64
+ pushq %rbp
+ pushq %rbx
+ movq %rsp, %rbp
