@@ -158,8 +158,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = BeJs0GkoWjPPKvRv
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 4gbart4L0D3gYL3765hKwsSbgwWHU//8k/4MIg6odTI=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = iy2Lx4td7xBjYIZ6gq2CxaTp3pNULwogcIe7ODhPVb8=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = FC2z3SMo50TBV+hc8ykdAnATt5+SpFmE+GD+OLwPH40=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.6.1.mod) = Btztb1e1OWlrAp+aP+hNBpwS5h5xIQO/9EKGVmwB5f0=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.6.1.zip) = 05pnYuSX0j2dsstS1dzyYCKNt4GRU8KYqLEr4t/dRTQ=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.6.2.mod) = Btztb1e1OWlrAp+aP+hNBpwS5h5xIQO/9EKGVmwB5f0=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.6.2.zip) = SjPQFV9MtmuGTfAUaSD6HgEbrlaXVpttK9sfzp871OE=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.10.mod) = BdgLHNyTTdrAmRX4IqQFDoj9pkajbymego6kjjP/Yfc=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.10.zip) = 0F1Bvq5D3HXwpueBWkR8DnBM/flIQelrpmHgsdvEoQw=
 SHA256 (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.10.mod) = +IjWF2shNMhy6adJ/bfazsGGXsk8BIPE1plnbVVRHqo=
@@ -244,7 +244,7 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (vultr-cli-v3.0.0.zip) = EWRrg8rN7GaBP4yv8xljLSsT7X41+fNRQ754JfGbvMo=
+SHA256 (vultr-cli-v3.0.1.zip) = 0qYp2mdVyE6aFXswG+dQt3QjTVa/LRjw1mTvb2dvEsc=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.zip) = 309004
 SIZE (go_modules/cloud.google.com/go/compute/@v/v1.20.1.mod) = 1093
@@ -405,8 +405,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 120537
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = 266
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = 17070
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.6.1.mod) = 256
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.6.1.zip) = 118356
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.6.2.mod) = 256
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.6.2.zip) = 118464
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.10.mod) = 1050
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.10.zip) = 117146
 SIZE (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.10.mod) = 442
@@ -491,4 +491,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (vultr-cli-v3.0.0.zip) = 153388
+SIZE (vultr-cli-v3.0.1.zip) = 153331
