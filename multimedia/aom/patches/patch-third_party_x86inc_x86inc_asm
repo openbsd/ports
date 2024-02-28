@@ -1,0 +1,28 @@
+Index: third_party/x86inc/x86inc.asm
+--- third_party/x86inc/x86inc.asm.orig
++++ third_party/x86inc/x86inc.asm
+@@ -52,6 +52,16 @@
+     %endif
+ %endif
+ 
++%if AOM_ARCH_X86_64
++%imacro _endbr64 0
++    dd 0xfa1e0ff3
++%endmacro
++%else
++%imacro _endbr64 0
++; empty
++%endmacro
++%endif
++
+ %define WIN64  0
+ %define UNIX64 0
+ %if AOM_ARCH_X86_64
+@@ -860,6 +870,7 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+     %endif
+     align function_align
+     %2:
++    _endbr64
+     RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
+     %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
+     %assign stack_offset 0      ; stack pointer offset relative to the return address

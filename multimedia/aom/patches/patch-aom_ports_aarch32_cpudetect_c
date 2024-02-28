@@ -1,0 +1,23 @@
+Allow ARM CPU runtime detection code to build on OpenBSD.
+
+Index: aom_ports/aarch32_cpudetect.c
+--- aom_ports/aarch32_cpudetect.c.orig
++++ aom_ports/aarch32_cpudetect.c
+@@ -12,7 +12,7 @@
+ 
+ #include "arm_cpudetect.h"
+ 
+-#if !CONFIG_RUNTIME_CPU_DETECT
++#if !CONFIG_RUNTIME_CPU_DETECT || defined(__OpenBSD__)
+ 
+ static int arm_get_cpu_caps(void) {
+   // This function should actually be a no-op. There is no way to adjust any of
+@@ -25,7 +25,7 @@ static int arm_get_cpu_caps(void) {
+   return flags;
+ }
+ 
+-#elif defined(_MSC_VER)  // end !CONFIG_RUNTIME_CPU_DETECT
++#elif defined(_MSC_VER)  // end !CONFIG_RUNTIME_CPU_DETECT || __OpenBSD__
+ 
+ static int arm_get_cpu_caps(void) {
+   int flags = 0;

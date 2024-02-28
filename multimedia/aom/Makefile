@@ -1,13 +1,14 @@
 COMMENT=	Alliance for Open Media AV1 video codec
 
-GH_ACCOUNT=	jbeich
-GH_PROJECT=	aom
-GH_TAGNAME=	v3.6.1
+V=		3.8.1
+DISTNAME=	libaom-$V
+PKGNAME=	aom-$V
 CATEGORIES=	multimedia
 
-SHARED_LIBS=	aom	4.0
+SHARED_LIBS=	aom	4.1
 
 HOMEPAGE=	https://aomedia.org/
+SITES=		https://storage.googleapis.com/aom-releases/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
