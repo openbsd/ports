@@ -1,12 +1,11 @@
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.40
+DISTNAME=	GraphicsMagick-1.3.42
 CATEGORIES=	graphics devel
 SITES=		${SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
-SHARED_LIBS=	GraphicsMagick		9.3 \
+SHARED_LIBS=	GraphicsMagick		9.4 \
 		GraphicsMagick++	6.1 \
 		GraphicsMagickWand	4.0
 
@@ -17,11 +16,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # http://www.graphicsmagick.org/www/Copyright.html
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext aom bz2 c
-WANTLIB += dav1d de265 freetype heif iconv jasper jbig jpeg lcms2
-WANTLIB += ltdl lzma m png tiff webp webpmux wmflite-0.2 x265 xcb
-WANTLIB += brotlicommon brotlidec brotlienc hwy jxl jxl_threads
-WANTLIB += xml2 z zstd sharpyuv
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext aom brotlicommon
+WANTLIB += brotlidec brotlienc bz2 c de265 freetype heif hwy iconv
+WANTLIB += jasper jbig jpeg jxl jxl_cms jxl_threads lcms2 ltdl
+WANTLIB += lzma m png sharpyuv tiff webp webpmux wmflite-0.2 x265
+WANTLIB += xcb xml2 z zstd
 
 WANTLIB += perl # uses perl ABI
 
