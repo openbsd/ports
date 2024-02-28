@@ -1,0 +1,27 @@
+PDF output for pandoc on OpenBSD
+================================
+
+Pandoc's PDF output mode relies on external programs to render a PDF from a
+markup format. By default, PDF output uses LaTeX and pandoc's default LaTeX
+template requires a number of common packages. On OpenBSD, installing
+texlive_texmf-minimal is sufficient for pandoc to generate PDFs via LaTeX.
+
+The table below lists the PDF engines directly supported by pandoc for each
+output format and, when available, the OpenBSD package providing the required
+executable. For complete details on the --pdf-engine option see the pandoc
+manual.
+
+Output format     PDF Engine      OpenBSD package
+--------------    -----------     ----------------
+latex             latexmk         latexmk
+latex             lualatex        texlive_base
+latex             pdflatex        texlive_base
+latex             tectonic        n/a (not in ports)
+latex             xelatex         texlive_texmf-minimal
+context           context         texlive_texmf-context (broken on OpenBSD)
+html              pagedjs-cli     n/a (NPM package)
+html              prince          n/a (commercial/proprietary)
+html              weasyprint      weasyprint
+html              wkhtmltopdf     wkhtmltopdf
+ms                pdfroff         groff
+typst             typst           n/a (not in ports)
