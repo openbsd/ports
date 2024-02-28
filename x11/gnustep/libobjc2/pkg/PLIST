@@ -1,3 +1,5 @@
+include/Block.h
+include/Block_private.h
 include/gnustep/
 include/gnustep/objc/
 include/gnustep/objc/Availability.h
@@ -13,10 +15,14 @@ include/gnustep/objc/message.h
 include/gnustep/objc/objc-api.h
 include/gnustep/objc/objc-arc.h
 include/gnustep/objc/objc-auto.h
+include/gnustep/objc/objc-class.h
+include/gnustep/objc/objc-exception.h
+include/gnustep/objc/objc-runtime.h
+include/gnustep/objc/objc-visibility.h
 include/gnustep/objc/objc.h
 include/gnustep/objc/runtime-deprecated.h
 include/gnustep/objc/runtime.h
 include/gnustep/objc/slot.h
-lib/libobjc2.a
+@static-lib lib/libobjc2.a
 @lib lib/libobjc2.so.${LIBobjc2_VERSION}
-@lib lib/libobjcxx.so.${LIBobjcxx_VERSION}
+lib/pkgconfig/libobjc.pc

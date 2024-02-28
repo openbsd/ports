@@ -3,16 +3,15 @@ ONLY_FOR_ARCHS =	${LLD_ARCHS}
 COMMENT =	GNUstep libobjc2 objective-c runtime
 
 # note: this port does not use the gnustep module
-VERSION =	1.8.1
+VERSION =	2.2
 GH_ACCOUNT =	gnustep
 GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
 DISTNAME =	libobjc2-${VERSION:S/_//}
 PKGNAME =	gnustep-${DISTNAME}
-REVISION =	7
 
-SHARED_LIBS +=	objc2	1.1
-SHARED_LIBS +=  objcxx	0.0
+SHARED_LIBS +=	objc2	2.0
+SHARED_LIBS +=  objcxx	1.0
 
 CATEGORIES =	x11/gnustep devel
 
@@ -29,6 +28,7 @@ MODULES =	devel/cmake
 CFLAGS +=	-fintegrated-as
 .endif
 
+BUILD_DEPENDS +=	devel/robin-map
 MAKE_FLAGS +=	LIBOBJCLIBNAME=objc2 \
 		LIBOBJC=libobjc2 \
 		HEADER_DIR=${DESTDIR}${PREFIX}/include/gnustep \
@@ -39,7 +39,8 @@ CONFIGURE_ARGS +=       -DLIBOBJC_NAME=objc2 -DINCLUDE_DIRECTORY=gnustep/objc \
 			-DCMAKE_MODULE_PATH=${PREFIX}/share/llvm/cmake \
                         -DBUILD_STATIC_LIBOBJC=On \
                         -DLLVM_OPTS=Off \
-                        -DTESTS=Off
+                        -DTESTS=Off \
+			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include"
 
 MAKE_FLAGS +=   LIBOBJCLIBNAME=objc2 \
                 LIBOBJC=libobjc2
