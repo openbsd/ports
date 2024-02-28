@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -634,7 +634,7 @@ if(NOT CUSTOM_CFLAGS)
+@@ -644,7 +644,7 @@ if(NOT CUSTOM_CFLAGS)
    #-g MUST be set for ALL builds, or there will be no support for them when bugs happen
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -ftree-vectorize")
@@ -10,7 +10,7 @@ Index: src/CMakeLists.txt
    if(CMAKE_COMPILER_IS_GNUCC)
      if(BUILD_SSE2_CODEPATHS)
        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mfpmath=sse")
-@@ -648,7 +648,7 @@ if(NOT CUSTOM_CFLAGS)
+@@ -658,7 +658,7 @@ if(NOT CUSTOM_CFLAGS)
  
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MARCH} ${DT_REQ_INSTRUCTIONS} -g")
    set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} -O2 -ftree-vectorize")
@@ -19,7 +19,7 @@ Index: src/CMakeLists.txt
    if(CMAKE_COMPILER_IS_GNUCXX)
      if(BUILD_SSE2_CODEPATHS)
        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mfpmath=sse")
-@@ -941,7 +941,6 @@ if(LIB_DEPS)
+@@ -952,7 +952,6 @@ if(LIB_DEPS)
  endif()
  
  target_link_libraries(lib_darktable PUBLIC ${STATIC_LIBS})
