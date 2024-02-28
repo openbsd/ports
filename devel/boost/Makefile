@@ -5,9 +5,6 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-# if updating >=1.81.0 review ports using boost_context that have USE_NOBTCFI
-# set and see if it can be removed (definite problems seen with pdns_recursor);
-# sqlite3 /usr/local/share/sqlports "select * from wantlib where value like 'boost_context%'"
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
