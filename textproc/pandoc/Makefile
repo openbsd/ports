@@ -1,6 +1,7 @@
 V =		3.1.12.1
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
+REVISION =	0
 
 CATEGORIES =	converters textproc
 
