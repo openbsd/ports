@@ -1,6 +1,7 @@
---- man/cooledit.1.orig	Mon Apr  4 22:47:45 2005
-+++ man/cooledit.1	Sat Mar 21 17:49:43 2015
-@@ -1548,7 +1548,7 @@ newline characters. A \fI"non"-paragraph\fP is one of 
+Index: man/cooledit.1
+--- man/cooledit.1.orig
++++ man/cooledit.1
+@@ -1539,7 +1539,7 @@ newline characters. A \fI"non"-paragraph\fP is one of 
  .TP
  .I   -
  Paragraphs containing any line that begins with the characters:
@@ -9,7 +10,7 @@
  .TP
  .I   -
  Paragraphs containing any line (other than the first line) that begins 
-@@ -1951,7 +1951,7 @@ displayed as follows on black:
+@@ -1942,7 +1942,7 @@ displayed as follows on black:
  ^A - ^Z
  .TP
  .I 27, 28, 29, 30, 31
