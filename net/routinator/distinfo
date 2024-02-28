@@ -208,7 +208,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1
 SHA256 (cargo/winnow-0.5.34.tar.gz) = t89HtlmzGNzL1pzEeXo5rhKPUz3OeQKhCWBE0ZZ7nBY=
 SHA256 (cargo/winreg-0.50.0.tar.gz) = Uk5XssU3wPmx5p8ZZTEewSGCtBIuRQNbFQjNJNKtrbE=
 SHA256 (cargo/xattr-1.3.1.tar.gz) = jahPGiWTmyf2gg2SrtEI+D/5IP3xGnsZNmwnxM2oHU8=
-SHA256 (routinator-0.13.1.tar.gz) = v4i/A8dJupimU6RTEwCNT4jMmSA5VmLXib4tBSndeHA=
+SHA256 (routinator-0.13.2.tar.gz) = d8O3S1CMqr9MWTh0gM2hiyItgX/XAyj4xzqPtFp3QQg=
 SHA256 (routinator-ui-0.3.4.tar.gz) = cHkJaz/ZhqoBsDzz50PPdNN7hEHTEoRMJeKwZd7tgpA=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -420,5 +420,5 @@ SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/winnow-0.5.34.tar.gz) = 154055
 SIZE (cargo/winreg-0.50.0.tar.gz) = 29703
 SIZE (cargo/xattr-1.3.1.tar.gz) = 12580
-SIZE (routinator-0.13.1.tar.gz) = 5455937
+SIZE (routinator-0.13.2.tar.gz) = 5456095
 SIZE (routinator-ui-0.3.4.tar.gz) = 756828
