@@ -1,12 +1,14 @@
-COMMENT=	Python client library for InfluxDB 1.8/2.0+/Cloud
+COMMENT=	Python client library for InfluxDB 2.x and Flux
 
-MODPY_EGG_VERSION=	1.36.1
+MODPY_EGG_VERSION=	1.40.0
 DISTNAME=	influxdb_client-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	databases
 
 HOMEPAGE=	https://github.com/influxdata/influxdb-client-python
+
+MAINTAINER=	Martin Reindl <martin@catai.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

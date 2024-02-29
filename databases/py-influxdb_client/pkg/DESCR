@@ -1,3 +1,2 @@
-Python client library for the InfluxDB 1.8, 2.0+, and InfluxDB
-Cloud. To connect to InfluxDB 1.7 or earlier instances, use the
-databases/py-influxdb port.
+Python client library for use with InfluxDB 2.x and Flux. To connect
+to InfluxDB 1.x instances, install py3-influxdb.

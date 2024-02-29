@@ -1,11 +1,13 @@
-COMMENT =		Python client for interacting with InfluxDB
+COMMENT =		Python client library for InfluxDB 1.x
 
 MODPY_EGG_VERSION =	5.3.1
 DISTNAME =		influxdb-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		databases
+
+HOMEPAGE =		https://github.com/influxdata/influxdb-python
 
 # MIT
 PERMIT_PACKAGE =	Yes

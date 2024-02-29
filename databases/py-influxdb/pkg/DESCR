@@ -1,1 +1,2 @@
-InfluxDB-Python is a client for interacting with InfluxDB.
+InfluxDB-Python is a client for interacting with InfluxDB 1.x. For
+connecting to InfluxDB 2.x instances, install py3-influxdb_client.
