@@ -1,4 +1,0 @@
-@newgroup _libreddit:552
-@newuser _libreddit:552:_libreddit::libreddit service account:/var/empty:/sbin/nologin
-@rcscript ${RCDIR}/libreddit
-@bin bin/libreddit
