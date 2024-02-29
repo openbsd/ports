@@ -101,7 +101,7 @@ tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
 tomcat/lib/ecj-4.27.jar
 tomcat/lib/el-api.jar
-tomcat/lib/jakartaee-migration-1.0.7-shaded.jar
+tomcat/lib/jakartaee-migration-1.0.8-shaded.jar
 tomcat/lib/jasper-el.jar
 tomcat/lib/jasper.jar
 tomcat/lib/jaspic-api.jar
