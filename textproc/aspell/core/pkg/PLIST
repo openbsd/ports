@@ -202,9 +202,11 @@ share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/aspell.mo
 share/locale/ga/LC_MESSAGES/aspell.mo
 share/locale/hr/LC_MESSAGES/aspell.mo
+share/locale/hu/LC_MESSAGES/aspell.mo
 share/locale/id/LC_MESSAGES/aspell.mo
 share/locale/it/LC_MESSAGES/aspell.mo
 share/locale/ja/LC_MESSAGES/aspell.mo
+share/locale/ka/LC_MESSAGES/aspell.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/aspell.mo
@@ -222,6 +224,9 @@ share/locale/rw/LC_MESSAGES/
 share/locale/rw/LC_MESSAGES/aspell.mo
 share/locale/sk/LC_MESSAGES/aspell.mo
 share/locale/sl/LC_MESSAGES/aspell.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/aspell.mo
 share/locale/sr/LC_MESSAGES/aspell.mo
 share/locale/sv/LC_MESSAGES/aspell.mo
 share/locale/tg/

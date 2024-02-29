@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -3308,7 +3308,7 @@ fi
+@@ -3312,7 +3312,7 @@ fi
  
  if test "$pkgdatadir" = "undef"
  then
@@ -10,7 +10,7 @@ Index: configure
  fi
  
  
-@@ -3329,7 +3329,7 @@ fi
+@@ -3333,7 +3333,7 @@ fi
  
  if test "$pkglibdir" = "undef"
  then
