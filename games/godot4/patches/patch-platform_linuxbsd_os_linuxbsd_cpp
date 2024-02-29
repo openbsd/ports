@@ -3,7 +3,7 @@ add sndio driver
 Index: platform/linuxbsd/os_linuxbsd.cpp
 --- platform/linuxbsd/os_linuxbsd.cpp.orig
 +++ platform/linuxbsd/os_linuxbsd.cpp
-@@ -1133,6 +1133,10 @@ String OS_LinuxBSD::get_system_ca_certificates() {
+@@ -1159,6 +1159,10 @@ String OS_LinuxBSD::get_system_ca_certificates() {
  OS_LinuxBSD::OS_LinuxBSD() {
  	main_loop = nullptr;
  

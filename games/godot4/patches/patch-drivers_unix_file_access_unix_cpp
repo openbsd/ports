@@ -1,0 +1,21 @@
+Index: drivers/unix/file_access_unix.cpp
+--- drivers/unix/file_access_unix.cpp.orig
++++ drivers/unix/file_access_unix.cpp
+@@ -395,7 +395,7 @@ Error FileAccessUnix::_set_unix_permissions(const Stri
+ }
+ 
+ bool FileAccessUnix::_get_hidden_attribute(const String &p_file) {
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
+ 	String file = fix_path(p_file);
+ 
+ 	struct stat st = {};
+@@ -409,7 +409,7 @@ bool FileAccessUnix::_get_hidden_attribute(const Strin
+ }
+ 
+ Error FileAccessUnix::_set_hidden_attribute(const String &p_file, bool p_hidden) {
+-#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__APPLE__)
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
+ 	String file = fix_path(p_file);
+ 
+ 	struct stat st = {};

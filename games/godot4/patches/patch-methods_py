@@ -3,7 +3,7 @@ drop hardcoded -O3
 Index: methods.py
 --- methods.py.orig
 +++ methods.py
-@@ -140,8 +140,6 @@ def force_optimization_on_debug(self):
+@@ -137,8 +137,6 @@ def force_optimization_on_debug(self):
          self["CFLAGS"] = [x for x in self["CFLAGS"] if not x.startswith("/O")]
          self["CXXFLAGS"] = [x for x in self["CXXFLAGS"] if not x.startswith("/O")]
          self.AppendUnique(CCFLAGS=["/O2"])

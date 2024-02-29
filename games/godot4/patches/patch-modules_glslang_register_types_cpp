@@ -1,0 +1,14 @@
+include glslang 14 file
+
+Index: modules/glslang/register_types.cpp
+--- modules/glslang/register_types.cpp.orig
++++ modules/glslang/register_types.cpp
+@@ -33,7 +33,7 @@
+ #include "core/config/engine.h"
+ #include "servers/rendering/rendering_device.h"
+ 
+-#include <glslang/Include/Types.h>
++#include <glslang/Include/glslang_c_shader_types.h>
+ #include <glslang/Public/ResourceLimits.h>
+ #include <glslang/Public/ShaderLang.h>
+ #include <glslang/SPIRV/GlslangToSpv.h>

@@ -3,7 +3,7 @@ don't have secure_getenv()
 Index: thirdparty/openxr/src/common/platform_utils.hpp
 --- thirdparty/openxr/src/common/platform_utils.hpp.orig
 +++ thirdparty/openxr/src/common/platform_utils.hpp
-@@ -56,7 +56,7 @@ static inline int ImplSetEnv(const char* name, const c
+@@ -95,7 +95,7 @@ static inline int ImplSetEnv(const char* name, const c
  
  static inline char* ImplGetSecureEnv(const char* name) {
  #ifdef HAVE_SECURE_GETENV

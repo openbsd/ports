@@ -8,5 +8,5 @@ Index: misc/dist/linux/godot.6
 -Audio driver ('PulseAudio', 'ALSA', 'Dummy').
 +Audio driver ('sndio', 'Dummy').
  .TP
- \fB\-\-video\-driver\fR <driver>
- Video driver ('Vulkan', 'GLES2').
+ \fB\-\-audio\-output\-latency\fR <ms>
+ Override audio output latency in milliseconds (default is 15 ms). Lower values make sound playback more reactive but increase CPU usage, and may result in audio cracking if the CPU can't keep up.

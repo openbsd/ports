@@ -5,10 +5,10 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-V =		4.1.3
-DISTNAME =	godot-${V}-stable
+V =		4.2.1pl0
+COMMIT =	f77bc872114ebe77f1604db47b81016ff478ce17
 PKGNAME =	godot4-${V}
-REVISION =	1
+DIST_TUPLE +=	github godotengine godot ${COMMIT} .
 
 CATEGORIES =	games
 
@@ -32,9 +32,6 @@ WANTLIB-editor = ${WANTLIB-main}
 
 # C++17
 COMPILER =	base-clang ports-gcc
-
-SITES =		https://downloads.tuxfamily.org/godotengine/${V}/
-EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/scons
 
@@ -62,6 +59,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			use_sowrap=no \
 			verbose=yes \
 			warnings=extra \
+			wayland=no \
 			werror=no
 
 # not in ports
@@ -114,6 +112,8 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_TEST =		Yes
 
 DPB_PROPERTIES =	parallel
+
+WRKDIST =		${WRKDIR}/godot-${COMMIT}
 
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
