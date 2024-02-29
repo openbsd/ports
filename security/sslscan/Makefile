@@ -4,8 +4,10 @@ COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 USE_NOEXECONLY=	Yes
 .endif
 
-DIST_TUPLE=	github rbsec sslscan 2.1.1 .
-REVISION=	0
+#DIST_TUPLE=	github rbsec sslscan 2.1.3 .
+GH_ACCOUNT=	rbsec
+GH_PROJECT=	sslscan
+GH_TAGNAME=	2.1.3
 
 CATEGORIES=	security net
 
