@@ -1,20 +1,22 @@
 COMMENT=	library to analyze MRT-format BGP dump files
 
-DISTNAME=	libbgpdump-1.6.0
+V=		1.6.2
+DISTNAME=	libbgpdump-$V
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS=	bgpdump 1.0
 
 CATEGORIES=	net
 
-HOMEPAGE=	https://bitbucket.org/ripencc/bgpdump/wiki/Home
+HOMEPAGE=	https://github.com/RIPE-NCC/bgpdump/wiki
 
 # License_NCC: "for any purpose and without fee".
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://ris.ripe.net/source/bgpdump/
-
 WANTLIB=	bz2 c z
+
+SITES=		https://github.com/RIPE-NCC/bgpdump/releases/download/v$V/
+
 LIB_DEPENDS=	archivers/bzip2
 
 CONFIGURE_STYLE= gnu
