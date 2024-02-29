@@ -1,15 +1,13 @@
 @bin bin/xfce4-taskmanager
 share/applications/xfce4-taskmanager.desktop
 share/icons/hicolor/128x128/apps/org.xfce.taskmanager.png
-share/icons/hicolor/16x16/actions/xc_crosshair.png
 share/icons/hicolor/16x16/apps/org.xfce.taskmanager.png
-share/icons/hicolor/24x24/actions/xc_crosshair.png
 share/icons/hicolor/24x24/apps/org.xfce.taskmanager.png
 share/icons/hicolor/32x32/apps/org.xfce.taskmanager.png
 share/icons/hicolor/48x48/apps/org.xfce.taskmanager.png
 share/icons/hicolor/64x64/apps/org.xfce.taskmanager.png
 share/icons/hicolor/96x96/apps/org.xfce.taskmanager.png
-share/icons/hicolor/scalable/actions/xc_crosshair.svg
+share/icons/hicolor/scalable/actions/xc_crosshair-symbolic.svg
 share/icons/hicolor/scalable/apps/org.xfce.taskmanager.svg
 share/locale/ar/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/ast/LC_MESSAGES/xfce4-taskmanager.mo
@@ -26,8 +24,6 @@ share/locale/en_GB/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/es/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/et/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/eu/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/fa_IR/
-share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/fi/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/fr/LC_MESSAGES/xfce4-taskmanager.mo
