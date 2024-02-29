@@ -3,6 +3,7 @@ COMMENT =		web-based notebook for interactive computing
 MODPY_EGG_VERSION =	6.4.13
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www devel
 
