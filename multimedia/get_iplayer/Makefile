@@ -1,6 +1,9 @@
 COMMENT=	download/stream programmes from BBC iPlayer
 
-DIST_TUPLE=	github get-iplayer get_iplayer v3.34 .
+#DIST_TUPLE=	github get-iplayer get_iplayer v3.35 .
+GH_ACCOUNT=	get-iplayer
+GH_PROJECT=	get_iplayer
+GH_TAGNAME=	v3.35
 
 CATEGORIES=	multimedia
 
