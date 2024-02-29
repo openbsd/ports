@@ -1,7 +1,8 @@
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
 
-VER =		${MAJ_VER}.${MIN_VER}.${MICRO_VER}
+MAJ_VER=	${VER:R:R}
+MIN_VER=	${VER:R:E}
 DISTNAME =	apache-tomcat-${VER}
 PKGNAME-main =	tomcat-${VER}
 PKGNAME-examples =tomcat-examples-${VER}
@@ -12,9 +13,9 @@ DISTFILES =	${DISTNAME}.tar.gz \
 		${DISTNAME}-fulldocs.tar.gz
 
 SITES =		${SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
-		http://archive.apache.org/dist/tomcat/tomcat-${MAJ_VER}/archive/v${VER}/bin/
+		https://archive.apache.org/dist/tomcat/tomcat-${MAJ_VER}/archive/v${VER}/bin/
 
-HOMEPAGE =	http://tomcat.apache.org/
+HOMEPAGE =	https://tomcat.apache.org/
 
 MULTI_PACKAGES = -main -examples
 
