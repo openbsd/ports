@@ -1,0 +1,14 @@
+croc is a tool that allows any two computers to simply and securely transfer
+files and folders.
+croc's features include:
+
+* allow any two computers to transfer data (using a relay)
+* end-to-end encryption (using PAKE)
+* easy cross-platform transfers (Windows, Linux, Mac)
+* multiple file transfers
+* resume transfers that are interrupted
+* local server or port-forwarding not needed
+* ipv6-first with ipv4 fallback
+* can use proxy, like tor
+
+

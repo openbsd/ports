@@ -1,0 +1,8 @@
+@newgroup _croc:897
+@newuser _croc:897:_croc::croc user:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/croc
+@owner _croc
+@group _croc
+@bin bin/croc
+share/doc/croc/
+share/doc/croc/README.md
