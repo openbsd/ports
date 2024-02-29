@@ -1,6 +1,7 @@
 No -ldl on OpenBSD.
 Use system glslang and SPIRV-Cross.
 Don't reach for Wayland headers.
+libHLSL is gone since glslang 14
 
 Index: gtk/CMakeLists.txt
 --- gtk/CMakeLists.txt.orig
@@ -13,7 +14,7 @@ Index: gtk/CMakeLists.txt
  list(APPEND ARGS ${SDL2_CFLAGS} ${GTK_CFLAGS} ${XRANDR_CFLAGS})
  list(APPEND LIBS ${X11} ${XEXT} ${DL} ${SDL2_LIBRARIES} ${GTK_LIBRARIES} ${XRANDR_LIBRARIES})
  
-@@ -78,16 +77,11 @@ list(APPEND SOURCES src/gtk_display_driver_opengl.cpp
+@@ -78,16 +77,10 @@ list(APPEND SOURCES src/gtk_display_driver_opengl.cpp
  
  if(USE_SLANG)
      list(APPEND SOURCES ../shaders/slang.cpp)
@@ -25,12 +26,12 @@ Index: gtk/CMakeLists.txt
 -    add_subdirectory("../external/SPIRV-Cross" "SPIRV-Cross" EXCLUDE_FROM_ALL)
      list(APPEND LIBS glslang
 -                     OGLCompiler
-                      HLSL
+-                     HLSL
 -                     OSDependent
                       SPIRV
                       glslang-default-resource-limits)
      list(APPEND LIBS spirv-cross-core
-@@ -95,10 +89,8 @@ if(USE_SLANG)
+@@ -95,10 +88,8 @@ if(USE_SLANG)
                       spirv-cross-reflect
                       spirv-cross-cpp)
      list(APPEND DEFINES "USE_SLANG")
