@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 clipboard history panel plugin
 
-XFCE_VERSION=	1.6.5
+XFCE_VERSION=	1.6.6
 XFCE_PLUGIN=	clipman
 
 # GPLv2
@@ -29,5 +29,8 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		X11-xcb ffi xcb-util xfconf-0 qrencode jpeg \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 xfce4panel-2.0 \
 		gthread-2.0 xcb-render xcb-shm harfbuzz graphite2 iconv intl
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
+
 
 .include <bsd.port.mk>
