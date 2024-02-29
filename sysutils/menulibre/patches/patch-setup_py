@@ -2,16 +2,16 @@ Doesnt cope with desktop file encoding when in iso
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -224,7 +224,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.aut
+@@ -238,7 +238,7 @@ class InstallAndUpdateDataDirectory(DistUtilsExtra.aut
          print(("Desktop File: %s\n" % desktop_file))
          move_icon_file(self.root, target_data, self.prefix)
          remove_appdata_in_file(self.root, target_data)
 -        update_desktop_file(desktop_file, script_path)
 +#        update_desktop_file(desktop_file, script_path)
+         remove_empty_data_directory(self.root, target_data)
  
  
- DistUtilsExtra.auto.setup(
-@@ -238,7 +238,7 @@ DistUtilsExtra.auto.setup(
+@@ -253,7 +253,7 @@ DistUtilsExtra.auto.setup(
                       'and full Unity action support. Suitable for lightweight '
                       'desktop environments.',
      url='https://github.com/bluesabre/menulibre',

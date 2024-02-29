@@ -1,6 +1,6 @@
 COMMENT =	fd.o-compliant menu editor
 
-MODPY_EGG_VERSION =	2.3.2
+MODPY_EGG_VERSION =	2.4.0
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	bluesabre
 GH_PROJECT =	menulibre
