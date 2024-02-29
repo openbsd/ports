@@ -1,6 +1,6 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	6.22.0
+MODPY_EGG_VERSION =	24.2.0
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -24,7 +24,7 @@ RUN_DEPENDS =		devel/git \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			devel/py-rich${MODPY_FLAVOR} \
 			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
-			sysutils/py-ansible-compat${MODPY_FLAVOR}>=4.1.10 \
+			sysutils/py-ansible-compat${MODPY_FLAVOR}>=4.1.11 \
 			sysutils/py-subprocess-tee${MODPY_FLAVOR} \
 			devel/py-yamllint${MODPY_FLAVOR} \
 			devel/py-wcmatch${MODPY_FLAVOR} \
