@@ -3,7 +3,7 @@ disable phone-home
 Index: chirp/wxui/report.py
 --- chirp/wxui/report.py.orig
 +++ chirp/wxui/report.py
-@@ -97,14 +97,8 @@ def with_session(fn):
+@@ -101,14 +101,8 @@ def with_session(fn):
  
  
  @with_session

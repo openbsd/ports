@@ -3,11 +3,13 @@ disable phone-home
 Index: chirp/wxui/__init__.py
 --- chirp/wxui/__init__.py.orig
 +++ chirp/wxui/__init__.py
-@@ -124,7 +124,4 @@ def chirpmain():
+@@ -203,9 +203,6 @@ def chirpmain():
      if args.action:
          wx.CallAfter(getattr(mainwindow, '_menu_%s' % args.action), None)
  
 -    report.check_for_updates(
 -        lambda ver: wx.CallAfter(main.display_update_notice, ver))
 -
-     app.MainLoop()
+     if sys.platform == 'linux' and args.install_desktop_app:
+         try:
+             maybe_install_desktop()

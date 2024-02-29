@@ -34,8 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}detect.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}detect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}elib_intl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}elib_intl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/${MODPY_PYCACHE}import_logic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -90,6 +88,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}ap510.${M
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}ap510.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv17.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv17.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv17Pro.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv17Pro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv3r.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_uv3r.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}baofeng_wp970i.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -166,6 +168,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}gmrsv2.${
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}gmrsv2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}h777.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}h777.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}hf90.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}hf90.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}hg_uv98.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}hg_uv98.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}hobbypcb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -232,6 +236,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}idrp.${MO
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}idrp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}iradio_uv_5118.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}iradio_uv_5118.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}iradio_uv_5118plus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}iradio_uv_5118plus.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}kenwood_d7.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}kenwood_d7.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}kenwood_hmk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}kenwood_hmk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}kenwood_itm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -260,6 +268,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}leixen.${
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}leixen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}lt725uv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}lt725uv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}mml_jc8810.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}mml_jc8810.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}mursv1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}mursv1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}puxing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -268,6 +278,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}puxing_px
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}puxing_px888k.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radioddity_r2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radioddity_r2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radtel_rt490.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radtel_rt490.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radtel_t18.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}radtel_t18.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}retevis_rb15.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -292,10 +304,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}retevis_r
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}retevis_rt87.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}retevis_rt98.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}retevis_rt98.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}rfinder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}rfinder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}rh5r_v2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}rh5r_v2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}tdh8.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}tdh8.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}tdxone_tdq8a.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}tdxone_tdq8a.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}template.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -362,6 +374,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uv6r.${MO
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uv6r.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvb5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvb5.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvk5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvk5.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvk5_egzumer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}uvk5_egzumer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}vgc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}vgc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/${MODPY_PYCACHE}vx170.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -395,6 +411,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_ht.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/anytone_iii.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ap510.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_common.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv17.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv17Pro.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_uv3r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/baofeng_wp970i.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/bf_t1.py
@@ -433,6 +451,7 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/generic_tpe.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsuv1.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/gmrsv2.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/h777.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hf90.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hg_uv98.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/hobbypcb.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/ic208.py
@@ -466,6 +485,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id800.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/id880.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/idrp.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/iradio_uv_5118.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/iradio_uv_5118plus.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_d7.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_hmk.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_itm.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kenwood_live.py
@@ -480,10 +501,12 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/kyd_IP620.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/leixen.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/lt725uv.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/mml_jc8810.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/mursv1.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/puxing_px888k.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radioddity_r2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_rt490.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/radtel_t18.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb15.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rb17p.py
@@ -496,8 +519,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt26.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt76p.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt87.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/retevis_rt98.py
-lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rfinder.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/rh5r_v2.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdh8.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tdxone_tdq8a.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/template.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/tg_uv2p.py
@@ -531,6 +554,8 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv5r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv5x3.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uv6r.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uvb5.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uvk5.py
+lib/python${MODPY_VERSION}/site-packages/chirp/drivers/uvk5_egzumer.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/vgc.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/vx170.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/vx2.py
@@ -544,20 +569,67 @@ lib/python${MODPY_VERSION}/site-packages/chirp/drivers/vxa700.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/wouxun.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/wouxun_common.py
 lib/python${MODPY_VERSION}/site-packages/chirp/drivers/yaesu_clone.py
-lib/python${MODPY_VERSION}/site-packages/chirp/elib_intl.py
 lib/python${MODPY_VERSION}/site-packages/chirp/errors.py
 lib/python${MODPY_VERSION}/site-packages/chirp/import_logic.py
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/de/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/de/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/de/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/el/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/el/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/el/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/en_US/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/en_US/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/en_US/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/es/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/es/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/es/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/fr/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/fr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/fr/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/hu/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/hu/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/hu/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/it/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/it/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/it/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ja_JP/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ja_JP/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ja_JP/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/nl/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/nl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/nl/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pl/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pl/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pt_BR/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pt_BR/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/pt_BR/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ru/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ru/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/ru/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/tr_TR/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/tr_TR/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/tr_TR/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/uk_UA/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/uk_UA/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/uk_UA/LC_MESSAGES/CHIRP.mo
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/zh_CN/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/zh_CN/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/chirp/locale/zh_CN/LC_MESSAGES/CHIRP.mo
 lib/python${MODPY_VERSION}/site-packages/chirp/logger.py
 lib/python${MODPY_VERSION}/site-packages/chirp/memmap.py
 lib/python${MODPY_VERSION}/site-packages/chirp/platform.py
 lib/python${MODPY_VERSION}/site-packages/chirp/pyPEG.py
 lib/python${MODPY_VERSION}/site-packages/chirp/settings.py
 lib/python${MODPY_VERSION}/site-packages/chirp/share/
+lib/python${MODPY_VERSION}/site-packages/chirp/share/chirp-logo.png
 lib/python${MODPY_VERSION}/site-packages/chirp/share/chirp.desktop
 lib/python${MODPY_VERSION}/site-packages/chirp/share/chirp.ico
 lib/python${MODPY_VERSION}/site-packages/chirp/share/chirp.png
 lib/python${MODPY_VERSION}/site-packages/chirp/share/chirp.svg
 lib/python${MODPY_VERSION}/site-packages/chirp/share/chirpw.1
+lib/python${MODPY_VERSION}/site-packages/chirp/share/plus-icon.png
 lib/python${MODPY_VERSION}/site-packages/chirp/share/welcome_screen.png
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/__init__.py
@@ -568,12 +640,15 @@ lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}base.${MO
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}dmrmarc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}dmrmarc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}przemienniki.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}przemienniki.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}radioreference.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}radioreference.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}repeaterbook.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/${MODPY_PYCACHE}repeaterbook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/base.py
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/dmrmarc.py
+lib/python${MODPY_VERSION}/site-packages/chirp/sources/przemienniki.py
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/radioreference.py
 lib/python${MODPY_VERSION}/site-packages/chirp/sources/repeaterbook.py
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/
@@ -581,9 +656,10 @@ lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/AU NZ UHF Citizens 
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/DE Freenet Frequencies.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/EU LPD and PMR Channels.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/FR Marine VHF Channels.csv
-lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/KDR444.csv
-lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/NOAA Weather Alert.csv
+lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/GR Marine VHF Channels.csv
+lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/PL Calling Frequencies and Simplex.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/SE Jaktradio 155MHz.csv
+lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/SE NO KDR444.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/UK Business Radio Simple Light Frequencies.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US 60 meter channels (Center).csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US 60 meter channels (Dial).csv
@@ -592,12 +668,16 @@ lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US Calling Frequenc
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US FRS and GMRS Channels.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US MURS Channels.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US Marine VHF Channels.csv
+lib/python${MODPY_VERSION}/site-packages/chirp/stock_configs/US NOAA Weather Alert.csv
 lib/python${MODPY_VERSION}/site-packages/chirp/util.py
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/__init__.py
+lib/python${MODPY_VERSION}/site-packages/chirp/wxui/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}bankedit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}bankedit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/chirp/wxui/${MODPY_PYCACHE}clone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
