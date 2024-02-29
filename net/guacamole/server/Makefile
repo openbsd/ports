@@ -1,3 +1,6 @@
+# 1.5.4 needs posix timers
+V=		1.5.3
+
 SITES=		${SITE_APACHE:=guacamole/$V/source/}
 DISTNAME=	guacamole-server-$V
 COMMENT=	clientless remote desktop gateway
