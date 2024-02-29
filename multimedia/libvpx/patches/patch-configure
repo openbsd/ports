@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -123,7 +123,9 @@ all_platforms="${all_platforms} loongarch32-linux-gcc"
+@@ -126,7 +126,9 @@ all_platforms="${all_platforms} loongarch32-linux-gcc"
  all_platforms="${all_platforms} loongarch64-linux-gcc"
  all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
@@ -11,7 +11,7 @@ Index: configure
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -183,7 +185,7 @@ for t in ${all_targets}; do
+@@ -187,7 +189,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -20,7 +20,7 @@ Index: configure
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
-@@ -198,19 +200,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -202,19 +204,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -40,7 +40,7 @@ Index: configure
  # disable codecs when their source directory does not exist
  [ -d "${source_path}/vp8" ] || disable_codec vp8
  [ -d "${source_path}/vp9" ] || disable_codec vp9
-@@ -548,7 +537,7 @@ process_detect() {
+@@ -560,7 +549,7 @@ process_detect() {
          # here rather than at option parse time because the target auto-detect
          # magic happens after the command line has been parsed.
          case "${tgt_os}" in

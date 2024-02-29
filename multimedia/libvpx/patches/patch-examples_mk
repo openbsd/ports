@@ -1,7 +1,7 @@
 Index: examples.mk
 --- examples.mk.orig
 +++ examples.mk
-@@ -334,7 +334,7 @@ else
+@@ -333,7 +333,7 @@ else
  SHARED_LIB_SUF=.so
  endif
  endif

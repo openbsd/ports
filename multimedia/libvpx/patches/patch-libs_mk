@@ -1,7 +1,7 @@
 Index: libs.mk
 --- libs.mk.orig
 +++ libs.mk
-@@ -335,22 +335,17 @@ EXPORT_FILE             := libvpx.def
+@@ -336,22 +336,17 @@ EXPORT_FILE             := libvpx.def
  LIBVPX_SO_SYMLINKS      :=
  LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
@@ -25,7 +25,7 @@ Index: libs.mk
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.def: $(call enabled,CODEC_EXPORTS)
-@@ -373,15 +368,7 @@ $(1): $(2)
+@@ -374,15 +369,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  
@@ -41,16 +41,16 @@ Index: libs.mk
  INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
  INSTALL-LIBS-$(CONFIG_SHARED) += $(if $(LIBVPX_SO_IMPLIB),$(LIBSUBDIR)/$(LIBVPX_SO_IMPLIB))
  
-@@ -544,7 +531,7 @@ testdata: $(LIBVPX_TEST_DATA)
+@@ -545,7 +532,7 @@ testdata: $(LIBVPX_TEST_DATA)
              set -e;\
              echo "Checking test data:";\
              for f in $(call enabled,LIBVPX_TEST_DATA); do\
 -                grep $$f $(SRC_PATH_BARE)/test/test-data.sha1 |\
 +                grep $$f $(SRC_PATH_BARE)/test/test-data.sha1 | tr -d '*' |\
-                     (cd $(LIBVPX_TEST_DATA_PATH); $${sha1sum} -c);\
+                     (cd "$(LIBVPX_TEST_DATA_PATH)"; $${sha1sum} -c);\
              done; \
          else\
-@@ -656,7 +643,7 @@ BINS-yes += $(LIBVPX_TEST_BIN)
+@@ -657,7 +644,7 @@ BINS-yes += $(LIBVPX_TEST_BIN)
  
  CODEC_LIB=$(if $(CONFIG_DEBUG_LIBS),vpx_g,vpx)
  CODEC_LIB_SUF=$(if $(CONFIG_SHARED),$(SHARED_LIB_SUF),.a)
@@ -59,7 +59,7 @@ Index: libs.mk
  $(LIBVPX_TEST_BIN): $(TEST_LIBS)
  $(eval $(call linkerxx_template,$(LIBVPX_TEST_BIN), \
                $(LIBVPX_TEST_OBJS) \
-@@ -715,6 +702,8 @@ test_shard.$(1) test_shard_ndc.$(1): $(LIBVPX_TEST_BIN
+@@ -716,6 +703,8 @@ test_shard.$(1) test_shard_ndc.$(1): $(LIBVPX_TEST_BIN
  	@set -e; \
  	 export GTEST_SHARD_INDEX=$(1); \
  	 export GTEST_TOTAL_SHARDS=$(2); \
