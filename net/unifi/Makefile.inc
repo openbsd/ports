@@ -41,8 +41,6 @@ EXTRACT_ONLY +=	commons-text-${COMMONSTEXT_V}-bin.tar.gz
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://wiki.ubnt.com/UniFi_FAQ
-
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # at least the firmware files are restricted, if not more

@@ -11,7 +11,9 @@ COMMENT=	special helper port to build snappy-java-X.jar for unifi
 SNAPPYJ_V=	1.1.8.4
 SNAPPY_V=	1.1.8
 BITSHUFFLE_V=	0.3.2
-REVISION=	1
+REVISION=	2
+
+HOMEPAGE=	https://github.com/xerial/snappy-java
 
 DISTNAME=	snappy-java-${SNAPPYJ_V}
 
