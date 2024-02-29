@@ -1,3 +1,6 @@
+- Correct document page install.
+  61f375082c80ee479eb8ff03189aea691a6a06aa
+
 hunk 1, disable -Wno-format-truncation, not available on some compilers?
 
 hunk 2, move quantize.c back to exported library, it was in the public
@@ -5,7 +8,7 @@ API prior to 5.2 and is used by various downstream users
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=935088
 https://src.fedoraproject.org/rpms/giflib/c/109bf038d703a471b857aba44af673be103d7079?branch=master
 
-hunk 3-4, library naming
+hunk 5-6, library handling
 
 Index: Makefile
 --- Makefile.orig
@@ -33,31 +36,61 @@ Index: Makefile
  UHEADERS = getarg.h
  UOBJECTS = $(USOURCES:.c=.o)
  
-@@ -61,13 +61,13 @@ UTILS = $(INSTALLABLE) \
+@@ -63,17 +63,21 @@ UTILS = $(INSTALLABLE) \
  
  LDLIBS=libgif.a -lm
  
--all: libgif.so libgif.a libutil.so libutil.a $(UTILS)
-+all: libgif.so.${LIBVER} libgif.a libutil.so libutil.a $(UTILS)
- 	$(MAKE) -C doc
+-MANUAL_PAGES = \
++MANUAL_PAGES_1 = \
+ 	doc/gif2rgb.xml \
+ 	doc/gifbuild.xml \
+ 	doc/gifclrmp.xml \
+ 	doc/giffix.xml \
+-	doc/giflib.xml \
+ 	doc/giftext.xml \
+ 	doc/giftool.xml
  
- $(UTILS):: libgif.a libutil.a
- 
--libgif.so: $(OBJECTS) $(HEADERS)
--	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o libgif.so $(OBJECTS)
-+libgif.so.$(LIBVER): $(OBJECTS) $(HEADERS)
-+	$(CC) $(CFLAGS) -shared $(OFLAGS) -o libgif.so.$(LIBVER) $(OBJECTS)
++MANUAL_PAGES_7 = \
++	doc/giflib.xml
++
++MANUAL_PAGES = $(MANUAL_PAGES_1) $(MANUAL_PAGES_7)
++
+ SOEXTENSION	= so
+-LIBGIFSO	= libgif.$(SOEXTENSION)
++LIBGIFSO	= libgif.$(SOEXTENSION).$(LIBVER)
+ LIBGIFSOMAJOR	= libgif.$(SOEXTENSION).$(LIBMAJOR)
+ LIBGIFSOVER	= libgif.$(SOEXTENSION).$(LIBVER)
+ LIBUTILSO	= libutil.$(SOEXTENSION)
+@@ -99,7 +103,7 @@ $(LIBGIFSO): $(OBJECTS) $(HEADERS)
+ ifeq ($(UNAME), Darwin)
+ 	$(CC) $(CFLAGS) -dynamiclib -current_version $(LIBVER) $(OBJECTS) -o $(LIBGIFSO)
+ else
+-	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBGIFSOMAJOR) -o $(LIBGIFSO) $(OBJECTS)
++	$(CC) $(CFLAGS) -shared $(LDFLAGS) -o $(LIBGIFSO) $(OBJECTS)
+ endif
  
  libgif.a: $(OBJECTS) $(HEADERS)
- 	$(AR) rcs libgif.a $(OBJECTS)
-@@ -99,9 +99,7 @@ install-include:
- install-lib:
+@@ -109,7 +113,7 @@ $(LIBUTILSO): $(UOBJECTS) $(UHEADERS)
+ ifeq ($(UNAME), Darwin)
+ 	$(CC) $(CFLAGS) -dynamiclib -current_version $(LIBVER) $(OBJECTS) -o $(LIBUTILSO)
+ else
+-	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,$(LIBUTILMAJOR) -o $(LIBUTILSO) $(UOBJECTS)
++	$(CC) $(CFLAGS) -shared $(LDFLAGS) -o $(LIBUTILSO) $(UOBJECTS)
+ endif
+ 
+ libutil.a: $(UOBJECTS) $(UHEADERS)
+@@ -145,11 +149,10 @@ install-lib:
  	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
  	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
--	$(INSTALL) -m 755 libgif.so "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBVER)"
--	ln -sf libgif.so.$(LIBVER) "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBMAJOR)"
--	ln -sf libgif.so.$(LIBMAJOR) "$(DESTDIR)$(LIBDIR)/libgif.so"
-+	$(INSTALL) -m 755 libgif.so.$(LIBVER) "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBVER)"
+ 	$(INSTALL) -m 755 $(LIBGIFSO) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSOVER)"
+-	ln -sf $(LIBGIFSOVER) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSOMAJOR)"
+-	ln -sf $(LIBGIFSOMAJOR) "$(DESTDIR)$(LIBDIR)/$(LIBGIFSO)"
  install-man:
- 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
- 	$(INSTALL) -m 644 doc/*.1 "$(DESTDIR)$(MANDIR)/man1"
+-	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
+-	$(INSTALL) -m 644 $(MANUAL_PAGES) "$(DESTDIR)$(MANDIR)/man1"
++	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1" "$(DESTDIR)$(MANDIR)/man7"
++	$(INSTALL) -m 644 $(MANUAL_PAGES_1:xml=1) "$(DESTDIR)$(MANDIR)/man1"
++	$(INSTALL) -m 644 $(MANUAL_PAGES_7:xml=7) "$(DESTDIR)$(MANDIR)/man7"
+ uninstall: uninstall-man uninstall-include uninstall-lib uninstall-bin
+ uninstall-bin:
+ 	cd "$(DESTDIR)$(BINDIR)" && rm -f $(INSTALLABLE)

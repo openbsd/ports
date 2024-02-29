@@ -10,15 +10,9 @@ include/gif_lib.h
 @static-lib lib/libgif.a
 @lib lib/libgif.so.${LIBgif_VERSION}
 @man man/man1/gif2rgb.1
-@man man/man1/gifbg.1
 @man man/man1/gifbuild.1
 @man man/man1/gifclrmp.1
-@man man/man1/gifcolor.1
-@man man/man1/gifecho.1
 @man man/man1/giffix.1
-@man man/man1/gifhisto.1
-@man man/man1/gifinto.1
-@man man/man1/giflib.1
 @man man/man1/giftext.1
 @man man/man1/giftool.1
-@man man/man1/gifwedge.1
+@man man/man7/giflib.7
