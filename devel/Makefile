@@ -1488,6 +1488,7 @@
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-jupyter_packaging,python3
+     SUBDIR += py-jupyter_server,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy,python3
@@ -1519,6 +1520,7 @@
      SUBDIR += py-nbformat,python3
      SUBDIR += py-nbval,python3
      SUBDIR += py-nest-asyncio,python3
+     SUBDIR += py-nodeenv,python3
      SUBDIR += py-nose,python3
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover,python3
@@ -1645,6 +1647,7 @@
      SUBDIR += py-test-httpbin,python3
      SUBDIR += py-test-httpserver,python3
      SUBDIR += py-test-isort,python3
+     SUBDIR += py-test-jupyter,python3
      SUBDIR += py-test-lazy-fixture,python3
      SUBDIR += py-test-localserver,python3
      SUBDIR += py-test-mock,python3
@@ -1655,6 +1658,7 @@
      SUBDIR += py-test-subtesthack,python3
      SUBDIR += py-test-subtests,python3
      SUBDIR += py-test-timeout,python3
+     SUBDIR += py-test-tornasync,python3
      SUBDIR += py-test-vcr,python3
      SUBDIR += py-test-xdist,python3
      SUBDIR += py-test-xprocess,python3
