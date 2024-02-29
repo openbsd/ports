@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 terminal
 
-XFCE_VERSION=	1.1.2
+XFCE_VERSION=	1.1.3
 XFCE_GOODIE=	xfce4-terminal
 
 # GPLv2
