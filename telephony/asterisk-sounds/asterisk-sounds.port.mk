@@ -4,7 +4,7 @@ MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
 CATEGORIES +=	telephony
 DISTNAME =	${MODAS_NAME}-${MODAS_LANG:C/(.+)/\1-/}${MODAS_CODEC}-${MODAS_VER}
 FULLPKGNAME ?=  ${DISTNAME}
-SITES ?= 	http://downloads.asterisk.org/pub/telephony/sounds/releases/
+SITES ?=	https://downloads.asterisk.org/pub/telephony/sounds/releases/
 HOMEPAGE =	http://www.asterisk.org/
 COMMENT =	${MODAS_DESC}
 
