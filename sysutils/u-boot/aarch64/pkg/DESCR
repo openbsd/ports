@@ -5,4 +5,4 @@ initialize and test the hardware or to download and run application code.
 As ARM systems often do not come with firmware it must be supplied on
 an SD card or MMC device to have a bootable system.
 
-This package provides U-Boot for various boards using ARM processors.
+This package provides U-Boot for various boards using 64-bit ARM processors.
