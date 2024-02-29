@@ -82,7 +82,6 @@
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
-     SUBDIR += libreddit
      SUBDIR += libsass
      SUBDIR += libwebsockets
      SUBDIR += liferea
@@ -508,6 +507,7 @@
      SUBDIR += qutebrowser
      SUBDIR += racktables
      SUBDIR += ratproxy
+     SUBDIR += redlib
      SUBDIR += retawq
      SUBDIR += reader
      SUBDIR += rt
