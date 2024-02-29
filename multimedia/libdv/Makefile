@@ -1,7 +1,7 @@
 COMMENT=		Quasar DV codec
 
 DISTNAME=		libdv-1.0.0
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		multimedia
 

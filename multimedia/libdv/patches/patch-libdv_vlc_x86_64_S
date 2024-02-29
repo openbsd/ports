@@ -1,0 +1,35 @@
+Index: libdv/vlc_x86_64.S
+--- libdv/vlc_x86_64.S.orig
++++ libdv/vlc_x86_64.S
+@@ -6,6 +6,7 @@
+ .globl dv_decode_vlc
+ 	.type	 dv_decode_vlc,@function
+ dv_decode_vlc:
++	endbr64
+ 	push %rbx
+ 	push %rbp
+ 
+@@ -102,6 +103,7 @@ void __dv_decode_vlc(int bits, dv_vlc_t *result)
+ .globl __dv_decode_vlc
+ 	.type	 __dv_decode_vlc,@function
+ __dv_decode_vlc:
++	endbr64
+ 	push %rbx
+ 	push %rbp
+ 
+@@ -174,6 +176,7 @@ void dv_parse_ac_coeffs_pass0(bitstream_t *bs,
+ .type	dv_parse_ac_coeffs_pass0,@function
+ 
+ dv_parse_ac_coeffs_pass0:
++	endbr64
+ 	
+ 	/* Args are at rdi=bs, rsi=mb, rdx=bl */
+ 	push	%r12
+@@ -427,6 +430,7 @@ gint dv_parse_video_segment(dv_videosegment_t *seg, gu
+ 	.globl dv_parse_video_segment
+ 	.type  dv_parse_video_segment,@function
+ dv_parse_video_segment:
++	endbr64
+ 	
+ 	/* Args are at rdi=seg, rsi=quality */
+ 	push	%r12
