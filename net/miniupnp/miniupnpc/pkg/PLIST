@@ -1,5 +1,6 @@
 @pkgpath net/miniupnp/miniupnpc,-main
 bin/external-ip
+@bin bin/upnp-listdevices
 @bin bin/upnpc
 include/miniupnpc/
 include/miniupnpc/igd_desc_parse.h
@@ -12,7 +13,7 @@ include/miniupnpc/upnpcommands.h
 include/miniupnpc/upnpdev.h
 include/miniupnpc/upnperrors.h
 include/miniupnpc/upnpreplyparse.h
-lib/libminiupnpc.a
+@static-lib lib/libminiupnpc.a
 @lib lib/libminiupnpc.so.${LIBminiupnpc_VERSION}
 lib/pkgconfig/miniupnpc.pc
 @man man/man3/miniupnpc.3

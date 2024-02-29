@@ -1,9 +1,8 @@
 COMMENT=	UPnP IGD client lightweight library
 
-DISTNAME=	miniupnpc-2.1
-REVISION=	0
+DISTNAME=	miniupnpc-2.2.6
 
-SHARED_LIBS += miniupnpc 3.0
+SHARED_LIBS += miniupnpc 3.1
 
 WANTLIB += c
 

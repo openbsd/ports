@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -149,7 +149,7 @@ endif
+@@ -157,7 +157,7 @@ endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
  INSTALLDIRLIB = $(INSTALLPREFIX)/$(LIBDIR)
  INSTALLDIRBIN = $(INSTALLPREFIX)/bin
@@ -10,11 +10,11 @@ Index: Makefile
  PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
-@@ -238,7 +238,6 @@ install:	updateversion $(FILESTOINSTALL)
+@@ -251,7 +251,6 @@ install:	updateversion $(FILESTOINSTALL)
  	$(INSTALL) -m 644 $(LIBRARY) $(DESTDIR)$(INSTALLDIRLIB)
  ifeq (, $(findstring amiga, $(OS)))
  	$(INSTALL) -m 644 $(SHAREDLIBRARY) $(DESTDIR)$(INSTALLDIRLIB)/$(SONAME)
--	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(SHAREDLIBRARY)
+-	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(notdir $(SHAREDLIBRARY))
  	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
- 	$(INSTALL) -m 644 miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
+ 	$(INSTALL) -m 644 $(BUILD)/miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
  endif
