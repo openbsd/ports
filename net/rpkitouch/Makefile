@@ -2,7 +2,7 @@ COMMENT=	set file modification times to internal RPKI timestamps
 
 GH_ACCOUNT=	job
 GH_PROJECT=	rpkitouch
-GH_TAGNAME=	v1.2
+GH_TAGNAME=	v1.3
 
 CATEGORIES=	net
 
