@@ -1,8 +1,8 @@
 COMMENT=	lightweight XSETTINGS daemon
 
-GH_ACCOUNT=	derat
-GH_PROJECT=	xsettingsd
-GH_TAGNAME=	v1.0.2
+DIST_TUPLE=	codeberg derat xsettingsd v1.0.2 .
+WRKDIST=	${WRKDIR}/xsettingsd
+REVISION=	0
 
 CATEGORIES=	x11
 
