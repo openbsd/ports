@@ -6,7 +6,7 @@ COMMENT=	small and fast AV1 decoder
 
 VER=		1.2.1
 DISTNAME=	dav1d-${VER}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia
 SITES=		https://downloads.videolan.org/pub/videolan/dav1d/${VER}/
 EXTRACT_SUFX=	.tar.xz

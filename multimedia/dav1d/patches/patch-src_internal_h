@@ -1,0 +1,18 @@
+Fix tile_start_off calculations for extremely large frame sizes
+
+2b475307dc11be9a1c3cc4358102c76a7f386a51
+
+CVE-2024-1580
+
+Index: src/internal.h
+--- src/internal.h.orig
++++ src/internal.h
+@@ -286,7 +286,7 @@ struct Dav1dFrameContext {
+         int prog_sz;
+         int pal_sz, pal_idx_sz, cf_sz;
+         // start offsets per tile
+-        int *tile_start_off;
++        unsigned *tile_start_off;
+     } frame_thread;
+ 
+     // loopfilter
