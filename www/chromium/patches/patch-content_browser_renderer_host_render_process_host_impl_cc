@@ -46,7 +46,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
    ChildThreadTypeSwitcher child_thread_type_switcher_;
-@@ -3368,7 +3368,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3377,7 +3377,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -55,7 +55,7 @@ Index: content/browser/renderer_host/render_process_host_impl.cc
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3428,6 +3428,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3437,6 +3437,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
