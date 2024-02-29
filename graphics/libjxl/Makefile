@@ -2,7 +2,7 @@ COMMENT =	JPEG XL image format reference implementation
 
 GH_ACCOUNT =	libjxl
 GH_PROJECT =	libjxl
-GH_TAGNAME =	v0.10.0
+GH_TAGNAME =	v0.10.1
 GH_TESTDATA_COMMIT=ff8d743aaba05b3014f17e5475e576242fa979fc
 CATEGORIES =	graphics
 
