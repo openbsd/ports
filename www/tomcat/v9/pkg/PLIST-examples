@@ -303,7 +303,11 @@ webapps/docs/api/org/apache/catalina/filters/CorsFilter.CORSRequestType.html
 webapps/docs/api/org/apache/catalina/filters/CorsFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.LruCache.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.MimePredicate.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.NonceCache.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.PatternPredicate.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.PrefixPredicate.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.SuffixPredicate.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilterBase.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.Duration.html
