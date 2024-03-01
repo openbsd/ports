@@ -35,6 +35,7 @@ include/moar/6model/reprs/MVMNull.h
 include/moar/6model/reprs/MVMOSHandle.h
 include/moar/6model/reprs/MVMSpeshCandidate.h
 include/moar/6model/reprs/MVMSpeshLog.h
+include/moar/6model/reprs/MVMStat.h
 include/moar/6model/reprs/MVMStaticFrame.h
 include/moar/6model/reprs/MVMStaticFrameSpesh.h
 include/moar/6model/reprs/MVMString.h
@@ -81,6 +82,7 @@ include/moar/core/index_hash_table_funcs.h
 include/moar/core/instance.h
 include/moar/core/intcache.h
 include/moar/core/interp.h
+include/moar/core/jfs64.h
 include/moar/core/loadbytecode.h
 include/moar/core/nativecall.h
 include/moar/core/nativecall_dyncall.h

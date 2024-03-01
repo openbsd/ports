@@ -1,7 +1,7 @@
 Index: Configure.pl
 --- Configure.pl.orig
 +++ Configure.pl
-@@ -493,6 +493,10 @@ if (not $args{static} and $config{prefix} ne '/usr') {
+@@ -542,6 +542,10 @@ if (not $args{static} and $config{prefix} ne '/usr') {
  $config{moarlib} = sprintf $config{lib}, $NAME;
  $config{moardll} = sprintf $config{dll}, $NAME;
  
