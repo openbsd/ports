@@ -7,6 +7,7 @@ V =		4.2.1pl0
 COMMIT =	f77bc872114ebe77f1604db47b81016ff478ce17
 PKGNAME =	godot4-${V}
 DIST_TUPLE +=	github godotengine godot ${COMMIT} .
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -39,7 +40,6 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
-			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid" \
 			builtin_certs=no \
 			builtin_enet=no \
 			builtin_libogg=no \
@@ -110,8 +110,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_TEST =		Yes
 
 DPB_PROPERTIES =	parallel
-
-WRKDIST =		${WRKDIR}/godot-${COMMIT}
 
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
