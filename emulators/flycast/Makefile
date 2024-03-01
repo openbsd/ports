@@ -8,7 +8,7 @@ COMMENT =	emulator for Sega Dreamcast and Sega Naomi based on reicast
 V =		2.1pl20230303
 DISTNAME =	flycast-${V}
 COMMIT =	27b6bafd0f003c8f8bcd1fb3bfd48a3523b298f5
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators games
 
@@ -25,8 +25,8 @@ MAINTAINER =	Nam Nguyen <namn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # if running with vulkan backend, dlopen's vulkan in vulkan.hpp
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SPIRV ao c curl chdr glslang
-WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse vulkan xxhash z zip
+WANTLIB += ${COMPILER_LIBCXX} GL SDL2 ao c curl chdr
+WANTLIB += lua${MODLUA_VERSION} m miniupnpc pulse xxhash z zip
 
 SITES =		https://messagemode2.com/source/
 
@@ -53,12 +53,11 @@ LIB_DEPENDS =	archivers/libzip \
 		audio/pulseaudio \
 		devel/sdl2 \
 		emulators/libchdr \
-		graphics/glslang \
-		graphics/vulkan-loader \
 		net/curl \
 		net/miniupnp/miniupnpc \
 		sysutils/xxhash
 
+CONFIGURE_ARGS +=	-DUSE_VULKAN=OFF
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
