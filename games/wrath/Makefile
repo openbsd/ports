@@ -1,10 +1,10 @@
 COMMENT =		client of wrath-darkplaces engine
 
-DISTNAME =		wrath-0.0.0.20210608
+DISTNAME =		wrath-1.0
 
-GH_ACCOUNT =		KillPixelGames
+GH_ACCOUNT =		Official3DRealms
 GH_PROJECT =		wrath-darkplaces
-GH_COMMIT =		e0770286b39bb137f3457b05acbd4c6a46044488
+GH_COMMIT =		d7a494fbe76f45a84d1df0c7360c0c4848042e45
 
 CATEGORIES =		games
 
@@ -33,6 +33,6 @@ MAKE_FILE =		makefile
 ALL_TARGET =		sdl2-release
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/darkplaces-sdl ${PREFIX}/bin/wrath
+	${INSTALL_PROGRAM} ${WRKBUILD}/wrath-sdl ${PREFIX}/bin/wrath
 
 .include <bsd.port.mk>
