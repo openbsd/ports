@@ -23,13 +23,11 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		24.2
-VERSION=	${BV}.0.3
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-
-REVISION-main=	0
 
 EPOCH=		0
 
