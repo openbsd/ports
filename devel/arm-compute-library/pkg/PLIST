@@ -590,8 +590,6 @@ include/utils/command_line/SimpleOption.h
 include/utils/command_line/ToggleOption.h
 @static-lib lib/libarm_compute.a
 @lib lib/libarm_compute.so.${LIBarm_compute_VERSION}
-@static-lib lib/libarm_compute_core.a
-@lib lib/libarm_compute_core.so.${LIBarm_compute_core_VERSION}
 @static-lib lib/libarm_compute_graph.a
 @lib lib/libarm_compute_graph.so.${LIBarm_compute_graph_VERSION}
 share/examples/arm-compute-library/

@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		23.11
+V = 		24.02
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -15,12 +15,10 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
-CORE_SO_V =	2.0
-GRAPH_SO_V =	2.4
-COMPUTE_SO_V =	3.6
+GRAPH_SO_V =	2.5
+COMPUTE_SO_V =	3.7
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
-SHARED_LIBS +=	arm_compute_core ${CORE_SO_V}
 SHARED_LIBS +=	arm_compute_graph ${GRAPH_SO_V}
 
 # MIT
@@ -49,8 +47,6 @@ do-install:
 	cp -R ${WRKSRC}/include/* ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute.so \
                 ${PREFIX}/lib/libarm_compute.so.${COMPUTE_SO_V}
-	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute_core.so \
-                ${PREFIX}/lib/libarm_compute_core.so.${CORE_SO_V}
 	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute_graph.so \
                 ${PREFIX}/lib/libarm_compute_graph.so.${GRAPH_SO_V}
 	${INSTALL_DATA} ${WRKSRC}/build/*.a ${PREFIX}/lib
