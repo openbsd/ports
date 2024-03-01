@@ -1,0 +1,15 @@
+our strftime doesn't error out with %-d but just outputs -d rather
+than doing whatever this test wants
+
+Index: tests/test_parser.py
+--- tests/test_parser.py.orig
++++ tests/test_parser.py
+@@ -29,6 +29,8 @@ try:
+ except ValueError:
+     pass
+ 
++if sys.platform.startswith('openbsd'):
++    PLATFORM_HAS_DASH_D = False
+ 
+ @pytest.fixture(params=[True, False])
+ def fuzzy(request):
