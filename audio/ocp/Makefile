@@ -3,6 +3,7 @@ BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.
 COMMENT =	UNIX port of Open Cubic Player
 
 DISTNAME =	ocp-0.2.106
+REVISION =	0
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -55,7 +56,7 @@ CONFIGURE_ARGS = --with-dir-suffix="" \
 		 --without-x11 \
 		 --without-update-desktop-database \
 		 --without-update-mime-database \
-		 --with-unifontdir-ttf=${PREFIX}/share/fonts/unifont
+		 --with-unifontdir-otf=${PREFIX}/share/fonts/unifont
 
 USE_GMAKE =	Yes
 
