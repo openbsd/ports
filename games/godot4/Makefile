@@ -1,5 +1,3 @@
-BROKEN = needs fixing for glslang update
-
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT-main =	2D and 3D game engine
