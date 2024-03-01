@@ -1,6 +1,6 @@
 COMMENT =	file matching and globbing library
 
-MODPY_EGG_VERSION =	8.5
+MODPY_EGG_VERSION =	8.5.1
 DISTNAME =	wcmatch-${MODPY_EGG_VERSION}
 PKGNAME =	py-wcmatch-${MODPY_EGG_VERSION}
 
