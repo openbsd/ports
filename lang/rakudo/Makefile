@@ -1,8 +1,6 @@
-BROKEN-arm =		MoarVM panic: Memory allocation failed; could not allocate 312268 bytes
-
 COMMENT =		Rakudo compiler for the Raku language
 
-V =			2022.12
+V =			2024.01
 DISTNAME =		rakudo-$V
 
 NQP_VERSION =		$V
