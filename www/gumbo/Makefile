@@ -1,8 +1,8 @@
 COMMENT =	HTML5 parsing library in pure C99
 
-V =		0.12.0
+V =		0.12.1
+DIST_TUPLE =	codeberg grisha gumbo-parser $V .
 DISTNAME =	gumbo-parser-$V
-DISTFILES =	${DISTNAME}{$V}.tar.gz
 PKGNAME =	gumbo-$V
 WRKDIST =	${WRKDIR}/gumbo-parser
 
@@ -14,8 +14,6 @@ HOMEPAGE =	https://codeberg.org/grisha/gumbo-parser
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
-
-SITES =		https://codeberg.org/grisha/gumbo-parser/archive/
 
 TEST_DEPENDS =	devel/gtest
 
