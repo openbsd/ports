@@ -1,8 +1,7 @@
 COMMENT =	NAT Port Mapping Protocol client library
 
 DIST_TUPLE =	github miniupnp libnatpmp f2433bec24ca3d3f22a8a7840728a3ac177f94ba .
-DISTNAME =	libnatpmp-20240116
-WRKDIST =	${WRKDIR}/libnatpmp-${DIST_TUPLE:M[0-9a-f]*}
+PKGNAME =	libnatpmp-20240116
 
 SHARED_LIBS =	natpmp 0.1
 
