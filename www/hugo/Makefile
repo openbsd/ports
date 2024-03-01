@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.123.1
+MODGO_VERSION =	v0.123.6
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -18,6 +18,7 @@ WANTLIB +=	c pthread
 
 MODULES =	lang/go
 
+# has tests, but wants to use "mage" to run them
 NO_TEST =	Yes
 
 ALL_TARGET =	github.com/gohugoio/hugo
