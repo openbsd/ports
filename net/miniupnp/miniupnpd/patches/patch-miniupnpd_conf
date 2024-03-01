@@ -1,7 +1,7 @@
 Index: miniupnpd.conf
 --- miniupnpd.conf.orig
 +++ miniupnpd.conf
-@@ -155,7 +155,7 @@ clean_ruleset_interval=600
+@@ -160,7 +160,7 @@ clean_ruleset_interval=600
  # active when compiled with PF_ENABLE_FILTER_RULES (see config.h file)
  #quickrules=no
  
@@ -10,15 +10,17 @@ Index: miniupnpd.conf
  uuid=00000000-0000-0000-0000-000000000000
  
  # Daemon's serial and model number when reporting to clients
-@@ -179,8 +179,8 @@ uuid=00000000-0000-0000-0000-000000000000
+@@ -184,10 +184,10 @@ uuid=00000000-0000-0000-0000-000000000000
  # modify the IP ranges to match their own internal networks, and
  # also consider implementing network-specific restrictions
  # CAUTION: failure to enforce any rules may permit insecure requests to be made!
 -allow 1024-65535 192.168.0.0/24 1024-65535
++#allow 1024-65535 192.168.0.0/24 1024-65535
+ # disallow requests whose description string matches the given regex
+ # deny 1024-65535 192.168.1.0/24 1024-65535 "My evil app ver [[:digit:]]*"
 -allow 1024-65535 192.168.1.0/24 1024-65535
 -allow 1024-65535 192.168.0.0/23 22
 -allow 12345 192.168.7.113/32 54321
-+#allow 1024-65535 192.168.0.0/24 1024-65535
 +#allow 1024-65535 192.168.1.0/24 1024-65535
 +#allow 1024-65535 192.168.0.0/23 22
 +#allow 12345 192.168.7.113/32 54321

@@ -1,0 +1,14 @@
+allow tests to cope if there's more than one default route
+
+Index: testgetifaddr.sh
+--- testgetifaddr.sh.orig
++++ testgetifaddr.sh
+@@ -6,7 +6,7 @@ case $OS in
+ 	*BSD | Darwin | SunOS)
+ 	NS="`command -v netstat`" || exit 1
+ 	IFCONFIG="`command -v ifconfig`" || exit 1
+-	EXTIF="`$NS -r -f inet | grep 'default' | awk '{ print $NF  }' `" || exit 1
++	EXTIF="`$NS -r -f inet | grep 'default' | awk '{ print $NF  }' | head -1`" || exit 1
+ 	EXTIP="`$IFCONFIG $EXTIF | awk '/inet / { print $2 }' `"
+ 	;;
+ 	*)
