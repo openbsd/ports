@@ -1,6 +1,6 @@
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.1.10
+V=			3.1.11
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
