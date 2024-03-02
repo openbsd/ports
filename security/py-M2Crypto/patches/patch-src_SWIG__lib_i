@@ -12,7 +12,7 @@ Index: src/SWIG/_lib.i
  typedef void (*OPENSSL_sk_freefunc)(void *);
  typedef void *(*OPENSSL_sk_copyfunc)(const void *);
  typedef struct stack_st OPENSSL_STACK;
-@@ -31,47 +31,15 @@ typedef struct stack_st OPENSSL_STACK;
+@@ -31,47 +31,21 @@ typedef struct stack_st OPENSSL_STACK;
  
  void OPENSSL_sk_free(OPENSSL_STACK *st)
  {
@@ -29,7 +29,10 @@ Index: src/SWIG/_lib.i
  {
 -    OPENSSL_STACK *ret;
 -    int i;
--
++    /* Do not support this. It relies on UB via function pointer casting. */
++    return NULL;
++}
+ 
 -    if (sk->num < 0)
 -        return NULL;
 -
@@ -58,8 +61,10 @@ Index: src/SWIG/_lib.i
 -        }
 -    }
 -    return ret;
-+    /* Do not support this. It relies on UB via function pointer casting. */
-+    return NULL;
++int sk_find_ex(OPENSSL_STACK *sk, void *wanted)
++{
++    /* Let's see if anything fails. */
++    return -1;
  }
  #endif /* OpenSSL 1.0.2 copmatbility shim */
  
