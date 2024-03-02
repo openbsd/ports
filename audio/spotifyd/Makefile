@@ -2,13 +2,12 @@
 NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Spotify client running as UNIX daemon
-# 06.01.2024 for merged patches and ring>=0.17
-HEAD_COMMIT =		059f5f3356a4e5e0fe4e623ea45485dd588a7aed
+# 18.02.2024 for merged patches and ring>=0.17
+HEAD_COMMIT =		ff2f7a06e54bf05afd57a0243dc9f67abc15f040
 DIST_TUPLE =		github	spotifyd	spotifyd	${HEAD_COMMIT}	.
 WRKDIST =		${WRKDIR}/spotifyd-${HEAD_COMMIT}
-DISTNAME =		spotifyd-0.3.5pl1
+DISTNAME =		spotifyd-0.3.5pl2
 CATEGORIES =		audio net
-REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

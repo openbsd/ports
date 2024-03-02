@@ -281,7 +281,7 @@ SHA256 (cargo/sha2-0.10.7.tar.gz) = R5+52GIjnmEHIFZcqRQDAZ8vAEEPGGTFqnR5uVCnbtg=
 SHA256 (cargo/shannon-0.2.0.tar.gz) = fqW0HJQntWyqe4CMtUigT7ULtbnphZC1PygGT/QXRWE=
 SHA256 (cargo/sharded-slab-0.1.4.tar.gz) = kA+6gG9wxjCwo4LQ2CXheg8Z/NBZoq3h/yN7zd9EazE=
 SHA256 (cargo/shell-words-1.1.0.tar.gz) = JBiKZ2tq5ow7LLOgG+F/v3JAzgCXmbtW1bFAkFHnj94=
-SHA256 (cargo/shlex-1.1.0.tar.gz) = Q7KFOk0J8hXCTMVInJks5GBS01m1EJNDy6+/Jrxi+KM=
+SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/signal-hook-0.3.17.tar.gz) = hiFYfUeYyvjrRIedQuVrmpPqXc0xWmSHw1cTAJW2KAE=
 SHA256 (cargo/signal-hook-registry-1.4.1.tar.gz) = 2CKbRzuqWYCscu9DTEQV5wxLXnG0IwQ620ugWficmaE=
 SHA256 (cargo/slab-0.4.9.tar.gz) = j5Kklvt2a0F8mWucXlfa8vetOwvr4cz8pIVjkOPTu2c=
@@ -375,12 +375,12 @@ SHA256 (cargo/xdg-home-1.0.0.tar.gz) = J2kgPNE6DGAV1RW+cpxSbQQenPLAzEeNV/ruhfQMb
 SHA256 (cargo/zbus-3.14.1.tar.gz) = Md45Ci2HLkzQTt1xtCXimFP3htyZMX7XLXPW/PXruUg=
 SHA256 (cargo/zbus_macros-3.14.1.tar.gz) = QdF5SpRoeMDoB/VaOXGHwR/HoDi6XYaOfbTzvXdgvJ0=
 SHA256 (cargo/zbus_names-2.6.0.tar.gz) = +4C7d229puI9cFzwEjw7ld+ZxOvq7GwlmdSlQZkCtKk=
-SHA256 (cargo/zerocopy-0.6.3.tar.gz) = 87nCNGFjkQcLCxc5Y+vGWpGVBo5+03McbtrC7EXr4QY=
-SHA256 (cargo/zerocopy-derive-0.6.3.tar.gz) = j386Rx+Y0KYcNDIvu/0Qw4Swdof2gNQRmBNxP3IwjZE=
+SHA256 (cargo/zerocopy-0.6.6.tar.gz) = hU6UmsgtYZ7poUxmobZ0rHMEIjcsy3Wc4MOcq88r+OY=
+SHA256 (cargo/zerocopy-derive-0.6.6.tar.gz) = ElE53j9rnWJcOeLv3XPUG9rEaMzVVlVkQOMivg4bvZE=
 SHA256 (cargo/zvariant-3.15.0.tar.gz) = RLKRvuDZYMUxcHgK8UjcpfomCmPN0k8ZYvqC4D5TM4w=
 SHA256 (cargo/zvariant_derive-3.15.0.tar.gz) = k016ffwxDW7gbIf/6I707KfT43uyUd7OLvk9qPF9js0=
 SHA256 (cargo/zvariant_utils-1.0.1.tar.gz) = cjTw2BFYnbSS0WiT4/Ieji/SgubQGwzd7jEDIgYswgA=
-SHA256 (spotifyd-spotifyd-059f5f3356a4e5e0fe4e623ea45485dd588a7aed.tar.gz) = C4EJhlVdzm9bDjL8V/Z+u1hk4BGVcXo+48IFw/6uiLE=
+SHA256 (spotifyd-spotifyd-ff2f7a06e54bf05afd57a0243dc9f67abc15f040.tar.gz) = k3uh20n41IJcAv2xusWX4q4W4uAUd8mblySLtHx8FdU=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aes-0.6.0.tar.gz) = 86774
@@ -664,7 +664,7 @@ SIZE (cargo/sha2-0.10.7.tar.gz) = 22541
 SIZE (cargo/shannon-0.2.0.tar.gz) = 3503
 SIZE (cargo/sharded-slab-0.1.4.tar.gz) = 52479
 SIZE (cargo/shell-words-1.1.0.tar.gz) = 9871
-SIZE (cargo/shlex-1.1.0.tar.gz) = 5199
+SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/signal-hook-0.3.17.tar.gz) = 50296
 SIZE (cargo/signal-hook-registry-1.4.1.tar.gz) = 17987
 SIZE (cargo/slab-0.4.9.tar.gz) = 17108
@@ -758,9 +758,9 @@ SIZE (cargo/xdg-home-1.0.0.tar.gz) = 3310
 SIZE (cargo/zbus-3.14.1.tar.gz) = 148931
 SIZE (cargo/zbus_macros-3.14.1.tar.gz) = 25893
 SIZE (cargo/zbus_names-2.6.0.tar.gz) = 9638
-SIZE (cargo/zerocopy-0.6.3.tar.gz) = 44919
-SIZE (cargo/zerocopy-derive-0.6.3.tar.gz) = 522289
+SIZE (cargo/zerocopy-0.6.6.tar.gz) = 47473
+SIZE (cargo/zerocopy-derive-0.6.6.tar.gz) = 522443
 SIZE (cargo/zvariant-3.15.0.tar.gz) = 72221
 SIZE (cargo/zvariant_derive-3.15.0.tar.gz) = 10943
 SIZE (cargo/zvariant_utils-1.0.1.tar.gz) = 6223
-SIZE (spotifyd-spotifyd-059f5f3356a4e5e0fe4e623ea45485dd588a7aed.tar.gz) = 84625
+SIZE (spotifyd-spotifyd-ff2f7a06e54bf05afd57a0243dc9f67abc15f040.tar.gz) = 85182
