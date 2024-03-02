@@ -48,6 +48,8 @@ lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
+lib/sysusers.d/
+lib/sysusers.d/libvirt-qemu.conf
 libexec/libvirt-guests.sh
 @bin libexec/libvirt_iohelper
 @man man/man1/virsh.1
@@ -196,9 +198,12 @@ share/doc/libvirt/html/csharp.html
 share/doc/libvirt/html/css/
 share/doc/libvirt/html/css/fonts.css
 share/doc/libvirt/html/css/generic.css
+share/doc/libvirt/html/css/libvirt-api.css
+share/doc/libvirt/html/css/libvirt-template.css
 share/doc/libvirt/html/css/libvirt.css
 share/doc/libvirt/html/css/main.css
-share/doc/libvirt/html/css/mobile.css
+share/doc/libvirt/html/css/mobile-libvirt.css
+share/doc/libvirt/html/css/mobile-template.css
 share/doc/libvirt/html/daemons.html
 share/doc/libvirt/html/dbus.html
 share/doc/libvirt/html/docs.html
@@ -295,6 +300,7 @@ share/doc/libvirt/html/index.html
 share/doc/libvirt/html/issue-handling.html
 share/doc/libvirt/html/js/
 share/doc/libvirt/html/js/main.js
+share/doc/libvirt/html/js/virt-tools-blog-planet.js
 share/doc/libvirt/html/kbase/
 share/doc/libvirt/html/kbase/backing_chains.html
 share/doc/libvirt/html/kbase/debuglogs.html

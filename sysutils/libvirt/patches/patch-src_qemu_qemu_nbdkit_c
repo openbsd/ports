@@ -3,7 +3,7 @@
 Index: src/qemu/qemu_nbdkit.c
 --- src/qemu/qemu_nbdkit.c.orig
 +++ src/qemu/qemu_nbdkit.c
-@@ -547,17 +547,17 @@ qemuNbdkitCapsFormatCache(qemuNbdkitCaps *nbdkitCaps)
+@@ -544,17 +544,17 @@ qemuNbdkitCapsFormatCache(qemuNbdkitCaps *nbdkitCaps)
  
      virBufferEscapeString(&buf, "<path>%s</path>\n",
                            nbdkitCaps->path);
@@ -25,7 +25,7 @@ Index: src/qemu/qemu_nbdkit.c
                        nbdkitCaps->libvirtCtime);
      virBufferAsprintf(&buf, "<selfvers>%u</selfvers>\n",
                        nbdkitCaps->libvirtVersion);
-@@ -596,7 +596,7 @@ virNbdkitCapsSaveFile(void *data,
+@@ -593,7 +593,7 @@ virNbdkitCapsSaveFile(void *data,
          return -1;
      }
  
