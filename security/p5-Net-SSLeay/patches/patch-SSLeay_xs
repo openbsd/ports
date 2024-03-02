@@ -1,0 +1,42 @@
+#1 EVP_add_digest() was removed.
+#2, #3 X509_ALGOR has an accessor, don't reach into it, so it can be made opaque.
+
+Index: SSLeay.xs
+--- SSLeay.xs.orig
++++ SSLeay.xs
+@@ -7493,8 +7493,12 @@ SSL_CTX_set_tlsext_ticket_getkey_cb(ctx,callback=&PL_s
+ 
+ #endif
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER < 0x3090000fL)
++
+ int EVP_add_digest(const EVP_MD *digest)
+ 
++#endif
++
+ #ifndef OPENSSL_NO_SHA
+ 
+ const EVP_MD *EVP_sha1()
+@@ -7973,7 +7977,9 @@ P_X509_get_signature_alg(x)
+         X509 * x
+     CODE:
+ #if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+-        RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
++        const ASN1_OBJECT * obj;
++        X509_ALGOR_get0(&obj, NULL, NULL, X509_get0_tbs_sigalg(x));
++        RETVAL = (ASN1_OBJECT *)obj;
+ #else
+         RETVAL = (x->cert_info->signature->algorithm);
+ #endif
+@@ -7988,8 +7994,10 @@ P_X509_get_pubkey_alg(x)
+ #if OPENSSL_VERSION_NUMBER >= 0x10100000L
+     {
+ 	X509_ALGOR * algor;
++	const ASN1_OBJECT * obj;
+         X509_PUBKEY_get0_param(0, 0, 0, &algor, X509_get_X509_PUBKEY(x));
+-        RETVAL = (algor->algorithm);
++        X509_ALGOR_get0(&obj, NULL, NULL, algor);
++        RETVAL = ((ASN1_OBJECT *)obj);
+     }
+ #else
+         RETVAL = (x->cert_info->key->algor->algorithm);
