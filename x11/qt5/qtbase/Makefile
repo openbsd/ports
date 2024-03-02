@@ -3,6 +3,8 @@ QT5NAME =		QtBase
 KDE_COMMIT =		a43df98d037ad07cf096ef2f775958ceba743613
 KDE_VERSION =		151
 
+REVISION-main =		0
+
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt5

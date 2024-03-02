@@ -68,18 +68,3 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -761,8 +787,14 @@ int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
- 
- void *q_CRYPTO_malloc(size_t num, const char *file, int line);
- #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
-+#ifndef LIBRESSL_VERSION_NUMBER
- void q_CRYPTO_free(void *str, const char *file, int line);
- #define q_OPENSSL_free(addr) q_CRYPTO_free(addr, "", 0)
-+#else
-+void q_CRYPTO_free(void *a);
-+#define q_OPENSSL_free(addr) q_CRYPTO_free(addr)
-+#endif
-+
- 
- int q_SSL_CTX_get_security_level(const SSL_CTX *ctx);
- void q_SSL_CTX_set_security_level(SSL_CTX *ctx, int level);

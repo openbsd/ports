@@ -1,6 +1,5 @@
 disable EVP_PKEY_param_check(),
 use the old versions of sk_new(), ..., sk_value()
-use the old signature of CRYPTO_free()
 disable SSL_CONF_CTX
 
 Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
@@ -34,19 +33,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(int, SSL_session_reused, SSL *a, a, return 0, return)
  DEFINEFUNC2(qssloptions, SSL_CTX_set_options, SSL_CTX *ctx, ctx, qssloptions op, op, return 0, return)
  DEFINEFUNC(int, SSL_CTX_get_security_level, const SSL_CTX *ctx, ctx, return -1, return)
-@@ -185,7 +196,11 @@ DEFINEFUNC2(void, X509_STORE_set_verify_cb, X509_STORE
- DEFINEFUNC3(int, X509_STORE_set_ex_data, X509_STORE *a, a, int idx, idx, void *data, data, return 0, return)
- DEFINEFUNC2(void *, X509_STORE_get_ex_data, X509_STORE *r, r, int idx, idx, return nullptr, return)
- DEFINEFUNC(STACK_OF(X509) *, X509_STORE_CTX_get0_chain, X509_STORE_CTX *a, a, return nullptr, return)
-+#ifndef LIBRESSL_VERSION_NUMBER
- DEFINEFUNC3(void, CRYPTO_free, void *str, str, const char *file, file, int line, line, return, DUMMYARG)
-+#else
-+DEFINEFUNC(void, CRYPTO_free, void *a, a, return, DUMMYARG)
-+#endif
- DEFINEFUNC(long, OpenSSL_version_num, void, DUMMYARG, return 0, return)
- DEFINEFUNC(const char *, OpenSSL_version, int a, a, return nullptr, return)
- DEFINEFUNC(unsigned long, SSL_SESSION_get_ticket_lifetime_hint, const SSL_SESSION *session, session, return 0, return)
-@@ -358,12 +373,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
+@@ -358,12 +375,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
  DEFINEFUNC2(int, SSL_CTX_use_RSAPrivateKey, SSL_CTX *a, a, RSA *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
