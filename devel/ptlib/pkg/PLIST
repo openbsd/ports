@@ -183,6 +183,7 @@ lib/ptlib-2.10.9/devices/sound/
 @so lib/ptlib-2.10.9/devices/sound/sndio_pwplugin.so
 lib/ptlib-2.10.9/devices/videoinput/
 @so lib/ptlib-2.10.9/devices/videoinput/bsdvideo_pwplugin.so
+@so lib/ptlib-2.10.9/devices/videoinput/v4l2_pwplugin.so
 share/ptlib/
 share/ptlib/make/
 share/ptlib/make/common.mak

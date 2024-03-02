@@ -2,9 +2,8 @@ COMMENT=		portable tools library
 
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
-GH_TAGNAME=		v2_10_9_5
+GH_TAGNAME=		v2_10_9_6
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		6
 EPOCH=			0
 
 CATEGORIES=		devel telephony
@@ -19,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL 1.0
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 sndio ssl
+WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 sndio ssl v4l2
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -27,7 +26,8 @@ CXXFLAGS_base-clang =	-Wno-error=dynamic-exception-spec
 
 BUILD_DEPENDS=		devel/bison
 
-LIB_DEPENDS=		security/cyrus-sasl2
+LIB_DEPENDS=		multimedia/libv4l \
+			security/cyrus-sasl2
 
 ALL_TARGET=		default #${WRKSRC}/Makefile
 USE_GMAKE=		Yes
@@ -73,8 +73,6 @@ INSTALL_REPLACE += \nelse\nINSTALL := \/usr\/bin\/install -c -o ${BINOWN}
 INSTALL_REPLACE += -g ${BINGRP}\nendif/'
 
 pre-configure:
-	mkdir ${WRKSRC}/plugins/sound_sndio
-	cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 	${SUBST_CMD} ${WRKSRC}/make/common.mak
 
 post-install:

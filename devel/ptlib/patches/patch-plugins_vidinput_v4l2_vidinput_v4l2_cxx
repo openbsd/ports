@@ -2,7 +2,7 @@ Index: plugins/vidinput_v4l2/vidinput_v4l2.cxx
 --- plugins/vidinput_v4l2/vidinput_v4l2.cxx.orig
 +++ plugins/vidinput_v4l2/vidinput_v4l2.cxx
 @@ -130,7 +130,7 @@ static struct {
- #ifdef SOLARIS
+ #if defined (P_SOLARIS) || defined (P_NETBSD) || defined(P_OPENBSD)
    uint32_t code;
  #else
 -  __u32 code;
@@ -11,7 +11,7 @@ Index: plugins/vidinput_v4l2/vidinput_v4l2.cxx
  } colourFormatTab[] = {
      { "Grey", V4L2_PIX_FMT_GREY },   //Entries in this table correspond
 @@ -359,7 +359,7 @@ PBoolean PVideoInputDevice_V4L2::SetVideoFormat(VideoF
- #ifdef SOLARIS
+ #if defined (P_SOLARIS) || defined (P_NETBSD) || defined(P_OPENBSD)
      uint32_t code;
  #else
 -    __u32 code;
@@ -20,7 +20,7 @@ Index: plugins/vidinput_v4l2/vidinput_v4l2.cxx
      const char * name;
    } static const fmt[3] = { {V4L2_STD_PAL, "PAL"},
 @@ -369,7 +369,7 @@ PBoolean PVideoInputDevice_V4L2::SetVideoFormat(VideoF
- #ifdef SOLARIS
+ #if defined (P_SOLARIS) || defined (P_NETBSD) || defined(P_OPENBSD)
      uint32_t carg;
  #else
 -    __u32 carg;
