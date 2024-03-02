@@ -1,6 +1,7 @@
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 IS_PORTING_AID =	Yes
+REVISION =		0
 
 SHARED_LIBS =		KF5KDELibs4Support	8.0
 

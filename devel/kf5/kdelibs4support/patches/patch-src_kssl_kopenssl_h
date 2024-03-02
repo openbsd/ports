@@ -13,3 +13,12 @@ Index: src/kssl/kopenssl.h
       *   X509_STORE_add_lookup - add a lookup file/method to an X509 store
       */
      X509_LOOKUP *X509_STORE_add_lookup(X509_STORE *v, X509_LOOKUP_METHOD *m);
+@@ -395,7 +400,7 @@ class KOpenSSLProxy (public)
+     /*
+      *   CRYPTO_free - free up an internally allocated object
+      */
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     void CRYPTO_free(void *x);
+ #else
+     void CRYPTO_free(void *x, const char *file, int line);
