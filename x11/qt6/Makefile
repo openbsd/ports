@@ -11,6 +11,7 @@
      SUBDIR += qthttpserver
      SUBDIR += qtimageformats
      SUBDIR += qtlanguageserver
+     SUBDIR += qtlocation
      SUBDIR += qtlottie
      SUBDIR += qtmultimedia
      SUBDIR += qtnetworkauth
