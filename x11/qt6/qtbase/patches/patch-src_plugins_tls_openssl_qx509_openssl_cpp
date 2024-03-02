@@ -1,19 +1,6 @@
 Index: src/plugins/tls/openssl/qx509_openssl.cpp
 --- src/plugins/tls/openssl/qx509_openssl.cpp.orig
 +++ src/plugins/tls/openssl/qx509_openssl.cpp
-@@ -64,7 +64,11 @@ QMultiMap<QByteArray, QString> mapFromX509Name(X509_NA
-         unsigned char *data = nullptr;
-         int size = q_ASN1_STRING_to_UTF8(&data, q_X509_NAME_ENTRY_get_data(e));
-         info.insert(name, QString::fromUtf8((char*)data, size));
--        q_CRYPTO_free(data, nullptr, 0);
-+#if QT_CONFIG(opensslv11) && !defined(LIBRESSL_VERSION_NUMBER)
-+         q_CRYPTO_free(data, nullptr, 0);
-+#else
-+         q_CRYPTO_free(data);
-+#endif
-     }
- 
-     return info;
 @@ -190,7 +194,11 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
          QVariantList list;
          bool isMap = false;
