@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1614 2024/02/29 01:01:12 lraab Exp $
+# $OpenBSD: Quirks.pm,v 1.1615 2024/03/02 04:33:59 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -844,7 +844,6 @@ setup_obsolete_reason(
 	3 => 'farstream',
 	5 => 'ardour',
 	5 => 'aubio',
-	5 => 'liblo',
 	5 => 'libgnomecanvasmm',
 	2 => 'mixmaster',
 	0 => 'xscorch',
@@ -982,7 +981,6 @@ setup_obsolete_reason(
 	7 => 'libcudf',
 	7 => 'ocaml-cudf',
 	7 => 'ocaml-cmdliner',
-	7 => 'ocaml-cppo',
 	7 => 'ocaml-dose',
 	7 => 'ocaml-extlib',
 	7 => 'ocaml-jsonm',
@@ -1218,7 +1216,6 @@ setup_obsolete_reason(
 	3 => 'gnome-recipes',
 	6 => 'shared-color-targets',
 	6 => 'argyll',
-	3 => 'libcroco',
 	23 => 'libnipper',
 	23 => 'nipper',
 	13 => 'bg5pdf',
