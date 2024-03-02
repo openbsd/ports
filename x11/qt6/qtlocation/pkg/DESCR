@@ -1,0 +1,10 @@
+The Qt Location module helps you create mapping solutions using data available
+from popular location service providers, such as Open Street Map.
+
+The Qt Location API enables you to:
+
+ - Access and present map data.
+ - Support touch gesture on a specific area of the map.
+ - Query for a specific geographical location and route.
+ - Add additional layers on top, such as polylines and circles.
+ - Search for places and related images.
