@@ -32,7 +32,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
 +  }
 +
 +  if (is_openbsd) {
-+    ldflags += [ "-Wl,-z,wxneeded", "-Wl,-z,nobtcfi" ]
++    ldflags += [ "-Wl,-z,wxneeded" ]
 +  }
 +
    if (use_qt && is_clang) {

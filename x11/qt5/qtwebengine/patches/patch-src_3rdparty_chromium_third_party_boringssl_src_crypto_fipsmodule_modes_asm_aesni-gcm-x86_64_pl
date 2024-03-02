@@ -1,7 +1,23 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl
 --- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/aesni-gcm-x86_64.pl
-@@ -983,6 +983,7 @@ ___
+@@ -425,6 +425,7 @@ $code.=<<___;
+ .align	32
+ aesni_gcm_decrypt:
+ .cfi_startproc
++	_CET_ENDBR
+ 	xor	$ret,$ret
+ 
+ 	# We call |_aesni_ctr32_ghash_6x|, which requires at least 96 (0x60)
+@@ -664,6 +665,7 @@ _aesni_ctr32_6x:
+ .align	32
+ aesni_gcm_encrypt:
+ .cfi_startproc
++	_CET_ENDBR
+ #ifdef BORINGSSL_DISPATCH_TEST
+ .extern	BORINGSSL_function_hit
+ 	movb \$1,BORINGSSL_function_hit+2(%rip)
+@@ -983,6 +985,7 @@ ___
  
  $code.=<<___;
  .align	64
@@ -9,7 +25,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/a
  .Lbswap_mask:
  	.byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
  .Lpoly:
-@@ -995,6 +996,7 @@ $code.=<<___;
+@@ -995,6 +998,7 @@ $code.=<<___;
  	.byte	1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
  .asciz	"AES-NI GCM module for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
  .align	64
@@ -17,3 +33,19 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/a
  ___
  if ($win64) {
  $rec="%rcx";
+@@ -1124,6 +1128,7 @@ $code=<<___;	# assembler is too old
+ .globl	aesni_gcm_encrypt
+ .type	aesni_gcm_encrypt,\@abi-omnipotent
+ aesni_gcm_encrypt:
++	_CET_ENDBR
+ 	xor	%eax,%eax
+ 	ret
+ .size	aesni_gcm_encrypt,.-aesni_gcm_encrypt
+@@ -1131,6 +1136,7 @@ aesni_gcm_encrypt:
+ .globl	aesni_gcm_decrypt
+ .type	aesni_gcm_decrypt,\@abi-omnipotent
+ aesni_gcm_decrypt:
++	_CET_ENDBR
+ 	xor	%eax,%eax
+ 	ret
+ .size	aesni_gcm_decrypt,.-aesni_gcm_decrypt

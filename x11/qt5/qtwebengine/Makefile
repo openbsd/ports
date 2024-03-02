@@ -4,12 +4,11 @@
 # Patched with security patches up to: 119.0.6045.123
 
 USE_WXNEEDED =		Yes
-USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		224806a7022eed6d5c75b486bec8715a618cb314
 KDE_VERSION =		5
-REVISION =		0
+REVISION =		1
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
@@ -130,6 +129,8 @@ pre-configure:
 	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
+	# build with python3 (remove catapult)
+	@rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \

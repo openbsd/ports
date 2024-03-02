@@ -17,3 +17,19 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/cipher_extra/asm/c
  ___
  
  my ($oup,$inp,$inl,$adp,$keyp,$itr1,$itr2)=("%rdi","%rsi","%rbx","%rcx","%r9","%rcx","%r8");
+@@ -433,6 +435,7 @@ $code.="
+ .align 64
+ chacha20_poly1305_open:
+ .cfi_startproc
++    _CET_ENDBR
+     push %rbp
+ .cfi_adjust_cfa_offset 8
+     push %rbx
+@@ -831,6 +834,7 @@ open_sse_128:
+ .align 64
+ chacha20_poly1305_seal:
+ .cfi_startproc
++    _CET_ENDBR
+     push %rbp
+ .cfi_adjust_cfa_offset 8
+     push %rbx

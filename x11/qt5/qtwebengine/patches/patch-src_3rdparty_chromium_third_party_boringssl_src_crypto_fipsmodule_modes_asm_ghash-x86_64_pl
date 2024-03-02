@@ -1,7 +1,55 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-x86_64.pl
 --- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-x86_64.pl.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-x86_64.pl
-@@ -1275,6 +1275,7 @@ ___
+@@ -205,6 +205,7 @@ $code.=<<___;
+ .align	16
+ gcm_init_clmul:
+ .cfi_startproc
++	_CET_ENDBR
+ .L_init_clmul:
+ ___
+ $code.=<<___ if ($win64);
+@@ -287,6 +288,7 @@ $code.=<<___;
+ .align	16
+ gcm_gmult_clmul:
+ .cfi_startproc
++	_CET_ENDBR
+ .L_gmult_clmul:
+ 	movdqu		($Xip),$Xi
+ 	movdqa		.Lbswap_mask(%rip),$T3
+@@ -338,6 +340,7 @@ $code.=<<___;
+ .align	32
+ gcm_ghash_clmul:
+ .cfi_startproc
++	_CET_ENDBR
+ .L_ghash_clmul:
+ ___
+ $code.=<<___ if ($win64);
+@@ -697,6 +700,7 @@ $code.=<<___;
+ .align	32
+ gcm_init_avx:
+ .cfi_startproc
++	_CET_ENDBR
+ ___
+ if ($avx) {
+ my ($Htbl,$Xip)=@_4args;
+@@ -841,6 +845,7 @@ $code.=<<___;
+ .align	32
+ gcm_gmult_avx:
+ .cfi_startproc
++	_CET_ENDBR
+ 	jmp	.L_gmult_clmul
+ .cfi_endproc
+ .size	gcm_gmult_avx,.-gcm_gmult_avx
+@@ -852,6 +857,7 @@ $code.=<<___;
+ .align	32
+ gcm_ghash_avx:
+ .cfi_startproc
++	_CET_ENDBR
+ ___
+ if ($avx) {
+ my ($Xip,$Htbl,$inp,$len)=@_4args;
+@@ -1275,6 +1281,7 @@ ___
  }
  
  $code.=<<___;
@@ -9,7 +57,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/modes/a
  .align	64
  .Lbswap_mask:
  	.byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
-@@ -1286,6 +1287,7 @@ $code.=<<___;
+@@ -1286,6 +1293,7 @@ $code.=<<___;
  
  .asciz	"GHASH for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
  .align	64

@@ -1,7 +1,15 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl
 --- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl
-@@ -1815,6 +1815,7 @@ ___
+@@ -244,6 +244,7 @@ $code.=<<___;
+ .align	16
+ sha1_block_data_order:
+ .cfi_startproc
++	_CET_ENDBR
+ 	leaq	OPENSSL_ia32cap_P(%rip),%r10
+ 	mov	0(%r10),%r9d
+ 	mov	4(%r10),%r8d
+@@ -1815,6 +1816,7 @@ ___
  }
  }
  $code.=<<___;
@@ -9,7 +17,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm
  .align	64
  K_XX_XX:
  .long	0x5a827999,0x5a827999,0x5a827999,0x5a827999	# K_00_19
-@@ -1828,6 +1829,7 @@ K_XX_XX:
+@@ -1828,6 +1830,7 @@ K_XX_XX:
  .long	0x00010203,0x04050607,0x08090a0b,0x0c0d0e0f	# pbswap mask
  .long	0x00010203,0x04050607,0x08090a0b,0x0c0d0e0f	# pbswap mask
  .byte	0xf,0xe,0xd,0xc,0xb,0xa,0x9,0x8,0x7,0x6,0x5,0x4,0x3,0x2,0x1,0x0

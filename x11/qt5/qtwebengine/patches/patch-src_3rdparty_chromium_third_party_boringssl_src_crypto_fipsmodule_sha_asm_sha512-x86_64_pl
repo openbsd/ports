@@ -1,7 +1,15 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha512-x86_64.pl
 --- src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha512-x86_64.pl.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha512-x86_64.pl
-@@ -407,6 +407,7 @@ ___
+@@ -266,6 +266,7 @@ $code=<<___;
+ .align	16
+ $func:
+ .cfi_startproc
++	_CET_ENDBR
+ ___
+ $code.=<<___ if ($SZ==4 || $avx);
+ 	leaq	OPENSSL_ia32cap_P(%rip),%r11
+@@ -407,6 +408,7 @@ ___
  
  if ($SZ==4) {
  $code.=<<___;
@@ -9,7 +17,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm
  .align	64
  .type	$TABLE,\@object
  $TABLE:
-@@ -450,9 +451,11 @@ $TABLE:
+@@ -450,9 +452,11 @@ $TABLE:
  	.long	0xffffffff,0xffffffff,0x03020100,0x0b0a0908
  	.long	0xffffffff,0xffffffff,0x03020100,0x0b0a0908
  	.asciz	"SHA256 block transform for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
@@ -21,7 +29,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/sha/asm
  .align	64
  .type	$TABLE,\@object
  $TABLE:
-@@ -540,6 +543,7 @@ $TABLE:
+@@ -540,6 +544,7 @@ $TABLE:
  	.quad	0x0001020304050607,0x08090a0b0c0d0e0f
  	.quad	0x0001020304050607,0x08090a0b0c0d0e0f
  	.asciz	"SHA512 block transform for x86_64, CRYPTOGAMS by <appro\@openssl.org>"

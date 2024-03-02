@@ -27,16 +27,7 @@ Index: src/buildtools/config/linking.pri
  NINJA_OBJECTS = $$eval($$list($$NINJA_OBJECTS))
  # Do manual response file linking for macOS and Linux
  
-@@ -27,6 +31,8 @@ write_file($$RSP_ARCHIVE_FILE, RSP_A_CONTENT)
- if(macos|ios) {
-     !static {
-         QMAKE_LFLAGS += -Wl,-filelist,$$shell_quote($${RSP_OBJECT_FILE})
-+        QMAKE_LFLAGS += -Wl,-z,nobtcfi
-+        QMAKE_LFLAGS += -Wl,-z,wxneeded
-         QMAKE_LFLAGS += @$${RSP_ARCHIVE_FILE}
-     } else {
-         OBJECTS += $$NINJA_OBJECTS
-@@ -34,7 +40,7 @@ if(macos|ios) {
+@@ -34,7 +38,7 @@ if(macos|ios) {
      }
  }
  
@@ -45,7 +36,7 @@ Index: src/buildtools/config/linking.pri
      !static {
          QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
          QMAKE_LFLAGS += -Wl,--start-group @$${RSP_ARCHIVE_FILE} -Wl,--end-group
-@@ -60,7 +66,7 @@ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
+@@ -60,7 +64,7 @@ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
  
  unix:qtConfig(webengine-noexecstack): \
      QMAKE_LFLAGS += -Wl,-z,noexecstack
