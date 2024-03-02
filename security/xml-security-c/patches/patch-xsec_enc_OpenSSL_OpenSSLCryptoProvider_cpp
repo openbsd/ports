@@ -1,0 +1,11 @@
+Index: xsec/enc/OpenSSL/OpenSSLCryptoProvider.cpp
+--- xsec/enc/OpenSSL/OpenSSLCryptoProvider.cpp.orig
++++ xsec/enc/OpenSSL/OpenSSLCryptoProvider.cpp
+@@ -152,7 +152,6 @@ OpenSSLCryptoProvider::~OpenSSLCryptoProvider() {
+     CRYPTO_cleanup_all_ex_data();
+ #endif
+     RAND_cleanup();
+-    X509_TRUST_cleanup();
+     ERR_remove_state(0);
+ }
+ 
