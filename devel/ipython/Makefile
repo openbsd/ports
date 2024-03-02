@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.19.0
+MODPY_EGG_VERSION =	8.22.1
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
@@ -14,13 +14,12 @@ MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PI =		Yes
-#MODPY_PYTEST_ARGS =	IPython
 
-# Optional dependency which gets picked up if it happens to be installed, thus
-# causing race conditions under dpb. Pull it in to avoid this possibility.
-BUILD_DEPENDS =		www/py-mako${MODPY_FLAVOR}
+FLAVORS =		python3
+FLAVOR =		python3
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
 # XXX: pickleshare is optional as of 8.17, but keep as RDEP for now.
 # If pickleshare is ever removed as an RDEP, it needs to become a TDEP
@@ -32,20 +31,20 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
 			devel/py-prompt_toolkit${MODPY_FLAVOR}>=3.0.41v1,<3.1.0v1 \
 			devel/py-stack_data${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR}>=5 \
+			devel/py-traitlets${MODPY_FLAVOR}>=5.13.0 \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}>=2.4.0
 
 # Note that if you have pdb++ installed, tests will fail.
 TEST_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-curio${MODPY_FLAVOR} \
 			devel/py-nbformat${MODPY_FLAVOR} \
 			devel/py-testpath${MODPY_FLAVOR} \
+			devel/py-test-asyncio${MODPY_FLAVOR}<0.22 \
+			devel/py-trio${MODPY_FLAVOR} \
+			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}>=1.23 \
-			textproc/py-pygments${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+			math/py-pandas${MODPY_FLAVOR}
 
 PORTHOME =		${WRKDIR}
 

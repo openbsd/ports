@@ -683,6 +683,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_common.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_emscripten.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_emscripten.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_posix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_posix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}_process_win32.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -773,6 +775,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}wildcard.
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/${MODPY_PYCACHE}wildcard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_cli.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_common.py
+lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_emscripten.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_posix.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_win32.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/_process_win32_controller.py

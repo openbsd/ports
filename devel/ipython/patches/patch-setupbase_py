@@ -3,7 +3,7 @@ Put man pages where they belong.
 Index: setupbase.py
 --- setupbase.py.orig
 +++ setupbase.py
-@@ -145,7 +145,7 @@ def find_data_files():
+@@ -106,7 +106,7 @@ def find_data_files():
      Just man pages at this point.
      """
  
