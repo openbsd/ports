@@ -13,7 +13,7 @@ PKGNAME-psql =		qt6-postgresql-${VERSION}
 
 PKG_ARCH-global =	*
 
-REVISION-main =		2
+REVISION-main =		3
 
 DPB_PROPERTIES =	parallel
 

@@ -53,5 +53,5 @@ qt6-post-install:
 	! test -e ${PREFIX}/lib/qt6/bin/$p || \
 	    ln -sf ../lib/qt6/bin/$p ${PREFIX}/bin/$p-qt6
 	! test -e ${PREFIX}/lib/qt6/libexec/$p || \
-	    ln -sf ../lib/qt6/bin/$p ${PREFIX}/bin/$p-qt6
+	    ln -sf ../lib/qt6/libexec/$p ${PREFIX}/bin/$p-qt6
 .endfor
