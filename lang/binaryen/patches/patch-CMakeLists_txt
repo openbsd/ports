@@ -4,7 +4,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -296,10 +296,6 @@ else()
+@@ -308,10 +308,6 @@ else()
      # explicitly undefine it:
      add_nondebug_compile_flag("-UNDEBUG")
    endif()
