@@ -1,6 +1,6 @@
 COMMENT=	UPnP IGD daemon
 
-DISTNAME=	miniupnpd-2.3.4
+DISTNAME=	miniupnpd-2.3.5
 
 # uses pledge()
 WANTLIB += c crypto kvm ssl

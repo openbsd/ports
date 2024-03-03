@@ -1,7 +1,7 @@
 Index: miniupnpd.conf
 --- miniupnpd.conf.orig
 +++ miniupnpd.conf
-@@ -160,7 +160,7 @@ clean_ruleset_interval=600
+@@ -162,7 +162,7 @@ clean_ruleset_interval=600
  # active when compiled with PF_ENABLE_FILTER_RULES (see config.h file)
  #quickrules=no
  
@@ -10,7 +10,7 @@ Index: miniupnpd.conf
  uuid=00000000-0000-0000-0000-000000000000
  
  # Daemon's serial and model number when reporting to clients
-@@ -184,10 +184,10 @@ uuid=00000000-0000-0000-0000-000000000000
+@@ -186,10 +186,10 @@ uuid=00000000-0000-0000-0000-000000000000
  # modify the IP ranges to match their own internal networks, and
  # also consider implementing network-specific restrictions
  # CAUTION: failure to enforce any rules may permit insecure requests to be made!
