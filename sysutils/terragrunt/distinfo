@@ -2525,7 +2525,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = XmRigeM
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.55.10.zip) = RW+I/pP7JdIUByI2OVFE7cnKRTCIGhjash9QTtjGor8=
+SHA256 (terragrunt-v0.55.11.zip) = 0y8ATePKvoyKmYCGS5BNOPyf7+F5ktXw99i0z7UKNzg=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -5053,4 +5053,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = 230610
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.55.10.zip) = 4802846
+SIZE (terragrunt-v0.55.11.zip) = 4802883
