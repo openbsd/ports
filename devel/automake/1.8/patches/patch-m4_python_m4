@@ -5,7 +5,7 @@
    dnl in 1.5.
    m4_define([_AM_PYTHON_INTERPRETER_LIST],
 -            [python python2 python2.4 python2.3 python2.2 dnl
-+            [python python2 python2.7 python2.6 python2.5 python2.4 python2.3 python2.2 dnl
++            [python python3 dnl
  python2.1 python2.0 python1.6 python1.5])
  
    m4_if([$1],[],[
