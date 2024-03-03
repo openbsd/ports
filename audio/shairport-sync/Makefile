@@ -1,8 +1,9 @@
 COMMENT =	AirPlay audio player
 
-DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.2	.
-REVISION =	3
-
+# 25.02.2024 for merged patches
+C =		2dba9bc8cae01242e430c0026bf92c8a1a850646
+DIST_TUPLE =	github	mikebrady	shairport-sync	${C}	.
+PKGNAME =	shairport-sync-4.3.3pre1
 CATEGORIES =	audio net
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
@@ -12,17 +13,15 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER=	base-clang ports-gcc
 
+# uses pledge()
 WANTLIB =	${COMPILER_LIBCXX} avahi-client avahi-common c config
 WANTLIB +=	crypto gio-2.0 glib-2.0 gobject-2.0 iconv intl m popt
 WANTLIB +=	sndio ssl
-
 
 LIB_DEPENDS =	devel/libconfig \
 		devel/glib2 \
 		devel/popt \
 		net/avahi,-libs
-
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
 
 CONFIGURE_STYLE =	autoreconf
 SEPARATE_BUILD =	Yes
@@ -46,8 +45,6 @@ SUBST_VARS =		DBUS_SVC \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
-	mv ${PREFIX}/man/man7/shairport-sync.7 \
-	    ${PREFIX}/man/man1/shairport-sync.1
 	${INSTALL_DATA_DIR} ${DBUS_DIR}
 	${SUBST_DATA} {${FILESDIR},${DBUS_DIR}}/${DBUS_SVC}.conf
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
