@@ -1,5 +1,4 @@
 @conflict libdispatch-*
-@pkgpath devel/libdispatch
 include/Block.h
 include/Block_private.h
 include/gnustep/

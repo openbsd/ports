@@ -4,7 +4,7 @@ COMMENT =	GNUstep libobjc2 objective-c runtime
 
 # note: this port does not use the gnustep module
 VERSION =	2.2
-REVISION =	0
+REVISION =	1
 GH_ACCOUNT =	gnustep
 GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
