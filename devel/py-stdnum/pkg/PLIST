@@ -147,6 +147,8 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/be/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}bis.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}bis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}iban.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}iban.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}nn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -154,6 +156,7 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}nn.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}vat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/${MODPY_PYCACHE}vat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/banks.dat
+lib/python${MODPY_VERSION}/site-packages/stdnum/be/bis.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/iban.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/nn.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/be/vat.py
@@ -191,7 +194,6 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/by/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/stdnum/by/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/by/${MODPY_PYCACHE}unp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/by/${MODPY_PYCACHE}unp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/stdnum/by/portal.nalog.gov.by.crt
 lib/python${MODPY_VERSION}/site-packages/stdnum/by/unp.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/ca/
 lib/python${MODPY_VERSION}/site-packages/stdnum/ca/__init__.py
@@ -378,6 +380,14 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/ee/${MODPY_PYCACHE}registrikood.
 lib/python${MODPY_VERSION}/site-packages/stdnum/ee/ik.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/ee/kmkr.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/ee/registrikood.py
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/eg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/${MODPY_PYCACHE}tn.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/${MODPY_PYCACHE}tn.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/eg/tn.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}/
@@ -397,6 +407,8 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}nie.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}nie.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}nif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}nif.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}postal_code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}postal_code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}referenciacatastral.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/${MODPY_PYCACHE}referenciacatastral.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/ccc.py
@@ -406,6 +418,7 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/es/dni.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/iban.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/nie.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/nif.py
+lib/python${MODPY_VERSION}/site-packages/stdnum/es/postal_code.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/es/referenciacatastral.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/__init__.py
@@ -420,6 +433,8 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}eic.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}eic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}nace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}nace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}oss.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}oss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}vat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/${MODPY_PYCACHE}vat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/at_02.py
@@ -427,6 +442,7 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/eu/banknote.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/eic.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/nace.dat
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/nace.py
+lib/python${MODPY_VERSION}/site-packages/stdnum/eu/oss.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/eu/vat.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/fi/
@@ -506,6 +522,14 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/gh/${MODPY_PYCACHE}__init__.${MO
 lib/python${MODPY_VERSION}/site-packages/stdnum/gh/${MODPY_PYCACHE}tin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/gh/${MODPY_PYCACHE}tin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/gh/tin.py
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/gn/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/${MODPY_PYCACHE}nifp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/${MODPY_PYCACHE}nifp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/gn/nifp.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/gr/
 lib/python${MODPY_VERSION}/site-packages/stdnum/gr/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/gr/${MODPY_PYCACHE}/
@@ -972,8 +996,11 @@ lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}ddv.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}ddv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}emso.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}emso.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}maticna.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/stdnum/si/${MODPY_PYCACHE}maticna.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stdnum/si/ddv.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/si/emso.py
+lib/python${MODPY_VERSION}/site-packages/stdnum/si/maticna.py
 lib/python${MODPY_VERSION}/site-packages/stdnum/sk/
 lib/python${MODPY_VERSION}/site-packages/stdnum/sk/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stdnum/sk/${MODPY_PYCACHE}/

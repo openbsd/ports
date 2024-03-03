@@ -1,13 +1,13 @@
 COMMENT=		parse, validate and reformat standard numbers and codes
 
-MODPY_EGG_VERSION=	1.18
+MODPY_EGG_VERSION=	1.19
 DISTNAME=		python-stdnum-${MODPY_EGG_VERSION}
 PKGNAME=		py-stdnum-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 
-MAINTAINER=		Sebastien Marie <semarie@online.fr>
+MAINTAINER=		Sebastien Marie <semarie@kapouay.eu.org>
 
 # LGPLv2+
 PERMIT_PACKAGE=	Yes
