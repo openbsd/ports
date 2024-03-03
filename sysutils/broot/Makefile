@@ -2,7 +2,7 @@ COMMENT =		new way to see and navigate directory trees
 
 GH_ACCOUNT =		Canop
 GH_PROJECT =		broot
-GH_TAGNAME =		v1.33.1
+GH_TAGNAME =		v1.35.0
 
 CATEGORIES =		sysutils
 
