@@ -3,6 +3,8 @@ MODGO_MODULES =	\
 	cloud.google.com/go/compute/metadata			 v0.2.3 \
 	dario.cat/mergo						 v1.0.0 \
 	deps.dev/api/v3alpha					 v0.0.0-20240109042716-00b51ef52ece \
+	deps.dev/util/resolve					 v0.0.0-20240109042716-00b51ef52ece \
+	deps.dev/util/semver					 v0.0.0-20240109040450-1e316b822bc4 \
 	github.com/!burnt!sushi/toml				 v1.3.2 \
 	github.com/!cyclone!d!x/cyclonedx-go			 v0.8.0 \
 	github.com/!microsoft/go-winio				 v0.6.1 \
@@ -19,6 +21,7 @@ MODGO_MODULES =	\
 	github.com/cncf/udpa/go					 v0.0.0-20220112060539-c52dc94e7fbe \
 	github.com/cncf/xds/go					 v0.0.0-20230607035331-e9ce68804cb4 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.2 \
+	github.com/creack/pty					 v1.1.9 \
 	github.com/cyphar/filepath-securejoin			 v0.2.4 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/elazarl/goproxy				 v0.0.0-20230808193330-2592e75ae04a \
@@ -26,6 +29,9 @@ MODGO_MODULES =	\
 	github.com/envoyproxy/go-control-plane			 v0.11.1 \
 	github.com/envoyproxy/protoc-gen-validate		 v1.0.2 \
 	github.com/felixge/fgprof				 v0.9.3 \
+	github.com/gkampitakis/ciinfo				 v0.3.0 \
+	github.com/gkampitakis/go-diff				 v1.3.2 \
+	github.com/gkampitakis/go-snaps				 v0.4.12 \
 	github.com/gliderlabs/ssh				 v0.3.5 \
 	github.com/go-git/gcfg					 v1.5.1-0.20230307220236-3a3c6141e376 \
 	github.com/go-git/go-billy/v5				 v5.5.0 \
@@ -39,14 +45,14 @@ MODGO_MODULES =	\
 	github.com/google/pprof					 v0.0.0-20211214055906-6f57359322fd \
 	github.com/google/renameio				 v0.1.0 \
 	github.com/google/uuid					 v1.3.1 \
-	github.com/hexops/gotextdiff				 v1.0.3 \
-	github.com/ianlancetaylor/demangle			 v0.0.0-20231023195312-e2daf7ba7156 \
+	github.com/ianlancetaylor/demangle			 v0.0.0-20240117034632-964b1d53ca6c \
 	github.com/jbenet/go-context				 v0.0.0-20150711004518-d14ea06fba99 \
 	github.com/jedib0t/go-pretty/v6				 v6.5.3 \
 	github.com/kevinburke/ssh_config			 v1.2.0 \
 	github.com/kr/pretty					 v0.3.1 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.2.0 \
+	github.com/maruel/natural				 v1.1.0 \
 	github.com/mattn/go-runewidth				 v0.0.15 \
 	github.com/mmcloughlin/avo				 v0.5.0 \
 	github.com/onsi/gomega					 v1.27.10 \
@@ -55,6 +61,7 @@ MODGO_MODULES =	\
 	github.com/package-url/packageurl-go			 v0.1.2 \
 	github.com/pandatix/go-cvss				 v0.6.2 \
 	github.com/pjbgf/sha1cd					 v0.3.0 \
+	github.com/pkg/diff					 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pkg/profile					 v1.7.0 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
@@ -69,6 +76,10 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.5.0 \
 	github.com/stretchr/testify				 v1.8.4 \
 	github.com/terminalstatic/go-xsd-validate		 v0.1.5 \
+	github.com/tidwall/gjson				 v1.17.0 \
+	github.com/tidwall/match				 v1.1.1 \
+	github.com/tidwall/pretty				 v1.2.1 \
+	github.com/tidwall/sjson				 v1.2.5 \
 	github.com/urfave/cli/v2				 v2.27.1 \
 	github.com/vmihailenco/msgpack/v4			 v4.3.12 \
 	github.com/vmihailenco/tagparser			 v0.1.1 \
@@ -80,7 +91,7 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark				 v1.4.13 \
 	github.com/zclconf/go-cty				 v1.10.0 \
 	golang.org/x/crypto					 v0.18.0 \
-	golang.org/x/exp					 v0.0.0-20240112132812-db7319d0e0e3 \
+	golang.org/x/exp					 v0.0.0-20240119083558-1b970713d09a \
 	golang.org/x/mod					 v0.14.0 \
 	golang.org/x/net					 v0.20.0 \
 	golang.org/x/oauth2					 v0.13.0 \
@@ -105,6 +116,7 @@ MODGO_MODULES =	\
 	sigs.k8s.io/yaml					 v1.3.0
 
 MODGO_MODFILES =	\
+	deps.dev/api/v3alpha			 v0.0.0-20231114023923-e40c4d5c34e5 \
 	github.com/!microsoft/go-winio		 v0.5.2 \
 	github.com/!proton!mail/go-crypto	 v0.0.0-20230828082145-3c4c8a2d2371 \
 	github.com/anchore/go-struct-converter	 v0.0.0-20221118182256-c68fdcfa2092 \
@@ -120,6 +132,7 @@ MODGO_MODFILES =	\
 	github.com/kr/pretty			 v0.1.0 \
 	github.com/kr/text			 v0.1.0 \
 	github.com/rivo/uniseg			 v0.2.0 \
+	github.com/rogpeppe/go-internal		 v1.9.0 \
 	github.com/sergi/go-diff		 v1.1.0 \
 	github.com/sirupsen/logrus		 v1.7.0 \
 	github.com/spdx/gordf			 v0.0.0-20201111095634-7098f93598fb \
@@ -130,6 +143,8 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.7.0 \
 	github.com/stretchr/testify		 v1.7.1 \
 	github.com/stretchr/testify		 v1.8.0 \
+	github.com/tidwall/gjson		 v1.14.2 \
+	github.com/tidwall/pretty		 v1.2.0 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.0.0-20220622213112-05595931fe9d \
@@ -142,6 +157,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod			 v0.6.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod			 v0.8.0 \
+	golang.org/x/mod			 v0.9.0 \
 	golang.org/x/net			 v0.0.0-20190603091049-60506f45cf65 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net			 v0.0.0-20200301022130-244492dfa37a \
