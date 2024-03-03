@@ -1,4 +1,0 @@
-The stock module defines fundamentals for all stock management situations:
-Locations where products are stored, moves between these locations, shipments
-for product arrivals and departures and inventory to control and update stock
-levels.

@@ -1,8 +1,0 @@
-The production outsourcing module allows to outsource production order per
-routing. When such outsourced production is set to waiting, a purchase order is
-created and its cost is added to the production.
-
-To define an outsourced production, the routing must have a *Supplier*, a
-*Service* and its *Quantity* defined. Those values will be used to create the
-purchase order. The bought quantity is computed by multiplying the *Quantity*
-by the factor between the bill of material and the production quantity.

@@ -1,6 +1,0 @@
-The account_dunning_fee module allows to generate accounting moves as fees when
-processing dunning which are at a level with a *Fee* defined.
-
-The accounting move debit the fee amount from the same account as the due line
-and credit the revenue account of the product.  Only one move is created per
-dunning and level.

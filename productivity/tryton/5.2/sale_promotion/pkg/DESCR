@@ -1,5 +1,0 @@
-The sale_promotion module allows to apply promotions on sale based on criteria.
-
-The promotion is applied by changing the unit price of the affected lines when
-the sale goes into quotation but the unit price is restored when going back to
-draft.

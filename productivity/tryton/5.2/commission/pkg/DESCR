@@ -1,3 +1,0 @@
-The commission module allows to manage commission for sale's agent.
-A commission move is created when posting the invoice, following the agent's
-commission plan.

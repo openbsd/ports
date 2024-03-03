@@ -1,7 +1,0 @@
-The production routing module defines the routings for production: Routing,
-Step and Operation.
-
-- Routings are a list of steps to follow with one of the BOMs to produce a
-  product.
-- Steps define the operation to perform at a specific point of the routing.
-- An operation is a generic action.

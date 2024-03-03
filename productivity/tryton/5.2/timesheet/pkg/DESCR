@@ -1,5 +1,0 @@
-The timesheet module allow to track the time spent by employees on
-various works. This module also comes with several reports that show
-the time spent by employees on works following various time periods.
-
-The timesheet module defines also some routes for user applications.

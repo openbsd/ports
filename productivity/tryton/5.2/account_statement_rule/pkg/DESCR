@@ -1,7 +1,0 @@
-The account_statement_rule module allows rules to be defined to complete
-statement lines from imported files.
-
-When the "Apply Rule" button is clicked on a statement, each rule is tested in
-order against each origin that does not have any lines until one is found that
-matches. Then the rule found is used to create the statement lines linked to
-the origin.

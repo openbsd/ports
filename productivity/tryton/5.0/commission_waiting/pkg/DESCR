@@ -1,6 +1,0 @@
-The commission_waiting module allows to generate account move for each
-commission between the expense/revenue account to a waiting account defined on
-the agent.
-
-Once the commission invoice is posted the waiting account is cleared with the
-payable/receivable account of the invoice.
