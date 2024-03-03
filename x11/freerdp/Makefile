@@ -1,5 +1,5 @@
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.11.3
+DISTNAME =		freerdp-2.11.5
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
@@ -33,8 +33,6 @@ MODULES =		devel/cmake
 
 CFLAGS +=		-I${X11BASE}/include \
 			-I${LOCALBASE}/include
-
-CFLAGS +=		-fcommon
 
 BUILD_DEPENDS =		security/pcsc-lite \
 			textproc/xmlto
