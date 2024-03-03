@@ -17,6 +17,9 @@ WANTLIB += c curses edit sqlite3 util
 FLAVORS =	static
 FLAVOR ?=
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
+
 CPPFLAGS =	-I${LOCALBASE}/include \
 		-DNSH_REXEC_PATH=${LOCALBASE}/bin/nsh
 
