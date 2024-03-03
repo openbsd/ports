@@ -1,25 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -534,7 +534,7 @@ libp2edrvstd_la_SOURCES = \
-         $(sample_drivers_src)                   
- 
- libp2edrvstd_la_LIBADD = libpstoedit.la
--libp2edrvstd_la_LDFLAGS = -no-undefined -module
-+libp2edrvstd_la_LDFLAGS = -no-undefined -module -avoid-version
- 
- #libp2edrvplugins_la_SOURCES=drvmif.cpp drvcgm.cpp drvrtf.cpp drvwwmf.cpp
- #libp2edrvplugins_la_LIBADD=
-@@ -553,7 +553,7 @@ libp2edrvswf_la_LDFLAGS = -no-undefined -module
- # note the __ stand for ++ - automake treats all no alphanums chars as _
- libp2edrvmagick___la_SOURCES = drvmagick++.cpp drvmagick++.h initlibrary.cpp
- libp2edrvmagick___la_LIBADD = ${LIBMAGICK_LDFLAGS} libpstoedit.la
--libp2edrvmagick___la_LDFLAGS = -no-undefined -module
-+libp2edrvmagick___la_LDFLAGS = -no-undefined -module -avoid-version
- @USE_EMFBYSOURCE_FALSE@libp2edrvwmf_la_SOURCES = drvwmf.cpp drvwmf.h initlibrary.cpp
- # moved to configure.ac because needed only for g++ libp2edrvmagick___la_CPPFLAGS=$(LIBMAGICK_CFLAGS) $(AM_CPPFLAGS) -Wno-long-long
- @USE_EMFBYSOURCE_TRUE@libp2edrvwmf_la_SOURCES = emflib.cpp drvwmf.cpp drvwmf.h initlibrary.cpp
-@@ -577,7 +577,7 @@ libpstoedit_la_SOURCES = \
+@@ -578,7 +578,7 @@ libpstoedit_la_SOURCES = \
  	psfront.h				\
  	genericints.h
  
