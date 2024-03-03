@@ -1,0 +1,4 @@
+If updating from earlier than isc-dhcp-server-4.4.3pl1p1, move/copy old leases:
+# cd /var/db/isc-dhcp; mv ../dhcpd.leases .; chown _isc-dhcp:_isc-dhcp *
+If configuring from scratch, install an empty file:
+# install -o _isc-dhcp -g _isc-dhcp /dev/null /var/db/isc-dhcp/dhcpd.leases

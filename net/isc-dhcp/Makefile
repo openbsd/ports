@@ -3,7 +3,7 @@ COMMENT-client=	ISC DHCP Client
 COMMENT-omapi=	ISC DHCP OMAPI
 
 VERSION=	4.4.3-P1
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/pl/}
@@ -32,7 +32,9 @@ COMPILER_LANGS=	c
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-early-chroot \
-			--enable-paranoia
+			--enable-paranoia \
+			--with-srv-lease-file=/var/db/isc-dhcp/dhcpd.leases \
+			--with-srv6-lease-file=/var/db/isc-dhcp/dhcpd6.leases
 
 NO_TEST=		Yes
 
@@ -60,6 +62,8 @@ post-install:
 	    ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/dhclient-script ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/dhcp-lease-list.pl \
+	    ${PREFIX}/bin/dhcp-lease-list
 	${INSTALL_DATA} ${WRKSRC}/server/dhcpd.conf.example \
 	    ${PREFIX}/${EXAMPLEDIR}/dhcpd.conf
 	${INSTALL_DATA} ${WRKSRC}/client/dhclient.conf.example \

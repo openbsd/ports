@@ -7,8 +7,4 @@ daemon_flags="-user _isc-dhcp -group _isc-dhcp"
 
 rc_reload=NO
 
-rc_pre() {
-	touch /var/db/dhcpd.leases
-}
-
 rc_cmd $1

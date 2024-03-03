@@ -1,0 +1,51 @@
+Index: contrib/dhcp-lease-list.pl
+--- contrib/dhcp-lease-list.pl.orig
++++ contrib/dhcp-lease-list.pl
+@@ -27,12 +27,11 @@ use strict;
+ use warnings;
+ use POSIX qw(strftime);
+ 
+-my @LEASES = ('/var/db/dhcpd.leases', '/var/lib/dhcp/dhcpd.leases', '/var/lib/dhcp3/dhcpd.leases');
++my @LEASES = ('/var/db/isc-dhcpd/dhcpd.leases');
+ my @all_leases;
+ my @leases;
+ 
+-my @OUIS = ('/usr/share/misc/oui.txt', '/usr/local/etc/oui.txt');
+-my $OUI_URL = 'http://standards-oui.ieee.org/oui.txt';
++my @OUIS = ('/usr/local/share/arp-scan/ieee-oui.txt');
+ my $oui;
+ 
+ my %data;
+@@ -47,8 +46,9 @@ sub get_manufactorer_for_mac($) {
+     my $manu = "-NA-";
+ 
+     if (defined $oui) {
+-	$manu = join('-', ($_[0] =~ /^(..):(..):(..):/));
+-	$manu = `grep -i '$manu' $oui | cut -f3`;
++	# XXX only handles 24-bit (MA-L) entries, not MA-S/MA-M
++	$manu = join('', ($_[0] =~ /^(..):(..):(..):/));
++	$manu = `grep -i '^$manu' $oui | cut -f2`;
+ 	$manu =~ s/^\s+|\s+$//g;
+     }
+ 
+@@ -66,8 +66,7 @@ sub check_oui_file() {
+     }
+ 
+     if (not defined $oui) {
+-	print(STDERR "To get manufacturer names please download $OUI_URL ");
+-	print(STDERR "to /usr/local/etc/oui.txt\n");
++	print(STDERR "To get manufacturer names, 'pkg_add mac-vendor'\n");
+     }
+ }
+ 
+@@ -191,9 +190,7 @@ sub cli_processing() {
+ 		" --last      prints the last (even if end<now) entry for every MAC\n".
+ 		" --all       prints all entries i.e. more than one per MAC\n".
+ 		" --lease     uses the next argument as the name of the lease file\n".
+-		"             the default is to try /var/db/dhcpd.leases then\n".
+-		"             /var/lib/dhcp/dhcpd.leases then\n".
+-		"             /var/lib/dhcp3/dhcpd.leases\n".
++		"             the default is to try /var/db/isc-dhcpd/dhcpd.leases\n".
+ 		"\n");
+ 	    exit(0);
+ 	} elsif ($arg eq '--parsable') {

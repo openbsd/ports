@@ -4,6 +4,7 @@
 @newuser _isc-dhcp:744:_isc-dhcp::ISC DHCP user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/isc_dhcpd
 @rcscript ${RCDIR}/isc_dhcrelay
+bin/dhcp-lease-list
 @man man/man5/dhcp-eval.5
 @man man/man5/dhcp-options.5
 @man man/man5/dhcpd.conf.5
@@ -16,4 +17,12 @@
 @bin sbin/keama
 share/examples/isc-dhcp/
 share/examples/isc-dhcp/dhcpd.conf
-@extra /var/db/dhcpd.leases
+@mode 755
+@owner _isc-dhcp
+@group _isc-dhcp
+@sample /var/db/isc-dhcpd/
+@mode
+@owner
+@group
+@extra /var/db/isc-dhcpd/dhcpd.leases
+@extra /var/db/isc-dhcpd/dhcpd6.leases
