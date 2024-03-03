@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.439 2024/02/29 10:10:17 paco Exp $
+$OpenBSD: user.list,v 1.440 2024/03/03 08:08:04 semarie Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -183,7 +183,7 @@ id  user		group		port
 672 _radicale		_radicale	productivity/radicale
 673 _buildbot		_buildbot	devel/py-buildbot
 674 _buildslave		_buildslave	devel/py-buildslave
-675 _trytond		_trytond	productivity/tryton
+#675 _trytond		_trytond	productivity/tryton
 676 _gdm		_gdm		x11/gnome/gdm
 677 _scamper		_scamper	net/scamper
 678 _owampd		_owampd		net/owamp
