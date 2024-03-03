@@ -1,13 +1,12 @@
 COMMENT =	python svg graph plotting library
 
-MODPY_EGG_VERSION = 3.0.0
+MODPY_EGG_VERSION = 3.0.4
 DISTNAME =	pygal-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	graphics
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # LGPLv3+
 PERMIT_PACKAGE=	Yes
