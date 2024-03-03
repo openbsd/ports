@@ -3,12 +3,12 @@
 bin/jupyter-trust
 lib/python${MODPY_VERSION}/site-packages/nbformat/
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/COPYING.md
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/nbformat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -35,6 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}sign.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}sign.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}validator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbformat/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbformat/_imports.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/_struct.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/_version.py
@@ -148,3 +150,4 @@ lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbformat.v4.schema.json
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/nbjson.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/v4/rwbase.py
 lib/python${MODPY_VERSION}/site-packages/nbformat/validator.py
+lib/python${MODPY_VERSION}/site-packages/nbformat/warnings.py
