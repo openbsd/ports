@@ -43,7 +43,7 @@ SUBST_VARS +=	VERSION
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
 PROGRAMS6 =	assistant designer linguist lrelease lupdate moc pixeltool \
-		qcollectiongenerator qdbus qdoc qmake qml qtdiag rcc uic
+		qdbus qdoc qmake qml qtdiag rcc uic \
 
 .PHONY: qt6-post-install
 post-install: qt6-post-install
@@ -51,5 +51,7 @@ qt6-post-install:
 # public programs
 .for p in ${PROGRAMS6}
 	! test -e ${PREFIX}/lib/qt6/bin/$p || \
+	    ln -sf ../lib/qt6/bin/$p ${PREFIX}/bin/$p-qt6
+	! test -e ${PREFIX}/lib/qt6/libexec/$p || \
 	    ln -sf ../lib/qt6/bin/$p ${PREFIX}/bin/$p-qt6
 .endfor

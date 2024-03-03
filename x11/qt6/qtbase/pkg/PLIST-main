@@ -1,4 +1,7 @@
+bin/moc-qt6
 bin/qmake-qt6
+bin/rcc-qt6
+bin/uic-qt6
 include/X11/qt6/
 include/X11/qt6/QtConcurrent/
 include/X11/qt6/QtConcurrent/QtConcurrent
