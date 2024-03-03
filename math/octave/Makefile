@@ -2,7 +2,7 @@ COMMENT =      Scientific Programming Language
 
 VERSION =	7.3.0
 DISTNAME =	octave-${VERSION}
-REVISION =	4
+REVISION =	5
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
@@ -80,6 +80,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS	=	--disable-java \
+			--disable-rapidjson \
 			--without-fltk
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
