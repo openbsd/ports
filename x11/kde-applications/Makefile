@@ -108,6 +108,7 @@
      SUBDIR += kmix
      #SUBDIR += kwave
      SUBDIR += elisa
+     SUBDIR += plasmatube
 
      # internet / network
      SUBDIR += kdenetwork-filesharing
@@ -279,7 +280,6 @@
      # krecorder
      # ktrip
      # kweather
-     # plasmatube
      # qmlkonsole
      # telly-skout
 
