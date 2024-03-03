@@ -1,12 +1,13 @@
 COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.6
+REVISION =	0
 DISTNAME =	woob-${MODPY_EGG_VERSION}
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes

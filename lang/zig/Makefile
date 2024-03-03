@@ -6,7 +6,7 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.11.0
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
@@ -20,7 +20,7 @@ CATEGORIES =	lang
 
 HOMEPAGE =	https://ziglang.org/
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

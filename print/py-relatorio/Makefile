@@ -3,13 +3,13 @@ COMMENT=		templating library able to output odt and pdf files
 MODPY_EGG_VERSION=	0.10.1
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		print textproc
 
 HOMEPAGE=		https://relatorio.tryton.org/
 
-MAINTAINER =		Sebastien Marie <semarie@online.fr>
+MAINTAINER =		Sebastien Marie <semarie@kapouay.eu.org>
 
 # GPLv3
 PERMIT_PACKAGE=	Yes

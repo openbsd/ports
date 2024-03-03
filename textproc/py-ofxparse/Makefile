@@ -1,13 +1,13 @@
 COMMENT =	parser for the Open Financial Exchange file format
 
 MODPY_EGG_VERSION = 0.21
-REVISION =	2
+REVISION =	3
 DISTNAME =	ofxparse-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	textproc
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

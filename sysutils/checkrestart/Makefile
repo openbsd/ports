@@ -2,12 +2,12 @@ COMMENT =	help to find programs that need restarting after upgrade
 
 V =		1.0
 DISTNAME =	checkrestart-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/semarie/checkrestart
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

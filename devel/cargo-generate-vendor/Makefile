@@ -2,11 +2,11 @@ COMMENT =	help generating metadata for cargo vendoring
 
 V =		1.0
 DISTNAME =	cargo-generate-vendor-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
