@@ -4,7 +4,7 @@ COMMENT-return =	reSIProcate STUN/TURN client and server
 
 V =			1.12.0
 DISTNAME =		resiprocate-${V}
-REVISION =		4
+REVISION =		5
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}

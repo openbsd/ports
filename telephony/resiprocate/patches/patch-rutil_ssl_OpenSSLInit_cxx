@@ -1,0 +1,16 @@
+Index: rutil/ssl/OpenSSLInit.cxx
+--- rutil/ssl/OpenSSLInit.cxx.orig
++++ rutil/ssl/OpenSSLInit.cxx
+@@ -69,10 +69,10 @@ OpenSSLInit::OpenSSLInit()
+ 	CRYPTO_set_dynlock_lock_callback(::resip_OpenSSLInit_dynLockFunction);
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+ 	CRYPTO_malloc_debug_init();
+ 	CRYPTO_set_mem_debug_options(V_CRYPTO_MDEBUG_ALL);
+-#else
++#elif !defined(LIBRESSL_VERSION_NUMBER)
+ 	CRYPTO_set_mem_debug(1);
+ #endif
+ 
