@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
-XFCE_VERSION =	4.18.2
+XFCE_VERSION =	4.18.3
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -28,6 +28,8 @@ WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xfce4ui-2 xfce4util xfconf-0
 WANTLIB += xkbfile xklavier xml2 xshmfence z harfbuzz dbus-glib-1 wnck-3
 WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb-randr xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/xfce4-screensaver/xdg/menus
