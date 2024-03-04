@@ -1,6 +1,6 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.6.4
+MODPY_EGG_VERSION=	1.6.5
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
@@ -16,11 +16,12 @@ MODULES=		lang/python
 MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
-WANTLIB+=		netcdf pthread
+WANTLIB+=		netcdf
 
-LIB_DEPENDS=		math/netcdf
-
-BUILD_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
+BUILD_DEPENDS+=		archivers/blosc \
+			archivers/libzip \
+			archivers/snappy \
+			lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
 			math/netcdf \
 			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
@@ -28,7 +29,6 @@ BUILD_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 
 RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
-			math/netcdf \
 			math/py-numpy${MODPY_FLAVOR} \
 			math/py-cftime${MODPY_FLAVOR}
 
