@@ -1,6 +1,6 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-V=			2.1
+V=			2.2
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Dpdf=disabled \
 			-Dspell=disabled \
 			-Dvideothumbnailer=disabled \
+			-Dwebp=disabled \
 			-Dgq_htmldir=${PREFIX}/share/doc/geeqie \
 			-Dgq_helpdir=${PREFIX}/share/doc/geeqie
 

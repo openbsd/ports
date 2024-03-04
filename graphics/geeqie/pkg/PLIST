@@ -2,32 +2,35 @@
 @pkgpath graphics/gqview
 @bin bin/geeqie
 lib/geeqie/
+lib/geeqie/downsize
 lib/geeqie/geeqie-camera-import
 lib/geeqie/geeqie-camera-import-hook-script
 lib/geeqie/geeqie-export-jpeg
 lib/geeqie/geeqie-image-crop
 lib/geeqie/geeqie-random-image
+lib/geeqie/geeqie-resize-image
 lib/geeqie/geeqie-rotate
 lib/geeqie/geeqie-symlink
 lib/geeqie/geeqie-tethered-photography
 lib/geeqie/geeqie-tethered-photography-hook-script
-@comment lib/geeqie/geeqie-ufraw
 lib/geeqie/geocode-parameters.awk
 lib/geeqie/lensID
+lib/geeqie/resize-help.sh
 @man man/man1/geeqie.1
-share/applications/geeqie.desktop
+share/applications/org.geeqie.Geeqie.desktop
 share/geeqie/
 share/geeqie/applications/
-share/geeqie/applications/camera-import.desktop
-share/geeqie/applications/export-jpeg.desktop
-@comment share/geeqie/applications/geeqie-ufraw-recursive.desktop
-@comment share/geeqie/applications/geeqie-ufraw.desktop
-share/geeqie/applications/image-crop.desktop
-share/geeqie/applications/random-image.desktop
-share/geeqie/applications/rotate.desktop
-share/geeqie/applications/symlink.desktop
-share/geeqie/applications/tethered-photography.desktop
-share/geeqie/template.desktop
+share/geeqie/applications/org.geeqie.camera-import.desktop
+share/geeqie/applications/org.geeqie.export-jpeg.desktop
+share/geeqie/applications/org.geeqie.image-crop.desktop
+share/geeqie/applications/org.geeqie.open-with.desktop
+share/geeqie/applications/org.geeqie.random-image.desktop
+share/geeqie/applications/org.geeqie.resize-image.desktop
+share/geeqie/applications/org.geeqie.rotate.desktop
+share/geeqie/applications/org.geeqie.symlink.desktop
+share/geeqie/applications/org.geeqie.tethered-photography.desktop
+share/geeqie/applications/org.geeqie.video-player.desktop
+share/geeqie/org.geeqie.template.desktop
 share/icons/hicolor/scalable/apps/geeqie.svg
 share/locale/ar/LC_MESSAGES/geeqie.mo
 share/locale/be/LC_MESSAGES/geeqie.mo

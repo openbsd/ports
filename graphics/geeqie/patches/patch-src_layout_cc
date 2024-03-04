@@ -1,0 +1,46 @@
+Fix #1236: Window Layouts with vertical split are shifted to the left
+148f003f5b23bd38feacb263189e1646a1da193a
+
+Index: src/layout.cc
+--- src/layout.cc.orig
++++ src/layout.cc
+@@ -326,8 +326,10 @@ static GtkWidget *layout_tool_setup(LayoutWindow *lw)
+ 	GtkWidget *box_menu_tabcomp;
+ 	GtkWidget *menu_bar;
+ 	GtkWidget *menu_tool_bar;
++	GtkWidget *menu_toolbar_box;
+ 	GtkWidget *open_menu;
+ 	GtkWidget *scd;
++	GtkWidget *scroll_window;
+ 	GtkWidget *tabcomp;
+ 	GtkWidget *toolbar;
+ 
+@@ -335,17 +337,23 @@ static GtkWidget *layout_tool_setup(LayoutWindow *lw)
+ 
+ 	if (!options->expand_menu_toolbar)
+ 		{
++		menu_toolbar_box = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
++		scroll_window = gq_gtk_scrolled_window_new(nullptr, nullptr);
++		gtk_scrolled_window_set_policy(GTK_SCROLLED_WINDOW(scroll_window), GTK_POLICY_AUTOMATIC, GTK_POLICY_NEVER);
++
+ 		if (!options->hamburger_menu)
+ 			{
+ 			menu_bar = layout_actions_menu_bar(lw);
+-
+-			gtk_widget_show(menu_bar);
+-
+-			gq_gtk_box_pack_start(GTK_BOX(box), menu_bar, FALSE, FALSE, 0);
++			gq_gtk_box_pack_start(GTK_BOX(menu_toolbar_box), menu_bar, FALSE, FALSE, 0);
+ 			}
+ 
+ 		toolbar = layout_actions_toolbar(lw, TOOLBAR_MAIN);
+-		gq_gtk_box_pack_start(GTK_BOX(box), toolbar, FALSE, FALSE, 0);
++
++		gq_gtk_box_pack_start(GTK_BOX(menu_toolbar_box), toolbar, FALSE, FALSE, 0);
++		gq_gtk_container_add(GTK_WIDGET(scroll_window), menu_toolbar_box);
++		gq_gtk_box_pack_start(GTK_BOX(box), scroll_window, FALSE, FALSE, 0);
++
++		gtk_widget_show_all(scroll_window);
+ 		}
+ 	else
+ 		{

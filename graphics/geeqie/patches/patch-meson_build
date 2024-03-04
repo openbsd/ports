@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -138,7 +138,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
+@@ -133,7 +133,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
  helpdir = join_paths(prefix, gq_helpdir)
  htmldir = join_paths(prefix, gq_htmldir)
  icondir = join_paths(datadir, 'pixmaps')
@@ -10,12 +10,3 @@ Index: meson.build
  
  podir = join_paths(meson.project_source_root(), 'po')
  scriptsdir = join_paths(meson.project_source_root(), 'scripts')
-@@ -279,7 +279,7 @@ endif
- exiv2_dep = []
- # See https://github.com/BestImageViewer/geeqie/issues/1090
- # for the reason for 0.28.0 exclusion
--req_version = ['>=0.11', '!=0.28.0']
-+req_version = ['>=0.11']
- 
- req_version_str = ''
- foreach req_version_str_ : req_version
