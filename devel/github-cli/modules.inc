@@ -137,7 +137,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/glamour			 v0.6.0 \
 	github.com/charmbracelet/lipgloss			 v0.5.0 \
 	github.com/cli/browser					 v1.3.0 \
-	github.com/cli/go-gh/v2					 v2.5.0 \
+	github.com/cli/go-gh/v2					 v2.6.0 \
 	github.com/cli/oauth					 v1.0.1 \
 	github.com/cli/safeexec					 v1.0.1 \
 	github.com/cli/shurcoo!l-graphql			 v0.0.4 \

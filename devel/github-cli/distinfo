@@ -1,4 +1,4 @@
-SHA256 (cli-v2.44.1.zip) = IlmpLQoHPkj1nhrglFdlXKM5hgM5s2+Mhe0m7VKOwCQ=
+SHA256 (cli-v2.45.0.zip) = DMv76r7O6OUvsAThl7fo0B4ZV1AWnToDnPW/SkNWE4Q=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = O29NEw+OV6zWIuXjFT6h9S5KXzwbXoW3zojCi1nx384=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.0.zip) = i9zg17/AfnHOu7198tk9FBijXu0JIRuyHjwe6NL6v3w=
 SHA256 (go_modules/cloud.google.com/go/accessapproval/@v/v1.6.0.mod) = m1QAnn26igeBgjh40bZsP9ZosBmW0YyybMNg5yS3ZaU=
@@ -277,8 +277,8 @@ SHA256 (go_modules/github.com/charmbracelet/lipgloss/@v/v0.5.0.zip) = n0i/nj+fc7
 SHA256 (go_modules/github.com/cli/browser/@v/v1.0.0.mod) = QdcLnkega8NWkcgi1ex7ul88+SMnUK2Zx0ZNgqoRtcs=
 SHA256 (go_modules/github.com/cli/browser/@v/v1.3.0.mod) = JCtqftFtAZRErdebinUKBmGs//0x8eIaqCbh9FgxCQU=
 SHA256 (go_modules/github.com/cli/browser/@v/v1.3.0.zip) = XXQ3Kfy21UZ/IGMo5HawvcEkQmp34tjhMyCtkpr9ASc=
-SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.5.0.mod) = wvbSCVswzZ14HQTDmEVbe85xswJD+tbTwpP8Y0eghug=
-SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.5.0.zip) = NGLy3MNHEAOaMeZe+vy6tLQTU0LYCMUHI4gNFGrnSWM=
+SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.6.0.mod) = wvbSCVswzZ14HQTDmEVbe85xswJD+tbTwpP8Y0eghug=
+SHA256 (go_modules/github.com/cli/go-gh/v2/@v/v2.6.0.zip) = NaOwQ7bDt7jmN0UNFa9wJBpdSNap03zuAygcSc7L2RU=
 SHA256 (go_modules/github.com/cli/oauth/@v/v1.0.1.mod) = iaNr6MnDkK/QGZY22g04ciu1+Pv45e2oyclHzSi0t+w=
 SHA256 (go_modules/github.com/cli/oauth/@v/v1.0.1.zip) = k9VWJjiTchdJf1Zh8c3QIT3801uQojEwIm91CPjQPlo=
 SHA256 (go_modules/github.com/cli/safeexec/@v/v1.0.0.mod) = 8MehvVCdJn0F+UmNi5kN4OP9V5lUrigB0oBr0zCsGDM=
@@ -532,7 +532,7 @@ SHA256 (go_modules/gopkg.in/h2non/gock.v1/@v/v1.1.2.zip) = oGf7/77c+jWbAKmKXv2SQ
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (cli-v2.44.1.zip) = 1277842
+SIZE (cli-v2.45.0.zip) = 1289096
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = 1007
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.zip) = 553617
 SIZE (go_modules/cloud.google.com/go/accessapproval/@v/v1.6.0.mod) = 948
@@ -811,8 +811,8 @@ SIZE (go_modules/github.com/charmbracelet/lipgloss/@v/v0.5.0.zip) = 32461
 SIZE (go_modules/github.com/cli/browser/@v/v1.0.0.mod) = 79
 SIZE (go_modules/github.com/cli/browser/@v/v1.3.0.mod) = 73
 SIZE (go_modules/github.com/cli/browser/@v/v1.3.0.zip) = 6971
-SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.5.0.mod) = 1929
-SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.5.0.zip) = 95451
+SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.6.0.mod) = 1929
+SIZE (go_modules/github.com/cli/go-gh/v2/@v/v2.6.0.zip) = 95901
 SIZE (go_modules/github.com/cli/oauth/@v/v1.0.1.mod) = 76
 SIZE (go_modules/github.com/cli/oauth/@v/v1.0.1.zip) = 23713
 SIZE (go_modules/github.com/cli/safeexec/@v/v1.0.0.mod) = 40
