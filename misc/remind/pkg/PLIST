@@ -16,12 +16,15 @@ libdata/perl5/site_perl/Remind/PDF/Entry.pm
 @man man/man1/tkremind.1
 @man man/man3p/Remind::PDF.3p
 @man man/man3p/Remind::PDF::Entry.3p
+share/applications/tkremind.desktop
 share/examples/remind/
 share/examples/remind/alignment.rem
 share/examples/remind/ansitext
 share/examples/remind/astro
 share/examples/remind/defs.rem
 share/examples/remind/remind.vim
+share/pixmaps/
+share/pixmaps/tkremind.png
 share/remind/
 share/remind/ansitext.rem
 share/remind/holidays/
@@ -33,6 +36,7 @@ share/remind/holidays/jewish.rem
 share/remind/holidays/us.rem
 share/remind/lang/
 share/remind/lang/auto.rem
+share/remind/lang/ca.rem
 share/remind/lang/da.rem
 share/remind/lang/de.rem
 share/remind/lang/en.rem
@@ -50,3 +54,5 @@ share/remind/lang/ro.rem
 share/remind/seasons.rem
 share/remind/site/
 share/remind/site/README
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/tkremind
