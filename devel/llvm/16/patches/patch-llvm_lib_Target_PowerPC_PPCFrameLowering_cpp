@@ -9,7 +9,20 @@ Index: llvm/lib/Target/PowerPC/PPCFrameLowering.cpp
  #include "PPCSubtarget.h"
  #include "PPCTargetMachine.h"
  #include "llvm/ADT/Statistic.h"
-@@ -2711,4 +2712,8 @@ bool PPCFrameLowering::enableShrinkWrapping(const Mach
+@@ -1192,12 +1193,6 @@ void PPCFrameLowering::emitPrologue(MachineFunction &M
+       if ((Reg == PPC::X2 || Reg == PPC::R2) && MustSaveTOC)
+         continue;
+ 
+-      // For SVR4, don't emit a move for the CR spill slot if we haven't
+-      // spilled CRs.
+-      if (isSVR4ABI && (PPC::CR2 <= Reg && Reg <= PPC::CR4)
+-          && !MustSaveCR)
+-        continue;
+-
+       // For 64-bit SVR4 when we have spilled CRs, the spill location
+       // is SP+8, not a frame-relative slot.
+       if (isSVR4ABI && isPPC64 && (PPC::CR2 <= Reg && Reg <= PPC::CR4)) {
+@@ -2711,4 +2706,8 @@ bool PPCFrameLowering::enableShrinkWrapping(const Mach
    if (MF.getInfo<PPCFunctionInfo>()->shrinkWrapDisabled())
      return false;
    return !MF.getSubtarget<PPCSubtarget>().is32BitELFABI();
