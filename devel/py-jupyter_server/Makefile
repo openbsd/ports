@@ -51,4 +51,10 @@ TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
 			devel/py-test-tornasync${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
+# avoid trying to fetch from the network during build if npm is installed
+# XXX setting JUPYTER_PACKAGING_SKIP_NPM=1 in MAKE_ENV should do this too,
+# but doesn't seem to work
+post-extract:
+	ln -s /usr/bin/true ${WRKDIR}/bin/npm
+
 .include <bsd.port.mk>
