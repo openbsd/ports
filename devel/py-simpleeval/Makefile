@@ -1,12 +1,13 @@
 COMMENT =	simple, safe single expression evaluator library
 
 MODPY_EGG_VERSION = 0.9.13
+REVISION =	0
 DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	devel
 
-MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes
