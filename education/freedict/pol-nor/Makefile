@@ -1,6 +1,6 @@
 COMMENT =	Polish-Norwegian FreeDict+WikDict Dictionary
 DICT =	pol-nor
-V =	2022.11.18
+V =	2023.05.29
 
 # Creative Commons Attribution-ShareAlike 3.0
 PERMIT_PACKAGE =	Yes

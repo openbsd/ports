@@ -1,4 +1,4 @@
-# See https://freedict.org/freedict-database.xml for all dictionaries
+# see https://freedict.org/freedict-database.json for all dictionaries
 DISTNAME =	freedict-${DICT}-${V}.dictd
 PKGNAME ?=	${DISTNAME:.dictd=}
 
