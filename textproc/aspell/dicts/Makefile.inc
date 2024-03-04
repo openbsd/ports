@@ -1,7 +1,6 @@
 # Check individual packages for overrides when bumping this!
 PKGNAMEBASE=	${DISTNAME:C/aspell[0-9]/aspell/}
 PKGNAME?=	${PKGNAMEBASE:C/-([0-9])$/.\1/}
-REVISION?=	0
 EPOCH?=		1
 FIX_EXTRACT_PERMISSIONS=Yes
 
