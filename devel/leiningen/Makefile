@@ -1,8 +1,7 @@
 COMMENT =		Clojure project automation
 
-GH_ACCOUNT =		technomancy
-GH_PROJECT =		leiningen
-GH_TAGNAME =		2.10.0
+V =			2.11.2
+DIST_TUPLE =		codeberg leiningen leiningen $V .
 
 JAR_FILE =		${DISTNAME}-standalone.jar
 
@@ -10,9 +9,9 @@ CATEGORIES =		devel lang
 
 HOMEPAGE =		https://leiningen.org
 
-SITES.jar =		https://github.com/technomancy/leiningen/releases/download/${GH_TAGNAME}/
+SITES.jar =		https://codeberg.org/leiningen/leiningen/releases/download/$V/
 DISTFILES.jar =		${JAR_FILE}
-EXTRACT_ONLY =		${DISTFILES:N*.jar}
+EXTRACT_ONLY =		${ALL_DISTFILES:N*.jar}
 
 # EPL
 PERMIT_PACKAGE =	Yes
@@ -32,6 +31,8 @@ ZSH_DIR =		${PREFIX}/share/zsh/site-functions
 
 SUBST_VARS +=		JAR_FILE \
 			JAVA_HOME
+
+WRKDIST =		${WRKDIR}/leiningen
 
 do-install:
 	${SUBST_PROGRAM} ${LEIN} ${PREFIX}/bin/lein
