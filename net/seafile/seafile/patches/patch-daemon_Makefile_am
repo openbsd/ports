@@ -1,7 +1,7 @@
 Index: daemon/Makefile.am
 --- daemon/Makefile.am.orig
 +++ daemon/Makefile.am
-@@ -80,7 +80,7 @@ seaf_daemon_SOURCES = seaf-daemon.c $(common_src)
+@@ -94,7 +94,7 @@ seaf_daemon_SOURCES = seaf-daemon.c $(common_src)
  
  seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_common.la \
  	@GLIB2_LIBS@  @GOBJECT_LIBS@ @SSL_LIBS@ @GNUTLS_LIBS@ @NETTLE_LIBS@ \
