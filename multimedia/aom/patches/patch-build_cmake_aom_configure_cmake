@@ -1,0 +1,16 @@
+ARM uses compiler intrinsics, so don't require GNU as.
+
+Index: build/cmake/aom_configure.cmake
+--- build/cmake/aom_configure.cmake.orig
++++ build/cmake/aom_configure.cmake
+@@ -192,6 +192,10 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
+     if(NOT CMAKE_ASM_COMPILER)
+       set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER} -c -mimplicit-it=always)
+     endif()
++  elseif(AOM_TARGET_SYSTEM STREQUAL "OpenBSD")
++    if(NOT CMAKE_ASM_COMPILER)
++      set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
++    endif()
+   else()
+     if(NOT CMAKE_ASM_COMPILER)
+       set(CMAKE_ASM_COMPILER as)
