@@ -1,0 +1,11 @@
+Index: codec/common/arm64/arm_arch64_common_macro.S
+--- codec/common/arm64/arm_arch64_common_macro.S.orig
++++ codec/common/arm64/arm_arch64_common_macro.S
+@@ -60,6 +60,7 @@ ret
+ .func \funcName
+ #endif
+ \funcName:
++  bti c
+ .endm
+ 
+ .macro WELS_ASM_AARCH64_FUNC_END
