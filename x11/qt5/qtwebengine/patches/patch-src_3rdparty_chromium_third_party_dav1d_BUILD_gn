@@ -11,7 +11,7 @@ Index: src/3rdparty/chromium/third_party/dav1d/BUILD.gn
  if (is_win) {
    platform_config_root = "config/win/$current_cpu"
 -} else if (is_msan) {
-+} else if (!enable_nasm) {
++} else if (!enable_nasm && current_cpu == "x64") {
    assert(current_cpu == "x64" && (is_linux || is_chromeos),
           "Only Linux X64 MSAN is supported")
    platform_config_root = "config/linux-noasm/$current_cpu"
