@@ -4,9 +4,9 @@ DISTNAME=	libgeotiff-1.7.1
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 3.1 # 6.0
 WRKSRC=	${WRKDIR}/${DISTNAME:S/rc2//}
-REVISION=	0
+REVISION=	1
 
-HOMEPAGE=	https://trac.osgeo.org/geotiff/
+HOMEPAGE=	https://github.com/OSGeo/libgeotiff
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
@@ -24,8 +24,9 @@ CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
 			--with-libtiff=${LOCALBASE} \
 			--with-libz
 
-WANTLIB=		c jpeg lzma m z proj tiff pthread sqlite3 zstd
-WANTLIB +=		crypto curl nghttp2 ssl ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} c crypto curl jpeg lzma m nghttp2
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls proj sqlite3 ssl
+WANTLIB += tiff z zstd
 
 LIB_DEPENDS=		devel/proj>=6 \
 			graphics/tiff
