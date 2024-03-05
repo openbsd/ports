@@ -1,12 +1,28 @@
+fix build on big endian
+
+https://github.com/uclouvain/openjpeg/pull/1520
+https://github.com/uclouvain/openjpeg/commit/995d8c96b51f3e510457cf71b5b5902de11dc08c
+
 Index: src/bin/jp2/convert.c
 --- src/bin/jp2/convert.c.orig
 +++ src/bin/jp2/convert.c
-@@ -662,7 +662,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
-     return 1;
- }
+@@ -664,7 +664,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
  
--#ifdef OPJ_BIG_ENDIAN
-+#if defined(OPJ_BIG_ENDIAN) && !defined(swap16)
+ #ifdef OPJ_BIG_ENDIAN
  
- static INLINE OPJ_UINT16 swap16(OPJ_UINT16 x)
+-static INLINE OPJ_UINT16 swap16(OPJ_UINT16 x)
++static INLINE OPJ_UINT16 opj_swap16(OPJ_UINT16 x)
  {
+     return (OPJ_UINT16)(((x & 0x00ffU) <<  8) | ((x & 0xff00U) >>  8));
+ }
+@@ -733,8 +733,8 @@ static int tga_writeheader(FILE *fp, int bits_per_pixe
+         goto fails;
+     }
+ #else
+-    image_w = swap16(image_w);
+-    image_h = swap16(image_h);
++    image_w = opj_swap16(image_w);
++    image_h = opj_swap16(image_h);
+     if (fwrite(&image_w, 2, 1, fp) != 1) {
+         goto fails;
+     }
