@@ -4,6 +4,7 @@ bin/pyproj
 lib/python${MODPY_VERSION}/site-packages/pyproj/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/LICENSE_proj
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -39,21 +40,34 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}transformer.${MO
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_network.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_network.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_network.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/aoi.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/base.pxi
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproj/crs/${MODPY_PYCACHE}/
@@ -79,13 +93,16 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/crs/datum.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/enums.py
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/database.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/database.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/database.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/datadir.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/enums.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/geod.py
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/list.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/list.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/list.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/network.py
+lib/python${MODPY_VERSION}/site-packages/pyproj/proj.pxi
 lib/python${MODPY_VERSION}/site-packages/pyproj/proj.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyproj/sync.py
