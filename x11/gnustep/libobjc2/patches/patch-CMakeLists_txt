@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -126,7 +126,7 @@ endif ()
+ 
+ find_package(tsl-robin-map)
+ 
+-if (NOT tls-robin-map_FOUND)
++if (NOT tsl-robin-map_FOUND)
+ 	FetchContent_Declare(
+ 		robinmap
+ 		GIT_REPOSITORY https://github.com/Tessil/robin-map/
