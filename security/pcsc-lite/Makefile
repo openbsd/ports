@@ -1,6 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		2.0.1
+V=		2.0.2
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
