@@ -36,6 +36,7 @@ MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext,-tools \
+		devel/meson \
 		devel/ninja \
 		shells/bash \
 		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
