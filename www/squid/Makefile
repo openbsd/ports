@@ -1,17 +1,15 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		6.7
+V=		6.8
 DISTNAME=	squid-$V
-DISTFILES=	${DISTNAME}pl0{${DISTNAME}}.tar.xz
-PKGNAME=	squid-$Vpl0
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
 
 # subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME-ldap= squid-ldap-$Vpl0
+FULLPKGNAME-ldap= squid-ldap-$V
 FULLPKGPATH-ldap= ${PKGPATH},-ldap
-RUN_DEPENDS-ldap += squid-$Vpl0v0:www/squid
+RUN_DEPENDS-ldap += squid-$Vv0:www/squid
 
 EPOCH=		0
 CATEGORIES=	www
@@ -30,11 +28,11 @@ SITES=		${HOMEPAGE}Versions/v${V:R:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
 # cope with missing translations in re-rolled 6.7 release
-DISTFILES.lang=	squid-langpack-20231227.tar.gz
-SITES.lang=	http://www.squid-cache.org/Versions/langpack/
-EXTRACT_ONLY=   ${ALL_DISTFILES:N*langpack*}
-post-extract:
-	cd ${WRKSRC}/errors; tar xzf ${FULLDISTDIR}/squid-langpack-20231227.tar.gz
+#DISTFILES.lang=	squid-langpack-20231227.tar.gz
+#SITES.lang=	http://www.squid-cache.org/Versions/langpack/
+#EXTRACT_ONLY=   ${ALL_DISTFILES:N*langpack*}
+#post-extract:
+#	cd ${WRKSRC}/errors; tar xzf ${FULLDISTDIR}/squid-langpack-20231227.tar.gz
 
 # C++17
 COMPILER=	base-clang ports-gcc
