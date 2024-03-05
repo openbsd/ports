@@ -1,6 +1,6 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_EGG_VERSION=	1.0.3
+MODPY_EGG_VERSION=	1.1.1
 
 DISTNAME=	build-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
@@ -14,6 +14,8 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
+
+# contains tests, but not clear how to run
 NO_TEST=	Yes
 
 FLAVORS=	python3
