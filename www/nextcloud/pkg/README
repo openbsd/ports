@@ -51,17 +51,46 @@ server "domain.tld" {
 
 	block drop
 
-	# Ensure that no '*.php*' files can be fetched from these directories
-	location "/nextcloud/config/*" {
-		block drop
+	# only allow well-known and required php files for fastcgi
+	# required for the webpage to work
+	location "/nextcloud/index.php*" {
+		root "/nextcloud"
+		request strip 1
+		fastcgi socket "/run/php-fpm.sock"
+		pass
 	}
 
-	location "/nextcloud/data/*" {
-		block drop
+	location "/nextcloud/public.php*" {
+		root "/nextcloud"
+		request strip 1
+		fastcgi socket "/run/php-fpm.sock"
+		pass
 	}
 
-	# Note that this matches "*.php*" anywhere in the request path.
-	location "/nextcloud/*.php*" {
+	# required for caldav and carddav
+	location "/nextcloud/remote.php*" {
+		root "/nextcloud"
+		request strip 1
+		fastcgi socket "/run/php-fpm.sock"
+		pass
+	}
+
+	# required for the sync app
+	location "/nextcloud/status.php" {
+		root "/nextcloud"
+		request strip 1
+		fastcgi socket "/run/php-fpm.sock"
+		pass
+	}
+
+	location "/nextcloud/ocs/*.php*" {
+		root "/nextcloud"
+		request strip 1
+		fastcgi socket "/run/php-fpm.sock"
+		pass
+	}
+
+	location "/nextcloud/ocs-provider/*.php*" {
 		root "/nextcloud"
 		request strip 1
 		fastcgi socket "/run/php-fpm.sock"
@@ -87,11 +116,15 @@ server "domain.tld" {
 	}
 
 	location "/nextcloud" {
-		block return 301 "$DOCUMENT_URI/index.php"
+		root "/nextcloud"
+		request strip 1
+		pass
 	}
 
 	location "/nextcloud/" {
-		block return 301 "$DOCUMENT_URI/index.php"
+		root "/nextcloud"
+		request strip 1
+		pass
 	}
 
 	location "/.well-known/carddav" {
