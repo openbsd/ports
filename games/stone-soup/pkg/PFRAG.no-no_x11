@@ -1,10 +1,11 @@
-share/applications/org.develz.Crawl_tiles.desktop
+share/applications/stone-soup.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/feat.png
 share/crawl/dat/tiles/floor.png
 share/crawl/dat/tiles/gui.png
 share/crawl/dat/tiles/icons.png
 share/crawl/dat/tiles/logo.png
+share/crawl/dat/tiles/logo_cropped.png
 share/crawl/dat/tiles/logosmall.png
 share/crawl/dat/tiles/main.png
 share/crawl/dat/tiles/player.png
@@ -36,6 +37,7 @@ share/crawl/dat/tiles/title_froggy_thunder_fist_nikola.png
 share/crawl/dat/tiles/title_gompami_kohu_xbow.png
 share/crawl/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
 share/crawl/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
+share/crawl/dat/tiles/title_king7artist_eustachio.png
 share/crawl/dat/tiles/title_micah_c_ereshkigal.png
 share/crawl/dat/tiles/title_nibiki_octopode.png
 share/crawl/dat/tiles/title_omndra_zot_demon.png
@@ -50,6 +52,7 @@ share/crawl/dat/tiles/title_shadyamish_octm.png
 share/crawl/dat/tiles/title_white_noise_entering_the_dungeon.png
 share/crawl/dat/tiles/title_white_noise_grabbing_the_orb.png
 share/crawl/dat/tiles/wall.png
+share/crawl/docs/tiles_help.txt
 share/pixmaps/
 share/pixmaps/stone-soup.png
 @tag update-desktop-database

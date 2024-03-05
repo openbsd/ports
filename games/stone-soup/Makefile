@@ -2,7 +2,8 @@ BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
 
-VERSION = 	0.30.1
+VERSION = 	0.31.0
+TAGNAME =	The Alchemy of Forms
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
@@ -18,8 +19,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c m sqlite3
 
-SITES = 	https://crawl.develz.org/release/${VERSION:R}/ \
-		https://github.com/crawl/crawl/releases/download/${VERSION}/
+SITES =		https://github.com/crawl/crawl/releases/download/${VERSION}/
 EXTRACT_SUFX=	.tar.xz
 
 COMPILER =	base-clang ports-gcc
@@ -41,13 +41,15 @@ MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \
 		INSTALL_UGRP=root:wheel \
 		prefix=${PREFIX} \
 		SAVEDIR="~/.crawl" \
-		NO_YACC=1 V=1
+		NO_YACC=1 V=1 \
+		SRC_VERSION=${VERSION} RECENT_TAG="${TAGNAME}"
 
 USE_GMAKE = 	Yes
 CONFIGURE_STYLE = none
 
 MODPY_RUN_DEPENDS = 	No
-MODPY_ADJ_FILES = util/species-gen.py
+MODPY_ADJ_FILES =	util/species-gen.py \
+			util/tag-35-upgrade.py
 
 FLAVORS = 	no_x11
 FLAVOR ?=
@@ -62,7 +64,7 @@ CXXFLAGS +=	-DUSE_TILE
 
 MAKE_FLAGS += 	TILES=y \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-		    -lSDL2 -lSDL2_image -lpng -pthread"
+		-lSDL2 -lSDL2_image -lpng -pthread"
 WANTLIB += 	GL GLU SDL2 SDL2_image freetype png pthread z
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS += 	devel/sdl2 \
@@ -85,12 +87,11 @@ post-install:
 	${INSTALL_MAN} ${WRKDIST}/docs/crawl.6 ${PREFIX}/man/man6/crawl-ss.6
 .if ! ${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/stone-soup.desktop \
+		${PREFIX}/share/applications
 	${INSTALL_DATA} \
 		${PREFIX}/share/crawl/dat/tiles/stone_soup_icon-32x32.png \
 		${PREFIX}/share/pixmaps/stone-soup.png
-	${INSTALL_DATA} \
-		${WRKDIST}/source/xdg-data/org.develz.Crawl_tiles.desktop \
-		${PREFIX}/share/applications
 .endif
 
 .include <bsd.port.mk>

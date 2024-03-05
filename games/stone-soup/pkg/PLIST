@@ -35,9 +35,14 @@ share/crawl/dat/database/shout.txt
 share/crawl/dat/database/wpnnoise.txt
 share/crawl/dat/database/zh/
 share/crawl/dat/database/zh/FAQ.txt
+share/crawl/dat/database/zh/godname.txt
+share/crawl/dat/database/zh/godspeak.txt
 share/crawl/dat/database/zh/help.txt
+share/crawl/dat/database/zh/miscname.txt
 share/crawl/dat/database/zh/monflee.txt
+share/crawl/dat/database/zh/monspell.txt
 share/crawl/dat/database/zh/montitle.txt
+share/crawl/dat/database/zh/shout.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
 share/crawl/dat/defaults/glyph_colours.txt
@@ -105,6 +110,7 @@ share/crawl/dat/des/branches/zot.des
 share/crawl/dat/des/builder/
 share/crawl/dat/des/builder/alphashops.des
 share/crawl/dat/des/builder/arena.des
+share/crawl/dat/des/builder/custombooks.des
 share/crawl/dat/des/builder/decor.des
 share/crawl/dat/des/builder/dummy.des
 share/crawl/dat/des/builder/layout.des
@@ -151,6 +157,7 @@ share/crawl/dat/des/serial/forest.des
 share/crawl/dat/des/serial/glass.des
 share/crawl/dat/des/serial/gnoll_camp.des
 share/crawl/dat/des/serial/ice.des
+share/crawl/dat/des/serial/library.des
 share/crawl/dat/des/serial/magic_research.des
 share/crawl/dat/des/serial/park.des
 share/crawl/dat/des/serial/rivers.des
@@ -572,10 +579,10 @@ share/crawl/dat/dlua/lm_fog.lua
 share/crawl/dat/dlua/lm_items.lua
 share/crawl/dat/dlua/lm_mon_prop.lua
 share/crawl/dat/dlua/lm_monst.lua
-share/crawl/dat/dlua/lm_mslav.lua
 share/crawl/dat/dlua/lm_named_hatch.lua
 share/crawl/dat/dlua/lm_pdesc.lua
 share/crawl/dat/dlua/lm_props.lua
+share/crawl/dat/dlua/lm_replica.lua
 share/crawl/dat/dlua/lm_timed.lua
 share/crawl/dat/dlua/lm_tmsg.lua
 share/crawl/dat/dlua/lm_toll.lua
@@ -612,11 +619,11 @@ share/crawl/docs/arena.txt
 @comment share/crawl/docs/changelog.txt
 share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/coding_conventions.txt
+@comment share/crawl/docs/develop/background_creation.txt
 @comment share/crawl/docs/develop/
 @comment share/crawl/docs/develop/IRC.txt
 @comment share/crawl/docs/develop/android.txt
 @comment share/crawl/docs/develop/arena.txt
-@comment share/crawl/docs/develop/background_creation.txt
 @comment share/crawl/docs/develop/ctags.txt
 @comment share/crawl/docs/develop/editor_tips.txt
 @comment share/crawl/docs/develop/gdb_tips.txt
@@ -650,20 +657,7 @@ share/crawl/docs/options_guide.txt
 share/crawl/docs/quickstart.md
 share/crawl/docs/quickstart.txt
 @comment share/crawl/docs/ssh_guide.txt
-share/crawl/docs/tiles_help.txt
 share/crawl/settings/
-share/crawl/settings/0.12_monster_glyphs.txt
-share/crawl/settings/0.13_monster_glyphs.txt
-share/crawl/settings/0.14_monster_glyphs.txt
-share/crawl/settings/0.16_monster_glyphs.txt
-share/crawl/settings/0.17_monster_glyphs.txt
-share/crawl/settings/0.18_monster_glyphs.txt
-share/crawl/settings/0.9_monster_glyphs.txt
-share/crawl/settings/034_command_keys.txt
-share/crawl/settings/052_monster_glyphs.txt
-share/crawl/settings/060_monster_glyphs.txt
-share/crawl/settings/071_monster_glyphs.txt
-share/crawl/settings/080_monster_glyphs.txt
 share/crawl/settings/advanced_optioneering.txt
 share/crawl/settings/colemak_command_keys.txt
 share/crawl/settings/dec_glyphs.txt

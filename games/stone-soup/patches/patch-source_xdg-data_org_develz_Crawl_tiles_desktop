@@ -1,9 +1,0 @@
-Index: source/xdg-data/org.develz.Crawl_tiles.desktop
---- source/xdg-data/org.develz.Crawl_tiles.desktop.orig
-+++ source/xdg-data/org.develz.Crawl_tiles.desktop
-@@ -5,3 +5,5 @@ Comment=A fun game in the grand tradition of games lik
- Type=Application
- Terminal=false
- Categories=Game;AdventureGame;RolePlaying;
-+Icon=stone-soup
-+Exec=/usr/local/bin/crawl-ss
