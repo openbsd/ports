@@ -66,9 +66,7 @@ CONFIGURE_ARGS +=	--with-pgo-profile-path=${WRKDIR}/merged.profdata
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils \
 			x11/gtk+4,-guic
-# autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
-MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
-			archivers/gtar \
+MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/unzip \
 			archivers/zip>=2.3
 
