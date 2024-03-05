@@ -42,6 +42,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
+# autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
+BUILD_DEPENDS +=	devel/autoconf/2.13
 
 # lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
