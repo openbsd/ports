@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/GUI.cpp
 --- src/slic3r/GUI/GUI.cpp.orig
 +++ src/slic3r/GUI/GUI.cpp
-@@ -498,7 +498,8 @@ void desktop_open_folder(const boost::filesystem::path
+@@ -501,7 +501,8 @@ void desktop_open_folder(const boost::filesystem::path
  #endif
  }
  

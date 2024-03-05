@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/GUI_Init.cpp
 --- src/slic3r/GUI/GUI_Init.cpp.orig
 +++ src/slic3r/GUI/GUI_Init.cpp
-@@ -49,6 +49,10 @@ int GUI_Run(GUI_InitParams &params)
+@@ -45,6 +45,10 @@ int GUI_Run(GUI_InitParams &params)
      signal(SIGCHLD, SIG_DFL);
  #endif // __APPLE__
  

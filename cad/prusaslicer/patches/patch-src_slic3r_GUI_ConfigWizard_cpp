@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/ConfigWizard.cpp
 --- src/slic3r/GUI/ConfigWizard.cpp.orig
 +++ src/slic3r/GUI/ConfigWizard.cpp
-@@ -3058,7 +3058,7 @@ bool ConfigWizard::priv::apply_config(AppConfig *app_c
+@@ -3063,7 +3063,7 @@ bool ConfigWizard::priv::apply_config(AppConfig *app_c
          if ((check_unsaved_preset_changes = install_bundles.size() > 0))
              header = _L_PLURAL("A new vendor was installed and one of its printers will be activated", "New vendors were installed and one of theirs printers will be activated", install_bundles.size());
  

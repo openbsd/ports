@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/GUI.hpp
 --- src/slic3r/GUI/GUI.hpp.orig
 +++ src/slic3r/GUI/GUI.hpp
-@@ -89,7 +89,7 @@ extern void desktop_open_datadir_folder();
+@@ -88,7 +88,7 @@ extern void desktop_open_datadir_folder();
  // Ask the destop to open the directory specified by path using the default file explorer.
  void desktop_open_folder(const boost::filesystem::path& path);
  

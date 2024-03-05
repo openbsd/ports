@@ -421,6 +421,11 @@ share/PrusaSlicer/profiles/Anker.ini
 share/PrusaSlicer/profiles/Anker/M5-bed.stl
 share/PrusaSlicer/profiles/Anker/M5-texture.svg
 share/PrusaSlicer/profiles/Anker/M5-texture_v2.svg
+share/PrusaSlicer/profiles/Anker/M5C-bed.stl
+share/PrusaSlicer/profiles/Anker/M5C-texture.svg
+share/PrusaSlicer/profiles/Anker/M5C-texture_v2.svg
+share/PrusaSlicer/profiles/Anker/M5C_thumbnail.png
+share/PrusaSlicer/profiles/Anker/M5C_thumbnail_v2.png
 share/PrusaSlicer/profiles/Anker/M5_thumbnail.png
 share/PrusaSlicer/profiles/Anker/M5_thumbnail_v2.png
 share/PrusaSlicer/profiles/Anycubic/
@@ -453,12 +458,22 @@ share/PrusaSlicer/profiles/Artillery.ini
 share/PrusaSlicer/profiles/Artillery/Genius_thumbnail.png
 share/PrusaSlicer/profiles/Artillery/Hornet_thumbnail.png
 share/PrusaSlicer/profiles/Artillery/X1_thumbnail.png
+share/PrusaSlicer/profiles/Artillery/X3 Plus_thumbnail.png
+share/PrusaSlicer/profiles/Artillery/X3 Pro_thumbnail.png
+share/PrusaSlicer/profiles/Artillery/X4 Max_thumbnail.png
+share/PrusaSlicer/profiles/Artillery/X4 Plus_thumbnail.png
+share/PrusaSlicer/profiles/Artillery/X4 Pro_thumbnail.png
 share/PrusaSlicer/profiles/Artillery/bed-genius.png
 share/PrusaSlicer/profiles/Artillery/bed-genius.stl
 share/PrusaSlicer/profiles/Artillery/bed-hornet.png
 share/PrusaSlicer/profiles/Artillery/bed-hornet.stl
 share/PrusaSlicer/profiles/Artillery/bed-x1.png
 share/PrusaSlicer/profiles/Artillery/bed-x1.stl
+share/PrusaSlicer/profiles/Artillery/bed-x3-plus.stl
+share/PrusaSlicer/profiles/Artillery/bed-x3-pro.stl
+share/PrusaSlicer/profiles/Artillery/bed-x4-max.stl
+share/PrusaSlicer/profiles/Artillery/bed-x4-plus.stl
+share/PrusaSlicer/profiles/Artillery/bed-x4-pro.stl
 share/PrusaSlicer/profiles/BIBO/
 share/PrusaSlicer/profiles/BIBO.idx
 share/PrusaSlicer/profiles/BIBO.ini
@@ -714,6 +729,7 @@ share/PrusaSlicer/profiles/PrusaResearch/MK2.5S_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2.5_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2SMM_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK2S_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MK35_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK39IS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK39_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK3MMU2_thumbnail.png
@@ -745,6 +761,7 @@ share/PrusaSlicer/profiles/PrusaResearch/mini_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk2.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk2_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk3.svg
+share/PrusaSlicer/profiles/PrusaResearch/mk35.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk39.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk3_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4.svg
@@ -790,12 +807,23 @@ share/PrusaSlicer/profiles/Rigid3D/zero_bed.stl
 share/PrusaSlicer/profiles/Snapmaker/
 share/PrusaSlicer/profiles/Snapmaker.idx
 share/PrusaSlicer/profiles/Snapmaker.ini
-share/PrusaSlicer/profiles/Snapmaker/A250_bed.stl
-share/PrusaSlicer/profiles/Snapmaker/A250_texture.svg
-share/PrusaSlicer/profiles/Snapmaker/A250_thumbnail.png
-share/PrusaSlicer/profiles/Snapmaker/A350_bed.stl
-share/PrusaSlicer/profiles/Snapmaker/A350_texture.svg
-share/PrusaSlicer/profiles/Snapmaker/A350_thumbnail.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual QSKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 Dual_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 QSKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250 QSKit_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A250_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual QSKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 Dual_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 QSKit_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350 QSKit_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker A350_texture.svg
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_bed.stl
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_cover.png
+share/PrusaSlicer/profiles/Snapmaker/Snapmaker J1_texture.svg
 share/PrusaSlicer/profiles/Sovol/
 share/PrusaSlicer/profiles/Sovol.idx
 share/PrusaSlicer/profiles/Sovol.ini

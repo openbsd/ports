@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/OpenGLManager.cpp
 --- src/slic3r/GUI/OpenGLManager.cpp.orig
 +++ src/slic3r/GUI/OpenGLManager.cpp
-@@ -340,7 +340,7 @@ bool OpenGLManager::init_gl()
+@@ -344,7 +344,7 @@ bool OpenGLManager::init_gl()
          glewExperimental = true;
  #endif // ENABLE_GL_CORE_PROFILE || ENABLE_OPENGL_ES
          GLenum err = glewInit();

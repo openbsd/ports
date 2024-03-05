@@ -1,7 +1,7 @@
 Index: src/libslic3r/GCode.cpp
 --- src/libslic3r/GCode.cpp.orig
 +++ src/libslic3r/GCode.cpp
-@@ -1532,13 +1532,13 @@ void GCodeGenerator::process_layers(
+@@ -1524,13 +1524,13 @@ void GCodeGenerator::process_layers(
          [&output_stream](std::string s) { output_stream.write(s); }
      );
  
@@ -17,7 +17,7 @@ Index: src/libslic3r/GCode.cpp
      if (m_find_replace)
          pipeline_to_string = pipeline_to_string & find_replace;
  
-@@ -1624,13 +1624,13 @@ void GCodeGenerator::process_layers(
+@@ -1616,13 +1616,13 @@ void GCodeGenerator::process_layers(
          [&output_stream](std::string s) { output_stream.write(s); }
      );
  
