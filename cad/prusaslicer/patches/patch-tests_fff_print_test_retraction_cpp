@@ -1,0 +1,12 @@
+Index: tests/fff_print/test_retraction.cpp
+--- tests/fff_print/test_retraction.cpp.orig
++++ tests/fff_print/test_retraction.cpp
+@@ -77,7 +77,7 @@ void check_gcode(std::initializer_list<TestMesh> meshe
+                 lift_dist = line.dist_Z(self);
+             }
+             if (line.dist_Z(self) < 0) {
+-                INFO("Must be lifted before going down.")
++                INFO("Must be lifted before going down.");
+                 CHECK(lifted);
+                 INFO("Going down by the same amount of the lift or by the amount needed to get to next layer");
+                 CHECK((

@@ -1,0 +1,16 @@
+Index: tests/fff_print/test_layers.cpp
+--- tests/fff_print/test_layers.cpp.orig
++++ tests/fff_print/test_layers.cpp
+@@ -27,10 +27,10 @@ void check_layers(const DynamicPrintConfig& config) {
+     const double layer_height = config.opt_float("layer_height");
+     INFO("Correct first layer height.");
+     CHECK(z.at(0) == Approx(first_layer_height + z_offset));
+-    INFO("Correct second layer height")
++    INFO("Correct second layer height");
+     CHECK(z.at(1) == Approx(first_layer_height + layer_height + z_offset));
+ 
+-    INFO("Correct layer height")
++    INFO("Correct layer height");
+     for (const double increment : tcb::span{increments}.subspan(1)) {
+         CHECK(increment == Approx(layer_height));
+     }
