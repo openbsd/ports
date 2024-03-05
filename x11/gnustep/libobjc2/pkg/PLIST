@@ -1,7 +1,6 @@
-@conflict libdispatch-*
-include/Block.h
-include/Block_private.h
 include/gnustep/
+include/gnustep/Block.h
+include/gnustep/Block_private.h
 include/gnustep/objc/
 include/gnustep/objc/Availability.h
 include/gnustep/objc/Object.h
