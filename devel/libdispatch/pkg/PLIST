@@ -1,5 +1,4 @@
 @conflict blocksruntime-*
-@conflict gnustep-libobjc2-*
 @pkgpath devel/blocksruntime
 include/Block.h
 include/dispatch/
