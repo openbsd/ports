@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.103 2024/02/21 16:26:30 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.104 2024/03/05 01:52:34 gkoehler Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -91,7 +91,7 @@ _SYSTEM_VERSION-arm = 6
 _SYSTEM_VERSION-i386 = 5
 _SYSTEM_VERSION-mips64 = 5
 _SYSTEM_VERSION-mips64el = 4
-_SYSTEM_VERSION-powerpc = 4
+_SYSTEM_VERSION-powerpc = 5
 _SYSTEM_VERSION-powerpc64 = 3
 _SYSTEM_VERSION-riscv64 = 2
 _SYSTEM_VERSION-${MACHINE_ARCH} ?= 0
