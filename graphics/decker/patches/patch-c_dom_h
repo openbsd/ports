@@ -1,3 +1,5 @@
+- add sys/wait.h for WIFEXITED and WEXITSTATUS
+
 Index: c/dom.h
 --- c/dom.h.orig
 +++ c/dom.h
