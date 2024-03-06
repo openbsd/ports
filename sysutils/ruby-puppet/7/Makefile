@@ -1,6 +1,6 @@
 PORTROACH=		limit:^7
 
-VERSION=		7.28.0
+VERSION=		7.29.1
 
 RUN_DEPENDS+=		converters/ruby-multi_json,${MODRUBY_FLAVOR}>=1.10,<2 \
 			databases/ruby-hiera3,${MODRUBY_FLAVOR}>=3.2.1,<4 \
