@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		2.53.18
+FV =		2.53.18.1
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
@@ -19,8 +19,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # Mozilla public license
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/ \
-		http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${FV}/langpack/
+SITES =		https://archive.seamonkey-project.org/releases/${FV}/langpack/
 
 BUILD_DEPENDS =	archivers/unzip
 RUN_DEPENDS =	seamonkey-${FV:S/b/beta/}:www/seamonkey
