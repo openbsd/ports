@@ -1,6 +1,6 @@
 COMMENT =		multimedia platform inspired by HyperCard
 
-DIST_TUPLE =		github JohnEarnest Decker v1.39 .
+DIST_TUPLE =		github JohnEarnest Decker v1.40 .
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics
@@ -21,6 +21,8 @@ BUILD_DEPENDS =		editors/vim \
 
 LIB_DEPENDS =		devel/sdl2 \
 			devel/sdl2-image
+
+RUN_DEPENDS =		devel/xdg-utils
 
 ALL_TARGET =		decker lilt docs
 

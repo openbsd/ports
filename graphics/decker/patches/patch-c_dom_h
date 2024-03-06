@@ -1,0 +1,9 @@
+Index: c/dom.h
+--- c/dom.h.orig
++++ c/dom.h
+@@ -1,4 +1,4 @@
+-
++#include <sys/wait.h>
+ #include "resources.h"
+ 
+ // Decker document object model

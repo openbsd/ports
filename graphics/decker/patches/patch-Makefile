@@ -13,8 +13,8 @@ Index: Makefile
  	# -Wno-misleading-indentation silences warnings which are entirely spurious.
  	FLAGS:=$(FLAGS) -Wno-misleading-indentation -Wno-unknown-warning-option
  	FLAGS:=$(FLAGS) -lm
-@@ -43,16 +43,16 @@ ifneq ("$(EXTRA_FLAGS)","")
- endif
+@@ -46,16 +46,16 @@ endif
+ # FLAGS:=$(FLAGS) -DDANGER_ZONE
  
  resources:
 -	@chmod +x ./scripts/resources.sh
@@ -36,7 +36,7 @@ Index: Makefile
  
  clean:
  	@rm -rf ./c/build/
-@@ -60,19 +60,19 @@ clean:
+@@ -63,19 +63,19 @@ clean:
  	@rm -f docs/*.html
  
  install:
