@@ -7,6 +7,14 @@ share/u-boot/nanopc-t6-rk3588/u-boot-rockchip.bin
 @comment share/u-boot/nanopc-t6-rk3588/u-boot.bin
 @comment share/u-boot/nanopc-t6-rk3588/u-boot.img
 @comment share/u-boot/nanopc-t6-rk3588/u-boot.itb
+share/u-boot/nanopi-r6c-rk3588s/
+@comment share/u-boot/nanopi-r6c-rk3588s/idbloader.img
+@comment share/u-boot/nanopi-r6c-rk3588s/u-boot
+share/u-boot/nanopi-r6c-rk3588s/u-boot-rockchip.bin
+@comment share/u-boot/nanopi-r6c-rk3588s/u-boot-spl.bin
+@comment share/u-boot/nanopi-r6c-rk3588s/u-boot.bin
+@comment share/u-boot/nanopi-r6c-rk3588s/u-boot.img
+@comment share/u-boot/nanopi-r6c-rk3588s/u-boot.itb
 share/u-boot/nanopi-r6s-rk3588s/
 @comment share/u-boot/nanopi-r6s-rk3588s/idbloader.img
 @comment share/u-boot/nanopi-r6s-rk3588s/u-boot
