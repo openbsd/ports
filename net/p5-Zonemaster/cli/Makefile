@@ -4,7 +4,7 @@ COMMENT=	tool to check the quality of a DNS zone
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-V=		6.0.2
+V=		6.0.3
 DISTNAME=	Zonemaster-CLI-v$V
 PKGNAME=	zonemaster-$V
 CATEGORIES=	net
