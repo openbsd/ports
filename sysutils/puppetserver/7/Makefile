@@ -2,7 +2,7 @@ PORTROACH =		limit:^7
 
 COMMENT =		Puppet server
 
-VERSION =		7.14.0
+VERSION =		7.16.0
 DISTNAME =		puppetserver-${VERSION}
 
 
