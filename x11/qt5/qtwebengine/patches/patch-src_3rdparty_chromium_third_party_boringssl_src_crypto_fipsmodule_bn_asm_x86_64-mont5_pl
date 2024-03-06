@@ -25,7 +25,15 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/bn/asm/
  	##############################################################
  	# Squaring part:
  	#
-@@ -2909,6 +2912,7 @@ bn_powerx5:
+@@ -2095,6 +2098,7 @@ $code.=<<___;
+ .align	32
+ bn_from_montgomery:
+ .cfi_startproc
++	_CET_ENDBR
+ 	testl	\$7,`($win64?"48(%rsp)":"%r9d")`
+ 	jz	bn_from_mont8x
+ 	xor	%eax,%eax
+@@ -2909,6 +2913,7 @@ bn_powerx5:
  bn_sqrx8x_internal:
  __bn_sqrx8x_internal:
  .cfi_startproc
@@ -33,7 +41,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/bn/asm/
  	##################################################################
  	# Squaring part:
  	#
-@@ -3620,6 +3624,7 @@ $code.=<<___;
+@@ -3620,6 +3625,7 @@ $code.=<<___;
  .align	16
  bn_scatter5:
  .cfi_startproc
@@ -41,7 +49,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/bn/asm/
  	cmp	\$0, $num
  	jz	.Lscatter_epilogue
  	lea	($tbl,$idx,8),$tbl
-@@ -3641,6 +3646,7 @@ bn_scatter5:
+@@ -3641,6 +3647,7 @@ bn_scatter5:
  bn_gather5:
  .cfi_startproc
  .LSEH_begin_bn_gather5:			# Win64 thing, but harmless in other cases
@@ -49,7 +57,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/bn/asm/
  	# I can't trust assembler to use specific encoding:-(
  	.byte	0x4c,0x8d,0x14,0x24			#lea    (%rsp),%r10
  .cfi_def_cfa_register	%r10
-@@ -3732,11 +3738,13 @@ $code.=<<___;
+@@ -3732,11 +3739,13 @@ $code.=<<___;
  ___
  }
  $code.=<<___;

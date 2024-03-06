@@ -49,7 +49,23 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/aes/asm
  	lea	(%rsp),%r11			# frame pointer
  .cfi_def_cfa_register	%r11
  	push	%rbp
-@@ -3729,6 +3735,7 @@ $code.=<<___;
+@@ -2787,6 +2793,7 @@ $code.=<<___;
+ .align	32
+ ${PREFIX}_ocb_encrypt:
+ .cfi_startproc
++	_CET_ENDBR
+ 	lea	(%rsp),%rax
+ 	push	%rbx
+ .cfi_push	%rbx
+@@ -3247,6 +3254,7 @@ __ocb_encrypt1:
+ .align	32
+ ${PREFIX}_ocb_decrypt:
+ .cfi_startproc
++	_CET_ENDBR
+ 	lea	(%rsp),%rax
+ 	push	%rbx
+ .cfi_push	%rbx
+@@ -3729,6 +3737,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_cbc_encrypt:
  .cfi_startproc
@@ -57,7 +73,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/aes/asm
  	test	$len,$len		# check length
  	jz	.Lcbc_ret
  
-@@ -4278,6 +4285,7 @@ $code.=<<___;
+@@ -4278,6 +4287,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_set_decrypt_key:
  .cfi_startproc
@@ -65,7 +81,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/aes/asm
  	.byte	0x48,0x83,0xEC,0x08	# sub rsp,8
  .cfi_adjust_cfa_offset	8
  	call	__aesni_set_encrypt_key
-@@ -4350,6 +4358,7 @@ $code.=<<___;
+@@ -4350,6 +4360,7 @@ $code.=<<___;
  ${PREFIX}_set_encrypt_key:
  __aesni_set_encrypt_key:
  .cfi_startproc
@@ -73,7 +89,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/aes/asm
  #ifdef BORINGSSL_DISPATCH_TEST
  	movb \$1,BORINGSSL_function_hit+3(%rip)
  #endif
-@@ -4727,6 +4736,7 @@ ___
+@@ -4727,6 +4738,7 @@ ___
  }
  
  $code.=<<___;
@@ -81,7 +97,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/fipsmodule/aes/asm
  .align	64
  .Lbswap_mask:
  	.byte	15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0
-@@ -4749,6 +4759,7 @@ $code.=<<___;
+@@ -4749,6 +4761,7 @@ $code.=<<___;
  
  .asciz  "AES for Intel AES-NI, CRYPTOGAMS by <appro\@openssl.org>"
  .align	64
