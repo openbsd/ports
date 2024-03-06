@@ -1,10 +1,8 @@
-PORTROACH=		skipv:0.377-2
-
 COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.379
+GH_TAGNAME=		v0.380
 
 CATEGORIES=		misc
 
