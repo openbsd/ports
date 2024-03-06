@@ -1,7 +1,7 @@
 COMMENT =	XAudio reimplementation for open platforms
 PKGNAME =	faudio-${V}
 
-SHARED_LIBS =	FAudio		4.1	# 23.05
+SHARED_LIBS =	FAudio		4.2	# 24.03
 
 CATEGORIES +=	audio
 
