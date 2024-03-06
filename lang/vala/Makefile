@@ -27,6 +27,8 @@ WANTLIB-valadoc += z
 
 MODULES=		x11/gnome
 
+MODGNOME_TOOLS=		gobject-introspection
+
 BUILD_DEPENDS=		textproc/libxslt
 
 MULTI_PACKAGES=		-main -valadoc
