@@ -1,6 +1,6 @@
 COMMENT =		link aggregator and comment site via ActivityPub
 
-DISTNAME =		azorius-0.3.3
+DISTNAME =		azorius-0.3.4
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/azorius

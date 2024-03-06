@@ -35,6 +35,8 @@ share/examples/azorius/views/about.html
 @sample ${LOCALSTATEDIR}/azorius/views/about.html
 share/examples/azorius/views/account.html
 @sample ${LOCALSTATEDIR}/azorius/views/account.html
+share/examples/azorius/views/accountactivity.html
+@sample ${LOCALSTATEDIR}/azorius/views/accountactivity.html
 share/examples/azorius/views/accountfilters.html
 @sample ${LOCALSTATEDIR}/azorius/views/accountfilters.html
 share/examples/azorius/views/accountheader.html
