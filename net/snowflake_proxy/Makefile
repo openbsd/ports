@@ -1,7 +1,7 @@
 COMMENT=	anti-censorship proxy and pluggable transports for Tor
 
 MODGO_MODNAME=	gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2
-V=		2.8.1
+V=		2.9.1
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
