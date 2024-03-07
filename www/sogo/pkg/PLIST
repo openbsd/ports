@@ -3,6 +3,7 @@
 @rcscript ${RCDIR}/sogod
 include/GDLContentStore/
 include/GDLContentStore/EOAdaptorChannel+GCS.h
+include/GDLContentStore/GCSAdminFolder.h
 include/GDLContentStore/GCSAlarmsFolder.h
 include/GDLContentStore/GCSChannelManager.h
 include/GDLContentStore/GCSContext.h
@@ -89,6 +90,7 @@ ${SOGOLIBDIR}/Headers/NSString+DAV.h
 ${SOGOLIBDIR}/Headers/NSString+Utilities.h
 ${SOGOLIBDIR}/Headers/NSURL+DAV.h
 ${SOGOLIBDIR}/Headers/RTFHandler.h
+${SOGOLIBDIR}/Headers/SOGoAdmin.h
 ${SOGOLIBDIR}/Headers/SOGoAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoBuild.h
 ${SOGOLIBDIR}/Headers/SOGoCASSession.h
@@ -2140,6 +2142,7 @@ lib/GNUstep/SOGo/Templates/AdministrationUI/
 lib/GNUstep/SOGo/Templates/AdministrationUI/UIxAdministration.wox
 lib/GNUstep/SOGo/Templates/AdministrationUI/UIxAdministrationAclEditor.wox
 lib/GNUstep/SOGo/Templates/AdministrationUI/UIxAdministrationFilterPanel.wox
+lib/GNUstep/SOGo/Templates/AdministrationUI/UIxAdministrationMotd.wox
 lib/GNUstep/SOGo/Templates/AdministrationUI/UIxThemePreview.wox
 lib/GNUstep/SOGo/Templates/Appointments/
 lib/GNUstep/SOGo/Templates/Appointments/SOGoAptMailDeletion.wox
@@ -2569,6 +2572,7 @@ lib/GNUstep/SOGo/WebServerResources/js/Administration/Administration.app.js
 lib/GNUstep/SOGo/WebServerResources/js/Administration/Administration.service.js
 lib/GNUstep/SOGo/WebServerResources/js/Administration/AdministrationAclController.js
 lib/GNUstep/SOGo/WebServerResources/js/Administration/AdministrationController.js
+lib/GNUstep/SOGo/WebServerResources/js/Administration/AdministrationMotdController.js
 lib/GNUstep/SOGo/WebServerResources/js/Administration/ThemePreviewController.js
 lib/GNUstep/SOGo/WebServerResources/js/Common/
 lib/GNUstep/SOGo/WebServerResources/js/Common.js
