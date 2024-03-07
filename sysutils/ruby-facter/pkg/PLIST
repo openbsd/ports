@@ -306,6 +306,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/dmi/product/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/dmi/product/name.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/dmi/product/serial_number.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/dmi/product/uuid.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/dmi/product/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/ec2_metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/ec2_userdata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/facterversion.rb

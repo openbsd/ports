@@ -1,19 +1,18 @@
-
 Add support for OpenBSD
 
 Index: lib/facter/util/facts/posix/virtual_detector.rb
 --- lib/facter/util/facts/posix/virtual_detector.rb.orig
 +++ lib/facter/util/facts/posix/virtual_detector.rb
-@@ -9,7 +9,7 @@ module Facter
-             def platform
-               @@fact_value ||= check_docker_lxc || check_freebsd || check_gce || retrieve_from_virt_what
-               @@fact_value ||= check_vmware || check_open_vz || check_vserver || check_xen || check_other_facts
--              @@fact_value ||= check_lspci || 'physical'
-+              @@fact_value ||= check_openbsd || check_lspci || 'physical'
- 
-               @@fact_value
+@@ -10,7 +10,7 @@ module Facter
+               @fact_value ||= # rubocop:disable Naming/MemoizedInstanceVariableName
+                 check_docker_lxc || check_freebsd || check_gce || check_illumos_lx || \
+                 retrieve_from_virt_what || check_vmware || check_open_vz || check_vserver || \
+-                check_xen || check_other_facts || check_lspci || 'physical'
++                check_openbsd || check_xen || check_other_facts || check_lspci || 'physical'
              end
-@@ -49,6 +49,12 @@ module Facter
+ 
+             private
+@@ -52,6 +52,12 @@ module Facter
                return unless Object.const_defined?('Facter::Resolvers::Freebsd::Virtual')
  
                Facter::Resolvers::Freebsd::Virtual.resolve(:vm)

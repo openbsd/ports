@@ -3,9 +3,9 @@ Add support for OpenBSD
 Index: lib/facter/framework/core/file_loader.rb
 --- lib/facter/framework/core/file_loader.rb.orig
 +++ lib/facter/framework/core/file_loader.rb
-@@ -649,6 +649,65 @@ os_hierarchy.each do |os|
-     require_relative '../../facts/ol/os/distro/description.rb'
-     require_relative '../../facts/ol/os/distro/id.rb'
+@@ -650,6 +650,65 @@ os_hierarchy.each do |os|
+     require_relative '../../facts/ol/os/distro/description'
+     require_relative '../../facts/ol/os/distro/id'
  
 +  when 'openbsd'
 +    require_relative '../../facts/openbsd/augeas/version.rb'
@@ -67,5 +67,5 @@ Index: lib/facter/framework/core/file_loader.rb
 +    require_relative '../../resolvers/openbsd/virtual.rb'
 +
    when 'openwrt'
-     require_relative '../../facts/openwrt/os/release.rb'
+     require_relative '../../facts/openwrt/os/release'
  
