@@ -24,7 +24,7 @@ Index: salt/grains/core.py
      return grains
  
  
-@@ -2652,10 +2654,12 @@ def os_data():
+@@ -2744,10 +2746,12 @@ def os_data():
              # derive osrelease from kernelversion prior to that
              grains["osrelease"] = grains["kernelrelease"].split("-")[0]
          grains.update(_bsd_cpudata(grains))

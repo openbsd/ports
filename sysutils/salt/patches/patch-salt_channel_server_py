@@ -1,0 +1,52 @@
+52d98866200384dbaf3dbdecf66de00ff6d2195c fix: Older keys end with a newline, this breaks minion auth.
+4e72e2f0a57b594c3f7e14cc385a066097a268b2 fix: typo's
+0f4c022fdaabb41962e7fde1baca7bf73122f534 Simply check against cleaned key from disk.
+ecc39aa994c55b22c10320380abf6bd24529496d Refactor and add some tests
+
+Index: salt/channel/server.py
+--- salt/channel/server.py.orig
++++ salt/channel/server.py
+@@ -52,6 +52,16 @@ class ReqServerChannel:
+         transport = salt.transport.request_server(opts, **kwargs)
+         return cls(opts, transport)
+ 
++    @classmethod
++    def compare_keys(cls, key1, key2):
++        """
++        Normalize and compare two keys
++
++        Returns:
++            bool: ``True`` if the keys match, otherwise ``False``
++        """
++        return salt.crypt.clean_key(key1) == salt.crypt.clean_key(key2)
++
+     def __init__(self, opts, transport):
+         self.opts = opts
+         self.transport = transport
+@@ -371,7 +381,7 @@ class ReqServerChannel:
+         elif os.path.isfile(pubfn):
+             # The key has been accepted, check it
+             with salt.utils.files.fopen(pubfn, "r") as pubfn_handle:
+-                if salt.crypt.clean_key(pubfn_handle.read()) != load["pub"]:
++                if not self.compare_keys(pubfn_handle.read(), load["pub"]):
+                     log.error(
+                         "Authentication attempt from %s failed, the public "
+                         "keys did not match. This may be an attempt to compromise "
+@@ -480,7 +490,7 @@ class ReqServerChannel:
+                 # case. Otherwise log the fact that the minion is still
+                 # pending.
+                 with salt.utils.files.fopen(pubfn_pend, "r") as pubfn_handle:
+-                    if salt.crypt.clean_key(pubfn_handle.read()) != load["pub"]:
++                    if not self.compare_keys(pubfn_handle.read(), load["pub"]):
+                         log.error(
+                             "Authentication attempt from %s failed, the public "
+                             "key in pending did not match. This may be an "
+@@ -536,7 +546,7 @@ class ReqServerChannel:
+                 # so, pass on doing anything here, and let it get automatically
+                 # accepted below.
+                 with salt.utils.files.fopen(pubfn_pend, "r") as pubfn_handle:
+-                    if salt.crypt.clean_key(pubfn_handle.read()) != load["pub"]:
++                    if not self.compare_keys(pubfn_handle.read(), load["pub"]):
+                         log.error(
+                             "Authentication attempt from %s failed, the public "
+                             "keys in pending did not match. This may be an "
