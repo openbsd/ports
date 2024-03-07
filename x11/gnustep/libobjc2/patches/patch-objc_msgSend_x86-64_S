@@ -1,0 +1,12 @@
+Index: objc_msgSend.x86-64.S
+--- objc_msgSend.x86-64.S.orig
++++ objc_msgSend.x86-64.S
+@@ -8,7 +8,7 @@
+ #	define SECOND_ARGUMENT %rdx
+ #	define THIRD_ARGUMENT %r8
+ #else
+-#	define START_PROC(x) .cfi_startproc
++#	define START_PROC(x) .cfi_startproc; endbr64
+ #	define END_PROC(x) .cfi_endproc
+ #	define FRAME_OFFSET(x) .cfi_adjust_cfa_offset x
+ #	define FIRST_ARGUMENT_STR "%rdi"
