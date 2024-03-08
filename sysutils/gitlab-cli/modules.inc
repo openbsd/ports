@@ -69,7 +69,8 @@ MODGO_MODULES =	\
 	github.com/google/martian				 v2.1.0+incompatible \
 	github.com/google/martian/v3				 v3.1.0 \
 	github.com/google/pprof					 v0.0.0-20210720184732-4bb14d4b1be1 \
-	github.com/google/renameio				 v1.0.1 \
+	github.com/google/renameio				 v0.1.0 \
+	github.com/google/renameio/v2				 v2.0.0 \
 	github.com/google/s2a-go				 v0.1.3 \
 	github.com/google/shlex					 v0.0.0-20191202100458-e7afc7fbc510 \
 	github.com/google/uuid					 v1.3.0 \
@@ -298,7 +299,6 @@ MODGO_MODFILES =	\
 	github.com/google/pprof			 v0.0.0-20201023163331-3e6fc7fc9c4c \
 	github.com/google/pprof			 v0.0.0-20201203190320-1bf35d6f28c2 \
 	github.com/google/pprof			 v0.0.0-20201218002935-b9804c9f04c2 \
-	github.com/google/renameio		 v0.1.0 \
 	github.com/google/uuid			 v1.1.2 \
 	github.com/googleapis/gax-go/v2		 v2.0.4 \
 	github.com/googleapis/gax-go/v2		 v2.0.5 \

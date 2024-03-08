@@ -13,6 +13,8 @@
 @man man/man1/glab-changelog.1
 @man man/man1/glab-check-update.1
 @man man/man1/glab-ci-artifact.1
+@man man/man1/glab-ci-config-compile.1
+@man man/man1/glab-ci-config.1
 @man man/man1/glab-ci-delete.1
 @man man/man1/glab-ci-get.1
 @man man/man1/glab-ci-lint.1
