@@ -74,3 +74,15 @@ Index: src/aarch64/ffi.c
      : "memory", "v16", "v17", "v18", "v19");
  }
  #endif
+@@ -873,8 +885,9 @@ ffi_prep_closure_loc (ffi_closure *closure,
+ # endif
+ #else
+   static const unsigned char trampoline[16] = {
+-    0x90, 0x00, 0x00, 0x58,	/* ldr	x16, tramp+16	*/
+-    0xf1, 0xff, 0xff, 0x10,	/* adr	x17, tramp+0	*/
++    0x5f, 0x24, 0x03, 0xd5,	/* bti	c		*/
++    0x70, 0x00, 0x00, 0x58,	/* ldr	x16, tramp+16	*/
++    0xd1, 0xff, 0xff, 0x10,	/* adr	x17, tramp+0	*/
+     0x00, 0x02, 0x1f, 0xd6	/* br	x16		*/
+   };
+   char *tramp = closure->tramp;
