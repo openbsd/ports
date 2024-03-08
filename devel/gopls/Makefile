@@ -1,7 +1,7 @@
 COMMENT =	official Go language server developed by the Go team
 
 MODGO_MODNAME =	golang.org/x/tools/gopls
-MODGO_VERSION =	v0.15.0
+MODGO_VERSION =	v0.15.1
 
 DISTNAME =	gopls-${MODGO_VERSION}
 
