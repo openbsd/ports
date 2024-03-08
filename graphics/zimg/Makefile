@@ -1,11 +1,11 @@
 COMMENT =	scaling, colorspace conversion, and dithering library
 CATEGORIES =	graphics
 
-SHARED_LIBS +=	zimg                      0.0 # 2.0
+SHARED_LIBS +=	zimg                      0.1 # 2.0
 
 GH_ACCOUNT =	sekrit-twc
 GH_PROJECT =	zimg
-GH_TAGNAME =	release-3.0.4
+GH_TAGNAME =	release-3.0.5
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
