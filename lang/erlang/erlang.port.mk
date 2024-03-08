@@ -30,7 +30,7 @@ FULLPKGNAME ?=	${MODERL_PKG_PREFIX}-${PKGNAME}
 
 FLAVOR ?=
 .    if empty(FLAVOR)
-FLAVOR =	${MODERL_DEFAULT_FLAVOR}
+FLAVOR =	${_MODERL_DEFAULT_FLAVOR}
 .    endif
 .  endif
 .endif
