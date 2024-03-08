@@ -2,7 +2,7 @@ COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
 
-V=			3.2.2
+V=			3.2.3
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		openexr
 GH_TAGNAME=		v${V}

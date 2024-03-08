@@ -7,6 +7,7 @@
 @bin bin/exrinfo
 @bin bin/exrmakepreview
 @bin bin/exrmaketiled
+@bin bin/exrmanifest
 @bin bin/exrmultipart
 @bin bin/exrmultiview
 @bin bin/exrstdattr
