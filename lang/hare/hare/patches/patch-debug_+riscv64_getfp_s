@@ -1,0 +1,16 @@
+/local/pobj/hare-0.24.0/hare-0.24.0/debug/+riscv64/getfp.s: Assembler messages:
+/local/pobj/hare-0.24.0/hare-0.24.0/debug/+riscv64/getfp.s:1: Error: junk at end of line, first unrecognized character is `/'
+/local/pobj/hare-0.24.0/hare-0.24.0/debug/+riscv64/getfp.s:2: Error: junk at end of line, first unrecognized character is `/'
+
+Fixed upstream:
+https://git.sr.ht/~sircmpwn/hare/commit/80e45e4d931a6e90d999846b86471cac00d2a6d5
+
+Index: debug/+riscv64/getfp.s
+--- debug/+riscv64/getfp.s.orig
++++ debug/+riscv64/getfp.s
+@@ -1,5 +1,3 @@
+-// SPDX-License-Identifier: MPL-2.0
+-// (c) Hare authors <https://harelang.org>
+ 
+ .section ".text.debug.getfp","ax"
+ .global debug.getfp
