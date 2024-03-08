@@ -1,0 +1,15 @@
+Fix build with proj 9.4.0+
+https://github.com/qgis/QGIS/pull/56761
+https://github.com/qgis/QGIS/issues/56756
+Index: src/core/proj/qgscoordinatereferencesystemutils.cpp
+--- src/core/proj/qgscoordinatereferencesystemutils.cpp.orig
++++ src/core/proj/qgscoordinatereferencesystemutils.cpp
+@@ -348,6 +348,8 @@ QString QgsCoordinateReferenceSystemUtils::translatePr
+     return QObject::tr( "Miller Oblated Stereographic" );
+   if ( projection == QLatin1String( "mill" ) )
+     return QObject::tr( "Miller Cylindrical" );
++  if ( projection == QLatin1String( "mod_krovak" ) )
++    return QObject::tr( "Modified Krovak" );
+   if ( projection == QLatin1String( "moll" ) )
+     return QObject::tr( "Mollweide" );
+   if ( projection == QLatin1String( "murd1" ) )
