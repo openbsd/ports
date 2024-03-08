@@ -5,7 +5,7 @@ information, but here are some examples:
 ietf: starts a command-line shell with command history
 
 ietf mirror: create or update local mirror of IETF repositories
-  (approx 1GB, by default in ${LOCALSTATEDIR}/db/ietf-mirrors)
+  (approx 3GB, by default in ${LOCALSTATEDIR}/db/ietf-mirrors)
 
 ietf rfc 3456 4567: open RFC 3456 and RFC 4567 in $EDITOR
 
