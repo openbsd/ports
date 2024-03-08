@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
-XFCE_VERSION=	0.11.1
+XFCE_VERSION=	0.11.2
 XFCE_PLUGIN=	weather
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -12,6 +11,7 @@ MODULES=	x11/xfce4
 MODXFCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	textproc/libxml \
+		devel/json-c \
 		devel/libsoup \
 		sysutils/upower
 
@@ -25,6 +25,8 @@ WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
 WANTLIB += startup-notification-1 unistring upower-glib xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xml2 z brotlicommon brotlidec
 WANTLIB += Xau Xdmcp execinfo jpeg gthread-2.0 xfconf-0
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon json-c
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
