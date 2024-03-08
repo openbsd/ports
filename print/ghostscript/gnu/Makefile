@@ -1,10 +1,10 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.02.1
+VERSION =	10.03.0
 DISTNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
-SHARED_LIBS =	gs 18.1
+SHARED_LIBS =	gs 18.2
 
 SITES =		https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
