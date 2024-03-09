@@ -1,0 +1,4 @@
+gtk-pipe-viewer is a lightweight application with a GTK interface (fork
+of straw-viewer) for searching and playing videos from YouTube. This
+fork parses the YouTube website directly and relies on the invidious
+instances only as a fallback method.

@@ -1,0 +1,36 @@
+bin/pipe-viewer
+${P5SITE}/WWW/PipeViewer/
+${P5SITE}/WWW/PipeViewer.pm
+${P5SITE}/WWW/PipeViewer/Channels.pm
+${P5SITE}/WWW/PipeViewer/CommentThreads.pm
+${P5SITE}/WWW/PipeViewer/DiskCache.pm
+${P5SITE}/WWW/PipeViewer/GetCaption.pm
+${P5SITE}/WWW/PipeViewer/InitialData.pm
+${P5SITE}/WWW/PipeViewer/Itags.pm
+${P5SITE}/WWW/PipeViewer/ParseJSON.pm
+${P5SITE}/WWW/PipeViewer/ParseXML.pm
+${P5SITE}/WWW/PipeViewer/PlaylistItems.pm
+${P5SITE}/WWW/PipeViewer/Playlists.pm
+${P5SITE}/WWW/PipeViewer/Proto.pm
+${P5SITE}/WWW/PipeViewer/RegularExpressions.pm
+${P5SITE}/WWW/PipeViewer/Search.pm
+${P5SITE}/WWW/PipeViewer/Utils.pm
+${P5SITE}/WWW/PipeViewer/VideoCategories.pm
+${P5SITE}/WWW/PipeViewer/Videos.pm
+${P5SITE}/WWW/PipeViewer/Worker.pm
+@man man/man1/pipe-viewer.1
+@man man/man3p/WWW::PipeViewer.3p
+@man man/man3p/WWW::PipeViewer::Channels.3p
+@man man/man3p/WWW::PipeViewer::CommentThreads.3p
+@man man/man3p/WWW::PipeViewer::GetCaption.3p
+@man man/man3p/WWW::PipeViewer::InitialData.3p
+@man man/man3p/WWW::PipeViewer::Itags.3p
+@man man/man3p/WWW::PipeViewer::ParseJSON.3p
+@man man/man3p/WWW::PipeViewer::ParseXML.3p
+@man man/man3p/WWW::PipeViewer::PlaylistItems.3p
+@man man/man3p/WWW::PipeViewer::Playlists.3p
+@man man/man3p/WWW::PipeViewer::RegularExpressions.3p
+@man man/man3p/WWW::PipeViewer::Search.3p
+@man man/man3p/WWW::PipeViewer::Utils.3p
+@man man/man3p/WWW::PipeViewer::VideoCategories.3p
+@man man/man3p/WWW::PipeViewer::Videos.3p

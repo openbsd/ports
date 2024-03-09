@@ -1,0 +1,14 @@
+bin/gtk-pipe-viewer
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
+${P5SITE}/auto/share/dist/WWW-PipeViewer/
+${P5SITE}/auto/share/dist/WWW-PipeViewer/gtk-pipe-viewer.desktop
+${P5SITE}/auto/share/dist/WWW-PipeViewer/gtk-pipe-viewer.glade
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/default_thumb.jpg
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/feed.png
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/feed_gray.png
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/gtk-pipe-viewer.png
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/spinner.gif
+${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/user.png
