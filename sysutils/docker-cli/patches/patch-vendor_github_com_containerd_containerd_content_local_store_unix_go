@@ -1,9 +1,0 @@
-Index: vendor/github.com/containerd/containerd/content/local/store_unix.go
---- vendor/github.com/containerd/containerd/content/local/store_unix.go.orig
-+++ vendor/github.com/containerd/containerd/content/local/store_unix.go
-@@ -1,4 +1,4 @@
--// +build linux solaris darwin freebsd netbsd
-+// +build linux solaris darwin freebsd netbsd openbsd
- 
- /*
-    Copyright The containerd Authors.

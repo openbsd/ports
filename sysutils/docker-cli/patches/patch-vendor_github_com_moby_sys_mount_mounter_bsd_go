@@ -1,9 +1,0 @@
-Index: vendor/github.com/moby/sys/mount/mounter_bsd.go
---- vendor/github.com/moby/sys/mount/mounter_bsd.go.orig
-+++ vendor/github.com/moby/sys/mount/mounter_bsd.go
-@@ -1,4 +1,4 @@
--// +build freebsd,cgo openbsd,cgo
-+// +build freebsd,cgo
- 
- package mount
- 
