@@ -8,6 +8,7 @@ COMMENT =	virtual machine for Haxe
 V =		1.14pl1
 COMMIT =	8bc5f8f0d21c38805ca3457e5298a27d96c396ad
 PKGNAME =	hashlink-${V}
+REVISION =	0
 
 # commit from 2024-03-08; tagged as 'latest'
 DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .

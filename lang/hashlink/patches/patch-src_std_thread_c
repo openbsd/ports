@@ -4,24 +4,28 @@ pthread_setname_np -> pthread_set_name_np
 Index: src/std/thread.c
 --- src/std/thread.c.orig
 +++ src/std/thread.c
-@@ -73,6 +73,7 @@ struct _hl_tls {
- #else
+@@ -25,6 +25,11 @@
+ typedef struct _hl_semaphore hl_semaphore;
+ typedef struct _hl_condition hl_condition;
  
- #	include <pthread.h>
-+#	include <pthread_np.h>
- #	include <unistd.h>
- #	include <sys/syscall.h>
- #	include <sys/time.h>
-@@ -809,6 +810,8 @@ HL_PRIM int hl_thread_id() {
- 	uint64_t tid64;
- 	pthread_threadid_np(NULL, &tid64);
++#ifdef __OpenBSD__
++#include <pthread_np.h>
++#define pthread_setname_np(a,b) pthread_set_name_np(a,b)
++#endif
++
+ #if !defined(HL_THREADS)
+ 
+ struct _hl_mutex {
+@@ -811,6 +816,8 @@ HL_PRIM int hl_thread_id() {
  	return (pid_t)tid64;
-+#elif defined(__OpenBSD__)
-+	return getthrid();
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
++#elif defined(__OpenBSD__)
++	return getthrid();
  #else
-@@ -945,7 +948,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+ 	return -1;
+ #endif
+@@ -945,7 +952,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
  #elif defined(HL_MAC)
  	// pthread_setname_np only possible for current thread
  #else

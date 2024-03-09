@@ -3,18 +3,16 @@ fix ifdef's
 Index: libs/mysql/socket.c
 --- libs/mysql/socket.c.orig
 +++ libs/mysql/socket.c
-@@ -74,10 +74,6 @@ void psock_init() {
+@@ -74,7 +74,7 @@ void psock_init() {
  
  PSOCK psock_create() {
  	PSOCK s = socket(AF_INET,SOCK_STREAM,0);
 -#	if defined(OS_MAC) || defined(OS_BSD)
--	if( s != INVALID_SOCKET )
--		setsockopt(s,SOL_SOCKET,SO_NOSIGPIPE,NULL,0);
--#	endif
- #	ifdef OS_POSIX
- 	// we don't want sockets to be inherited in case of exec
- 	{
-@@ -121,7 +117,7 @@ PHOST phost_resolve( const char *host ) {
++#	if defined(OS_MAC) || (defined(OS_BSD) && !defined(__OpenBSD__))
+ 	if( s != INVALID_SOCKET )
+ 		setsockopt(s,SOL_SOCKET,SO_NOSIGPIPE,NULL,0);
+ #	endif
+@@ -121,7 +121,7 @@ PHOST phost_resolve( const char *host ) {
  	PHOST ip = inet_addr(host);
  	if( ip == INADDR_NONE ) {
  		struct hostent *h;

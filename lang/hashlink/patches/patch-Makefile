@@ -24,7 +24,7 @@ Index: Makefile
  ARCH ?= $(shell uname -m)
  
 -CFLAGS = -Wall -O3 -I src -std=c11 -D LIBHL_EXPORTS
-+CFLAGS = -O2 -pipe    -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
++CFLAGS = ${CFLAGS} -I src -I/usr/local/include -I/usr/X11R6/include -std=c11 -D LIBHL_EXPORTS
  LFLAGS = -L. -lhl
  EXTRA_LFLAGS ?=
 -LIBFLAGS =
