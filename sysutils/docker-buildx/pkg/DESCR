@@ -1,0 +1,2 @@
+buildx is a Docker CLI plugin for extended build capabilities
+with BuildKit.

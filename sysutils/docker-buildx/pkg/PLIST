@@ -1,0 +1,3 @@
+libexec/docker/
+libexec/docker/cli-plugins/
+@bin libexec/docker/cli-plugins/docker-buildx
