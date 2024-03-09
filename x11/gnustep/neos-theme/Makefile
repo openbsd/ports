@@ -1,7 +1,7 @@
 COMMENT =	GNUstep theme following NeXT look and feel
 
 V =		0.1
-REVISION =	11
+REVISION =	12
 DISTNAME =	Neos-${V}.theme
 PKGNAME =	gnustep-neos-theme-${V}
 

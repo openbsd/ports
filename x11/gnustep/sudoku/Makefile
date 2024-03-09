@@ -1,7 +1,7 @@
 COMMENT =	GNUstep sudoku generator
 
 V =		0.7
-REVISION =	15
+REVISION =	16
 DISTNAME =	Sudoku-$V
 PKGNAME =	gnustep-sudoku-$V
 CATEGORIES =	games

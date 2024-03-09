@@ -4,6 +4,7 @@ GH_TAGNAME=     0.30.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-back
 DISTNAME=       gnustep-back-${GH_TAGNAME}
+REVISION=       0
 
 CATEGORIES=	devel
 

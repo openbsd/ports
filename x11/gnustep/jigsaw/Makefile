@@ -1,6 +1,6 @@
 COMMENT =	GNUstep jigsaw puzzle
 
-REVISION =	14
+REVISION =	15
 DISTNAME =	Jigsaw-0.8
 CATEGORIES =	games
 

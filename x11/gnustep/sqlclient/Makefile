@@ -3,6 +3,7 @@ COMMENT =	GNUstep database abstraction layer
 VERSION =	1.9.0
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
+REVISION =	0
 
 SHLIB_VERSION =	2.1
 SHARED_LIBS +=  SQLClient	${SHLIB_VERSION}

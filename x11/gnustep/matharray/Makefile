@@ -1,7 +1,7 @@
 COMMENT =	GNUstep library to manipulate matrices
 
 VERSION =	1.3
-REVISION =	11
+REVISION =	12
 DISTNAME =	MathArray-${VERSION}
 PKGNAME =	gnustep-matharray-${VERSION}
 CATEGORIES =	math

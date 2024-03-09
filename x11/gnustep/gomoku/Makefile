@@ -1,7 +1,7 @@
 COMMENT =	extended TicTacToe game for GNUstep
 
 DISTNAME =	Gomoku-1.2.9
-REVISION =	14
+REVISION =	15
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.gnustep.it/nicola/Applications/Gomoku/

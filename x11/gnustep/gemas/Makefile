@@ -1,6 +1,6 @@
 COMMENT =	simple code editor for GNUstep
 
-REVISION =	9
+REVISION =	10
 DISTNAME =	Gemas-0.4
 PKGNAME =	gnustep-${DISTNAME:L}
 

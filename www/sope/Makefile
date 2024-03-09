@@ -7,6 +7,9 @@ DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
+REVISION-main =		0
+REVISION-mysql =	0
+REVISION-postgres =	0
 
 SO_MAJOR=	6
 SO_MINOR=	0

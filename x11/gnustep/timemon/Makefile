@@ -1,6 +1,6 @@
 COMMENT=	CPU load monitor
 
-REVISION =	7
+REVISION =	8
 DISTNAME=	TimeMon-4.2
 CATEGORIES=	sysutils
 

@@ -2,7 +2,7 @@ COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
 VERSION =	0.1.1
-REVISION =	14
+REVISION =	15
 DISTNAME =	dbuskit-${VERSION}
 PKGNAME =	gnustep-dbuskit-${VERSION}
 

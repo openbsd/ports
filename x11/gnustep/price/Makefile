@@ -1,6 +1,6 @@
 COMMENT =	precision raster image convolution engine
 
-REVISION =	9
+REVISION =	10
 DISTNAME =	PRICE-1.3.0
 CATEGORIES =	graphics
 

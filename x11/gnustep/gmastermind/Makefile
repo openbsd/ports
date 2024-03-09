@@ -1,7 +1,7 @@
 COMMENT =	GNUstep mastermind game
 
 DISTNAME =	GMastermind-0.6
-REVISION =	14
+REVISION =	15
 CATEGORIES =	games
 
 HOMEPAGE =      http://gap.nongnu.org/gmastermind/

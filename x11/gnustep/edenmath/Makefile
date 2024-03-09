@@ -1,7 +1,7 @@
 COMMENT =	GNUstep based scientific calcualtor
 
 DISTNAME =	EdenMath_GNUstep-1.1.1
-REVISION =	14
+REVISION =	15
 
 HOMEPAGE =	http://www.eskimo.com/~pburns/EdenMath/
 SITES =		${HOMEPAGE}/files/

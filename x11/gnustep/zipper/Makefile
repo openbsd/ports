@@ -1,6 +1,6 @@
 COMMENT =	tool for inspecting compressed archvies
 
-REVISION =	12
+REVISION =	13
 DISTNAME =	Zipper-1.5
 
 HOMEPAGE =	http://gap.nongnu.org/zipper/

@@ -5,6 +5,7 @@ GH_ACCOUNT=     gnustep
 GH_PROJECT=     apps-projectcenter
 DISTNAME=       ProjectCenter-${GH_TAGNAME}
 CATEGORIES=	devel
+REVISION=       0
 
 HOMEPAGE=	http://www.gnustep.org/experience/ProjectCenter.html
 

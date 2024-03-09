@@ -1,7 +1,7 @@
 COMMENT=	educational application to solve physics problems
 
 VERSION =	0.3.5
-REVISION =	8
+REVISION =	9
 DISTNAME =	fisicalab-${VERSION}-1
 PKGNAME =	fisicalab-${VERSION}.1
 

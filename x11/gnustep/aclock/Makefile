@@ -1,7 +1,7 @@
 COMMENT =	analog clock for the GNUstep desktop
 
 DISTNAME =	AClock-0.4.0
-REVISION =	14
+REVISION =	15
 
 HOMEPAGE =	http://gap.nongnu.org/aclock/
 SITES =		${SITE_SAVANNAH:=gap/}

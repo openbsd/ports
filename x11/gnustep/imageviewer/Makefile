@@ -1,6 +1,6 @@
 COMMENT=	GNUstep image viewer
 
-REVISION =	16
+REVISION =	17
 DISTNAME=	ImageViewer-0.6.3
 CATEGORIES=	graphics
 

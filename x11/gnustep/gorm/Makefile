@@ -7,6 +7,7 @@ DISTNAME=       gorm-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/experience/Gorm.html
 #SITES=	${SITE_GNUSTEP}dev-apps/
 SITES=	https://github.com/gnustep/apps-gorm/releases/download/gorm-1_3_1/
+REVISION=       0
 
 SHARED_LIBS=	GormCore		0.2 \
 		GormPrefs		1.0 \

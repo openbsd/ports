@@ -1,6 +1,18 @@
 # until tested on others
 ONLY_FOR_ARCHS ?=	${LLD_ARCHS}
 
+USE_NOBTCFI-aarch64= Yes
+# Program terminated with signal SIGILL, Illegal instruction.
+# #0  -[NSBundle release] (self=0x14704af2d8, _cmd=<optimized out>) at NSBundle.m:2057
+# #1  0x0000001565473cbc in release(objc_object*) () from /usr/local/lib/libobjc2.so.3.0
+# #2  0x0000001565473ac8 [PAC] in emptyPool(arc_tls*, void*) () from /usr/local/lib/libobjc2.so.3.0
+# #3  0x0000001565473938 [PAC] in objc_autoreleasePoolPop () from /usr/local/lib/libobjc2.so.3.0
+# #4  0x0000001496a7553c [PAC] in -[NSAutoreleasePool dealloc] (self=0x15300e4788, _cmd=0x1496d7b7b8 <objc_selector_list+32>) at NSAutoreleasePool.m:571
+# #5  0x00000014e4ff4f3c [PAC] in ?? () from /usr/local/lib/libgnustep-gui.so.0.32
+# #6  0x00000014e4ff4414 [PAC] in ?? () from /usr/local/lib/libgnustep-gui.so.0.32
+# #7  0x00000014e4fd085c [PAC] in NSApplicationMain () from /usr/local/lib/libgnustep-gui.so.0.32
+# #8  0x0000001067d334ec [PAC] in _start ()
+
 CATEGORIES +=	x11/gnustep
 
 USE_GMAKE ?=	Yes

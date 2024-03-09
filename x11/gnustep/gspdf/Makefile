@@ -1,6 +1,6 @@
 COMMENT=	PDF, PS and EPS viewer for GNUstep
 
-REVISION =	13
+REVISION =	14
 DISTNAME=	GSPdf-0.5
 
 HOMEPAGE=	http://gap.nongnu.org/gspdf/

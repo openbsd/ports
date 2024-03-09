@@ -1,7 +1,7 @@
 COMMENT =	asynchronous networking framework for GNUstep
 
 VERSION =	1.1.0
-REVISION =	9
+REVISION =	10
 EPOCH =		0
 DISTNAME =	netclasses-${VERSION}
 PKGNAME =	gnustep-netclasses-${VERSION}

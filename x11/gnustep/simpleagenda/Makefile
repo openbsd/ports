@@ -5,6 +5,7 @@ GH_PROJECT =	simpleagenda
 GH_TAGNAME =	v0.46
 #DISTNAME=	SimpleAgenda-${VERSION}
 CATEGORIES+=	productivity
+REVISION =	0
 
 MODULES =	x11/gnustep
 

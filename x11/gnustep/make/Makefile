@@ -6,7 +6,7 @@ CATEGORIES=	devel x11/gnustep
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	tools-make
 GH_TAGNAME=	2.9.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 

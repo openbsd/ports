@@ -1,7 +1,7 @@
 COMMENT =	GNUstep frontend for xgamma
 
 V =		0.7
-REVISION =	10
+REVISION =	11
 DISTNAME =	displaycalibrator.app_${V}.orig
 PKGNAME =	displaycalibrator-${V}
 CATEGORIES =	graphics

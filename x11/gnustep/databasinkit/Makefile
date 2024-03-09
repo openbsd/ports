@@ -1,7 +1,7 @@
 COMMENT =	GNUstep client framework for salesforce.com
 
 VERSION =	1.0
-REVISION =	4
+REVISION =	5
 DISTNAME =	DataBasinKit-${VERSION}
 SHARED_LIBS +=  DataBasinKit	0.2
 

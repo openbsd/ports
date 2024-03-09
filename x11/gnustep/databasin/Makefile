@@ -1,7 +1,7 @@
 COMMENT =	GNUstep client for salesforce.com
 
 DISTNAME =	DataBasin-1.0
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://gap.nongnu.org/databasin/
 SITES =		${SITE_SAVANNAH:=gap/}

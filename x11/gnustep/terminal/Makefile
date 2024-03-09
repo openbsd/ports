@@ -2,7 +2,7 @@ COMMENT=	terminal emulator for GNUstep
 
 DISTNAME=	Terminal-0.9.9
 PKGNAME=	gnustep-${DISTNAME:L}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/terminal

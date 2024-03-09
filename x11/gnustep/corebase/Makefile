@@ -1,7 +1,7 @@
 COMMENT =	GNUstep reimplementation of Apple's CoreFoundation#'
 
 DISTNAME =	gnustep-corebase-0.1.1
-REVISION =	14
+REVISION =	15
 CATEGORIES=	devel
 
 SHARED_LIBS =	gnustep-corebase 0.0

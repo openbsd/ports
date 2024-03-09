@@ -5,6 +5,7 @@ DISTNAME =	WebServices-${VERSION}
 PKGNAME =	gnustep-webservices-${VERSION}
 CATEGORIES =	www
 SHARED_LIBS +=  WebServices	0.5
+REVISION =	0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServices
 SITES =		${SITE_GNUSTEP:=libs/}

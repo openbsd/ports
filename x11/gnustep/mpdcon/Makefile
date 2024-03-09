@@ -1,7 +1,7 @@
 COMMENT =	GNUstep client for Music Player Daemon
 
 DISTNAME =	MPDCon-1.5.1
-REVISION =	10
+REVISION =	11
 
 HOMEPAGE =	http://gap.nongnu.org/mpdcon/
 SITES =		${SITE_SAVANNAH:=gap/}

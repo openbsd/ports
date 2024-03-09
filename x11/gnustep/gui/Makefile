@@ -1,6 +1,6 @@
 COMMENT=	GNUstep gui library
 
-REVISION =	0
+REVISION =	1
 GH_TAGNAME=     0.30.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-gui
