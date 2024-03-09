@@ -32,8 +32,8 @@ Index: Makefile
 -LIBEXT = so
 +LIBFLAGS = -L/usr/local/lib -L/usr/X11R6/lib
 +HLFLAGS =
-+LIBEXT = so.2.0
-+LIBEXT_MODULE = so.0.0
++LIBEXT = so.${LIBhl_VERSION}
++LIBEXT_MODULE = so.${LIBhl_module_VERSION}
  LIBTURBOJPEG = -lturbojpeg
  
  LHL_LINK_FLAGS =
