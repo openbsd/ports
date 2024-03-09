@@ -417,6 +417,7 @@
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
+     SUBDIR += pipe-viewer
      SUBDIR += pnp4nagios
      SUBDIR += polipo
      SUBDIR += pound
