@@ -26,11 +26,11 @@ SHA256 (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2
 SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.6.1.mod) = 02anq6p+6EHDKBRcNIFhnm4RQZNyAh7c/OYAFvcXfrY=
 SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.6.1.zip) = 5iGL/C6bPz5YL12c12vRo2z3CtJ3yOSMFgKbJuVdPXs=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = E1A1TVLSKHpiM27MDVYjLUxHaZr5u6ScZ8K0glTamPE=
-SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.0.mod) = yzJlQO/LEnSm5Olw1/yd4ugGLwigWPwpbYWQJeYugHo=
-SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.0.zip) = GgCzu1rUHLcmNKzga36334V0BNd6fKtOQBp8cpVh/kw=
+SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.2.mod) = WOylTSZyhCeAb0CQiCjodi01LMOwoLC2DcYM5hdn//Y=
+SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.2.zip) = PCLB0cTEAk6xahLwGHd1ZAvzXVGwoGZJ/rx3lxGUUcA=
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = //gWjZjmoHFWxFShtuklUJ8xd+lsFVUW1/lrQHnMo78=
-SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = BeJs0GkoWjPPKvRv2s3vVp1a4YXnljp2wBeDKPaOl/k=
-SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 4gbart4L0D3gYL3765hKwsSbgwWHU//8k/4MIg6odTI=
+SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqBGx05F9SdxOGEHNdW8o8MTxWTkzw=
+SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.zip) = 7l1Pc8tomxtUMsaQihifn72xclB8ScMtvfebI56puOA=
 SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.mod) = tZSLvlG002X8sZ5zcF5gj2E/OGkSNuquPPwhUnMJqp4=
 SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = Kcc7pErDFUYWQHl9br/aLZBsKNviHCBlbG5fofUV8iA=
 SHA256 (go_modules/github.com/xlab/treeprint/@v/v1.2.0.mod) = PX0YnQXhji4F/CZMYLLZKRz2I4bBj+TvI3dIJFwYIWw=
@@ -43,7 +43,7 @@ SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = a4lUgZog7FKYKiBv0+uUYp/1PF
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (govmomi-v0.35.0.zip) = NOP/+Z7l6y2Ua3KLHJXnci4mSDU+x5ye4HCYtCPIPMk=
+SHA256 (govmomi-v0.36.0.zip) = OkFRsdyvE2RyCLTOATjkY1PxgAjZk22tlOdjNs7N+Dk=
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.mod) = 27
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.zip) = 18668
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
@@ -72,11 +72,11 @@ SIZE (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2.z
 SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.6.1.mod) = 82
 SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.6.1.zip) = 196352
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = 32
-SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.0.mod) = 85
-SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.0.zip) = 44362
+SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.2.mod) = 276
+SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.2.zip) = 43974
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.7.0.mod) = 216
-SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = 188
-SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 120537
+SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
+SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.zip) = 124686
 SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.mod) = 39
 SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = 28602
 SIZE (go_modules/github.com/xlab/treeprint/@v/v1.2.0.mod) = 86
@@ -89,4 +89,4 @@ SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = 15087
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (govmomi-v0.35.0.zip) = 3386503
+SIZE (govmomi-v0.36.0.zip) = 3431298
