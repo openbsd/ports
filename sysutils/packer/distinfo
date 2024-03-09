@@ -645,8 +645,8 @@ SHA256 (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.zip) = VBSaLlEhs+gflhx5IQ5
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.13.0.mod) = r/+tkI3AWk3nJFZSEwt+E/i41wwOIlwXMUOrhFwCwEI=
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.19.1.mod) = vMPbGue072pRqs6Evcw1sYahCRGNjFjgrsh4hMHrZHw=
 SHA256 (go_modules/github.com/hashicorp/hcl/v2/@v/v2.19.1.zip) = o4qyQMi/dnWTaV3PLAhqhSv1YX8/aCpn2Qx62wzWq3g=
-SHA256 (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.82.0.mod) = 9XdkEzBTQQHiZhOrvQZWXWyFZxt0ZmggkBfWNm9xNig=
-SHA256 (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.82.0.zip) = +0BOpm0oPqkAht6ctgoVlU4FgVSNYNPUNdaxHqOiOYY=
+SHA256 (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.85.0.mod) = 9XdkEzBTQQHiZhOrvQZWXWyFZxt0ZmggkBfWNm9xNig=
+SHA256 (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.85.0.zip) = Zu8vTeRAoif3B6hPUNHO1TxY3+0Q7KQ5HLBXeO79Z5A=
 SHA256 (go_modules/github.com/hashicorp/logutils/@v/v1.0.0.mod) = q8dhMbF5+FVcjBjcPiBh3e/UK318jOyyRH8GaaJ8+UQ=
 SHA256 (go_modules/github.com/hashicorp/logutils/@v/v1.0.0.zip) = DohCRXjR1rd5O2PTDBgKNTzoBBcB0l3Hw7zZhBw221s=
 SHA256 (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.mod) = Qg+dMJAs/crFd7Q9pJy8yG7EZ5akmiK9YGqMlwuh0xg=
@@ -1232,7 +1232,8 @@ SHA256 (go_modules/google.golang.org/protobuf/@v/v1.28.1.mod) = P3xyYKmH3OL9+0jO
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.29.1.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.30.0.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.31.0.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
-SHA256 (go_modules/google.golang.org/protobuf/@v/v1.31.0.zip) = 8B598lx54S5DgbP3cLX9l9gpXlaOOpGyZ9rLWzYiwgM=
+SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 0QBqpYC5zHyvLh+hwgBeOauHM8Qc5oUcH7wX+YBY5Vw=
+SHA256 (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = LMHJjhKQMAm9S/DV6TikIcoviK6HsPxQAEssdZix/SQ=
 SHA256 (go_modules/gopkg.in/alecthomas/kingpin.v2/@v/v2.2.6.mod) = byLclCZkdTE6LIp1hQzqQTRapeM4EZMC/KV2i0GYs+w=
 SHA256 (go_modules/gopkg.in/alecthomas/kingpin.v2/@v/v2.2.6.zip) = Y4CAWRrv59JkLyV1tifVNMaSYG8C6lS6ifQtsRK6iDk=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
@@ -1262,7 +1263,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (packer-v1.10.1.zip) = JcrAtYmve0TMU+4MkqATr5iZREN17fzZjCDZ76oyuDY=
+SHA256 (packer-v1.10.2.zip) = 6GFfqfqytPDvz/Hew4zXtKoNygLgSKEgXGozHOK/N0k=
 SIZE (go_modules/cloud.google.com/go/@v/v0.105.0.mod) = 1034
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.0.mod) = 1007
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = 1150
@@ -1910,8 +1911,8 @@ SIZE (go_modules/github.com/hashicorp/hcl/@v/v1.0.0.zip) = 121655
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.13.0.mod) = 1019
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.19.1.mod) = 1055
 SIZE (go_modules/github.com/hashicorp/hcl/v2/@v/v2.19.1.zip) = 580725
-SIZE (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.82.0.mod) = 1943
-SIZE (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.82.0.zip) = 3509485
+SIZE (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.85.0.mod) = 1943
+SIZE (go_modules/github.com/hashicorp/hcp-sdk-go/@v/v0.85.0.zip) = 3595686
 SIZE (go_modules/github.com/hashicorp/logutils/@v/v1.0.0.mod) = 37
 SIZE (go_modules/github.com/hashicorp/logutils/@v/v1.0.0.zip) = 9174
 SIZE (go_modules/github.com/hashicorp/mdns/@v/v1.0.4.mod) = 138
@@ -2497,7 +2498,8 @@ SIZE (go_modules/google.golang.org/protobuf/@v/v1.28.1.mod) = 124
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.29.1.mod) = 124
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.30.0.mod) = 124
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.31.0.mod) = 124
-SIZE (go_modules/google.golang.org/protobuf/@v/v1.31.0.zip) = 1613098
+SIZE (go_modules/google.golang.org/protobuf/@v/v1.33.0.mod) = 201
+SIZE (go_modules/google.golang.org/protobuf/@v/v1.33.0.zip) = 1813552
 SIZE (go_modules/gopkg.in/alecthomas/kingpin.v2/@v/v2.2.6.mod) = 38
 SIZE (go_modules/gopkg.in/alecthomas/kingpin.v2/@v/v2.2.6.zip) = 59626
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 25
@@ -2527,4 +2529,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (packer-v1.10.1.zip) = 2843312
+SIZE (packer-v1.10.2.zip) = 2845041

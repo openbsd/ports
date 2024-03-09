@@ -255,7 +255,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
 	github.com/hashicorp/hcl/v2				 v2.19.1 \
-	github.com/hashicorp/hcp-sdk-go				 v0.82.0 \
+	github.com/hashicorp/hcp-sdk-go				 v0.85.0 \
 	github.com/hashicorp/logutils				 v1.0.0 \
 	github.com/hashicorp/mdns				 v1.0.4 \
 	github.com/hashicorp/memberlist				 v0.5.0 \
@@ -400,7 +400,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/bytestream	 v0.0.0-20230530153820-e85fd2cbaebc \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231016165738-49dd2c1f3d0b \
 	google.golang.org/grpc					 v1.59.0 \
-	google.golang.org/protobuf				 v1.31.0 \
+	google.golang.org/protobuf				 v1.33.0 \
 	gopkg.in/alecthomas/kingpin.v2				 v2.2.6 \
 	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/cheggaaa/pb.v1					 v1.0.28 \
@@ -842,6 +842,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf				 v1.28.1 \
 	google.golang.org/protobuf				 v1.29.1 \
 	google.golang.org/protobuf				 v1.30.0 \
+	google.golang.org/protobuf				 v1.31.0 \
 	gopkg.in/check.v1					 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1					 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
