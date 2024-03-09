@@ -79,7 +79,9 @@
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += docker-buildx
      SUBDIR += docker-cli
+     SUBDIR += docker-compose
      SUBDIR += dosfstools
      SUBDIR += downtimed
      SUBDIR += dsh
