@@ -1,0 +1,4 @@
+SHA256 (compose-2.24.5.tar.gz) = FgxXVljN1lg26jE4u2M391h332y62OLUv03c+FDO44I=
+SHA256 (docker-compose-vendor-2.24.5.tar.gz) = nJHZBoh4ziYIHYpvUBAjCektpRGVZHogahnNIpYlVXo=
+SIZE (compose-2.24.5.tar.gz) = 344937
+SIZE (docker-compose-vendor-2.24.5.tar.gz) = 10428955

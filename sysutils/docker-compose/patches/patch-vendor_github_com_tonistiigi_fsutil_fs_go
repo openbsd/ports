@@ -1,0 +1,12 @@
+Index: vendor/github.com/tonistiigi/fsutil/fs.go
+--- vendor/github.com/tonistiigi/fsutil/fs.go.orig
++++ vendor/github.com/tonistiigi/fsutil/fs.go
+@@ -79,7 +79,7 @@ func (fs *subDirFS) Walk(ctx context.Context, fn filep
+ 		if err := d.FS.Walk(ctx, func(p string, fi os.FileInfo, err error) error {
+ 			stat, ok := fi.Sys().(*types.Stat)
+ 			if !ok {
+-				return errors.WithStack(&os.PathError{Path: d.Stat.Path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
++				return errors.WithStack(&os.PathError{Path: d.Stat.Path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
+ 			}
+ 			stat.Path = path.Join(d.Stat.Path, stat.Path)
+ 			if stat.Linkname != "" {

@@ -1,0 +1,12 @@
+Index: vendor/github.com/tonistiigi/fsutil/diskwriter.go
+--- vendor/github.com/tonistiigi/fsutil/diskwriter.go.orig
++++ vendor/github.com/tonistiigi/fsutil/diskwriter.go
+@@ -121,7 +121,7 @@ func (dw *DiskWriter) HandleChange(kind ChangeKind, p 
+ 
+ 	stat, ok := fi.Sys().(*types.Stat)
+ 	if !ok {
+-		return errors.WithStack(&os.PathError{Path: p, Err: syscall.EBADMSG, Op: "change without stat info"})
++		return errors.WithStack(&os.PathError{Path: p, Err: syscall.Errno(0x5c), Op: "change without stat info"})
+ 	}
+ 
+ 	statCopy := *stat
