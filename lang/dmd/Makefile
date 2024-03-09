@@ -1,3 +1,5 @@
+BROKEN=		needs new bootstrap
+
 # i386 forthcoming
 ONLY_FOR_ARCHS =	amd64
 
