@@ -1,6 +1,6 @@
 COMMENT=	x86 with DOS emulator targeted at playing games
 
-VERSION=	2023.10.06
+VERSION=	2024.03.01
 DISTNAME=	dosbox-x-v${VERSION}
 PKGNAME=	dosbox-x-${VERSION}
 CATEGORIES=	games x11 emulators

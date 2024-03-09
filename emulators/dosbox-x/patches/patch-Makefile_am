@@ -1,6 +1,7 @@
---- Makefile.am.orig.port	Mon Nov 27 22:44:22 2023
-+++ Makefile.am	Mon Nov 27 22:44:22 2023
-@@ -163,11 +163,9 @@ install: src/dosbox-x
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -165,11 +165,9 @@ install: src/dosbox-x
  	install -m 644 $(srcdir)/contrib/linux/dosbox-x.1 $(DESTDIR)$(mandir)/man1
  	mkdir -p $(DESTDIR)$(prefix)/share/bash-completion/completions
  	install -m 644 $(srcdir)/contrib/linux/dosbox-x $(DESTDIR)$(prefix)/share/bash-completion/completions

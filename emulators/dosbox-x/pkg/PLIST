@@ -65,11 +65,13 @@ share/dosbox-x/languages/de_pc98.lng
 share/dosbox-x/languages/en_US.lng
 share/dosbox-x/languages/es_ES.lng
 share/dosbox-x/languages/fr_FR.lng
+share/dosbox-x/languages/hu_HU.lng
 share/dosbox-x/languages/it_IT.lng
 share/dosbox-x/languages/ja_JP.lng
 share/dosbox-x/languages/ko_KR.lng
 share/dosbox-x/languages/nl_NL.lng
 share/dosbox-x/languages/pt_BR.lng
+share/dosbox-x/languages/ru_RU.lng
 share/dosbox-x/languages/tr_TR.lng
 share/dosbox-x/languages/zh_CN.lng
 share/dosbox-x/languages/zh_TW.lng
