@@ -1,9 +1,13 @@
+# Illegal Instruction on Wictionary searches (Qt6 WebEngine), but no core dump
+USE_NOBTCFI =		Yes
+
 COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
 				v24.01.22-LoongYear.3dddb3be	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
