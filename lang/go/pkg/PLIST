@@ -2444,6 +2444,7 @@ go/src/cmd/go/testdata/script/build_issue48319.txt
 go/src/cmd/go/testdata/script/build_issue59571.txt
 go/src/cmd/go/testdata/script/build_issue62156.txt
 go/src/cmd/go/testdata/script/build_issue6480.txt
+go/src/cmd/go/testdata/script/build_issue_65528.txt
 go/src/cmd/go/testdata/script/build_link_x_import_path_escape.txt
 go/src/cmd/go/testdata/script/build_multi_main.txt
 go/src/cmd/go/testdata/script/build_n_cgo.txt
@@ -2974,6 +2975,7 @@ go/src/cmd/go/testdata/script/mod_vendor_trimpath.txt
 go/src/cmd/go/testdata/script/mod_vendor_unused.txt
 go/src/cmd/go/testdata/script/mod_vendor_unused_only.txt
 go/src/cmd/go/testdata/script/mod_verify.txt
+go/src/cmd/go/testdata/script/mod_verify_work.txt
 go/src/cmd/go/testdata/script/mod_versions.txt
 go/src/cmd/go/testdata/script/mod_why.txt
 go/src/cmd/go/testdata/script/modfile_flag.txt
