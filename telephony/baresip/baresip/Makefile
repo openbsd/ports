@@ -33,6 +33,10 @@ LIB_DEPENDS-main =	audio/libsndfile \
 			telephony/spandsp
 LIB_DEPENDS-gtk =	x11/gtk+3,-main
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_JACK=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_PULSE=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_PORTAUDIO=Yes \
+			-DCMAKE_DISABLE_FIND_PACKAGE_PIPEWIRE=Yes
 
 post-extract:
 	# revert https://github.com/baresip/baresip/pull/2422
