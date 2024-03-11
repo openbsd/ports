@@ -1,7 +1,6 @@
-V =		3.1.12.1
+V =            3.1.12.2
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
-REVISION =	1
 
 CATEGORIES =	converters textproc
 
@@ -44,7 +43,7 @@ MODCABAL_MANIFEST	= \
 	StateVar	1.2.2	0	\
 	aeson	2.2.1.0	1	\
 	aeson-pretty	0.8.10	0	\
-	alex	3.5.0.0	0	\
+	alex	3.5.1.0 0	\
 	ansi-terminal	1.1	0	\
 	ansi-terminal-types	1.1	0	\
 	appar	0.1.8	0	\
@@ -78,7 +77,7 @@ MODCABAL_MANIFEST	= \
 	citeproc	0.8.1	0	\
 	colour	2.3.6	0	\
 	commonmark	0.2.5.1	0	\
-	commonmark-extensions	0.2.5.2	0	\
+	commonmark-extensions	0.2.5.3 0	\
 	commonmark-pandoc	0.2.2.1	0	\
 	comonad	5.0.8	2	\
 	conduit	1.3.5	0	\
@@ -101,7 +100,7 @@ MODCABAL_MANIFEST	= \
 	dec	0.0.5	2	\
 	digest	0.0.2.1	0	\
 	distributive	0.6.2.1	1	\
-	djot	0.1.0.0	0	\
+	djot	0.1.1.0 0	\
 	dlist	1.0	1	\
 	doclayout	0.4.0.1	0	\
 	doctemplates	0.11	0	\
@@ -157,7 +156,7 @@ MODCABAL_MANIFEST	= \
 	mime-types	0.1.2.0	0	\
 	mmorph	1.2.0	3	\
 	monad-control	1.0.3.1	0	\
-	mono-traversable	1.0.15.3	0	\
+	mono-traversable	1.0.17.0	0	\
 	network	3.1.4.0	1	\
 	network-byte-order	0.1.7	0	\
 	network-control	0.0.2	0	\
@@ -166,7 +165,7 @@ MODCABAL_MANIFEST	= \
 	old-time	1.1.0.4	0	\
 	optparse-applicative	0.18.1.0	0	\
 	ordered-containers	0.2.3	0	\
-	pandoc	3.1.12.1	0	\
+	pandoc	3.1.12.2	0	\
 	pandoc-lua-engine	0.2.1.3	0	\
 	pandoc-lua-marshal	0.2.4	0	\
 	pandoc-server	0.1.0.5	0	\
@@ -195,7 +194,7 @@ MODCABAL_MANIFEST	= \
 	skylighting	0.14.1	0	\
 	skylighting-core	0.14.1	0	\
 	skylighting-format-ansi	0.1	0	\
-	skylighting-format-blaze-html	0.1.1.1	0	\
+	skylighting-format-blaze-html	0.1.1.2 0	\
 	skylighting-format-context	0.1.0.2	0	\
 	skylighting-format-latex	0.1	0	\
 	socks	0.6.1	0	\
@@ -221,7 +220,7 @@ MODCABAL_MANIFEST	= \
 	these	1.2	1	\
 	time-compat	1.9.6.1	6	\
 	time-manager	0.0.1	0	\
-	tls	2.0.0	0	\
+	tls	2.0.1	1	\
 	toml-parser	1.3.2.0	0	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.2	0	\

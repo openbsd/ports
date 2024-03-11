@@ -13,7 +13,7 @@ SHA256 (hackage/StateVar-1.2.2.tar.gz) = Xks52jlWVqWYJ7AoBQiq/ccDNXmLUOXW/VJZYCY
 SHA256 (hackage/aeson-2.2.1.0.tar.gz) = kU7v0OgNEttcch2qLLq0J6zuOXlfElxUYMH+SM+aXX8=
 SHA256 (hackage/aeson-2.2.1.0_1.cabal) = ojphqtqCM+EFc+FhLAsu/loaug1ZsF2+L2MwGCLxNss=
 SHA256 (hackage/aeson-pretty-0.8.10.tar.gz) = KiHyzXityxSc66dwI57WZFGVUpEedoAXKxj/aVz6euU=
-SHA256 (hackage/alex-3.5.0.0.tar.gz) = yu2fI7S8HN1vgIO3mgu4a6hu2Bq5oSOP4OE+1USAn+0=
+SHA256 (hackage/alex-3.5.1.0.tar.gz) = yS7+hvjrlZ7gO+bATuV+vH5KvHWmxLJlUSFddEPpKgc=
 SHA256 (hackage/ansi-terminal-1.1.tar.gz) = Ul1iV7662XVfpSjOA+ZMakOfvBKaowehQGOJbkhxslM=
 SHA256 (hackage/ansi-terminal-types-1.1.tar.gz) = 8uUzPreNpfTdMw/KDIGlknbMFQxiVkfNIPV7fyl6XSU=
 SHA256 (hackage/appar-0.1.8.tar.gz) = xM7t3CZSW1jYLEG20+MhQTcaIApnlKrhhbYmbMyBYx8=
@@ -59,7 +59,7 @@ SHA256 (hackage/cereal-0.5.8.3.tar.gz) = mZBSIGYbJuW9kRML2XclVJOGCKWx1xckCm6zMRI
 SHA256 (hackage/citeproc-0.8.1.tar.gz) = M1I7vYw49yxtYG4C0RuTJUFx+AG+TyoMtNNNZiZCZAA=
 SHA256 (hackage/colour-2.3.6.tar.gz) = LNNdzWlEpavJ8Qil617lZLax+pip7HnO/MILWImR+HE=
 SHA256 (hackage/commonmark-0.2.5.1.tar.gz) = zdYpzwe+hhupriOVtMrKYROLwoH8J/RX8fjM4xcZxUg=
-SHA256 (hackage/commonmark-extensions-0.2.5.2.tar.gz) = 7I0s7U8Sau0UTpiIjxr4RUAjlaNR2LHCkaNycjp4Eas=
+SHA256 (hackage/commonmark-extensions-0.2.5.3.tar.gz) = pCyb6GB30Rk7qVLHOvP06G0lZ496VW0OJ7gf1MAWTfc=
 SHA256 (hackage/commonmark-pandoc-0.2.2.1.tar.gz) = YZDrFb8uCWTLGyBphPdhO9IEtVRp0R3/j8ylSIsJes0=
 SHA256 (hackage/comonad-5.0.8.tar.gz) = 72zfLMKSzEPuaqlsWBsjX96oq0Sgv/sk3HmuKy7zPRM=
 SHA256 (hackage/comonad-5.0.8_2.cabal) = Sk2/vQP7SWOYdxD8qZTotWJL0Foz5flbdYGyb4IpxeM=
@@ -87,7 +87,7 @@ SHA256 (hackage/dec-0.0.5_2.cabal) = EERCGsVV0GKoQ4ZbBpQbjHRCYeEikw9oBSTAvSCVtu0
 SHA256 (hackage/digest-0.0.2.1.tar.gz) = y/h7AuAfl9/m0tfwgGWCbPVSyOhGfqmQ7Q0vUC4KZJg=
 SHA256 (hackage/distributive-0.6.2.1.tar.gz) = 1zUTkuB49YyqRmMKS5xkPh4und3uRYSMXINY57Exa5E=
 SHA256 (hackage/distributive-0.6.2.1_1.cabal) = D5n1VBzKBKz4m2RDKwNCK2QI6DCo3/MObEM07xpIaAw=
-SHA256 (hackage/djot-0.1.0.0.tar.gz) = ArRyuNZHWoBOjCGC6AJqq5nwNMzgkmoUnkUafA2cy6E=
+SHA256 (hackage/djot-0.1.1.0.tar.gz) = /Zhx0kq5YvIqYYV4TlpXWbmLTce13VCgM7yrujtpq1I=
 SHA256 (hackage/dlist-1.0.tar.gz) = Fz1jcyi7Fz/MNl8w0p/0qUKSoeDlVYrrPfwR3oFRARU=
 SHA256 (hackage/dlist-1.0_1.cabal) = Vf9p0gzmOPx3JzQu5n8vho2mHT3PN2P3kL+aoLFF5Wg=
 SHA256 (hackage/doclayout-0.4.0.1.tar.gz) = 99NRXUGr39eltp8ov5Ug9ZGIE2QmJpj9SWhlBrVwsws=
@@ -159,7 +159,7 @@ SHA256 (hackage/mime-types-0.1.2.0.tar.gz) = ATrkikwXJqT5GmTogvP+H7kDp9S4wU2lEob
 SHA256 (hackage/mmorph-1.2.0.tar.gz) = YTOAWOtna0ZqRiykXVn0Nqd6O9a4FuQmjG2IUitqQoA=
 SHA256 (hackage/mmorph-1.2.0_3.cabal) = 35shPsGPgRyzE3tHjRSPPxaA7kP4Qct3WDX6KC/bApU=
 SHA256 (hackage/monad-control-1.0.3.1.tar.gz) = rguuoE2ZN173iBQDZxeZlKcXjUAKjODZAmhGVGdycTw=
-SHA256 (hackage/mono-traversable-1.0.15.3.tar.gz) = mLIg8zE9dCJ6QkkhDIgY6Dlng0PmKz67G4yGfPK5dLc=
+SHA256 (hackage/mono-traversable-1.0.17.0.tar.gz) = Jdj5uGC8YzXT0hPzOSq1jUBB4oEnh06hhSVBLxhM0y8=
 SHA256 (hackage/network-3.1.4.0.tar.gz) = tFKir6yV2SBzV+s4IMcZx8fSeHHvS27Xv80DoDa5FY4=
 SHA256 (hackage/network-3.1.4.0_1.cabal) = 4VLNsDJDr7UrvHQM++lpBcopim9jQvDEez8uIn/xne8=
 SHA256 (hackage/network-byte-order-0.1.7.tar.gz) = SAzgrX9nNk7I1M6NgV9GPZ5AdON4m+IqVyLP3r7Qhnk=
@@ -171,8 +171,8 @@ SHA256 (hackage/old-locale-1.0.0.7_2.cabal) = +pmL4sfgDNJqbpB1vqeQyq85Msqj6Ul61p
 SHA256 (hackage/old-time-1.1.0.4.tar.gz) = HiLrf3uSSmdvUuMXkXs7Xuzu4Rx070vGCcC87GJMFm8=
 SHA256 (hackage/optparse-applicative-0.18.1.0.tar.gz) = Y4EatP0m6Cm4hoNkMlqIvjrMeYGfW7UAWy3TuWHsxJE=
 SHA256 (hackage/ordered-containers-0.2.3.tar.gz) = NoSXBXUvO8Nn+h0XLh7Fc3VBg0Hp103lcq4bb7VqgaM=
-SHA256 (hackage/pandoc-3.1.12.1.tar.gz) = V+/TkmkUHtBmgDlntgX7o7T9nA8Pwx7cyxhvvaFoO7w=
-SHA256 (hackage/pandoc-cli-3.1.12.1.tar.gz) = CCrm2I4d9sCnwNYKNdD2NFPkHH5xWGqOhtw5JKb0zvY=
+SHA256 (hackage/pandoc-3.1.12.2.tar.gz) = +h4jU8NtYgnZrJQ0Y2/cqMCidyDJ0vpVlNMd++7YPlI=
+SHA256 (hackage/pandoc-cli-3.1.12.2.tar.gz) = V+HaoxJevRlks3vWGPKvSzJW5m7FJdSbjDpNVWJAo/c=
 SHA256 (hackage/pandoc-lua-engine-0.2.1.3.tar.gz) = rzb4pboCnWpjwrC++QFtLYwQgKtEiKfdobcgF8mXuMI=
 SHA256 (hackage/pandoc-lua-marshal-0.2.4.tar.gz) = 0vs8VUT7CgeoocPsJUumw/mSZi7wSvxepv2fEYn3EQg=
 SHA256 (hackage/pandoc-server-0.1.0.5.tar.gz) = KOwfgTfAir8Okail3kqd9fP2hI78lrASeNaFE+toUO8=
@@ -213,7 +213,7 @@ SHA256 (hackage/singleton-bool-0.1.7_1.cabal) = 7CDiRvi75GwXeJETtfIVSr3d8UuKBu/E
 SHA256 (hackage/skylighting-0.14.1.tar.gz) = WgrV19f/UXpcW2lt5Egq44OyTMAFgER1FKHCejg00bs=
 SHA256 (hackage/skylighting-core-0.14.1.tar.gz) = izwFhO769Y6Ir6ewfNqsqqQhCTThP+XwdzFv+UiLw8Q=
 SHA256 (hackage/skylighting-format-ansi-0.1.tar.gz) = I9+obC7NJgGi7+1JZ+suwFBaUsFHdgVM5NiXB8LeCps=
-SHA256 (hackage/skylighting-format-blaze-html-0.1.1.1.tar.gz) = juyC64U15OHCiH07g6b/2IZqDP+sSqDlDqIpoXVBV5E=
+SHA256 (hackage/skylighting-format-blaze-html-0.1.1.2.tar.gz) = El/lNnrvBLG8cgvf8HgC5dsojLNjSsC6J5btXO3Zj3k=
 SHA256 (hackage/skylighting-format-context-0.1.0.2.tar.gz) = AEIT4T2JtpLqCRLX/6bumMkxRtGnliqEmteGBpe8iL0=
 SHA256 (hackage/skylighting-format-latex-0.1.tar.gz) = l7ZsmrYEUeQalKqApoTnkvvmmBaDX3NSJCIr7qIq+3g=
 SHA256 (hackage/socks-0.6.1.tar.gz) = c0RHVYuwYc52j1Og3x8kAZAsa+45bMls5ift2YbvanM=
@@ -249,7 +249,8 @@ SHA256 (hackage/these-1.2_1.cabal) = AR4i9okcoCj4fATqSHlmlsktWTMTqcaZ9/9Pn/167G4
 SHA256 (hackage/time-compat-1.9.6.1.tar.gz) = rQe7AOuWeMITbTaAdSsArMTLxSJlS7MZm/McYe8ea4A=
 SHA256 (hackage/time-compat-1.9.6.1_6.cabal) = F2Me8BoDpvVfvhMWkPh/be6aFXKsyZtsBvBIgkcP+1I=
 SHA256 (hackage/time-manager-0.0.1.tar.gz) = B0klI/q8abjsMI9idsyT3z3QYMkfI98qyKH1bTMeoFs=
-SHA256 (hackage/tls-2.0.0.tar.gz) = DPcIGp2gMivq5hyNhazkJyMu8LgoHfVngUE/xRDI33Y=
+SHA256 (hackage/tls-2.0.1.tar.gz) = mGWMsDlKnNCMVsX+EabJbxbIkqKllNtCHNcuDn975oQ=
+SHA256 (hackage/tls-2.0.1_1.cabal) = QFGNs1OuyRIHSGEEb1RKXQZvvYIDcMlIC/zbJT2aP1s=
 SHA256 (hackage/toml-parser-1.3.2.0.tar.gz) = HgtPZYTNYSqJs4Kwo7n4WUlYMR/nOcjW5Pp9PDciZ7E=
 SHA256 (hackage/transformers-base-0.4.6.tar.gz) = Mjv4aJ62kbEiZhz/pBol4A/qenaEM/4t3jXT2n0yz5A=
 SHA256 (hackage/transformers-compat-0.7.2.tar.gz) = tixzBMnzy8lGPQc5qoXLlInyF+oJK51iXUF1FPvMnWo=
@@ -314,7 +315,7 @@ SIZE (hackage/StateVar-1.2.2.tar.gz) = 5048
 SIZE (hackage/aeson-2.2.1.0.tar.gz) = 341038
 SIZE (hackage/aeson-2.2.1.0_1.cabal) = 6582
 SIZE (hackage/aeson-pretty-0.8.10.tar.gz) = 5894
-SIZE (hackage/alex-3.5.0.0.tar.gz) = 85601
+SIZE (hackage/alex-3.5.1.0.tar.gz) = 85982
 SIZE (hackage/ansi-terminal-1.1.tar.gz) = 34897
 SIZE (hackage/ansi-terminal-types-1.1.tar.gz) = 4746
 SIZE (hackage/appar-0.1.8.tar.gz) = 4037
@@ -360,7 +361,7 @@ SIZE (hackage/cereal-0.5.8.3.tar.gz) = 20166
 SIZE (hackage/citeproc-0.8.1.tar.gz) = 549947
 SIZE (hackage/colour-2.3.6.tar.gz) = 20675
 SIZE (hackage/commonmark-0.2.5.1.tar.gz) = 103857
-SIZE (hackage/commonmark-extensions-0.2.5.2.tar.gz) = 45010
+SIZE (hackage/commonmark-extensions-0.2.5.3.tar.gz) = 45107
 SIZE (hackage/commonmark-pandoc-0.2.2.1.tar.gz) = 5022
 SIZE (hackage/comonad-5.0.8.tar.gz) = 15227
 SIZE (hackage/comonad-5.0.8_2.cabal) = 3631
@@ -388,7 +389,7 @@ SIZE (hackage/dec-0.0.5_2.cabal) = 1482
 SIZE (hackage/digest-0.0.2.1.tar.gz) = 23636
 SIZE (hackage/distributive-0.6.2.1.tar.gz) = 8140
 SIZE (hackage/distributive-0.6.2.1_1.cabal) = 2996
-SIZE (hackage/djot-0.1.0.0.tar.gz) = 123419
+SIZE (hackage/djot-0.1.1.0.tar.gz) = 123629
 SIZE (hackage/dlist-1.0.tar.gz) = 18667
 SIZE (hackage/dlist-1.0_1.cabal) = 3812
 SIZE (hackage/doclayout-0.4.0.1.tar.gz) = 38465
@@ -460,7 +461,7 @@ SIZE (hackage/mime-types-0.1.2.0.tar.gz) = 12044
 SIZE (hackage/mmorph-1.2.0.tar.gz) = 6861
 SIZE (hackage/mmorph-1.2.0_3.cabal) = 1083
 SIZE (hackage/monad-control-1.0.3.1.tar.gz) = 13985
-SIZE (hackage/mono-traversable-1.0.15.3.tar.gz) = 40461
+SIZE (hackage/mono-traversable-1.0.17.0.tar.gz) = 42225
 SIZE (hackage/network-3.1.4.0.tar.gz) = 139988
 SIZE (hackage/network-3.1.4.0_1.cabal) = 5208
 SIZE (hackage/network-byte-order-0.1.7.tar.gz) = 6402
@@ -472,8 +473,8 @@ SIZE (hackage/old-locale-1.0.0.7_2.cabal) = 1071
 SIZE (hackage/old-time-1.1.0.4.tar.gz) = 75542
 SIZE (hackage/optparse-applicative-0.18.1.0.tar.gz) = 60682
 SIZE (hackage/ordered-containers-0.2.3.tar.gz) = 7404
-SIZE (hackage/pandoc-3.1.12.1.tar.gz) = 7363985
-SIZE (hackage/pandoc-cli-3.1.12.1.tar.gz) = 94046
+SIZE (hackage/pandoc-3.1.12.2.tar.gz) = 7365367
+SIZE (hackage/pandoc-cli-3.1.12.2.tar.gz) = 94046
 SIZE (hackage/pandoc-lua-engine-0.2.1.3.tar.gz) = 81386
 SIZE (hackage/pandoc-lua-marshal-0.2.4.tar.gz) = 38272
 SIZE (hackage/pandoc-server-0.1.0.5.tar.gz) = 12733
@@ -514,7 +515,7 @@ SIZE (hackage/singleton-bool-0.1.7_1.cabal) = 1268
 SIZE (hackage/skylighting-0.14.1.tar.gz) = 1407885
 SIZE (hackage/skylighting-core-0.14.1.tar.gz) = 870586
 SIZE (hackage/skylighting-format-ansi-0.1.tar.gz) = 5350
-SIZE (hackage/skylighting-format-blaze-html-0.1.1.1.tar.gz) = 4853
+SIZE (hackage/skylighting-format-blaze-html-0.1.1.2.tar.gz) = 4894
 SIZE (hackage/skylighting-format-context-0.1.0.2.tar.gz) = 3249
 SIZE (hackage/skylighting-format-latex-0.1.tar.gz) = 3777
 SIZE (hackage/socks-0.6.1.tar.gz) = 9759
@@ -550,7 +551,8 @@ SIZE (hackage/these-1.2_1.cabal) = 2882
 SIZE (hackage/time-compat-1.9.6.1.tar.gz) = 59964
 SIZE (hackage/time-compat-1.9.6.1_6.cabal) = 5076
 SIZE (hackage/time-manager-0.0.1.tar.gz) = 2746
-SIZE (hackage/tls-2.0.0.tar.gz) = 162732
+SIZE (hackage/tls-2.0.1.tar.gz) = 162814
+SIZE (hackage/tls-2.0.1_1.cabal) = 6281
 SIZE (hackage/toml-parser-1.3.2.0.tar.gz) = 44319
 SIZE (hackage/transformers-base-0.4.6.tar.gz) = 2902
 SIZE (hackage/transformers-compat-0.7.2.tar.gz) = 46485
