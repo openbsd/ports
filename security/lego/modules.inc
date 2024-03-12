@@ -228,7 +228,7 @@ MODGO_MODULES =	\
 	github.com/go-cmd/cmd								 v1.0.5 \
 	github.com/go-errors/errors							 v1.0.1 \
 	github.com/go-gl/glfw								 v0.0.0-20190409004039-e6da0acd62b1 \
-	github.com/go-jose/go-jose/v3							 v3.0.1 \
+	github.com/go-jose/go-jose/v4							 v4.0.1 \
 	github.com/go-kit/kit								 v0.8.0 \
 	github.com/go-logfmt/logfmt							 v0.4.0 \
 	github.com/go-openapi/jsonpointer						 v0.19.5 \
@@ -240,6 +240,7 @@ MODGO_MODULES =	\
 	github.com/go-resty/resty/v2							 v2.11.0 \
 	github.com/go-stack/stack							 v1.8.0 \
 	github.com/go-task/slim-sprig							 v0.0.0-20210107165309-348f09dbbbc0 \
+	github.com/go-viper/mapstructure/v2						 v2.0.0-alpha.1 \
 	github.com/gobs/pretty								 v0.0.0-20180724170744-09732c25a95b \
 	github.com/goccy/go-json							 v0.10.2 \
 	github.com/gofrs/uuid								 v4.4.0+incompatible \
@@ -368,6 +369,7 @@ MODGO_MODULES =	\
 	github.com/nrdcg/dnspod-go							 v0.4.0 \
 	github.com/nrdcg/freemyip							 v0.2.0 \
 	github.com/nrdcg/goinwx								 v0.10.0 \
+	github.com/nrdcg/mailinabox							 v0.2.0 \
 	github.com/nrdcg/namesilo							 v0.2.1 \
 	github.com/nrdcg/nodion								 v0.1.0 \
 	github.com/nrdcg/porkbun							 v0.3.0 \
@@ -457,7 +459,7 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.1.0 \
 	go.uber.org/ratelimit								 v0.2.0 \
 	go.uber.org/zap									 v1.10.0 \
-	golang.org/x/crypto								 v0.18.0 \
+	golang.org/x/crypto								 v0.19.0 \
 	golang.org/x/exp								 v0.0.0-20230811145659-89c5cff77bcb \
 	golang.org/x/image								 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint								 v0.0.0-20190930215403-16217165b5de \
@@ -466,8 +468,8 @@ MODGO_MODULES =	\
 	golang.org/x/net								 v0.20.0 \
 	golang.org/x/oauth2								 v0.16.0 \
 	golang.org/x/sync								 v0.6.0 \
-	golang.org/x/sys								 v0.16.0 \
-	golang.org/x/term								 v0.16.0 \
+	golang.org/x/sys								 v0.17.0 \
+	golang.org/x/term								 v0.17.0 \
 	golang.org/x/text								 v0.14.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.17.0 \
@@ -709,7 +711,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto						 v0.0.0-20190510104115-cbcb75029529 \
 	golang.org/x/crypto						 v0.0.0-20190605123033-f99c8df09eb5 \
 	golang.org/x/crypto						 v0.0.0-20190820162420-60c769a6c586 \
-	golang.org/x/crypto						 v0.0.0-20190911031432-227b76d455e7 \
 	golang.org/x/crypto						 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto						 v0.0.0-20200622213623-75b288015ac9 \
 	golang.org/x/crypto						 v0.0.0-20201016220609-9e8e0b390897 \
@@ -725,6 +726,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto						 v0.11.0 \
 	golang.org/x/crypto						 v0.14.0 \
 	golang.org/x/crypto						 v0.17.0 \
+	golang.org/x/crypto						 v0.18.0 \
 	golang.org/x/crypto						 v0.6.0 \
 	golang.org/x/crypto						 v0.7.0 \
 	golang.org/x/crypto						 v0.8.0 \
@@ -851,6 +853,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys						 v0.13.0 \
 	golang.org/x/sys						 v0.15.0 \
+	golang.org/x/sys						 v0.16.0 \
 	golang.org/x/sys						 v0.4.0 \
 	golang.org/x/sys						 v0.5.0 \
 	golang.org/x/sys						 v0.6.0 \
@@ -860,6 +863,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term						 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term						 v0.13.0 \
+	golang.org/x/term						 v0.16.0 \
 	golang.org/x/term						 v0.5.0 \
 	golang.org/x/term						 v0.8.0 \
 	golang.org/x/text						 v0.13.0 \
