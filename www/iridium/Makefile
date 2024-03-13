@@ -11,6 +11,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2024.01.120
+REVISION=		0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -47,7 +48,7 @@ MODPY_RUNDEP=		No
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
-WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
+WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
@@ -81,6 +82,7 @@ LIB_DEPENDS=	archivers/snappy \
 		audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libvpx \
 		multimedia/openh264 \
@@ -114,6 +116,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	dav1d \
 		icu \
+		libaom \
 		libevent \
 		libjpeg \
 		libpng \

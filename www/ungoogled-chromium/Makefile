@@ -12,6 +12,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			122.0.6261.111
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -58,7 +59,7 @@ COMPILER=		ports-clang
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
-WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
@@ -92,6 +93,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libvpx \
 		multimedia/openh264 \
@@ -144,6 +146,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
+		libaom \
 		libevent \
 		libjpeg \
 		libpng \
