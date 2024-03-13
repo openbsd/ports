@@ -94,12 +94,9 @@ firmware/intel/06-8c-01
 firmware/intel/06-8c-02
 firmware/intel/06-8d-01
 firmware/intel/06-8e-09
-@comment firmware/intel/06-8e-09_DUPLICATE
 firmware/intel/06-8e-0a
 firmware/intel/06-8e-0b
-@comment firmware/intel/06-8e-0b_DUPLICATE
 firmware/intel/06-8e-0c
-firmware/intel/06-8f-04
 firmware/intel/06-8f-05
 firmware/intel/06-8f-06
 firmware/intel/06-8f-07
@@ -121,15 +118,16 @@ firmware/intel/06-a5-05
 firmware/intel/06-a6-00
 firmware/intel/06-a6-01
 firmware/intel/06-a7-01
+firmware/intel/06-aa-04
 firmware/intel/06-b7-01
 firmware/intel/06-ba-02
-@comment firmware/intel/06-ba-02_DUPLICATE
 firmware/intel/06-ba-03
-@comment firmware/intel/06-ba-03_DUPLICATE
+firmware/intel/06-ba-08
 firmware/intel/06-be-00
-@comment firmware/intel/06-be-00_DUPLICATE
 firmware/intel/06-bf-02
 firmware/intel/06-bf-05
+firmware/intel/06-cf-01
+firmware/intel/06-cf-02
 firmware/intel/0f-00-07
 firmware/intel/0f-00-0a
 firmware/intel/0f-01-02
