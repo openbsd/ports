@@ -85,7 +85,10 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}weakref_finalize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}weakref_finalize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/makefile.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/weakref_finalize.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/six.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/poolmanager.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/request.py
