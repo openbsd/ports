@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
-GH_TAGNAME =	20240116.0
+GH_TAGNAME =	20240116.1
 
 HOMEPAGE =	https://abseil.io/
 
