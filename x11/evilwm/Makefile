@@ -1,6 +1,6 @@
 COMMENT=	minimalist window manager for the X Window System
 
-DISTNAME=	evilwm-1.4.2
+DISTNAME=	evilwm-1.4.3
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.6809.org.uk/evilwm/
