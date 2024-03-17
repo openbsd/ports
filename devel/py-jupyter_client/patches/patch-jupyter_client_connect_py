@@ -1,15 +1,15 @@
 Index: jupyter_client/connect.py
 --- jupyter_client/connect.py.orig
 +++ jupyter_client/connect.py
-@@ -13,6 +13,7 @@ import socket
+@@ -15,6 +15,7 @@ import socket
  import stat
  import tempfile
  import warnings
 +import sys
  from getpass import getpass
- from typing import Any, Dict, List, Optional, Set, Tuple, Union, cast
+ from typing import TYPE_CHECKING, Any, Dict, Union, cast
  
-@@ -147,7 +148,7 @@ def write_connection_file(
+@@ -156,7 +157,7 @@ def write_connection_file(
      with secure_write(fname) as f:
          f.write(json.dumps(cfg, indent=2))
  

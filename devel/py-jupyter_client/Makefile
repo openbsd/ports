@@ -1,9 +1,8 @@
 COMMENT =		Jupyter protocol implementation and client libraries
 
-MODPY_EGG_VERSION =	8.1.0
+MODPY_EGG_VERSION =	8.6.1
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
