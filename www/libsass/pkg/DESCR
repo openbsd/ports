@@ -1,4 +1,14 @@
-LibSass is a C++ port of the original Ruby Sass CSS compiler with a C
-API. We coded LibSass with portability and efficiency in mind. You can
-expect LibSass to be a lot faster than Ruby Sass and on par or faster
-than the best alternative CSS compilers around.
+Sass is an extension of CSS, adding nested rules, variables, mixins,
+selector inheritance, and more. It's translated to well-formatted,
+standard CSS using the command line tool or a plugin for your build
+system.
+
+LibSass is a C++ port of the original Ruby Sass CSS compiler with a
+C API, coded with portability and efficiency in mind. You can expect
+LibSass to be a lot faster than Ruby Sass and on par or faster than
+the best alternative CSS compilers around.
+
+Warning: LibSass is deprecated. While it will continue to receive
+maintenance releases indefinitely, there are no plans to add additional
+features or compatibility with any new CSS or Sass features. Projects
+that still use it should move onto Dart Sass.

@@ -5,9 +5,9 @@ COMMENT =		C/C++ implementation of a Sass compiler
 
 GH_ACCOUNT =		sass
 GH_PROJECT =		libsass
-GH_TAGNAME =		3.6.5
+GH_TAGNAME =		3.6.6
+
 EPOCH =			0
-REVISION =		0
 
 SHARED_LIBS +=  sass                      0.1 # 0.0
 
