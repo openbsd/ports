@@ -9,7 +9,6 @@ V =			4.15.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -21,14 +20,15 @@ SITES =			https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tdesktop:	GPLv3 with OpenSSL exception
-# minizip:	zlib
-# tgcalls:	LGPL 3
-# libtgvoip:	unlicense/public domain
-# rlottie:	LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
-# cld3:		Apache 2.0
-# kcoreaddons:	LGPLv2.1+, GPLv2+
-# libprisma:	MIT
+# tdesktop:		GPLvj with OpenSSL exception
+# GSL:			MIT
+# cld3:			Apache 2.0
+# kcoreaddons:		LGPL 2.1+, GPL 2+
+# libprisma:		MIT
+# libtgvoip:		unlicense/public domain
+# minizip:		zlib
+# rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
+# tgcalls:		LGPL 3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
@@ -111,24 +111,17 @@ CONFIGURE_ARGS +=	-DLINUX=true
 
 NO_TEST =		Yes
 
+# unported and required
+NEEDED_BUNDLES =	cld3 libprisma libtgvoip rlottie tgcalls
+
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
-
-# unported and required
-NEEDED_BUNDLES +=	cld3 rlottie tgcalls libtgvoip libprisma
 
 # exist under Qt5-only devel/kf5/
 NEEDED_BUNDLES +=	kcoreaddons
 
 # tdesktop 4.9.5 forced bundled GSL due to libstdc++ and CMake bugs
 NEEDED_BUNDLES +=	GSL
-
-post-patch:
-	# XXX fix the following on every source file
-	# warning: unknown warning option '-Wno-maybe-uninitialized'
-	# warning: argument unused during compilation: '-fstack-clash-protection'
-	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
-	    ${WRKSRC}/cmake/options_linux.cmake
 
 post-extract:
 	# All bundles:
@@ -137,5 +130,12 @@ post-extract:
 	@cd ${WRKSRC}/Telegram/ThirdParty/ && mkdir .need/ && \
 		mv ${NEEDED_BUNDLES} .need/ && rm -fr -- ./* && \
 		mv .need/* . && rmdir .need/ && ls -x
+
+post-patch:
+	# XXX fix the following on every source file
+	# warning: unknown warning option '-Wno-maybe-uninitialized'
+	# warning: argument unused during compilation: '-fstack-clash-protection'
+	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
+	    ${WRKSRC}/cmake/options_linux.cmake
 
 .include <bsd.port.mk>
