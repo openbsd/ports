@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	8.22.1
+MODPY_EGG_VERSION =	8.22.2
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
 
