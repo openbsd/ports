@@ -3,7 +3,7 @@ It's not required to link with libssh_threads anymore since libssh 0.8
 Index: x2goclient.pro
 --- x2goclient.pro.orig
 +++ x2goclient.pro
-@@ -165,7 +165,7 @@ else:win32 {
+@@ -171,7 +171,7 @@ else:win32 {
  }
  else {
    # For backwards-compatibility.
@@ -11,8 +11,8 @@ Index: x2goclient.pro
 +  LIBS += -lssh
  }
  
- win32:LIBS += -lAdvAPI32 -lshell32 -lUser32
-@@ -203,7 +203,7 @@ else:message("No translation files in project")
+ win32:!mxe {
+@@ -211,7 +211,7 @@ else:message("No translation files in project")
  
  TEMPLATE = app
  DEPENDPATH += .
@@ -21,14 +21,23 @@ Index: x2goclient.pro
  RESOURCES += res/resources.qrc
  
  exists(res/txt/git-info) {
-@@ -220,6 +220,10 @@ linux|linux-* {
-   message("building $$TARGET via $$QMAKESPEC with ldap and cups")
+@@ -229,6 +229,10 @@ linux|linux-* {
    LIBS += -lldap -lcups -lX11 -lXpm
    DEFINES += __linux__
-+}
+ }
 +openbsd-* {
 +    message("building $$TARGET with ldap and cups")
 +    LIBS += -lldap -lcups -lX11 -lXpm
- }
++}
  x2go_linux_static {
    message("linking all libs statically")
+   DEFINES += __linux__
+@@ -278,7 +282,7 @@ win32|win32-* {
+   CONFIG += static release
+ }
+ QT += svg network
+-linux|linux-* {
++openbsd-*|linux|linux-* {
+   greaterThan(QT_MAJOR_VERSION, 4): QT += x11extras
+ }
+ win32|win32-* {

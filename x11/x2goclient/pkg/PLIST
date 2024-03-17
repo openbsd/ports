@@ -8,6 +8,7 @@ share/icons/hicolor/128x128/apps/x2goclient.png
 share/icons/hicolor/16x16/apps/x2goclient.png
 share/icons/hicolor/32x32/apps/x2goclient.png
 share/icons/hicolor/64x64/apps/x2goclient.png
+share/mime/packages/x-x2go.xml
 share/x2goclient/
 share/x2goclient/icons/
 share/x2goclient/icons/x2goclient.png
@@ -15,3 +16,4 @@ share/x2goclient/icons/x2goclient.xpm
 share/x2goclient/icons/x2gosession.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database
