@@ -37,13 +37,13 @@ Index: conf/sample.ini
 @@ -254,7 +254,7 @@
  # in some UI views to notify that a grafana update exists.
  # This option does not cause any auto updates, nor send any information
- # only a GET request to https://raw.githubusercontent.com/grafana/grafana/main/latest.json to get the latest version.
+ # only a GET request to https://grafana.com/api/grafana/versions/stable to get the latest version.
 -;check_for_updates = true
 +check_for_updates = false
  
  # Set to false to disable all checks to https://grafana.com
  # for new versions of plugins. The check is used
-@@ -896,7 +896,7 @@
+@@ -917,7 +917,7 @@
  [log]
  # Either "console", "file", "syslog". Default is console and  file
  # Use space to separate multiple modes, e.g. "console file"

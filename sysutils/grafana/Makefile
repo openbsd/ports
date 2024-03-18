@@ -1,6 +1,6 @@
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		10.2.3
+V =		10.4.0
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
