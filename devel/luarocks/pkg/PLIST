@@ -13,7 +13,6 @@ share/lua/${MODLUA_VERSION}/luarocks/admin/cmd/make_manifest.lua
 share/lua/${MODLUA_VERSION}/luarocks/admin/cmd/refresh_cache.lua
 share/lua/${MODLUA_VERSION}/luarocks/admin/cmd/remove.lua
 share/lua/${MODLUA_VERSION}/luarocks/admin/index.lua
-share/lua/${MODLUA_VERSION}/luarocks/argparse.lua
 share/lua/${MODLUA_VERSION}/luarocks/build/
 share/lua/${MODLUA_VERSION}/luarocks/build.lua
 share/lua/${MODLUA_VERSION}/luarocks/build/builtin.lua
@@ -43,6 +42,7 @@ share/lua/${MODLUA_VERSION}/luarocks/cmd/unpack.lua
 share/lua/${MODLUA_VERSION}/luarocks/cmd/upload.lua
 share/lua/${MODLUA_VERSION}/luarocks/cmd/which.lua
 share/lua/${MODLUA_VERSION}/luarocks/cmd/write_rockspec.lua
+share/lua/${MODLUA_VERSION}/luarocks/config.lua
 share/lua/${MODLUA_VERSION}/luarocks/core/
 share/lua/${MODLUA_VERSION}/luarocks/core/cfg.lua
 share/lua/${MODLUA_VERSION}/luarocks/core/dir.lua
@@ -114,3 +114,6 @@ share/lua/${MODLUA_VERSION}/luarocks/upload/
 share/lua/${MODLUA_VERSION}/luarocks/upload/api.lua
 share/lua/${MODLUA_VERSION}/luarocks/upload/multipart.lua
 share/lua/${MODLUA_VERSION}/luarocks/util.lua
+share/lua/${MODLUA_VERSION}/luarocks/vendor/
+share/lua/${MODLUA_VERSION}/luarocks/vendor/argparse.lua
+share/lua/${MODLUA_VERSION}/luarocks/vendor/dkjson.lua
