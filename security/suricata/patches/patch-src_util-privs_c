@@ -1,0 +1,34 @@
+Use setresuid/gid() directly to change user and group.  Otherwise
+Suricata uses libcap-ng on Linux and runs as root elsewhere.
+
+Index: src/util-privs.c
+--- src/util-privs.c.orig
++++ src/util-privs.c
+@@ -244,6 +244,27 @@ void SCGetGroupID(const char *group_name, uint32_t *gi
+     *gid = grpid;
+ }
+ 
++int SCSetUserID(const uint32_t uid, const uint32_t gid)
++{
++    int ret = setresgid(gid, gid, gid);
++
++    if (ret != 0) {
++        SCLogError("unable to set the group ID,"
++                " check permissions!! gid=%u ret=%i errno=%i", gid, ret, errno);
++        exit(EXIT_FAILURE);
++    }
++
++    ret = setresuid(uid, uid, uid);
++
++    if (ret != 0) {
++        SCLogError("unable to set the user ID,"
++                " check permissions!! uid=%u ret=%i errno=%i", uid, ret, errno);
++        exit(EXIT_FAILURE);
++    }
++
++    return 0;
++}
++
+ #ifdef __OpenBSD__
+ int SCPledge(void)
+ {
