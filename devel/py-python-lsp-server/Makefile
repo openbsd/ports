@@ -1,6 +1,6 @@
 COMMENT =		Python Language Server
 
-MODPY_EGG_VERSION =	1.10.0
+MODPY_EGG_VERSION =	1.10.1
 DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
