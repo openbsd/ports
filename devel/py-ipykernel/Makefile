@@ -1,9 +1,8 @@
 COMMENT =		IPython kernel for Jupyter
 
-MODPY_EGG_VERSION =	6.23.2
+MODPY_EGG_VERSION =	6.29.3
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 PORTROACH=		limit:^6
 
@@ -28,7 +27,7 @@ RUN_DEPENDS =		devel/py-comm${MODPY_FLAVOR}>=0.1.1 \
 			devel/py-traitlets${MODPY_FLAVOR}>=5.4.0 \
 			devel/ipython${MODPY_FLAVOR}>=7.23.1 \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR}>=0.1 \
-			net/py-zmq${MODPY_FLAVOR}>=20 \
+			net/py-zmq${MODPY_FLAVOR}>=24 \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}>=6.1
