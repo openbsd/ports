@@ -1,8 +1,7 @@
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-1.1.6
+DISTNAME=	ocserv-1.2.4
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
 
 CATEGORIES=	net
 
@@ -46,7 +45,7 @@ CONFIGURE_ARGS=		--disable-namespaces \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 
 post-extract:
 	find ${WRKSRC}/tests -type f -perm -+x -exec \
@@ -65,7 +64,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ocserv
 	cd ${WRKSRC}/doc; ${INSTALL_DATA} profile.xml sample.passwd \
 	    ${PREFIX}/share/examples/ocserv/
-	mv ${PREFIX}/bin/ocserv-fw ${PREFIX}/share/examples/ocserv/
+	mv ${PREFIX}/libexec/ocserv-fw ${PREFIX}/share/examples/ocserv/
 	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${WRKSRC}/doc/sample.config \
 	    ${PREFIX}/share/examples/ocserv/sample.config

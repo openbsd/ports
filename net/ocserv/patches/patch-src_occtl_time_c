@@ -1,19 +1,20 @@
 time_t is 64 bits on all OpenBSD (and NetBSD) arch; cast time values
 to a specific-width type to avoid problems on 32-bit arch
 
---- src/occtl/time.c.orig	Sun Mar  6 09:44:05 2016
-+++ src/occtl/time.c	Sat Mar 19 14:25:48 2016
+Index: src/occtl/time.c
+--- src/occtl/time.c.orig
++++ src/occtl/time.c
 @@ -36,7 +36,7 @@ void print_time_ival7(char output[MAX_TMPSTR_SIZE], ti
  {
  	time_t t = t1 - t2;
  
--	if ((long)t < (long)0) {
-+	if ((long long)t < (long long)0) {
+-	if ((long)t < 0) {
++	if ((long long)t < 0) {
  		/* system clock changed? */
  		snprintf(output, MAX_TMPSTR_SIZE, "   ?   ");
  		return;
 @@ -44,17 +44,17 @@ void print_time_ival7(char output[MAX_TMPSTR_SIZE], ti
- 	
+ 
  	if (t >= 48 * 60 * 60)
  		/* 2 days or more */
 -		snprintf(output, MAX_TMPSTR_SIZE, _("%2ludays"), (long)t / (24 * 60 * 60));

@@ -4,18 +4,15 @@ support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
 Index: src/ocpasswd/ocpasswd.c
 --- src/ocpasswd/ocpasswd.c.orig
 +++ src/ocpasswd/ocpasswd.c
-@@ -26,6 +26,10 @@
- #ifndef _XOPEN_SOURCE
- # define _XOPEN_SOURCE
- #endif
-+#ifndef __BSD_VISIBLE
-+# define __BSD_VISIBLE
-+#endif
+@@ -23,6 +23,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <stdint.h>
 +#include <pwd.h>
  #include <unistd.h>
  #include <gnutls/gnutls.h>
  #include <gnutls/crypto.h>	/* for random */
-@@ -52,9 +56,8 @@ static void
+@@ -46,9 +47,8 @@ static void
  crypt_int(const char *fpasswd, const char *username, const char *groupname,
  	  const char *passwd)
  {
@@ -27,15 +24,15 @@ Index: src/ocpasswd/ocpasswd.c
  	char *tmp_passwd;
  	unsigned i;
  	unsigned fpasswd_len = strlen(fpasswd);
-@@ -67,36 +70,8 @@ crypt_int(const char *fpasswd, const char *username, c
- 	ssize_t len, l;
- 	int ret;
+@@ -64,36 +64,8 @@ crypt_int(const char *fpasswd, const char *username, c
+ 	setlocale(LC_CTYPE, "C");
+ 	setlocale(LC_COLLATE, "C");
  
 -	ret = gnutls_rnd(GNUTLS_RND_NONCE, _salt, sizeof(_salt));
 -	if (ret < 0) {
 -		fprintf(stderr, "Error generating nonce: %s\n",
 -			gnutls_strerror(ret));
--		exit(1);
+-		exit(EXIT_FAILURE);
 -	}
 -
 -#ifdef TRY_SHA2_CRYPT
@@ -63,6 +60,6 @@ Index: src/ocpasswd/ocpasswd.c
 -		fprintf(stderr, "Error in crypt().\n");
 +	if (crypt_newhash(passwd, "blowfish,a", cr_passwd, sizeof(cr_passwd)) != 0) {
 +		fprintf(stderr, "Error in crypt_newhash().\n");
- 		exit(1);
+ 		exit(EXIT_FAILURE);
  	}
  

@@ -38,7 +38,7 @@ Index: doc/sample.config
 +run-as-group = _ocserv
  
  # socket file used for IPC with occtl. You only need to set that,
- # if you use more than a single servers.
+ # if you use more than a single server.
 @@ -106,7 +95,7 @@ run-as-group = daemon
  # socket file used for server IPC (worker-main), will be appended with .PID
  # It must be accessible within the chroot environment (if any), so it is best
@@ -52,20 +52,20 @@ Index: doc/sample.config
  ### failures during the reloading time.
  
  
--# Whether to enable seccomp/Linux namespaces worker isolation. That restricts the number of 
+-# Whether to enable seccomp/Linux namespaces worker isolation. That restricts the number of
 -# system calls allowed to a worker process, in order to reduce damage from a
 -# bug in the worker process. It is available on Linux systems at a performance cost.
 -# The performance cost is roughly 2% overhead at transfer time (tested on a Linux 3.17.8).
 -# Note however, that process isolation is restricted to the specific libc versions
 -# the isolation was tested at. If you get random failures on worker processes, try
 -# disabling that option and report the failures you, along with system and debugging
--# information at: https://gitlab.com/ocserv/ocserv/issues
+-# information at: https://gitlab.com/openconnect/ocserv/issues
 -isolate-workers = true
 -
  # A banner to be displayed on clients after connection
  #banner = "Welcome"
  
-@@ -345,10 +324,9 @@ min-reauth-time = 300
+@@ -347,10 +326,9 @@ min-reauth-time = 300
  # Banning clients in ocserv works with a point system. IP addresses
  # that get a score over that configured number are banned for
  # min-reauth-time seconds. By default a wrong password attempt is 10 points,
@@ -79,7 +79,7 @@ Index: doc/sample.config
  #
  # Set to zero to disable.
  max-ban-score = 80
-@@ -359,7 +337,6 @@ ban-reset-time = 1200
+@@ -361,7 +339,6 @@ ban-reset-time = 1200
  # In case you'd like to change the default points.
  #ban-points-wrong-password = 10
  #ban-points-connection = 1
@@ -87,18 +87,18 @@ Index: doc/sample.config
  
  # Cookie timeout (in seconds)
  # Once a client is authenticated he's provided a cookie with
-@@ -434,7 +411,7 @@ rekey-method = ssl
+@@ -436,7 +413,7 @@ rekey-method = ssl
  use-occtl = true
  
  # PID file. It can be overridden in the command line.
 -pid-file = /var/run/ocserv.pid
 +pid-file = ${LOCALSTATEDIR}/run/ocserv.pid
  
- # Log Level. It can be overridden in the command line with the -d option.
- # All messages at the configure level and lower will be displayed.
-@@ -563,6 +540,11 @@ no-route = 192.168.5.0/255.255.255.0
+ # Log Level. Ocserv sends the logging messages to standard error
+ # as well as the system log. The log level can be overridden in the
+@@ -570,6 +547,11 @@ no-route = 192.168.5.0/255.255.255.0
  # any other routes. In case of defaultroute, the no-routes are restricted.
- # All the routes applied by ocserv can be reverted using /etc/ocserv/ocserv-fw
+ # All the routes applied by ocserv can be reverted using /usr/libexec/ocserv-fw
  # --removeall. This option can be set globally or in the per-user configuration.
 +#
 +# OpenBSD package notes:
@@ -108,7 +108,7 @@ Index: doc/sample.config
  #restrict-user-to-routes = true
  
  # This option implies restrict-user-to-routes set to true. If set, the
-@@ -635,23 +617,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -642,23 +624,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/
@@ -123,7 +123,7 @@ Index: doc/sample.config
 -#   }
 -# In some distributions the krb5-k5tls plugin of kinit is required.
 -#
--# The following option is available in ocserv, when compiled with GSSAPI support. 
+-# The following option is available in ocserv, when compiled with GSSAPI support.
 -
 -#kkdcp = "SERVER-PATH KERBEROS-REALM PROTOCOL@SERVER:PORT"
 -#kkdcp = "/KdcProxy KERBEROS.REALM udp@127.0.0.1:88"
