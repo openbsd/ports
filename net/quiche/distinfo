@@ -119,7 +119,7 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (quiche-0.20.0.tar.gz) = cSW8gt3POPv7xpiCzLJyO/tNW/60Jxi4KR0m7AYELjg=
+SHA256 (quiche-0.20.1.tar.gz) = nEYNjs9sgMBr+bQvkSAe8z+RLiYVqHH/LQ5QGXuQHHE=
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -241,4 +241,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (quiche-0.20.0.tar.gz) = 681940
+SIZE (quiche-0.20.1.tar.gz) = 683362
