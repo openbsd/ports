@@ -6,6 +6,7 @@ VER=		6.9.12
 DASHVER=	96
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	ImageMagick-${VER}.${DASHVER}
+REVISION=	0
 PORTROACH=	site:https://imagemagick.org/archive/releases/ limit:6.*
 EXTRACT_SUFX=	.tar.xz
 
@@ -44,11 +45,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/openjp2 \
 		graphics/png \
 		graphics/tiff \
-		multimedia/aom \
-		multimedia/dav1d \
-		multimedia/libde265 \
 		multimedia/libheif \
-		multimedia/x265 \
 		textproc/libxml
 BUILD_DEPENDS=	print/ghostscript/gnu
 
