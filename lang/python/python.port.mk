@@ -132,6 +132,8 @@ NO_TEST = Yes
 MODPY_TEST_DEPENDS =	${RUN_DEPENDS}
 MODPY_TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR}
 .  endif
+.else
+MODPY_TEST_DEPENDS =	${MODPY_RUN_DEPENDS}
 .endif
 
 .if ${NO_BUILD:L} == "no"
