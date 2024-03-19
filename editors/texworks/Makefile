@@ -37,7 +37,7 @@ WANTLIB-lua += Qt5ScriptTools Qt5Test Qt5Widgets Qt5Xml m
 
 WANTLIB-python += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB-python += Qt5Gui Qt5Network Qt5Qml Qt5Script Qt5ScriptTools Qt5Test
-WANTLIB-python += Qt5Widgets Qt5Xml m python3.10
+WANTLIB-python += Qt5Widgets Qt5Xml m ${MODPY_WANTLIB}
 
 MULTI_PACKAGES =	-main -lua -python
 

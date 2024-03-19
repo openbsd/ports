@@ -42,7 +42,7 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5WebKit Qt5WebKitWidgets
 WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
 WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss icalvcal icui18n icuuc m ofx python3.10
+WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
 
 MODULES =		lang/python \
 			devel/kf5
