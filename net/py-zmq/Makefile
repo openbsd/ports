@@ -1,6 +1,7 @@
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	25.1.0
+# 26+ requires cython3
+MODPY_EGG_VERSION =	25.1.1
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -16,11 +17,13 @@ EPOCH =			0
 WANTLIB =		${MODPY_WANTLIB} pthread zmq
 
 MODULES =		lang/python
+
 FLAVORS =		python3
 FLAVOR =		python3
 
 BUILD_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR}
+
 LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/zeromq
 
