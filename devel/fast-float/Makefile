@@ -1,6 +1,6 @@
 COMMENT =	fast and exact implementation of from_chars for float/double
 
-V =		6.1.0
+V =		6.1.1
 PKGNAME =	fast-float-${V}
 GH_TAGNAME =	v${V}
 GH_ACCOUNT =	fastfloat
