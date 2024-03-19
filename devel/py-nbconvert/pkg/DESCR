@@ -1,2 +1,13 @@
-jupyter nbconvert converts notebooks to various other formats via
-Jinja templates.
+nbconvert converts notebooks to various other formats. Possible
+output formats include:
+- asciidoc
+- html
+- latex
+- markdown
+- pdf
+- py
+- rst
+- script
+
+nbconvert can be used as either a Python library or as a command-line
+tool.

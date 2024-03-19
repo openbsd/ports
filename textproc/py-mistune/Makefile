@@ -1,11 +1,8 @@
 COMMENT =		markdown parser for Python
 
-# this is the newest compatible with py-m2r which (as of 0.3.1)
-# needs mistune < 2.0
-MODPY_EGG_VERSION =	0.8.4
+MODPY_EGG_VERSION =	2.0.5
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		textproc
 
