@@ -1,7 +1,7 @@
 Index: manual/book.toml
 --- manual/book.toml.orig
 +++ manual/book.toml
-@@ -7,6 +7,7 @@ description = "The official manual for difftastic, the
+@@ -7,6 +7,7 @@ description = "The manual for difftastic, the structur
  
  [output.html]
  git-repository-url = "https://github.com/wilfred/difftastic"

@@ -3,7 +3,7 @@ https://github.com/Wilfred/difftastic/commit/b662a2220b9e9eae5f69ecbc31195bcfcc5
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -942,8 +942,9 @@ dependencies = [
+@@ -1058,8 +1058,9 @@ dependencies = [
  
  [[package]]
  name = "tree_magic_mini"
