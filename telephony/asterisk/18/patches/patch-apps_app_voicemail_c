@@ -14,7 +14,7 @@ Index: apps/app_voicemail.c
  #else
  #include "c-client.h"
  #include "imap4r1.h"
-@@ -3433,7 +3436,11 @@ void mm_dlog(char *string)
+@@ -3448,7 +3451,11 @@ void mm_dlog(char *string)
  }
  
  
@@ -26,7 +26,7 @@ Index: apps/app_voicemail.c
  {
  	struct ast_vm_user *vmu;
  
-@@ -3443,22 +3450,41 @@ void mm_login(NETMBX * mb, char *user, char *pwd, long
+@@ -3458,22 +3465,41 @@ void mm_login(NETMBX * mb, char *user, char *pwd, long
  
  	/* We should only do this when necessary */
  	if (!ast_strlen_zero(authpassword)) {
