@@ -1,7 +1,9 @@
+https://github.com/pjsip/pjproject/pull/3822
+
 Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
 --- third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c.orig
 +++ third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
-@@ -159,15 +159,17 @@ static void update_certs_info(pj_ssl_sock_t* ssock,
+@@ -159,10 +159,12 @@ static void update_certs_info(pj_ssl_sock_t* ssock,
                                pj_ssl_cert_info *remote_cert_info,
                                pj_bool_t is_verify);
  
@@ -12,9 +14,12 @@ Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
  #  define M_ASN1_STRING_data(x)     ASN1_STRING_get0_data(x)
  #  define M_ASN1_STRING_length(x)   ASN1_STRING_length(x)
 +# endif
- #  if defined(OPENSSL_API_COMPAT) && OPENSSL_API_COMPAT >= 0x10100000L
- #     define X509_get_notBefore(x)  X509_get0_notBefore(x)
- #     define X509_get_notAfter(x)   X509_get0_notAfter(x)
+ #  if defined(OPENSSL_API_COMPAT) && OPENSSL_API_COMPAT >= 0x10100000L || \
+       defined(OPENSSL_NO_DEPRECATED)
+ 
+@@ -179,7 +181,7 @@ static void update_certs_info(pj_ssl_sock_t* ssock,
+ #    endif
+ 
  #  endif
 -#elif !USING_LIBRESSL
 +#else

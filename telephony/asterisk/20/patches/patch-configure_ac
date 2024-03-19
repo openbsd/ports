@@ -6,7 +6,7 @@ last hunk: adapt to openbsd's lua directory naming
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2204,6 +2204,67 @@ if test "${USE_IMAP_TK}" != "no"; then
+@@ -2201,6 +2201,67 @@ if test "${USE_IMAP_TK}" != "no"; then
  				[ac_cv_imap_tk="no"]
  	   		)
  			if test "${ac_cv_imap_tk}" = "no"; then
@@ -74,7 +74,7 @@ Index: configure.ac
  				imap_libs="-lcrypto -lssl -lc-client4"
  				LIBS="${saved_libs} ${imap_libs} "`echo ${imap_ldflags}`
  				AC_LINK_IFELSE(
-@@ -2332,6 +2393,9 @@ if test "${USE_IMAP_TK}" != "no"; then
+@@ -2329,6 +2390,9 @@ if test "${USE_IMAP_TK}" != "no"; then
  		if test "${ac_cv_imap_tk2006}" = "yes"; then
  			AC_DEFINE([HAVE_IMAP_TK2006], 1, [Define if your system has the UW IMAP Toolkit c-client library version 2006 or greater.])
  		fi
@@ -84,7 +84,7 @@ Index: configure.ac
  	else
  		AC_MSG_RESULT(no)
  	fi
-@@ -2627,10 +2691,10 @@ fi
+@@ -2624,10 +2688,10 @@ fi
  AST_EXT_LIB_CHECK([OPUSFILE], [opusfile], [op_open_callbacks], [opus/opusfile.h], [], [$__opus_include])
  
  for ver in ${LUA_VERSIONS:-5.4 5.3 5.2 5.1}; do

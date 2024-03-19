@@ -514,7 +514,6 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_send_to_voicemail.so
 @so lib/asterisk/modules/res_pjsip_session.so
 @so lib/asterisk/modules/res_pjsip_sips_contact.so
-@so lib/asterisk/modules/res_pjsip_stir_shaken.so
 @so lib/asterisk/modules/res_pjsip_t38.so
 @so lib/asterisk/modules/res_pjsip_transport_websocket.so
 @so lib/asterisk/modules/res_pjsip_xpidf_body_generator.so
@@ -540,7 +539,6 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_stasis_recording.so
 @so lib/asterisk/modules/res_stasis_snoop.so
 @so lib/asterisk/modules/res_statsd.so
-@so lib/asterisk/modules/res_stir_shaken.so
 @so lib/asterisk/modules/res_stun_monitor.so
 @so lib/asterisk/modules/res_timing_pthread.so
 @so lib/asterisk/modules/res_tonedetect.so
@@ -578,6 +576,7 @@ share/asterisk/images/asterisk-intro.jpg
 share/asterisk/images/kpad2.jpg
 share/asterisk/keys/
 share/asterisk/keys/stir_shaken/
+share/asterisk/keys/stir_shaken/cache/
 share/asterisk/phoneprov/
 share/asterisk/phoneprov/000000000000-directory.xml
 share/asterisk/phoneprov/000000000000-phone.cfg

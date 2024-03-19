@@ -3,7 +3,7 @@ openbsd writes a warning to the kernel log when you sprintf a null pointer
 Index: third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c
 --- third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c.orig
 +++ third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c
-@@ -596,13 +596,13 @@ PJ_DEF(pj_status_t) pjmedia_sdp_rtpmap_to_attr(pj_pool
+@@ -611,13 +611,13 @@ PJ_DEF(pj_status_t) pjmedia_sdp_rtpmap_to_attr(pj_pool
      len = pj_ansi_snprintf(tempbuf, sizeof(tempbuf), 
                             "%.*s %.*s/%u%s%.*s",
                             (int)rtpmap->pt.slen,

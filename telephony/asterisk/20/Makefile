@@ -1,7 +1,6 @@
-VER=		20.6.0
-REVISION-main=	1
+VER=		20.7.0
 
-PJ_V=		2.13.1
+PJ_V=		2.14
 SHLIB_V=	0.0
 VERSION_SPEC=	>=20.0,<21.0
 
