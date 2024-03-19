@@ -1,6 +1,6 @@
 COMMENT =	UNIX pager optimized for tabular data
 
-DIST_TUPLE =	github okbob pspg 5.8.1 .
+DIST_TUPLE =	github okbob pspg 5.8.2 .
 
 CATEGORIES =	databases
 
