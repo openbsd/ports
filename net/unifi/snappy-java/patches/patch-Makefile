@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -45,7 +45,7 @@ SNAPPY_OBJ:=$(addprefix $(SNAPPY_OUT)/,$(patsubst %.cc
+ CXXFLAGS:=$(CXXFLAGS) -I$(SNAPPY_SRC_DIR) -I$(SNAPPY_OUT) -I$(BITSHUFFLE_SRC_DIR)
+ 
+ ifndef CXXFLAGS_BITSHUFFLE
+-  ifeq ($(OS_NAME)-$(OS_ARCH),Linux-x86_64)
++  ifeq ($(OS_NAME)-$(OS_ARCH),OpenBSD-x86_64)
+ 	# SSE2 is supported in all the x86_64 platforms and AVX2 is only supported
+         # in the small part of them. gcc in linux/x86_64 typically enables SSE2 by default though,
+ 	# we explicitly set flags below to make this precondition clearer.
