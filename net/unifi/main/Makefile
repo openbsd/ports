@@ -1,8 +1,7 @@
-V=		8.0.28
-SNAPPY_V=	1.1.8.4
+V=		8.1.113
+SNAPPY_V=	1.1.10.5
 SNAPPY_S=	-jdk17-libc++.10.0
-#BUILD_V=	-66495b8e3a
+#BUILD_V=	-133ae7f813
 MODJAVA_VER=	17
-REVISION=	0
 
 .include <bsd.port.mk>
