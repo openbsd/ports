@@ -3,7 +3,7 @@ OpenBSD pobj permissions may not allow creating temp file in curdir.
 Index: t/01header.t
 --- t/01header.t.orig
 +++ t/01header.t
-@@ -6,9 +6,11 @@ use warnings;
+@@ -7,9 +7,11 @@ use warnings;
  use Test::More;
  
  use Config;
