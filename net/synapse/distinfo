@@ -1,5 +1,5 @@
 SHA256 (cargo/aho-corasick-1.0.2.tar.gz) = Q/bLG/IiAlNAF484LEJvE3V7KWDol3nfyzGcMlQqWkE=
-SHA256 (cargo/anyhow-1.0.79.tar.gz) = CA6YkKCCZisJwa1F9Wf67rR/IrX7I4lfvh5lHnGOJco=
+SHA256 (cargo/anyhow-1.0.80.tar.gz) = WtMs5S5BYXMPcJjAd80u1iKbWATM+Z5TZr4atyqYtOE=
 SHA256 (cargo/arc-swap-1.5.1.tar.gz) = mDzYudSwKm3G/6VXJi61hYonoAOP//4hoPEz6qgZoWQ=
 SHA256 (cargo/autocfg-1.1.0.tar.gz) = 1GiAK6sXy8DMV16bBT9B5yqja/prf1XjUp/6QxYbl/o=
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
@@ -54,9 +54,9 @@ SHA256 (cargo/windows_i686_gnu-0.36.1.tar.gz) = GA5szwHa9MQmuEbfxm2x/FGPB0uqeTqn
 SHA256 (cargo/windows_i686_msvc-0.36.1.tar.gz) = 4ueRcUiygS0e6vrrIql+SBPfpgo/j3jr4gS8yI8S8CQ=
 SHA256 (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = Tc0XG4d2xBuXUh5doSei2GrSgBFIB9Cyqx5GK8dk2eE=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
-SHA256 (synapse-1.101.0.tar.gz) = iCoqkHVk0qCMePdsQ8MceQOXYCefGPXAJ7LzP0IEROE=
+SHA256 (synapse-1.103.0.tar.gz) = H8m4SG6yZeq2OMYU82FCSMxxU4ozzh1Y3hZ87veLkAo=
 SIZE (cargo/aho-corasick-1.0.2.tar.gz) = 167694
-SIZE (cargo/anyhow-1.0.79.tar.gz) = 44931
+SIZE (cargo/anyhow-1.0.80.tar.gz) = 45138
 SIZE (cargo/arc-swap-1.5.1.tar.gz) = 66157
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
@@ -111,4 +111,4 @@ SIZE (cargo/windows_i686_gnu-0.36.1.tar.gz) = 818115
 SIZE (cargo/windows_i686_msvc-0.36.1.tar.gz) = 724575
 SIZE (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = 790934
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
-SIZE (synapse-1.101.0.tar.gz) = 8465894
+SIZE (synapse-1.103.0.tar.gz) = 8470184

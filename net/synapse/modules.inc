@@ -1,5 +1,5 @@
 MODCARGO_CRATES +=	aho-corasick	1.0.2	# Unlicense OR MIT
-MODCARGO_CRATES +=	anyhow	1.0.79	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	anyhow	1.0.80	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	arc-swap	1.5.1	# Apache-2.0/MIT
 MODCARGO_CRATES +=	autocfg	1.1.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
