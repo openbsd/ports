@@ -1,6 +1,15 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
+@@ -281,7 +281,7 @@ if test "X$PYTHON" != X; then
+   fi
+ 
+   if test "X$PYTHON_LIBEXT" = X; then
+-    python_default_libext=`$PYTHON -c 'from distutils import sysconfig; print(sysconfig.get_config_var("SO"))'`
++    python_default_libext=`$PYTHON -c 'from distutils import sysconfig; print(sysconfig.get_config_var("EXT_SUFFIX"))'`
+     AC_ARG_WITH(python-libext, [  --with-python-libext(=EXT) Python shared library file extension (default .so)], with_python_libext="$withval", with_python_libext=$python_default_libext)
+     if test "X$with_python_libext" != X; then
+       PYTHON_LIBEXT=$with_python_libext
 @@ -419,7 +419,7 @@ if test "X$RUBY" != X; then
  	AC_MSG_ERROR(No such RUBY linking type $ruby_linking)
  	;;
