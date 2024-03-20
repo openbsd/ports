@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -93,7 +93,7 @@ int main() {
+@@ -95,7 +95,7 @@ int main() {
    char buf[64];
    long x = 0;
    inet_pton(AF_INET, &x, buf);
