@@ -1,7 +1,7 @@
 COMMENT =	associate user-defined magic to variables from Perl
 
 MODULES =	cpan
-DISTNAME =	Variable-Magic-0.63
+DISTNAME =	Variable-Magic-0.64
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
