@@ -78,7 +78,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHw
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (riff-3.0.0.tar.gz) = aTghsAqVqg1rIVq5bzvKXBpfyc8H572AJhlBoK+4Gk4=
+SHA256 (riff-3.1.0.tar.gz) = cYFNb1u+HgOciTM77CExwbVvQAB5b82rMCb/aCDOWaM=
 SIZE (cargo/addr2line-0.14.0.tar.gz) = 30065
 SIZE (cargo/adler-0.2.3.tar.gz) = 12168
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
@@ -159,4 +159,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (riff-3.0.0.tar.gz) = 1057456
+SIZE (riff-3.1.0.tar.gz) = 1057687
