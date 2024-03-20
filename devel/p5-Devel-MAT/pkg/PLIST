@@ -28,6 +28,7 @@ ${P5ARCH}/Devel/MAT/Tool/Roots.pm
 ${P5ARCH}/Devel/MAT/Tool/Show.pm
 ${P5ARCH}/Devel/MAT/Tool/Sizes.pm
 ${P5ARCH}/Devel/MAT/Tool/Stack.pm
+${P5ARCH}/Devel/MAT/Tool/Strtab.pm
 ${P5ARCH}/Devel/MAT/Tool/Summary.pm
 ${P5ARCH}/Devel/MAT/Tool/Symbols.pm
 ${P5ARCH}/Devel/MAT/Tool/Tools.pm
@@ -100,6 +101,7 @@ ${P5ARCH}/auto/share/module/Devel-MAT-UI/icons/type-UNDEF.svg
 @man man/man3p/Devel::MAT::Tool::Show.3p
 @man man/man3p/Devel::MAT::Tool::Sizes.3p
 @man man/man3p/Devel::MAT::Tool::Stack.3p
+@man man/man3p/Devel::MAT::Tool::Strtab.3p
 @man man/man3p/Devel::MAT::Tool::Summary.3p
 @man man/man3p/Devel::MAT::Tool::Symbols.3p
 @man man/man3p/Devel::MAT::UI.3p

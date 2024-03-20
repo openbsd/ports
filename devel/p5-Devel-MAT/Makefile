@@ -1,6 +1,6 @@
 COMMENT =	perl memory analysis tool
 
-DISTNAME =	Devel-MAT-0.52
+DISTNAME =	Devel-MAT-0.53
 
 CATEGORIES =	devel
 
@@ -14,7 +14,7 @@ WANTLIB =		c perl
 MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-Commandable>=0.04 \
-			devel/p5-Devel-MAT-Dumper>=0.35 \
+			devel/p5-Devel-MAT-Dumper>=0.48 \
 			devel/p5-Feature-Compat-Try \
 			devel/p5-File-ShareDir>=1.0 \
 			devel/p5-Heap \
@@ -24,7 +24,7 @@ RUN_DEPENDS =		devel/p5-Commandable>=0.04 \
 			devel/p5-Struct-Dumb>=0.07 \
 			devel/p5-Syntax-Keyword-Match \
 			textproc/p5-List-UtilsBy
-TEST_DEPENDS =		devel/p5-Test-Identity
+TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 
