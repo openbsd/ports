@@ -33,13 +33,13 @@ Index: lib/puppet/provider/package/openbsd.rb
            end
          }
        end
-@@ -67,26 +63,18 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -67,26 +63,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def latest
 -    parse_pkgconf
- 
--    if @resource[:source][-1,1] == ::File::SEPARATOR
+-
+-    if @resource[:source][-1, 1] == ::File::SEPARATOR
 -      e_vars = { 'PKG_PATH' => @resource[:source] }
 -    else
 -      e_vars = {}
@@ -52,7 +52,7 @@ Index: lib/puppet/provider/package/openbsd.rb
 +      query = @resource[:name] + "--"
      end
  
--    output = Puppet::Util.withenv(e_vars) {pkginfo "-Q", query}
+-    output = Puppet::Util.withenv(e_vars) { pkginfo "-Q", query }
 -    version = properties[:ensure]
 +    output = Puppet::Util.withenv({}) {pkginfo "-Q", query}
  
@@ -62,8 +62,8 @@ Index: lib/puppet/provider/package/openbsd.rb
 +      return properties[:ensure]
      else
        # Remove all fuzzy matches first.
-       output = output.split.select {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
-@@ -95,21 +83,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+       output = output.split.select { |p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
+@@ -95,21 +82,22 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
  
      if output =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*) \(installed\)$/
        debug "Package is already the latest available"
@@ -78,10 +78,9 @@ Index: lib/puppet/provider/package/openbsd.rb
          return match[2]
        end
  
--      vcmp = version.split('.').map{|s|s.to_i} <=> match[2].split('.').map{|s|s.to_i}
+       vcmp = version.split('.').map { |s| s.to_i } <=> match[2].split('.').map { |s| s.to_i }
 +      vcmp = properties[:ensure].split('.').map{|s|s.to_i} <=> match[2].split('.').map{|s|s.to_i}
        if vcmp > 0
-+        debug "ensure: #{properties[:ensure]}"
          # The locally installed package may actually be newer than what a mirror
          # has. Log it at debug, but ignore it otherwise.
 -        debug "Package #{resource[:name]} #{version} newer then available #{match[2]}"
@@ -91,7 +90,7 @@ Index: lib/puppet/provider/package/openbsd.rb
        else
          return match[2]
        end
-@@ -120,57 +109,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -120,57 +108,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      self.install(true)
    end
  
@@ -130,7 +129,7 @@ Index: lib/puppet/provider/package/openbsd.rb
  
 -    parse_pkgconf
 -
--    if @resource[:source][-1,1] == ::File::SEPARATOR
+-    if @resource[:source][-1, 1] == ::File::SEPARATOR
 -      e_vars = { 'PKG_PATH' => @resource[:source] }
 -      full_name = get_full_name(latest)
 -    else
@@ -160,7 +159,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    end
  
    def get_full_name(latest = false)
-@@ -179,11 +136,20 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -179,11 +135,20 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      # installing with 'latest', we do need to handle the flavors. This is
      # done so we can feed pkg_add(8) the full package name to install to
      # prevent ambiguity.
@@ -186,11 +185,11 @@ Index: lib/puppet/provider/package/openbsd.rb
      else
        # If :ensure contains a version, use that instead of looking it up.
        # This allows for installing packages with the same stem, but multiple
-@@ -194,33 +160,41 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -194,33 +159,41 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
          use_version = get_version
        end
  
--      [ @resource[:name], use_version, @resource[:flavor]].join('-').gsub(/-+$/, '')
+-      [@resource[:name], use_version, @resource[:flavor]].join('-').gsub(/-+$/, '')
 +      if resource[:flavor]
 +        [ @resource[:name], use_version, @resource[:flavor]].join('-').gsub(/-+$/, '')
 +      else
@@ -247,7 +246,7 @@ Index: lib/puppet/provider/package/openbsd.rb
    rescue Puppet::ExecutionFailure
      return nil
    end
-@@ -239,7 +213,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -239,7 +212,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    end
  
    def uninstall_options

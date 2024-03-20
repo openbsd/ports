@@ -3,21 +3,21 @@ Update the default directory locations
 Index: lib/puppet/reference/configuration.rb
 --- lib/puppet/reference/configuration.rb.orig
 +++ lib/puppet/reference/configuration.rb
-@@ -25,13 +25,13 @@ config = Puppet::Util::Reference.newreference(:configu
-     # Now print the data about the item.
+@@ -26,13 +26,13 @@ config = Puppet::Util::Reference.newreference(:configu
      val = object.default
-     if name.to_s == 'vardir'
+     case name.to_s
+     when 'vardir'
 -      val = 'Unix/Linux: /opt/puppetlabs/puppet/cache -- Windows: C:\ProgramData\PuppetLabs\puppet\cache -- Non-root user: ~/.puppetlabs/opt/puppet/cache'
 +      val = 'Unix/Linux: /var/puppetlabs/puppet/cache -- Windows: C:\ProgramData\PuppetLabs\puppet\cache -- Non-root user: ~/.puppetlabs/opt/puppet/cache'
-     elsif name.to_s == 'publicdir'
+     when 'publicdir'
 -      val = 'Unix/Linux: /opt/puppetlabs/puppet/public -- Windows: C:\ProgramData\PuppetLabs\puppet\public -- Non-root user: ~/.puppetlabs/opt/puppet/public'
 +      val = 'Unix/Linux: /var/puppetlabs/puppet/public -- Windows: C:\ProgramData\PuppetLabs\puppet\public -- Non-root user: ~/.puppetlabs/opt/puppet/public'
-     elsif name.to_s == 'confdir'
+     when 'confdir'
 -      val = 'Unix/Linux: /etc/puppetlabs/puppet -- Windows: C:\ProgramData\PuppetLabs\puppet\etc -- Non-root user: ~/.puppetlabs/etc/puppet'
 +      val = 'Unix/Linux: ${SYSCONFDIR}/puppetlabs/puppet -- Windows: C:\ProgramData\PuppetLabs\puppet\etc -- Non-root user: ~/.puppetlabs/etc/puppet'
-     elsif name.to_s == 'codedir'
+     when 'codedir'
 -      val = 'Unix/Linux: /etc/puppetlabs/code -- Windows: C:\ProgramData\PuppetLabs\code -- Non-root user: ~/.puppetlabs/etc/code'
 +      val = 'Unix/Linux: ${SYSCONFDIR}/puppetlabs/code -- Windows: C:\ProgramData\PuppetLabs\code -- Non-root user: ~/.puppetlabs/etc/code'
-     elsif name.to_s == 'rundir'
+     when 'rundir'
        val = 'Unix/Linux: /var/run/puppetlabs -- Windows: C:\ProgramData\PuppetLabs\puppet\var\run -- Non-root user: ~/.puppetlabs/var/run'
-     elsif name.to_s == 'logdir'
+     when 'logdir'
