@@ -23,7 +23,7 @@ Install the same version within Puppetserver:
 
 Then continue and install remaining Ruby gems into Puppetserver:
 # puppetserver gem install --no-document puppet hiera-eyaml \
-	ipaddress msgpack
+	hiera ipaddress msgpack
 
 You may not need hiera-eyaml, or ipaddress gem, on the
 other hand, your Puppet modules might rely on other gems.
