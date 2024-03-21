@@ -1,0 +1,18 @@
+Matterhorn is a terminal client for the Mattermost chat system.
+
+Features include:
+ * Channel creation, deletion, and membership management commands
+ * Support for multiple teams
+ * Optimized channel-switching modes: M-a, M-s, and C-g
+ * Message posting, editing, replying, and deletion
+ * Markdown rendering
+ * Support for participating in threads via the thread window
+ * Convenient URL-opening with local browser
+ * Yank verbatim content from messages into the system clipboard
+ * Edit messages with $EDITOR
+ * Rebindable keys (see /help keybindings)
+ * Message editor with kill/yank buffer and readline-style keybindings
+ * Support for adding and removing emoji post reactions
+ * Tab-completion
+ * Multiple color themes with color theme customization support
+ * Custom notifications via notification scripts
