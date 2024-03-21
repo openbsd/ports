@@ -266,6 +266,7 @@
      SUBDIR += manubulon-snmp
      SUBDIR += maradns
      SUBDIR += maradns-deadwood
+     SUBDIR += matterhorn
      SUBDIR += mattermost-server
      SUBDIR += mautrix-whatsapp
      SUBDIR += mbrowse
