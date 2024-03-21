@@ -3,7 +3,7 @@ Missing dep on gettext/libintl
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -885,7 +885,7 @@ SUBDIRS = zbar $(am__append_3) $(am__append_21) $(am__
+@@ -893,7 +893,7 @@ SUBDIRS = zbar $(am__append_3) $(am__append_21) $(am__
  @HAVE_MAGICK_TRUE@	$(am__append_7)
  @HAVE_MAGICK_TRUE@zbarimg_zbarimg_CPPFLAGS = $(MAGICK_CFLAGS) $(AM_CPPFLAGS)
  @HAVE_MAGICK_TRUE@zbarimg_zbarimg_LDADD = zbar/libzbar.la \
