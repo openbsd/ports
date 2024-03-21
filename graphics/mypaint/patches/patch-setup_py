@@ -1,4 +1,18 @@
+#1:
 OpenBSD does not have OpenMP available in base or ports compilers
+
+#2:
+From 032a155b72f2b021f66a994050d83f07342d04af Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C4=90o=C3=A0n=20Tr=E1=BA=A7n=20C=C3=B4ng=20Danh?=
+ <congdanhqx@gmail.com>
+Date: Wed, 9 Nov 2022 11:24:33 +0700
+Subject: [PATCH] python: fix for Python 3.11
+
+- python 3 always open in universal mode, U is default mode in 3.0,
+  and removed in 3.11
+- mypaint doesn't use ld?n?gettext, so bind_textdomain_codeset isn't
+  needed, that function is deprecated in 3.8 and is no-ops in 3.10 and
+  removed in 3.11
 
 Index: setup.py
 --- setup.py.orig
@@ -12,3 +26,12 @@ Index: setup.py
          build_ext.initialize_options(self)
  
      def finalize_options(self):
+@@ -632,7 +632,7 @@ class InstallScripts (install_scripts):
+         self.announce("installing %s as %s" % (src, targ_basename), level=2)
+         if self.dry_run:
+             return []
+-        with open(src, "rU") as in_fp:
++        with open(src, "r") as in_fp:
+             with open(targ, "w") as out_fp:
+                 line = in_fp.readline().rstrip()
+                 if line.startswith("#!"):
