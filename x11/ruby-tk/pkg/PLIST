@@ -1,8 +1,11 @@
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/BSDL
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
@@ -24,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/multi-tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/remote-tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tcltk.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/tcltklib.so
+${GEM_LIB}/gems/${DISTNAME}/lib/thread_tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tk/after.rb
