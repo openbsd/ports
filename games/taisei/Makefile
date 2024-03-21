@@ -9,7 +9,7 @@ USE_NOBTCFI =		Yes
 
 COMMENT =		clone of the touhou games
 
-VERSION =		1.4
+VERSION =		1.4.1
 DISTNAME =		taisei-${VERSION}
 
 CATEGORIES =		games
@@ -53,10 +53,15 @@ LIB_DEPENDS =		audio/opusfile \
 
 CONFIGURE_ARGS +=	-Ddefault_library=shared \
 			-Ddocs=disabled \
+			-Dgamemode=disabled \
 			-Dinstall_macos_bundle=disabled \
 			-Dinstall_relocatable=disabled \
 			-Dpackage_data=disabled \
 			-Dvfs_zip=disabled
+
+# LTO causes a crash during the bossfight on the third stage, see:
+# https://github.com/taisei-project/taisei/issues/378
+CONFIGURE_ARGS +=	-Db_lto=false
 
 # don't statically link to these
 .for lib in freetype glslang libpng libwebp libzip libzstd ogg opus opusfile \
