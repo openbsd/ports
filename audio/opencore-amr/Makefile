@@ -1,7 +1,6 @@
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
-DISTNAME=	opencore-amr-0.1.5
-REVISION=	0
+DISTNAME=	opencore-amr-0.1.6
 
 SHARED_LIBS +=  opencore-amrnb       0.0      # .0.3
 SHARED_LIBS +=  opencore-amrwb       0.0      # .0.3
