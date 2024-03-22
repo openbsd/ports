@@ -7,9 +7,11 @@ include/pci/types.h
 lib/pkgconfig/libpci.pc
 @man man/man5/pci.ids.5
 @man man/man8/lspci.8
+@man man/man8/pcilmr.8
 @man man/man8/setpci.8
 @man man/man8/update-pciids.8
 @bin sbin/lspci
+@bin sbin/pcilmr
 @bin sbin/setpci
 sbin/update-pciids
 @comment no checksum

@@ -1,7 +1,7 @@
 Index: lib/names-net.c
 --- lib/names-net.c.orig
 +++ lib/names-net.c
-@@ -204,7 +204,7 @@ char
+@@ -206,7 +206,7 @@ char
        resolver_inited = 1;
        res_init();
      }
@@ -10,7 +10,7 @@ Index: lib/names-net.c
    if (res < 0)
      {
        a->debug("\tfailed, h_errno=%d\n", h_errno);
-@@ -218,7 +218,7 @@ char
+@@ -220,7 +220,7 @@ char
    dns_init_section(&ds, DNS_SEC_ANSWER);
    while (dns_parse_rr(&ds) > 0)
      {

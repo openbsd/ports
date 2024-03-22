@@ -1,6 +1,7 @@
---- lib/obsd-device.c.orig	Fri Jan  7 22:04:28 2011
-+++ lib/obsd-device.c	Thu Aug 21 09:59:31 2014
-@@ -41,9 +41,12 @@ obsd_init(struct pci_access *a)
+Index: lib/obsd-device.c
+--- lib/obsd-device.c.orig
++++ lib/obsd-device.c
+@@ -43,9 +43,12 @@ obsd_init(struct pci_access *a)
  {
    char *name = pci_get_param(a, "obsd.path");
  
@@ -16,7 +17,7 @@
  }
  
  static void
-@@ -56,11 +59,6 @@ static int
+@@ -58,11 +61,6 @@ static int
  obsd_read(struct pci_dev *d, int pos, byte *buf, int len)
  {
    struct pci_io pi;
@@ -28,7 +29,7 @@
  
    if (!(len == 1 || len == 2 || len == 4))
      return pci_generic_block_read(d, pos, buf, len);
-@@ -81,18 +79,16 @@ obsd_read(struct pci_dev *d, int pos, byte *buf, int l
+@@ -83,18 +81,16 @@ obsd_read(struct pci_dev *d, int pos, byte *buf, int l
  	  else
  		  d->access->error("obsd_read: ioctl(PCIOCREAD) failed");
    }
