@@ -1,11 +1,9 @@
-BROKEN =	fail to build with rust 1.77.0
-
 COMMENT =	modular compiler frontend for the Rust language
 CATEGORIES =	devel
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2023-12-18
+GH_TAGNAME =	2024-03-18
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 

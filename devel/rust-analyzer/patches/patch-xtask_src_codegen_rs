@@ -1,9 +1,9 @@
 Don't use rustup.
 
-Index: crates/sourcegen/src/lib.rs
---- crates/sourcegen/src/lib.rs.orig
-+++ crates/sourcegen/src/lib.rs
-@@ -133,7 +133,7 @@ impl fmt::Display for Location {
+Index: xtask/src/codegen.rs
+--- xtask/src/codegen.rs.orig
++++ xtask/src/codegen.rs
+@@ -146,7 +146,7 @@ impl fmt::Display for Location {
  }
  
  fn ensure_rustfmt(sh: &Shell) {
@@ -12,7 +12,7 @@ Index: crates/sourcegen/src/lib.rs
      if !version.contains("stable") {
          panic!(
              "Failed to run rustfmt from toolchain 'stable'. \
-@@ -148,7 +148,7 @@ pub fn reformat(text: String) -> String {
+@@ -161,7 +161,7 @@ fn reformat(text: String) -> String {
      let rustfmt_toml = project_root().join("rustfmt.toml");
      let mut stdout = cmd!(
          sh,
