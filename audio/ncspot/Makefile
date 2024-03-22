@@ -7,11 +7,11 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v1.0.0
+GH_TAGNAME =		v1.1.0
 
 CATEGORIES =		audio
 
-MAINTAINER =		Henrik Friedrichsen <henrik@diff.cc>
+MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
