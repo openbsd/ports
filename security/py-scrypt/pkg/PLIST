@@ -23,13 +23,10 @@ lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scryp
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_c_module.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_c_module.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_py2x.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_py2x.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_py3x.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/${MODPY_PYCACHE}test_scrypt_py3x.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/ciphertexts.csv
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/hashvectors.csv
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/test_scrypt.py
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/test_scrypt_c_module.py
-lib/python${MODPY_VERSION}/site-packages/scrypt/tests/test_scrypt_py2x.py
 lib/python${MODPY_VERSION}/site-packages/scrypt/tests/test_scrypt_py3x.py

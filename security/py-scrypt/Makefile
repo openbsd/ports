@@ -1,10 +1,9 @@
 COMMENT =	support for the scrypt key derivation function
 
-MODPY_EGG_VERSION =	0.8.20
+MODPY_EGG_VERSION =	0.8.24
 
 DISTNAME =	scrypt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	security
 
