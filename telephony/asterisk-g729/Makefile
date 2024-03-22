@@ -1,6 +1,5 @@
 COMMENT=	G.729a voice codec for Asterisk
-DISTNAME=	asterisk-g72x-1.4.3
-REVISION=	5
+DISTNAME=	asterisk-g72x-1.4.4
 PKGNAME=	${DISTNAME:S/g72x/g729/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
@@ -9,8 +8,8 @@ SITES=		http://asterisk.hosting.lv/src/
 # https://github.com/arkadijs/asterisk-g72x
 HOMEPAGE=	http://asterisk.hosting.lv/
 
-# GPL frontend to patented algorithm; free to use for non-commercial purposes
-PERMIT_DISTFILES=	contains non-compiled proprietary Intel code
+# GPLv3+ frontend to patented algorithm; free to use for non-commercial purposes
+PERMIT_DISTFILES=	tar contains non-compiled proprietary Intel code in ipp/ dir
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += bcg729
@@ -26,7 +25,7 @@ AUTOMAKE_VERSION= 1.16
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	telephony/asterisk/18
+RUN_DEPENDS=	telephony/asterisk/20
 LIB_DEPENDS=	telephony/bcg729
 
 CONFIGURE_STYLE=  autoreconf
