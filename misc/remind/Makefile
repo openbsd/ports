@@ -1,7 +1,7 @@
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-04.03.02
-PKGNAME=	remind-4.3.2
+DISTNAME=	remind-04.03.03
+PKGNAME=	remind-4.3.3
 
 CATEGORIES=	misc
 
@@ -32,7 +32,6 @@ RUN_DEPENDS=		${MODTK_RUN_DEPENDS} \
 			converters/p5-JSON-MaybeXS \
 			graphics/p5-Cairo \
 			devel/p5-Pango \
-			x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu

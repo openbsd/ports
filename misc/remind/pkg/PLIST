@@ -55,4 +55,3 @@ share/remind/seasons.rem
 share/remind/site/
 share/remind/site/README
 @tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/tkremind
