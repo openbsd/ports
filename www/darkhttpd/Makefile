@@ -3,7 +3,9 @@ COMMENT=	simple and small webserver intended for ad-hoc usage
 CATEGORIES=	www
 GH_ACCOUNT=	emikulic
 GH_PROJECT=	darkhttpd
-GH_TAGNAME=	v1.14
+GH_TAGNAME=	v1.16
+
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 HOMEPAGE=	https://unix4lyfe.org/darkhttpd/
 
