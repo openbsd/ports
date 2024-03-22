@@ -95,6 +95,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions.${M
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions_numba.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions_numba.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions_qimage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}functions_qimage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}reload.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}reload.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/${MODPY_PYCACHE}units.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,6 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/cividis.csv
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/inferno.csv
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/magma.csv
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/plasma.csv
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/turbo.csv
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/maps/viridis.csv
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/colors/palette.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/configfile.py
@@ -242,6 +245,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/dockarea/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/dockarea/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/Arrow.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/AxisItem_label_overlap.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/BarGraphItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/CLIexample.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/ColorBarItem.py
@@ -324,6 +328,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}Arrow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}Arrow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}AxisItem_label_overlap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}AxisItem_label_overlap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}BarGraphItem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}BarGraphItem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/examples/${MODPY_PYCACHE}CLIexample.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -714,6 +720,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/flowchart/library/functions.p
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/frozenSupport.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/functions.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/functions_numba.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/functions_qimage.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/ArrowItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/AxisItem.py
@@ -726,6 +733,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/ErrorBarItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/FillBetweenItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GradientEditorItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GradientLegend.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GradientPresets.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GraphItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GraphicsItem.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/GraphicsLayout.py
@@ -802,6 +810,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GradientEditorItem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GradientLegend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GradientLegend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GradientPresets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GradientPresets.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GraphItem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GraphItem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/graphicsItems/${MODPY_PYCACHE}GraphicsItem.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1018,6 +1028,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}color.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}colormap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}colormap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}colormaplut.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}colormaplut.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/${MODPY_PYCACHE}font.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1046,6 +1058,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/checklist.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/color.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/colormap.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/colormaplut.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/file.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/font.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/parametertree/parameterTypes/list.py
@@ -1099,6 +1112,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/BusyCursor.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/CheckTable.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorButton.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorMapButton.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorMapWidget.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ComboBox.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/DataFilterWidget.py
@@ -1135,6 +1149,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}Check
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}CheckTable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorButton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorButton.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapButton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapButton.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapWidget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapWidget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ComboBox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
