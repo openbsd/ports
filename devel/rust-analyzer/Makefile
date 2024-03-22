@@ -1,3 +1,5 @@
+BROKEN =	fail to build with rust 1.77.0
+
 COMMENT =	modular compiler frontend for the Rust language
 CATEGORIES =	devel
 
