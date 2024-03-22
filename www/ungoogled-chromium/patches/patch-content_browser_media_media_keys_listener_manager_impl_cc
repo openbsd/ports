@@ -1,7 +1,7 @@
 Index: content/browser/media/media_keys_listener_manager_impl.cc
 --- content/browser/media/media_keys_listener_manager_impl.cc.orig
 +++ content/browser/media/media_keys_listener_manager_impl.cc
-@@ -300,7 +300,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
+@@ -334,7 +334,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
    }
  
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

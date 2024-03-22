@@ -10,9 +10,8 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			122.0.6261.111
+V=			123.0.6312.58
 UGV=			${V}-1
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -66,7 +65,7 @@ WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
 WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
@@ -82,6 +81,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		lang/node \
+		lang/rust \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -161,7 +161,6 @@ GN_ARGS=	is_official_build=true \
 		is_cfi=false \
 		optimize_webui=true \
 		enable_log_error_not_reached=true \
-		enable_rust=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
@@ -182,6 +181,13 @@ GN_ARGS=	is_official_build=true \
 		use_custom_libunwind=true \
 		use_udev=true \
 		v8_enable_cet_ibt=true
+
+# rust
+RUSTC_VERSION!!=rustc -V
+MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+GN_ARGS+=	enable_rust=true \
+		rust_sysroot_absolute=\"${LOCALBASE}\" \
+		rustc_version=\"${RUSTC_VERSION}\"
 
 # notyet
 GN_ARGS+=	use_vaapi=false

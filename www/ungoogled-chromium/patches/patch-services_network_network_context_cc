@@ -10,7 +10,7 @@ Index: services/network/network_context.cc
  bool NetworkContext::NetworkContextHttpAuthPreferences::AllowGssapiLibraryLoad()
      const {
    if (network_service_) {
-@@ -2260,7 +2260,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
+@@ -2276,7 +2276,7 @@ void NetworkContext::OnHttpAuthDynamicParamsChanged(
        http_auth_dynamic_network_service_params->android_negotiate_account_type);
  #endif  // BUILDFLAG(IS_ANDROID)
  

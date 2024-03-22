@@ -1,7 +1,7 @@
 Index: chrome/browser/prefs/pref_service_incognito_allowlist.cc
 --- chrome/browser/prefs/pref_service_incognito_allowlist.cc.orig
 +++ chrome/browser/prefs/pref_service_incognito_allowlist.cc
-@@ -168,7 +168,7 @@ const char* const kPersistentPrefNames[] = {
+@@ -175,7 +175,7 @@ const char* const kPersistentPrefNames[] = {
      prefs::kShowFullscreenToolbar,
  #endif
  

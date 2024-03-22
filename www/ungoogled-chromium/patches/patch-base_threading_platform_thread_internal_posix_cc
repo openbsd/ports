@@ -1,7 +1,7 @@
 Index: base/threading/platform_thread_internal_posix.cc
 --- base/threading/platform_thread_internal_posix.cc.orig
 +++ base/threading/platform_thread_internal_posix.cc
-@@ -41,7 +41,7 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
+@@ -42,7 +42,7 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
  }
  
  int GetCurrentThreadNiceValue() {

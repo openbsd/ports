@@ -1,7 +1,7 @@
 Index: ui/base/cursor/cursor_factory.cc
 --- ui/base/cursor/cursor_factory.cc.orig
 +++ ui/base/cursor/cursor_factory.cc
-@@ -98,7 +98,7 @@ void CursorFactory::ObserveThemeChanges() {
+@@ -97,7 +97,7 @@ void CursorFactory::ObserveThemeChanges() {
    NOTIMPLEMENTED();
  }
  

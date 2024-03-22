@@ -1,7 +1,7 @@
 Index: chrome/browser/BUILD.gn
 --- chrome/browser/BUILD.gn.orig
 +++ chrome/browser/BUILD.gn
-@@ -6458,6 +6458,13 @@ static_library("browser") {
+@@ -6490,6 +6490,13 @@ static_library("browser") {
      }
    }
  
