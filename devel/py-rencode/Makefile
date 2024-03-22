@@ -1,29 +1,29 @@
-COMMENT =		module for fast object serialization similar to bencode
+COMMENT=	module for fast object serialization similar to bencode
 
-MODPY_EGG_VERSION =	1.0.6
-DISTNAME =		rencode-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		6
+GH_ACCOUNT=	aresch
+GH_PROJECT=	rencode
+GH_COMMIT=	572ff74586d9b1daab904c6f7f7009ce0143bb75
 
-CATEGORIES =		devel
+MODPY_EGG_VERSION=	1.0.6
+DISTNAME=	rencode-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}pl20210810
 
-HOMEPAGE =		https://github.com/aresch/rencode
+CATEGORIES=	devel
+
+HOMEPAGE=	https://github.com/aresch/rencode
 
 # GPLv3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-FLAVORS =		python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-WANTLIB +=		pthread ${MODPY_WANTLIB}
-
-BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
 
 pre-test:
-	cp ${WRKSRC}/${MODPY_TEST_LIBDIR}/rencode/*.so ${WRKSRC}/rencode
+	cp ${WRKSRC}/build/lib.*/rencode/*.so ${WRKSRC}/rencode
 
 .include <bsd.port.mk>
