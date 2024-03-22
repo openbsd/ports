@@ -12,7 +12,7 @@ Index: source/tools/pdfposter.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -233,6 +235,12 @@ int pdfposter_main(int argc, char **argv)
+@@ -240,6 +242,12 @@ int pdfposter_main(int argc, char **argv)
  		(strstr(argv[fz_optind], ".pdf") || strstr(argv[fz_optind], ".PDF")))
  	{
  		outfile = argv[fz_optind++];

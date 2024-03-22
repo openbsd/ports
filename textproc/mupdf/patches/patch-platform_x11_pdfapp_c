@@ -3,7 +3,7 @@ espie@ added feature
 Index: platform/x11/pdfapp.c
 --- platform/x11/pdfapp.c.orig
 +++ platform/x11/pdfapp.c
-@@ -175,11 +175,21 @@ static void pdfapp_sleep(int ms)
+@@ -155,11 +155,21 @@ static void pdfapp_sleep(int ms)
  static void pdfapp_showpage(pdfapp_t *app, int loadpage, int drawpage, int repaint, int transition, int searching);
  
  static const int zoomlist[] = {
@@ -28,7 +28,7 @@ Index: platform/x11/pdfapp.c
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1642,6 +1652,7 @@ key_rewritten:
+@@ -1649,6 +1659,7 @@ key_rewritten:
  			app->pageno++;
  		break;
  
@@ -36,7 +36,7 @@ Index: platform/x11/pdfapp.c
  	case 'b':
  		{
  			int number = 1;
-@@ -1688,7 +1699,7 @@ key_rewritten:
+@@ -1695,7 +1706,7 @@ key_rewritten:
  				{
  					if (app->imgw + app->panx <= app->winw + app->imgw/20)
  					{
@@ -45,7 +45,7 @@ Index: platform/x11/pdfapp.c
  						{
  							app->panx = 0;
  							app->pany = 0;
-@@ -1800,9 +1811,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1807,9 +1818,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir > 0)

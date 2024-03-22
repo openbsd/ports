@@ -29,6 +29,8 @@ include/mupdf/fitz/getopt.h
 include/mupdf/fitz/glyph-cache.h
 include/mupdf/fitz/glyph.h
 include/mupdf/fitz/hash.h
+include/mupdf/fitz/heap-imp.h
+include/mupdf/fitz/heap.h
 include/mupdf/fitz/image.h
 include/mupdf/fitz/link.h
 include/mupdf/fitz/log.h
@@ -57,6 +59,7 @@ include/mupdf/fitz/version.h
 include/mupdf/fitz/write-pixmap.h
 include/mupdf/fitz/writer.h
 include/mupdf/fitz/xml.h
+include/mupdf/html.h
 include/mupdf/memento.h
 include/mupdf/pdf/
 include/mupdf/pdf.h
@@ -68,6 +71,7 @@ include/mupdf/pdf/document.h
 include/mupdf/pdf/event.h
 include/mupdf/pdf/font.h
 include/mupdf/pdf/form.h
+include/mupdf/pdf/image-rewriter.h
 include/mupdf/pdf/interpret.h
 include/mupdf/pdf/javascript.h
 include/mupdf/pdf/name-table.h

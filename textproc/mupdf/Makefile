@@ -1,8 +1,8 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-SHARED_LIBS +=  mupdf                 9.0
+SHARED_LIBS +=  mupdf                 10.0
 
-V =		1.23.11
+V =		1.24.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -43,12 +43,17 @@ LIB_DEPENDS =	devel/harfbuzz \
 USE_GMAKE =	Yes
 NO_TEST =	Yes
 
-LDFLAGS =	-L${LOCALBASE}/lib -L${X11BASE}/lib -lgumbo
+LDFLAGS =	-L${WRKSRC}/build/shared-release \
+		-L${LOCALBASE}/lib \
+		-L${X11BASE}/lib \
+		-lgumbo
 
-CPPFLAGS =	-I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps \
-		-I${X11BASE}/include -I${X11BASE}/include/freetype2 \
+CPPFLAGS =	-I$(WRKSRC)/include \
+		-I${X11BASE}/include \
+		-I${X11BASE}/include/freetype2 \
 		-I${LOCALBASE}/include/harfbuzz \
-		-I${LOCALBASE}/include/openjpeg-2.5 -I${LOCALBASE}/include
+		-I${LOCALBASE}/include/openjpeg-2.5 \
+		-I${LOCALBASE}/include
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		XCFLAGS="${CFLAGS} -fPIC ${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" LLD_EMUL="${LLD_EMUL}" \

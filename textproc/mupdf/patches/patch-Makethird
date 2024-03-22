@@ -1,7 +1,7 @@
 Index: Makethird
 --- Makethird.orig
 +++ Makethird
-@@ -130,6 +130,7 @@ endif
+@@ -145,6 +145,7 @@ endif
  
  # --- MuJS ---
  
@@ -9,7 +9,7 @@ Index: Makethird
  ifeq ($(USE_SYSTEM_MUJS),yes)
    THIRD_CFLAGS += $(SYS_MUJS_CFLAGS)
    THIRD_LIBS += $(SYS_MUJS_LIBS)
-@@ -139,6 +140,7 @@ else
+@@ -154,6 +155,7 @@ else
    THIRD_SRC += $(MUJS_SRC)
  $(OUT)/thirdparty/mujs/%.o: thirdparty/mujs/%.c
  	$(CC_CMD) $(LIB_CFLAGS) $(MUJS_CFLAGS) $(MUJS_BUILD_CFLAGS)

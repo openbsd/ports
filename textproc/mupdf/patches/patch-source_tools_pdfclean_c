@@ -12,7 +12,7 @@ Index: source/tools/pdfclean.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -129,6 +131,12 @@ int pdfclean_main(int argc, char **argv)
+@@ -250,6 +252,12 @@ int pdfclean_main(int argc, char **argv)
  		(strstr(argv[fz_optind], ".pdf") || strstr(argv[fz_optind], ".PDF")))
  	{
  		outfile = argv[fz_optind++];

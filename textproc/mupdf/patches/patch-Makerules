@@ -1,7 +1,7 @@
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
-@@ -92,7 +92,7 @@ ifeq ($(build),debug)
+@@ -108,7 +108,7 @@ ifeq ($(build),debug)
    CFLAGS += -pipe -g
    LDFLAGS += -g
  else ifeq ($(build),release)
@@ -10,15 +10,3 @@ Index: Makerules
    LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
  else ifeq ($(build),small)
    CFLAGS += -pipe -Os -DNDEBUG
-@@ -180,9 +180,9 @@ else ifeq ($(OS),MACOS)
-     endif
-   endif
- 
--else ifeq ($(OS),Linux)
-+else ifneq (,$(filter $(OS),Linux OpenBSD))
-   ifeq ($(PYODIDE_ROOT),)
--    HAVE_OBJCOPY := yes
-+    HAVE_OBJCOPY ?= yes
-   else
-     # Pyodide's ld does not support -b so we cannot use it to create object
-     # files containing font data, so leave HAVE_OBJCOPY unset. And we need
