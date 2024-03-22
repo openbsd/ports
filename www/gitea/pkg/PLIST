@@ -1342,6 +1342,7 @@ share/gitea/templates/shared/combomarkdowneditor.tmpl
 share/gitea/templates/shared/issueicon.tmpl
 share/gitea/templates/shared/issuelist.tmpl
 share/gitea/templates/shared/searchbottom.tmpl
+share/gitea/templates/shared/searchfile.tmpl
 share/gitea/templates/shared/searchinput.tmpl
 share/gitea/templates/shared/secrets/
 share/gitea/templates/shared/secrets/add_list.tmpl
@@ -1911,7 +1912,7 @@ gitea/assets/js/dropzone.2e37d03b.js
 gitea/assets/js/easymde.58e747ca.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.f4067aca.map
+gitea/assets/js/index.js.6ce7e037.map
 gitea/assets/js/katex.25d07669.js
 gitea/assets/js/mcaptcha-vanilla-glue.149786ce.js
 gitea/assets/js/mermaid.83a93d40.js
