@@ -1,7 +1,4 @@
 @pkgpath security/py-requests-aws4auth
-@comment lib/python${MODPY_VERSION}/site-packages/HISTORY.md
-@comment lib/python${MODPY_VERSION}/site-packages/LICENSE
-@comment lib/python${MODPY_VERSION}/site-packages/README.md
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth/
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/requests_aws4auth-${MODPY_EGG_VERSION}.dist-info/LICENSE
