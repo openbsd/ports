@@ -3,21 +3,19 @@
 
 COMMENT =		library for reading and writing images
 
-GH_ACCOUNT =		OpenImageIO
-GH_PROJECT =		oiio
-GH_TAGNAME =		v$V
-V =			2.4.11.0
-DISTNAME =		openimageio-${V}
-REVISION =		0
+GH_ACCOUNT =		AcademySoftwareFoundation
+GH_PROJECT =		OpenImageIO
+GH_TAGNAME =		v2.4.17.0
+PKGNAME =		${DISTNAME:L}
 
-SHARED_LIBS +=		OpenImageIO		13.0 # 2.4.10
-SHARED_LIBS +=		OpenImageIO_Util	8.0 # 2.4.10
+SHARED_LIBS +=		OpenImageIO		14.0 # 2.4.10
+SHARED_LIBS +=		OpenImageIO_Util	9.0 # 2.4.10
 
 CATEGORIES =		graphics devel
 
 HOMEPAGE =		https://sites.google.com/site/openimageio/home
 
-# BSD
+# Apache 2.0 / BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_2 IlmThread-3_2 Imath-3_1
