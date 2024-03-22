@@ -1,14 +1,12 @@
 COMMENT-main=	open H.265 video codec implementation
 COMMENT-tools=	tools for libde265 open H.265 video codec
 
-V=		1.0.8
+V=		1.0.15
 DISTNAME=	libde265-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tools=	libde265-tools-$V
 
-REVISION-tools=	0
-
-SHARED_LIBS +=  de265                     1.0 # 0.12
+SHARED_LIBS +=  de265                     2.0 # 0.12
 
 CATEGORIES=	multimedia
 
@@ -20,13 +18,14 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} m
 
 WANTLIB-tools += ${WANTLIB}
-WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL X11 X11-xcb Xau
-WANTLIB-tools += Xdmcp Xext Xfixes Xxf86vm avutil c de265 double-conversion
-WANTLIB-tools += drm execinfo expat freetype glapi glib-2.0 graphite2
-WANTLIB-tools += gthread-2.0 harfbuzz iconv icudata icui18n icuuc
-WANTLIB-tools += intl pcre2-8 pcre2-16 png sndio swscale usbhid xcb xcb-dri2
-WANTLIB-tools += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
-WANTLIB-tools += z zstd xcb-shm
+WANTLIB-tools += GL Qt5Core Qt5Gui Qt5Widgets SDL2 X11 X11-xcb Xau Xcursor
+WANTLIB-tools += Xdmcp Xext Xfixes Xi Xrandr Xrender Xss Xxf86vm avutil
+WANTLIB-tools += c de265 double-conversion drm execinfo expat freetype
+WANTLIB-tools += glapi glib-2.0 graphite2 gthread-2.0 harfbuzz iconv
+WANTLIB-tools += icudata icui18n icuuc intl pcre2-16 pcre2-8 png samplerate
+WANTLIB-tools += sndio swscale usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB-tools += xcb-present xcb-randr xcb-shm xcb-sync xcb-xfixes xshmfence
+WANTLIB-tools += z zstd
 
 MULTI_PACKAGES=	-main -tools
 
@@ -42,7 +41,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS}
 
 LIB_DEPENDS-tools= ${LIB_DEPENDS} \
 		multimedia/libde265,-main \
-		devel/sdl \
+		devel/sdl2 \
 		graphics/ffmpeg \
 		x11/qt5/qtbase
 

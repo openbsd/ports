@@ -1,7 +1,7 @@
 Index: sherlock265/Makefile.in
 --- sherlock265/Makefile.in.orig
 +++ sherlock265/Makefile.in
-@@ -361,7 +361,7 @@ sherlock265_DEPENDENCIES = ../libde265/libde265.la
+@@ -368,7 +368,7 @@ sherlock265_DEPENDENCIES = ../libde265/libde265.la
  sherlock265_CXXFLAGS = $(QT_CFLAGS) -std=c++0x -fPIC $(am__append_1) \
  	$(am__append_3)
  sherlock265_LDFLAGS = $(QT_LIBS) $(am__append_2) $(am__append_4)

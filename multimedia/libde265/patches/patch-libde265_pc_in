@@ -3,8 +3,8 @@ Index: libde265.pc.in
 +++ libde265.pc.in
 @@ -9,5 +9,5 @@ URL: https://github.com/strukturag/libde265
  Version: @VERSION@
- Requires: 
- Libs: -lde265 -L@libdir@
--Libs.private: @LIBS@ -lstdc++
-+Libs.private: @LIBS@
- Cflags: -I@includedir@
+ Requires:
+ Libs: -lde265 -L${libdir}
+-Libs.private: @LIBS_PRIVATE@
++Libs.private: -lpthread -lm
+ Cflags: -I${includedir}

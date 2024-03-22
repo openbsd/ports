@@ -3,9 +3,7 @@
 @bin bin/bjoentegaard
 @bin bin/block-rate-estim
 @bin bin/dec265
-@bin bin/enc265
 @bin bin/gen-enc-table
-@bin bin/hdrcopy
 @bin bin/rd-curves
 @bin bin/sherlock265
 @comment @bin bin/tests

@@ -1,7 +1,7 @@
 Index: acceleration-speed/Makefile.in
 --- acceleration-speed/Makefile.in.orig
 +++ acceleration-speed/Makefile.in
-@@ -358,7 +358,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/libde265 -I$(top_srcdir)
+@@ -363,7 +363,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/libde265 -I$(top_srcdir)
  acceleration_speed_DEPENDENCIES = ../libde265/libde265.la
  acceleration_speed_CXXFLAGS = 
  acceleration_speed_LDFLAGS = 
