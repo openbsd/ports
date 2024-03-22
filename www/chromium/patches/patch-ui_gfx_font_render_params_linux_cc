@@ -16,6 +16,6 @@ Index: ui/gfx/font_render_params_linux.cc
    FontRenderParams params;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (const auto* linux_ui = ui::LinuxUi::instance())
+   if (auto* linux_ui = ui::LinuxUi::instance()) {
      params = linux_ui->GetDefaultFontRenderParams();
- #endif
+   }

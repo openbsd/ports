@@ -16,10 +16,10 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.cc
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
+   } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT &&
+              !base::FeatureList::IsEnabled(kMaldocaSkipCheck)) {
      StartExtractDocumentFeatures();
- #endif
-@@ -324,7 +324,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -326,7 +326,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  

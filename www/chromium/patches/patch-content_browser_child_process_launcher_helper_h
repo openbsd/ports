@@ -1,7 +1,7 @@
 Index: content/browser/child_process_launcher_helper.h
 --- content/browser/child_process_launcher_helper.h.orig
 +++ content/browser/child_process_launcher_helper.h
-@@ -269,7 +269,7 @@ class ChildProcessLauncherHelper
+@@ -271,7 +271,7 @@ class ChildProcessLauncherHelper
    std::unique_ptr<SandboxedProcessLauncherDelegate> delegate_;
    base::WeakPtr<ChildProcessLauncher> child_process_launcher_;
  

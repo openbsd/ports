@@ -10,7 +10,7 @@ Index: content/common/features.cc
  BASE_FEATURE(kEnableDevToolsJsErrorReporting,
               "EnableDevToolsJsErrorReporting",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -254,7 +254,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
+@@ -262,7 +262,7 @@ BASE_FEATURE(kGroupNIKByJoiningOrigin,
  // process and having browser process handle adjusting thread properties (nice
  // value, c-group, latency sensitivity...) for children which have sandbox
  // restrictions.

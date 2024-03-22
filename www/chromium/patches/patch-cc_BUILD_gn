@@ -10,7 +10,7 @@ Index: cc/BUILD.gn
      data_deps = [ "//third_party/mesa_headers" ]
    }
    if (skia_use_dawn) {
-@@ -938,7 +938,6 @@ cc_test("cc_unittests") {
+@@ -937,7 +937,6 @@ cc_test("cc_unittests") {
    data = [ "//components/test/data/viz/" ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",

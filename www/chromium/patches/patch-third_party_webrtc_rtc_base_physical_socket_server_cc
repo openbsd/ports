@@ -55,7 +55,7 @@ Index: third_party/webrtc/rtc_base/physical_socket_server.cc
                 // Suppress SIGPIPE. See above for explanation.
                 MSG_NOSIGNAL,
  #else
-@@ -641,7 +641,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -666,7 +666,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

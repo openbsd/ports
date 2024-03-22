@@ -1,7 +1,7 @@
 Index: content/browser/renderer_host/render_process_host_impl.h
 --- content/browser/renderer_host/render_process_host_impl.h.orig
 +++ content/browser/renderer_host/render_process_host_impl.h
-@@ -543,7 +543,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
+@@ -548,7 +548,7 @@ class CONTENT_EXPORT RenderProcessHostImpl
    // Sets this RenderProcessHost to be guest only. For Testing only.
    void SetForGuestsOnlyForTesting();
  

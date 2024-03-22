@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
  // This function is called on android or when we are emulating android fonts on
  // linux and the embedder has overriden the default fontManager with
  // WebFontRendering::setSkiaFontMgr.
-@@ -247,7 +247,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
+@@ -246,7 +246,7 @@ const FontPlatformData* FontCache::CreateFontPlatformD
    std::string name;
  
    sk_sp<SkTypeface> typeface;

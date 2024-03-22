@@ -18,4 +18,4 @@ Index: ui/gfx/platform_font_skia.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // On Linux, LinuxUi is used to query the native toolkit (e.g.
    // GTK) for the default UI font.
-   if (const auto* linux_ui = ui::LinuxUi::instance()) {
+   if (auto* linux_ui = ui::LinuxUi::instance()) {

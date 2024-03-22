@@ -16,6 +16,6 @@ Index: ui/gfx/font_util.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   // Ensures the config is created on this thread.
-   FcConfig* config = GetGlobalFontConfig();
-   DCHECK(config);
+   // Early initialize FontConfig.
+   InitializeGlobalFontConfigAsync();
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

@@ -1,7 +1,7 @@
 Index: base/threading/hang_watcher.cc
 --- base/threading/hang_watcher.cc.orig
 +++ base/threading/hang_watcher.cc
-@@ -331,7 +331,7 @@ void HangWatcher::InitializeOnMainThread(ProcessType p
+@@ -332,7 +332,7 @@ void HangWatcher::InitializeOnMainThread(ProcessType p
  
    bool enable_hang_watcher = base::FeatureList::IsEnabled(kEnableHangWatcher);
  

@@ -28,7 +28,7 @@ Index: build/config/compiler/BUILD.gn
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -520,6 +523,10 @@ config("compiler") {
+@@ -515,6 +518,10 @@ config("compiler") {
      }
    }
  
@@ -39,7 +39,7 @@ Index: build/config/compiler/BUILD.gn
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -595,7 +602,7 @@ config("compiler") {
+@@ -590,7 +597,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -84,7 +84,7 @@ Index: build/config/compiler/BUILD.gn
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1874,12 +1881,9 @@ config("default_warnings") {
+@@ -1877,12 +1884,9 @@ config("default_warnings") {
  
          # TODO(crbug.com/1494809): Evaluate and possibly enable.
          "-Wno-vla-extension",
@@ -98,7 +98,7 @@ Index: build/config/compiler/BUILD.gn
          cflags_cc += [
            # TODO(https://crbug.com/1513724): Fix and re-enable.
            "-Wno-c++11-narrowing-const-reference",
-@@ -2067,7 +2071,7 @@ config("no_chromium_code") {
+@@ -2100,7 +2104,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -107,7 +107,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2596,7 +2600,7 @@ config("afdo_optimize_size") {
+@@ -2619,7 +2623,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -116,7 +116,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2623,7 +2627,7 @@ config("afdo") {
+@@ -2646,7 +2650,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -125,7 +125,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2787,7 +2791,8 @@ config("symbols") {
+@@ -2810,7 +2814,8 @@ config("symbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  

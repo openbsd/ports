@@ -19,7 +19,7 @@ Index: media/base/video_frame.cc
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -306,7 +306,7 @@ static absl::optional<VideoFrameLayout> GetDefaultLayo
+@@ -306,7 +306,7 @@ static std::optional<VideoFrameLayout> GetDefaultLayou
    return VideoFrameLayout::CreateWithPlanes(format, coded_size, planes);
  }
  

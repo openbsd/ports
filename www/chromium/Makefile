@@ -9,8 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			122.0.6261.111
-REVISION=		0
+V=			123.0.6312.58
 
 DISTNAME=		chromium-${V}
 
@@ -78,6 +77,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		lang/node \
+		lang/rust \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
@@ -161,7 +161,6 @@ GN_ARGS=	enable_nacl=false \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
 		enable_log_error_not_reached=true \
-		enable_rust=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
@@ -185,6 +184,13 @@ GN_ARGS=	enable_nacl=false \
 		use_custom_libunwind=true \
 		use_udev=true \
 		v8_enable_cet_ibt=true
+
+# rust
+RUSTC_VERSION!!=rustc -V
+MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+GN_ARGS+=	enable_rust=true \
+		rust_sysroot_absolute=\"${LOCALBASE}\" \
+		rustc_version=\"${RUSTC_VERSION}\"
 
 # notyet
 GN_ARGS+=	use_vaapi=false
