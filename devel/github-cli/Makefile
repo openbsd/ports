@@ -1,6 +1,6 @@
 COMMENT =	command-line access to github pull requests, issues and more
 
-V =	2.45.0
+V =	2.46.0
 MODGO_MODNAME =	github.com/cli/cli/v${V:R:R}
 MODGO_VERSION =	v${V}
 
