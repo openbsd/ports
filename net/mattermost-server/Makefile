@@ -1,6 +1,8 @@
 # as of 7.8.0, the version of modernc.org/sqlite used doesn't seem
 # to support other archs
 ONLY_FOR_ARCHS =	amd64 aarch64
+# https://gitlab.com/cznic/libc/-/issues/34
+BROKEN =		syscall(2) removal
 
 COMMENT-main =	open source Slack-alternative
 COMMENT-mmctl =	command-line tool for managing Mattermost
