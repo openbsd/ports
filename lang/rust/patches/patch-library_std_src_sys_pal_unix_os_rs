@@ -1,8 +1,8 @@
 argv0 isn't suitable as current_exe() in all cases.
 
-Index: library/std/src/sys/unix/os.rs
---- library/std/src/sys/unix/os.rs.orig
-+++ library/std/src/sys/unix/os.rs
+Index: library/std/src/sys/pal/unix/os.rs
+--- library/std/src/sys/pal/unix/os.rs.orig
++++ library/std/src/sys/pal/unix/os.rs
 @@ -391,14 +391,17 @@ pub fn current_exe() -> io::Result<PathBuf> {
          if argv[0].is_null() {
              return Err(io::const_io_error!(

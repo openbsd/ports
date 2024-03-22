@@ -3,7 +3,7 @@ Part of https://github.com/sfackler/rust-openssl/pull/2121
 Index: vendor/openssl/src/lib.rs
 --- vendor/openssl/src/lib.rs.orig
 +++ vendor/openssl/src/lib.rs
-@@ -204,6 +204,15 @@ fn cvt_p<T>(r: *mut T) -> Result<*mut T, ErrorStack> {
+@@ -218,6 +218,15 @@ fn cvt_p_const<T>(r: *const T) -> Result<*const T, Err
  }
  
  #[inline]

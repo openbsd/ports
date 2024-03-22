@@ -1,8 +1,8 @@
 https://github.com/sfackler/rust-openssl/pull/2145
 
-Index: vendor/openssl-sys-0.9.90/src/handwritten/x509.rs
---- vendor/openssl-sys-0.9.90/src/handwritten/x509.rs.orig
-+++ vendor/openssl-sys-0.9.90/src/handwritten/x509.rs
+Index: vendor/openssl-sys-0.9.92/src/handwritten/x509.rs
+--- vendor/openssl-sys-0.9.92/src/handwritten/x509.rs.orig
++++ vendor/openssl-sys-0.9.92/src/handwritten/x509.rs
 @@ -685,16 +685,22 @@ extern "C" {
      pub fn X509_REQ_print(bio: *mut BIO, req: *mut X509_REQ) -> c_int;
  }
