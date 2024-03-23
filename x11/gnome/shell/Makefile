@@ -6,7 +6,7 @@ COMMENT=		next generation GNOME shell
 # major upgrade
 GNOME_PROJECT=		gnome-shell
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		45.4
+GNOME_VERSION=		45.5
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -17,6 +17,10 @@ WANTLIB += gjs glib-2.0 gnome-autoar-0 gnome-desktop-4 gobject-2.0
 WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-13
 WANTLIB += pango-1.0 pipewire-0.3 polkit-agent-1 polkit-gobject-1
 WANTLIB += pulse pulse-mainloop-glib
+WANTLIB += lib/mutter-13/mutter-clutter-13
+WANTLIB += lib/mutter-13/mutter-cogl-13
+WANTLIB += lib/mutter-13/mutter-cogl-pango-13
+WANTLIB += lib/mutter-13/mutter-mtk-13
 
 MODULES=		devel/dconf \
 			devel/meson \
