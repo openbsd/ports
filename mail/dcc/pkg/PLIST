@@ -47,7 +47,6 @@ libexec/dcc/dcc-stats-update
 @owner
 @bin libexec/dcc/dns-helper
 @bin libexec/dcc/dump-clients
-libexec/dcc/fetch-testmsg-whitelist
 libexec/dcc/fetchblack
 libexec/dcc/fetchids
 libexec/dcc/fix-map

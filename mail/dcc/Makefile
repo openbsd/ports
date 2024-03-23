@@ -1,8 +1,7 @@
 COMMENT=	bulk mail detection (Distributed Checksum Clearinghouses)
 
-DISTNAME=	dcc-2.3.168
+DISTNAME=	dcc-2.3.169
 EXTRACT_SUFX=	.tar.Z
-REVISION=	1
 
 CATEGORIES=	mail
 
@@ -14,7 +13,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # you may not redistribute modified, "fixed," or "improved" versions of
 # the source or binaries.'
 PERMIT_PACKAGE=	see WRKSRC/LICENSE and https://www.rhyolite.com/dcc/#license
-PERMIT_DISTFILES=Yes
+PERMIT_DISTFILES= Yes
 
 WANTLIB += c curses edit m pthread
 
