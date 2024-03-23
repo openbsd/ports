@@ -5,7 +5,7 @@ COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	7.0.3
 SUPDATE_V =	1.2.8
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
