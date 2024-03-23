@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -59,7 +59,7 @@ if (NOT DEFINED PACKAGE)
+@@ -68,7 +68,7 @@ if (NOT DEFINED PACKAGE)
      set(PACKAGE "${LINUX_PACKAGE_SHORTNAME}-client")
  endif()
  
@@ -10,7 +10,7 @@ Index: CMakeLists.txt
  
  include(ECMCoverageOption)
  
-@@ -302,4 +302,4 @@ elseif(BUILD_CLIENT)
+@@ -311,4 +311,4 @@ elseif(BUILD_CLIENT)
      configure_file(sync-exclude.lst bin/sync-exclude.lst COPYONLY)
  endif()
  
