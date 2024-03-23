@@ -1,7 +1,5 @@
 @bin bin/etr
-share/appdata/
-share/appdata/etr.appdata.xml
-share/applications/etr.desktop
+share/applications/net.sourceforge.extremetuxracer.desktop
 share/doc/etr/
 share/doc/etr/TODO
 share/doc/etr/code
@@ -549,11 +547,14 @@ share/etr/translations/eo.lst
 share/etr/translations/es_ES.lst
 share/etr/translations/fi_FI.lst
 share/etr/translations/fr_FR.lst
+share/etr/translations/it_IT.lst
 share/etr/translations/languages.lst
 share/etr/translations/pl_PL.lst
 share/etr/translations/ro_RO.lst
 share/etr/translations/se_SE.lst
 share/etr/translations/xx_XX.lst
+share/metainfo/
+share/metainfo/net.sourceforge.extremetuxracer.metainfo.xml
 share/pixmaps/
 share/pixmaps/etr.png
 share/pixmaps/etr.svg
