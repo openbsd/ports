@@ -1,6 +1,6 @@
 COMMENT =	management tool for password and sensitive data
 
-V =		2.7.6
+V =		2.7.7
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -64,7 +64,8 @@ CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
 # Sync with archs that ship Firefox and/or Chromium
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
-			-DWITH_XC_NETWORKING=ON
+			-DWITH_XC_NETWORKING=ON \
+			-DWITH_XC_BROWSER_PASSKEYS=ON
 # helper executable
 ALL_TARGET +=		keepassxc-proxy
 .endif
