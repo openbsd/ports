@@ -1,0 +1,17 @@
+Fix compilation with LibreSSL
+
+Index: plugins/qca-ossl/qca-ossl.cpp
+--- plugins/qca-ossl/qca-ossl.cpp.orig
++++ plugins/qca-ossl/qca-ossl.cpp
+@@ -45,6 +45,11 @@
+ #include <openssl/provider.h>
+ #endif
+ 
++#ifndef RSA_F_RSA_OSSL_PRIVATE_DECRYPT
++#define RSA_F_RSA_OSSL_PRIVATE_DECRYPT RSA_F_RSA_EAY_PRIVATE_DECRYPT
++#define SSL_CIPHER_standard_name SSL_CIPHER_get_name
++#endif
++
+ #include <openssl/kdf.h>
+ 
+ using namespace QCA;

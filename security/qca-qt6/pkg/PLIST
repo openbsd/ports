@@ -1,0 +1,31 @@
+@bin bin/mozcerts-qt6
+@bin bin/qcatool-qt6
+include/Qca-qt6/
+include/Qca-qt6/QtCrypto/
+include/Qca-qt6/QtCrypto/QtCrypto
+include/Qca-qt6/QtCrypto/qca.h
+include/Qca-qt6/QtCrypto/qca_basic.h
+include/Qca-qt6/QtCrypto/qca_cert.h
+include/Qca-qt6/QtCrypto/qca_core.h
+include/Qca-qt6/QtCrypto/qca_export.h
+include/Qca-qt6/QtCrypto/qca_keystore.h
+include/Qca-qt6/QtCrypto/qca_publickey.h
+include/Qca-qt6/QtCrypto/qca_safetimer.h
+include/Qca-qt6/QtCrypto/qca_securelayer.h
+include/Qca-qt6/QtCrypto/qca_securemessage.h
+include/Qca-qt6/QtCrypto/qca_support.h
+include/Qca-qt6/QtCrypto/qca_textfilter.h
+include/Qca-qt6/QtCrypto/qca_tools.h
+include/Qca-qt6/QtCrypto/qca_version.h
+include/Qca-qt6/QtCrypto/qcaprovider.h
+include/Qca-qt6/QtCrypto/qpipe.h
+lib/cmake/Qca-qt6/
+lib/cmake/Qca-qt6/Qca-qt6Config.cmake
+lib/cmake/Qca-qt6/Qca-qt6ConfigVersion.cmake
+lib/cmake/Qca-qt6/Qca-qt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qca-qt6/Qca-qt6Targets.cmake
+@lib lib/libqca-qt6.so.${LIBqca-qt6_VERSION}
+lib/qca-qt6/
+lib/qca-qt6/crypto/
+@so lib/qca-qt6/crypto/libqca-ossl.so
+@man man/man1/qcatool-qt6.1
