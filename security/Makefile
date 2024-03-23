@@ -319,6 +319,7 @@
      SUBDIR += py-yaswfp,python3
      SUBDIR += py-zxcvbn,python3
      SUBDIR += qca-qt5
+     SUBDIR += qca-qt6
      SUBDIR += qdigidoc4
      SUBDIR += qtkeychain
      SUBDIR += qtpass
