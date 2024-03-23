@@ -19,5 +19,9 @@ compiler as passed to ports builds is /usr/bin/cc.
 6.  Use closefrom(2) instead of looping through all the file descriptors
 and calling close(2) on them.
 
+7.  ctypes' find_library is modified to pass "libc.so" to dlopen() rather
+than attempting to resolve a version number by parsing ldconfig -r output,
+which results in loading an incorrect version in some cases.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.10.

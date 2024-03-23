@@ -1,0 +1,16 @@
+allow dlopen() to search for libc rather than parsing ldconfig -r to
+decide on a version number.
+
+Index: Lib/ctypes/util.py
+--- Lib/ctypes/util.py.orig
++++ Lib/ctypes/util.py
+@@ -204,6 +204,9 @@ elif os.name == "posix":
+             return nums or [sys.maxsize]
+ 
+         def find_library(name):
++            if sys.platform.startswith("openbsd") and name == "c":
++                return "libc.so"
++
+             ename = re.escape(name)
+             expr = r':-l%s\.\S+ => \S*/(lib%s\.\S+)' % (ename, ename)
+             expr = os.fsencode(expr)
