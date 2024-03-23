@@ -2,7 +2,7 @@ COMMENT=		library for handling paper characteristics
 
 GH_ACCOUNT=		rrthomas
 GH_PROJECT=		libpaper
-GH_TAGNAME=		v2.1.3
+GH_TAGNAME=		v2.2.5
 
 SHARED_LIBS +=  paper                1.0      # 3.1
 
@@ -10,7 +10,7 @@ CATEGORIES=		print
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv3 - LGPLv2.1
+# MIT
 PERMIT_PACKAGE=		Yes
 
 SITES=	https://github.com/rrthomas/libpaper/releases/download/${GH_TAGNAME}/

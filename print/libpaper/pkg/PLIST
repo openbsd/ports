@@ -7,7 +7,7 @@ lib/libpaper.la
 @man man/man1/paper.1
 @man man/man5/paperspecs.5
 share/doc/libpaper/
-share/doc/libpaper/README
+share/doc/libpaper/README.md
 share/examples/libpaper/
 share/examples/libpaper/papersize
 @sample ${SYSCONFDIR}/papersize
