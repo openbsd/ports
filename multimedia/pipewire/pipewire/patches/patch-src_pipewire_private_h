@@ -12,7 +12,7 @@ Index: src/pipewire/private.h
  #include "pipewire/impl.h"
  
  #include <spa/support/plugin.h>
-@@ -257,7 +261,11 @@ struct pw_impl_client {
+@@ -259,7 +263,11 @@ struct pw_impl_client {
  
  	void *user_data;		/**< extra user data */
  

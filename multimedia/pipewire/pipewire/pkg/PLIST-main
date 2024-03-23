@@ -89,7 +89,17 @@ lib/spa-0.2/videotestsrc/
 @man man/man1/pw-mididump.1
 @man man/man1/pw-mon.1
 @man man/man1/pw-profiler.1
+@man man/man1/pw-reserve.1
 @man man/man1/pw-top.1
+@man man/man1/pw-v4l2.1
+@man man/man1/spa-acp-tool.1
+@man man/man1/spa-inspect.1
+@man man/man1/spa-json-dump.1
+@man man/man1/spa-monitor.1
+@man man/man1/spa-resample.1
+@man man/man5/pipewire-client.conf.5
+@man man/man5/pipewire-filter-chain.conf.5
+@man man/man5/pipewire-jack.conf.5
 @man man/man5/pipewire-pulse.conf.5
 @man man/man5/pipewire.conf.5
 @man man/man7/libpipewire-module-access.7
@@ -134,6 +144,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-x11-bell.7
 @man man/man7/libpipewire-module-zeroconf-discover.7
 @man man/man7/libpipewire-modules.7
+@man man/man7/pipewire-devices.7
 @man man/man7/pipewire-pulse-module-alsa-sink.7
 @man man/man7/pipewire-pulse-module-alsa-source.7
 @man man/man7/pipewire-pulse-module-always-sink.7

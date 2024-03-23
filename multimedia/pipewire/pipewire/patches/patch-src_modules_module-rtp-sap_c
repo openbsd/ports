@@ -8,9 +8,9 @@ Index: src/modules/module-rtp-sap.c
 -#ifdef __FreeBSD__
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
  #define ifr_ifindex ifr_index
+ #define SO_PASSCRED LOCAL_CREDS_PERSISTENT
  #endif
- 
-@@ -416,9 +416,9 @@ static int make_recv_socket(struct sockaddr_storage *s
+@@ -423,9 +423,9 @@ static int make_recv_socket(struct sockaddr_storage *s
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
