@@ -85,6 +85,8 @@ share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-12.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-2.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-4.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-2-8.html
+share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-0.html
+share/gtk-doc/html/libgedit-gtksourceview-300/api-index-299-2.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-10.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-12.html
@@ -95,7 +97,6 @@ share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-20.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-22.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-24.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-3-4.html
-share/gtk-doc/html/libgedit-gtksourceview-300/api-index-300-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-4-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-deprecated.html
 share/gtk-doc/html/libgedit-gtksourceview-300/api-index-full.html
@@ -117,8 +118,9 @@ share/gtk-doc/html/libgedit-gtksourceview-300/libgedit-gtksourceview-300.devhelp
 share/gtk-doc/html/libgedit-gtksourceview-300/main-classes.html
 share/gtk-doc/html/libgedit-gtksourceview-300/misc.html
 share/gtk-doc/html/libgedit-gtksourceview-300/object-tree.html
+share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-0-to-299-2.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-3-to-4.html
-share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-gtksourceview-4-to-libgedit-gtksourceview-300.html
+share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-gtksourceview-4-to-libgedit-gtksourceview-299-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guides.html
 share/gtk-doc/html/libgedit-gtksourceview-300/printing.html
 share/gtk-doc/html/libgedit-gtksourceview-300/right-insensitive.png
@@ -314,6 +316,7 @@ share/locale/hu/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/id/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/it/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/ja/LC_MESSAGES/libgedit-gtksourceview-300.mo
+share/locale/ka/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/kk/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/kn/LC_MESSAGES/libgedit-gtksourceview-300.mo
 share/locale/ko/LC_MESSAGES/libgedit-gtksourceview-300.mo
