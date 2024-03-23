@@ -1288,11 +1288,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-roborunner/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-roborunner/2018-05-10/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-roborunner/2018-05-10/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-roborunner/2018-05-10/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-roborunner/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
@@ -2423,6 +2418,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/endpo
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-influxdb/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-influxdb/2023-01-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-influxdb/2023-01-27/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-influxdb/2023-01-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-influxdb/2023-01-27/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-query/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-query/2018-11-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/timestream-query/2018-11-01/endpoint-rule-set-1.json
