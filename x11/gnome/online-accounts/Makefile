@@ -1,8 +1,7 @@
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.48.0
-REVISION=	0
+GNOME_VERSION=	3.48.1
 
 SHARED_LIBS += goa-1.0                   4.0 # 0.0.0
 SHARED_LIBS += goa-backend-1.0           4.0 # 1.0.0
