@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2023.12.30
+VERSION =	2024.03.10
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
@@ -19,7 +19,7 @@ SITES =		https://github.com/yt-dlp/yt-dlp/releases/download/${VERSION}/
 
 MODULES =	lang/python
 
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	hatchling
 
 TEST_DEPENDS +=	devel/flake8
 
