@@ -6,7 +6,7 @@ V=			2.10.0
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
 GH_TAGNAME=		v${V}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		audio
 HOMEPAGE=		https://cmus.github.io/
 

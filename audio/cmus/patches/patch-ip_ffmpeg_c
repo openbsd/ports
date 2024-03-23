@@ -1,16 +1,16 @@
-Fix build with newer FFmpeg.
+Remove AV_CODEC_{CAP,FLAG}_TRUNCATED for FFmpeg 6 compatibility
+https://github.com/cmus/cmus/commit/07ce2dc7082a1ed8704c21fd3f2877c8ba6b12f9
 
 Index: ip/ffmpeg.c
 --- ip/ffmpeg.c.orig
 +++ ip/ffmpeg.c
-@@ -202,8 +202,10 @@ static int ffmpeg_open(struct input_plugin_data *ip_da
+@@ -202,9 +202,6 @@ static int ffmpeg_open(struct input_plugin_data *ip_da
  			break;
  		}
  
-+#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(59, 18, 100)
- 		if (codec->capabilities & AV_CODEC_CAP_TRUNCATED)
- 			cc->flags |= AV_CODEC_FLAG_TRUNCATED;
-+#endif
- 
+-		if (codec->capabilities & AV_CODEC_CAP_TRUNCATED)
+-			cc->flags |= AV_CODEC_FLAG_TRUNCATED;
+-
  		if (avcodec_open2(cc, codec, NULL) < 0) {
  			d_print("could not open codec: %d, %s\n", cc->codec_id, avcodec_get_name(cc->codec_id));
+ 			err = -IP_ERROR_UNSUPPORTED_FILE_TYPE;
