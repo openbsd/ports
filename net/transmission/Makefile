@@ -84,7 +84,6 @@ CONFIGURE_ARGS +=	-DENABLE_GTK=OFF
 .if ${BUILD_PACKAGES:M-qt}
 MODULES +=		x11/qt6
 # XXX =6 finds "Qt6", =5 fails to find "Qt", but Qt6 is preferred, anyway
-BUILD_DEPENDS +=	x11/qt6/qttools
 CONFIGURE_ARGS +=	-DENABLE_QT=ON \
 			-DUSE_QT_VERSION=6
 .else

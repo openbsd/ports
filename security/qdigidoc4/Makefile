@@ -38,8 +38,7 @@ WANTLIB +=		c crypto digidocpp flatbuffers lber ldap m pcsclite ssl z
 MODULES =		devel/cmake \
 			x11/qt6
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			x11/qt6/qttools
+BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/flatbuffers \
 			databases/openldap,-main \

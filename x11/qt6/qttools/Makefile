@@ -12,6 +12,8 @@ WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml c
 WANTLIB += m xkbcommon zstd
 
+# avoid BDEP on ourselves
+MODQT6_DEPS =	No
 
 MODULES +=			lang/clang
 MODCLANG_COMPILER_LINKS =	No

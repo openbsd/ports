@@ -19,7 +19,6 @@ PERMIT_PACKAGE=		Yes
 MODULES =		devel/cmake \
 			x11/qt6
 
-BUILD_DEPENDS =		x11/qt6/qttools
 RUN_DEPENDS =		devel/desktop-file-utils
 
 .include <bsd.port.mk>

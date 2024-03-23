@@ -20,7 +20,6 @@ WANTLIB += Qt6Widgets c fluidsynth m
 MODULES =		x11/qt6 \
 			devel/cmake
 
-BUILD_DEPENDS +=	x11/qt6/qttools
 LIB_DEPENDS +=		audio/fluidsynth>=2.3.2 \
 			x11/qt6/qtsvg
 

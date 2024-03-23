@@ -34,7 +34,6 @@ FULLPKGNAME =		qtkeychain-qt6-${GH_TAGNAME}
 MODULES +=		lang/clang x11/qt6
 MODCLANG_LANGS +=	c++
 WANTLIB +=		Qt6Core Qt6DBus
-BUILD_DEPENDS +=	x11/qt6/qttools
 LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}
 LIBNAME =		Qt6Keychain
 QT =			qt6

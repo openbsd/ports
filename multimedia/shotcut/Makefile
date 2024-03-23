@@ -24,7 +24,6 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		audio/jack \
 			devel/sdl2 \
-			x11/qt6/qttools \
 			x11/qt6/qtwebsockets
 
 RUN_DEPENDS =		audio/jack \

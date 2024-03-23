@@ -71,8 +71,7 @@ BUILD_DEPENDS +=	devel/bison \
 			textproc/libxml \
 			textproc/libxslt \
 			devel/xdg-utils \
-			textproc/asciidoctor \
-			x11/qt6/qttools
+			textproc/asciidoctor
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \

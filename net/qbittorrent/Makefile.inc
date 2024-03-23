@@ -20,8 +20,7 @@ SITES ?=	${SITE_SOURCEFORGE:=qbittorrent/}
 MODULES +=	devel/cmake \
 		x11/qt6
 
-BUILD_DEPENDS +=	devel/boost \
-			x11/qt6/qttools
+BUILD_DEPENDS +=	devel/boost
 
 LIB_DEPENDS +=		net/libtorrent-rasterbar>=2
 
