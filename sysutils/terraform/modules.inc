@@ -174,30 +174,30 @@ MODGO_MODULES =	\
 	github.com/armon/go-socks5								 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/asaskevich/govalidator							 v0.0.0-20200907205600-7a23bdc65eef \
 	github.com/aws/aws-sdk-go								 v1.44.122 \
-	github.com/aws/aws-sdk-go-v2								 v1.24.0 \
-	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.5.4 \
-	github.com/aws/aws-sdk-go-v2/config							 v1.26.1 \
-	github.com/aws/aws-sdk-go-v2/credentials						 v1.16.12 \
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds						 v1.14.10 \
-	github.com/aws/aws-sdk-go-v2/feature/s3/manager						 v1.15.1 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources					 v1.2.9 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2					 v2.5.9 \
-	github.com/aws/aws-sdk-go-v2/internal/ini						 v1.7.2 \
-	github.com/aws/aws-sdk-go-v2/internal/v4a						 v1.2.9 \
+	github.com/aws/aws-sdk-go-v2								 v1.25.3 \
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.6.1 \
+	github.com/aws/aws-sdk-go-v2/config							 v1.27.7 \
+	github.com/aws/aws-sdk-go-v2/credentials						 v1.17.7 \
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds						 v1.15.3 \
+	github.com/aws/aws-sdk-go-v2/feature/s3/manager						 v1.16.9 \
+	github.com/aws/aws-sdk-go-v2/internal/configsources					 v1.3.3 \
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2					 v2.6.3 \
+	github.com/aws/aws-sdk-go-v2/internal/ini						 v1.8.0 \
+	github.com/aws/aws-sdk-go-v2/internal/v4a						 v1.3.3 \
 	github.com/aws/aws-sdk-go-v2/service/appconfig						 v1.4.2 \
-	github.com/aws/aws-sdk-go-v2/service/dynamodb						 v1.26.6 \
+	github.com/aws/aws-sdk-go-v2/service/dynamodb						 v1.30.4 \
 	github.com/aws/aws-sdk-go-v2/service/iam						 v1.28.5 \
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding				 v1.10.4 \
-	github.com/aws/aws-sdk-go-v2/service/internal/checksum					 v1.2.9 \
-	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery			 v1.8.10 \
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url				 v1.10.9 \
-	github.com/aws/aws-sdk-go-v2/service/internal/s3shared					 v1.16.9 \
-	github.com/aws/aws-sdk-go-v2/service/s3							 v1.47.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding				 v1.11.1 \
+	github.com/aws/aws-sdk-go-v2/service/internal/checksum					 v1.3.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery			 v1.9.4 \
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url				 v1.11.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/s3shared					 v1.17.3 \
+	github.com/aws/aws-sdk-go-v2/service/s3							 v1.51.4 \
 	github.com/aws/aws-sdk-go-v2/service/sqs						 v1.29.5 \
-	github.com/aws/aws-sdk-go-v2/service/sso						 v1.18.5 \
-	github.com/aws/aws-sdk-go-v2/service/ssooidc						 v1.21.5 \
-	github.com/aws/aws-sdk-go-v2/service/sts						 v1.26.5 \
-	github.com/aws/smithy-go								 v1.19.0 \
+	github.com/aws/aws-sdk-go-v2/service/sso						 v1.20.2 \
+	github.com/aws/aws-sdk-go-v2/service/ssooidc						 v1.23.2 \
+	github.com/aws/aws-sdk-go-v2/service/sts						 v1.28.4 \
+	github.com/aws/smithy-go								 v1.20.1 \
 	github.com/aymerick/douceur								 v0.2.0 \
 	github.com/baiyubin/aliyun-sts-go-sdk							 v0.0.0-20180326062324-cfa1a18b161f \
 	github.com/beorn7/perks									 v1.0.1 \
@@ -767,39 +767,41 @@ MODGO_MODFILES =	\
 	github.com/armon/go-radix						 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/asaskevich/govalidator					 v0.0.0-20190424111038-f61b66f89f4a \
 	github.com/aws/aws-sdk-go-v2						 v1.22.2 \
-	github.com/aws/aws-sdk-go-v2						 v1.23.2 \
+	github.com/aws/aws-sdk-go-v2						 v1.24.0 \
 	github.com/aws/aws-sdk-go-v2						 v1.9.2 \
-	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream			 v1.5.1 \
-	github.com/aws/aws-sdk-go-v2/config					 v1.25.8 \
+	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream			 v1.5.4 \
+	github.com/aws/aws-sdk-go-v2/config					 v1.26.1 \
 	github.com/aws/aws-sdk-go-v2/config					 v1.8.3 \
-	github.com/aws/aws-sdk-go-v2/credentials				 v1.16.6 \
+	github.com/aws/aws-sdk-go-v2/credentials				 v1.16.12 \
 	github.com/aws/aws-sdk-go-v2/credentials				 v1.4.3 \
-	github.com/aws/aws-sdk-go-v2/feature/ec2/imds				 v1.14.6 \
+	github.com/aws/aws-sdk-go-v2/feature/ec2/imds				 v1.14.10 \
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds				 v1.6.0 \
 	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.2 \
-	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.5 \
+	github.com/aws/aws-sdk-go-v2/internal/configsources			 v1.2.9 \
 	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.2 \
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.5 \
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2			 v2.5.9 \
 	github.com/aws/aws-sdk-go-v2/internal/ini				 v1.2.4 \
-	github.com/aws/aws-sdk-go-v2/internal/ini				 v1.7.1 \
-	github.com/aws/aws-sdk-go-v2/internal/v4a				 v1.2.5 \
+	github.com/aws/aws-sdk-go-v2/internal/ini				 v1.7.2 \
+	github.com/aws/aws-sdk-go-v2/internal/v4a				 v1.2.9 \
 	github.com/aws/aws-sdk-go-v2/service/dynamodb				 v1.25.1 \
+	github.com/aws/aws-sdk-go-v2/service/dynamodb				 v1.26.6 \
 	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding		 v1.10.0 \
-	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding		 v1.10.1 \
-	github.com/aws/aws-sdk-go-v2/service/internal/checksum			 v1.2.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/accept-encoding		 v1.10.4 \
+	github.com/aws/aws-sdk-go-v2/service/internal/checksum			 v1.2.9 \
+	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery	 v1.8.10 \
 	github.com/aws/aws-sdk-go-v2/service/internal/endpoint-discovery	 v1.8.2 \
-	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url		 v1.10.5 \
+	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url		 v1.10.9 \
 	github.com/aws/aws-sdk-go-v2/service/internal/presigned-url		 v1.3.2 \
-	github.com/aws/aws-sdk-go-v2/service/internal/s3shared			 v1.16.5 \
-	github.com/aws/aws-sdk-go-v2/service/s3					 v1.46.0 \
+	github.com/aws/aws-sdk-go-v2/service/internal/s3shared			 v1.16.9 \
+	github.com/aws/aws-sdk-go-v2/service/s3					 v1.47.5 \
 	github.com/aws/aws-sdk-go-v2/service/sqs				 v1.28.0 \
-	github.com/aws/aws-sdk-go-v2/service/sso				 v1.17.5 \
+	github.com/aws/aws-sdk-go-v2/service/sso				 v1.18.5 \
 	github.com/aws/aws-sdk-go-v2/service/sso				 v1.4.2 \
-	github.com/aws/aws-sdk-go-v2/service/ssooidc				 v1.20.3 \
-	github.com/aws/aws-sdk-go-v2/service/sts				 v1.25.6 \
+	github.com/aws/aws-sdk-go-v2/service/ssooidc				 v1.21.5 \
+	github.com/aws/aws-sdk-go-v2/service/sts				 v1.26.5 \
 	github.com/aws/aws-sdk-go-v2/service/sts				 v1.7.2 \
 	github.com/aws/smithy-go						 v1.16.0 \
-	github.com/aws/smithy-go						 v1.17.0 \
+	github.com/aws/smithy-go						 v1.19.0 \
 	github.com/aws/smithy-go						 v1.8.0 \
 	github.com/beorn7/perks							 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks							 v1.0.0 \
