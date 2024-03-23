@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		45.2
+GNOME_VERSION=		45.3
 
 CATEGORIES=		graphics
 
