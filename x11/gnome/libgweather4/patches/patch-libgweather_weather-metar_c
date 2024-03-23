@@ -17,6 +17,6 @@ Index: libgweather/weather-metar.c
 +    if (!loc->code)
 +        return;
 +
-     g_debug ("metar_start_open, requesting: https://www.aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&fields=raw_text&stationString=%s", loc->code);
+     g_debug ("metar_start_open, requesting: https://aviationweather.gov/cgi-bin/data/dataserver.php?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&fields=raw_text&stationString=%s", loc->code);
      query = soup_form_encode (
          "dataSource",
