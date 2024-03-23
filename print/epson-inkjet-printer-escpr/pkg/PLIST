@@ -135,6 +135,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-EW-M970A3T_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-K200-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-K300-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L1110_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L1270_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L1455_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3050_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3060_Series-epson-escpr-en.ppd
@@ -145,6 +146,8 @@ share/ppd/epson-inkjet-printer-escpr/Epson-L3150_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3160_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3250_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L3260_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L3270_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L3280_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L364_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L375_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L385_Series-epson-escpr-en.ppd
@@ -162,6 +165,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-L486_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L495_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L5190_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L5290_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-L5310_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L565_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L575_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-L605_Series-epson-escpr-en.ppd
