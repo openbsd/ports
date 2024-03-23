@@ -1,7 +1,6 @@
 COMMENT=	format files for printing on PostScript printers
 
-DISTNAME=	a2ps-4.15.5
-REVISION=	0
+DISTNAME=	a2ps-4.15.6
 
 SHARED_LIBS +=  a2ps 3.0
 
