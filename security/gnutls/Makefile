@@ -1,13 +1,12 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.3
+V=			3.8.4
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               47.8     # 67.1
+SHARED_LIBS +=  gnutls               47.9     # 67.1
 SHARED_LIBS +=  gnutlsxx             30.2     # 30.0
 SHARED_LIBS +=  gnutls-dane          1.1      # 4.1
 
@@ -18,9 +17,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec brotlienc
-WANTLIB += c crypto event ffi gmp hogweed iconv idn2 intl m nettle
-WANTLIB += p11-kit ssl tasn1 unbound unistring z zstd
+WANTLIB += ${COMPILER_LIBCXX} c crypto event ffi gmp hogweed iconv
+WANTLIB += idn2 intl m nettle p11-kit ssl tasn1 unbound unistring
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -30,15 +28,20 @@ SITES=			https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).*/\1/}
 # needed for tests
 BUILD_DEPENDS=		devel/cmocka
 
-LIB_DEPENDS=		archivers/brotli \
-			archivers/zstd \
-			converters/libunistring \
+LIB_DEPENDS=		converters/libunistring \
 			devel/gettext,-runtime \
 			devel/libidn2 \
 			net/libunbound \
 			security/libtasn1 \
 			security/libnettle \
 			security/p11-kit
+
+# dlopen()
+WANTLIB += brotlidec brotlienc z zstd
+BUILD_DEPENDS +=	archivers/brotli \
+			archivers/zstd
+RUN_DEPENDS +=		archivers/brotli \
+			archivers/zstd
 
 USE_GMAKE=		Yes
 
