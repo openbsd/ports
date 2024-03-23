@@ -184,6 +184,7 @@ lib/pkgconfig/python-3.10.pc
 ${PY_DEFAULTONLY}lib/pkgconfig/python3-embed.pc
 ${PY_DEFAULTONLY}lib/pkgconfig/python3.pc
 lib/python3.10/
+lib/python3.10/EXTERNALLY-MANAGED
 lib/python3.10/LICENSE.txt
 lib/python3.10/__future__.py
 lib/python3.10/__phello__.foo.py

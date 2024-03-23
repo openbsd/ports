@@ -4,10 +4,12 @@
 # Python itself.
 
 FULL_VERSION =		3.10.13
-REVISION =		1
 SHARED_LIBS =		python3.10 0.0
 VERSION_SPEC =		>=3.10,<3.11
 PORTROACH =		limit:^3\.10
+
+REVISION =		1
+REVISION-main =		2
 
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:
 # - override "@comment" setting so that bin/python3 etc are installed
