@@ -579,6 +579,7 @@ share/locale/cs/LC_MESSAGES/libpanel.mo
 share/locale/da/LC_MESSAGES/libpanel.mo
 share/locale/de/LC_MESSAGES/libpanel.mo
 share/locale/el/LC_MESSAGES/libpanel.mo
+share/locale/en_GB/LC_MESSAGES/libpanel.mo
 share/locale/eo/LC_MESSAGES/libpanel.mo
 share/locale/es/LC_MESSAGES/libpanel.mo
 share/locale/eu/LC_MESSAGES/libpanel.mo
@@ -597,6 +598,7 @@ share/locale/it/LC_MESSAGES/libpanel.mo
 share/locale/ka/LC_MESSAGES/libpanel.mo
 share/locale/ko/LC_MESSAGES/libpanel.mo
 share/locale/lt/LC_MESSAGES/libpanel.mo
+share/locale/lv/LC_MESSAGES/libpanel.mo
 share/locale/ne/LC_MESSAGES/libpanel.mo
 share/locale/nl/LC_MESSAGES/libpanel.mo
 share/locale/oc/LC_MESSAGES/libpanel.mo
