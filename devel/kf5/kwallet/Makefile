@@ -1,6 +1,7 @@
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5Wallet		7.0
 SHARED_LIBS +=		kwalletbackend5		6.1
@@ -31,5 +32,9 @@ LIB_DEPENDS =	devel/kf5/kauth>=${MODKF5_VERSION} \
 		security/libgcrypt
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Gpgmepp=ON
+
+# https://community.kde.org/Frameworks/6.0_Release_notes
+CONFIGURE_ARGS +=	-DBUILD_KWALLETD=OFF \
+			-DBUILD_KWALLET_QUERY=OFF
 
 .include <bsd.port.mk>

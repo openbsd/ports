@@ -1,5 +1,6 @@
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5GlobalAccel		7.0
 SHARED_LIBS +=	KF5GlobalAccelPrivate	6.3
@@ -15,6 +16,9 @@ LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
 		x11/qt5/qtx11extras
+
+# https://community.kde.org/Frameworks/6.0_Release_notes
+CONFIGURE_ARGS +=	-DKF6_COMPAT_BUILD=ON
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,5 +1,6 @@
 COMMENT =	KDE icon GUI utility library
 DISTNAME =	kiconthemes-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5IconThemes		5.6
 
@@ -10,7 +11,7 @@ WANTLIB += Qt5Widgets Qt5Xml c m
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
-RUN_DEPENDS =	devel/kf5/breeze-icons>=${MODKF5_VERSION}
+RUN_DEPENDS +=	devel/kf5/breeze-icons
 
 LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 		devel/kf5/kcodecs>=${MODKF5_VERSION} \

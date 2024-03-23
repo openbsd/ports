@@ -1,4 +1,3 @@
-@bin bin/kde-geo-uri-handler
 include/KF5/
 include/KF5/KGuiAddons/
 include/KF5/KGuiAddons/KColorCollection
@@ -37,10 +36,6 @@ lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets.cmake
 @lib lib/libKF5GuiAddons.so.${LIBKF5GuiAddons_VERSION}
-share/applications/google-maps-geo-handler.desktop
-share/applications/openstreetmap-geo-handler.desktop
-share/applications/qwant-maps-geo-handler.desktop
-share/applications/wheelmap-geo-handler.desktop
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KGuiAddons.pri

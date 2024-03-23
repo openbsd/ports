@@ -359,7 +359,6 @@ lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
 @bin libexec/kf5/kioslave5
 @bin libexec/kf5/kpac_dhcp_helper
 @man man/man8/kcookiejar5.8
-share/applications/kcm_trash.desktop
 share/applications/ktelnetservice5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KCookieServer.xml
 share/dbus-1/interfaces/kf5_org.kde.KDirNotify.xml
@@ -1055,7 +1054,9 @@ share/kf5/mkspecs/qt_KIOFileWidgets.pri
 share/kf5/mkspecs/qt_KIOGui.pri
 share/kf5/mkspecs/qt_KIOWidgets.pri
 share/kf5/mkspecs/qt_KNTLM.pri
+share/knotifications5/
 share/knotifications5/proxyscout.notifyrc
+share/kservices5/
 share/kservices5/cookies.desktop
 share/kservices5/http_cache_cleaner.desktop
 share/kservices5/kcmtrash.desktop

@@ -1,5 +1,6 @@
 COMMENT =	Utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5GuiAddons		7.0
 
@@ -12,6 +13,9 @@ BUILD_DEPENDS =		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =		x11/qt5/qtx11extras \
 			x11/qt5/qtwayland
+
+# https://community.kde.org/Frameworks/6.0_Release_notes
+CONFIGURE_ARGS +=	-DBUILD_GEO_SCHEME_HANDLER=OFF
 
 TEST_IS_INTERACTIVE =	X11
 

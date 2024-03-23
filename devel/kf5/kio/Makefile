@@ -2,6 +2,7 @@
 
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5KIOCore		11.0 # 5.20
 SHARED_LIBS +=	KF5KIOGui		12.1 # 5.20
@@ -56,6 +57,9 @@ LIB_DEPENDS =	devel/kf5/karchive>=${MODKF5_VERSION} \
 # GSSAPI support requires fixing (rewriting?) FindGSSAPI.cmake
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ACL=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_GSSAPI=ON
+
+# https://community.kde.org/Frameworks/6.0_Release_notes
+CONFIGURE_ARGS +=	-DKF6_COMPAT_BUILD=ON
 
 # TODO: many tests fail (need something more in TEST_DEPENDS?)
 PORTHOME =		${WRKDIR}

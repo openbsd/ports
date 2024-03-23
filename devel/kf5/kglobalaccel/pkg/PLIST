@@ -1,4 +1,3 @@
-@bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel
 include/KF5/KGlobalAccel/KGlobalShortcutInfo
@@ -17,15 +16,9 @@ lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets.cmake
 @lib lib/libKF5GlobalAccel.so.${LIBKF5GlobalAccel_VERSION}
 @lib lib/libKF5GlobalAccelPrivate.so.${LIBKF5GlobalAccelPrivate_VERSION}
-lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
-@so lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
-lib/systemd/user/plasma-kglobalaccel.service
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
-share/dbus-1/services/org.kde.kglobalaccel.service
 share/kf5/mkspecs/qt_KGlobalAccel.pri
-share/kservices5/
-share/kservices5/kglobalaccel5.desktop
 share/locale/af/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/ar/LC_MESSAGES/kglobalaccel5_qt.qm
 share/locale/as/LC_MESSAGES/kglobalaccel5_qt.qm

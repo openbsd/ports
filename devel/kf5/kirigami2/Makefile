@@ -1,6 +1,7 @@
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
+REVISION =	0
 
 HOMEPAGE =	https://api.kde.org/frameworks/kirigami/html/index.html
 
@@ -15,9 +16,10 @@ BUILD_DEPENDS =	archivers/gtar \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtsvg
 
-RUN_DEPENDS =	devel/kf5/breeze-icons>=${MODKF5_VERSION} \
-		x11/qt5/qtgraphicaleffects \
+RUN_DEPENDS =	x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtsvg
+
+RUN_DEPENDS +=	devel/kf5/breeze-icons
 
 LIB_DEPENDS =	x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtdeclarative
