@@ -1,24 +1,58 @@
 @bin bin/timew
+@man man/man1/timew-annotate.1
+@man man/man1/timew-cancel.1
+@man man/man1/timew-chart.1
+@man man/man1/timew-config.1
+@man man/man1/timew-continue.1
+@man man/man1/timew-delete.1
+@man man/man1/timew-diagnostics.1
+@man man/man1/timew-export.1
+@man man/man1/timew-extensions.1
+@man man/man1/timew-fill.1
+@man man/man1/timew-gaps.1
+@man man/man1/timew-get.1
+@man man/man1/timew-help.1
+@man man/man1/timew-join.1
+@man man/man1/timew-lengthen.1
+@man man/man1/timew-modify.1
+@man man/man1/timew-move.1
+@man man/man1/timew-report.1
+@man man/man1/timew-resize.1
+@man man/man1/timew-retag.1
+@man man/man1/timew-shorten.1
+@man man/man1/timew-show.1
+@man man/man1/timew-split.1
+@man man/man1/timew-start.1
+@man man/man1/timew-stop.1
+@man man/man1/timew-summary.1
+@man man/man1/timew-tag.1
+@man man/man1/timew-tags.1
+@man man/man1/timew-track.1
+@man man/man1/timew-undo.1
+@man man/man1/timew-untag.1
 @man man/man1/timew.1
+@man man/man7/timew-config.7
+@man man/man7/timew-dates.7
+@man man/man7/timew-dom.7
+@man man/man7/timew-durations.7
+@man man/man7/timew-hints.7
+@man man/man7/timew-ranges.7
 share/doc/timewarrior/
 share/doc/timewarrior/AUTHORS
-share/doc/timewarrior/COPYING
 share/doc/timewarrior/ChangeLog
 share/doc/timewarrior/INSTALL
 share/doc/timewarrior/LICENSE
-share/doc/timewarrior/NEWS
 share/doc/timewarrior/README.md
-share/doc/timewarrior/doc/
-share/doc/timewarrior/doc/holidays/
-share/doc/timewarrior/doc/holidays/README
-share/doc/timewarrior/doc/holidays/holidays.en-US
-share/doc/timewarrior/doc/holidays/refresh
-share/doc/timewarrior/doc/themes/
-share/doc/timewarrior/doc/themes/README
-share/doc/timewarrior/doc/themes/dark.theme
-share/doc/timewarrior/doc/themes/dark_blue.theme
-share/doc/timewarrior/doc/themes/dark_green.theme
-share/doc/timewarrior/doc/themes/dark_red.theme
 share/doc/timewarrior/ext/
 share/doc/timewarrior/ext/on-modify.timewarrior
 share/doc/timewarrior/ext/totals.py
+share/doc/timewarrior/holidays/
+share/doc/timewarrior/holidays/README
+share/doc/timewarrior/holidays/holidays.en-US
+share/doc/timewarrior/holidays/refresh
+share/doc/timewarrior/themes/
+share/doc/timewarrior/themes/README
+share/doc/timewarrior/themes/dark.theme
+share/doc/timewarrior/themes/dark_blue.theme
+share/doc/timewarrior/themes/dark_green.theme
+share/doc/timewarrior/themes/dark_red.theme

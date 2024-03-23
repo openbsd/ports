@@ -1,10 +1,9 @@
 COMMENT =	command line tracking time tool
 
-VERSION =	1.1.1
+VERSION =	1.7.1
 DISTNAME =	timew-${VERSION}
 PKGNAME =	timewarrior-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
 
 HOMEPAGE =	https://timewarrior.net/
 
@@ -13,23 +12,26 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += c m ${COMPILER_LIBCXX}
 
-SITES =		https://taskwarrior.org/download/
+SITES =		https://github.com/GothenburgBitFactory/timewarrior/releases/download/v${VERSION}/
 
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
-MODPY_ADJ_FILES =	ext/totals.py
+
+BUILD_DEPENDS =		textproc/asciidoctor
+TEST_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}
 
 CONFIGURE_STYLE =	cmake
 
 CONFIGURE_ARGS +=	-DTIMEW_DOCDIR=share/doc/timewarrior
-CONFIGURE_ARGS +=	-DTIMEW_RCDIR=share/doc/timewarrior/rc
 CONFIGURE_ARGS +=	-DTIMEW_MAN1DIR=man/man1
+CONFIGURE_ARGS +=	-DTIMEW_MAN7DIR=man/man7
 
-NO_TEST =		Yes
+do-test:
+	${MODCMAKE_BUILD_TARGET} -t test
 
 .include <bsd.port.mk>
