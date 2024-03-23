@@ -3,7 +3,7 @@ PORTROACH=		limit:^3\.24
 COMMENT=		C++ interface for gtk3+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		3.24.8
+GNOME_VERSION=		3.24.9
 PKGNAME=		gtk3mm-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
