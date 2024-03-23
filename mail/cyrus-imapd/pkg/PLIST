@@ -47,6 +47,7 @@ cyrus/man/man1/
 @man cyrus/man/man1/sieveshell.1
 @man cyrus/man/man1/sivtest.1
 @man cyrus/man/man1/smtptest.1
+@man cyrus/man/man1/synctest.1
 cyrus/man/man3/
 @man cyrus/man/man3/imclient.3
 cyrus/man/man5/
@@ -63,6 +64,7 @@ cyrus/man/man8/
 @man cyrus/man/man8/ctl_deliver.8
 @man cyrus/man/man8/ctl_mboxlist.8
 @man cyrus/man/man8/cvt_cyrusdb.8
+@man cyrus/man/man8/cvt_xlist_specialuse.8
 @man cyrus/man/man8/cyr_backup.8
 @man cyrus/man/man8/cyr_buildinfo.8
 @man cyrus/man/man8/cyr_dbtool.8
@@ -70,23 +72,38 @@ cyrus/man/man8/
 @man cyrus/man/man8/cyr_df.8
 @man cyrus/man/man8/cyr_expire.8
 @man cyrus/man/man8/cyr_info.8
+@man cyrus/man/man8/cyr_ls.8
 @man cyrus/man/man8/cyr_synclog.8
+@man cyrus/man/man8/cyr_userseen.8
 @man cyrus/man/man8/cyr_virusscan.8
+@man cyrus/man/man8/cyradm.8
+@man cyrus/man/man8/cyrdump.8
 @man cyrus/man/man8/deliver.8
 @man cyrus/man/man8/fud.8
 @man cyrus/man/man8/idled.8
 @man cyrus/man/man8/imapd.8
 @man cyrus/man/man8/ipurge.8
 @man cyrus/man/man8/lmtpd.8
+@man cyrus/man/man8/lmtpproxyd.8
 @man cyrus/man/man8/master.8
 @man cyrus/man/man8/mbexamine.8
 @man cyrus/man/man8/mbpath.8
 @man cyrus/man/man8/mbtool.8
+@man cyrus/man/man8/mupdate.8
 @man cyrus/man/man8/notifyd.8
 @man cyrus/man/man8/pop3d.8
+@man cyrus/man/man8/pop3proxyd.8
+@man cyrus/man/man8/promstatsd.8
+@man cyrus/man/man8/proxyd.8
+@man cyrus/man/man8/ptdump.8
+@man cyrus/man/man8/ptexpire.8
+@man cyrus/man/man8/ptloader.8
 @man cyrus/man/man8/quota.8
 @man cyrus/man/man8/reconstruct.8
+@man cyrus/man/man8/relocate_by_id.8
 @man cyrus/man/man8/restore.8
+@man cyrus/man/man8/sievec.8
+@man cyrus/man/man8/sieved.8
 @man cyrus/man/man8/smmapd.8
 @man cyrus/man/man8/squatter.8
 @man cyrus/man/man8/timsieved.8
@@ -293,6 +310,7 @@ share/doc/cyrus-imapd/html/imap/developer/API/index-api.html
 share/doc/cyrus-imapd/html/imap/developer/API/mailbox-api.html
 share/doc/cyrus-imapd/html/imap/developer/ancient-releasing.html
 share/doc/cyrus-imapd/html/imap/developer/compiling.html
+share/doc/cyrus-imapd/html/imap/developer/coverage.html
 share/doc/cyrus-imapd/html/imap/developer/cyrusworks.html
 share/doc/cyrus-imapd/html/imap/developer/developer-testing.html
 share/doc/cyrus-imapd/html/imap/developer/documentation.html
@@ -496,6 +514,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.10.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.11.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.12.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/3.2.4.html
@@ -522,6 +541,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.5.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.7.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/x/
@@ -538,6 +558,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.3.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/
@@ -551,6 +572,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-beta2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/x/
