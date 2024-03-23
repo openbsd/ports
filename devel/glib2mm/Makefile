@@ -6,7 +6,7 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=		C++ interface for glib2
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.66.6
+GNOME_VERSION=		2.66.7
 PKGNAME=		glib2mm-${GNOME_VERSION}
 
 SHARED_LIBS += glibmm_generate_extra_defs-2.4 13.4 # 1.3.0
