@@ -36,7 +36,7 @@ LIB_DEPENDS=		converters/libunistring \
 			security/libnettle \
 			security/p11-kit
 
-# dlopen()
+# dlopen(); see patch-lib_compress_c
 WANTLIB += brotlidec brotlienc z zstd
 BUILD_DEPENDS +=	archivers/brotli \
 			archivers/zstd
