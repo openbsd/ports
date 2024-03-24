@@ -15,30 +15,30 @@ MULTI_PACKAGES =	-main -extras
 # minimal dependencies for a working desktop
 # will install garcon/exo/libxfce4util/libxfce4ui
 RUN_DEPENDS-main += \
+		x11/xfce4/thunar \
 		x11/xfce4/xfce4-panel \
 		x11/xfce4/xfce4-session \
 		x11/xfce4/xfce4-settings \
 		x11/xfce4/xfconf \
 		x11/xfce4/xfdesktop \
-		x11/xfce4/thunar \
 		x11/xfce4/xfwm4
 
 # theme packages
 RUN_DEPENDS-main += \
-		x11/xfce4/xfwm4-themes \
-		x11/greybird
+		x11/greybird \
+		x11/xfce4/xfwm4-themes
 
 # common apps
 RUN_DEPENDS-main += \
-		x11/xfce4/terminal \
-		x11/xfce4/ristretto \
 		x11/xfce4/mousepad \
+		x11/xfce4/ristretto \
+		x11/xfce4/terminal \
+		x11/xfce4/tumbler \
 		x11/xfce4/xfce4-appfinder \
 		x11/xfce4/xfce4-mixer \
 		x11/xfce4/xfce4-notifyd \
 		x11/xfce4/xfce4-screensaver \
-		x11/xfce4/xfce4-taskmanager \
-		x11/xfce4/tumbler
+		x11/xfce4/xfce4-taskmanager
 
 # extra apps
 RUN_DEPENDS-extras += \
@@ -46,9 +46,9 @@ RUN_DEPENDS-extras += \
 		textproc/catfish \
 		x11/gigolo \
 		x11/xfce4/orage \
+		x11/xfce4/parole \
 		x11/xfce4/xfdashboard \
-		x11/xfce4/xfmpc \
-		x11/xfce4/parole
+		x11/xfce4/xfmpc
 
 # thunar plugins
 RUN_DEPENDS-extras += \
