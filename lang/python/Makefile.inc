@@ -205,9 +205,9 @@ post-install:
 		's@#!/usr/local/bin/python@#!${PREFIX}/bin/python${VERSION}@' \
 		${PREFIX}/bin/pip${VERSION}
 .endif
-	[ -e ${FILESDIR}/EXTERNALLY-MANAGED ] && \
+	if [ -e ${FILESDIR}/EXTERNALLY-MANAGED ]; then \
 		${INSTALL_DATA} ${FILESDIR}/EXTERNALLY-MANAGED \
-		${PREFIX}/lib/python${VERSION}/EXTERNALLY-MANAGED # PEP-668
+		${PREFIX}/lib/python${VERSION}/EXTERNALLY-MANAGED; fi # PEP-668
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
