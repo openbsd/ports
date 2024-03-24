@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS =   Qt6Qml                    4.0 # 6.6
 SHARED_LIBS +=  Qt6Quick                  5.0 # 6.6
@@ -38,6 +39,8 @@ WANTLIB += xkbcommon
 
 MODULES =	lang/python
 CONFIGURE_STYLE = cmake
+
+MODQT6_DEPS =	No
 
 BUILD_DEPENDS =	x11/qt6/qtshadertools \
 		graphics/vulkan-loader
