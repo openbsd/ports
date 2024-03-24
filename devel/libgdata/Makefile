@@ -21,9 +21,6 @@ MODULES=		devel/meson \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-BUILD_DEPENDS=		net/uhttpmock
-TEST_DEPENDS=		net/uhttpmock
-
 # needed for demos/scrapbook
 BUILD_DEPENDS +=	x11/gtk+3
 
@@ -38,5 +35,8 @@ PORTHOME=		${WRKDIR}
 
 CONFIGURE_ARGS=		-Dinstalled_tests=false \
 			-Doauth1=disabled
+
+# needs uhttpmock with libsoup 2
+CONFIGURE_ARGS +=	-Dalways_build_tests=false
 
 .include <bsd.port.mk>
