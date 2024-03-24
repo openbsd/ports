@@ -1,5 +1,22 @@
-xce4-xkb displays the current keyboard layout and refreshes when the
-layout changes.  Also the layout can be switched by simply clicking on
-the plugin.  This plugin is used along with the XKB extension.  For now
-the keyboard layouts cannot be configured from the plugin itself, they
-should be set in the xorg.conf file or some other way (e.g. setxkbmap).
+This plugin allows you to setup and use multiple keyboard layouts.
+
+You can choose the keyboard model, what key combination to
+use to switch between the layouts, the actual keyboard layouts,
+the way in which the current layout is being displayed (country
+flag image or text) and the layout policy, which is whether to
+store the layout globally (for all windows), per application or
+per window.
+
+The plugin detects any change in the layout configuration
+(e.g. setxkbmap invocations) and reconfigures itself to use
+the new settings.
+
+There is a hidden (not available in the GUI) setting -
+"never_modify_config". If this setting is set to "true" in
+the configuration file, then the plugin will not modify the
+layout configuration under any circumstances (currently
+even when the configuration is modified through the settings
+dialog). This option is for users who wish to configure
+some XKB options, which are not present in the GUI and thus
+are limited by the plugin. These users can use the plugin
+so that it only displays the active layouts.
