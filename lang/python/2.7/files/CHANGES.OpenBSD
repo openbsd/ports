@@ -7,5 +7,8 @@ of changes made to this version of Python for the OpenBSD package.
 
 3.  RAND_egd support has been disabled, as it is not available in LibreSSL.
 
+4.  ERR_get_state is no longer called, it is not used in OpenSSL 3.0 or
+    libressl as of 20240303
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/2.7.
