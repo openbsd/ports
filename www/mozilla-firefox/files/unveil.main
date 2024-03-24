@@ -59,7 +59,7 @@ $XDG_RUNTIME_DIR/dconf rwc
 $XDG_CACHE_HOME/at-spi rw
 $XDG_CACHE_HOME/thumbnails rwc
 $XDG_CACHE_HOME/gvfsd r
-$XDG_CACHE_HOME/dconf r
+$XDG_CACHE_HOME/dconf rw
 $XDG_CACHE_HOME/mozilla/firefox rwc
 $XDG_CACHE_HOME/mesa_shader_cache rwc
 $XDG_CONFIG_HOME/dconf rw
