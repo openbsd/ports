@@ -29,15 +29,11 @@ share/examples/openvpn/sample-config-files/
 share/examples/openvpn/sample-config-files/README
 share/examples/openvpn/sample-config-files/client.conf
 share/examples/openvpn/sample-config-files/firewall.sh
-share/examples/openvpn/sample-config-files/home.up
 share/examples/openvpn/sample-config-files/loopback-client
 share/examples/openvpn/sample-config-files/loopback-server
-share/examples/openvpn/sample-config-files/office.up
 share/examples/openvpn/sample-config-files/openvpn-shutdown.sh
 share/examples/openvpn/sample-config-files/openvpn-startup.sh
 share/examples/openvpn/sample-config-files/server.conf
-share/examples/openvpn/sample-config-files/tls-home.conf
-share/examples/openvpn/sample-config-files/tls-office.conf
 share/examples/openvpn/sample-keys/
 share/examples/openvpn/sample-keys/README
 share/examples/openvpn/sample-keys/ca.crt

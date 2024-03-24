@@ -1,7 +1,7 @@
 Index: include/Makefile.in
 --- include/Makefile.in.orig
 +++ include/Makefile.in
-@@ -346,7 +346,7 @@ host_cpu = @host_cpu@
+@@ -347,7 +347,7 @@ host_cpu = @host_cpu@
  host_os = @host_os@
  host_vendor = @host_vendor@
  htmldir = @htmldir@
