@@ -68,6 +68,7 @@
      SUBDIR += mahjongg
      SUBDIR += maps
      SUBDIR += menus
+     SUBDIR += msgraph
      SUBDIR += music
      SUBDIR += mutter
      SUBDIR += nautilus
