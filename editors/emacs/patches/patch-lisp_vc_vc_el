@@ -3,7 +3,7 @@ Drop messages that slow down VC with big repositories.
 Index: lisp/vc/vc.el
 --- lisp/vc/vc.el.orig
 +++ lisp/vc/vc.el
-@@ -3716,13 +3716,11 @@ It returns the last revision that changed LINE number 
+@@ -3721,13 +3721,11 @@ It returns the last revision that changed LINE number 
  (defun vc-file-tree-walk (dirname func &rest args)
    "Walk recursively through DIRNAME.
  Invoke FUNC f ARGS on each VC-managed file f underneath it."
