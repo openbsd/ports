@@ -2,7 +2,7 @@ COMMENT =		query portroach(1)
 CATEGORIES =		sysutils
 DISTFILES =		# empty
 # <portroach API>.rev
-PKGNAME =		portroach-cli-1.9
+PKGNAME =		portroach-cli-1.10
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # ISC

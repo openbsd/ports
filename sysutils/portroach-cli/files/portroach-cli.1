@@ -12,7 +12,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: March 11 2022 $
+.Dd $Mdocdate: March 24 2024 $
 .Dt PORTROACH-CLI 1
 .Os
 .Sh NAME
@@ -27,7 +27,7 @@
 .Nm
 queries a
 .Xr portroach 1
-instance for outdated ports.
+instance for ports.
 .Pp
 It can filter results and prints them on standard output similar to portroach's
 web interface.
@@ -36,7 +36,7 @@ The options are as follows:
 .Bl -tag -width Ds
 .It Fl U
 Short form of
-.Fl m Dq An the openbsd ports mailing-list Aq Mt ports@openbsd.org ,
+.Fl m Dq An the OpenBSD ports mailing-list Aq Mt ports@openbsd.org ,
 i.e. show unmaintained ports.
 .It Fl j
 Print results in raw JSON format.
@@ -67,7 +67,7 @@ Show all ports without specific maintainer for which an update is available:
 .Pp
 .Dl $ portroach-cli -U -o
 .Pp
-Show all ports maintained by John Doe which belong to the
+Show all ports maintained by John Doe which are in the
 .Dq sysutils
 category:
 .Pp

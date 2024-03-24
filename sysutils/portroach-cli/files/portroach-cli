@@ -51,7 +51,7 @@ show_ports() {
 		if $pflag then select(.basepkgpath | test($pkgpath; "in")) else . end'
 }
 
-readonly portslist='the openbsd ports mailing-list <ports@openbsd.org>'
+readonly portslist='the OpenBSD ports mailing-list <ports@openbsd.org>'
 Uflag=false
 mflag=false maintainer=
 jflag=false
@@ -73,7 +73,7 @@ do
 done
 shift $((OPTIND - 1))
 $pflag && ! $Uflag && ! $mflag && usage
-$uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid url'
+$uflag && [[ $url != @(file|ftp|http|https)://* ]] && err 'invalid URL'
 (($# == 0)) || usage
 
 if $Uflag || $mflag
