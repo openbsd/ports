@@ -3,11 +3,11 @@ Index: configure
 +++ configure
 @@ -350,6 +350,9 @@ case "${ostype}" in
      darwin)
- 	defconfigh "_DARWIN_C_SOURCE"
- 	;;
+         defconfigh "_DARWIN_C_SOURCE"
+         ;;
 +    openbsd)
-+	defconfigh "_BSD_SOURCE"
-+	;;
++        defconfigh "_BSD_SOURCE"
++        ;;
      sunos)
- 	defconfigh "__EXTENSIONS__"
- 	;;
+         defconfigh "__EXTENSIONS__"
+         ;;

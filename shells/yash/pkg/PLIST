@@ -47,6 +47,7 @@ share/yash/completion/diff
 share/yash/completion/dirs
 share/yash/completion/disown
 share/yash/completion/dnf
+share/yash/completion/doas
 share/yash/completion/du
 share/yash/completion/echo
 share/yash/completion/ed

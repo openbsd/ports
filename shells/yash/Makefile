@@ -1,7 +1,6 @@
 COMMENT=	POSIX-compliant command line shell
 
-VERSION=	2.55
-REVISION =	0
+VERSION=	2.56.1
 DISTNAME=	yash-${VERSION}
 CATEGORIES=	shells
 HOMEPAGE=	https://magicant.github.io/yash/
