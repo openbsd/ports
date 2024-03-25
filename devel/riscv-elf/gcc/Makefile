@@ -1,3 +1,5 @@
+BROKEN-powerpc64 = fails to apply patches/vecstep-*
+
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	12.2.0

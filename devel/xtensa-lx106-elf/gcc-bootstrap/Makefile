@@ -1,3 +1,5 @@
+BROKEN-powerpc64 = fails to apply patches/vecstep-*
+
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
 VERSION =	10.2.0
