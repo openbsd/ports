@@ -31,6 +31,7 @@ SITES =		https://mupdf.com/downloads/archive/
 
 COMPILER =	base-clang ports-gcc
 
+BUILD_DEPENDS =	shells/bash
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
 LIB_DEPENDS =	devel/harfbuzz \
