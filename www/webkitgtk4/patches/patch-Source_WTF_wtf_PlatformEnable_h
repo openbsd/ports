@@ -3,7 +3,7 @@ https://bugs.webkit.org/show_bug.cgi?id=129963
 Index: Source/WTF/wtf/PlatformEnable.h
 --- Source/WTF/wtf/PlatformEnable.h.orig
 +++ Source/WTF/wtf/PlatformEnable.h
-@@ -661,7 +661,7 @@
+@@ -673,7 +673,7 @@
  #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
  
  /* Enable the DFG JIT on X86 and X86_64. */

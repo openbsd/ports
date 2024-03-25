@@ -4,8 +4,8 @@ build with an older webkitgtk4 package installed.
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -210,6 +210,9 @@ if (NOT PORT STREQUAL "GTK" AND NOT PORT STREQUAL "WPE
-     set(LIBEXEC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Absolute path to install executables executed by the library")
+@@ -221,6 +221,9 @@ elseif (NOT ENABLE_ASSERTS)
+     WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-DASSERT_ENABLED=0)
  endif ()
  
 +# make sure that the internal library dir is the first in the path

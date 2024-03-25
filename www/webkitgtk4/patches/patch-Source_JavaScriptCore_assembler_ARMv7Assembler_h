@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/assembler/ARMv7Assembler.h
 --- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARMv7Assembler.h
-@@ -2812,6 +2812,8 @@ class ARMv7Assembler { (public)
+@@ -2832,6 +2832,8 @@ class ARMv7Assembler { (public)
              linuxPageFlush(current, current + page);
  
          linuxPageFlush(current, end);

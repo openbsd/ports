@@ -4,7 +4,7 @@ and int64_t is a long long.
 Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
 --- Source/JavaScriptCore/assembler/RISCV64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/RISCV64Assembler.h
-@@ -186,7 +186,7 @@ struct ImmediateBase {
+@@ -187,7 +187,7 @@ struct ImmediateBase {
  
      template<typename T>
      static auto isValid(T immValue)
@@ -13,7 +13,7 @@ Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
      {
          constexpr unsigned shift = sizeof(T) * 8 - immediateSize;
          return immValue == ((immValue << shift) >> shift);
-@@ -209,6 +209,14 @@ struct ImmediateBase {
+@@ -210,6 +210,14 @@ struct ImmediateBase {
      }
  
      template<typename ImmediateType>
@@ -28,7 +28,7 @@ Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
      static ImmediateType v(int64_t immValue)
      {
          ASSERT(isValid(immValue));
-@@ -310,7 +318,7 @@ struct JImmediate : ImmediateBase<21> {
+@@ -311,7 +319,7 @@ struct JImmediate : ImmediateBase<21> {
  };
  
  struct ImmediateDecomposition {
@@ -37,7 +37,7 @@ Index: Source/JavaScriptCore/assembler/RISCV64Assembler.h
      explicit ImmediateDecomposition(T immediate)
          : upper(UImmediate(0))
          , lower(IImmediate(0))
-@@ -2182,7 +2190,15 @@ class RISCV64Assembler { (public)
+@@ -2188,7 +2196,15 @@ class RISCV64Assembler { (public)
              : ImmediateLoader(int64_t(imm))
          { }
  

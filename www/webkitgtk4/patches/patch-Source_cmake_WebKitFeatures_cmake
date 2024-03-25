@@ -1,7 +1,7 @@
 Index: Source/cmake/WebKitFeatures.cmake
 --- Source/cmake/WebKitFeatures.cmake.orig
 +++ Source/cmake/WebKitFeatures.cmake
-@@ -445,7 +445,7 @@ macro(CREATE_CONFIGURATION_HEADER)
+@@ -433,7 +433,7 @@ macro(CREATE_CONFIGURATION_HEADER)
  endmacro()
  
  macro(WEBKIT_CHECK_HAVE_INCLUDE _variable _header)

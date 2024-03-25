@@ -12,20 +12,18 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.42.5
+V =			2.44.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-
-REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     4.0
-SHARED_LIBS +=  webkit2gtk-${API}            4.0
-SHARED_LIBS +=	webkitgtk-6.0                0.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.1
+SHARED_LIBS +=  webkit2gtk-${API}            4.1
+SHARED_LIBS +=	webkitgtk-6.0                0.3
 
 CATEGORIES =		www
 
@@ -36,17 +34,16 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2 and BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} WPEBackend-fdo-1.0 X11 Xcomposite
-WANTLIB += Xdamage Xrender Xt avif c cairo cairo-gobject drm enchant-2
-WANTLIB += epoll-shim epoxy fontconfig freetype gbm gcrypt gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gsttranscoder-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
-WANTLIB += hyphen icudata icui18n icuuc intl jpeg jxl lcms2 m
-WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 sqlite3
-WANTLIB += tasn1 wayland-client wayland-egl wayland-server webp
-WANTLIB += webpdemux woff2dec wpe-1.0 xml2 xslt z
+WANTLIB += ${COMPILER_LIBCXX} X11 avif c cairo cairo-gobject drm
+WANTLIB += enchant-2 epoll-shim epoxy fontconfig freetype gbm
+WANTLIB += gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gsttranscoder-1.0 gstvideo-1.0
+WANTLIB += harfbuzz harfbuzz-icu hyphen icudata icui18n icuuc
+WANTLIB += intl jpeg jxl lcms2 m pango-1.0 pangocairo-1.0 png
+WANTLIB += secret-1 sqlite3 tasn1 wayland-client wayland-egl wayland-server
+WANTLIB += webp webpdemux woff2dec xml2 xslt z
 
 SITES =			https://webkitgtk.org/releases/
 
@@ -79,19 +76,20 @@ LIB_DEPENDS =		archivers/woff2 \
 			graphics/libavif \
 			graphics/libjxl \
 			graphics/libwebp \
-			graphics/openjp2 \
 			multimedia/gstreamer1/plugins-base \
 			multimedia/gstreamer1/plugins-bad \
 			textproc/enchant2 \
 			textproc/hyphen \
 			textproc/libxslt \
-			www/wpebackend-fdo \
 			x11/gnome/libsecret
 
 CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DENABLE_MINIBROWSER=ON \
 			-DENABLE_JOURNALD_LOG=OFF
+
+# XXX revisit at next release if execinfo can be used
+CONFIGURE_ARGS +=	-DUSE_LIBBACKTRACE=OFF
 
 # until proven useful
 # see defaults in Source/WTF/wtf/PlatformEnable.h
@@ -165,22 +163,21 @@ API =			4.1
 WANTLIB += atk-1.0 gdk-3 gtk-3 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+3
-CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
-			-DENABLE_WEBDRIVER=OFF
+CONFIGURE_ARGS +=	-DENABLE_WEBDRIVER=OFF \
+			-DUSE_GTK4=OFF
 .elif ${FLAVOR:Mwebkitgtk60}
 API =			6.0
 WANTLIB += graphene-1.0 gtk-4 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+4
-CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
-			-DUSE_GTK4=ON
 .else
 API =			4.0
 WANTLIB += atk-1.0 gdk-3 gtk-3 soup-2.4
 LIB_DEPENDS +=		devel/libsoup \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=ON \
-			-DENABLE_WEBDRIVER=OFF
+			-DENABLE_WEBDRIVER=OFF \
+			-DUSE_GTK4=OFF
 .endif
 
 post-extract:

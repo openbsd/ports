@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/offlineasm/arm64.rb
 --- Source/JavaScriptCore/offlineasm/arm64.rb.orig
 +++ Source/JavaScriptCore/offlineasm/arm64.rb
-@@ -1242,7 +1242,7 @@ class Instruction
+@@ -1366,7 +1366,7 @@ class Instruction
              $asm.puts "ldr #{operands[1].arm64Operand(:quad)}, [#{operands[1].arm64Operand(:quad)}, #{operands[0].asmLabel}@GOTPAGEOFF]"
  
              # On Linux, use ELF GOT relocation specifiers.

@@ -1,9 +1,9 @@
 Index: Source/WebCore/rendering/RenderLayerBacking.h
 --- Source/WebCore/rendering/RenderLayerBacking.h.orig
 +++ Source/WebCore/rendering/RenderLayerBacking.h
-@@ -33,6 +33,12 @@
- #include "RenderLayerCompositor.h"
+@@ -34,6 +34,12 @@
  #include "ScrollingCoordinator.h"
+ #include <wtf/WeakListHashSet.h>
  
 +#if defined(_LP64)
 +#  define __WORDSIZE 64
@@ -13,4 +13,4 @@ Index: Source/WebCore/rendering/RenderLayerBacking.h
 +
  namespace WebCore {
  
- class KeyframeList;
+ class BlendingKeyframes;

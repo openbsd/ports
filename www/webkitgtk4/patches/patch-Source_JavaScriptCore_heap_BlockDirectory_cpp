@@ -3,12 +3,12 @@ No mincore(2) on OpenBSD.
 Index: Source/JavaScriptCore/heap/BlockDirectory.cpp
 --- Source/JavaScriptCore/heap/BlockDirectory.cpp.orig
 +++ Source/JavaScriptCore/heap/BlockDirectory.cpp
-@@ -60,7 +60,7 @@ void BlockDirectory::setSubspace(Subspace* subspace)
- void BlockDirectory::updatePercentageOfPagedOutPages(SimpleStats& stats)
- {
+@@ -62,7 +62,7 @@ void BlockDirectory::updatePercentageOfPagedOutPages(S
      // FIXME: We should figure out a solution for Windows and PlayStation.
--#if OS(UNIX) && !PLATFORM(PLAYSTATION)
-+#if OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(OPENBSD)
+     // QNX doesn't have mincore(), though the information can be had. But since all mapped
+     // pages are resident, does it matter?
+-#if OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(QNX)
++#if OS(UNIX) && !PLATFORM(PLAYSTATION) && !OS(QNX) && !OS(OPENBSD)
      size_t pageSize = WTF::pageSize();
      ASSERT(!(MarkedBlock::blockSize % pageSize));
      auto numberOfPagesInMarkedBlock = MarkedBlock::blockSize / pageSize;

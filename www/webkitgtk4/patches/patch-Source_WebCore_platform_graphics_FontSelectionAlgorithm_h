@@ -4,7 +4,7 @@ with constexpr
 Index: Source/WebCore/platform/graphics/FontSelectionAlgorithm.h
 --- Source/WebCore/platform/graphics/FontSelectionAlgorithm.h.orig
 +++ Source/WebCore/platform/graphics/FontSelectionAlgorithm.h
-@@ -49,7 +49,11 @@ class FontSelectionValue { (public)
+@@ -52,7 +52,11 @@ class FontSelectionValue { (public)
      explicit constexpr FontSelectionValue(float);
  
      // Precision can be lost, but value will be clamped to the representable range.
@@ -16,7 +16,7 @@ Index: Source/WebCore/platform/graphics/FontSelectionAlgorithm.h
  
      // Since floats have 23 mantissa bits, every value can be represented losslessly.
      constexpr operator float() const;
-@@ -125,7 +129,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
+@@ -108,7 +112,11 @@ constexpr FontSelectionValue FontSelectionValue::minim
      return { std::numeric_limits<BackingType>::min(), RawTag::RawTag };
  }
  
