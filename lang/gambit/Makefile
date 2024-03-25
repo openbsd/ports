@@ -3,6 +3,7 @@ BROKEN-riscv64=	gsi and gsi-script segfault at startup
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
 V=		4.9.5
+REVISION=	0
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}

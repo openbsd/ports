@@ -1,0 +1,15 @@
+Disable musttail on mips64, powerpc, powerpc64 to avoid a fatal error
+in clang.  https://github.com/gambit/gambit/issues/898
+
+Index: include/gambit.h.in
+--- include/gambit.h.in.orig
++++ include/gambit.h.in
+@@ -1625,7 +1625,7 @@
+ 
+ #endif
+ 
+-#if __has_attribute(musttail)
++#if __has_attribute(musttail) && !defined(__mips__) && !defined(__powerpc__)
+ #define ___PROPER_TAIL_CALL(call) __attribute__((musttail)) return call
+ #else
+ #if defined(___TRUST_C_TCO)
