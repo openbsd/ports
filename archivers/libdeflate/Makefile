@@ -1,6 +1,6 @@
 COMMENT =	optimized library for DEFLATE/zlib/gzip (de)compression
 
-DIST_TUPLE =	github ebiggers libdeflate v1.19 .
+DIST_TUPLE =	github ebiggers libdeflate v1.20 .
 
 SHARED_LIBS =	deflate	0.1
 
