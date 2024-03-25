@@ -1,3 +1,5 @@
+BROKEN=			fails to build with new libgedit-gtksourceview
+
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
