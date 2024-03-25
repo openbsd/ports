@@ -1,9 +1,8 @@
 COMMENT =		user session management for flask
 
-MODPY_EGG_VERSION =	0.5.0
+MODPY_EGG_VERSION =	0.6.3
 DISTNAME =		Flask-Login-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		1
 
 CATEGORIES =		www
 
@@ -19,8 +18,10 @@ FLAVOR  =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	test*
 
-RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-flask${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-semantic-version${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

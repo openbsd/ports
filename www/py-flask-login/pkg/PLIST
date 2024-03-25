@@ -14,8 +14,6 @@ lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__about__.$
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}login_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,7 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}test_client
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flask_login/_compat.py
 lib/python${MODPY_VERSION}/site-packages/flask_login/config.py
 lib/python${MODPY_VERSION}/site-packages/flask_login/login_manager.py
 lib/python${MODPY_VERSION}/site-packages/flask_login/mixins.py
