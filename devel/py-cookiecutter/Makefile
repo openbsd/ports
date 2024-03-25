@@ -1,6 +1,6 @@
 COMMENT =		utility to create projects from templates
 
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		cookiecutter-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
