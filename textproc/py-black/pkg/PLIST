@@ -58,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}report.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}rusty.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}rusty.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}strings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}trans.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -81,7 +83,14 @@ lib/python${MODPY_VERSION}/site-packages/black/parsing.py
 lib/python${MODPY_VERSION}/site-packages/black/py.typed
 lib/python${MODPY_VERSION}/site-packages/black/ranges.py
 lib/python${MODPY_VERSION}/site-packages/black/report.py
+lib/python${MODPY_VERSION}/site-packages/black/resources/
+lib/python${MODPY_VERSION}/site-packages/black/resources/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/black/resources/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/black/resources/black.schema.json
 lib/python${MODPY_VERSION}/site-packages/black/rusty.py
+lib/python${MODPY_VERSION}/site-packages/black/schema.py
 lib/python${MODPY_VERSION}/site-packages/black/strings.py
 lib/python${MODPY_VERSION}/site-packages/black/trans.py
 lib/python${MODPY_VERSION}/site-packages/blackd/
