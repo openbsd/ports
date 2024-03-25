@@ -1,7 +1,7 @@
 Index: meson_options.txt
 --- meson_options.txt.orig
 +++ meson_options.txt
-@@ -53,6 +53,7 @@ option('volume', type : 'feature', value : 'auto')
+@@ -56,6 +56,7 @@ option('volume', type : 'feature', value : 'auto')
  
  # Feature options for plugins with external deps
  option('alsa', type : 'feature', value : 'auto', description : 'ALSA audio source/sink plugin')

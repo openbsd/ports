@@ -6,8 +6,10 @@ include/gstreamer-${API}/gst/allocators/
 include/gstreamer-${API}/gst/allocators/allocators-prelude.h
 include/gstreamer-${API}/gst/allocators/allocators.h
 include/gstreamer-${API}/gst/allocators/gstdmabuf.h
+include/gstreamer-${API}/gst/allocators/gstdrmdumb.h
 include/gstreamer-${API}/gst/allocators/gstfdmemory.h
 include/gstreamer-${API}/gst/allocators/gstphysmemory.h
+include/gstreamer-${API}/gst/allocators/gstshmallocator.h
 include/gstreamer-${API}/gst/app/
 include/gstreamer-${API}/gst/app/app-enumtypes.h
 include/gstreamer-${API}/gst/app/app-prelude.h
@@ -40,6 +42,8 @@ include/gstreamer-${API}/gst/audio/gstaudioringbuffer.h
 include/gstreamer-${API}/gst/audio/gstaudiosink.h
 include/gstreamer-${API}/gst/audio/gstaudiosrc.h
 include/gstreamer-${API}/gst/audio/gstaudiostreamalign.h
+include/gstreamer-${API}/gst/audio/gstdsd.h
+include/gstreamer-${API}/gst/audio/gstdsdformat.h
 include/gstreamer-${API}/gst/audio/streamvolume.h
 include/gstreamer-${API}/gst/fft/
 include/gstreamer-${API}/gst/fft/fft-prelude.h
@@ -83,6 +87,7 @@ include/gstreamer-${API}/gst/gl/gstgl_fwd.h
 include/gstreamer-${API}/gst/gl/gstglapi.h
 include/gstreamer-${API}/gst/gl/gstglbasefilter.h
 include/gstreamer-${API}/gst/gl/gstglbasememory.h
+include/gstreamer-${API}/gst/gl/gstglbasemixer.h
 include/gstreamer-${API}/gst/gl/gstglbasesrc.h
 include/gstreamer-${API}/gst/gl/gstglbuffer.h
 include/gstreamer-${API}/gst/gl/gstglbufferpool.h
@@ -98,6 +103,7 @@ include/gstreamer-${API}/gst/gl/gstglframebuffer.h
 include/gstreamer-${API}/gst/gl/gstglfuncs.h
 include/gstreamer-${API}/gst/gl/gstglmemory.h
 include/gstreamer-${API}/gst/gl/gstglmemorypbo.h
+include/gstreamer-${API}/gst/gl/gstglmixer.h
 include/gstreamer-${API}/gst/gl/gstgloverlaycompositor.h
 include/gstreamer-${API}/gst/gl/gstglquery.h
 include/gstreamer-${API}/gst/gl/gstglrenderbuffer.h
@@ -199,6 +205,7 @@ include/gstreamer-${API}/gst/video/video-event.h
 include/gstreamer-${API}/gst/video/video-format.h
 include/gstreamer-${API}/gst/video/video-frame.h
 include/gstreamer-${API}/gst/video/video-hdr.h
+include/gstreamer-${API}/gst/video/video-info-dma.h
 include/gstreamer-${API}/gst/video/video-info.h
 include/gstreamer-${API}/gst/video/video-multiview.h
 include/gstreamer-${API}/gst/video/video-overlay-composition.h
@@ -235,8 +242,10 @@ lib/gstreamer-${API}/include/gst/gl/gstglconfig.h
 @so lib/gstreamer-${API}/libgstaudiorate.so
 @so lib/gstreamer-${API}/libgstaudioresample.so
 @so lib/gstreamer-${API}/libgstaudiotestsrc.so
+@so lib/gstreamer-${API}/libgstbasedebug.so
 @so lib/gstreamer-${API}/libgstcdparanoia.so
 @so lib/gstreamer-${API}/libgstcompositor.so
+@so lib/gstreamer-${API}/libgstdsd.so
 @so lib/gstreamer-${API}/libgstencoding.so
 @so lib/gstreamer-${API}/libgstgio.so
 @so lib/gstreamer-${API}/libgstogg.so

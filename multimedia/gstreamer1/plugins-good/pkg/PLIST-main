@@ -4,6 +4,8 @@
 @so lib/gstreamer-${API}/libgstalaw.so
 @so lib/gstreamer-${API}/libgstalpha.so
 @so lib/gstreamer-${API}/libgstalphacolor.so
+@so lib/gstreamer-${API}/libgstamrnb.so
+@so lib/gstreamer-${API}/libgstamrwbdec.so
 @so lib/gstreamer-${API}/libgstapetag.so
 @so lib/gstreamer-${API}/libgstaudiofx.so
 @so lib/gstreamer-${API}/libgstaudioparsers.so
@@ -65,6 +67,7 @@
 @so lib/gstreamer-${API}/libgstxingmux.so
 @so lib/gstreamer-${API}/libgsty4menc.so
 share/gstreamer-${API}/presets/
+share/gstreamer-${API}/presets/GstAmrnbEnc.prs
 share/gstreamer-${API}/presets/GstIirEqualizer10Bands.prs
 share/gstreamer-${API}/presets/GstIirEqualizer3Bands.prs
 share/gstreamer-${API}/presets/GstQTMux.prs

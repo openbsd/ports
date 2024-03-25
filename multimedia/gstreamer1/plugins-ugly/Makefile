@@ -17,8 +17,6 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 
 CONFIGURE_ARGS=		-Dgpl=enabled \
 			-Da52dec=disabled \
-			-Damrnb=disabled \
-			-Damrwbdec=disabled \
 			-Dmpeg2dec=disabled \
 			-Dsidplay=disabled
 

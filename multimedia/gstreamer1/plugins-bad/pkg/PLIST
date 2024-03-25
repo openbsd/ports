@@ -1,4 +1,11 @@
 @bin bin/gst-transcoder-${API}
+include/gstreamer-${API}/gst/analytics/
+include/gstreamer-${API}/gst/analytics/analytics-meta-prelude.h
+include/gstreamer-${API}/gst/analytics/analytics.h
+include/gstreamer-${API}/gst/analytics/gstanalyticsclassificationmtd.h
+include/gstreamer-${API}/gst/analytics/gstanalyticsmeta.h
+include/gstreamer-${API}/gst/analytics/gstanalyticsobjectdetectionmtd.h
+include/gstreamer-${API}/gst/analytics/gstanalyticsobjecttrackingmtd.h
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -36,12 +43,22 @@ include/gstreamer-${API}/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-section.h
 include/gstreamer-${API}/gst/mpegts/gst-hdmv-section.h
 include/gstreamer-${API}/gst/mpegts/gst-isdb-descriptor.h
+include/gstreamer-${API}/gst/mpegts/gst-metadata-descriptor.h
+include/gstreamer-${API}/gst/mpegts/gst-mpegtspesmetadatameta.h
 include/gstreamer-${API}/gst/mpegts/gst-scte-section.h
 include/gstreamer-${API}/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtsdescriptor.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtssection.h
 include/gstreamer-${API}/gst/mpegts/mpegts-prelude.h
 include/gstreamer-${API}/gst/mpegts/mpegts.h
+include/gstreamer-${API}/gst/mse/
+include/gstreamer-${API}/gst/mse/gstmediasource.h
+include/gstreamer-${API}/gst/mse/gstmsesrc.h
+include/gstreamer-${API}/gst/mse/gstsourcebuffer.h
+include/gstreamer-${API}/gst/mse/gstsourcebufferlist.h
+include/gstreamer-${API}/gst/mse/mse-enumtypes.h
+include/gstreamer-${API}/gst/mse/mse-prelude.h
+include/gstreamer-${API}/gst/mse/mse.h
 include/gstreamer-${API}/gst/play/
 include/gstreamer-${API}/gst/play/gstplay-media-info.h
 include/gstreamer-${API}/gst/play/gstplay-signal-adapter.h
@@ -103,10 +120,13 @@ include/gstreamer-${API}/gst/webrtc/sctptransport.h
 include/gstreamer-${API}/gst/webrtc/webrtc-enumtypes.h
 include/gstreamer-${API}/gst/webrtc/webrtc.h
 include/gstreamer-${API}/gst/webrtc/webrtc_fwd.h
+lib/girepository-${API}/GstAnalytics-${API}.typelib
 lib/girepository-${API}/GstBadAudio-${API}.typelib
 lib/girepository-${API}/GstCodecs-${API}.typelib
+lib/girepository-${API}/GstDxva-${API}.typelib
 lib/girepository-${API}/GstInsertBin-${API}.typelib
 lib/girepository-${API}/GstMpegts-${API}.typelib
+lib/girepository-${API}/GstMse-${API}.typelib
 lib/girepository-${API}/GstPlay-${API}.typelib
 lib/girepository-${API}/GstPlayer-${API}.typelib
 lib/girepository-${API}/GstTranscoder-${API}.typelib
@@ -116,6 +136,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstadpcmenc.so
 @so lib/gstreamer-${API}/libgstaes.so
 @so lib/gstreamer-${API}/libgstaiff.so
+@so lib/gstreamer-${API}/libgstanalyticsoverlay.so
 @so lib/gstreamer-${API}/libgstasfmux.so
 @so lib/gstreamer-${API}/libgstassrender.so
 @so lib/gstreamer-${API}/libgstaudiobuffersplit.so
@@ -129,6 +150,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstbz2.so
 @so lib/gstreamer-${API}/libgstcamerabin.so
 @so lib/gstreamer-${API}/libgstclosedcaption.so
+@so lib/gstreamer-${API}/libgstcodec2json.so
 @so lib/gstreamer-${API}/libgstcodecalpha.so
 @so lib/gstreamer-${API}/libgstcodectimestamper.so
 @so lib/gstreamer-${API}/libgstcoloreffects.so
@@ -147,6 +169,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstgeometrictransform.so
 @so lib/gstreamer-${API}/libgsthls.so
 @so lib/gstreamer-${API}/libgstid3tag.so
+@so lib/gstreamer-${API}/libgstinsertbin.so
 @so lib/gstreamer-${API}/libgstinter.so
 @so lib/gstreamer-${API}/libgstinterlace.so
 @so lib/gstreamer-${API}/libgstipcpipeline.so
@@ -160,6 +183,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstmpegpsmux.so
 @so lib/gstreamer-${API}/libgstmpegtsdemux.so
 @so lib/gstreamer-${API}/libgstmpegtsmux.so
+@so lib/gstreamer-${API}/libgstmse.so
 @so lib/gstreamer-${API}/libgstmxf.so
 @so lib/gstreamer-${API}/libgstnetsim.so
 @so lib/gstreamer-${API}/libgstopusparse.so
@@ -184,6 +208,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstswitchbin.so
 @so lib/gstreamer-${API}/libgsttranscode.so
 @so lib/gstreamer-${API}/libgstttmlsubs.so
+@so lib/gstreamer-${API}/libgstunixfd.so
 @so lib/gstreamer-${API}/libgstvideofiltersbad.so
 @so lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
 @so lib/gstreamer-${API}/libgstvideoparsersbad.so
@@ -192,13 +217,16 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstwaylandsink.so
 @so lib/gstreamer-${API}/libgsty4mdec.so
 @lib lib/libgstadaptivedemux-${API}.so.${LIBgstadaptivedemux-${API}_VERSION}
+@lib lib/libgstanalytics-${API}.so.${LIBgstanalytics-${API}_VERSION}
 @lib lib/libgstbadaudio-${API}.so.${LIBgstbadaudio-${API}_VERSION}
 @lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-${API}_VERSION}
 @lib lib/libgstcodecparsers-${API}.so.${LIBgstcodecparsers-${API}_VERSION}
 @lib lib/libgstcodecs-${API}.so.${LIBgstcodecs-${API}_VERSION}
+@lib lib/libgstdxva-${API}.so.${LIBgstdxva-${API}_VERSION}
 @lib lib/libgstinsertbin-${API}.so.${LIBgstinsertbin-${API}_VERSION}
 @lib lib/libgstisoff-${API}.so.${LIBgstisoff-${API}_VERSION}
 @lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-${API}_VERSION}
+@lib lib/libgstmse-${API}.so.${LIBgstmse-${API}_VERSION}
 @lib lib/libgstphotography-${API}.so.${LIBgstphotography-${API}_VERSION}
 @lib lib/libgstplay-${API}.so.${LIBgstplay-${API}_VERSION}
 @lib lib/libgstplayer-${API}.so.${LIBgstplayer-${API}_VERSION}
@@ -207,10 +235,12 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
 @lib lib/libgstwayland-${API}.so.${LIBgstwayland-${API}_VERSION}
 @lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
+lib/pkgconfig/gstreamer-analytics-${API}.pc
 lib/pkgconfig/gstreamer-bad-audio-${API}.pc
 lib/pkgconfig/gstreamer-codecparsers-${API}.pc
 lib/pkgconfig/gstreamer-insertbin-${API}.pc
 lib/pkgconfig/gstreamer-mpegts-${API}.pc
+lib/pkgconfig/gstreamer-mse-${API}.pc
 lib/pkgconfig/gstreamer-photography-${API}.pc
 lib/pkgconfig/gstreamer-play-${API}.pc
 lib/pkgconfig/gstreamer-player-${API}.pc
@@ -219,10 +249,13 @@ lib/pkgconfig/gstreamer-sctp-${API}.pc
 lib/pkgconfig/gstreamer-transcoder-${API}.pc
 lib/pkgconfig/gstreamer-wayland-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
+share/gir-${API}/GstAnalytics-${API}.gir
 share/gir-${API}/GstBadAudio-${API}.gir
 share/gir-${API}/GstCodecs-${API}.gir
+share/gir-${API}/GstDxva-${API}.gir
 share/gir-${API}/GstInsertBin-${API}.gir
 share/gir-${API}/GstMpegts-${API}.gir
+share/gir-${API}/GstMse-${API}.gir
 share/gir-${API}/GstPlay-${API}.gir
 share/gir-${API}/GstPlayer-${API}.gir
 share/gir-${API}/GstTranscoder-${API}.gir

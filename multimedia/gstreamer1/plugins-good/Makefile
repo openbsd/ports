@@ -7,7 +7,6 @@ COMMENT-pulse=		pulseaudio(1) element for GStreamer
 
 DISTNAME=		gst-plugins-good-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
-REVISION=		0
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
@@ -18,12 +17,13 @@ WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes bz2
-WANTLIB-main += cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0
+WANTLIB-main += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes Xtst
+WANTLIB-main += bz2 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-main += gstallocators-1.0 gstfft-1.0 gstgl-1.0 gstnet-1.0 gstpbutils-1.0
 WANTLIB-main += gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0
-WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m mp3lame nettle orc-0.4 png
-WANTLIB-main += shout speex tag twolame v4l2 vpx wavpack xml2 z
+WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m mp3lame nettle opencore-amrnb
+WANTLIB-main += opencore-amrwb orc-0.4 png shout speex tag twolame
+WANTLIB-main += v4l2 vpx wavpack xml2 z
 
 WANTLIB-pulse += ${WANTLIB} pulse
 
@@ -35,6 +35,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			audio/flac \
 			audio/lame \
+			audio/opencore-amr \
 			audio/speex \
 			audio/taglib \
 			audio/twolame \

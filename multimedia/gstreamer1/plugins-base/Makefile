@@ -3,23 +3,23 @@ COMMENT=		base elements for GStreamer
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS += gsttag-1.0                7.1 # 0.2210.0
-SHARED_LIBS += gstfft-1.0                7.1 # 0.2210.0
-SHARED_LIBS += gstvideo-1.0              7.1 # 0.2210.0
-SHARED_LIBS += gstaudio-1.0              7.1 # 0.2210.0
-SHARED_LIBS += gstrtp-1.0                7.1 # 0.2210.0
-SHARED_LIBS += gstpbutils-1.0            7.1 # 0.2210.0
-SHARED_LIBS += gstsdp-1.0                7.1 # 0.2210.0
-SHARED_LIBS += gstrtsp-1.0               7.1 # 0.2210.0
-SHARED_LIBS += gstriff-1.0               7.1 # 0.2210.0
-SHARED_LIBS += gstapp-1.0                7.1 # 0.2210.0
-SHARED_LIBS += gstallocators-1.0         6.1 # 0.2210.0
-SHARED_LIBS += gstgl-1.0                 6.1 # 0.2210.0
+SHARED_LIBS += gsttag-1.0                7.2 # 0.2401.0
+SHARED_LIBS += gstfft-1.0                7.2 # 0.2401.0
+SHARED_LIBS += gstvideo-1.0              7.2 # 0.2401.0
+SHARED_LIBS += gstaudio-1.0              7.2 # 0.2401.0
+SHARED_LIBS += gstrtp-1.0                7.2 # 0.2401.0
+SHARED_LIBS += gstpbutils-1.0            7.2 # 0.2401.0
+SHARED_LIBS += gstsdp-1.0                7.2 # 0.2401.0
+SHARED_LIBS += gstrtsp-1.0               7.2 # 0.2401.0
+SHARED_LIBS += gstriff-1.0               7.2 # 0.2401.0
+SHARED_LIBS += gstapp-1.0                7.2 # 0.2401.0
+SHARED_LIBS += gstallocators-1.0         6.2 # 0.2401.0
+SHARED_LIBS += gstgl-1.0                 6.2 # 0.2401.0
 
 SITES=			${SITE_GST:=gst-plugins-base/}
 
 WANTLIB += EGL GL X11 X11-xcb Xext Xi Xv c cairo cdda_interface
-WANTLIB += cdda_paranoia gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += cdda_paranoia drm gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphene-1.0 gstbase-1.0 gstcontroller-1.0 gstnet-1.0
 WANTLIB += gstreamer-1.0 intl jpeg m ogg opus orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 png sndio theoradec theoraenc vorbis

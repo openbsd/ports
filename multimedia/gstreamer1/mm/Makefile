@@ -3,11 +3,11 @@ COMMENT=		C++ bindings for GStreamer
 GNOME_PROJECT=		gstreamermm
 GNOME_VERSION=		1.10.0
 PKGNAME=		gstreamer1mm-${GNOME_VERSION}
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=  gstreamermm-1.0      1.1      # 1.0
 
-WANTLIB += ${COMPILER_LIBCXX} c ffi gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += ${COMPILER_LIBCXX} c drm ffi gio-2.0 giomm-2.4 glib-2.0
 WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 gstallocators-1.0
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstcheck-1.0 gstcontroller-1.0
 WANTLIB += gstfft-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0
