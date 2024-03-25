@@ -1,13 +1,13 @@
 Index: mesonbuild/dependencies/boost.py
 --- mesonbuild/dependencies/boost.py.orig
 +++ mesonbuild/dependencies/boost.py
-@@ -609,7 +609,8 @@ class BoostDependency(SystemDependency):
-         mlog.debug(f'Static {len(libs)}')
+@@ -594,7 +594,8 @@ class BoostDependency(SystemDependency):
+         # mlog.debug('    - vscrt: {}'.format(vscrt))
+         libs = [x for x in libs if x.static == self.static or not self.explicit_static]
          libs = [x for x in libs if x.mt == self.multithreading]
-         mlog.debug(f'MT {len(libs)}')
 -        libs = [x for x in libs if x.version_matches(lib_vers)]
 +        if not mesonlib.is_openbsd():
 +            libs = [x for x in libs if x.version_matches(lib_vers)]
-         mlog.debug(f'Vers {len(libs)} {lib_vers}')
          libs = [x for x in libs if x.arch_matches(self.arch)]
-         mlog.debug(f'Arch {len(libs)}')
+         libs = [x for x in libs if x.vscrt_matches(vscrt)]
+         libs = [x for x in libs if x.nvsuffix != 'dll']  # Only link to import libraries
