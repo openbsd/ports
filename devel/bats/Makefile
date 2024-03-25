@@ -2,7 +2,7 @@ COMMENT =	bash automated testing system
 
 GH_ACCOUNT =	bats-core
 GH_PROJECT =	bats-core
-GH_TAGNAME =	v1.10.0
+GH_TAGNAME =	v1.11.0
 PKGNAME =	${DISTNAME:S/-core//}
 
 CATEGORIES =	devel
