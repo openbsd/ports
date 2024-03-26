@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/v8/src/execution/isolate.cc
  extern "C" const uint8_t v8_Default_embedded_blob_code_[];
  extern "C" uint32_t v8_Default_embedded_blob_code_size_;
  extern "C" const uint8_t v8_Default_embedded_blob_data_[];
-@@ -3849,6 +3853,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
+@@ -3867,6 +3871,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
    uint32_t code_size = DefaultEmbeddedBlobCodeSize();
    const uint8_t* data = DefaultEmbeddedBlobData();
    uint32_t data_size = DefaultEmbeddedBlobDataSize();

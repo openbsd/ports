@@ -20,9 +20,11 @@ MODCLANG_COMPILER_LINKS =	No
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
 
-LIB_DEPENDS =	x11/qt6/qtdeclarative \
-		x11/xkbcommon \
-		${MODCLANG_LIB_DEPENDS} \
+LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
+		archivers/zstd \
+		x11/qt6/qtbase \
+		x11/qt6/qtdeclarative \
+		x11/xkbcommon
 
 BUILD_DEPENDS =	graphics/vulkan-loader
 

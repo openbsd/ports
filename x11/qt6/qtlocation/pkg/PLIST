@@ -1,4 +1,3 @@
-include/X11/qt6/
 include/X11/qt6/QtLocation/
 include/X11/qt6/QtLocation/${VERSION}/
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/
@@ -177,9 +176,6 @@ include/X11/qt6/QtLocation/qplacesupplier.h
 include/X11/qt6/QtLocation/qplaceuser.h
 include/X11/qt6/QtLocation/qtlocationexports.h
 include/X11/qt6/QtLocation/qtlocationversion.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtLocationTestsConfig.cmake
 lib/cmake/Qt6Location/
 lib/cmake/Qt6Location/Qt6LocationAdditionalTargetInfo.cmake
@@ -203,8 +199,6 @@ lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfigVersion.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryOsmPluginTargets.cmake
-lib/cmake/Qt6Qml/
-lib/cmake/Qt6Qml/QmlPlugins/
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfigVersion.cmake
@@ -214,21 +208,13 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake
 lib/libQt6Location.prl
 @lib lib/libQt6Location.so.${LIBQt6Location_VERSION}
 lib/pkgconfig/Qt6Location.pc
-lib/qt6/
-lib/qt6/libexec/
-lib/qt6/metatypes/
 lib/qt6/metatypes/qt6location_release_metatypes.json
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_location.pri
 lib/qt6/mkspecs/modules/qt_lib_location_private.pri
-lib/qt6/modules/
 lib/qt6/modules/Location.json
-lib/qt6/plugins/
 lib/qt6/plugins/geoservices/
 @so lib/qt6/plugins/geoservices/libqtgeoservices_itemsoverlay.so
 @so lib/qt6/plugins/geoservices/libqtgeoservices_osm.so
-lib/qt6/qml/
 lib/qt6/qml/QtLocation/
 lib/qt6/qml/QtLocation/MapView.qml
 @so lib/qt6/qml/QtLocation/libdeclarative_locationplugin.so

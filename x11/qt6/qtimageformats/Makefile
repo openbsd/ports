@@ -7,6 +7,7 @@ WANTLIB += m mng tiff webp webpdemux webpmux
 
 LIB_DEPENDS =	graphics/jasper \
 		graphics/tiff \
+		graphics/jpeg \
 		graphics/libmng \
 		graphics/libwebp
 

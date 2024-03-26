@@ -1,7 +1,7 @@
 Index: src/pdf/CMakeLists.txt
 --- src/pdf/CMakeLists.txt.orig
 +++ src/pdf/CMakeLists.txt
-@@ -71,7 +71,7 @@ add_dependencies(docs generate_pdf_attributions)
+@@ -71,7 +71,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
  #   TOOLCHAIN SETUP
  ##
  

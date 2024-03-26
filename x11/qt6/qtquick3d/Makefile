@@ -24,7 +24,8 @@ WANTLIB += lib/inotify/inotify
 LIB_DEPENDS =	multimedia/assimp \
 		devel/libinotify \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtshadertools
+		x11/qt6/qtshadertools \
+		x11/xkbcommon
 
 BUILD_DEPENDS =	graphics/vulkan-loader
 

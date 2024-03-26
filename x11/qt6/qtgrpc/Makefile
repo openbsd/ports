@@ -1,7 +1,6 @@
 QT6NAME =	QtgRPC
 COMMENT =	gRPC support for Qt6
 PKGSPEC =	qt6-qtgrpc-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6Grpc                   1.0 # 0.0
 SHARED_LIBS +=  Qt6Protobuf               0.1 # 0.0
@@ -36,7 +35,8 @@ WANTLIB += c m protobuf protoc
 
 BUILD_DEPENDS =	graphics/glslang
 
-LIB_DEPENDS =	devel/protobuf \
-		devel/abseil-cpp
+LIB_DEPENDS =	devel/abseil-cpp \
+		devel/protobuf \
+		x11/qt6/qttranslations
 
 .include <bsd.port.mk>

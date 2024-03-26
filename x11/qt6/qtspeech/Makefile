@@ -8,6 +8,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6Qml c glib-2.0 intl m speechd
 
 LIB_DEPENDS =	audio/speech-dispatcher \
+		devel/gettext \
+		devel/glib2 \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtdeclarative
 

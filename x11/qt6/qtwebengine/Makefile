@@ -18,7 +18,6 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6Pdf                        1.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -66,15 +65,23 @@ BUILD_DEPENDS =	audio/pulseaudio \
 LIB_DEPENDS =	archivers/minizip \
 		archivers/snappy \
 		audio/opus \
+		devel/glib2 \
+		devel/harfbuzz \
+		devel/pcre2 \
+		graphics/ffmpeg \
+		graphics/graphite2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/libwebp \
 		graphics/openjp2 \
-		graphics/ffmpeg \
-		multimedia/openh264 \
+		graphics/png \
+		graphics/tiff \
 		multimedia/libvpx \
+		multimedia/openh264 \
 		security/nss \
+		textproc/libxml \
 		textproc/libxslt \
+		x11/dbus \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qttools \

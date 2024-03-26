@@ -33,7 +33,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(int, SSL_session_reused, SSL *a, a, return 0, return)
  DEFINEFUNC2(qssloptions, SSL_CTX_set_options, SSL_CTX *ctx, ctx, qssloptions op, op, return 0, return)
  using info_callback = void (*) (const SSL *ssl, int type, int val);
-@@ -289,12 +304,14 @@ DEFINEFUNC3(int, SSL_CTX_use_certificate_file, SSL_CTX
+@@ -289,12 +300,14 @@ DEFINEFUNC3(int, SSL_CTX_use_certificate_file, SSL_CTX
  DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a, EVP_PKEY *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
@@ -48,7 +48,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -866,14 +883,25 @@ bool q_resolveOpenSslSymbols()
+@@ -866,14 +879,25 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
          RESOLVEFUNC(EVP_PKEY_up_ref)
          RESOLVEFUNC(EVP_PKEY_CTX_new)
@@ -74,7 +74,7 @@ Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
          RESOLVEFUNC(SSL_CTX_set_options)
          RESOLVEFUNC(SSL_set_info_callback)
          RESOLVEFUNC(SSL_alert_type_string)
-@@ -1056,12 +1087,14 @@ bool q_resolveOpenSslSymbols()
+@@ -1056,12 +1080,14 @@ bool q_resolveOpenSslSymbols()
          RESOLVEFUNC(SSL_CTX_use_PrivateKey)
          RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
          RESOLVEFUNC(SSL_CTX_get_cert_store);

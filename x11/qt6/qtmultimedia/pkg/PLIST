@@ -13,6 +13,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcamera_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcameradevice_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qcapturablewindow_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qerrorinfo_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qimagevideobuffer_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediaplayer_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediarecorder_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmediastoragelocation_p.h
@@ -43,6 +44,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qpulsehelpers_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qsamplecache_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimedia-config_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimediaglobal_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideo_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconversionhelper_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconverter_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideooutputorientationhandler_p.h

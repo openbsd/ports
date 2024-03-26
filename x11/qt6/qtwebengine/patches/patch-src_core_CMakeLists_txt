@@ -10,7 +10,7 @@ Index: src/core/CMakeLists.txt
      setup_toolchains()
  endif()
  
-@@ -405,14 +405,13 @@ foreach(arch ${archs})
+@@ -406,14 +406,13 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webengine_embedded_build
          )
  
@@ -26,7 +26,7 @@ Index: src/core/CMakeLists.txt
                  use_glib=false
                  use_bluez=false
                  use_udev=true
-@@ -474,6 +473,10 @@ foreach(arch ${archs})
+@@ -475,6 +474,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

@@ -1,7 +1,6 @@
 QT6NAME =	Qt3D
 COMMENT =	Qt6 components for 3D graphics
 PKGSPEC =	qt6-qt3d-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt63DAnimation            1.0 # 6.6
 SHARED_LIBS +=  Qt63DCore                 1.1 # 6.6

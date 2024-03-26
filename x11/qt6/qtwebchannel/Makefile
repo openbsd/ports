@@ -7,8 +7,8 @@ SHARED_LIBS +=  Qt6WebChannelQuick        0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml c m
 
-BUILD_DEPENDS =		x11/qt6/qtwebsockets
-RUN_DEPENDS =		x11/qt6/qtwebsockets
+BUILD_DEPENDS =	x11/qt6/qtwebsockets
+RUN_DEPENDS =	x11/qt6/qtwebsockets
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative
 

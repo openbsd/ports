@@ -10,7 +10,8 @@ WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6SerialPort
 WANTLIB += c m xkbcommon
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative \
-		x11/qt6/qtserialport
+		x11/qt6/qtserialport \
+		x11/xkbcommon
 
 BUILD_DEPENDS =	graphics/vulkan-loader
 

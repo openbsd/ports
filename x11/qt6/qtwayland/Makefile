@@ -2,7 +2,7 @@ QT6NAME =	QtWayland
 COMMENT =	Qt6 module for Wayland support
 PKGSPEC =	qt6-qtwayland-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6WaylandClient                     4.0 # 6.6
+SHARED_LIBS +=  Qt6WaylandClient                     5.0 # 6.6
 SHARED_LIBS +=  Qt6WaylandCompositor                 1.1 # 6.6
 SHARED_LIBS +=  Qt6WaylandEglClientHwIntegration     1.1 # 6.6
 SHARED_LIBS +=  Qt6WaylandEglCompositorHwIntegration 1.0 # 6.6

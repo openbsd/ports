@@ -2,8 +2,8 @@ QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Multimedia             5.0 # 6.6
-SHARED_LIBS +=  Qt6MultimediaQuick        3.1 # 6.6
+SHARED_LIBS +=  Qt6Multimedia             6.0 # 6.6
+SHARED_LIBS +=  Qt6MultimediaQuick        4.0 # 6.6
 SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.6
 SHARED_LIBS +=  Qt6SpatialAudio           1.0 # 6.6
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS =	graphics/vulkan-loader \
 		x11/qt6/qtsvg
 
 LIB_DEPENDS =	audio/pulseaudio \
+		devel/gettext \
 		devel/glib2 \
 		graphics/ffmpeg \
 		multimedia/gstreamer1/core \
