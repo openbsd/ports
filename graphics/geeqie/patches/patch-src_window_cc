@@ -1,7 +1,7 @@
 Index: src/window.cc
 --- src/window.cc.orig
 +++ src/window.cc
-@@ -176,19 +176,11 @@ static const gchar *html_browsers[] =
+@@ -189,19 +189,11 @@ static const gchar *html_browsers[] =
  {
  	/* Our specific script */
  	GQ_APPNAME_LC "_html_browser", nullptr,

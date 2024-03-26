@@ -8,4 +8,4 @@ Index: src/exif-common.cc
 +#include <stdlib.h>
  #include <config.h>
  
- #define _XOPEN_SOURCE
+ #ifdef __linux__
