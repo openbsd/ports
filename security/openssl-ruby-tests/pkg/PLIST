@@ -80,6 +80,7 @@ share/openssl-ruby-tests/test/openssl/fixtures/pkey/certificate.der
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh-1.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dh2048_ffdhe2048.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa1024.pem
+share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa2048.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa256.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/dsa512.pem
 share/openssl-ruby-tests/test/openssl/fixtures/pkey/empty.der
