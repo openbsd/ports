@@ -2,7 +2,7 @@ COMMENT =	Identity and Access Management solution
 
 CATEGORIES =	security
 
-VERSION =	23.0.3
+VERSION =	24.0.2
 DISTNAME =	keycloak-${VERSION}
 
 SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
@@ -34,6 +34,8 @@ do-install:
 	cp -R ${WRKSRC}/bin/client ${KEYCLOAK_HOME}/bin
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/keycloak/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/keycloak/truststores
+	rmdir ${WRKSRC}/conf/truststores
 	${INSTALL_DATA} ${WRKSRC}/conf/* ${PREFIX}/share/examples/keycloak/
 
 	cp -R ${WRKSRC}/{lib,providers,themes} ${KEYCLOAK_HOME}/
