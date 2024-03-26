@@ -34,13 +34,13 @@ BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		cad/netgen
 
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS} \
+		${MODPY_TKINTER_DEPENDS} \
 		cad/yosys \
 		cad/graywolf \
 		cad/opensta \
 		cad/qrouter \
 		cad/magic \
 		cad/netgen \
-		lang/python/${MODPY_VERSION},-tkinter \
 		shells/tcsh \
 		sysutils/ggrep
 
