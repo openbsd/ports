@@ -2,10 +2,9 @@ COMMENT=	rabbitmq C library and commandline AMQP utilities
 
 GH_ACCOUNT=	alanxz
 GH_PROJECT=	rabbitmq-c
-GH_TAGNAME=	v0.13.0
-REVISION=	0
+GH_TAGNAME=	v0.14.0
 
-SHARED_LIBS =	rabbitmq 1.0 # 9.4
+SHARED_LIBS =	rabbitmq 2.0 # 10.0.6
 
 CATEGORIES=	net
 
