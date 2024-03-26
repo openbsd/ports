@@ -1,12 +1,11 @@
-# ring-v0.16.20 does not support those archs
-NOT_FOR_ARCHS =         powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =         sparc64
 
 COMMENT =		produce RRDP notification, snapshot and delta files
 
 GH_ACCOUNT =		NLNetLabs
 GH_PROJECT =		rrdpit
-GH_TAGNAME =		v0.0.3
-REVISION =		1
+GH_TAGNAME =		v0.0.4
 
 CATEGORIES =		net
 
@@ -17,13 +16,14 @@ WANTLIB +=		${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
 
-BUILD_DEPENDS =		security/rust-ring
-
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
 
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
+
+post-patch:
+	cp ${FILESDIR}/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/rrdpit ${PREFIX}/bin/
