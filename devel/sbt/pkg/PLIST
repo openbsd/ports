@@ -1,0 +1,10 @@
+bin/sbt
+libexec/sbt/
+libexec/sbt/LICENSE
+libexec/sbt/NOTICE
+libexec/sbt/bin/
+libexec/sbt/bin/sbt
+libexec/sbt/bin/sbt-launch.jar
+libexec/sbt/conf/
+libexec/sbt/conf/sbtconfig.txt
+libexec/sbt/conf/sbtopts
