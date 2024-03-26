@@ -860,6 +860,7 @@ webapps/docs/api/org/apache/catalina/util/SessionConfig.html
 webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
 webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
+webapps/docs/api/org/apache/catalina/util/StringUtil.html
 webapps/docs/api/org/apache/catalina/util/TLSUtil.html
 webapps/docs/api/org/apache/catalina/util/TimeBucketCounter.html
 webapps/docs/api/org/apache/catalina/util/ToStringUtil.html
