@@ -1826,6 +1826,7 @@
      SUBDIR += ruby-zeitwerk
      SUBDIR += rust-analyzer
      SUBDIR += samurai
+     SUBDIR += sbt
      SUBDIR += sccache
      SUBDIR += scons
      SUBDIR += sdcc
