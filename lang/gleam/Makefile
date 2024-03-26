@@ -2,7 +2,7 @@ COMMENT =		statically typed language for Erlang VM and JavaScript
 
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
-GH_TAGNAME =		v0.31.0
+GH_TAGNAME =		v1.0.0
 
 HOMEPAGE =		https://gleam.run
 
