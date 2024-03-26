@@ -1,13 +1,12 @@
 COMMENT=	iCalendar library for Python
 
-MODPY_EGG_VERSION=	0.9.6.1
+MODPY_EGG_VERSION=	0.9.7
 DISTNAME=	vobject-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	8
 
 CATEGORIES=	textproc devel
 
-HOMEPAGE=	https://eventable.github.io/vobject/
+HOMEPAGE=	https://py-vobject.github.io/
 
 # Apache2
 PERMIT_PACKAGE=	Yes
