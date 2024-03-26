@@ -120,6 +120,7 @@ lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_clear.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_clock.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_compress_h.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_constraints.beam
+lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_decompress_h.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_handler.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_http.beam
 lib/rabbitmq/plugins/${RABBIT_COWBOY}/ebin/cowboy_http2.beam
@@ -988,6 +989,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_headers.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_hsts.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_load_definitions.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_login.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_nodes.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_oauth_bootstrap.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_reset_handler.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_stats.beam

@@ -1,12 +1,14 @@
+Execute escripts with the right version of escript, don't rely on the shebang
+
 Index: deps/rabbit/scripts/rabbitmq-env
 --- deps/rabbit/scripts/rabbitmq-env.orig
 +++ deps/rabbit/scripts/rabbitmq-env
-@@ -188,7 +188,7 @@ run_escript()
-     # Important: do not quote RABBITMQ_CTL_ERL_ARGS as they must be
-     # word-split
-     # shellcheck disable=SC2086
--    exec erl +B \
-+    exec ${MODERL_ERL} +B \
-         -boot "$CLEAN_BOOT_FILE" \
-         -noinput -noshell -hidden -smp enable \
-         $RABBITMQ_CTL_ERL_ARGS \
+@@ -193,7 +193,7 @@ run_escript()
+         tmp_erl_flags="-noinput $tmp_erl_flags"
+     fi
+ 
+-    ERL_FLAGS="$tmp_erl_flags" "$escript" "$@"
++    ERL_FLAGS="$tmp_erl_flags" ${LOCALBASE}/bin/escript${MODERL_VERSION} "$escript" "$@"
+ 
+     unset tmp_erl_flags
+ }
