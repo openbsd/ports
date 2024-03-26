@@ -5,7 +5,7 @@ Avoid the broken libwsutil.so that gets generated with -pie -shared
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1053,7 +1053,7 @@ endif()
+@@ -1105,7 +1105,7 @@ endif()
  
  include(CheckCLinkerFlag)
  

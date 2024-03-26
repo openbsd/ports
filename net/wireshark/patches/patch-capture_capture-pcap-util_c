@@ -24,7 +24,7 @@ Index: capture/capture-pcap-util.c
  /*
   * If we're building for a Linux version that supports bonding,
   * HAVE_BONDING will be defined.
-@@ -716,6 +716,23 @@ get_interface_list_findalldevs(int *err, char **err_st
+@@ -722,6 +722,23 @@ get_interface_list_findalldevs(int *err, char **err_st
  		if_info_ip(if_info, dev);
  	}
  	pcap_freealldevs(alldevs);

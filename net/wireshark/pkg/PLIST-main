@@ -17,7 +17,6 @@ share/icons/hicolor/48x48/apps/org.wireshark.Wireshark.png
 share/icons/hicolor/48x48/mimetypes/org.wireshark.Wireshark-mimetype.png
 share/icons/hicolor/64x64/apps/org.wireshark.Wireshark.png
 share/icons/hicolor/64x64/mimetypes/org.wireshark.Wireshark-mimetype.png
-share/icons/hicolor/scalable/apps/org.wireshark.Wireshark.svg
 share/metainfo/
 share/metainfo/org.wireshark.Wireshark.metainfo.xml
 share/mime/packages/org.wireshark.Wireshark.xml

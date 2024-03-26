@@ -4,8 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
-# XXX 4.2.x breaks termshark
-V =		4.0.13
+V =		4.2.3
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -25,8 +24,6 @@ EXTRACT_SUFX =	.tar.xz
 # Mostly GPLv2 or later. Some files are less restrictive.
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE = Yes
-
-cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0 m pcap pcre2-8 z
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -51,18 +48,21 @@ MODLUA_SA =	Yes
 MODLUA_RUNDEP =	No
 MODPY_RUNDEP =	No
 
+cWANTLIB +=	c gcrypt glib-2.0 m pcap speexdsp
+
 WANTLIB-text =	${cWANTLIB} ${MODLUA_WANTLIB}
-WANTLIB-text += bcg729 brotlidec cares gnutls lz4 maxminddb nghttp2
-WANTLIB-text += opus smi snappy spandsp speexdsp ssh xml2 zstd
+WANTLIB-text += bcg729 brotlidec cares gmodule-2.0 gnutls lz4 maxminddb
+WANTLIB-text += nghttp2 nghttp3 opencore-amrnb opus pcre2-8 smi snappy
+WANTLIB-text += spandsp ssh xml2 z zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += minizip speexdsp wireshark wiretap wsutil
-WANTLIB-main += Qt6Core Qt6Core5Compat Qt6Gui Qt6Multimedia Qt6PrintSupport
-WANTLIB-main += Qt6Widgets
+WANTLIB-main += minizip wireshark wiretap wsutil
+WANTLIB-main += Qt6Core Qt6Core5Compat Qt6Gui Qt6Multimedia
+WANTLIB-main += Qt6PrintSupport Qt6Widgets
 
 SITES =		https://www.wireshark.org/download/src/all-versions/
 
-WVER =		${V:C/^(...).*/\1/}
+WVER =		${V:R}
 SUBST_VARS =	WVER
 
 BUILD_DEPENDS +=	devel/bison \
@@ -82,6 +82,7 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			archivers/brotli \
 			archivers/lz4 \
 			archivers/snappy \
+			audio/opencore-amr \
 			audio/opus \
 			audio/speexdsp \
 			devel/glib2 \
@@ -95,7 +96,8 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			telephony/bcg729 \
 			telephony/spandsp \
 			textproc/libxml \
-			www/nghttp2
+			www/nghttp2 \
+			www/nghttp3
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
