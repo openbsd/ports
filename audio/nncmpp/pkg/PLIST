@@ -1,0 +1,18 @@
+@bin bin/nncmpp
+@man man/man1/nncmpp.1
+share/applications/nncmpp.desktop
+share/doc/nncmpp/
+share/doc/nncmpp/LICENSE
+share/icons/hicolor/16x16/apps/nncmpp.png
+share/icons/hicolor/32x32/apps/nncmpp.png
+share/icons/hicolor/48x48/apps/nncmpp.png
+share/icons/hicolor/scalable/apps/nncmpp.svg
+share/nncmpp/
+share/nncmpp/contrib/
+share/nncmpp/contrib/dark-theme-16.conf
+share/nncmpp/contrib/light-theme-256.conf
+share/nncmpp/info/
+@mode 755
+share/nncmpp/info/10-azlyrics.pl
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

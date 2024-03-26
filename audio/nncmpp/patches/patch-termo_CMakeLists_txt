@@ -1,0 +1,20 @@
+Index: termo/CMakeLists.txt
+--- termo/CMakeLists.txt.orig
++++ termo/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required (VERSION 3.0)
++cmake_minimum_required (VERSION 3.0...3.27)
+ project (termo VERSION 0.1.0 LANGUAGES C)
+ 
+ if ("${CMAKE_C_COMPILER_ID}" MATCHES "GNU" OR CMAKE_COMPILER_IS_GNUCC)
+@@ -21,8 +21,8 @@ set (CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ find_package (Curses)
+ find_package (PkgConfig REQUIRED)
+ find_package (Ncursesw)
+-pkg_check_modules (glib glib-2.0 gio-2.0)
+-pkg_check_modules (unibilium unibilium>=0.1.0)
++# pkg_check_modules (glib glib-2.0 gio-2.0)
++# pkg_check_modules (unibilium unibilium>=0.1.0)
+ 
+ # Header files with configuration
+ configure_file (${PROJECT_SOURCE_DIR}/termo-config.h.in

@@ -1,0 +1,3 @@
+nncmpp is yet another MPD client. Its specialty is running equally well
+in the terminal, or as an X11 clien it will provide the same keyboard
+and mouse-friendly interface.
