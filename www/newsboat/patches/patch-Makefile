@@ -1,19 +1,20 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -22,9 +22,9 @@ CXX_FOR_BUILD?=$(CXX)
+@@ -22,10 +22,10 @@ CXX_FOR_BUILD?=$(CXX)
  # compiler and linker flags
  DEFINES=-DLOCALEDIR='"$(localedir)"'
  
 -WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code
 +WARNFLAGS=-Wall -Wextra -Wunreachable-code
  INCLUDES=-Iinclude -Istfl -Ifilter -I. -Irss -I$(CARGO_TARGET_DIR)/cxxbridge/
--BARE_CXXFLAGS=-std=c++11 -O2 -ggdb $(INCLUDES)
-+BARE_CXXFLAGS=-std=c++11 $(INCLUDES)
+ # Keep in sync with c++ version specified in FFI build.rs
+-BARE_CXXFLAGS=-std=c++14 -O2 -ggdb $(INCLUDES)
++BARE_CXXFLAGS=-std=c++14 $(INCLUDES)
  LDFLAGS+=-L.
  
  # Constants
-@@ -56,7 +56,7 @@ FILTERLIB_OUTPUT=libfilter.a
+@@ -57,7 +57,7 @@ FILTERLIB_OUTPUT=libfilter.a
  NEWSBOAT=newsboat
  NEWSBOAT_SRCS:=$(shell cat mk/newsboat.deps)
  NEWSBOAT_OBJS:=$(patsubst %.cpp,%.o,$(NEWSBOAT_SRCS))
@@ -22,7 +23,7 @@ Index: Makefile
  
  RSSPPLIB_SRCS=$(sort $(wildcard rss/*.cpp))
  RSSPPLIB_OBJS=$(patsubst rss/%.cpp,rss/%.o,$(RSSPPLIB_SRCS))
-@@ -65,7 +65,7 @@ RSSPPLIB_OUTPUT=librsspp.a
+@@ -66,7 +66,7 @@ RSSPPLIB_OUTPUT=librsspp.a
  PODBOAT=podboat
  PODBOAT_SRCS:=$(shell cat mk/podboat.deps)
  PODBOAT_OBJS:=$(patsubst %.cpp,%.o,$(PODBOAT_SRCS))
