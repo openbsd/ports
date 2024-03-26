@@ -139,6 +139,7 @@
      SUBDIR += ncmpc
      SUBDIR += ncmpcpp
      SUBDIR += ncspot
+     SUBDIR += nncmpp
      SUBDIR += normalize
      SUBDIR += nosefart
      SUBDIR += noson
