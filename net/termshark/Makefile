@@ -1,4 +1,5 @@
 BROKEN-arm64=	system/dumpcapext_arm64.go:25:6: DumpcapExt redeclared in this block
+BROKEN=		Unexpected watcher error for <homedir>/.cache/termshark/pcaps/<iface>--<date>--<time>.pcap: function not implemented
 
 COMMENT=	terminal UI for tshark, inspired by Wireshark
 
