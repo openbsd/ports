@@ -44,13 +44,15 @@ eboringssl/include/openssl/err.h
 eboringssl/include/openssl/evp.h
 eboringssl/include/openssl/evp_errors.h
 eboringssl/include/openssl/ex_data.h
+eboringssl/include/openssl/experimental/
+eboringssl/include/openssl/experimental/kyber.h
+eboringssl/include/openssl/experimental/spx.h
 eboringssl/include/openssl/hkdf.h
 eboringssl/include/openssl/hmac.h
 eboringssl/include/openssl/hpke.h
 eboringssl/include/openssl/hrss.h
 eboringssl/include/openssl/is_boringssl.h
 eboringssl/include/openssl/kdf.h
-eboringssl/include/openssl/kyber.h
 eboringssl/include/openssl/lhash.h
 eboringssl/include/openssl/md4.h
 eboringssl/include/openssl/md5.h
@@ -66,6 +68,10 @@ eboringssl/include/openssl/pem.h
 eboringssl/include/openssl/pkcs12.h
 eboringssl/include/openssl/pkcs7.h
 eboringssl/include/openssl/pkcs8.h
+eboringssl/include/openssl/pki/
+eboringssl/include/openssl/pki/certificate.h
+eboringssl/include/openssl/pki/signature_verify_cache.h
+eboringssl/include/openssl/pki/verify_error.h
 eboringssl/include/openssl/poly1305.h
 eboringssl/include/openssl/pool.h
 eboringssl/include/openssl/posix_time.h
