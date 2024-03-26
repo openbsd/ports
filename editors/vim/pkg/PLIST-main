@@ -460,6 +460,7 @@ share/vim/${P}/ftplugin/csh.vim
 share/vim/${P}/ftplugin/css.vim
 share/vim/${P}/ftplugin/cucumber.vim
 share/vim/${P}/ftplugin/cvsrc.vim
+share/vim/${P}/ftplugin/deb822sources.vim
 share/vim/${P}/ftplugin/debchangelog.vim
 share/vim/${P}/ftplugin/debcontrol.vim
 share/vim/${P}/ftplugin/debsources.vim

@@ -639,6 +639,7 @@ share/vim/${P}/tutor/tutor.ja.utf-8
 share/vim/${P}/tutor/tutor.ko
 share/vim/${P}/tutor/tutor.ko.euc
 share/vim/${P}/tutor/tutor.ko.utf-8
+share/vim/${P}/tutor/tutor.lt.utf-8
 share/vim/${P}/tutor/tutor.lv.utf-8
 share/vim/${P}/tutor/tutor.nb
 share/vim/${P}/tutor/tutor.nb.utf-8
