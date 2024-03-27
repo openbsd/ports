@@ -372,6 +372,7 @@ libexec/vpn-user-portal/fetch-server-list
 libexec/vpn-user-portal/generate-prefix
 libexec/vpn-user-portal/generate-secrets
 libexec/vpn-user-portal/housekeeping
+libexec/vpn-user-portal/prefix-calculator
 libexec/vpn-user-portal/stats
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/vpn-user-portal/
