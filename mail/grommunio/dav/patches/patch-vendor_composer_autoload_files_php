@@ -1,8 +1,8 @@
 Index: vendor/composer/autoload_files.php
 --- vendor/composer/autoload_files.php.orig
 +++ vendor/composer/autoload_files.php
-@@ -16,8 +16,8 @@ return array(
-     '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
+@@ -15,8 +15,8 @@ return array(
+     'ebdb698ed4152ae445614b69b5e4bb6a' => $vendorDir . '/sabre/http/lib/functions.php',
      '777dc149d682152f9ab0caaeffcdbb27' => $baseDir . '/config.php',
      '32a4f751fbcde8755e5f28bd96eed397' => $baseDir . '/version.php',
 -    'b05b0d0a4f97d8e7b104a9a31ac2ca03' => '/var/www/grommunio-mapi-header-php/mapi.util.php',

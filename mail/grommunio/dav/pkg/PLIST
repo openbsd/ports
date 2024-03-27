@@ -590,6 +590,7 @@ grommunio-dav/vendor/sabre/http/tests/bootstrap.php
 grommunio-dav/vendor/sabre/http/tests/phpunit.xml
 grommunio-dav/vendor/sabre/http/tests/www/
 grommunio-dav/vendor/sabre/http/tests/www/bar.php
+grommunio-dav/vendor/sabre/http/tests/www/connection_aborted.php
 grommunio-dav/vendor/sabre/http/tests/www/foo
 grommunio-dav/vendor/sabre/http/tests/www/large.php
 grommunio-dav/vendor/sabre/uri/
@@ -743,12 +744,4 @@ grommunio-dav/vendor/sabre/xml/lib/Version.php
 grommunio-dav/vendor/sabre/xml/lib/Writer.php
 grommunio-dav/vendor/sabre/xml/lib/XmlDeserializable.php
 grommunio-dav/vendor/sabre/xml/lib/XmlSerializable.php
-grommunio-dav/vendor/symfony/
-grommunio-dav/vendor/symfony/polyfill-ctype/
-grommunio-dav/vendor/symfony/polyfill-ctype/Ctype.php
-grommunio-dav/vendor/symfony/polyfill-ctype/LICENSE
-grommunio-dav/vendor/symfony/polyfill-ctype/README.md
-grommunio-dav/vendor/symfony/polyfill-ctype/bootstrap.php
-grommunio-dav/vendor/symfony/polyfill-ctype/bootstrap80.php
-grommunio-dav/vendor/symfony/polyfill-ctype/composer.json
 grommunio-dav/version.php
