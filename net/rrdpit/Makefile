@@ -23,7 +23,7 @@ SEPARATE_BUILD =	Yes
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
 
 post-patch:
-	cp ${FILESDIR}/* ${WRKSRC}/
+	cp ${FILESDIR}/Cargo.lock ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/rrdpit ${PREFIX}/bin/
