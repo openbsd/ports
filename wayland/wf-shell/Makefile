@@ -1,8 +1,7 @@
 COMMENT =	GTK3-based panel for wayfire
 
-V =		0.8.0
+V =		0.8.1
 DISTNAME =	wf-shell-${V}
-REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -17,6 +16,8 @@ MODULES =	devel/meson
 
 BUILD_DEPENDS =	wayland/wayfire \
 		wayland/wayland-protocols
+
+RUN_DEPENDS =	x11/gtk+4,-guic
 
 LIB_DEPENDS =	x11/gtk3mm \
 		x11/libdbusmenu \
