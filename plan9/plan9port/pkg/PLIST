@@ -179,6 +179,7 @@ plan9/bin/man
 plan9/bin/mk9660
 @bin plan9/bin/mkdir
 @bin plan9/bin/mklatinkbd
+@bin plan9/bin/mntgen
 @comment plan9/bin/mount
 @bin plan9/bin/mtime
 @bin plan9/bin/namespace
@@ -4555,6 +4556,7 @@ plan9/man/man4/INDEX
 @man plan9/man/man4/fontsrv.4
 @man plan9/man/man4/fossil.4
 @man plan9/man/man4/import.4
+@man plan9/man/man4/mntgen.4
 @man plan9/man/man4/plumber.4
 @man plan9/man/man4/ramfs.4
 @man plan9/man/man4/smugfs.4
@@ -5971,6 +5973,7 @@ plan9/src/cmd/mnihongo/README
 plan9/src/cmd/mnihongo/mkfile
 plan9/src/cmd/mnihongo/mnihongo.c
 plan9/src/cmd/mnihongo/tmac.nihongo
+plan9/src/cmd/mntgen.c
 plan9/src/cmd/mpm/
 plan9/src/cmd/mpm/README
 plan9/src/cmd/mpm/misc.cc
