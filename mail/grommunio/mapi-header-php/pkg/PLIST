@@ -2,6 +2,8 @@ grommunio-mapi-header-php/
 grommunio-mapi-header-php/LICENSE.txt
 grommunio-mapi-header-php/Makefile
 grommunio-mapi-header-php/README.rst
+@comment grommunio-mapi-header-php/apparmor/
+@comment grommunio-mapi-header-php/apparmor/usr.sbin.php-fpm
 grommunio-mapi-header-php/changelog.rst
 grommunio-mapi-header-php/class.baseexception.php
 grommunio-mapi-header-php/class.baserecurrence.php
