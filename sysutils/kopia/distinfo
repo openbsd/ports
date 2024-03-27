@@ -482,8 +482,8 @@ SHA256 (go_modules/github.com/klauspost/pgzip/@v/v1.2.6.mod) = eDUaQK92F5X2bGSne
 SHA256 (go_modules/github.com/klauspost/pgzip/@v/v1.2.6.zip) = isUI6Tsi3KGnMaOkySG1fF7R2up7Nimiz4XDt1MN2oQ=
 SHA256 (go_modules/github.com/klauspost/reedsolomon/@v/v1.12.1.mod) = OkqN2xyCdDke89p3YyNb8eq/aEjxjBGdGOU0wPx5rO8=
 SHA256 (go_modules/github.com/klauspost/reedsolomon/@v/v1.12.1.zip) = g29LAoyNCiE2DK7waIQfNF8a49CAy2i3Az40/IutjHY=
-SHA256 (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20231019063300-75c2a788c7d0.mod) = y9WTaX5nsmvHNG6zgkWlV6HRdFaULylyFE1jeMvDcFc=
-SHA256 (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20231019063300-75c2a788c7d0.zip) = QnwCANxx7Dj3540arQ7DMyIWeYXU7VXJrBrixr+skR8=
+SHA256 (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20240324231127-d8300f5781d0.mod) = ppXQygERkoyZYUvqN9485Fe8O22baZOeKTaVOI4Jfhk=
+SHA256 (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20240324231127-d8300f5781d0.zip) = tcheVZw7AJU3W7gPzpteMqFKSpbZn7u7orm/5OwB5zI=
 SHA256 (go_modules/github.com/kr/fs/@v/v0.1.0.mod) = tbztWH7emUmijxpGAxPEmwj1cVuYgNu1eXgyf4WC78A=
 SHA256 (go_modules/github.com/kr/fs/@v/v0.1.0.zip) = 03a9mOga6jRYX8OwS6t2Nj6eh83mk4OWTlfpd58q+B4=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 49XUbS9qyUpmalS16GfsFr8ZnZ9LcAgnzXMWB+/dEJo=
@@ -847,7 +847,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (kopia-v0.16.0.zip) = mch4YItZO+x6mcUx6Y2iV5Z2fZhzMWaGyYq/R1Z3q30=
+SHA256 (kopia-v0.16.1.zip) = 2lCZ+z3zhiYjjeVuz90d5o7WfUuLPeV9Kgpuqdn3b3c=
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.0.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
@@ -1332,8 +1332,8 @@ SIZE (go_modules/github.com/klauspost/pgzip/@v/v1.2.6.mod) = 34
 SIZE (go_modules/github.com/klauspost/pgzip/@v/v1.2.6.zip) = 127679
 SIZE (go_modules/github.com/klauspost/reedsolomon/@v/v1.12.1.mod) = 352
 SIZE (go_modules/github.com/klauspost/reedsolomon/@v/v1.12.1.zip) = 544625
-SIZE (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20231019063300-75c2a788c7d0.mod) = 45
-SIZE (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20231019063300-75c2a788c7d0.zip) = 1391347
+SIZE (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20240324231127-d8300f5781d0.mod) = 45
+SIZE (go_modules/github.com/kopia/htmluibuild/@v/v0.0.1-0.20240324231127-d8300f5781d0.zip) = 1316976
 SIZE (go_modules/github.com/kr/fs/@v/v0.1.0.mod) = 26
 SIZE (go_modules/github.com/kr/fs/@v/v0.1.0.zip) = 5552
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 67
@@ -1697,4 +1697,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (kopia-v0.16.0.zip) = 2263293
+SIZE (kopia-v0.16.1.zip) = 2263293

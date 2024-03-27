@@ -209,7 +209,7 @@ MODGO_MODULES =	\
 	github.com/klauspost/cpuid/v2							 v2.2.6 \
 	github.com/klauspost/pgzip							 v1.2.6 \
 	github.com/klauspost/reedsolomon						 v1.12.1 \
-	github.com/kopia/htmluibuild							 v0.0.1-0.20231019063300-75c2a788c7d0 \
+	github.com/kopia/htmluibuild							 v0.0.1-0.20240324231127-d8300f5781d0 \
 	github.com/kr/fs								 v0.1.0 \
 	github.com/kr/pretty								 v0.3.1 \
 	github.com/kr/pty								 v1.1.1 \
