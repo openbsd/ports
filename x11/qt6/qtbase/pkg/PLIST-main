@@ -826,6 +826,7 @@ include/X11/qt6/QtCore/qttypetraits.h
 include/X11/qt6/QtCore/qtversion.h
 include/X11/qt6/QtCore/qtversionchecks.h
 include/X11/qt6/QtCore/qtypeinfo.h
+include/X11/qt6/QtCore/qtyperevision.h
 include/X11/qt6/QtCore/qtypes.h
 include/X11/qt6/QtCore/qurl.h
 include/X11/qt6/QtCore/qurlquery.h
@@ -3116,6 +3117,7 @@ lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake
+lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessTargets.cmake

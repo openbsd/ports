@@ -8,7 +8,7 @@ Index: src/core/api/configure.cmake
 +        pkg_check_modules(SNDIO sndio)
          pkg_check_modules(POPPLER_CPP poppler-cpp IMPORTED_TARGET)
          pkg_check_modules(GBM gbm)
-         pkg_check_modules(LIBVA libva)
+         pkg_check_modules(LIBVA libva>=1.14)
 @@ -84,6 +85,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
      CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer AND
      (CUPS_FOUND OR WIN32)

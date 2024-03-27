@@ -22,6 +22,7 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qmultimediautils_p.
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudiodecoder_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudioinput_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudiooutput_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformaudioresampler_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformcamera_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformcapturablewindows_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qplatformimagecapture_p.h
@@ -44,7 +45,8 @@ include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qpulsehelpers_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qsamplecache_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimedia-config_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qtmultimediaglobal_p.h
-include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideo_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qtvideo_p.h
+include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframe_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconversionhelper_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideoframeconverter_p.h
 include/X11/qt6/QtMultimedia/${VERSION}/QtMultimedia/private/qvideooutputorientationhandler_p.h
@@ -150,6 +152,22 @@ include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsexports.h
 include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsglobal.h
 include/X11/qt6/QtMultimediaWidgets/qtmultimediawidgetsversion.h
 include/X11/qt6/QtMultimediaWidgets/qvideowidget.h
+include/X11/qt6/QtQuick3DSpatialAudio/
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qquick3dambientsound_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qquick3daudioengine_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qquick3daudiolistener_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qquick3daudioroom_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qquick3dspatialsound_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qtquick3daudioglobal_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/${VERSION}/QtQuick3DSpatialAudio/private/qtquick3daudiotypes_p.h
+include/X11/qt6/QtQuick3DSpatialAudio/QtQuick3DSpatialAudio
+include/X11/qt6/QtQuick3DSpatialAudio/QtQuick3DSpatialAudioDepends
+include/X11/qt6/QtQuick3DSpatialAudio/QtQuick3DSpatialAudioVersion
+include/X11/qt6/QtQuick3DSpatialAudio/qtquick3dspatialaudioexports.h
+include/X11/qt6/QtQuick3DSpatialAudio/qtquick3dspatialaudioversion.h
 include/X11/qt6/QtSpatialAudio/
 include/X11/qt6/QtSpatialAudio/${VERSION}/
 include/X11/qt6/QtSpatialAudio/${VERSION}/QtSpatialAudio/
@@ -234,12 +252,27 @@ lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsDependencies.cmake
 lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsTargets.cmake
 lib/cmake/Qt6MultimediaWidgets/Qt6MultimediaWidgetsVersionlessTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateConfig.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateConfigVersion.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateDependencies.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateTargets.cmake
+lib/cmake/Qt6Quick3DSpatialAudioPrivate/Qt6Quick3DSpatialAudioPrivateVersionlessTargets.cmake
 lib/cmake/Qt6SpatialAudio/
 lib/cmake/Qt6SpatialAudio/Qt6SpatialAudioAdditionalTargetInfo.cmake
 lib/cmake/Qt6SpatialAudio/Qt6SpatialAudioConfig.cmake
@@ -256,6 +289,8 @@ lib/libQt6MultimediaQuick.prl
 @lib lib/libQt6MultimediaQuick.so.${LIBQt6MultimediaQuick_VERSION}
 lib/libQt6MultimediaWidgets.prl
 @lib lib/libQt6MultimediaWidgets.so.${LIBQt6MultimediaWidgets_VERSION}
+lib/libQt6Quick3DSpatialAudio.prl
+@lib lib/libQt6Quick3DSpatialAudio.so.${LIBQt6Quick3DSpatialAudio_VERSION}
 lib/libQt6SpatialAudio.prl
 @lib lib/libQt6SpatialAudio.so.${LIBQt6SpatialAudio_VERSION}
 lib/pkgconfig/Qt6Multimedia.pc
@@ -264,17 +299,20 @@ lib/pkgconfig/Qt6SpatialAudio.pc
 lib/qt6/metatypes/qt6multimedia_release_metatypes.json
 lib/qt6/metatypes/qt6multimediaquickprivate_release_metatypes.json
 lib/qt6/metatypes/qt6multimediawidgets_release_metatypes.json
+lib/qt6/metatypes/qt6quick3dspatialaudioprivate_release_metatypes.json
 lib/qt6/metatypes/qt6spatialaudio_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_multimedia.pri
 lib/qt6/mkspecs/modules/qt_lib_multimedia_private.pri
 lib/qt6/mkspecs/modules/qt_lib_multimediaquick_private.pri
 lib/qt6/mkspecs/modules/qt_lib_multimediawidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_multimediawidgets_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri
 lib/qt6/mkspecs/modules/qt_lib_spatialaudio.pri
 lib/qt6/mkspecs/modules/qt_lib_spatialaudio_private.pri
 lib/qt6/modules/Multimedia.json
 lib/qt6/modules/MultimediaQuickPrivate.json
 lib/qt6/modules/MultimediaWidgets.json
+lib/qt6/modules/Quick3DSpatialAudioPrivate.json
 lib/qt6/modules/SpatialAudio.json
 lib/qt6/plugins/multimedia/
 @so lib/qt6/plugins/multimedia/libffmpegmediaplugin.so
@@ -284,3 +322,8 @@ lib/qt6/qml/QtMultimedia/Video.qml
 @so lib/qt6/qml/QtMultimedia/libquickmultimediaplugin.so
 lib/qt6/qml/QtMultimedia/plugins.qmltypes
 lib/qt6/qml/QtMultimedia/qmldir
+lib/qt6/qml/QtQuick3D/
+lib/qt6/qml/QtQuick3D/SpatialAudio/
+@so lib/qt6/qml/QtQuick3D/SpatialAudio/libquick3dspatialaudioplugin.so
+lib/qt6/qml/QtQuick3D/SpatialAudio/plugins.qmltypes
+lib/qt6/qml/QtQuick3D/SpatialAudio/qmldir

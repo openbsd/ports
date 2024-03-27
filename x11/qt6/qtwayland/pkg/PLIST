@@ -10,7 +10,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-hard
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-pointer-gestures-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-key-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-text-input-method-unstable-v1.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-toplevel-drag-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-qt-windowmanager.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-server-buffer-extension.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-surface-extension.h
@@ -24,6 +23,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wayl
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-wp-primary-selection-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-output-unstable-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-shell.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandbuffer_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandclientbufferintegration_p.h
@@ -84,7 +84,6 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-hardw
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-pointer-gestures-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-key-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-text-input-method-unstable-v1-client-protocol.h
-include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-toplevel-drag-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-qt-windowmanager-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-server-buffer-extension-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-surface-extension-client-protocol.h
@@ -98,6 +97,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wayla
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-wp-primary-selection-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-output-unstable-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
 include/X11/qt6/QtWaylandClient/QWaylandClientExtension
 include/X11/qt6/QtWaylandClient/QWaylandClientExtensionTemplate
 include/X11/qt6/QtWaylandClient/QtWaylandClient

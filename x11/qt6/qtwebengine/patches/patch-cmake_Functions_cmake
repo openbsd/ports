@@ -10,7 +10,7 @@ Index: cmake/Functions.cmake
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -669,6 +669,8 @@ function(get_gn_os result)
+@@ -671,6 +671,8 @@ function(get_gn_os result)
          set(${result} "win" PARENT_SCOPE)
      elseif(LINUX)
          set(${result} "linux" PARENT_SCOPE)
@@ -19,7 +19,7 @@ Index: cmake/Functions.cmake
      elseif(MACOS)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
-@@ -865,7 +867,7 @@ macro(append_build_type_setup)
+@@ -867,7 +869,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
@@ -28,7 +28,7 @@ Index: cmake/Functions.cmake
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -881,7 +883,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -883,7 +885,7 @@ macro(append_compiler_linker_sdk_setup)
      extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
      extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
      extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
@@ -37,7 +37,7 @@ Index: cmake/Functions.cmake
  
      if(CLANG)
          if(MACOS)
-@@ -917,7 +919,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -919,7 +921,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
@@ -46,7 +46,7 @@ Index: cmake/Functions.cmake
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -955,7 +957,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -957,7 +959,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -55,7 +55,7 @@ Index: cmake/Functions.cmake
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -1040,7 +1042,7 @@ macro(append_toolchain_setup)
+@@ -1042,7 +1044,7 @@ macro(append_toolchain_setup)
                  host_cpu="${cpu}"
              )
          endif()
@@ -64,7 +64,7 @@ Index: cmake/Functions.cmake
          get_gn_arch(cpu ${TEST_architecture_arch})
          list(APPEND gnArgArg
              custom_toolchain="${buildDir}/target_toolchain:target"
-@@ -1073,7 +1075,7 @@ endmacro()
+@@ -1075,7 +1077,7 @@ endmacro()
  
  
  macro(append_pkg_config_setup)
@@ -73,7 +73,7 @@ Index: cmake/Functions.cmake
          list(APPEND gnArgArg
              pkg_config="${PKG_CONFIG_EXECUTABLE}"
              host_pkg_config="${PKG_CONFIG_HOST_EXECUTABLE}"
-@@ -1283,7 +1285,7 @@ endfunction()
+@@ -1285,7 +1287,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -82,7 +82,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1292,7 +1294,7 @@ function(check_for_ulimit)
+@@ -1294,7 +1296,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh

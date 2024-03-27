@@ -1163,6 +1163,7 @@ lib/cmake/Qt63DInput/Qt63DInputConfig.cmake
 lib/cmake/Qt63DInput/Qt63DInputConfigVersion.cmake
 lib/cmake/Qt63DInput/Qt63DInputConfigVersionImpl.cmake
 lib/cmake/Qt63DInput/Qt63DInputDependencies.cmake
+lib/cmake/Qt63DInput/Qt63DInputPlugins.cmake
 lib/cmake/Qt63DInput/Qt63DInputTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt63DInput/Qt63DInputTargets.cmake
 lib/cmake/Qt63DInput/Qt63DInputVersionlessTargets.cmake

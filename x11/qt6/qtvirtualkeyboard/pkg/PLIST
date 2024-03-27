@@ -69,6 +69,15 @@ include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardinputengine.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardobserver.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardselectionlistmodel.h
 include/X11/qt6/QtVirtualKeyboard/qvirtualkeyboardtrace.h
+include/X11/qt6/QtVirtualKeyboardSettings/
+include/X11/qt6/QtVirtualKeyboardSettings/${VERSION}/
+include/X11/qt6/QtVirtualKeyboardSettings/${VERSION}/QtVirtualKeyboardSettings/
+include/X11/qt6/QtVirtualKeyboardSettings/${VERSION}/QtVirtualKeyboardSettings/private/
+include/X11/qt6/QtVirtualKeyboardSettings/${VERSION}/QtVirtualKeyboardSettings/private/qquickvirtualkeyboardsettings_p.h
+include/X11/qt6/QtVirtualKeyboardSettings/QtVirtualKeyboardSettings
+include/X11/qt6/QtVirtualKeyboardSettings/QtVirtualKeyboardSettingsDepends
+include/X11/qt6/QtVirtualKeyboardSettings/QtVirtualKeyboardSettingsVersion
+include/X11/qt6/QtVirtualKeyboardSettings/qtvirtualkeyboardsettingsversion.h
 lib/cmake/Qt6/FindCerenceHwrAlphabetic.cmake
 lib/cmake/Qt6/FindCerenceHwrCjk.cmake
 lib/cmake/Qt6/FindCerenceXt9.cmake
@@ -183,20 +192,36 @@ lib/cmake/Qt6VirtualKeyboard/Qt6VirtualKeyboardDependencies.cmake
 lib/cmake/Qt6VirtualKeyboard/Qt6VirtualKeyboardTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6VirtualKeyboard/Qt6VirtualKeyboardTargets.cmake
 lib/cmake/Qt6VirtualKeyboard/Qt6VirtualKeyboardVersionlessTargets.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsAdditionalTargetInfo.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsConfig.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsConfigVersion.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsConfigVersionImpl.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsDependencies.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsTargets.cmake
+lib/cmake/Qt6VirtualKeyboardSettings/Qt6VirtualKeyboardSettingsVersionlessTargets.cmake
 lib/libQt6HunspellInputMethod.prl
 @lib lib/libQt6HunspellInputMethod.so.${LIBQt6HunspellInputMethod_VERSION}
 lib/libQt6VirtualKeyboard.prl
 @lib lib/libQt6VirtualKeyboard.so.${LIBQt6VirtualKeyboard_VERSION}
+lib/libQt6VirtualKeyboardSettings.prl
+@lib lib/libQt6VirtualKeyboardSettings.so.${LIBQt6VirtualKeyboardSettings_VERSION}
 lib/pkgconfig/Qt6HunspellInputMethod.pc
 lib/pkgconfig/Qt6VirtualKeyboard.pc
+lib/pkgconfig/Qt6VirtualKeyboardSettings.pc
 lib/qt6/metatypes/qt6hunspellinputmethod_release_metatypes.json
 lib/qt6/metatypes/qt6virtualkeyboard_release_metatypes.json
+lib/qt6/metatypes/qt6virtualkeyboardsettings_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_hunspellinputmethod.pri
 lib/qt6/mkspecs/modules/qt_lib_hunspellinputmethod_private.pri
 lib/qt6/mkspecs/modules/qt_lib_virtualkeyboard.pri
 lib/qt6/mkspecs/modules/qt_lib_virtualkeyboard_private.pri
+lib/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri
+lib/qt6/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri
 lib/qt6/modules/HunspellInputMethod.json
 lib/qt6/modules/VirtualKeyboard.json
+lib/qt6/modules/VirtualKeyboardSettings.json
 @so lib/qt6/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.so
 lib/qt6/qml/QtQuick/VirtualKeyboard/
 lib/qt6/qml/QtQuick/VirtualKeyboard/Components/

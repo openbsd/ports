@@ -36,7 +36,6 @@ WANTLIB += c m protobuf protoc
 BUILD_DEPENDS =	graphics/glslang
 
 LIB_DEPENDS =	devel/abseil-cpp \
-		devel/protobuf \
-		x11/qt6/qttranslations
+		devel/protobuf
 
 .include <bsd.port.mk>

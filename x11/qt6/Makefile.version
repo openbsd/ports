@@ -1,5 +1,5 @@
 # Common source for Qt6 version
-QT6_VERSION =		6.6.2
+QT6_VERSION =		6.6.3
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.

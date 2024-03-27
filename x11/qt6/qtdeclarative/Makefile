@@ -32,6 +32,17 @@ SHARED_LIBS +=  Qt6QuickTemplates2        5.0 # 6.6
 SHARED_LIBS +=  Qt6QmlCompiler            2.0 # 6.6
 SHARED_LIBS +=  Qt6QuickEffects           1.0 # 6.6
 
+SHARED_LIBS +=	Qt6QuickControls2Basic    0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2BasicStyleImpl 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2Fusion   0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2FusionStyleImpl 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2Imagine  0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2ImagineStyleImpl 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2Material 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2MaterialStyleImpl 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2Universal 0.0 # 0.0
+SHARED_LIBS +=	Qt6QuickControls2UniversalStyleImpl 0.0 # 0.0
+
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6JsonRpc Qt6LanguageServer
 WANTLIB += Qt6Network Qt6OpenGL Qt6Sql Qt6Test Qt6Widgets c m
 WANTLIB += xkbcommon
