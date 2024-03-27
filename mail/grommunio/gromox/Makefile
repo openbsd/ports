@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.24
+V=		2.26
 DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
@@ -12,7 +12,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	31cf7848a95c7ecdb427f40b78d470a1e39a1ed0
+GH_COMMIT=	62e2ca6ad2bb1fd92cd8d37d5c2d864ac0f010a3
 
 CATEGORIES=	mail www productivity
 
@@ -79,7 +79,7 @@ RUN_DEPENDS-mapi=	${MODPHP_RUN_DEPENDS}
 USE_GMAKE=	Yes
 
 USE_NOEXECONLY=	Yes
-USE_WXNEEDED=Yes
+USE_WXNEEDED=	Yes
 
 CONFIGURE_STYLE=	autoreconf
 

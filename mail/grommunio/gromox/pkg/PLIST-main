@@ -120,6 +120,7 @@ libexec/gromox/
 @bin libexec/gromox/cgkrepair
 @bin libexec/gromox/delivery
 @bin libexec/gromox/delivery-queue
+@bin libexec/gromox/eidprint
 @bin libexec/gromox/event
 @bin libexec/gromox/gromox-snapshot
 @bin libexec/gromox/http
