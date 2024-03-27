@@ -23,18 +23,10 @@ and quicker to use one of the available tools to do this.
 suricata-update
 ---------------
 suricata-update is the recommended way to install and update rules.
-By default it will download the new rules into ${LOCALSTATEDIR}/suricata/rules
+Run it with the -D flag to download the rules to the directory
+suricata expects (${LOCALSTATEDIR}/suricata/rules):
 
-Edit ${SYSCONFDIR}/suricata/suricata.yaml and replace the existing
-default-rule-path and rule-files sections with this:
-
-    default-rule-path: ${LOCALSTATEDIR}/suricata/rules/
-    rule-files:
-      - suricata.rules
-
-And restart Suricata:
-
-# rcctl restart suricata
+# suricata-update -D ${LOCALSTATEDIR}/suricata
 
 Oinkmaster
 ----------
@@ -55,6 +47,10 @@ And you can download as follow:
 
 # cd /etc && oinkmaster -C ${SYSCONFDIR}/oinkmaster.conf \
 	-o ${SYSCONFDIR}/suricata/rules
+
+Edit ${SYSCONFDIR}/suricata/suricata.yaml, comment out the default
+default-rule-path section and uncomment the commented out
+default-rule-path section.
 
 After updating rules
 --------------------

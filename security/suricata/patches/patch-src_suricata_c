@@ -4,7 +4,7 @@ Suricata uses libcap-ng on Linux and runs as root elsewhere.
 Index: src/suricata.c
 --- src/suricata.c.orig
 +++ src/suricata.c
-@@ -1600,7 +1600,7 @@ static TmEcode ParseCommandLine(int argc, char** argv,
+@@ -1597,7 +1597,7 @@ static TmEcode ParseCommandLine(int argc, char** argv,
                  return TM_ECODE_FAILED;
  #endif /* UNITTESTS */
              } else if (strcmp((long_opts[option_index]).name, "user") == 0) {
@@ -13,7 +13,7 @@ Index: src/suricata.c
                  SCLogError("libcap-ng is required to"
                             " drop privileges, but it was not compiled into Suricata.");
                  return TM_ECODE_FAILED;
-@@ -1609,7 +1609,7 @@ static TmEcode ParseCommandLine(int argc, char** argv,
+@@ -1606,7 +1606,7 @@ static TmEcode ParseCommandLine(int argc, char** argv,
                  suri->do_setuid = TRUE;
  #endif /* HAVE_LIBCAP_NG */
              } else if (strcmp((long_opts[option_index]).name, "group") == 0) {
@@ -22,10 +22,10 @@ Index: src/suricata.c
                  SCLogError("libcap-ng is required to"
                             " drop privileges, but it was not compiled into Suricata.");
                  return TM_ECODE_FAILED;
-@@ -3036,6 +3036,7 @@ int SuricataMain(int argc, char **argv)
-     SystemHugepageSnapshotDestroy(prerun_snap);
-     SystemHugepageSnapshotDestroy(postrun_snap);
- 
+@@ -3040,6 +3040,7 @@ int SuricataMain(int argc, char **argv)
+         SystemHugepageSnapshotDestroy(prerun_snap);
+         SystemHugepageSnapshotDestroy(postrun_snap);
+     }
 +    SCSetUserID(suricata.userid, suricata.groupid);
      SCPledge();
      SuricataMainLoop(&suricata);

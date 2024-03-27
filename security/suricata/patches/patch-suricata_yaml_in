@@ -1,15 +1,23 @@
 - After reload allow to write log files or use syslog.
 - Switch user and group to avoid running as root.
 - To remove pid file its directory must be writable by suricata user.
-- Comment-out suricata-update rules and add config for bundled rules
-so the package can be used directly. See pkg-readme for information
-about downloading rules.
+- Avoid need to run autoconf by setting variables which will be
+  modified by SUBST_CMD
 
 
 Index: suricata.yaml.in
 --- suricata.yaml.in.orig
 +++ suricata.yaml.in
-@@ -84,6 +84,7 @@ outputs:
+@@ -58,7 +58,7 @@ vars:
+ # The default logging directory.  Any log or output file will be
+ # placed here if it's not specified with a full path name. This can be
+ # overridden with the -l command line parameter.
+-default-log-dir: @e_logdir@
++default-log-dir: ${LOCALSTATEDIR}/log/suricata
+ 
+ # Global stats configuration
+ stats:
+@@ -84,14 +84,16 @@ outputs:
    - fast:
        enabled: yes
        filename: fast.log
@@ -17,8 +25,10 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -92,6 +93,7 @@ outputs:
-       enabled: @e_enable_evelog@
+   # Extensible Event Format (nicknamed EVE) event log in JSON format
+   - eve-log:
+-      enabled: @e_enable_evelog@
++      enabled: yes
        filetype: regular #regular|syslog|unix_dgram|unix_stream|redis
        filename: eve.json
 +      filemode: 664
@@ -94,16 +104,60 @@ Index: suricata.yaml.in
  
  security:
    # if true, prevents process creation from Suricata by calling
-@@ -1227,7 +1236,7 @@ security:
+@@ -1208,13 +1217,11 @@ security:
+     enabled: no
+     directories:
+       #write:
+-      #  - @e_rundir@
+       # /usr and /etc folders are added to read list to allow
+       # file magic to be used.
+       read:
+         - /usr/
+         - /etc/
+-        - @e_sysconfdir@
+ 
+   lua:
+     # Allow Lua rules. Disabled by default.
+@@ -1227,7 +1234,7 @@ security:
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
 -#pid-file: @e_rundir@suricata.pid
-+pid-file: @e_rundir@suricata.pid
++pid-file: ${LOCALSTATEDIR}/run/suricata/suricata.pid
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -2143,14 +2152,38 @@ napatech:
+@@ -1295,8 +1302,7 @@ unix-command:
+   #filename: custom.socket
+ 
+ # Magic file. The extension .mgc is added to the value here.
+-#magic-file: /usr/share/file/magic
++#magic-file: ${SYSCONFDIR}/magic
+-@e_magic_file_comment@magic-file: @e_magic_file@
+ 
+ # GeoIP2 database file. Specify path and filename of GeoIP2 database
+ # if using rules with "geoip" rule option.
+@@ -1334,8 +1340,8 @@ legacy:
+ exception-policy: auto
+ 
+ # IP Reputation
+-#reputation-categories-file: @e_sysconfdir@iprep/categories.txt
+-#default-reputation-path: @e_sysconfdir@iprep
++#reputation-categories-file: ${SYSCONFDIR}/suricata/iprep/categories.txt
++#default-reputation-path: ${SYSCONFDIR}/suricata/iprep
+ #reputation-files:
+ # - reputation.list
+ 
+@@ -1813,7 +1819,7 @@ profiling:
+     limit: 10
+ 
+     # output to json
+-    json: @e_enable_evelog@
++    json: true
+ 
+   # per keyword profiling
+   keywords:
+@@ -2143,22 +2149,44 @@ napatech:
      #
      hashmode: hash5tuplesorted
  
@@ -114,34 +168,43 @@ Index: suricata.yaml.in
  ##
  ## Configure Suricata to load Suricata-Update managed rules.
  ##
-+#default-rule-path: ${LOCALSTATEDIR}/suricata/rules
-+#rule-files:
-+#  - suricata.rules
- 
+-
 -default-rule-path: @e_defaultruledir@
 -
-+##
-+## Configure Suricata to use basic bundled rules.
-+##
-+default-rule-path: @e_sysconfdir@rules
++default-rule-path: ${LOCALSTATEDIR}/suricata/rules
  rule-files:
--  - suricata.rules
-+  - app-layer-events.rules
-+  - decoder-events.rules
-+  - dhcp-events.rules
-+  - dnp3-events.rules
-+  - dns-events.rules
-+  - files.rules
-+  - http-events.rules
-+  - ipsec-events.rules
-+  - kerberos-events.rules
-+  - modbus-events.rules
-+  - nfs-events.rules
-+  - ntp-events.rules
-+  - smb-events.rules
-+  - smtp-events.rules
-+  - stream-events.rules
-+  - tls-events.rules
+   - suricata.rules
  
  ##
++## Configure Suricata to use basic bundled rules.
++##
++#default-rule-path: ${SYSCONFDIR}/suricata/rules
++#rule-files:
++#  - app-layer-events.rules
++#  - decoder-events.rules
++#  - dhcp-events.rules
++#  - dns-events.rules
++#  - files.rules
++#  - http-events.rules
++#  - ipsec-events.rules
++#  - kerberos-events.rules
++#  - nfs-events.rules
++#  - ntp-events.rules
++#  - smb-events.rules
++#  - smtp-events.rules
++#  - stream-events.rules
++#  - tls-events.rules
++
++##
  ## Auxiliary configuration files.
+ ##
+ 
+-classification-file: @e_sysconfdir@classification.config
+-reference-config-file: @e_sysconfdir@reference.config
+-# threshold-file: @e_sysconfdir@threshold.config
++classification-file: ${SYSCONFDIR}/suricata/classification.config
++reference-config-file: ${SYSCONFDIR}/suricata/reference.config
++# threshold-file: ${SYSCONFDIR}/suricata/threshold.config
+ 
+ ##
+ ## Include other configs
