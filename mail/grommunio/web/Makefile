@@ -1,13 +1,11 @@
 COMMENT=	web user interface for grommunio
 
-V=		3.6
+V=		3.7
 DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web
-GH_COMMIT=	779b245e3b9bfe792ba53c3ce9df0e1c7587362c
-
-REVISION=	3
+GH_COMMIT=	d30c5373ec8715cf4e51c453a661b6d8478ba254
 
 SITES=		https://nerd.hu/distfiles/
 
