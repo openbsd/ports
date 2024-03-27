@@ -1,2 +1,0 @@
-A Python server implementation of the JSON RPC 2.0 protocol. This
-library has been pulled out of the Python Language Server project.

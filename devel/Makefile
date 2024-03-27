@@ -1570,7 +1570,6 @@
      SUBDIR += py-pydocstyle,python3
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pylint_venv,python3
-     SUBDIR += py-pyls-black,python3
      SUBDIR += py-pyls-spyder,python3
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyproject-api,python3
@@ -1578,7 +1577,6 @@
      SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
-     SUBDIR += py-python-language-server,python3
      SUBDIR += py-python-lsp-server,python3
      SUBDIR += py-python-lsp-black,python3
      SUBDIR += py-python-slugify,python3

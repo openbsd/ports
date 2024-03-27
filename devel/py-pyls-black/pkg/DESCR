@@ -1,6 +1,0 @@
-Spyder extensions for the python-lsp-server.
-
-This package provides Spyder-specific extras for the Language Server
-Protocol (LSP) on Python, such as document symbol searching and
-others.
-

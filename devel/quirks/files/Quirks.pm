@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1617 2024/03/08 12:11:54 volker Exp $
+# $OpenBSD: Quirks.pm,v 1.1618 2024/03/27 20:15:56 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1917,6 +1917,9 @@ setup_obsolete_reason(
 	31 => 'mkplaylist',
 	1 => 'proteus',
 	1 => qr{^tryton},
+	5 => 'py3-pyls-black',
+	5 => 'py3-python-language-server',
+	5 => 'py3-python-jsonrpc-server',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
