@@ -47,6 +47,10 @@ CONFIGURE_ARGS+=	--disable-alsatest --disable-sdl --enable-sdl2
 # needs W+X memory
 CONFIGURE_ARGS+=	--disable-dynamic-core
 
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -fomit-frame-pointer
+.endif
+
 pre-configure:
 	cp ${FILESDIR}/midi_sndio.h ${WRKSRC}/src/gui
 
