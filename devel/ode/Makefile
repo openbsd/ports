@@ -1,6 +1,6 @@
 COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	4.1	# 9.0
-DISTNAME = 	ode-0.16.4
+DISTNAME = 	ode-0.16.5
 CATEGORIES =	devel
 
 HOMEPAGE =	https://www.ode.org/
