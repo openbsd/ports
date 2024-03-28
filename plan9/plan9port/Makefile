@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc powerpc64
 COMMENT =		Plan 9 from user space
 
 DISTNAME =		plan9port-20240109
+REVISION =		0
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
@@ -41,10 +42,8 @@ do-build:
 do-install:
 	cd ${WRKSRC} && sed -i 's#/usr/local#${TRUEPREFIX}#' \
 		`cat lib/moveplan9.files`
-	find ${WRKSRC} \( -name .github -o -name .gitignore -o -name .gitkeep \) \
-		-exec rm -rf {} \;
 	${INSTALL_DATA_DIR} ${PLAN9}
-	cd ${WRKSRC} && pax -rw . ${PLAN9}
+	cd ${WRKSRC} && pax -s':.*/\.git.*::' -rw . ${PLAN9}
 	cd ${PREFIX} && ln -s ../plan9/bin/9 bin/9
 
 .include <bsd.port.mk>
