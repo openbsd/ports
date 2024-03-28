@@ -75,6 +75,7 @@ libexec/postfix/postmulti-script
 @man man/man5/lmdb_table.5
 @man man/man5/master.5
 @man man/man5/memcache_table.5
+@man man/man5/mongodb_table.5
 @man man/man5/mysql_table.5
 @man man/man5/nisplus_table.5
 @man man/man5/pcre_table.5
@@ -162,6 +163,7 @@ share/doc/postfix/html/CONTENT_INSPECTION_README.html
 share/doc/postfix/html/DATABASE_README.html
 share/doc/postfix/html/DB_README.html
 share/doc/postfix/html/DEBUG_README.html
+share/doc/postfix/html/DEPRECATION_README.html
 share/doc/postfix/html/DSN_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
@@ -176,6 +178,7 @@ share/doc/postfix/html/MAILDROP_README.html
 share/doc/postfix/html/MAILLOG_README.html
 share/doc/postfix/html/MEMCACHE_README.html
 share/doc/postfix/html/MILTER_README.html
+share/doc/postfix/html/MONGODB_README.html
 share/doc/postfix/html/MULTI_INSTANCE_README.html
 share/doc/postfix/html/MYSQL_README.html
 share/doc/postfix/html/NFS_README.html
@@ -229,6 +232,7 @@ share/doc/postfix/html/mailq.1.html
 share/doc/postfix/html/master.5.html
 share/doc/postfix/html/master.8.html
 share/doc/postfix/html/memcache_table.5.html
+share/doc/postfix/html/mongodb_table.5.html
 share/doc/postfix/html/mysql_table.5.html
 share/doc/postfix/html/newaliases.1.html
 share/doc/postfix/html/nisplus_table.5.html
@@ -300,6 +304,7 @@ share/doc/postfix/readme/CONTENT_INSPECTION_README
 share/doc/postfix/readme/DATABASE_README
 share/doc/postfix/readme/DB_README
 share/doc/postfix/readme/DEBUG_README
+share/doc/postfix/readme/DEPRECATION_README
 share/doc/postfix/readme/DSN_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
@@ -314,6 +319,7 @@ share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MAILLOG_README
 share/doc/postfix/readme/MEMCACHE_README
 share/doc/postfix/readme/MILTER_README
+share/doc/postfix/readme/MONGODB_README
 share/doc/postfix/readme/MULTI_INSTANCE_README
 share/doc/postfix/readme/MYSQL_README
 share/doc/postfix/readme/NFS_README
