@@ -2,5 +2,5 @@ Index: po/LINGUAS
 --- po/LINGUAS.orig
 +++ po/LINGUAS
 @@ -1 +1 @@
--af ang@latin ar bg ca ca_ES@valencia cs da de el en_GB en@shaw es es_419 eo et eu fi fr ga gd gl grc he hr hu id is it ja ko la lt lv mk mr my nl nb_NO pl pt pt_BR racv ro ru sk sl sr sr@ijekavian sr@ijekavianlatin sr@latin sv tl tr uk vi zh_CN zh_TW
+-af ang@latin ar bg bn ca ca_ES@valencia cs cy da de el en_GB en@shaw es es_419 eo et eu fi fr ga gd gl grc he hr hu id is it ja ko la lt lv mk mr my nl nb_NO pl pt pt_BR racv ro ru sk sl sr sr@ijekavian sr@ijekavianlatin sr@latin sv tl tr uk vi zh_CN zh_TW
 +ca cs de en_GB es fr hu it ja pt_BR ru tr vi zh_CN zh_TW
