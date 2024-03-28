@@ -28,7 +28,6 @@ www/freshrss/Docker/Dockerfile
 www/freshrss/Docker/Dockerfile-Alpine
 www/freshrss/Docker/Dockerfile-Newest
 www/freshrss/Docker/Dockerfile-Oldest
-www/freshrss/Docker/Dockerfile-QEMU-ARM
 www/freshrss/Docker/FreshRSS.Apache.conf
 www/freshrss/Docker/README.md
 www/freshrss/Docker/entrypoint.sh
@@ -41,10 +40,6 @@ www/freshrss/Docker/freshrss/docker-compose.yml
 www/freshrss/Docker/freshrss/example.env
 www/freshrss/Docker/freshrss/traefik/
 www/freshrss/Docker/freshrss/traefik/tls.yml
-www/freshrss/Docker/hooks/
-www/freshrss/Docker/hooks/build
-www/freshrss/Docker/hooks/post_checkout
-www/freshrss/Docker/hooks/pre_build
 www/freshrss/LICENSE.txt
 www/freshrss/Makefile
 www/freshrss/README.fr.md
@@ -84,6 +79,7 @@ www/freshrss/app/Mailers/
 www/freshrss/app/Mailers/UserMailer.php
 www/freshrss/app/Models/
 www/freshrss/app/Models/ActionController.php
+www/freshrss/app/Models/AttributesTrait.php
 www/freshrss/app/Models/Auth.php
 www/freshrss/app/Models/BooleanSearch.php
 www/freshrss/app/Models/Category.php
@@ -103,6 +99,7 @@ www/freshrss/app/Models/Feed.php
 www/freshrss/app/Models/FeedDAO.php
 www/freshrss/app/Models/FeedDAOSQLite.php
 www/freshrss/app/Models/FilterAction.php
+www/freshrss/app/Models/FilterActionsTrait.php
 www/freshrss/app/Models/FormAuth.php
 www/freshrss/app/Models/Log.php
 www/freshrss/app/Models/LogDAO.php
@@ -375,6 +372,7 @@ www/freshrss/app/views/auth/register.phtml
 www/freshrss/app/views/category/
 www/freshrss/app/views/category/actualize.phtml
 www/freshrss/app/views/category/refreshOpml.phtml
+www/freshrss/app/views/category/update.phtml
 www/freshrss/app/views/configure/
 www/freshrss/app/views/configure/archiving.phtml
 www/freshrss/app/views/configure/display.phtml
@@ -441,7 +439,6 @@ www/freshrss/app/views/stats/repartition.phtml
 www/freshrss/app/views/subscription/
 www/freshrss/app/views/subscription/add.phtml
 www/freshrss/app/views/subscription/bookmarklet.phtml
-www/freshrss/app/views/subscription/category.phtml
 www/freshrss/app/views/subscription/feed.phtml
 www/freshrss/app/views/subscription/index.phtml
 www/freshrss/app/views/tag/
@@ -629,6 +626,7 @@ www/freshrss/docs/en/users/08_sharing_services.md
 www/freshrss/docs/en/users/09_refreshing_feeds.md
 www/freshrss/docs/en/users/10_filter.md
 www/freshrss/docs/en/users/11_website_scraping.md
+www/freshrss/docs/en/users/WebSub.md
 www/freshrss/docs/fr/
 www/freshrss/docs/fr/contributing.md
 www/freshrss/docs/fr/developers/
@@ -1106,6 +1104,7 @@ www/freshrss/p/themes/icons/favicon.svg
 www/freshrss/p/themes/icons/grey.gif
 www/freshrss/p/themes/icons/help.svg
 www/freshrss/p/themes/icons/icon.svg
+www/freshrss/p/themes/icons/important.svg
 www/freshrss/p/themes/icons/key.svg
 www/freshrss/p/themes/icons/label.svg
 www/freshrss/p/themes/icons/link.svg
