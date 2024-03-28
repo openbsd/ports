@@ -1,11 +1,11 @@
 COMMENT =	translator library for point cloud formats
 
-V =	2.6.3
+V =	2.7.1
 DISTNAME =	PDAL-${V}-src
 PKGNAME =	pdal-${V}
 EXTRACT_SUFX =	.tar.bz2
 
-SHARED_LIBS +=  pdalcpp 1.0 # 16.0 from PDAL_SOLIB defines in cmake/libraries.cmake
+SHARED_LIBS +=  pdalcpp 2.0 # 16.0 from PDAL_SOLIB defines in cmake/libraries.cmake
 
 CATEGORIES =	geo devel textproc
 
