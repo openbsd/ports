@@ -1465,7 +1465,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/tests/substring/
 share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/tests/substring/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/tests/substring/naive.rs
 share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/tests/substring/prop.rs
-share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/tests/x86_64-soft_float.json
 share/rust-openssl-tests/modcargo-crates/${VER_memchr}/src/vector.rs
 share/rust-openssl-tests/modcargo-crates/${VER_minimal-lexical}/
 share/rust-openssl-tests/modcargo-crates/${VER_minimal-lexical}/.cargo-checksum.json
