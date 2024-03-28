@@ -73,7 +73,7 @@ lib/wireshark/plugins/${WVER}/wiretap/
 @man man/man1/wifidump.1
 @man man/man4/extcap.4
 @man man/man4/wireshark-filter.4
-share/doc/wireshark/ 
+share/doc/wireshark/
 share/doc/wireshark/COPYING
 share/doc/wireshark/README.xml-output
 share/doc/wireshark/androiddump.html
