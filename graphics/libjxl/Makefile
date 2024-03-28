@@ -2,7 +2,7 @@ COMMENT =	JPEG XL image format reference implementation
 
 GH_ACCOUNT =	libjxl
 GH_PROJECT =	libjxl
-GH_TAGNAME =	v0.10.1
+GH_TAGNAME =	v0.10.2
 GH_TESTDATA_COMMIT=ff8d743aaba05b3014f17e5475e576242fa979fc
 CATEGORIES =	graphics
 
@@ -13,7 +13,7 @@ SITES.t =	https://github.com/libjxl/testdata/archive/
 SHARED_LIBS +=	jxl			1.0 # 0.0
 SHARED_LIBS +=	jxl_threads		1.0 # 0.0
 SHARED_LIBS +=	jxl_cms			0.0 # 0.0
-SHARED_LIBS +=	jxl_extras_codec	0.0 # 0.0
+SHARED_LIBS +=	jxl_extras_codec	1.0 # 0.0
 
 
 HOMEPAGE =	https://jpegxl.info/
