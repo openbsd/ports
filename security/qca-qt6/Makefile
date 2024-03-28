@@ -4,6 +4,7 @@ V =		2.3.8
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt6-${V}
 CATEGORIES =	security
+REVISION =	0
 
 SHARED_LIBS +=  qca-qt6                   0.0 # 0.0
 
@@ -14,13 +15,16 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core c crypto m ssl
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat c crypto
+WANTLIB += m ssl
 
 SITES =			${SITE_KDE:=stable/qca/${V}/}
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake \
 			x11/qt6
+
+LIB_DEPENDS =		x11/qt6/qt5compat
 
 CFLAGS +=		-DOPENSSL_NO_SSL2 \
 			-DOPENSSL_NO_SSL3_METHOD
