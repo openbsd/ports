@@ -1,7 +1,7 @@
 Index: lynx.man
 --- lynx.man.orig
 +++ lynx.man
-@@ -618,6 +618,22 @@ flushes the cache on a proxy server
+@@ -642,6 +642,22 @@ flushes the cache on a proxy server
  allows a list of services to be disabled selectively.
  Dashes and underscores in option names can be intermixed.
  The following list is printed if no options are specified.

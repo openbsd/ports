@@ -1,7 +1,7 @@
 Index: lynx.cfg
 --- lynx.cfg.orig
 +++ lynx.cfg
-@@ -108,7 +108,7 @@
+@@ -105,7 +105,7 @@
  #
  # Normally we expect you will connect to a remote site, e.g., the Lynx starting
  # site:

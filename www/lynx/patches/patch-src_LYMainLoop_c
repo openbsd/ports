@@ -1,6 +1,7 @@
---- src/LYMainLoop.c.orig	Tue May 30 14:29:30 2023
-+++ src/LYMainLoop.c	Tue May 30 14:30:30 2023
-@@ -7212,7 +7212,8 @@
+Index: src/LYMainLoop.c
+--- src/LYMainLoop.c.orig
++++ src/LYMainLoop.c
+@@ -7225,7 +7225,8 @@ int mainloop(void)
  	    handle_LYK_DOWN_HALF(&old_c, real_c);
  	    break;
  

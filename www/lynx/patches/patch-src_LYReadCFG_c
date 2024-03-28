@@ -1,7 +1,7 @@
 Index: src/LYReadCFG.c
 --- src/LYReadCFG.c.orig
 +++ src/LYReadCFG.c
-@@ -1508,7 +1508,6 @@ static Config_Type Config_Table [] =
+@@ -1518,7 +1518,6 @@ static Config_Type Config_Table [] =
       PARSE_FUN(RC_DISPLAY_CHARSET_CHOICE, parse_display_charset_choice),
  #endif
       PARSE_SET(RC_DONT_WRAP_PRE,        dont_wrap_pre),
@@ -9,7 +9,7 @@ Index: src/LYReadCFG.c
       PARSE_SET(RC_EMACS_KEYS_ALWAYS_ON, emacs_keys),
       PARSE_FUN(RC_ENABLE_LYNXRC,        enable_lynxrc),
       PARSE_SET(RC_ENABLE_SCROLLBACK,    enable_scrollback),
-@@ -1537,7 +1536,6 @@ static Config_Type Config_Table [] =
+@@ -1547,7 +1546,6 @@ static Config_Type Config_Table [] =
  #endif
       PARSE_Env(RC_FTP_PROXY,            0),
       PARSE_STR(RC_GLOBAL_EXTENSION_MAP, global_extension_map),
@@ -17,7 +17,7 @@ Index: src/LYReadCFG.c
       PARSE_Env(RC_GOPHER_PROXY,         0),
       PARSE_SET(RC_GOTOBUFFER,           goto_buffer),
       PARSE_PRG(RC_GZIP_PATH,            ppGZIP),
-@@ -1656,7 +1654,6 @@ static Config_Type Config_Table [] =
+@@ -1668,7 +1666,6 @@ static Config_Type Config_Table [] =
       PARSE_SET(RC_PERSISTENT_COOKIES,   persistent_cookies),
  #endif /* USE_PERSISTENT_COOKIES */
       PARSE_STR(RC_PERSONAL_EXTENSION_MAP, personal_extension_map),
@@ -25,15 +25,15 @@ Index: src/LYReadCFG.c
       PARSE_LST(RC_POSITIONABLE_EDITOR,  positionable_editor),
       PARSE_STR(RC_PREFERRED_CHARSET,    pref_charset),
       PARSE_ENU(RC_PREFERRED_CONTENT_TYPE, LYContentType, tbl_preferred_content),
-@@ -1670,7 +1667,6 @@ static Config_Type Config_Table [] =
+@@ -1682,7 +1679,6 @@ static Config_Type Config_Table [] =
       PARSE_FUN(RC_PRETTYSRC_SPEC,       psrcspec_fun),
       PARSE_SET(RC_PRETTYSRC_VIEW_NO_ANCHOR_NUM, psrcview_no_anchor_numbering),
  #endif
 -     PARSE_ADD(RC_PRINTER,              printers),
       PARSE_SET(RC_QUIT_DEFAULT_YES,     LYQuitDefaultYes),
       PARSE_INT(RC_READ_TIMEOUT,         reading_timeout),
-      PARSE_FUN(RC_REFERER_WITH_QUERY,   referer_with_query_fun),
-@@ -1769,11 +1765,9 @@ static Config_Type Config_Table [] =
+      PARSE_INT(RC_REDIRECTION_LIMIT,    redirection_limit),
+@@ -1782,11 +1778,9 @@ static Config_Type Config_Table [] =
       PARSE_PRG(RC_UUDECODE_PATH,        ppUUDECODE),
       PARSE_SET(RC_VERBOSE_IMAGES,       verbose_img),
       PARSE_SET(RC_VI_KEYS_ALWAYS_ON,    vi_keys),

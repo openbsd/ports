@@ -1,9 +1,7 @@
-V =		2.8.9
-R =		1
+V =		2.9.0
 COMMENT =	text web browser
-DISTNAME =	lynx${V}rel.${R}
-PKGNAME =	lynx-${V}rel${R}
-REVISION =	1
+DISTNAME =	lynx${V}
+PKGNAME =	lynx-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	www net
 
@@ -13,10 +11,12 @@ HOMEPAGE =	https://lynx.invisible-island.net/
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB +=	c crypto curses ssl z
+WANTLIB +=	c crypto curses iconv ssl z
 
 SITES =		https://invisible-mirror.net/archives/lynx/tarballs/ \
 		ftp://ftp.invisible-island.net/lynx/tarballs/
+
+LIB_DEPENDS =	converters/libiconv
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
@@ -30,6 +30,7 @@ CONFIGURE_ARGS =	--datarootdir="${PREFIX}/share/doc/lynx" \
 			--enable-widec \
 			--with-ssl=/usr \
 			--with-zlib \
+			--without-brotli \
 			--without-bzlib
 
 # This disables most calls to getpw*(3) so we can avoid pledge "getpw".

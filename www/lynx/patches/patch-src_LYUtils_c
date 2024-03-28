@@ -6,7 +6,7 @@ no breakage is to be expected from this.
 Index: src/LYUtils.c
 --- src/LYUtils.c.orig
 +++ src/LYUtils.c
-@@ -5175,10 +5175,11 @@ const char *Home_Dir(void)
+@@ -5177,10 +5177,11 @@ const char *Home_Dir(void)
  	    /*
  	     * One could use getlogin() and getpwnam() here instead.
  	     */
