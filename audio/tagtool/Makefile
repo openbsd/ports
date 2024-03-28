@@ -1,7 +1,7 @@
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	29
+REVISION=	30
 CATEGORIES=	audio
 
 SITES=		${SITE_SOURCEFORGE:=tagtool/}
@@ -21,6 +21,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	textproc/intltool
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 LIB_DEPENDS=	audio/id3lib \
 		audio/libvorbis \
 		x11/gtk+2>=2.10 \
@@ -32,7 +34,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm -logg -Wl,--export-dynamic"
+		LDFLAGS="-L${LOCALBASE}/lib -lm -logg"
 
 USE_GMAKE=	Yes
 
