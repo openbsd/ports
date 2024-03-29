@@ -1,0 +1,46 @@
+Index: Hclip-3.0.0.4/System/Hclip.hs
+--- Hclip-3.0.0.4/System/Hclip.hs.orig
++++ Hclip-3.0.0.4/System/Hclip.hs
+@@ -61,7 +61,7 @@ data Command a where
+ 
+ 
+ -- | Supported Platforms
+-data Platform = Linux
++data Platform = Unix
+               | Darwin
+               | Windows
+ 
+@@ -108,7 +108,8 @@ clearClipboard = setClipboard ""
+ -- | Dispatch on the type of the Operating System.
+ dispatch cmd = execute (resolveOS os) cmd
+     where
+-        resolveOS "linux"   = Linux
++        resolveOS "linux"   = Unix
++        resolveOS "openbsd"   = Unix
+         resolveOS "darwin"  = Darwin
+ #if defined(mingw32_HOST_OS) || defined(__MINGW32__)
+         resolveOS "mingw32" = Windows
+@@ -119,8 +120,8 @@ dispatch cmd = execute (resolveOS os) cmd
+ -- | Platform-specific execution.
+ execute :: Platform -> Command a -> a
+ 
+-execute Linux cmd@GetClipboard     = resolveLinuxApp cmd >>= flip withExternalApp readOutHandle
+-execute Linux cmd@(SetClipboard s) = resolveLinuxApp cmd >>= flip withExternalApp (writeInHandle s)
++execute Unix cmd@GetClipboard     = resolveUnixApp cmd >>= flip withExternalApp readOutHandle
++execute Unix cmd@(SetClipboard s) = resolveUnixApp cmd >>= flip withExternalApp (writeInHandle s)
+ 
+ execute Darwin GetClipboard     = withExternalApp "pbpaste" readOutHandle
+ execute Darwin (SetClipboard s) = withExternalApp "pbcopy" $ writeInHandle s
+@@ -150,9 +151,9 @@ execute Windows (SetClipboard s) =
+ #endif
+ 
+ 
+--- | Determine the correct Linux command.
+-resolveLinuxApp :: Command a -> IO String
+-resolveLinuxApp cmd = decode cmd <$> chooseFirstApp ["xsel", "xclip"] 
++-- | Determine the correct Unix command.
++resolveUnixApp :: Command a -> IO String
++resolveUnixApp cmd = decode cmd <$> chooseFirstApp ["xsel", "xclip"] 
+     where
+         decode :: Command a -> String -> String
+         decode GetClipboard     "xsel"  = "xsel -b -o"
