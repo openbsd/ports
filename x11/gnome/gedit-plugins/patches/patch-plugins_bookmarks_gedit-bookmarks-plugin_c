@@ -1,0 +1,29 @@
+From 4e5744ccbec430b82f8b16c469d8b1bd5c7edf78 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?S=C3=A9bastien=20Wilmet?= <swilmet@informatique-libre.be>
+Date: Tue, 8 Aug 2023 16:00:00 +0200
+Subject: [PATCH] bookmarks: adapt to latest GtkSourceStyle API
+
+Index: plugins/bookmarks/gedit-bookmarks-plugin.c
+--- plugins/bookmarks/gedit-bookmarks-plugin.c.orig
++++ plugins/bookmarks/gedit-bookmarks-plugin.c
+@@ -301,17 +301,10 @@ update_background_color (GtkSourceMarkAttributes *attr
+ 		style = gtk_source_style_scheme_get_style (style_scheme, "search-match");
+ 	}
+ 
+-	if (style != NULL)
++	if (style != NULL && style->use_background_color)
+ 	{
+-		GtkSourceStyleData *style_data = gtk_source_style_get_data (style);
+-
+-		if (style_data->use_background_color)
+-		{
+-			gtk_source_mark_attributes_set_background (attrs, &style_data->background_color);
+-			done = TRUE;
+-		}
+-
+-		g_free (style_data);
++		gtk_source_mark_attributes_set_background (attrs, &style->background_color);
++		done = TRUE;
+ 	}
+ 
+ 	if (!done)

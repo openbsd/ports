@@ -1,9 +1,8 @@
-BROKEN=			fails to build with new libgedit-gtksourceview
-
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		46.0
+REVISION=		0
 
 CATEGORIES=		editors
 
