@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.440 2024/03/03 08:08:04 semarie Exp $
+$OpenBSD: user.list,v 1.441 2024/03/29 01:06:54 danj Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -15,8 +15,8 @@ id  user		group		port
 504 _mailman		_mailman	mail/mailman
 505 _stayrtr		_stayrtr	net/stayrtr
 506 _spamdaemon		_spamdaemon	mail/p5-Mail-SpamAssassin
-507 _postfix		_postfix	mail/postfix/{snapshot,stable}
-508			_postdrop	mail/postfix/{snapshot,stable}
+507 _postfix		_postfix	mail/postfix/{stable,stable35}
+508			_postdrop	mail/postfix/{stable,stable35}
 509 _bitlbee		_bitlbee	net/bitlbee
 510 _pdnsd		_pdnsd		net/pdnsd
 511 _tacacs		_tacacs		net/tacacs+
