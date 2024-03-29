@@ -3,15 +3,15 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			8.3.1
+V=			8.4.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  18.7 # 0.60831.0
-SHARED_LIBS += harfbuzz-subset           2.4 # 0.60831.0
-SHARED_LIBS += harfbuzz-cairo            0.1 # 0.60831.0
-SHARED_LIBS += harfbuzz-icu              2.1 # 0.60831.0
-SHARED_LIBS += harfbuzz-gobject          1.1 # 0.60831.0
+SHARED_LIBS += harfbuzz                  18.8 # 0.60831.0
+SHARED_LIBS += harfbuzz-subset           2.5 # 0.60831.0
+SHARED_LIBS += harfbuzz-cairo            0.2 # 0.60831.0
+SHARED_LIBS += harfbuzz-icu              2.2 # 0.60831.0
+SHARED_LIBS += harfbuzz-gobject          1.2 # 0.60831.0
 
 CATEGORIES=		devel graphics textproc
 
