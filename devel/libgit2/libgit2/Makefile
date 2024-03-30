@@ -1,8 +1,9 @@
-COMMENT=		the Git library, take 2
+COMMENT=		Git linkable library
 
 GH_ACCOUNT=		libgit2
 GH_PROJECT=		libgit2
 GH_TAGNAME=		v1.7.2
+REVISION=		0
 
 SHARED_LIBS +=  git2                      14.2 # 0.28
 
