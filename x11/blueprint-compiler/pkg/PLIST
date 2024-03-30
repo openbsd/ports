@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}compl
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}completions_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}decompiler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}formatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}gir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}interactive_port.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/${MODPY_PYCACHE}lsp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,6 +25,7 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/completions.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/completions_utils.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/decompiler.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/errors.py
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/formatter.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/gir.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/interactive_port.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/
@@ -31,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}adw_breakpoint.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}adw_message_dialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}adw_response_dialog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}attributes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}binding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
@@ -54,11 +56,12 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}gtkbuilder_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}imports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}response_id.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}translation_domain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/${MODPY_PYCACHE}values.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/adw_breakpoint.py
-lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/adw_message_dialog.py
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/adw_response_dialog.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/attributes.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/binding.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/common.py
@@ -81,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/gtkbuilder_c
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/gtkbuilder_template.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/imports.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/response_id.py
+lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/translation_domain.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/types.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/ui.py
 lib/python${MODPY_VERSION}/site-packages/blueprintcompiler/language/values.py

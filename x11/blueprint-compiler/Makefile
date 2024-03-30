@@ -1,5 +1,5 @@
 COMMENT =		markup language for GTK user interfaces
-V =			0.10.0
+V =			0.12.0
 DIST_TUPLE =		gnome	jwestman	blueprint-compiler	v${V}	.
 WRKDIST =		${WRKDIR}/blueprint-compiler-v${V}
 CATEGORIES =		x11 lang
