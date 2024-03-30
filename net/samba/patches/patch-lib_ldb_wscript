@@ -5,7 +5,7 @@
 Index: lib/ldb/wscript
 --- lib/ldb/wscript.orig
 +++ lib/ldb/wscript
-@@ -69,6 +69,7 @@ def configure(conf):
+@@ -68,6 +68,7 @@ def configure(conf):
      conf.CONFIG_PATH('LDB_MODULESDIR', conf.SUBST_ENV_VAR('MODULESDIR') + '/ldb')
  
      conf.env.standalone_ldb = conf.IN_LAUNCH_DIR()
@@ -13,7 +13,7 @@ Index: lib/ldb/wscript
  
      if not conf.env.standalone_ldb:
          max_ldb_version = [int(x) for x in VERSION.split(".")]
-@@ -152,8 +153,7 @@ def configure(conf):
+@@ -151,8 +152,7 @@ def configure(conf):
  
          # we don't want any libraries or modules to rely on runtime
          # resolution of symbols

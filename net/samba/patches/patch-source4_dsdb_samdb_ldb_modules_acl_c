@@ -3,7 +3,7 @@ Avoid printf("%s", NULL);
 Index: source4/dsdb/samdb/ldb_modules/acl.c
 --- source4/dsdb/samdb/ldb_modules/acl.c.orig
 +++ source4/dsdb/samdb/ldb_modules/acl.c
-@@ -597,7 +597,7 @@ fail:
+@@ -604,7 +604,7 @@ fail:
  		      (int)samAccountName->length, samAccountName->data,
  		      dnsHostName != NULL ? (int)dnsHostName->length : 0,
  		      dnsHostName != NULL ? (const char *)dnsHostName->data : "",
