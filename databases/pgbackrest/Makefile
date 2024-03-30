@@ -1,6 +1,6 @@
 COMMENT =		PostgreSQL backup & restore tool
 
-V =			2.50
+V =			2.51
 DISTNAME =		pgbackrest-${V}
 
 CATEGORIES = 		databases
@@ -14,13 +14,14 @@ SITES =		https://github.com/pgbackrest/pgbackrest/archive/release/
 DISTFILES =		pgbackrest-{}${V}.tar.gz
 
 WRKDIST =		${WRKDIR}/pgbackrest-release-${V}
-WRKSRC =		${WRKDIST}/src
 
 WANTLIB += 		bz2 c crypto lz4 pq ssh2 ssl xml2 z zstd
 
 BUILD_DEPENDS =		devel/libyaml
 
 RUN_DEPENDS =		databases/postgresql,-server
+
+MODULES =		devel/meson
 
 LIB_DEPENDS = 		archivers/bzip2 \
 		  	archivers/lz4 \
@@ -29,11 +30,12 @@ LIB_DEPENDS = 		archivers/bzip2 \
 			security/libssh2 \
 			textproc/libxml
 
-USE_GMAKE =		Yes
+CONFIGURE_STYLE =  	meson
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
+MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_STYLE =  	gnu
-
-ALL_TARGET =
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pgbackrest
