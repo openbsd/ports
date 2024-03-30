@@ -1,8 +1,7 @@
 COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
-DISTNAME=	gimp-${V}.16
-REVISION=	0
+DISTNAME=	gimp-${V}.18
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -113,6 +112,12 @@ CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dheadless-tests=disabled \
 		-Dcheck-update=no \
 		-Denable-console-bin=true
+
+# needs OpenMP
+CONFIGURE_ARGS +=	-Dopenmp=disabled
+
+# needs libiff
+CONFIGURE_ARGS +=	-Dilbm=disabled
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 

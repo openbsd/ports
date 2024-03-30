@@ -13,7 +13,7 @@ Index: app/core/gimp-utils.c
  #include <errno.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -114,7 +115,12 @@ gimp_get_physical_memory_size (void)
+@@ -112,7 +113,12 @@ gimp_get_physical_memory_size (void)
  {
  #ifdef G_OS_UNIX
  #if defined(HAVE_UNISTD_H) && defined(_SC_PHYS_PAGES) && defined (_SC_PAGE_SIZE)
