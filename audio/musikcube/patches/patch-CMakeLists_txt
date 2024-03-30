@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -122,12 +122,16 @@ add_dependencies(musikcubed musikcore)
+@@ -127,12 +127,16 @@ add_dependencies(musikcubed musikcore)
  # tag readers
  add_plugin("src/plugins/taglib_plugin" "taglibreader")
  # outputs
