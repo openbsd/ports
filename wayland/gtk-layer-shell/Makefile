@@ -1,6 +1,6 @@
 COMMENT =	desktop components for Wayland using the Layer Shell proto
 
-GH_TAGNAME =	v0.8.1
+GH_TAGNAME =	v0.8.2
 GH_ACCOUNT =	wmww
 GH_PROJECT =	gtk-layer-shell
 
