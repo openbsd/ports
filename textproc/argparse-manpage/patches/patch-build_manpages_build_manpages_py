@@ -1,7 +1,7 @@
 Index: build_manpages/build_manpages.py
 --- build_manpages/build_manpages.py.orig
 +++ build_manpages/build_manpages.py
-@@ -173,7 +173,7 @@ def get_install_cmd(command=install):
+@@ -178,7 +178,7 @@ def get_install_cmd(command=install):
  
              data = parse_manpages_spec(spec)
  

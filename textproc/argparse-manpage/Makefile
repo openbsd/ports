@@ -1,6 +1,6 @@
 COMMENT=		build manual page from python's ArgumentParser object
 
-MODPY_EGG_VERSION=	4.3
+MODPY_EGG_VERSION=	4.5
 DISTNAME=		argparse-manpage-${MODPY_EGG_VERSION}
 
 CATEGORIES=		textproc
