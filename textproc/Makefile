@@ -118,6 +118,7 @@
      SUBDIR += libexttextcat
      SUBDIR += libgrapheme
      SUBDIR += libical
+     SUBDIR += libinih
      SUBDIR += liblrdf
      SUBDIR += libmarisa
      SUBDIR += libnxml
