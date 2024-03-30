@@ -9772,6 +9772,8 @@ nextcloud/apps/admin_audit/l10n/it.js
 nextcloud/apps/admin_audit/l10n/it.json
 nextcloud/apps/admin_audit/l10n/ja.js
 nextcloud/apps/admin_audit/l10n/ja.json
+nextcloud/apps/admin_audit/l10n/ka.js
+nextcloud/apps/admin_audit/l10n/ka.json
 nextcloud/apps/admin_audit/l10n/ko.js
 nextcloud/apps/admin_audit/l10n/ko.json
 nextcloud/apps/admin_audit/l10n/lt_LT.js
@@ -10199,6 +10201,8 @@ nextcloud/apps/circles/l10n/ka_GE.js
 nextcloud/apps/circles/l10n/ka_GE.json
 nextcloud/apps/circles/l10n/kab.js
 nextcloud/apps/circles/l10n/kab.json
+nextcloud/apps/circles/l10n/kn.js
+nextcloud/apps/circles/l10n/kn.json
 nextcloud/apps/circles/l10n/ko.js
 nextcloud/apps/circles/l10n/ko.json
 nextcloud/apps/circles/l10n/lb.js
@@ -10231,6 +10235,8 @@ nextcloud/apps/circles/l10n/ru.js
 nextcloud/apps/circles/l10n/ru.json
 nextcloud/apps/circles/l10n/sc.js
 nextcloud/apps/circles/l10n/sc.json
+nextcloud/apps/circles/l10n/si.js
+nextcloud/apps/circles/l10n/si.json
 nextcloud/apps/circles/l10n/sk.js
 nextcloud/apps/circles/l10n/sk.json
 nextcloud/apps/circles/l10n/sl.js
@@ -10263,8 +10269,7 @@ nextcloud/apps/circles/lib/Activity/Filter.php
 nextcloud/apps/circles/lib/Activity/Provider.php
 nextcloud/apps/circles/lib/Activity/ProviderParser.php
 nextcloud/apps/circles/lib/Activity/ProviderSubjectCircle.php
-nextcloud/apps/circles/lib/Activity/ProviderSubjectGroup.php
-nextcloud/apps/circles/lib/Activity/ProviderSubjectLink.php
+nextcloud/apps/circles/lib/Activity/ProviderSubjectCircleMember.php
 nextcloud/apps/circles/lib/Activity/ProviderSubjectMember.php
 nextcloud/apps/circles/lib/Activity/SettingAsMember.php
 nextcloud/apps/circles/lib/Activity/SettingAsModerator.php
@@ -10642,6 +10647,7 @@ nextcloud/apps/circles/lib/Search/LocalUsers.php
 nextcloud/apps/circles/lib/Search/UnifiedSearchProvider.php
 nextcloud/apps/circles/lib/Search/UnifiedSearchResult.php
 nextcloud/apps/circles/lib/Service/
+nextcloud/apps/circles/lib/Service/ActivityService.php
 nextcloud/apps/circles/lib/Service/CircleService.php
 nextcloud/apps/circles/lib/Service/CirclesService.php
 nextcloud/apps/circles/lib/Service/ConfigService.php
@@ -10795,6 +10801,8 @@ nextcloud/apps/cloud_federation_api/l10n/es_CL.js
 nextcloud/apps/cloud_federation_api/l10n/es_CL.json
 nextcloud/apps/cloud_federation_api/l10n/es_EC.js
 nextcloud/apps/cloud_federation_api/l10n/es_EC.json
+nextcloud/apps/cloud_federation_api/l10n/es_MX.js
+nextcloud/apps/cloud_federation_api/l10n/es_MX.json
 nextcloud/apps/cloud_federation_api/l10n/et_EE.js
 nextcloud/apps/cloud_federation_api/l10n/et_EE.json
 nextcloud/apps/cloud_federation_api/l10n/eu.js
@@ -11134,6 +11142,8 @@ nextcloud/apps/contactsinteraction/l10n/es.js
 nextcloud/apps/contactsinteraction/l10n/es.json
 nextcloud/apps/contactsinteraction/l10n/es_EC.js
 nextcloud/apps/contactsinteraction/l10n/es_EC.json
+nextcloud/apps/contactsinteraction/l10n/es_MX.js
+nextcloud/apps/contactsinteraction/l10n/es_MX.json
 nextcloud/apps/contactsinteraction/l10n/eu.js
 nextcloud/apps/contactsinteraction/l10n/eu.json
 nextcloud/apps/contactsinteraction/l10n/fa.js
@@ -11383,6 +11393,8 @@ nextcloud/apps/dav/img/schedule.svg
 nextcloud/apps/dav/l10n/
 nextcloud/apps/dav/l10n/ar.js
 nextcloud/apps/dav/l10n/ar.json
+nextcloud/apps/dav/l10n/ast.js
+nextcloud/apps/dav/l10n/ast.json
 nextcloud/apps/dav/l10n/bg.js
 nextcloud/apps/dav/l10n/bg.json
 nextcloud/apps/dav/l10n/ca.js
@@ -15484,6 +15496,8 @@ nextcloud/apps/logreader/l10n/kn.js
 nextcloud/apps/logreader/l10n/kn.json
 nextcloud/apps/logreader/l10n/ko.js
 nextcloud/apps/logreader/l10n/ko.json
+nextcloud/apps/logreader/l10n/lb.js
+nextcloud/apps/logreader/l10n/lb.json
 nextcloud/apps/logreader/l10n/lo.js
 nextcloud/apps/logreader/l10n/lo.json
 nextcloud/apps/logreader/l10n/lt_LT.js
@@ -21970,6 +21984,7 @@ nextcloud/apps/text/package-lock.json
 nextcloud/apps/text/package.json
 nextcloud/apps/text/templates/
 nextcloud/apps/text/templates/main.php
+nextcloud/apps/text/tsconfig.json
 nextcloud/apps/text/webpack.config.js
 nextcloud/apps/theming/
 nextcloud/apps/theming/appinfo/
@@ -23472,12 +23487,14 @@ nextcloud/apps/viewer/composer/composer/autoload_namespaces.php
 nextcloud/apps/viewer/composer/composer/autoload_psr4.php
 nextcloud/apps/viewer/composer/composer/autoload_real.php
 nextcloud/apps/viewer/composer/composer/autoload_static.php
+nextcloud/apps/viewer/css/
+nextcloud/apps/viewer/css/viewer-main.css
 nextcloud/apps/viewer/cypress.config.ts
 nextcloud/apps/viewer/img/
 nextcloud/apps/viewer/img/app.svg
 nextcloud/apps/viewer/img/blank.mp4
 nextcloud/apps/viewer/js/
-nextcloud/apps/viewer/js/viewer-_0cc0-_aeb7.js
+nextcloud/apps/viewer/js/viewer-_4f7e-_0cc0-_aeb7.js
 nextcloud/apps/viewer/js/viewer-main.js
 nextcloud/apps/viewer/js/viewer-main.js.LICENSE.txt
 nextcloud/apps/viewer/js/viewer-main.js.map
@@ -23486,9 +23503,9 @@ nextcloud/apps/viewer/js/viewer-node_modules_nextcloud_dialogs_dist_legacy_mjs.j
 nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_DialogBase-aNq6aLpb_mjs.js
 nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_DialogBase-aNq6aLpb_mjs.js.LICENSE.txt
 nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_DialogBase-aNq6aLpb_mjs.js.map
-nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-nJePvM3F_mjs.js
-nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-nJePvM3F_mjs.js.LICENSE.txt
-nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-nJePvM3F_mjs.js.map
+nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-8ibBgPg__mjs.js
+nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-8ibBgPg__mjs.js.LICENSE.txt
+nextcloud/apps/viewer/js/viewer-vendors-node_modules_nextcloud_dialogs_dist_chunks_FilePicker-8ibBgPg__mjs.js.map
 nextcloud/apps/viewer/l10n/
 nextcloud/apps/viewer/l10n/af.js
 nextcloud/apps/viewer/l10n/af.json
@@ -24898,6 +24915,7 @@ nextcloud/core/doc/user/_images/chat-with-one-user.png
 nextcloud/core/doc/user/_images/circle.png
 nextcloud/core/doc/user/_images/clear-filter.png
 nextcloud/core/doc/user/_images/command-help.png
+nextcloud/core/doc/user/_images/configure-message-reminder.png
 nextcloud/core/doc/user/_images/contact_bottombar.png
 nextcloud/core/doc/user/_images/contact_manageaddressbook.png
 nextcloud/core/doc/user/_images/contact_new.png
@@ -24991,6 +25009,7 @@ nextcloud/core/doc/user/_images/projects4.png
 nextcloud/core/doc/user/_images/quota1.png
 nextcloud/core/doc/user/_images/reply.png
 nextcloud/core/doc/user/_images/scheduled-msg.png
+nextcloud/core/doc/user/_images/set-message-reminder.png
 nextcloud/core/doc/user/_images/settings_devices.png
 nextcloud/core/doc/user/_images/settings_devices_add.png
 nextcloud/core/doc/user/_images/settings_sessions.png
@@ -25425,6 +25444,8 @@ nextcloud/core/js/update.js
 nextcloud/core/l10n/
 nextcloud/core/l10n/ar.js
 nextcloud/core/l10n/ar.json
+nextcloud/core/l10n/ast.js
+nextcloud/core/l10n/ast.json
 nextcloud/core/l10n/bg.js
 nextcloud/core/l10n/bg.json
 nextcloud/core/l10n/br.js
