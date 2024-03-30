@@ -1,9 +1,8 @@
 COMMENT =	data recovery software
 
-VERSION =	7.1
+VERSION =	7.2
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
-REVISION =	0
 
 HOMEPAGE =	https://www.cgsecurity.org/
 SITES =		${HOMEPAGE}
@@ -23,7 +22,7 @@ SUBST_VARS +=		VERSION
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -luuid"
 CONFIGURE_ARGS =	--disable-qt
 
 LIB_DEPENDS =		converters/libiconv \
