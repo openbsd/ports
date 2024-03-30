@@ -18,6 +18,6 @@ FLAVOR=		python3
 
 RUN_DEPENDS=	devel/py-altgraph${MODPY_FLAVOR}
 TEST_DEPENDS=	${RUN_DEPENDS} \
-		lang/python/${MODPY_VERSION},-idle
+		${MODPY_RUN_DEPENDS},-idle
 
 .include <bsd.port.mk>

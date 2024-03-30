@@ -23,7 +23,7 @@ MODPY_PYBUILD =		setuptools
 FLAVORS =               python3
 FLAVOR =                python3
 
-TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
+TEST_DEPENDS =		${MODPY_RUN_DEPENDS},-tests
 
 do-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python

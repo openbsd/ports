@@ -96,7 +96,7 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk3:N-python}
 ### common
 MODULES+=		lang/python
 BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
-			lang/python/${MODPY_VERSION},-gdbm \
+			${MODPY_RUN_DEPENDS},-gdbm \
 			x11/dbus-python${MODPY_FLAVOR}
 
 ### -gtk3
@@ -136,7 +136,7 @@ WANTLIB-gui += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 LIB_DEPENDS-python=	#empty
 RUN_DEPENDS-python=	${BUILD_PKGPATH},-libs \
 			${MODPY_RUN_DEPENDS} \
-			lang/python/${MODPY_VERSION},-gdbm
+			${MODPY_RUN_DEPENDS},-gdbm
 WANTLIB-python += 	#empty
 
 .else

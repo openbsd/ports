@@ -15,7 +15,7 @@ HOMEPAGE =		https://www.pyzor.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-RUN_DEPENDS =		lang/python/${MODPY_VERSION},-gdbm
+RUN_DEPENDS =		${MODPY_RUN_DEPENDS},-gdbm
 # actual releases should be available on pypi, could switch back if
 # there's a new release, but no tests
 #MODPY_PI =		Yes

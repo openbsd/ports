@@ -23,7 +23,7 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	--ignore tests/test_main.py \
 			--ignore exercises.py
 # ModuleNotFoundError: No module named 'test' (for "test.support")
-TEST_DEPENDS =		lang/python/${MODPY_VERSION},-tests
+TEST_DEPENDS =		${MODPY_RUN_DEPENDS},-tests
 
 FLAVORS =		python3
 FLAVOR =		python3

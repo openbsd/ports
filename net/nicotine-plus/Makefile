@@ -19,7 +19,7 @@ MODPY_SETUPTOOLS = 	Yes
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			lang/python/${MODPY_VERSION},-gdbm \
+			${MODPY_RUN_DEPENDS},-gdbm \
 			x11/gtk+4,-guic
 
 .include <bsd.port.mk>
