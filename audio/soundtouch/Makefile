@@ -1,6 +1,6 @@
 COMMENT=	tempo/pitch audio processing library
 
-DISTNAME=	soundtouch-2.3.2
+DISTNAME=	soundtouch-2.3.3
 
 SHARED_LIBS +=  SoundTouch           4.0      # 1.0
 
