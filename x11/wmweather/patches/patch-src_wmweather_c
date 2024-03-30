@@ -3,7 +3,7 @@
 Index: src/wmweather.c
 --- src/wmweather.c.orig
 +++ src/wmweather.c
-@@ -689,7 +689,7 @@ static void update(int force_read)
+@@ -696,7 +696,7 @@ static void update(int force_read)
  	FILE   *F;
  	char   buffer[MAX_STRING], *i;
  	int    line, n, q, sgn;
