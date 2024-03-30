@@ -3,11 +3,11 @@ COMMENT=		spellchecking library for Python
 MODPY_EGG_VERSION=	3.2.2
 DISTNAME=		pyenchant-${MODPY_EGG_VERSION}
 PKGNAME=		py-enchant-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://packages.python.org/pyenchant/
+HOMEPAGE=		https://pyenchant.github.io/pyenchant/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
