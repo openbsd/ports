@@ -1,9 +1,8 @@
 COMMENT =		non-backtracking regular expression engine
 GH_ACCOUNT =		google
 GH_PROJECT =		re2
-GH_TAGNAME =		2023-11-01
+GH_TAGNAME =		2024-03-01
 PKGNAME =		${GH_PROJECT}-${GH_TAGNAME:S/-//g}
-REVISION =		0
 
 SHARED_LIBS =		re2	1.0	# 10.0.0
 
