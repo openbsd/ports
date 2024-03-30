@@ -2,8 +2,7 @@ COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
-GH_TAGNAME =		2.11
-REVISION =		0
+GH_TAGNAME =		2.12.0
 
 CATEGORIES =		shells sysutils
 
