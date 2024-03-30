@@ -1,7 +1,7 @@
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-${PKGNAME}
-PKGNAME=	libvirt-0.8.0
+PKGNAME=	libvirt-0.8.2
 
 CATEGORIES=	sysutils
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://libvirt.org/ruby/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += virt virt-lxc virt-qemu
+WANTLIB += c++abi virt virt-lxc virt-qemu
 
 MODULES=	lang/ruby
 
