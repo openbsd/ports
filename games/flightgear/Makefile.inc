@@ -1,6 +1,6 @@
 ONLY_FOR_ARCHS =	amd64 i386
 
-V =			2020.3.17
+V =			2020.3.19
 
 CATEGORIES =		games
 

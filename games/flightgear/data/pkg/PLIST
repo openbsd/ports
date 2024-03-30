@@ -8753,6 +8753,7 @@ share/flightgear/Effects/surface-lights.eff
 share/flightgear/Effects/terrain-default.eff
 share/flightgear/Effects/terrain-overlay.eff
 share/flightgear/Effects/test.eff
+share/flightgear/Effects/text-default.eff
 share/flightgear/Effects/thrust-flame.eff
 share/flightgear/Effects/transition-base-dirt.eff
 share/flightgear/Effects/transition-base-grass-inverse.eff
@@ -20055,6 +20056,8 @@ share/flightgear/Shaders/terrain-overlay-ALS.frag
 share/flightgear/Shaders/terrain-overlay-ALS.geom
 share/flightgear/Shaders/test.frag
 share/flightgear/Shaders/test.vert
+share/flightgear/Shaders/text.frag
+share/flightgear/Shaders/text.vert
 share/flightgear/Shaders/thrustflame-ALS-detailed.frag
 share/flightgear/Shaders/thrustflame-ALS.frag
 share/flightgear/Shaders/thrustflame-ALS.vert
