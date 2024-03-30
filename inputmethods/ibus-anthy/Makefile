@@ -2,9 +2,9 @@ COMMENT =		japanese input engine for ibus
 
 GH_ACCOUNT =		ibus
 GH_PROJECT =		ibus-anthy
-GH_TAGNAME =		1.5.15
+GH_TAGNAME =		1.5.16
 
-SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.515
+SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.516
 
 CATEGORIES =		inputmethods japanese
 
