@@ -3,7 +3,7 @@
 Index: buildtools/wafsamba/wafsamba.py
 --- buildtools/wafsamba/wafsamba.py.orig
 +++ buildtools/wafsamba/wafsamba.py
-@@ -281,6 +281,16 @@ def SAMBA_LIBRARY(bld, libname, source,
+@@ -292,6 +292,16 @@ def SAMBA_LIBRARY(bld, libname, source,
      realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
      link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
  
