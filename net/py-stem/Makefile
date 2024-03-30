@@ -1,9 +1,8 @@
 COMMENT =		Tor controller library
 
-MODPY_EGG_VERSION =	1.8.0
+MODPY_EGG_VERSION =	1.8.2
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		net
 
