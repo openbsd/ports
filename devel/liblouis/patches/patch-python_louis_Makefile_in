@@ -1,7 +1,7 @@
 Index: python/louis/Makefile.in
 --- python/louis/Makefile.in.orig
 +++ python/louis/Makefile.in
-@@ -1587,7 +1587,7 @@ uninstall-am:
+@@ -1584,7 +1584,7 @@ uninstall-am:
  
  
  all:

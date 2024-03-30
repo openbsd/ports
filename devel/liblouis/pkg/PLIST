@@ -58,6 +58,7 @@ share/liblouis/tables/awa.tbl
 share/liblouis/tables/ba.utb
 share/liblouis/tables/be-in-g1.utb
 share/liblouis/tables/bel-comp.utb
+share/liblouis/tables/bel-detailed.utb
 share/liblouis/tables/bel.utb
 share/liblouis/tables/bengali.cti
 share/liblouis/tables/bg.ctb
@@ -114,7 +115,6 @@ share/liblouis/tables/da-dk-g26l_1993.ctb
 share/liblouis/tables/da-dk-g28.ctb
 share/liblouis/tables/da-dk-g28_1993.ctb
 share/liblouis/tables/da-dk-g28l_1993.ctb
-share/liblouis/tables/da-dk-g2_1993.dic
 share/liblouis/tables/da-dk-octobraille.dis
 share/liblouis/tables/da-dk-octobraille_1993.dis
 share/liblouis/tables/de-accents-detailed.cti
@@ -189,6 +189,7 @@ share/liblouis/tables/fa-ir-comp8.ctb
 share/liblouis/tables/fa-ir-g1.utb
 share/liblouis/tables/fi-fi-8dot.ctb
 share/liblouis/tables/fi.utb
+share/liblouis/tables/fil-g2.ctb
 share/liblouis/tables/fr-bfu-comp6.utb
 share/liblouis/tables/fr-bfu-comp68.cti
 share/liblouis/tables/fr-bfu-comp8.utb
@@ -205,6 +206,7 @@ share/liblouis/tables/grc-international-common.uti
 share/liblouis/tables/grc-international-composed.uti
 share/liblouis/tables/grc-international-decomposed.uti
 share/liblouis/tables/grc-international-en.utb
+share/liblouis/tables/grc-international-es.utb
 share/liblouis/tables/gu-in-g1.utb
 share/liblouis/tables/gu.tbl
 share/liblouis/tables/gujarati.cti
@@ -288,6 +290,7 @@ share/liblouis/tables/latinUppercaseComp6.uti
 share/liblouis/tables/lg-ug-g1.utb
 share/liblouis/tables/litdigits6Dots.uti
 share/liblouis/tables/litdigits6DotsPlusDot6.uti
+share/liblouis/tables/lo-g1.utb
 share/liblouis/tables/loweredDigits6Dots.uti
 share/liblouis/tables/loweredDigits8Dots.uti
 share/liblouis/tables/lt-6dot.tbl
@@ -421,6 +424,7 @@ share/liblouis/tables/tsn-za-g1.ctb
 share/liblouis/tables/tsn-za-g2.ctb
 share/liblouis/tables/tt.utb
 share/liblouis/tables/uk-comp.utb
+share/liblouis/tables/uk-detailed.utb
 share/liblouis/tables/uk.utb
 share/liblouis/tables/ukchardefs.cti
 share/liblouis/tables/ukmaths_single_cell_defs.cti
