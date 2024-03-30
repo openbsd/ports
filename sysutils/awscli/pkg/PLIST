@@ -5574,7 +5574,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/_concepts.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/cp.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/ls.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mb.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mv/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mv.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/mv/_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/presign.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/rb.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/s3/rm.rst
