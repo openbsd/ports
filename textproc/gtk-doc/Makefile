@@ -3,11 +3,12 @@ PKG_ARCH=		*
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.33.2
+GNOME_VERSION=		1.34.0
 GNOME_PROJECT=		gtk-doc
-REVISION=		3
 
 CATEGORIES=		textproc devel
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3 - GFDLv1.1
 PERMIT_PACKAGE=		Yes

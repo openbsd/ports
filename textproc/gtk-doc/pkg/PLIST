@@ -79,6 +79,10 @@ share/help/es/
 share/help/es/gtk-doc-manual/
 share/help/es/gtk-doc-manual/fdl-appendix.xml
 share/help/es/gtk-doc-manual/index.docbook
+share/help/eu/
+share/help/eu/gtk-doc-manual/
+share/help/eu/gtk-doc-manual/fdl-appendix.xml
+share/help/eu/gtk-doc-manual/index.docbook
 share/help/fr/
 share/help/fr/gtk-doc-manual/
 share/help/fr/gtk-doc-manual/fdl-appendix.xml
@@ -91,6 +95,10 @@ share/help/gu/
 share/help/gu/gtk-doc-manual/
 share/help/gu/gtk-doc-manual/fdl-appendix.xml
 share/help/gu/gtk-doc-manual/index.docbook
+share/help/hu/
+share/help/hu/gtk-doc-manual/
+share/help/hu/gtk-doc-manual/fdl-appendix.xml
+share/help/hu/gtk-doc-manual/index.docbook
 share/help/pt_BR/
 share/help/pt_BR/gtk-doc-manual/
 share/help/pt_BR/gtk-doc-manual/fdl-appendix.xml
