@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -428,30 +428,6 @@ gthread-2.0 \
+@@ -442,30 +442,6 @@ gthread-2.0 \
  libxml-2.0"
  
  if test "x$enable_spell_check" != "xno"; then

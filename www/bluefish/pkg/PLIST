@@ -13,6 +13,7 @@ share/bluefish/
 ${MODPY_COMMENT}share/bluefish/${MODPY_PYCACHE}/
 share/bluefish/${MODPY_PYCACHE}cssmin.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/${MODPY_PYCACHE}jsmin.${MODPY_PYC_MAGIC_TAG}pyc
+share/bluefish/${MODPY_PYCACHE}json_prettyprint.${MODPY_PYC_MAGIC_TAG}pyc
 share/bluefish/bflang/
 share/bluefish/bflang/JQuery.bfinc
 share/bluefish/bflang/ada.bflang2
@@ -118,6 +119,7 @@ share/bluefish/jsbeautifier/unpackers/packer.py
 share/bluefish/jsbeautifier/unpackers/urlencode.py
 share/bluefish/jsbeautify
 share/bluefish/jsmin.py
+share/bluefish/json_prettyprint.py
 share/bluefish/lorem-ipsum-generator
 share/bluefish/plugins/
 share/bluefish/plugins/htmlbar/

@@ -1,6 +1,6 @@
 COMMENT=		HTML editor for experienced web designers
 
-DISTNAME=		bluefish-2.2.14
+DISTNAME=		bluefish-2.2.15
 
 CATEGORIES=		www editors
 
@@ -12,12 +12,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender aspell
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += dbus-1 enchant-2 epoxy execinfo expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += gucharmap_2_90 harfbuzz iconv intl jpeg lzma m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png ${MODPY_WANTLIB}
-WANTLIB += util xcb xcb-render xcb-shm xml2 z
+WANTLIB += dbus-1 enchant-2 epoll-shim epoxy execinfo expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-3 gucharmap_2_90 harfbuzz iconv intl jpeg lzma
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
+WANTLIB += png util wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb xcb-render xcb-shm xkbcommon xml2 z ${MODPY_WANTLIB}
 
 SITES=			https://www.bennewitz.com/bluefish/stable/source/
 
