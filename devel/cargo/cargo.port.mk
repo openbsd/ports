@@ -206,6 +206,9 @@ MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Replacing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ; \
 	cp -Rp ${LOCALBASE}/share/ring-${_cratever} ${MODCARGO_VENDOR_DIR}/ ;
+.    elif "${_cratename}" == "ring" && "${_cratever}" == "0.17.8" && ${MACHINE_ARCH:Mi386}
+# Requires SSE2 on i386
+MODCARGO_RUSTFLAGS += "-Ctarget-cpu=pentium4"
 .    endif
 .  endfor
 .endif
