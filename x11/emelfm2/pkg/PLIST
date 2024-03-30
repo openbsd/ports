@@ -1,27 +1,27 @@
 @bin bin/emelfm2
 lib/emelfm2/
 lib/emelfm2/plugins/
-lib/emelfm2/plugins/e2p_clipnames.so
-lib/emelfm2/plugins/e2p_clone.so
-lib/emelfm2/plugins/e2p_config.so
-lib/emelfm2/plugins/e2p_copy.so
-lib/emelfm2/plugins/e2p_crypt.so
-lib/emelfm2/plugins/e2p_dircmp.so
-lib/emelfm2/plugins/e2p_du.so
-lib/emelfm2/plugins/e2p_extsort.so
-lib/emelfm2/plugins/e2p_find.so
-lib/emelfm2/plugins/e2p_foreach.so
-lib/emelfm2/plugins/e2p_glob.so
-lib/emelfm2/plugins/e2p_move.so
-lib/emelfm2/plugins/e2p_pack.so
-lib/emelfm2/plugins/e2p_rename.so
-lib/emelfm2/plugins/e2p_selmatch.so
-lib/emelfm2/plugins/e2p_shred.so
-lib/emelfm2/plugins/e2p_tag.so
-lib/emelfm2/plugins/e2p_timeset.so
-lib/emelfm2/plugins/e2p_unpack.so
-lib/emelfm2/plugins/e2p_upgrade.so
-lib/emelfm2/plugins/e2p_view.so
+@so lib/emelfm2/plugins/e2p_clipnames.so
+@so lib/emelfm2/plugins/e2p_clone.so
+@so lib/emelfm2/plugins/e2p_config.so
+@so lib/emelfm2/plugins/e2p_copy.so
+@so lib/emelfm2/plugins/e2p_crypt.so
+@so lib/emelfm2/plugins/e2p_dircmp.so
+@so lib/emelfm2/plugins/e2p_du.so
+@so lib/emelfm2/plugins/e2p_extsort.so
+@so lib/emelfm2/plugins/e2p_find.so
+@so lib/emelfm2/plugins/e2p_foreach.so
+@so lib/emelfm2/plugins/e2p_glob.so
+@so lib/emelfm2/plugins/e2p_move.so
+@so lib/emelfm2/plugins/e2p_pack.so
+@so lib/emelfm2/plugins/e2p_rename.so
+@so lib/emelfm2/plugins/e2p_selmatch.so
+@so lib/emelfm2/plugins/e2p_shred.so
+@so lib/emelfm2/plugins/e2p_tag.so
+@so lib/emelfm2/plugins/e2p_timeset.so
+@so lib/emelfm2/plugins/e2p_unpack.so
+@so lib/emelfm2/plugins/e2p_upgrade.so
+@so lib/emelfm2/plugins/e2p_view.so
 @man man/man1/emelfm2.1
 share/applications/emelfm2.desktop
 share/doc/emelfm2/

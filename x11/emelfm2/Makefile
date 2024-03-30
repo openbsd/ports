@@ -1,7 +1,7 @@
 COMMENT =		GTK based file manager with two-pane design
 
 DISTNAME =		emelfm2-0.9.1
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		x11
 HOMEPAGE =		https://emelfm.sourceforge.net/
@@ -10,7 +10,7 @@ HOMEPAGE =		https://emelfm.sourceforge.net/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =  c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 iconv intl m pango-1.0 pangocairo-1.0 pthread
+WANTLIB += gtk-3 intl m pango-1.0 pangocairo-1.0 pthread
 
 SITES =		${HOMEPAGE}rel/
 EXTRACT_SUFX =	.tar.bz2
@@ -28,5 +28,7 @@ NO_TEST =	Yes
 
 # XXX twenty duplicate symbols
 COPTS =		-fcommon
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 .include <bsd.port.mk>
