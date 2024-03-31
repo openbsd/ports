@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.15.0
+V =			4.15.6
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -29,16 +29,17 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # minizip:		zlib
 # rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # tgcalls:		LGPL 3
+# xdg-desktop-portal:	LGPL 2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
-WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gobject-2.0
-WANTLIB += hunspell-1.7 jpeg lz4 m openal opus protobuf-lite qrcodegencpp
-WANTLIB += rnnoise sigc-3.0 swresample swscale tg_owt xcb xcb-keysyms
-WANTLIB += xcb-record xcb-screensaver xxhash z
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
+WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise swresample
+WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
+WANTLIB += xxhash z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -72,9 +73,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			devel/abseil-cpp \
 			devel/glib2>=2.78.0 \
-			devel/glibmm268 \
 			devel/libdispatch \
-			devel/libsigc++30 \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
@@ -122,6 +121,9 @@ NEEDED_BUNDLES +=	kcoreaddons
 
 # tdesktop 4.9.5 forced bundled GSL due to libstdc++ and CMake bugs
 NEEDED_BUNDLES +=	GSL
+
+# ported but CMake code hardcodes bundled file paths
+NEEDED_BUNDLES +=	xdg-desktop-portal
 
 post-extract:
 	# All bundles:
