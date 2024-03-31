@@ -104,6 +104,7 @@ share/gtksourceview-5/language-specs/dpatch.lang
 share/gtksourceview-5/language-specs/dtd.lang
 share/gtksourceview-5/language-specs/dtl.lang
 share/gtksourceview-5/language-specs/eiffel.lang
+share/gtksourceview-5/language-specs/elixir.lang
 share/gtksourceview-5/language-specs/erb-html.lang
 share/gtksourceview-5/language-specs/erb-js.lang
 share/gtksourceview-5/language-specs/erb.lang
@@ -236,6 +237,7 @@ share/gtksourceview-5/language-specs/vala.lang
 share/gtksourceview-5/language-specs/vbnet.lang
 share/gtksourceview-5/language-specs/verilog.lang
 share/gtksourceview-5/language-specs/vhdl.lang
+share/gtksourceview-5/language-specs/wren.lang
 share/gtksourceview-5/language-specs/xml.lang
 share/gtksourceview-5/language-specs/xslt.lang
 share/gtksourceview-5/language-specs/yacc.lang

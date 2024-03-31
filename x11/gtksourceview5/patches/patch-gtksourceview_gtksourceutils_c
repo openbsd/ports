@@ -1,0 +1,14 @@
+XXX push upstream; needed for strnlen(3)
+
+Index: gtksourceview/gtksourceutils.c
+--- gtksourceview/gtksourceutils.c.orig
++++ gtksourceview/gtksourceutils.c
+@@ -33,7 +33,7 @@
+ #define _GNU_SOURCE
+ 
+ #if defined(HAVE_POSIX_MEMALIGN) && !defined(_XOPEN_SOURCE)
+-# define _XOPEN_SOURCE 600
++# define _XOPEN_SOURCE 700
+ #endif
+ 
+ #if defined(HAVE_MEMALIGN) || defined(HAVE__ALIGNED_MALLOC)
