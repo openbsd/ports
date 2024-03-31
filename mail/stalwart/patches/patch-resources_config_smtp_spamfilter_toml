@@ -1,0 +1,134 @@
+Index: resources/config/smtp/spamfilter.toml
+--- resources/config/smtp/spamfilter.toml.orig
++++ resources/config/smtp/spamfilter.toml
+@@ -7,91 +7,91 @@ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/domains_free.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/domains_free.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/domains_free.list"]
+ 
+ [store."spam/disposable-domains"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/domains_disposable.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/domains_disposable.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/domains_disposable.list"]
+ 
+ [store."spam/redirectors"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/url_redirectors.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/url_redirectors.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/url_redirectors.list"]
+ 
+ [store."spam/domains-allow"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/allow_domains.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/allow_domains.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/allow_domains.list"]
+ 
+ [store."spam/dmarc-allow"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/allow_dmarc.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/allow_dmarc.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/allow_dmarc.list"]
+ 
+ [store."spam/spf-dkim-allow"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/allow_spf_dkim.list", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/allow_spf_dkim.list"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/allow_spf_dkim.list"]
+ 
+ [store."spam/mime-types"]
+ type = "memory"
+ format = "map"
+ comment = '#'
+ values = ["https://get.stalw.art/resources/config/spamfilter/maps/mime_types.map", 
+-          "file+fallback://%{BASE_PATH}%/etc/spamfilter/maps/mime_types.map"]
++          "file+fallback://${SYSCONFDIR}/stalwart/spamfilter/maps/mime_types.map"]
+ 
+ [store."spam/trap-address"]
+ type = "memory"
+ format = "glob"
+ comment = '#'
+-values = "file://%{BASE_PATH}%/etc/spamfilter/maps/spam_trap.list"
++values = "file://${SYSCONFDIR}/stalwart/spamfilter/maps/spam_trap.list"
+ 
+ [store."spam/scores"]
+ type = "memory"
+ format = "map"
+-values = "file://%{BASE_PATH}%/etc/spamfilter/maps/scores.map"
++values = "file://${SYSCONFDIR}/stalwart/spamfilter/maps/scores.map"
+ 
+ [sieve.trusted.scripts]
+-spam-filter = ["file://%{BASE_PATH}%/etc/spamfilter/scripts/config.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/prelude.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/from.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/recipient.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/subject.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/replyto.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/date.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/messageid.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/received.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/headers.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/bounce.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/html.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/mime.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/dmarc.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/ip.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/helo.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/replies_in.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/spamtrap.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/bayes_classify.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/url.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/rbl.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/pyzor.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/composites.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/scores.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/reputation.sieve",
+-               "file://%{BASE_PATH}%/etc/spamfilter/scripts/epilogue.sieve"]
++spam-filter = ["file://${SYSCONFDIR}/stalwart/spamfilter/scripts/config.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/prelude.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/from.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/recipient.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/subject.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/replyto.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/date.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/messageid.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/received.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/headers.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/bounce.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/html.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/mime.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/dmarc.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/ip.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/helo.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/replies_in.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/spamtrap.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/bayes_classify.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/url.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/rbl.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/pyzor.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/composites.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/scores.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/reputation.sieve",
++               "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/epilogue.sieve"]
+ 
+-track-replies = ["file://%{BASE_PATH}%/etc/spamfilter/scripts/config.sieve",
+-                 "file://%{BASE_PATH}%/etc/spamfilter/scripts/replies_out.sieve"]
++track-replies = ["file://${SYSCONFDIR}/stalwart/spamfilter/scripts/config.sieve",
++                 "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/replies_out.sieve"]
+ 
+-greylist = ["file://%{BASE_PATH}%/etc/spamfilter/scripts/config.sieve",
+-            "file://%{BASE_PATH}%/etc/spamfilter/scripts/greylist.sieve"]
++greylist = ["file://${SYSCONFDIR}/stalwart/spamfilter/scripts/config.sieve",
++            "file://${SYSCONFDIR}/stalwart/spamfilter/scripts/greylist.sieve"]

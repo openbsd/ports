@@ -1,6 +1,0 @@
-CLI to administer a Stalwart JMAP server. Allows to:
-- manage domains (including DKIM)
-- manage accounts
-- manage lists (lightweight mailing lists)
-- manage groups (lightweight aliases)
-- import accounts & mailboxes

@@ -1,6 +1,0 @@
-Stalwart SMTP is a modern SMTP server developed in Rust with a focus on
-security, speed, and extensive configurability. It features built-in
-DMARC, DKIM, SPF and ARC support for message authentication, strong
-transport security through DANE, MTA-STS and SMTP TLS reporting, and
-offers great flexibility and customization thanks to its dynamic
-configuration rules and native support for Sieve scripts.

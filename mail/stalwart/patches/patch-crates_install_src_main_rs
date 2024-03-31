@@ -1,0 +1,20 @@
+Index: crates/install/src/main.rs
+--- crates/install/src/main.rs.orig
++++ crates/install/src/main.rs
+@@ -39,14 +39,14 @@ use rcgen::generate_simple_self_signed;
+ 
+ const CONFIG_URL: &str = "https://get.stalw.art/resources/config.zip";
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(target_os = "openbsd")]
+ const SERVICE: &str = include_str!("../../../resources/systemd/stalwart-mail.service");
+ #[cfg(target_os = "macos")]
+ const SERVICE: &str = include_str!("../../../resources/systemd/stalwart.mail.plist");
+ 
+ #[cfg(target_os = "linux")]
+ const ACCOUNT_NAME: &str = "stalwart-mail";
+-#[cfg(target_os = "macos")]
++#[cfg(target_os = "openbsd")]
+ const ACCOUNT_NAME: &str = "_stalwart-mail";
+ 
+ #[cfg(not(target_env = "msvc"))]

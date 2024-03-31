@@ -1,0 +1,12 @@
+Index: resources/config/directory/sql.toml
+--- resources/config/directory/sql.toml.orig
++++ resources/config/directory/sql.toml
+@@ -4,7 +4,7 @@
+ 
+ [directory."sql"]
+ type = "sql"
+-store = "__SQL_STORE__"
++store = "sqlite"
+ disable = true
+ 
+ [directory."sql".options]

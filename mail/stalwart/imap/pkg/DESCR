@@ -1,5 +1,0 @@
-Stalwart IMAP is an open-source Internet Message Access Protocol server
-designed to be secure, fast, robust and scalable. A JSON Meta
-Application Protocol (JMAP) backend such as Stalwart JMAP is required to
-use Stalwart IMAP (in other words, Stalwart IMAP is an imap4-to-jmap
-proxy).

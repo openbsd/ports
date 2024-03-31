@@ -1,0 +1,93 @@
+Index: resources/config/config.toml
+--- resources/config/config.toml.orig
++++ resources/config/config.toml
+@@ -5,47 +5,47 @@
+ [macros]
+ host = "__HOST__"
+ default_domain = "__DOMAIN__"
+-base_path = "__BASE_PATH__"
+-default_directory = "__DIRECTORY__"
+-default_store = "__STORE__"
++base_path = "/var/stalwart"
++default_directory = "internal"
++default_store = "rocksdb"
+ 
+ [include]
+-files = [ "%{BASE_PATH}%/etc/common/server.toml",
+-          "%{BASE_PATH}%/etc/common/tls.toml",
+-          "%{BASE_PATH}%/etc/common/store.toml",
+-          "%{BASE_PATH}%/etc/common/tracing.toml",
+-          "%{BASE_PATH}%/etc/common/sieve.toml",
+-          "%{BASE_PATH}%/etc/directory/imap.toml",
+-          "%{BASE_PATH}%/etc/directory/internal.toml",
+-          "%{BASE_PATH}%/etc/directory/ldap.toml",
+-          "%{BASE_PATH}%/etc/directory/lmtp.toml",
+-          "%{BASE_PATH}%/etc/directory/memory.toml",
+-          "%{BASE_PATH}%/etc/directory/sql.toml",
+-          "%{BASE_PATH}%/etc/store/elasticsearch.toml",
+-          "%{BASE_PATH}%/etc/store/fs.toml",
+-          "%{BASE_PATH}%/etc/store/foundationdb.toml",
+-          "%{BASE_PATH}%/etc/store/mysql.toml",
+-          "%{BASE_PATH}%/etc/store/postgresql.toml",
+-          "%{BASE_PATH}%/etc/store/redis.toml",
+-          "%{BASE_PATH}%/etc/store/rocksdb.toml",
+-          "%{BASE_PATH}%/etc/store/s3.toml",
+-          "%{BASE_PATH}%/etc/store/sqlite.toml",
+-          "%{BASE_PATH}%/etc/imap/listener.toml",
+-          "%{BASE_PATH}%/etc/imap/settings.toml",
+-          "%{BASE_PATH}%/etc/jmap/auth.toml",
+-          "%{BASE_PATH}%/etc/jmap/listener.toml",
+-          "%{BASE_PATH}%/etc/jmap/oauth.toml",
+-          "%{BASE_PATH}%/etc/jmap/protocol.toml",
+-          "%{BASE_PATH}%/etc/jmap/push.toml",
+-          "%{BASE_PATH}%/etc/jmap/ratelimit.toml",
+-          "%{BASE_PATH}%/etc/jmap/websockets.toml",
+-          "%{BASE_PATH}%/etc/smtp/auth.toml",
+-          "%{BASE_PATH}%/etc/smtp/listener.toml",
+-          "%{BASE_PATH}%/etc/smtp/milter.toml",
+-          "%{BASE_PATH}%/etc/smtp/queue.toml",
+-          "%{BASE_PATH}%/etc/smtp/remote.toml",
+-          "%{BASE_PATH}%/etc/smtp/report.toml",
+-          "%{BASE_PATH}%/etc/smtp/resolver.toml",
+-          "%{BASE_PATH}%/etc/smtp/session.toml",
+-          "%{BASE_PATH}%/etc/smtp/signature.toml",
+-          "%{BASE_PATH}%/etc/smtp/spamfilter.toml" ]
++files = [ "${SYSCONFDIR}/stalwart/common/server.toml",
++          "${SYSCONFDIR}/stalwart/common/tls.toml",
++          "${SYSCONFDIR}/stalwart/common/store.toml",
++          "${SYSCONFDIR}/stalwart/common/tracing.toml",
++          "${SYSCONFDIR}/stalwart/common/sieve.toml",
++          "${SYSCONFDIR}/stalwart/directory/imap.toml",
++          "${SYSCONFDIR}/stalwart/directory/internal.toml",
++          "${SYSCONFDIR}/stalwart/directory/ldap.toml",
++          "${SYSCONFDIR}/stalwart/directory/lmtp.toml",
++          "${SYSCONFDIR}/stalwart/directory/memory.toml",
++          "${SYSCONFDIR}/stalwart/directory/sql.toml",
++          "${SYSCONFDIR}/stalwart/store/elasticsearch.toml",
++          "${SYSCONFDIR}/stalwart/store/fs.toml",
++          "${SYSCONFDIR}/stalwart/store/foundationdb.toml",
++          "${SYSCONFDIR}/stalwart/store/mysql.toml",
++          "${SYSCONFDIR}/stalwart/store/postgresql.toml",
++          "${SYSCONFDIR}/stalwart/store/redis.toml",
++          "${SYSCONFDIR}/stalwart/store/rocksdb.toml",
++          "${SYSCONFDIR}/stalwart/store/s3.toml",
++          "${SYSCONFDIR}/stalwart/store/sqlite.toml",
++          "${SYSCONFDIR}/stalwart/imap/listener.toml",
++          "${SYSCONFDIR}/stalwart/imap/settings.toml",
++          "${SYSCONFDIR}/stalwart/jmap/auth.toml",
++          "${SYSCONFDIR}/stalwart/jmap/listener.toml",
++          "${SYSCONFDIR}/stalwart/jmap/oauth.toml",
++          "${SYSCONFDIR}/stalwart/jmap/protocol.toml",
++          "${SYSCONFDIR}/stalwart/jmap/push.toml",
++          "${SYSCONFDIR}/stalwart/jmap/ratelimit.toml",
++          "${SYSCONFDIR}/stalwart/jmap/websockets.toml",
++          "${SYSCONFDIR}/stalwart/smtp/auth.toml",
++          "${SYSCONFDIR}/stalwart/smtp/listener.toml",
++          "${SYSCONFDIR}/stalwart/smtp/milter.toml",
++          "${SYSCONFDIR}/stalwart/smtp/queue.toml",
++          "${SYSCONFDIR}/stalwart/smtp/remote.toml",
++          "${SYSCONFDIR}/stalwart/smtp/report.toml",
++          "${SYSCONFDIR}/stalwart/smtp/resolver.toml",
++          "${SYSCONFDIR}/stalwart/smtp/session.toml",
++          "${SYSCONFDIR}/stalwart/smtp/signature.toml",
++          "${SYSCONFDIR}/stalwart/smtp/spamfilter.toml" ]

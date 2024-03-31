@@ -1,0 +1,14 @@
+Index: resources/config/smtp/signature.toml
+--- resources/config/smtp/signature.toml.orig
++++ resources/config/smtp/signature.toml
+@@ -3,8 +3,8 @@
+ #############################################
+ 
+ [signature."rsa"]
+-#public-key = "file://%{BASE_PATH}%/etc/dkim/%{DEFAULT_DOMAIN}%.cert"
+-private-key = "file://%{BASE_PATH}%/etc/dkim/%{DEFAULT_DOMAIN}%.key"
++#public-key = "file://${SYSCONFDIR}/stalwart/dkim/%{DEFAULT_DOMAIN}%.cert"
++private-key = "file://${SYSCONFDIR}/stalwart/dkim/%{DEFAULT_DOMAIN}%.key"
+ domain = "%{DEFAULT_DOMAIN}%"
+ selector = "stalwart"
+ headers = ["From", "To", "Date", "Subject", "Message-ID"]

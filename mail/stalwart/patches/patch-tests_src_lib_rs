@@ -1,0 +1,16 @@
+Index: tests/src/lib.rs
+--- tests/src/lib.rs.orig
++++ tests/src/lib.rs
+@@ -23,10 +23,10 @@
+ 
+ use std::path::PathBuf;
+ 
+-#[cfg(not(target_env = "msvc"))]
++#[cfg(not(target_os = "openbsd"))]
+ use jemallocator::Jemalloc;
+ 
+-#[cfg(not(target_env = "msvc"))]
++#[cfg(not(target_os = "openbsd"))]
+ #[global_allocator]
+ static GLOBAL: Jemalloc = Jemalloc;
+ 

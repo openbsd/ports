@@ -1,0 +1,82 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Basic configuration gotchas
+===========================
+
+The complete documentation is at https://stalw.art/docs/get-started
+
+- JMAP clients should be configured to use the url specified in
+  [server.listener."jmap"] section, which should be the public FQDN of the
+service configured in a reverse-proxy.
+
+- If using the internal directory, a random password is created for the admin
+user and can be found in the startup logs, as seen on https://stalw.art/docs/install/linux#take-note-of-the-administrator-password
+
+- By default stalwart tries to listen on the following ports:
+  - smtp
+  - https (for jmap)
+  - imap
+  - imaps
+  - sieve
+  - submission
+  - submissions
+
+if you want to disable some of the listeners, comment out the corresponding
+server.listener section.
+
+it is possible to check if the server is properly configured by calling
+/.well-known/jmap like this:
+
+$ curl https://<jmap_url>/.well-known/jmap
+{"type":"about:blank","status":401,"title":"Unauthorized","detail":"You have to authenticate first."}
+$ curl -u admin:changeme https://<jmap_url>/.well-known/jmap
+
+- stalwart-mail starts as root, binds to ports then drops privilege to the
+  unpriviledged _stalwart-smtp user.
+
+- once installed, you need to at least:
+- configure in ${SYSCONFDIR}/stalwart/config.toml:
+  - __HOST__ for the server hostname (it will also be used for the jmap url)
+  - __DOMAIN__ for the default e-mail domain
+
+- generate a TLS certificate for your default e-mail domain, which will get
+  pointed at in ${SYSCONFDIR}/stalwart/common/tls.toml. You might also want to
+use acme-client(1) for that, but stalwart can also act as an ACME client if
+needed
+
+- a DKIM key should be generated per https://stalw.art/docs/smtp/authentication/dkim/sign#rsa
+
+# cd /etc/stalwart/dkim/
+# openssl genrsa -out <domain>.key 2048
+# openssl rsa -in <domain>.key -pubout -out <domain>.cert
+
+- if you plan to use OAUTH set __OAUTH_KEY__ in ${SYSCONFDIR}/stalwart/jmap/oauth.toml
+per https://stalw.art/docs/jmap/oauth#encryption
+
+Using stalwart-cli to manage the server
+=======================================
+
+stalwart-cli allows to manage:
+- domains
+- accounts
+- imports
+- lists & groups
+
+the following commands should give you a headstart to:
+- create a domain
+$ stalwart-cli --url http://localhost:8080 -cadmin:changeme domain create -d 'test domain' jmap.test
+
+- create an account in that domain
+$ stalwart-cli --url http://localhost:8080 -cadmin:changeme account create user@jmap.test password accountname
+
+- import a mailbox in that account
+$ stalwart-cli --url http://localhost:8080 -cadmin:changeme import messages -f mbox user@jmap.test /var/mail/user
+
+from that point:
+- an IMAP client such as mutt or meli or thunderbird configured
+  to point at stalwart-imap ip:port should show you imported messages over IMAP
+
+- a JMAP client such as meli or cypht.org configured to point at
+  stalwart-jmap jmap-url should show you messages over JMAP.

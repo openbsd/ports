@@ -1,0 +1,16 @@
+set our uid to privdrop
+
+Index: resources/config/common/server.toml
+--- resources/config/common/server.toml.orig
++++ resources/config/common/server.toml
+@@ -14,8 +14,8 @@ blocked-networks = {}
+ fail2ban = "100/1d"
+ 
+ [server.run-as]
+-user = "stalwart-mail"
+-group = "stalwart-mail"
++user = "_stalwart-smtp"
++group = "_stalwart-smtp"
+ 
+ [server.socket]
+ nodelay = true

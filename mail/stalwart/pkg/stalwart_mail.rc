@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/stalwart-mail"
+daemon_logger="daemon.info"
+daemon_flags="--config ${SYSCONFDIR}/stalwart/config.toml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

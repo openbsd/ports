@@ -1,0 +1,16 @@
+Index: crates/main/src/main.rs
+--- crates/main/src/main.rs.orig
++++ crates/main/src/main.rs
+@@ -35,10 +35,10 @@ use utils::{
+     enable_tracing, wait_for_shutdown, UnwrapFailure,
+ };
+ 
+-#[cfg(not(target_env = "msvc"))]
++#[cfg(not(target_os = "openbsd"))]
+ use jemallocator::Jemalloc;
+ 
+-#[cfg(not(target_env = "msvc"))]
++#[cfg(not(target_os = "openbsd"))]
+ #[global_allocator]
+ static GLOBAL: Jemalloc = Jemalloc;
+ 
