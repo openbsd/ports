@@ -16,26 +16,25 @@ lib/girepository-1.0/Goa-1.0.typelib
 lib/goa-1.0/
 lib/goa-1.0/include/
 lib/goa-1.0/include/goaconfig.h
-lib/goa-1.0/web-extensions/
-@so lib/goa-1.0/web-extensions/libgoawebextension.so
 @lib lib/libgoa-1.0.so.${LIBgoa-1.0_VERSION}
 @lib lib/libgoa-backend-1.0.so.${LIBgoa-backend-1.0_VERSION}
 lib/pkgconfig/goa-1.0.pc
 lib/pkgconfig/goa-backend-1.0.pc
 @bin libexec/goa-daemon
+@bin libexec/goa-oauth2-handler
+share/applications/org.gnome.OnlineAccounts.OAuth2.desktop
 share/dbus-1/services/org.gnome.OnlineAccounts.service
 share/gir-1.0/Goa-1.0.gir
 share/glib-2.0/schemas/org.gnome.online-accounts.gschema.xml
 share/icons/hicolor/scalable/apps/goa-account-exchange.svg
 share/icons/hicolor/scalable/apps/goa-account-fedora.svg
 share/icons/hicolor/scalable/apps/goa-account-google.svg
-share/icons/hicolor/scalable/apps/goa-account-lastfm.svg
+share/icons/hicolor/scalable/apps/goa-account-ms365.svg
 share/icons/hicolor/scalable/apps/goa-account-msn.svg
 share/icons/hicolor/scalable/apps/goa-account-owncloud.svg
 share/icons/hicolor/scalable/apps/goa-account.svg
 share/icons/hicolor/symbolic/apps/goa-account-exchange-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-google-symbolic.svg
-share/icons/hicolor/symbolic/apps/goa-account-lastfm-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-msn-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-owncloud-symbolic.svg
 share/icons/hicolor/symbolic/apps/goa-account-symbolic.svg
@@ -122,3 +121,4 @@ share/vala/vapi/goa-1.0.deps
 share/vala/vapi/goa-1.0.vapi
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag glib-compile-schemas
+@tag update-desktop-database
