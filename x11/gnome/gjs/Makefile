@@ -8,6 +8,7 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.78.4
+REVISION=		0
 
 SHARED_LIBS += gjs                       6.2 # 0.0.0
 
@@ -18,8 +19,7 @@ CATEGORIES=		devel
 # contain code from Mozilla which are: MPL1.1/LGPLv2+/GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += X11 c cairo cairo-gobject ffi gio-2.0 girepository-1.0
+WANTLIB += ${COMPILER_LIBCXX} X11 c ffi gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gobject-2.0 intl m mozjs-115 readline
 
 MODULES=		devel/meson \
