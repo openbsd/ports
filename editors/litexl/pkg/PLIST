@@ -1,6 +1,8 @@
 @bin bin/lite-xl
+share/applications/org.lite_xl.lite_xl.desktop
 share/doc/lite-xl/
 share/doc/lite-xl/licenses.md
+share/icons/hicolor/scalable/apps/lite-xl.svg
 share/lite-xl/
 share/lite-xl/colors/
 share/lite-xl/colors/default.lua
@@ -93,3 +95,7 @@ share/lite-xl/renderer.lua
 share/lite-xl/string.lua
 share/lite-xl/system.lua
 share/lite-xl/utf8extra.lua
+share/metainfo/
+share/metainfo/org.lite_xl.lite_xl.appdata.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

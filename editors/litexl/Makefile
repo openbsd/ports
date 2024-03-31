@@ -5,6 +5,7 @@ GH_ACCOUNT =	lite-xl
 GH_PROJECT =	lite-xl
 GH_TAGNAME =	v$V
 PKGNAME =	litexl-$V
+REVISION =	0
 
 CATEGORIES =	editors
 HOMEPAGE =	https://lite-xl.com
@@ -26,5 +27,14 @@ MODLUA_VERSION =5.4
 
 LIB_DEPENDS =   devel/sdl2	\
 		devel/pcre2
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
+
+CONFIGURE_ARGS =	-Duse_system_lua=true \
+			-Ddirmonitor_backend=kqueue
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/{meson.build,src/main.c}
 
 .include <bsd.port.mk>

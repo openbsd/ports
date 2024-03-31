@@ -9,7 +9,7 @@ Index: src/main.c
 +    if (strchr(argv[0], '/') != NULL)
 +      lua_pushstring(L, argv[0]);
 +    else
-+      lua_pushstring(L, "/usr/local/bin/lite-xl");
++      lua_pushstring(L, "${PREFIX}/bin/lite-xl");
    }
    lua_setglobal(L, "EXEFILE");
  
