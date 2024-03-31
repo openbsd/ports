@@ -1,0 +1,20 @@
+Index: Telegram/lib_base/base/platform/linux/base_linux_xdp_utilities.cpp
+--- Telegram/lib_base/base/platform/linux/base_linux_xdp_utilities.cpp.orig
++++ Telegram/lib_base/base/platform/linux/base_linux_xdp_utilities.cpp
+@@ -19,9 +19,15 @@
+ #include <private/qgenericunixservices_p.h>
+ #endif // Qt >= 6.5.0
+ 
+-using namespace gi::repository;
++#include <sstream>
+ 
+ namespace base::Platform::XDP {
++namespace {
++
++using namespace gi::repository;
++namespace GObject = gi::repository::GObject;
++
++} // namespace
+ 
+ std::string ParentWindowID() {
+ 	return ParentWindowID(QGuiApplication::focusWindow());

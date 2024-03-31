@@ -1,0 +1,11 @@
+Index: Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
+--- Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp.orig
++++ Telegram/SourceFiles/platform/linux/notifications_manager_linux.cpp
+@@ -37,6 +37,7 @@ namespace Notifications {
+ namespace {
+ 
+ using namespace gi::repository;
++namespace GObject = gi::repository::GObject;
+ 
+ constexpr auto kService = "org.freedesktop.Notifications";
+ constexpr auto kObjectPath = "/org/freedesktop/Notifications";
