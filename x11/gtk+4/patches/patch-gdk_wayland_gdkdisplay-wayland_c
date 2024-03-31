@@ -1,0 +1,13 @@
+Index: gdk/wayland/gdkdisplay-wayland.c
+--- gdk/wayland/gdkdisplay-wayland.c.orig
++++ gdk/wayland/gdkdisplay-wayland.c
+@@ -24,7 +24,9 @@
+ #include <errno.h>
+ #include <unistd.h>
+ #include <fcntl.h>
++#ifdef __linux__
+ #include <sys/sysmacros.h>
++#endif
+ 
+ #ifdef HAVE_LINUX_MEMFD_H
+ #include <linux/memfd.h>

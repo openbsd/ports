@@ -1,5 +1,3 @@
-# XXX add support for tracker3? (-Dtracker=enabled)
-
 DPB_PROPERTIES=		parallel
 
 COMMENT-main=		multi-platform graphical toolkit
@@ -9,7 +7,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.12.5
+GNOME_VERSION=		4.14.1
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -19,7 +17,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.1 # 1.2000.3
+SHARED_LIBS += gtk-4                     5.2 # 1.1400.1
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -46,6 +44,7 @@ MODPY_RUNDEP=		No
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			graphics/shaderc \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			wayland/wayland-protocols \
 			www/sassc
@@ -96,8 +95,9 @@ WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
-WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 gstgl-1.0 gstplayer-1.0
-WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gtk-4 m
+WANTLIB-media += gio-2.0 glib-2.0 gobject-2.0 graphene-1.0 gstallocators-1.0
+WANTLIB-media += gstgl-1.0 gstplayer-1.0 gstreamer-1.0 gstvideo-1.0
+WANTLIB-media += gtk-4 m
 
 TEST_IS_INTERACTIVE=	x11
 # needs lib/gstreamer-1.0/libgstpipewire.so and the pipewire server
@@ -105,11 +105,8 @@ TEST_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dman-pages=true
 
-# preference for media-gstreamer
-CONFIGURE_ARGS +=	-Dmedia-ffmpeg=disabled
-
-# Disable colord until proven useful
-#CONFIGURE_ARGS +=      -Dcolord=true
+# XXX ld: error: undefined symbol: vkCreateWaylandSurfaceKHR
+CONFIGURE_ARGS +=	-Dvulkan=disabled
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}

@@ -3,7 +3,7 @@ XXX rework and push upstream
 Index: testsuite/reftests/meson.build
 --- testsuite/reftests/meson.build.orig
 +++ testsuite/reftests/meson.build
-@@ -40,11 +40,12 @@ tcdata.set('libexecdir', join_paths(get_option('prefix
+@@ -41,11 +41,12 @@ tcdata.set('libexecdir', join_paths(get_option('prefix
  #    configuration : tcdata)
  #endforeach
  
