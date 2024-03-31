@@ -7,13 +7,7 @@
 include/pygobject-3.0/
 include/pygobject-3.0/pygobject.h
 lib/pkgconfig/pygobject-3.0.pc
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}/
