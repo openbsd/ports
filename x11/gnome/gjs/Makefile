@@ -7,8 +7,7 @@ USE_NOBTCFI=		Yes
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.78.4
-REVISION=		0
+GNOME_VERSION=		1.78.5
 
 SHARED_LIBS += gjs                       6.2 # 0.0.0
 
@@ -19,8 +18,9 @@ CATEGORIES=		devel
 # contain code from Mozilla which are: MPL1.1/LGPLv2+/GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 c ffi gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gobject-2.0 intl m mozjs-115 readline
+WANTLIB += ${COMPILER_LIBCXX} X11 c cairo cairo-gobject ffi gio-2.0
+WANTLIB += girepository-1.0 glib-2.0 gobject-2.0 intl m mozjs-115
+WANTLIB += readline
 
 MODULES=		devel/meson \
 			x11/gnome
@@ -33,7 +33,8 @@ MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
 
 LIB_DEPENDS=		devel/gobject-introspection \
-			devel/spidermonkey115
+			devel/spidermonkey115 \
+			graphics/cairo
 
 # --with-dbus-tests
 BUILD_DEPENDS +=	x11/dbus
