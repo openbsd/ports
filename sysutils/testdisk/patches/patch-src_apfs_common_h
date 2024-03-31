@@ -1,0 +1,13 @@
+already defined in types.h
+
+Index: src/apfs_common.h
+--- src/apfs_common.h.orig
++++ src/apfs_common.h
+@@ -34,7 +34,6 @@ extern "C"
+   } __attribute__((gcc_struct, __packed__));
+ 
+   typedef struct obj_phys obj_phys_t;
+-  typedef int64_t paddr_t;
+ 
+   struct prange {
+     paddr_t pr_start_paddr;
