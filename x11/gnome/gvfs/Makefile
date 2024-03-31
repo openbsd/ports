@@ -3,15 +3,17 @@ COMMENT-smb=		GVFS mount module for samba
 COMMENT-goa=		GVFS volume monitor for gnome-online-account
 COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
+COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.52.2
+GNOME_VERSION=		1.54.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+PKGNAME-onedrive=	${GNOME_PROJECT}-onedrive-${GNOME_VERSION}
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -24,7 +26,7 @@ MODULES=		devel/dconf \
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-base-3
+WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-4
 WANTLIB-main += gcrypt secret-1 soup-3.0 util xml2
 
 WANTLIB-smb += ${WANTLIB}
@@ -39,12 +41,15 @@ WANTLIB-nfs += nfs
 WANTLIB-google += ${WANTLIB}
 WANTLIB-google += gdata goa-1.0
 
+WANTLIB-onedrive += ${WANTLIB}
+WANTLIB-onedrive += goa-1.0 msgraph-0
+
 MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main=	archivers/libarchive \
 			devel/libsoup3 \
 			net/avahi,-glib \
-			x11/gnome/gcr \
+			x11/gnome/gcr4 \
 			x11/gnome/libsecret
 
 RUN_DEPENDS-smb=	${MODDCONF_RUN_DEPENDS} \
@@ -60,6 +65,10 @@ LIB_DEPENDS-nfs=	devel/libnfs
 RUN_DEPENDS-google=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-google=	devel/libgdata \
 			x11/gnome/online-accounts
+
+RUN_DEPENDS-onedrive=	${MODDCONF_RUN_DEPENDS} \
+			${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-onedrive=	x11/gnome/msgraph
 
 CONFIGURE_ARGS=		-Dman=true
 
@@ -82,10 +91,10 @@ CONFIGURE_ARGS +=	-Dadmin=false
 # needs sysctl kern.usermount to be really useful
 CONFIGURE_ARGS +=	-Dfuse=false
 
-MULTI_PACKAGES=		-main -goa -nfs -smb -google
+MULTI_PACKAGES=		-main -goa -nfs -smb -google -onedrive
 
-PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google bootstrap
-FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
+PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google no_onedrive bootstrap
+FLAVOR?=		no_smb no_goa no_nfs no_google no_onedrive bootstrap
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -111,6 +120,10 @@ CONFIGURE_ARGS +=	-Dnfs=false
 
 .if !${BUILD_PACKAGES:M-google}
 CONFIGURE_ARGS +=	-Dgoogle=false
+.endif
+
+.if !${BUILD_PACKAGES:M-onedrive}
+CONFIGURE_ARGS +=	-Donedrive=false
 .endif
 
 # test_polkitd.py, gvfs-test

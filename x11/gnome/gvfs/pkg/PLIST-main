@@ -24,6 +24,7 @@ lib/gvfs/
 @bin libexec/gvfsd-recent
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
+@bin libexec/gvfsd-wsdd
 @man man/man1/gvfsd-fuse.1
 @man man/man1/gvfsd-metadata.1
 @man man/man1/gvfsd.1
@@ -33,6 +34,7 @@ share/dbus-1/services/org.gtk.vfs.Daemon.service
 share/dbus-1/services/org.gtk.vfs.Metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
+share/glib-2.0/schemas/org.gnome.system.wsdd.gschema.xml
 share/gvfs/
 share/gvfs/mounts/
 share/gvfs/mounts/afp-browse.mount
@@ -52,6 +54,7 @@ share/gvfs/mounts/network.mount
 share/gvfs/mounts/recent.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
+share/gvfs/mounts/wsdd.mount
 share/locale/ab/LC_MESSAGES/gvfs.mo
 share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo

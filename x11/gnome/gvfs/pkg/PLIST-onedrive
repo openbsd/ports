@@ -1,0 +1,3 @@
+@bin libexec/gvfsd-onedrive
+share/gvfs/mounts/onedrive.mount
+@tag glib-compile-schemas

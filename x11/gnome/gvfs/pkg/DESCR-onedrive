@@ -1,0 +1,2 @@
+This package provides the OneDrive module for GVFS, which allows it to mount
+Microsoft OneDrive locations.
