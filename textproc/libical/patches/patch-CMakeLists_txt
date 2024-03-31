@@ -3,7 +3,7 @@ base gcc does not understand -Wwrite-strings and errors out.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -512,7 +512,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR "${CMAKE_C_COMPILER_ID}"
+@@ -516,7 +516,7 @@ if(CMAKE_COMPILER_IS_GNUCC OR "${CMAKE_C_COMPILER_ID}"
    check_c_compiler_flag(-Wredundant-decls HAVE_GCC_REDUNDANT_DECLS)
    check_c_compiler_flag(-Wunreachable-code HAVE_GCC_UNREACHABLE_CODE)
    check_c_compiler_flag(-Wvarargs HAVE_GCC_VARARGS)
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
    #for more modern C
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wold-style-definition -Wstrict-prototypes")
    if(HAVE_GCC_UNUSED_BUT_SET)
-@@ -556,7 +556,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_I
+@@ -560,7 +560,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR "${CMAKE_CXX_COMPILER_I
    check_cxx_compiler_flag(-Wredundant-decls HAVE_GXX_REDUNDANT_DECLS)
    check_cxx_compiler_flag(-Wunreachable-code HAVE_GXX_UNREACHABLE_CODE)
    check_cxx_compiler_flag(-Wvarargs HAVE_GXX_VARARGS)
