@@ -2,6 +2,7 @@ COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
 GNOME_VERSION=		44.1
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -55,6 +56,7 @@ LIB_DEPENDS=		audio/gsound \
 			net/telepathy/folks \
 			textproc/gspell \
 			textproc/libstemmer \
+			www/webkitgtk4,webkitgtk41 \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts \
 			x11/libhandy
