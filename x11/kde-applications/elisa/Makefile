@@ -1,12 +1,13 @@
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
 SHARED_LIBS +=  elisaLib                  2.1 # 0.1
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Baloo KF5Bookmarks
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5FileMetaData KF5I18n KF5IconThemes KF5ItemViews
@@ -46,11 +47,12 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
-		devel/kf5/baloo \
 		devel/kf5/solid \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtquickcontrols2 \
 		x11/vlc
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_KF5Baloo=ON
 
 .include <bsd.port.mk>
