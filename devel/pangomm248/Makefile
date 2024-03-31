@@ -1,7 +1,7 @@
 COMMENT =		C++ API for Pango
 
 GNOME_PROJECT =		pangomm
-GNOME_VERSION =		2.50.2
+GNOME_VERSION =		2.52.0
 PKGNAME =		pangomm248-${GNOME_VERSION}
 
 CATEGORIES =		devel x11
