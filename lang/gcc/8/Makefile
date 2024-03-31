@@ -26,7 +26,7 @@ FULL_PKGVERSION = $V
 REVISION = 20
 REVISION-c++ = 21
 
-ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
