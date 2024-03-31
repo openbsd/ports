@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 PKG_ARCH =	*
 
-FV =		2.53.18.1
+FV =		2.53.18.2
 V =		${FV:C/b.$//}
 NAME =		seamonkey-i18n
 
