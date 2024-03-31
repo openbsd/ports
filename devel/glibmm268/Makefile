@@ -1,12 +1,12 @@
 COMMENT=		C++ API for parts of GLib
 
 GNOME_PROJECT=		glibmm
-GNOME_VERSION=		2.78.1
+GNOME_VERSION=		2.80.0
 PKGNAME=		glibmm268-${GNOME_VERSION}
 
-SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.3 # 1.3.0
-SHARED_LIBS += glibmm-2.68                0.3 # 1.3.0
-SHARED_LIBS += giomm-2.68                 0.3 # 1.3.0
+SHARED_LIBS += glibmm_generate_extra_defs-2.68 0.4 # 1.3.0
+SHARED_LIBS += glibmm-2.68                0.4 # 1.3.0
+SHARED_LIBS += giomm-2.68                 0.4 # 1.3.0
 
 CATEGORIES=		devel
 
