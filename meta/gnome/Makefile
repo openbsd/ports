@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=		https://www.gnome.org/
@@ -22,6 +24,7 @@ RUN_DEPENDS-main +=	x11/gtk+4,-cups
 # we already depend on samba, libgdata and gnome-online-accounts
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-google,
+RUN_DEPENDS-main +=	x11/gnome/gvfs,-onedrive,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-smb,
 
 # create "well known" user directories and default gtk bookmarks file
