@@ -9,10 +9,13 @@ share/u-boot/apple_m1/dts/t6001-j316c.dtb
 share/u-boot/apple_m1/dts/t6001-j375c.dtb
 share/u-boot/apple_m1/dts/t6002-j375d.dtb
 share/u-boot/apple_m1/dts/t6020-j414s.dtb
+share/u-boot/apple_m1/dts/t6020-j416s.dtb
 share/u-boot/apple_m1/dts/t6020-j474s.dtb
 share/u-boot/apple_m1/dts/t6021-j414c.dtb
 share/u-boot/apple_m1/dts/t6021-j416c.dtb
+share/u-boot/apple_m1/dts/t6021-j475c.dtb
 share/u-boot/apple_m1/dts/t6022-j180d.dtb
+share/u-boot/apple_m1/dts/t6022-j475d.dtb
 share/u-boot/apple_m1/dts/t8103-j274.dtb
 share/u-boot/apple_m1/dts/t8103-j293.dtb
 share/u-boot/apple_m1/dts/t8103-j313.dtb

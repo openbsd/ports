@@ -1,0 +1,12 @@
+Index: arch/arm/dts/Makefile
+--- arch/arm/dts/Makefile.orig
++++ arch/arm/dts/Makefile
+@@ -40,7 +40,7 @@ dtb-$(CONFIG_ARCH_APPLE) += \
+ 	t6001-j375c.dtb \
+ 	t6002-j375d.dtb \
+ 	t6020-j414s.dtb \
+-	t6020-j414s.dtb \
++	t6020-j416s.dtb \
+ 	t6020-j474s.dtb \
+ 	t6021-j414c.dtb \
+ 	t6021-j416c.dtb \
