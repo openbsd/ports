@@ -1,0 +1,18 @@
+@conflict gobject-introspection-<1.80.0
+@pkgpath devel/glib2,bootstrap
+lib/girepository-1.0/
+lib/girepository-1.0/GIRepository-3.0.typelib
+lib/girepository-1.0/GLib-2.0.typelib
+lib/girepository-1.0/GLibUnix-2.0.typelib
+lib/girepository-1.0/GModule-2.0.typelib
+lib/girepository-1.0/GObject-2.0.typelib
+lib/girepository-1.0/Gio-2.0.typelib
+lib/girepository-1.0/GioUnix-2.0.typelib
+share/gir-1.0/
+share/gir-1.0/GIRepository-3.0.gir
+share/gir-1.0/GLib-2.0.gir
+share/gir-1.0/GLibUnix-2.0.gir
+share/gir-1.0/GModule-2.0.gir
+share/gir-1.0/GObject-2.0.gir
+share/gir-1.0/Gio-2.0.gir
+share/gir-1.0/GioUnix-2.0.gir
