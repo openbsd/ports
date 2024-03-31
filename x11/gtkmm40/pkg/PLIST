@@ -15,6 +15,9 @@ include/gtkmm-4.0/gdkmm/devicetool.h
 include/gtkmm-4.0/gdkmm/devicewithpad.h
 include/gtkmm-4.0/gdkmm/display.h
 include/gtkmm-4.0/gdkmm/displaymanager.h
+include/gtkmm-4.0/gdkmm/dmabufformats.h
+include/gtkmm-4.0/gdkmm/dmabuftexture.h
+include/gtkmm-4.0/gdkmm/dmabuftexturebuilder.h
 include/gtkmm-4.0/gdkmm/drag.h
 include/gtkmm-4.0/gdkmm/dragsurface.h
 include/gtkmm-4.0/gdkmm/dragsurfaceimpl.h
@@ -56,6 +59,9 @@ include/gtkmm-4.0/gdkmm/private/devicepad_p.h
 include/gtkmm-4.0/gdkmm/private/devicetool_p.h
 include/gtkmm-4.0/gdkmm/private/display_p.h
 include/gtkmm-4.0/gdkmm/private/displaymanager_p.h
+include/gtkmm-4.0/gdkmm/private/dmabufformats_p.h
+include/gtkmm-4.0/gdkmm/private/dmabuftexture_p.h
+include/gtkmm-4.0/gdkmm/private/dmabuftexturebuilder_p.h
 include/gtkmm-4.0/gdkmm/private/drag_p.h
 include/gtkmm-4.0/gdkmm/private/dragsurface_p.h
 include/gtkmm-4.0/gdkmm/private/dragsurfacesize_p.h
@@ -113,6 +119,7 @@ include/gtkmm-4.0/gtkmm/aboutdialog.h
 include/gtkmm-4.0/gtkmm/accelerator.h
 include/gtkmm-4.0/gtkmm/accelkey.h
 include/gtkmm-4.0/gtkmm/accessible.h
+include/gtkmm-4.0/gtkmm/accessibletext.h
 include/gtkmm-4.0/gtkmm/actionable.h
 include/gtkmm-4.0/gtkmm/actionbar.h
 include/gtkmm-4.0/gtkmm/adjustment.h
@@ -235,6 +242,7 @@ include/gtkmm-4.0/gtkmm/gesturestylus.h
 include/gtkmm-4.0/gtkmm/gestureswipe.h
 include/gtkmm-4.0/gtkmm/gesturezoom.h
 include/gtkmm-4.0/gtkmm/glarea.h
+include/gtkmm-4.0/gtkmm/graphicsoffload.h
 include/gtkmm-4.0/gtkmm/grid.h
 include/gtkmm-4.0/gtkmm/gridlayout.h
 include/gtkmm-4.0/gtkmm/gridlayoutchild.h
@@ -291,15 +299,18 @@ include/gtkmm-4.0/gtkmm/popover.h
 include/gtkmm-4.0/gtkmm/popovermenu.h
 include/gtkmm-4.0/gtkmm/popovermenubar.h
 include/gtkmm-4.0/gtkmm/printcontext.h
+include/gtkmm-4.0/gtkmm/printdialog.h
 include/gtkmm-4.0/gtkmm/printer.h
 include/gtkmm-4.0/gtkmm/printjob.h
 include/gtkmm-4.0/gtkmm/printoperation.h
 include/gtkmm-4.0/gtkmm/printoperationpreview.h
 include/gtkmm-4.0/gtkmm/printsettings.h
+include/gtkmm-4.0/gtkmm/printsetup.h
 include/gtkmm-4.0/gtkmm/printunixdialog.h
 include/gtkmm-4.0/gtkmm/private/
 include/gtkmm-4.0/gtkmm/private/aboutdialog_p.h
 include/gtkmm-4.0/gtkmm/private/accessible_p.h
+include/gtkmm-4.0/gtkmm/private/accessibletext_p.h
 include/gtkmm-4.0/gtkmm/private/actionable_p.h
 include/gtkmm-4.0/gtkmm/private/actionbar_p.h
 include/gtkmm-4.0/gtkmm/private/adjustment_p.h
@@ -420,6 +431,7 @@ include/gtkmm-4.0/gtkmm/private/gesturestylus_p.h
 include/gtkmm-4.0/gtkmm/private/gestureswipe_p.h
 include/gtkmm-4.0/gtkmm/private/gesturezoom_p.h
 include/gtkmm-4.0/gtkmm/private/glarea_p.h
+include/gtkmm-4.0/gtkmm/private/graphicsoffload_p.h
 include/gtkmm-4.0/gtkmm/private/grid_p.h
 include/gtkmm-4.0/gtkmm/private/gridlayout_p.h
 include/gtkmm-4.0/gtkmm/private/gridlayoutchild_p.h
@@ -474,11 +486,13 @@ include/gtkmm-4.0/gtkmm/private/popover_p.h
 include/gtkmm-4.0/gtkmm/private/popovermenu_p.h
 include/gtkmm-4.0/gtkmm/private/popovermenubar_p.h
 include/gtkmm-4.0/gtkmm/private/printcontext_p.h
+include/gtkmm-4.0/gtkmm/private/printdialog_p.h
 include/gtkmm-4.0/gtkmm/private/printer_p.h
 include/gtkmm-4.0/gtkmm/private/printjob_p.h
 include/gtkmm-4.0/gtkmm/private/printoperation_p.h
 include/gtkmm-4.0/gtkmm/private/printoperationpreview_p.h
 include/gtkmm-4.0/gtkmm/private/printsettings_p.h
+include/gtkmm-4.0/gtkmm/private/printsetup_p.h
 include/gtkmm-4.0/gtkmm/private/printunixdialog_p.h
 include/gtkmm-4.0/gtkmm/private/progressbar_p.h
 include/gtkmm-4.0/gtkmm/private/range_p.h
@@ -494,6 +508,7 @@ include/gtkmm-4.0/gtkmm/private/scrollbar_p.h
 include/gtkmm-4.0/gtkmm/private/scrolledwindow_p.h
 include/gtkmm-4.0/gtkmm/private/scrollinfo_p.h
 include/gtkmm-4.0/gtkmm/private/searchbar_p.h
+include/gtkmm-4.0/gtkmm/private/searchentry2_p.h
 include/gtkmm-4.0/gtkmm/private/searchentry_p.h
 include/gtkmm-4.0/gtkmm/private/sectionmodel_p.h
 include/gtkmm-4.0/gtkmm/private/selectionfiltermodel_p.h
@@ -583,6 +598,7 @@ include/gtkmm-4.0/gtkmm/scrolledwindow.h
 include/gtkmm-4.0/gtkmm/scrollinfo.h
 include/gtkmm-4.0/gtkmm/searchbar.h
 include/gtkmm-4.0/gtkmm/searchentry.h
+include/gtkmm-4.0/gtkmm/searchentry2.h
 include/gtkmm-4.0/gtkmm/sectionmodel.h
 include/gtkmm-4.0/gtkmm/selectionfiltermodel.h
 include/gtkmm-4.0/gtkmm/selectionlistmodelimpl.h
@@ -673,5 +689,6 @@ lib/gtkmm-4.0/proc/m4/convert.m4
 lib/gtkmm-4.0/proc/m4/convert_gdk.m4
 lib/gtkmm-4.0/proc/m4/convert_gtk.m4
 lib/gtkmm-4.0/proc/m4/convert_gtkmm.m4
+lib/gtkmm-4.0/proc/m4/enum.m4
 @lib lib/libgtkmm-4.0.so.${LIBgtkmm-4.0_VERSION}
 lib/pkgconfig/gtkmm-4.0.pc
