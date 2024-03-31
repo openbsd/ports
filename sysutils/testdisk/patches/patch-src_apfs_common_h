@@ -1,4 +1,5 @@
-already defined in types.h
+already defined in sys/types.h
+https://github.com/cgsecurity/testdisk/issues/152
 
 Index: src/apfs_common.h
 --- src/apfs_common.h.orig
