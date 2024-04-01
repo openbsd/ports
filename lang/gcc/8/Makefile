@@ -31,7 +31,7 @@ ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
 ADASTRAP-hppa = adastrap-hppa-$V-0.tar.xz
 ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
 ADASTRAP-mips64 = adastrap-mips64-$V-2.tar.xz
-ADASTRAP-powerpc = adastrap-powerpc-$V-1.tar.xz
+ADASTRAP-powerpc = adastrap-powerpc-$V-2.tar.xz
 ADASTRAP-sparc64 = adastrap-sparc64-6.5.0-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
