@@ -1,6 +1,6 @@
 COMMENT =	verifies XML documents
 
-VERSION =	2.6.0
+VERSION =	2.6.2
 PKGNAME =	xmlwf-${VERSION}
 DISTNAME =	expat-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
@@ -19,6 +19,9 @@ WANTLIB =		c expat
 SITES =			https://github.com/libexpat/libexpat/releases/download/R_${VERSION:S/./_/g}/
 
 EXTRACT_SUFX =		.tar.bz2
+
+ROACH_SITES =		https://github.com/libexpat/libexpat/releases/download/
+ROACH_URL =		${SITES}${DISTNAME}${EXTRACT_SUFX}
 
 NO_TEST =		Yes
 
