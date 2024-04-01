@@ -1,7 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-8.6.0
-SHARED_LIBS=	curl                 26.24    # 12.0
+DISTNAME=	curl-8.7.1
+SHARED_LIBS=	curl                 26.25    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
@@ -30,8 +30,9 @@ CONFIGURE_ARGS=	--with-openssl \
 		--without-libssh \
 		--without-libssh2 \
 		--with-ngtcp2 \
-		--without-zstd
-CONFIGURE_ENV=	ac_cv_path_NROFF="/usr/bin/mandoc -Tascii"
+		--without-zstd \
+		--with-zsh-functions-dir \
+		--with-fish-functions-dir
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

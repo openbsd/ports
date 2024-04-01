@@ -92,6 +92,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_TLS_SSL_PTR.3
 @man man/man3/CURLINFO_TOTAL_TIME.3
 @man man/man3/CURLINFO_TOTAL_TIME_T.3
+@man man/man3/CURLINFO_USED_PROXY.3
 @man man/man3/CURLINFO_XFER_ID.3
 @man man/man3/CURLMOPT_CHUNK_LENGTH_PENALTY_SIZE.3
 @man man/man3/CURLMOPT_CONTENT_LENGTH_PENALTY_SIZE.3
@@ -518,3 +519,9 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/libcurl.3
 share/aclocal/
 share/aclocal/libcurl.m4
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/curl.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_curl
