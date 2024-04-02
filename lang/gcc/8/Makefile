@@ -239,6 +239,8 @@ post-extract:
 	perl -pi -e 's,^#define (_GCOMPILER_LIBCXX_HAVE_GETS) .*,/* #undef $$1 */,' \
 		${WRKDIR}/bootstrap/include/c++/*/*/bits/c++config.h
 .endif
+	-chmod 644 ${WRKDIR}/bootstrap/system-libs/lib*.so* # XXX
+	-cp /usr/lib/libc.so.99.0 ${WRKDIR}/bootstrap/system-libs/libc.so.* # XXX
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}
