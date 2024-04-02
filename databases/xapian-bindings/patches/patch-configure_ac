@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1207,14 +1207,6 @@ if test yes = "$GXX" ; then
+@@ -1210,14 +1210,6 @@ if test yes = "$GXX" ; then
    dnl with GCC 2.95 and we don't support anything older.
    SWIG_CXXFLAGS="-fno-strict-aliasing"
  

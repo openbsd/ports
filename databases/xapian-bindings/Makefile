@@ -2,14 +2,12 @@ COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
 COMMENT-ruby=	ruby bindings for Xapian
 
-V=		1.4.24
+V=		1.4.25
 DISTNAME=	xapian-bindings-${V}
 
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
-
-REVISION-python= 0
 
 CATEGORIES=	databases textproc
 
