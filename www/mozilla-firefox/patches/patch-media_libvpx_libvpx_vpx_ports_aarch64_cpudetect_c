@@ -1,4 +1,5 @@
 Backport multimedia/libvpx/patches/patch-vpx_ports_arm_cpudetect_c
+https://bugzilla.mozilla.org/show_bug.cgi?id=1888772
 
 Index: media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c
 --- media/libvpx/libvpx/vpx_ports/aarch64_cpudetect.c.orig
