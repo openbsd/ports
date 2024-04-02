@@ -1,10 +1,9 @@
 COMMENT=		mailfilter to identify and mark spam
 
-VER=			4.0.0
+VER=			4.0.1
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME}
-REVISION=		0
-RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1905950.tgz
+RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1916528.tgz
 CATEGORIES=		mail perl5
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}

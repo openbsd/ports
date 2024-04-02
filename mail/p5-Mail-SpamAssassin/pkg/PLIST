@@ -124,6 +124,13 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/VBounce.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/WLBLEval.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/WelcomeListSubject.pm
 ${P5SITE}/Mail/SpamAssassin/PluginHandler.pm
+${P5SITE}/Mail/SpamAssassin/Pyzor/
+${P5SITE}/Mail/SpamAssassin/Pyzor.pm
+${P5SITE}/Mail/SpamAssassin/Pyzor/Client.pm
+${P5SITE}/Mail/SpamAssassin/Pyzor/Digest/
+${P5SITE}/Mail/SpamAssassin/Pyzor/Digest.pm
+${P5SITE}/Mail/SpamAssassin/Pyzor/Digest/Pieces.pm
+${P5SITE}/Mail/SpamAssassin/Pyzor/Digest/StripHtml.pm
 ${P5SITE}/Mail/SpamAssassin/RegistryBoundaries.pm
 ${P5SITE}/Mail/SpamAssassin/Reporter.pm
 ${P5SITE}/Mail/SpamAssassin/SQLBasedAddrList.pm
@@ -223,6 +230,11 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::VBounce.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::WelcomeListSubject.3p
 @man man/man3p/Mail::SpamAssassin::PluginHandler.3p
+@man man/man3p/Mail::SpamAssassin::Pyzor.3p
+@man man/man3p/Mail::SpamAssassin::Pyzor::Client.3p
+@man man/man3p/Mail::SpamAssassin::Pyzor::Digest.3p
+@man man/man3p/Mail::SpamAssassin::Pyzor::Digest::Pieces.3p
+@man man/man3p/Mail::SpamAssassin::Pyzor::Digest::StripHtml.3p
 @man man/man3p/Mail::SpamAssassin::RegistryBoundaries.3p
 @man man/man3p/Mail::SpamAssassin::SQLBasedAddrList.3p
 @man man/man3p/Mail::SpamAssassin::SubProcBackChannel.3p
@@ -289,6 +301,7 @@ share/examples/SpamAssassin/v343.pre
 @sample ${CONFDIR}/v343.pre
 share/examples/SpamAssassin/v400.pre
 @sample ${CONFDIR}/v400.pre
+share/examples/SpamAssassin/v401.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/10_hasbase.cf
