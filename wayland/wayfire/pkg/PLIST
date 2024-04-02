@@ -64,7 +64,6 @@ include/wayfire/plugins/ipc/
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
-include/wayfire/plugins/ipc/ipc.hpp
 include/wayfire/plugins/scale-signal.hpp
 include/wayfire/plugins/vswitch.hpp
 include/wayfire/plugins/wm-actions-signals.hpp
@@ -93,6 +92,7 @@ include/wayfire/txn/transaction.hpp
 include/wayfire/unstable/
 include/wayfire/unstable/translation-node.hpp
 include/wayfire/unstable/wlr-surface-node.hpp
+include/wayfire/unstable/wlr-text-input-v3-popup.hpp
 include/wayfire/unstable/wlr-view-events.hpp
 include/wayfire/unstable/wlr-view-keyboard-interaction.hpp
 include/wayfire/unstable/xdg-toplevel-base.hpp
@@ -131,6 +131,7 @@ lib/wayfire/
 @so lib/wayfire/libgrid.so
 @so lib/wayfire/libgtk-shell.so
 @so lib/wayfire/libidle.so
+@so lib/wayfire/libinput-method-v1.so
 @so lib/wayfire/libinvert.so
 @so lib/wayfire/libipc-rules.so
 @so lib/wayfire/libipc.so
@@ -177,6 +178,7 @@ share/wayfire/metadata/grid.xml
 share/wayfire/metadata/gtk-shell.xml
 share/wayfire/metadata/idle.xml
 share/wayfire/metadata/input-device.xml
+share/wayfire/metadata/input-method-v1.xml
 share/wayfire/metadata/input.xml
 share/wayfire/metadata/invert.xml
 share/wayfire/metadata/ipc-rules.xml

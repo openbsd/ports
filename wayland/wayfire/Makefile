@@ -1,15 +1,7 @@
 COMMENT =	modular and extensible wayland compositor
 
-V =		0.8.0pl17
+V =		0.8.1
 DISTNAME =	wayfire-${V}
-GH_ACCOUNT = 	WayfireWM
-GH_PROJECT =	wayfire
-GH_COMMIT =	c48194e055219dcb3a603b59ca37f330a64cac12
-REVISION =	1
-
-# git submodules when not building a release
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-utils 15f8e16721585ae3eaf278ba71d7064237eb23f5 subprojects/wf-utils
-DIST_TUPLE +=	github ${GH_ACCOUNT} wf-touch 8974eb0f6a65464b63dd03b842795cb441fb6403 subprojects/wf-touch
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
 CATEGORIES =	wayland
@@ -18,11 +10,8 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-# we need to use a git branch because last release doesnt support wlroots 0.17 yet
-# https://github.com/WayfireWM/wayfire/issues/1781
-# https://github.com/WayfireWM/wayfire/pull/2024
-#SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
-#EXTRACT_SUFX =	.tar.xz
+SITES =		https://github.com/WayfireWM/wayfire/releases/download/v${V}/
+EXTRACT_SUFX =	.tar.xz
 HOMEPAGE =	https://wayfire.org
 
 MODULES =	devel/meson

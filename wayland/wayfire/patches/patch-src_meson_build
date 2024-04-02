@@ -3,7 +3,7 @@
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -62,7 +62,7 @@ wayfire_sources = ['geometry.cpp',
+@@ -63,7 +63,7 @@ wayfire_sources = ['geometry.cpp',
                     'output/workspace-impl.cpp']
  
  wayfire_dependencies = [wayland_server, wlroots, xkbcommon, libinput,
@@ -12,7 +12,7 @@ Index: src/meson.build
                         wfconfig, libinotify, backtrace, wfutils, xcb, wftouch]
  
  if conf_data.get('BUILD_WITH_IMAGEIO')
-@@ -114,6 +114,7 @@ shared_module('default-config-backend', 'default-confi
+@@ -131,6 +131,7 @@ shared_module('default-config-backend', 'default-confi
      dependencies: wayfire_dependencies,
      include_directories: [wayfire_conf_inc, wayfire_api_inc],
      cpp_args: debug_arguments,
