@@ -9,10 +9,13 @@ V =			4.15.6
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+# XXX CMake fails to install the binary during fake under debug builds:
+#   No valid ELF RPATH or RUNPATH entry exists in the file;
+#DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 SITES =			https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
