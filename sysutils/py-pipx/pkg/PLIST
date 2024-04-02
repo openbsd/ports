@@ -28,10 +28,14 @@ lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}main.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}package_specifier.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}package_specifier.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}pipx_metadata_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}pipx_metadata_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}shared_libs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}shared_libs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}standalone_python.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}standalone_python.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/${MODPY_PYCACHE}venv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,6 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}inject.${
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}inject.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}install.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}list_packages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}list_packages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/${MODPY_PYCACHE}reinstall.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -76,6 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/pipx/commands/ensure_path.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/environment.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/inject.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/install.py
+lib/python${MODPY_VERSION}/site-packages/pipx/commands/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/list_packages.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/reinstall.py
 lib/python${MODPY_VERSION}/site-packages/pipx/commands/run.py
@@ -88,9 +95,12 @@ lib/python${MODPY_VERSION}/site-packages/pipx/emojis.py
 lib/python${MODPY_VERSION}/site-packages/pipx/interpreter.py
 lib/python${MODPY_VERSION}/site-packages/pipx/main.py
 lib/python${MODPY_VERSION}/site-packages/pipx/package_specifier.py
+lib/python${MODPY_VERSION}/site-packages/pipx/paths.py
 lib/python${MODPY_VERSION}/site-packages/pipx/pipx_metadata_file.py
 lib/python${MODPY_VERSION}/site-packages/pipx/shared_libs.py
+lib/python${MODPY_VERSION}/site-packages/pipx/standalone_python.py
 lib/python${MODPY_VERSION}/site-packages/pipx/util.py
 lib/python${MODPY_VERSION}/site-packages/pipx/venv.py
 lib/python${MODPY_VERSION}/site-packages/pipx/venv_inspect.py
 lib/python${MODPY_VERSION}/site-packages/pipx/version.py
+lib/python${MODPY_VERSION}/site-packages/pipx/version.pyi

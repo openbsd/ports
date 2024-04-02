@@ -1,7 +1,6 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_EGG_VERSION=	1.4.3
-REVISION=	0
+MODPY_EGG_VERSION=	1.5.0
 DISTNAME=	pipx-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
