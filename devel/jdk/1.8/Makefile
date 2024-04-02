@@ -26,8 +26,8 @@ FLAVOR?=
 HOMEPAGE=	https://openjdk.java.net/
 
 SITES=		https://github.com/battleblow/jdk8u/archive/
-SITES.boot=	https://spacehopper.org/mirrors/ \
-		http://www.intricatesoftware.com/distfiles/
+SITES.boot=	http://www.intricatesoftware.com/distfiles/ \
+		https://spacehopper.org/mirrors/
 
 MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
