@@ -2,7 +2,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		3
+REVISION =		4
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
@@ -17,6 +17,11 @@ WANTLIB += png sodium ssl vorbis vorbisfile xml2 z
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
+# used offline, to apply binary patch: see
+# patch-libraries_source_spidermonkey_mozjs_virtualenv_patch
+# patch-libraries_source_spidermonkey_patch_sh
+BUILD_DEPENDS +=	devel/git
+
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			converters/libiconv \
@@ -80,6 +85,8 @@ post-extract:
 	rm -rf ${WRKSRC}/libraries/source/{cxxtest-4.4,enet,miniupnpc,nvtt,valgrind}
 
 do-build:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python3 # ensure correct version binary is used
+
 	cd ${WRKDIST}/build/workspaces && \
 		${SETENV} CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" SO_VERSION="${SO_VERSION}" \

@@ -1,9 +1,56 @@
-Pick up new patch (applied during do-build)
+Hunks 1,2,3: from http://deb.debian.org/debian/pool/main/0/0ad/0ad_0.0.26-5.debian.tar.xz
+Hunk 4: Pick up new patch (applied during do-build)
 
 Index: libraries/source/spidermonkey/patch.sh
 --- libraries/source/spidermonkey/patch.sh.orig
 +++ libraries/source/spidermonkey/patch.sh
-@@ -85,3 +85,6 @@ then
+@@ -2,6 +2,19 @@
+ # Apply patches if needed
+ # This script gets called from build.sh.
+ 
++# https://bugs.debian.org/1028179
++# The hack below is unfortunately necessary because GNU patch is unable to
++# handle binary patches. Fixing this FTBFS in mozjs requires pulling in a
++# virtualenv upgrade for mozjs.
++# https://src.fedoraproject.org/rpms/0ad/blob/main/f/0ad-python311.patch
++# https://github.com/mozilla/gecko-dev/commit/74641307d32a59806b75cd2b8c7161aca50d5cb7.patch
++git init . -b main
++git config user.name 'Debian Games'
++git config user.email 'pkg-games-devel@lists.alioth.debian.org'
++git add .
++git commit -m 'Initial commit'
++git am --keep-cr ../mozjs_virtualenv.patch
++
+ # SM78 fails to create virtual envs on macs with python > 3.7
+ # Unfortunately, 3.7 is mostly unavailable on ARM macs.
+ # Therefore, replace the custom script with a more up-to-date version from pip
+@@ -19,14 +32,6 @@ then
+         export PYTHONPATH="$(pwd)/virtualenv:$PYTHONPATH"
+         patch -p1 < ../FixVirtualEnv.diff
+     fi
+-else
+-    # In python 3.10 `sysconfig._get_default_scheme()` was renamed to
+-    # `sysconfig.get_default_scheme()`. This breaks the version of
+-    # `virtualenv` bundled with the spidermonkey source code.
+-    #
+-    # It is assumed that the updated version fetched for macOS systems
+-    # above does not have this problem.
+-    patch -p1 < ../FixVirtualenvForPython310.diff
+ fi
+ 
+ # Mozglue symbols need to be linked against static builds.
+@@ -75,6 +80,10 @@ patch -p1 < ../FixRpiUnalignedFpAccess.diff
+ # Note that this isn't quite the upstream patch to match our version.
+ patch -p1 < ../FixRust150.diff
+ 
++# https://bugs.debian.org/1028179
++# https://src.fedoraproject.org/rpms/0ad/blob/main/f/0001-Python-Build-Use-r-instead-of-rU-file-read-modes.patch
++patch -p1 < ../0001-Python-Build-Use-r-instead-of-rU-file-read-modes.patch
++
+ # Patch those separately, as they might interfere with normal behaviour.
+ if [ "$(uname -s)" = "FreeBSD" ];
+ then
+@@ -85,3 +94,6 @@ then
      # https://svnweb.freebsd.org/ports/head/lang/spidermonkey78/files/patch-third__party_rust_cc_src_lib.rs?view=log
      patch -p1 < ../FixFreeBSDRustThirdPartyOSDetection.diff
  fi
