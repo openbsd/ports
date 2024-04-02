@@ -8,7 +8,7 @@ patch to workaround.
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -590,6 +590,12 @@ class pil_build_ext(build_ext):
+@@ -604,6 +604,12 @@ class pil_build_ext(build_ext):
                      ),
                  )
  
@@ -21,7 +21,7 @@ Index: setup.py
          elif sys.platform.startswith("netbsd"):
              _add_directory(library_dirs, "/usr/pkg/lib")
              _add_directory(include_dirs, "/usr/pkg/include")
-@@ -703,7 +709,7 @@ class pil_build_ext(build_ext):
+@@ -717,7 +723,7 @@ class pil_build_ext(build_ext):
          if feature.want("tiff"):
              _dbg("Looking for tiff")
              if _find_include_file(self, "tiff.h"):

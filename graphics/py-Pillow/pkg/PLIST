@@ -281,22 +281,30 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_version.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_deprecate.py
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/PIL/_tkinter_finder.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_typing.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_version.py
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_webp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/PIL/_webp.pyi
 lib/python${MODPY_VERSION}/site-packages/PIL/features.py
+lib/python${MODPY_VERSION}/site-packages/PIL/py.typed
+lib/python${MODPY_VERSION}/site-packages/PIL/report.py
 lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/METADATA

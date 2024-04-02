@@ -1,6 +1,6 @@
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	10.2.0
+MODPY_EGG_VERSION=	10.3.0
 DISTNAME=		pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-Pillow-${MODPY_EGG_VERSION}
 CATEGORIES=		graphics
