@@ -1,4 +1,4 @@
-SHA256 (gcc/adastrap-amd64-11.2.0-3.tar.xz) = nsEGMh6z94ym3jhQlyEqSvKox1t84L/Ff5xPWO3E6N0=
+SHA256 (gcc/adastrap-amd64-11.2.0-4.tar.xz) = 1+RYgf8jrNtkivai+Tue4jKoYIBbR4kb9JUGOwP1h/I=
 SHA256 (gcc/adastrap-arm-4.9.4-0.tar.xz) = sadBk8tP/65RDDIHlWE1yo9MnSUP/44Ou9064RXonto=
 SHA256 (gcc/adastrap-hppa-8.3.0-1.tar.xz) = 4aNP/H4TDLZnQ6ul0LAvYBTB+VAGZ77X9+XrEPqVxqs=
 SHA256 (gcc/adastrap-i386-11.2.0-2.tar.xz) = WgWH2HrnlGQZ31KGExgEkY15+6EsNNTfUFuuvrjReyg=
@@ -6,7 +6,7 @@ SHA256 (gcc/adastrap-mips64-8.4.0-0.tar.xz) = ELzjRW6d2VbHXid+cDW2C6eLwoU+KP3Jp4
 SHA256 (gcc/adastrap-powerpc-11.2.0-2.tar.xz) = UbWAcSXyKHiV0cbh5JAhaB/yJWs9aSagBPwXQl34Jgo=
 SHA256 (gcc/adastrap-sparc64-6.5.0-0.tar.xz) = cqpGS2beYV+CFf7X+P4voVHHT78v6SCgtksHXjP/B4E=
 SHA256 (gcc/gcc-11.2.0.tar.xz) = 0I7cU2tUw3KhAQ/2YZ3SdMDxYDqkkhK6IPeqLNo2+os=
-SIZE (gcc/adastrap-amd64-11.2.0-3.tar.xz) = 78141172
+SIZE (gcc/adastrap-amd64-11.2.0-4.tar.xz) = 77695388
 SIZE (gcc/adastrap-arm-4.9.4-0.tar.xz) = 31142168
 SIZE (gcc/adastrap-hppa-8.3.0-1.tar.xz) = 48044496
 SIZE (gcc/adastrap-i386-11.2.0-2.tar.xz) = 72316224
