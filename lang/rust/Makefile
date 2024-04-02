@@ -14,7 +14,7 @@ COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-src =		Rust source component
 
-V =			1.77.0
+V =			1.77.1
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
@@ -22,7 +22,7 @@ BV-aarch64 =		1.77.0-20240320
 BV-amd64 =		1.77.0-20240318
 BV-i386 =		1.77.0-20240319
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.76.0-20240228
+BV-riscv64 =		1.77.0-20240401
 BV-sparc64 =		1.76.0p0-20240318
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -67,7 +67,7 @@ DISTFILES.bsp +=	${BOOTSTRAP}
 .include <bsd.port.arch.mk>
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
-BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}
+BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}.tar.lz
 SUPDISTFILES.bsp +=	${BOOTSTRAP-$m}
 .endfor
 
@@ -310,7 +310,8 @@ STRIP =		llvm-strip-${MODCLANG_VERSION}
 .endif
 
 # bootstrap target permits to regenerate the bootstrap archive
-BOOTSTRAPDIR=${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${V}-new
+BOOTSTRAPNAME=rustc-bootstrap-${MACHINE_ARCH}-${V}-new
+BOOTSTRAPDIR=${WRKDIR}/${BOOTSTRAPNAME}
 bootstrap: build
 	${_PBUILD} rm -rf ${BOOTSTRAPDIR}
 	${_PBUILD} mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
@@ -331,5 +332,7 @@ bootstrap: build
 	${BOOTSTRAPDIR}/bin/${_bin} -vV >/dev/null
 	${_PBUILD} chmod -R a+rX ${BOOTSTRAPDIR}
 .endfor
+	@echo '## to create a compressed tarball, use:'
+	@echo '$ tarlz --solid --anonymous -cf ${FULLDISTDIR}/${BOOTSTRAPNAME}.tar.lz ${BOOTSTRAPNAME}'
 
 .include <bsd.port.mk>
