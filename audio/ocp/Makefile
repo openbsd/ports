@@ -2,10 +2,12 @@ BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.107
+DISTNAME =	ocp-0.2.108
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
