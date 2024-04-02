@@ -1,0 +1,74 @@
+The cast (yy_size_t *)&result was wrong, because result was an int in
+upstream's flex; this caused an overflow on LP64_ARCHS (by writing 8
+bytes to a 4-byte int), which broke the build on powerpc64.
+
+This patch causes the build to run flex(1), overwriting scan.c from
+upstream.  OpenBSD's flex changes result from int to yy_size_t.
+
+Index: bc/scan.l
+--- bc/scan.l.orig
++++ bc/scan.l
+@@ -59,7 +59,7 @@ int yywrap (void);
+ /* Have input call the following function. */
+ #undef  YY_INPUT
+ #define YY_INPUT(buf,result,max_size) \
+-		bcel_input((char *)buf, (yy_size_t *)&result, max_size)
++		result = bcel_input((char *)buf, max_size)
+ 
+ /* Variables to help interface editline with bc. */
+ static const char *bcel_line = (char *)NULL;
+@@ -70,10 +70,11 @@ static int   bcel_len = 0;
+    stdin, use editline.  Otherwise, just read it.
+ */
+ 
+-static void
+-bcel_input (char *buf, yy_size_t  *result, int max)
++static int
++bcel_input (char *buf, int max)
+ {
+   ssize_t rdsize;
++  int result;
+   if (!edit || yyin != stdin)
+     {
+       while ( (rdsize = read( fileno(yyin), buf, max )) < 0 )
+@@ -82,8 +83,7 @@ bcel_input (char *buf, yy_size_t  *result, int max)
+ 	    yyerror( "read() in flex scanner failed" );
+ 	    bc_exit (1);
+ 	  }
+-      *result = (yy_size_t) rdsize;
+-      return;
++      return rdsize;
+     }
+ 
+   /* Do we need a new string? */
+@@ -92,9 +92,8 @@ bcel_input (char *buf, yy_size_t  *result, int max)
+       bcel_line = el_gets(edit, &bcel_len);
+       if (bcel_line == NULL) {
+ 	/* end of file */
+-	*result = 0;
+ 	bcel_len = 0;
+-	return;
++	return 0;
+       }
+       if (bcel_len != 0)
+ 	history (hist, &histev, H_ENTER, bcel_line); 
+@@ -104,16 +103,17 @@ bcel_input (char *buf, yy_size_t  *result, int max)
+   if (bcel_len <= max)
+     {
+       strncpy (buf, bcel_line, bcel_len);
+-      *result = bcel_len;
++      result = bcel_len;
+       bcel_len = 0;
+     }
+   else
+     {
+       strncpy (buf, bcel_line, max);
+-      *result = max;
++      result = max;
+       bcel_line += max;
+       bcel_len -= max;
+     }
++  return result;
+ }
+ #endif
+ 
