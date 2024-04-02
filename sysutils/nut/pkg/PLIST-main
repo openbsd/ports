@@ -43,6 +43,7 @@
 @bin bin/microdowell
 @bin bin/microsol-apc
 @bin bin/nut-scanner
+@bin bin/nutconf
 @bin bin/nutdrv_atcl_usb
 @bin bin/nutdrv_qx
 @bin bin/nutdrv_siemens-sitop
@@ -145,6 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @comment @man man/man3/nutclient_tcp_reconnect.3
 @comment @man man/man3/nutclient_tcp_set_timeout.3
 @man man/man3/nutscan.3
+@man man/man3/nutscan_add_commented_option_to_device.3
 @man man/man3/nutscan_add_device_to_device.3
 @man man/man3/nutscan_add_option_to_device.3
 @man man/man3/nutscan_cidr_to_ip.3
@@ -161,6 +163,7 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man3/nutscan_scan_eaton_serial.3
 @man man/man3/nutscan_scan_ipmi.3
 @man man/man3/nutscan_scan_nut.3
+@man man/man3/nutscan_scan_nut_simulation.3
 @man man/man3/nutscan_scan_snmp.3
 @man man/man3/nutscan_scan_usb.3
 @man man/man3/nutscan_scan_xml_http_range.3
@@ -225,6 +228,7 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @man man/man8/nut-driver-enumerator.8
 @man man/man8/nut-recorder.8
 @man man/man8/nut-scanner.8
+@man man/man8/nutconf.8
 @man man/man8/nutdrv_atcl_usb.8
 @man man/man8/nutdrv_qx.8
 @man man/man8/nutdrv_siemens_sitop.8
@@ -265,22 +269,32 @@ lib/python${MODPY_VERSION}/site-packages/test_nutclient.py
 @bin sbin/upssched
 share/doc/nut/
 share/doc/nut/AUTHORS
+share/doc/nut/AUTHORS-prepped
 share/doc/nut/COPYING
+share/doc/nut/COPYING-prepped
 share/doc/nut/ChangeLog
 share/doc/nut/ChangeLog.txt
 share/doc/nut/FAQ.txt
 share/doc/nut/INSTALL
 share/doc/nut/INSTALL.nut.adoc
+share/doc/nut/INSTALL.nut.adoc-prepped
 share/doc/nut/LICENSE-DCO
+share/doc/nut/LICENSE-DCO-prepped
 share/doc/nut/LICENSE-GPL2
+share/doc/nut/LICENSE-GPL2-prepped
 share/doc/nut/LICENSE-GPL3
+share/doc/nut/LICENSE-GPL3-prepped
 share/doc/nut/MAINTAINERS
 share/doc/nut/NEWS
 share/doc/nut/NEWS.adoc
+share/doc/nut/NEWS.adoc-prepped
 share/doc/nut/README
 share/doc/nut/README.adoc
+share/doc/nut/README.adoc-prepped
 share/doc/nut/TODO.adoc
+share/doc/nut/TODO.adoc-prepped
 share/doc/nut/UPGRADING.adoc
+share/doc/nut/UPGRADING.adoc-prepped
 share/doc/nut/acknowledgements.txt
 share/doc/nut/asciidoc.txt
 share/doc/nut/cables/
@@ -289,13 +303,21 @@ share/doc/nut/cables/Makefile
 share/doc/nut/cables/Makefile.am
 share/doc/nut/cables/Makefile.in
 share/doc/nut/cables/apc-rs500-serial.txt
+share/doc/nut/cables/apc-rs500-serial.txt-prepped
 share/doc/nut/cables/apc.txt
+share/doc/nut/cables/apc.txt-prepped
 share/doc/nut/cables/ge-imv-victron.txt
+share/doc/nut/cables/ge-imv-victron.txt-prepped
 share/doc/nut/cables/imv.txt
+share/doc/nut/cables/imv.txt-prepped
 share/doc/nut/cables/mgeups.txt
+share/doc/nut/cables/mgeups.txt-prepped
 share/doc/nut/cables/powerware.txt
+share/doc/nut/cables/powerware.txt-prepped
 share/doc/nut/cables/repotec.txt
+share/doc/nut/cables/repotec.txt-prepped
 share/doc/nut/cables/sms.txt
+share/doc/nut/cables/sms.txt-prepped
 share/doc/nut/ci-farm-lxc-setup.txt
 share/doc/nut/config-notes.txt
 share/doc/nut/config-prereqs.txt
@@ -312,28 +334,111 @@ share/doc/nut/hid-subdrivers.txt
 share/doc/nut/history.txt
 share/doc/nut/images/
 share/doc/nut/images/advanced.png
+share/doc/nut/images/advanced.png-prepped
 share/doc/nut/images/asciidoc.png
+share/doc/nut/images/asciidoc.png-prepped
 share/doc/nut/images/bigbox.png
+share/doc/nut/images/bigbox.png-prepped
 share/doc/nut/images/bizarre.png
+share/doc/nut/images/bizarre.png-prepped
 share/doc/nut/images/blue-arrow.png
+share/doc/nut/images/blue-arrow.png-prepped
 share/doc/nut/images/cables/
 share/doc/nut/images/cables/73-0724.png
+share/doc/nut/images/cables/73-0724.png-prepped
 share/doc/nut/images/cables/940-0024C.jpg
+share/doc/nut/images/cables/940-0024C.jpg-prepped
 share/doc/nut/images/cables/Lansafecable.jpg
+share/doc/nut/images/cables/Lansafecable.jpg-prepped
 share/doc/nut/images/cables/SOLA-330.png
+share/doc/nut/images/cables/SOLA-330.png-prepped
 share/doc/nut/images/cables/belkin-f6cx-rkm-xu-cable.jpg
+share/doc/nut/images/cables/belkin-f6cx-rkm-xu-cable.jpg-prepped
 share/doc/nut/images/cables/mac-940-0024C.png
+share/doc/nut/images/cables/mac-940-0024C.png-prepped
 share/doc/nut/images/cables/mge-66049.png
+share/doc/nut/images/cables/mge-66049.png-prepped
 share/doc/nut/images/cables/mge-db9-rj12.jpg
+share/doc/nut/images/cables/mge-db9-rj12.jpg-prepped
 share/doc/nut/images/cables/mge-db9-rj45.jpg
+share/doc/nut/images/cables/mge-db9-rj45.jpg-prepped
 share/doc/nut/images/cables/mge-usb-rj45.jpg
+share/doc/nut/images/cables/mge-usb-rj45.jpg-prepped
+share/doc/nut/images/ci/
+share/doc/nut/images/ci/AppVeyor_logo-2x.png
+share/doc/nut/images/ci/AppVeyor_logo-2x.png-prepped
+share/doc/nut/images/ci/AppVeyor_logo-ar21.png
+share/doc/nut/images/ci/AppVeyor_logo-ar21.png-prepped
+share/doc/nut/images/ci/CircleCI_vertical_black_logo.png
+share/doc/nut/images/ci/CircleCI_vertical_black_logo.png-prepped
+share/doc/nut/images/ci/DO_Powered_by_Badge_blue.png
+share/doc/nut/images/ci/DO_Powered_by_Badge_blue.png-prepped
+share/doc/nut/images/ci/DO_Powered_by_Badge_blue_140pxW.png
+share/doc/nut/images/ci/DO_Powered_by_Badge_blue_140pxW.png-prepped
+share/doc/nut/images/ci/GitHub-Mark-140pxW.png
+share/doc/nut/images/ci/GitHub-Mark-140pxW.png-prepped
+share/doc/nut/images/ci/GitHub-Mark-ea2971cee799.png
+share/doc/nut/images/ci/GitHub-Mark-ea2971cee799.png-prepped
+share/doc/nut/images/ci/OC_logo-watercolor-256.png
+share/doc/nut/images/ci/OC_logo-watercolor-256.png-prepped
+share/doc/nut/images/ci/OC_logo_merged_140x26.png
+share/doc/nut/images/ci/OC_logo_merged_140x26.png-prepped
+share/doc/nut/images/ci/OC_logo_merged_171x32.png
+share/doc/nut/images/ci/OC_logo_merged_171x32.png-prepped
+share/doc/nut/images/ci/OC_logotype.png
+share/doc/nut/images/ci/OC_logotype.png-prepped
+share/doc/nut/images/ci/fosshost_org_Host_Dark_56px.png
+share/doc/nut/images/ci/fosshost_org_Host_Dark_56px.png-prepped
+share/doc/nut/images/ci/fosshost_org_Host_Light_309px.png
+share/doc/nut/images/ci/fosshost_org_Host_Light_309px.png-prepped
+share/doc/nut/images/ci/fosshost_org_Host_Light_38px.png
+share/doc/nut/images/ci/fosshost_org_Host_Light_38px.png-prepped
+share/doc/nut/images/ci/gandi-ar21.png
+share/doc/nut/images/ci/gandi-ar21.png-prepped
+share/doc/nut/images/ci/gandi-ar21.svg
+share/doc/nut/images/ci/gandi-ar21.svg-prepped
+share/doc/nut/images/ci/jenkins-nut-large-256px.png
+share/doc/nut/images/ci/jenkins-nut-large-256px.png-prepped
+share/doc/nut/images/ci/jenkins-nut-large-squared.png
+share/doc/nut/images/ci/jenkins-nut-large-squared.png-prepped
+share/doc/nut/images/ci/jenkins-nut-large.pdn
+share/doc/nut/images/ci/jenkins-nut-large.pdn-prepped
+share/doc/nut/images/ci/jenkins-nut-large.png
+share/doc/nut/images/ci/jenkins-nut-large.png-prepped
+share/doc/nut/images/ci/jenkins-nut-small-256px.png
+share/doc/nut/images/ci/jenkins-nut-small-256px.png-prepped
+share/doc/nut/images/ci/jenkins-nut-small.pdn
+share/doc/nut/images/ci/jenkins-nut-small.pdn-prepped
+share/doc/nut/images/ci/jenkins-nut-small.png
+share/doc/nut/images/ci/jenkins-nut-small.png-prepped
+share/doc/nut/images/ci/jenkins-nut-squared.png
+share/doc/nut/images/ci/jenkins-nut-squared.png-prepped
+share/doc/nut/images/ci/jenkins-nut-transparent-bg-140pxW.png
+share/doc/nut/images/ci/jenkins-nut-transparent-bg-140pxW.png-prepped
+share/doc/nut/images/ci/jenkins-nut-transparent-bg-40px.png
+share/doc/nut/images/ci/jenkins-nut-transparent-bg-40px.png-prepped
+share/doc/nut/images/ci/jenkins-nut-transparent-bg.png
+share/doc/nut/images/ci/jenkins-nut-transparent-bg.png-prepped
+share/doc/nut/images/ci/jenkins-nut.css
+share/doc/nut/images/ci/jenkins-nut.css-prepped
+share/doc/nut/images/ci/jenkins-nut.png
+share/doc/nut/images/ci/jenkins-nut.png-prepped
+share/doc/nut/images/ci/jenkins-nut.txt
+share/doc/nut/images/ci/jenkins-nut.txt-prepped
 share/doc/nut/images/hostedby.png
+share/doc/nut/images/hostedby.png-prepped
 share/doc/nut/images/note.png
+share/doc/nut/images/note.png-prepped
 share/doc/nut/images/nut-logo.png
+share/doc/nut/images/nut-logo.png-prepped
 share/doc/nut/images/nut_layering.png
+share/doc/nut/images/nut_layering.png-prepped
 share/doc/nut/images/old-cgi.png
+share/doc/nut/images/old-cgi.png-prepped
 share/doc/nut/images/simple.png
+share/doc/nut/images/simple.png-prepped
 share/doc/nut/images/warning.png
+share/doc/nut/images/warning.png-prepped
 share/doc/nut/macros.txt
 share/doc/nut/net-protocol.txt
 share/doc/nut/new-clients.txt

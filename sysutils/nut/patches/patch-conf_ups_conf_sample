@@ -9,7 +9,7 @@ Index: conf/ups.conf.sample
  #            "\\\\.\\COM1" is the first port on Windows boxes (note that
  #                the backslash characters themselves must be escaped,
  #                for the NUT configuration parser to yield "\\.\COM1").
-@@ -195,11 +196,11 @@ maxretry = 3
+@@ -204,11 +205,11 @@ maxretry = 3
  # --------
  #
  # A simple example for a UPS called "powerpal" that uses the blazer_ser
@@ -23,7 +23,7 @@ Index: conf/ups.conf.sample
  #   desc = "Web server"
  #
  # If your UPS driver requires additional settings, you can specify them
-@@ -214,3 +215,17 @@ maxretry = 3
+@@ -223,3 +224,17 @@ maxretry = 3
  #
  # To find out if your driver supports any extra settings, start it with
  # the -h option and/or read the driver's documentation.

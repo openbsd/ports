@@ -1,7 +1,7 @@
 Index: clients/Makefile.am
 --- clients/Makefile.am.orig
 +++ clients/Makefile.am
-@@ -79,10 +79,13 @@ upssched_LDADD = $(top_builddir)/common/libcommonclien
+@@ -89,10 +89,13 @@ upssched_LDADD = $(top_builddir)/common/libcommonclien
  
  upsimage_cgi_SOURCES = upsimage.c upsclient.h upsimagearg.h cgilib.c cgilib.h
  upsimage_cgi_LDADD = $(LDADD) $(LIBGD_LDFLAGS)

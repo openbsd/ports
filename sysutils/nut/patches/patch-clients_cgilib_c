@@ -1,7 +1,7 @@
 Index: clients/cgilib.c
 --- clients/cgilib.c.orig
 +++ clients/cgilib.c
-@@ -166,7 +166,7 @@ int checkhost(const char *host, char **desc)
+@@ -168,7 +168,7 @@ int checkhost(const char *host, char **desc)
  	if (!host)
  		return 0;		/* deny null hostnames */
  

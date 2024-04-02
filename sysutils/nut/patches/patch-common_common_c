@@ -1,7 +1,7 @@
 Index: common/common.c
 --- common/common.c.orig
 +++ common/common.c
-@@ -1429,6 +1429,17 @@ const char * confpath(void)
+@@ -1430,6 +1430,17 @@ const char * confpath(void)
  	return (path != NULL && *path != '\0') ? path : CONFPATH;
  }
  

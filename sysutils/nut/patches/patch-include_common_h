@@ -1,7 +1,7 @@
 Index: include/common.h
 --- include/common.h.orig
 +++ include/common.h
-@@ -255,6 +255,9 @@ void syslogbit_set(void);
+@@ -261,6 +261,9 @@ void syslogbit_set(void);
  /* Return the default path for the directory containing configuration files */
  const char * confpath(void);
  
