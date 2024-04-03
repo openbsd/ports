@@ -1,8 +1,8 @@
-include/gnome-settings-daemon-45/
-include/gnome-settings-daemon-45/gnome-settings-daemon/
-include/gnome-settings-daemon-45/gnome-settings-daemon/gsd-enums.h
-lib/gnome-settings-daemon-45/
-@so lib/gnome-settings-daemon-45/libgsd.so
+include/gnome-settings-daemon-46/
+include/gnome-settings-daemon-46/gnome-settings-daemon/
+include/gnome-settings-daemon-46/gnome-settings-daemon/gsd-enums.h
+lib/gnome-settings-daemon-46/
+@so lib/gnome-settings-daemon-46/libgsd.so
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-a11y-settings
 @bin libexec/gsd-color
@@ -14,7 +14,6 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-print-notifications
 @bin libexec/gsd-printer
 @bin libexec/gsd-screensaver-proxy
-@bin libexec/gsd-sharing
 @bin libexec/gsd-smartcard
 @bin libexec/gsd-sound
 @bin libexec/gsd-usb-protection
@@ -48,8 +47,6 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Rfki
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Rfkill.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop
-share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop

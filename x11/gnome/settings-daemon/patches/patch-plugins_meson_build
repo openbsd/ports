@@ -1,0 +1,11 @@
+Index: plugins/meson.build
+--- plugins/meson.build.orig
++++ plugins/meson.build
+@@ -7,7 +7,6 @@ all_plugins = [
+     ['keyboard', 'Keyboard', 'GNOME keyboard configuration'],
+     ['media-keys', 'MediaKeys', 'GNOME keyboard shortcuts'],
+     ['screensaver-proxy', 'ScreensaverProxy', 'GNOME FreeDesktop screensaver'],
+-    ['sharing', 'Sharing', 'GNOME file sharing'],
+     ['sound', 'Sound', 'GNOME sound sample caching'],
+     ['usb-protection', 'UsbProtection', 'GNOME USB protection'],
+     ['xsettings', 'XSettings', 'GNOME XSettings'],
