@@ -3,7 +3,6 @@
 @comment homedir is needed as a skel dir during initial setup
 @bin libexec/gnome-initial-setup
 @bin libexec/gnome-initial-setup-copy-worker
-@bin libexec/gnome-initial-setup-goa-helper
 share/applications/gnome-initial-setup.desktop
 share/dconf/profile/gnome-initial-setup
 share/examples/gnome-initial-setup/
@@ -59,6 +58,7 @@ share/locale/is/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/it/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ja/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ka/LC_MESSAGES/gnome-initial-setup.mo
+share/locale/kab/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/kk/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/kn/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ko/LC_MESSAGES/gnome-initial-setup.mo

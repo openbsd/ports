@@ -10,4 +10,4 @@ Index: gnome-initial-setup/pages/meson.build
 -   'network',
     'timezone',
     'privacy',
-    'goa',
+    'password',
