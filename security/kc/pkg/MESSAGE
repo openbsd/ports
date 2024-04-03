@@ -1,1 +1,5 @@
-Please read ${PREFIX}/share/doc/kc/Changelog.md to see why you might not be able to open your database anymore.
+Please read ${PREFIX}/share/doc/kc/Changelog.md to see why you might not
+be able to open your database anymore.
+
+Using YubiKey support with the -yubikey flavor requires read/write
+access to the /dev/usb? and /dev/ugen?.?? devices.

@@ -75,6 +75,7 @@
      SUBDIR += john
      SUBDIR += john-jumbo
      SUBDIR += kc
+     SUBDIR += kc,yubikey
      SUBDIR += keepassxc
      SUBDIR += keepassxc,browser
      SUBDIR += keepassxc,browser,yubikey
