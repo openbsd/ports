@@ -1,5 +1,7 @@
 # XXX change proxy settings without network-manager?
 
+BROKEN=			needs an update to 46.0
+
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center

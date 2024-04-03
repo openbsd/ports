@@ -1,5 +1,7 @@
 COMMENT=		initial-setup firstboot-like tool
 
+BROKEN=			needs an update to 46.0
+
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		45.4.1
 
