@@ -55,7 +55,7 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 
 # need X11 because DBus is used in the GDBus test cases;
 # also requires bumped limits (stack >= 24576)
-#BUILD_DEPENDS +=	x11/dbus
+BUILD_DEPENDS +=	x11/dbus
 TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus
