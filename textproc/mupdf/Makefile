@@ -2,7 +2,7 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 
 SHARED_LIBS +=  mupdf                 10.0
 
-V =		1.24.0
+V =		1.24.1
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
