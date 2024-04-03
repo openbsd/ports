@@ -2,11 +2,10 @@ COMMENT=	library for encoding and decoding .avif files
 
 GH_ACCOUNT=	AOMediaCodec
 GH_PROJECT=	libavif
-GH_TAGNAME=	v0.11.1
-REVISION=	0
+GH_TAGNAME=	v1.0.4
 CATEGORIES=	graphics
 
-SHARED_LIBS=	avif	6.0
+SHARED_LIBS=	avif	7.0
 
 HOMEPAGE=	https://github.com/AOMediaCodec/libavif
 
