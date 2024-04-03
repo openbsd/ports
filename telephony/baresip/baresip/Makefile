@@ -3,13 +3,13 @@ COMMENT-gtk =		GTK+-based modules for baresip
 
 GH_PROJECT =	baresip
 
-SHARED_LIBS +=		baresip	0.1 # 0.0
+SHARED_LIBS +=		baresip	1.0 # 0.0
 MULTI_PACKAGES =	-main -gtk
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 
 WANTLIB-main += ICE SDL2 SM X11 Xext aom avcodec avdevice avfilter
-WANTLIB-main += avformat avutil c crypto gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-main += avformat avutil c crypto execinfo gio-2.0 glib-2.0 gobject-2.0
 WANTLIB-main += m mosquitto mp3lame mpg123 opencore-amrnb opus png
 WANTLIB-main += pthread re sndfile sndio spandsp speexdsp ssl swresample
 WANTLIB-main += swscale twolame v4l2 vpx z
@@ -39,9 +39,6 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_JACK=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PIPEWIRE=Yes
 
 post-extract:
-	# revert https://github.com/baresip/baresip/pull/2422
-	mkdir -p ${WRKSRC}/modules/sndio
-	cp ${FILESDIR}/sndio.c ${FILESDIR}/CMakeLists.txt ${WRKSRC}/modules/sndio/
 	# do the symlink dance so that cmake finds static libzrtpcppcore.a & private headers
 	ln -sf ${WRKDIR}/telephony/libzrtp/ZRTPCPP-2d59090ee244bc4d3a682ad45ae49dc7b4d4dfb7 ${WRKDIR}/ZRTPCPP
 	ln -f ${WRKDIR}/telephony/libzrtp/build-${MACHINE_ARCH}/clients/no_client/libzrtpcppcore.a ${WRKDIR}/ZRTPCPP/clients/no_client/

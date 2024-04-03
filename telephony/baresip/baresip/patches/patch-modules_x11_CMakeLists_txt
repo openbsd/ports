@@ -1,7 +1,7 @@
 Index: modules/x11/CMakeLists.txt
 --- modules/x11/CMakeLists.txt.orig
 +++ modules/x11/CMakeLists.txt
-@@ -8,5 +8,5 @@ else()
+@@ -17,5 +17,5 @@ else()
      add_library(${PROJECT_NAME} MODULE ${SRCS})
  endif()
  
