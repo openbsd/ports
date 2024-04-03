@@ -1,11 +1,9 @@
-No utmpx on OpenBSD
-
 XXX implement username syntax validation
 We are only checking if the username exists, not if it's valid.
 
-Index: panels/user-accounts/user-utils.c
---- panels/user-accounts/user-utils.c.orig
-+++ panels/user-accounts/user-utils.c
+Index: panels/system/users/user-utils.c
+--- panels/system/users/user-utils.c.orig
++++ panels/system/users/user-utils.c
 @@ -26,7 +26,7 @@
  #include <sys/wait.h>
  #include <limits.h>
@@ -15,7 +13,7 @@ Index: panels/user-accounts/user-utils.c
  #include <pwd.h>
  
  #ifdef __FreeBSD__
-@@ -50,7 +50,7 @@
+@@ -47,7 +47,7 @@
  gsize
  get_username_max_length (void)
  {
@@ -24,7 +22,7 @@ Index: panels/user-accounts/user-utils.c
  }
  
  gboolean
-@@ -123,6 +123,10 @@ is_valid_username_data_free (isValidUsernameData *data
+@@ -120,6 +120,10 @@ is_valid_username_data_free (isValidUsernameData *data
  #define E_SUCCESS EX_OK
  #define E_BAD_ARG EX_DATAERR
  #define E_NOTFOUND EX_NOUSER
@@ -35,7 +33,7 @@ Index: panels/user-accounts/user-utils.c
  #else
  /* Taken from usermod.c in shadow-utils. */
  #define E_SUCCESS 0
-@@ -208,6 +212,11 @@ is_valid_username_async (const gchar *username,
+@@ -205,6 +209,11 @@ is_valid_username_async (const gchar *username,
          argv[2] = "-n";
          argv[3] = data->username;
          argv[4] = NULL;

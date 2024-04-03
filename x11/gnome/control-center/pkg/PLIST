@@ -5,17 +5,14 @@
 @pkgpath x11/gnome/controlcenter2
 @pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
-@bin libexec/cc-remote-login-helper
-@bin libexec/gnome-control-center-goa-helper
 @bin libexec/gnome-control-center-print-renderer
 @bin libexec/gnome-control-center-search-provider
+share/applications/gnome-about-panel.desktop
 share/applications/gnome-applications-panel.desktop
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-datetime-panel.desktop
-share/applications/gnome-default-apps-panel.desktop
 share/applications/gnome-display-panel.desktop
-share/applications/gnome-info-overview-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-multitasking-panel.desktop
 share/applications/gnome-notifications-panel.desktop
@@ -24,12 +21,12 @@ share/applications/gnome-power-panel.desktop
 share/applications/gnome-printers-panel.desktop
 share/applications/gnome-privacy-panel.desktop
 share/applications/gnome-region-panel.desktop
-share/applications/gnome-removable-media-panel.desktop
 share/applications/gnome-search-panel.desktop
 share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
+share/applications/gnome-system-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
-share/applications/gnome-user-accounts-panel.desktop
+share/applications/gnome-users-panel.desktop
 share/applications/org.gnome.Settings.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.Settings.SearchProvider.service
@@ -58,7 +55,6 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-accessibility-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-appearance-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-applications-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-color-symbolic.svg
-share/icons/hicolor/scalable/apps/org.gnome.Settings-default-apps-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-display-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-keyboard-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-multitasking-symbolic.svg
@@ -68,15 +64,15 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-power-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-printers-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-privacy-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-region-symbolic.svg
-share/icons/hicolor/scalable/apps/org.gnome.Settings-removable-media-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-remote-desktop-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-search-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-sharing-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-sound-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-system-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-time-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-users-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
-share/icons/hicolor/scalable/status/info-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Settings-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/af/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -326,8 +322,9 @@ share/pixmaps/faces/tomatoes.jpg
 share/pixmaps/faces/tree.jpg
 share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
-share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
 share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
+share/polkit-1/actions/org.gnome.controlcenter.remote-session-helper.policy
+share/polkit-1/actions/org.gnome.controlcenter.system.policy
 share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/

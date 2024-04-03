@@ -1,11 +1,9 @@
 # XXX change proxy settings without network-manager?
 
-BROKEN=			needs an update to 46.0
-
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		45.3
+GNOME_VERSION=		46.0.1
 
 CATEGORIES=		x11
 
@@ -13,12 +11,12 @@ CATEGORIES=		x11
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 accountsservice adwaita-1 c cairo colord colord-gtk4
-WANTLIB += cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnome-rr-4 goa-1.0
-WANTLIB += goa-backend-1.0 gobject-2.0 gsound gtk-3 gtk-4 gtop-2.0
-WANTLIB += ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib pwquality smbclient upower-glib
-WANTLIB += xml2
+WANTLIB += cups epoxy fontconfig gcr-4 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnome-rr-4 gnutls
+WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-4 gtop-2.0
+WANTLIB += ibus-1.0 intl json-glib-1.0 m pango-1.0 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib pwquality secret-1 smbclient
+WANTLIB += soup-3.0 upower-glib xml2
 
 MODULES=		devel/meson \
 			devel/dconf \

@@ -3,9 +3,9 @@ The mouse panel needs gsd_device_manager_get() which needs GUdev.
 Index: shell/cc-panel-loader.c
 --- shell/cc-panel-loader.c.orig
 +++ shell/cc-panel-loader.c
-@@ -42,7 +42,9 @@ extern GType cc_default_apps_panel_get_type (void);
+@@ -40,7 +40,9 @@ extern GType cc_color_panel_get_type (void);
+ extern GType cc_date_time_panel_get_type (void);
  extern GType cc_display_panel_get_type (void);
- extern GType cc_info_overview_panel_get_type (void);
  extern GType cc_keyboard_panel_get_type (void);
 +#if 0
  extern GType cc_mouse_panel_get_type (void);
@@ -13,19 +13,19 @@ Index: shell/cc-panel-loader.c
  extern GType cc_multitasking_panel_get_type (void);
  #ifdef BUILD_NETWORK
  extern GType cc_network_panel_get_type (void);
-@@ -56,7 +58,9 @@ extern GType cc_privacy_panel_get_type (void);
- extern GType cc_region_panel_get_type (void);
- extern GType cc_removable_media_panel_get_type (void);
+@@ -52,7 +54,9 @@ extern GType cc_power_panel_get_type (void);
+ extern GType cc_printers_panel_get_type (void);
+ extern GType cc_privacy_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
 +#ifdef BUILD_SHARING
  extern GType cc_sharing_panel_get_type (void);
 +#endif
  extern GType cc_sound_panel_get_type (void);
+ extern GType cc_system_panel_get_type (void);
  extern GType cc_ua_panel_get_type (void);
- extern GType cc_user_panel_get_type (void);
-@@ -99,7 +103,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -92,7 +96,9 @@ static CcPanelLoaderVtable default_panels[] =
+   PANEL_TYPE("color",            cc_color_panel_get_type,                NULL),
    PANEL_TYPE("display",          cc_display_panel_get_type,              NULL),
-   PANEL_TYPE("info-overview",    cc_info_overview_panel_get_type,        NULL),
    PANEL_TYPE("keyboard",         cc_keyboard_panel_get_type,             NULL),
 +#if 0
    PANEL_TYPE("mouse",            cc_mouse_panel_get_type,                NULL),
@@ -33,13 +33,13 @@ Index: shell/cc-panel-loader.c
    PANEL_TYPE("multitasking",     cc_multitasking_panel_get_type,         NULL),
  #ifdef BUILD_NETWORK
    PANEL_TYPE("network",          cc_network_panel_get_type,              NULL),
-@@ -113,7 +119,9 @@ static CcPanelLoaderVtable default_panels[] =
-   PANEL_TYPE("region",           cc_region_panel_get_type,               NULL),
-   PANEL_TYPE("removable-media",  cc_removable_media_panel_get_type,      NULL),
+@@ -104,7 +110,9 @@ static CcPanelLoaderVtable default_panels[] =
+   PANEL_TYPE("printers",         cc_printers_panel_get_type,             NULL),
+   PANEL_TYPE("privacy",          cc_privacy_panel_get_type,              NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),
 +#ifdef BUILD_SHARING
    PANEL_TYPE("sharing",          cc_sharing_panel_get_type,              NULL),
 +#endif
    PANEL_TYPE("sound",            cc_sound_panel_get_type,                NULL),
+   PANEL_TYPE("system",           cc_system_panel_get_type,               NULL),
    PANEL_TYPE("universal-access", cc_ua_panel_get_type,                   NULL),
-   PANEL_TYPE("user-accounts",    cc_user_panel_get_type,                 NULL),

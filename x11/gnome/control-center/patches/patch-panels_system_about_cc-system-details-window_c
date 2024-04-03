@@ -1,9 +1,9 @@
 No Udisks2 on OpenBSD.
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
-Index: panels/info-overview/cc-system-details-window.c
---- panels/info-overview/cc-system-details-window.c.orig
-+++ panels/info-overview/cc-system-details-window.c
+Index: panels/system/about/cc-system-details-window.c
+--- panels/system/about/cc-system-details-window.c.orig
++++ panels/system/about/cc-system-details-window.c
 @@ -33,8 +33,12 @@
  #include <glibtop/mountlist.h>
  #include <glibtop/mem.h>
@@ -17,7 +17,7 @@ Index: panels/info-overview/cc-system-details-window.c
  
  #include <gdk/gdk.h>
  
-@@ -348,6 +352,7 @@ get_os_type (void)
+@@ -349,6 +353,7 @@ get_os_type (void)
  char *
  get_primary_disk_info (void)
  {
@@ -25,7 +25,7 @@ Index: panels/info-overview/cc-system-details-window.c
    g_autoptr(UDisksClient) client = NULL;
    GDBusObjectManager *manager;
    g_autolist(GDBusObject) objects = NULL;
-@@ -386,6 +391,7 @@ get_primary_disk_info (void)
+@@ -387,6 +392,7 @@ get_primary_disk_info (void)
  
    if (total_size > 0)
        return g_format_size (total_size);
@@ -33,7 +33,7 @@ Index: panels/info-overview/cc-system-details-window.c
  
    return NULL;
  }
-@@ -647,10 +653,13 @@ get_ram_size_libgtop (void)
+@@ -617,10 +623,13 @@ get_ram_size_libgtop (void)
  guint64
  get_ram_size_dmi (void)
  {
@@ -47,7 +47,7 @@ Index: panels/info-overview/cc-system-details-window.c
    guint64 num_ram;
    guint i;
  
-@@ -665,6 +674,7 @@ get_ram_size_dmi (void)
+@@ -635,6 +644,7 @@ get_ram_size_dmi (void)
      prop = g_strdup_printf ("MEMORY_DEVICE_%d_SIZE", i);
      ram_total += g_udev_device_get_property_as_uint64 (dmi, prop);
    }

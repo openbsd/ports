@@ -1,0 +1,14 @@
+No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)               
+
+Index: panels/system/meson.build
+--- panels/system/meson.build.orig
++++ panels/system/meson.build
+@@ -100,7 +100,7 @@ sources += gnome.mkenums(
+ libsecret_dep = dependency('libsecret-1')
+ gnutls_dep = dependency('gnutls')
+ libgtop2 = dependency('libgtop-2.0')
+-udisks2 = dependency('udisks2', version: '>= 2.8.2')
++udisks2 = []
+ 
+ # Kerberos support
+ krb_dep = dependency('krb5', required: false)

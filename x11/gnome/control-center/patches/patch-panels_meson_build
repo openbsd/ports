@@ -5,27 +5,19 @@ wwan needs network-manager
 Index: panels/meson.build
 --- panels/meson.build.orig
 +++ panels/meson.build
-@@ -9,7 +9,6 @@ panels = [
+@@ -6,7 +6,6 @@ panels = [
+   'color',
    'display',
-   'info-overview',
    'keyboard',
 -  'mouse',
    'multitasking',
    'notifications',
    'online-accounts',
-@@ -23,11 +22,13 @@ panels = [
+@@ -18,7 +17,6 @@ panels = [
    'sound',
+   'system',
    'universal-access',
-   'user-accounts',
 - 'wwan',
  ]
  
  if host_is_linux
--  panels += ['network']
-+  panels += [
-+    'network',
-+    'wwan'
-+  ]
- endif
- 
- if host_is_linux_not_s390

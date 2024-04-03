@@ -3,7 +3,7 @@ No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 Index: panels/common/meson.build
 --- panels/common/meson.build.orig
 +++ panels/common/meson.build
-@@ -85,18 +85,16 @@ liblanguage_dep = declare_dependency(
+@@ -86,18 +86,16 @@ liblanguage_dep = declare_dependency(
  )
  
  gsd_headers = [

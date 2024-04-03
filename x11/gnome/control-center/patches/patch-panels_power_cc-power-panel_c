@@ -3,7 +3,7 @@ login1 -> ConsoleKit
 Index: panels/power/cc-power-panel.c
 --- panels/power/cc-power-panel.c.orig
 +++ panels/power/cc-power-panel.c
-@@ -784,9 +784,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
+@@ -719,9 +719,9 @@ can_suspend_or_hibernate (CcPowerPanel *self,
      }
  
    variant = g_dbus_connection_call_sync (connection,
