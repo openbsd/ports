@@ -292,7 +292,6 @@
      SUBDIR += rawstudio
      SUBDIR += rawtherapee
      SUBDIR += ruby-chunky_png
-     SUBDIR += ruby-rmagick,ruby31
      SUBDIR += ruby-rmagick,ruby32
      SUBDIR += ruby-rmagick,ruby33
      SUBDIR += ruby-rqrcode

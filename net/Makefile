@@ -646,13 +646,10 @@
      SUBDIR += rtg
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
-     SUBDIR += ruby-cbor,ruby31
      SUBDIR += ruby-cbor,ruby32
      SUBDIR += ruby-cbor,ruby33
-     SUBDIR += ruby-eventmachine,ruby31
      SUBDIR += ruby-eventmachine,ruby32
      SUBDIR += ruby-eventmachine,ruby33
-     SUBDIR += ruby-msgpack,ruby31
      SUBDIR += ruby-msgpack,ruby32
      SUBDIR += ruby-msgpack,ruby33
      SUBDIR += ruby-net-telnet
