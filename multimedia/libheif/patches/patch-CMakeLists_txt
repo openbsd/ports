@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -22,7 +22,6 @@ endif()
+@@ -28,7 +28,6 @@ endif()
  
  if(NOT MSVC)
    add_definitions(-Wall)

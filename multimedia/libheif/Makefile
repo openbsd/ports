@@ -1,10 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.16.2
+V=		1.17.6
 DISTNAME=	libheif-$V
-REVISION=	1
 
-SHARED_LIBS +=  heif 1.6
+SHARED_LIBS +=  heif 2.0
 
 CATEGORIES=	multimedia graphics
 
@@ -28,14 +27,15 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libde265 \
+		graphics/jpeg \
 		multimedia/x265
 # examples
-LIB_DEPENDS+=	graphics/jpeg \
-		graphics/png
+LIB_DEPENDS+=	graphics/png
 
-CONFIGURE_ARGS= -DWITH_RAV1E=Off \
+CONFIGURE_ARGS= -DWITH_DAV1D=On \
+		-DWITH_JPEG_DECODER=On \
+		-DWITH_JPEG_ENCODER=On \
+		-DWITH_RAV1E=Off \
 		-DWITH_SvtEnc=Off
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
