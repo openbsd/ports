@@ -2,6 +2,7 @@ COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		46.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -27,6 +28,7 @@ LIB_DEPENDS=		geo/geoclue2 \
 			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gdm \
+			x11/gnome/libadwaita \
 			x11/gnome/libgweather4
 
 # gnome-initial-setup/pages/keyboard/cc-input-chooser.c
