@@ -54,8 +54,6 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}errors.${MODPY
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}eventual.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}eventual.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}foo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}foo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}ipaddrs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}ipaddrs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}journal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,7 +147,6 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/cli/public_relay.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/cli/welcome.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/errors.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/eventual.py
-lib/python${MODPY_VERSION}/site-packages/wormhole/foo.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/ipaddrs.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/journal.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/observer.py
@@ -271,3 +268,12 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/transit.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/util.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/wormhole.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/xfer_util.py
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/wormhole
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/wormhole.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_wormhole
