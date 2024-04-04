@@ -28,7 +28,7 @@ SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxO
 SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD1U=
 SHA256 (cargo/libc-0.2.153.tar.gz) = nBmPkXKKgigaZOH0+e6yXYLLMqXeJRxr0bUVTWOo570=
 SHA256 (cargo/libloading-0.8.3.tar.gz) = DCoZj7aw6toqjfR5M3NObTXTUGZaM6NZPXFk+lLHXBk=
-SHA256 (cargo/libredox-0.0.1.tar.gz) = hcgzyh5mB4hR26KQRodOOPCLLIg3AKopoD3dOyOBTug=
+SHA256 (cargo/libredox-0.1.3.tar.gz) = wP83vVkMolBj41r3RcNDy3oCcZBvt7N+SBPo958AJo0=
 SHA256 (cargo/linux-raw-sys-0.4.13.tar.gz) = Ac2hQd9nBt5TG2xGw6M+zKdVU4IZvUhCYvoJQQwTU5w=
 SHA256 (cargo/log-0.4.21.tar.gz) = kO2MHlEBNPl528TwcPh9QxMJi3BIYaEF/jQjHHCjkBw=
 SHA256 (cargo/memchr-2.7.2.tar.gz) = bIZAxdcwyxPr2QfY0EtS9VrJou7FW0QMiJL0DVbHbB0=
@@ -41,8 +41,7 @@ SHA256 (cargo/pkg-config-0.3.30.tar.gz) = 0jGyMJJ7XkrSA9tXu8vuKAL2vOYgseSpAkoH2U
 SHA256 (cargo/prettyplease-0.2.17.tar.gz) = jTko+123aMuG+JH/AU8BRFiSl+PGoaum7Xzs/azicMc=
 SHA256 (cargo/proc-macro2-1.0.79.tar.gz) = 6DX/Ipj1chYI6xqYDsruGu8sEyv5XswCahG3vzwBwC4=
 SHA256 (cargo/quote-1.0.35.tar.gz) = KR7Jq179k0qvUDpkZsXVJRU10QjudHRyw5d8xazIaO8=
-SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
-SHA256 (cargo/redox_users-0.4.4.tar.gz) = oYR5IAd5YB5JitpOjB4fUOPuGd6wJZwlglqYtWA7LLQ=
+SHA256 (cargo/redox_users-0.4.5.tar.gz) = vSg9llHu2ksqg6Q8HJGyZsQP127NOaUKjGMK5p3HKJE=
 SHA256 (cargo/regex-1.10.4.tar.gz) = wRfb396cgwiXW2oY1x8/OFyJRh97P7BUKI7PKiBYukw=
 SHA256 (cargo/regex-automata-0.4.6.tar.gz) = hrg7i5hH+b+V72ivsLjmzbgPSYRC9ReaKfrUSPzB6uo=
 SHA256 (cargo/regex-syntax-0.8.3.tar.gz) = ra1E4p5MgGEZSRp/BvA95NGvIsOmgN1H8ebheUOdH1Y=
@@ -55,7 +54,7 @@ SHA256 (cargo/serde-1.0.197.tar.gz) = P7HIc+G5sFak3EwMGYskw/+gWSQ4dVUrK9CTOxruTO
 SHA256 (cargo/serde_derive-1.0.197.tar.gz) = frCzS0LtwX9rfKyEpSocXw4bsiJ+mXypAR6j3TToYQs=
 SHA256 (cargo/serde_json-1.0.115.tar.gz) = EtxcRtqo6f309ecbbPmlPySH2g6G5VgI4tNVOWZkl90=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
-SHA256 (cargo/syn-2.0.55.tar.gz) = ACobPb+Wft+vwyZV0PN3qwu3uZSqHTLIzH6bi/PruPA=
+SHA256 (cargo/syn-2.0.58.tar.gz) = RM+5PzgHC+7jaz/vfU9aFvJ3UdlLGHtmalzF6bDTBoc=
 SHA256 (cargo/term-0.6.1.tar.gz) = wIY6M0XnD2HWE+qzLuBGzNG8xfkQX+QCxh/NDBPuuLU=
 SHA256 (cargo/thiserror-1.0.58.tar.gz) = A0aIOQCRYFE0cehqA0uyxcDkuq47Q/ef/FXEpUJ7Mpc=
 SHA256 (cargo/thiserror-impl-1.0.58.tar.gz) = xh87oYKZTvxDdkpGwBjDR7xJLHnwJOcF9GVntBj21Pc=
@@ -78,7 +77,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.4.tar.gz) = Xu4JFZDonMAq1RT/4+rZ62tmCu3KIY
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = d8p58kUbSfqeKvOfB0f+mZ/NpPXiQbKJhiTcqXofIXc=
 SHA256 (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = MrdS5SotoN3728xvzq3+7eTJOe0W0T5kiDOmHfthHtg=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (rust-openssl-tests-20240329-17252974.tar.gz) = i4GANhwM0UCF/24yfY+1JJp+ZN4k/FsZS83CHJWSZx4=
+SHA256 (rust-openssl-tests-20240404-8e5d7bd4.tar.gz) = XuhtzQuJKRQbdpiPNwfs4W4apD19zwv7o8qZgUXel2Q=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/annotate-snippets-0.9.2.tar.gz) = 32065
 SIZE (cargo/bindgen-0.65.1.tar.gz) = 213479
@@ -109,7 +108,7 @@ SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
 SIZE (cargo/libc-0.2.153.tar.gz) = 740614
 SIZE (cargo/libloading-0.8.3.tar.gz) = 28480
-SIZE (cargo/libredox-0.0.1.tar.gz) = 4212
+SIZE (cargo/libredox-0.1.3.tar.gz) = 6068
 SIZE (cargo/linux-raw-sys-0.4.13.tar.gz) = 1493855
 SIZE (cargo/log-0.4.21.tar.gz) = 43442
 SIZE (cargo/memchr-2.7.2.tar.gz) = 96220
@@ -122,8 +121,7 @@ SIZE (cargo/pkg-config-0.3.30.tar.gz) = 20613
 SIZE (cargo/prettyplease-0.2.17.tar.gz) = 57713
 SIZE (cargo/proc-macro2-1.0.79.tar.gz) = 47200
 SIZE (cargo/quote-1.0.35.tar.gz) = 28136
-SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
-SIZE (cargo/redox_users-0.4.4.tar.gz) = 15438
+SIZE (cargo/redox_users-0.4.5.tar.gz) = 15514
 SIZE (cargo/regex-1.10.4.tar.gz) = 253191
 SIZE (cargo/regex-automata-0.4.6.tar.gz) = 617565
 SIZE (cargo/regex-syntax-0.8.3.tar.gz) = 347497
@@ -136,7 +134,7 @@ SIZE (cargo/serde-1.0.197.tar.gz) = 77087
 SIZE (cargo/serde_derive-1.0.197.tar.gz) = 55771
 SIZE (cargo/serde_json-1.0.115.tar.gz) = 147100
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
-SIZE (cargo/syn-2.0.55.tar.gz) = 254901
+SIZE (cargo/syn-2.0.58.tar.gz) = 254920
 SIZE (cargo/term-0.6.1.tar.gz) = 37578
 SIZE (cargo/thiserror-1.0.58.tar.gz) = 21025
 SIZE (cargo/thiserror-impl-1.0.58.tar.gz) = 15645
@@ -159,4 +157,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.4.tar.gz) = 831627
 SIZE (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = 433358
 SIZE (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = 828019
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (rust-openssl-tests-20240329-17252974.tar.gz) = 360656
+SIZE (rust-openssl-tests-20240404-8e5d7bd4.tar.gz) = 360689
