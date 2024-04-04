@@ -7,6 +7,7 @@ COMMENT =		high-performance road network routing engine
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_COMMIT =		31e31a63d062fb804f5f4695ed3036ca7a269ead
+REVISION =		0
 DISTNAME =		osrm-backend-5.27.1pl0
 
 CATEGORIES =		geo
@@ -29,7 +30,7 @@ MODULES =		devel/cmake \
 			lang/lua
 MODLUA_VERSION =	5.3
 BUILD_DEPENDS =		devel/protozero \
-			devel/utfcpp \
+			devel/utfcpp>=4.0.5 \
 			geo/libosmium
 LIB_DEPENDS =		archivers/bzip2 \
 			devel/boost \
@@ -38,7 +39,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 CONFIGURE_ARGS =	-DOSMIUM_INCLUDE_DIR=${LOCALBASE}/include/osmium \
 			-DENABLE_CCACHE=Off
 
-CXXFLAGS +=		-I${LOCALBASE}/include/utfcpp
+CXXFLAGS +=		-I${LOCALBASE}/include/utf8cpp
 
 # Requires network access, and http access to sample osrm data is 403'd
 NO_TEST =		Yes

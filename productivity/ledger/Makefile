@@ -3,6 +3,7 @@ COMMENT =		command line double-entry accounting ledger
 GH_TAGNAME =		v3.3.2
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
+REVISION =		0
 
 SHARED_LIBS +=  ledger                    1.0 # 3.0
 
@@ -23,14 +24,14 @@ MODULES =		devel/cmake \
 			lang/python
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS =		devel/utfcpp \
+BUILD_DEPENDS =		devel/utfcpp>=4.0.5 \
 			print/texinfo
 
 LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
-CONFIGURE_ARGS=		-DUTFCPP_PATH=${LOCALBASE}/include/utfcpp
+CONFIGURE_ARGS=		-DUTFCPP_PATH=${LOCALBASE}/include/utf8cpp
 
 # Use this to make sure version.info gets generated, the actual
 # installation bits are removed as the remaining .info files are
