@@ -1,6 +1,9 @@
-include/utfcpp/
-include/utfcpp/utf8/
-include/utfcpp/utf8.h
-include/utfcpp/utf8/checked.h
-include/utfcpp/utf8/core.h
-include/utfcpp/utf8/unchecked.h
+include/utf8cpp/
+include/utf8cpp/utf8/
+include/utf8cpp/utf8.h
+include/utf8cpp/utf8/checked.h
+include/utf8cpp/utf8/core.h
+include/utf8cpp/utf8/cpp11.h
+include/utf8cpp/utf8/cpp17.h
+include/utf8cpp/utf8/cpp20.h
+include/utf8cpp/utf8/unchecked.h

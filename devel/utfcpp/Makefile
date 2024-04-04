@@ -1,30 +1,21 @@
 COMMENT =		simple, portable library for handling UTF-8 strings
 
-VERSION =		2.3.4
-DISTNAME =		utf8_v${VERSION:S/./_/g}
-PKGNAME =		utfcpp-${VERSION}
-REVISION =		1
-
+GH_ACCOUNT =		nemtrif
+GH_PROJECT =		utfcpp
+GH_TAGNAME =		v4.0.5
 CATEGORIES =		devel
-
-HOMEPAGE =		https://utfcpp.sourceforge.net/
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
 
-# BSD
+# Boost
 PERMIT_PACKAGE =	Yes
 
-SITES =			${SITE_SOURCEFORGE:=utfcpp/}
-EXTRACT_SUFX =		.zip
-
+NO_BUILD =		Yes
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}
-NO_BUILD =		Yes
-
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/utfcpp/utf8
-	${INSTALL_DATA} ${WRKDIR}/source/*.* ${PREFIX}/include/utfcpp
-	${INSTALL_DATA} ${WRKDIR}/source/utf8/*.* ${PREFIX}/include/utfcpp/utf8
+	${INSTALL_DATA_DIR} ${PREFIX}/include/utf8cpp/utf8
+	${INSTALL_DATA} ${WRKSRC}/source/*.h ${PREFIX}/include/utf8cpp
+	${INSTALL_DATA} ${WRKSRC}/source/utf8/*.h ${PREFIX}/include/utf8cpp/utf8
 
 .include <bsd.port.mk>
