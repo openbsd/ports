@@ -3,7 +3,7 @@ CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-7.16
+PKGNAME =	quirks-7.17
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	later
 
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
-RUN_DEPENDS = 	databases/updatedb
+RUN_DEPENDS =	databases/updatedb
 
 NO_TEST =	Yes
 

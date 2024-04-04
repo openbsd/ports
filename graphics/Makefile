@@ -46,7 +46,6 @@
      SUBDIR += dpic
      SUBDIR += drawpile
      SUBDIR += dumpmpeg
-     SUBDIR += dvdrip
      SUBDIR += enblend-enfuse
      SUBDIR += evince
      SUBDIR += evince,light

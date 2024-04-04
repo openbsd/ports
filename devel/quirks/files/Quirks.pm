@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1619 2024/03/31 05:45:04 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1620 2024/04/04 13:39:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1924,6 +1924,9 @@ setup_obsolete_reason(
 	5 => 'py3-pyls-black',
 	5 => 'py3-python-language-server',
 	5 => 'py3-python-jsonrpc-server',
+	3 => 'dvdrip',
+	3 => 'subtitleripper',
+	3 => 'transcode',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

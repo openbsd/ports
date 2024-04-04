@@ -74,12 +74,9 @@
      SUBDIR += streamdvd
      SUBDIR += streamlink
      SUBDIR += subrip
-     SUBDIR += subtitleripper
      SUBDIR += svt-av1
      SUBDIR += synfig
      SUBDIR += synfigstudio
-     SUBDIR += transcode
-     SUBDIR += transcode,lzo,mjpegtools
      SUBDIR += upplay
      SUBDIR += vitunes
      SUBDIR += x264

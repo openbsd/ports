@@ -1,4 +1,0 @@
-@so lib/transcode/export_mp2enc.so
-@so lib/transcode/export_mpeg2enc.so
-@so lib/transcode/export_yuv4mpeg.so
-@so lib/transcode/import_yuv4mpeg.so
