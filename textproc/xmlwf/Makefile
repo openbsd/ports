@@ -20,9 +20,6 @@ SITES =			https://github.com/libexpat/libexpat/releases/download/R_${VERSION:S/.
 
 EXTRACT_SUFX =		.tar.bz2
 
-ROACH_SITES =		https://github.com/libexpat/libexpat/releases/download/
-ROACH_URL =		${SITES}${DISTNAME}${EXTRACT_SUFX}
-
 NO_TEST =		Yes
 
 CFLAGS =		-I${WRKDIR}/expat-${VERSION}/lib
