@@ -5,7 +5,7 @@ DISTNAME=	arp-scan-$V
 COMMENT-main=	ARP scanning and fingerprinting tool
 PKGNAME-main=	${DISTNAME}
 
-M=		20240303
+M=		20240404
 COMMENT-mac=	MAC address vendor list
 PKGNAME-mac=	mac-vendor-$M
 
@@ -49,7 +49,7 @@ post-install:
 # maintainer convenience target to update mac-vendor file from the databases
 # http://standards.ieee.org/develop/regauth/oui/
 # https://regauth.standards.ieee.org/standards-ra-web/pub/view.html#registries
-listing:
+dist:
 	base='http://standards-oui.ieee.org'; \
 	f=oui-iab-`date +%Y%m%d`.tar.xz; \
 	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
