@@ -1,9 +1,8 @@
 COMMENT=		apache HTTP server
 
-V=			2.4.58
+V=			2.4.59
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
-REVISION=		1
 
 CATEGORIES=		www net
 
