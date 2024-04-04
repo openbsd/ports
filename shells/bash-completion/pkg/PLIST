@@ -703,7 +703,7 @@ share/bash-completion/completions/python
 share/bash-completion/completions/python2
 share/bash-completion/completions/python2.7
 share/bash-completion/completions/python3
-share/bash-completion/completions/python${MODPY_VERSION}
+share/bash-completion/completions/python3.10
 share/bash-completion/completions/python3.11
 share/bash-completion/completions/python3.12
 share/bash-completion/completions/python3.3
@@ -714,7 +714,7 @@ share/bash-completion/completions/python3.7
 share/bash-completion/completions/python3.8
 share/bash-completion/completions/python3.9
 share/bash-completion/completions/pyvenv
-share/bash-completion/completions/pyvenv-${MODPY_VERSION}
+share/bash-completion/completions/pyvenv-3.10
 share/bash-completion/completions/pyvenv-3.11
 share/bash-completion/completions/pyvenv-3.12
 share/bash-completion/completions/pyvenv-3.4
