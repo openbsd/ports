@@ -31,8 +31,6 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			textproc/py-humanize${MODPY_FLAVOR} \
 			www/py-autobahn${MODPY_FLAVOR}
 
-BASH_COMP =		
-
 # XXX completes partially, needs unported
 # "magic-wormhole-transit-relay==0.1.2"
 # "magic-wormhole-mailbox-server==0.3.1"
