@@ -1,0 +1,13 @@
+Need stdint.h for SIZE_MAX
+
+Index: src/common/compat_overflow.c
+--- src/common/compat_overflow.c.orig
++++ src/common/compat_overflow.c
+@@ -28,6 +28,7 @@
+ #include <limits.h>
+ #include <stdbool.h>
+ #include <stddef.h>
++#include <stdint.h>
+ 
+ #define ADD_OVERFLOW(func, type, max) \
+     bool func  (type x, type y, type *sum) \
