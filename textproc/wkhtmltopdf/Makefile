@@ -1,5 +1,6 @@
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
+USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel nojunk
 
@@ -11,8 +12,8 @@ GH_TAGNAME =		0.12.5
 QT_COMMIT =		5db36ec76b29712eb2c5bd0625c2c77d7468b3fc
 SITES.a =		https://github.com/wkhtmltopdf/qt/archive/
 DISTFILES =		${DISTNAME}.tar.gz
-DISTFILES.a = 		wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz
-REVISION =		5
+DISTFILES.a =		wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz
+REVISION =		6
 
 SHARED_LIBS =		wkhtmltox 1.0 # 0.12
 
@@ -41,7 +42,7 @@ USE_GMAKE =		Yes
 MAKE_FLAGS =		LIBwkhtmltox_VERSION=${LIBwkhtmltox_VERSION}
 MAKE_ENV +=		WRKBUILD=${WRKBUILD} \
 			PORTS_CC="${CC}" PORTS_CXX="${CXX}"
-CONFIGURE_ENV =	PORTS_CC="${CC}" PORTS_CXX="${CXX}"
+CONFIGURE_ENV =		PORTS_CC="${CC}" PORTS_CXX="${CXX}"
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
 SEPARATE_BUILD =	Yes
