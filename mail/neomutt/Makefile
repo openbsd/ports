@@ -12,6 +12,8 @@ EPOCH=		0
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl ssl tdb z
 
@@ -74,11 +76,6 @@ WANTLIB+=	notmuch
 LIB_DEPENDS+=  databases/kyotocabinet
 WANTLIB+=      kyotocabinet
 CONFIGURE_ARGS+= --kyotocabinet
-.endif
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
 .endif
 
 .include <bsd.port.mk>
