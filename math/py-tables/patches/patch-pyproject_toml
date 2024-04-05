@@ -1,0 +1,14 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -9,10 +9,6 @@ requires = [
+     "packaging",
+     "py-cpuinfo",
+     "Cython >=0.29.32",
+-    # Included here for seamless wheel builds.
+-    # Packagers can choose to replace it by externally provided
+-    # c-blosc2 library and headers
+-    "blosc2 >=2.3.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ # build-backend = "mesonpy"  # and replace ``setuptools`` above
