@@ -1,6 +1,6 @@
 COMMENT=		library to help create and query binary XML blobs
 
-V=			0.3.15
+V=			0.3.16
 DISTNAME=		libxmlb-${V}
 EXTRACT_SUFX=		.tar.xz
 

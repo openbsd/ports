@@ -22,7 +22,6 @@ include/libxmlb-2/libxmlb/xb-string.h
 include/libxmlb-2/libxmlb/xb-value-bindings.h
 include/libxmlb-2/libxmlb/xb-version.h
 include/libxmlb-2/xmlb.h
-lib/girepository-1.0/
 lib/girepository-1.0/Xmlb-2.0.typelib
 @lib lib/libxmlb.so.${LIBxmlb_VERSION}
 lib/pkgconfig/xmlb.pc
@@ -36,7 +35,6 @@ libexec/installed-tests/libxmlb/test.xml.xz
 libexec/installed-tests/libxmlb/test.xml.zstd
 @bin libexec/installed-tests/libxmlb/xb-self-test
 @man man/man1/xb-tool.1
-share/gir-1.0/
 share/gir-1.0/Xmlb-2.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
