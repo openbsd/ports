@@ -3,7 +3,7 @@ not very useful without tools, and the contrib Makefile has a gnu-ism
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -451,7 +451,7 @@ top_srcdir = @top_srcdir@
+@@ -450,7 +450,7 @@ top_srcdir = @top_srcdir@
  # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  SUBDIRS = lib third-party src bpf examples tests integration-tests \
