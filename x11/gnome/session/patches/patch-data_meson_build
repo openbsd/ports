@@ -1,0 +1,14 @@
+gnome-session-binary[99808]: WARNING: Unable to find required component 'org.gnome.SettingsDaemon.Sharing'
+** (gnome-session-quit:97249): WARNING **: 08:23:18.310: Failed to call logout: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name :1.24 was not provided by any .service file
+
+Index: data/meson.build
+--- data/meson.build.orig
++++ data/meson.build
+@@ -22,7 +22,6 @@ required_components = {
+     'org.gnome.SettingsDaemon.PrintNotifications',
+     'org.gnome.SettingsDaemon.Rfkill',
+     'org.gnome.SettingsDaemon.ScreensaverProxy',
+-    'org.gnome.SettingsDaemon.Sharing',
+     'org.gnome.SettingsDaemon.Smartcard',
+     'org.gnome.SettingsDaemon.Sound',
+     'org.gnome.SettingsDaemon.UsbProtection',
