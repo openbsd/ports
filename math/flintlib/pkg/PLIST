@@ -9,6 +9,7 @@ include/flint/acb_hypgeom.h
 include/flint/acb_mat.h
 include/flint/acb_modular.h
 include/flint/acb_poly.h
+include/flint/acb_theta.h
 include/flint/acb_types.h
 include/flint/acf.h
 include/flint/acf_types.h
@@ -40,7 +41,6 @@ include/flint/dirichlet.h
 include/flint/dlog.h
 include/flint/double_extras.h
 include/flint/double_interval.h
-include/flint/exception.h
 include/flint/fexpr.h
 include/flint/fexpr_builtin.h
 include/flint/fft.h
@@ -120,21 +120,25 @@ include/flint/gr_mpoly.h
 include/flint/gr_poly.h
 include/flint/gr_special.h
 include/flint/gr_vec.h
-include/flint/hashmap.h
 include/flint/hypgeom.h
 include/flint/limb_types.h
 include/flint/long_extras.h
 include/flint/longlong.h
+include/flint/longlong_asm_clang.h
+include/flint/longlong_asm_gcc.h
+include/flint/longlong_div_gnu.h
+include/flint/longlong_msc_arm64.h
+include/flint/longlong_msc_x86.h
 include/flint/machine_vectors.h
 include/flint/mag.h
-include/flint/mpf_mat.h
-include/flint/mpf_vec.h
+include/flint/mpf-impl.h
 include/flint/mpfr_mat.h
 include/flint/mpfr_vec.h
 include/flint/mpn_extras.h
 include/flint/mpoly.h
 include/flint/mpoly_types.h
 include/flint/n_poly.h
+include/flint/n_poly_types.h
 include/flint/nf.h
 include/flint/nf_elem.h
 include/flint/nmod.h
@@ -149,6 +153,7 @@ include/flint/nmod_vec.h
 include/flint/padic.h
 include/flint/padic_mat.h
 include/flint/padic_poly.h
+include/flint/padic_types.h
 include/flint/partitions.h
 include/flint/perm.h
 include/flint/profiler.h
@@ -162,7 +167,7 @@ include/flint/thread_support.h
 include/flint/ulong_extras.h
 @comment @so lib/libflint.so
 @lib lib/libflint.so.${LIBflint_VERSION}
-@comment lib/libflint.so.18
+@comment lib/libflint.so.19
 lib/pkgconfig/flint.pc
 share/doc/flint/
 share/doc/flint/README.md

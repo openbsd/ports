@@ -2,17 +2,17 @@ COMMENT =		fast library for number theory
 
 DPB_PROPERTIES =	parallel
 
-V =			3.0.1
+V =			3.1.2
 PKGNAME =		flintlib-${V}
 DISTNAME =		flint-${V}
-SHARED_LIBS =		flint		0.0	# 18.0.1
+SHARED_LIBS =		flint		1.0	# 19.0.0
 CATEGORIES =		math
 
 HOMEPAGE =		https://flintlib.org/
 
 MAINTAINER =		Josh Rickmar <jrick@openbsd.org>
 
-# LGPLv2
+# LGPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m pthread gmp mpfr
