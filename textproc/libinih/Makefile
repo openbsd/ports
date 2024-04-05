@@ -12,6 +12,9 @@ CATEGORIES=		textproc devel
 # BSD
 PERMIT_PACKAGE=		Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=		devel/meson
