@@ -1,3 +1,6 @@
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =	sparc64
+
 COMMENT =	alternative private front-end to Reddit
 
 GH_ACCOUNT =	redlib-org
