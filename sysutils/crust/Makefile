@@ -11,6 +11,10 @@ CATEGORIES=	sysutils
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 BUILD_DEPENDS=	devel/bison \
 		devel/or1k-elf/gcc
 
