@@ -11,6 +11,9 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =		c
 
 MODULES=		devel/cmake
