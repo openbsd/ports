@@ -1,28 +1,28 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5141,16 +5141,14 @@ if test "$_vorbis" = auto ; then
+@@ -5148,16 +5148,14 @@ if test "$_vorbis" = auto ; then
  int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
  	if test "$_ogg" = yes ; then
 -		cc_check $OGG_CFLAGS $OGG_LIBS $VORBIS_CFLAGS $VORBIS_LIBS \
--			-lvorbisfile -lvorbis -logg && _vorbis=yes
+-			$VORBISFILE -lvorbis -logg && _vorbis=yes
 +		cc_check `pkg-config --cflags --libs ogg vorbis vorbisfile` && _vorbis=yes
  	else
 -		cc_check $VORBIS_CFLAGS $VORBIS_LIBS \
--			-lvorbisfile -lvorbis && _vorbis=yes
+-			$VORBISFILE -lvorbis && _vorbis=yes
 +		cc_check `pkg-config --cflags --libs vorbis vorbisfile` && _vorbis=yes
  	fi
  fi
  if test "$_vorbis" = yes ; then
--	append_var LIBS "$VORBIS_LIBS -lvorbisfile -lvorbis"
+-	append_var LIBS "$VORBIS_LIBS $VORBISFILE -lvorbis"
 -	append_var INCLUDES "$VORBIS_CFLAGS"
 +	append_var LIBS "`pkg-config --libs vorbis vorbisfile`"
 +	append_var LIBS "`pkg-config --cflags vorbis vorbisfile`"
  fi
  define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
  echo "$_vorbis"
-@@ -5254,16 +5252,14 @@ int main(void) {
+@@ -5261,16 +5259,14 @@ int main(void) {
  }
  EOF
  	if test "$_ogg" = yes ; then
