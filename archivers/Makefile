@@ -2,6 +2,7 @@
      SUBDIR += ancient
      SUBDIR += arc
      SUBDIR += blosc
+     SUBDIR += blosc2
      SUBDIR += brotli
      SUBDIR += bzip2
      SUBDIR += cabextract
