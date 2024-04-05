@@ -1,6 +1,6 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	24.2.0
+MODPY_EGG_VERSION =	24.2.1
 DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
