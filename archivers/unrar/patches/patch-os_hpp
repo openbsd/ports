@@ -1,31 +1,41 @@
 Index: os.hpp
 --- os.hpp.orig
 +++ os.hpp
-@@ -142,6 +142,7 @@
+@@ -112,6 +112,7 @@
  
- #define NM  2048
+ #ifdef _UNIX
  
 +#include <endian.h>
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -173,6 +174,10 @@
- #include <locale.h>
- 
- 
-+#ifdef OPENSSL_AES
-+#include <openssl/evp.h>
-+#endif
-+
- #ifdef  S_IFLNK
- #define SAVE_LINKS
+@@ -122,6 +123,11 @@
+ #ifdef _APPLE
+   #include <sys/sysctl.h>
  #endif
-@@ -269,7 +274,7 @@
++#if defined(__OpenBSD__) && defined(__aarch64__)
++  #include <sys/sysctl.h>
++  #include <machine/cpu.h>
++  #include <machine/armreg.h>
++#endif
+ #ifndef SFX_MODULE
+     #include <sys/statvfs.h>
+ #endif
+@@ -153,7 +159,7 @@
+ 
+ #if defined(__aarch64__) && (defined(__ARM_FEATURE_CRYPTO) || defined(__ARM_FEATURE_CRC32))
+ #include <arm_neon.h>
+-#ifndef _APPLE
++#if !defined(_APPLE) && !defined(__OpenBSD__)
+ #include <sys/auxv.h>
+ #include <asm/hwcap.h>
+ #endif
+@@ -254,7 +260,7 @@
    #endif
  #endif
  
--#if !defined(BIG_ENDIAN) && defined(_WIN_ALL) || defined(__i386__) || defined(__x86_64__)
+-#if !defined(BIG_ENDIAN) && defined(_WIN_ALL) || defined(__i386__) || defined(__x86_64__) || defined(__aarch64__)
 +#if !defined(BIG_ENDIAN) && defined(_WIN_ALL) || !defined(__STRICT_ALIGNMENT)
- // Allow not aligned integer access, increases speed in some operations.
+ // Allow unaligned integer access, increases speed in some operations.
  #define ALLOW_MISALIGNED
  #endif

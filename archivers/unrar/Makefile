@@ -7,9 +7,9 @@ COMMENT=	extract, list, and test RAR archives
 # to 0 for a non-beta release, e.g., "5.00 beta 8" was succeeded
 # by "5.00".
 
-PKGNAME=	unrar-6.24
+PKGNAME=	unrar-7.00
 EPOCH=		2
-DISTNAME=	unrarsrc-6.2.12
+DISTNAME=	unrarsrc-7.0.7
 CATEGORIES=	archivers
 
 HOMEPAGE=	https://www.rarlab.com/
@@ -19,7 +19,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # nonstandard
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c crypto m pthread ${COMPILER_LIBCXX}
+WANTLIB=	c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc base-gcc
 
@@ -29,6 +29,9 @@ WRKDIST=	${WRKDIR}/unrar
 
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" STRIP=:
+
+CXXFLAGS+=	${CXXFLAGS-${MACHINE_ARCH}}
+CXXFLAGS-aarch64= -march=armv8-a+crc+crypto
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
