@@ -1,3 +1,4 @@
-HTTP Body Parser, that can handle multipart, octetstream, and 
-urlencoded formats.
-Chunked requests are currently not supported.
+HTTP::Body parses chunks of HTTP POST data and supports
+application/octet-stream, application/json,
+application/x-www-form-urlencoded, and multipart/form-data.  Chunked
+bodies are supported by not passing a length value to new().

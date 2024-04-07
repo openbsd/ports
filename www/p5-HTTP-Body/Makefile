@@ -1,19 +1,19 @@
-COMMENT=	HTTP Body Parser
+COMMENT =	HTTP body parser
 
-DISTNAME =	HTTP-Body-1.22
-CATEGORIES=	www
-REVISION =	0
+DISTNAME =	HTTP-Body-1.23
 
-# Same as Perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	www
 
-MODULES=	cpan
-PKG_ARCH=	*
+# Perl
+PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS=	www/p5-libwww
+MODULES =		cpan
 
-TEST_DEPENDS=devel/p5-Test-Deep
+RUN_DEPENDS =		www/p5-HTTP-Message
+TEST_DEPENDS =		devel/p5-Test-Deep
 
-MAKE_ENV=	TEST_POD=Yes
+MAKE_ENV =		TEST_POD=Yes
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
