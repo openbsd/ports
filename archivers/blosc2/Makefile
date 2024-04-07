@@ -1,16 +1,16 @@
-V =		2.14.0
+V =		2.14.3
 COMMENT =	fast, compressed, persistent binary data store library for C
 PKGNAME =	blosc2-${V}
 CATEGORIES =	archivers
 
-SHARED_LIBS +=	blosc2                     0.0 # 0.0
+SHARED_LIBS +=	blosc2                     1.0 # 0.0
 
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc2
 GH_TAGNAME =	v${V}
 
 HOMEPAGE =	https://blosc.org/
-MAINTAINER =	Martin Reindl <martin@openbsd.org>
+MAINTAINER =	Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
