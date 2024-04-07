@@ -71,6 +71,10 @@ TEST_FLAGS =		TEST_FPC="${WRKSRC}/fpcsrc/compiler/${COMPNAME}" \
 
 USE_GMAKE =		Yes
 
+post-extract:
+	chmod 644 ${WRKDIR}/bootstrap/lib/libc.so*
+	cp $$(ls /usr/lib/libc.so.* | sort -V | tail -1) ${WRKDIR}/bootstrap/lib/libc.so*
+
 post-install:
 	cd ${PREFIX}/bin && ln -s ../lib/fpc/${V}/${COMPNAME} .
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/fpc/lexyacc
