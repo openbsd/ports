@@ -2,6 +2,7 @@ COMMENT =		securely transfer data between computers
 
 MODPY_EGG_VERSION =	0.14.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -16,9 +17,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
+RUN_DEPENDS =		archivers/py-zipstream-ng${MODPY_FLAVOR} \
+			devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-automat${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
+			devel/py-iterable-io${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
 			devel/py-tqdm${MODPY_FLAVOR} \
 			devel/py-twisted${MODPY_FLAVOR} \
