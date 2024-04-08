@@ -1,1 +1,11 @@
 @bin bin/iamb
+@man man/man1/iamb.1
+@man man/man5/iamb.5
+share/applications/iamb.desktop
+share/examples/iamb/
+share/examples/iamb/config.example.toml
+share/icons/hicolor/256x256/apps/iamb.png
+share/icons/hicolor/512x512/apps/iamb.png
+share/icons/hicolor/scalable/apps/iamb.svg
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
