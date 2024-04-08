@@ -1,0 +1,14 @@
+iterable-io is a small Python library that provides an adapter so that it's
+possible to read from iterable objects in the same way as file-like objects.
+
+It is primarily useful as "glue" between two incompatible interfaces.
+As an example, in the case where one interface expects a file-like object to
+call .read() on, and the other only provides a generator of bytes.
+
+One way to solve this issue would be to write all the bytes in the generator to
+a temporary file, then provide that file instead, but if the generator produces
+a large amount of data then this is both slow to start, and resource-intensive.
+
+This library allows streaming data between these two incompatible interfaces so
+as data is requested by .read(), it's pulled from the iterable.
+This keeps resource usage low and removes the startup delay.
