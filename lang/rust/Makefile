@@ -12,10 +12,12 @@ COMMENT-main =		compiler for Rust Language
 COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
+COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
 V =			1.77.1
 DISTNAME =		rustc-${V}-src
+REVISION-main =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.77.0-20240320
@@ -31,9 +33,10 @@ PKGNAME-main =		rust-${V}
 PKGNAME-gdb =		rust-gdb-${V}
 PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
+PKGNAME-bootstrap =	rust-bootstrap-${V}
 PKGNAME-src =		rust-src-${V}
 
-MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -src
+MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -bootstrap -src
 
 CATEGORIES =		lang
 
@@ -254,7 +257,7 @@ do-build:
 		rust-std rustc cargo clippy rustfmt rust-src
 	rm -rf -- ${WRKBUILD}/build/tmp
 
-COMPONENTS ?=	rustc-${V}-${TRIPLE_ARCH} \
+COMPONENTS =	rustc-${V}-${TRIPLE_ARCH} \
 		rust-std-${V}-${TRIPLE_ARCH} \
 		cargo-${V}-${TRIPLE_ARCH} \
 		clippy-${V}-${TRIPLE_ARCH} \
@@ -284,6 +287,17 @@ do-install:
 		${TRIPLE_ARCH} \
 		${LIBRUST_HASH} \
 		${LIBRUST_REHASH}
+	# create a bootstrap tarball
+	cd ${PREFIX} && pax -w \
+		-f ${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
+		-s ',^,rustc-bootstrap-${MACHINE_ARCH}-${V}/,' \
+		bin/{rustc,rustdoc,cargo} \
+		lib/rustlib/${TRIPLE_ARCH}/
+	cd ${PREFIX} && ldd bin/{rustc,rustdoc,cargo} \
+	| awk '$$3 == "rlib" { print $$7 }' | sort -u \
+	| pax -wa \
+		-f ${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
+		-s ',^.*/,rustc-bootstrap-${MACHINE_ARCH}-${V}/lib/,' \
 	# replace libraries by link
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \
@@ -302,37 +316,5 @@ do-install:
 
 do-test:
 	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast
-
-STRIP ?=	strip
-# Try to avoid strip from our ancient binutils-2.17
-.if ${LINKER_VERSION} != "lld"
-STRIP =		llvm-strip-${MODCLANG_VERSION}
-.endif
-
-# bootstrap target permits to regenerate the bootstrap archive
-BOOTSTRAPNAME=rustc-bootstrap-${MACHINE_ARCH}-${V}-new
-BOOTSTRAPDIR=${WRKDIR}/${BOOTSTRAPNAME}
-bootstrap: build
-	${_PBUILD} rm -rf ${BOOTSTRAPDIR}
-	${_PBUILD} mkdir -p ${BOOTSTRAPDIR}/{bin,lib}
-	${MAKE} clean=fake
-	${MAKE} fake \
-		PREFIX="${BOOTSTRAPDIR}" \
-		COMPONENTS="rustc-${V}-${TRIPLE_ARCH} rust-std-${V}-${TRIPLE_ARCH} cargo-${V}-${TRIPLE_ARCH}" \
-		FAKE_SETUP=""
-	${_PBUILD} rm -rf ${BOOTSTRAPDIR}/{man,share} \
-		${BOOTSTRAPDIR}/bin/rust-gdb*
-	${_PBUILD} ${STRIP} ${BOOTSTRAPDIR}/lib/lib*.so \
-		${BOOTSTRAPDIR}/lib/rustlib/${TRIPLE_ARCH}/lib/lib*.so
-.for _bin in rustc rustdoc cargo
-	${_PBUILD} ${STRIP} ${BOOTSTRAPDIR}/bin/${_bin}
-	ldd ${BOOTSTRAPDIR}/bin/${_bin} \
-		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
-		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
-	${BOOTSTRAPDIR}/bin/${_bin} -vV >/dev/null
-	${_PBUILD} chmod -R a+rX ${BOOTSTRAPDIR}
-.endfor
-	@echo '## to create a compressed tarball, use:'
-	@echo '$ tarlz --solid --anonymous -cf ${FULLDISTDIR}/${BOOTSTRAPNAME}.tar.lz ${BOOTSTRAPNAME}'
 
 .include <bsd.port.mk>

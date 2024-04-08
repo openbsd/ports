@@ -1,0 +1,6 @@
+Prepared tarball for bootstrapping lang/rust.
+
+To generate a suitable bootstrap archive for lang/rust, use:
+
+$ tarlz --solid -z ${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
+	-o rustc-bootstrap-${MACHINE_ARCH}-${V}-YYYYMMDD.tar.lz
