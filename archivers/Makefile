@@ -70,6 +70,7 @@
      SUBDIR += py-lzo,python3
      SUBDIR += py-rarfile,python3
      SUBDIR += py-vpk,python3
+     SUBDIR += py-zipstream-ng,python3
      SUBDIR += py-zopfli,python3
      SUBDIR += quazip
      SUBDIR += ripole
