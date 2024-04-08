@@ -1,0 +1,4 @@
+A modern and easy to use streamable zip file generator.  It can package and
+stream many files and folders into a zip on the fly without needing temporary
+files or excessive memory.  It can also calculate the final size of the zip file
+before streaming it.
