@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS +=	aarch64 amd64 arm i386 powerpc powerpc64
 
 COMMENT =	high performance Common Lisp compiler
 
-V =		2.4.1
+V =		2.4.3
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
 
@@ -55,11 +55,13 @@ XCHOST_CMD =		${LOCALBASE}/bin/sbcl \
 
 .elif ${BOOTSTRAP_METHOD:Mclisp}
 BUILD_DEPENDS +=	lang/clisp
-XCHOST_CMD =		${LOCALBASE}/bin/clisp -q -norc
+XCHOST_CMD =		${LOCALBASE}/bin/clisp \
+				-q -norc -on-error exit
 
 .elif ${BOOTSTRAP_METHOD:Mecl}
 BUILD_DEPENDS +=	lang/ecl
-XCHOST_CMD =		${LOCALBASE}/bin/ecl -q --norc
+XCHOST_CMD =		${LOCALBASE}/bin/ecl \
+				-q --norc --load ${.CURDIR}/files/ecl-nodebugger.lisp
 
 .else
 ERRORS +=	"Fatal: unknown BOOTSTRAP_METHOD"
@@ -87,11 +89,20 @@ MAKE_ENV +=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LINKFLAGS="-L${LOCALBASE}/lib" \
 			MAKEINFO=${PREFIX}/bin/gmakeinfo \
 			MAN_DIR="${PREFIX}/man/" \
-			INFO_DIR="${PREFIX}/info/"
+			INFO_DIR="${PREFIX}/info/" \
+			SBCL_MAKE_JOBS="-j${MAKE_JOBS}"
 
 USE_GMAKE =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+post-extract:
+# the build might modify some files. keep original files to help creating patches.
+.if ${FLAVOR:Mnative_bootstrap}
+.  for nn in 30 61 63
+	cp ${WRKSRC}/xperfecthash${nn}.lisp-expr{,${PATCHORIG}}
+.  endfor
+.endif
 
 do-configure:
 	printf '"%s.%s.%s"\n' "${V}" "openbsd" "${FULLPKGNAME}" \
