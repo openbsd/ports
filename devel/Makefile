@@ -1474,6 +1474,7 @@
      SUBDIR += py-iso639,python3
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort,python3
+     SUBDIR += py-iterable-io,python3
      SUBDIR += py-jaraco-classes,python3
      SUBDIR += py-jaraco-collections,python3
      SUBDIR += py-jaraco-context,python3
