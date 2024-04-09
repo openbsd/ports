@@ -1082,6 +1082,9 @@ share/squid/errors/it/ERR_INVALID_REQ
 share/squid/errors/it/ERR_INVALID_RESP
 share/squid/errors/it/ERR_INVALID_URL
 share/squid/errors/it/ERR_LIFETIME_EXP
+share/squid/errors/it/ERR_NO_RELAY
+share/squid/errors/it/ERR_ONLY_IF_CACHED_MISS
+share/squid/errors/it/ERR_PRECONDITION_FAILED
 share/squid/errors/it/ERR_PROTOCOL_UNKNOWN
 share/squid/errors/it/ERR_READ_ERROR
 share/squid/errors/it/ERR_READ_TIMEOUT
@@ -1107,6 +1110,7 @@ share/squid/errors/ja/ERR_CANNOT_FORWARD
 share/squid/errors/ja/ERR_CONFLICT_HOST
 share/squid/errors/ja/ERR_CONNECT_FAIL
 share/squid/errors/ja/ERR_DIR_LISTING
+share/squid/errors/ja/ERR_DNS_FAIL
 share/squid/errors/ja/ERR_ESI
 share/squid/errors/ja/ERR_FORWARDING_DENIED
 share/squid/errors/ja/ERR_FTP_DISABLED
