@@ -1,6 +1,8 @@
 COMMENT=	network diagnostics with curses ui (like mtr)
 
-DIST_TUPLE=	github fujiapple852 trippy 0.9.0 .
+GH_ACCOUNT=	fujiapple852
+GH_PROJECT=	trippy
+GH_TAGNAME=	0.10.0
 
 CATEGORIES=	net
 
