@@ -1,14 +1,15 @@
 COMMENT =	set of python modules for machine learning and data mining
 
-MODPY_EGG_VERSION =	1.2.0
+# 1.4.1+ requires cython3
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		math
 
-HOMEPAGE =		http://scikit-learn.org
+HOMEPAGE =		https://scikit-learn.org
 
-MAINTAINER =		Paul Irofti <paul@irofti.net>
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
@@ -21,9 +22,10 @@ WANTLIB += ${COMPILER_LIBCXX} m
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
-MODPY_TEST_DIR = ${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
-MODPY_SETUPTOOLS = 	Yes
+MODPY_PYBUILD =		setuptools
+
+MODPY_PYTEST_ARGS =	-v
+MODPY_TEST_DIR = ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -38,9 +40,5 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}>=1.17.3 \
 			sysutils/py-threadpoolctl${MODPY_FLAVOR}>=2.0.0
 
 TEST_DEPENDS =		math/py-pandas${MODPY_FLAVOR}
-
-pre-test:
-	cp -r ${WRKSRC}/sklearn/datasets/{data,descr} \
-		${MODPY_TEST_DIR}/sklearn/datasets
 
 .include <bsd.port.mk>
