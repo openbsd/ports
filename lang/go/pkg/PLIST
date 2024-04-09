@@ -7570,6 +7570,7 @@ go/src/internal/types/testdata/fixedbugs/issue62157.go
 go/src/internal/types/testdata/fixedbugs/issue63563.go
 go/src/internal/types/testdata/fixedbugs/issue64406.go
 go/src/internal/types/testdata/fixedbugs/issue64704.go
+go/src/internal/types/testdata/fixedbugs/issue65854.go
 go/src/internal/types/testdata/fixedbugs/issue6977.go
 go/src/internal/types/testdata/spec/
 go/src/internal/types/testdata/spec/assignability.go
@@ -13210,7 +13211,11 @@ go/test/fixedbugs/issue6513.dir/a.go
 go/test/fixedbugs/issue6513.dir/b.go
 go/test/fixedbugs/issue6513.dir/main.go
 go/test/fixedbugs/issue6513.go
+go/test/fixedbugs/issue65593.go
 go/test/fixedbugs/issue6572.go
+go/test/fixedbugs/issue66066.go
+go/test/fixedbugs/issue66066b.go
+go/test/fixedbugs/issue66096.go
 go/test/fixedbugs/issue6671.go
 go/test/fixedbugs/issue6703a.go
 go/test/fixedbugs/issue6703b.go
