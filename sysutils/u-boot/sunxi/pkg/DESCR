@@ -1,0 +1,9 @@
+U-Boot is a firmware for embedded boards based on PowerPC, ARM, MIPS and
+several other processors, which can be installed in a boot ROM and used to
+initialize and test the hardware or to download and run application code.
+
+As single-board computers often do not come with firmware it must be
+supplied on an SD card or MMC device to have a bootable system.
+
+This package provides U-Boot for various boards using Allwinner SoCs
+that use 32-bit ARM CPU cores.
