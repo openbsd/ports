@@ -1,11 +1,13 @@
 COMMENT =		Puppet server
 
 VERSION =		8.5.0
+REVISION =		0
 DISTNAME =		puppetserver-${VERSION}
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://puppet.com/docs/puppet/8/server/about_server.html
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 PERMIT_PACKAGE =	Yes
 

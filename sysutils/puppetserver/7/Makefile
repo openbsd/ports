@@ -3,12 +3,14 @@ PORTROACH =		limit:^7
 COMMENT =		Puppet server
 
 VERSION =		7.16.0
+REVISION =		0
 DISTNAME =		puppetserver-${VERSION}
 
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://puppet.com/docs/puppet/7/server/about_server.html
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 PERMIT_PACKAGE =	Yes
 
