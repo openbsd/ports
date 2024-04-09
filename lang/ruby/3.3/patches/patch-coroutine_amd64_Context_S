@@ -1,0 +1,19 @@
+Add BTI support to amd64 coroutine.
+
+Index: coroutine/amd64/Context.S
+--- coroutine/amd64/Context.S.orig
++++ coroutine/amd64/Context.S
+@@ -7,11 +7,13 @@
+ 
+ #define TOKEN_PASTE(x,y) x##y
+ #define PREFIXED_SYMBOL(prefix,name) TOKEN_PASTE(prefix,name)
++#include <cet.h>
+ 
+ .text
+ 
+ .globl PREFIXED_SYMBOL(SYMBOL_PREFIX,coroutine_transfer)
+ PREFIXED_SYMBOL(SYMBOL_PREFIX,coroutine_transfer):
++	_CET_ENDBR
+ 
+ 	# Make space on the stack for 6 registers:
+ 	subq $48, %rsp

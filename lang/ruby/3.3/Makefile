@@ -6,6 +6,8 @@ SHARED_LIBS =		ruby33	0.0
 NEXTVER =		3.4
 PKGSPEC-main ?=         ruby->=3.3.0,<${NEXTVER}
 
+REVISION-main =		0
+
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
 .if ${MACHINE_ARCH:Malpha} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mhppa}
