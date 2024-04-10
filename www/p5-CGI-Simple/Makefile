@@ -2,7 +2,7 @@ COMMENT =	drop-in object-oriented CGI.pm replacement
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	CGI-Simple-1.280
+DISTNAME =	CGI-Simple-1.281
 CATEGORIES =	www
 
 # Perl
