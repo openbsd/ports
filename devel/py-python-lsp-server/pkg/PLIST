@@ -87,8 +87,6 @@ lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_auto
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_autoimport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_completion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_completion.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_rename.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}rope_rename.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}signature.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}signature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/${MODPY_PYCACHE}symbols.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,7 +112,6 @@ lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/pylint_lint.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/references.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/rope_autoimport.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/rope_completion.py
-lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/rope_rename.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/signature.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/symbols.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/plugins/yapf_format.py
