@@ -1,16 +1,15 @@
 COMMENT=	Internet Relay Chat client
 
-VERSION=	20210314
+VERSION=	20240111
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
 CATEGORIES=	net
 SITES=		https://ircii.warped.com/ \
 		https://ircii.warped.com/old/ \
-		ftp://ircii.warped.com/pub/ircII/ \
-		https://distfiles.macports.org/ircii/
+		ftp://ircii.warped.com/pub/ircII/
 EXTRACT_SUFX=	.tar.bz2
 
-HOMEPAGE=	http://www.eterna.com.au/ircii/
+HOMEPAGE=	http://www.eterna23.net/ircii/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 

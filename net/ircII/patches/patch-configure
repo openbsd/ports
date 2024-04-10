@@ -1,8 +1,8 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1735,6 +1735,10 @@ else
- 
+@@ -1645,6 +1645,10 @@ else $as_nop
+ #include <limits.h>
  #undef $2
  
 +#ifdef __OpenBSD__
