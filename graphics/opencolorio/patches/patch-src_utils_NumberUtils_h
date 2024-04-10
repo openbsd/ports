@@ -1,14 +1,36 @@
-Fix build failure
-
 Index: src/utils/NumberUtils.h
 --- src/utils/NumberUtils.h.orig
 +++ src/utils/NumberUtils.h
-@@ -140,7 +140,7 @@ really_inline from_chars_result from_chars(const char 
+@@ -64,8 +64,10 @@ really_inline from_chars_result from_chars(const char 
+     double
  #ifdef _WIN32
-     tempval = _strtol_l(first, &endptr, 0, loc.local);
- #else
--    tempval = ::strtol_l(first, &endptr, 0, loc.local);
-+    tempval = ::strtoll_l(first, &endptr, 0, loc.local);
+     tempval = _strtod_l(first, &endptr, loc.local);
+-#else
++#elif defined(__GLIBC__) || defined(_LIBCPP_VERSION)
+     tempval = ::strtod_l(first, &endptr, loc.local);
++#else
++    tempval = ::strtod(first, &endptr);
+ #endif
+ 
+     if (errno != 0 && errno != EINVAL)
+@@ -108,8 +110,10 @@ really_inline from_chars_result from_chars(const char 
+ #elif __APPLE__
+     // On OSX, strtod_l is for some reason drastically faster than strtof_l.
+     tempval = static_cast<float>(::strtod_l(first, &endptr, loc.local));
+-#else
++#elif defined(__GLIBC__) || defined(_LIBCPP_VERSION)
+     tempval = ::strtof_l(first, &endptr, loc.local);
++#else
++    tempval = ::strtof(first, &endptr);
  #endif
  
      if (errno != 0)
+@@ -144,7 +148,7 @@ really_inline from_chars_result from_chars(const char 
+     long int
+ #ifdef _WIN32
+     tempval = _strtol_l(first, &endptr, 0, loc.local);
+-#elif defined(__GLIBC__)
++#elif defined(__GLIBC__) || defined(_LIBCPP_VERSION)
+     tempval = ::strtol_l(first, &endptr, 0, loc.local);
+ #else
+     tempval = ::strtol(first, &endptr, 0);

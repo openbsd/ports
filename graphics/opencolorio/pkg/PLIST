@@ -11,6 +11,8 @@ lib/cmake/OpenColorIO/OpenColorIOTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/OpenColorIO/OpenColorIOTargets.cmake
 @lib lib/libOpenColorIO.so.${LIBOpenColorIO_VERSION}
 lib/pkgconfig/OpenColorIO.pc
-@so lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO.so
+lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO/
+@so lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO/PyOpenColorIO.so
+lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO/__init__.py
 share/ocio/
 share/ocio/setup_ocio.sh
