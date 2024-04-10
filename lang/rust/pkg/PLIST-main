@@ -86,6 +86,4 @@ share/doc/rust/COPYRIGHT
 share/doc/rust/LICENSE-APACHE
 share/doc/rust/LICENSE-MIT
 share/doc/rust/README.md
-share/zsh/
-share/zsh/site-functions/
 share/zsh/site-functions/_cargo

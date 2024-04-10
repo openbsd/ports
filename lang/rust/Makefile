@@ -15,9 +15,8 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.77.1
+V =			1.77.2
 DISTNAME =		rustc-${V}-src
-REVISION-main =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.77.0-20240320
@@ -316,5 +315,10 @@ do-install:
 
 do-test:
 	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast
+
+bootstrap: fake
+	tarlz --solid -z \
+		${WRKINST}${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
+		-o rustc-bootstrap-${MACHINE_ARCH}-${V}.tar.lz
 
 .include <bsd.port.mk>
