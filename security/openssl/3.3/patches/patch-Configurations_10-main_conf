@@ -1,0 +1,11 @@
+Index: Configurations/10-main.conf
+--- Configurations/10-main.conf.orig
++++ Configurations/10-main.conf
+@@ -1041,6 +1041,7 @@ my %targets = (
+     },
+     "BSD-x86-elf" => {
+         inherit_from     => [ "BSD-x86" ],
++        shared_target    => "bsd-gcc-shared",
+         perlasm_scheme   => "elf",
+     },
+ 
