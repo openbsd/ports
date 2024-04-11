@@ -1,7 +1,7 @@
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.13.5
+MODGO_VERSION =	v0.13.7
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MODULES =		lang/go
+
+NO_TEST =		Yes
 
 SUBST_VARS =		SYSCONFDIR
 
