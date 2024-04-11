@@ -1,8 +1,8 @@
 COMMENT =	highly optimized graphics math library
 
-DIST_TUPLE =	github recp cglm v0.9.2 .
+DIST_TUPLE =	github recp cglm v0.9.4 .
 
-SHARED_LIBS =	cglm	0.5
+SHARED_LIBS =	cglm	0.6
 
 CATEGORIES =	math
 
