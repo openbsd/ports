@@ -70,8 +70,8 @@ Starting the service and online configuration
 
 - Connect to the administration pages. At first run of a successful new
 installation, you will need to set a password by writing a file
-(${CATALINA_BASE}/lucee/config/server/lucee-server/password.txt) and
-importing it.
+(${CATALINA_BASE}/lucee/config/server/lucee-server/context/password.txt)
+and importing it.
 
 	http://localhost:8080/lucee/admin/
 
