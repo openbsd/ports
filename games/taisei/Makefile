@@ -1,7 +1,6 @@
 # Requires OpenGL>=3.3, only usable on archs that support
 # modern video cards
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
-BROKEN-i386 =		always_inline function '_mm_set_epi32' requires target feature 'sse2', but would be inlined into function 'glm_mat4_inv_sse2' that is compiled without support for 'sse2'
 
 # the koishi coroutine library needs boost 1.81.0+ for BTI
 # https://github.com/taisei-project/koishi/issues/6
@@ -11,6 +10,7 @@ COMMENT =		clone of the touhou games
 
 VERSION =		1.4.1
 DISTNAME =		taisei-${VERSION}
+REVISION =		0
 
 CATEGORIES =		games
 
