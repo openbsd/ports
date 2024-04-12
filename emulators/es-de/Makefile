@@ -3,6 +3,7 @@ COMMENT =	emulator frontend
 PKGNAME =	es-de-$V
 V =		3.0.0
 REV =		99cdf9cc1185d03cfeee81f035786ca14f466ae3
+REVISION =	0
 
 DIST_TUPLE +=	gitlab es-de emulationstation-de v$V .
 
@@ -22,6 +23,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
+BUILD_DEPENDS =		graphics/glm
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/libgit2/libgit2 \
