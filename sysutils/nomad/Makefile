@@ -1,4 +1,3 @@
-BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 
 # bunch of undefined things in crypto/blake2b, shirou/gopsutil/disk, shirou/gopsutil/mem
