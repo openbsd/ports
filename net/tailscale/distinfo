@@ -2200,7 +2200,7 @@ SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9W
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
 SHA256 (go_modules/src.elv.sh/@v/v0.16.0-rc1.0.20220116211855-fda62502ad7f.mod) = ImJNCVe1tA5jNq8JoM2bIJGqRqDtuksdWKAwpOaNWiI=
 SHA256 (go_modules/src.elv.sh/@v/v0.16.0-rc1.0.20220116211855-fda62502ad7f.zip) = edEgOGTOmXKXLEt1tIEy1odFM3S8Y8hyYUcl8moi1Ts=
-SHA256 (tailscale.com-v1.62.0.zip) = ZHstQSXTUVAsGIMuhAShBBoD3cyUbTt7jc1TVFJelVE=
+SHA256 (tailscale.com-v1.62.1.zip) = cq7nCbjiG493VzcBV1JkVKlhBgs7JWGpIlWHngb/2PM=
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.mod) = 173
 SIZE (go_modules/4d63.com/gocheckcompilerdirectives/@v/v1.2.1.zip) = 7059
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.2.1.mod) = 77
@@ -4403,4 +4403,4 @@ SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = 100
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = 45988
 SIZE (go_modules/src.elv.sh/@v/v0.16.0-rc1.0.20220116211855-fda62502ad7f.mod) = 185
 SIZE (go_modules/src.elv.sh/@v/v0.16.0-rc1.0.20220116211855-fda62502ad7f.zip) = 705404
-SIZE (tailscale.com-v1.62.0.zip) = 3148598
+SIZE (tailscale.com-v1.62.1.zip) = 3148981
