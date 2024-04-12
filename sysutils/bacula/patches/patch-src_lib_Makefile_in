@@ -1,7 +1,7 @@
 Index: src/lib/Makefile.in
 --- src/lib/Makefile.in.orig
 +++ src/lib/Makefile.in
-@@ -117,7 +117,7 @@ libbac.a: $(LIBBAC_OBJS)
+@@ -122,7 +122,7 @@ libbac.a: $(LIBBAC_OBJS)
  
  libbac.la: Makefile $(LIBBAC_LOBJS)
  	@echo "Making $@ ..."
@@ -10,7 +10,7 @@ Index: src/lib/Makefile.in
  
  libbaccfg.a: $(LIBBACCFG_OBJS)
  	@echo "Making $@ ..."
-@@ -126,7 +126,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
+@@ -131,7 +131,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
  
  libbaccfg.la: Makefile $(LIBBACCFG_LOBJS)
  	@echo "Making $@ ..."

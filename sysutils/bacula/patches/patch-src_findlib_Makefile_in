@@ -1,7 +1,7 @@
 Index: src/findlib/Makefile.in
 --- src/findlib/Makefile.in.orig
 +++ src/findlib/Makefile.in
-@@ -61,7 +61,7 @@ libbacfind.a: $(LIBBACFIND_OBJS)
+@@ -62,7 +62,7 @@ libbacfind.a: $(LIBBACFIND_OBJS)
  
  libbacfind.la: Makefile $(LIBBACFIND_LOBJS)
  	@echo "Making $@ ..."

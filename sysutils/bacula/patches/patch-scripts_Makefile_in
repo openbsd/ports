@@ -1,0 +1,14 @@
+Index: scripts/Makefile.in
+--- scripts/Makefile.in.orig
++++ scripts/Makefile.in
+@@ -48,8 +48,8 @@ install: installdirs
+ 	$(INSTALL_SCRIPT) bacula-ctl-dir $(DESTDIR)$(scriptdir)/bacula-ctl-dir
+ 	$(INSTALL_SCRIPT) bacula-ctl-fd $(DESTDIR)$(scriptdir)/bacula-ctl-fd
+ 	$(INSTALL_SCRIPT) bacula-ctl-sd $(DESTDIR)$(scriptdir)/bacula-ctl-sd
+-	$(INSTALL_SCRIPT) get_malware_abuse.ch $(DESTDIR)$(sbindir)/get_malware_abuse.ch
+-	$(INSTALL_SCRIPT) md5tobase64.py $(DESTDIR)$(sbindir)/md5tobase64.py
++	$(INSTALL_SCRIPT) get_malware_abuse.ch $(DESTDIR)$(scriptdir)/get_malware_abuse.ch
++	$(INSTALL_SCRIPT) md5tobase64.py $(DESTDIR)$(scriptdir)/md5tobase64.py
+ 	@if  test -f ${DESTDIR}${scriptdir}/mtx-changer; then \
+ 	   echo "  ==> Saving existing mtx-changer to mtx-changer.old"; \
+ 	   $(MV) -f ${DESTDIR}${scriptdir}/mtx-changer ${DESTDIR}${scriptdir}/mtx-changer.old; \

@@ -8,7 +8,7 @@ COMMENT-mysql=		Bacula libbaccats support for MySQL
 COMMENT-pgsql=		Bacula libbaccats support for PostgreSQL
 COMMENT-sqlite3=	Bacula libbaccats support for SQLite3
 
-V=			13.0.4
+V=			15.0.2
 DISTNAME=		bacula-$V
 PKGNAME-main=		bacula-client-$V
 PKGNAME-server=		bacula-server-$V
@@ -19,13 +19,13 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  10.1
-SHARED_LIBS +=  baccfg               9.0
-SHARED_LIBS +=  bacfind              8.0
-SHARED_LIBS +=  bacsd                2.0
-SHARED_LIBS +=  bacsql               8.0
+SHARED_LIBS +=  bac                  11.1
+SHARED_LIBS +=  baccfg               10.0
+SHARED_LIBS +=  bacfind              9.0
+SHARED_LIBS +=  bacsd                3.0
+SHARED_LIBS +=  bacsql               9.0
 
-BACCATS_LIBV =	6.0
+BACCATS_LIBV =	7.0
 SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-mysql        ${BACCATS_LIBV}
 SHARED_LIBS +=  baccats-postgresql   ${BACCATS_LIBV}

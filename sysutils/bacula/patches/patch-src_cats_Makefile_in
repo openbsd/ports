@@ -1,7 +1,7 @@
 Index: src/cats/Makefile.in
 --- src/cats/Makefile.in.orig
 +++ src/cats/Makefile.in
-@@ -126,29 +126,29 @@ libbaccats.a: $(LIBBACCATS_OBJS)
+@@ -127,29 +127,29 @@ libbaccats.a: $(LIBBACCATS_OBJS)
  
  libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
  	@echo "Making $@ ..."

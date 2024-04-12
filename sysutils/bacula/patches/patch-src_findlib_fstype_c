@@ -1,7 +1,7 @@
 Index: src/findlib/fstype.c
 --- src/findlib/fstype.c.orig
 +++ src/findlib/fstype.c
-@@ -238,11 +238,13 @@ bool fstype(char *fname, FF_PKT *ff_pkt, char *fs, int
+@@ -244,11 +244,13 @@ bool fstype(char *fname, FF_PKT *ff_pkt, char *fs, int
   */
  static uint64_t fstypeid(char *fname, FF_PKT *ff_pkt)
  {

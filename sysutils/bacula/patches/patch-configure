@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4912,7 +4912,7 @@ $as_echo "no" >&6; }
+@@ -4934,7 +4934,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -10,7 +10,7 @@ Index: configure
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16888,7 +16888,7 @@ if test x$use_libtool != xno; then
+@@ -16932,7 +16932,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,7 +19,7 @@ Index: configure
     FD_PLUGIN_DIR="src/plugins/fd"
     DIR_PLUGIN_DIR="src/plugins/dir"
     DLIB="-rpath \$(libdir)"
-@@ -22567,7 +22567,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22612,7 +22612,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -28,7 +28,7 @@ Index: configure
  		    got_readline="yes"
  
  else
-@@ -22606,7 +22606,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22651,7 +22651,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -37,7 +37,7 @@ Index: configure
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30294,13 +30294,19 @@ if test "${with_lzo+set}" = set; then :
+@@ -30612,13 +30612,19 @@ if test "${with_lzo+set}" = set; then :
  	     ;;
  	  yes|*)
  	     if test -f ${with_lzo}/include/lzo/lzoconf.h; then
@@ -58,7 +58,7 @@ Index: configure
  	     as_ac_Header=`$as_echo "ac_cv_header_${with_lzo}/lzo/lzoconf.h" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "${with_lzo}/lzo/lzoconf.h" "$as_ac_Header" "$ac_includes_default"
  if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
-@@ -30320,6 +30326,8 @@ else
+@@ -30638,6 +30644,8 @@ else
  
  fi
  
@@ -67,7 +67,7 @@ Index: configure
  
  	     ;;
  	  esac
-@@ -32088,6 +32096,7 @@ netbsd)
+@@ -32454,6 +32462,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -75,7 +75,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -32106,6 +32115,7 @@ openbsd)
+@@ -32472,6 +32481,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

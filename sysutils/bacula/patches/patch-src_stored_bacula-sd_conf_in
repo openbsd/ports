@@ -1,7 +1,7 @@
 Index: src/stored/bacula-sd.conf.in
 --- src/stored/bacula-sd.conf.in.orig
 +++ src/stored/bacula-sd.conf.in
-@@ -131,15 +131,15 @@ Device {
+@@ -132,15 +132,15 @@ Device {
  #  Name = Autochanger
  #  Device = Drive-1
  #  Device = Drive-2
@@ -20,7 +20,7 @@ Index: src/stored/bacula-sd.conf.in
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -170,7 +170,7 @@ Device {
+@@ -171,7 +171,7 @@ Device {
  #  Name = Drive-2                      #
  #  Drive Index = 1
  #  Media Type = DLT-8000
@@ -29,7 +29,7 @@ Index: src/stored/bacula-sd.conf.in
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -194,8 +194,8 @@ Device {
+@@ -195,8 +195,8 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 3GB
@@ -40,7 +40,7 @@ Index: src/stored/bacula-sd.conf.in
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
  ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
-@@ -215,8 +215,8 @@ Device {
+@@ -216,8 +216,8 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 4GB
@@ -51,7 +51,7 @@ Index: src/stored/bacula-sd.conf.in
  # AutoChanger = yes
  #  #
  #  # New alert command in Bacula 9.0.0
-@@ -245,8 +245,8 @@ Device {
+@@ -246,8 +246,8 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 5GB
@@ -62,7 +62,7 @@ Index: src/stored/bacula-sd.conf.in
  # AutoChanger = yes
  #  #
  #  # New alert command in Bacula 9.0.0
-@@ -302,7 +302,7 @@ Device {
+@@ -303,7 +303,7 @@ Device {
  #  Name = DDS-4
  #  Description = "DDS-4 for FreeBSD"
  #  Media Type = DDS-4

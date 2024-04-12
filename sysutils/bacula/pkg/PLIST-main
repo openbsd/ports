@@ -16,11 +16,19 @@ libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 libexec/bacula/bacula_config
 libexec/bacula/bconsole
+libexec/bacula/get_malware_abuse.ch
+libexec/bacula/install-key-manager.sh
 libexec/bacula/isworm
+libexec/bacula/key-manager.py
+libexec/bacula/md5tobase64.py
 libexec/bacula/tapealert
 @man man/man8/bacula-fd.8
+@man man/man8/bbconsjson.8
 @man man/man8/bconsole.8
+@man man/man8/bdirjson.8
+@man man/man8/bfdjson.8
 @man man/man8/bregex.8
+@man man/man8/bsdjson.8
 @man man/man8/bwild.8
 @bin sbin/bacula-fd
 @bin sbin/bbconsjson
@@ -28,6 +36,7 @@ libexec/bacula/tapealert
 @bin sbin/bdirjson
 @bin sbin/bfdjson
 @bin sbin/bsdjson
+share/applications/
 share/doc/bacula/
 share/doc/bacula/ChangeLog
 share/doc/bacula/INSTALL

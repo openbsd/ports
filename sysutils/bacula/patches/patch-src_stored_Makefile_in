@@ -1,7 +1,7 @@
 Index: src/stored/Makefile.in
 --- src/stored/Makefile.in.orig
 +++ src/stored/Makefile.in
-@@ -191,7 +191,7 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
+@@ -197,7 +197,7 @@ libbacsd.la: Makefile $(LIBBACSD_LOBJS)
  	@echo "Making $@ ..."
  	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ \
  	  $(LIBBACSD_LOBJS) \
@@ -10,7 +10,7 @@ Index: src/stored/Makefile.in
  
  #
  # Loadable driver
-@@ -210,28 +210,28 @@ gs-driver: bacula-sd-cloud-gs-driver.la
+@@ -218,31 +218,31 @@ gs-driver: bacula-sd-cloud-gs-driver.la
  swift-driver: bacula-sd-cloud-swift-driver.la
  
  bacula-sd-cloud-driver.la: Makefile $(CLOUD_ALL_LOBJS)
@@ -18,6 +18,10 @@ Index: src/stored/Makefile.in
 +	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_ALL_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic
  
  bacula-sd-cloud-was-driver.la: Makefile $(CLOUD_GENERIC_LOBJS)
+-	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_GENERIC_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
++	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_GENERIC_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic
+ 
+ bacula-sd-cloud-aws-driver.la: Makefile $(CLOUD_GENERIC_LOBJS)
 -	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_GENERIC_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic -release $(LIBBACSD_LT_RELEASE)
 +	 $(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -shared $(CLOUD_GENERIC_LOBJS) -o $@ -R $(libdir) -rpath $(libdir) -module -export-dynamic
  
@@ -47,7 +51,7 @@ Index: src/stored/Makefile.in
  
  dedup1/libdedup1.la:
  	cd dedup1 && make libdedup1.la
-@@ -241,12 +241,12 @@ dedup2/libdedup2.la:
+@@ -252,12 +252,12 @@ dedup2/libdedup2.la:
  
  bacula-sd-dedup-driver.la: Makefile $(DEDUP_LOBJS) dedup1/libdedup1.la dedup2/libdedup2.la
  	@echo "Making $@ ..."
