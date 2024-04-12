@@ -1,7 +1,7 @@
 COMMENT=	Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
 
 MODGO_MODNAME=	github.com/prometheus/blackbox_exporter
-MODGO_VERSION=	v0.24.0
+MODGO_VERSION=	v0.25.0
 
 DISTNAME=	blackbox_exporter-${MODGO_VERSION}
 
