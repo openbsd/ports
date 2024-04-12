@@ -79,6 +79,7 @@ icinga-php/ipl/asset/static/font/awesome/fa-solid-900.woff2
 icinga-php/ipl/asset/static/font/awesome/fa-v4compatibility.ttf
 icinga-php/ipl/asset/static/font/awesome/fa-v4compatibility.woff2
 icinga-php/ipl/asset/static/font/icinga-icons/
+icinga-php/ipl/asset/static/font/icinga-icons/Read Me.txt
 icinga-php/ipl/asset/static/font/icinga-icons/fonts/
 icinga-php/ipl/asset/static/font/icinga-icons/fonts/Icinga-Icons.svg
 icinga-php/ipl/asset/static/font/icinga-icons/fonts/Icinga-Icons.ttf
@@ -511,6 +512,7 @@ icinga-php/ipl/vendor/ipl/web/asset/static/font/
 icinga-php/ipl/vendor/ipl/web/asset/static/font/icinga-icons/
 icinga-php/ipl/vendor/ipl/web/asset/static/font/icinga-icons/selection.json
 icinga-php/ipl/vendor/ipl/web/composer.json
+icinga-php/ipl/vendor/ipl/web/phpstan-baseline-by-php-version.php
 icinga-php/ipl/vendor/ipl/web/src/
 icinga-php/ipl/vendor/ipl/web/src/Common/
 icinga-php/ipl/vendor/ipl/web/src/Common/BaseItemList.php
