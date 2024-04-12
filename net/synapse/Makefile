@@ -11,7 +11,7 @@ HOMEPAGE =	https://matrix.org/
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 
-# MIT
+# AGPLv3 only
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cargo \
