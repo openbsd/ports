@@ -1,0 +1,15 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -56,9 +56,9 @@ install: install-thumbnailer $(if $(CAN_INSTALL_MAGICK
+ uninstall: uninstall-thumbnailer $(if $(CAN_INSTALL_MAGICK),uninstall-magick)
+ 
+ install-recoil2png: recoil2png recoil2png.1
+-	mkdir -p $(PREFIX)/bin $(PREFIX)/share/man/man1
++	mkdir -p $(PREFIX)/bin $(PREFIX)/man/man1
+ 	$(INSTALL_PROGRAM) recoil2png $(PREFIX)/bin/recoil2png
+-	$(INSTALL_DATA) recoil2png.1 $(PREFIX)/share/man/man1/recoil2png.1
++	$(INSTALL_DATA) recoil2png.1 $(PREFIX)/man/man1/recoil2png.1
+ 
+ uninstall-recoil2png:
+ 	rm -f $(PREFIX)/bin/recoil2png $(PREFIX)/share/man/man1/recoil2png.1

@@ -1,0 +1,6 @@
+@bin bin/recoil2png
+@man man/man1/recoil2png.1
+share/mime/packages/recoil-mime.xml
+share/thumbnailers/
+share/thumbnailers/recoil.thumbnailer
+@tag update-mime-database

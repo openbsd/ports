@@ -1,0 +1,10 @@
+RECOIL is a library to view pictures in native formats of 20th century
+computers: Amiga, Amstrad CPC, Apple II, Atari 8-bit, Atari Portfolio, Atari
+ST/TT/Falcon, BBC Micro, Commodore VIC-20, Commodore 64, Commodore
+16/116/Plus4, Commodore 128, Electronika BK, FM Towns, HP 48, Macintosh
+128K, MSX, NEC PC-80, NEC PC-88, NEC PC-98, Oric, Psion Series 3, SAM Coupe,
+Sharp X68000, Tandy 1000, Timex 2048, TRS-80, TRS-80 Color Computer,
+Vector-06C, ZX81 and ZX Spectrum.
+
+This package contains the converter program recoil2png, as well as desktop
+thumbnailer support.
