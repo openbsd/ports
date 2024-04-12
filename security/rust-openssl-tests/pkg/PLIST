@@ -324,12 +324,15 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/LICENSE-MIT
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/command_helpers.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/detect_compiler_family.c
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/async_executor.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/stderr.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target_info.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tempfile.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tool.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/com.rs
@@ -640,6 +643,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/js.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/lazy.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/linux_android.rs
+share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/linux_android_with_fallback.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/macos.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/openbsd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_getrandom}/src/rdrand.rs
