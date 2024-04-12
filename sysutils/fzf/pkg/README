@@ -5,19 +5,20 @@
 Shell Integration
 =================
 
+For fzf version 0.48.0 and above, shell integration scripts are now embedded in
+the fzf binary.
+
 shells/zsh
 ----------
 
 To enable all support, add this to your ~/.zshrc:
 
 ```
-autoload _fzf_key_bindings _fzf_completion
-_fzf_key_bindings
-_fzf_completion
+eval "$(fzf --zsh)"
 ```
 
-_fzf_key_bindings causes zsh to use fzf for things like CTRL+r and CTRL+t,
-whereas _fzf_completion makes zsh use fzf for **<tab> completion.
+Key bindings causes zsh to use fzf for things like CTRL+r and CTRL+t, whereas
+completion makes zsh use fzf for **<tab> completion.
 
 shells/bash
 -----------
@@ -25,11 +26,10 @@ shells/bash
 To enable all support, add this to your ~/.bashrc:
 
 ```
-source ${BASH_SITE}/key-bindings.bash
-source ${BASH_SITE}/completion.bash
+eval "$(fzf --bash)"
 ```
 
-These two files have the same roles as their zsh counterparts.
+These integrations have the same roles as their zsh counterparts.
 
 shells/fish
 -----------
@@ -39,8 +39,7 @@ the shell config, so we have to source it anyway. Put the following in
 ~/.config/fish/config.fish:
 
 ```
-source ${FISH_SITE}/fzf-key-bindings.fish
-fzf_key_bindings
+fzf --fish | source
 ```
 
 There is no **<tab> completion support for fish.
