@@ -1,6 +1,6 @@
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.75
+DISTNAME=	lighttpd-1.4.76
 CATEGORIES=	www net
 SITES=		https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
