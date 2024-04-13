@@ -12,12 +12,10 @@ include/gom-1.0/gom/gom-resource-group.h
 include/gom-1.0/gom/gom-resource.h
 include/gom-1.0/gom/gom-sorting.h
 include/gom-1.0/gom/gom.h
-lib/girepository-1.0/
 lib/girepository-1.0/Gom-1.0.typelib
 @lib lib/libgom-1.0.so.${LIBgom-1.0_VERSION}
 lib/pkgconfig/gom-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gom.py
-share/gir-1.0/
 share/gir-1.0/Gom-1.0.gir
