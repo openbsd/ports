@@ -1,7 +1,8 @@
 COMMENT =		accurate Nintendo Entertainment System emulator
 
-DISTNAME =		nestopia-1.51.1
-REVISION =		0
+GH_ACCOUNT =		0ldsk00l
+GH_PROJECT =		nestopia
+GH_TAGNAME =		1.52.1
 
 .include <bsd.port.arch.mk>
 
@@ -18,9 +19,6 @@ WANTLIB += archive c fltk fltk_gl fltk_images fontconfig jpeg
 WANTLIB += m png z
 
 COMPILER =		base-clang ports-gcc base-gcc
-
-SITES =			${SITE_SOURCEFORGE:=nestopiaue/}
-EXTRACT_SUFX =		.tgz
 
 BUILD_DEPENDS =		devel/autoconf-archive
 RUN_DEPENDS =		devel/desktop-file-utils \
