@@ -1,6 +1,7 @@
 L =	pol
 LANG =	Polish
 V =	0.1.2
+REVISION =	0
 
 SITES =		https://distfiles.roadrunner.page/
 

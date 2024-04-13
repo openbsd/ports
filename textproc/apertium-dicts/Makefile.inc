@@ -16,6 +16,5 @@ SITES ?=	https://github.com/apertium/apertium-$L/releases/download/v$V/
 BUILD_DEPENDS +=	textproc/apertium \
 			textproc/libxslt \
 			textproc/lttoolbox
-RUN_DEPENDS +=		textproc/apertium
 
 CONFIGURE_STYLE ?=	gnu

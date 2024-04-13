@@ -1,6 +1,7 @@
 L =	nno-nob
 LANG =	Norwegian Nynorsk/Bokmal
 V =	1.3.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/nno \
 			textproc/apertium-dicts/nob \

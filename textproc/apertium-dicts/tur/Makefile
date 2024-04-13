@@ -1,7 +1,7 @@
 L =	tur
 LANG =	Turkish
 V =	0.2.0
-REVISION =	0
+REVISION =	1
 
 BROKEN =	0.2.0 incompatible with apertium>=3.7.2
 

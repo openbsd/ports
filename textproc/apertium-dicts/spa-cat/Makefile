@@ -1,6 +1,7 @@
 L =	spa-cat
 LANG =	Spanish/Catalan
 V =	2.2.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/cat \
 			textproc/apertium-dicts/spa \

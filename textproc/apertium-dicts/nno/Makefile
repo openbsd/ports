@@ -1,6 +1,7 @@
 L =	nno
 LANG =	Norwegian Nynorsk
 V =	1.1.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

@@ -1,6 +1,7 @@
 L =	oci
 LANG =	Occitan
 V =	0.2.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

@@ -1,6 +1,7 @@
 L =	hbs-eng
 LANG =	Serbo-Croatian/English
 V =	0.5.1
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

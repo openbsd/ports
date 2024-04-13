@@ -1,6 +1,7 @@
 L =	oci-fra
 LANG =	Occitan/French
 V =	0.3.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/fra \
 			textproc/apertium-dicts/oci \

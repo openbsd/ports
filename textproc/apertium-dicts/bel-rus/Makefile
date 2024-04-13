@@ -1,6 +1,7 @@
 L =	bel-rus
 LANG =	Belarusian/Russian
 V =	0.2.1
+REVISION =	0
 
 SITES =		https://distfiles.roadrunner.page/
 

@@ -1,6 +1,7 @@
 L =	swe-nor
 LANG =	Swedish/Norwegian
 V =	0.3.1
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/nno \
 			textproc/apertium-dicts/nob \

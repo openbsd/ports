@@ -1,6 +1,7 @@
 L =	cat-srd
 LANG =	Catalan/Sardinian
 V =	1.1.0
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

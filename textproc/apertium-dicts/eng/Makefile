@@ -1,6 +1,7 @@
 L =	eng
 LANG =	English
 V =	0.1.0
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

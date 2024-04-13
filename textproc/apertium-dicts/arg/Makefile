@@ -1,6 +1,7 @@
 L =	arg
 LANG =	Aragonese
 V =	0.1.4
+REVISION =	0
 
 SITES =		https://distfiles.roadrunner.page/
 

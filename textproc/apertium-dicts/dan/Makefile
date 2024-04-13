@@ -1,6 +1,7 @@
 L =	dan
 LANG =	Danish
 V =	0.6.1
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

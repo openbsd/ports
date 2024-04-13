@@ -1,6 +1,7 @@
 L =	dan-nor
 LANG =	Danish/Norwegian
 V =	1.4.1
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/dan \
 			textproc/apertium-dicts/nno \

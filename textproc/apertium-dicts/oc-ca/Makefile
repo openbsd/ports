@@ -1,6 +1,7 @@
 L =	oc-ca
 LANG =	Occitan/Catalan
 V =	1.0.7
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

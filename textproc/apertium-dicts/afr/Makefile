@@ -1,6 +1,7 @@
 L =	afr
 LANG =	Afrikaans
 V =	0.2.0
+REVISION =	0
 
 USE_GMAKE =	Yes
 

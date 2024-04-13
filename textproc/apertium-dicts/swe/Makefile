@@ -1,6 +1,7 @@
 L =	swe
 LANG =	Swedish
 V =	0.8.1
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 
