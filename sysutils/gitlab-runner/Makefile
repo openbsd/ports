@@ -1,4 +1,4 @@
-BROKEN-aarch64 =	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+BROKEN-aarch64 =	gitlab.com/gitlab-org/gitlab-runner/vendor/github.com/kr/pty/pty_openbsd.go:24:10: undefined: ptmget
 BROKEN-arm =		old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 
 COMMENT =		CI/CD job runner for GitLab
