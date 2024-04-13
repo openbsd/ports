@@ -3,8 +3,7 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.9.18
-REVISION =		0
+FULL_VERSION =		3.9.19
 SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
