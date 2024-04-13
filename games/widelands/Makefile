@@ -2,8 +2,7 @@ COMMENT =	economic and military simulation game
 
 GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
-GH_TAGNAME = 	v1.1
-REVISION =	0
+GH_TAGNAME = 	v1.2
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.widelands.org/
@@ -12,15 +11,16 @@ HOMEPAGE =	https://www.widelands.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 SDL2_image SDL2_mixer
-WANTLIB += SDL2_ttf c execinfo icudata icuuc intl m png z
+WANTLIB += SDL2_ttf c execinfo icudata icuuc intl m minizip png z
 
-# c++11
+# c++17
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/asio \
 		devel/gettext,-tools
 
-LIB_DEPENDS =	devel/gettext,-runtime \
+LIB_DEPENDS =	archivers/minizip \
+		devel/gettext,-runtime \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
 		devel/sdl2-ttf \
@@ -42,7 +42,6 @@ CONFIGURE_ARGS =	-DWL_INSTALL_DATADIR=${PREFIX}/share/widelands \
 			-DWL_INSTALL_BINDIR=${PREFIX}/bin \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DGTK_UPDATE_ICON_CACHE=False \
-			-DOPTION_FORCE_EMBEDDED_MINIZIP=ON \
 			-Wno-dev
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
