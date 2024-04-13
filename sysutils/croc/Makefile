@@ -1,6 +1,6 @@
 COMMENT =		simply and securely transfer files and folders
 
-MODGO_VERSION =		v9.6.13
+MODGO_VERSION =		v9.6.15
 MODGO_MODNAME =		github.com/schollz/croc/v9
 
 DISTNAME =		croc-${MODGO_VERSION}
