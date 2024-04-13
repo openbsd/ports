@@ -2915,7 +2915,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/list-tags-for-resou
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/associate-encryption-config.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/create-addon.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/create-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-addon.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-update.rst
