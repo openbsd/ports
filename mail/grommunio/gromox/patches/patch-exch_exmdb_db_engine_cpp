@@ -1,0 +1,12 @@
+Index: exch/exmdb/db_engine.cpp
+--- exch/exmdb/db_engine.cpp.orig
++++ exch/exmdb/db_engine.cpp
+@@ -288,7 +288,7 @@ BOOL db_engine_unload_db(const char *path)
+ 		if (it == g_hash_table.end())
+ 			return TRUE;
+ 		auto now = tp_now();
+-		if (remove_from_hash(*it, now + g_cache_interval)) {
++		if (remove_from_hash(*it, std::chrono::time_point_cast<gromox::time_point::duration>(now + g_cache_interval))) {
+ 			g_hash_table.erase(it);
+ 			return TRUE;
+ 		}
