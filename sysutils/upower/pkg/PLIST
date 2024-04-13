@@ -9,7 +9,6 @@ include/libupower-glib/up-stats-item.h
 include/libupower-glib/up-types.h
 include/libupower-glib/up-version.h
 include/libupower-glib/upower.h
-lib/girepository-1.0/
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 @lib lib/libupower-glib.so.${LIBupower-glib_VERSION}
 lib/pkgconfig/upower-glib.pc
@@ -30,7 +29,6 @@ share/examples/upower/UPower/
 @sample ${SYSCONFDIR}/UPower/
 share/examples/upower/UPower/UPower.conf
 @sample ${SYSCONFDIR}/UPower/UPower.conf
-share/gir-1.0/
 share/gir-1.0/UPowerGlib-1.0.gir
 share/locale/fr/LC_MESSAGES/upower.mo
 share/locale/it/LC_MESSAGES/upower.mo
