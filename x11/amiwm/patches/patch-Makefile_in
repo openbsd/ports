@@ -1,5 +1,6 @@
---- Makefile.in.orig	Mon Jul 19 18:07:34 2010
-+++ Makefile.in	Sun Dec  6 21:05:44 2015
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -13,6 +13,7 @@ LIBS = @X_LIBS@ @X_PRE_LIBS@ -Llibami -lami @XT_LIB_KL
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -12,12 +13,12 @@
  
  PROGS = amiwm requestchoice executecmd ppmtoinfo
  
--MODULES = $(srcdir)/Background Keyboard
+-MODULES = $(srcdir)/Background Keyboard Launcher
 +MODULES =
  
  OBJS  = main.o screen.o client.o frame.o icc.o \
  		icon.o menu.o diskobject.o gram.o lex.o rc.o \
-@@ -43,7 +44,7 @@ DISTFILES = README README.modules INSTALL LICENSE amiw
+@@ -44,7 +45,7 @@ DISTFILES = README README.modules INSTALL LICENSE amiw
  
  PACKAGENAME = amiwm
  
@@ -26,7 +27,7 @@
  
  all : lib_all
  	@$(MAKE) local_all
-@@ -89,13 +90,11 @@ kbdlexer.c : kbdlexer.l
+@@ -90,13 +91,11 @@ kbdlexer.c : kbdlexer.l
  
  install : $(PROGS) $(MODULES) Xsession Xsession2 Xinitrc amiwm-init
  	-mkdir -p $(AMIWM_HOME)
@@ -41,7 +42,7 @@
  	  fi; \
  	done
  	$(INSTALL) -m 644 $(srcdir)/system.amiwmrc $(AMIWM_HOME)/system.amiwmrc
-@@ -110,9 +109,8 @@ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinit
+@@ -111,9 +110,8 @@ install : $(PROGS) $(MODULES) Xsession Xsession2 Xinit
  	-mkdir -p $(bindir)
  	$(INSTALL) $(STRIPFLAG) amiwm $(bindir)/amiwm
  	$(INSTALL) $(STRIPFLAG) ppmtoinfo $(bindir)/ppmtoinfo

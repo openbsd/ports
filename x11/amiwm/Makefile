@@ -1,6 +1,6 @@
 COMMENT=	Amiga Workbench lookalike window manager
 
-VERSION=	0.21pl2
+VERSION=	0.22pl2
 DISTNAME=	amiwm${VERSION}
 PKGNAME=	amiwm-${VERSION:S/pl/./}
 CATEGORIES=	x11
