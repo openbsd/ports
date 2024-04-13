@@ -1,0 +1,13 @@
+https://gitlab.xfce.org/xfce/xfwm4/-/issues/762
+
+Index: src/tabwin.c
+--- src/tabwin.c.orig
++++ src/tabwin.c
+@@ -1000,6 +1000,7 @@ tabwinRemoveClient (Tabwin *tabwin, Client *c)
+             {
+                 gtk_container_remove (GTK_CONTAINER (tabwin_widget->container), icon);
+                 tabwin_widget->widgets = g_list_delete_link (tabwin_widget->widgets, widgets);
++                break;
+             }
+         }
+     }

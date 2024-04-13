@@ -1,5 +1,5 @@
 COMMENT=	Xfce4 window manager
-REVISION=	0
+REVISION=	1
 
 XFCE_PROJECT=	xfwm4
 XFCE_VERSION=	4.18.0
