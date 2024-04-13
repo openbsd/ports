@@ -211,6 +211,7 @@ lib/pkgconfig/python-3.11.pc
 ${PY_DEFAULTONLY}lib/pkgconfig/python3-embed.pc
 ${PY_DEFAULTONLY}lib/pkgconfig/python3.pc
 lib/python3.11/
+lib/python3.11/EXTERNALLY-MANAGED
 lib/python3.11/LICENSE.txt
 lib/python3.11/__future__.py
 lib/python3.11/__hello__.py

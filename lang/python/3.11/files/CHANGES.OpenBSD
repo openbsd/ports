@@ -23,5 +23,7 @@ and calling close(2) on them.
 than attempting to resolve a version number by parsing ldconfig -r output,
 which results in loading an incorrect version in some cases.
 
+8.  Adjust #ifdef to use LibreSSL's version of X509_STORE_get1_objects().
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.11.
