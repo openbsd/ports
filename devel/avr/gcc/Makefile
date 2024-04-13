@@ -3,7 +3,7 @@ COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 V=		8.5.0
 DISTNAME =	gcc-$V
 PKGNAME=	avr-gcc-${V}
-REVISION=	1
+REVISION=	2
 
 USE_NOEXECONLY=Yes
 
@@ -23,7 +23,8 @@ PATCH_LIST =	patch-* vecstep-*
 .endif
 
 BUILD_DEPENDS+=		devel/bison		\
-			devel/avr/binutils>=2.30
+			${RUN_DEPENDS}
+RUN_DEPENDS=		devel/avr/binutils>=2.30
 LIB_DEPENDS=		devel/libmpc
 
 # dear autoconf, why do you suck so hard?
