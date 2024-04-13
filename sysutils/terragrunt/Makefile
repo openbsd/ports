@@ -3,7 +3,7 @@ BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1
 COMMENT=	thin wrapper for Terraform that provides extra tools
 
 MODGO_MODNAME=	github.com/gruntwork-io/terragrunt
-MODGO_VERSION=	v0.55.21
+MODGO_VERSION=	v0.57.0
 DISTNAME=	terragrunt-${MODGO_VERSION}
 
 WRKDIST=	${WRKDIR}/github.com/gruntwork-io/terragrunt@${MODGO_VERSION}
