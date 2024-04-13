@@ -1,10 +1,12 @@
 COMMENT =		dark style sheet for QtWidgets apps
 
-MODPY_EGG_VERSION =	3.2.1
+MODPY_EGG_VERSION =	3.2.3
 DISTNAME =		QDarkStyle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
 CATEGORIES =		devel
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 # CC BY 4.0
