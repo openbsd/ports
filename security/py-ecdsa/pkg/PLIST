@@ -12,8 +12,6 @@ lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_rwlock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_rwlock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_sha3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_sha3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}numbertheory.${MO
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}numbertheory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}rfc6979.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}rfc6979.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_curves.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_curves.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_der.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -60,14 +60,11 @@ lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_numbertheory
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_numbertheory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_pyecdsa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_pyecdsa.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_rw_lock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_rw_lock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_sha3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}test_sha3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ecdsa/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ecdsa/_compat.py
-lib/python${MODPY_VERSION}/site-packages/ecdsa/_rwlock.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/_sha3.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/_version.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/curves.py
@@ -80,6 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/ecdsa/errors.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/keys.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/numbertheory.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/rfc6979.py
+lib/python${MODPY_VERSION}/site-packages/ecdsa/ssh.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_curves.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_der.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_ecdh.py
@@ -91,6 +89,5 @@ lib/python${MODPY_VERSION}/site-packages/ecdsa/test_keys.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_malformed_sigs.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_numbertheory.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_pyecdsa.py
-lib/python${MODPY_VERSION}/site-packages/ecdsa/test_rw_lock.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/test_sha3.py
 lib/python${MODPY_VERSION}/site-packages/ecdsa/util.py
