@@ -2,13 +2,11 @@ COMMENT=		library for automatic proxy configuration management
 
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
-GH_TAGNAME=		0.5.4
+GH_TAGNAME=		0.5.5
 
 CATEGORIES=		net
 
-SHARED_LIBS += proxy                     2.0 # 0.5.4
-
-HOMEPAGE=		https://libproxy.googlecode.com/
+SHARED_LIBS += proxy                     2.0 # 0.5.5
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
