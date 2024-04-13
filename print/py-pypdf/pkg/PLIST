@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_cmap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_cmap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_doc_common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_doc_common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_encryption.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_encryption.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/${MODPY_PYCACHE}_merger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -82,6 +84,7 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/_crypt_providers/_base.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_crypt_providers/_cryptography.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_crypt_providers/_fallback.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_crypt_providers/_pycryptodome.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/_doc_common.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_encryption.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_merger.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/_page.py
