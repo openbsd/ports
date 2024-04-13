@@ -1,6 +1,6 @@
 COMMENT=		GNU units conversion program
 
-DISTNAME=		units-2.22
+DISTNAME=		units-2.23
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 SITES=			${SITE_GNU:=units/}
