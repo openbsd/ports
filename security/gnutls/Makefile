@@ -1,6 +1,6 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.4
+V=			3.8.5
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
