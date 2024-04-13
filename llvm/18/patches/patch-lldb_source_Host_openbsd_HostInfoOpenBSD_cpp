@@ -1,0 +1,29 @@
+Index: lldb/source/Host/openbsd/HostInfoOpenBSD.cpp
+--- lldb/source/Host/openbsd/HostInfoOpenBSD.cpp.orig
++++ lldb/source/Host/openbsd/HostInfoOpenBSD.cpp
+@@ -7,9 +7,11 @@
+ //===----------------------------------------------------------------------===//
+ 
+ #include "lldb/Host/openbsd/HostInfoOpenBSD.h"
++#include "lldb/Host/FileSystem.h"
+ 
+ #include <cstdio>
+ #include <cstring>
++#include <unistd.h>
+ #include <optional>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+@@ -49,4 +51,13 @@ std::optional<std::string> HostInfoOpenBSD::GetOSBuild
+ FileSpec HostInfoOpenBSD::GetProgramFileSpec() {
+   static FileSpec g_program_filespec;
+   return g_program_filespec;
++}
++
++bool HostInfoOpenBSD::ComputeSupportExeDirectory(FileSpec &file_spec) {
++  if (HostInfoPosix::ComputeSupportExeDirectory(file_spec) &&
++      file_spec.IsAbsolute() && FileSystem::Instance().Exists(file_spec))
++    return true;
++
++  file_spec.SetDirectory("/usr/bin");
++  return true;
+ }

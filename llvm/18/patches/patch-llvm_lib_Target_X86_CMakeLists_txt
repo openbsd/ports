@@ -1,0 +1,19 @@
+Index: llvm/lib/Target/X86/CMakeLists.txt
+--- llvm/lib/Target/X86/CMakeLists.txt.orig
++++ llvm/lib/Target/X86/CMakeLists.txt
+@@ -42,6 +42,7 @@ set(sources
+   X86ExpandPseudo.cpp
+   X86FastISel.cpp
+   X86FixupBWInsts.cpp
++  X86FixupGadgets.cpp
+   X86FixupLEAs.cpp
+   X86FixupInstTuning.cpp
+   X86FixupVectorConstants.cpp
+@@ -72,6 +73,7 @@ set(sources
+   X86PadShortFunction.cpp
+   X86PartialReduction.cpp
+   X86RegisterInfo.cpp
++  X86ReturnProtectorLowering.cpp
+   X86ReturnThunks.cpp
+   X86SelectionDAGInfo.cpp
+   X86ShuffleDecodeConstantPool.cpp

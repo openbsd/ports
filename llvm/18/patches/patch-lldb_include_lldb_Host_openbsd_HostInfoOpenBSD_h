@@ -1,0 +1,19 @@
+Index: lldb/include/lldb/Host/openbsd/HostInfoOpenBSD.h
+--- lldb/include/lldb/Host/openbsd/HostInfoOpenBSD.h.orig
++++ lldb/include/lldb/Host/openbsd/HostInfoOpenBSD.h
+@@ -17,10 +17,15 @@
+ namespace lldb_private {
+ 
+ class HostInfoOpenBSD : public HostInfoPosix {
++  friend class HostInfoBase;
++
+ public:
+   static llvm::VersionTuple GetOSVersion();
+   static std::optional<std::string> GetOSBuildString();
+   static FileSpec GetProgramFileSpec();
++
++protected:
++  static bool ComputeSupportExeDirectory(FileSpec &file_spec);
+ };
+ }
+ 

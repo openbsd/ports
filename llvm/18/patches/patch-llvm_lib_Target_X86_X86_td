@@ -1,0 +1,14 @@
+Index: llvm/lib/Target/X86/X86.td
+--- llvm/lib/Target/X86/X86.td.orig
++++ llvm/lib/Target/X86/X86.td
+@@ -534,6 +534,10 @@ def TuningLZCNTFalseDeps : SubtargetFeature<"false-dep
+                                      "HasLZCNTFalseDeps", "true",
+                                      "LZCNT/TZCNT have a false dependency on dest register">;
+ 
++def FeatureSaveArgs
++    : SubtargetFeature<"save-args", "SaveArgs", "true",
++                       "Save register arguments on the stack.">;
++
+ def TuningMULCFalseDeps : SubtargetFeature<"false-deps-mulc",
+                                "HasMULCFalseDeps", "true",
+                                "VF[C]MULCPH/SH has a false dependency on dest register">;

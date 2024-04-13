@@ -1,0 +1,20 @@
+Index: llvm/lib/Target/PowerPC/PPCFrameLowering.cpp
+--- llvm/lib/Target/PowerPC/PPCFrameLowering.cpp.orig
++++ llvm/lib/Target/PowerPC/PPCFrameLowering.cpp
+@@ -15,6 +15,7 @@
+ #include "PPCInstrBuilder.h"
+ #include "PPCInstrInfo.h"
+ #include "PPCMachineFunctionInfo.h"
++#include "PPCReturnProtectorLowering.h"  
+ #include "PPCSubtarget.h"
+ #include "PPCTargetMachine.h"
+ #include "llvm/ADT/Statistic.h"
+@@ -2744,4 +2745,8 @@ uint64_t PPCFrameLowering::getStackThreshold() const {
+     return LONG_MAX;
+ 
+   return TargetFrameLowering::getStackThreshold();
++}
++
++const ReturnProtectorLowering *PPCFrameLowering::getReturnProtector() const {
++  return &RPL;
+ }
