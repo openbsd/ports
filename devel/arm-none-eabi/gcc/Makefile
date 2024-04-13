@@ -33,9 +33,7 @@ SITES=		${SITE_GCC:=releases/gcc-$(VERSION)/}
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS+=	devel/autoconf/2.13	\
-		devel/bison		\
-		devel/metaauto		\
+BUILD_DEPENDS+=	devel/bison		\
 		${RUN_DEPENDS}
 LIB_DEPENDS=	devel/mpfr devel/libmpc
 

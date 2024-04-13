@@ -22,11 +22,8 @@ DIST_SUBDIR=	gcc
 PATCH_LIST =	patch-* vecstep-*
 .endif
 
-BUILD_DEPENDS+=		devel/autoconf/2.13 \
-			devel/bison		\
-			devel/metaauto		\
+BUILD_DEPENDS+=		devel/bison		\
 			devel/avr/binutils>=2.30
-
 LIB_DEPENDS=		devel/libmpc
 
 # dear autoconf, why do you suck so hard?
