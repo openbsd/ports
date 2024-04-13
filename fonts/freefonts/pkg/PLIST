@@ -1,6 +1,5 @@
 @pkgpath x11/freefonts
 share/fonts/
-@comment share/fonts/.orig
 @fontdir share/fonts/freefont/
 share/fonts/freefont/Fontmap
 share/fonts/freefont/README
