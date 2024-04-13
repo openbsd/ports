@@ -12,7 +12,8 @@ AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_STYLE =	autoreconf
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/test-scandivoc
+post-extract:
+	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' \
+		${WRKSRC}/test-scandivoc
 
 .include <bsd.port.mk>

@@ -17,4 +17,6 @@ BUILD_DEPENDS +=	textproc/apertium \
 			textproc/libxslt \
 			textproc/lttoolbox
 
+TEST_DEPENDS +=		textproc/apertium
+
 CONFIGURE_STYLE ?=	gnu

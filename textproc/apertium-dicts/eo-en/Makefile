@@ -15,4 +15,8 @@ AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_STYLE =	autoreconf
 
+post-extract:
+	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' \
+		${WRKSRC}/multi-gen.sh
+
 .include <bsd.port.mk>

@@ -1,9 +1,0 @@
-Index: test-scandivoc
---- test-scandivoc.orig
-+++ test-scandivoc
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${LOCALBASE}/bin/bash
- 
- # Simple test for consistency across scandipairs
- 
