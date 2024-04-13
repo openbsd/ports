@@ -1,8 +1,8 @@
-COMMENT-main=		archive manager utility for GNOME
+COMMENT-main=		create and modify archives
 COMMENT-nautilus=	file-roller extension for Nautilus
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		44
+GNOME_VERSION=		44.1
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
