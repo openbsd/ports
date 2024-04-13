@@ -32,7 +32,7 @@ libexec/installed-tests/libxmlb/test.quirk
 libexec/installed-tests/libxmlb/test.xml
 libexec/installed-tests/libxmlb/test.xml.gz.gz.gz
 libexec/installed-tests/libxmlb/test.xml.xz
-libexec/installed-tests/libxmlb/test.xml.zstd
+libexec/installed-tests/libxmlb/test.xml.zst
 @bin libexec/installed-tests/libxmlb/xb-self-test
 @man man/man1/xb-tool.1
 share/gir-1.0/Xmlb-2.0.gir
