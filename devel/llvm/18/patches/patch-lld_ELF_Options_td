@@ -1,0 +1,23 @@
+Index: lld/ELF/Options.td
+--- lld/ELF/Options.td.orig
++++ lld/ELF/Options.td
+@@ -264,8 +264,9 @@ def icf_safe: F<"icf=safe">, HelpText<"Enable safe ide
+ 
+ def icf_none: F<"icf=none">, HelpText<"Disable identical code folding (default)">;
+ 
+-def ignore_function_address_equality: FF<"ignore-function-address-equality">,
+-  HelpText<"lld can break the address equality of functions">;
++defm ignore_function_address_equality: B<"ignore-function-address-equality",
++  "lld can break the address equality of functions",
++  "lld cannot break the address equality of functions">;
+ 
+ def ignore_data_address_equality: FF<"ignore-data-address-equality">,
+   HelpText<"lld can break the address equality of data">;
+@@ -566,6 +567,7 @@ def: Flag<["-"], "n">, Alias<nmagic>, HelpText<"Alias 
+ def: Flag<["-"], "N">, Alias<omagic>, HelpText<"Alias for --omagic">;
+ def: Joined<["--"], "output=">, Alias<o>, HelpText<"Alias for -o">;
+ def: Separate<["--"], "output">, Alias<o>, HelpText<"Alias for -o">;
++def: F<"nopie">, Alias<no_pie>, HelpText<"Alias for --no-pie">;
+ def: F<"pic-executable">, Alias<pie>, HelpText<"Alias for --pie">;
+ def: Flag<["-"], "M">, Alias<print_map>, HelpText<"Alias for --print-map">;
+ def: Flag<["-"], "r">, Alias<relocatable>, HelpText<"Alias for --relocatable">;

@@ -1,0 +1,54 @@
+Index: clang/include/clang/Driver/Options.td
+--- clang/include/clang/Driver/Options.td.orig
++++ clang/include/clang/Driver/Options.td
+@@ -3672,6 +3672,16 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+   NormalizedValuesScope<"LangOptions::TrivialAutoVarInitKind">,
+   NormalizedValues<["Uninitialized", "Zero", "Pattern"]>,
+   MarshallingInfoEnum<LangOpts<"TrivialAutoVarInit">, "Uninitialized">;
++def ret_protector : Flag<["-"], "ret-protector">, Visibility<[CC1Option]>,
++  HelpText<"Enable Return Protectors">;
++def fno_ret_protector : Flag<["-"], "fno-ret-protector">, Group<f_Group>, Visibility<[ClangOption, CLOption, DXCOption]>,
++  HelpText<"Disable return protector">;
++def fret_protector : Flag<["-"], "fret-protector">, Group<f_Group>, Visibility<[ClangOption, CLOption, DXCOption]>,
++  HelpText<"Enable return protector">;
++def fno_fixup_gadgets : Flag<["-"], "fno-fixup-gadgets">, Group<f_Group>, Visibility<[ClangOption, CLOption, DXCOption]>,
++  HelpText<"Disable FixupGadgets pass (x86 only)">;
++def ffixup_gadgets : Flag<["-"], "ffixup-gadgets">, Group<f_Group>, Visibility<[ClangOption, CLOption, DXCOption]>,
++  HelpText<"Replace ROP friendly instructions with safe alternatives (x86 only)">;
+ def ftrivial_auto_var_init_stop_after : Joined<["-"], "ftrivial-auto-var-init-stop-after=">, Group<f_Group>,
+   Visibility<[ClangOption, CC1Option, CLOption, DXCOption]>,
+   HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">,
+@@ -5061,6 +5071,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
+ def mfix4300 : Flag<["-"], "mfix4300">, Group<m_mips_Features_Group>;
+ def mcompact_branches_EQ : Joined<["-"], "mcompact-branches=">,
+                            Group<m_mips_Features_Group>;
++def mfix_loongson2f_btb : Flag<["-"], "mfix-loongson2f-btb">,
++                          Group<m_mips_Features_Group>;
+ } // let Flags = [TargetSpecific]
+ def mbranch_likely : Flag<["-"], "mbranch-likely">, Group<m_Group>,
+   IgnoredGCCCompat;
+@@ -5276,10 +5288,14 @@ def pedantic_errors : Flag<["-", "--"], "pedantic-erro
+ def pedantic : Flag<["-", "--"], "pedantic">, Group<pedantic_Group>,
+   Visibility<[ClangOption, CC1Option, FlangOption, FC1Option]>,
+   HelpText<"Warn on language extensions">, MarshallingInfoFlag<DiagnosticOpts<"Pedantic">>;
+-def p : Flag<["-"], "p">, HelpText<"Enable mcount instrumentation with prof">;
++// def p : Flag<["-"], "p">, HelpText<"Enable mcount instrumentation with prof">;
++// Commit 7f85c560b43bd1b2ebf77cc443281b474b5e19c6 re-added -p as another
++// option, referencing AIX. We deliberately added -p as an alias of -pg (below)
++// in 4a39d3fe14b39d088ca94a7747e4bab1dac261b1 and will keep it that way for now.
+ def pg : Flag<["-"], "pg">, HelpText<"Enable mcount instrumentation">,
+   Visibility<[ClangOption, CC1Option]>,
+   MarshallingInfoFlag<CodeGenOpts<"InstrumentForProfiling">>;
++def p : Flag<["-"], "p">, Alias<pg>;
+ def pipe : Flag<["-", "--"], "pipe">,
+   HelpText<"Use pipes between commands, when possible">;
+ def prebind__all__twolevel__modules : Flag<["-"], "prebind_all_twolevel_modules">;
+@@ -6076,6 +6092,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+ def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
+ def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
+ def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;
++def msave_args : Flag<["-"], "msave-args">, Group<m_x86_Features_Group>;
++def mno_save_args : Flag<["-"], "mno-save-args">, Group<m_x86_Features_Group>;
+ def mvzeroupper : Flag<["-"], "mvzeroupper">, Group<m_x86_Features_Group>;
+ def mno_vzeroupper : Flag<["-"], "mno-vzeroupper">, Group<m_x86_Features_Group>;
+ def mno_gather : Flag<["-"], "mno-gather">, Group<m_Group>,

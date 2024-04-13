@@ -1,0 +1,22 @@
+XXX SymbolUnion
+
+Index: lld/ELF/Symbols.cpp
+--- lld/ELF/Symbols.cpp.orig
++++ lld/ELF/Symbols.cpp
+@@ -25,7 +25,7 @@ using namespace llvm::ELF;
+ using namespace lld;
+ using namespace lld::elf;
+ 
+-static_assert(sizeof(SymbolUnion) <= 64, "SymbolUnion too large");
++static_assert(sizeof(SymbolUnion) <= 72, "SymbolUnion too large");
+ 
+ template <typename T> struct AssertSymbol {
+   static_assert(std::is_trivially_destructible<T>(),
+@@ -59,6 +59,7 @@ std::string lld::toString(const elf::Symbol &sym) {
+ }
+ 
+ Defined *ElfSym::bss;
++Defined *ElfSym::data;
+ Defined *ElfSym::etext1;
+ Defined *ElfSym::etext2;
+ Defined *ElfSym::edata1;

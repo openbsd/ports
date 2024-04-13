@@ -1,0 +1,46 @@
+Index: lld/ELF/Relocations.cpp
+--- lld/ELF/Relocations.cpp.orig
++++ lld/ELF/Relocations.cpp
+@@ -812,6 +812,19 @@ void elf::reportUndefinedSymbols() {
+   undefs.clear();
+ }
+ 
++static void reportGNUWarning(Symbol &sym, InputSectionBase &sec,
++                                 uint64_t offset) {
++  std::lock_guard<std::mutex> lock(relocMutex);
++  if (sym.gwarn) {
++    StringRef gnuWarning = gnuWarnings.lookup(sym.getName());
++    // report first occurance only
++    sym.gwarn = false;
++    if (!gnuWarning.empty())
++      message(sec.getSrcMsg(sym, offset) + "(" + sec.getObjMsg(offset) +
++              "): warning: " + gnuWarning);
++  }
++}
++
+ // Report an undefined symbol if necessary.
+ // Returns true if the undefined symbol will produce an error message.
+ static bool maybeReportUndefined(Undefined &sym, InputSectionBase &sec,
+@@ -842,6 +855,13 @@ static bool maybeReportUndefined(Undefined &sym, Input
+   if (sym.discardedSecIdx != 0 && (sec.name == ".got2" || sec.name == ".toc"))
+     return false;
+ 
++#ifdef __OpenBSD__
++  // GCC (at least 8 and 11) can produce a ".gcc_except_table" with relocations
++  // to discarded sections on riscv64
++  if (sym.discardedSecIdx != 0 && sec.name == ".gcc_except_table")
++    return false;
++#endif
++
+   bool isWarning =
+       (config->unresolvedSymbols == UnresolvedPolicy::Warn && canBeExternal) ||
+       config->noinhibitExec;
+@@ -1411,6 +1431,8 @@ template <class ELFT, class RelTy> void RelocationScan
+   uint64_t offset = getter.get(rel.r_offset);
+   if (offset == uint64_t(-1))
+     return;
++
++  reportGNUWarning(sym, *sec, rel.r_offset);
+ 
+   RelExpr expr = target->getRelExpr(type, sym, sec->content().data() + offset);
+   int64_t addend = RelTy::IsRela

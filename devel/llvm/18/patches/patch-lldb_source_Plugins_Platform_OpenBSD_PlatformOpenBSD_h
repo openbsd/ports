@@ -1,0 +1,12 @@
+Index: lldb/source/Plugins/Platform/OpenBSD/PlatformOpenBSD.h
+--- lldb/source/Plugins/Platform/OpenBSD/PlatformOpenBSD.h.orig
++++ lldb/source/Plugins/Platform/OpenBSD/PlatformOpenBSD.h
+@@ -54,6 +54,8 @@ class PlatformOpenBSD : public PlatformPOSIX { (public
+                                   unsigned flags, lldb::addr_t fd,
+                                   lldb::addr_t offset) override;
+ 
++  lldb_private::FileSpec LocateExecutable(const char *basename) override;
++
+   std::vector<ArchSpec> m_supported_architectures;
+ };
+ 

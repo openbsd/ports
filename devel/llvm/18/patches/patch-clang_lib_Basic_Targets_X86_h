@@ -1,0 +1,11 @@
+Index: clang/lib/Basic/Targets/X86.h
+--- clang/lib/Basic/Targets/X86.h.orig
++++ clang/lib/Basic/Targets/X86.h
+@@ -147,6 +147,7 @@ class LLVM_LIBRARY_VISIBILITY X86TargetInfo : public T
+   bool HasMOVDIR64B = false;
+   bool HasPTWRITE = false;
+   bool HasINVPCID = false;
++  bool HasSaveArgs = false;
+   bool HasENQCMD = false;
+   bool HasAVXVNNIINT16 = false;
+   bool HasAMXFP16 = false;

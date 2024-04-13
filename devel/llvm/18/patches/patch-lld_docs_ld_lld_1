@@ -1,0 +1,26 @@
+Index: lld/docs/ld.lld.1
+--- lld/docs/ld.lld.1.orig
++++ lld/docs/ld.lld.1
+@@ -235,7 +235,9 @@ followed by the name of the missing library.
+ followed by the name of the undefined symbol.
+ .It Fl -execute-only
+ Mark executable sections unreadable.
+-This option is currently only supported on AArch64.
++This option is currently supported on x86-32, x86-64 (default),
++AArch64 (default), MIPS64, PowerPC32 (default), PowerPC64 (default),
++RISC-V (default), and SPARC64 (default).
+ .It Fl -exclude-libs Ns = Ns Ar value
+ Exclude static libraries from automatic export.
+ .It Fl -export-dynamic , Fl E
+@@ -913,6 +915,11 @@ This is the default.
+ .It Cm wxneeded
+ Create a
+ .Dv PT_OPENBSD_WXNEEDED
++segment.
++.Pp
++.It Cm nobtcfi
++Create a
++.Dv PT_OPENBSD_NOBTCFI
+ segment.
+ .El
+ .El

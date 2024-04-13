@@ -1,0 +1,41 @@
+commit 4d5a8ccf25a6c43930c332e75ecead287778af6b
+Author: Brad Smith <brad@comstyle.com>
+Date:   Mon Nov 13 02:42:14 2023 -0500
+
+    [Driver] Add LTO support for Haiku and OpenBSD (#72047)
+
+Index: clang/lib/Driver/ToolChains/OpenBSD.cpp
+--- clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
++++ clang/lib/Driver/ToolChains/OpenBSD.cpp
+@@ -209,6 +209,20 @@ void openbsd::Linker::ConstructJob(Compilation &C, con
+                   D.getLTOMode() == LTOK_Thin);
+   }
+ 
++  if (D.isUsingLTO()) {
++    assert(!Inputs.empty() && "Must have at least one input.");
++    // Find the first filename InputInfo object.
++    auto Input = llvm::find_if(
++        Inputs, [](const InputInfo &II) -> bool { return II.isFilename(); });
++    if (Input == Inputs.end())
++      // For a very rare case, all of the inputs to the linker are
++      // InputArg. If that happens, just use the first InputInfo.
++      Input = Inputs.begin();
++
++    addLTOOptions(ToolChain, Args, CmdArgs, Output, *Input,
++                  D.getLTOMode() == LTOK_Thin);
++  }
++
+   bool NeedsSanitizerDeps = addSanitizerRuntimes(ToolChain, Args, CmdArgs);
+   bool NeedsXRayDeps = addXRayRuntime(ToolChain, Args, CmdArgs);
+   AddLinkerInputs(ToolChain, Inputs, Args, CmdArgs, JA);
+@@ -300,6 +314,10 @@ SanitizerMask OpenBSD::getSupportedSanitizers() const 
+     Res |= SanitizerKind::Vptr;
+     Res |= SanitizerKind::Fuzzer;
+     Res |= SanitizerKind::FuzzerNoLink;
++  }
++
++  if (IsX86_64) {
++    Res |= SanitizerKind::KernelAddress;
+   }
+   if (IsX86_64) {
+     Res |= SanitizerKind::KernelAddress;

@@ -1,0 +1,20 @@
+Index: clang/lib/Basic/Targets/X86.cpp
+--- clang/lib/Basic/Targets/X86.cpp.orig
++++ clang/lib/Basic/Targets/X86.cpp
+@@ -389,6 +389,8 @@ bool X86TargetInfo::handleTargetFeatures(std::vector<s
+       HasPTWRITE = true;
+     } else if (Feature == "+invpcid") {
+       HasINVPCID = true;
++    } else if (Feature == "+save-args") {
++      HasSaveArgs = true;
+     } else if (Feature == "+enqcmd") {
+       HasENQCMD = true;
+     } else if (Feature == "+hreset") {
+@@ -1222,6 +1224,7 @@ bool X86TargetInfo::hasFeature(StringRef Feature) cons
+       .Case("movbe", HasMOVBE)
+       .Case("movdiri", HasMOVDIRI)
+       .Case("movdir64b", HasMOVDIR64B)
++      .Case("save-args", HasSaveArgs)
+       .Case("mwaitx", HasMWAITX)
+       .Case("pclmul", HasPCLMUL)
+       .Case("pconfig", HasPCONFIG)
