@@ -764,6 +764,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-0
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/endpoint-rule-set-1.json
@@ -823,6 +828,13 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/endpoint-r
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dax/2017-04-19/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/deadline/2023-10-12/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/2018-10-26/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/detective/2018-10-26/endpoint-rule-set-1.json
@@ -1689,6 +1701,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medical-imaging/2023-07-19/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/memorydb/
