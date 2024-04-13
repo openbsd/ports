@@ -1,6 +1,6 @@
 COMMENT=		manage Exoscale infrastructure from the command-line
 
-GH_TAGNAME=		v1.77.0
+GH_TAGNAME=		v1.77.1
 GH_ACCOUNT=		exoscale
 GH_PROJECT=		cli
 DISTNAME=		${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME:C/^v//}
