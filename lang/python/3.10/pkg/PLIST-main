@@ -901,6 +901,10 @@ lib/python3.10/config-3.10/
 lib/python3.10/config-3.10/Makefile
 lib/python3.10/config-3.10/Setup
 lib/python3.10/config-3.10/Setup.local
+@comment lib/python3.10/config-3.10/__pycache__/
+@comment lib/python3.10/config-3.10/__pycache__/python-config.cpython-310.opt-1.pyc
+@comment lib/python3.10/config-3.10/__pycache__/python-config.cpython-310.opt-2.pyc
+@comment lib/python3.10/config-3.10/__pycache__/python-config.cpython-310.pyc
 lib/python3.10/config-3.10/config.c
 lib/python3.10/config-3.10/config.c.in
 lib/python3.10/config-3.10/install-sh
