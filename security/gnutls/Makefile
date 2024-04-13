@@ -3,6 +3,7 @@ COMMENT=		GNU Transport Layer Security library
 V=			3.8.5
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0 # must be ahead of OPENBSD_7_5
 
 CATEGORIES=		security
 
