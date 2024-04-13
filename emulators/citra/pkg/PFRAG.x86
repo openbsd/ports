@@ -1,9 +1,0 @@
-include/xbyak/
-include/xbyak/xbyak.h
-include/xbyak/xbyak_bin2hex.h
-include/xbyak/xbyak_mnemonic.h
-include/xbyak/xbyak_util.h
-lib/cmake/xbyak/
-lib/cmake/xbyak/xbyak-config-version.cmake
-lib/cmake/xbyak/xbyak-config.cmake
-lib/cmake/xbyak/xbyak-targets.cmake

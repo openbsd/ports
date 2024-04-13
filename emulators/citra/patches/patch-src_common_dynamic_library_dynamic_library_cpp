@@ -1,0 +1,15 @@
+Fix dynamic loading of FFMPEG libraries.
+
+Index: src/common/dynamic_library/dynamic_library.cpp
+--- src/common/dynamic_library/dynamic_library.cpp.orig
++++ src/common/dynamic_library/dynamic_library.cpp
+@@ -83,6 +83,9 @@ std::string DynamicLibrary::GetLibraryName(std::string
+     } else {
+         return fmt::format("{}{}.dylib", prefix, name);
+     }
++#elif defined(__OpenBSD__)
++    auto prefix = name.starts_with("lib") ? "" : "lib";
++    return fmt::format("{}{}.so", prefix, name);
+ #else
+     auto prefix = name.starts_with("lib") ? "" : "lib";
+     if (major >= 0 && minor >= 0) {

@@ -5,10 +5,10 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	nintendo 3DS emulator
 
-DISTNAME =	citra-unified-source-20230110-ad2cbe2
-V =		1827
+DISTNAME =	citra-unified-source-20240303-0ff3440
+
+V =		2104
 PKGNAME =	citra-0.0.0.${V}
-REVISION =	2
 
 CATEGORIES =	emulators
 
@@ -17,34 +17,42 @@ CATEGORIES =	emulators
 # BSD-3-clause (nihstro), LGPLv2.1 (soundtouch), BSD-style (xbyak)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Widgets
-WANTLIB += SDL2 avcodec avformat avutil boost_serialization-mt
-WANTLIB += c cryptopp enet fmt m swresample swscale usb-1.0
+USE_NOBTCFI =	Yes
 
-SITES =		https://github.com/citra-emu/citra-nightly/releases/download/nightly-${V}/
+WANTLIB += ${COMPILER_LIBCXX} 
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Widgets SoundTouch boost_iostreams-mt crypto openal
+WANTLIB += ssl SDL2 boost_serialization-mt
+WANTLIB += c cryptopp enet fmt m usb-1.0
+
+SITES =		https://archive.org/download/citra-latest-stuff/Nightly%20build%20%2B%20source%20-%200ff3440/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake \
-		x11/qt5
+		x11/qt6 \
 
 # C++20
 COMPILER =	base-clang ports-clang
 
 BUILD_DEPENDS =	devel/catch2 \
-		devel/robin-map
+		devel/git \
+		devel/robin-map \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	devel/boost \
+# ffmpeg is loaded via dlopen(3) when dumping recorded gameplay video
+LIB_DEPENDS =	audio/openal \
+		audio/soundtouch \
+		devel/boost \
 		devel/cryptopp \
-		graphics/ffmpeg \
 		devel/fmt \
 		devel/libusb1 \
 		devel/sdl2 \
+		graphics/ffmpeg \
 		net/enet \
-		x11/qt5/qtmultimedia
+		x11/qt6/qtmultimedia
 
 CONFIGURE_ARGS =	-DENABLE_CUBEB=OFF \
 			-DENABLE_WEB_SERVICE=OFF \
@@ -54,7 +62,18 @@ CONFIGURE_ARGS =	-DENABLE_CUBEB=OFF \
 			-DENABLE_FFMPEG_AUDIO_DECODER=ON \
 			-DENABLE_FFMPEG_VIDEO_DUMPER=ON \
 			-DCITRA_USE_PRECOMPILED_HEADERS=OFF \
-			-DDYNARMIC_USE_PRECOMPILED_HEADERS=OFF
+			-DDYNARMIC_USE_PRECOMPILED_HEADERS=OFF \
+			-DUSE_SYSTEM_CATCH2=ON \
+			-DUSE_SYSTEM_CRYPTOPP=ON \
+			-DUSE_SYSTEM_FMT=ON \
+			-DUSE_SYSTEM_FFMPEG_HEADERS=ON \
+			-DUSE_SYSTEM_LIBUSB=ON \
+			-DUSE_SYSTEM_ENET=ON \
+			-DUSE_SYSTEM_OPENSSL=ON \
+			-DUSE_SYSTEM_SOUNDTOUCH=ON \
+			-DUSE_SYSTEM_OPENAL=ON \
+			-DENABLE_VULKAN=OFF \
+			-DCITRA_WARNINGS_AS_ERRORS=OFF
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 

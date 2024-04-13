@@ -1,29 +1,20 @@
-remove check for submodules
+avoid duplicate definition of BOOST_NO_CXX98_FUNCTION_BASE
+check for fmt and Catch2
 fix man path
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -102,18 +102,6 @@ endif()
- # Sanity check : Check that all submodules are present
- # =======================================================================
+@@ -214,7 +214,7 @@ message(STATUS "Target architecture: ${ARCHITECTURE}")
+ # boost asio's concept usage doesn't play nicely with some compilers yet.
+ add_definitions(-DBOOST_ASIO_DISABLE_CONCEPTS)
+ # boost can have issues compiling with C++17 and up on newer versions of Clang.
+-add_definitions(-DBOOST_NO_CXX98_FUNCTION_BASE)
++#add_definitions(-DBOOST_NO_CXX98_FUNCTION_BASE)
+ set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
  
--function(check_submodules_present)
--    file(READ "${PROJECT_SOURCE_DIR}/.gitmodules" gitmodules)
--    string(REGEX MATCHALL "path *= *[^ \t\r\n]*" gitmodules ${gitmodules})
--    foreach(module ${gitmodules})
--        string(REGEX REPLACE "path *= *" "" module ${module})
--        if (NOT EXISTS "${PROJECT_SOURCE_DIR}/${module}/.git")
--            message(SEND_ERROR "Git submodule ${module} not found."
--                    "Please run: git submodule update --init --recursive")
--        endif()
--    endforeach()
--endfunction()
--check_submodules_present()
- 
- configure_file(${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.qrc
-                ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.qrc
-@@ -189,6 +177,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
+@@ -232,6 +232,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DI
  # Prefer the -pthread flag on Linux.
  set(THREADS_PREFER_PTHREAD_FLAG ON)
  find_package(Threads REQUIRED)
@@ -31,8 +22,8 @@ Index: CMakeLists.txt
 +find_package(Catch2 REQUIRED)
  
  if (ENABLE_QT)
-     if (CITRA_USE_BUNDLED_QT)
-@@ -426,11 +416,11 @@ endif()
+     if (NOT USE_SYSTEM_QT)
+@@ -475,11 +477,11 @@ endif()
  if(UNIX)
      if(ENABLE_SDL2)
          install(FILES "${PROJECT_SOURCE_DIR}/dist/citra.6"
