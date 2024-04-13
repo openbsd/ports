@@ -1,7 +1,7 @@
 Index: helix-loader/src/lib.rs
 --- helix-loader/src/lib.rs.orig
 +++ helix-loader/src/lib.rs
-@@ -92,11 +92,15 @@ fn prioritize_runtime_dirs() -> Vec<PathBuf> {
+@@ -67,11 +67,15 @@ fn prioritize_runtime_dirs() -> Vec<PathBuf> {
  
      // fallback to location of the executable being run
      // canonicalize the path in case the executable is symlinked

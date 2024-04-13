@@ -1,6 +1,6 @@
 COMMENT =	modal text editor
 
-VER =		23.10
+VER =		24.03
 DISTNAME =	helix-${VER}
 
 CATEGORIES =	editors
@@ -41,8 +41,11 @@ do-install:
 	${INSTALL_PROGRAM} ${MODCARGO_TARGET_DIR}/release/hx ${PREFIX}/bin/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/themes
-	${INSTALL_DATA} ${WRKSRC}/runtime/themes/* \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/themes/licenses
+	${INSTALL_DATA} ${WRKSRC}/runtime/themes/*.{toml,md} \
 		${PREFIX}/share/helix/runtime/themes
+	${INSTALL_DATA} ${WRKSRC}/runtime/themes/licenses/* \
+		${PREFIX}/share/helix/runtime/themes/licenses
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/helix/runtime/queries
 	find ${WRKSRC}/runtime/queries/ -type d -exec \

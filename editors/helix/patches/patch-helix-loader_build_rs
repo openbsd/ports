@@ -1,8 +1,8 @@
 Index: helix-loader/build.rs
 --- helix-loader/build.rs.orig
 +++ helix-loader/build.rs
-@@ -5,6 +5,9 @@ use std::process::Command;
- const VERSION: &str = include_str!("../VERSION");
+@@ -15,6 +15,9 @@ fn get_calver() -> String {
+ }
  
  fn main() {
 +    #[cfg(target_os = "openbsd")]

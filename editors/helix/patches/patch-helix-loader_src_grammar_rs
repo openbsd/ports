@@ -1,22 +1,21 @@
 Index: helix-loader/src/grammar.rs
 --- helix-loader/src/grammar.rs.orig
 +++ helix-loader/src/grammar.rs
-@@ -85,13 +85,25 @@ pub fn get_language(name: &str) -> Result<Language> {
+@@ -85,11 +85,24 @@ pub fn get_language(name: &str) -> Result<Language> {
      Ok(language)
  }
  
 +#[cfg(not(target_os = "openbsd"))]
  fn ensure_git_is_available() -> Result<()> {
-     match which::which("git") {
-         Ok(_cmd) => Ok(()),
-         Err(err) => Err(anyhow::anyhow!("'git' could not be found ({err})")),
-     }
+     helix_stdx::env::which("git")?;
+     Ok(())
  }
+ 
 +#[cfg(target_os = "openbsd")]
 +fn ensure_git_is_available() -> Result<()> {
 +    Ok(())
 +}
- 
++
 +#[cfg(target_os = "openbsd")]
 +pub fn fetch_grammars() -> Result<()> {
 +    println!("Command to fetch grammars disabled");
