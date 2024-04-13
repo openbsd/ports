@@ -4,7 +4,7 @@ format specifies type 'long' but the argument has type 'guint64' (aka 'unsigned 
 Index: src/tools/wpctl.c
 --- src/tools/wpctl.c.orig
 +++ src/tools/wpctl.c
-@@ -137,7 +137,7 @@ translate_id (WpPlugin *def_nodes_api, guint64 id, gui
+@@ -159,7 +159,7 @@ translate_id (WpPlugin *def_nodes_api, guint64 id, gui
         currently SPA_ID_INVALID == G_MAXUINT32. */
      if ((id <= 0 || id >= G_MAXUINT32) && id != SPA_ID_INVALID) {
        g_set_error (error, wpctl_error_domain_quark(), 0,

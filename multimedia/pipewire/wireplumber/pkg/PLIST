@@ -1,63 +1,80 @@
 @bin bin/wireplumber
 @bin bin/wpctl
 @bin bin/wpexec
-include/wireplumber-0.4/
-include/wireplumber-0.4/wp/
-include/wireplumber-0.4/wp/client.h
-include/wireplumber-0.4/wp/component-loader.h
-include/wireplumber-0.4/wp/core.h
-include/wireplumber-0.4/wp/dbus.h
-include/wireplumber-0.4/wp/defs.h
-include/wireplumber-0.4/wp/device.h
-include/wireplumber-0.4/wp/endpoint.h
-include/wireplumber-0.4/wp/error.h
-include/wireplumber-0.4/wp/factory.h
-include/wireplumber-0.4/wp/global-proxy.h
-include/wireplumber-0.4/wp/iterator.h
-include/wireplumber-0.4/wp/link.h
-include/wireplumber-0.4/wp/log.h
-include/wireplumber-0.4/wp/metadata.h
-include/wireplumber-0.4/wp/module.h
-include/wireplumber-0.4/wp/node.h
-include/wireplumber-0.4/wp/object-interest.h
-include/wireplumber-0.4/wp/object-manager.h
-include/wireplumber-0.4/wp/object.h
-include/wireplumber-0.4/wp/plugin.h
-include/wireplumber-0.4/wp/port.h
-include/wireplumber-0.4/wp/properties.h
-include/wireplumber-0.4/wp/proxy-interfaces.h
-include/wireplumber-0.4/wp/proxy.h
-include/wireplumber-0.4/wp/session-item.h
-include/wireplumber-0.4/wp/si-factory.h
-include/wireplumber-0.4/wp/si-interfaces.h
-include/wireplumber-0.4/wp/spa-json.h
-include/wireplumber-0.4/wp/spa-pod.h
-include/wireplumber-0.4/wp/spa-type.h
-include/wireplumber-0.4/wp/state.h
-include/wireplumber-0.4/wp/transition.h
-include/wireplumber-0.4/wp/wp.h
-include/wireplumber-0.4/wp/wpenums.h
-include/wireplumber-0.4/wp/wpversion.h
-lib/girepository-1.0/
-lib/girepository-1.0/Wp-0.4.typelib
-@lib lib/libwireplumber-0.4.so.${LIBwireplumber-0.4_VERSION}
-lib/pkgconfig/wireplumber-0.4.pc
-lib/wireplumber-0.4/
-@so lib/wireplumber-0.4/libwireplumber-module-default-nodes-api.so
-@so lib/wireplumber-0.4/libwireplumber-module-default-nodes.so
-@so lib/wireplumber-0.4/libwireplumber-module-default-profile.so
-@so lib/wireplumber-0.4/libwireplumber-module-file-monitor-api.so
-@so lib/wireplumber-0.4/libwireplumber-module-lua-scripting.so
-@so lib/wireplumber-0.4/libwireplumber-module-metadata.so
-@so lib/wireplumber-0.4/libwireplumber-module-mixer-api.so
-@so lib/wireplumber-0.4/libwireplumber-module-portal-permissionstore.so
-@so lib/wireplumber-0.4/libwireplumber-module-reserve-device.so
-@so lib/wireplumber-0.4/libwireplumber-module-si-audio-adapter.so
-@so lib/wireplumber-0.4/libwireplumber-module-si-audio-endpoint.so
-@so lib/wireplumber-0.4/libwireplumber-module-si-node.so
-@so lib/wireplumber-0.4/libwireplumber-module-si-standard-link.so
-share/gir-1.0/
-share/gir-1.0/Wp-0.4.gir
+include/wireplumber-0.5/
+include/wireplumber-0.5/wp/
+include/wireplumber-0.5/wp/base-dirs.h
+include/wireplumber-0.5/wp/client.h
+include/wireplumber-0.5/wp/component-loader.h
+include/wireplumber-0.5/wp/conf.h
+include/wireplumber-0.5/wp/core.h
+include/wireplumber-0.5/wp/defs.h
+include/wireplumber-0.5/wp/device.h
+include/wireplumber-0.5/wp/error.h
+include/wireplumber-0.5/wp/event-dispatcher.h
+include/wireplumber-0.5/wp/event-hook.h
+include/wireplumber-0.5/wp/event.h
+include/wireplumber-0.5/wp/factory.h
+include/wireplumber-0.5/wp/global-proxy.h
+include/wireplumber-0.5/wp/iterator.h
+include/wireplumber-0.5/wp/json-utils.h
+include/wireplumber-0.5/wp/link.h
+include/wireplumber-0.5/wp/log.h
+include/wireplumber-0.5/wp/metadata.h
+include/wireplumber-0.5/wp/module.h
+include/wireplumber-0.5/wp/node.h
+include/wireplumber-0.5/wp/object-interest.h
+include/wireplumber-0.5/wp/object-manager.h
+include/wireplumber-0.5/wp/object.h
+include/wireplumber-0.5/wp/plugin.h
+include/wireplumber-0.5/wp/port.h
+include/wireplumber-0.5/wp/properties.h
+include/wireplumber-0.5/wp/proxy-interfaces.h
+include/wireplumber-0.5/wp/proxy.h
+include/wireplumber-0.5/wp/session-item.h
+include/wireplumber-0.5/wp/settings.h
+include/wireplumber-0.5/wp/si-factory.h
+include/wireplumber-0.5/wp/si-interfaces.h
+include/wireplumber-0.5/wp/spa-json.h
+include/wireplumber-0.5/wp/spa-pod.h
+include/wireplumber-0.5/wp/spa-type.h
+include/wireplumber-0.5/wp/state.h
+include/wireplumber-0.5/wp/transition.h
+include/wireplumber-0.5/wp/wp.h
+include/wireplumber-0.5/wp/wpenums.h
+include/wireplumber-0.5/wp/wpversion.h
+lib/girepository-1.0/Wp-0.5.typelib
+@lib lib/libwireplumber-0.5.so.${LIBwireplumber-0.5_VERSION}
+lib/pkgconfig/wireplumber-0.5.pc
+lib/wireplumber-0.5/
+@so lib/wireplumber-0.5/libwireplumber-module-dbus-connection.so
+@so lib/wireplumber-0.5/libwireplumber-module-default-nodes-api.so
+@so lib/wireplumber-0.5/libwireplumber-module-file-monitor-api.so
+@so lib/wireplumber-0.5/libwireplumber-module-log-settings.so
+@so lib/wireplumber-0.5/libwireplumber-module-lua-scripting.so
+@so lib/wireplumber-0.5/libwireplumber-module-mixer-api.so
+@so lib/wireplumber-0.5/libwireplumber-module-portal-permissionstore.so
+@so lib/wireplumber-0.5/libwireplumber-module-reserve-device.so
+@so lib/wireplumber-0.5/libwireplumber-module-settings.so
+@so lib/wireplumber-0.5/libwireplumber-module-si-audio-adapter.so
+@so lib/wireplumber-0.5/libwireplumber-module-si-audio-virtual.so
+@so lib/wireplumber-0.5/libwireplumber-module-si-node.so
+@so lib/wireplumber-0.5/libwireplumber-module-si-standard-link.so
+@so lib/wireplumber-0.5/libwireplumber-module-standard-event-source.so
+share/doc/wireplumber/
+share/doc/wireplumber/examples/
+share/doc/wireplumber/examples/wireplumber.conf.d/
+share/doc/wireplumber/examples/wireplumber.conf.d/access.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/alsa.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/bluetooth.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/device.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/libcamera.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/linking.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/log.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/stream.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/v4l2.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/virtual.conf
+share/gir-1.0/Wp-0.5.gir
 share/locale/af/LC_MESSAGES/wireplumber.mo
 share/locale/as/LC_MESSAGES/wireplumber.mo
 share/locale/be/LC_MESSAGES/wireplumber.mo
@@ -117,63 +134,77 @@ share/locale/uk/LC_MESSAGES/wireplumber.mo
 share/locale/zh_CN/LC_MESSAGES/wireplumber.mo
 share/locale/zh_TW/LC_MESSAGES/wireplumber.mo
 share/wireplumber/
-share/wireplumber/bluetooth.conf
-share/wireplumber/bluetooth.lua.d/
-share/wireplumber/bluetooth.lua.d/00-functions.lua
-share/wireplumber/bluetooth.lua.d/30-bluez-midi-monitor.lua
-share/wireplumber/bluetooth.lua.d/30-bluez-monitor.lua
-share/wireplumber/bluetooth.lua.d/50-bluez-config.lua
-share/wireplumber/bluetooth.lua.d/50-bluez-midi-config.lua
-share/wireplumber/bluetooth.lua.d/90-enable-all.lua
-share/wireplumber/common/
-share/wireplumber/common/00-functions.lua
-share/wireplumber/main.conf
-share/wireplumber/main.lua.d/
-share/wireplumber/main.lua.d/00-functions.lua
-share/wireplumber/main.lua.d/20-default-access.lua
-share/wireplumber/main.lua.d/30-alsa-monitor.lua
-share/wireplumber/main.lua.d/30-libcamera-monitor.lua
-share/wireplumber/main.lua.d/30-v4l2-monitor.lua
-share/wireplumber/main.lua.d/40-device-defaults.lua
-share/wireplumber/main.lua.d/40-stream-defaults.lua
-share/wireplumber/main.lua.d/50-alsa-config.lua
-share/wireplumber/main.lua.d/50-default-access-config.lua
-share/wireplumber/main.lua.d/50-libcamera-config.lua
-share/wireplumber/main.lua.d/50-v4l2-config.lua
-share/wireplumber/main.lua.d/90-enable-all.lua
-share/wireplumber/policy.conf
-share/wireplumber/policy.lua.d/
-share/wireplumber/policy.lua.d/00-functions.lua
-share/wireplumber/policy.lua.d/10-default-policy.lua
-share/wireplumber/policy.lua.d/50-endpoints-config.lua
-share/wireplumber/policy.lua.d/90-enable-all.lua
 share/wireplumber/scripts/
-share/wireplumber/scripts/access/
-share/wireplumber/scripts/access/access-default.lua
-share/wireplumber/scripts/access/access-portal.lua
-share/wireplumber/scripts/create-item.lua
+share/wireplumber/scripts/client/
+share/wireplumber/scripts/client/access-default.lua
+share/wireplumber/scripts/client/access-portal.lua
+share/wireplumber/scripts/client/access-snap.lua
+share/wireplumber/scripts/default-nodes/
+share/wireplumber/scripts/default-nodes/apply-default-node.lua
+share/wireplumber/scripts/default-nodes/find-best-default-node.lua
+share/wireplumber/scripts/default-nodes/find-selected-default-node.lua
+share/wireplumber/scripts/default-nodes/rescan.lua
+share/wireplumber/scripts/default-nodes/state-default-nodes.lua
+share/wireplumber/scripts/device/
+share/wireplumber/scripts/device/apply-profile.lua
+share/wireplumber/scripts/device/apply-routes.lua
+share/wireplumber/scripts/device/autoswitch-bluetooth-profile.lua
+share/wireplumber/scripts/device/find-best-profile.lua
+share/wireplumber/scripts/device/find-best-routes.lua
+share/wireplumber/scripts/device/find-preferred-profile.lua
+share/wireplumber/scripts/device/select-profile.lua
+share/wireplumber/scripts/device/select-routes.lua
+share/wireplumber/scripts/device/state-profile.lua
+share/wireplumber/scripts/device/state-routes.lua
 share/wireplumber/scripts/fallback-sink.lua
 share/wireplumber/scripts/intended-roles.lua
+share/wireplumber/scripts/lib/
+share/wireplumber/scripts/lib/common-utils.lua
+share/wireplumber/scripts/lib/device-info-cache.lua
+share/wireplumber/scripts/lib/filter-utils.lua
+share/wireplumber/scripts/lib/linking-utils.lua
+share/wireplumber/scripts/lib/monitor-utils.lua
+share/wireplumber/scripts/linking/
+share/wireplumber/scripts/linking/find-best-target.lua
+share/wireplumber/scripts/linking/find-default-target.lua
+share/wireplumber/scripts/linking/find-defined-target.lua
+share/wireplumber/scripts/linking/find-filter-target.lua
+share/wireplumber/scripts/linking/find-user-target.lua.example
+share/wireplumber/scripts/linking/find-virtual-target.lua
+share/wireplumber/scripts/linking/get-filter-from-target.lua
+share/wireplumber/scripts/linking/link-target.lua
+share/wireplumber/scripts/linking/prepare-link.lua
+share/wireplumber/scripts/linking/rescan-virtual-links.lua
+share/wireplumber/scripts/linking/rescan.lua
+share/wireplumber/scripts/metadata.lua
 share/wireplumber/scripts/monitors/
 share/wireplumber/scripts/monitors/alsa-midi.lua
 share/wireplumber/scripts/monitors/alsa.lua
 share/wireplumber/scripts/monitors/bluez-midi.lua
 share/wireplumber/scripts/monitors/bluez.lua
-share/wireplumber/scripts/monitors/libcamera.lua
-share/wireplumber/scripts/monitors/v4l2.lua
-share/wireplumber/scripts/policy-bluetooth.lua
-share/wireplumber/scripts/policy-device-profile.lua
-share/wireplumber/scripts/policy-device-routes.lua
-share/wireplumber/scripts/policy-dsp.lua
-share/wireplumber/scripts/policy-endpoint-client-links.lua
-share/wireplumber/scripts/policy-endpoint-client.lua
-share/wireplumber/scripts/policy-endpoint-device.lua
-share/wireplumber/scripts/policy-node.lua
-share/wireplumber/scripts/restore-stream.lua
+share/wireplumber/scripts/monitors/libcamera/
+share/wireplumber/scripts/monitors/libcamera/create-device.lua
+share/wireplumber/scripts/monitors/libcamera/create-node.lua
+share/wireplumber/scripts/monitors/libcamera/enumerate-device.lua
+share/wireplumber/scripts/monitors/libcamera/name-device.lua
+share/wireplumber/scripts/monitors/libcamera/name-node.lua
+share/wireplumber/scripts/monitors/v4l2/
+share/wireplumber/scripts/monitors/v4l2/create-device.lua
+share/wireplumber/scripts/monitors/v4l2/create-node.lua
+share/wireplumber/scripts/monitors/v4l2/enumerate-device.lua
+share/wireplumber/scripts/monitors/v4l2/name-device.lua
+share/wireplumber/scripts/monitors/v4l2/name-node.lua
+share/wireplumber/scripts/node/
+share/wireplumber/scripts/node/create-item.lua
+share/wireplumber/scripts/node/create-virtual-item.lua
+share/wireplumber/scripts/node/filter-forward-format.lua
+share/wireplumber/scripts/node/software-dsp.lua
+share/wireplumber/scripts/node/state-stream.lua
+share/wireplumber/scripts/node/suspend-node.lua
 share/wireplumber/scripts/sm-objects.lua
-share/wireplumber/scripts/static-endpoints.lua
-share/wireplumber/scripts/suspend-node.lua
 share/wireplumber/wireplumber.conf
+share/wireplumber/wireplumber.conf.d/
+share/wireplumber/wireplumber.conf.d/alsa-vm.conf
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_wpctl
