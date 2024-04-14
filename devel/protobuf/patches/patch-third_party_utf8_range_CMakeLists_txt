@@ -1,21 +1,19 @@
 Index: third_party/utf8_range/CMakeLists.txt
 --- third_party/utf8_range/CMakeLists.txt.orig
 +++ third_party/utf8_range/CMakeLists.txt
-@@ -11,7 +11,7 @@ option (utf8_range_ENABLE_INSTALL "Configure installat
+@@ -11,13 +11,13 @@ option (utf8_range_ENABLE_INSTALL "Configure installat
  
  ##
  # Create the lightweight C library
 -add_library (utf8_range STATIC
 +add_library (utf8_range
-   naive.c
-   range2-neon.c
-   range2-sse.c
-@@ -19,7 +19,7 @@ add_library (utf8_range STATIC
+   utf8_range.c
+ )
  
  ##
  # A heavier-weight C++ wrapper that supports Abseil.
--add_library (utf8_validity STATIC utf8_validity.cc)
-+add_library (utf8_validity utf8_validity.cc)
+-add_library (utf8_validity STATIC utf8_validity.cc utf8_range.c)
++add_library (utf8_validity utf8_validity.cc utf8_range.c)
  
  # Load Abseil dependency.
  if (NOT TARGET absl::strings)

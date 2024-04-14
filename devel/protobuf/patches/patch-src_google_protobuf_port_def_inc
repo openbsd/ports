@@ -1,7 +1,7 @@
 Index: src/google/protobuf/port_def.inc
 --- src/google/protobuf/port_def.inc.orig
 +++ src/google/protobuf/port_def.inc
-@@ -299,7 +299,8 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
+@@ -255,7 +255,8 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
  #endif
  #if ABSL_HAVE_CPP_ATTRIBUTE(clang::musttail) && !defined(__arm__) &&  \
      !defined(_ARCH_PPC) && !defined(__wasm__) &&                      \
@@ -11,7 +11,7 @@ Index: src/google/protobuf/port_def.inc
  // Compilation fails on ARM32: b/195943306
  // Compilation fails on powerpc64le: b/187985113
  // Compilation fails on X86 Windows:
-@@ -998,7 +999,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
+@@ -848,7 +849,7 @@ static_assert(PROTOBUF_ABSL_MIN(20230125, 3),
  #undef FALSE
  #endif  // _WIN32
  
