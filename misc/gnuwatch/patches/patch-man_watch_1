@@ -26,7 +26,7 @@ Index: man/watch.1
  .SH OPTIONS
  .TP
  \fB\-b\fR, \fB\-\-beep\fR
-@@ -34,7 +34,7 @@ Interpret ANSI color and style sequences.
+@@ -37,7 +37,7 @@ Do not interpret ANSI color and style sequences.
  \fB\-d\fR, \fB\-\-differences\fR[=\fIpermanent\fR]
  Highlight the differences between successive updates. If the optional
  \fIpermanent\fR argument is specified then
@@ -35,7 +35,7 @@ Index: man/watch.1
  will show all changes since the first iteration.
  .TP
  \fB\-e\fR, \fB\-\-errexit\fR
-@@ -53,7 +53,7 @@ set a non-default interval (following the same rules a
+@@ -56,7 +56,7 @@ set a non-default interval (following the same rules a
  .TP
  \fB\-p\fR, \fB\-\-precise\fR
  Make
@@ -44,7 +44,7 @@ Index: man/watch.1
  attempt to run
  .I command
  every
-@@ -106,7 +106,7 @@ Success.
+@@ -109,7 +109,7 @@ Success.
  Various failures.
  .TP
  .B 2
@@ -53,7 +53,7 @@ Index: man/watch.1
  .TP
  .B 3
  Replacing child process stdout with write side pipe failed.
-@@ -126,10 +126,10 @@ Getting child process return value with
+@@ -129,10 +129,10 @@ Getting child process return value with
  failed, or command exited up on error.
  .TP
  .B other
@@ -66,7 +66,7 @@ Index: man/watch.1
  is affected by the following environment variables.
  
  .TP
-@@ -143,7 +143,7 @@ POSIX option processing is used (i.e., option processi
+@@ -146,7 +146,7 @@ POSIX option processing is used (i.e., option processi
  the first non\-option argument).  This means that flags after
  .I command
  don't get interpreted by
@@ -75,7 +75,7 @@ Index: man/watch.1
  itself.
  .sp
  .SH BUGS
-@@ -176,7 +176,7 @@ that takes more than
+@@ -179,7 +179,7 @@ that takes more than
  .B \-\-interval
  .I seconds
  to execute.
@@ -84,7 +84,7 @@ Index: man/watch.1
  also can get into a state where it rapid-fires as many executions of
  .I command
  as it can to catch up from a previous executions running longer than
-@@ -189,33 +189,33 @@ taking ages on a DNS lookup).
+@@ -192,33 +192,33 @@ taking ages on a DNS lookup).
  .PP
  To watch for mail, you might do
  .IP

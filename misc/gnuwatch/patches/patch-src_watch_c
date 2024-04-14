@@ -1,7 +1,7 @@
 Index: src/watch.c
 --- src/watch.c.orig
 +++ src/watch.c
-@@ -110,7 +110,7 @@ static void __attribute__ ((__noreturn__))
+@@ -111,7 +111,7 @@ static void __attribute__ ((__noreturn__))
  	fputs(USAGE_SEPARATOR, out);
  	fputs(USAGE_HELP, out);
  	fputs(_(" -v, --version  output version information and exit\n"), out);
