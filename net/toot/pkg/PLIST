@@ -81,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/logging.py
 lib/python${MODPY_VERSION}/site-packages/toot/output.py
 lib/python${MODPY_VERSION}/site-packages/toot/settings.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/
+lib/python${MODPY_VERSION}/site-packages/toot/tui/NOTES.md
 lib/python${MODPY_VERSION}/site-packages/toot/tui/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,6 +94,8 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}constants.${MO
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}entities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}entities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}images.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}images.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}overlays.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}overlays.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/tui/${MODPY_PYCACHE}poll.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -109,6 +112,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/app.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/compose.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/constants.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/entities.py
+lib/python${MODPY_VERSION}/site-packages/toot/tui/images.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/overlays.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/poll.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/richtext/

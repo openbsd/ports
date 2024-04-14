@@ -1,6 +1,6 @@
 COMMENT =		CLI and TUI tool to interact with Mastodon instances
 
-MODPY_EGG_VERSION =	0.41.1
+MODPY_EGG_VERSION =	0.43.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
 
 CATEGORIES =		net
@@ -14,7 +14,7 @@ SITES =	https://github.com/ihabunek/toot/releases/download/${MODPY_EGG_VERSION}/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 # skip tests which require a local test instance of mastodon,
 # plus databases/py-psycopg2
 # also richtext tests, requiring "urwidgets" (not urwid)
