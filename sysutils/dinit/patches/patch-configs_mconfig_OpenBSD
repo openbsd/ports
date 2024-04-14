@@ -1,7 +1,7 @@
 Index: configs/mconfig.OpenBSD
 --- configs/mconfig.OpenBSD.orig
 +++ configs/mconfig.OpenBSD
-@@ -9,7 +9,7 @@ SYSCONTROLSOCKET=/var/run/dinitctl
+@@ -11,7 +11,7 @@ SYSCONTROLSOCKET=/var/run/dinitctl
  
  # OpenBSD, tested with GCC 4.9.3 / Clang++ 4/5 and gmake:
  CXX=clang++
