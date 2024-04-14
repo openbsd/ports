@@ -233,4 +233,3 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERS
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/top_level.txt
