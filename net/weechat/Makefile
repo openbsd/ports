@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.2.1
+V=		4.2.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -53,7 +53,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 RUN_DEPENDS=	sysutils/flock \
 		devel/desktop-file-utils
 
-LIB_DEPENDS=	devel/gettext,-runtime \
+LIB_DEPENDS=	archivers/zstd \
+		devel/gettext,-runtime \
 		net/curl \
 		security/gnutls \
 		security/libgcrypt \
