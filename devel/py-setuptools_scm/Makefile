@@ -1,8 +1,8 @@
 COMMENT =		plugin to manage your versions by scm tags
 
-MODPY_EGG_VERSION =	7.1.0
-DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION =	8.0.4
+DISTNAME =		setuptools-scm-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:S/-/_/}
 CATEGORIES =		devel
 
 # MIT
