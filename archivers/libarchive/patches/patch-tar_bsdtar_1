@@ -1,7 +1,7 @@
 Index: tar/bsdtar.1
 --- tar/bsdtar.1.orig
 +++ tar/bsdtar.1
-@@ -29,7 +29,7 @@
+@@ -27,7 +27,7 @@
  .Dt TAR 1
  .Os
  .Sh NAME
@@ -10,7 +10,7 @@ Index: tar/bsdtar.1
  .Nd manipulate tape archives
  .Sh SYNOPSIS
  .Nm
-@@ -248,11 +248,9 @@ The filename can be
+@@ -246,11 +246,9 @@ The filename can be
  for standard input or standard output.
  The default varies by system;
  on

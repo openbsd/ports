@@ -1,6 +1,7 @@
---- cpio/bsdcpio.1.orig	Tue Jan 10 07:41:09 2012
-+++ cpio/bsdcpio.1	Sat Mar 31 21:50:15 2012
-@@ -28,7 +28,7 @@
+Index: cpio/bsdcpio.1
+--- cpio/bsdcpio.1.orig
++++ cpio/bsdcpio.1
+@@ -26,7 +26,7 @@
  .Dt CPIO 1
  .Os
  .Sh NAME

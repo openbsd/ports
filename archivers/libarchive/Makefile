@@ -1,7 +1,7 @@
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.7.2
-SHARED_LIBS=	archive		13.0	# 20.2
+DISTNAME=	libarchive-3.7.3
+SHARED_LIBS=	archive		13.1	# 20.3
 CATEGORIES=	archivers
 HOMEPAGE=	https://www.libarchive.org/
 
