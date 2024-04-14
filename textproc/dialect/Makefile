@@ -1,9 +1,8 @@
 COMMENT =		translation app for GNOME
-V =			2.2.0
+V =			2.3.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
-REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -23,19 +22,19 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			multimedia/gstreamer1/core \
 			x11/blueprint-compiler \
-			x11/gnome/libadwaita \
+			x11/gnome/libadwaita>=1.5.0 \
 			x11/gtk+4
 
-RUN_DEPENDS =		devel/glib2 \
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/glib2 \
 			devel/gobject-introspection \
-			devel/desktop-file-utils \
 			devel/libsoup3 \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			multimedia/gstreamer1/core \
 			textproc/py-gTTS${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/gnome/libadwaita \
+			x11/gnome/libadwaita>=1.5.0 \
 			x11/gtk+4 \
 			x11/gtk+4,-guic
 
