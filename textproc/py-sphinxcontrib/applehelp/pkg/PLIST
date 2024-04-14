@@ -215,4 +215,3 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VER
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/top_level.txt
