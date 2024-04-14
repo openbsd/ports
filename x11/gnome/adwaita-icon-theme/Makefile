@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		base icon theme for GNOME
 
 GNOME_PROJECT=		adwaita-icon-theme
-GNOME_VERSION=		45.0
+GNOME_VERSION=		46.0
 
 CATEGORIES=		x11
 
@@ -21,8 +21,5 @@ RUN_DEPENDS=		x11/gnome/librsvg
 # meson will not run gtk-update-icon-cache when DESTDIR is set anyway
 pre-configure:
 	ln -sf /usr/bin/true ${WRKDIR}/bin/gtk4-update-icon-cache
-
-post-install:
-	rm ${PREFIX}/share/icons/Adwaita/.icon-theme.cache
 
 .include <bsd.port.mk>
