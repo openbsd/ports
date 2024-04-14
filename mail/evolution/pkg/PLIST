@@ -14,6 +14,7 @@ include/evolution/calendar/gui/calendar-config.h
 include/evolution/calendar/gui/calendar-view.h
 include/evolution/calendar/gui/comp-util.h
 include/evolution/calendar/gui/e-alarm-list.h
+include/evolution/calendar/gui/e-bulk-edit-tasks.h
 include/evolution/calendar/gui/e-cal-component-preview.h
 include/evolution/calendar/gui/e-cal-config.h
 include/evolution/calendar/gui/e-cal-data-model-subscriber.h
@@ -109,11 +110,11 @@ include/evolution/e-util/e-alert-dialog.h
 include/evolution/e-util/e-alert-sink.h
 include/evolution/e-util/e-alert.h
 include/evolution/e-util/e-attachment-bar.h
-include/evolution/e-util/e-attachment-dialog.h
 include/evolution/e-util/e-attachment-handler-image.h
 include/evolution/e-util/e-attachment-handler.h
 include/evolution/e-util/e-attachment-icon-view.h
 include/evolution/e-util/e-attachment-paned.h
+include/evolution/e-util/e-attachment-popover.h
 include/evolution/e-util/e-attachment-store.h
 include/evolution/e-util/e-attachment-tree-view.h
 include/evolution/e-util/e-attachment-view.h
@@ -204,7 +205,7 @@ include/evolution/e-util/e-html-editor-dialog.h
 include/evolution/e-util/e-html-editor-find-dialog.h
 include/evolution/e-util/e-html-editor-hrule-dialog.h
 include/evolution/e-util/e-html-editor-image-dialog.h
-include/evolution/e-util/e-html-editor-link-dialog.h
+include/evolution/e-util/e-html-editor-link-popover.h
 include/evolution/e-util/e-html-editor-page-dialog.h
 include/evolution/e-util/e-html-editor-paragraph-dialog.h
 include/evolution/e-util/e-html-editor-replace-dialog.h
@@ -560,6 +561,7 @@ lib/evolution-data-server/ui-modules/
 @lib lib/evolution/libevolution-mail-formatter.so.${LIBevolution-mail-formatter_VERSION}
 @lib lib/evolution/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
 @lib lib/evolution/libevolution-mail.so.${LIBevolution-mail_VERSION}
+@so lib/evolution/libevolution-rss-common.so
 @lib lib/evolution/libevolution-shell.so.${LIBevolution-shell_VERSION}
 @lib lib/evolution/libevolution-smime.so.${LIBevolution-smime_VERSION}
 @lib lib/evolution/libevolution-util.so.${LIBevolution-util_VERSION}
@@ -796,8 +798,6 @@ share/evolution/icons/hicolor/16x16/actions/stock_mail-unread-multiple.png
 share/evolution/icons/hicolor/16x16/actions/stock_new-24h-appointment.png
 share/evolution/icons/hicolor/16x16/actions/stock_notes.png
 share/evolution/icons/hicolor/16x16/actions/stock_people.png
-share/evolution/icons/hicolor/16x16/actions/stock_select-column.png
-share/evolution/icons/hicolor/16x16/actions/stock_select-row.png
 share/evolution/icons/hicolor/16x16/actions/stock_shared-by-me.png
 share/evolution/icons/hicolor/16x16/actions/stock_shared-to-me.png
 share/evolution/icons/hicolor/16x16/actions/stock_show-all.png
@@ -1104,8 +1104,6 @@ share/evolution/icons/hicolor/24x24/actions/stock_mail-unread-multiple.png
 share/evolution/icons/hicolor/24x24/actions/stock_new-24h-appointment.png
 share/evolution/icons/hicolor/24x24/actions/stock_notes.png
 share/evolution/icons/hicolor/24x24/actions/stock_people.png
-share/evolution/icons/hicolor/24x24/actions/stock_select-column.png
-share/evolution/icons/hicolor/24x24/actions/stock_select-row.png
 share/evolution/icons/hicolor/24x24/actions/stock_shared-by-me.png
 share/evolution/icons/hicolor/24x24/actions/stock_shared-to-me.png
 share/evolution/icons/hicolor/24x24/actions/stock_show-all.png
@@ -1535,6 +1533,7 @@ share/evolution/icons/hicolor/8x8/status/emblem-new.png
 share/evolution/icons/hicolor/scalable/
 share/evolution/icons/hicolor/scalable/actions/
 share/evolution/icons/hicolor/scalable/actions/accessories-text-editor-symbolic.svg
+share/evolution/icons/hicolor/scalable/actions/edit-clear-all-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/folder-saved-search-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/go-today-symbolic.svg
 share/evolution/icons/hicolor/scalable/actions/mail-archive-symbolic.svg
