@@ -10,16 +10,16 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -309,7 +309,7 @@
- #   * trace
+@@ -314,7 +314,7 @@
+ #   * json
  #
- # log.level: info
+ # log.format: plain
 -# path.logs:
 +path.logs: ${LOCALSTATEDIR}/log/logstash
  #
  # ------------ Other Settings --------------
  #
-@@ -322,64 +322,3 @@
+@@ -327,64 +327,3 @@
  # Flag to output log lines of each pipeline in its separate log file. Each log filename contains the pipeline.name
  # Default is false
  # pipeline.separate_logs: false
