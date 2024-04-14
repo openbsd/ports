@@ -4,7 +4,7 @@ GH_TAGNAME=		1.2.6
 GH_ACCOUNT=		ConsoleKit2
 GH_PROJECT=		ConsoleKit2
 PKGNAME=		${DISTNAME:L}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		sysutils	
 

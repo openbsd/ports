@@ -1,0 +1,9 @@
+Index: libconsolekit/sd-login.h
+--- libconsolekit/sd-login.h.orig
++++ libconsolekit/sd-login.h
+@@ -16,3 +16,5 @@ int sd_seat_can_multi_session(const char *seat);
+ int sd_seat_get_sessions(const char *seat, char ***sessions, uid_t **uid, unsigned int *n_uids);
+ 
+ int sd_get_sessions(char ***sessions);
++
++int sd_session_is_remote(const char *session);
