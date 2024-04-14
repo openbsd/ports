@@ -467,6 +467,7 @@
      SUBDIR += py-pyphen,python3
      SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
+     SUBDIR += py-referencing,python3
      SUBDIR += py-rst2ansi,python3
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-ruamel.yaml.clib,python3
