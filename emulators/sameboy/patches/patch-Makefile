@@ -1,21 +1,21 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -112,7 +112,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
+@@ -163,7 +163,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
  endif
  
  # These must come before the -Wno- flags
 -WARNINGS += -Werror -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
 +WARNINGS += -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
- WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-strict-aliasing -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation
+ WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context
  
  # Only add this flag if the compiler supports it
-@@ -174,7 +174,7 @@ LDFLAGS += -lmsvcrt -lcomdlg32 -luser32 -lshell32 -lol
- SDL_LDFLAGS := -lSDL2
- GL_LDFLAGS := -lopengl32
+@@ -230,7 +230,7 @@ LDFLAGS += -lxaudio2_9redist
+ sdl: $(BIN)/SDL/xaudio2_9redist.dll
+ endif
  else
 -LDFLAGS += -lc -lm -ldl
 +LDFLAGS += -lc -lm
  endif
  
- ifeq ($(PLATFORM),Darwin)
+ ifeq ($(MAKECMDGOALS),_ios)

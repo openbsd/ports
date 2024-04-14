@@ -1,7 +1,7 @@
 Index: libretro/Makefile
 --- libretro/Makefile.orig
 +++ libretro/Makefile
-@@ -83,7 +83,7 @@ ifeq ($(platform), unix)
+@@ -72,7 +72,7 @@ ifeq ($(platform), unix)
     EXT ?= so
     TARGET := $(TARGET_NAME)_libretro.$(EXT)
     fpic := -fPIC
@@ -10,7 +10,7 @@ Index: libretro/Makefile
  else ifeq ($(platform), linux-portable)
     TARGET := $(TARGET_NAME)_libretro.$(EXT)
     fpic := -fPIC -nostdlib
-@@ -306,7 +306,7 @@ LDFLAGS += $(LIBM)
+@@ -343,7 +343,7 @@ LDFLAGS += $(LIBM)
  ifeq ($(DEBUG), 1)
     CFLAGS += -O0 -g
  else
