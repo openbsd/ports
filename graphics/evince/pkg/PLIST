@@ -3938,6 +3938,7 @@ share/locale/zu/LC_MESSAGES/evince.mo
 share/metainfo/evince-pdfdocument.metainfo.xml
 share/metainfo/evince-tiffdocument.metainfo.xml
 share/metainfo/org.gnome.Evince.metainfo.xml
+%%light%%
 !%%light%%
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
