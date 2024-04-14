@@ -48,7 +48,7 @@ Index: clang/lib/Driver/Driver.cpp
 +}  // namespace
 +
  std::string Driver::GetFilePath(StringRef Name, const ToolChain &TC) const {
-+  const bool lookForLibDotSo = Name.starts_with("lib") && Name.endswith(".so");
++  const bool lookForLibDotSo = Name.starts_with("lib") && Name.ends_with(".so");
    // Search for Name in a list of paths.
    auto SearchPaths = [&](const llvm::SmallVectorImpl<std::string> &P)
        -> std::optional<std::string> {
