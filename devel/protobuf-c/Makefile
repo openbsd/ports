@@ -1,8 +1,7 @@
 COMMENT =		c protocol buffers
 
-V =			1.4.1
+V =			1.5.0
 DISTNAME =		protobuf-c-$V
-REVISION =		2
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
 
