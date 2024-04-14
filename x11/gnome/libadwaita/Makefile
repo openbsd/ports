@@ -1,10 +1,10 @@
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita
-GNOME_VERSION=		1.4.4
+GNOME_VERSION=		1.5.0
 EPOCH=			0
 
-SHARED_LIBS += adwaita-1                 1.6 # 0
+SHARED_LIBS += adwaita-1                 1.7 # 0
 
 # LGPLv2.1+
 PERMIT_PACKAGE=		Yes
