@@ -14,6 +14,7 @@ SHA256 (libreoffice/8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip) = 
 SHA256 (libreoffice/97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip) = PYU7GbHZSm76aeevkPfysJ7PMCkTvuPaeWwV7P68+sg=
 SHA256 (libreoffice/Amiri-1.000.zip) = km/hvX396OVReCgfZFJYv87WQgyVHG8v1TL9IWkbyjA=
 SHA256 (libreoffice/Java-WebSocket-1.5.4.tar.gz) = poKLNdH5OP7iM1lF89PFY8u/pYzn6wv3J3jQ+npVByA=
+SHA256 (libreoffice/NotoKufiArabic-v2.109.zip) = G2iA5LjfCcO54kbWCEv9lL8yoP//YM8tz/02ItDi158=
 SHA256 (libreoffice/NotoNaskhArabic-v2.016.zip) = K2o/MPIdJ7xrdbQKNQIh4S5kt1NgTWE78933HNvjMaw=
 SHA256 (libreoffice/NotoSans-v2.012.zip) = 7+8vZu0sXgBUcsuhVr0q+2gGOlG7Yoxu4UFD7cAZ0pM=
 SHA256 (libreoffice/NotoSansArabic-v2.010.zip) = paNKweoB0NccCD+ZRA6/sfZCJEdKDYi7fvDi+NmpltI=
@@ -67,10 +68,10 @@ SHA256 (libreoffice/liborcus-0.19.2.tar.xz) = ae0moA1KqnaI5ipuADy8gZKFIaRelmBeUz
 SHA256 (libreoffice/libpagemaker-0.0.4.tar.xz) = Zq2s1wWn0ZiV4I6sRtHoUTMq3y5zbFZr7xFk56RCUZ0=
 SHA256 (libreoffice/libqxp-0.0.2.tar.xz) = 4Te2sRASClLJjt0C69xAle4I0NUpWpQxapgXUAlalFw=
 SHA256 (libreoffice/libre-hebrew-1.0.tar.gz) = 9ZYlfB23Bs41eVsY1/ZqTbmdQncl8g6ThJFLU0FCV5o=
-SHA256 (libreoffice/libreoffice-24.2.1.2.tar.xz) = PM9Xfo9mUFntWgZXezs3J4CAvp8pzErTNShXqPJUn6g=
-SHA256 (libreoffice/libreoffice-dictionaries-24.2.1.2.tar.xz) = 2wEMeB6FtAHoeqIDCQJWXV386yxf9Eg8cXJITQ9kXqs=
-SHA256 (libreoffice/libreoffice-help-24.2.1.2.tar.xz) = b4sDsa+U5yyDARZPvLhMCvV7pkFr6P8C97fdBv9ML3Q=
-SHA256 (libreoffice/libreoffice-translations-24.2.1.2.tar.xz) = v1sWS16KyfeW28LPHp0w40U0HTZ/Y0hSxH5FcqlPWOk=
+SHA256 (libreoffice/libreoffice-24.2.2.2.tar.xz) = wgWmUEL2XJS1TqMQNEuFEENjPD61JZ9OVn2TQarl5F4=
+SHA256 (libreoffice/libreoffice-dictionaries-24.2.2.2.tar.xz) = pGBpl8uwTVqgBDzNxVq62ALY/mqreLEWbvVi+2ePEw0=
+SHA256 (libreoffice/libreoffice-help-24.2.2.2.tar.xz) = 5Mox7FAcPFnmx6pMwSeRhWdbCIstBC8Xp+awqDBM4CU=
+SHA256 (libreoffice/libreoffice-translations-24.2.2.2.tar.xz) = klAWtBcsHc+yd0zbA3bflJJB42k3U5m5h1sVTmXzGbI=
 SHA256 (libreoffice/libstaroffice-0.0.7.tar.xz) = +U+wrYIW+XEnvt7xY6RYhrQ8Yt6sXlsPXmKOI0IgyNs=
 SHA256 (libreoffice/libvisio-0.1.7.tar.xz) = j6+N+HDLJ7CaeHoZWdbGRvqkTQ2KsVGIPfQItxZr6kw=
 SHA256 (libreoffice/libwpg-0.3.4.tar.xz) = tV/alEDR4HBjDrJIfYuGl89BLCFKJ8runfac7HwATeM=
@@ -101,6 +102,7 @@ SIZE (libreoffice/8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip) = 76
 SIZE (libreoffice/97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip) = 2938721
 SIZE (libreoffice/Amiri-1.000.zip) = 1039502
 SIZE (libreoffice/Java-WebSocket-1.5.4.tar.gz) = 189725
+SIZE (libreoffice/NotoKufiArabic-v2.109.zip) = 5968104
 SIZE (libreoffice/NotoNaskhArabic-v2.016.zip) = 3093945
 SIZE (libreoffice/NotoSans-v2.012.zip) = 122039625
 SIZE (libreoffice/NotoSansArabic-v2.010.zip) = 21788671
@@ -154,10 +156,10 @@ SIZE (libreoffice/liborcus-0.19.2.tar.xz) = 2211268
 SIZE (libreoffice/libpagemaker-0.0.4.tar.xz) = 306496
 SIZE (libreoffice/libqxp-0.0.2.tar.xz) = 341760
 SIZE (libreoffice/libre-hebrew-1.0.tar.gz) = 531276
-SIZE (libreoffice/libreoffice-24.2.1.2.tar.xz) = 280349652
-SIZE (libreoffice/libreoffice-dictionaries-24.2.1.2.tar.xz) = 53882616
-SIZE (libreoffice/libreoffice-help-24.2.1.2.tar.xz) = 167070728
-SIZE (libreoffice/libreoffice-translations-24.2.1.2.tar.xz) = 220528884
+SIZE (libreoffice/libreoffice-24.2.2.2.tar.xz) = 280611816
+SIZE (libreoffice/libreoffice-dictionaries-24.2.2.2.tar.xz) = 53873712
+SIZE (libreoffice/libreoffice-help-24.2.2.2.tar.xz) = 167069856
+SIZE (libreoffice/libreoffice-translations-24.2.2.2.tar.xz) = 220659976
 SIZE (libreoffice/libstaroffice-0.0.7.tar.xz) = 707920
 SIZE (libreoffice/libvisio-0.1.7.tar.xz) = 854296
 SIZE (libreoffice/libwpg-0.3.4.tar.xz) = 340428

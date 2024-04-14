@@ -1,7 +1,7 @@
 Index: external/skia/Library_skia.mk
 --- external/skia/Library_skia.mk.orig
 +++ external/skia/Library_skia.mk
-@@ -108,10 +108,10 @@ $(eval $(call gb_Library_use_externals,skia,\
+@@ -109,10 +109,10 @@ $(eval $(call gb_Library_use_externals,skia,\
      libpng \
  ))
  
