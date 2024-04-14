@@ -1,8 +1,7 @@
-COMMENT=		clock application for GNOME
+COMMENT=		keep track of time
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		45.0
-REVISION=		1
+GNOME_VERSION=		46.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
