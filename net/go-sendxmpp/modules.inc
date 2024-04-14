@@ -12,14 +12,14 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.7.0 \
-	github.com/xmppo/go-xmpp		 v0.0.2-0.20240201055852-b369b7df1031 \
+	github.com/xmppo/go-xmpp		 v0.1.4 \
 	github.com/yuin/goldmark		 v1.4.13 \
-	golang.org/x/crypto			 v0.19.0 \
+	golang.org/x/crypto			 v0.21.0 \
 	golang.org/x/mod			 v0.8.0 \
-	golang.org/x/net			 v0.21.0 \
+	golang.org/x/net			 v0.22.0 \
 	golang.org/x/sync			 v0.1.0 \
-	golang.org/x/sys			 v0.17.0 \
-	golang.org/x/term			 v0.17.0 \
+	golang.org/x/sys			 v0.18.0 \
+	golang.org/x/term			 v0.18.0 \
 	golang.org/x/text			 v0.14.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
@@ -34,17 +34,15 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto			 v0.17.0 \
-	golang.org/x/crypto			 v0.18.0 \
 	golang.org/x/crypto			 v0.3.1-0.20221117191849-2c476679df9a \
 	golang.org/x/crypto			 v0.7.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
-	golang.org/x/net			 v0.10.0 \
 	golang.org/x/net			 v0.17.0 \
 	golang.org/x/net			 v0.2.0 \
-	golang.org/x/net			 v0.20.0 \
+	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/net			 v0.8.0 \
 	golang.org/x/sync			 v0.0.0-20190423024810-112230192c58 \
