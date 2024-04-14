@@ -1,20 +1,20 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.50.4
+GNOME_VERSION=		3.52.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.10
-SHARED_LIBS +=  edataserver-1.2      22.10
-SHARED_LIBS +=  ebackend-1.2         8.10
-SHARED_LIBS +=  edataserverui-1.2    4.10
-SHARED_LIBS +=	edataserverui4-1.0   0.2
-SHARED_LIBS +=  ebook-contacts-1.2   5.10
-SHARED_LIBS +=  edata-book-1.2       20.8
-SHARED_LIBS +=  ebook-1.2            23.8
-SHARED_LIBS +=  ecal-2.0             0.8
-SHARED_LIBS +=  edata-cal-2.0        0.8
+SHARED_LIBS +=  camel-1.2            41.11
+SHARED_LIBS +=  edataserver-1.2      22.11
+SHARED_LIBS +=  ebackend-1.2         8.11
+SHARED_LIBS +=  edataserverui-1.2    4.11
+SHARED_LIBS +=	edataserverui4-1.0   0.3
+SHARED_LIBS +=  ebook-contacts-1.2   5.11
+SHARED_LIBS +=  edata-book-1.2       20.9
+SHARED_LIBS +=  ebook-1.2            23.9
+SHARED_LIBS +=  ecal-2.0             0.9
+SHARED_LIBS +=  edata-cal-2.0        0.9
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -53,7 +53,8 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 
 MODPY_RUNDEP=		No
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache vala
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

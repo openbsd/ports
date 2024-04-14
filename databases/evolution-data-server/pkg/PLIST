@@ -50,6 +50,7 @@ include/evolution-data-server/camel/camel-mime-filter-html.h
 include/evolution-data-server/camel/camel-mime-filter-index.h
 include/evolution-data-server/camel/camel-mime-filter-linewrap.h
 include/evolution-data-server/camel/camel-mime-filter-pgp.h
+include/evolution-data-server/camel/camel-mime-filter-preview.h
 include/evolution-data-server/camel/camel-mime-filter-progress.h
 include/evolution-data-server/camel/camel-mime-filter-tohtml.h
 include/evolution-data-server/camel/camel-mime-filter-windows.h
@@ -522,6 +523,7 @@ share/glib-2.0/schemas/org.gnome.evolution-data-server.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution-data-server.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.eds-shell.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.network-config.gschema.xml
+share/icons/hicolor/scalable/apps/org.gnome.Evolution-alarm-notify.svg
 share/locale/am/LC_MESSAGES/evolution-data-server.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server.mo
 share/locale/as/LC_MESSAGES/evolution-data-server.mo
@@ -652,3 +654,4 @@ share/vala/vapi/libedataserverui4-1.0.deps
 share/vala/vapi/libedataserverui4-1.0.vapi
 @tag glib-compile-schemas
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
