@@ -134,7 +134,6 @@ share/help/C/gnome-help/figures/color-display.png
 share/help/C/gnome-help/figures/color-printer.png
 share/help/C/gnome-help/figures/color-space.png
 share/help/C/gnome-help/figures/display-dual-monitors.webm
-share/help/C/gnome-help/figures/edit-find-symbolic.svg
 share/help/C/gnome-help/figures/emblem-system-symbolic.svg
 share/help/C/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/C/gnome-help/figures/gnome.svg
@@ -160,6 +159,7 @@ share/help/C/gnome-help/figures/keyboard-key-stop.svg
 share/help/C/gnome-help/figures/keyboard-key-voldown.svg
 share/help/C/gnome-help/figures/keyboard-key-volup.svg
 share/help/C/gnome-help/figures/keyboard-key-world.svg
+share/help/C/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/C/gnome-help/figures/nautilus-icons.png
 share/help/C/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/C/gnome-help/figures/network-wired-symbolic.svg
@@ -645,7 +645,6 @@ share/help/as/gnome-help/figures/color-display.png
 share/help/as/gnome-help/figures/color-printer.png
 share/help/as/gnome-help/figures/color-space.png
 share/help/as/gnome-help/figures/display-dual-monitors.webm
-share/help/as/gnome-help/figures/edit-find-symbolic.svg
 share/help/as/gnome-help/figures/emblem-system-symbolic.svg
 share/help/as/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/as/gnome-help/figures/gnome.svg
@@ -671,6 +670,7 @@ share/help/as/gnome-help/figures/keyboard-key-stop.svg
 share/help/as/gnome-help/figures/keyboard-key-voldown.svg
 share/help/as/gnome-help/figures/keyboard-key-volup.svg
 share/help/as/gnome-help/figures/keyboard-key-world.svg
+share/help/as/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/as/gnome-help/figures/nautilus-icons.png
 share/help/as/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/as/gnome-help/figures/network-wired-symbolic.svg
@@ -1098,7 +1098,6 @@ share/help/ca/gnome-help/figures/color-display.png
 share/help/ca/gnome-help/figures/color-printer.png
 share/help/ca/gnome-help/figures/color-space.png
 share/help/ca/gnome-help/figures/display-dual-monitors.webm
-share/help/ca/gnome-help/figures/edit-find-symbolic.svg
 share/help/ca/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ca/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ca/gnome-help/figures/gnome.svg
@@ -1124,6 +1123,7 @@ share/help/ca/gnome-help/figures/keyboard-key-stop.svg
 share/help/ca/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ca/gnome-help/figures/keyboard-key-volup.svg
 share/help/ca/gnome-help/figures/keyboard-key-world.svg
+share/help/ca/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ca/gnome-help/figures/nautilus-icons.png
 share/help/ca/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ca/gnome-help/figures/network-wired-symbolic.svg
@@ -1609,7 +1609,6 @@ share/help/cs/gnome-help/figures/color-display.png
 share/help/cs/gnome-help/figures/color-printer.png
 share/help/cs/gnome-help/figures/color-space.png
 share/help/cs/gnome-help/figures/display-dual-monitors.webm
-share/help/cs/gnome-help/figures/edit-find-symbolic.svg
 share/help/cs/gnome-help/figures/emblem-system-symbolic.svg
 share/help/cs/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/cs/gnome-help/figures/gnome.svg
@@ -1635,6 +1634,7 @@ share/help/cs/gnome-help/figures/keyboard-key-stop.svg
 share/help/cs/gnome-help/figures/keyboard-key-voldown.svg
 share/help/cs/gnome-help/figures/keyboard-key-volup.svg
 share/help/cs/gnome-help/figures/keyboard-key-world.svg
+share/help/cs/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/cs/gnome-help/figures/nautilus-icons.png
 share/help/cs/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/cs/gnome-help/figures/network-wired-symbolic.svg
@@ -2120,7 +2120,6 @@ share/help/da/gnome-help/figures/color-display.png
 share/help/da/gnome-help/figures/color-printer.png
 share/help/da/gnome-help/figures/color-space.png
 share/help/da/gnome-help/figures/display-dual-monitors.webm
-share/help/da/gnome-help/figures/edit-find-symbolic.svg
 share/help/da/gnome-help/figures/emblem-system-symbolic.svg
 share/help/da/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/da/gnome-help/figures/gnome.svg
@@ -2146,6 +2145,7 @@ share/help/da/gnome-help/figures/keyboard-key-stop.svg
 share/help/da/gnome-help/figures/keyboard-key-voldown.svg
 share/help/da/gnome-help/figures/keyboard-key-volup.svg
 share/help/da/gnome-help/figures/keyboard-key-world.svg
+share/help/da/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/da/gnome-help/figures/nautilus-icons.png
 share/help/da/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/da/gnome-help/figures/network-wired-symbolic.svg
@@ -2573,7 +2573,6 @@ share/help/de/gnome-help/figures/color-display.png
 share/help/de/gnome-help/figures/color-printer.png
 share/help/de/gnome-help/figures/color-space.png
 share/help/de/gnome-help/figures/display-dual-monitors.webm
-share/help/de/gnome-help/figures/edit-find-symbolic.svg
 share/help/de/gnome-help/figures/emblem-system-symbolic.svg
 share/help/de/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/de/gnome-help/figures/gnome.svg
@@ -2599,6 +2598,7 @@ share/help/de/gnome-help/figures/keyboard-key-stop.svg
 share/help/de/gnome-help/figures/keyboard-key-voldown.svg
 share/help/de/gnome-help/figures/keyboard-key-volup.svg
 share/help/de/gnome-help/figures/keyboard-key-world.svg
+share/help/de/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/de/gnome-help/figures/nautilus-icons.png
 share/help/de/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/de/gnome-help/figures/network-wired-symbolic.svg
@@ -3084,7 +3084,6 @@ share/help/el/gnome-help/figures/color-display.png
 share/help/el/gnome-help/figures/color-printer.png
 share/help/el/gnome-help/figures/color-space.png
 share/help/el/gnome-help/figures/display-dual-monitors.webm
-share/help/el/gnome-help/figures/edit-find-symbolic.svg
 share/help/el/gnome-help/figures/emblem-system-symbolic.svg
 share/help/el/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/el/gnome-help/figures/gnome.svg
@@ -3110,6 +3109,7 @@ share/help/el/gnome-help/figures/keyboard-key-stop.svg
 share/help/el/gnome-help/figures/keyboard-key-voldown.svg
 share/help/el/gnome-help/figures/keyboard-key-volup.svg
 share/help/el/gnome-help/figures/keyboard-key-world.svg
+share/help/el/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/el/gnome-help/figures/nautilus-icons.png
 share/help/el/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/el/gnome-help/figures/network-wired-symbolic.svg
@@ -3537,7 +3537,6 @@ share/help/es/gnome-help/figures/color-display.png
 share/help/es/gnome-help/figures/color-printer.png
 share/help/es/gnome-help/figures/color-space.png
 share/help/es/gnome-help/figures/display-dual-monitors.webm
-share/help/es/gnome-help/figures/edit-find-symbolic.svg
 share/help/es/gnome-help/figures/emblem-system-symbolic.svg
 share/help/es/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/es/gnome-help/figures/gnome.svg
@@ -3563,6 +3562,7 @@ share/help/es/gnome-help/figures/keyboard-key-stop.svg
 share/help/es/gnome-help/figures/keyboard-key-voldown.svg
 share/help/es/gnome-help/figures/keyboard-key-volup.svg
 share/help/es/gnome-help/figures/keyboard-key-world.svg
+share/help/es/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/es/gnome-help/figures/nautilus-icons.png
 share/help/es/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/es/gnome-help/figures/network-wired-symbolic.svg
@@ -4048,7 +4048,6 @@ share/help/eu/gnome-help/figures/color-display.png
 share/help/eu/gnome-help/figures/color-printer.png
 share/help/eu/gnome-help/figures/color-space.png
 share/help/eu/gnome-help/figures/display-dual-monitors.webm
-share/help/eu/gnome-help/figures/edit-find-symbolic.svg
 share/help/eu/gnome-help/figures/emblem-system-symbolic.svg
 share/help/eu/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/eu/gnome-help/figures/gnome.svg
@@ -4074,6 +4073,7 @@ share/help/eu/gnome-help/figures/keyboard-key-stop.svg
 share/help/eu/gnome-help/figures/keyboard-key-voldown.svg
 share/help/eu/gnome-help/figures/keyboard-key-volup.svg
 share/help/eu/gnome-help/figures/keyboard-key-world.svg
+share/help/eu/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/eu/gnome-help/figures/nautilus-icons.png
 share/help/eu/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/eu/gnome-help/figures/network-wired-symbolic.svg
@@ -4559,7 +4559,6 @@ share/help/fa/gnome-help/figures/color-display.png
 share/help/fa/gnome-help/figures/color-printer.png
 share/help/fa/gnome-help/figures/color-space.png
 share/help/fa/gnome-help/figures/display-dual-monitors.webm
-share/help/fa/gnome-help/figures/edit-find-symbolic.svg
 share/help/fa/gnome-help/figures/emblem-system-symbolic.svg
 share/help/fa/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/fa/gnome-help/figures/gnome.svg
@@ -4585,6 +4584,7 @@ share/help/fa/gnome-help/figures/keyboard-key-stop.svg
 share/help/fa/gnome-help/figures/keyboard-key-voldown.svg
 share/help/fa/gnome-help/figures/keyboard-key-volup.svg
 share/help/fa/gnome-help/figures/keyboard-key-world.svg
+share/help/fa/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/fa/gnome-help/figures/nautilus-icons.png
 share/help/fa/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/fa/gnome-help/figures/network-wired-symbolic.svg
@@ -5070,7 +5070,6 @@ share/help/fi/gnome-help/figures/color-display.png
 share/help/fi/gnome-help/figures/color-printer.png
 share/help/fi/gnome-help/figures/color-space.png
 share/help/fi/gnome-help/figures/display-dual-monitors.webm
-share/help/fi/gnome-help/figures/edit-find-symbolic.svg
 share/help/fi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/fi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/fi/gnome-help/figures/gnome.svg
@@ -5096,6 +5095,7 @@ share/help/fi/gnome-help/figures/keyboard-key-stop.svg
 share/help/fi/gnome-help/figures/keyboard-key-voldown.svg
 share/help/fi/gnome-help/figures/keyboard-key-volup.svg
 share/help/fi/gnome-help/figures/keyboard-key-world.svg
+share/help/fi/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/fi/gnome-help/figures/nautilus-icons.png
 share/help/fi/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/fi/gnome-help/figures/network-wired-symbolic.svg
@@ -5523,7 +5523,6 @@ share/help/fr/gnome-help/figures/color-display.png
 share/help/fr/gnome-help/figures/color-printer.png
 share/help/fr/gnome-help/figures/color-space.png
 share/help/fr/gnome-help/figures/display-dual-monitors.webm
-share/help/fr/gnome-help/figures/edit-find-symbolic.svg
 share/help/fr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/fr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/fr/gnome-help/figures/gnome.svg
@@ -5549,6 +5548,7 @@ share/help/fr/gnome-help/figures/keyboard-key-stop.svg
 share/help/fr/gnome-help/figures/keyboard-key-voldown.svg
 share/help/fr/gnome-help/figures/keyboard-key-volup.svg
 share/help/fr/gnome-help/figures/keyboard-key-world.svg
+share/help/fr/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/fr/gnome-help/figures/nautilus-icons.png
 share/help/fr/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/fr/gnome-help/figures/network-wired-symbolic.svg
@@ -6034,7 +6034,6 @@ share/help/gl/gnome-help/figures/color-display.png
 share/help/gl/gnome-help/figures/color-printer.png
 share/help/gl/gnome-help/figures/color-space.png
 share/help/gl/gnome-help/figures/display-dual-monitors.webm
-share/help/gl/gnome-help/figures/edit-find-symbolic.svg
 share/help/gl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/gl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/gl/gnome-help/figures/gnome.svg
@@ -6060,6 +6059,7 @@ share/help/gl/gnome-help/figures/keyboard-key-stop.svg
 share/help/gl/gnome-help/figures/keyboard-key-voldown.svg
 share/help/gl/gnome-help/figures/keyboard-key-volup.svg
 share/help/gl/gnome-help/figures/keyboard-key-world.svg
+share/help/gl/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/gl/gnome-help/figures/nautilus-icons.png
 share/help/gl/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/gl/gnome-help/figures/network-wired-symbolic.svg
@@ -6545,7 +6545,6 @@ share/help/gu/gnome-help/figures/color-display.png
 share/help/gu/gnome-help/figures/color-printer.png
 share/help/gu/gnome-help/figures/color-space.png
 share/help/gu/gnome-help/figures/display-dual-monitors.webm
-share/help/gu/gnome-help/figures/edit-find-symbolic.svg
 share/help/gu/gnome-help/figures/emblem-system-symbolic.svg
 share/help/gu/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/gu/gnome-help/figures/gnome.svg
@@ -6571,6 +6570,7 @@ share/help/gu/gnome-help/figures/keyboard-key-stop.svg
 share/help/gu/gnome-help/figures/keyboard-key-voldown.svg
 share/help/gu/gnome-help/figures/keyboard-key-volup.svg
 share/help/gu/gnome-help/figures/keyboard-key-world.svg
+share/help/gu/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/gu/gnome-help/figures/nautilus-icons.png
 share/help/gu/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/gu/gnome-help/figures/network-wired-symbolic.svg
@@ -6998,7 +6998,6 @@ share/help/he/gnome-help/figures/color-display.png
 share/help/he/gnome-help/figures/color-printer.png
 share/help/he/gnome-help/figures/color-space.png
 share/help/he/gnome-help/figures/display-dual-monitors.webm
-share/help/he/gnome-help/figures/edit-find-symbolic.svg
 share/help/he/gnome-help/figures/emblem-system-symbolic.svg
 share/help/he/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/he/gnome-help/figures/gnome.svg
@@ -7024,6 +7023,7 @@ share/help/he/gnome-help/figures/keyboard-key-stop.svg
 share/help/he/gnome-help/figures/keyboard-key-voldown.svg
 share/help/he/gnome-help/figures/keyboard-key-volup.svg
 share/help/he/gnome-help/figures/keyboard-key-world.svg
+share/help/he/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/he/gnome-help/figures/nautilus-icons.png
 share/help/he/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/he/gnome-help/figures/network-wired-symbolic.svg
@@ -7451,7 +7451,6 @@ share/help/hi/gnome-help/figures/color-display.png
 share/help/hi/gnome-help/figures/color-printer.png
 share/help/hi/gnome-help/figures/color-space.png
 share/help/hi/gnome-help/figures/display-dual-monitors.webm
-share/help/hi/gnome-help/figures/edit-find-symbolic.svg
 share/help/hi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hi/gnome-help/figures/gnome.svg
@@ -7477,6 +7476,7 @@ share/help/hi/gnome-help/figures/keyboard-key-stop.svg
 share/help/hi/gnome-help/figures/keyboard-key-voldown.svg
 share/help/hi/gnome-help/figures/keyboard-key-volup.svg
 share/help/hi/gnome-help/figures/keyboard-key-world.svg
+share/help/hi/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/hi/gnome-help/figures/nautilus-icons.png
 share/help/hi/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/hi/gnome-help/figures/network-wired-symbolic.svg
@@ -7904,7 +7904,6 @@ share/help/hr/gnome-help/figures/color-display.png
 share/help/hr/gnome-help/figures/color-printer.png
 share/help/hr/gnome-help/figures/color-space.png
 share/help/hr/gnome-help/figures/display-dual-monitors.webm
-share/help/hr/gnome-help/figures/edit-find-symbolic.svg
 share/help/hr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hr/gnome-help/figures/gnome.svg
@@ -7930,6 +7929,7 @@ share/help/hr/gnome-help/figures/keyboard-key-stop.svg
 share/help/hr/gnome-help/figures/keyboard-key-voldown.svg
 share/help/hr/gnome-help/figures/keyboard-key-volup.svg
 share/help/hr/gnome-help/figures/keyboard-key-world.svg
+share/help/hr/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/hr/gnome-help/figures/nautilus-icons.png
 share/help/hr/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/hr/gnome-help/figures/network-wired-symbolic.svg
@@ -8415,7 +8415,6 @@ share/help/hu/gnome-help/figures/color-display.png
 share/help/hu/gnome-help/figures/color-printer.png
 share/help/hu/gnome-help/figures/color-space.png
 share/help/hu/gnome-help/figures/display-dual-monitors.webm
-share/help/hu/gnome-help/figures/edit-find-symbolic.svg
 share/help/hu/gnome-help/figures/emblem-system-symbolic.svg
 share/help/hu/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/hu/gnome-help/figures/gnome.svg
@@ -8441,6 +8440,7 @@ share/help/hu/gnome-help/figures/keyboard-key-stop.svg
 share/help/hu/gnome-help/figures/keyboard-key-voldown.svg
 share/help/hu/gnome-help/figures/keyboard-key-volup.svg
 share/help/hu/gnome-help/figures/keyboard-key-world.svg
+share/help/hu/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/hu/gnome-help/figures/nautilus-icons.png
 share/help/hu/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/hu/gnome-help/figures/network-wired-symbolic.svg
@@ -8926,7 +8926,6 @@ share/help/id/gnome-help/figures/color-display.png
 share/help/id/gnome-help/figures/color-printer.png
 share/help/id/gnome-help/figures/color-space.png
 share/help/id/gnome-help/figures/display-dual-monitors.webm
-share/help/id/gnome-help/figures/edit-find-symbolic.svg
 share/help/id/gnome-help/figures/emblem-system-symbolic.svg
 share/help/id/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/id/gnome-help/figures/gnome.svg
@@ -8952,6 +8951,7 @@ share/help/id/gnome-help/figures/keyboard-key-stop.svg
 share/help/id/gnome-help/figures/keyboard-key-voldown.svg
 share/help/id/gnome-help/figures/keyboard-key-volup.svg
 share/help/id/gnome-help/figures/keyboard-key-world.svg
+share/help/id/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/id/gnome-help/figures/nautilus-icons.png
 share/help/id/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/id/gnome-help/figures/network-wired-symbolic.svg
@@ -9437,7 +9437,6 @@ share/help/it/gnome-help/figures/color-display.png
 share/help/it/gnome-help/figures/color-printer.png
 share/help/it/gnome-help/figures/color-space.png
 share/help/it/gnome-help/figures/display-dual-monitors.webm
-share/help/it/gnome-help/figures/edit-find-symbolic.svg
 share/help/it/gnome-help/figures/emblem-system-symbolic.svg
 share/help/it/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/it/gnome-help/figures/gnome.svg
@@ -9463,6 +9462,7 @@ share/help/it/gnome-help/figures/keyboard-key-stop.svg
 share/help/it/gnome-help/figures/keyboard-key-voldown.svg
 share/help/it/gnome-help/figures/keyboard-key-volup.svg
 share/help/it/gnome-help/figures/keyboard-key-world.svg
+share/help/it/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/it/gnome-help/figures/nautilus-icons.png
 share/help/it/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/it/gnome-help/figures/network-wired-symbolic.svg
@@ -9890,7 +9890,6 @@ share/help/ja/gnome-help/figures/color-display.png
 share/help/ja/gnome-help/figures/color-printer.png
 share/help/ja/gnome-help/figures/color-space.png
 share/help/ja/gnome-help/figures/display-dual-monitors.webm
-share/help/ja/gnome-help/figures/edit-find-symbolic.svg
 share/help/ja/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ja/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ja/gnome-help/figures/gnome.svg
@@ -9916,6 +9915,7 @@ share/help/ja/gnome-help/figures/keyboard-key-stop.svg
 share/help/ja/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ja/gnome-help/figures/keyboard-key-volup.svg
 share/help/ja/gnome-help/figures/keyboard-key-world.svg
+share/help/ja/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ja/gnome-help/figures/nautilus-icons.png
 share/help/ja/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ja/gnome-help/figures/network-wired-symbolic.svg
@@ -10343,7 +10343,6 @@ share/help/kn/gnome-help/figures/color-display.png
 share/help/kn/gnome-help/figures/color-printer.png
 share/help/kn/gnome-help/figures/color-space.png
 share/help/kn/gnome-help/figures/display-dual-monitors.webm
-share/help/kn/gnome-help/figures/edit-find-symbolic.svg
 share/help/kn/gnome-help/figures/emblem-system-symbolic.svg
 share/help/kn/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/kn/gnome-help/figures/gnome.svg
@@ -10369,6 +10368,7 @@ share/help/kn/gnome-help/figures/keyboard-key-stop.svg
 share/help/kn/gnome-help/figures/keyboard-key-voldown.svg
 share/help/kn/gnome-help/figures/keyboard-key-volup.svg
 share/help/kn/gnome-help/figures/keyboard-key-world.svg
+share/help/kn/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/kn/gnome-help/figures/nautilus-icons.png
 share/help/kn/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/kn/gnome-help/figures/network-wired-symbolic.svg
@@ -10796,7 +10796,6 @@ share/help/ko/gnome-help/figures/color-display.png
 share/help/ko/gnome-help/figures/color-printer.png
 share/help/ko/gnome-help/figures/color-space.png
 share/help/ko/gnome-help/figures/display-dual-monitors.webm
-share/help/ko/gnome-help/figures/edit-find-symbolic.svg
 share/help/ko/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ko/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ko/gnome-help/figures/gnome.svg
@@ -10822,6 +10821,7 @@ share/help/ko/gnome-help/figures/keyboard-key-stop.svg
 share/help/ko/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ko/gnome-help/figures/keyboard-key-volup.svg
 share/help/ko/gnome-help/figures/keyboard-key-world.svg
+share/help/ko/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ko/gnome-help/figures/nautilus-icons.png
 share/help/ko/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ko/gnome-help/figures/network-wired-symbolic.svg
@@ -11307,7 +11307,6 @@ share/help/lt/gnome-help/figures/color-display.png
 share/help/lt/gnome-help/figures/color-printer.png
 share/help/lt/gnome-help/figures/color-space.png
 share/help/lt/gnome-help/figures/display-dual-monitors.webm
-share/help/lt/gnome-help/figures/edit-find-symbolic.svg
 share/help/lt/gnome-help/figures/emblem-system-symbolic.svg
 share/help/lt/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/lt/gnome-help/figures/gnome.svg
@@ -11333,6 +11332,7 @@ share/help/lt/gnome-help/figures/keyboard-key-stop.svg
 share/help/lt/gnome-help/figures/keyboard-key-voldown.svg
 share/help/lt/gnome-help/figures/keyboard-key-volup.svg
 share/help/lt/gnome-help/figures/keyboard-key-world.svg
+share/help/lt/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/lt/gnome-help/figures/nautilus-icons.png
 share/help/lt/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/lt/gnome-help/figures/network-wired-symbolic.svg
@@ -11760,7 +11760,6 @@ share/help/lv/gnome-help/figures/color-display.png
 share/help/lv/gnome-help/figures/color-printer.png
 share/help/lv/gnome-help/figures/color-space.png
 share/help/lv/gnome-help/figures/display-dual-monitors.webm
-share/help/lv/gnome-help/figures/edit-find-symbolic.svg
 share/help/lv/gnome-help/figures/emblem-system-symbolic.svg
 share/help/lv/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/lv/gnome-help/figures/gnome.svg
@@ -11786,6 +11785,7 @@ share/help/lv/gnome-help/figures/keyboard-key-stop.svg
 share/help/lv/gnome-help/figures/keyboard-key-voldown.svg
 share/help/lv/gnome-help/figures/keyboard-key-volup.svg
 share/help/lv/gnome-help/figures/keyboard-key-world.svg
+share/help/lv/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/lv/gnome-help/figures/nautilus-icons.png
 share/help/lv/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/lv/gnome-help/figures/network-wired-symbolic.svg
@@ -12213,7 +12213,6 @@ share/help/mr/gnome-help/figures/color-display.png
 share/help/mr/gnome-help/figures/color-printer.png
 share/help/mr/gnome-help/figures/color-space.png
 share/help/mr/gnome-help/figures/display-dual-monitors.webm
-share/help/mr/gnome-help/figures/edit-find-symbolic.svg
 share/help/mr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/mr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/mr/gnome-help/figures/gnome.svg
@@ -12239,6 +12238,7 @@ share/help/mr/gnome-help/figures/keyboard-key-stop.svg
 share/help/mr/gnome-help/figures/keyboard-key-voldown.svg
 share/help/mr/gnome-help/figures/keyboard-key-volup.svg
 share/help/mr/gnome-help/figures/keyboard-key-world.svg
+share/help/mr/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/mr/gnome-help/figures/nautilus-icons.png
 share/help/mr/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/mr/gnome-help/figures/network-wired-symbolic.svg
@@ -12666,7 +12666,6 @@ share/help/nl/gnome-help/figures/color-display.png
 share/help/nl/gnome-help/figures/color-printer.png
 share/help/nl/gnome-help/figures/color-space.png
 share/help/nl/gnome-help/figures/display-dual-monitors.webm
-share/help/nl/gnome-help/figures/edit-find-symbolic.svg
 share/help/nl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/nl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/nl/gnome-help/figures/gnome.svg
@@ -12692,6 +12691,7 @@ share/help/nl/gnome-help/figures/keyboard-key-stop.svg
 share/help/nl/gnome-help/figures/keyboard-key-voldown.svg
 share/help/nl/gnome-help/figures/keyboard-key-volup.svg
 share/help/nl/gnome-help/figures/keyboard-key-world.svg
+share/help/nl/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/nl/gnome-help/figures/nautilus-icons.png
 share/help/nl/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/nl/gnome-help/figures/network-wired-symbolic.svg
@@ -13177,7 +13177,6 @@ share/help/pa/gnome-help/figures/color-display.png
 share/help/pa/gnome-help/figures/color-printer.png
 share/help/pa/gnome-help/figures/color-space.png
 share/help/pa/gnome-help/figures/display-dual-monitors.webm
-share/help/pa/gnome-help/figures/edit-find-symbolic.svg
 share/help/pa/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pa/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pa/gnome-help/figures/gnome.svg
@@ -13203,6 +13202,7 @@ share/help/pa/gnome-help/figures/keyboard-key-stop.svg
 share/help/pa/gnome-help/figures/keyboard-key-voldown.svg
 share/help/pa/gnome-help/figures/keyboard-key-volup.svg
 share/help/pa/gnome-help/figures/keyboard-key-world.svg
+share/help/pa/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/pa/gnome-help/figures/nautilus-icons.png
 share/help/pa/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/pa/gnome-help/figures/network-wired-symbolic.svg
@@ -13630,7 +13630,6 @@ share/help/pl/gnome-help/figures/color-display.png
 share/help/pl/gnome-help/figures/color-printer.png
 share/help/pl/gnome-help/figures/color-space.png
 share/help/pl/gnome-help/figures/display-dual-monitors.webm
-share/help/pl/gnome-help/figures/edit-find-symbolic.svg
 share/help/pl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pl/gnome-help/figures/gnome.svg
@@ -13656,6 +13655,7 @@ share/help/pl/gnome-help/figures/keyboard-key-stop.svg
 share/help/pl/gnome-help/figures/keyboard-key-voldown.svg
 share/help/pl/gnome-help/figures/keyboard-key-volup.svg
 share/help/pl/gnome-help/figures/keyboard-key-world.svg
+share/help/pl/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/pl/gnome-help/figures/nautilus-icons.png
 share/help/pl/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/pl/gnome-help/figures/network-wired-symbolic.svg
@@ -14083,7 +14083,6 @@ share/help/pt/gnome-help/figures/color-display.png
 share/help/pt/gnome-help/figures/color-printer.png
 share/help/pt/gnome-help/figures/color-space.png
 share/help/pt/gnome-help/figures/display-dual-monitors.webm
-share/help/pt/gnome-help/figures/edit-find-symbolic.svg
 share/help/pt/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pt/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pt/gnome-help/figures/gnome.svg
@@ -14109,6 +14108,7 @@ share/help/pt/gnome-help/figures/keyboard-key-stop.svg
 share/help/pt/gnome-help/figures/keyboard-key-voldown.svg
 share/help/pt/gnome-help/figures/keyboard-key-volup.svg
 share/help/pt/gnome-help/figures/keyboard-key-world.svg
+share/help/pt/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/pt/gnome-help/figures/nautilus-icons.png
 share/help/pt/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/pt/gnome-help/figures/network-wired-symbolic.svg
@@ -14536,7 +14536,6 @@ share/help/pt_BR/gnome-help/figures/color-display.png
 share/help/pt_BR/gnome-help/figures/color-printer.png
 share/help/pt_BR/gnome-help/figures/color-space.png
 share/help/pt_BR/gnome-help/figures/display-dual-monitors.webm
-share/help/pt_BR/gnome-help/figures/edit-find-symbolic.svg
 share/help/pt_BR/gnome-help/figures/emblem-system-symbolic.svg
 share/help/pt_BR/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/pt_BR/gnome-help/figures/gnome.svg
@@ -14562,6 +14561,7 @@ share/help/pt_BR/gnome-help/figures/keyboard-key-stop.svg
 share/help/pt_BR/gnome-help/figures/keyboard-key-voldown.svg
 share/help/pt_BR/gnome-help/figures/keyboard-key-volup.svg
 share/help/pt_BR/gnome-help/figures/keyboard-key-world.svg
+share/help/pt_BR/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/pt_BR/gnome-help/figures/nautilus-icons.png
 share/help/pt_BR/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/pt_BR/gnome-help/figures/network-wired-symbolic.svg
@@ -15047,7 +15047,6 @@ share/help/ro/gnome-help/figures/color-display.png
 share/help/ro/gnome-help/figures/color-printer.png
 share/help/ro/gnome-help/figures/color-space.png
 share/help/ro/gnome-help/figures/display-dual-monitors.webm
-share/help/ro/gnome-help/figures/edit-find-symbolic.svg
 share/help/ro/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ro/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ro/gnome-help/figures/gnome.svg
@@ -15073,6 +15072,7 @@ share/help/ro/gnome-help/figures/keyboard-key-stop.svg
 share/help/ro/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ro/gnome-help/figures/keyboard-key-volup.svg
 share/help/ro/gnome-help/figures/keyboard-key-world.svg
+share/help/ro/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ro/gnome-help/figures/nautilus-icons.png
 share/help/ro/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ro/gnome-help/figures/network-wired-symbolic.svg
@@ -15500,7 +15500,6 @@ share/help/ru/gnome-help/figures/color-display.png
 share/help/ru/gnome-help/figures/color-printer.png
 share/help/ru/gnome-help/figures/color-space.png
 share/help/ru/gnome-help/figures/display-dual-monitors.webm
-share/help/ru/gnome-help/figures/edit-find-symbolic.svg
 share/help/ru/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ru/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ru/gnome-help/figures/gnome.svg
@@ -15526,6 +15525,7 @@ share/help/ru/gnome-help/figures/keyboard-key-stop.svg
 share/help/ru/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ru/gnome-help/figures/keyboard-key-volup.svg
 share/help/ru/gnome-help/figures/keyboard-key-world.svg
+share/help/ru/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ru/gnome-help/figures/nautilus-icons.png
 share/help/ru/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ru/gnome-help/figures/network-wired-symbolic.svg
@@ -16011,7 +16011,6 @@ share/help/sl/gnome-help/figures/color-display.png
 share/help/sl/gnome-help/figures/color-printer.png
 share/help/sl/gnome-help/figures/color-space.png
 share/help/sl/gnome-help/figures/display-dual-monitors.webm
-share/help/sl/gnome-help/figures/edit-find-symbolic.svg
 share/help/sl/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sl/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sl/gnome-help/figures/gnome.svg
@@ -16037,6 +16036,7 @@ share/help/sl/gnome-help/figures/keyboard-key-stop.svg
 share/help/sl/gnome-help/figures/keyboard-key-voldown.svg
 share/help/sl/gnome-help/figures/keyboard-key-volup.svg
 share/help/sl/gnome-help/figures/keyboard-key-world.svg
+share/help/sl/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/sl/gnome-help/figures/nautilus-icons.png
 share/help/sl/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/sl/gnome-help/figures/network-wired-symbolic.svg
@@ -16464,7 +16464,6 @@ share/help/sr/gnome-help/figures/color-display.png
 share/help/sr/gnome-help/figures/color-printer.png
 share/help/sr/gnome-help/figures/color-space.png
 share/help/sr/gnome-help/figures/display-dual-monitors.webm
-share/help/sr/gnome-help/figures/edit-find-symbolic.svg
 share/help/sr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sr/gnome-help/figures/gnome.svg
@@ -16490,6 +16489,7 @@ share/help/sr/gnome-help/figures/keyboard-key-stop.svg
 share/help/sr/gnome-help/figures/keyboard-key-voldown.svg
 share/help/sr/gnome-help/figures/keyboard-key-volup.svg
 share/help/sr/gnome-help/figures/keyboard-key-world.svg
+share/help/sr/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/sr/gnome-help/figures/nautilus-icons.png
 share/help/sr/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/sr/gnome-help/figures/network-wired-symbolic.svg
@@ -16917,7 +16917,6 @@ share/help/sr@latin/gnome-help/figures/color-display.png
 share/help/sr@latin/gnome-help/figures/color-printer.png
 share/help/sr@latin/gnome-help/figures/color-space.png
 share/help/sr@latin/gnome-help/figures/display-dual-monitors.webm
-share/help/sr@latin/gnome-help/figures/edit-find-symbolic.svg
 share/help/sr@latin/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sr@latin/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sr@latin/gnome-help/figures/gnome.svg
@@ -16943,6 +16942,7 @@ share/help/sr@latin/gnome-help/figures/keyboard-key-stop.svg
 share/help/sr@latin/gnome-help/figures/keyboard-key-voldown.svg
 share/help/sr@latin/gnome-help/figures/keyboard-key-volup.svg
 share/help/sr@latin/gnome-help/figures/keyboard-key-world.svg
+share/help/sr@latin/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/sr@latin/gnome-help/figures/nautilus-icons.png
 share/help/sr@latin/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/sr@latin/gnome-help/figures/network-wired-symbolic.svg
@@ -17370,7 +17370,6 @@ share/help/sv/gnome-help/figures/color-display.png
 share/help/sv/gnome-help/figures/color-printer.png
 share/help/sv/gnome-help/figures/color-space.png
 share/help/sv/gnome-help/figures/display-dual-monitors.webm
-share/help/sv/gnome-help/figures/edit-find-symbolic.svg
 share/help/sv/gnome-help/figures/emblem-system-symbolic.svg
 share/help/sv/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/sv/gnome-help/figures/gnome.svg
@@ -17396,6 +17395,7 @@ share/help/sv/gnome-help/figures/keyboard-key-stop.svg
 share/help/sv/gnome-help/figures/keyboard-key-voldown.svg
 share/help/sv/gnome-help/figures/keyboard-key-volup.svg
 share/help/sv/gnome-help/figures/keyboard-key-world.svg
+share/help/sv/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/sv/gnome-help/figures/nautilus-icons.png
 share/help/sv/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/sv/gnome-help/figures/network-wired-symbolic.svg
@@ -17881,7 +17881,6 @@ share/help/ta/gnome-help/figures/color-display.png
 share/help/ta/gnome-help/figures/color-printer.png
 share/help/ta/gnome-help/figures/color-space.png
 share/help/ta/gnome-help/figures/display-dual-monitors.webm
-share/help/ta/gnome-help/figures/edit-find-symbolic.svg
 share/help/ta/gnome-help/figures/emblem-system-symbolic.svg
 share/help/ta/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/ta/gnome-help/figures/gnome.svg
@@ -17907,6 +17906,7 @@ share/help/ta/gnome-help/figures/keyboard-key-stop.svg
 share/help/ta/gnome-help/figures/keyboard-key-voldown.svg
 share/help/ta/gnome-help/figures/keyboard-key-volup.svg
 share/help/ta/gnome-help/figures/keyboard-key-world.svg
+share/help/ta/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/ta/gnome-help/figures/nautilus-icons.png
 share/help/ta/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/ta/gnome-help/figures/network-wired-symbolic.svg
@@ -18334,7 +18334,6 @@ share/help/te/gnome-help/figures/color-display.png
 share/help/te/gnome-help/figures/color-printer.png
 share/help/te/gnome-help/figures/color-space.png
 share/help/te/gnome-help/figures/display-dual-monitors.webm
-share/help/te/gnome-help/figures/edit-find-symbolic.svg
 share/help/te/gnome-help/figures/emblem-system-symbolic.svg
 share/help/te/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/te/gnome-help/figures/gnome.svg
@@ -18360,6 +18359,7 @@ share/help/te/gnome-help/figures/keyboard-key-stop.svg
 share/help/te/gnome-help/figures/keyboard-key-voldown.svg
 share/help/te/gnome-help/figures/keyboard-key-volup.svg
 share/help/te/gnome-help/figures/keyboard-key-world.svg
+share/help/te/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/te/gnome-help/figures/nautilus-icons.png
 share/help/te/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/te/gnome-help/figures/network-wired-symbolic.svg
@@ -18787,7 +18787,6 @@ share/help/tr/gnome-help/figures/color-display.png
 share/help/tr/gnome-help/figures/color-printer.png
 share/help/tr/gnome-help/figures/color-space.png
 share/help/tr/gnome-help/figures/display-dual-monitors.webm
-share/help/tr/gnome-help/figures/edit-find-symbolic.svg
 share/help/tr/gnome-help/figures/emblem-system-symbolic.svg
 share/help/tr/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/tr/gnome-help/figures/gnome.svg
@@ -18813,6 +18812,7 @@ share/help/tr/gnome-help/figures/keyboard-key-stop.svg
 share/help/tr/gnome-help/figures/keyboard-key-voldown.svg
 share/help/tr/gnome-help/figures/keyboard-key-volup.svg
 share/help/tr/gnome-help/figures/keyboard-key-world.svg
+share/help/tr/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/tr/gnome-help/figures/nautilus-icons.png
 share/help/tr/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/tr/gnome-help/figures/network-wired-symbolic.svg
@@ -19298,7 +19298,6 @@ share/help/uk/gnome-help/figures/color-display.png
 share/help/uk/gnome-help/figures/color-printer.png
 share/help/uk/gnome-help/figures/color-space.png
 share/help/uk/gnome-help/figures/display-dual-monitors.webm
-share/help/uk/gnome-help/figures/edit-find-symbolic.svg
 share/help/uk/gnome-help/figures/emblem-system-symbolic.svg
 share/help/uk/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/uk/gnome-help/figures/gnome.svg
@@ -19324,6 +19323,7 @@ share/help/uk/gnome-help/figures/keyboard-key-stop.svg
 share/help/uk/gnome-help/figures/keyboard-key-voldown.svg
 share/help/uk/gnome-help/figures/keyboard-key-volup.svg
 share/help/uk/gnome-help/figures/keyboard-key-world.svg
+share/help/uk/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/uk/gnome-help/figures/nautilus-icons.png
 share/help/uk/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/uk/gnome-help/figures/network-wired-symbolic.svg
@@ -19809,7 +19809,6 @@ share/help/vi/gnome-help/figures/color-display.png
 share/help/vi/gnome-help/figures/color-printer.png
 share/help/vi/gnome-help/figures/color-space.png
 share/help/vi/gnome-help/figures/display-dual-monitors.webm
-share/help/vi/gnome-help/figures/edit-find-symbolic.svg
 share/help/vi/gnome-help/figures/emblem-system-symbolic.svg
 share/help/vi/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/vi/gnome-help/figures/gnome.svg
@@ -19835,6 +19834,7 @@ share/help/vi/gnome-help/figures/keyboard-key-stop.svg
 share/help/vi/gnome-help/figures/keyboard-key-voldown.svg
 share/help/vi/gnome-help/figures/keyboard-key-volup.svg
 share/help/vi/gnome-help/figures/keyboard-key-world.svg
+share/help/vi/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/vi/gnome-help/figures/nautilus-icons.png
 share/help/vi/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/vi/gnome-help/figures/network-wired-symbolic.svg
@@ -20262,7 +20262,6 @@ share/help/zh_CN/gnome-help/figures/color-display.png
 share/help/zh_CN/gnome-help/figures/color-printer.png
 share/help/zh_CN/gnome-help/figures/color-space.png
 share/help/zh_CN/gnome-help/figures/display-dual-monitors.webm
-share/help/zh_CN/gnome-help/figures/edit-find-symbolic.svg
 share/help/zh_CN/gnome-help/figures/emblem-system-symbolic.svg
 share/help/zh_CN/gnome-help/figures/emoji-flags-symbolic.svg
 share/help/zh_CN/gnome-help/figures/gnome.svg
@@ -20288,6 +20287,7 @@ share/help/zh_CN/gnome-help/figures/keyboard-key-stop.svg
 share/help/zh_CN/gnome-help/figures/keyboard-key-voldown.svg
 share/help/zh_CN/gnome-help/figures/keyboard-key-volup.svg
 share/help/zh_CN/gnome-help/figures/keyboard-key-world.svg
+share/help/zh_CN/gnome-help/figures/nautilus-folder-search-symbolic.svg
 share/help/zh_CN/gnome-help/figures/nautilus-icons.png
 share/help/zh_CN/gnome-help/figures/net-wired-ethernet-diagram.svg
 share/help/zh_CN/gnome-help/figures/network-wired-symbolic.svg
