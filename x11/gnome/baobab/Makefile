@@ -1,7 +1,7 @@
-COMMENT=		directory tree analyzer for GNOME
+COMMENT=		graphical disk usage analyzer
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		45.0
+GNOME_VERSION=		46.0
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE=		Yes

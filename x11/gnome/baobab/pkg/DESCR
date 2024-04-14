@@ -1,5 +1,3 @@
-Baobab is able to scan either specific directories or the whole
-filesystem, in order to give the user a graphical tree representation
-including each directory size or percentage in the branch. It also
-auto-detects in real-time any change made to your home folder as far as
-any mounted/unmounted device.
+Baobas is a graphical disk usage analyzer.  It can scan either specific folders
+(local or remote) or volumes and give a graphical representation including each
+directory size or percentage in the branch.
