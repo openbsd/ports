@@ -1,3 +1,5 @@
+BROKEN-i386 =		compile fails, possibly out of memory ("fatal runtime error: Rust cannot catch foreign exception")
+
 COMMENT =		matrix client for vim addicts
 
 GH_ACCOUNT =		ulyssa
