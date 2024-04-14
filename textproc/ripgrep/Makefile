@@ -10,7 +10,7 @@ CATEGORIES =		textproc sysutils
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
 
-MAINTAINER =		Theo Buehler <tb@openbsd.org>
+WANTLIB +=		${MODCARGO_WANTLIB}
 
 MODULES =		devel/cargo
 BUILD_DEPENDS =		textproc/asciidoctor
