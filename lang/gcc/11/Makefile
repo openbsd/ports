@@ -18,8 +18,8 @@ USE_NOEXECONLY = Yes
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 11
-REVISION-c++ = 12
+REVISION = 12
+REVISION-c++ = 13
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -134,10 +134,9 @@ MAKE_ENV += ${EXTRA_ENV}
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .elif ${MACHINE_ARCH:Mi386}
-MODULES +=			lang/clang
-MODCLANG_VERSION =		13
-MODCLANG_COMPILER_LINKS =	No
-USE_LLD =			ports
+# i386 lld can't link C++ code from gcc, "ld.lld: error: symbol
+# 'file_location::file_location()' cannot be preempted
+USE_LLD = No
 .endif
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
