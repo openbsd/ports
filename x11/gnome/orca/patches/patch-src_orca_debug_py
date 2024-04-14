@@ -3,7 +3,7 @@ replace /proc/ with ps(1) in 'orca --list-apps' to get process arguments by PID
 Index: src/orca/debug.py
 --- src/orca/debug.py.orig
 +++ src/orca/debug.py
-@@ -531,7 +531,7 @@ def getOpenFDCount(pid):
+@@ -528,7 +528,7 @@ def getOpenFDCount(pid):
  
  def getCmdline(pid):
      try:

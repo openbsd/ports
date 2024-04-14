@@ -3,7 +3,7 @@ replace /proc/ with ps(1) in 'orca --list-apps' to get process arguments by PID
 Index: src/orca/orca_bin.py.in
 --- src/orca/orca_bin.py.in.orig
 +++ src/orca/orca_bin.py.in
-@@ -65,7 +65,7 @@ class ListApps(argparse.Action):
+@@ -62,7 +62,7 @@ class ListApps(argparse.Action):
                  name = "[DEAD]"
  
              try:
