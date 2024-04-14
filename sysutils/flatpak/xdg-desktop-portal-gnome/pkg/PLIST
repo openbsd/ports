@@ -30,9 +30,12 @@ share/locale/is/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/it/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ja/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ka/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/kab/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/kk/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ko/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/lt/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/lv/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/nb/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/ne/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/nl/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/oc/LC_MESSAGES/xdg-desktop-portal-gnome.mo
@@ -46,6 +49,7 @@ share/locale/sk/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/sl/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/sr/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/sv/LC_MESSAGES/xdg-desktop-portal-gnome.mo
+share/locale/th/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/tr/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/uk/LC_MESSAGES/xdg-desktop-portal-gnome.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal-gnome.mo
