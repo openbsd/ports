@@ -2,9 +2,8 @@ COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.21
+GH_TAGNAME =            v0.4.37
 PKGNAME =               ${DISTNAME:L}
-REVISION =		1
 
 CATEGORIES =		textproc www
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
