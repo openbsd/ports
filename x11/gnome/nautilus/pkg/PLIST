@@ -160,7 +160,7 @@ share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
-share/metainfo/org.gnome.Nautilus.appdata.xml
+share/metainfo/org.gnome.Nautilus.metainfo.xml
 share/nautilus/
 share/nautilus/ontology/
 share/nautilus/ontology/nautilus.description

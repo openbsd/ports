@@ -1,7 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		45.2.1
+GNOME_VERSION=		46.0
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -12,8 +12,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += adwaita-1 c cairo cloudproviders gdk_pixbuf-2.0 gexiv2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0 gnome-desktop-4
-WANTLIB += gobject-2.0 gstpbutils-1.0 gstreamer-1.0 gtk-4 intl
-WANTLIB += m pango-1.0 portal portal-gtk4 tracker-sparql-3.0
+WANTLIB += gobject-2.0 graphene-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gtk-4 intl m pango-1.0 portal portal-gtk4 tracker-sparql-3.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
