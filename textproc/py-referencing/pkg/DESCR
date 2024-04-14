@@ -1,0 +1,2 @@
+An implementation of JSON reference resolution, allowing JSON schema
+tooling to resolve the $ref keyword.
