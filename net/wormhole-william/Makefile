@@ -1,7 +1,7 @@
 COMMENT =	magic wormhole implementation in Go
 
 MODGO_MODNAME =	github.com/psanford/wormhole-william
-MODGO_VERSION = v1.0.6
+MODGO_VERSION = v1.0.7
 DISTNAME =	wormhole-william-${MODGO_VERSION}
 
 CATEGORIES =	net
