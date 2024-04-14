@@ -1,4 +1,4 @@
-BROKEN =	needs an update for LLVM 13
+BROKEN =	needs an update for LLVM 13+
 
 COMMENT =	generator for the woboq code browser
 
@@ -29,8 +29,8 @@ WANTLIB =		${COMPILER_LIBCXX} c m
 COMPILER =		base-clang ports-clang
 
 MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/llvm/13
-RUN_DEPENDS =		devel/llvm/13
+BUILD_DEPENDS =		devel/llvm/16
+RUN_DEPENDS =		devel/llvm/16
 
 NO_TEST =		Yes
 

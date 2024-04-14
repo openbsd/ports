@@ -16,7 +16,7 @@ MODULES =	devel/cmake \
 		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =	devel/llvm/13 \
+BUILD_DEPENDS =	devel/llvm/16 \
 		textproc/libxml
 
 CONFIGURE_ARGS =	-DLIBCLANG_BUILD_STATIC=On \

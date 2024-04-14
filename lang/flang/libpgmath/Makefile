@@ -26,7 +26,7 @@ MODCMAKE_LDFLAGS =	-static-libstdc++ -static-libgcc
 MODULES =	devel/cmake \
 		lang/python
 
-BUILD_DEPENDS =	devel/llvm/13
+BUILD_DEPENDS =	devel/llvm/16
 
 # If you delete flang, this should go too.
 RUN_DEPENDS =	lang/flang/driver
