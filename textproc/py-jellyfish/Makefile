@@ -3,6 +3,7 @@ COMMENT =		Python library for approximate and phonetic string matching
 MODPY_EGG_VERSION =	1.0.3
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -20,7 +21,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		maturin
 
 MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo

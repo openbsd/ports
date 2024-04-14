@@ -3,6 +3,7 @@ COMMENT =		Python bindings for Rust's persistent data structures (rpds)
 MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		rpds_py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,7 +19,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		maturin
 
 MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo

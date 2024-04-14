@@ -14,7 +14,7 @@ GH_TAGNAME =	0.6.0
 DISTNAME =	py-adblock-${GH_TAGNAME}
 #MODPY_EGG_VERSION = ${GH_TAGNAME}
 MODPY_EGG_VERSION = 0.0.0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www
 
@@ -26,18 +26,18 @@ WANTLIB += ${MODCARGO_WANTLIB}
 MODULES =	devel/cargo \
 		lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+FLAVORS =	python3
+FLAVOR =	python3
+
+MODPY_PYBUILD =		maturin
 MODCARGO_CARGO_BIN =	maturin
+
 CONFIGURE_STYLE =	cargo
 
 BUILD_DEPENDS =	devel/maturin \
 		devel/py-pip${MODPY_FLAVOR}
 
 TEST_DEPENDS =	textproc/py-toml${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \
