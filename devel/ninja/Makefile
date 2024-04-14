@@ -7,7 +7,7 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.11.1
+GH_TAGNAME =		v1.12.0
 
 CATEGORIES =		devel
 
