@@ -1597,6 +1597,7 @@
      SUBDIR += py-rich,python3
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
+     SUBDIR += py-rpds-py,python3
      SUBDIR += py-rtree,python3
      SUBDIR += py-rx,python3
      SUBDIR += py-schema,python3
