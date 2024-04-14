@@ -1,7 +1,7 @@
 MODPY_EGG_VERSION?=	${VERSION}
 CONTRIB?=	${.CURDIR:T}
-DISTNAME?=	sphinxcontrib-${CONTRIB}-${MODPY_EGG_VERSION}
-PKGNAME?=	py-${DISTNAME}
+DISTNAME?=	sphinxcontrib_${CONTRIB}-${MODPY_EGG_VERSION}
+PKGNAME?=	py-${DISTNAME:S/sphinxcontrib_/sphinxcontrib-/}
 
 CATEGORIES?=	textproc
 
