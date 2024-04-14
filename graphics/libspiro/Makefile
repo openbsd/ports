@@ -1,11 +1,11 @@
 COMMENT =	simplifies the drawing of beautiful curves
 
-V =		20200505
+V =		20221101
 DISTNAME =	libspiro-dist-${V}
 PKGNAME =	libspiro-${V}
 WRKDIST =	${WRKDIR}/libspiro-${V}
 
-SHARED_LIBS =	spiro	0.0	# 1.0
+SHARED_LIBS =	spiro	1.0	# 1.3
 
 CATEGORIES =	graphics
 

@@ -1,5 +1,4 @@
 include/bezctx.h
-include/bezctx_intf.h
 include/spiro.h
 include/spiroentrypoints.h
 @static-lib lib/libspiro.a
