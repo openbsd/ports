@@ -1,0 +1,25 @@
+Index: llvm/lib/Target/X86/X86RegisterInfo.td
+--- llvm/lib/Target/X86/X86RegisterInfo.td.orig
++++ llvm/lib/Target/X86/X86RegisterInfo.td
+@@ -572,10 +572,10 @@ def GRH16 : RegisterClass<"X86", [i16], 16,
+                          R17WH, R18WH, R19WH, R20WH, R21WH, R22WH, R23WH, R24WH,
+                          R25WH, R26WH, R27WH, R28WH, R29WH, R30WH, R31WH)>;
+ def GR32 : RegisterClass<"X86", [i32], 32,
+-                         (add EAX, ECX, EDX, ESI, EDI, EBX, EBP, ESP, R8D, R9D,
++                         (add EAX, ECX, EDX, ESI, EDI, R8D, R9D,
+                               R10D, R11D, R16D, R17D, R18D, R19D, R20D, R21D, R22D,
+                               R23D, R24D, R25D, R26D, R27D, R28D, R29D, R30D, R31D,
+-                              R14D, R15D, R12D, R13D)>;
++                              R14D, R15D, R12D, R13D, EBX, EBP, ESP)>;
+ 
+ // GR64 - 64-bit GPRs. This oddly includes RIP, which isn't accurate, since
+ // RIP isn't really a register and it can't be used anywhere except in an
+@@ -585,7 +585,7 @@ def GR32 : RegisterClass<"X86", [i32], 32,
+ def GR64 : RegisterClass<"X86", [i64], 64,
+                     (add RAX, RCX, RDX, RSI, RDI, R8, R9, R10, R11, R16, R17,
+                          R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29,
+-                         R30, R31, RBX, R14, R15, R12, R13, RBP, RSP, RIP)>;
++                         R30, R31, R14, R15, R12, R13, RBX, RBP, RSP, RIP)>;
+ 
+ // GR64PLTSafe - 64-bit GPRs without R10, R11, RSP and RIP. Could be used when
+ // emitting code for intrinsics, which use implict input registers.

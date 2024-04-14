@@ -17,7 +17,7 @@ Index: lld/ELF/DriverUtils.cpp
 +       LI != LE; LI = LI.increment(EC)) {
 +    StringRef FilePath = LI->path();
 +    StringRef FileName = llvm::sys::path::filename(FilePath);
-+    if (!(FileName.startswith(LibName)))
++    if (!(FileName.starts_with(LibName)))
 +      continue;
 +    std::pair<StringRef, StringRef> MajMin =
 +      FileName.substr(LibName.size()).split('.');
