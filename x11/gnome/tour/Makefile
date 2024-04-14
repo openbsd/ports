@@ -1,7 +1,7 @@
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour
-GNOME_VERSION=		45.0
+GNOME_VERSION=		46.0
 
 # needed due to the devel/cargo MODULE
 DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
