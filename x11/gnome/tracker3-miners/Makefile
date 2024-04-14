@@ -1,7 +1,7 @@
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		3.6.2
+GNOME_VERSION=		3.7.1
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
 
 # LGPLv2.1+ - GPLv2+
@@ -43,15 +43,17 @@ LIB_DEPENDS=		audio/libcue \
 			x11/gnome/totem-pl-parser \
 			x11/gnome/tracker3
 
-TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-
-# tests
-BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
-
 CONFIGURE_ARGS=		-Dnetwork_manager=disabled \
-			-Dsystemd_user_services=false
+			-Dsystemd_user_services=false \
+			-Dlandlock=disabled
 
 # needs libgrss
+# XXX error: use of undeclared identifier 'AF_NETLINK'
+CONFIGURE_ARGS +=	-Dfunctional_tests=false
+# tests
+#BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
+#TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+
 CONFIGURE_ARGS +=	-Dminer_rss=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

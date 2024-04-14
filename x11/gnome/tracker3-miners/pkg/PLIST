@@ -1,5 +1,13 @@
 @conflict tracker-miners-*
 @pkgpath x11/gnome/tracker-miners
+@bin bin/tracker3-daemon
+@bin bin/tracker3-extract
+@bin bin/tracker3-index
+@bin bin/tracker3-info
+@bin bin/tracker3-reset
+@bin bin/tracker3-search
+@bin bin/tracker3-status
+@bin bin/tracker3-tag
 lib/tracker-miners-3.0/
 lib/tracker-miners-3.0/extract-modules/
 @so lib/tracker-miners-3.0/extract-modules/libextract-abw.so
@@ -34,14 +42,6 @@ lib/tracker-miners-3.0/writeback-modules/
 @bin libexec/tracker-miner-fs-3
 @bin libexec/tracker-miner-fs-control-3
 @bin libexec/tracker-writeback-3
-@bin libexec/tracker3/daemon
-@bin libexec/tracker3/extract
-@bin libexec/tracker3/index
-@bin libexec/tracker3/info
-@bin libexec/tracker3/reset
-@bin libexec/tracker3/search
-@bin libexec/tracker3/status
-@bin libexec/tracker3/tag
 @man man/man1/tracker-miner-fs-3.1
 @man man/man1/tracker-writeback-3.1
 @man man/man1/tracker3-daemon.1
@@ -54,7 +54,6 @@ lib/tracker-miners-3.0/writeback-modules/
 @man man/man1/tracker3-tag.1
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.Files.Index.xml
 share/dbus-1/interfaces/org.freedesktop.Tracker3.Miner.xml
-share/dbus-1/services/org.freedesktop.Tracker3.Miner.Extract.service
 share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.Control.service
 share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.service
 share/dbus-1/services/org.freedesktop.Tracker3.Writeback.service
@@ -167,4 +166,12 @@ share/tracker3-miners/extract-rules/90-gstreamer-audio-generic.rule
 share/tracker3-miners/extract-rules/90-gstreamer-video-generic.rule
 share/tracker3-miners/miners/
 share/tracker3-miners/miners/org.freedesktop.Tracker3.Miner.Files.service
+share/tracker3/commands/tracker-daemon.desktop
+share/tracker3/commands/tracker-extract.desktop
+share/tracker3/commands/tracker-index.desktop
+share/tracker3/commands/tracker-info.desktop
+share/tracker3/commands/tracker-reset.desktop
+share/tracker3/commands/tracker-search.desktop
+share/tracker3/commands/tracker-status.desktop
+share/tracker3/commands/tracker-tag.desktop
 @tag glib-compile-schemas

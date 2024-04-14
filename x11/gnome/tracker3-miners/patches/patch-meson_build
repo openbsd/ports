@@ -3,7 +3,7 @@ XXX fix and push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -100,7 +100,7 @@ if get_option('man')
+@@ -96,7 +96,7 @@ if get_option('man')
    a2x = find_program('a2x')
  endif
  
