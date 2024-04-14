@@ -1,3 +1,5 @@
+https://github.com/openssl/openssl/issues/24135
+
 Index: providers/implementations/ciphers/cipher_sm4_gcm_hw.c
 --- providers/implementations/ciphers/cipher_sm4_gcm_hw.c.orig
 +++ providers/implementations/ciphers/cipher_sm4_gcm_hw.c

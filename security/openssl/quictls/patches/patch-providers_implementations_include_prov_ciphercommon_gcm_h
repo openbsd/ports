@@ -1,3 +1,5 @@
+https://github.com/openssl/openssl/issues/24135
+
 Index: providers/implementations/include/prov/ciphercommon_gcm.h
 --- providers/implementations/include/prov/ciphercommon_gcm.h.orig
 +++ providers/implementations/include/prov/ciphercommon_gcm.h

@@ -1,3 +1,5 @@
+https://github.com/openssl/openssl/issues/24135
+
 Index: providers/implementations/ciphers/cipher_aes_gcm_hw_vaes_avx512.inc
 --- providers/implementations/ciphers/cipher_aes_gcm_hw_vaes_avx512.inc.orig
 +++ providers/implementations/ciphers/cipher_aes_gcm_hw_vaes_avx512.inc
