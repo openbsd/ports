@@ -1,6 +1,6 @@
 COMMENT =	console user interface library for python
 
-MODPY_EGG_VERSION = 2.3.4
+MODPY_EGG_VERSION = 2.6.10
 DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
