@@ -3,8 +3,8 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -85,7 +85,11 @@ if not libsoup2.found() and not libsoup3.found()
- endif
+@@ -93,7 +93,11 @@ endif
+ have_avahi = avahi_glib.found() and avahi_client.found()
  
  libmath = cc.find_library('m', required: false)
 -libdl = cc.find_library('dl')

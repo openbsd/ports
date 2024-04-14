@@ -1,17 +1,17 @@
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.6.0
+GNOME_VERSION=		3.7.1
 PKGNAME=		tracker3-${GNOME_VERSION}
 
-SHARED_LIBS += tracker-sparql-3.0        0.3 # 0.600.0
+SHARED_LIBS += tracker-sparql-3.0        0.4 # 0.701.0
 
 # LGPLv2.1+ - GPLv2+ - BSD-3-clause
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 icui18n
-WANTLIB += icuuc intl json-glib-1.0 m soup-3.0 sqlite3 stemmer
-WANTLIB += xml2
+WANTLIB += avahi-client avahi-common avahi-glib c gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 icui18n icuuc intl json-glib-1.0
+WANTLIB += m soup-3.0 sqlite3 stemmer xml2
 
 MODULES=		devel/meson \
 			lang/python \
@@ -28,6 +28,7 @@ BUILD_DEPENDS=		shells/bash-completion \
 
 LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup3 \
+			net/avahi,-glib \
 			textproc/icu4c \
 			textproc/libstemmer \
 			textproc/libxml

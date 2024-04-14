@@ -1,6 +1,12 @@
 @conflict tracker-*
 @pkgpath x11/gnome/tracker
 @bin bin/tracker3
+@bin bin/tracker3-endpoint
+@bin bin/tracker3-export
+@bin bin/tracker3-help
+@bin bin/tracker3-import
+@bin bin/tracker3-sparql
+@bin bin/tracker3-sql
 include/tracker-3.0/
 include/tracker-3.0/libtracker-sparql/
 include/tracker-3.0/libtracker-sparql/tracker-batch.h
@@ -44,13 +50,6 @@ lib/tracker-3.0/trackertestutils/storehelper.py
 lib/tracker-3.0/trackertestutils/tracker-await-file
 lib/tracker-3.0/trackertestutils/tracker-sandbox
 @bin libexec/tracker-xdg-portal-3
-libexec/tracker3/
-libexec/tracker3/endpoint
-libexec/tracker3/export
-libexec/tracker3/help
-libexec/tracker3/import
-libexec/tracker3/sparql
-libexec/tracker3/sql
 @man man/man1/tracker-xdg-portal-3.1
 @man man/man1/tracker3-endpoint.1
 @man man/man1/tracker3-export.1
@@ -60,37 +59,6 @@ libexec/tracker3/sql
 share/bash-completion/completions/tracker3
 share/dbus-1/services/org.freedesktop.portal.Tracker.service
 share/doc/Tracker-3.0/
-share/doc/Tracker-3.0/RedHatDisplay-Black.woff
-share/doc/Tracker-3.0/RedHatDisplay-Black.woff2
-share/doc/Tracker-3.0/RedHatDisplay-BlackItalic.woff
-share/doc/Tracker-3.0/RedHatDisplay-BlackItalic.woff2
-share/doc/Tracker-3.0/RedHatDisplay-Bold.woff
-share/doc/Tracker-3.0/RedHatDisplay-Bold.woff2
-share/doc/Tracker-3.0/RedHatDisplay-BoldItalic.woff
-share/doc/Tracker-3.0/RedHatDisplay-BoldItalic.woff2
-share/doc/Tracker-3.0/RedHatDisplay-Italic.woff
-share/doc/Tracker-3.0/RedHatDisplay-Italic.woff2
-share/doc/Tracker-3.0/RedHatDisplay-Medium.woff
-share/doc/Tracker-3.0/RedHatDisplay-Medium.woff2
-share/doc/Tracker-3.0/RedHatDisplay-MediumItalic.woff
-share/doc/Tracker-3.0/RedHatDisplay-MediumItalic.woff2
-share/doc/Tracker-3.0/RedHatDisplay-Regular.woff
-share/doc/Tracker-3.0/RedHatDisplay-Regular.woff2
-share/doc/Tracker-3.0/RedHatText-Bold.woff
-share/doc/Tracker-3.0/RedHatText-Bold.woff2
-share/doc/Tracker-3.0/RedHatText-BoldItalic.woff
-share/doc/Tracker-3.0/RedHatText-BoldItalic.woff2
-share/doc/Tracker-3.0/RedHatText-Italic.woff
-share/doc/Tracker-3.0/RedHatText-Italic.woff2
-share/doc/Tracker-3.0/RedHatText-Medium.woff
-share/doc/Tracker-3.0/RedHatText-Medium.woff2
-share/doc/Tracker-3.0/RedHatText-MediumItalic.woff
-share/doc/Tracker-3.0/RedHatText-MediumItalic.woff2
-share/doc/Tracker-3.0/RedHatText-Regular.woff
-share/doc/Tracker-3.0/RedHatText-Regular.woff2
-share/doc/Tracker-3.0/SourceCodePro-It.ttf.woff
-share/doc/Tracker-3.0/SourceCodePro-Regular.ttf.woff
-share/doc/Tracker-3.0/SourceCodePro-Semibold.ttf.woff
 share/doc/Tracker-3.0/Tracker-3.0.devhelp2
 share/doc/Tracker-3.0/class.Batch.html
 share/doc/Tracker-3.0/class.Endpoint.html
@@ -167,7 +135,13 @@ share/doc/Tracker-3.0/method.Batch.execute.html
 share/doc/Tracker-3.0/method.Batch.execute_async.html
 share/doc/Tracker-3.0/method.Batch.execute_finish.html
 share/doc/Tracker-3.0/method.Batch.get_connection.html
+share/doc/Tracker-3.0/method.Endpoint.get_allowed_graphs.html
+share/doc/Tracker-3.0/method.Endpoint.get_allowed_services.html
+share/doc/Tracker-3.0/method.Endpoint.get_readonly.html
 share/doc/Tracker-3.0/method.Endpoint.get_sparql_connection.html
+share/doc/Tracker-3.0/method.Endpoint.set_allowed_graphs.html
+share/doc/Tracker-3.0/method.Endpoint.set_allowed_services.html
+share/doc/Tracker-3.0/method.Endpoint.set_readonly.html
 share/doc/Tracker-3.0/method.NamespaceManager.add_prefix.html
 share/doc/Tracker-3.0/method.NamespaceManager.compress_uri.html
 share/doc/Tracker-3.0/method.NamespaceManager.expand_uri.html
@@ -253,6 +227,7 @@ share/doc/Tracker-3.0/method.SparqlCursor.get_connection.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_datetime.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_double.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_integer.html
+share/doc/Tracker-3.0/method.SparqlCursor.get_langstring.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_n_columns.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_string.html
 share/doc/Tracker-3.0/method.SparqlCursor.get_value_type.html
@@ -266,6 +241,7 @@ share/doc/Tracker-3.0/method.SparqlStatement.bind_boolean.html
 share/doc/Tracker-3.0/method.SparqlStatement.bind_datetime.html
 share/doc/Tracker-3.0/method.SparqlStatement.bind_double.html
 share/doc/Tracker-3.0/method.SparqlStatement.bind_int.html
+share/doc/Tracker-3.0/method.SparqlStatement.bind_langstring.html
 share/doc/Tracker-3.0/method.SparqlStatement.bind_string.html
 share/doc/Tracker-3.0/method.SparqlStatement.clear_bindings.html
 share/doc/Tracker-3.0/method.SparqlStatement.execute.html
@@ -291,6 +267,9 @@ share/doc/Tracker-3.0/osinfo-ontology.html
 share/doc/Tracker-3.0/overview.html
 share/doc/Tracker-3.0/performance.html
 share/doc/Tracker-3.0/property.Batch.connection.html
+share/doc/Tracker-3.0/property.Endpoint.allowed-graphs.html
+share/doc/Tracker-3.0/property.Endpoint.allowed-services.html
+share/doc/Tracker-3.0/property.Endpoint.readonly.html
 share/doc/Tracker-3.0/property.Endpoint.sparql-connection.html
 share/doc/Tracker-3.0/property.EndpointDBus.dbus-connection.html
 share/doc/Tracker-3.0/property.EndpointDBus.object-path.html
@@ -307,6 +286,7 @@ share/doc/Tracker-3.0/rdfs-ontology.html
 share/doc/Tracker-3.0/sandboxing.html
 share/doc/Tracker-3.0/search.js
 share/doc/Tracker-3.0/security.html
+share/doc/Tracker-3.0/signal.EndpointDBus.block-call.html
 share/doc/Tracker-3.0/signal.EndpointHttp.block-remote-address.html
 share/doc/Tracker-3.0/signal.Notifier.events.html
 share/doc/Tracker-3.0/slo-ontology.html
@@ -391,25 +371,12 @@ share/locale/zh_CN/LC_MESSAGES/tracker3.mo
 share/locale/zh_HK/LC_MESSAGES/tracker3.mo
 share/locale/zh_TW/LC_MESSAGES/tracker3.mo
 share/tracker3/
-share/tracker3/ontologies/
-share/tracker3/ontologies/nepomuk/
-share/tracker3/ontologies/nepomuk/30-nie.description
-share/tracker3/ontologies/nepomuk/30-nie.ontology
-share/tracker3/ontologies/nepomuk/31-nao.description
-share/tracker3/ontologies/nepomuk/31-nao.ontology
-share/tracker3/ontologies/nepomuk/32-nco.description
-share/tracker3/ontologies/nepomuk/32-nco.ontology
-share/tracker3/ontologies/nepomuk/33-nfo.description
-share/tracker3/ontologies/nepomuk/33-nfo.ontology
-share/tracker3/ontologies/nepomuk/38-nmm.description
-share/tracker3/ontologies/nepomuk/38-nmm.ontology
-share/tracker3/ontologies/nepomuk/41-mfo.description
-share/tracker3/ontologies/nepomuk/41-mfo.ontology
-share/tracker3/ontologies/nepomuk/90-tracker.description
-share/tracker3/ontologies/nepomuk/90-tracker.ontology
-share/tracker3/ontologies/nepomuk/92-slo.description
-share/tracker3/ontologies/nepomuk/92-slo.ontology
-share/tracker3/ontologies/nepomuk/93-libosinfo.description
-share/tracker3/ontologies/nepomuk/93-libosinfo.ontology
+share/tracker3/commands/
+share/tracker3/commands/tracker-endpoint.desktop
+share/tracker3/commands/tracker-export.desktop
+share/tracker3/commands/tracker-help.desktop
+share/tracker3/commands/tracker-import.desktop
+share/tracker3/commands/tracker-sparql.desktop
+share/tracker3/commands/tracker-sql.desktop
 share/vala/vapi/tracker-sparql-3.0.deps
 share/vala/vapi/tracker-sparql-3.0.vapi
