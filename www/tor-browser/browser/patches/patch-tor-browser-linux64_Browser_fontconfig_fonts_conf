@@ -1,4 +1,4 @@
-Set path to bundled fonts.
+https://gitlab.torproject.org/tpo/applications/tor-browser-build/-/issues/41110
 
 Index: tor-browser-linux64/Browser/fontconfig/fonts.conf
 --- tor-browser-linux64/Browser/fontconfig/fonts.conf.orig
@@ -8,7 +8,7 @@ Index: tor-browser-linux64/Browser/fontconfig/fonts.conf
  <!-- Font directory list -->
  
 -	<dir>fonts</dir>
-+	<dir>${TRUEBROWSER_DIR}/browser/fonts</dir>
++	<dir prefix="cwd">fonts</dir>
  
  <!--
    Accept deprecated 'mono' alias, replacing it with 'monospace'
