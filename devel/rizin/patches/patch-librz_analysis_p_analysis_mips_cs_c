@@ -74,7 +74,7 @@ Index: librz/analysis/p/analysis_mips_cs.c
  		}
  	} break;
  	}
-@@ -209,7 +209,7 @@ static int analop_esil(RzAnalysis *a, RzAnalysisOp *op
+@@ -209,7 +209,7 @@ static int analyze_op_esil(RzAnalysis *a, RzAnalysisOp
  
  	if (insn) {
  		// caching operands
@@ -83,7 +83,7 @@ Index: librz/analysis/p/analysis_mips_cs.c
  			*str[i] = 0;
  			ARG(i);
  		}
-@@ -1035,7 +1035,7 @@ static int analop(RzAnalysis *analysis, RzAnalysisOp *
+@@ -1049,7 +1049,7 @@ static int analyze_op(RzAnalysis *analysis, RzAnalysis
  		op->type = RZ_ANALYSIS_OP_TYPE_RJMP;
  		op->delay = 1;
  		// register is $ra, so jmp is a return

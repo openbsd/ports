@@ -1,5 +1,4 @@
 @bin bin/rizin
-@bin bin/rz-agent
 @bin bin/rz-asm
 @bin bin/rz-ax
 @bin bin/rz-bin
@@ -7,20 +6,20 @@
 @bin bin/rz-find
 @bin bin/rz-gg
 @bin bin/rz-hash
-bin/rz-pm
 @bin bin/rz-run
 @bin bin/rz-sign
 @bin bin/rz-test
 include/librz/
 include/librz/rz_agraph.h
 include/librz/rz_analysis.h
-include/librz/rz_arch.h
 include/librz/rz_asm.h
 include/librz/rz_basefind.h
 include/librz/rz_bin.h
 include/librz/rz_bin_dwarf.h
+include/librz/rz_bin_source_line.h
 include/librz/rz_bind.h
 include/librz/rz_bp.h
+include/librz/rz_build_version.h
 include/librz/rz_cmd.h
 include/librz/rz_cmp.h
 include/librz/rz_config.h
@@ -38,6 +37,7 @@ include/librz/rz_endian.h
 include/librz/rz_flag.h
 include/librz/rz_flirt.h
 include/librz/rz_getopt.h
+include/librz/rz_hash.h
 include/librz/rz_heap_glibc.h
 include/librz/rz_heap_jemalloc.h
 include/librz/rz_il/
@@ -45,6 +45,7 @@ include/librz/rz_il.h
 include/librz/rz_il/definitions/
 include/librz/rz_il/definitions/bool.h
 include/librz/rz_il/definitions/definitions.h
+include/librz/rz_il/definitions/float.h
 include/librz/rz_il/definitions/label.h
 include/librz/rz_il/definitions/mem.h
 include/librz/rz_il/definitions/sort.h
@@ -63,12 +64,11 @@ include/librz/rz_lib.h
 include/librz/rz_list.h
 include/librz/rz_magic.h
 include/librz/rz_main.h
-include/librz/rz_msg_digest.h
 include/librz/rz_parse.h
 include/librz/rz_pdb.h
+include/librz/rz_platform.h
 include/librz/rz_project.h
 include/librz/rz_reg.h
-include/librz/rz_regex.h
 include/librz/rz_search.h
 include/librz/rz_sign.h
 include/librz/rz_skiplist.h
@@ -83,6 +83,11 @@ include/librz/rz_types_overflow.h
 include/librz/rz_userconf.h
 include/librz/rz_util/
 include/librz/rz_util.h
+include/librz/rz_util/ht_inc.h
+include/librz/rz_util/ht_pp.h
+include/librz/rz_util/ht_pu.h
+include/librz/rz_util/ht_up.h
+include/librz/rz_util/ht_uu.h
 include/librz/rz_util/rz_alloc.h
 include/librz/rz_util/rz_annotated_code.h
 include/librz/rz_util/rz_ascii_table.h
@@ -92,17 +97,19 @@ include/librz/rz_util/rz_axml.h
 include/librz/rz_util/rz_base64.h
 include/librz/rz_util/rz_base91.h
 include/librz/rz_util/rz_big.h
-include/librz/rz_util/rz_bitmap.h
+include/librz/rz_util/rz_bits.h
 include/librz/rz_util/rz_bitvector.h
 include/librz/rz_util/rz_buf.h
 include/librz/rz_util/rz_debruijn.h
 include/librz/rz_util/rz_event.h
 include/librz/rz_util/rz_file.h
+include/librz/rz_util/rz_float.h
 include/librz/rz_util/rz_graph.h
 include/librz/rz_util/rz_graph_drawable.h
 include/librz/rz_util/rz_hex.h
 include/librz/rz_util/rz_idpool.h
 include/librz/rz_util/rz_intervaltree.h
+include/librz/rz_util/rz_iterator.h
 include/librz/rz_util/rz_itv.h
 include/librz/rz_util/rz_json.h
 include/librz/rz_util/rz_lang_byte_array.h
@@ -115,13 +122,12 @@ include/librz/rz_util/rz_panels.h
 include/librz/rz_util/rz_path.h
 include/librz/rz_util/rz_pj.h
 include/librz/rz_util/rz_pkcs7.h
-include/librz/rz_util/rz_pool.h
 include/librz/rz_util/rz_print.h
 include/librz/rz_util/rz_protobuf.h
 include/librz/rz_util/rz_punycode.h
-include/librz/rz_util/rz_queue.h
 include/librz/rz_util/rz_range.h
 include/librz/rz_util/rz_rbtree.h
+include/librz/rz_util/rz_regex.h
 include/librz/rz_util/rz_serialize.h
 include/librz/rz_util/rz_signal.h
 include/librz/rz_util/rz_spaces.h
@@ -135,33 +141,26 @@ include/librz/rz_util/rz_strpool.h
 include/librz/rz_util/rz_subprocess.h
 include/librz/rz_util/rz_sys.h
 include/librz/rz_util/rz_table.h
+include/librz/rz_util/rz_th_ht.h
 include/librz/rz_util/rz_time.h
 include/librz/rz_util/rz_tree.h
 include/librz/rz_util/rz_uleb128.h
 include/librz/rz_util/rz_utf16.h
 include/librz/rz_util/rz_utf32.h
 include/librz/rz_util/rz_utf8.h
+include/librz/rz_util/rz_version.h
 include/librz/rz_util/rz_x509.h
+include/librz/rz_util/set.h
 include/librz/rz_vector.h
-include/librz/rz_version.h
+include/librz/rz_windows.h
 include/librz/rz_windows_heap.h
 include/librz/sdb/
 include/librz/sdb/buffer.h
 include/librz/sdb/cdb.h
 include/librz/sdb/cdb_make.h
-include/librz/sdb/config.h
-include/librz/sdb/ht_inc.h
-include/librz/sdb/ht_pp.h
-include/librz/sdb/ht_pu.h
-include/librz/sdb/ht_up.h
-include/librz/sdb/ht_uu.h
 include/librz/sdb/ls.h
 include/librz/sdb/sdb.h
-include/librz/sdb/sdb_userconf.h
-include/librz/sdb/sdb_version.h
 include/librz/sdb/sdbht.h
-include/librz/sdb/set.h
-include/librz/sdb/types.h
 include/librz/sflib/
 include/librz/sflib/common/
 include/librz/sflib/common/sfsocketcall.h
@@ -305,7 +304,6 @@ lib/pkgconfig/rz_syscall.pc
 lib/pkgconfig/rz_type.pc
 lib/pkgconfig/rz_util.pc
 @man man/man1/rizin.1
-@man man/man1/rz-agent.1
 @man man/man1/rz-asm.1
 @man man/man1/rz-ax.1
 @man man/man1/rz-bin.1
@@ -313,7 +311,6 @@ lib/pkgconfig/rz_util.pc
 @man man/man1/rz-find.1
 @man man/man1/rz-gg.1
 @man man/man1/rz-hash.1
-@man man/man1/rz-pm.1
 @man man/man1/rz-run.1
 @man man/man1/rz-sign.1
 @man man/man7/rz-esil.7
@@ -354,8 +351,10 @@ share/rizin/cons/focus
 share/rizin/cons/gb
 share/rizin/cons/gentoo
 share/rizin/cons/lima
+share/rizin/cons/mars
 share/rizin/cons/matrix
 share/rizin/cons/monokai
+share/rizin/cons/nord
 share/rizin/cons/ogray
 share/rizin/cons/onedark
 share/rizin/cons/pink
@@ -490,7 +489,9 @@ share/rizin/format/dll/dsound.sdb
 share/rizin/format/dll/gsprop32.sdb
 share/rizin/format/dll/iertutil.sdb
 share/rizin/format/dll/kernel32.sdb
+share/rizin/format/dll/mfc100u.sdb
 share/rizin/format/dll/mfc120.sdb
+share/rizin/format/dll/mfc140u.sdb
 share/rizin/format/dll/mfc30.sdb
 share/rizin/format/dll/mfc40.sdb
 share/rizin/format/dll/mfc42.sdb
@@ -526,7 +527,6 @@ share/rizin/format/elf64
 share/rizin/format/elf_enums
 share/rizin/format/mz
 share/rizin/format/pe32
-share/rizin/format/trx
 share/rizin/format/zip
 share/rizin/fortunes/
 share/rizin/fortunes/fortunes.fun
@@ -640,6 +640,7 @@ share/rizin/types/cc-riscv-64.sdb
 share/rizin/types/cc-sparc-32.sdb
 share/rizin/types/cc-spc700-16.sdb
 share/rizin/types/cc-sysz-64.sdb
+share/rizin/types/cc-tricore-32.sdb
 share/rizin/types/cc-x86-16.sdb
 share/rizin/types/cc-x86-32.sdb
 share/rizin/types/cc-x86-64.sdb
