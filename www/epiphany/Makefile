@@ -1,7 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	45.3
+GNOME_VERSION=	46.0
 
 CATEGORIES=	www
 
@@ -10,8 +10,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += adwaita-1 archive c cairo gcr-4 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmp gobject-2.0 graphene-1.0 gstreamer-1.0
+WANTLIB += adwaita-1 archive c cairo gck-2 gcr-4 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmp gobject-2.0 graphene-1.0 gstreamer-1.0
 WANTLIB += gtk-4 hogweed intl javascriptcoregtk-6.0 json-glib-1.0
 WANTLIB += m nettle pango-1.0 portal portal-gtk4 secret-1 soup-3.0
 WANTLIB += sqlite3 webkitgtk-6.0 xml2
