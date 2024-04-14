@@ -1,6 +1,6 @@
 COMMENT =		deal pysol cards
 
-MODPY_EGG_VERSION =	0.14.3
+MODPY_EGG_VERSION =	0.16.0
 DISTNAME =		pysol_cards-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-cards-${MODPY_EGG_VERSION}
 
@@ -17,6 +17,8 @@ FLAVOR  =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-NO_TEST =		Yes
+RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+
+TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
