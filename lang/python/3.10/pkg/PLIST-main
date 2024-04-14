@@ -1191,15 +1191,6 @@ lib/python3.10/distutils/command/install_scripts.py
 lib/python3.10/distutils/command/register.py
 lib/python3.10/distutils/command/sdist.py
 lib/python3.10/distutils/command/upload.py
-@comment lib/python3.10/distutils/command/wininst-10.0-amd64.exe
-@comment lib/python3.10/distutils/command/wininst-10.0.exe
-@comment lib/python3.10/distutils/command/wininst-14.0-amd64.exe
-@comment lib/python3.10/distutils/command/wininst-14.0.exe
-@comment lib/python3.10/distutils/command/wininst-6.0.exe
-@comment lib/python3.10/distutils/command/wininst-7.1.exe
-@comment lib/python3.10/distutils/command/wininst-8.0.exe
-@comment lib/python3.10/distutils/command/wininst-9.0-amd64.exe
-@comment lib/python3.10/distutils/command/wininst-9.0.exe
 lib/python3.10/distutils/config.py
 lib/python3.10/distutils/core.py
 lib/python3.10/distutils/cygwinccompiler.py
@@ -2560,20 +2551,6 @@ lib/python3.10/shutil.py
 lib/python3.10/signal.py
 lib/python3.10/site-packages/
 lib/python3.10/site-packages/README.txt
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/t32.exe
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/t64-arm.exe
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/t64.exe
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/w32.exe
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/w64-arm.exe
-@comment lib/python3.10/site-packages/pip/_vendor/distlib/w64.exe
-@comment lib/python3.10/site-packages/setuptools/cli-32.exe
-@comment lib/python3.10/site-packages/setuptools/cli-64.exe
-@comment lib/python3.10/site-packages/setuptools/cli-arm64.exe
-@comment lib/python3.10/site-packages/setuptools/cli.exe
-@comment lib/python3.10/site-packages/setuptools/gui-32.exe
-@comment lib/python3.10/site-packages/setuptools/gui-64.exe
-@comment lib/python3.10/site-packages/setuptools/gui-arm64.exe
-@comment lib/python3.10/site-packages/setuptools/gui.exe
 lib/python3.10/site.py
 lib/python3.10/smtpd.py
 lib/python3.10/smtplib.py
