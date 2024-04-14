@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.214 2023/05/14 09:18:05 espie Exp $
+# $OpenBSD: update-plist,v 1.215 2024/04/14 17:24:37 phessler Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1392,7 +1392,6 @@ $self->write_new_files;
 
 # and now, we figure out where to move the new files
 my @towrite = ();
-my $cantmove = 0;
 
 my $exitcode = 0;
 
@@ -1410,24 +1409,14 @@ for my $p (@{$self->{lists}}) {
 			} elsif (compare($k, "$k$new") == 0) {
 				unlink("$k$new") unless $self->{state}->not;
 			} else {
-				print "$k changed";
+				print "$k changed\n";
 				push(@towrite, $k);
-				if (-f "$k$orig") {
-					print " but $k$orig exists\n";
-					$cantmove = 1;
-				} else {
-					print "\n";
-				}
 			}
 		} else {
 			print "$k is new\n";
 			push(@towrite, $k);
 		}
 	}
-}
-
-if ($cantmove) {
-	exit(2);
 }
 
 if ($self->{state}->not) {
