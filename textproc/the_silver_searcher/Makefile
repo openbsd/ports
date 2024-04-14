@@ -2,9 +2,12 @@ COMMENT =	code searching tool, with a focus on speed (ag)
 
 DISTNAME =	the_silver_searcher-2.2.0
 CATEGORIES =	textproc
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://geoff.greer.fm/ag/
+
+MAINTAINER =	Jeremie Courreges-Anglas <jca@wxcvbn.org>
+
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
