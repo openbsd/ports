@@ -16,6 +16,7 @@
 
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <endian.h>
 #include <err.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -43,12 +44,13 @@ main(int argc, char *argv[])
 
 	end = (char *)start + st.st_size;
 	for (word = start; (void *)word < end; word++) {
-		if (*word == 0x12345678 && (void *)(word + 10) < end) {
-			data = *(word + 9);
+		if (le32toh(*word) == 0x12345678 &&
+		    (void *)(word + 10) < end) {
+			data = le32toh(*(word + 9));
 			if ((data & 0xffffff) == 1500000) {
 				data &= 0xff000000;
 				data |= 115200;
-				*(word + 9) = data;
+				*(word + 9) = htole32(data);
 				close(fd);
 				return 0;
 			}

@@ -43,12 +43,13 @@ main(int argc, char *argv[])
 
 	end = (char *)start + st.st_size;
 	for (word = start; (void *)word < end; word++) {
-		if (*word == 0x12345678 && (void *)(word + 14) < end) {
-			data = *(word + 13);
+		if (le32toh(*word) == 0x12345678 &&
+		    (void *)(word + 14) < end) {
+			data = le32toh(*(word + 13));
 			if ((data & 0xffffff) == 1500000) {
 				data &= 0xff000000;
 				data |= 115200;
-				*(word + 13) = data;
+				*(word + 13) = htole32(data);
 				close(fd);
 				return 0;
 			}
