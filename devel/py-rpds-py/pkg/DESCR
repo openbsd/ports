@@ -1,0 +1,4 @@
+Python bindngs for Rust's persistent data structures (rpds).
+
+This was initially written to replace pyrsistent from the referencing
+library.
