@@ -3,11 +3,13 @@
 bin/sqlformat
 lib/python${MODPY_VERSION}/site-packages/sqlparse/
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/sqlparse-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sqlparse/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sqlparse/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlparse/${MODPY_PYCACHE}/
