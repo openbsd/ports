@@ -4,8 +4,7 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 
 COMMENT =	MSX home computer emulator
 
-V =		17.0
-REVISION =	0
+V =		19.1
 DISTNAME =	openmsx-$V
 
 CATEGORIES =	emulators
