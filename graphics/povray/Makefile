@@ -1,10 +1,10 @@
 COMMENT=	3D image rendering package
 
 DISTNAME=	povray-3.6.1
-REVISION =	11
+REVISION =	12
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.povray.org/
+HOMEPAGE=	https://www.povray.org/
 
 PERMIT_PACKAGE=	Yes
 
@@ -13,7 +13,7 @@ WANTLIB += ICE SM X11 Xpm c jpeg m ${COMPILER_LIBCXX} tiff z
 COMPILER =		base-clang ports-gcc base-gcc
 CXXFLAGS_base-clang =	-std=c++14
 
-SITES=	http://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
+SITES=	https://www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/
 EXTRACT_SUFX=		.tar.bz2
 
 # We replace the included ancient copy of libpng with a later release
