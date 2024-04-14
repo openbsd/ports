@@ -1,5 +1,4 @@
 COMMENT=	integrate Sphinx documentation into your Web application
-VERSION=	1.2.4
-REVISION=	2
+VERSION=	1.2.7
 
 .include <bsd.port.mk>

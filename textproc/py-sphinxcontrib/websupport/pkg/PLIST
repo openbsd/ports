@@ -12,8 +12,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/builder.py
@@ -60,14 +58,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/storage/sqlalc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/templates/searchresults.html
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/utils.py
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/version.py
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/writer.py
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/top_level.txt
