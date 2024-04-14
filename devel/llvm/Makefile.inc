@@ -72,7 +72,7 @@ CONFIGURE_ARGS +=	\
 	-DLLVM_ENABLE_RTTI=ON \
 	-DLLVM_ENABLE_Z3_SOLVER=OFF \
 	-DLLVM_ENABLE_ZSTD=OFF \
-	-DLLVM_INCLUDE_TESTS=OFF \
+	-DLLVM_INCLUDE_TESTS=ON \
 	-DLLVM_INCLUDE_GO_TESTS=OFF \
 	-DLLVM_INCLUDE_EXAMPLES=OFF \
 	-DLLVM_INCLUDE_BENCHMARKS=OFF \
@@ -192,6 +192,10 @@ post-install:
 			if test -e /usr/include/$${h}; then rm $${h}; fi; \
 		done
 
+do-test:
+	cd ${WRKBUILD} && env -i ${MAKE_ENV} HOME=${WRKBUILD}/test LD_LIBRARY_PATH=${WRKBUILD}/lib \
+		ninja -j ${MAKE_JOBS} check-llvm-unit
+	exit 1
 
 diff-to-base: ${_PATCH_COOKIE}
 .for _subdir in clang lld lldb llvm

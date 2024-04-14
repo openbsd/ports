@@ -3,7 +3,15 @@
 Index: llvm/tools/llvm-shlib/CMakeLists.txt
 --- llvm/tools/llvm-shlib/CMakeLists.txt.orig
 +++ llvm/tools/llvm-shlib/CMakeLists.txt
-@@ -55,7 +55,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
+@@ -39,6 +39,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
+     add_llvm_library(LLVM SHARED DISABLE_LLVM_LINK_LLVM_DYLIB OUTPUT_NAME LLVM ${INSTALL_WITH_TOOLCHAIN} ${SOURCES})
+     # Add symlink for backwards compatibility with old library name
+     llvm_install_library_symlink(LLVM-${LLVM_VERSION_MAJOR}${LLVM_VERSION_SUFFIX} $<TARGET_FILE_NAME:LLVM> SHARED FULL_DEST COMPONENT LLVM)
++    llvm_install_library_symlink(LLVM${LLVM_VERSION_SUFFIX} $<TARGET_FILE_NAME:LLVM> SHARED FULL_DEST COMPONENT LLVM)
+   endif()
+ 
+   list(REMOVE_DUPLICATES LIB_NAMES)
+@@ -55,7 +56,7 @@ if(LLVM_BUILD_LLVM_DYLIB)
        # Solaris ld does not accept global: *; so there is no way to version *all* global symbols
        set(LIB_NAMES -Wl,--version-script,${LLVM_LIBRARY_DIR}/tools/llvm-shlib/simple_version_script.map ${LIB_NAMES})
      endif()
