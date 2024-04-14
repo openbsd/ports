@@ -14,6 +14,7 @@ share/help/
 share/help/C/
 share/help/C/ghex/
 share/help/C/ghex/advanced-clipboard.page
+share/help/C/ghex/advanced-marks.page
 share/help/C/ghex/basics-create-new-file.page
 share/help/C/ghex/basics-edit-file.page
 share/help/C/ghex/basics-find-replace.page
@@ -28,6 +29,7 @@ share/help/C/ghex/tools-converter.page
 share/help/cs/
 share/help/cs/ghex/
 share/help/cs/ghex/advanced-clipboard.page
+share/help/cs/ghex/advanced-marks.page
 share/help/cs/ghex/basics-create-new-file.page
 share/help/cs/ghex/basics-edit-file.page
 share/help/cs/ghex/basics-find-replace.page
@@ -42,6 +44,7 @@ share/help/cs/ghex/tools-converter.page
 share/help/de/
 share/help/de/ghex/
 share/help/de/ghex/advanced-clipboard.page
+share/help/de/ghex/advanced-marks.page
 share/help/de/ghex/basics-create-new-file.page
 share/help/de/ghex/basics-edit-file.page
 share/help/de/ghex/basics-find-replace.page
@@ -56,6 +59,7 @@ share/help/de/ghex/tools-converter.page
 share/help/el/
 share/help/el/ghex/
 share/help/el/ghex/advanced-clipboard.page
+share/help/el/ghex/advanced-marks.page
 share/help/el/ghex/basics-create-new-file.page
 share/help/el/ghex/basics-edit-file.page
 share/help/el/ghex/basics-find-replace.page
@@ -70,6 +74,7 @@ share/help/el/ghex/tools-converter.page
 share/help/es/
 share/help/es/ghex/
 share/help/es/ghex/advanced-clipboard.page
+share/help/es/ghex/advanced-marks.page
 share/help/es/ghex/basics-create-new-file.page
 share/help/es/ghex/basics-edit-file.page
 share/help/es/ghex/basics-find-replace.page
@@ -84,6 +89,7 @@ share/help/es/ghex/tools-converter.page
 share/help/fr/
 share/help/fr/ghex/
 share/help/fr/ghex/advanced-clipboard.page
+share/help/fr/ghex/advanced-marks.page
 share/help/fr/ghex/basics-create-new-file.page
 share/help/fr/ghex/basics-edit-file.page
 share/help/fr/ghex/basics-find-replace.page
@@ -98,6 +104,7 @@ share/help/fr/ghex/tools-converter.page
 share/help/id/
 share/help/id/ghex/
 share/help/id/ghex/advanced-clipboard.page
+share/help/id/ghex/advanced-marks.page
 share/help/id/ghex/basics-create-new-file.page
 share/help/id/ghex/basics-edit-file.page
 share/help/id/ghex/basics-find-replace.page
@@ -112,6 +119,7 @@ share/help/id/ghex/tools-converter.page
 share/help/it/
 share/help/it/ghex/
 share/help/it/ghex/advanced-clipboard.page
+share/help/it/ghex/advanced-marks.page
 share/help/it/ghex/basics-create-new-file.page
 share/help/it/ghex/basics-edit-file.page
 share/help/it/ghex/basics-find-replace.page
@@ -126,6 +134,7 @@ share/help/it/ghex/tools-converter.page
 share/help/ja/
 share/help/ja/ghex/
 share/help/ja/ghex/advanced-clipboard.page
+share/help/ja/ghex/advanced-marks.page
 share/help/ja/ghex/basics-create-new-file.page
 share/help/ja/ghex/basics-edit-file.page
 share/help/ja/ghex/basics-find-replace.page
@@ -140,6 +149,7 @@ share/help/ja/ghex/tools-converter.page
 share/help/ko/
 share/help/ko/ghex/
 share/help/ko/ghex/advanced-clipboard.page
+share/help/ko/ghex/advanced-marks.page
 share/help/ko/ghex/basics-create-new-file.page
 share/help/ko/ghex/basics-edit-file.page
 share/help/ko/ghex/basics-find-replace.page
@@ -154,6 +164,7 @@ share/help/ko/ghex/tools-converter.page
 share/help/oc/
 share/help/oc/ghex/
 share/help/oc/ghex/advanced-clipboard.page
+share/help/oc/ghex/advanced-marks.page
 share/help/oc/ghex/basics-create-new-file.page
 share/help/oc/ghex/basics-edit-file.page
 share/help/oc/ghex/basics-find-replace.page
@@ -168,6 +179,7 @@ share/help/oc/ghex/tools-converter.page
 share/help/pt_BR/
 share/help/pt_BR/ghex/
 share/help/pt_BR/ghex/advanced-clipboard.page
+share/help/pt_BR/ghex/advanced-marks.page
 share/help/pt_BR/ghex/basics-create-new-file.page
 share/help/pt_BR/ghex/basics-edit-file.page
 share/help/pt_BR/ghex/basics-find-replace.page
@@ -182,6 +194,7 @@ share/help/pt_BR/ghex/tools-converter.page
 share/help/ru/
 share/help/ru/ghex/
 share/help/ru/ghex/advanced-clipboard.page
+share/help/ru/ghex/advanced-marks.page
 share/help/ru/ghex/basics-create-new-file.page
 share/help/ru/ghex/basics-edit-file.page
 share/help/ru/ghex/basics-find-replace.page
@@ -196,6 +209,7 @@ share/help/ru/ghex/tools-converter.page
 share/help/sl/
 share/help/sl/ghex/
 share/help/sl/ghex/advanced-clipboard.page
+share/help/sl/ghex/advanced-marks.page
 share/help/sl/ghex/basics-create-new-file.page
 share/help/sl/ghex/basics-edit-file.page
 share/help/sl/ghex/basics-find-replace.page
@@ -210,6 +224,7 @@ share/help/sl/ghex/tools-converter.page
 share/help/sv/
 share/help/sv/ghex/
 share/help/sv/ghex/advanced-clipboard.page
+share/help/sv/ghex/advanced-marks.page
 share/help/sv/ghex/basics-create-new-file.page
 share/help/sv/ghex/basics-edit-file.page
 share/help/sv/ghex/basics-find-replace.page
@@ -224,6 +239,7 @@ share/help/sv/ghex/tools-converter.page
 share/help/th/
 share/help/th/ghex/
 share/help/th/ghex/advanced-clipboard.page
+share/help/th/ghex/advanced-marks.page
 share/help/th/ghex/basics-create-new-file.page
 share/help/th/ghex/basics-edit-file.page
 share/help/th/ghex/basics-find-replace.page
@@ -238,6 +254,7 @@ share/help/th/ghex/tools-converter.page
 share/help/uk/
 share/help/uk/ghex/
 share/help/uk/ghex/advanced-clipboard.page
+share/help/uk/ghex/advanced-marks.page
 share/help/uk/ghex/basics-create-new-file.page
 share/help/uk/ghex/basics-edit-file.page
 share/help/uk/ghex/basics-find-replace.page
@@ -252,6 +269,7 @@ share/help/uk/ghex/tools-converter.page
 share/help/zh_CN/
 share/help/zh_CN/ghex/
 share/help/zh_CN/ghex/advanced-clipboard.page
+share/help/zh_CN/ghex/advanced-marks.page
 share/help/zh_CN/ghex/basics-create-new-file.page
 share/help/zh_CN/ghex/basics-edit-file.page
 share/help/zh_CN/ghex/basics-find-replace.page
@@ -266,6 +284,7 @@ share/help/zh_CN/ghex/tools-converter.page
 share/help/zh_TW/
 share/help/zh_TW/ghex/
 share/help/zh_TW/ghex/advanced-clipboard.page
+share/help/zh_TW/ghex/advanced-marks.page
 share/help/zh_TW/ghex/basics-create-new-file.page
 share/help/zh_TW/ghex/basics-edit-file.page
 share/help/zh_TW/ghex/basics-find-replace.page
@@ -310,6 +329,7 @@ share/locale/id/LC_MESSAGES/ghex.mo
 share/locale/ie/LC_MESSAGES/ghex.mo
 share/locale/it/LC_MESSAGES/ghex.mo
 share/locale/ja/LC_MESSAGES/ghex.mo
+share/locale/ka/LC_MESSAGES/ghex.mo
 share/locale/ko/LC_MESSAGES/ghex.mo
 share/locale/lt/LC_MESSAGES/ghex.mo
 share/locale/lv/LC_MESSAGES/ghex.mo
