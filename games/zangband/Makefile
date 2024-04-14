@@ -2,15 +2,13 @@ COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2
 DISTNAME=	zangband-${VERSION}
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
 SITES=		${SITE_SOURCEFORGE:=zangband/}
 
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c curses
-
-HOMEPAGE=		http://www.zangband.org/
 
 USE_GMAKE=		Yes
 MAKE_ENV=		CC="${CC}" CFLAGS="${CFLAGS}"
