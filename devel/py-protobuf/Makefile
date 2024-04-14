@@ -1,18 +1,16 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
-PYMAJOR=		4
-PROTOBUF_VERSION=	25.2
+PYMAJOR=		5
+PROTOBUF_VERSION=	26.1
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
 TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
 
-DISTNAME=		protobuf-${PROTOBUF_VERSION}
+DISTNAME=		protobuf-${MODPY_EGG_VERSION}
 PKGNAME=		py-protobuf-${MODPY_EGG_VERSION}
 
 FIX_EXTRACT_PERMISSIONS= Yes
-
-WRKDIST=		${WRKDIR}/protobuf-${PROTOBUF_VERSION}/python
 
 CATEGORIES=		devel
 
@@ -21,9 +19,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-HOMEPAGE=		https://github.com/protocolbuffers/protobuf/
-SITES=			${HOMEPAGE}/releases/download/${TAG}/
-
+MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
 BUILD_DEPENDS=		devel/protobuf
