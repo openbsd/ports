@@ -1,0 +1,25 @@
+../gnome-system-monitor-46.0/src/proctable.cpp:106:25: error: type 'gdouble' (aka 'double') cannot be narrowed to 'int' in initializer list [-Wc++11-narrowing]
+  GdkRectangle rect = { x, y, 1, 1 };
+                        ^
+../gnome-system-monitor-46.0/src/proctable.cpp:106:25: note: insert an explicit cast to silence this issue
+  GdkRectangle rect = { x, y, 1, 1 };
+                        ^
+                        static_cast<int>( )
+../gnome-system-monitor-46.0/src/proctable.cpp:106:28: error: type 'gdouble' (aka 'double') cannot be narrowed to 'int' in initializer list [-Wc++11-narrowing]
+  GdkRectangle rect = { x, y, 1, 1 };
+                           ^
+../gnome-system-monitor-46.0/src/proctable.cpp:106:28: note: insert an explicit cast to silence this issue
+  GdkRectangle rect = { x, y, 1, 1 };
+                           ^
+Index: src/proctable.cpp
+--- src/proctable.cpp.orig
++++ src/proctable.cpp
+@@ -103,7 +103,7 @@ cb_tree_button_pressed (GtkGestureClick*,
+     gtk_tree_selection_select_path (selection, path);
+   gtk_tree_path_free (path);
+ 
+-  GdkRectangle rect = { x, y, 1, 1 };
++  GdkRectangle rect = { (int) x, (int) y, 1, 1 };
+ 
+   gtk_popover_set_pointing_to (GTK_POPOVER (app->proc_popover_menu), &rect);
+   gtk_popover_popup (GTK_POPOVER (app->proc_popover_menu));

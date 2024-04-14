@@ -4,7 +4,7 @@ libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-renice
 @bin libexec/gnome-system-monitor/gsm-taskset
 share/applications/gnome-system-monitor-kde.desktop
-share/applications/gnome-system-monitor.desktop
+share/applications/org.gnome.SystemMonitor.desktop
 share/glib-2.0/schemas/org.gnome.gnome-system-monitor.enums.xml
 share/glib-2.0/schemas/org.gnome.gnome-system-monitor.gschema.xml
 share/gnome-system-monitor/
@@ -382,6 +382,37 @@ share/help/id/gnome-system-monitor/process-status.page
 share/help/id/gnome-system-monitor/process-update-speed.page
 share/help/id/gnome-system-monitor/solaris-mode.page
 share/help/id/gnome-system-monitor/units.page
+share/help/it/
+share/help/it/gnome-system-monitor/
+share/help/it/gnome-system-monitor/commandline.page
+share/help/it/gnome-system-monitor/cpu-check.page
+share/help/it/gnome-system-monitor/cpu-mem-normal.page
+share/help/it/gnome-system-monitor/cpu-multicore.page
+share/help/it/gnome-system-monitor/figures/
+share/help/it/gnome-system-monitor/figures/org.gnome.SystemMonitor.svg
+share/help/it/gnome-system-monitor/fs-device.page
+share/help/it/gnome-system-monitor/fs-diskusage.page
+share/help/it/gnome-system-monitor/fs-info.page
+share/help/it/gnome-system-monitor/fs-showall.page
+share/help/it/gnome-system-monitor/index.page
+share/help/it/gnome-system-monitor/legal.xml
+share/help/it/gnome-system-monitor/mem-check.page
+share/help/it/gnome-system-monitor/mem-swap.page
+share/help/it/gnome-system-monitor/memory-map-use.page
+share/help/it/gnome-system-monitor/memory-map-what.page
+share/help/it/gnome-system-monitor/net-bits.page
+share/help/it/gnome-system-monitor/process-explain.page
+share/help/it/gnome-system-monitor/process-files.page
+share/help/it/gnome-system-monitor/process-identify-file.page
+share/help/it/gnome-system-monitor/process-identify-hog.page
+share/help/it/gnome-system-monitor/process-kill.page
+share/help/it/gnome-system-monitor/process-many.page
+share/help/it/gnome-system-monitor/process-priority-change.page
+share/help/it/gnome-system-monitor/process-priority-what.page
+share/help/it/gnome-system-monitor/process-status.page
+share/help/it/gnome-system-monitor/process-update-speed.page
+share/help/it/gnome-system-monitor/solaris-mode.page
+share/help/it/gnome-system-monitor/units.page
 share/help/ko/
 share/help/ko/gnome-system-monitor/
 share/help/ko/gnome-system-monitor/commandline.page
@@ -794,7 +825,7 @@ share/locale/vi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
-share/metainfo/gnome-system-monitor.appdata.xml
+share/metainfo/org.gnome.SystemMonitor.appdata.xml
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @tag update-desktop-database
 @tag glib-compile-schemas

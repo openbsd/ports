@@ -1,17 +1,17 @@
-COMMENT=		sytem monitor for GNOME
+COMMENT=		view current processes and monitor system state
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		45.0.2
+GNOME_VERSION=		46.0
 
 CATEGORIES=		sysutils
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 gdkmm-3.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 handy-1 intl m pango-1.0 pangocairo-1.0
-WANTLIB += rsvg-2 sigc-2.0
+WANTLIB += ${COMPILER_LIBCXX} adwaita-1 c cairo gdk_pixbuf-2.0
+WANTLIB += gio-2.0 giomm-2.68 glib-2.0 glibmm-2.68 gmodule-2.0
+WANTLIB += gobject-2.0 graphene-1.0 gtk-4 gtkmm-4.0 gtop-2.0 intl
+WANTLIB += m pango-1.0 pangocairo-1.0 rsvg-2 sigc-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -21,9 +21,9 @@ MODULES=		devel/dconf \
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		devel/libgtop2 \
+			x11/gnome/libadwaita \
 			x11/gnome/librsvg \
-			x11/gtk3mm \
-			x11/libhandy
+			x11/gtkmm40
 
 # share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 BUILD_DEPENDS +=	sysutils/polkit
