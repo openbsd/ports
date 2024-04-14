@@ -1,9 +1,8 @@
 COMMENT =		solitaire card games collection
 
-MODPY_EGG_VERSION =	2.21.0
+MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			${SITE_SOURCEFORGE:=pysolfc/}
 EXTRACT_SUFX =		.tar.xz
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			PySolFC-Cardsets-2.2.tar.bz2
+			PySolFC-Cardsets-3.0.tar.bz2
 
 MODULES =		lang/python \
 			x11/gnome
@@ -41,6 +40,6 @@ NO_TEST =		Yes
 
 post-install:
 	mv ${PREFIX}/bin/pysol{.py,}
-	mv ${WRKDIR}/PySolFC-Cardsets-2.2/* ${PREFIX}/share/PySolFC/
+	mv ${WRKDIR}/PySolFC-Cardsets-3.0/* ${PREFIX}/share/PySolFC/
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ Index: pysollib/game/__init__.py
  
  import six
  from six import BytesIO
-@@ -3343,7 +3343,7 @@ class Game(object):
+@@ -3354,7 +3354,7 @@ class Game(object):
          game.random = construct_random(initial_seed)
          state = pload()
          if (game.random is not None and
