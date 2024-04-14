@@ -1,16 +1,11 @@
 COMMENT =	RE platform powered by rizin
 
-V =		2.1.0
-GH_ACCOUNT =	rizinorg
-GH_PROJECT =	cutter
-GH_TAGNAME =	v${V}
-REVISION =	0
+V =		2.3.4
+PKGNAME =	cutter-${V}
+DISTNAME =	Cutter-v${V}-src
+WRKDIST =	${WRKDIR}/Cutter-v${V}
 
-# Requires the translations submodule. For the next release there should be a
-# proper vendored tarball and this step should not be needed.
-SITES.t =		https://github.com/rizinorg/cutter-translations/archive/
-TRANSLATIONS_COMMIT =	97429865
-DISTFILES.t = 		cutter-translations-{}${TRANSLATIONS_COMMIT}.tar.gz
+SITES =		https://github.com/rizinorg/cutter/releases/download/v${V}/
 
 CATEGORIES =	devel
 
@@ -45,10 +40,6 @@ CONFIGURE_ARGS =-DCUTTER_ENABLE_GRAPHVIZ=ON \
 		-DCUTTER_USE_BUNDLED_RIZIN=OFF
 
 NO_TEST =	Yes
-
-post-extract:
-	mv ${WRKDIR}/cutter-translations-${TRANSLATIONS_COMMIT}*/* \
-		${WRKSRC}/src/translations
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/cutter ${PREFIX}/bin/cutter
