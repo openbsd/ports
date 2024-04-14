@@ -1,6 +1,6 @@
 COMMENT=	personal accounting application
 
-DISTNAME=	grisbi-3.0.1
+DISTNAME=	grisbi-3.0.3
 
 EXTRACT_SUFX=	.tar.bz2
 SITES=		${SITE_SOURCEFORGE:=grisbi/}
@@ -27,8 +27,7 @@ WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES =	textproc/intltool \
-		devel/dconf
+MODULES =	devel/dconf
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+3 \
