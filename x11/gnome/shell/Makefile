@@ -2,10 +2,10 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
-# !!! check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
-# major upgrade
 GNOME_PROJECT=		gnome-shell
-# sync with meta/gnome "V" variable
+# check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
+# major upgrade;
+# !!! sync with meta/gnome "V" variable
 GNOME_VERSION=		45.5
 
 # GPLv2+
