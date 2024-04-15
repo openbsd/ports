@@ -52,7 +52,8 @@ MODULES =	x11/qt6 \
 CONFIGURE_STYLE = cmake
 
 BUILD_DEPENDS =	devel/clang-tools-extra \
-		lang/clazy
+		lang/clazy \
+		x11/qt6/qtquick3d
 
 RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/desktop-file-utils \
