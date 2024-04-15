@@ -1,7 +1,6 @@
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
-REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -1,0 +1,25 @@
+Index: typing-break/Makefile.in
+--- typing-break/Makefile.in.orig
++++ typing-break/Makefile.in
+@@ -233,8 +233,6 @@ ACLOCAL = @ACLOCAL@
+ ACLOCAL_AMFLAGS = @ACLOCAL_AMFLAGS@
+ AMTAR = @AMTAR@
+ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
+-APPINDICATOR_CFLAGS = @APPINDICATOR_CFLAGS@
+-APPINDICATOR_LIBS = @APPINDICATOR_LIBS@
+ AR = @AR@
+ AT_CAPPLET_CFLAGS = @AT_CAPPLET_CFLAGS@
+ AT_CAPPLET_LIBS = @AT_CAPPLET_LIBS@
+@@ -469,10 +467,10 @@ mate_typing_monitor_CPPFLAGS = \
+ 	-DIMAGEDIR=\"$(pkgdatadir)/pixmaps\"		\
+ 	$(AM_CPPFLAGS)
+ 
+-mate_typing_monitor_CFLAGS = @TYPING_CFLAGS@ @APPINDICATOR_CFLAGS@ \
++mate_typing_monitor_CFLAGS = @TYPING_CFLAGS@ \
+ 	@MATE_DESKTOP_CFLAGS@ $(WARN_CFLAGS) $(AM_CFLAGS) \
+ 	$(am__append_1)
+-mate_typing_monitor_LDADD = @TYPING_LIBS@ @APPINDICATOR_LIBS@ \
++mate_typing_monitor_LDADD = @TYPING_LIBS@ \
+ 	@MATE_DESKTOP_LIBS@ @SCREENSAVER_LIBS@ $(am__append_2)
+ imagedir = $(pkgdatadir)/pixmaps
+ dist_image_DATA = bar.png bar-red.png bar-green.png bar-disabled.png ocean-stripes.png

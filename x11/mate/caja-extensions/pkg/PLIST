@@ -22,6 +22,9 @@ lib/caja-sendto/plugins/
 @comment lib/caja-sendto/plugins/libnstupnp.a
 @comment lib/caja-sendto/plugins/libnstupnp.la
 lib/caja/extensions-2.0/
+@static-lib lib/caja/extensions-2.0/libcaja-av.a
+lib/caja/extensions-2.0/libcaja-av.la
+@so lib/caja/extensions-2.0/libcaja-av.so
 @comment lib/caja/extensions-2.0/libcaja-gksu.a
 @comment lib/caja/extensions-2.0/libcaja-gksu.la
 @so lib/caja/extensions-2.0/libcaja-gksu.so
@@ -48,6 +51,7 @@ lib/pkgconfig/caja-sendto.pc
 share/caja-extensions/
 share/caja-extensions/share-dialog.ui
 share/caja/extensions/
+share/caja/extensions/libcaja-av.caja-extension
 share/caja/extensions/libcaja-gksu.caja-extension
 share/caja/extensions/libcaja-image-converter.caja-extension
 share/caja/extensions/libcaja-open-terminal.caja-extension
@@ -97,16 +101,41 @@ share/locale/el/LC_MESSAGES/caja-extensions.mo
 share/locale/en_AU/LC_MESSAGES/caja-extensions.mo
 share/locale/en_CA/LC_MESSAGES/caja-extensions.mo
 share/locale/en_GB/LC_MESSAGES/caja-extensions.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
 share/locale/en_US/LC_MESSAGES/caja-extensions.mo
 share/locale/eo/LC_MESSAGES/caja-extensions.mo
 share/locale/es/LC_MESSAGES/caja-extensions.mo
 share/locale/es_AR/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CL/LC_MESSAGES/caja-extensions.mo
 share/locale/es_CO/LC_MESSAGES/caja-extensions.mo
+share/locale/es_CR/
+share/locale/es_CR/LC_MESSAGES/
+share/locale/es_CR/LC_MESSAGES/caja-extensions.mo
+share/locale/es_DO/
+share/locale/es_DO/LC_MESSAGES/
+share/locale/es_DO/LC_MESSAGES/caja-extensions.mo
+share/locale/es_EC/
+share/locale/es_EC/LC_MESSAGES/
+share/locale/es_EC/LC_MESSAGES/caja-extensions.mo
 share/locale/es_ES/LC_MESSAGES/caja-extensions.mo
 share/locale/es_MX/LC_MESSAGES/caja-extensions.mo
+share/locale/es_NI/
+share/locale/es_NI/LC_MESSAGES/
+share/locale/es_NI/LC_MESSAGES/caja-extensions.mo
+share/locale/es_PA/
+share/locale/es_PA/LC_MESSAGES/
+share/locale/es_PA/LC_MESSAGES/caja-extensions.mo
+share/locale/es_PE/
+share/locale/es_PE/LC_MESSAGES/
+share/locale/es_PE/LC_MESSAGES/caja-extensions.mo
+share/locale/es_SV/
+share/locale/es_SV/LC_MESSAGES/
+share/locale/es_SV/LC_MESSAGES/caja-extensions.mo
+share/locale/es_UY/
+share/locale/es_UY/LC_MESSAGES/
+share/locale/es_UY/LC_MESSAGES/caja-extensions.mo
+share/locale/es_VE/
+share/locale/es_VE/LC_MESSAGES/
+share/locale/es_VE/LC_MESSAGES/caja-extensions.mo
 share/locale/et/LC_MESSAGES/caja-extensions.mo
 share/locale/eu/LC_MESSAGES/caja-extensions.mo
 share/locale/fa/LC_MESSAGES/caja-extensions.mo
@@ -125,12 +154,14 @@ share/locale/hi/LC_MESSAGES/caja-extensions.mo
 share/locale/hr/LC_MESSAGES/caja-extensions.mo
 share/locale/hu/LC_MESSAGES/caja-extensions.mo
 share/locale/hy/LC_MESSAGES/caja-extensions.mo
+share/locale/ia/LC_MESSAGES/caja-extensions.mo
 share/locale/id/LC_MESSAGES/caja-extensions.mo
 share/locale/ie/LC_MESSAGES/caja-extensions.mo
 share/locale/ig/LC_MESSAGES/caja-extensions.mo
 share/locale/is/LC_MESSAGES/caja-extensions.mo
 share/locale/it/LC_MESSAGES/caja-extensions.mo
 share/locale/ja/LC_MESSAGES/caja-extensions.mo
+share/locale/jv/LC_MESSAGES/caja-extensions.mo
 share/locale/ka/LC_MESSAGES/caja-extensions.mo
 share/locale/kab/LC_MESSAGES/caja-extensions.mo
 share/locale/kk/LC_MESSAGES/caja-extensions.mo
@@ -149,6 +180,9 @@ share/locale/ml/LC_MESSAGES/caja-extensions.mo
 share/locale/mn/LC_MESSAGES/caja-extensions.mo
 share/locale/mr/LC_MESSAGES/caja-extensions.mo
 share/locale/ms/LC_MESSAGES/caja-extensions.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/caja-extensions.mo
 share/locale/nb/LC_MESSAGES/caja-extensions.mo
 share/locale/nds/LC_MESSAGES/caja-extensions.mo
 share/locale/ne/LC_MESSAGES/caja-extensions.mo

@@ -1,6 +1,5 @@
 include/mate-menus/
 include/mate-menus/matemenu-tree.h
-lib/girepository-1.0/
 lib/girepository-1.0/MateMenu-2.0.typelib
 @static-lib lib/libmate-menu.a
 lib/libmate-menu.la
@@ -17,7 +16,6 @@ share/examples/mate-menus/xdg/menus/mate-preferences-categories.menu
 @sample ${SYSCONFDIR}/xdg/menus/mate-preferences-categories.menu
 share/examples/mate-menus/xdg/menus/mate-settings.menu
 @sample ${SYSCONFDIR}/xdg/menus/mate-settings.menu
-share/gir-1.0/
 share/gir-1.0/MateMenu-2.0.gir
 share/locale/af/LC_MESSAGES/mate-menus.mo
 share/locale/am/LC_MESSAGES/mate-menus.mo
@@ -53,9 +51,6 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mate-menus.mo
 share/locale/en_CA/LC_MESSAGES/mate-menus.mo
 share/locale/en_GB/LC_MESSAGES/mate-menus.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/mate-menus.mo
 share/locale/eo/LC_MESSAGES/mate-menus.mo
 share/locale/es/LC_MESSAGES/mate-menus.mo
 share/locale/es_AR/
@@ -109,8 +104,6 @@ share/locale/ia/
 share/locale/ia/LC_MESSAGES/
 share/locale/ia/LC_MESSAGES/mate-menus.mo
 share/locale/id/LC_MESSAGES/mate-menus.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/mate-menus.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/

@@ -9,44 +9,15 @@
 @bin bin/mate-keyboard-properties
 @bin bin/mate-mouse-properties
 @bin bin/mate-network-properties
+@bin bin/mate-system-info
 @bin bin/mate-thumbnail-font
 @bin bin/mate-time-admin
 @bin bin/mate-typing-monitor
 @bin bin/mate-window-properties
-include/libmate-slab/
-include/libmate-slab/app-resizer.h
-include/libmate-slab/app-shell.h
-include/libmate-slab/application-tile.h
-include/libmate-slab/bookmark-agent.h
-include/libmate-slab/double-click-detector.h
-include/libmate-slab/libslab-utils.h
-include/libmate-slab/mate-utils.h
-include/libmate-slab/nameplate-tile.h
-include/libmate-slab/nld-marshal.c
-include/libmate-slab/nld-marshal.h
-include/libmate-slab/search-bar.h
-include/libmate-slab/shell-window.h
-include/libmate-slab/slab-mate-util.h
-include/libmate-slab/slab-section.h
-include/libmate-slab/slab.h
-include/libmate-slab/tile.h
-include/mate-window-settings-2.0/
-include/mate-window-settings-2.0/mate-window-manager.h
-include/mate-window-settings-2.0/mate-wm-manager.h
-@static-lib lib/libmate-slab.a
-lib/libmate-slab.la
-@lib lib/libmate-slab.so.${LIBmate-slab_VERSION}
-@static-lib lib/libmate-window-settings.a
-lib/libmate-window-settings.la
-@lib lib/libmate-window-settings.so.${LIBmate-window-settings_VERSION}
 lib/pkgconfig/mate-default-applications.pc
 lib/pkgconfig/mate-keybindings.pc
-lib/pkgconfig/mate-slab.pc
-lib/pkgconfig/mate-window-settings-2.0.pc
-lib/window-manager-settings/
 @comment lib/window-manager-settings/libmarco.a
 @comment lib/window-manager-settings/libmarco.la
-@so lib/window-manager-settings/libmarco.so
 @man man/man1/mate-about-me.1
 @man man/man1/mate-appearance-properties.1
 @man man/man1/mate-at-properties.1
@@ -73,6 +44,7 @@ share/applications/mate-keybinding.desktop
 share/applications/mate-keyboard.desktop
 share/applications/mate-network-properties.desktop
 share/applications/mate-settings-mouse.desktop
+share/applications/mate-system-info.desktop
 share/applications/mate-theme-installer.desktop
 share/applications/mate-time-admin.desktop
 share/applications/mate-window-properties.desktop
@@ -521,23 +493,6 @@ share/help/en_GB/mate-control-center/config-screensaver.xml
 share/help/en_GB/mate-control-center/config-themes.xml
 share/help/en_GB/mate-control-center/index.docbook
 share/help/en_GB/mate-control-center/legal.xml
-share/help/en_US/
-share/help/en_US/mate-control-center/
-share/help/en_US/mate-control-center/config-accessibility-keyboard.xml
-share/help/en_US/mate-control-center/config-background.xml
-share/help/en_US/mate-control-center/config-behavior.xml
-share/help/en_US/mate-control-center/config-cds.xml
-share/help/en_US/mate-control-center/config-default-apps.xml
-share/help/en_US/mate-control-center/config-file-type.xml
-share/help/en_US/mate-control-center/config-hints.xml
-share/help/en_US/mate-control-center/config-html.xml
-share/help/en_US/mate-control-center/config-kbd.xml
-share/help/en_US/mate-control-center/config-keybindings.xml
-share/help/en_US/mate-control-center/config-mouse.xml
-share/help/en_US/mate-control-center/config-screensaver.xml
-share/help/en_US/mate-control-center/config-themes.xml
-share/help/en_US/mate-control-center/index.docbook
-share/help/en_US/mate-control-center/legal.xml
 share/help/eo/
 share/help/eo/mate-control-center/
 share/help/eo/mate-control-center/config-accessibility-keyboard.xml
@@ -1177,6 +1132,23 @@ share/help/ky/mate-control-center/config-screensaver.xml
 share/help/ky/mate-control-center/config-themes.xml
 share/help/ky/mate-control-center/index.docbook
 share/help/ky/mate-control-center/legal.xml
+share/help/la/
+share/help/la/mate-control-center/
+share/help/la/mate-control-center/config-accessibility-keyboard.xml
+share/help/la/mate-control-center/config-background.xml
+share/help/la/mate-control-center/config-behavior.xml
+share/help/la/mate-control-center/config-cds.xml
+share/help/la/mate-control-center/config-default-apps.xml
+share/help/la/mate-control-center/config-file-type.xml
+share/help/la/mate-control-center/config-hints.xml
+share/help/la/mate-control-center/config-html.xml
+share/help/la/mate-control-center/config-kbd.xml
+share/help/la/mate-control-center/config-keybindings.xml
+share/help/la/mate-control-center/config-mouse.xml
+share/help/la/mate-control-center/config-screensaver.xml
+share/help/la/mate-control-center/config-themes.xml
+share/help/la/mate-control-center/index.docbook
+share/help/la/mate-control-center/legal.xml
 share/help/li/
 share/help/li/mate-control-center/
 share/help/li/mate-control-center/config-accessibility-keyboard.xml
@@ -2053,7 +2025,6 @@ share/locale/el/LC_MESSAGES/mate-control-center.mo
 share/locale/en_AU/LC_MESSAGES/mate-control-center.mo
 share/locale/en_CA/LC_MESSAGES/mate-control-center.mo
 share/locale/en_GB/LC_MESSAGES/mate-control-center.mo
-share/locale/en_US/LC_MESSAGES/mate-control-center.mo
 share/locale/eo/LC_MESSAGES/mate-control-center.mo
 share/locale/es/LC_MESSAGES/mate-control-center.mo
 share/locale/es_AR/LC_MESSAGES/mate-control-center.mo

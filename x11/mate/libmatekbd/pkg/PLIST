@@ -109,8 +109,6 @@ share/locale/et/LC_MESSAGES/libmatekbd.mo
 share/locale/eu/LC_MESSAGES/libmatekbd.mo
 share/locale/fa/LC_MESSAGES/libmatekbd.mo
 share/locale/fi/LC_MESSAGES/libmatekbd.mo
-share/locale/fil/
-share/locale/fil/LC_MESSAGES/
 share/locale/fil/LC_MESSAGES/libmatekbd.mo
 share/locale/fo/LC_MESSAGES/libmatekbd.mo
 share/locale/fr/LC_MESSAGES/libmatekbd.mo
@@ -132,8 +130,6 @@ share/locale/hu/LC_MESSAGES/libmatekbd.mo
 share/locale/hy/LC_MESSAGES/libmatekbd.mo
 share/locale/ia/LC_MESSAGES/libmatekbd.mo
 share/locale/id/LC_MESSAGES/libmatekbd.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/libmatekbd.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
@@ -178,6 +174,9 @@ share/locale/mr/LC_MESSAGES/libmatekbd.mo
 share/locale/ms/LC_MESSAGES/libmatekbd.mo
 share/locale/my/LC_MESSAGES/libmatekbd.mo
 share/locale/nah/LC_MESSAGES/libmatekbd.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/libmatekbd.mo
 share/locale/nb/LC_MESSAGES/libmatekbd.mo
 share/locale/nds/LC_MESSAGES/libmatekbd.mo
 share/locale/ne/LC_MESSAGES/libmatekbd.mo

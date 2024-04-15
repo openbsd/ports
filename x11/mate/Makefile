@@ -13,7 +13,7 @@
      SUBDIR += libmateweather
      SUBDIR += marco
      SUBDIR += media
-#     SUBDIR += menu-advanced
+     SUBDIR += menu-advanced
      SUBDIR += menus
      SUBDIR += notification-daemon
      SUBDIR += panel

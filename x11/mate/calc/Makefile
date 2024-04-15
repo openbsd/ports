@@ -1,7 +1,6 @@
 COMMENT=		MATE calculator
 
 MATE_PROJECT=		mate-calc
-MATE_VERSION=		1.26.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

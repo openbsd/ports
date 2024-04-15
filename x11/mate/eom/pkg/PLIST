@@ -857,9 +857,6 @@ share/locale/el/LC_MESSAGES/eom.mo
 share/locale/en_AU/LC_MESSAGES/eom.mo
 share/locale/en_CA/LC_MESSAGES/eom.mo
 share/locale/en_GB/LC_MESSAGES/eom.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/eom.mo
 share/locale/eo/LC_MESSAGES/eom.mo
 share/locale/es/LC_MESSAGES/eom.mo
 share/locale/es_AR/LC_MESSAGES/eom.mo
@@ -949,6 +946,9 @@ share/locale/ml/LC_MESSAGES/eom.mo
 share/locale/mn/LC_MESSAGES/eom.mo
 share/locale/mr/LC_MESSAGES/eom.mo
 share/locale/ms/LC_MESSAGES/eom.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/eom.mo
 share/locale/nb/LC_MESSAGES/eom.mo
 share/locale/nds/LC_MESSAGES/eom.mo
 share/locale/ne/LC_MESSAGES/eom.mo

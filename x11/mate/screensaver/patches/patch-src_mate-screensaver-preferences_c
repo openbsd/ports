@@ -1,7 +1,7 @@
 Index: src/mate-screensaver-preferences.c
 --- src/mate-screensaver-preferences.c.orig
 +++ src/mate-screensaver-preferences.c
-@@ -1348,7 +1348,7 @@ setup_for_root_user (void)
+@@ -1346,7 +1346,7 @@ setup_for_root_user (void)
  }
  
  /* copied from gs-window-x11.c */

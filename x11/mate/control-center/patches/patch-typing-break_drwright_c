@@ -1,0 +1,80 @@
+Index: typing-break/drwright.c
+--- typing-break/drwright.c.orig
++++ typing-break/drwright.c
+@@ -30,11 +30,13 @@
+ #include <gtk/gtk.h>
+ #include <gio/gio.h>
+ 
++#if !defined(__OpenBSD__)
+ #ifdef HAVE_UBUNTU_APPINDICATOR
+ #include <libappindicator/app-indicator.h>
+ #else
+ #include <libayatana-appindicator/app-indicator.h>
+ #endif
++#endif
+ 
+ #define MATE_DESKTOP_USE_UNSTABLE_API
+ #include <libmate-desktop/mate-desktop-utils.h>
+@@ -83,7 +85,9 @@ struct _DrWright {
+ 	gboolean         enabled;
+ 
+ 	guint            clock_timeout_id;
++#if !defined(__OpenBSD__)
+ 	AppIndicator    *indicator;
++#endif
+ 	GtkWidget      *warn_dialog;
+ };
+ 
+@@ -109,7 +113,9 @@ static void     popup_preferences_cb           (GSimpl
+ static void     popup_about_cb                 (GSimpleAction  *action,
+                                                 GVariant       *parameter,
+                                                 gpointer        data);
++#if !defined(__OpenBSD__)
+ static void     init_app_indicator             (DrWright       *dr);
++#endif
+ static GList *  create_secondary_break_windows (void);
+ 
+ static const GActionEntry action_entries[] = {
+@@ -131,6 +137,7 @@ setup_debug_values (DrWright *dr)
+ static void
+ update_app_indicator (DrWright *dr)
+ {
++#if !defined(__OpenBSD__)
+ 	AppIndicatorStatus new_status;
+ 
+ 	if (!dr->enabled) {
+@@ -150,6 +157,7 @@ update_app_indicator (DrWright *dr)
+ 	}
+ 
+ 	app_indicator_set_status (dr->indicator, new_status);
++#endif
+ }
+ 
+ static gboolean
+@@ -315,8 +323,10 @@ update_status (DrWright *dr)
+ 	gchar     *str;
+ 
+ 	if (!dr->enabled) {
++#if !defined(__OpenBSD__)
+ 		app_indicator_set_status (dr->indicator,
+ 					  APP_INDICATOR_STATUS_PASSIVE);
++#endif
+ 		return TRUE;
+ 	}
+ 
+@@ -504,6 +514,7 @@ break_window_destroy_cb (GtkWidget *window,
+ static void
+ init_app_indicator (DrWright *dr)
+ {
++#if !defined(__OpenBSD__)
+ 	dr->indicator =
+ 		app_indicator_new_with_path ("typing-break-indicator",
+ 					     TYPING_MONITOR_ACTIVE_ICON,
+@@ -522,6 +533,7 @@ init_app_indicator (DrWright *dr)
+ 
+ 	update_status (dr);
+ 	update_app_indicator (dr);
++#endif
+ }
+ 
+ static GList *

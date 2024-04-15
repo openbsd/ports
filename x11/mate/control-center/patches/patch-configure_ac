@@ -1,0 +1,49 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -106,7 +106,6 @@ COMMON_MODULES="gtk+-3.0 >= $GTK_REQUIRED dnl
+  gio-2.0 dnl
+  gio-unix-2.0 dnl
+  libxml-2.0 dnl
+- udisks2 dnl
+  libgtop-2.0 dnl
+  mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED"
+ PKG_CHECK_MODULES(CAPPLET, $COMMON_MODULES)
+@@ -120,8 +119,6 @@ PKG_CHECK_MODULES(MARCO, libmarco-private >= $MARCO_RE
+ PKG_CHECK_MODULES(TYPING, $GMODULE_ADD glib-2.0 >= $GLIB_REQUIRED gio-2.0 gtk+-3.0 >= $GTK_REQUIRED)
+ PKG_CHECK_MODULES(GIO, gio-2.0)
+ PKG_CHECK_MODULES(GLIBTOP, libgtop-2.0)
+-PKG_CHECK_MODULES(UDISKS, udisks2)
+-PKG_CHECK_MODULES(SYSTEMD, systemd >= $SYSTEMD_REQUIRED)
+ 
+ PKG_CHECK_MODULES([DCONF], [dconf >= 0.13.4])
+ AC_SUBST(DCONF_CFLAGS)
+@@ -155,28 +152,6 @@ if test "x$have_accountsservice" = "xyes"; then
+ fi
+ 
+ AM_CONDITIONAL([HAVE_ACCOUNTSSERVICE], [test "x$have_accountsservice" = xyes])
+-
+-AYATANA_APPINDICATOR_PKG=ayatana-appindicator3-0.1
+-UBUNTU_APPINDICATOR_PKG=appindicator3-0.1
+-
+-AC_ARG_ENABLE([libappindicator],
+-              [AS_HELP_STRING([--enable-libappindicator[=@<:@no/auto/yes@:>@]],[Use libappindicator instead of ayatana-indicator @<:@default=auto@:>@])],
+-              [enable_appindicator=$enableval],
+-              [PKG_CHECK_EXISTS([$AYATANA_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+-                                [enable_appindicator=no],
+-                                [PKG_CHECK_EXISTS([$UBUNTU_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+-                                                  [enable_appindicator=yes],
+-                                                  [enable_appindicator=no])])])
+-
+-AS_IF([test "x$enable_appindicator" = xyes],
+-      [AC_MSG_NOTICE([Buidling against Ubuntu AppIndicator.])
+-       PKG_CHECK_MODULES([APPINDICATOR],
+-                         [$UBUNTU_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+-                         [AC_DEFINE(HAVE_UBUNTU_APPINDICATOR, 1, [Have Ubuntu AppIndicator])])],
+-      [AC_MSG_NOTICE([Buidling against Ayatana AppIndicator.])
+-       PKG_CHECK_MODULES([APPINDICATOR],
+-                         [$AYATANA_APPINDICATOR_PKG >= $APPINDICATOR_REQUIRED],
+-                         [AC_DEFINE(HAVE_AYATANA_APPINDICATOR, 1, [Have Ayatana AppIndicator])])])
+ 
+ PKG_CHECK_MODULES(FONT_CAPPLET, $COMMON_MODULES pango)
+ PKG_CHECK_MODULES(FONT_VIEWER, $COMMON_MODULES fontconfig freetype2 mate-desktop-2.0)

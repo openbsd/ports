@@ -5,8 +5,6 @@ SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
 
-REVISION=		0
-
 CATEGORIES=		x11
 
 # GPLv2
@@ -46,7 +44,8 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp \
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/mate-control-center
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 CFLAGS +=		-std=gnu99 \
 			-DGNOME_WALLPAPER_DATADIR='\"${TRUEPREFIX}/share/gnome-background-properties\"'

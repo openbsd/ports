@@ -1,0 +1,32 @@
+Index: capplets/system-info/mate-system-info.c
+--- capplets/system-info/mate-system-info.c.orig
++++ capplets/system-info/mate-system-info.c
+@@ -25,7 +25,9 @@
+ #include <glibtop/mountlist.h>
+ #include <glibtop/mem.h>
+ #include <glibtop/sysinfo.h>
++#if !defined(__OpenBSD__)
+ #include <udisks/udisks.h>
++#endif
+ #include <sys/utsname.h>
+ 
+ #ifdef GDK_WINDOWING_WAYLAND
+@@ -365,6 +367,10 @@ get_graphics_hardware_string (void)
+ static char *
+ get_primary_disk_size (void)
+ {
++#if defined(__OpenBSD__)
++    g_warning ("UDisks is not supported on OpenBSD. Disk information will not be available.");
++    return g_strdup ("Unknown");
++#else
+     g_autoptr(UDisksClient) client = NULL;
+     GDBusObjectManager *manager;
+     g_autolist(GDBusObject) objects = NULL;
+@@ -411,6 +417,7 @@ get_primary_disk_size (void)
+     }
+ 
+     return size;
++#endif
+ }
+ 
+ static char *

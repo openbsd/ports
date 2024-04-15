@@ -1,5 +1,4 @@
 include/mate-settings-daemon/
-include/mate-settings-daemon/mate-settings-client.h
 include/mate-settings-daemon/mate-settings-plugin.h
 lib/mate-settings-daemon/
 lib/mate-settings-daemon/a11y-keyboard.mate-settings-plugin
