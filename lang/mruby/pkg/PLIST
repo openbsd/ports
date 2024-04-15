@@ -1,5 +1,6 @@
 @bin bin/mirb
 @bin bin/mrbc
+@bin bin/mrdb
 @bin bin/mruby
 bin/mruby-config
 @bin bin/mruby-strip
@@ -123,12 +124,6 @@ lib/mruby/mrbgems/mruby-bin-strip/tools/
 lib/mruby/mrbgems/mruby-bin-strip/tools/mruby-strip/
 lib/mruby/mrbgems/mruby-bin-strip/tools/mruby-strip/mruby-strip.c
 lib/mruby/mrbgems/mruby-binding/
-lib/mruby/mrbgems/mruby-binding-core/
-lib/mruby/mrbgems/mruby-binding-core/mrbgem.rake
-lib/mruby/mrbgems/mruby-binding-core/src/
-lib/mruby/mrbgems/mruby-binding-core/src/binding-core.c
-lib/mruby/mrbgems/mruby-binding-core/test/
-lib/mruby/mrbgems/mruby-binding-core/test/binding-core.rb
 lib/mruby/mrbgems/mruby-binding/mrbgem.rake
 lib/mruby/mrbgems/mruby-binding/src/
 lib/mruby/mrbgems/mruby-binding/src/binding.c
@@ -245,6 +240,7 @@ lib/mruby/mrbgems/mruby-eval/mrbgem.rake
 lib/mruby/mrbgems/mruby-eval/src/
 lib/mruby/mrbgems/mruby-eval/src/eval.c
 lib/mruby/mrbgems/mruby-eval/test/
+lib/mruby/mrbgems/mruby-eval/test/binding.rb
 lib/mruby/mrbgems/mruby-eval/test/eval.rb
 lib/mruby/mrbgems/mruby-exit/
 lib/mruby/mrbgems/mruby-exit/mrbgem.rake
@@ -256,6 +252,8 @@ lib/mruby/mrbgems/mruby-fiber/src/
 lib/mruby/mrbgems/mruby-fiber/src/fiber.c
 lib/mruby/mrbgems/mruby-fiber/test/
 lib/mruby/mrbgems/mruby-fiber/test/fiber.rb
+lib/mruby/mrbgems/mruby-fiber/test/fiber2.rb
+lib/mruby/mrbgems/mruby-fiber/test/fibertest.c
 lib/mruby/mrbgems/mruby-hash-ext/
 lib/mruby/mrbgems/mruby-hash-ext/mrbgem.rake
 lib/mruby/mrbgems/mruby-hash-ext/mrblib/
@@ -308,7 +306,6 @@ lib/mruby/mrbgems/mruby-method/
 lib/mruby/mrbgems/mruby-method/README.md
 lib/mruby/mrbgems/mruby-method/mrbgem.rake
 lib/mruby/mrbgems/mruby-method/mrblib/
-lib/mruby/mrbgems/mruby-method/mrblib/kernel.rb
 lib/mruby/mrbgems/mruby-method/mrblib/method.rb
 lib/mruby/mrbgems/mruby-method/src/
 lib/mruby/mrbgems/mruby-method/src/method.c
@@ -480,8 +477,6 @@ lib/mruby/mrbgems/mruby-time/include/
 lib/mruby/mrbgems/mruby-time/include/mruby/
 lib/mruby/mrbgems/mruby-time/include/mruby/time.h
 lib/mruby/mrbgems/mruby-time/mrbgem.rake
-lib/mruby/mrbgems/mruby-time/mrblib/
-lib/mruby/mrbgems/mruby-time/mrblib/time.rb
 lib/mruby/mrbgems/mruby-time/src/
 lib/mruby/mrbgems/mruby-time/src/time.c
 lib/mruby/mrbgems/mruby-time/test/
@@ -513,6 +508,7 @@ share/doc/mruby/compile.md
 share/doc/mruby/debugger.md
 share/doc/mruby/gc-arena-howto.md
 share/doc/mruby/link.md
+share/doc/mruby/memory.md
 share/doc/mruby/mrbconf.md
 share/doc/mruby/mrbgems.md
 share/doc/mruby/symbol.md
