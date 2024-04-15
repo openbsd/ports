@@ -4,8 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v26.0
-REVISION =		1
+GH_TAGNAME =		v26.1
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -72,10 +71,17 @@ WANTLIB += xshmfence z zmq zstd
 MODULES +=		x11/qt5
 
 LIB_DEPENDS +=		archivers/zstd \
+			devel/glib2 \
+			devel/harfbuzz \
+			devel/pcre2 \
+			graphics/graphite2 \
 			graphics/libqrencode \
+			graphics/png \
 			math/double-conversion \
 			net/miniupnp/libnatpmp \
-			net/miniupnp/miniupnpc
+			net/miniupnp/miniupnpc \
+			security/libsodium \
+			x11/dbus
 
 CONFIGURE_ARGS +=	--with-gui=qt5
 
