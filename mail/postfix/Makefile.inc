@@ -69,10 +69,10 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 . if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY=	Yes
 . endif
-BUILD_DEPENDS+=	security/openssl/3.1
-MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl31
-MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl31/libssl.a \
-		${LOCALBASE}/lib/eopenssl31/libcrypto.a
+BUILD_DEPENDS+=	security/openssl/3.2
+MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl32
+MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl32/libssl.a \
+		${LOCALBASE}/lib/eopenssl32/libcrypto.a
 .else
 MAKE_AUXLIBS+=	-lssl -lcrypto
 WANTLIB+=	crypto ssl
