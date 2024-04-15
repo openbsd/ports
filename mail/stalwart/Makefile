@@ -12,7 +12,7 @@ GH_PROJECT =		mail-server
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.6.0
+GH_TAGNAME =		v0.7.1
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
@@ -46,16 +46,7 @@ WANTLIB +=	${COMPILER_LIBCXX} bz2 c m zstd
 MODCARGO_INSTALL_TARGET_PATHS =	crates/cli crates/main
 
 post-install:
-# cf      tests/resources/scripts/create_test_env.sh for the replacements
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/{common,directory,imap,jmap,smtp,spamfilter,store}
-	cd ${WRKSRC}/resources/config && find . -name '*toml' | while read f ; do \
-		echo $$f ; \
-		sed -i \
-			-e 's#%{BASE_PATH}%/etc/#${SYSCONFDIR}/stalwart/#' \
-			-e 's#%{BASE_PATH}%#/var/stalwart/#' \
-			-e 's/\[::\]/0.0.0.0/' $$f ; \
-		${SUBST_CMD} -c $$f ${PREFIX}/share/examples/stalwart/$$f ; \
-	done
-	cp -r ${WRKSRC}/resources/config/spamfilter/* ${PREFIX}/share/examples/stalwart/spamfilter/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/
+	${INSTALL_DATA} ${WRKSRC}/resources/config/config.toml ${PREFIX}/share/examples/stalwart/
 
 .include <bsd.port.mk>

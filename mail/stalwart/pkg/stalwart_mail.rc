@@ -2,7 +2,7 @@
 
 daemon="${TRUEPREFIX}/bin/stalwart-mail"
 daemon_logger="daemon.info"
-daemon_flags="--config ${SYSCONFDIR}/stalwart/config.toml"
+daemon_flags="--config /var/stalwart/etc/config.toml"
 
 . /etc/rc.d/rc.subr
 

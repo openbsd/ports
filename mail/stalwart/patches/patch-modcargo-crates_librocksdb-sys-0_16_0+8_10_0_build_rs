@@ -1,7 +1,7 @@
-Index: modcargo-crates/librocksdb-sys-0.11.0+8.1.1/build.rs
---- modcargo-crates/librocksdb-sys-0.11.0+8.1.1/build.rs.orig
-+++ modcargo-crates/librocksdb-sys-0.11.0+8.1.1/build.rs
-@@ -167,6 +167,10 @@ fn build_rocksdb() {
+Index: modcargo-crates/librocksdb-sys-0.16.0+8.10.0/build.rs
+--- modcargo-crates/librocksdb-sys-0.16.0+8.10.0/build.rs.orig
++++ modcargo-crates/librocksdb-sys-0.16.0+8.10.0/build.rs
+@@ -162,6 +162,10 @@ fn build_rocksdb() {
          config.define("OS_FREEBSD", None);
          config.define("ROCKSDB_PLATFORM_POSIX", None);
          config.define("ROCKSDB_LIB_IO_POSIX", None);

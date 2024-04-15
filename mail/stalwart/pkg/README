@@ -7,16 +7,9 @@ Basic configuration gotchas
 
 The complete documentation is at https://stalw.art/docs/get-started
 
-- JMAP clients should be configured to use the url specified in
-  [server.listener."jmap"] section, which should be the public FQDN of the
-service configured in a reverse-proxy.
-
-- If using the internal directory, a random password is created for the admin
-user and can be found in the startup logs, as seen on https://stalw.art/docs/install/linux#take-note-of-the-administrator-password
-
 - By default stalwart tries to listen on the following ports:
   - smtp
-  - https (for jmap)
+  - https (for jmap and web admin)
   - imap
   - imaps
   - sieve
@@ -24,7 +17,7 @@ user and can be found in the startup logs, as seen on https://stalw.art/docs/ins
   - submissions
 
 if you want to disable some of the listeners, comment out the corresponding
-server.listener section.
+server.listener section in /var/stalwart/etc/config.toml.
 
 it is possible to check if the server is properly configured by calling
 /.well-known/jmap like this:
@@ -36,24 +29,20 @@ $ curl -u admin:changeme https://<jmap_url>/.well-known/jmap
 - stalwart-mail starts as root, binds to ports then drops privilege to the
   unpriviledged _stalwart-smtp user.
 
-- once installed, you need to at least:
-- configure in ${SYSCONFDIR}/stalwart/config.toml:
-  - __HOST__ for the server hostname (it will also be used for the jmap url)
-  - __DOMAIN__ for the default e-mail domain
+- once installed, you need to at least initialize the administrator password:
 
-- generate a TLS certificate for your default e-mail domain, which will get
-  pointed at in ${SYSCONFDIR}/stalwart/common/tls.toml. You might also want to
-use acme-client(1) for that, but stalwart can also act as an ACME client if
-needed
+# env ADMIN_SECRET=changeme STALWART_PATH=/var/stalwart stalwart-mail --config /var/stalwart/etc/config.toml
 
-- a DKIM key should be generated per https://stalw.art/docs/smtp/authentication/dkim/sign#rsa
+(or if you don't like env vars configure the
+authentication.fallback-admin.secret key in /var/stalwart/etc/config.toml)
 
-# cd /etc/stalwart/dkim/
-# openssl genrsa -out <domain>.key 2048
-# openssl rsa -in <domain>.key -pubout -out <domain>.cert
+the initial startup of the server will:
+- download spam filters from https://get.stalw.art/resources/config/spamfilter.toml
+- download the web admin interface from https://github.com/stalwartlabs/webadmin/releases/latest/download/webadmin.zip
+- rewrite its own config file
 
-- if you plan to use OAUTH set __OAUTH_KEY__ in ${SYSCONFDIR}/stalwart/jmap/oauth.toml
-per https://stalw.art/docs/jmap/oauth#encryption
+From that point, you should be able to connect as admin/changeme on the https
+interface to configure the daemon/services.
 
 Using stalwart-cli to manage the server
 =======================================
@@ -66,17 +55,24 @@ stalwart-cli allows to manage:
 
 the following commands should give you a headstart to:
 - create a domain
-$ stalwart-cli --url http://localhost:8080 -cadmin:changeme domain create -d 'test domain' jmap.test
+$ stalwart-cli --url https://localhost -cadmin:changeme domain create -d 'test domain' jmap.test
 
 - create an account in that domain
-$ stalwart-cli --url http://localhost:8080 -cadmin:changeme account create user@jmap.test password accountname
+$ stalwart-cli --url https://localhost -cadmin:changeme account create user@jmap.test password accountname
 
 - import a mailbox in that account
-$ stalwart-cli --url http://localhost:8080 -cadmin:changeme import messages -f mbox user@jmap.test /var/mail/user
+$ stalwart-cli --url https://localhost -cadmin:changeme import messages -f mbox user@jmap.test /var/mail/user
 
 from that point:
 - an IMAP client such as mutt or meli or thunderbird configured
-  to point at stalwart-imap ip:port should show you imported messages over IMAP
+  to point at stalwart-mail ip:port should show you imported messages over IMAP
 
 - a JMAP client such as meli or cypht.org configured to point at
-  stalwart-jmap jmap-url should show you messages over JMAP.
+  stalwart-mail jmap-url should show you messages over JMAP.
+
+Upgrading
+=========
+
+As being in development, stalwart-mail tends to have breaking changes often,
+refer to https://github.com/stalwartlabs/mail-server/blob/main/UPGRADING.md for
+upgrade notes.

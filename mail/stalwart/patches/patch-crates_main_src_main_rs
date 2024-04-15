@@ -1,9 +1,9 @@
 Index: crates/main/src/main.rs
 --- crates/main/src/main.rs.orig
 +++ crates/main/src/main.rs
-@@ -35,10 +35,10 @@ use utils::{
-     enable_tracing, wait_for_shutdown, UnwrapFailure,
- };
+@@ -31,10 +31,10 @@ use smtp::core::{SmtpSessionManager, SMTP};
+ use tokio::sync::mpsc;
+ use utils::wait_for_shutdown;
  
 -#[cfg(not(target_env = "msvc"))]
 +#[cfg(not(target_os = "openbsd"))]
