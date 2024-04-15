@@ -1,6 +1,7 @@
 COMMENT=		PolicyKit authentication agent for MATE
 
 MATE_PROJECT=		mate-polkit
+MATE_VERSION=		1.28.1
 
 CATEGORIES=		x11 sysutils
 
