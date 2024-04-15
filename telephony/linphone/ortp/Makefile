@@ -1,7 +1,6 @@
 COMMENT =	library implementing the RTP protocol
 
 MODULE =	ortp
-V =	5.3.41
 
 SHARED_LIBS +=	ortp 3.0 # 15
 

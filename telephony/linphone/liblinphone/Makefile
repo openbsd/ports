@@ -1,7 +1,6 @@
 COMMENT =	SIP library supporting voice/video calls and text messaging
 
 MODULE =	liblinphone
-V =	5.3.40
 
 SHARED_LIBS +=	linphone	4.0 \
 		linphone++	4.0 # 10
