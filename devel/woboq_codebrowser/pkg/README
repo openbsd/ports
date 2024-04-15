@@ -34,12 +34,12 @@ $ sed -e '1s/^/[/' -e '$s/,$/]/' obj/*.o.json > compile_commands.json
 Generate static HTML from compile_commands.json
 
 $ codebrowser_generator -a -b /sys/arch/amd64/compile/GENERIC.MP \
-	-o ${VARBASE}/www/htdocs/openbsd \
+	-o ${LOCALSTATEDIR}/www/htdocs/openbsd \
 	-p sys:/sys \
 	-d http://localhost/data
 
-$ codebrowser_indexgenerator ${VARBASE}/www/htdocs/openbsd \
+$ codebrowser_indexgenerator ${LOCALSTATEDIR}/www/htdocs/openbsd \
 	-p sys:/sys \
 	-d http://localhost/data
 
-$ cp -R ${LOCALBASE}/share/woboq/data ${VARBASE}/www/htdocs
+$ cp -R ${TRUEPREFIX}/share/woboq/data ${LOCALSTATEDIR}/www/htdocs

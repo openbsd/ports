@@ -4,15 +4,15 @@ Index: generator/main.cpp
 --- generator/main.cpp.orig
 +++ generator/main.cpp
 @@ -43,6 +43,8 @@
- #include "compat.h"
- #include <ctime>
+ #include <limits>
+ #include <stdexcept>
  
 +#include <unistd.h>
 +
  #include "embedded_includes.h"
  
  namespace cl = llvm::cl;
-@@ -325,6 +327,16 @@ int main(int argc, const char **argv) {
+@@ -371,6 +373,16 @@ int main(int argc, const char **argv)
      }
  
      llvm::cl::ParseCommandLineOptions(argc, argv);

@@ -1,13 +1,11 @@
-BROKEN =	needs an update for LLVM 13+
-
 COMMENT =	generator for the woboq code browser
 
-DISTNAME =	woboq_codebrowser-2.1pl2
+DISTNAME =	woboq_codebrowser-2.1pl20231117
 
-GH_ACCOUNT =	woboq
-GH_PROJECT =	woboq_codebrowser
+GH_ACCOUNT =	KDAB
+GH_PROJECT =	codebrowser
 # support LLVM version we have in ports
-GH_COMMIT =	19b823ba36993d7ca2e06cbebcac39fb1c8059f3
+GH_COMMIT =	1808e96d4c62417952389d536576d53bb6da4053
 
 CATEGORIES =	devel
 
@@ -24,20 +22,19 @@ HOMEPAGE =	https://woboq.com/codebrowser.html
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB =		${COMPILER_LIBCXX} c m
+WANTLIB =		${COMPILER_LIBCXX} c m llvm16/lib/clang-cpp
 
 COMPILER =		base-clang ports-clang
 
-MODULES =		devel/cmake
-BUILD_DEPENDS =		devel/llvm/16
-RUN_DEPENDS =		devel/llvm/16
+MODULES =		devel/cmake \
+			lang/clang
+LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS}
+MODCLANG_RUNDEP =	Yes
 
 NO_TEST =		Yes
 
-SUBST_VARS +=		VARBASE
-
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${GH_PROJECT}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/${GH_PROJECT}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/woboq_codebrowser
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/woboq_codebrowser
 
 .include <bsd.port.mk>
