@@ -1,14 +1,14 @@
 Index: src/nat/ice-service.cpp
 --- src/nat/ice-service.cpp.orig
 +++ src/nat/ice-service.cpp
-@@ -744,12 +744,14 @@ const struct addrinfo *IceService::getIcePreferredStun
- 			bctbx_addrinfo_to_printable_ip_address(it, ip_port, sizeof(ip_port)-1);
- 			if (it->ai_family == AF_INET)
- 				break;
+@@ -750,12 +750,14 @@ const struct addrinfo *IceService::getIcePreferredStun
+ 			char ip_port[128] = {0};
+ 			bctbx_addrinfo_to_printable_ip_address(it, ip_port, sizeof(ip_port) - 1);
+ 			if (it->ai_family == AF_INET) break;
 +#ifndef __OpenBSD__
- 			if (it->ai_family == AF_INET6){
- 				struct sockaddr_in6 * in6 = (struct sockaddr_in6*) it->ai_addr;
- 				if (IN6_IS_ADDR_V4MAPPED(&in6->sin6_addr)){
+ 			if (it->ai_family == AF_INET6) {
+ 				struct sockaddr_in6 *in6 = (struct sockaddr_in6 *)it->ai_addr;
+ 				if (IN6_IS_ADDR_V4MAPPED(&in6->sin6_addr)) {
  					break;
  				}
  			}

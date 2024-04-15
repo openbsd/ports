@@ -3,19 +3,19 @@ default to ipv6 disabled, the world isnt ready yet
 Index: coreapi/linphonecore.c
 --- coreapi/linphonecore.c.orig
 +++ coreapi/linphonecore.c
-@@ -799,7 +799,7 @@ static void _close_log_collection_file(void) {
+@@ -878,7 +878,7 @@ static void _close_log_collection_file(void) {
  	}
  }
  
 -#if (!__ANDROID__ && !__APPLE__) || (__ANDROID__ && __ANDROID_API__ < 21)
-+#if (!__ANDROID__ && !__APPLE__ && !__OpenBSD__) || (__ANDROID__ && __ANDROID_API__ < 21)
- static const char* getprogname() {
++#if (!__ANDROID__ && !__APPLE__ && ! __OpenBSD__) || (__ANDROID__ && __ANDROID_API__ < 21)
+ static const char *getprogname() {
  #if defined(__GLIBC__)
-   	return program_invocation_short_name;
-@@ -1665,7 +1665,7 @@ static void sip_config_read(LinphoneCore *lc) {
+ 	return program_invocation_short_name;
+@@ -1791,7 +1791,7 @@ static void sip_config_read(LinphoneCore *lc) {
  	const char *tmpstr;
  	LinphoneSipTransports tr;
- 	int i,tmp;
+ 	int i, tmp;
 -	int ipv6_default = TRUE;
 +	int ipv6_default = FALSE;
  

@@ -1,9 +1,11 @@
 Index: linphone-app/src/config.h.cmake
 --- linphone-app/src/config.h.cmake.orig
 +++ linphone-app/src/config.h.cmake
-@@ -32,4 +32,5 @@
- #cmakedefine ENABLE_UPDATE_CHECK 1
+@@ -36,6 +36,7 @@
+ #cmakedefine ENABLE_QRCODE
  #cmakedefine EXECUTABLE_NAME "${EXECUTABLE_NAME}"
  #cmakedefine MSPLUGINS_DIR "${MSPLUGINS_DIR}"
 +#define LINPHONE_QT_GIT_VERSION "${PROJECT_VERSION}"
  #cmakedefine ENABLE_APP_WEBVIEW "${ENABLE_APP_WEBVIEW}"
+ #cmakedefine QTKEYCHAIN_TARGET_NAME ${QTKEYCHAIN_TARGET_NAME}
+ #cmakedefine PDF_ENABLED

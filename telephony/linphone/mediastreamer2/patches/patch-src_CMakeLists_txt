@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -184,6 +184,9 @@ endif()
+@@ -185,6 +185,9 @@ endif()
  if(ENABLE_PULSEAUDIO)
  	list(APPEND VOIP_SOURCE_FILES_C audiofilters/pulseaudio.c)
  endif()

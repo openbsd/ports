@@ -3,7 +3,7 @@ Hunk #3: ensure that libexecinfo symbols are resolved (fix the build on ld.bfd a
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -70,9 +70,7 @@ if(NOT CPACK_GENERATOR AND NOT CMAKE_INSTALL_RPATH AND
+@@ -59,9 +59,7 @@ if(NOT CPACK_GENERATOR AND NOT CMAKE_INSTALL_RPATH AND
  	message(STATUS "Setting install rpath to ${CMAKE_INSTALL_RPATH}")
  endif()
  
@@ -14,15 +14,13 @@ Index: CMakeLists.txt
  
  if(ENABLE_MBEDTLS)
  	message(STATUS "MBEDTLS Enabled")
-@@ -179,7 +177,10 @@ check_library_exists("dl" "dladdr" "" HAVE_LIBDL)
+@@ -128,7 +126,8 @@ check_library_exists("dl" "dladdr" "" HAVE_LIBDL)
  if(ANDROID)
  	set(HAVE_EXECINFO 0)
  else()
 -	check_include_file("execinfo.h" HAVE_EXECINFO)
 +	check_library_exists("execinfo" "backtrace" "" HAVE_EXECINFO)
-+	if(HAVE_EXECINFO)
-+		SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lexecinfo")
-+	endif()
++	SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -lexecinfo")
  endif()
  
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake" "${CMAKE_CURRENT_BINARY_DIR}/config.h")

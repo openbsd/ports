@@ -4,7 +4,7 @@ MODULE =	belcard
 
 SHARED_LIBS +=  belcard 0.0 # 1
 
-CONFIGURE_ARGS =-DENABLE_STATIC=NO \
+CONFIGURE_ARGS =-DBUILD_SHARED_LIBS=YES \
 		-DENABLE_UNIT_TESTS=NO
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox \

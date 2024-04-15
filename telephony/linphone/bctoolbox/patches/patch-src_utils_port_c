@@ -6,16 +6,16 @@ Index: src/utils/port.c
 --- src/utils/port.c.orig
 +++ src/utils/port.c
 @@ -30,6 +30,9 @@
- #include "bctoolbox/charconv.h"
+ #include "bctoolbox/vconnect.h"
  #include "utils.h"
  
 +#include <pthread.h>
 +#include <pthread_np.h>
 +
  #ifdef __APPLE__
-    #include "TargetConditionals.h"
+ #include "TargetConditionals.h"
  #endif
-@@ -371,8 +374,8 @@ void bctbx_set_self_thread_name(const char *name){
+@@ -355,8 +358,8 @@ void bctbx_set_self_thread_name(const char *name) {
  	prctl(PR_SET_NAME, name, NULL, NULL, NULL);
  #elif TARGET_OS_MAC
  	pthread_setname_np(name);
@@ -26,17 +26,7 @@ Index: src/utils/port.c
  #endif
  }
  
-@@ -1305,7 +1308,9 @@ static struct addrinfo *convert_to_v4mapped(const stru
- 		struct sockaddr_in6 *sin6;
- 		struct sockaddr_in *sin;
- 		v4m=_bctbx_alloc_addrinfo(AF_INET6, it->ai_socktype, it->ai_protocol);
-+#ifndef __OpenBSD__
- 		v4m->ai_flags|=AI_V4MAPPED;
-+#endif
- 		sin6=(struct sockaddr_in6*)v4m->ai_addr;
- 		sin=(struct sockaddr_in*)it->ai_addr;
- 		sin6->sin6_family=AF_INET6;
-@@ -1323,7 +1328,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
+@@ -1284,7 +1287,7 @@ static struct addrinfo *convert_to_v4mapped(const stru
  	return res;
  }
  
@@ -45,33 +35,12 @@ Index: src/utils/port.c
  
  /*
   * SHAME !!! bionic's getaddrinfo does not implement the AI_V4MAPPED flag !
-@@ -1515,17 +1520,19 @@ static struct addrinfo * _bctbx_name_to_addrinfo(int f
- 	struct addrinfo *res=NULL;
- 	struct addrinfo hints={0};
- 	char serv[10];
--	int err;
-+	int err = 0;
- 
- 	snprintf(serv,sizeof(serv),"%i",port);
- 	hints.ai_family=family;
- 	if (numeric_only) hints.ai_flags=AI_NUMERICSERV|AI_NUMERICHOST;
- 	hints.ai_socktype=socktype;
- 
-+#ifndef __OpenBSD__
- 	if (family == AF_INET6) {
- 		hints.ai_flags |= AI_V4MAPPED;
- 		hints.ai_flags |= AI_ALL;
- 	}
-+#endif
- 	err=bctbx_getaddrinfo(ipaddress,serv,&hints,&res);
- 
- 	if (err!=0){
-@@ -1636,7 +1643,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
+@@ -1605,7 +1608,7 @@ void bctbx_sockaddr_remove_nat64_mapping(const struct 
  		if (htonl(0x0064ff9b) ==
  #ifdef _MSC_VER
- 			((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])
+ 		    ((in6->sin6_addr.u.Word[0] << 16) & in6->sin6_addr.u.Word[1])
 -#elif __APPLE__
 +#elif __APPLE__ || __OpenBSD__
- 			in6->sin6_addr.__u6_addr.__u6_addr32[0]
+ 		    in6->sin6_addr.__u6_addr.__u6_addr32[0]
  #else
- 			in6->sin6_addr.s6_addr32[0]
+ 		    in6->sin6_addr.s6_addr32[0]

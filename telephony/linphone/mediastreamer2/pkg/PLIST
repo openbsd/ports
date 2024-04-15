@@ -63,7 +63,7 @@ include/mediastreamer2/stun.h
 include/mediastreamer2/upnp_igd.h
 include/mediastreamer2/x11_helper.h
 include/mediastreamer2/zrtp.h
-@lib lib/libmediastreamer.so.${LIBmediastreamer_VERSION}
+@lib lib/libmediastreamer2.so.${LIBmediastreamer2_VERSION}
 lib/mediastreamer/
 lib/mediastreamer/plugins/
 @so lib/mediastreamer/plugins/libmsqogl.so

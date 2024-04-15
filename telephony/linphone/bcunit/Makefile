@@ -1,11 +1,8 @@
 COMMENT =	Unit testing framework for C
+V =	5.3.36
 
-V =		5.2.62
 MODULE =	bcunit
-SHARED_LIBS +=	bcunit 0.0 # 1.0.1
-
-CONFIGURE_ARGS= -DENABLE_STATIC=NO \
-		-DENABLE_DOC=NO
+CFLAGS =	-fPIC
 
 NO_TEST =	Yes
 

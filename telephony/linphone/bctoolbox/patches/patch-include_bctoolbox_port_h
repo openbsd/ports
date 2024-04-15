@@ -1,12 +1,12 @@
 Index: include/bctoolbox/port.h
 --- include/bctoolbox/port.h.orig
 +++ include/bctoolbox/port.h
-@@ -859,7 +859,7 @@ BCTBX_PUBLIC void bctbx_set_stack_trace_hooks(bool_t u
- #define IN6_IS_ADDR_MULTICAST(i)	(((uint8_t *) (i))[0] == 0xff)
+@@ -882,7 +882,7 @@ BCTBX_PUBLIC void bctbx_set_stack_trace_hooks(bool_t u
+ #define IN6_IS_ADDR_MULTICAST(i) (((uint8_t *)(i))[0] == 0xff)
  #endif
  
 -#if defined(_WIN32) || defined(__QNX__)
-+#if defined(_WIN32) || defined(__QNX__) || defined (__OpenBSD__)
- /* Mingw32 does not define AI_V4MAPPED, however it is supported starting from Windows Vista. QNX also does not define AI_V4MAPPED. */
- #	ifndef AI_V4MAPPED
- #	define AI_V4MAPPED 0x00000800
++#if defined(_WIN32) || defined(__QNX__) || defined(__OpenBSD__)
+ /* Mingw32 does not define AI_V4MAPPED, however it is supported starting from Windows Vista. QNX also does not define
+  * AI_V4MAPPED. */
+ #ifndef AI_V4MAPPED

@@ -1,8 +1,7 @@
-too many unused-parameter warnings
-Index: cmake/BcToolboxCMakeUtils.cmake
---- cmake/BcToolboxCMakeUtils.cmake.orig
-+++ cmake/BcToolboxCMakeUtils.cmake
-@@ -42,7 +42,7 @@ macro(bc_init_compilation_flags CPP_FLAGS C_FLAGS CXX_
+Index: cmake/BCToolboxCMakeUtils.cmake
+--- cmake/BCToolboxCMakeUtils.cmake.orig
++++ cmake/BCToolboxCMakeUtils.cmake
+@@ -40,7 +40,7 @@ macro(bc_init_compilation_flags CPP_FLAGS C_FLAGS CXX_
  			list(APPEND ${CPP_FLAGS} "-Wno-error=unknown-warning-option" "-Qunused-arguments" "-Wno-tautological-compare" "-Wno-unused-function" "-Wno-array-bounds")
  		endif()
  		if(ENABLE_STRICT)

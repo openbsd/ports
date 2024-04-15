@@ -1,10 +1,10 @@
 Index: cmake/FindV4L.cmake
 --- cmake/FindV4L.cmake.orig
 +++ cmake/FindV4L.cmake
-@@ -39,7 +39,7 @@ if(V4L1_INCLUDE_DIRS)
+@@ -59,7 +59,7 @@ if(_V4L1_INCLUDE_DIRS)
  	set(HAVE_LINUX_VIDEODEV_H 1)
  endif()
- find_path(V4L2_INCLUDE_DIRS
+ find_path(_V4L2_INCLUDE_DIRS
 -	NAMES linux/videodev2.h
 +	NAMES sys/videoio.h
  	HINTS _V4L_ROOT_PATHS

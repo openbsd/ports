@@ -1,3 +1,4 @@
+@bin bin/belle-sip-tester
 include/belle-sip/
 include/belle-sip/auth-helper.h
 include/belle-sip/belle-sdp.h
@@ -5,7 +6,6 @@ include/belle-sip/belle-sip.h
 include/belle-sip/bodyhandler.h
 include/belle-sip/defs.h
 include/belle-sip/dialog.h
-include/belle-sip/dict.h
 include/belle-sip/generic-uri.h
 include/belle-sip/headers.h
 include/belle-sip/http-listener.h
@@ -34,8 +34,10 @@ lib/cmake/BelleSIP/BelleSIPConfig.cmake
 lib/cmake/BelleSIP/BelleSIPConfigVersion.cmake
 lib/cmake/BelleSIP/BelleSIPTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/BelleSIP/BelleSIPTargets.cmake
-@lib lib/libbellesip.so.${LIBbellesip_VERSION}
+@lib lib/libbelle-sip.so.${LIBbelle-sip_VERSION}
 lib/pkgconfig/belle-sip.pc
+share/belle-sip-tester/
+share/belle-sip-tester/tester_hosts
 share/belr/
 share/belr/grammars/
 share/belr/grammars/sdp_grammar

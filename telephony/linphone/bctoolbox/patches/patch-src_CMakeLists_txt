@@ -1,20 +1,25 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -183,6 +183,8 @@ if(ENABLE_SHARED)
- 		endif()
- 	endif()
- 	set_target_properties(bctoolbox PROPERTIES LINKER_LANGUAGE "CXX")
-+	target_include_directories(bctoolbox SYSTEM PRIVATE ${ICONV_INCLUDE_DIRS})
-+	target_link_libraries(bctoolbox PRIVATE ${ICONV_LIBRARIES})
- 	if(NOT ANDROID)
- 		# Do not version shared library on Android
- 		set_target_properties(bctoolbox PROPERTIES SOVERSION ${BCTOOLBOX_SO_VERSION})
-@@ -206,6 +208,7 @@ if(ENABLE_SHARED)
- 	endif()
- 	if(ENABLE_TESTS_COMPONENT)
- 		add_library(bctoolbox-tester SHARED ${BCTOOLBOX_TESTER_SOURCE_FILES})
-+		target_include_directories(bctoolbox-tester PRIVATE ${LOCALBASE}/include)
- 		set_target_properties(bctoolbox-tester PROPERTIES LINKER_LANGUAGE "CXX")
- 		target_link_libraries(bctoolbox-tester PUBLIC bctoolbox PRIVATE ${BCUNIT_TARGETNAME})
- 		if(WIN32)
+@@ -111,8 +111,9 @@ endif()
+ 
+ add_library(bctoolbox ${BCTOOLBOX_SOURCE_FILES} ${BCTOOLBOX_HEADER_FILES} ${BCTOOLBOX_PRIVATE_HEADER_FILES})
+ set_target_properties(bctoolbox PROPERTIES LINKER_LANGUAGE "CXX")
+-target_link_libraries(bctoolbox PRIVATE ${CMAKE_THREAD_LIBS_INIT})
++target_link_libraries(bctoolbox PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${ICONV_LIBRARIES})
+ target_include_directories(bctoolbox PUBLIC
++	${ICONV_INCLUDE_DIRS}
+ 	$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+ 	$<INSTALL_INTERFACE:include>
+ )
+@@ -188,8 +189,9 @@ endif()
+ if(ENABLE_TESTS_COMPONENT)
+ 	add_library(bctoolbox-tester ${BCTOOLBOX_TESTER_SOURCE_FILES})
+ 	set_target_properties(bctoolbox-tester PROPERTIES LINKER_LANGUAGE "CXX")
+-	target_link_libraries(bctoolbox-tester PUBLIC bctoolbox PRIVATE ${BCUnit_TARGET})
++	target_link_libraries(bctoolbox-tester PUBLIC bctoolbox PRIVATE ${BCUnit_TARGET} -lexecinfo)
+ 	target_include_directories(bctoolbox-tester PUBLIC
++		${LOCALBASE}/include
+ 		$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+ 		$<INSTALL_INTERFACE:include>
+ 	)

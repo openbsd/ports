@@ -1,12 +1,12 @@
 Index: src/core/paths/paths-linux.cpp
 --- src/core/paths/paths-linux.cpp.orig
 +++ src/core/paths/paths-linux.cpp
-@@ -36,7 +36,7 @@ static string getBaseDirectory () {
+@@ -36,7 +36,7 @@ static string getBaseDirectory() {
  		char *dir = getenv("HOME");
- 		if (!dir){
+ 		if (!dir) {
  			lError() << "Unable to get $HOME directory, will use current directory instead as base directory.";
 -			dir = get_current_dir_name();
 +			dir = getcwd(NULL, 0);
  			base = dir;
  			free(dir);
- 		}else{
+ 		} else {

@@ -1,12 +1,12 @@
+@bin bin/liblinphone-auto-answer
+@bin bin/liblinphone-lpc2xml-test
+@bin bin/liblinphone-sendmsg
+@bin bin/liblinphone-test-ecc
+@bin bin/liblinphone-xml2lpc-test
 @bin bin/linphone-daemon
 @bin bin/linphone-daemon-pipetest
 @bin bin/linphonec
 @bin bin/linphonecsh
-@bin bin/lp-auto-answer
-@bin bin/lp-sendmsg
-@bin bin/lp-test-ecc
-@bin bin/lpc2xml_test
-@bin bin/xml2lpc_test
 include/linphone/
 include/linphone++/
 include/linphone++/account.hh
@@ -15,6 +15,8 @@ include/linphone++/account_creator_listener.hh
 include/linphone++/account_listener.hh
 include/linphone++/account_params.hh
 include/linphone++/address.hh
+include/linphone++/alert.hh
+include/linphone++/alert_listener.hh
 include/linphone++/audio_device.hh
 include/linphone++/auth_info.hh
 include/linphone++/buffer.hh
@@ -25,6 +27,7 @@ include/linphone++/call_params.hh
 include/linphone++/call_stats.hh
 include/linphone++/chat_message.hh
 include/linphone++/chat_message_listener.hh
+include/linphone++/chat_message_reaction.hh
 include/linphone++/chat_room.hh
 include/linphone++/chat_room_listener.hh
 include/linphone++/chat_room_params.hh
@@ -39,6 +42,7 @@ include/linphone++/content.hh
 include/linphone++/core.hh
 include/linphone++/core_listener.hh
 include/linphone++/dial_plan.hh
+include/linphone++/dictionary.hh
 include/linphone++/digest_authentication_policy.hh
 include/linphone++/enums.hh
 include/linphone++/error_info.hh
@@ -68,6 +72,7 @@ include/linphone++/participant_device.hh
 include/linphone++/participant_device_identity.hh
 include/linphone++/participant_device_listener.hh
 include/linphone++/participant_imdn_state.hh
+include/linphone++/participant_info.hh
 include/linphone++/payload_type.hh
 include/linphone++/player.hh
 include/linphone++/player_listener.hh
@@ -83,6 +88,7 @@ include/linphone++/range.hh
 include/linphone++/recorder.hh
 include/linphone++/recorder_params.hh
 include/linphone++/search_result.hh
+include/linphone++/signal_information.hh
 include/linphone++/transports.hh
 include/linphone++/tunnel.hh
 include/linphone++/tunnel_config.hh
@@ -93,7 +99,6 @@ include/linphone++/video_source_descriptor.hh
 include/linphone++/xml_rpc_request.hh
 include/linphone++/xml_rpc_request_listener.hh
 include/linphone++/xml_rpc_session.hh
-include/linphone/FlexiAPIClient.hh
 include/linphone/account_creator.h
 include/linphone/account_creator_service.h
 include/linphone/api/
@@ -101,6 +106,8 @@ include/linphone/api/c-account-cbs.h
 include/linphone/api/c-account-params.h
 include/linphone/api/c-account.h
 include/linphone/api/c-address.h
+include/linphone/api/c-alert-cbs.h
+include/linphone/api/c-alert.h
 include/linphone/api/c-api.h
 include/linphone/api/c-audio-device.h
 include/linphone/api/c-auth-info.h
@@ -110,6 +117,7 @@ include/linphone/api/c-call-stats.h
 include/linphone/api/c-call.h
 include/linphone/api/c-callbacks.h
 include/linphone/api/c-chat-message-cbs.h
+include/linphone/api/c-chat-message-reaction.h
 include/linphone/api/c-chat-message.h
 include/linphone/api/c-chat-room-cbs.h
 include/linphone/api/c-chat-room-params.h
@@ -120,8 +128,11 @@ include/linphone/api/c-conference-scheduler.h
 include/linphone/api/c-conference.h
 include/linphone/api/c-content.h
 include/linphone/api/c-dial-plan.h
+include/linphone/api/c-dictionary.h
 include/linphone/api/c-digest-authentication-policy.h
+include/linphone/api/c-event-cbs.h
 include/linphone/api/c-event-log.h
+include/linphone/api/c-event.h
 include/linphone/api/c-factory.h
 include/linphone/api/c-friend-phone-number.h
 include/linphone/api/c-ldap-params.h
@@ -133,12 +144,15 @@ include/linphone/api/c-participant-device-cbs.h
 include/linphone/api/c-participant-device-identity.h
 include/linphone/api/c-participant-device.h
 include/linphone/api/c-participant-imdn-state.h
+include/linphone/api/c-participant-info.h
 include/linphone/api/c-participant.h
+include/linphone/api/c-payload-type.h
 include/linphone/api/c-push-notification-config.h
 include/linphone/api/c-push-notification-message.h
 include/linphone/api/c-recorder-params.h
 include/linphone/api/c-recorder.h
 include/linphone/api/c-search-result.h
+include/linphone/api/c-signal-information.h
 include/linphone/api/c-types.h
 include/linphone/api/c-video-source-descriptor.h
 include/linphone/buffer.h
@@ -152,8 +166,8 @@ include/linphone/contactprovider.h
 include/linphone/core.h
 include/linphone/core_utils.h
 include/linphone/defs.h
-include/linphone/dictionary.h
 include/linphone/enums/
+include/linphone/enums/c-enums.h
 include/linphone/enums/call-enums.h
 include/linphone/enums/chat-message-enums.h
 include/linphone/enums/chat-room-enums.h
@@ -161,10 +175,11 @@ include/linphone/enums/conference-enums.h
 include/linphone/enums/encryption-engine-enums.h
 include/linphone/enums/event-log-enums.h
 include/linphone/enums/participant-device-enums.h
+include/linphone/enums/participant-enums.h
 include/linphone/enums/security-event-enums.h
 include/linphone/error_info.h
-include/linphone/event.h
 include/linphone/factory.h
+include/linphone/flexi-api-client.h
 include/linphone/friend.h
 include/linphone/friendlist.h
 include/linphone/headers.h
@@ -180,7 +195,6 @@ include/linphone/linphonepresence.h
 include/linphone/logging.h
 include/linphone/lpconfig.h
 include/linphone/misc.h
-include/linphone/payload_type.h
 include/linphone/player.h
 include/linphone/presence.h
 include/linphone/proxy_config.h
@@ -201,14 +215,16 @@ include/linphone/vcard.h
 include/linphone/video_definition.h
 include/linphone/wrapper_utils.h
 include/linphone/xmlrpc.h
+lib/liblinphone/
 @lib lib/liblinphone++.so.${LIBlinphone++_VERSION}
 @lib lib/liblinphone.so.${LIBlinphone_VERSION}
-share/Linphone/
-share/Linphone/cmake/
-share/Linphone/cmake/LinphoneConfig.cmake
-share/Linphone/cmake/LinphoneConfigVersion.cmake
-share/Linphone/cmake/LinphoneTargets${MODCMAKE_BUILD_SUFFIX}
-share/Linphone/cmake/LinphoneTargets.cmake
+lib/liblinphone/plugins/
+share/LibLinphone/
+share/LibLinphone/cmake/
+share/LibLinphone/cmake/LibLinphoneConfig.cmake
+share/LibLinphone/cmake/LibLinphoneConfigVersion.cmake
+share/LibLinphone/cmake/LibLinphoneTargets${MODCMAKE_BUILD_SUFFIX}
+share/LibLinphone/cmake/LibLinphoneTargets.cmake
 share/LinphoneCxx/
 share/LinphoneCxx/cmake/
 share/LinphoneCxx/cmake/LinphoneCxxConfig.cmake
@@ -225,7 +241,6 @@ share/doc/liblinphone/c/bc_s.png
 share/doc/liblinphone/c/bc_sd.png
 share/doc/liblinphone/c/classEnumMask.html
 share/doc/liblinphone/c/classFlexiAPIClient.html
-share/doc/liblinphone/c/classFlexiAPIClient.png
 share/doc/liblinphone/c/classFlexiAPIClient_1_1Callbacks.html
 share/doc/liblinphone/c/classFlexiAPIClient_1_1JsonParams.html
 share/doc/liblinphone/c/classFlexiAPIClient_1_1Response.html
@@ -235,12 +250,12 @@ share/doc/liblinphone/c/clipboard.js
 share/doc/liblinphone/c/closed.png
 share/doc/liblinphone/c/deprecated.html
 share/doc/liblinphone/c/dir_0d61f8370cad1d412f80b84d143e1257.html
-share/doc/liblinphone/c/dir_11dba57c549c10039d7d897b286e7638.html
 share/doc/liblinphone/c/dir_2b3583e6e17721c54496bd04e57a0c15.html
 share/doc/liblinphone/c/dir_2fb4beeab2547f18097dfc65af84aa95.html
 share/doc/liblinphone/c/dir_407482fef87d1b9f3a34af46a705aba8.html
 share/doc/liblinphone/c/dir_657f8b8da628ef83cf69101b6817150a.html
 share/doc/liblinphone/c/dir_704935b5921e6f33fda5822c4f70610d.html
+share/doc/liblinphone/c/dir_7cc0433aeced6b3332bb18c1d31b6ba4.html
 share/doc/liblinphone/c/dir_8a5da52ed126447d359e70c05721a8aa.html
 share/doc/liblinphone/c/dir_bfebe34154a0dfd9fc7b447fc9ed74e9.html
 share/doc/liblinphone/c/dir_d436eb0fd9de10b54a828ce6435f7e81.html
@@ -260,7 +275,6 @@ share/doc/liblinphone/c/group__IOS.html
 share/doc/liblinphone/c/group__account.html
 share/doc/liblinphone/c/group__account__creator.html
 share/doc/liblinphone/c/group__account__creator__request.html
-share/doc/liblinphone/c/group__accounts.html
 share/doc/liblinphone/c/group__alert.html
 share/doc/liblinphone/c/group__audio.html
 share/doc/liblinphone/c/group__authentication.html
@@ -291,6 +305,7 @@ share/doc/liblinphone/c/group__proxies.html
 share/doc/liblinphone/c/group__real__time__text.html
 share/doc/liblinphone/c/group__real__time__text__sender.html
 share/doc/liblinphone/c/group__registration__tutorials.html
+share/doc/liblinphone/c/group__signalInformation.html
 share/doc/liblinphone/c/group__tunnel.html
 share/doc/liblinphone/c/group__wrapper.html
 share/doc/liblinphone/c/hierarchy.html
@@ -317,8 +332,8 @@ share/doc/liblinphone/c/structLinphoneVideoSizeDef.html
 share/doc/liblinphone/c/structMyAppData.html
 share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl.html
 share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl.png
-share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl_3_01T_00_01void__t_3_01typename_01T_1_1key__type_00_01typena0e0e9ccb7a7b185afbbba7a1f33ad4b0.html
-share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl_3_01T_00_01void__t_3_01typename_01T_1_1key__type_00_01typena0e0e9ccb7a7b185afbbba7a1f33ad4b0.png
+share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl_3_01T_00_01void__t_3_01typename_01T_1_1key__type_00_01typena4c66650365349329fbeec32f832f420c.html
+share/doc/liblinphone/c/structPrivate_1_1IsMapContainerImpl_3_01T_00_01void__t_3_01typename_01T_1_1key__type_00_01typena4c66650365349329fbeec32f832f420c.png
 share/doc/liblinphone/c/structPrivate_1_1MakeVoid.html
 share/doc/liblinphone/c/struct__BuddyAddress.html
 share/doc/liblinphone/c/struct__BuddyInfo.html
@@ -366,6 +381,12 @@ share/doc/liblinphone/cpp/classlinphone_1_1AccountParams.png
 share/doc/liblinphone/cpp/classlinphone_1_1Address-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1Address.html
 share/doc/liblinphone/cpp/classlinphone_1_1Address.png
+share/doc/liblinphone/cpp/classlinphone_1_1Alert-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1Alert.html
+share/doc/liblinphone/cpp/classlinphone_1_1Alert.png
+share/doc/liblinphone/cpp/classlinphone_1_1AlertListener-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1AlertListener.html
+share/doc/liblinphone/cpp/classlinphone_1_1AlertListener.png
 share/doc/liblinphone/cpp/classlinphone_1_1AudioDevice-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1AudioDevice.html
 share/doc/liblinphone/cpp/classlinphone_1_1AudioDevice.png
@@ -396,6 +417,9 @@ share/doc/liblinphone/cpp/classlinphone_1_1ChatMessage.png
 share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageListener-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageListener.html
 share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageListener.png
+share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageReaction-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageReaction.html
+share/doc/liblinphone/cpp/classlinphone_1_1ChatMessageReaction.png
 share/doc/liblinphone/cpp/classlinphone_1_1ChatRoom-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1ChatRoom.html
 share/doc/liblinphone/cpp/classlinphone_1_1ChatRoom.png
@@ -438,6 +462,9 @@ share/doc/liblinphone/cpp/classlinphone_1_1CoreListener.png
 share/doc/liblinphone/cpp/classlinphone_1_1DialPlan-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1DialPlan.html
 share/doc/liblinphone/cpp/classlinphone_1_1DialPlan.png
+share/doc/liblinphone/cpp/classlinphone_1_1Dictionary-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1Dictionary.html
+share/doc/liblinphone/cpp/classlinphone_1_1Dictionary.png
 share/doc/liblinphone/cpp/classlinphone_1_1DigestAuthenticationPolicy-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1DigestAuthenticationPolicy.html
 share/doc/liblinphone/cpp/classlinphone_1_1DigestAuthenticationPolicy.png
@@ -516,6 +543,9 @@ share/doc/liblinphone/cpp/classlinphone_1_1ParticipantDeviceListener.png
 share/doc/liblinphone/cpp/classlinphone_1_1ParticipantImdnState-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1ParticipantImdnState.html
 share/doc/liblinphone/cpp/classlinphone_1_1ParticipantImdnState.png
+share/doc/liblinphone/cpp/classlinphone_1_1ParticipantInfo-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1ParticipantInfo.html
+share/doc/liblinphone/cpp/classlinphone_1_1ParticipantInfo.png
 share/doc/liblinphone/cpp/classlinphone_1_1PayloadType-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1PayloadType.html
 share/doc/liblinphone/cpp/classlinphone_1_1PayloadType.png
@@ -561,6 +591,9 @@ share/doc/liblinphone/cpp/classlinphone_1_1RecorderParams.png
 share/doc/liblinphone/cpp/classlinphone_1_1SearchResult-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1SearchResult.html
 share/doc/liblinphone/cpp/classlinphone_1_1SearchResult.png
+share/doc/liblinphone/cpp/classlinphone_1_1SignalInformation-members.html
+share/doc/liblinphone/cpp/classlinphone_1_1SignalInformation.html
+share/doc/liblinphone/cpp/classlinphone_1_1SignalInformation.png
 share/doc/liblinphone/cpp/classlinphone_1_1Transports-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1Transports.html
 share/doc/liblinphone/cpp/classlinphone_1_1Transports.png
@@ -639,6 +672,7 @@ share/doc/liblinphone/cpp/functions_func_z.html
 share/doc/liblinphone/cpp/functions_g.html
 share/doc/liblinphone/cpp/functions_h.html
 share/doc/liblinphone/cpp/functions_i.html
+share/doc/liblinphone/cpp/functions_j.html
 share/doc/liblinphone/cpp/functions_k.html
 share/doc/liblinphone/cpp/functions_l.html
 share/doc/liblinphone/cpp/functions_m.html

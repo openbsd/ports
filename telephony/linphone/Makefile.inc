@@ -1,4 +1,4 @@
-V ?=		5.2.111
+V ?=		5.3.38
 CATEGORIES =	telephony
 MODULES +=	devel/cmake
 SITES =		https://gitlab.linphone.org/BC/public/${MODULE}/-/archive/${V}/

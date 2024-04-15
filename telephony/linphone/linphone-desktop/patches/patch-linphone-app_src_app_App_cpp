@@ -1,30 +1,30 @@
 Index: linphone-app/src/app/App.cpp
 --- linphone-app/src/app/App.cpp.orig
 +++ linphone-app/src/app/App.cpp
-@@ -67,7 +67,7 @@
+@@ -71,7 +71,7 @@
  using namespace std;
  
  namespace {
 -#ifdef Q_OS_LINUX
 +#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
  const QString AutoStartDirectory(QDir::homePath().append(QStringLiteral("/.config/autostart/")));
- #elif defined(Q_OS_MACOS)
- const QString OsascriptExecutable(QStringLiteral("osascript"));
-@@ -80,7 +80,7 @@ const QString AutoStartSettingsFilePath(
+ const QString ApplicationsDirectory(QDir::homePath().append(QStringLiteral("/.local/share/applications/")));
+ const QString IconsDirectory(QDir::homePath().append(QStringLiteral("/.local/share/icons/hicolor/scalable/apps/")));
+@@ -85,7 +85,7 @@ const QString
  
  // -----------------------------------------------------------------------------
  
 -#ifdef Q_OS_LINUX
 +#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
- static inline bool autoStartEnabled () {
- 	return QDir(AutoStartDirectory).exists() && QFile(AutoStartDirectory + EXECUTABLE_NAME ".desktop").exists();
- }
-@@ -970,7 +970,7 @@ QLocale App::getLocale () const {
+ bool App::autoStartEnabled() {
+ 	const QString confPath(AutoStartDirectory + EXECUTABLE_NAME ".desktop");
+ 	QFile file(confPath);
+@@ -1002,7 +1002,7 @@ QLocale App::getLocale() const {
  
  // -----------------------------------------------------------------------------
  
 -#ifdef Q_OS_LINUX
 +#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
  
- void App::setAutoStart (bool enabled) {
- 	if (enabled == mAutoStart)
+ void App::setAutoStart(bool enabled) {
+ 	if (enabled == mAutoStart) return;

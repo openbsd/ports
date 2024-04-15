@@ -13,10 +13,10 @@ Index: linphone-app/ui/views/App/Main/Assistant/AssistantHome.qml
  		cellWidth: width / 2
 -		enabled: cguCheckBox.checked
 +//		enabled: cguCheckBox.checked
+ 		visible: parent.isVisible
  		
  		delegate: Item {
- 			height: buttons.cellHeight
-@@ -112,7 +112,7 @@ ColumnLayout {
+@@ -113,7 +113,7 @@ ColumnLayout {
  					margins: AssistantHomeStyle.buttons.spacing
  				}
  				

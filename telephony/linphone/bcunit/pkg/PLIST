@@ -9,7 +9,7 @@ include/BCUnit/MyMem.h
 include/BCUnit/TestDB.h
 include/BCUnit/TestRun.h
 include/BCUnit/Util.h
-@lib lib/libbcunit.so.${LIBbcunit_VERSION}
+@static-lib lib/libbcunit.a
 lib/pkgconfig/bcunit.pc
 share/BCUnit/
 share/BCUnit/BCUnit-List.dtd
@@ -18,9 +18,8 @@ share/BCUnit/BCUnit-Run.dtd
 share/BCUnit/BCUnit-Run.xsl
 share/BCUnit/Memory-Dump.dtd
 share/BCUnit/Memory-Dump.xsl
-share/BCunit/
-share/BCunit/cmake/
-share/BCunit/cmake/BcUnitConfig.cmake
-share/BCunit/cmake/BcUnitConfigVersion.cmake
-share/BCunit/cmake/BcUnitTargets${MODCMAKE_BUILD_SUFFIX}
-share/BCunit/cmake/BcUnitTargets.cmake
+share/BCUnit/cmake/
+share/BCUnit/cmake/BCUnitConfig.cmake
+share/BCUnit/cmake/BCUnitConfigVersion.cmake
+share/BCUnit/cmake/BCUnitTargets${MODCMAKE_BUILD_SUFFIX}
+share/BCUnit/cmake/BCUnitTargets.cmake

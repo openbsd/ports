@@ -1,0 +1,17 @@
+Index: linphone-app/cmake/FindLibLinphone.cmake
+--- linphone-app/cmake/FindLibLinphone.cmake.orig
++++ linphone-app/cmake/FindLibLinphone.cmake
+@@ -27,10 +27,11 @@
+ if(NOT TARGET liblinphone)
+     set(EXPORT_PATH ${LINPHONE_OUTPUT_DIR})
+     include(GNUInstallDirs)
+-    include(${EXPORT_PATH}/${CMAKE_INSTALL_DATADIR}/linphone/cmake/linphoneTargets.cmake)
++    include(${EXPORT_PATH}/${CMAKE_INSTALL_DATADIR}/LibLinphone/cmake/LibLinphoneTargets.cmake)
++    include(${EXPORT_PATH}/${CMAKE_INSTALL_DATADIR}/LibLinphone/cmake/LibLinphoneConfig.cmake)
+ endif()
+ 
+-set(_LibLinphone_REQUIRED_VARS LibLinphone_TARGET LibLinphone_PLUGINS_DIR)
++set(_LibLinphone_REQUIRED_VARS LibLinphone_TARGET)
+ set(_LibLinphone_CACHE_VARS ${_LibLinphone_REQUIRED_VARS})
+ 
+ if(TARGET liblinphone)

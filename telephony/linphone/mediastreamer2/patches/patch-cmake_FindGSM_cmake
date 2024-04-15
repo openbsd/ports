@@ -1,0 +1,12 @@
+Index: cmake/FindGSM.cmake
+--- cmake/FindGSM.cmake.orig
++++ cmake/FindGSM.cmake
+@@ -58,7 +58,7 @@ else()
+ 	set(_GSM_ROOT_PATHS ${CMAKE_INSTALL_PREFIX})
+ 
+ 	find_path(_GSM_INCLUDE_DIRS
+-		NAMES gsm/gsm.h
++		NAMES gsm.h
+ 		HINTS ${_GSM_ROOT_PATHS}
+ 		PATH_SUFFIXES include
+ 	)

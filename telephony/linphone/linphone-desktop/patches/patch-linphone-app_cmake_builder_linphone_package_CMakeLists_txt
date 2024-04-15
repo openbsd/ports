@@ -8,24 +8,32 @@ WindowsArguments = dpiawareness=1
 Index: linphone-app/cmake_builder/linphone_package/CMakeLists.txt
 --- linphone-app/cmake_builder/linphone_package/CMakeLists.txt.orig
 +++ linphone-app/cmake_builder/linphone_package/CMakeLists.txt
-@@ -39,15 +39,7 @@ set(QT_PATH "${Qt5Core_DIR}/../../..")
- # ==============================================================================
+@@ -40,14 +40,7 @@ set(QT_PATH "${Qt5Core_DIR}/../../..")
  # Build package version.
  # ==============================================================================
--bc_compute_full_version(APP_PROJECT_VERSION)
--if (GIT_EXECUTABLE AND NOT(APP_PROJECT_VERSION))
+ 
+-if (GIT_EXECUTABLE AND NOT(LINPHONEAPP_VERSION))
 -  execute_process(
 -    COMMAND ${GIT_EXECUTABLE} describe --always
--    OUTPUT_VARIABLE APP_PROJECT_VERSION
+-    OUTPUT_VARIABLE LINPHONEAPP_VERSION
 -    OUTPUT_STRIP_TRAILING_WHITESPACE
 -    WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../.."
 -  )
--elseif (NOT(APP_PROJECT_VERSION))
-+if (NOT(APP_PROJECT_VERSION))
-   set(APP_PROJECT_VERSION "0.0.0")
+-elseif (NOT(LINPHONEAPP_VERSION))
++if (NOT(LINPHONEAPP_VERSION))
+   set(LINPHONEAPP_VERSION "0.0.0")
  endif ()
  
-@@ -302,8 +294,6 @@ else()# Not Windows and Apple
+@@ -55,7 +48,7 @@ set(LINPHONE_MAJOR_VERSION)
+ set(LINPHONE_MINOR_VERSION)
+ set(LINPHONE_MICRO_VERSION)
+ set(LINPHONE_BRANCH_VERSION)
+-bc_parse_full_version(${LINPHONEAPP_VERSION} LINPHONE_MAJOR_VERSION LINPHONE_MINOR_VERSION LINPHONE_MICRO_VERSION LINPHONE_BRANCH_VERSION)
++include(../../linphoneqt_version.cmake)
+ 
+ set(LINPHONE_VERSION ${LINPHONE_MAJOR_VERSION}.${LINPHONE_MINOR_VERSION}.${LINPHONE_MICRO_VERSION})
+ #string(REGEX REPLACE "([0-9.]+)-?.*" "\\1" LINPHONE_VERSION "${LINPHONEAPP_VERSION}")
+@@ -313,8 +306,6 @@ else()# Not Windows and Apple
  	install(FILES "${CMAKE_CURRENT_BINARY_DIR}/../../${EXECUTABLE_NAME}.desktop" DESTINATION "${CMAKE_INSTALL_DATADIR}/applications" PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
  	set(APP_QT_CONF_PATH "")	
  
@@ -34,3 +42,20 @@ Index: linphone-app/cmake_builder/linphone_package/CMakeLists.txt
  	install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/images/linphone_logo.svg" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/scalable/apps/" RENAME "${EXECUTABLE_NAME}.svg")
  	install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/../../assets/linphonerc-factory" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/${EXECUTABLE_NAME}")
  	
+@@ -370,13 +361,13 @@ if (MSVC)
+ endif ()
+ 
+ 
+-install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/include/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/\")")
++#install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/include/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/\")")
+ #install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E remove_directory \"${CMAKE_INSTALL_PREFIX}/include/\")")
+ # move share
+-install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/share/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/\")")
++#install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/share/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/\")")
+ #install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E remove_directory \"${CMAKE_INSTALL_PREFIX}/share/\")")
+ # move mkspecs
+-install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/mkspecs/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/\")")
++#install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory \"${CMAKE_INSTALL_PREFIX}/mkspecs/\" \"${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/\")")
+ #install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E remove_directory \"${CMAKE_INSTALL_PREFIX}/mkspecs/\")")
+ # remove other folders
+ #install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E remove_directory \"${CMAKE_INSTALL_PREFIX}/cmake/\")")

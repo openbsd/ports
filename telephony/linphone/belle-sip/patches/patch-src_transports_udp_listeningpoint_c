@@ -3,12 +3,12 @@ we dont support AI_V4MAPPED so hardcode IPv4 for now
 Index: src/transports/udp_listeningpoint.c
 --- src/transports/udp_listeningpoint.c.orig
 +++ src/transports/udp_listeningpoint.c
-@@ -82,7 +82,7 @@ belle_sip_socket_t udp_listening_point_create_udp_sock
+@@ -65,7 +65,7 @@ BELLE_SIP_INSTANCIATE_CUSTOM_VPTR_BEGIN(belle_sip_udp_
+ 	belle_sip_set_socket_api(NULL);
  
- 
- 	snprintf(portnum,sizeof(portnum),"%i",*port);
--	hints.ai_family=AF_UNSPEC;
-+	hints.ai_family=AF_INET;
- 	hints.ai_socktype=SOCK_DGRAM;
- 	hints.ai_protocol=IPPROTO_UDP;
- 	hints.ai_flags=AI_NUMERICSERV;
+ 	snprintf(portnum, sizeof(portnum), "%i", *port);
+-	hints.ai_family = AF_UNSPEC;
++	hints.ai_family = AF_INET;
+ 	hints.ai_socktype = SOCK_DGRAM;
+ 	hints.ai_protocol = IPPROTO_UDP;
+ 	hints.ai_flags = AI_NUMERICSERV;

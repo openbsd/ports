@@ -2,11 +2,11 @@ Index: src/videofilters/msv4l2.c
 --- src/videofilters/msv4l2.c.orig
 +++ src/videofilters/msv4l2.c
 @@ -38,7 +38,7 @@
- #include <sys/mman.h>
- #include <poll.h>
+ #include <sys/types.h>
+ #include <unistd.h>
  
 -#include <linux/videodev2.h>
 +#include <sys/videoio.h>
  
- #include "mediastreamer2/msvideo.h"
  #include "mediastreamer2/msticker.h"
+ #include "mediastreamer2/msvideo.h"

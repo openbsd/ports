@@ -1,12 +1,15 @@
 Index: src/audiofilters/gsm.c
 --- src/audiofilters/gsm.c.orig
 +++ src/audiofilters/gsm.c
-@@ -21,7 +21,7 @@
+@@ -21,11 +21,7 @@
  #include <bctoolbox/defs.h>
  
  #include "mediastreamer2/msfilter.h"
+-#ifdef GSM_USE_BUILD_INTERFACE
+ #include <gsm.h>
+-#else
 -#include <gsm/gsm.h>
-+#include <gsm.h>
+-#endif
  
  #ifdef _MSC_VER
  #include <malloc.h>

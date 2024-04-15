@@ -20,11 +20,12 @@ include/belcard/belcard_security.hpp
 include/belcard/belcard_utils.hpp
 include/belcard/vcard_grammar.hpp
 @lib lib/libbelcard.so.${LIBbelcard_VERSION}
-share/belcard/
-share/belcard/cmake/
-share/belcard/cmake/belcardConfig.cmake
-share/belcard/cmake/belcardTargets${MODCMAKE_BUILD_SUFFIX}
-share/belcard/cmake/belcardTargets.cmake
+share/BelCard/
+share/BelCard/cmake/
+share/BelCard/cmake/BelCardConfig.cmake
+share/BelCard/cmake/BelCardConfigVersion.cmake
+share/BelCard/cmake/BelCardTargets${MODCMAKE_BUILD_SUFFIX}
+share/BelCard/cmake/BelCardTargets.cmake
 share/belr/
 share/belr/grammars/
 share/belr/grammars/vcard_grammar

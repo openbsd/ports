@@ -13,8 +13,8 @@ Index: src/voip/msvoip.c
  #if TARGET_OS_IPHONE
  extern MSSndCardDesc au_card_desc;
  #endif
-@@ -124,6 +128,10 @@ static MSSndCardDesc * ms_snd_card_descs[]={
-         &pulse_card_desc,
+@@ -124,6 +128,10 @@ static MSSndCardDesc *ms_snd_card_descs[] = {
+     &pulse_card_desc,
  #endif
  
 +#ifdef __SNDIO_ENABLED__
@@ -22,9 +22,9 @@ Index: src/voip/msvoip.c
 +#endif
 +
  #ifdef __ALSA_ENABLED__
- 	&alsa_card_desc,
+     &alsa_card_desc,
  #endif
-@@ -362,7 +370,7 @@ MSFactory *ms_factory_new_with_voip(void){
+@@ -371,7 +379,7 @@ MSFactory *ms_factory_new_with_voip(void) {
  
  MSFactory *ms_factory_new_with_voip_and_directories(const char *plugins_dir, const char *images_dir) {
  	MSFactory *f = ms_factory_new();

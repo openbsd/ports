@@ -2,7 +2,7 @@ don't error out with DB_STORAGE disabled
 Index: src/c-wrapper/api/c-call-log.cpp
 --- src/c-wrapper/api/c-call-log.cpp.orig
 +++ src/c-wrapper/api/c-call-log.cpp
-@@ -358,7 +358,7 @@ bctbx_list_t * linphone_core_get_call_history_for_addr
+@@ -378,7 +378,7 @@ bctbx_list_t *linphone_core_get_call_history_2(Linphon
  
  	return results;
  #else
@@ -11,16 +11,7 @@ Index: src/c-wrapper/api/c-call-log.cpp
  	return NULL;
  #endif
  }
-@@ -385,7 +385,7 @@ bctbx_list_t *linphone_core_get_call_history_2(
- 
- 	return results;
- #else
--	bctbx_fatal("This function requires ENABLE_DB_STORAGE in order to work!");
-+	//bctbx_fatal("This function requires ENABLE_DB_STORAGE in order to work!");
- 	return NULL;
- #endif
- }
-@@ -401,7 +401,7 @@ LinphoneCallLog * linphone_core_get_last_outgoing_call
+@@ -394,7 +394,7 @@ LinphoneCallLog *linphone_core_get_last_outgoing_call_
  
  	return log != nullptr ? linphone_call_log_ref(log->toC()) : NULL;
  #else

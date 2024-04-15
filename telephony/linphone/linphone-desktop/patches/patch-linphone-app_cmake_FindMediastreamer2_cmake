@@ -1,0 +1,15 @@
+Index: linphone-app/cmake/FindMediastreamer2.cmake
+--- linphone-app/cmake/FindMediastreamer2.cmake.orig
++++ linphone-app/cmake/FindMediastreamer2.cmake
+@@ -30,9 +30,10 @@ if(NOT TARGET mediastreamer2)
+     set(EXPORT_PATH ${LINPHONE_OUTPUT_DIR})
+     include(GNUInstallDirs)
+     include(${EXPORT_PATH}/${CMAKE_INSTALL_DATADIR}/Mediastreamer2/cmake/Mediastreamer2Targets.cmake)
++    include(${EXPORT_PATH}/${CMAKE_INSTALL_DATADIR}/Mediastreamer2/cmake/Mediastreamer2Config.cmake)
+ endif()
+ 
+-set(_Mediastreamer2_REQUIRED_VARS Mediastreamer2_TARGET Mediastreamer2_PLUGINS_DIR)
++set(_Mediastreamer2_REQUIRED_VARS Mediastreamer2_TARGET)
+ set(_Mediastreamer2_CACHE_VARS ${_Mediastreamer2_REQUIRED_VARS})
+ 
+ if(TARGET mediastreamer2)

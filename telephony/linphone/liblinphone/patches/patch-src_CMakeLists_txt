@@ -1,14 +1,16 @@
-we dont have soci so dont try linking against it
+we dont have libdl so dont try linking against it
 
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -602,8 +602,6 @@ endif()
+@@ -43,10 +43,6 @@ if(LibXml2_FOUND)
+ 	list(APPEND PUBLIC_LINK_LIBS ${LibXml2_TARGET})
+ endif()
  
- set(LINPHONE_CXX_OBJECTS_INCLUDE_DIRS
- 	${LIBXSD_INCLUDE_DIRS}
--	${SOCI_INCLUDE_DIRS}
--	${SOCI_MYSQL_INCLUDES}
- )
- 
- set(LINPHONE_PRIVATE_HEADER_FILES)
+-if(HAVE_DLOPEN)
+-	list(APPEND LINK_LIBS dl)
+-endif()
+-
+ if(ENABLE_ADVANCED_IM)
+ 	list(APPEND LINK_LIBS ${XercesC_TARGET})
+ 	if (APPLE AND NOT IOS)

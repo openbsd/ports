@@ -1,0 +1,12 @@
+Index: linphone-app/src/components/other/clipboard/Clipboard.cpp
+--- linphone-app/src/components/other/clipboard/Clipboard.cpp.orig
++++ linphone-app/src/components/other/clipboard/Clipboard.cpp
+@@ -62,7 +62,7 @@ QString Clipboard::getChatFormattedText () const {
+ #ifdef WIN32
+ 	QString cr = "\n\r";
+ #endif
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined (__OpenBSD__)
+ 	QString cr = "\n";
+ #endif
+ 	return text.replace(cr,"\u2028");

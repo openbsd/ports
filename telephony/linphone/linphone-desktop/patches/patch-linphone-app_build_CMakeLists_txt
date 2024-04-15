@@ -3,7 +3,7 @@ https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0002-remove-bc_compu
 Index: linphone-app/build/CMakeLists.txt
 --- linphone-app/build/CMakeLists.txt.orig
 +++ linphone-app/build/CMakeLists.txt
-@@ -46,11 +46,6 @@ set(CPACK_SOURCE_IGNORE_FILES
+@@ -46,15 +46,8 @@ set(CPACK_SOURCE_IGNORE_FILES
    "libmng.spec"
  )
  
@@ -15,3 +15,7 @@ Index: linphone-app/build/CMakeLists.txt
  message("-- Package file name is ${CPACK_PACKAGE_FILE_NAME}")
  
  set(CPACK_SOURCE_PACKAGE_FILE_NAME ${CPACK_PACKAGE_FILE_NAME})
+-
+-bc_generate_rpm_specfile("rpm/linphone.spec.cmake" "${PROJECT_SOURCE_DIR}/linphone.spec")
+ 
+ include(CPack)

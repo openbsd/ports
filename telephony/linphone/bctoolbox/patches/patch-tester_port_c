@@ -1,28 +1,58 @@
 Index: tester/port.c
 --- tester/port.c.orig
 +++ tester/port.c
-@@ -136,21 +136,15 @@ static void time_functions(void) {
+@@ -136,7 +136,7 @@ static void time_functions(void) {
  
  static void bctbx_addrinfo_sort_test(void) {
- 	struct addrinfo * res1 = bctbx_name_to_addrinfo(AF_INET6, SOCK_DGRAM, "sip3.linphone.org", 27256);
--	struct addrinfo * res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "91.121.209.194", 27256);
-+	//struct addrinfo * res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "2001:41d0:8:6e48::", 27256);
- 	struct addrinfo * res3 = bctbx_ip_address_to_addrinfo(AF_INET, SOCK_DGRAM, "91.121.209.194", 27256);
- 	bool_t searching_for_v6=TRUE;
- 	struct addrinfo * ai =  NULL;
- 	char printable_ip[256];
- 	struct addrinfo * res = res3;
- 	
--	for ( ai=res2 ; ai !=NULL; ai=ai->ai_next) {
--		if (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6*)(ai->ai_addr))->sin6_addr)) {
--			res->ai_next=ai;
+ 	struct addrinfo *res1 = bctbx_name_to_addrinfo(AF_INET6, SOCK_DGRAM, "sip3.linphone.org", 27256);
+-	struct addrinfo *res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "91.121.209.194", 27256);
++	//struct addrinfo *res2 = bctbx_ip_address_to_addrinfo(AF_INET6, SOCK_DGRAM, "91.121.209.194", 27256);
+ 	struct addrinfo *res3 = bctbx_ip_address_to_addrinfo(AF_INET, SOCK_DGRAM, "91.121.209.194", 27256);
+ 	bool_t searching_for_v6 = TRUE;
+ 	struct addrinfo *ai = NULL;
+@@ -144,15 +144,8 @@ static void bctbx_addrinfo_sort_test(void) {
+ 	struct addrinfo *res = res3;
+ 	struct addrinfo *to_free = NULL;
+ 
+-	for (ai = res2; ai != NULL; ai = ai->ai_next) {
+-		if (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)(ai->ai_addr))->sin6_addr)) {
+-			res->ai_next = ai;
 -			break;
 -		}
 -	}
--	res->ai_next->ai_next=res1;
--	res->ai_next->ai_next->ai_next=NULL;
-+	res->ai_next=res1;
-+	res->ai_next->ai_next=NULL;
- 	
- 	//So now, res as ipv4 first, then v4 mapped, then v6
- 	for ( ai=res ; ai !=NULL; ai=ai->ai_next) {
+-	res->ai_next->ai_next = res1;
+-	to_free = res1->ai_next;
+-	res->ai_next->ai_next->ai_next = NULL;
++	res->ai_next = res1;
++	res->ai_next->ai_next = NULL;
+ 
+ 	// So now, res as ipv4 first, then v4 mapped, then v6
+ 	for (ai = res; ai != NULL; ai = ai->ai_next) {
+@@ -163,20 +156,11 @@ static void bctbx_addrinfo_sort_test(void) {
+ 	// now apply bctbx_addrinfo_sort
+ 	res = bctbx_addrinfo_sort(res);
+ 	for (ai = res; ai != NULL; ai = ai->ai_next) {
+-		if (ai->ai_family == AF_INET6) {
+-			if (!searching_for_v6) {
+-				BC_ASSERT_FALSE(IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)(ai->ai_addr))->sin6_addr));
+-			}
+-			if (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)(ai->ai_addr))->sin6_addr)) {
+-				searching_for_v6 = FALSE; // stating from now, all subsequent IP shall be pure V6
+-			}
+-		}
+ 		bctbx_addrinfo_to_printable_ip_address(ai, printable_ip, sizeof(printable_ip));
+ 		bctbx_message("bctbx_getaddrinfo sorted address:%s", printable_ip);
+ 	}
+ 
+ 	bctbx_freeaddrinfo(res);
+-	bctbx_freeaddrinfo(to_free);
+ }
+ 
+ static void bctbx_directory_utils_test(void) {
+@@ -245,4 +229,4 @@ static test_t utils_tests[] = {
+     TEST_NO_TAG("Addrinfo sort", bctbx_addrinfo_sort_test), TEST_NO_TAG("Directory utils", bctbx_directory_utils_test)};
+ 
+ test_suite_t utils_test_suite = {"Utils",     NULL, NULL, NULL, NULL, sizeof(utils_tests) / sizeof(utils_tests[0]),
+-                                 utils_tests, 0};
+\ No newline at end of file
++                                 utils_tests, 0};

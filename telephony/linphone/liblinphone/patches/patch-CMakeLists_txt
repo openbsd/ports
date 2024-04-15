@@ -4,7 +4,16 @@ with installed devel/xsd.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -277,6 +277,7 @@ include_directories(
+@@ -101,7 +101,7 @@ include(CheckCXXCompilerFlag)
+ 
+ check_symbol_exists(getifaddrs "sys/types.h;ifaddrs.h" HAVE_GETIFADDRS)
+ 
+-check_library_exists("dl" "dlopen" "" HAVE_DLOPEN)
++check_library_exists("c" "dlopen" "" HAVE_DLOPEN)
+ 
+ if(NOT CMAKE_INSTALL_RPATH AND CMAKE_INSTALL_PREFIX)
+ 	set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_FULL_LIBDIR})
+@@ -224,6 +224,7 @@ include_directories(
  	coreapi
  	include
  	src

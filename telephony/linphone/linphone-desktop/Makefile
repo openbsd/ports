@@ -1,9 +1,12 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		5.1.2
-REVISION =	0
+V =		5.2.4
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
+
+SITES.gitlab = https://gitlab.linphone.org/BC/public/
+
+DIST_TUPLE +=	gitlab external ispell 05574fe160222c3d0b6283c1433c9b087271fad1 external/ispell
 
 MODULES +=	x11/qt5
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
@@ -27,7 +30,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5Svg Qt5Test Qt5TextToSpeech Qt5Widgets bctoolbox belcard
-WANTLIB += c linphone linphone++ m mediastreamer ortp
+WANTLIB += belle-sip belr c linphone linphone++ m mediastreamer2 ortp sqlite3 xml2
 
 post-patch:
 	echo "project(linphoneqt VERSION ${V})\nset(FULL_VERSION ${V})" > ${WRKSRC}/linphone-app/linphoneqt_version.cmake

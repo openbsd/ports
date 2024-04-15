@@ -1,4 +1,4 @@
-@bin bin/bctoolbox_tester
+@bin bin/bctoolbox-tester
 include/bctoolbox/
 include/bctoolbox/charconv.h
 include/bctoolbox/compiler.h
@@ -24,14 +24,15 @@ include/bctoolbox/vfs_standard.h
 @lib lib/libbctoolbox.so.${LIBbctoolbox_VERSION}
 lib/pkgconfig/bctoolbox-tester.pc
 lib/pkgconfig/bctoolbox.pc
-share/bctoolbox/
-share/bctoolbox/cmake/
-share/bctoolbox/cmake/BcGitVersion.cmake
-share/bctoolbox/cmake/ConfigureSpecfile.cmake
-share/bctoolbox/cmake/MakeArchive.cmake
-share/bctoolbox/cmake/bctoolboxCMakeUtils.cmake
-share/bctoolbox/cmake/bctoolboxConfig.cmake
-share/bctoolbox/cmake/bctoolboxConfigVersion.cmake
-share/bctoolbox/cmake/bctoolboxTargets${MODCMAKE_BUILD_SUFFIX}
-share/bctoolbox/cmake/bctoolboxTargets.cmake
-share/bctoolbox/cmake/gitversion.h.in
+share/BCToolbox/
+share/BCToolbox/cmake/
+share/BCToolbox/cmake/BCGitVersion.cmake
+share/BCToolbox/cmake/BCToolboxCMakeUtils.cmake
+share/BCToolbox/cmake/BCToolboxConfig.cmake
+share/BCToolbox/cmake/BCToolboxConfigVersion.cmake
+share/BCToolbox/cmake/BCToolboxTargets${MODCMAKE_BUILD_SUFFIX}
+share/BCToolbox/cmake/BCToolboxTargets.cmake
+share/BCToolbox/cmake/ConfigureSpecfile.cmake
+share/BCToolbox/cmake/FindMbedTLS.cmake
+share/BCToolbox/cmake/MakeArchive.cmake
+share/BCToolbox/cmake/gitversion.h.in

@@ -1,2 +1,4 @@
-SHA256 (linphone-desktop-5.1.2.tar.gz) = PUdX+mpuLYZqt2jP/GSVq2tz2jw42rxWHK4ScVWm9ys=
-SIZE (linphone-desktop-5.1.2.tar.gz) = 3042460
+SHA256 (external-ispell-05574fe160222c3d0b6283c1433c9b087271fad1.tar.gz) = 0MP9VKTG43r1zoP64AHkdAPusRPv1TDVU/Q3dmuP/iA=
+SHA256 (linphone-desktop-5.2.4.tar.gz) = 71u1w4Ta9Yt+1rmYqT/Z/F31la9Vz4V0ZpOsMaFhS5s=
+SIZE (external-ispell-05574fe160222c3d0b6283c1433c9b087271fad1.tar.gz) = 1562075
+SIZE (linphone-desktop-5.2.4.tar.gz) = 3105850

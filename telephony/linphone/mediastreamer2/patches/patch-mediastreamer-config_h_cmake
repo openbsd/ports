@@ -1,7 +1,7 @@
 Index: mediastreamer-config.h.cmake
 --- mediastreamer-config.h.cmake.orig
 +++ mediastreamer-config.h.cmake
-@@ -43,6 +43,7 @@
+@@ -47,6 +47,7 @@
  
  #cmakedefine __ALSA_ENABLED__
  #cmakedefine __ARTS_ENABLED__

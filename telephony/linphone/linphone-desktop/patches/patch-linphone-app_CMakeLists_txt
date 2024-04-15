@@ -1,24 +1,66 @@
 https://sources.debian.org/patches/linphone-desktop/4.2.5-3/0002-remove-bc_compute_full_version-usage.patch/
 
+chunk 3 makes sure the plugin headers dont need to be patched
+
 Index: linphone-app/CMakeLists.txt
 --- linphone-app/CMakeLists.txt.orig
 +++ linphone-app/CMakeLists.txt
-@@ -21,17 +21,8 @@
- ################################################################################
- cmake_minimum_required(VERSION 3.1)
- 
-+include(linphoneqt_version.cmake)
- find_package(bctoolbox CONFIG)
--set(FULL_VERSION )
--bc_compute_full_version(FULL_VERSION)
--set(version_major )
--set(version_minor )
--set(version_patch )
+@@ -32,19 +32,8 @@ find_package(BCToolbox)
+ if(NOT BCToolbox_FOUND)
+ 	find_package(bctoolbox CONFIG REQUIRED)
+ endif()
+-if(NOT LINPHONEAPP_VERSION)
+-	bc_compute_full_version(LINPHONEAPP_VERSION)
+-endif()
+-set(version_major)
+-set(version_minor)
+-set(version_patch)
 -set(identifiers )
 -set(metadata )
--bc_parse_full_version("${FULL_VERSION}" version_major version_minor version_patch identifiers metadata)
+-bc_parse_full_version("${LINPHONEAPP_VERSION}" version_major version_minor version_patch identifiers metadata)
++include(linphoneqt_version.cmake)
+ 
 -
 -project(linphoneqt VERSION "${version_major}.${version_minor}.${version_patch}")
+-
+ if(ENABLE_BUILD_VERBOSE)
+ 	#message("CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}")
+ 	message("Options : ${ENABLE_UPDATE_CHECK}, ${ENABLE_UNIT_TESTS}, ${ENABLE_TESTS}, ${ENABLE_TESTS_COMPONENTS}, ${ENABLE_TOOLS}, ${ENABLE_STRICT}, ${ENABLE_FFMPEG}, ${ENABLE_OPUS}")
+@@ -82,7 +71,7 @@ if(NOT APPLICATION_START_LICENCE OR  "${CURRENT_YEAR}"
+ else()
+ 	set(COPYRIGHT_RANGE_DATE "${APPLICATION_START_LICENCE}-${CURRENT_YEAR}")
+ endif()
+-set(APPLICATION_SEMVER ${LINPHONEAPP_VERSION})
++set(APPLICATION_SEMVER ${FULL_VERSION})
+ if(WIN32)
+ 	set(EXECUTABLE_OUTPUT_DIR "${CMAKE_CURRENT_BINARY_DIR}")
+ 	set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${EXECUTABLE_OUTPUT_DIR} )
+@@ -785,7 +774,7 @@ if(MSVC)
+ endif()
  
+ 
+-target_compile_definitions(${APP_PLUGIN} PUBLIC "-DENABLE_APP_EXPORT_PLUGIN")
++add_compile_definitions("-DENABLE_APP_EXPORT_PLUGIN")
+ set_target_properties(${APP_PLUGIN} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
  
  if(ENABLE_BUILD_VERBOSE)
+@@ -837,14 +826,14 @@ add_dependencies(${APP_LIBRARY} update_translations ${
+ set(TOOLS_DIR "${CMAKE_BINARY_DIR}/programs")
+ set(LINPHONE_BUILDER_SIGNING_IDENTITY ${LINPHONE_BUILDER_SIGNING_IDENTITY})
+ 
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/include/" "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+-add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++#add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++#add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/include/" "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR}/")
++#add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
++#add_custom_command(TARGET ${APP_PLUGIN} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_LINKER_FILE:${APP_PLUGIN}> "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/")
+ #add_custom_command(TARGET ${TARGET_NAME} PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/include/LinphoneApp/*" "${CMAKE_INSTALL_PREFIX}/include/LinphoneApp/")
+ 
+ #configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/*" "${CMAKE_INSTALL_PREFIX}/include/LinphoneApp/" COPYONLY)
+-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include" DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
++install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include" DESTINATION "${CMAKE_INSTALL_PREFIX}")
+ 
+ 
+ add_subdirectory(build)

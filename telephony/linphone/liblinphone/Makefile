@@ -1,12 +1,13 @@
 COMMENT =	SIP library supporting voice/video calls and text messaging
-REVISION =	0
 
 MODULE =	liblinphone
+V =	5.3.40
 
-SHARED_LIBS +=	linphone	3.0 \
-		linphone++	3.0 # 10
+SHARED_LIBS +=	linphone	4.0 \
+		linphone++	4.0 # 10
 
-CONFIGURE_ARGS =-DENABLE_STATIC=NO \
+CONFIGURE_ARGS =-DBUILD_SHARED_LIBS=YES \
+		-DENABLE_CONSOLE_UI=YES \
 		-DENABLE_UNIT_TESTS=NO \
 		-DENABLE_STRICT=NO \
 		-DENABLE_QRCODE=NO \
@@ -26,8 +27,8 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox \
 		telephony/linphone/belr \
 		textproc/xerces-c
 
-WANTLIB += ${COMPILER_LIBCXX} bctoolbox belcard bellesip belr
-WANTLIB += c iconv m mediastreamer ortp sqlite3 xerces-c
+WANTLIB += ${COMPILER_LIBCXX} bctoolbox belcard belle-sip belr
+WANTLIB += c iconv m mediastreamer2 ortp sqlite3 xerces-c
 WANTLIB += xml2 z
 
 post-install:

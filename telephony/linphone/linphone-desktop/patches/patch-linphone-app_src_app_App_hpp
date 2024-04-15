@@ -1,0 +1,12 @@
+Index: linphone-app/src/app/App.hpp
+--- linphone-app/src/app/App.hpp.orig
++++ linphone-app/src/app/App.hpp
+@@ -130,7 +130,7 @@ class App : public SingleApplication { (public)
+ 	Q_INVOKABLE static bool isPdfAvailable();
+ 	Q_INVOKABLE static bool isLinux();
+ 	bool autoStartEnabled();
+-#ifdef Q_OS_LINUX
++#if defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+ 	Q_INVOKABLE void exportDesktopFile();
+ 
+ 	QString getApplicationPath() const;

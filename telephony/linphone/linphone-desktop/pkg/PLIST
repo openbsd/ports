@@ -4,6 +4,7 @@ include/LinphoneApp/LinphonePlugin.hpp
 include/LinphoneApp/PluginDataAPI.hpp
 include/LinphoneApp/PluginExample.json
 include/LinphoneApp/PluginNetworkHelper.hpp
+@so lib/libISpell.so
 @so lib/libapp-plugin.so
 share/applications/linphone.desktop
 share/icons/hicolor/128x128/apps/linphone.png
@@ -18,6 +19,11 @@ share/linphone/assistant/
 share/linphone/assistant/create-app-sip-account.rc
 share/linphone/assistant/use-app-sip-account.rc
 share/linphone/assistant/use-other-sip-account.rc
+share/linphone/ispell_dictionaries/
+share/linphone/ispell_dictionaries/en
+share/linphone/ispell_dictionaries/en.hash
+share/linphone/ispell_dictionaries/fr
+share/linphone/ispell_dictionaries/fr.hash
 share/linphone/linphonerc-factory
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

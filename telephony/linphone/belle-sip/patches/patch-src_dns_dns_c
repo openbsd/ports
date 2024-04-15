@@ -2,39 +2,37 @@ chunk 2: https://github.com/freebsd/freebsd-ports/blob/main/net/belle-sip/files/
 Index: src/dns/dns.c
 --- src/dns/dns.c.orig
 +++ src/dns/dns.c
-@@ -4551,10 +4551,12 @@ struct dns_resolv_conf *dns_resconf_local(int *error_)
- 			goto error;
+@@ -4188,9 +4188,11 @@ struct dns_resolv_conf *dns_resconf_local(int *error_)
+ 		if (error != ENOENT) goto error;
  	}
  
 +#ifndef __OpenBSD__
  	if ((error = dns_nssconf_loadpath(resconf, "/etc/nsswitch.conf"))) {
- 		if (error != ENOENT)
- 			goto error;
+ 		if (error != ENOENT) goto error;
  	}
 +#endif
  
  	return resconf;
  error:
-@@ -5045,7 +5047,7 @@ int dns_resconf_loadfromresolv(struct dns_resolv_conf 
+@@ -4661,6 +4663,7 @@ int dns_resconf_loadfromresolv(struct dns_resolv_conf 
  	union res_sockaddr_union addresses[3];
- 	int i,error,write_index;
+ 	int i, error, write_index;
  
--
 +	memset(&res, 0, sizeof(res));
  	if ((error = res_ninit(&res))) {
  		return error;
  	}
-@@ -9181,6 +9183,7 @@ static struct dns_resolv_conf *resconf(void) {
- 			panic("%s: %s", path, dns_strerror(error));
+@@ -8395,6 +8398,7 @@ static struct dns_resolv_conf *resconf(void) {
+ 		if (error) panic("%s: %s", path, dns_strerror(error));
  	}
  
 +#ifndef __OpenBSD__
  	for (i = 0; i < MAIN.nssconf.count; i++) {
- 		path	= MAIN.nssconf.path[i];
+ 		path = MAIN.nssconf.path[i];
  
-@@ -9201,7 +9204,7 @@ static struct dns_resolv_conf *resconf(void) {
- 		else if (error != ENOENT)
- 			panic("%s: %s", path, dns_strerror(error));
+@@ -8410,7 +8414,7 @@ static struct dns_resolv_conf *resconf(void) {
+ 		if (!(error = dns_nssconf_loadpath(resconf, path))) MAIN.nssconf.path[MAIN.nssconf.count++] = path;
+ 		else if (error != ENOENT) panic("%s: %s", path, dns_strerror(error));
  	}
 -
 +#endif

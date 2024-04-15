@@ -1,7 +1,7 @@
 Index: src/zidCache.c
 --- src/zidCache.c.orig
 +++ src/zidCache.c
-@@ -34,7 +34,7 @@
+@@ -30,7 +30,7 @@
  #ifdef _WIN32
  #include <malloc.h>
  #else

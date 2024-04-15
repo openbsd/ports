@@ -3,13 +3,13 @@ disable fprintf test, infinite loop ?
 Index: tester/encrypted_vfs.cc
 --- tester/encrypted_vfs.cc.orig
 +++ tester/encrypted_vfs.cc
-@@ -583,8 +583,7 @@ static test_t encrypted_vfs_tests[] = {
-     TEST_NO_TAG("basic", basic_encryption_test),
-     TEST_NO_TAG("Authentication failure", auth_fail_test),
-     TEST_NO_TAG("migration", migration_test),
--    TEST_NO_TAG("recovery", recovery_test),
--    TEST_NO_TAG("fprintf", fprintf_encryption_test)};
-+    TEST_NO_TAG("recovery", recovery_test)};
+@@ -543,8 +543,7 @@ void recovery_test() {
  
- test_suite_t encrypted_vfs_test_suite = {"Encrypted vfs",
-                                          NULL,
+ static test_t encrypted_vfs_tests[] = {TEST_NO_TAG("basic", basic_encryption_test),
+                                        TEST_NO_TAG("Authentication failure", auth_fail_test),
+-                                       TEST_NO_TAG("migration", migration_test), TEST_NO_TAG("recovery", recovery_test),
+-                                       TEST_NO_TAG("fprintf", fprintf_encryption_test)};
++                                       TEST_NO_TAG("migration", migration_test), TEST_NO_TAG("recovery", recovery_test)};
+ 
+ test_suite_t encrypted_vfs_test_suite = {
+     "Encrypted vfs",    NULL, NULL, NULL, NULL, sizeof(encrypted_vfs_tests) / sizeof(encrypted_vfs_tests[0]),

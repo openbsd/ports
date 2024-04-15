@@ -1,12 +1,12 @@
 Index: src/channel.c
 --- src/channel.c.orig
 +++ src/channel.c
-@@ -764,7 +764,7 @@ void belle_sip_channel_init(belle_sip_channel_t *obj, 
- 	obj->simulated_recv_return=1;/*not set*/
- 	if (peername){
+@@ -801,7 +801,7 @@ void belle_sip_channel_init(belle_sip_channel_t *obj,
+ 	obj->simulated_recv_return = 1; /*not set*/
+ 	if (peername) {
  		/*check if we are given a real dns name or just an ip address*/
--		struct addrinfo *ai=bctbx_ip_address_to_addrinfo(AF_UNSPEC,SOCK_STREAM,peername,peer_port);
-+		struct addrinfo *ai=bctbx_ip_address_to_addrinfo(AF_INET,SOCK_STREAM,peername,peer_port);
+-		struct addrinfo *ai = bctbx_ip_address_to_addrinfo(AF_UNSPEC, SOCK_STREAM, peername, peer_port);
++		struct addrinfo *ai = bctbx_ip_address_to_addrinfo(AF_INET, SOCK_STREAM, peername, peer_port);
  		if (ai) bctbx_freeaddrinfo(ai);
- 		else obj->has_name=TRUE;
+ 		else obj->has_name = TRUE;
  	}
