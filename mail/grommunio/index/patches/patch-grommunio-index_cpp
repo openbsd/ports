@@ -1,0 +1,21 @@
+Index: grommunio-index.cpp
+--- grommunio-index.cpp.orig
++++ grommunio-index.cpp
+@@ -1062,7 +1062,7 @@ int main(int argc, char **argv) try
+ 		return single_mode();
+ 
+ 	if (geteuid() == 0) {
+-		auto ret = HXproc_switch_user("grommunio", "groweb");
++		auto ret = HXproc_switch_user("www", "daemon");
+ 		if (static_cast<int>(ret) < 0) {
+ 			fprintf(stderr, "switch_user grommunio/groweb: %s\n", strerror(errno));
+ 			return EXIT_FAILURE;
+@@ -1071,7 +1071,7 @@ int main(int argc, char **argv) try
+ 		execv(argv[0], argv);
+ 	}
+ 	int bigret = EXIT_SUCCESS;
+-	static const std::string index_root = "/var/lib/grommunio-web/sqlite-index";
++	static const std::string index_root = "/var/www/cache/sqlite-index";
+ 	for (auto &&u : am_read_users(std::move(cfg))) {
+ 		auto index_home = index_root + "/" + u.username;
+ 		if (mkdir(index_home.c_str(), 0777) != 0 && errno != EEXIST) {
