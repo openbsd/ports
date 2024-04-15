@@ -38,7 +38,6 @@ share/locale/el/LC_MESSAGES/mate-media.mo
 share/locale/en_AU/LC_MESSAGES/mate-media.mo
 share/locale/en_CA/LC_MESSAGES/mate-media.mo
 share/locale/en_GB/LC_MESSAGES/mate-media.mo
-share/locale/en_US/LC_MESSAGES/mate-media.mo
 share/locale/eo/LC_MESSAGES/mate-media.mo
 share/locale/es/LC_MESSAGES/mate-media.mo
 share/locale/es_AR/LC_MESSAGES/mate-media.mo
@@ -104,6 +103,7 @@ share/locale/ml/LC_MESSAGES/mate-media.mo
 share/locale/mn/LC_MESSAGES/mate-media.mo
 share/locale/mr/LC_MESSAGES/mate-media.mo
 share/locale/ms/LC_MESSAGES/mate-media.mo
+share/locale/nan/LC_MESSAGES/mate-media.mo
 share/locale/nb/LC_MESSAGES/mate-media.mo
 share/locale/nds/LC_MESSAGES/mate-media.mo
 share/locale/ne/LC_MESSAGES/mate-media.mo

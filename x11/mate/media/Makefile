@@ -1,6 +1,7 @@
 COMMENT=		media tools for the MATE desktop
 
 MATE_PROJECT=		mate-media
+MATE_VERSION=		1.28.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
