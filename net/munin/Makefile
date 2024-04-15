@@ -9,6 +9,8 @@ GH_TAGNAME =	2.0.75
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
+REVISION-main =	0
+REVISION-server =	0
 
 HOMEPAGE =	https://munin-monitoring.org/
 
@@ -37,14 +39,15 @@ BUILD_DEPENDS +=	devel/p5-Log-Log4perl\
 			www/p5-HTML-Template
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
+			devel/p5-DateTime-HiRes \
 			devel/p5-List-MoreUtils \
 			devel/p5-Log-Log4perl \
+			devel/p5-Time-TimeDate \
 			devel/p5-Net-Server \
 			net/p5-IO-Socket-INET6 \
 			net/p5-Net-CIDR
 RUN_DEPENDS-server +=	converters/p5-DateManip \
 			devel/p5-File-Copy-Recursive \
-			net/p5-IO-Socket-INET6 \
 			net/rrdtool \
 			security/p5-Net-SSLeay \
 			www/fcgi \
