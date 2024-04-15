@@ -1,8 +1,8 @@
 COMMENT =		monospace font designed for coders (old version)
 
-TYPEFACE=		inconsolata
+MODFONT_FAMILY=		inconsolata
 DISTNAME=		Inconsolata
-PKGNAME=		${TYPEFACE}-font-0.1
+PKGNAME=		${MODFONT_FAMILY}-font-0.1
 EPOCH =			0
 CATEGORIES=		fonts x11
 
@@ -16,7 +16,7 @@ EXTRACT_ONLY=
 PERMIT_PACKAGE=	Yes
 
 MODULES=		font
-FONTTYPES=		otf
+MODFONT_TYPES=		otf
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

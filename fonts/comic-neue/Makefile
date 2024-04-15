@@ -1,8 +1,8 @@
 COMMENT =		replacement for Comic Sans font
 
-TYPEFACE =		comic-neue
-VERSION =		2.51
-DISTNAME =		${TYPEFACE}-${VERSION}
+MODFONT_FAMILY =	comic-neue
+MODFONT_VERSION =	2.51
+DISTNAME =		${MODFONT_FAMILY}-${MODFONT_VERSION}
 
 CATEGORIES =		fonts
 

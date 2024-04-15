@@ -1,10 +1,10 @@
 COMMENT=		ink-saving font based on Vera Sans
 
-TYPEFACE =		ecofont
+MODFONT_FAMILY =	ecofont
 # Make sure we're well below upstreams initial versioned release
-V=			0.001
-DISTNAME=		spranq_eco_sans_regular-$V
-PKGNAME=		spranq-ecofont-ttf-$V
+MODFONT_VERSION =	0.001
+DISTNAME=		spranq_eco_sans_regular-${MODFONT_VERSION}
+PKGNAME=		spranq-ecofont-ttf-${MODFONT_VERSION}
 REVISION=		2
 CATEGORIES=		fonts x11
 

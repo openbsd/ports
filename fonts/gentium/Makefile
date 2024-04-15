@@ -1,7 +1,8 @@
-TYPEFACE =		gentium
-V =			6.101
 COMMENT =		readable font for Latin, Cyrillic, and Greek
-DISTNAME =		GentiumPlus-$V
+
+MODFONT_FAMILY =	gentium
+MODFONT_VERSION =	6.101
+DISTNAME =		GentiumPlus-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/gentium/

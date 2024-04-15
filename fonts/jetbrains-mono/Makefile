@@ -1,8 +1,8 @@
 COMMENT =	monotype font for developers
 
-V =		2.304
-DISTNAME =	${TYPEFACE}-$V
-PKGNAME =	jetbrains-mono-$V
+MODFONT_VERSION =	2.304
+DISTNAME =	${MODFONT_FAMILY}-${MODFONT_VERSION}
+PKGNAME =	jetbrains-mono-${MODFONT_VERSION}
 
 CATEGORIES =	fonts x11
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 SITES =		https://download.jetbrains.com/fonts/
 
-TYPEFACE =	JetBrainsMono
+MODFONT_FAMILY =	JetBrainsMono
 
 WRKSRC =	${WRKDIST}/fonts/ttf
 MODULES =	font

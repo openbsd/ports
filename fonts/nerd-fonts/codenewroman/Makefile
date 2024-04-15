@@ -1,5 +1,5 @@
 NF_FONT =	CodeNewRoman
-FONTTYPES =	otf
+MODFONT_TYPES =	otf
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}

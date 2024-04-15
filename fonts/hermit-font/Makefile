@@ -1,10 +1,10 @@
 COMMENT=	clear, readable monospaced font
 
-TYPEFACE=	hermit
-VERSION=	2.0
+MODFONT_FAMILY=	hermit
+MODFONT_VERSION=2.0
 REVISION=	0
-DISTNAME=	otf-hermit-${VERSION}
-PKGNAME=	hermit-font-${VERSION}
+DISTNAME=	otf-hermit-${MODFONT_VERSION}
+PKGNAME=	hermit-font-${MODFONT_VERSION}
 CATEGORIES=	fonts x11
 
 # SIL OFL 1.1
@@ -19,7 +19,7 @@ MODULES=	font
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-FONTTYPES=	otf
+MODFONT_TYPES=	otf
 WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>

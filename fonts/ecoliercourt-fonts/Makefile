@@ -1,7 +1,7 @@
 COMMENT=	dip pen style TTF fonts
 
-TYPEFACE=	ecoliercourt
-DISTNAME=	${TYPEFACE}-fonts-0.1
+MODFONT_FAMILY=	ecoliercourt
+DISTNAME=	${MODFONT_FAMILY}-fonts-0.1
 DISTFILES=	ecl_cour.ttf ec_cour.ttf
 
 REVISION=	2

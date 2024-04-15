@@ -1,8 +1,8 @@
 COMMENT =		readable Unicode font for laser printers
 
-TYPEFACE =		charis
-V =			6.101
-DISTNAME =		CharisSIL-$V
+MODFONT_FAMILY =	charis
+MODFONT_VERSION =	6.101
+DISTNAME =		CharisSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/charis/

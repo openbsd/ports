@@ -1,8 +1,8 @@
 COMMENT=	farsi bornaray fonts
 
-TYPEFACE=	farsi-bfonts
+MODFONT_FAMILY=	farsi-bfonts
 DISTNAME=	bfonts
-PKGNAME=	${TYPEFACE}-ttf-2.0
+PKGNAME=	${MODFONT_FAMILY}-ttf-2.0
 REVISION=	2
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} 

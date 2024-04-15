@@ -1,7 +1,7 @@
-TYPEFACE =		andika
-V =			6.101
+MODFONT_FAMILY =	andika
+MODFONT_VERSION =	6.101
 COMMENT =		clear sans serif, Unicode-compliant font
-DISTNAME =		Andika-$V
+DISTNAME =		Andika-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/andika/

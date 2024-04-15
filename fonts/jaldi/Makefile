@@ -1,10 +1,10 @@
 COMMENT =	libre Devanagari typeface family
 
-TYPEFACE =	jaldi
-V =		1.007
+MODFONT_FAMILY =	jaldi
+MODFONT_VERSION =	1.007
 REVISION =	0
 
-DISTFILES =	${V}.zip
+DISTFILES =	${MODFONT_VERSION}.zip
 SITES =		https://github.com/Omnibus-Type/Jaldi/archive/refs/tags/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
@@ -17,6 +17,6 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-WRKSRC =	${WRKDIST}/Jaldi-${V}/Fonts
+WRKSRC =	${WRKDIST}/Jaldi-${MODFONT_VERSION}/Fonts
 
 .include <bsd.port.mk>

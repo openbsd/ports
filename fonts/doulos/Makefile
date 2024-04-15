@@ -1,7 +1,8 @@
-TYPEFACE =		doulos
-V =			6.101
 COMMENT =		Unicode-based font for Roman and Cyrillic
-DISTNAME =		DoulosSIL-$V
+
+MODFONT_FAMILY =	doulos
+MODFONT_VERSION =	6.101
+DISTNAME =		DoulosSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/doulos/

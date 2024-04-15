@@ -1,9 +1,9 @@
 COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
-TYPEFACE =	BlockZone
+MODFONT_FAMILY =	BlockZone
 
-V =		1.004
-DISTNAME =	BlockZone-$V
+MODFONT_VERSION =	1.004
+DISTNAME =	BlockZone-${MODFONT_VERSION}
 REVISION =	4
 
 CATEGORIES =	fonts
@@ -13,7 +13,7 @@ HOMEPAGE =	https://github.com/ansilove/blockzone
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/ansilove/BlockZone/releases/download/$V/
+SITES =		https://github.com/ansilove/BlockZone/releases/download/${MODFONT_VERSION}/
 
 MODULES =	font
 

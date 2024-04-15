@@ -1,9 +1,9 @@
 COMMENT=	Arabeyes TrueType Arabic fonts
 
-TYPEFACE =	arabeyes
-V=		2.0
-DISTNAME=	ttf-arabeyes_$V.orig
-PKGNAME=	${TYPEFACE}-ttf-$V
+MODFONT_FAMILY =arabeyes
+MODFONT_VERSION=2.0
+DISTNAME=	ttf-arabeyes_${MODFONT_VERSION}.orig
+PKGNAME=	${MODFONT_FAMILY}-ttf-${MODFONT_VERSION}
 REVISION=	3
 CATEGORIES=	fonts x11
 
@@ -20,6 +20,6 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 
 WRKSRC=			${WRKDIST}/fonts
-WRKDIST=		${WRKDIR}/ttf-arabeyes-$V
+WRKDIST=		${WRKDIR}/ttf-arabeyes-${MODFONT_VERSION}
 
 .include <bsd.port.mk>

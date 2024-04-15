@@ -21,6 +21,6 @@ MODULES =		font
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-TYPEFACE =		${NF_FONT:L}
-FONTDIR =		${PREFIX}/share/fonts/${NF_PROJECT}/${NF_FONT:L}
+MODFONT_FAMILY =	${NF_FONT:L}
+MODFONT_DIR =		${PREFIX}/share/fonts/${NF_PROJECT}/${NF_FONT:L}
 DOCDIR =		${PREFIX}/share/doc/${NF_PROJECT}/${NF_FONT:L}

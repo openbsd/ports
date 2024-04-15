@@ -1,10 +1,10 @@
 COMMENT =	Arabic typeface capturing classical Ruqaa calligraphic style
 
-TYPEFACE =	aref-ruqaa
-V =		1.005
+MODFONT_FAMILY =	aref-ruqaa
+MODFONT_VERSION =	1.005
 
-DISTFILES =	ArefRuqaa-${V}.zip
-SITES =		https://github.com/aliftype/aref-ruqaa/releases/download/v${V}/
+DISTFILES =	ArefRuqaa-${MODFONT_VERSION}.zip
+SITES =		https://github.com/aliftype/aref-ruqaa/releases/download/v${MODFONT_VERSION}/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 
@@ -16,6 +16,6 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-WRKSRC =	${WRKDIST}/ArefRuqaa-${V}/ttf
+WRKSRC =	${WRKDIST}/ArefRuqaa-${MODFONT_VERSION}/ttf
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =	simple Persian/Arabic font for web pages and applications
 
-TYPEFACE =	vazirmatn
-V =		33.003
+MODFONT_FAMILY =	vazirmatn
+MODFONT_VERSION =	33.003
 
-DISTFILES =	vazirmatn-v${V}.zip
-SITES =	https://github.com/rastikerdar/vazirmatn/releases/download/v${V}/
+DISTFILES =	vazirmatn-v${MODFONT_VERSION}.zip
+SITES =	https://github.com/rastikerdar/vazirmatn/releases/download/v${MODFONT_VERSION}/
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 

@@ -1,10 +1,10 @@
 COMMENT =	font for programming and code review
 
-TYPEFACE =	mononoki
-V =		1.3
+MODFONT_FAMILY =	mononoki
+MODFONT_VERSION =	1.3
 
-DISTFILES =	mononoki-${V}{mononoki}.zip
-SITES =		https://github.com/madmalik/mononoki/releases/download/${V}/
+DISTFILES =	mononoki-${MODFONT_VERSION}{mononoki}.zip
+SITES =		https://github.com/madmalik/mononoki/releases/download/${MODFONT_VERSION}/
 
 HOMEPAGE =	https://madmalik.github.io/mononoki/
 

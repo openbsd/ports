@@ -17,7 +17,7 @@ EXTRACT_SUFX =	.zip
 PERMIT_PACKAGE=	Yes
 
 MODULES =	font
-FONTTYPES =	otf
+MODFONT_TYPES =	otf
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

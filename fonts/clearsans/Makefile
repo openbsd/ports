@@ -1,5 +1,6 @@
-TYPEFACE =		clearsans
 COMMENT =		versatile font for on-screen legibility
+
+MODFONT_FAMILY =	clearsans
 DISTNAME =		clearsans-1.00
 CATEGORIES =		fonts
 

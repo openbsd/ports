@@ -1,4 +1,4 @@
-# $OpenBSD: font.port.mk,v 1.6 2023/09/14 03:51:43 bentley Exp $
+# $OpenBSD: font.port.mk,v 1.7 2024/04/15 16:08:14 bentley Exp $
 
 CATEGORIES +=	fonts
 
@@ -6,25 +6,23 @@ PKG_ARCH ?=	*
 
 EXTRACT_SUFX ?=	.zip
 
-.if defined(TYPEFACE)
-.  if defined(V)
-PKGNAME ?=	${TYPEFACE}-$V
-.  elif defined(VERSION)
-PKGNAME ?=	${TYPEFACE}-${VERSION}
+.if defined(MODFONT_FAMILY)
+.  if defined(MODFONT_VERSION)
+PKGNAME ?=	${MODFONT_FAMILY}-${MODFONT_VERSION}
 .  endif
 
-FONTDIR ?=	${PREFIX}/share/fonts/${TYPEFACE}
+MODFONT_DIR ?=	${PREFIX}/share/fonts/${MODFONT_FAMILY}
 
-FONTTYPES ?=
+MODFONT_TYPES ?=
 
-MODFONT_do-install = ${INSTALL_DATA_DIR} ${FONTDIR};
+MODFONT_do-install = ${INSTALL_DATA_DIR} ${MODFONT_DIR};
 
-# if FONTTYPES is not set, install .otf files if present (and break,
+# if MODFONT_TYPES is not set, install .otf files if present (and break,
 # to skip ttf) otherwise fallback to ttf.
-.if empty(FONTTYPES)
-MODFONT_do-install += for t in otf ttf; do ${INSTALL_DATA} ${WRKSRC}/*.$$t ${FONTDIR} && break; done
+.if empty(MODFONT_TYPES)
+MODFONT_do-install += for t in otf ttf; do ${INSTALL_DATA} ${WRKSRC}/*.$$t ${MODFONT_DIR} && break; done
 .else
-MODFONT_do-install += for t in ${FONTTYPES}; do ${INSTALL_DATA} ${WRKSRC}/*.$$t ${FONTDIR}; done
+MODFONT_do-install += for t in ${MODFONT_TYPES}; do ${INSTALL_DATA} ${WRKSRC}/*.$$t ${MODFONT_DIR}; done
 .endif
 
 .  if !target(do-install)

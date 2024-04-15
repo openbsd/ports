@@ -1,7 +1,7 @@
-TYPEFACE =		sunscreen
-V =			1.0
+MODFONT_FAMILY =	sunscreen
+MODFONT_VERSION =	1.0
 COMMENT =		disco-inspired display face
-DISTNAME =		sunscreen-$V
+DISTNAME =		sunscreen-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 EXTRACT_SUFX =		.zip
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			http://www.simon-cozens.org/downloads/
 
 MODULES =		font
-FONTTYPES =		otf
+MODFONT_TYPES =		otf
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

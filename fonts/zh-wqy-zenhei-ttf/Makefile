@@ -1,9 +1,9 @@
 COMMENT=	Wen Quan Yi Zen Hei outline font
 
-TYPEFACE=	wqy-zenhei
-V =		0.9.45
-DISTNAME=	${TYPEFACE}-${V}
-PKGNAME =	zh-wqy-zenhei-ttf-$V
+MODFONT_FAMILY =	wqy-zenhei
+MODFONT_VERSION =	0.9.45
+DISTNAME =	${MODFONT_FAMILY}-${MODFONT_VERSION}
+PKGNAME =	zh-wqy-zenhei-ttf-${MODFONT_VERSION}
 
 CATEGORIES=	x11 chinese
 
@@ -17,11 +17,11 @@ MODULES =	font
 SITES=		${SITE_SOURCEFORGE:=wqy/}
 EXTRACT_SUFX=	.tar.gz
 
-FONTTYPES =	ttc
+MODFONT_TYPES =	ttc
 
 WRKDIST=	${WRKDIR}/wqy-zenhei
 NO_BUILD=	Yes
 NO_TEST=	Yes
-FONTDIR=	${PREFIX}/share/fonts/wqy
+MODFONT_DIR=	${PREFIX}/share/fonts/wqy
 
 .include <bsd.port.mk>

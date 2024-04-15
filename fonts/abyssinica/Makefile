@@ -1,8 +1,8 @@
 COMMENT =		Ethiopic Unicode script
 
-TYPEFACE =		abyssinica
-V =			2.100
-DISTNAME =		AbyssinicaSIL-$V
+MODFONT_FAMILY =	abyssinica
+MODFONT_VERSION =	2.100
+DISTNAME =		AbyssinicaSIL-${MODFONT_VERSION}
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/abyssinica/

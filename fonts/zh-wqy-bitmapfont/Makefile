@@ -1,10 +1,10 @@
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
-TYPEFACE=	wqy-bitmapfont
-V=		0.9.9-0
-DISTNAME=	${TYPEFACE}-pcf-$V
+MODFONT_FAMILY=		wqy-bitmapfont
+MODFONT_VERSION=	0.9.9-0
+DISTNAME=	${MODFONT_FAMILY}-pcf-${MODFONT_VERSION}
 REVISION=	3
-PKGNAME=	zh-wqy-bitmapfont-${V:S/-/./}
+PKGNAME=	zh-wqy-bitmapfont-${MODFONT_VERSION:S/-/./}
 
 CATEGORIES=	x11 chinese
 

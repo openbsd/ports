@@ -1,11 +1,11 @@
 COMMENT =	advanced Unicode font for medievalists
 
-TYPEFACE =	junicode
-V =		1.003
+MODFONT_FAMILY =	junicode
+MODFONT_VERSION =	1.003
 
 GH_ACCOUNT =	psb1558
 GH_PROJECT =	Junicode-font
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v${MODFONT_VERSION}
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 

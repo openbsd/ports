@@ -1,9 +1,9 @@
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
-TYPEFACE=	farsifonts
-V=		0.4
-DISTNAME=	farsi_fonts_$V
-PKGNAME=	${TYPEFACE}-ttf-$V
+MODFONT_FAMILY=	farsifonts
+MODFONT_VERSION=0.4
+DISTNAME=	farsi_fonts_${MODFONT_VERSION}
+PKGNAME=	${MODFONT_FAMILY}-ttf-${MODFONT_VERSION}
 REVISION =	3
 CATEGORIES=	fonts x11
 
@@ -20,6 +20,6 @@ MODULES=		font
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-WRKDIST=		${WRKDIR}/farsifonts-$V
+WRKDIST=		${WRKDIR}/farsifonts-${MODFONT_VERSION}
 
 .include <bsd.port.mk>
