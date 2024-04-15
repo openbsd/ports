@@ -5,6 +5,7 @@ COMMENT=		file archiver for the MATE desktop
 CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
+MATE_VERSION=		1.28.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
