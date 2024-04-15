@@ -1,20 +1,12 @@
-Use dependencies we already have in the ports tree.
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -17,11 +17,11 @@ deps = [
+@@ -64,7 +64,7 @@ data_files = [
+     # man page
+     #  requires pre-built man page file via sphinx (docs-requirements.txt)
+     #  `make --directory=docs clean man`
+-    ("share/man/man1", ["docs/_build/man/streamlink.1"]),
++    ("man/man1", ["docs/_build/man/streamlink.1"]),
  ]
- 
- # for encrypted streams
--if environ.get("STREAMLINK_USE_PYCRYPTO"):
--    deps.append("pycrypto")
--else:
-+if environ.get("STREAMLINK_USE_PYCRYPTODOME"):
-     # this version of pycryptodome is known to work and has a Windows wheel for py2.7, py3.3-3.6
-     deps.append("pycryptodome>=3.4.3,<4")
-+else:
-+    deps.append("pycryptodome")
- 
- # for localization
- if environ.get("STREAMLINK_USE_PYCOUNTRY"):
+ data_files = [
+     (destdir, [file for file in srcfiles if path.exists(file)])
