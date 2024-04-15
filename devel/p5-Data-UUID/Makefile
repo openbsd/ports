@@ -1,9 +1,8 @@
 COMMENT =	extension for generating GUIDs/UUIDs
 
 MODULES =	cpan
-DISTNAME =	Data-UUID-1.226
+DISTNAME =	Data-UUID-1.227
 CATEGORIES =	devel
-REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =	Yes
