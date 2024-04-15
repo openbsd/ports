@@ -2,7 +2,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.14.12
+VERSION=	2.14.13
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -26,18 +26,18 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-WANTLIB=	c dbus-1 dbus-glib-1 execinfo ffi gadu gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 iconv idn intl lzma m \
-		pcre2-8 pthread xml2 z
-WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
+WANTLIB=	c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 iconv idn intl lzma m pcre2-8 pthread \
+		xml2 z
+WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext Xfixes \
+		Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
 		freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 \
-		gtk-x11-2.0 harfbuzz jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png purple ${COMPILER_LIBCXX} xcb-render xcb-shm \
-		xcb ${WANTLIB} Xau Xdmcp
-WANTLIB-libpurple= crypto meanwhile ssl silc silcclient ${WANTLIB}
+		gtk-x11-2.0 harfbuzz jpeg pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pixman-1 png purple xcb-render xcb-shm xcb \
+		${COMPILER_LIBCXX} ${WANTLIB}
+WANTLIB-libpurple= crypto gadu meanwhile ssl silc silcclient ${WANTLIB}
 WANTLIB-finch=	X11 curses gnt panel purple xcb ${WANTLIB}
 
 MODULES=	textproc/intltool \
