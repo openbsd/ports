@@ -1,7 +1,8 @@
-COMMENT =	management tool for password and sensitive data
+COMMENT =	management tool for passwords and sensitive data
 
 V =		2.7.7
 DISTNAME =	keepassxc-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -43,6 +44,8 @@ CONFIGURE_ARGS=	-DCMAKE_INSTALL_MANDIR="man" \
 		-DWITH_XC_FDOSECRETS=ON \
 		-DWITH_XC_KEESHARE=ON
 
+CONFIGURE_ARGS +=	-DDISABLE_FIND_PACKAGE_Git=ON
+
 TEST_IS_INTERACTIVE =	X11
 
 FLAVORS =	browser yubikey
@@ -70,19 +73,15 @@ CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 ALL_TARGET +=		keepassxc-proxy
 .endif
 
-FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
-
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 # - MainWindow.cpp has one minor key binding behind Q_OS_* no other BSD seems
 #   to patch... drop or upstream?  rest got fixed 2018.
-# - browser/BrowserSettingsWidget.cpp has a visibility fix no other BSD seems
-#   to patch... drop or upstream?
+# - Icons.cpp has a Qt theme/icon issue fix... untested if this effects us.
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
 		gui/MainWindow.cpp \
-		gui/Icons.cpp \
-		browser/BrowserSettingsWidget.cpp
+		gui/Icons.cpp
 
 # build whatever is left (ca. 200 GUI test files)
 pre-test:
