@@ -1,23 +1,22 @@
 Index: src/lrx_comp.cc
 --- src/lrx_comp.cc.orig
 +++ src/lrx_comp.cc
-@@ -16,6 +16,7 @@
-  */
- 
- #include <lrx_compiler.h>
+@@ -19,6 +19,7 @@
+ #include <cstring>
+ #include <iostream>
+ #include <libgen.h>
 +#include <unistd.h>
+ #include <lttoolbox/lt_locale.h>
  
  using namespace std;
- 
-@@ -31,6 +32,11 @@ void endProgram(char *name)
+@@ -35,6 +36,10 @@ void endProgram(char *name)
  
  int main (int argc, char **argv)
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 +    cerr << "pledge" << endl;
-+    exit(EXIT_FAILURE);
 +  }
 +
-   LRXCompiler compiler;
+   LtLocale::tryToSetLocale();
  
-   if(argc != 3 && argc != 4)
+   LRXCompiler compiler;

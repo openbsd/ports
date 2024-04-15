@@ -1,23 +1,23 @@
 Index: lttoolbox/lt_trim.cc
 --- lttoolbox/lt_trim.cc.orig
 +++ lttoolbox/lt_trim.cc
-@@ -24,6 +24,7 @@
+@@ -19,6 +19,7 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/lt_locale.h>
  #include <iostream>
- #include <libgen.h>
- #include <string>
 +#include <unistd.h>
  
- void endProgram(char *name)
- {
-@@ -160,6 +161,11 @@ trim(FILE *file_mono, FILE *file_bi)
+ void
+ trim(FILE* file_mono, FILE* file_bi, FILE* file_out, std::set<UString> match_sections)
+@@ -102,6 +103,11 @@ trim(FILE* file_mono, FILE* file_bi, FILE* file_out, s
  
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
++    std::cerr << "pledge" << std::endl;
 +    exit(EXIT_FAILURE);
 +  }
 +
-   if(argc != 4)
-   {
-     endProgram(argv[0]);
+   LtLocale::tryToSetLocale();
+   CLI cli("trim a transducer to another transducer", PACKAGE_VERSION);
+   cli.add_file_arg("analyser_bin_file", false);

@@ -1,12 +1,15 @@
 L =	dan-nor
 LANG =	Danish/Norwegian
-V =	1.4.1
-REVISION =	0
+V =	1.5.0
+
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/dan \
 			textproc/apertium-dicts/nno \
 			textproc/apertium-dicts/nob \
 			textproc/apertium-lex-tools \
+			textproc/apertium-recursive \
+			textproc/apertium-separable \
 			textproc/vislcg3
 
 USE_GMAKE =	Yes

@@ -1,0 +1,13 @@
+Add missing include, from upstream e682fe18a96d5a865cfbd3e5661dbc7b3ace1821.
+
+Index: lttoolbox/sorted_vector.hpp
+--- lttoolbox/sorted_vector.hpp.orig
++++ lttoolbox/sorted_vector.hpp
+@@ -22,6 +22,7 @@
+ #include <vector>
+ #include <algorithm>
+ #include <functional>
++#include <iterator>
+ 
+ namespace detail {
+ 	template<typename ForwardIt, typename Comp>

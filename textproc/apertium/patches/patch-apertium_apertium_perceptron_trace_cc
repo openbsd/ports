@@ -8,7 +8,7 @@ Index: apertium/apertium_perceptron_trace.cc
  
  #include <apertium/mtx_reader.h>
  #include <apertium/perceptron_tagger.h>
-@@ -109,5 +110,11 @@ int perceptron_trace(int argc, char* argv[])
+@@ -105,6 +106,12 @@ int perceptron_trace(int argc, char* argv[])
  
  
  int main(int argc, char* argv[]) {
@@ -18,5 +18,6 @@ Index: apertium/apertium_perceptron_trace.cc
 +    return 1;
 +  }
 +
+   LtLocale::tryToSetLocale();
    return Apertium::perceptron_trace(argc, argv);
  }

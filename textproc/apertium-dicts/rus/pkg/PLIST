@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-rus/
 share/apertium/apertium-rus/apertium-rus.post-rus.dix
 share/apertium/apertium-rus/apertium-rus.rus.dix
@@ -9,6 +10,7 @@ share/apertium/apertium-rus/rus.automorf.bin
 share/apertium/apertium-rus/rus.autopgen.bin
 share/apertium/apertium-rus/rus.prob
 share/apertium/apertium-rus/rus.rlx.bin
+share/apertium/modes/
 share/apertium/modes/rus-disam.mode
 share/apertium/modes/rus-gener.mode
 share/apertium/modes/rus-morph.mode

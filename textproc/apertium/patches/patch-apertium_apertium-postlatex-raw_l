@@ -1,15 +1,15 @@
 Index: apertium/apertium-postlatex-raw.l
 --- apertium/apertium-postlatex-raw.l.orig
 +++ apertium/apertium-postlatex-raw.l
-@@ -10,6 +10,7 @@
+@@ -7,6 +7,7 @@
+ #include <cstdlib>
+ #include <iostream>
  #include <string>
- #include <vector>
- #include <apertium/latex_accentsmap.h>
 +#include <unistd.h>
  
  extern "C" {
  #if !defined(__STDC__)
-@@ -257,6 +258,12 @@ void usage(string const &progname)
+@@ -229,6 +230,12 @@ void usage(string const &progname)
  
  int main(int argc, char *argv[])
  {

@@ -1,23 +1,23 @@
 Index: lttoolbox/lt_comp.cc
 --- lttoolbox/lt_comp.cc.orig
 +++ lttoolbox/lt_comp.cc
-@@ -24,6 +24,7 @@
- #include <libgen.h>
- #include <string>
- #include <getopt.h>
+@@ -21,6 +21,7 @@
+ #include <lttoolbox/file_utils.h>
+ 
+ #include <iostream>
 +#include <unistd.h>
  
- using namespace std;
- 
-@@ -66,6 +67,11 @@ void endProgram(char *name)
+ /*
+  * Error function that does nothing so that when we fallback from
+@@ -34,6 +35,11 @@ void errorFunc(void *ctx, const char *msg, ...)
  
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
++    std::cerr << "pledge" << std::endl;
 +    exit(EXIT_FAILURE);
 +  }
 +
-   char ttype = 'x';
-   Compiler c;
-   AttCompiler a;
+   LtLocale::tryToSetLocale();
+   CLI cli("build a letter transducer from a dictionary", PACKAGE_VERSION);
+   cli.add_bool_arg('d', "debug", "insert line numbers before each entry");

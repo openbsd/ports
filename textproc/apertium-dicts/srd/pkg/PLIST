@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-srd/
 share/apertium/apertium-srd/apertium-srd.post-srd.dix
 share/apertium/apertium-srd/apertium-srd.srd.dix
@@ -10,6 +11,7 @@ share/apertium/apertium-srd/srd.autopgen.bin
 share/apertium/apertium-srd/srd.prob
 share/apertium/apertium-srd/srd.rlx.bin
 share/apertium/apertium-srd/srd_meridional.autogen.bin
+share/apertium/modes/
 share/apertium/modes/srd-disam.mode
 share/apertium/modes/srd-gener.mode
 share/apertium/modes/srd-morph.mode

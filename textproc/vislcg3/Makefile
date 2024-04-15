@@ -4,21 +4,21 @@ ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 COMMENT =		constraint grammar formalism variant
 
-V =			1.3.2
+V =			1.4.6
 DISTNAME =		cg3-$V
 PKGNAME =		vislcg3-$V
-REVISION =		0
 
 SHARED_LIBS =		cg3                       2.0 # 0.0
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://beta.visl.sdu.dk/cg3/chunked/
+HOMEPAGE =		https://edu.visl.dk/cg3/chunked/
 
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB +=		c icui18n icuio icuuc m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c icudata icui18n icuio icuuc m sqlite3
 
 SITES =		https://github.com/GrammarSoft/cg3/releases/download/v$V/
 
@@ -28,6 +28,7 @@ MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-clang
 BUILD_DEPENDS =		devel/boost
-LIB_DEPENDS =		textproc/icu4c
+LIB_DEPENDS =		databases/sqlite3 \
+			textproc/icu4c
 
 .include <bsd.port.mk>

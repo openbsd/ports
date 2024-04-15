@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-eo-en/
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.antaux2_t2x
 share/apertium/apertium-eo-en/apertium-eo-en.en-eo.antaux_t2x
@@ -31,6 +32,7 @@ share/apertium/apertium-eo-en/eo-en.prob
 share/apertium/apertium-eo-en/eo-en.t1x.bin
 share/apertium/apertium-eo-en/eo-en.t2x.bin
 share/apertium/apertium-eo-en/eo-en.t3x.bin
+share/apertium/modes/
 share/apertium/modes/en-eo-bytecode-cg.mode
 share/apertium/modes/en-eo-bytecode.mode
 share/apertium/modes/en-eo.mode

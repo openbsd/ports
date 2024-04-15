@@ -1,7 +1,7 @@
 Index: apertium/apertium_interchunk.cc
 --- apertium/apertium_interchunk.cc.orig
 +++ apertium/apertium_interchunk.cc
-@@ -86,6 +86,12 @@ FILE * open_output(string const &filename)
+@@ -81,6 +81,12 @@ UFILE * open_output(const char* filename)
  
  int main(int argc, char *argv[])
  {

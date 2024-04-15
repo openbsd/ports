@@ -1,4 +1,32 @@
+bin/apertium-validate-lrx
 @bin bin/lrx-comp
 @bin bin/lrx-proc
 @bin bin/multitrans
+@bin bin/process-tagger-output
+include/apertium-lex-tools/
+include/apertium-lex-tools/irstlm_ranker.h
+include/apertium-lex-tools/lrx_compiler.h
+include/apertium-lex-tools/lrx_processor.h
+include/apertium-lex-tools/multi_translator.h
+include/apertium-lex-tools/tagger_output_processor.h
+include/apertium-lex-tools/weight.h
+@static-lib lib/libapertium-lex-tools.a
+lib/libapertium-lex-tools.la
+@lib lib/libapertium-lex-tools.so.${LIBapertium-lex-tools_VERSION}
 lib/pkgconfig/apertium-lex-tools.pc
+share/apertium-lex-tools/
+share/apertium-lex-tools/biltrans-count-patterns-ngrams.py
+share/apertium-lex-tools/biltrans-extract-frac-freq.py
+share/apertium-lex-tools/biltrans_count_common.py
+share/apertium-lex-tools/common.py
+share/apertium-lex-tools/extract-alig-lrx.py
+share/apertium-lex-tools/extract-freq-lexicon.py
+share/apertium-lex-tools/extract-sentences.py
+share/apertium-lex-tools/lambdas-to-rules.py
+share/apertium-lex-tools/lrx.dtd
+share/apertium-lex-tools/merge-ngrams-lambdas.py
+share/apertium-lex-tools/ngram-count-patterns-maxent2.py
+share/apertium-lex-tools/ngram-count-patterns.py
+share/apertium-lex-tools/ngram-pruning-frac.py
+share/apertium-lex-tools/ngrams-to-rules-me.py
+share/apertium-lex-tools/ngrams-to-rules.py

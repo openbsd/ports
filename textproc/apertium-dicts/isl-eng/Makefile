@@ -1,7 +1,6 @@
 L =	isl-eng
 LANG =	Icelandic/English
-V =	0.1.1
-REVISION =	0
+V =	0.1.2
 
 EXTRACT_SUFX =	.tar.bz2
 

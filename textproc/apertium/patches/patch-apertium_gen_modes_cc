@@ -1,15 +1,15 @@
 Index: apertium/gen_modes.cc
 --- apertium/gen_modes.cc.orig
 +++ apertium/gen_modes.cc
-@@ -31,6 +31,7 @@
+@@ -30,6 +30,7 @@
  #include <map>
  #include <string>
  #include <set>
 +#include <unistd.h>
  
- using namespace Apertium;
  using namespace std;
-@@ -300,6 +301,11 @@ void gen_modes(map<string, pipeline>& modes, fs::path&
+ 
+@@ -306,6 +307,11 @@ void gen_modes(map<string, pipeline>& modes, fs::path&
  
  int main(int argc, char* argv[])
  {

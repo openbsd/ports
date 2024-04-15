@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/mk-bg
+share/apertium/
 share/apertium/apertium-mkd-bul/
 share/apertium/apertium-mkd-bul/apertium-mkd-bul.bul-mkd.t1x
 share/apertium/apertium-mkd-bul/apertium-mkd-bul.mkd-bul.t1x
@@ -16,5 +17,6 @@ share/apertium/apertium-mkd-bul/mkd-bul.autopgen.bin
 share/apertium/apertium-mkd-bul/mkd-bul.prob
 share/apertium/apertium-mkd-bul/mkd-bul.rlx.bin
 share/apertium/apertium-mkd-bul/mkd-bul.t1x.bin
+share/apertium/modes/
 share/apertium/modes/bul-mkd.mode
 share/apertium/modes/mkd-bul.mode

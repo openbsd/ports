@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/id-ms
+share/apertium/
 share/apertium/apertium-ind-zlm/
 share/apertium/apertium-ind-zlm/apertium-ind-zlm.ind-zlm.t1x
 share/apertium/apertium-ind-zlm/apertium-ind-zlm.zlm-ind.t1x
@@ -16,5 +17,6 @@ share/apertium/apertium-ind-zlm/zlm-ind.autopgen.bin
 share/apertium/apertium-ind-zlm/zlm-ind.prob
 share/apertium/apertium-ind-zlm/zlm-ind.rlx.bin
 share/apertium/apertium-ind-zlm/zlm-ind.t1x.bin
+share/apertium/modes/
 share/apertium/modes/ind-zlm.mode
 share/apertium/modes/zlm-ind.mode

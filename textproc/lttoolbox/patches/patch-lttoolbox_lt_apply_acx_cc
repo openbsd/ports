@@ -1,0 +1,20 @@
+Index: lttoolbox/lt_apply_acx.cc
+--- lttoolbox/lt_apply_acx.cc.orig
++++ lttoolbox/lt_apply_acx.cc
+@@ -21,8 +21,16 @@
+ #include <lttoolbox/string_utils.h>
+ #include <lttoolbox/acx.h>
+ 
++#include <iostream>
++#include <unistd.h>
++
+ int main(int argc, char* argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return 1;
++  }
++
+   LtLocale::tryToSetLocale();
+   CLI cli("apply an ACX file to a compiled transducer", PACKAGE_VERSION);
+   cli.add_file_arg("input_file", false);

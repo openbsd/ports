@@ -1,7 +1,6 @@
 L =	spa
 LANG =	Spanish
-V =	1.2.2
-REVISION =	0
+V =	1.3.0
 
 EXTRACT_SUFX =	.tar.bz2
 

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-eu-en/
 share/apertium/apertium-eu-en/apertium-eu-en.colloc.t1x
 share/apertium/apertium-eu-en/apertium-eu-en.eu-en.t1x
@@ -16,4 +17,5 @@ share/apertium/apertium-eu-en/eu-en.t1x.bin
 share/apertium/apertium-eu-en/eu-en.t2x.bin
 share/apertium/apertium-eu-en/eu-en.t3x.bin
 share/apertium/apertium-eu-en/modes.xml
+share/apertium/modes/
 share/apertium/modes/eu-en.mode

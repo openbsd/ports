@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-hbs-eng/
 share/apertium/apertium-hbs-eng/Cyrl-Latn.autopmor.bin
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.eng-hbs.t1x
@@ -32,6 +33,7 @@ share/apertium/apertium-hbs-eng/hbs-eng.rlx.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t1x.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t2x.bin
 share/apertium/apertium-hbs-eng/hbs-eng.t3x.bin
+share/apertium/modes/
 share/apertium/modes/Cyrl-Latn.mode
 share/apertium/modes/eng-hbs.mode
 share/apertium/modes/eng-hbs_BS.mode

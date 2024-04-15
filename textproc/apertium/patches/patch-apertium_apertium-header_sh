@@ -1,0 +1,41 @@
+Index: apertium/apertium-header.sh
+--- apertium/apertium-header.sh.orig
++++ apertium/apertium-header.sh
+@@ -80,7 +80,7 @@ check_transfuse () {
+ }
+ 
+ setvar_wrap () {
+-    gawk -v var="${AP_SETVAR}" '
++    awk -v var="${AP_SETVAR}" '
+ BEGIN           { RS="\0|\n"; }
+ NR==1    && var { printf "[<STREAMCMD:SETVAR:%s>]", var }
+                 { printf "%s%s", $0, RT }
+@@ -89,7 +89,7 @@ RT=="\0"        { fflush() }'
+ }
+ setvar_unwrap () {
+     # Only strip SETVAR if *we* inserted it, allow keeping it if it was manually inserted (for debugs)
+-    gawk -v var="${AP_SETVAR}" '
++    awk -v var="${AP_SETVAR}" '
+ BEGIN           { RS="\0|\n"; }
+             var { gsub(/\[<STREAMCMD:SETVAR:[^>]*>]/, "") }
+                 { printf "%s%s", $0, RT }
+@@ -121,15 +121,15 @@ test_zip () {
+   fi
+ }
+ 
+-test_gawk () {
+-  if ! command -v gawk &>/dev/null; then
+-    echo "Error: Install 'gawk' in your system"
++test_awk () {
++  if ! command -v awk &>/dev/null; then
++    echo "Error: Install 'awk' in your system"
+     exit 1
+   fi
+ }
+ 
+ translate_latex() {
+-  test_gawk
++  test_awk
+ 
+   if [[ -z "$INFILE" || "$INFILE" = /dev/stdin ]]; then
+     INFILE=$(mktemp "$TMPDIR/apertium.XXXXXXXX")

@@ -1,15 +1,18 @@
 Index: src/rtx_decomp.cc
 --- src/rtx_decomp.cc.orig
 +++ src/rtx_decomp.cc
-@@ -8,6 +8,7 @@
- #include <fstream>
+@@ -9,7 +9,10 @@
  #include <cstring>
  #include <cstdio>
+ #include <unicode/ustdio.h>
 +#include <unistd.h>
  
++using namespace std;
++
  void endProgram(char *name)
  {
-@@ -215,6 +216,11 @@ void writeRule(wstring rule, FILE* out)
+   cout << basename(name) << ": decompile a transfer bytecode file" << endl;
+@@ -218,6 +221,11 @@ void writeRule(UString rule, UFILE* out)
  
  int main(int argc, char *argv[])
  {

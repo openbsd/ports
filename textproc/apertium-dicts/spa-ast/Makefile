@@ -1,7 +1,7 @@
 L =	spa-ast
 LANG =	Spanish/Asturian
 V =	1.1.1
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

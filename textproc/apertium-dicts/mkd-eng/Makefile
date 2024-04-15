@@ -1,7 +1,6 @@
 L =	mkd-eng
 LANG =	Macedonian/English
-V =	0.1.2
-REVISION =	0
+V =	0.1.3
 
 EXTRACT_SUFX =	.tar.bz2
 

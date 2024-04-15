@@ -1,0 +1,19 @@
+Index: src/cg-merge-annotations.cpp
+--- src/cg-merge-annotations.cpp.orig
++++ src/cg-merge-annotations.cpp
+@@ -20,10 +20,15 @@
+ #include "sorted_vector.hpp"
+ #include "stdafx.hpp"
+ #include "filesystem.hpp"
++#include <unistd.h>
+ namespace fs = ::std::filesystem;
+ using namespace CG3;
+ 
+ int main(int argc, char* argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		std::cerr << "pledge" << std::endl;
++		return 1;
++	}
+ 	Profiler out;
+ 	out.read(argv[2]);
+ 

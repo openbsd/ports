@@ -1,7 +1,7 @@
 L =	pol-szl
 LANG =	Polish/Silesian
 V =	0.2.1
-REVISION =	0
+REVISION =	1
 
 SITES =		https://distfiles.roadrunner.page/
 

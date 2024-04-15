@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-swe/
 share/apertium/apertium-swe/apertium-swe.post-swe.dix
 share/apertium/apertium-swe/apertium-swe.swe.dix
@@ -9,6 +10,7 @@ share/apertium/apertium-swe/swe.automorf.bin
 share/apertium/apertium-swe/swe.autopgen.bin
 share/apertium/apertium-swe/swe.prob
 share/apertium/apertium-swe/swe.rlx.bin
+share/apertium/modes/
 share/apertium/modes/swe-disam.mode
 share/apertium/modes/swe-gener.mode
 share/apertium/modes/swe-morph.mode

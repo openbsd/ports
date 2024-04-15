@@ -2,14 +2,14 @@ Index: src/randpath.cc
 --- src/randpath.cc.orig
 +++ src/randpath.cc
 @@ -8,6 +8,7 @@
- #include <vector>
  #include <string>
  #include <chrono>
+ #include <cstring>
 +#include <unistd.h>
  
  using namespace std;
  
-@@ -169,6 +170,11 @@ void generatePaths()
+@@ -163,6 +164,11 @@ void generatePaths()
  
  int main(int argc, char *argv[])
  {

@@ -1,46 +1,62 @@
+@conflict apertium-separable-<0.6.1
+@bin bin/lsx-comp
+@bin bin/lt-append
+@bin bin/lt-apply-acx
 @bin bin/lt-comp
+@bin bin/lt-compose
 @bin bin/lt-expand
+@bin bin/lt-invert
+@bin bin/lt-paradigm
 @bin bin/lt-print
 @bin bin/lt-proc
+@bin bin/lt-restrict
 @bin bin/lt-tmxcomp
 @bin bin/lt-tmxproc
 @bin bin/lt-trim
-include/lttoolbox-${V}/
-include/lttoolbox-${V}/lttoolbox/
-include/lttoolbox-${V}/lttoolbox/alphabet.h
-include/lttoolbox-${V}/lttoolbox/att_compiler.h
-include/lttoolbox-${V}/lttoolbox/buffer.h
-include/lttoolbox-${V}/lttoolbox/compiler.h
-include/lttoolbox-${V}/lttoolbox/compression.h
-include/lttoolbox-${V}/lttoolbox/deserialiser.h
-include/lttoolbox-${V}/lttoolbox/entry_token.h
-include/lttoolbox-${V}/lttoolbox/exception.h
-include/lttoolbox-${V}/lttoolbox/expander.h
-include/lttoolbox-${V}/lttoolbox/fst_processor.h
-include/lttoolbox-${V}/lttoolbox/lt_locale.h
-include/lttoolbox-${V}/lttoolbox/ltstr.h
-include/lttoolbox-${V}/lttoolbox/match_exe.h
-include/lttoolbox-${V}/lttoolbox/match_node.h
-include/lttoolbox-${V}/lttoolbox/match_state.h
-include/lttoolbox-${V}/lttoolbox/my_stdio.h
-include/lttoolbox-${V}/lttoolbox/node.h
-include/lttoolbox-${V}/lttoolbox/pattern_list.h
-include/lttoolbox-${V}/lttoolbox/regexp_compiler.h
-include/lttoolbox-${V}/lttoolbox/serialiser.h
-include/lttoolbox-${V}/lttoolbox/sorted_vector.h
-include/lttoolbox-${V}/lttoolbox/state.h
-include/lttoolbox-${V}/lttoolbox/string_to_wostream.h
-include/lttoolbox-${V}/lttoolbox/tmx_compiler.h
-include/lttoolbox-${V}/lttoolbox/trans_exe.h
-include/lttoolbox-${V}/lttoolbox/transducer.h
-include/lttoolbox-${V}/lttoolbox/xml_parse_util.h
-@lib lib/liblttoolbox3-${V}.so.${LIBlttoolbox3-${V}_VERSION}
-@static-lib lib/liblttoolbox3.a
-lib/liblttoolbox3.la
-@lib lib/liblttoolbox3.so.${LIBlttoolbox3_VERSION}
+include/lttoolbox/
+include/lttoolbox/acx.h
+include/lttoolbox/alphabet.h
+include/lttoolbox/att_compiler.h
+include/lttoolbox/buffer.h
+include/lttoolbox/cli.h
+include/lttoolbox/compiler.h
+include/lttoolbox/compression.h
+include/lttoolbox/deserialiser.h
+include/lttoolbox/entry_token.h
+include/lttoolbox/exception.h
+include/lttoolbox/expander.h
+include/lttoolbox/file_utils.h
+include/lttoolbox/fst_processor.h
+include/lttoolbox/input_file.h
+include/lttoolbox/lt_locale.h
+include/lttoolbox/match_exe.h
+include/lttoolbox/match_node.h
+include/lttoolbox/match_state.h
+include/lttoolbox/my_stdio.h
+include/lttoolbox/node.h
+include/lttoolbox/pattern_list.h
+include/lttoolbox/regexp_compiler.h
+include/lttoolbox/serialiser.h
+include/lttoolbox/sorted_vector.h
+include/lttoolbox/sorted_vector.hpp
+include/lttoolbox/state.h
+include/lttoolbox/string_utils.h
+include/lttoolbox/tmx_compiler.h
+include/lttoolbox/trans_exe.h
+include/lttoolbox/transducer.h
+include/lttoolbox/ustring.h
+include/lttoolbox/xml_parse_util.h
+include/lttoolbox/xml_walk_util.h
+@static-lib lib/liblttoolbox.a
+lib/liblttoolbox.la
+@lib lib/liblttoolbox.so.${LIBlttoolbox_VERSION}
 lib/pkgconfig/lttoolbox.pc
+@man man/man1/lsx-comp.1
+@man man/man1/lt-append.1
 @man man/man1/lt-comp.1
+@man man/man1/lt-compose.1
 @man man/man1/lt-expand.1
+@man man/man1/lt-paradigm.1
 @man man/man1/lt-print.1
 @man man/man1/lt-proc.1
 @man man/man1/lt-tmxcomp.1

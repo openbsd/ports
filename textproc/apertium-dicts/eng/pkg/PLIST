@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-eng/
 share/apertium/apertium-eng/apertium-eng.eng.dix
 share/apertium/apertium-eng/apertium-eng.eng.rlx
@@ -11,6 +12,7 @@ share/apertium/apertium-eng/eng.prob
 share/apertium/apertium-eng/eng.rlx.bin
 share/apertium/apertium-eng/eng_US.autogen.bin
 share/apertium/apertium-eng/eng_US.autopgen.bin
+share/apertium/modes/
 share/apertium/modes/eng-disam.mode
 share/apertium/modes/eng-gener.mode
 share/apertium/modes/eng-morph.mode

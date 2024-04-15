@@ -1,7 +1,7 @@
 Index: apertium/deformat.xsl
 --- apertium/deformat.xsl.orig
 +++ apertium/deformat.xsl
-@@ -155,6 +155,7 @@
+@@ -152,6 +152,7 @@
  #include &lt;map&gt;
  #include &lt;string&gt;
  #include &lt;vector&gt;
@@ -9,7 +9,7 @@ Index: apertium/deformat.xsl
  
  extern "C" {
  #if !defined(__STDC__)
-@@ -689,6 +690,12 @@ void usage(string const &amp;progname)
+@@ -675,6 +676,12 @@ void usage(string const &amp;progname)
  
  int main(int argc, char *argv[])
  {
@@ -20,5 +20,5 @@ Index: apertium/deformat.xsl
 +  }
 +
    LtLocale::tryToSetLocale();
-   size_t base = 0;
+   int base = 0;
    eosIncond = false;

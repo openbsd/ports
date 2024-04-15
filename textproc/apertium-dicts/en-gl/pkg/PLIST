@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-en-gl/
 share/apertium/apertium-en-gl/apertium-en-gl.en-gl.t1x
 share/apertium/apertium-en-gl/apertium-en-gl.en-gl.t2x
@@ -23,5 +24,6 @@ share/apertium/apertium-en-gl/gl-en.prob
 share/apertium/apertium-en-gl/gl-en.t1x.bin
 share/apertium/apertium-en-gl/gl-en.t2x.bin
 share/apertium/apertium-en-gl/gl-en.t3x.bin
+share/apertium/modes/
 share/apertium/modes/en-gl.mode
 share/apertium/modes/gl-en.mode

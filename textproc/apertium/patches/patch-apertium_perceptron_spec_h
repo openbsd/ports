@@ -3,7 +3,7 @@ https://github.com/apertium/apertium/commit/1f6632c7c79242a18a2a64e1b6f9e47d66cc
 Index: apertium/perceptron_spec.h
 --- apertium/perceptron_spec.h.orig
 +++ apertium/perceptron_spec.h
-@@ -478,7 +478,7 @@ class PerceptronSpec (private)
+@@ -475,7 +475,7 @@ class PerceptronSpec (private)
        int token_idx,
        int wordoid_idx);
    };

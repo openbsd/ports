@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/ca-it
+share/apertium/
 share/apertium/apertium-cat-ita/
 share/apertium/apertium-cat-ita/apertium-cat-ita.cat-ita.t1x
 share/apertium/apertium-cat-ita/apertium-cat-ita.cat-ita.t2x
@@ -21,10 +22,15 @@ share/apertium/apertium-cat-ita/ita-cat.autogen.bin
 share/apertium/apertium-cat-ita/ita-cat.autolex.bin
 share/apertium/apertium-cat-ita/ita-cat.automorf.bin
 share/apertium/apertium-cat-ita/ita-cat.autopgen.bin
+share/apertium/apertium-cat-ita/ita-cat.pre2017_prefs.rlx.bin
+share/apertium/apertium-cat-ita/ita-cat.prefs.rlx.bin
 share/apertium/apertium-cat-ita/ita-cat.prob
 share/apertium/apertium-cat-ita/ita-cat.rlx.bin
 share/apertium/apertium-cat-ita/ita-cat.t1x.bin
 share/apertium/apertium-cat-ita/ita-cat.t2x.bin
 share/apertium/apertium-cat-ita/ita-cat.t3x.bin
+share/apertium/apertium-cat-ita/ita-cat.xml
+share/apertium/modes/
 share/apertium/modes/cat-ita.mode
 share/apertium/modes/ita-cat.mode
+share/apertium/modes/ita-cat_pre2017.mode

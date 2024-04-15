@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-nob/
 share/apertium/apertium-nob/apertium-nob.nob.dix
 share/apertium/apertium-nob/apertium-nob.nob.rlx
@@ -12,10 +13,11 @@ share/apertium/apertium-nob/nob.prob
 share/apertium/apertium-nob/nob.rlx.bin
 share/apertium/apertium-nob/nob.seg.rlx.bin
 share/apertium/apertium-nob/nob.syn.rlx.bin
+share/apertium/modes/
 share/apertium/modes/nob-disam.mode
 share/apertium/modes/nob-gener.mode
 share/apertium/modes/nob-morph.mode
-share/apertium/modes/nob-seg.mode
+share/apertium/modes/nob-segment.mode
 share/apertium/modes/nob-syntax.mode
 share/apertium/modes/nob-tagger.mode
 share/pkgconfig/apertium-nob.pc

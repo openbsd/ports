@@ -1,15 +1,15 @@
 Index: apertium/apertium_filter_ambiguity.cc
 --- apertium/apertium_filter_ambiguity.cc.orig
 +++ apertium/apertium_filter_ambiguity.cc
-@@ -21,6 +21,7 @@
- #include <apertium/tagger_data_hmm.h>
- #include <apertium/tagger_word.h>
- #include <apertium/string_utils.h>
+@@ -29,6 +29,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <libgen.h>
 +#include <unistd.h>
- 
- #include <cstdlib>
- #include <iostream>
-@@ -63,6 +64,12 @@ FILE * open_file(char const *filename, char const *mod
+ #ifdef _MSC_VER
+ #include <io.h>
+ #include <fcntl.h>
+@@ -39,6 +40,12 @@ using namespace std;
  
  int main(int argc, char *argv[])
  {

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-hbs-slv/
 share/apertium/apertium-hbs-slv/apertium-hbs-slv.hbs-slv.t1x
 share/apertium/apertium-hbs-slv/apertium-hbs-slv.hbs-slv.t2x
@@ -35,6 +36,7 @@ share/apertium/apertium-hbs-slv/slv-hbs_SR.autogen.bin
 share/apertium/apertium-hbs-slv/slv-hbs_SR.autolex.bin
 @comment share/apertium/apertium-hbs-slv/slv-hbs_SR.mode
 share/apertium/apertium-hbs-slv/slv-hbs_SR.autopgen.bin
+share/apertium/modes/
 share/apertium/modes/hbs-slv.mode
 share/apertium/modes/slv-hbs.mode
 share/apertium/modes/slv-hbs_BS.mode

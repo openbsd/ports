@@ -1,7 +1,6 @@
 L =	spa-arg
 LANG =	Spanish/Aragonese
-V =	0.5.0
-REVISION =	0
+V =	0.6.0
 
 EXTRACT_SUFX =	.tar.bz2
 

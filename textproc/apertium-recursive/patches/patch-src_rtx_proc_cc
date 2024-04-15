@@ -1,15 +1,15 @@
 Index: src/rtx_proc.cc
 --- src/rtx_proc.cc.orig
 +++ src/rtx_proc.cc
-@@ -3,6 +3,7 @@
- #include <lttoolbox/lt_locale.h>
+@@ -4,6 +4,7 @@
  #include <getopt.h>
  #include <libgen.h>
+ #include <iostream>
 +#include <unistd.h>
  
  void endProgram(char *name)
  {
-@@ -41,6 +42,11 @@ void endProgram(char *name)
+@@ -42,6 +43,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {

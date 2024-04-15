@@ -1,0 +1,18 @@
+Index: lttoolbox/lt_append.cc
+--- lttoolbox/lt_append.cc.orig
++++ lttoolbox/lt_append.cc
+@@ -19,9 +19,14 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/lt_locale.h>
+ #include <iostream>
++#include <unistd.h>
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return 1;
++  }
+   LtLocale::tryToSetLocale();
+   CLI cli("add sections to a compiled transducer", PACKAGE_VERSION);
+   cli.add_bool_arg('k', "keep", "in case of section name conflicts, keep the one from the first transducer");

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-por/
 share/apertium/apertium-por/apertium-por.por.dix
 share/apertium/apertium-por/apertium-por.por.rlx
@@ -13,8 +14,11 @@ share/apertium/apertium-por/por_BR.autogen.bin
 share/apertium/apertium-por/por_BR.autopgen.bin
 share/apertium/apertium-por/por_PTpre1990.autogen.bin
 share/apertium/apertium-por/por_PTpre1990.autopgen.bin
+share/apertium/modes/
 share/apertium/modes/por-disam.mode
-share/apertium/modes/por-gener.mode
 share/apertium/modes/por-morph.mode
 share/apertium/modes/por-tagger.mode
+share/apertium/modes/por_BR-gener.mode
+share/apertium/modes/por_PT-gener.mode
+share/apertium/modes/por_PTpre1990-gener.mode
 share/pkgconfig/apertium-por.pc

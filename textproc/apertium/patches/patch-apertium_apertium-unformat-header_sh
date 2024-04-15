@@ -1,0 +1,25 @@
+Index: apertium/apertium-unformat-header.sh
+--- apertium/apertium-unformat-header.sh.orig
++++ apertium/apertium-unformat-header.sh
+@@ -39,17 +39,17 @@ test_zip ()
+   fi
+ }
+ 
+-test_gawk ()
++test_awk ()
+ {
+-  if ! command -v gawk &>/dev/null; then
+-    echo "Error: Install 'gawk' in your system"
++  if ! command -v awk &>/dev/null; then
++    echo "Error: Install 'awk' in your system"
+     exit 1
+   fi
+ }
+ 
+ unformat_latex()
+ {
+-  test_gawk
++  test_awk
+ 
+   if [ "$FICHERO" = "" ]
+   then FICHERO=$(mktemp $TMPDIR/apertium.XXXXXXXX)

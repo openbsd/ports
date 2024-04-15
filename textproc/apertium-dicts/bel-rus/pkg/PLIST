@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-bel-rus/
 share/apertium/apertium-bel-rus/apertium-bel-rus.bel-rus.t1x
 share/apertium/apertium-bel-rus/apertium-bel-rus.bel-rus.t2x
@@ -29,5 +30,6 @@ share/apertium/apertium-bel-rus/rus-bel.t1x.bin
 share/apertium/apertium-bel-rus/rus-bel.t2x.bin
 share/apertium/apertium-bel-rus/rus-bel.t3x.bin
 share/apertium/apertium-bel-rus/rus-bel.t4x.bin
+share/apertium/modes/
 share/apertium/modes/bel-rus.mode
 share/apertium/modes/rus-bel.mode

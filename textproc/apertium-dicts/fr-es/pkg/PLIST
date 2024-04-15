@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-fr-es/
 share/apertium/apertium-fr-es/apertium-fr-es.es-fr.t1x
 share/apertium/apertium-fr-es/apertium-fr-es.es-fr.t2x
@@ -35,6 +36,7 @@ share/apertium/apertium-fr-es/fr-es.prob
 share/apertium/apertium-fr-es/fr-es.t1x.bin
 share/apertium/apertium-fr-es/fr-es.t2x.bin
 share/apertium/apertium-fr-es/fr-es.t3x.bin
+share/apertium/modes/
 share/apertium/modes/eco-es-fr.mode
 share/apertium/modes/eco-fr-es.mode
 share/apertium/modes/es-fr.mode

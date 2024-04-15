@@ -1,7 +1,6 @@
 L =	cat
 LANG =	Catalan
-V =	2.10.2
-REVISION =	0
+V =	2.11.0
 
 EXTRACT_SUFX =	.tar.bz2
 

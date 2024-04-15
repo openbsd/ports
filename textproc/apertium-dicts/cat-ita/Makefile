@@ -1,9 +1,10 @@
 L =	cat-ita
 LANG =	Catalan/Italian
-V =	0.2.1
-REVISION =	0
+V =	0.2.2
 
 USE_GMAKE =	Yes
+
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/cat \
 			textproc/apertium-dicts/ita \

@@ -1,0 +1,13 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -79,9 +79,6 @@ AC_LANG(C++)
+ AC_HEADER_STDC
+ AC_CHECK_HEADERS([stdlib.h string.h unistd.h stddef.h filesystem string_view])
+ AC_CHECK_LIB([stdc++fs], [_ZNSt12experimental10filesystem2v112current_pathEv])
+-AC_CHECK_HEADER([utf8cpp/utf8.h], [CPPFLAGS="-I/usr/include/utf8cpp/ $CPPFLAGS"], [
+-  AC_CHECK_HEADER([utf8.h], [], [AC_MSG_ERROR([You don't have utfcpp installed.])])
+-])
+ 
+ AC_CHECK_DECLS([fread_unlocked, fwrite_unlocked, fgetc_unlocked, fputc_unlocked, fputs_unlocked, getopt, getopt_long])
+ AC_CHECK_FUNCS([setlocale strdup getopt snprintf])

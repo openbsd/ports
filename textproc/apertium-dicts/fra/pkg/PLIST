@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-fra/
 share/apertium/apertium-fra/apertium-fra.fra.metadix
 share/apertium/apertium-fra/apertium-fra.fra.rlx
@@ -9,6 +10,7 @@ share/apertium/apertium-fra/fra.automorf.bin
 share/apertium/apertium-fra/fra.autopgen.bin
 share/apertium/apertium-fra/fra.prob
 share/apertium/apertium-fra/fra.rlx.bin
+share/apertium/modes/
 share/apertium/modes/fra-disam.mode
 share/apertium/modes/fra-gener.mode
 share/apertium/modes/fra-morph.mode

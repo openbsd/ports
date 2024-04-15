@@ -1,7 +1,6 @@
 L =	en-gl
 LANG =	English/Galician
-V =	0.5.3
-REVISION =	0
+V =	0.5.4
 
 EXTRACT_SUFX =	.tar.bz2
 

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-afr/
 share/apertium/apertium-afr/afr.autogen.att.gz
 share/apertium/apertium-afr/afr.autogen.bin
@@ -9,6 +10,7 @@ share/apertium/apertium-afr/afr.rlx.bin
 share/apertium/apertium-afr/apertium-afr.afr.dix
 share/apertium/apertium-afr/apertium-afr.afr.rlx
 share/apertium/apertium-afr/apertium-afr.post-afr.dix
+share/apertium/modes/
 share/apertium/modes/afr-disam.mode
 share/apertium/modes/afr-gener.mode
 share/apertium/modes/afr-morph.mode

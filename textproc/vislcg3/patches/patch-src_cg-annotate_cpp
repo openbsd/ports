@@ -1,0 +1,22 @@
+Index: src/cg-annotate.cpp
+--- src/cg-annotate.cpp.orig
++++ src/cg-annotate.cpp
+@@ -21,6 +21,7 @@
+ #include "stdafx.hpp"
+ #include "filesystem.hpp"
+ #include <deque>
++#include <unistd.h>
+ namespace fs = ::std::filesystem;
+ using namespace CG3;
+ 
+@@ -65,6 +66,10 @@ inline void file_save(fs::path fn, std::string_view da
+ }
+ 
+ int main(int argc, char* argv[]) {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		std::cerr << "pledge" << std::endl;
++		CG3Quit(1);
++	}
+ 	using namespace ::std::string_literals;
+ 	(void)argc;
+ 

@@ -1,6 +1,8 @@
+share/apertium/
 share/apertium/apertium-dan/
 share/apertium/apertium-dan/apertium-dan.dan.dix
 share/apertium/apertium-dan/apertium-dan.dan.rlx
+share/apertium/apertium-dan/apertium-dan.dan.seg.rlx
 share/apertium/apertium-dan/apertium-dan.post-dan.dix
 share/apertium/apertium-dan/dan.autogen.att.gz
 share/apertium/apertium-dan/dan.autogen.bin
@@ -9,7 +11,10 @@ share/apertium/apertium-dan/dan.automorf.bin
 share/apertium/apertium-dan/dan.autopgen.bin
 share/apertium/apertium-dan/dan.prob
 share/apertium/apertium-dan/dan.rlx.bin
+share/apertium/apertium-dan/dan.seg.rlx.bin
+share/apertium/modes/
 share/apertium/modes/dan-disam.mode
 share/apertium/modes/dan-gener.mode
 share/apertium/modes/dan-morph.mode
+share/apertium/modes/dan-segment.mode
 share/pkgconfig/apertium-dan.pc

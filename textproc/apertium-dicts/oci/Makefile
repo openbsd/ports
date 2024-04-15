@@ -1,7 +1,8 @@
 L =	oci
 LANG =	Occitan
-V =	0.2.0
-REVISION =	0
+V =	1.0.0
+
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

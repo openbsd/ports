@@ -1,15 +1,15 @@
 Index: src/rtx_comp.cc
 --- src/rtx_comp.cc.orig
 +++ src/rtx_comp.cc
-@@ -9,6 +9,7 @@
+@@ -7,6 +7,7 @@
  #include <getopt.h>
  #include <libxml/xmlreader.h>
  #include <trx_compiler.h>
 +#include <unistd.h>
  
- using namespace Apertium;
  using namespace std;
-@@ -36,6 +37,11 @@ void endProgram(char *name)
+ 
+@@ -33,6 +34,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-cat-srd/
 share/apertium/apertium-cat-srd/apertium-cat-srd.cat-srd.t1x
 share/apertium/apertium-cat-srd/apertium-cat-srd.cat-srd.t2x
@@ -25,4 +26,5 @@ share/apertium/apertium-cat-srd/srd-cat.rlx.bin
 share/apertium/apertium-cat-srd/srd-cat.t1x.bin
 share/apertium/apertium-cat-srd/srd-cat.t2x.bin
 share/apertium/apertium-cat-srd/srd-cat.t3x.bin
+share/apertium/modes/
 share/apertium/modes/cat-srd.mode

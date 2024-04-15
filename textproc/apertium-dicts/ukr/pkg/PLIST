@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-ukr/
 share/apertium/apertium-ukr/apertium-ukr.post-ukr.dix
 share/apertium/apertium-ukr/apertium-ukr.ukr.dix
@@ -9,6 +10,7 @@ share/apertium/apertium-ukr/ukr.automorf.bin
 share/apertium/apertium-ukr/ukr.autopgen.bin
 share/apertium/apertium-ukr/ukr.prob
 share/apertium/apertium-ukr/ukr.rlx.bin
+share/apertium/modes/
 share/apertium/modes/ukr-disam.mode
 share/apertium/modes/ukr-gener.mode
 share/apertium/modes/ukr-morph.mode

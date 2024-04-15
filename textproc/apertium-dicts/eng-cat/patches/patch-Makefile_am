@@ -1,0 +1,180 @@
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -30,6 +30,8 @@ PREFIX2US=$(LANG2)-$(LANG1US)
+ 
+ BASENAME=apertium-$(PREFIX1)
+ 
++TARGETS_PREFS = prefs/$(PREFIX1).xml
++
+ TARGETS_COMMON =		\
+ 	$(PREFIX1).automorf.bin	\
+ 	$(PREFIX1).prob		\
+@@ -44,13 +46,14 @@ TARGETS_COMMON =		\
+ 	$(PREFIX1C).autopgen.bin	\
+ 	$(PREFIX1V).autopgen.bin	\
+ 	$(PREFIX1U).autopgen.bin	\
+-	$(PREFIX1).autopgen-diacritics-vells.bin 	\
+-	$(PREFIX1).autopgen-diacritics-nous.bin	\
++	$(PREFIX1).prefs.rlx.bin	\
++	$(PREFIX1).pre2017_prefs.rlx.bin \
+ 	$(PREFIX1).t1x.bin	\
+ 	$(PREFIX1).t2x.bin	\
+ 	$(PREFIX1).t3x.bin	\
+ 	$(PREFIX1).t4x.bin	\
+-	$(PREFIX1).autosep.bin	\
++	$(PREFIX1).autoseq.bin	\
++	$(PREFIX1).revautoseq.bin	\
+ 	$(PREFIX2).automorf.bin	\
+ 	$(PREFIX2).prob		\
+ 	$(PREFIX2).rlx.bin	\
+@@ -64,7 +67,9 @@ TARGETS_COMMON =		\
+ 	$(PREFIX2).t1x.bin	\
+ 	$(PREFIX2).t2x.bin	\
+ 	$(PREFIX2).t3x.bin	\
+-	$(PREFIX2).autosep.bin
++	$(PREFIX2).autoseq.bin	\
++	$(PREFIX2).revautoseq.bin	\
++ 	prefs/$(PREFIX1).xml
+ 
+ 
+ # This include defines goals for install-modes, .deps/.d, autobil.prefixes and .mode files:
+@@ -159,15 +164,15 @@ $(PREFIX2).rlx.bin: $(AP_SRC2)/$(LANG2).rlx.bin
+ 
+ $(PREFIX1C).autobil.bin: .deps/$(PREFIX1).cat.dix
+ 	apertium-validate-dictionary $<
+-	lt-comp --var-right=cat lr $< $@
++	lt-comp -r cat lr $< $@
+ 
+ $(PREFIX1V).autobil.bin: .deps/$(PREFIX1).val_gva.dix
+ 	apertium-validate-dictionary $<
+-	lt-comp --var-right=val_gva lr $< $@
++	lt-comp -r val_gva lr $< $@
+ 
+ $(PREFIX1U).autobil.bin: .deps/$(PREFIX1).val_uni.dix
+ 	apertium-validate-dictionary $<
+-	lt-comp --var-right=val_uni lr $< $@
++	lt-comp -r val_uni lr $< $@
+ 
+ .deps/$(PREFIX1).eng.dix: .deps/$(PREFIX1).dix
+ 	apertium-genvrdix eng $< >$@
+@@ -177,11 +182,11 @@ $(PREFIX1U).autobil.bin: .deps/$(PREFIX1).val_uni.dix
+ 
+ $(PREFIX2GB).autobil.bin: .deps/$(PREFIX1).eng.dix
+ 	apertium-validate-dictionary $<
+-	lt-comp --var-left=eng rl $< $@
++	lt-comp -l eng rl $< $@
+ 
+ $(PREFIX2US).autobil.bin: .deps/$(PREFIX1).eng_US.dix
+ 	apertium-validate-dictionary $<
+-	lt-comp --var-left=eng_US rl $< $@
++	lt-comp -l eng_US rl $< $@
+ 
+ 
+ ###############################################################################
+@@ -198,12 +203,18 @@ $(PREFIX2).autolex.bin: $(BASENAME).$(PREFIX2).lrx
+ ## Reordering separable/discontiguous multiwords
+ ###############################################################################
+ 
+-$(PREFIX1).autosep.bin: $(BASENAME).$(PREFIX1).lsx
++$(PREFIX1).autoseq.bin: $(BASENAME).$(PREFIX1).lsx
+ 	lsx-comp lr $< $@
+ 
+-$(PREFIX2).autosep.bin: $(BASENAME).$(PREFIX2).lsx
++$(PREFIX2).autoseq.bin: $(BASENAME).$(PREFIX2).lsx
+ 	lsx-comp lr $< $@
+ 
++$(PREFIX1).revautoseq.bin: $(BASENAME).$(PREFIX2).lsx
++	lsx-comp rl $< $@
++
++$(PREFIX2).revautoseq.bin: $(BASENAME).$(PREFIX1).lsx
++	lsx-comp rl $< $@
++
+ ###############################################################################
+ ## Structural transfer rules
+ ###############################################################################
+@@ -250,19 +261,45 @@ $(PREFIX1V).autopgen.bin: $(AP_SRC2)/$(LANG2V).autopge
+ $(PREFIX1U).autopgen.bin: $(AP_SRC2)/$(LANG2U).autopgen.bin
+ 	cp $< $@
+ 
+-$(PREFIX1).autopgen-diacritics-vells.bin: $(AP_SRC2)/$(LANG2).autopgen-diacritics-vells.bin
++$(PREFIX2GB).autopgen.bin: $(AP_SRC1)/$(LANG1GB).autopgen.bin
+ 	cp $< $@
+ 
+-$(PREFIX1).autopgen-diacritics-nous.bin: $(AP_SRC2)/$(LANG2).autopgen-diacritics-nous.bin
++$(PREFIX2US).autopgen.bin: $(AP_SRC1)/$(LANG1US).autopgen.bin
+ 	cp $< $@
+ 
+-$(PREFIX2GB).autopgen.bin: $(AP_SRC1)/$(LANG1GB).autopgen.bin
++
++###############################################################################
++## Variant preferences
++###############################################################################
++
++$(PREFIX1).pre2017_prefs.rlx.bin: $(AP_SRC2)/$(LANG2).pre2017_prefs.rlx.bin
+ 	cp $< $@
+ 
+-$(PREFIX2US).autopgen.bin: $(AP_SRC1)/$(LANG1US).autopgen.bin
++$(PREFIX1).prefs.rlx.bin: $(AP_SRC2)/$(LANG2).prefs.rlx.bin
+ 	cp $< $@
+ 
+ ###############################################################################
++## Preferences
++###############################################################################
++
++prefs/$(LANG2).preferences.xml: $(AP_SRC2)/$(LANG2).preferences.xml
++	$(MKDIR_P) prefs
++	cp $< $@
++
++define mergePrefs =
++$(MKDIR_P) prefs
++echo '<preferences>' >$@.tmp
++for f in $^; do xmllint --xpath '/preferences/preference' "$$f"; done >>$@.tmp
++echo '</preferences>' >>$@.tmp
++mv $@.tmp $@
++endef
++
++# uncomment when we have bilingual preferences
++# prefs/$(PREFIX1).xml: $(LANG2).preferences.xml $(PREFIX1).preferences.xml
++prefs/$(PREFIX1).xml: prefs/$(LANG2).preferences.xml 
++		$(mergePrefs)
++
++###############################################################################
+ ## Distribution
+ ###############################################################################
+ 
+@@ -277,7 +314,8 @@ EXTRA_DIST=					\
+ 		$(BASENAME).$(PREFIX2).t1x	\
+ 		$(BASENAME).$(PREFIX2).t2x	\
+ 		$(BASENAME).$(PREFIX2).t3x	\
+-		modes.xml
++		modes.xml	\
++		$(PREFIX1).preferences.xml
+ 
+ ###############################################################################
+ ## Installation
+@@ -299,9 +337,11 @@ apertium_eng_cat_DATA=	\
+ 	$(BASENAME).$(PREFIX2).t3x
+ 
+ # All modes are created by the same goal, listing several will just give problems with make -j2
+-noinst_DATA=modes/$(PREFIX1).mode
++noinst_DATA=modes/$(PREFIX1).mode $(TARGETS_PREFS)
+ 
+ install-data-local: install-modes
++	$(MKDIR_P) $(DESTDIR)$(apertium_modesdir)/../prefs
++	$(INSTALL_DATA) $(TARGETS_PREFS) $(DESTDIR)$(apertium_modesdir)/../prefs
+ 
+ ###############################################################################
+ ## Cleanup
+@@ -316,10 +356,4 @@ clean-local:
+ ###############################################################################
+ 
+ test: all
+-	echo "The house" | apertium -d . eng-cat | tee .test-mt
+-	@echo "La casa" > .test-ref
+-	@diff .test-ref .test-mt
+-	echo "La casa" | apertium -d . cat-eng | tee .test-mt
+-	@echo "The house" > .test-ref
+-	@diff .test-ref .test-mt
+-	@rm .test-ref .test-mt
++	apertium-regtest test

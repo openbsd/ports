@@ -1,0 +1,9 @@
+Index: tests/deshtml-alt/run
+--- tests/deshtml-alt/run.orig
++++ tests/deshtml-alt/run
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ export APERTIUM_TRANSFUSE=no
+ set -e -u

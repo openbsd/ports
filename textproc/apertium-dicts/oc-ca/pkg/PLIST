@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-oc-ca/
 share/apertium/apertium-oc-ca/ca-oc.autobil.bin
 share/apertium/apertium-oc-ca/ca-oc.autogen.bin
@@ -47,6 +48,7 @@ share/apertium/apertium-oc-ca/oc@aran-ca.t2x.bin
 share/apertium/apertium-oc-ca/oc@aran-ca.t3x
 share/apertium/apertium-oc-ca/oc@aran-ca.t3x.bin
 @comment share/apertium/apertium-oc-ca/oc_aran-ca.mode
+share/apertium/modes/
 share/apertium/modes/ca-oc.mode
 share/apertium/modes/ca-oc_aran.mode
 share/apertium/modes/oc-ca.mode

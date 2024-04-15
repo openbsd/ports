@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-br-fr/
 share/apertium/apertium-br-fr/apertium-br-fr.br-fr.t1x
 share/apertium/apertium-br-fr/apertium-br-fr.br-fr.t2x
@@ -17,4 +18,5 @@ share/apertium/apertium-br-fr/fr-br.autobil.bin
 share/apertium/apertium-br-fr/fr-br.autogen.bin
 share/apertium/apertium-br-fr/fr-br.automorf.bin
 share/apertium/apertium-br-fr/fr-br.prob
+share/apertium/modes/
 share/apertium/modes/br-fr.mode

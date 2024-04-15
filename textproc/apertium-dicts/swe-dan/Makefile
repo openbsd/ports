@@ -1,7 +1,7 @@
 L =	swe-dan
 LANG =	Swedish/Danish
 V =	0.8.1
-REVISION =	0
+REVISION =	1
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/dan \
 			textproc/apertium-dicts/swe \

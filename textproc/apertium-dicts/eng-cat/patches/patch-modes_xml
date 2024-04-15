@@ -1,0 +1,267 @@
+Index: modes.xml
+--- modes.xml.orig
++++ modes.xml
+@@ -13,8 +13,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat.autobil.bin"/>
+@@ -41,11 +41,14 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x" debug-suff="intergen">
+-        <file name="eng-cat.autopgen-diacritics-vells.bin"/>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
+       </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat.autopgen.bin"/>
+@@ -53,7 +56,7 @@
+     </pipeline>
+   </mode>
+ 
+-  <mode name="eng-cat_iec2017" install="yes">
++  <mode name="eng-cat_pre2017" install="yes">
+     <pipeline>
+       <program name="lt-proc -w">
+         <file name="eng-cat.automorf.bin"/>
+@@ -65,8 +68,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat.autobil.bin"/>
+@@ -93,12 +96,18 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x">
+-        <file name="eng-cat.autopgen-diacritics-nous.bin"/>
++      <program name="cg-proc" debug-suff="pre2017prefs">
++        <file name="eng-cat.pre2017_prefs.rlx.bin"/>
+       </program>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
++      </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat.autopgen.bin"/>
+       </program>
+@@ -117,8 +126,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat_valencia_gva.autobil.bin"/>
+@@ -145,11 +154,14 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat_valencia_gva.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x">
+-        <file name="eng-cat.autopgen-diacritics-vells.bin"/>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
+       </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat_valencia_gva.autopgen.bin"/>
+@@ -157,7 +169,7 @@
+     </pipeline>
+   </mode>
+ 
+-  <mode name="eng-cat_valencia_iec2017" install="yes">
++  <mode name="eng-cat_valencia_pre2017" install="yes">
+     <pipeline>
+       <program name="lt-proc -w">
+         <file name="eng-cat.automorf.bin"/>
+@@ -169,8 +181,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat_valencia_gva.autobil.bin"/>
+@@ -197,12 +209,18 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat_valencia_gva.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x">
+-        <file name="eng-cat.autopgen-diacritics-nous.bin"/>
++      <program name="cg-proc -1 -n -g" debug-suff="pre2017prefs">
++        <file name="eng-cat.pre2017_prefs.rlx.bin"/>
+       </program>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
++      </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat_valencia_gva.autopgen.bin"/>
+       </program>
+@@ -221,8 +239,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat_valencia_uni.autobil.bin"/>
+@@ -249,11 +267,14 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat_valencia_uni.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x">
+-        <file name="eng-cat.autopgen-diacritics-vells.bin"/>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
+       </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat_valencia_uni.autopgen.bin"/>
+@@ -261,7 +282,7 @@
+     </pipeline>
+   </mode>
+ 
+-  <mode name="eng-cat_valencia_uni_iec2017" install="yes">
++  <mode name="eng-cat_valencia_uni_pre2017" install="yes">
+     <pipeline>
+       <program name="lt-proc -w">
+         <file name="eng-cat.automorf.bin"/>
+@@ -273,8 +294,8 @@
+         <file name="eng-cat.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="eng-cat.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="eng-cat.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="eng-cat_valencia_uni.autobil.bin"/>
+@@ -301,12 +322,18 @@
+         <file name="apertium-eng-cat.eng-cat.t4x"/>
+         <file name="eng-cat.t4x.bin"/>
+       </program>
+-      <program name="lt-proc $1">
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="eng-cat.revautoseq.bin"/>
++      </program>
++      <program name="lt-proc $1 -b">
+         <file name="eng-cat_valencia_uni.autogen.bin"/>
+       </program>
+-      <program name="lt-proc -x">
+-        <file name="eng-cat.autopgen-diacritics-nous.bin"/>
++      <program name="cg-proc -1 -n -g" debug-suff="pre2017prefs">
++        <file name="eng-cat.pre2017_prefs.rlx.bin"/>
+       </program>
++      <program name="cg-proc -1 -n -g" debug-suff="prefs">
++        <file name="eng-cat.prefs.rlx.bin"/>
++      </program>
+       <program name="lt-proc -p">
+         <file name="eng-cat_valencia_uni.autopgen.bin"/>
+       </program>
+@@ -325,8 +352,8 @@
+         <file name="cat-eng.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="cat-eng.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="cat-eng.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="cat-eng.autobil.bin"/>
+@@ -337,7 +364,7 @@
+       <program name="apertium-anaphora" debug-suff="anaphora">
+         <file name="apertium-eng-cat.cat-eng.arx"/>
+       </program>
+-      <program name="apertium-transfer -b" debug-suff="transfer">
++      <program name="apertium-transfer -bc" debug-suff="transfer">
+         <file name="apertium-eng-cat.cat-eng.t1x"/>
+         <file name="cat-eng.t1x.bin"/>
+       </program>
+@@ -349,6 +376,9 @@
+         <file name="apertium-eng-cat.cat-eng.t3x"/>
+         <file name="cat-eng.t3x.bin"/>
+       </program>
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="cat-eng.revautoseq.bin"/>
++      </program>
+       <program name="lt-proc $1">
+         <file name="cat-eng.autogen.bin"/>
+       </program>
+@@ -370,8 +400,8 @@
+         <file name="cat-eng.prob"/>
+       </program>
+       <program name="apertium-pretransfer"/>
+-      <program name="lsx-proc" debug-suff="separ">
+-        <file name="cat-eng.autosep.bin"/>
++      <program name="lsx-proc">
++        <file name="cat-eng.autoseq.bin"/>
+       </program>
+       <program name="lt-proc -b">
+         <file name="cat-eng_US.autobil.bin"/>
+@@ -393,6 +423,9 @@
+       <program name="apertium-postchunk">
+         <file name="apertium-eng-cat.cat-eng.t3x"/>
+         <file name="cat-eng.t3x.bin"/>
++      </program>
++      <program name="lsx-proc" debug-suff="revautoseq">
++        <file name="cat-eng.revautoseq.bin"/>
+       </program>
+       <program name="lt-proc $1">
+         <file name="cat-eng_US.autogen.bin"/>

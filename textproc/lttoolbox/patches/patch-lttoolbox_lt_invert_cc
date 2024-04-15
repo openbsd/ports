@@ -1,0 +1,20 @@
+Index: lttoolbox/lt_invert.cc
+--- lttoolbox/lt_invert.cc.orig
++++ lttoolbox/lt_invert.cc
+@@ -19,8 +19,16 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/cli.h>
+ 
++#include <iostream>
++#include <unistd.h>
++
+ int main(int argc, char* argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return EXIT_FAILURE;
++  }
++
+   LtLocale::tryToSetLocale();
+ 
+   CLI cli("reverse the direction of a compiled transducer", PACKAGE_VERSION);

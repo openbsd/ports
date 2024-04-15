@@ -1,19 +1,23 @@
 Index: src/lsx_proc.cc
 --- src/lsx_proc.cc.orig
 +++ src/lsx_proc.cc
-@@ -1,9 +1,15 @@
- #include <lttoolbox/lt_locale.h>
+@@ -3,6 +3,7 @@
  #include <iostream>
+ #include <getopt.h>
+ #include <libgen.h>
 +#include <unistd.h>
+ 
  #include "lsx_processor.h"
+ 
+@@ -28,6 +29,11 @@ void endProgram(char* name)
  
  int main (int argc, char** argv)
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
-+    exit(EXIT_FAILURE);
++    cerr << "pledge" << endl;
++    return EXIT_FAILURE;
 +  }
 +
-   char *fname = NULL;
-   bool nullFlush = false;
-   if(argc != 2 && argc != 3)
+   LtLocale::tryToSetLocale();
+   
+   LSXProcessor fstp;

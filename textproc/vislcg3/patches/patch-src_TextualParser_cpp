@@ -1,0 +1,29 @@
+Index: src/TextualParser.cpp
+--- src/TextualParser.cpp.orig
++++ src/TextualParser.cpp
+@@ -23,7 +23,9 @@
+ #include "ContextualTest.hpp"
+ #include "parser_helpers.hpp"
+ #include "AST.hpp"
++#ifndef __OpenBSD__
+ #include <wordexp.h>
++#endif
+ #include <bitset>
+ 
+ namespace CG3 {
+@@ -2597,6 +2599,7 @@ void TextualParser::parseFromUChar(UChar* input, const
+ 
+ 				std::string abspath = &cbuffers[0][0];
+ 
++#ifndef __OpenBSD__
+ 				if (abspath.find_first_of("~$*") != std::string::npos) {
+ 					wordexp_t p;
+ 					auto rv = wordexp(abspath.data(), &p, WRDE_NOCMD | WRDE_UNDEF);
+@@ -2608,6 +2611,7 @@ void TextualParser::parseFromUChar(UChar* input, const
+ 					abspath = p.we_wordv[0];
+ 					wordfree(&p);
+ 				}
++#endif
+ 
+ 				if (abspath[0] != '/') {
+ 					auto tmp = ux_dirname(fname);

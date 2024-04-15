@@ -9,7 +9,7 @@ Index: apertium/apertium_posttransfer.cc
  
  #ifdef _MSC_VER
  #include <io.h>
-@@ -63,6 +64,12 @@ void processStream(FILE *in, FILE *out, bool null_flus
+@@ -62,6 +63,12 @@ void processStream(InputFile& in, UFILE* out, bool nul
  
  int main(int argc, char *argv[])
  {

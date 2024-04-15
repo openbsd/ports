@@ -1,7 +1,7 @@
 COMMENT =	recursive structural transfer module for apertium
 
 DISTNAME =	apertium-recursive-$V
-V =		1.0.1
+V =		1.1.0
 
 CATEGORIES =	textproc
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB += ${COMPILER_LIBCXX} c m xml2 apertium3-3.7 lttoolbox3-3.5
+WANTLIB += ${COMPILER_LIBCXX} c m xml2 apertium lttoolbox
 
 SITES =		https://github.com/apertium/apertium-recursive/releases/download/v$V/
 
@@ -23,10 +23,12 @@ EXTRACT_SUFX =	.tar.bz2
 # c++20
 COMPILER =		base-clang ports-gcc
 
+BUILD_DEPENDS =		devel/utfcpp
 LIB_DEPENDS =		textproc/apertium \
 			textproc/lttoolbox
 
 CONFIGURE_STYLE =	autoreconf
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/utf8cpp"
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 

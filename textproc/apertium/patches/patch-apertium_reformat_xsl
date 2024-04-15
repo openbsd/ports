@@ -1,7 +1,7 @@
 Index: apertium/reformat.xsl
 --- apertium/reformat.xsl.orig
 +++ apertium/reformat.xsl
-@@ -178,6 +178,12 @@ void usage(string const &amp;progname)
+@@ -151,6 +151,12 @@ void usage(string const &amp;progname)
  
  int main(int argc, char *argv[])
  {

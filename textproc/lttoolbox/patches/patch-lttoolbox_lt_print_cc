@@ -1,23 +1,20 @@
 Index: lttoolbox/lt_print.cc
 --- lttoolbox/lt_print.cc.orig
 +++ lttoolbox/lt_print.cc
-@@ -25,6 +25,7 @@
- #include <libgen.h>
- #include <string>
- #include <getopt.h>
+@@ -19,8 +19,16 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/lt_locale.h>
+ 
++#include <iostream>
 +#include <unistd.h>
- 
- #ifdef _MSC_VER
- #include <io.h>
-@@ -48,6 +49,11 @@ void endProgram(char *name)
- 
++
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    cerr << "pledge" << endl;
-+    exit(EXIT_FAILURE);
++    std::cerr << "pledge" << std::endl;
++    return 1;
 +  }
 +
-   bool hfst = false;
-   FILE* input = NULL;
-   FILE* output = stdout;
+   LtLocale::tryToSetLocale();
+   CLI cli("dump a transducer to text in ATT format", PACKAGE_VERSION);
+   cli.add_bool_arg('a', "alpha", "print transducer alphabet");

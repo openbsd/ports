@@ -1,0 +1,33 @@
+https://github.com/apertium/apertium-isl/commit/2b36fe44157a6844d0b5f592db361622dc296bab
+Correct install path
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -59,11 +59,13 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix		\
+ ###############################################################################
+ #
+ #   apertium_isl_dir: This is where the compiled binaries go
+-#   apertium_isl_srcdir: This is where the source files go
+ 
+ apertium_isldir=$(prefix)/share/apertium/$(BASENAME)/
+ 
+-apertium_isl_DATA=$(TARGETS_COMMON) $(LANG1).prob
++apertium_isl_DATA=$(TARGETS_COMMON) $(LANG1).prob \
++	$(BASENAME).$(LANG1).dix \
++	$(BASENAME).$(LANG1).rlx \
++	$(BASENAME).post-$(LANG1).dix
+ 
+ pkgconfigdir = $(prefix)/share/pkgconfig
+ pkgconfig_DATA = $(BASENAME).pc
+@@ -71,10 +73,6 @@ pkgconfig_DATA = $(BASENAME).pc
+ noinst_DATA=modes/$(LANG1)-morph.mode
+ 
+ install-data-local: install-modes
+-	$(INSTALL_DATA) $(LANG1).prob $(DESTDIR)$(apertium_isl_srcdir)
+-	$(INSTALL_DATA) $(BASENAME).$(LANG1).dix $(DESTDIR)$(apertium_isl_srcdir)
+-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_isl_srcdir)
+-	$(INSTALL_DATA) $(BASENAME).post-$(LANG1).dix $(DESTDIR)$(apertium_isl_srcdir)
+ 
+ CLEANFILES = $(TARGETS_COMMON)
+ clean-local:

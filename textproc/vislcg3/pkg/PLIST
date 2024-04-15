@@ -1,5 +1,7 @@
+@bin bin/cg-annotate
 @bin bin/cg-comp
 @bin bin/cg-conv
+@bin bin/cg-merge-annotations
 @bin bin/cg-mwesplit
 @bin bin/cg-proc
 @bin bin/cg-relabel
@@ -14,6 +16,8 @@ lib/pkgconfig/cg3.pc
 @man man/man1/cg-comp.1
 @man man/man1/cg-conv.1
 @man man/man1/cg-proc.1
+@man man/man1/cg-sort.1
+@man man/man1/cg-untrace.1
 @man man/man1/cg3-autobin.pl.1
 @man man/man1/vislcg3.1
 share/emacs/

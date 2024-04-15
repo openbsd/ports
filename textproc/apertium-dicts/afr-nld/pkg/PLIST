@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/af-nl
+share/apertium/
 share/apertium/apertium-afr-nld/
 share/apertium/apertium-afr-nld/afr-nld.autobil.bin
 share/apertium/apertium-afr-nld/afr-nld.autogen.bin
@@ -25,5 +26,6 @@ share/apertium/apertium-afr-nld/nld-afr.rlx.bin
 share/apertium/apertium-afr-nld/nld-afr.t1x.bin
 share/apertium/apertium-afr-nld/nld-afr.t2x.bin
 share/apertium/apertium-afr-nld/nld-afr.t3x.bin
+share/apertium/modes/
 share/apertium/modes/afr-nld.mode
 share/apertium/modes/nld-afr.mode

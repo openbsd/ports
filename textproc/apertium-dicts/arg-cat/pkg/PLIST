@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-arg-cat/
 share/apertium/apertium-arg-cat/apertium-arg-cat.arg-cat.t1x
 share/apertium/apertium-arg-cat/apertium-arg-cat.cat-arg.t1x
@@ -6,9 +7,12 @@ share/apertium/apertium-arg-cat/arg-cat.autogen.bin
 share/apertium/apertium-arg-cat/arg-cat.autolex.bin
 share/apertium/apertium-arg-cat/arg-cat.automorf.bin
 share/apertium/apertium-arg-cat/arg-cat.autopgen.bin
+share/apertium/apertium-arg-cat/arg-cat.pre2017_prefs.rlx.bin
+share/apertium/apertium-arg-cat/arg-cat.prefs.rlx.bin
 share/apertium/apertium-arg-cat/arg-cat.prob
 share/apertium/apertium-arg-cat/arg-cat.rlx.bin
 share/apertium/apertium-arg-cat/arg-cat.t1x.bin
+share/apertium/apertium-arg-cat/arg-cat.xml
 share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autobil.bin
 share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autogen.bin
 share/apertium/apertium-arg-cat/arg-cat_valencia_gva.autopgen.bin
@@ -23,5 +27,7 @@ share/apertium/apertium-arg-cat/cat-arg.autopgen.bin
 share/apertium/apertium-arg-cat/cat-arg.prob
 share/apertium/apertium-arg-cat/cat-arg.rlx.bin
 share/apertium/apertium-arg-cat/cat-arg.t1x.bin
+share/apertium/modes/
 share/apertium/modes/arg-cat.mode
+share/apertium/modes/arg-cat_pre2017.mode
 share/apertium/modes/cat-arg.mode

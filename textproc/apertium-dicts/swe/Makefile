@@ -1,7 +1,8 @@
 L =	swe
 LANG =	Swedish
-V =	0.8.1
-REVISION =	0
+V =	0.8.2
+
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

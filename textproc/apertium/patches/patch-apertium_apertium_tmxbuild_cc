@@ -9,7 +9,7 @@ Index: apertium/apertium_tmxbuild.cc
  
  #include <apertium/apertium_config.h>
  #include <apertium/tmx_builder.h>
-@@ -61,6 +62,11 @@ void usage(char *progname)
+@@ -59,6 +60,11 @@ void usage(char *progname)
  
  int main(int argc, char *argv[])
  {

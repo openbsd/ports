@@ -1,7 +1,7 @@
 L =	es-pt
 LANG =	Spanish/Portuguese
 V =	1.1.6
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

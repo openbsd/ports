@@ -1,7 +1,7 @@
 L =	en-es
 LANG =	English/Spanish
 V =	0.8.0
-REVISION =	2
+REVISION =	3
 
 BROKEN =	0.8.0 incompatible with apertium>=3.7.2
 

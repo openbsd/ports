@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-rus-ukr/
 share/apertium/apertium-rus-ukr/apertium-rus-ukr.rus-ukr.t1x
 share/apertium/apertium-rus-ukr/apertium-rus-ukr.rus-ukr.t2x
@@ -25,5 +26,6 @@ share/apertium/apertium-rus-ukr/ukr-rus.rlx.bin
 share/apertium/apertium-rus-ukr/ukr-rus.t1x.bin
 share/apertium/apertium-rus-ukr/ukr-rus.t2x.bin
 share/apertium/apertium-rus-ukr/ukr-rus.t3x.bin
+share/apertium/modes/
 share/apertium/modes/rus-ukr.mode
 share/apertium/modes/ukr-rus.mode

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-es-pt/
 share/apertium/apertium-es-pt/es-pt.autobil.bin
 share/apertium/apertium-es-pt/es-pt.autogen.bin
@@ -21,6 +22,7 @@ share/apertium/apertium-es-pt/pt-es.autopgen.bin
 share/apertium/apertium-es-pt/pt-es.prob
 share/apertium/apertium-es-pt/pt-es.t1x
 share/apertium/apertium-es-pt/pt-es.t1x.bin
+share/apertium/modes/
 share/apertium/modes/es-pt.mode
 share/apertium/modes/es-pt_BR.mode
 share/apertium/modes/pt-es.mode

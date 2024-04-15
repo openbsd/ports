@@ -9,7 +9,7 @@ Index: apertium/apertium-postlatex.l
  
  extern "C" {
  #if !defined(__STDC__)
-@@ -315,6 +316,12 @@ void usage(string const &progname)
+@@ -313,6 +314,12 @@ void usage(string const &progname)
  
  int main(int argc, char *argv[])
  {

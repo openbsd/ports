@@ -1,0 +1,12 @@
+Index: apertium/utils-fixlatex-header.sh
+--- apertium/utils-fixlatex-header.sh.orig
++++ apertium/utils-fixlatex-header.sh
+@@ -2,7 +2,7 @@ INPUT_FILE=/dev/stdin
+ OUTPUT_FILE=/dev/stdout
+ 
+ < "$INPUT_FILE" \
+-gawk '
++awk '
+ function is_inline_tag(str,                      aux, val)
+ {
+   for(val in INLINETAGS)

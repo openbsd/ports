@@ -1,7 +1,7 @@
 L =	urd
 LANG =	Urdu
 V =	0.1.1
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

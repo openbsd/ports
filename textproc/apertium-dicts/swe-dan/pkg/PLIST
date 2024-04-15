@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-swe-dan/
 share/apertium/apertium-swe-dan/apertium-swe-dan.dan-swe.t1x
 share/apertium/apertium-swe-dan/apertium-swe-dan.dan-swe.t2x
@@ -25,5 +26,6 @@ share/apertium/apertium-swe-dan/swe-dan.rlx.bin
 share/apertium/apertium-swe-dan/swe-dan.t1x.bin
 share/apertium/apertium-swe-dan/swe-dan.t2x.bin
 share/apertium/apertium-swe-dan/swe-dan.t3x.bin
+share/apertium/modes/
 share/apertium/modes/dan-swe.mode
 share/apertium/modes/swe-dan.mode

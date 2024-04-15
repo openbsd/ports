@@ -1,0 +1,23 @@
+Index: lttoolbox/lt_compose.cc
+--- lttoolbox/lt_compose.cc.orig
++++ lttoolbox/lt_compose.cc
+@@ -21,6 +21,7 @@
+ #include <iostream>
+ #include <thread>
+ #include <future>
++#include <unistd.h>
+ 
+ void
+ compose(FILE* file_f, FILE* file_g, FILE* file_gf, bool f_inverted, bool g_anywhere, bool jobs)
+@@ -99,6 +100,11 @@ compose(FILE* file_f, FILE* file_g, FILE* file_gf, boo
+ 
+ int main(int argc, char *argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return 1;
++  }
++
+   LtLocale::tryToSetLocale();
+   CLI cli("compose transducer1 with transducer2", PACKAGE_VERSION);
+   cli.add_bool_arg('i', "inverted", "run composition right-to-left on transducer1");

@@ -1,7 +1,7 @@
 Index: apertium/apertium_postchunk.cc
 --- apertium/apertium_postchunk.cc.orig
 +++ apertium/apertium_postchunk.cc
-@@ -85,6 +85,12 @@ FILE * open_output(string const &filename)
+@@ -71,6 +71,12 @@ UFILE * open_output(string const &filename)
  
  int main(int argc, char *argv[])
  {

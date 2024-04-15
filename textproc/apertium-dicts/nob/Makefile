@@ -1,7 +1,8 @@
 L =	nob
 LANG =	Norwegian Bokmal
-V =	1.1.0
-REVISION =	1
+V =	1.4.0
+
+EXTRACT_SUFX =	.tar.bz2
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-urd/
 share/apertium/apertium-urd/apertium-urd.post-urd.dix
 share/apertium/apertium-urd/apertium-urd.urd.dix
@@ -9,6 +10,7 @@ share/apertium/apertium-urd/urd.automorf.bin
 share/apertium/apertium-urd/urd.autopgen.bin
 share/apertium/apertium-urd/urd.prob
 share/apertium/apertium-urd/urd.rlx.bin
+share/apertium/modes/
 share/apertium/modes/urd-disam.mode
 share/apertium/modes/urd-gener.mode
 share/apertium/modes/urd-morph.mode

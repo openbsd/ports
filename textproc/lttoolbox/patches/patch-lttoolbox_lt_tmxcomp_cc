@@ -7,14 +7,14 @@ Index: lttoolbox/lt_tmxcomp.cc
  #include <getopt.h>
 +#include <unistd.h>
  
- using namespace std;
  
-@@ -48,6 +49,11 @@ void endProgram(char *name)
+ void endProgram(char *name)
+@@ -47,6 +48,11 @@ void endProgram(char *name)
  
  int main(int argc, char *argv[])
  {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    wcerr << "pledge" << endl;
++    std::cerr << "pledge" << std::endl;
 +    exit(EXIT_FAILURE);
 +  }
 +

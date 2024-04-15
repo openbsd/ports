@@ -1,7 +1,7 @@
 L =	srd-ita
 LANG =	Sardinian/Italian
 V =	1.1.0
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 

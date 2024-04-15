@@ -1,4 +1,5 @@
 @comment share/apertium/apertium-fr-eo/fr-eo.mode
+share/apertium/
 share/apertium/apertium-eo-fr/
 share/apertium/apertium-eo-fr/apertium-eo-fr.fr-eo.antaux1_t2x
 share/apertium/apertium-eo-fr/apertium-eo-fr.fr-eo.antaux2_t2x
@@ -23,5 +24,6 @@ share/apertium/apertium-eo-fr/fr-eo.t1x.class
 share/apertium/apertium-eo-fr/fr-eo.t2x.bin
 share/apertium/apertium-eo-fr/fr-eo.t3x.bin
 share/apertium/apertium-eo-fr/fr-pn.dat
+share/apertium/modes/
 share/apertium/modes/fr-eo-bytecode.mode
 share/apertium/modes/fr-eo.mode

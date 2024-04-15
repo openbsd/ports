@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/es-ast
+share/apertium/
 share/apertium/apertium-spa-ast/
 share/apertium/apertium-spa-ast/apertium-spa-ast.post-spa-ast.t1x
 share/apertium/apertium-spa-ast/apertium-spa-ast.spa-ast.t1x
@@ -16,6 +17,7 @@ share/apertium/apertium-spa-ast/spa-ast.autopgen2.bin
 share/apertium/apertium-spa-ast/spa-ast.post.t1x.bin
 share/apertium/apertium-spa-ast/spa-ast.prob
 share/apertium/apertium-spa-ast/spa-ast.t1x.bin
+share/apertium/modes/
 share/apertium/modes/spa-ast-old.mode
 share/apertium/modes/spa-ast-pn-old.mode
 share/apertium/modes/spa-ast-pn.mode

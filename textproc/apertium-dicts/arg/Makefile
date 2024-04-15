@@ -1,9 +1,10 @@
 L =	arg
 LANG =	Aragonese
-V =	0.1.4
-REVISION =	0
+V =	0.2.0
 
-SITES =		https://distfiles.roadrunner.page/
+EXTRACT_SUFX =	.tar.bz2
+
+SITES =		https://github.com/apertium/apertium-arg/releases/download/v$V/
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

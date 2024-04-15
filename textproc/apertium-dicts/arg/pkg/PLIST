@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-arg/
 share/apertium/apertium-arg/apertium-arg.arg.acx
 share/apertium/apertium-arg/apertium-arg.arg.dix
@@ -10,6 +11,7 @@ share/apertium/apertium-arg/arg.automorf.bin
 share/apertium/apertium-arg/arg.autopgen.bin
 share/apertium/apertium-arg/arg.prob
 share/apertium/apertium-arg/arg.rlx.bin
+share/apertium/modes/
 share/apertium/modes/arg-gener.mode
 share/apertium/modes/arg-morph.mode
 share/apertium/modes/arg-tagger.mode

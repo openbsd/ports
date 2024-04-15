@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-spa-ita/
 share/apertium/apertium-spa-ita/apertium-spa-ita.ita-spa.t1x
 share/apertium/apertium-spa-ita/apertium-spa-ita.ita-spa.t2x
@@ -25,5 +26,6 @@ share/apertium/apertium-spa-ita/spa-ita.rlx.bin
 share/apertium/apertium-spa-ita/spa-ita.t1x.bin
 share/apertium/apertium-spa-ita/spa-ita.t2x.bin
 share/apertium/apertium-spa-ita/spa-ita.t3x.bin
+share/apertium/modes/
 share/apertium/modes/ita-spa.mode
 share/apertium/modes/spa-ita.mode

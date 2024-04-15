@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-pt-gl/
 share/apertium/apertium-pt-gl/apertium-pt-gl.gl-pt.t1x
 share/apertium/apertium-pt-gl/apertium-pt-gl.pt-gl.t1x
@@ -15,6 +16,7 @@ share/apertium/apertium-pt-gl/pt-gl.autopgen.bin
 @comment share/apertium/apertium-pt-gl/pt-gl.mode
 share/apertium/apertium-pt-gl/pt-gl.prob
 share/apertium/apertium-pt-gl/pt-gl.t1x.bin
+share/apertium/modes/
 share/apertium/modes/gl-pt-latin1.mode
 share/apertium/modes/gl-pt.mode
 share/apertium/modes/pt-gl-latin1.mode

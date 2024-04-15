@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/mk-en
+share/apertium/
 share/apertium/apertium-mkd-eng/
 share/apertium/apertium-mkd-eng/apertium-mkd-eng.mkd-eng.t1x
 share/apertium/apertium-mkd-eng/apertium-mkd-eng.mkd-eng.t2x
@@ -16,4 +17,5 @@ share/apertium/apertium-mkd-eng/mkd-eng.rlx.bin
 share/apertium/apertium-mkd-eng/mkd-eng.t1x.bin
 share/apertium/apertium-mkd-eng/mkd-eng.t2x.bin
 share/apertium/apertium-mkd-eng/mkd-eng.t3x.bin
+share/apertium/modes/
 share/apertium/modes/mkd-eng.mode

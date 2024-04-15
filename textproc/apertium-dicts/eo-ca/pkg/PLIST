@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-ca-eo/
 share/apertium/apertium-ca-eo/apertium-eo-ca.ca-eo.antaux2_t2x
 share/apertium/apertium-ca-eo/apertium-eo-ca.ca-eo.antaux_t2x
@@ -25,5 +26,6 @@ share/apertium/apertium-ca-eo/ca-eo.prob
 share/apertium/apertium-ca-eo/ca-eo.t1x.bin
 share/apertium/apertium-ca-eo/ca-eo.t2x.bin
 share/apertium/apertium-ca-eo/ca-eo.t3x.bin
+share/apertium/modes/
 share/apertium/modes/ca-eo-translit.mode
 share/apertium/modes/ca-eo.mode

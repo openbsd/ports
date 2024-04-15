@@ -1,0 +1,25 @@
+Index: lttoolbox/lt_restrict.cc
+--- lttoolbox/lt_restrict.cc.orig
++++ lttoolbox/lt_restrict.cc
+@@ -20,6 +20,9 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/string_utils.h>
+ 
++#include <iostream>
++#include <unistd.h>
++
+ void get_symbol(const std::string& s, Alphabet& alpha, const char* prefix,
+                 sorted_vector<int32_t>& vec)
+ {
+@@ -36,6 +39,11 @@ void get_symbol(const std::string& s, Alphabet& alpha,
+ 
+ int main(int argc, char* argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return 1;
++  }
++
+   LtLocale::tryToSetLocale();
+   CLI cli("remove paths from a transducer", PACKAGE_VERSION);
+   cli.add_bool_arg('m', "minimise", "minimise transducers after deleting paths");

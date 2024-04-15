@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/is-sv
+share/apertium/
 share/apertium/apertium-isl-swe/
 share/apertium/apertium-isl-swe/apertium-isl-swe.isl-swe.t1x
 share/apertium/apertium-isl-swe/apertium-isl-swe.isl-swe.t2x
@@ -23,5 +24,6 @@ share/apertium/apertium-isl-swe/swe-isl.rlx.bin
 share/apertium/apertium-isl-swe/swe-isl.t1x.bin
 share/apertium/apertium-isl-swe/swe-isl.t2x.bin
 share/apertium/apertium-isl-swe/swe-isl.t3x.bin
+share/apertium/modes/
 share/apertium/modes/isl-swe.mode
 share/apertium/modes/swe-isl.mode

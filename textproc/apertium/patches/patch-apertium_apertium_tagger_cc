@@ -1,15 +1,15 @@
 Index: apertium/apertium_tagger.cc
 --- apertium/apertium_tagger.cc.orig
 +++ apertium/apertium_tagger.cc
-@@ -30,6 +30,11 @@
+@@ -31,6 +31,11 @@
  #include <unistd.h>
  
  int main(int argc, char **argv) {
 +  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
-+    std::wcerr << "pledge" << std::endl;
++    std::cerr << "pledge" << std::endl;
 +    return 1;
 +  }
 +
+   LtLocale::tryToSetLocale();
    try {
      Apertium::apertium_tagger(argc, argv);
-   } catch (const Apertium::Exception::apertium_tagger::err_Exception &err_Exception_) {

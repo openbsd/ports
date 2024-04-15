@@ -1,4 +1,5 @@
 @pkgpath textproc/apertium-dicts/es-an
+share/apertium/
 share/apertium/apertium-spa-arg/
 share/apertium/apertium-spa-arg/apertium-spa-arg.arg-spa.t1x
 share/apertium/apertium-spa-arg/apertium-spa-arg.arg-spa.t2x
@@ -22,5 +23,6 @@ share/apertium/apertium-spa-arg/spa-arg.prob
 share/apertium/apertium-spa-arg/spa-arg.rlx.bin
 share/apertium/apertium-spa-arg/spa-arg.t1x.bin
 share/apertium/apertium-spa-arg/spa-arg.t2x.bin
+share/apertium/modes/
 share/apertium/modes/arg-spa.mode
 share/apertium/modes/spa-arg.mode

@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-spa/
 share/apertium/apertium-spa/apertium-spa.spa.acx
 share/apertium/apertium-spa/apertium-spa.spa.metadix
@@ -10,6 +11,7 @@ share/apertium/apertium-spa/spa.autopgen.bin
 share/apertium/apertium-spa/spa.lrx.bin
 share/apertium/apertium-spa/spa.prob
 share/apertium/apertium-spa/spa.rlx.bin
+share/apertium/modes/
 share/apertium/modes/spa-disam-tagger.mode
 share/apertium/modes/spa-disam.mode
 share/apertium/modes/spa-gener.mode
