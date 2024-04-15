@@ -1,0 +1,13 @@
+Fix build with minizip 4
+
+Index: src/io/filesystem/zip_filesystem.h
+--- src/io/filesystem/zip_filesystem.h.orig
++++ src/io/filesystem/zip_filesystem.h
+@@ -23,6 +23,7 @@
+ 
+ #include <unzip.h>
+ #include <zip.h>
++#include <zlib.h>
+ 
+ #include "io/filesystem/filesystem.h"
+ #include "io/streamread.h"
