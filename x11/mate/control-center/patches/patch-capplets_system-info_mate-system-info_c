@@ -11,7 +11,46 @@ Index: capplets/system-info/mate-system-info.c
  #include <sys/utsname.h>
  
  #ifdef GDK_WINDOWING_WAYLAND
-@@ -365,6 +367,10 @@ get_graphics_hardware_string (void)
+@@ -159,6 +161,12 @@ mate_system_info_set_row (MateSystemInfo *info)
+ static char *
+ get_system_hostname (void)
+ {
++#if defined(__OpenBSD__)
++    char hostname[HOST_NAME_MAX+1];
++    if (gethostname(hostname, sizeof(hostname)))
++        return g_strdup ("");
++    return g_strdup(hostname);
++#else
+     GDBusProxy         *hostnamed_proxy;
+     g_autoptr(GVariant) variant = NULL;
+     g_autoptr(GError)   error = NULL; 
+@@ -206,6 +214,7 @@ get_system_hostname (void)
+         g_object_unref (hostnamed_proxy);
+         return g_variant_dup_string (variant, NULL);
+     }
++#endif
+ }
+ 
+ static char *
+@@ -317,6 +326,9 @@ get_cpu_info (void)
+ static char *
+ get_renderer_from_session (void)
+ {
++#if defined(__OpenBSD__)
++    return NULL;
++#else
+     g_autoptr(GDBusProxy) session_proxy = NULL;
+     g_autoptr(GVariant) renderer_variant = NULL;
+     char *renderer;
+@@ -347,6 +359,7 @@ get_renderer_from_session (void)
+     renderer = info_cleanup (g_variant_get_string (renderer_variant, NULL));
+ 
+     return renderer;
++#endif
+ }
+ 
+ static gchar *
+@@ -365,6 +378,10 @@ get_graphics_hardware_string (void)
  static char *
  get_primary_disk_size (void)
  {
@@ -22,7 +61,7 @@ Index: capplets/system-info/mate-system-info.c
      g_autoptr(UDisksClient) client = NULL;
      GDBusObjectManager *manager;
      g_autolist(GDBusObject) objects = NULL;
-@@ -411,6 +417,7 @@ get_primary_disk_size (void)
+@@ -411,6 +428,7 @@ get_primary_disk_size (void)
      }
  
      return size;
@@ -30,3 +69,12 @@ Index: capplets/system-info/mate-system-info.c
  }
  
  static char *
+@@ -567,7 +585,7 @@ get_mate_desktop_version ()
+     int   status;
+     int   i = 0;
+     char *version = NULL;
+-    char *argv[] = {"/usr/bin/mate-about", "-v", NULL};
++    char *argv[] = {"/usr/local/bin/mate-about", "-v", NULL};
+     g_autoptr(GError) error = NULL;
+ 
+     g_debug ("About to launch '%s'", argv[0]);
