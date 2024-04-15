@@ -1,8 +1,8 @@
 COMMENT =	reference implementation of the ZIM specification
 
-DISTNAME =	libzim-9.0.0
+DISTNAME =	libzim-9.1.0
 
-SHARED_LIBS +=  zim                       2.0 # 0.0
+SHARED_LIBS +=  zim                       2.1 # 0.0
 
 CATEGORIES =	archivers
 
