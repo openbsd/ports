@@ -1,6 +1,7 @@
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
+MATE_VERSION=		1.28.1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

@@ -1,0 +1,22 @@
+Index: src/terminal-util.c
+--- src/terminal-util.c.orig
++++ src/terminal-util.c
+@@ -44,6 +44,18 @@
+ #include "terminal-util.h"
+ #include "terminal-window.h"
+ 
++
++#if defined(__OpenBSD__)
++char * strchrnul(const char *, int);
++
++char *
++strchrnul(const char *s1, int i)
++{
++	char *s = strchr(s1, i);
++	return s ? s : (char *)s1 + strlen(s1);
++}
++#endif
++
+ void
+ terminal_util_set_unique_role (GtkWindow *window, const char *prefix)
+ {
