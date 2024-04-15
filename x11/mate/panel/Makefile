@@ -1,10 +1,9 @@
 COMMENT=		panel component for MATE
-REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
 MATE_PROJECT=		mate-panel
-MATE_VERSION=		1.26.3
+MATE_VERSION=		1.28.1
 
 CATEGORIES=		x11
 
@@ -27,6 +26,7 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		devel/libwnck3 \
 			devel/startup-notification \
+			x11/gnome/dconf-editor \
 			x11/mate/desktop \
 			x11/mate/libmateweather \
 			x11/mate/menus
@@ -38,7 +38,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-wayland
+CONFIGURE_ARGS+=	--disable-wayland --enable-debug=yes
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}

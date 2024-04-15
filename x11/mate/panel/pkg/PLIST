@@ -898,6 +898,11 @@ share/help/ky/mate-fish/figures/fish_applet.png
 share/help/ky/mate-fish/index.docbook
 share/help/ky/mate-fish/legal.xml
 share/help/la/
+share/help/la/mate-clock/
+share/help/la/mate-clock/figures/
+share/help/la/mate-clock/figures/clock_applet.png
+share/help/la/mate-clock/index.docbook
+share/help/la/mate-clock/legal.xml
 share/help/la/mate-fish/
 share/help/la/mate-fish/figures/
 share/help/la/mate-fish/figures/fish_applet.png
@@ -1031,6 +1036,12 @@ share/help/my/mate-fish/figures/
 share/help/my/mate-fish/figures/fish_applet.png
 share/help/my/mate-fish/index.docbook
 share/help/my/mate-fish/legal.xml
+share/help/nan/
+share/help/nan/mate-fish/
+share/help/nan/mate-fish/figures/
+share/help/nan/mate-fish/figures/fish_applet.png
+share/help/nan/mate-fish/index.docbook
+share/help/nan/mate-fish/legal.xml
 share/help/nb/
 share/help/nb/mate-clock/
 share/help/nb/mate-clock/figures/
@@ -1618,7 +1629,6 @@ share/locale/el/LC_MESSAGES/mate-panel.mo
 share/locale/en_AU/LC_MESSAGES/mate-panel.mo
 share/locale/en_CA/LC_MESSAGES/mate-panel.mo
 share/locale/en_GB/LC_MESSAGES/mate-panel.mo
-share/locale/en_US/LC_MESSAGES/mate-panel.mo
 share/locale/eo/LC_MESSAGES/mate-panel.mo
 share/locale/es/LC_MESSAGES/mate-panel.mo
 share/locale/es_AR/LC_MESSAGES/mate-panel.mo
@@ -1684,6 +1694,7 @@ share/locale/ml/LC_MESSAGES/mate-panel.mo
 share/locale/mn/LC_MESSAGES/mate-panel.mo
 share/locale/mr/LC_MESSAGES/mate-panel.mo
 share/locale/ms/LC_MESSAGES/mate-panel.mo
+share/locale/nan/LC_MESSAGES/mate-panel.mo
 share/locale/nb/LC_MESSAGES/mate-panel.mo
 share/locale/nds/LC_MESSAGES/mate-panel.mo
 share/locale/ne/LC_MESSAGES/mate-panel.mo
