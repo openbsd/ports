@@ -4,6 +4,7 @@ GH_ACCOUNT =	ZerBea
 GH_PROJECT =	hcxtools
 GH_TAGNAME =	6.3.4
 DISTNAME =	hcxtools-${GH_TAGNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -13,15 +14,15 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += 	c curl z
-WANTLIB +=	lib/eopenssl31/crypto lib/eopenssl31/ssl
+WANTLIB +=	lib/eopenssl32/crypto lib/eopenssl32/ssl
 LIB_DEPENDS +=	net/curl \
-		security/openssl/3.1
+		security/openssl/3.2
 
 USE_GMAKE =	Yes
 ALL_TARGET =
 
-CFLAGS +=       -Wno-deprecated-declarations -I${LOCALBASE}/include/eopenssl31
-LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl31 -L${LOCALBASE}/lib/eopenssl31
+CFLAGS +=       -Wno-deprecated-declarations -I${LOCALBASE}/include/eopenssl32
+LIBS +=		-Wl,-rpath ${LOCALBASE}/lib/eopenssl32 -L${LOCALBASE}/lib/eopenssl32
 
 MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${LIBS}"
