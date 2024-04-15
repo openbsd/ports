@@ -1,9 +1,10 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.0.10
+DISTNAME =	objfw-1.1.1
 
-SHARED_LIBS +=	objfw		0.0
-SHARED_LIBS +=	objfwrt		0.0
+# .objc_sel_* symbols are for string de-duplication and can be ignored.
+SHARED_LIBS +=	objfw		0.1
+SHARED_LIBS +=	objfwrt		0.1
 SHARED_LIBS +=	objfwtls	0.0
 
 CATEGORIES =	devel
@@ -12,7 +13,7 @@ HOMEPAGE =	https://objfw.nil.im/
 
 MAINTAINER =	Jonathan Schleifer <js@nil.im>
 
-# GPLv2 or GPLv3 or QPL
+# LGPLv3
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()

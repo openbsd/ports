@@ -7,6 +7,8 @@ bin/objfw-embed
 @bin bin/ofhash
 @bin bin/ofhttp
 include/ObjFW/
+include/ObjFW/OFAAAADNSResourceRecord.h
+include/ObjFW/OFADNSResourceRecord.h
 include/ObjFW/OFAcceptSocketFailedException.h
 include/ObjFW/OFAllocFailedException.h
 include/ObjFW/OFAlreadyOpenException.h
@@ -19,6 +21,7 @@ include/ObjFW/OFBindSocketFailedException.h
 include/ObjFW/OFBindUNIXSocketFailedException.h
 include/ObjFW/OFBlock.h
 include/ObjFW/OFBroadcastConditionFailedException.h
+include/ObjFW/OFCNAMEDNSResourceRecord.h
 include/ObjFW/OFChangeCurrentDirectoryFailedException.h
 include/ObjFW/OFCharacterSet.h
 include/ObjFW/OFChecksumMismatchException.h
@@ -55,6 +58,7 @@ include/ObjFW/OFGZIPStream.h
 include/ObjFW/OFGetCurrentDirectoryFailedException.h
 include/ObjFW/OFGetItemAttributesFailedException.h
 include/ObjFW/OFGetOptionFailedException.h
+include/ObjFW/OFHINFODNSResourceRecord.h
 include/ObjFW/OFHMAC.h
 include/ObjFW/OFHTTPClient.h
 include/ObjFW/OFHTTPCookie.h
@@ -84,6 +88,7 @@ include/ObjFW/OFKernelEventObserver.h
 include/ObjFW/OFKeyValueCoding.h
 include/ObjFW/OFLHAArchive.h
 include/ObjFW/OFLHAArchiveEntry.h
+include/ObjFW/OFLOCDNSResourceRecord.h
 include/ObjFW/OFLinkItemFailedException.h
 include/ObjFW/OFList.h
 include/ObjFW/OFListenOnSocketFailedException.h
@@ -92,6 +97,7 @@ include/ObjFW/OFLocale.h
 include/ObjFW/OFLockFailedException.h
 include/ObjFW/OFLocking.h
 include/ObjFW/OFMD5Hash.h
+include/ObjFW/OFMXDNSResourceRecord.h
 include/ObjFW/OFMalformedXMLException.h
 include/ObjFW/OFMapTable.h
 include/ObjFW/OFMatrix4x4.h
@@ -112,7 +118,9 @@ include/ObjFW/OFMutableString.h
 include/ObjFW/OFMutableTarArchiveEntry.h
 include/ObjFW/OFMutableTriple.h
 include/ObjFW/OFMutableZIPArchiveEntry.h
+include/ObjFW/OFMutableZooArchiveEntry.h
 include/ObjFW/OFMutex.h
+include/ObjFW/OFNSDNSResourceRecord.h
 include/ObjFW/OFNotImplementedException.h
 include/ObjFW/OFNotOpenException.h
 include/ObjFW/OFNotification.h
@@ -128,12 +136,14 @@ include/ObjFW/OFOptionsParser.h
 include/ObjFW/OFOutOfMemoryException.h
 include/ObjFW/OFOutOfRangeException.h
 include/ObjFW/OFPBKDF2.h
+include/ObjFW/OFPTRDNSResourceRecord.h
 include/ObjFW/OFPair.h
 include/ObjFW/OFPlainCondition.h
 include/ObjFW/OFPlainMutex.h
 include/ObjFW/OFPlainThread.h
 include/ObjFW/OFPlugin.h
 include/ObjFW/OFRIPEMD160Hash.h
+include/ObjFW/OFRPDNSResourceRecord.h
 include/ObjFW/OFReadFailedException.h
 include/ObjFW/OFReadOrWriteFailedException.h
 include/ObjFW/OFRecursiveMutex.h
@@ -147,6 +157,8 @@ include/ObjFW/OFSHA256Hash.h
 include/ObjFW/OFSHA384Hash.h
 include/ObjFW/OFSHA384Or512Hash.h
 include/ObjFW/OFSHA512Hash.h
+include/ObjFW/OFSOADNSResourceRecord.h
+include/ObjFW/OFSRVDNSResourceRecord.h
 include/ObjFW/OFScrypt.h
 include/ObjFW/OFSecureData.h
 include/ObjFW/OFSeekFailedException.h
@@ -179,6 +191,7 @@ include/ObjFW/OFTCPSocket.h
 include/ObjFW/OFTLSHandshakeFailedException.h
 include/ObjFW/OFTLSKey.h
 include/ObjFW/OFTLSStream.h
+include/ObjFW/OFTXTDNSResourceRecord.h
 include/ObjFW/OFTarArchive.h
 include/ObjFW/OFTarArchiveEntry.h
 include/ObjFW/OFThread.h
@@ -189,6 +202,7 @@ include/ObjFW/OFTruncatedDataException.h
 include/ObjFW/OFUDPSocket.h
 include/ObjFW/OFUNIXDatagramSocket.h
 include/ObjFW/OFUNIXStreamSocket.h
+include/ObjFW/OFURIDNSResourceRecord.h
 include/ObjFW/OFUUID.h
 include/ObjFW/OFUnboundNamespaceException.h
 include/ObjFW/OFUnboundPrefixException.h
@@ -211,6 +225,8 @@ include/ObjFW/OFXMLParser.h
 include/ObjFW/OFXMLProcessingInstruction.h
 include/ObjFW/OFZIPArchive.h
 include/ObjFW/OFZIPArchiveEntry.h
+include/ObjFW/OFZooArchive.h
+include/ObjFW/OFZooArchiveEntry.h
 include/ObjFW/ObjFW.h
 include/ObjFW/macros.h
 include/ObjFW/objfw-defs.h
@@ -230,9 +246,18 @@ include/ObjFWRT/
 include/ObjFWRT/ObjFWRT.h
 include/ObjFWTLS/
 include/ObjFWTLS/ObjFWTLS.h
+include/ObjFWTest/
+include/ObjFWTest/OTAssert.h
+include/ObjFWTest/OTOrderedDictionary.h
+include/ObjFWTest/OTTestCase.h
+include/ObjFWTest/ObjFWTest.h
 @lib lib/libobjfw.so.${LIBobjfw_VERSION}
 @lib lib/libobjfwrt.so.${LIBobjfwrt_VERSION}
+@static-lib lib/libobjfwtest.a
 @lib lib/libobjfwtls.so.${LIBobjfwtls_VERSION}
+lib/objfw-config/
+lib/objfw-config/ObjFWTLS.oc
+lib/objfw-config/ObjFWTest.oc
 share/ofarc/
 share/ofarc/localization/
 share/ofarc/localization/de.json
