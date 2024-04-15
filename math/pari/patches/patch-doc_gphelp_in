@@ -3,12 +3,12 @@ Fix path so gphelp will work.
 Index: doc/gphelp.in
 --- doc/gphelp.in.orig
 +++ doc/gphelp.in
-@@ -123,7 +123,7 @@ sub get_docdir {
-     # work from TOPDIR/Oarch or TOPDIR too: may be uninstalled yet;
-     $d = $0; $d =~ s,/gphelp,,;
-     for ("$datadir", '.', '..', $d) {
--      my $t = "$_/doc";
-+      my $t = "$_/share/doc/pari";
-       if (-f "$t/translations") { $d = $t; last; }
+@@ -134,7 +134,7 @@ sub get_docdir {
+       $d =~ s,doc/\.\./doc,doc,;
      }
-     $d ||= "$datadir/doc";	# Last resort
+   }
+-  return $d;
++  return "${PREFIX}/share/doc/pari";
+ }
+ 
+ sub init {

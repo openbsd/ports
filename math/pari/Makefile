@@ -3,7 +3,7 @@ COMMENT=	number theory-oriented computer algebra system
 V=		2.15.5
 DISTNAME=	pari-$V
 CATEGORIES=	math
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=		pari-gmp		0.0	# 2.15.4
 
@@ -38,6 +38,9 @@ TEST_TARGET=		dobench
 .if ${MACHINE_ARCH} == i386
 CFLAGS+=		-Wl,-znotext
 .endif
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/gphelp.in
 
 post-install:
 	mv ${PREFIX}/share/pari/doc ${PREFIX}/share/doc/pari
