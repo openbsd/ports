@@ -1,7 +1,8 @@
-MODPY_EGG_VERSION =	6.5.1
+MODPY_EGG_VERSION =	2.0.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
+REVISION =	2
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -13,24 +14,20 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	devel/py-certifi${MODPY_FLAVOR} \
+RUN_DEPENDS =	devel/py-iso3166${MODPY_FLAVOR} \
+		devel/py-iso639${MODPY_FLAVOR} \
 		devel/py-isodate${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR}<6 \
-		devel/py-country${MODPY_FLAVOR} \
-		security/py-cryptodome${MODPY_FLAVOR}<4 \
+		graphics/ffmpeg \
 		net/py-socks${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}<3 \
-		devel/py-trio${MODPY_FLAVOR}<1 \
-		net/py-trio-websocket${MODPY_FLAVOR}<1 \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
-		www/py-urllib3${MODPY_FLAVOR}<3 \
-		net/py-websocket-client${MODPY_FLAVOR}<2
-RUN_DEPENDS +=	graphics/ffmpeg
+		net/py-websocket-client${MODPY_FLAVOR} \
+		net/rtmpdump \
+		security/py-cryptodome${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-freezegun${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-country${MODPY_FLAVOR} \
+		devel/py-freezegun${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test-asyncio${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
+		devel/py-test${MODPY_FLAVOR} \
 		www/py-requests-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
