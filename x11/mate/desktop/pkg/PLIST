@@ -4,7 +4,6 @@ include/mate-desktop-2.0/
 include/mate-desktop-2.0/libmate-desktop/
 include/mate-desktop-2.0/libmate-desktop/mate-bg-crossfade.h
 include/mate-desktop-2.0/libmate-desktop/mate-bg.h
-include/mate-desktop-2.0/libmate-desktop/mate-colorbutton.h
 include/mate-desktop-2.0/libmate-desktop/mate-colorsel.h
 include/mate-desktop-2.0/libmate-desktop/mate-colorseldialog.h
 include/mate-desktop-2.0/libmate-desktop/mate-dconf.h
@@ -14,6 +13,7 @@ include/mate-desktop-2.0/libmate-desktop/mate-desktop-utils.h
 include/mate-desktop-2.0/libmate-desktop/mate-desktop.h
 include/mate-desktop-2.0/libmate-desktop/mate-gsettings.h
 include/mate-desktop-2.0/libmate-desktop/mate-hsv.h
+include/mate-desktop-2.0/libmate-desktop/mate-image-menu-item.h
 include/mate-desktop-2.0/libmate-desktop/mate-languages.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-config.h
 include/mate-desktop-2.0/libmate-desktop/mate-rr-labeler.h
@@ -53,6 +53,7 @@ share/gtk-doc/html/mate-desktop/MateDesktopThumbnailFactory.html
 share/gtk-doc/html/mate-desktop/MateRRLabeler.html
 share/gtk-doc/html/mate-desktop/background.html
 share/gtk-doc/html/mate-desktop/home.png
+share/gtk-doc/html/mate-desktop/image-menu-item.html
 share/gtk-doc/html/mate-desktop/index.html
 share/gtk-doc/html/mate-desktop/intro.html
 share/gtk-doc/html/mate-desktop/languages.html
@@ -60,6 +61,7 @@ share/gtk-doc/html/mate-desktop/left-insensitive.png
 share/gtk-doc/html/mate-desktop/left.png
 share/gtk-doc/html/mate-desktop/libmate.html
 share/gtk-doc/html/mate-desktop/mate-desktop-Language-Utilities.html
+share/gtk-doc/html/mate-desktop/mate-desktop-MateImageMenuItem.html
 share/gtk-doc/html/mate-desktop/mate-desktop-Miscellaneous-Functions.html
 share/gtk-doc/html/mate-desktop/mate-desktop-Miscellaneous-Thumbnail-Functions.html
 share/gtk-doc/html/mate-desktop/mate-desktop-mate-rr-config.html
@@ -116,9 +118,6 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/mate-desktop.mo
 share/locale/en_CA/LC_MESSAGES/mate-desktop.mo
 share/locale/en_GB/LC_MESSAGES/mate-desktop.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/mate-desktop.mo
 share/locale/eo/LC_MESSAGES/mate-desktop.mo
 share/locale/es/LC_MESSAGES/mate-desktop.mo
 share/locale/es_AR/

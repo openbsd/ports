@@ -3,7 +3,7 @@ COMMENT=		components for the MATE desktop
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
-MATE_VERSION=		1.26.2
+MATE_VERSION=		1.28.2
 
 CATEGORIES=		x11
 
