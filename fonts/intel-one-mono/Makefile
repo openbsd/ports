@@ -1,7 +1,7 @@
 COMMENT =	expressive monospaced font family
 
 CATEGORIES =	fonts
-V =		1.2.0
+V =		1.3.0
 PKGNAME =	intel-one-mono-$V
 
 # SIL OFL 1.1
