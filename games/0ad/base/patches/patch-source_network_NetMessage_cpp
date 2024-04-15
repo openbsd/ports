@@ -1,0 +1,16 @@
+Fix the removal of implicit conversions in libfmt 10 by using explicit casts.
+https://github.com/0ad/0ad/commit/839edc3ae61cd313d37a14a9a24e2ef1bd4e5808
+
+Index: source/network/NetMessage.cpp
+--- source/network/NetMessage.cpp.orig
++++ source/network/NetMessage.cpp
+@@ -216,7 +216,8 @@ CNetMessage* CNetMessageFactory::CreateMessage(const v
+ 		break;
+ 
+ 	default:
+-		LOGERROR("CNetMessageFactory::CreateMessage(): Unknown message type '%d' received", header.GetType());
++		LOGERROR("CNetMessageFactory::CreateMessage(): Unknown message type '%d' received",
++		    static_cast<int>(header.GetType()));
+ 		break;
+ 	}
+ 

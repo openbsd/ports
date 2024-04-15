@@ -1,0 +1,15 @@
+Fix the removal of implicit conversions in libfmt 10 by using explicit casts.
+https://github.com/0ad/0ad/commit/839edc3ae61cd313d37a14a9a24e2ef1bd4e5808
+
+Index: source/simulation2/serialization/BinarySerializer.cpp
+--- source/simulation2/serialization/BinarySerializer.cpp.orig
++++ source/simulation2/serialization/BinarySerializer.cpp
+@@ -52,7 +52,7 @@ static u8 GetArrayType(js::Scalar::Type arrayType)
+ 	case js::Scalar::Uint8Clamped:
+ 		return SCRIPT_TYPED_ARRAY_UINT8_CLAMPED;
+ 	default:
+-		LOGERROR("Cannot serialize unrecognized typed array view: %d", arrayType);
++		LOGERROR("Cannot serialize unrecognized typed array view: %d", static_cast<int>(arrayType));
+ 		throw PSERROR_Serialize_InvalidScriptValue();
+ 	}
+ }
