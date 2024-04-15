@@ -1,7 +1,7 @@
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor
-MATE_VERSION=		1.26.1
+MATE_VERSION=		1.28.1
 
 CATEGORIES=		sysutils
 
@@ -40,5 +40,6 @@ RUN_DEPENDS +=		sysutils/polkit
 RUN_DEPENDS +=		sysutils/consolekit
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-systemd
 
 .include <bsd.port.mk>
