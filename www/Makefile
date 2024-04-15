@@ -451,6 +451,7 @@
      SUBDIR += py-frozen-flask,python3
      SUBDIR += py-genshi,python3
      SUBDIR += py-gunicorn,python3
+     SUBDIR += py-h11,python3
      SUBDIR += py-html5-parser,python3
      SUBDIR += py-http_ece,python3
      SUBDIR += py-httpbin,python3

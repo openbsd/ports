@@ -619,11 +619,13 @@
      SUBDIR += py-tld,python3
      SUBDIR += py-tlslite-ng,python3
      SUBDIR += py-transmissionrpc-ng,python3
+     SUBDIR += py-trio-websocket,python3
      SUBDIR += py-twitter,python3
      SUBDIR += py-txtorcon,python3
      SUBDIR += py-u-msgpack,python3
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-websockets,python3
+     SUBDIR += py-wsproto,python3
      SUBDIR += py-zeroconf,python3
      SUBDIR += py-zmq,python3
      SUBDIR += qbittorrent
