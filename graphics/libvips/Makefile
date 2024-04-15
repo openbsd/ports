@@ -1,6 +1,6 @@
 COMMENT =	fast image processing library with low memory needs
 
-VERSION =	8.14.3
+VERSION =	8.14.5
 DISTNAME =	vips-${VERSION}
 PKGNAME =	lib${DISTNAME}
 CATEGORIES =	graphics
