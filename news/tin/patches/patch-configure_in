@@ -1,7 +1,7 @@
 Index: configure.in
 --- configure.in.orig
 +++ configure.in
-@@ -980,16 +980,19 @@ if test $ac_cv_nl_item = yes; then
+@@ -1113,16 +1113,19 @@ if test $ac_cv_nl_item = yes; then
          AC_DEFINE(HAVE_NL_ITEM,1,[Define this to 1 if we have header nl_types.h])
  fi
  
@@ -28,7 +28,7 @@ Index: configure.in
  
  
  # ICU - International Components for Unicode
-@@ -1323,7 +1326,11 @@ CF_TERMIOS
+@@ -1458,7 +1461,11 @@ CF_TERMIOS
  CF_PW_GECOS
  CF_TM_GMTOFF
  

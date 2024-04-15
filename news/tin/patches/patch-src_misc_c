@@ -1,21 +1,13 @@
 Index: src/misc.c
 --- src/misc.c.orig
 +++ src/misc.c
-@@ -2195,8 +2195,6 @@ random_organization(
- 	if (*in_org != '/')
- 		return in_org;
- 
--	srand((unsigned int) time(NULL));
--
- 	if ((orgfp = fopen(in_org, "r")) == NULL)
- 		return selorg;
- 
-@@ -2210,7 +2208,7 @@ random_organization(
- 	}
+@@ -2197,8 +2197,7 @@ random_organization(
  
  	rewind(orgfp);
+ 
+-	srand((unsigned int) time(NULL));
 -	sol = rand() % nool + 1;
 +	sol = arc4random_uniform(nool) + 1;
  	nool = 0;
+ 
  	while ((nool != sol) && (fgets(selorg, (int) sizeof(selorg), orgfp)))
- 		nool++;

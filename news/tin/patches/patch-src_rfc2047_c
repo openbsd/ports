@@ -1,7 +1,7 @@
 Index: src/rfc2047.c
 --- src/rfc2047.c.orig
 +++ src/rfc2047.c
-@@ -1073,9 +1073,8 @@ generate_random_mime_boundary(
+@@ -1104,9 +1104,8 @@ generate_random_mime_boundary(
  {
  	size_t i;
  

@@ -2,7 +2,7 @@ COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.6
-PATCHLEVEL=	2
+PATCHLEVEL=	3
 CATEGORIES=	news
 
 SITES=		ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
@@ -20,7 +20,7 @@ HOMEPAGE=	http://www.tin.org/
 # vms/vms.c
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c>=58.2 iconv icuuc intl curses pcre
+WANTLIB=		c>=58.2 iconv icuuc intl curses pcre z
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.69
