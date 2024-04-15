@@ -16,6 +16,7 @@ V =			2.44.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -119,6 +120,13 @@ CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
+.endif
+
+.if ${MACHINE_ARCH} == riscv64
+# WEBASSEMBLY and FTL_JIT need at least one of OMGJIT/BBQJIT
+# check Source/WTF/wtf/PlatformEnable.h
+CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=OFF
+CONFIGURE_ARGS +=	-DENABLE_FTL_JIT=OFF
 .endif
 
 # we don't want an allocation of 1GB, it's above the "default" class ulimit
