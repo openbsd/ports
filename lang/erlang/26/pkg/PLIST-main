@@ -1158,8 +1158,6 @@ lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/ei_x_encode.c
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/ei_x_encode.h
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/eidef.h
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/eiext.h
-lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/eimd5.c
-lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/eimd5.h
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/get_type.c
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/putget.h
 lib/${ERLANG_V}/lib/${ERL_EI}/src/misc/show_msg.c
@@ -2521,6 +2519,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_ocsp.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_os_cacerts.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_pbe.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_pem.chunk
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_policy_tree.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/pubkey_ssh.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/doc/chunks/public_key.chunk
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/
@@ -2533,6 +2532,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_ocsp.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_os_cacerts.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_pbe.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_pem.beam
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_policy_tree.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/pubkey_ssh.beam
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/public_key.app
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/ebin/public_key.appup
@@ -2553,6 +2553,7 @@ lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_ocsp.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_os_cacerts.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_pbe.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_pem.erl
+lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_policy_tree.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/pubkey_ssh.erl
 lib/${ERLANG_V}/lib/${ERL_PUBLIC_KEY}/src/public_key.erl
 lib/${ERLANG_V}/lib/${ERL_RELTOOL}/
@@ -4403,7 +4404,6 @@ lib/${ERLANG_V}/man/man6/
 lib/${ERLANG_V}/man/man7/
 lib/${ERLANG_V}/misc/
 lib/${ERLANG_V}/misc/format_man_pages
-lib/${ERLANG_V}/misc/makewhatis
 lib/${ERLANG_V}/releases/
 lib/${ERLANG_V}/releases/26/
 lib/${ERLANG_V}/releases/26/OTP_VERSION
