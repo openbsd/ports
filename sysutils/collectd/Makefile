@@ -40,7 +40,7 @@ REVISION-ping =		0
 REVISION-prometheus =	0
 REVISION-python =	1
 REVISION-redis =	0
-REVISION-riemann =	0
+REVISION-riemann =	1
 REVISION-rrdtool =	0
 REVISION-snmp =		0
 REVISION-virt =		0
@@ -100,7 +100,7 @@ WANTLIB-nut =		crypto pthread ssl upsclient
 
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
 WANTLIB-riemann =	gmp gnutls hogweed intl iconv idn2 nettle \
-			protobuf-c p11-kit pthread riemann-client tasn1 \
+			protobuf-c p11-kit pthread riemann-client-gnutls tasn1 \
 			unistring brotlidec brotlienc z zstd
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
