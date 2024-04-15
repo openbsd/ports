@@ -1,8 +1,10 @@
 MODGO_MODULES =	\
 	filippo.io/edwards25519					 v1.0.0 \
-	github.com/!d!a!t!a-!d!o!g/go-sqlmock			 v1.5.0 \
-	github.com/alecthomas/kingpin/v2			 v2.3.2 \
+	github.com/!d!a!t!a-!d!o!g/go-sqlmock			 v1.5.2 \
+	github.com/alecthomas/kingpin/v2			 v2.4.0 \
 	github.com/alecthomas/units				 v0.0.0-20211218093645-b94a6e3cc137 \
+	github.com/aws/aws-sdk-go				 v1.49.9 \
+	github.com/beeper/libserv				 v0.0.0-20231231202820-c7303abfc32c \
 	github.com/beorn7/perks					 v1.0.1 \
 	github.com/cespare/xxhash/v2				 v2.2.0 \
 	github.com/coreos/go-systemd/v22			 v22.5.0 \
@@ -10,11 +12,17 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/go-kit/log					 v0.2.1 \
 	github.com/go-logfmt/logfmt				 v0.5.1 \
+	github.com/go-logr/logr					 v1.2.3 \
 	github.com/godbus/dbus/v5				 v5.0.4 \
+	github.com/gofrs/flock					 v0.8.1 \
+	github.com/gogo/protobuf				 v1.3.2 \
 	github.com/golang/protobuf				 v1.5.3 \
-	github.com/google/go-cmp				 v0.5.9 \
+	github.com/google/go-cmp				 v0.6.0 \
+	github.com/google/gofuzz				 v1.1.0 \
+	github.com/google/uuid					 v1.6.0 \
 	github.com/gorilla/mux					 v1.8.0 \
 	github.com/gorilla/websocket				 v1.5.0 \
+	github.com/jmespath/go-jmespath				 v0.4.0 \
 	github.com/jpillora/backoff				 v1.0.0 \
 	github.com/json-iterator/go				 v1.1.12 \
 	github.com/julienschmidt/httprouter			 v1.3.0 \
@@ -23,93 +31,99 @@ MODGO_MODULES =	\
 	github.com/lib/pq					 v1.10.9 \
 	github.com/mattn/go-colorable				 v0.1.13 \
 	github.com/mattn/go-isatty				 v0.0.19 \
-	github.com/mattn/go-sqlite3				 v1.14.19 \
-	github.com/matttproud/golang_protobuf_extensions	 v1.0.4 \
+	github.com/mattn/go-sqlite3				 v1.14.22 \
+	github.com/matttproud/golang_protobuf_extensions	 v1.0.2 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.2 \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20190716064945-2f068394615f \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
-	github.com/prometheus/client_golang			 v1.17.0 \
-	github.com/prometheus/client_model			 v0.4.1-0.20230718164431-9a2bf3000d16 \
-	github.com/prometheus/common				 v0.44.0 \
-	github.com/prometheus/procfs				 v0.11.1 \
+	github.com/prometheus/client_golang			 v1.19.0 \
+	github.com/prometheus/client_model			 v0.5.0 \
+	github.com/prometheus/common				 v0.48.0 \
+	github.com/prometheus/procfs				 v0.12.0 \
 	github.com/rogpeppe/go-internal				 v1.10.0 \
 	github.com/rs/xid					 v1.5.0 \
-	github.com/rs/zerolog					 v1.31.0 \
+	github.com/rs/zerolog					 v1.32.0 \
+	github.com/sirupsen/logrus				 v1.8.1 \
 	github.com/skip2/go-qrcode				 v0.0.0-20200617195104-da1b6568686e \
-	github.com/stretchr/testify				 v1.8.4 \
-	github.com/tidwall/gjson				 v1.17.0 \
+	github.com/stretchr/testify				 v1.9.0 \
+	github.com/tidwall/gjson				 v1.17.1 \
 	github.com/tidwall/match				 v1.1.1 \
 	github.com/tidwall/pretty				 v1.2.0 \
 	github.com/tidwall/sjson				 v1.2.5 \
 	github.com/xhit/go-str2duration/v2			 v2.1.0 \
-	github.com/yuin/goldmark				 v1.6.0 \
+	github.com/yuin/goldmark				 v1.7.0 \
 	go.mau.fi/libsignal					 v0.1.0 \
-	go.mau.fi/util						 v0.2.1 \
+	go.mau.fi/util						 v0.4.1 \
 	go.mau.fi/webp						 v0.1.0 \
-	go.mau.fi/whatsmeow					 v0.0.0-20231216213200-9d803dd92735 \
+	go.mau.fi/whatsmeow					 v0.0.0-20240316104858-18372a0653fa \
 	go.mau.fi/zeroconfig					 v0.1.2 \
-	golang.org/x/crypto					 v0.16.0 \
-	golang.org/x/exp					 v0.0.0-20231214170342-aacd6d4b4611 \
-	golang.org/x/image					 v0.14.0 \
-	golang.org/x/mod					 v0.14.0 \
-	golang.org/x/net					 v0.19.0 \
-	golang.org/x/oauth2					 v0.8.0 \
+	golang.org/x/crypto					 v0.21.0 \
+	golang.org/x/exp					 v0.0.0-20240314144324-c7f7c6466f7f \
+	golang.org/x/image					 v0.15.0 \
+	golang.org/x/mod					 v0.15.0 \
+	golang.org/x/net					 v0.22.0 \
+	golang.org/x/oauth2					 v0.16.0 \
 	golang.org/x/sync					 v0.3.0 \
-	golang.org/x/sys					 v0.15.0 \
-	golang.org/x/term					 v0.15.0 \
+	golang.org/x/sys					 v0.18.0 \
+	golang.org/x/term					 v0.18.0 \
 	golang.org/x/text					 v0.14.0 \
-	golang.org/x/tools					 v0.16.0 \
+	golang.org/x/tools					 v0.18.0 \
 	golang.org/x/xerrors					 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/appengine				 v1.6.7 \
-	google.golang.org/protobuf				 v1.31.0 \
+	google.golang.org/protobuf				 v1.33.0 \
 	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
+	gopkg.in/inf.v0						 v0.9.1 \
 	gopkg.in/natefinch/lumberjack.v2			 v2.2.1 \
 	gopkg.in/yaml.v2					 v2.4.0 \
 	gopkg.in/yaml.v3					 v3.0.1 \
+	k8s.io/apimachinery					 v0.26.1 \
+	k8s.io/client-go					 v0.26.1 \
+	k8s.io/klog/v2						 v2.80.1 \
+	k8s.io/utils						 v0.0.0-20221107191617-1a15be271d1d \
 	maunium.net/go/mauflag					 v1.0.0 \
-	maunium.net/go/maulogger/v2				 v2.4.1 \
-	maunium.net/go/mautrix					 v0.16.2
+	maunium.net/go/mautrix					 v0.18.0 \
+	sigs.k8s.io/aws-iam-authenticator			 v0.6.16 \
+	sigs.k8s.io/json					 v0.0.0-20220713155537-f223a00ba0e2 \
+	sigs.k8s.io/structured-merge-diff/v4			 v4.2.3
 MODGO_MODFILES =	\
+	github.com/cespare/xxhash/v2		 v2.1.2 \
 	github.com/coreos/go-systemd/v22	 v22.3.3-0.20220203105225-a9a7ef127534 \
-	github.com/golang/protobuf		 v1.2.0 \
 	github.com/golang/protobuf		 v1.5.0 \
+	github.com/golang/protobuf		 v1.5.2 \
 	github.com/google/go-cmp		 v0.5.5 \
 	github.com/google/go-cmp		 v0.5.8 \
+	github.com/google/go-cmp		 v0.5.9 \
 	github.com/mattn/go-colorable		 v0.1.12 \
 	github.com/mattn/go-isatty		 v0.0.14 \
 	github.com/mattn/go-isatty		 v0.0.16 \
-	github.com/mattn/go-sqlite3		 v1.14.18 \
-	github.com/prometheus/client_golang	 v1.15.1 \
-	github.com/prometheus/client_model	 v0.4.0 \
-	github.com/prometheus/procfs		 v0.9.0 \
+	github.com/prometheus/client_golang	 v1.14.0 \
+	github.com/prometheus/client_golang	 v1.18.0 \
+	github.com/prometheus/client_model	 v0.3.0 \
+	github.com/prometheus/common		 v0.37.0 \
+	github.com/prometheus/procfs		 v0.8.0 \
+	github.com/rs/xid			 v1.4.0 \
 	github.com/rs/zerolog			 v1.29.0 \
+	github.com/rs/zerolog			 v1.29.1 \
 	github.com/stretchr/testify		 v1.8.1 \
 	github.com/tidwall/gjson		 v1.14.2 \
-	github.com/tidwall/gjson		 v1.14.4 \
-	go.mau.fi/util				 v0.2.0 \
-	golang.org/x/crypto			 v0.15.0 \
 	golang.org/x/crypto			 v0.4.0 \
-	golang.org/x/exp			 v0.0.0-20231110203233-9a3e6036ecaa \
 	golang.org/x/image			 v0.0.0-20211028202545-6944b10bf410 \
 	golang.org/x/mod			 v0.8.0 \
-	golang.org/x/net			 v0.10.0 \
-	golang.org/x/net			 v0.18.0 \
-	golang.org/x/sync			 v0.0.0-20181221193216-37e7f081c4d4 \
+	golang.org/x/net			 v0.17.0 \
+	golang.org/x/net			 v0.20.0 \
+	golang.org/x/net			 v0.21.0 \
 	golang.org/x/sys			 v0.0.0-20210927094055-39ccf1dd6fa6 \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys			 v0.11.0 \
 	golang.org/x/sys			 v0.12.0 \
-	golang.org/x/sys			 v0.14.0 \
+	golang.org/x/sys			 v0.13.0 \
+	golang.org/x/sys			 v0.16.0 \
 	golang.org/x/sys			 v0.5.0 \
 	golang.org/x/sys			 v0.6.0 \
-	golang.org/x/sys			 v0.8.0 \
-	golang.org/x/sys			 v0.9.0 \
-	golang.org/x/text			 v0.9.0 \
+	golang.org/x/text			 v0.13.0 \
 	golang.org/x/tools			 v0.6.0 \
-	google.golang.org/protobuf		 v1.26.0 \
-	google.golang.org/protobuf		 v1.26.0-rc.1 \
 	google.golang.org/protobuf		 v1.28.1 \
-	google.golang.org/protobuf		 v1.30.0 \
+	google.golang.org/protobuf		 v1.31.0 \
+	google.golang.org/protobuf		 v1.32.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405
