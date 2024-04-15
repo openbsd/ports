@@ -1,4 +1,4 @@
-V =		0.5
+V =		0.5.0.1
 COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_Source
 PKGNAME =	freeorion-${V}

@@ -1,0 +1,16 @@
+updates for Boost 1.85
+https://github.com/freeorion/freeorion/commit/bc02d58fc1efc70c6c3d33c20a71ef0dd4852d23
+
+Index: util/OptionsDB.cpp
+--- util/OptionsDB.cpp.orig
++++ util/OptionsDB.cpp
+@@ -14,8 +14,7 @@
+ #include <boost/algorithm/string/classification.hpp>
+ #include <boost/algorithm/string/erase.hpp>
+ #include <boost/algorithm/string/predicate.hpp>
+-#include <boost/filesystem/fstream.hpp>
+-#include <boost/filesystem/operations.hpp>
++#include <boost/filesystem.hpp>
+ #include <boost/range/algorithm_ext/erase.hpp>
+ #include <boost/tokenizer.hpp>
+ 

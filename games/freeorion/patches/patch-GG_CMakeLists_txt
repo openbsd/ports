@@ -2,7 +2,7 @@ Add X11BASE include directory
 Index: GG/CMakeLists.txt
 --- GG/CMakeLists.txt.orig
 +++ GG/CMakeLists.txt
-@@ -86,6 +86,7 @@ endif()
+@@ -85,6 +85,7 @@ endif()
  include_directories(
      ${CMAKE_CURRENT_SOURCE_DIR}
      ${CMAKE_CURRENT_BINARY_DIR}
