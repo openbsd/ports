@@ -1,0 +1,19 @@
+Index: apertium/apertium_restore_caps.cc
+--- apertium/apertium_restore_caps.cc.orig
++++ apertium/apertium_restore_caps.cc
+@@ -19,9 +19,15 @@
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/file_utils.h>
+ #include <lttoolbox/lt_locale.h>
++#include <unistd.h>
+ 
+ int main(int argc, char** argv)
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return EXIT_FAILURE;
++  }
++
+   LtLocale::tryToSetLocale();
+   CLI cli("compile capitalization restoration rules");
+   cli.add_bool_arg('k', "keep", "retain all wblanks");

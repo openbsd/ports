@@ -1,7 +1,11 @@
 Index: apertium/apertium_interchunk.cc
 --- apertium/apertium_interchunk.cc.orig
 +++ apertium/apertium_interchunk.cc
-@@ -81,6 +81,12 @@ UFILE * open_output(const char* filename)
+@@ -18,9 +18,16 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/file_utils.h>
++#include <unistd.h>
  
  int main(int argc, char *argv[])
  {
@@ -12,5 +16,5 @@ Index: apertium/apertium_interchunk.cc
 +  }
 +
    LtLocale::tryToSetLocale();
- 
-   Interchunk i;
+   CLI cli("process stream with interchunker");
+   cli.add_file_arg("t2x", false);

@@ -1,7 +1,7 @@
 L =	spa-cat
 LANG =	Spanish/Catalan
 V =	2.2.0
-REVISION =	0
+REVISION =	1
 
 BROKEN =	2.2.0 incompatible with apertium>=3.8.3
 

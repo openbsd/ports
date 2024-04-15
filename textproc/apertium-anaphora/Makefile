@@ -1,7 +1,7 @@
 COMMENT =	apertium module implementing anaphora resolution
 
 DISTNAME =	apertium-anaphora-$V
-V =		1.1.0
+V =		1.1.1
 
 CATEGORIES =	textproc
 

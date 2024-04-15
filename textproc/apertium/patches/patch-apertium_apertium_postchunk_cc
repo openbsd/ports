@@ -1,7 +1,11 @@
 Index: apertium/apertium_postchunk.cc
 --- apertium/apertium_postchunk.cc.orig
 +++ apertium/apertium_postchunk.cc
-@@ -71,6 +71,12 @@ UFILE * open_output(string const &filename)
+@@ -18,9 +18,16 @@
+ #include <lttoolbox/lt_locale.h>
+ #include <lttoolbox/cli.h>
+ #include <lttoolbox/file_utils.h>
++#include <unistd.h>
  
  int main(int argc, char *argv[])
  {
@@ -12,5 +16,5 @@ Index: apertium/apertium_postchunk.cc
 +  }
 +
    LtLocale::tryToSetLocale();
- 
-   Postchunk p;
+   CLI cli("process stream with postchunker");
+   cli.add_file_arg("t3x", false);

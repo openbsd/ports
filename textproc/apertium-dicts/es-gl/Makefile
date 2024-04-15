@@ -1,7 +1,7 @@
 L =	es-gl
 LANG =	Spanish/Galician
 V =	1.0.9
-REVISION =	1
+REVISION =	2
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/spa \
 			textproc/vislcg3

@@ -1,7 +1,7 @@
 Index: apertium/apertium_transfer.cc
 --- apertium/apertium_transfer.cc.orig
 +++ apertium/apertium_transfer.cc
-@@ -91,6 +91,11 @@ UFILE* open_output(const char* filename)
+@@ -92,6 +92,11 @@ UFILE* open_output(const char* filename)
  
  int main(int argc, char *argv[])
  {

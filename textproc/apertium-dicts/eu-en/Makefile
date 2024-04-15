@@ -1,6 +1,7 @@
 L =	eu-en
 LANG =	Basque/English
 V =	0.3.3
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

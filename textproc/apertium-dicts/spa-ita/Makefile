@@ -1,7 +1,7 @@
 L =	spa-ita
 LANG =	Spanish/Italian
 V =	0.2.1
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 

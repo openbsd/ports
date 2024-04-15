@@ -1,7 +1,7 @@
 COMMENT =	recursive structural transfer module for apertium
 
 DISTNAME =	apertium-recursive-$V
-V =		1.1.0
+V =		1.1.2
 
 CATEGORIES =	textproc
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-WANTLIB += ${COMPILER_LIBCXX} c m xml2 apertium lttoolbox
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += apertium c icudata icui18n icuio icuuc lttoolbox m xml2
 
 SITES =		https://github.com/apertium/apertium-recursive/releases/download/v$V/
 

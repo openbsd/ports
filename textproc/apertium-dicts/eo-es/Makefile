@@ -1,7 +1,7 @@
 L =	eo-es
 LANG =	Esperanto/Spanish
 V =	1.0.0
-REVISION =	3
+REVISION =	4
 
 BROKEN =	1.0.0 incompatible with apertium>=3.7.2
 

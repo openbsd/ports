@@ -22,4 +22,4 @@ Index: apertium/apertium-unformat-header.sh
 +  test_awk
  
    if [ "$FICHERO" = "" ]
-   then FICHERO=$(mktemp $TMPDIR/apertium.XXXXXXXX)
+   then FICHERO=$(mktemp "$TMPDIR"/apertium.XXXXXXXX)

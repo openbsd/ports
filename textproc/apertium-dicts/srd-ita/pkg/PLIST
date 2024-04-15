@@ -28,3 +28,4 @@ share/apertium/apertium-srd-ita/srd-ita.t2x.bin
 share/apertium/apertium-srd-ita/srd-ita.t3x.bin
 share/apertium/modes/
 share/apertium/modes/ita-srd.mode
+share/apertium/modes/srd-ita.mode

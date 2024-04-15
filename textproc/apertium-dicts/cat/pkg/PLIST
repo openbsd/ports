@@ -13,6 +13,9 @@ share/apertium/apertium-cat/cat.preferences.xml
 share/apertium/apertium-cat/cat.prefs.rlx.bin
 share/apertium/apertium-cat/cat.prob
 share/apertium/apertium-cat/cat.rlx.bin
+share/apertium/apertium-cat/cat_valencia.autogen.bin
+share/apertium/apertium-cat/cat_valencia.autopgen.bin
+share/apertium/apertium-cat/cat_valencia.prefs.rlx.bin
 share/apertium/apertium-cat/cat_valencia_gva.autogen.bin
 share/apertium/apertium-cat/cat_valencia_gva.autopgen.bin
 share/apertium/apertium-cat/cat_valencia_gva.prefs.rlx.bin

@@ -1,9 +1,9 @@
 COMMENT =		rule-based machine translation platform
 
-V =			3.8.3
+V =			3.9.4
 DISTNAME =		apertium-$V
 
-SHARED_LIBS +=  apertium                 0.0 # 3.0
+SHARED_LIBS +=  apertium                 1.0 # 3.0
 
 CATEGORIES =		textproc
 

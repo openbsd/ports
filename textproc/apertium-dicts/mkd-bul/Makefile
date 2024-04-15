@@ -1,7 +1,7 @@
 L =	mkd-bul
 LANG =	Macedonian/Bulgarian
 V =	0.2.1
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 

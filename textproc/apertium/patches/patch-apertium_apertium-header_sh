@@ -1,7 +1,7 @@
 Index: apertium/apertium-header.sh
 --- apertium/apertium-header.sh.orig
 +++ apertium/apertium-header.sh
-@@ -80,7 +80,7 @@ check_transfuse () {
+@@ -127,7 +127,7 @@ apply_invert_setvars () {
  }
  
  setvar_wrap () {
@@ -10,7 +10,7 @@ Index: apertium/apertium-header.sh
  BEGIN           { RS="\0|\n"; }
  NR==1    && var { printf "[<STREAMCMD:SETVAR:%s>]", var }
                  { printf "%s%s", $0, RT }
-@@ -89,7 +89,7 @@ RT=="\0"        { fflush() }'
+@@ -136,7 +136,7 @@ RT=="\0"        { fflush() }'
  }
  setvar_unwrap () {
      # Only strip SETVAR if *we* inserted it, allow keeping it if it was manually inserted (for debugs)
@@ -19,7 +19,7 @@ Index: apertium/apertium-header.sh
  BEGIN           { RS="\0|\n"; }
              var { gsub(/\[<STREAMCMD:SETVAR:[^>]*>]/, "") }
                  { printf "%s%s", $0, RT }
-@@ -121,15 +121,15 @@ test_zip () {
+@@ -170,15 +170,15 @@ test_zip () {
    fi
  }
  

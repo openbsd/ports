@@ -1,9 +1,9 @@
 COMMENT =		finite-state lexical processing toolkit
 
-V =			3.7.1
+V =			3.7.6
 DISTNAME =		lttoolbox-$V
 
-SHARED_LIBS +=		lttoolbox                0.0 # 3.0
+SHARED_LIBS +=		lttoolbox                1.0 # 3.0
 
 CATEGORIES =		textproc
 

@@ -1,6 +1,7 @@
 L =	fra
 LANG =	French
 V =	1.12.0
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

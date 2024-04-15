@@ -1,7 +1,7 @@
 L =	pt-gl
 LANG =	Portuguese/Galician
 V =	0.9.3
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 

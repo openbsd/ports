@@ -9,7 +9,7 @@ Index: src/anaphora.cc
  
  using namespace std;
  
-@@ -80,6 +81,12 @@ int main(int argc, char **argv)
+@@ -67,6 +68,12 @@ int main(int argc, char **argv)
  	char *arxFileName = nullptr;
  
  	int nullFlush = 0;

@@ -1,6 +1,7 @@
 L =	eo-en
 LANG =	Esperanto/English
 V =	1.0.2
+REVISION =	0
 
 BUILD_DEPENDS +=	textproc/apertium-lex-tools \
 			textproc/vislcg3

@@ -1,7 +1,7 @@
 L =	hin
 LANG =	Hindu
 V =	0.1.0
-REVISION =	2
+REVISION =	3
 
 USE_GMAKE =		Yes
 

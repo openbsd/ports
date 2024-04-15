@@ -1,6 +1,7 @@
 bin/apertium
 @bin bin/apertium-adapt-docx
 @bin bin/apertium-cleanstream
+@bin bin/apertium-compile-caps
 @bin bin/apertium-deshtml
 @bin bin/apertium-deshtml-alt
 @bin bin/apertium-deshtml-noent
@@ -14,6 +15,7 @@ bin/apertium
 @bin bin/apertium-desxlsx
 @bin bin/apertium-desxpresstag
 bin/apertium-editdist
+@bin bin/apertium-extract-caps
 @bin bin/apertium-filter-ambiguity
 bin/apertium-filter-dix
 bin/apertium-filter-rules
@@ -44,6 +46,7 @@ bin/apertium-metalrx-to-lrx
 @bin bin/apertium-reodt
 @bin bin/apertium-repptx
 @bin bin/apertium-rertf
+@bin bin/apertium-restore-caps
 @bin bin/apertium-retxt
 @bin bin/apertium-rewxml
 @bin bin/apertium-rexlsx
@@ -57,6 +60,7 @@ bin/apertium-translate-to-default-equivalent
 bin/apertium-unformat
 bin/apertium-utils-fixlatex
 bin/apertium-validate-acx
+bin/apertium-validate-crx
 bin/apertium-validate-dictionary
 bin/apertium-validate-interchunk
 bin/apertium-validate-modes
@@ -71,6 +75,8 @@ include/apertium/a.h
 include/apertium/align.h
 include/apertium/analysis.h
 include/apertium/apertium_re.h
+include/apertium/caps_compiler.h
+include/apertium/caps_restorer.h
 include/apertium/collection.h
 include/apertium/constant_manager.h
 include/apertium/deserialiser.h
@@ -147,6 +153,7 @@ include/apertium/xml_reader.h
 lib/libapertium.la
 @lib lib/libapertium.so.${LIBapertium_VERSION}
 lib/pkgconfig/apertium.pc
+@man man/man1/apertium-compile-caps.1
 @man man/man1/apertium-deshtml-alt.1
 @man man/man1/apertium-deshtml.1
 @man man/man1/apertium-deslatex.1
@@ -157,6 +164,7 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-destxt.1
 @man man/man1/apertium-deswxml.1
 @man man/man1/apertium-desxlsx.1
+@man man/man1/apertium-extract-caps.1
 @man man/man1/apertium-filter-ambiguity.1
 @man man/man1/apertium-gen-deformat.1
 @man man/man1/apertium-gen-modes.1
@@ -175,6 +183,7 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-reodt.1
 @man man/man1/apertium-repptx.1
 @man man/man1/apertium-rertf.1
+@man man/man1/apertium-restore-caps.1
 @man man/man1/apertium-retxt.1
 @man man/man1/apertium-rewxml.1
 @man man/man1/apertium-rexlsx.1
@@ -184,6 +193,7 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium-unformat.1
 @man man/man1/apertium-utils-fixlatex.1
 @man man/man1/apertium-validate-acx.1
+@man man/man1/apertium-validate-crx.1
 @man man/man1/apertium-validate-dictionary.1
 @man man/man1/apertium-validate-interchunk.1
 @man man/man1/apertium-validate-modes.1
@@ -193,6 +203,7 @@ lib/pkgconfig/apertium.pc
 @man man/man1/apertium.1
 share/aclocal/apertium.m4
 share/apertium/
+share/apertium/crx.dtd
 share/apertium/deformat.xsl
 share/apertium/filter-dix.xslt
 share/apertium/filter-rules.xslt

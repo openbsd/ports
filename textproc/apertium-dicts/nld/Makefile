@@ -1,7 +1,7 @@
 L =	nld
 LANG =	Dutch
 V =	0.2.0
-REVISION =	1
+REVISION =	2
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

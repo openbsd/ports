@@ -1,6 +1,6 @@
 L =	ita
 LANG =	Italian
-V =	1.1.2
+V =	1.4.0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 

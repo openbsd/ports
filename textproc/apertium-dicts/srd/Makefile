@@ -1,7 +1,6 @@
 L =	srd
 LANG =	Sardinian
-V =	1.3.1
-REVISION =	1
+V =	1.5.0
 
 BUILD_DEPENDS +=	textproc/vislcg3
 MODULES =		lang/python

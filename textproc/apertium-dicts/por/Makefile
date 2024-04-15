@@ -1,6 +1,7 @@
 L =	por
 LANG =	Portuguese
 V =	0.3.1
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

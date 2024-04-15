@@ -1,7 +1,7 @@
 L =	eo-fr
 LANG =	Esperanto/French
 V =	0.9.1
-REVISION =	1
+REVISION =	2
 
 EXTRACT_SUFX =	.tar.bz2
 

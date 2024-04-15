@@ -1,6 +1,7 @@
 L =	es-ro
 LANG =	Spanish/Romanian
 V =	0.7.5
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

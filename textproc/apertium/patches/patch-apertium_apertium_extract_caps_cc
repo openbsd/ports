@@ -1,0 +1,23 @@
+Index: apertium/apertium_extract_caps.cc
+--- apertium/apertium_extract_caps.cc.orig
++++ apertium/apertium_extract_caps.cc
+@@ -23,6 +23,7 @@
+ #include <lttoolbox/string_utils.h>
+ #include <lttoolbox/file_utils.h>
+ #include <lttoolbox/cli.h>
++#include <unistd.h>
+ 
+ #ifdef __MINGW32__
+ #include <windows.h>
+@@ -64,6 +65,11 @@ std::pair<UString, UString> read_lu(InputFile& input)
+ 
+ int main(int argc, char* argv[])
+ {
++  if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++    std::cerr << "pledge" << std::endl;
++    return EXIT_FAILURE;
++  }
++
+   LtLocale::tryToSetLocale();
+   CLI cli("Transfer capitalization information to word-bound blanks");
+   cli.add_file_arg("input_file");

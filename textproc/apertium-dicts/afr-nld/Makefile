@@ -1,7 +1,7 @@
 L =	afr-nld
 LANG =	Afrikaans/Dutch
 V =	0.3.0
-REVISION =	1
+REVISION =	2
 
 BUILD_DEPENDS +=	textproc/apertium-dicts/afr \
 			textproc/apertium-dicts/nld \

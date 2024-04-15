@@ -11,7 +11,7 @@ Index: src/rtx_decomp.cc
 +
  void endProgram(char *name)
  {
-   cout << basename(name) << ": decompile a transfer bytecode file" << endl;
+   std::cout << basename(name) << ": decompile a transfer bytecode file" << std::endl;
 @@ -218,6 +221,11 @@ void writeRule(UString rule, UFILE* out)
  
  int main(int argc, char *argv[])

@@ -1,6 +1,7 @@
 L =	nno-nob
 LANG =	Norwegian Nynorsk/Bokmal
 V =	1.5.0
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

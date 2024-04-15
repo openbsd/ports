@@ -2,6 +2,7 @@ COMMENT =		reorder separable/discontinuous multiwords
 
 V =			0.6.1
 DISTNAME =		apertium-separable-$V
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -16,7 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-#WANTLIB += ${COMPILER_LIBCXX} apertium3-3.7 c lttoolbox3-3.5 m xml2
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += c icudata icui18n icuio icuuc lttoolbox m xml2
 
 SITES =	https://github.com/apertium/apertium-separable/releases/download/v$V/
 

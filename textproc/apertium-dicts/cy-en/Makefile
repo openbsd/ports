@@ -1,7 +1,7 @@
 L =	cy-en
 LANG =	Welsh/English
 V =	0.1.1
-REVISION =	2
+REVISION =	3
 
 BROKEN =	0.1.1 incompatible with apertium>=3.7.2
 
