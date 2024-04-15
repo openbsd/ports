@@ -1,6 +1,7 @@
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
+MATE_VERSION=		1.28.1
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
