@@ -3,6 +3,7 @@ COMMENT=	number theory-oriented computer algebra system
 V=		2.15.5
 DISTNAME=	pari-$V
 CATEGORIES=	math
+REVISION=	0
 
 SHARED_LIBS +=		pari-gmp		0.0	# 2.15.4
 
@@ -29,6 +30,8 @@ CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/pari \
 			--mandir=${PREFIX}/man/man1 \
 			--prefix=${PREFIX} \
 			--with-gmp=${PREFIX}
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 TEST_TARGET=		dobench
 
