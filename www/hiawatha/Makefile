@@ -1,8 +1,8 @@
 COMMENT =		secure webserver
-DISTNAME =		hiawatha-11.4
+DISTNAME =		hiawatha-11.5
 CATEGORIES =		www net
 
-HOMEPAGE =		https://www.hiawatha-webserver.org/
+HOMEPAGE =		https://hiawatha.leisink.net/
 
 # GPLv2 only
 PERMIT_PACKAGE =	mbedtls Apache 2 license incompatible with GPLv2
