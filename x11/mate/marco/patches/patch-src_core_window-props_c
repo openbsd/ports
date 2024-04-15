@@ -10,7 +10,7 @@ Index: src/core/window-props.c
  #include <glibtop/procuid.h>
  #include <errno.h>
  #include <pwd.h>
-@@ -440,7 +440,7 @@ reload_net_wm_user_time_window (MetaWindow    *window,
+@@ -443,7 +443,7 @@ reload_net_wm_user_time_window (MetaWindow    *window,
  static gboolean
  owner_of_process (pid_t process, uid_t *result)
  {
