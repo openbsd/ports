@@ -1,8 +1,9 @@
 bin/pk-bin2poke
-bin/pk-elfextractor
+bin/pk-jojopatch
 bin/pk-strings
 @bin bin/poke
 @bin bin/poked
+@bin bin/pokefmt
 include/libpoke.h
 @info info/poke.info
 @static-lib lib/libpoke.a
@@ -25,6 +26,7 @@ share/poke/maps/mp3.map
 share/poke/pickles/
 share/poke/pickles/argp.pk
 share/poke/pickles/asn1-ber.pk
+share/poke/pickles/base64.pk
 share/poke/pickles/bmp.pk
 share/poke/pickles/bpf.pk
 share/poke/pickles/btf-dump.pk
@@ -37,26 +39,26 @@ share/poke/pickles/color.pk
 share/poke/pickles/ctf-dump.pk
 share/poke/pickles/ctf.pk
 share/poke/pickles/diff.pk
-share/poke/pickles/dwarf-common.pk
-share/poke/pickles/dwarf-expr.pk
-share/poke/pickles/dwarf-frame.pk
-share/poke/pickles/dwarf-info.pk
-share/poke/pickles/dwarf-pubnames.pk
-share/poke/pickles/dwarf-types.pk
-share/poke/pickles/dwarf.pk
-share/poke/pickles/elf-32.pk
-share/poke/pickles/elf-64.pk
-share/poke/pickles/elf-common.pk
-share/poke/pickles/elf.pk
+share/poke/pickles/gcov.pk
+share/poke/pickles/gpt-partition-attrs.pk
+share/poke/pickles/gpt-partition-types.pk
+share/poke/pickles/gpt.pk
+share/poke/pickles/guid.pk
 share/poke/pickles/id3v1.pk
 share/poke/pickles/id3v2.pk
 share/poke/pickles/ieee754.pk
 share/poke/pickles/ios.pk
+share/poke/pickles/iscan-str.pk
+share/poke/pickles/iscan.pk
 share/poke/pickles/jffs2.pk
+share/poke/pickles/jojodiff.pk
+share/poke/pickles/jpeg.pk
 share/poke/pickles/leb128.pk
+share/poke/pickles/linux.pk
 share/poke/pickles/mbr.pk
 share/poke/pickles/mcr.pk
 share/poke/pickles/openpgp.pk
+share/poke/pickles/orc.pk
 share/poke/pickles/pcap.pk
 share/poke/pickles/pdap.pk
 share/poke/pickles/pe-amd64.pk
@@ -79,6 +81,7 @@ share/poke/pickles/riscv.pk
 share/poke/pickles/search.pk
 share/poke/pickles/sframe-dump.pk
 share/poke/pickles/sframe.pk
+share/poke/pickles/srec.pk
 share/poke/pickles/time.pk
 share/poke/pickles/ustar.pk
 share/poke/pickles/uuid.pk
@@ -106,6 +109,8 @@ share/poke/poke/poke.text
 share/poke/poked/
 share/poke/poked/pk-dump-minimal.pk
 share/poke/poked/poked.pk
+share/poke/pokefmt/
+share/poke/pokefmt/pokefmt.pk
 share/poke/std-types.pk
 share/poke/std.pk
 share/vim/
