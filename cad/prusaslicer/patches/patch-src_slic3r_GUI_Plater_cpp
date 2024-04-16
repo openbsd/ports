@@ -1,7 +1,7 @@
 Index: src/slic3r/GUI/Plater.cpp
 --- src/slic3r/GUI/Plater.cpp.orig
 +++ src/slic3r/GUI/Plater.cpp
-@@ -5425,7 +5425,7 @@ void Plater::load_project(const wxString& filename)
+@@ -5428,7 +5428,7 @@ void Plater::load_project(const wxString& filename)
  
      p->reset();
  

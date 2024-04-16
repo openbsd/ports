@@ -1,27 +1,21 @@
 Index: src/slic3r/GUI/Mouse3DController.cpp
 --- src/slic3r/GUI/Mouse3DController.cpp.orig
 +++ src/slic3r/GUI/Mouse3DController.cpp
-@@ -151,7 +151,11 @@ static std::string detect_attached_device()
+@@ -151,7 +151,7 @@ static std::string detect_attached_device()
      std::string ret;
  
      // Initialize the hidapi library
-+#ifdef __OpenBSD__
+-    int res = hid_init();
 +    int res = hidapi_hid_init();
-+#else
-     int res = hid_init();
-+#endif
      if (res != 0)
          BOOST_LOG_TRIVIAL(error) << "Unable to initialize hidapi library";
      else {
-@@ -708,7 +712,11 @@ void Mouse3DController::shutdown()
+@@ -708,7 +708,7 @@ void Mouse3DController::shutdown()
  void Mouse3DController::run()
  {
      // Initialize the hidapi library
-+#ifdef __OpenBSD__
+-    int res = hid_init();
 +    int res = hidapi_hid_init();
-+#else
-     int res = hid_init();
-+#endif
      if (res != 0) {
      	// Give up.
  #if defined(__unix__) || defined(__unix) || defined(unix)    	

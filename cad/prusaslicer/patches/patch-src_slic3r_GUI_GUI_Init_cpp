@@ -1,13 +1,11 @@
 Index: src/slic3r/GUI/GUI_Init.cpp
 --- src/slic3r/GUI/GUI_Init.cpp.orig
 +++ src/slic3r/GUI/GUI_Init.cpp
-@@ -45,6 +45,10 @@ int GUI_Run(GUI_InitParams &params)
+@@ -45,6 +45,8 @@ int GUI_Run(GUI_InitParams &params)
      signal(SIGCHLD, SIG_DFL);
  #endif // __APPLE__
  
-+#ifdef __OpenBSD__
 +    wxSizerFlags::DisableConsistencyChecks();
-+#endif
 +
      try {
          GUI::GUI_App* gui = new GUI::GUI_App(params.start_as_gcodeviewer ? GUI::GUI_App::EAppMode::GCodeViewer : GUI::GUI_App::EAppMode::Editor);

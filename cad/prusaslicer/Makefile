@@ -2,7 +2,7 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.7.2
+V =		2.7.4
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -30,8 +30,8 @@ WANTLIB += curl dbus-1 execinfo expat fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp gmpxx gobject-2.0
 WANTLIB += gtk-3 harfbuzz hidapi-libusb intl jpeg m mpfr nlopt
 WANTLIB += openvdb pango-1.0 pangocairo-1.0 png qhull_r tbb tbbmalloc
-WANTLIB += tiff wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
-WANTLIB += wx_gtk3u_html-3.2 z
+WANTLIB += tiff wayland-client wayland-egl wx_baseu-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 z
 
 FIX_CRLF_FILES =	src/libslic3r/Point.hpp src/slic3r/GUI/GLCanvas3D.cpp
 
@@ -62,10 +62,12 @@ LIB_DEPENDS = 		cad/opencascade \
 			math/nlopt \
 			math/qhull \
 			net/curl \
+			wayland/wayland \
 			x11/dbus \
 			x11/wxWidgets
 
-CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB \
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+			-DCMAKE_MODULE_PATH=${PREFIX}/lib/cmake/OpenVDB \
 			-DSLIC3R_FHS=1 \
 			-DSLIC3R_GTK=3 \
 			-DSLIC3R_PCH=OFF

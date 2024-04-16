@@ -1,12 +1,11 @@
 Index: src/slic3r/GUI/GUI.cpp
 --- src/slic3r/GUI/GUI.cpp.orig
 +++ src/slic3r/GUI/GUI.cpp
-@@ -501,7 +501,8 @@ void desktop_open_folder(const boost::filesystem::path
+@@ -501,7 +501,7 @@ void desktop_open_folder(const boost::filesystem::path
  #endif
  }
  
 -#ifdef __linux__
-+// XXX maybe create separate implementations for openbsd without appimage stuff
 +#if defined(__linux__) || defined(__OpenBSD__)
  namespace {
  wxExecuteEnv get_appimage_exec_env()
