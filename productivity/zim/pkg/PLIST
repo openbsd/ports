@@ -338,11 +338,15 @@ share/locale/da/LC_MESSAGES/zim.mo
 share/locale/de/LC_MESSAGES/zim.mo
 share/locale/el/LC_MESSAGES/zim.mo
 share/locale/en_GB/LC_MESSAGES/zim.mo
+share/locale/eo/LC_MESSAGES/zim.mo
 share/locale/es/LC_MESSAGES/zim.mo
 share/locale/et/LC_MESSAGES/zim.mo
 share/locale/eu/LC_MESSAGES/zim.mo
 share/locale/fi/LC_MESSAGES/zim.mo
 share/locale/fr/LC_MESSAGES/zim.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/zim.mo
 share/locale/gl/LC_MESSAGES/zim.mo
 share/locale/he/LC_MESSAGES/zim.mo
 share/locale/hr/LC_MESSAGES/zim.mo
