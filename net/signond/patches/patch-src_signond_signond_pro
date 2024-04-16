@@ -9,11 +9,12 @@ Index: src/signond/signond.pro
      -lsignon-plugins-common \
      -lsignon-extension
  
-@@ -107,6 +106,6 @@ OTHER_FILES += \
-     setupstorage.sh
+@@ -108,7 +107,7 @@ include( ../../common-installs-config.pri )
+         setupstorage.sh
  
- conf_file.files = $$OTHER_FILES
--conf_file.path = /etc/
-+conf_file.path = $${INSTALL_PREFIX}/share/examples/signond/
+     conf_file.files = $$OTHER_FILES
+-    conf_file.path = /etc/
++    conf_file.path = $${INSTALL_PREFIX}/share/examples/signond/
  
- INSTALLS += conf_file
+     INSTALLS += conf_file
+ }

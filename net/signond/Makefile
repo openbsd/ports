@@ -5,12 +5,11 @@ CATEGORIES =	net
 HOMEPAGE =	https://accounts-sso.gitlab.io/
 
 V =		VERSION_8.61
-DISTNAME =	signond-${V:S/VERSION_//}
-REVISION =	5
+DIST_TUPLE =	gitlab nicolasfella signond \
+		c8ad98249af541514ff7a81634d3295e712f1a39 .
+DISTNAME =	signond-${V:S/VERSION_//}pl0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
-
-SITES =		https://gitlab.com/accounts-sso/signond/-/archive/${V}/
 
 SHARED_LIBS +=  signon-extension          0.0 # 1.0
 SHARED_LIBS +=  signon-plugins-common     0.0 # 1.0
@@ -28,7 +27,7 @@ MODULES =	x11/qt5 \
 
 BUILD_DEPENDS =	devel/doxygen>=1.10.0
 
-WRKDIST =	${WRKDIR}/signond-${V}-5b34c5bbc45eedf55bf553675595b3fcb5c156a8
+WRKDIST =	${WRKDIR}/signond-c8ad98249af541514ff7a81634d3295e712f1a39
 
 TEST_TARGET =		check
 TEST_IS_INTERACTIVE =	Yes

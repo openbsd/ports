@@ -78,6 +78,7 @@ include/signond/signonsessioncore.h
 include/signond/signonsessioncoretools.h
 include/signond/signontrace.h
 include/signond/signonui_interface.h
+lib/cmake/
 lib/cmake/SignOnQt5/
 lib/cmake/SignOnQt5/SignOnQt5Config.cmake
 lib/cmake/SignOnQt5/SignOnQt5ConfigVersion.cmake
@@ -96,6 +97,8 @@ lib/signon/
 @so lib/signon/libpasswordplugin.so
 @so lib/signon/libssotest2plugin.so
 @so lib/signon/libssotestplugin.so
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/com.google.code.AccountsSSO.SingleSignOn.service
 share/dbus-1/services/com.nokia.SingleSignOn.Backup.service
 share/doc/signon/
