@@ -1461,7 +1461,7 @@ gitea/assets/css/
 gitea/assets/css/asciinema-player.348ff0a9.css
 gitea/assets/css/dropzone.46ea72f6.css
 gitea/assets/css/index.css
-gitea/assets/css/katex.a42245c1.css
+gitea/assets/css/katex.8eb7ed94.css
 gitea/assets/css/minicolors.4a2ce0b5.css
 gitea/assets/css/monaco.18fe49f8.css
 gitea/assets/css/swagger.css
@@ -1912,8 +1912,8 @@ gitea/assets/js/dropzone.2e37d03b.js
 gitea/assets/js/easymde.58e747ca.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.b47e777a.map
-gitea/assets/js/katex.25d07669.js
+gitea/assets/js/index.js.adeaaa50.map
+gitea/assets/js/katex.5779a130.js
 gitea/assets/js/mcaptcha-vanilla-glue.149786ce.js
 gitea/assets/js/mermaid.83a93d40.js
 gitea/assets/js/minicolors.98bf1283.js
