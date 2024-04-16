@@ -1,6 +1,6 @@
 COMMENT =	intelligent phonetic input method library
 
-V =		0.6.0
+V =		0.7.0
 DISTNAME =	libchewing-$V
 PKGNAME =	zh-libchewing-$V
 
@@ -19,7 +19,7 @@ WANTLIB +=	c sqlite3
 
 SITES =		https://github.com/chewing/libchewing/releases/download/v$V/
 
-EXTRACT_SUFX =	.tar.xz
+EXTRACT_SUFX =	.tar.zst
 
 MODULES =	devel/cmake
 LIB_DEPENDS =	databases/sqlite3
