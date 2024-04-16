@@ -1,0 +1,24 @@
+include/signon-qt6/
+include/signon-qt6/SignOn/
+include/signon-qt6/SignOn/AuthService
+include/signon-qt6/SignOn/AuthSession
+include/signon-qt6/SignOn/Error
+include/signon-qt6/SignOn/Identity
+include/signon-qt6/SignOn/IdentityInfo
+include/signon-qt6/SignOn/SecurityContext
+include/signon-qt6/SignOn/SessionData
+include/signon-qt6/SignOn/authservice.h
+include/signon-qt6/SignOn/authsession.h
+include/signon-qt6/SignOn/identity.h
+include/signon-qt6/SignOn/identityinfo.h
+include/signon-qt6/SignOn/libsignoncommon.h
+include/signon-qt6/SignOn/securitycontext.h
+include/signon-qt6/SignOn/sessiondata.h
+include/signon-qt6/SignOn/signon.h
+include/signon-qt6/SignOn/signonerror.h
+lib/cmake/SignOnQt6/
+lib/cmake/SignOnQt6/SignOnQt6Config.cmake
+lib/cmake/SignOnQt6/SignOnQt6ConfigVersion.cmake
+@static-lib lib/libsignon-qt6.a
+@lib lib/libsignon-qt6.so.${LIBsignon-qt6_VERSION}
+lib/pkgconfig/libsignon-qt6.pc

@@ -1,0 +1,11 @@
+Index: lib/SignOn/SignOnQt6Config.cmake.in
+--- lib/SignOn/SignOnQt6Config.cmake.in.orig
++++ lib/SignOn/SignOnQt6Config.cmake.in
+@@ -2,6 +2,6 @@
+ #  SIGNONQT_LIBRARIES - The libraries needed to use libsignon-qt
+ #  SIGNONQT_LIBRARIES_STATIC - The static version of libsignon-qt
+ 
+-set(SIGNONQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so)
++set(SIGNONQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so.${LIBsignon-qt6_VERSION})
+ set(SIGNONQT_LIBRARIES_STATIC $${INSTALL_LIBDIR}/lib$${TARGET}.a)
+ set(SIGNONQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET})

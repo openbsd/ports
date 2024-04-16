@@ -1,0 +1,17 @@
+Index: signon.pro
+--- signon.pro.orig
++++ signon.pro
+@@ -1,12 +1,8 @@
+ include( common-vars.pri )
+ 
+ TEMPLATE  = subdirs
+-SUBDIRS   = lib src server tests
+-src.depends = lib
+-tests.depends = lib src
++SUBDIRS   = lib
+ 
+ include( common-installs-config.pri )
+-
+-include( doc/doc.pri )
+ 
+ # End of File

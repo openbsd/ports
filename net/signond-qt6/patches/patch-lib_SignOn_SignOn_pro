@@ -1,0 +1,8 @@
+Index: lib/SignOn/SignOn.pro
+--- lib/SignOn/SignOn.pro.orig
++++ lib/SignOn/SignOn.pro
+@@ -4,4 +4,3 @@ SUBDIRS = \
+     libsignon-qt-shared.pro \
+     libsignon-qt-static.pro
+ 
+-include(doc/doc.pri)
