@@ -161,6 +161,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Macro.beam
 lib/elixir/lib/elixir/ebin/Elixir.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.MatchError.beam
+lib/elixir/lib/elixir/ebin/Elixir.MismatchedDelimiterError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.LocalsTracker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.ParallelChecker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Behaviour.beam
@@ -275,6 +276,7 @@ lib/elixir/lib/elixir/ebin/elixir_rewrite.beam
 lib/elixir/lib/elixir/ebin/elixir_sup.beam
 lib/elixir/lib/elixir/ebin/elixir_tokenizer.beam
 lib/elixir/lib/elixir/ebin/elixir_utils.beam
+lib/elixir/lib/elixir/ebin/iex.beam
 lib/elixir/lib/ex_unit/
 lib/elixir/lib/ex_unit/ebin/
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.AssertionError.beam
