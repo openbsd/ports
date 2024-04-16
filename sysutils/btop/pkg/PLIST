@@ -1,0 +1,38 @@
+@bin bin/btop
+share/applications/btop.desktop
+share/btop/
+share/btop/README.md
+share/btop/themes/
+share/btop/themes/HotPurpleTrafficLight.theme
+share/btop/themes/adapta.theme
+share/btop/themes/adwaita.theme
+share/btop/themes/ayu.theme
+share/btop/themes/dracula.theme
+share/btop/themes/dusklight.theme
+share/btop/themes/elementarish.theme
+share/btop/themes/everforest-dark-hard.theme
+share/btop/themes/everforest-dark-medium.theme
+share/btop/themes/flat-remix-light.theme
+share/btop/themes/flat-remix.theme
+share/btop/themes/greyscale.theme
+share/btop/themes/gruvbox_dark.theme
+share/btop/themes/gruvbox_dark_v2.theme
+share/btop/themes/gruvbox_material_dark.theme
+share/btop/themes/horizon.theme
+share/btop/themes/kyli0x.theme
+share/btop/themes/matcha-dark-sea.theme
+share/btop/themes/monokai.theme
+share/btop/themes/night-owl.theme
+share/btop/themes/nord.theme
+share/btop/themes/onedark.theme
+share/btop/themes/paper.theme
+share/btop/themes/solarized_dark.theme
+share/btop/themes/solarized_light.theme
+share/btop/themes/tokyo-night.theme
+share/btop/themes/tokyo-storm.theme
+share/btop/themes/tomorrow-night.theme
+share/btop/themes/whiteout.theme
+share/icons/hicolor/48x48/apps/btop.png
+share/icons/hicolor/scalable/apps/btop.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
