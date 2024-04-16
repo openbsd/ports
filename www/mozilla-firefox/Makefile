@@ -71,7 +71,7 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 # not built on riscv64
 COMMENT_FFVPX ?=
 .if ${MACHINE_ARCH} == riscv64
-COMMENT_FFVPX =		@comment 
+COMMENT_FFVPX =		@comment # needs a trailing space
 .endif
 SUBST_VARS +=		COMMENT_FFVPX
 
