@@ -1,5 +1,17 @@
      SUBDIR =
 
+     # KDE6
+     # https://community.kde.org/KDE_Gear/24.02_Release_notes
+
+     # NEW in KDE6
+     #SUBDIR += isoimagewriter
+     #SUBDIR += khealthcertificate
+     #SUBDIR += mimetreeparser
+
+     # Dropped TODO
+     # SUBDIR += print-manager # MOVED to plasma
+     # SUBDIR += kopete
+
      # accessibility
      SUBDIR += kmag
      SUBDIR += kmousetool
@@ -89,7 +101,6 @@
      SUBDIR += gwenview
      SUBDIR += kamera
      SUBDIR += kcolorchooser
-     SUBDIR += kdegraphics-mobipocket
      SUBDIR += kdegraphics-thumbnailers
      SUBDIR += kolourpaint
      SUBDIR += kontrast
@@ -113,7 +124,6 @@
      # internet / network
      SUBDIR += kdenetwork-filesharing
      SUBDIR += kget
-     SUBDIR += kio-extras
      SUBDIR += kio-gdrive
      SUBDIR += kmailtransport
      #SUBDIR += kopete
@@ -198,7 +208,6 @@
      SUBDIR += baloo-widgets
      SUBDIR += grantleetheme
      SUBDIR += incidenceeditor
-     SUBDIR += kaccounts-integration
      SUBDIR += kaccounts-providers
      SUBDIR += kcalutils
      SUBDIR += kdeedu-data
@@ -218,14 +227,9 @@
      SUBDIR += ksmtp
      SUBDIR += ktnef
      SUBDIR += libgravatar
-     SUBDIR += libkcddb
-     SUBDIR += libkcompactdisc
-     SUBDIR += libkdcraw
      SUBDIR += libkdegames
      SUBDIR += libkdepim
      SUBDIR += libkeduvocdocument
-     SUBDIR += libkexiv2
-     SUBDIR += libkgapi
      SUBDIR += libkipi
      SUBDIR += libkleo
      SUBDIR += libkmahjongg
@@ -239,11 +243,45 @@
      SUBDIR += pim-data-exporter
      SUBDIR += pim-sieve-editor
      SUBDIR += pimcommon
-     SUBDIR += ksanecore
      SUBDIR += signon-kwallet-extension
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
+
+     # apps and libs which are needed as Qt 5 and Qt 6 Builds
+     SUBDIR += libkexiv2
+     #SUBDIR += kf6-libkexiv2
+
+     # ksanecore: Qt 6 build needed by Skanpage and Qt 5 build by Skanlite and others (libksane can be Qt 5 only for now as nothing uses it with Qt 6 but apps such as Digikam will be moving to Qt 6 soon)
+     SUBDIR += ksanecore
+     #SUBDIR += kf6-ksanecore
+
+     #libkdcraw still needs a Qt 5 build for e.g. Krita, kphotoalbum
+     SUBDIR += libkdcraw
+     #SUBDIR += kf6-libkdcraw
+
+     # kaccounts-integration: a Qt5 build of the library part is needed for kf5-purpose and kf5-kio-gdrive. Use -DKF6_COMPAT_BUILD=ON to build that. Available since Beta 2
+     SUBDIR += kaccounts-integration
+     #SUBDIR += kf6-kaccounts-integration
+
+     # libkgapi still needs a Qt 5 version for kio-gdrive and a Qt 6 version for pim bits (it's co-installable except for the sasl plugin, which can be disabled for one Qt version via -DBUILD_SASL_PLUGIN=OFF (since 24.01.95/23.08.5 or 3f293301)
+     SUBDIR += libkgapi
+
+     # kio-extras: From 22.04 onwards it uses Qt6. A KF5-based tarball will be released separately for support of KF5-based KIO apps. Build kio-extras-kf5 with -DBUILD_ACTIVITIES=OFF -DKF6_COMPAT_BUILD=ON
+     SUBDIR += kio-extras
+     #SUBDIR += kf6-kio-extras
+
+     # audiocd-kio
+     # kio-zeroconf
+     #kio-gdrive
+     SUBDIR += libkcompactdisc
+     #SUBDIR += kf6-libkcompactdisc
+
+     SUBDIR += libkcddb
+     #SUBDIR += kf6-libkcddb
+
+     SUBDIR += kdegraphics-mobipocket
+     #SUBDIR += kf6-kdegraphics-mobipocket
 
      # XXX keep in sync
      # life outside of x11/kde-applications
