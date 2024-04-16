@@ -1,9 +1,9 @@
 COMMENT =		W3C DOM implementation
 
 NETSURF_PROJECT =	libdom
-NETSURF_VERSION =	0.4.1
+NETSURF_VERSION =	0.4.2
 
-SHARED_LIBS =		dom 2.0 #0.4.1
+SHARED_LIBS =		dom 2.1 #0.4.2
 
 LIB_DEPENDS =		converters/libiconv \
 			www/netsurf/hubbub>=0.3.4 \

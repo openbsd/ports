@@ -1,11 +1,10 @@
 COMMENT =		utility library for parser building
 
 NETSURF_PROJECT =	libparserutils
-NETSURF_VERSION =	0.2.4
-REVISION =		0
+NETSURF_VERSION =	0.2.5
 
 CATEGORIES =		devel
-SHARED_LIBS =		parserutils 2.0 #0.2.1
+SHARED_LIBS =		parserutils 2.1 #0.2.5
 
 WANTLIB =		iconv
 

@@ -1,33 +1,27 @@
 Index: makefiles/Makefile.top
 --- makefiles/Makefile.top.orig
 +++ makefiles/Makefile.top
-@@ -190,8 +190,8 @@ endif
- ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
-   ifeq ($(findstring lib-shared,$(COMPONENT_TYPE)),lib-shared)
-     SHAREDLIBNAME := lib$(COMPONENT)$(LIBEXT)
--    SONAME := $(SHAREDLIBNAME).$(major-version)
--    OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(COMPONENT_VERSION)
-+    SONAME := $(SHAREDLIBNAME).$(NS_LIB_VERSION)
-+    OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(NS_LIB_VERSION)
+@@ -197,8 +197,8 @@ ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
+       OUTPUT := $(BUILDDIR)/lib$(COMPONENT).$(COMPONENT_VERSION)$(LIBEXT)
+     else
+       SHAREDLIBNAME := lib$(COMPONENT)$(LIBEXT)
+-      SONAME := $(SHAREDLIBNAME).$(major-version)
+-      OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(COMPONENT_VERSION)
++      SONAME := $(SHAREDLIBNAME).$(NS_LIB_VERSION)
++      OUTPUT := $(BUILDDIR)/$(SHAREDLIBNAME).$(NS_LIB_VERSION)
+     endif
    else
      OUTPUT := $(BUILDDIR)/lib$(COMPONENT)$(LIBEXT)
-   endif
-@@ -206,14 +206,6 @@ endif
- .PHONY: all test coverage profile docs clean distclean install uninstall \
- 	__default __precov __partial_clean __postshared
+@@ -226,8 +226,6 @@ test: all $(TEST_PREREQS) $(TEST_BINARIES) $(TEST_TARG
+ 	$(VQ)$(ECHO) $(ECHOFLAGS) "    TEST: Testing complete"
  
--ifeq ($(COMPONENT_TYPE),lib-shared)
--  POST_TARGETS := __postshared $(POST_TARGETS)
--
--__postshared:
+ __postshared:
 -	$(Q)$(LN) $(LNFLAGS) -f -s $(notdir $(OUTPUT)) $(BUILDDIR)/$(SONAME)
 -	$(Q)$(LN) $(LNFLAGS) -f -s $(notdir $(OUTPUT)) $(BUILDDIR)/$(SHAREDLIBNAME)
--endif
--
- # Default target
- all: $(PRE_TARGETS) $(OUTPUT) $(POST_TARGETS)
  
-@@ -295,7 +287,7 @@ __libraries = $(if $(REQUIRED_LIBS),-l$(subst $(__spac
+ # Compute coverage
+ __precov: __partial_clean
+@@ -303,7 +301,7 @@ __libraries = $(if $(REQUIRED_LIBS),-l$(subst $(__spac
  define install_pkgconfig
  	$(Q)$(ECHO) $(ECHOFLAGS) "sed -e... $1 >$(BUILDDIR)/$(1:.in=)"
  	$(Q)$(SED) \
@@ -36,7 +30,7 @@ Index: makefiles/Makefile.top
  		-e 's#LIBDIR#$(LIBDIR)#' \
  		-e 's#MAJOR#$(major-version)#' \
  		-e 's#MINOR#$(minor-version)#' \
-@@ -313,8 +305,6 @@ endef
+@@ -321,8 +319,6 @@ endef
  # TODO: Is this scheme portable?
  define install_shared_lib
    $(INSTALL) $(INSTALLFLAGS) -m 755 $1 $2/$(notdir $1)

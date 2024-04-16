@@ -1,9 +1,8 @@
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
-NETSURF_VERSION =	3.9
+NETSURF_VERSION =	3.11
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
-REVISION =		2
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/

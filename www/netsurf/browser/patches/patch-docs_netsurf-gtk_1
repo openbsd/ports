@@ -1,0 +1,12 @@
+Index: docs/netsurf-gtk.1
+--- docs/netsurf-gtk.1.orig
++++ docs/netsurf-gtk.1
+@@ -13,7 +13,7 @@
+ .Nm netsurf
+ .Nd a small fast web browser
+ .Sh SYNOPSIS
+-.Nm netsurf-gtk
++.Nm netsurf-gtk3
+ .Op Ar options
+ .Op Ar url
+ .Sh DESCRIPTION

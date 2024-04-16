@@ -1,8 +1,7 @@
 COMMENT =		SVG Tiny implementation
 
 NETSURF_PROJECT =	libsvgtiny
-NETSURF_VERSION =	0.1.7
-REVISION =		0
+NETSURF_VERSION =	0.1.8
 
 CATEGORIES =		graphics
 SHARED_LIBS =		svgtiny 0.0 #0.1.4

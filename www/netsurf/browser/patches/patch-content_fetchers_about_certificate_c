@@ -1,0 +1,369 @@
+Sync with upstream 3be91870a4d9094ef2955a10a05cb5674ea2f387:
+"fetchers: drop support for ancient OpenSSL"
+
+Index: content/fetchers/about/certificate.c
+--- content/fetchers/about/certificate.c.orig
++++ content/fetchers/about/certificate.c
+@@ -134,26 +134,29 @@ static nserror free_ns_cert_info(struct ns_cert_info *
+ #include <openssl/ssl.h>
+ #include <openssl/x509v3.h>
+ 
+-/* OpenSSL 1.0.x, 1.0.2, 1.1.0 and 1.1.1 API all changed
+- * LibreSSL declares its OpenSSL version as 2.1 but only supports 1.0.x API
+- */
+-#if (defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x1010000fL))
+-/* 1.0.x */
++#if (OPENSSL_VERSION_NUMBER < 0x30000000L)
++/* OpenSSL 1.1.1 or LibreSSL */
+ 
+-#if (defined(LIBRESSL_VERSION_NUMBER) || (OPENSSL_VERSION_NUMBER < 0x1000200fL))
+-/* pre 1.0.2 */
++# if defined(LIBRESSL_VERSION_NUMBER)
++  /* LibreSSL */
++#  if (LIBRESSL_VERSION_NUMBER < 0x3050000fL)
++   /* LibreSSL <3.5.0 */
++
++#   if (LIBRESSL_VERSION_NUMBER < 0x2070000fL)
++    /* LibreSSL <2.7.0 */
+ static int ns_X509_get_signature_nid(X509 *cert)
+ {
+ 	return OBJ_obj2nid(cert->cert_info->key->algor->algorithm);
+ }
+-#else
+-#define ns_X509_get_signature_nid X509_get_signature_nid
+-#endif
+ 
+ static const unsigned char *ns_ASN1_STRING_get0_data(ASN1_STRING *asn1str)
+ {
+ 	return (const unsigned char *)ASN1_STRING_data(asn1str);
+ }
++#   else
++#    define ns_X509_get_signature_nid X509_get_signature_nid
++#    define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
++#   endif
+ 
+ static const BIGNUM *ns_RSA_get0_n(const RSA *d)
+ {
+@@ -164,6 +167,20 @@ static const BIGNUM *ns_RSA_get0_e(const RSA *d)
+ {
+ 	return d->e;
+ }
++#  else
++   /* LibreSSL >= 3.5.0 */
++#   define ns_X509_get_signature_nid X509_get_signature_nid
++#   define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
++#   define ns_RSA_get0_n RSA_get0_n
++#   define ns_RSA_get0_e RSA_get0_e
++#  endif
++# else
++  /* OpenSSL 1.1.1 */
++#  define ns_X509_get_signature_nid X509_get_signature_nid
++#  define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
++#  define ns_RSA_get0_n RSA_get0_n
++#  define ns_RSA_get0_e RSA_get0_e
++# endif
+ 
+ static int ns_EVP_PKEY_get_bn_param(const EVP_PKEY *pkey,
+ 		const char *key_name, BIGNUM **bn) {
+@@ -296,300 +313,8 @@ static int ns_EVP_PKEY_get_octet_string_param(const EV
+ 
+ 	return ret;
+ }
+-#elif (OPENSSL_VERSION_NUMBER < 0x1010100fL)
+-/* 1.1.0 */
+-#define ns_X509_get_signature_nid X509_get_signature_nid
+-#define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
+-
+-static const BIGNUM *ns_RSA_get0_n(const RSA *r)
+-{
+-	const BIGNUM *n;
+-	const BIGNUM *e;
+-	const BIGNUM *d;
+-	RSA_get0_key(r, &n, &e, &d);
+-	return n;
+-}
+-
+-static const BIGNUM *ns_RSA_get0_e(const RSA *r)
+-{
+-	const BIGNUM *n;
+-	const BIGNUM *e;
+-	const BIGNUM *d;
+-	RSA_get0_key(r, &n, &e, &d);
+-	return e;
+-}
+-
+-static int ns_EVP_PKEY_get_bn_param(const EVP_PKEY *pkey,
+-		const char *key_name, BIGNUM **bn) {
+-	RSA *rsa;
+-	BIGNUM *result = NULL;
+-
+-	/* Check parameters: only support allocation-form *bn */
+-	if (pkey == NULL || key_name == NULL || bn == NULL || *bn != NULL)
+-		return 0;
+-
+-	/* Only support RSA keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_RSA)
+-		return 0;
+-
+-	rsa = EVP_PKEY_get1_RSA((EVP_PKEY *) pkey);
+-	if (rsa == NULL)
+-		return 0;
+-
+-	if (strcmp(key_name, "n") == 0) {
+-		const BIGNUM *n = ns_RSA_get0_n(rsa);
+-		if (n != NULL)
+-			result = BN_dup(n);
+-	} else if (strcmp(key_name, "e") == 0) {
+-		const BIGNUM *e = ns_RSA_get0_e(rsa);
+-		if (e != NULL)
+-			result = BN_dup(e);
+-	}
+-
+-	RSA_free(rsa);
+-
+-	*bn = result;
+-
+-	return (result != NULL) ? 1 : 0;
+-}
+-
+-static int ns_EVP_PKEY_get_utf8_string_param(const EVP_PKEY *pkey,
+-		const char *key_name, char *str, size_t max_len,
+-		size_t *out_len)
+-{
+-	const EC_GROUP *ecgroup;
+-	const char *group;
+-	EC_KEY *ec;
+-	int ret = 0;
+-
+-	if (pkey == NULL || key_name == NULL)
+-		return 0;
+-
+-	/* Only support EC keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_EC)
+-		return 0;
+-
+-	/* Only support fetching the group */
+-	if (strcmp(key_name, "group") != 0)
+-		return 0;
+-
+-	ec = EVP_PKEY_get1_EC_KEY((EVP_PKEY *) pkey);
+-
+-	ecgroup = EC_KEY_get0_group(ec);
+-	if (ecgroup == NULL) {
+-		group = "";
+-	} else {
+-		group = OBJ_nid2ln(EC_GROUP_get_curve_name(ecgroup));
+-	}
+-
+-	if (str != NULL && max_len > strlen(group)) {
+-		strcpy(str, group);
+-		str[strlen(group)] = '\0';
+-		ret = 1;
+-	}
+-	if (out_len != NULL)
+-		*out_len = strlen(group);
+-
+-	EC_KEY_free(ec);
+-
+-	return ret;
+-}
+-
+-static int ns_EVP_PKEY_get_octet_string_param(const EVP_PKEY *pkey,
+-		const char *key_name, unsigned char *buf, size_t max_len,
+-		size_t *out_len)
+-{
+-	const EC_GROUP *ecgroup;
+-	const EC_POINT *ecpoint;
+-	size_t len;
+-	BN_CTX *bnctx;
+-	EC_KEY *ec;
+-	int ret = 0;
+-
+-	if (pkey == NULL || key_name == NULL)
+-		return 0;
+-
+-	/* Only support EC keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_EC)
+-		return 0;
+-
+-	if (strcmp(key_name, "encoded-pub-key") != 0)
+-		return 0;
+-
+-	ec = EVP_PKEY_get1_EC_KEY((EVP_PKEY *) pkey);
+-	if (ec == NULL)
+-		return 0;
+-
+-	ecgroup = EC_KEY_get0_group(ec);
+-	if (ecgroup != NULL) {
+-		ecpoint = EC_KEY_get0_public_key(ec);
+-		if (ecpoint != NULL) {
+-			bnctx = BN_CTX_new();
+-			len = EC_POINT_point2oct(ecgroup,
+-						 ecpoint,
+-						 POINT_CONVERSION_UNCOMPRESSED,
+-						 NULL,
+-						 0,
+-						 bnctx);
+-			if (len != 0 && len <= max_len) {
+-				if (EC_POINT_point2oct(ecgroup,
+-						       ecpoint,
+-						       POINT_CONVERSION_UNCOMPRESSED,
+-						       buf,
+-						       len,
+-						       bnctx) == len)
+-					ret = 1;
+-			}
+-			if (out_len != NULL)
+-				*out_len = len;
+-			BN_CTX_free(bnctx);
+-		}
+-	}
+-
+-	EC_KEY_free(ec);
+-
+-	return ret;
+-}
+-#elif (OPENSSL_VERSION_NUMBER < 0x30000000L)
+-/* 1.1.1  */
+-#define ns_X509_get_signature_nid X509_get_signature_nid
+-#define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
+-#define ns_RSA_get0_n RSA_get0_n
+-#define ns_RSA_get0_e RSA_get0_e
+-
+-static int ns_EVP_PKEY_get_bn_param(const EVP_PKEY *pkey,
+-		const char *key_name, BIGNUM **bn) {
+-	RSA *rsa;
+-	BIGNUM *result = NULL;
+-
+-	/* Check parameters: only support allocation-form *bn */
+-	if (pkey == NULL || key_name == NULL || bn == NULL || *bn != NULL)
+-		return 0;
+-
+-	/* Only support RSA keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_RSA)
+-		return 0;
+-
+-	rsa = EVP_PKEY_get1_RSA((EVP_PKEY *) pkey);
+-	if (rsa == NULL)
+-		return 0;
+-
+-	if (strcmp(key_name, "n") == 0) {
+-		const BIGNUM *n = ns_RSA_get0_n(rsa);
+-		if (n != NULL)
+-			result = BN_dup(n);
+-	} else if (strcmp(key_name, "e") == 0) {
+-		const BIGNUM *e = ns_RSA_get0_e(rsa);
+-		if (e != NULL)
+-			result = BN_dup(e);
+-	}
+-
+-	RSA_free(rsa);
+-
+-	*bn = result;
+-
+-	return (result != NULL) ? 1 : 0;
+-}
+-
+-static int ns_EVP_PKEY_get_utf8_string_param(const EVP_PKEY *pkey,
+-		const char *key_name, char *str, size_t max_len,
+-		size_t *out_len)
+-{
+-	const EC_GROUP *ecgroup;
+-	const char *group;
+-	EC_KEY *ec;
+-	int ret = 0;
+-
+-	if (pkey == NULL || key_name == NULL)
+-		return 0;
+-
+-	/* Only support EC keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_EC)
+-		return 0;
+-
+-	/* Only support fetching the group */
+-	if (strcmp(key_name, "group") != 0)
+-		return 0;
+-
+-	ec = EVP_PKEY_get1_EC_KEY((EVP_PKEY *) pkey);
+-
+-	ecgroup = EC_KEY_get0_group(ec);
+-	if (ecgroup == NULL) {
+-		group = "";
+-	} else {
+-		group = OBJ_nid2ln(EC_GROUP_get_curve_name(ecgroup));
+-	}
+-
+-	if (str != NULL && max_len > strlen(group)) {
+-		strcpy(str, group);
+-		str[strlen(group)] = '\0';
+-		ret = 1;
+-	}
+-	if (out_len != NULL)
+-		*out_len = strlen(group);
+-
+-	EC_KEY_free(ec);
+-
+-	return ret;
+-}
+-
+-static int ns_EVP_PKEY_get_octet_string_param(const EVP_PKEY *pkey,
+-		const char *key_name, unsigned char *buf, size_t max_len,
+-		size_t *out_len)
+-{
+-	const EC_GROUP *ecgroup;
+-	const EC_POINT *ecpoint;
+-	size_t len;
+-	BN_CTX *bnctx;
+-	EC_KEY *ec;
+-	int ret = 0;
+-
+-	if (pkey == NULL || key_name == NULL)
+-		return 0;
+-
+-	/* Only support EC keys */
+-	if (EVP_PKEY_base_id(pkey) != EVP_PKEY_EC)
+-		return 0;
+-
+-	if (strcmp(key_name, "encoded-pub-key") != 0)
+-		return 0;
+-
+-	ec = EVP_PKEY_get1_EC_KEY((EVP_PKEY *) pkey);
+-	if (ec == NULL)
+-		return 0;
+-
+-	ecgroup = EC_KEY_get0_group(ec);
+-	if (ecgroup != NULL) {
+-		ecpoint = EC_KEY_get0_public_key(ec);
+-		if (ecpoint != NULL) {
+-			bnctx = BN_CTX_new();
+-			len = EC_POINT_point2oct(ecgroup,
+-						 ecpoint,
+-						 POINT_CONVERSION_UNCOMPRESSED,
+-						 NULL,
+-						 0,
+-						 bnctx);
+-			if (len != 0 && len <= max_len) {
+-				if (EC_POINT_point2oct(ecgroup,
+-						       ecpoint,
+-						       POINT_CONVERSION_UNCOMPRESSED,
+-						       buf,
+-						       len,
+-						       bnctx) == len)
+-					ret = 1;
+-			}
+-			if (out_len != NULL)
+-				*out_len = len;
+-			BN_CTX_free(bnctx);
+-		}
+-	}
+-
+-	EC_KEY_free(ec);
+-
+-	return ret;
+-}
+ #else
+-/* 3.x and later */
++/* OpenSSL 3.x and later */
+ #define ns_X509_get_signature_nid X509_get_signature_nid
+ #define ns_ASN1_STRING_get0_data ASN1_STRING_get0_data
+ #define ns_RSA_get0_n RSA_get0_n

@@ -10,5 +10,6 @@ include/libcss/properties.h
 include/libcss/select.h
 include/libcss/stylesheet.h
 include/libcss/types.h
+include/libcss/unit.h
 @lib lib/libcss.so.${LIBcss_VERSION}
 lib/pkgconfig/libcss.pc

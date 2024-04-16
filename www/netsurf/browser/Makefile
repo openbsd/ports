@@ -1,8 +1,7 @@
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	3.10
-REVISION =		3
+NETSURF_VERSION =	3.11
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
@@ -45,14 +44,14 @@ MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 
 post-patch:
 	#https://bugs.netsurf-browser.org/mantis/view.php?id=2045
-	cp ${WRKSRC}/frontends/gtk/res/options.gtk3.ui{,.unfixed}
-	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/options.gtk3.ui | \
+	cp ${WRKSRC}/frontends/gtk/res/gtk3/options.ui{,.unfixed}
+	cd ${WRKSRC} && egrep translatable.*preferences frontends/gtk/res/gtk3/options.ui | \
 		sed -e 's/.*>\(.*\)<.*/\1/' | while read c ; do \
 		v=$$(egrep ^en\..*$$c: ${WRKSRC}/resources/FatMessages | cut -d : -f2 | sed -e 's/</\&lt;/g') ; \
-		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/frontends/gtk/res/options.gtk3.ui ; done
+		perl -pi -e "s#>$$c<#>$$v<#" ${WRKSRC}/frontends/gtk/res/gtk3/options.ui ; done
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/netsurf-gtk.1 \
-		${PREFIX}/man/man1/netsurf-gtk.1
+		${PREFIX}/man/man1/netsurf-gtk3.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/frontends/gtk/res/netsurf-gtk.desktop \
 		${PREFIX}/share/applications/netsurf.desktop

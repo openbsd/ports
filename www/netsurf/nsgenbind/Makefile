@@ -1,7 +1,7 @@
 COMMENT =		JavaScript bindings generator
 
 NETSURF_PROJECT =	nsgenbind
-NETSURF_VERSION =	0.8
+NETSURF_VERSION =	0.9
 
 BUILD_DEPENDS +=	devel/bison
 

@@ -24,6 +24,7 @@ include/dom/core/nodelist.h
 include/dom/core/pi.h
 include/dom/core/string.h
 include/dom/core/text.h
+include/dom/core/tokenlist.h
 include/dom/core/typeinfo.h
 include/dom/dom.h
 include/dom/events/
@@ -102,5 +103,6 @@ include/dom/html/html_text_area_element.h
 include/dom/html/html_title_element.h
 include/dom/html/html_ulist_element.h
 include/dom/inttypes.h
+include/dom/walk.h
 @lib lib/libdom.so.${LIBdom_VERSION}
 lib/pkgconfig/libdom.pc
