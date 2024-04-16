@@ -195,7 +195,6 @@ post-install:
 do-test:
 	cd ${WRKBUILD} && env -i ${MAKE_ENV} HOME=${WRKBUILD}/test LD_LIBRARY_PATH=${WRKBUILD}/lib \
 		ninja -j ${MAKE_JOBS} check-llvm-unit
-	exit 1
 
 diff-to-base: ${_PATCH_COOKIE}
 .for _subdir in clang lld lldb llvm
