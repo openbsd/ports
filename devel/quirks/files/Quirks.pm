@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1620 2024/04/04 13:39:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1621 2024/04/16 16:05:20 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1927,6 +1927,7 @@ setup_obsolete_reason(
 	3 => 'dvdrip',
 	3 => 'subtitleripper',
 	3 => 'transcode',
+	3 => 'phonon-backend-gstreamer',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
