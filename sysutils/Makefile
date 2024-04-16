@@ -31,6 +31,7 @@
      SUBDIR += borgbackup
      SUBDIR += borgmatic
      SUBDIR += broot
+     SUBDIR += btop
      SUBDIR += bubblemon-dockapp
      SUBDIR += bupstash
      SUBDIR += burp
