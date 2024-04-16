@@ -4,7 +4,7 @@ those checks as they cause the build to fail.
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -2290,15 +2290,7 @@ uninstall-am: uninstall-binPROGRAMS
+@@ -2328,15 +2328,7 @@ uninstall-am: uninstall-binPROGRAMS
  
  infocontrib.h: $(srcdir)/buildtools/geninfocontrib_h.sh $(top_srcdir)/doc/vice.texi $(srcdir)/buildtools/infocontrib.sed
  	@echo "generating infocontrib.h"

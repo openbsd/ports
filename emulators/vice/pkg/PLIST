@@ -3,6 +3,7 @@
 @bin bin/petcat
 @bin bin/vsid
 @bin bin/x128
+@bin bin/x64
 @bin bin/x64dtv
 @bin bin/x64sc
 @bin bin/xcbm2
@@ -12,28 +13,7 @@
 @bin bin/xscpu64
 @bin bin/xvic
 share/doc/vice/
-share/doc/vice/CIA-README.txt
-share/doc/vice/Documentation-Howto.txt
-share/doc/vice/Doxygen-Howto.txt
-share/doc/vice/FreeBSD-GTK3-Howto.txt
-share/doc/vice/GTK3-Fedora-cross-build-setup.md
-share/doc/vice/GTK3-cross-build-setup.md
-share/doc/vice/GTK3-debian-frankenvice.md
-share/doc/vice/Linux-GTK3-Howto.txt
-share/doc/vice/NetBSD-GTK3-Howto.txt
-share/doc/vice/NetBSD-howto.txt
-share/doc/vice/OpenBSD-GTK3-Howto.txt
-share/doc/vice/Readme-SDL.txt
 share/doc/vice/Readme-SDL2.txt
-share/doc/vice/Release-Howto.txt
-share/doc/vice/SDL-Howto.txt
-share/doc/vice/Windows-MinGW-GTK3-Howto.txt
-share/doc/vice/coding-guidelines.txt
-share/doc/vice/iec-bus.txt
-share/doc/vice/macOS-Distribution-Howto.txt
-share/doc/vice/macOS-Howto.txt
-share/doc/vice/macOS-Xcode-Howto.txt
-share/doc/vice/vice.texi
 share/vice/
 share/vice/C128/
 share/vice/C128/basic64-901226-01.bin
@@ -45,6 +25,7 @@ share/vice/C128/ccs64.vpl
 share/vice/C128/chargen-315079-01.bin
 share/vice/C128/chargen-325078-02.bin
 share/vice/C128/chargen-325167-01.bin
+share/vice/C128/chargen-325167-02.bin
 share/vice/C128/chargen-325173-01D.bin
 share/vice/C128/chargen-325181-01.bin
 share/vice/C128/chargen-390059-01.bin
@@ -59,12 +40,20 @@ share/vice/C128/kernal-315078-03.bin
 share/vice/C128/kernal-318020-05.bin
 share/vice/C128/kernal-318034-01.bin
 share/vice/C128/kernal-325172-01.bin
+share/vice/C128/kernal64-325179-01.bin
+share/vice/C128/kernal64-325182-01.bin
 share/vice/C128/kernal64-901227-03.bin
 share/vice/C128/kernalfi
 share/vice/C128/kernalfr
 share/vice/C128/kernalit
 share/vice/C128/kernalno
 share/vice/C128/palette.vpl
+share/vice/C128/palette_6569R1_v1r.vpl
+share/vice/C128/palette_6569R5_v1r.vpl
+share/vice/C128/palette_8565R2_v1r.vpl
+share/vice/C128/palette_C64_amber.vpl
+share/vice/C128/palette_C64_cyan.vpl
+share/vice/C128/palette_C64_green.vpl
 share/vice/C128/pc64.vpl
 share/vice/C128/pepto-ntsc-sony.vpl
 share/vice/C128/pepto-ntsc.vpl
@@ -73,15 +62,16 @@ share/vice/C128/pepto-palold.vpl
 share/vice/C128/pixcen.vpl
 share/vice/C128/ptoing.vpl
 share/vice/C128/rgb.vpl
-share/vice/C128/sdl-hotkeys.vhk
 share/vice/C128/sdl_pos.vkm
 share/vice/C128/sdl_pos_de.vkm
 share/vice/C128/sdl_sym.vkm
 share/vice/C128/sdl_sym_de.vkm
 share/vice/C128/sdl_sym_fr.vkm
 share/vice/C128/sdl_v128.vkm
+share/vice/C128/the64.vpl
 share/vice/C128/vdc_comp.vpl
 share/vice/C128/vdc_deft.vpl
+share/vice/C128/vdc_scart.vpl
 share/vice/C128/vice.vpl
 share/vice/C64/
 share/vice/C64/basic-901226-01.bin
@@ -106,6 +96,12 @@ share/vice/C64/kernal-901227-03.bin
 share/vice/C64/kernal-901246-01.bin
 share/vice/C64/kernal-906145-02.bin
 share/vice/C64/palette.vpl
+share/vice/C64/palette_6569R1_v1r.vpl
+share/vice/C64/palette_6569R5_v1r.vpl
+share/vice/C64/palette_8565R2_v1r.vpl
+share/vice/C64/palette_C64_amber.vpl
+share/vice/C64/palette_C64_cyan.vpl
+share/vice/C64/palette_C64_green.vpl
 share/vice/C64/pc64.vpl
 share/vice/C64/pepto-ntsc-sony.vpl
 share/vice/C64/pepto-ntsc.vpl
@@ -114,8 +110,6 @@ share/vice/C64/pepto-palold.vpl
 share/vice/C64/pixcen.vpl
 share/vice/C64/ptoing.vpl
 share/vice/C64/rgb.vpl
-share/vice/C64/sdl-hotkeys-vsid.vhk
-share/vice/C64/sdl-hotkeys.vhk
 share/vice/C64/sdl_joymap_ps3.vjm
 share/vice/C64/sdl_joymap_thec64.vjm
 share/vice/C64/sdl_keyrah.vkm
@@ -139,6 +133,7 @@ share/vice/C64/sdl_sym_it.vkm
 share/vice/C64/sdl_sym_nl.vkm
 share/vice/C64/sdl_sym_tr.vkm
 share/vice/C64/sdl_sym_uk.vkm
+share/vice/C64/the64.vpl
 share/vice/C64/vice.vpl
 share/vice/C64DTV/
 share/vice/C64DTV/basic-901226-01.bin
@@ -147,7 +142,6 @@ share/vice/C64DTV/chargen-901225-01.bin
 share/vice/C64DTV/default.vrs
 share/vice/C64DTV/dtvrom.bin
 share/vice/C64DTV/kernal-901227-03.bin
-share/vice/C64DTV/sdl-hotkeys.vhk
 share/vice/C64DTV/sdl_keyrah.vkm
 share/vice/C64DTV/sdl_keyrah_combian.vkm
 share/vice/C64DTV/sdl_keyrah_de.vkm
@@ -190,6 +184,12 @@ share/vice/CBM-II/green.vpl
 share/vice/CBM-II/kernal-901234-02.bin
 share/vice/CBM-II/kernal-901244-04a.bin
 share/vice/CBM-II/palette.vpl
+share/vice/CBM-II/palette_6569R1_v1r.vpl
+share/vice/CBM-II/palette_6569R5_v1r.vpl
+share/vice/CBM-II/palette_8565R2_v1r.vpl
+share/vice/CBM-II/palette_C64_amber.vpl
+share/vice/CBM-II/palette_C64_cyan.vpl
+share/vice/CBM-II/palette_C64_green.vpl
 share/vice/CBM-II/pc64.vpl
 share/vice/CBM-II/pepto-ntsc-sony.vpl
 share/vice/CBM-II/pepto-ntsc.vpl
@@ -203,9 +203,9 @@ share/vice/CBM-II/rom128l.vrs
 share/vice/CBM-II/rom256h.vrs
 share/vice/CBM-II/rom256l.vrs
 share/vice/CBM-II/rom500.vrs
-share/vice/CBM-II/sdl-hotkeys.vhk
 share/vice/CBM-II/sdl_pos.vkm
 share/vice/CBM-II/sdl_sym.vkm
+share/vice/CBM-II/the64.vpl
 share/vice/CBM-II/vice.vpl
 share/vice/CBM-II/white.vpl
 share/vice/DRIVES/
@@ -230,6 +230,7 @@ share/vice/GLSL/builtin-interlaced.frag
 share/vice/GLSL/builtin.frag
 share/vice/GLSL/viewport.vert
 share/vice/PET/
+share/vice/PET/2001-blueish.vpl
 share/vice/PET/amber.vpl
 share/vice/PET/basic-1.901439-09-05-02-06.bin
 share/vice/PET/basic-2.901465-01-02.bin
@@ -263,7 +264,6 @@ share/vice/PET/rom4b40.vrs
 share/vice/PET/rom4b80.vrs
 share/vice/PET/rom4g40.vrs
 share/vice/PET/romsuperpet.vrs
-share/vice/PET/sdl-hotkeys.vhk
 share/vice/PET/sdl_buuk_pos.vkm
 share/vice/PET/sdl_buuk_pos_de.vkm
 share/vice/PET/sdl_buuk_sym.vkm
@@ -284,6 +284,9 @@ share/vice/PET/white.vpl
 share/vice/PLUS4/
 share/vice/PLUS4/3plus1-317053-01.bin
 share/vice/PLUS4/3plus1-317054-01.bin
+share/vice/PLUS4/ITU-R_BT2020.vpl
+share/vice/PLUS4/ITU-R_BT601_CRT.vpl
+share/vice/PLUS4/ITU-R_BT709_HDTV.vpl
 share/vice/PLUS4/basic-318006-01.bin
 share/vice/PLUS4/c2lo-364.bin
 share/vice/PLUS4/colodore_ted.vpl
@@ -292,7 +295,6 @@ share/vice/PLUS4/kernal-318004-01.bin
 share/vice/PLUS4/kernal-318004-05.bin
 share/vice/PLUS4/kernal-318005-05.bin
 share/vice/PLUS4/kernal-364.bin
-share/vice/PLUS4/sdl-hotkeys.vhk
 share/vice/PLUS4/sdl_pos.vkm
 share/vice/PLUS4/sdl_pos_fr.vkm
 share/vice/PLUS4/sdl_sym.vkm
@@ -301,9 +303,13 @@ share/vice/PLUS4/yape-ntsc.vpl
 share/vice/PLUS4/yape-pal.vpl
 share/vice/PRINTER/
 share/vice/PRINTER/1520.vpl
+share/vice/PRINTER/2022-901472-04.bin
+share/vice/PRINTER/3022-901472-06.bin
+share/vice/PRINTER/4023-325360-02.bin
+share/vice/PRINTER/8023-325320-02.bin
 share/vice/PRINTER/cbm1526-325341-08.bin
 share/vice/PRINTER/mps801.bin
-share/vice/PRINTER/mps803.bin
+share/vice/PRINTER/mps803-D7811G-111-U32053A.bin
 share/vice/PRINTER/mps803.vpl
 share/vice/PRINTER/nl10.bin
 share/vice/PRINTER/nl10.vpl
@@ -321,6 +327,12 @@ share/vice/SCPU64/default.vrs
 share/vice/SCPU64/frodo.vpl
 share/vice/SCPU64/godot.vpl
 share/vice/SCPU64/palette.vpl
+share/vice/SCPU64/palette_6569R1_v1r.vpl
+share/vice/SCPU64/palette_6569R5_v1r.vpl
+share/vice/SCPU64/palette_8565R2_v1r.vpl
+share/vice/SCPU64/palette_C64_amber.vpl
+share/vice/SCPU64/palette_C64_cyan.vpl
+share/vice/SCPU64/palette_C64_green.vpl
 share/vice/SCPU64/pc64.vpl
 share/vice/SCPU64/pepto-ntsc-sony.vpl
 share/vice/SCPU64/pepto-ntsc.vpl
@@ -331,7 +343,6 @@ share/vice/SCPU64/ptoing.vpl
 share/vice/SCPU64/rgb.vpl
 share/vice/SCPU64/scpu64
 share/vice/SCPU64/scpu64mem.sym
-share/vice/SCPU64/sdl-hotkeys.vhk
 share/vice/SCPU64/sdl_keyrah.vkm
 share/vice/SCPU64/sdl_keyrah_combian.vkm
 share/vice/SCPU64/sdl_keyrah_de.vkm
@@ -352,6 +363,7 @@ share/vice/SCPU64/sdl_sym_fr.vkm
 share/vice/SCPU64/sdl_sym_nl.vkm
 share/vice/SCPU64/sdl_sym_tr.vkm
 share/vice/SCPU64/sdl_sym_uk.vkm
+share/vice/SCPU64/the64.vpl
 share/vice/SCPU64/vice.vpl
 share/vice/VIC20/
 share/vice/VIC20/PALette.vpl
@@ -365,7 +377,6 @@ share/vice/VIC20/kernal.901486-06.bin
 share/vice/VIC20/kernal.901486-07.bin
 share/vice/VIC20/mike-ntsc.vpl
 share/vice/VIC20/mike-pal.vpl
-share/vice/VIC20/sdl-hotkeys.vhk
 share/vice/VIC20/sdl_pos.vkm
 share/vice/VIC20/sdl_pos_fi.vkm
 share/vice/VIC20/sdl_pos_fr.vkm
@@ -442,3 +453,15 @@ share/vice/common/VIC20_48.png
 share/vice/common/VIC20_64.png
 share/vice/common/icon1024x1024.png
 share/vice/common/vice-logo-black.svg
+share/vice/hotkeys/
+share/vice/hotkeys/hotkeys-cartridge.vhk
+share/vice/hotkeys/hotkeys-datasette.vhk
+share/vice/hotkeys/hotkeys-debug.vhk
+share/vice/hotkeys/hotkeys-drive.vhk
+share/vice/hotkeys/hotkeys-fliplist.vhk
+share/vice/hotkeys/hotkeys-help.vhk
+share/vice/hotkeys/hotkeys-settings.vhk
+share/vice/hotkeys/hotkeys-snapshot.vhk
+share/vice/hotkeys/hotkeys-vsid.vhk
+share/vice/hotkeys/hotkeys-winvice-legacy.vhk
+share/vice/hotkeys/hotkeys.vhk
