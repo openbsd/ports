@@ -1,3 +1,4 @@
+share/apertium/
 share/apertium/apertium-urd-hin/
 share/apertium/apertium-urd-hin/apertium-urd-hin.hin-urd.t1x
 share/apertium/apertium-urd-hin/apertium-urd-hin.urd-hin.t1x
@@ -15,5 +16,6 @@ share/apertium/apertium-urd-hin/urd-hin.automorf.bin
 share/apertium/apertium-urd-hin/urd-hin.prob
 share/apertium/apertium-urd-hin/urd-hin.rlx.bin
 share/apertium/apertium-urd-hin/urd-hin.t1x.bin
+share/apertium/modes/
 share/apertium/modes/hin-urd.mode
 share/apertium/modes/urd-hin.mode
