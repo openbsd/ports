@@ -6,7 +6,5 @@ Index: Accounts/AccountsQt5Config.cmake.in
  #  ACCOUNTSQT_LIBRARIES - The libraries needed to use libaccounts-qt
  
 -set(ACCOUNTSQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so)
--set(ACCOUNTSQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET}/)
-\ No newline at end of file
 +set(ACCOUNTSQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so.${LIBaccounts-qt5_VERSION})
-+set(ACCOUNTSQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET}/)
+ set(ACCOUNTSQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET}/)

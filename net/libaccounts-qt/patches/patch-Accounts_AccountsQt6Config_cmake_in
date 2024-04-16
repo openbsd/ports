@@ -1,0 +1,12 @@
+Index: Accounts/AccountsQt6Config.cmake.in
+--- Accounts/AccountsQt6Config.cmake.in.orig
++++ Accounts/AccountsQt6Config.cmake.in
+@@ -1,5 +1,5 @@
+ #  ACCOUNTSQT_INCLUDE_DIRS - The libaccounts-qt include directories
+ #  ACCOUNTSQT_LIBRARIES - The libraries needed to use libaccounts-qt
+ 
+-set(ACCOUNTSQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so)
+-set(ACCOUNTSQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET}/)
+\ No newline at end of file
++set(ACCOUNTSQT_LIBRARIES $${INSTALL_LIBDIR}/lib$${TARGET}.so.${LIBaccounts-qt6_VERSION})
++set(ACCOUNTSQT_INCLUDE_DIRS $${INSTALL_PREFIX}/include/$${TARGET}/)

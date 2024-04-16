@@ -1,0 +1,30 @@
+@bin bin/accountstest-qt6
+include/accounts-qt6/
+include/accounts-qt6/Accounts/
+include/accounts-qt6/Accounts/Account
+include/accounts-qt6/Accounts/AccountService
+include/accounts-qt6/Accounts/Application
+include/accounts-qt6/Accounts/AuthData
+include/accounts-qt6/Accounts/Error
+include/accounts-qt6/Accounts/Manager
+include/accounts-qt6/Accounts/Provider
+include/accounts-qt6/Accounts/Service
+include/accounts-qt6/Accounts/ServiceType
+include/accounts-qt6/Accounts/account-service.h
+include/accounts-qt6/Accounts/account.h
+include/accounts-qt6/Accounts/accountscommon.h
+include/accounts-qt6/Accounts/application.h
+include/accounts-qt6/Accounts/auth-data.h
+include/accounts-qt6/Accounts/error.h
+include/accounts-qt6/Accounts/manager.h
+include/accounts-qt6/Accounts/manager_p.h
+include/accounts-qt6/Accounts/provider.h
+include/accounts-qt6/Accounts/service-type.h
+include/accounts-qt6/Accounts/service.h
+include/accounts-qt6/Accounts/utils.h
+lib/cmake/
+lib/cmake/AccountsQt6/
+lib/cmake/AccountsQt6/AccountsQt6Config.cmake
+lib/cmake/AccountsQt6/AccountsQt6ConfigVersion.cmake
+@lib lib/libaccounts-qt6.so.${LIBaccounts-qt6_VERSION}
+lib/pkgconfig/accounts-qt6.pc
