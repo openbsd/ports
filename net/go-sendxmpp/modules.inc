@@ -7,19 +7,20 @@ MODGO_MODULES =	\
 	github.com/cloudflare/circl		 v1.3.7 \
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/gabriel-vasile/mimetype	 v1.4.3 \
+	github.com/google/uuid			 v1.6.0 \
 	github.com/pborman/getopt/v2		 v2.1.0 \
 	github.com/pkg/errors			 v0.9.1 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.7.0 \
-	github.com/xmppo/go-xmpp		 v0.1.4 \
+	github.com/xmppo/go-xmpp		 v0.2.0 \
 	github.com/yuin/goldmark		 v1.4.13 \
-	golang.org/x/crypto			 v0.21.0 \
+	golang.org/x/crypto			 v0.22.0 \
 	golang.org/x/mod			 v0.8.0 \
-	golang.org/x/net			 v0.22.0 \
+	golang.org/x/net			 v0.24.0 \
 	golang.org/x/sync			 v0.1.0 \
-	golang.org/x/sys			 v0.18.0 \
-	golang.org/x/term			 v0.18.0 \
+	golang.org/x/sys			 v0.19.0 \
+	golang.org/x/term			 v0.19.0 \
 	golang.org/x/text			 v0.14.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
