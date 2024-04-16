@@ -31,6 +31,10 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 NO_TEST =		Yes
 
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -mpclmul -msse2 -maes
+.endif
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/hiawatha.conf.in \
 		${WRKSRC}/config/cgi-wrapper.conf \
