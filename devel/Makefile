@@ -1376,8 +1376,10 @@
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah,python3
      SUBDIR += py-click,python3
+     SUBDIR += py-click-didyoumean,python3
      SUBDIR += py-click-log,python3
      SUBDIR += py-click-plugins,python3
+     SUBDIR += py-click-repl,python3
      SUBDIR += py-click-threading,python3
      SUBDIR += py-clint,python3
      SUBDIR += py-cloudpickle,python3
