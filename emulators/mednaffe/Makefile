@@ -1,7 +1,7 @@
 COMMENT =	graphical frontend for mednafen
 
 DISTNAME =	mednaffe-$V
-V =		0.9.2
+V =		0.9.3
 
 CATEGORIES =	emulators
 
