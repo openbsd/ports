@@ -2,7 +2,7 @@ COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata
 GH_PROJECT =		citus
-GH_TAGNAME =		v12.1.0
+GH_TAGNAME =		v12.1.2
 
 CATEGORIES =		databases
 HOMEPAGE =		https://www.citusdata.com/
@@ -10,7 +10,7 @@ HOMEPAGE =		https://www.citusdata.com/
 # AGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto execinfo m pq ssl xml2
+WANTLIB += c crypto pq ssl
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
