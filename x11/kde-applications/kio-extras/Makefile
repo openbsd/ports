@@ -61,6 +61,9 @@ LIB_DEPENDS =	audio/taglib \
 		x11/kde-applications/libkexiv2>=${MODKDE_VERSION} \
 		x11/qt5/qtsvg
 
+# Use internal, ports version is qt6 only
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_KDSoapWSDiscoveryClient=ON
+
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		${BUILD_PKGPATH}
