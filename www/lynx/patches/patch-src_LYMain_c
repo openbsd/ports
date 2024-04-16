@@ -1,7 +1,7 @@
 Index: src/LYMain.c
 --- src/LYMain.c.orig
 +++ src/LYMain.c
-@@ -2176,6 +2176,22 @@ int main(int argc,
+@@ -2177,6 +2177,22 @@ int main(int argc,
      }
  
      /*
