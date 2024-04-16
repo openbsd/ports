@@ -1,0 +1,14 @@
+Based on https://github.com/qt/qtgrpc/commit/8ebca7f46c22fd21fead81580416a4628dcfaf8a
+
+Index: src/tools/qtprotobufgen/qprotobufgenerator.cpp
+--- src/tools/qtprotobufgen/qprotobufgenerator.cpp.orig
++++ src/tools/qtprotobufgen/qprotobufgenerator.cpp
+@@ -276,7 +276,7 @@ void QProtobufGenerator::GenerateHeader(const FileDesc
+                         qtTypesSet.insert(field->message_type()->file()->package());
+                     }
+ #ifdef HAVE_PROTOBUF_SYNC_PIPER
+-                    if (field->has_optional_keyword())
++                    if (field->has_presence() && !field->real_containing_oneof())
+ #else
+                     if (file->syntax() == FileDescriptor::SYNTAX_PROTO2 && field->is_optional()
+                         && !field->containing_oneof())
