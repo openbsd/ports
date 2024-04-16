@@ -102,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy/utils/wiki.py
 share/apertium-apy/
 share/apertium-apy/COPYING
 share/apertium-apy/README.md
+share/apertium-apy/index.html
 share/apertium-apy/langNames.db
 share/apertium-apy/tools/
 share/apertium-apy/tools/apertium-recaptcha-test.html
