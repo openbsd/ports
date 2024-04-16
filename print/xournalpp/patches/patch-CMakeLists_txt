@@ -3,7 +3,7 @@ install the desktop files on OpenBSD too
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -324,7 +324,7 @@ install(DIRECTORY resources
+@@ -329,7 +329,7 @@ install(DIRECTORY resources
          )
  
  # Install desktop shortcuts for Linux

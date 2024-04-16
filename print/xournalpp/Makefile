@@ -2,7 +2,7 @@ COMMENT =	handwriting notetaking with PDF annotation support
 
 GH_ACCOUNT =	xournalpp
 GH_PROJECT =	xournalpp
-GH_TAGNAME =	v1.2.1
+GH_TAGNAME =	v1.2.3
 
 CATEGORIES =	print graphics productivity
 

@@ -4,7 +4,7 @@ time.
 Index: src/util/Stacktrace.cpp
 --- src/util/Stacktrace.cpp.orig
 +++ src/util/Stacktrace.cpp
-@@ -68,6 +68,12 @@ fs::path Stacktrace::getExePath() {
+@@ -72,6 +72,12 @@ fs::path Stacktrace::getExePath() {
      delete[] path;
      return "";
  }
