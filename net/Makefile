@@ -191,6 +191,7 @@
      SUBDIR += jnettop
      SUBDIR += kdeconnect-kde
      SUBDIR += kdsoap
+     SUBDIR += kdsoap-ws-discovery-client
      SUBDIR += kea
      SUBDIR += kea,mysql
      SUBDIR += kea,postgresql
