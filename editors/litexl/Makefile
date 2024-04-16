@@ -1,11 +1,10 @@
 COMMENT =	lightweight, simple, fast, extensible text editor
 
-V =		2.1.3
+V =		2.1.4
 GH_ACCOUNT =	lite-xl
 GH_PROJECT =	lite-xl
 GH_TAGNAME =	v$V
 PKGNAME =	litexl-$V
-REVISION =	0
 
 CATEGORIES =	editors
 HOMEPAGE =	https://lite-xl.com
