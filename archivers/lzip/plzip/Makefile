@@ -1,8 +1,9 @@
 COMMENT =		multi-threaded data compressor based on lzlib
 
 DISTNAME =		plzip-1.11
+REVISION =		0
 
-HOMEPAGE =		http://lzip.nongnu.org/plzip.html
+HOMEPAGE =		https://lzip.nongnu.org/plzip.html
 SITES =			${SITE_SAVANNAH:=lzip/plzip/}
 
 # GPLv2+

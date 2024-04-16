@@ -1,8 +1,9 @@
 COMMENT =		lossless data compressor
 
 DISTNAME =		lzip-1.24.1
+REVISION =		0
 
-HOMEPAGE =		http://lzip.nongnu.org/lzip.html
+HOMEPAGE =		https://lzip.nongnu.org/lzip.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

@@ -1,10 +1,11 @@
 COMMENT =		lzip compression library
 
 DISTNAME =		lzlib-1.14
+REVISION =		0
 
 SHARED_LIBS +=		lz	1.4 # 1.14
 
-HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
+HOMEPAGE =		https://lzip.nongnu.org/lzlib.html
 SITES =			${SITE_SAVANNAH:=lzip/lzlib/}
 
 # 2-clause BSD

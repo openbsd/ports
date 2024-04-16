@@ -1,8 +1,9 @@
 COMMENT =		C implementation of lzip
 
 DISTNAME =		clzip-1.14
+REVISION =		0
 
-HOMEPAGE =		http://lzip.nongnu.org/clzip.html
+HOMEPAGE =		https://lzip.nongnu.org/clzip.html
 SITES =			${SITE_SAVANNAH:=lzip/clzip/}
 
 # GPLv2+

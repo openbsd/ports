@@ -1,8 +1,9 @@
 COMMENT =		decompressor written in C for lzip files
 
 DISTNAME =		lunzip-1.14
+REVISION =		0
 
-HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
+HOMEPAGE =		https://lzip.nongnu.org/lunzip.html
 SITES =			${SITE_SAVANNAH:=lzip/lunzip/}
 
 # GPLv2+
