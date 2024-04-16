@@ -555,6 +555,7 @@
      SUBDIR += scdoc
      SUBDIR += sim
      SUBDIR += simpleini
+     SUBDIR += slides
      SUBDIR += solr
      SUBDIR += source-highlight
      SUBDIR += sp
