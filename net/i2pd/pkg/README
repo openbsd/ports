@@ -5,20 +5,22 @@
 Resource Limits: File Descriptors
 =================================
 
-By default, the i2pd process runs in the login(1) class of "daemon".
-The default limits on file descriptors are insufficient to run i2pd; instead you
-should put the _i2pd user and process in their own login(1) class with tuned
-resources.
-You should also raise the system-wide maxfiles limit.
+${PKGSTEM} needs to open a lot of file descriptors.
 
-1. Configure i2pd login class in the login.conf(5) file:
+For a regular node, you should raise the system-wide maxfiles limit to
+8192:
 
-        i2pd:\
-                :openfiles-cur=8192:\
-                :openfiles-max=8192:\
-                :tc=daemon:
+	# sysctl kern.maxfiles=8192
+	# echo "kern.maxfiles=8192" >> /etc/sysctl.conf
 
-2. Adjust kern.maxfiles, if needed:
-
+If you intend to run a floodfill, you should raise this limit even more:
+ 
 	# sysctl kern.maxfiles=16000
 	# echo "kern.maxfiles=16000" >> /etc/sysctl.conf
+
+and also edit /etc/login.conf.d/i2pd:
+
+	i2pd:\
+		:openfiles-cur=8192:\
+		:openfiles-max=8192:\
+		:tc=daemon:
