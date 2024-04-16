@@ -7,17 +7,18 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.12.0
+GH_TAGNAME =		v1.11.1
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://ninja-build.org/
 
+EPOCH =			0
+
 # Apache License v2.0
 PERMIT_PACKAGE =	Yes
 
-# c>=68.1 needed for ppoll
-WANTLIB =		c>=68.1 m ${COMPILER_LIBCXX}
+WANTLIB =		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
