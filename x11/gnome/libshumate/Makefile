@@ -19,6 +19,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
+BUILD_DEPENDS=		devel/gperf
+
 LIB_DEPENDS=		devel/json-glib \
 			devel/protobuf-c \
 			devel/libsoup3 \
