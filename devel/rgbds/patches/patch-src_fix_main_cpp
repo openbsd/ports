@@ -1,0 +1,24 @@
+Index: src/fix/main.cpp
+--- src/fix/main.cpp.orig
++++ src/fix/main.cpp
+@@ -56,6 +56,8 @@ static struct option const longopts[] = {
+ 	{ NULL,               no_argument,       NULL, 0   }
+ };
+ 
++int pledge(const char *, const char *);
++
+ static void printUsage(void)
+ {
+ 	fputs(
+@@ -1221,6 +1223,11 @@ finish:
+ int main(int argc, char *argv[])
+ {
+ 	nbErrors = 0;
++
++	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
++		fprintf(stderr, "pledge");
++		return 1;
++	}
+ 
+ 	for (int ch; (ch = musl_getopt_long_only(argc, argv, optstring, longopts, NULL)) != -1;) {
+ 		switch (ch) {

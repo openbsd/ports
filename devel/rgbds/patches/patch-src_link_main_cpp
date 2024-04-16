@@ -1,0 +1,22 @@
+Index: src/link/main.cpp
+--- src/link/main.cpp.orig
++++ src/link/main.cpp
+@@ -161,6 +161,8 @@ FILE *openFile(char const *fileName, char const *mode)
+ 	return file;
+ }
+ 
++int pledge(const char *, const char *);
++
+ // Short options
+ static const char *optstring = "dl:m:Mn:O:o:p:S:s:tVvWwx";
+ 
+@@ -353,6 +355,9 @@ next:
+ 
+ int main(int argc, char *argv[])
+ {
++	if (pledge("stdio rpath wpath cpath", NULL) == -1)
++		err("pledge");
++
+ 	// Parse options
+ 	for (int ch; (ch = musl_getopt_long_only(argc, argv, optstring, longopts, NULL)) != -1;) {
+ 		switch (ch) {

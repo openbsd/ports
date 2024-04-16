@@ -1,24 +1,24 @@
 Index: src/gfx/main.cpp
 --- src/gfx/main.cpp.orig
 +++ src/gfx/main.cpp
-@@ -138,6 +138,8 @@ static struct option const longopts[] = {
+@@ -143,6 +143,8 @@ static struct option const longopts[] = {
      {NULL,                 no_argument,       NULL, 0  }
  };
  
 +int pledge(const char *, const char *);
 +
  static void printUsage(void) {
- 	fputs("Usage: rgbgfx [-r stride] [-CmuVZ] [-v [-v ...]] [-a <attr_map> | -A]\n"
+ 	fputs("Usage: rgbgfx [-r stride] [-CmOuVZ] [-v [-v ...]] [-a <attr_map> | -A]\n"
  	      "       [-b <base_ids>] [-c <colors>] [-d <depth>] [-L <slice>] [-N <nb_tiles>]\n"
-@@ -581,6 +583,11 @@ static char *parseArgv(int argc, char **argv, bool &au
+@@ -589,6 +591,11 @@ static char *parseArgv(int argc, char **argv) {
+ }
  
  int main(int argc, char *argv[]) {
- 	bool autoAttrmap = false, autoTilemap = false, autoPalettes = false, autoPalmap = false;
-+
 +	if (pledge("stdio rpath wpath cpath", NULL) == -1) {
 +		fputs("pledge", stderr);
 +		exit(1);
 +	}
- 
++
  	struct AtFileStackEntry {
  		int parentInd; // Saved offset into parent argv
+ 		std::vector<char *> argv; // This context's arg pointer vec

@@ -2,9 +2,8 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	Game Boy development system
 
-V =		0.6.1
+V =		0.7.0
 DISTNAME =	rgbds-$V
-REVISION =	0
 
 CATEGORIES =	devel
 
