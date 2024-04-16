@@ -3,7 +3,7 @@ Some compilers don't have -Wvla.
 Index: lib/libzstd.mk
 --- lib/libzstd.mk.orig
 +++ lib/libzstd.mk
-@@ -100,7 +100,7 @@ endif
+@@ -113,7 +113,7 @@ endif
  DEBUGFLAGS= -Wall -Wextra -Wcast-qual -Wcast-align -Wshadow \
              -Wstrict-aliasing=1 -Wswitch-enum -Wdeclaration-after-statement \
              -Wstrict-prototypes -Wundef -Wpointer-arith \
