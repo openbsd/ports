@@ -1,8 +1,8 @@
-COMMENT=	tty-based e-mail client, Mutt with patches
+COMMENT=	tty-based e-mail client, forked from Mutt
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20240329
+GH_TAGNAME=	20240416
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
