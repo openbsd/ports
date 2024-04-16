@@ -42,8 +42,6 @@ include/graphviz/cgraph.h
 include/graphviz/color.h
 include/graphviz/geom.h
 include/graphviz/graphviz_version.h
-include/graphviz/gv.cpp
-include/graphviz/gv.i
 include/graphviz/gvc.h
 include/graphviz/gvcext.h
 include/graphviz/gvcjob.h
@@ -71,12 +69,12 @@ lib/graphviz/guile/
 @lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
 @lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}
 @lib lib/graphviz/libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION}
-@lib lib/graphviz/libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION}
+@lib lib/graphviz/libgvplugin_kitty.so.${LIBgvplugin_kitty_VERSION}
 @lib lib/graphviz/libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION}
 @lib lib/graphviz/libgvplugin_pango.so.${LIBgvplugin_pango_VERSION}
 @lib lib/graphviz/libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION}
 @lib lib/graphviz/libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION}
-@lib lib/graphviz/libgvplugin_visio.so.${LIBgvplugin_visio_VERSION}
+@lib lib/graphviz/libgvplugin_vt.so.${LIBgvplugin_vt_VERSION}
 @lib lib/graphviz/libgvplugin_webp.so.${LIBgvplugin_webp_VERSION}
 @lib lib/graphviz/libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION}
 lib/graphviz/perl/
@@ -87,14 +85,12 @@ lib/graphviz/perl/gv.pm
 @lib lib/libcgraph.so.${LIBcgraph_VERSION}
 @lib lib/libgvc.so.${LIBgvc_VERSION}
 @lib lib/libgvpr.so.${LIBgvpr_VERSION}
-@lib lib/liblab_gamut.so.${LIBlab_gamut_VERSION}
 @lib lib/libpathplan.so.${LIBpathplan_VERSION}
 @lib lib/libxdot.so.${LIBxdot_VERSION}
 lib/pkgconfig/libcdt.pc
 lib/pkgconfig/libcgraph.pc
 lib/pkgconfig/libgvc.pc
 lib/pkgconfig/libgvpr.pc
-lib/pkgconfig/liblab_gamut.pc
 lib/pkgconfig/libpathplan.pc
 lib/pkgconfig/libxdot.pc
 ${P5ARCH}/

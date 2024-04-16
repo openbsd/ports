@@ -1,0 +1,14 @@
+Ensure the plugin version check doesn't reject plugins with our version numbers.
+
+Index: lib/gvc/gvconfig.c
+--- lib/gvc/gvconfig.c.orig
++++ lib/gvc/gvconfig.c
+@@ -420,7 +420,7 @@ static bool is_plugin(const char *filepath) {
+     // turn GVPLUGIN_VERSION into a string
+     #define STRINGIZE_(x) #x
+     #define STRINGIZE(x) STRINGIZE_(x)
+-    static const char VERSION[] = STRINGIZE(GVPLUGIN_VERSION);
++    static const char VERSION[] = STRINGIZE(${GVPLUGIN_VERSION});
+     #undef STRINGIZE
+     #undef STRINGIZE_
+ 

@@ -1,4 +1,5 @@
 @conflict graphviz-<3
+lib/tcl/
 lib/tcl/graphviz/
 @so lib/tcl/graphviz/libgdtclft.so
 @so lib/tcl/graphviz/libgv_tcl.so

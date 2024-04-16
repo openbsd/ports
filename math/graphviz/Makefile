@@ -1,7 +1,7 @@
 COMMENT-main=	graph drawing software
 COMMENT-tcl=	Tcl bindings to graphviz
 
-V=		7.1.0
+V=		10.0.1
 DISTNAME=	graphviz-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	graphviz-tcl-$V
@@ -11,23 +11,23 @@ MULTI_PACKAGES=	-main -tcl
 
 SITES=		https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/$V/
 
-SHARED_LIBS += cdt			2.0 # 5.0
+SHARED_LIBS += cdt			3.0 # 5.0
 SHARED_LIBS += xdot			1.0 # 4.0
-SHARED_LIBS += cgraph			1.0 # 6.0
-SHARED_LIBS += pathplan			3.0 # 4.0
-SHARED_LIBS += gvc			2.0 # 6.0
-SHARED_LIBS += lab_gamut		0.0 # 1.0
-SHARED_LIBS += gvpr			1.0 # 2.0
+SHARED_LIBS += cgraph			2.0 # 6.0
+SHARED_LIBS += pathplan			4.0 # 4.0
+SHARED_LIBS += gvc			3.0 # 6.0
+SHARED_LIBS += gvpr			2.0 # 2.0
 
 # plugins loaded by dlopen() in graphviz, not traditional shared libraries
 # linked by other software. following upstream numbering reduces the patches
 # needed to handle this to a simple .0 addition in configure.ac.
+GVPLUGIN_VERSION =	7.0
 .for plugin in \
-	gvplugin_core gvplugin_gd gvplugin_gdk gvplugin_gtk \
-	gvplugin_pango gvplugin_rsvg gvplugin_visio gvplugin_xlib \
-	gvplugin_dot_layout gvplugin_neato_layout gvplugin_webp \
+	gvplugin_core gvplugin_gd gvplugin_gdk gvplugin_gtk gvplugin_kitty \
+	gvplugin_pango gvplugin_rsvg gvplugin_xlib \
+	gvplugin_dot_layout gvplugin_neato_layout gvplugin_vt gvplugin_webp \
 	gvplugin_poppler
-SHARED_LIBS += ${plugin} 6.0
+SHARED_LIBS += ${plugin} ${GVPLUGIN_VERSION}
 .endfor
 
 HOMEPAGE=	https://graphviz.org/
@@ -41,13 +41,13 @@ WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xdmcp Xext Xrender cairo
 WANTLIB += expat ffi fontconfig freetype fribidi gd gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv intl
 WANTLIB += jpeg ltdl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png tiff webp xcb xcb-render xcb-shm
+WANTLIB += pcre2-8 pixman-1 png sharpyuv tiff webp xcb xcb-render xcb-shm
 WANTLIB += z zstd
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama Xrandr
-WANTLIB-main += atk-1.0 c cairo-gobject gc gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-main += gmp gtk-x11-2.0 guile-2.2 lcms2 openjp2 perl poppler
+WANTLIB-main += c cairo-gobject gc gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-main += gmp guile-2.2 lcms2 openjp2 perl poppler
 WANTLIB-main += poppler-glib rsvg-2 unistring xml2
 
 # "extra" libtclXX: tcldot is built against Tcl headers
@@ -100,6 +100,7 @@ CONFIGURE_ARGS=	--disable-man-pdfs \
 		--disable-php \
 		--disable-python \
 		--disable-python3 \
+		--disable-quartz \
 		--disable-r \
 		--disable-ruby \
 		--enable-tcl
@@ -143,8 +144,13 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
 		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
 
+# Ensure plugin version check works.
+SUBST_VARS +=	GVPLUGIN_VERSION
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/gvc/gvconfig.c
+
 post-install:
-# generate config6 from fake-install directkry, so we don't need
+# generate config6 from fake-install directory, so we don't need
 # @exec or a pregenerated file
 	GVBINDIR=${PREFIX}/lib/graphviz \
 	    LD_LIBRARY_PATH=${PREFIX}/lib \

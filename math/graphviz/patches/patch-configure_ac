@@ -10,8 +10,8 @@ Index: configure.ac
      ;;
  esac
  AC_DEFINE_UNQUOTED(GVPLUGIN_VERSION,$GVPLUGIN_VERSION,[Compatibility version number for plugins.])
-@@ -642,7 +642,7 @@ else
-       if test "x$GUILE_CONFIG" = "x"; then
+@@ -600,7 +600,7 @@ else
+       if test "$GUILE_CONFIG" = ""; then
          use_guile="No (guile not available)"
        else
 -        [GUILE_VERSION=`$GUILE_CONFIG --version 2>&1 | sed -n '1 s/^.* \+\([0-9\.]\+\)$/\1/ p'`]
@@ -19,3 +19,13 @@ Index: configure.ac
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
          AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)
+@@ -1760,7 +1760,8 @@ AM_CONDITIONAL([WITH_QT], [test "$use_qt" = "Yes"])
+ dnl -----------------------------------
+ dnl INCLUDES and LIBS for QUARTZ
+ 
+-if test "${host_os::6}" = "darwin"; then
++# ${host_os::6}": bad substitution
++if test false; then
+   AC_ARG_WITH(quartz,
+     [AS_HELP_STRING([--with-quartz=yes],[Quartz framework (Mac OS X)])],
+     [],[with_quartz=yes])

@@ -1,0 +1,12 @@
+Silence mandocdb warnings.
+
+Index: cmd/tools/mm2gv.1
+--- cmd/tools/mm2gv.1.orig
++++ cmd/tools/mm2gv.1
+@@ -1,6 +1,3 @@
+-.EQ
+-delim $$
+-.EN
+ .TH MM2GV 1 "31 July 2008"
+ .SH NAME
+ mm2gv \- Matrix Market-DOT converters
