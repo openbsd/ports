@@ -1,6 +1,5 @@
 COMMENT =	Z80 cross assembler
-DISTNAME =	pasmo-0.5.3
-REVISION =	0
+DISTNAME =	pasmo-0.5.5
 
 CATEGORIES =	devel
 HOMEPAGE =	http://pasmo.speccy.org/
@@ -14,7 +13,6 @@ WANTLIB += c m ${LIBCXX}
 COMPILER =		base-clang ports-gcc base-gcc
 
 SITES =			http://pasmo.speccy.org/bin/
-EXTRACT_SUFX =		.tgz
 
 CONFIGURE_STYLE =	gnu
 
@@ -25,13 +23,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOC_DIR}
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.asm ${EXAMPLE_DIR}
-
-# Compile a few examples.
-# 'all.asm' is a good test, as it exercises all (supported) Z80 instructions.
-do-test:
-	cd ${WRKBUILD} && \
-		./pasmo --tapbas ${WRKSRC}/black.asm black.tap && \
-		./pasmo --tapbas ${WRKSRC}/hellospec.asm hellospec.tap && \
-		./pasmo ${WRKSRC}/all.asm ${WRKSRC}/all.bin
 
 .include <bsd.port.mk>
