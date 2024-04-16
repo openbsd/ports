@@ -1,0 +1,27 @@
+Fix building minizip-ng.
+
+https://github.com/dolphin-emu/dolphin/commit/a5d06fde4b597d93750ba29bc2db83401fe431f7
+
+I think had unintended breakage.
+
+Index: Source/Core/UICommon/ResourcePack/ResourcePack.cpp
+--- Source/Core/UICommon/ResourcePack/ResourcePack.cpp.orig
++++ Source/Core/UICommon/ResourcePack/ResourcePack.cpp
+@@ -36,7 +36,7 @@ ResourcePack::ResourcePack(const std::string& path) : 
+     return;
+   }
+ 
+-  if (unzLocateFile(file, "manifest.json", nullptr) == UNZ_END_OF_LIST_OF_FILE)
++  if (unzLocateFile(file, "manifest.json", 0) == UNZ_END_OF_LIST_OF_FILE)
+   {
+     m_valid = false;
+     m_error = "Resource pack is missing a manifest.";
+@@ -63,7 +63,7 @@ ResourcePack::ResourcePack(const std::string& path) : 
+     return;
+   }
+ 
+-  if (unzLocateFile(file, "logo.png", nullptr) != UNZ_END_OF_LIST_OF_FILE)
++  if (unzLocateFile(file, "logo.png", 0) != UNZ_END_OF_LIST_OF_FILE)
+   {
+     unz_file_info64 logo_info{};
+     unzGetCurrentFileInfo64(file, &logo_info, nullptr, 0, nullptr, 0, nullptr, 0);

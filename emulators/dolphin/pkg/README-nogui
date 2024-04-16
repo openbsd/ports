@@ -12,11 +12,6 @@ the datasize limit to more than 16G to run dolphin. In ksh(1) run:
 
 or adjust the datasize entry for your user class in login.conf(5).
 
-Audio
-=====
-
-Config > Audio and under Backend Settings set Audio Backend: Cubeb.
-
 Performance issues
 ==================
 

@@ -1,5 +1,5 @@
-change hid_init to hidapi_hid_init which is renamed locally
-to avoid conflict with usbhid
+Change hid_init() to hidapi_hid_init() which is renamed locally to avoid
+conflict with usbhid.
 
 Index: Source/Core/Core/HW/WiimoteReal/IOhidapi.cpp
 --- Source/Core/Core/HW/WiimoteReal/IOhidapi.cpp.orig

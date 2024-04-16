@@ -1,11 +1,12 @@
 Avoid picking up SoundTouch.h from audio/soundtouch if installed.
+
 CMakeLists.txt: "Unable to use system soundtouch library: We require shorts, not
 floats"
 
 Index: Externals/soundtouch/SoundTouch.h
 --- Externals/soundtouch/SoundTouch.h.orig
 +++ Externals/soundtouch/SoundTouch.h
-@@ -69,8 +69,8 @@
+@@ -62,8 +62,8 @@
  //
  ////////////////////////////////////////////////////////////////////////////////
  
