@@ -3,9 +3,9 @@ Unbreak with newer libc++. FreeBSD r447202
 Index: src/3rdparty/squirrel/squirrel/sqvm.cpp
 --- src/3rdparty/squirrel/squirrel/sqvm.cpp.orig
 +++ src/3rdparty/squirrel/squirrel/sqvm.cpp
-@@ -4,9 +4,9 @@
- 
+@@ -5,9 +5,9 @@
  #include "../../../stdafx.h"
+ #include "../../fmt/format.h"
  
 +#include <math.h>
  #include <squirrel.h>

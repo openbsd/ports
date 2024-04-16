@@ -1,6 +1,6 @@
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		13.4
+V =		14.0
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
 
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.openttd.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c fluidsynth fontconfig freetype icudata icui18n icuuc
+WANTLIB += c curl fluidsynth fontconfig freetype harfbuzz icudata icui18n icuuc
 WANTLIB += lzma lzo2 m png z
 
 COMPILER =		base-clang ports-gcc
@@ -27,10 +27,12 @@ DIST_SUBDIR =		openttd
 MODULES =		devel/cmake
 
 LIB_DEPENDS=		archivers/lzo2 \
+			archivers/xz \
 			audio/fluidsynth \
+			devel/harfbuzz \
 			graphics/png \
-			textproc/icu4c \
-			archivers/xz
+			net/curl \
+			textproc/icu4c
 
 # statically linked
 LIB_DEPENDS +=		devel/sdl2
