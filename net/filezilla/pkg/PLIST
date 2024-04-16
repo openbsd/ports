@@ -730,9 +730,6 @@ share/filezilla/resources/tango/48x48/unknown.png
 share/filezilla/resources/tango/48x48/upload.png
 share/filezilla/resources/tango/48x48/uploadadd.png
 share/filezilla/resources/tango/theme.xml
-share/filezilla/resources/xrc/
-share/filezilla/resources/xrc/dialogs.xrc
-share/filezilla/resources/xrc/netconfwizard.xrc
 share/icons/hicolor/16x16/apps/filezilla.png
 share/icons/hicolor/32x32/apps/filezilla.png
 share/icons/hicolor/480x480/
