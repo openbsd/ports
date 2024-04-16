@@ -31,3 +31,8 @@ AD DC support
 Support for AD DC mode is explicitely disabled in this port.  The AD DC
 code is broken at runtime on several archs, and would need xattrs/ACLs
 support to be truely usable.
+
+Caveat
+======
+Several VFS Modules provided by Samba, e.g. acl_tdb, are essentially
+broken on OpenBSD.
