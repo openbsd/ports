@@ -1,3 +1,6 @@
+# build uses too much memory for 32-bit archs
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 L =	oci-fra
 LANG =	Occitan/French
 V =	1.0.0
