@@ -1,5 +1,5 @@
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.11.5
+DISTNAME =		freerdp-2.11.6
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  winpr2                    2.1
 HOMEPAGE =		https://www.freerdp.com/
 SITES =			https://pub.freerdp.com/releases/
 
-# add sndio patchset, not yet in stable branch
+# add sndio patchset, not yet in 2.x branch
 # mirrored from https://github.com/FreeRDP/FreeRDP/commit/b3a2042103a192d9e4482691ce9e7d73f9475b09.patch
 # (github patch files aren't stable)
 SITES.sndio =		https://spacehopper.org/mirrors/
