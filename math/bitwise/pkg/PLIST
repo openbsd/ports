@@ -1,0 +1,4 @@
+@bin bin/bitwise
+@man man/man1/bitwise.1
+share/doc/bitwise/
+share/doc/bitwise/README.md
