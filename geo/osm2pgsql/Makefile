@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		1.10.0
+GH_TAGNAME =		1.11.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		osm2pgsql-dev
 

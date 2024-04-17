@@ -3,7 +3,7 @@ disable opencv dependency
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -188,7 +188,7 @@ if (WITH_LUA)
+@@ -193,7 +193,7 @@ if (WITH_LUA)
          add_definitions(-DHAVE_LUAJIT=1)
      else()
          message(STATUS "Building with Lua support")
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
          include_directories(SYSTEM ${LUA_INCLUDE_DIR})
      endif()
      add_definitions(-DHAVE_LUA=1)
-@@ -212,6 +212,7 @@ find_path(POTRACE_INCLUDE_DIR potracelib.h)
+@@ -217,6 +217,7 @@ find_path(POTRACE_INCLUDE_DIR potracelib.h)
  find_library(POTRACE_LIBRARY NAMES potrace)
  
  find_package(OpenCV QUIET OPTIONAL_COMPONENTS core imgcodecs imgproc)

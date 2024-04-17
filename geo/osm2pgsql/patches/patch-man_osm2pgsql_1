@@ -1,7 +1,7 @@
 Index: man/osm2pgsql.1
 --- man/osm2pgsql.1.orig
 +++ man/osm2pgsql.1
-@@ -160,7 +160,7 @@ If the RAM is not big enough, use about 75% of memory.
+@@ -163,7 +163,7 @@ If the RAM is not big enough, use about 75% of memory.
  Make sure to leave enough RAM for PostgreSQL.
  It needs at least the amount of \f[V]shared_buffers\f[R] given in its
  configuration.
@@ -10,7 +10,7 @@ Index: man/osm2pgsql.1
  .TP
  --cache-strategy=STRATEGY
  This deprecated option will be ignored.
-@@ -239,7 +239,7 @@ The style file.
+@@ -240,7 +240,7 @@ The style file.
  This specifies how the data is imported into the database, its format
  depends on the output.
  (For the \f[B]pgsql\f[R] output, the default is

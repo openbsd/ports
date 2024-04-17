@@ -1,12 +1,12 @@
 Index: src/command-line-parser.cpp
 --- src/command-line-parser.cpp.orig
 +++ src/command-line-parser.cpp
-@@ -136,7 +136,7 @@ Common options:\n\
-                     required if you want to update with --append later.\n\
-         --drop      Only with --slim: drop temporary tables after import\n\
-                     (no updates are possible).\n\
--    -C|--cache=SIZE  Use up to SIZE MB for caching nodes (default: 800).\n\
-+    -C|--cache=SIZE  Use up to SIZE MB for caching nodes (default: 100).\n\
-     -F|--flat-nodes=FILE  Specifies the file to use to persistently store node\n\
-                     information in slim mode instead of in PostgreSQL.\n\
-                     This is a single large file (> 50GB). Only recommended\n\
+@@ -502,7 +502,7 @@ options_t parse_command_line(int argc, char *argv[])
+ 
+     // --cache
+     app.add_option("-C,--cache", options.cache)
+-        ->description("Use up to SIZE MB for caching nodes (default: 800).")
++        ->description("Use up to SIZE MB for caching nodes (default: 100).")
+         ->type_name("SIZE")
+         ->group("Middle options");
+ 
