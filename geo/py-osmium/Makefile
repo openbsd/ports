@@ -1,6 +1,6 @@
 COMMENT =	Python bindings for libosmium
 
-MODPY_EGG_VERSION =	3.6.0
+MODPY_EGG_VERSION =	3.7.0
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
