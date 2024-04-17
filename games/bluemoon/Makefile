@@ -1,7 +1,6 @@
 COMMENT =	console-based 52-card solitare game
-DISTNAME =	bluemoon-2.12
+DISTNAME =	bluemoon-2.13
 CATEGORIES =	games
-REVISION =	2
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/
 

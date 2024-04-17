@@ -1,11 +1,12 @@
---- bluemoon.c.orig	Wed May 21 08:25:41 2014
-+++ bluemoon.c	Wed May 21 15:31:24 2014
-@@ -399,7 +399,7 @@ int main(int argc, char *argv[])
-     if (argc == 2)
- 	srand(seed = atoi(argv[1]));
-     else
--	srand(seed = (int)time((long *)0));
-+	srand(seed = (int)time((time_t *)0));
- 
-     init_vars();
+Index: bluemoon.c
+--- bluemoon.c.orig
++++ bluemoon.c
+@@ -386,7 +386,7 @@ int main(int argc, char *argv[]) {
+ 	if (argc == 2) {
+ 		srand(seed = atoi(argv[1]));
+ 	} else {
+-		srand(seed = (int)time((long *)0));
++		srand(seed = (int)time((time_t *)0));
+ 	}
+ 	init_vars();
  
