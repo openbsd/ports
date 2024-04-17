@@ -1,14 +1,13 @@
 COMMENT =	Apache SpamAssassin integration to the OpenSMTPD daemon
 
-V =		0.7
+V =		0.8
 FILTER_NAME =	spamassassin
 DISTNAME =	filter-spamassassin-${V}
 HOMEPAGE =	https://www.umaxx.net/
-REVISION =	1
 
 CATEGORIES =	mail
 
-MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org> \
+MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>, \
 		Joerg Jung <jung@openbsd.org>
 
 SITES =		${HOMEPAGE}dl/
