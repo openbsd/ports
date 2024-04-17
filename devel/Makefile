@@ -1400,6 +1400,7 @@
      SUBDIR += py-cppy,python3
      SUBDIR += py-crayons,python3
      SUBDIR += py-crc32c,python3
+     SUBDIR += py-cruft,python3
      SUBDIR += py-cstruct,python3
      SUBDIR += py-curio,python3
      SUBDIR += py-curtsies,python3
@@ -1615,6 +1616,7 @@
      SUBDIR += py-setuptools_scm_git_archive,python3
      SUBDIR += py-setuptools_trial,python3
      SUBDIR += py-sh,python3
+     SUBDIR += py-shellingham,python3
      SUBDIR += py-simpleeval,python3
      SUBDIR += py-simplegeneric,python3
      SUBDIR += py-simplejson,python3
@@ -1681,6 +1683,7 @@
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
      SUBDIR += py-typeguard,python3
+     SUBDIR += py-typer,python3
      SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal,python3
