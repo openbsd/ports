@@ -1,0 +1,11 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -84,6 +84,7 @@ set (blobby-server_SRC ${common_SRC}
+ 
+ find_package(Boost REQUIRED)
+ find_package(OpenGL)
++find_package(tinyxml2)
+ add_subdirectory(raknet)
+ add_subdirectory(blobnet)
+ 

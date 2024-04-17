@@ -1,5 +1,6 @@
 @bin bin/blobby
 @bin bin/blobby-server
+share/applications/blobby.desktop
 share/blobby/
 share/blobby/Icon.bmp
 share/blobby/api.lua
@@ -8,8 +9,10 @@ share/blobby/bot_api.lua
 share/blobby/config.xml
 share/blobby/gfx.zip
 share/blobby/inputconfig.xml
+share/blobby/lang_cs.xml
 share/blobby/lang_de.xml
 share/blobby/lang_en.xml
+share/blobby/lang_es.xml
 share/blobby/lang_fr.xml
 share/blobby/lang_it.xml
 share/blobby/rules.zip
@@ -17,3 +20,8 @@ share/blobby/rules_api.lua
 share/blobby/scripts.zip
 share/blobby/server.xml
 share/blobby/sounds.zip
+share/icons/hicolor/128x128/apps/blobby.png
+share/metainfo/
+share/metainfo/blobby.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

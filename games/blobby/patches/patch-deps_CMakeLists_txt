@@ -1,0 +1,6 @@
+Index: deps/CMakeLists.txt
+--- deps/CMakeLists.txt.orig
++++ deps/CMakeLists.txt
+@@ -1,2 +1 @@
+-add_subdirectory(tinyxml)
+ add_subdirectory(lua)
