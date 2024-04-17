@@ -5,9 +5,9 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
-PKGNAME =		dolphin-5.0.0.20230920
+PKGNAME =		dolphin-5.0.0.20230924
 DIST_TUPLE +=		github dolphin-emu dolphin \
-			c0f4825a97f7ee03f0e6242b4ddf1a6a1b13c8ef . # GPLv2
+			1a9d946a3337317d288b94b093f1e385e6989335 . # GPLv2
 
 # Externals/
 DIST_TUPLE +=		github dolphin-emu ext-win-qt \
@@ -83,7 +83,7 @@ LIB_DEPENDS-nogui =	archivers/lzo2 \
 			archivers/zstd \
 			comms/libhidapi \
 			converters/libiconv \
-			devel/fmt \
+			devel/fmt>=10.2.1 \
 			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
