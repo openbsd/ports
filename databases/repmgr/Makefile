@@ -1,13 +1,14 @@
 COMMENT =	HA and replication cluster management for PostgreSQL
 
-DISTNAME =	repmgr-5.3.3
+DISTNAME =	repmgr-5.4.1
 CATEGORIES =	databases
 HOMEPAGE =	https://repmgr.org/
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c pq
+WANTLIB += c crypto curl curses execinfo json-c m pq readline ssl
+WANTLIB += xml2 z
 
 SITES =		${HOMEPAGE}download/
 
@@ -18,7 +19,9 @@ CONFIGURE_STYLE = gnu
 
 # for getopt_long.h
 BUILD_DEPENDS =	databases/postgresql,-server
-LIB_DEPENDS =	databases/postgresql
+LIB_DEPENDS =	databases/postgresql \
+		net/curl \
+		devel/json-c
 RUN_DEPENDS =	net/rsync
 
 NO_TEST =	Yes
