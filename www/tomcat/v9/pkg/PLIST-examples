@@ -876,6 +876,7 @@ webapps/docs/api/org/apache/catalina/util/SessionConfig.html
 webapps/docs/api/org/apache/catalina/util/SessionIdGeneratorBase.html
 webapps/docs/api/org/apache/catalina/util/StandardSessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
+webapps/docs/api/org/apache/catalina/util/StringUtil.html
 webapps/docs/api/org/apache/catalina/util/TLSUtil.html
 webapps/docs/api/org/apache/catalina/util/TimeBucketCounter.html
 webapps/docs/api/org/apache/catalina/util/ToStringUtil.html
@@ -1456,10 +1457,8 @@ webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/managed/package-tree.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/package-summary.html
 webapps/docs/api/org/apache/tomcat/dbcp/dbcp2/package-tree.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/
-webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseKeyedPooledObjectFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseObject.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/BaseObjectPool.html
-webapps/docs/api/org/apache/tomcat/dbcp/pool2/BasePooledObjectFactory.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/DestroyMode.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/KeyedObjectPool.html
 webapps/docs/api/org/apache/tomcat/dbcp/pool2/KeyedPooledObjectFactory.html
@@ -1857,7 +1856,6 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/impl/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/servlet/
-webapps/docs/api/org/apache/tomcat/util/http/fileupload/servlet/ServletFileUpload.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/servlet/ServletRequestContext.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/servlet/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/servlet/package-tree.html
