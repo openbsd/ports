@@ -9,7 +9,7 @@ PERMIT_PACKAGE ?=	Yes
 MAINTAINER ?=	Stuart Henderson <stu.ports@spacehopper.org>
 
 .if !defined(MODULE_NAME)
-HOMEPAGE =	https://icinga.com/
+HOMEPAGE ?=	https://icinga.com/
 .else
 GH_PROJECT ?=	icingaweb2-module-${MODULE_NAME}
 GH_TAGNAME ?=	${MODULE_VERSION}
