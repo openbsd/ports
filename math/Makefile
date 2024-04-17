@@ -6,6 +6,7 @@
      SUBDIR += arpack
      SUBDIR += bc-gh
      SUBDIR += bcal
+     SUBDIR += bitwise
      SUBDIR += blas
      SUBDIR += calc
      SUBDIR += calcoo
