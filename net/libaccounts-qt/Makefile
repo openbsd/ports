@@ -45,16 +45,11 @@ TEST_TARGET =		check
 TEST_IS_INTERACTIVE =	Yes
 
 pre-configure:
-.if ${FLAVOR:Mqt5}
-	# Only qt5 ships with q{collection,help}generator
-	ln -sf ${LOCALBASE}/lib/qt5/bin/q{collection,help}generator ${WRKDIR}/bin/
-.endif
 	${SUBST_CMD} ${WRKSRC}/Accounts/AccountsQt5Config.cmake.in \
 		${WRKSRC}/Accounts/AccountsQt6Config.cmake.in
 
 post-install:
 	mv ${PREFIX}/bin/accountstest ${PREFIX}/bin/accountstest-${QT_VERSION}
-	@rm -rf ${PREFIX}/share/doc/accounts-qt
 
 .include <bsd.port.mk>
 
