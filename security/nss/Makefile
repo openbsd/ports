@@ -37,9 +37,9 @@ MAKE_ENV=		LOCALBASE="${LOCALBASE}" \
 
 .if !defined(DEBUG)
 MAKE_ENV+=		BUILD_OPT=1
-OBJTYPE=		DBG
-.else
 OBJTYPE=		OPT
+.else
+OBJTYPE=		DBG
 .endif
 
 USE_GMAKE=		Yes
