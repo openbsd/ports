@@ -1,6 +1,6 @@
 COMMENT =	game data files for zelda3
 
-V =		0.2-beta
+V =		0.3
 PKGNAME =	zelda3-data-${V:S/-//g}
 
 GH_ACCOUNT =	snesrev
@@ -26,14 +26,14 @@ PERMIT_DISTFILES =	${PERMIT_PACKAGE}
 
 CONFIGURE_STYLE =	none
 # the game program is compiled by games/zelda3; we just build the assets
-ALL_TARGET =		tables/zelda3_assets.dat
+ALL_TARGET =		zelda3_assets.dat
 
 pre-build:
-	ln -sf ${WRKDIR}/games/zelda3-rom/zelda3.sfc ${WRKSRC}/tables/zelda3.sfc
+	ln -sf ${WRKDIR}/games/zelda3-rom/zelda3.sfc ${WRKSRC}/zelda3.sfc
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zelda3
-	${INSTALL_DATA} ${WRKSRC}/tables/zelda3_assets.dat \
+	${INSTALL_DATA} ${WRKSRC}/zelda3_assets.dat \
 		${PREFIX}/share/zelda3/zelda3_assets.dat
 
 .include <bsd.port.mk>

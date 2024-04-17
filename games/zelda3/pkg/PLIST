@@ -2,3 +2,4 @@
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/zelda3/
 share/examples/zelda3/zelda3.ini
+@comment share/zelda3/

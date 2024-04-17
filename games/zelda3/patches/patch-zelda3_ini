@@ -1,7 +1,7 @@
 Index: zelda3.ini
 --- zelda3.ini.orig
 +++ zelda3.ini
-@@ -135,13 +135,13 @@ CancelBirdTravel = 0
+@@ -143,13 +143,13 @@ CancelBirdTravel = 0
  # Order: Up, Down, Left, Right, Select, Start, A, B, X, Y, L, R
  
  # This default is suitable for QWERTY keyboards.

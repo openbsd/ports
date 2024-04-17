@@ -1,6 +1,6 @@
 COMMENT =	reimplementation of Zelda - A Link to the Past
 
-V =		0.2-beta
+V =		0.3
 PKGNAME =	zelda3-${V:S/-//g}
 
 GH_ACCOUNT =	snesrev
@@ -23,8 +23,10 @@ LIB_DEPENDS =		devel/sdl2
 USE_GMAKE =		Yes
 ALL_TARGET =		zelda3
 
+FIX_CRLF_FILES =	src/main.c zelda3.ini
+
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/main.c
+	${SUBST_CMD} ${WRKSRC}/src/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zelda3 ${PREFIX}/bin/zelda3

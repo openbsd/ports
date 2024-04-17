@@ -1,0 +1,14 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -812,8 +812,8 @@ static void LoadAssets() {
+   size_t length = 0;
+   uint8 *data = ReadWholeFile("zelda3_assets.dat", &length);
+   if (!data)
+-    data = ReadWholeFile("tables/zelda3_assets.dat", &length);
+-  if (!data) Die("Failed to read zelda3_assets.dat. Please see the README for information about how you get this file.");
++    data = ReadWholeFile("${LOCALBASE}/share/zelda3/zelda3_assets.dat", &length);
++  if (!data) Die("Failed to read zelda3_assets.dat. Please install the games/zelda3-data port.");
+ 
+   static const char kAssetsSig[] = { kAssets_Sig };
+ 
