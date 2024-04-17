@@ -1,12 +1,13 @@
 COMMENT=	terminal browser for gemini protocol
 
 MODGO_MODNAME=	github.com/makeworld-the-better-one/amfora
-MODGO_VERSION=	v1.9.2
-REVISION=	0
+MODGO_VERSION=	v1.10.0
 
 DISTNAME=	amfora-${MODGO_VERSION}
 
 CATEGORIES=	net
+
+MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
 HOMEPAGE=	https://github.com/makeworld-the-better-one/amfora
 
