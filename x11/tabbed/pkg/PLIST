@@ -1,2 +1,4 @@
 @bin bin/tabbed
+@bin bin/xembed
 @man man/man1/tabbed.1
+@man man/man1/xembed.1

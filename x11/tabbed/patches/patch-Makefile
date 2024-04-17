@@ -1,43 +1,47 @@
---- Makefile.orig	Fri Sep 16 14:06:12 2011
-+++ Makefile	Fri Sep 16 14:09:54 2011
-@@ -15,8 +15,7 @@ options:
- 	@echo "CC       = ${CC}"
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -4,13 +4,13 @@ NAME = tabbed
+ VERSION = 0.8
  
- .c.o:
--	@echo CC $<
--	@${CC} -c ${CFLAGS} $<
-+	${CC} -c ${CFLAGS} $<
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX = ${PREFIX}/man
+ DOCPREFIX = ${PREFIX}/share/doc/${NAME}
  
- ${OBJ}: config.h config.mk
+ # use system flags.
+-TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/include/freetype2 ${CFLAGS}
+-TABBED_LDFLAGS = -L/usr/X11R6/lib -lX11 -lfontconfig -lXft ${LDFLAGS}
++TABBED_CFLAGS = -I${X11BASE}/include -I${X11BASE}/include/freetype2 ${CFLAGS}
++TABBED_LDFLAGS = -L${X11BASE}/lib -lX11 -lfontconfig -lXft ${LDFLAGS}
+ TABBED_CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700L
  
-@@ -25,8 +24,7 @@ config.h:
- 	@cp config.def.h $@
- 
- tabbed: tabbed.o
--	@echo CC -o $@
--	@${CC} -o $@ tabbed.o ${LDFLAGS}
-+	${CC} -o $@ tabbed.o ${LDFLAGS}
- 
- clean:
- 	@echo cleaning
-@@ -42,14 +40,12 @@ dist: clean
- 	@rm -rf tabbed-${VERSION}
+ # OpenBSD (uncomment)
+@@ -46,16 +46,15 @@ dist: clean
+ 	rm -rf ${NAME}-${VERSION}
  
  install: all
--	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
--	@mkdir -p ${DESTDIR}${PREFIX}/bin
--	@cp -f tabbed ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/tabbed
--	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
--	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
--	@sed "s/VERSION/${VERSION}/g" < tabbed.1 > ${DESTDIR}${MANPREFIX}/man1/tabbed.1
--	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/tabbed.1
+-	# installing executable files.
+-	mkdir -p "${DESTDIR}${PREFIX}/bin"
+-	cp -f ${BIN} "${DESTDIR}${PREFIX}/bin"
+-	for f in ${BIN}; do chmod 755 "${DESTDIR}${PREFIX}/bin/$$f"; done
+-	# installing doc files.
+-	mkdir -p "${DESTDIR}${DOCPREFIX}"
+-	cp -f README "${DESTDIR}${DOCPREFIX}"
+-	# installing manual pages for general commands: section 1.
+-	mkdir -p "${DESTDIR}${MANPREFIX}/man1"
+-	for m in ${MAN1}; do sed "s/VERSION/${VERSION}/g" < $$m > "${DESTDIR}${MANPREFIX}/man1/$$m"; done
 +	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_PROGRAM} tabbed ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} ${BIN} ${DESTDIR}${PREFIX}/bin
 +	${BSD_INSTALL_MAN_DIR} ${DESTDIR}${MANPREFIX}/man1
 +	sed "s/VERSION/${VERSION}/g" < tabbed.1 > tabbed.1.tmp
 +	mv tabbed.1.tmp tabbed.1
 +	${BSD_INSTALL_MAN} tabbed.1 ${DESTDIR}${MANPREFIX}/man1
++	sed "s/VERSION/${VERSION}/g" < xembed.1 > xembed.1.tmp
++	mv xembed.1.tmp xembed.1
++	${BSD_INSTALL_MAN} xembed.1 ${DESTDIR}${MANPREFIX}/man1
  
  uninstall:
- 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+ 	# removing executable files.

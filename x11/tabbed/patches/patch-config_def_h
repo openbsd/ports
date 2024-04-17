@@ -1,19 +1,23 @@
---- config.def.h.orig	Tue Jan 21 15:22:03 2014
-+++ config.def.h	Fri Jan 31 15:15:05 2014
-@@ -1,11 +1,11 @@
+Index: config.def.h
+--- config.def.h.orig
++++ config.def.h
+@@ -1,13 +1,13 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
--static const char font[]        = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
+-static const char font[]        = "monospace:size=9";
 -static const char* normbgcolor  = "#222222";
 -static const char* normfgcolor  = "#cccccc";
 -static const char* selbgcolor   = "#555555";
 -static const char* selfgcolor   = "#ffffff";
-+static const char font[]        = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
++static const char font[]        = "terminus:size=8";
 +static const char* normbgcolor  = "#202020";
 +static const char* normfgcolor  = "#c0c0c0";
 +static const char* selbgcolor   = "#404040";
 +static const char* selfgcolor   = "#f0f0f0";
+ static const char* urgbgcolor   = "#111111";
+-static const char* urgfgcolor   = "#cc0000";
++static const char* urgfgcolor   = "#a0a0aa";
  static const char before[]      = "<";
  static const char after[]       = ">";
- static const int  tabwidth      = 200;
+ static const char titletrim[]   = "...";

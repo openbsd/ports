@@ -1,6 +1,6 @@
 COMMENT=		simple generic tabbed frontend
 
-DISTNAME=		tabbed-0.6
+DISTNAME=		tabbed-0.8
 
 CATEGORIES=		x11
 
