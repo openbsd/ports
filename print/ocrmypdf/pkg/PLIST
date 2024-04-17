@@ -182,6 +182,4 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}_wi
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/${MODPY_PYCACHE}_windows.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/subprocess/_windows.py
 share/bash-completion/completions/ocrmypdf.bash
-share/fish/
-share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/ocrmypdf.fish
