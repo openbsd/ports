@@ -17,7 +17,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		bootstrap
+MODPY_PYBUILD=		other
 MODPY_PYTEST=		Yes
 # test_editable_install.py needs pip_run
 MODPY_PYTEST_ARGS =	setuptools/tests \

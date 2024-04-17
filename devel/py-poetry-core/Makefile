@@ -19,7 +19,7 @@ MODPY_PI =	Yes
 FLAVOR =	python3
 FLAVORS =	python3
 
-MODPY_PYBUILD =	bootstrap
+MODPY_PYBUILD =	other
 
 pre-build:
 	@if [ -d ${MODPY_SITEPKG}/poetry/core ]; then \

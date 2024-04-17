@@ -1,6 +1,6 @@
 COMMENT=	modern, extensible Python build backend used by Hatch
 
-MODPY_EGG_VERSION=	1.21.1
+MODPY_EGG_VERSION=	1.22.4
 
 DISTNAME=	hatchling-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
@@ -29,6 +29,6 @@ RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-tomli${MODPY_FLAVOR}
 
-MODPY_PYBUILD=	bootstrap
+MODPY_PYBUILD=	other
 
 .include <bsd.port.mk>

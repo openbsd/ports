@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-MODPY_PYBUILD=		bootstrap
+MODPY_PYBUILD=		other
 
 BUILD_DEPENDS=		devel/meson \
 			devel/py-pyproject-metadata${MODPY_FLAVOR}
