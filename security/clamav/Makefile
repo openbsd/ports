@@ -1,6 +1,8 @@
-BROKEN-sparc64=	build-script-build` (signal: 11, SIGSEGV: invalid memory reference)
+BROKEN-sparc64=	build-script-build (signal: 11, SIGSEGV: invalid memory reference)
+
 COMMENT=	virus scanner
-DISTNAME=	clamav-1.3.0
+V=		1.3.1
+DISTNAME=	clamav-$V
 
 CATEGORIES=	security
 
@@ -10,7 +12,8 @@ SHARED_LIBS +=	clamunrar_iface      6.0
 SHARED_LIBS +=	freshclam            3.0
 
 HOMEPAGE=	https://www.clamav.net/
-SITES=		https://www.clamav.net/downloads/production/
+SITES=		https://www.clamav.net/downloads/production/ \
+		https://github.com/Cisco-Talos/clamav/releases/download/clamav-$V/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -50,6 +53,9 @@ MODULES+=	lang/python
 MODPY_RUNDEP=	No
 BUILD_DEPENDS+=	devel/check
 CONFIGURE_ARGS+= -DENABLE_TESTS=on
+
+pre-build:
+	@echo note, first build steps use rustc and are run silently, build may appear to hang
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/clamav

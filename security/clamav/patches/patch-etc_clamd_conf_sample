@@ -19,7 +19,7 @@ Index: etc/clamd.conf.sample
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -224,7 +224,7 @@ Example
+@@ -230,7 +230,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
