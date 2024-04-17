@@ -2,10 +2,9 @@ COMMENT =	Qt-based client library for the accounts database
 
 CATEGORIES =	net
 
-V =		VERSION_1.16
-DIST_TUPLE =	gitlab nicolasfella libaccounts-qt \
-		18557f7def9af8f4a9e0e93e9f575ae11e5066aa .
-DISTNAME =	libaccounts-qt-${V:S/VERSION_//}pl0
+V =		VERSION_1.17
+DIST_TUPLE =	gitlab accounts-sso libaccounts-qt ${V} .
+DISTNAME =	libaccounts-qt-${V:S/VERSION_//}
 
 SHARED_LIBS +=  accounts-qt5              0.0 # 1.4
 SHARED_LIBS +=  accounts-qt6              0.0 # 1.4
@@ -39,7 +38,7 @@ QT_VERSION =	qt5
 LIB_DEPENDS =	net/libaccounts-glib \
 		devel/glib2
 
-WRKDIST =	${WRKDIR}/libaccounts-qt-18557f7def9af8f4a9e0e93e9f575ae11e5066aa
+WRKDIST =	${WRKDIR}/libaccounts-qt-${V}-c8fdd05f1a1ff5886f4649d24f2ba8c5f61cfa3a
 
 TEST_TARGET =		check
 TEST_IS_INTERACTIVE =	Yes
