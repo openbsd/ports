@@ -1,10 +1,8 @@
 COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0
-REVISION=	6
+REVISION=	7
 CATEGORIES=	textproc
-
-HOMEPAGE=	http://pmade.org/~pjones/software/clo++/
 
 # BSD
 PERMIT_PACKAGE=	Yes
