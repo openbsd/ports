@@ -1,5 +1,3 @@
-BROKEN-aarch64 = Fails to compile in 3rdparty/lzma/C/7zCrc.c
-
 ONLY_FOR_ARCHS = amd64 aarch64
 DPB_PROPERTIES = parallel
 
