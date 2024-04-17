@@ -1,6 +1,6 @@
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	3.11.0
+MODPY_EGG_VERSION=	3.11.1
 DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
@@ -19,7 +19,6 @@ MODULES=	lang/python
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
-		devel/py-future${MODPY_FLAVOR} \
 		devel/py-txaio${MODPY_FLAVOR} \
 		www/py-autobahn${MODPY_FLAVOR} \
 		net/py-msgpack${MODPY_FLAVOR}

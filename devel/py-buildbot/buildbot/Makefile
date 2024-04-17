@@ -9,7 +9,6 @@ RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/py-buildbot/www \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR} \
-		devel/py-future${MODPY_FLAVOR} \
 		devel/py-txaio${MODPY_FLAVOR} \
 		net/py-msgpack${MODPY_FLAVOR} \
 		sysutils/py-croniter${MODPY_FLAVOR} \
