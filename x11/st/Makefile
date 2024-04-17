@@ -1,9 +1,8 @@
 COMMENT=		simple X terminal
 
-V=			0.9
+V=			0.9.1
 DISTNAME=		st-${V}
 SUPDISTFILES.p=		st-scrollback-0.8.5.diff
-REVISION=		0
 
 CATEGORIES=		x11
 
