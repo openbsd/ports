@@ -2,11 +2,9 @@ COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	3.0.9
+VERSION=	3.0.10
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
-
-REVISION-client=	0
 
 CATEGORIES=	games
 
