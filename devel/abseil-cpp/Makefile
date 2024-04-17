@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
 GH_PROJECT =	${GH_ACCOUNT}-cpp
-GH_TAGNAME =	20240116.1
+GH_TAGNAME =	20240116.2
 
 HOMEPAGE =	https://abseil.io/
 
@@ -42,7 +42,7 @@ ABSL_LIBS = \
     log_internal_fnmatch vlog_config_internal \
     kernel_timeout_internal string_view
 .for _lib in ${ABSL_LIBS}
-SHARED_LIBS +=		absl_${_lib}	4.0	# 2401.0.0
+SHARED_LIBS +=		absl_${_lib}	4.1	# 2401.0.0
 .endfor
 
 WANTLIB += ${COMPILER_LIBCXX} execinfo gmock gtest m
