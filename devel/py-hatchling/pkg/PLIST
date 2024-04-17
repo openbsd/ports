@@ -37,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}binary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}util
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/app.py
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/binary.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/config.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/constants.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/custom.py
