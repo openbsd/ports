@@ -1,0 +1,22 @@
+include/KF6/
+include/KF6/KIdleTime/
+include/KF6/KIdleTime/KIdleTime
+include/KF6/KIdleTime/kidletime.h
+include/KF6/KIdleTime/kidletime_export.h
+include/KF6/KIdleTime/kidletime_version.h
+include/KF6/KIdleTime/private/
+include/KF6/KIdleTime/private/kabstractidletimepoller_p.h
+lib/cmake/KF6IdleTime/
+lib/cmake/KF6IdleTime/KF6IdleTimeConfig.cmake
+lib/cmake/KF6IdleTime/KF6IdleTimeConfigVersion.cmake
+lib/cmake/KF6IdleTime/KF6IdleTimeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6IdleTime/KF6IdleTimeTargets.cmake
+@lib lib/libKF6IdleTime.so.${LIBKF6IdleTime_VERSION}
+lib/qt6/plugins/kf6/
+lib/qt6/plugins/kf6/org.kde.kidletime.platforms/
+@so lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeWaylandPlugin.so
+@so lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeXcbPlugin0.so
+@so lib/qt6/plugins/kf6/org.kde.kidletime.platforms/KF6IdleTimeXcbPlugin1.so
+share/qlogging-categories6/
+share/qlogging-categories6/kidletime.categories
+share/qlogging-categories6/kidletime.renamecategories

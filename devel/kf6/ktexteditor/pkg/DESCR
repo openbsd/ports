@@ -1,0 +1,8 @@
+KTextEditor provides a powerful text editor component that you can embed in your
+application, either as a KPart or using the KF5::TextEditor library (if you need
+more control).
+
+The text editor component contains many useful features, from syntax
+highlighting and automatic indentation to advanced scripting support, making it
+suitable for everything from a simple embedded text-file editor to an advanced
+IDE.

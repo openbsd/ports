@@ -1,0 +1,3 @@
+The Package framework lets the user install and load packages of non binary
+content such as scripted extensions or graphic assets, as if they were
+traditional plugins.

@@ -1,0 +1,42 @@
+include/KF6/
+include/KF6/Prison/
+include/KF6/Prison/Prison/
+include/KF6/Prison/Prison/Barcode
+include/KF6/Prison/Prison/MeCard
+include/KF6/Prison/Prison/Prison
+include/KF6/Prison/Prison/barcode.h
+include/KF6/Prison/Prison/mecard.h
+include/KF6/Prison/Prison/prison.h
+include/KF6/Prison/Prison/prison_export.h
+include/KF6/Prison/prison_version.h
+include/KF6/PrisonScanner/
+include/KF6/PrisonScanner/Prison/
+include/KF6/PrisonScanner/Prison/Format
+include/KF6/PrisonScanner/Prison/ScanResult
+include/KF6/PrisonScanner/Prison/VideoScanner
+include/KF6/PrisonScanner/Prison/format.h
+include/KF6/PrisonScanner/Prison/prisonscanner_export.h
+include/KF6/PrisonScanner/Prison/scanresult.h
+include/KF6/PrisonScanner/Prison/videoscanner.h
+lib/cmake/KF6Prison/
+lib/cmake/KF6Prison/KF6PrisonConfig.cmake
+lib/cmake/KF6Prison/KF6PrisonConfigVersion.cmake
+lib/cmake/KF6Prison/KF6PrisonTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6Prison/KF6PrisonTargets.cmake
+@lib lib/libKF6Prison.so.${LIBKF6Prison_VERSION}
+@lib lib/libKF6PrisonScanner.so.${LIBKF6PrisonScanner_VERSION}
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/prison/
+lib/qt6/qml/org/kde/prison/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/prison/libprisonquickplugin.so
+lib/qt6/qml/org/kde/prison/prisonquickplugin.qmltypes
+lib/qt6/qml/org/kde/prison/qmldir
+lib/qt6/qml/org/kde/prison/scanner/
+lib/qt6/qml/org/kde/prison/scanner/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/prison/scanner/libprisonscannerquickplugin.so
+lib/qt6/qml/org/kde/prison/scanner/prisonscannerquickplugin.qmltypes
+lib/qt6/qml/org/kde/prison/scanner/qmldir
+share/qlogging-categories6/
+share/qlogging-categories6/prison.categories
+share/qlogging-categories6/prison.renamecategories

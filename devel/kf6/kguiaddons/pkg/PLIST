@@ -1,0 +1,52 @@
+@conflict kguiaddons-<5.115.0p0
+@bin bin/kde-geo-uri-handler
+include/KF6/
+include/KF6/KGuiAddons/
+include/KF6/KGuiAddons/KColorCollection
+include/KF6/KGuiAddons/KColorMimeData
+include/KF6/KGuiAddons/KColorSchemeWatcher
+include/KF6/KGuiAddons/KColorUtils
+include/KF6/KGuiAddons/KCountryFlagEmojiIconEngine
+include/KF6/KGuiAddons/KCursorSaver
+include/KF6/KGuiAddons/KDateValidator
+include/KF6/KGuiAddons/KFontUtils
+include/KF6/KGuiAddons/KIconUtils
+include/KF6/KGuiAddons/KImageCache
+include/KF6/KGuiAddons/KJobWindows
+include/KF6/KGuiAddons/KKeySequenceRecorder
+include/KF6/KGuiAddons/KModifierKeyInfo
+include/KF6/KGuiAddons/KSystemClipboard
+include/KF6/KGuiAddons/KWordWrap
+include/KF6/KGuiAddons/kcolorcollection.h
+include/KF6/KGuiAddons/kcolormimedata.h
+include/KF6/KGuiAddons/kcolorschemewatcher.h
+include/KF6/KGuiAddons/kcolorutils.h
+include/KF6/KGuiAddons/kcountryflagemojiiconengine.h
+include/KF6/KGuiAddons/kcursorsaver.h
+include/KF6/KGuiAddons/kdatevalidator.h
+include/KF6/KGuiAddons/kfontutils.h
+include/KF6/KGuiAddons/kguiaddons_export.h
+include/KF6/KGuiAddons/kguiaddons_version.h
+include/KF6/KGuiAddons/kiconutils.h
+include/KF6/KGuiAddons/kimagecache.h
+include/KF6/KGuiAddons/kjobwindows.h
+include/KF6/KGuiAddons/kkeysequencerecorder.h
+include/KF6/KGuiAddons/klocalimagecacheimpl.h
+include/KF6/KGuiAddons/kmodifierkeyinfo.h
+include/KF6/KGuiAddons/kmodifierkeyinfoprovider_p.h
+include/KF6/KGuiAddons/ksystemclipboard.h
+include/KF6/KGuiAddons/kwordwrap.h
+lib/cmake/KF6GuiAddons/
+lib/cmake/KF6GuiAddons/KF6GuiAddonsConfig.cmake
+lib/cmake/KF6GuiAddons/KF6GuiAddonsConfigVersion.cmake
+lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets.cmake
+@lib lib/libKF6GuiAddons.so.${LIBKF6GuiAddons_VERSION}
+lib/pkgconfig/KF6GuiAddons.pc
+share/applications/google-maps-geo-handler.desktop
+share/applications/openstreetmap-geo-handler.desktop
+share/applications/qwant-maps-geo-handler.desktop
+share/applications/wheelmap-geo-handler.desktop
+share/qlogging-categories6/
+share/qlogging-categories6/kguiaddons.categories
+@tag update-desktop-database

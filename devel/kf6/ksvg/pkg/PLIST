@@ -1,0 +1,23 @@
+include/KF6/KSvg/
+include/KF6/KSvg/KSvg/
+include/KF6/KSvg/KSvg/FrameSvg
+include/KF6/KSvg/KSvg/ImageSet
+include/KF6/KSvg/KSvg/Svg
+include/KF6/KSvg/ksvg/
+include/KF6/KSvg/ksvg/framesvg.h
+include/KF6/KSvg/ksvg/imageset.h
+include/KF6/KSvg/ksvg/ksvg_export.h
+include/KF6/KSvg/ksvg/svg.h
+include/KF6/KSvg/ksvg_version.h
+lib/cmake/KF6Svg/
+lib/cmake/KF6Svg/KF6SvgConfig.cmake
+lib/cmake/KF6Svg/KF6SvgConfigVersion.cmake
+lib/cmake/KF6Svg/KF6SvgTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6Svg/KF6SvgTargets.cmake
+@lib lib/libKF6Svg.so.${LIBKF6Svg_VERSION}
+lib/qt6/qml/org/kde/ksvg/
+lib/qt6/qml/org/kde/ksvg/corebindingsplugin.qmltypes
+lib/qt6/qml/org/kde/ksvg/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/ksvg/libcorebindingsplugin.so
+lib/qt6/qml/org/kde/ksvg/qmldir
+share/qlogging-categories6/ksvg.categories

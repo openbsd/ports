@@ -1,0 +1,7 @@
+KPeople offers unified access to our contacts from different sources, grouping
+them by person while still exposing all the data.
+
+Furthermore, KPeople will also provide facilities to integrate the data provided
+in user interfaces by providing QML and Qt Widgets components.
+
+The sources are plugin-based, allowing to easily extend the contacts collection.

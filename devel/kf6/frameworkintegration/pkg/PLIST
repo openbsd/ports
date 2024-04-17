@@ -1,0 +1,17 @@
+include/KF6/FrameworkIntegration/
+include/KF6/FrameworkIntegration/frameworkintegration_version.h
+include/KF6/KStyle/
+include/KF6/KStyle/KStyle
+include/KF6/KStyle/kstyle.h
+include/KF6/KStyle/kstyle_export.h
+lib/cmake/KF6FrameworkIntegration/
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationConfig.cmake
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationConfigVersion.cmake
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationTargets.cmake
+@lib lib/libKF6Style.so.${LIBKF6Style_VERSION}
+@so lib/qt6/plugins/kf6/FrameworkIntegrationPlugin.so
+libexec/kf6/kpackagehandlers/
+@bin libexec/kf6/kpackagehandlers/knshandler
+share/knotifications6/
+share/knotifications6/plasma_workspace.notifyrc

@@ -1,0 +1,23 @@
+include/KF6/
+include/KF6/KPlotting/
+include/KF6/KPlotting/KPlotAxis
+include/KF6/KPlotting/KPlotObject
+include/KF6/KPlotting/KPlotPoint
+include/KF6/KPlotting/KPlotWidget
+include/KF6/KPlotting/kplotaxis.h
+include/KF6/KPlotting/kplotobject.h
+include/KF6/KPlotting/kplotpoint.h
+include/KF6/KPlotting/kplotting_export.h
+include/KF6/KPlotting/kplotting_version.h
+include/KF6/KPlotting/kplotwidget.h
+lib/cmake/
+lib/cmake/KF6Plotting/
+lib/cmake/KF6Plotting/KF6PlottingConfig.cmake
+lib/cmake/KF6Plotting/KF6PlottingConfigVersion.cmake
+lib/cmake/KF6Plotting/KF6PlottingTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6Plotting/KF6PlottingTargets.cmake
+@lib lib/libKF6Plotting.so.${LIBKF6Plotting_VERSION}
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/designer/
+@so lib/qt6/plugins/designer/kplotting6widgets.so

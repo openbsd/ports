@@ -1,0 +1,7 @@
+KSvg provides both C++ classes and QtQuick components to render svgs based on
+image packs. Compared to plain QSvg, it caches the rendered images on disk with
+KImageCache, and can re-color properly crafted svg shapes that include internal
+stylesheets.
+
+The default behavior is to re-color with the application palette, making it
+possible to create UI elements in SVG.

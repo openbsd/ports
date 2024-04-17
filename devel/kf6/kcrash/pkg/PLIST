@@ -1,0 +1,13 @@
+include/KF6/KCrash/
+include/KF6/KCrash/KCrash
+include/KF6/KCrash/kcrash.h
+include/KF6/KCrash/kcrash_export.h
+include/KF6/KCrash/kcrash_version.h
+lib/cmake/KF6Crash/
+lib/cmake/KF6Crash/KF6CrashConfig.cmake
+lib/cmake/KF6Crash/KF6CrashConfigVersion.cmake
+lib/cmake/KF6Crash/KF6CrashTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6Crash/KF6CrashTargets.cmake
+@lib lib/libKF6Crash.so.${LIBKF6Crash_VERSION}
+share/qlogging-categories6/kcrash.categories
+share/qlogging-categories6/kcrash.renamecategories

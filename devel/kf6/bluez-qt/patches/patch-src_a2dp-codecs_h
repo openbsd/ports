@@ -1,0 +1,21 @@
+Index: src/a2dp-codecs.h
+--- src/a2dp-codecs.h.orig
++++ src/a2dp-codecs.h
+@@ -142,7 +142,7 @@ typedef struct {
+ 	uint16_t codec_id;
+ } __attribute__ ((packed)) a2dp_vendor_codec_t;
+ 
+-#if __BYTE_ORDER == __LITTLE_ENDIAN
++#if BYTE_ORDER == LITTLE_ENDIAN
+ 
+ typedef struct {
+ 	uint8_t channel_mode:4;
+@@ -187,7 +187,7 @@ typedef struct {
+ 	uint8_t unknown[2];
+ } __attribute__ ((packed)) a2dp_ldac_t;
+ 
+-#elif __BYTE_ORDER == __BIG_ENDIAN
++#elif BYTE_ORDER == BIG_ENDIAN
+ 
+ typedef struct {
+ 	uint8_t frequency:4;

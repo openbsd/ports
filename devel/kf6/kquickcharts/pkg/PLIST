@@ -1,0 +1,25 @@
+lib/cmake/KF6QuickCharts/
+lib/cmake/KF6QuickCharts/KF6QuickChartsConfig.cmake
+lib/cmake/KF6QuickCharts/KF6QuickChartsConfigVersion.cmake
+@lib lib/libQuickCharts.so.${LIBQuickCharts_VERSION}
+@lib lib/libQuickChartsControls.so.${LIBQuickChartsControls_VERSION}
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/quickcharts/
+lib/qt6/qml/org/kde/quickcharts/QuickCharts.qmltypes
+lib/qt6/qml/org/kde/quickcharts/controls/
+lib/qt6/qml/org/kde/quickcharts/controls/KirigamiTheme.qml
+lib/qt6/qml/org/kde/quickcharts/controls/Legend.qml
+lib/qt6/qml/org/kde/quickcharts/controls/LegendDelegate.qml
+lib/qt6/qml/org/kde/quickcharts/controls/LineChartControl.qml
+lib/qt6/qml/org/kde/quickcharts/controls/PieChartControl.qml
+lib/qt6/qml/org/kde/quickcharts/controls/QuickChartsControls.qmltypes
+lib/qt6/qml/org/kde/quickcharts/controls/Theme.qml
+lib/qt6/qml/org/kde/quickcharts/controls/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/quickcharts/controls/libQuickChartsControlsplugin.so
+lib/qt6/qml/org/kde/quickcharts/controls/qmldir
+lib/qt6/qml/org/kde/quickcharts/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/quickcharts/libQuickChartsplugin.so
+lib/qt6/qml/org/kde/quickcharts/qmldir
+share/qlogging-categories6/
+share/qlogging-categories6/kquickcharts.categories
