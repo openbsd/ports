@@ -13,4 +13,6 @@ RUN_DEPENDS =	x11/gtk+4,-guic
 
 TEST_DEPENDS =	sysutils/fdupes
 
+CONFIGURE_ARGS =	-DBINARY_ICONS_RESOURCE=ON
+
 .include <bsd.port.mk>

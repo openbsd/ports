@@ -10221,6 +10221,7 @@ share/icons/breeze-dark/apps/64/sharedlib.svg
 share/icons/breeze-dark/apps/64/system-file-manager.svg
 share/icons/breeze-dark/apps/64/umbrello.svg
 share/icons/breeze-dark/apps/64/utilities-terminal.svg
+share/icons/breeze-dark/breeze-icons-dark.rcc
 share/icons/breeze-dark/categories/
 share/icons/breeze-dark/categories/22/
 share/icons/breeze-dark/categories/22/applications-all-symbolic.svg
@@ -28583,6 +28584,7 @@ share/icons/breeze/apps/64/sharedlib.svg
 share/icons/breeze/apps/64/system-file-manager.svg
 share/icons/breeze/apps/64/umbrello.svg
 share/icons/breeze/apps/64/utilities-terminal.svg
+share/icons/breeze/breeze-icons.rcc
 share/icons/breeze/categories/
 share/icons/breeze/categories/22/
 share/icons/breeze/categories/22/applications-all-symbolic.svg
