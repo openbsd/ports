@@ -1,8 +1,8 @@
 COMMENT=		library for interfacing MPD
 
-VER=			2.20
+VER=			2.22
 DISTNAME=		libmpdclient-${VER}
-SHARED_LIBS=		mpdclient 3.5	# 2.19
+SHARED_LIBS=		mpdclient 3.6	# 2.19
 CATEGORIES=		audio
 HOMEPAGE=		https://www.musicpd.org/libs/libmpdclient/
 

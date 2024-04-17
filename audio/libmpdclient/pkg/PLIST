@@ -46,9 +46,7 @@ include/mpd/version.h
 lib/pkgconfig/libmpdclient.pc
 share/doc/libmpdclient/
 share/doc/libmpdclient/AUTHORS
-share/doc/libmpdclient/COPYING
+share/doc/libmpdclient/BSD-2-Clause.txt
+share/doc/libmpdclient/BSD-3-Clause.txt
 share/doc/libmpdclient/NEWS
 share/doc/libmpdclient/README.rst
-share/vala/
-share/vala/vapi/
-share/vala/vapi/libmpdclient.vapi
