@@ -4,7 +4,7 @@ CATEGORIES=	x11 sysutils
 
 GH_ACCOUNT=	phillipberndt
 GH_PROJECT=	autorandr
-GH_TAGNAME=	1.13.3
+GH_TAGNAME=	1.15
 MODPY_EGG_VERSION=	${GH_TAGNAME}.post1
 
 # GPLv3+
