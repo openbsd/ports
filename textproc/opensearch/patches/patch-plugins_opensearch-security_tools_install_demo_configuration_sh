@@ -8,53 +8,13 @@ Index: plugins/opensearch-security/tools/install_demo_configuration.sh
 +#!/usr/bin/env bash
  #install_demo_configuration.sh [-y]
  
- echo "**************************************************************************"
-@@ -6,6 +6,8 @@ echo "** This tool will be deprecated in the next majo
- echo "** https://github.com/opensearch-project/security/issues/1755           **"
- echo "**************************************************************************"
- 
-+JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h opensearch)"
+ UNAME=$(uname -s)
+@@ -9,6 +9,8 @@ elif [ "$UNAME" = "Darwin" ]; then
+ else
+   OS="other"
+ fi
 +
++JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h opensearch)"
+ 
  SCRIPT_PATH="${BASH_SOURCE[0]}"
  if ! [ -x "$(command -v realpath)" ]; then
-     if [ -L "$SCRIPT_PATH" ]; then
-@@ -108,7 +110,7 @@ if [ -d "$BASE_DIR" ]; then
- else
-     echo "DEBUG: basedir does not exist"
- fi
--OPENSEARCH_CONF_FILE="$BASE_DIR/config/opensearch.yml"
-+OPENSEARCH_CONF_FILE="${BASESYSCONFDIR}/opensearch/opensearch.yml"
- OPENSEARCH_BIN_DIR="$BASE_DIR/bin"
- OPENSEARCH_PLUGINS_DIR="$BASE_DIR/plugins"
- OPENSEARCH_MODULES_DIR="$BASE_DIR/modules"
-@@ -408,28 +410,20 @@ fi
- 
- echo "######## End OpenSearch Security Demo Configuration ########" | $SUDO_CMD tee -a "$OPENSEARCH_CONF_FILE" > /dev/null
- 
--$SUDO_CMD chmod +x "$OPENSEARCH_PLUGINS_DIR/opensearch-security/tools/securityadmin.sh"
--
- OPENSEARCH_PLUGINS_DIR=`cd "$OPENSEARCH_PLUGINS_DIR" ; pwd`
- 
- echo "### Success"
- echo "### Execute this script now on all your nodes and then start all nodes"
--#Generate securityadmin_demo.sh
--echo "#!/bin/bash" | $SUDO_CMD tee securityadmin_demo.sh > /dev/null 
--echo $SUDO_CMD \""$OPENSEARCH_PLUGINS_DIR/opensearch-security/tools/securityadmin.sh"\" -cd \""$OPENSEARCH_CONF_DIR/opensearch-security"\" -icl -key \""$OPENSEARCH_CONF_DIR/kirk-key.pem"\" -cert \""$OPENSEARCH_CONF_DIR/kirk.pem"\" -cacert \""$OPENSEARCH_CONF_DIR/root-ca.pem"\" -nhnv | $SUDO_CMD tee -a securityadmin_demo.sh > /dev/null
--$SUDO_CMD chmod +x securityadmin_demo.sh
- 
- if [ "$initsecurity" == 0 ]; then
- 	echo "### After the whole cluster is up execute: "
--	$SUDO_CMD cat securityadmin_demo.sh | tail -1
--	echo "### or run ./securityadmin_demo.sh"
-+	echo "$SUDO_CMD \""$OPENSEARCH_PLUGINS_DIR/opensearch-security/tools/securityadmin.sh"\" -cd \""$OPENSEARCH_CONF_DIR/opensearch-security"\" -icl -key \""$OPENSEARCH_CONF_DIR/kirk-key.pem"\" -cert \""$OPENSEARCH_CONF_DIR/kirk.pem"\" -cacert \""$OPENSEARCH_CONF_DIR/root-ca.pem"\" -nhnv"
-     echo "### After that you can also use the Security Plugin ConfigurationGUI"
- else
-     echo "### OpenSearch Security will be automatically initialized."
-     echo "### If you like to change the runtime configuration "
-     echo "### change the files in ../../../config/opensearch-security and execute: "
--	$SUDO_CMD cat securityadmin_demo.sh | tail -1
--	echo "### or run ./securityadmin_demo.sh"
-+	echo "$SUDO_CMD \""$OPENSEARCH_PLUGINS_DIR/opensearch-security/tools/securityadmin.sh"\" -cd \""$OPENSEARCH_CONF_DIR/opensearch-security"\" -icl -key \""$OPENSEARCH_CONF_DIR/kirk-key.pem"\" -cert \""$OPENSEARCH_CONF_DIR/kirk.pem"\" -cacert \""$OPENSEARCH_CONF_DIR/root-ca.pem"\" -nhnv"
- 	echo "### To use the Security Plugin ConfigurationGUI"
- fi
- 
