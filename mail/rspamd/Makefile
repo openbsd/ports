@@ -1,7 +1,7 @@
 COMMENT=	event-driven spam filtering system in C/Lua
 
 DIST_TUPLE=	github vstakhov rspamd 3.8.4 .
-
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	https://rspamd.com/
@@ -47,7 +47,8 @@ LIB_DEPENDS=	archivers/zstd \
 		textproc/icu4c
 RUN_DEPENDS=	databases/redis
 
-BUILD_DEPENDS+=	devel/ragel
+BUILD_DEPENDS+=	devel/fmt>=10.2.1 \
+		devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
 TEST_DEPENDS+=	databases/redis \
@@ -63,9 +64,8 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
 
-# not using SYSTEM_FMT; bundled version is newer, but updating
-# devel/fmt breaks mariadb build
-CONFIGURE_ARGS+= -DSYSTEM_XXHASH=ON \
+CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
+		-DSYSTEM_XXHASH=ON \
 		-DSYSTEM_ZSTD=ON \
 		-DENABLE_JEMALLOC=OFF
 
