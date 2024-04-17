@@ -1,6 +1,6 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	3.9.0
+MODPY_EGG_VERSION =	3.10.0
 
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
@@ -26,6 +26,7 @@ RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
 		devel/py-argcomplete${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-test-timeout${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-test-runner${MODPY_FLAVOR}
 
 # some cloud-related deps are not ported (esp for google/azure); pytest's
