@@ -2,7 +2,7 @@ COMMENT =	an object representing a stack trace
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Devel-StackTrace-2.04
+DISTNAME =	Devel-StackTrace-2.05
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
