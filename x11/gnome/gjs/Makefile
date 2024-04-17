@@ -7,7 +7,7 @@ USE_NOBTCFI=		Yes
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.78.5
+GNOME_VERSION=		1.80.2
 
 SHARED_LIBS += gjs                       6.2 # 0.0.0
 
