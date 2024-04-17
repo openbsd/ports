@@ -8,6 +8,7 @@ COMMENT =		small build system with a focus on speed
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
 GH_TAGNAME =		v1.11.1
+# known breakage with 1.22.0: chromium iridium fcitx
 
 CATEGORIES =		devel
 
