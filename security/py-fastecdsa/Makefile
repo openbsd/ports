@@ -32,4 +32,8 @@ CFLAGS +=		-I${LOCALBASE}/include
 
 LIB_DEPENDS =		devel/gmp,-main
 
+pre-test:
+	mkdir -p ${WRKSRC}/fastecdsa/tests/fastecdsa/tests
+	ln -fs ../../vectors ${WRKSRC}/fastecdsa/tests/fastecdsa/tests/
+
 .include <bsd.port.mk>
