@@ -1,6 +1,6 @@
 COMMENT =		basic implementation of the __geo_interface__
 
-MODPY_EGG_VERSION =	1.0.0
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		pygeoif-${MODPY_EGG_VERSION}
 PKGNAME =		py-geoif-${MODPY_EGG_VERSION}
 
