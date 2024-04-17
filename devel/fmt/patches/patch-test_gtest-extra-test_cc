@@ -1,7 +1,7 @@
 Index: test/gtest-extra-test.cc
 --- test/gtest-extra-test.cc.orig
 +++ test/gtest-extra-test.cc
-@@ -345,6 +345,10 @@ TEST(output_redirect_test, flush_error_in_ctor) {
+@@ -347,6 +347,10 @@ TEST(output_redirect_test, flush_error_in_ctor) {
    write_copy.dup2(write_fd);  // "undo" close or dtor will fail
  }
  
@@ -11,8 +11,8 @@ Index: test/gtest-extra-test.cc
 +// out for now while i work on figuring it out.
  TEST(output_redirect_test, dup_error_in_ctor) {
    buffered_file f = open_buffered_file();
-   int fd = (f.fileno)();
-@@ -356,6 +360,7 @@ TEST(output_redirect_test, dup_error_in_ctor) {
+   int fd = (f.descriptor)();
+@@ -358,6 +362,7 @@ TEST(output_redirect_test, dup_error_in_ctor) {
        fmt::format("cannot duplicate file descriptor {}", fd));
    copy.dup2(fd);  // "undo" close or dtor will fail
  }
