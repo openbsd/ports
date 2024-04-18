@@ -1,0 +1,12 @@
+Index: src/core/worker.cpp
+--- src/core/worker.cpp.orig
++++ src/core/worker.cpp
+@@ -360,7 +360,7 @@ Worker *Worker::createWorker(const QString &protocol, 
+     const auto useThreads = []() {
+         return qgetenv("KIO_ENABLE_WORKER_THREADS") != "0";
+     };
+-    static bool bUseThreads = useThreads();
++    static bool bUseThreads = false; // useThreads();
+ 
+     // Threads have performance benefits, but degrade robustness
+     // (a worker crashing kills the app). So let's only enable the feature for kio_file, for now.
