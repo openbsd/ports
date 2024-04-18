@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1621 2024/04/16 16:05:20 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1622 2024/04/18 09:20:38 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -817,6 +817,7 @@ my $stem_extensions = {
 	'stalwart-jmap' => 'stalwart-mail',
 	'stalwart-imap' => 'stalwart-mail',
 	'stalwart-smtp' => 'stalwart-mail',
+	'BlockZone' => 'blockzone',
 };
 
 my $obsolete_reason = {};

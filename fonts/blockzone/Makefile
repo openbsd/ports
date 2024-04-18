@@ -1,10 +1,10 @@
 COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
-MODFONT_FAMILY =	BlockZone
+MODFONT_FAMILY =	blockzone
 
 MODFONT_VERSION =	1.004
 DISTNAME =	BlockZone-${MODFONT_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	fonts
 
