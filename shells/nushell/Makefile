@@ -1,10 +1,10 @@
 # nushell removed support for arm and riscv64 in 0.81.0
 NOT_FOR_ARCHS =		arm riscv64
-COMMENT =		a new type of shell
+COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.84.0
+GH_TAGNAME =		0.92.1
 
 CATEGORIES =		shells
 
@@ -13,6 +13,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
+
+# Disable mimalloc feature
+MODCARGO_NO_DEFAULT_FEATURES = Yes
+MODCARGO_FEATURES =	plugin which-support trash-support sqlite system-clipboard
 
 .include "crates.inc"
 
