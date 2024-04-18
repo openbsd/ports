@@ -2,7 +2,7 @@ COMMENT =	3D meshes and point clouds compressor/decompressor
 
 GH_ACCOUNT =	google
 GH_PROJECT =	draco
-GH_TAGNAME =	1.5.6
+GH_TAGNAME =	1.5.7
 SHARED_LIBS =	draco 0.0
 
 CATEGORIES =	archivers
