@@ -1,9 +1,9 @@
 @conflict oce-*
 @pkgpath cad/oce
 bin/DRAWEXE
-@bin bin/DRAWEXE-7.8.0
+@bin bin/DRAWEXE-${V}
 bin/ExpToCasExe
-@bin bin/ExpToCasExe-7.8.0
+@bin bin/ExpToCasExe-${V}
 bin/occt_custom.sh
 bin/occt_custom_${COMP}_${BITS}.sh
 bin/occt_draw.sh

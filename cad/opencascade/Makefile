@@ -1,7 +1,7 @@
 COMMENT =		platform for 3D CAD, CAM, and CAE
 DPB_PROPERTIES =	parallel
 
-V =			7.8.0
+V =			7.8.1
 DISTNAME =		opencascade-${V}
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
@@ -73,7 +73,7 @@ COMP=clang
 COMP=gcc
 .endif
 
-SUBST_VARS += BITS COMP
+SUBST_VARS += BITS COMP V
 
 # fix bash and make installed script names less generic
 pre-configure:
