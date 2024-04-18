@@ -1,0 +1,22 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use this module, first you should have a basic configuration of
+Icinga 2, Icinga DB, and Icinga Web 2.
+
+Afterwards, you should enable the required module:
+
+  # doas -u _icingaweb2 ${PREFIX}/icinga-web2/bin/icingacli module enable icingadb
+
+You should have a list something like this:
+
+  # doas -u _icingaweb2 ${PREFIX}/icinga-web2/bin/icingacli module list
+
+  MODULE         VERSION   STATE     DESCRIPTION
+  icingadb       1.1.2     enabled   Icinga DB Web
+
+Then follow the instructions in the documentation in
+${PREFIX}/icinga-web2/modules/icingadb-web/doc/03-Configuration.md
+or online under
+https://icinga.com/docs/icinga-db-web/latest/doc/03-Configuration/

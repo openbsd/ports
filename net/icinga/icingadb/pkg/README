@@ -1,0 +1,87 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Getting Started
+===============
+
+The following information includes notes specific to use on OpenBSD. Use
+them in conjunction with the main Icinga DB documentation available in
+${PREFIX}/share/doc/icingadb/doc
+or online at
+https://icinga.com/docs/icinga-db/
+
+It is important to have an understanding of the components that will be
+in use with Icinga DB before beginning the configuration of Icinga DB. A
+Redis or another protocol-compatible server is required, which needs to
+be configured in both Icinga 2 and Icinga DB. A database - MySQL or
+PostgreSQL - is also required and must be configured in both Icinga DB
+and Icinga DB Web.
+
+If not already done, these services must be installed, perhaps on the
+same machine. They are available from packages.
+
+The database must be configured. Please refer to the documentation
+section "Setting up the Database" in
+${PREFIX}/share/doc/icingadb/doc/02-Installation.md
+or online at
+https://icinga.com/docs/icinga-db/latest/doc/02-Installation/03-Debian/#setting-up-the-database
+
+Afterwards, a database schema must be imported. Schema and updates for
+MySQL and PostgreSQL are found in ${PREFIX}/share/examples/icingadb/schema/.
+
+Before starting Icinga DB, the installed sample configuration at
+${SYSCONFDIR}/icingadb/config.yml should now be altered accordingly to your setup.
+See the documentation in
+${PREFIX}/share/doc/icingadb/doc/03-Configuration.md
+or online at
+https://icinga.com/docs/icinga-db/latest/doc/03-Configuration/
+
+Enable Icinga DB at boot and start it as usual:
+
+  # rcctl enable icingadb
+  # rcctl start icingadb
+
+Icinga 2 Integration
+--------------------
+
+The following section should be read in parallel with the official
+Debian-specific documentation, available online at
+https://icinga.com/docs/icinga-2/latest/doc/02-installation/01-Debian/#set-up-icinga-db
+
+The Icinga 2 installation needs the icingadb feature enabled.
+
+  # doas -u _icinga icinga2 feature enable icingadb
+
+This results in an IcingaDB object becoming available under
+${SYSCONFDIR}/icinga2/features-enabled/icingadb.conf
+
+Depending on your setup it might be necessary to alter this file
+according to the documentation available online at
+https://icinga.com/docs/icinga-2/latest/doc/09-object-types/#icingadb
+
+Please note, Icinga 2's IcingaDB default port is be 6380, which is not
+equal to the Redis default port of 6379.
+
+Finally, restart Icinga 2:
+
+  # rcctl restart icinga2
+
+Icinga Web 2 Integration
+------------------------
+
+To integrate Icinga DB into Icinga Web 2, install the icingadb-web package
+and follow its pkg-readme. This can either be run instead of the standard
+"monitoring" module, or alongside it.
+
+Upgrading Icinga DB
+===================
+
+Follow the main documentation in
+${PREFIX}/share/doc/icingadb/doc/04-Upgrading.md
+or online at
+https://icinga.com/docs/icinga-db/latest/doc/04-Upgrading/
+
+If a schema update is necessary, it will be available under
+${PREFIX}/share/examples/icingadb/schema/{mysql,pgsql}/upgrades/
+and will be named after the new Icinga DB version.

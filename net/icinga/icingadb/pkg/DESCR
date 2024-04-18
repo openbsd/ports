@@ -1,0 +1,18 @@
+Icinga DB is an Icinga configuration and state database supporting
+multiple environments. It can be used instead of the deprecated Icinga
+Data Output, IDO, for database synchronization.
+
+Icinga DB is a set of components for publishing, synchronizing and
+visualizing monitoring data in the Icinga ecosystem, consisting of:
+
+* The Icinga DB daemon, which synchronizes monitoring data between a
+  Redis server and a database.
+
+* Icinga 2 with its Icinga DB feature enabled, responsible for
+  publishing the data to the Redis server, i.e. configuration and its
+  runtime updates, check results, state changes, downtimes,
+  acknowledgements, notifications, and other events such as flapping.
+
+* Icinga Web with the Icinga DB Web module enabled, which connects
+  to both Redis and the database to display and work with the most
+  recent data.

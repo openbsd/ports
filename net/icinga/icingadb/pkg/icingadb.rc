@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/icingadb"
+daemon_logger="daemon.info"
+daemon_user="_icingadb"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg="YES"
+rc_reload="NO"
+
+rc_cmd $1

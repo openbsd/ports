@@ -1,0 +1,69 @@
+@newgroup _icingadb:898
+@newuser _icingadb:898:_icingadb::Icinga DB user:/nonexistent:/sbin/nologin
+@mode 770
+@owner _icingadb
+@group _icingadb
+@sample ${SYSCONFDIR}/icingadb/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/icingadb
+@bin bin/icingadb
+@bin bin/icingadb-migrate
+share/doc/icingadb/
+share/doc/icingadb/AUTHORS
+share/doc/icingadb/CHANGELOG.md
+share/doc/icingadb/LICENSE
+share/doc/icingadb/README.md
+share/doc/icingadb/doc/
+share/doc/icingadb/doc/01-About.md
+share/doc/icingadb/doc/02-Installation.md
+share/doc/icingadb/doc/02-Installation.md.d/
+share/doc/icingadb/doc/02-Installation.md.d/01-Amazon-Linux.md
+share/doc/icingadb/doc/02-Installation.md.d/02-CentOS.md
+share/doc/icingadb/doc/02-Installation.md.d/03-Debian.md
+share/doc/icingadb/doc/02-Installation.md.d/04-RHEL.md
+share/doc/icingadb/doc/02-Installation.md.d/05-SLES.md
+share/doc/icingadb/doc/02-Installation.md.d/06-Ubuntu.md
+share/doc/icingadb/doc/03-Configuration.md
+share/doc/icingadb/doc/04-Upgrading.md
+share/doc/icingadb/doc/05-Distributed-Setups.md
+share/doc/icingadb/doc/06-Migration.md
+share/doc/icingadb/doc/TRADEMARKS.md
+share/doc/icingadb/doc/icingadb-migration.example.yml
+share/doc/icingadb/doc/images/
+share/doc/icingadb/doc/images/icingadb-architecture.png
+share/doc/icingadb/doc/images/icingadb-daemon.png
+share/doc/icingadb/doc/images/icingadb-dashboard.png
+share/doc/icingadb/doc/images/icingadb-database.png
+share/doc/icingadb/doc/images/icingadb-envs.png
+share/doc/icingadb/doc/images/icingadb-ha.png
+share/doc/icingadb/doc/images/icingadb-web.png
+share/doc/icingadb/markdown/
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/icingadb/
+share/examples/icingadb/config.example.yml
+@mode 0660
+@owner _icingadb
+@group _icingadb
+@sample ${SYSCONFDIR}/icingadb/config.yml
+@mode
+@owner
+@group
+share/examples/icingadb/schema/
+share/examples/icingadb/schema/mysql/
+share/examples/icingadb/schema/mysql/schema.sql
+share/examples/icingadb/schema/mysql/upgrades/
+share/examples/icingadb/schema/mysql/upgrades/1.0.0-rc2.sql
+share/examples/icingadb/schema/mysql/upgrades/1.0.0.sql
+share/examples/icingadb/schema/mysql/upgrades/1.1.1.sql
+share/examples/icingadb/schema/mysql/upgrades/1.2.0.sql
+share/examples/icingadb/schema/mysql/upgrades/optional/
+share/examples/icingadb/schema/mysql/upgrades/optional/1.2.0-history.sql
+share/examples/icingadb/schema/pgsql/
+share/examples/icingadb/schema/pgsql/schema.sql
+share/examples/icingadb/schema/pgsql/upgrades/
+share/examples/icingadb/schema/pgsql/upgrades/1.1.1.sql
+share/examples/icingadb/schema/pgsql/upgrades/1.2.0.sql
+share/examples/icingadb/schema/pgsql/upgrades/optional/
+share/examples/icingadb/schema/pgsql/upgrades/optional/1.2-0-history.sql

@@ -2,6 +2,8 @@
   SUBDIR += core2
   SUBDIR += icinga-php-library
   SUBDIR += icinga-php-thirdparty
+  SUBDIR += icingadb
+  SUBDIR += icingadb-web
   SUBDIR += web2
   SUBDIR += web2-module-director
   SUBDIR += web2-module-incubator
