@@ -1,6 +1,6 @@
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	3.3.1
+MODPY_EGG_VERSION =	3.4.1
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
