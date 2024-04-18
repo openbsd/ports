@@ -1,6 +1,6 @@
 COMMENT =	engine recreation for Heroes of Might and Magic 2
 
-DIST_TUPLE =	github ihhub fheroes2 1.0.12 .
+DIST_TUPLE =	github ihhub fheroes2 1.0.13 .
 CATEGORIES =	games
 HOMEPAGE =	https://ihhub.github.io/fheroes2/
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
