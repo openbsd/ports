@@ -1,12 +1,12 @@
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4
-REVISION =	19
+REVISION =	20
 DISTNAME=	oolite-dev-source-${VERSION}
 PKGNAME=	oolite-${VERSION}
 CATEGORIES=	games
 
-HOMEPAGE=	http://www.oolite.org/
+HOMEPAGE=	https://oolite.space
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
