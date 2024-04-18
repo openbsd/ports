@@ -5,7 +5,6 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
-# !!! sync with meta/gnome "V" variable
 GNOME_VERSION=		45.5
 
 # GPLv2+
