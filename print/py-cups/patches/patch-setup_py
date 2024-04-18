@@ -1,13 +1,13 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -38,7 +38,8 @@ import sys
- VERSION="1.9.74"
+@@ -39,7 +39,8 @@ import sys
+ VERSION="2.0.3"
  libraries=["cups"]
  
 -if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
 +if sys.platform == "darwin" or sys.platform.startswith("freebsd") or \
-+   sys.platform.startswith("openbsd"):
- 	libraries.append ("iconv")
++  sys.platform.startswith("openbsd"):
+     libraries.append ("iconv")
  
  setup (name="pycups",
