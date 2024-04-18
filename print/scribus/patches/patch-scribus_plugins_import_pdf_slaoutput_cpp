@@ -1,4 +1,5 @@
 Fix build with poppler-24.03.
+https://github.com/scribusproject/scribus/commit/c57362c4f7bdef67904bf2f3d8126073792bdcf9
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig

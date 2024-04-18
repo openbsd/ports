@@ -1,7 +1,7 @@
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.6.0
+DISTNAME=	scribus-1.6.1
 CATEGORIES=	print
 
 HOMEPAGE=	https://www.scribus.net/
