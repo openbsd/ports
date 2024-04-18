@@ -1,0 +1,14 @@
+https://github.com/LAStools/LAStools/commit/a9fecc8e720f573a5867fe155def8380765c7af4
+
+Index: LASzip/src/laspoint.hpp
+--- LASzip/src/laspoint.hpp.orig
++++ LASzip/src/laspoint.hpp
+@@ -113,7 +113,7 @@ class LASLIB_DLL LASpoint (public)
+ 
+ // for converting between x,y,z integers and scaled/translated coordinates
+ 
+-  const LASquantizer* quantizer;
++  const LASquantizer* quantizer = nullptr;
+   F64 coordinates[3];
+ 
+ // for attributed access to the extra bytes
