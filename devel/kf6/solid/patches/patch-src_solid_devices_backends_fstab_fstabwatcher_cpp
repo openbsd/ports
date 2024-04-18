@@ -1,0 +1,21 @@
+/etc/mtab not exists on OpenBSD
+
+Index: src/solid/devices/backends/fstab/fstabwatcher.cpp
+--- src/solid/devices/backends/fstab/fstabwatcher.cpp.orig
++++ src/solid/devices/backends/fstab/fstabwatcher.cpp
+@@ -37,6 +37,7 @@ FstabWatcher::FstabWatcher()
+         connect(qApp, &QCoreApplication::aboutToQuit, this, &FstabWatcher::orphanFileSystemWatcher);
+     }
+ 
++#ifndef Q_OS_OPENBSD
+     m_mtabFile = new QFile(s_mtabFile, this);
+     if (m_mtabFile && m_mtabFile->symLinkTarget().startsWith("/proc/") && m_mtabFile->open(QIODevice::ReadOnly)) {
+         m_mtabSocketNotifier = new QSocketNotifier(m_mtabFile->handle(), QSocketNotifier::Exception, this);
+@@ -44,6 +45,7 @@ FstabWatcher::FstabWatcher()
+     } else {
+         m_fileSystemWatcher->addPath(s_mtabFile);
+     }
++#endif
+ 
+     m_fileSystemWatcher->addPath(s_fstabPath);
+     connect(m_fileSystemWatcher, &QFileSystemWatcher::directoryChanged, this, [this](const QString &) {
