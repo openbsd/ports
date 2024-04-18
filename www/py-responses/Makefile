@@ -1,10 +1,9 @@
 COMMENT =		utility library for mocking out the `requests` Python
 
-MODPY_EGG_VERSION =	0.17.0
+MODPY_EGG_VERSION =	0.25.0
 
 DISTNAME =		responses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		www
 
@@ -19,15 +18,19 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	responses/test_responses.py
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
+			www/py-urllib3${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/flake8 \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-mypy${MODPY_FLAVOR} \
+			devel/py-test-asyncio${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-localserver${MODPY_FLAVOR}
+			devel/py-test-httpserver${MODPY_FLAVOR} \
+			textproc/py-tomli${MODPY_FLAVOR} \
+			textproc/py-tomli_w${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
