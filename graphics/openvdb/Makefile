@@ -6,9 +6,9 @@ COMMENT=	tools for storage and manipulation of volumetric data
 
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	openvdb
-GH_TAGNAME=	v10.0.1
+GH_TAGNAME=	v11.0.0
 
-SHARED_LIBS +=  openvdb                   4.0 # 9.0
+SHARED_LIBS +=  openvdb                   5.0 # 9.0
 
 CATEGORIES=	graphics
 
