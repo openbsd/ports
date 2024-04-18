@@ -146,6 +146,7 @@ SHA256 (cargo/dirs-sys-0.3.7.tar.gz) = Gx0dkcky70HA8mY6qLDKA0LURNhCwGkUqgp+NS0Lr
 SHA256 (cargo/dirs-sys-next-0.1.2.tar.gz) = Tr2hRMT+AtH36hp9lkG2/GtYCtz6Akrkh5fs3raCW00=
 SHA256 (cargo/displaydoc-0.2.4.tar.gz) = SHWF9NDGZV/nSQXiUE2K1pCOTbZ/dE6xQIdpBsLzF10=
 SHA256 (cargo/dlv-list-0.3.0.tar.gz) = BojCp/kuQn9EiVzWOEG/97KfjXoWSLnn4HpKNlsuElc=
+SHA256 (cargo/dns-update-0.1.1.tar.gz) = G+QAF9vuOzy1Gr0Gj9gxnYO5VDPMpT2D/vWJoRugzVE=
 SHA256 (cargo/doc-comment-0.3.3.tar.gz) = /qQbujLZabUTmXdSc1YFBUvA36krTFa/EYny4XS+ehA=
 SHA256 (cargo/dsa-0.6.3.tar.gz) = SLwiSpCErXYBlVhM5auzwsNKIl+jEqEorSRaa0Erdok=
 SHA256 (cargo/dyn-clone-1.0.17.tar.gz) = DW7wBy+KU1KB5Idr54iTi1KOmh1DkAuCwlaa99p5kSU=
@@ -162,6 +163,7 @@ SHA256 (cargo/ena-0.14.2.tar.gz) = xTNjDPQOnKpEvZGq3IinXXWkw6ErTP3jU8vtQdqh4fE=
 SHA256 (cargo/encode_unicode-0.3.6.tar.gz) = o1fSjtQaUPnHZdv+VsvASmTlPl/Fi6efvDTBDvPfgx8=
 SHA256 (cargo/encode_unicode-1.0.0.tar.gz) = NKpzZG/7AGuPUUfz3Bgr1LyxkCJ86GH8SkhEv448ssA=
 SHA256 (cargo/encoding_rs-0.8.34.tar.gz) = tF3pBKoLAQvOKrRSZNBjFoGEf6e28uqn2rdhmUO8T1k=
+SHA256 (cargo/endian-type-0.1.2.tar.gz) = w08EZm2DX/XWLgWMOZUUfAb0L+hv8FMzdjK8qD5CcC0=
 SHA256 (cargo/enum-as-inner-0.6.0.tar.gz) = X/zLtpZsBbMu+PusQ13ydsSuTT3FWozQ65dF5sEvVGo=
 SHA256 (cargo/equivalent-1.0.1.tar.gz) = VEOAfW3/aTc9Qzq571N4rY31DKYpjK8V3m5S4kqvVNU=
 SHA256 (cargo/errno-0.3.8.tar.gz) = oljkbNwGPrhRnAC5/IRfxHvPykEw4vCOiGZc7ahHQkU=
@@ -218,6 +220,7 @@ SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
 SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
+SHA256 (cargo/hickory-client-0.24.0.tar.gz) = fz4IEkzw3dqTsRhtSvc1md5AHztS8UzZqqcZBJN5Ri4=
 SHA256 (cargo/hickory-proto-0.24.0.tar.gz) = CRpvvM9IYACTVePvxS/0rPN6Y0iarXQ1Ny1Ezutvu88=
 SHA256 (cargo/hickory-resolver-0.24.0.tar.gz) = NbjwIRZOaphMkDACNUTFd4nFF2AGXNUQVy/tz7BBZOg=
 SHA256 (cargo/hkdf-0.12.4.tar.gz) = e1+Osq1yhjjqLH1Hoh2yO3tYpy7Wo4JWuKGEnxX7vfc=
@@ -314,6 +317,7 @@ SHA256 (cargo/mysql-common-derive-0.31.1.tar.gz) = r+BFDMk0Sv/zSRX4MoYAq1rhkmCAK
 SHA256 (cargo/mysql_async-0.34.1.tar.gz) = +/6H1+NctyNjMmIWzBcSuGXY1PcKvzstLmslH7ay9Cc=
 SHA256 (cargo/mysql_common-0.32.2.tar.gz) = DM3B/iuz75fge6Q5cyftRVCaHi5Jni+CZSQ4ecvHMTw=
 SHA256 (cargo/new_debug_unreachable-1.0.6.tar.gz) = ZQ7vjHEUMPGoef3QHUdFp97qR1vs+5AmnAZ3WYO78IY=
+SHA256 (cargo/nibble_vec-0.1.0.tar.gz) = d6XYPfnzb+I/DDZIxru4sCmLtfGTnI8nBEMTcfS4TUM=
 SHA256 (cargo/nix-0.26.4.tar.gz) = WYvq88xv3Zpd+xYwwoAMes0x33qvD1ZXlvuitTyhrxs=
 SHA256 (cargo/nohash-0.2.0.tar.gz) = oPiJ+2b3rN+DRCw1d1dktR/tPGBquc7lFQDb3iz1KMo=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
@@ -397,6 +401,7 @@ SHA256 (cargo/quick-xml-0.31.0.tar.gz) = EASjRLMKVOLuWNZqcbMtLbL+sKMfmi0wK/BTbxX
 SHA256 (cargo/quote-1.0.36.tar.gz) = D6dqrzkQHEV4Nq7AziMW29w6tyPN2hxr1OatQgisrKc=
 SHA256 (cargo/r2d2-0.8.10.tar.gz) = Ud6F+z+2UkkpyKLrhea202PeToxI+eLC6sSUSrwYHJM=
 SHA256 (cargo/radium-0.7.0.tar.gz) = 3DP/LUlz1RjYI9YaojkBSDHlIcddpY499IQNP0d0nQk=
+SHA256 (cargo/radix_trie-0.2.1.tar.gz) = wGnBefzcai/iTY0YMFzwhf29T5IsBBlD4gNoXWocWP0=
 SHA256 (cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
 SHA256 (cargo/rand_chacha-0.3.1.tar.gz) = 5sEKY6D6MiUr5J0h53CdTUuvjSMcLbzh6qgUG5sSfYg=
 SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
@@ -474,7 +479,7 @@ SHA256 (cargo/sequoia-openpgp-1.20.0.tar.gz) = BvgnCMhWghi4VEtKu7ofZIMGfcoKlGpUm
 SHA256 (cargo/serde-1.0.197.tar.gz) = P7HIc+G5sFak3EwMGYskw/+gWSQ4dVUrK9CTOxruTOI=
 SHA256 (cargo/serde_bytes-0.11.14.tar.gz) = i4SXwxP9Q6uZIIdUgRdkP2/Nk1y/NvF2/9oKrPlZFzQ=
 SHA256 (cargo/serde_derive-1.0.197.tar.gz) = frCzS0LtwX9rfKyEpSocXw4bsiJ+mXypAR6j3TToYQs=
-SHA256 (cargo/serde_json-1.0.115.tar.gz) = EtxcRtqo6f309ecbbPmlPySH2g6G5VgI4tNVOWZkl90=
+SHA256 (cargo/serde_json-1.0.116.tar.gz) = PhfbcSbRf+uU6z+tRr8alrA06KrLwud1/oFQX4sLKBM=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
 SHA256 (cargo/serde_with-1.14.0.tar.gz) = Z4taBp5QvwDs0i0M2N33wjb2hYGwPbZSBh7V6xOjEv8=
 SHA256 (cargo/serde_with_macros-1.5.2.tar.gz) = 4YLW7G8FOTzA5e0b+BrW2zqP7t+O5RXs3TaYCbzOgII=
@@ -647,7 +652,7 @@ SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = HSpVheBPnupLKj0eylCMTe6Vkqie9vRQwRcZ2gcm9Ns=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (mail-server-0.7.1.tar.gz) = zmRp8N1kEFq3hGgXWJ1Y3KBf0e+GmTnyU2fK9lvHCDc=
+SHA256 (mail-server-0.7.2.tar.gz) = 6hpSJBh56oeJbb/fGcQrUjKptQ1GK2VcAfuQRU4G+iA=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
@@ -796,6 +801,7 @@ SIZE (cargo/dirs-sys-0.3.7.tar.gz) = 10597
 SIZE (cargo/dirs-sys-next-0.1.2.tar.gz) = 10681
 SIZE (cargo/displaydoc-0.2.4.tar.gz) = 23200
 SIZE (cargo/dlv-list-0.3.0.tar.gz) = 11920
+SIZE (cargo/dns-update-0.1.1.tar.gz) = 11906
 SIZE (cargo/doc-comment-0.3.3.tar.gz) = 4123
 SIZE (cargo/dsa-0.6.3.tar.gz) = 25991
 SIZE (cargo/dyn-clone-1.0.17.tar.gz) = 11848
@@ -812,6 +818,7 @@ SIZE (cargo/ena-0.14.2.tar.gz) = 22991
 SIZE (cargo/encode_unicode-0.3.6.tar.gz) = 45741
 SIZE (cargo/encode_unicode-1.0.0.tar.gz) = 56986
 SIZE (cargo/encoding_rs-0.8.34.tar.gz) = 1378166
+SIZE (cargo/endian-type-0.1.2.tar.gz) = 2340
 SIZE (cargo/enum-as-inner-0.6.0.tar.gz) = 12079
 SIZE (cargo/equivalent-1.0.1.tar.gz) = 6615
 SIZE (cargo/errno-0.3.8.tar.gz) = 10645
@@ -868,6 +875,7 @@ SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
 SIZE (cargo/hex-0.4.3.tar.gz) = 13299
+SIZE (cargo/hickory-client-0.24.0.tar.gz) = 37831
 SIZE (cargo/hickory-proto-0.24.0.tar.gz) = 374416
 SIZE (cargo/hickory-resolver-0.24.0.tar.gz) = 90666
 SIZE (cargo/hkdf-0.12.4.tar.gz) = 171163
@@ -964,6 +972,7 @@ SIZE (cargo/mysql-common-derive-0.31.1.tar.gz) = 11683
 SIZE (cargo/mysql_async-0.34.1.tar.gz) = 100221
 SIZE (cargo/mysql_common-0.32.2.tar.gz) = 164125
 SIZE (cargo/new_debug_unreachable-1.0.6.tar.gz) = 2582
+SIZE (cargo/nibble_vec-0.1.0.tar.gz) = 11796
 SIZE (cargo/nix-0.26.4.tar.gz) = 279099
 SIZE (cargo/nohash-0.2.0.tar.gz) = 8204
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
@@ -1047,6 +1056,7 @@ SIZE (cargo/quick-xml-0.31.0.tar.gz) = 172236
 SIZE (cargo/quote-1.0.36.tar.gz) = 28507
 SIZE (cargo/r2d2-0.8.10.tar.gz) = 17888
 SIZE (cargo/radium-0.7.0.tar.gz) = 10906
+SIZE (cargo/radix_trie-0.2.1.tar.gz) = 251366
 SIZE (cargo/rand-0.8.5.tar.gz) = 87113
 SIZE (cargo/rand_chacha-0.3.1.tar.gz) = 15251
 SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
@@ -1124,7 +1134,7 @@ SIZE (cargo/sequoia-openpgp-1.20.0.tar.gz) = 3002022
 SIZE (cargo/serde-1.0.197.tar.gz) = 77087
 SIZE (cargo/serde_bytes-0.11.14.tar.gz) = 12018
 SIZE (cargo/serde_derive-1.0.197.tar.gz) = 55771
-SIZE (cargo/serde_json-1.0.115.tar.gz) = 147100
+SIZE (cargo/serde_json-1.0.116.tar.gz) = 146790
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
 SIZE (cargo/serde_with-1.14.0.tar.gz) = 114325
 SIZE (cargo/serde_with_macros-1.5.2.tar.gz) = 21426
@@ -1297,4 +1307,4 @@ SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-5.0.2+zstd.1.5.2.tar.gz) = 17273
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (mail-server-0.7.1.tar.gz) = 8417128
+SIZE (mail-server-0.7.2.tar.gz) = 8420882
