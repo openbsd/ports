@@ -2,6 +2,7 @@ COMMENT =		PostgreSQL backup & restore tool
 
 V =			2.51
 DISTNAME =		pgbackrest-${V}
+REVISION =		0
 
 CATEGORIES = 		databases
 HOMEPAGE = 		https://pgbackrest.org/
@@ -19,18 +20,15 @@ WANTLIB += 		bz2 c crypto lz4 pq ssh2 ssl xml2 z zstd
 
 BUILD_DEPENDS =		devel/libyaml
 
-RUN_DEPENDS =		databases/postgresql,-server
-
 MODULES =		devel/meson
 
 LIB_DEPENDS = 		archivers/bzip2 \
 		  	archivers/lz4 \
 			archivers/zstd \
-			databases/postgresql \
+			databases/postgresql,-main \
 			security/libssh2 \
 			textproc/libxml
 
-CONFIGURE_STYLE =  	meson
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
