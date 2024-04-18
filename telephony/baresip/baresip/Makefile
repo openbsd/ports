@@ -29,7 +29,7 @@ LIB_DEPENDS-main =	audio/libsndfile \
 			multimedia/libv4l \
 			multimedia/libvpx \
 			net/mosquitto \
-			telephony/baresip/re>=3.1.0 \
+			telephony/baresip/re>=3.11.0 \
 			telephony/spandsp
 LIB_DEPENDS-gtk =	x11/gtk+3,-main
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main
