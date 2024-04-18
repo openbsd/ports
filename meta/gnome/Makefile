@@ -1,14 +1,12 @@
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
-# sync with x11/gnome/shell GNOME_VERSION
-V=			45.5
+# sync with x11/gnome/control-center MAJOR_VERSION
+V=			46
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
-
-REVISION-main=		0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -58,7 +56,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/adwaita-icon-theme \
 			x11/gnome/backgrounds \
 			x11/gnome/color-manager \
-			x11/gnome/control-center \
+			x11/gnome/control-center>=${V} \
 			x11/gnome/desktop \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gdm \
@@ -70,7 +68,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/orca \
 			x11/gnome/session \
 			x11/gnome/settings-daemon \
-			x11/gnome/shell=${V} \
+			x11/gnome/shell \
 			x11/gnome/shell-extensions \
 			x11/gnome/sushi \
 			x11/gnome/tecla  \
