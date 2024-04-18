@@ -1,0 +1,24 @@
+Patch from Debian: "use system leptonica", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0005-willuslib-use-system-leptonica.patch/
+
+Index: willuslib/wleptonica.c
+--- willuslib/wleptonica.c.orig
++++ willuslib/wleptonica.c
+@@ -23,7 +23,7 @@
+ #include "willus.h"
+ 
+ #ifdef HAVE_LEPTONICA_LIB
+-#include <leptonica.h>
++#include <leptonica/allheaders.h>
+ 
+ static void wlept_pix_from_bmp(PIX **pixptr,WILLUSBITMAP *bmp);
+ static void wlept_bmp_from_pix(WILLUSBITMAP *bmp,PIX *pix);
+@@ -135,7 +135,7 @@ pixWrite("pixb.png",pixb,IFF_PNG);
+     dew1=dewarpCreate(pixb,1);
+     pixDestroy(&pixb);
+     dewarpaInsertDewarp(dewa,dew1);
+-    dewarpBuildPageModel_ex(dew1,debug,fit_order);
++    dewarpBuildPageModel(dew1,debug);
+     if (bmp1!=NULL)
+         {
+         PIX *pix2,*pix2d;

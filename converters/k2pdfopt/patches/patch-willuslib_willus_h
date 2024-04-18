@@ -4,7 +4,7 @@
 Index: willuslib/willus.h
 --- willuslib/willus.h.orig
 +++ willuslib/willus.h
-@@ -107,7 +107,7 @@ typedef double  real;
+@@ -113,7 +113,7 @@ typedef double  real;
  #define MINGW
  #endif
  
@@ -13,7 +13,7 @@ Index: willuslib/willus.h
  #define UNIX
  #endif
  
-@@ -160,7 +160,8 @@ typedef double  real;
+@@ -166,7 +166,8 @@ typedef double  real;
  #define WILLUS_X86
  #endif
  

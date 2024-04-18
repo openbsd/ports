@@ -1,0 +1,15 @@
+Patch from Debian: "use system djvu", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0010-willuslib-use-system-djvu.patch/
+
+Index: willuslib/bmpdjvu.c
+--- willuslib/bmpdjvu.c.orig
++++ willuslib/bmpdjvu.c
+@@ -23,7 +23,7 @@
+ #include "willus.h"
+ 
+ #ifdef HAVE_DJVU_LIB
+-#include <djvu.h>
++#include <libdjvu/ddjvuapi.h>
+ 
+ static void handle(int wait,ddjvu_context_t *ctx);
+ static void djvu_add_page_info(char *buf,ddjvu_document_t *doc,int page,int npages);

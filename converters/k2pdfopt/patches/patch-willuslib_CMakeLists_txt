@@ -1,78 +1,38 @@
+Patch from Debian: "conditionally add source files", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0012-willuslib-CMakeLists.txt-conditionally-add-source-fi.patch/
+
+Add ../mupdf_mod/font-win32.c to get the mupdf part to compile.
+
 Index: willuslib/CMakeLists.txt
 --- willuslib/CMakeLists.txt.orig
 +++ willuslib/CMakeLists.txt
-@@ -1,4 +1,4 @@
--project(k2pdfopt C)
-+project(k2pdfopt)
- cmake_minimum_required(VERSION 2.6)
- 
- include_directories(..)
-@@ -6,13 +6,37 @@ include_directories(..)
+@@ -9,14 +9,27 @@ include_directories(..)
  set(WILLUSLIB_SRC
      ansi.c array.c bmp.c bmpdjvu.c bmpmupdf.c dtcompress.c filelist.c
      fontdata.c fontrender.c gslpolyfit.c linux.c math.c mem.c ocr.c
--    ocrjocr.c ocrtess.c pdfwrite.c point2d.c render.c strbuf.c string.c
-+    ocrtess.c pdfwrite.c point2d.c render.c strbuf.c string.c
-     token.c wfile.c wgs.c wgui.c willusversion.c win.c winbmp.c
-     wincomdlg.c winmbox.c winshell.c wmupdf.c wmupdfinfo.c wpdf.c wsys.c
--    wzfile.c wleptonica.c
-+    wzfile.c
-+
-+    # mupdf mods
-+    ../mupdf_mod/font.c
+-    ocrgocr.c ocrtess.c ocrwords.c pdffonts.c pdfwrite.c point2d.c
+-    render.c strbuf.c string.c token.c wfile.c wgs.c wgui.c
++    ocrwords.c pdffonts.c pdfwrite.c point2d.c
++    render.c strbuf.c string.c token.c wfile.c wgui.c
+     willusversion.c win.c winbmp.c wincomdlg.c wininet.c winmbox.c
+     winshell.c winshellwapi.c wleptonica.c wmupdf.c wmupdfinfo.c wpdf.c
+     wpdfoutline.c wpdfutil.c wsys.c wzfile.c
 +    ../mupdf_mod/font-win32.c
-+    ../mupdf_mod/pdf-annot.c
-+    ../mupdf_mod/pdf-colorspace.c
-+    ../mupdf_mod/pdf-font.c
-+    ../mupdf_mod/pdf-parse.c
-+    ../mupdf_mod/pdf-type3.c
-+    ../mupdf_mod/stext-device.c
-+    ../mupdf_mod/string.c
-+
-+    # tesseract mods
-+    ../tesseract_mod/dawg.cpp
-+    ../tesseract_mod/imagedata.cpp
-+    ../tesseract_mod/tesscapi.cpp
-+    ../tesseract_mod/tessedit.cpp
-+    ../tesseract_mod/thresholder.cpp
-+
-+    # leptonica mods
-+    wleptonica.c
-+    ../leptonica_mod/dewarp2.c
  )
-+
  # ocr.c  
  # win.c  winbmp.c winmbox.c wincomdlg.c wgui.c winshell.c
-+# wleptonica.c
++
++if(HAVE_GHOSTSCRIPT)
++  set(WILLUSLIB_SRC ${WILLUSLIB_SRC} wgs.c)
++endif(HAVE_GHOSTSCRIPT)
++
++if(GOCR_FOUND)
++  set(WILLUSLIB_SRC ${WILLUSLIB_SRC} ocrgocr.c)
++endif(GOCR_FOUND)
++
++if(TESSERACT_FOUND)
++  set(WILLUSLIB_SRC ${WILLUSLIB_SRC} ocrtess.c)
++endif(TESSERACT_FOUND)
  
  if(DJVU_FOUND)
    set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpdjvu.c)
-@@ -21,10 +45,28 @@ endif(DJVU_FOUND)
- if(MUPDF_FOUND)
-   set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpmupdf.c wmupdf.c)
- endif(MUPDF_FOUND)
-+if(MUPDF_LIB)
-+  set(WILLUSLIB_SRC ${WILLUSLIB_SRC} bmpmupdf.c wmupdf.c)
-+  include_directories(SYSTEM ../mupdf/source/fitz)
-+endif(MUPDF_LIB)
- 
-+if(LEPT_LIB)
-+  include_directories(SYSTEM ../leptonica/src)
-+endif()
-+
-+if(TESSERACT_LIB)
-+  include_directories(SYSTEM ../tesseract/ccutil ../tesseract/api
-+	../tesseract/ccmain ../tesseract/ccstruct ../tesseract/viewer
-+	../tesseract/dict ../tesseract/textord ../tesseract/cutil 
-+	../tesseract/wordrec ../tesseract/classify)
-+endif()
-+
- message("-- Willuslib sources: ${WILLUSLIB_SRC}")
- 
- add_library(willuslib ${WILLUSLIB_SRC})
-+if(MUPDF_LIB)
-+  target_link_libraries(willuslib ${MUPDF_LIB})
-+endif(MUPDF_LIB)
- 
- # HAVE_GOCR_LIB: ocrjocr.c
- # HAVE_TESSERACT_LIB: ocrtess.c 

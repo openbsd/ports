@@ -1,3 +1,20 @@
+Fix compilation with Jasper library.
+
+Patch from Debian: "do not detect ghostscript at compile time", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0003-CMakeLists.txt-do-not-detect-ghostscript-at-compile-.patch/
+
+Patch from Debian: "use system gsl", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0008-willuslib-gslpolyfit.c-use-system-gsl.patch/
+
+Find Freetype.
+
+Find MuPDF using find_library() since mupdf does not ship a pkg-config file.
+
+Remove check for Tesseract since it does not work for us (yet?).
+
+Patch from Debian: "add missing install command", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0001-CMakeLists.txt-add-missing-install-command.patch/
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -6,8 +23,8 @@ Index: CMakeLists.txt
 +project(k2pdfopt)
  cmake_minimum_required(VERSION 2.6)
  
- # ---- Test for packages
-@@ -52,6 +52,8 @@ endif(JPEG_FOUND)
+ #
+@@ -57,37 +57,40 @@ endif(JPEG_FOUND)
  include(FindJasper)
  if(JASPER_FOUND)
    set(HAVE_JASPER_LIB 1)
@@ -15,11 +32,34 @@ Index: CMakeLists.txt
 +  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${JASPER_LIBRARY})
  endif(JASPER_FOUND)
  
- # paths from willuslib/wgs.c
-@@ -84,6 +86,22 @@ if(MUPDF_FOUND)
-   )
- endif(MUPDF_FOUND)
+-# paths from willuslib/wgs.c
+-find_program(GHOSTSCRIPT_EXECUTABLE gs
+-#  PATHS /usr/bin /usr/share/gs /usr/local/gs /opt/gs 
+-#    /usr/share/gs* /usr/local/gs* /opt/gs*
+-)
+-if(GHOSTSCRIPT_EXECUTABLE)
+-  set(HAVE_GHOSTSCRIPT 1)
+-  message(STATUS "Found ghostscript executable")
+-else()
+-  message(STATUS "Could NOT find ghostscript executable")
+-endif(GHOSTSCRIPT_EXECUTABLE)
++set(HAVE_GHOSTSCRIPT 1)
  
+-# willus.h
+-# HAVE_GSL_LIB
++pkg_check_modules(GSL gsl)
++if(GSL_FOUND)
++  set(HAVE_GSL_LIB 1)
++  include_directories(SYSTEM ${GSL_INCLUDEDIR})
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${GSL_LDFLAGS})
++endif(GSL_FOUND)
+ 
+ 
+ # libfreetype6 (>= 2.3.9), libjbig2dec0, libjpeg8 (>= 8c), libx11-6, libxext6, zlib1g (>= 1:1.2.0)
+ # MUPDF_STATIC_LDFLAGS misses mupdf-js-none, and doubles libs ...
+ 
+-pkg_check_modules(MUPDF mupdf)
+-if(MUPDF_FOUND)
 +find_library(FREETYPE_LIB freetype PATHS /usr/X11R6/lib)
 +if(FREETYPE_LIB)
 +  include_directories(SYSTEM /usr/X11R6/include /usr/X11R6/include/freetype2)
@@ -29,54 +69,50 @@ Index: CMakeLists.txt
 +
 +find_library(MUPDF_LIB mupdf PATHS ${CMAKE_INSTALL_PREFIX}/lib)
 +if(MUPDF_LIB)
-+  set(HAVE_MUPDF_LIB 1) 
+   set(HAVE_MUPDF_LIB 1) 
+   # (includes jbig2dec, openjpeg, freetype)
+-  include_directories(SYSTEM ${MUPDF_INCLUDEDIR})
+-  message(STATUS "mupdf libraries: ${MUPDF_LDFLAGS}")
+-  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LDFLAGS} 
+-    -lmupdf-js-none -lopenjpeg -ljbig2dec -ljpeg -lfreetype -llcms -lgumbo
 +  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
 +  message(STATUS "mupdf libraries: ${MUPDF_LIB}")
-+  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LIB} 
-+    -lopenjpeg -ljbig2dec -ljpeg)
-+endif()
-+
++  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${MUPDF_LIB}
++    -lmupdf -ljpeg -llcms -lgumbo
+   )
+-endif(MUPDF_FOUND)
++endif(MUPDF_LIB)
+ 
  pkg_check_modules(DJVU ddjvuapi)
  if(DJVU_FOUND)
-   set(HAVE_DJVU_LIB 1)
-@@ -92,14 +110,30 @@ if(DJVU_FOUND)
- endif(DJVU_FOUND)
+@@ -105,13 +108,6 @@ if(LEPT_FOUND)
+   include_directories(SYSTEM ${LEPT_INCLUDEDIR})
+ endif(LEPT_FOUND)
  
- # HAVE_GOCR_LIB
--# HAVE_LEPTONICA_LIB
-+# LEPTONICA
-+find_library(LEPT_LIB lept PATHS ${CMAKE_INSTALL_PREFIX}/lib)
-+if(LEPT_LIB)
-+  set(HAVE_LEPTONICA_LIB 1) 
-+  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include leptonica_mod)
-+  message(STATUS "leptonica libraries: ${LEPT_LIB}")
-+  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${LEPT_LIB}) 
-+endif()
-+
- # HAVE_TESSERACT_LIB
-+find_library(TESSERACT_LIB tesseract PATHS ${CMAKE_INSTALL_PREFIX}/lib)
-+if(TESSERACT_LIB)
-+  set(HAVE_TESSERACT_LIB 1) 
-+  include_directories(SYSTEM ${CMAKE_INSTALL_PREFIX}/include)
-+  message(STATUS "tesseract libraries: ${TESSERACT_LIB}")
-+  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${TESSERACT_LIB}) 
-+endif()
- 
-+
+-pkg_check_modules(TESSERACT tesseract)
+-if(TESSERACT_FOUND)
+-  set(HAVE_TESSERACT_LIB 1)
+-  set(K2PDFOPT_LIB ${K2PDFOPT_LIB} ${TESSERACT_LDFLAGS})
+-  include_directories(SYSTEM ${TESSERACT_INCLUDEDIR})
+-endif(TESSERACT_FOUND)
+-
  # ---- Describe project
  
  SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DUSE_CMAKE -Wall")
- 
--include_directories(. willuslib k2pdfoptlib)
-+include_directories(. ${PROJECT_BINARY_DIR} include_mod willuslib k2pdfoptlib)
- 
- configure_file (
+@@ -122,6 +118,7 @@ configure_file (
    "${PROJECT_SOURCE_DIR}/config.h.in"
-@@ -113,6 +147,7 @@ add_subdirectory(k2pdfoptlib)
+   "${PROJECT_BINARY_DIR}/config.h"
+ )
++include_directories(${PROJECT_BINARY_DIR})
+ 
+ add_subdirectory(willuslib)
+ add_subdirectory(k2pdfoptlib)
+@@ -129,6 +126,8 @@ add_subdirectory(k2pdfoptlib)
+ # ms
  add_executable(k2pdfopt k2pdfopt.c)
- target_link_libraries (k2pdfopt k2pdfoptlib willuslib ${K2PDFOPT_LIB})
-
-+install (TARGETS k2pdfopt RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
-
+ target_link_libraries (k2pdfopt k2pdfoptlib willuslib ${K2PDFOPT_LIB} pthread)
++
++install(TARGETS k2pdfopt RUNTIME DESTINATION bin)
+ 
+ 
  message("")
- message("-- Summary --")

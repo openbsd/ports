@@ -1,0 +1,15 @@
+Patch from Debian: "use system gsl", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0008-willuslib-gslpolyfit.c-use-system-gsl.patch/
+
+Index: willuslib/gslpolyfit.c
+--- willuslib/gslpolyfit.c.orig
++++ willuslib/gslpolyfit.c
+@@ -24,7 +24,7 @@
+ #include <stdlib.h>
+ #include "willus.h"
+ #ifdef HAVE_GSL_LIB
+-#include <gsl.h>
++#include <gsl/gsl_multifit.h>
+ #endif
+ 
+ void gslpolyfit(double *x,double *y0,int n,int d,double *c0)

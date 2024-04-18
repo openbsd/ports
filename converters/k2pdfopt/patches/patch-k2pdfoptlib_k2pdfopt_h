@@ -1,12 +1,26 @@
+Fix HAVE_MUPDF_LIB #define.
+
+Patch from Debian: "dst_ocr_visibility_flags workaround", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0006-k2pdfopt.h-dst_ocr_visibility_flags-workaround.patch/
+
 Index: k2pdfoptlib/k2pdfopt.h
 --- k2pdfoptlib/k2pdfopt.h.orig
 +++ k2pdfoptlib/k2pdfopt.h
-@@ -95,7 +95,7 @@
+@@ -107,7 +107,7 @@
  #endif
  */
  
--#if (defined(HAVE_MUPDF) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB))
-+#if (defined(HAVE_MUPDF_LIB) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB))
+-#if (defined(HAVE_MUPDF) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB) || defined(HAVE_DJVU_LIB))
++#if (defined(HAVE_MUPDF_LIB) || defined(HAVE_GOCR_LIB) || defined(HAVE_TESSERACT_LIB) || defined(HAVE_DJVU_LIB))
  #if (!defined(HAVE_OCR_LIB))
  #define HAVE_OCR_LIB
  #endif
+@@ -267,7 +267,7 @@ typedef struct
+     int text_only; /* Do not send figures to output file */
+ 
+     /* OCR */
+-#ifdef HAVE_OCR_LIB
++#if 1
+     char ocrout[128];
+     int dst_ocr;
+     int ocrvbb;             /* New in v2.53 -ocrvbb option */

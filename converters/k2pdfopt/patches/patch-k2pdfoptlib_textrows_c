@@ -1,7 +1,7 @@
 Index: k2pdfoptlib/textrows.c
 --- k2pdfoptlib/textrows.c.orig
 +++ k2pdfoptlib/textrows.c
-@@ -956,6 +956,11 @@ static int maxval(int *x,int n,int n0,int dx,int *inde
+@@ -996,6 +996,11 @@ static int maxval(int *x,int n,int n0,int dx,int *inde
          if (imax<0 || x[i]>x[imax])
              imax=i;
          }

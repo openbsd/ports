@@ -1,0 +1,16 @@
+Patch from Debian: "use system leptonica", see
+https://sources.debian.org/patches/k2pdfopt/2.55%2Bds-2/0005-willuslib-use-system-leptonica.patch/
+
+Index: willuslib/ocrtess.c
+--- willuslib/ocrtess.c.orig
++++ willuslib/ocrtess.c
+@@ -25,8 +25,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <locale.h>
+-#include <leptonica.h>
+-#include <tesseract.h>
++#include <leptonica/allheaders.h>
+ #include "willus.h"
+ 
+ char *ocrtess_langnames[] =
