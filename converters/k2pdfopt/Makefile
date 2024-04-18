@@ -38,7 +38,7 @@ RUN_DEPENDS +=	print/ghostscript/gnu
 
 WRKDIST =	${WRKDIR}/k2pdfopt_v${V}
 
-FIX_CRLF_FILES =	`find . -type f`
+FIX_CRLF_FILES =	`find . -type f \( -name '*.txt' -o -name '*.[ch]' \)`
 
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/debian/k2pdfopt.1 ${PREFIX}/man/man1
