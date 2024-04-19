@@ -1,3 +1,4 @@
+@conflict purpose-<5.115.0p0
 include/KF6/Purpose/
 include/KF6/Purpose/Purpose/
 include/KF6/Purpose/Purpose/AlternativesModel
