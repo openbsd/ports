@@ -1,6 +1,6 @@
 COMMENT=		CUPS bindings for Python
 
-MODPY_EGG_VERSION=	2.0.3
+MODPY_EGG_VERSION=	2.0.4
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
 

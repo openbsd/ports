@@ -2,7 +2,7 @@ Index: setup.py
 --- setup.py.orig
 +++ setup.py
 @@ -39,7 +39,8 @@ import sys
- VERSION="2.0.3"
+ VERSION="2.0.4"
  libraries=["cups"]
  
 -if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
