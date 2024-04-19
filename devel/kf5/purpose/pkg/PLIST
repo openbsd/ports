@@ -64,8 +64,8 @@ lib/qt5/qml/org/kde/purpose/reviewboard/qmldir
 share/accounts/
 share/accounts/services/
 share/accounts/services/kde/
-share/accounts/services/kde/google-youtube.service
-share/accounts/services/kde/nextcloud-upload.service
+@comment share/accounts/services/kde/google-youtube.service
+@comment share/accounts/services/kde/nextcloud-upload.service
 share/icons/hicolor/128x128/apps/phabricator-purpose.png
 share/icons/hicolor/128x128/apps/reviewboard-purpose.png
 share/icons/hicolor/16x16/actions/kipiplugin_youtube.png
