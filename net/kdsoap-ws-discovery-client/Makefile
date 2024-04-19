@@ -21,6 +21,8 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		devel/boost
 
+BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules
+
 LIB_DEPENDS =		net/kdsoap,qt6
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
