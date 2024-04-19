@@ -2,7 +2,7 @@ COMMENT =	role for classes that can be thrown
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Throwable-1.000
+DISTNAME =	Throwable-1.001
 CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
 
