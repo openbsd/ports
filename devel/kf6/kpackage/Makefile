@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
 

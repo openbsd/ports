@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
 

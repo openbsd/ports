@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami-${VERSION}
 

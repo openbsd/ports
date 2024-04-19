@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE plugin framework for user interface components
 DISTNAME =	kparts-${VERSION}
 

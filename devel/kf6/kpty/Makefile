@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =		interfacing with pseudo terminal devices in KDE
 DISTNAME =		kpty-${VERSION}
 

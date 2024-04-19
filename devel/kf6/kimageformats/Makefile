@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE plugins for QImage supporting extra file formats
 DISTNAME =	kimageformats-${VERSION}
 

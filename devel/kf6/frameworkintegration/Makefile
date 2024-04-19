@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE Plasma integration support for Qt-based apps
 DISTNAME =	frameworkintegration-${VERSION}
 

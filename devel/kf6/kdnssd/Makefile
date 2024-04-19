@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	network service discovery using Zeroconf for KDE
 DISTNAME =	kdnssd-${VERSION}
 

@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 

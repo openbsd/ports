@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
 

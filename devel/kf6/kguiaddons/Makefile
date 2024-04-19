@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
 

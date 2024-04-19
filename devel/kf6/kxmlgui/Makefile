@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE framework for managing menu and toolbar actions
 DISTNAME =	kxmlgui-${VERSION}
 

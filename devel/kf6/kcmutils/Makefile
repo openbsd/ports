@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 

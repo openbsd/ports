@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	Open Collaboration Services API implementation
 DISTNAME =	attica-${VERSION}
 

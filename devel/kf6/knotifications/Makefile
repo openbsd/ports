@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
 

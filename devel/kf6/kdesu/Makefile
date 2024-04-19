@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE wrapper over doas commands
 DISTNAME =	kdesu-${VERSION}
 

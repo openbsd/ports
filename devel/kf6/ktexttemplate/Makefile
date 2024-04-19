@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE configuration system
 DISTNAME =	ktexttemplate-${VERSION}
 

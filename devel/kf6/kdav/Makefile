@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE PIM DAV protocol support library
 DISTNAME =	kdav-${VERSION}
 

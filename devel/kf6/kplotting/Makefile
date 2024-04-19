@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE data plotting framework
 DISTNAME =	kplotting-${VERSION}
 

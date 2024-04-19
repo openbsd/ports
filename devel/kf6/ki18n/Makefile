@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
 

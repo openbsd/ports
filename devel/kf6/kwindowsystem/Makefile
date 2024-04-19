@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	access to the windowing system for KDE apps
 DISTNAME =	kwindowsystem-${VERSION}
 

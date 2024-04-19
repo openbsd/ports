@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	Qt wrapper for BlueZ 5 DBus API
 DISTNAME =	bluez-qt-${VERSION}
 

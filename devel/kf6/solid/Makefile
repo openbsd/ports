@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
 

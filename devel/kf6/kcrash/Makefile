@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	intercepting and handling application crashes in KDE
 DISTNAME =	kcrash-${VERSION}
 

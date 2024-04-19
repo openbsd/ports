@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 

@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	RSS/Atom parser library
 DISTNAME =	syndication-${VERSION}
 

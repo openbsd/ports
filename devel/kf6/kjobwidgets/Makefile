@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
 

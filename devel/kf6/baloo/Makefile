@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 

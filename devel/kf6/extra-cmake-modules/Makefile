@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
 

@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	string encoding/decoding for KDE
 DISTNAME =	kcodecs-${VERSION}
 

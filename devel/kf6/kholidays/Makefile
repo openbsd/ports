@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	holiday calculation library
 DISTNAME =	kholidays-${VERSION}
 

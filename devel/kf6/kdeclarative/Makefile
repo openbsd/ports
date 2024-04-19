@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
 

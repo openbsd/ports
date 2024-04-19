@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =		text completion support for Qt-based apps
 DISTNAME =		kcompletion-${VERSION}
 

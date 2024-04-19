@@ -1,3 +1,4 @@
+UNLINKED = kf6
 COMMENT =	classes to read and interact with KColorScheme
 DISTNAME =	kcolorscheme-${VERSION}
 
