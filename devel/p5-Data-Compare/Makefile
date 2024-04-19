@@ -2,7 +2,7 @@ COMMENT =	compare perl data structures
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Data-Compare-1.27
+DISTNAME =	Data-Compare-1.29
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
