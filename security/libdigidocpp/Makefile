@@ -1,11 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.16.0
+V =			3.17.1
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
-REVISION =		0
 
-SHARED_LIBS =		digidocpp	3.0	# 0.0
+SHARED_LIBS =		digidocpp	4.0	# 0.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -15,12 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
 SITES =			https://github.com/open-eid/libdigidocpp/releases/download/v${V}/
-
-# merged "Get EVP_MD_CTX from EVP_Digest(3) to fix LibreSSL build"
-# https://github.com/open-eid/libdigidocpp/pull/550
-SITES.pr =		https://github.com/open-eid/libdigidocpp/commit/
-PATCHFILES.pr =		4eb9a4d27a7087442cc45f1d4ea9f9485a63cf78.patch
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
