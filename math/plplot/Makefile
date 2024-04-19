@@ -15,8 +15,8 @@ PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
 REVISION-c++ =	1
-REVISION-fortran =	1
-REVISION-main =	2
+REVISION-fortran =	2
+REVISION-main =	3
 
 CATEGORIES =	math graphics
 

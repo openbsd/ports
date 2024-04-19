@@ -10,7 +10,7 @@ lib/fortran/modules/plplot/plplot_private_exposed.mod
 lib/fortran/modules/plplot/plplot_private_utilities.mod
 lib/fortran/modules/plplot/plplot_single.mod
 lib/fortran/modules/plplot/plplot_types.mod
-lib/libplfortrandemolib.a
+@static-lib lib/libplfortrandemolib.a
 @lib lib/libplplotfortran.so.${LIBplplotfortran_VERSION}
 lib/pkgconfig/plplot-fortran.pc
 share/examples/plplot/fortran/

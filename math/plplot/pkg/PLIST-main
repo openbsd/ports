@@ -61,19 +61,19 @@ lib/pkgconfig/plplot.pc
 lib/plplot/
 lib/plplot/drivers/
 lib/plplot/drivers/cairo.driver_info
-lib/plplot/drivers/cairo.so
+@so lib/plplot/drivers/cairo.so
 lib/plplot/drivers/mem.driver_info
-lib/plplot/drivers/mem.so
+@so lib/plplot/drivers/mem.so
 lib/plplot/drivers/null.driver_info
-lib/plplot/drivers/null.so
+@so lib/plplot/drivers/null.so
 lib/plplot/drivers/ps.driver_info
-lib/plplot/drivers/ps.so
+@so lib/plplot/drivers/ps.so
 lib/plplot/drivers/svg.driver_info
-lib/plplot/drivers/svg.so
+@so lib/plplot/drivers/svg.so
 lib/plplot/drivers/xfig.driver_info
-lib/plplot/drivers/xfig.so
+@so lib/plplot/drivers/xfig.so
 lib/plplot/drivers/xwin.driver_info
-lib/plplot/drivers/xwin.so
+@so lib/plplot/drivers/xwin.so
 @man man/man1/pltek.1
 @man man/man3/plGetCursor.3
 @man man/man3/pl_setcontlabelformat.3
