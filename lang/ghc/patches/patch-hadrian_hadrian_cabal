@@ -3,7 +3,7 @@ Avoid -qg incompatible with 9.2 runtime
 Index: hadrian/hadrian.cabal
 --- hadrian/hadrian.cabal.orig
 +++ hadrian/hadrian.cabal
-@@ -175,7 +175,7 @@ executable hadrian
+@@ -176,7 +176,7 @@ executable hadrian
                         --        waiting for external processes
                         -- * -qg: Don't use parallel GC as the synchronization
                         --        time tends to eat any benefit.

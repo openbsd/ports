@@ -13,8 +13,7 @@ USE_NOEXECONLY =	Yes
 
 USE_NOBTCFI =		Yes
 
-GHC_VERSION =		9.6.4
-REVISION =		2
+GHC_VERSION =		9.6.5
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -67,17 +66,17 @@ EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.boot}
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-	CABAL			3.10.1.0	 \
+	CABAL			3.10.3.0	 \
 	ARRAY			0.5.6.0		 \
-	BASE			4.18.2.0	 \
+	BASE			4.18.2.1	 \
 	BINARY			0.8.9.1		 \
 	BYTESTRING		0.11.5.3	 \
 	CONTAINERS		0.6.7		 \
 	DEEPSEQ			1.4.8.1		 \
-	DIRECTORY		1.3.8.1		 \
+	DIRECTORY		1.3.8.4		 \
 	EXCEPTIONS		0.10.7		 \
-	FILEPATH		1.4.200.1	 \
-	GHC			9.6.4		 \
+	FILEPATH		1.4.300.1	 \
+	GHC			9.6.5		 \
 	GHC_BIGNUM		1.3		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.10.0		 \
@@ -87,7 +86,7 @@ GHC_ITEMS = \
 	MTL			2.3.1		 \
 	PARSEC			3.1.16.1	 \
 	PRETTY			1.1.3.6		 \
-	PROCESS			1.6.17.0	 \
+	PROCESS			1.6.19.0	 \
 	RTS			1.0.2		 \
 	STM			2.5.1.0		 \
 	TEMPLATE-HASKELL	2.20.0.0	 \
