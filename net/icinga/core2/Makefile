@@ -33,8 +33,6 @@ SHARED_LIBS +=	pgsql_shim                0.0 # 2.9
 SHARED_LIBS +=	remote                    0.0 # 2.6
 SHARED_LIBS +=	socketpair                0.0 # 2.6
 
-HOMEPAGE =	https://icinga.com/products/icinga-2/
-
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE =	Yes
 
