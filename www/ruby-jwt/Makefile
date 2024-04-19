@@ -1,6 +1,6 @@
 COMMENT =		pure ruby implementation of the JWT standard
 
-DISTNAME =		jwt-2.7.1
+DISTNAME =		jwt-2.8.1
 
 CATEGORIES =		www security
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
