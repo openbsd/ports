@@ -5,15 +5,15 @@ Replace them with their pthread equivalents.
 Index: packages/ssl/cryptolib.c
 --- packages/ssl/cryptolib.c.orig
 +++ packages/ssl/cryptolib.c
-@@ -33,6 +33,7 @@
- */
+@@ -34,6 +34,7 @@
  
+ #define _CRT_SECURE_NO_WARNINGS 1
  #include <config.h>
 +#include <pthread.h>
  #include <string.h>
  
  #include "cryptolib.h"
-@@ -293,7 +294,7 @@ bio_control(BIO* bio, int cmd, long num, void* ptr)
+@@ -329,7 +330,7 @@ bio_control(BIO* bio, int cmd, long num, void* ptr)
  static int
  bio_create(BIO* bio)
  {
@@ -22,7 +22,7 @@ Index: packages/ssl/cryptolib.c
     bio->shutdown = 1;
     bio->init = 1;
     bio->num = -1;
-@@ -321,7 +322,7 @@ bio_destroy(BIO* bio)
+@@ -357,7 +358,7 @@ bio_destroy(BIO* bio)
     return 1;
  }
  
@@ -31,7 +31,7 @@ Index: packages/ssl/cryptolib.c
  /*
   * Specify the BIO read and write function structures
   */
-@@ -364,6 +365,12 @@ bio_write_method(void)
+@@ -419,6 +420,12 @@ bio_write_text_method(void)
   * In OpenSSL >= 1.1.0, the BIO methods are constructed
   * using functions. We initialize them exactly once.
   */

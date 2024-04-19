@@ -1,0 +1,11 @@
+Index: packages/cpp/test_cpp.cpp
+--- packages/cpp/test_cpp.cpp.orig
++++ packages/cpp/test_cpp.cpp
+@@ -2055,6 +2055,7 @@ PREDICATE(compile_only_stream, 0)
+   i = strm.lock();
+   i = strm.tryLock();
+   i = strm.unlock();
++#undef fileno
+   i = strm.fileno();
+   // int	closehook(void (*hook)(IOSTREAM *s));
+   strm.setbuffer(buf, sizeof buf);

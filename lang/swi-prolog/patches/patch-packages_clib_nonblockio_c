@@ -1,0 +1,12 @@
+Index: packages/clib/nonblockio.c
+--- packages/clib/nonblockio.c.orig
++++ packages/clib/nonblockio.c
+@@ -180,7 +180,7 @@ typedef size_t os_bufsize_t;
+ #ifndef s6_addr16
+ #if defined(s6_words)
+ #define s6_addr16 s6_words
+-#elif defined(__APPLE__) || defined(__FreeBSD__)
++#elif defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #define s6_addr16 __u6_addr.__u6_addr16
+ #endif
+ #endif

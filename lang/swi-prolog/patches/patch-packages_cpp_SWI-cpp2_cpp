@@ -1,0 +1,11 @@
+Index: packages/cpp/SWI-cpp2.cpp
+--- packages/cpp/SWI-cpp2.cpp.orig
++++ packages/cpp/SWI-cpp2.cpp
+@@ -993,6 +993,7 @@ _SWI_CPP2_CPP_check_rc(int, vprintf(const char *fm, va
+ _SWI_CPP2_CPP_check_rc(int, lock(), Slock(s_))
+ _SWI_CPP2_CPP_check_rc(int, tryLock(), StryLock(s_))
+ _SWI_CPP2_CPP_check_rc(int, unlock(), Sunlock(s_))
++#undef fileno
+ _SWI_CPP2_CPP_check_rc(int, fileno(), Sfileno(s_))
+ _SWI_CPP2_CPP_check_rc(int64_t, tell64(), Stell64(s_))
+ _SWI_CPP2_CPP_check_rc(int, seek64(int64_t pos, int whence), Sseek64(s_, pos, whence))
