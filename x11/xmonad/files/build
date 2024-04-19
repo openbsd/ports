@@ -10,4 +10,4 @@ fi
 cabal v2-install exe:xmonad-config --overwrite-policy=always --install-method=copy
 
 [ -e "${output_file}" ] && mv -f "${output_file}" "${output_file}.old"
-install "${HOME}/.cabal/bin/xmonad-config" "${output_file}"
+install "${HOME}/.local/bin/xmonad-config" "${output_file}"
