@@ -1,10 +1,11 @@
 @bin bin/alacritty
+@man man/man1/alacritty-msg.1
 @man man/man1/alacritty.1
+@man man/man5/alacritty-bindings.5
+@man man/man5/alacritty.5
 share/applications/Alacritty.desktop
 share/bash-completion/completions/alacritty
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/alacritty/
-share/examples/alacritty/alacritty.yml
 share/fish/
 share/fish/completions/
 share/fish/completions/alacritty.fish

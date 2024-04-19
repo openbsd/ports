@@ -5,19 +5,11 @@
 Configuration
 =============
 
-Please read through alacritty(1) if you have any doubts.
-
-The `alacritty.yml` template is:
-
-	${PREFIX}/share/examples/alacritty/alacritty.yml
-
 Alacritty looks for a configuration file in the following paths:
 
-1. `$XDG_CONFIG_HOME/alacritty/alacritty.yml`
-2. `$XDG_CONFIG_HOME/alacritty.yml`
-3. `$HOME/.config/alacritty/alacritty.yml`
-4. `$HOME/.alacritty.yml`
+1. `$XDG_CONFIG_HOME/alacritty/alacritty.toml`
+2. `$XDG_CONFIG_HOME/alacritty.toml`
+3. `$HOME/.config/alacritty/alacritty.toml`
+4. `$HOME/.alacritty.toml`
 
-If none of these paths exist, then the following file is created on first run:
-
-	`$XDG_CONFIG_HOME/alacritty/alacritty.yml`
+If none of these paths exist, Alacritty will run with its default configuration.
