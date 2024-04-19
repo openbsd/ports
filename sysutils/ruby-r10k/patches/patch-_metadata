@@ -3,12 +3,12 @@ upstream locked cri to be compatible with older ruby versions
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -28,7 +28,7 @@ dependencies:
-   name: cri
-   requirement: !ruby/object:Gem::Requirement
+@@ -21,7 +21,7 @@ dependencies:
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
      requirements:
 -    - - '='
 +    - - '~>'
        - !ruby/object:Gem::Version
-         version: 2.15.10
-   type: :runtime
+         version: 3.1.2
+ - !ruby/object:Gem::Dependency

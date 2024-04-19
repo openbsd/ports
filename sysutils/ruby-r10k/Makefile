@@ -1,6 +1,6 @@
 COMMENT =	Puppet module management
 
-DISTNAME =	r10k-4.0.1
+DISTNAME =	r10k-4.1.0
 CATEGORIES =	sysutils
 HOMEPAGE =	https://github.com/puppetlabs/r10k
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
@@ -18,7 +18,7 @@ RUN_DEPENDS += archivers/ruby-minitar,${MODRUBY_FLAVOR}>=0.9,<1 \
 		devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.24,<2 \
 		devel/ruby-log4r,${MODRUBY_FLAVOR}=1.1.10 \
 		devel/ruby-puppet_forge,${MODRUBY_FLAVOR}>=4.1,<6 \
-		www/ruby-jwt,${MODRUBY_FLAVOR}>=2.2.3,<2.8
+		www/ruby-jwt,${MODRUBY_FLAVOR}>=2.2.3,<3
 
 CONFIGURE_STYLE =	ruby gem
 
