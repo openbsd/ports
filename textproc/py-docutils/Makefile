@@ -1,6 +1,6 @@
 COMMENT=	process plaintext documentation into other formats
 
-MODPY_EGG_VERSION= 0.20.1
+MODPY_EGG_VERSION= 0.21.1
 DISTNAME=	docutils-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
