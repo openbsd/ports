@@ -4,10 +4,10 @@ COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
 V =			4.1.3
-REVISION =		0
+REVISION =		1
 V_DLDIR =		${V:C/\.[0-9]$//}
 DISTNAME=		angband-${V}
-CATEGORIES=     	games
+CATEGORIES=		games
 
 HOMEPAGE=		http://rephial.org
 

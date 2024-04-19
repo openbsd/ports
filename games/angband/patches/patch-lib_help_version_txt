@@ -1,0 +1,14 @@
+newer sphinx doesn't like this
+
+Index: lib/help/version.txt
+--- lib/help/version.txt.orig
++++ lib/help/version.txt
+@@ -455,7 +455,7 @@ Peter Berger, "Prfnoff", Arcum Dagsson, Ed Cogburn, Ma
+ Ben Harrison, Steven Fuerst, Julian Lighton, Andrew Hill, Werner Baer,
+ Tom Morton, "Cyric the Mad", Chris Kern, Tim Baker, Jurriaan Kalkman,
+ Alexander Wilkins, Mauro Scarpa, John I'anson-Holton, "facade",
+-Dennis van Es, Kenneth A. Strom, Wei-Hwa Huang, Nikodemus, Timo Pietilä,
++Dennis van Es, Kenneth A. Strom, Wei-Hwa Huang, Nikodemus, Timo Pietila,
+ Greg Wooledge, Keldon Jones, Shayne Steele, Dr. Andrew White, Musus Umbra,
+ Jonathan Ellis
+ 
