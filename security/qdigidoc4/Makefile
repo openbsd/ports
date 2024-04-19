@@ -1,9 +1,8 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.4.0
+V =			4.5.1
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		5
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -17,7 +16,7 @@ SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 SITES.eesti =		https://id.eesti.ee/
-CONFIG_NAME =		config-20240206
+CONFIG_NAME =		config-20240418
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
@@ -42,7 +41,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/flatbuffers \
 			databases/openldap,-main \
-			security/libdigidocpp>=3.16.0 \
+			security/libdigidocpp>=3.17.1 \
 			security/pcsc-lite \
 			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
