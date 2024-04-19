@@ -5,6 +5,8 @@ SHARED_LIBS +=  marco-private             1.0 # 1.0
 MATE_PROJECT=		marco
 MATE_VERSION=		1.28.1
 
+REVISION=		0
+
 CATEGORIES=		x11
 
 # GPLv2
@@ -21,12 +23,15 @@ WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz iconv intl jpeg
 WANTLIB += kvm ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png startup-notification-1 vorbis
 WANTLIB += vorbisfile xcb xcb-render xcb-shm xcb-util z
+WANTLIB += dconf epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libgtop2 \
 			devel/startup-notification
 
-BUILD_DEPENDS=		x11/gnome/zenity
+BUILD_DEPENDS=		x11/gnome/zenity \
+			x11/mate/desktop
 
 RUN_DEPENDS=		x11/gnome/zenity
 
