@@ -6,8 +6,9 @@ GH_PROJECT=	Xastir
 GH_TAGNAME=	Release-${VERSION}
 DISTNAME=	${GH_PROJECT}-${VERSION}
 PKGNAME=	xastir-${VERSION}
+REVISION=	0
 
-CATEGORIES=	comms hamradio geo
+CATEGORIES=	comms geo
 
 HOMEPAGE=	https://xastir.org/
 
@@ -15,9 +16,9 @@ MAINTAINER=	Michael <michi+openbsd@dataswamp.org>
 
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl db
-WANTLIB += freetype geotiff lcms2 ltdl lzma m pcre proj
-WANTLIB += pthread shp tiff z
+WANTLIB += GraphicsMagick ICE SM X11 Xext Xm Xpm Xt bz2 c curl
+WANTLIB += db freetype geotiff lcms2 ltdl m pcre proj pthread
+WANTLIB += shp tiff z
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
@@ -41,12 +42,14 @@ CONFIGURE_ARGS=		--with-shapelib					\
 			--with-bdb-incdir=$(LOCALBASE)/include/db4
 
 
-LIB_DEPENDS=	net/curl \
-		devel/shapelib \
+LIB_DEPENDS=	databases/db/v4 \
 		devel/geotiff \
-		graphics/GraphicsMagick \
-		databases/db/v4 \
 		devel/pcre \
+		devel/shapelib \
+		graphics/GraphicsMagick \
+		graphics/lcms2 \
+		graphics/tiff \
+		net/curl \
 		x11/motif
 
 .include <bsd.port.mk>
