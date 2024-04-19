@@ -1,3 +1,4 @@
+UNLINKED =	kf6
 COMMENT =	collection of plugins to handle mobipocket files
 
 DISTNAME =	kdegraphics-mobipocket-${VERSION}
