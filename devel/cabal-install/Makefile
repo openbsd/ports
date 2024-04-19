@@ -1,9 +1,9 @@
 COMMENT =	command-line interface for Cabal and Hackage
 
-DISTNAME =	cabal-install-3.10.2.1
+DISTNAME =	cabal-install-3.10.3.0
 CATEGORIES =	devel
 GH_ACCOUNT =	haskell
-GH_TAGNAME =	cabal-install-v3.10.2.1
+GH_TAGNAME =	cabal-install-v3.10.3.0
 GH_PROJECT =	cabal
 
 HOMEPAGE =	https://github.com/haskell/cabal
@@ -34,8 +34,8 @@ SITES.hs =		https://hackage.haskell.org/package/
 # for d in sorted(deps, key=lambda p: p['package']):
 #     print(f"\t{d['package']}\t{d['version']}\t{d['revision'] or 0}\t\\")
 _MANIFEST = \
-	Cabal	3.10.2.1	0	\
-	Cabal-syntax	3.10.2.0	0	\
+	Cabal	3.10.3.0	0	\
+	Cabal-syntax	3.10.3.0	0	\
 	HTTP	4000.4.1	3	\
 	async	2.2.4	4	\
 	base16-bytestring	1.0.2.0	1	\

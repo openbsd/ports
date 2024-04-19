@@ -14,7 +14,7 @@
       "revision": null,
       "source": "local",
       "src_sha256": null,
-      "version": "3.10.2.0"
+      "version": "3.10.3.0"
     },
     {
       "cabal_sha256": null,
@@ -23,7 +23,7 @@
       "revision": null,
       "source": "local",
       "src_sha256": null,
-      "version": "3.10.2.1"
+      "version": "3.10.3.0"
     },
     {
       "cabal_sha256": "bac0ae8d46a04e410666b0c8081cff63f060f29157983b569ca86ddb6e6e0dc6",
