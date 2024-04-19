@@ -1,4 +1,4 @@
-SHA256 (cli-v2.47.0.zip) = CxQGbvFm9msLjQ3f0tVxM0on6BEnWM3mBhXMkd28hCw=
+SHA256 (cli-v2.48.0.zip) = JEyEhyjwoM95WCYf5hzHZC9NCMwe44QGEvEqzrwKIbk=
 SHA256 (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.mod) = 49RuEiDQFrkHhI5Hd6/QmF6k0p1p3k6hhWwKJlfFLVY=
 SHA256 (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.zip) = qewUZ5lrjXYREFhJ2eS6JeS+/TYKg4rxsCPppVBxyac=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = NYagpvj1XJrKsc5QbeBFAKXdHh9xg/Q1yHBvDEDfIWY=
@@ -1276,8 +1276,8 @@ SHA256 (go_modules/google.golang.org/grpc/@v/v1.56.3.mod) = p3nu5Ukal/4OmqV9JOgL
 SHA256 (go_modules/google.golang.org/grpc/@v/v1.59.0.mod) = e4m7hemgNMgJzt9nPag/v2batoFsmbJbOIa/iDmM+8k=
 SHA256 (go_modules/google.golang.org/grpc/@v/v1.60.1.mod) = TtqCrKe/neVOCVzjWuQ3iikZ44bTCVHs9sHf7K4RsF4=
 SHA256 (go_modules/google.golang.org/grpc/@v/v1.61.0.mod) = beWqlhi9ALAae2XaSJ3/m6pEc/qMrGDQtjsVd6it5Kk=
-SHA256 (go_modules/google.golang.org/grpc/@v/v1.61.1.mod) = beWqlhi9ALAae2XaSJ3/m6pEc/qMrGDQtjsVd6it5Kk=
-SHA256 (go_modules/google.golang.org/grpc/@v/v1.61.1.zip) = UL0ydqha2ieBsZVWKVzEbT7b/WAHxK6W5g4fA9oMMkU=
+SHA256 (go_modules/google.golang.org/grpc/@v/v1.61.2.mod) = beWqlhi9ALAae2XaSJ3/m6pEc/qMrGDQtjsVd6it5Kk=
+SHA256 (go_modules/google.golang.org/grpc/@v/v1.61.2.zip) = YuL+DrSHcYYX8RBq0u5Ks6m0cnCcecmTSqHWeSjQljg=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.26.0-rc.1.mod) = ssT+Gmb/W+brfAxTiPCA0IghwyesXPl13uUdiw+0np8=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.26.0.mod) = COwuIPOO/LZRRigABp7OSJHiUqJhAH+p1aGxV/UW7l8=
 SHA256 (go_modules/google.golang.org/protobuf/@v/v1.28.1.mod) = P3xyYKmH3OL9+0jOKvi082SHNQfSGrzM66sKJ0N2Hic=
@@ -1324,7 +1324,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SIZE (cli-v2.47.0.zip) = 1413909
+SIZE (cli-v2.48.0.zip) = 1422004
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.mod) = 89
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.7.zip) = 8836
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
@@ -2602,8 +2602,8 @@ SIZE (go_modules/google.golang.org/grpc/@v/v1.56.3.mod) = 932
 SIZE (go_modules/google.golang.org/grpc/@v/v1.59.0.mod) = 1111
 SIZE (go_modules/google.golang.org/grpc/@v/v1.60.1.mod) = 1111
 SIZE (go_modules/google.golang.org/grpc/@v/v1.61.0.mod) = 1111
-SIZE (go_modules/google.golang.org/grpc/@v/v1.61.1.mod) = 1111
-SIZE (go_modules/google.golang.org/grpc/@v/v1.61.1.zip) = 2174748
+SIZE (go_modules/google.golang.org/grpc/@v/v1.61.2.mod) = 1111
+SIZE (go_modules/google.golang.org/grpc/@v/v1.61.2.zip) = 2174748
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.26.0-rc.1.mod) = 83
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.26.0.mod) = 123
 SIZE (go_modules/google.golang.org/protobuf/@v/v1.28.1.mod) = 124

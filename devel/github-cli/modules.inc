@@ -495,7 +495,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto							 v0.0.0-20240116215550-a9fa1716bcac \
 	google.golang.org/genproto/googleapis/api					 v0.0.0-20240125205218-1f4bbc51befe \
 	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20240116215550-a9fa1716bcac \
-	google.golang.org/grpc								 v1.61.1 \
+	google.golang.org/grpc								 v1.61.2 \
 	google.golang.org/protobuf							 v1.33.0 \
 	gopkg.in/check.v1								 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/cheggaaa/pb.v1								 v1.0.28 \
