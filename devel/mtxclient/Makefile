@@ -6,7 +6,7 @@ SHARED_LIBS +=  matrix_client	2.0
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
 GH_TAGNAME =	v0.9.2
-REVISION =	1
+REVISION =	2
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -25,7 +25,7 @@ WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone coeurl crypto execinfo m olm
+WANTLIB += absl_time absl_time_zone coeurl crypto execinfo fmt m olm
 WANTLIB += re2 spdlog ssl
 
 MODULES =	devel/cmake
