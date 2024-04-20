@@ -592,10 +592,16 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/identity/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/identity/privileged.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/identity/uid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/identity/user.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/ipaddress6_interfaces.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/ipaddress_interfaces.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/is_virtual.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/kernel.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/kernelrelease.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/mountpoints.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/netmask6_interfaces.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/netmask_interfaces.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/network6_interfaces.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/network_interfaces.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/networking/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/networking/dhcp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/openbsd/networking/domain.rb
