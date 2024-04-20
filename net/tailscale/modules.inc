@@ -79,6 +79,7 @@ MODGO_MODULES =	\
 	github.com/bazelbuild/rules_go							 v0.44.2 \
 	github.com/beevik/ntp								 v0.3.0 \
 	github.com/beorn7/perks								 v1.0.1 \
+	github.com/bits-and-blooms/bitset						 v1.13.0 \
 	github.com/bkielbasa/cyclop							 v1.2.0 \
 	github.com/blakesmith/ar							 v0.0.0-20190502131153-809d4375e1fb \
 	github.com/blang/semver/v4							 v4.0.0 \
@@ -142,7 +143,7 @@ MODGO_MODULES =	\
 	github.com/djherbis/times							 v1.6.0 \
 	github.com/docker/cli								 v25.0.0+incompatible \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v25.0.0+incompatible \
+	github.com/docker/docker							 v25.0.5+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.8.1 \
 	github.com/docker/go-connections						 v0.4.0 \
 	github.com/docker/go-units							 v0.5.0 \
@@ -168,6 +169,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify							 v1.7.0 \
 	github.com/fxamacker/cbor/v2							 v2.5.0 \
 	github.com/fzipp/gocyclo							 v0.6.0 \
+	github.com/gaissmai/bart							 v0.4.1 \
 	github.com/github/fakeca							 v0.1.0 \
 	github.com/gliderlabs/ssh							 v0.3.5 \
 	github.com/go-critic/go-critic							 v0.8.0 \
