@@ -1,4 +1,5 @@
 COMMENT =	Xfce4 media player
+REVISION =	0
 
 XFCE_GOODIE =	parole
 

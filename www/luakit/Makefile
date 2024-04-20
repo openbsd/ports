@@ -2,7 +2,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 
 V =		2.3.3
 DISTNAME =	luakit-${V}
-REVISION =	2
+REVISION =	3
 
 EPOCH =		1
 

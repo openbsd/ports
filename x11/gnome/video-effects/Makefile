@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2023/06/14 06:46:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2024/04/20 14:42:27 ajacoutot Exp $
 
 COMMENT=		collection of GStreamer effects for GNOME
 
 GNOME_PROJECT=		gnome-video-effects
 GNOME_VERSION=		0.6.0
+REVISION=		0
 
 CATEGORIES=		multimedia
 

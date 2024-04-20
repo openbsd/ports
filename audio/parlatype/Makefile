@@ -2,7 +2,7 @@ V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
 DISTNAME =	parlatype-${V}
 CATEGORIES =	audio x11
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	parlatype                 0.0 # 1.6
 
