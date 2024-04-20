@@ -3,6 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.2.1
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -28,7 +29,7 @@ BUILD_DEPENDS =		${COMMON_DEPENDS} \
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			devel/py-tz${MODPY_FLAVOR} \
-			multimedia/gstreamer1/plugins-good,-pulse \
+			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-libav \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
