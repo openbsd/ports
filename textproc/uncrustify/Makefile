@@ -1,7 +1,6 @@
 COMMENT =		source code beautifier
 
-DISTNAME =		uncrustify-0.72.0
-REVISION =		0
+DISTNAME =		uncrustify-0.78.1
 
 CATEGORIES =		textproc devel
 
@@ -22,8 +21,6 @@ MODULES =	devel/cmake \
 		lang/python
 
 MODPY_RUNDEP =	No
-
-WRKDIST =	${WRKDIR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/uncrustify/
