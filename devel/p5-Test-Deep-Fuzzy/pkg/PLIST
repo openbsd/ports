@@ -2,4 +2,3 @@ ${P5SITE}/Test/Deep/Fuzzy/
 ${P5SITE}/Test/Deep/Fuzzy.pm
 ${P5SITE}/Test/Deep/Fuzzy/Number.pm
 @man man/man3p/Test::Deep::Fuzzy.3p
-@man man/man3p/Test::Deep::Fuzzy::Number.3p

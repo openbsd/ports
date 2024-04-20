@@ -4,7 +4,7 @@ MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Geo-UK-Postcode-Regex-0.017
 CATEGORIES=	geo
-REVISION=	1
+REVISION=	2
 
 # Perl
 PERMIT_PACKAGE=	Yes

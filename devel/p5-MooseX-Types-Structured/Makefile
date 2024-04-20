@@ -1,7 +1,7 @@
 COMMENT=		structured Type Constraints for Moose
 
 DISTNAME =		MooseX-Types-Structured-0.36
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		devel
 

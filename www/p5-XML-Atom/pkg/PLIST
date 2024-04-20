@@ -13,15 +13,9 @@ ${P5SITE}/XML/Atom/Server.pm
 ${P5SITE}/XML/Atom/Thing.pm
 ${P5SITE}/XML/Atom/Util.pm
 @man man/man3p/XML::Atom.3p
-@man man/man3p/XML::Atom::Base.3p
-@man man/man3p/XML::Atom::Category.3p
 @man man/man3p/XML::Atom::Client.3p
-@man man/man3p/XML::Atom::Content.3p
 @man man/man3p/XML::Atom::Entry.3p
-@man man/man3p/XML::Atom::ErrorHandler.3p
 @man man/man3p/XML::Atom::Feed.3p
-@man man/man3p/XML::Atom::Link.3p
 @man man/man3p/XML::Atom::Person.3p
 @man man/man3p/XML::Atom::Server.3p
-@man man/man3p/XML::Atom::Thing.3p
 @man man/man3p/XML::Atom::Util.3p

@@ -11,10 +11,5 @@ ${P5SITE}/MooseX/Types/Structured/
 ${P5SITE}/MooseX/Types/Structured.pm
 ${P5SITE}/MooseX/Types/Structured/MessageStack.pm
 ${P5SITE}/MooseX/Types/Structured/OverflowHandler.pm
-@man man/man3p/MooseX::Meta::TypeCoercion::Structured.3p
-@man man/man3p/MooseX::Meta::TypeCoercion::Structured::Optional.3p
 @man man/man3p/MooseX::Meta::TypeConstraint::Structured.3p
-@man man/man3p/MooseX::Meta::TypeConstraint::Structured::Optional.3p
 @man man/man3p/MooseX::Types::Structured.3p
-@man man/man3p/MooseX::Types::Structured::MessageStack.3p
-@man man/man3p/MooseX::Types::Structured::OverflowHandler.3p

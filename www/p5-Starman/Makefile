@@ -5,7 +5,7 @@ PKG_ARCH =		*
 DISTNAME =		Starman-0.4015
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
-REVISION =		0
+REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes

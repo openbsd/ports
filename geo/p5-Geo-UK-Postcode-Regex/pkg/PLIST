@@ -11,5 +11,4 @@ ${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/Geo-UK-Postcode-Regex/
 ${P5SITE}/auto/share/dist/Geo-UK-Postcode-Regex/get_pc_districts.pl
 @man man/man3p/Geo::UK::Postcode::Regex.3p
-@man man/man3p/Geo::UK::Postcode::Regex::Hash.3p
 @man man/man3p/Geo::UK::Postcode::Regex::Simple.3p

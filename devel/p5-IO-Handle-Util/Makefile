@@ -3,6 +3,7 @@ COMMENT =	perl extension for working with IO::Handle like objects
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	IO-Handle-Util-0.02
+REVISION =	0
 CATEGORIES =	devel
 
 # perl

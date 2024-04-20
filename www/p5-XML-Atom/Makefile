@@ -1,6 +1,7 @@
 COMMENT =	atom feed and API implementation
 
 DISTNAME =	XML-Atom-0.43
+REVISION =	0
 
 CATEGORIES =	www textproc
 

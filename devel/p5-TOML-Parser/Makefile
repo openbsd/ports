@@ -2,7 +2,7 @@ COMMENT =	simple toml parser
 
 DISTNAME =	TOML-Parser-0.91
 CPAN_AUTHOR =	KARUPA
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

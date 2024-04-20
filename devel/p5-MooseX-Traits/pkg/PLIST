@@ -3,4 +3,3 @@ ${P5SITE}/MooseX/Traits/
 ${P5SITE}/MooseX/Traits.pm
 ${P5SITE}/MooseX/Traits/Util.pm
 @man man/man3p/MooseX::Traits.3p
-@man man/man3p/MooseX::Traits::Util.3p

@@ -1,7 +1,7 @@
 COMMENT =	fuzzy number comparison with Test::Deep
 
 DISTNAME =	Test-Deep-Fuzzy-0.01
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

@@ -3,6 +3,7 @@ COMMENT =	mock database driver for testing
 MODULES =	cpan
 PKG_ARCH =	*
 DISTNAME =	DBD-Mock-1.59
+REVISION =	0
 CATEGORIES =	databases devel
 
 # Perl

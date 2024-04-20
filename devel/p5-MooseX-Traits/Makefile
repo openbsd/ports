@@ -1,7 +1,7 @@
 COMMENT=		automatically apply roles at object creation time
 
 DISTNAME =		MooseX-Traits-0.13
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		devel
 

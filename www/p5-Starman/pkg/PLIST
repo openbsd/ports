@@ -8,7 +8,5 @@ ${P5SITE}/Starman/
 ${P5SITE}/Starman.pm
 ${P5SITE}/Starman/Server.pm
 @man man/man1/starman.1
-@man man/man3p/HTTP::Server::PSGI::Net::Server::PreFork.3p
 @man man/man3p/Plack::Handler::Starman.3p
 @man man/man3p/Starman.3p
-@man man/man3p/Starman::Server.3p

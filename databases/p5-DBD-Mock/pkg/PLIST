@@ -12,11 +12,3 @@ ${P5SITE}/DBD/Mock/db.pm
 ${P5SITE}/DBD/Mock/dr.pm
 ${P5SITE}/DBD/Mock/st.pm
 @man man/man3p/DBD::Mock.3p
-@man man/man3p/DBD::Mock::Pool.3p
-@man man/man3p/DBD::Mock::Pool::db.3p
-@man man/man3p/DBD::Mock::Session.3p
-@man man/man3p/DBD::Mock::StatementTrack.3p
-@man man/man3p/DBD::Mock::StatementTrack::Iterator.3p
-@man man/man3p/DBD::Mock::db.3p
-@man man/man3p/DBD::Mock::dr.3p
-@man man/man3p/DBD::Mock::st.3p

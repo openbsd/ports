@@ -11,5 +11,3 @@ ${P5SITE}/IO/Handle/Util/Tie.pm
 @man man/man3p/IO::Handle::Prototype.3p
 @man man/man3p/IO::Handle::Prototype::Fallback.3p
 @man man/man3p/IO::Handle::Util.3p
-@man man/man3p/IO::Handle::Util::Overloading.3p
-@man man/man3p/IO::Handle::Util::Tie.3p
