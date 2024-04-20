@@ -8,31 +8,12 @@ and a few Ruby gems relying on the system Ruby, the
 dependencies usually bundled with Puppetserver have to be installed
 manually into Puppetserver:
 
-Puppet and Puppetserver rely on the facter gem. OpenBSD support was
-added only recently, not yet merged upstream. The facter gem installed
-as package alongside Puppet agent comes with OpenBSD support.
-The package that gets installed in Puppetserver shall be of the 
-same version.
-
-
-To find out the installed facter version:
-# pkg_info ${MODRUBY_FLAVOR}-facter
-
-Install the same version within Puppetserver:
-# puppetserver gem install --no-document facter -v <VERSION>
-
-Then continue and install remaining Ruby gems into Puppetserver:
+To install these Ruby gems into Puppetserver:
 # puppetserver gem install --no-document puppet hiera-eyaml \
-	hiera ipaddress msgpack
+	hiera ipaddress msgpack facter
 
 You may not need hiera-eyaml, or ipaddress gem, on the
 other hand, your Puppet modules might rely on other gems.
-
-As long as the OpenBSD support is not yet released in the facter Gem,
-you have to copy over the gem from its system location into Puppetserver:
-rm -rf ${LOCALSTATEDIR}/puppetlabs/puppetserver/data/jruby-gems/gems/facter-*
-cp -r ${LOCALBASE}/lib/ruby/gems/${MODRUBY_REV}/gems/facter-* \
-	${LOCALSTATEDIR}/puppetlabs/puppetserver/data/jruby-gems/gems/
 
 If you're using PuppetDB, you have to copy over the PuppetDB termini
 into Puppetservers Puppet lib directory:
