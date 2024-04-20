@@ -131,6 +131,7 @@ librenms/LibreNMS/Data/Store/InfluxDBv2.php
 librenms/LibreNMS/Data/Store/OpenTSDB.php
 librenms/LibreNMS/Data/Store/Prometheus.php
 librenms/LibreNMS/Data/Store/Rrd.php
+librenms/LibreNMS/Data/Store/TimeSeriesPoint.php
 librenms/LibreNMS/Device/
 librenms/LibreNMS/Device/Availability.php
 librenms/LibreNMS/Device/Processor.php
@@ -160,6 +161,7 @@ librenms/LibreNMS/Exceptions/FileExistsException.php
 librenms/LibreNMS/Exceptions/FileNotFoundException.php
 librenms/LibreNMS/Exceptions/FilePermissionsException.php
 librenms/LibreNMS/Exceptions/FileWriteFailedException.php
+librenms/LibreNMS/Exceptions/FpingUnparsableLine.php
 librenms/LibreNMS/Exceptions/HostExistsException.php
 librenms/LibreNMS/Exceptions/HostIpExistsException.php
 librenms/LibreNMS/Exceptions/HostSysnameExistsException.php
@@ -1124,7 +1126,6 @@ librenms/app/Models/DeviceAttrib.php
 librenms/app/Models/DeviceGraph.php
 librenms/app/Models/DeviceGroup.php
 librenms/app/Models/DeviceOutage.php
-librenms/app/Models/DevicePerf.php
 librenms/app/Models/DeviceRelatedModel.php
 librenms/app/Models/DiskIo.php
 librenms/app/Models/EntPhysical.php
@@ -1638,6 +1639,7 @@ librenms/database/migrations/2024_01_09_223917_bill_data_new_primary.php
 librenms/database/migrations/2024_01_09_223927_bill_data_updated_indexes.php
 librenms/database/migrations/2024_02_03_201014_custom_map_edge_additions.php
 librenms/database/migrations/2024_02_07_151845_custom_map_additions.php
+librenms/database/migrations/2024_04_10_093513_remove_device_perf.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.sql
 librenms/database/schema/testing-schema.sql
@@ -2130,6 +2132,7 @@ librenms/html/images/logos/ucopia.png
 librenms/html/images/logos/unitrends.png
 librenms/html/images/logos/vertiv.svg
 librenms/html/images/logos/vivotek.svg
+librenms/html/images/logos/westermo.svg
 librenms/html/images/logos/zebra.svg
 librenms/html/images/logos/zhone.png
 librenms/html/images/logos/zyxel.svg
@@ -2564,6 +2567,7 @@ librenms/html/images/os/vyatta.png
 librenms/html/images/os/vyos.svg
 librenms/html/images/os/watchguard.svg
 librenms/html/images/os/waystream.svg
+librenms/html/images/os/westermo.png
 librenms/html/images/os/westmountainradio.svg
 librenms/html/images/os/windows.svg
 librenms/html/images/os/wisi.png
@@ -2839,6 +2843,7 @@ librenms/includes/definitions/ceraos.yaml
 librenms/includes/definitions/cetpower.yaml
 librenms/includes/definitions/chatsworth-pdu.yaml
 librenms/includes/definitions/christie-projector.yaml
+librenms/includes/definitions/ciena-rls.yaml
 librenms/includes/definitions/ciena-saos.yaml
 librenms/includes/definitions/ciena-sds.yaml
 librenms/includes/definitions/ciena-waveserver.yaml
@@ -2994,6 +2999,7 @@ librenms/includes/definitions/discovery/ceraos.yaml
 librenms/includes/definitions/discovery/cetpower.yaml
 librenms/includes/definitions/discovery/chatsworth-pdu.yaml
 librenms/includes/definitions/discovery/christie-projector.yaml
+librenms/includes/definitions/discovery/ciena-rls.yaml
 librenms/includes/definitions/discovery/ciena-saos.yaml
 librenms/includes/definitions/discovery/ciena-sds.yaml
 librenms/includes/definitions/discovery/ciena-waveserver.yaml
@@ -3477,6 +3483,7 @@ librenms/includes/definitions/discovery/webmon.yaml
 librenms/includes/definitions/discovery/webpower-smart2.yaml
 librenms/includes/definitions/discovery/webpower.yaml
 librenms/includes/definitions/discovery/websensor.yaml
+librenms/includes/definitions/discovery/weos.yaml
 librenms/includes/definitions/discovery/westmountainradio.yaml
 librenms/includes/definitions/discovery/wipipe.yaml
 librenms/includes/definitions/discovery/wisi-tangram.yaml
@@ -4004,6 +4011,7 @@ librenms/includes/definitions/webmon.yaml
 librenms/includes/definitions/webpower-smart2.yaml
 librenms/includes/definitions/webpower.yaml
 librenms/includes/definitions/websensor.yaml
+librenms/includes/definitions/weos.yaml
 librenms/includes/definitions/westmountainradio.yaml
 librenms/includes/definitions/windows.yaml
 librenms/includes/definitions/wipipe.yaml
@@ -4053,6 +4061,7 @@ librenms/includes/discovery/discovery-protocols.inc.php
 librenms/includes/discovery/entity-physical/
 librenms/includes/discovery/entity-physical.inc.php
 librenms/includes/discovery/entity-physical/axos.inc.php
+librenms/includes/discovery/entity-physical/ciena-rls.inc.php
 librenms/includes/discovery/entity-physical/ciena-sds.inc.php
 librenms/includes/discovery/entity-physical/cimc.inc.php
 librenms/includes/discovery/entity-physical/eltex-mes23xx.inc.php
@@ -5584,6 +5593,7 @@ librenms/includes/html/graphs/device/ib_dhcp_messages.inc.php
 librenms/includes/html/graphs/device/ib_dns_dyn_updates.inc.php
 librenms/includes/html/graphs/device/ib_dns_performance.inc.php
 librenms/includes/html/graphs/device/ib_dns_request_return_codes.inc.php
+librenms/includes/html/graphs/device/icmp_perf.inc.php
 librenms/includes/html/graphs/device/ipSystemStats.inc.php
 librenms/includes/html/graphs/device/ipsystemstats_ipv4.inc.php
 librenms/includes/html/graphs/device/ipsystemstats_ipv4_frag.inc.php
@@ -6278,7 +6288,6 @@ librenms/includes/html/pages/device/overview/services.inc.php
 librenms/includes/html/pages/device/overview/storage.inc.php
 librenms/includes/html/pages/device/overview/syslog.inc.php
 librenms/includes/html/pages/device/overview/toner.inc.php
-librenms/includes/html/pages/device/overview/tracepath.inc.php
 librenms/includes/html/pages/device/packages.inc.php
 librenms/includes/html/pages/device/port/
 librenms/includes/html/pages/device/port.inc.php
@@ -7834,6 +7843,10 @@ librenms/mibs/chatsworth/CPI-UNITY-MIB
 librenms/mibs/checkpoint/
 librenms/mibs/checkpoint/CHECKPOINT-MIB
 librenms/mibs/ciena/
+librenms/mibs/ciena/CIENA-6500R-INVENTORY-AMPS-MIB
+librenms/mibs/ciena/CIENA-6500R-INVENTORY-MIB
+librenms/mibs/ciena/CIENA-6500R-SLOTS-MIB
+librenms/mibs/ciena/CIENA-6500R-TYPES-MIB
 librenms/mibs/ciena/CIENA-CES-8021X-MIB
 librenms/mibs/ciena/CIENA-CES-ACCESS-LIST-MIB
 librenms/mibs/ciena/CIENA-CES-ACL-MIB
@@ -7878,6 +7891,8 @@ librenms/mibs/ciena/CIENA-CES-TIME-SYNC-MIB
 librenms/mibs/ciena/CIENA-CES-TWAMP-MIB
 librenms/mibs/ciena/CIENA-CES-VLLI-MIB
 librenms/mibs/ciena/CIENA-GLOBAL-MIB
+librenms/mibs/ciena/CIENA-PRO-SOFTWARE-MIB
+librenms/mibs/ciena/CIENA-PRO-TYPES-MIB
 librenms/mibs/ciena/CIENA-PRODUCTS-MIB
 librenms/mibs/ciena/CIENA-SMI
 librenms/mibs/ciena/CIENA-TC
@@ -11688,6 +11703,13 @@ librenms/mibs/waystream/WAYSTREAM-MIB
 librenms/mibs/waystream/WAYSTREAM-PRODUCTS-MIB
 librenms/mibs/waystream/WAYSTREAM-RPM-MIB
 librenms/mibs/waystream/WAYSTREAM-SMI
+librenms/mibs/westermo/
+librenms/mibs/westermo/TTDP-MIB
+librenms/mibs/westermo/WESTERMO-FRNT-MIB
+librenms/mibs/westermo/WESTERMO-INTERFACE-MIB
+librenms/mibs/westermo/WESTERMO-OID-MIB
+librenms/mibs/westermo/WESTERMO-WEOS-MIB
+librenms/mibs/westermo/WESTERMO-WEOS-TECHPREVIEW-MIB
 librenms/mibs/westmountainradio/
 librenms/mibs/westmountainradio/RMCU
 librenms/mibs/wisi/
