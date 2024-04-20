@@ -4,6 +4,7 @@ CATEGORIES =	devel
 V =		v0.3.0
 DISTNAME =	coeurl-${V}
 PKGNAME =	${DISTNAME:S/v//}
+REVISION =	0
 
 SHARED_LIBS +=  coeurl                    0.1 # 0.2.0
 
@@ -12,15 +13,15 @@ SITES =		https://nheko.im/nheko-reborn/coeurl/-/archive/${V}/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} curl event_core event_pthreads m
+WANTLIB += ${COMPILER_LIBCXX} curl event_core event_pthreads fmt spdlog
 
 MODULES =	devel/meson
 
 # C++17
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/spdlog
 LIB_DEPENDS =	devel/libevent2 \
+		devel/spdlog \
 		net/curl
 
 # Run-time dependency doctest found: NO (tried pkgconfig and cmake)
