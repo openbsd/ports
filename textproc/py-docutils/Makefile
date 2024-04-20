@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 
 RUN_DEPENDS=	textproc/py-pygments${MODPY_FLAVOR}
 
