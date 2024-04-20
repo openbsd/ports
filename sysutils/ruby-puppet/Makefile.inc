@@ -4,8 +4,6 @@ DISTNAME ?=	puppet-${VERSION}
 HOMEPAGE ?=	https://puppet.com/
 MAINTAINER ?=	Sebastian Reitenbach <sebastia@openbsd.org>
 NO_TEST ?=	Yes
-PKGDIR ?=	${.CURDIR}/../pkg
-PLIST ?=	${.CURDIR}/pkg/PLIST
 
 CATEGORIES +=	sysutils
 SUBST_VARS +=	RUBY

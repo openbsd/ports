@@ -9,8 +9,8 @@ Index: lib/puppet/provider/package/pip.rb
      if Puppet::Util::Platform.windows?
        ["pip.exe"]
      else
--      ["pip", "pip-python", "pip2", "pip-2"]
-+      ["pip-python", "pip2", "pip-2", "pip${MODPY_DEFAULT_VERSION_2}"]
+-      %w[pip pip-python pip2 pip-2]
++      %w[pip pip-python pip2 pip-2 pip${MODPY_DEFAULT_VERSION_2}]
      end
    end
  

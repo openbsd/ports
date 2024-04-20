@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Package handling
+================
+
+Support for specifying versions or latest was dropped, in favor of supporting
+package branches.
+
+To install a package of a given branch, you have to suffix the package name
+with %branch name. For example to ensure Puppet 8 is installed or absent:
+
+package { "puppet%8": ensure => "present"}
+package { "puppet%8": ensure => "absent"}
