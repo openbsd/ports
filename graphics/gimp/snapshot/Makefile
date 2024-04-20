@@ -56,6 +56,7 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 		print/poppler-data
 
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
+		devel/bison \
 		devel/gettext,-tools \
 		lang/luajit \
 		lang/vala \
