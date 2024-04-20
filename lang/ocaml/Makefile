@@ -2,7 +2,7 @@ COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them.
-VERSION=	4.14.1
+VERSION=	4.14.2
 
 # if the ocaml compiler gains support for BTI, as well as
 # removing USE_NOBTCFI here (or changing to an arch-dependent
@@ -62,12 +62,6 @@ LDFLAGS +=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--enable-imprecise-c99-float-ops
 # non-PIC assembly in asmrun/i386.S
 LDFLAGS+=		-Wl,-z,notext
-.endif
-
-# We need to pass nobtcfi in LDFLAGS so that ocamlopt
-# will pick it up when building OCaml native binaries
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "arm64"
-LDFLAGS+=		-Wl,-z,nobtcfi
 .endif
 
 USE_GMAKE=	Yes
