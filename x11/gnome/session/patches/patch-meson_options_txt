@@ -1,0 +1,19 @@
+REVERT:
+From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 29 Apr 2023 18:02:20 +0300
+Subject: [PATCH] Drop consolekit backend and hard depend on systemd
+
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -1,5 +1,9 @@
+ option('deprecation_flags', type: 'boolean', value: false, description: 'use *_DISABLE_DEPRECATED flags')
+ option('session_selector', type: 'boolean', value: false, description: 'enable building a custom session selector dialog')
++option('systemd', type: 'boolean', value: true, description: 'Use systemd')
++option('systemd_session', type: 'combo', choices: ['disable', 'enable', 'default'], value: 'default', description: 'Whether to include systemd session support and use it by default')
++option('systemd_journal', type: 'boolean', value:'true', description: 'Send log to systemd-journal')
+ option('systemduserunitdir', type: 'string', description: 'Directory for systemd user service files')
++option('consolekit', type: 'boolean', value: false, description: 'Use consolekit')
+ option('docbook', type: 'boolean', value: true, description: 'build documentation')
+ option('man', type: 'boolean', value: true, description: 'build documentation (requires xmlto)')

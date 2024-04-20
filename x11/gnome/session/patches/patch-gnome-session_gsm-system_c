@@ -1,0 +1,35 @@
+REVERT:
+From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 29 Apr 2023 18:02:20 +0300
+Subject: [PATCH] Drop consolekit backend and hard depend on systemd
+
+Index: gnome-session/gsm-system.c
+--- gnome-session/gsm-system.c.orig
++++ gnome-session/gsm-system.c
+@@ -25,6 +25,9 @@
+ 
+ #include "gsm-systemd.h"
+ 
++#ifdef HAVE_CONSOLEKIT
++#include "gsm-consolekit.h"
++#endif
+ 
+ enum {
+         REQUEST_COMPLETED,
+@@ -266,6 +269,15 @@ gsm_get_system (void)
+                         g_debug ("Using systemd for session tracking");
+                 }
+         }
++
++#ifdef HAVE_CONSOLEKIT
++        if (system == NULL) {
++                system = GSM_SYSTEM (gsm_consolekit_new ());
++                if (system != NULL) {
++                        g_debug ("Using ConsoleKit for session tracking");
++                }
++        }
++#endif
+ 
+         if (system == NULL) {
+                 system = g_object_new (gsm_system_null_get_type (), NULL);

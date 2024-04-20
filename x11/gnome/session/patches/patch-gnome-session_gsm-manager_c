@@ -1,0 +1,93 @@
+REVERT:
+From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 29 Apr 2023 18:02:20 +0300
+Subject: [PATCH] Drop consolekit backend and hard depend on systemd
+
+Index: gnome-session/gsm-manager.c
+--- gnome-session/gsm-manager.c.orig
++++ gnome-session/gsm-manager.c
+@@ -40,9 +40,17 @@
+ #include "gsm-manager.h"
+ #include "org.gnome.SessionManager.h"
+ 
++#ifdef ENABLE_SYSTEMD_JOURNAL
+ #include <systemd/sd-journal.h>
++#endif
+ 
++#ifdef HAVE_SYSTEMD
+ #include <systemd/sd-daemon.h>
++#else
++/* So we don't need to add ifdef's everywhere */
++#define sd_notify(u, m)            do {} while (0)
++#define sd_notifyf(u, m, ...)      do {} while (0)
++#endif
+ 
+ #include "gsm-store.h"
+ #include "gsm-inhibitor.h"
+@@ -276,10 +284,12 @@ on_required_app_failure (GsmManager  *manager,
+                 allow_logout = !_log_out_is_locked_down (manager);
+         }
+ 
++#ifdef ENABLE_SYSTEMD_JOURNAL
+         sd_journal_send ("MESSAGE_ID=%s", GSM_MANAGER_UNRECOVERABLE_FAILURE_MSGID,
+                          "PRIORITY=%d", 3,
+                          "MESSAGE=Unrecoverable failure in required component %s", app_id,
+                          NULL);
++#endif
+ 
+         gsm_fail_whale_dialog_we_failed (FALSE,
+                                          allow_logout,
+@@ -304,10 +314,12 @@ on_display_server_failure (GsmManager *manager,
+                 extensions = NULL;
+         }
+ 
++#ifdef ENABLE_SYSTEMD_JOURNAL
+         sd_journal_send ("MESSAGE_ID=%s", GSM_MANAGER_UNRECOVERABLE_FAILURE_MSGID,
+                          "PRIORITY=%d", 3,
+                          "MESSAGE=Unrecoverable failure in required component %s", app_id,
+                          NULL);
++#endif
+ 
+         gsm_quit ();
+ }
+@@ -962,6 +974,7 @@ _client_stop (const char *id,
+         return FALSE;
+ }
+ 
++#ifdef HAVE_SYSTEMD
+ static void
+ maybe_restart_user_bus (GsmManager *manager)
+ {
+@@ -994,6 +1007,7 @@ maybe_restart_user_bus (GsmManager *manager)
+                 g_debug ("GsmManager: reloading user bus failed: %s", error->message);
+         }
+ }
++#endif
+ 
+ static void
+ do_phase_exit (GsmManager *manager)
+@@ -1006,8 +1020,10 @@ do_phase_exit (GsmManager *manager)
+                                    NULL);
+         }
+ 
++#ifdef HAVE_SYSTEMD
+         if (!priv->systemd_managed)
+                 maybe_restart_user_bus (manager);
++#endif
+ 
+         end_phase (manager);
+ }
+@@ -1401,10 +1417,12 @@ start_phase (GsmManager *manager)
+                 do_phase_startup (manager);
+                 break;
+         case GSM_MANAGER_PHASE_RUNNING:
++#ifdef ENABLE_SYSTEMD_JOURNAL
+                 sd_journal_send ("MESSAGE_ID=%s", GSM_MANAGER_STARTUP_SUCCEEDED_MSGID,
+                                  "PRIORITY=%d", 5,
+                                  "MESSAGE=Entering running state",
+                                  NULL);
++#endif
+                 gsm_xsmp_server_start_accepting_new_clients (priv->xsmp_server);
+                 if (priv->pending_end_session_tasks != NULL)
+                         complete_end_session_tasks (manager);
