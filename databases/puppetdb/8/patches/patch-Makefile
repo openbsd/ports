@@ -18,8 +18,8 @@ Index: Makefile
  install-puppetdb:
  	install -d -m 0755 "$(DESTDIR)$(datadir)/puppetdb"
 @@ -32,7 +32,6 @@ install-puppetdb:
- 	install -m 0755 ext/cli/config-migration "$(DESTDIR)$(datadir)/puppetdb/cli/apps/config-migration"
- 	install -m 0755 ext/cli/start "$(DESTDIR)$(datadir)/puppetdb/cli/apps/start"
+ 	install -m 0755 ext/cli/anonymize "$(DESTDIR)$(datadir)/puppetdb/cli/apps/anonymize"
+ 	install -m 0755 ext/cli/ssl-setup "$(DESTDIR)$(datadir)/puppetdb/cli/apps/ssl-setup"
  	install -m 0755 ext/cli/upgrade "$(DESTDIR)$(datadir)/puppetdb/cli/apps/upgrade"
 -	install -d -m 0755 "$(DESTDIR)$(rundir)"
  
