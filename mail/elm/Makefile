@@ -8,6 +8,7 @@ SITES=		ftp://ftp.ozone.fmi.fi/KEH/
 
 MAINTAINER=	Paul Janzen <pjanzen@foatdi.net>
 
+# see NOTICE in source distribution
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses
