@@ -1,0 +1,123 @@
+- Disable FP exceptions in a portable way
+  8b362df1f26fceeccb6f3b37bd26880e72db79b2
+- Update fpu_instructions_longdouble.h
+  53fe254c9ce25a48dbe11582416cbf3a49516dce
+
+Index: src/fpu/fpu_instructions_longdouble.h
+--- src/fpu/fpu_instructions_longdouble.h.orig
++++ src/fpu/fpu_instructions_longdouble.h
+@@ -16,31 +16,18 @@
+  *  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+  */
+ 
++#include <cfenv> /* for std::feholdexcept */
+ #include <math.h> /* for isinf, etc */
+ #include "cpu/lazyflags.h"
+ 
+-#ifdef __GNUC__
+-# if defined(__MINGW32__) || (defined(MACOSX) && !defined(__arm64__))
+-#  include "fpu_control_x86.h"
+-# elif defined(ANDROID) || defined(__ANDROID__) || (defined(MACOSX) && defined(__arm64__)) || defined(EMSCRIPTEN) || defined(__powerpc__)
+-/* ? */
+-#  define _FPU_SETCW(x) /* dummy */
+-# else
+-#  include <fpu_control.h>
+-# endif
+-static inline void FPU_SyncCW(void) {
+-    uint16_t tmp = fpu.cw | 0x80 | 0x3F; // HACK: Disable all FPU exceptions until DOSBox-X can catch and reflect FPU exceptions to the guest
+-    _FPU_SETCW(tmp);
+-}
+-#else
+-static inline void FPU_SyncCW(void) {
+-    /* nothing */
+-}
+-#endif
+-
+ static void FPU_FINIT(void) {
++	fenv_t buf;
++
+ 	fpu.cw.init();
+-    FPU_SyncCW();
++
++	// HACK: Disable all FPU exceptions until DOSBox-X can catch and reflect FPU exceptions to the guest
++	std::feholdexcept(&buf);
++
+     fpu.sw.init();
+ 	fpu.tags[0] = TAG_Empty;
+ 	fpu.tags[1] = TAG_Empty;
+@@ -290,7 +277,8 @@ static void FPU_FBST(PhysPt addr) {
+ #endif
+ 
+ static void FPU_FADD(Bitu op1, Bitu op2){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	// HACK: Set the denormal flag according to whether the source or final result is a denormalized number.
+ 	//       This is vital if we don't want certain DOS programs to mis-detect our FPU emulation as an IIT clone chip when cputype == 286
+ 	bool was_not_normal = isdenormal(fpu.regs_80[op1].v);
+@@ -324,7 +312,8 @@ static void FPU_FCOS(void){
+ }
+ 
+ static void FPU_FSQRT(void){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[TOP].v = sqrtl(fpu.regs_80[TOP].v);
+ 	//flags and such :)
+ 	return;
+@@ -343,35 +332,40 @@ static void FPU_FPTAN(void){
+ 	return;
+ }
+ static void FPU_FDIV(Bitu st, Bitu other){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[st].v = fpu.regs_80[st].v/fpu.regs_80[other].v;
+ 	//flags and such :)
+ 	return;
+ }
+ 
+ static void FPU_FDIVR(Bitu st, Bitu other){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[st].v = fpu.regs_80[other].v/fpu.regs_80[st].v;
+ 	// flags and such :)
+ 	return;
+ }
+ 
+ static void FPU_FMUL(Bitu st, Bitu other){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[st].v *= fpu.regs_80[other].v;
+ 	//flags and such :)
+ 	return;
+ }
+ 
+ static void FPU_FSUB(Bitu st, Bitu other){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[st].v = fpu.regs_80[st].v - fpu.regs_80[other].v;
+ 	//flags and such :)
+ 	return;
+ }
+ 
+ static void FPU_FSUBR(Bitu st, Bitu other){
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ 	fpu.regs_80[st].v = fpu.regs_80[other].v - fpu.regs_80[st].v;
+ 	//flags and such :)
+ 	return;
+@@ -562,7 +556,8 @@ static void FPU_FLDENV(PhysPt addr, bool op16){
+ 		tag    = static_cast<uint16_t>(mem_readd(addr+8));
+ 	}
+ 	FPU_SetTag(tag);
+-    FPU_SyncCW();
++	fenv_t buf;
++	std::feholdexcept(&buf);
+ }
+ 
+ static void FPU_FSAVE(PhysPt addr, bool op16){
