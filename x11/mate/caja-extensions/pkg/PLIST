@@ -21,6 +21,7 @@ lib/caja-sendto/plugins/
 @so lib/caja-sendto/plugins/libnstremovable_devices.so
 @comment lib/caja-sendto/plugins/libnstupnp.a
 @comment lib/caja-sendto/plugins/libnstupnp.la
+@so lib/caja-sendto/plugins/libnstupnp.so
 lib/caja/extensions-2.0/
 @static-lib lib/caja/extensions-2.0/libcaja-av.a
 lib/caja/extensions-2.0/libcaja-av.la

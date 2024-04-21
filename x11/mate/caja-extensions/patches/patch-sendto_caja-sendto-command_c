@@ -1,0 +1,14 @@
+64-bit time_t
+
+Index: sendto/caja-sendto-command.c
+--- sendto/caja-sendto-command.c.orig
++++ sendto/caja-sendto-command.c
+@@ -196,7 +196,7 @@ pack_files (NS_ui *ui)
+ 	tmp_dir = g_strdup_printf ("%s/caja-sendto-%s",
+ 				   g_get_tmp_dir(), g_get_user_name());
+ 	g_mkdir (tmp_dir, 0700);
+-	tmp_work_dir = g_strdup_printf ("%s/caja-sendto-%s/%li",
++	tmp_work_dir = g_strdup_printf ("%s/caja-sendto-%s/%lld",
+ 					g_get_tmp_dir(), g_get_user_name(),
+ 					time(NULL));
+ 	g_mkdir (tmp_work_dir, 0700);
