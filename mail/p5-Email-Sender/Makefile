@@ -3,7 +3,7 @@ COMMENT =	library for sending email
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	Email-Sender-2.600
+DISTNAME =	Email-Sender-2.601
 CATEGORIES =	mail
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
