@@ -5,6 +5,7 @@ GH_ACCOUNT =		fabiangreffrath
 GH_PROJECT =		crispy-doom
 GH_TAGNAME =		crispy-doom-${V}
 DISTNAME =		crispy-doom-${V}
+REVISION =		0
 
 CATEGORIES =		games x11
 
@@ -14,9 +15,11 @@ MAINTAINER =		Ryan Freeman <ryan@slipgate.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		SDL2 SDL2_mixer SDL2_net c m png samplerate z
+WANTLIB += SDL2 SDL2_mixer SDL2_net c fluidsynth m png pthread
+WANTLIB += samplerate z
 
-LIB_DEPENDS =		audio/libsamplerate \
+LIB_DEPENDS =		audio/fluidsynth \
+			audio/libsamplerate \
 			devel/sdl2-mixer \
 			devel/sdl2-net \
 			graphics/png
