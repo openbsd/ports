@@ -1,12 +1,11 @@
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		45.0.1
-REVISION=		1
+GNOME_VERSION=		46.0
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
-GH_COMMIT=		a681893341f338eeb2d75e36705408a3246215f6
+GH_COMMIT=		b546f38c943151a0fe368560a72970bc4632666c
 EXTRACT_SUFX=		.tar.gz
 
 DISTFILES=		${GH_DISTFILE}
@@ -27,7 +26,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xau Xdmcp accountsservice c canberra canberra-gtk3
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += intl pam util xcb consolekit
+WANTLIB += intl pam util xcb consolekit json-glib-1.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -56,9 +55,10 @@ BUILD_DEPENDS +=	devel/dconf
 RUN_DEPENDS +=		x11/gnome/orca
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
+			devel/json-glib \
 			security/openpam \
 			sysutils/accountsservice>=22.08.8p3 \
-			sysutils/consolekit>=1.2.6p0
+			sysutils/consolekit>=1.2.6p4
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include

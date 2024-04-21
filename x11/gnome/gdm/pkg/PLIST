@@ -3,6 +3,7 @@
 @extraunexec rm -rf /var/db/gdm
 @extraunexec rm -rf /var/log/gdm/*
 @rcscript ${RCDIR}/gdm
+@bin bin/gdm-config
 @bin bin/gdm-screenshot
 @bin bin/gdmflexiserver
 include/gdm/
