@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1600,10 +1600,10 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
+@@ -1321,10 +1321,10 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
  	mv $@.tmp $@
  
  .1.html:

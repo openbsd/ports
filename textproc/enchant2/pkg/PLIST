@@ -2,7 +2,6 @@
 @bin bin/enchant-lsmod-2
 include/enchant-2/
 include/enchant-2/enchant++.h
-include/enchant-2/enchant-provider.h
 include/enchant-2/enchant.h
 lib/enchant-2/
 @so lib/enchant-2/enchant_aspell.so
