@@ -1,0 +1,15 @@
+Fix to build tools in cmd/tools/ sub-directories
+See https://github.com/vlang/v/issues/21119
+
+Index: cmd/tools/modules/testing/common.v
+--- cmd/tools/modules/testing/common.v.orig
++++ cmd/tools/modules/testing/common.v
+@@ -542,7 +542,7 @@ fn worker_trunner(mut p pool.PoolProcessor, idx int, t
+ 	}
+ 	ts.benchmark.step()
+ 	tls_bench.step()
+-	if abs_path in ts.skip_files {
++	if !ts.build_tools && abs_path in ts.skip_files {
+ 		ts.benchmark.skip()
+ 		tls_bench.skip()
+ 		if !testing.hide_skips {

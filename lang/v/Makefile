@@ -2,9 +2,9 @@ ONLY_FOR_ARCHS =amd64 arm64
 
 COMMENT =	simple, fast, safe, compiled language
 
-V_V =		0.4.4
-VC_V =		f33c54ece86140792e054bf33afd6c4b76637234
-MARKDOWN_V =	0c280130cb7ec410b7d21810d1247956c15b72fc
+V_V =		0.4.5
+VC_V =		2386fe9a0d8cc92d0d013ecd81456f2831433a71
+MARKDOWN_V =	b7ff5f24fdb26935d6e2277c7888752fb8aac114
 
 DIST_TUPLE =	github	vlang	v	${V_V}	.
 DIST_TUPLE +=	github	vlang	vc	${VC_V}	vc
@@ -37,7 +37,8 @@ pre-build:
 do-build:
 	cp ${FILESDIR}/v{self,up}.v ${WRKSRC}/cmd/tools/
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v -prod -o v cmd/v && \
+		${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v -prod -o v cmd/v
+	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v -prod build-tools
 	touch ${WRKSRC}/cmd/tools/.disable_autorecompilation
 
@@ -51,6 +52,6 @@ do-install:
 	find ${PREFIX} -type f -name \*.orig.port -delete
 
 do-test:
-	cd ${WRKSRC} && ./v test-all
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v test-all
 
 .include <bsd.port.mk>
