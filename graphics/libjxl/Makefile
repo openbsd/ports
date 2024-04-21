@@ -6,6 +6,8 @@ GH_TAGNAME =	v0.10.2
 GH_TESTDATA_COMMIT=ff8d743aaba05b3014f17e5475e576242fa979fc
 CATEGORIES =	graphics
 
+REVISION =	0
+
 # add external test data
 DISTFILES.t = 	libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}
 SITES.t =	https://github.com/libjxl/testdata/archive/
@@ -30,14 +32,16 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 BUILD_DEPENDS +=	textproc/asciidoc \
 		devel/gtest
-LIB_DEPENDS +=	graphics/lcms2>=2.13 \
+LIB_DEPENDS +=	graphics/gdk-pixbuf2 \
+		graphics/lcms2>=2.13 \
 		graphics/png \
 		graphics/giflib \
 		devel/highway>=1.0.7 \
 		archivers/brotli
 
-WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec
-WANTLIB += brotlienc c gif hwy jpeg lcms2 m png z
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec brotlienc
+WANTLIB += c gdk_pixbuf-2.0 gif glib-2.0 gobject-2.0 hwy intl
+WANTLIB += jpeg lcms2 m png z
 
 # makes sure gmock library is found
 CONFIGURE_ENV = LDFLAGS="-L${LOCALBASE}/lib"
@@ -54,6 +58,10 @@ CONFIGURE_ARGS += \
 	-DJPEGXL_FORCE_SYSTEM_LCMS2:BOOL=ON \
 	-DJPEGXL_ENABLE_BENCHMARK:BOOL=OFF \
 	-DJPEGXL_ENABLE_JPEGLI=OFF \
+	-DJPEGXL_ENABLE_PLUGINS=ON \
+	-DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=ON \
+	-DJPEGXL_ENABLE_PLUGIN_GIMP210=OFF \
+	-DJPEGXL_ENABLE_PLUGIN_MIME=OFF \
 	-DJPEGXL_TEST_DATA_PATH:STRING=${WRKDIR}/testdata-${GH_TESTDATA_COMMIT} \
 	-DGMOCK_INCLUDE_DIR:STRING=${LOCALBASE}/include
 #https://github.com/libjxl/libjxl/issues/3069

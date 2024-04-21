@@ -22,6 +22,7 @@ include/jxl/thread_parallel_runner.h
 include/jxl/thread_parallel_runner_cxx.h
 include/jxl/types.h
 include/jxl/version.h
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-jxl.so
 @lib lib/libjxl.so.${LIBjxl_VERSION}
 @lib lib/libjxl_cms.so.${LIBjxl_cms_VERSION}
 @lib lib/libjxl_extras_codec.so.${LIBjxl_extras_codec_VERSION}
@@ -31,3 +32,5 @@ lib/pkgconfig/libjxl_cms.pc
 lib/pkgconfig/libjxl_threads.pc
 @man man/man1/cjxl.1
 @man man/man1/djxl.1
+share/thumbnailers/jxl.thumbnailer
+@tag update-gdk-pixbuf
