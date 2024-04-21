@@ -2,6 +2,7 @@ COMMENT =	planetarium simulator for KDE
 
 DISTNAME =	kstars-3.6.6
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	astro education
 
@@ -35,7 +36,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/xplanet
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/breeze-icons \
+			devel/kf6/breeze-icons \
 			devel/kf5/kdoctools \
 			x11/gtk+4,-guic \
 			x11/qt5/qtquickcontrols \

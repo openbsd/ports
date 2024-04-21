@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
+REVISION =	0
 CATEGORIES =	multimedia
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
@@ -26,7 +27,7 @@ MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
 
-RUN_DEPENDS =	devel/kf5/breeze-icons \
+RUN_DEPENDS =	devel/kf6/breeze-icons \
 		devel/kf5/kinit \
 		graphics/ffmpeg \
 		misc/shared-mime-info \

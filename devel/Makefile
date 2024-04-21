@@ -249,6 +249,7 @@
      SUBDIR += kdiff3
      SUBDIR += keystone
      SUBDIR += kf5
+     SUBDIR += kf6
      SUBDIR += knfmt
      SUBDIR += kproperty
      SUBDIR += kreport

@@ -1,6 +1,6 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KF5Plasma		12.4
 SHARED_LIBS +=	KF5PlasmaQuick		9.0
@@ -38,7 +38,7 @@ RUN_DEPENDS =	archivers/bzip2 \
 		x11/qt5/qtquickcontrols \
 		x11/qt5/qtwayland
 
-RUN_DEPENDS +=	devel/kf5/breeze-icons
+RUN_DEPENDS +=	devel/kf6/breeze-icons
 
 LIB_DEPENDS =	devel/kf5/kactivities>=${MODKF5_VERSION} \
 		devel/kf5/karchive>=${MODKF5_VERSION} \

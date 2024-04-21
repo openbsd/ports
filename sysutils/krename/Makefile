@@ -2,7 +2,7 @@ COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.2
 DISTNAME =	krename-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils x11
 
@@ -29,7 +29,7 @@ MODULES =	devel/kf5
 BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/breeze-icons \
+		devel/kf6/breeze-icons \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/taglib \

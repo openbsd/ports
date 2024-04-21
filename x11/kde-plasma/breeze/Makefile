@@ -1,5 +1,6 @@
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS =	devel/kf5/kpackage
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kpackage \
-		devel/kf5/breeze-icons
+		devel/kf6/breeze-icons
 
 LIB_DEPENDS =	devel/kf5/frameworkintegration \
 		devel/kf5/kauth \

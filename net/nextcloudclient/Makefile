@@ -38,7 +38,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 BUILD_DEPENDS +=	x11/gnome/librsvg
 
 # FindInotify.cmake
-BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules
+BUILD_DEPENDS +=	devel/kf6/extra-cmake-modules
 
 # for tests, but detected during configure
 BUILD_DEPENDS +=	devel/cmocka

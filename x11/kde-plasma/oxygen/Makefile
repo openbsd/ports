@@ -1,5 +1,7 @@
 COMMENT =		style for Qt/KDE Applications
 DISTNAME =		oxygen-${VERSION}
+REVISION =		0
+
 
 SHARED_LIBS =		oxygenstyle5		1.0
 SHARED_LIBS +=		oxygenstyleconfig5	0.0
@@ -16,7 +18,7 @@ MODKDE5_TRANSLATIONS = Yes
 BUILD_DEPENDS =		devel/kf5/kpackage
 
 RUN_DEPENDS =		devel/kf5/kpackage \
-			devel/kf5/breeze-icons
+			devel/kf6/breeze-icons
 
 LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/kauth \

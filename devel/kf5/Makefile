@@ -1,5 +1,5 @@
 SUBDIR =
-SUBDIR += extra-cmake-modules
+#SUBDIR += extra-cmake-modules
 
 # do not sort blindly: items below are listed in the straight build order
 # tier docs: https://api.kde.org/frameworks/index.html
@@ -8,7 +8,7 @@ SUBDIR += extra-cmake-modules
 SUBDIR += ki18n
 SUBDIR += attica
 SUBDIR += bluez-qt
-SUBDIR += breeze-icons
+#SUBDIR += breeze-icons
 SUBDIR += kapidox
 SUBDIR += karchive
 SUBDIR += kcodecs

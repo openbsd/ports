@@ -26,7 +26,7 @@ LIB_DEPENDS =	archivers/libarchive \
 		devel/sdl2 \
 		net/libslirp \
 		x11/qt5/qtmultimedia
-BUILD_DEPENDS =	devel/kf5/extra-cmake-modules
+BUILD_DEPENDS =	devel/kf6/extra-cmake-modules
 RUN_DEPENDS =	x11/gtk+4,-guic \
 		devel/desktop-file-utils
 

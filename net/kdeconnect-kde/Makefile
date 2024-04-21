@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		5.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	5.0 # 1.4
@@ -43,7 +44,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/breeze-icons \
+		devel/kf6/breeze-icons \
 		devel/kf5/kirigami2 \
 		devel/kf5/qqc2-desktop-style \
 		sysutils/sshfs-fuse \

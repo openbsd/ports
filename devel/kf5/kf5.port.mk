@@ -6,9 +6,8 @@ MODKF5_BUILD_TESTING ?= No
 EXTRACT_SUFX ?=		.tar.xz
 .endif
 
-.if ${PKGPATH:Ndevel/kf5/extra-cmake-modules}
-BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules>=${MODKF5_VERSION}
-.endif
+BUILD_DEPENDS +=	devel/kf6/extra-cmake-modules>=${MODKF5_VERSION}
+CONFIGURE_ARGS +=	-DKF_IGNORE_PLATFORM_CHECK=ON
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	cmake

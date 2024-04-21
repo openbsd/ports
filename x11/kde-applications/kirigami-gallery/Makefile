@@ -1,5 +1,7 @@
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
+REVISION =	0
+
 CATEGORIES =	devel
 
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
@@ -15,7 +17,7 @@ BUILD_DEPENDS =	devel/kf5/kpackage \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	devel/kf5/kpackage \
-		devel/kf5/breeze-icons \
+		devel/kf6/breeze-icons \
 		devel/kf5/qqc2-desktop-style \
 		x11/qt5/qtquickcontrols
 

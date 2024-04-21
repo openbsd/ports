@@ -5,7 +5,7 @@ GH_PROJECT =	Lightly
 GH_TAGNAME =	v0.4.1
 
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	lightlycommon5	0.0 # 0.4.1
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/kf5/kpackage \
-			devel/kf5/breeze-icons
+			devel/kf6/breeze-icons
 
 LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/kauth \

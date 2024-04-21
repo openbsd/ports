@@ -30,7 +30,7 @@ SITES.a = 	https://github.com/owncloud/libre-graph-api-cpp-qt-client/archive/ref
 
 MODULES =		devel/cmake x11/qt5
 
-BUILD_DEPENDS = 	devel/kf5/extra-cmake-modules
+BUILD_DEPENDS = 	devel/kf6/extra-cmake-modules
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic

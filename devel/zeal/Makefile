@@ -31,7 +31,7 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	x11/qt6 devel/cmake
 
-BUILD_DEPENDS =	devel/kf5/extra-cmake-modules
+BUILD_DEPENDS =	devel/kf6/extra-cmake-modules
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

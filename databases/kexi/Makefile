@@ -5,7 +5,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -48,12 +48,12 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		databases/postgresql,-server \
 			devel/gettext,-tools \
-			devel/kf5/breeze-icons \
+			devel/kf6/breeze-icons \
 			devel/kf5/karchive \
 			x11/kde-applications/marble
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/breeze-icons \
+			devel/kf6/breeze-icons \
 			devel/kf5/kservice \
 			x11/kde-applications/marble
 
