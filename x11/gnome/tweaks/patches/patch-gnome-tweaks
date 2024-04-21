@@ -1,0 +1,13 @@
+No GUdev on OpenBSD.
+
+Index: gnome-tweaks
+--- gnome-tweaks.orig
++++ gnome-tweaks
+@@ -14,7 +14,6 @@ import gi
+ gi.require_version("Gtk", "4.0")
+ gi.require_version("Adw", "1")
+ gi.require_version("GDesktopEnums", "3.0")
+-gi.require_version('GUdev', '1.0')
+ 
+ import gtweak
+ from gtweak.defs import VERSION, APP_ID, GSETTINGS_SCHEMA_DIR, TWEAK_DIR, DATA_DIR, \

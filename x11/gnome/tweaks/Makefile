@@ -1,7 +1,7 @@
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
-GNOME_VERSION=		45.2
+GNOME_VERSION=		46.0
 
 CATEGORIES=		sysutils
 
@@ -15,11 +15,13 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=		x11/libhandy
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/gnome/libadwaita
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/settings-daemon \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 # Notify introspection libs: site-packages/gtweak/utils.py
 RUN_DEPENDS +=		devel/libnotify

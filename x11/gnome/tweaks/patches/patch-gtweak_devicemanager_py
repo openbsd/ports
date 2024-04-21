@@ -1,0 +1,27 @@
+No GUdev on OpenBSD.
+
+Index: gtweak/devicemanager.py
+--- gtweak/devicemanager.py.orig
++++ gtweak/devicemanager.py
+@@ -2,6 +2,7 @@
+ # SPDX-License-Identifier: GPL-3.0+
+ # License-Filename: LICENSES/GPL-3.0
+ 
++'''
+ from gi.repository import GUdev
+ 
+ # Inspired by panels/common/gsd-device-manager.c in GNOME Settings
+@@ -57,4 +58,11 @@ def pointing_stick_is_present():
+ 
+ 
+ def touchpad_is_present():
+-    return udev_device_id_is_present(UDEV_ID_INPUT_TOUCHPAD)
+\ No newline at end of file
++    return udev_device_id_is_present(UDEV_ID_INPUT_TOUCHPAD)
++'''
++
++def pointing_stick_is_present():
++    return True
++
++def touchpad_is_present():
++    return True
