@@ -1,6 +1,6 @@
 COMMENT=		Unicode character map for the GNOME project
 
-DIST_TUPLE=		gnome GNOME gucharmap 15.1.3 .
+DIST_TUPLE=		gnome GNOME gucharmap 15.1.4 .
 
 SHARED_LIBS += gucharmap_2_90            7.1 # 7.0.0
 
