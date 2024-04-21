@@ -20,6 +20,7 @@ share/doc/hatari/bugs.txt
 share/doc/hatari/compatibility.html
 share/doc/hatari/debugger.html
 share/doc/hatari/emutos.txt
+share/doc/hatari/hatari-ui.html
 share/doc/hatari/hconsole/
 share/doc/hatari/hconsole/release-notes.txt
 share/doc/hatari/images/
@@ -31,6 +32,17 @@ share/doc/hatari/images/devices.png
 share/doc/hatari/images/fileselector.png
 share/doc/hatari/images/floppydisks.png
 share/doc/hatari/images/harddisks.png
+share/doc/hatari/images/hatari-ui-0.7.png
+share/doc/hatari/images/hatari-ui-0.9.png
+share/doc/hatari/images/hatari-ui-debug.png
+share/doc/hatari/images/hatari-ui-input.png
+share/doc/hatari/images/hatari-ui-noembed.png
+share/doc/hatari/images/hatari-ui-peripherals.png
+share/doc/hatari/images/hatari-ui-quit.png
+share/doc/hatari/images/hatari-ui-setup-edit.png
+share/doc/hatari/images/hatari-ui-setup.png
+share/doc/hatari/images/hatari-ui-speed.png
+share/doc/hatari/images/hatari-ui-trace.png
 share/doc/hatari/images/joystick.png
 share/doc/hatari/images/kcachegrind.png
 share/doc/hatari/images/keyboard.png

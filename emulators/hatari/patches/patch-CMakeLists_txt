@@ -1,9 +1,10 @@
-force-disable udev detection
+- Force-disable udev detection
+- Disable building the Python GTK+3 user interface
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -140,11 +140,6 @@ if(CapsImage_FOUND)
+@@ -155,11 +155,6 @@ if(CapsImage_FOUND)
  	set(HAVE_CAPSIMAGE 1)
  endif(CapsImage_FOUND)
  
@@ -12,6 +13,29 @@ Index: CMakeLists.txt
 -	set(HAVE_UDEV 1)
 -endif(Udev_FOUND)
 -
- # Check if Large File Support is available with the standard POSIX flags
- set (HATARI_LFS_FLAGS "-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64")
- check_large_file()
+ find_package(Capstone)
+ if(Capstone_FOUND)
+ 	set(CMAKE_REQUIRED_INCLUDES ${CAPSTONE_INCLUDE_DIR})
+@@ -372,22 +367,6 @@ if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
+ 	message("Note: Hatari needs at least Python 3 ... ignoring older version")
+ 	unset(PYTHONINTERP_FOUND)
+ endif()
+-set(PYTHON_GTK_FOUND 0)
+-if(PYTHONINTERP_FOUND)
+-	execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "\
+-import gi\n\
+-gi.require_version('Gtk', '3.0')\n\
+-from gi.repository import Gtk\n\
+-from gi.repository import Gdk\n\
+-from gi.repository import GdkPixbuf\n\
+-from gi.repository import GLib"
+-			RESULT_VARIABLE PYTHON_GTK_RESULT
+-			OUTPUT_QUIET ERROR_QUIET)
+-	if(${PYTHON_GTK_RESULT} EQUAL 0)
+-		set(PYTHON_GTK_FOUND 1)
+-		add_subdirectory(python-ui)
+-	endif()
+-endif(PYTHONINTERP_FOUND)
+ 
+ if(UNIX AND NOT ENABLE_OSX_BUNDLE)
+ 	add_subdirectory(share)

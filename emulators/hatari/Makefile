@@ -2,20 +2,20 @@ ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		2.4.1
+V =		2.5.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
 
 CATEGORIES =	emulators
 
 HOMEPAGE =	https://hatari.tuxfamily.org/
 
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SDL2 SM X11 Xext c m png portmidi pthread readline
-WANTLIB += z
+WANTLIB += ICE SDL2 SM X11 Xext c m png portmidi readline z
 
 SITES =		https://download.tuxfamily.org/hatari/$V/
 
