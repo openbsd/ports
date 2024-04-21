@@ -1,6 +1,6 @@
 COMMENT=		syntax checks for Puppet manifests and templates
 
-DISTNAME=		puppet-syntax-4.1.0
+DISTNAME=		puppet-syntax-4.1.1
 CATEGORIES=		sysutils
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
