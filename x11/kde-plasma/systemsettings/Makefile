@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma control center
 DISTNAME =	systemsettings-${VERSION}
 PKGNAME =	systemsettings-kf5-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  systemsettingsview        0.0 # 0.0
 
@@ -38,6 +39,7 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
+		devel/kf5/kirigami2 \
 		devel/kf5/knotifications \
 		devel/kf5/kpackage \
 		devel/kf5/plasma-framework \
