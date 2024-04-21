@@ -4,7 +4,7 @@ V=			3.8.5
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 # XXX must be ahead of OPENBSD_7_5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
