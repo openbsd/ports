@@ -20,6 +20,7 @@
 @man man/man1/glab-ci-lint.1
 @man man/man1/glab-ci-list.1
 @man man/man1/glab-ci-retry.1
+@man man/man1/glab-ci-run-trig.1
 @man man/man1/glab-ci-run.1
 @man man/man1/glab-ci-status.1
 @man man/man1/glab-ci-trace.1
