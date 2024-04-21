@@ -3,7 +3,7 @@ COMMENT =	YAML Ain't Markup Language
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	YAML-1.30
+DISTNAME =	YAML-1.31
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
