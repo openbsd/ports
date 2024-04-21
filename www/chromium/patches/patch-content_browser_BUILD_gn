@@ -1,7 +1,7 @@
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2476,6 +2476,13 @@ source_set("browser") {
+@@ -2406,6 +2406,13 @@ source_set("browser") {
      deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
    }
  

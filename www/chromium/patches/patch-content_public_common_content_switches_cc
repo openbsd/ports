@@ -10,7 +10,7 @@ Index: content/public/common/content_switches.cc
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -1009,7 +1011,7 @@ const char kPreventResizingContentsForTesting[] =
+@@ -1007,7 +1009,7 @@ const char kPreventResizingContentsForTesting[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

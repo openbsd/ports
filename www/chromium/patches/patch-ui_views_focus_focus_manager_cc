@@ -1,7 +1,7 @@
 Index: ui/views/focus/focus_manager.cc
 --- ui/views/focus/focus_manager.cc.orig
 +++ ui/views/focus/focus_manager.cc
-@@ -577,7 +577,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -579,7 +579,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -10,7 +10,7 @@ Index: ui/views/focus/focus_manager.cc
    // Processing an accelerator can delete things. Because we
    // need these objects afterwards on Linux, save widget_ as weak pointer and
    // save the close_on_deactivate property value of widget_delegate in a
-@@ -594,7 +594,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
+@@ -596,7 +596,7 @@ bool FocusManager::RedirectAcceleratorToBubbleAnchorWi
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

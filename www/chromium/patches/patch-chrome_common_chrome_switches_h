@@ -1,7 +1,7 @@
 Index: chrome/common/chrome_switches.h
 --- chrome/common/chrome_switches.h.orig
 +++ chrome/common/chrome_switches.h
-@@ -276,12 +276,12 @@ extern const char kAllowNaClSocketAPI[];
+@@ -277,12 +277,12 @@ extern const char kAllowNaClSocketAPI[];
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

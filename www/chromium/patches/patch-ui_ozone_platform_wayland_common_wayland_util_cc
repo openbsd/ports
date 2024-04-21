@@ -1,7 +1,7 @@
 Index: ui/ozone/platform/wayland/common/wayland_util.cc
 --- ui/ozone/platform/wayland/common/wayland_util.cc.orig
 +++ ui/ozone/platform/wayland/common/wayland_util.cc
-@@ -335,7 +335,7 @@ void TransformToWlArray(
+@@ -337,7 +337,7 @@ void TransformToWlArray(
  }
  
  base::TimeTicks EventMillisecondsToTimeTicks(uint32_t milliseconds) {

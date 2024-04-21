@@ -17,4 +17,4 @@ Index: mojo/public/tools/bindings/mojom.gni
 +
      action(parser_target_name) {
        allow_remote = true
-       custom_processor = "mojom_parser"
+ 

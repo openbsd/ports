@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/chrome_pages.cc
 --- chrome/browser/ui/chrome_pages.cc.orig
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -81,7 +81,7 @@
+@@ -82,7 +82,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/chrome_pages.cc
  #include "chrome/browser/web_applications/web_app_utils.h"
  #endif
  
-@@ -702,7 +702,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -716,7 +716,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

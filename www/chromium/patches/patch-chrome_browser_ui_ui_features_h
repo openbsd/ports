@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/ui_features.h
 --- chrome/browser/ui/ui_features.h.orig
 +++ chrome/browser/ui/ui_features.h
-@@ -223,7 +223,7 @@ BASE_DECLARE_FEATURE(kToolbarUseHardwareBitmapDraw);
+@@ -264,7 +264,7 @@ BASE_DECLARE_FEATURE(kToolbarUseHardwareBitmapDraw);
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  

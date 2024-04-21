@@ -55,7 +55,7 @@ Index: media/base/video_frame.cc
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1312,7 +1312,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1345,7 +1345,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -64,7 +64,7 @@ Index: media/base/video_frame.cc
  size_t VideoFrame::NumDmabufFds() const {
    return dmabuf_fds_->size();
  }
-@@ -1429,7 +1429,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1462,7 +1462,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

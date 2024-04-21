@@ -1,7 +1,7 @@
 Index: media/capture/video/linux/fake_v4l2_impl.cc
 --- media/capture/video/linux/fake_v4l2_impl.cc.orig
 +++ media/capture/video/linux/fake_v4l2_impl.cc
-@@ -561,7 +561,7 @@ int FakeV4L2Impl::close(int fd) {
+@@ -562,7 +562,7 @@ int FakeV4L2Impl::close(int fd) {
    return kSuccessReturnValue;
  }
  

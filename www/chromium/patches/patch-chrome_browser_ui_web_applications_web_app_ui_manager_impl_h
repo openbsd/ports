@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/web_applications/web_app_ui_manager_impl.h
 --- chrome/browser/ui/web_applications/web_app_ui_manager_impl.h.orig
 +++ chrome/browser/ui/web_applications/web_app_ui_manager_impl.h
-@@ -221,7 +221,7 @@ class WebAppUiManagerImpl : public BrowserListObserver
+@@ -222,7 +222,7 @@ class WebAppUiManagerImpl : public BrowserListObserver
        UninstallCompleteCallback uninstall_complete_callback,
        webapps::UninstallResultCode uninstall_code);
  

@@ -28,7 +28,7 @@ Index: ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
        std::make_unique<DesktopDragDropClientOzoneLinux>(window(), drag_handler);
  #else
        std::make_unique<DesktopDragDropClientOzone>(window(), drag_handler);
-@@ -1097,7 +1097,7 @@ bool DesktopWindowTreeHostPlatform::RotateFocusForWidg
+@@ -1117,7 +1117,7 @@ bool DesktopWindowTreeHostPlatform::RotateFocusForWidg
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

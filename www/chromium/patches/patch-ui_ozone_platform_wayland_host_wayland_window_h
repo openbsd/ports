@@ -28,7 +28,7 @@ Index: ui/ozone/platform/wayland/host/wayland_window.h
    void OnCursorLoaded(scoped_refptr<WaylandAsyncCursor> cursor,
                        scoped_refptr<BitmapCursor> bitmap_cursor);
  #endif
-@@ -569,7 +569,7 @@ class WaylandWindow : public PlatformWindow,
+@@ -571,7 +571,7 @@ class WaylandWindow : public PlatformWindow,
  
    wl::Object<zaura_surface> aura_surface_;
  

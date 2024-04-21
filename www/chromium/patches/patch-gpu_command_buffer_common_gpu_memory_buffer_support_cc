@@ -10,7 +10,7 @@ Index: gpu/command_buffer/common/gpu_memory_buffer_support.cc
    return GL_TEXTURE_EXTERNAL_OES;
  #elif BUILDFLAG(IS_IOS)
    return GL_TEXTURE_2D;
-@@ -217,7 +217,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
+@@ -209,7 +209,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
      gfx::BufferFormat format,
      gfx::BufferPlane plane) {
  #if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
