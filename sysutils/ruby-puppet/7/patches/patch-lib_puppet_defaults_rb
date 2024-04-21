@@ -22,7 +22,7 @@ Index: lib/puppet/defaults.rb
      end
    end
  
-@@ -1308,13 +1308,13 @@ EOT
+@@ -1314,13 +1314,13 @@ EOT
  
    settings.define_settings(:server,
      :user => {
