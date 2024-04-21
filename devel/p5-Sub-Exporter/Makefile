@@ -1,6 +1,6 @@
 COMMENT =	sophisticated exporter for custom-built routines
 
-DISTNAME =	Sub-Exporter-0.988
+DISTNAME =	Sub-Exporter-0.991
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
