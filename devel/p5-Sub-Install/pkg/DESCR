@@ -1,2 +1,3 @@
-This module provides a simple routine for installing code into packages without
-looking at typeglobs or thinking about warnings or strictures.
+This module makes it easy to install subroutines into packages
+without the unsightly mess of no strict or typeglobs lying about
+where just anyone can see them.

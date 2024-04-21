@@ -1,12 +1,11 @@
-COMMENT =	helper for installing code into packages
+COMMENT =	install subroutines into packages easily
 
-DISTNAME =	Sub-Install-0.928
+DISTNAME =	Sub-Install-0.929
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-# perl_5
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
