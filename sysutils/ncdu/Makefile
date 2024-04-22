@@ -2,7 +2,7 @@ PORTROACH=		limit:^1
 
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.19
+DISTNAME=		ncdu-1.20
 CATEGORIES=		sysutils
 
 HOMEPAGE=		https://dev.yorhel.nl/ncdu/
