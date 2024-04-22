@@ -10,6 +10,9 @@ PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 EPOCH-main=		0
 EPOCH-wwwdata=		0
 
+REVISION-main=		0
+REVISION-medatada=	0
+
 # XXX see also post-extract;
 # install: /usr/ports/pobj/icu4c-74_2-src/icu/source/../LICENSE: No such file or directory
 # https://github.com/unicode-org/icu/commit/312bae866003461bcd4022855ac7ec60546b81f7
