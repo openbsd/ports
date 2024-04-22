@@ -1,9 +1,9 @@
 Index: lib/mcconfig/paths.c
 --- lib/mcconfig/paths.c.orig
 +++ lib/mcconfig/paths.c
-@@ -75,6 +75,7 @@ static const struct
+@@ -76,6 +76,7 @@ static const struct
      { &mc_data_str, MC_SKINS_DIR },
-     { &mc_data_str, FISH_PREFIX },
+     { &mc_data_str, VFS_SHELL_PREFIX },
      { &mc_data_str, MC_ASHRC_FILE },
 +    { &mc_data_str, MC_KSHRC_FILE },
      { &mc_data_str, MC_BASHRC_FILE },
