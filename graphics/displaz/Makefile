@@ -1,3 +1,5 @@
+BROKEN =	needs fixing with lastools 2.3 or recent pdal
+
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
