@@ -16,6 +16,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/libadwaita
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
