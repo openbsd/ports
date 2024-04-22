@@ -3,7 +3,7 @@ enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
 Index: mdb.c
 --- mdb.c.orig
 +++ mdb.c
-@@ -5002,6 +5002,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
+@@ -5050,6 +5050,7 @@ mdb_env_open(MDB_env *env, const char *path, unsigned 
  		/* silently ignore WRITEMAP when we're only getting read access */
  		flags &= ~MDB_WRITEMAP;
  	} else {
