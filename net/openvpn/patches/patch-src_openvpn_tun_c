@@ -1,5 +1,4 @@
 - no need for link0 any more, we have separate tap interfaces
-- fix memory leak (gc is unused)
 
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
