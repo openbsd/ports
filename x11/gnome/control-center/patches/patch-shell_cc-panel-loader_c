@@ -23,7 +23,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_sound_panel_get_type (void);
  extern GType cc_system_panel_get_type (void);
  extern GType cc_ua_panel_get_type (void);
-@@ -92,7 +96,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -93,7 +97,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("color",            cc_color_panel_get_type,                NULL),
    PANEL_TYPE("display",          cc_display_panel_get_type,              NULL),
    PANEL_TYPE("keyboard",         cc_keyboard_panel_get_type,             NULL),
@@ -33,12 +33,12 @@ Index: shell/cc-panel-loader.c
    PANEL_TYPE("multitasking",     cc_multitasking_panel_get_type,         NULL),
  #ifdef BUILD_NETWORK
    PANEL_TYPE("network",          cc_network_panel_get_type,              NULL),
-@@ -104,7 +110,9 @@ static CcPanelLoaderVtable default_panels[] =
+@@ -105,7 +111,9 @@ static CcPanelLoaderVtable default_panels[] =
    PANEL_TYPE("printers",         cc_printers_panel_get_type,             NULL),
    PANEL_TYPE("privacy",          cc_privacy_panel_get_type,              NULL),
    PANEL_TYPE("search",           cc_search_panel_get_type,               NULL),
 +#ifdef BUILD_SHARING
-   PANEL_TYPE("sharing",          cc_sharing_panel_get_type,              NULL),
+   PANEL_TYPE("sharing",          cc_sharing_panel_get_type,              cc_sharing_panel_static_init_func),
 +#endif
    PANEL_TYPE("sound",            cc_sound_panel_get_type,                NULL),
    PANEL_TYPE("system",           cc_system_panel_get_type,               NULL),
