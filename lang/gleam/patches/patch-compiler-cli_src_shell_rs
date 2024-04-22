@@ -2,7 +2,7 @@ Consider MODERL_VERSION
 Index: compiler-cli/src/shell.rs
 --- compiler-cli/src/shell.rs.orig
 +++ compiler-cli/src/shell.rs
-@@ -22,7 +22,7 @@ pub fn command() -> Result<(), Error> {
+@@ -24,7 +24,7 @@ pub fn command() -> Result<(), Error> {
      ctrlc::set_handler(move || {}).expect("Error setting Ctrl-C handler");
  
      // Prepare the Erlang shell command

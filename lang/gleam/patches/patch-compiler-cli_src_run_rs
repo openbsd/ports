@@ -2,7 +2,7 @@ Consider MODERL_VERSION
 Index: compiler-cli/src/run.rs
 --- compiler-cli/src/run.rs.orig
 +++ compiler-cli/src/run.rs
-@@ -134,7 +134,7 @@ fn run_erlang(
+@@ -146,7 +146,7 @@ fn run_erlang(
          args.push(argument);
      }
  
@@ -10,4 +10,4 @@ Index: compiler-cli/src/run.rs
 +    ProjectIO::new().exec("erl${MODERL_VERSION}", &args, &[], None, Stdio::Inherit)
  }
  
- fn run_javascript_node(
+ fn run_javascript_bun(
