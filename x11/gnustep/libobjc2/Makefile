@@ -3,8 +3,7 @@ ONLY_FOR_ARCHS =	${LLD_ARCHS}
 COMMENT =	GNUstep libobjc2 objective-c runtime
 
 # note: this port does not use the gnustep module
-VERSION =	2.2
-REVISION =	4
+VERSION =	2.2.1
 GH_ACCOUNT =	gnustep
 GH_PROJECT =	libobjc2
 GH_TAGNAME =	v${VERSION}
