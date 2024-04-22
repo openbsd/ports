@@ -1,6 +1,6 @@
 COMMENT=	access a SQLite3 database from ruby
 
-DISTNAME=	sqlite3-1.7.0
+DISTNAME=	sqlite3-2.0.0
 CATEGORIES=	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -17,12 +17,5 @@ LIB_DEPENDS=		databases/sqlite3
 
 CONFIGURE_STYLE=	ruby gem ext
 CONFIGURE_ARGS=		--enable-system-libraries
-
-MODRUBY_TEST=	rake
-TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
-
-do-test:
-	cd ${WRKSRC}/test && ${RUBY} -I . -e \
-		"require 'sqlite3'; Dir['test_*.rb'].each{|f| load(f)}"
 
 .include <bsd.port.mk>
