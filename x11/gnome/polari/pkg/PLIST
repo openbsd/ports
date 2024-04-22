@@ -378,7 +378,7 @@ share/locale/vi/LC_MESSAGES/polari.mo
 share/locale/zh_CN/LC_MESSAGES/polari.mo
 share/locale/zh_HK/LC_MESSAGES/polari.mo
 share/locale/zh_TW/LC_MESSAGES/polari.mo
-share/metainfo/org.gnome.Polari.appdata.xml
+share/metainfo/org.gnome.Polari.metainfo.xml
 share/polari/
 share/polari/gir-1.0/
 share/polari/gir-1.0/Polari-1.0.gir
