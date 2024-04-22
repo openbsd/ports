@@ -1,6 +1,7 @@
 COMMENT =	Symas Lightning Memory-Mapped Database
 
 VERSION =	0.9.31
+REVISION =	0
 
 DISTNAME =	openldap-LMDB_${VERSION}
 PKGNAME =	lmdb-${VERSION}
@@ -29,5 +30,11 @@ MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" \
 			SHARED_VERSION_MINOR=${LIBlmdb_VERSION:E}
 
 WRKDIST =		${WRKDIR}/openldap-LMDB_${VERSION}/libraries/liblmdb
+
+SUBST_VARS +=	VERSION
+
+post-install:
+	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+	    ${FILESDIR}/lmdb.pc.in ${PREFIX}/lib/pkgconfig/lmdb.pc
 
 .include <bsd.port.mk>

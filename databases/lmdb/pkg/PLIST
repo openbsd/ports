@@ -5,6 +5,7 @@
 include/lmdb.h
 @static-lib lib/liblmdb.a
 @lib lib/liblmdb.so.${LIBlmdb_VERSION}
+lib/pkgconfig/lmdb.pc
 @man man/man1/mdb_copy.1
 @man man/man1/mdb_dump.1
 @man man/man1/mdb_load.1

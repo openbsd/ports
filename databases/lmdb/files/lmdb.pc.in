@@ -1,0 +1,11 @@
+prefix=${TRUEPREFIX}
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: lmdb
+Description: Lightning memory-mapped database: key-value data store
+URL: https://www.symas.com/symas-embedded-database-lmdb
+Version: ${VERSION}
+Libs: -L${libdir} -llmdb
+Cflags: -I${includedir}
