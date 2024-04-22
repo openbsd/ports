@@ -1,6 +1,6 @@
 COMMENT=	quickly ping N hosts w/o flooding the network
 
-DISTNAME=	fping-5.1
+DISTNAME=	fping-5.2
 
 CATEGORIES=	net
 
