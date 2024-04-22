@@ -164,6 +164,7 @@ share/wireplumber/scripts/lib/device-info-cache.lua
 share/wireplumber/scripts/lib/filter-utils.lua
 share/wireplumber/scripts/lib/linking-utils.lua
 share/wireplumber/scripts/lib/monitor-utils.lua
+share/wireplumber/scripts/lib/node-utils.lua
 share/wireplumber/scripts/linking/
 share/wireplumber/scripts/linking/find-best-target.lua
 share/wireplumber/scripts/linking/find-default-target.lua
