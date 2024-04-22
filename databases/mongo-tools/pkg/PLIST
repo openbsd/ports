@@ -3,7 +3,6 @@
 @bin bin/mongoexport
 @bin bin/mongofiles
 @bin bin/mongoimport
-@bin bin/mongoreplay
 @bin bin/mongorestore
 @bin bin/mongostat
 @bin bin/mongotop
