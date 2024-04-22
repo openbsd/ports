@@ -1,5 +1,7 @@
 COMMENT=		MATE settings daemon
 
+REVISION=		0
+
 MATE_PROJECT=		mate-settings-daemon
 
 # GPLv2
@@ -8,7 +10,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 dbus-1
-WANTLIB += dbus-glib-1 dconf epoxy execinfo expat ffi fontconfig
+WANTLIB += dconf epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl ltdl lzma m mate-desktop-2 matekbd matekbdui
@@ -18,6 +20,8 @@ WANTLIB += polkit-gobject-1 pthread pulse smime3 sndfile ssl3
 WANTLIB += startup-notification-1 vorbis vorbisenc vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp atspi jpeg opus
+WANTLIB += epoll-shim mp3lame mpg123 wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -28,7 +32,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libnotify \
 			security/nss \
 			sysutils/polkit \
-			x11/dbus-glib \
 			x11/mate/desktop \
 			x11/mate/libmatekbd \
 			x11/mate/libmatemixer

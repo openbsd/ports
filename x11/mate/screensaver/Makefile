@@ -1,5 +1,7 @@
 COMMENT=		MATE screensaver
 
+REVISION=		0
+
 MATE_PROJECT=		mate-screensaver
 
 # LGPLv2
@@ -17,6 +19,8 @@ WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xkbfile xklavier xml2 xshmfence
 WANTLIB += z
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp execinfo jpeg
+WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb-randr xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,5 +1,7 @@
 COMMENT=		mixer library for MATE desktop
 
+REVISION=		0
+
 MATE_PROJECT=		libmatemixer
 
 SHARED_LIBS +=  matemixer                 0.0 # 0.0
@@ -14,6 +16,7 @@ WANTLIB += FLAC dbus-1 execinfo ffi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 iconv intl ogg pcre2-8 pulse-mainloop-glib
 WANTLIB += sndfile vorbis vorbisenc
 WANTLIB += Xau Xdmcp opus
+WANTLIB += mp3lame mpg123
 
 MODULES=		x11/gnome
 

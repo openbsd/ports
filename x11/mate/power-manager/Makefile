@@ -1,5 +1,7 @@
 COMMENT=		MATE power manager
 
+REVISION=		0
+
 MATE_PROJECT=		mate-power-manager
 MATE_VERSION=		1.28.1
 
@@ -16,6 +18,9 @@ WANTLIB += iconv intl ltdl m mate-panel-applet-4 notify ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += upower-glib vorbis vorbisfile xcb xcb-render xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX} jpeg secret-1 Xau Xdmcp
+WANTLIB += X11-xcb atspi dconf epoll-shim mate-desktop-2 startup-notification-1
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb-util
+WANTLIB += xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

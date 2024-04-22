@@ -1,5 +1,7 @@
 COMMENT=		weather library for MATE
 
+REVISION=		0
+
 SHARED_LIBS +=  mateweather               7.9 # 7.9
 
 MATE_PROJECT=		libmateweather
@@ -18,6 +20,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png psl pthread
 WANTLIB += soup-2.4 sqlite3 unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += brotlicommon brotlidec Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		x11/gnome
 

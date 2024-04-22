@@ -1,5 +1,7 @@
 COMMENT=		MATE session manager
 
+REVISION=		0
+
 MATE_PROJECT=		mate-session-manager
 
 CATEGORIES=		x11
@@ -17,6 +19,8 @@ WANTLIB += pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm z
 WANTLIB += EGL GL GLESv2 X11-xcb Xxf86vm drm gbm glapi xcb-dri2
 WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-sync xcb-xfixes xshmfence
 WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
+WANTLIB += atspi epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xcb-randr xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

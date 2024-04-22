@@ -1,5 +1,7 @@
 COMMENT=		PolicyKit authentication agent for MATE
 
+REVISION=		0
+
 MATE_PROJECT=		mate-polkit
 MATE_VERSION=		1.28.1
 
@@ -16,6 +18,8 @@ WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png polkit-agent-1
 WANTLIB += polkit-gobject-1 pthread xcb xcb-render xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		x11/gnome
 

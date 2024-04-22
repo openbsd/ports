@@ -1,5 +1,7 @@
 COMMENT=		media tools for the MATE desktop
 
+REVISION=		0
+
 MATE_PROJECT=		mate-media
 MATE_VERSION=		1.28.1
 
@@ -20,6 +22,8 @@ WANTLIB += X11-xcb startup-notification-1 xcb-util
 WANTLIB += fribidi
 WANTLIB += mate-panel-applet-4
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

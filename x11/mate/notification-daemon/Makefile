@@ -1,5 +1,7 @@
 COMMENT=		MATE notification daemon
 
+REVISION=		0
+
 MATE_PROJECT=		mate-notification-daemon
 
 # GPLv2
@@ -16,6 +18,8 @@ WANTLIB += xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX} X11-xcb dconf execinfo jpeg lzma
 WANTLIB += startup-notification-1 xcb-util xml2
 WANTLIB += mate-desktop-2 mate-panel-applet-4  Xau Xdmcp
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

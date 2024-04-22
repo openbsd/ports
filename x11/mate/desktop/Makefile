@@ -1,5 +1,7 @@
 COMMENT=		components for the MATE desktop
 
+REVISION=		0
+
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4
 
 MATE_PROJECT=		mate-desktop
@@ -21,6 +23,8 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util z
 WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
+WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,6 +1,6 @@
 COMMENT=		MATE control center
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
@@ -24,6 +24,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png polkit-gobject-1
 WANTLIB += rsvg-2 startup-notification-1 vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
 WANTLIB += execinfo jpeg Xau Xdmcp
+WANTLIB += XRes Xpresent atspi consolekit dbus-1 epoll-shim gtop-2.0
+WANTLIB += kvm wayland-client wayland-cursor wayland-egl xkbcommon
 
 MODULES=		x11/gnome
 
