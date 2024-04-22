@@ -1,5 +1,6 @@
 include/libHX/
 include/libHX.h
+include/libHX/cast.h
 include/libHX/ctype_helper.h
 include/libHX/defs.h
 include/libHX/deque.h
@@ -18,7 +19,4 @@ include/libHX/wx_helper.hpp
 @static-lib lib/libHX.a
 lib/libHX.la
 @lib lib/libHX.so.${LIBHX_VERSION}
-@static-lib lib/libHX_rtcheck.a
-lib/libHX_rtcheck.la
-@so lib/libHX_rtcheck.so
 lib/pkgconfig/libHX.pc
