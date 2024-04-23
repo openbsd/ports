@@ -5,6 +5,7 @@
      SUBDIR += blosc2
      SUBDIR += brotli
      SUBDIR += bzip2
+     SUBDIR += bzip3
      SUBDIR += cabextract
      SUBDIR += deco
      SUBDIR += deutex
