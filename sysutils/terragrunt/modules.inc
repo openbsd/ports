@@ -356,7 +356,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-azure-helpers					 v0.14.0 \
 	github.com/hashicorp/go-checkpoint					 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp					 v0.5.2 \
-	github.com/hashicorp/go-getter						 v1.7.1 \
+	github.com/hashicorp/go-getter						 v1.7.4 \
 	github.com/hashicorp/go-getter/v2					 v2.2.1 \
 	github.com/hashicorp/go-hclog						 v1.5.0 \
 	github.com/hashicorp/go-immutable-radix					 v0.0.0-20180129170900-7f3cd4390caa \
@@ -1046,6 +1046,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-cleanhttp				 v0.5.1 \
 	github.com/hashicorp/go-getter					 v1.5.1 \
 	github.com/hashicorp/go-getter					 v1.6.1 \
+	github.com/hashicorp/go-getter					 v1.7.1 \
 	github.com/hashicorp/go-hclog					 v0.14.1 \
 	github.com/hashicorp/go-hclog					 v0.15.0 \
 	github.com/hashicorp/go-hclog					 v0.16.2 \

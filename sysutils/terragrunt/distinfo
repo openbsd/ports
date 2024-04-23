@@ -1135,7 +1135,8 @@ SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 6fPc/LMxcr
 SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.5.1.mod) = gx+4NJR6rgwY33kTXmb3igSiiwtCJ4xYVBPeUS23A6M=
 SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.6.1.mod) = ZrSbgdWOcwNZJqcBHjHH2QkTC9kSdEx6HuJdih6X3+w=
 SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.1.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
-SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.1.zip) = ceNXSoFKrhh3ynKpEBO2p8+H19z+4/rHkdB6Cw9gt2c=
+SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
+SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.zip) = AtQjUGkuhYqDTxV2iMWuvaDAj/oC3eCRWl70HELgNzM=
 SHA256 (go_modules/github.com/hashicorp/go-getter/v2/@v/v2.2.1.mod) = cvg6UblFVfciu4sTwZOp//v7kYrAi8rZuiGH8f7RKGs=
 SHA256 (go_modules/github.com/hashicorp/go-getter/v2/@v/v2.2.1.zip) = 8dNCjyjt8bSUAaZgPUaX8iyTDHReEcoRgWTrBkJuVOo=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 3pL8xvJiE8j+T+bD+ruqxhAfceLaC/i8nDqlQgOMvLo=
@@ -2560,7 +2561,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = XmRigeM
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.57.5.zip) = uSVvTfQZyAwN9SRjR2wM1ofQ2K0nskvW0pYs+h77OlQ=
+SHA256 (terragrunt-v0.57.8.zip) = etxhn5FqRZHsLCZbgdGFZV1D1ZxhGK0g1JI0HDctJho=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3698,7 +3699,8 @@ SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 9586
 SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.5.1.mod) = 876
 SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.6.1.mod) = 1036
 SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.1.mod) = 1055
-SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.1.zip) = 183866
+SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = 1055
+SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.zip) = 183476
 SIZE (go_modules/github.com/hashicorp/go-getter/v2/@v/v2.2.1.mod) = 544
 SIZE (go_modules/github.com/hashicorp/go-getter/v2/@v/v2.2.1.zip) = 152729
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 297
@@ -5123,4 +5125,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = 230610
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.57.5.zip) = 4861325
+SIZE (terragrunt-v0.57.8.zip) = 4865315
