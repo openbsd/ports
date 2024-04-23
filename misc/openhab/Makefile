@@ -22,6 +22,8 @@ RUN_DEPENDS=	java/javaPathHelper
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
+SUBST_VARS=	V
+
 TAR=		tar -C ${WRKDIST}
 
 pre-extract:
