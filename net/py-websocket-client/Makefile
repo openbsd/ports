@@ -1,6 +1,6 @@
 COMMENT =		WebSocket client for Python
 
-MODPY_EGG_VERSION =	1.4.2
+MODPY_EGG_VERSION =	1.7.0
 DISTNAME =		websocket-client-${MODPY_EGG_VERSION}
 PKGNAME =		py-websocket-client-${MODPY_EGG_VERSION}
 
