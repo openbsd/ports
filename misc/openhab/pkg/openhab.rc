@@ -1,0 +1,47 @@
+#!/bin/ksh
+
+JAVA="$(${LOCALBASE}/bin/javaPathHelper -c openhab)"
+JAVA_HOME="$(${LOCALBASE}/bin/javaPathHelper -h openhab)"
+
+# Read configuration variable file if it is present
+if [ -r /etc/openhab.conf ]; then
+  . /etc/openhab.conf
+fi
+
+# Read and set openHAB variables set in /etc/openhab.conf
+if [ -z "${EXTRA_JAVA_OPTS}" ];		then EXTRA_JAVA_OPTS="-Dsun.nio.fs.watchservice=polling"; fi
+if [ -z "${OPENHAB_HTTP_ADDRESS}" ];	then OPENHAB_HTTP_ADDRESS="127.0.0.1"; fi
+if [ -z "${OPENHAB_HTTP_PORT}" ];	then OPENHAB_HTTP_PORT=8080; fi
+if [ -z "${OPENHAB_HTTPS_PORT}" ];	then OPENHAB_HTTPS_PORT=8443; fi
+if [ -z "${OPENHAB_HOME}" ];		then OPENHAB_HOME="${PREFIX}/libexec/openhab"; fi
+if [ -z "${OPENHAB_CONF}" ];		then OPENHAB_CONF="${SYSCONFDIR}/openhab"; fi
+if [ -z "${OPENHAB_RUNTIME}" ];		then OPENHAB_RUNTIME="${OPENHAB_HOME}/runtime"; fi
+if [ -z "${OPENHAB_USERDATA}" ];	then OPENHAB_USERDATA="/var/db/openhab"; fi
+if [ -z "${OPENHAB_BACKUPS}" ];		then OPENHAB_BACKUPS="${OPENHAB_USERDATA}/backups"; fi
+if [ -z "${OPENHAB_LOGDIR}" ];		then OPENHAB_LOGDIR="/var/log/openhab"; fi
+
+ENV="JAVA_HOME=${JAVA_HOME} \
+	EXTRA_JAVA_OPTS=\"${EXTRA_JAVA_OPTS}\" \
+	KARAF_SERVICE_PIDFILE=${KARAF_SERVICE_PIDFILE} \
+	OPENHAB_HTTP_ADDRESS=${OPENHAB_HTTP_ADDRESS} \
+	OPENHAB_HTTP_PORT=${OPENHAB_HTTP_PORT} \
+	OPENHAB_HTTPS_PORT=${OPENHAB_HTTPS_PORT} \
+	OPENHAB_HOME=${OPENHAB_HOME} \
+	OPENHAB_CONF=${OPENHAB_CONF} \
+	OPENHAB_RUNTIME=${OPENHAB_RUNTIME} \
+	OPENHAB_USERDATA=${OPENHAB_USERDATA} \
+	OPENHAB_BACKUPS=${OPENHAB_BACKUPS} \
+	OPENHAB_LOGDIR=${OPENHAB_LOGDIR}"
+
+daemon="${ENV} ${OPENHAB_RUNTIME}/bin/start"
+daemon_user="_openhab"
+daemon_timeout=60
+
+. /etc/rc.d/rc.subr
+
+pexp="${JAVA}.*-Dopenhab.*"
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

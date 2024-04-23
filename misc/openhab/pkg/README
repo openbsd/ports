@@ -1,0 +1,16 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Listen on localhost only
+========================
+
+openHAB is configured by sourcing environment variables from /etc/openhab.conf.
+By default openHAB listens on 0.0.0.0 port 8080 (http) and 8443 (https).
+
+We've opted to default to 127.0.0.1 for obvious security reasons. To restore the
+original behavior make the following change in /etc/openhab.conf:
+
+OPENHAB_HTTP_ADDRESS=0.0.0.0
+
+Refer to https://www.openhab.org/docs/ for more details.
