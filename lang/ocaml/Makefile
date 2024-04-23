@@ -60,8 +60,6 @@ LDFLAGS +=	-L${LOCALBASE}/lib
 .if ${MACHINE_ARCH} == "i386"
 # configure: error: fma does not work, enable emulation with --enable-imprecise-c99-float-ops
 CONFIGURE_ARGS +=	--enable-imprecise-c99-float-ops
-# non-PIC assembly in asmrun/i386.S
-LDFLAGS+=		-Wl,-z,notext
 .endif
 
 USE_GMAKE=	Yes
