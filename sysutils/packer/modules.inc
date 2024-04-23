@@ -187,7 +187,7 @@ MODGO_MODULES =	\
 	github.com/go-git/go-git-fixtures/v4			 v4.3.2-0.20231010084843-55a94097c399 \
 	github.com/go-git/go-git/v5				 v5.11.0 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20191125211704-12ad95a8df72 \
-	github.com/go-jose/go-jose/v3				 v3.0.1 \
+	github.com/go-jose/go-jose/v3				 v3.0.3 \
 	github.com/go-kit/kit					 v0.9.0 \
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-logr/logr					 v1.3.0 \
@@ -255,7 +255,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
 	github.com/hashicorp/hcl/v2				 v2.19.1 \
-	github.com/hashicorp/hcp-sdk-go				 v0.85.0 \
+	github.com/hashicorp/hcp-sdk-go				 v0.91.0 \
 	github.com/hashicorp/logutils				 v1.0.0 \
 	github.com/hashicorp/mdns				 v1.0.4 \
 	github.com/hashicorp/memberlist				 v0.5.0 \
@@ -378,17 +378,17 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/sdk				 v1.17.0 \
 	go.opentelemetry.io/otel/trace				 v1.17.0 \
 	go.opentelemetry.io/proto/otlp				 v0.7.0 \
-	golang.org/x/crypto					 v0.17.0 \
+	golang.org/x/crypto					 v0.22.0 \
 	golang.org/x/exp					 v0.0.0-20230321023759-10a507213a29 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20190313153728-d0100b6bd8b3 \
 	golang.org/x/mobile					 v0.0.0-20210901025245-1fde1d6c3ca1 \
 	golang.org/x/mod					 v0.13.0 \
-	golang.org/x/net					 v0.19.0 \
+	golang.org/x/net					 v0.24.0 \
 	golang.org/x/oauth2					 v0.15.0 \
 	golang.org/x/sync					 v0.4.0 \
-	golang.org/x/sys					 v0.15.0 \
-	golang.org/x/term					 v0.15.0 \
+	golang.org/x/sys					 v0.19.0 \
+	golang.org/x/term					 v0.19.0 \
 	golang.org/x/text					 v0.14.0 \
 	golang.org/x/time					 v0.0.0-20220210224613-90d013bbcef8 \
 	golang.org/x/tools					 v0.14.0 \
@@ -630,7 +630,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20190222235706-ffb98f73852f \
 	golang.org/x/crypto					 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto					 v0.0.0-20190510104115-cbcb75029529 \
-	golang.org/x/crypto					 v0.0.0-20190911031432-227b76d455e7 \
 	golang.org/x/crypto					 v0.0.0-20190923035154-9ee001bba392 \
 	golang.org/x/crypto					 v0.0.0-20200414173820-0848c9571904 \
 	golang.org/x/crypto					 v0.0.0-20200422194213-44a606286825 \
@@ -644,6 +643,8 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.13.0 \
 	golang.org/x/crypto					 v0.14.0 \
 	golang.org/x/crypto					 v0.16.0 \
+	golang.org/x/crypto					 v0.17.0 \
+	golang.org/x/crypto					 v0.19.0 \
 	golang.org/x/crypto					 v0.3.1-0.20221117191849-2c476679df9a \
 	golang.org/x/crypto					 v0.6.0 \
 	golang.org/x/crypto					 v0.7.0 \
@@ -686,7 +687,9 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.15.0 \
 	golang.org/x/net					 v0.16.0 \
 	golang.org/x/net					 v0.17.0 \
+	golang.org/x/net					 v0.19.0 \
 	golang.org/x/net					 v0.2.0 \
+	golang.org/x/net					 v0.21.0 \
 	golang.org/x/net					 v0.6.0 \
 	golang.org/x/net					 v0.7.0 \
 	golang.org/x/net					 v0.8.0 \
@@ -748,6 +751,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.12.0 \
 	golang.org/x/sys					 v0.13.0 \
 	golang.org/x/sys					 v0.14.0 \
+	golang.org/x/sys					 v0.15.0 \
+	golang.org/x/sys					 v0.17.0 \
 	golang.org/x/sys					 v0.2.0 \
 	golang.org/x/sys					 v0.3.0 \
 	golang.org/x/sys					 v0.5.0 \
@@ -757,9 +762,11 @@ MODGO_MODFILES =	\
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term					 v0.13.0 \
+	golang.org/x/term					 v0.17.0 \
 	golang.org/x/term					 v0.2.0 \
 	golang.org/x/term					 v0.5.0 \
 	golang.org/x/term					 v0.6.0 \
+	golang.org/x/term					 v0.8.0 \
 	golang.org/x/text					 v0.11.0 \
 	golang.org/x/text					 v0.12.0 \
 	golang.org/x/text					 v0.13.0 \
