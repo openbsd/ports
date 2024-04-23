@@ -1,0 +1,21 @@
+Index: vendor/github.com/tonistiigi/fsutil/filter.go
+--- vendor/github.com/tonistiigi/fsutil/filter.go.orig
++++ vendor/github.com/tonistiigi/fsutil/filter.go
+@@ -318,7 +318,7 @@ func (fs *filterFS) Walk(ctx context.Context, target s
+ 		}
+ 		stat, ok := fi.Sys().(*types.Stat)
+ 		if !ok {
+-			return errors.WithStack(&os.PathError{Path: path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
++			return errors.WithStack(&os.PathError{Path: path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
+ 		}
+ 
+ 		select {
+@@ -346,7 +346,7 @@ func (fs *filterFS) Walk(ctx context.Context, target s
+ 				}
+ 				parentStat, ok := parentFi.Sys().(*types.Stat)
+ 				if !ok {
+-					return errors.WithStack(&os.PathError{Path: path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
++					return errors.WithStack(&os.PathError{Path: path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
+ 				}
+ 
+ 				select {

@@ -1,0 +1,12 @@
+Index: vendor/github.com/tonistiigi/fsutil/followlinks.go
+--- vendor/github.com/tonistiigi/fsutil/followlinks.go.orig
++++ vendor/github.com/tonistiigi/fsutil/followlinks.go
+@@ -122,7 +122,7 @@ func (r *symlinkResolver) readSymlink(p string, allowW
+ 	}
+ 	stat, ok := fi.Sys().(*types.Stat)
+ 	if !ok {
+-		return nil, errors.WithStack(&os.PathError{Path: p, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
++		return nil, errors.WithStack(&os.PathError{Path: p, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
+ 	}
+ 
+ 	link := filepath.Clean(stat.Linkname)

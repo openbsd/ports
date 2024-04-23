@@ -1,8 +1,8 @@
 Index: vendor/github.com/tonistiigi/fsutil/fs.go
 --- vendor/github.com/tonistiigi/fsutil/fs.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/fs.go
-@@ -79,7 +79,7 @@ func (fs *subDirFS) Walk(ctx context.Context, fn filep
- 		if err := d.FS.Walk(ctx, func(p string, fi os.FileInfo, err error) error {
+@@ -144,7 +144,7 @@ func (fs *subDirFS) Walk(ctx context.Context, target s
+ 			}
  			stat, ok := fi.Sys().(*types.Stat)
  			if !ok {
 -				return errors.WithStack(&os.PathError{Path: d.Stat.Path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})

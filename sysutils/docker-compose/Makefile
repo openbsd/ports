@@ -1,6 +1,6 @@
 COMMENT =		Define and run multi-container applications with Docker
 
-V =			2.24.5
+V =			2.26.1
 GH_ACCOUNT =		docker
 GH_PROJECT =		compose
 GH_TAGNAME =		v${V}
@@ -34,7 +34,9 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/cmd \
 		${PREFIX}/libexec/docker/cli-plugins/docker-compose
 
-vendor: patch
+# Should be removed when upstream add vendors
+# See: https://github.com/docker/compose/issues/11760
+vendor: extract
 	cd ${WRKDIR}/compose-$V; \
 	go mod tidy; \
 	go mod vendor; \
