@@ -1,0 +1,4 @@
+libexec/openhab/
+libexec/openhab/addons/
+libexec/openhab/addons/openhab-addons-4.1.2.kar
+share/doc/pkg-readmes/${PKGSTEM}

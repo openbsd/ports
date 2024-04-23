@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Block network for openHAB
+=========================
+
+If the only requirement for network is to download openHAB addons, installing
+this package will allow you to disable outbound for user _openhab.
+
+/etc/pf.conf:
+block return out proto {tcp udp} user _openhab
