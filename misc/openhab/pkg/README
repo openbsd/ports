@@ -14,3 +14,18 @@ original behavior make the following change in /etc/openhab.conf:
 OPENHAB_HTTP_ADDRESS=0.0.0.0
 
 Refer to https://www.openhab.org/docs/ for more details.
+
+Access to serial devices
+========================
+
+openHAB runs as user _openhab. By default, this user will not be able to access
+serial devices. If, for example, you plan to access a locally connected USB
+dongle for Zigbee or Z-Wave, you will need to add the _openhab user to the
+'dialer' group. Further, you will also need to edit /etc/openhab.conf and
+adjust EXTRA_JAVA_OPTS accordingly.
+
+Please note, you will have to find a Java wrapper library for native serial port
+access. The example of passing "-Dgnu.io.rxtx.SerialPorts" uses the rxtx library
+which is currently unsupported on OpenBSD. This may change in the future.
+
+Refer to https://www.openhab.org/docs/ for more details.

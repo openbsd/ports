@@ -1,6 +1,6 @@
 COMMENT=	integration platform for home automation
 
-V=		4.1.1
+V=		4.1.2
 DISTNAME=	openhab-${V}
 
 CATEGORIES=	misc
@@ -25,7 +25,7 @@ NO_TEST=	Yes
 TAR=		tar -C ${WRKDIST}
 
 pre-extract:
-	@mkdir ${WRKDIST}
+	mkdir ${WRKDIST}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openhab/
