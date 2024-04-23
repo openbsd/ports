@@ -1,7 +1,10 @@
+@conflict qtpurchasing-<5.15.12p0
 lib/qt5/examples/
 lib/qt5/examples/purchasing/
 lib/qt5/examples/purchasing/purchasing.pro
 lib/qt5/examples/purchasing/qthangman/
+lib/qt5/examples/purchasing/qthangman/android/
+lib/qt5/examples/purchasing/qthangman/android/build.gradle
 lib/qt5/examples/purchasing/qthangman/doc/
 lib/qt5/examples/purchasing/qthangman/doc/images/
 lib/qt5/examples/purchasing/qthangman/doc/images/qthangman-example.png

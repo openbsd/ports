@@ -234,12 +234,6 @@ lib/qt5/cmake/Qt5Bluetooth/Qt5BluetoothConfigVersion.cmake
 lib/qt5/cmake/Qt5Nfc/
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfig.cmake
 lib/qt5/cmake/Qt5Nfc/Qt5NfcConfigVersion.cmake
-lib/qt5/examples/bluetooth/btscanner/Info.plist
-lib/qt5/examples/bluetooth/heartrate-game/Info.plist
-lib/qt5/examples/bluetooth/heartrate-server/Info.plist
-lib/qt5/examples/bluetooth/lowenergyscanner/Info.plist
-lib/qt5/examples/bluetooth/shared/
-lib/qt5/examples/bluetooth/shared/Info.qmake.macos.plist
 lib/qt5/libQt5Bluetooth.la
 lib/qt5/libQt5Bluetooth.prl
 @lib lib/qt5/libQt5Bluetooth.so.${LIBQt5Bluetooth_VERSION}

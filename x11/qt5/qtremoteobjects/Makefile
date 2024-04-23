@@ -1,5 +1,6 @@
 QT5NAME =		QtRemoteObjects
 COMMENT-main =		inter-process communication using Qt5 objects
+REVISION=		0
 
 MULTI_PACKAGES =	-main -examples
 

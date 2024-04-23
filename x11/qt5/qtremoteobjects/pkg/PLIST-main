@@ -75,8 +75,6 @@ lib/qt5/cmake/Qt5RemoteObjects/Qt5RemoteObjectsMacros.cmake
 lib/qt5/cmake/Qt5RepParser/
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfig.cmake
 lib/qt5/cmake/Qt5RepParser/Qt5RepParserConfigVersion.cmake
-lib/qt5/examples/remoteobjects/ssl/sslserver/cert/readme
-lib/qt5/examples/remoteobjects/websockets/common/cert/readme
 lib/qt5/libQt5RemoteObjects.la
 lib/qt5/libQt5RemoteObjects.prl
 @lib lib/qt5/libQt5RemoteObjects.so.${LIBQt5RemoteObjects_VERSION}

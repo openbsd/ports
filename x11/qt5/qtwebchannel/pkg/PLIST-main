@@ -23,7 +23,6 @@ lib/pkgconfig/Qt5WebChannel.pc
 lib/qt5/cmake/Qt5WebChannel/
 lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfig.cmake
 lib/qt5/cmake/Qt5WebChannel/Qt5WebChannelConfigVersion.cmake
-lib/qt5/examples/
 lib/qt5/libQt5WebChannel.la
 lib/qt5/libQt5WebChannel.prl
 @lib lib/qt5/libQt5WebChannel.so.${LIBQt5WebChannel_VERSION}

@@ -1,3 +1,4 @@
+@conflict qtconnectivity-<5.15.12pl6p0
 lib/qt5/examples/
 lib/qt5/examples/bluetooth/
 lib/qt5/examples/bluetooth/bluetooth.pro
@@ -40,6 +41,7 @@ lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.cpp
 lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.h
 lib/qt5/examples/bluetooth/btfiletransfer/remoteselector.ui
 lib/qt5/examples/bluetooth/btscanner/
+lib/qt5/examples/bluetooth/btscanner/Info.plist
 lib/qt5/examples/bluetooth/btscanner/btscanner.pro
 lib/qt5/examples/bluetooth/btscanner/device.cpp
 lib/qt5/examples/bluetooth/btscanner/device.h
@@ -71,6 +73,7 @@ lib/qt5/examples/bluetooth/chat/images/default.png
 lib/qt5/examples/bluetooth/chat/images/lineedit-bg.png
 lib/qt5/examples/bluetooth/chat/qmlchat.cpp
 lib/qt5/examples/bluetooth/heartrate-game/
+lib/qt5/examples/bluetooth/heartrate-game/Info.plist
 lib/qt5/examples/bluetooth/heartrate-game/README.md
 lib/qt5/examples/bluetooth/heartrate-game/bluetoothbaseclass.cpp
 lib/qt5/examples/bluetooth/heartrate-game/bluetoothbaseclass.h
@@ -94,8 +97,8 @@ lib/qt5/examples/bluetooth/heartrate-game/heartrate-game.pro
 lib/qt5/examples/bluetooth/heartrate-game/heartrate-global.h
 lib/qt5/examples/bluetooth/heartrate-game/images.qrc
 lib/qt5/examples/bluetooth/heartrate-game/main.cpp
-lib/qt5/examples/bluetooth/heartrate-game/qml/
 lib/qt5/examples/bluetooth/heartrate-game/qml.qrc
+lib/qt5/examples/bluetooth/heartrate-game/qml/
 lib/qt5/examples/bluetooth/heartrate-game/qml/App.qml
 lib/qt5/examples/bluetooth/heartrate-game/qml/BluetoothAlarmDialog.qml
 lib/qt5/examples/bluetooth/heartrate-game/qml/BottomLine.qml
@@ -115,12 +118,14 @@ lib/qt5/examples/bluetooth/heartrate-game/qml/images/logo.png
 lib/qt5/examples/bluetooth/heartrate-game/qml/main.qml
 lib/qt5/examples/bluetooth/heartrate-game/qml/qmldir
 lib/qt5/examples/bluetooth/heartrate-server/
+lib/qt5/examples/bluetooth/heartrate-server/Info.plist
 lib/qt5/examples/bluetooth/heartrate-server/doc/
 lib/qt5/examples/bluetooth/heartrate-server/doc/src/
 lib/qt5/examples/bluetooth/heartrate-server/doc/src/heartrate-server.qdoc
 lib/qt5/examples/bluetooth/heartrate-server/heartrate-server.pro
 lib/qt5/examples/bluetooth/heartrate-server/main.cpp
 lib/qt5/examples/bluetooth/lowenergyscanner/
+lib/qt5/examples/bluetooth/lowenergyscanner/Info.plist
 lib/qt5/examples/bluetooth/lowenergyscanner/assets/
 lib/qt5/examples/bluetooth/lowenergyscanner/assets/Characteristics.qml
 lib/qt5/examples/bluetooth/lowenergyscanner/assets/Dialog.qml
@@ -198,6 +203,8 @@ lib/qt5/examples/bluetooth/scanner/qmlscanner.cpp
 lib/qt5/examples/bluetooth/scanner/scanner.pro
 lib/qt5/examples/bluetooth/scanner/scanner.qml
 lib/qt5/examples/bluetooth/scanner/scanner.qrc
+lib/qt5/examples/bluetooth/shared/
+lib/qt5/examples/bluetooth/shared/Info.qmake.macos.plist
 lib/qt5/examples/nfc/
 lib/qt5/examples/nfc/annotatedurl/
 lib/qt5/examples/nfc/annotatedurl/annotatedurl.cpp

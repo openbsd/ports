@@ -1,4 +1,5 @@
 @conflict qt3d-<5.15.2p0
+lib/qt5/examples/
 lib/qt5/examples/qt3d/
 lib/qt5/examples/qt3d/3d-text/
 lib/qt5/examples/qt3d/3d-text/3d-text.pro
