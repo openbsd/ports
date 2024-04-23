@@ -2,7 +2,7 @@ COMMENT=		GObject wrapper for libusb1
 
 GH_ACCOUNT=		hughsie
 GH_PROJECT=		libgusb
-GH_TAGNAME=		0.4.8
+GH_TAGNAME=		0.4.9
 
 SHARED_LIBS += gusb                      0.4 # 2.0.10
 
