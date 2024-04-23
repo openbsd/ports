@@ -25,8 +25,17 @@ include/gdk-pixbuf-2.0/gdk-pixbuf/gdk-pixdata.h
 lib/gdk-pixbuf-2.0/
 lib/gdk-pixbuf-2.0/2.10.0/
 lib/gdk-pixbuf-2.0/2.10.0/loaders/
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ani.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-bmp.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-gif.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-icns.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-ico.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-pnm.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-qtif.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tga.so
 @so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-tiff.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xbm.so
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
 lib/girepository-1.0/GdkPixbuf-2.0.typelib
 lib/girepository-1.0/GdkPixdata-2.0.typelib
 @lib lib/libgdk_pixbuf-2.0.so.${LIBgdk_pixbuf-2.0_VERSION}

@@ -2,6 +2,7 @@ COMMENT=		image data transformation library
 
 GNOME_PROJECT=		gdk-pixbuf
 GNOME_VERSION=		2.42.11
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -37,6 +38,13 @@ RUN_DEPENDS +=		misc/shared-mime-info
 MODGNOME_TOOLS=		docbook gobject-introspection shared-mime-info
 
 CONFIGURE_ARGS=		-Dinstalled_tests=false
+
+# XXX
+# xpm needed by startbanner_pixdata at run time
+# bmp needed by games/openclonk at build time
+# bmp needed by games/nblood at build time
+# (non exhaustive list)
+CONFIGURE_ARGS +=	-Dothers=enabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
