@@ -40,9 +40,12 @@ MODGNOME_TOOLS=		docbook gobject-introspection shared-mime-info
 CONFIGURE_ARGS=		-Dinstalled_tests=false
 
 # XXX
-# xpm needed by startbanner_pixdata at run time
-# bmp needed by games/openclonk at build time
+# bmp needed by games/eduke32 at build time
 # bmp needed by games/nblood at build time
+# ico needed by games/openclonk at build time
+# xpm needed by sysutils/gkrellm/gkrellm at run time
+# xpm needed by www/netsurf/browser at build time
+# xpm needed by www/netsurf/netsurf-fb at build time
 # (non exhaustive list)
 CONFIGURE_ARGS +=	-Dothers=enabled
 
