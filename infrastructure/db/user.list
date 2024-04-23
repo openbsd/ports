@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.443 2024/04/17 19:15:05 sthen Exp $
+$OpenBSD: user.list,v 1.444 2024/04/23 20:42:50 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -407,3 +407,4 @@ id  user		group		port
 896 _certspotter	_certspotter	security/certspotter
 897 _croc		_croc		sysutils/croc
 898 _icingadb		_icingadb	net/icinga/icingadb
+899 _openhab		_openhab	misc/openhab
