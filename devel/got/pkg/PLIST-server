@@ -6,5 +6,7 @@
 @man man/man5/gotd.conf.5
 @man man/man8/gotctl.8
 @man man/man8/gotd.8
+@bin libexec/got-notify-email
+@bin libexec/got-notify-http
 @bin sbin/gotctl
 @bin sbin/gotd

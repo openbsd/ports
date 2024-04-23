@@ -2,6 +2,7 @@
 @bin bin/got
 @bin bin/gotadmin
 @bin bin/tog
+@bin libexec/got-fetch-http
 @bin libexec/got-fetch-pack
 @bin libexec/got-index-pack
 @bin libexec/got-read-blob
