@@ -1,7 +1,7 @@
 Index: vendor/github.com/tonistiigi/fsutil/tarwriter.go
 --- vendor/github.com/tonistiigi/fsutil/tarwriter.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/tarwriter.go
-@@ -21,7 +21,7 @@ func WriteTar(ctx context.Context, fs FS, w io.Writer)
+@@ -26,7 +26,7 @@ func WriteTar(ctx context.Context, fs FS, w io.Writer)
  		}
  		stat, ok := fi.Sys().(*types.Stat)
  		if !ok {

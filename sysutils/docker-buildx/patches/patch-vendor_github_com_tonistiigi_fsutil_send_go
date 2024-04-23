@@ -1,12 +1,12 @@
 Index: vendor/github.com/tonistiigi/fsutil/send.go
 --- vendor/github.com/tonistiigi/fsutil/send.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/send.go
-@@ -150,7 +150,7 @@ func (s *sender) walk(ctx context.Context) error {
+@@ -158,7 +158,7 @@ func (s *sender) walk(ctx context.Context) error {
  		}
  		stat, ok := fi.Sys().(*types.Stat)
  		if !ok {
 -			return errors.WithStack(&os.PathError{Path: path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
 +			return errors.WithStack(&os.PathError{Path: path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
  		}
- 
+ 		stat.Path = filepath.ToSlash(stat.Path)
  		p := &types.Packet{
