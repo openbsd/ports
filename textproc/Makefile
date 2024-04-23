@@ -579,6 +579,7 @@
      SUBDIR += tree-sitter
      SUBDIR += txt2man
      SUBDIR += txt2tags
+     SUBDIR += typst
      SUBDIR += uchardet
      SUBDIR += uncrustify
      SUBDIR += uni
