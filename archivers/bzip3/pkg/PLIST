@@ -1,0 +1,19 @@
+bin/bunzip3
+bin/bz3cat
+bin/bz3grep
+bin/bz3less
+bin/bz3more
+bin/bz3most
+@bin bin/bzip3
+include/libbz3.h
+@static-lib lib/libbzip3.a
+lib/libbzip3.la
+@lib lib/libbzip3.so.${LIBbzip3_VERSION}
+lib/pkgconfig/bzip3.pc
+@man man/man1/bunzip3.1
+@man man/man1/bz3cat.1
+@man man/man1/bz3grep.1
+@man man/man1/bz3less.1
+@man man/man1/bz3more.1
+@man man/man1/bz3most.1
+@man man/man1/bzip3.1

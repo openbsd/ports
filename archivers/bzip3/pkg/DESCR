@@ -1,0 +1,6 @@
+These are tools and libraries for compressing, decompressing, printing,
+and searching bzip3 files. bzip3 features higher compression ratios and
+better performance than bzip2 thanks to an order-0 context mixing
+entropy coder, a fast Burrows-Wheeler transform code making use of
+suffix arrays and a run-length encoding with Lempel-Ziv prediction pass
+based on LZ77-style string matching and PPM-style context modeling.
