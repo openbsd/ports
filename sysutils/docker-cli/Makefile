@@ -1,6 +1,6 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			25.0.3
+V =			26.0.1
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
