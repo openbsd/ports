@@ -60,6 +60,8 @@
      SUBDIR += open62541
      SUBDIR += open62541,ns0_full
      SUBDIR += openbabel
+     SUBDIR += openhab
+     SUBDIR += openhab-addons
      SUBDIR += os-test
      SUBDIR += osinfo
      SUBDIR += p5-Acme-LOLCAT
