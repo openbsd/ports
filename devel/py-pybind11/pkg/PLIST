@@ -47,6 +47,7 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/embed.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/eval.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/functional.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/gil.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/gil_safe_call_once.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/iostream.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/numpy.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/operators.h
@@ -58,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/stl.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/stl/filesystem.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/stl_bind.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/type_caster_pyobject_ptr.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/typing.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/py.typed
 lib/python${MODPY_VERSION}/site-packages/pybind11/setup_helpers.py
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/
