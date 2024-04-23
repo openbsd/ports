@@ -63,6 +63,7 @@
      #SUBDIR += pecl-rar,php82	# fails
      #SUBDIR += pecl-rar,php83	# fails
      SUBDIR += pigz
+     SUBDIR += pixz
      SUBDIR += py-brotli,python3
      SUBDIR += py-compressed_rtf,python3
      SUBDIR += py-libarchive-c,python3
