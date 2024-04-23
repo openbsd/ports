@@ -80,7 +80,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = vsR+W/0b/w7q9ti0hcwQdIkaGXq0Il1QTLehq4iwK/A=
 SHA256 (cargo/wyz-0.5.1.tar.gz) = BfNg/AskKWMpx4/ahSoemugt6c97J9rkt/YvEY93ue0=
 SHA256 (cargo/zopfli-0.8.0.tar.gz) = XB9I81CKOj8vruAWKVZEALwSJg9iFKBW0Go6qqbvBzY=
-SHA256 (oxipng-9.1.0.tar.gz) = xuLXk0tSiB+ktrcffovODDLIU9YxWPxisLB5Zk3rYmk=
+SHA256 (oxipng-9.1.1.tar.gz) = 9Q25DH75XAlk3JgPZZa4IfNi4V1tS6skfx60qrdVTbg=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/anstream-0.6.13.tar.gz) = 30928
 SIZE (cargo/anstyle-1.0.6.tar.gz) = 14604
@@ -163,4 +163,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = 827905
 SIZE (cargo/wyz-0.5.1.tar.gz) = 18790
 SIZE (cargo/zopfli-0.8.0.tar.gz) = 54234
-SIZE (oxipng-9.1.0.tar.gz) = 20939247
+SIZE (oxipng-9.1.1.tar.gz) = 20939414
