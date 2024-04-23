@@ -16,6 +16,7 @@ share/gpxsee/maps/mtbmap-cz.xml
 share/gpxsee/symbols/
 share/gpxsee/symbols/ATV.png
 share/gpxsee/symbols/Airport.png
+share/gpxsee/symbols/Alert.png
 share/gpxsee/symbols/Amusement Park.png
 share/gpxsee/symbols/Anchor.png
 share/gpxsee/symbols/Ballpark.png
@@ -33,41 +34,54 @@ share/gpxsee/symbols/Car Rental.png
 share/gpxsee/symbols/Car Repair.png
 share/gpxsee/symbols/Car.png
 share/gpxsee/symbols/Cemetary.png
+share/gpxsee/symbols/Checkpoint.png
 share/gpxsee/symbols/Church.png
 share/gpxsee/symbols/Crossing.png
 share/gpxsee/symbols/Dam.png
+share/gpxsee/symbols/Danger.png
 share/gpxsee/symbols/Drinking Water.png
 share/gpxsee/symbols/Fastfood.png
 share/gpxsee/symbols/Ferry.png
+share/gpxsee/symbols/First Aid.png
+share/gpxsee/symbols/First Category.png
 share/gpxsee/symbols/Fishing Area.png
 share/gpxsee/symbols/Flag, Blue.png
 share/gpxsee/symbols/Flag, Green.png
 share/gpxsee/symbols/Flag, Red.png
 share/gpxsee/symbols/Flag.png
+share/gpxsee/symbols/Food.png
 share/gpxsee/symbols/Forest.png
+share/gpxsee/symbols/Fourth Category.png
 share/gpxsee/symbols/Funicular.png
 share/gpxsee/symbols/Furbearer.png
 share/gpxsee/symbols/Gas Station.png
+share/gpxsee/symbols/Gear.png
 share/gpxsee/symbols/Geocache Found.png
 share/gpxsee/symbols/Geocache.png
 share/gpxsee/symbols/Ghost Town.png
 share/gpxsee/symbols/Golf Course.png
 share/gpxsee/symbols/Ground Transportation.png
 share/gpxsee/symbols/Heliport.png
+share/gpxsee/symbols/Hors Category.png
 share/gpxsee/symbols/Hunting Area.png
 share/gpxsee/symbols/Iceskating.png
+share/gpxsee/symbols/Info.png
 share/gpxsee/symbols/Information.png
+share/gpxsee/symbols/Left.png
 share/gpxsee/symbols/Library.png
 share/gpxsee/symbols/Live Theater.png
 share/gpxsee/symbols/Lodge.png
 share/gpxsee/symbols/Lodging.png
 share/gpxsee/symbols/Marina.png
 share/gpxsee/symbols/Medical Facility.png
+share/gpxsee/symbols/Meeting Spot.png
 share/gpxsee/symbols/Military.png
 share/gpxsee/symbols/Mine.png
 share/gpxsee/symbols/Movie Theater.png
 share/gpxsee/symbols/Museum.png
+share/gpxsee/symbols/Obstacle.png
 share/gpxsee/symbols/Oil Field.png
+share/gpxsee/symbols/Overlook.png
 share/gpxsee/symbols/Parachute Area.png
 share/gpxsee/symbols/Park.png
 share/gpxsee/symbols/Parking Area.png
@@ -80,29 +94,51 @@ share/gpxsee/symbols/RV Park.png
 share/gpxsee/symbols/Radio Beacon.png
 share/gpxsee/symbols/Railway.png
 share/gpxsee/symbols/Residence.png
+share/gpxsee/symbols/Rest Area.png
 share/gpxsee/symbols/Restaurant.png
 share/gpxsee/symbols/Restroom.png
+share/gpxsee/symbols/Right.png
 share/gpxsee/symbols/Scenic Area.png
 share/gpxsee/symbols/School.png
+share/gpxsee/symbols/Second Category.png
+share/gpxsee/symbols/Segment End.png
+share/gpxsee/symbols/Segment Start.png
+share/gpxsee/symbols/Service.png
+share/gpxsee/symbols/Sharp Curve.png
+share/gpxsee/symbols/Sharp Left.png
+share/gpxsee/symbols/Sharp Right.png
+share/gpxsee/symbols/Shelter.png
 share/gpxsee/symbols/Shipwreck.png
 share/gpxsee/symbols/Shopping Center.png
 share/gpxsee/symbols/Shower.png
 share/gpxsee/symbols/Ski Resort.png
 share/gpxsee/symbols/Skiing Area.png
 share/gpxsee/symbols/Skull and Crossbones.png
+share/gpxsee/symbols/Slight Left.png
+share/gpxsee/symbols/Slight Right.png
 share/gpxsee/symbols/Small Game.png
+share/gpxsee/symbols/Sprint.png
 share/gpxsee/symbols/Stadium.png
+share/gpxsee/symbols/Steep Incline.png
+share/gpxsee/symbols/Store.png
+share/gpxsee/symbols/Straight.png
 share/gpxsee/symbols/Summit.png
 share/gpxsee/symbols/Tall Tower.png
 share/gpxsee/symbols/Telephone.png
+share/gpxsee/symbols/Third Category.png
+share/gpxsee/symbols/Toilet.png
 share/gpxsee/symbols/Trail Head.png
+share/gpxsee/symbols/Transport.png
 share/gpxsee/symbols/Truck Stop.png
 share/gpxsee/symbols/Truck.png
 share/gpxsee/symbols/Tunnel.png
+share/gpxsee/symbols/U-Turn.png
 share/gpxsee/symbols/Ultralight Area.png
 share/gpxsee/symbols/Upland Game.png
+share/gpxsee/symbols/Valley.png
 share/gpxsee/symbols/Water Hydrant.png
 share/gpxsee/symbols/Water Source.png
+share/gpxsee/symbols/Water.png
 share/gpxsee/symbols/Waterfowl.png
 share/gpxsee/symbols/Waypoint.png
 share/gpxsee/symbols/Winery.png
