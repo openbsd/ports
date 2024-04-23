@@ -9,4 +9,4 @@ Index: third_party/blink/renderer/modules/ml/webnn/features.gni
 +  build_webnn_with_xnnpack = !is_bsd && (is_linux || is_win || is_mac) &&
                               (current_cpu == "x64" || current_cpu == "x86" ||
                                (current_cpu == "arm64" && !is_win))
- 
+ }

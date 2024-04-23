@@ -10,7 +10,7 @@ Index: ui/views/controls/textfield/textfield.h
  #include <vector>
  #endif
  
-@@ -456,7 +456,7 @@ class VIEWS_EXPORT Textfield : public View,
+@@ -461,7 +461,7 @@ class VIEWS_EXPORT Textfield : public View,
    // Set whether the text should be used to improve typing suggestions.
    void SetShouldDoLearning(bool value) { should_do_learning_ = value; }
  

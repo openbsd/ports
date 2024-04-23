@@ -8,4 +8,4 @@ Index: net/dns/address_sorter_posix.cc
 +#include <netinet6/in6_var.h>
  #endif  // BUILDFLAG(IS_IOS)
  #endif
- 
+ #include <vector>

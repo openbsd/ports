@@ -10,7 +10,7 @@ Index: components/feature_engagement/public/feature_constants.cc
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -611,7 +611,8 @@ const char kGestureInProductHelpDaysBetweenOccurrences
+@@ -584,7 +584,8 @@ BASE_FEATURE(kDefaultBrowserTriggerCriteriaExperiment,
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -20,7 +20,7 @@ Index: components/feature_engagement/public/feature_constants.cc
  BASE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature,
               "IPH_AutofillExternalAccountProfileSuggestion",
               base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -736,7 +737,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -712,7 +713,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

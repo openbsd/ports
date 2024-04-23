@@ -31,7 +31,7 @@ Index: services/network/network_sandbox_hook_linux.cc
 @@ -118,6 +123,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
        GetNetworkBrokerCommandSet(),
        GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
-       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
+       options);
 +#endif
  
    return true;

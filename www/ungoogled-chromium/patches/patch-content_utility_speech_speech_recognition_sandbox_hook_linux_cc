@@ -28,9 +28,9 @@ Index: content/utility/speech/speech_recognition_sandbox_hook_linux.cc
  #if BUILDFLAG(ENABLE_SODA_INTEGRATION_TESTS)
    base::FilePath test_binary_path = GetSodaTestBinaryPath();
    DVLOG(0) << "SODA test binary path: " << test_binary_path.value().c_str();
-@@ -77,6 +82,7 @@ bool SpeechRecognitionPreSandboxHook(
-                                sandbox::policy::SandboxLinux::PreSandboxHook(),
-                                options);
+@@ -75,6 +80,7 @@ bool SpeechRecognitionPreSandboxHook(
+                                }),
+                                GetSodaFilePermissions(), options);
    instance->EngageNamespaceSandboxIfPossible();
 +#endif
  

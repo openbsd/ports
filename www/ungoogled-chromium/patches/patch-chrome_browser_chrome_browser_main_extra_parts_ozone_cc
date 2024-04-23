@@ -1,7 +1,7 @@
 Index: chrome/browser/chrome_browser_main_extra_parts_ozone.cc
 --- chrome/browser/chrome_browser_main_extra_parts_ozone.cc.orig
 +++ chrome/browser/chrome_browser_main_extra_parts_ozone.cc
-@@ -31,7 +31,7 @@ void ChromeBrowserMainExtraPartsOzone::PostCreateMainM
+@@ -27,7 +27,7 @@ void ChromeBrowserMainExtraPartsOzone::PostCreateMainM
  }
  
  void ChromeBrowserMainExtraPartsOzone::PostMainMessageLoopRun() {

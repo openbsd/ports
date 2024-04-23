@@ -1,7 +1,7 @@
 Index: third_party/ffmpeg/BUILD.gn
 --- third_party/ffmpeg/BUILD.gn.orig
 +++ third_party/ffmpeg/BUILD.gn
-@@ -349,7 +349,6 @@ target(link_target_type, "ffmpeg_internal") {
+@@ -343,7 +343,6 @@ target(link_target_type, "ffmpeg_internal") {
        libs += [
          "m",
          "z",

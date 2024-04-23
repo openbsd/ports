@@ -29,6 +29,6 @@ Index: content/browser/utility_process_host_receiver_bindings.cc
  #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
-   if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {
-     gpu_client_ =
-         content::CreateGpuClient(std::move(gpu_receiver), base::DoNothing());
+   if (allowed_gpu_) {
+     // TODO(crbug.com/328099369) Remove once all clients get this directly.
+     if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {

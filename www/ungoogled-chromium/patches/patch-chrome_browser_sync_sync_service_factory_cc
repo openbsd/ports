@@ -25,6 +25,6 @@ Index: chrome/browser/sync/sync_service_factory.cc
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   DependsOn(SavedTabGroupServiceFactory::GetInstance());
+   DependsOn(tab_groups::SavedTabGroupServiceFactory::GetInstance());
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
          // BUILDFLAG(IS_WIN)

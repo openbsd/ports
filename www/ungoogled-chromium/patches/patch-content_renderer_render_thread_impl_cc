@@ -28,7 +28,7 @@ Index: content/renderer/render_thread_impl.cc
        base::FeatureList::IsEnabled(media::kVaapiVideoEncodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoEncode) &&
-@@ -1753,7 +1755,7 @@ std::unique_ptr<CodecFactory> RenderThreadImpl::Create
+@@ -1769,7 +1771,7 @@ std::unique_ptr<CodecFactory> RenderThreadImpl::Create
      bool enable_video_encode_accelerator) {
    mojo::PendingRemote<media::mojom::VideoEncodeAcceleratorProvider>
        vea_provider;

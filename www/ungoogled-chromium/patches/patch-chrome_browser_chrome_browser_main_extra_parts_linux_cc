@@ -1,7 +1,7 @@
 Index: chrome/browser/chrome_browser_main_extra_parts_linux.cc
 --- chrome/browser/chrome_browser_main_extra_parts_linux.cc.orig
 +++ chrome/browser/chrome_browser_main_extra_parts_linux.cc
-@@ -117,7 +117,7 @@ ChromeBrowserMainExtraPartsLinux::ChromeBrowserMainExt
+@@ -169,7 +169,7 @@ ChromeBrowserMainExtraPartsLinux::ChromeBrowserMainExt
  ChromeBrowserMainExtraPartsLinux::~ChromeBrowserMainExtraPartsLinux() = default;
  
  void ChromeBrowserMainExtraPartsLinux::PreEarlyInitialization() {

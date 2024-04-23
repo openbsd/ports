@@ -1,7 +1,7 @@
 Index: base/debug/debugger_posix.cc
 --- base/debug/debugger_posix.cc.orig
 +++ base/debug/debugger_posix.cc
-@@ -35,6 +35,10 @@
+@@ -36,6 +36,10 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -28,7 +28,8 @@ Index: base/debug/debugger_posix.cc
    if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
      return -1;
  
-   mib[5] = (info_size / sizeof(struct kinfo_proc));
+-  mib[5] = (info_size / sizeof(struct kinfo_proc));
++  mib[5] = static_cast<int>((info_size / sizeof(struct kinfo_proc)));
 +  if ((info = reinterpret_cast<kinfo_proc*>(malloc(info_size))) == NULL) {
 +    is_set = true;
 +    being_debugged = false;

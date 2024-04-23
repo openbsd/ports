@@ -1,7 +1,7 @@
 Index: third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c
 --- third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c.orig
 +++ third_party/libaom/source/libaom/aom_ports/aarch64_cpudetect.c
-@@ -95,9 +95,45 @@ static int arm_get_cpu_caps(void) {
+@@ -99,9 +99,45 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
