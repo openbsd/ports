@@ -18,4 +18,4 @@ share/examples/ntfy/subscribe.py
 @mode 770
 @owner _ntfy
 @group _ntfy
-@sample /var/nfty/
+@sample /var/ntfy/
