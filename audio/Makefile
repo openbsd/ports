@@ -191,6 +191,7 @@
      SUBDIR += potamus
      SUBDIR += puddletag
      SUBDIR += pulseaudio
+     SUBDIR += pulseaudio-qt
      SUBDIR += py-acoustid,python3
      SUBDIR += py-audio,python3
      SUBDIR += py-discid,python3
