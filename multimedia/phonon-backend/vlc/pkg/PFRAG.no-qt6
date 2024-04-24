@@ -1,0 +1,7 @@
+@conflict phonon-vlc-<=0.10.3
+@conflict phonon-qt5-vlc-<0.11
+@pkgpath multimedia/phonon-backend/vlc,qt5
+lib/qt5/
+lib/qt5/plugins/
+lib/qt5/plugins/phonon4qt5_backend/
+@so lib/qt5/plugins/phonon4qt5_backend/phonon_vlc_qt5.so

@@ -1,0 +1,4 @@
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/phonon4qt6_backend/
+@so lib/qt6/plugins/phonon4qt6_backend/phonon_vlc_qt6.so
