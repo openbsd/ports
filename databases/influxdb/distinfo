@@ -1468,8 +1468,8 @@ SHA256 (go_modules/github.com/zeebo/xxh3/@v/v1.0.1.mod) = Qhb2GQQOIofVc6fNJ3/8CX
 SHA256 (go_modules/github.com/zeebo/xxh3/@v/v1.0.1.zip) = ADQvDUPSdAVOzNxQ+6pBpQEBRuisgnc30hzhT2eJh0U=
 SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.2.mod) = siQNmH3bNjz9n5PJ7VP5r19NefAOWRE8g3WvwbkcS28=
 SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.3.mod) = siQNmH3bNjz9n5PJ7VP5r19NefAOWRE8g3WvwbkcS28=
-SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.6.mod) = XDjGXmmRaJ8LnkB0KADeRlxstzrPjr0VRzDNxinKE2Q=
-SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.6.zip) = o1f8zZPoZdzj04We2FfOgn96Ly3FuQz6qVIC9dduSsI=
+SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.8.mod) = P9EfiW+DDmdLHgJxBOk0xfcQkdytIkHvnl/L5bKwPq8=
+SHA256 (go_modules/go.etcd.io/bbolt/@v/v1.3.8.zip) = GLq65n7M3SmCrQvUS7d6I46LbI2hkrWua9PA3UjVujE=
 SHA256 (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.mod) = Aq68KyNI9Hgtq+/IP63YARn8NQNZRreMsAlkqJGeD74=
 SHA256 (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.zip) = T6k0WCeXPTV73D0ZHzpS56EHQQEq6eXyJxLtQonpm0Q=
 SHA256 (go_modules/go.mozilla.org/pkcs7/@v/v0.0.0-20200128120323-432b2356ecb1.mod) = aKaMiAYDnR/VbMx/zzOQHyj4ZP5vPxuoQVx54HfhDlY=
@@ -3620,8 +3620,8 @@ SIZE (go_modules/github.com/zeebo/xxh3/@v/v1.0.1.mod) = 128
 SIZE (go_modules/github.com/zeebo/xxh3/@v/v1.0.1.zip) = 269263
 SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.2.mod) = 24
 SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.3.mod) = 24
-SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.6.mod) = 94
-SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.6.zip) = 118439
+SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.8.mod) = 280
+SIZE (go_modules/go.etcd.io/bbolt/@v/v1.3.8.zip) = 144978
 SIZE (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.mod) = 2182
 SIZE (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.zip) = 7085205
 SIZE (go_modules/go.mozilla.org/pkcs7/@v/v0.0.0-20200128120323-432b2356ecb1.mod) = 37

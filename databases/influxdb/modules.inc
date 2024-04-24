@@ -472,7 +472,7 @@ MODGO_MODULES =	\
 	github.com/yudai/pp								 v2.0.1+incompatible \
 	github.com/yuin/goldmark							 v1.4.13 \
 	github.com/zeebo/xxh3								 v1.0.1 \
-	go.etcd.io/bbolt								 v1.3.6 \
+	go.etcd.io/bbolt								 v1.3.8 \
 	go.etcd.io/etcd									 v0.0.0-20191023171146-3cf2f69b5738 \
 	go.mozilla.org/pkcs7								 v0.0.0-20200128120323-432b2356ecb1 \
 	go.opencensus.io								 v0.23.0 \

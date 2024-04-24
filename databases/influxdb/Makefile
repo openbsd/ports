@@ -1,9 +1,3 @@
-# bbolt needs to be at least 1.3.8 to avoid syscall
-# modernc.org/libc and modernc.org/sqlite might work in latest head versions now but not in a release yet
-# https://gitlab.com/cznic/libc/-/issues/29
-# https://gitlab.com/cznic/libc/-/merge_requests/13
-BROKEN =	some modules used by influxdb require syscall() access which is no longer available outside libc
-
 COMMENT =	time-series datastore for metrics, events, and analytics
 
 MODUI_VERSION =	v2.7.1
@@ -12,6 +6,7 @@ MODGO_MODNAME =	github.com/influxdata/influxdb/v2
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	influxdb
 GH_TAGNAME =	${MODGO_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://influxdata.com
 
