@@ -7,6 +7,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
@@ -43,6 +44,8 @@ WANTLIB-qt +=	Qt6Widgets
 
 MODULES +=		devel/cmake \
 			textproc/intltool
+
+BUILD_DEPENDS-common +=	devel/fmt
 
 LIB_DEPENDS-common +=	archivers/libdeflate \
 			net/curl \

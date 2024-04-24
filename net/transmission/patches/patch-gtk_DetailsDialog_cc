@@ -1,13 +1,14 @@
-Unbreak build with missing include
+fix: missing #include in DetailsDialog.cc
+9b0be18cb5ae4c43c62ffaa6d7304f66332a5505
 
 Index: gtk/DetailsDialog.cc
 --- gtk/DetailsDialog.cc.orig
 +++ gtk/DetailsDialog.cc
-@@ -67,6 +67,7 @@
- #include <winsock2.h>
+@@ -68,6 +68,7 @@
  #include <ws2tcpip.h>
  #else
-+#include <sys/socket.h> // AF_INET
  #include <arpa/inet.h>
++#include <sys/socket.h>
  #endif
  
+ using namespace std::literals;
