@@ -120,6 +120,7 @@
      SUBDIR += jpegpixi
      SUBDIR += kcolorpicker
      SUBDIR += kdiagram
+     SUBDIR += kdiagram-qt6
      SUBDIR += kimageannotator
      SUBDIR += kirigami-addons
      SUBDIR += kplot
