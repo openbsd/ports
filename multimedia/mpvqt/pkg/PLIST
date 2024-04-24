@@ -1,0 +1,15 @@
+include/MpvQt/
+include/MpvQt/MpvAbstractItem
+include/MpvQt/MpvController
+include/MpvQt/mpvabstractitem.h
+include/MpvQt/mpvcontroller.h
+include/MpvQt/mpvqt_export.h
+include/MpvQt/mpvqt_version.h
+lib/cmake/
+lib/cmake/MpvQt/
+lib/cmake/MpvQt/FindLibmpv.cmake
+lib/cmake/MpvQt/MpvQtConfig.cmake
+lib/cmake/MpvQt/MpvQtConfigVersion.cmake
+lib/cmake/MpvQt/MpvQtTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/MpvQt/MpvQtTargets.cmake
+@lib lib/libMpvQt.so.${LIBMpvQt_VERSION}
