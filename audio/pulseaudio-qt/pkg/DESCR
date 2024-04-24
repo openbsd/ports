@@ -1,0 +1,4 @@
+pulseaudio-qt is a Qt-style wrapper for libpulse.
+
+It allows querying and manipulation of various PulseAudio objects such as
+Sinks, Sources and Streams. It does not wrap the full feature set of libpulse.
