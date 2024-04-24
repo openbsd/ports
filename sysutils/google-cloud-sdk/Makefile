@@ -1,6 +1,6 @@
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			472.0.0
+V=			473.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
@@ -14,7 +14,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE=		Yes
 
-SITES=		https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
+SITES=			https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 
 MODULES=		lang/python
 
