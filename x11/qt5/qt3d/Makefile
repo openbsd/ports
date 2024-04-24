@@ -1,6 +1,6 @@
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
-REVISION-examples =	0
+REVISION =		0
 
 MULTI_PACKAGES =	-main -examples
 
