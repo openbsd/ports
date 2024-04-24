@@ -51,6 +51,7 @@
      SUBDIR += motion,pgsql
      SUBDIR += mpgtx
      SUBDIR += mpv
+     SUBDIR += mpvqt
      SUBDIR += oggz
      SUBDIR += ogmtools
      SUBDIR += openh264
