@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
 COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
-REVISION =	6
+REVISION =	7
 DISTNAME =	cil-1.7.3
 EXTRACT_SUFX =	.tar.gz
 SITES =		${SITE_SOURCEFORGE:=cil/}

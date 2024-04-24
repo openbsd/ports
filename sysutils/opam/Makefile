@@ -5,7 +5,7 @@ CATEGORIES =		sysutils devel
 V =			2.0.10
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
-REVISION =		0
+REVISION =		1
 
 SITES =			https://github.com/ocaml/opam/releases/download/${V}/
 

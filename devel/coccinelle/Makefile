@@ -11,7 +11,7 @@ COMMENT =	program matching and transformation engine
 GH_ACCOUNT =	coccinelle
 GH_PROJECT =	coccinelle
 GH_TAGNAME =	1.1.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

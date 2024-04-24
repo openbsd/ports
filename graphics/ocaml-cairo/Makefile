@@ -4,7 +4,7 @@ CATEGORIES =	graphics
 V =		0.6.2
 DISTNAME =	cairo2-$V
 PKGNAME =	ocaml-cairo-$V
-REVISION =	6
+REVISION =	7
 
 # LGPL 3.0
 PERMIT_PACKAGE = Yes

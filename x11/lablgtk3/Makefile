@@ -3,7 +3,7 @@ CATEGORIES =	x11 devel
 
 V =		3.1.1
 DISTNAME =	lablgtk3-${V}
-REVISION =	6
+REVISION =	7
 
 SITES =		https://github.com/garrigue/lablgtk/releases/download/${V}/
 EXTRACT_SUFX =	.tbz

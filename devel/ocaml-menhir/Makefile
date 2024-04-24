@@ -3,7 +3,7 @@ COMMENT =		OCaml parser generator for LR(1) grammars
 V =			20230608
 DISTNAME =		menhir-${V}
 PKGNAME =		ocaml-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 SITES =			https://gitlab.inria.fr/fpottier/menhir/-/archive/${V}/
 

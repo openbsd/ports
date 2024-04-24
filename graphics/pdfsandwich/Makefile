@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 COMMENT =	generator for sandwich OCR pdf files
 
 DISTNAME =	pdfsandwich-0.1.7
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	graphics
 

@@ -2,7 +2,7 @@ COMMENT =	OCaml graph library
 CATEGORIES =	devel
 
 V =		1.8.8
-REVISION =	7
+REVISION =	8
 DISTNAME =	ocamlgraph-${V}
 PKGNAME =	ocaml-graph-${V}
 SITES =		http://ocamlgraph.lri.fr/download/

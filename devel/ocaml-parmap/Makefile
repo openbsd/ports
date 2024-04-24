@@ -2,7 +2,7 @@ COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
 
 V =		1.0-rc10
-REVISION =	6
+REVISION =	7
 NAME =		ocaml-parmap
 DISTNAME =	ocaml-parmap-$V
 DISTFILES =	${DISTNAME}{$V}.tar.gz
