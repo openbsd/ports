@@ -4,7 +4,7 @@ of some ports.
 Index: lib/rubygems/ext/ext_conf_builder.rb
 --- lib/rubygems/ext/ext_conf_builder.rb.orig
 +++ lib/rubygems/ext/ext_conf_builder.rb
-@@ -55,7 +55,6 @@ class Gem::Ext::ExtConfBuilder < Gem::Ext::Builder
+@@ -56,7 +56,6 @@ class Gem::Ext::ExtConfBuilder < Gem::Ext::Builder
          destent.exist? || FileUtils.mv(ent.path, destent.path)
        end
  

@@ -222,7 +222,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.2.3.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.2.4.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby32.so
@@ -2419,10 +2419,10 @@ lib/ruby/gems/${REV}/gems/rbs-2.8.2/stdlib/zlib/0/zlib.rbs
 lib/ruby/gems/${REV}/gems/rbs-2.8.2/steep/
 lib/ruby/gems/${REV}/gems/rbs-2.8.2/steep/Gemfile
 lib/ruby/gems/${REV}/gems/rbs-2.8.2/steep/Gemfile.lock
-lib/ruby/gems/${REV}/gems/rdoc-6.5.0/
-lib/ruby/gems/${REV}/gems/rdoc-6.5.0/exe/
-lib/ruby/gems/${REV}/gems/rdoc-6.5.0/exe/rdoc
-lib/ruby/gems/${REV}/gems/rdoc-6.5.0/exe/ri
+lib/ruby/gems/${REV}/gems/rdoc-6.5.1.1/
+lib/ruby/gems/${REV}/gems/rdoc-6.5.1.1/exe/
+lib/ruby/gems/${REV}/gems/rdoc-6.5.1.1/exe/rdoc
+lib/ruby/gems/${REV}/gems/rdoc-6.5.1.1/exe/ri
 lib/ruby/gems/${REV}/gems/readline-0.0.3/
 lib/ruby/gems/${REV}/gems/readline-ext-0.1.5/
 lib/ruby/gems/${REV}/gems/reline-0.3.2/
@@ -2788,7 +2788,7 @@ lib/ruby/gems/${REV}/specifications/default/prettyprint-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/pstore-0.1.2.gemspec
 lib/ruby/gems/${REV}/specifications/default/psych-5.0.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/racc-1.6.2.gemspec
-lib/ruby/gems/${REV}/specifications/default/rdoc-6.5.0.gemspec
+lib/ruby/gems/${REV}/specifications/default/rdoc-6.5.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-0.0.3.gemspec
 lib/ruby/gems/${REV}/specifications/default/readline-ext-0.1.5.gemspec
 lib/ruby/gems/${REV}/specifications/default/reline-0.3.2.gemspec

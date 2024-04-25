@@ -1,10 +1,8 @@
-VERSION =		3.2.3
+VERSION =		3.2.4
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby32	0.0
 NEXTVER =		3.3
 PKGSPEC-main ?=         ruby->=3.2.0,<${NEXTVER}
-
-REVISION-main =		0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

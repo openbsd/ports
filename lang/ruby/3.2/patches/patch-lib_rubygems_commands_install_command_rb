@@ -5,7 +5,7 @@ without conflicts.
 Index: lib/rubygems/commands/install_command.rb
 --- lib/rubygems/commands/install_command.rb.orig
 +++ lib/rubygems/commands/install_command.rb
-@@ -22,7 +22,7 @@ class Gem::Commands::InstallCommand < Gem::Command
+@@ -23,7 +23,7 @@ class Gem::Commands::InstallCommand < Gem::Command
  
    def initialize
      defaults = Gem::DependencyInstaller::DEFAULT_OPTIONS.merge({

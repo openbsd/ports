@@ -5,7 +5,7 @@ not need to manually handle arch-dependent linking.
 Index: template/Makefile.in
 --- template/Makefile.in.orig
 +++ template/Makefile.in
-@@ -339,7 +339,7 @@ verify-static-library: $(LIBRUBY_A)
+@@ -342,7 +342,7 @@ verify-static-library: $(LIBRUBY_A)
  $(LIBRUBY_SO):
  		@-[ -n "$(EXTSTATIC)" ] || $(PRE_LIBRUBY_UPDATE)
  		$(ECHO) linking shared-library $@

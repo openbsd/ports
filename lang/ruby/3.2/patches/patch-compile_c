@@ -4,7 +4,7 @@ segfaults.
 Index: compile.c
 --- compile.c.orig
 +++ compile.c
-@@ -2994,6 +2994,10 @@ static int
+@@ -3027,6 +3027,10 @@ static int
  iseq_peephole_optimize(rb_iseq_t *iseq, LINK_ELEMENT *list, const int do_tailcallopt)
  {
      INSN *const iobj = (INSN *)list;

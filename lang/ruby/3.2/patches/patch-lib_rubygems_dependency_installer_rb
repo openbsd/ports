@@ -1,7 +1,7 @@
 Index: lib/rubygems/dependency_installer.rb
 --- lib/rubygems/dependency_installer.rb.orig
 +++ lib/rubygems/dependency_installer.rb
-@@ -20,7 +20,7 @@ class Gem::DependencyInstaller
+@@ -21,7 +21,7 @@ class Gem::DependencyInstaller
      :document => %w[ri],
      :domain => :both, # HACK dup
      :force => false,
