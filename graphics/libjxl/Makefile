@@ -6,7 +6,7 @@ GH_TAGNAME =	v0.10.2
 GH_TESTDATA_COMMIT=ff8d743aaba05b3014f17e5475e576242fa979fc
 CATEGORIES =	graphics
 
-REVISION =	0
+REVISION =	1
 
 # add external test data
 DISTFILES.t = 	libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}
@@ -30,6 +30,7 @@ COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
+RUN_DEPENDS =	misc/shared-mime-info
 BUILD_DEPENDS +=	textproc/asciidoc \
 		devel/gtest
 LIB_DEPENDS +=	graphics/gdk-pixbuf2 \
@@ -61,7 +62,7 @@ CONFIGURE_ARGS += \
 	-DJPEGXL_ENABLE_PLUGINS=ON \
 	-DJPEGXL_ENABLE_PLUGIN_GDKPIXBUF=ON \
 	-DJPEGXL_ENABLE_PLUGIN_GIMP210=OFF \
-	-DJPEGXL_ENABLE_PLUGIN_MIME=OFF \
+	-DJPEGXL_ENABLE_PLUGIN_MIME=ON \
 	-DJPEGXL_TEST_DATA_PATH:STRING=${WRKDIR}/testdata-${GH_TESTDATA_COMMIT} \
 	-DGMOCK_INCLUDE_DIR:STRING=${LOCALBASE}/include
 #https://github.com/libjxl/libjxl/issues/3069
