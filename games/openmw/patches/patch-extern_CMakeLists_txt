@@ -1,24 +1,19 @@
 Index: extern/CMakeLists.txt
 --- extern/CMakeLists.txt.orig
 +++ extern/CMakeLists.txt
-@@ -178,11 +178,13 @@ if(NOT OPENMW_USE_SYSTEM_RECASTNAVIGATION)
+@@ -179,14 +179,7 @@ if(NOT OPENMW_USE_SYSTEM_RECASTNAVIGATION)
+     set(RECASTNAVIGATION_TESTS OFF CACHE BOOL "")
      set(RECASTNAVIGATION_EXAMPLES OFF CACHE BOOL "")
  
-     # master on 15 Feb 2021
+-    # master on 15 Feb 2021
 -    include(FetchContent)
 -    FetchContent_Declare(recastnavigation
 -        URL https://github.com/recastnavigation/recastnavigation/archive/e75adf86f91eb3082220085e42dda62679f9a3ea.zip
--        URL_HASH MD5=af905d121ef9d1cdfa979b0495cba059
+-        URL_HASH SHA512=93a19490cdfa55e98a6af9cc050e94af88fdb95fae2059ceeff28b62f3b48515f5fdd2c806c910550933b6861a4f6a91173ee0ed1b61c1396f7b34d4c78f0793
 -        SOURCE_DIR fetched/recastnavigation
 -    )
 -    FetchContent_MakeAvailableExcludeFromAll(recastnavigation)
-+#    include(FetchContent)
-+#    FetchContent_Declare(recastnavigation
-+#        URL https://github.com/recastnavigation/recastnavigation/archive/e75adf86f91eb3082220085e42dda62679f9a3ea.zip
-+#        URL_HASH MD5=af905d121ef9d1cdfa979b0495cba059
-+#        SOURCE_DIR fetched/recastnavigation
-+#    )
-+#    FetchContent_MakeAvailableExcludeFromAll(recastnavigation)
-+
 +    add_subdirectory("fetched/recastnavigation")
  endif()
+ 
+ if (NOT OPENMW_USE_SYSTEM_SQLITE3)
