@@ -1,10 +1,8 @@
-BROKEN =	needs fixing with lastools 2.3 or recent pdal
-
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 

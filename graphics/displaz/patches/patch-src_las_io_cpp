@@ -1,0 +1,17 @@
+adapt for lastools 2.0.3
+
+https://github.com/c42f/displaz/pull/231/files#diff-cdf7b83c7953d1918fd2e435f9fcc5c39ae7fa0f0ff63e0aecfc038e95db1998
+
+Index: src/las_io.cpp
+--- src/las_io.cpp.orig
++++ src/las_io.cpp
+@@ -182,7 +182,8 @@ bool PointArray::loadLas(QString fileName, size_t maxP
+     }
+ #else
+     FILE* file = 0;
+-    std::unique_ptr<LASreaderLAS> lasReader(new LASreaderLAS());
++    auto lasReadOpener = std::make_unique<LASreadOpener>();
++    auto lasReader = std::make_unique<LASreaderLAS>(lasReadOpener.get());
+ #ifdef _WIN32
+     file = _wfopen(fileName.toStdWString().data(), L"rb");
+ #else
