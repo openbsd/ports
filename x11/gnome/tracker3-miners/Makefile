@@ -1,7 +1,7 @@
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		3.7.1
+GNOME_VERSION=		3.7.2
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
 
 # LGPLv2.1+ - GPLv2+
@@ -45,7 +45,8 @@ LIB_DEPENDS=		audio/libcue \
 
 CONFIGURE_ARGS=		-Dnetwork_manager=disabled \
 			-Dsystemd_user_services=false \
-			-Dlandlock=disabled
+			-Dlandlock=disabled \
+			-Dfanotify=disabled
 
 # needs libgrss
 # XXX error: use of undeclared identifier 'AF_NETLINK'
