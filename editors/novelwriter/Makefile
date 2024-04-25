@@ -1,7 +1,6 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_EGG_VERSION =	2.2.1
-DISTNAME =		novelWriter-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:L}
+MODPY_EGG_VERSION =	2.4
+DISTNAME =		novelwriter-${MODPY_EGG_VERSION}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
