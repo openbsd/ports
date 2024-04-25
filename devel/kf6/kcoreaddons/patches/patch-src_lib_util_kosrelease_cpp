@@ -1,0 +1,20 @@
+No os-release support on OpenBSD
+Index: src/lib/util/kosrelease.cpp
+--- src/lib/util/kosrelease.cpp.orig
++++ src/lib/util/kosrelease.cpp
+@@ -74,10 +74,12 @@ class KOSReleasePrivate
+ {
+ public:
+     explicit KOSReleasePrivate(QString filePath)
+-        : name(QStringLiteral("Linux"))
+-        , id(QStringLiteral("linux"))
+-        , prettyName(QStringLiteral("Linux"))
++        : name(QStringLiteral("OpenBSD"))
++        , id(QStringLiteral("openbsd"))
++        , prettyName(QStringLiteral("OpenBSD"))
++        , logo(QStringLiteral("distributor-logo-openbsd"))
+     {
++        return; // NO os-release on OpenBSD
+         // Default values for non-optional fields set above ^.
+ 
+         QHash<QString, QString *> stringHash = {{QStringLiteral("NAME"), &name},
