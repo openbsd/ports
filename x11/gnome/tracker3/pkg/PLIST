@@ -338,6 +338,9 @@ share/locale/is/LC_MESSAGES/tracker3.mo
 share/locale/it/LC_MESSAGES/tracker3.mo
 share/locale/ja/LC_MESSAGES/tracker3.mo
 share/locale/ka/LC_MESSAGES/tracker3.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/tracker3.mo
 share/locale/kk/LC_MESSAGES/tracker3.mo
 share/locale/ko/LC_MESSAGES/tracker3.mo
 share/locale/lt/LC_MESSAGES/tracker3.mo
