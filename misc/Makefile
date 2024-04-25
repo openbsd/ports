@@ -32,7 +32,6 @@
      SUBDIR += geekcode
      SUBDIR += gnugetopt
      SUBDIR += gnuwatch
-     SUBDIR += gone
      SUBDIR += gpsd
      SUBDIR += gramps
      SUBDIR += hfsplus
