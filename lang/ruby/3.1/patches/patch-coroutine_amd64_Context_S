@@ -15,5 +15,5 @@ Index: coroutine/amd64/Context.S
  PREFIXED_SYMBOL(SYMBOL_PREFIX,coroutine_transfer):
 +	_CET_ENDBR
  
- 	# Make space on the stack for 6 registers:
- 	subq $48, %rsp
+ 	# Save caller state
+ 	pushq %rbp

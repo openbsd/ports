@@ -9510,6 +9510,7 @@ share/ri/${REV}/system/RDoc/Store/load_page-i.ri
 share/ri/${REV}/system/RDoc/Store/main%3d-i.ri
 share/ri/${REV}/system/RDoc/Store/main-i.ri
 share/ri/${REV}/system/RDoc/Store/make_variable_map-i.ri
+share/ri/${REV}/system/RDoc/Store/marshal_load-i.ri
 share/ri/${REV}/system/RDoc/Store/method_file-i.ri
 share/ri/${REV}/system/RDoc/Store/module_names-i.ri
 share/ri/${REV}/system/RDoc/Store/modules_hash-i.ri
