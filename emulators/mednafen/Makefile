@@ -1,10 +1,9 @@
 BROKEN-hppa =	../../include/mednafen/state.h:21:7: error: 'exception_ptr' in namespace 'std' does not name a type
 COMMENT =	emulates numerous game consoles
 
-VERSION =	1.31.0-UNSTABLE
+VERSION =	1.32.1
 DISTNAME =	mednafen-${VERSION}
 PKGNAME =	mednafen-${VERSION:C/-UNSTABLE//}
-REVISION =	2
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io
