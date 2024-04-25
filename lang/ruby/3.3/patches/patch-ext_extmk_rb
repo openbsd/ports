@@ -3,7 +3,7 @@ Build extensions in verbose mode by default.
 Index: ext/extmk.rb
 --- ext/extmk.rb.orig
 +++ ext/extmk.rb
-@@ -708,7 +708,7 @@ exts.map! {|d| "#{ext_prefix}/#{d}/."}
+@@ -722,7 +722,7 @@ exts.map! {|d| "#{ext_prefix}/#{d}/."}
  FileUtils.makedirs(File.dirname($command_output))
  begin
    atomic_write_open($command_output) do |mf|

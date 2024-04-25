@@ -2695,7 +2695,6 @@ share/ri/${REV}/system/Gem/Commands/BuildCommand/build_package-i.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/cdesc-BuildCommand.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/error_message-i.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/execute-i.ri
-share/ri/${REV}/system/Gem/Commands/BuildCommand/find_gemspec-i.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/gem_name-i.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/new-c.ri
 share/ri/${REV}/system/Gem/Commands/BuildCommand/resolve_gem_name-i.ri
@@ -2842,6 +2841,21 @@ share/ri/${REV}/system/Gem/Commands/RdocCommand/
 share/ri/${REV}/system/Gem/Commands/RdocCommand/cdesc-RdocCommand.ri
 share/ri/${REV}/system/Gem/Commands/RdocCommand/execute-i.ri
 share/ri/${REV}/system/Gem/Commands/RdocCommand/new-c.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/build_gem-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/build_package-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/cdesc-RebuildCommand.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/compare-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/download_gem-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/error_message-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/execute-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/get_gem_name_and_version-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/get_timestamp-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/new-c.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/prep_dirs-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/rubygems_version-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/sha256-i.ri
+share/ri/${REV}/system/Gem/Commands/RebuildCommand/with_source_date_epoch-i.ri
 share/ri/${REV}/system/Gem/Commands/SearchCommand/
 share/ri/${REV}/system/Gem/Commands/SearchCommand/cdesc-SearchCommand.ri
 share/ri/${REV}/system/Gem/Commands/SearchCommand/new-c.ri
@@ -3246,6 +3260,9 @@ share/ri/${REV}/system/Gem/GemcutterUtilities/verify_api_key-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/wait_for_otp_thread-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/webauthn_verification_url-i.ri
 share/ri/${REV}/system/Gem/GemcutterUtilities/with_response-i.ri
+share/ri/${REV}/system/Gem/GemspecHelpers/
+share/ri/${REV}/system/Gem/GemspecHelpers/cdesc-GemspecHelpers.ri
+share/ri/${REV}/system/Gem/GemspecHelpers/find_gemspec-i.ri
 share/ri/${REV}/system/Gem/ImpossibleDependenciesError/
 share/ri/${REV}/system/Gem/ImpossibleDependenciesError/cdesc-ImpossibleDependenciesError.ri
 share/ri/${REV}/system/Gem/ImpossibleDependenciesError/conflicts-i.ri
@@ -3860,6 +3877,7 @@ share/ri/${REV}/system/Gem/Resolver/SpecSpecification/
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/cdesc-SpecSpecification.ri
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/dependencies-i.ri
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/full_name-i.ri
+share/ri/${REV}/system/Gem/Resolver/SpecSpecification/hash-i.ri
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/name-i.ri
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/new-c.ri
 share/ri/${REV}/system/Gem/Resolver/SpecSpecification/platform-i.ri
@@ -4481,6 +4499,7 @@ share/ri/${REV}/system/Gem/SpecificationPolicy/validate_platform-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_require_paths-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_required%21-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_required_attributes-i.ri
+share/ri/${REV}/system/Gem/SpecificationPolicy/validate_required_ruby_version-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_rubygems_version-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_self_inclusion_in_files_list-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_shebang_line_in-i.ri
@@ -4686,6 +4705,7 @@ share/ri/${REV}/system/Gem/YAMLSerializer/convert_to_backward_compatible_key%21-
 share/ri/${REV}/system/Gem/YAMLSerializer/dump-i.ri
 share/ri/${REV}/system/Gem/YAMLSerializer/dump_hash-i.ri
 share/ri/${REV}/system/Gem/YAMLSerializer/load-i.ri
+share/ri/${REV}/system/Gem/YAMLSerializer/strip_comment-i.ri
 share/ri/${REV}/system/Gem/activated_gem_paths-c.ri
 share/ri/${REV}/system/Gem/add_to_load_path-c.ri
 share/ri/${REV}/system/Gem/already_loaded%3f-c.ri
@@ -4724,6 +4744,7 @@ share/ri/${REV}/system/Gem/ensure_default_gem_subdirectories-c.ri
 share/ri/${REV}/system/Gem/ensure_gem_subdirectories-c.ri
 share/ri/${REV}/system/Gem/env_requirement-c.ri
 share/ri/${REV}/system/Gem/find_config_file-c.ri
+share/ri/${REV}/system/Gem/find_default_spec-c.ri
 share/ri/${REV}/system/Gem/find_files-c.ri
 share/ri/${REV}/system/Gem/find_home-c.ri
 share/ri/${REV}/system/Gem/find_latest_files-c.ri
@@ -13310,6 +13331,7 @@ share/ri/${REV}/system/RDoc/Store/load_page-i.ri
 share/ri/${REV}/system/RDoc/Store/main%3d-i.ri
 share/ri/${REV}/system/RDoc/Store/main-i.ri
 share/ri/${REV}/system/RDoc/Store/make_variable_map-i.ri
+share/ri/${REV}/system/RDoc/Store/marshal_load-i.ri
 share/ri/${REV}/system/RDoc/Store/method_file-i.ri
 share/ri/${REV}/system/RDoc/Store/module_names-i.ri
 share/ri/${REV}/system/RDoc/Store/modules_hash-i.ri

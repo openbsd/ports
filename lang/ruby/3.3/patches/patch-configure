@@ -6,7 +6,7 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -31883,7 +31883,7 @@ fi
+@@ -31894,7 +31894,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -15,7 +15,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34009,7 +34009,7 @@ then :
+@@ -34020,7 +34020,7 @@ then :
  
  else $as_nop
  
