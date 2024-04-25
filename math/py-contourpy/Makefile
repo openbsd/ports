@@ -1,6 +1,6 @@
 COMMENT =	library for calculating contours of 2D quadrilateral grids
 
-MODPY_EGG_VERSION =	1.0.7
+MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		contourpy-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} m
 COMPILER=	base-clang ports-gcc
+
 MODULES =	lang/python
 
 FLAVORS =	python3
@@ -21,8 +22,11 @@ FLAVOR =	python3
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-BUILD_DEPENDS =	devel/py-pybind11${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-pybind11${MODPY_FLAVOR} \
+		devel/meson-python
+
 RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR}
+
 TEST_DEPENDS =	devel/flake8 \
 		devel/py-isort${MODPY_FLAVOR} \
 		graphics/py-matplotlib${MODPY_FLAVOR} \
