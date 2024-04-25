@@ -1198,6 +1198,8 @@ share/doc/appstream/html/images/screxample_xonotic-good.png
 share/doc/appstream/html/images/screxample_xterm-bad.png
 share/doc/appstream/html/index.html
 share/doc/appstream/html/ix01.html
+share/doc/appstream/html/re01.html
+share/doc/appstream/html/re02.html
 share/doc/appstream/html/sect-AppStream-IconCache.html
 share/doc/appstream/html/sect-AppStream-Misc-URIHandler.html
 share/doc/appstream/html/sect-AppStream-YAML.html
@@ -1277,6 +1279,7 @@ share/locale/he/LC_MESSAGES/appstream.mo
 share/locale/hi/LC_MESSAGES/appstream.mo
 share/locale/hr/LC_MESSAGES/appstream.mo
 share/locale/hu/LC_MESSAGES/appstream.mo
+share/locale/ia/LC_MESSAGES/appstream.mo
 share/locale/id/LC_MESSAGES/appstream.mo
 share/locale/it/LC_MESSAGES/appstream.mo
 share/locale/ja/LC_MESSAGES/appstream.mo
