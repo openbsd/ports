@@ -1,6 +1,12 @@
 %%x86%%
 @man man/man8/dmidecode.8
 @bin sbin/dmidecode
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/biosdecode
+share/bash-completion/completions/dmidecode
+share/bash-completion/completions/ownership
+share/bash-completion/completions/vpddecode
 share/doc/dmidecode/
 share/doc/dmidecode/AUTHORS
 share/doc/dmidecode/NEWS

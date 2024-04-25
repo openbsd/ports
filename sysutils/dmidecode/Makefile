@@ -3,7 +3,7 @@
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
-DISTNAME=	dmidecode-3.5
+DISTNAME=	dmidecode-3.6
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	sysutils
@@ -18,7 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c
 
 MAKE_FLAGS=	CC="${CC}"
-FAKE_FLAGS=	mandir="${PREFIX}/man"
+FAKE_FLAGS=	mandir="${PREFIX}/man" \
+		compdir="${PREFIX}/share/bash-completion/completions"
 NO_TEST=	Yes
 
 post-install:
