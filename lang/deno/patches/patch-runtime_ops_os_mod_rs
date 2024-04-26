@@ -1,7 +1,7 @@
 Index: runtime/ops/os/mod.rs
 --- runtime/ops/os/mod.rs.orig
 +++ runtime/ops/os/mod.rs
-@@ -14,6 +14,7 @@ use deno_node::NODE_ENV_VAR_ALLOWLIST;
+@@ -13,6 +13,7 @@ use deno_node::NODE_ENV_VAR_ALLOWLIST;
  use serde::Serialize;
  use std::collections::HashMap;
  use std::env;
@@ -9,10 +9,11 @@ Index: runtime/ops/os/mod.rs
  
  mod sys_info;
  
-@@ -64,6 +65,8 @@ deno_core::extension!(
- #[op]
+@@ -74,7 +75,8 @@ deno_core::extension!(
+ #[op2]
+ #[string]
  fn op_exec_path(state: &mut OpState) -> Result<String, AnyError> {
-   let current_exe = env::current_exe().unwrap();
+-  let current_exe = env::current_exe().unwrap();
 +  let current_exe =
 +    std::env::current_exe().unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
    state

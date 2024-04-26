@@ -4,7 +4,7 @@ Index: ext/ffi/Cargo.toml
 +++ ext/ffi/Cargo.toml
 @@ -17,12 +17,15 @@ path = "lib.rs"
  deno_core.workspace = true
- dlopen.workspace = true
+ dlopen2.workspace = true
  dynasmrt = "1.2.3"
 -libffi = "=3.2.0"
  libffi-sys = "=2.3.0"

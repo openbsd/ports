@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.3/v8/src/base/atomicops.h
---- modcargo-crates/v8-0.74.3/v8/src/base/atomicops.h.orig
-+++ modcargo-crates/v8-0.74.3/v8/src/base/atomicops.h
+Index: modcargo-crates/v8-0.90.1/v8/src/base/atomicops.h
+--- modcargo-crates/v8-0.90.1/v8/src/base/atomicops.h.orig
++++ modcargo-crates/v8-0.90.1/v8/src/base/atomicops.h
 @@ -57,10 +57,10 @@ using Atomic64 = SbAtomic64;
  using Atomic8 = char;
  using Atomic16 = int16_t;
@@ -14,7 +14,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/atomicops.h
  using Atomic64 = int64_t;
  #else
  using Atomic64 = intptr_t;
-@@ -258,7 +258,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
+@@ -266,7 +266,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
                                     std::memory_order_seq_cst);
  }
  

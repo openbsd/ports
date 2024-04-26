@@ -1,7 +1,7 @@
 Index: cli/build.rs
 --- cli/build.rs.orig
 +++ cli/build.rs
-@@ -424,6 +424,13 @@ fn main() {
+@@ -411,6 +411,13 @@ fn main() {
      symbols_path.display()
    );
  

@@ -2,7 +2,5 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-deno offers the possibility to generate self-contained executables via
-'deno compile'. The resulting executables need to be run from a file
-system mounted with the wxallowed option, and need to be invoked with
-the full path to the binary.
+Please note that both 'deno update' and 'deno compile' will not work
+on OpenBSD.

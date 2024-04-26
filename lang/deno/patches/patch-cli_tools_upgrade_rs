@@ -1,12 +1,23 @@
 Index: cli/tools/upgrade.rs
 --- cli/tools/upgrade.rs.orig
 +++ cli/tools/upgrade.rs
-@@ -268,6 +268,8 @@ pub async fn upgrade(
+@@ -235,10 +235,7 @@ fn print_release_notes(current_version: &str, new_vers
+ }
+ 
+ pub fn upgrade_check_enabled() -> bool {
+-  matches!(
+-    env::var("DENO_NO_UPDATE_CHECK"),
+-    Err(env::VarError::NotPresent)
+-  )
++  false
+ }
+ 
+ pub fn check_for_upgrades(
+@@ -376,6 +373,7 @@ pub async fn upgrade(
    flags: Flags,
    upgrade_flags: UpgradeFlags,
  ) -> Result<(), AnyError> {
-+  #[cfg(target_os = "openbsd")]
 +  bail!("Upgrades are not supported on OpenBSD.");
-   let factory = CliFactory::from_flags(flags).await?;
+   let factory = CliFactory::from_flags(flags)?;
    let client = factory.http_client();
    let current_exe_path = std::env::current_exe()?;

@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.74.3/build.rs
---- modcargo-crates/v8-0.74.3/build.rs.orig
-+++ modcargo-crates/v8-0.74.3/build.rs
-@@ -176,9 +176,6 @@ fn build_v8() {
+Index: modcargo-crates/v8-0.90.1/build.rs
+--- modcargo-crates/v8-0.90.1/build.rs.orig
++++ modcargo-crates/v8-0.90.1/build.rs
+@@ -203,9 +203,6 @@ fn build_v8(is_asan: bool) {
        || target_triple == "aarch64-linux-android"
      {
        gn_args.push(r#"target_cpu="arm64""#.to_string());
@@ -11,7 +11,7 @@ Index: modcargo-crates/v8-0.74.3/build.rs
      };
  
      if target_triple == "aarch64-linux-android" {
-@@ -262,7 +259,9 @@ fn maybe_install_sysroot(arch: &str) {
+@@ -289,7 +286,9 @@ fn maybe_install_sysroot(arch: &str) {
  }
  
  fn platform() -> String {

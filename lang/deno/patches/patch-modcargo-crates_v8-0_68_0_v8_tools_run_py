@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.3/v8/tools/run.py
---- modcargo-crates/v8-0.74.3/v8/tools/run.py.orig
-+++ modcargo-crates/v8-0.74.3/v8/tools/run.py
+Index: modcargo-crates/v8-0.90.1/v8/tools/run.py
+--- modcargo-crates/v8-0.90.1/v8/tools/run.py.orig
++++ modcargo-crates/v8-0.90.1/v8/tools/run.py
 @@ -9,7 +9,7 @@ scripts."""
  import subprocess
  import sys

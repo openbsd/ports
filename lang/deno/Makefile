@@ -6,9 +6,8 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		1.36.4
+VERSION =		1.42.4
 HOMEPAGE =		https://deno.com/runtime
-REVISION =		1
 
 DISTNAME =		deno-${VERSION}
 DISTFILES =		${DISTNAME}{deno_src}${EXTRACT_SUFX}
@@ -51,8 +50,6 @@ BUILD_DEPENDS =		databases/sqlite3 \
 LIB_DEPENDS =		archivers/zstd \
 			devel/libffi
 
-BUILD_DEPENDS +=	security/rust-ring
-
 .include "crates.inc"
 
 CONFIGURE_STYLE =	cargo
@@ -61,8 +58,8 @@ DOCDIR =		${PREFIX}/share/doc/deno
 WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-DENO_TS_V =		0.13.2
-V8_CARGO_V =		0.74.3
+DENO_TS_V =		0.16.0
+V8_CARGO_V =		0.90.1
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -73,10 +70,10 @@ post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}
 	${SUBST_CMD} ${V8_DISTDIR}/v8/tools/run.py
 	cd ${WRKSRC} && ${SUBST_CMD} \
-	    cli/build.rs \
 	    cli/main.rs \
+	    cli/mainrt.rs \
 	    cli/standalone/binary.rs \
-	    modcargo-crates/deno_task_shell-${DENO_TS_V}/src/shell/commands/executable.rs \
+	    cli/standalone/mod.rs \
 	    runtime/ops/os/mod.rs
 	cp ${WRKSRC}/cli/napi/generated_symbol_exports_list_linux.def \
 	    ${WRKSRC}/cli/napi/generated_symbol_exports_list_openbsd.def

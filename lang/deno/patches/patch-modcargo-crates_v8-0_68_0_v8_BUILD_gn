@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.74.3/v8/BUILD.gn
---- modcargo-crates/v8-0.74.3/v8/BUILD.gn.orig
-+++ modcargo-crates/v8-0.74.3/v8/BUILD.gn
+Index: modcargo-crates/v8-0.90.1/v8/BUILD.gn
+--- modcargo-crates/v8-0.90.1/v8/BUILD.gn.orig
++++ modcargo-crates/v8-0.90.1/v8/BUILD.gn
 @@ -33,7 +33,7 @@ declare_args() {
  
    # Turns on all V8 debug features. Enables running V8 in a pseudo debug mode
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-0.74.3/v8/BUILD.gn
  
    # Sets -DV8_ENABLE_FUTURE.
    v8_enable_future = false
-@@ -1369,6 +1369,10 @@ config("toolchain") {
+@@ -1450,6 +1450,10 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -21,7 +21,7 @@ Index: modcargo-crates/v8-0.74.3/v8/BUILD.gn
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -5920,7 +5924,7 @@ v8_component("v8_libbase") {
+@@ -6392,7 +6396,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -30,7 +30,7 @@ Index: modcargo-crates/v8-0.74.3/v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -5931,6 +5935,12 @@ v8_component("v8_libbase") {
+@@ -6403,6 +6407,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

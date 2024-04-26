@@ -1,13 +1,13 @@
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -265,7 +265,8 @@ pub fn main() {
-   let args: Vec<String> = env::args().collect();
+@@ -316,7 +316,8 @@ pub fn main() {
+   );
  
-   let future = async move {
--    let current_exe_path = current_exe()?;
-+    let current_exe_path = current_exe()
-+      .unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
-     let standalone_res =
-       match standalone::extract_standalone(&current_exe_path, args.clone())
-         .await
+   let args: Vec<_> = env::args_os().collect();
+-  let current_exe_path = current_exe().unwrap();
++  let current_exe_path = current_exe()
++    .unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
+   let maybe_standalone = match standalone::extract_standalone(
+     &current_exe_path,
+     Cow::Borrowed(&args),

@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
---- modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc.orig
-+++ modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
-@@ -55,7 +55,7 @@
+Index: modcargo-crates/v8-0.90.1/v8/src/base/platform/platform-posix.cc
+--- modcargo-crates/v8-0.90.1/v8/src/base/platform/platform-posix.cc.orig
++++ modcargo-crates/v8-0.90.1/v8/src/base/platform/platform-posix.cc
+@@ -54,7 +54,7 @@
  #if V8_OS_DARWIN
  #include <mach/mach.h>
  #include <malloc/malloc.h>
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
  #include <malloc.h>
  #endif
  
-@@ -73,7 +73,7 @@
+@@ -72,7 +72,7 @@
  #include <sys/syscall.h>
  #endif
  
@@ -19,7 +19,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -299,6 +299,13 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -303,6 +303,13 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -33,7 +33,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
  // static
  void* OS::GetRandomMmapAddr() {
    uintptr_t raw_addr;
-@@ -395,6 +402,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -399,6 +406,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -41,7 +41,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -668,7 +676,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -672,7 +680,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
@@ -50,7 +50,7 @@ Index: modcargo-crates/v8-0.74.3/v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1247,7 +1255,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1304,7 +1312,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \

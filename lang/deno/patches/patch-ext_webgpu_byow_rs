@@ -1,0 +1,24 @@
+Index: ext/webgpu/byow.rs
+--- ext/webgpu/byow.rs.orig
++++ ext/webgpu/byow.rs
+@@ -99,14 +99,19 @@ fn raw_window(
+   Ok((win_handle, display_handle))
+ }
+ 
+-#[cfg(target_os = "linux")]
++#[cfg(any(target_os = "linux", target_os = "freebsd", target_os="openbsd"))]
+ fn raw_window(
+   system: &str,
+   window: *const c_void,
+   display: *const c_void,
+ ) -> Result<RawHandles, AnyError> {
+   if system != "x11" {
++    #[cfg(target_os = "linux")]
+     return Err(type_error("Invalid system on Linux"));
++    #[cfg(target_os = "freebsd")]
++    return Err(type_error("Invalid system on FreeBSD"));
++    #[cfg(target_os = "openbsd")]
++    return Err(type_error("Invalid system on OpenBSD"));
+   }
+ 
+   let win_handle = {
