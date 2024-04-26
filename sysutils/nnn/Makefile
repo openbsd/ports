@@ -3,6 +3,7 @@ COMMENT =		the missing terminal file browser for X
 V =			4.9
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
