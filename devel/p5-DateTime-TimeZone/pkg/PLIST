@@ -54,6 +54,7 @@ ${P5SITE}/DateTime/TimeZone/America/Caracas.pm
 ${P5SITE}/DateTime/TimeZone/America/Cayenne.pm
 ${P5SITE}/DateTime/TimeZone/America/Chicago.pm
 ${P5SITE}/DateTime/TimeZone/America/Chihuahua.pm
+${P5SITE}/DateTime/TimeZone/America/Ciudad_Juarez.pm
 ${P5SITE}/DateTime/TimeZone/America/Costa_Rica.pm
 ${P5SITE}/DateTime/TimeZone/America/Cuiaba.pm
 ${P5SITE}/DateTime/TimeZone/America/Danmarkshavn.pm
@@ -118,7 +119,6 @@ ${P5SITE}/DateTime/TimeZone/America/North_Dakota/New_Salem.pm
 ${P5SITE}/DateTime/TimeZone/America/Nuuk.pm
 ${P5SITE}/DateTime/TimeZone/America/Ojinaga.pm
 ${P5SITE}/DateTime/TimeZone/America/Panama.pm
-${P5SITE}/DateTime/TimeZone/America/Pangnirtung.pm
 ${P5SITE}/DateTime/TimeZone/America/Paramaribo.pm
 ${P5SITE}/DateTime/TimeZone/America/Phoenix.pm
 ${P5SITE}/DateTime/TimeZone/America/Port_au_Prince.pm
@@ -146,7 +146,6 @@ ${P5SITE}/DateTime/TimeZone/America/Vancouver.pm
 ${P5SITE}/DateTime/TimeZone/America/Whitehorse.pm
 ${P5SITE}/DateTime/TimeZone/America/Winnipeg.pm
 ${P5SITE}/DateTime/TimeZone/America/Yakutat.pm
-${P5SITE}/DateTime/TimeZone/America/Yellowknife.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/
 ${P5SITE}/DateTime/TimeZone/Antarctica/Casey.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Davis.pm
@@ -155,6 +154,7 @@ ${P5SITE}/DateTime/TimeZone/Antarctica/Mawson.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Palmer.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Rothera.pm
 ${P5SITE}/DateTime/TimeZone/Antarctica/Troll.pm
+${P5SITE}/DateTime/TimeZone/Antarctica/Vostok.pm
 ${P5SITE}/DateTime/TimeZone/Asia/
 ${P5SITE}/DateTime/TimeZone/Asia/Almaty.pm
 ${P5SITE}/DateTime/TimeZone/Asia/Amman.pm

@@ -2,7 +2,7 @@ COMMENT =	DateTime submodule for TZ
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-TimeZone-2.56
+DISTNAME =	DateTime-TimeZone-2.62
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
