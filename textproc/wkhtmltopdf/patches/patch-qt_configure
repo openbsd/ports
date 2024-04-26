@@ -10,12 +10,12 @@ Index: qt/configure
  TEST_COMPILER="$CXX"
  
  [ -z "$TEST_COMPILER" ] && TEST_COMPILER=$QMAKE_CONF_COMPILER
-@@ -7754,7 +7754,7 @@ case "$XPLATFORM" in
+@@ -7754,6 +7754,8 @@ case "$XPLATFORM" in
      *-g++*)
  	# Check gcc's version
  	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
--	    8*|7*|6*|5*|4*|3.4*)
-+	    [1-9][0-9].*|[4-9].*|3.4*)
++	    [1-9][0-9].*)
++		;;
+ 	    12*|11*|10*|9*|8*|7*|6*|5*|4*|3.4*)
  		;;
              3.3*)
-                 canBuildWebKit="no"

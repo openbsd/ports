@@ -6,28 +6,20 @@ DPB_PROPERTIES =	parallel nojunk
 
 COMMENT =		convert HTML to PDF using Webkit
 
-GH_ACCOUNT =		wkhtmltopdf
-GH_PROJECT =		wkhtmltopdf
-GH_TAGNAME =		0.12.5
-QT_COMMIT =		5db36ec76b29712eb2c5bd0625c2c77d7468b3fc
-SITES.a =		https://github.com/wkhtmltopdf/qt/archive/
-DISTFILES =		${DISTNAME}.tar.gz
-DISTFILES.a =		wkhtmltopdf-qt-${QT_COMMIT}_1{${QT_COMMIT}}.tar.gz
-REVISION =		6
+DIST_TUPLE =		github wkhtmltopdf wkhtmltopdf 0.12.6 . \
+			github wkhtmltopdf qt aa2e3129f8ef05dfa72c4b183feb8b7e1927ac8a qt
 
-SHARED_LIBS =		wkhtmltox 1.0 # 0.12
+SHARED_LIBS =		wkhtmltox 2.0 # 0.12
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://wkhtmltopdf.org/
 
-MAINTAINER =		Frank Groeneveld <frank@frankgroeneveld.nl>
-
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext Xrender c fontconfig freetype iconv jpeg m
-WANTLIB += png pthread ${COMPILER_LIBCXX} z
+WANTLIB += png pthread z ${COMPILER_LIBCXX}
 
 WANTLIB += icui18n # dlopen()d via QLibrary
 
@@ -48,10 +40,6 @@ FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 SEPARATE_BUILD =	Yes
 
 NO_TEST =		Yes
-
-pre-patch:
-	cd ${WRKDIR}/${DISTNAME} && rmdir qt
-	cd ${WRKDIR}/${DISTNAME} && mv ../qt-${QT_COMMIT} qt
 
 do-configure:
 	mkdir -p ${WRKBUILD}/qt
