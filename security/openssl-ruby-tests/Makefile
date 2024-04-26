@@ -1,12 +1,12 @@
 COMMENT =		sources of the Ruby OpenSSL gem for regression testing
 
 # Follows HEAD
-VERSION =		20240328
+VERSION =		20240426
 DISTNAME =		openssl-ruby-tests-${VERSION}
 
 GH_ACCOUNT =		ruby
 GH_PROJECT =		openssl
-GH_COMMIT =		d3d857cd1e4d238311bfdaf7f5535ceff1d28456
+GH_COMMIT =		362a69a36f5c437ace2bc9207dcb01d38008198f
 
 CATEGORIES =		security devel
 
