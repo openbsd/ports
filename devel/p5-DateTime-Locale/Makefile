@@ -2,7 +2,7 @@ COMMENT =		localization support for DateTime.pm
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		DateTime-Locale-1.37
+DISTNAME =		DateTime-Locale-1.42
 CATEGORIES=		devel
 
 MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
