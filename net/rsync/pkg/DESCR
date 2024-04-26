@@ -12,3 +12,7 @@ everyday use.
 Flavor: iconv
     extra dependency, for people wanting to bring files from other OSes with
     more versatile filenames.
+
+To use the rrsync wrapper, python3 should be installed.
+
+# pkg_add python3
