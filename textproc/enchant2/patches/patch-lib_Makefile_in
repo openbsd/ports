@@ -1,0 +1,12 @@
+Index: lib/Makefile.in
+--- lib/Makefile.in.orig
++++ lib/Makefile.in
+@@ -1165,7 +1165,7 @@ enchant.5: $(builddir)/enchant.5.in Makefile.am $(top_
+ 	mv $@.tmp $@
+ 
+ enchant.html: enchant.5
+-	groff -mandoc -Thtml $< > $@
++	mandoc -Thtml $< > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

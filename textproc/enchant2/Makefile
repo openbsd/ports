@@ -1,10 +1,10 @@
 COMMENT=		generic spell checking library
 
-V=			2.7.0
+V=			2.7.1
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            1.1      # 9.0
+SHARED_LIBS +=  enchant-2            1.1      # 9.1
 
 CATEGORIES=		textproc
 
@@ -24,6 +24,8 @@ SITES=			https://github.com/AbiWord/enchant/releases/download/v${V}/
 # c++11
 COMPILER=		base-clang ports-gcc
 
+USE_GMAKE=		Yes
+
 LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \
 			textproc/hunspell
@@ -38,9 +40,6 @@ CONFIGURE_ARGS=		--without-applespell \
 			--without-voikko \
 			--without-zemberek \
 			--without-nuspell
-
-# XXX ld: error: undefined reference due to --no-allow-shlib-undefined: set_relocation_prefix
-CONFIGURE_ARGS +=	--enable-relocatable
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
