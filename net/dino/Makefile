@@ -1,3 +1,5 @@
+BROKEN=	build failure with vala-0.56.17 https://github.com/dino/dino/issues/1576
+
 COMMENT=	XMPP desktop client
 VERSION=	0.4.3
 DISTNAME=	dino-${VERSION}
