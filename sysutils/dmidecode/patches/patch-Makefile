@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -146,7 +146,7 @@ uninstall-doc :
+ 	$(RM) -r $(DESTDIR)$(docdir)
+ 
+ install-completion :
+-	if [ -d $(compdir) ] ; then \
++	if true || [ -d $(compdir) ] ; then \
+ 	$(INSTALL_DIR) $(DESTDIR)$(compdir) ; \
+ 	for program in $(PROGRAMS) ; do \
+ 	$(INSTALL_DATA) completion/$$program.bash $(DESTDIR)$(compdir)/$$program ; done ; \
