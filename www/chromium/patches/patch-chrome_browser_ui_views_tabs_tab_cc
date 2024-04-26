@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/tabs/tab.cc
 --- chrome/browser/ui/views/tabs/tab.cc.orig
 +++ chrome/browser/ui/views/tabs/tab.cc
-@@ -618,7 +618,7 @@ void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent&
+@@ -621,7 +621,7 @@ void Tab::MaybeUpdateHoverStatus(const ui::MouseEvent&
      return;
    }
  
