@@ -33,6 +33,7 @@ share/remind/holidays/fr.rem
 share/remind/holidays/gr.rem
 share/remind/holidays/ie.rem
 share/remind/holidays/jewish.rem
+share/remind/holidays/pt.rem
 share/remind/holidays/us.rem
 share/remind/lang/
 share/remind/lang/auto.rem
@@ -51,6 +52,7 @@ share/remind/lang/no.rem
 share/remind/lang/pl.rem
 share/remind/lang/pt.rem
 share/remind/lang/ro.rem
+share/remind/moonphases.rem
 share/remind/seasons.rem
 share/remind/site/
 share/remind/site/README
