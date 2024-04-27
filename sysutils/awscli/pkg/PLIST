@@ -747,12 +747,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/remove-tags-from-ce
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/request-certificate.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/resend-validation-email.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/acm/update-certificate-options.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/create-network-profile.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/delete-network-profile.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/get-network-profile.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/search-network-profiles.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/alexaforbusiness/update-network-profile.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-api-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/apigateway/create-authorizer.rst
