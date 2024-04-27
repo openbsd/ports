@@ -3,7 +3,7 @@ Use correct modified for num (int) and drop undefined %I
 Index: src/terminal-app.cc
 --- src/terminal-app.cc.orig
 +++ src/terminal-app.cc
-@@ -512,7 +512,7 @@ menu_append_numbered (GMenu *menu,
+@@ -508,7 +508,7 @@ menu_append_numbered (GMenu *menu,
    str = g_string_sized_new (strlen (label) + 4 + 1 + 8);
  
    if (num < 10)
