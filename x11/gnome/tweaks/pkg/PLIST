@@ -135,7 +135,6 @@ share/locale/vi/LC_MESSAGES/gnome-tweaks.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tweaks.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-tweaks.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tweaks.mo
-share/metainfo/
 share/metainfo/org.gnome.tweaks.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
