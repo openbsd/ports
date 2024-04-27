@@ -7,10 +7,13 @@ lib/audacity/
 @so lib/audacity/lib-channel.so
 @so lib/audacity/lib-command-parameters.so
 @so lib/audacity/lib-components.so
+@so lib/audacity/lib-concurrency.so
+@so lib/audacity/lib-crypto.so
 @so lib/audacity/lib-effects.so
 @so lib/audacity/lib-exceptions.so
 @so lib/audacity/lib-export-ui.so
 @so lib/audacity/lib-ffmpeg-support.so
+@so lib/audacity/lib-fft.so
 @so lib/audacity/lib-file-formats.so
 @so lib/audacity/lib-files.so
 @so lib/audacity/lib-graphics.so
@@ -18,8 +21,11 @@ lib/audacity/
 @so lib/audacity/lib-ipc.so
 @so lib/audacity/lib-lv2.so
 @so lib/audacity/lib-math.so
+@so lib/audacity/lib-menus.so
 @so lib/audacity/lib-mixer.so
 @so lib/audacity/lib-module-manager.so
+@so lib/audacity/lib-music-information-retrieval.so
+@so lib/audacity/lib-note-track.so
 @so lib/audacity/lib-numeric-formats.so
 @so lib/audacity/lib-playable-track.so
 @so lib/audacity/lib-preferences.so
@@ -33,6 +39,7 @@ lib/audacity/
 @so lib/audacity/lib-screen-geometry.so
 @so lib/audacity/lib-shuttlegui.so
 @so lib/audacity/lib-snapping.so
+@so lib/audacity/lib-sqlite-helpers.so
 @so lib/audacity/lib-stretching-sequence.so
 @so lib/audacity/lib-string-utils.so
 @so lib/audacity/lib-strings.so
@@ -47,6 +54,7 @@ lib/audacity/
 @so lib/audacity/lib-transactions.so
 @so lib/audacity/lib-utility.so
 @so lib/audacity/lib-uuid.so
+@so lib/audacity/lib-viewport.so
 @so lib/audacity/lib-vst.so
 @so lib/audacity/lib-wave-track.so
 @so lib/audacity/lib-wx-init.so
@@ -58,6 +66,7 @@ lib/audacity/modules/
 @so lib/audacity/modules/mod-ffmpeg.so
 @so lib/audacity/modules/mod-flac.so
 @so lib/audacity/modules/mod-lof.so
+@so lib/audacity/modules/mod-midi-import-export.so
 @so lib/audacity/modules/mod-mp3.so
 @so lib/audacity/modules/mod-mpg123.so
 @so lib/audacity/modules/mod-ogg.so
@@ -128,7 +137,6 @@ share/audacity/plug-ins/clipfix.ny
 share/audacity/plug-ins/crossfadeclips.ny
 share/audacity/plug-ins/crossfadetracks.ny
 share/audacity/plug-ins/delay.ny
-share/audacity/plug-ins/eq-xml-to-txt-converter.ny
 share/audacity/plug-ins/equalabel.ny
 share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/label-sounds.ny
@@ -145,7 +153,6 @@ share/audacity/plug-ins/sample-data-export.ny
 share/audacity/plug-ins/sample-data-import.ny
 share/audacity/plug-ins/spectral-delete.ny
 share/audacity/plug-ins/tremolo.ny
-share/audacity/plug-ins/vocalrediso.ny
 share/audacity/plug-ins/vocoder.ny
 share/doc/audacity/
 share/doc/audacity/LICENSE.txt

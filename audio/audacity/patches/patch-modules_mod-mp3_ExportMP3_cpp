@@ -1,7 +1,7 @@
 Index: modules/mod-mp3/ExportMP3.cpp
 --- modules/mod-mp3/ExportMP3.cpp.orig
 +++ modules/mod-mp3/ExportMP3.cpp
-@@ -1459,13 +1459,13 @@ wxString MP3Exporter::GetLibraryPath()
+@@ -1486,13 +1486,13 @@ wxString MP3Exporter::GetLibraryPath()
  
  wxString MP3Exporter::GetLibraryName()
  {
