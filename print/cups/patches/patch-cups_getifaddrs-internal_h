@@ -6,7 +6,7 @@ In file included from ./getifaddrs-internal.h:42:
 Index: cups/getifaddrs-internal.h
 --- cups/getifaddrs-internal.h.orig
 +++ cups/getifaddrs-internal.h
-@@ -40,6 +40,7 @@ typedef int socklen_t;
+@@ -41,6 +41,7 @@ typedef int socklen_t;
  #  endif /* __APPLE__ && !_SOCKLEN_T */
  
  #  ifndef _WIN32

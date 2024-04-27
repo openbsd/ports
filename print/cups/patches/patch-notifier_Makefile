@@ -1,7 +1,7 @@
 Index: notifier/Makefile
 --- notifier/Makefile.orig
 +++ notifier/Makefile
-@@ -56,7 +56,6 @@ install:	all install-data install-headers install-libs
+@@ -57,7 +57,6 @@ install:	all install-data install-headers install-libs
  #
  
  install-data:
