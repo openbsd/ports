@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-njs,v 1.1 2023/07/21 06:51:59 sthen Exp $
 @so ngx_http_js_module.so
 @so ngx_stream_js_module.so
