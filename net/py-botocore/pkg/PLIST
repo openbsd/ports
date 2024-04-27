@@ -1891,6 +1891,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-ad/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-ad/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-ad/2018-05-10/endpoint-rule-set-1.json
@@ -2131,6 +2132,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/route53domains/2014-05-15
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53domains/2014-05-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53domains/2014-05-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53domains/2014-05-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53profiles/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53profiles/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53profiles/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53profiles/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/route53profiles/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53resolver/2018-04-01/endpoint-rule-set-1.json
