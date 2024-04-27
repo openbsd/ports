@@ -19,7 +19,7 @@ MODGO_MODULES =	\
 	github.com/alessio/shellescape				 v1.4.1 \
 	github.com/armon/go-metrics				 v0.4.0 \
 	github.com/armon/go-socks5				 v0.0.0-20160902184237-e75332964ef5 \
-	github.com/avast/retry-go				 v3.0.0+incompatible \
+	github.com/avast/retry-go/v4				 v4.6.0 \
 	github.com/aymanbagabas/go-osc52			 v1.0.3 \
 	github.com/aymanbagabas/go-osc52/v2			 v2.0.1 \
 	github.com/aymerick/douceur				 v0.2.0 \
@@ -146,11 +146,11 @@ MODGO_MODULES =	\
 	github.com/spf13/jwalterweatherman			 v1.1.0 \
 	github.com/spf13/pflag					 v1.0.5 \
 	github.com/spf13/viper					 v1.16.0 \
-	github.com/stretchr/objx				 v0.5.0 \
-	github.com/stretchr/testify				 v1.8.3 \
+	github.com/stretchr/objx				 v0.5.2 \
+	github.com/stretchr/testify				 v1.9.0 \
 	github.com/subosito/gotenv				 v1.4.2 \
 	github.com/tidwall/pretty				 v1.2.1 \
-	github.com/xanzy/go-gitlab				 v0.101.0 \
+	github.com/xanzy/go-gitlab				 v0.103.0 \
 	github.com/yuin/goldmark				 v1.5.4 \
 	github.com/yuin/goldmark-emoji				 v1.0.1 \
 	github.com/zalando/go-keyring				 v0.2.3 \
@@ -328,6 +328,7 @@ MODGO_MODFILES =	\
 	github.com/rogpeppe/go-internal		 v1.3.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/objx		 v0.4.0 \
+	github.com/stretchr/objx		 v0.5.0 \
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.3.0 \
 	github.com/stretchr/testify		 v1.4.0 \
@@ -338,6 +339,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.7.5 \
 	github.com/stretchr/testify		 v1.8.0 \
 	github.com/stretchr/testify		 v1.8.1 \
+	github.com/stretchr/testify		 v1.8.3 \
 	github.com/yuin/goldmark		 v1.1.25 \
 	github.com/yuin/goldmark		 v1.1.27 \
 	github.com/yuin/goldmark		 v1.1.32 \

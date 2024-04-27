@@ -12,7 +12,6 @@
 @man man/man1/glab-changelog-generate.1
 @man man/man1/glab-changelog.1
 @man man/man1/glab-check-update.1
-@man man/man1/glab-ci-artifact.1
 @man man/man1/glab-ci-config-compile.1
 @man man/man1/glab-ci-config.1
 @man man/man1/glab-ci-delete.1
@@ -58,6 +57,8 @@
 @man man/man1/glab-issue-update.1
 @man man/man1/glab-issue-view.1
 @man man/man1/glab-issue.1
+@man man/man1/glab-job-artifact.1
+@man man/man1/glab-job.1
 @man man/man1/glab-label-create.1
 @man man/man1/glab-label-list.1
 @man man/man1/glab-label.1
