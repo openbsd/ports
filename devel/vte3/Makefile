@@ -2,8 +2,7 @@ COMMENT-main=		GTK3 terminal emulation library
 COMMENT-gtk4=		GTK4 terminal emulation library
 COMMENT-common=		shared files for vte3
 
-GNOME_PROJECT=		vte
-GNOME_VERSION=		0.76.0
+DIST_TUPLE=		gnome GNOME vte 0.76.1 .
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
@@ -24,11 +23,10 @@ MULTI_PACKAGES=		-main -gtk4 -common
 WANTLIB-main += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject fribidi
 WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnutls gobject-2.0
 WANTLIB-main += gtk-3 icuuc intl lz4 m pango-1.0 pangocairo-1.0 pcre2-8
-WANTLIB-main += z
 
 WANTLIB-gtk4 += ${COMPILER_LIBCXX} c cairo cairo-gobject fribidi gdk_pixbuf-2.0
 WANTLIB-gtk4 += gio-2.0 glib-2.0 gnutls gobject-2.0 gtk-4 icuuc intl
-WANTLIB-gtk4 += lz4 m pango-1.0 pangocairo-1.0 pcre2-8 z
+WANTLIB-gtk4 += lz4 m pango-1.0 pangocairo-1.0 pcre2-8
 
 WANTLIB-common += c
 
