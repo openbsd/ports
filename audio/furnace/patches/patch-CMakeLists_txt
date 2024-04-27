@@ -1,0 +1,14 @@
+No -ldl on OpenBSD.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -989,8 +989,6 @@ if (WIN32)
+ elseif (APPLE)
+   find_library(COCOA Cocoa REQUIRED)
+   list(APPEND DEPENDENCIES_LIBRARIES ${COCOA})
+-else()
+-  list(APPEND DEPENDENCIES_LIBRARIES dl)
+ endif()
+ 
+ if (NOT MSVC)

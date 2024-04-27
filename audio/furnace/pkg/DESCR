@@ -1,0 +1,9 @@
+Furnace is a tool which allows you to create music using sound chips
+("chiptune"), most from the 8/16-bit era.
+
+It has a large selection of features and sound chips. From the NES, SNES
+and Genesis to ES5506, VIC-20 or even Arcade, Furnace has most likely
+covered your target with many presets to choose from.
+
+Every chip is emulated using many emulation cores, therefore the sound
+that Furnace produces is authentic to that of real hardware.
