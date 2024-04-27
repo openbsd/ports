@@ -1,6 +1,6 @@
 COMMENT =		suite of solitaire card games
 
-DIST_TUPLE =		gnome GNOME aisleriot 3.22.31 .
+DIST_TUPLE =		gnome GNOME aisleriot 3.22.32 .
 
 CATEGORIES =		games
 
