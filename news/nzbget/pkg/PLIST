@@ -18,7 +18,7 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/queue/*
 share/doc/nzbget/
 share/doc/nzbget/COPYING
-share/doc/nzbget/ChangeLog
+share/doc/nzbget/ChangeLog.md
 share/doc/nzbget/INSTALLATION.md
 share/examples/nzbget/
 share/examples/nzbget/nzbget.conf
@@ -30,19 +30,18 @@ share/examples/nzbget/nzbget.conf
 share/nzbget/
 share/nzbget/webui/
 share/nzbget/webui/config.js
+share/nzbget/webui/dark-theme.css
 share/nzbget/webui/downloads.js
 share/nzbget/webui/edit.js
 share/nzbget/webui/fasttable.js
 share/nzbget/webui/feed.js
 share/nzbget/webui/history.js
 share/nzbget/webui/img/
-share/nzbget/webui/img/download-16.ico
 share/nzbget/webui/img/download-anim-green-2x.png
 share/nzbget/webui/img/download-anim-orange-2x.png
 share/nzbget/webui/img/favicon-256x256-opaque.png
 share/nzbget/webui/img/favicon-256x256.png
 share/nzbget/webui/img/favicon.ico
-share/nzbget/webui/img/house-16.ico
 share/nzbget/webui/img/icons-2x.png
 share/nzbget/webui/img/icons.png
 share/nzbget/webui/img/transmit-file.gif
@@ -58,8 +57,10 @@ share/nzbget/webui/lib/elycharts.js
 share/nzbget/webui/lib/elycharts.min.js
 share/nzbget/webui/lib/jquery.js
 share/nzbget/webui/lib/jquery.min.js
+share/nzbget/webui/lib/material-icons.woff2
 share/nzbget/webui/lib/raphael.js
 share/nzbget/webui/lib/raphael.min.js
+share/nzbget/webui/light-theme.css
 share/nzbget/webui/messages.js
 share/nzbget/webui/status.js
 share/nzbget/webui/style.css

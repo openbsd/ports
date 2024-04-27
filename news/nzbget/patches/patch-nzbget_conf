@@ -19,7 +19,7 @@ Index: nzbget.conf
  
  # Port which NZBGet server and remote client use (1-65535).
  #
-@@ -455,7 +455,7 @@ UpdateCheck=stable
+@@ -456,7 +456,7 @@ UpdateCheck=stable
  # NOTE: This option has effect only if the program was started from
  # root-account, otherwise it is ignored and the daemon runs under
  # current user id.
