@@ -4,7 +4,7 @@ NOT_FOR_ARCHS =	${BE_ARCHS}
 COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
-V =		1.16.6
+V =		1.17.1
 
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 

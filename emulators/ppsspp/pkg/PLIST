@@ -99,6 +99,7 @@ share/ppsspp/assets/mime/ppsspp.xml
 share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
+share/ppsspp/assets/redump.csv
 share/ppsspp/assets/sfx_achievement_unlocked.wav
 share/ppsspp/assets/sfx_back.wav
 share/ppsspp/assets/sfx_confirm.wav

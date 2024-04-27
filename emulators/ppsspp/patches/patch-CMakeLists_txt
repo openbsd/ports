@@ -22,7 +22,7 @@ Index: CMakeLists.txt
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  
  	# Enable checking printf-like format strings (also works for logging functions)
-@@ -1134,7 +1134,7 @@ else()
+@@ -1147,7 +1147,7 @@ else()
  endif()
  
  # Arm platforms require at least libpng17.

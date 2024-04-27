@@ -1,7 +1,7 @@
 Index: UI/NativeApp.cpp
 --- UI/NativeApp.cpp.orig
 +++ UI/NativeApp.cpp
-@@ -416,12 +416,7 @@ void NativeInit(int argc, const char *argv[], const ch
+@@ -386,12 +386,7 @@ void NativeInit(int argc, const char *argv[], const ch
  	g_VFS.Register("", new DirectoryReader(Path(ASSETS_DIR)));
  #endif
  #if !defined(MOBILE_DEVICE) && !defined(_WIN32) && !PPSSPP_PLATFORM(SWITCH)
