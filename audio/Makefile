@@ -45,6 +45,7 @@
      SUBDIR += flite
      SUBDIR += fluidsynth
      SUBDIR += freealut
+     SUBDIR += furnace
      SUBDIR += generaluser-gs-soundfont
      SUBDIR += glyr
      SUBDIR += gmpc
