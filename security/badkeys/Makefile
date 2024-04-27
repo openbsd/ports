@@ -1,6 +1,6 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-MODPY_EGG_VERSION=	0.0.6
+MODPY_EGG_VERSION=	0.0.8
 # standalone; no py- prefix/FLAVOR
 DISTNAME=	badkeys-${MODPY_EGG_VERSION}
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 PORTHOME=	${WRKSRC}
 
