@@ -1,0 +1,18 @@
+Stop assuming that char is signed.
+
+Fixes:
+  error: constant expression evaluates to -3 which cannot be narrowed to type 'char' [-Wc++11-narrowing]
+on architectures where char is unsigned.
+
+Index: src/las2txt.cpp
+--- src/las2txt.cpp.orig
++++ src/las2txt.cpp
+@@ -565,7 +565,7 @@ static BOOL print_attribute(FILE* file, const LASheade
+   return TRUE;
+ }
+ 
+-enum extended_flags{HSV = -1, HSL = -2, HSV255 = -3, HSL255 = -4};
++enum extended_flags{HSV = static_cast<char>(-1), HSL = static_cast<char>(-2), HSV255 = static_cast<char>(-3), HSL255 = static_cast<char>(-4)};
+ 
+ static void parse_extended_flags(char *parse_string)
+ {

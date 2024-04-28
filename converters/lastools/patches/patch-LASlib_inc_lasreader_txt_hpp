@@ -1,0 +1,20 @@
+Stop assuming that char is signed.
+
+Index: LASlib/inc/lasreader_txt.hpp
+--- LASlib/inc/lasreader_txt.hpp.orig
++++ LASlib/inc/lasreader_txt.hpp
+@@ -119,10 +119,10 @@ class LASreaderTXT : public LASreader (private)
+ 	void clean();
+ 
+ 	enum extended_flag{
+-		HSV_H = -1,  HSV_S = -2,  HSV_V = -3, 
+-		HSV_h = -4,  HSV_s = -5,  HSV_v = -6, 
+-		HSL_H = -7,  HSL_S = -8,  HSL_L = -9, 
+-		HSL_h = -10, HSL_s = -11, HSL_l = -12};
++		HSV_H = static_cast<char>(-1),  HSV_S = static_cast<char>(-2),  HSV_V = static_cast<char>(-3), 
++		HSV_h = static_cast<char>(-4),  HSV_s = static_cast<char>(-5),  HSV_v = static_cast<char>(-6), 
++		HSL_H = static_cast<char>(-7),  HSL_S = static_cast<char>(-8),  HSL_L = static_cast<char>(-9), 
++		HSL_h = static_cast<char>(-10), HSL_s = static_cast<char>(-11), HSL_l = static_cast<char>(-12)};
+ };
+ 
+ class LASreaderTXTrescale : public virtual LASreaderTXT
