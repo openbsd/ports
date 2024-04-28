@@ -1,0 +1,7 @@
+rigg serves as a thin, OpenBSD-adapted runtime wrapper for independent games
+based on certain engines. rigg handles visibility of files by using unveil(2)
+to hide those that conflict with execution on OpenBSD. This solves a common
+problem with commercial games based on open-source frameworks like FNA, LibGDX,
+or HashLink. In addition, rigg also enforces a minimum-necessary filesystem view
+by default via unveil(2). Some basic engine configuration for OpenBSD like
+dllmap for mono(1) is included.
