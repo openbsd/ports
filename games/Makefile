@@ -271,6 +271,7 @@
      SUBDIR += renpy
      SUBDIR += returntotheroots
      SUBDIR += rftg
+     SUBDIR += rigg
      SUBDIR += ri-li
      SUBDIR += roadfighter
      SUBDIR += rocksndiamonds
