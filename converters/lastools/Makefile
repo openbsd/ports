@@ -2,6 +2,7 @@ COMMENT =	tools for LiDAR processing
 GH_ACCOUNT =	LAStools
 GH_PROJECT =	LAStools
 GH_TAGNAME =	v2.0.3
+REVISION =	0
 
 CATEGORIES =	converters textproc devel
 

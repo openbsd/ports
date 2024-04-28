@@ -1,0 +1,14 @@
+Index: LASzip/src/lasmessage.cpp
+--- LASzip/src/lasmessage.cpp.orig
++++ LASzip/src/lasmessage.cpp
+@@ -139,8 +139,8 @@ void las_default_message_handler(LAS_MESSAGE_TYPE type
+ 	if (!prefix.empty())
+ 	{
+ 		format_message(message, (unsigned)prefix.size());
+-		fprintf(stderr, prefix.c_str());
+-		fprintf(stderr, message.c_str());
++		fprintf(stderr, "%s", prefix.c_str());
++		fprintf(stderr, "%s", message.c_str());
+ 	}
+ 	else
+ 	{

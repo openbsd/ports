@@ -1,0 +1,12 @@
+Index: src/geoprojectionconverter.cpp
+--- src/geoprojectionconverter.cpp.orig
++++ src/geoprojectionconverter.cpp
+@@ -4366,7 +4366,7 @@ bool GeoProjectionConverter::set_VerticalCSTypeGeoKey(
+             // this is where the name ends
+             line[run] = '\0';
+           }
+-          if (description) sprintf(description, name);
++          if (description) sprintf(description, "%s", name);
+           run++;
+           // skip two commas
+           while (line[run] != ',') run++;
