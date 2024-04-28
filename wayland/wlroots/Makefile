@@ -1,6 +1,6 @@
 COMMENT =	modular Wayland compositor library
 
-V =		0.17.2
+V =		0.17.3
 EPOCH =		0
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
