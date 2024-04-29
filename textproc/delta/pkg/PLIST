@@ -1,1 +1,10 @@
 @bin bin/delta
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/delta
+share/fish/
+share/fish/completions/
+share/fish/completions/delta.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_delta
