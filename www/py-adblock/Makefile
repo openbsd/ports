@@ -3,9 +3,6 @@ BROKEN-i386 =	fatal runtime error: Rust cannot catch foreign exceptions
 #DPB_PROPERTIES = lonesome
 #.endif
 
-# pip error at do-install time
-BROKEN-riscv64 = ERROR: adblock-0.0.0-cp37-abi3-openbsd_7_5_riscv.whl is not a supported wheel on this platform.
-
 COMMENT =	Brave's adblock library
 
 GH_ACCOUNT =	ArniDagur
