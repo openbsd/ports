@@ -1,7 +1,7 @@
 Index: rsync.1.md
 --- rsync.1.md.orig
 +++ rsync.1.md
-@@ -4723,7 +4723,7 @@ file is included or excluded.
+@@ -4726,7 +4726,7 @@ file is included or excluded.
  
      The USER or LOGNAME environment variables are used to determine the default
      username sent to an rsync daemon.  If neither is set, the username defaults

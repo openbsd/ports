@@ -1,7 +1,6 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME =	rsync-3.2.7
-REVISION =	2
+DISTNAME =	rsync-3.3.0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
 

@@ -1,7 +1,7 @@
 Index: rsyncd.conf.5.md
 --- rsyncd.conf.5.md.orig
 +++ rsyncd.conf.5.md
-@@ -502,7 +502,7 @@ the values of parameters.  See the GLOBAL PARAMETERS s
+@@ -506,7 +506,7 @@ in the values of parameters.  See that section for det
      and from that module should take place as when the daemon was run as root.
      In combination with the "[gid](#)" parameter this determines what file
      permissions are available. The default when run by a super-user is to
@@ -10,7 +10,7 @@ Index: rsyncd.conf.5.md
      to not try to change the user.  See also the "[gid](#)" parameter.
  
      The RSYNC_USER_NAME environment variable may be used to request that rsync
-@@ -520,7 +520,7 @@ the values of parameters.  See the GLOBAL PARAMETERS s
+@@ -524,7 +524,7 @@ in the values of parameters.  See that section for det
      extra ones be set as supplemental groups.  You may also specify a "`*`" as
      the first gid in the list, which will be replaced by all the normal groups
      for the transfer's user (see "[uid](#)").  The default when run by a super-user
@@ -19,7 +19,7 @@ Index: rsyncd.conf.5.md
      other supplementary groups.  The default for a non-super-user is to not
      change any group attributes (and indeed, your OS may not allow a
      non-super-user to try to change their group settings).
-@@ -1198,8 +1198,8 @@ A simple rsyncd.conf file that allow anonymous rsync t
+@@ -1202,8 +1202,8 @@ A simple rsyncd.conf file that allow anonymous rsync t
  A more sophisticated example would be:
  
  > ```
