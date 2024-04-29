@@ -1,8 +1,8 @@
 COMMENT=	X Render extension test suite
 
-DISTNAME=	rendercheck-1.5
+DISTNAME=	rendercheck-1.6
 CATEGORIES=	x11
-REVISION=	0
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://www.freedesktop.org/
 
@@ -11,10 +11,10 @@ MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
 # X11/MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xrender c xcb
+MODULES=	devel/meson
 
-SITES=		${SITE_XORG:=app/}
+WANTLIB=	X11 Xext Xrender c
 
-CONFIGURE_STYLE=	gnu
+SITES=		${SITE_XORG:=test/}
 
 .include <bsd.port.mk>
