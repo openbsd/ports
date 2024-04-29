@@ -1,12 +1,11 @@
-# ring-v0.16.20 does not support these archs
-NOT_FOR_ARCHS =			powerpc64 riscv64 sparc64
+# ring-v0.17 does not support this arch
+NOT_FOR_ARCHS =			sparc64
 
 COMMENT =			modern Lua linter written in Rust
 
 GH_ACCOUNT =			Kampfkarren
 GH_PROJECT =			selene
-GH_TAGNAME =			0.25.0
-REVISION =			0
+GH_TAGNAME =			0.27.1
 
 CATEGORIES =			devel
 
@@ -20,8 +19,6 @@ PERMIT_PACKAGE =		Yes
 MODULES =			devel/cargo
 CONFIGURE_STYLE =		cargo
 SEPARATE_BUILD =		Yes
-
-BUILD_DEPENDS =			security/rust-ring
 
 MODCARGO_INSTALL_TARGET_PATHS =	selene
 
