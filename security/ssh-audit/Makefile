@@ -1,8 +1,9 @@
 COMMENT =		ssh configuration security auditing tool
 
-MODPY_EGG_VERSION =	3.1.0
+MODPY_EGG_VERSION =	3.2.0
 
-DISTNAME =		ssh-audit-${MODPY_EGG_VERSION}
+DISTNAME =		ssh_audit-${MODPY_EGG_VERSION}
+PKGNAME =		ssh-audit-${MODPY_EGG_VERSION}
 
 CATEGORIES =		security
 
