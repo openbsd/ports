@@ -1,0 +1,15 @@
+xar: Fix another infinite loop and expat error handling
+https://github.com/libarchive/libarchive/commit/b910cb70d4c1b311c9d85cd536a6c91647c43df7
+
+Index: libarchive/test/test_read_format_xar_doublelink.c
+--- libarchive/test/test_read_format_xar_doublelink.c.orig
++++ libarchive/test/test_read_format_xar_doublelink.c
+@@ -47,7 +47,7 @@ DEFINE_TEST(test_read_format_xar_doublelink)
+ 
+ 	assertA(ARCHIVE_FATAL == archive_read_next_header(a, &ae));
+ 	assertEqualString(archive_error_string(a),
+-		"File with multiple link targets");
++		"File with multiple link attributes");
+ 	assert(archive_errno(a) != 0);
+ 
+ 	assertEqualIntA(a, ARCHIVE_OK, archive_read_close(a));
