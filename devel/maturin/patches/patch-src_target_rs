@@ -1,0 +1,17 @@
+Fix arch-specific wheel name, pip install really wants "riscv64" on OpenBSD.
+Example:
+
+  ERROR: jellyfish-1.0.3-cp310-cp310-openbsd_7_5_riscv.whl is not a supported wheel on this platform.
+
+Index: src/target.rs
+--- src/target.rs.orig
++++ src/target.rs
+@@ -117,7 +117,7 @@ impl Arch {
+             Arch::Powerpc | Arch::Powerpc64Le | Arch::Powerpc64 => "powerpc",
+             Arch::X86 => "i386",
+             Arch::X86_64 => "amd64",
+-            Arch::Riscv32 | Arch::Riscv64 => "riscv",
++            Arch::Riscv32 | Arch::Riscv64 => "riscv64",
+             Arch::Mips64el | Arch::Mips64 | Arch::Mipsel | Arch::Mips => "mips",
+             // sparc64 is unsupported since FreeBSD 13.0
+             Arch::Sparc64 => "sparc64",
