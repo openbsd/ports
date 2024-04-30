@@ -872,6 +872,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid.txt
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid_failure.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/add_threepid_success.html
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/already_in_use.html
+lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/already_in_use.txt
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/auth_success.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/invalid_token.html
 lib/python${MODPY_VERSION}/site-packages/synapse/res/templates/mail-Element.css
@@ -1193,6 +1195,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}pick_idp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}pick_username.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}pick_username.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}rendezvous.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}rendezvous.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}sso_register.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}sso_register.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}unsubscribe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1213,6 +1217,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/oidc/callba
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/password_reset.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/pick_idp.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/pick_username.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/rendezvous.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/saml2/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/saml2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/saml2/${MODPY_PYCACHE}/
@@ -2121,6 +2126,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/acl.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/events.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/push.pyi
+lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust/rendezvous.pyi
 lib/python${MODPY_VERSION}/site-packages/synapse/types/
 lib/python${MODPY_VERSION}/site-packages/synapse/types/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/types/${MODPY_PYCACHE}/
