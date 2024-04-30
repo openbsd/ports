@@ -1,3 +1,5 @@
+BROKEN-i386 =		linker/relocation errors following update to ocaml 4.14.2
+
 ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
