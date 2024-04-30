@@ -2,7 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.44.0
+V =		2.45.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
