@@ -16,6 +16,7 @@ vpn-user-portal/locale/empty.php
 vpn-user-portal/locale/es-LA.php
 vpn-user-portal/locale/et-EE.php
 vpn-user-portal/locale/fr-FR.php
+vpn-user-portal/locale/lt-LT.php
 vpn-user-portal/locale/nb-NO.php
 vpn-user-portal/locale/nl-NL.php
 vpn-user-portal/locale/pl-PL.php
@@ -85,6 +86,7 @@ vpn-user-portal/src/Exception/ServerConfigException.php
 vpn-user-portal/src/Exception/TplException.php
 vpn-user-portal/src/Expiry.php
 vpn-user-portal/src/FileIO.php
+vpn-user-portal/src/GeoIp.php
 vpn-user-portal/src/Hex.php
 vpn-user-portal/src/Http/
 vpn-user-portal/src/Http/AbstractHook.php
@@ -157,6 +159,7 @@ vpn-user-portal/src/HttpClient/HttpClientInterface.php
 vpn-user-portal/src/HttpClient/HttpClientRequest.php
 vpn-user-portal/src/HttpClient/HttpClientResponse.php
 vpn-user-portal/src/Ip.php
+vpn-user-portal/src/IpInfo.php
 vpn-user-portal/src/IpNetList.php
 vpn-user-portal/src/Json.php
 vpn-user-portal/src/LdapClient.php
