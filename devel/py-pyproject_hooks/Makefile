@@ -1,6 +1,7 @@
 COMMENT=	wrappers to call pyproject.toml-based build backend hooks
 
-MODPY_EGG_VERSION=	1.1.0
+MODPY_EGG_VERSION=	1.0.0
+EPOCH=		0
 
 DISTNAME=	pyproject_hooks-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
