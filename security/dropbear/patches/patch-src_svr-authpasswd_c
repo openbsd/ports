@@ -6,9 +6,9 @@ error is logged when the password is blank.
 Swap the "locked password" and "blank password" checks, so that the
 correct message is logged for a blank password.
 
-Index: svr-authpasswd.c
---- svr-authpasswd.c.orig
-+++ svr-authpasswd.c
+Index: src/svr-authpasswd.c
+--- src/svr-authpasswd.c.orig
++++ src/svr-authpasswd.c
 @@ -89,17 +89,17 @@ void svr_auth_password(int valid_user) {
  		return;
  	}

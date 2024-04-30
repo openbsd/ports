@@ -1,7 +1,7 @@
-Index: default_options.h
---- default_options.h.orig
-+++ default_options.h
-@@ -57,7 +57,7 @@ IMPORTANT: Some options will require "make clean" afte
+Index: src/default_options.h
+--- src/default_options.h.orig
++++ src/default_options.h
+@@ -60,7 +60,7 @@ IMPORTANT: Some options will require "make clean" afte
   * several kB in binary size however will make the symmetrical ciphers and hashes
   * slower, perhaps by 50%. Recommended for small systems that aren't doing
   * much traffic. */
@@ -10,7 +10,7 @@ Index: default_options.h
  
  /* Enable X11 Forwarding - server only */
  #define DROPBEAR_X11FWD 0
-@@ -302,7 +302,7 @@ group1 in Dropbear server too */
+@@ -311,7 +311,7 @@ group1 in Dropbear server too */
  
  /* The command to invoke for xauth when using X11 forwarding.
   * "-q" for quiet */
@@ -19,16 +19,16 @@ Index: default_options.h
  
  
  /* If you want to enable running an sftp server (such as the one included with
-@@ -315,7 +315,7 @@ group1 in Dropbear server too */
+@@ -324,7 +324,7 @@ group1 in Dropbear server too */
  
  /* This is used by the scp binary when used as a client binary. If you're
   * not using the Dropbear client, you'll need to change it */
 -#define DROPBEAR_PATH_SSH_PROGRAM "/usr/bin/dbclient"
 +#define DROPBEAR_PATH_SSH_PROGRAM "/usr/local/bin/dbclient"
  
- /* Whether to log commands executed by a client. This only logs the 
-  * (single) command sent to the server, not what a user did in a 
-@@ -351,7 +351,7 @@ be overridden at runtime with -I. 0 disables idle time
+ /* Whether to log commands executed by a client. This only logs the
+  * (single) command sent to the server, not what a user did in a
+@@ -360,7 +360,7 @@ be overridden at runtime with -I. 0 disables idle time
  #define DEFAULT_IDLE_TIMEOUT 0
  
  /* The default path. This will often get replaced by the shell */

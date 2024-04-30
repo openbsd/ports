@@ -1,7 +1,7 @@
-Index: common-session.c
---- common-session.c.orig
-+++ common-session.c
-@@ -627,7 +627,7 @@ void fill_passwd(const char* username) {
+Index: src/common-session.c
+--- src/common-session.c.orig
++++ src/common-session.c
+@@ -641,7 +641,7 @@ void fill_passwd(const char* username) {
  	if (ses.authstate.pw_passwd)
  		m_free(ses.authstate.pw_passwd);
  
