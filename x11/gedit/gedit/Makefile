@@ -1,12 +1,12 @@
 COMMENT=		text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		46.2
-REVISION=		0
+GNOME_VERSION=		47.0
 
-WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gtksourceview-300
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 gspell-1
-WANTLIB += gtk-3 intl m pango-1.0 peas-1.0 peas-gtk-1.0 tepl-6
+WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
+WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 intl m pango-1.0
+WANTLIB += peas-1.0 peas-gtk-1.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c

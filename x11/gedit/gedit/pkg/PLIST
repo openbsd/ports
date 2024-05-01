@@ -1,28 +1,28 @@
 @pkgpath x11/gnome/gedit
 @bin bin/gedit
-include/gedit-46/
-include/gedit-46/gedit/
-include/gedit-46/gedit/gedit-app-activatable.h
-include/gedit-46/gedit/gedit-app.h
-include/gedit-46/gedit/gedit-commands.h
-include/gedit-46/gedit/gedit-debug.h
-include/gedit-46/gedit/gedit-document.h
-include/gedit-46/gedit/gedit-encodings-combo-box.h
-include/gedit-46/gedit/gedit-enum-types.h
-include/gedit-46/gedit/gedit-menu-extension.h
-include/gedit-46/gedit/gedit-message-bus.h
-include/gedit-46/gedit/gedit-message.h
-include/gedit-46/gedit/gedit-statusbar.h
-include/gedit-46/gedit/gedit-tab.h
-include/gedit-46/gedit/gedit-utils.h
-include/gedit-46/gedit/gedit-view-activatable.h
-include/gedit-46/gedit/gedit-view.h
-include/gedit-46/gedit/gedit-window-activatable.h
-include/gedit-46/gedit/gedit-window.h
+include/gedit-47/
+include/gedit-47/gedit/
+include/gedit-47/gedit/gedit-app-activatable.h
+include/gedit-47/gedit/gedit-app.h
+include/gedit-47/gedit/gedit-commands.h
+include/gedit-47/gedit/gedit-debug.h
+include/gedit-47/gedit/gedit-document.h
+include/gedit-47/gedit/gedit-encodings-combo-box.h
+include/gedit-47/gedit/gedit-enum-types.h
+include/gedit-47/gedit/gedit-menu-extension.h
+include/gedit-47/gedit/gedit-message-bus.h
+include/gedit-47/gedit/gedit-message.h
+include/gedit-47/gedit/gedit-statusbar.h
+include/gedit-47/gedit/gedit-tab.h
+include/gedit-47/gedit/gedit-utils.h
+include/gedit-47/gedit/gedit-view-activatable.h
+include/gedit-47/gedit/gedit-view.h
+include/gedit-47/gedit/gedit-window-activatable.h
+include/gedit-47/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
-@so lib/gedit/libgedit-46.so
+@so lib/gedit/libgedit-47.so
 lib/gedit/plugins/
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
@@ -153,6 +153,7 @@ share/gtk-doc/html/gedit/GeditMessage.html
 share/gtk-doc/html/gedit/GeditMessageBus.html
 share/gtk-doc/html/gedit/GeditStatusbar.html
 share/gtk-doc/html/gedit/GeditTab.html
+share/gtk-doc/html/gedit/GeditView.html
 share/gtk-doc/html/gedit/GeditViewActivatable.html
 share/gtk-doc/html/gedit/GeditWindow.html
 share/gtk-doc/html/gedit/GeditWindowActivatable.html
@@ -161,11 +162,12 @@ share/gtk-doc/html/gedit/annotation-glossary.html
 share/gtk-doc/html/gedit/api-breaks.html
 share/gtk-doc/html/gedit/api-reference.html
 share/gtk-doc/html/gedit/ch01.html
+share/gtk-doc/html/gedit/ch02.html
+share/gtk-doc/html/gedit/ch03.html
 share/gtk-doc/html/gedit/gedit-GeditCommands.html
 share/gtk-doc/html/gedit/gedit-gedit-debug.html
 share/gtk-doc/html/gedit/gedit-gedit-menu-extension.html
 share/gtk-doc/html/gedit/gedit-gedit-utils.html
-share/gtk-doc/html/gedit/gedit-gedit-view.html
 share/gtk-doc/html/gedit/gedit.devhelp2
 share/gtk-doc/html/gedit/home.png
 share/gtk-doc/html/gedit/index.html
@@ -175,6 +177,7 @@ share/gtk-doc/html/gedit/ix03.html
 share/gtk-doc/html/gedit/ix04.html
 share/gtk-doc/html/gedit/ix05.html
 share/gtk-doc/html/gedit/ix06.html
+share/gtk-doc/html/gedit/ix07.html
 share/gtk-doc/html/gedit/left-insensitive.png
 share/gtk-doc/html/gedit/left.png
 share/gtk-doc/html/gedit/right-insensitive.png
@@ -187,7 +190,7 @@ share/help/C/
 share/help/C/gedit/
 share/help/C/gedit/figures/
 share/help/C/gedit/figures/gedit-html-snippet.png
-share/help/C/gedit/figures/gedit.svg
+share/help/C/gedit/figures/gedit-icon-24x24.png
 share/help/C/gedit/figures/gedit3-screenshot.png
 share/help/C/gedit/gedit-brief-intro.page
 share/help/C/gedit/gedit-change-color-scheme.page
@@ -228,7 +231,7 @@ share/help/ar/
 share/help/ar/gedit/
 share/help/ar/gedit/figures/
 share/help/ar/gedit/figures/gedit-html-snippet.png
-share/help/ar/gedit/figures/gedit.svg
+share/help/ar/gedit/figures/gedit-icon-24x24.png
 share/help/ar/gedit/figures/gedit3-screenshot.png
 share/help/ar/gedit/gedit-brief-intro.page
 share/help/ar/gedit/gedit-change-color-scheme.page
@@ -269,7 +272,7 @@ share/help/bg/
 share/help/bg/gedit/
 share/help/bg/gedit/figures/
 share/help/bg/gedit/figures/gedit-html-snippet.png
-share/help/bg/gedit/figures/gedit.svg
+share/help/bg/gedit/figures/gedit-icon-24x24.png
 share/help/bg/gedit/figures/gedit3-screenshot.png
 share/help/bg/gedit/gedit-brief-intro.page
 share/help/bg/gedit/gedit-change-color-scheme.page
@@ -310,7 +313,7 @@ share/help/ca/
 share/help/ca/gedit/
 share/help/ca/gedit/figures/
 share/help/ca/gedit/figures/gedit-html-snippet.png
-share/help/ca/gedit/figures/gedit.svg
+share/help/ca/gedit/figures/gedit-icon-24x24.png
 share/help/ca/gedit/figures/gedit3-screenshot.png
 share/help/ca/gedit/gedit-brief-intro.page
 share/help/ca/gedit/gedit-change-color-scheme.page
@@ -351,7 +354,7 @@ share/help/cs/
 share/help/cs/gedit/
 share/help/cs/gedit/figures/
 share/help/cs/gedit/figures/gedit-html-snippet.png
-share/help/cs/gedit/figures/gedit.svg
+share/help/cs/gedit/figures/gedit-icon-24x24.png
 share/help/cs/gedit/figures/gedit3-screenshot.png
 share/help/cs/gedit/gedit-brief-intro.page
 share/help/cs/gedit/gedit-change-color-scheme.page
@@ -392,7 +395,7 @@ share/help/da/
 share/help/da/gedit/
 share/help/da/gedit/figures/
 share/help/da/gedit/figures/gedit-html-snippet.png
-share/help/da/gedit/figures/gedit.svg
+share/help/da/gedit/figures/gedit-icon-24x24.png
 share/help/da/gedit/figures/gedit3-screenshot.png
 share/help/da/gedit/gedit-brief-intro.page
 share/help/da/gedit/gedit-change-color-scheme.page
@@ -433,7 +436,7 @@ share/help/de/
 share/help/de/gedit/
 share/help/de/gedit/figures/
 share/help/de/gedit/figures/gedit-html-snippet.png
-share/help/de/gedit/figures/gedit.svg
+share/help/de/gedit/figures/gedit-icon-24x24.png
 share/help/de/gedit/figures/gedit3-screenshot.png
 share/help/de/gedit/gedit-brief-intro.page
 share/help/de/gedit/gedit-change-color-scheme.page
@@ -474,7 +477,7 @@ share/help/el/
 share/help/el/gedit/
 share/help/el/gedit/figures/
 share/help/el/gedit/figures/gedit-html-snippet.png
-share/help/el/gedit/figures/gedit.svg
+share/help/el/gedit/figures/gedit-icon-24x24.png
 share/help/el/gedit/figures/gedit3-screenshot.png
 share/help/el/gedit/gedit-brief-intro.page
 share/help/el/gedit/gedit-change-color-scheme.page
@@ -515,7 +518,7 @@ share/help/en_GB/
 share/help/en_GB/gedit/
 share/help/en_GB/gedit/figures/
 share/help/en_GB/gedit/figures/gedit-html-snippet.png
-share/help/en_GB/gedit/figures/gedit.svg
+share/help/en_GB/gedit/figures/gedit-icon-24x24.png
 share/help/en_GB/gedit/figures/gedit3-screenshot.png
 share/help/en_GB/gedit/gedit-brief-intro.page
 share/help/en_GB/gedit/gedit-change-color-scheme.page
@@ -556,7 +559,7 @@ share/help/es/
 share/help/es/gedit/
 share/help/es/gedit/figures/
 share/help/es/gedit/figures/gedit-html-snippet.png
-share/help/es/gedit/figures/gedit.svg
+share/help/es/gedit/figures/gedit-icon-24x24.png
 share/help/es/gedit/figures/gedit3-screenshot.png
 share/help/es/gedit/gedit-brief-intro.page
 share/help/es/gedit/gedit-change-color-scheme.page
@@ -597,7 +600,7 @@ share/help/eu/
 share/help/eu/gedit/
 share/help/eu/gedit/figures/
 share/help/eu/gedit/figures/gedit-html-snippet.png
-share/help/eu/gedit/figures/gedit.svg
+share/help/eu/gedit/figures/gedit-icon-24x24.png
 share/help/eu/gedit/figures/gedit3-screenshot.png
 share/help/eu/gedit/gedit-brief-intro.page
 share/help/eu/gedit/gedit-change-color-scheme.page
@@ -638,7 +641,7 @@ share/help/fi/
 share/help/fi/gedit/
 share/help/fi/gedit/figures/
 share/help/fi/gedit/figures/gedit-html-snippet.png
-share/help/fi/gedit/figures/gedit.svg
+share/help/fi/gedit/figures/gedit-icon-24x24.png
 share/help/fi/gedit/figures/gedit3-screenshot.png
 share/help/fi/gedit/gedit-brief-intro.page
 share/help/fi/gedit/gedit-change-color-scheme.page
@@ -679,7 +682,7 @@ share/help/fr/
 share/help/fr/gedit/
 share/help/fr/gedit/figures/
 share/help/fr/gedit/figures/gedit-html-snippet.png
-share/help/fr/gedit/figures/gedit.svg
+share/help/fr/gedit/figures/gedit-icon-24x24.png
 share/help/fr/gedit/figures/gedit3-screenshot.png
 share/help/fr/gedit/gedit-brief-intro.page
 share/help/fr/gedit/gedit-change-color-scheme.page
@@ -720,7 +723,7 @@ share/help/gl/
 share/help/gl/gedit/
 share/help/gl/gedit/figures/
 share/help/gl/gedit/figures/gedit-html-snippet.png
-share/help/gl/gedit/figures/gedit.svg
+share/help/gl/gedit/figures/gedit-icon-24x24.png
 share/help/gl/gedit/figures/gedit3-screenshot.png
 share/help/gl/gedit/gedit-brief-intro.page
 share/help/gl/gedit/gedit-change-color-scheme.page
@@ -761,7 +764,7 @@ share/help/hu/
 share/help/hu/gedit/
 share/help/hu/gedit/figures/
 share/help/hu/gedit/figures/gedit-html-snippet.png
-share/help/hu/gedit/figures/gedit.svg
+share/help/hu/gedit/figures/gedit-icon-24x24.png
 share/help/hu/gedit/figures/gedit3-screenshot.png
 share/help/hu/gedit/gedit-brief-intro.page
 share/help/hu/gedit/gedit-change-color-scheme.page
@@ -802,7 +805,7 @@ share/help/id/
 share/help/id/gedit/
 share/help/id/gedit/figures/
 share/help/id/gedit/figures/gedit-html-snippet.png
-share/help/id/gedit/figures/gedit.svg
+share/help/id/gedit/figures/gedit-icon-24x24.png
 share/help/id/gedit/figures/gedit3-screenshot.png
 share/help/id/gedit/gedit-brief-intro.page
 share/help/id/gedit/gedit-change-color-scheme.page
@@ -843,7 +846,7 @@ share/help/it/
 share/help/it/gedit/
 share/help/it/gedit/figures/
 share/help/it/gedit/figures/gedit-html-snippet.png
-share/help/it/gedit/figures/gedit.svg
+share/help/it/gedit/figures/gedit-icon-24x24.png
 share/help/it/gedit/figures/gedit3-screenshot.png
 share/help/it/gedit/gedit-brief-intro.page
 share/help/it/gedit/gedit-change-color-scheme.page
@@ -884,7 +887,7 @@ share/help/ja/
 share/help/ja/gedit/
 share/help/ja/gedit/figures/
 share/help/ja/gedit/figures/gedit-html-snippet.png
-share/help/ja/gedit/figures/gedit.svg
+share/help/ja/gedit/figures/gedit-icon-24x24.png
 share/help/ja/gedit/figures/gedit3-screenshot.png
 share/help/ja/gedit/gedit-brief-intro.page
 share/help/ja/gedit/gedit-change-color-scheme.page
@@ -925,7 +928,7 @@ share/help/ko/
 share/help/ko/gedit/
 share/help/ko/gedit/figures/
 share/help/ko/gedit/figures/gedit-html-snippet.png
-share/help/ko/gedit/figures/gedit.svg
+share/help/ko/gedit/figures/gedit-icon-24x24.png
 share/help/ko/gedit/figures/gedit3-screenshot.png
 share/help/ko/gedit/gedit-brief-intro.page
 share/help/ko/gedit/gedit-change-color-scheme.page
@@ -966,7 +969,7 @@ share/help/lv/
 share/help/lv/gedit/
 share/help/lv/gedit/figures/
 share/help/lv/gedit/figures/gedit-html-snippet.png
-share/help/lv/gedit/figures/gedit.svg
+share/help/lv/gedit/figures/gedit-icon-24x24.png
 share/help/lv/gedit/figures/gedit3-screenshot.png
 share/help/lv/gedit/gedit-brief-intro.page
 share/help/lv/gedit/gedit-change-color-scheme.page
@@ -1007,7 +1010,7 @@ share/help/oc/
 share/help/oc/gedit/
 share/help/oc/gedit/figures/
 share/help/oc/gedit/figures/gedit-html-snippet.png
-share/help/oc/gedit/figures/gedit.svg
+share/help/oc/gedit/figures/gedit-icon-24x24.png
 share/help/oc/gedit/figures/gedit3-screenshot.png
 share/help/oc/gedit/gedit-brief-intro.page
 share/help/oc/gedit/gedit-change-color-scheme.page
@@ -1048,7 +1051,7 @@ share/help/pl/
 share/help/pl/gedit/
 share/help/pl/gedit/figures/
 share/help/pl/gedit/figures/gedit-html-snippet.png
-share/help/pl/gedit/figures/gedit.svg
+share/help/pl/gedit/figures/gedit-icon-24x24.png
 share/help/pl/gedit/figures/gedit3-screenshot.png
 share/help/pl/gedit/gedit-brief-intro.page
 share/help/pl/gedit/gedit-change-color-scheme.page
@@ -1089,7 +1092,7 @@ share/help/pt_BR/
 share/help/pt_BR/gedit/
 share/help/pt_BR/gedit/figures/
 share/help/pt_BR/gedit/figures/gedit-html-snippet.png
-share/help/pt_BR/gedit/figures/gedit.svg
+share/help/pt_BR/gedit/figures/gedit-icon-24x24.png
 share/help/pt_BR/gedit/figures/gedit3-screenshot.png
 share/help/pt_BR/gedit/gedit-brief-intro.page
 share/help/pt_BR/gedit/gedit-change-color-scheme.page
@@ -1130,7 +1133,7 @@ share/help/ro/
 share/help/ro/gedit/
 share/help/ro/gedit/figures/
 share/help/ro/gedit/figures/gedit-html-snippet.png
-share/help/ro/gedit/figures/gedit.svg
+share/help/ro/gedit/figures/gedit-icon-24x24.png
 share/help/ro/gedit/figures/gedit3-screenshot.png
 share/help/ro/gedit/gedit-brief-intro.page
 share/help/ro/gedit/gedit-change-color-scheme.page
@@ -1171,7 +1174,7 @@ share/help/ru/
 share/help/ru/gedit/
 share/help/ru/gedit/figures/
 share/help/ru/gedit/figures/gedit-html-snippet.png
-share/help/ru/gedit/figures/gedit.svg
+share/help/ru/gedit/figures/gedit-icon-24x24.png
 share/help/ru/gedit/figures/gedit3-screenshot.png
 share/help/ru/gedit/gedit-brief-intro.page
 share/help/ru/gedit/gedit-change-color-scheme.page
@@ -1212,7 +1215,7 @@ share/help/sl/
 share/help/sl/gedit/
 share/help/sl/gedit/figures/
 share/help/sl/gedit/figures/gedit-html-snippet.png
-share/help/sl/gedit/figures/gedit.svg
+share/help/sl/gedit/figures/gedit-icon-24x24.png
 share/help/sl/gedit/figures/gedit3-screenshot.png
 share/help/sl/gedit/gedit-brief-intro.page
 share/help/sl/gedit/gedit-change-color-scheme.page
@@ -1253,7 +1256,7 @@ share/help/sv/
 share/help/sv/gedit/
 share/help/sv/gedit/figures/
 share/help/sv/gedit/figures/gedit-html-snippet.png
-share/help/sv/gedit/figures/gedit.svg
+share/help/sv/gedit/figures/gedit-icon-24x24.png
 share/help/sv/gedit/figures/gedit3-screenshot.png
 share/help/sv/gedit/gedit-brief-intro.page
 share/help/sv/gedit/gedit-change-color-scheme.page
@@ -1294,7 +1297,7 @@ share/help/te/
 share/help/te/gedit/
 share/help/te/gedit/figures/
 share/help/te/gedit/figures/gedit-html-snippet.png
-share/help/te/gedit/figures/gedit.svg
+share/help/te/gedit/figures/gedit-icon-24x24.png
 share/help/te/gedit/figures/gedit3-screenshot.png
 share/help/te/gedit/gedit-brief-intro.page
 share/help/te/gedit/gedit-change-color-scheme.page
@@ -1335,7 +1338,7 @@ share/help/th/
 share/help/th/gedit/
 share/help/th/gedit/figures/
 share/help/th/gedit/figures/gedit-html-snippet.png
-share/help/th/gedit/figures/gedit.svg
+share/help/th/gedit/figures/gedit-icon-24x24.png
 share/help/th/gedit/figures/gedit3-screenshot.png
 share/help/th/gedit/gedit-brief-intro.page
 share/help/th/gedit/gedit-change-color-scheme.page
@@ -1376,7 +1379,7 @@ share/help/uk/
 share/help/uk/gedit/
 share/help/uk/gedit/figures/
 share/help/uk/gedit/figures/gedit-html-snippet.png
-share/help/uk/gedit/figures/gedit.svg
+share/help/uk/gedit/figures/gedit-icon-24x24.png
 share/help/uk/gedit/figures/gedit3-screenshot.png
 share/help/uk/gedit/gedit-brief-intro.page
 share/help/uk/gedit/gedit-change-color-scheme.page
@@ -1417,7 +1420,7 @@ share/help/zh_CN/
 share/help/zh_CN/gedit/
 share/help/zh_CN/gedit/figures/
 share/help/zh_CN/gedit/figures/gedit-html-snippet.png
-share/help/zh_CN/gedit/figures/gedit.svg
+share/help/zh_CN/gedit/figures/gedit-icon-24x24.png
 share/help/zh_CN/gedit/figures/gedit3-screenshot.png
 share/help/zh_CN/gedit/gedit-brief-intro.page
 share/help/zh_CN/gedit/gedit-change-color-scheme.page
@@ -1458,7 +1461,7 @@ share/help/zh_HK/
 share/help/zh_HK/gedit/
 share/help/zh_HK/gedit/figures/
 share/help/zh_HK/gedit/figures/gedit-html-snippet.png
-share/help/zh_HK/gedit/figures/gedit.svg
+share/help/zh_HK/gedit/figures/gedit-icon-24x24.png
 share/help/zh_HK/gedit/figures/gedit3-screenshot.png
 share/help/zh_HK/gedit/gedit-brief-intro.page
 share/help/zh_HK/gedit/gedit-change-color-scheme.page
@@ -1499,7 +1502,7 @@ share/help/zh_TW/
 share/help/zh_TW/gedit/
 share/help/zh_TW/gedit/figures/
 share/help/zh_TW/gedit/figures/gedit-html-snippet.png
-share/help/zh_TW/gedit/figures/gedit.svg
+share/help/zh_TW/gedit/figures/gedit-icon-24x24.png
 share/help/zh_TW/gedit/figures/gedit3-screenshot.png
 share/help/zh_TW/gedit/gedit-brief-intro.page
 share/help/zh_TW/gedit/gedit-change-color-scheme.page
@@ -1536,7 +1539,12 @@ share/help/zh_TW/gedit/gedit-tab-groups.page
 share/help/zh_TW/gedit/gedit-tabs.page
 share/help/zh_TW/gedit/gedit-undo-redo.page
 share/help/zh_TW/gedit/index.page
-share/icons/hicolor/scalable/apps/org.gnome.gedit.svg
+share/icons/hicolor/16x16/apps/org.gnome.gedit.png
+share/icons/hicolor/22x22/apps/org.gnome.gedit.png
+share/icons/hicolor/24x24/apps/org.gnome.gedit.png
+share/icons/hicolor/256x256/apps/org.gnome.gedit.png
+share/icons/hicolor/32x32/apps/org.gnome.gedit.png
+share/icons/hicolor/48x48/apps/org.gnome.gedit.png
 share/icons/hicolor/symbolic/apps/org.gnome.gedit-symbolic.svg
 share/locale/af/LC_MESSAGES/gedit.mo
 share/locale/am/LC_MESSAGES/gedit.mo
@@ -1645,7 +1653,7 @@ share/locale/xh/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
 share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
-share/metainfo/org.gnome.gedit.appdata.xml
+share/metainfo/org.gnome.gedit.metainfo.xml
 @tag update-desktop-database
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
