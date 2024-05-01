@@ -3,8 +3,6 @@ BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 
 # was added in 2020 while we used clang 8 so maybe obsolete now
 #BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
 
-DPB_PROPERTIES=	parallel
-
 COMMENT=	U-Boot firmware
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${SOC}-${VERSION:S/-//}
