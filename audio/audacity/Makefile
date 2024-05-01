@@ -5,6 +5,7 @@ COMMENT=	free audio editor
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-3.5.1
+REVISION=	0
 DISTNAME=	${GH_TAGNAME:L}
 
 CATEGORIES=	audio
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_pch:STRING=off \
 		-Daudacity_use_portaudio:STRING=system \
 		-Daudacity_use_portsmf:STRING=local \
+		-Daudacity_use_sbsms:STRING=local \
 		-Daudacity_use_soundtouch:STRING=system \
 		-Daudacity_use_soxr:STRING=system \
 		-Daudacity_use_twolame:STRING=off \
@@ -110,18 +112,11 @@ CONFIGURE_ARGS +=	-DCCACHE_PROGRAM:BOOL=OFF
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS +=	-DHAVE_MMX:BOOL=OFF
 CONFIGURE_ARGS +=	-DHAVE_SSE:BOOL=OFF
-.endif
-
-.if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	-DHAVE_SSE2:BOOL=OFF
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
-# sse-related build failures; untested but it may alternatively be possible
-# to build sbsms if SSE is disabled for the port as a whole on i386
-CONFIGURE_ARGS +=	-Daudacity_use_sbsms:STRING=off
-.else
-CONFIGURE_ARGS +=	-Daudacity_use_sbsms:STRING=local
+CFLAGS += -msse2
 .endif
 
 NO_TEST=	Yes
