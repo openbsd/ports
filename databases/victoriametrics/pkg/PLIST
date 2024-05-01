@@ -1,10 +1,11 @@
 @newgroup _vmetrics:872
 @newuser _vmetrics:872:_vmetrics::VictoriaMetrics:${LOCALSTATEDIR}/db/vmetrics:/sbin/nologin
-@sample ${SYSCONFDIR}/vmetrics/
+@sample ${SYSCONFDIR}/victoriametrics/
 @rcscript ${RCDIR}/vmetrics
 @bin bin/vmagent
 @bin bin/vmetrics
 @bin bin/vmetricsalert
+@bin bin/vmetricsalert-tool
 @bin bin/vmetricsauth
 @bin bin/vmetricsbackup
 @bin bin/vmetricsctl
@@ -13,33 +14,33 @@ share/doc/vmetrics/
 share/doc/vmetrics/LICENSE
 share/doc/vmetrics/README.md
 share/doc/vmetrics/vmagent.md
-share/doc/vmetrics/vmagent.png
+share/doc/vmetrics/vmagent.webp
+share/doc/vmetrics/vmalert-tool.md
 share/doc/vmetrics/vmalert.md
-share/doc/vmetrics/vmalert_cluster.png
-share/doc/vmetrics/vmalert_ha.png
-share/doc/vmetrics/vmalert_multicluster.png
-share/doc/vmetrics/vmalert_multiple_rw.png
-share/doc/vmetrics/vmalert_single.png
-share/doc/vmetrics/vmalert_state.png
+share/doc/vmetrics/vmalert_cluster.webp
+share/doc/vmetrics/vmalert_ha.webp
+share/doc/vmetrics/vmalert_multicluster.webp
+share/doc/vmetrics/vmalert_multiple_rw.webp
+share/doc/vmetrics/vmalert_single.webp
+share/doc/vmetrics/vmalert_state.webp
 share/doc/vmetrics/vmalert_ts_data_delay.gif
 share/doc/vmetrics/vmalert_ts_normal.gif
-share/doc/vmetrics/vmanomaly-holtwinters-example.png
-share/doc/vmetrics/vmanomaly-prophet-example.png
-share/doc/vmetrics/vmanomaly.md
+share/doc/vmetrics/vmanomaly-holtwinters-example.webp
+share/doc/vmetrics/vmanomaly-prophet-example.webp
 share/doc/vmetrics/vmauth.md
 share/doc/vmetrics/vmauth_example_config.yml
 share/doc/vmetrics/vmbackup.md
 share/doc/vmetrics/vmbackupmanager.md
-share/doc/vmetrics/vmbackupmanager_latest_folder.png
-share/doc/vmetrics/vmbackupmanager_root_folder.png
-share/doc/vmetrics/vmbackupmanager_rp_daily_1.png
-share/doc/vmetrics/vmbackupmanager_rp_daily_2.png
+share/doc/vmetrics/vmbackupmanager_latest_folder.webp
+share/doc/vmetrics/vmbackupmanager_root_folder.webp
+share/doc/vmetrics/vmbackupmanager_rp_daily_1.webp
+share/doc/vmetrics/vmbackupmanager_rp_daily_2.webp
 share/doc/vmetrics/vmctl.md
 share/doc/vmetrics/vmetrics_example_config.yml
 share/doc/vmetrics/vmetricsalert_example_config.yml
-share/doc/vmetrics/vmgateway-access-control.jpg
-share/doc/vmetrics/vmgateway-overview.jpeg
-share/doc/vmetrics/vmgateway-rate-limiting.jpg
+share/doc/vmetrics/vmgateway-access-control.webp
+share/doc/vmetrics/vmgateway-overview.webp
+share/doc/vmetrics/vmgateway-rate-limiting.webp
 share/doc/vmetrics/vmgateway.md
 share/doc/vmetrics/vmrestore.md
 @mode 0755
