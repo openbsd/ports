@@ -2,6 +2,7 @@
     SUBDIR += amtk
     SUBDIR += gedit
     SUBDIR += gedit-plugins
+    SUBDIR += gfls
     SUBDIR += gtksourceview
     SUBDIR += tepl
 
