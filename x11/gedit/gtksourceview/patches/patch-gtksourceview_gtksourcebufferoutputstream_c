@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/GNOME/gtksourceview/-/commit/6c1e9f06f892407f667da6bd0c13ab6f3df92024
+
+Index: gtksourceview/gtksourcebufferoutputstream.c
+--- gtksourceview/gtksourcebufferoutputstream.c.orig
++++ gtksourceview/gtksourcebufferoutputstream.c
+@@ -656,7 +656,8 @@ validate_and_insert (GtkSourceBufferOutputStream *stre
+ 
+ 			apply_error_tag (stream);
+ 
+-			if ((nvalid != len || !owned) && buffer[nvalid] != '\0')
++			if (!owned ||
++				(nvalid != len && buffer[nvalid] != '\0'))
+ 			{
+ 				/* make sure the buffer is always properly null
+ 				 * terminated. This is needed, at least for now,
