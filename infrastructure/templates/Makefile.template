@@ -179,7 +179,8 @@ SITES =		???
 #	  gnu [autoconf] [old] [dest]: gnu style configure (old: no
 #	  sysconfdir), (dest: add DESTDIR, does not handle it),
 #	  autoconf: run autoconf to regenerate configure script. implies gnu.
-#	            (see also "do-gen" target below).
+#	  autoreconf: run autoreconf (or other script passed in AUTORECONF) to
+#	   generate configure. implies gnu. adds dependencies automatically.
 #	XXX: cygnus products do NOT use autoconf for making the main
 #		configure from configure.in
 #	  imake [noman]: port uses imake for configuration.
@@ -202,6 +203,23 @@ SITES =		???
 #AUTOMAKE_VERSION =	??? (defaults to 1.4)
 # config.guess and others are copied here
 #MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
+
+# common examples:
+# - port has ready-generated autoconf configure script that can be used as-is:
+#CONFIGURE_STYLE =	gnu
+# - ready-generated script needs patching: preferably patch the input files
+#   (configure.in, configure.ac, *.m4) rather than the generated script, this
+#   is less likely to break during updates) - prefer to use the same version
+#   of autoconf as was used upstream:
+#CONFIGURE_STYLE =	gnu
+#AUTOCONF_VERSION =	2.71
+# - either no generated script was included (common with projects using git
+#   archives), or both autoconf and automake input files need patching:
+#CONFIGURE_STYLE =	autoreconf
+#AUTOCONF_VERSION =	2.71
+#AUTOMAKE_VERSION =	1.16
+#AUTORECONF =		./autogen.sh (optional; "autoreconf --force --install"
+#					is used by default)
 
 # Is the build automagic or is it interactive
 #
