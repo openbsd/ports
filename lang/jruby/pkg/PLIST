@@ -259,10 +259,10 @@ jruby/lib/ruby/gems/1.8/gems/rake-13.0.6/lib/rake/trace_output.rb
 jruby/lib/ruby/gems/1.8/gems/rake-13.0.6/lib/rake/version.rb
 jruby/lib/ruby/gems/1.8/gems/rake-13.0.6/lib/rake/win32.rb
 jruby/lib/ruby/gems/1.8/gems/rake-13.0.6/rake.gemspec
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.0/
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.0/exe/
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.0/exe/rdoc
-jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.0/exe/ri
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.1.1/
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.1.1/exe/
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.1.1/exe/rdoc
+jruby/lib/ruby/gems/1.8/gems/rdoc-6.4.1.1/exe/ri
 jruby/lib/ruby/gems/1.8/gems/rexml-3.2.5/
 jruby/lib/ruby/gems/1.8/gems/rexml-3.2.5/LICENSE.txt
 jruby/lib/ruby/gems/1.8/gems/rexml-3.2.5/NEWS.md
@@ -554,7 +554,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/io-wait-0.3.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ipaddr-1.2.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/irb-1.4.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jar-dependencies-0.4.1.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.14.3-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.14.5-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/jruby-readline-1.3.7-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/json-2.7.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/logger-1.5.1.gemspec
@@ -573,7 +573,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/pstore-0.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/psych-5.1.1.1-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/racc-1.6.0-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.6.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.4.0.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.4.1.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/reline-0.4.2.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/resolv-replace-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rinda-0.1.1.gemspec
