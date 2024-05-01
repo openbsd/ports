@@ -1,2 +1,2 @@
-Tepl is a library that eases the development of GtkSourceView-based text
-editors and IDEs.
+libgedit-tepl is a library that eases the development of text editors and IDEs
+based on GTK.
