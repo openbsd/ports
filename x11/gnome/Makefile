@@ -33,8 +33,6 @@
      SUBDIR += gcr4
      SUBDIR += gdl
      SUBDIR += gdm
-     SUBDIR += gedit
-     SUBDIR += gedit-plugins
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
@@ -91,7 +89,6 @@
      SUBDIR += sushi
      SUBDIR += system-monitor
      SUBDIR += tecla
-     SUBDIR += tepl
      SUBDIR += terminal
      SUBDIR += tetravex
      SUBDIR += text-editor

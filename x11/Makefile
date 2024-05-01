@@ -78,6 +78,7 @@
      SUBDIR += fvwm3
      SUBDIR += gbdfed
      SUBDIR += gcolor2
+     SUBDIR += gedit
      SUBDIR += gentoo
      SUBDIR += gigolo
      SUBDIR += girara
@@ -156,8 +157,6 @@
      SUBDIR += libfakekey
      SUBDIR += libfm
      SUBDIR += libgdiplus
-     SUBDIR += libgedit-amtk
-     SUBDIR += libgedit-gtksourceview
      SUBDIR += libhandy
      SUBDIR += libindicator
      SUBDIR += libappindicator
