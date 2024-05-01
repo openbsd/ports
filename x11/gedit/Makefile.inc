@@ -8,7 +8,7 @@ HOMEPAGE ?=		https://gedit-technology.github.io/
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# XXX
+# GPLv2, LGPLv3
 PERMIT_PACKAGE ?=	Yes
 
 .if (defined(LIBGEDIT_PROJECT) && defined(LIBGEDIT_VERSION))
