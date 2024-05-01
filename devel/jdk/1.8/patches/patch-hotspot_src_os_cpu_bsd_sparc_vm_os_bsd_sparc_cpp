@@ -1,0 +1,21 @@
+Fix implicit FPE exceptions on sparc64
+
+Index: hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
+--- hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp.orig
++++ hotspot/src/os_cpu/bsd_sparc/vm/os_bsd_sparc.cpp
+@@ -608,6 +608,15 @@ JVM_handle_bsd_signal(int sig,
+     pc = address(SIG_PC(uc));
+     npc = address(SIG_NPC(uc));
+ 
++#ifdef __OpenBSD__
++    // the kernel advances ucontext_t pc and npc one instruction for FPE signals
++    // See /sys/arch/sparc64/sparc64/trap.c
++    if (sig == SIGFPE) {
++      pc -= 4;
++      npc -= 4;
++    }
++#endif
++
+     // Check to see if we caught the safepoint code in the
+     // process of write protecting the memory serialization page.
+     // It write enables the page immediately after protecting it
