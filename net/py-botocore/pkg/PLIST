@@ -1980,6 +1980,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/qbusiness/2023-11-27/endp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qbusiness/2023-11-27/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qbusiness/2023-11-27/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qbusiness/2023-11-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/qbusiness/2023-11-27/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qconnect/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qconnect/2020-10-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/qconnect/2020-10-19/endpoint-rule-set-1.json
