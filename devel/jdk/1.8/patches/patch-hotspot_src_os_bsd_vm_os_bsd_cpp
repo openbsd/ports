@@ -1,4 +1,4 @@
-Take advantage of hyperthreading when hw.smt is enabled.
+Use the correct number of cpus when hw.smt=0
 
 Index: hotspot/src/os/bsd/vm/os_bsd.cpp
 --- hotspot/src/os/bsd/vm/os_bsd.cpp.orig
