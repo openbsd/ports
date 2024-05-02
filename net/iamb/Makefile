@@ -1,3 +1,5 @@
+# ring 0.16 doesn't support these archs
+NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
 BROKEN-i386 =		compile fails, possibly out of memory ("fatal runtime error: Rust cannot catch foreign exception")
 
 COMMENT =		matrix client for vim addicts
