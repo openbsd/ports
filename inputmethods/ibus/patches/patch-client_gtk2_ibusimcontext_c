@@ -1,7 +1,7 @@
 Index: client/gtk2/ibusimcontext.c
 --- client/gtk2/ibusimcontext.c.orig
 +++ client/gtk2/ibusimcontext.c
-@@ -1038,10 +1038,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
+@@ -1044,10 +1044,7 @@ ibus_im_context_class_init (IBusIMContextClass *class)
  #if !GTK_CHECK_VERSION (3, 98, 4)
      /* always install snooper */
      if (_key_snooper_id == 0) {
@@ -12,7 +12,7 @@ Index: client/gtk2/ibusimcontext.c
      }
  #endif
  
-@@ -1060,10 +1057,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
+@@ -1066,10 +1063,7 @@ ibus_im_context_class_fini (IBusIMContextClass *class)
  #if !GTK_CHECK_VERSION (3, 98, 4)
      if (_key_snooper_id != 0) {
          IDEBUG ("snooper is terminated.");
