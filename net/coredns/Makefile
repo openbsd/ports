@@ -1,7 +1,7 @@
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns
-MODGO_VERSION=	v1.11.2
+MODGO_VERSION=	v1.11.3
 DISTNAME=	coredns-${MODGO_VERSION}
 
 CATEGORIES=	net sysutils
