@@ -26,11 +26,9 @@ SUBST_VARS+=	EOPENSSL_V
 .if ${V:M1*}
 SITES?=		https://github.com/openssl/openssl/releases/download/OpenSSL_${V:S/./_/g}/ \
 		https://www.openssl.org/source/ \
-		https://www.openssl.org/source/old/${V:C/.$//}/ \
-		ftp://ftp.openssl.org/source/
+		https://www.openssl.org/source/old/${V:C/.$//}/
 .else
 SITES?=		https://github.com/openssl/openssl/releases/download/openssl-$V/ \
 		https://www.openssl.org/source/ \
-		https://www.openssl.org/source/old/${V:R}/ \
-		ftp://ftp.openssl.org/source/
+		https://www.openssl.org/source/old/${V:R}/
 .endif
