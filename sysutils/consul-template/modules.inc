@@ -102,13 +102,13 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify				 v1.8.4 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
 	github.com/yuin/goldmark				 v1.4.13 \
-	golang.org/x/crypto					 v0.19.0 \
+	golang.org/x/crypto					 v0.22.0 \
 	golang.org/x/exp					 v0.0.0-20230817173708-d852ddb80c63 \
 	golang.org/x/mod					 v0.12.0 \
-	golang.org/x/net					 v0.17.0 \
+	golang.org/x/net					 v0.24.0 \
 	golang.org/x/sync					 v0.2.0 \
-	golang.org/x/sys					 v0.17.0 \
-	golang.org/x/term					 v0.17.0 \
+	golang.org/x/sys					 v0.19.0 \
+	golang.org/x/term					 v0.19.0 \
 	golang.org/x/text					 v0.14.0 \
 	golang.org/x/time					 v0.3.0 \
 	golang.org/x/tools					 v0.12.1-0.20230815132531-74c255bcf846 \
@@ -222,7 +222,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.0.0-20190923035154-9ee001bba392 \
 	golang.org/x/crypto				 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto				 v0.0.0-20210921155107-089bfa567519 \
-	golang.org/x/crypto				 v0.14.0 \
+	golang.org/x/crypto				 v0.19.0 \
 	golang.org/x/crypto				 v0.3.0 \
 	golang.org/x/crypto				 v0.6.0 \
 	golang.org/x/mod				 v0.4.2 \
@@ -239,7 +239,9 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20210726213435-c6fcb2dbf985 \
 	golang.org/x/net				 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/net				 v0.10.0 \
+	golang.org/x/net				 v0.17.0 \
 	golang.org/x/net				 v0.2.0 \
+	golang.org/x/net				 v0.21.0 \
 	golang.org/x/net				 v0.6.0 \
 	golang.org/x/net				 v0.7.0 \
 	golang.org/x/sync				 v0.0.0-20181108010431-42b317875d0f \
@@ -278,17 +280,17 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys				 v0.11.0 \
 	golang.org/x/sys				 v0.13.0 \
+	golang.org/x/sys				 v0.17.0 \
 	golang.org/x/sys				 v0.2.0 \
 	golang.org/x/sys				 v0.3.0 \
 	golang.org/x/sys				 v0.5.0 \
 	golang.org/x/sys				 v0.8.0 \
 	golang.org/x/term				 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term				 v0.0.0-20210927222741-03fcf44c2211 \
-	golang.org/x/term				 v0.13.0 \
+	golang.org/x/term				 v0.17.0 \
 	golang.org/x/term				 v0.2.0 \
 	golang.org/x/term				 v0.5.0 \
 	golang.org/x/term				 v0.8.0 \
-	golang.org/x/text				 v0.13.0 \
 	golang.org/x/text				 v0.3.0 \
 	golang.org/x/text				 v0.3.2 \
 	golang.org/x/text				 v0.3.3 \
