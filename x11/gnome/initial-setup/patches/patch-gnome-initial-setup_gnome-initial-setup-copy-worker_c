@@ -1,7 +1,7 @@
 Index: gnome-initial-setup/gnome-initial-setup-copy-worker.c
 --- gnome-initial-setup/gnome-initial-setup-copy-worker.c.orig
 +++ gnome-initial-setup/gnome-initial-setup-copy-worker.c
-@@ -14,7 +14,7 @@ get_gnome_initial_setup_home_dir (void)
+@@ -16,7 +16,7 @@ get_gnome_initial_setup_home_dir (void)
    struct passwd pw, *pwp;
    char buf[4096];
  
