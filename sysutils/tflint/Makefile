@@ -1,7 +1,7 @@
 COMMENT =		pluggable Terraform linter
 
 MODGO_MODNAME =		github.com/terraform-linters/tflint
-MODGO_VERSION =		v0.50.3
+MODGO_VERSION =		v0.51.0
 
 DISTNAME =		tflint-${MODGO_VERSION}
 
@@ -13,7 +13,7 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
 WANTLIB +=		c pthread
 
-# MPL 2.0
+# BSLv1.1
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
