@@ -1,6 +1,6 @@
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-7.4.2
+DISTNAME =		varnish-7.5.0
 
 CATEGORIES =		www
 
