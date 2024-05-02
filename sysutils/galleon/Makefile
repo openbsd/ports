@@ -1,17 +1,16 @@
 COMMENT = tool to manage JBoss software, e.g. Wildfly
 
-V =			5.2.2
+V =			6.0.0
 PKGNAME =		galleon-${V}
 DISTNAME =		${PKGNAME}.Final
 PKG_ARCH =		*
-REVISION =		0
 
 SITES =		https://github.com/wildfly/galleon/releases/download/${V}.Final/
 EXTRACT_SUFX =		.zip
 
 CATEGORIES =		sysutils java
 
-HOMEPAGE =		https://docs.wildfly.org/21/Galleon_Guide.html
+HOMEPAGE =		https://docs.wildfly.org/32/Galleon_Guide.html
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
