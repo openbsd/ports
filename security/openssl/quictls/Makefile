@@ -9,11 +9,13 @@ V=		3.1.5
 DISTNAME=	opernssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
 EOPENSSL_V=	qopenssl31
-REVISION=	3
+REVISION=	4
 
 SITES=		https://github.com/quictls/openssl/archive/refs/tags/
 PKGNAME=	quictls-${V}
 PKGSPEC=	quictls->=3.1,<3.2
+
+HOMEPAGE =	https://quictls.github.io/
 
 SHLIBVER=	0.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
