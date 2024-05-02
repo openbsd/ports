@@ -1,13 +1,12 @@
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		8.00
+V=		8.30
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
-REVISION=	0
 
 HOMEPAGE=	https://www.yamagi.org/quake2/
-MAINTAINER=	Adam Wolk <awolk@openbsd.org>
+MAINTAINER=	Tom Murphy <openbsd@pertho.net>
 SITES=		https://deponie.yamagi.org/quake2/
 EXTRACT_SUFX=	.tar.xz
 
