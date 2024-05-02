@@ -75,6 +75,11 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sv.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-zh_CN.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-failure.png
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-info.png
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-success.png
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-warning.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow.svg
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow_gray.svg
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow_green.svg
@@ -444,12 +449,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}d
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}file_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}getperformance.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}kronos.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pathbrowser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pybonjour.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}pystone.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}rarvolinfo.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}servertests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}sleepless.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}ssdp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/${MODPY_PYCACHE}systrayiconthread.${MODPY_PYC_MAGIC_TAG}pyc
@@ -460,12 +463,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/diskspeed.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/file_extension.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/getperformance.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/kronos.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pathbrowser.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pybonjour.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/pystone.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/rarfile.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/rarvolinfo.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/servertests.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/sleepless.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/ssdp.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/systrayiconthread.py
