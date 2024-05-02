@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.92.1
+GH_TAGNAME =		0.93.0
 
 CATEGORIES =		shells
 
@@ -30,5 +30,10 @@ WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/nu ${PREFIX}/bin/
+
+# known failing tests but it's ok
+# tests::test_config_path::test_default_config_path
+# tests::test_config_path::test_xdg_config_bad
+# tests::test_config_path::test_xdg_config_empty
 
 .include <bsd.port.mk>
