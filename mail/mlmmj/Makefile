@@ -1,17 +1,21 @@
 COMMENT=	mailing list manager
 
-DISTNAME=	mlmmj-1.3.0
-REVISION=	0
+V=		1.4.5
+
+DISTNAME=	mlmmj-${V}
+
 CATEGORIES=	mail
 
-HOMEPAGE=	http://mlmmj.org/
+HOMEPAGE=	https://codeberg.org/mlmmj/mlmmj
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv
 
-SITES=		http://mlmmj.org/releases/
+SITES=		https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${V:S/./_/g}/
+
+BUILD_DEPENDS=	devel/kyua-cli
 
 LIB_DEPENDS=	converters/libiconv
 

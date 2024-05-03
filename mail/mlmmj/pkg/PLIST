@@ -49,6 +49,7 @@ share/mlmmj/text.skel/ast/moderate-post
 share/mlmmj/text.skel/ast/notify
 share/mlmmj/text.skel/ast/probe
 share/mlmmj/text.skel/ast/prologue
+share/mlmmj/text.skel/ast/subrelease
 share/mlmmj/text.skel/ast/wait-post
 share/mlmmj/text.skel/ast/wait-sub
 share/mlmmj/text.skel/cs/
@@ -66,6 +67,7 @@ share/mlmmj/text.skel/cs/moderate-post
 share/mlmmj/text.skel/cs/notify
 share/mlmmj/text.skel/cs/probe
 share/mlmmj/text.skel/cs/prologue
+share/mlmmj/text.skel/cs/subrelease
 share/mlmmj/text.skel/cs/wait-post
 share/mlmmj/text.skel/cs/wait-sub
 share/mlmmj/text.skel/de/
@@ -83,6 +85,7 @@ share/mlmmj/text.skel/de/moderate-post
 share/mlmmj/text.skel/de/notify
 share/mlmmj/text.skel/de/probe
 share/mlmmj/text.skel/de/prologue
+share/mlmmj/text.skel/de/subrelease
 share/mlmmj/text.skel/de/wait-post
 share/mlmmj/text.skel/de/wait-sub
 share/mlmmj/text.skel/en/
@@ -100,6 +103,7 @@ share/mlmmj/text.skel/en/moderate-post
 share/mlmmj/text.skel/en/notify
 share/mlmmj/text.skel/en/probe
 share/mlmmj/text.skel/en/prologue
+share/mlmmj/text.skel/en/subrelease
 share/mlmmj/text.skel/en/wait-post
 share/mlmmj/text.skel/en/wait-sub
 share/mlmmj/text.skel/fi/
@@ -117,6 +121,7 @@ share/mlmmj/text.skel/fi/moderate-post
 share/mlmmj/text.skel/fi/notify
 share/mlmmj/text.skel/fi/probe
 share/mlmmj/text.skel/fi/prologue
+share/mlmmj/text.skel/fi/subrelease
 share/mlmmj/text.skel/fi/wait-post
 share/mlmmj/text.skel/fi/wait-sub
 share/mlmmj/text.skel/fr/
@@ -134,6 +139,7 @@ share/mlmmj/text.skel/fr/moderate-post
 share/mlmmj/text.skel/fr/notify
 share/mlmmj/text.skel/fr/probe
 share/mlmmj/text.skel/fr/prologue
+share/mlmmj/text.skel/fr/subrelease
 share/mlmmj/text.skel/fr/wait-post
 share/mlmmj/text.skel/fr/wait-sub
 share/mlmmj/text.skel/gr/
@@ -151,6 +157,7 @@ share/mlmmj/text.skel/gr/moderate-post
 share/mlmmj/text.skel/gr/notify
 share/mlmmj/text.skel/gr/probe
 share/mlmmj/text.skel/gr/prologue
+share/mlmmj/text.skel/gr/subrelease
 share/mlmmj/text.skel/gr/wait-post
 share/mlmmj/text.skel/gr/wait-sub
 share/mlmmj/text.skel/it/
@@ -168,6 +175,7 @@ share/mlmmj/text.skel/it/moderate-post
 share/mlmmj/text.skel/it/notify
 share/mlmmj/text.skel/it/probe
 share/mlmmj/text.skel/it/prologue
+share/mlmmj/text.skel/it/subrelease
 share/mlmmj/text.skel/it/wait-post
 share/mlmmj/text.skel/it/wait-sub
 share/mlmmj/text.skel/pt/
@@ -185,6 +193,7 @@ share/mlmmj/text.skel/pt/moderate-post
 share/mlmmj/text.skel/pt/notify
 share/mlmmj/text.skel/pt/probe
 share/mlmmj/text.skel/pt/prologue
+share/mlmmj/text.skel/pt/subrelease
 share/mlmmj/text.skel/pt/wait-post
 share/mlmmj/text.skel/pt/wait-sub
 share/mlmmj/text.skel/sk/
@@ -202,6 +211,7 @@ share/mlmmj/text.skel/sk/moderate-post
 share/mlmmj/text.skel/sk/notify
 share/mlmmj/text.skel/sk/probe
 share/mlmmj/text.skel/sk/prologue
+share/mlmmj/text.skel/sk/subrelease
 share/mlmmj/text.skel/sk/wait-post
 share/mlmmj/text.skel/sk/wait-sub
 share/mlmmj/text.skel/zh-cn/
@@ -219,5 +229,6 @@ share/mlmmj/text.skel/zh-cn/moderate-post
 share/mlmmj/text.skel/zh-cn/notify
 share/mlmmj/text.skel/zh-cn/probe
 share/mlmmj/text.skel/zh-cn/prologue
+share/mlmmj/text.skel/zh-cn/subrelease
 share/mlmmj/text.skel/zh-cn/wait-post
 share/mlmmj/text.skel/zh-cn/wait-sub

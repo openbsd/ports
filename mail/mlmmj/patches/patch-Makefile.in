@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu May  2 23:18:17 2024
++++ Makefile.in	Thu May  2 23:18:23 2024
+@@ -420,7 +420,7 @@ SUBDIRS = src listtexts contrib
+ 
+ @WANT_TESTS_TRUE@tests_mlmmj_LDADD = \
+ @WANT_TESTS_TRUE@	$(top_builddir)/src/libmlmmj.a \
+-@WANT_TESTS_TRUE@	@ATF_LIBS@ -lrt
++@WANT_TESTS_TRUE@	@ATF_LIBS@
+ 
+ @WANT_TESTS_TRUE@tests_fakesmtpd_SOURCES = \
+ @WANT_TESTS_TRUE@	tests/fakesmtpd.c
