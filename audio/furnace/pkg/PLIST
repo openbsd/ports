@@ -73,6 +73,7 @@ share/doc/furnace/doc/4-instrument/adpcm-b.md
 share/doc/furnace/doc/4-instrument/ay8910.md
 share/doc/furnace/doc/4-instrument/ay8930.md
 share/doc/furnace/doc/4-instrument/beeper.md
+share/doc/furnace/doc/4-instrument/bifurcator.md
 share/doc/furnace/doc/4-instrument/c140.md
 share/doc/furnace/doc/4-instrument/c219.md
 share/doc/furnace/doc/4-instrument/c64.md
@@ -124,6 +125,7 @@ share/doc/furnace/doc/4-instrument/sample-map.png
 share/doc/furnace/doc/4-instrument/sample.md
 share/doc/furnace/doc/4-instrument/scc.md
 share/doc/furnace/doc/4-instrument/segapcm.md
+share/doc/furnace/doc/4-instrument/sid2.md
 share/doc/furnace/doc/4-instrument/sm8521.md
 share/doc/furnace/doc/4-instrument/snes.md
 share/doc/furnace/doc/4-instrument/su.md
@@ -151,10 +153,12 @@ share/doc/furnace/doc/6-sample/README.md
 share/doc/furnace/doc/6-sample/sample-editor-buttons.png
 share/doc/furnace/doc/6-sample/sample-editor.png
 share/doc/furnace/doc/7-systems/
+share/doc/furnace/doc/7-systems/5e01.md
 share/doc/furnace/doc/7-systems/README.md
 share/doc/furnace/doc/7-systems/amiga.md
 share/doc/furnace/doc/7-systems/ay8910.md
 share/doc/furnace/doc/7-systems/ay8930.md
+share/doc/furnace/doc/7-systems/bifurcator.md
 share/doc/furnace/doc/7-systems/bubblesystem.md
 share/doc/furnace/doc/7-systems/c140.md
 share/doc/furnace/doc/7-systems/c219.md
@@ -194,6 +198,7 @@ share/doc/furnace/doc/7-systems/ricoh.md
 share/doc/furnace/doc/7-systems/saa1099.md
 share/doc/furnace/doc/7-systems/scc.md
 share/doc/furnace/doc/7-systems/segapcm.md
+share/doc/furnace/doc/7-systems/sid2.md
 share/doc/furnace/doc/7-systems/sm8521.md
 share/doc/furnace/doc/7-systems/sms.md
 share/doc/furnace/doc/7-systems/snes.md
@@ -303,6 +308,7 @@ share/doc/furnace/other/papers/mononoki-license.txt
 share/doc/furnace/other/papers/multiplayer.md
 share/doc/furnace/other/papers/newIns.md
 share/doc/furnace/other/papers/oldIns.md
+share/doc/furnace/other/papers/oldflags.md
 share/doc/furnace/other/papers/proggy-license.txt
 share/doc/furnace/other/papers/pt-mono-license.txt
 share/doc/furnace/other/papers/screenshot1.png
@@ -471,11 +477,17 @@ share/furnace/demos/misc/Miami_Ice_Sharp_X1.fur
 share/furnace/demos/misc/OHM_VRC6.fur
 share/furnace/demos/misc/Playground_2xT6W28.fur
 share/furnace/demos/misc/Someting_I_can_feel_MSM5232.fur
+share/furnace/demos/misc/Special Stage Sonic 3 (GBA).fur
 share/furnace/demos/misc/StrobesPowerNoise.fur
 share/furnace/demos/misc/T_Six_T6W28.fur
 share/furnace/demos/misc/TerminalZone_SM8521.fur
+share/furnace/demos/misc/Weightlessness_ES5506.fur
+share/furnace/demos/misc/ZetaForceLevel2.fur
 share/furnace/demos/misc/atari_breakbeat_TIA.fur
 share/furnace/demos/misc/beeper_torture.fur
+share/furnace/demos/misc/biffy_bifurcator.fur
+share/furnace/demos/misc/brokenspace-msm5232.fur
+share/furnace/demos/misc/cavedotwave-msm5232.fur
 share/furnace/demos/misc/combat_vehicle_pokey.fur
 share/furnace/demos/misc/deepmist_dave.fur
 share/furnace/demos/misc/empty_PV-1000.fur
@@ -527,6 +539,7 @@ share/furnace/demos/multichip/Namco_C30_C219_Loop.fur
 share/furnace/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
 share/furnace/demos/multichip/PinBot-C30C140.fur
 share/furnace/demos/multichip/Sky Chaze Zone 32X.fur
+share/furnace/demos/multichip/Sunset Hill Zone Act 2.fur
 share/furnace/demos/multichip/collab.fur
 share/furnace/demos/multichip/cueball.fur
 share/furnace/demos/multichip/double-dragon-stage1.fur
@@ -558,6 +571,7 @@ share/furnace/demos/nes/The Cheetahmen.fur
 share/furnace/demos/nes/carve_your_own_path.fur
 share/furnace/demos/nes/christmas-fever.fur
 share/furnace/demos/nes/going_up_a_step_at_time.fur
+share/furnace/demos/nes/infinity.fur
 share/furnace/demos/nes/oby1_ingame.fur
 share/furnace/demos/nes/one_sided_love.fur
 share/furnace/demos/nes/sweatsmile_bossfight.fur
@@ -658,6 +672,7 @@ share/furnace/demos/virtualboy/red_joke.fur
 share/furnace/demos/virtualboy/redboas.fur
 share/furnace/demos/virtualboy/redshift.fur
 share/furnace/demos/virtualboy/virtual_namachuukei_pennant_race.fur
+share/furnace/demos/virtualboy/wavetablehell4-vb.fur
 share/furnace/demos/wonderswan/
 share/furnace/demos/wonderswan/Bullet_Hell.fur
 share/furnace/demos/wonderswan/Rusty_-_Queen_in_the_Dark_Night.fur
@@ -820,6 +835,8 @@ share/furnace/instruments/NES/Triangle Snare+Bass.fui
 share/furnace/instruments/NES/Triangle Snare.fui
 share/furnace/instruments/OPL/
 share/furnace/instruments/OPL/2-OP OPL3 Slap Bass.fui
+share/furnace/instruments/OPL/2OP Compressed Snare C-3 (Part 1).fui
+share/furnace/instruments/OPL/2OP Compressed Snare C-3 (Part 2).fui
 share/furnace/instruments/OPL/4op Bass.fui
 share/furnace/instruments/OPL/Chorus Organ.fui
 share/furnace/instruments/OPL/Closed Hi-hat.fui
@@ -1889,8 +1906,9 @@ share/icons/hicolor/64x64/apps/furnace.png
 share/icons/hicolor/64x64@2/
 share/icons/hicolor/64x64@2/apps/
 share/icons/hicolor/64x64@2/apps/furnace.png
-share/licenses/
 share/licenses/furnace/
 share/licenses/furnace/LICENSE
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/mime/packages/furnace.xml
+@tag update-mime-database
