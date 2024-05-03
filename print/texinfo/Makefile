@@ -1,7 +1,6 @@
 COMMENT =		official documentation format of the GNU project
 
-DISTNAME =		texinfo-6.5
-REVISION =		4
+DISTNAME =		texinfo-7.1
 
 CATEGORIES =		print
 
@@ -22,7 +21,6 @@ TEST_DEPENDS =		${RUN_DEPENDS}
 
 FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
 
-SEPARATE_BUILD =	Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--program-prefix=g
