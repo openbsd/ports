@@ -8,7 +8,7 @@ Nothing from tcp_var is used here at the moment anyway so don't pull it in.
 Index: internal.h
 --- internal.h.orig
 +++ internal.h
-@@ -142,9 +142,6 @@ typedef unsigned short sa_family_t;
+@@ -158,9 +158,6 @@ typedef unsigned short sa_family_t;
  #include <netinet/udp.h>
  #include <netinet/icmp6.h>
  #include <netinet/tcp.h>
