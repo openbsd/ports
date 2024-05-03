@@ -281,7 +281,6 @@ MODGO_MODULES =	\
 	github.com/fatih/structs						 v1.1.0 \
 	github.com/form3tech-oss/jwt-go						 v3.2.2+incompatible \
 	github.com/fsnotify/fsnotify						 v1.4.7 \
-	github.com/genelet/determined						 v1.10.2 \
 	github.com/getsops/gopgagent						 v0.0.0-20170926210634-4d7ea76ff71a \
 	github.com/getsops/sops/v3						 v3.8.1 \
 	github.com/ghodss/yaml							 v1.0.0 \
