@@ -5,7 +5,7 @@ for this file
 Index: include/common/zbxsysinc.h
 --- include/common/zbxsysinc.h.orig
 +++ include/common/zbxsysinc.h
-@@ -305,6 +305,7 @@
+@@ -297,6 +297,7 @@
  
  #ifdef HAVE_NET_IF_H
  #	include <net/if.h>

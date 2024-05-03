@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7582,6 +7582,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -7555,6 +7555,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  
  #include <stdlib.h>
  #include <sys/queue.h>
@@ -9,7 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main (void)
-@@ -13273,7 +13274,7 @@ if test ${with_libevent+y}
+@@ -13350,7 +13351,7 @@ if test ${with_libevent+y}
  then :
    withval=$with_libevent;
  			if test "x$withval" = "xyes"; then
@@ -18,7 +18,7 @@ Index: configure
  			fi
  
  			LIBEVENT_CFLAGS="-I$withval/include"
-@@ -13344,7 +13345,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -13421,7 +13422,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
  #include <stdlib.h>
@@ -27,7 +27,7 @@ Index: configure
  #include <event2/thread.h>
  
  int
-@@ -18824,16 +18825,16 @@ printf "%s\n" "no" >&6; }
+@@ -18854,16 +18855,16 @@ printf "%s\n" "no" >&6; }
  RANLIB="ranlib"
  
  
@@ -35,13 +35,13 @@ Index: configure
 -PROXY_CONFIG_FILE="${sysconfdir}/zabbix_proxy.conf"
 -AGENT_CONFIG_FILE="${sysconfdir}/zabbix_agentd.conf"
 -AGENT2_CONFIG_FILE="${sysconfdir}/zabbix_agent2.conf"
--AGENT2_CONFIG_PATH="${sysconfdir}/zabbix_agent2.d"
+-AGENT2_CONFIG_DIR="${sysconfdir}/zabbix_agent2.d"
 +SERVER_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_server.conf"
 +PROXY_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_proxy.conf"
 +AGENT_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_agentd.conf"
 +AGENT2_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_agent2.conf"
-+AGENT2_CONFIG_PATH="${sysconfdir}/zabbix/zabbix_agent2.d"
- AGENT2_CONFIG_PLUGINS_PATH="${AGENT2_CONFIG_PATH}/plugins.d"
++AGENT2_CONFIG_DIR="${sysconfdir}/zabbix/zabbix_agent2.d"
+ AGENT2_PLUGIN_CONFIG_DIR="${AGENT2_CONFIG_DIR}/plugins.d"
 -WEBSERVICE_CONFIG_FILE="${sysconfdir}/zabbix_web_service.conf"
 +WEBSERVICE_CONFIG_FILE="${sysconfdir}/zabbix/zabbix_web_service.conf"
  

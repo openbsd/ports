@@ -823,7 +823,6 @@ zabbix/include/classes/helpers/CArrayHelper.php
 zabbix/include/classes/helpers/CAuthenticationHelper.php
 zabbix/include/classes/helpers/CBrandHelper.php
 zabbix/include/classes/helpers/CConditionHelper.php
-zabbix/include/classes/helpers/CConfigGeneralHelper.php
 zabbix/include/classes/helpers/CCookieHelper.php
 zabbix/include/classes/helpers/CCorrelationHelper.php
 zabbix/include/classes/helpers/CCsrfTokenHelper.php
