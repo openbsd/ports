@@ -1,6 +1,6 @@
 COMMENT=	tiny download accelerator
 
-V=		2.17.13
+V=		2.17.14
 DISTNAME=	axel-$V
 
 CATEGORIES=	net
