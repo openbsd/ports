@@ -5,9 +5,9 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
-PKGNAME =		dolphin-5.0.0.20230924
+PKGNAME =		dolphin-5.0.0.20240421
 DIST_TUPLE +=		github dolphin-emu dolphin \
-			1a9d946a3337317d288b94b093f1e385e6989335 . # GPLv2
+			b6f0e8876e40a41941f0fb6cef89cf49c91edb56 . # GPLv2
 
 # Externals/
 DIST_TUPLE +=		github dolphin-emu ext-win-qt \
@@ -40,20 +40,39 @@ DIST_TUPLE +=		github GPUOpen-LibrariesAndSDKs VulkanMemoryAllocator \
 DIST_TUPLE +=		github mozilla cubeb \
 			67db4cbc18581c8a6d8ea935af9854ed9729e7a7 \
 			Externals/cubeb/cubeb			# ISC
-# slightly older implot to build with older Dolphin 
 DIST_TUPLE +=		github epezent implot \
-			85573fe04ad27f912074a2e7cde889fdf912b0c6 \
+			f156599faefe316f7dd20fe6c783bf87c8bb6fd9 \
 			Externals/implot/implot			# MIT
 DIST_TUPLE +=		github google googletest \
 			61db1e1740a828d9df94fd167a9eb4137cd6def2 \
 			Externals/gtest				# BSD
-# slightly older rcheevos to build with older Dolphin
 DIST_TUPLE +=		github RetroAchievements rcheevos \
-			0cdc7f8e9592e0741c07729a34d49a55e6c5e290 \
+			bfa0d3138865ae2a649a0beadfa4206408a14690 \
 			Externals/rcheevos/rcheevos		# MIT
 DIST_TUPLE +=		github bylaws libadrenotools \
 			deec5f75ee1a8ccbe32c8780b1d17284fc87b0f1 \
-			Externals/libadrenotools		# BSD 
+			Externals/libadrenotools		# BSD
+DIST_TUPLE +=		github curl curl \
+			5379dbc248045ba46e89d76ffc4be4380d854728 \
+			Externals/curl/curl			# MIT
+DIST_TUPLE +=		github fmtlib fmt \
+			ee0c3351a4d47ca89090b8a7458846288b18efca \
+			Externals/fmt/fmt			# MIT
+DIST_TUPLE +=		github lz4 lz4 \
+			1a5b83b8c479d49fc333fc4eb7b01023e8e49a11 \
+			Externals/lz4/lz4			# BSD
+DIST_TUPLE +=		github Cyan4973 xxHash \
+			4b5573cbc73a1a5e8fb1eee2e1b8f2020b2e908c \
+			Externals/xxhash/xxHash			# BSD
+DIST_TUPLE +=		github lsalzman enet \
+			276ff5ae05a245bcee195af9c9fd002851517d40 \
+			Externals/enet/enet			# MIT
+DIST_TUPLE +=		github libusb hidapi \
+			c2ffb03ef6f4cfc5de005adb6d37aa45cbd7d68b \
+			Externals/hidapi/hidapi-src		# BSD
+DIST_TUPLE +=		github syoyo tinygltf \
+			e3f9a7d8b33a78bbe4606a934c6a9be5e402fab0 \
+			Externals/tinygltf/tinygltf		# MIT
 
 CATEGORIES =		emulators
 
@@ -64,11 +83,11 @@ PERMIT_PACKAGE =	Yes
 
 cWANTLIB =		EGL GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec \
 			avformat avutil bz2 c curl fmt hidapi-libusb iconv \
-			lzma lzo2 m mbedcrypto mbedtls mbedx509 miniupnpc \
+			lz4 lzma lzo2 m mbedcrypto mbedtls mbedx509 miniupnpc \
 			minizip pthread pugixml sfml-network sfml-system \
-			speexdsp spng swscale swresample usb-1.0 zstd \
-			${COMPILER_LIBCXX}
-# # sndio library is dlopen'd
+			speexdsp spng swscale swresample usb-1.0 xxhash \
+			zstd ${COMPILER_LIBCXX}
+# sndio library is dlopen'd
 cWANTLIB +=		sndio
 
 WANTLIB-main =		${cWANTLIB} Qt6Core Qt6Gui Qt6Widgets
@@ -78,7 +97,8 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt6/qtsvg
-LIB_DEPENDS-nogui =	archivers/lzo2 \
+LIB_DEPENDS-nogui =	archivers/lz4 \
+			archivers/lzo2 \
 			archivers/minizip \
 			archivers/zstd \
 			comms/libhidapi \
@@ -92,6 +112,7 @@ LIB_DEPENDS-nogui =	archivers/lzo2 \
 			net/curl \
 			net/miniupnp/miniupnpc \
 			security/polarssl \
+			sysutils/xxhash \
 			textproc/pugixml
 LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \
 			x11/qt6/qtbase

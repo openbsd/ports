@@ -146,6 +146,8 @@ share/dolphin-emu/sys/GameSettings/FAOE01.ini
 share/dolphin-emu/sys/GameSettings/FARE01.ini
 share/dolphin-emu/sys/GameSettings/FASE01.ini
 share/dolphin-emu/sys/GameSettings/G2B.ini
+share/dolphin-emu/sys/GameSettings/G2BE5G.ini
+share/dolphin-emu/sys/GameSettings/G2BP7D.ini
 share/dolphin-emu/sys/GameSettings/G2C.ini
 share/dolphin-emu/sys/GameSettings/G2FE78.ini
 share/dolphin-emu/sys/GameSettings/G2M.ini
@@ -171,6 +173,7 @@ share/dolphin-emu/sys/GameSettings/G4QE01.ini
 share/dolphin-emu/sys/GameSettings/G4S.ini
 share/dolphin-emu/sys/GameSettings/G4SP01.ini
 share/dolphin-emu/sys/GameSettings/G4Z.ini
+share/dolphin-emu/sys/GameSettings/G5B.ini
 share/dolphin-emu/sys/GameSettings/G5D.ini
 share/dolphin-emu/sys/GameSettings/G5N.ini
 share/dolphin-emu/sys/GameSettings/G5T.ini
@@ -221,6 +224,7 @@ share/dolphin-emu/sys/GameSettings/GC6.ini
 share/dolphin-emu/sys/GameSettings/GC6E01.ini
 share/dolphin-emu/sys/GameSettings/GC6J01.ini
 share/dolphin-emu/sys/GameSettings/GC6P01.ini
+share/dolphin-emu/sys/GameSettings/GC8JA4.ini
 share/dolphin-emu/sys/GameSettings/GC9.ini
 share/dolphin-emu/sys/GameSettings/GCC.ini
 share/dolphin-emu/sys/GameSettings/GCCE01.ini
@@ -818,6 +822,7 @@ share/dolphin-emu/sys/GameSettings/RE8.ini
 share/dolphin-emu/sys/GameSettings/REB.ini
 share/dolphin-emu/sys/GameSettings/RED.ini
 share/dolphin-emu/sys/GameSettings/REF.ini
+share/dolphin-emu/sys/GameSettings/REG.ini
 share/dolphin-emu/sys/GameSettings/REL.ini
 share/dolphin-emu/sys/GameSettings/RELJAB.ini
 share/dolphin-emu/sys/GameSettings/REM.ini
@@ -897,6 +902,7 @@ share/dolphin-emu/sys/GameSettings/RIR.ini
 share/dolphin-emu/sys/GameSettings/RIU.ini
 share/dolphin-emu/sys/GameSettings/RIZ.ini
 share/dolphin-emu/sys/GameSettings/RJ2.ini
+share/dolphin-emu/sys/GameSettings/RJ3.ini
 share/dolphin-emu/sys/GameSettings/RJ4.ini
 share/dolphin-emu/sys/GameSettings/RJ7.ini
 share/dolphin-emu/sys/GameSettings/RJ8.ini
@@ -1248,6 +1254,7 @@ share/dolphin-emu/sys/GameSettings/SG8.ini
 share/dolphin-emu/sys/GameSettings/SGD.ini
 share/dolphin-emu/sys/GameSettings/SGL.ini
 share/dolphin-emu/sys/GameSettings/SGLEA4.ini
+share/dolphin-emu/sys/GameSettings/SGLPA4.ini
 share/dolphin-emu/sys/GameSettings/SGT.ini
 share/dolphin-emu/sys/GameSettings/SGV.ini
 share/dolphin-emu/sys/GameSettings/SGX.ini
@@ -1347,6 +1354,7 @@ share/dolphin-emu/sys/GameSettings/SR9.ini
 share/dolphin-emu/sys/GameSettings/SRA.ini
 share/dolphin-emu/sys/GameSettings/SRE.ini
 share/dolphin-emu/sys/GameSettings/SRL.ini
+share/dolphin-emu/sys/GameSettings/SRQ.ini
 share/dolphin-emu/sys/GameSettings/SRT.ini
 share/dolphin-emu/sys/GameSettings/SRV.ini
 share/dolphin-emu/sys/GameSettings/SRW.ini
@@ -1665,9 +1673,15 @@ share/dolphin-emu/sys/Load/GraphicMods/Rune Factory Frontier/metadata.json
 share/dolphin-emu/sys/Load/GraphicMods/Sin and Punishment - Star Successor/
 share/dolphin-emu/sys/Load/GraphicMods/Sin and Punishment - Star Successor/R2V.txt
 share/dolphin-emu/sys/Load/GraphicMods/Sin and Punishment - Star Successor/metadata.json
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Giants/
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Giants/SKY.txt
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Giants/metadata.json
 share/dolphin-emu/sys/Load/GraphicMods/Skylanders Spyro's Adventure/
 share/dolphin-emu/sys/Load/GraphicMods/Skylanders Spyro's Adventure/SSP.txt
 share/dolphin-emu/sys/Load/GraphicMods/Skylanders Spyro's Adventure/metadata.json
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Trap Team/
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Trap Team/SK8.txt
+share/dolphin-emu/sys/Load/GraphicMods/Skylanders Trap Team/metadata.json
 share/dolphin-emu/sys/Load/GraphicMods/Skyward Sword Bloom/
 share/dolphin-emu/sys/Load/GraphicMods/Skyward Sword Bloom/SOU.txt
 share/dolphin-emu/sys/Load/GraphicMods/Skyward Sword Bloom/metadata.json
@@ -1781,6 +1795,7 @@ share/dolphin-emu/sys/Shaders/AutoHDR.glsl
 share/dolphin-emu/sys/Shaders/FXAA.glsl
 share/dolphin-emu/sys/Shaders/Passive/
 share/dolphin-emu/sys/Shaders/Passive/horizontal.glsl
+share/dolphin-emu/sys/Shaders/PerceptualHDR.glsl
 share/dolphin-emu/sys/Shaders/acidmetal.glsl
 share/dolphin-emu/sys/Shaders/acidtrip.glsl
 share/dolphin-emu/sys/Shaders/acidtrip2.glsl
@@ -1825,6 +1840,22 @@ share/dolphin-emu/sys/Shaders/toxic.glsl
 share/dolphin-emu/sys/Themes/
 share/dolphin-emu/sys/Themes/Clean/
 share/dolphin-emu/sys/Themes/Clean Blue/
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_assemble.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_assemble@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_assemble@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_clipboard.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_inject.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_inject@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_inject@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_new.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_new@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_new@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_openasm.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_openasm@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_openasm@4x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_save.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Blue/assembler_save@4x.png
 share/dolphin-emu/sys/Themes/Clean Blue/browse.png
 share/dolphin-emu/sys/Themes/Clean Blue/browse@2x.png
 share/dolphin-emu/sys/Themes/Clean Blue/browse@4x.png
@@ -1904,6 +1935,22 @@ share/dolphin-emu/sys/Themes/Clean Blue/wiimote.png
 share/dolphin-emu/sys/Themes/Clean Blue/wiimote@2x.png
 share/dolphin-emu/sys/Themes/Clean Blue/wiimote@4x.png
 share/dolphin-emu/sys/Themes/Clean Emerald/
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_assemble.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_assemble@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_assemble@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_clipboard.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_inject.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_inject@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_inject@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_new.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_new@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_new@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_openasm.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_openasm@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_openasm@4x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_save.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Emerald/assembler_save@4x.png
 share/dolphin-emu/sys/Themes/Clean Emerald/browse.png
 share/dolphin-emu/sys/Themes/Clean Emerald/browse@2x.png
 share/dolphin-emu/sys/Themes/Clean Emerald/browse@4x.png
@@ -1983,6 +2030,22 @@ share/dolphin-emu/sys/Themes/Clean Emerald/wiimote.png
 share/dolphin-emu/sys/Themes/Clean Emerald/wiimote@2x.png
 share/dolphin-emu/sys/Themes/Clean Emerald/wiimote@4x.png
 share/dolphin-emu/sys/Themes/Clean Lite/
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_assemble.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_assemble@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_assemble@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_clipboard.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_inject.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_inject@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_inject@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_new.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_new@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_new@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_openasm.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_openasm@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_openasm@4x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_save.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Lite/assembler_save@4x.png
 share/dolphin-emu/sys/Themes/Clean Lite/browse.png
 share/dolphin-emu/sys/Themes/Clean Lite/browse@2x.png
 share/dolphin-emu/sys/Themes/Clean Lite/browse@4x.png
@@ -2062,6 +2125,22 @@ share/dolphin-emu/sys/Themes/Clean Lite/wiimote.png
 share/dolphin-emu/sys/Themes/Clean Lite/wiimote@2x.png
 share/dolphin-emu/sys/Themes/Clean Lite/wiimote@4x.png
 share/dolphin-emu/sys/Themes/Clean Pink/
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_assemble.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_assemble@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_assemble@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_clipboard.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_inject.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_inject@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_inject@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_new.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_new@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_new@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_openasm.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_openasm@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_openasm@4x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_save.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_save@2x.png
+share/dolphin-emu/sys/Themes/Clean Pink/assembler_save@4x.png
 share/dolphin-emu/sys/Themes/Clean Pink/browse.png
 share/dolphin-emu/sys/Themes/Clean Pink/browse@2x.png
 share/dolphin-emu/sys/Themes/Clean Pink/browse@4x.png
@@ -2140,6 +2219,22 @@ share/dolphin-emu/sys/Themes/Clean Pink/stop@4x.png
 share/dolphin-emu/sys/Themes/Clean Pink/wiimote.png
 share/dolphin-emu/sys/Themes/Clean Pink/wiimote@2x.png
 share/dolphin-emu/sys/Themes/Clean Pink/wiimote@4x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_assemble.png
+share/dolphin-emu/sys/Themes/Clean/assembler_assemble@2x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_assemble@4x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_clipboard.png
+share/dolphin-emu/sys/Themes/Clean/assembler_inject.png
+share/dolphin-emu/sys/Themes/Clean/assembler_inject@2x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_inject@4x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_new.png
+share/dolphin-emu/sys/Themes/Clean/assembler_new@2x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_new@4x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_openasm.png
+share/dolphin-emu/sys/Themes/Clean/assembler_openasm@2x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_openasm@4x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_save.png
+share/dolphin-emu/sys/Themes/Clean/assembler_save@2x.png
+share/dolphin-emu/sys/Themes/Clean/assembler_save@4x.png
 share/dolphin-emu/sys/Themes/Clean/browse.png
 share/dolphin-emu/sys/Themes/Clean/browse@2x.png
 share/dolphin-emu/sys/Themes/Clean/browse@4x.png
