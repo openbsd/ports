@@ -2,7 +2,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20240426
+GH_TAGNAME =	20240503
 
 CATEGORIES =	audio x11
 
@@ -13,7 +13,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL2 X11 Xext Xv c m
+WANTLIB +=	SDL2 c m
 
 MODULES =	lang/python
 
