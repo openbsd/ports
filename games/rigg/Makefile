@@ -1,6 +1,6 @@
 COMMENT =	run independent games
 
-V =		1.0
+V =		1.1
 DISTNAME =	rigg-${V}
 CATEGORIES =	games
 
@@ -19,11 +19,12 @@ MODULES =	lang/mono
 LIB_DEPENDS =	lang/hashlink \
 		lang/mono
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/rigg ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKBUILD}/rigg.1 ${PREFIX}/man/man1/
+PORTHOME =	${WRKDIR}/porthome
 
-do-test:
-	cd ${WRKSRC}/test; make clean regress
+# dirs and files in PORTHOME that are needed for unveil during 'make test'
+post-extract:
+	mkdir -p ${PORTHOME}/.{config,local/share,cache/mesa_shader_cache}
+	mkdir -p ${PORTHOME}/.{mono,sndio}
+	touch ${PORTHOME}/.X{authority,Compose,defaults}
 
 .include <bsd.port.mk>
