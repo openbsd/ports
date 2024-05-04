@@ -1,9 +1,8 @@
 COMMENT =		module for interacting with various Steam features
 
-MODPY_EGG_VERSION =	1.4.4
-DISTNAME =		steam-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+PKGNAME =		py-steam-1.4.4pl0
+DIST_TUPLE +=		github rfht py-steam \
+			e26d2eb52c90dc2c07cc88ea910d59bf873d330d .
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steam
 
@@ -11,7 +10,6 @@ HOMEPAGE =		https://github.com/ValvePython/steam
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		converters/py-vdf${MODPY_FLAVOR} \

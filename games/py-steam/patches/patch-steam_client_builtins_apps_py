@@ -1,0 +1,16 @@
+fix:
+AttributeError: Protocol message CMsgClientPICSProductInfoRequest has no
+"supports_package_tokens" field.
+
+Index: steam/client/builtins/apps.py
+--- steam/client/builtins/apps.py.orig
++++ steam/client/builtins/apps.py
+@@ -129,7 +129,7 @@ class Apps(object):
+ 
+         message.body.meta_data_only = meta_data_only
+         message.body.num_prev_failed = 0
+-        message.body.supports_package_tokens = 1
++        #message.body.supports_package_tokens = 1
+ 
+         job_id = self.send_job(message)
+ 
