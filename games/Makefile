@@ -173,6 +173,7 @@
      SUBDIR += jbrickshooter
      SUBDIR += julius
      SUBDIR += jumpnbump
+     SUBDIR += keeperrl
      SUBDIR += kobodeluxe
      SUBDIR += kobodeluxe,harder
      SUBDIR += koboredux
