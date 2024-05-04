@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-V=			23.4
+V=			24.1
 DISTNAME=		stellarium-${V}
 
 CATEGORIES=		astro x11
@@ -30,7 +30,8 @@ MODULES=		devel/cmake \
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		astro/calcmysky>=0.3.1p0 \
+BUILD_DEPENDS=		astro/calcmysky \
+			devel/fast-float \
 			devel/indi,-libs
 
 LIB_DEPENDS=		graphics/exiv2 \
