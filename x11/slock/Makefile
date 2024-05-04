@@ -1,6 +1,6 @@
 COMMENT=		simple X screen locker
 
-DISTNAME=		slock-1.4
+DISTNAME=		slock-1.5
 
 CATEGORIES=		x11
 
