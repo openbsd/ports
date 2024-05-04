@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+
+Index: libgit2-glib/ggit-types.h
+--- libgit2-glib/ggit-types.h.orig
++++ libgit2-glib/ggit-types.h
+@@ -355,7 +355,8 @@ typedef enum
+ 	GGIT_CONFIG_LEVEL_XDG         = 3,
+ 	GGIT_CONFIG_LEVEL_GLOBAL      = 4,
+ 	GGIT_CONFIG_LEVEL_LOCAL       = 5,
+-	GGIT_CONFIG_LEVEL_APP         = 6,
++	GGIT_CONFIG_LEVEL_WORKTREE    = 6,
++	GGIT_CONFIG_LEVEL_APP         = 7,
+ 	GGIT_CONFIG_LEVEL_HIGHEST     = -1
+ } GgitConfigLevel;
+ 

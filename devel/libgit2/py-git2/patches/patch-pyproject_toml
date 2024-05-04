@@ -1,0 +1,29 @@
+From 1a9947a21a7cc71d07c86a87eeb49a24e40ce95e Mon Sep 17 00:00:00 2001
+From: WANG Xuerui <git@xen0n.name>
+Date: Mon, 4 Mar 2024 14:52:41 +0800
+Subject: [PATCH] Format the whole repository with ruff
+
+From 6d539d76b53bb8ebddb97aaae0f783959e1f0810 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=2E=20David=20Ib=C3=A1=C3=B1ez?= <jdavid.ibp@gmail.com>
+Date: Thu, 21 Mar 2024 10:15:15 +0100
+Subject: [PATCH] Upgrade to libgit2 v1.8.0
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -7,7 +7,7 @@ skip = "pp3* *musllinux_aarch64"
+ archs = ["auto"]
+ build-frontend = "default"
+ dependency-versions = "pinned"
+-environment = {LIBGIT2_VERSION="1.7.2", LIBSSH2_VERSION="1.11.0", OPENSSL_VERSION="3.1.5", LIBGIT2="/project/ci"}
++environment = {LIBGIT2_VERSION="1.8.0", LIBSSH2_VERSION="1.11.0", OPENSSL_VERSION="3.1.5", LIBGIT2="/project/ci"}
+ 
+ before-all = "sh build.sh"
+ 
+@@ -21,5 +21,5 @@ repair-wheel-command = "LD_LIBRARY_PATH=/project/ci/li
+ 
+ [tool.cibuildwheel.macos]
+ archs = ["universal2"]
+-environment = {LIBGIT2_VERSION="1.7.2", LIBSSH2_VERSION="1.11.0", OPENSSL_VERSION="3.1.5", LIBGIT2="/Users/runner/work/pygit2/pygit2/ci"}
++environment = {LIBGIT2_VERSION="1.8.0", LIBSSH2_VERSION="1.11.0", OPENSSL_VERSION="3.1.5", LIBGIT2="/Users/runner/work/pygit2/pygit2/ci"}
+ repair-wheel-command = "DYLD_LIBRARY_PATH=/Users/runner/work/pygit2/pygit2/ci/lib delocate-wheel --require-archs {delocate_archs} -w {dest_dir} {wheel}"

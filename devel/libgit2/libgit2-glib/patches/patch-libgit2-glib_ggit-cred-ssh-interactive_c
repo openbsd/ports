@@ -1,0 +1,14 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+
+Index: libgit2-glib/ggit-cred-ssh-interactive.c
+--- libgit2-glib/ggit-cred-ssh-interactive.c.orig
++++ libgit2-glib/ggit-cred-ssh-interactive.c
+@@ -191,7 +191,7 @@ callback_wrapper (const char                          
+ 	{
+ 		gchar *text;
+ 
+-		text = g_strndup (prompts[i].text, prompts[i].length);
++		text = g_strndup ((const gchar *)prompts[i].text, prompts[i].length);
+ 
+ 		wprompts[i] = ggit_cred_ssh_interactive_prompt_new (wname,
+ 		                                                    winstruction,

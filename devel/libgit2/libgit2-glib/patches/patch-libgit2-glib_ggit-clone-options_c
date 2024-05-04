@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+
+Index: libgit2-glib/ggit-clone-options.c
+--- libgit2-glib/ggit-clone-options.c.orig
++++ libgit2-glib/ggit-clone-options.c
+@@ -19,6 +19,7 @@
+  */
+ 
+ #include <git2.h>
++#include <git2/sys/errors.h>
+ #include <gio/gio.h>
+ 
+ #include "ggit-clone-options.h"

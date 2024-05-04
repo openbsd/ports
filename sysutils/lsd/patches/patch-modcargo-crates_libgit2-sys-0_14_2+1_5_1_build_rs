@@ -1,3 +1,5 @@
+Fix for libgit2->=1.8.0
+
 Index: modcargo-crates/libgit2-sys-0.14.2+1.5.1/build.rs
 --- modcargo-crates/libgit2-sys-0.14.2+1.5.1/build.rs.orig
 +++ modcargo-crates/libgit2-sys-0.14.2+1.5.1/build.rs
@@ -6,7 +8,7 @@ Index: modcargo-crates/libgit2-sys-0.14.2+1.5.1/build.rs
          // the SSH fixes for CVE-2023-22742 (1.5.1+ or 1.4.5+).
          if let Ok(lib) = cfg
 -            .range_version("1.5.1".."1.6.0")
-+            .range_version("1.5.1".."1.8.0")
++            .range_version("1.5.1".."1.9.0")
              .probe("libgit2")
              .or_else(|_| cfg.range_version("1.4.5".."1.5.0").probe("libgit2"))
          {

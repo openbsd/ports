@@ -1,0 +1,23 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+
+Index: libgit2-glib/ggit-repository.c
+--- libgit2-glib/ggit-repository.c.orig
++++ libgit2-glib/ggit-repository.c
+@@ -3182,7 +3182,7 @@ ggit_repository_create_commit (GgitRepository  *reposi
+ 	                         message,
+ 	                         _ggit_native_get (tree),
+ 	                         parent_count,
+-	                         (const git_commit **)parents_native);
++	                         (gpointer)parents_native);
+ 
+ 	g_free (parents_native);
+ 
+@@ -3323,7 +3323,7 @@ ggit_repository_create_commit_buffer(GgitRepository *r
+ 	                                message,
+ 	                                _ggit_tree_get_tree (tree),
+ 	                                parent_count,
+-	                                (git_commit const **)parents_native);
++	                                (gpointer)parents_native);
+ 
+ 	g_free (parents_native);
+ 

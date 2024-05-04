@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+
+Index: libgit2-glib/ggit-remote-callbacks.h
+--- libgit2-glib/ggit-remote-callbacks.h.orig
++++ libgit2-glib/ggit-remote-callbacks.h
+@@ -24,6 +24,7 @@
+ 
+ #include <glib-object.h>
+ #include <git2.h>
++#include <git2/sys/errors.h>
+ #include <libgit2-glib/ggit-cred.h>
+ 
+ G_BEGIN_DECLS
