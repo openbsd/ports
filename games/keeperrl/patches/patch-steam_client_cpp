@@ -1,0 +1,14 @@
+Index: steam_client.cpp
+--- steam_client.cpp.orig
++++ steam_client.cpp
+@@ -7,8 +7,8 @@
+ #include "steam_ugc.h"
+ #include "steam_utils.h"
+ 
+-#include "steamworks/public/steam/isteamclient.h"
+-#include "steamworks/public/steam/isteamuserstats.h"
++#include "goldberg_emulator/steam/isteamclient.h"
++#include "goldberg_emulator/steam/isteamuserstats.h"
+ 
+ #define FUNC(name) SteamAPI_ISteamClient_##name
+ #define US_FUNC(name) SteamAPI_ISteamUserStats_##name

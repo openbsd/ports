@@ -1,0 +1,12 @@
+Index: steam_utils.cpp
+--- steam_utils.cpp.orig
++++ steam_utils.cpp
+@@ -1,7 +1,7 @@
+ #include "stdafx.h"
+ #include "steam_internal.h"
+ #include "steam_utils.h"
+-#include "steamworks/public/steam/isteamutils.h"
++#include "goldberg_emulator/steam/isteamutils.h"
+ 
+ #define FUNC(name, ...) SteamAPI_ISteamUtils_##name
+ 

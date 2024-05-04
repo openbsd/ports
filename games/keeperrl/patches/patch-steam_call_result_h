@@ -1,0 +1,12 @@
+Index: steam_call_result.h
+--- steam_call_result.h.orig
++++ steam_call_result.h
+@@ -1,7 +1,7 @@
+ #pragma once
+ 
+ #include "steam_base.h"
+-#include "steamworks/public/steam/isteamutils.h"
++#include "goldberg_emulator/steam/isteamutils.h"
+ 
+ namespace steam {
+ string errorText(ESteamAPICallFailure);

@@ -1,0 +1,11 @@
+Index: steam_user.cpp
+--- steam_user.cpp.orig
++++ steam_user.cpp
+@@ -1,6 +1,6 @@
+ #include "steam_internal.h"
+ #include "steam_user.h"
+-#include "steamworks/public/steam/isteamuser.h"
++#include "goldberg_emulator/steam/isteamuser.h"
+ 
+ #define FUNC(name, ...) SteamAPI_ISteamUser_##name
+ 

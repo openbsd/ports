@@ -1,0 +1,11 @@
+Index: steam_friends.cpp
+--- steam_friends.cpp.orig
++++ steam_friends.cpp
+@@ -1,6 +1,6 @@
+ #include "steam_internal.h"
+ #include "steam_friends.h"
+-#include "steamworks/public/steam/isteamfriends.h"
++#include "goldberg_emulator/steam/isteamfriends.h"
+ #include <map>
+ 
+ #define FUNC(name, ...) SteamAPI_ISteamFriends_##name

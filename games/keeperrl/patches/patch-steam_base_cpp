@@ -1,0 +1,12 @@
+Index: steam_base.cpp
+--- steam_base.cpp.orig
++++ steam_base.cpp
+@@ -2,7 +2,7 @@
+ #include "steam_base.h"
+ #include "steam_ugc.h"
+ #include "steam_client.h"
+-#include "steamworks/public/steam/steamclientpublic.h"
++#include "goldberg_emulator/steam/steamclientpublic.h"
+ 
+ namespace steam {
+   

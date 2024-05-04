@@ -1,0 +1,14 @@
+set up version.h from port Makefile and skip gen_version.sh
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -162,7 +162,7 @@ info:
+ .PHONY:gen_version
+ gen_version:
+ ifdef RELEASE
+-	bash ./gen_version.sh
++	#bash ./gen_version.sh
+ endif
+ 
+ parse_game:

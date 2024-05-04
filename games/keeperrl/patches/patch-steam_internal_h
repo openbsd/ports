@@ -1,0 +1,18 @@
+correct path to steam_api header files
+
+Index: steam_internal.h
+--- steam_internal.h.orig
++++ steam_internal.h
+@@ -2,9 +2,9 @@
+ 
+ #include <stdio.h>
+ 
+-#include "steamworks/public/steam/steam_api_common.h"
+-#include "steamworks/public/steam/steam_api.h"
+-#include "steamworks/public/steam/steam_api_flat.h"
++#include "goldberg_emulator/steam/steam_api_common.h"
++#include "goldberg_emulator/steam/steam_api.h"
++#include "goldberg_emulator/steam/steam_api_flat.h"
+ 
+ #include <string>
+ 

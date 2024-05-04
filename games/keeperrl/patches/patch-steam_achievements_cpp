@@ -1,0 +1,16 @@
+correct steam_api include files
+
+Index: steam_achievements.cpp
+--- steam_achievements.cpp.orig
++++ steam_achievements.cpp
+@@ -1,8 +1,8 @@
+ #include "steam_achievements.h"
+ #include "achievement_id.h"
+ 
+-#include "extern/steamworks/public/steam/isteamuserstats.h"
+-#include "extern/steamworks/public/steam/isteamuser.h"
++#include "goldberg_emulator/steam/isteamuserstats.h"
++#include "goldberg_emulator/steam/isteamuser.h"
+ 
+ SteamAchievements::SteamAchievements() {
+   if (auto stats = SteamUserStats())

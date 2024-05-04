@@ -1,0 +1,12 @@
+Index: steam_ugc.cpp
+--- steam_ugc.cpp.orig
++++ steam_ugc.cpp
+@@ -2,7 +2,7 @@
+ #include "steam_ugc.h"
+ #include "steam_utils.h"
+ #include "steam_call_result.h"
+-#include "steamworks/public/steam/isteamugc.h"
++#include "goldberg_emulator/steam/isteamugc.h"
+ #include "progress_meter.h"
+ 
+ #define FUNC(name, ...) SteamAPI_ISteamUGC_##name

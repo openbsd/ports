@@ -1,0 +1,14 @@
+correct steam header files location
+
+Index: steam_input.cpp
+--- steam_input.cpp.orig
++++ steam_input.cpp
+@@ -1,6 +1,6 @@
+ #include "steam_input.h"
+-#include "extern/steamworks/public/steam/isteaminput.h"
+-#include "extern/steamworks/public/steam/isteamutils.h"
++#include "goldberg_emulator/steam/isteaminput.h"
++#include "goldberg_emulator/steam/isteamutils.h"
+ #include "clock.h"
+ 
+ void MySteamInput::init() {
