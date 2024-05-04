@@ -1,6 +1,4 @@
-# disabled because it ends up running at least as many as 23 copies
-# of moc in parallel
-#DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =	Yes
 
