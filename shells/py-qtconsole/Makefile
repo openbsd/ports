@@ -1,9 +1,8 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_EGG_VERSION =	5.5.1
+MODPY_EGG_VERSION =	5.5.2
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		shells
 
