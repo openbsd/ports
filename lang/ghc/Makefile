@@ -14,6 +14,7 @@ USE_NOEXECONLY =	Yes
 USE_NOBTCFI =		Yes
 
 GHC_VERSION =		9.6.5
+REVISION =		0
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
