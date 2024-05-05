@@ -1,0 +1,15 @@
+Index: rts/System/Platform/byteorder.h
+--- rts/System/Platform/byteorder.h.orig
++++ rts/System/Platform/byteorder.h
+@@ -59,9 +59,9 @@
+ 		// do not swab
+ 	#endif
+ 
+-#elif defined(__FreeBSD__)
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+-	#include <sys/endian.h>
++	#include <endian.h>
+ 
+ 	#define swabWord(w)  (htole16(w))
+ 	#define swabDWord(w) (htole32(w))

@@ -1,0 +1,15 @@
+alignment aware memory pools:
+https://github.com/beyond-all-reason/spring/pull/1165
+
+Index: rts/Rendering/Units/UnitDrawerData.cpp
+--- rts/Rendering/Units/UnitDrawerData.cpp.orig
++++ rts/Rendering/Units/UnitDrawerData.cpp
+@@ -28,7 +28,7 @@
+ #include "Map/Ground.h"
+ #include "Map/ReadMap.h"
+ 
+-static FixedDynMemPool<sizeof(GhostSolidObject), MAX_UNITS / 1000, MAX_UNITS / 32> ghostMemPool;
++static FixedDynMemPoolT<MAX_UNITS / 1000, MAX_UNITS / 32, GhostSolidObject> ghostMemPool;
+ 
+ ///////////////////////////
+ 

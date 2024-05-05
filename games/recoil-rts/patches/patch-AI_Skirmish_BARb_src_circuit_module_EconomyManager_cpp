@@ -1,0 +1,16 @@
+fix C++17 error when working with sorting the structs
+
+Index: AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp
+--- AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp.orig
++++ AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp
+@@ -551,7 +551,9 @@ void CEconomyManager::Init()
+ 				? (mspInfoEnd.pull - mspInfoBegin.pull) / (mspInfoEnd.mex - mspInfoBegin.mex)
+ 				: 0.f;
+ 	}
+-	std::sort(mspInfos.begin(), mspInfos.end());
++	std::sort(mspInfos.begin(), mspInfos.end(), [](const circuit::CEconomyManager::SPullMtoS &a1, const circuit::CEconomyManager::SPullMtoS &a2){
++		return a1.mex < a2.mex;
++	});
+ 	pullMtoS = mspInfos.front().pull;
+ 
+ 	CSetupManager::StartFunc subinit = [this](const AIFloat3& pos) {

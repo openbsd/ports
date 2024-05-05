@@ -1,0 +1,17 @@
+use argv[0] for executable
+
+Index: rts/System/Platform/Misc.h
+--- rts/System/Platform/Misc.h.orig
++++ rts/System/Platform/Misc.h
+@@ -54,6 +54,11 @@ namespace Platform
+ 	 */
+ 	std::string GetProcessExecutablePath();
+ 
++#ifdef __OpenBSD__
++	const static char *argv0;
++	void SetArgv0(const char *s);
++#endif
++
+ 	/**
+ 	 * Returns the path to the module/shared library, including the file name.
+ 	 * If moduleName is "", the path to the current library is returned.

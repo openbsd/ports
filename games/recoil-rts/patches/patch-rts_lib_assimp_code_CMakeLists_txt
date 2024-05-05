@@ -1,0 +1,14 @@
+remove hardcoded compiler optimizations and -g
+
+Index: rts/lib/assimp/code/CMakeLists.txt
+--- rts/lib/assimp/code/CMakeLists.txt.orig
++++ rts/lib/assimp/code/CMakeLists.txt
+@@ -480,7 +480,7 @@ if (ASSIMP_BUILD_IFC_IMPORTER)
+   if (MSVC)
+     set_source_files_properties(IFCReaderGen1.cpp IFCReaderGen2.cpp PROPERTIES COMPILE_FLAGS "/bigobj")
+   elseif(CMAKE_COMPILER_IS_MINGW)
+-    set_source_files_properties(IFCReaderGen1.cpp IFCReaderGen2.cpp PROPERTIES COMPILE_FLAGS "-O2 -Wa,-mbig-obj")
++    set_source_files_properties(IFCReaderGen1.cpp IFCReaderGen2.cpp PROPERTIES COMPILE_FLAGS "-Wa,-mbig-obj")
+   endif()
+ endif (ASSIMP_BUILD_IFC_IMPORTER)
+ 

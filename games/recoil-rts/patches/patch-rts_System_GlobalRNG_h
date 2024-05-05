@@ -1,0 +1,14 @@
+https://github.com/spring/spring/pull/571/commits/615d9eb6654ae471215560d96de5a39bc8b80625
+
+Index: rts/System/GlobalRNG.h
+--- rts/System/GlobalRNG.h.orig
++++ rts/System/GlobalRNG.h
+@@ -100,6 +100,8 @@ template<typename RNG, bool synced> class CGlobalRNG {
+ 
+ 	using FuncCB = void (*)(rng_res_type, rng_res_type);
+ 
++	using result_type = rng_res_type;
++
+ 	static_assert(std::numeric_limits<float>::digits == 24, "sign plus mantissa bits should be 24");
+ 
+ 	void Seed(rng_val_type seed) { SetSeed(seed); }

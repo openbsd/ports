@@ -1,0 +1,12 @@
+Index: rts/lib/fmt/os.h
+--- rts/lib/fmt/os.h.orig
++++ rts/lib/fmt/os.h
+@@ -13,7 +13,7 @@
+ #include <cstdio>
+ #include <system_error>  // std::system_error
+ 
+-#if defined __APPLE__ || defined(__FreeBSD__)
++#if defined __APPLE__ || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <xlocale.h>  // for LC_NUMERIC_MASK on OS X
+ #endif
+ 

@@ -1,0 +1,59 @@
+use pthread, getthrid
+don't stall at the end of Suspend - this requires Linux procfs to check
+for state LTS_SLEEP which we don't have. It doesn't seem needed to run.
+
+Index: rts/System/Platform/Linux/ThreadSupport.cpp
+--- rts/System/Platform/Linux/ThreadSupport.cpp.orig
++++ rts/System/Platform/Linux/ThreadSupport.cpp
+@@ -7,6 +7,9 @@
+ #include <csignal>
+ #include <fstream>
+ #include <sys/syscall.h>
++#ifdef __OpenBSD__
++	#include <unistd.h>
++#endif
+ 
+ #include "System/Log/ILog.h"
+ #include "System/Platform/Threading.h"
+@@ -42,7 +45,7 @@ enum LinuxThreadState {
+  * There is no glibc wrapper for this system call, so you have to write one:
+  */
+ static int gettid() {
+-	return syscall(SYS_gettid);
++	return getthrid();
+ }
+ 
+ /**
+@@ -87,12 +90,12 @@ static void ThreadSIGUSR1Handler(int signum, siginfo_t
+ 	LOG_L(L_DEBUG, "[%s][1]", __func__);
+ 
+ 	// Fill in ucontext_t structure before locking, this allows stack walking...
+-	const int err = getcontext(&(localThreadControls->ucontext));
++	//const int err = getcontext(&(localThreadControls->ucontext));
+ 
+-	if (err != 0) {
+-		LOG_L(L_ERROR, "[%s] couldn't get thread context within suspend signal handler: %s", __func__, strerror(err));
+-		return;
+-	}
++	//if (err != 0) {
++		//LOG_L(L_ERROR, "[%s] couldn't get thread context within suspend signal handler", __func__;
++		//return;
++	//}
+ 
+ 	// Change the "running" flag to false. Note that we don't own a lock on the suspend mutex, but in order to get here,
+ 	//   it had to have been locked by some other thread.
+@@ -229,12 +232,14 @@ SuspendResult ThreadControls::Suspend()
+ 	// Before leaving this function, we need some kind of guarantee that the stalled thread is suspended, so spinwait until it is guaranteed.
+ 	// FIXME: this sort of spin-waiting inside the watchdog loop could be avoided by creating another worker thread
+ 	//        inside SuspendedStacktrace itself to do the work of checking that the stalled thread has been suspended and performing the trace there.
++	/*
+ 	LinuxThreadState tstate;
+ 	constexpr int max_attempts = 40; // 40 attempts * 0.025s = 1 sec max.
+ 	for (int a = 0; a < max_attempts; a++) {
+ 		if ((tstate = GetLinuxThreadState(thread_id)) == LTS_SLEEP)
+ 			break;
+ 	}
++	*/
+ 
+ 	return Threading::THREADERR_NONE;
+ }

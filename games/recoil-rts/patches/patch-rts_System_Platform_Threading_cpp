@@ -1,0 +1,87 @@
+enable thread naming using pthread_set_name_np
+use SCHED_RR or SCHED_FIFO scheduling for threads, as we don't have SCHED_BATCH
+
+Index: rts/System/Platform/Threading.cpp
+--- rts/System/Platform/Threading.cpp.orig
++++ rts/System/Platform/Threading.cpp
+@@ -12,7 +12,7 @@
+ #include <functional>
+ #include <memory>
+ #include <cinttypes>
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #elif defined(_WIN32)
+ 	#include <windows.h>
+ #else
+@@ -37,7 +37,7 @@ namespace Threading {
+ 	static NativeThreadId nativeThreadIDs[THREAD_IDX_LAST] = {};
+ 	static Error threadError;
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #elif defined(_WIN32)
+ 	static DWORD_PTR cpusSystem = 0;
+ #else
+@@ -47,7 +47,7 @@ namespace Threading {
+ 
+ 	void DetectCores()
+ 	{
+-	#if defined(__APPLE__) || defined(__FreeBSD__)
++	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		// no-op
+ 
+ 	#elif defined(_WIN32)
+@@ -75,7 +75,7 @@ namespace Threading {
+ 
+ 
+ 
+-	#if defined(__APPLE__) || defined(__FreeBSD__)
++	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	#elif defined(_WIN32)
+ 	#else
+ 	static std::uint32_t CalcCoreAffinityMask(const cpu_set_t* cpuSet) {
+@@ -110,7 +110,7 @@ namespace Threading {
+ 
+ 	std::uint32_t GetAffinity()
+ 	{
+-	#if defined(__APPLE__) || defined(__FreeBSD__)
++	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		// no-op
+ 		return 0;
+ 
+@@ -134,7 +134,7 @@ namespace Threading {
+ 		if (coreMask == 0)
+ 			return (~0);
+ 
+-	#if defined(__APPLE__) || defined(__FreeBSD__)
++	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		// no-op
+ 		return 0;
+ 
+@@ -190,7 +190,7 @@ namespace Threading {
+ 
+ 	std::uint32_t GetAvailableCoresMask()
+ 	{
+-	#if defined(__APPLE__) || defined(__FreeBSD__)
++	#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		// no-op
+ 		return (~0);
+ 	#elif defined(_WIN32)
+@@ -238,7 +238,7 @@ namespace Threading {
+ 			int policy;
+ 			struct sched_param param;
+ 			pthread_getschedparam(Threading::GetCurrentThread(), &policy, &param);
+-			pthread_setschedparam(Threading::GetCurrentThread(), SCHED_BATCH, &param);
++			pthread_setschedparam(Threading::GetCurrentThread(), SCHED_FIFO, &param);
+ 		}
+ 	#endif
+ 	}
+@@ -362,6 +362,8 @@ namespace Threading {
+ 	#if defined(__USE_GNU) && !defined(_WIN32)
+ 		//alternative: pthread_setname_np(pthread_self(), newname.c_str());
+ 		prctl(PR_SET_NAME, newname.c_str(), 0, 0, 0);
++	#elif defined(__OpenBSD__)
++		pthread_set_name_np(pthread_self(), newname.c_str());
+ 	#elif _MSC_VER
+ 		const DWORD MS_VC_EXCEPTION = 0x406D1388;
+ 

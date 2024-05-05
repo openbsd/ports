@@ -1,0 +1,14 @@
+Make Lua C modules load dynamic libraries with global symbols
+
+Index: rts/lib/lua/src/loadlib.cpp
+--- rts/lib/lua/src/loadlib.cpp.orig
++++ rts/lib/lua/src/loadlib.cpp
+@@ -66,7 +66,7 @@ static void ll_unloadlib (void *lib) {
+ 
+ 
+ static void *ll_load (lua_State *L, const char *path) {
+-  void *lib = dlopen(path, RTLD_NOW);
++  void *lib = dlopen(path, RTLD_NOW | RTLD_GLOBAL);
+   if (lib == NULL) lua_pushstring(L, dlerror());
+   return lib;
+ }

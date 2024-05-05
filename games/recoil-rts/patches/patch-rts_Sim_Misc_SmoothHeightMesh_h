@@ -1,0 +1,14 @@
+memory_resource is in experimental
+
+Index: rts/Sim/Misc/SmoothHeightMesh.h
+--- rts/Sim/Misc/SmoothHeightMesh.h.orig
++++ rts/Sim/Misc/SmoothHeightMesh.h
+@@ -3,7 +3,7 @@
+ #ifndef SMOOTH_HEIGHT_MESH_H
+ #define SMOOTH_HEIGHT_MESH_H
+ 
+-#include <memory_resource>
++#include <experimental/memory_resource>
+ #include <queue>
+ #include <vector>
+ 

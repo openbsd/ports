@@ -1,0 +1,12 @@
+Index: rts/lib/xsimd/config/xsimd_align.hpp
+--- rts/lib/xsimd/config/xsimd_align.hpp.orig
++++ rts/lib/xsimd/config/xsimd_align.hpp
+@@ -35,7 +35,7 @@
+  ********************/
+ 
+ #ifndef XSIMD_ALLOCA
+-    #if defined(__linux__)
++    #if defined(__linux__) || defined(__OpenBSD__)
+         #define XSIMD_ALLOCA alloca
+     #elif defined(_MSC_VER)
+         #define XSIMD_ALLOCA _alloca

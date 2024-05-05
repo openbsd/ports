@@ -1,0 +1,60 @@
+stub thread_unwind
+comment out use of backtrace_symbols
+
+Index: rts/System/Platform/Linux/CrashHandler.cpp
+--- rts/System/Platform/Linux/CrashHandler.cpp.orig
++++ rts/System/Platform/Linux/CrashHandler.cpp
+@@ -45,7 +45,7 @@
+ #define ADDR2LINE "atos"
+ #endif
+ 
+-#if (defined(__FreeBSD__))
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ // show function names, demangle
+ #define ADDR2LINE_ARGS " -f -C"
+ #else
+@@ -705,6 +705,9 @@ namespace CrashHandler
+ 	 */
+ 	int thread_unwind(ucontext_t* uc, void** iparray, StackTrace& stacktrace)
+ 	{
++#ifdef __OpenBSD__
++		return 0;
++#else
+ 		assert(iparray != nullptr);
+ 
+ 		unw_cursor_t cursor;
+@@ -772,6 +775,7 @@ namespace CrashHandler
+ 		}
+ 
+ 		return (int(stacktrace.size()));
++#endif
+ 	}
+ 
+ 
+@@ -798,7 +802,7 @@ namespace CrashHandler
+ 				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
+ 
+ 			// get untranslated stacktrace symbols; give them meaningful names
+-			ExtractSymbols(backtrace_symbols(iparray, std::min(numLines, MAX_STACKTRACE_DEPTH)), stacktrace);
++			//ExtractSymbols(backtrace_symbols(iparray, std::min(numLines, MAX_STACKTRACE_DEPTH)), stacktrace);
+ 		}
+ 
+ 		if (stacktrace.empty()) {
+@@ -865,7 +869,7 @@ namespace CrashHandler
+ 				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
+ 
+ 			// get untranslated stacktrace symbols; give them meaningful names
+-			ExtractSymbols(backtrace_symbols(iparray, numLines), stacktrace);
++			//ExtractSymbols(backtrace_symbols(iparray, numLines), stacktrace);
+ 		}
+ 
+ 		if (stacktrace.empty()) {
+@@ -912,7 +916,7 @@ namespace CrashHandler
+ 				LOG_L(L_ERROR, "thread_unwind returned more lines than we allotted space for!");
+ 
+ 			// get untranslated stacktrace symbols; give them meaningful names
+-			ExtractSymbols(backtrace_symbols(iparray, std::min(numLines, MAX_STACKTRACE_DEPTH)), stacktrace);
++			//ExtractSymbols(backtrace_symbols(iparray, std::min(numLines, MAX_STACKTRACE_DEPTH)), stacktrace);
+         }
+ 
+ 		LOG_L(L_DEBUG, "[%s][3]", __func__);

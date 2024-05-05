@@ -1,0 +1,14 @@
+remove hardcoded compiler optimizations and -g
+
+Index: rts/lib/streflop/CMakeLists.txt
+--- rts/lib/streflop/CMakeLists.txt.orig
++++ rts/lib/streflop/CMakeLists.txt
+@@ -70,7 +70,7 @@ SET(libm_flt32_source
+ 
+ SET(cxxflags "-I\"${CMAKE_CURRENT_SOURCE_DIR}/libm/headers\"")
+ if   (NOT MSVC)
+-	SET(cxxflags "${cxxflags} -w -O3")
++	SET(cxxflags "${cxxflags}")
+ 	if (NOT $ENV{CXX} MATCHES "icpc")
+ 		SET(cxxflags "${cxxflags} -mfpmath=sse -msse")
+ 	endif (NOT $ENV{CXX} MATCHES "icpc")

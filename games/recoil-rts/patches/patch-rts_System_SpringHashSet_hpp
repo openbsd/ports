@@ -1,0 +1,13 @@
+include <algorithm> for std::fill_n
+
+Index: rts/System/SpringHashSet.hpp
+--- rts/System/SpringHashSet.hpp.orig
++++ rts/System/SpringHashSet.hpp
+@@ -10,6 +10,7 @@
+ #include <cstdlib> // malloc
+ #include <iterator>
+ #include <utility>
++#include <algorithm>
+ 
+ #define DCHECK_EQ_F(a, b)
+ #define DCHECK_LT_F(a, b)

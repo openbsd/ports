@@ -1,0 +1,12 @@
+Index: rts/lib/lua/include/luaconf.h
+--- rts/lib/lua/include/luaconf.h.orig
++++ rts/lib/lua/include/luaconf.h
+@@ -33,7 +33,7 @@
+ #define LUA_WIN
+ #endif
+ 
+-#if defined(LUA_USE_LINUX)
++#if defined(LUA_USE_BSD) || defined(LUA_USE_LINUX)
+ #define LUA_USE_POSIX
+ #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+ #define LUA_USE_READLINE	/* needs some extra libraries */

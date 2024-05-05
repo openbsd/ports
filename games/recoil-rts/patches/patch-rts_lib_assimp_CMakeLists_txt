@@ -1,0 +1,16 @@
+remove hardcoded compiler optimizations and -g
+
+Index: rts/lib/assimp/CMakeLists.txt
+--- rts/lib/assimp/CMakeLists.txt.orig
++++ rts/lib/assimp/CMakeLists.txt
+@@ -216,8 +216,8 @@ ENDIF()
+ if (ASSIMP_COVERALLS)
+     MESSAGE(STATUS "Coveralls enabled")
+     INCLUDE(Coveralls)
+-    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+-    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
++    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
++    SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
+ endif()
+ 
+ if (ASSIMP_WERROR)

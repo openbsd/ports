@@ -1,0 +1,12 @@
+Index: tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
+--- tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h.orig
++++ tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
+@@ -6,7 +6,7 @@
+ #define ST_WINDOWS
+ #elif defined(__APPLE__) && defined(__MACH__)
+ #define ST_APPLE
+-#elif defined(__linux__) || defined(__FreeBSD__) || defined(BSD)
++#elif defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(BSD)
+ #define ST_NIX
+ #else
+ #error "Unknown platform"

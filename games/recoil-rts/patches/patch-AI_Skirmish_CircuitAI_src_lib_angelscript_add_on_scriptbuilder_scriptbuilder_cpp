@@ -1,0 +1,21 @@
+Index: AI/Skirmish/CircuitAI/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp
+--- AI/Skirmish/CircuitAI/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp.orig
++++ AI/Skirmish/CircuitAI/src/lib/angelscript/add_on/scriptbuilder/scriptbuilder.cpp
+@@ -11,7 +11,7 @@ using namespace std;
+ #include <windows.h> // For GetModuleFileName()
+ #endif
+ 
+-#if defined(__S3E__) || defined(__APPLE__) || defined(__GNUC__)
++#if defined(__S3E__) || defined(__APPLE__) || defined(__GNUC__) || defined(__OpenBSD__)
+ #include <unistd.h> // For getcwd()
+ #endif
+ 
+@@ -1205,7 +1205,7 @@ string GetCurrentDir()
+ 	#else
+ 	return _getcwd(buffer, (int)1024);
+ 	#endif // _MSC_VER
+-#elif defined(__APPLE__) || defined(__linux__)
++#elif defined(__APPLE__) || defined(__linux__) || defined(__OpenBSD__)
+ 	return getcwd(buffer, 1024);
+ #else
+ 	return "";

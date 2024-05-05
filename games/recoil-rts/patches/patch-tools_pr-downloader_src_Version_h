@@ -1,0 +1,12 @@
+Index: tools/pr-downloader/src/Version.h
+--- tools/pr-downloader/src/Version.h.orig
++++ tools/pr-downloader/src/Version.h
+@@ -12,7 +12,7 @@ enum class Platform {
+ 
+ #if defined(_WIN64)
+ constexpr Platform PRD_CURRENT_PLATFORM = Platform::Windows_x64;
+-#elif defined(__linux__) && defined(__x86_64__)
++#elif (defined(__linux__) || defined(__OpenBSD__)) && defined(__x86_64__)
+ constexpr Platform PRD_CURRENT_PLATFORM = Platform::Linux_x64;
+ #endif
+ 

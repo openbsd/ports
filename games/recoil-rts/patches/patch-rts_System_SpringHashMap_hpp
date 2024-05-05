@@ -1,0 +1,13 @@
+<algorithm> is needed for std::fill_n
+
+Index: rts/System/SpringHashMap.hpp
+--- rts/System/SpringHashMap.hpp.orig
++++ rts/System/SpringHashMap.hpp
+@@ -10,6 +10,7 @@
+ #include <cstdlib>
+ #include <iterator>
+ #include <utility>
++#include <algorithm>
+ 
+ #define DCHECK_EQ_F(a, b)
+ #define DCHECK_LT_F(a, b)

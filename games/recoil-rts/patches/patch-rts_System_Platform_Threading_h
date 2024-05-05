@@ -1,0 +1,22 @@
+Index: rts/System/Platform/Threading.h
+--- rts/System/Platform/Threading.h.orig
++++ rts/System/Platform/Threading.h
+@@ -12,6 +12,9 @@
+ #ifdef __APPLE__
+ #include <libkern/OSAtomic.h> // OSAtomicIncrement64
+ #endif
++#ifdef __OpenBSD__
++#include <pthread_np.h>
++#endif
+ 
+ #include "System/Platform/Win/win32.h"
+ #include "System/Threading/SpringThreading.h"
+@@ -203,7 +206,7 @@ namespace Threading {
+ namespace Threading {
+ 	bool NativeThreadIdsEqual(const NativeThreadId thID1, const NativeThreadId thID2)
+ 	{
+-	#ifdef __APPLE__
++	#if defined(__APPLE__) || defined(__OpenBSD__)
+ 		// quote from the pthread_equal manpage:
+ 		// Implementations may choose to define a thread ID as a structure.
+ 		// This allows additional flexibility and robustness over using an int.

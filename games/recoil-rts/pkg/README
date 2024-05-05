@@ -1,0 +1,66 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Datasize
+========
+
+${PKGSTEM} needs datasize of at least 4-6G to launch, see login.conf(5) and
+ksh(1).
+
+Installing Engines
+==================
+
+Different engines are built with ${PKGSTEM}. ${PKGSTEM} itself only provides
+the building blocks, so in order to run anything, you need to add an engine.
+The best known and best supported engines for ${PKGSTEM} are Zero-K and
+Beyond All Reason. For example, install Zero-K this way:
+
+	$ pr-downloader zk:stable
+
+And Beyond All Reason:
+
+	$ pr-downloader byar:stable
+
+It will then show up as an engine that can be selected in the ${PKGSTEM} GUI.
+
+Setting up Lobbies
+==================
+
+Running ${PKGSTEM} without a lobby set up will allow testing of maps, engines,
+and settings. To add a lobby, you need to download it and then launch it with:
+
+	1. use `--menu <menu>' argument to spring, or
+
+Installing Lobbies
+------------------
+
+To install Chobby lobby, run the following:
+
+	$ pr-downloader chobby:stable	# latest stable version
+		or
+	$ pr-downloader chobby:test	# latest test version
+
+Then launch it for example with:
+
+	$ spring --menu 'rapid://chobby:test'
+
+Or set it as the default by adding `DefaultLuaMenu = <menu> <version>' to
+~/.config/spring/springsettings.cfg.
+
+Installing Maps
+===============
+
+Maps can be installed in one of three ways: via the lobby interface, with
+pr-downloader, or by manually downloading the map and placing it in
+~/.spring/maps/. Repositories for maps (subject to change) can for example be
+found at:
+
+	https://zero-k.info/Maps
+	https://www.beyondallreason.info/maps
+	https://springrts.com/wiki/Maps
+
+Troubleshooting
+===============
+
+If ${PKGSTEM} fails to launch, you can try the flag `-safemode'.

@@ -1,0 +1,51 @@
+implement EnumerateCores()
+
+Index: rts/System/Platform/CpuID.cpp
+--- rts/System/Platform/CpuID.cpp.orig
++++ rts/System/Platform/CpuID.cpp
+@@ -11,6 +11,11 @@
+ 	#include <intrin.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++	#include <sys/types.h>
++	#include <sys/sysctl.h>
++#endif
++
+ #include "System/Threading/SpringThreading.h"
+ #include "System/UnorderedSet.hpp"
+ 
+@@ -33,7 +38,7 @@ namespace springproc {
+ 	// NOLINTNEXTLINE{readability-non-const-parameter}
+ 	_noinline void ExecCPUID(unsigned int* a, unsigned int* b, unsigned int* c, unsigned int* d)
+ 	{
+-		#ifndef __APPLE__
++		#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 		__asm__ __volatile__(
+ 			"cpuid"
+ 			: "=a" (*a), "=b" (*b), "=c" (*c), "=d" (*d)
+@@ -111,6 +116,16 @@ namespace springproc {
+ 	}
+ 
+ 	void CPUID::EnumerateCores() {
++#ifdef __OpenBSD__
++		int mib[2] = { CTL_HW, HW_NCPUONLINE };
++		size_t len = sizeof(numLogicalCores);
++
++		// XXX: currently assumes that hyperthreading is disabled and numLogicalCores == numPhysicalCores
++		if (sysctl(mib, 2, &numLogicalCores, &len, (void *) 0, 0) != 0) std::abort();
++
++		numPhysicalCores = numLogicalCores;
++		availableProceesorAffinityMask = 0;
++#else
+ 		const auto oldAffinity = Threading::GetAffinity();
+ 
+ 		availableProceesorAffinityMask = 0;
+@@ -162,6 +177,7 @@ namespace springproc {
+ 			// ignore case PURPOSE_EFFICIENCY:
+ 			}
+ 		}
++#endif
+ 	}
+ 
+ 	void CPUID::SetDefault()

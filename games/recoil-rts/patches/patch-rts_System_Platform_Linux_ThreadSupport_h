@@ -1,0 +1,16 @@
+skip ucontext.h
+
+Index: rts/System/Platform/Linux/ThreadSupport.h
+--- rts/System/Platform/Linux/ThreadSupport.h.orig
++++ rts/System/Platform/Linux/ThreadSupport.h
+@@ -7,7 +7,9 @@
+ 	// FIXME: exclusively for ucontext.h
+ 	#define _XOPEN_SOURCE 700
+ #endif
+-#include <ucontext.h>
++#if !defined(__OpenBSD__)
++    #include <ucontext.h>
++#endif
+ #include <functional>
+ #include <memory>
+ 
