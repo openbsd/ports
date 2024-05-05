@@ -1,12 +1,13 @@
-V =            3.1.12.2
+V =		3.1.12.2
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
+REVISION =	0
 
 CATEGORIES =	converters textproc
 
 HOMEPAGE =	https://pandoc.org
 
-MAINTAINER = 	Evan Silberman <evan@jklol.net>
+MAINTAINER =	Evan Silberman <evan@jklol.net>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
