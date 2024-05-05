@@ -1,4 +1,4 @@
-V =		12.0f
+V =		13.0d
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =	devel/sdl-gfx \
 		graphics/glew \
 		graphics/png
 
-CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include \
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include -DFHS\
 			-DHYPERPATH="\\\"${LOCALBASE}/share/hyperrogue/\\\""
 LDFLAGS +=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
