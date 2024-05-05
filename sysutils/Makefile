@@ -193,6 +193,7 @@
      SUBDIR += libvmdk
      SUBDIR += libvshadow
      SUBDIR += libvslvm
+     SUBDIR += lnav
      SUBDIR += lockfile
      SUBDIR += logfmon
      SUBDIR += login_duo
