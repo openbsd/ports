@@ -4,21 +4,12 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -2,7 +2,7 @@ include config.mk
- 
- cflags := -Isrc/brogue -Isrc/platform -std=c99 \
- 	-Wall -Wpedantic -Werror=implicit -Wno-parentheses -Wno-unused-result \
--	-Wformat -Werror=format-security -Wformat-overflow=0
-+	-Wformat -Werror=format-security
- libs := -lm
- cppflags := -DDATADIR=$(DATADIR)
- 
-@@ -41,7 +41,7 @@ ifeq ($(DEBUG),YES)
- 	cflags += -g -Og
- 	cppflags += -DENABLE_PLAYBACK_SWITCH
+@@ -62,7 +62,7 @@ ifeq ($(DEBUG),YES)
+ cflags += -g -Og
+ cppflags += -DENABLE_PLAYBACK_SWITCH
  else
--	cflags += -O2
-+	cflags +=
+-cflags += -O2
++cflags +=
  endif
  
- objects := $(sources:.c=.o)
+ # Add user-provided flags.

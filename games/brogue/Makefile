@@ -3,7 +3,7 @@ COMMENT-no_x11 =	roguelike game by Brian Walker
 
 GH_ACCOUNT =	tmewett
 GH_PROJECT =	BrogueCE
-GH_TAGNAME =	v1.12
+GH_TAGNAME =	v1.13
 
 PKGNAME =	brogue-${GH_TAGNAME:S/v//}
 
