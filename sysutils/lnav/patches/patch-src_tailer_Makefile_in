@@ -1,0 +1,27 @@
+reorder includes so that the bundled fmtlib headers are taken first if devel/fmt happens to be installed
+
+Index: src/tailer/Makefile.in
+--- src/tailer/Makefile.in.orig
++++ src/tailer/Makefile.in
+@@ -656,9 +656,9 @@ libtailercommon_a_SOURCES = \
+     tailer.c
+ 
+ libtailerpp_a_CPPFLAGS = \
++    -I$(srcdir)/../fmtlib \
+     $(AM_CPPFLAGS) \
+     -I$(srcdir)/.. \
+-    -I$(srcdir)/../fmtlib \
+     -I$(srcdir)/../third-party \
+ 	-I$(top_srcdir)/src/third-party/date/include \
+ 	-I$(top_srcdir)/src/third-party/scnlib/include
+@@ -667,9 +667,9 @@ libtailerpp_a_SOURCES = \
+     tailerpp.cc
+ 
+ libtailerservice_a_CPPFLAGS = \
++    -I$(srcdir)/../fmtlib \
+     $(AM_CPPFLAGS) \
+     -I$(srcdir)/.. \
+-    -I$(srcdir)/../fmtlib \
+     -I$(srcdir)/../third-party \
+ 	-I$(top_srcdir)/src/third-party/date/include \
+ 	-I$(top_srcdir)/src/third-party/scnlib/include

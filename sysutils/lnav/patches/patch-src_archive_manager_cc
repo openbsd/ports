@@ -1,0 +1,15 @@
+fix 'vfprintf %s NULL'
+
+Index: src/archive_manager.cc
+--- src/archive_manager.cc.orig
++++ src/archive_manager.cc
+@@ -95,7 +95,8 @@ describe(const fs::path& filename)
+ 
+         const auto* format_name = archive_format_name(arc);
+ 
+-        log_debug("read next header %s %s", format_name, filename.c_str());
++        if (format_name != nullptr)
++            log_debug("read next header %s %s", format_name, filename.c_str());
+         if (archive_read_next_header(arc, &entry) == ARCHIVE_OK) {
+             log_debug("read next done %s", filename.c_str());
+ 
