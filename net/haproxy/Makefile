@@ -10,6 +10,8 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB +=	c crypto pcre2-8 pcre2-posix pthread ssl z
 
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
+
 SITES =		${HOMEPAGE}/download/2.8/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
