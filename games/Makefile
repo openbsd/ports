@@ -268,6 +268,7 @@
      SUBDIR += qstat
      SUBDIR += quadrupleback
      SUBDIR += quakespasm
+     SUBDIR += recoil-rts
      SUBDIR += redeclipse
      SUBDIR += renpy
      SUBDIR += returntotheroots
