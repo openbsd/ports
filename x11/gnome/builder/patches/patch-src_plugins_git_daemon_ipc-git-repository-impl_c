@@ -1,0 +1,20 @@
+From 1cde2181bfa506c6cd848cb583f16629c245d88b Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Tue, 2 Apr 2024 14:00:49 -0700
+Subject: [PATCH] plugins/git: fix compilation issue with newer libgit2
+
+Index: src/plugins/git/daemon/ipc-git-repository-impl.c
+--- src/plugins/git/daemon/ipc-git-repository-impl.c.orig
++++ src/plugins/git/daemon/ipc-git-repository-impl.c
+@@ -550,7 +550,10 @@ commit_create_with_signature (GgitRepository  *reposit
+                                   message,
+                                   _ggit_native_get (tree),
+                                   parent_count,
+-                                  (const git_commit **)parents_native);
++                                  /* just cast to (void*) to avoid the differences
++                                   * between various libgit2 versions. See #2183.
++                                   */
++                                  (gpointer)parents_native);
+ 
+   if (ret != GIT_OK)
+     {
