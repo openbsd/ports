@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows Event Log (EVT)
 VERSION = 	20191221
 DISTNAME =	libevt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  evt                       0.0 # 1.0
 

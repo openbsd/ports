@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 3.4.0
 GH_ACCOUNT =	threat9
 GH_PROJECT =	routersploit
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security net
 

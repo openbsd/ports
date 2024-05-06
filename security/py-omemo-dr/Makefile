@@ -3,6 +3,7 @@ COMMENT =		Gajim's fork of py-axolotl
 MODPY_EGG_VERSION =	1.0.1
 DISTNAME =		omemo-dr-${MODPY_EGG_VERSION}
 PKGNAME =		py-omemo-dr-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.5.0
 GH_ACCOUNT =		mschwager
 GH_PROJECT =		fierce
 GH_TAGNAME =		${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

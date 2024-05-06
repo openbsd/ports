@@ -5,7 +5,7 @@ MODPY_EGG_VERSION=	4.4.28
 DISTNAME=	zxcvbn-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	security
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/dwolfhub/zxcvbn-python
 

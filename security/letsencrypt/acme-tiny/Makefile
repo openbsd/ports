@@ -4,7 +4,7 @@ MODPY_EGG_VERSION= 5.0.1
 DISTNAME=	acme-tiny-${MODPY_EGG_VERSION}
 EPOCH=		0
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 

@@ -3,7 +3,7 @@ COMMENT =		access the Expert Witness Compression Format
 VERSION =		20140808
 DISTNAME =		libewf-${VERSION}
 EPOCH =			0
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=		ewf                       1.0 # 3.0
 

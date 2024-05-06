@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	24.0.0
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pyca/pyopenssl
 

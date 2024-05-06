@@ -16,7 +16,7 @@ EPOCH =		0
 GH_ACCOUNT =	cea-sec
 GH_PROJECT =	miasm
 GH_COMMIT =	d82c9ef57fa48eb254e2547f8a128bbc75b7e966
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security devel
 

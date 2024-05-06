@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.1.0
 
 DISTNAME =		threadpoolctl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

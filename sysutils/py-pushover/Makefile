@@ -1,7 +1,7 @@
 COMMENT =	send messages via Pushover
 
 MODPY_EGG_VERSION =	0.4
-REVISION =	4
+REVISION =	5
 
 EPOCH =		0
 

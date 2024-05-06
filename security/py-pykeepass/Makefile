@@ -5,6 +5,7 @@ MODPY_EGG_VERSION =	4.0.6
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
+REVISION =	0
 
 HOMEPAGE =	https://github.com/libkeepass/pykeepass
 

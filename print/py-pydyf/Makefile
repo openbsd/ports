@@ -3,6 +3,7 @@ COMMENT =		low-level PDF generator
 MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		pydyf-${MODPY_EGG_VERSION}
 PKGNAME =		py-pydyf-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		print
 

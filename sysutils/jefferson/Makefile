@@ -2,6 +2,7 @@ COMMENT =		JFFS2 filesystem extraction tool
 
 MODPY_EGG_VERSION =	0.4.2
 DISTNAME =		jefferson-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

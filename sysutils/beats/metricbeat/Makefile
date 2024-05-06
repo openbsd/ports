@@ -1,5 +1,5 @@
 COMMENT =	lightweight shipper for system metrics
-REVISION =	1
+REVISION =	2
 
 BEAT =		metricbeat
 

@@ -10,6 +10,7 @@ SITES =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_T
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME =	${DISTNAME:S/v//}
 WRKSRC =	${WRKDIR}/${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 

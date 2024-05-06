@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the ESE and EDB format
 VERSION = 	20191220
 DISTNAME =	libesedb-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  esedb                       0.0 # 1.0
 

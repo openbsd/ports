@@ -2,7 +2,7 @@ COMMENT =		todo management and time tracker
 
 VERSION =		5.0.1
 DISTNAME =		ktimetracker-${VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity x11
 

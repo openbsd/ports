@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the VMware Virtual Disk format
 VERSION = 	20191221
 DISTNAME =	libvmdk-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  vmdk                       0.0 # 1.0
 

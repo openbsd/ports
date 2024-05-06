@@ -3,7 +3,7 @@ COMMENT =	library and tools to access LUKS Disk Encryption
 VERSION = 	20200205
 DISTNAME =	libluksde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  luksde                     0.1 # 1.0
 

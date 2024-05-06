@@ -3,7 +3,7 @@ COMMENT =	HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
 MODPY_EGG_VERSION =	0.0.3
 DISTNAME =		hkdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 

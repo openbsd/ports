@@ -1,6 +1,7 @@
 COMMENT=		flexible communications framework, IRC component
 
 DISTNAME=		telepathy-idle-0.2.2
+REVISION=		0
 
 SITES=			${SITES_TP:=telepathy-idle/}
 

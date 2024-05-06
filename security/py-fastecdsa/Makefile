@@ -7,6 +7,7 @@ GH_PROJECT =		fastecdsa
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 PKGNAME =		py-fastecdsa-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

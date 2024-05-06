@@ -3,7 +3,7 @@ COMMENT =		Duo Python two-factor authentication
 MODPY_EGG_VERSION =	2.0.3
 DISTNAME =		duo_universal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security sysutils
 

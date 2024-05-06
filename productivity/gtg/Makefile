@@ -3,7 +3,7 @@ COMMENT=		GTD organizer for GNOME
 MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity
 

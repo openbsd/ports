@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows NT Registry File
 VERSION = 	20200805
 DISTNAME =	libregf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  regf                       0.0 # 1.0
 

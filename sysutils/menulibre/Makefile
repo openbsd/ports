@@ -6,6 +6,7 @@ GH_ACCOUNT =	bluesabre
 GH_PROJECT =	menulibre
 GH_TAGNAME =	menulibre-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils x11
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

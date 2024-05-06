@@ -3,7 +3,7 @@ COMMENT =	argon2 password hashing for Python
 # 21.2.0+ moves the CFFI bindings to a separate project
 # (argon2-cffi-bindings), and changes PEP517 backend to flit_core
 MODPY_EGG_VERSION =	21.1.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	argon2-cffi-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

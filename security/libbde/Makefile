@@ -3,7 +3,7 @@ COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 VERSION =		20191221
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  bde                       0.1 # 1.0
 

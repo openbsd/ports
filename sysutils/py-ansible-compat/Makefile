@@ -3,6 +3,7 @@ COMMENT=	functions for working with Ansible from Python
 MODPY_EGG_VERSION=	4.1.11
 DISTNAME=	ansible-compat-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	sysutils
 

@@ -3,6 +3,7 @@ COMMENT =		Python client library for Hashicorp Vault
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		hvac-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

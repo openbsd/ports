@@ -5,7 +5,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${MODPY_EGG_VERSION}
 DISTNAME =		libpwquality-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 

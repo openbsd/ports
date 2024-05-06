@@ -5,7 +5,7 @@ GH_PROJECT = 	yara-python
 MODPY_EGG_VERSION =	4.2.0
 PKGNAME =		py-yara-${MODPY_EGG_VERSION}
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

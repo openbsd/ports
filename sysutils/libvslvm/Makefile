@@ -3,7 +3,7 @@ COMMENT =	library to access the LVM volume system format
 VERSION = 	20200102
 DISTNAME =	libvslvm-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  vslvm                       0.0 # 1.0
 

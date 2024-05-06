@@ -3,7 +3,7 @@ COMMENT=	manage Elasticsearch indices
 MODPY_EGG_VERSION=5.8.4
 DISTNAME=	elasticsearch-curator-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 

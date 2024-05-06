@@ -3,6 +3,7 @@ COMMENT=	Python module for GnuPG interface
 MODPY_EGG_VERSION=	0.5.2
 DISTNAME=	python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=	py-gnupg-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	security devel
 

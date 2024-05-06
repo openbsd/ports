@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the IE Cache File (index.dat)
 VERSION = 	20191221
 DISTNAME =	libmsiecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  msiecf                       0.0 # 1.0
 

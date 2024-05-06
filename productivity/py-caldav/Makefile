@@ -5,6 +5,7 @@ GH_ACCOUNT =		python-caldav
 GH_PROJECT =		caldav
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		productivity net
 

@@ -6,6 +6,7 @@ DISTNAME=	wesng-${MODPY_EGG_VERSION}
 # fetch it from upstream's github repo instead
 DEF_DATE=	20221123
 DEF_COMMITHASH=	2834f8e925d1f3ea7ff7de2dad6d7d4155f0fa00
+REVISION=	0
 
 HOMEPAGE=	https://github.com/bitsadmin/wesng
 

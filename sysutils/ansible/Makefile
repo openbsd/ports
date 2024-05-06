@@ -2,6 +2,7 @@ COMMENT =		radically simple IT automation
 
 MODPY_EGG_VERSION =	9.5.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

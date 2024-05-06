@@ -2,6 +2,7 @@ COMMENT =		standards based terminal calendar
 
 MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		khal-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 

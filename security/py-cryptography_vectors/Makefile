@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	42.0.5
 DISTNAME=	cryptography_vectors-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security
+REVISION=	0
 
 HOMEPAGE=	https://cryptography.io/
 

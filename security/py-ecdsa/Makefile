@@ -4,6 +4,7 @@ MODPY_EGG_VERSION = 	0.19.0
 DISTNAME = 		ecdsa-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security
+REVISION =              0
 
 HOMEPAGE = 		https://github.com/warner/python-ecdsa
 

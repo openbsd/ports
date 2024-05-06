@@ -3,7 +3,7 @@ COMMENT=		secure storing of passwords using the SecretService DBus API
 MODPY_EGG_VERSION=	3.3.3
 DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 

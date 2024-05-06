@@ -3,7 +3,7 @@ COMMENT =	ForensicArtifacts.com Artifact Repository
 MODPY_EGG_VERSION = 20200118
 DISTNAME =	artifacts-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 

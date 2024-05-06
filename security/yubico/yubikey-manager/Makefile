@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	5.3.0
 DISTNAME=	yubikey_manager-${MODPY_EGG_VERSION}
 PKGNAME=	yubikey-manager-${MODPY_EGG_VERSION}
 YK_PROJECT=	yubikey-manager
+REVISION=	0
 
 CATEGORIES=	sysutils
 

@@ -2,6 +2,7 @@ COMMENT=		service endpoint configuration per service on profile
 
 MODPY_EGG_VERSION=	0.4
 DISTNAME=		awscli-plugin-endpoint-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils
 

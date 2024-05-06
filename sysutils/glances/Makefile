@@ -5,6 +5,7 @@ EPOCH =			0
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

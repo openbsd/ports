@@ -2,7 +2,7 @@ COMMENT =		Python library for interacting with Duo APIs
 
 MODPY_EGG_VERSION =	4.4.0
 
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		duo_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}

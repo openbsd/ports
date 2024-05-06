@@ -2,7 +2,7 @@ COMMENT =		simple, pythonic tool for remote execution and deployment
 
 MODPY_EGG_VERSION =	2.6.0
 DISTNAME =		fabric-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 

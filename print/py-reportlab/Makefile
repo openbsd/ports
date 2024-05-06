@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	3.6.13
 DISTNAME=	reportlab-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
+REVISION=	0
 
 # see patches/patch-setup_py
 # grep 'zipdata =' `make show=WRKSRC`/setup.py

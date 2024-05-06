@@ -1,7 +1,7 @@
 COMMENT =		Python module to read and work with PE files
 
 MODPY_EGG_VERSION =	2023.2.7
-REVISION =		0
+REVISION =		1
 DISTNAME =		pefile-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

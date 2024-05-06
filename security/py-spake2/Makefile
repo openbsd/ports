@@ -3,7 +3,7 @@ COMMENT =	SPAKE2 password-authenticated key exchange (pure python)
 MODPY_EGG_VERSION =	0.8
 DISTNAME =		spake2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 

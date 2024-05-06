@@ -3,7 +3,7 @@ COMMENT =	parse a PDF document
 MODPY_EGG_VERSION =	0.7.5
 DISTNAME =	pdf-parser_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdf-parser-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 

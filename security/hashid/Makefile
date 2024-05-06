@@ -2,7 +2,7 @@ COMMENT =	Identify the different types of cryptographic hashes
 
 MODPY_EGG_VERSION = 3.1.4
 DISTNAME =	hashid-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =    psypanda
 GH_PROJECT =    hashID

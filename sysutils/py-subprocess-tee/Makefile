@@ -3,6 +3,7 @@ COMMENT=	subprocess.run replacement that captures and displays output
 MODPY_EGG_VERSION=	0.4.1
 DISTNAME=	subprocess-tee-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pycontribs/subprocess-tee
 

@@ -3,7 +3,7 @@ COMMENT =	Yet Another SWF Parser
 MODPY_EGG_VERSION =	0.9.3
 DISTNAME =	yaswfp-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp

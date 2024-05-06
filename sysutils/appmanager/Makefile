@@ -3,7 +3,7 @@ COMMENT =	graphical interface to manage/explore OpenBSD packages
 DISTNAME =	AppManager-${V}
 PKGNAME =	appmanager-${V}
 CATEGORIES =	sysutils
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://tildegit.org/solene/AppManager/
 

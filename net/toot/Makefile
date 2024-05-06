@@ -2,6 +2,7 @@ COMMENT =		CLI and TUI tool to interact with Mastodon instances
 
 MODPY_EGG_VERSION =	0.43.0
 DISTNAME =		toot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

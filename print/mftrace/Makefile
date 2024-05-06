@@ -2,6 +2,7 @@ COMMENT=	scalable PostScript fonts generator for MetaFont
 
 CATEGORIES=	fonts print
 DISTNAME=	mftrace-1.2.20
+REVISION=	0
 
 HOMEPAGE=	https://lilypond.org/mftrace/
 

@@ -4,7 +4,7 @@ COMMENT =		print sun4v machine descriptions
 DISTNAME =		ldomsmanager-3.5.0.0-30.2411.1
 # own version, documented in source code
 PKGNAME =		mdprint-1.3
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		sysutils devel
 

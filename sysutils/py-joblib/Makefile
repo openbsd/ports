@@ -3,7 +3,7 @@ COMMENT =	lightweight pipelining: using Python functions as pipeline
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		joblib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

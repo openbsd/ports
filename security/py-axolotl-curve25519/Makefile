@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.4.1
 POST =			2
 DISTNAME =		python-axolotl-curve25519-${MODPY_EGG_VERSION}.post${POST}
 PKGNAME =		py-axolotl-curve25519-${MODPY_EGG_VERSION}pl${POST}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		security
 

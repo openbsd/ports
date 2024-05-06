@@ -3,7 +3,7 @@ COMMENT =	analyze OLE files
 MODPY_EGG_VERSION =	0.0.60
 DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	oledump-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 
 CATEGORIES =	security

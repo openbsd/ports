@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.1.2
 
 DISTNAME =		requests-aws4auth-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}requests-aws4auth-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the OLE 2 Compound File
 VERSION = 	20191221
 DISTNAME =	libolecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  olecf                       0.1 # 1.0
 

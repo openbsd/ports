@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	4.4.3
 
 DISTNAME =	python-hpilo-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 

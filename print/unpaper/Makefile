@@ -1,6 +1,7 @@
 COMMENT=		post-processing tool for scanned paper sheets
 
 DISTNAME=		unpaper-7.0.0
+REVISION=		0
 
 CATEGORIES=		print graphics
 

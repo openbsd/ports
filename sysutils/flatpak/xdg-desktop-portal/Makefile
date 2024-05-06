@@ -4,6 +4,7 @@ COMMENT=		portal frontend service for desktop containment frameworks
 
 V=			1.18.4
 DISTNAME=		xdg-desktop-portal-${V}
+REVISION=		0
 
 CATEGORIES=		x11
 

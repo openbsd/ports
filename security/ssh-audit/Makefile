@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.2.0
 
 DISTNAME =		ssh_audit-${MODPY_EGG_VERSION}
 PKGNAME =		ssh-audit-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

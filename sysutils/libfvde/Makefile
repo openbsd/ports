@@ -3,7 +3,7 @@ COMMENT =	library and tools to access FileVault Drive Encryption
 VERSION = 	20191221
 DISTNAME =	libfvde-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  fvde                       0.1 # 1.0
 

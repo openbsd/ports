@@ -1,4 +1,5 @@
 COMMENT =	lightweight shipper for log file data
+REVISION =	0
 
 BEAT =		filebeat
 

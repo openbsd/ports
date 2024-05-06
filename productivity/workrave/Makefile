@@ -4,6 +4,7 @@ V=			1.10.52
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
+REVISION=		0
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
 SHARED_LIBS +=  workrave-gtk4-private-1.0 0.0      # unknown

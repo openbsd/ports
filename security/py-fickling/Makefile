@@ -4,6 +4,7 @@ MODPY_EGG_VERSION = 0.1.3
 DISTNAME =	fickling-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
+REVISION =	0
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 

@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the (split) RAW image format
 VERSION = 	20191221
 DISTNAME =	libsmraw-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  smraw                       0.1 # 1.0
 

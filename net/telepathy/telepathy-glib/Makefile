@@ -1,7 +1,7 @@
 COMMENT=		flexible communications framework, glib bindings
 
 DISTNAME=		telepathy-glib-0.24.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	telepathy-glib       80.0      # 84.1
 

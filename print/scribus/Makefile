@@ -3,6 +3,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.6.1
 CATEGORIES=	print
+REVISION=	0
 
 HOMEPAGE=	https://www.scribus.net/
 

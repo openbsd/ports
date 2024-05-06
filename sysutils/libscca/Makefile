@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows Prefetch File
 VERSION = 	20191222
 DISTNAME =	libscca-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  scca                       0.0 # 1.0
 

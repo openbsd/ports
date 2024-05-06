@@ -3,7 +3,7 @@ COMMENT =		Python bindings for Augeas
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		python-augeas-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python-/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 

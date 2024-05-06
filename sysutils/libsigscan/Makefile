@@ -3,7 +3,7 @@ COMMENT =	library for binary signature scanning
 VERSION = 	20191221
 DISTNAME =	libsigscan-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  sigscan                       0.0 # 1.0
 

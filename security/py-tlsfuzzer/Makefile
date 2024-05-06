@@ -8,7 +8,7 @@ CATEGORIES =		security
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
 GH_COMMIT =		f8762584c536cfad0b7eff8dbdac914845e8fe4a
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 

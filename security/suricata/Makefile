@@ -9,6 +9,7 @@ SUPDATE_V =	1.3.3
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.1 # 2.0
+REVISION =	0
 
 HOMEPAGE =	https://suricata.io/
 

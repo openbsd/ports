@@ -3,6 +3,7 @@ COMMENT =		stylish PDF presentation generator
 MODPY_EGG_VERSION =	0.13.2
 DISTNAME =		Impressive-${MODPY_EGG_VERSION}
 PKGNAME =		impressive-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity
 HOMEPAGE =		https://impressive.sourceforge.net/

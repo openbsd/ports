@@ -5,6 +5,7 @@ DISTNAME =		APScheduler-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		sysutils
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes

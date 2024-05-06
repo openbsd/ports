@@ -3,6 +3,7 @@ COMMENT=		Python bindings to GSSAPI C libraries
 MODPY_EGG_VERSION=	1.8.3
 DISTNAME=		python-gssapi-${MODPY_EGG_VERSION}
 PKGNAME=		py-gssapi-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		security
 

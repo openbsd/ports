@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.0.1
 DISTNAME =		python-daemon-${MODPY_EGG_VERSION}
 PKGNAME =		py-daemon-${MODPY_EGG_VERSION}
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

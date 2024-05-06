@@ -3,6 +3,7 @@ COMMENT =	python tools to analyze OLE files
 MODPY_EGG_VERSION = 0.60.1
 DISTNAME =	oletools-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =	.zip
+REVISION =	0
 
 CATEGORIES =	security
 

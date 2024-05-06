@@ -3,7 +3,7 @@ COMMENT =	asynchronous parallel SSH client library
 MODPY_EGG_VERSION =	1.1.1
 DISTNAME =	parallel-ssh-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	sysutils
 

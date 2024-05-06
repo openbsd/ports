@@ -3,6 +3,7 @@ COMMENT=	smartcard package for Python
 MODPY_EGG_VERSION=	2.0.7
 DISTNAME=	pyscard-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

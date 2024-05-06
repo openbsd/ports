@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 VERSION = 	20191221
 DISTNAME =	libevtx-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  evtx                       0.0 # 1.0
 

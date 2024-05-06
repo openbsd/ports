@@ -3,7 +3,7 @@ COMMENT =	tool to test a PDF file
 MODPY_EGG_VERSION =	0.2.7
 DISTNAME =	pdfid_v${MODPY_EGG_VERSION:S/./_/g}
 PKGNAME =	pdfid-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security
 

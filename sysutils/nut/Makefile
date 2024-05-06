@@ -10,6 +10,10 @@ PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
 PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
+REVISION-cgi=	0
+REVISION-main=	0
+REVISION-snmp=	0
+REVISION-xml=	0
 
 SHARED_LIBS +=  upsclient            4.0      # .6.1
 SHARED_LIBS +=  nutclient            1.0      # .2.2

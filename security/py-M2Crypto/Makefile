@@ -3,7 +3,7 @@ COMMENT =		crypto and TLS toolkit for Python
 MODPY_EGG_VERSION =	0.40.1
 DISTNAME =		M2Crypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

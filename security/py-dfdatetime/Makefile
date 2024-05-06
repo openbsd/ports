@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics date and time
 MODPY_EGG_VERSION = 20200824
 DISTNAME =	dfdatetime-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security devel
 

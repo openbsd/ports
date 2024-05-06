@@ -3,7 +3,7 @@ COMMENT =	library for Windows NT data types
 VERSION = 	20191222
 DISTNAME =	libfwnt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  fwnt                       0.0 # 1.0
 

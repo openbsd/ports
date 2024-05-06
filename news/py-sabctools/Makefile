@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	8.1.0
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabctools-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		news
 

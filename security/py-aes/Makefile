@@ -3,7 +3,7 @@ COMMENT =		pure-Python implementation of AES block-cipher
 MODPY_EGG_VERSION =	1.6.1
 DISTNAME =		pyaes-${MODPY_EGG_VERSION}
 PKGNAME =		py-aes-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		security
 

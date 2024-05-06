@@ -1,4 +1,5 @@
 COMMENT=		simple encrypted backup tool for GNOME
+REVISION=		0
 
 DIST_TUPLE=		gnome World deja-dup 45.2 .
 

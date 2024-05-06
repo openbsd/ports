@@ -5,6 +5,7 @@ COMMENT=	RISC-V Supervisor Binary Interface
 GH_ACCOUNT=	riscv
 GH_PROJECT=	opensbi
 GH_TAGNAME=	v1.2
+REVISION=	0
 
 CATEGORIES=	sysutils
 

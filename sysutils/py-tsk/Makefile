@@ -3,7 +3,7 @@ COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 MODPY_EGG_VERSION = 20200117
 DISTNAME =	pytsk3-${MODPY_EGG_VERSION}
 PKGNAME =	py-tsk-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	sysutils
 

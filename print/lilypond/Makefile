@@ -7,7 +7,8 @@ DISTNAME-docs=		lilypond-${VERSION}-documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		0
+REVISION-main=		1
+REVISION-docs=		0
 
 URW_V=			20200910
 DISTFILES=		${DISTNAME}.tar.bz2

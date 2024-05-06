@@ -2,6 +2,7 @@ COMMENT =		powerful disassembler library for x86/amd64
 
 MODPY_EGG_VERSION =	3.5.2
 DISTNAME =		distorm3-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		security
 

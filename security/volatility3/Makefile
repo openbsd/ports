@@ -3,6 +3,7 @@ COMMENT =		volatile memory extraction framework
 MODPY_EGG_VERSION =	2.5.2
 DISTNAME =		volatility3-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 HOMEPAGE =		https://www.volatilityfoundation.org/

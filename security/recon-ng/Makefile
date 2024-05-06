@@ -3,7 +3,7 @@ COMMENT =		web reconnaissance framework
 GH_ACCOUNT =		lanmaster53
 GH_PROJECT =		recon-ng
 GH_TAGNAME =		v5.1.2
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/lanmaster53/recon-ng
 

@@ -3,7 +3,7 @@ COMMENT =		curses interface for transmission
 GH_ACCOUNT =		tremc
 GH_PROJECT =		tremc
 GH_TAGNAME =		0.9.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

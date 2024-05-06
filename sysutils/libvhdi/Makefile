@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the VHD image format
 VERSION = 	20191221
 DISTNAME =	libvhdi-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  vhdi                       0.0 # 1.0
 

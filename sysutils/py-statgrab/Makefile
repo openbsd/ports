@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.7.1
 DISTNAME=	pystatgrab-${MODPY_EGG_VERSION}
 PKGNAME=	py-statgrab-${MODPY_EGG_VERSION}
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	http://www.i-scream.org/pystatgrab/
 

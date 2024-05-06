@@ -3,6 +3,7 @@ COMMENT=	provide information about the OS platform
 MODPY_EGG_VERSION=	1.8.0
 DISTNAME=	distro-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	sysutils
 

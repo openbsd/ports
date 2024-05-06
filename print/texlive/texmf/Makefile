@@ -23,6 +23,11 @@ PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
+REVISION-buildset =	0
+REVISION-context =	0
+REVISION-docs =		0
+REVISION-full =		0
+REVISION-main =		0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

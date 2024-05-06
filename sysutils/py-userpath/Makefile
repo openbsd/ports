@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	1.9.1
 DISTNAME=	userpath-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/ofek/userpath
 

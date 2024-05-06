@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the VSSformat
 VERSION = 	20191221
 DISTNAME =	libvshadow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  vshadow                       0.1 # 1.0
 

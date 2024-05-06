@@ -17,6 +17,12 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+REVISION-common=	0
+REVISION-gui=		0
+REVISION-hpaio=		0
+REVISION-hpcups=	0
+REVISION-hpijs=		0
+REVISION-main=		0
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
