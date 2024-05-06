@@ -1,12 +1,10 @@
 COMMENT=	decode MS-TNEF MIME attachments
 
-DISTNAME=	tnef-1.4.12
+GH_ACCOUNT=	verdammelt
+GH_PROJECT=	tnef
+GH_TAGNAME=	1.4.18
+
 CATEGORIES=	mail
-REVISION=	3
-
-SITES=		${SITE_SOURCEFORGE:=tnef/}
-
-HOMEPAGE=	https://tnef.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -16,7 +14,10 @@ WANTLIB += c intl
 
 LIB_DEPENDS=	devel/gettext,-runtime
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE=  autoreconf
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
