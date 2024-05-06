@@ -1,0 +1,15 @@
+Index: Python/fileutils.c
+--- Python/fileutils.c.orig
++++ Python/fileutils.c
+@@ -2614,9 +2614,9 @@ done:
+  *    non-opened fd in the middle.
+  * 2b. If fdwalk(3) isn't available, just do a plain close(2) loop.
+  */
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  define USE_CLOSEFROM
+-#endif /* __FreeBSD__ */
++#endif /* __FreeBSD__ || __OpenBSD__ */
+ 
+ #ifdef HAVE_FDWALK
+ #  define USE_FDWALK
