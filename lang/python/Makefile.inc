@@ -145,13 +145,8 @@ MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS +=	CFLAGS_NODIST='-I${LOCALBASE}/include' LDFLAGS_NODIST='-L${WRKSRC} -L${LOCALBASE}/lib/'
 FAKE_FLAGS +=	RANLIB=:
 
-# Used in PLISTs for files which should not be installed for non-default
-# versions of Python (i.e. /usr/local/bin/python3).
-# Overridden in subdirectory for the default version.
-PY_DEFAULTONLY ?= "@comment "
-
 PY_PLATFORM =	openbsd${OSMAJOR}
-SUBST_VARS +=	FULL_VERSION VERSION_SPEC PY_PLATFORM PY_DEFAULTONLY
+SUBST_VARS +=	FULL_VERSION VERSION_SPEC PY_PLATFORM
 
 # Python itself is clean, but some dlopen()'d extensions e.g. QtWebKit
 # require W|X mappings and/or don't have the required landing pads for

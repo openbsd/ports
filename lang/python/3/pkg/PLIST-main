@@ -12,13 +12,13 @@
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
 @pkgpath lang/python/3.11,-main
-${PY_DEFAULTONLY}bin/2to3
+bin/2to3
 bin/2to3-3.11
 @comment bin/pip3
-${PY_DEFAULTONLY}bin/pydoc3
+bin/pydoc3
 bin/pydoc3.11
-${PY_DEFAULTONLY}bin/python3
-${PY_DEFAULTONLY}bin/python3-config
+bin/python3
+bin/python3-config
 @bin bin/python3.11
 bin/python3.11-config
 include/python3.11/
@@ -218,8 +218,8 @@ include/python3.11/weakrefobject.h
 @comment lib/libpython3.so
 lib/pkgconfig/python-3.11-embed.pc
 lib/pkgconfig/python-3.11.pc
-${PY_DEFAULTONLY}lib/pkgconfig/python3-embed.pc
-${PY_DEFAULTONLY}lib/pkgconfig/python3.pc
+lib/pkgconfig/python3-embed.pc
+lib/pkgconfig/python3.pc
 lib/python3.11/
 lib/python3.11/EXTERNALLY-MANAGED
 lib/python3.11/LICENSE.txt
@@ -2985,7 +2985,7 @@ lib/python3.11/zoneinfo/__pycache__/_zoneinfo.cpython-311.pyc
 lib/python3.11/zoneinfo/_common.py
 lib/python3.11/zoneinfo/_tzpath.py
 lib/python3.11/zoneinfo/_zoneinfo.py
-${PY_DEFAULTONLY}@man man/man1/python3.1
+@man man/man1/python3.1
 @man man/man1/python3.11.1
 share/doc/python3.11/
 share/doc/python3.11/CHANGES.OpenBSD
