@@ -30,20 +30,7 @@ PKGNAME-redis =		collectd-redis-$V
 PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
-REVISION-main =		1
-REVISION-memcachec =	0
-REVISION-mqtt =		0
-REVISION-mysql =	0
-REVISION-nut =		0
-REVISION-pgsql =	0
-REVISION-ping =		0
-REVISION-prometheus =	0
-REVISION-python =	1
-REVISION-redis =	0
-REVISION-riemann =	1
-REVISION-rrdtool =	0
-REVISION-snmp =		0
-REVISION-virt =		0
+REVISION =		2
 
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 1.0
@@ -165,7 +152,7 @@ CONFIGURE_ARGS += --enable-${_plugin}
 .endfor
 
 CONFIGURE_ENV +=	PYTHON_CONFIG='${LOCALBASE}/bin/python${MODPY_VERSION}-config' \
-			CPPFLAGS='-I${LOCALBASE}/include' \
+			CPPFLAGS='-I${LOCALBASE}/include -I${MODPY_INCDIR}/cpython' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread'
 
 post-install:
