@@ -60,7 +60,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -38848,7 +38853,7 @@ printf "%s\n" "internal" >&6; }
+@@ -38834,7 +38839,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -69,7 +69,7 @@ Index: configure
      fi
  fi
  
-@@ -39051,7 +39056,7 @@ printf "%s\n" "internal" >&6; }
+@@ -39037,7 +39042,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -78,7 +78,7 @@ Index: configure
      fi
  fi
  
-@@ -39899,8 +39904,8 @@ else
+@@ -39885,8 +39890,8 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -89,7 +89,7 @@ Index: configure
      fi
  fi
  
-@@ -44114,7 +44119,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -44100,7 +44105,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -44841,7 +44846,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
+@@ -44827,7 +44832,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
  printf %s "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -107,7 +107,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -45572,16 +45577,7 @@ if test "$USING_X11" = TRUE; then
+@@ -45558,16 +45563,7 @@ if test "$USING_X11" = TRUE; then
      else
          XINERAMALIB="$x_libraries"
      fi
@@ -125,7 +125,7 @@ Index: configure
          # we have only the dynamic version
          USE_XINERAMA=TRUE
          XINERAMA_LINK=dynamic
-@@ -47015,7 +47011,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -47001,7 +46997,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
@@ -134,7 +134,7 @@ Index: configure
          eval "$i --version" > /dev/null 2>&1
          ret=$?
          if test $ret -eq 0; then
-@@ -47706,7 +47702,7 @@ if test $_os = iOS -o $_os = Android; then
+@@ -47692,7 +47688,7 @@ if test $_os = iOS -o $_os = Android; then
  fi
  
  if test -n "$enable_mergelibs" -a "$enable_mergelibs" != "no"; then
