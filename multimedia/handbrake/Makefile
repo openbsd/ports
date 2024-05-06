@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	7
+REVISION =	8
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 

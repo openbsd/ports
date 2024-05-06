@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.16.0
 
 DISTNAME =	python-telegram-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
+REVISION =	0
 
 CATEGORIES =	net
 

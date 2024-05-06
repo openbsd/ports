@@ -3,6 +3,7 @@ COMMENT =	implementation of the port 0 trick
 MODPY_EGG_VERSION =	1.1.4
 DISTNAME =	ephemeral_port_reserve-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net www
 

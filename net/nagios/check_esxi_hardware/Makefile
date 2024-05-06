@@ -5,6 +5,7 @@ COMMENT =	monitoring plugin to check the status of ESX/i hardware
 GH_ACCOUNT =	Napsty
 GH_PROJECT =	check_esxi_hardware
 GH_TAGNAME =	20221230
+REVISION =	0
 
 CATEGORIES =	net
 

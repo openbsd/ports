@@ -6,6 +6,7 @@ GH_PROJECT=	getmail6
 GH_TAGNAME=	v${MODPY_EGG_VERSION}
 PKGNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
+REVISION=	0
 
 # https://github.com/getmail6/getmail6
 HOMEPAGE=	https://getmail6.org/

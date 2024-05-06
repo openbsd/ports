@@ -2,7 +2,7 @@
 COMMENT =	LLVM Fortran math library
 DISTNAME =	flang-8.0.1.20200707
 PKGNAME =	${DISTNAME:S/flang/libpgmath/}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	pgmath                    4.4 # 8.0
 

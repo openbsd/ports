@@ -1,6 +1,6 @@
 COMMENT =		SVG scrubber
 MODPY_EGG_VERSION =	0.35
-REVISION =		7
+REVISION =		8
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.codedread.com/scour/
 

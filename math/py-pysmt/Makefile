@@ -3,7 +3,7 @@ COMMENT =		library for SMT formulae manipulation and solving
 MODPY_EGG_VERSION =	0.9.5
 DISTNAME =		PySMT-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		math
 

@@ -3,6 +3,7 @@ COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 DISTNAME=	ginac-1.8.7
 SHARED_LIBS +=	ginac	8.0	# 12.6
 CATEGORIES=	math
+REVISION=	0
 
 HOMEPAGE=	https://www.ginac.de/
 

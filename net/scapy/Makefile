@@ -1,7 +1,7 @@
 COMMENT =	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION =	2.4.4
-REVISION =	4
+REVISION =	5
 
 DISTNAME =	scapy-${MODPY_EGG_VERSION}
 

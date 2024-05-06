@@ -5,7 +5,7 @@ DISTNAME =		scs-${MODPY_EGG_VERSION}
 V =			${MODPY_EGG_VERSION:S/-/./}
 PKGNAME =		py-scs-${V}
 CATEGORIES =		math
-REVISION =		7
+REVISION =		8
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

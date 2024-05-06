@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		aiodns-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 

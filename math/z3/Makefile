@@ -1,7 +1,7 @@
 COMMENT =	Z3 theorem prover
 
 VERSION =	4.12.2
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	Z3Prover
 GH_PROJECT =	z3

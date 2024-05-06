@@ -3,6 +3,7 @@ COMMENT =		wrapper for 'email' in Python's standard library
 MODPY_EGG_VERSION =	3.15.0
 DISTNAME =		mail-parser-${MODPY_EGG_VERSION}
 PKGNAME =		mailparser-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		mail
 

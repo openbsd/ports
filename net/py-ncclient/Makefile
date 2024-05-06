@@ -9,6 +9,7 @@ GH_TAGNAME =		v0.6.15
 
 DISTNAME =		ncclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

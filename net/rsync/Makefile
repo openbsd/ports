@@ -3,6 +3,7 @@ COMMENT =	mirroring/synchronization over low bandwidth links
 DISTNAME =	rsync-3.3.0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
+REVISION =	0
 
 FLAVORS =	iconv
 FLAVOR ?=

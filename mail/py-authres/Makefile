@@ -4,6 +4,7 @@ MODPY_EGG_VERSION = 1.2.0
 DISTNAME =	authres-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	mail
+REVISION =	0
 
 HOMEPAGE =	https://launchpad.net/authentication-results-python
 

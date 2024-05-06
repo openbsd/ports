@@ -6,6 +6,7 @@ SHARED_LIBS+=		cpucycles	0.0	# 1.0
 CATEGORIES=		misc
 HOMEPAGE=		https://cpucycles.cr.yp.to/
 SITES=			${HOMEPAGE}
+REVISION=		0
 
 MAINTAINER=		Miguel Landaeta <miguel@miguel.cc>
 

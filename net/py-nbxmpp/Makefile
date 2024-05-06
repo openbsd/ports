@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	4.5.4
 DISTNAME =		nbxmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
+REVISION =		0
 
 HOMEPAGE =		https://python-nbxmpp.gajim.org/
 

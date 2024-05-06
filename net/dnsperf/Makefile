@@ -2,7 +2,7 @@ COMMENT=	DNS performance testing tools
 
 # newer versions needs libck ("Concurrency Kit") not yet in ports
 DISTNAME=	dnsperf-2.4.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net benchmarks
 

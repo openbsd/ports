@@ -4,7 +4,7 @@ GH_ACCOUNT =		isginf
 GH_PROJECT =		pcap-diff
 GH_COMMIT =		d4c129e98527f42fbd94362d50608d5286e3f57d
 DISTNAME =		pcapdiff-0.20180816
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net security
 

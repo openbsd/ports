@@ -2,6 +2,7 @@ COMMENT =	GNU dictionary server
 
 V =		2.11
 DISTNAME =	dico-$V
+REVISION =	0
 
 SHARED_LIBS +=  dico                      0.0 # 2.0
 

@@ -3,6 +3,7 @@ COMMENT =	create measurements on RIPE Atlas probes
 MODPY_EGG_VERSION = 1.1.10
 DISTNAME =	blaeu-${MODPY_EGG_VERSION}
 CATEGORIES =	net
+REVISION =	0
 
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 

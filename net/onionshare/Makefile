@@ -5,8 +5,8 @@ GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0
-REVISION-main =		5
-REVISION-gui =		5
+REVISION-main =		6
+REVISION-gui =		6
 
 PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
 PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}

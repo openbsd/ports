@@ -10,6 +10,7 @@ EPOCH=		3
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
+REVISION=	0
 
 CATEGORIES=	net
 

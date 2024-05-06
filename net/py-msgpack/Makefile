@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.0.5
 EPOCH =			0
 DISTNAME =		msgpack-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net textproc
 

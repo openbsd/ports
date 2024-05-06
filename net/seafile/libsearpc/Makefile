@@ -5,7 +5,7 @@ GH_PROJECT =		libsearpc
 # this commit is from the "v3.3-latest" tag
 GH_COMMIT =		15f6f0b9f451b9ecf99dedab72e9242e54e124eb
 DISTNAME =		libsearpc-3.3.0pl20221111
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		searpc		0.0 # 1.2
 

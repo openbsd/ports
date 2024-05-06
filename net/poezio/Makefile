@@ -3,7 +3,7 @@ COMMENT =		console XMPP client
 MODPY_EGG_VERSION =	0.13.1
 DISTNAME =		poezio-${MODPY_EGG_VERSION}
 CATEGORIES =		net
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://poez.io/
 

@@ -2,6 +2,7 @@ COMMENT=	C++ implementation of the exmdb wire protocol for grommunio
 
 V=		1.11
 DISTNAME=	libexmdbpp-${V}
+REVISION=	0
 
 SHARED_LIBS+=	exmdbpp	0.0 # 0.0
 

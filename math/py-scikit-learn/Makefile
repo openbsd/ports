@@ -4,6 +4,7 @@ COMMENT =	set of python modules for machine learning and data mining
 MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 

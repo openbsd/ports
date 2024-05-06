@@ -1,7 +1,7 @@
 COMMENT =	collect data from SolarEdge inverters over Modbus
 
 MODPY_EGG_VERSION =	0.7.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	solaredge_modbus-${MODPY_EGG_VERSION}
 PKGNAME =	py-solaredge-modbus-${MODPY_EGG_VERSION}
 

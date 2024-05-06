@@ -1,7 +1,7 @@
 COMMENT =		network automation abstraction layer
 
 MODPY_EGG_VERSION =	2.3.3
-REVISION =		5
+REVISION =		6
 DISTNAME =		napalm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

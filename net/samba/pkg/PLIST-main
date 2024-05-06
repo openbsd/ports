@@ -1828,8 +1828,8 @@ lib/samba/ldb/
 @so lib/samba/libsamba-cluster-support-private-samba.so
 @so lib/samba/libsamba-debug-private-samba.so
 @so lib/samba/libsamba-modules-private-samba.so
-@so lib/samba/libsamba-net.cpython-310-private-samba.so
-@so lib/samba/libsamba-python.cpython-310-private-samba.so
+@so lib/samba/libsamba-net.cpython-311-private-samba.so
+@so lib/samba/libsamba-python.cpython-311-private-samba.so
 @so lib/samba/libsamba-security-private-samba.so
 @so lib/samba/libsamba-sockets-private-samba.so
 @so lib/samba/libsamba3-util-private-samba.so

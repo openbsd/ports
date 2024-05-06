@@ -3,7 +3,7 @@ COMMENT=		interact with Youtube Chromecast api
 MODPY_EGG_VERSION=	0.2.1
 DISTNAME=		casttube-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		multimedia net
 

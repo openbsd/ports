@@ -3,6 +3,7 @@ COMMENT =	library for calculating contours of 2D quadrilateral grids
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		contourpy-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
+REVISION =              0
 
 CATEGORIES =	math
 

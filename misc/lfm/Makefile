@@ -2,7 +2,7 @@ COMMENT =		powerful curses interface python file manager
 
 MODPY_EGG_VERSION =	3.1
 DISTNAME =		lfm-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		misc
 

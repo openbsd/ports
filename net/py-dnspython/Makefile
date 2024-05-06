@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	2.6.1
 DISTNAME=	dnspython-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://www.dnspython.org/
 

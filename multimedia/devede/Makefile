@@ -3,7 +3,7 @@ COMMENT=		video DVDs and CDs creation tool
 MODPY_EGG_VERSION=	4.17.0
 DISTNAME=		devedeng-${MODPY_EGG_VERSION}
 PKGNAME=		devede-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		multimedia x11
 

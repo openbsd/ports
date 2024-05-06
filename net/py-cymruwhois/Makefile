@@ -3,7 +3,7 @@ COMMENT=		client for the whois.cymru.com service
 MODPY_EGG_VERSION=	1.6
 DISTNAME=		cymruwhois-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		net
 

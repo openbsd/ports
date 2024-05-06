@@ -1,4 +1,5 @@
 COMMENT =	SL/HLSL to SPIR-V shader compiler
+REVISION =	0
 
 DIST_TUPLE =	github google shaderc v2024.0 .
 

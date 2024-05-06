@@ -1,6 +1,7 @@
 COMMENT =	libtorrent settings modification plugin for deluge
 
 MODPY_EGG_VERSION =	2.0.0
+REVISION =	0
 
 GH_ACCOUNT =	ratanakvlun
 GH_PROJECT =	deluge-ltconfig

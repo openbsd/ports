@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.0.12
 
 DISTNAME=	aggregate6-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	https://github.com/job/aggregate6/
 

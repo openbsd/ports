@@ -3,7 +3,7 @@ COMMENT=	powerful IMAP/Maildir synchronization and reader support
 MODPY_EGG_VERSION = 8.0.0
 #DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
 PKGNAME =	offlineimap-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap3

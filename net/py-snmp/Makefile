@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	4.4.12
 DISTNAME =	pysnmp-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	net
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://snmplabs.com/
 

@@ -5,6 +5,7 @@ MODPY_EGG_VERSION= 2.0.2
 DISTNAME=	pypolicyd-spf-${MODPY_EGG_VERSION}
 PKGNAME=	py-policyd-spf-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
+REVISION=	0
 
 HOMEPAGE=	https://launchpad.net/pypolicyd-spf
 

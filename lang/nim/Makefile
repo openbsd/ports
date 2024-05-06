@@ -4,6 +4,7 @@ COMMENT =		statically typed systems programming language
 
 DISTNAME =		nim-1.6.18
 EXTRACT_SUFX =		.tar.xz
+REVISION =		0
 
 CATEGORIES =		lang
 

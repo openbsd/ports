@@ -3,6 +3,7 @@ COMMENT=		library for automatic proxy configuration management
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
 GH_TAGNAME=		0.5.6
+REVISION=		0
 
 CATEGORIES=		net
 

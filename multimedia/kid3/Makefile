@@ -2,7 +2,7 @@ COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.5
 CATEGORIES =	multimedia x11
 HOMEPAGE =	https://kid3.kde.org/
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	Vadim Zhukov <zhuk@openbsd.org>
 

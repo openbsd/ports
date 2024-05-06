@@ -3,6 +3,7 @@ COMMENT=		ctypes-based simple MagickWand API binding for Python
 MODPY_EGG_VERSION=	0.6.11
 DISTNAME=		Wand-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
+REVISION=		0
 
 CATEGORIES=		graphics
 

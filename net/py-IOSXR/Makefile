@@ -3,7 +3,7 @@ COMMENT =		library to manage IOS-XR devices
 MODPY_EGG_VERSION =	0.53
 DISTNAME =		pyIOSXR-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net
 

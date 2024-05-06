@@ -1,7 +1,7 @@
 COMMENT =		convex optimization package
 
 MODPY_EGG_VERSION =	1.3.0
-REVISION =		1
+REVISION =		2
 DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math

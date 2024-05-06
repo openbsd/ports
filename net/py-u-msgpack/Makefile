@@ -3,6 +3,7 @@ COMMENT =		portable, lightweight MessagePack (de)serializer
 MODPY_EGG_VERSION =	2.7.2
 DISTNAME =		u-msgpack-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-u-msgpack-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net textproc
 

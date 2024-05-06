@@ -1,7 +1,7 @@
 COMMENT=		services and D-Bus APIs to access UPnP and DLNA devices
 
 DIST_TUPLE=		gnome World dLeyna v0.8.3 .
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += dleyna-core-1.0           1.1 # 6.0.0
 SHARED_LIBS += dleyna-renderer-1.0       1.1 # 1.0.3

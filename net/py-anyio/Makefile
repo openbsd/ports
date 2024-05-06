@@ -3,6 +3,7 @@ COMMENT =		async library on top of asyncio or trio
 MODPY_EGG_VERSION =	3.7.1
 DISTNAME =		anyio-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

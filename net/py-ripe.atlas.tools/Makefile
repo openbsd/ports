@@ -6,6 +6,7 @@ GH_PROJECT =		ripe-atlas-tools
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 PKGNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	0.9.23
 DISTNAME=		dnslib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
+REVISION=		0
 
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
 

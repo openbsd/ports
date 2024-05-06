@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.5.3
 DISTNAME =		geventhttpclient-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES =		net devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/gwik/geventhttpclient
 

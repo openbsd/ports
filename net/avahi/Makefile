@@ -18,12 +18,12 @@ PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
-REVISION-python=	6
-REVISION-gui=		9
-REVISION-gtk3=		4
-REVISION-main=		9
-REVISION-libs=		3
-REVISION-glib=		2
+REVISION-python=	7
+REVISION-gui=		10
+REVISION-gtk3=		5
+REVISION-main=		10
+REVISION-libs=		4
+REVISION-glib=		3
 
 CATEGORIES=		net devel
 

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		python-nmap-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 CATEGORIES =		net
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		http://xael.org/norman/python/python-nmap/
 SITES =			http://xael.org/pages/

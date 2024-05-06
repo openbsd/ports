@@ -3,6 +3,7 @@ COMMENT =		FTP server library for Python
 MODPY_EGG_VERSION =	1.5.7
 DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net devel
 

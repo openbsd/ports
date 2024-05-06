@@ -3,6 +3,7 @@ COMMENT =	ahead of time compiler for numeric kernels
 MODPY_EGG_VERSION =	0.15.0
 
 DISTNAME =	pythran-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	lang
 

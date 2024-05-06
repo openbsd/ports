@@ -1,7 +1,7 @@
 COMMENT =	meta-package to install the current version of python 3
 
 PKGNAME =	python3-${MODPY_DEFAULT_VERSION_3}
-REVISION =	2
+REVISION =	3
 
 MODULES =	lang/python
 MODPY_BUILDDEP = No

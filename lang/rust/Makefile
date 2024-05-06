@@ -34,6 +34,12 @@ PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
 PKGNAME-bootstrap =	rust-bootstrap-${V}
 PKGNAME-src =		rust-src-${V}
+REVISION-bootstrap =	0
+REVISION-clippy =	0
+REVISION-gdb =		0
+REVISION-main =		0
+REVISION-rustfmt =	0
+REVISION-src =		0
 
 MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -bootstrap -src
 

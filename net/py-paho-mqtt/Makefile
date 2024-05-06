@@ -3,7 +3,7 @@ COMMENT =		MQTT Python client library
 MODPY_EGG_VERSION =	1.6.1
 DISTNAME =		paho-mqtt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://www.eclipse.org/paho/clients/python/
 

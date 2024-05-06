@@ -4,6 +4,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.37.0
 USE_NOBTCFI =		Yes
+REVISION =		0
 
 SHARED_LIBS +=		mpv		2.0
 

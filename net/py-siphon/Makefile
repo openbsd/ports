@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.9
 DISTNAME=	siphon-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://unidata.github.io/siphon/
 

@@ -13,7 +13,7 @@ V = 		3.4.2
 V1 =		2.22
 V2 =		1.13
 
-REVISION-python =       3
+REVISION-python =       4
 
 
 DISTNAME = 	mlpack-$V
@@ -44,7 +44,7 @@ FULLPKGNAME-main = 	mlpack-$V
 FULLPKGPATH-main = 	${PKGPATH},-main
 FULLPKGNAME-python = 	${MODPY_PY_PREFIX}mlpack-$V
 FULLPKGPATH-python = 	${PKGPATH},-python${FLAVOR_EXT:S/-/,/g}
-REVISION-main =         0
+REVISION-main =         1
 
 WANTLIB += 	${COMPILER_LIBCXX} m
 

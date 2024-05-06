@@ -3,6 +3,7 @@ COMMENT =	parse and convert SPIR-V to other shader languages
 VERSION =	2021-01-15
 DIST_TUPLE =	github KhronosGroup SPIRV-Cross ${VERSION} .
 PKGNAME =	spirv-cross-${VERSION:S/-//g}
+REVISION =	0
 
 SHARED_LIBS +=	spirv-cross-c-shared	0.0 # 0.0
 

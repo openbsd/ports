@@ -5,7 +5,7 @@ GH_PROJECT=	gmail-oauth2-tools
 GH_COMMIT=	e3229155a4037267ce40f1a3a681f53221aa4d8d
 
 DISTNAME=	gmail-oauth2-0.20190529
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	security mail
 

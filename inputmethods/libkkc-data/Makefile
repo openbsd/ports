@@ -4,7 +4,7 @@ COMMENT =	language model data for libkkc
 
 VERSION =	0.2.7
 DISTNAME =	libkkc-data-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	inputmethods japanese
 

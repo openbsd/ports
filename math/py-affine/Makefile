@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		affine-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

@@ -3,6 +3,7 @@ COMMENT =		Python network packet manipulation library
 MODPY_EGG_VERSION =	1.9.8
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
 PKGNAME =		py-dpkt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 

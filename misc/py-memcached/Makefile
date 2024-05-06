@@ -4,6 +4,7 @@ MODPY_EGG_VERSION= 1.62
 DISTNAME=	python-memcached-${MODPY_EGG_VERSION}
 PKGNAME=	py-memcached-${MODPY_EGG_VERSION}
 CATEGORIES=	misc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/linsomniac/python-memcached
 

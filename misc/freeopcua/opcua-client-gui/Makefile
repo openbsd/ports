@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.8.0
 
 DISTNAME =	opcua-client-${MODPY_EGG_VERSION}
 PKGNAME =	opcua-client-gui-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	misc
 

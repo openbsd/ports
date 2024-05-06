@@ -1,7 +1,7 @@
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
 MODPY_EGG_VERSION =	1.01
-REVISION =		2
+REVISION =		3
 DISTNAME =		IPy-${MODPY_EGG_VERSION}
 PKGNAME =		py-IP-${MODPY_EGG_VERSION}
 CATEGORIES =		net

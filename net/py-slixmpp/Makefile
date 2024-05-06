@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.8.3
 DISTNAME =		slixmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
+REVISION =		0
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 

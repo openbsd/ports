@@ -5,6 +5,7 @@ DISTNAME =		ecos-${MODPY_EGG_VERSION}
 V =			${MODPY_EGG_VERSION:S/post//}
 PKGNAME =		py-ecos-${V}
 CATEGORIES =		math
+REVISION =		0
 
 WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>

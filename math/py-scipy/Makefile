@@ -3,6 +3,7 @@ COMMENT=		maths, science and engineering modules for Python
 MODPY_EGG_VERSION=	1.10.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math devel
 

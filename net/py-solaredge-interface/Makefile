@@ -3,6 +3,7 @@ COMMENT =	collect data from SolarEdge API
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =	solaredge-interface-${MODPY_EGG_VERSION}
 PKGNAME =	py-solaredge-interface-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 

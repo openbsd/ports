@@ -4,6 +4,7 @@ V =			5.6
 DISTNAME =		CGAL-${V}
 PKGNAME =		${DISTNAME:L}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		math
 

@@ -7,7 +7,7 @@ DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
 

@@ -2,7 +2,7 @@ COMMENT =	interactive viewer for Graphviz dot graphs
 
 MODPY_EGG_VERSION = 1.2
 DISTNAME =	xdot-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 

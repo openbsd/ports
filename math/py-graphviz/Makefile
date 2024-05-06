@@ -3,7 +3,7 @@ COMMENT =		simple Python interface for Graphviz
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		graphviz-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		math
 

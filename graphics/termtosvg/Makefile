@@ -2,7 +2,7 @@ COMMENT =	record terminal sessions as SVG animations
 
 MODPY_EGG_VERSION = 1.1.0
 DISTNAME =	termtosvg-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	graphics
 

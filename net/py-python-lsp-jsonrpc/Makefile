@@ -3,6 +3,7 @@ COMMENT =		json rpc server library
 MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		python-lsp-jsonrpc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 

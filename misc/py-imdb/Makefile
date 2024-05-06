@@ -5,6 +5,7 @@ PORTROACH =	site:https://github.com/cinemagoer/cinemagoer/releases/
 MODPY_EGG_VERSION = 2023.5.1
 DISTNAME =	cinemagoer-${MODPY_EGG_VERSION}
 PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	misc devel
 

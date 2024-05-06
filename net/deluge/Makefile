@@ -2,6 +2,7 @@ COMMENT =	bittorrent client
 
 DISTNAME =		deluge-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.1.1
+REVISION =		0
 
 CATEGORIES =	net
 

@@ -2,6 +2,7 @@ COMMENT=		shared mime database for desktops
 
 V=			2.4
 DISTNAME=		shared-mime-info-${V}
+REVISION=		0
 
 CATEGORIES=		misc
 

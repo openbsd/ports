@@ -4,6 +4,7 @@ MODPY_EGG_VERSION= 2.0.14
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
+REVISION=	0
 
 HOMEPAGE=	https://github.com/sdgathman/pyspf/
 

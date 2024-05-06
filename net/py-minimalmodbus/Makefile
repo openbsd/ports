@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2.1.1
 DISTNAME=		minimalmodbus-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
+REVISION=		0
 
 HOMEPAGE=		https://github.com/pyhys/minimalmodbus
 

@@ -2,6 +2,7 @@ MODPY_EGG_VERSION =	6.5.1
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
+REVISION =	0
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

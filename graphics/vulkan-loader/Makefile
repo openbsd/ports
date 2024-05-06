@@ -5,6 +5,7 @@ PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
+REVISION =	0
 
 SHARED_LIBS +=	vulkan	1.1 # 1.3.204.1
 

@@ -3,7 +3,7 @@ COMMENT =		Python client for Arista eAPI
 MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		pyeapi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/py//}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net
 

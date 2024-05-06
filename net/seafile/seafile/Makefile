@@ -5,6 +5,7 @@ GH_PROJECT =		seafile
 # this commit is from the "v9.0.5" tag
 GH_COMMIT =		b5c8e027ad50a1422f27d218c13f82a8f10018d2
 DISTNAME =		seafile-daemon-9.0.50pl20240228
+REVISION =		0
 
 SHARED_LIBS =		seafile 4.0
 

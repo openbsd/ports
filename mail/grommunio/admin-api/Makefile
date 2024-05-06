@@ -7,7 +7,7 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
 GH_COMMIT=	63c43b5e4256c67b5a77bf29d3b85f08cdfc783b
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www productivity
 

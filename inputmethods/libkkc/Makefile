@@ -4,7 +4,7 @@ VERSION =	20210214
 DISTNAME =	libkkc
 PKGNAME =	libkkc-${VERSION}
 
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	ueno
 GH_PROJECT =	libkkc

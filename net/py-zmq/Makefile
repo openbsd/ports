@@ -4,6 +4,7 @@ COMMENT =		Python bindings for ZeroMQ
 MODPY_EGG_VERSION =	25.1.1
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		net devel
 

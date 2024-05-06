@@ -1,4 +1,5 @@
 COMMENT=		modular session / policy manager for PipeWire
+REVISION=		0
 
 PW_PROJECT=		wireplumber
 PW_VERSION=		0.5.2

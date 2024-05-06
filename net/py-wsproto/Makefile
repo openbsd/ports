@@ -3,6 +3,7 @@ COMMENT=	state-machine based WebSocket protocol implementation
 MODPY_EGG_VERSION=	1.2.0
 DISTNAME=	wsproto-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	net
 

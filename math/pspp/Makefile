@@ -1,6 +1,6 @@
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
-REVISION =	3
+REVISION =	4
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/

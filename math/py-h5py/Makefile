@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	3.10.0
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
