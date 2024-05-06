@@ -5,8 +5,10 @@
 @conflict llvm-<10.0.0p0
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
+bin/lldb-dap-${LLVM_MAJOR}
 @bin ${LLVM_BASE}/bin/lldb
 @bin ${LLVM_BASE}/bin/lldb-argdumper
+@bin ${LLVM_BASE}/bin/lldb-dap
 ${LLVM_BASE}/include/lldb/
 ${LLVM_BASE}/include/lldb/API/
 ${LLVM_BASE}/include/lldb/API/LLDB.h
@@ -34,6 +36,7 @@ ${LLVM_BASE}/include/lldb/API/SBExpressionOptions.h
 ${LLVM_BASE}/include/lldb/API/SBFile.h
 ${LLVM_BASE}/include/lldb/API/SBFileSpec.h
 ${LLVM_BASE}/include/lldb/API/SBFileSpecList.h
+${LLVM_BASE}/include/lldb/API/SBFormat.h
 ${LLVM_BASE}/include/lldb/API/SBFrame.h
 ${LLVM_BASE}/include/lldb/API/SBFunction.h
 ${LLVM_BASE}/include/lldb/API/SBHostOS.h
@@ -50,9 +53,11 @@ ${LLVM_BASE}/include/lldb/API/SBModuleSpec.h
 ${LLVM_BASE}/include/lldb/API/SBPlatform.h
 ${LLVM_BASE}/include/lldb/API/SBProcess.h
 ${LLVM_BASE}/include/lldb/API/SBProcessInfo.h
+${LLVM_BASE}/include/lldb/API/SBProcessInfoList.h
 ${LLVM_BASE}/include/lldb/API/SBQueue.h
 ${LLVM_BASE}/include/lldb/API/SBQueueItem.h
 ${LLVM_BASE}/include/lldb/API/SBReproducer.h
+${LLVM_BASE}/include/lldb/API/SBScriptObject.h
 ${LLVM_BASE}/include/lldb/API/SBSection.h
 ${LLVM_BASE}/include/lldb/API/SBSourceManager.h
 ${LLVM_BASE}/include/lldb/API/SBStream.h
@@ -80,6 +85,7 @@ ${LLVM_BASE}/include/lldb/API/SBValue.h
 ${LLVM_BASE}/include/lldb/API/SBValueList.h
 ${LLVM_BASE}/include/lldb/API/SBVariablesOptions.h
 ${LLVM_BASE}/include/lldb/API/SBWatchpoint.h
+${LLVM_BASE}/include/lldb/API/SBWatchpointOptions.h
 ${LLVM_BASE}/include/lldb/Breakpoint/
 ${LLVM_BASE}/include/lldb/Breakpoint/Breakpoint.h
 ${LLVM_BASE}/include/lldb/Breakpoint/BreakpointID.h
@@ -98,6 +104,7 @@ ${LLVM_BASE}/include/lldb/Breakpoint/BreakpointResolverFileRegex.h
 ${LLVM_BASE}/include/lldb/Breakpoint/BreakpointResolverName.h
 ${LLVM_BASE}/include/lldb/Breakpoint/BreakpointResolverScripted.h
 ${LLVM_BASE}/include/lldb/Breakpoint/BreakpointSite.h
+${LLVM_BASE}/include/lldb/Breakpoint/StopPointSiteList.h
 ${LLVM_BASE}/include/lldb/Breakpoint/Stoppoint.h
 ${LLVM_BASE}/include/lldb/Breakpoint/StoppointCallbackContext.h
 ${LLVM_BASE}/include/lldb/Breakpoint/StoppointHitCounter.h
@@ -105,6 +112,8 @@ ${LLVM_BASE}/include/lldb/Breakpoint/StoppointSite.h
 ${LLVM_BASE}/include/lldb/Breakpoint/Watchpoint.h
 ${LLVM_BASE}/include/lldb/Breakpoint/WatchpointList.h
 ${LLVM_BASE}/include/lldb/Breakpoint/WatchpointOptions.h
+${LLVM_BASE}/include/lldb/Breakpoint/WatchpointResource.h
+${LLVM_BASE}/include/lldb/Breakpoint/WatchpointResourceList.h
 ${LLVM_BASE}/include/lldb/Core/
 ${LLVM_BASE}/include/lldb/Core/Address.h
 ${LLVM_BASE}/include/lldb/Core/AddressRange.h
@@ -118,6 +127,7 @@ ${LLVM_BASE}/include/lldb/Core/DebuggerEvents.h
 ${LLVM_BASE}/include/lldb/Core/Declaration.h
 ${LLVM_BASE}/include/lldb/Core/Disassembler.h
 ${LLVM_BASE}/include/lldb/Core/DumpDataExtractor.h
+${LLVM_BASE}/include/lldb/Core/DumpRegisterInfo.h
 ${LLVM_BASE}/include/lldb/Core/DumpRegisterValue.h
 ${LLVM_BASE}/include/lldb/Core/EmulateInstruction.h
 ${LLVM_BASE}/include/lldb/Core/FileLineResolver.h
@@ -161,6 +171,7 @@ ${LLVM_BASE}/include/lldb/Core/ValueObjectMemory.h
 ${LLVM_BASE}/include/lldb/Core/ValueObjectRegister.h
 ${LLVM_BASE}/include/lldb/Core/ValueObjectSyntheticFilter.h
 ${LLVM_BASE}/include/lldb/Core/ValueObjectUpdater.h
+${LLVM_BASE}/include/lldb/Core/ValueObjectVTable.h
 ${LLVM_BASE}/include/lldb/Core/ValueObjectVariable.h
 ${LLVM_BASE}/include/lldb/Core/dwarf.h
 ${LLVM_BASE}/include/lldb/DataFormatters/
@@ -198,6 +209,7 @@ ${LLVM_BASE}/include/lldb/Expression/IRInterpreter.h
 ${LLVM_BASE}/include/lldb/Expression/IRMemoryMap.h
 ${LLVM_BASE}/include/lldb/Expression/LLVMUserExpression.h
 ${LLVM_BASE}/include/lldb/Expression/Materializer.h
+${LLVM_BASE}/include/lldb/Expression/ObjectFileJIT.h
 ${LLVM_BASE}/include/lldb/Expression/REPL.h
 ${LLVM_BASE}/include/lldb/Expression/UserExpression.h
 ${LLVM_BASE}/include/lldb/Expression/UtilityFunction.h
@@ -238,6 +250,7 @@ ${LLVM_BASE}/include/lldb/Host/PseudoTerminal.h
 ${LLVM_BASE}/include/lldb/Host/SafeMachO.h
 ${LLVM_BASE}/include/lldb/Host/Socket.h
 ${LLVM_BASE}/include/lldb/Host/SocketAddress.h
+${LLVM_BASE}/include/lldb/Host/StreamFile.h
 ${LLVM_BASE}/include/lldb/Host/Terminal.h
 ${LLVM_BASE}/include/lldb/Host/ThreadLauncher.h
 ${LLVM_BASE}/include/lldb/Host/Time.h
@@ -253,6 +266,7 @@ ${LLVM_BASE}/include/lldb/Host/common/NativeThreadProtocol.h
 ${LLVM_BASE}/include/lldb/Host/common/NativeWatchpointList.h
 ${LLVM_BASE}/include/lldb/Host/common/TCPSocket.h
 ${LLVM_BASE}/include/lldb/Host/common/UDPSocket.h
+${LLVM_BASE}/include/lldb/Host/common/ZipFileResolver.h
 ${LLVM_BASE}/include/lldb/Host/freebsd/
 ${LLVM_BASE}/include/lldb/Host/freebsd/HostInfoFreeBSD.h
 ${LLVM_BASE}/include/lldb/Host/linux/
@@ -305,6 +319,12 @@ ${LLVM_BASE}/include/lldb/Interpreter/CommandObjectMultiword.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandOptionArgumentTable.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandOptionValidators.h
 ${LLVM_BASE}/include/lldb/Interpreter/CommandReturnObject.h
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedProcessInterface.h
+${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedThreadInterface.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionArgParser.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupArchitecture.h
 ${LLVM_BASE}/include/lldb/Interpreter/OptionGroupBoolean.h
@@ -345,6 +365,7 @@ ${LLVM_BASE}/include/lldb/Interpreter/OptionValues.h
 ${LLVM_BASE}/include/lldb/Interpreter/Options.h
 ${LLVM_BASE}/include/lldb/Interpreter/Property.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptInterpreter.h
+${LLVM_BASE}/include/lldb/Interpreter/ScriptObject.h
 ${LLVM_BASE}/include/lldb/Symbol/
 ${LLVM_BASE}/include/lldb/Symbol/ArmUnwindInfo.h
 ${LLVM_BASE}/include/lldb/Symbol/Block.h
@@ -371,6 +392,7 @@ ${LLVM_BASE}/include/lldb/Symbol/SymbolContext.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolContextScope.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolFile.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolFileOnDemand.h
+${LLVM_BASE}/include/lldb/Symbol/SymbolLocator.h
 ${LLVM_BASE}/include/lldb/Symbol/SymbolVendor.h
 ${LLVM_BASE}/include/lldb/Symbol/Symtab.h
 ${LLVM_BASE}/include/lldb/Symbol/TaggedASTType.h
@@ -415,7 +437,9 @@ ${LLVM_BASE}/include/lldb/Target/QueueList.h
 ${LLVM_BASE}/include/lldb/Target/RegisterCheckpoint.h
 ${LLVM_BASE}/include/lldb/Target/RegisterContext.h
 ${LLVM_BASE}/include/lldb/Target/RegisterContextUnwind.h
+${LLVM_BASE}/include/lldb/Target/RegisterFlags.h
 ${LLVM_BASE}/include/lldb/Target/RegisterNumber.h
+${LLVM_BASE}/include/lldb/Target/RegisterTypeBuilder.h
 ${LLVM_BASE}/include/lldb/Target/RemoteAwarePlatform.h
 ${LLVM_BASE}/include/lldb/Target/Runtime.h
 ${LLVM_BASE}/include/lldb/Target/SectionLoadHistory.h
@@ -462,11 +486,14 @@ ${LLVM_BASE}/include/lldb/Target/Unwind.h
 ${LLVM_BASE}/include/lldb/Target/UnwindAssembly.h
 ${LLVM_BASE}/include/lldb/Target/UnwindLLDB.h
 ${LLVM_BASE}/include/lldb/Utility/
+${LLVM_BASE}/include/lldb/Utility/AddressableBits.h
 ${LLVM_BASE}/include/lldb/Utility/AnsiTerminal.h
+${LLVM_BASE}/include/lldb/Utility/AppleUuidCompatibility.h
 ${LLVM_BASE}/include/lldb/Utility/ArchSpec.h
 ${LLVM_BASE}/include/lldb/Utility/Args.h
 ${LLVM_BASE}/include/lldb/Utility/Baton.h
 ${LLVM_BASE}/include/lldb/Utility/Broadcaster.h
+${LLVM_BASE}/include/lldb/Utility/Checksum.h
 ${LLVM_BASE}/include/lldb/Utility/Cloneable.h
 ${LLVM_BASE}/include/lldb/Utility/CompletionRequest.h
 ${LLVM_BASE}/include/lldb/Utility/Connection.h
@@ -481,6 +508,7 @@ ${LLVM_BASE}/include/lldb/Utility/Endian.h
 ${LLVM_BASE}/include/lldb/Utility/Environment.h
 ${LLVM_BASE}/include/lldb/Utility/Event.h
 ${LLVM_BASE}/include/lldb/Utility/FileSpec.h
+${LLVM_BASE}/include/lldb/Utility/FileSpecList.h
 ${LLVM_BASE}/include/lldb/Utility/Flags.h
 ${LLVM_BASE}/include/lldb/Utility/GDBRemote.h
 ${LLVM_BASE}/include/lldb/Utility/IOObject.h
@@ -498,11 +526,13 @@ ${LLVM_BASE}/include/lldb/Utility/RangeMap.h
 ${LLVM_BASE}/include/lldb/Utility/RegisterValue.h
 ${LLVM_BASE}/include/lldb/Utility/RegularExpression.h
 ${LLVM_BASE}/include/lldb/Utility/Scalar.h
+${LLVM_BASE}/include/lldb/Utility/ScriptedMetadata.h
 ${LLVM_BASE}/include/lldb/Utility/SelectHelper.h
 ${LLVM_BASE}/include/lldb/Utility/SharedCluster.h
 ${LLVM_BASE}/include/lldb/Utility/State.h
 ${LLVM_BASE}/include/lldb/Utility/Status.h
 ${LLVM_BASE}/include/lldb/Utility/Stream.h
+${LLVM_BASE}/include/lldb/Utility/StreamBuffer.h
 ${LLVM_BASE}/include/lldb/Utility/StreamString.h
 ${LLVM_BASE}/include/lldb/Utility/StreamTee.h
 ${LLVM_BASE}/include/lldb/Utility/StringExtractor.h
@@ -510,6 +540,8 @@ ${LLVM_BASE}/include/lldb/Utility/StringExtractorGDBRemote.h
 ${LLVM_BASE}/include/lldb/Utility/StringLexer.h
 ${LLVM_BASE}/include/lldb/Utility/StringList.h
 ${LLVM_BASE}/include/lldb/Utility/StructuredData.h
+${LLVM_BASE}/include/lldb/Utility/SupportFile.h
+${LLVM_BASE}/include/lldb/Utility/ThreadSafeDenseMap.h
 ${LLVM_BASE}/include/lldb/Utility/TildeExpressionResolver.h
 ${LLVM_BASE}/include/lldb/Utility/Timeout.h
 ${LLVM_BASE}/include/lldb/Utility/Timer.h
@@ -523,6 +555,7 @@ ${LLVM_BASE}/include/lldb/Utility/UserIDResolver.h
 ${LLVM_BASE}/include/lldb/Utility/VASPrintf.h
 ${LLVM_BASE}/include/lldb/Utility/VMRange.h
 ${LLVM_BASE}/include/lldb/Utility/XcodeSDK.h
+${LLVM_BASE}/include/lldb/Utility/ZipFile.h
 ${LLVM_BASE}/include/lldb/Version/
 ${LLVM_BASE}/include/lldb/Version/Version.h
 ${LLVM_BASE}/include/lldb/lldb-defines.h

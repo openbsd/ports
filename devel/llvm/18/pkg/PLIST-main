@@ -33,7 +33,6 @@ bin/ld64.lld-${LLVM_MAJOR}
 bin/llc-${LLVM_MAJOR}
 bin/lld-${LLVM_MAJOR}
 bin/lld-link-${LLVM_MAJOR}
-bin/lldb-dap-${LLVM_MAJOR}
 bin/lli-${LLVM_MAJOR}
 bin/llvm-addr2line-${LLVM_MAJOR}
 bin/llvm-ar-${LLVM_MAJOR}
@@ -147,7 +146,6 @@ ${LLVM_BASE}/bin/ld.lld
 @bin ${LLVM_BASE}/bin/llc
 @bin ${LLVM_BASE}/bin/lld
 ${LLVM_BASE}/bin/lld-link
-@bin ${LLVM_BASE}/bin/lldb-dap
 @bin ${LLVM_BASE}/bin/lli
 ${LLVM_BASE}/bin/llvm-addr2line
 @bin ${LLVM_BASE}/bin/llvm-ar
@@ -1052,37 +1050,6 @@ ${LLVM_BASE}/include/lld/Common/Strings.h
 ${LLVM_BASE}/include/lld/Common/TargetOptionsCommandFlags.h
 ${LLVM_BASE}/include/lld/Common/Timer.h
 ${LLVM_BASE}/include/lld/Common/Version.h
-${LLVM_BASE}/include/lldb/API/SBFormat.h
-${LLVM_BASE}/include/lldb/API/SBProcessInfoList.h
-${LLVM_BASE}/include/lldb/API/SBScriptObject.h
-${LLVM_BASE}/include/lldb/API/SBWatchpointOptions.h
-${LLVM_BASE}/include/lldb/Breakpoint/StopPointSiteList.h
-${LLVM_BASE}/include/lldb/Breakpoint/WatchpointResource.h
-${LLVM_BASE}/include/lldb/Breakpoint/WatchpointResourceList.h
-${LLVM_BASE}/include/lldb/Core/DumpRegisterInfo.h
-${LLVM_BASE}/include/lldb/Core/ValueObjectVTable.h
-${LLVM_BASE}/include/lldb/Expression/ObjectFileJIT.h
-${LLVM_BASE}/include/lldb/Host/StreamFile.h
-${LLVM_BASE}/include/lldb/Host/common/ZipFileResolver.h
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/OperatingSystemInterface.h
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedInterface.h
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedProcessInterface.h
-${LLVM_BASE}/include/lldb/Interpreter/Interfaces/ScriptedThreadInterface.h
-${LLVM_BASE}/include/lldb/Interpreter/ScriptObject.h
-${LLVM_BASE}/include/lldb/Symbol/SymbolLocator.h
-${LLVM_BASE}/include/lldb/Target/RegisterFlags.h
-${LLVM_BASE}/include/lldb/Target/RegisterTypeBuilder.h
-${LLVM_BASE}/include/lldb/Utility/AddressableBits.h
-${LLVM_BASE}/include/lldb/Utility/AppleUuidCompatibility.h
-${LLVM_BASE}/include/lldb/Utility/Checksum.h
-${LLVM_BASE}/include/lldb/Utility/FileSpecList.h
-${LLVM_BASE}/include/lldb/Utility/ScriptedMetadata.h
-${LLVM_BASE}/include/lldb/Utility/StreamBuffer.h
-${LLVM_BASE}/include/lldb/Utility/SupportFile.h
-${LLVM_BASE}/include/lldb/Utility/ThreadSafeDenseMap.h
-${LLVM_BASE}/include/lldb/Utility/ZipFile.h
 ${LLVM_BASE}/include/llvm/
 ${LLVM_BASE}/include/llvm-c/
 ${LLVM_BASE}/include/llvm-c/Analysis.h

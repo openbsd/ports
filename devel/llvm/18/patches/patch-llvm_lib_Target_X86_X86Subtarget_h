@@ -10,7 +10,7 @@ Index: llvm/lib/Target/X86/X86Subtarget.h
    unsigned getTileConfigSize() const { return 64; }
    Align getTileConfigAlignment() const { return TileConfigAlignment; }
  
-@@ -292,6 +294,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -293,6 +295,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
  
    bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
    bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }
