@@ -5,6 +5,8 @@ DISTNAME=	SCons-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
+REVISION=	0
+
 HOMEPAGE=	https://www.scons.org/
 
 # MIT

@@ -469,7 +469,6 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-311.pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/.CatalogManager.properties.example
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/.urilist
