@@ -1,6 +1,7 @@
 COMMENT=		functional language for building scalable applications
 
 V=			1.16.2
+REVISION=		0
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
@@ -14,7 +15,6 @@ HOMEPAGE=		https://elixir-lang.org/
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/erlang
-MODERL_VERSION=		25
 
 ALL_TARGET=		# empty
 
