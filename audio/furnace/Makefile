@@ -1,3 +1,8 @@
+# /pobj/furnace-0.6.3/furnace-0.6.3/extern/ESFMu/esfm.c:1855:5: error: inline assembly requires more registers than available
+#                               "movzbl  %b[wave], %%eax             \n\t"
+#                               ^
+BROKEN-i386 =	asm tries to use %eax which is not available
+
 COMMENT =	multi-system chiptune tracker
 
 DIST_TUPLE =	github tildearrow furnace v0.6.3 .
