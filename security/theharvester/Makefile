@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -23,13 +23,14 @@ FIX_CRLF_FILES =	discovery/dnssearch.py \
 
 MODULES =	lang/python
 
-BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		www/py-beautifulsoup4${MODPY_FLAVOR}
 
 MODPY_ADJ_FILES =	theHarvester.py
 
 NO_BUILD =	Yes
+# BUILD_DEPENDS with NO_BUILD is a special case
+BUILD_DEPENDS =	lang/python/3
 
 INSTDIR =	${PREFIX}/share/theharvester
 
