@@ -1,10 +1,12 @@
+BROKEN =	broken with py3.11, dead upstream, unused - candidate for removal?
+
 COMMENT =	friendlier RFC 6265-compliant cookie parser/renderer
 
 MODPY_EGG_VERSION =	2.2.1
 
 DISTNAME =		cookies-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 
