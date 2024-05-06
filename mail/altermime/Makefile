@@ -1,7 +1,6 @@
 COMMENT=	utility for altering mime-encoded mailpacks
 
-DISTNAME=	altermime-0.3.10
-REVISION=	1
+DISTNAME=	altermime-0.3.11
 
 CATEGORIES=	mail
 
