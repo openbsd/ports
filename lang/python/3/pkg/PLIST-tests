@@ -10,6 +10,7 @@
 @pkgpath lang/python/3.8,-test
 @pkgpath lang/python/3.9,-test
 @pkgpath lang/python/3.10,-test
+@pkgpath lang/python/3.11,-test
 lib/python3.11/ctypes/test/
 lib/python3.11/ctypes/test/__init__.py
 lib/python3.11/ctypes/test/__main__.py

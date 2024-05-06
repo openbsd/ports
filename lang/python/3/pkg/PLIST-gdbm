@@ -10,4 +10,5 @@
 @pkgpath lang/python/3.8,-gdbm
 @pkgpath lang/python/3.9,-gdbm
 @pkgpath lang/python/3.10,-gdbm
+@pkgpath lang/python/3.11,-gdbm
 @so lib/python3.11/lib-dynload/_gdbm.cpython-311.so

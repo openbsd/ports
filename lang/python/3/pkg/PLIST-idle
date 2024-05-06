@@ -11,6 +11,7 @@
 @pkgpath lang/python/3.8,-idle
 @pkgpath lang/python/3.9,-idle
 @pkgpath lang/python/3.10,-idle
+@pkgpath lang/python/3.11,-idle
 ${PY_DEFAULTONLY}bin/idle3
 bin/idle3.11
 lib/python3.11/idlelib/

@@ -11,6 +11,7 @@
 @pkgpath lang/python/3.8,-main
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
+@pkgpath lang/python/3.11,-main
 ${PY_DEFAULTONLY}bin/2to3
 bin/2to3-3.11
 @comment bin/pip3

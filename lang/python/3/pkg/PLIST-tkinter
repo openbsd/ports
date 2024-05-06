@@ -10,6 +10,7 @@
 @pkgpath lang/python/3.8,-tkinter
 @pkgpath lang/python/3.9,-tkinter
 @pkgpath lang/python/3.10,-tkinter
+@pkgpath lang/python/3.11,-tkinter
 @so lib/python3.11/lib-dynload/_tkinter.cpython-311.so
 lib/python3.11/tkinter/
 lib/python3.11/tkinter/__init__.py
