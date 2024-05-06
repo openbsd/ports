@@ -1,4 +1,5 @@
 share/fonts/
 @fontdir share/fonts/noto/
 share/fonts/noto/NotoSansCJK-VF.otf.ttc
+share/fonts/noto/NotoSansMonoCJK-VF.otf.ttc
 share/fonts/noto/NotoSerifCJK-VF.otf.ttc
