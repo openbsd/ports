@@ -5,49 +5,12 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.10
+MODPY_DEFAULT_VERSION_3 = 3.11
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
-# - All ports with a run/lib dep on python must be REVISION-bumped.
-# - Move PY_DEFAULTONLY and --with-ensurepip=no from 3.x/Makefile
-#   to 3.y/Makefile (remove from old, add to new), regenerate PLISTs
-#   to add/remove "ensurepip" files.
-# - In 3.x/Makefile and 3.y/Makefile, bump REVISION for -main and -idle
-#   (i.e. those PLISTs with "PY_DEFAULTONLY" lines)
-# - In 3.y/PLIST-main and 3.y/PLIST-idle add a @conflict on the old
-#   REVISION of the old version. For example, for the 3.8->3.9 switch,
-#   3.8 -main was 3.8.12p2 and -idle was 3.8.12, so the following
-#   were needed:
-#   PLIST-main: @conflict python->=3,<3.8.12p3
-#   PLIST-idle: @conflict python-idle->=3,<3.8.12p0
-#   (Bear in mind that the subpackages might have different REVISIONs)
-# - In 3.x (old default) add a conflict marker with the old versions of
-#   py3-pip and py3-setuptools (bin/pip3.x and lib/python3.x files were
-#   in pip/setuptools packages but will now be in python3.x "ensurepip"
-#   files)
+# - All ports with PLISTs that depend on the Python version number
+# must be REVISION-bumped.
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
-
-# If later *removing* an old version:
-# - *move* the numbered @conflict python-*->=3.2,<3.x to the new version
-#   and update e.g. to  @conflict python-*->=3.2,<3.y
-# - *move* the @pkgpath markers to the new version and add a new one for
-#   the old version you have just retired.
-# - bump revision for any plists that have changed
-
-# In all cases:
-# - keep the @conflict python-*-${VERSION_SPEC} PLIST lines as-is, they are
-#   there to override the "@option no-default-conflict" and set automatically
-#   from the variable defined in 3.x/Makefile.
-# - after a change to PLISTs (or dependencies etc) in -current, keep
-#   the package version in -current higher than in -stable for the
-#   previous version (i.e. change made in 7.1-current -> REVISION
-#   must be set higher in 7.1-current/7.2 than 7.1-stable and this
-#   needs to be kept when Python is updated in -stable)
-
-# Also note:
-# - Some subpackages e.g. -idle have a conflict on an old version of the main
-#   package e.g. "@conflict python->=3.6,<3.6.8p0", this is due to a file
-#   moving between subpackages in the past.
 
 .if !defined(MODPY_VERSION)
 FLAVOR ?=
@@ -72,10 +35,11 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 .endif
 
 # verify if MODPY_VERSION found is correct
-.if ${MODPY_VERSION} != "2.7" && \
-      ${MODPY_VERSION} != "3.9" && \
-      ${MODPY_VERSION} != "3.10" && \
-      ${MODPY_VERSION} != "3.11"
+.if ${MODPY_VERSION} == "2.7"
+_MODPY_SUBDIR = 2.7
+.elif ${MODPY_VERSION} == "3.11"
+_MODPY_SUBDIR = 3
+.else
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .endif
 
@@ -83,6 +47,7 @@ MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}
 
 .if ${MODPY_MAJOR_VERSION} == 2
 MODPY_FLAVOR =
+# use MODPY_BIN_SUFFIX for binaries to avoid conflict
 MODPY_BIN_SUFFIX =	-2
 MODPY_PY_PREFIX =	py-
 MODPY_PYCACHE =
@@ -94,7 +59,6 @@ MODPY_PYOEXTENSION =	pyo
 # replace py- prefix by py3-
 FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
 MODPY_FLAVOR =	,python3
-# use MODPY_BIN_SUFFIX for binaries to avoid conflict
 MODPY_BIN_SUFFIX =
 MODPY_PY_PREFIX =	py3-
 MODPY_PYCACHE =		__pycache__/
@@ -121,9 +85,9 @@ MODPY_PYTEST ?=		Yes
 
 MODPY_WANTLIB =		python${MODPY_VERSION}
 
-MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
-MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
-_MODPY_BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
+MODPY_RUN_DEPENDS =	lang/python/${_MODPY_SUBDIR}
+MODPY_LIB_DEPENDS =	lang/python/${_MODPY_SUBDIR}
+_MODPY_BUILD_DEPENDS =	lang/python/${_MODPY_SUBDIR}
 
 .if ${MODPY_PYTEST:L} == "yes"
 .  if ${MODPY_VERSION} == ${MODPY_DEFAULT_VERSION_2}
@@ -259,7 +223,7 @@ SITES =			${SITE_PYPI:=${MODPY_PI_DIR}/}
 HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 .endif
 
-MODPY_TKINTER_DEPENDS =	lang/python/${MODPY_VERSION},-tkinter
+MODPY_TKINTER_DEPENDS =	lang/python/${_MODPY_SUBDIR},-tkinter
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
 MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}

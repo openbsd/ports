@@ -43,6 +43,7 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 .if ${VERSION} == "2.7"
+V_SUBDIR =		${VERSION}
 MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
 DEBUG_PACKAGES ?=	-main -gdbm -tkinter -bsddb
 
@@ -50,6 +51,7 @@ DEBUG_PACKAGES ?=	-main -gdbm -tkinter -bsddb
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .else
+V_SUBDIR =		3
 MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
 DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 .endif
@@ -59,7 +61,7 @@ COMPILER_LANGS =	c
 
 # All subpackages depend on the main python package.
 
-RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
+RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${V_SUBDIR},-main
 LIB_DEPENDS =
 
 LIB_DEPENDS-main +=	archivers/bzip2 \
@@ -70,18 +72,15 @@ RUN_DEPENDS-main =
 WANTLIB-main +=		bz2 c crypto expat ffi intl m curses panel pthread \
 			readline sqlite3 ssl util z
 .if ${VERSION} != "2.7"
-LIB_DEPENDS-main +=	archivers/xz
-WANTLIB-main +=		lzma
-.endif
-.if ${VERSION} == "3.11"
-LIB_DEPENDS-main +=	security/libb2
-WANTLIB-main +=		b2
+LIB_DEPENDS-main +=	archivers/xz \
+			security/libb2
+WANTLIB-main +=		b2 lzma
 .endif
 
 WANTLIB-tests =
 WANTLIB-tools =
 
-LIB_DEPENDS-bsddb =	lang/python/${VERSION},-main
+LIB_DEPENDS-bsddb =	lang/python/${V_SUBDIR},-main
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 # XXX recursion: if we have java, then db/v4 depends on libxml
 LIB_DEPENDS-bsddb +=	databases/db/v4,no_tcl,no_java,bootstrap
@@ -91,10 +90,10 @@ LIB_DEPENDS-bsddb +=	databases/db/v4
 WANTLIB-bsddb =		lib/db4/db>=4 pthread python${VERSION}
 
 LIB_DEPENDS-gdbm =	databases/gdbm \
-			lang/python/${VERSION},-main
+			lang/python/${V_SUBDIR},-main
 WANTLIB-gdbm =		gdbm>=3 pthread python${VERSION}
 
-RUN_DEPENDS-idle =	lang/python/${VERSION},-tkinter \
+RUN_DEPENDS-idle =	lang/python/${V_SUBDIR},-tkinter \
 			${RUN_DEPENDS}
 WANTLIB-idle =
 
@@ -106,7 +105,7 @@ MODTK_VERSION =		8.5
 MODTK_VERSION =		8.6
 .endif
 
-LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
+LIB_DEPENDS-tkinter =	lang/python/${V_SUBDIR},-main \
 			${MODTK_LIB_DEPENDS}
 WANTLIB-tkinter =	pthread python${VERSION} \
 			${MODTK_WANTLIB}
