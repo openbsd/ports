@@ -2,11 +2,7 @@ COMMENT=	UTF-8 aware language guessing library
 
 GH_ACCOUNT=	LibreOffice
 GH_PROJECT=	libexttextcat
-#GH_TAGNAME=	v3.4.5
-
-# not tagged yet
-GH_COMMIT=	cf73ba2ed9ab4d49800fe9bb4fa41a16687d6e39
-DISTNAME=	libexttextcat-3.4.6
+GH_TAGNAME=	v3.4.7
 
 SHARED_LIBS +=  exttextcat-2.0            0.0 # 0.0
 

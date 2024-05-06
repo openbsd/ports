@@ -89,6 +89,7 @@ share/libexttextcat/hu.lm
 share/libexttextcat/hy.lm
 share/libexttextcat/ia.lm
 share/libexttextcat/id.lm
+share/libexttextcat/ilo.lm
 share/libexttextcat/is.lm
 share/libexttextcat/it.lm
 share/libexttextcat/ja.lm
@@ -155,6 +156,7 @@ share/libexttextcat/sg.lm
 share/libexttextcat/shs.lm
 share/libexttextcat/si.lm
 share/libexttextcat/sk.lm
+share/libexttextcat/skr.lm
 share/libexttextcat/sl.lm
 share/libexttextcat/so.lm
 share/libexttextcat/sq.lm
