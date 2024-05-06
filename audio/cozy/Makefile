@@ -3,7 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.3.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
@@ -21,8 +21,7 @@ COMMON_DEPENDS =	audio/py-mutagen${MODPY_FLAVOR} \
                         devel/py-gobject3${MODPY_FLAVOR} \
 			sysutils/py-distro${MODPY_FLAVOR} \
 			x11/elementary/granite \
-			x11/gnome/libadwaita \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 BUILD_DEPENDS =		${COMMON_DEPENDS} \
 			devel/gettext,-tools
