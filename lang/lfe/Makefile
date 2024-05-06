@@ -3,6 +3,7 @@ COMMENT =		Lisp Flavoured Erlang (LFE)
 GH_ACCOUNT =		lfe
 GH_PROJECT =		lfe
 GH_TAGNAME =		2.1.4
+REVISION =		0
 
 CATEGORIES =		lang
 
