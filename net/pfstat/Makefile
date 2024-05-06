@@ -7,7 +7,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-daemon=	${DISTNAME:S/-/d-/}
 CATEGORIES=	net
 SITES=		http://www.benzedrine.ch/
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.benzedrine.ch/pfstat.html
 
