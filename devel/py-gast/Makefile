@@ -3,6 +3,7 @@ COMMENT=	Python AST that abstracts the underlying Python version
 MODPY_EGG_VERSION=	0.5.4
 DISTNAME=	gast-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

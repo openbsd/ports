@@ -1,7 +1,7 @@
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
 MODPY_EGG_VERSION =	1.11.0
-REVISION=		2
+REVISION=		3
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 

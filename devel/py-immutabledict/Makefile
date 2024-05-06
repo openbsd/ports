@@ -3,6 +3,7 @@ COMMENT=	immutable dictionary
 MODPY_EGG_VERSION=	3.0.0
 DISTNAME=	immutabledict-${MODPY_EGG_VERSION}
 PKGNAME=	py-immutabledict-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

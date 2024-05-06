@@ -3,6 +3,7 @@ COMMENT =		Python tool configuration
 MODPY_EGG_VERSION =	1.2.6
 DISTNAME =		pytoolconfig-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		dot-accessible dictionary (a la JavaScript objects)
 MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		munch-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

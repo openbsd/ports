@@ -3,6 +3,7 @@ COMMENT =		log formatting with colors
 MODPY_EGG_VERSION =	6.7.0
 DISTNAME =		colorlog-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

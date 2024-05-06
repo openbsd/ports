@@ -3,6 +3,7 @@ COMMENT =		object oriented paths
 MODPY_EGG_VERSION =	0.4.3
 DISTNAME =		pathable-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

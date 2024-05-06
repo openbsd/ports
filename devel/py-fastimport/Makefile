@@ -3,7 +3,7 @@ COMMENT =		parser for and generator of the Git fastimport format
 MODPY_EGG_VERSION =	0.9.14
 DISTNAME =		fastimport-${MODPY_EGG_VERSION}
 PKGNAME =		py-fastimport-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

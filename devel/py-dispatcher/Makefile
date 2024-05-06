@@ -3,6 +3,7 @@ COMMENT=	multi-producer-multi-consumer signal dispatching mechanism
 MODPY_EGG_VERSION= 2.0.7
 DISTNAME=	PyDispatcher-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/Py/py-/:L}
+REVISION=	0
 
 CATEGORIES=	devel
 

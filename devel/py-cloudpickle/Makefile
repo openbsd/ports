@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	1.5.0
 DISTNAME =	cloudpickle-${MODPY_EGG_VERSION}
 PKGNAME =	py-cloudpickle-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

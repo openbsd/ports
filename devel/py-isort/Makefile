@@ -3,6 +3,7 @@ COMMENT=	Python utility / library to sort Python imports
 MODPY_EGG_VERSION=	5.12.0
 DISTNAME=	isort-${MODPY_EGG_VERSION}
 PKGNAME=	py-isort-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

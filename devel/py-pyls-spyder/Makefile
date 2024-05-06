@@ -3,7 +3,7 @@ COMMENT =		spyder extension for the Python Language Server
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		pyls-spyder-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

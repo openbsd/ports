@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.1.2
 
 DISTNAME =		looseversion-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

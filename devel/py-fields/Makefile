@@ -3,7 +3,7 @@ COMMENT =		container class boilerplate killer
 MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		fields-${MODPY_EGG_VERSION}
 PKGNAME =		py-fields-${MODPY_EGG_VERSION}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 

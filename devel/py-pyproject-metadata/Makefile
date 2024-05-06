@@ -3,6 +3,7 @@ COMMENT=		PEP 621 metadata parsing
 MODPY_EGG_VERSION=	0.7.1
 DISTNAME=		pyproject-metadata-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

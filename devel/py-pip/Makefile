@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	24.0
 DISTNAME=	pip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pip.pypa.io/en/stable/
 

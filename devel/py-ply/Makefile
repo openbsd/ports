@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.11
 DISTNAME =		ply-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		https://www.dabeaz.com/ply/
 

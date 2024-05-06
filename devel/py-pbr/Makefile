@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	6.0.0
 DISTNAME=	pbr-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # https://github.com/openstack-dev/pbr
 HOMEPAGE=	https://docs.openstack.org/pbr/latest/

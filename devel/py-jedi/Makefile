@@ -3,6 +3,7 @@ COMMENT =		autocompletion tool for Python
 MODPY_EGG_VERSION =	0.19.1
 DISTNAME =		jedi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

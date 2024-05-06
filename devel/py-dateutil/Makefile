@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.9.0
 DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://dateutil.readthedocs.org/
 

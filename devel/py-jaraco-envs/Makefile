@@ -3,7 +3,7 @@ COMMENT =		classes for orchestrating Python (virtual) environments
 MODPY_EGG_VERSION =	2.4.0
 DISTNAME =		jaraco.envs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

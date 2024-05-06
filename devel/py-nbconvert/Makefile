@@ -3,6 +3,7 @@ COMMENT =		convert Jupyter notebooks (.ipynb) to other formats
 MODPY_EGG_VERSION =	7.16.3
 DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

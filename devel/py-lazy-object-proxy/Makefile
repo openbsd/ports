@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.7.1
 DISTNAME =		lazy-object-proxy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://python-lazy-object-proxy.readthedocs.org
 

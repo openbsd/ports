@@ -3,7 +3,7 @@ COMMENT =		filesystem events monitoring
 MODPY_EGG_VERSION =	0.9.6
 DISTNAME =		pyinotify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		devel
 

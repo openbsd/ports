@@ -3,6 +3,7 @@ COMMENT=	infer file type and MIME type
 MODPY_EGG_VERSION=	1.2.0
 DISTNAME=	filetype-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =	Hamcrest matchers for Python
 MODPY_EGG_VERSION =	2.0.3
 DISTNAME =	PyHamcrest-${MODPY_EGG_VERSION}
 PKGNAME =	py-hamcrest-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

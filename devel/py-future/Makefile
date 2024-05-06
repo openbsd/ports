@@ -1,7 +1,7 @@
 COMMENT=	compatibility layer between Python 2 and Python 3
 
 MODPY_EGG_VERSION=	0.18.3
-REVISION=	0
+REVISION=	1
 DISTNAME=	future-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

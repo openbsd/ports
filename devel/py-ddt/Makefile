@@ -3,6 +3,7 @@ COMMENT =		multiply test cases
 MODPY_EGG_VERSION =	1.6.0
 DISTNAME =		ddt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

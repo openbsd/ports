@@ -3,7 +3,7 @@ COMMENT =		functools like those found in stdlib
 MODPY_EGG_VERSION =	3.5.2
 DISTNAME =		jaraco.functools-${MODPY_EGG_VERSION}
 PKGNAME =		py-jaraco-functools-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

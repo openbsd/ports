@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	4.9.0
 DISTNAME=	pexpect-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pexpect.readthedocs.io/
 

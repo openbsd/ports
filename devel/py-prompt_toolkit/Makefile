@@ -4,6 +4,7 @@ COMMENT=	Python library for building powerful interactive CLI
 MODPY_EGG_VERSION=	3.0.41
 DISTNAME=	prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		1
 

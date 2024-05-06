@@ -3,7 +3,7 @@ COMMENT =		extends Python Rich library functionality
 MODPY_EGG_VERSION =	1.2.7
 DISTNAME =		enrich-${MODPY_EGG_VERSION}
 PKGNAME =		py-enrich-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

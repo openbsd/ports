@@ -3,6 +3,7 @@ COMMENT=	strings parser for the Python format() syntax
 MODPY_EGG_VERSION=	1.19.1
 DISTNAME=	parse-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

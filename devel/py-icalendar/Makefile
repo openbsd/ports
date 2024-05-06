@@ -3,7 +3,7 @@ COMMENT =		parser/generator of iCalendar files
 MODPY_EGG_VERSION =	4.0.4
 DISTNAME =		icalendar-${MODPY_EGG_VERSION}
 PKGNAME =		py-icalendar-${MODPY_EGG_VERSION}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 

@@ -3,6 +3,7 @@ COMMENT=		setuptools Rust extension plugin
 MODPY_EGG_VERSION=	1.8.1
 DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

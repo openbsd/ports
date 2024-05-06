@@ -3,6 +3,7 @@ COMMENT=	extract elements from a JSON document
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=	jmespath-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -3,6 +3,7 @@ COMMENT=	get the currently executing AST node of a frame
 MODPY_EGG_VERSION=	2.0.1
 DISTNAME=	executing-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

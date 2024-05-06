@@ -3,6 +3,7 @@ COMMENT =		pure Python implementation of Git file formats and protocols
 MODPY_EGG_VERSION =	0.21.3
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

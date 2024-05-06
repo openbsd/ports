@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.4
 DISTNAME =	entrypoints-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/takluyver/entrypoints
 

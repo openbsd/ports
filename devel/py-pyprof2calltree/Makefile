@@ -3,7 +3,7 @@ COMMENT =	help visualize profiling data collected with the cProfile
 MODPY_EGG_VERSION = 1.4.5
 DISTNAME =	pyprof2calltree-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 

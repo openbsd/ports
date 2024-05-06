@@ -3,6 +3,7 @@ COMMENT =		PEP 517 compatible backend for pdm
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		pdm-backend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

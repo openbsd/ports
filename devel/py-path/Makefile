@@ -3,6 +3,7 @@ COMMENT=	module wrapper for os.path
 MODPY_EGG_VERSION=	16.10.0
 DISTNAME=	path-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

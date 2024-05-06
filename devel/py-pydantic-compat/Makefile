@@ -3,6 +3,7 @@ COMMENT =		compatibility for pydantic v1-v2 cross compatibility
 MODPY_EGG_VERSION =	0.1.1
 DISTNAME =		pydantic_compat-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2024.4.16
 DISTNAME=	regex-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/mrabarnett/mrab-regex
 

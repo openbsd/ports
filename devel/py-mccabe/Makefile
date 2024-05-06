@@ -3,6 +3,7 @@ COMMENT=	McCabe complexity checker for Python
 MODPY_EGG_VERSION=	0.7.0
 DISTNAME=	mccabe-${MODPY_EGG_VERSION}
 PKGNAME=	py-mccabe-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

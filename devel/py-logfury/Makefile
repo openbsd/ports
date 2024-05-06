@@ -5,6 +5,7 @@ DISTNAME =		logfury-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/reef-technologies/logfury
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE = 	Yes

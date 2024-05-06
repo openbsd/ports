@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	1.9.8
 DISTNAME=	logilab-common-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://www.logilab.org/project/logilab-common
 

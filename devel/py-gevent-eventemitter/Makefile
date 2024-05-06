@@ -5,7 +5,7 @@ DISTNAME =		gevent-eventemitter-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/rossengeorgiev/gevent-eventemitter
-REVISION =		1
+REVISION =		2
 
 # MIT
 PERMIT_PACKAGE =	Yes

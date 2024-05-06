@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.0.9
 DISTNAME =		pretend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		https://github.com/alex/pretend
 

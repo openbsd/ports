@@ -3,6 +3,7 @@ COMMENT =	allow nested event loops with asyncio
 MODPY_EGG_VERSION =	1.5.4
 DISTNAME =	nest_asyncio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/_/-/}
+REVISION =	0
 
 CATEGORIES =	devel
 

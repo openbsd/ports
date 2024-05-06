@@ -3,6 +3,7 @@ COMMENT =		Python Language Server
 MODPY_EGG_VERSION =	1.11.0
 DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

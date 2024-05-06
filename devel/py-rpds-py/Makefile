@@ -3,7 +3,7 @@ COMMENT =		Python bindings for Rust's persistent data structures (rpds)
 MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		rpds_py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

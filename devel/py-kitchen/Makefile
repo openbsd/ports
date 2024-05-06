@@ -1,7 +1,7 @@
 COMMENT =		kitchen contains a cornucopia of useful code
 
 MODPY_EGG_VERSION =	1.2.6
-REVISION =		3
+REVISION =		4
 
 DISTNAME =		kitchen-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}

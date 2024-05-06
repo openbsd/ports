@@ -3,7 +3,7 @@ COMMENT =	nose/pytest plugin to automatically rerun flaky tests
 MODPY_EGG_VERSION = 3.7.0
 DISTNAME =	flaky-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

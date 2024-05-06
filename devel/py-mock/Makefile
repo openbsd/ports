@@ -1,7 +1,7 @@
 COMMENT=		python mocking and patching library for testing
 
 MODPY_EGG_VERSION=	4.0.3
-REVISION=		2
+REVISION=		3
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel

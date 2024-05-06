@@ -3,6 +3,7 @@ COMMENT=	setuptools extensions for calendar-based versioning
 MODPY_EGG_VERSION=	2022.6.26
 DISTNAME=	calver-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

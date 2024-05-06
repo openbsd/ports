@@ -3,6 +3,7 @@ COMMENT=	fancy and practical functional tools
 MODPY_EGG_VERSION=	2.0
 DISTNAME=	funcy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

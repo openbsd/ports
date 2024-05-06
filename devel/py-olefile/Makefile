@@ -3,7 +3,7 @@ COMMENT =	parse, read and write Microsoft OLE2 files
 MODPY_EGG_VERSION = 0.46
 DISTNAME =	olefile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
+REVISION =	7
 
 GH_ACCOUNT =	decalage2
 GH_PROJECT =	olefile

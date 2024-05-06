@@ -3,6 +3,7 @@ COMMENT=		non-blocking Python methods using decorators
 MODPY_EGG_VERSION=	0.0.11
 DISTNAME=		multitasking-${MODPY_EGG_VERSION}
 PKGNAME=		py-multitasking-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 

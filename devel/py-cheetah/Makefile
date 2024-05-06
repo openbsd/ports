@@ -3,7 +3,7 @@ COMMENT=		Python-powered template engine and code generator
 MODPY_EGG_VERSION=	3.2.6
 DISTNAME=		Cheetah3-${MODPY_EGG_VERSION}
 PKGNAME=		py-cheetah-${MODPY_EGG_VERSION}
-REVISION=		3
+REVISION=		4
 CATEGORIES=		devel textproc
 
 HOMEPAGE=		https://cheetahtemplate.org/

@@ -3,6 +3,7 @@ COMMENT =		IPython kernel for Jupyter
 MODPY_EGG_VERSION =	6.29.4
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 PORTROACH=		limit:^6
 

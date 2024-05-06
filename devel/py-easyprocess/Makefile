@@ -3,7 +3,7 @@ COMMENT =	easy to use python subprocess interface
 MODPY_EGG_VERSION = 1.1
 DISTNAME =	EasyProcess-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

@@ -3,6 +3,7 @@ COMMENT=	catch certain exceptions and provide an indication
 MODPY_EGG_VERSION=	4.1.2
 DISTNAME=	jaraco.context-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

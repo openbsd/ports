@@ -3,7 +3,7 @@ COMMENT=	optional static type checker for Python
 # additional deps needed for 0.980+:
 # "types-psutil", "types-setuptools", "types-typed-ast"
 MODPY_EGG_VERSION=	0.971
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	mypy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}

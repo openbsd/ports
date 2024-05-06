@@ -1,7 +1,7 @@
 COMMENT =		run a subprocess in a pseudo terminal
 
 MODPY_EGG_VERSION =	0.7.0
-REVISION =		3
+REVISION =		4
 DISTNAME =		ptyprocess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

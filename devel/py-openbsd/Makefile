@@ -3,6 +3,7 @@ MODPY_EGG_VERSION =	0.1.0
 DISTNAME =		openbsd-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

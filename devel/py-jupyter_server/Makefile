@@ -4,6 +4,7 @@ COMMENT =		core APIs and REST endpoints for Jupyter web applications
 MODPY_EGG_VERSION =	1.24.0
 DISTNAME =		jupyter_server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

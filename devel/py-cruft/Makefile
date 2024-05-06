@@ -3,6 +3,7 @@ COMMENT =		utility to create and maintain projects from templates
 MODPY_EGG_VERSION =	2.15.0
 DISTNAME =		cruft-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

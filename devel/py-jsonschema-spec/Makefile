@@ -5,6 +5,7 @@ EPOCH=		0
 # 0.2.x has new dependencies
 DISTNAME=	jsonschema_spec-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	devel
 

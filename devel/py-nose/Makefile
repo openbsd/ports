@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.3.7
 DISTNAME=	nose-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	14
+REVISION=	15
 
 HOMEPAGE=	https://nose.readthedocs.io/en/latest/
 

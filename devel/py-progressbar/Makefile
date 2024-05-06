@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	2.5
 DISTNAME =		progressbar-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		https://github.com/niltonvolpato/python-progressbar
 

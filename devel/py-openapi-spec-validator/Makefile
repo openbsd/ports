@@ -3,6 +3,7 @@ COMMENT =		OpenAPI 2.0 (aka Swagger) and OpenAPI 3 spec validator
 MODPY_EGG_VERSION =	0.5.5
 DISTNAME =		openapi_spec_validator-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel www
 

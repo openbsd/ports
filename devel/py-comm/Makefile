@@ -3,6 +3,7 @@ COMMENT =	Jupyter comm implementation for use in ipykernel
 MODPY_EGG_VERSION=	0.1.1
 DISTNAME=	comm-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

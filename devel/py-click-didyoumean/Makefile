@@ -3,6 +3,7 @@ COMMENT =		corrections feature for click
 MODPY_EGG_VERSION =	0.3.1
 DISTNAME =		click_didyoumean-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

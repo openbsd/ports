@@ -3,6 +3,7 @@ COMMENT =		black plugin for the Python Language Server
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		python-lsp-black-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

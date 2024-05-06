@@ -3,6 +3,7 @@ COMMENT =		OpenAPI schema validator
 MODPY_EGG_VERSION =	0.4.3
 DISTNAME =		openapi_schema_validator-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

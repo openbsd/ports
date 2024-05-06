@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.2.1
 DISTNAME =		derange-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/jwodder/derange
 

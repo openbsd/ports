@@ -3,6 +3,7 @@ COMMENT =		Python style guide checker
 MODPY_EGG_VERSION =	2.11.1
 DISTNAME =		pycodestyle-${MODPY_EGG_VERSION}
 PKGNAME =		py-codestyle-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

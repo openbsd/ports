@@ -7,6 +7,7 @@ GH_ACCOUNT =	robotframework
 GH_PROJECT =	robotframework
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

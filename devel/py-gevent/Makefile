@@ -1,7 +1,7 @@
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	22.10.2
-REVISION =		0
+REVISION =		1
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

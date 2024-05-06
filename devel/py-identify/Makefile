@@ -3,6 +3,7 @@ COMMENT =		file identification library
 MODPY_EGG_VERSION =	2.5.36
 DISTNAME =		identify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

@@ -3,6 +3,7 @@ COMMENT =	hatch plugin for versioning from a package.json file
 MODPY_EGG_VERSION =	0.3.2
 DISTNAME =		hatch_nodejs_version-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

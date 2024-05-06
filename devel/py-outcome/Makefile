@@ -3,6 +3,7 @@ COMMENT =	capture the outcome of a Python function call
 MODPY_EGG_VERSION=	1.3.0
 DISTNAME=	outcome-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

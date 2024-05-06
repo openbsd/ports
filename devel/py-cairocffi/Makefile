@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		cairocffi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/Kozea/cairocffi
 

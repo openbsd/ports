@@ -3,7 +3,7 @@ COMMENT =		tools for testing processes
 MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		process-tests-${MODPY_EGG_VERSION}
 PKGNAME =		py-process-tests-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

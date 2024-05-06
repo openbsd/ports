@@ -7,7 +7,7 @@ MODPY_EGG_VERSION =	1.0.1
 
 DISTNAME =		py-radix-${MODPY_EGG_VERSION}pre20220302
 CATEGORIES=		devel net
-REVISION =		0
+REVISION =		1
 
 # fork from https://github.com/mjschultz/py-radix/
 HOMEPAGE =		https://github.com/SEKOIA-IO/py-radix/

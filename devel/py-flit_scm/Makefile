@@ -3,6 +3,7 @@ COMMENT=	pep 518 build backend that uses setuptools_scm and flit_core
 MODPY_EGG_VERSION =	1.7.0
 DISTNAME =	flit_scm-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

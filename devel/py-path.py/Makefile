@@ -3,7 +3,7 @@ COMMENT =		os.path wrapper for Python
 MODPY_EGG_VERSION =	12.5.0
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

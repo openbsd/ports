@@ -5,6 +5,7 @@ GH_ACCOUNT =		blambright
 GH_PROJECT =		qstylizer
 GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

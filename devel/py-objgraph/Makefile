@@ -3,6 +3,7 @@ COMMENT =		draw Python object reference graphs
 MODPY_EGG_VERSION =	3.6.0
 DISTNAME =		objgraph-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
