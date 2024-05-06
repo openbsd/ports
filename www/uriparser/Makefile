@@ -2,7 +2,7 @@ COMMENT =		URI parsing library
 
 GH_ACCOUNT =		uriparser
 GH_PROJECT =		uriparser
-GH_TAGNAME =		uriparser-0.9.7
+GH_TAGNAME =		uriparser-0.9.8
 PKGNAME =		${GH_TAGNAME}
 
 SHARED_LIBS +=  uriparser                 3.1 # 1.0
