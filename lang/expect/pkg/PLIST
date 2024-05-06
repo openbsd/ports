@@ -25,9 +25,9 @@ include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
 include/tcldbg.h
-@lib lib/libexpect545.so.${LIBexpect545_VERSION}
+@lib lib/libexpect5454.so.${LIBexpect5454_VERSION}
 lib/tcl/expect/
-@lib lib/tcl/expect/libexpect545.so.${LIBexpect545_VERSION}
+@lib lib/tcl/expect/libexpect5454.so.${LIBexpect5454_VERSION}
 lib/tcl/expect/pkgIndex.tcl
 @man man/man1/autoexpect.1
 @man man/man1/cryptdir.1
