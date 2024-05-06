@@ -1,5 +1,6 @@
 COMMENT =	KDE wrapper over doas commands
 DISTNAME =	kdesu-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5Su		7.0
 

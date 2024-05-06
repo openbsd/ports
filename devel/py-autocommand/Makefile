@@ -3,6 +3,7 @@ COMMENT=	autogenerate argparse parsers from function signatures
 MODPY_EGG_VERSION=	2.2.2
 DISTNAME=	autocommand-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

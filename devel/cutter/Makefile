@@ -4,6 +4,7 @@ V =		2.3.4
 PKGNAME =	cutter-${V}
 DISTNAME =	Cutter-v${V}-src
 WRKDIST =	${WRKDIR}/Cutter-v${V}
+REVISION =	0
 
 SITES =		https://github.com/rizinorg/cutter/releases/download/v${V}/
 

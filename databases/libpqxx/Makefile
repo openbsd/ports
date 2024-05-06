@@ -3,6 +3,7 @@ COMMENT=	C++ client API for PostgreSQL
 GH_ACCOUNT=	jtv
 GH_PROJECT=	libpqxx
 GH_TAGNAME=	6.4.7
+REVISION=	0
 
 CATEGORIES=	databases devel
 

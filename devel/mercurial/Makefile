@@ -1,5 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
+REVISION-main =		0
+REVISION-x11 =		0
 
 MODPY_EGG_VERSION =	6.6.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}

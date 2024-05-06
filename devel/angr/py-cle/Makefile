@@ -1,4 +1,5 @@
 COMMENT =		CLE loads binaries and their associated libraries
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	cle
 

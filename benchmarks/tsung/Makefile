@@ -4,6 +4,7 @@ V=		1.8.0
 GH_ACCOUNT=	processone
 GH_PROJECT=	tsung
 GH_TAGNAME=	v${V}
+REVISION=	0
 
 CATEGORIES=	benchmarks net
 

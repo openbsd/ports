@@ -2,6 +2,7 @@ COMMENT =		audio normalization
 
 MODPY_EGG_VERSION =	1.27.7
 DISTNAME =		ffmpeg-normalize-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		audio multimedia
 

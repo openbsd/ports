@@ -3,6 +3,7 @@ COMMENT =	redux for C++
 GH_ACCOUNT =	arximboldi
 GH_PROJECT =	lager
 GH_TAGNAME =	v0.1.1
+REVISION =	0
 
 CATEGORIES =	devel
 

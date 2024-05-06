@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2.9.9
 DISTNAME=	psycopg2-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
+REVISION=	0
 
 HOMEPAGE=	https://www.psycopg.org/
 

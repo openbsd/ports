@@ -1,7 +1,7 @@
 COMMENT =	full end-to-end digital synthesis flow for VLSI ASIC designs
 
 DISTNAME =	qflow-1.4.83
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	cad
 

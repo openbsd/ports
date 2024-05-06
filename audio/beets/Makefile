@@ -1,7 +1,7 @@
 COMMENT=	CLI tools to manage music collections
 
 MODPY_EGG_VERSION= 1.6.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 

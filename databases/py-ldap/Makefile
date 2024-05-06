@@ -3,6 +3,7 @@ COMMENT=	LDAP client API for Python
 MODPY_EGG_VERSION =	3.4.4
 DISTNAME=	python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=	py-ldap-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 

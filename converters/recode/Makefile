@@ -3,6 +3,7 @@ COMMENT=	convert files between character sets and usages
 V=		3.7.14
 DISTNAME=	recode-$V
 SHARED_LIBS +=	recode               1.0      # 10.12
+REVISION=	0
 
 CATEGORIES=	converters textproc
 

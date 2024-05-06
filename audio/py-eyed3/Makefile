@@ -4,6 +4,7 @@ COMMENT=	module and program for processing ID3 tags
 MODPY_EGG_VERSION=	0.9.7
 DISTNAME=	eyeD3-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	https://eyed3.readthedocs.io/
 

@@ -3,6 +3,7 @@ COMMENT =	manipulate Python source via the AST
 MODPY_EGG_VERSION=	0.8.1
 DISTNAME=	astor-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

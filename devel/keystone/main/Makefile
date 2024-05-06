@@ -2,7 +2,7 @@ BROKEN-riscv64 =	llvm-build: error: invalid native target: 'RISCV' (not in proje
 
 COMMENT =	multi-platform, multi-architecture assembler framework
 
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	keystone	1.0
 

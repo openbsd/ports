@@ -1,4 +1,5 @@
 COMMENT =		angr intermediate language
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	ailment
 

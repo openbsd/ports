@@ -3,6 +3,7 @@ COMMENT =		JSON parsing C++ API
 GH_ACCOUNT =		open-source-parsers
 GH_PROJECT =		jsoncpp
 GH_TAGNAME =		1.9.5
+REVISION =		0
 
 # no upstream revision
 SHARED_LIBS =		jsoncpp 5.0

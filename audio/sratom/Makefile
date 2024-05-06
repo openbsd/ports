@@ -2,6 +2,7 @@ COMMENT=	library for serialising LV2 atoms to/from RDF
 
 V=		0.6.10
 DISTNAME=	sratom-${V}
+REVISION=	0
 
 SHARED_LIBS=	sratom-0	0.0 # 0.6
 

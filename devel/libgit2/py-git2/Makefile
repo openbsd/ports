@@ -3,7 +3,7 @@ COMMENT=		libgit2 bindings in Python
 MODPY_EGG_VERSION=	1.14.1
 DISTNAME=		pygit2-${MODPY_EGG_VERSION}
 PKGNAME=		py-git2-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 MODULES=		lang/python
 MODPY_PI=		Yes

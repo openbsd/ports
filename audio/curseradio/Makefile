@@ -2,7 +2,7 @@ MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
 DISTNAME =	curseradio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	chronitis
 GH_PROJECT =	curseradio

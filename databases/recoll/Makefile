@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
 V=		1.37.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	recoll-${V}
 
 CATEGORIES=	databases sysutils

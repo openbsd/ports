@@ -2,6 +2,8 @@ BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
+REVISION-icu=		0
+REVISION-main=		0
 
 V=			8.4.0
 DISTNAME=		harfbuzz-${V}

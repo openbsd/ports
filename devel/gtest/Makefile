@@ -5,7 +5,7 @@ GH_ACCOUNT=	google
 GH_PROJECT=	googletest
 GH_TAGNAME=	v${V}
 DISTNAME=	gtest-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gmock		2.0   # .0.0
 SHARED_LIBS +=	gmock_main	1.0   # .0.0

@@ -1,5 +1,6 @@
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
+REVISION =	0
 
 PKG_ARCH =	*
 

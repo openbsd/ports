@@ -3,6 +3,7 @@ COMMENT =		generator-based operators for asynchronous iteration
 MODPY_EGG_VERSION =	0.4.5
 DISTNAME =		aiostream-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

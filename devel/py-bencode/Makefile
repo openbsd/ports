@@ -3,7 +3,7 @@ COMMENT =	bencoding and bdecoding implementation
 MODPY_EGG_VERSION = 2.1.0
 DISTNAME =	bencode.py-${MODPY_EGG_VERSION}
 PKGNAME =	py-bencode-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

@@ -6,9 +6,9 @@ VERSION=	4.4
 DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
-REVISION-main=	0
-REVISION-python=1
-REVISION-tcl=	0
+REVISION-main=	1
+REVISION-python=2
+REVISION-tcl=	1
 
 MULTI_PACKAGES=	-main -python -tcl
 

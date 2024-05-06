@@ -3,6 +3,7 @@ COMMENT=	ODBC bindings for Python
 MODPY_EGG_VERSION= 5.1.0
 DISTNAME=	pyodbc-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION=	0
 
 CATEGORIES=	databases
 

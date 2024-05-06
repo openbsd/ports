@@ -7,7 +7,7 @@ GH_ACCOUNT =		HearthSim
 GH_PROJECT =		python-fsb5
 GH_TAGNAME =		b7bf605
 CATEGORIES =		audio
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 

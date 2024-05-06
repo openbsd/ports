@@ -2,9 +2,9 @@ LLVM_MAJOR =	13
 LLVM_VERSION =	${LLVM_MAJOR}.0.0
 LLVM_PKGSPEC =	>=13,<14
 
-REVISION-main =		26
-REVISION-lldb =		5
-REVISION-python =	4
+REVISION-main =		27
+REVISION-lldb =		6
+REVISION-python =	5
 
 SHARED_LIBS +=	LTO		6.0 \
 		Remarks		0.0 \

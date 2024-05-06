@@ -1,7 +1,7 @@
 COMMENT=	TNEF decoding and attachment extraction
 
 MODPY_EGG_VERSION=	1.4.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	tnefparse-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

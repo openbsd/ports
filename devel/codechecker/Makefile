@@ -4,7 +4,7 @@ GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
 GH_TAGNAME =	v6.21.0
 
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

@@ -2,6 +2,7 @@ COMMENT=		meson PEP 517 Python build backend
 
 MODPY_EGG_VERSION=	0.16.0
 DIST_TUPLE=		github mesonbuild meson-python ${MODPY_EGG_VERSION} .
+REVISION=		0
 
 CATEGORIES=		devel
 

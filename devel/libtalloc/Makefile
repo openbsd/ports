@@ -7,6 +7,8 @@ V=		2.4.2
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
 PKGNAME-python=	py3-${DISTNAME}
+REVISION-main=	0
+REVISION-python=0
 
 MULTI_PACKAGES=	-main -python
 

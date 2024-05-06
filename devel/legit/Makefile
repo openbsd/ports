@@ -3,7 +3,7 @@ COMMENT=		complementary command-line interface for Git
 MODPY_EGG_VERSION=	1.2.0
 DISTNAME=		legit-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		https://frostming.github.io/legit/
 

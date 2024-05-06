@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.83
 DISTNAME =		biopython-${MODPY_EGG_VERSION}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 

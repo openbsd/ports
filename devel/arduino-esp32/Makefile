@@ -2,7 +2,7 @@ COMMENT =	esp32 arduino core toolset
 V =		2.0.4
 DISTNAME =	esp32-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

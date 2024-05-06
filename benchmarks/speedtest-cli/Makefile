@@ -7,6 +7,7 @@ GH_COMMIT =		7906c4bdc36b969212526d71e83a2ecea5739704
 DISTNAME =		${GH_PROJECT}-${GH_COMMIT}
 PKGNAME =		speedtest-cli-${MODPY_EGG_VERSION:S/b/beta/}
 CATEGORIES =		benchmarks net
+REVISION =		0
 
 # Apache 2
 PERMIT_PACKAGE =	Yes

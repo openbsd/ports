@@ -3,6 +3,7 @@ COMMENT =	convert numbers to words
 MODPY_EGG_VERSION =	0.5.13
 DISTNAME=	num2words-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	converters
 

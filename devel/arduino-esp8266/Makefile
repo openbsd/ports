@@ -2,7 +2,7 @@ COMMENT =	esp8266 arduino core toolset
 V =		3.0.2
 DISTNAME =	esp8266-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

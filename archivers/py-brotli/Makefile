@@ -3,7 +3,7 @@ COMMENT =		Python bindings for the Brotli compression library
 MODPY_EGG_VERSION =	1.0.9
 DISTNAME =		Brotli-${MODPY_EGG_VERSION}
 PKGNAME =		py-brotli-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		archivers
 

@@ -5,7 +5,7 @@ DISTNAME =	arrow-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 HOMEPAGE =	https://arrow.readthedocs.io
-REVISION =	0
+REVISION =	1
 
 # Apache 2.0
 PERMIT_PACKAGE = Yes

@@ -3,6 +3,7 @@ COMMENT =		mock out requests made by ClientSession from aiohttp
 MODPY_EGG_VERSION =	0.7.4
 DISTNAME =		aioresponses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

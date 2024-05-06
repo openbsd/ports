@@ -2,6 +2,7 @@ COMMENT =	 backup a github user or organization
 
 MODPY_EGG_VERSION =	0.43.1
 PKGNAME =	github-backup-${MODPY_EGG_VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	josegonzalez
 GH_PROJECT =	python-github-backup

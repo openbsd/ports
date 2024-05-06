@@ -2,6 +2,7 @@ COMMENT =		format Python code to comply with PEP 8
 
 MODPY_EGG_VERSION =	2.0.4
 DISTNAME =		autopep8-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

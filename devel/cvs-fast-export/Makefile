@@ -1,7 +1,7 @@
 COMMENT=	export an RCS or CVS history as a fast-import stream
 
 DISTNAME=	cvs-fast-export-1.59
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

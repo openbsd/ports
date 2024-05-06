@@ -5,7 +5,7 @@ COMMENT =	Python bindings for keystone
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 MODULES =	devel/cmake \
 		lang/python

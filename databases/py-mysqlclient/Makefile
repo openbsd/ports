@@ -3,6 +3,7 @@ COMMENT=	Python interface to MySQL
 MODPY_EGG_VERSION=	2.2.4
 DISTNAME=	mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

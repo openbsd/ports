@@ -3,7 +3,7 @@ COMMENT =		tiny 'shelve'-like database with concurrency support
 MODPY_EGG_VERSION =	0.7.5
 DISTNAME =		pickleshare-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		databases devel
 

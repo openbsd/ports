@@ -3,7 +3,7 @@ COMMENT =	community-developed python astronomy tools
 MODPY_EGG_VERSION =	5.3.4
 DISTNAME =	astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	astro
 

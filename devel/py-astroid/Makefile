@@ -4,6 +4,7 @@ COMMENT=	common base representation of Python source code
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=	astroid-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -1,4 +1,5 @@
 COMMENT =		abstraction layer for constraint solvers
+REVISION =		0
 
 ANGR_PYTHON_MODULE =	claripy
 

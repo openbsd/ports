@@ -1,4 +1,5 @@
 COMMENT =	react web interface for buildbot
+REVISION =	0
 
 PART = www-react
 

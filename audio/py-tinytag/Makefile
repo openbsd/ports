@@ -5,6 +5,7 @@ MODPY_EGG_VERSION =	${V}
 DISTNAME =		tinytag-${V}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		audio textproc
+REVISION =		0
 
 HOMEPAGE =		https://github.com/devsnd/tinytag
 

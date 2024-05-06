@@ -2,6 +2,7 @@ COMMENT=	tool to programme a wide range of amateur radios
 
 MODPY_EGG_VERSION= 20240224
 DISTNAME=	chirp-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	comms hamradio
 

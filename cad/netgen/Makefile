@@ -1,7 +1,7 @@
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.171
 EXTRACT_SUFX =	.tgz
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	cad
 

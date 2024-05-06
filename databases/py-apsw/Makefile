@@ -5,6 +5,7 @@ MODPY_EGG_VERSION = 3.44.2.0
 DISTNAME =	apsw-${MODPY_EGG_VERSION}
 PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
 CATEGORIES =	databases
+REVISION =	0
 
 HOMEPAGE =	https://rogerbinns.github.io/apsw/
 

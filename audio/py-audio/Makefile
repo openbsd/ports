@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.2.14
 DISTNAME =	PyAudio-${MODPY_EGG_VERSION}
 PKGNAME =	py-audio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio devel
+REVISION =	0
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 

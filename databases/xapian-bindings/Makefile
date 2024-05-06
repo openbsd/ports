@@ -8,6 +8,9 @@ DISTNAME=	xapian-bindings-${V}
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
+REVISION-main=	0
+REVISION-python=0
+REVISION-ruby=	0
 
 CATEGORIES=	databases textproc
 

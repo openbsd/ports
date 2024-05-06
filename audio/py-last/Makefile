@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.5.11
 DISTNAME =		pylast-${MODPY_EGG_VERSION}
 PKGNAME =		py-last-${MODPY_EGG_VERSION}
 CATEGORIES =		audio net
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		https://github.com/pylast/pylast
 

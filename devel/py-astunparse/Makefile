@@ -4,7 +4,7 @@ COMMENT=		AST unparser for Python
 MODPY_EGG_VERSION=	1.6.3
 DISTNAME=		astunparse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		devel
 

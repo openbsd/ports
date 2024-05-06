@@ -3,7 +3,7 @@ COMMENT =		youtube-dl wrapper to manage youtube audio
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		yt-audio-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
-REVISION =		4
+REVISION =		5
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

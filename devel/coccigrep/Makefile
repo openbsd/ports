@@ -2,7 +2,7 @@ COMMENT =	semantic grep, based on coccinelle
 
 MODPY_EGG_VERSION = 1.20
 DISTNAME =	coccigrep-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel textproc
 

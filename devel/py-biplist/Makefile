@@ -3,7 +3,7 @@ COMMENT =	binary plist parser/generator for Python
 MODPY_EGG_VERSION =	1.0.3
 DISTNAME =		biplist-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 

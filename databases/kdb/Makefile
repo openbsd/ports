@@ -2,7 +2,7 @@ COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0
 DISTNAME =	kdb-${VERSION}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  KDb3                      1.1 # 3.0
 

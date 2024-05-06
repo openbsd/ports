@@ -3,6 +3,7 @@ COMMENT =	fast, simple object-to-object and broadcast signaling
 MODPY_EGG_VERSION = 1.6.2
 DISTNAME =	blinker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

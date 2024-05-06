@@ -8,7 +8,7 @@ GH_TAGNAME =		${MODPY_EGG_VERSION}
 
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/andymccurdy/redis-py/
 

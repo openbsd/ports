@@ -3,6 +3,7 @@ COMMENT=	non-validating SQL parser
 MODPY_EGG_VERSION=	0.5.0
 DISTNAME=	sqlparse-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

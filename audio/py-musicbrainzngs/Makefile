@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 0.7.1
 DISTNAME =	musicbrainzngs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://python-musicbrainzngs.readthedocs.org/
 

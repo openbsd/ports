@@ -5,7 +5,7 @@ CATEGORIES=	archivers
 GH_ACCOUNT =	gdraheim
 GH_PROJECT =	zziplib
 GH_TAGNAME =	v0.13.72
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  zzip                      16.0 # 0.0
 SHARED_LIBS +=  zzipfseeko                14.0 # 0.0

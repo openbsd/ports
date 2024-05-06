@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS =	amd64 arm i386
 COMMENT =	graph based intermediate representation and backend
 DISTNAME =	${GH_PROJECT}-1.22.1pl3
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	firm                      3.0 # 3.0
 

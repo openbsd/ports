@@ -3,6 +3,7 @@ COMMENT =		timeout context manager for asyncio programs
 MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		async-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

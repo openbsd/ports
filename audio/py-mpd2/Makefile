@@ -3,6 +3,7 @@ COMMENT =		Python client interface for MPD
 MODPY_EGG_VERSION =	3.0.5
 DISTNAME =		python-mpd2-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd2-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		audio
 

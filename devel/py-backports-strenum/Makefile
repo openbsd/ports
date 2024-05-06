@@ -5,6 +5,7 @@ COMMENT =		base class for creating enumerated constants
 MODPY_EGG_VERSION =	1.2.8
 DISTNAME =		backports_strenum-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

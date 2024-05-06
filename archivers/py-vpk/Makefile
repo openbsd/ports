@@ -1,7 +1,7 @@
 COMMENT =		tool and library for working with Valve Pak files
 
 MODPY_EGG_VERSION =	1.4.0
-REVISION =		1
+REVISION =		2
 DISTNAME =		vpk-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		archivers

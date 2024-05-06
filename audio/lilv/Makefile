@@ -1,6 +1,7 @@
 COMMENT=	library for simple use of LV2 plugins in applications
 
 DISTNAME=	lilv-0.24.14
+REVISION=	0
 
 SHARED_LIBS=	lilv-0		0.0 # 0.24
 

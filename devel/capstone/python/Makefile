@@ -1,7 +1,7 @@
 COMMENT =	Python bindings for capstone
 
 MODPY_EGG_VERSION = ${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 PKGNAME =	py-${DISTNAME}
 

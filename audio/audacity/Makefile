@@ -5,7 +5,7 @@ COMMENT=	free audio editor
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-3.5.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	${GH_TAGNAME:L}
 
 CATEGORIES=	audio

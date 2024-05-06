@@ -1,7 +1,7 @@
 COMMENT =		terminal to access the PLATO system
 
 DISTNAME =		pterm-6.0.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		comms x11
 

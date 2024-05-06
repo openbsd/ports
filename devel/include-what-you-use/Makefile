@@ -2,6 +2,7 @@ COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-0.20.src
 PKGNAME=	${DISTNAME:.src=}
+REVISION=	0
 
 HOMEPAGE=	https://include-what-you-use.org
 SITES=		${HOMEPAGE}/downloads/

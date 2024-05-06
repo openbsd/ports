@@ -2,7 +2,7 @@ COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0
 DISTNAME =	kreport-${VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

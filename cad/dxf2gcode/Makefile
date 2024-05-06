@@ -1,7 +1,7 @@
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
 DISTNAME =		dxf2gcode-20191025
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		cad
 

@@ -4,6 +4,7 @@ V=		1.2.2
 DISTNAME=	libsndfile-${V}
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	https://libsndfile.github.io/libsndfile/
 SITES=		https://github.com/libsndfile/libsndfile/releases/download/${V}/

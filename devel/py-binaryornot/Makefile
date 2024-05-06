@@ -3,7 +3,7 @@ COMMENT =		check if a file is binary or text
 MODPY_EGG_VERSION =	0.4.4
 DISTNAME =		binaryornot-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
