@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.5.0
 DISTNAME=	pipx-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
-REVISION=	0
+REVISION=	1
 
 # https://github.com/pypa/pipx
 HOMEPAGE=	https://pypa.github.io/pipx/
@@ -28,8 +28,5 @@ RUN_DEPENDS=	devel/py-argcomplete${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		sysutils/py-platformdirs${MODPY_FLAVOR} \
 		sysutils/py-userpath${MODPY_FLAVOR}
-
-# remove after the default Python version moves to 3.11
-RUN_DEPENDS+=	textproc/py-tomli${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
