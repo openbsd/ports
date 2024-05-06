@@ -3,6 +3,7 @@ COMMENT =		VCR imitation for python-requests
 MODPY_EGG_VERSION =	0.9.0
 DISTNAME =		betamax-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www devel
 

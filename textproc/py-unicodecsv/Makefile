@@ -3,7 +3,7 @@ COMMENT =		drop-in replace for csv with unicode support
 MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		unicodecsv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		textproc
 

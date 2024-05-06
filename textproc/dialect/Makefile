@@ -3,6 +3,7 @@ V =			2.3.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

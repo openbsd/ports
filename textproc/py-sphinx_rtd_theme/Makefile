@@ -1,7 +1,7 @@
 COMMENT =		readthedocs.org theme for Sphinx
 
 MODPY_EGG_VERSION =	1.2.2
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		readthedocs
 GH_PROJECT =		sphinx_rtd_theme

@@ -4,6 +4,7 @@ COMMENT =		pygments theme using jupyterlab CSS variables
 MODPY_EGG_VERSION =	0.1.2
 DISTNAME =		jupyterlab_pygments-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

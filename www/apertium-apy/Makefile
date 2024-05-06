@@ -3,6 +3,7 @@ COMMENT =	apertium text translation API in Python
 DISTNAME =	apertium-apy-${MODPY_EGG_VERSION}
 
 MODPY_EGG_VERSION =	0.12.0
+REVISION =		0
 
 CATEGORIES =	www
 

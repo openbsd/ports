@@ -3,6 +3,7 @@ COMMENT=	extract data from xls spreadsheet files
 MODPY_EGG_VERSION=	2.0.1
 DISTNAME=	xlrd-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

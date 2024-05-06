@@ -3,7 +3,7 @@ COMMENT =		tiny CSS parser
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		tinycss2-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinycss2-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

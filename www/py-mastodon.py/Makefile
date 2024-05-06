@@ -3,7 +3,7 @@ COMMENT =		python wrapper for the Mastodon API
 MODPY_EGG_VERSION =	1.5.1
 DISTNAME =		Mastodon.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-mastodon.py-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 

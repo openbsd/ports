@@ -2,7 +2,7 @@ COMMENT=	system to monitor and control processes
 
 MODPY_EGG_VERSION =	4.2.4
 DISTNAME=	supervisor-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

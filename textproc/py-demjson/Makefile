@@ -3,6 +3,7 @@ COMMENT=	encoder, decoder, and lint/validator for JSON
 MODPY_EGG_VERSION=	3.0.6
 DISTNAME=	demjson3-${MODPY_EGG_VERSION}
 PKGNAME=	py-demjson-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

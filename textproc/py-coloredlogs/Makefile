@@ -5,6 +5,7 @@ MODPY_EGG_VERSION= 15.0.1
 DISTNAME=	coloredlogs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://coloredlogs.readthedocs.io/
 

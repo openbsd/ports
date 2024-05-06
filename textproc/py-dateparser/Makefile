@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	1.2.0
 DISTNAME=	dateparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 

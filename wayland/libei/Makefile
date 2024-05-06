@@ -2,6 +2,7 @@ COMMENT=	library for Emulated Input
 
 V=		1.2.1
 DISTNAME=	libei-${V}
+REVISION=	0
 
 SHARED_LIBS += ei                        0.0 # 1.2.1
 SHARED_LIBS += eis                       0.0 # 1.2.1

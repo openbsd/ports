@@ -1,7 +1,7 @@
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION =	2.1.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
 

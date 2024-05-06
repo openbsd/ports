@@ -3,6 +3,7 @@ COMMENT =		internationalized usernames and passwords
 MODPY_EGG_VERSION =	1.0.4
 DISTNAME =		precis_i18n-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc security
 

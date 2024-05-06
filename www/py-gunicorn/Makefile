@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	20.0.4
 DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://gunicorn.org/
 

@@ -3,6 +3,7 @@ COMMENT =		fast Python json encoder/decoder
 MODPY_EGG_VERSION =	5.9.0
 DISTNAME =		ujson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

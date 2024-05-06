@@ -3,6 +3,7 @@ COMMENT =		user session management for flask
 MODPY_EGG_VERSION =	0.6.3
 DISTNAME =		Flask-Login-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www
 

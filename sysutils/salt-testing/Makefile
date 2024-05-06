@@ -5,7 +5,7 @@ DISTNAME =		salt-testing-${MODPY_EGG_VERSION}
 GH_ACCOUNT =		saltstack
 GH_PROJECT =		salt-testing
 GH_COMMIT =		70145afcc5eb96bf15b22631dcb364caf19b1fc1
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		sysutils
 

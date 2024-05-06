@@ -3,6 +3,7 @@ COMMENT =		parse, normalize and compare License expressions
 MODPY_EGG_VERSION =	30.1.1
 DISTNAME =		license-expression-${MODPY_EGG_VERSION}
 PKGNAME =		py-license-expression-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

@@ -3,7 +3,7 @@ COMMENT =	session and caching library with wsgi middleware
 MODPY_EGG_VERSION = 1.11.0
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 

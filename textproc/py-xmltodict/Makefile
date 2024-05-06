@@ -3,7 +3,7 @@ COMMENT =		makes working with XML feel like orking with JSON
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		xmltodict-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		textproc
 

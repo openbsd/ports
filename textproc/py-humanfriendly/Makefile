@@ -5,6 +5,7 @@ MODPY_EGG_VERSION= 10.0
 DISTNAME=	humanfriendly-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://humanfriendly.readthedocs.io/
 

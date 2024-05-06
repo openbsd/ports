@@ -3,6 +3,7 @@ COMMENT =		iterative JSON parser
 MODPY_EGG_VERSION =	3.2.3
 DISTNAME =		ijson-${MODPY_EGG_VERSION}
 PKGNAME =		py-ijson-${MODPY_EGG_VERSION:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		textproc
 

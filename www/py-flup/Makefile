@@ -3,7 +3,7 @@ COMMENT =		random assortment of WSGI servers, middleware
 MODPY_EGG_VERSION =	1.0.3
 DISTNAME =		flup-${MODPY_EGG_VERSION}
 PKGNAME =		py-flup-${MODPY_EGG_VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		www
 

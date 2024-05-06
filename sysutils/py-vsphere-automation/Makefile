@@ -6,6 +6,7 @@ GH_PROJECT =		vsphere-automation-sdk-python
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 PKGNAME =		py-vsphere-automation-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

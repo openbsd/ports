@@ -1,6 +1,7 @@
 COMMENT=		HTML editor for experienced web designers
 
 DISTNAME=		bluefish-2.2.15
+REVISION=		0
 
 CATEGORIES=		www editors
 

@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2.6.3
 DISTNAME=	xmldiff-${MODPY_EGG_VERSION}
 PKGNAME=	py-xmldiff-${MODPY_EGG_VERSION}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/Shoobx/xmldiff
 

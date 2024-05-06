@@ -4,6 +4,7 @@ V =			0.0.1.8
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		syrics-${V}
 CATEGORIES =		textproc audio
+REVISION =		0
 
 HOMEPAGE =		https://github.com/akashrchandran/syrics
 

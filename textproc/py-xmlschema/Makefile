@@ -3,6 +3,7 @@ COMMENT=	an XML Schema validator and decoder
 MODPY_EGG_VERSION=	2.5.0
 DISTNAME=	xmlschema-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

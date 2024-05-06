@@ -2,7 +2,7 @@ COMMENT=	text document format for writing documents and man pages
 
 V=		9.0.4
 DISTNAME=	asciidoc-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

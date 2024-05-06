@@ -25,7 +25,7 @@ GH_PROJECT =	libopeninput
 GH_COMMIT =	ba8406afbc815993b01c00c52f5e9eadb43db8e3
 
 DISTNAME =	libinput-openbsd-1.24.0
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	input	0.0
 

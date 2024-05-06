@@ -11,6 +11,9 @@ DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
+REVISION-java =		0
+REVISION-main =		0
+REVISION-python =	0
 
 SHARED_LIBS +=  link-grammar         10.0      # 15.2
 SHARED_LIBS +=  link-grammar-java    8.0       # 15.2

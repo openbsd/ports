@@ -3,7 +3,7 @@ COMMENT =		standalone version of Django's feedgenerator
 MODPY_EGG_VERSION =	1.9.1
 DISTNAME =		feedgenerator-${MODPY_EGG_VERSION}
 PKGNAME =		py-feedgenerator-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		www textproc
 

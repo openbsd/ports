@@ -3,6 +3,7 @@ COMMENT=	C based reader/scanner and emitter for ruamel.yaml
 MODPY_EGG_VERSION=	0.2.8
 DISTNAME=	ruamel.yaml.clib-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://yaml.readthedocs.io
 

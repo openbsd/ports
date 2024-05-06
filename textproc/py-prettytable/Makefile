@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.7.2
 DISTNAME =		prettytable-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc devel
-REVISION =		8
+REVISION =		9
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 

@@ -3,6 +3,7 @@ COMMENT =	PDF parser and analyzer
 MODPY_EGG_VERSION =	20221105
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	textproc
 

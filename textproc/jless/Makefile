@@ -3,7 +3,7 @@ COMMENT =		JSON viewer
 GH_ACCOUNT =		PaulJuliusMartinez
 GH_PROJECT =		jless
 GH_TAGNAME =		v0.9.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

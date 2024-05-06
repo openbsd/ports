@@ -2,6 +2,7 @@ COMMENT =		module for compiling and processing lexical rules
 
 V =			0.4.2
 DISTNAME =		apertium-lex-tools-$V
+REVISION =		0
 
 SHARED_LIBS +=  apertium-lex-tools        0.0 # 1.0
 

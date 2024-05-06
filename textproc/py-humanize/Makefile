@@ -3,7 +3,7 @@ COMMENT =		python number humanization utilities
 MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		humanize-${MODPY_EGG_VERSION}
 PKGNAME =		py-humanize-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

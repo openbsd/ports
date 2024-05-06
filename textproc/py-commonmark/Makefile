@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.9.1
 DISTNAME=		commonmark-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		textproc
-REVISION=		3
+REVISION=		4
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

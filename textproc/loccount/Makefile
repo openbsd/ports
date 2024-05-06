@@ -3,6 +3,7 @@ COMMENT =		count lines of codes in many languages
 V =			2.15
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
+REVISION =		0
 
 HOMEPAGE =		https://gitlab.com/esr/loccount
 

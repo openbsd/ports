@@ -5,6 +5,7 @@ DISTNAME =		gallery_dl-${MODPY_EGG_VERSION}
 PKGNAME = 		${DISTNAME:S/_/-/}
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/mikf/gallery-dl/
+REVISION =              0
 
 MAINTAINER =		grodzio1 <grodzio@protonmail.com>
 

@@ -3,6 +3,7 @@ COMMENT=	brace expanding library
 MODPY_EGG_VERSION=	2.4
 DISTNAME=	bracex-${MODPY_EGG_VERSION}
 PKGNAME=	py-bracex-${MODPY_EGG_VERSION:S/.post/pl/}
+REVISION=	0
 
 CATEGORIES=	textproc
 

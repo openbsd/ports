@@ -3,7 +3,7 @@ COMMENT =	python Qt5WebEngine bindings
 MODPY_EGG_VERSION =	5.15.6
 DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
 PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 

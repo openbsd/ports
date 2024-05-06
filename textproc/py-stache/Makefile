@@ -3,6 +3,7 @@ COMMENT =		Python implementation of Mustache templating system
 MODPY_EGG_VERSION =	0.6.5
 DISTNAME =		pystache-${MODPY_EGG_VERSION}
 PKGNAME =		py-stache-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		textproc
 

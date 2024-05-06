@@ -5,6 +5,7 @@ MODPY_EGG_VERSION = 2.16.1
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
 CATEGORIES=	textproc devel
+REVISION=	0
 
 HOMEPAGE=	https://pygments.org/
 

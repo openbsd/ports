@@ -5,6 +5,7 @@ DISTNAME =		numpydoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-numpydoc-${MODPY_EGG_VERSION}
 CATEGORIES =		textproc devel
 HOMEPAGE =		https://github.com/numpy/numpydoc
+REVISION =		0
 
 # BSD
 PERMIT_PACKAGE =	Yes

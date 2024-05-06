@@ -3,6 +3,7 @@ COMMENT =		fully featured HTTP client library
 MODPY_EGG_VERSION =	0.27.0
 DISTNAME =		httpx-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

@@ -3,6 +3,7 @@ COMMENT=	painless YAML configuration
 MODPY_EGG_VERSION=	2.0.1
 DISTNAME=	confuse-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	0.18
 DISTNAME=	bashlex-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/idank/bashlex
 

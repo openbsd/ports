@@ -3,7 +3,7 @@ COMMENT =		parse semi-structured text into Python table
 MODPY_EGG_VERSION =	1.1.3
 DISTNAME =		textfsm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

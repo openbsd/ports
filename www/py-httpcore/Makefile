@@ -3,6 +3,7 @@ COMMENT =		minimal low-level HTTP client
 MODPY_EGG_VERSION =	1.0.5
 DISTNAME =		httpcore-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

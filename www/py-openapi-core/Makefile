@@ -3,6 +3,7 @@ COMMENT =		client-side and server-side support for OpenAPI Spec v3
 MODPY_EGG_VERSION =	0.16.5
 DISTNAME =		openapi_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		www
 

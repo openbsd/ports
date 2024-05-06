@@ -2,7 +2,7 @@ COMMENT =		tarsnap wrapper which automatically expires backups
 
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		tarsnapper-${MODPY_EGG_VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		sysutils
 

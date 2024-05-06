@@ -3,6 +3,7 @@ COMMENT=	correctly generate plurals, singular nouns, ordinals, etc
 MODPY_EGG_VERSION=	6.0.4
 DISTNAME=	inflect-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

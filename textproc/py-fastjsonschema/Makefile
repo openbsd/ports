@@ -3,6 +3,7 @@ COMMENT =		fast Python implementation of JSON schema
 MODPY_EGG_VERSION =	2.19.0
 DISTNAME =		fastjsonschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

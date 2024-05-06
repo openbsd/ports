@@ -3,7 +3,7 @@ COMMENT =		jquery-like library for python
 MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		pyquery-${MODPY_EGG_VERSION}
 PKGNAME =		py-query-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

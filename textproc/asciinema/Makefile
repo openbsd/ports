@@ -1,6 +1,7 @@
 COMMENT=		terminal session recorder
 
 MODPY_EGG_VERSION=	2.4.0
+REVISION=		0
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema

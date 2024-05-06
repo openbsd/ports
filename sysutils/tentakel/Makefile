@@ -10,6 +10,7 @@ GH_COMMIT=	5d7662a00dfd6bf61b0773b596bbf255a9cbafe3
 
 DISTNAME=	tentakel-${MODPY_EGG_VERSION}pre20220719
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/sfermigier/tentakel
 

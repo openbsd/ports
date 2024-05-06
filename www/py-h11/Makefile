@@ -3,6 +3,7 @@ COMMENT=	pure-Python, bring-your-own-I/O implementation of HTTP/1.1
 MODPY_EGG_VERSION=	0.14.0
 DISTNAME=	h11-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

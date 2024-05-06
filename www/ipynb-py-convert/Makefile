@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.4.5
 DISTNAME =	ipynb-py-convert-${MODPY_EGG_VERSION}
 CATEGORIES =	www devel
 HOMEPAGE =	https://github.com/kiwi0fruit/ipynb-py-convert
-REVISION =	4
+REVISION =	5
 
 # MIT
 PERMIT_PACKAGE =	Yes

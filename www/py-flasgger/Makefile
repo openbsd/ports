@@ -3,6 +3,7 @@ COMMENT =	extract swagger specs from your flask project
 MODPY_EGG_VERSION =	0.9.7.1
 DISTNAME =		flasgger-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

@@ -3,6 +3,7 @@ COMMENT=	text-to-HTML conversion tool
 MODPY_EGG_VERSION=	3.4.4
 DISTNAME=	Markdown-${MODPY_EGG_VERSION}
 PKGNAME=	py-markdown-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 

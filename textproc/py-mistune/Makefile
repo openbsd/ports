@@ -3,6 +3,7 @@ COMMENT =		markdown parser for Python
 MODPY_EGG_VERSION =	2.0.5
 DISTNAME =		mistune-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

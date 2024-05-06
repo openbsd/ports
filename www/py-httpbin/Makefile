@@ -3,6 +3,7 @@ COMMENT =		HTTP request and response service
 MODPY_EGG_VERSION =	0.10.0
 DISTNAME =		httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

@@ -3,6 +3,7 @@ COMMENT=	parsing toolkit for python
 MODPY_EGG_VERSION=	1.1.7
 DISTNAME=	lark-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

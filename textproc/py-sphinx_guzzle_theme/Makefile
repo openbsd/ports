@@ -1,7 +1,7 @@
 COMMENT =		sphinx theme used by guzzle
 
 MODPY_EGG_VERSION =	0.7.11
-REVISION =		8
+REVISION =		9
 DISTNAME =		guzzle_sphinx_theme-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx_guzzle_theme-${MODPY_EGG_VERSION}
 

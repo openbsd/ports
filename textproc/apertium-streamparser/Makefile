@@ -3,7 +3,7 @@ COMMENT =	apertium stream format parser
 DISTNAME =	apertium-streamparser-${MODPY_EGG_VERSION}
 
 MODPY_EGG_VERSION =	5.0.2
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =	textproc
 

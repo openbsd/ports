@@ -3,7 +3,7 @@ COMMENT =		html/xml templating engine
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		meld3-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www textproc
 

@@ -3,7 +3,7 @@ COMMENT =	helpers to pass trusted data to untrusted environments
 MODPY_EGG_VERSION = 2.1.2
 DISTNAME =	itsdangerous-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www devel
 

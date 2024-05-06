@@ -2,6 +2,7 @@ COMMENT=	convert memos written in XML to the RFC format
 
 MODPY_EGG_VERSION=	3.18.2
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 

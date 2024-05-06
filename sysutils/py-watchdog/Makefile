@@ -3,6 +3,7 @@ COMMENT =		filesystem event monitoring
 MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		watchdog-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

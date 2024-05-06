@@ -5,6 +5,7 @@ MODPY_EGG_VERSION=	0.4.2
 DISTNAME=	yamlordereddictloader-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/fmenabe/python-yamlordereddictloader
 

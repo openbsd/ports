@@ -3,6 +3,7 @@ COMMENT =		oauthlib for aiohttp clients
 MODPY_EGG_VERSION =	0.1.0
 DISTNAME =		aiohttp-oauthlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

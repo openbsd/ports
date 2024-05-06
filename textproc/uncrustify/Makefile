@@ -1,6 +1,7 @@
 COMMENT =		source code beautifier
 
 DISTNAME =		uncrustify-0.78.1
+REVISION =		0
 
 CATEGORIES =		textproc devel
 

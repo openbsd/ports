@@ -2,6 +2,7 @@ COMMENT =		tool for deleting old Mastodon toots
 
 MODPY_EGG_VERSION =	3.2.0
 DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		www
 

@@ -2,7 +2,7 @@ COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.28.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview

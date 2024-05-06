@@ -3,7 +3,7 @@ COMMENT =		macaroon library for Python
 MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		pymacaroons-${MODPY_EGG_VERSION}
 PKGNAME =		py-macaroons-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

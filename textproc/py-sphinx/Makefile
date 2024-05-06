@@ -3,6 +3,7 @@ COMMENT=	Python documentation generator
 MODPY_EGG_VERSION=	7.3.7
 DISTNAME=	sphinx-${MODPY_EGG_VERSION}
 PKGNAME=	py-sphinx-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	textproc
 

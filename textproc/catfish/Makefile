@@ -4,6 +4,7 @@ XFCE_GOODIE =	catfish
 XFCE_VERSION =	4.18.0
 MODPY_EGG_VERSION =	${XFCE_VERSION}
 CATEGORIES =	textproc
+REVISION =		0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

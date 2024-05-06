@@ -3,6 +3,7 @@ COMMENT=	YAML 1.2 loader/dumper package for Python
 MODPY_EGG_VERSION=	0.18.5
 DISTNAME=	ruamel.yaml-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

@@ -3,7 +3,7 @@ COMMENT =		identity management for flask
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		www
 

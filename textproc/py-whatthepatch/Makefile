@@ -3,6 +3,7 @@ COMMENT =		high-performance diff and patch library
 MODPY_EGG_VERSION =	1.0.5
 DISTNAME =		whatthepatch-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

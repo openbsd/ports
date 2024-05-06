@@ -3,6 +3,7 @@ COMMENT=	xpath 1.0/2.0 parsers and selectors for elementtree
 MODPY_EGG_VERSION=	4.2.0
 DISTNAME=	elementpath-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

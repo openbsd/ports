@@ -3,7 +3,7 @@ COMMENT=	Python client for Elasticsearch
 MODPY_EGG_VERSION=7.17.0
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

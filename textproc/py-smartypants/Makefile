@@ -5,7 +5,7 @@ GH_ACCOUNT=		leohemsted
 GH_PROJECT=		smartypants.py
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-smartypants-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 

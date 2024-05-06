@@ -2,7 +2,7 @@ COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils misc
 

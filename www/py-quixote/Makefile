@@ -3,7 +3,7 @@ COMMENT=	simple Python framework for web-based applications
 MODPY_EGG_VERSION=	3.6
 DISTNAME=	Quixote-${MODPY_EGG_VERSION}
 PKGNAME=	py-quixote-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

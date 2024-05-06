@@ -3,7 +3,7 @@ COMMENT=		spellchecking library for Python
 MODPY_EGG_VERSION=	3.2.2
 DISTNAME=		pyenchant-${MODPY_EGG_VERSION}
 PKGNAME=		py-enchant-${MODPY_EGG_VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		textproc
 

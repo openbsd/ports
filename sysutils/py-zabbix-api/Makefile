@@ -3,6 +3,7 @@ COMMENT =		Python Zabbix API
 MODPY_EGG_VERSION =	0.5.6
 DISTNAME =		zabbix-api-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

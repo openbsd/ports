@@ -10,6 +10,7 @@ DISTNAME=		odoo_${V}
 
 PKGNAME=		${DISTNAME:S/_/-/}
 CATEGORIES=		www
+REVISION=		0
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 

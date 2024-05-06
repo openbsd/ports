@@ -2,6 +2,7 @@ COMMENT =	reverse differential backup tool, over a network or locally
 
 MODPY_EGG_VERSION =	2.2.5
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 

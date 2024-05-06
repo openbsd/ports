@@ -3,7 +3,7 @@ COMMENT =		emoji for Python
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		emoji-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

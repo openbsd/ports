@@ -3,7 +3,7 @@ COMMENT =		json referencing in Python
 MODPY_EGG_VERSION =	0.34.0
 DISTNAME =		referencing-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

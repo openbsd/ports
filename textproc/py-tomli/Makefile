@@ -1,7 +1,7 @@
 COMMENT =	lil' TOML parser
 
 MODPY_EGG_VERSION =	2.0.1
-REVISION =	1
+REVISION =	2
 
 # generally won't be needed with Python 3.11+ as this will then essentially
 # provide a backport of tomllib.

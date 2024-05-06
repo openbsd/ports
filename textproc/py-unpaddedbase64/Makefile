@@ -6,7 +6,7 @@ GH_ACCOUNT =	matrix-org
 GH_PROJECT =	python-unpaddedbase64
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-unpaddedbase64-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =		textproc
 
