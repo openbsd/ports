@@ -1,6 +1,7 @@
 COMMENT =		Jupyter Qt console
 
 MODPY_EGG_VERSION =	5.5.2
+REVISION =		0
 DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
