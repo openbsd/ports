@@ -85,7 +85,7 @@ lib/cmake/Imath/ImathTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Imath/ImathTargets.cmake
 @lib lib/libImath-3_1.so.${LIBImath-3_1_VERSION}
 @lib lib/libImath.so.${LIBImath_VERSION}
-@lib lib/libPyImath_Python3_10-3_1.so.${LIBPyImath_Python3_10-3_1_VERSION}
+@lib lib/libPyImath_Python3_11-3_1.so.${LIBPyImath_Python3_11-3_1_VERSION}
 lib/pkgconfig/Imath.pc
 lib/pkgconfig/PyImath.pc
 @so lib/python${MODPY_VERSION}/site-packages/imath.so
