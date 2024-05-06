@@ -3,7 +3,7 @@ COMMENT =		terminal UI for Reddit
 MODPY_EGG_VERSION =	1.29.0
 
 DISTNAME =		tuir-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 

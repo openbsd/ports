@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	0.5.2
 DISTNAME =		requests-cache-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/reclosedev/requests-cache
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>

@@ -3,7 +3,7 @@ COMMENT =		helper to test wsgi applications
 MODPY_EGG_VERSION =	2.0.35
 DISTNAME =		WebTest-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www devel
 

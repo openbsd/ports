@@ -3,7 +3,7 @@ COMMENT =		high-level cross-protocol url-grabber
 MODPY_EGG_VERSION =	4.1.0
 DISTNAME =		urlgrabber-${MODPY_EGG_VERSION}
 PKGNAME =		py-urlgrabber-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 

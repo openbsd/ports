@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://yt-dl.org
 

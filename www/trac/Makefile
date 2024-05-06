@@ -1,7 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.6
-REVISION=	0
+REVISION=	1
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}

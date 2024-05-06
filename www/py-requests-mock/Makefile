@@ -3,7 +3,7 @@ COMMENT =	mock out responses from py-requests
 DISTNAME =	requests-mock-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-REVISION =	6
+REVISION =	7
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

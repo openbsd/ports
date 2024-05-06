@@ -19,8 +19,11 @@ FULLPKGNAME-webview=	py3-wxPython-webview-${V}
 FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webview=	${BUILD_PKGPATH},-webview
+REVISION-main=		1
+REVISION-media=		1
+REVISION-webview=	1
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 

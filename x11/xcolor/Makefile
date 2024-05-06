@@ -5,7 +5,7 @@ COMMENT =	lightweight color picker
 GH_ACCOUNT =	Soft
 GH_PROJECT =	xcolor
 GH_TAGNAME =	0.5.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	x11
 

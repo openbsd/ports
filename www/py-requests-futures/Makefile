@@ -3,7 +3,7 @@ COMMENT =		small addon for python-requests HTTP library
 MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		requests-futures-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

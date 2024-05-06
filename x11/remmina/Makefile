@@ -6,6 +6,7 @@ DIST_TUPLE=		gitlab	Remmina	Remmina	${C}	.
 DISTNAME=		Remmina-${C}
 PKGNAME=		remmina-1.4.34
 CATEGORIES=		x11 net
+REVISION=		0
 
 HOMEPAGE=		https://www.remmina.org/
 

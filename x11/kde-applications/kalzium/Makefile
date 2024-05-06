@@ -1,7 +1,7 @@
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 

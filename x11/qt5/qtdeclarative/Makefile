@@ -4,6 +4,8 @@ COMMENT-main =		Qt5 Quick and QML components
 KDE_COMMIT =		792a55bb701d233116c3731c7a53ffdb8c67e407
 KDE_VERSION =		31
 
+REVISION =		0
+
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
 

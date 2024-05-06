@@ -3,7 +3,7 @@ COMMENT =		Python wrapper for Xvfb, Xephyr and Xvnc
 MODPY_EGG_VERSION =	3.0
 DISTNAME =		PyVirtualDisplay-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L:S/^py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 

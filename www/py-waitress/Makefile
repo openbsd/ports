@@ -3,6 +3,7 @@ COMMENT =		pure-Python WSGI server
 MODPY_EGG_VERSION =	2.1.2
 DISTNAME =		waitress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

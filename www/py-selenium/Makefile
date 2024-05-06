@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	3.141.0
 DISTNAME =	selenium-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 CATEGORIES =	www devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.selenium.dev/
 

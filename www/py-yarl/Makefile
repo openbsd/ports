@@ -4,6 +4,7 @@ COMMENT =		yet another URL library
 MODPY_EGG_VERSION =	1.9.2
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www devel
 

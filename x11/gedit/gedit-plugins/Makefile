@@ -3,6 +3,8 @@ COMMENT=		plugins for Gedit
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		47.0
 
+REVISION=		0
+
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 peas-1.0 peas-gtk-1.0
 

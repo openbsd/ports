@@ -4,7 +4,7 @@ COMMENT =	X C Binding - protocol binding generator
 VERSION =	1.15.2
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 

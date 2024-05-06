@@ -2,7 +2,7 @@ COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.42
 EXTRACT_SUFX=		.tar.xz
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11 net
 

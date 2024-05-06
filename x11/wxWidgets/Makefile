@@ -7,8 +7,10 @@ DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
+REVISION-media =	0
+REVISION-webview =	0
 
-REVISION-main =		0
+REVISION-main =		1
 
 CATEGORIES =		x11
 SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/

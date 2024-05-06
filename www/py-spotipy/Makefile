@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.23.0
 DISTNAME =		spotipy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www audio
+REVISION =		0
 
 HOMEPAGE =		https://spotipy.readthedocs.io
 

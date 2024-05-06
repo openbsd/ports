@@ -1,7 +1,7 @@
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	12
+REVISION =	13
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2

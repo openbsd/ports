@@ -1,7 +1,7 @@
 COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.6
-REVISION =	0
+REVISION =	1
 DISTNAME =	woob-${MODPY_EGG_VERSION}
 
 CATEGORIES =	www

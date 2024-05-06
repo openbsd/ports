@@ -3,6 +3,7 @@ V =			0.12.0
 DIST_TUPLE =		gnome	jwestman	blueprint-compiler	v${V}	.
 WRKDIST =		${WRKDIR}/blueprint-compiler-v${V}
 CATEGORIES =		x11 lang
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

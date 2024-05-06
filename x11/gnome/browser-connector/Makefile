@@ -2,7 +2,7 @@ COMMENT=		GNOME Shell browser connector
 
 GNOME_PROJECT=		gnome-browser-connector
 GNOME_VERSION=		42.1
-REVISION=		4
+REVISION=		5
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

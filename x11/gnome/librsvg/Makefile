@@ -34,7 +34,7 @@ MAKE_FLAGS +=		V=1
 WANTLIB += ${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
 .else
 ### old
-REVISION=		5
+REVISION=		6
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*

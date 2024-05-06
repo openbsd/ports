@@ -2,6 +2,7 @@ COMMENT =	fast and easy-to-use status bar
 V =		3.7.1
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>

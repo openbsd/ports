@@ -3,7 +3,7 @@ COMMENT =	identification and authentication framework for WSGI
 MODPY_EGG_VERSION = 2.4.1
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www devel
 

@@ -1,7 +1,7 @@
 COMMENT=		GNOME password manager (Keepass)
 
 DIST_TUPLE=		gnome World secrets 8.0 .
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 

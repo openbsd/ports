@@ -4,7 +4,7 @@ GH_COMMIT=		61a995e25948015a4f6d86e12cf6141a3b729ce7
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		mate-menu
 DISTNAME=		mate-menu-advanced-20.04.1
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 

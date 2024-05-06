@@ -2,7 +2,7 @@ COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.qutebrowser.org/
 

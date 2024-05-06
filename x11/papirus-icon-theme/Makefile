@@ -1,6 +1,7 @@
 COMMENT=	papirus icon theme
 DIST_TUPLE=	github PapirusDevelopmentTeam papirus-icon-theme 20231201 .
 CATEGORIES=	x11
+REVISION=	0
 
 MAINTAINER=	David Demelier <markand@malikania.fr>
 

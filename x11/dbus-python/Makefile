@@ -3,7 +3,7 @@ COMMENT =		dbus bindings for Python
 V =			1.3.2
 DISTNAME =		dbus-python-${V}
 PKGNAME =		py-dbus-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 

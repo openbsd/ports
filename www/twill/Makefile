@@ -3,6 +3,7 @@ COMMENT=		simple scripting language for web browsing
 MODPY_EGG_VERSION=	3.1
 DISTNAME=		twill-${MODPY_EGG_VERSION}
 CATEGORIES=		www
+REVISION=		0
 
 HOMEPAGE=		https://twill-tools.github.io/twill/
 

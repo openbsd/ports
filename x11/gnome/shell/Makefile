@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		45.6
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
