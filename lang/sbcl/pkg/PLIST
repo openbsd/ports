@@ -2,6 +2,7 @@
 @bin bin/sbcl
 @info info/asdf.info
 @info info/sbcl.info
+${COMMENT_libsbcl} lib/libsbcl.so.${LIBsbcl_VERSION}
 lib/sbcl/
 lib/sbcl/contrib/
 lib/sbcl/contrib/asdf.fasl
@@ -44,6 +45,7 @@ lib/sbcl/contrib/sb-simple-streams.fasl
 lib/sbcl/contrib/sb-sprof.asd
 lib/sbcl/contrib/sb-sprof.fasl
 lib/sbcl/contrib/uiop.fasl
+@static-lib lib/sbcl/libsbcl.a
 lib/sbcl/sbcl.core
 lib/sbcl/sbcl.mk
 @man man/man1/sbcl.1

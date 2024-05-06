@@ -1,0 +1,37 @@
+Index: src/runtime/Config.generic-openbsd
+--- src/runtime/Config.generic-openbsd.orig
++++ src/runtime/Config.generic-openbsd
+@@ -11,17 +11,27 @@
+ 
+ LINKFLAGS += -Wl,-z,wxneeded
+ OS_LIBS += -lutil
++SOFLAGS += -Wl,-soname,libsbcl.so.${LIBsbcl_VERSION}
+ 
+ ifdef LISP_FEATURE_SB_THREAD
+-CFLAGS += -pthread
+-OS_LIBS += -pthread
++  OS_LIBS += -lpthread
+ endif
+ 
++ifdef LISP_FEATURE_SB_CORE_COMPRESSION
++  CPPFLAGS += -I/usr/local/include
++  OS_LIBS += -L/usr/local/lib
++endif
++
++ifdef LISP_FEATURE_SB_LINKABLE_RUNTIME
++  LIBSBCL = libsbcl.a
++  USE_LIBSBCL = -Wl,--whole-archive libsbcl.a -Wl,--no-whole-archive
++endif
++
+ ifeq ($(DISABLE_PIE),yes)
+ ifneq ($(shell $(CC) -dM -E - < /dev/null 2>/dev/null | grep -e '__clang__'),)
+-CFLAGS += -fno-pie
+-LINKFLAGS += -nopie
+-LDFLAGS += -nopie
+-__LDFLAGS__ += -nopie
++  CFLAGS += -fno-pie
++  LINKFLAGS += -nopie
++  LDFLAGS += -nopie
++  __LDFLAGS__ += -nopie
+ endif
+ endif

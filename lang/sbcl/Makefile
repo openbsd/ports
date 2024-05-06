@@ -4,9 +4,11 @@ ONLY_FOR_ARCHS +=	aarch64 amd64 arm i386 powerpc powerpc64
 
 COMMENT =	high performance Common Lisp compiler
 
-V =		2.4.3
+V =		2.4.4
 DISTNAME =	sbcl-${V}-source
 PKGNAME =	sbcl-${V}
+
+SHARED_LIBS +=	sbcl	0.0
 
 CATEGORIES =	lang
 
@@ -79,17 +81,28 @@ WANTLIB +=		pthread
 EXTRA_PARAMS +=		--without-sb-thread
 .endif
 
+# libsbcl.so is not available everywhere
+LIBSBCL-${MACHINE_ARCH} ?=	No
+LIBSBCL-aarch64 =	Yes
+LIBSBCL-amd64 =		Yes
+
+SUBST_VARS +=		COMMENT_libsbcl
+
+.if ${LIBSBCL-${MACHINE_ARCH}:MYes}
+COMMENT_libsbcl =	@lib
+.else
+COMMENT_libsbcl =	@comment
+.endif
+
 BUILD_DEPENDS +=	print/texinfo
 LIB_DEPENDS +=		archivers/zstd
 TEST_DEPENDS +=		devel/capstone/main \
 			devel/gmp
 
-MAKE_ENV +=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LINKFLAGS="-L${LOCALBASE}/lib" \
+MAKE_ENV +=		INFO_DIR="${PREFIX}/info/" \
+			LIBsbcl_VERSION="${LIBsbcl_VERSION}" \
 			MAKEINFO=${PREFIX}/bin/gmakeinfo \
 			MAN_DIR="${PREFIX}/man/" \
-			INFO_DIR="${PREFIX}/info/" \
 			SBCL_MAKE_JOBS="-j${MAKE_JOBS}"
 
 USE_GMAKE =		Yes
@@ -115,7 +128,12 @@ do-build:
 			--xc-host="${XCHOST_CMD}" \
 			--with-sb-core-compression \
 			--with-sb-xref-for-internals \
+			--with-sb-linkable-runtime \
 			${EXTRA_PARAMS}
+.if ${LIBSBCL-${MACHINE_ARCH}:MYes}
+	umask 022 && cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		/bin/sh ./make-shared-library.sh
+.endif
 	umask 022 && cd ${WRKSRC}/doc/manual/ && ${SETENV} ${MAKE_ENV} \
 		${GMAKE} info
 
@@ -126,6 +144,11 @@ do-install:
 
 post-install:
 	rmdir ${PREFIX}/share/doc/sbcl/html/
+.if ${LIBSBCL-${MACHINE_ARCH}:MYes}
+	# the SONAME is properly configured
+	mv ${PREFIX}/lib/libsbcl.so \
+		${PREFIX}/lib/libsbcl.so.${LIBsbcl_VERSION}
+.endif
 
 do-test:
 	cd ${WRKSRC}/tests/ && ${SETENV} ${MAKE_ENV} /bin/sh ./run-tests.sh
