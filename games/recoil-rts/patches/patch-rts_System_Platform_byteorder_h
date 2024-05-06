@@ -1,12 +1,9 @@
 Index: rts/System/Platform/byteorder.h
 --- rts/System/Platform/byteorder.h.orig
 +++ rts/System/Platform/byteorder.h
-@@ -59,9 +59,9 @@
- 		// do not swab
- 	#endif
+@@ -61,7 +61,7 @@
  
--#elif defined(__FreeBSD__)
-+#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ #elif defined(__FreeBSD__) || defined(__OpenBSD__)
  
 -	#include <sys/endian.h>
 +	#include <endian.h>

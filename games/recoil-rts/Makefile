@@ -7,8 +7,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2314
-HASH =			g9e0bf7d
+BLD =			2449
+HASH =			gf1234a9
 V =			${MJ}.${MN}pl${BLD}
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
@@ -16,6 +16,7 @@ IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
 # Prefix '0.' to avoid future EPOCH. Upstream has indicated future versioning
 # with YY.MM; once that has happened, remove '0.'
 PKGNAME =		recoil-rts-0.${V}
+
 DIST_STRING =		spring_bar_%7BBAR${MJ}%7D${MAJ}.${MN}-${BLD}-${HASH}
 
 DIST_TUPLE +=		github beyond-all-reason spring ${DIST_STRING} .
@@ -28,10 +29,10 @@ DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			0561a37458f3eb45157c9709febbfe5843e6570e AI/Skirmish/BARb \
+			c289f95936fc6fb1310a78124dba8782b543293e AI/Skirmish/BARb \
 			# GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			afeae5bf1f607744aa984a8ef2094d560d95b564 AI/Skirmish/CircuitAI \
+			ea8ad431afc8ea5208aac21d3063ead9fc54de7c AI/Skirmish/CircuitAI \
 			# GPL-2.0
 DIST_TUPLE +=		github spring SpringMapConvNG \
 			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile \
@@ -98,11 +99,6 @@ LDFLAGS +=		-L${LOCALBASE}/lib \
 WRKDIST =		${WRKDIR}/spring-${DIST_STRING:S/%7B/-/g:S/%7D/-/g}
 
 SUBST_VARS +=		IN_ENGINE_V
-
-# remove man page build files as part of upstreams phasing out of the
-# unmaintained man pages
-post-extract:
-	rm ${WRKSRC}/doc/manpages/{make_manpages.sh,spring.6.txt}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake
