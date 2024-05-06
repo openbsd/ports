@@ -8,7 +8,7 @@ GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_COMMIT =	be64c707dea6b3250bd4355bf5c825d25920087d
 DISTNAME =	fifengine-0.4.2
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	games
 

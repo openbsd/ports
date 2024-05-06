@@ -1,7 +1,7 @@
 COMMENT =	python bytecode disassembler and decompiler
 
 DISTNAME =	pycdc-0.0.20180428
-REVISION =	5
+REVISION =	6
 
 GH_ACCOUNT =	zrax
 GH_PROJECT =	pycdc

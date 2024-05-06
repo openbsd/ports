@@ -2,7 +2,7 @@ COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		4.0
 PLUGIN =		PostgreSQL
-REVISION =		2
+REVISION =		3
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}

@@ -1,5 +1,6 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
+REVISION-main=	0
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
@@ -14,6 +15,7 @@ FULLPKGNAME-lang= vim-lang-${VS}
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
+REVISION-lang=    0
 
 HOMEPAGE=	https://www.vim.org/
 

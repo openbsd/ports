@@ -2,6 +2,7 @@ COMMENT =	downloader for GOG.com games and bonus collections
 
 MODPY_EGG_VERSION =	0.3apl20230204
 DISTNAME =		gogrepo-${MODPY_EGG_VERSION}
+REVISION =		0
 
 GH_ACCOUNT =		eddie3
 GH_PROJECT =		gogrepo

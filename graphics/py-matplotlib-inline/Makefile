@@ -3,6 +3,7 @@ COMMENT =		inline matplotlib backend for jupyter
 MODPY_EGG_VERSION =	0.1.6
 DISTNAME =		matplotlib-inline-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics math
 

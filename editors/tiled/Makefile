@@ -6,7 +6,7 @@ COMMENT =		tile map editor
 GH_ACCOUNT =		bjorn
 GH_PROJECT =		tiled
 GH_TAGNAME =		v1.3.1
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=		tiled                     1.0 # 1.0
 

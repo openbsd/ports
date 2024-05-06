@@ -4,6 +4,7 @@ VERSION =		2.14.1
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla_src-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
+REVISION =		0
 
 CATEGORIES =		editors x11 devel
 

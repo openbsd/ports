@@ -3,6 +3,7 @@ COMMENT =		Pyrex generated python interface to PROJ.4 library
 MODPY_EGG_VERSION =	3.6.0
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		geo
 

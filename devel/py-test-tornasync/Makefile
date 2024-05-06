@@ -3,6 +3,7 @@ COMMENT =		pytest plugin for tornado
 MODPY_EGG_VERSION =	0.6.0.post2
 DISTNAME =		pytest-tornasync-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/pytest-/py-/:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		devel
 

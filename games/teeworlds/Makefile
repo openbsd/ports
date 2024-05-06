@@ -3,7 +3,7 @@ COMMENT=	platform game featuring buggers equipped with weapons
 V=		0.7.5
 PKGNAME=	teeworlds-${V}
 DISTNAME=	${PKGNAME}-src
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 

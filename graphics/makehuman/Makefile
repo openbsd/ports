@@ -3,7 +3,7 @@ COMMENT=	parametrical modeling of 3D humanoid characters
 GH_ACCOUNT=	makehumancommunity
 GH_PROJECT=	makehuman
 GH_TAGNAME=	v1.2.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 

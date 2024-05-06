@@ -1,6 +1,9 @@
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
 COMMENT-lua =		Lua scripting for TeXworks
+REVISION-lua =		0
+REVISION-main =		0
+REVISION-python =	0
 
 V =			0.6.8
 GH_ACCOUNT =		TeXworks

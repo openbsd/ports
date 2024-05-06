@@ -3,6 +3,7 @@ COMMENT =		python tzinfo object for the local timezone
 MODPY_EGG_VERSION =	5.2
 DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

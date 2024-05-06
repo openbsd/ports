@@ -5,6 +5,7 @@ COMMENT =	declarative cross-platform build tool
 V =		2.2.2
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
+REVISION =	0
 
 SHARED_LIBS =	qbscore		15.0
 

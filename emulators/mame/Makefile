@@ -10,6 +10,7 @@ GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
 DISTNAME =	mame-0.${V}
+REVISION =	0
 
 CATEGORIES =	emulators
 

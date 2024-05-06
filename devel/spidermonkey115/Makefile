@@ -15,6 +15,7 @@ V =			${MOZILLA_VERSION}.10.0
 DISTNAME =		firefox-${V}esr.source
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-115 0.0
 

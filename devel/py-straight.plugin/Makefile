@@ -3,7 +3,7 @@ COMMENT =		simple namespaced plugin facility
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		straight.plugin-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 

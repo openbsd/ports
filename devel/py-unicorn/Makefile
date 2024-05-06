@@ -6,6 +6,7 @@ COMMENT =	Unicorn CPU emulator engine
 MODPY_EGG_VERSION =	2.0.1.post1
 DISTNAME =	unicorn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

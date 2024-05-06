@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.2.2
 
 DISTNAME=	pytest-astropy-header-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

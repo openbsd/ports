@@ -5,7 +5,7 @@ GH_ACCOUNT =		fabiangreffrath
 GH_PROJECT =		crispy-doom
 GH_TAGNAME =		crispy-doom-${V}
 DISTNAME =		crispy-doom-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games x11
 

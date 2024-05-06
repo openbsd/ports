@@ -3,7 +3,7 @@ COMMENT =		Python module to retry code until it succeeds
 MODPY_EGG_VERSION =	8.0.1
 DISTNAME =		tenacity-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

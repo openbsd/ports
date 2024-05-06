@@ -2,6 +2,7 @@ COMMENT=	library to adjust for photographic lens characteristics
 GH_ACCOUNT=	lensfun
 GH_PROJECT=	lensfun
 GH_TAGNAME=	v0.3.3
+REVISION=	0
 
 SHARED_LIBS=	lensfun	2.1
 

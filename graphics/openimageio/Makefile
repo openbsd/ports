@@ -7,7 +7,7 @@ GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
 GH_TAGNAME =		v2.5.10.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		OpenImageIO		15.0 # 2.4.10
 SHARED_LIBS +=		OpenImageIO_Util	10.0 # 2.4.10

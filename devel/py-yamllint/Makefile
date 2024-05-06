@@ -3,6 +3,7 @@ COMMENT =	linter for YAML files
 MODPY_EGG_VERSION = 1.33.0
 DISTNAME =	yamllint-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

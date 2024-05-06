@@ -3,7 +3,7 @@ COMMENT =		use version control tags to discover version numbers
 MODPY_EGG_VERSION =	2.16.0.0
 DISTNAME =		vcversioner-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel
 

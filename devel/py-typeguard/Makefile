@@ -3,6 +3,7 @@ COMMENT=	run-time type checker for Python
 MODPY_EGG_VERSION=	4.1.5
 DISTNAME=	typeguard-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

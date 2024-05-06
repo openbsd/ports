@@ -1,7 +1,7 @@
 COMMENT =		web viewer plugin for Orthanc
 
 VERSION =		2.8
-REVISION =		2
+REVISION =		3
 
 PLUGIN =		WebViewer
 

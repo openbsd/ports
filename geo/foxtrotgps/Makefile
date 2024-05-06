@@ -1,7 +1,7 @@
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.2.2
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		geo x11
 

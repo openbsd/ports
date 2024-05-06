@@ -3,6 +3,7 @@ COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		games
 

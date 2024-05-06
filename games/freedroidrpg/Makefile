@@ -5,7 +5,7 @@ COMMENT=		isometric RPG game
 DISTNAME=		freedroidRPG-1.0
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		games x11
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.freedroid.org/
 

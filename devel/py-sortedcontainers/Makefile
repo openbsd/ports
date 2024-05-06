@@ -1,7 +1,7 @@
 COMMENT=	Python Sorted Container Types
 
 MODPY_EGG_VERSION=	2.4.0
-REVISION=	3
+REVISION=	4
 DISTNAME=	sortedcontainers-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

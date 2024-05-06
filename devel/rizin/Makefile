@@ -8,6 +8,7 @@ V =		0.7.2
 DISTNAME =	rizin-src-v${V}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME =	rizin-${V}
+REVISION =	0
 
 SITES =		https://github.com/rizinorg/rizin/releases/download/v${V}/
 

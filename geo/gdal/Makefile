@@ -10,6 +10,8 @@ FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
+REVISION-main =		0
+REVISION-python =	0
 
 SHARED_LIBS =	gdal 47.2
 CATEGORIES =	geo devel

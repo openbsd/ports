@@ -1,7 +1,7 @@
 V =		2.1
 COMMENT =	classic word search game that you can play in your terminal
 DISTNAME =	wordsearch-${V}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/jensenpat/wordsearch/

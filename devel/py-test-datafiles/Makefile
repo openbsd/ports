@@ -3,6 +3,7 @@ COMMENT=		create a 'tmp_path' with predefined files/directories
 MODPY_EGG_VERSION=	3.0.0
 DISTNAME=		pytest-datafiles-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:S/py//}
+REVISION=		0
 
 CATEGORIES=		devel
 

@@ -3,7 +3,7 @@ COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.16.0
 DISTNAME =	six-${MODPY_EGG_VERSION}
 PKGNAME =	py-six-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

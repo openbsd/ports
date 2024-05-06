@@ -3,6 +3,7 @@ COMMENT =		py.test plugin to test server connections locally
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		pytest-localserver-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-localserver-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		devel
 

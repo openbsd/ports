@@ -3,7 +3,7 @@ COMMENT =	spherical mercator coordinate and tile utilities
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =	mercantile-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	geo
 MAINTAINER =	Martin Reindl <martin@catai.org>

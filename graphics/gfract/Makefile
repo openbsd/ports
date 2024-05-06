@@ -7,7 +7,7 @@ GH_TAGNAME=		v1.0
 DISTFILES=		${DISTNAME}.tar.gz
 DISTFILES.gfx=		gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://www.oskusoft.com/programs/gfract/
 

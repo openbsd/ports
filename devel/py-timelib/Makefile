@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	0.3.0
 
 DISTNAME=	timelib-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pediapress/timelib/
 

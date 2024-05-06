@@ -4,7 +4,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	editors
 

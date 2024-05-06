@@ -3,7 +3,7 @@ COMMENT=		setuptools revision control system plugin for Git
 MODPY_EGG_VERSION=	1.2
 DISTNAME=		setuptools-git-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		devel
 

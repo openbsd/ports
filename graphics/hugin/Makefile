@@ -8,6 +8,7 @@ EXTRACT_SUFX =	.tar.bz2
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
+REVISION =	0
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0

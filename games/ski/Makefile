@@ -1,7 +1,7 @@
 COMMENT=		skiing simulation game
 
 DISTNAME=		ski-6.13
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		games
 

@@ -1,7 +1,7 @@
 COMMENT =	simple, safe single expression evaluator library
 
 MODPY_EGG_VERSION = 0.9.13
-REVISION =	0
+REVISION =	1
 DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

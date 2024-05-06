@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	5.3
 
 DISTNAME =		minecraft-launcher-lib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		games
 

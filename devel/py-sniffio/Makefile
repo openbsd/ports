@@ -3,6 +3,7 @@ COMMENT =	sniff out which async library is being used
 MODPY_EGG_VERSION=	1.3.0
 DISTNAME=	sniffio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

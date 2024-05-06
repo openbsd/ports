@@ -5,6 +5,8 @@ USE_NOBTCFI=	Yes
 
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
+REVISION-ga=	0
+REVISION-main=	0
 
 VERSION=	8.2.2
 DISTNAME=	qemu-${VERSION}

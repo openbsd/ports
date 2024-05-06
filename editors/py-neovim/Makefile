@@ -3,6 +3,7 @@ COMMENT =	Python plugin support for Neovim
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		pynvim-${MODPY_EGG_VERSION}
 PKGNAME =		py-neovim-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/pynvim

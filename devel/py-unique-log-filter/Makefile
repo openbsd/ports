@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =		0.1.0
 DISTNAME =	unique_log_filter-${MODPY_EGG_VERSION}
 PKGNAME =	py-unique-log-filter-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE =Yes

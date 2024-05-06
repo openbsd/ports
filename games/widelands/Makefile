@@ -4,6 +4,7 @@ GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
 GH_TAGNAME = 	v1.2
 CATEGORIES =	games
+REVISION =      0
 
 HOMEPAGE =	https://www.widelands.org/
 

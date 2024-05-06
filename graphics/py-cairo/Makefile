@@ -8,6 +8,7 @@ GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-cairo-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		graphics
 

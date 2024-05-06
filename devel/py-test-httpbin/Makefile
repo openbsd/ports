@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		pytest-httpbin-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/kevin1024/pytest-httpbin
 

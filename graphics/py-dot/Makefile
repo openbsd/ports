@@ -4,7 +4,7 @@ MODPY_EGG_VERSION= 1.4.2
 DISTNAME=	pydot-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 

@@ -3,7 +3,7 @@ COMMENT =		hack to explicitly set up and tear down fixtures
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		pytest-subtesthack-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-subtesthack-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

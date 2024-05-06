@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.6.1
 DISTNAME =		imageio-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		5
+REVISION =		6
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

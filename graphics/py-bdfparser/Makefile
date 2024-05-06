@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	2.2.0
 DISTNAME=	bdfparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	graphics sysutils
+REVISION=	0
 
 HOMEPAGE=	https://font.tomchen.org/bdfparser_py/
 

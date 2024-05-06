@@ -3,6 +3,7 @@ COMMENT=	utility functions similar to itertools and functools
 MODPY_EGG_VERSION=	0.12.0
 DISTNAME=		toolz-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 

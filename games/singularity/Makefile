@@ -5,7 +5,7 @@ MUSIC_V=	007
 V=		${MODPY_EGG_VERSION}
 DISTNAME=	singularity-${V}
 PKGNAME=	singularity-${V}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	games
 

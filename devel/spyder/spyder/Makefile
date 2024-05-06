@@ -3,6 +3,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 MODPY_EGG_VERSION =	5.5.4
 DISTNAME =	spyder-${MODPY_EGG_VERSION}
 PKGNAME =	spyder3-${MODPY_EGG_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
 

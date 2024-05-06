@@ -3,7 +3,7 @@ COMMENT=		lightweight template library
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		wheezy.template-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 

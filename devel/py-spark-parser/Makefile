@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	1.8.9
 DISTNAME =		spark_parser-${MODPY_EGG_VERSION}
 PKGNAME =		py-spark-parser-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://github.com/rocky/python-spark/
 

@@ -3,6 +3,7 @@ COMMENT =	high-level API and CLI on top of OGR
 MODPY_EGG_VERSION =	1.9.4.post1
 DISTNAME =	Fiona-${MODPY_EGG_VERSION}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
+REVISION =	0
 
 CATEGORIES =	geo
 

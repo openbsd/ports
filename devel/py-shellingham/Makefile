@@ -3,6 +3,7 @@ COMMENT =		detect shell the Python executable is running in
 MODPY_EGG_VERSION =	1.5.4
 DISTNAME =		shellingham-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

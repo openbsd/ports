@@ -1,7 +1,7 @@
 COMMENT=	library for async concurrency and I/O
 
 MODPY_EGG_VERSION=	0.24.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	trio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

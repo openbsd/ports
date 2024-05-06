@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.6.3
 
 DISTNAME =		pytest-lazy-fixture-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

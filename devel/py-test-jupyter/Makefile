@@ -3,6 +3,7 @@ COMMENT =		pytest plugin for Jupyter libraries and extensions
 MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		pytest_jupyter-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/}
+REVISION =		0
 
 CATEGORIES =		devel
 

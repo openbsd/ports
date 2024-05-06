@@ -1,7 +1,7 @@
 COMMENT =	Python bindings for the Apache Thrift RPC system
 
 MODPY_EGG_VERSION =	0.16.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	thrift-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}

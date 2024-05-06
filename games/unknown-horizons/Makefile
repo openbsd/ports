@@ -3,7 +3,7 @@ COMMENT =	economic historical real-time strategy game
 MODPY_EGG_VERSION =	2019.1
 DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
 PKGNAME =		unknown-horizons-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	unknown-horizons
 GH_PROJECT =	unknown-horizons

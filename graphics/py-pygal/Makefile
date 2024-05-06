@@ -3,6 +3,7 @@ COMMENT =	python svg graph plotting library
 MODPY_EGG_VERSION = 3.0.4
 DISTNAME =	pygal-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 

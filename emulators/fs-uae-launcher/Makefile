@@ -6,7 +6,7 @@ EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators x11
 HOMEPAGE =		http://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

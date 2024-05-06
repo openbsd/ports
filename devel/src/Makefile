@@ -1,7 +1,7 @@
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.28
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

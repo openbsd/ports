@@ -3,7 +3,7 @@ COMMENT=	setuptools plugin for unit tests with Twisted's trial
 MODPY_EGG_VERSION=	0.6.0
 DISTNAME=	setuptools_trial-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	devel
 

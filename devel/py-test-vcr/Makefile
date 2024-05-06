@@ -3,7 +3,7 @@ COMMENT =		plugin for managing VCR.py cassettes
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		pytest-vcr-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-vcr-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

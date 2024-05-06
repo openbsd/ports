@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	10.3.0
 DISTNAME=		pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-Pillow-${MODPY_EGG_VERSION}
 CATEGORIES=		graphics
+REVISION=		0
 
 HOMEPAGE=		https://python-pillow.org/
 

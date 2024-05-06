@@ -5,7 +5,7 @@ GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
 GH_TAGNAME=	v${V:S/./_/g}
 DISTNAME=	${GH_PROJECT:L}-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	osdCPU		2.0 # 3.4.4
 SHARED_LIBS +=	osdGPU		2.0 # 3.4.4

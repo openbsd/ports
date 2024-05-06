@@ -4,6 +4,7 @@ DISTNAME =		novelwriter-${MODPY_EGG_VERSION}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

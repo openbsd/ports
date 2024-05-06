@@ -4,6 +4,7 @@ COMMENT=		lint-like code checker for Python code
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=	pylint-${MODPY_EGG_VERSION}
 PKGNAME=	pylint3-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	devel
 

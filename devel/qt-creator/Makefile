@@ -5,6 +5,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			12.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=  Aggregation               3.0 # 0.0
 SHARED_LIBS +=  CPlusPlus                 9.0 # 0.0

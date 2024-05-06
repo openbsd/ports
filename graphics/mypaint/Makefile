@@ -3,7 +3,7 @@ COMMENT =	raster graphics editor for digital painters
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		mypaint-${MODPY_EGG_VERSION}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		graphics
 

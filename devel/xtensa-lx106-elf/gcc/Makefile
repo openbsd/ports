@@ -3,7 +3,7 @@ COMMENT =	gcc for ${CONFIG} cross-development
 VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cp1plugin                 0.0 # 0.0

@@ -3,7 +3,7 @@ COMMENT =	setuptools_scm plugin for git archives
 MODPY_EGG_VERSION =	1.4
 DISTNAME =	setuptools_scm_git_archive-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

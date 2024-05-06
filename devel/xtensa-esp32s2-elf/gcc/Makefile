@@ -3,7 +3,7 @@ COMMENT =	gcc for ${CONFIG} cross-development
 V =		8.4.0
 VERSION =	${V}.2021.2
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cp1plugin                 0.0 # 0.0

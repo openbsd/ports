@@ -6,7 +6,7 @@ VERSION =	4.1.0
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
 
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.swig.org/
 

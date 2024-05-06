@@ -2,7 +2,7 @@ COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.1
 DISTNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.chocolate-doom.org/
 

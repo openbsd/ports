@@ -5,6 +5,7 @@ COMMENT =	reference front-end for GLSL and ESSL
 GH_TAGNAME =	14.0.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
+REVISION =	0
 
 SHARED_LIBS +=	glslang				5.0 # 14.0
 SHARED_LIBS +=	glslang-default-resource-limits 0.0 # 14.0

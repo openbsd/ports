@@ -3,7 +3,7 @@ COMMENT =	py.test isort plugin to check import ordering using isort
 DISTNAME =		pytest-isort-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-isort-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	3.0.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	devel
 

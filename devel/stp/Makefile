@@ -4,7 +4,7 @@ GH_ACCOUNT=	stp
 GH_PROJECT=	stp
 GH_TAGNAME=	stp-2.2.0
 DISTNAME=	stp-2.2.0
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  stp                       0.0 # 2.2
 

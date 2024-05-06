@@ -4,6 +4,7 @@ DISTNAME =	jbig2dec-0.19
 CATEGORIES =	graphics
 SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9531/
 SITES.t =	https://jbig2dec.com/tests/
+REVISION =	0
 
 DISTFILES.t = 	jb2streams.zip
 

@@ -5,6 +5,7 @@ GH_ACCOUNT =		suds-community
 GH_PROJECT =		suds
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

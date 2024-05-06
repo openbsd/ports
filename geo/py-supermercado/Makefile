@@ -3,7 +3,7 @@ COMMENT =	mercantile additional commands
 MODPY_EGG_VERSION =	0.2.0
 DISTNAME =	supermercado-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	geo
 MAINTAINER =    Martin Reindl <martin@catai.org>

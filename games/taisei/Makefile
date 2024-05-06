@@ -10,7 +10,7 @@ COMMENT =		clone of the touhou games
 
 VERSION =		1.4.1
 DISTNAME =		taisei-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

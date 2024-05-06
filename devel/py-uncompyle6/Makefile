@@ -6,6 +6,7 @@ GH_PROJECT =		python-uncompyle6
 GH_COMMIT =		34ef91312ed6d365ff9018ee0af3e3c8f3076951
 DISTNAME =		uncompyle6-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

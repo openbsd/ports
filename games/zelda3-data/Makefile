@@ -2,6 +2,7 @@ COMMENT =	game data files for zelda3
 
 V =		0.3
 PKGNAME =	zelda3-data-${V:S/-//g}
+REVISION =	0
 
 GH_ACCOUNT =	snesrev
 GH_PROJECT =	zelda3

@@ -3,7 +3,7 @@ COMMENT =	simple screen recorder
 GH_PROJECT = 	peek
 GH_ACCOUNT = 	phw
 GH_TAGNAME = 	1.5.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES = 	graphics x11
 

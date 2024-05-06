@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.5.0
 
 DISTNAME =	pytest-openfiles-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

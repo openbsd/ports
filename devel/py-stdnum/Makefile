@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	1.20
 DISTNAME=		python-stdnum-${MODPY_EGG_VERSION}
 PKGNAME=		py-stdnum-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 

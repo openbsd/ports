@@ -5,7 +5,7 @@ DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 # https://github.com/urwid/urwid
 HOMEPAGE =	https://urwid.org/

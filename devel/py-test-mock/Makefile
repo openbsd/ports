@@ -1,7 +1,7 @@
 COMMENT=	thin wrapper around mock package for easier use with pytest
 
 MODPY_EGG_VERSION=	3.10.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel

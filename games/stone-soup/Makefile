@@ -7,6 +7,7 @@ TAGNAME =	The Alchemy of Forms
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	0
 
 CATEGORIES = 	games
 

@@ -14,6 +14,8 @@ PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
 PKGNAME-ap2=		ap2-subversion-${VERSION}
 PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}
 
+REVISION=		0
+
 SO_VERSION=	6.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \

@@ -3,7 +3,7 @@ COMMENT =	Python module for creating Excel XLSX files
 MODPY_EGG_VERSION = 1.2.9
 DISTNAME =	XlsxWriter-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 

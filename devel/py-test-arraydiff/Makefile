@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	0.6.1
 
 DISTNAME=	pytest-arraydiff-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:S/py//}
+REVISION=	0
 
 CATEGORIES=	devel
 

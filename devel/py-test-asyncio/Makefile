@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.23.5
 DISTNAME =		pytest-asyncio-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

@@ -6,6 +6,7 @@ COMMENT =	MSX home computer emulator
 
 V =		19.1
 DISTNAME =	openmsx-$V
+REVISION =	0
 
 CATEGORIES =	emulators
 

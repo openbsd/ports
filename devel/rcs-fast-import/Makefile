@@ -1,7 +1,7 @@
 COMMENT =		unpack git fast-import streams into RCS file tree
 
 DISTNAME =		rcs-fast-import-1.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

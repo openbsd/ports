@@ -3,6 +3,7 @@ COMMENT=	data validation library
 MODPY_EGG_VERSION=	0.14.2
 DISTNAME=	voluptuous-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

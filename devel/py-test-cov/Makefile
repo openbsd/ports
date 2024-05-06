@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://pytest-cov.readthedocs.org/en/latest/
 

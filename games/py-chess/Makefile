@@ -3,6 +3,7 @@ COMMENT =		pure Python chess library
 MODPY_EGG_VERSION =	1.10.0
 DISTNAME =		chess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		games
 

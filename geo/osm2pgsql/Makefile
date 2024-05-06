@@ -7,6 +7,7 @@ COMMENT =		OSM data to PostgreSQL converter
 GH_TAGNAME =		1.11.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		osm2pgsql-dev
+REVISION =		0
 
 CATEGORIES =		geo databases
 

@@ -3,6 +3,7 @@ COMMENT =		deal pysol cards
 MODPY_EGG_VERSION =	0.16.0
 DISTNAME =		pysol_cards-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-cards-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		games
 

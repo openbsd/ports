@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	1.16.0
 DISTNAME=	wrapt-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # https://github.com/GrahamDumpleton/wrapt
 HOMEPAGE=	https://wrapt.readthedocs.org/en/latest/
