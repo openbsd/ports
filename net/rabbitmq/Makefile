@@ -4,7 +4,7 @@ V =		3.12.13
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -16,7 +16,6 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/erlang \
 		lang/python
-MODERL_VERSION = 25
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
