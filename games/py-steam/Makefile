@@ -1,6 +1,7 @@
 COMMENT =		module for interacting with various Steam features
 
 PKGNAME =		py-steam-1.4.4pl0
+REVISION =		0
 DIST_TUPLE +=		github rfht py-steam \
 			e26d2eb52c90dc2c07cc88ea910d59bf873d330d .
 CATEGORIES =		games
