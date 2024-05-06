@@ -383,7 +383,6 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_eval_cython_wrapper.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_eval_main.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_evaluator.c
-@so lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_evaluator.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_evaluator.pxd
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_evaluator.pyx
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/pydevd_frame_evaluator.template.pyx

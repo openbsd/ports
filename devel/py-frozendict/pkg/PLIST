@@ -19,7 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/frozendict/_frozendict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/frozendict/_frozendict_py.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/core.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/monkeypatch.py

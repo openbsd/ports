@@ -8,6 +8,8 @@ MODPY_EGG_VERSION=	1.0.6
 DISTNAME=	rencode-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}pl20210810
 
+REVISION=	0
+
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/aresch/rencode
