@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.2.1
 
 DISTNAME=	build-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -28,8 +28,7 @@ BUILD_DEPENDS=	devel/py-installer${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
 
 RUN_DEPENDS=	devel/py-pyproject_hooks${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR}
+		sysutils/py-packaging${MODPY_FLAVOR}
 
 # point to the copy of py-build in WRKSRC for a self-hosting build
 # replicate most of MODPY_PYBUILD steps because we can't use it directly
