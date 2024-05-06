@@ -1,10 +1,10 @@
 COMMENT =		library to handle Apple Property List files
 
-V=			2.3.0
+V=			2.5.0
 DISTNAME =		libplist-${V}
 
-SHARED_LIBS +=  plist-2.0            1.0      # 6.0
-SHARED_LIBS +=  plist++-2.0          1.0      # 6.0
+SHARED_LIBS +=  plist-2.0            2.0      # 9.0
+SHARED_LIBS +=  plist++-2.0          1.1      # 9.0
 
 CATEGORIES =		devel audio
 
@@ -27,5 +27,10 @@ BUILD_DEPENDS +=	shells/bash
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	--without-cython
+
+TEST_DEPENDS =		textproc/gdiff
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 
 .include <bsd.port.mk>
