@@ -1,6 +1,15 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-tkinter-${VERSION_SPEC}
+@pkgpath lang/python/3.2,-tkinter
+@pkgpath lang/python/3.3,-tkinter
+@pkgpath lang/python/3.4,-tkinter
+@pkgpath lang/python/3.5,-tkinter
+@pkgpath lang/python/3.6,-tkinter
+@pkgpath lang/python/3.7,-tkinter
+@pkgpath lang/python/3.8,-tkinter
+@pkgpath lang/python/3.9,-tkinter
+@pkgpath lang/python/3.10,-tkinter
 @so lib/python3.11/lib-dynload/_tkinter.cpython-311.so
 lib/python3.11/tkinter/
 lib/python3.11/tkinter/__init__.py

@@ -1,4 +1,13 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-gdbm-${VERSION_SPEC}
+@pkgpath lang/python/3.2,-gdbm
+@pkgpath lang/python/3.3,-gdbm
+@pkgpath lang/python/3.4,-gdbm
+@pkgpath lang/python/3.5,-gdbm
+@pkgpath lang/python/3.6,-gdbm
+@pkgpath lang/python/3.7,-gdbm
+@pkgpath lang/python/3.8,-gdbm
+@pkgpath lang/python/3.9,-gdbm
+@pkgpath lang/python/3.10,-gdbm
 @so lib/python3.11/lib-dynload/_gdbm.cpython-311.so

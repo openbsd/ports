@@ -1,6 +1,15 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-tests-${VERSION_SPEC}
+@pkgpath lang/python/3.2,-test
+@pkgpath lang/python/3.3,-test
+@pkgpath lang/python/3.4,-test
+@pkgpath lang/python/3.5,-test
+@pkgpath lang/python/3.6,-test
+@pkgpath lang/python/3.7,-test
+@pkgpath lang/python/3.8,-test
+@pkgpath lang/python/3.9,-test
+@pkgpath lang/python/3.10,-test
 lib/python3.11/ctypes/test/
 lib/python3.11/ctypes/test/__init__.py
 lib/python3.11/ctypes/test/__main__.py
