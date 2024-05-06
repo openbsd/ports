@@ -1,7 +1,6 @@
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-26.1
-REVISION =	2
+DISTNAME =	ngircd-27
 
 CATEGORIES =	net
 

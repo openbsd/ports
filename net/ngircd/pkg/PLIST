@@ -13,14 +13,15 @@
 @man man/man8/ngircd.8
 @bin sbin/ngircd
 share/doc/ngircd/
-share/doc/ngircd/AUTHORS
+share/doc/ngircd/AUTHORS.md
 share/doc/ngircd/Bopm.txt
 share/doc/ngircd/COPYING
 share/doc/ngircd/Capabilities.txt
 share/doc/ngircd/ChangeLog
 share/doc/ngircd/Commands.txt
+share/doc/ngircd/Container.md
 share/doc/ngircd/Contributing.txt
-share/doc/ngircd/FAQ.txt
+share/doc/ngircd/FAQ.md
 share/doc/ngircd/HowToRelease.txt
 share/doc/ngircd/INSTALL.md
 share/doc/ngircd/Modes.txt
@@ -33,7 +34,7 @@ share/doc/ngircd/README-BeOS.txt
 share/doc/ngircd/README-Interix.txt
 share/doc/ngircd/README.md
 share/doc/ngircd/RFC.txt
-share/doc/ngircd/SSL.txt
+share/doc/ngircd/SSL.md
 share/doc/ngircd/Services.txt
 share/examples/ngircd/
 share/examples/ngircd/sample-ngircd.conf
