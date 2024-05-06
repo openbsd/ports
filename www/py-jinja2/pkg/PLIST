@@ -1,12 +1,11 @@
 @pkgpath www/py-jinja2
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jinja2/
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jinja2-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
