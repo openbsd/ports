@@ -3,6 +3,7 @@ COMMENT =	python 2/3 compatibility layer for C extensions
 GH_ACCOUNT =	encukou
 GH_PROJECT =	py3c
 GH_TAGNAME =	v1.1
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -18,7 +19,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP = No
 MODPY_RUNDEP =	No
 TEST_DEPENDS =	lang/python/${MODPY_DEFAULT_VERSION_2} \
-		lang/python/${MODPY_DEFAULT_VERSION_3}
+		lang/python/3
 
 CONFIGURE_STYLE =	none
 
