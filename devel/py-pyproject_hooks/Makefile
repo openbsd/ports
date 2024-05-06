@@ -2,10 +2,10 @@ COMMENT=	wrappers to call pyproject.toml-based build backend hooks
 
 MODPY_EGG_VERSION=	1.0.0
 EPOCH=		0
+REVISION=	1
 
 DISTNAME=	pyproject_hooks-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -21,8 +21,6 @@ MODPY_PI=	Yes
 
 FLAVOR=		python3
 FLAVORS=	python3
-
-RUN_DEPENDS=	textproc/py-tomli${MODPY_FLAVOR}
 
 MODPY_PYTEST=	Yes
 TEST_DEPENDS=	devel/py-testpath${MODPY_FLAVOR}

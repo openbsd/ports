@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1624 2024/05/01 10:24:18 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1625 2024/05/06 23:47:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -813,13 +813,14 @@ my $stem_extensions = {
 	'sendxmpp' => 'go-sendxmpp',
 	'libreddit' => 'redlib',
 	'rebar3' => 'erl25-rebar3',
+# 7.6
 	'stalwart-cli' => 'stalwart-mail',
 	'stalwart-jmap' => 'stalwart-mail',
 	'stalwart-imap' => 'stalwart-mail',
 	'stalwart-smtp' => 'stalwart-mail',
 	'BlockZone' => 'blockzone',
-# 7.6
 	'tepl' => 'libgedit-tepl',
+	'py3-pep517' => 'py3-pyproject_hooks',
 };
 
 my $obsolete_reason = {};
@@ -1924,6 +1925,7 @@ setup_obsolete_reason(
 	31 => 'mkplaylist',
 	1 => 'proteus',
 	1 => qr{^tryton},
+# 7.6
 	5 => 'py3-pyls-black',
 	5 => 'py3-python-language-server',
 	5 => 'py3-python-jsonrpc-server',

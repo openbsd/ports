@@ -1,3 +1,4 @@
+@pkgpath devel/py-pep517,python3
 lib/python${MODPY_VERSION}/site-packages/pyproject_hooks/
 lib/python${MODPY_VERSION}/site-packages/pyproject_hooks-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyproject_hooks-${MODPY_EGG_VERSION}.dist-info/LICENSE
