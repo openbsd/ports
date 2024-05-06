@@ -5,7 +5,7 @@ CATEGORIES +=		lang/erlang
 USE_GMAKE ?=		Yes
 
 # Default Erlang version to use if MODERL_VERSION is not set.
-_MODERL_DEFAULT_VERSION =	25
+_MODERL_DEFAULT_VERSION =	26
 
 # Default Erlang flavor to use if MODERL_VERSION is not set,
 # and MODERL_HANDLE_FLAVORS is set.
