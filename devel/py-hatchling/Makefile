@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.24.1
 
 DISTNAME=	hatchling-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -27,8 +27,7 @@ RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
 		devel/py-pathspec${MODPY_FLAVOR} \
 		devel/py-pluggy${MODPY_FLAVOR} \
 		devel/py-trove-classifiers${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR}
+		sysutils/py-packaging${MODPY_FLAVOR}
 
 MODPY_PYBUILD=	other
 
