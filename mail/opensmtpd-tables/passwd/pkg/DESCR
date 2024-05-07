@@ -1,0 +1,3 @@
+The passwd table allows to use a custom passwd(5) file as smtpd(8)
+table.  It is useful, for example, to share the authentication with the
+Dovecot passwd-file.

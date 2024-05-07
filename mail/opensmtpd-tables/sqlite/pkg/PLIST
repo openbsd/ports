@@ -1,0 +1,4 @@
+@conflict opensmtpd-extras-*
+libexec/smtpd/
+@bin libexec/smtpd/table-sqlite
+@man man/man5/table-sqlite.5

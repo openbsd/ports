@@ -1,0 +1,4 @@
+@conflict opensmtpd-extras-mysql-*
+libexec/smtpd/
+@bin libexec/smtpd/table-mysql
+@man man/man5/table-mysql.5

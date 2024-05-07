@@ -1,0 +1,2 @@
+The Postgres table allows to use a PostgreSQL database as a smtpd(8)
+table.

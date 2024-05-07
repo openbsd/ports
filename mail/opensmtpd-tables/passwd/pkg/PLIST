@@ -1,0 +1,4 @@
+@conflict opensmtpd-extras-*
+libexec/smtpd/
+@bin libexec/smtpd/table-passwd
+@man man/man5/table-passwd.5

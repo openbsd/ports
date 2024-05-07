@@ -1,0 +1,3 @@
+The socketmap table allows to use external programs as smtpd(8) tables.
+The new text protocol smtpd-tables(7) built into smtpd(8) is now
+preferred but the socketmap table is kept for compatibility.
