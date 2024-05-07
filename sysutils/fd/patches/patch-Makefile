@@ -1,17 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -5,9 +5,6 @@ bindir=$(prefix)/bin
- datadir=$(prefix)/share
- exe_name=fd
- 
--$(EXE): Cargo.toml src/**/*.rs
--	cargo build --profile $(PROFILE)
--
- .PHONY: completions
- completions: autocomplete/fd.bash autocomplete/fd.fish autocomplete/fd.ps1 autocomplete/_fd
- 
-@@ -34,4 +31,4 @@ install: $(EXE) completions
+@@ -34,4 +34,4 @@ install: $(EXE) completions
  	install -Dm644 autocomplete/fd.bash $(DESTDIR)/$(datadir)/bash-completion/completions/$(exe_name)
  	install -Dm644 autocomplete/fd.fish $(DESTDIR)/$(datadir)/fish/vendor_completions.d/$(exe_name).fish
  	install -Dm644 autocomplete/_fd $(DESTDIR)/$(datadir)/zsh/site-functions/_$(exe_name)

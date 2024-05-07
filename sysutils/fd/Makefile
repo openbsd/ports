@@ -2,7 +2,7 @@ COMMENT =		simple, fast and user-friendly alternative to 'find'
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		fd
-GH_TAGNAME =		v9.0.0
+GH_TAGNAME =		v10.0.0
 
 CATEGORIES =		sysutils
 
@@ -19,10 +19,6 @@ MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =	completions
 MODCARGO_INSTALL =	No
 USE_GMAKE =		Yes
-
-xxpost-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/fd.1 ${PREFIX}/man/man1
-	cd ${WRKBUILD}; make -f ../fd-*/Makefile completions
 
 .include "crates.inc"
 
