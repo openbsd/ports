@@ -7,10 +7,11 @@ COMMENT =	semi-automatic OSINT framework and package manager
 
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
-GH_TAGNAME =	v0.24.1
-REVISION =	6
+GH_TAGNAME =	v0.26.0
 
 CATEGORIES =	security
+
+MAINTAINER =	Purple Rain <purplerain@secbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -29,7 +30,7 @@ BUILD_DEPENDS =		security/rust-ring \
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city
 
-.include "crates.mk"
+.include "crates.inc"
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
