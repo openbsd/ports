@@ -1,10 +1,9 @@
 COMMENT=	bcrypt blowfish password hashing for Python
 
-MODPY_EGG_VERSION= 4.1.2
+MODPY_EGG_VERSION= 4.1.3
 DISTNAME=	bcrypt-${MODPY_EGG_VERSION}
 DISTFILES=	bcrypt-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 .include "crates.inc"
 
