@@ -1,4 +1,4 @@
-SHA256 (broot-1.37.0.tar.gz) = WTNdEBuUOnkHzrHvLUzynnVc3wYtNFnr/ClJZdS+Dn0=
+SHA256 (broot-1.38.0.tar.gz) = GAXYrL9bMRJDcKGcH4VaUMf7kpNZ72idm2iVe9laoAA=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/ahash-0.4.8.tar.gz) = BFMjKs6C3uDdC0yHpZvZD3tTsxTz4PYf4u58ihZIIok=
 SHA256 (cargo/ahash-0.8.11.tar.gz) = 6J2oQagEGKmzkeuuoX9cES/6qpb2IdLChbUXTadrkBE=
@@ -319,7 +319,7 @@ SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNe
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
-SIZE (broot-1.37.0.tar.gz) = 12781529
+SIZE (broot-1.38.0.tar.gz) = 12912336
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.4.8.tar.gz) = 51510
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
