@@ -3,7 +3,7 @@ COMMENT=	API to interact with pyproject.toml-based projects
 MODPY_EGG_VERSION=	1.6.1
 DISTNAME=	pyproject_api-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -21,8 +21,7 @@ MODPY_PYBUILD=	hatch-vcs
 FLAVORS=	python3
 FLAVOR=		python3
 
-RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR}
+RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-virtualenv${MODPY_FLAVOR} \
 		devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-test-mock${MODPY_FLAVOR} \
