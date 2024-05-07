@@ -1,0 +1,21 @@
+Enforce version of maven-resources-plugin and maven-jar-plugin from videobridge-deps-2.0.8319.tgz
+Index: pom.xml
+--- pom.xml.orig
++++ pom.xml
+@@ -61,6 +61,16 @@
+                     </execution>
+                 </executions>
+             </plugin>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-resources-plugin</artifactId>
++                <version>2.6</version>
++            </plugin>
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-jar-plugin</artifactId>
++                <version>3.2.0</version>
++            </plugin>
+         </plugins>
+     </build>
+ 
