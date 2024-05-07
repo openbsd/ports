@@ -1,9 +1,8 @@
 COMMENT =		let your Python tests travel through time
 
-MODPY_EGG_VERSION =	1.3.1
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		freezegun-${MODPY_EGG_VERSION}
 PKGNAME =		py-freezegun-${MODPY_EGG_VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://github.com/spulec/freezegun
 

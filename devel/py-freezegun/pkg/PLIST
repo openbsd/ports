@@ -8,7 +8,6 @@ lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/freezegun/__init__.py
-lib/python${MODPY_VERSION}/site-packages/freezegun/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20,6 +19,5 @@ lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}config.${MODP
 lib/python${MODPY_VERSION}/site-packages/freezegun/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/freezegun/_async.py
 lib/python${MODPY_VERSION}/site-packages/freezegun/api.py
-lib/python${MODPY_VERSION}/site-packages/freezegun/api.pyi
 lib/python${MODPY_VERSION}/site-packages/freezegun/config.py
 lib/python${MODPY_VERSION}/site-packages/freezegun/py.typed
