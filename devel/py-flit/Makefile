@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	3.9.0
 
 DISTNAME=	flit-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -22,7 +22,6 @@ FLAVORS=	python3
 
 RUN_DEPENDS=	devel/py-flit_core${MODPY_FLAVOR} \
 		textproc/py-docutils${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR} \
 		textproc/py-tomli_w${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
