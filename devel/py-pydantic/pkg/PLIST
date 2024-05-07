@@ -57,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}typing.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}v1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}v1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -107,6 +109,8 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/types.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/typing.py
 @so lib/python${MODPY_VERSION}/site-packages/pydantic/utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pydantic/utils.py
+@so lib/python${MODPY_VERSION}/site-packages/pydantic/v1.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pydantic/v1.py
 @so lib/python${MODPY_VERSION}/site-packages/pydantic/validators.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pydantic/validators.py
 @so lib/python${MODPY_VERSION}/site-packages/pydantic/version.${MODPY_PYC_MAGIC_TAG}so
