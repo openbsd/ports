@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}convert_matrix
 lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}convert_matrix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}exception.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}lazy_imports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}lazy_imports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}relabel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/${MODPY_PYCACHE}relabel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/
@@ -475,11 +477,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PYCACHE}equitable_coloring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PYCACHE}greedy_coloring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PYCACHE}greedy_coloring.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PYCACHE}greedy_coloring_with_interchange.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/${MODPY_PYCACHE}greedy_coloring_with_interchange.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/equitable_coloring.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/greedy_coloring.py
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/greedy_coloring_with_interchange.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/tests/
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/coloring/tests/${MODPY_PYCACHE}/
@@ -506,6 +505,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}kernighan_lin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}label_propagation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}label_propagation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}louvain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}louvain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}lukes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}lukes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/${MODPY_PYCACHE}modularity_max.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -518,6 +519,7 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/community
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/kclique.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/kernighan_lin.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/label_propagation.py
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/louvain.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/lukes.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/modularity_max.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/quality.py
@@ -536,6 +538,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${M
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_kernighan_lin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_label_propagation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_label_propagation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_louvain.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_louvain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_lukes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_lukes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/${MODPY_PYCACHE}test_modularity_max.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -549,6 +553,7 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/tes
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_kclique.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_kernighan_lin.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_label_propagation.py
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_louvain.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_lukes.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_modularity_max.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/community/tests/test_quality.py
@@ -848,17 +853,6 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/hmn.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/lgc.py
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}test_harmonic_function.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}test_harmonic_function.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}test_local_and_global_consistency.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/${MODPY_PYCACHE}test_local_and_global_consistency.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/test_harmonic_function.py
-lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/tests/test_local_and_global_consistency.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/node_classification/utils.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/non_randomness.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/operators/
@@ -1018,6 +1012,10 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_mis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_moral.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_moral.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_node_classification.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_node_classification.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_node_classification_deprecations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_node_classification_deprecations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_non_randomness.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_non_randomness.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/${MODPY_PYCACHE}test_planar_drawing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1089,6 +1087,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_matching
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_max_weight_clique.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_mis.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_moral.py
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_node_classification.py
+lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_node_classification_deprecations.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_non_randomness.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_planar_drawing.py
 lib/python${MODPY_VERSION}/site-packages/networkx/algorithms/tests/test_planarity.py
@@ -1319,6 +1319,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/${MODPY_PYCACHE}test_pydot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/${MODPY_PYCACHE}test_pylab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/${MODPY_PYCACHE}test_pylab.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/baseline/
+lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/baseline/test_house_with_colors.png
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/test_agraph.py
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/test_layout.py
 lib/python${MODPY_VERSION}/site-packages/networkx/drawing/tests/test_pydot.py
@@ -1500,6 +1502,7 @@ lib/python${MODPY_VERSION}/site-packages/networkx/generators/tests/test_trees.py
 lib/python${MODPY_VERSION}/site-packages/networkx/generators/tests/test_triads.py
 lib/python${MODPY_VERSION}/site-packages/networkx/generators/trees.py
 lib/python${MODPY_VERSION}/site-packages/networkx/generators/triads.py
+lib/python${MODPY_VERSION}/site-packages/networkx/lazy_imports.py
 lib/python${MODPY_VERSION}/site-packages/networkx/linalg/
 lib/python${MODPY_VERSION}/site-packages/networkx/linalg/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/networkx/linalg/${MODPY_PYCACHE}/
@@ -1728,6 +1731,8 @@ lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_exc
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_import.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_import.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_lazy_imports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_lazy_imports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_relabel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/${MODPY_PYCACHE}test_relabel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_all_random_functions.py
@@ -1737,6 +1742,7 @@ lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_convert_pandas.py
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_convert_scipy.py
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_import.py
+lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_lazy_imports.py
 lib/python${MODPY_VERSION}/site-packages/networkx/tests/test_relabel.py
 lib/python${MODPY_VERSION}/site-packages/networkx/utils/
 lib/python${MODPY_VERSION}/site-packages/networkx/utils/__init__.py
@@ -1822,6 +1828,7 @@ share/doc/networkx-${MODPY_EGG_VERSION}/examples/algorithms/plot_krackhardt_cent
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/algorithms/plot_parallel_betweenness.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/algorithms/plot_rcm.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/algorithms/plot_snap.py
+share/doc/networkx-${MODPY_EGG_VERSION}/examples/algorithms/plot_subgraphs.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/basic/
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/basic/README.txt
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/basic/plot_properties.py
@@ -1850,6 +1857,7 @@ share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_sampson.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_selfloops.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_simple_path.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_spectral_grid.py
+share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_tsp.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_unix_email.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/plot_weighted_graph.py
 share/doc/networkx-${MODPY_EGG_VERSION}/examples/drawing/unix_email.mbox
