@@ -11,8 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}_shared.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}_shared.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}v1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pydantic_compat/${MODPY_PYCACHE}v1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_shared.py
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_v1/
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_v1/__init__.py
@@ -37,4 +35,3 @@ lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_v2/${MODPY_PYCACHE}mix
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_v2/decorators.py
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/_v2/mixin.py
 lib/python${MODPY_VERSION}/site-packages/pydantic_compat/py.typed
-lib/python${MODPY_VERSION}/site-packages/pydantic_compat/v1.py
