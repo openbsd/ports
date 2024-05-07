@@ -13,69 +13,6 @@
 @extraunexec rm -rf /var/db/gromox/*
 @extraunexec rm -rf /var/log/gromox/*
 lib/gromox/
-@static-lib lib/gromox/libgxh_ews.a
-lib/gromox/libgxh_ews.la
-@so lib/gromox/libgxh_ews.so
-@static-lib lib/gromox/libgxh_mh_emsmdb.a
-lib/gromox/libgxh_mh_emsmdb.la
-@so lib/gromox/libgxh_mh_emsmdb.so
-@static-lib lib/gromox/libgxh_mh_nsp.a
-lib/gromox/libgxh_mh_nsp.la
-@so lib/gromox/libgxh_mh_nsp.so
-@static-lib lib/gromox/libgxh_oab.a
-lib/gromox/libgxh_oab.la
-@so lib/gromox/libgxh_oab.so
-@static-lib lib/gromox/libgxh_oxdisco.a
-lib/gromox/libgxh_oxdisco.la
-@so lib/gromox/libgxh_oxdisco.so
-@static-lib lib/gromox/libgxm_alias_resolve.a
-lib/gromox/libgxm_alias_resolve.la
-@so lib/gromox/libgxm_alias_resolve.so
-@static-lib lib/gromox/libgxm_exmdb_local.a
-lib/gromox/libgxm_exmdb_local.la
-@so lib/gromox/libgxm_exmdb_local.so
-@static-lib lib/gromox/libgxm_remote_delivery.a
-lib/gromox/libgxm_remote_delivery.la
-@so lib/gromox/libgxm_remote_delivery.so
-@static-lib lib/gromox/libgxp_exchange_emsmdb.a
-lib/gromox/libgxp_exchange_emsmdb.la
-@so lib/gromox/libgxp_exchange_emsmdb.so
-@static-lib lib/gromox/libgxp_exchange_nsp.a
-lib/gromox/libgxp_exchange_nsp.la
-@so lib/gromox/libgxp_exchange_nsp.so
-@static-lib lib/gromox/libgxp_exchange_rfr.a
-lib/gromox/libgxp_exchange_rfr.la
-@so lib/gromox/libgxp_exchange_rfr.so
-@static-lib lib/gromox/libgxs_authmgr.a
-lib/gromox/libgxs_authmgr.la
-@so lib/gromox/libgxs_authmgr.so
-@static-lib lib/gromox/libgxs_dnsbl_filter.a
-lib/gromox/libgxs_dnsbl_filter.la
-@so lib/gromox/libgxs_dnsbl_filter.so
-@static-lib lib/gromox/libgxs_event_proxy.a
-lib/gromox/libgxs_event_proxy.la
-@so lib/gromox/libgxs_event_proxy.so
-@static-lib lib/gromox/libgxs_event_stub.a
-lib/gromox/libgxs_event_stub.la
-@so lib/gromox/libgxs_event_stub.so
-@static-lib lib/gromox/libgxs_exmdb_provider.a
-lib/gromox/libgxs_exmdb_provider.la
-@so lib/gromox/libgxs_exmdb_provider.so
-@static-lib lib/gromox/libgxs_ldap_adaptor.a
-lib/gromox/libgxs_ldap_adaptor.la
-@so lib/gromox/libgxs_ldap_adaptor.so
-@static-lib lib/gromox/libgxs_midb_agent.a
-lib/gromox/libgxs_midb_agent.la
-@so lib/gromox/libgxs_midb_agent.so
-@static-lib lib/gromox/libgxs_mysql_adaptor.a
-lib/gromox/libgxs_mysql_adaptor.la
-@so lib/gromox/libgxs_mysql_adaptor.so
-@static-lib lib/gromox/libgxs_timer_agent.a
-lib/gromox/libgxs_timer_agent.la
-@so lib/gromox/libgxs_timer_agent.so
-@static-lib lib/gromox/libgxs_user_filter.a
-lib/gromox/libgxs_user_filter.la
-@so lib/gromox/libgxs_user_filter.so
 @static-lib lib/libgromox_common.a
 lib/libgromox_common.la
 @lib lib/libgromox_common.so.${LIBgromox_common_VERSION}
@@ -97,6 +34,69 @@ lib/libgromox_mapi.la
 @static-lib lib/libgromox_rpc.a
 lib/libgromox_rpc.la
 @lib lib/libgromox_rpc.so.${LIBgromox_rpc_VERSION}
+@static-lib lib/libgromox_rule.a
+lib/libgromox_rule.la
+@lib lib/libgromox_rule.so.${LIBgromox_rule_VERSION}
+@static-lib lib/libgxh_ews.a
+lib/libgxh_ews.la
+@lib lib/libgxh_ews.so.${LIBgxh_ews_VERSION}
+@static-lib lib/libgxh_mh_emsmdb.a
+lib/libgxh_mh_emsmdb.la
+@lib lib/libgxh_mh_emsmdb.so.${LIBgxh_mh_emsmdb_VERSION}
+@static-lib lib/libgxh_mh_nsp.a
+lib/libgxh_mh_nsp.la
+@lib lib/libgxh_mh_nsp.so.${LIBgxh_mh_nsp_VERSION}
+@static-lib lib/libgxh_oab.a
+lib/libgxh_oab.la
+@lib lib/libgxh_oab.so.${LIBgxh_oab_VERSION}
+@static-lib lib/libgxh_oxdisco.a
+lib/libgxh_oxdisco.la
+@lib lib/libgxh_oxdisco.so.${LIBgxh_oxdisco_VERSION}
+@static-lib lib/libgxm_alias_resolve.a
+lib/libgxm_alias_resolve.la
+@lib lib/libgxm_alias_resolve.so.${LIBgxm_alias_resolve_VERSION}
+@static-lib lib/libgxm_exmdb_local.a
+lib/libgxm_exmdb_local.la
+@lib lib/libgxm_exmdb_local.so.${LIBgxm_exmdb_local_VERSION}
+@static-lib lib/libgxp_exchange_emsmdb.a
+lib/libgxp_exchange_emsmdb.la
+@lib lib/libgxp_exchange_emsmdb.so.${LIBgxp_exchange_emsmdb_VERSION}
+@static-lib lib/libgxp_exchange_nsp.a
+lib/libgxp_exchange_nsp.la
+@lib lib/libgxp_exchange_nsp.so.${LIBgxp_exchange_nsp_VERSION}
+@static-lib lib/libgxp_exchange_rfr.a
+lib/libgxp_exchange_rfr.la
+@lib lib/libgxp_exchange_rfr.so.${LIBgxp_exchange_rfr_VERSION}
+@static-lib lib/libgxs_authmgr.a
+lib/libgxs_authmgr.la
+@lib lib/libgxs_authmgr.so.${LIBgxs_authmgr_VERSION}
+@static-lib lib/libgxs_dnsbl_filter.a
+lib/libgxs_dnsbl_filter.la
+@lib lib/libgxs_dnsbl_filter.so.${LIBgxs_dnsbl_filter_VERSION}
+@static-lib lib/libgxs_event_proxy.a
+lib/libgxs_event_proxy.la
+@lib lib/libgxs_event_proxy.so.${LIBgxs_event_proxy_VERSION}
+@static-lib lib/libgxs_event_stub.a
+lib/libgxs_event_stub.la
+@lib lib/libgxs_event_stub.so.${LIBgxs_event_stub_VERSION}
+@static-lib lib/libgxs_exmdb_provider.a
+lib/libgxs_exmdb_provider.la
+@lib lib/libgxs_exmdb_provider.so.${LIBgxs_exmdb_provider_VERSION}
+@static-lib lib/libgxs_ldap_adaptor.a
+lib/libgxs_ldap_adaptor.la
+@lib lib/libgxs_ldap_adaptor.so.${LIBgxs_ldap_adaptor_VERSION}
+@static-lib lib/libgxs_midb_agent.a
+lib/libgxs_midb_agent.la
+@lib lib/libgxs_midb_agent.so.${LIBgxs_midb_agent_VERSION}
+@static-lib lib/libgxs_mysql_adaptor.a
+lib/libgxs_mysql_adaptor.la
+@lib lib/libgxs_mysql_adaptor.so.${LIBgxs_mysql_adaptor_VERSION}
+@static-lib lib/libgxs_timer_agent.a
+lib/libgxs_timer_agent.la
+@lib lib/libgxs_timer_agent.so.${LIBgxs_timer_agent_VERSION}
+@static-lib lib/libgxs_user_filter.a
+lib/libgxs_user_filter.la
+@lib lib/libgxs_user_filter.so.${LIBgxs_user_filter_VERSION}
 @comment lib/php-${MODPHP_VERSION}/
 @comment lib/php-${MODPHP_VERSION}/modules/
 lib/systemd/

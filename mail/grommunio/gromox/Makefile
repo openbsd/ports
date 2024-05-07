@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.27
+V=		2.28
 DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
@@ -12,7 +12,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	5e94fd73cc0040a7339d588be9757b018b3eb064
+GH_COMMIT=	857c2340268d395ada659d6eb7b71a232198e55b
 
 CATEGORIES=	mail www productivity
 
@@ -24,6 +24,27 @@ SHARED_LIBS +=  gromox_epoll              0.0 # 0.0
 SHARED_LIBS +=  gromox_exrpc              0.0 # 0.0
 SHARED_LIBS +=  gromox_mapi               0.0 # 0.0
 SHARED_LIBS +=  gromox_rpc                0.0 # 0.0
+SHARED_LIBS +=  gromox_rule               0.0 # 0.0
+SHARED_LIBS +=  gxh_ews                   0.0 # 0.0
+SHARED_LIBS +=  gxh_mh_emsmdb             0.0 # 0.0
+SHARED_LIBS +=  gxh_mh_nsp                0.0 # 0.0
+SHARED_LIBS +=  gxh_oab                   0.0 # 0.0
+SHARED_LIBS +=  gxh_oxdisco               0.0 # 0.0
+SHARED_LIBS +=  gxm_alias_resolve         0.0 # 0.0
+SHARED_LIBS +=  gxm_exmdb_local           0.0 # 0.0
+SHARED_LIBS +=  gxp_exchange_emsmdb       0.0 # 0.0
+SHARED_LIBS +=  gxp_exchange_nsp          0.0 # 0.0
+SHARED_LIBS +=  gxp_exchange_rfr          0.0 # 0.0
+SHARED_LIBS +=  gxs_authmgr               0.0 # 0.0
+SHARED_LIBS +=  gxs_dnsbl_filter          0.0 # 0.0
+SHARED_LIBS +=  gxs_event_proxy           0.0 # 0.0
+SHARED_LIBS +=  gxs_event_stub            0.0 # 0.0
+SHARED_LIBS +=  gxs_exmdb_provider        0.0 # 0.0
+SHARED_LIBS +=  gxs_ldap_adaptor          0.0 # 0.0
+SHARED_LIBS +=  gxs_midb_agent            0.0 # 0.0
+SHARED_LIBS +=  gxs_mysql_adaptor         0.0 # 0.0
+SHARED_LIBS +=  gxs_timer_agent           0.0 # 0.0
+SHARED_LIBS +=  gxs_user_filter           0.0 # 0.0
 
 MULTI_PACKAGES=	-main -mapi
 
@@ -45,7 +66,7 @@ BUILD_DEPENDS=	devel/cppunit \
 WANTLIB += HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
 WANTLIB-main += ${LIBCXX} ${WANTLIB} c crypto curl fmt icudata icuuc lber
-WANTLIB-main += ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls 
+WANTLIB-main += ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
 # Do not substitute MODULE_NAME
