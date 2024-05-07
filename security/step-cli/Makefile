@@ -1,5 +1,7 @@
-BROKEN-i386 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
-BROKEN-aarch64 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
+BROKEN =	syscall problems; 0.26.1 is also affected
+
+#BROKEN-i386 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
+#BROKEN-aarch64 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
 
 COMMENT =	swiss army knife for working with X509, OAuth, JWT, OATH OTP
 
