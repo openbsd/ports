@@ -1,3 +1,0 @@
-@bin libexec/smtpd/queue-python
-@bin libexec/smtpd/scheduler-python
-@bin libexec/smtpd/table-python
