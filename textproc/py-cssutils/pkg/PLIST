@@ -216,6 +216,8 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_css
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_cssvariablesrule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_domimplementation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_domimplementation.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_encutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_encutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_errorhandler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_errorhandler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/${MODPY_PYCACHE}test_helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -341,11 +343,7 @@ lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_cssvalue.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_cssvariablesdeclaration.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_cssvariablesrule.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_domimplementation.py
-lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils/
-lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_encutils.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_errorhandler.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_helper.py
 lib/python${MODPY_VERSION}/site-packages/cssutils/tests/test_marginrule.py
