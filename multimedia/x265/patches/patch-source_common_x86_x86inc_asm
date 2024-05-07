@@ -1,7 +1,7 @@
 Index: source/common/x86/x86inc.asm
 --- source/common/x86/x86inc.asm.orig
 +++ source/common/x86/x86inc.asm
-@@ -717,6 +717,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -731,6 +731,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
      %endif
      align function_align
      %2:

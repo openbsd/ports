@@ -1,7 +1,7 @@
 Index: source/CMakeLists.txt
 --- source/CMakeLists.txt.orig
 +++ source/CMakeLists.txt
-@@ -485,7 +485,8 @@ if(POWER)
+@@ -523,7 +523,8 @@ if(POWER)
      endif()
  endif()
  

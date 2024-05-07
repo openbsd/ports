@@ -1,13 +1,12 @@
 COMMENT=	free H.265/HEVC encoder
 
-VER=		3.5
+VER=		3.6
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
-REVISION=	3
 CATEGORIES=	multimedia
 SITES=		https://bitbucket.org/multicoreware/x265_git/downloads/
 
-SHARED_LIBS=	x265	23.0
+SHARED_LIBS=	x265	24.0
 
 HOMEPAGE=	https://x265.org/
 
