@@ -62,8 +62,8 @@ include/opensubdiv/osd/glslPatchShaderSource.h
 include/opensubdiv/osd/mesh.h
 include/opensubdiv/osd/nonCopyable.h
 include/opensubdiv/osd/opengl.h
-include/opensubdiv/osd/tbbEvaluator.h
-include/opensubdiv/osd/tbbKernel.h
+include/opensubdiv/osd/patchBasis.h
+include/opensubdiv/osd/patchBasisTypes.h
 include/opensubdiv/osd/types.h
 include/opensubdiv/sdc/
 include/opensubdiv/sdc/bilinearScheme.h

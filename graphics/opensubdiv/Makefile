@@ -1,14 +1,13 @@
 COMMENT=	open-source subdivision surface library
 
-V=		3.5.0
+V=		3.6.0
 GH_ACCOUNT=	PixarAnimationStudios
 GH_PROJECT=	OpenSubdiv
 GH_TAGNAME=	v${V:S/./_/g}
 DISTNAME=	${GH_PROJECT:L}-${V}
-REVISION=	1
 
-SHARED_LIBS +=	osdCPU		2.0 # 3.4.4
-SHARED_LIBS +=	osdGPU		2.0 # 3.4.4
+SHARED_LIBS +=	osdCPU		3.0 # 3.4.4
+SHARED_LIBS +=	osdGPU		3.0 # 3.4.4
 
 CATEGORIES=	graphics
 
@@ -30,8 +29,14 @@ BUILD_DEPENDS=	graphics/glfw
 
 LIB_DEPENDS=	devel/tbb
 
-CONFIGURE_ARGS=	-DNO_DOC=ON \
-		-DNO_OMP=ON
+CONFIGURE_ARGS=	-DNO_CLEW=ON \
+		-DNO_CUDA=ON \
+		-DNO_DOC=ON \
+		-DNO_OMP=ON \
+		-DNO_OPENCL=ON \
+		-DNO_PTEX=ON
+
+CXXFLAGS+=	-I${X11BASE}/include
 
 post-install:
 	rm -rf ${PREFIX}/bin/tutorials
