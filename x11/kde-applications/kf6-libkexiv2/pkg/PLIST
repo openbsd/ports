@@ -1,0 +1,21 @@
+include/KExiv2Qt6/
+include/KExiv2Qt6/KExiv2/
+include/KExiv2Qt6/KExiv2/KExiv2
+include/KExiv2Qt6/KExiv2/KExiv2Data
+include/KExiv2Qt6/KExiv2/KExiv2Previews
+include/KExiv2Qt6/KExiv2/RotationMatrix
+include/KExiv2Qt6/kexiv2/
+include/KExiv2Qt6/kexiv2/kexiv2.h
+include/KExiv2Qt6/kexiv2/kexiv2data.h
+include/KExiv2Qt6/kexiv2/kexiv2previews.h
+include/KExiv2Qt6/kexiv2/libkexiv2_export.h
+include/KExiv2Qt6/kexiv2/rotationmatrix.h
+include/KExiv2Qt6/libkexiv2_version.h
+lib/cmake/KExiv2Qt6/
+lib/cmake/KExiv2Qt6/KExiv2Qt6Config.cmake
+lib/cmake/KExiv2Qt6/KExiv2Qt6ConfigVersion.cmake
+lib/cmake/KExiv2Qt6/KExiv2Qt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KExiv2Qt6/KExiv2Qt6Targets.cmake
+@lib lib/libKExiv2Qt6.so.${LIBKExiv2Qt6_VERSION}
+share/qlogging-categories6/
+share/qlogging-categories6/libkexiv2.categories
