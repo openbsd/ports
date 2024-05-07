@@ -1,0 +1,27 @@
+include/PlasmaActivitiesStats/
+include/PlasmaActivitiesStats/PlasmaActivities/
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/Cleaning
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/Query
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultModel
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultSet
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/ResultWatcher
+include/PlasmaActivitiesStats/PlasmaActivities/Stats/Terms
+include/PlasmaActivitiesStats/plasmaactivitiesstats/
+include/PlasmaActivitiesStats/plasmaactivitiesstats/cleaning.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/plasmaactivitiesstats_export.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/query.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/resultmodel.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/resultset.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/resultwatcher.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats/terms.h
+include/PlasmaActivitiesStats/plasmaactivitiesstats_version.h
+lib/cmake/PlasmaActivitiesStats/
+lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsConfig.cmake
+lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsConfigVersion.cmake
+lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsLibraryTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PlasmaActivitiesStats/PlasmaActivitiesStatsLibraryTargets.cmake
+@lib lib/libPlasmaActivitiesStats.so.${LIBPlasmaActivitiesStats_VERSION}
+lib/pkgconfig/PlasmaActivitiesStats.pc
+share/qlogging-categories6/plasma-activities-stats.categories
+share/qlogging-categories6/plasma-activities-stats.renamecategories

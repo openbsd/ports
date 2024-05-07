@@ -1,0 +1,13 @@
+When a user is interacting with a computer, there are three main areas of
+contextual information that may affect the behaviour of the system: who the user
+is, where they are, and what they are doing.
+
+Activities deal with the last one. An activity might be "developing a KDE
+application", "studying 19th century art", "composing music" or "watching funny
+videos". Each of these activites may involve multiple applications, and a single
+application may be used in multiple activities (for example, most activities are
+likely to involve using a web browser, but different activities will probably
+involve different websites).
+
+This package contains a library for accessing the usage data collected by
+the activities system.
