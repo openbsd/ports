@@ -1,0 +1,31 @@
+include/KCddb6/
+include/KCddb6/KCDDB/
+include/KCddb6/KCDDB/CDInfo
+include/KCddb6/KCDDB/Categories
+include/KCddb6/KCDDB/Client
+include/KCddb6/KCDDB/Config
+include/KCddb6/KCDDB/Genres
+include/KCddb6/KCDDB/KCDDB
+include/KCddb6/kcddb/
+include/KCddb6/kcddb/categories.h
+include/KCddb6/kcddb/cdinfo.h
+include/KCddb6/kcddb/client.h
+include/KCddb6/kcddb/config.h
+include/KCddb6/kcddb/configbase.h
+include/KCddb6/kcddb/genres.h
+include/KCddb6/kcddb/kcddb.h
+include/KCddb6/kcddb/kcddb_export.h
+include/KCddb6/kcddb_version.h
+lib/cmake/KCddb6/
+lib/cmake/KCddb6/KCddb6Config.cmake
+lib/cmake/KCddb6/KCddb6ConfigVersion.cmake
+lib/cmake/KCddb6/KCddb6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KCddb6/KCddb6Targets.cmake
+@lib lib/libKCddb6.so.${LIBKCddb6_VERSION}
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
+share/kf6/mkspecs/
+share/kf6/mkspecs/qt_KCddb.pri
+share/qlogging-categories6/libkcddb.categories

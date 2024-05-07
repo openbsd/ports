@@ -1,0 +1,22 @@
+Index: kcmcddb/CMakeLists.txt
+--- kcmcddb/CMakeLists.txt.orig
++++ kcmcddb/CMakeLists.txt
+@@ -1,9 +1,8 @@
+ add_definitions(-DTRANSLATION_DOMAIN="libkcddb")
+ 
+-add_subdirectory(doc)
++#add_subdirectory(doc)
+ 
+ kcoreaddons_add_plugin(kcm_cddb INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
+-kcmutils_generate_desktop_file(kcm_cddb)
+ 
+ ki18n_wrap_ui(kcm_cddb cddbconfigwidget.ui)
+ 
+@@ -24,6 +23,7 @@ target_link_libraries(kcm_cddb PRIVATE
+ 
+ if(QT_MAJOR_VERSION STREQUAL "5")
+     target_link_libraries(kcm_cddb PRIVATE KF${KF_MAJOR_VERSION}::ConfigWidgets)
++    kcmutils_generate_desktop_file(kcm_cddb)
+ else()
+     target_link_libraries(kcm_cddb PRIVATE KF${KF_MAJOR_VERSION}::KCMUtils)
+ endif()

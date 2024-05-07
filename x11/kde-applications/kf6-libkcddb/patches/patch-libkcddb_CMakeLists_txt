@@ -1,0 +1,14 @@
+Index: libkcddb/CMakeLists.txt
+--- libkcddb/CMakeLists.txt.orig
++++ libkcddb/CMakeLists.txt
+@@ -215,7 +215,9 @@ if(NOT EXCLUDE_DEPRECATED_BEFORE_AND_AT STREQUAL "CURR
+     )
+ endif()
+ 
+-install(FILES libkcddb5.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
++if (KF_MAJOR_VERSION STREQUAL "5")
++    install(FILES libkcddb5.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR})
++endif()
+ 
+ ecm_qt_install_logging_categories(
+     EXPORT KCDDB
