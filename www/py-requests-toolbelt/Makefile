@@ -1,9 +1,8 @@
 COMMENT =		utility belt for advanced users of python-requests
 
-MODPY_EGG_VERSION =	0.10.1
+MODPY_EGG_VERSION =	1.0.0
 DISTNAME =		requests-toolbelt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 

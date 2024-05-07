@@ -25,8 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}appengine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}fingerprint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}fingerprint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}host_header_ssl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -39,7 +37,6 @@ lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}ssl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/${MODPY_PYCACHE}x509.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/appengine.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/fingerprint.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/host_header_ssl.py
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/adapters/socket_options.py
