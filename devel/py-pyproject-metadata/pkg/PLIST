@@ -4,7 +4,6 @@ lib/python${MODPY_VERSION}/site-packages/pyproject_metadata-${MODPY_EGG_VERSION}
 lib/python${MODPY_VERSION}/site-packages/pyproject_metadata-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyproject_metadata-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyproject_metadata-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyproject_metadata-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyproject_metadata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyproject_metadata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyproject_metadata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

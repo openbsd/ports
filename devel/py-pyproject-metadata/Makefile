@@ -1,9 +1,8 @@
 COMMENT=		PEP 621 metadata parsing
 
-MODPY_EGG_VERSION=	0.7.1
-DISTNAME=		pyproject-metadata-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		0
+MODPY_EGG_VERSION=	0.8.0
+DISTNAME=		pyproject_metadata-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME:S/_/-/}
 
 CATEGORIES=		devel
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		flit_core
 
 RUN_DEPENDS=		sysutils/py-packaging${MODPY_FLAVOR}
 
