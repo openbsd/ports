@@ -1,9 +1,9 @@
 Index: magick/random.c
 --- magick/random.c.orig
 +++ magick/random.c
-@@ -61,7 +61,7 @@
- #include "magick/thread_.h"
+@@ -62,7 +62,7 @@
  #include "magick/thread-private.h"
+ #include "magick/timer-private.h"
  #include "magick/utility-private.h"
 -#if defined(MAGICKCORE_HAVE_GETENTROPY)
 +#if defined(MAGICKCORE_HAVE_GETENTROPY) && !defined(__OpenBSD__)

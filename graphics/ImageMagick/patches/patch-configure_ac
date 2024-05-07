@@ -18,7 +18,7 @@ Index: configure.ac
              printf %s "$d"
            ]))
  
-@@ -1193,7 +1192,7 @@ fi
+@@ -1186,7 +1185,7 @@ fi
  
  # Assume that delegate headers reside under same directory as ImageMagick
  # installation prefix.
@@ -27,7 +27,7 @@ Index: configure.ac
  
  #
  # Find the X11 RGB database
-@@ -2932,7 +2931,7 @@ AC_SUBST([PERLMAINCC])
+@@ -2948,7 +2947,7 @@ AC_SUBST([PERLMAINCC])
  #
  
  # Path to ImageMagick header files
@@ -36,7 +36,7 @@ Index: configure.ac
  INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}"
  DEFINE_INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -2955,7 +2954,7 @@ AC_DEFINE_UNQUOTED([INCLUDEARCH_PATH],["$DEFINE_INCLUD
+@@ -2971,7 +2970,7 @@ AC_DEFINE_UNQUOTED([INCLUDEARCH_PATH],["$DEFINE_INCLUD
  AC_SUBST([INCLUDEARCH_PATH])
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -45,7 +45,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED([LIBRARY_RELATIVE_PATH],["$LIBRARY_RELATIVE_PATH"],[Subdirectory of lib where ImageMagick architecture dependent files are installed.])
  
  # Path to ImageMagick bin directory
-@@ -3046,7 +3045,7 @@ AC_SUBST([FILTER_PATH])
+@@ -3062,7 +3061,7 @@ AC_SUBST([FILTER_PATH])
  
  #
  # Path to ImageMagick documentation files
@@ -54,7 +54,7 @@ Index: configure.ac
  DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -3066,7 +3065,7 @@ AC_ARG_ENABLE([docs],
+@@ -3082,7 +3081,7 @@ AC_ARG_ENABLE([docs],
  AM_CONDITIONAL([INSTALL_DOC],[test "$wantdocs" = "yes"])
  
  # Subdirectory to place architecture-dependent configuration files
@@ -63,7 +63,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED([CONFIGURE_RELATIVE_PATH],"$CONFIGURE_RELATIVE_PATH",[Subdirectory of lib where architecture-dependent configuration files live.])
  CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
  DEFINE_CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
-@@ -3079,7 +3078,7 @@ AC_DEFINE_UNQUOTED([CONFIGURE_PATH],"$DEFINE_CONFIGURE
+@@ -3095,7 +3094,7 @@ AC_DEFINE_UNQUOTED([CONFIGURE_PATH],"$DEFINE_CONFIGURE
  AC_SUBST([CONFIGURE_PATH])
  
  # Subdirectory to place architecture-independent configuration files

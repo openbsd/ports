@@ -166,6 +166,20 @@ lib/libMagickCore-6.Q16.la
 @lib lib/libMagickCore-6.Q16.so.${LIBMagickCore-6.Q16_VERSION}
 lib/libMagickWand-6.Q16.la
 @lib lib/libMagickWand-6.Q16.so.${LIBMagickWand-6.Q16_VERSION}
+lib/perl5/
+lib/perl5/${MACHINE_ARCH}-openbsd/
+lib/perl5/${MACHINE_ARCH}-openbsd/Image/
+lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick/
+lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick.pm
+lib/perl5/${MACHINE_ARCH}-openbsd/Image/Magick/Q16.pm
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/.packlist
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/
+@so lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/Q16.so
+lib/perl5/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/autosplit.ix
+lib/perl5/${MACHINE_ARCH}-openbsd/perllocal.pod
 lib/pkgconfig/ImageMagick++-6.Q16.pc
 lib/pkgconfig/ImageMagick++.pc
 lib/pkgconfig/ImageMagick-6.Q16.pc
@@ -178,17 +192,6 @@ lib/pkgconfig/MagickWand-6.Q16.pc
 lib/pkgconfig/MagickWand.pc
 lib/pkgconfig/Wand-6.Q16.pc
 lib/pkgconfig/Wand.pc
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/Magick/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/Magick.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Image/Magick/Q16.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/
-@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/Q16.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/autosplit.ix
 @man man/man1/ImageMagick.1
 @man man/man1/Magick++-config.1
 @man man/man1/Magick-config.1
@@ -206,8 +209,8 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/Q16/autosplit.
 @man man/man1/mogrify.1
 @man man/man1/montage.1
 @man man/man1/stream.1
-@man man/man3p/Image::Magick.3p
-@man man/man3p/Image::Magick::Q16.3p
+@man man/man3/Image::Magick.3p
+@man man/man3/Image::Magick::Q16.3p
 share/ImageMagick/
 share/ImageMagick/english.xml
 share/ImageMagick/francais.xml
@@ -364,6 +367,7 @@ share/doc/ImageMagick/www/Magick++/README.txt
 share/doc/ImageMagick/www/Magick++/STL.html
 share/doc/ImageMagick/www/Magick++/TypeMetric.html
 share/doc/ImageMagick/www/Magick++/index.html
+share/doc/ImageMagick/www/Magick++/logo.png
 share/doc/ImageMagick/www/Magick++/magick.css
 share/doc/ImageMagick/www/Magick++/montage-sample-framed.jpg
 share/doc/ImageMagick/www/Magick++/right_triangle.png
@@ -499,6 +503,7 @@ share/doc/ImageMagick/www/opencl.html
 share/doc/ImageMagick/www/openmp.html
 share/doc/ImageMagick/www/perl-magick.html
 share/doc/ImageMagick/www/porting.html
+share/doc/ImageMagick/www/privacy-policy.html
 share/doc/ImageMagick/www/quantize.html
 share/doc/ImageMagick/www/resources.html
 share/doc/ImageMagick/www/search.html
