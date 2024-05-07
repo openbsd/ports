@@ -1,13 +1,12 @@
 COMMENT=	Python utility / library to sort Python imports
 
-MODPY_EGG_VERSION=	5.12.0
+MODPY_EGG_VERSION=	5.13.2
 DISTNAME=	isort-${MODPY_EGG_VERSION}
 PKGNAME=	py-isort-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	https://github.com/timothycrosley/isort
+HOMEPAGE=	https://github.com/PyCQA/isort
 
 # MIT
 PERMIT_PACKAGE=	Yes

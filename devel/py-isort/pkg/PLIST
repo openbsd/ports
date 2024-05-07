@@ -128,6 +128,8 @@ lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py310.${M
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py310.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py311.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py311.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py312.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py312.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py36.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py36.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py37.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -142,6 +144,7 @@ lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py27.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py3.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py310.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py311.py
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py312.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py36.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py37.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py38.py
