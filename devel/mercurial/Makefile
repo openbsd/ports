@@ -1,9 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
-REVISION-main =		0
-REVISION-x11 =		0
 
-MODPY_EGG_VERSION =	6.6.3
+MODPY_EGG_VERSION =	6.7.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -12,9 +10,7 @@ HOMEPAGE =		https://www.mercurial-scm.org
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://www.mercurial-scm.org/release/ \
-			https://download.tuxfamily.org/jod/devel/mercurial/ \
-			ftp://download.tuxfamily.org/jod/devel/mercurial/
+SITES =			https://www.mercurial-scm.org/release/
 
 MODULES =		lang/python x11/tk
 MODPY_PYBUILD =		setuptools
