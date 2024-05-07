@@ -1,9 +1,8 @@
 COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_EGG_VERSION =	6.8.0
+MODPY_EGG_VERSION =	7.1.0
 DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 HOMEPAGE =		https://importlib-metadata.readthedocs.io/
 
