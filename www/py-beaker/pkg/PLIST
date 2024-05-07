@@ -1,5 +1,6 @@
 @pkgpath www/py-beaker
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/Beaker-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -75,6 +76,8 @@ lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}memcached.${
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}memcached.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}mongodb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}mongodb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}redisclusternm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}redisclusternm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}redisnm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}redisnm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/${MODPY_PYCACHE}sqla.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -83,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/beaker/ext/database.py
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/google.py
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/memcached.py
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/mongodb.py
+lib/python${MODPY_VERSION}/site-packages/beaker/ext/redisclusternm.py
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/redisnm.py
 lib/python${MODPY_VERSION}/site-packages/beaker/ext/sqla.py
 lib/python${MODPY_VERSION}/site-packages/beaker/middleware.py
