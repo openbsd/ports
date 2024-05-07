@@ -1,11 +1,10 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 2.16.1
+MODPY_EGG_VERSION = 2.18.0
 
-DISTNAME=	Pygments-${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME:L:S/^/py-/}
+DISTNAME=	pygments-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc devel
-REVISION=	0
 
 HOMEPAGE=	https://pygments.org/
 
@@ -18,7 +17,7 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	hatchling
 
 # requires port for wcag_contrast_ratio
 MODPY_PYTEST_ARGS =	--ignore tests/contrast/test_contrasts.py
