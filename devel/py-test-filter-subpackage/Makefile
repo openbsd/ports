@@ -1,10 +1,9 @@
 COMMENT=	pytest plugin for filtering based on sub-packages
 
-MODPY_EGG_VERSION=	0.1.2
+MODPY_EGG_VERSION=	0.2.0
 
 DISTNAME=	pytest-filter-subpackage-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
 
 CATEGORIES=	devel
 
