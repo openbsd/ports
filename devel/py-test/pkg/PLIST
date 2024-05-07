@@ -1,6 +1,9 @@
 @conflict py-test-<4.4.0p2
 bin/py.test${MODPY_BIN_SUFFIX}
 @comment bin/pytest
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}py.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/
 lib/python${MODPY_VERSION}/site-packages/_pytest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}/
@@ -44,8 +47,6 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}monkeypatch.${M
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}monkeypatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}nodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}nodes.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}nose.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}nose.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}outcomes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}outcomes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/${MODPY_PYCACHE}pastebin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -113,15 +114,29 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/_io/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}pprint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}pprint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}saferepr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}saferepr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}terminalwriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}terminalwriter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}wcwidth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/${MODPY_PYCACHE}wcwidth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_io/pprint.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/saferepr.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/terminalwriter.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/_io/wcwidth.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/error.py
+lib/python${MODPY_VERSION}/site-packages/_pytest/_py/path.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/_version.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/
 lib/python${MODPY_VERSION}/site-packages/_pytest/assertion/__init__.py
@@ -182,7 +197,6 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/mark/expression.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/mark/structures.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/monkeypatch.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/nodes.py
-lib/python${MODPY_VERSION}/site-packages/_pytest/nose.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/outcomes.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/pastebin.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/pathlib.py
@@ -209,8 +223,10 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/unittest.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/unraisableexception.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/warning_types.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/warnings.py
+lib/python${MODPY_VERSION}/site-packages/py.py
 lib/python${MODPY_VERSION}/site-packages/pytest/
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/RECORD
