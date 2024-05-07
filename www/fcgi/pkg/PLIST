@@ -6,12 +6,14 @@ include/fcgiapp.h
 include/fcgimisc.h
 include/fcgio.h
 include/fcgios.h
-lib/libfcgi++.a
+@static-lib lib/libfcgi++.a
 lib/libfcgi++.la
 @lib lib/libfcgi++.so.${LIBfcgi++_VERSION}
-lib/libfcgi.a
+@static-lib lib/libfcgi.a
 lib/libfcgi.la
 @lib lib/libfcgi.so.${LIBfcgi_VERSION}
+lib/pkgconfig/fcgi++.pc
+lib/pkgconfig/fcgi.pc
 @man man/cat1/cgi-fcgi.0
 @man man/cat3/FCGI_Accept.0
 @man man/cat3/FCGI_Finish.0

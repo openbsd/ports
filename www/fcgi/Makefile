@@ -1,12 +1,15 @@
-COMMENT=		FastCGI Development Kit
+COMMENT=	FastCGI Development Kit
 
-DISTNAME=		fcgi-2.4.0
-REVISION =		18
-CATEGORIES=		www
-SHARED_LIBS +=	fcgi                 0.0      # .0.0
+GH_ACCOUNT=	FastCGI-Archives
+GH_PROJECT=	fcgi2
+GH_TAGNAME=	2.4.2
+PKGNAME=	fcgi-${GH_TAGNAME}
+
+CATEGORIES=	www
+SHARED_LIBS +=	fcgi                 0.1      # .0.0
 SHARED_LIBS +=	fcgi++               1.0      # .1.0
 
-HOMEPAGE=		http://www.fastcgi.com/
+HOMEPAGE=	https://fastcgi-archives.github.io/
 
 # See LICENSE.TERMS. Some source files (from the same authors) have other
 # licenses but LICENSE.TERMS says "The following terms apply to all files
@@ -15,18 +18,18 @@ HOMEPAGE=		http://www.fastcgi.com/
 # http://www.fastcgi.com/archives/fastcgi-developers/2010-June/000559.html
 PERMIT_PACKAGE=	Yes
 
-RUN_DEPENDS =		www/p5-FCGI
+RUN_DEPENDS=	www/p5-FCGI
 
-WANTLIB=		c m ${COMPILER_LIBCXX}
+WANTLIB=	c m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-SITES=			${HOMEPAGE}/dist/
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
 
-CONFIGURE_STYLE=	gnu
-
-CAT3_FILES=		FCGI_Accept FCGI_Finish FCGI_SetExitStatus \
-			FCGI_StartFilterData
+CAT3_FILES=	FCGI_Accept FCGI_Finish FCGI_SetExitStatus \
+		FCGI_StartFilterData
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/cgi-fcgi.1 ${PREFIX}/man/cat1/cgi-fcgi.0
