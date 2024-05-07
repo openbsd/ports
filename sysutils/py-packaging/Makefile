@@ -1,10 +1,9 @@
 COMMENT=	core utilities for Python packages
 
-MODPY_EGG_VERSION=	23.2
+MODPY_EGG_VERSION=	24.0
 
 DISTNAME=	packaging-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
