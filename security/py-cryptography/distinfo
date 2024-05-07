@@ -14,9 +14,9 @@ SHA256 (cargo/libc-0.2.152.tar.gz) = E+O/ZZDLxkn00aPu/J1dbrdG9SAP+wTl4UJwC4+qVuc
 SHA256 (cargo/lock_api-0.4.11.tar.gz) = PBaPhhWxK8AfnBfi6wzAfcrhlAEhGFRG7cN0SSDo70U=
 SHA256 (cargo/memoffset-0.9.0.tar.gz) = WmNLHGGpVYW9FWB8arDE5bIm5pX/KAC6DNzN3yCMQGw=
 SHA256 (cargo/once_cell-1.19.0.tar.gz) = P9sSskdrWV+TWMUWGqRnwkOIWcqhNt7IbCb90u/he5I=
-SHA256 (cargo/openssl-0.10.63.tar.gz) = FcnWndh6KVaNTQF8/o7FGHBgRqBRhOWuqS0K+JC4A8g=
+SHA256 (cargo/openssl-0.10.64.tar.gz) = laBIEoajEICCmBMNIt0f7w+lceBaj0TsgBgB6Eshax8=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
-SHA256 (cargo/openssl-sys-0.9.99.tar.gz) = IuG/IUMGCY5IMkYPeXgkwF0lqs34lvZKmF+w/ZkkVK4=
+SHA256 (cargo/openssl-sys-0.9.102.tar.gz) = xZdjfVb7yDiTo16w3QSyuOelDJHmTpST45i130+0X6I=
 SHA256 (cargo/parking_lot-0.12.1.tar.gz) = N0KywQO58GvJ//Cjf/SRKTWFG+5tNvPAK8x1W8/sIo8=
 SHA256 (cargo/parking_lot_core-0.9.9.tar.gz) = TEKpImVG1orN2cCigNF84Zv+J6Rr9oeE5AZhFXiNAI4=
 SHA256 (cargo/pem-3.0.3.tar.gz) = G4/MeUA1NH+2S+2i07RiWV3SdT4/Jo2JxarnfozywxA=
@@ -46,7 +46,7 @@ SHA256 (cargo/windows_i686_msvc-0.48.5.tar.gz) = j1XCM/cMSyf2bFI1gPePEATotai2WeB
 SHA256 (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = U9QKvSWD0j5HGP3fHr7ITb/4OBwHyuZ/93aLvxnGcY4=
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (cryptography-42.0.5.tar.gz) = b+B+7JXf1HfrlTCu9b6tNP7IGbOq9sW9bSBWXaYHv+E=
+SHA256 (cryptography-42.0.7.tar.gz) = 7L+8AL9ViI7dqYaKTPknIF3oSZ5/q+bAUDIimDgpU/I=
 SIZE (cargo/asn1-0.15.5.tar.gz) = 34375
 SIZE (cargo/asn1_derive-0.15.5.tar.gz) = 6095
 SIZE (cargo/autocfg-1.1.0.tar.gz) = 13272
@@ -63,9 +63,9 @@ SIZE (cargo/libc-0.2.152.tar.gz) = 740278
 SIZE (cargo/lock_api-0.4.11.tar.gz) = 27487
 SIZE (cargo/memoffset-0.9.0.tar.gz) = 9033
 SIZE (cargo/once_cell-1.19.0.tar.gz) = 33046
-SIZE (cargo/openssl-0.10.63.tar.gz) = 270890
+SIZE (cargo/openssl-0.10.64.tar.gz) = 272306
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
-SIZE (cargo/openssl-sys-0.9.99.tar.gz) = 68158
+SIZE (cargo/openssl-sys-0.9.102.tar.gz) = 68622
 SIZE (cargo/parking_lot-0.12.1.tar.gz) = 40967
 SIZE (cargo/parking_lot_core-0.9.9.tar.gz) = 32445
 SIZE (cargo/pem-3.0.3.tar.gz) = 13035
@@ -95,4 +95,4 @@ SIZE (cargo/windows_i686_msvc-0.48.5.tar.gz) = 864300
 SIZE (cargo/windows_x86_64_gnu-0.48.5.tar.gz) = 801619
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (cryptography-42.0.5.tar.gz) = 671025
+SIZE (cryptography-42.0.7.tar.gz) = 671230
