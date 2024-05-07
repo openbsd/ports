@@ -103,8 +103,6 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2urllib2.${MO
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2urllib2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2xmlrpclib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}m2xmlrpclib.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}threading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -118,6 +116,5 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2crypto.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2xmlrpclib.py
-lib/python${MODPY_VERSION}/site-packages/M2Crypto/six.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/threading.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/util.py
