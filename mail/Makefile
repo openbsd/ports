@@ -115,8 +115,8 @@
      SUBDIR += offlineimap
      SUBDIR += opendkim
      SUBDIR += opendmarc
-     SUBDIR += opensmtpd-extras
      SUBDIR += opensmtpd-filters
+     SUBDIR += opensmtpd-tables
      SUBDIR += osbf-lua
      SUBDIR += p5-Catalyst-Plugin-Email
      SUBDIR += p5-Catalyst-View-Email
