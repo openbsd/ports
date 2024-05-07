@@ -2,14 +2,14 @@ COMMENT=	Google WebP image format conversion tool
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
-GH_TAGNAME=	v1.3.2
+GH_TAGNAME=	v1.4.0
 CATEGORIES=	graphics
 
-SHARED_LIBS +=  sharpyuv             0.0      # 0.0
+SHARED_LIBS +=  sharpyuv             0.1      # 0.0
 SHARED_LIBS +=  webp                 4.3      # 6.0
 SHARED_LIBS +=  webpdecoder          2.1      # 2.0
 SHARED_LIBS +=  webpdemux            2.0      # 2.0
-SHARED_LIBS +=  webpmux              2.0      # 2.0
+SHARED_LIBS +=  webpmux              2.1      # 2.0
 
 HOMEPAGE=	https://developers.google.com/speed/webp/
 
