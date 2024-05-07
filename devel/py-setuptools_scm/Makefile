@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	8.0.4
 DISTNAME =		setuptools-scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-/_/}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -19,7 +19,6 @@ FLAVOR =		python3
 
 RUN_DEPENDS +=		devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \
-			textproc/py-tomli${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
