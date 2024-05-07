@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1625 2024/05/06 23:47:29 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1626 2024/05/07 09:19:07 op Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1934,6 +1934,11 @@ setup_obsolete_reason(
 	3 => 'transcode',
 	3 => 'phonon-backend-gstreamer',
 	0 => 'gone',
+	66 => 'opensmtpd-extras',
+	66 => 'opensmtpd-extras-mysql',
+	66 => 'opensmtpd-extras-pgsql',
+	66 => 'opensmtpd-extras-redis',
+	31 => 'opensmtpd-extras-python',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -2016,6 +2021,7 @@ my $obsolete_message = {
 	63 => "outdated, unmaintained, crashes on startup",
 	64 => "dead upstream, crashes when showing the Syncthing web interface, use a browser",
 	65 => "superseded by goldendict-ng",
+	66 => "superseded by opensmtpd-table-*"
 };
 
 # ->is_base_system($handle, $state):
