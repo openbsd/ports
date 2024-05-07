@@ -5,12 +5,11 @@ Index: osdep/timer-linux.c
 --- osdep/timer-linux.c.orig
 +++ osdep/timer-linux.c
 @@ -20,6 +20,8 @@
-
+ 
  #include <errno.h>
  #include <stdlib.h>
 +#undef _POSIX_TIMERS
 +#define _POSIX_TIMERS 1
  #include <time.h>
-
+ 
  #include "common/common.h"
-

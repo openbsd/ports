@@ -4,9 +4,9 @@ time if present at all, rather than only if needed)
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -342,7 +342,19 @@ if features['libdl']
+@@ -348,7 +348,19 @@ if features['libdl']
  endif
-
+ 
  # C11 atomics are mandatory but linking to the library is not always required.
 -dependencies += cc.find_library('atomic', required: false)
 +if cc.links('''
@@ -22,6 +22,6 @@ Index: meson.build
 +else
 +    stdatomic_dep = cc.find_library('atomic')
 +endif
-
+ 
  cplugins = get_option('cplugins').require(
      win32 or (features['libdl'] and cc.has_link_argument('-rdynamic')),

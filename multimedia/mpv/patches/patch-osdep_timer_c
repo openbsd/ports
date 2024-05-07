@@ -13,4 +13,3 @@ Index: osdep/timer.c
  #include <sys/time.h>
  #include <limits.h>
  #include <assert.h>
-
