@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}_frozendict_py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}_frozendict_py.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}cool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}cool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}monkeypatch.
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/frozendict/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/frozendict/_frozendict_py.py
+lib/python${MODPY_VERSION}/site-packages/frozendict/cool.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/core.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/monkeypatch.py
 lib/python${MODPY_VERSION}/site-packages/frozendict/py.typed
