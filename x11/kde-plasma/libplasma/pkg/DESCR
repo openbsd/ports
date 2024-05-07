@@ -1,0 +1,6 @@
+Foundational libraries, components, and tools of the Plasma workspaces.
+The plasma framework provides the following:
+
+- QML components
+- A C++ library: libplasma
+- Script engines
