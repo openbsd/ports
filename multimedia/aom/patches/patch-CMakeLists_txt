@@ -1,8 +1,8 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -828,7 +828,8 @@ if(BUILD_SHARED_LIBS)
-   # https://clang.llvm.org/docs/AddressSanitizer.html#usage.
+@@ -829,7 +829,8 @@ if(BUILD_SHARED_LIBS)
+   # https://clang.llvm.org/docs/MemorySanitizer.html#usage.
    if(NOT WIN32
       AND NOT APPLE
 -     AND NOT (CMAKE_C_COMPILER_ID MATCHES "Clang" AND SANITIZE))

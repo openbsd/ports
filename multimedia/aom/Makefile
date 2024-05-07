@@ -1,11 +1,11 @@
 COMMENT=	Alliance for Open Media AV1 video codec
 
-V=		3.8.2
+V=		3.9.0
 DISTNAME=	libaom-$V
 PKGNAME=	aom-$V
 CATEGORIES=	multimedia
 
-SHARED_LIBS=	aom	4.1
+SHARED_LIBS=	aom	4.2
 
 HOMEPAGE=	https://aomedia.org/
 SITES=		https://storage.googleapis.com/aom-releases/

@@ -3,7 +3,7 @@ Allow ARM CPU runtime detection code to build on OpenBSD.
 Index: aom_ports/aarch64_cpudetect.c
 --- aom_ports/aarch64_cpudetect.c.orig
 +++ aom_ports/aarch64_cpudetect.c
-@@ -15,7 +15,7 @@
+@@ -19,7 +19,7 @@
  #include <sys/sysctl.h>
  #endif
  
@@ -12,7 +12,7 @@ Index: aom_ports/aarch64_cpudetect.c
  
  static int arm_get_cpu_caps(void) {
    // This function should actually be a no-op. There is no way to adjust any of
-@@ -28,7 +28,7 @@ static int arm_get_cpu_caps(void) {
+@@ -32,7 +32,7 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
