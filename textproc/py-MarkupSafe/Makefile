@@ -1,24 +1,21 @@
-COMMENT=		implements an XML/HTML/XHTML markup safe string
+COMMENT=	implements an XML/HTML/XHTML markup safe string
 
-MODPY_EGG_VERSION=	2.1.3
-DISTNAME=		MarkupSafe-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		0
+MODPY_EGG_VERSION=	2.1.5
+DISTNAME=	MarkupSafe-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES=		textproc
+CATEGORIES=	textproc
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
+WANTLIB+=	${MODPY_WANTLIB} pthread
 
-MODULES=		lang/python
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-WANTLIB+=		${MODPY_WANTLIB} pthread
-
-MODPY_PYBUILD=		setuptools
-
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
