@@ -3,7 +3,7 @@ COMMENT=	Python documentation generator
 MODPY_EGG_VERSION=	7.3.7
 DISTNAME=	sphinx-${MODPY_EGG_VERSION}
 PKGNAME=	py-sphinx-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -37,11 +37,7 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR}
 
-# remove after py3.11
-RUN_DEPENDS+=	textproc/py-tomli${MODPY_FLAVOR}
-
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/gettext,-tools
+BUILD_DEPENDS=	devel/gettext,-tools
 TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
 		devel/py-html5lib${MODPY_FLAVOR} \
 		print/texlive/texmf,-full
