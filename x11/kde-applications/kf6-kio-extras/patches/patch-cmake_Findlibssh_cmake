@@ -1,0 +1,17 @@
+Index: cmake/Findlibssh.cmake
+--- cmake/Findlibssh.cmake.orig
++++ cmake/Findlibssh.cmake
+@@ -28,13 +28,6 @@ endmacro()
+ # config by default and fall back to manual lookup iff the config was not found.
+ # https://bugs.kde.org/show_bug.cgi?id=400291
+ # https://bugs.launchpad.net/ubuntu/+source/libssh/+bug/1800135
+-find_package(libssh ${libssh_FIND_VERSION} NO_MODULE QUIET)
+-if(libssh_FOUND)
+-  # Certain versions with config may not have the target, so make sure it's
+-  # defined.
+-  libssh_ensure_imported_target()
+-  return()
+-endif()
+ 
+ find_path(LIBSSH_INCLUDE_DIR
+   NAMES

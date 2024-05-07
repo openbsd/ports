@@ -1,0 +1,11 @@
+Index: smb/transfer.h
+--- smb/transfer.h.orig
++++ smb/transfer.h
+@@ -11,6 +11,7 @@
+ 
+ #include <array>
+ #include <condition_variable>
++#include <array>
+ #include <mutex>
+ 
+ constexpr off_t c_minSegmentSize = 64 * 1024; // minimal size on stack
