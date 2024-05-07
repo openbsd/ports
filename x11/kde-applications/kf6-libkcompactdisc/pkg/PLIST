@@ -1,0 +1,14 @@
+include/KCompactDisc6/
+include/KCompactDisc6/KCompactDisc
+include/KCompactDisc6/kcompactdisc.h
+include/KCompactDisc6/kcompactdisc_export.h
+include/KCompactDisc6/kcompactdisc_version.h
+lib/cmake/KCompactDisc6/
+lib/cmake/KCompactDisc6/KCompactDisc6Config.cmake
+lib/cmake/KCompactDisc6/KCompactDisc6ConfigVersion.cmake
+lib/cmake/KCompactDisc6/KCompactDisc6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KCompactDisc6/KCompactDisc6Targets.cmake
+@lib lib/libKCompactDisc6.so.${LIBKCompactDisc6_VERSION}
+share/kf6/
+share/kf6/mkspecs/
+share/kf6/mkspecs/qt_KCompactDisc.pri

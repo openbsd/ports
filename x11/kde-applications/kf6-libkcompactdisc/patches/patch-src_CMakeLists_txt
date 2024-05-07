@@ -1,0 +1,14 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -76,6 +76,10 @@ else()
+     set(USE_WMLIB true)
+ endif()
+ 
++if (PHONON_INCLUDE_DIR)
++    include_directories(${PHONON_INCLUDE_DIR})
++endif ()
++
+ target_sources(KCompactDisc PRIVATE
+     kcompactdisc.cpp kcompactdisc.h
+     kcompactdisc_p.cpp kcompactdisc_p.h

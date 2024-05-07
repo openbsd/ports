@@ -1,0 +1,40 @@
+fix OpenBSD includes and add stubs
+
+Index: src/wmlib/plat_openbsd.c
+--- src/wmlib/plat_openbsd.c.orig
++++ src/wmlib/plat_openbsd.c
+@@ -35,6 +35,7 @@
+ #include <sys/mount.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
++#include <unistd.h>
+ 
+ #include "include/wm_config.h"
+ #include "include/wm_cdrom.h"
+@@ -52,7 +53,7 @@
+ #include <sys/scsiio.h>
+ #include <scsi/scsi_all.h>
+ #include <scsi/cd.h>
+-#include <scsi/scsi_cd.h>
++#include <scsi/scsi_disk.h>
+ 
+ #include "include/wm_struct.h"
+ #include "include/wm_cdtext.h"
+@@ -475,5 +476,17 @@ gen_get_volume(struct wm_drive *d, int *left, int *rig
+ 
+   return (0);
+ } /* gen_get_volume() */
++
++int gen_scale_volume(int *left, int *right)
++{
++	// WIP
++	return 0;
++}
++
++int gen_unscale_volume(int *left, int *right)
++{
++	// WIP
++	return 0;
++}
+ 
+ #endif

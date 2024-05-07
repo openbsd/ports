@@ -1,0 +1,12 @@
+Index: src/wmlib/include/wm_config.h
+--- src/wmlib/include/wm_config.h.orig
++++ src/wmlib/include/wm_config.h
+@@ -117,7 +117,7 @@
+ #endif /* freebsd */
+ 
+ #if defined(__OpenBSD__)
+-#define DEFAULT_CD_DEVICE	find_cdrom()
++#define DEFAULT_CD_DEVICE	"/dev/rcd0c"
+ #endif
+ 
+ /******************************************************************
