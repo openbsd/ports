@@ -10,8 +10,7 @@ SHA256 (hackage/OneTuple-0.4.1.1_1.cabal) = Yy397RcghvufDibTV4vP/6P7bRNepajeF7ej
 SHA256 (hackage/QuickCheck-2.14.3.tar.gz) = XA8is2sooaj6EQs4GYGNPylJSjsN7brimfBkEjynBQE=
 SHA256 (hackage/SHA-1.6.4.4.tar.gz) = a9lQ32sRo5mLsUUth10toEPuQzhUWa/F8W1HHSUXi0Q=
 SHA256 (hackage/StateVar-1.2.2.tar.gz) = Xks52jlWVqWYJ7AoBQiq/ccDNXmLUOXW/VJZYCYlGCU=
-SHA256 (hackage/aeson-2.1.2.1.tar.gz) = XUBCuQPOGB7gI7v5CPN6P1XoIMXw3xAmg7h/lj41IsY=
-SHA256 (hackage/aeson-2.1.2.1_3.cabal) = W41ipgljqSXE0SOkbkKo4jWjIYhSLJ8Rn2SsIowmEqc=
+SHA256 (hackage/aeson-2.2.1.0.tar.gz) = kU7v0OgNEttcch2qLLq0J6zuOXlfElxUYMH+SM+aXX8=
 SHA256 (hackage/ansi-terminal-1.1.tar.gz) = Ul1iV7662XVfpSjOA+ZMakOfvBKaowehQGOJbkhxslM=
 SHA256 (hackage/ansi-terminal-types-1.1.tar.gz) = 8uUzPreNpfTdMw/KDIGlknbMFQxiVkfNIPV7fyl6XSU=
 SHA256 (hackage/asn1-encoding-0.9.6.tar.gz) = 2fjeq9O5COXPg8DYE8CNwBQ7PsHA2X9mDSz6AsHI2go=
@@ -69,8 +68,8 @@ SHA256 (hackage/crypton-x509-1.7.6_1.cabal) = xWdlenBbbWUh+d0t6Zm/Uw1hjsAPO5Od92
 SHA256 (hackage/crypton-x509-store-1.6.9.tar.gz) = PmIYrxLgOcwpHRl5LbBE3xZHtc8LvGC5CaAn51laJW8=
 SHA256 (hackage/crypton-x509-system-1.6.7.tar.gz) = pDYmHl9eg9hQgPV6VQnIIkyedablbQxDp9KWcFK2NMo=
 SHA256 (hackage/crypton-x509-validation-1.6.12.tar.gz) = DmC34jek/V5+bnIAAYx5RzFCku9jdRy7UYd4NuvmUPY=
-SHA256 (hackage/data-clist-0.1.2.3.tar.gz) = NWkQQGsWFYGf79h/9Q9CW8Qb2TV1DPqlZ3GPuKuFjtc=
-SHA256 (hackage/data-clist-0.1.2.3_1.cabal) = HiYlHIkhghyKHH4WiVVEmCLxus8D0FbMWchP0oY6D44=
+SHA256 (hackage/data-clist-0.2.tar.gz) = HDoevXHo9v4wr9s3l8SFLbf7C048FF/FPoKC60MDshI=
+SHA256 (hackage/data-clist-0.2_1.cabal) = R60I/6Ujtfzf0OmZ/1dBei5wtI4Op5uE1/i55tEVIiU=
 SHA256 (hackage/data-default-class-0.1.2.0.tar.gz) = TwG0I/AAw+BpqvUqNIVkplNnl/MUmLuFw9tL0tCXPlY=
 SHA256 (hackage/data-fix-0.3.2.tar.gz) = OhctO8BjnDJzRell+dkCPgmUJYFLKNzbe2D/ZtZiGcw=
 SHA256 (hackage/data-fix-0.3.2_5.cabal) = zX1v+LaKyjtR2BFocPyMzbxVeYlWLNPVyUHk8Le8WvE=
@@ -101,6 +100,8 @@ SHA256 (hackage/http-media-0.8.1.1_1.cabal) = 052BysPhg9ihZZ77JuO82niHIeBwWL4CSp
 SHA256 (hackage/indexed-traversable-0.1.3.tar.gz) = HTKSX7b3jjpSqEmyn8Q2DfUcl76VuorGQlF9P/AaU9k=
 SHA256 (hackage/indexed-traversable-instances-0.1.1.2.tar.gz) = D5tOiVzMgZ900V+RPJNhPMdMq3TbsF1+MFqjh72+N0o=
 SHA256 (hackage/indexed-traversable-instances-0.1.1.2_2.cabal) = ANXj4UnivuD3pUfgCTKUwwbUJ25zphmr59jmn3zgPHs=
+SHA256 (hackage/integer-conversion-0.1.0.1.tar.gz) = IKxwzxy2VFi7osViwgmokw5FvbiYhhgtZE0KRX/Ebzk=
+SHA256 (hackage/integer-conversion-0.1.0.1_1.cabal) = DleoJjUyPwFbXWwkK8+77qqYVP6cgFjlcFIlTbskuxQ=
 SHA256 (hackage/integer-logarithms-1.0.3.1.tar.gz) = mwqfn6tgmxXNAVhlch+wX3RKG8d66S/RM4ct5Si76n8=
 SHA256 (hackage/integer-logarithms-1.0.3.1_5.cabal) = TQ38M05k/1e7GghxevpKSn8o5M3EZhXdKHvjHvY+wA0=
 SHA256 (hackage/matterhorn-90000.0.0.tar.gz) = V4OPhcZ0Do+xfG6WxxbGV5MeFjVGZY4QQ6c81gMchm0=
@@ -165,10 +166,12 @@ SHA256 (hackage/strict-0.5.tar.gz) = P08Jld7C1SDQ4yFUL3FBLawCNlj9q2A9sENk11JpoP0
 SHA256 (hackage/strict-0.5_1.cabal) = vVfXs2VZUd+qfR4TdNc1Lf6D+CqcmDCb86ZYfvjL2H0=
 SHA256 (hackage/tagged-0.8.8.tar.gz) = oIP6eDVRYgPBaEM6HI38ApCpSwX+2rVmrQZA/JE3pqc=
 SHA256 (hackage/temporary-1.3.tar.gz) = jEQpk2lLX/yoI86GSvlb0oQftSZO5RHGHPSMxx2HmJA=
+SHA256 (hackage/text-iso8601-0.1.tar.gz) = 9Y56RvlR8fE9KSngovhPbbeJTVWmQRaarzAK6praX88=
+SHA256 (hackage/text-iso8601-0.1_1.cabal) = rIbyUAynUds8DeAp3X54Jr73Nm1Z3ACFsA/GlcQ7n3Y=
 SHA256 (hackage/text-short-0.1.5.tar.gz) = o17GzeKtoITBoFDcWIW+WrAfhRuT10TPD6y8HBgALdo=
 SHA256 (hackage/text-short-0.1.5_3.cabal) = nHPJyRgspp7pLON1j1FbHAeM0WfYgszIxG+S9oxl4ZA=
 SHA256 (hackage/text-zipper-0.13.tar.gz) = BlIcx8Q1+Oha6z7T8rhyAAxSCH1zUY3jHmW9ygcqmKk=
-SHA256 (hackage/th-abstraction-0.5.0.0.tar.gz) = gljcOrcYivWCbiRnAytSqTGjr02Kk9SglCEOJAqKmWQ=
+SHA256 (hackage/th-abstraction-0.7.0.0.tar.gz) = soVMYS8vpK36Hsu0CJoiEf2csyEK7Be6SkVa5IayJyE=
 SHA256 (hackage/th-compat-0.1.4.tar.gz) = 2Pl6wUq0e2uKew/bT/lUJjIuxWut0BZSrBXaSkTUurg=
 SHA256 (hackage/th-compat-0.1.4_4.cabal) = 9fLGeezBwbg9LWjbbMVk5ceNU0JeaeG542eEgg4SLTc=
 SHA256 (hackage/these-1.2.tar.gz) = qO1xdLf3kHZDYPSKq3L+o4KmCT7Tace8aIH64aus1Lg=
@@ -229,8 +232,7 @@ SIZE (hackage/OneTuple-0.4.1.1_1.cabal) = 2575
 SIZE (hackage/QuickCheck-2.14.3.tar.gz) = 76849
 SIZE (hackage/SHA-1.6.4.4.tar.gz) = 2715144
 SIZE (hackage/StateVar-1.2.2.tar.gz) = 5048
-SIZE (hackage/aeson-2.1.2.1.tar.gz) = 335908
-SIZE (hackage/aeson-2.1.2.1_3.cabal) = 6359
+SIZE (hackage/aeson-2.2.1.0.tar.gz) = 341038
 SIZE (hackage/ansi-terminal-1.1.tar.gz) = 34897
 SIZE (hackage/ansi-terminal-types-1.1.tar.gz) = 4746
 SIZE (hackage/asn1-encoding-0.9.6.tar.gz) = 17343
@@ -288,8 +290,8 @@ SIZE (hackage/crypton-x509-1.7.6_1.cabal) = 2339
 SIZE (hackage/crypton-x509-store-1.6.9.tar.gz) = 12735
 SIZE (hackage/crypton-x509-system-1.6.7.tar.gz) = 3496
 SIZE (hackage/crypton-x509-validation-1.6.12.tar.gz) = 19573
-SIZE (hackage/data-clist-0.1.2.3.tar.gz) = 4940
-SIZE (hackage/data-clist-0.1.2.3_1.cabal) = 983
+SIZE (hackage/data-clist-0.2.tar.gz) = 5475
+SIZE (hackage/data-clist-0.2_1.cabal) = 1283
 SIZE (hackage/data-default-class-0.1.2.0.tar.gz) = 2522
 SIZE (hackage/data-fix-0.3.2.tar.gz) = 5842
 SIZE (hackage/data-fix-0.3.2_5.cabal) = 1734
@@ -320,6 +322,8 @@ SIZE (hackage/http-media-0.8.1.1_1.cabal) = 4300
 SIZE (hackage/indexed-traversable-0.1.3.tar.gz) = 9824
 SIZE (hackage/indexed-traversable-instances-0.1.1.2.tar.gz) = 3769
 SIZE (hackage/indexed-traversable-instances-0.1.1.2_2.cabal) = 2550
+SIZE (hackage/integer-conversion-0.1.0.1.tar.gz) = 6166
+SIZE (hackage/integer-conversion-0.1.0.1_1.cabal) = 2250
 SIZE (hackage/integer-logarithms-1.0.3.1.tar.gz) = 9023
 SIZE (hackage/integer-logarithms-1.0.3.1_5.cabal) = 3278
 SIZE (hackage/matterhorn-90000.0.0.tar.gz) = 1057207
@@ -384,10 +388,12 @@ SIZE (hackage/strict-0.5.tar.gz) = 12564
 SIZE (hackage/strict-0.5_1.cabal) = 4120
 SIZE (hackage/tagged-0.8.8.tar.gz) = 10094
 SIZE (hackage/temporary-1.3.tar.gz) = 5686
+SIZE (hackage/text-iso8601-0.1.tar.gz) = 9578
+SIZE (hackage/text-iso8601-0.1_1.cabal) = 2407
 SIZE (hackage/text-short-0.1.5.tar.gz) = 25113
 SIZE (hackage/text-short-0.1.5_3.cabal) = 3216
 SIZE (hackage/text-zipper-0.13.tar.gz) = 9698
-SIZE (hackage/th-abstraction-0.5.0.0.tar.gz) = 40093
+SIZE (hackage/th-abstraction-0.7.0.0.tar.gz) = 49904
 SIZE (hackage/th-compat-0.1.4.tar.gz) = 14838
 SIZE (hackage/th-compat-0.1.4_4.cabal) = 3224
 SIZE (hackage/these-1.2.tar.gz) = 10606

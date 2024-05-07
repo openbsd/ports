@@ -2,7 +2,7 @@ COMMENT =		terminal client for the Mattermost chat system
 
 MODCABAL_STEM =		matterhorn
 MODCABAL_VERSION =	90000.0.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -25,6 +25,7 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}
 WRKSRC =		${WRKDIR}/${DISTNAME}
 
+MODCABAL_BUILD_ARGS	= --allow-newer
 MODCABAL_MANIFEST	= \
 	Cabal	3.10.2.1	1	\
 	Cabal-syntax	3.10.2.0	1	\
@@ -34,7 +35,7 @@ MODCABAL_MANIFEST	= \
 	QuickCheck	2.14.3	0	\
 	SHA	1.6.4.4	0	\
 	StateVar	1.2.2	0	\
-	aeson	2.1.2.1	3	\
+	aeson	2.2.1.0	0	\
 	ansi-terminal	1.1	0	\
 	ansi-terminal-types	1.1	0	\
 	asn1-encoding	0.9.6	2	\
@@ -78,7 +79,7 @@ MODCABAL_MANIFEST	= \
 	crypton-x509-store	1.6.9	0	\
 	crypton-x509-system	1.6.7	0	\
 	crypton-x509-validation	1.6.12	0	\
-	data-clist	0.1.2.3	1	\
+	data-clist	0.2	1	\
 	data-default-class	0.1.2.0	0	\
 	data-fix	0.3.2	5	\
 	directory	1.3.8.3	0	\
@@ -99,6 +100,7 @@ MODCABAL_MANIFEST	= \
 	http-media	0.8.1.1	1	\
 	indexed-traversable	0.1.3	0	\
 	indexed-traversable-instances	0.1.1.2	2	\
+	integer-conversion	0.1.0.1	1	\
 	integer-logarithms	1.0.3.1	5	\
 	mattermost-api	90000.0.0	0	\
 	megaparsec	9.6.1	0	\
@@ -141,9 +143,10 @@ MODCABAL_MANIFEST	= \
 	strict	0.5	1	\
 	tagged	0.8.8	0	\
 	temporary	1.3	0	\
+	text-iso8601	0.1	1	\
 	text-short	0.1.5	3	\
 	text-zipper	0.13	0	\
-	th-abstraction	0.5.0.0	0	\
+	th-abstraction	0.7.0.0	0	\
 	th-compat	0.1.4	4	\
 	these	1.2	1	\
 	time-compat	1.9.6.1	6	\
