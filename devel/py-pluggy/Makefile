@@ -1,10 +1,9 @@
 COMMENT=	plugin and hook calling mechanisms for Python
 
-MODPY_EGG_VERSION=	1.3.0
+MODPY_EGG_VERSION=	1.5.0
 DISTNAME=	pluggy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

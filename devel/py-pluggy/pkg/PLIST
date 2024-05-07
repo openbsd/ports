@@ -22,10 +22,13 @@ lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_tracing.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_tracing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/_callers.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_hooks.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_manager.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_result.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_tracing.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_version.py
+lib/python${MODPY_VERSION}/site-packages/pluggy/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/py.typed
