@@ -3,11 +3,11 @@ Fix for 64-bit time_t on 32-bit archs
 Index: scan_engine.cc
 --- scan_engine.cc.orig
 +++ scan_engine.cc
-@@ -2009,7 +2009,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
+@@ -2061,7 +2061,7 @@ void ultrascan_host_probe_update(UltraScanInfo *USI, H
      struct timeval tv;
  
      gettimeofday(&tv, NULL);
--    log_write(LOG_STDOUT, "%s called for machine %s state %s -> %s (trynum %d time: %ld)\n", __func__, hss->target->targetipstr(), readhoststate(hss->target->flags), readhoststate(newstate), probe->tryno, (long) TIMEVAL_SUBTRACT(tv, probe->sent));
+-    log_write(LOG_STDOUT, "%s called for machine %s state %s -> %s (trynum %d time: %ld)\n", __func__, hss->target->targetipstr(), readhoststate(hss->target->flags), readhoststate(newstate), probe->get_tryno(), (long) TIMEVAL_SUBTRACT(tv, probe->sent));
 +    log_write(LOG_STDOUT, "%s called for machine %s state %s -> %s (trynum %d time: %lld)\n", __func__, hss->target->targetipstr(), readhoststate(hss->target->flags), readhoststate(newstate), probe->tryno, (time_t) TIMEVAL_SUBTRACT(tv, probe->sent));
    }
  
