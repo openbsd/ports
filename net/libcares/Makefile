@@ -5,6 +5,7 @@ DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
 SITES=		${HOMEPAGE}download/
+REVISION=	0
 
 SHARED_LIBS +=  cares                3.6      # 8.1.6
 

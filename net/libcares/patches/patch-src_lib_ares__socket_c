@@ -1,0 +1,20 @@
+Revert the change from https://github.com/c-ares/c-ares/pull/659
+because it breaks node (https://github.com/nodejs/node/issues/52439)
+and likely other use cases as well.
+
+Index: src/lib/ares__socket.c
+--- src/lib/ares__socket.c.orig
++++ src/lib/ares__socket.c
+@@ -253,12 +253,6 @@ ares_status_t ares__open_connection(ares_channel_t    
+   struct server_connection *conn;
+   ares__llist_node_t       *node;
+   int                       type = is_tcp ? SOCK_STREAM : SOCK_DGRAM;
+-#ifdef __OpenBSD__
+-  if ((is_tcp && server->tcp_port == 53) ||
+-      (!is_tcp && server->udp_port == 53)) {
+-    type |= SOCK_DNS;
+-  }
+-#endif
+ 
+   switch (server->addr.family) {
+     case AF_INET:
