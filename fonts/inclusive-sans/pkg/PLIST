@@ -1,0 +1,4 @@
+share/fonts/
+@fontdir share/fonts/inclusive-sans/
+share/fonts/inclusive-sans/InclusiveSans-Italic.otf
+share/fonts/inclusive-sans/InclusiveSans-Regular.otf
