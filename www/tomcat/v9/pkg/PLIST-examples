@@ -1881,6 +1881,10 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/EntityTag.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpHeaderParser.HeaderDataSource.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpHeaderParser.HeaderParsePosition.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpHeaderParser.HeaderParseStatus.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpHeaderParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
