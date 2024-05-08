@@ -75,11 +75,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sv.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-zh_CN.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-failure.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-info.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-success.png
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/apprise/apprise-warning.png
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow.svg
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow_gray.svg
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow_green.svg
