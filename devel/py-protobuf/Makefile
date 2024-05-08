@@ -7,6 +7,10 @@ V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
 TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
 
+# C11
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 DISTNAME=		protobuf-${MODPY_EGG_VERSION}
 PKGNAME=		py-protobuf-${MODPY_EGG_VERSION}
 REVISION=		0
