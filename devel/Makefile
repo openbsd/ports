@@ -411,6 +411,7 @@
      SUBDIR += luaposix
      SUBDIR += luaposix,lua52
      SUBDIR += luaposix,lua53
+     SUBDIR += luaposix,lua54
      SUBDIR += luaprofiler
      SUBDIR += luaprofiler,lua52
      SUBDIR += luarexlib
