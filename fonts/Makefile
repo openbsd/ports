@@ -41,6 +41,7 @@
      SUBDIR += hanazono
      SUBDIR += hermit-font
      SUBDIR += ibm-plex
+     SUBDIR += inclusive-sans
      SUBDIR += inconsolata-font
      SUBDIR += inconsolata-new
      SUBDIR += intel-one-mono
