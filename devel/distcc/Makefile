@@ -2,12 +2,10 @@ COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
 COMMENT-server =	distcc server
 
-VERSION =		3.3.5
+VERSION =		3.4
 DISTNAME =		distcc-${VERSION}
 EPOCH =			0
 CATEGORIES =		devel net
-
-REVISION =		6
 
 HOMEPAGE =		https://distcc.github.io/
 
@@ -37,13 +35,12 @@ WANTLIB-server =	${WANTLIB}
 LIB_DEPENDS-server =	${LIB_DEPENDS}
 
 LIB_DEPENDS-gtk =	${LIB_DEPENDS} \
-			x11/gtk+2
+			x11/gtk+3
 RUN_DEPENDS-gtk =	devel/desktop-file-utils
-WANTLIB-gtk +=		${WANTLIB} X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-gtk +=		Xinerama Xrandr Xrender atk-1.0 cairo fontconfig freetype
-WANTLIB-gtk +=		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-gtk +=		gtk-x11-2.0 harfbuzz intl pango-1.0 pangocairo-1.0
-WANTLIB-gtk +=		pangoft2-1.0 z
+WANTLIB-gtk +=		${WANTLIB}
+WANTLIB-gtk +=		atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB-gtk +=		glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
+WANTLIB-gtk +=		pangocairo-1.0
 
 USE_GMAKE =		Yes
 

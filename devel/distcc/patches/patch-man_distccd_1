@@ -1,7 +1,8 @@
 Use _distcc and don't advocate misusing the 'nobody' account.
 
---- man/distccd.1.orig	Thu Dec 24 13:49:03 2015
-+++ man/distccd.1	Thu Dec 24 13:49:16 2015
+Index: man/distccd.1
+--- man/distccd.1.orig
++++ man/distccd.1
 @@ -33,7 +33,7 @@ distcc may be started either by root or any other user
  root, it gives away privileges and changes to the user specified by
  the 
@@ -11,3 +12,12 @@ Use _distcc and don't advocate misusing the 'nobody' account.
  .PP
  distccd does not have a configuration file; it's behaviour is
  controlled only by command-line options and requests from
+@@ -215,7 +215,7 @@ ssh connection.
+ .TP 
+ .B --enable-tcp-insecure
+ By default (since Distcc 3.3) distcc will only execute binaries
+-that are masqueraded to distcc in /usr/lib/distcc. This turns
++that are masqueraded to distcc in /usr/local/lib/distcc. This turns
+ that off, and opens distcc up to executing arbitrary code. This
+ feature is mainly for distcc's test suite. See MASQUERADING of
+ .BR distcc (1).
