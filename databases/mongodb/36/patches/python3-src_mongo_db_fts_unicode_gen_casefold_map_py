@@ -1,0 +1,23 @@
+sync actual changes from newer mongodb
+
+Index: src/mongo/db/fts/unicode/gen_casefold_map.py
+--- src/mongo/db/fts/unicode/gen_casefold_map.py.orig
++++ src/mongo/db/fts/unicode/gen_casefold_map.py
+@@ -13,7 +13,7 @@ def generate(unicode_casefold_file, target):
+     The case folding function contains a switch statement with cases for every
+     Unicode codepoint that has a case folding mapping.
+     """
+-    out = open(target, "w")
++    out = open(target, "w", encoding='utf-8')
+ 
+     out.write(getCopyrightNotice())
+     out.write(include("mongo/db/fts/unicode/codepoints.h"))
+@@ -22,7 +22,7 @@ def generate(unicode_casefold_file, target):
+ 
+     case_mappings = {}
+ 
+-    cf_file = open(unicode_casefold_file, 'rU')
++    cf_file = open(unicode_casefold_file, 'r', encoding='utf-8')
+ 
+     for line in cf_file:
+         # Filter out blank lines and lines that start with #

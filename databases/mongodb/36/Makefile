@@ -4,10 +4,9 @@ PORTROACH =	limitw:^3\.6\.
 #
 # If removing this version, we'll either need to add a "one major version"
 # upgrade instead (3.6->4.0->4.2->4.4) or provide some docs on how to
-# dump/restore using mongodump from databases/mongo-tools (which was added
-# to ports between 7.1 and 7.2).
+# dump/restore using mongodump from databases/mongo-tools.
 V =		3.6.23
-REVISION =	3
+REVISION =	4
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt
