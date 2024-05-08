@@ -3,7 +3,7 @@ COMMENT	=		library implementing QUIC and HTTP/3
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-V =			0.20.1
+V =			0.21.0
 PKG_NAME =		quiche-${V}
 CATEGORIES =		net
 HOMEPAGE =		https://github.com/cloudflare/quiche
