@@ -1,7 +1,7 @@
 Index: clojure
 --- clojure.orig
 +++ clojure
-@@ -178,7 +178,7 @@ done
+@@ -174,7 +174,7 @@ done
  
  # Find java executable
  set +e
