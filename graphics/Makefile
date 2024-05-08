@@ -237,7 +237,6 @@
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += p5-Sane
-     SUBDIR += pdf2djvu
      SUBDIR += pdfsandwich
      SUBDIR += pecl-imagick,php74
      SUBDIR += pecl-imagick,php80
