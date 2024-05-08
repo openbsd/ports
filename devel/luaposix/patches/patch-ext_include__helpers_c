@@ -1,0 +1,14 @@
+avoid lots of warnings from clang
+
+Index: ext/include/_helpers.c
+--- ext/include/_helpers.c.orig
++++ ext/include/_helpers.c
+@@ -90,7 +90,7 @@
+ 
+ /* LPOSIX_STMT_BEG/END are used to create macros that expand to a
+    single compound statement in a portable way. */
+-#if defined __GNUC__ && !defined __STRICT_ANSI__ && !defined __cplusplus
++#if 0
+ #  define LPOSIX_STMT_BEG	(void)(
+ #  define LPOSIX_STMT_END	)
+ #else

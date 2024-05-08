@@ -1,58 +1,41 @@
-lib/lua/${MODLUA_VERSION}/posix.a
-lib/lua/${MODLUA_VERSION}/posix.so
+lib/lua/${MODLUA_VERSION}/posix/
+@so lib/lua/${MODLUA_VERSION}/posix/ctype.so
+@so lib/lua/${MODLUA_VERSION}/posix/dirent.so
+@so lib/lua/${MODLUA_VERSION}/posix/errno.so
+@so lib/lua/${MODLUA_VERSION}/posix/fcntl.so
+@so lib/lua/${MODLUA_VERSION}/posix/fnmatch.so
+@so lib/lua/${MODLUA_VERSION}/posix/glob.so
+@so lib/lua/${MODLUA_VERSION}/posix/grp.so
+@so lib/lua/${MODLUA_VERSION}/posix/libgen.so
+@so lib/lua/${MODLUA_VERSION}/posix/poll.so
+@so lib/lua/${MODLUA_VERSION}/posix/pwd.so
+@so lib/lua/${MODLUA_VERSION}/posix/sched.so
+@so lib/lua/${MODLUA_VERSION}/posix/signal.so
+@so lib/lua/${MODLUA_VERSION}/posix/stdio.so
+@so lib/lua/${MODLUA_VERSION}/posix/stdlib.so
+lib/lua/${MODLUA_VERSION}/posix/sys/
+@so lib/lua/${MODLUA_VERSION}/posix/sys/msg.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/resource.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/socket.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/stat.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/statvfs.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/time.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/times.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/utsname.so
+@so lib/lua/${MODLUA_VERSION}/posix/sys/wait.so
+@so lib/lua/${MODLUA_VERSION}/posix/syslog.so
+@so lib/lua/${MODLUA_VERSION}/posix/termio.so
+@so lib/lua/${MODLUA_VERSION}/posix/time.so
+@so lib/lua/${MODLUA_VERSION}/posix/unistd.so
+@so lib/lua/${MODLUA_VERSION}/posix/utime.so
 share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/examples/
-share/doc/${FULLPKGNAME}/examples/dir.lua.html
-share/doc/${FULLPKGNAME}/examples/fork.lua.html
-share/doc/${FULLPKGNAME}/examples/fork2.lua.html
-share/doc/${FULLPKGNAME}/examples/getopt.lua.html
-share/doc/${FULLPKGNAME}/examples/glob.lua.html
-share/doc/${FULLPKGNAME}/examples/limit.lua.html
-share/doc/${FULLPKGNAME}/examples/lock.lua.html
-share/doc/${FULLPKGNAME}/examples/netlink-uevent.lua.html
-share/doc/${FULLPKGNAME}/examples/ping.lua.html
-share/doc/${FULLPKGNAME}/examples/poll.lua.html
-share/doc/${FULLPKGNAME}/examples/signal.lua.html
-share/doc/${FULLPKGNAME}/examples/socket.lua.html
-share/doc/${FULLPKGNAME}/examples/termios.lua.html
-share/doc/${FULLPKGNAME}/examples/tree.lua.html
-share/doc/${FULLPKGNAME}/index.html
-share/doc/${FULLPKGNAME}/ldoc.css
-share/doc/${FULLPKGNAME}/modules/
-share/doc/${FULLPKGNAME}/modules/posix.ctype.html
-share/doc/${FULLPKGNAME}/modules/posix.dirent.html
-share/doc/${FULLPKGNAME}/modules/posix.errno.html
-share/doc/${FULLPKGNAME}/modules/posix.fcntl.html
-share/doc/${FULLPKGNAME}/modules/posix.fnmatch.html
-share/doc/${FULLPKGNAME}/modules/posix.getopt.html
-share/doc/${FULLPKGNAME}/modules/posix.glob.html
-share/doc/${FULLPKGNAME}/modules/posix.grp.html
-share/doc/${FULLPKGNAME}/modules/posix.html
-share/doc/${FULLPKGNAME}/modules/posix.libgen.html
-share/doc/${FULLPKGNAME}/modules/posix.poll.html
-share/doc/${FULLPKGNAME}/modules/posix.pwd.html
-share/doc/${FULLPKGNAME}/modules/posix.sched.html
-share/doc/${FULLPKGNAME}/modules/posix.signal.html
-share/doc/${FULLPKGNAME}/modules/posix.stdio.html
-share/doc/${FULLPKGNAME}/modules/posix.stdlib.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.msg.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.resource.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.socket.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.stat.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.statvfs.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.time.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.times.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.utsname.html
-share/doc/${FULLPKGNAME}/modules/posix.sys.wait.html
-share/doc/${FULLPKGNAME}/modules/posix.syslog.html
-share/doc/${FULLPKGNAME}/modules/posix.termio.html
-share/doc/${FULLPKGNAME}/modules/posix.time.html
-share/doc/${FULLPKGNAME}/modules/posix.unistd.html
-share/doc/${FULLPKGNAME}/modules/posix.utime.html
 share/lua/${MODLUA_VERSION}/posix/
-share/lua/${MODLUA_VERSION}/posix/_argcheck.lua
+share/lua/${MODLUA_VERSION}/posix/_base.lua
+share/lua/${MODLUA_VERSION}/posix/_bitwise.lua
+share/lua/${MODLUA_VERSION}/posix/_strict.lua
 share/lua/${MODLUA_VERSION}/posix/compat.lua
 share/lua/${MODLUA_VERSION}/posix/deprecated.lua
 share/lua/${MODLUA_VERSION}/posix/init.lua
 share/lua/${MODLUA_VERSION}/posix/sys.lua
 share/lua/${MODLUA_VERSION}/posix/util.lua
+share/lua/${MODLUA_VERSION}/posix/version.lua
