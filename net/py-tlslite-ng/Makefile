@@ -3,7 +3,7 @@ COMMENT =		Python SSL and TLS library
 MODPY_EGG_VERSION =	0.8.0-beta1
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-beta/beta/}
-REVISION =		1
+REVISION =		2
 EPOCH =			0
 
 PLIST_VERSION =		${MODPY_EGG_VERSION:S/-/_/}
@@ -29,7 +29,8 @@ MODULES =		lang/python
 
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR} \
+RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
+			security/py-M2Crypto${MODPY_FLAVOR} \
 			security/py-ecdsa${MODPY_FLAVOR}
 
 # A few key exchange and x509 tests fail due to missing Ed25519/Ed448 support
