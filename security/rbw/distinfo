@@ -30,7 +30,6 @@ SHA256 (cargo/calloop-wayland-source-0.2.0.tar.gz) = Dw6puUdsf62ChBqNuzgOLq5IDCG
 SHA256 (cargo/cbc-0.1.2.tar.gz) = JrUqlUOuM48nm5awuf7ZyAk3RGhQQ3OQec6FzVjyiaY=
 SHA256 (cargo/cc-1.0.95.tar.gz) = 0ypyW8FZr5fD5imHO7n4j7jPikhnF1923Jh4FeoHyDs=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
-SHA256 (cargo/cfg_aliases-0.1.1.tar.gz) = /RbEcZM5xFMENdOOURkEQ40HzOeVCvo3GKhKw2wQ6J4=
 SHA256 (cargo/cipher-0.4.4.tar.gz) = dz87mvZER9LOmFAzDEc1FQFKojXmp4OwLbgf855KPa0=
 SHA256 (cargo/clap-4.5.4.tar.gz) = kLwGameSN4KqhRXbrqFpRsW8xa3b1mi7gK9ojlPlSKA=
 SHA256 (cargo/clap_builder-4.5.2.tar.gz) = rhKeLnZq4OwDSE5gmVQRnxI8wf5lAzfhVdA7Ai8k97Q=
@@ -109,7 +108,6 @@ SHA256 (cargo/memmap2-0.9.4.tar.gz) = /nUUIuSoyqQX4Tw+pmRSIV19Y+GeYE9JgEYSEvOuEy
 SHA256 (cargo/mime-0.3.17.tar.gz) = aHe7UUCB7ip/9e+d4ygfFKTdS86sTAk4gHSmtd+KE5o=
 SHA256 (cargo/miniz_oxide-0.7.2.tar.gz) = nYEfPhXyhWi+NAfI5/22UUwc2jyzBoPxW2oaHcTqFKc=
 SHA256 (cargo/mio-0.8.11.tar.gz) = pKZQVDygapJOizcdsnOydWaF+q4w+Eh9obVlBaj3iww=
-SHA256 (cargo/nix-0.28.0.tar.gz) = qyFWxPzi+N9sSZzBx2PkOUt0glJb8qlwHJ150hX1GeQ=
 SHA256 (cargo/num-bigint-dig-0.8.4.tar.gz) = 3IQZWCDykcdpcwTzy9rdHLcZnA78kX/16v1xIlwTYVE=
 SHA256 (cargo/num-integer-0.1.46.tar.gz) = eWlmH9KVilywluVsjhrQRErCu80AYb0oZgSFpEh5hY8=
 SHA256 (cargo/num-iter-0.1.44.tar.gz) = 2GnAHMDEVShBY/0AkvH5ODU4XMq1qYoNzEl7L4vwVak=
@@ -155,7 +153,7 @@ SHA256 (cargo/rmp-0.8.14.tar.gz) = Io7XwW+jl4LDs0aOl0rsJ5XpCJFTzQjuLprvs2EzNMQ=
 SHA256 (cargo/rmpv-1.0.2.tar.gz) = 5UAoLxF1GVbIK8VSmn+3G4cbmY+/nPBsJBmyLhtDUN8=
 SHA256 (cargo/rsa-0.9.6.tar.gz) = XQ5RJPyzDnan55v+5oOidG24N4S4Yon2JRtUt5UKDfw=
 SHA256 (cargo/rustc-demangle-0.1.23.tar.gz) = 1ia7na534oIZk3rwRcJXwov9P2kzPFElU1B/X5eYy3Y=
-SHA256 (cargo/rustix-0.38.32.tar.gz) = ZeBIYeZfIXduZ4iL++pEKzZCvqoBOP2x3XqEpS3/24k=
+SHA256 (cargo/rustix-0.38.33.tar.gz) = 48xyhYBU/P9tfeoy3yrq7mp8JCJzZtfqQpqtovJrFq0=
 SHA256 (cargo/rustls-0.22.4.tar.gz) = v073NyGse815srMV2nd52PwJcYxrPS0bLZSFDrjBhDI=
 SHA256 (cargo/rustls-native-certs-0.7.0.tar.gz) = jx+4XvqTbELG1fwo0mKbtR5LL0uKUhHil9WZzFoJN5I=
 SHA256 (cargo/rustls-pemfile-2.1.2.tar.gz) = KZk6JWhneOuI1BiXQs1xPJvOlDvFQlGjNQncY8us9z0=
@@ -277,7 +275,7 @@ SHA256 (cargo/x11rb-protocol-0.13.0.tar.gz) = 5j5xxLi9n/7CyWMXOk3Ey96e6Wlh1Py0Qp
 SHA256 (cargo/xcursor-0.3.5.tar.gz) = agzNe0pTRe380MNTVxik6f93mP/FNrtbWg4m/4RzKRE=
 SHA256 (cargo/xkeysym-0.2.0.tar.gz) = BUqOaLdiULJT9nHRJoy38a4InsNeGVsu+ypOmoNtBiE=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (rbw-1.10.0.tar.gz) = 0MKeW25/+zW2G54XdbMdqOiPE23ZNFHM0keAVxlfTRU=
+SHA256 (rbw-1.10.1.tar.gz) = BkK8ewtopFcAl7o2iEWV6y4pYiVlwkVXuZ1Zxd3xu4c=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -310,7 +308,6 @@ SIZE (cargo/calloop-wayland-source-0.2.0.tar.gz) = 11304
 SIZE (cargo/cbc-0.1.2.tar.gz) = 23501
 SIZE (cargo/cc-1.0.95.tar.gz) = 76485
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
-SIZE (cargo/cfg_aliases-0.1.1.tar.gz) = 6009
 SIZE (cargo/cipher-0.4.4.tar.gz) = 19073
 SIZE (cargo/clap-4.5.4.tar.gz) = 55401
 SIZE (cargo/clap_builder-4.5.2.tar.gz) = 163566
@@ -389,7 +386,6 @@ SIZE (cargo/memmap2-0.9.4.tar.gz) = 32752
 SIZE (cargo/mime-0.3.17.tar.gz) = 15712
 SIZE (cargo/miniz_oxide-0.7.2.tar.gz) = 55731
 SIZE (cargo/mio-0.8.11.tar.gz) = 102983
-SIZE (cargo/nix-0.28.0.tar.gz) = 311086
 SIZE (cargo/num-bigint-dig-0.8.4.tar.gz) = 123825
 SIZE (cargo/num-integer-0.1.46.tar.gz) = 22331
 SIZE (cargo/num-iter-0.1.44.tar.gz) = 10249
@@ -435,7 +431,7 @@ SIZE (cargo/rmp-0.8.14.tar.gz) = 29687
 SIZE (cargo/rmpv-1.0.2.tar.gz) = 28359
 SIZE (cargo/rsa-0.9.6.tar.gz) = 80048
 SIZE (cargo/rustc-demangle-0.1.23.tar.gz) = 28970
-SIZE (cargo/rustix-0.38.32.tar.gz) = 376999
+SIZE (cargo/rustix-0.38.33.tar.gz) = 364475
 SIZE (cargo/rustls-0.22.4.tar.gz) = 333681
 SIZE (cargo/rustls-native-certs-0.7.0.tar.gz) = 25071
 SIZE (cargo/rustls-pemfile-2.1.2.tar.gz) = 25928
@@ -557,4 +553,4 @@ SIZE (cargo/x11rb-protocol-0.13.0.tar.gz) = 507838
 SIZE (cargo/xcursor-0.3.5.tar.gz) = 6256
 SIZE (cargo/xkeysym-0.2.0.tar.gz) = 101431
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (rbw-1.10.0.tar.gz) = 103940
+SIZE (rbw-1.10.1.tar.gz) = 104415
