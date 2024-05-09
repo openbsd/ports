@@ -228,24 +228,25 @@ MODCARGO_post-patch += \
 MODCARGO_configure = \
 	mkdir -p ${WRKDIR}/.cargo; \
 	\
-	echo "[build]" >${WRKDIR}/.cargo/config; \
-	echo "rustc = '${MODRUST_RUSTC_BIN}'" >>${WRKDIR}/.cargo/config; \
-	echo "rustdoc = '${MODRUST_RUSTDOC_BIN}'" >>${WRKDIR}/.cargo/config; \
+	echo "[build]" >${WRKDIR}/.cargo/config.toml; \
+	echo "rustc = '${MODRUST_RUSTC_BIN}'" >>${WRKDIR}/.cargo/config.toml; \
+	echo "rustdoc = '${MODRUST_RUSTDOC_BIN}'" >>${WRKDIR}/.cargo/config.toml; \
 	\
-	echo "[net]" >>${WRKDIR}/.cargo/config; \
-	echo "offline = true" >>${WRKDIR}/.cargo/config; \
+	echo "[net]" >>${WRKDIR}/.cargo/config.toml; \
+	echo "offline = true" >>${WRKDIR}/.cargo/config.toml; \
 	\
-	echo "[term]" >>${WRKDIR}/.cargo/config; \
-	echo "verbose = true" >>${WRKDIR}/.cargo/config; \
-	echo "color = 'never'" >>${WRKDIR}/.cargo/config; \
-	echo "progress.when = 'never'" >>${WRKDIR}/.cargo/config; \
+	echo "[term]" >>${WRKDIR}/.cargo/config.toml; \
+	echo "verbose = true" >>${WRKDIR}/.cargo/config.toml; \
+	echo "color = 'never'" >>${WRKDIR}/.cargo/config.toml; \
+	echo "progress.when = 'never'" >>${WRKDIR}/.cargo/config.toml; \
 	\
-	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config; \
+	echo "[source.modcargo]" >>${WRKDIR}/.cargo/config.toml; \
 	echo "directory = '${MODCARGO_VENDOR_DIR}'" \
-		>>${WRKDIR}/.cargo/config; \
+		>>${WRKDIR}/.cargo/config.toml; \
 	\
-	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config; \
-	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config;
+	echo "[source.crates-io]" >>${WRKDIR}/.cargo/config.toml; \
+	echo "replace-with = 'modcargo'" >>${WRKDIR}/.cargo/config.toml; \
+	ln -fs ${WRKDIR}/.cargo/config.toml ${WRKDIR}/.cargo/config;
 
 # set profile (based on 'release' profile) for 'build' and 'test'
 # see https://doc.rust-lang.org/cargo/reference/profiles.html#release
