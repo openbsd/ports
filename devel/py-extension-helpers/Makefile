@@ -1,10 +1,9 @@
 COMMENT=	build-time package to simplify C/Cython extensions
 
-MODPY_EGG_VERSION= 1.1.0
+MODPY_EGG_VERSION= 1.1.1
 
 DISTNAME=	extension-helpers-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
