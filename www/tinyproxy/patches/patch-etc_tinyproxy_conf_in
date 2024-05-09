@@ -1,5 +1,6 @@
---- etc/tinyproxy.conf.in.orig	Wed Mar  3 09:37:24 2010
-+++ etc/tinyproxy.conf.in	Tue Apr  9 05:48:57 2013
+Index: etc/tinyproxy.conf.in
+--- etc/tinyproxy.conf.in.orig
++++ etc/tinyproxy.conf.in
 @@ -12,8 +12,8 @@
  # as the root user. Either the user or group name or the UID or GID
  # number may be used.
