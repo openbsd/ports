@@ -1,7 +1,7 @@
 COMMENT =	text font designed for accessibility and readability
 
-TYPEFACE =	inclusive-sans
-V =		0.0.20230803
+MODFONT_FAMILY =	inclusive-sans
+MODFONT_VERSION =	0.0.20230803
 
 CATEGORIES =	fonts x11
 
