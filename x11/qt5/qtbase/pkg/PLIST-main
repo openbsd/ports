@@ -2700,7 +2700,6 @@ lib/qt5/bin/fixqt4headers.pl
 @bin lib/qt5/bin/qdbusxml2cpp
 @bin lib/qt5/bin/qlalr
 @bin lib/qt5/bin/qmake
-@bin lib/qt5/bin/qvkgen
 @bin lib/qt5/bin/rcc
 lib/qt5/bin/syncqt.pl
 @bin lib/qt5/bin/tracegen

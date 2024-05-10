@@ -1,7 +1,7 @@
 QT5NAME =		QtLocation
 COMMENT-main =		Qt5 geo positioning APIs
 
-KDE_COMMIT =		5b27b8921f1f2de93573df903c47aee634209f80
+KDE_COMMIT =		c576985da4e6a4a0b85d5229263777e7197494e0
 KDE_VERSION =		6
 
 SHARED_LIBS +=  Qt5Location               3.1 # 5.15

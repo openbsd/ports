@@ -1,8 +1,8 @@
 # Common source for Qt5 version
 
-QT5_VERSION ?=			5.15.12
+QT5_VERSION ?=			5.15.13
 QT5_WEBENGINE_VERSION =		5.15.16
-QT5_DIST_VERSION ?=		5.15.12
+QT5_DIST_VERSION ?=		5.15.13
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.

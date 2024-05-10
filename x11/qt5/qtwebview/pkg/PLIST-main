@@ -24,6 +24,7 @@ lib/qt5/cmake/Qt5WebView/
 lib/qt5/cmake/Qt5WebView/Qt5WebViewConfig.cmake
 lib/qt5/cmake/Qt5WebView/Qt5WebViewConfigVersion.cmake
 lib/qt5/cmake/Qt5WebView/Qt5WebView_QWebEngineWebViewPlugin.cmake
+lib/qt5/examples/
 lib/qt5/libQt5WebView.la
 lib/qt5/libQt5WebView.prl
 @lib lib/qt5/libQt5WebView.so.${LIBQt5WebView_VERSION}

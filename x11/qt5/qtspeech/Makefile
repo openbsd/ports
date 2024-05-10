@@ -1,7 +1,7 @@
 QT5NAME =		QtSpeech
 COMMENT-main =		Qt5 text-to-speech components
 
-KDE_COMMIT =		c41437acf07c2c4703351b07925fce3ce0e6b75d
+KDE_COMMIT =		9b3738febbc751820ede496e8d619c5be56548dc
 KDE_VERSION =		1
 
 MULTI_PACKAGES =	-main -examples

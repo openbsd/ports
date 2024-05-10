@@ -14,7 +14,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH =			0
-REVISION =		10
+REVISION =		11
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
 SHARED_LIBS +=  Qt5WebKitWidgets        3.1 # 5.9

@@ -1,8 +1,8 @@
 QT5NAME =	QtWayland
 COMMENT =	Qt5 module for Wayland support
 
-KDE_COMMIT =		c8b37a1bda9b8f29d56775ed6556d56ac5d3ea1d
-KDE_VERSION =		61
+KDE_COMMIT =		9c82b5461736f59a06923ab68c6f7584ecab4f77
+KDE_VERSION =		60
 
 SHARED_LIBS +=  Qt5WaylandClient          1.0 # 5.15
 SHARED_LIBS +=  Qt5WaylandCompositor      0.0 # 5.15

@@ -1,4 +1,3 @@
-include/X11/qt5/
 include/X11/qt5/QtWebEngine/
 include/X11/qt5/QtWebEngine/${VERSION}/
 include/X11/qt5/QtWebEngine/${VERSION}/QtWebEngine/
@@ -128,12 +127,8 @@ include/X11/qt5/QtWebEngineWidgets/qwebengineview.h
 lib/pkgconfig/Qt5WebEngine.pc
 lib/pkgconfig/Qt5WebEngineCore.pc
 lib/pkgconfig/Qt5WebEngineWidgets.pc
-lib/qt5/
 lib/qt5/Qt5WebEngineCore.la
-lib/qt5/bin/
 @bin lib/qt5/bin/qwebengine_convert_dict
-lib/qt5/cmake/
-lib/qt5/cmake/Qt5Designer/
 lib/qt5/cmake/Qt5Designer/Qt5Designer_QWebEngineViewPlugin.cmake
 lib/qt5/cmake/Qt5WebEngine/
 lib/qt5/cmake/Qt5WebEngine/Qt5WebEngineConfig.cmake
@@ -155,8 +150,6 @@ lib/qt5/libQt5WebEngineWidgets.prl
 @lib lib/qt5/libQt5WebEngineWidgets.so.${LIBQt5WebEngineWidgets_VERSION}
 lib/qt5/libexec/
 @bin lib/qt5/libexec/QtWebEngineProcess
-lib/qt5/mkspecs/
-lib/qt5/mkspecs/modules/
 lib/qt5/mkspecs/modules/qt_lib_webengine.pri
 lib/qt5/mkspecs/modules/qt_lib_webengine_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginecore.pri
@@ -164,14 +157,10 @@ lib/qt5/mkspecs/modules/qt_lib_webenginecore_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginewidgets.pri
 lib/qt5/mkspecs/modules/qt_lib_webenginewidgets_private.pri
-lib/qt5/pkgconfig/
 lib/qt5/pkgconfig/Qt5WebEngine.pc
 lib/qt5/pkgconfig/Qt5WebEngineCore.pc
 lib/qt5/pkgconfig/Qt5WebEngineWidgets.pc
-lib/qt5/plugins/
-lib/qt5/plugins/designer/
 @so lib/qt5/plugins/designer/libqwebengineview.so
-lib/qt5/qml/
 lib/qt5/qml/QtWebEngine/
 lib/qt5/qml/QtWebEngine/Controls1Delegates/
 lib/qt5/qml/QtWebEngine/Controls1Delegates/AlertDialog.qml
