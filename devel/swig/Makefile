@@ -1,12 +1,10 @@
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
-VERSION =	4.1.0
+VERSION =	4.2.1
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
-
-REVISION =	2
 
 HOMEPAGE =	https://www.swig.org/
 
@@ -15,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c m pcre2-8 ${COMPILER_LIBCXX} z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 SITES =		${SITE_SOURCEFORGE:=swig/}
 
@@ -29,7 +27,7 @@ BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 
 LIB_DEPENDS =	devel/pcre2
 
-# dont run update-plist after make test
+# don't run update-plist after make test
 TEST_DEPENDS =	devel/boost
 
 USE_GMAKE =	Yes

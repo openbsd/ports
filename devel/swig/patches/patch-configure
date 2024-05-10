@@ -8,7 +8,7 @@ ld: error: unable to find library -lm
 Index: configure
 --- configure.orig
 +++ configure
-@@ -6648,7 +6648,7 @@ then
+@@ -6549,7 +6549,7 @@ then
  	*-*-linux*) LDSHARED="\$(CC) -shared";;
  	*-*-dgux*) LDSHARED="ld -G";;
  	*-*-freebsd3*) LDSHARED="\$(CC) -shared";;
