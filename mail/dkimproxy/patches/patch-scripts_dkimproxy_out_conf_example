@@ -1,0 +1,16 @@
+set DKIM signature algorithm to rsa-sha256 
+https://www.rfc-editor.org/rfc/rfc6376#section-3.3
+
+Index: scripts/dkimproxy_out.conf.example
+--- scripts/dkimproxy_out.conf.example.orig
++++ scripts/dkimproxy_out.conf.example
+@@ -8,7 +8,8 @@ relay     127.0.0.1:10028
+ domain    example.org
+ 
+ # specify what signatures to add
+-signature dkim(c=relaxed)
++# for DKIM rsa-sha256 is mandated by RFC6376
++signature dkim(a=rsa-sha256,c=relaxed)
+ signature domainkeys(c=nofws)
+ 
+ # specify location of the private key
