@@ -1,9 +1,8 @@
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2023-04-04
+VERSION =	2024-02-06a
 DISTNAME =	dokuwiki-${VERSION}
-PKGNAME =	dokuwiki-${VERSION:S/-/./g}
-REVISION =	2
+PKGNAME =	dokuwiki-${VERSION:S/-/./g:S/a//}
 CATEGORIES =	www
 HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
 
