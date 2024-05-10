@@ -1,10 +1,9 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_EGG_VERSION=	2024.4.16
+MODPY_EGG_VERSION=	2024.5.10
 DISTNAME=	regex-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/mrabarnett/mrab-regex
 
