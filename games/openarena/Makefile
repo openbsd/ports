@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	amd64 i386 macppc
+USE_NOBTCFI =		Yes
 
 BROKEN-i386 =		code/qcommon/vm_x86.c:(.text+0x18): undefined reference to `callMask'
 
@@ -15,8 +16,8 @@ E_V =			${V}# 	engine version
 
 PKGNAME =		openarena-${V}
 
-REVISION-main =		1
-REVISION-server =	0
+REVISION-main =		2
+REVISION-server =	1
 
 PKG_ARCH-data = 	*
 
