@@ -2,7 +2,7 @@ prevent from using linux/input.h if present
 Index: configure
 --- configure.orig
 +++ configure
-@@ -26476,7 +26476,7 @@ main (void)
+@@ -26412,7 +26412,7 @@ main (void)
  _ACEOF
  if ac_fn_c_try_compile "$LINENO"
  then :
