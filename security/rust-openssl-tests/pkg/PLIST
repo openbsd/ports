@@ -993,6 +993,9 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/m
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/aarch64/align.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/aarch64/int128.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/aarch64/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/loongarch64/
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/loongarch64/align.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/loongarch64/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/mips64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/linux_like/linux/musl/b64/powerpc64.rs
