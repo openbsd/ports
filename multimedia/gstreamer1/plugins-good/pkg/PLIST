@@ -1,6 +1,7 @@
 @conflict gstreamer1-plugins-bad-<1.14.0
 @conflict gstreamer1-plugins-pulse-*
 @conflict gstreamer1-plugins-ugly-<1.22.0
+@pkgpath multimedia/gstreamer1/plugins-good,-main
 @pkgpath multimedia/gstreamer1/plugins-good,-pulse
 @so lib/gstreamer-${API}/libgstadaptivedemux2.so
 @so lib/gstreamer-${API}/libgstalaw.so
