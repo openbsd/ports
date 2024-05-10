@@ -1,0 +1,28 @@
+share/angband/icons/
+share/angband/icons/att-128.png
+share/angband/icons/att-16.png
+share/angband/icons/att-256.png
+share/angband/icons/att-32.png
+share/angband/icons/att-512.png
+share/applications/angband-x11.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/angband.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/angband.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/angband.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/angband.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/angband.png
+share/metainfo/
+share/metainfo/angband.metainfo.xml
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

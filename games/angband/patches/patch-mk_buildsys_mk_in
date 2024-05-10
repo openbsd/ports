@@ -3,29 +3,11 @@ Print compiler invocations.
 Index: mk/buildsys.mk.in
 --- mk/buildsys.mk.in.orig
 +++ mk/buildsys.mk.in
-@@ -150,10 +150,8 @@ depend: pre-depend ${SRCS}
- pre-depend:
+@@ -124,7 +124,6 @@ DEPS = ${OBJS:.o=.dep}			\
  
- ${PROG} ${PROG_NOINST}: ${EXT_DEPS} ${OBJS}
--	${LINK_STATUS}
--	if ${LD} -o $@ ${OBJS} ${LDFLAGS} ${LIBS}; then \
--		${LINK_OK}; \
--	else \
-+	echo ${LD} -o $@ ${OBJS} ${LDFLAGS} ${LIBS}
-+	if ! ${LD} -o $@ ${OBJS} ${LDFLAGS} ${LIBS}; then \
- 		${LINK_FAILED}; \
- 	fi
+ MO_FILES = ${LOCALES:.po=.mo}
  
-@@ -239,10 +237,8 @@ ${STATIC_PIC_LIB} ${STATIC_PIC_LIB_NOINST}: ${EXT_DEPS
- locales: ${MO_FILES}
- 
- .c.o:
--	${COMPILE_STATUS}
--	if ${CC} ${CFLAGS} ${CPPFLAGS} -c -o $@ $<; then \
--		${COMPILE_OK}; \
--	else \
-+	echo ${CC} ${CFLAGS} ${CPPFLAGS} -c -o $@ $<
-+	if ! ${CC} ${CFLAGS} ${CPPFLAGS} -c -o $@ $<; then \
- 		${COMPILE_FAILED}; \
- 	fi
- .c.lib.o:
+-.SILENT:
+ .SUFFIXES:
+ .SUFFIXES: .amigalib.o .beam .c .cc .class .cxx .d .erl .lib.o .java .mo .m .mm .o .plugin.o .po .py .pyc .rc .S .xpm
+ .PHONY: all subdirs subdirs-after pre-depend depend install install-extra post-install uninstall uninstall-extra clean pre-clean distclean pre-distclean locales copy-headers-into-framework ${SUBDIRS} ${SUBDIRS_AFTER}

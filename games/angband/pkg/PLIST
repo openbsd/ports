@@ -6,38 +6,16 @@
 %%sdl%%
 share/angband/
 share/angband/help/
-share/angband/help/attack.txt
-share/angband/help/birth.txt
-share/angband/help/command.txt
-share/angband/help/copying.txt
-share/angband/help/customize.txt
-share/angband/help/debug.txt
-share/angband/help/dungeon.txt
-share/angband/help/general.txt
-share/angband/help/help.hlp
+share/angband/help/commands.txt
 share/angband/help/index.txt
-share/angband/help/modifying.txt
-share/angband/help/option.txt
-share/angband/help/playing.txt
-share/angband/help/version.txt
-share/angband/icons/
-share/angband/icons/att-128.png
-share/angband/icons/att-16.png
-share/angband/icons/att-256.png
-share/angband/icons/att-32.png
-share/angband/icons/att-512.png
+share/angband/help/r_comm.txt
+share/angband/help/r_index.txt
+share/angband/help/symbols.txt
 share/angband/screens/
 share/angband/screens/crown.txt
 share/angband/screens/dead.txt
 share/angband/screens/news.txt
-share/angband/user/
-share/angband/user/info/
-share/angband/user/info/dummy.txt
-share/angband/user/info/user.hlp
-share/applications/angband-sdl.desktop
-share/applications/angband-x11.desktop
-share/doc/angband/
-share/doc/angband/manual.html
+!%%no_x11%%
 share/examples/angband/
 @sample ${SYSCONFDIR}/angband/
 share/examples/angband/customize/
@@ -46,6 +24,8 @@ share/examples/angband/customize/font-gcu.prf
 @sample ${SYSCONFDIR}/angband/customize/font-gcu.prf
 share/examples/angband/customize/font-sdl.prf
 @sample ${SYSCONFDIR}/angband/customize/font-sdl.prf
+share/examples/angband/customize/font-sdl2.prf
+@sample ${SYSCONFDIR}/angband/customize/font-sdl2.prf
 share/examples/angband/customize/font-win.prf
 @sample ${SYSCONFDIR}/angband/customize/font-win.prf
 share/examples/angband/customize/font-x11.prf
@@ -76,6 +56,8 @@ share/examples/angband/gamedata/body.txt
 @sample ${SYSCONFDIR}/angband/gamedata/body.txt
 share/examples/angband/gamedata/brand.txt
 @sample ${SYSCONFDIR}/angband/gamedata/brand.txt
+share/examples/angband/gamedata/chest_trap.txt
+@sample ${SYSCONFDIR}/angband/gamedata/chest_trap.txt
 share/examples/angband/gamedata/class.txt
 @sample ${SYSCONFDIR}/angband/gamedata/class.txt
 share/examples/angband/gamedata/constants.txt
@@ -104,8 +86,6 @@ share/examples/angband/gamedata/object.txt
 @sample ${SYSCONFDIR}/angband/gamedata/object.txt
 share/examples/angband/gamedata/object_base.txt
 @sample ${SYSCONFDIR}/angband/gamedata/object_base.txt
-share/examples/angband/gamedata/object_power.txt
-@sample ${SYSCONFDIR}/angband/gamedata/object_power.txt
 share/examples/angband/gamedata/object_property.txt
 @sample ${SYSCONFDIR}/angband/gamedata/object_property.txt
 share/examples/angband/gamedata/p_race.txt
@@ -114,6 +94,8 @@ share/examples/angband/gamedata/pain.txt
 @sample ${SYSCONFDIR}/angband/gamedata/pain.txt
 share/examples/angband/gamedata/pit.txt
 @sample ${SYSCONFDIR}/angband/gamedata/pit.txt
+share/examples/angband/gamedata/player_property.txt
+@sample ${SYSCONFDIR}/angband/gamedata/player_property.txt
 share/examples/angband/gamedata/player_timed.txt
 @sample ${SYSCONFDIR}/angband/gamedata/player_timed.txt
 share/examples/angband/gamedata/projection.txt
@@ -124,6 +106,8 @@ share/examples/angband/gamedata/realm.txt
 @sample ${SYSCONFDIR}/angband/gamedata/realm.txt
 share/examples/angband/gamedata/room_template.txt
 @sample ${SYSCONFDIR}/angband/gamedata/room_template.txt
+share/examples/angband/gamedata/shape.txt
+@sample ${SYSCONFDIR}/angband/gamedata/shape.txt
 share/examples/angband/gamedata/slay.txt
 @sample ${SYSCONFDIR}/angband/gamedata/slay.txt
 share/examples/angband/gamedata/store.txt
@@ -134,13 +118,23 @@ share/examples/angband/gamedata/terrain.txt
 @sample ${SYSCONFDIR}/angband/gamedata/terrain.txt
 share/examples/angband/gamedata/trap.txt
 @sample ${SYSCONFDIR}/angband/gamedata/trap.txt
+share/examples/angband/gamedata/ui_entry.txt
+@sample ${SYSCONFDIR}/angband/gamedata/ui_entry.txt
+share/examples/angband/gamedata/ui_entry_base.txt
+@sample ${SYSCONFDIR}/angband/gamedata/ui_entry_base.txt
+share/examples/angband/gamedata/ui_entry_renderer.txt
+@sample ${SYSCONFDIR}/angband/gamedata/ui_entry_renderer.txt
+share/examples/angband/gamedata/ui_knowledge.txt
+@sample ${SYSCONFDIR}/angband/gamedata/ui_knowledge.txt
 share/examples/angband/gamedata/vault.txt
 @sample ${SYSCONFDIR}/angband/gamedata/vault.txt
+share/examples/angband/gamedata/visuals.txt
+@sample ${SYSCONFDIR}/angband/gamedata/visuals.txt
 share/examples/angband/gamedata/world.txt
 @sample ${SYSCONFDIR}/angband/gamedata/world.txt
 @mode 775
 @sample /var/games/angband/
 @sample /var/games/angband/archive/
+@sample /var/games/angband/panic/
 @sample /var/games/angband/save/
 @sample /var/games/angband/scores/
-@tag update-desktop-database

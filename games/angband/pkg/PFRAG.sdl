@@ -211,7 +211,6 @@ share/angband/fonts/9x15xb.fon
 @comment share/angband/sounds/pls_tone_headstock.mp3
 @comment share/angband/sounds/pls_tone_scrape.mp3
 @comment share/angband/sounds/pls_tone_stick.mp3
-@comment share/angband/sounds/sound.cfg
 @comment share/angband/sounds/sto_bell_desk.mp3
 @comment share/angband/sounds/sto_bell_ding.mp3
 @comment share/angband/sounds/sto_bell_dingaling.mp3
@@ -261,5 +260,7 @@ share/angband/tiles/old/xtra-xxx.prf
 share/angband/tiles/shockbolt/
 share/angband/tiles/shockbolt/64x64.png
 share/angband/tiles/shockbolt/flvr-shb.prf
-share/angband/tiles/shockbolt/graf-shb.prf
+share/angband/tiles/shockbolt/graf-shb-dark.prf
+share/angband/tiles/shockbolt/graf-shb-light.prf
 share/angband/tiles/shockbolt/xtra-shb.prf
+share/applications/angband-sdl2.desktop
