@@ -1,6 +1,7 @@
 @pkgpath devel/py-flaky
 lib/python${MODPY_VERSION}/site-packages/flaky/
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/flaky-${MODPY_EGG_VERSION}.dist-info/RECORD
@@ -17,21 +18,15 @@ lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}defaults.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_decorator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_decorator.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_nose_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_nose_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}flaky_pytest_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}multiprocess_string_io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}multiprocess_string_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flaky/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flaky/_flaky_plugin.py
 lib/python${MODPY_VERSION}/site-packages/flaky/defaults.py
 lib/python${MODPY_VERSION}/site-packages/flaky/flaky_decorator.py
-lib/python${MODPY_VERSION}/site-packages/flaky/flaky_nose_plugin.py
 lib/python${MODPY_VERSION}/site-packages/flaky/flaky_pytest_plugin.py
 lib/python${MODPY_VERSION}/site-packages/flaky/multiprocess_string_io.py
 lib/python${MODPY_VERSION}/site-packages/flaky/names.py
-lib/python${MODPY_VERSION}/site-packages/flaky/utils.py
