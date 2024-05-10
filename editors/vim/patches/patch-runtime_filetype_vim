@@ -1,21 +1,19 @@
 Index: runtime/filetype.vim
 --- runtime/filetype.vim.orig
 +++ runtime/filetype.vim
-@@ -647,7 +647,7 @@ au BufNewFile,BufRead dictd*.conf		setf dictdconf
- au BufNewFile,BufRead */debian/patches/*	call dist#ft#Dep3patch()
+@@ -648,6 +648,7 @@ au BufNewFile,BufRead */debian/patches/*	call dist#ft#
  
  " Diff files
--au BufNewFile,BufRead *.diff,*.rej		setf diff
-+au BufNewFile,BufRead *.diff,*.rej,patch-*	setf diff
+ au BufNewFile,BufRead *.diff,*.rej		setf diff
++au BufNewFile,BufRead patch-*			setf diff
  au BufNewFile,BufRead *.patch
  	\ if getline(1) =~# '^From [0-9a-f]\{40,\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
-@@ -1355,7 +1355,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
- au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
+@@ -1362,6 +1363,7 @@ au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
--au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak,*.dsp setf make
-+au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak,*.dsp,Makefile.inc,modules.inc,crates.inc setf make
+ au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak,*.dsp setf make
++au BufNewFile,BufRead Makefile.inc,modules.inc,crates.inc setf make
+ au BufNewFile,BufRead Kbuild setf make
  
  " MakeIndex
- au BufNewFile,BufRead *.ist,*.mst		setf ist

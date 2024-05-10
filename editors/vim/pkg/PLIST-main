@@ -196,6 +196,7 @@ share/vim/${P}/compiler/javac.vim
 share/vim/${P}/compiler/jest.vim
 share/vim/${P}/compiler/jikes.vim
 share/vim/${P}/compiler/jjs.vim
+share/vim/${P}/compiler/jq.vim
 share/vim/${P}/compiler/jshint.vim
 share/vim/${P}/compiler/jsonlint.vim
 share/vim/${P}/compiler/mcs.vim
@@ -436,6 +437,7 @@ share/vim/${P}/ftplugin/art.vim
 share/vim/${P}/ftplugin/asciidoc.vim
 share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
+share/vim/${P}/ftplugin/astro.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
@@ -549,7 +551,9 @@ share/vim/${P}/ftplugin/j.vim
 share/vim/${P}/ftplugin/java.vim
 share/vim/${P}/ftplugin/javascript.vim
 share/vim/${P}/ftplugin/javascriptreact.vim
+share/vim/${P}/ftplugin/jj.vim
 share/vim/${P}/ftplugin/jproperties.vim
+share/vim/${P}/ftplugin/jq.vim
 share/vim/${P}/ftplugin/json.vim
 share/vim/${P}/ftplugin/json5.vim
 share/vim/${P}/ftplugin/jsonc.vim
@@ -614,6 +618,7 @@ share/vim/${P}/ftplugin/ocaml.vim
 share/vim/${P}/ftplugin/occam.vim
 share/vim/${P}/ftplugin/octave.vim
 share/vim/${P}/ftplugin/odin.vim
+share/vim/${P}/ftplugin/ondir.vim
 share/vim/${P}/ftplugin/openvpn.vim
 share/vim/${P}/ftplugin/pamconf.vim
 share/vim/${P}/ftplugin/pascal.vim
@@ -684,6 +689,7 @@ share/vim/${P}/ftplugin/spec.vim
 share/vim/${P}/ftplugin/sql.vim
 share/vim/${P}/ftplugin/ssa.vim
 share/vim/${P}/ftplugin/sshconfig.vim
+share/vim/${P}/ftplugin/stylus.vim
 share/vim/${P}/ftplugin/sudoers.vim
 share/vim/${P}/ftplugin/svg.vim
 share/vim/${P}/ftplugin/swayconfig.vim
@@ -706,6 +712,7 @@ share/vim/${P}/ftplugin/treetop.vim
 share/vim/${P}/ftplugin/tt2html.vim
 share/vim/${P}/ftplugin/typescript.vim
 share/vim/${P}/ftplugin/typescriptreact.vim
+share/vim/${P}/ftplugin/uci.vim
 share/vim/${P}/ftplugin/udevconf.vim
 share/vim/${P}/ftplugin/udevperm.vim
 share/vim/${P}/ftplugin/udevrules.vim
@@ -751,6 +758,7 @@ share/vim/${P}/indent/aap.vim
 share/vim/${P}/indent/ada.vim
 share/vim/${P}/indent/ant.vim
 share/vim/${P}/indent/asm.vim
+share/vim/${P}/indent/astro.vim
 share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bash.vim
@@ -882,6 +890,7 @@ share/vim/${P}/indent/solidity.vim
 share/vim/${P}/indent/sql.vim
 share/vim/${P}/indent/sqlanywhere.vim
 share/vim/${P}/indent/sshconfig.vim
+share/vim/${P}/indent/stylus.vim
 share/vim/${P}/indent/systemverilog.vim
 share/vim/${P}/indent/tcl.vim
 share/vim/${P}/indent/tcsh.vim
@@ -1036,6 +1045,13 @@ share/vim/${P}/pack/dist/opt/
 share/vim/${P}/pack/dist/opt/cfilter/
 share/vim/${P}/pack/dist/opt/cfilter/plugin/
 share/vim/${P}/pack/dist/opt/cfilter/plugin/cfilter.vim
+share/vim/${P}/pack/dist/opt/comment/
+share/vim/${P}/pack/dist/opt/comment/autoload/
+share/vim/${P}/pack/dist/opt/comment/autoload/comment.vim
+share/vim/${P}/pack/dist/opt/comment/doc/
+share/vim/${P}/pack/dist/opt/comment/doc/comment.txt
+share/vim/${P}/pack/dist/opt/comment/plugin/
+share/vim/${P}/pack/dist/opt/comment/plugin/comment.vim
 share/vim/${P}/pack/dist/opt/dvorak/
 share/vim/${P}/pack/dist/opt/dvorak/dvorak/
 share/vim/${P}/pack/dist/opt/dvorak/dvorak/disable.vim
@@ -1187,6 +1203,7 @@ share/vim/${P}/syntax/aspperl.vim
 share/vim/${P}/syntax/aspvbs.vim
 share/vim/${P}/syntax/asterisk.vim
 share/vim/${P}/syntax/asteriskvm.vim
+share/vim/${P}/syntax/astro.vim
 share/vim/${P}/syntax/atlas.vim
 share/vim/${P}/syntax/autodoc.vim
 share/vim/${P}/syntax/autohotkey.vim
@@ -1434,8 +1451,10 @@ share/vim/${P}/syntax/javascript.vim
 share/vim/${P}/syntax/javascriptreact.vim
 share/vim/${P}/syntax/jess.vim
 share/vim/${P}/syntax/jgraph.vim
+share/vim/${P}/syntax/jj.vim
 share/vim/${P}/syntax/jovial.vim
 share/vim/${P}/syntax/jproperties.vim
+share/vim/${P}/syntax/jq.vim
 share/vim/${P}/syntax/json.vim
 share/vim/${P}/syntax/json5.vim
 share/vim/${P}/syntax/jsonc.vim
@@ -1560,6 +1579,7 @@ share/vim/${P}/syntax/ocaml.vim
 share/vim/${P}/syntax/occam.vim
 share/vim/${P}/syntax/odin.vim
 share/vim/${P}/syntax/omnimark.vim
+share/vim/${P}/syntax/ondir.vim
 share/vim/${P}/syntax/opam.vim
 share/vim/${P}/syntax/openroad.vim
 share/vim/${P}/syntax/openscad.vim
@@ -1747,6 +1767,7 @@ share/vim/${P}/syntax/stata.vim
 share/vim/${P}/syntax/stp.vim
 share/vim/${P}/syntax/strace.vim
 share/vim/${P}/syntax/structurizr.vim
+share/vim/${P}/syntax/stylus.vim
 share/vim/${P}/syntax/sudoers.vim
 share/vim/${P}/syntax/svg.vim
 share/vim/${P}/syntax/svn.vim
@@ -1798,6 +1819,7 @@ share/vim/${P}/syntax/tt2js.vim
 share/vim/${P}/syntax/typescript.vim
 share/vim/${P}/syntax/typescriptreact.vim
 share/vim/${P}/syntax/uc.vim
+share/vim/${P}/syntax/uci.vim
 share/vim/${P}/syntax/udevconf.vim
 share/vim/${P}/syntax/udevperm.vim
 share/vim/${P}/syntax/udevrules.vim
