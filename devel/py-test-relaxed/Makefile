@@ -1,10 +1,8 @@
 COMMENT=	relaxed test discovery/organization for pytest
 
-MODPY_EGG_VERSION=	2.0.1
-
+MODPY_EGG_VERSION=	2.0.2
 DISTNAME=	pytest-relaxed-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
 
 CATEGORIES=	devel
 
