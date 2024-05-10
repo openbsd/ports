@@ -34,6 +34,7 @@ MODCARGO_CRATES +=	itertools	0.10.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libc	0.2.140	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	linux-raw-sys	0.1.4	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
+MODCARGO_CRATES +=	log	0.4.21	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	memchr	2.5.0	# Unlicense/MIT
 MODCARGO_CRATES +=	miniz_oxide	0.4.3	# MIT OR Zlib OR Apache-2.0
 MODCARGO_CRATES +=	num_cpus	1.13.0	# MIT/Apache-2.0

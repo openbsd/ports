@@ -34,6 +34,7 @@ SHA256 (cargo/itertools-0.10.1.tar.gz) = ad24ifnQ0IpnM4Jx+ptimWvHiMd5alwYzwV0IKr
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
 SHA256 (cargo/libc-0.2.140.tar.gz) = mSJzNJIfrhqXnPC/38xrPlzjdu9X4W+2+z6i7WCV+Aw=
 SHA256 (cargo/linux-raw-sys-0.1.4.tar.gz) = 8FH3enyOaVfAaW6siPJrARflT1LT/GgqsZOXqIEoRqQ=
+SHA256 (cargo/log-0.4.21.tar.gz) = kO2MHlEBNPl528TwcPh9QxMJi3BIYaEF/jQjHHCjkBw=
 SHA256 (cargo/memchr-2.5.0.tar.gz) = Lf/lLs8ndy5gGQW3Uiy073kNLMIDSIu9Di/oX8t0Vm0=
 SHA256 (cargo/miniz_oxide-0.4.3.tar.gz) = Dy0m7DMJeI5CPPv2itGADwYWOAmNdqg2ga+XncTtoZ0=
 SHA256 (cargo/num_cpus-1.13.0.tar.gz) = BUmfN1ZnHBWIX+6QNERpVv/z8kPWB3uR5XZ98WH3ZrM=
@@ -78,7 +79,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHw
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (riff-3.1.0.tar.gz) = cYFNb1u+HgOciTM77CExwbVvQAB5b82rMCb/aCDOWaM=
+SHA256 (riff-3.1.3.tar.gz) = 6yRLtQomr52cuvP9kbB+ke6NwkBX8HnU7+rdJzRcm0g=
 SIZE (cargo/addr2line-0.14.0.tar.gz) = 30065
 SIZE (cargo/adler-0.2.3.tar.gz) = 12168
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
@@ -115,6 +116,7 @@ SIZE (cargo/itertools-0.10.1.tar.gz) = 116219
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/libc-0.2.140.tar.gz) = 669153
 SIZE (cargo/linux-raw-sys-0.1.4.tar.gz) = 878981
+SIZE (cargo/log-0.4.21.tar.gz) = 43442
 SIZE (cargo/memchr-2.5.0.tar.gz) = 65812
 SIZE (cargo/miniz_oxide-0.4.3.tar.gz) = 50058
 SIZE (cargo/num_cpus-1.13.0.tar.gz) = 14704
@@ -159,4 +161,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (riff-3.1.0.tar.gz) = 1057687
+SIZE (riff-3.1.3.tar.gz) = 1059508
