@@ -6,7 +6,7 @@ CATEGORIES =	math devel
 
 HOMEPAGE =	https://eigen.tuxfamily.org
 
-VERSION =	3.3.9
+VERSION =	3.4.0
 DISTNAME =	eigen-${VERSION}
 PKGNAME =	eigen3-${VERSION}
 

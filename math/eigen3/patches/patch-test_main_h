@@ -1,15 +1,16 @@
 This test fails, and we actually DO provide min() and max() correctly,
 so disable it.
+Index: test/main.h
 --- test/main.h.orig
 +++ test/main.h
-@@ -67,8 +67,8 @@
- // protected by parenthesis against macro expansion, the min()/max() macros
- // are defined here and any not-parenthesized min/max call will cause a
- // compiler error.
--#define min(A,B) please_protect_your_min_with_parentheses
--#define max(A,B) please_protect_your_max_with_parentheses
-+//#define min(A,B) please_protect_your_min_with_parentheses
-+//#define max(A,B) please_protect_your_max_with_parentheses
- #define isnan(X) please_protect_your_isnan_with_parentheses
- #define isinf(X) please_protect_your_isinf_with_parentheses
- #define isfinite(X) please_protect_your_isfinite_with_parentheses
+@@ -88,8 +88,8 @@
+   //
+   // So instead choosing to simply disable this check for HIP
+   //
+-  #define min(A,B) please_protect_your_min_with_parentheses
+-  #define max(A,B) please_protect_your_max_with_parentheses
++  //#define min(A,B) please_protect_your_min_with_parentheses
++  //#define max(A,B) please_protect_your_max_with_parentheses
+   #define isnan(X) please_protect_your_isnan_with_parentheses
+   #define isinf(X) please_protect_your_isinf_with_parentheses
+   #define isfinite(X) please_protect_your_isfinite_with_parentheses
