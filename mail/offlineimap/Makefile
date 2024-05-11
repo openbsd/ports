@@ -21,6 +21,7 @@ MODULES=	lang/python
 BUILD_DEPENDS=	textproc/asciidoc \
 		devel/py-rfc6555${MODPY_FLAVOR} \
 		mail/py-imaplib2${MODPY_FLAVOR} \
+		security/py-keyring${MODPY_FLAVOR} \
 		sysutils/py-distro${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-rfc6555${MODPY_FLAVOR} \
