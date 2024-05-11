@@ -1,10 +1,9 @@
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			474.0.0
+V=			475.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
-REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -34,7 +33,7 @@ NO_TEST=		Yes
 RUN_DEPENDS=		devel/git
 
 do-install:
-	cp -Rp ${WRKSRC} ${PREFIX}
+	cp -a ${WRKSRC} ${PREFIX}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/google-cloud-sdk
 
 	find ${PREFIX} -type f \( -name '*.bat' -or -name '*.orig' \) \
