@@ -1,7 +1,7 @@
 Index: offlineimap.conf
 --- offlineimap.conf.orig
 +++ offlineimap.conf
-@@ -765,7 +765,7 @@ remotehost = examplehost
+@@ -768,7 +768,7 @@ remotehost = examplehost
  # You can also use fingerprint verification via cert_fingerprint.
  # See below for more verbose explanation.
  #

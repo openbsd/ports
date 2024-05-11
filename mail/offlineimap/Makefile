@@ -1,13 +1,11 @@
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
 MODPY_EGG_VERSION = 8.0.0
-#DISTNAME =	offlineimap-v${MODPY_EGG_VERSION}
-PKGNAME =	offlineimap-${MODPY_EGG_VERSION}
-REVISION =	3
+DISTNAME =	offlineimap-${MODPY_EGG_VERSION}pl20231218
 
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap3
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_COMMIT =	d29a4dc459401f8a78e347cb0f8ae7670add0975
 
 CATEGORIES=	mail
 
@@ -28,8 +26,6 @@ BUILD_DEPENDS=	textproc/asciidoc \
 RUN_DEPENDS=	devel/py-rfc6555${MODPY_FLAVOR} \
 		mail/py-imaplib2${MODPY_FLAVOR} \
 		sysutils/py-distro${MODPY_FLAVOR}
-
-#SITES=		https://www.offlineimap.org/uploads/
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 
