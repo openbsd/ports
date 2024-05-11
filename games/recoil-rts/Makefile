@@ -1,3 +1,6 @@
+# heavy use of SSE with no alternative pathways for !x86 arches
+ONLY_FOR_ARCHS =	amd64 i386
+
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
 # To keep version in sync with Beyond All Reason: use version information at:
