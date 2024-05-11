@@ -1,0 +1,15 @@
+Index: sheets/functions/reference.cpp
+--- sheets/functions/reference.cpp.orig
++++ sheets/functions/reference.cpp
+@@ -415,11 +415,6 @@ Value func_indirect(valVector args, ValueCalc *calc, F
+     if (ref.isEmpty())
+         return Value::errorVALUE();
+ 
+-    if (r1c1) {
+-        // TODO: translate the r1c1 style to a1 style
+-        ref = ref;
+-    }
+-
+     const Calligra::Sheets::Region region(ref, e->sheet->map(), e->sheet);
+     if (!region.isValid() || !region.isSingular())
+         return Value::errorVALUE();

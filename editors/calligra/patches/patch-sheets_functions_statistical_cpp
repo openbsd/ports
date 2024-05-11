@@ -1,0 +1,19 @@
+Index: sheets/functions/statistical.cpp
+--- sheets/functions/statistical.cpp.orig
++++ sheets/functions/statistical.cpp
+@@ -1633,7 +1633,6 @@ Value func_growth(valVector args, ValueCalc *calc, Fun
+         double sumX    = 0.0;
+         double sumSqrX = 0.0;
+         double sumY    = 0.0;
+-        double sumSqrY = 0.0;
+         double sumXY   = 0.0;
+         double valX, valY;
+ 
+@@ -1647,7 +1646,6 @@ Value func_growth(valVector args, ValueCalc *calc, Fun
+                 sumX    += valX;
+                 sumSqrX += valX * valX;
+                 sumY    += valY;
+-                sumSqrY += valY * valY;
+                 sumXY   += valX * valY;
+                 ++count;
+             }

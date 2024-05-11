@@ -1,5 +1,5 @@
 - Fix build with OpenEXR>=3
-- Switch to C++17
+- Switch to C++20
 - Update Cmake and deps, Fix Freetype and FontConfig Linkage,
   from upstream
 - disable GSL support for now. devel/gsl needs an update
@@ -21,7 +21,7 @@ Index: CMakeLists.txt
 +#else ()
 +#    set (CMAKE_CXX_STANDARD 11)
 +#endif ()
-+set (CMAKE_CXX_STANDARD 17)
++set (CMAKE_CXX_STANDARD 20)
  
  ############
  #############

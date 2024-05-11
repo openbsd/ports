@@ -3,7 +3,7 @@ HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	11
+REVISION =	13
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
