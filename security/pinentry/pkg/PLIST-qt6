@@ -1,0 +1,4 @@
+@conflict pinentry-qt5-<1.3.0
+@bin bin/pinentry-qt
+share/applications/org.gnupg.pinentry-qt.desktop
+@tag update-desktop-database

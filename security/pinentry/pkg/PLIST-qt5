@@ -1,1 +1,3 @@
-@bin bin/pinentry-qt
+@bin bin/pinentry-qt5
+share/applications/org.gnupg.pinentry-qt5.desktop
+@tag update-desktop-database
