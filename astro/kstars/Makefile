@@ -2,7 +2,7 @@ COMMENT =	planetarium simulator for KDE
 
 DISTNAME =	kstars-3.6.6
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	astro education
 

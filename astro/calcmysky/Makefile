@@ -7,6 +7,7 @@ GH_TAGNAME=		v0.3.2
 GH_ACCOUNT=		10110111
 GH_PROJECT=		CalcMySky
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 SHARED_LIBS +=	ShowMySky-Qt6             0.0 # 0.0
 

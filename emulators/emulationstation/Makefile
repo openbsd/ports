@@ -16,7 +16,7 @@ WANTLIB += m pthread ${COMPILER_LIBCXX}
 GH_ACCOUNT =		Aloshi
 GH_PROJECT =		EmulationStation
 GH_COMMIT =		646bede3d9ec0acf0ae378415edac136774a66c5
-REVISION =		2
+REVISION =		3
 
 MODULES =		devel/cmake
 

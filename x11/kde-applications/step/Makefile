@@ -1,6 +1,7 @@
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/education/step
 

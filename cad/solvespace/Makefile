@@ -2,6 +2,7 @@ COMMENT =	parametric 2D/3D CAD program
 V =		3.1
 DISTNAME =	solvespace-${V}
 CATEGORIES =	cad
+REVISION =	0
 
 SHARED_LIBS +=	slvs	0.0
 

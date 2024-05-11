@@ -11,8 +11,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-java =		0
-REVISION-main =		0
+REVISION-java =		1
+REVISION-main =		1
 
 HOMEPAGE =		https://www.opencv.org/
 
