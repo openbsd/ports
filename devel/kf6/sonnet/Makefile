@@ -7,12 +7,13 @@ DISTNAME =		sonnet-${VERSION}
 
 SHARED_LIBS +=  KF6SonnetCore             0.0 # 0.0
 SHARED_LIBS +=  KF6SonnetUi               0.0 # 0.0
+
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB-main += Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets c m
+
 WANTLIB-aspell += ${COMPILER_LIBCXX} KF6SonnetCore aspell m
+
 WANTLIB-hunspell += ${COMPILER_LIBCXX} KF6SonnetCore hunspell-1.7 m
-
-
 
 MULTI_PACKAGES =	-main -aspell -hunspell
 

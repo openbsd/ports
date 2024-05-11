@@ -1,6 +1,6 @@
 UNLINKED = kf6
-COMMENT =		installation and loading of content packages in KDE
-DISTNAME =		kpackage-${VERSION}
+COMMENT =	installation and loading of content packages in KDE
+DISTNAME =	kpackage-${VERSION}
 
 SHARED_LIBS +=  KF6Package                0.0 # 0.0
 

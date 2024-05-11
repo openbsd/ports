@@ -9,8 +9,6 @@ WANTLIB += m
 
 WANTLIB += lib/inotify/inotify
 
-
-
 BUILD_DEPENDS =	misc/shared-mime-info
 
 RUN_DEPENDS =	misc/shared-mime-info \

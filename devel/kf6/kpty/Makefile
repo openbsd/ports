@@ -1,6 +1,6 @@
 UNLINKED = kf6
-COMMENT =		interfacing with pseudo terminal devices in KDE
-DISTNAME =		kpty-${VERSION}
+COMMENT =	interfacing with pseudo terminal devices in KDE
+DISTNAME =	kpty-${VERSION}
 
 SHARED_LIBS +=  KF6Pty                    0.0 # 0.0
 

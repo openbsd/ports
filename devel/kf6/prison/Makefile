@@ -1,6 +1,6 @@
 UNLINKED = kf6
-COMMENT =		bar code generator
-DISTNAME =		prison-${VERSION}
+COMMENT =	bar code generator
+DISTNAME =	prison-${VERSION}
 
 SHARED_LIBS +=  KF6Prison                 0.0 # 0.0
 SHARED_LIBS +=  KF6PrisonScanner          0.0 # 0.0

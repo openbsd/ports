@@ -14,8 +14,8 @@ MODULES +=	lang/python
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/kf6/kconfig>=${MODKF6_VERSION}
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf6/kconfig>=${MODKF6_VERSION}
 
 RUN_DEPENDS =	textproc/catdoc
 

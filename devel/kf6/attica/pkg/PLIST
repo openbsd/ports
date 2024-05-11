@@ -73,6 +73,7 @@ include/KF6/Attica/attica/metadata.h
 include/KF6/Attica/attica/person.h
 include/KF6/Attica/attica/platformdependent.h
 include/KF6/Attica/attica/platformdependent_v2.h
+include/KF6/Attica/attica/platformdependent_v3.h
 include/KF6/Attica/attica/postjob.h
 include/KF6/Attica/attica/privatedata.h
 include/KF6/Attica/attica/project.h
