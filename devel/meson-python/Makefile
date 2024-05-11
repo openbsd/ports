@@ -2,7 +2,7 @@ COMMENT=		meson PEP 517 Python build backend
 
 MODPY_EGG_VERSION=	0.16.0
 DIST_TUPLE=		github mesonbuild meson-python ${MODPY_EGG_VERSION} .
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -24,9 +24,5 @@ RUN_DEPENDS=		devel/meson \
 			devel/py-pyproject-metadata${MODPY_FLAVOR}
 
 TEST_DEPENDS=		lang/cython${MODPY_FLAVOR}
-
-# XXX drop once default python3 version is bumped to >=3.11
-BUILD_DEPENDS +=	textproc/py-tomli${MODPY_FLAVOR}
-RUN_DEPENDS +=		textproc/py-tomli${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
