@@ -1,5 +1,3 @@
-64bit time_t
-
 Index: spa/plugins/support/logger.c
 --- spa/plugins/support/logger.c.orig
 +++ spa/plugins/support/logger.c
@@ -11,13 +9,4 @@ Index: spa/plugins/support/logger.c
 +#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
  #define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
  #endif
- 
-@@ -94,7 +94,7 @@ impl_log_logtv(void *object,
- 	if (impl->timestamp) {
- 		struct timespec now;
- 		clock_gettime(CLOCK_MONOTONIC_RAW, &now);
--		spa_scnprintf(timestamp, sizeof(timestamp), "[%05lu.%06lu]",
-+		spa_scnprintf(timestamp, sizeof(timestamp), "[%05lld.%06ld]",
- 			(now.tv_sec & 0x1FFFFFFF) % 100000, now.tv_nsec / 1000);
- 	}
  
