@@ -1,9 +1,8 @@
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.80.0
+GNOME_VERSION=		2.80.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -15,12 +14,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS += glib-2.0                  4201.12 # 0.8000.0
-SHARED_LIBS += gobject-2.0               4200.19 # 0.8000.0
-SHARED_LIBS += gthread-2.0               4200.19 # 0.8000.0
-SHARED_LIBS += gmodule-2.0               4200.19 # 0.8000.0
-SHARED_LIBS += gio-2.0                   4200.19 # 0.8000.0
-SHARED_LIBS += girepository-2.0          0.0 # 0.8000.0
+SHARED_LIBS += glib-2.0                  4201.12 # 0.8000.2
+SHARED_LIBS += gobject-2.0               4200.19 # 0.8000.2
+SHARED_LIBS += gthread-2.0               4200.19 # 0.8000.2
+SHARED_LIBS += gmodule-2.0               4200.19 # 0.8000.2
+SHARED_LIBS += gio-2.0                   4200.19 # 0.8000.2
+SHARED_LIBS += girepository-2.0          0.0 # 0.8000.2
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
