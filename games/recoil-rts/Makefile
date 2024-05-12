@@ -103,6 +103,11 @@ WRKDIST =		${WRKDIR}/spring-${DIST_STRING:S/%7B/-/g:S/%7D/-/g}
 
 SUBST_VARS +=		IN_ENGINE_V
 
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -msse2
+CXXFLAGS += -msse2
+.endif
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake
 
