@@ -7,6 +7,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
+MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+
 # MPL
 PERMIT_PACKAGE= Yes
 
