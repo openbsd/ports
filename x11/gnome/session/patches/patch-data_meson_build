@@ -1,6 +1,6 @@
 First chunk:
+Needs sharing support in gnome-settings-daemon:
 gnome-session-binary[99808]: WARNING: Unable to find required component 'org.gnome.SettingsDaemon.Sharing'
-** (gnome-session-quit:97249): WARNING **: 08:23:18.310: Failed to call logout: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name :1.24 was not provided by any .service fil
 
 REVERT:
 From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
