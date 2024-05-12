@@ -1,3 +1,5 @@
+Needs sd_* (systemd) functions and a dependency on rygel.
+
 Index: plugins/meson.build
 --- plugins/meson.build.orig
 +++ plugins/meson.build
