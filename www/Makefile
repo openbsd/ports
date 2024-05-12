@@ -66,6 +66,7 @@
      SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
+     SUBDIR += internetarchive
      SUBDIR += ipynb-py-convert
      SUBDIR += iridium
      SUBDIR += japana
