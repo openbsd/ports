@@ -1,7 +1,7 @@
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 
-V=		8.5.0
+V=		8.5.1
 DISTNAME=	puppetdb-$V
 PKGNAME-plugin= puppetdb-termini-$V
 CATEGORIES=	databases
@@ -22,7 +22,7 @@ MODJAVA_VER=	11+
 MULTI_PACKAGES= -main -plugin
 
 BUILD_DEPENDS = sysutils/coreutils
-RUN_DEPENDS-plugin=sysutils/ruby-puppet/7>=7.0.0,<8.0.0v0
+RUN_DEPENDS-plugin=sysutils/ruby-puppet/8>=8.0.0,<9.0.0v0
 
 RUN_DEPENDS-main=${MODJAVA_RUN_DEPENDS} \
 		java/javaPathHelper \
