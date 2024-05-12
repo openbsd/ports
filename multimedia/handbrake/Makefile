@@ -2,12 +2,11 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	8
+REVISION =	9
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
 HOMEPAGE =	https://handbrake.fr/
-MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
