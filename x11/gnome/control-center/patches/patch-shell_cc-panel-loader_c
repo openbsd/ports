@@ -1,5 +1,7 @@
 The mouse panel needs gsd_device_manager_get() which needs GUdev.
 
+The sharing panel needs sharing support in gnome-settings-daemon.
+
 Index: shell/cc-panel-loader.c
 --- shell/cc-panel-loader.c.orig
 +++ shell/cc-panel-loader.c
@@ -17,7 +19,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_printers_panel_get_type (void);
  extern GType cc_privacy_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
-+#ifdef BUILD_SHARING
++#ifdef 0
  extern GType cc_sharing_panel_get_type (void);
 +#endif
  extern GType cc_sound_panel_get_type (void);
