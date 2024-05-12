@@ -1,3 +1,9 @@
+REVERT:
+From 76534bcc5e4e0ee38b8541dbb413d4b36d30d9d7 Mon Sep 17 00:00:00 2001
+From: Jordan Petridis <jordan@centricular.com>
+Date: Sat, 29 Apr 2023 18:02:20 +0300
+Subject: [PATCH] Drop consolekit backend and hard depend on systemd
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
