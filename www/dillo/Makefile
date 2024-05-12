@@ -1,10 +1,10 @@
 COMMENT =		fast and light graphical web browser
 
-DISTNAME =		dillo-3.0.5
 CATEGORIES =		www
-REVISION =		5
 
-HOMEPAGE =		https://www.dillo.org/
+DIST_TUPLE +=		github dillo-browser dillo v3.1.0 .
+
+HOMEPAGE =		https://dillo-browser.github.io/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -14,7 +14,6 @@ WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SITES =		https://www.dillo.org/download/
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -25,12 +24,15 @@ LIB_DEPENDS =	converters/libiconv \
 
 # XXX dillo should be patched to use ftp(1)
 RUN_DEPENDS =	devel/desktop-file-utils \
-		net/wget
+		net/wget \
+		x11/gtk+4,-guic
 
 USE_GMAKE =		Yes
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS =	--enable-ipv6 \
-			--enable-ssl
+			--enable-tls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -fcommon" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
