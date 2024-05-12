@@ -1,5 +1,6 @@
 UNLINKED = kf6
 COMMENT =	QtQuick based components set
+VERSION =	6.2.1
 DISTNAME =	kirigami-${VERSION}
 
 SHARED_LIBS +=  Kirigami                  0.0 # 0.0
