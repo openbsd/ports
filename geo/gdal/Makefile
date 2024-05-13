@@ -1,7 +1,7 @@
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.8.5
+V =		3.9.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -10,10 +10,8 @@ FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
-REVISION-main =		0
-REVISION-python =	0
 
-SHARED_LIBS =	gdal 47.2
+SHARED_LIBS =	gdal 48.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -23,7 +21,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-SITES =		https://download.osgeo.org/gdal/${V:C/rc.//}/
+SITES =		https://download.osgeo.org/gdal/${V:C/rc.//:C/beta.//}/
 WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
 MODULES =	devel/cmake \
@@ -83,7 +81,7 @@ TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_EGG_VERSION =	${V:C/rc.//}
+MODPY_EGG_VERSION =	${V:C/rc.//:C/beta.//}
 MODPY_ADJ_FILES =	swig/python/gdal-utils/osgeo_utils/samples/*.py swig/python/gdal-utils/scripts/*.py
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

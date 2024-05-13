@@ -22,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/GDAL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
@@ -147,6 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gda
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_rm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_rmdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_vrtmerge.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalbuildvrtofvrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalchksum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalcopyproj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdalfilter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -163,7 +165,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}los
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}magphase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}make_fuzzer_friendly_archive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}mkgraticule.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr2ogr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr2vrt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_build_junction_table.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}ogr_dispatch.${MODPY_PYC_MAGIC_TAG}pyc
@@ -205,6 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_remove_towgs84
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_rm.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_rmdir.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_vrtmerge.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalbuildvrtofvrt.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalchksum.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalcopyproj.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdalfilter.py
@@ -221,7 +223,6 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/loslas2ntv2.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/magphase.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/make_fuzzer_friendly_archive.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/mkgraticule.py
-lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr2ogr.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr2vrt.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_build_junction_table.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/ogr_dispatch.py

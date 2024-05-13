@@ -1,15 +1,28 @@
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
 bin/gdal-config
+bin/gdal2tiles
+bin/gdal2xyz
+bin/gdal_calc
 @bin bin/gdal_contour
 @bin bin/gdal_create
+bin/gdal_edit
+bin/gdal_fillnodata
 @bin bin/gdal_footprint
 @bin bin/gdal_grid
+bin/gdal_merge
+bin/gdal_pansharpen
+bin/gdal_polygonize
+bin/gdal_proximity
 @bin bin/gdal_rasterize
+bin/gdal_retile
+bin/gdal_sieve
 @bin bin/gdal_translate
 @bin bin/gdal_viewshed
 @bin bin/gdaladdo
+bin/gdalattachpct
 @bin bin/gdalbuildvrt
+bin/gdalcompare
 @bin bin/gdaldem
 @bin bin/gdalenhance
 @bin bin/gdalinfo
@@ -17,6 +30,7 @@ bin/gdal-config
 @bin bin/gdalmanage
 @bin bin/gdalmdiminfo
 @bin bin/gdalmdimtranslate
+bin/gdalmove
 @bin bin/gdalsrsinfo
 @bin bin/gdaltindex
 @bin bin/gdaltransform
@@ -25,9 +39,13 @@ bin/gdal-config
 @bin bin/gnmmanage
 @bin bin/nearblack
 @bin bin/ogr2ogr
+bin/ogr_layer_algebra
 @bin bin/ogrinfo
 @bin bin/ogrlineref
+bin/ogrmerge
 @bin bin/ogrtindex
+bin/pct2rgb
+bin/rgb2pct
 @bin bin/sozip
 include/cpl_atomic_ops.h
 include/cpl_auto_close.h
@@ -42,9 +60,6 @@ include/cpl_http.h
 include/cpl_json.h
 include/cpl_list.h
 include/cpl_minixml.h
-include/cpl_minizip_ioapi.h
-include/cpl_minizip_unzip.h
-include/cpl_minizip_zip.h
 include/cpl_multiproc.h
 include/cpl_port.h
 include/cpl_progress.h
@@ -89,6 +104,7 @@ include/ogr_core.h
 include/ogr_feature.h
 include/ogr_featurestyle.h
 include/ogr_geocoding.h
+include/ogr_geomcoordinateprecision.h
 include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_recordbatch.h
@@ -179,6 +195,7 @@ share/gdal/GDALLogoBW.svg
 share/gdal/GDALLogoColor.svg
 share/gdal/GDALLogoGS.svg
 share/gdal/LICENSE.TXT
+share/gdal/MM_m_idofic.csv
 share/gdal/bag_template.xml
 share/gdal/cubewerx_extra.wkt
 share/gdal/default.rsc
@@ -189,12 +206,11 @@ share/gdal/esri_StatePlane_extra.wkt
 share/gdal/gdalicon.png
 share/gdal/gdalinfo_output.schema.json
 share/gdal/gdalmdiminfo_output.schema.json
+share/gdal/gdaltileindex.xsd
 share/gdal/gdalvrt.xsd
 share/gdal/gfs.xsd
 share/gdal/gml_registry.xml
 share/gdal/gml_registry.xsd
-share/gdal/gmlasconf.xml
-share/gdal/gmlasconf.xsd
 share/gdal/grib2_center.csv
 share/gdal/grib2_process.csv
 share/gdal/grib2_subcenter.csv
