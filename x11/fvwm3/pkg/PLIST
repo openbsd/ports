@@ -39,7 +39,6 @@ libexec/fvwm3/${VERSION}/FvwmTalk
 @man man/man1/fvwm3-FvwmMFL.1
 @man man/man1/fvwm3-FvwmPager.1
 @man man/man1/fvwm3-FvwmPerl.1
-@man man/man1/fvwm3-FvwmPrompt.1
 @man man/man1/fvwm3-FvwmRearrange.1
 @man man/man1/fvwm3-FvwmScript.1
 @man man/man1/fvwm3-convert-2.6.1

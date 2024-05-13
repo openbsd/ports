@@ -1,12 +1,12 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11784,7 +11784,7 @@ then :
- else $as_nop
- 
+@@ -12221,7 +12221,7 @@ then :
+ else case e in #(
+   e)
      with_intl=maybe
 -    intl_LIBS="-l${smr_lib}"
 +    intl_LIBS="-l${smr_lib} -liconv"
- 
+  ;;
+ esac
  fi
- 
