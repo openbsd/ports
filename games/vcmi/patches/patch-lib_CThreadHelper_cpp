@@ -1,0 +1,12 @@
+Index: lib/CThreadHelper.cpp
+--- lib/CThreadHelper.cpp.orig
++++ lib/CThreadHelper.cpp
+@@ -109,7 +109,7 @@ void setThreadName(const std::string &name)
+ 	pthread_setname_np(name.c_str());
+ #elif defined(VCMI_HAIKU)
+ 	rename_thread(find_thread(NULL), name.c_str());
+-#elif defined(VCMI_UNIX)
++#elif defined(VCMI_UNIX) && !defined(__OpenBSD__)
+ 	prctl(PR_SET_NAME, name.c_str(), 0, 0, 0);
+ #endif
+ }

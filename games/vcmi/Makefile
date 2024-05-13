@@ -6,7 +6,7 @@ HOMEPAGE =	https://vcmi.eu/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
-DIST_TUPLE += github vcmi vcmi 1.4.5 .
+DIST_TUPLE += github vcmi vcmi 1.5.0 .
 DIST_TUPLE += github fuzzylite fuzzylite \
 		7aee562d6ca17f3cf42588ffb5116e03017c3c50 AI/FuzzyLite
 DIST_TUPLE += github google googletest \
@@ -15,7 +15,7 @@ DIST_TUPLE += github google googletest \
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SHARED_LIBS =		vcmi	1.0
+SHARED_LIBS =		vcmi	2.0
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
@@ -50,8 +50,6 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
 			-Wno-dev
 
 NO_TEST =		Yes
-
-FIX_CRLF_FILES = 	Global.h lib/CStopWatch.h lib/CModHandler.h
 
 post-extract:
 	sed -i 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/vcmibuilder
