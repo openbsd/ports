@@ -1,9 +1,8 @@
 COMMENT=	stateful programmatic web browsing module
 
-MODPY_EGG_VERSION=	0.4.8
+MODPY_EGG_VERSION=	0.4.10
 DISTNAME=	mechanize-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	www
 
@@ -18,14 +17,16 @@ FLAVOR=		python3
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-MODPY_TEST_LIBDIR= ${WRKSRC}/test-tools
 
 RUN_DEPENDS=	devel/py-html5lib${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}-mechanize
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}mechanize
 	cd ${WRKSRC}/examples && umask 022 && pax -rw . \
-		 ${PREFIX}/share/examples/${MODPY_PY_PREFIX}-mechanize
+		 ${PREFIX}/share/examples/${MODPY_PY_PREFIX}mechanize
+
+do-test:
+	cd ${WRKSRC}; ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
