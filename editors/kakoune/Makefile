@@ -1,6 +1,6 @@
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2023.08.05
+V =			2024.05.09
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 # -std=c++2a
 COMPILER =		base-clang
-MAKE_ENV =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" gzip_man=no
+MAKE_ENV =		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 # some tests fail without en_US.UTF-8
 TEST_ENV =		LC_CTYPE="en_US.UTF-8"

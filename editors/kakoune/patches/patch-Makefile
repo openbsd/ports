@@ -1,0 +1,56 @@
+Partial changes from 7be22f1ec28677ca0bb30316c6893ab4436734b1
+
+- escape KAK_BIN_PATH
+- test target
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -5,7 +5,7 @@ CXX = c++
+ 
+ debug = no
+ static = no
+-gzip_man = yes
++gzip_man = no
+ # to get format compatible with GitHub archive use "gzip -S .gz" here
+ compress_bin = bzip2
+ 
+@@ -13,10 +13,8 @@ compress-suffix-bzip2 = bz2
+ compress-suffix-zstd = zst
+ 
+ CPPFLAGS-debug-yes = -DKAK_DEBUG
+-CXXFLAGS-debug-yes = -O0 -g3
+ tag-debug-yes = .debug
+ 
+-CXXFLAGS-debug-no = -O3 -g3
+ tag-debug-no = .opt
+ 
+ CXXFLAGS-sanitize-address = -fsanitize=address
+@@ -40,7 +38,7 @@ bindir = $(DESTDIR)$(PREFIX)/bin
+ libexecdir = $(DESTDIR)$(PREFIX)/libexec/kak
+ sharedir = $(DESTDIR)$(PREFIX)/share/kak
+ docdir = $(DESTDIR)$(PREFIX)/share/doc/kak
+-mandir = $(DESTDIR)$(PREFIX)/share/man/man1
++mandir = $(DESTDIR)$(PREFIX)/man/man1
+ 
+ # Both Cygwin and MSYS2 have "_NT" in their uname.
+ os = $(shell uname | sed 's/.*_NT.*/Windows/')
+@@ -54,7 +52,7 @@ LDFLAGS-os-FreeBSD = -L/usr/local/lib
+ 
+ LIBS-os-Haiku = -lnetwork -lbe
+ 
+-CPPFLAGS-os-OpenBSD = -DKAK_BIN_PATH="$(bindir)/kak" -I/usr/local/include
++CPPFLAGS-os-OpenBSD = -DKAK_BIN_PATH=\"$(bindir)/kak\" -I/usr/local/include
+ LDFLAGS-os-OpenBSD = -L/usr/local/lib
+ mandir-os-OpenBSD = $(DESTDIR)$(PREFIX)/man/man1
+ 
+@@ -136,6 +134,9 @@ doc/kak.1.gz: doc/kak.1
+ 
+ check: test
+ test: src/kak
++	if [ $(os) = OpenBSD ]; then \
++        	export KAKOUNE_RUNTIME=$$PWD/share/kak; \
++	fi && \
+ 	cd test && ./run
+ 
+ TAGS: tags
