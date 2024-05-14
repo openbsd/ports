@@ -1,5 +1,5 @@
 FW_DRIVER=	qwx
-FW_VER=		20240115
+FW_VER=		20240410
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 # broad enough to reduce WRKSRC size but specific enough to match all DISTFILES
