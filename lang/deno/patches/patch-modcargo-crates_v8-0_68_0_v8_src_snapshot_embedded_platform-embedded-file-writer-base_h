@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.90.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
---- modcargo-crates/v8-0.90.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig
-+++ modcargo-crates/v8-0.90.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+Index: modcargo-crates/v8-0.91.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
+--- modcargo-crates/v8-0.91.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h.orig
++++ modcargo-crates/v8-0.91.1/v8/src/snapshot/embedded/platform-embedded-file-writer-base.h
 @@ -31,6 +31,7 @@ enum class EmbeddedTargetOs {
    kMac,
    kWin,

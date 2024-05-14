@@ -1,7 +1,17 @@
 Index: ext/webgpu/byow.rs
 --- ext/webgpu/byow.rs.orig
 +++ ext/webgpu/byow.rs
-@@ -99,14 +99,19 @@ fn raw_window(
+@@ -6,7 +6,8 @@ use deno_core::op2;
+ use deno_core::OpState;
+ use deno_core::ResourceId;
+ use std::ffi::c_void;
+-#[cfg(any(target_os = "linux", target_os = "macos"))]
++
++#[cfg(any(target_os = "linux", target_os="macos", target_os = "freebsd", target_os="openbsd"))]
+ use std::ptr::NonNull;
+ 
+ use crate::surface::WebGpuSurface;
+@@ -103,7 +104,7 @@ fn raw_window(
    Ok((win_handle, display_handle))
  }
  
@@ -10,15 +20,12 @@ Index: ext/webgpu/byow.rs
  fn raw_window(
    system: &str,
    window: *const c_void,
-   display: *const c_void,
- ) -> Result<RawHandles, AnyError> {
-   if system != "x11" {
-+    #[cfg(target_os = "linux")]
-     return Err(type_error("Invalid system on Linux"));
-+    #[cfg(target_os = "freebsd")]
-+    return Err(type_error("Invalid system on FreeBSD"));
-+    #[cfg(target_os = "openbsd")]
-+    return Err(type_error("Invalid system on OpenBSD"));
+@@ -136,7 +137,7 @@ fn raw_window(
+       ),
+     );
+   } else {
+-    return Err(type_error("Invalid system on Linux"));
++    return Err(type_error("Invalid system"));
    }
  
-   let win_handle = {
+   Ok((win_handle, display_handle))

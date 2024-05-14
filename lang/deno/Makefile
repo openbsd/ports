@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		1.42.4
+VERSION =		1.43.3
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -58,8 +58,8 @@ DOCDIR =		${PREFIX}/share/doc/deno
 WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-DENO_TS_V =		0.16.0
-V8_CARGO_V =		0.90.1
+DENO_TS_V =		0.16.1
+V8_CARGO_V =		0.91.1
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo

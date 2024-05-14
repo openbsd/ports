@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.90.1/third_party/abseil-cpp/absl/base/config.h
---- modcargo-crates/v8-0.90.1/third_party/abseil-cpp/absl/base/config.h.orig
-+++ modcargo-crates/v8-0.90.1/third_party/abseil-cpp/absl/base/config.h
+Index: modcargo-crates/v8-0.91.1/third_party/abseil-cpp/absl/base/config.h
+--- modcargo-crates/v8-0.91.1/third_party/abseil-cpp/absl/base/config.h.orig
++++ modcargo-crates/v8-0.91.1/third_party/abseil-cpp/absl/base/config.h
 @@ -444,7 +444,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  #ifdef ABSL_HAVE_SCHED_YIELD
  #error ABSL_HAVE_SCHED_YIELD cannot be directly set

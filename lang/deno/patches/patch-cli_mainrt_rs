@@ -9,7 +9,7 @@ Index: cli/mainrt.rs
  
  use crate::args::Flags;
  
-@@ -70,7 +71,8 @@ fn unwrap_or_exit<T>(result: Result<T, AnyError>) -> T
+@@ -72,7 +73,8 @@ fn unwrap_or_exit<T>(result: Result<T, AnyError>) -> T
  
  fn main() {
    let args: Vec<_> = env::args_os().collect();

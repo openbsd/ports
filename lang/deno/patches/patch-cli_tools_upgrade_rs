@@ -13,7 +13,7 @@ Index: cli/tools/upgrade.rs
  }
  
  pub fn check_for_upgrades(
-@@ -376,6 +373,7 @@ pub async fn upgrade(
+@@ -370,6 +367,7 @@ pub async fn upgrade(
    flags: Flags,
    upgrade_flags: UpgradeFlags,
  ) -> Result<(), AnyError> {

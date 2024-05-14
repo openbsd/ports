@@ -10,7 +10,7 @@ Index: cli/standalone/binary.rs
    let mut file = std::fs::File::open(file_path)?;
    file.seek(SeekFrom::End(-(TRAILER_SIZE as i64)))?;
    let mut trailer = [0; TRAILER_SIZE];
-@@ -541,7 +541,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
+@@ -543,7 +543,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
      let bytes = match maybe_bytes {
        Some(bytes) => bytes,
        None => {

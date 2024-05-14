@@ -1,7 +1,7 @@
 Index: cli/standalone/mod.rs
 --- cli/standalone/mod.rs.orig
 +++ cli/standalone/mod.rs
-@@ -53,6 +53,7 @@ use deno_runtime::permissions::PermissionsContainer;
+@@ -54,6 +54,7 @@ use deno_runtime::WorkerExecutionMode;
  use deno_runtime::WorkerLogLevel;
  use deno_semver::npm::NpmPackageReqReference;
  use import_map::parse_from_json;
@@ -9,7 +9,7 @@ Index: cli/standalone/mod.rs
  use std::rc::Rc;
  use std::sync::Arc;
  
-@@ -321,7 +322,8 @@ pub async fn run(
+@@ -329,7 +330,8 @@ pub async fn run(
    metadata: Metadata,
  ) -> Result<i32, AnyError> {
    let main_module = &metadata.entrypoint;

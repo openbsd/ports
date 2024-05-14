@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.90.1/build/detect_host_arch.py
---- modcargo-crates/v8-0.90.1/build/detect_host_arch.py.orig
-+++ modcargo-crates/v8-0.90.1/build/detect_host_arch.py
+Index: modcargo-crates/v8-0.91.1/build/detect_host_arch.py
+--- modcargo-crates/v8-0.91.1/build/detect_host_arch.py.orig
++++ modcargo-crates/v8-0.91.1/build/detect_host_arch.py
 @@ -24,6 +24,8 @@ def HostArch():
      host_arch = 'arm'
    elif host_arch.startswith('aarch64'):
