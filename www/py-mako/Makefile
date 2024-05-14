@@ -1,32 +1,31 @@
-COMMENT =	super-fast templating language
+COMMENT=	super-fast templating language
 
-MODPY_EGG_VERSION =	1.2.4
-DISTNAME =		Mako-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME:L}
-FIX_EXTRACT_PERMISSIONS = Yes
-REVISION =		0
+MODPY_EGG_VERSION=	1.3.4
+DISTNAME=	Mako-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:L}
 
-CATEGORIES =		www
+# somehow just the changelog is 0600
+FIX_EXTRACT_PERMISSIONS= Yes
 
-HOMEPAGE =		https://www.makotemplates.org/
+CATEGORIES=	www
+
+HOMEPAGE=	https://www.makotemplates.org/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
-# lingua not yet ported
-MODPY_PYTEST_ARGS =	--ignore test/ext/test_linguaplugin.pyYes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS =		textproc/py-MarkupSafe${MODPY_FLAVOR} \
-			www/py-beaker${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-MarkupSafe${MODPY_FLAVOR} \
+		www/py-beaker${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-babel${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
+		devel/py-babel${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
