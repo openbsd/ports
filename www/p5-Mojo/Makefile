@@ -2,21 +2,20 @@ COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-8.22
-REVISION =	0
+DISTNAME =	Mojolicious-9.37
 CATEGORIES =	www
 
-# Perl
+# Artistic 2.0
 PERMIT_PACKAGE =		Yes
 
 HOMEPAGE =	https://mojolicious.org/
 
-RUN_DEPENDS =	devel/p5-EV \
-		security/p5-IO-Socket-SSL>=1.94
+RUN_DEPENDS =	converters/p5-Cpanel-JSON-XS>=4.09 \
+		devel/p5-EV>=4.32 \
+		security/p5-IO-Socket-SSL>=2.009
 
 TEST_DEPENDS +=	net/p5-IO-Socket-Socks \
-		devel/p5-Role-Tiny>=2.000001 \
-		converters/p5-Cpanel-JSON-XS>=4.04
+		devel/p5-Role-Tiny>=2.000001
 
 MAKE_ENV += TEST_EV=Yes
 MAKE_ENV += TEST_HYPNOTOAD=Yes

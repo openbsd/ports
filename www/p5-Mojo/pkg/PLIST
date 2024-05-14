@@ -9,6 +9,7 @@ ${P5SITE}/Mojo/Asset.pm
 ${P5SITE}/Mojo/Asset/File.pm
 ${P5SITE}/Mojo/Asset/Memory.pm
 ${P5SITE}/Mojo/Base.pm
+${P5SITE}/Mojo/BaseUtil.pm
 ${P5SITE}/Mojo/ByteStream.pm
 ${P5SITE}/Mojo/Cache.pm
 ${P5SITE}/Mojo/Collection.pm
@@ -35,7 +36,6 @@ ${P5SITE}/Mojo/Home.pm
 ${P5SITE}/Mojo/IOLoop/
 ${P5SITE}/Mojo/IOLoop.pm
 ${P5SITE}/Mojo/IOLoop/Client.pm
-${P5SITE}/Mojo/IOLoop/Delay.pm
 ${P5SITE}/Mojo/IOLoop/Server.pm
 ${P5SITE}/Mojo/IOLoop/Stream.pm
 ${P5SITE}/Mojo/IOLoop/Subprocess.pm
@@ -84,6 +84,8 @@ ${P5SITE}/Mojo/UserAgent/Server.pm
 ${P5SITE}/Mojo/UserAgent/Transactor.pm
 ${P5SITE}/Mojo/Util.pm
 ${P5SITE}/Mojo/WebSocket.pm
+${P5SITE}/Mojo/resources/
+${P5SITE}/Mojo/resources/html_entities.txt
 ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Command/
@@ -93,6 +95,7 @@ ${P5SITE}/Mojolicious/Command/Author/cpanify.pm
 ${P5SITE}/Mojolicious/Command/Author/generate/
 ${P5SITE}/Mojolicious/Command/Author/generate.pm
 ${P5SITE}/Mojolicious/Command/Author/generate/app.pm
+${P5SITE}/Mojolicious/Command/Author/generate/dockerfile.pm
 ${P5SITE}/Mojolicious/Command/Author/generate/lite_app.pm
 ${P5SITE}/Mojolicious/Command/Author/generate/makefile.pm
 ${P5SITE}/Mojolicious/Command/Author/generate/plugin.pm
@@ -127,6 +130,7 @@ ${P5SITE}/Mojolicious/Plugin/EPRenderer.pm
 ${P5SITE}/Mojolicious/Plugin/HeaderCondition.pm
 ${P5SITE}/Mojolicious/Plugin/JSONConfig.pm
 ${P5SITE}/Mojolicious/Plugin/Mount.pm
+${P5SITE}/Mojolicious/Plugin/NotYAMLConfig.pm
 ${P5SITE}/Mojolicious/Plugin/TagHelpers.pm
 ${P5SITE}/Mojolicious/Plugins.pm
 ${P5SITE}/Mojolicious/Renderer.pm
@@ -145,21 +149,25 @@ ${P5SITE}/Mojolicious/resources/
 ${P5SITE}/Mojolicious/resources/public/
 ${P5SITE}/Mojolicious/resources/public/favicon.ico
 ${P5SITE}/Mojolicious/resources/public/mojo/
+${P5SITE}/Mojolicious/resources/public/mojo/bootstrap/
+${P5SITE}/Mojolicious/resources/public/mojo/bootstrap/bootstrap.css
+${P5SITE}/Mojolicious/resources/public/mojo/bootstrap/bootstrap.js
+${P5SITE}/Mojolicious/resources/public/mojo/bootstrap/bootstrap.min.css.map
 ${P5SITE}/Mojolicious/resources/public/mojo/failraptor.png
-${P5SITE}/Mojolicious/resources/public/mojo/jquery/
-${P5SITE}/Mojolicious/resources/public/mojo/jquery/jquery.js
-${P5SITE}/Mojolicious/resources/public/mojo/logo-black-2x.png
-${P5SITE}/Mojolicious/resources/public/mojo/logo-black.png
+${P5SITE}/Mojolicious/resources/public/mojo/highlight.js/
+${P5SITE}/Mojolicious/resources/public/mojo/highlight.js/highlight-mojo-dark.css
+${P5SITE}/Mojolicious/resources/public/mojo/highlight.js/highlight.min.js
+${P5SITE}/Mojolicious/resources/public/mojo/highlight.js/mojolicious.min.js
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-white-2x.png
 ${P5SITE}/Mojolicious/resources/public/mojo/logo-white.png
 ${P5SITE}/Mojolicious/resources/public/mojo/logo.png
+${P5SITE}/Mojolicious/resources/public/mojo/mojo.css
 ${P5SITE}/Mojolicious/resources/public/mojo/noraptor.png
 ${P5SITE}/Mojolicious/resources/public/mojo/notfound.png
 ${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-dark.png
 ${P5SITE}/Mojolicious/resources/public/mojo/pinstripe-light.png
-${P5SITE}/Mojolicious/resources/public/mojo/prettify/
-${P5SITE}/Mojolicious/resources/public/mojo/prettify/prettify-mojo-dark.css
-${P5SITE}/Mojolicious/resources/public/mojo/prettify/run_prettify.js
+${P5SITE}/Mojolicious/resources/public/mojo/popper/
+${P5SITE}/Mojolicious/resources/public/mojo/popper/popper.js
 ${P5SITE}/Mojolicious/resources/templates/
 ${P5SITE}/Mojolicious/resources/templates/mojo/
 ${P5SITE}/Mojolicious/resources/templates/mojo/debug.html.ep
@@ -176,6 +184,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Asset::File.3p
 @man man/man3p/Mojo::Asset::Memory.3p
 @man man/man3p/Mojo::Base.3p
+@man man/man3p/Mojo::BaseUtil.3p
 @man man/man3p/Mojo::ByteStream.3p
 @man man/man3p/Mojo::Cache.3p
 @man man/man3p/Mojo::Collection.3p
@@ -198,7 +207,6 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Home.3p
 @man man/man3p/Mojo::IOLoop.3p
 @man man/man3p/Mojo::IOLoop::Client.3p
-@man man/man3p/Mojo::IOLoop::Delay.3p
 @man man/man3p/Mojo::IOLoop::Server.3p
 @man man/man3p/Mojo::IOLoop::Stream.3p
 @man man/man3p/Mojo::IOLoop::Subprocess.3p
@@ -243,6 +251,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Command::Author::cpanify.3p
 @man man/man3p/Mojolicious::Command::Author::generate.3p
 @man man/man3p/Mojolicious::Command::Author::generate::app.3p
+@man man/man3p/Mojolicious::Command::Author::generate::dockerfile.3p
 @man man/man3p/Mojolicious::Command::Author::generate::lite_app.3p
 @man man/man3p/Mojolicious::Command::Author::generate::makefile.3p
 @man man/man3p/Mojolicious::Command::Author::generate::plugin.3p
@@ -275,6 +284,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Plugin::HeaderCondition.3p
 @man man/man3p/Mojolicious::Plugin::JSONConfig.3p
 @man man/man3p/Mojolicious::Plugin::Mount.3p
+@man man/man3p/Mojolicious::Plugin::NotYAMLConfig.3p
 @man man/man3p/Mojolicious::Plugin::TagHelpers.3p
 @man man/man3p/Mojolicious::Plugins.3p
 @man man/man3p/Mojolicious::Renderer.3p
