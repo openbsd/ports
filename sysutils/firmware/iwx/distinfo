@@ -1,4 +1,2 @@
-SHA256 (firmware/linux-firmware-iwlwifi-fw-2022-11-08.tar.gz) = kJAhLLBr0g7/Q/Z0PiBEotjj4HBcIW7RjXmNa6lbkMA=
-SHA256 (firmware/linux-firmware-iwlwifi-fw-2023-06-29.tar.gz) = /wqz7WuxcLhwLmp+FRSsTavF9jp55W/933SxzMn5kkE=
-SIZE (firmware/linux-firmware-iwlwifi-fw-2022-11-08.tar.gz) = 447396905
-SIZE (firmware/linux-firmware-iwlwifi-fw-2023-06-29.tar.gz) = 441471344
+SHA256 (firmware/linux-firmware-20240410.tar.xz) = t/IxIoQ5xDAr4t+1AU2tGPSnfWY6EWZ8CMe4rqdYDZk=
+SIZE (firmware/linux-firmware-20240410.tar.xz) = 371871028
