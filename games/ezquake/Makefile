@@ -5,6 +5,7 @@ CATEGORIES =	games
 N =		ezquake
 V =		3.6.4
 PKGNAME =	${N}-${V}
+REVISION =	0
 DIST_TUPLE +=	github QW-Group ${N}-source ${V} . # GPLv2+
 DIST_TUPLE +=	github QW-Group qwprot 53af547d0608a1507895fc1629cdc3f4820fc0af src/qwprot # GPLv2+
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 
-HOMEPAGE =	https://ezquake.github.io/
+HOMEPAGE =	https://ezquake.com/
 
 WANTLIB += GL SDL2 c curl expat freetype jansson jpeg m minizip pcre2-8 png
 WANTLIB += pthread sndfile speex speexdsp z
