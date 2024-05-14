@@ -1,0 +1,18 @@
+use snprintf(3) instead of sprintf(3)
+
+Index: src/jit.c
+--- src/jit.c.orig
++++ src/jit.c
+@@ -1627,9 +1627,10 @@ static void call_native_consts( jit_ctx *ctx, void *na
+ }
+ 
+ static void on_jit_error( const char *msg, int_val line ) {
+-	char buf[256];
++	size_t buflen = 256;
++	char buf[buflen];
+ 	int iline = (int)line;
+-	sprintf(buf,"%s (line %d)",msg,iline);
++	snprintf(buf,buflen,"%s (line %d)",msg,iline);
+ #ifdef HL_WIN_DESKTOP
+ 	MessageBoxA(NULL,buf,"JIT ERROR",MB_OK);
+ #else

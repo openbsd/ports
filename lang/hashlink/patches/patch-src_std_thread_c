@@ -16,7 +16,7 @@ Index: src/std/thread.c
  #if !defined(HL_THREADS)
  
  struct _hl_mutex {
-@@ -811,6 +816,8 @@ HL_PRIM int hl_thread_id() {
+@@ -839,6 +844,8 @@ HL_PRIM int hl_thread_id() {
  	return (pid_t)tid64;
  #elif defined(SYS_gettid) && !defined(HL_TVOS)
  	return syscall(SYS_gettid);
@@ -25,7 +25,7 @@ Index: src/std/thread.c
  #else
  	return -1;
  #endif
-@@ -945,7 +952,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
+@@ -973,7 +980,7 @@ HL_PRIM void hl_thread_set_name( hl_thread *t, const c
  #elif defined(HL_MAC)
  	// pthread_setname_np only possible for current thread
  #else

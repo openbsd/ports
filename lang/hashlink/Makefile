@@ -5,15 +5,14 @@ USE_NOBTCFI =	Yes
 
 COMMENT =	virtual machine for Haxe
 
-V =		1.14pl1
-COMMIT =	8bc5f8f0d21c38805ca3457e5298a27d96c396ad
+V =		1.14pl2
+COMMIT =	63763dc3d8fcbae5a02a731217a60ad93eb746a1
 PKGNAME =	hashlink-${V}
-REVISION =	0
 
-# commit from 2024-03-08; tagged as 'latest'
+# commit from 2024-05-10; tagged as 'latest'
 DIST_TUPLE +=	github HaxeFoundation hashlink ${COMMIT} .
 
-SHARED_LIBS +=	hl		2.1	# 1.14
+SHARED_LIBS +=	hl		2.2	# 1.14
 SHARED_LIBS +=	hl_module	0.0	# 1.13
 
 CATEGORIES =	lang
@@ -44,6 +43,7 @@ SUBST_VARS +=	CFLAGS
 
 FIX_CRLF_FILES = libs/uv/uv.c \
 		src/hl.h \
+		src/jit.c \
 		src/std/socket.c \
 		src/std/thread.c
 
