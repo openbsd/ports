@@ -1,6 +1,7 @@
---- dpid/main.c.orig	Sun Jan 27 12:26:38 2013
-+++ dpid/main.c	Thu Apr 18 12:25:04 2013
-@@ -70,7 +70,7 @@ static int start_filter_plugin(struct dp dpi_attr)
+Index: dpid/main.c
+--- dpid/main.c.orig
++++ dpid/main.c
+@@ -90,7 +90,7 @@ static int start_filter_plugin(struct dp dpi_attr)
     }
     if (pid == 0) {
        /* Child, start plugin */
@@ -9,7 +10,7 @@
           ERRMSG("start_plugin", "execl", errno);
           MSG_ERR("ERROR in child proc for %s\n", dpi_attr.path);
           exit(1);
-@@ -102,7 +102,7 @@ static void start_server_plugin(struct dp dpi_attr)
+@@ -122,7 +122,7 @@ static void start_server_plugin(struct dp dpi_attr)
        MSG_ERR("ERROR in child proc for %s\n", dpi_attr.path);
        exit(1);
     }

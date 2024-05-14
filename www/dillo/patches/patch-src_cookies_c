@@ -1,6 +1,7 @@
---- src/cookies.c.orig	Sun Jan 27 12:26:38 2013
-+++ src/cookies.c	Thu Apr 18 12:25:04 2013
-@@ -94,6 +94,9 @@ static FILE *Cookies_fopen(const char *filename, char 
+Index: src/cookies.c
+--- src/cookies.c.orig
++++ src/cookies.c
+@@ -97,6 +97,9 @@ static FILE *Cookies_fopen(const char *filename, char 
  
           MSG("Cookies: Created file: %s\n", filename);
           F_in = fopen(filename, "r");
