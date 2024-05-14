@@ -59,6 +59,7 @@
      SUBDIR += hashcash
      SUBDIR += hypermail
      SUBDIR += hypermail,gdbm
+     SUBDIR += imapdedup
      SUBDIR += imapfilter
      SUBDIR += imapproxy
      SUBDIR += imapsync
