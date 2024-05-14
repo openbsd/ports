@@ -1,0 +1,62 @@
+Deal with newer FFmpeg API.
+
+Index: src/plugins/avcodec/wscript
+--- src/plugins/avcodec/wscript.orig
++++ src/plugins/avcodec/wscript
+@@ -1,10 +1,56 @@
+ from waftools.plugin import plugin
+ 
++## Code fragments for configuration
++avcodec_send_packet_fragment = """
++#ifdef HAVE_LIBAVCODEC_AVCODEC_H
++# include "libavcodec/avcodec.h"
++#else
++# include "avcodec.h"
++#endif
++int main(void) {
++    AVCodecContext *ctx;
++    AVPacket *pkt;
++
++    avcodec_send_packet (ctx, pkt);
++
++    return 0;
++}
++"""
++
++avcodec_free_frame_fragment = """
++#ifdef HAVE_LIBAVCODEC_AVCODEC_H
++# include "libavcodec/avcodec.h"
++#else
++# include "avcodec.h"
++#endif
++int main(void) {
++    AVFrame *frame;
++
++    avcodec_free_frame (&frame);
++
++    return 0;
++}
++"""
++
+ def plugin_configure(conf):
+     conf.check_cfg(package="libavcodec", uselib_store="avcodec",
+             args="--cflags --libs")
+     conf.check_cc(header_name="avcodec.h", uselib="avcodec", type="cshlib", mandatory=False)
+     conf.check_cc(header_name="libavcodec/avcodec.h", uselib="avcodec", type="cshlib", mandatory=False)
++
++    # mandatory function avcodec_send_packet available since
++    # * ffmpeg: commit 7fc329e, lavc 57.37.100, release 3.1
++    # * libav: commit 05f6670, lavc 57.16.0, release 12
++    conf.check_cc(fragment=avcodec_send_packet_fragment, uselib="avcodec",
++                  uselib_store="avcodec_send_packet",
++                  msg="Checking for function avcodec_send_packet", mandatory=True)
++
++    # non-mandatory function avcodec_free_frame since
++    # * ffmpeg: commit 46a3595, lavc 54.59.100, release 1.0
++    # * libav: commit a42aada, lavc 54.28.0, release 9
++    conf.check_cc(fragment=avcodec_free_frame_fragment, uselib="avcodec",
++                  uselib_store="avcodec_free_frame",
++                  msg="Checking for function avcodec_free_frame", mandatory=False)
+ 
+ configure, build = plugin('avcodec', configure=plugin_configure,
+                           libs=["avcodec"])
