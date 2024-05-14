@@ -1,6 +1,5 @@
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
-DISTNAME =	badwolf-1.2.2
-REVISION =	2
+DISTNAME =	badwolf-1.3.0
 CATEGORIES =	www
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
@@ -15,14 +14,18 @@ SITES =		https://hacktivis.me/releases/
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 harfbuzz intl javascriptcoregtk-4.0 pango-1.0
-WANTLIB += pangocairo-1.0 soup-2.4 webkit2gtk-4.0 xml2 gmodule-2.0 pthread
+WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz
+WANTLIB += intl javascriptcoregtk-4.1 pango-1.0 pangocairo-1.0
+WANTLIB += pthread soup-3.0 webkit2gtk-4.1 xml2
 
-BUILD_DEPENDS =	devel/gettext,-tools \
+BUILD_DEPENDS =	devel/flawfinder \
+		devel/gettext,-tools \
+		devel/ninja \
+		devel/shellcheck \
 		textproc/libxml
-LIB_DEPENDS =	devel/libsoup \
-		www/webkitgtk4
+LIB_DEPENDS =	devel/glib2 \
+		www/webkitgtk4,webkitgtk41
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
@@ -31,11 +34,14 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # shellcheck.
 NO_TEST =	Yes
 
-USE_GMAKE =	Yes
-
 CONFIGURE_STYLE =	simple
-
-MAKE_FLAGS =		DOCDIR=${PREFIX}/share/doc/badwolf \
+CONFIGURE_ARGS =	WITH_WEBKITGTK=4.1 \
+			WITH_URI_PARSER=guri \
 			MANDIR=${PREFIX}/man
+
+do-build:
+	cd ${WRKBUILD} && ninja
+do-install:
+	cd ${WRKBUILD} && ninja install
 
 .include <bsd.port.mk>

@@ -1,8 +1,10 @@
 Index: version.sh
 --- version.sh.orig
 +++ version.sh
-@@ -1,4 +1,7 @@
- #!/bin/sh
+@@ -3,6 +3,9 @@
+ # SPDX-FileCopyrightText: 2019-2022 Badwolf Authors <https://hacktivis.me/projects/badwolf>
+ # SPDX-License-Identifier: BSD-3-Clause
+ 
 +
 +[ -d .git ] || exit
 +
