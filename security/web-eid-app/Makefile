@@ -2,50 +2,15 @@ COMMENT-main =		native messaging host for Web eID browser extension
 COMMENT-chrome =	Chromium extension
 CATEGORIES =		security www
 
-GH_ACCOUNT =		web-eid
-GH_PROJECT =		web-eid-app
-GH_TAGNAME =		v2.4.0
-DISTFILES =		${GH_DISTFILE}
-PKGNAME-main =		${PKGNAME:S/app/native/}
-PKGNAME-chrome =	${PKGNAME:S/app/chrome/}
-REVISION-main =		1
-REVISION-chrome =	0
+V =			2.5.0
+DISTNAME =		web-eid_${V}.642-2004
+PKGNAME =		web-eid-native-${V}
+WRKDIST =		${WRKDIR}/web-eid
+
+SITES =			https://github.com/web-eid/web-eid-app/releases/download/v${V}/
+EXTRACT_SUFX =		.tar.xz
 
 MULTI_PACKAGES =	-main -chrome
-
-# pending/accepted "Upload complete source tarball as release asset"
-# https://github.com/web-eid/web-eid-app/pull/279
-
-# submodules of ${GH_PROJECT} at release, see
-#	cd path/to/repo
-#	git checkout ${commit}
-#	git submodule status
-EID_REPO =	libelectronic-id
-EID_COMMIT =	fb84aa8cf7ae1073f5472b7093d4df2ed95dc718
-EID_DIR =	lib/${EID_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${EID_REPO}	${EID_COMMIT}	${EID_DIR}	# MIT
-
-# submodules of ${EID_REPO} submodule at release
-PCSC_REPO =	libpcsc-cpp
-PCSC_COMMIT =	6f04aacfc594b486bc4500737ee3877492c95328
-PCSC_DIR =	${EID_DIR}/lib/${PCSC_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${PCSC_REPO}	${PCSC_COMMIT}	${PCSC_DIR}	# MIT
-
-# submodules of ${PCSC_REPO} submodule at release
-MOCK_REPO =	libpcsc-mock
-MOCK_COMMIT =	488cb42301a42d8ced964a0aaafe4be0d258126d
-MOCK_DIR =	${PCSC_DIR}/tests/lib/${MOCK_REPO}
-DIST_TUPLE +=	github	${GH_ACCOUNT}	${MOCK_REPO}	${MOCK_COMMIT}	${MOCK_DIR}	# MIT
-
-SITES.pcsc =		https://github.com/${GH_ACCOUNT}/${PCSC_REPO}/commit/
-PCSC_FIX_COMMIT =	d51bd26ee80e62965eb32ec56982a868d6074471
-# upstream "Fix build with recent compilers"
-PATCHFILES.pcsc =	libpcsc-fix-compilers-{}${PCSC_FIX_COMMIT}.patch
-PATCH_DIST_STRIP =	-p1
-
-PATCH_CASES =		*-${PCSC_FIX_COMMIT}.patch) \
-				${PATCH} ${PATCH_DIST_ARGS} \
-				    -d ${WRKSRC}/${PCSC_DIR}/ < $$patchfile;;
 
 # MIT
 PERMIT_PACKAGE =	Yes
