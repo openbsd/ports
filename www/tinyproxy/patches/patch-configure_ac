@@ -1,0 +1,30 @@
+- Fix detection of compiler flags with Clang; by default Clang issues a warning
+- Fix separate build tree issue
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -156,12 +156,12 @@ if test -n "${MAINTAINER_MODE_FALSE}"; then
+ fi
+ 
+ all_desired_work=false
+-AS_COMPILER_FLAG([$DESIRED_FLAGS], [all_desired_work=true])
++AS_COMPILER_FLAG([-Werror $DESIRED_FLAGS], [all_desired_work=true])
+ if $all_desired_work ; then
+     CFLAGS="$CFLAGS $DESIRED_FLAGS"
+ else
+ for flag in $DESIRED_FLAGS; do
+-  AS_COMPILER_FLAG([$flag], [CFLAGS="$CFLAGS $flag"])
++  AS_COMPILER_FLAG([-Werror $flag], [CFLAGS="$CFLAGS $flag"])
+ done
+ fi
+ 
+@@ -200,7 +200,7 @@ AH_TEMPLATE([HAVE_GPERF],
+ tmp_gperf=false
+ if test "x$GPERF" != "x" -a "x$GPERF" != "xno" ; then
+   AS_ECHO_N(["checking whether gperf is recent enough... "])
+-  if "$GPERF" < src/conf-tokens.gperf >/dev/null 2>&1 ; then
++  if "$GPERF" < $srcdir/src/conf-tokens.gperf >/dev/null 2>&1 ; then
+     AS_ECHO("yes")
+     AC_DEFINE(HAVE_GPERF)
+     tmp_gperf=true
