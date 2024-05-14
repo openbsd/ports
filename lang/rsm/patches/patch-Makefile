@@ -1,0 +1,44 @@
+don't set ${PREFIX} here because this confuses the fake installation
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -26,15 +26,15 @@
+ # along with this program. If not, see http://www.gnu.org/licenses/.
+ 
+ OS      != uname
+-CC      := gcc
++CC      ?= cc
+ PROG    := rsm
+ RM      := rm -f
+ DEPS    := include/*.h
+ SRC     != ls */*.c
+ OBJ     := $(SRC:.c=.o)
+-CFLAGS  := -Wall -Wextra -fsigned-char -fwrapv -std=gnu99 -Iinclude
++CFLAGS  += -Wall -Wextra -fsigned-char -fwrapv -std=gnu99 -Iinclude
+ LDFLAGS := -lm -lcrypt
+-PREFIX  := /usr/local
++#PREFIX  := /usr/local
+ GIT_SHA != git rev-parse --short=10 HEAD 2>/dev/null; true
+ 
+ .ifdef $(GIT_SHA)
+@@ -62,7 +62,6 @@ GIT_SHA != git rev-parse --short=10 HEAD 2>/dev/null; 
+ .       endif
+ .   endif
+ .else
+-    CONFIG  := -O3
+     CFLAGS  += -DNDEBUG
+ .endif
+ 
+@@ -80,10 +79,7 @@ clean:
+ 	${RM} ${OBJ} ${PROG} $(wildcard ${PROG}.core)
+ 
+ install: ${PROG}
+-	@if [ "$${USER}" != "root" ]; then \
+-	    echo "You must install ${PROG} as root"; \
+-	    exit 1; \
+-	elif [ -d ${PREFIX}/bin ]; then \
++	if [ -d ${PREFIX}/bin ]; then \
+ 	    echo install -o root -g 0 -m 755 -s ${PROG} ${PREFIX}/bin; \
+ 	    install -o root -g 0 -m 755 -s ${PROG} ${PREFIX}/bin; \
+ 	else \

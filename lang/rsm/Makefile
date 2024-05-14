@@ -1,24 +1,22 @@
 COMMENT =	Reference Standard M, implementation of M/MUMPS
 
-DISTNAME =	${GL_PROJECT}-${GL_TAGNAME}
-PKGNAME =	${GL_PROJECT}-${GL_TAGNAME:S/v//}
-GL_ACCOUNT =	Reference-Standard-M
-GL_PROJECT =	rsm
-GL_TAGNAME =	v1.76.2
+V =		1.80.4
+HASH =		0efe8a658f3e7d1dc04cb974b97b5402271fab66
+PKGNAME =	rsm-${V}
+DIST_TUPLE +=	gitlab Reference-Standard-M rsm v${V} .
+
 CATEGORIES =	lang
 HOMEPAGE =	https://gitlab.com/${GL_ACCOUNT}/${GL_TAGNAME}
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	0
 
 # AGPL-3.0+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m
 
-SITES =	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/archive/${GL_TAGNAME}/
-
 NO_TEST =	Yes
-MAKE_FILE =	BSDmakefile
+
+WRKDIST =	${WRKDIR}/rsm-v${V}-${HASH}
 
 post-install:
 	${INSTALL_DATA_DIR}	${PREFIX}/share/rsm
