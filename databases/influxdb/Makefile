@@ -75,6 +75,8 @@ pre-build:
 	cd ${WRKSRC} && ${MODGO_CMD} generate ${MODGO_FLAGS} ./static
 	# hack to fix build with rust 1.72
 	sed -ie 12d ${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/flux/src/lib.rs
+	# hack to fix build with rust 1.78, cf https://github.com/influxdata/flux/issues/5479
+	sed -ie '/feature = "strict",/s/warnings,//' ${WRKDIR}/go/pkg/mod/github.com/influxdata/flux@v0.194.3/libflux/flux-core/src/lib.rs
 
 do-configure:
 	${MODCARGO_configure}
