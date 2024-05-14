@@ -1,15 +1,9 @@
 COMMENT =		vi-like editor with sam-style structural regex support
 
-V =			0.8
-DISTNAME =		vis-${V}
-REVISION =		1
-
-TEST_V =		0.5
-TEST_DISTNAME =		vis-test-${TEST_V}
+DIST_TUPLE =		github martanne vis      v0.9	.
+DIST_TUPLE +=		github martanne vis-test v0.5	test
 
 CATEGORIES =		editors
-
-HOMEPAGE =		https://github.com/martanne/vis
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -17,10 +11,6 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses iconv intl m termkey tre ${MODLUA_WANTLIB}
-
-SITES =			${HOMEPAGE}/releases/download/v${V}/
-SITES.test =		${HOMEPAGE}-test/releases/download/v${TEST_V}/
-DISTFILES.test =	${TEST_DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3
@@ -30,7 +20,8 @@ LIB_DEPENDS =		devel/libtermkey \
 
 RUN_DEPENDS =		devel/lpeg,${MODLUA_FLAVOR}>=0.12
 
-TEST_DEPENDS =		editors/vim
+TEST_DEPENDS =		editors/vim \
+			plan9/plan9port
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		LUA_VER=${MODLUA_FLAVOR}
@@ -42,9 +33,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 # for test/core/Makefile
 USE_GMAKE =		Yes
 
-post-extract:
-	rmdir ${WRKSRC}/test
-	mv ${WRKDIR}/${TEST_DISTNAME}/ ${WRKSRC}/test
+TEST_ENV =		SHELL=/bin/sh
 
 post-install:
 	cd ${PREFIX} && \

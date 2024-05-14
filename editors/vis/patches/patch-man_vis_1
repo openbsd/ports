@@ -3,7 +3,7 @@ Point at correct manual
 Index: man/vis.1
 --- man/vis.1.orig
 +++ man/vis.1
-@@ -260,7 +260,7 @@ currently defers regular expression matching to the un
+@@ -265,7 +265,7 @@ currently defers regular expression matching to the un
  It uses what POSIX refers to as
  .Dq Extended Regular Expressions
  as described in

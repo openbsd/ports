@@ -1,4 +1,5 @@
-Removed hardcoded optimizations.
+- removed hardcoded optimizations
+- lock for our lua version only
 
 Index: configure
 --- configure.orig
@@ -11,11 +12,11 @@ Index: configure
  tryflag CFLAGS -ffunction-sections
  tryflag CFLAGS -fdata-sections
  tryldflag LDFLAGS_AUTO -Wl,--gc-sections
-@@ -443,7 +442,7 @@ int main(int argc, char *argv[]) {
+@@ -444,7 +443,7 @@ int main(int argc, char *argv[]) {
  }
  EOF
  
--	for liblua in lua lua5.4 lua5.3 lua5.2 lua-5.3 lua-5.2 lua54 lua53 lua52; do
+-	for liblua in lua lua5.4 lua5.3 lua5.2 lua-5.4 lua-5.3 lua-5.2 lua54 lua53 lua52; do
 +	for liblua in $LUA_VER; do
  		printf " checking for %s... " "$liblua"
  

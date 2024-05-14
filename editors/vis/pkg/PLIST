@@ -27,6 +27,7 @@ share/vis/lexers/apl.lua
 share/vis/lexers/applescript.lua
 share/vis/lexers/asm.lua
 share/vis/lexers/asp.lua
+share/vis/lexers/autohotkey.lua
 share/vis/lexers/autoit.lua
 share/vis/lexers/awk.lua
 share/vis/lexers/bash.lua
@@ -70,11 +71,13 @@ share/vis/lexers/gemini.lua
 share/vis/lexers/gettext.lua
 share/vis/lexers/gherkin.lua
 share/vis/lexers/git-rebase.lua
+share/vis/lexers/gleam.lua
 share/vis/lexers/glsl.lua
 share/vis/lexers/gnuplot.lua
 share/vis/lexers/go.lua
 share/vis/lexers/groovy.lua
 share/vis/lexers/gtkrc.lua
+share/vis/lexers/hare.lua
 share/vis/lexers/haskell.lua
 share/vis/lexers/html.lua
 share/vis/lexers/icon.lua
@@ -84,6 +87,7 @@ share/vis/lexers/ini.lua
 share/vis/lexers/io_lang.lua
 share/vis/lexers/java.lua
 share/vis/lexers/javascript.lua
+share/vis/lexers/jq.lua
 share/vis/lexers/json.lua
 share/vis/lexers/jsp.lua
 share/vis/lexers/julia.lua
@@ -100,6 +104,7 @@ share/vis/lexers/makefile.lua
 share/vis/lexers/man.lua
 share/vis/lexers/markdown.lua
 share/vis/lexers/matlab.lua
+share/vis/lexers/mediawiki.lua
 share/vis/lexers/meson.lua
 share/vis/lexers/moonscript.lua
 share/vis/lexers/myrddin.lua
@@ -108,7 +113,9 @@ share/vis/lexers/networkd.lua
 share/vis/lexers/nim.lua
 share/vis/lexers/nsis.lua
 share/vis/lexers/null.lua
+share/vis/lexers/objeck.lua
 share/vis/lexers/objective_c.lua
+share/vis/lexers/output.lua
 share/vis/lexers/pascal.lua
 share/vis/lexers/perl.lua
 share/vis/lexers/php.lua
@@ -131,6 +138,7 @@ share/vis/lexers/rest.lua
 share/vis/lexers/rexx.lua
 share/vis/lexers/rhtml.lua
 share/vis/lexers/routeros.lua
+share/vis/lexers/rpmspec.lua
 share/vis/lexers/rstats.lua
 share/vis/lexers/ruby.lua
 share/vis/lexers/rust.lua
@@ -146,10 +154,14 @@ share/vis/lexers/strace.lua
 share/vis/lexers/systemd.lua
 share/vis/lexers/taskpaper.lua
 share/vis/lexers/tcl.lua
+share/vis/lexers/template.txt
 share/vis/lexers/tex.lua
 share/vis/lexers/texinfo.lua
 share/vis/lexers/text.lua
 share/vis/lexers/toml.lua
+share/vis/lexers/troff.lua
+share/vis/lexers/txt2tags.lua
+share/vis/lexers/typescript.lua
 share/vis/lexers/vala.lua
 share/vis/lexers/vb.lua
 share/vis/lexers/vbscript.lua
@@ -170,10 +182,8 @@ share/vis/plugins/filetype.lua
 share/vis/plugins/number-inc-dec.lua
 share/vis/plugins/textobject-lexer.lua
 share/vis/themes/
-share/vis/themes/dark-16.lua
-share/vis/themes/default-16.lua
-share/vis/themes/default-256.lua
-share/vis/themes/light-16.lua
+share/vis/themes/base-16.lua
+share/vis/themes/default.lua
 share/vis/themes/solarized.lua
 share/vis/themes/zenburn.lua
 share/vis/vis-std.lua
