@@ -10,6 +10,7 @@
 @comment bin/get-authkey
 @comment bin/gitops-pusher
 @comment bin/hello
+@comment bin/k8s-nameserver
 @comment bin/k8s-operator
 @comment bin/mkmanifest
 @comment bin/mkpkg

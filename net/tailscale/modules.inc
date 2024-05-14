@@ -119,7 +119,7 @@ MODGO_MODULES =	\
 	github.com/containerd/stargz-snapshotter/estargz				 v0.15.1 \
 	github.com/containerd/ttrpc							 v1.1.0 \
 	github.com/containerd/typeurl							 v1.0.2 \
-	github.com/coreos/go-iptables							 v0.7.0 \
+	github.com/coreos/go-iptables							 v0.7.1-0.20240112124308-65c67c9f46e6 \
 	github.com/coreos/go-oidc							 v2.2.1+incompatible \
 	github.com/coreos/go-semver							 v0.3.1 \
 	github.com/coreos/go-systemd							 v0.0.0-20191104093116-d3cd4ed1dbcf \
@@ -234,7 +234,7 @@ MODGO_MODULES =	\
 	github.com/google/goterm							 v0.0.0-20200907032337-555d40f16ae2 \
 	github.com/google/martian							 v2.1.0+incompatible \
 	github.com/google/martian/v3							 v3.1.0 \
-	github.com/google/nftables							 v0.1.1-0.20230115205135-9aa6fdf5a28c \
+	github.com/google/nftables							 v0.2.1-0.20240414091927-5e242ec57806 \
 	github.com/google/pprof								 v0.0.0-20210720184732-4bb14d4b1be1 \
 	github.com/google/renameio							 v0.1.0 \
 	github.com/google/rpmpack							 v0.5.0 \
@@ -494,7 +494,7 @@ MODGO_MODULES =	\
 	github.com/tailscale/peercred							 v0.0.0-20240214030740-b535050b2aa4 \
 	github.com/tailscale/web-client-prebuilt					 v0.0.0-20240226180453-5db17b287bf1 \
 	github.com/tailscale/wf								 v0.0.0-20240214030419-6fbb0a674ee6 \
-	github.com/tailscale/wireguard-go						 v0.0.0-20231121184858-cc193a0b3272 \
+	github.com/tailscale/wireguard-go						 v0.0.0-20240429185444-03c5a0ccf754 \
 	github.com/tailscale/xnet							 v0.0.0-20240117122442-62b9a7c569f9 \
 	github.com/tc-hib/winres							 v0.2.1 \
 	github.com/tcnksm/go-httpstat							 v0.2.0 \
@@ -567,18 +567,18 @@ MODGO_MODULES =	\
 	go4.org/mem									 v0.0.0-20220726221520-4f986261bf13 \
 	go4.org/netipx									 v0.0.0-20231129151722-fdeea329fbba \
 	golang.org/x/arch								 v0.2.0 \
-	golang.org/x/crypto								 v0.18.0 \
+	golang.org/x/crypto								 v0.21.0 \
 	golang.org/x/exp								 v0.0.0-20240119083558-1b970713d09a \
 	golang.org/x/exp/typeparams							 v0.0.0-20240119083558-1b970713d09a \
 	golang.org/x/image								 v0.15.0 \
 	golang.org/x/lint								 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile								 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod								 v0.14.0 \
-	golang.org/x/net								 v0.20.0 \
+	golang.org/x/net								 v0.23.0 \
 	golang.org/x/oauth2								 v0.16.0 \
 	golang.org/x/sync								 v0.6.0 \
-	golang.org/x/sys								 v0.17.0 \
-	golang.org/x/term								 v0.16.0 \
+	golang.org/x/sys								 v0.18.0 \
+	golang.org/x/term								 v0.18.0 \
 	golang.org/x/text								 v0.14.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.17.0 \
@@ -593,7 +593,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20230822172742-b8732ec3820d \
 	google.golang.org/grpc								 v1.58.3 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc					 v1.3.0 \
-	google.golang.org/protobuf							 v1.32.0 \
+	google.golang.org/protobuf							 v1.33.0 \
 	gopkg.in/alecthomas/kingpin.v2							 v2.2.6 \
 	gopkg.in/check.v1								 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/errgo.v2								 v2.1.0 \
@@ -772,7 +772,6 @@ MODGO_MODFILES =	\
 	github.com/go-toolsmith/astcopy							 v1.0.2 \
 	github.com/go-toolsmith/astequal						 v1.0.3 \
 	github.com/go-toolsmith/strparse						 v1.0.0 \
-	github.com/godbus/dbus/v5							 v5.0.4 \
 	github.com/godbus/dbus/v5							 v5.1.0 \
 	github.com/gofrs/flock								 v0.8.0 \
 	github.com/gogo/protobuf							 v1.1.1 \
@@ -857,7 +856,6 @@ MODGO_MODFILES =	\
 	github.com/imdario/mergo							 v0.3.15 \
 	github.com/imdario/mergo							 v0.3.6 \
 	github.com/inconshreveable/mousetrap						 v1.0.1 \
-	github.com/josharian/native							 v1.0.0 \
 	github.com/josharian/native							 v1.0.1-0.20221213033349-c1e37c09b531 \
 	github.com/josharian/native							 v1.1.0 \
 	github.com/jsimonetti/rtnetlink							 v1.3.5 \
@@ -884,8 +882,6 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty							 v0.0.17 \
 	github.com/mattn/go-runewidth							 v0.0.9 \
 	github.com/matttproud/golang_protobuf_extensions				 v1.0.1 \
-	github.com/mdlayher/netlink							 v1.7.1 \
-	github.com/mdlayher/socket							 v0.4.0 \
 	github.com/mdlayher/socket							 v0.4.1 \
 	github.com/mitchellh/copystructure						 v1.0.0 \
 	github.com/mitchellh/reflectwalk						 v1.0.0 \
@@ -1153,8 +1149,10 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.17.0 \
 	golang.org/x/net								 v0.19.0 \
 	golang.org/x/net								 v0.2.0 \
+	golang.org/x/net								 v0.20.0 \
+	golang.org/x/net								 v0.21.0 \
+	golang.org/x/net								 v0.22.0 \
 	golang.org/x/net								 v0.3.0 \
-	golang.org/x/net								 v0.4.0 \
 	golang.org/x/net								 v0.5.0 \
 	golang.org/x/net								 v0.6.0 \
 	golang.org/x/net								 v0.7.0 \
@@ -1264,6 +1262,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.14.1-0.20231108175955-e4099bfacb8c \
 	golang.org/x/sys								 v0.15.0 \
 	golang.org/x/sys								 v0.16.0 \
+	golang.org/x/sys								 v0.17.0 \
 	golang.org/x/sys								 v0.2.0 \
 	golang.org/x/sys								 v0.3.0 \
 	golang.org/x/sys								 v0.4.0 \
@@ -1277,6 +1276,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term								 v0.1.0 \
 	golang.org/x/term								 v0.10.0 \
 	golang.org/x/term								 v0.15.0 \
+	golang.org/x/term								 v0.16.0 \
 	golang.org/x/term								 v0.2.0 \
 	golang.org/x/term								 v0.3.0 \
 	golang.org/x/term								 v0.4.0 \
@@ -1501,6 +1501,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf							 v1.28.0 \
 	google.golang.org/protobuf							 v1.30.0 \
 	google.golang.org/protobuf							 v1.31.0 \
+	google.golang.org/protobuf							 v1.32.0 \
 	gopkg.in/check.v1								 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1								 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1								 v1.0.0-20190902080502-41f04d3bba15 \
@@ -1524,7 +1525,6 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools								 v0.0.1-2019.2.3 \
 	honnef.co/go/tools								 v0.0.1-2020.1.3 \
 	honnef.co/go/tools								 v0.0.1-2020.1.4 \
-	honnef.co/go/tools								 v0.2.2 \
 	honnef.co/go/tools								 v0.3.2 \
 	honnef.co/go/tools								 v0.4.2 \
 	honnef.co/go/tools								 v0.4.3 \
