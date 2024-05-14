@@ -1,6 +1,7 @@
 COMMENT =		JMAP/IMAP/SMTP server
 
 # ring-v0.16.20 does not support those archs
+# https://github.com/stalwartlabs/mail-server/issues/416
 NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
 
 # stalwart-jmap uses rocksdb, which is 64-bit only
@@ -12,7 +13,7 @@ GH_PROJECT =		mail-server
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.7.2
+GH_TAGNAME =		v0.7.3
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
