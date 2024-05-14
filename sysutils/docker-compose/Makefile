@@ -1,6 +1,6 @@
 COMMENT =		Define and run multi-container applications with Docker
 
-V =			2.26.1
+V =			2.27.0
 GH_ACCOUNT =		docker
 GH_PROJECT =		compose
 GH_TAGNAME =		v${V}
