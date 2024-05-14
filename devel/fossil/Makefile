@@ -1,6 +1,15 @@
 COMMENT =		simple distributed software configuration management
 
+# commit ID must be changed in DISTFILES when updating, see
+# https://fossil-scm.org/home/uv/download.html
 DISTNAME =		fossil-2.24
+REVISION =		0
+
+#DISTFILES =		{8be0372c1051043761320c8ea8669c3cf320c406e5fe18ad36b7be5f844ca73b}${DISTNAME}${EXTRACT_SUFX}
+# temporary, mistake in 2.24 update requires this file to be renamed.
+# switch back to the above scheme for 2.25.
+DISTFILES =		${DISTNAME}-1{8be0372c1051043761320c8ea8669c3cf320c406e5fe18ad36b7be5f844ca73b/${DISTNAME}}${EXTRACT_SUFX}
+
 CATEGORIES =		devel www
 EPOCH =			0
 
@@ -8,8 +17,6 @@ MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		https://fossil-scm.org/
 SITES =			https://fossil-scm.org/home/tarball/
-DISTFILES =		{47362306a7dd7c6fc3cab77cebe5d25469b0a9448479d9718eb5c49c8337b29/}${DISTNAME}${EXTRACT_SUFX}
-
 
 # BSD
 PERMIT_PACKAGE =	Yes
