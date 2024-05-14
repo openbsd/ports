@@ -1,0 +1,50 @@
+Index: PKCS10.xs
+--- PKCS10.xs.orig
++++ PKCS10.xs
+@@ -328,12 +328,26 @@ BOOT:
+ 
+ 	struct { char *n; I32 v; } Crypt__OpenSSL__PKCS10__const[] = {
+ 
++	{"NID_basic_constraints", NID_basic_constraints},
+ 	{"NID_key_usage", NID_key_usage},
++	{"NID_ext_key_usage", NID_ext_key_usage},
++	{"NID_subject_key_identifier", NID_subject_key_identifier},
++	{"NID_authority_key_identifier", NID_authority_key_identifier},
++	{"NID_private_key_usage_period", NID_private_key_usage_period},
+ 	{"NID_subject_alt_name", NID_subject_alt_name},
++	{"NID_issuer_alt_name", NID_issuer_alt_name},
++	{"NID_info_access", NID_info_access},
++	{"NID_sinfo_access", NID_sinfo_access},
++	{"NID_name_constraints", NID_name_constraints},
++	{"NID_certificate_policies", NID_certificate_policies},
++	{"NID_policy_mappings", NID_policy_mappings},
++	{"NID_policy_constraints", NID_policy_constraints},
++	{"NID_inhibit_any_policy", NID_inhibit_any_policy},
++	{"NID_crl_distribution_points", NID_crl_distribution_points},
++	{"NID_sbgp_ipAddrBlock", NID_sbgp_ipAddrBlock},
++	{"NID_sbgp_autonomousSysNum", NID_sbgp_autonomousSysNum},
+ 	{"NID_netscape_cert_type", NID_netscape_cert_type},
+ 	{"NID_netscape_comment", NID_netscape_comment},
+-	{"NID_ext_key_usage", NID_ext_key_usage},
+-	{"NID_subject_key_identifier", NID_subject_key_identifier},
+ 	{Nullch,0}};
+ 
+ 	char *name;
+@@ -655,6 +669,8 @@ add_ext(pkcs10, nid = NID_key_usage, ext_SV)
+ 	OUTPUT:
+ 	RETVAL
+ 
++#ifndef LIBRESSL_VERSION_NUMBER
++
+ int
+ add_custom_ext_raw(pkcs10, oid_SV, ext_SV)
+ 	pkcs10Data *pkcs10;
+@@ -714,6 +730,8 @@ add_custom_ext(pkcs10, oid_SV, ext_SV)
+ 
+ 	OUTPUT:
+ 	  RETVAL
++
++#endif /* !LIBRESSL_VERSION_NUMBER */
+ 
+ int
+ add_ext_final(pkcs10)

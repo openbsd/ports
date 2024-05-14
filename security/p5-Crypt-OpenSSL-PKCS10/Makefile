@@ -1,6 +1,7 @@
 COMMENT =	perl extension to OpenSSL PKCS10 API
 
 DISTNAME =	Crypt-OpenSSL-PKCS10-0.25
+REVISION =	0
 
 CATEGORIES =	security
 

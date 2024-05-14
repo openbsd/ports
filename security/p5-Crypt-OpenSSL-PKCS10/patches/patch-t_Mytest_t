@@ -1,0 +1,21 @@
+Index: t/Mytest.t
+--- t/Mytest.t.orig
++++ t/Mytest.t
+@@ -41,8 +41,15 @@ $req->add_ext(Crypt::OpenSSL::PKCS10::NID_key_usage,"c
+ $req->add_ext(Crypt::OpenSSL::PKCS10::NID_ext_key_usage,"serverAuth, nsSGC, msSGC, 1.3.4");
+ $req->add_ext(Crypt::OpenSSL::PKCS10::NID_subject_alt_name,'email:steve@openssl.org');
+ $req->add_ext(Crypt::OpenSSL::PKCS10::NID_subject_key_identifier, "hash");
+-$req->add_custom_ext('1.2.3.3',"My new extension");
+-$req->add_custom_ext_raw('1.2.3.4', pack('H*','1E06006100620063'));
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_basic_constraints,"critical,CA:TRUE");
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_issuer_alt_name,'email:shenson@bigfoot.com');
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_info_access,'caIssuers;URI:rsync://rpki.ripe.net/repository/DEFAULT/yqgF26w2R0m5sRVZCrbvD5cM29g.cer');
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_sinfo_access,'caRepository;DNS:foo.bar.foo');
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_name_constraints,'permitted;IP:192.168.0.0/255.255.0.0');
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_inhibit_any_policy,'2');
++$req->add_ext(Crypt::OpenSSL::PKCS10::NID_sbgp_ipAddrBlock, 'critical,IPv4:127.0.0.8/8');
++#$req->add_custom_ext('1.2.3.3',"My new extension");
++#$req->add_custom_ext_raw('1.2.3.4', pack('H*','1E06006100620063'));
+ $req->add_ext_final();
+ $req->sign();
+ print STDERR $req->get_pem_req();

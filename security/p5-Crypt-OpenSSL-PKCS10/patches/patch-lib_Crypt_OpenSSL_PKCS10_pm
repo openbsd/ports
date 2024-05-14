@@ -1,0 +1,37 @@
+Index: lib/Crypt/OpenSSL/PKCS10.pm
+--- lib/Crypt/OpenSSL/PKCS10.pm.orig
++++ lib/Crypt/OpenSSL/PKCS10.pm
+@@ -15,8 +15,14 @@ our @ISA = qw(Exporter);
+ # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
+ # will save memory.
+ our @NIDS = qw(
+-	NID_key_usage NID_subject_alt_name NID_netscape_cert_type NID_netscape_comment
+-	NID_ext_key_usage
++	NID_basic_constraints NID_key_usage NID_ext_key_usage
++	NID_subject_key_identifier NID_authority_key_identifier
++	NID_private_key_usage_period NID_subject_alt_name NID_issuer_alt_name
++	NID_info_access NID_sinfo_access NID_name_constraints
++	NID_certificate_policies NID_policy_mappings NID_policy_constraints
++	NID_inhibit_any_policy NID_sbgp_ipAddrBlock NID_sbgp_autonomousSysNum
++	NID_crl_distribution_points
++	NID_netscape_cert_type NID_netscape_comment
+ );
+ 
+ our %EXPORT_TAGS = ( 
+@@ -207,8 +213,14 @@ None by default.
+ 
+ On request:
+ 
+-	NID_key_usage NID_subject_alt_name NID_netscape_cert_type NID_netscape_comment
+-	NID_ext_key_usage
++	NID_basic_constraints NID_key_usage NID_ext_key_usage
++	NID_subject_key_identifier NID_authority_key_identifier
++	NID_private_key_usage_period NID_subject_alt_name NID_issuer_alt_name
++	NID_info_access NID_sinfo_access NID_name_constraints
++	NID_certificate_policies NID_policy_mappings NID_policy_constraints
++	NID_inhibit_any_policy NID_sbgp_ipAddrBlock NID_sbgp_autonomousSysNum
++	NID_crl_distribution_points
++	NID_netscape_cert_type NID_netscape_comment
+ 
+ =head1 BUGS
+ 
