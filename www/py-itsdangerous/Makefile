@@ -1,26 +1,25 @@
-COMMENT =	helpers to pass trusted data to untrusted environments
+COMMENT=	helpers to pass trusted data to untrusted environments
 
-MODPY_EGG_VERSION = 2.1.2
-DISTNAME =	itsdangerous-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+MODPY_EGG_VERSION= 2.2.0
+DISTNAME=	itsdangerous-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	www devel
+CATEGORIES=	www devel
 
-HOMEPAGE =	https://itsdangerous.palletsprojects.com
+HOMEPAGE=	https://itsdangerous.palletsprojects.com
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
+MODPY_PI=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=	flit_core
 
-TEST_DEPENDS =	devel/py-freezegun${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-freezegun${MODPY_FLAVOR}
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>

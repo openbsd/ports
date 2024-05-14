@@ -1,11 +1,10 @@
 @pkgpath www/py-itsdangerous
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/itsdangerous-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/itsdangerous/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
