@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}__init__.${MODP
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}dkim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}dkim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}runcli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}runcli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}scanssh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}block.$
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}block.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/block.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/checks.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/dkim.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}/
@@ -53,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}roca.${
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}roca.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsainvalid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsainvalid.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsawarnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}rsawarnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}sharedprimes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}sharedprimes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/${MODPY_PYCACHE}smallfactors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/fermat.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/pattern.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/roca.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/rsainvalid.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/rsawarnings.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/sharedprimes.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/smallfactors.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/rsakeys/xzbackdoor.py
