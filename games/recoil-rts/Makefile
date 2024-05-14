@@ -10,8 +10,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2449
-HASH =			gf1234a9
+BLD =			2472
+HASH =			ga5aa45c
 V =			${MJ}.${MN}pl${BLD}
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
@@ -32,10 +32,10 @@ DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			c289f95936fc6fb1310a78124dba8782b543293e AI/Skirmish/BARb \
+			aded4d13fcec74a3416e7055fcfb8275e49061a1 AI/Skirmish/BARb \
 			# GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			ea8ad431afc8ea5208aac21d3063ead9fc54de7c AI/Skirmish/CircuitAI \
+			edc74149c281e2140f28c091ed74310c11611cc7 AI/Skirmish/CircuitAI \
 			# GPL-2.0
 DIST_TUPLE +=		github spring SpringMapConvNG \
 			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile \

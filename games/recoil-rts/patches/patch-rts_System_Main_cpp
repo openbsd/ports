@@ -3,7 +3,7 @@ use argv[0] for executable
 Index: rts/System/Main.cpp
 --- rts/System/Main.cpp.orig
 +++ rts/System/Main.cpp
-@@ -96,6 +96,10 @@ int main(int argc, char* argv[])
+@@ -98,6 +98,10 @@ int main(int argc, char* argv[])
  #undef MAX_ARGS
  #endif
  

@@ -40,8 +40,8 @@ Index: rts/System/Platform/CpuID.cpp
 +#else
  		const auto oldAffinity = Threading::GetAffinity();
  
- 		availableProceesorAffinityMask = 0;
-@@ -162,6 +177,7 @@ namespace springproc {
+ 		LOG("%s: thread affinity %x", __func__, Threading::GetAffinity());
+@@ -165,6 +180,7 @@ namespace springproc {
  			// ignore case PURPOSE_EFFICIENCY:
  			}
  		}
