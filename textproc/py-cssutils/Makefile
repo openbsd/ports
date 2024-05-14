@@ -2,7 +2,7 @@ COMMENT=	parse and build CSS from Python
 
 CATEGORIES=	textproc
 
-MODPY_EGG_VERSION=	2.10.2
+MODPY_EGG_VERSION=	2.10.3
 DISTNAME=	cssutils-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
