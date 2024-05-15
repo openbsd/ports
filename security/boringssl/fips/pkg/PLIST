@@ -6,6 +6,7 @@ eboringssl-fips/include/openssl/
 eboringssl-fips/include/openssl/aead.h
 eboringssl-fips/include/openssl/aes.h
 eboringssl-fips/include/openssl/arm_arch.h
+eboringssl-fips/include/openssl/asm_base.h
 eboringssl-fips/include/openssl/asn1.h
 eboringssl-fips/include/openssl/asn1_mac.h
 eboringssl-fips/include/openssl/asn1t.h
@@ -42,13 +43,15 @@ eboringssl-fips/include/openssl/err.h
 eboringssl-fips/include/openssl/evp.h
 eboringssl-fips/include/openssl/evp_errors.h
 eboringssl-fips/include/openssl/ex_data.h
+eboringssl-fips/include/openssl/experimental/
+eboringssl-fips/include/openssl/experimental/kyber.h
+eboringssl-fips/include/openssl/experimental/spx.h
 eboringssl-fips/include/openssl/hkdf.h
 eboringssl-fips/include/openssl/hmac.h
 eboringssl-fips/include/openssl/hpke.h
 eboringssl-fips/include/openssl/hrss.h
 eboringssl-fips/include/openssl/is_boringssl.h
 eboringssl-fips/include/openssl/kdf.h
-eboringssl-fips/include/openssl/kyber.h
 eboringssl-fips/include/openssl/lhash.h
 eboringssl-fips/include/openssl/md4.h
 eboringssl-fips/include/openssl/md5.h
@@ -64,8 +67,13 @@ eboringssl-fips/include/openssl/pem.h
 eboringssl-fips/include/openssl/pkcs12.h
 eboringssl-fips/include/openssl/pkcs7.h
 eboringssl-fips/include/openssl/pkcs8.h
+eboringssl-fips/include/openssl/pki/
+eboringssl-fips/include/openssl/pki/certificate.h
+eboringssl-fips/include/openssl/pki/signature_verify_cache.h
+eboringssl-fips/include/openssl/pki/verify_error.h
 eboringssl-fips/include/openssl/poly1305.h
 eboringssl-fips/include/openssl/pool.h
+eboringssl-fips/include/openssl/posix_time.h
 eboringssl-fips/include/openssl/rand.h
 eboringssl-fips/include/openssl/rc4.h
 eboringssl-fips/include/openssl/ripemd.h
@@ -79,6 +87,7 @@ eboringssl-fips/include/openssl/srtp.h
 eboringssl-fips/include/openssl/ssl.h
 eboringssl-fips/include/openssl/ssl3.h
 eboringssl-fips/include/openssl/stack.h
+eboringssl-fips/include/openssl/target.h
 eboringssl-fips/include/openssl/thread.h
 eboringssl-fips/include/openssl/time.h
 eboringssl-fips/include/openssl/tls1.h
@@ -87,6 +96,7 @@ eboringssl-fips/include/openssl/type_check.h
 eboringssl-fips/include/openssl/x509.h
 eboringssl-fips/include/openssl/x509_vfy.h
 eboringssl-fips/include/openssl/x509v3.h
+eboringssl-fips/include/openssl/x509v3_errors.h
 eboringssl-fips/lib/
 eboringssl-fips/lib/cmake/
 eboringssl-fips/lib/cmake/OpenSSL/
