@@ -1,9 +1,9 @@
 COMMENT =	dungeon builder game with roguelike elements
 
-COMMIT =	6e13c91b07d569221eab63a216c7a0f8c3bc231a
-COMMIT_DATE =	2024-02-29
-# No 1.0 tag on GitHub, but game advertises itself as 1.0 as of 2024-02-29.
-PKGNAME =	keeperrl-1.0
+# 1_0_hotfix16 on itch.io: 2024-05-08 checkout
+COMMIT =	0c9d2e0682beb52f466e543953ac489730d53fe4
+COMMIT_DATE =	2024-05-08
+PKGNAME =	keeperrl-1.0pl16
 DIST_TUPLE +=	github miki151 keeperrl ${COMMIT} .
 
 CATEGORIES =	games x11
@@ -17,6 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 SDL2_image c curl m ogg
 WANTLIB += openal steam_api theoradec vorbis vorbisfile z
+
+FIX_CRLF_FILES =	miniunz.cpp
 
 # C++14 (std=c++1y)
 COMPILER =	base-clang ports-gcc
