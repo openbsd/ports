@@ -1,0 +1,5 @@
+@bin bin/mujs
+@bin bin/mujs-pp
+include/mujs.h
+@lib lib/libmujs.so.${LIBmujs_VERSION}
+lib/pkgconfig/mujs.pc
