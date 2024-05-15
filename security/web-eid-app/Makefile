@@ -22,7 +22,6 @@ HOMEPAGE =		https://web-eid.eu/
 # -std=gnu++17
 COMPILER =		base-clang ports-gcc
 
-# uses pledge() and unveil()
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Svg
 WANTLIB-main += Qt6SvgWidgets Qt6Widgets c crypto m pcsclite
 
@@ -41,9 +40,6 @@ RUN_DEPENDS-main =	devel/desktop-file-utils \
 
 RUN_DEPENDS-chrome =	${FULLPKGPATH-main}
 LIB_DEPENDS-chrome =	# empty
-
-# XXX pcsclite is detected with pkg-config, but its -I and -L are ignored
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS=-L/usr/local/lib
 
 TEST_IS_INTERACTIVE =	X11
 
