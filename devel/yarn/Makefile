@@ -1,6 +1,6 @@
 COMMENT =	fast, reliable, and secure dependency management for node.js
 
-V =		v1.22.21
+V =		v1.22.22
 DISTNAME =	yarn-${V}
 PKGNAME =	yarn-${V:S/v//}
 
@@ -11,12 +11,12 @@ HOMEPAGE =	https://yarnpkg.com/lang/en/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://github.com/yarnpkg/yarn/releases/download/${V}/
+SITES =		https://github.com/yarnpkg/yarn/releases/download/${V}/
 
-RUN_DEPENDS =		lang/node
+RUN_DEPENDS =	lang/node
 
-NO_BUILD =		Yes
-NO_TEST =		Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
 
 # yarn relies on process.execPath to determine where node is. This doesn't
 # work as expected on OpenBSD as it will always be relative to what was
