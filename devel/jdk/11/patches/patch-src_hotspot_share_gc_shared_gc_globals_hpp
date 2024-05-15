@@ -1,0 +1,19 @@
+Reduce the number of sched_yield(2) before sleeping 10ms to work-around an
+issue on sparc64
+
+Index: src/hotspot/share/gc/shared/gc_globals.hpp
+--- src/hotspot/share/gc/shared/gc_globals.hpp.orig
++++ src/hotspot/share/gc/shared/gc_globals.hpp
+@@ -376,10 +376,10 @@
+   develop(uintx, PromotionFailureALotInterval, 5,                           \
+           "Total collections between promotion failures a lot")             \
+                                                                             \
+-  experimental(uintx, WorkStealingSleepMillis, 1,                           \
++  experimental(uintx, WorkStealingSleepMillis, 10,                          \
+           "Sleep time when sleep is used for yields")                       \
+                                                                             \
+-  experimental(uintx, WorkStealingYieldsBeforeSleep, 5000,                  \
++  experimental(uintx, WorkStealingYieldsBeforeSleep, 1,                     \
+           "Number of yields before a sleep is done during work stealing")   \
+                                                                             \
+   experimental(uintx, WorkStealingHardSpins, 4096,                          \

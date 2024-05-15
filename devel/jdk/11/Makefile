@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS=	i386 amd64 aarch64
+ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
 USE_NOBTCFI=	Yes
 DPB_PROPERTIES=	parallel
@@ -6,7 +6,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
 BASE_VER=	11.0.23
 PATCH_VER=	9
-BSD_PORT_REL=	1
+BSD_PORT_REL=	2
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${PACKAGE_VER}
@@ -44,7 +44,8 @@ NO_TEST=	Yes
 SUPDISTFILES.boot =	\
 		openjdk-jdk11u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz  \
 		openjdk-jdk11u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz \
-		openjdk-jdk11u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz
+		openjdk-jdk11u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz \
+		openjdk-jdk11u-bootjdk-sparc64-${BOOTJDK_DATE}.tar.gz
 
 COMPILER=	base-clang ports-gcc
 
@@ -59,7 +60,8 @@ BUILD_DEPENDS+=	jdk->=11v0,<12v0:devel/jdk/11
 BOOT_JDK=	${LOCALBASE}/jdk-11
 .else
 BOOT_JDK_DIST=	openjdk-jdk11u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
-.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
+.  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || \
+     (${MACHINE_ARCH}==aarch64) || (${MACHINE_ARCH}==sparc64)
 DISTFILES.boot=	${BOOT_JDK_DIST}
 .  endif
 MAKE_ENV+=	LD_LIBRARY_PATH=${WRKDIR}/bootjdk-libs
@@ -111,6 +113,7 @@ CONFIGURE_ARGS=	DOT="" FLOCK="" GIT="" HG="" PANDOC="" \
 		--with-giflib=system \
 		--with-giflib-include=${LOCALBASE}/include \
 		--with-giflib-lib=${LOCALBASE}/lib \
+		--with-stdc++lib=dynamic \
 		--disable-option-checking \
 		--disable-ccache \
 		--disable-hotspot-gtest \
@@ -150,7 +153,7 @@ PKG_ARGS+=	-Dci=1
 PKG_ARGS+=	-Dci=0
 .endif
 
-JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/}
+JVMARCH=	${MACHINE_ARCH:S/i386/x86/:S/amd64/x86_64/:S/sparc64/sparcv9/}
 BUILDDIR=	${WRKDIST}/build/bsd-${JVMARCH}-normal-server-release
 IMAGEDIR=	${BUILDDIR}/images/jdk
 WRKTMP=		${WRKDIR}/tmp
