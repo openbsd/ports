@@ -2531,6 +2531,7 @@ go/src/cmd/go/testdata/script/cover_test_pkgselect.txt
 go/src/cmd/go/testdata/script/cover_test_race_issue56370.txt
 go/src/cmd/go/testdata/script/cover_var_init_order.txt
 go/src/cmd/go/testdata/script/cpu_profile_twice.txt
+go/src/cmd/go/testdata/script/darwin_lto_library_ldflag.txt
 go/src/cmd/go/testdata/script/devnull.txt
 go/src/cmd/go/testdata/script/dist_list_missing.txt
 go/src/cmd/go/testdata/script/doc.txt
