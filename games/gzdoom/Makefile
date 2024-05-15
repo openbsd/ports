@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
-V =			4.11.3
+V =			4.12.2
 
 DIST_TUPLE =		github ZDoom gzdoom g${V} .
 PKGNAME =		gzdoom-${V}

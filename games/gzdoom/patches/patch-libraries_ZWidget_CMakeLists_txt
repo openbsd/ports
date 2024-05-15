@@ -1,0 +1,12 @@
+Index: libraries/ZWidget/CMakeLists.txt
+--- libraries/ZWidget/CMakeLists.txt.orig
++++ libraries/ZWidget/CMakeLists.txt
+@@ -127,7 +127,7 @@ elseif(APPLE)
+ 	add_link_options(-pthread)
+ else()
+ 	set(ZWIDGET_SOURCES ${ZWIDGET_SOURCES} ${ZWIDGET_SDL2_SOURCES})
+-	set(ZWIDGET_LIBS ${CMAKE_DL_LIBS} -ldl)
++	set(ZWIDGET_LIBS ${CMAKE_DL_LIBS})
+ 	add_definitions(-DUNIX -D_UNIX)
+ 	add_link_options(-pthread)
+ endif()
