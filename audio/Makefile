@@ -198,7 +198,6 @@
      SUBDIR += py-discid,python3
      SUBDIR += py-discogs-client,python3
      SUBDIR += py-eyed3		# standalone, uses python3
-     SUBDIR += py-fsb5,python3
      SUBDIR += py-last,python3
      SUBDIR += py-mediafile,python3
      SUBDIR += py-mpd2,python3

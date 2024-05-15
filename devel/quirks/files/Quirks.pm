@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1627 2024/05/08 21:32:55 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.1628 2024/05/15 14:30:02 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1940,6 +1940,7 @@ setup_obsolete_reason(
 	66 => 'opensmtpd-extras-redis',
 	31 => 'opensmtpd-extras-python',
 	3 => 'pdf2djvu',
+	3 => 'py3-fsb5',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
