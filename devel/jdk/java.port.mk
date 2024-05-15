@@ -27,7 +27,7 @@ MODJAVA_VER?=
     ERRORS+="with an optional + suffix."
 .endif
 
-.if ${MODJAVA_VER:S/+//} == "1.8"
+.if ${MODJAVA_VER:S/+//} == "1.8" || ${MODJAVA_VER:S/+//} == "11"
     ONLY_FOR_ARCHS?= i386 amd64 aarch64 sparc64
 .else
     ONLY_FOR_ARCHS?= i386 amd64 aarch64
