@@ -1,6 +1,6 @@
 # increment after a go compiler update to trigger updates of
 # compiled go packages (see arch-defines.mk)
-_MODGO_SYSTEM_VERSION =	12
+_MODGO_SYSTEM_VERSION =	13
 
 # not using the normal ports mechanism, but setting USE_NOBTCFI for
 # documentation in sqlports
