@@ -4,7 +4,7 @@ flag set for clang and ports-gcc
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -42,7 +42,6 @@ endif
+@@ -50,7 +50,6 @@ endif
  ## Begin customization points for each OS and TOOLCHAIN we support.
  
  
@@ -12,50 +12,15 @@ Index: Makefile
    CXXFLAGS_EARLY += -DLINUX
    EXE_EXTENSION :=
    LDFLAGS_GL := -lGL
-@@ -51,7 +50,6 @@ ifeq (${OS},linux)
+@@ -59,7 +58,6 @@ ifeq (${OS},linux)
    LDFLAGS_SDL := -lSDL -lSDL_gfx -lSDL_mixer -lSDL_ttf -lpthread -lz
    OBJ_EXTENSION := .o
    hyper_RES :=
 -endif
  
  ifeq (${OS},mingw)
-   CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8
-@@ -79,29 +77,12 @@ ifeq (${OS},osx)
-   hyper_RES :=
- endif
- 
--ifeq (${TOOLCHAIN},clang)
--  CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -pedantic
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-char-subscripts -Wno-unknown-warning-option
--  CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
-+CXXFLAGS_STD = -std=c++11
-+CXXFLAGS_EARLY += -fPIC
-+CXXFLAGS_EARLY += -W -Wall -Wextra -Wsuggest-override -pedantic
-+CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized -Wno-unknown-warning-option
-+CXXFLAGS_EARLY += -Wno-invalid-offsetof
- 
--ifeq (${TOOLCHAIN},gcc)
--  CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -fPIC
--  CXXFLAGS_EARLY += -W -Wall -Wextra -pedantic
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized
--  CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
--
--ifeq (${TOOLCHAIN},mingw)
--  CXXFLAGS_STD = -std=c++11
--  CXXFLAGS_EARLY += -W -Wall -Wextra
--  CXXFLAGS_EARLY += -Wno-unused-parameter -Wno-implicit-fallthrough -Wno-maybe-uninitialized
--  CXXFLAGS_EARLY += -Wno-invalid-offsetof
--endif
--
- ifeq (${FONTCONFIG},1)
-   CXXFLAGS_EARLY += -DFONTCONFIG `pkg-config --cflags fontconfig`
-   LDFLAGS_EARLY += `pkg-config --libs fontconfig`
-@@ -144,19 +125,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
+   CXXFLAGS_EARLY += -DWINDOWS -mwindows -D_A_VOLID=8 -I/ucrt64/include/SDL
+@@ -153,19 +151,19 @@ override CXXFLAGS := $(CXXFLAGS_STD) $(CXXFLAGS_EARLY)
  override LDFLAGS := $(LDFLAGS_EARLY) $(LDFLAGS) ${EXTRA_LDFLAGS}
  
  hyperrogue$(EXE_EXTENSION): $(hyper_OBJS) $(hyper_RES)
@@ -79,7 +44,7 @@ Index: Makefile
  
  autohdr.h: makeh$(EXE_EXTENSION) language-data.cpp *.cpp
  	./makeh classes.cpp locations.cpp colors.cpp hyperpoint.cpp geometry.cpp embeddings.cpp goldberg.cpp init.cpp floorshapes.cpp cell.cpp multi.cpp shmup.cpp pattern2.cpp mapeditor.cpp graph.cpp textures.cpp hprint.cpp language.cpp util.cpp complex.cpp multigame.cpp arbitrile.cpp rulegen.cpp *.cpp > autohdr.h
-@@ -165,10 +146,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
+@@ -174,10 +172,10 @@ language-data.cpp: langen$(EXE_EXTENSION)
  	./langen > language-data.cpp
  
  savepng$(OBJ_EXTENSION): savepng.cpp

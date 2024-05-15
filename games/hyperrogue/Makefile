@@ -1,4 +1,4 @@
-V =		13.0d
+V =		13.0i
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11
 
