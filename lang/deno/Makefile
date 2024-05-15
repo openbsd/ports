@@ -7,6 +7,7 @@ DPB_PROPERTIES =	parallel
 USE_WXNEEDED =		Yes
 
 VERSION =		1.43.3
+REVISION =		0
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -45,7 +46,8 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			devel/gmake \
 			devel/gn \
 			devel/ninja \
-			devel/protobuf-c
+			devel/protobuf-c \
+			textproc/oniguruma
 
 LIB_DEPENDS =		archivers/zstd \
 			devel/libffi
