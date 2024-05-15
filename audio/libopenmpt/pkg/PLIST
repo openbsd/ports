@@ -24,6 +24,7 @@ share/doc/libopenmpt/README.md
 share/doc/libopenmpt/examples/
 share/doc/libopenmpt/examples/libopenmpt_example_c.c
 share/doc/libopenmpt/examples/libopenmpt_example_c_mem.c
+share/doc/libopenmpt/examples/libopenmpt_example_c_pipe.c
 share/doc/libopenmpt/examples/libopenmpt_example_c_probe.c
 share/doc/libopenmpt/examples/libopenmpt_example_c_stdout.c
 share/doc/libopenmpt/examples/libopenmpt_example_c_unsafe.c
