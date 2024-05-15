@@ -3,7 +3,7 @@ COMMENT =	create PDF documents with perl
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	PDF-API2-2.045
+DISTNAME =	PDF-API2-2.046
 
 CATEGORIES =	textproc
 
