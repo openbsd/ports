@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Install the official Web eID extension
+    https://addons.mozilla.org/firefox/addon/web-eid-webextension/
+and add the following unveil rules to either of
+    ${SYSCONFDIR}/{firefox,firefox-esr}/unveil.main:
+
+    # native messaging host
+    /usr/local/bin r
+    /usr/local/bin/web-eid rx

@@ -1,0 +1,4 @@
+lib/mozilla/
+lib/mozilla/native-messaging-hosts/
+lib/mozilla/native-messaging-hosts/eu.webeid.json
+share/doc/pkg-readmes/${PKGSTEM}
