@@ -12,3 +12,8 @@ system.
 
 Secure: Yarn uses checksums to verify the integrity of every installed package
 before its code is executed.
+
+N.B. This package of yarn 1.x provides "Yarn Classic" which can be fetched
+with a simple download, but is in maintenance mode and has been for some time.
+Current versions, "Yarn Modern", should be installed per-project via the
+"corepack" tool instead.
