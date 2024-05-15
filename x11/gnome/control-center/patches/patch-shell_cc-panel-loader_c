@@ -19,7 +19,7 @@ Index: shell/cc-panel-loader.c
  extern GType cc_printers_panel_get_type (void);
  extern GType cc_privacy_panel_get_type (void);
  extern GType cc_search_panel_get_type (void);
-+#ifdef 0
++#if 0
  extern GType cc_sharing_panel_get_type (void);
 +#endif
  extern GType cc_sound_panel_get_type (void);
