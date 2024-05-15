@@ -1,5 +1,6 @@
 COMMENT=	converts GIF images to the PNG format
 
+# 3.x is a rewrite in go
 DISTNAME=	gif2png-2.5.14
 CATEGORIES=	graphics
 HOMEPAGE=	http://www.catb.org/~esr/gif2png/
