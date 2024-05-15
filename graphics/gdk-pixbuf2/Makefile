@@ -1,12 +1,11 @@
 COMMENT=		image data transformation library
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.42.11
-REVISION=		1
+GNOME_VERSION=		2.42.12
 
 CATEGORIES=		graphics
 
-SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4200.11
+SHARED_LIBS += gdk_pixbuf-2.0            3200.3 # 0.4200.12
 
 HOMEPAGE=		http://www.gtk.org/
 
