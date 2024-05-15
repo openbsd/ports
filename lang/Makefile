@@ -76,6 +76,7 @@
      SUBDIR += moarvm
      SUBDIR += mono
      SUBDIR += mruby
+     SUBDIR += mujs
      SUBDIR += myhdl
      SUBDIR += myrddin
      SUBDIR += nbfc
