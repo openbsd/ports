@@ -1,20 +1,15 @@
 COMMENT =		Python bindings for the Brotli compression library
 
-MODPY_EGG_VERSION =	1.0.9
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		Brotli-${MODPY_EGG_VERSION}
 PKGNAME =		py-brotli-${MODPY_EGG_VERSION}
-REVISION =		4
 
 CATEGORIES =		archivers
-
-MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
 HOMEPAGE =		https://github.com/google/brotli
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-EXTRACT_SUFX =		.zip
 
 # C++
 COMPILER =		base-clang ports-gcc base-gcc
