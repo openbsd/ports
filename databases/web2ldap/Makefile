@@ -2,7 +2,7 @@ COMMENT =	full-featured LDAP client running as web application
 
 MODPY_EGG_VERSION =	1.8.1
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases www sysutils
 
@@ -33,6 +33,9 @@ RUN_DEPENDS =	${BUILD_DEPENDS} \
 		textproc/py-defusedxml${MODPY_FLAVOR}
 
 CONFDIR =	${PREFIX}/share/examples/web2ldap
+
+# tests are not shipped with the tarball
+NO_TEST =	Yes
 
 post-install:
 	cp -r ${WRKSRC}/htdocs ${PREFIX}/share/doc/web2ldap
