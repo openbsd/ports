@@ -1,6 +1,6 @@
 COMMENT=	super-fast templating language
 
-MODPY_EGG_VERSION=	1.3.4
+MODPY_EGG_VERSION=	1.3.5
 DISTNAME=	Mako-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 
