@@ -1,10 +1,9 @@
-COMMENT =	powerful command-line bookmark manager
+COMMENT =		powerful command-line bookmark manager
 
-MODPY_EGG_VERSION =	4.7.1
-DISTNAME =	buku-${MODPY_EGG_VERSION}
-REVISION =	2
+MODPY_EGG_VERSION =	4.9
+DISTNAME =		buku-${MODPY_EGG_VERSION}
 
-CATEGORIES =	www
+CATEGORIES =		www
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -18,6 +17,8 @@ RUN_DEPENDS =		devel/py-certifi${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR} \
 			www/py-urllib3${MODPY_FLAVOR} \
 			x11/xsel
+
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/buku.1 ${PREFIX}/man/man1
