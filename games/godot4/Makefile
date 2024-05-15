@@ -3,11 +3,9 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-V =		4.2.1pl0
-COMMIT =	f77bc872114ebe77f1604db47b81016ff478ce17
+V =		4.2.2
 PKGNAME =	godot4-${V}
-DIST_TUPLE +=	github godotengine godot ${COMMIT} .
-REVISION =	0
+DIST_TUPLE +=	github godotengine godot ${V}-stable .
 
 CATEGORIES =	games
 

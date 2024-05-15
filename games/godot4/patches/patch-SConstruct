@@ -6,7 +6,7 @@ Remove architecture from the program names
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -599,7 +599,7 @@ if selected_platform in platform_list:
+@@ -596,7 +596,7 @@ if selected_platform in platform_list:
              env.Append(LINKFLAGS=["/OPT:REF"])
          elif env["optimize"] == "debug" or env["optimize"] == "none":
              env.Append(CCFLAGS=["/Od"])
@@ -15,12 +15,11 @@ Index: SConstruct
          if env["debug_symbols"]:
              # Adding dwarf-4 explicitly makes stacktraces work with clang builds,
              # otherwise addr2line doesn't understand them
-@@ -823,8 +823,6 @@ if selected_platform in platform_list:
- 
+@@ -821,7 +821,6 @@ if selected_platform in platform_list:
      if env_base["precision"] == "double":
          suffix += ".double"
--
--    suffix += "." + env["arch"]
  
-     if not env["threads"]:
-         suffix += ".nothreads"
+-    suffix += "." + env["arch"]
+     suffix += env.extra_suffix
+ 
+     sys.path.remove(tmppath)

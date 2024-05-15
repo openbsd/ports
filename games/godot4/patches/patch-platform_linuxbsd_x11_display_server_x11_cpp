@@ -3,7 +3,7 @@ fix libXrandr (double) loading attempt.
 Index: platform/linuxbsd/x11/display_server_x11.cpp
 --- platform/linuxbsd/x11/display_server_x11.cpp.orig
 +++ platform/linuxbsd/x11/display_server_x11.cpp
-@@ -5989,14 +5989,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
+@@ -5936,14 +5936,14 @@ DisplayServerX11::DisplayServerX11(const String &p_ren
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);

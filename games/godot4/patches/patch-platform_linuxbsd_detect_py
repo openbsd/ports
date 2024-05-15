@@ -11,7 +11,7 @@ Index: platform/linuxbsd/detect.py
          BoolVariable("dbus", "Use D-Bus to handle screensaver and portal desktop settings", True),
          BoolVariable("speechd", "Use Speech Dispatcher for Text-to-Speech support", True),
          BoolVariable("fontconfig", "Use fontconfig for system fonts support", True),
-@@ -345,6 +346,12 @@ def configure(env: "SConsEnvironment"):
+@@ -337,6 +338,12 @@ def configure(env: "Environment"):
          else:
              env.Append(CPPDEFINES=["PULSEAUDIO_ENABLED", "_REENTRANT"])
  
@@ -24,7 +24,7 @@ Index: platform/linuxbsd/detect.py
      if env["dbus"]:
          if not env["use_sowrap"]:
              if os.system("pkg-config --exists dbus-1") == 0:  # 0 means found
-@@ -478,7 +485,7 @@ def configure(env: "SConsEnvironment"):
+@@ -439,7 +446,7 @@ def configure(env: "Environment"):
              env.ParseConfig("pkg-config vulkan --cflags --libs")
          if not env["builtin_glslang"]:
              # No pkgconfig file so far, hardcode expected lib name.
