@@ -2065,6 +2065,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/84/01
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/84/02_auth_links_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/84/03_auth_links_analyze.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/84/04_access_token_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/85/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/85/01_add_suspended.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres

@@ -54,9 +54,9 @@ SHA256 (cargo/regex-automata-0.4.4.tar.gz) = O3+hE0QF4uyTU/1Baxf42s1GxHPX0/0c8gJ
 SHA256 (cargo/regex-syntax-0.8.2.tar.gz) = wIx05iBHuy3k/0h7JR5KkuJPSHRWSEUWNc7H1ZEWLZ8=
 SHA256 (cargo/ryu-1.0.11.tar.gz) = RQGr3/OugqHBtHehclLrac7p5m65FcGrqk9E2HPfnwk=
 SHA256 (cargo/scopeguard-1.1.0.tar.gz) = 0pqwxtP8Dukv5m4tmfcA6rF6jVfRwdO3SDgPsguqeM0=
-SHA256 (cargo/serde-1.0.197.tar.gz) = P7HIc+G5sFak3EwMGYskw/+gWSQ4dVUrK9CTOxruTOI=
-SHA256 (cargo/serde_derive-1.0.197.tar.gz) = frCzS0LtwX9rfKyEpSocXw4bsiJ+mXypAR6j3TToYQs=
-SHA256 (cargo/serde_json-1.0.115.tar.gz) = EtxcRtqo6f309ecbbPmlPySH2g6G5VgI4tNVOWZkl90=
+SHA256 (cargo/serde-1.0.200.tar.gz) = 3cb5zJTWfA4hqvfto6AQ/Tr3jr9uCWqm4uE8eXSczk8=
+SHA256 (cargo/serde_derive-1.0.200.tar.gz) = hW8Ea5QAzuPIyU7VcuzbdSREwkUowDXNNYgqrW9JK8s=
+SHA256 (cargo/serde_json-1.0.116.tar.gz) = PhfbcSbRf+uU6z+tRr8alrA06KrLwud1/oFQX4sLKBM=
 SHA256 (cargo/sha1-0.10.5.tar.gz) = 8EKT3IDDmTUZ8tf29RFwfucJT+DG00Bv6zMM2zVA66M=
 SHA256 (cargo/sha2-0.10.8.tar.gz) = eT23WtK8r8P/p8aLIV/uJo9TeYLNkB0TL4nGND86Pcg=
 SHA256 (cargo/smallvec-1.10.0.tar.gz) = pQe+/nlUBEVjQd+rEM72bq1MBB9iuLEbu5K//l0JU+A=
@@ -81,7 +81,7 @@ SHA256 (cargo/windows_i686_gnu-0.36.1.tar.gz) = GA5szwHa9MQmuEbfxm2x/FGPB0uqeTqn
 SHA256 (cargo/windows_i686_msvc-0.36.1.tar.gz) = 4ueRcUiygS0e6vrrIql+SBPfpgo/j3jr4gS8yI8S8CQ=
 SHA256 (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = Tc0XG4d2xBuXUh5doSei2GrSgBFIB9Cyqx5GK8dk2eE=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
-SHA256 (synapse-1.106.0.tar.gz) = r92q/BkPgYUsc5QUG677ovs3nJ3Qzvm3ZERcpVNSmP8=
+SHA256 (synapse-1.107.0.tar.gz) = /lNjLZWmcBl6e61ZUY4bxGJx4/PyifrcABXbOTro69E=
 SIZE (cargo/aho-corasick-1.0.2.tar.gz) = 167694
 SIZE (cargo/anyhow-1.0.82.tar.gz) = 45361
 SIZE (cargo/arc-swap-1.5.1.tar.gz) = 66157
@@ -138,9 +138,9 @@ SIZE (cargo/regex-automata-0.4.4.tar.gz) = 617294
 SIZE (cargo/regex-syntax-0.8.2.tar.gz) = 347228
 SIZE (cargo/ryu-1.0.11.tar.gz) = 47007
 SIZE (cargo/scopeguard-1.1.0.tar.gz) = 11470
-SIZE (cargo/serde-1.0.197.tar.gz) = 77087
-SIZE (cargo/serde_derive-1.0.197.tar.gz) = 55771
-SIZE (cargo/serde_json-1.0.115.tar.gz) = 147100
+SIZE (cargo/serde-1.0.200.tar.gz) = 77611
+SIZE (cargo/serde_derive-1.0.200.tar.gz) = 55785
+SIZE (cargo/serde_json-1.0.116.tar.gz) = 146790
 SIZE (cargo/sha1-0.10.5.tar.gz) = 12146
 SIZE (cargo/sha2-0.10.8.tar.gz) = 26357
 SIZE (cargo/smallvec-1.10.0.tar.gz) = 31564
@@ -165,4 +165,4 @@ SIZE (cargo/windows_i686_gnu-0.36.1.tar.gz) = 818115
 SIZE (cargo/windows_i686_msvc-0.36.1.tar.gz) = 724575
 SIZE (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = 790934
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
-SIZE (synapse-1.106.0.tar.gz) = 8496922
+SIZE (synapse-1.107.0.tar.gz) = 8500938
