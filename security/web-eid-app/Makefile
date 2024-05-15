@@ -4,8 +4,10 @@ CATEGORIES =		security www
 
 V =			2.5.0
 DISTNAME =		web-eid_${V}.642-2004
-PKGNAME =		web-eid-native-${V}
+PKGNAME =		web-eid-${V}
+PKGNAME-main =		web-eid-native-${V}
 WRKDIST =		${WRKDIR}/web-eid
+REVISION =		0
 
 SITES =			https://github.com/web-eid/web-eid-app/releases/download/v${V}/
 EXTRACT_SUFX =		.tar.xz

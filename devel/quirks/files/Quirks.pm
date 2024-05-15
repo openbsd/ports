@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1628 2024/05/15 14:30:02 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1629 2024/05/15 19:34:42 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -821,6 +821,7 @@ my $stem_extensions = {
 	'BlockZone' => 'blockzone',
 	'tepl' => 'libgedit-tepl',
 	'py3-pep517' => 'py3-pyproject_hooks',
+	'web-eid-native-chrome' => 'web-eid-chrome',
 };
 
 my $obsolete_reason = {};
