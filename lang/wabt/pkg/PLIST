@@ -103,3 +103,4 @@ share/wabt/wasm2c/
 share/wabt/wasm2c/wasm-rt-exceptions-impl.c
 share/wabt/wasm2c/wasm-rt-impl.c
 share/wabt/wasm2c/wasm-rt-impl.h
+share/wabt/wasm2c/wasm-rt-mem-impl.c
