@@ -1,5 +1,6 @@
---- conf/nginx.conf.orig	Tue Oct 18 17:03:13 2016
-+++ conf/nginx.conf	Thu Nov  3 14:30:06 2016
+Index: conf/nginx.conf
+--- conf/nginx.conf.orig
++++ conf/nginx.conf
 @@ -1,30 +1,35 @@
 +# Take note of http://wiki.nginx.org/Pitfalls
  
@@ -100,7 +101,7 @@
          #    include        fastcgi_params;
          #}
  
-@@ -85,33 +98,26 @@ http {
+@@ -85,11 +98,7 @@ http {
      #    listen       8000;
      #    listen       somename:8080;
      #    server_name  somename  alias  another.alias;
@@ -113,17 +114,14 @@
      #}
  
  
-     # HTTPS server
-     #
+@@ -98,20 +107,16 @@ http {
      #server {
--    #    listen       443 ssl;
-+    #    listen       443;
+     #    listen       443 ssl;
      #    server_name  localhost;
 +    #    root         /var/www/htdocs;
  
 -    #    ssl_certificate      cert.pem;
 -    #    ssl_certificate_key  cert.key;
-+    #    ssl                  on;
 +    #    ssl_certificate      /etc/ssl/server.crt;
 +    #    ssl_certificate_key  /etc/ssl/private/server.key;
  

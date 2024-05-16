@@ -1,6 +1,7 @@
---- lua-nginx-module/config.orig	Tue Oct  3 22:18:35 2023
-+++ lua-nginx-module/config	Tue Oct  3 22:21:42 2023
-@@ -181,7 +181,7 @@
+Index: lua-nginx-module/config
+--- lua-nginx-module/config.orig
++++ lua-nginx-module/config
+@@ -181,7 +181,7 @@ END
              if [ $NGX_RPATH = YES ]; then
                  ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -llua -lm"
              else
