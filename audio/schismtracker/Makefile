@@ -2,7 +2,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20240503
+GH_TAGNAME =	20240515
 REVISION =	0
 
 CATEGORIES =	audio x11
