@@ -48,7 +48,6 @@ include/harfbuzz/hb.h
 lib/cmake/
 lib/cmake/harfbuzz/
 lib/cmake/harfbuzz/harfbuzz-config.cmake
-lib/girepository-1.0/
 lib/girepository-1.0/HarfBuzz-0.0.typelib
 @lib lib/libharfbuzz-cairo.so.${LIBharfbuzz-cairo_VERSION}
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
@@ -58,5 +57,4 @@ lib/pkgconfig/harfbuzz-cairo.pc
 lib/pkgconfig/harfbuzz-gobject.pc
 lib/pkgconfig/harfbuzz-subset.pc
 lib/pkgconfig/harfbuzz.pc
-share/gir-1.0/
 share/gir-1.0/HarfBuzz-0.0.gir
