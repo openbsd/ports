@@ -1,27 +1,24 @@
-COMMENT =		capture c-level output in context managers
+COMMENT=	capture c-level output in context managers
 
-MODPY_EGG_VERSION =	2.0.1
-DISTNAME =		wurlitzer-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		4
+MODPY_EGG_VERSION=	3.1.0
+DISTNAME=	wurlitzer-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/minrk/wurlitzer
+HOMEPAGE=	https://github.com/minrk/wurlitzer
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	test.py
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS=	test.py
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+FLAVORS=	python3
+FLAVOR=		python3
 
 pre-configure:
 	cd ${WRKDIR}; ${CC} ${CFLAGS} ${FILESDIR}/getsize.c -o getsize; \
