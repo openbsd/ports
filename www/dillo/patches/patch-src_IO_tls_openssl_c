@@ -1,5 +1,7 @@
 Don't reach into X509_ALGOR.
 
+https://github.com/dillo-browser/dillo/pull/171
+
 Index: src/IO/tls_openssl.c
 --- src/IO/tls_openssl.c.orig
 +++ src/IO/tls_openssl.c
