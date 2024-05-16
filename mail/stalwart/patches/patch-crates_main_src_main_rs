@@ -1,7 +1,7 @@
 Index: crates/main/src/main.rs
 --- crates/main/src/main.rs.orig
 +++ crates/main/src/main.rs
-@@ -31,10 +31,10 @@ use smtp::core::{SmtpSessionManager, SMTP};
+@@ -35,10 +35,10 @@ use smtp::core::{SmtpSessionManager, SMTP};
  use tokio::sync::mpsc;
  use utils::wait_for_shutdown;
  

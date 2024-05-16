@@ -1,7 +1,7 @@
 Index: tests/Cargo.toml
 --- tests/Cargo.toml.orig
 +++ tests/Cargo.toml
-@@ -60,5 +60,5 @@ num_cpus = "1.15.0"
+@@ -61,5 +61,5 @@ num_cpus = "1.15.0"
  async-trait = "0.1.68"
  chrono = "0.4"
  
