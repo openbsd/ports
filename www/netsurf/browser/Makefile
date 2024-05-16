@@ -2,6 +2,7 @@ COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.11
+REVISION =		0
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
@@ -9,7 +10,8 @@ SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
 BUILD_DEPENDS =		editors/vim \
 			www/netsurf/nsgenbind>=0.5 \
 			www/p5-HTML-Parser
-LIB_DEPENDS =		graphics/libwebp \
+LIB_DEPENDS =		graphics/libjxl \
+			graphics/libwebp \
 			www/netsurf/hubbub>=0.3.4 \
 			www/netsurf/libcss>=0.7.0 \
 			www/netsurf/libnsgif>=0.2.0 \
@@ -27,7 +29,7 @@ TEST_DEPENDS =		devel/check
 
 WANTLIB += atk-1.0 c cairo cairo-gobject crypto css curl dom expat
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 harfbuzz hubbub iconv intl jpeg m
+WANTLIB += gthread-2.0 gtk-3 harfbuzz hubbub iconv intl jpeg jxl m
 WANTLIB += nsbmp nsgif nslog nspsl nsutils pango-1.0 pangocairo-1.0
 WANTLIB += parserutils png pthread rsvg-2 ssl utf8proc wapcaplet
 WANTLIB += webp z

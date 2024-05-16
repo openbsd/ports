@@ -2,6 +2,7 @@ COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb
 NETSURF_VERSION =	3.11
+REVISION =		0
 DISTNAME =		netsurf-${NETSURF_VERSION}-src
 
 HOMEPAGE =		https://www.netsurf-browser.org/
@@ -12,6 +13,7 @@ BUILD_DEPENDS =		editors/vim \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		devel/sdl \
 			graphics/jpeg \
+			graphics/libjxl \
 			graphics/libwebp \
 			graphics/png \
 			www/netsurf/hubbub>=0.3.4 \
@@ -31,7 +33,7 @@ TEST_DEPENDS =		devel/check
 WANTLIB =  SDL c crypto css curl dom expat freetype hubbub iconv
 WANTLIB += jpeg m nsbmp nsfb nsgif nslog nspsl nsutils parserutils png
 WANTLIB += pthread ssl svgtiny utf8proc wapcaplet webp xcb xcb-icccm
-WANTLIB += xcb-image xcb-keysyms xcb-shm xcb-util z
+WANTLIB += xcb-image xcb-keysyms xcb-shm xcb-util z jxl
 
 MAKE_FLAGS +=		NETSURF_USE_HARU_PDF=NO \
 			NETSURF_USE_LIBICONV_PLUG=NO \
