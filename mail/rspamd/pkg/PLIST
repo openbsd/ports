@@ -1,3 +1,4 @@
+@pkgpath mail/rspamd${FLAVOR_STRING},no_luajit
 @newgroup _rspamd:756
 @newuser _rspamd:756:_rspamd::Rspamd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rspamd

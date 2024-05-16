@@ -28,9 +28,7 @@ CONFIGURE_ENV ?=	CPPFLAGS='-I${LOCALBASE}/include' \
 
 USE_LUAJIT ?=		Yes
 .if ${MODULES:Mlang/lua}
-.if ${USE_LUAJIT:L} == "yes" && \
-    (${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc")
+.if ${USE_LUAJIT:L} == "yes" && ${PROPERTIES:Mluajit}
 WANTLIB +=		luajit-5.1
 LIB_DEPENDS +=		lang/luajit
 CONFIGURE_ARGS +=	--with-lua=luajit

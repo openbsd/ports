@@ -17,10 +17,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crypto daq dnet lzma m nghttp2 pcap pcre pthread z
 
 FLAVORS =		no_luajit
-.if ${MACHINE_ARCH} == arm || \
-    ${MACHINE_ARCH} == amd64 || \
-    ${MACHINE_ARCH} == i386 || \
-    ${MACHINE_ARCH} == powerpc
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mluajit}
 FLAVOR ?=
 .else
 FLAVOR =		no_luajit

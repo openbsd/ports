@@ -3,7 +3,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
 GH_TAGNAME=	3.8.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 
@@ -18,19 +18,12 @@ WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c crypto glib-2.0 icudata icui18n icuio icuuc
 WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util xxhash z zstd
 
-FLAVORS=	no_luajit hyperscan
+FLAVORS=	hyperscan
 .if ${MACHINE_ARCH} == "amd64"
-# amd64: any flavour
 FLAVOR?=
-.elif ${MACHINE_ARCH} == "arm" || \
-      ${MACHINE_ARCH} == "i386" || \
-      ${MACHINE_ARCH} == "powerpc"
-# other luajit arches: no_luajit or unflavoured
-FLAVOR?=
-FLAVOR:=	${FLAVOR:Nhyperscan}
 .else
-# others: no_luajit only
-FLAVOR=		no_luajit
+# override FLAVOR on !amd64; hyperscan is only available on amd64
+FLAVOR=
 .endif
 
 MODULES=	devel/cmake \
@@ -74,19 +67,25 @@ CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
 
 # to line up @samples in plist
 ETC=		${SYSCONFDIR}
-SUBST_VARS+=	ETC
+FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
+SUBST_VARS+=	ETC FLAVOR_STRING
 
-.if ${FLAVOR:Mno_luajit}
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS+= -DENABLE_LTO=off
+.endif
+
+.if ${PROPERTIES:Mluajit}
+LIB_DEPENDS+=	lang/luajit
+WANTLIB+=	luajit-5.1
+USE_NOBTCFI=	Yes
+.else
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.3
 MODLUA_SA=	Yes	# avoid overwriting FULLPKGNAME
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
 WANTLIB+=	${MODLUA_WANTLIB}
-.else
-LIB_DEPENDS+=	lang/luajit
-WANTLIB+=	luajit-5.1
-USE_NOBTCFI=	Yes
 .endif
 
 .if ${FLAVOR:Mhyperscan}
@@ -114,11 +113,6 @@ NO_TEST=	Yes
 #		RSPAMD_INSTALLROOT=${WRKINST} \
 #		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
 #		test/functional/cases
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mlld}
-CONFIGURE_ARGS+= -DENABLE_LTO=off
-.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md
