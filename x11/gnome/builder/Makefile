@@ -85,5 +85,10 @@ pre-configure:
 # don't pick up llvm-config(1) from base
 	ln -sf ${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
 		${WRKDIR}/bin/llvm-config
+# XXX see src/libide/core/meson.build; prevent a dependency on git;
+# ninja: error: '/usr/local/bin/git',
+# needed by 'src/libide/core/ide-build-ident.h', missing and no known rule to make it
+	ln -sf /usr/bin/false ${WRKDIR}/bin/git
+
 
 .include <bsd.port.mk>
