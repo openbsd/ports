@@ -64,3 +64,14 @@ share/examples/bacula/bacula-fd.conf
 share/examples/bacula/bconsole.conf
 @group _bacula
 @sample ${SYSCONFDIR}/bconsole.conf
+@mode
+@group
+share/examples/bacula/reports/
+share/examples/bacula/reports/bacula_mail_summary.sh
+share/examples/bacula/reports/baculareport.pl
+share/examples/bacula/reports/check_bacula_pools.sh
+share/examples/bacula/reports/checkhost
+share/examples/bacula/reports/is_client_alive
+share/examples/bacula/reports/next_tape.sh
+share/examples/bacula/reports/pool-query.txt
+share/examples/bacula/reports/report.pl

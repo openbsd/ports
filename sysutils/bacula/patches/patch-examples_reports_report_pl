@@ -1,0 +1,12 @@
+Index: examples/reports/report.pl
+--- examples/reports/report.pl.orig
++++ examples/reports/report.pl
+@@ -73,7 +73,7 @@ $count_fail = $count_total - $count_ok;
+ $counts = sprintf("%.1f", 100- (($count_fail/$count_total)*100)); 
+ 
+        
+-open(MAIL,"|/usr/lib/sendmail -f$from -t");
++open(MAIL,"|/usr/sbin/sendmail -f$from -t");
+ print MAIL "From: $from\n";
+ print MAIL "To: $email\n";
+ print MAIL "Subject: Backup ($when) $counts% OK - Total $count_total jobs, $count_fail failed\n";

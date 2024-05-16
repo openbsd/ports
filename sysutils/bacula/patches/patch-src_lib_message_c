@@ -1,0 +1,12 @@
+Index: src/lib/message.c
+--- src/lib/message.c.orig
++++ src/lib/message.c
+@@ -530,7 +530,7 @@ static BPIPE *open_mail_pipe(JCR *jcr, POOLMEM *&cmd, 
+    if (d->mail_cmd) {
+       cmd = edit_job_codes(jcr, cmd, d->mail_cmd, d->where, jcr ? jcr->job_code_callback : NULL);
+    } else {
+-      Mmsg(cmd, "/usr/lib/sendmail -F Bacula %s", d->where);
++      Mmsg(cmd, "/usr/sbin/sendmail -F Bacula %s", d->where);
+    }
+    fflush(stdout);
+ 

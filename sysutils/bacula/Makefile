@@ -17,6 +17,9 @@ PKGNAME-mysql=		bacula-mysql-$V
 PKGNAME-pgsql=		bacula-pgsql-$V
 PKGNAME-sqlite3=	bacula-sqlite3-$V
 
+REVISION-main=		0
+REVISION-server=	0
+
 CATEGORIES=		sysutils
 
 SHARED_LIBS +=  bac                  11.1
@@ -171,6 +174,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/autochangers/chio-changer-openbsd \
 		${PREFIX}/libexec/bacula/chio-changer-openbsd.dist
+	cp -pR ${WRKSRC}/examples/reports ${PREFIX}/share/examples/bacula
+	rm -f ${PREFIX}/share/examples/bacula/*.${PATCHORIG}
 	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
 	rm ${PREFIX}/sbin/bacula
 # does nothing
