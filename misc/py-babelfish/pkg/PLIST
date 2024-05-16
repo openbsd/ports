@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/babelfish/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}country.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}country.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -16,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}language.${MO
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babelfish/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/babelfish/compat.py
 lib/python${MODPY_VERSION}/site-packages/babelfish/converters/
 lib/python${MODPY_VERSION}/site-packages/babelfish/converters/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babelfish/converters/${MODPY_PYCACHE}/
