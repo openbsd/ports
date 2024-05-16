@@ -445,6 +445,7 @@ include/wx-3.2/wx/peninfobase.h
 include/wx-3.2/wx/persist/
 include/wx-3.2/wx/persist.h
 include/wx-3.2/wx/persist/bookctrl.h
+include/wx-3.2/wx/persist/combobox.h
 include/wx-3.2/wx/persist/dataview.h
 include/wx-3.2/wx/persist/splitter.h
 include/wx-3.2/wx/persist/toplevel.h
