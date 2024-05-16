@@ -1,9 +1,8 @@
 COMMENT=	pure-Python hyphenation library
 
-MODPY_EGG_VERSION=	0.14.0
+MODPY_EGG_VERSION=	0.15.0
 DISTNAME=	pyphen-${MODPY_EGG_VERSION}
 PKGNAME=	py-pyphen-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -18,8 +17,6 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-flake8${MODPY_FLAVOR} \
-		devel/py-test-isort${MODPY_FLAVOR} \
 		devel/py-test-xdist${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
