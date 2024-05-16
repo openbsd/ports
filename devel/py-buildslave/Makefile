@@ -1,8 +1,8 @@
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	3.11.1
-DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_EGG_VERSION=	3.11.2
+DISTNAME=	buildbot_worker-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:S/_/-}
 
 CATEGORIES=	devel
 
@@ -13,7 +13,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
+SITES =		https://github.com/buildbot/buildbot/releases/download/v${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 
