@@ -1,6 +1,6 @@
 COMMENT =	.NET debugger and assembly editor
-V =		6.1.7
-DISTNAME =	dnSpy-net472
+V =		6.5.0
+DISTNAME =	dnSpy-netframework
 PKGNAME =	dnspy-${V}
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/0xd4d/dnSpy
@@ -9,7 +9,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/0xd4d/dnSpy/releases/download/v${V}/
+SITES =		https://github.com/dnSpyEx/dnSpy/releases/download/v${V}/
 EXTRACT_SUFX =	.zip
 DIST_SUBDIR =	dnspy-${V}
 MODULES =	lang/mono
