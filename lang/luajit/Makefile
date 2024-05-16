@@ -1,24 +1,27 @@
-ONLY_FOR_ARCHS = arm amd64 i386 powerpc
-# if changing the above and it actually builds, switch to using
-#  luajit in mail/rspamd
-# - arm added speculatively, so not added in rspamd yet.
+# keep arch-defines.mk LUAJIT_ARCHS in sync
+# bump ports which use PROPERTIES:Mluajit if changing
+ONLY_FOR_ARCHS = aarch64 arm amd64 i386 powerpc
+# riscv64 might also work
 #
-# no aarch64 support in luajit 2.0 branch
 # games/tome4 is using embedded copy of luajit
 
-SHARED_LIBS +=	luajit-${MODLUA_VERSION} 1.0 # 2.0.5
+SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 
-# "Releases are only made occasionally. You're strongly encouraged to follow
-# the git branches"
+# "LuaJIT uses rolling releases. There are no release tarballs available
+# for download."
+# "Distro maintainers for distros that require the fiction of a release
+# should do frequent snapshots of a branch. Do not attempt to cherry-pick
+# or backport individual changes, no matter how self-standing individual
+# changes look (because they often are not)."
 GH_ACCOUNT =	LuaJIT
 GH_PROJECT =	LuaJIT
-GH_COMMIT =	98f95f69180d48ce49289d6428b46a9ccdd67a46
+GH_COMMIT =	5790d253972c9d78a0c2aece527eda5b134bbbf7
 
 COMMENT =	just-in-time compiler for Lua
-V =		2.0.5
-DISTNAME =	LuaJIT-${V}pl20210608
+# see ${WRKSRC}/.relver
+V =		2.1.1713773202
+DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	lang
 
@@ -33,6 +36,7 @@ WANTLIB =	c m
 
 MODULES =	lang/lua
 MODLUA_SA=	Yes
+# luajit specifically targets the 5.1 ABI
 MODLUA_VERSION=	5.1
 
 MAKE_FLAGS += \
@@ -41,12 +45,13 @@ MAKE_FLAGS += \
 	CCOPT_x86="" \
 	INSTALL_LJLIBD="${DESTDIR}${MODLUA_DATADIR}" \
 	INSTALL_MAN="${DESTDIR}${PREFIX}/man/man1" \
-	INSTALL_SONAME=libluajit-${MODLUA_VERSION}.so.${LIBluajit-${MODLUA_VERSION}_VERSION} \
-	PREFIX="${PREFIX}"
+	INSTALL_SONAME=libluajit-5.1.so.${LIBluajit-5.1_VERSION} \
+	PREFIX="${PREFIX}" \
+	Q= E=@:
 
 USE_GMAKE =	Yes
 
-SUBST_VARS+=	MODLUA_VERSION
+SUBST_VARS =	V
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/Makefile \
@@ -54,7 +59,8 @@ pre-configure:
 		${WRKDIST}/src/luaconf.h
 
 post-install:
-	mv ${PREFIX}/bin/luajit-$V ${PREFIX}/bin/luajit${MODLUA_DEP_VERSION}
+	rm ${PREFIX}/lib/libluajit-${MODLUA_VERSION}.so{,.?}
+	ln -s luajit-${V} ${PREFIX}/bin/luajit${MODLUA_DEP_VERSION}
 
 do-test:
 	${WRKSRC}/src/luajit -e "print('hello world')" | grep "^hello world$$"

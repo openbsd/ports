@@ -5,8 +5,8 @@ ignore the gcc version check ifdef hell for all base-clang arches.
 Index: src/lj_arch.h
 --- src/lj_arch.h.orig
 +++ src/lj_arch.h
-@@ -299,7 +299,7 @@
- #endif
+@@ -446,7 +446,7 @@
+ /* -- Checks for requirements --------------------------------------------- */
  
  /* Check for minimum required compiler versions. */
 -#if defined(__GNUC__)
