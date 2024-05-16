@@ -26,11 +26,8 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += intl javascriptcoregtk-4.0 pango-1.0 pangocairo-1.0 pthread
 WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0
 
-# luajit archs
-.if ${MACHINE_ARCH} == "arm" \
- || ${MACHINE_ARCH} == "amd64" \
- || ${MACHINE_ARCH} == "i386" \
- || ${MACHINE_ARCH} == "powerpc"
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mluajit}
 WANTLIB +=	luajit-5.1
 LIB_DEPENDS +=	lang/luajit
 MAKE_FLAGS +=	USE_LUAJIT=1
