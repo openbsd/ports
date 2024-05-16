@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.104 2024/03/05 01:52:34 gkoehler Exp $
+# $OpenBSD: arch-defines.mk,v 1.105 2024/05/16 09:52:39 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -25,6 +25,7 @@ GCC3_ARCHS = m88k
 # arches where certain ports are available
 MONO_ARCHS = aarch64 amd64 i386
 GO_ARCHS = aarch64 amd64 arm armv7 i386 mips64 riscv64
+LUAJIT_ARCHS = arm amd64 i386 powerpc
 RUST_ARCHS = aarch64 amd64 i386 powerpc64 riscv64 sparc64
 # arch-specific features that ocaml ports need to know about
 OCAML_NATIVE_ARCHS = aarch64 amd64 i386
@@ -45,7 +46,7 @@ GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc6
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
 DEBUGINFO_ARCHS = aarch64 amd64
 
-.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM \
+.for PROP in ALL APM BE LE LP64 CLANG GCC4 GCC3 GCC49 MONO LLVM LUAJIT \
                      CXX11 OCAML_NATIVE OCAML_NATIVE_DYNLINK GO \
                      LLD RUST DEBUGINFO
 .  for A B in ${MACHINE_ARCH} ${ARCH}
