@@ -7,6 +7,8 @@ ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
+${GEM_LIB}/gems/${DISTNAME}/.rubocop_todo.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
@@ -53,7 +55,4 @@ ${GEM_LIB}/gems/${DISTNAME}/sublime_text/
 ${GEM_LIB}/gems/${DISTNAME}/sublime_text/README.md
 ${GEM_LIB}/gems/${DISTNAME}/sublime_text/eyaml.sublime-package
 ${GEM_LIB}/gems/${DISTNAME}/sublime_text/eyaml.syntax_definition.json
-${GEM_LIB}/gems/${DISTNAME}/tools/
-${GEM_LIB}/gems/${DISTNAME}/tools/git_tag_release.rb
-${GEM_LIB}/gems/${DISTNAME}/tools/regem.sh
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
