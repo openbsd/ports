@@ -1,9 +1,9 @@
 COMMENT=	Prometheus exporter for SNMP metrics
 
-# updating: bump V version, "make patch" (fix patches if needed),
-# "make mibs", update M version, "make makesum".
-V=		0.25.0
-M=		0.25.0
+# updating: bump V version, "make makesum", "make patch" (fix patches
+# if needed), "make mibs", update M version, "make makesum".
+V=		0.26.0
+M=		0.26.0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V

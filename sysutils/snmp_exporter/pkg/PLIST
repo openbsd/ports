@@ -99,6 +99,7 @@ share/examples/snmp_exporter/mibs/UCD-SNMP-MIB
 share/examples/snmp_exporter/mibs/VRRP-MIB
 share/examples/snmp_exporter/mibs/VRRPv3-MIB
 share/examples/snmp_exporter/mibs/apc-powernet-mib
+share/examples/snmp_exporter/mibs/iDRAC-SMIv2.mib
 share/examples/snmp_exporter/mibs/readydataos
 share/examples/snmp_exporter/mibs/readynas
 share/examples/snmp_exporter/mibs/servertech-sentry3-mib
