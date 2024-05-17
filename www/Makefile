@@ -35,6 +35,7 @@
      SUBDIR += drush
      SUBDIR += e2guardian
      SUBDIR += edbrowse
+     SUBDIR += elinks
      SUBDIR += ephemetoot
      SUBDIR += epiphany
      SUBDIR += fcgi
