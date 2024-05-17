@@ -2,7 +2,7 @@ COMMENT=	latency logging and graphing system
 
 V=		2.8.2
 DISTNAME=	smokeping-$V
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	net
 
@@ -21,6 +21,7 @@ COMMON_DEPENDS=	devel/p5-Config-Grammar \
 		www/fcgi \
 		www/p5-CGI \
 		www/p5-CGI-Fast \
+		www/p5-LWP-Protocol-https \
 		www/p5-libwww
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		net/fping \
