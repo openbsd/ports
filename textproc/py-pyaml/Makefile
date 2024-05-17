@@ -1,27 +1,25 @@
-COMMENT =		module to produce pretty and readable YAML
+COMMENT=	module to produce pretty and readable YAML
 
-MODPY_EGG_VERSION =	23.5.9
+MODPY_EGG_VERSION=	24.4.0
 
-DISTNAME =		pyaml-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+DISTNAME=	pyaml-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
-HOMEPAGE =		https://github.com/mk-fg/pretty-yaml
+HOMEPAGE=	https://github.com/mk-fg/pretty-yaml
 
 # WTFPL
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	pyaml/tests
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-TEST_DEPENDS =		textproc/py-unidecode${MODPY_FLAVOR}
+TEST_DEPENDS=	textproc/py-unidecode${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
