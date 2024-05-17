@@ -1,7 +1,6 @@
 # keep arch-defines.mk LUAJIT_ARCHS in sync
 # bump ports which use PROPERTIES:Mluajit if changing
 ONLY_FOR_ARCHS = aarch64 arm amd64 i386 powerpc
-# riscv64 might also work
 #
 # games/tome4 is using embedded copy of luajit
 
