@@ -34,6 +34,8 @@ lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}simple.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}token_based.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}token_based.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}vector_based.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/${MODPY_PYCACHE}vector_based.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/base.py
@@ -43,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/phonetic.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/sequence_based.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/simple.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/token_based.py
+lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/types.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/algorithms/vector_based.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/benchmark.py
 lib/python${MODPY_VERSION}/site-packages/textdistance/libraries.json
