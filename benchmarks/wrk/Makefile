@@ -3,7 +3,7 @@ COMMENT =	modern HTTP benchmarking tool
 GH_ACCOUNT =	wg
 GH_PROJECT =	wrk
 GH_TAGNAME =	4.2.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	benchmarks
 

@@ -24,31 +24,33 @@ Index: Makefile
  
  ifneq ($(WITH_LUAJIT),)
 -	CFLAGS  += -I$(WITH_LUAJIT)/include
-+	CFLAGS  += -I$(WITH_LUAJIT)/include/luajit-2.0
++	CFLAGS  += -I$(WITH_LUAJIT)/include/luajit-2.1
  	LDFLAGS += -L$(WITH_LUAJIT)/lib
  else
  	CFLAGS  += -I$(ODIR)/include/luajit-2.1
-@@ -52,7 +55,7 @@ clean:
+@@ -51,8 +54,7 @@ clean:
+ 	$(RM) -rf $(BIN) obj/*
  
  $(BIN): $(OBJ)
- 	@echo LINK $(BIN)
+-	@echo LINK $(BIN)
 -	@$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
 +	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
  
  $(OBJ): config.h Makefile $(DEPS) | $(ODIR)
  
-@@ -61,14 +64,14 @@ $(ODIR):
+@@ -60,15 +62,13 @@ $(ODIR):
+ 	@mkdir -p $@
  
  $(ODIR)/bytecode.c: src/wrk.lua $(DEPS)
- 	@echo LUAJIT $<
+-	@echo LUAJIT $<
 -	@$(SHELL) -c 'PATH="obj/bin:$(PATH)" luajit -b "$(CURDIR)/$<" "$(CURDIR)/$@"'
-+	@$(SHELL) -c 'PATH="obj/bin:$(PATH)" luajit51 -b "$(CURDIR)/$<" "$(CURDIR)/$@"'
++	$(SHELL) -c 'PATH="obj/bin:$(PATH)" luajit -b "$(CURDIR)/$<" "$(CURDIR)/$@"'
  
  $(ODIR)/version.o:
  	@echo 'const char *VERSION="$(VER)";' | $(CC) -xc -c -o $@ -
  
  $(ODIR)/%.o : %.c
- 	@echo CC $<
+-	@echo CC $<
 -	@$(CC) $(CFLAGS) -c -o $@ $<
 +	$(CC) $(CFLAGS) -c -o $@ $<
  

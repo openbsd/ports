@@ -22,7 +22,7 @@ MODULES =	lang/lua
 LIB_DEPENDS =	games/goldberg_emulator \
 		lang/luajit
 INCL =		-I/usr/local/include/goldberg_emulator/steam \
-		-I/usr/local/include/luajit-2.0
+		-I/usr/local/include/luajit-2.1
 LDFLAGS +=	-L/usr/local/lib -lsteam_api
 MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} ${INCL}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE =	Yes
