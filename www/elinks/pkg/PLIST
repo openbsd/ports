@@ -1,0 +1,31 @@
+@bin bin/elinks
+@man man/man1/elinks.1
+@man man/man5/elinks.conf.5
+@man man/man5/elinkskeys.5
+share/doc/elinks/
+share/doc/elinks/elinks.1.html
+share/doc/elinks/elinkskeys.5.html
+share/doc/elinks/features.txt
+share/doc/elinks/keymap-defaults.txt
+share/doc/elinks/manual.html
+share/doc/elinks/manual.html-chunked/
+share/doc/elinks/manual.html-chunked/ar01s02.html
+share/doc/elinks/manual.html-chunked/ar01s03.html
+share/doc/elinks/manual.html-chunked/ar01s04.html
+share/doc/elinks/manual.html-chunked/ar01s05.html
+share/doc/elinks/manual.html-chunked/ar01s06.html
+share/doc/elinks/manual.html-chunked/ar01s07.html
+share/doc/elinks/manual.html-chunked/ar01s08.html
+share/doc/elinks/manual.html-chunked/ar01s09.html
+share/doc/elinks/manual.html-chunked/ar01s10.html
+share/doc/elinks/manual.html-chunked/ar01s11.html
+share/doc/elinks/manual.html-chunked/ar01s12.html
+share/doc/elinks/manual.html-chunked/ar01s13.html
+share/doc/elinks/manual.html-chunked/ar01s14.html
+share/doc/elinks/manual.html-chunked/ar01s15.html
+share/doc/elinks/manual.html-chunked/ar01s16.html
+share/doc/elinks/manual.html-chunked/index.html
+share/doc/elinks/manual.html-chunked/manual.proc
+share/doc/elinks/option-command.frag.xhtml
+share/doc/elinks/perl-hooks.html
+share/doc/elinks/perl.html
