@@ -1,10 +1,8 @@
 COMMENT=	Python wrapper for pandoc
 
-MODPY_EGG_VERSION=	1.12
-
+MODPY_EGG_VERSION=	1.13
 DISTNAME=	pypandoc-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -25,7 +23,6 @@ FLAVOR=		python3
 RUN_DEPENDS=	textproc/pandoc
 
 PORTHOME=	${WRKDIR}
-
 TEST_DEPENDS=	print/texlive/texmf,-main \
 		textproc/pandoc
 
