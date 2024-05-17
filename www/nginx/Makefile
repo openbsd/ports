@@ -41,7 +41,7 @@ PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
@@ -191,6 +191,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
 			--with-http_v2_module \
+			--with-http_v3_module \
 			--with-http_xslt_module=dynamic \
 			--with-mail=dynamic \
 			--with-stream=dynamic \
