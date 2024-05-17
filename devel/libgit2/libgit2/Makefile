@@ -2,11 +2,11 @@ COMMENT=		Git linkable library
 
 GH_ACCOUNT=		libgit2
 GH_PROJECT=		libgit2
-GH_TAGNAME=		v1.8.0
+GH_TAGNAME=		v1.8.1
 
 SHARED_LIBS +=  git2                      15.0 # 0.28
 
-WANTLIB += c crypto http_parser pcre pthread ssh2 ssl z
+WANTLIB += c crypto pcre pthread ssh2 ssl z
 
 MODULES=		devel/cmake \
 			lang/python
@@ -20,12 +20,10 @@ MODGCC4_ARCHS=		hppa
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-LIB_DEPENDS=		devel/http-parser \
-			devel/pcre \
+LIB_DEPENDS=		devel/pcre \
 			security/libssh2
 
-CONFIGURE_ARGS=		-DUSE_SSH=ON \
-			-DUSE_HTTP_PARSER=system
+CONFIGURE_ARGS=		-DUSE_SSH=ON
 
 CFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
