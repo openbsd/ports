@@ -1,7 +1,7 @@
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 
@@ -11,9 +11,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas http_parser
-WANTLIB += jpeg lzma m nghttp2 pcre pthread ssh2 ssl
-WANTLIB += tiff wcs z zstd nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas jpeg lzma
+WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls pcre
+WANTLIB += pthread ssh2 ssl tiff wcs z zstd
 
 SITES =		${SITE_GNU:=gnuastro/}
 
