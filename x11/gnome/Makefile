@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += accerciser
      SUBDIR += adwaita-icon-theme
+     SUBDIR += adwaita-icon-theme-legacy
      SUBDIR += aisleriot
      SUBDIR += at-spi2-core
      SUBDIR += autoar
