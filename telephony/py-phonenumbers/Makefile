@@ -1,16 +1,13 @@
 COMMENT =	port of Google's libphonenumber library
 #'
 
-MODPY_EGG_VERSION = 8.13.35
+MODPY_EGG_VERSION = 8.13.37
 DISTNAME =	phonenumbers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	telephony devel
 
 HOMEPAGE =	https://github.com/daviddrysdale/python-phonenumbers
-
-MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
