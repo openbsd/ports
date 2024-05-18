@@ -5,23 +5,22 @@ COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v24.01.22-LoongYear.3dddb3be	.
+				v24.05.05-LiXia.ecd1138c	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
-REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Core5Compat
+WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg
 WANTLIB += Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 Xtst avcodec avformat avutil
-WANTLIB += bz2 c fmt hunspell-1.7 iconv icudata icui18n icuuc
-WANTLIB += lzma lzo2 m opencc swresample vorbis vorbisfile xapian
-WANTLIB += z zim zstd
+WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xtst avcodec avformat
+WANTLIB += avutil bz2 c fmt hunspell-1.7 iconv icudata icui18n
+WANTLIB += icuuc lzma lzo2 m opencc swresample vorbis vorbisfile
+WANTLIB += xapian z zim zstd
 
 # C++17
 COMPILER =		base-clang ports-gcc
