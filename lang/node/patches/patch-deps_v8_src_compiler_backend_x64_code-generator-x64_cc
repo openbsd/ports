@@ -1,7 +1,7 @@
 Index: deps/v8/src/compiler/backend/x64/code-generator-x64.cc
 --- deps/v8/src/compiler/backend/x64/code-generator-x64.cc.orig
 +++ deps/v8/src/compiler/backend/x64/code-generator-x64.cc
-@@ -4583,7 +4583,7 @@ void CodeGenerator::AssembleArchTableSwitch(Instructio
+@@ -5497,7 +5497,7 @@ void CodeGenerator::AssembleArchTableSwitch(Instructio
    __ cmpl(input, Immediate(case_count));
    __ j(above_equal, GetLabel(i.InputRpo(1)));
    __ leaq(kScratchRegister, Operand(table));

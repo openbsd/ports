@@ -1,7 +1,7 @@
 Index: tools/v8_gypfiles/toolchain.gypi
 --- tools/v8_gypfiles/toolchain.gypi.orig
 +++ tools/v8_gypfiles/toolchain.gypi
-@@ -1304,11 +1304,9 @@
+@@ -861,11 +861,9 @@
                # Don't use -O3 with sanitizers.
                ['asan==0 and msan==0 and lsan==0 \
                  and tsan==0 and ubsan==0 and ubsan_vptr==0', {

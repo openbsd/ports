@@ -4,7 +4,7 @@ OpenBSD/riscv64 always uses floating-point support.
 Index: deps/v8/src/base/cpu.cc
 --- deps/v8/src/base/cpu.cc.orig
 +++ deps/v8/src/base/cpu.cc
-@@ -871,6 +871,8 @@ CPU::CPU()
+@@ -868,6 +868,8 @@ CPU::CPU()
  #endif  // !USE_SIMULATOR
  
  #elif V8_HOST_ARCH_RISCV64
@@ -13,7 +13,7 @@ Index: deps/v8/src/base/cpu.cc
    CPUInfo cpu_info;
    char* features = cpu_info.ExtractField("isa");
  
-@@ -881,6 +883,14 @@ CPU::CPU()
+@@ -878,6 +880,14 @@ CPU::CPU()
      has_fpu_ = true;
      has_rvv_ = true;
    }

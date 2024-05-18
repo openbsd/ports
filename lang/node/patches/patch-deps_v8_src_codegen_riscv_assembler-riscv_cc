@@ -1,0 +1,103 @@
+1st hunk:
+Use static_cast instead of a potentially dangerous reinterpret_cast.
+Doesn't matter since this file only supports riscv64 where unsigned long and
+unsigned long long are actually the same size.
+../deps/v8/src/codegen/riscv64/assembler-riscv64.cc:403:22: error: reinterpret_cast from 'v8::internal::Address' (aka 'unsigned long') to 'uint64_t' (aka 'unsigned long long') is not allowed
+
+Other hunks:
+Fix build errors due to type mismatch between intptr_t (long) and int64_t
+(long long).
+
+Index: deps/v8/src/codegen/riscv/assembler-riscv.cc
+--- deps/v8/src/codegen/riscv/assembler-riscv.cc.orig
++++ deps/v8/src/codegen/riscv/assembler-riscv.cc
+@@ -344,7 +344,7 @@ int Assembler::target_at(int pos, bool is_internal) {
+       pc = target_address_at(pc);
+       uintptr_t instr_address =
+           reinterpret_cast<uintptr_t>(buffer_start_ + pos);
+-      uintptr_t imm = reinterpret_cast<uintptr_t>(pc);
++      uintptr_t imm = static_cast<uintptr_t>(pc);
+       if (imm == kEndOfJumpChain) {
+         return kEndOfChain;
+       } else {
+@@ -891,7 +891,7 @@ inline int64_t signExtend(uint64_t V, int N) {
+ }
+ 
+ #if V8_TARGET_ARCH_RISCV64
+-void Assembler::RV_li(Register rd, int64_t imm) {
++void Assembler::RV_li(Register rd, intptr_t imm) {
+   UseScratchRegisterScope temps(this);
+   if (RecursiveLiCount(imm) > GeneralLiCount(imm, temps.hasAvailable())) {
+     GeneralLi(rd, imm);
+@@ -1060,7 +1060,7 @@ void Assembler::GeneralLi(Register rd, int64_t imm) {
+   }
+ }
+ 
+-void Assembler::li_ptr(Register rd, int64_t imm) {
++void Assembler::li_ptr(Register rd, intptr_t imm) {
+   // Initialize rd with an address
+   // Pointers are 48 bits
+   // 6 fixed instructions are generated
+@@ -1078,7 +1078,7 @@ void Assembler::li_ptr(Register rd, int64_t imm) {
+   ori(rd, rd, a6);       // 6 bits are put in. 48 bis in rd
+ }
+ 
+-void Assembler::li_constant(Register rd, int64_t imm) {
++void Assembler::li_constant(Register rd, intptr_t imm) {
+   DEBUG_PRINTF("\tli_constant(%d, %lx <%ld>)\n", ToNumber(rd), imm, imm);
+   lui(rd, (imm + (1LL << 47) + (1LL << 35) + (1LL << 23) + (1LL << 11)) >>
+               48);  // Bits 63:48
+@@ -1527,7 +1527,7 @@ Address Assembler::target_address_at(Address pc) {
+ //
+ // Patching the address must replace all instructions, and flush the i-cache.
+ // Note that this assumes the use of SV48, the 48-bit virtual memory system.
+-void Assembler::set_target_value_at(Address pc, uint64_t target,
++void Assembler::set_target_value_at(Address pc, uintptr_t target,
+                                     ICacheFlushMode icache_flush_mode) {
+   DEBUG_PRINTF("set_target_value_at: pc: %lx\ttarget: %lx\n", pc, target);
+   uint32_t* p = reinterpret_cast<uint32_t*>(pc);
+@@ -1820,7 +1820,7 @@ const size_t ConstantPool::kApproxMaxEntryCount = 512;
+ //  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+ //
+ //===----------------------------------------------------------------------===//
+-void Assembler::RecursiveLi(Register rd, int64_t val) {
++void Assembler::RecursiveLi(Register rd, intptr_t val) {
+   if (val > 0 && RecursiveLiImplCount(val) > 2) {
+     unsigned LeadingZeros = base::bits::CountLeadingZeros((uint64_t)val);
+     uint64_t ShiftedVal = (uint64_t)val << LeadingZeros;
+@@ -1834,7 +1834,7 @@ void Assembler::RecursiveLi(Register rd, int64_t val) 
+   RecursiveLiImpl(rd, val);
+ }
+ 
+-int Assembler::RecursiveLiCount(int64_t val) {
++int Assembler::RecursiveLiCount(intptr_t val) {
+   if (val > 0 && RecursiveLiImplCount(val) > 2) {
+     unsigned LeadingZeros = base::bits::CountLeadingZeros((uint64_t)val);
+     uint64_t ShiftedVal = (uint64_t)val << LeadingZeros;
+@@ -1849,7 +1849,7 @@ int Assembler::RecursiveLiCount(int64_t val) {
+   return RecursiveLiImplCount(val);
+ }
+ 
+-void Assembler::RecursiveLiImpl(Register rd, int64_t Val) {
++void Assembler::RecursiveLiImpl(Register rd, intptr_t Val) {
+   if (is_int32(Val)) {
+     // Depending on the active bits in the immediate Value v, the following
+     // instruction sequences are emitted:
+@@ -1926,7 +1926,7 @@ void Assembler::RecursiveLiImpl(Register rd, int64_t V
+   }
+ }
+ 
+-int Assembler::RecursiveLiImplCount(int64_t Val) {
++int Assembler::RecursiveLiImplCount(intptr_t Val) {
+   int count = 0;
+   if (is_int32(Val)) {
+     // Depending on the active bits in the immediate Value v, the following
+@@ -2007,7 +2007,7 @@ int Assembler::RecursiveLiImplCount(int64_t Val) {
+   return count;
+ }
+ 
+-int Assembler::GeneralLiCount(int64_t imm, bool is_get_temp_reg) {
++int Assembler::GeneralLiCount(intptr_t imm, bool is_get_temp_reg) {
+   int count = 0;
+   // imitate Assembler::RV_li
+   if (is_int32(imm + 0x800)) {

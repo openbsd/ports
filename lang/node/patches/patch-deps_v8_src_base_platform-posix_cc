@@ -1,7 +1,16 @@
 Index: deps/v8/src/base/platform/platform-posix.cc
 --- deps/v8/src/base/platform/platform-posix.cc.orig
 +++ deps/v8/src/base/platform/platform-posix.cc
-@@ -68,7 +68,7 @@
+@@ -53,7 +53,7 @@
+ #if V8_OS_DARWIN
+ #include <mach/mach.h>
+ #include <malloc/malloc.h>
+-#else
++#elif !V8_OS_BSD
+ #include <malloc.h>
+ #endif
+ 
+@@ -71,7 +71,7 @@
  #include <sys/syscall.h>
  #endif
  
@@ -10,7 +19,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -300,8 +300,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -303,8 +303,15 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -26,7 +35,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
    uintptr_t raw_addr;
    {
      MutexGuard guard(rng_mutex.Pointer());
-@@ -392,6 +399,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -399,6 +406,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -34,7 +43,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -600,7 +608,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -667,7 +675,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
@@ -43,7 +52,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1219,7 +1227,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1244,7 +1252,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \
@@ -51,4 +60,4 @@ Index: deps/v8/src/base/platform/platform-posix.cc
 +    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  
  // static
- Stack::StackSlot Stack::GetStackStart() {
+ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {

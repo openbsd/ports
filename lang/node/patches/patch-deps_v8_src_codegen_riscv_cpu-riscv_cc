@@ -1,8 +1,8 @@
 Implement instruction cache flush using sysarch(RISCV_SYNC_ICACHE).
 
-Index: deps/v8/src/codegen/riscv64/cpu-riscv64.cc
---- deps/v8/src/codegen/riscv64/cpu-riscv64.cc.orig
-+++ deps/v8/src/codegen/riscv64/cpu-riscv64.cc
+Index: deps/v8/src/codegen/riscv/cpu-riscv.cc
+--- deps/v8/src/codegen/riscv/cpu-riscv.cc.orig
++++ deps/v8/src/codegen/riscv/cpu-riscv.cc
 @@ -4,7 +4,13 @@
  
  // CPU specific code for arm independent of OS goes here.
@@ -17,8 +17,8 @@ Index: deps/v8/src/codegen/riscv64/cpu-riscv64.cc
 +
  #include <unistd.h>
  
- #if V8_TARGET_ARCH_RISCV64
-@@ -16,6 +22,10 @@ namespace internal {
+ #include "src/codegen/cpu-features.h"
+@@ -14,6 +20,10 @@ namespace internal {
  
  void CpuFeatures::FlushICache(void* start, size_t size) {
  #if !defined(USE_SIMULATOR)
@@ -29,7 +29,7 @@ Index: deps/v8/src/codegen/riscv64/cpu-riscv64.cc
    char* end = reinterpret_cast<char*>(start) + size;
    // The definition of this syscall is
    // SYSCALL_DEFINE3(riscv_flush_icache, uintptr_t, start,
-@@ -23,6 +33,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
+@@ -21,6 +31,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
    // The flag here is set to be SYS_RISCV_FLUSH_ICACHE_LOCAL, which is
    // defined as 1 in the Linux kernel.
    syscall(SYS_riscv_flush_icache, start, end, 1);

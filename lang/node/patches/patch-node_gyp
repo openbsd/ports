@@ -4,7 +4,7 @@ devel/gtest if installed.
 Index: node.gyp
 --- node.gyp.orig
 +++ node.gyp
-@@ -468,7 +468,7 @@
+@@ -826,7 +826,7 @@
        ],
        'dependencies': [
          'deps/base64/base64.gyp:base64',
@@ -13,7 +13,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
          'deps/simdutf/simdutf.gyp:simdutf',
-@@ -1222,8 +1222,8 @@
+@@ -1056,8 +1056,8 @@
        'dependencies': [
          '<(node_lib_target_name)',
          'deps/base64/base64.gyp:base64',
@@ -23,8 +23,8 @@ Index: node.gyp
 +        #'deps/googletest/googletest.gyp:gtest_main',
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
-         'node_dtrace_header',
-@@ -1299,6 +1299,10 @@
+         'deps/simdutf/simdutf.gyp:simdutf',
+@@ -1105,6 +1105,10 @@
          }],
          ['OS=="solaris"', {
            'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]

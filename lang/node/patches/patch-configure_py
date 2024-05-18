@@ -1,7 +1,7 @@
 Index: configure.py
 --- configure.py.orig
 +++ configure.py
-@@ -1560,6 +1560,10 @@ def configure_v8(o):
+@@ -1540,6 +1540,10 @@ def configure_v8(o):
      raise Exception(
          'Only one of the --v8-enable-object-print or --v8-disable-object-print options '
          'can be specified at a time.')

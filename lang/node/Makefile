@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v18.19.1
+NODE_VERSION =		v20.13.1
 PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
@@ -14,7 +14,6 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		0
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
@@ -50,7 +49,7 @@ RUN_DEPENDS =		devel/gmake \
 # Needed to build js_native_api_v8_internals.h
 TEST_DEPENDS =		devel/gtest
 
-TEST_TARGET =		test-only
+TEST_TARGET =		check
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure
 
@@ -72,8 +71,8 @@ SUBST_VARS +=		EOPENSSL_LIB
 
 # uses a wide range of OpenSSL API and only really supports boring/openssl
 LIB_DEPENDS +=		archivers/brotli \
-			devel/libuv \
 			net/libcares \
+			devel/libuv \
 			textproc/icu4c \
 			www/nghttp2 \
 			security/openssl/3.1

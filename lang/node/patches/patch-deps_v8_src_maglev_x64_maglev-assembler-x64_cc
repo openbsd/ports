@@ -1,0 +1,16 @@
+Index: deps/v8/src/maglev/x64/maglev-assembler-x64.cc
+--- deps/v8/src/maglev/x64/maglev-assembler-x64.cc.orig
++++ deps/v8/src/maglev/x64/maglev-assembler-x64.cc
+@@ -631,10 +631,11 @@ void MaglevAssembler::TryTruncateDoubleToInt32(Registe
+ }
+ 
+ void MaglevAssembler::Prologue(Graph* graph) {
++  CodeEntry();
+   BailoutIfDeoptimized(rbx);
+ 
+   if (graph->has_recursive_calls()) {
+-    bind(code_gen_state()->entry_label());
++    BindJumpTarget(code_gen_state()->entry_label());
+   }
+ 
+   // Tiering support.

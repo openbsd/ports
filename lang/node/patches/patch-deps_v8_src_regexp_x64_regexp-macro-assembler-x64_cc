@@ -1,7 +1,7 @@
 Index: deps/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
 --- deps/v8/src/regexp/x64/regexp-macro-assembler-x64.cc.orig
 +++ deps/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
-@@ -109,6 +109,7 @@ RegExpMacroAssemblerX64::RegExpMacroAssemblerX64(Isola
+@@ -110,6 +110,7 @@ RegExpMacroAssemblerX64::RegExpMacroAssemblerX64(Isola
        backtrack_label_(),
        exit_label_() {
    DCHECK_EQ(0, registers_to_save % 2);
@@ -9,7 +9,16 @@ Index: deps/v8/src/regexp/x64/regexp-macro-assembler-x64.cc
    __ jmp(&entry_label_);   // We'll write the entry code when we know more.
    __ bind(&start_label_);  // And then continue from here.
  }
-@@ -696,6 +697,11 @@ bool RegExpMacroAssemblerX64::CheckSpecialCharacterCla
+@@ -170,7 +171,7 @@ void RegExpMacroAssemblerX64::Backtrack() {
+   // and jump to location.
+   Pop(rbx);
+   __ addq(rbx, code_object_pointer());
+-  __ jmp(rbx);
++  __ jmp(rbx, /*notrack=*/true);
+ }
+ 
+ 
+@@ -714,6 +715,11 @@ bool RegExpMacroAssemblerX64::CheckSpecialClassRanges(
        // Match any character.
        return true;
    }

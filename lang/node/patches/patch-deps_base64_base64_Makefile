@@ -1,9 +1,10 @@
 Index: deps/base64/base64/Makefile
 --- deps/base64/base64/Makefile.orig
 +++ deps/base64/base64/Makefile
-@@ -1,4 +1,4 @@
--CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic
-+CFLAGS += -std=c99 -Wall -Wextra -pedantic
- 
+@@ -1,5 +1,5 @@
+ CFLAGS += -std=c99 -O3 -Wall -Wextra -pedantic -DBASE64_STATIC_DEFINE
+-
++CFLAGS += -std=c99 -Wall -Wextra -pedantic -DBASE64_STATIC_DEFINE 
  # Set OBJCOPY if not defined by environment:
  OBJCOPY ?= objcopy
+ 

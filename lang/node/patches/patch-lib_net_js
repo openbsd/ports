@@ -13,7 +13,7 @@ for "any address" but that's not really a straightforward change).
 Index: lib/net.js
 --- lib/net.js.orig
 +++ lib/net.js
-@@ -1779,22 +1779,12 @@ function setupListenHandle(address, port, addressType,
+@@ -1860,22 +1860,12 @@ function setupListenHandle(address, port, addressType,
  
      let rval = null;
  
@@ -38,4 +38,4 @@ Index: lib/net.js
 +    rval = createServerHandle(address, port, addressType, fd, flags);
  
      if (typeof rval === 'number') {
-       const error = uvExceptionWithHostPort(rval, 'listen', address, port);
+       const error = new UVExceptionWithHostPort(rval, 'listen', address, port);

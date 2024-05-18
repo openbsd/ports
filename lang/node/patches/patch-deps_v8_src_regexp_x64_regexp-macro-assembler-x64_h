@@ -1,13 +1,11 @@
 Index: deps/v8/src/regexp/x64/regexp-macro-assembler-x64.h
 --- deps/v8/src/regexp/x64/regexp-macro-assembler-x64.h.orig
 +++ deps/v8/src/regexp/x64/regexp-macro-assembler-x64.h
-@@ -59,6 +59,9 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
-   void CheckPosition(int cp_offset, Label* on_outside_input) override;
-   bool CheckSpecialCharacterClass(StandardCharacterSet type,
-                                   Label* on_no_match) override;
-+
+@@ -23,6 +23,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   void AdvanceRegister(int reg, int by) override;
+   void Backtrack() override;
+   void Bind(Label* label) override;
 +  void BindJumpTarget(Label* label) override;
-+
-   void Fail() override;
-   Handle<HeapObject> GetCode(Handle<String> source) override;
-   void GoTo(Label* label) override;
+   void CheckAtStart(int cp_offset, Label* on_at_start) override;
+   void CheckCharacter(uint32_t c, Label* on_equal) override;
+   void CheckCharacterAfterAnd(uint32_t c, uint32_t mask,

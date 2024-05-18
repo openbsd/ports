@@ -1,7 +1,7 @@
 Index: deps/v8/src/codegen/x64/macro-assembler-x64.h
 --- deps/v8/src/codegen/x64/macro-assembler-x64.h.orig
 +++ deps/v8/src/codegen/x64/macro-assembler-x64.h
-@@ -556,11 +556,14 @@ class V8_EXPORT_PRIVATE TurboAssembler
+@@ -577,11 +577,14 @@ class V8_EXPORT_PRIVATE MacroAssembler
  
    // Define a function entrypoint. This doesn't emit any code for this
    // architecture, as control-flow integrity is not supported for it.

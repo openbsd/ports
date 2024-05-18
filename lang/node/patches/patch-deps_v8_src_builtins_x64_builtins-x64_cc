@@ -1,7 +1,7 @@
 Index: deps/v8/src/builtins/x64/builtins-x64.cc
 --- deps/v8/src/builtins/x64/builtins-x64.cc.orig
 +++ deps/v8/src/builtins/x64/builtins-x64.cc
-@@ -42,6 +42,8 @@ namespace internal {
+@@ -43,6 +43,8 @@ namespace internal {
  #define __ ACCESS_MASM(masm)
  
  void Builtins::Generate_Adaptor(MacroAssembler* masm, Address address) {
@@ -10,7 +10,7 @@ Index: deps/v8/src/builtins/x64/builtins-x64.cc
    __ LoadAddress(kJavaScriptCallExtraArg1Register,
                   ExternalReference::Create(address));
    __ Jump(BUILTIN_CODE(masm->isolate(), AdaptorWithBuiltinExitFrame),
-@@ -456,7 +458,7 @@ void Generate_JSEntryVariant(MacroAssembler* masm, Sta
+@@ -457,7 +459,7 @@ void Generate_JSEntryVariant(MacroAssembler* masm, Sta
    // Jump to a faked try block that does the invoke, with a faked catch
    // block that sets the pending exception.
    __ jmp(&invoke);
@@ -19,8 +19,8 @@ Index: deps/v8/src/builtins/x64/builtins-x64.cc
  
    // Store the current pc as the handler offset. It's used later to create the
    // handler table.
-@@ -3716,6 +3718,8 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
-     RestoreParentSuspender(masm);
+@@ -3798,6 +3800,8 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
+     RestoreParentSuspender(masm, rbx, rcx);
    }
    __ bind(&suspend);
 +
@@ -28,7 +28,7 @@ Index: deps/v8/src/builtins/x64/builtins-x64.cc
    // No need to process the return value if the stack is suspended, there is a
    // single 'externref' value (the promise) which doesn't require conversion.
  
-@@ -4068,6 +4072,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
+@@ -4146,6 +4150,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
    LoadJumpBuffer(masm, jmpbuf, true);
    __ Trap();
    __ bind(&resume);
@@ -36,11 +36,11 @@ Index: deps/v8/src/builtins/x64/builtins-x64.cc
    __ LeaveFrame(StackFrame::STACK_SWITCH);
    __ ret(0);
  }
-@@ -4191,6 +4196,7 @@ void Builtins::Generate_WasmResume(MacroAssembler* mas
-   LoadJumpBuffer(masm, target_jmpbuf, true);
+@@ -4289,6 +4294,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
+   }
    __ Trap();
    __ bind(&suspend);
 +  __ endbr64();
    __ LeaveFrame(StackFrame::STACK_SWITCH);
-   __ ret(3);
- }
+   // Pop receiver + parameter.
+   __ ret(2 * kSystemPointerSize);

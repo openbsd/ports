@@ -1,10 +1,10 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -621,29 +621,7 @@ std::unique_ptr<v8::BackingStore> Environment::release
+@@ -745,29 +745,7 @@ std::unique_ptr<v8::BackingStore> Environment::release
  }
  
- std::string GetExecPath(const std::vector<std::string>& argv) {
+ std::string Environment::GetExecPath(const std::vector<std::string>& argv) {
 -  char exec_path_buf[2 * PATH_MAX];
 -  size_t exec_path_len = sizeof(exec_path_buf);
 -  std::string exec_path;

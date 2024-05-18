@@ -1,10 +1,11 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -4,12 +4,6 @@
+@@ -4,13 +4,6 @@
  # Note that the mix of single and double quotes is intentional,
  # as is the fact that the ] goes on a new line.
  _=[ 'exec' '/bin/sh' '-c' '''
+-command -v python3.12 >/dev/null && exec python3.12 "$0" "$@"
 -command -v python3.11 >/dev/null && exec python3.11 "$0" "$@"
 -command -v python3.10 >/dev/null && exec python3.10 "$0" "$@"
 -command -v python3.9 >/dev/null && exec python3.9 "$0" "$@"

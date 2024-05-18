@@ -1,7 +1,7 @@
 Index: deps/v8/src/wasm/jump-table-assembler.cc
 --- deps/v8/src/wasm/jump-table-assembler.cc.orig
 +++ deps/v8/src/wasm/jump-table-assembler.cc
-@@ -16,15 +16,21 @@ namespace wasm {
+@@ -52,15 +52,21 @@ void JumpTableAssembler::InitializeJumpsToLazyCompileT
  #if V8_TARGET_ARCH_X64
  void JumpTableAssembler::EmitLazyCompileJumpSlot(uint32_t func_index,
                                                   Address lazy_compile_target) {
@@ -26,7 +26,7 @@ Index: deps/v8/src/wasm/jump-table-assembler.cc
    near_jmp(displacement, RelocInfo::NO_INFO);  // 5 bytes
    return true;
  }
-@@ -32,11 +38,12 @@ bool JumpTableAssembler::EmitJumpSlot(Address target) 
+@@ -68,11 +74,12 @@ bool JumpTableAssembler::EmitJumpSlot(Address target) 
  void JumpTableAssembler::EmitFarJumpSlot(Address target) {
    Label data;
    int start_offset = pc_offset();
@@ -41,7 +41,7 @@ Index: deps/v8/src/wasm/jump-table-assembler.cc
    USE(start_offset);
    bind(&data);
    dq(target);  // 8 bytes
-@@ -47,7 +54,7 @@ void JumpTableAssembler::PatchFarJumpSlot(Address slot
+@@ -83,7 +90,7 @@ void JumpTableAssembler::PatchFarJumpSlot(Address slot
    // The slot needs to be pointer-size aligned so we can atomically update it.
    DCHECK(IsAligned(slot, kSystemPointerSize));
    // Offset of the target is at 8 bytes, see {EmitFarJumpSlot}.

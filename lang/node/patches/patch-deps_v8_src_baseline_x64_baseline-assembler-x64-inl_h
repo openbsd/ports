@@ -1,9 +1,9 @@
 Index: deps/v8/src/baseline/x64/baseline-assembler-x64-inl.h
 --- deps/v8/src/baseline/x64/baseline-assembler-x64-inl.h.orig
 +++ deps/v8/src/baseline/x64/baseline-assembler-x64-inl.h
-@@ -98,9 +98,7 @@ MemOperand BaselineAssembler::FeedbackVectorOperand() 
+@@ -73,9 +73,7 @@ MemOperand BaselineAssembler::FeedbackVectorOperand() 
+ 
  void BaselineAssembler::Bind(Label* label) { __ bind(label); }
- void BaselineAssembler::BindWithoutJumpTarget(Label* label) { __ bind(label); }
  
 -void BaselineAssembler::JumpTarget() {
 -  // NOP on x64.
