@@ -2,9 +2,10 @@ COMMENT =		terminal mail client
 
 GH_ACCOUNT =		meli
 GH_PROJECT =		meli
-GH_TAGNAME =		v0.8.4
+GH_TAGNAME =		v0.8.5
 
 # ring-v0.16.20 does not support those archs
+# https://git.meli-email.org/meli/meli/issues/391
 NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 # error[E0308]: mismatched types                                  --> melib/src/backends/notmuch.rs:82:13
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
@@ -18,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/cargo
 MODCARGO_FEATURES +=	jmap
 MODCARGO_INSTALL_TARGET_PATHS =	meli
+MODCARGO_CRATES_KEEP += libsqlite3-sys
 
 .include "crates.inc"
 
@@ -26,11 +28,9 @@ SEPARATE_BUILD =	Yes
 
 BUILD_DEPENDS +=	security/rust-ring
 
-LIB_DEPENDS =	devel/pcre2 \
-		net/curl \
-		databases/sqlite3
+LIB_DEPENDS =	net/curl
 
-WANTLIB +=	${MODCARGO_WANTLIB} crypto curl m pcre2-8 sqlite3 ssl
+WANTLIB +=	${MODCARGO_WANTLIB} crypto curl m ssl
 PORTHOME =	${WRKDIR}
 
 post-install:

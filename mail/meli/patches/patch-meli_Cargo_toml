@@ -1,14 +1,15 @@
-disable "static" (vendored TLS libraries, libcurl, libsqlite3, libz, and libdbus)
+disable "static" (vendored TLS libraries, libcurl, libz, and libdbus)
+sqlite needs to be build static since it uses a feature not enabled in our sqlite
 
 Index: meli/Cargo.toml
 --- meli/Cargo.toml.orig
 +++ meli/Cargo.toml
-@@ -69,7 +69,7 @@ regex = "1"
- tempfile = "3.3"
+@@ -69,7 +69,7 @@ http-static = ["melib/http-static"]
+ sqlite3-static = ["melib/sqlite3-static"]
+ dbus-static = ["dep:notify-rust", "notify-rust?/d_vendored"]
+ libz-static = ["dep:libz-sys", "libz-sys?/static"]
+-static = ["tls-static", "http-static", "sqlite3-static", "dbus-static", "libz-static"]
++static = ["sqlite3-static"]
  
- [features]
--default = ["sqlite3", "notmuch", "smtp", "dbus-notifications", "gpgme", "cli-docs", "jmap", "text-processing", "static"]
-+default = ["sqlite3", "notmuch", "smtp", "dbus-notifications", "gpgme", "cli-docs", "jmap", "text-processing"]
- notmuch = ["melib/notmuch"]
- jmap = ["melib/jmap"]
- sqlite3 = ["melib/sqlite3"]
+ # Print tracing logs as meli runs in stderr
+ # enable for debug tracing logs: build with --features=debug-tracing and export MELI_DEBUG_STDERR
