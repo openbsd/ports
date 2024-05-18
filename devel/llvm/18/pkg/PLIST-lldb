@@ -1,8 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict lldb-${LLVM_PKGSPEC}
-@conflict ${MODPY_PY_PREFIX}llvm-<6.0.1p3
-@conflict llvm-<10.0.0p0
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
 bin/lldb-dap-${LLVM_MAJOR}

@@ -1,7 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict llvm-${LLVM_PKGSPEC}
-@conflict lldb-<10.0.0p0
 @pkgpath devel/llvm,-main
 bin/analyze-build-${LLVM_MAJOR}
 bin/bugpoint-${LLVM_MAJOR}
