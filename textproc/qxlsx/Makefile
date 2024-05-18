@@ -1,6 +1,6 @@
 COMMENT=		MS Excel file reader/writer library
 
-GH_TAGNAME=		v1.4.7
+GH_TAGNAME=		v1.4.8
 GH_ACCOUNT=		QtExcel
 GH_PROJECT=		QXlsx
 
