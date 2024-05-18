@@ -33,7 +33,7 @@ SHA256 (cargo/chrono-0.4.35.tar.gz) = jq9ZA9y8CjkxL+t33y/0x2OH1ZG5/HsEojjc+LtiY5
 SHA256 (cargo/ciborium-0.2.2.tar.gz) = Quaf/W8JF/XAKSVqJNAWHbF86jmX0YXbDTWSYwh3Dw4=
 SHA256 (cargo/ciborium-io-0.2.2.tar.gz) = Ba/qHgoGyb4z1Tm4dvHONpL0r+ostB90DndDIl7Rx1c=
 SHA256 (cargo/ciborium-ll-0.2.2.tar.gz) = V2Y7ZT2UijOL+z7rqbsv1fz67Lnhmeh+HtpNnoskD9k=
-SHA256 (cargo/citationberg-0.3.0.tar.gz) = ghCPK2dslUB20uUETxmmoDiHskvUKATzIuBlDRMDWJk=
+SHA256 (cargo/citationberg-0.3.1.tar.gz) = 0ln+n9eP+gWhGVgdIP3bUL+6QoMRBXsSdB/7kBUSPQs=
 SHA256 (cargo/clap-4.5.2.tar.gz) = sjCrhLD/34kNWhCr28i4OuHEkYJ12uoauIAfcVNrJlE=
 SHA256 (cargo/clap_builder-4.5.2.tar.gz) = rhKeLnZq4OwDSE5gmVQRnxI8wf5lAzfhVdA7Ai8k97Q=
 SHA256 (cargo/clap_complete-4.5.1.tar.gz) = iF5NfVr0C/uZrm+UM+KS/qyY1FLcs+w9Jd/nVSt32ow=
@@ -95,7 +95,7 @@ SHA256 (cargo/gif-0.13.1.tar.gz) = P7LWmxkhXhi7kS+jD3zhWEbjAUCGleRODvcZ8dqeGfI=
 SHA256 (cargo/half-2.4.0.tar.gz) = tezqruxpZTndr3szM0DxrzWlqoeuPk8+rQUy9yr/qy4=
 SHA256 (cargo/hashbrown-0.12.3.tar.gz) = ip7nDEOq9BfJFDlmRaD6hSYkgBsk67eueP6CcoiayIg=
 SHA256 (cargo/hashbrown-0.14.3.tar.gz) = KQ8aHZJCx40JzkCl6H51VO5jevE1GWgVn0lS8Cj3VgQ=
-SHA256 (cargo/hayagriva-0.5.2.tar.gz) = zC5nDeUZHfCD3dESzSUwSfghMnfM8MFeGKi/EObGZsw=
+SHA256 (cargo/hayagriva-0.5.3.tar.gz) = HQ0gyYt3uGznN4drKhZT4uarvu6Er7s51yERCRGRyXo=
 SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/hypher-0.1.5.tar.gz) = OyStVjcjDfIBqxA01ZPx0Jv38qknTy6Il2OAeFefQmU=
 SHA256 (cargo/iana-time-zone-0.1.60.tar.gz) = 5/+7WhtUHqJWH4xBwIcobMCR4h5Vak8JqPbL8XtpsUE=
@@ -230,6 +230,7 @@ SHA256 (cargo/serde_json-1.0.114.tar.gz) = xfCbG9Yy71Seqp9gofjedCvbxpjmzuIJX8hN3
 SHA256 (cargo/serde_spanned-0.6.5.tar.gz) = 6zYi9BnRKWkEcABz6mzCOtaQrb1m8T6mg99zKYc28ME=
 SHA256 (cargo/serde_yaml-0.8.26.tar.gz) = V4p0M7d2tWo1eF7Vzpp+d3rAWYqsWm3RtLGKMHx/xxs=
 SHA256 (cargo/serde_yaml-0.9.32.tar.gz) = j9B12ZQVTUp3T5W1H7lr3CgysOpIQlySVGBzgWzaHy8=
+SHA256 (cargo/shell-escape-0.1.5.tar.gz) = RbtnoY+pEmbMeAcYH2L5F4poc7+tfceIxC5kMNtAGE8=
 SHA256 (cargo/simd-adler32-0.3.7.tar.gz) = 1m3BQ+axHB7dwG1cQjz8lwYoZbrymZFKtkyqOBggeP4=
 SHA256 (cargo/simplecss-0.2.1.tar.gz) = oRvnxikn2UJ+n0DzRE1UmdhoZI4u28TiEW3mnn7A6J0=
 SHA256 (cargo/siphasher-0.3.11.tar.gz) = OLWIJ/RGTYfTd9F16Qv1jrAP2HFv8KYvgDVrXmFVXQ0=
@@ -269,7 +270,7 @@ SHA256 (cargo/toml_edit-0.22.6.tar.gz) = LBtf1BKMyNPgy3TU7Zqcx8coS+zU32j1+UDhrRI
 SHA256 (cargo/ttf-parser-0.20.0.tar.gz) = F/d9dtg3p4MP4dTxK3tLpBksGIgAHHFkJX5LxtIdlrQ=
 SHA256 (cargo/two-face-0.3.0.tar.gz) = N77SE1skWcfu+6cskG03RpfrFZScIF8vEk42NqRrXus=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
-SHA256 (cargo/typst-assets-0.11.0.tar.gz) = 8T+FNgMo2lSEfdf++vJy36W20f3rU/MpOJJMOb9bLGw=
+SHA256 (cargo/typst-assets-0.11.1.tar.gz) = KzBh+NJo6O7HSByaskVARVy0kSmDxJquOPpui/jvTZw=
 SHA256 (cargo/unic-langid-0.9.4.tar.gz) = I4ci5teU7RMPkfTqM+Afz/TxiNkjN6ISl4klIcct9RY=
 SHA256 (cargo/unic-langid-impl-0.9.4.tar.gz) = S9VaIGP96k7x+GMyQ6ewUky+7xkFrgTDGhybl3XFW8Y=
 SHA256 (cargo/unicase-2.7.0.tar.gz) = 99LU2vtpYhgJqBhkycG4ZEeeEjXA3U4ZmSS5dCQ57Yk=
@@ -350,8 +351,8 @@ SHA256 (cargo/zerovec-0.10.1.tar.gz) = 7/RDmukftccrirwS8/Lb9RvSfm6tufilvIiY3dsOJ
 SHA256 (cargo/zerovec-derive-0.10.1.tar.gz) = e05Zl8v1iZBVDvHw5RJKBeR+Hr0zqEryVzm+YDGmLCA=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zopfli-0.8.0.tar.gz) = XB9I81CKOj8vruAWKVZEALwSJg9iFKBW0Go6qqbvBzY=
-SHA256 (typst-typst-dev-assets-v0.11.0.tar.gz) = 3lNq58JBdTN1EOym1V854/XOWD+1ah0zjZpVyJIj+vY=
-SHA256 (typst-typst-v0.11.0.tar.gz) = /Y3r4h1dItTNbII0lFN/E1bJlUzC/mxduMdsGxJhEt0=
+SHA256 (typst-typst-dev-assets-v0.11.1.tar.gz) = hoHcsg4Ql4LdH7ou4myKPZS+18twpycAn5VMiJ6x+4g=
+SHA256 (typst-typst-v0.11.1.tar.gz) = sboFToIQc9qv2QZ1xIIrzYFm8z/i46y6h7oUUaDR/FY=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -387,7 +388,7 @@ SIZE (cargo/chrono-0.4.35.tar.gz) = 234267
 SIZE (cargo/ciborium-0.2.2.tar.gz) = 35611
 SIZE (cargo/ciborium-io-0.2.2.tar.gz) = 6697
 SIZE (cargo/ciborium-ll-0.2.2.tar.gz) = 14695
-SIZE (cargo/citationberg-0.3.0.tar.gz) = 60414
+SIZE (cargo/citationberg-0.3.1.tar.gz) = 60444
 SIZE (cargo/clap-4.5.2.tar.gz) = 55385
 SIZE (cargo/clap_builder-4.5.2.tar.gz) = 163566
 SIZE (cargo/clap_complete-4.5.1.tar.gz) = 37823
@@ -449,7 +450,7 @@ SIZE (cargo/gif-0.13.1.tar.gz) = 36408
 SIZE (cargo/half-2.4.0.tar.gz) = 50666
 SIZE (cargo/hashbrown-0.12.3.tar.gz) = 102968
 SIZE (cargo/hashbrown-0.14.3.tar.gz) = 141425
-SIZE (cargo/hayagriva-0.5.2.tar.gz) = 311552
+SIZE (cargo/hayagriva-0.5.3.tar.gz) = 311959
 SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/hypher-0.1.5.tar.gz) = 848634
 SIZE (cargo/iana-time-zone-0.1.60.tar.gz) = 27074
@@ -584,6 +585,7 @@ SIZE (cargo/serde_json-1.0.114.tar.gz) = 146986
 SIZE (cargo/serde_spanned-0.6.5.tar.gz) = 8349
 SIZE (cargo/serde_yaml-0.8.26.tar.gz) = 40670
 SIZE (cargo/serde_yaml-0.9.32.tar.gz) = 65170
+SIZE (cargo/shell-escape-0.1.5.tar.gz) = 6847
 SIZE (cargo/simd-adler32-0.3.7.tar.gz) = 12086
 SIZE (cargo/simplecss-0.2.1.tar.gz) = 19418
 SIZE (cargo/siphasher-0.3.11.tar.gz) = 10442
@@ -623,7 +625,7 @@ SIZE (cargo/toml_edit-0.22.6.tar.gz) = 103304
 SIZE (cargo/ttf-parser-0.20.0.tar.gz) = 161769
 SIZE (cargo/two-face-0.3.0.tar.gz) = 3198457
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
-SIZE (cargo/typst-assets-0.11.0.tar.gz) = 5132203
+SIZE (cargo/typst-assets-0.11.1.tar.gz) = 5132209
 SIZE (cargo/unic-langid-0.9.4.tar.gz) = 8850
 SIZE (cargo/unic-langid-impl-0.9.4.tar.gz) = 89401
 SIZE (cargo/unicase-2.7.0.tar.gz) = 23783
@@ -704,5 +706,5 @@ SIZE (cargo/zerovec-0.10.1.tar.gz) = 124999
 SIZE (cargo/zerovec-derive-0.10.1.tar.gz) = 19342
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zopfli-0.8.0.tar.gz) = 54234
-SIZE (typst-typst-dev-assets-v0.11.0.tar.gz) = 33505134
-SIZE (typst-typst-v0.11.0.tar.gz) = 10113732
+SIZE (typst-typst-dev-assets-v0.11.1.tar.gz) = 33502540
+SIZE (typst-typst-v0.11.1.tar.gz) = 3468099
