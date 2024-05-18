@@ -56,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_lateral.
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_lateral.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_literal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_literal.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_merge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_merge.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_operators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_operators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sql/tests/${MODPY_PYCACHE}test_order.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/sql/tests/test_insert.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_join.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_lateral.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_literal.py
+lib/python${MODPY_VERSION}/site-packages/sql/tests/test_merge.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_operators.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_order.py
 lib/python${MODPY_VERSION}/site-packages/sql/tests/test_select.py
