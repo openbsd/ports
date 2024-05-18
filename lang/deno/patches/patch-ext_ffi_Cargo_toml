@@ -2,7 +2,7 @@ Use devel/libffi from ports
 Index: ext/ffi/Cargo.toml
 --- ext/ffi/Cargo.toml.orig
 +++ ext/ffi/Cargo.toml
-@@ -17,13 +17,16 @@ path = "lib.rs"
+@@ -17,12 +17,15 @@ path = "lib.rs"
  deno_core.workspace = true
  dlopen2.workspace = true
  dynasmrt = "1.2.3"
@@ -12,7 +12,6 @@ Index: ext/ffi/Cargo.toml
  serde.workspace = true
  serde-value = "0.7"
  serde_json = "1.0"
- tokio.workspace = true
 +
 +[dependencies.libffi]
 +version = "3.2.0"
