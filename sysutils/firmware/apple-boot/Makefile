@@ -1,5 +1,5 @@
 FW_DRIVER=	apple-boot
-FW_VER=		1.3
+FW_VER=		1.4
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
@@ -9,7 +9,7 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=	m1n1-=1.4.11:sysutils/m1n1:build \
+BUILD_DEPENDS=	m1n1-=1.4.14:sysutils/m1n1:build \
 		u-boot-asahi-=2024.01p0:sysutils/u-boot-asahi:build
 
 ASAHI_BUILD=	${WRKSRC}/sysutils/u-boot-asahi/u-boot-*/build
