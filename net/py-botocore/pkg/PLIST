@@ -1197,6 +1197,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/grafana/2020-08-18/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/greengrass/2017-06-07/
