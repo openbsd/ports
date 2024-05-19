@@ -1,5 +1,6 @@
 unbreak build with lang/rust 1.78.0
 
+https://bugzilla.mozilla.org/show_bug.cgi?id=1882291
 Index: gfx/qcms/src/lib.rs
 --- gfx/qcms/src/lib.rs.orig
 +++ gfx/qcms/src/lib.rs
