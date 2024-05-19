@@ -1,4 +1,7 @@
 mairix is a program for indexing and searching email messages stored in
-Maildir, MH or mbox folders. The search mode populates a "virtual"
-maildir (or MH) folder with symlinks which point to the real messages.
-This folder can be opened as usual in your mail program.
+Maildir, MH or mbox folders, or on an IMAP server. (Note that TLS
+support is currently disabled due to a problem with certificate
+validation, so it is recommended only to use this on localhost).
+
+The search mode populates a "virtual" folder with symlinks which point
+to the real messages which can be opened as usual in your mail program.

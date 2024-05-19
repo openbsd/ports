@@ -1,24 +1,41 @@
-COMMENT=		program for indexing & searching email
+COMMENT=	program for indexing & searching email
 
-DISTNAME=		mairix-0.23
-CATEGORIES=		mail
-HOMEPAGE=		http://www.rpcurnow.force9.co.uk/mairix/
+GH_ACCOUNT=	vandry
+GH_PROJECT=	mairix
+GH_COMMIT=	1cc06f4a73ba4b940008c1ffc398d2ac708cd6d6
 
-# GPLv2
+DISTNAME=	mairix-0.25pre20220920
+CATEGORIES=	mail
+
+# GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-SITES=			${SITE_SOURCEFORGE:=mairix/} \
-			http://www.rpcurnow.force9.co.uk/mairix/
+# patched to disable TLS for now, cert verification fails
+# update DESCR if fixed
+#WANTLIB=	bz2 c crypto lzma ssl z
+WANTLIB=	bz2 c lzma z
 
-WANTLIB=		c z bz2
+BUILD_DEPENDS=	devel/bison
+LIB_DEPENDS=	archivers/bzip2 \
+		archivers/xz
+TEST_DEPENDS=	shells/bash \
+		sysutils/coreutils \
+		misc/findutils
 
-BUILD_DEPENDS=		devel/bison
-LIB_DEPENDS=		archivers/bzip2
+CONFIGURE_STYLE= simple
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib"
+USE_GMAKE=	Yes
+TEST_TARGET=	check
 
-CONFIGURE_STYLE=	simple
-CONFIGURE_ENV= 		CPPFLAGS="-I${PREFIX}/include" \
-			LDFLAGS="-L${PREFIX}/lib"
+pre-test:
+	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/test/scripts/*.sh
+.for i in stat find
+	ln -fs /usr/local/bin/g$i ${WRKDIR}/bin/$i
+.endfor
 
-NO_TEST=		Yes
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mairix
+	${INSTALL_DATA} ${WRKSRC}/*.eg ${PREFIX}/share/examples/mairix/
 
 .include <bsd.port.mk>

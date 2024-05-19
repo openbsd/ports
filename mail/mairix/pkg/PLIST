@@ -1,3 +1,8 @@
 @bin bin/mairix
 @man man/man1/mairix.1
 @man man/man5/mairixrc.5
+share/examples/mairix/
+share/examples/mairix/dotmairixrc.eg
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_mairix

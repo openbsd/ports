@@ -1,0 +1,14 @@
+"certificate verify failed" when trying to connect with TLS
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -413,7 +413,7 @@ else
+ fi
+ 
+ printf "Checking for OpenSSL : "
+-if [ `test_for_openssl` -eq 0 ]; then
++if [ true || `test_for_openssl` -eq 0 ]; then
+   printf "Yes\n";
+   DEFS="${DEFS} -DUSE_OPENSSL"
+   LIBS="${LIBS} -lssl -lcrypto"
