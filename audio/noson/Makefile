@@ -19,8 +19,14 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		audio/flac
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
-			-DBUILD_TESTING=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Pulse=ON \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Pulse-simple=ON
+
+# everything except tests
+ALL_TARGET =		noson
+
+# build whatever is left (ca. 20 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
