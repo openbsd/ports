@@ -4,7 +4,7 @@ DISTNAME =	kpcli-4.0
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
-REVISION =	0
+REVISION =	1
 HOMEPAGE =	https://kpcli.sourceforge.io/
 
 # Perl
@@ -17,6 +17,8 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 RUN_DEPENDS =	security/p5-Crypt-Rijndael \
+		security/p5-Authen-OATH \
+		converters/p5-Convert-Base32 \
 		devel/p5-Term-ShellUI \
 		devel/p5-Clone \
 		p5-Term-ReadLine-Perl-*|p5-Term-ReadLine-Gnu-*:devel/p5-Term-ReadLine-Gnu \
