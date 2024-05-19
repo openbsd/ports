@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -284,7 +284,7 @@ gst_dep = dependency('gstreamer-base-1.0', version: gs
+@@ -276,7 +276,7 @@ gst_dep = dependency('gstreamer-base-1.0', version: gs
  cdata.set('HAVE_GSTREAMER', gst_dep.found(), description: 'Build GStreamer plugin')
  
  # GUPnP IGD

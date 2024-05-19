@@ -1,0 +1,24 @@
+OpenBSD has no separate SIOCGIFINDEX ioctl(2)
+
+Index: agent/interfaces.c
+--- agent/interfaces.c.orig
++++ agent/interfaces.c
+@@ -381,6 +381,10 @@ get_local_if_index_by_addr_ioctl (NiceAddress *addr)
+     if (!nice_address_equal_no_port (myaddr, addr))
+       continue;
+ 
++#if defined(__OpenBSD__)
++    /* No SIOCGIFINDEX, index is already there... */
++    ifr2.ifr_index = ifr->ifr_index;
++#else
+     memset (&ifr2, 0, sizeof (struct ifreq));
+     g_strlcpy (ifr2.ifr_name, ifr->ifr_name, IFNAMSIZ);
+ 
+@@ -389,6 +393,7 @@ get_local_if_index_by_addr_ioctl (NiceAddress *addr)
+           " Failing...", ifr->ifr_name);
+       goto done;
+     }
++#endif
+ 
+ #if defined(HAVE_IFR_INDEX)
+     if (ifr2.ifr_index == 0)

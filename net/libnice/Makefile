@@ -1,24 +1,15 @@
 COMMENT =		GLib ICE implementation
-DISTNAME =		libnice-0.1.21
-REVISION =		1
+DISTNAME =		libnice-0.1.22
 
 CATEGORIES =		net
 
-SHARED_LIBS +=		nice	4.2	# 10.13.1
+SHARED_LIBS +=		nice	4.3	# 10.14.0
 
 WANTLIB += c crypto gio-2.0 glib-2.0 gobject-2.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += gupnp-igd-1.6
 
 HOMEPAGE =		https://libnice.freedesktop.org
-DIST_SUBDIR =		libnice
 SITES =			https://libnice.freedesktop.org/releases/
-SITES.pr =		https://gitlab.freedesktop.org/libnice/libnice/-/
-# merged "Fix build with clang"
-PATCHFILES.pr =		fix-clang15-build-{commit/}f4e2838f.patch
-# merged "Use ifr_index to fix build on OpenBSD"
-PATCHFILES.pr +=	use-ifr_index-{merge_requests/}251.patch
-
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
