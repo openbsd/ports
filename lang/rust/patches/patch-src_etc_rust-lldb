@@ -1,0 +1,14 @@
+Use lldb from ports (lldb from base does not support importing modules)
+
+Index: src/etc/rust-lldb
+--- src/etc/rust-lldb.orig
++++ src/etc/rust-lldb
+@@ -10,7 +10,7 @@ host=$(rustc -vV | sed -n -e 's/^host: //p')
+ RUSTC_SYSROOT=$(rustc --print sysroot)
+ RUST_LLDB="$RUSTC_SYSROOT/lib/rustlib/$host/bin/lldb"
+ 
+-lldb=lldb
++lldb=lldb-16
+ if [ -f "$RUST_LLDB" ]; then
+     lldb="$RUST_LLDB"
+ else

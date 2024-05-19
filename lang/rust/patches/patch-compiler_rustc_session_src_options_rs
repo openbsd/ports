@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1519,6 +1519,24 @@ options! {
+@@ -1545,6 +1545,24 @@ options! {
      // - src/doc/rustc/src/codegen-options/index.md
  }
  
@@ -29,7 +29,7 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      UnstableOptions, Z_OPTIONS, dbopts, "Z", "unstable",
  
-@@ -1544,9 +1562,9 @@ options! {
+@@ -1570,9 +1588,9 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),
@@ -39,5 +39,5 @@ Index: compiler/rustc_session/src/options.rs
 -    cf_protection: CFProtection = (CFProtection::None, parse_cfprotection, [TRACKED],
 +    cf_protection: CFProtection = (DEFAULT_CF_PROTECTION, parse_cfprotection, [TRACKED],
          "instrument control-flow architecture protection"),
-     codegen_backend: Option<String> = (None, parse_opt_string, [TRACKED],
-         "the backend to use"),
+     check_cfg_all_expected: bool = (false, parse_bool, [UNTRACKED],
+         "show all expected values in check-cfg diagnostics (default: no)"),

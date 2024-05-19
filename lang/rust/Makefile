@@ -9,22 +9,22 @@ DPB_PROPERTIES =	parallel
 .endif
 
 COMMENT-main =		compiler for Rust Language
-COMMENT-gdb =		Rust debugger through gdb
+COMMENT-gdb =		Rust debugger through gdb and lldb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.77.2
+V =			1.78.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.77.0-20240320
-BV-amd64 =		1.77.0-20240318
-BV-i386 =		1.77.0-20240319
+BV-aarch64 =		1.78.0
+BV-amd64 =		1.78.0
+BV-i386 =		1.78.0
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.77.0-20240401
-BV-sparc64 =		1.76.0p0-20240318
+BV-sparc64 =		1.77.2
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -34,12 +34,6 @@ PKGNAME-clippy =	rust-clippy-${V}
 PKGNAME-rustfmt =	rust-rustfmt-${V}
 PKGNAME-bootstrap =	rust-bootstrap-${V}
 PKGNAME-src =		rust-src-${V}
-REVISION-bootstrap =	0
-REVISION-clippy =	0
-REVISION-gdb =		0
-REVISION-main =		0
-REVISION-rustfmt =	0
-REVISION-src =		0
 
 MULTI_PACKAGES =	-main -gdb -clippy -rustfmt -bootstrap -src
 
@@ -53,7 +47,6 @@ MAINTAINER =		Sebastien Marie <semarie@kapouay.eu.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
-WANTLIB-gdb =
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
@@ -163,7 +156,8 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			security/libssh2
 
 RUN_DEPENDS-gdb +=	lang/rust,-main \
-			devel/gdb
+			devel/gdb \
+			devel/llvm/16,-lldb
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 RUN_DEPENDS-src +=	lang/rust,-main
@@ -282,8 +276,7 @@ do-install:
 	rm -rf ${WRKBUILD}/_extractdist
 .endfor
 	# cleanup
-	rm ${PREFIX}/bin/rust-lldb \
-		${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
+	rm ${PREFIX}/lib/rustlib/{install.log,uninstall.sh,rust-installer-version} \
 		${PREFIX}/lib/rustlib/components \
 		${PREFIX}/lib/rustlib/manifest-*
 	-find ${PREFIX}/lib/rustlib/src -name '*${PATCHORIG}' -delete

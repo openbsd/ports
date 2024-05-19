@@ -4,7 +4,7 @@ https://github.com/rust-lang/rust/issues/90064
 Index: compiler/rustc_mir_transform/src/abort_unwinding_calls.rs
 --- compiler/rustc_mir_transform/src/abort_unwinding_calls.rs.orig
 +++ compiler/rustc_mir_transform/src/abort_unwinding_calls.rs
-@@ -89,6 +89,7 @@ impl<'tcx> MirPass<'tcx> for AbortUnwindingCalls {
+@@ -91,6 +91,7 @@ impl<'tcx> MirPass<'tcx> for AbortUnwindingCalls {
              // registered for it.
              if !call_can_unwind {
                  cleanups_to_remove.push(id);
