@@ -1,11 +1,10 @@
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.8.4
+MODPY_EGG_VERSION =	2.0.4
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
 PKGNAME =	py-shapely-${MODPY_EGG_VERSION:S/.post/pl/}
-REVISION =	1
 
 CATEGORIES =	geo
 
@@ -26,14 +25,11 @@ BUILD_DEPENDS +=${RUN_DEPENDS} \
 		lang/cython${MODPY_FLAVOR}
 
 LIB_DEPENDS =	geo/geos
-WANTLIB =	geos_c pthread ${MODPY_WANTLIB}
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/setup.py
+WANTLIB =	geos_c
 
 pre-test:
 	# gross
-	cp ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/shapely/vectorized/_vectorized*.so \
-		${WRKSRC}/shapely/vectorized/
+	cp ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/shapely/*.so \
+		${WRKSRC}/shapely/
 
 .include <bsd.port.mk>
