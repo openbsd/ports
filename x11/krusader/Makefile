@@ -1,8 +1,7 @@
 COMMENT=	twin panel file manager for KDE
 
-VERSION=	2.8.0
+VERSION=	2.8.1
 DISTNAME=	krusader-${VERSION}
-REVISION=	0
 
 CATEGORIES=	x11
 
@@ -41,12 +40,14 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
+		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
