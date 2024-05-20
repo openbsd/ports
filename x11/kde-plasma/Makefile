@@ -1,6 +1,3 @@
-     # https://community.kde.org/Plasma/Plasma_6.0_Release_notes
-     # WIP KDE6
-
      SUBDIR =
      SUBDIR += kdecoration
 
@@ -9,39 +6,20 @@
      SUBDIR += breeze
      SUBDIR += oxygen
 
-     # Moved From Frameworks
      SUBDIR += plasma-activities
      SUBDIR += plasma-activities-stats
      SUBDIR += kwayland
      SUBDIR += libplasma
-     # Moved From KDE Gear
      SUBDIR += print-manager
-
-     # Renamed TODO
      SUBDIR += kgamma5
-
      SUBDIR += breeze-gtk
-
-     # ... XXX to update
-
-     # Dropped
-     #SUBDIR += khotkeys
-     #SUBDIR += ksysguard
-     # SUBDIR +=plasma-bigscreen
-     # SUBDIR +=plank-player
-     # SUBDIR += aura-browser
-     # SUBDIR +=plasma-remotecontrollers
-
-     # NEW
      SUBDIR += kglobalacceld
      SUBDIR += ocean-sound-theme
      SUBDIR += plasma5support
-
      SUBDIR += kactivitymanagerd
      SUBDIR += kde-gtk-config
      SUBDIR += kinfocenter
      SUBDIR += kmenuedit
-
      SUBDIR += libkscreen
      SUBDIR += qqc2-breeze-style
      SUBDIR += libksysguard
