@@ -5,6 +5,7 @@ HOMEPAGE =	https://www.nmedia.net/nsh/
 V =		1.2
 DISTNAME =	nsh-${V}
 SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
+REVISION =	0
 
 MAINTAINER =	Tom Smyth <tom.smyth@wirelessconnect.eu>
 
