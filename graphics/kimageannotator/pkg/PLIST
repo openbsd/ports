@@ -1,15 +1,18 @@
-include/kImageAnnotator/
-include/kImageAnnotator/KImageAnnotator.h
-include/kImageAnnotator/KImageAnnotatorExport.h
-lib/cmake/kImageAnnotator/
-lib/cmake/kImageAnnotator/kImageAnnotator-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/kImageAnnotator/kImageAnnotator-targets.cmake
-lib/cmake/kImageAnnotator/kImageAnnotatorConfig-version.cmake
-lib/cmake/kImageAnnotator/kImageAnnotatorConfig.cmake
+include/kImageAnnotator-Qt6/
+include/kImageAnnotator-Qt6/kImageAnnotator/
+include/kImageAnnotator-Qt6/kImageAnnotator/KImageAnnotator.h
+include/kImageAnnotator-Qt6/kImageAnnotator/KImageAnnotatorExport.h
+lib/cmake/
+lib/cmake/kImageAnnotator-Qt6/
+lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-Qt6Config-version.cmake
+lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-Qt6Config.cmake
+lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/kImageAnnotator-Qt6/kImageAnnotator-targets.cmake
 @lib lib/libkImageAnnotator.so.${LIBkImageAnnotator_VERSION}
 share/kImageAnnotator/
 share/kImageAnnotator/translations/
 share/kImageAnnotator/translations/kImageAnnotator_ar.qm
+share/kImageAnnotator/translations/kImageAnnotator_bg.qm
 share/kImageAnnotator/translations/kImageAnnotator_ca.qm
 share/kImageAnnotator/translations/kImageAnnotator_cs.qm
 share/kImageAnnotator/translations/kImageAnnotator_da.qm

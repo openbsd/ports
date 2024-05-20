@@ -1,30 +1,31 @@
 COMMENT =	tool for annotating images
 
-V =		0.6.0
+V =		0.7.1
 PKGNAME =	kimageannotator-${V}
-REVISION =	0
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	kImageAnnotator
 GH_TAGNAME =	v${V}
 
-SHARED_LIBS =	kImageAnnotator	2.0	# 0.4.1
+SHARED_LIBS +=	kImageAnnotator           3.0 # 0.0
 
 CATEGORIES =	graphics
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets X11 m
-WANTLIB += kColorPicker
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Svg Qt6Widgets
+WANTLIB += X11 kColorPicker m
 
 MODULES =		devel/cmake \
-			x11/qt5
+			x11/qt6
 
-LIB_DEPENDS =		graphics/kcolorpicker>=0.2.0 \
-			x11/qt5/qtsvg
+LIB_DEPENDS =		graphics/kcolorpicker>=0.3 \
+			x11/qt6/qtsvg
 
-CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=Yes
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
+			-DBUILD_WITH_QT6=ON
+
 CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib"
 
 .include <bsd.port.mk>
