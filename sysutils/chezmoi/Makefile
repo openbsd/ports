@@ -1,7 +1,7 @@
 COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
-MODGO_VERSION =		v2.47.4
+MODGO_VERSION =		v2.48.1
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
 
