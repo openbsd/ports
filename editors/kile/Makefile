@@ -2,40 +2,38 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
 CATEGORIES =	editors
 
-DISTNAME =	kile-2.9.93
-REVISION =	6
+V =		2.9.94
+DISTNAME =	kile-${V}-1
+PKGNAME =	kile-${V}
 
 HOMEPAGE =	https://kile.sourceforge.io
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JS
-WANTLIB += KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
-WANTLIB += Qt5Xml X11 c m poppler poppler-qt5
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Codecs KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6IconThemes KF6IconWidgets KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextEditor KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Widgets Qt6Xml X11 c m poppler poppler-qt6
 
 SITES =		${SITE_SOURCEFORGE:=kile/}
 EXTRACT_SUFX =	.tar.bz2
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit \
+		devel/kf6/kdoctools \
 		x11/kde-applications/kate \
 		x11/kde-applications/okular \
-		multimedia/phonon
+		multimedia/phonon,qt6
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit \
+		devel/kf6/kdoctools \
 		graphics/ImageMagick \
 		misc/shared-mime-info \
 		print/texlive/base \
@@ -43,28 +41,35 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/kde-applications/kate \
 		x11/kde-applications/okular
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kguiaddons \
-		devel/kf5/khtml \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kjs \
-		devel/kf5/kparts \
-		devel/kf5/ktexteditor \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		print/poppler,-qt5 \
-		x11/qt5/qtscript
+LIB_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/ktexteditor \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
+		print/poppler,-qt6 \
+		x11/qt6/qt5compat \
+		x11/qt6/qtdeclarative
 
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
