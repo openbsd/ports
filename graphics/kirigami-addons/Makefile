@@ -1,6 +1,6 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-VERSION =	0.11.0
+VERSION =	1.2.0
 DISTNAME =	kirigami-addons-${VERSION}
 
 CATEGORIES =	graphics
@@ -12,22 +12,24 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+, BSD, MIT and GNU FDLv1.2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5I18n Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6I18n Qt6Core
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6QuickControls2 m
 
 SITES =			${SITE_KDE:=stable/kirigami-addons/}
+EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/kf5
+MODULES =		devel/kf6
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/kf5/kirigami2
+			devel/kf6/kirigami
 
-RUN_DEPENDS =		devel/kf5/qqc2-desktop-style \
-			devel/kf5/kirigami2
+RUN_DEPENDS =		devel/kf6/qqc2-desktop-style \
+			devel/kf6/kirigami
 
-LIB_DEPENDS =		devel/kf5/ki18n \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtquickcontrols2
+LIB_DEPENDS =		devel/kf6/ki18n \
+			devel/kf6/kconfig \
+			x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 
