@@ -1,9 +1,10 @@
-include/kColorPicker/
-include/kColorPicker/KColorPicker.h
-include/kColorPicker/KColorPickerExport.h
-lib/cmake/kColorPicker/
-lib/cmake/kColorPicker/kColorPicker-targets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/kColorPicker/kColorPicker-targets.cmake
-lib/cmake/kColorPicker/kColorPickerConfig-version.cmake
-lib/cmake/kColorPicker/kColorPickerConfig.cmake
+include/kColorPicker-Qt6/
+include/kColorPicker-Qt6/kColorPicker/
+include/kColorPicker-Qt6/kColorPicker/KColorPicker.h
+include/kColorPicker-Qt6/kColorPicker/KColorPickerExport.h
+lib/cmake/kColorPicker-Qt6/
+lib/cmake/kColorPicker-Qt6/kColorPicker-Qt6Config-version.cmake
+lib/cmake/kColorPicker-Qt6/kColorPicker-Qt6Config.cmake
+lib/cmake/kColorPicker-Qt6/kColorPicker-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/kColorPicker-Qt6/kColorPicker-targets.cmake
 @lib lib/libkColorPicker.so.${LIBkColorPicker_VERSION}
