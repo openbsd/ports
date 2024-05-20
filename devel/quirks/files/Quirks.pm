@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1631 2024/05/20 06:44:58 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1632 2024/05/20 07:22:55 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -823,6 +823,7 @@ my $stem_extensions = {
 	'py3-pep517' => 'py3-pyproject_hooks',
 	'web-eid-native-chrome' => 'web-eid-chrome',
 	'kuserfeedback' => 'kf6-kuserfeedback',
+	'kgamma5' => 'kgamma',
 };
 
 my $obsolete_reason = {};
@@ -1305,7 +1306,6 @@ setup_obsolete_reason(
 	3 => 'kdesdk-strigi-analyzers',
 	3 => 'kdewebdev',
 	3 => 'kfilemetadata',
-	3 => 'kgamma',
 	3 => 'kgpg',
 	3 => 'kimono',
 	3 => 'kopete',
