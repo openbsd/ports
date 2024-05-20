@@ -1937,7 +1937,6 @@ lib/python3.11/http/client.py
 lib/python3.11/http/cookiejar.py
 lib/python3.11/http/cookies.py
 lib/python3.11/http/server.py
-lib/python3.11/idlelib/News3.txt
 lib/python3.11/imaplib.py
 lib/python3.11/imghdr.py
 lib/python3.11/imp.py
