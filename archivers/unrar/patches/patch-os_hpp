@@ -1,7 +1,7 @@
 Index: os.hpp
 --- os.hpp.orig
 +++ os.hpp
-@@ -112,6 +112,7 @@
+@@ -113,6 +113,7 @@
  
  #ifdef _UNIX
  
@@ -9,7 +9,7 @@ Index: os.hpp
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -122,6 +123,11 @@
+@@ -123,6 +124,11 @@
  #ifdef _APPLE
    #include <sys/sysctl.h>
  #endif
@@ -21,7 +21,7 @@ Index: os.hpp
  #ifndef SFX_MODULE
      #include <sys/statvfs.h>
  #endif
-@@ -153,7 +159,7 @@
+@@ -154,7 +160,7 @@
  
  #if defined(__aarch64__) && (defined(__ARM_FEATURE_CRYPTO) || defined(__ARM_FEATURE_CRC32))
  #include <arm_neon.h>
@@ -30,7 +30,7 @@ Index: os.hpp
  #include <sys/auxv.h>
  #include <asm/hwcap.h>
  #endif
-@@ -254,7 +260,7 @@
+@@ -259,7 +265,7 @@
    #endif
  #endif
  

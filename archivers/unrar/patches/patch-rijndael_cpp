@@ -1,7 +1,7 @@
 Index: rijndael.cpp
 --- rijndael.cpp.orig
 +++ rijndael.cpp
-@@ -125,6 +125,12 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+@@ -126,6 +126,12 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
      // because "hw.optional.arm.FEAT_AES" was missing in OS X 11, but AES
      // still was supported by Neon.
      AES_Neon=RetCode!=0 || Value!=0;
