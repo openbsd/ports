@@ -1,6 +1,6 @@
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.10.7
+DISTNAME =	kdiff3-1.11.0
 
 CATEGORIES =	devel
 
@@ -14,41 +14,42 @@ EXTRACT_SUFX =	.tar.xz
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml c m
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
-		devel/kf5/kbookmarks \
-		devel/kf5/kdoctools
+		devel/kf6/kbookmarks \
+		devel/kf6/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kbookmarks \
-		devel/kf5/kdoctools \
+		devel/kf6/kbookmarks \
+		devel/kf6/kdoctools \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		x11/qt6/qt5compat
+
+CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON
+
+TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>

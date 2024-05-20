@@ -1,8 +1,6 @@
 @bin bin/kdiff3
-lib/qt5/plugins/kf5/kfileitemaction/
-@so lib/qt5/plugins/kf5/kfileitemaction/kdiff3fileitemaction.so
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/kdiff3part.so
+lib/qt6/plugins/kf6/kfileitemaction/
+@so lib/qt6/plugins/kf6/kfileitemaction/kdiff3fileitemaction.so
 @man man/man1/kdiff3.1
 share/applications/org.kde.kdiff3.desktop
 share/doc/HTML/ca/kdiff3/
@@ -49,12 +47,6 @@ share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/48x48/apps/kdiff3.png
 share/icons/hicolor/64x64/apps/kdiff3.png
 share/icons/hicolor/scalable/apps/kdiff3.svgz
-share/kservices5/kdiff3part.desktop
-share/kxmlgui5/
-share/kxmlgui5/kdiff3/
-share/kxmlgui5/kdiff3/kdiff3_shell.rc
-share/kxmlgui5/kdiff3part/
-share/kxmlgui5/kdiff3part/kdiff3_part.rc
 share/locale/ar/LC_MESSAGES/kdiff3.mo
 share/locale/bg/LC_MESSAGES/diff_ext.mo
 share/locale/bg/LC_MESSAGES/kdiff3.mo
