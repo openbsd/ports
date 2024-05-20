@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1630 2024/05/20 06:43:09 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1631 2024/05/20 06:44:58 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -822,6 +822,7 @@ my $stem_extensions = {
 	'tepl' => 'libgedit-tepl',
 	'py3-pep517' => 'py3-pyproject_hooks',
 	'web-eid-native-chrome' => 'web-eid-chrome',
+	'kuserfeedback' => 'kf6-kuserfeedback',
 };
 
 my $obsolete_reason = {};
