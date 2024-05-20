@@ -1,7 +1,7 @@
 Index: doc/msmtp.texi
 --- doc/msmtp.texi.orig
 +++ doc/msmtp.texi
-@@ -1515,7 +1515,7 @@ just like @ref{passwordeval} in msmtp) or, if none is 
+@@ -1520,7 +1520,7 @@ just like @ref{passwordeval} in msmtp) or, if none is 
  from the key ring or, if that fails, from a prompt.
  @end table
  
@@ -10,7 +10,7 @@ Index: doc/msmtp.texi
  @section Example: using msmtpd as a system service
  
  Only use a local interface to listen on. Run msmtpd with correct user rights
-@@ -1532,7 +1532,7 @@ start-stop-daemon --start --pidfile /var/run/msmtpd.pi
+@@ -1537,7 +1537,7 @@ start-stop-daemon --start --pidfile /var/run/msmtpd.pi
  start-stop-daemon --stop  --pidfile /var/run/msmtpd.pid --remove-pidfile --quiet --signal TERM
  @end example
  
