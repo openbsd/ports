@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	Qt bindings for libpulse
 
 VERSION =	1.4.0
