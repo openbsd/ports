@@ -1,52 +1,60 @@
 COMMENT =	power management daemon
 DISTNAME =	powerdevil-${VERSION}
 
-SHARED_LIBS +=  powerdevilconfigcommonprivate 0.0 # 0.0
-SHARED_LIBS +=  powerdevilcore                0.0 # 0.0
-SHARED_LIBS +=  powerdevilui                  0.0 # 0.0
+WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6I18n KF6IdleTime
+WANTLIB += KF6ItemModels KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6Screen KF6ScreenDpms KF6Service
+WANTLIB += KF6Solid KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += Kirigami KirigamiPlatform LayerShellQtInterface PlasmaActivities
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml X11 c kworkspace6
+WANTLIB += m udev xcb xcb-dpms xkbcommon
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5IdleTime KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Kirigami2 KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Screen KF5ScreenDpms KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 c kworkspace5 m udev xcb xcb-dpms
+SHARED_LIBS +=  powerdevilconfigcommonprivate 1.0 # 0.0
+SHARED_LIBS +=  powerdevilcore                1.0 # 0.0
+SHARED_LIBS +=  powerdevilui                  1.0 # 0.0
 
 MODKDE5_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/upower \
-		devel/kf5/bluez-qt \
+		devel/kf6/bluez-qt \
 		x11/dbus,-suid
 
-BUILD_DEPENDS =	devel/kf5/bluez-qt
+BUILD_DEPENDS =	devel/kf6/bluez-qt
 
-LIB_DEPENDS =	devel/kf5/kactivities \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kglobalaccel \
-		devel/kf5/ki18n \
-		devel/kf5/kidletime \
-		devel/kf5/kio \
-		devel/kf5/kirigami2 \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
+LIB_DEPENDS =	devel/kf6/kauth \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kglobalaccel \
+		devel/kf6/ki18n \
+		devel/kf6/kidletime \
+		devel/kf6/kio \
+		devel/kf6/kirigami \
+		devel/kf6/kitemmodels  \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
 		sysutils/libudev-openbsd \
+		x11/kde-plasma/layer-shell-qt>=${VERSION} \
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
-		x11/qt5/qtx11extras
+		x11/qt6/qtdeclarative \
+		x11/xkbcommon
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

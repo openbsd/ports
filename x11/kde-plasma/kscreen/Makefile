@@ -1,39 +1,38 @@
 COMMENT =	KDEs screen management software
+
 DISTNAME =	kscreen-${VERSION}
 
 MODKDE5_TRANSLATIONS =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5Declarative KF5GlobalAccel KF5I18n KF5Package KF5Plasma
-WANTLIB += KF5PlasmaQuick KF5QuickAddons KF5Screen KF5ScreenDpms
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += LayerShellQtInterface Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sensors Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 X11-xcb Xext Xi c m xcb xcb-util
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6I18n KF6KCMUtilsCore KF6KCMUtilsQuick KF6Screen
+WANTLIB += KF6ScreenDpms KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += LayerShellQtInterface Plasma PlasmaQuick Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6Sensors Qt6Widgets Qt6Xml X11 X11-xcb Xext Xi c
+WANTLIB += m xcb xcb-util xkbcommon
 
-BUILD_DEPENDS =	devel/kf5/kcmutils
+BUILD_DEPENDS =	devel/kf6/kcmutils
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/kglobalaccel \
-		devel/kf5/ki18n \
-		devel/kf5/kpackage \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/plasma-framework \
-		x11/kde-plasma/libkscreen>=${VERSION} \
+LIB_DEPENDS =	devel/kf6/kconfig \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtsensors
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/libplasma>=${VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsensors \
+		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 

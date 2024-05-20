@@ -1,6 +1,4 @@
 @bin bin/kmenuedit
-lib/kconf_update_bin/
-@bin lib/kconf_update_bin/kmenuedit_globalaccel
 share/applications/org.kde.kmenuedit.desktop
 share/doc/HTML/ca/kmenuedit/
 share/doc/HTML/ca/kmenuedit/done.png
@@ -44,9 +42,6 @@ share/doc/HTML/it/kmenuedit/toolbars-toolbar.png
 share/doc/HTML/nl/kmenuedit/
 share/doc/HTML/nl/kmenuedit/index.cache.bz2
 share/doc/HTML/nl/kmenuedit/index.docbook
-share/doc/HTML/pt/kmenuedit/
-share/doc/HTML/pt/kmenuedit/index.cache.bz2
-share/doc/HTML/pt/kmenuedit/index.docbook
 share/doc/HTML/pt_BR/kmenuedit/
 share/doc/HTML/pt_BR/kmenuedit/done.png
 share/doc/HTML/pt_BR/kmenuedit/index.cache.bz2
@@ -93,11 +88,9 @@ share/kmenuedit/icons/hicolor/32x32/
 share/kmenuedit/icons/hicolor/32x32/actions/
 share/kmenuedit/icons/hicolor/32x32/actions/menu_new.png
 share/kmenuedit/icons/hicolor/32x32/actions/menu_new_sep.png
-share/kxmlgui5/
-share/kxmlgui5/kmenuedit/
-share/kxmlgui5/kmenuedit/kmenueditui.rc
 share/locale/af/LC_MESSAGES/kmenuedit.mo
 share/locale/ar/LC_MESSAGES/kmenuedit.mo
+share/locale/ast/LC_MESSAGES/kmenuedit.mo
 share/locale/az/LC_MESSAGES/kmenuedit.mo
 share/locale/be/LC_MESSAGES/kmenuedit.mo
 share/locale/bg/LC_MESSAGES/kmenuedit.mo
@@ -162,6 +155,7 @@ share/locale/pt/LC_MESSAGES/kmenuedit.mo
 share/locale/pt_BR/LC_MESSAGES/kmenuedit.mo
 share/locale/ro/LC_MESSAGES/kmenuedit.mo
 share/locale/ru/LC_MESSAGES/kmenuedit.mo
+share/locale/sa/LC_MESSAGES/kmenuedit.mo
 share/locale/se/LC_MESSAGES/kmenuedit.mo
 share/locale/si/LC_MESSAGES/kmenuedit.mo
 share/locale/sk/LC_MESSAGES/kmenuedit.mo
@@ -188,6 +182,6 @@ share/locale/zh_CN/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_TW/LC_MESSAGES/kmenuedit.mo
 share/metainfo/
 share/metainfo/org.kde.kmenuedit.appdata.xml
-share/qlogging-categories5/kmenuedit.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kmenuedit.categories

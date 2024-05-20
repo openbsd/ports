@@ -1,13 +1,14 @@
-lib/qt5/qml/org/kde/plasma/
-lib/qt5/qml/org/kde/plasma/private/
-lib/qt5/qml/org/kde/plasma/private/nanoshell/
-@so lib/qt5/qml/org/kde/plasma/private/nanoshell/libplasmananoshellprivateplugin.so
-lib/qt5/qml/org/kde/plasma/private/nanoshell/qml/
-lib/qt5/qml/org/kde/plasma/private/nanoshell/qml/StartupFeedback.qml
-lib/qt5/qml/org/kde/plasma/private/nanoshell/qmldir
-share/kservices5/
-share/kservices5/plasma-applet-org.kde.plasma.nano.desktop
-share/kservices5/plasma-package-org.kde.plasma.nano.desktoptoolbox.desktop
+lib/qt6/qml/org/kde/plasma/
+lib/qt6/qml/org/kde/plasma/private/
+lib/qt6/qml/org/kde/plasma/private/nanoshell/
+@so lib/qt6/qml/org/kde/plasma/private/nanoshell/libplasmananoshellprivateplugin.so
+lib/qt6/qml/org/kde/plasma/private/nanoshell/qml/
+lib/qt6/qml/org/kde/plasma/private/nanoshell/qml/StartupFeedback.qml
+lib/qt6/qml/org/kde/plasma/private/nanoshell/qmldir
+share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
+share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
+share/locale/ast/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
+share/locale/ast/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/az/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/az/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/bg/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
@@ -26,6 +27,8 @@ share/locale/el/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/el/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/en_GB/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/en_GB/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
+share/locale/eo/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
+share/locale/eo/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/es/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/es/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/et/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
@@ -60,6 +63,8 @@ share/locale/nl/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/nl/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/nn/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/nn/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
+share/locale/pa/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
+share/locale/pa/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/pl/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/pl/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/pt/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
@@ -70,6 +75,8 @@ share/locale/ro/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/ro/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/ru/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
+share/locale/sa/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
+share/locale/sa/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/sk/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
 share/locale/sk/LC_MESSAGES/plasma_toolbox_org.kde.plasma.nano.desktoptoolbox.mo
 share/locale/sl/LC_MESSAGES/plasma_shell_org.kde.plasma.nano.mo
@@ -94,8 +101,7 @@ share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/
 share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/contents/
 share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/contents/ui/
 share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/contents/ui/DesktopConfigButtons.qml
-share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/contents/ui/ToolBoxRoot.qml
-share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/metadata.desktop
+share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/contents/ui/main.qml
 share/plasma/packages/org.kde.plasma.nano.desktoptoolbox/metadata.json
 share/plasma/shells/
 share/plasma/shells/org.kde.plasma.nano/
@@ -118,5 +124,4 @@ share/plasma/shells/org.kde.plasma.nano/contents/loader.qml
 share/plasma/shells/org.kde.plasma.nano/contents/views/
 share/plasma/shells/org.kde.plasma.nano/contents/views/Desktop.qml
 share/plasma/shells/org.kde.plasma.nano/contents/views/Panel.qml
-share/plasma/shells/org.kde.plasma.nano/metadata.desktop
 share/plasma/shells/org.kde.plasma.nano/metadata.json

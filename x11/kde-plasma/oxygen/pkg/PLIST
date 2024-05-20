@@ -1,17 +1,23 @@
 @bin bin/oxygen-demo5
-@bin bin/oxygen-settings5
+@bin bin/oxygen-demo6
+@bin bin/oxygen-settings6
 @lib lib/liboxygenstyle5.so.${LIBoxygenstyle5_VERSION}
+@lib lib/liboxygenstyle6.so.${LIBoxygenstyle6_VERSION}
 @lib lib/liboxygenstyleconfig5.so.${LIBoxygenstyleconfig5_VERSION}
-@so lib/qt5/plugins/kstyle_oxygen_config.so
+@lib lib/liboxygenstyleconfig6.so.${LIBoxygenstyleconfig6_VERSION}
+lib/qt5/plugins/kstyle_config/
+@so lib/qt5/plugins/kstyle_config/kstyle_oxygen_config.so
 lib/qt5/plugins/org.kde.kdecoration2/
-@so lib/qt5/plugins/org.kde.kdecoration2/oxygendecoration.so
+lib/qt5/plugins/org.kde.kdecoration2.kcm/
+@so lib/qt5/plugins/org.kde.kdecoration2.kcm/kcm_oxygendecoration.so
+@so lib/qt5/plugins/org.kde.kdecoration2/org.kde.oxygen.so
 lib/qt5/plugins/styles/
-@so lib/qt5/plugins/styles/oxygen.so
+@so lib/qt5/plugins/styles/oxygen5.so
+@so lib/qt5/plugins/styles/oxygen6.so
+share/applications/kcm_oxygendecoration.desktop
 share/color-schemes/
 share/color-schemes/Oxygen.colors
 share/color-schemes/OxygenCold.colors
-share/kservices5/oxygendecorationconfig.desktop
-share/kservices5/oxygenstyleconfig.desktop
 share/kstyle/
 share/kstyle/themes/
 share/kstyle/themes/oxygen.themerc
@@ -21,6 +27,10 @@ share/locale/ar/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ar/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/ar/LC_MESSAGES/oxygen_style_config.mo
 share/locale/ar/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/ast/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/ast/LC_MESSAGES/oxygen_kdecoration.mo
+share/locale/ast/LC_MESSAGES/oxygen_style_config.mo
+share/locale/ast/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/az/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/az/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/az/LC_MESSAGES/oxygen_style_config.mo
@@ -73,6 +83,8 @@ share/locale/en_GB/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/en_GB/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/en_GB/LC_MESSAGES/oxygen_style_config.mo
 share/locale/en_GB/LC_MESSAGES/oxygen_style_demo.mo
+share/locale/eo/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/eo/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/eo/LC_MESSAGES/oxygen_style_config.mo
 share/locale/eo/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/es/LC_MESSAGES/liboxygenstyleconfig.mo
@@ -109,6 +121,7 @@ share/locale/gl/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/gu/LC_MESSAGES/oxygen_style_config.mo
 share/locale/gu/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/he/LC_MESSAGES/liboxygenstyleconfig.mo
+share/locale/he/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/he/LC_MESSAGES/oxygen_style_config.mo
 share/locale/he/LC_MESSAGES/oxygen_style_demo.mo
 share/locale/hi/LC_MESSAGES/oxygen_style_config.mo
@@ -289,6 +302,8 @@ share/locale/zh_TW/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_kdecoration.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_config.mo
 share/locale/zh_TW/LC_MESSAGES/oxygen_style_demo.mo
+share/metainfo/
+share/metainfo/org.kde.oxygen.appdata.xml
 share/plasma/
 share/plasma/look-and-feel/
 share/plasma/look-and-feel/org.kde.oxygen/
@@ -303,4 +318,5 @@ share/plasma/look-and-feel/org.kde.oxygen/contents/splash/images/
 share/plasma/look-and-feel/org.kde.oxygen/contents/splash/images/background.png
 share/plasma/look-and-feel/org.kde.oxygen/contents/splash/images/kde.png
 share/plasma/look-and-feel/org.kde.oxygen/contents/splash/images/rectangle.png
-share/plasma/look-and-feel/org.kde.oxygen/metadata.desktop
+share/plasma/look-and-feel/org.kde.oxygen/metadata.json
+@tag update-desktop-database

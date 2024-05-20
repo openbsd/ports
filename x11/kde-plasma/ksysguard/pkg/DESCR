@@ -1,7 +1,0 @@
-KDE System Guard, also known as KSysGuard, is the task manager and performance
-monitor for the KDE platform on Unix-like systems. It can monitor both local
-and remote hosts, accomplished via running ksysguardd on the remote host, and
-having the GUI (ksysguard) connect to the remote instance. It can retrieve
-simple values or complex data such as tables and display this information in a
-variety of graphical displays. Displays can then be organized in work sheets.
-It also provides a detailed top-like process table.

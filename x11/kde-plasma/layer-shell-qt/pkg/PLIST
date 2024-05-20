@@ -10,4 +10,15 @@ lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake
 lib/cmake/LayerShellQt/LayerShellQtTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/LayerShellQt/LayerShellQtTargets.cmake
 @lib lib/libLayerShellQtInterface.so.${LIBLayerShellQtInterface_VERSION}
-@so lib/qt5/plugins/wayland-shell-integration/liblayer-shell.so
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/wayland-shell-integration/
+@so lib/qt6/plugins/wayland-shell-integration/liblayer-shell.so
+lib/qt6/qml/
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/layershell/
+lib/qt6/qml/org/kde/layershell/LayerShellQtQml.qmltypes
+lib/qt6/qml/org/kde/layershell/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/layershell/libLayerShellQtQml.so
+lib/qt6/qml/org/kde/layershell/qmldir

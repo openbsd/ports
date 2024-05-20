@@ -3,7 +3,7 @@ From FreeBSD to fix XDG_CONFIG_DIRS
 Index: startkde/startplasma.cpp
 --- startkde/startplasma.cpp.orig
 +++ startkde/startplasma.cpp
-@@ -348,6 +348,10 @@ void setupPlasmaEnvironment()
+@@ -362,6 +362,10 @@ void setupPlasmaEnvironment()
      }
      const QString extraConfigDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1String("/kdedefaults");
      QDir().mkpath(extraConfigDir);

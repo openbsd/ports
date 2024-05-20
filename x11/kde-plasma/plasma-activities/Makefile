@@ -1,4 +1,3 @@
-UNLINKED=kf6
 COMMENT =	core components for the KDE Activity concept
 DISTNAME =	plasma-activities-${VERSION}
 

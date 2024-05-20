@@ -1,60 +1,93 @@
+     # https://community.kde.org/Plasma/Plasma_6.0_Release_notes
+     # WIP KDE6
+
      SUBDIR =
-     SUBDIR += breeze
-     SUBDIR += breeze-gtk
      SUBDIR += kdecoration
+
+     # Tars that need Qt5 and Qt6 build
+     # SUBDIR +=plasma-integration
+     SUBDIR += breeze
      SUBDIR += oxygen
-     SUBDIR += kactivitymanagerd
-     SUBDIR += kde-cli-tools
-     SUBDIR += kde-gtk-config
-     SUBDIR += kdeplasma-addons
+
+     # Moved From Frameworks
+     SUBDIR += plasma-activities
+     SUBDIR += plasma-activities-stats
+     SUBDIR += kwayland
+     SUBDIR += libplasma
+     # Moved From KDE Gear
+     SUBDIR += print-manager
+
+     # Renamed TODO
      SUBDIR += kgamma5
-     SUBDIR += khotkeys
+
+     SUBDIR += breeze-gtk
+
+     # ... XXX to update
+
+     # Dropped
+     #SUBDIR += khotkeys
+     #SUBDIR += ksysguard
+     # SUBDIR +=plasma-bigscreen
+     # SUBDIR +=plank-player
+     # SUBDIR += aura-browser
+     # SUBDIR +=plasma-remotecontrollers
+
+     # NEW
+     SUBDIR += kglobalacceld
+     SUBDIR += ocean-sound-theme
+     SUBDIR += plasma5support
+
+     SUBDIR += kactivitymanagerd
+     SUBDIR += kde-gtk-config
      SUBDIR += kinfocenter
      SUBDIR += kmenuedit
-     SUBDIR += kpipewire
+
+     SUBDIR += libkscreen
+     SUBDIR += qqc2-breeze-style
+     SUBDIR += libksysguard
+     SUBDIR += layer-shell-qt
+     SUBDIR += xdg-desktop-portal-kde
      SUBDIR += kscreen
      SUBDIR += kscreenlocker
-     SUBDIR += ksshaskpass
-     SUBDIR += ksystemstats
-     SUBDIR += ksysguard
-     SUBDIR += kwayland-integration
-     SUBDIR += kwin
+     SUBDIR += polkit-kde-agent-1
      SUBDIR += kwrited
-     SUBDIR += layer-shell-qt
-     SUBDIR += libkscreen
-     SUBDIR += libksysguard
      SUBDIR += milou
      SUBDIR += oxygen-sounds
-     SUBDIR += plasma-browser-integration
-     SUBDIR += plasma-desktop
-     SUBDIR += plasma-nano
-     SUBDIR += plasma-pa
-     SUBDIR += plasma-sdk
-     SUBDIR += plasma-workspace
+     SUBDIR += ksshaskpass
+     SUBDIR += ksystemstats
      SUBDIR += plasma-workspace-wallpapers
-     SUBDIR += polkit-kde-agent-1
+     SUBDIR += kdeplasma-addons
+     SUBDIR += plasma-pa
+     SUBDIR += plasma-nano
+     SUBDIR += plasma-sdk
+     SUBDIR += kwin
+     SUBDIR += plasma-workspace
+     SUBDIR += kde-cli-tools
      SUBDIR += powerdevil
-     SUBDIR += qqc2-breeze-style
+     SUBDIR += plasma-browser-integration
      SUBDIR += systemsettings
-     SUBDIR += xdg-desktop-portal-kde
+     SUBDIR += plasma-desktop
+
+     # libva
+     SUBDIR += kpipewire
+
+     # kwayland-integration remains Qt 5 only as its features have been moved
+     # into kwindowsystem, this is still released and should still be packaged for
+     # compatibility with Qt 5 apps.
+     # XXX SUBDIR += kwayland-integration
 
     # Not ported yet
-    # SUBDIR += aura-browser
     # SUBDIR +=bluedevil
     # SUBDIR +=breeze-plymouth
     # SUBDIR +=discover
     # SUBDIR +=drkonqi
     # SUBDIR +=flatpak-kcm
     # SUBDIR +=kwallet-pam
-    # SUBDIR +=plank-player
-    # SUBDIR +=plasma-bigscreen
     # SUBDIR +=plasma-disks
     # SUBDIR +=plasma-firewall
-    # SUBDIR +=plasma-integration
     # SUBDIR +=plasma-mobile
     # SUBDIR +=plasma-nm
     # SUBDIR +=plasma-pa
-    # SUBDIR +=plasma-remotecontrollers
     # SUBDIR +=plasma-systemmonitor
     # SUBDIR +=plasma-thunderbolt
     # SUBDIR +=plasma-vault

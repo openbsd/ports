@@ -1,51 +1,42 @@
-COMMENT =	xdg-desktop-portal Qt/KF5 backend
+COMMENT =	xdg-desktop-portal Qt/KF6 backend
 DISTNAME =	xdg-desktop-portal-kde-${VERSION}
-REVISION =	1
-
-WANTLIB += ${COMPILER_LIBCXX} GL KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Declarative KF5GlobalAccel
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Package KF5Service KF5Solid KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5WaylandClient
-WANTLIB += Qt5Widgets Qt5Xml X11 c m wayland-client xkbcommon
 
 MODKDE5_TRANSLATIONS =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KWaylandClient Qt6Concurrent Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WaylandClient
+WANTLIB += Qt6Widgets Qt6Xml X11 c m wayland-client wayland-cursor
+WANTLIB += xkbcommon
+
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kirigami2
+		devel/kf6/kirigami
 
-BUILD_DEPENDS =	devel/kf5/kirigami2 \
-		wayland/libinput-openbsd \
-		wayland/plasma-wayland-protocols \
-		wayland/wayland-protocols
+BUILD_DEPENDS =	devel/kf6/kirigami
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kio \
-		devel/kf5/knotifications \
-		devel/kf5/kpackage \
-		devel/kf5/kservice \
-		devel/kf5/solid \
-		devel/kf5/kwayland \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/plasma-framework \
-		devel/kf5/kxmlgui \
-		x11/qt5/qtdeclarative
+LIB_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kglobalaccel \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kio \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/solid \
+		x11/kde-plasma/kwayland>=${VERSION} \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

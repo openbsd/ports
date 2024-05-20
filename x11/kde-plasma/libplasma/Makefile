@@ -1,4 +1,3 @@
-UNLINKED=kf6
 COMMENT =	Plasma library and runtime components
 DISTNAME =	libplasma-${VERSION}
 

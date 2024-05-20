@@ -1,0 +1,8 @@
+Index: processcore/plugins/CMakeLists.txt
+--- processcore/plugins/CMakeLists.txt.orig
++++ processcore/plugins/CMakeLists.txt
+@@ -2,4 +2,3 @@ add_definitions(-DTRANSLATION_DOMAIN=\"ksysguard_plugi
+ if (BUILD_NETWORK_PLUGIN)
+     add_subdirectory(network)
+ endif()
+-add_subdirectory(nvidia)

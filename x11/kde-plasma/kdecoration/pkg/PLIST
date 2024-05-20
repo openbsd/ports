@@ -26,7 +26,7 @@ include/KDecoration2/kdecoration2/private/decoratedclientprivate.h
 include/KDecoration2/kdecoration2/private/decorationbridge.h
 include/KDecoration2/kdecoration2/private/decorationsettingsprivate.h
 include/KDecoration2/kdecoration2/private/kdecoration2_private_export.h
-include/KF5/kdecoration2_version.h
+include/KF6/kdecoration2_version.h
 lib/cmake/KDecoration2/
 lib/cmake/KDecoration2/KDecoration2Config.cmake
 lib/cmake/KDecoration2/KDecoration2ConfigVersion.cmake
@@ -34,6 +34,8 @@ lib/cmake/KDecoration2/KDecoration2Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KDecoration2/KDecoration2Targets.cmake
 @lib lib/libkdecorations2.so.${LIBkdecorations2_VERSION}
 @lib lib/libkdecorations2private.so.${LIBkdecorations2private_VERSION}
+share/locale/ar/LC_MESSAGES/kdecoration.mo
+share/locale/ast/LC_MESSAGES/kdecoration.mo
 share/locale/az/LC_MESSAGES/kdecoration.mo
 share/locale/bg/LC_MESSAGES/kdecoration.mo
 share/locale/ca/LC_MESSAGES/kdecoration.mo
@@ -43,6 +45,7 @@ share/locale/da/LC_MESSAGES/kdecoration.mo
 share/locale/de/LC_MESSAGES/kdecoration.mo
 share/locale/el/LC_MESSAGES/kdecoration.mo
 share/locale/en_GB/LC_MESSAGES/kdecoration.mo
+share/locale/eo/LC_MESSAGES/kdecoration.mo
 share/locale/es/LC_MESSAGES/kdecoration.mo
 share/locale/et/LC_MESSAGES/kdecoration.mo
 share/locale/eu/LC_MESSAGES/kdecoration.mo
@@ -53,6 +56,7 @@ share/locale/hi/LC_MESSAGES/kdecoration.mo
 share/locale/hu/LC_MESSAGES/kdecoration.mo
 share/locale/ia/LC_MESSAGES/kdecoration.mo
 share/locale/id/LC_MESSAGES/kdecoration.mo
+share/locale/is/LC_MESSAGES/kdecoration.mo
 share/locale/it/LC_MESSAGES/kdecoration.mo
 share/locale/ja/LC_MESSAGES/kdecoration.mo
 share/locale/ka/LC_MESSAGES/kdecoration.mo
@@ -61,11 +65,13 @@ share/locale/lt/LC_MESSAGES/kdecoration.mo
 share/locale/ml/LC_MESSAGES/kdecoration.mo
 share/locale/nl/LC_MESSAGES/kdecoration.mo
 share/locale/nn/LC_MESSAGES/kdecoration.mo
+share/locale/pa/LC_MESSAGES/kdecoration.mo
 share/locale/pl/LC_MESSAGES/kdecoration.mo
 share/locale/pt/LC_MESSAGES/kdecoration.mo
 share/locale/pt_BR/LC_MESSAGES/kdecoration.mo
 share/locale/ro/LC_MESSAGES/kdecoration.mo
 share/locale/ru/LC_MESSAGES/kdecoration.mo
+share/locale/sa/LC_MESSAGES/kdecoration.mo
 share/locale/sk/LC_MESSAGES/kdecoration.mo
 share/locale/sl/LC_MESSAGES/kdecoration.mo
 share/locale/sv/LC_MESSAGES/kdecoration.mo

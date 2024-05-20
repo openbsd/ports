@@ -1,4 +1,3 @@
-UNLINKED=kf6
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
 

@@ -1,21 +1,20 @@
 COMMENT =	screen management library for KDE Plasma Workspaces
 DISTNAME =	libkscreen-${VERSION}
-PKGNAME =	libkscreen-kf5-${VERSION}
+PKGNAME =	kf6-libkscreen-${VERSION}
 
-SHARED_LIBS +=  KF5Screen         0.0 # 5.22.0 5
-SHARED_LIBS +=  KF5ScreenDpms     0.0 # 5.22.0 5
+SHARED_LIBS +=  KF6Screen                 0.0 # 0.0
+SHARED_LIBS +=  KF6ScreenDpms             0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5WaylandClient Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5WaylandClient Qt5X11Extras c m wayland-client
-WANTLIB += xcb xcb-dpms xcb-randr
-
-LIB_DEPENDS += 	devel/kf5/kwayland \
-		devel/kf5/kconfig \
-		x11/qt5/qtwayland \
-		x11/qt5/qtx11extras
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6WaylandClient
+WANTLIB += c m wayland-client wayland-cursor xcb xcb-dpms xcb-randr
+WANTLIB += xkbcommon
 
 BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
+
+LIB_DEPENDS =	x11/qt6/qtwayland \
+		wayland/wayland \
+		x11/xkbcommon
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

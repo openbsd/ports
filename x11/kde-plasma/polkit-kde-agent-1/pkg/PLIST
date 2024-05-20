@@ -6,9 +6,10 @@ share/examples/polkit-kde-agent/xdg/
 share/examples/polkit-kde-agent/xdg/autostart/
 share/examples/polkit-kde-agent/xdg/autostart/polkit-kde-authentication-agent-1.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/polkit-kde-authentication-agent-1.desktop
-share/knotifications5/
-share/knotifications5/policykit1-kde.notifyrc
+share/knotifications6/
+share/knotifications6/policykit1-kde.notifyrc
 share/locale/ar/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/ast/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/be/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/bg/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/bs/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
@@ -56,6 +57,7 @@ share/locale/pt/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/pt_BR/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ro/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ru/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/sa/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/sk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/sl/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/sr/LC_MESSAGES/polkit-kde-authentication-agent-1.mo

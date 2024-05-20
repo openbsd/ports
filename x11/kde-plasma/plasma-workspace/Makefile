@@ -1,120 +1,127 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
-REVISION =	1
 
-SHARED_LIBS +=  colorcorrect              0.0 # 0.0
-SHARED_LIBS +=  kfontinst                 0.0 # 0.0
-SHARED_LIBS +=  kfontinstui               0.0 # 0.0
-SHARED_LIBS +=  kworkspace5               0.0 # 0.0
-SHARED_LIBS +=  notificationmanager       0.0 # 0.0
-SHARED_LIBS +=  taskmanager               0.0 # 0.0
-SHARED_LIBS +=  weather_ion               0.0 # 0.0
+SHARED_LIBS +=  colorcorrect              1.0 # 0.0
+SHARED_LIBS +=  kfontinst                 1.0 # 0.0
+SHARED_LIBS +=  kfontinstui               1.0 # 0.0
+SHARED_LIBS +=  notificationmanager       1.0 # 0.0
+SHARED_LIBS +=  taskmanager               1.0 # 0.0
+SHARED_LIBS +=  weather_ion               1.0 # 0.0
+SHARED_LIBS +=  kmpris                    0.0 # 0.0
+SHARED_LIBS +=  kworkspace6               0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF5Activities KF5ActivitiesStats
-WANTLIB += KF5Archive KF5Attica KF5Auth KF5AuthCore KF5Baloo KF5Bookmarks
-WANTLIB += KF5CalendarEvents KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5Declarative KF5FileMetaData KF5GlobalAccel
-WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IconThemes KF5IdleTime
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KExiv2 KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Package KF5Parts KF5People KF5PeopleWidgets
-WANTLIB += KF5Plasma KF5PlasmaQuick KF5Prison KF5QuickAddons KF5Runner
-WANTLIB += KF5Screen KF5Service KF5Solid KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditor KF5TextWidgets KF5UnitConversion KF5Wallet
-WANTLIB += KF5WaylandClient KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPipeWire KScreenLocker KSysGuardFormatter KSysGuardSensorFaces
-WANTLIB += KSysGuardSensors KUserFeedbackCore LayerShellQtInterface
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5Svg Qt5WaylandClient Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst
-WANTLIB += c fontconfig freetype icui18n icuuc ksgrd m phonon4qt5
-WANTLIB += phonon4qt5experimental pipewire-0.3 processcore processui
-WANTLIB += qalculate wayland-client xcb xcb-composite xcb-damage
-WANTLIB += xcb-image xcb-randr xcb-render xcb-shape xcb-shm xcb-util
-WANTLIB += xcb-xfixes xkbcommon z
+WANTLIB += ${COMPILER_LIBCXX} GL ICE KExiv2Qt6 KF6Archive KF6Attica
+WANTLIB += KF6AuthCore KF6Baloo KF6Bookmarks KF6CalendarEvents
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigQml KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6FileMetaData KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6Holidays KF6I18n KF6I18nLocaleData KF6IconThemes
+WANTLIB += KF6IconWidgets KF6IdleTime KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Package KF6Parts KF6Prison KF6Runner
+WANTLIB += KF6Screen KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
+WANTLIB += KF6Svg KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
+WANTLIB += KF6UnitConversion KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KScreenLocker KSysGuardFormatter
+WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
+WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
+WANTLIB += PlasmaActivitiesStats PlasmaQuick Qt6Concurrent Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Sql
+WANTLIB += Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xau
+WANTLIB += Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
+WANTLIB += fontconfig freetype icui18n icuuc  m phonon4qt6
+WANTLIB += phonon4qt6experimental processcore qalculate udev wayland-client
+WANTLIB += wayland-cursor xcb xcb-composite xcb-damage xcb-image
+WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes
+WANTLIB += xkbcommon z
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 MODKDE5_DOCS = Yes
 
-BUILD_DEPENDS =		x11/kde-plasma/kwin>=${VERSION} \
-			wayland/plasma-wayland-protocols \
-			wayland/wayland-protocols \
-			devel/kf5/kquickcharts
+BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
+		graphics/kirigami-addons \
+		x11/xdotool \
+		devel/kf6/kquickcharts
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/kquickcharts \
-			multimedia/phonon-backend/vlc \
-			sysutils/coreutils \
-			x11/dbus,-suid \
-			x11/kde-plasma/kwin>=${VERSION}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf6/kquickcharts \
+		graphics/kirigami-addons \
+		multimedia/phonon-backend/vlc,qt6 \
+		sysutils/coreutils \
+		x11/dbus,-suid \
+		x11/kde-plasma/kwin>=${VERSION}
 
-LIB_DEPENDS =		devel/kf5/attica \
-			devel/kf5/baloo \
-			devel/kf5/baloo \
-			devel/kf5/kactivities \
-			devel/kf5/kactivities-stats \
-			devel/kf5/karchive \
-			devel/kf5/kauth \
-			devel/kf5/kbookmarks \
-			devel/kf5/kcmutils \
-			devel/kf5/kcodecs \
-			devel/kf5/kcompletion \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kcrash \
-			devel/kf5/kdbusaddons \
-			devel/kf5/kdbusaddons \
-			devel/kf5/kdeclarative \
-			devel/kf5/kfilemetadata \
-			devel/kf5/kglobalaccel \
-			devel/kf5/kguiaddons \
-			devel/kf5/kholidays \
-			devel/kf5/ki18n \
-			devel/kf5/kiconthemes \
-			devel/kf5/kidletime \
-			devel/kf5/kidletime \
-			devel/kf5/kio \
-			devel/kf5/kitemmodels \
-			devel/kf5/kitemviews \
-			devel/kf5/kjobwidgets \
-			devel/kf5/knewstuff \
-			devel/kf5/knotifications \
-			devel/kf5/knotifyconfig \
-			devel/kf5/knotifyconfig \
-			devel/kf5/kpackage \
-			devel/kf5/kparts \
-			devel/kf5/kpeople \
-			devel/kf5/kpeople \
-			devel/kf5/krunner \
-			devel/kf5/kservice \
-			devel/kf5/ktexteditor \
-			devel/kf5/ktextwidgets \
-			devel/kf5/kunitconversion \
-			devel/kf5/kunitconversion \
-			devel/kf5/kwallet \
-			devel/kf5/kwayland \
-			devel/kf5/kwidgetsaddons \
-			devel/kf5/kwindowsystem \
-			devel/kf5/kxmlgui \
-			devel/kf5/plasma-framework \
-			devel/kf5/prison \
-			devel/kf5/solid \
-			devel/kf5/sonnet \
-			devel/kf5/syntax-highlighting \
-			math/libqalculate \
-			productivity/kuserfeedback \
-			multimedia/phonon \
-			x11/qt5/qtdeclarative \
-			x11/kde-applications/libkexiv2 \
-			x11/kde-plasma/kpipewire>=${VERSION} \
-			x11/kde-plasma/kscreenlocker>=${VERSION} \
-			x11/kde-plasma/libkscreen>=${VERSION} \
-			x11/kde-plasma/libksysguard>=${VERSION}
+LIB_DEPENDS =	audio/libcanberra \
+		devel/kf6/attica \
+		devel/kf6/baloo \
+		devel/kf6/karchive \
+		devel/kf6/kauth \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kdeclarative \
+		devel/kf6/kfilemetadata \
+		devel/kf6/kglobalaccel \
+		devel/kf6/kguiaddons \
+		devel/kf6/kholidays \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kidletime \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kpackage \
+		devel/kf6/kparts \
+		devel/kf6/krunner \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/ksvg \
+		devel/kf6/ktexteditor \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kunitconversion \
+		devel/kf6/kuserfeedback \
+		devel/kf6/kwallet \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/prison \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
+		math/libqalculate \
+		multimedia/phonon,qt6 \
+		sysutils/libudev-openbsd \
+		wayland/wayland \
+		x11/kde-applications/kf6-libkexiv2 \
+		x11/kde-plasma/kscreenlocker>=${VERSION} \
+		x11/kde-plasma/kwayland>=${VERSION} \
+		x11/kde-plasma/layer-shell-qt>=${VERSION} \
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/libksysguard>=${VERSION} \
+		x11/kde-plasma/libplasma>=${VERSION} \
+		x11/kde-plasma/plasma-activities-stats>=${VERSION} \
+		x11/kde-plasma/plasma-activities>=${VERSION} \
+		x11/kde-plasma/plasma5support>=${VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg \
+		x11/qt6/qtwayland \
+		x11/xkbcommon
+
+# XXX x11/kde-plasma/kpipewire>=${VERSION}
 
 CONFIGURE_ARGS = \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes

@@ -1,27 +1,18 @@
 COMMENT =	minimal Plasma shell package
 DISTNAME =	plasma-nano-${VERSION}
-REVISION =	0
-
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Service
-WANTLIB += KF5WaylandClient KF5WindowSystem Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets X11 m
 
 MODKDE5_TRANSLATIONS =	Yes
 
-RUN_DEPENDS =	devel/kf5/plasma-framework \
-		x11/qt5/qtquickcontrols2
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Service KF6WindowSystem KWaylandClient
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick X11 m
 
-BUILD_DEPENDS =	devel/kf5/plasma-framework \
-		wayland/wayland-protocols \
-		wayland/plasma-wayland-protocols \
-		x11/qt5/qtquickcontrols2
+BUILD_DEPENDS =	x11/kde-plasma/libplasma>=${VERSION}
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kservice \
-		devel/kf5/kwayland \
-		devel/kf5/kwindowsystem \
-		x11/qt5/qtdeclarative
+LIB_DEPENDS =	devel/kf6/kservice \
+		x11/kde-plasma/kwayland>=${VERSION} \
+		devel/kf6/kwindowsystem \
+		x11/qt6/qtdeclarative
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

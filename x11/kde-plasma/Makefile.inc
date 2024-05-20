@@ -9,7 +9,7 @@ MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 # module port, and breaks build.
 CONFIGURE_STYLE ?=	cmake
 
-MODULES :=		devel/kf5 \
+MODULES :=		devel/kf6 \
 			x11/kde-applications \
 			${MODULES}
 
@@ -18,9 +18,10 @@ MODULES :=		devel/kf5 \
 PERMIT_PACKAGE ?=	Yes
 
 # XXX Keep in-sync with meta/kde
-VERSION ?=		5.27.10
+VERSION ?=		6.0.4
 
 SITES ?=		${SITE_KDE:=stable/plasma/${VERSION}/}
+EXTRACT_SUFX ?=		.tar.xz
 
 RUN_DEPENDS +=		${MODKDE5_RUN_DEPENDS}
 BUILD_DEPENDS +=	${MODKDE5_BUILD_DEPENDS}

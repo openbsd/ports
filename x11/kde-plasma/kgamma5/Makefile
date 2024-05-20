@@ -1,24 +1,28 @@
 COMMENT =	KDE monitor calibration tool
-DISTNAME =	kgamma5-${VERSION}
+DISTNAME =	kgamma-${VERSION}
+# XXX renamed from kgamma5 to kgamma
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets
-WANTLIB += Qt5Xml SM X11 Xext Xxf86vm m
+WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6WidgetsAddons
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml Qt6Widgets SM X11
+WANTLIB += Xext Xxf86vm m
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_DOCS = Yes
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kwidgetsaddons
+# Qt6::PdfQuickplugin
+BUILD_DEPENDS =	x11/qt6/qtwebengin
+RUN_DEPENDS =	x11/qt6/qtwebengin
+
+LIB_DEPENDS =	devel/kf6/kconfig \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kcmutils \
+		devel/kf6/kwidgetsaddons
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-WRKDIST =	${WRKDIR}/kgamma-${VERSION}
 
 .include <bsd.port.mk>

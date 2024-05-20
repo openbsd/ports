@@ -1,36 +1,33 @@
 COMMENT =	Plasma browser integration
 DISTNAME =	plasma-browser-integration-${VERSION}
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5FileMetaData KF5I18n KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5Notifications
-WANTLIB += KF5Package KF5Plasma KF5Purpose KF5PurposeWidgets KF5Runner
-WANTLIB += KF5Service KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
-WANTLIB += X11 c m taskmanager
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6FileMetaData KF6I18n KF6ItemModels
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6Purpose KF6PurposeWidgets
+WANTLIB += KF6Runner KF6Service KF6StatusNotifierItem PlasmaActivities
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets c m taskmanager
 
 MODKDE5_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	devel/kf5/kactivities \
-		devel/kf5/kcrash \
-		devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kfilemetadata \
-		devel/kf5/ki18n \
-		devel/kf5/krunner \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kservice \
-		devel/kf5/kpackage \
-		devel/kf5/kwindowsystem \
-		devel/kf5/purpose \
-		x11/qt5/qtdeclarative \
-		x11/kde-plasma/plasma-workspace>=${VERSION}
+LIB_DEPENDS =	devel/kf6/kcrash \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kfilemetadata \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kjobwidgets \
+		devel/kf6/krunner \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/purpose \
+		x11/kde-plasma/plasma-activities>=${VERSION} \
+		x11/kde-plasma/plasma-workspace>=${VERSION} \
+		x11/qt6/qtdeclarative
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

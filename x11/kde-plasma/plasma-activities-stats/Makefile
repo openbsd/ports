@@ -1,4 +1,3 @@
-UNLINKED=kf6
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	plasma-activities-stats-${VERSION}
 

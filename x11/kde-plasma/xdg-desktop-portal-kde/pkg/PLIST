@@ -2,8 +2,10 @@ lib/systemd/user/plasma-xdg-desktop-portal-kde.service
 @bin libexec/xdg-desktop-portal-kde
 share/applications/org.freedesktop.impl.portal.desktop.kde.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.kde.service
-share/knotifications5/xdg-desktop-portal-kde.notifyrc
+share/knotifications6/
+share/knotifications6/xdg-desktop-portal-kde.notifyrc
 share/locale/ar/LC_MESSAGES/xdg-desktop-portal-kde.mo
+share/locale/ast/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/az/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/bg/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/ca/LC_MESSAGES/xdg-desktop-portal-kde.mo
@@ -13,6 +15,7 @@ share/locale/da/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/de/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/el/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/en_GB/LC_MESSAGES/xdg-desktop-portal-kde.mo
+share/locale/eo/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/es/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/et/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/eu/LC_MESSAGES/xdg-desktop-portal-kde.mo
@@ -49,7 +52,7 @@ share/locale/tr/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/uk/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal-kde.mo
-share/qlogging-categories5/xdp-kde.categories
+share/qlogging-categories6/xdp-kde.categories
 share/xdg-desktop-portal/
 share/xdg-desktop-portal/kde-portals.conf
 share/xdg-desktop-portal/portals/

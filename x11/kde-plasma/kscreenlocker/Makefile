@@ -1,20 +1,19 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
 
-SHARED_LIBS +=  KScreenLocker         0.0 # 5.22.5
+SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
 MODKDE5_TRANSLATIONS =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigQml KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5Declarative KF5GlobalAccel KF5I18n KF5IdleTime
-WANTLIB += KF5KCMUtils KF5KIOCore KF5Notifications KF5Package
-WANTLIB += KF5QuickAddons KF5ScreenDpms KF5Service KF5WaylandClient
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui LayerShellQtInterface
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += X11 Xext Xi c m pam wayland-client wayland-server xcb
-WANTLIB += xcb-keysyms
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigQml KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6GlobalAccel KF6I18n KF6IdleTime KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6Notifications KF6Package
+WANTLIB += KF6ScreenDpms KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += LayerShellQtInterface Plasma PlasmaQuick Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6Widgets Qt6Xml X11 Xext Xi c m pam wayland-client
+WANTLIB += wayland-server xcb xcb-keysyms xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
@@ -22,27 +21,28 @@ BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols \
 		x11/kde-plasma/kscreen>=${VERSION}
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kcmutils \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/kglobalaccel \
-		devel/kf5/ki18n \
-		devel/kf5/kidletime \
-		devel/kf5/kpackage \
-		devel/kf5/kwayland \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
+LIB_DEPENDS =	devel/kf6/kconfig \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kglobalaccel \
+		devel/kf6/ki18n \
+		devel/kf6/kidletime \
+		devel/kf6/kio \
+		devel/kf6/knotifications \
+		devel/kf6/kpackage \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
 		security/openpam \
 		wayland/wayland \
-		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtx11extras
+		x11/kde-plasma/libkscreen>=${VERSION} \
+		x11/kde-plasma/libplasma>=${VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 

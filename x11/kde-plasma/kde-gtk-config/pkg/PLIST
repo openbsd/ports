@@ -3,8 +3,8 @@
 lib/kconf_update_bin/
 @bin lib/kconf_update_bin/gtk_theme
 @bin lib/kconf_update_bin/remove_deprecated_gtk4_option
-lib/qt5/plugins/kf5/kded/
-@so lib/qt5/plugins/kf5/kded/gtkconfig.so
+lib/qt6/plugins/kf6/kded/
+@so lib/qt6/plugins/kf6/kded/gtkconfig.so
 @bin libexec/gtk3_preview
 share/kcm-gtk-module/
 share/kcm-gtk-module/preview.ui

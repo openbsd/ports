@@ -1,18 +1,18 @@
 COMMENT =	Qt Wayland wl-layer-shell protocol component
 DISTNAME =	layer-shell-qt-${VERSION}
 
+SHARED_LIBS +=  LayerShellQtInterface    1.0 # 5.22.5
+
 MODKDE5_TRANSLATIONS =	Yes
 
-SHARED_LIBS +=  LayerShellQtInterface    0.0 # 5.22.5
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5WaylandClient
-WANTLIB += m wayland-client xkbcommon
+BUILD_DEPENDS =	wayland/wayland-protocols \
+		wayland/plasma-wayland-protocols
 
-BUILD_DEPENDS +=	wayland/wayland-protocols \
-			wayland/plasma-wayland-protocols
-
-LIB_DEPENDS +=		x11/qt5/qtwayland \
-			x11/xkbcommon
+LIB_DEPENDS =	x11/qt6/qtwayland \
+		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 

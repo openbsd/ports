@@ -1,0 +1,12 @@
+Index: src/utils/CMakeLists.txt
+--- src/utils/CMakeLists.txt.orig
++++ src/utils/CMakeLists.txt
+@@ -16,7 +16,7 @@ target_sources(kwin PRIVATE
+ 
+ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
+     target_sources(kwin PRIVATE executable_path_proc.cpp)
+-elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD" OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+     target_sources(kwin PRIVATE executable_path_sysctl.cpp)
+ else()
+     message(FATAL_ERROR "Unsupported platform ${CMAKE_SYSTEM_NAME}")

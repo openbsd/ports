@@ -1,30 +1,25 @@
 Index: processcore/processes_openbsd_p.cpp
 --- processcore/processes_openbsd_p.cpp.orig
 +++ processcore/processes_openbsd_p.cpp
-@@ -11,17 +11,16 @@
- 
- #include <QSet>
- 
-+#include <sched.h>
-+#include <signal.h>
-+#include <stdlib.h>
- #include <sys/param.h>
- #include <sys/resource.h>
+@@ -16,12 +16,13 @@
  #include <sys/sysctl.h>
  #include <sys/types.h>
-+#include <sys/proc.h>
-+#include <sched.h>
  #include <sys/user.h>
 -#if defined(__DragonFly__)
 -#include <err.h>
 -#include <sys/resourcevar.h>
 -#endif
--#include <signal.h>
--#include <stdlib.h>
++#include <sys/proc.h>
++
++#include <sched.h>
+ #include <signal.h>
+ #include <stdlib.h>
++#include <sched.h>
++
  #include <unistd.h>
  
  namespace KSysGuard
-@@ -66,63 +65,37 @@ void ProcessesLocal::Private::readProcStatus(struct ki
+@@ -67,63 +68,36 @@ void ProcessesLocal::Private::readProcStatus(struct ki
      process->setGid(0);
      process->setTracerpid(-1);
  
@@ -74,14 +69,13 @@ Index: processcore/processes_openbsd_p.cpp
 -    status = p->kp_proc.p_stat;
 -#endif
 -    ps->setSysTime(0);
- 
 +    // XXX ps->setUserTime(p->p_rusage.ru_utime.tv_sec * 100 + p->p_rusage.ru_utime.tv_usec / 10000);
 +    // XXX ps->setSysTime(p->p_rusage.ru_stime.tv_sec * 100 + p->p_rusage.ru_stime.tv_usec / 10000);
 +    ps->setNiceLevel(p->p_nice);
 +    // XXX ps->setVmSize(p->p_size / 1024);
 +    ps->setVmRSS(p->p_vm_rssize * getpagesize() / 1024);
 +    status = p->p_stat;
-+
+ 
      // "idle","run","sleep","stop","zombie"
      switch (status) {
 -    case '0':
@@ -104,7 +98,7 @@ Index: processcore/processes_openbsd_p.cpp
          ps->setStatus(Process::Zombie);
          break;
      default:
-@@ -133,10 +106,7 @@ void ProcessesLocal::Private::readProcStat(struct kinf
+@@ -134,10 +108,7 @@ void ProcessesLocal::Private::readProcStat(struct kinf
  
  void ProcessesLocal::Private::readProcStatm(struct kinfo_proc *p, Process *process)
  {
@@ -116,10 +110,10 @@ Index: processcore/processes_openbsd_p.cpp
  }
  
  bool ProcessesLocal::Private::readProcCmdline(long pid, Process *process)
-@@ -153,10 +123,10 @@ bool ProcessesLocal::Private::readProcCmdline(long pid
- 
-     if (sysctl(mib, 4, buf, &buflen, NULL, 0) == -1 || !buflen)
+@@ -155,10 +126,10 @@ bool ProcessesLocal::Private::readProcCmdline(long pid
+     if (sysctl(mib, 4, buf, &buflen, NULL, 0) == -1 || !buflen) {
          return false;
+     }
 -    QString command = QString(buf);
 +    QString command = QString::fromUtf8(buf);
  
@@ -129,7 +123,7 @@ Index: processcore/processes_openbsd_p.cpp
      process->setCommand(command.trimmed());
  
      return true;
-@@ -169,17 +139,10 @@ ProcessesLocal::ProcessesLocal()
+@@ -171,17 +142,10 @@ ProcessesLocal::ProcessesLocal()
  
  long ProcessesLocal::getParentPid(long pid)
  {
@@ -149,7 +143,7 @@ Index: processcore/processes_openbsd_p.cpp
      }
      return ppid;
  }
-@@ -209,18 +172,24 @@ QSet<long> ProcessesLocal::getAllPids()
+@@ -213,18 +177,23 @@ QSet<long> ProcessesLocal::getAllPids()
      mib[0] = CTL_KERN;
      mib[1] = KERN_PROC;
      mib[2] = KERN_PROC_ALL;
@@ -165,7 +159,7 @@ Index: processcore/processes_openbsd_p.cpp
 +        return pids;
 +    }
  
--    for (num = 0; num < len / sizeof(struct kinfo_proc); num++)
+     for (num = 0; num < len / sizeof(struct kinfo_proc); num++) {
 -#if defined(__FreeBSD__) && __FreeBSD_version >= 500015
 -        pids.insert(p[num].ki_pid);
 -#elif defined(__DragonFly__) && __DragonFly_version >= 190000
@@ -173,7 +167,6 @@ Index: processcore/processes_openbsd_p.cpp
 -#else
 -        pids.insert(p[num].kp_proc.p_pid);
 -#endif
-+    for (num = 0; num < len / sizeof(struct kinfo_proc); num++) {
 +        long pid = p[num].p_pid;
 +        long long ppid = p[num].p_ppid;
 +
@@ -181,24 +174,25 @@ Index: processcore/processes_openbsd_p.cpp
 +        if (ppid <= 0 && pid != 1)
 +            continue;
 +        pids.insert(pid);
-+    }
+     }
      free(p);
      return pids;
- }
-@@ -245,11 +214,7 @@ Processes::Error ProcessesLocal::setNiceness(long pid,
+@@ -250,13 +219,7 @@ Processes::Error ProcessesLocal::setNiceness(long pid,
  
  Processes::Error ProcessesLocal::setScheduler(long pid, int priorityClass, int priority)
  {
--    if (priorityClass == KSysGuard::Process::Other || priorityClass == KSysGuard::Process::Batch)
+-    if (priorityClass == KSysGuard::Process::Other || priorityClass == KSysGuard::Process::Batch) {
 -        priority = 0;
--    if (pid <= 0)
+-    }
+-    if (pid <= 0) {
 -        return Processes::InvalidPid; // check the parameters
+-    }
 -    return Processes::NotSupported;
 +    return Processes::NoError;
  }
  
  Processes::Error ProcessesLocal::setIoNiceness(long pid, int priorityClass, int priority)
-@@ -264,35 +229,13 @@ bool ProcessesLocal::supportsIoNiceness()
+@@ -271,36 +234,13 @@ bool ProcessesLocal::supportsIoNiceness()
  
  long long ProcessesLocal::totalPhysicalMemory()
  {
@@ -232,8 +226,9 @@ Index: processcore/processes_openbsd_p.cpp
 -    mib[1] = HW_NCPU;
 -    len = sizeof(ncpu);
 -
--    if (sysctl(mib, 2, &ncpu, &len, NULL, 0) == -1 || !len)
+-    if (sysctl(mib, 2, &ncpu, &len, NULL, 0) == -1 || !len) {
 -        return 1;
+-    }
 -    return len;
 -}
  ProcessesLocal::~ProcessesLocal()

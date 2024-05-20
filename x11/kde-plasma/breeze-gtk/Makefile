@@ -1,6 +1,6 @@
 COMMENT =		GTK2 theme matching KDE Breeze
-DISTNAME =		breeze-gtk-${VERSION}
-REVISION =		0
+FIXED_VERSION =		6.0.4.1
+DISTNAME =		breeze-gtk-${FIXED_VERSION}
 
 MODULES =		lang/python
 

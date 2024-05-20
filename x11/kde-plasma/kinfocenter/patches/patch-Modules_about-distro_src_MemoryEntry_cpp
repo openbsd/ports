@@ -22,7 +22,7 @@ Index: Modules/about-distro/src/MemoryEntry.cpp
 +    long phys_pages = sysconf(_SC_PHYS_PAGES);
 +    long pagesize = sysconf(_SC_PAGESIZE);
 +    if (phys_pages != -1 && pagesize != -1)
-+        ret = ((uint64_t)phys_pages * (uint64_t)pagesize / 1024);
++        ret = ((uint64_t)phys_pages * (uint64_t)pagesize);
  #endif
      return ret;
  }

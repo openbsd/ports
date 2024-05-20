@@ -1,7 +1,7 @@
 Index: src/xwayland/xwayland.cpp
 --- src/xwayland/xwayland.cpp.orig
 +++ src/xwayland/xwayland.cpp
-@@ -226,7 +226,7 @@ void Xwayland::dispatchEvents(DispatchEventsMode mode)
+@@ -452,7 +452,7 @@ void Xwayland::dispatchEvents(DispatchEventsMode mode)
  
      const int connectionError = xcb_connection_has_error(connection);
      if (connectionError) {

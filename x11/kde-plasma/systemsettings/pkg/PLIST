@@ -1,10 +1,7 @@
 @bin bin/systemsettings
-bin/systemsettings5
 @lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
-@so lib/qt5/plugins/kf5/krunner/krunner_systemsettings.so
-lib/qt5/plugins/systemsettingsview/
-@so lib/qt5/plugins/systemsettingsview/icon_mode.so
-@so lib/qt5/plugins/systemsettingsview/systemsettings_sidebar_mode.so
+lib/qt6/plugins/kf6/krunner/
+@so lib/qt6/plugins/kf6/krunner/krunner_systemsettings.so
 share/applications/kdesystemsettings.desktop
 share/applications/systemsettings.desktop
 share/doc/HTML/ca/systemsettings/
@@ -22,6 +19,7 @@ share/doc/HTML/es/systemsettings/index.docbook
 share/doc/HTML/fr/systemsettings/
 share/doc/HTML/fr/systemsettings/index.cache.bz2
 share/doc/HTML/fr/systemsettings/index.docbook
+share/doc/HTML/id/
 share/doc/HTML/id/systemsettings/
 share/doc/HTML/id/systemsettings/index.cache.bz2
 share/doc/HTML/id/systemsettings/index.docbook
@@ -49,26 +47,10 @@ share/doc/HTML/tr/systemsettings/index.docbook
 share/doc/HTML/uk/systemsettings/
 share/doc/HTML/uk/systemsettings/index.cache.bz2
 share/doc/HTML/uk/systemsettings/index.docbook
+share/kglobalaccel/
 share/kglobalaccel/systemsettings.desktop
-share/kpackage/genericqml/
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/images/
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/images/plasma-logo.svg
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoriesPage.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/CategoryItem.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/HamburgerMenuButton.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SideBarItem.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/SubCategoryPage.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/introPage.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/main.qml
-share/kpackage/genericqml/org.kde.systemsettings.sidebar/metadata.desktop
-share/kservicetypes5/infocenterexternalapp.desktop
-share/kservicetypes5/systemsettingsexternalapp.desktop
-share/kxmlgui5/systemsettings/
-share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo
+share/locale/ast/LC_MESSAGES/systemsettings.mo
 share/locale/az/LC_MESSAGES/systemsettings.mo
 share/locale/be/LC_MESSAGES/systemsettings.mo
 share/locale/be@latin/LC_MESSAGES/systemsettings.mo
@@ -131,6 +113,7 @@ share/locale/pt/LC_MESSAGES/systemsettings.mo
 share/locale/pt_BR/LC_MESSAGES/systemsettings.mo
 share/locale/ro/LC_MESSAGES/systemsettings.mo
 share/locale/ru/LC_MESSAGES/systemsettings.mo
+share/locale/sa/LC_MESSAGES/systemsettings.mo
 share/locale/se/LC_MESSAGES/systemsettings.mo
 share/locale/si/LC_MESSAGES/systemsettings.mo
 share/locale/sk/LC_MESSAGES/systemsettings.mo
@@ -152,33 +135,35 @@ share/locale/vi/LC_MESSAGES/systemsettings.mo
 share/locale/wa/LC_MESSAGES/systemsettings.mo
 share/locale/zh_CN/LC_MESSAGES/systemsettings.mo
 share/locale/zh_TW/LC_MESSAGES/systemsettings.mo
+share/metainfo/
 share/metainfo/org.kde.systemsettings.metainfo.xml
-share/qlogging-categories5/systemsettings.categories
+share/qlogging-categories6/systemsettings.categories
 share/systemsettings/
 share/systemsettings/categories/
-share/systemsettings/categories/settings-appearance-color.desktop
 share/systemsettings/categories/settings-appearance-font.desktop
+share/systemsettings/categories/settings-appearance-themes.desktop
 share/systemsettings/categories/settings-appearance.desktop
+share/systemsettings/categories/settings-applications-defaults.desktop
+share/systemsettings/categories/settings-applications-permissions.desktop
+share/systemsettings/categories/settings-applications.desktop
 share/systemsettings/categories/settings-hardware-display.desktop
+share/systemsettings/categories/settings-hardware-input-pointing-devices.desktop
+share/systemsettings/categories/settings-hardware-input-touchscreen.desktop
 share/systemsettings/categories/settings-hardware-input.desktop
+share/systemsettings/categories/settings-hardware-keyboard.desktop
 share/systemsettings/categories/settings-hardware-multimedia.desktop
-share/systemsettings/categories/settings-hardware-powermanagement.desktop
 share/systemsettings/categories/settings-hardware-removable-storage.desktop
 share/systemsettings/categories/settings-hardware.desktop
-share/systemsettings/categories/settings-network-connectivity.desktop
 share/systemsettings/categories/settings-network-networksettings.desktop
 share/systemsettings/categories/settings-network.desktop
-share/systemsettings/categories/settings-personalization-applications.desktop
-share/systemsettings/categories/settings-personalization-regionalsettings.desktop
 share/systemsettings/categories/settings-personalization.desktop
+share/systemsettings/categories/settings-regionalsettings.desktop
 share/systemsettings/categories/settings-root-category.desktop
+share/systemsettings/categories/settings-security-privacy.desktop
 share/systemsettings/categories/settings-system-administration.desktop
-share/systemsettings/categories/settings-workspace-desktopbehavior.desktop
 share/systemsettings/categories/settings-workspace-search.desktop
 share/systemsettings/categories/settings-workspace-session.desktop
-share/systemsettings/categories/settings-workspace-shortcuts.desktop
 share/systemsettings/categories/settings-workspace-windowmanagement.desktop
 share/systemsettings/categories/settings-workspace.desktop
-share/systemsettings/systemsettings.kcfg
 @tag update-desktop-database
 share/zsh/site-functions/_systemsettings

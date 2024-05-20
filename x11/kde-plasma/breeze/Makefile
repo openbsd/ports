@@ -1,38 +1,36 @@
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
-REVISION =		0
-
-SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Kirigami2 KF5Service
-WANTLIB += KF5Style KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
 
-BUILD_DEPENDS =	devel/kf5/kpackage
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6Style KF6WidgetsAddons KF6WindowSystem KirigamiPlatform
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets X11 c kdecorations2
+WANTLIB += m
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kpackage \
 		devel/kf6/breeze-icons
 
-LIB_DEPENDS =	devel/kf5/frameworkintegration \
-		devel/kf5/kauth \
-		devel/kf5/kcmutils \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kguiaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kirigami2 \
-		devel/kf5/kservice \
-		devel/kf5/kwindowsystem \
+LIB_DEPENDS =	devel/kf6/frameworkintegration \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kirigami \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
 		x11/kde-plasma/kdecoration>=${VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtx11extras
+		x11/qt6/qtdeclarative
+
+CONFIGURE_ARGS =	-DBUILD_QT6=ON \
+			-DBUILD_QT5=OFF
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

@@ -1,17 +1,17 @@
-Index: src/wayland/utils/executable_path_sysctl.cpp
---- src/wayland/utils/executable_path_sysctl.cpp.orig
-+++ src/wayland/utils/executable_path_sysctl.cpp
-@@ -12,11 +12,12 @@
+Index: src/utils/executable_path_sysctl.cpp
+--- src/utils/executable_path_sysctl.cpp.orig
++++ src/utils/executable_path_sysctl.cpp
+@@ -12,11 +12,13 @@
  
  QString executablePathFromPid(pid_t pid)
  {
-+    /* XXX no KERN_PROC_PATHNAME^
++    /*
      const int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, static_cast<int>(pid)};
      char buf[MAXPATHLEN];
      size_t cb = sizeof(buf);
      if (sysctl(mib, 4, buf, &cb, nullptr, 0) == 0) {
          return QString::fromLocal8Bit(realpath(buf, nullptr));
--    }
-+    }*/
+     }
++    */
      return QString();
  }

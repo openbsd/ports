@@ -12,23 +12,15 @@ lib/cmake/KScreenLocker/KScreenLockerTargets.cmake
 lib/cmake/ScreenSaverDBusInterface/
 lib/cmake/ScreenSaverDBusInterface/ScreenSaverDBusInterfaceConfig.cmake
 @lib lib/libKScreenLocker.so.${LIBKScreenLocker_VERSION}
-@so lib/qt5/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings/
+@so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so
 @bin libexec/kscreenlocker_greet
 share/applications/kcm_screenlocker.desktop
-share/dbus-1/interfaces/kf5_org.freedesktop.ScreenSaver.xml
+share/dbus-1/interfaces/kf6_org.freedesktop.ScreenSaver.xml
 share/dbus-1/interfaces/org.kde.screensaver.xml
-share/kconf_update/kscreenlocker.upd
-share/kconf_update/ksreenlocker_5_3_separate_autologin.pl
-share/knotifications5/ksmserver.notifyrc
-share/kpackage/
-share/kpackage/kcms/
-share/kpackage/kcms/kcm_screenlocker/
-share/kpackage/kcms/kcm_screenlocker/contents/
-share/kpackage/kcms/kcm_screenlocker/contents/ui/
-share/kpackage/kcms/kcm_screenlocker/contents/ui/Appearance.qml
-share/kpackage/kcms/kcm_screenlocker/contents/ui/LnfConfig.qml
-share/kpackage/kcms/kcm_screenlocker/contents/ui/WallpaperConfig.qml
-share/kpackage/kcms/kcm_screenlocker/contents/ui/main.qml
+share/knotifications6/ksmserver.notifyrc
 share/ksmserver/
 share/ksmserver/screenlocker/
 share/ksmserver/screenlocker/org.kde.passworddialog/
@@ -36,6 +28,9 @@ share/ksmserver/screenlocker/org.kde.passworddialog/metadata.desktop
 share/locale/ar/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/ar/LC_MESSAGES/kscreenlocker.mo
 share/locale/ar/LC_MESSAGES/kscreenlocker_greet.mo
+share/locale/ast/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/ast/LC_MESSAGES/kscreenlocker.mo
+share/locale/ast/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/az/LC_MESSAGES/kscreenlocker.mo
 share/locale/bg/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/bg/LC_MESSAGES/kscreenlocker.mo
@@ -64,6 +59,9 @@ share/locale/el/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/en_GB/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/en_GB/LC_MESSAGES/kscreenlocker.mo
 share/locale/en_GB/LC_MESSAGES/kscreenlocker_greet.mo
+share/locale/eo/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/eo/LC_MESSAGES/kscreenlocker.mo
+share/locale/eo/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/es/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/es/LC_MESSAGES/kscreenlocker.mo
 share/locale/es/LC_MESSAGES/kscreenlocker_greet.mo
@@ -97,6 +95,9 @@ share/locale/ia/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/id/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/id/LC_MESSAGES/kscreenlocker.mo
 share/locale/id/LC_MESSAGES/kscreenlocker_greet.mo
+share/locale/is/LC_MESSAGES/kcm_screenlocker.mo
+share/locale/is/LC_MESSAGES/kscreenlocker.mo
+share/locale/is/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/it/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker.mo
 share/locale/it/LC_MESSAGES/kscreenlocker_greet.mo
@@ -194,4 +195,4 @@ share/locale/zh_TW/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/zh_TW/LC_MESSAGES/kscreenlocker.mo
 share/locale/zh_TW/LC_MESSAGES/kscreenlocker_greet.mo
 @tag update-desktop-database
-share/qlogging-categories5/kscreenlocker.categories
+share/qlogging-categories6/kscreenlocker.categories
