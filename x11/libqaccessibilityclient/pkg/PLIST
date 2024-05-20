@@ -1,15 +1,16 @@
-include/QAccessibilityClient/
-include/QAccessibilityClient/qaccessibilityclient/
-include/QAccessibilityClient/qaccessibilityclient/accessibleobject.h
-include/QAccessibilityClient/qaccessibilityclient/libqaccessibilityclient-version.h
-include/QAccessibilityClient/qaccessibilityclient/qaccessibilityclient_export.h
-include/QAccessibilityClient/qaccessibilityclient/registry.h
-include/QAccessibilityClient/qaccessibilityclient/registrycache_p.h
-lib/cmake/QAccessibilityClient/
-lib/cmake/QAccessibilityClient/QAccessibilityClient${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/QAccessibilityClient/QAccessibilityClient.cmake
-lib/cmake/QAccessibilityClient/QAccessibilityClientConfig.cmake
-lib/cmake/QAccessibilityClient/QAccessibilityClientConfigVersion.cmake
-@lib lib/libqaccessibilityclient-qt5.so.${LIBqaccessibilityclient-qt5_VERSION}
-share/qlogging-categories5/
-share/qlogging-categories5/libqaccessibilityclient.categories
+include/QAccessibilityClient6/
+include/QAccessibilityClient6/qaccessibilityclient/
+include/QAccessibilityClient6/qaccessibilityclient/accessibleobject.h
+include/QAccessibilityClient6/qaccessibilityclient/libqaccessibilityclient-version.h
+include/QAccessibilityClient6/qaccessibilityclient/qaccessibilityclient_export.h
+include/QAccessibilityClient6/qaccessibilityclient/registry.h
+include/QAccessibilityClient6/qaccessibilityclient/registrycache_p.h
+lib/cmake/
+lib/cmake/QAccessibilityClient6/
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Config.cmake
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6ConfigVersion.cmake
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QAccessibilityClient6/QAccessibilityClient6Targets.cmake
+@lib lib/libqaccessibilityclient-qt6.so.${LIBqaccessibilityclient-qt6_VERSION}
+share/qlogging-categories6/
+share/qlogging-categories6/libqaccessibilityclient.categories
