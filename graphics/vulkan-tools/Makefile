@@ -1,11 +1,10 @@
 COMMENT =	Vulkan Utilities and Tools
 
-V =		1.3.275.0
+V =		1.3.283.0
 PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
-REVISION =	0
 
 CATEGORIES =	devel graphics
 

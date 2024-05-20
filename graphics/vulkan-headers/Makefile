@@ -1,6 +1,6 @@
 COMMENT =	Vulkan header files
 
-V =		1.3.275.0
+V =		1.3.283.0
 PKGNAME =	vulkan-headers-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup

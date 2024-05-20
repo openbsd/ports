@@ -1,9 +1,8 @@
 COMMENT =	Vulkan Utility Libraries
 
-V =		1.3.275.0
+V =		1.3.283.0
 PKGNAME =	vulkan-utility-libraries-${V}
 DIST_TUPLE =	github KhronosGroup Vulkan-Utility-Libraries vulkan-sdk-${V} .
-REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -18,6 +17,7 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
 		lang/python
+
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	graphics/vulkan-headers

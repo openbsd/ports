@@ -20,16 +20,11 @@ include/glslang/SPIRV/disassemble.h
 include/glslang/SPIRV/spirv.hpp
 include/glslang/build_info.h
 lib/cmake/
-lib/cmake/SPIRVTargets.cmake
-lib/cmake/SPVRemapperTargets.cmake
 lib/cmake/glslang/
-lib/cmake/glslang-default-resource-limitsTargets.cmake
-lib/cmake/glslang-standaloneTargets.cmake
 lib/cmake/glslang/glslang-config-version.cmake
 lib/cmake/glslang/glslang-config.cmake
 lib/cmake/glslang/glslang-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/glslang/glslang-targets.cmake
-lib/cmake/spirv-remapTargets.cmake
 @lib lib/libSPIRV.so.${LIBSPIRV_VERSION}
 @lib lib/libSPVRemapper.so.${LIBSPVRemapper_VERSION}
 @lib lib/libglslang-default-resource-limits.so.${LIBglslang-default-resource-limits_VERSION}
