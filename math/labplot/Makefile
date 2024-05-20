@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.10.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math x11
 
@@ -22,7 +22,7 @@ WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
 WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
+WANTLIB += KF5WindowSystem KF5XmlGui
 WANTLIB += QXlsxQt5 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets
 WANTLIB += Qt5Xml X11 c cantorlibs cerf cfitsio fftw3 gsl gslcblas
@@ -81,7 +81,6 @@ LIB_DEPENDS +=	devel/kf5/syntax-highlighting \
 		math/matio \
 		math/netcdf \
 		textproc/qxlsx \
-		productivity/kuserfeedback \
 		x11/kde-applications/cantor
 
 #-- The following OPTIONAL packages have not been found:
@@ -98,6 +97,8 @@ CONFIGURE_ARGS +=	-DENABLE_LIBORIGIN=OFF
 CONFIGURE_ARGS +=	-DKDE_INSTALL_MANDIR=${WRKINST}/man
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_KUserFeedback=On
+
 CONFIGURE_ARGS +=	-DENABLE_VECTOR_BLF=Off
 
 CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/lib/cmake

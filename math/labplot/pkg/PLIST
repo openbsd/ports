@@ -175,6 +175,7 @@ share/icons/hicolor/scalable/apps/labplot-zoom-select-y.svg
 share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
 share/icons/hicolor/scalable/apps/labplot-zoom.svg
 share/icons/hicolor/scalable/apps/labplot2.svgz
+share/kxmlgui5/
 share/kxmlgui5/labplot2/
 share/kxmlgui5/labplot2/labplot2ui.rc
 share/labplot2/
@@ -416,6 +417,7 @@ share/locale/tr/LC_MESSAGES/labplot2.mo
 share/locale/uk/LC_MESSAGES/labplot2.mo
 share/locale/zh_CN/LC_MESSAGES/labplot2.mo
 share/locale/zh_TW/LC_MESSAGES/labplot2.mo
+share/metainfo/
 share/metainfo/org.kde.labplot2.appdata.xml
 share/mime/packages/labplot2.xml
 @tag update-desktop-database
