@@ -167,12 +167,13 @@ include/Quotient/uri.h
 include/Quotient/uriresolver.h
 include/Quotient/user.h
 include/Quotient/util.h
-lib/cmake/Quotient/
-lib/cmake/Quotient/QuotientConfig.cmake
-lib/cmake/Quotient/QuotientConfigVersion.cmake
-lib/cmake/Quotient/QuotientTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Quotient/QuotientTargets.cmake
-@lib lib/libQuotient.so.${LIBQuotient_VERSION}
-lib/pkgconfig/Quotient.pc
+lib/cmake/
+lib/cmake/QuotientQt6/
+lib/cmake/QuotientQt6/QuotientQt6Config.cmake
+lib/cmake/QuotientQt6/QuotientQt6ConfigVersion.cmake
+lib/cmake/QuotientQt6/QuotientQt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QuotientQt6/QuotientQt6Targets.cmake
+@lib lib/libQuotientQt6.so.${LIBQuotientQt6_VERSION}
+lib/pkgconfig/QuotientQt6.pc
 share/ndk-modules/
 share/ndk-modules/Android.mk
