@@ -1,6 +1,6 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.03.0
+VERSION =	10.03.1
 DISTNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
