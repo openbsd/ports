@@ -1,0 +1,14 @@
+fix namespace with vulkan 1.3.283.0 update
+
+Index: external/VulkanMemoryAllocator-Hpp/include/vk_mem_alloc_funcs.hpp
+--- external/VulkanMemoryAllocator-Hpp/include/vk_mem_alloc_funcs.hpp.orig
++++ external/VulkanMemoryAllocator-Hpp/include/vk_mem_alloc_funcs.hpp
+@@ -1,6 +1,8 @@
+ #ifndef VULKAN_MEMORY_ALLOCATOR_FUNCS_HPP
+ #define VULKAN_MEMORY_ALLOCATOR_FUNCS_HPP
+ 
++using namespace vk::detail;
++
+ namespace VMA_HPP_NAMESPACE {
+ 
+ #ifndef VULKAN_HPP_DISABLE_ENHANCED_MODE

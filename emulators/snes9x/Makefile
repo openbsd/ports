@@ -5,7 +5,7 @@ BROKEN-hppa =	ICE/failure on filter/hq2x.cpp
 GH_ACCOUNT =	snes9xgit
 GH_PROJECT =	snes9x
 GH_TAGNAME =	1.62.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators games
 
