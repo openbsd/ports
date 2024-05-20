@@ -6,7 +6,6 @@ include/QGpgME/WKDRefreshJob
 include/gpgme.h
 include/qgpgme/wkdrefreshjob.h
 @info info/gpgme.info
-lib/cmake/
 @static-lib lib/libgpgme.a
 lib/libgpgme.la
 @lib lib/libgpgme.so.${LIBgpgme_VERSION}

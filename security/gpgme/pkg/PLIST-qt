@@ -147,12 +147,12 @@ include/qgpgme/wkspublishjob.h
 lib/cmake/Gpgmepp/
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake
-lib/cmake/QGpgme/
-lib/cmake/QGpgme/QGpgmeConfig.cmake
-lib/cmake/QGpgme/QGpgmeConfigVersion.cmake
+lib/cmake/QGpgmeQt6/
+lib/cmake/QGpgmeQt6/QGpgmeQt6Config.cmake
+lib/cmake/QGpgmeQt6/QGpgmeQt6ConfigVersion.cmake
 @static-lib lib/libgpgmepp.a
 lib/libgpgmepp.la
 @lib lib/libgpgmepp.so.${LIBgpgmepp_VERSION}
-@static-lib lib/libqgpgme.a
-lib/libqgpgme.la
-@lib lib/libqgpgme.so.${LIBqgpgme_VERSION}
+@static-lib lib/libqgpgmeqt6.a
+lib/libqgpgmeqt6.la
+@lib lib/libqgpgmeqt6.so.${LIBqgpgmeqt6_VERSION}
