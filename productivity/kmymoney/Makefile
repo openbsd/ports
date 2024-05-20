@@ -53,7 +53,7 @@ CONFIGURE_STYLE =	cmake
 BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			misc/shared-mime-info \
-			textproc/libical,-glib \
+			textproc/libical,-glib
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/p5-Finance-Quote \
@@ -63,7 +63,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			textproc/p5-XML-Writer \
 			www/p5-libwww \
 			www/woob \
-			x11/gtk+4,-guic \
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/kactivities \
