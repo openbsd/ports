@@ -1,6 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5Purpose                3.0
 SHARED_LIBS +=  KF5PurposeWidgets         2.0
@@ -27,6 +27,7 @@ RUN_DEPENDS =	x11/qt5/qtquickcontrols \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
+		devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
 		devel/kf5/kio>=${MODKF5_VERSION} \
@@ -35,9 +36,11 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
 		devel/kf5/kwidgetsaddons>=${MODKF5_VERSION} \
 		devel/kf5/kwindowsystem>=${MODKF5_VERSION} \
+		devel/kf5/solid>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative
 
-LIB_DEPENDS +=	x11/kde-applications/kaccounts-integration
+LIB_DEPENDS +=	net/libaccounts-qt \
+		x11/kde-applications/kaccounts-integration
 
 # sucks
 TEST_IS_INTERACTIVE =	X11
