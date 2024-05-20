@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	productivity x11
 
@@ -30,19 +30,20 @@ SITES =		${SITE_KDE:=stable/kmymoney/${V}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} KChart KF5Activities KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Holidays KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIONTLM KF5KIOWidgets KF5Notifications
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiCore
-WANTLIB += KPim5IdentityManagement Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5WebKit Qt5WebKitWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
-WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
-WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
+WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5
+WANTLIB += aqbanking assuan c db db_cxx gmp gpgme gpgmepp gwengui-cpp
+WANTLIB += gwengui-qt5 gwenhywfar ical icalss icalvcal icui18n
+WANTLIB += icuuc m ofx
+WANTLIB += ${MODPY_WANTLIB}
 
 MODULES =		lang/python \
 			devel/kf5
@@ -53,7 +54,6 @@ BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			misc/shared-mime-info \
 			textproc/libical,-glib \
-			x11/kde-applications/kqtquickcharts
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/p5-Finance-Quote \
@@ -64,7 +64,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			www/p5-libwww \
 			www/woob \
 			x11/gtk+4,-guic \
-			x11/kde-applications/kqtquickcharts
 
 LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/kactivities \
@@ -75,9 +74,11 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/kcodecs \
 			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
-			devel/kf5/kcontacts \
+			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kholidays \
+			devel/kf5/ki18n \
+			devel/kf5/kiconthemes \
 			devel/kf5/kio \
 			devel/kf5/kitemmodels \
 			devel/kf5/kitemviews \
@@ -87,6 +88,7 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			devel/kf5/ktextwidgets \
 			devel/kf5/kwallet \
 			devel/kf5/kwidgetsaddons  \
+			devel/kf5/kwindowsystem \
 			devel/kf5/kxmlgui \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
@@ -95,14 +97,16 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			productivity/aqbanking \
 			productivity/libalkimia>=8.0 \
 			security/gpgme,,-qt \
+			security/libassuan \
 			textproc/libical \
-			x11/kde-applications/akonadi \
-			x11/kde-applications/kidentitymanagement \
 			x11/qt5/qtdeclarative \
+			x11/qt5/qtlocation \
+			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine
 
 CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
 			-DENABLE_WEBENGINE=ON \
+			-DOPT_KF5_COMPONENTS=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 TEST_IS_INTERACTIVE =	X11

@@ -116,6 +116,8 @@ include/kmymoney/viewinterface.h
 @lib lib/libkmm_printer.so.${LIBkmm_printer_VERSION}
 @lib lib/libkmm_settings.so.${LIBkmm_settings_VERSION}
 @lib lib/libkmm_widgets.so.${LIBkmm_widgets_VERSION}
+lib/qt5/
+lib/qt5/plugins/
 lib/qt5/plugins/kmymoney/
 @so lib/qt5/plugins/kmymoney/budgetview.so
 @so lib/qt5/plugins/kmymoney/checkprinting.so
