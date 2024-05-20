@@ -14,7 +14,9 @@ share/plasma-wayland-protocols/kde-output-device-v2.xml
 share/plasma-wayland-protocols/kde-output-management-v2.xml
 share/plasma-wayland-protocols/kde-output-order-v1.xml
 share/plasma-wayland-protocols/kde-primary-output-v1.xml
+share/plasma-wayland-protocols/kde-screen-edge-v1.xml
 share/plasma-wayland-protocols/keystate.xml
+share/plasma-wayland-protocols/org-kde-plasma-virtual-desktop.xml
 share/plasma-wayland-protocols/output-management.xml
 share/plasma-wayland-protocols/outputdevice.xml
 share/plasma-wayland-protocols/plasma-shell.xml
