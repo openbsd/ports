@@ -10,7 +10,7 @@ https://git.archlinux.org/svntogit/packages.git/plain/trunk/kdeconnect-openssh-8
 Index: plugins/sftp/mounter.cpp
 --- plugins/sftp/mounter.cpp.orig
 +++ plugins/sftp/mounter.cpp
-@@ -96,7 +96,7 @@ void Mounter::onPackageReceived(const NetworkPacket &n
+@@ -94,7 +94,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
  
      QDir().mkpath(m_mountPoint);
  
@@ -19,27 +19,16 @@ Index: plugins/sftp/mounter.cpp
  
      QString path;
      if (np.has(QStringLiteral("multiPaths")))
-@@ -116,7 +116,7 @@ void Mounter::onPackageReceived(const NetworkPacket &n
-     }
+@@ -115,7 +115,7 @@ void Mounter::onPacketReceived(const NetworkPacket &np
  
+     // clang-format off
      const QStringList arguments =
--        QStringList() << QStringLiteral("%1@%2:%3")
-+        QStringList() << QStringLiteral("${LOCALBASE}/bin/sshfs") << QStringLiteral("%1@%2:%3")
-                              .arg(np.get<QString>(QStringLiteral("user")),
-                                   ip,
-                                   path)
-@@ -130,7 +130,9 @@ void Mounter::onPackageReceived(const NetworkPacket &n
-                       << QStringLiteral("-o") << QStringLiteral("PubkeyAcceptedKeyTypes=+ssh-rsa") // https://bugs.kde.org/show_bug.cgi?id=443155
-                       << QStringLiteral("-o") << QStringLiteral("uid=") + QString::number(getuid()) << QStringLiteral("-o")
-                       << QStringLiteral("gid=") + QString::number(getgid()) << QStringLiteral("-o") << QStringLiteral("reconnect") << QStringLiteral("-o")
--                      << QStringLiteral("ServerAliveInterval=30") << QStringLiteral("-o") << QStringLiteral("password_stdin");
-+                      << QStringLiteral("ServerAliveInterval=30") << QStringLiteral("-o") << QStringLiteral("-o") << QStringLiteral("KexAlgorithms=+diffie-hellman-group14-sha1")
-+                      << QStringLiteral("-o") << QStringLiteral("allow_other") << QStringLiteral("-o") << QStringLiteral("umask=0022")
-+                      << QStringLiteral("-o") << QStringLiteral("ssh_command=${LOCALBASE}/bin/sshpass -p %1 %2").arg(np.get<QString>(QStringLiteral("password")), QStringLiteral("/usr/bin/ssh"));
- 
-     m_proc->setProgram(program, arguments);
- 
-@@ -138,8 +140,8 @@ void Mounter::onPackageReceived(const NetworkPacket &n
+-        QStringList() << QStringLiteral("%1@%2:%3").arg(np.get<QString>(QStringLiteral("user")), ip, path)
++        QStringList() << QStringLiteral("${LOCALBASE}/bin/sshfs") << QStringLiteral("%1@%2:%3").arg(np.get<QString>(QStringLiteral("user")), ip, path)
+                       << m_mountPoint << QStringLiteral("-p") << np.get<QString>(QStringLiteral("port"))
+                       << QStringLiteral("-s") // This fixes a bug where file chunks are sent out of order and get corrupted on reception
+                       << QStringLiteral("-f") << QStringLiteral("-F") << QStringLiteral("/dev/null") // Do not use ~/.ssh/config
+@@ -137,8 +137,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
      m_proc->start();
  
      // qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();

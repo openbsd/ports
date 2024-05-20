@@ -2,19 +2,18 @@ COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
-WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiWidgets
-WANTLIB += KPim5ContactEditor KPim5GrantleeTheme Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6Codecs
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
+WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6GrantleeTheme Qt6Core Qt6Core5Compat
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
+WANTLIB += Qt6Xml X11 c m
 
-WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -23,38 +22,40 @@ MODKDE5_ICON_CACHE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost \
-		security/gpgme,-qt
+BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	security/gpgme
-
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/libinotify \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/ktexttemplate \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION}
+		x11/kde-applications/grantleetheme \
+		x11/qt6/qt5compat
 
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
+

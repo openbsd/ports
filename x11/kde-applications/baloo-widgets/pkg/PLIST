@@ -1,24 +1,24 @@
 @bin bin/baloo_filemetadata_temp_extractor
-include/KF5/BalooWidgets/
-include/KF5/BalooWidgets/Baloo/
-include/KF5/BalooWidgets/Baloo/FileMetaDataConfigWidget
-include/KF5/BalooWidgets/Baloo/FileMetaDataWidget
-include/KF5/BalooWidgets/Baloo/TagWidget
-include/KF5/BalooWidgets/baloo/
-include/KF5/BalooWidgets/baloo/filemetadataconfigwidget.h
-include/KF5/BalooWidgets/baloo/filemetadatawidget.h
-include/KF5/BalooWidgets/baloo/tagwidget.h
-include/KF5/BalooWidgets/baloo/widgets_export.h
-lib/cmake/KF5BalooWidgets/
-lib/cmake/KF5BalooWidgets/KF5BalooWidgetsConfig.cmake
-lib/cmake/KF5BalooWidgets/KF5BalooWidgetsConfigVersion.cmake
-lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5BalooWidgets/KF5BalooWidgetsTargets.cmake
-@lib lib/libKF5BalooWidgets.so.${LIBKF5BalooWidgets_VERSION}
-lib/qt5/plugins/kf5/kfileitemaction/
-@so lib/qt5/plugins/kf5/kfileitemaction/tagsfileitemaction.so
-lib/qt5/plugins/kf5/propertiesdialog/
-@so lib/qt5/plugins/kf5/propertiesdialog/baloofilepropertiesplugin.so
+include/KF6/BalooWidgets/
+include/KF6/BalooWidgets/Baloo/
+include/KF6/BalooWidgets/Baloo/FileMetaDataConfigWidget
+include/KF6/BalooWidgets/Baloo/FileMetaDataWidget
+include/KF6/BalooWidgets/Baloo/TagWidget
+include/KF6/BalooWidgets/baloo/
+include/KF6/BalooWidgets/baloo/filemetadataconfigwidget.h
+include/KF6/BalooWidgets/baloo/filemetadatawidget.h
+include/KF6/BalooWidgets/baloo/tagwidget.h
+include/KF6/BalooWidgets/baloo/widgets_export.h
+lib/cmake/KF6BalooWidgets/
+lib/cmake/KF6BalooWidgets/KF6BalooWidgetsConfig.cmake
+lib/cmake/KF6BalooWidgets/KF6BalooWidgetsConfigVersion.cmake
+lib/cmake/KF6BalooWidgets/KF6BalooWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6BalooWidgets/KF6BalooWidgetsTargets.cmake
+@lib lib/libKF6BalooWidgets.so.${LIBKF6BalooWidgets_VERSION}
+lib/qt6/plugins/kf6/kfileitemaction/
+@so lib/qt6/plugins/kf6/kfileitemaction/tagsfileitemaction.so
+lib/qt6/plugins/kf6/propertiesdialog/
+@so lib/qt6/plugins/kf6/propertiesdialog/baloofilepropertiesplugin.so
 share/locale/ar/LC_MESSAGES/baloowidgets5.mo
 share/locale/az/LC_MESSAGES/baloowidgets5.mo
 share/locale/bg/LC_MESSAGES/baloowidgets5.mo
@@ -72,4 +72,4 @@ share/locale/ug/LC_MESSAGES/baloowidgets5.mo
 share/locale/uk/LC_MESSAGES/baloowidgets5.mo
 share/locale/zh_CN/LC_MESSAGES/baloowidgets5.mo
 share/locale/zh_TW/LC_MESSAGES/baloowidgets5.mo
-share/qlogging-categories5/baloo-widgets.categories
+share/qlogging-categories6/baloo-widgets.categories

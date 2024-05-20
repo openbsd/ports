@@ -29,8 +29,9 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+MODKDE_KF5 =	Yes
+
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
-		devel/protobuf \
 		devel/kf5/kwallet
 
 RUN_DEPENDS =	x11/qt5/qtquickcontrols \
@@ -46,13 +47,17 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/krunner \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
+		devel/kf5/kxmlgui \
 		devel/kf5/plasma-framework \
+		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/protobuf \
 		devel/shapelib \
@@ -62,6 +67,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtlocation \
 		x11/qt5/qtserialport \
 		x11/qt5/qtsvg \
+		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \

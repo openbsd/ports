@@ -4,12 +4,12 @@ listens only on IPv6. Use the IPv4 any-address instead.
 Index: core/backends/lan/lanlinkprovider.cpp
 --- core/backends/lan/lanlinkprovider.cpp.orig
 +++ core/backends/lan/lanlinkprovider.cpp
-@@ -82,7 +82,7 @@ LanLinkProvider::~LanLinkProvider()
+@@ -95,7 +95,7 @@ LanLinkProvider::~LanLinkProvider()
  
  void LanLinkProvider::onStart()
  {
 -    const QHostAddress bindAddress = m_testMode ? QHostAddress::LocalHost : QHostAddress::Any;
 +    const QHostAddress bindAddress = m_testMode ? QHostAddress::LocalHost : QHostAddress::AnyIPv4;
  
-     bool success = m_udpSocket.bind(bindAddress, m_udpListenPort, QUdpSocket::ShareAddress);
+     bool success = m_udpSocket.bind(bindAddress, UDP_PORT, QUdpSocket::ShareAddress);
      if (!success) {

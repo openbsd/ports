@@ -2,10 +2,10 @@ COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5Libkdepim            1.0 # 0.0
+SHARED_LIBS +=	KPim6Libkdepim            0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5I18n KF5WidgetsAddons
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6I18n KF6WidgetsAddons
+WANTLIB += Qt6Core Qt6Gui Qt6Widgets m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -13,17 +13,17 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kitemviews \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kjobwidgets \
-		x11/qt5/qttools
+		devel/kf6/kauth \
+		devel/kf6/kcodecs \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kitemviews \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kjobwidgets \
+		x11/qt6/qttools
 
-LIB_DEPENDS =	devel/kf5/kcompletion \
-		devel/kf5/ki18n \
-		devel/kf5/kwidgetsaddons
+LIB_DEPENDS =	devel/kf6/kcompletion \
+		devel/kf6/ki18n \
+		devel/kf6/kwidgetsaddons
 
 TEST_IS_INTERACTIVE =	X11
 

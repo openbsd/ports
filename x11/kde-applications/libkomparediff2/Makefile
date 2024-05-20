@@ -13,6 +13,7 @@ WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
+MODKDE_KF5 = yes
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

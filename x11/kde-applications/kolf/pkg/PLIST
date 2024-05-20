@@ -76,11 +76,9 @@ share/kolf/sounds/wall.wav
 share/kolf/sounds/woohoo.wav
 share/kolf/tutorial.kolf
 share/kolf/tutorial.kolfgame
-share/kxmlgui5/
-share/kxmlgui5/kolf/
-share/kxmlgui5/kolf/kolfui.rc
 share/locale/af/LC_MESSAGES/kolf.mo
 share/locale/ar/LC_MESSAGES/kolf.mo
+share/locale/ast/LC_MESSAGES/kolf.mo
 share/locale/be/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/br/LC_MESSAGES/kolf.mo
@@ -107,6 +105,7 @@ share/locale/hi/LC_MESSAGES/kolf.mo
 share/locale/hne/LC_MESSAGES/kolf.mo
 share/locale/hr/LC_MESSAGES/kolf.mo
 share/locale/hu/LC_MESSAGES/kolf.mo
+share/locale/ia/LC_MESSAGES/kolf.mo
 share/locale/is/LC_MESSAGES/kolf.mo
 share/locale/it/LC_MESSAGES/kolf.mo
 share/locale/ja/LC_MESSAGES/kolf.mo

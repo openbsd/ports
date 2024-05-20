@@ -1182,10 +1182,8 @@ share/kgeography/zimbabwe.kgm
 share/kgeography/zimbabwe.png
 share/kgeography/zimbabwe_districts.kgm
 share/kgeography/zimbabwe_districts.png
-share/kxmlgui5/
-share/kxmlgui5/kgeography/
-share/kxmlgui5/kgeography/kgeographyui.rc
 share/locale/ar/LC_MESSAGES/kgeography.mo
+share/locale/ast/LC_MESSAGES/kgeography.mo
 share/locale/be/LC_MESSAGES/kgeography.mo
 share/locale/bg/LC_MESSAGES/kgeography.mo
 share/locale/br/LC_MESSAGES/kgeography.mo
@@ -1220,6 +1218,7 @@ share/locale/hi/LC_MESSAGES/kgeography.mo
 share/locale/hne/LC_MESSAGES/kgeography.mo
 share/locale/hr/LC_MESSAGES/kgeography.mo
 share/locale/hu/LC_MESSAGES/kgeography.mo
+share/locale/ia/LC_MESSAGES/kgeography.mo
 share/locale/is/LC_MESSAGES/kgeography.mo
 share/locale/it/LC_MESSAGES/kgeography.mo
 share/locale/ja/LC_MESSAGES/kgeography.mo

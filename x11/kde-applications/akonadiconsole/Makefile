@@ -3,23 +3,23 @@ DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
-WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemModels KF5ItemViews
-WANTLIB += KF5KIOCore KF5Service KF5SonnetUi KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui KPim5AkonadiCalendar KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiPrivate
-WANTLIB += KPim5AkonadiSearchCore KPim5AkonadiSearchXapian KPim5AkonadiWidgets
-WANTLIB += KPim5AkonadiXml KPim5CalendarSupport KPim5ContactEditor
-WANTLIB += KPim5GrantleeTheme KPim5IdentityManagement KPim5Libkdepim
-WANTLIB += KPim5Libkleo KPim5MessageCore KPim5MessageViewer KPim5Mime
-WANTLIB += KPim5MimeTreeParser KPim5PimCommon KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Sql
-WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme xapian
 
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
+WANTLIB += KF6ItemModels KF6ItemViews KF6KIOCore KF6Service KF6SonnetUi
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiPrivate KPim6AkonadiSearchCore KPim6AkonadiSearchXapian
+WANTLIB += KPim6AkonadiWidgets KPim6AkonadiXml KPim6CalendarSupport
+WANTLIB += KPim6GrantleeTheme KPim6IdentityManagementCore KPim6Libkdepim
+WANTLIB += KPim6Libkleo KPim6MessageCore KPim6MessageViewer KPim6Mime
+WANTLIB += KPim6MimeTreeParser KPim6PimCommon Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6 xapian
+
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -29,30 +29,40 @@ BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost
 
 LIB_DEPENDS =	databases/xapian-core \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		devel/libinotify \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kservice \
+		devel/kf6/ktexttemplate \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
 		security/gpgme,-qt \
+		security/libassuan \
+		textproc/ktextaddons \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
 		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
 

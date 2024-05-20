@@ -1,22 +1,22 @@
 @pkgpath x11/kde4/ark
 @bin bin/ark
 @lib lib/libkerfuffle.so.${LIBkerfuffle_VERSION}
-lib/qt5/plugins/kerfuffle/
-@so lib/qt5/plugins/kerfuffle/kerfuffle_cli7z.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_cliarj.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_clirar.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_cliunarchiver.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_clizip.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_libarchive.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_libarchive_readonly.so
-@so lib/qt5/plugins/kerfuffle/kerfuffle_libzip.so
-lib/qt5/plugins/kf5/kfileitemaction/
-@so lib/qt5/plugins/kf5/kfileitemaction/compressfileitemaction.so
-@so lib/qt5/plugins/kf5/kfileitemaction/extractfileitemaction.so
-lib/qt5/plugins/kf5/kio_dnd/
-@so lib/qt5/plugins/kf5/kio_dnd/extracthere.so
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/arkpart.so
+lib/qt6/plugins/kerfuffle/
+@so lib/qt6/plugins/kerfuffle/kerfuffle_cli7z.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_cliarj.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_clirar.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_cliunarchiver.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_clizip.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_libarchive.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_libarchive_readonly.so
+@so lib/qt6/plugins/kerfuffle/kerfuffle_libzip.so
+lib/qt6/plugins/kf6/kfileitemaction/
+@so lib/qt6/plugins/kf6/kfileitemaction/compressfileitemaction.so
+@so lib/qt6/plugins/kf6/kfileitemaction/extractfileitemaction.so
+lib/qt6/plugins/kf6/kio_dnd/
+@so lib/qt6/plugins/kf6/kio_dnd/extracthere.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/arkpart.so
 @man man/man1/ark.1
 man/sr@latin/
 man/sr@latin/man1/
@@ -27,10 +27,6 @@ share/config.kcfg/ark.kcfg
 share/doc/HTML/ca/ark/
 share/doc/HTML/ca/ark/index.cache.bz2
 share/doc/HTML/ca/ark/index.docbook
-share/doc/HTML/de/ark/
-share/doc/HTML/de/ark/ark-mainwindow.png
-share/doc/HTML/de/ark/index.cache.bz2
-share/doc/HTML/de/ark/index.docbook
 share/doc/HTML/en/ark/
 share/doc/HTML/en/ark/ark-comment.png
 share/doc/HTML/en/ark/ark-mainwindow.png
@@ -45,10 +41,6 @@ share/doc/HTML/es/ark/index.docbook
 share/doc/HTML/et/ark/
 share/doc/HTML/et/ark/index.cache.bz2
 share/doc/HTML/et/ark/index.docbook
-share/doc/HTML/fr/ark/
-share/doc/HTML/fr/ark/ark-mainwindow.png
-share/doc/HTML/fr/ark/index.cache.bz2
-share/doc/HTML/fr/ark/index.docbook
 share/doc/HTML/gl/ark/
 share/doc/HTML/gl/ark/index.cache.bz2
 share/doc/HTML/gl/ark/index.docbook
@@ -105,9 +97,9 @@ share/icons/hicolor/128x128/apps/ark.png
 share/icons/hicolor/48x48/apps/ark.png
 share/icons/hicolor/64x64/apps/ark.png
 share/icons/hicolor/scalable/apps/ark.svgz
+share/kconf_update/
 share/kconf_update/ark.upd
 share/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
-share/kservices5/ark_part.desktop
 share/locale/af/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/ark.mo
 share/locale/ast/LC_MESSAGES/ark.mo
@@ -189,7 +181,7 @@ share/locale/zh_HK/LC_MESSAGES/ark.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
 share/metainfo/
 share/metainfo/org.kde.ark.appdata.xml
-share/qlogging-categories5/ark.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 @tag update-desktop-database
+share/qlogging-categories6/ark.categories

@@ -1,8 +1,8 @@
 Index: plugins/mousepad/waylandremoteinput.cpp
 --- plugins/mousepad/waylandremoteinput.cpp.orig
 +++ plugins/mousepad/waylandremoteinput.cpp
-@@ -13,7 +13,9 @@
- #include <KLocalizedString>
+@@ -15,7 +15,9 @@
+ #include <KSharedConfig>
  #include <QDBusPendingCallWatcher>
  
 -#include <linux/input.h>
@@ -12,7 +12,7 @@ Index: plugins/mousepad/waylandremoteinput.cpp
  #include <xkbcommon/xkbcommon.h>
  
  namespace
-@@ -21,38 +23,38 @@ namespace
+@@ -23,38 +25,38 @@ namespace
  // Translation table to keep in sync within all the implementations
  int SpecialKeysMap[] = {
      0, // Invalid
@@ -83,7 +83,7 @@ Index: plugins/mousepad/waylandremoteinput.cpp
  };
  }
  
-@@ -226,6 +228,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+@@ -250,6 +252,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
              bool shift = np.get<bool>(QStringLiteral("shift"), false);
              bool super = np.get<bool>(QStringLiteral("super"), false);
  
@@ -91,7 +91,7 @@ Index: plugins/mousepad/waylandremoteinput.cpp
              if (ctrl)
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTCTRL, 1);
              if (alt)
-@@ -258,6 +261,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+@@ -282,6 +285,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTSHIFT, 0);
              if (super)
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTMETA, 0);

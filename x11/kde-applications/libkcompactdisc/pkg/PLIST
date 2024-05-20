@@ -11,6 +11,7 @@ lib/cmake/KF5CompactDisc/KF5CompactDiscTargets.cmake
 @lib lib/libKF5CompactDisc.so.${LIBKF5CompactDisc_VERSION}
 share/kf5/mkspecs/qt_KCompactDisc.pri
 share/locale/ar/LC_MESSAGES/libkcompactdisc.mo
+share/locale/ast/LC_MESSAGES/libkcompactdisc.mo
 share/locale/be/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bs/LC_MESSAGES/libkcompactdisc.mo
@@ -58,6 +59,9 @@ share/locale/pt/LC_MESSAGES/libkcompactdisc.mo
 share/locale/pt_BR/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ro/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ru/LC_MESSAGES/libkcompactdisc.mo
+share/locale/sa/
+share/locale/sa/LC_MESSAGES/
+share/locale/sa/LC_MESSAGES/libkcompactdisc.mo
 share/locale/se/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sk/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sl/LC_MESSAGES/libkcompactdisc.mo

@@ -6,13 +6,13 @@ include/krdc/remoteview.h
 include/krdc/remoteviewfactory.h
 include/krdccore_export.h
 @lib lib/libkrdccore.so.${LIBkrdccore_VERSION}
-lib/qt5/plugins/krdc/
-lib/qt5/plugins/krdc/kcms/
-@so lib/qt5/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
-@so lib/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
-@so lib/qt5/plugins/krdc/libkrdc_rdpplugin.so
-@so lib/qt5/plugins/krdc/libkrdc_testplugin.so
-@so lib/qt5/plugins/krdc/libkrdc_vncplugin.so
+lib/qt6/plugins/krdc/
+lib/qt6/plugins/krdc/kcms/
+@so lib/qt6/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
+@so lib/qt6/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
+@so lib/qt6/plugins/krdc/libkrdc_rdpplugin.so
+@so lib/qt6/plugins/krdc/libkrdc_testplugin.so
+@so lib/qt6/plugins/krdc/libkrdc_vncplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/
 share/config.kcfg/krdc.kcfg
@@ -90,6 +90,9 @@ share/doc/HTML/pt/krdc/index.docbook
 share/doc/HTML/pt_BR/krdc/
 share/doc/HTML/pt_BR/krdc/index.cache.bz2
 share/doc/HTML/pt_BR/krdc/index.docbook
+share/doc/HTML/ru/krdc/
+share/doc/HTML/ru/krdc/index.cache.bz2
+share/doc/HTML/ru/krdc/index.docbook
 share/doc/HTML/sr/krdc/
 share/doc/HTML/sr/krdc/index.cache.bz2
 share/doc/HTML/sr/krdc/index.docbook
@@ -102,9 +105,6 @@ share/doc/HTML/sv/krdc/index.docbook
 share/doc/HTML/uk/krdc/
 share/doc/HTML/uk/krdc/index.cache.bz2
 share/doc/HTML/uk/krdc/index.docbook
-share/kio/
-share/kio/servicemenus/
-share/kio/servicemenus/smb2rdc.desktop
 share/locale/af/LC_MESSAGES/krdc.mo
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
@@ -182,4 +182,4 @@ share/locale/zh_HK/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/
 share/metainfo/org.kde.krdc.appdata.xml
-share/qlogging-categories5/krdc.categories
+share/qlogging-categories6/krdc.categories

@@ -1,19 +1,18 @@
 COMMENT =	periodic table of elements
 DISTNAME =	kalzium-${VERSION}
 CATEGORIES =	education math
-REVISION =	3
 
 HOMEPAGE =	https://edu.kde.org/kalzium/
 
 SHARED_LIBS +=  science                   4.0 # 5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Plotting KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Svg Qt5Widgets Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6I18n KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Plotting KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6TextWidgets KF6UnitConversion KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6StateMachine
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -28,33 +27,35 @@ MODULES +=	lang/python \
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS =	misc/openbabel \
-		devel/kf5/karchive \
-		devel/kf5/kbookmarks \
-		devel/kf5/kparts \
-		devel/kf5/solid \
+		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kparts \
 		math/eigen3
 
 RUN_DEPENDS =	misc/openbabel \
-		devel/kf5/karchive \
-		devel/kf5/kbookmarks \
-		devel/kf5/kparts \
-		devel/kf5/solid
+		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kparts \
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kplotting \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kunitconversion \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/sonnet \
-		x11/qt5/qtscript \
-		x11/qt5/qtsvg
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kplotting \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kunitconversion \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		x11/qt6/qt5compat \
+		x11/qt6/qtscxml \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

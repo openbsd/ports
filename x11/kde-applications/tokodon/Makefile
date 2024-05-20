@@ -1,7 +1,6 @@
 COMMENT =	KDE Mastodon client
 DISTNAME =	tokodon-${VERSION}
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/tokodon/
 
@@ -10,40 +9,44 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Kirigami2 KF5Notifications KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickControls2 Qt5WebSockets Qt5Widgets
-WANTLIB += Qt5Xml KF5Purpose X11 c m mpv qt5keychain
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6Purpose KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6WindowSystem Kirigami KirigamiPlatform MpvQt Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WebSockets Qt6WebView
+WANTLIB += Qt6Widgets X11 c m mpv qt6keychain
 
 BUILD_DEPENDS =	graphics/kirigami-addons \
-		devel/kf5/qqc2-desktop-style \
+		devel/kf6/qqc2-desktop-style \
 
 RUN_DEPENDS =	graphics/kirigami-addons \
-		devel/kf5/qqc2-desktop-style \
+		devel/kf6/qqc2-desktop-style \
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/kwindowsystem \
-		devel/kf5/solid \
-		devel/kf5/purpose \
-		devel/kf5/kirigami2 \
-		multimedia/mpv \
-		x11/qt5/qtwebsockets \
-		security/qtkeychain \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtquickcontrols2
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kirigami \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/purpose \
+		devel/kf6/solid \
+		security/qtkeychain,qt6 \
+		multimedia/mpvqt \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtwebsockets \
+		x11/qt6/qtwebview
+
+# XXX
+# KUnifiedPush, <https://invent.kde.org/libraries/kunifiedpush>
 
 TEST_IS_INTERACTIVE =	X11
 

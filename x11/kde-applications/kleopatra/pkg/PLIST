@@ -3,11 +3,12 @@
 @bin bin/kwatchgnupg
 @lib lib/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
 @lib lib/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
-lib/qt5/plugins/pim5/kcms/
-lib/qt5/plugins/pim5/kcms/kleopatra/
-@so lib/qt5/plugins/pim5/kcms/kleopatra/kleopatra_config_gnupgsystem.so
+lib/qt6/plugins/pim6/kcms/
+lib/qt6/plugins/pim6/kcms/kleopatra/
+@so lib/qt6/plugins/pim6/kcms/kleopatra/kleopatra_config_gnupgsystem.so
 share/applications/kleopatra_import.desktop
 share/applications/org.kde.kleopatra.desktop
+share/applications/org.kde.kwatchgnupg.desktop
 share/doc/HTML/ca/kleopatra/
 share/doc/HTML/ca/kleopatra/index.cache.bz2
 share/doc/HTML/ca/kleopatra/index.docbook
@@ -83,10 +84,12 @@ share/doc/HTML/uk/kwatchgnupg/index.docbook
 share/icons/hicolor/128x128/apps/kleopatra.png
 share/icons/hicolor/16x16/apps/kleopatra.png
 share/icons/hicolor/22x22/apps/kleopatra.png
+share/icons/hicolor/22x22/apps/kwatchgnupg.png
 share/icons/hicolor/256x256/apps/kleopatra.png
 share/icons/hicolor/32x32/apps/kleopatra.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kleopatra.png
+share/kconf_update/
 share/kconf_update/kleopatra-15.08-kickoff.sh
 share/kconf_update/kleopatra.upd
 share/kio/
@@ -108,6 +111,8 @@ share/kwatchgnupg/pics/kwatchgnupg2.png
 share/locale/af/LC_MESSAGES/kleopatra.mo
 share/locale/ar/LC_MESSAGES/kleopatra.mo
 share/locale/ar/LC_MESSAGES/kwatchgnupg.mo
+share/locale/ast/LC_MESSAGES/kleopatra.mo
+share/locale/ast/LC_MESSAGES/kwatchgnupg.mo
 share/locale/be/LC_MESSAGES/kleopatra.mo
 share/locale/be/LC_MESSAGES/kwatchgnupg.mo
 share/locale/bg/LC_MESSAGES/kleopatra.mo
@@ -243,8 +248,9 @@ share/locale/zh_TW/LC_MESSAGES/kwatchgnupg.mo
 share/metainfo/
 share/metainfo/org.kde.kleopatra.appdata.xml
 share/mime/packages/application-vnd-kde-kleopatra.xml
-share/qlogging-categories5/kleopatra.categories
-share/qlogging-categories5/kleopatra.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag update-mime-database
+share/mime/packages/kleopatra-mime.xml
+share/qlogging-categories6/kleopatra.categories
+share/qlogging-categories6/kleopatra.renamecategories

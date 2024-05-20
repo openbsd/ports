@@ -13,66 +13,83 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
-WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5KIOCore KF5Service
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiCalendar
-WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
-WANTLIB += KPim5AkonadiWidgets KPim5CalendarUtils KPim5GrantleeTheme
-WANTLIB += KPim5IMAP KPim5IdentityManagement KPim5IdentityManagementWidgets
-WANTLIB += KPim5Libkdepim KPim5Libkleo KPim5MailCommon KPim5MessageComposer
-WANTLIB += KPim5MessageCore KPim5Mime KPim5PimCommon KPim5PimCommonAkonadi
-WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 assuan c gpgme gpgmepp
-WANTLIB += m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6Contacts KF6CoreAddons KF6DBusAddons KF6I18n KF6ItemModels
+WANTLIB += KF6KIOCore KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementQuick
+WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailCommon KPim6MailTransport KPim6Mbox KPim6MessageComposer
+WANTLIB += KPim6MessageCore KPim6Mime KPim6MimeTreeParserCore
+WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets
+WANTLIB += Qt6Xml X11 assuan c gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
-		devel/kf5/kcompletion \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kirigami2 \
-		devel/kf5/kitemviews \
-		devel/kf5/knotifications \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/plasma-framework \
-		devel/kf5/qqc2-desktop-style \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
+		devel/kf6/kiconthemes \
+		devel/kf6/kirigami \
+		devel/kf6/kitemviews \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		x11/kde-plasma/libplasma \
+		devel/kf6/qqc2-desktop-style \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
 		graphics/kirigami-addons \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kirigami2 \
-		devel/kf5/plasma-framework \
-		devel/kf5/qqc2-desktop-style \
+		devel/kf6/kirigami \
+		x11/kde-plasma/libplasma \
+		devel/kf6/qqc2-desktop-style \
 		graphics/kirigami-addons \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n\
-		devel/kf5/kitemmodels \
-		devel/kf5/kwidgetsaddons  \
-		devel/kf5/kxmlgui \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+LIB_DEPENDS =	devel/kf6/kcalendarcore \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n\
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		security/gpgme \
+		security/libassuan \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
 		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmbox>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/mimetreeparser>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

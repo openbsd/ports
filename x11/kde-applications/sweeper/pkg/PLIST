@@ -35,6 +35,7 @@ share/doc/HTML/nl/sweeper/index.docbook
 share/doc/HTML/pt/sweeper/
 share/doc/HTML/pt/sweeper/index.cache.bz2
 share/doc/HTML/pt/sweeper/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/sweeper/
 share/doc/HTML/pt_BR/sweeper/index.cache.bz2
 share/doc/HTML/pt_BR/sweeper/index.docbook
@@ -53,11 +54,9 @@ share/doc/HTML/uk/sweeper/
 share/doc/HTML/uk/sweeper/index.cache.bz2
 share/doc/HTML/uk/sweeper/index.docbook
 share/doc/HTML/uk/sweeper/sweeper.png
-share/kxmlgui5/
-share/kxmlgui5/sweeper/
-share/kxmlgui5/sweeper/sweeperui.rc
 share/locale/af/LC_MESSAGES/sweeper.mo
 share/locale/ar/LC_MESSAGES/sweeper.mo
+share/locale/ast/LC_MESSAGES/sweeper.mo
 share/locale/be/LC_MESSAGES/sweeper.mo
 share/locale/bg/LC_MESSAGES/sweeper.mo
 share/locale/bn/LC_MESSAGES/sweeper.mo
@@ -137,4 +136,4 @@ share/locale/zh_TW/LC_MESSAGES/sweeper.mo
 share/metainfo/
 share/metainfo/org.kde.sweeper.appdata.xml
 @tag update-desktop-database
-share/qlogging-categories5/sweeper.categories
+share/qlogging-categories6/sweeper.categories

@@ -1,50 +1,50 @@
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
-PKGNAME =	libkdegames-kf5-${VERSION}
+PKGNAME =	kf6-libkdegames-${VERSION}
 CATEGORIES =	devel games
 
-SHARED_LIBS +=  KF5KDEGames               4.0 # 7.0
-SHARED_LIBS +=  KF5KDEGamesPrivate        3.0 # 1.0
+SHARED_LIBS +=	KDEGames6                 0.0 # 0.0
+SHARED_LIBS +=	KDEGames6Private          0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DNSSD KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml m openal sndfile
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6DNSSD KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg Qt6Widgets Qt6Xml
+WANTLIB += m openal sndfile
 
 MODKDE5_TRANSLATIONS = yes
 
-BUILD_DEPENDS =	devel/kf5/kdbusaddons \
-		devel/kf5/kitemviews \
-		devel/kf5/kglobalaccel \
-		devel/kf5/kbookmarks \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kcrash \
-		devel/kf5/ktextwidgets
+BUILD_DEPENDS =	devel/kf6/kdbusaddons \
+		devel/kf6/kitemviews \
+		devel/kf6/kglobalaccel \
+		devel/kf6/kbookmarks \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kcrash \
+		devel/kf6/ktextwidgets
 
-RUN_DEPENDS =	devel/kf5/kbookmarks \
-		devel/kf5/kcrash \
-		x11/qt5/qtquickcontrols
+RUN_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kcrash
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kiconthemes \
-		devel/kf5/ki18n \
-		devel/kf5/knewstuff \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/karchive \
-		devel/kf5/kdnssd \
-		devel/kf5/kguiaddons \
-		devel/kf5/kxmlgui \
-		x11/qt5/qtdeclarative \
+LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \
-		audio/libsndfile
+		devel/kf6/attica \
+		devel/kf6/karchive \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdnssd \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/knewstuff \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg
 
 TEST_IS_INTERACTIVE =	X11
 

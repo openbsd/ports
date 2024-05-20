@@ -2,25 +2,25 @@ COMMENT =		YouTube/Invidious player
 DISTNAME =		plasmatube-${VERSION}
 CATEGORIES =		multimedia net x11
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
-WANTLIB += KF5I18n Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickControls2 Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += c m mpv
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
+WANTLIB += KF6DBusAddons KF6I18n KF6WindowSystem MpvQt Qt6Concurrent
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += X11 c m mpv qt6keychain
 
 MODKDE5_DESKTOP_FILE =	Yes
 MODKDE5_ICON_CACHE =	Yes
 MODKDE5_TRANSLATIONS =	Yes
 
-BUILD_DEPENDS =		devel/kf5/kirigami2
+BUILD_DEPENDS =		devel/kf6/kirigami
 
-LIB_DEPENDS =		devel/kf5/kcoreaddons \
-			devel/kf5/kconfig \
-			devel/kf5/ki18n \
-			multimedia/mpv \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtquickcontrols2 \
-			x11/qt5/qtsvg
-
-MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+LIB_DEPENDS =		devel/kf6/kconfig \
+			devel/kf6/kcoreaddons \
+			devel/kf6/kdbusaddons \
+			devel/kf6/ki18n \
+			devel/kf6/kwindowsystem \
+			multimedia/mpvqt \
+			security/qtkeychain,qt6 \
+			x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

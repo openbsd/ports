@@ -1,0 +1,26 @@
+Index: rdp/rdpsession.cpp
+--- rdp/rdpsession.cpp.orig
++++ rdp/rdpsession.cpp
+@@ -32,6 +32,10 @@
+ #include <freerdp/locale/keyboard.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <pthread_np.h> /* pthread_set_name_np */
++#endif
++
+ #include "rdpview.h"
+ 
+ #include "krdc_debug.h"
+@@ -407,7 +411,11 @@ bool RdpSession::start()
+     }
+ 
+     m_thread = std::thread(std::bind(&RdpSession::run, this));
++#ifdef __OpenBSD__
++    pthread_set_name_np(m_thread.native_handle(), "rdp_session");
++#else
+     pthread_setname_np(m_thread.native_handle(), "rdp_session");
++#endif
+ 
+     return true;
+ }

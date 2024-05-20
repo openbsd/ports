@@ -49,6 +49,7 @@ share/doc/HTML/pl/kshisen/kshisen-configuration.png
 share/doc/HTML/pt/kshisen/
 share/doc/HTML/pt/kshisen/index.cache.bz2
 share/doc/HTML/pt/kshisen/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kshisen/
 share/doc/HTML/pt_BR/kshisen/index.cache.bz2
 share/doc/HTML/pt_BR/kshisen/index.docbook
@@ -72,6 +73,7 @@ share/icons/hicolor/48x48/apps/kshisen.png
 share/icons/hicolor/64x64/apps/kshisen.png
 share/locale/af/LC_MESSAGES/kshisen.mo
 share/locale/ar/LC_MESSAGES/kshisen.mo
+share/locale/ast/LC_MESSAGES/kshisen.mo
 share/locale/be/LC_MESSAGES/kshisen.mo
 share/locale/bg/LC_MESSAGES/kshisen.mo
 share/locale/bn/LC_MESSAGES/kshisen.mo
@@ -99,6 +101,7 @@ share/locale/hi/LC_MESSAGES/kshisen.mo
 share/locale/hne/LC_MESSAGES/kshisen.mo
 share/locale/hr/LC_MESSAGES/kshisen.mo
 share/locale/hu/LC_MESSAGES/kshisen.mo
+share/locale/ia/LC_MESSAGES/kshisen.mo
 share/locale/id/LC_MESSAGES/kshisen.mo
 share/locale/is/LC_MESSAGES/kshisen.mo
 share/locale/it/LC_MESSAGES/kshisen.mo
@@ -145,7 +148,8 @@ share/locale/zh_CN/LC_MESSAGES/kshisen.mo
 share/locale/zh_TW/LC_MESSAGES/kshisen.mo
 share/metainfo/
 share/metainfo/org.kde.kshisen.appdata.xml
-share/qlogging-categories5/kshisen.categories
+share/qlogging-categories6/kshisen.categories
+share/sounds/
 share/sounds/kshisen/
 share/sounds/kshisen/tile-fall-tile.ogg
 share/sounds/kshisen/tile-touch.ogg

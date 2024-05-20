@@ -1,6 +1,9 @@
-lib/qt5/plugins/kaccounts/ui/
-@so lib/qt5/plugins/kaccounts/ui/nextcloud_plugin_kaccounts.so
-@so lib/qt5/plugins/kaccounts/ui/owncloud_plugin_kaccounts.so
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/kaccounts/
+lib/qt6/plugins/kaccounts/ui/
+@so lib/qt6/plugins/kaccounts/ui/nextcloud_plugin_kaccounts.so
+@so lib/qt6/plugins/kaccounts/ui/owncloud_plugin_kaccounts.so
 share/accounts/
 share/accounts/providers/
 share/accounts/providers/kde/
@@ -21,6 +24,7 @@ share/examples/kaccounts-providers/signon-ui/webkit-options.d/identi.ca.conf
 share/examples/kaccounts-providers/signon-ui/webkit-options.d/www.facebook.com.conf
 share/icons/hicolor/256x256/apps/kaccounts-owncloud.png
 share/icons/hicolor/scalable/apps/kaccounts-nextcloud.svg
+share/kpackage/
 share/kpackage/genericqml/
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/
@@ -30,7 +34,6 @@ share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/Services.qml
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/WebLogin.qml
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.desktop
-share/kpackage/genericqml/org.kde.kaccounts.nextcloud/metadata.json
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/
@@ -38,7 +41,6 @@ share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Server.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/Services.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.desktop
-share/kpackage/genericqml/org.kde.kaccounts.owncloud/metadata.json
 share/locale/ar/LC_MESSAGES/kaccounts-providers.mo
 share/locale/az/LC_MESSAGES/kaccounts-providers.mo
 share/locale/bg/LC_MESSAGES/kaccounts-providers.mo
@@ -50,6 +52,7 @@ share/locale/da/LC_MESSAGES/kaccounts-providers.mo
 share/locale/de/LC_MESSAGES/kaccounts-providers.mo
 share/locale/el/LC_MESSAGES/kaccounts-providers.mo
 share/locale/en_GB/LC_MESSAGES/kaccounts-providers.mo
+share/locale/eo/LC_MESSAGES/kaccounts-providers.mo
 share/locale/es/LC_MESSAGES/kaccounts-providers.mo
 share/locale/et/LC_MESSAGES/kaccounts-providers.mo
 share/locale/eu/LC_MESSAGES/kaccounts-providers.mo
@@ -75,15 +78,17 @@ share/locale/ru/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sk/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sl/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sr/LC_MESSAGES/kaccounts-providers.mo
+share/locale/sr@ijekavian/
+share/locale/sr@ijekavian/LC_MESSAGES/
 share/locale/sr@ijekavian/LC_MESSAGES/kaccounts-providers.mo
+share/locale/sr@ijekavianlatin/
+share/locale/sr@ijekavianlatin/LC_MESSAGES/
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sr@latin/LC_MESSAGES/kaccounts-providers.mo
 share/locale/sv/LC_MESSAGES/kaccounts-providers.mo
+share/locale/ta/LC_MESSAGES/kaccounts-providers.mo
 share/locale/tr/LC_MESSAGES/kaccounts-providers.mo
 share/locale/uk/LC_MESSAGES/kaccounts-providers.mo
 share/locale/zh_CN/LC_MESSAGES/kaccounts-providers.mo
 share/locale/zh_TW/LC_MESSAGES/kaccounts-providers.mo
-share/metainfo/
-share/metainfo/org.kde.kaccounts.nextcloud.appdata.xml
-share/metainfo/org.kde.kaccounts.owncloud.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -53,6 +53,7 @@ share/doc/HTML/zh_CN/keditbookmarks/
 share/doc/HTML/zh_CN/keditbookmarks/index.cache.bz2
 share/doc/HTML/zh_CN/keditbookmarks/index.docbook
 share/locale/ar/LC_MESSAGES/keditbookmarks.mo
+share/locale/ast/LC_MESSAGES/keditbookmarks.mo
 share/locale/be/LC_MESSAGES/keditbookmarks.mo
 share/locale/be@latin/LC_MESSAGES/keditbookmarks.mo
 share/locale/bg/LC_MESSAGES/keditbookmarks.mo
@@ -136,4 +137,4 @@ share/locale/wa/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/keditbookmarks.mo
 share/locale/zh_TW/LC_MESSAGES/keditbookmarks.mo
 @tag update-desktop-database
-share/qlogging-categories5/keditbookmarks.categories
+share/qlogging-categories6/keditbookmarks.categories

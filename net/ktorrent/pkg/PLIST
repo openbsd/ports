@@ -4,21 +4,22 @@
 @bin bin/ktorrent
 @bin bin/ktupnptest
 @lib lib/libktcore.so.${LIBktcore_VERSION}
-lib/qt5/plugins/ktorrent_plugins/
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_bwscheduler.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_downloadorder.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_infowidget.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_ipfilter.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_logviewer.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_magnetgenerator.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_mediaplayer.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_scanfolder.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_scanforlostfiles.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_search.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_stats.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_upnp.so
-@so lib/qt5/plugins/ktorrent_plugins/ktorrent_zeroconf.so
+lib/qt6/plugins/ktorrent_plugins/
+@so lib/qt6/plugins/ktorrent_plugins/BandwidthSchedulerPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/DownloadOrderPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/IPFilterPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/InfoWidgetPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/LogViewerPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/MagnetGeneratorPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/MediaPlayerPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/ScanFolderPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/ScanForLostFilesPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/SearchPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/ShutdownPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/StatsPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/SyndicationPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/UPnPPlugin.so
+@so lib/qt6/plugins/ktorrent_plugins/ZeroconfPlugin.so
 share/applications/org.kde.ktorrent.desktop
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2
@@ -56,6 +57,9 @@ share/doc/HTML/ru/ktorrent/index.docbook
 share/doc/HTML/sv/ktorrent/
 share/doc/HTML/sv/ktorrent/index.cache.bz2
 share/doc/HTML/sv/ktorrent/index.docbook
+share/doc/HTML/tr/ktorrent/
+share/doc/HTML/tr/ktorrent/index.cache.bz2
+share/doc/HTML/tr/ktorrent/index.docbook
 share/doc/HTML/uk/ktorrent/
 share/doc/HTML/uk/ktorrent/index.cache.bz2
 share/doc/HTML/uk/ktorrent/index.docbook
@@ -133,7 +137,7 @@ share/icons/hicolor/scalable/actions/kt-magnet.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-download-speed.svgz
 share/icons/hicolor/scalable/actions/kt-set-max-upload-speed.svgz
 share/icons/hicolor/scalable/actions/kt-speed-limits.svgz
-share/knotifications5/ktorrent.notifyrc
+share/knotifications6/ktorrent.notifyrc
 share/ktorrent/
 share/ktorrent/opensearch/
 share/ktorrent/opensearch/btdb.in/
@@ -171,6 +175,7 @@ share/kxmlgui5/ktorrent/ktorrent_downloadorderui.rc
 share/kxmlgui5/ktorrent/ktorrent_magnetgeneratorui.rc
 share/kxmlgui5/ktorrent/ktorrent_mediaplayerui.rc
 share/kxmlgui5/ktorrent/ktorrent_searchui.rc
+share/kxmlgui5/ktorrent/ktorrent_shutdownui.rc
 share/kxmlgui5/ktorrent/ktorrent_syndicationui.rc
 share/kxmlgui5/ktorrent/ktorrentui.rc
 share/kxmlgui5/ktorrent/kttorrentactivityui.rc

@@ -4,12 +4,12 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 
-WANTLIB += ${COMPILER_LIBCXX} KEduVocDocument KF5Attica KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n
-WANTLIB += KF5NewStuffCore KF5Notifications KF5NotifyConfig Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL KEduVocDocument KF6Attica KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
+WANTLIB += KF6NewStuffCore Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets Qt6Xml
+WANTLIB += c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -22,16 +22,16 @@ BUILD_DEPENDS =	graphics/kirigami-addons
 
 RUN_DEPENDS =	graphics/kirigami-addons
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/knewstuff \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/knewstuff \
+		devel/kf6/kdbusaddons \
 		x11/kde-applications/libkeduvocdocument>=${MODKDE_VERSION} \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtquickcontrols2 \
-		x11/qt5/qtsvg
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtsvg
+
 .include <bsd.port.mk>

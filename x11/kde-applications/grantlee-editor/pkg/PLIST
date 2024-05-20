@@ -83,6 +83,10 @@ share/locale/ar/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/ar/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ar/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ar/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/ast/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/ast/LC_MESSAGES/contactthemeeditor.mo
+share/locale/ast/LC_MESSAGES/headerthemeeditor.mo
+share/locale/ast/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/bg/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/bg/LC_MESSAGES/contactthemeeditor.mo
 share/locale/bg/LC_MESSAGES/headerthemeeditor.mo
@@ -116,6 +120,10 @@ share/locale/en_GB/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/contactthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/headerthemeeditor.mo
 share/locale/en_GB/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/eo/LC_MESSAGES/contactprintthemeeditor.mo
+share/locale/eo/LC_MESSAGES/contactthemeeditor.mo
+share/locale/eo/LC_MESSAGES/headerthemeeditor.mo
+share/locale/eo/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/es/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/es/LC_MESSAGES/contactthemeeditor.mo
 share/locale/es/LC_MESSAGES/headerthemeeditor.mo
@@ -140,6 +148,7 @@ share/locale/gl/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/gl/LC_MESSAGES/contactthemeeditor.mo
 share/locale/gl/LC_MESSAGES/headerthemeeditor.mo
 share/locale/gl/LC_MESSAGES/libgrantleethemeeditor.mo
+share/locale/hu/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/hu/LC_MESSAGES/contactthemeeditor.mo
 share/locale/hu/LC_MESSAGES/headerthemeeditor.mo
 share/locale/hu/LC_MESSAGES/libgrantleethemeeditor.mo
@@ -238,6 +247,6 @@ share/locale/zh_TW/LC_MESSAGES/contactprintthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/contactthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/headerthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/libgrantleethemeeditor.mo
-share/qlogging-categories5/grantleeditor.categories
-share/qlogging-categories5/grantleeditor.renamecategories
 @tag update-desktop-database
+share/qlogging-categories6/grantleeditor.categories
+share/qlogging-categories6/grantleeditor.renamecategories

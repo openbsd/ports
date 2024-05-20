@@ -20,33 +20,32 @@ SHARED_LIBS +=  scamconfiguresettings                    2.1 # 5.19.0
 SHARED_LIBS +=  openurlwithconfigure                     2.1 # 5.19.0
 SHARED_LIBS +=  akonadidatasetools                       2.1 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarEvents KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5GuiAddons KF5Holidays
-WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Prison KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextGrammarCheck KF5TextTranslator
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPim5AddressbookImportExport KPim5AkonadiCalendar KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiNotes
-WANTLIB += KPim5AkonadiWidgets KPim5CalendarSupport KPim5CalendarUtils
-WANTLIB += KPim5ContactEditor KPim5EventViews KPim5GrantleeTheme
-WANTLIB += KPim5Gravatar KPim5IMAP KPim5IdentityManagement KPim5IdentityManagementWidgets
-WANTLIB += KPim5ImportWizard KPim5IncidenceEditor KPim5Itinerary
-WANTLIB += KPim5KManageSieve KPim5KSieve KPim5KSieveUi KPim5Libkdepim
-WANTLIB += KPim5Libkleo KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
-WANTLIB += KPim5MailTransport KPim5MessageComposer KPim5MessageCore
-WANTLIB += KPim5MessageViewer KPim5Mime KPim5MimeTreeParser KPim5PimCommon
-WANTLIB += KPim5PimCommonAkonadi KPim5PkPass KPim5TemplateParser
-WANTLIB += KPim5TextEdit KPim5Tnef KPim5WebEngineViewer Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan gpgme
-WANTLIB += gpgmepp m markdown qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6CalendarEvents
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
+WANTLIB += KF6GuiAddons KF6Holidays KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Prison KF6Service KF6Solid KF6SyntaxHighlighting
+WANTLIB += KF6TextAddonsWidgets KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextGrammarCheck KF6TextTemplate
+WANTLIB += KF6TextTranslator KF6TextUtils KF6WidgetsAddons KF6XmlGui
+WANTLIB += KPim6AddressbookImportExport KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiNotes KPim6AkonadiWidgets KPim6CalendarSupport
+WANTLIB += KPim6CalendarUtils KPim6EventViews KPim6GrantleeTheme
+WANTLIB += KPim6Gravatar KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6ImportWizard KPim6IncidenceEditor
+WANTLIB += KPim6Itinerary KPim6KManageSieve KPim6KSieve KPim6KSieveCore
+WANTLIB += KPim6KSieveUi KPim6Libkdepim KPim6Libkleo KPim6MailCommon
+WANTLIB += KPim6MailImporter KPim6MailImporterAkonadi KPim6MailTransport
+WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6MessageViewer
+WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += KPim6PkPass KPim6TemplateParser KPim6TextEdit KPim6Tnef
+WANTLIB += KPim6WebEngineViewer Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml assuan gpgme gpgmepp m markdown qgpgmeqt6
 
-WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -57,41 +56,41 @@ BUILD_DEPENDS =	textproc/libxslt \
 
 RUN_DEPENDS =	x11/gtk+4,-guic
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/kholidays \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/prison \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/syntax-highlighting \
-		devel/libinotify \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdeclarative \
+		devel/kf6/kguiaddons \
+		devel/kf6/kholidays \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/prison \
+		devel/kf6/solid \
+		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \
-		security/gpgme \
+		security/libassuan \
 		textproc/discount \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-import-wizard>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
 		x11/kde-applications/eventviews>=${MODKDE_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
@@ -114,11 +113,10 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/mailimporter>=${MODKDE_VERSION} \
 		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
-		security/libassuan \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
 

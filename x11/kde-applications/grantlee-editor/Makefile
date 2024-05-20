@@ -5,23 +5,21 @@ DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5SyntaxHighlighting
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
-WANTLIB += KPim5ContactEditor KPim5GrantleeTheme KPim5Libkleo
-WANTLIB += KPim5MessageCore KPim5MessageViewer KPim5Mime KPim5MimeTreeParser
-WANTLIB += KPim5PimCommon KPim5TextEdit Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 assuan c
-WANTLIB += gpgme gpgmepp m qgpgme
 
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6ItemModels
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
+WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6GrantleeTheme KPim6Libkleo KPim6MessageCore KPim6MessageViewer
+WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += assuan c gpgme gpgmepp m qgpgmeqt6
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -30,40 +28,45 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/kf5/ktexteditor
+		devel/kf6/ktexteditor
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/syntax-highlighting \
-		devel/libinotify \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		security/libassuan \
+		textproc/ktextaddons \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
 		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
-		x11/qt5/qtlocation \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 

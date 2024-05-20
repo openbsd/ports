@@ -2,52 +2,44 @@ COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5TextEdit             1.1 # 0.0
+SHARED_LIBS +=	KPim6TextEdit             0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5SyntaxHighlighting
-WANTLIB += KF5TextEditTextToSpeech KF5TextEmoticonsCore KF5TextEmoticonsWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 m
-
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Service KF6Solid KF6SonnetCore KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextEmoticonsCore
+WANTLIB += KF6TextEmoticonsWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/kf5/ktextwidgets \
-		devel/kf5/kdesignerplugin \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/solid \
-		x11/qt5/qttools
+BUILD_DEPENDS =	devel/kf6/ktextwidgets \
+		devel/kf6/kiconthemes \
+		devel/kf6/kitemviews
 
-RUN_DEPENDS =	devel/kf5/ktextwidgets \
-		devel/kf5/kdesignerplugin \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemviews \
-		devel/kf5/solid \
-		x11/qt5/qttools
+RUN_DEPENDS =	devel/kf6/ktextwidgets \
+		devel/kf6/kiconthemes \
+		devel/kf6/kitemviews
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		devel/libinotify \
-		devel/kf5/syntax-highlighting \
+LIB_DEPENDS =	devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		textproc/ktextaddons
 
 TEST_IS_INTERACTIVE =	X11

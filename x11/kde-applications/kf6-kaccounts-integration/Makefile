@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	library and QML module for Accounts-SSO and SignOn-SSO
 
 DISTNAME =	kaccounts-integration-${VERSION}

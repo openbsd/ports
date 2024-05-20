@@ -2,9 +2,9 @@
 @bin bin/kalarmautostart
 @lib lib/libkalarmcalendar.so.${LIBkalarmcalendar_VERSION}
 @lib lib/libkalarmplugin.so.${LIBkalarmplugin_VERSION}
-lib/qt5/plugins/pim5/kalarm/
-@so lib/qt5/plugins/pim5/kalarm/akonadiplugin.so
-@bin libexec/kauth/kalarm_helper
+lib/qt6/plugins/pim6/kalarm/
+@so lib/qt6/plugins/pim6/kalarm/akonadiplugin.so
+@bin libexec/kf6/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
@@ -62,10 +62,6 @@ share/examples/kalarm/xdg/
 share/examples/kalarm/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
-share/icons/breeze-dark/actions/16/show-today.svg
-share/icons/breeze-dark/actions/22/show-today.svg
-share/icons/breeze/actions/16/show-today.svg
-share/icons/breeze/actions/22/show-today.svg
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png
@@ -78,24 +74,14 @@ share/kalarm/icons/oxygen/
 share/kalarm/icons/oxygen/16x16/
 share/kalarm/icons/oxygen/16x16/actions/
 share/kalarm/icons/oxygen/16x16/actions/document-new-from-template.png
-share/kalarm/icons/oxygen/16x16/actions/new-audio-alarm.png
-share/kalarm/icons/oxygen/16x16/actions/new-command-alarm.png
-share/kalarm/icons/oxygen/16x16/actions/show-today.svg
 share/kalarm/icons/oxygen/22x22/
 share/kalarm/icons/oxygen/22x22/actions/
 share/kalarm/icons/oxygen/22x22/actions/document-new-from-template.png
-share/kalarm/icons/oxygen/22x22/actions/kalarm-disabled.png
-share/kalarm/icons/oxygen/22x22/actions/kalarm-partdisabled.png
 share/kalarm/icons/oxygen/22x22/actions/kalarm.png
-share/kalarm/icons/oxygen/22x22/actions/new-audio-alarm.png
-share/kalarm/icons/oxygen/22x22/actions/new-command-alarm.png
-share/kalarm/icons/oxygen/22x22/actions/show-today.svg
-share/knotifications5/kalarm.notifyrc
-share/kxmlgui5/
-share/kxmlgui5/kalarm/
-share/kxmlgui5/kalarm/kalarmui.rc
+share/knotifications6/kalarm.notifyrc
 share/locale/af/LC_MESSAGES/kalarm.mo
 share/locale/ar/LC_MESSAGES/kalarm.mo
+share/locale/ast/LC_MESSAGES/kalarm.mo
 share/locale/be/LC_MESSAGES/kalarm.mo
 share/locale/bg/LC_MESSAGES/kalarm.mo
 share/locale/br/LC_MESSAGES/kalarm.mo
@@ -169,11 +155,12 @@ share/locale/wa/LC_MESSAGES/kalarm.mo
 share/locale/xh/LC_MESSAGES/kalarm.mo
 share/locale/zh_CN/LC_MESSAGES/kalarm.mo
 share/locale/zh_TW/LC_MESSAGES/kalarm.mo
+share/metainfo/
 share/metainfo/org.kde.kalarm.appdata.xml
 share/polkit-1/actions/org.kde.kalarm.rtcwake.policy
-share/qlogging-categories5/kalarm.categories
-share/qlogging-categories5/kalarm.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/breeze-dark
 @tag gtk-update-icon-cache %D/share/icons/breeze
+share/qlogging-categories6/kalarm.categories
+share/qlogging-categories6/kalarm.renamecategories

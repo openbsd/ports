@@ -4,13 +4,12 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kturtle
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5I18n KF5KIOCore KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5NewStuffWidgets KF5Service KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6I18n KF6KIOCore KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -19,19 +18,20 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/knewstuff \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		x11/qt5/qtsvg
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/knewstuff \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		x11/qt6/qt5compat \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

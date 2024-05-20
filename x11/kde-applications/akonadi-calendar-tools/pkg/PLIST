@@ -45,6 +45,8 @@ share/icons/hicolor/32x32/apps/konsolekalendar.png
 share/icons/hicolor/48x48/apps/konsolekalendar.png
 share/locale/ar/LC_MESSAGES/calendarjanitor.mo
 share/locale/ar/LC_MESSAGES/konsolekalendar.mo
+share/locale/ast/LC_MESSAGES/calendarjanitor.mo
+share/locale/ast/LC_MESSAGES/konsolekalendar.mo
 share/locale/az/LC_MESSAGES/calendarjanitor.mo
 share/locale/az/LC_MESSAGES/konsolekalendar.mo
 share/locale/be/LC_MESSAGES/konsolekalendar.mo
@@ -68,6 +70,7 @@ share/locale/el/LC_MESSAGES/calendarjanitor.mo
 share/locale/el/LC_MESSAGES/konsolekalendar.mo
 share/locale/en_GB/LC_MESSAGES/calendarjanitor.mo
 share/locale/en_GB/LC_MESSAGES/konsolekalendar.mo
+share/locale/eo/LC_MESSAGES/calendarjanitor.mo
 share/locale/eo/LC_MESSAGES/konsolekalendar.mo
 share/locale/es/LC_MESSAGES/calendarjanitor.mo
 share/locale/es/LC_MESSAGES/konsolekalendar.mo
@@ -84,6 +87,7 @@ share/locale/fy/LC_MESSAGES/konsolekalendar.mo
 share/locale/ga/LC_MESSAGES/konsolekalendar.mo
 share/locale/gl/LC_MESSAGES/calendarjanitor.mo
 share/locale/gl/LC_MESSAGES/konsolekalendar.mo
+share/locale/he/LC_MESSAGES/calendarjanitor.mo
 share/locale/he/LC_MESSAGES/konsolekalendar.mo
 share/locale/hi/LC_MESSAGES/calendarjanitor.mo
 share/locale/hi/LC_MESSAGES/konsolekalendar.mo
@@ -152,7 +156,7 @@ share/locale/zh_CN/LC_MESSAGES/calendarjanitor.mo
 share/locale/zh_CN/LC_MESSAGES/konsolekalendar.mo
 share/locale/zh_TW/LC_MESSAGES/calendarjanitor.mo
 share/locale/zh_TW/LC_MESSAGES/konsolekalendar.mo
-share/qlogging-categories5/console.categories
-share/qlogging-categories5/console.renamecategories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/console.categories
+share/qlogging-categories6/console.renamecategories

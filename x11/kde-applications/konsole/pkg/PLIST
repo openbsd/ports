@@ -7,10 +7,11 @@ lib/kconf_update_bin/
 @bin lib/kconf_update_bin/konsole_show_menubar
 @lib lib/libkonsoleapp.so.${LIBkonsoleapp_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
-@so lib/qt5/plugins/konsolepart.so
-lib/qt5/plugins/konsoleplugins/
-@so lib/qt5/plugins/konsoleplugins/konsole_quickcommandsplugin.so
-@so lib/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/konsolepart.so
+lib/qt6/plugins/konsoleplugins/
+@so lib/qt6/plugins/konsoleplugins/konsole_quickcommandsplugin.so
+@so lib/qt6/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 share/applications/org.kde.konsole.desktop
 share/doc/HTML/ca/konsole/
 share/doc/HTML/ca/konsole/draganddrop-contextmenu.png
@@ -49,6 +50,9 @@ share/doc/HTML/sr@latin/konsole/index.docbook
 share/doc/HTML/sv/konsole/
 share/doc/HTML/sv/konsole/index.cache.bz2
 share/doc/HTML/sv/konsole/index.docbook
+share/doc/HTML/tr/konsole/
+share/doc/HTML/tr/konsole/index.cache.bz2
+share/doc/HTML/tr/konsole/index.docbook
 share/doc/HTML/uk/konsole/
 share/doc/HTML/uk/konsole/draganddrop-contextmenu.png
 share/doc/HTML/uk/konsole/index.cache.bz2
@@ -61,6 +65,7 @@ share/examples/konsole/
 share/examples/konsole/xdg/
 share/examples/konsole/xdg/konsolerc
 @sample ${SYSCONFDIR}/xdg/konsolerc
+share/kconf_update/
 share/kconf_update/konsole.upd
 share/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
 share/kglobalaccel/
@@ -68,7 +73,7 @@ share/kglobalaccel/org.kde.konsole.desktop
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/konsolerun.desktop
-share/knotifications5/konsole.notifyrc
+share/knotifications6/konsole.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/konsole.knsrc
 share/konsole/
@@ -91,10 +96,9 @@ share/konsole/default.keytab
 share/konsole/linux.keytab
 share/konsole/macos.keytab
 share/konsole/solaris.keytab
-share/kservices5/konsolepart.desktop
-share/kservicetypes5/terminalemulator.desktop
 share/locale/af/LC_MESSAGES/konsole.mo
 share/locale/ar/LC_MESSAGES/konsole.mo
+share/locale/ast/LC_MESSAGES/konsole.mo
 share/locale/az/LC_MESSAGES/konsole.mo
 share/locale/be/LC_MESSAGES/konsole.mo
 share/locale/be@latin/LC_MESSAGES/konsole.mo
@@ -187,6 +191,6 @@ share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo
 share/metainfo/
 share/metainfo/org.kde.konsole.appdata.xml
-share/qlogging-categories5/konsole.categories
 @tag update-desktop-database
+share/qlogging-categories6/konsole.categories
 share/zsh/site-functions/_konsole

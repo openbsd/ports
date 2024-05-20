@@ -8,25 +8,24 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_ICON_CACHE = yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Declarative
-WANTLIB += KF5I18n KF5KIOCore KF5Package KF5Service Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5Xml accounts-qt5 kaccounts m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n KF6KIOCore
+WANTLIB += KF6Package Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
+WANTLIB += Qt6Xml accounts-qt6 kaccounts6 m
 
 MODULES +=	textproc/intltool
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdeclarative \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kpackage \
-		devel/kf5/kservice \
-		x11/kde-applications/kaccounts-integration>=${MODKDE_VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+LIB_DEPENDS =	devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kpackage \
+		net/libaccounts-qt,qt6 \
+		x11/kde-applications/kf6-kaccounts-integration>=${MODKDE_VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
 

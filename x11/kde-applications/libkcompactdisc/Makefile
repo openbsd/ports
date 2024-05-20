@@ -1,7 +1,11 @@
 COMMENT =	library for interfacing with CDs
+
 DISTNAME =	libkcompactdisc-${VERSION}
 PKGNAME =	libkcompactdisc-kf5-${VERSION}
+
 CATEGORIES =	devel multimedia
+
+MODKDE_KF5 =	yes
 
 SHARED_LIBS +=  KF5CompactDisc            2.0 # 5.0
 

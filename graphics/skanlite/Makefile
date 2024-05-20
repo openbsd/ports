@@ -7,6 +7,7 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://kde.org/applications/graphics/org.kde.skanlite
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+EXTRACT_SUFX =	.tar.xz
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -22,6 +23,8 @@ WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODULES =	x11/kde-applications \
 		devel/kf5
+
+MODEKDE_KF5 =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
@@ -40,6 +43,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		x11/kde-applications/libksane>=${MODKDE_VERSION}

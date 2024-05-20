@@ -1,7 +1,7 @@
 @pkgpath x11/kde4/kmplot
 @bin bin/kmplot
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/kmplotpart.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/kmplotpart.so
 @man man/man1/kmplot.1
 share/applications/org.kde.kmplot.desktop
 share/config.kcfg/
@@ -237,12 +237,6 @@ share/icons/hicolor/32x32/apps/kmplot.png
 share/icons/hicolor/48x48/apps/kmplot.png
 share/icons/hicolor/64x64/apps/kmplot.png
 share/icons/hicolor/scalable/apps/kmplot.svgz
-share/kservices5/kmplot_part.desktop
-share/kxmlgui5/
-share/kxmlgui5/kmplot/
-share/kxmlgui5/kmplot/kmplot_part.rc
-share/kxmlgui5/kmplot/kmplot_part_readonly.rc
-share/kxmlgui5/kmplot/kmplot_shell.rc
 share/locale/af/LC_MESSAGES/kmplot.mo
 share/locale/ar/LC_MESSAGES/kmplot.mo
 share/locale/be/LC_MESSAGES/kmplot.mo

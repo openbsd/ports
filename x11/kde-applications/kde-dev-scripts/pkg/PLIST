@@ -1,5 +1,6 @@
 @pkgpath x11/kde4/dev-scripts
 bin/adddebug
+bin/addmocincludes
 bin/build-progress.sh
 bin/c++-copy-class-and-file
 bin/c++-rename-class-and-file
@@ -45,8 +46,8 @@ bin/nonsvnlist
 bin/optimizegraphics
 bin/package_crystalsvg
 bin/png2mng.pl
+bin/port_new_gitlab_ci_template.sh
 bin/pruneemptydirs
-bin/qtdoc
 bin/reviewboard-am
 bin/svn-clean
 bin/svnbackport
@@ -75,7 +76,6 @@ bin/zonetab2pot.py
 @man man/man1/extractrc.1
 @man man/man1/fixincludes.1
 @man man/man1/pruneemptydirs.1
-@man man/man1/qtdoc.1
 @man man/man1/zonetab2pot.py.1
 share/uncrustify/
 share/uncrustify/uncrustify-kf5.cfg

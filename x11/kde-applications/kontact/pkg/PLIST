@@ -1,16 +1,13 @@
 @bin bin/kontact
 @lib lib/libkontactprivate.so.${LIBkontactprivate_VERSION}
-lib/qt5/plugins/pim5/kcms/kontact/
-@so lib/qt5/plugins/pim5/kcms/kontact/kcm_kontact.so
+lib/qt6/plugins/pim6/kcms/kontact/
+@so lib/qt6/plugins/pim6/kcms/kontact/kcm_kontact.so
 share/applications/org.kde.kontact.desktop
 share/config.kcfg/kontact.kcfg
 share/dbus-1/services/org.kde.kontact.service
 share/doc/HTML/ca/kontact/
 share/doc/HTML/ca/kontact/index.cache.bz2
 share/doc/HTML/ca/kontact/index.docbook
-share/doc/HTML/de/kontact/
-share/doc/HTML/de/kontact/index.cache.bz2
-share/doc/HTML/de/kontact/index.docbook
 share/doc/HTML/en/kontact/
 share/doc/HTML/en/kontact/calendar-sidebar-icon.png
 share/doc/HTML/en/kontact/configuration-main.png
@@ -44,15 +41,9 @@ share/doc/HTML/it/kontact/index.docbook
 share/doc/HTML/nl/kontact/
 share/doc/HTML/nl/kontact/index.cache.bz2
 share/doc/HTML/nl/kontact/index.docbook
-share/doc/HTML/pt/kontact/
-share/doc/HTML/pt/kontact/index.cache.bz2
-share/doc/HTML/pt/kontact/index.docbook
 share/doc/HTML/pt_BR/kontact/
 share/doc/HTML/pt_BR/kontact/index.cache.bz2
 share/doc/HTML/pt_BR/kontact/index.docbook
-share/doc/HTML/ru/kontact/
-share/doc/HTML/ru/kontact/index.cache.bz2
-share/doc/HTML/ru/kontact/index.docbook
 share/doc/HTML/sv/kontact/
 share/doc/HTML/sv/kontact/index.cache.bz2
 share/doc/HTML/sv/kontact/index.docbook
@@ -68,6 +59,7 @@ share/icons/hicolor/64x64/apps/kontact.png
 share/icons/hicolor/scalable/apps/kontact.svg
 share/locale/af/LC_MESSAGES/kontact.mo
 share/locale/ar/LC_MESSAGES/kontact.mo
+share/locale/ast/LC_MESSAGES/kontact.mo
 share/locale/az/LC_MESSAGES/kontact.mo
 share/locale/be/LC_MESSAGES/kontact.mo
 share/locale/bg/LC_MESSAGES/kontact.mo
@@ -140,8 +132,9 @@ share/locale/zh_CN/LC_MESSAGES/kontact.mo
 share/locale/zh_TW/LC_MESSAGES/kontact.mo
 share/messageviewer/about/default/introduction_kontact.html
 share/messageviewer/about/default/loading_kontact.html
+share/metainfo/
 share/metainfo/org.kde.kontact.appdata.xml
-share/qlogging-categories5/kontact.categories
-share/qlogging-categories5/kontact.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kontact.categories
+share/qlogging-categories6/kontact.renamecategories

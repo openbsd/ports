@@ -1,7 +1,7 @@
 @conflict kdewebdev-<=4
 @bin bin/kimagemapeditor
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/kimagemapeditorpart.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/kimagemapeditorpart.so
 share/applications/org.kde.kimagemapeditor.desktop
 share/doc/HTML/ca/kimagemapeditor/
 share/doc/HTML/ca/kimagemapeditor/configure.png
@@ -77,7 +77,6 @@ share/kimagemapeditor/addpointcursor.png
 share/kimagemapeditor/freehandcursor.png
 share/kimagemapeditor/polygoncursor.png
 share/kimagemapeditor/removepointcursor.png
-share/kservices5/kimagemapeditorpart.desktop
 share/locale/ar/LC_MESSAGES/kimagemapeditor.mo
 share/locale/be/LC_MESSAGES/kimagemapeditor.mo
 share/locale/bg/LC_MESSAGES/kimagemapeditor.mo
@@ -140,6 +139,6 @@ share/locale/zh_HK/LC_MESSAGES/kimagemapeditor.mo
 share/locale/zh_TW/LC_MESSAGES/kimagemapeditor.mo
 share/metainfo/
 share/metainfo/org.kde.kimagemapeditor.appdata.xml
-share/qlogging-categories5/kimagemapeditor.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kimagemapeditor.categories

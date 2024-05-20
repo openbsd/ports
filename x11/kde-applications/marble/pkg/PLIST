@@ -2132,3 +2132,4 @@ share/plasma/wallpapers/org.kde.plasma.worldmap/metadata.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+share/qlogging-categories5/marble.categories

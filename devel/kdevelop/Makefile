@@ -3,9 +3,8 @@ USE_WXNEEDED =		Yes
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
-
 DISTNAME =	kdevelop-${MODKDE_VERSION}
-REVISION =	1
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -45,10 +44,10 @@ WANTLIB += Kasten4Controllers Kasten4Core Kasten4Gui Kasten4Okteta2Controllers
 WANTLIB += Kasten4Okteta2Core Kasten4Okteta2Gui Okteta3Core Okteta3Gui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5Test Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += X11 apr-1 aprutil-1 c komparediff2 m svn_client-1 svn_fs-1
-WANTLIB += svn_ra-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 apr-1 aprutil-1
+WANTLIB += c komparediff2 m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1
+WANTLIB += svn_subr-1 svn_wc-1
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -57,6 +56,7 @@ MODULES =	x11/kde-applications \
 		lang/clang \
 		lang/python
 
+MODKDE_KF5 =		Yes
 MODCLANG_COMPILER_LINKS=No
 MODCLANG_BUILDDEP=	No
 MODPY_BUILDDEP =	No
@@ -78,13 +78,21 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic \
 		x11/kde-applications/kate>=${MODKDE_VERSION} \
-		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
 		x11/kde-applications/konsole
 
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
+		devel/apr \
+		devel/apr-util \
+		devel/kf5/attica \
 		devel/kf5/karchive \
+		devel/kf5/kauth \
+		devel/kf5/kbookmarks \
 		devel/kf5/kcmutils \
+		devel/kf5/kcodecs \
+		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/kdeclarative \
 		devel/kf5/kguiaddons \
@@ -97,20 +105,29 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		devel/kf5/knewstuff \
 		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
+		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/krunner \
 		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
+		devel/kf5/ktextwidgets \
+		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/plasma-framework \
 		devel/kf5/purpose \
+		devel/kf5/solid \
+		devel/kf5/sonnet \
+		devel/kf5/syntax-highlighting \
 		devel/kf5/threadweaver \
 		devel/subversion \
 		x11/grantlee-qt5>=5.3 \
 		x11/kde-applications/libkomparediff2>=${MODKDE_VERSION} \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qtdeclarative \
+		x11/qt5/qtlocation \
 		x11/qt5/qttools \
+		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11

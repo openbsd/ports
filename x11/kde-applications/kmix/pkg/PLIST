@@ -3,6 +3,7 @@
 @bin bin/kmixctrl
 bin/kmixremote
 @lib lib/libkmixcore.so.${LIBkmixcore_VERSION}
+lib/qt5/plugins/kf5/kded/
 @so lib/qt5/plugins/kf5/kded/kmixd.so
 share/applications/org.kde.kmix.desktop
 share/config.kcfg/
@@ -77,6 +78,7 @@ share/doc/HTML/nl/kmix/index.docbook
 share/doc/HTML/pt/kmix/
 share/doc/HTML/pt/kmix/index.cache.bz2
 share/doc/HTML/pt/kmix/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kmix/
 share/doc/HTML/pt_BR/kmix/index.cache.bz2
 share/doc/HTML/pt_BR/kmix/index.docbook
@@ -90,6 +92,7 @@ share/doc/HTML/ru/kmix/index.docbook
 share/doc/HTML/sr/kmix/
 share/doc/HTML/sr/kmix/index.cache.bz2
 share/doc/HTML/sr/kmix/index.docbook
+share/doc/HTML/sr@latin/
 share/doc/HTML/sr@latin/kmix/
 share/doc/HTML/sr@latin/kmix/index.cache.bz2
 share/doc/HTML/sr@latin/kmix/index.docbook
@@ -147,7 +150,9 @@ share/kmix/profiles/MPRIS2.default.xml
 share/kmix/profiles/OSS.default.xml
 share/kmix/profiles/PulseAudio.default.xml
 share/kmix/profiles/SUNAudio.default.xml
+share/knotifications5/
 share/knotifications5/kmix.notifyrc
+share/kservices5/
 share/kservices5/kmixctrl_restore.desktop
 share/kxmlgui5/
 share/kxmlgui5/kmix/

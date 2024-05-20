@@ -2,19 +2,17 @@ COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KPim5IMAP                 0.0 # 0.0
+SHARED_LIBS +=	KPim6IMAP                 0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service KPim5Mime Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Network m sasl2
+WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons KF6I18n KF6KIOCore
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Network m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kservice \
+LIB_DEPENDS =	 \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
 		security/cyrus-sasl2 \
 		x11/kde-applications/kmime>=${MODKDE_VERSION}
 

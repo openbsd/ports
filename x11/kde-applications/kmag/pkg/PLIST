@@ -52,6 +52,7 @@ share/doc/HTML/uk/kmag/index.docbook
 share/doc/HTML/uk/kmag/screenshot.png
 share/icons/hicolor/16x16/apps/kmag.png
 share/icons/hicolor/32x32/apps/kmag.png
+share/icons/hicolor/scalable/apps/kmag.svg
 share/kmag/
 share/kmag/icons/
 share/kmag/icons/hicolor/
@@ -61,6 +62,7 @@ share/kmag/icons/hicolor/16x16/actions/followmouse.png
 share/kmag/icons/hicolor/16x16/actions/hidemouse.png
 share/kmag/icons/hicolor/16x16/actions/window.png
 share/locale/ar/LC_MESSAGES/kmag.mo
+share/locale/ast/LC_MESSAGES/kmag.mo
 share/locale/be/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/br/LC_MESSAGES/kmag.mo

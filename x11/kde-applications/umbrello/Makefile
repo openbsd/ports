@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
 CATEGORIES =	x11 productivity
-REVISION =	0
 
 HOMEPAGE =	https://umbrello.kde.org/
 
@@ -23,6 +22,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODCLANG_COMPILER_LINKS = no
+
+MODKDE_KF5 = yes
 
 MODULES +=	lang/clang lang/python
 
@@ -48,6 +49,8 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/ktextwidgets \
 		devel/kf5/syntax-highlighting \
 		textproc/libxml \
 		textproc/libxslt \

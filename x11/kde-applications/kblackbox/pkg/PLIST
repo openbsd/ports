@@ -30,6 +30,7 @@ share/doc/HTML/nl/kblackbox/index.docbook
 share/doc/HTML/pt/kblackbox/
 share/doc/HTML/pt/kblackbox/index.cache.bz2
 share/doc/HTML/pt/kblackbox/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kblackbox/
 share/doc/HTML/pt_BR/kblackbox/index.cache.bz2
 share/doc/HTML/pt_BR/kblackbox/index.docbook
@@ -51,6 +52,7 @@ share/kblackbox/pics/
 share/kblackbox/pics/kblackbox.svgz
 share/locale/af/LC_MESSAGES/kblackbox.mo
 share/locale/ar/LC_MESSAGES/kblackbox.mo
+share/locale/ast/LC_MESSAGES/kblackbox.mo
 share/locale/be/LC_MESSAGES/kblackbox.mo
 share/locale/bg/LC_MESSAGES/kblackbox.mo
 share/locale/bn/LC_MESSAGES/kblackbox.mo
@@ -78,6 +80,7 @@ share/locale/hi/LC_MESSAGES/kblackbox.mo
 share/locale/hne/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hu/LC_MESSAGES/kblackbox.mo
+share/locale/ia/LC_MESSAGES/kblackbox.mo
 share/locale/id/LC_MESSAGES/kblackbox.mo
 share/locale/is/LC_MESSAGES/kblackbox.mo
 share/locale/it/LC_MESSAGES/kblackbox.mo

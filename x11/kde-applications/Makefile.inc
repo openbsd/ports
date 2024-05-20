@@ -14,8 +14,14 @@ MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 # module port, and breaks build.
 CONFIGURE_STYLE =	cmake
 
+.if defined(MODKDE_KF5) && ${MODKDE_KF5:L} == "yes"
+MODULES +=		devel/kf5
+.else
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
+MODULES +=		devel/kf6
+.endif
+
 MODULES :=		x11/kde-applications \
-			devel/kf5 \
 			${MODULES}
 
 # usual KDE rules:
@@ -25,6 +31,7 @@ PERMIT_PACKAGE ?=	Yes
 VERSION ?=		${MODKDE_VERSION}
 
 SITES ?=		${SITE_KDE:=stable/release-service/${VERSION}/src/}
+EXTRACT_SUFX ?=		.tar.xz
 
 RUN_DEPENDS +=		${MODKDE5_RUN_DEPENDS}
 BUILD_DEPENDS +=	${MODKDE5_BUILD_DEPENDS}

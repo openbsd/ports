@@ -36,12 +36,10 @@ share/doc/HTML/pl/knavalbattle/index.docbook
 share/doc/HTML/pt/knavalbattle/
 share/doc/HTML/pt/knavalbattle/index.cache.bz2
 share/doc/HTML/pt/knavalbattle/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/knavalbattle/
 share/doc/HTML/pt_BR/knavalbattle/index.cache.bz2
 share/doc/HTML/pt_BR/knavalbattle/index.docbook
-share/doc/HTML/ru/knavalbattle/
-share/doc/HTML/ru/knavalbattle/index.cache.bz2
-share/doc/HTML/ru/knavalbattle/index.docbook
 share/doc/HTML/sv/knavalbattle/
 share/doc/HTML/sv/knavalbattle/index.cache.bz2
 share/doc/HTML/sv/knavalbattle/index.docbook
@@ -66,6 +64,7 @@ share/knavalbattle/sounds/ship-player2-shoot.ogg
 share/knavalbattle/sounds/ship-sink.ogg
 share/locale/af/LC_MESSAGES/knavalbattle.mo
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
+share/locale/ast/LC_MESSAGES/knavalbattle.mo
 share/locale/be/LC_MESSAGES/knavalbattle.mo
 share/locale/bg/LC_MESSAGES/knavalbattle.mo
 share/locale/bn/LC_MESSAGES/knavalbattle.mo
@@ -94,6 +93,7 @@ share/locale/hi/LC_MESSAGES/knavalbattle.mo
 share/locale/hne/LC_MESSAGES/knavalbattle.mo
 share/locale/hr/LC_MESSAGES/knavalbattle.mo
 share/locale/hu/LC_MESSAGES/knavalbattle.mo
+share/locale/ia/LC_MESSAGES/knavalbattle.mo
 share/locale/id/LC_MESSAGES/knavalbattle.mo
 share/locale/is/LC_MESSAGES/knavalbattle.mo
 share/locale/it/LC_MESSAGES/knavalbattle.mo
@@ -143,4 +143,4 @@ share/metainfo/
 share/metainfo/org.kde.knavalbattle.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-share/qlogging-categories5/knavalbattle.categories
+share/qlogging-categories6/knavalbattle.categories

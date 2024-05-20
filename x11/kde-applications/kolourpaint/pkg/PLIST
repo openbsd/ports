@@ -368,9 +368,6 @@ share/kolourpaint/icons/hicolor/scalable/actions/tool_rectangle.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_rounded_rectangle.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_spraycan.svgz
 share/kolourpaint/icons/hicolor/scalable/actions/tool_text.svgz
-share/kxmlgui5/
-share/kxmlgui5/kolourpaint/
-share/kxmlgui5/kolourpaint/kolourpaintui.rc
 share/locale/ar/LC_MESSAGES/kolourpaint.mo
 share/locale/be/LC_MESSAGES/kolourpaint.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo

@@ -88,14 +88,6 @@ share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/scalable/apps/lokalize.svgz
 share/knotifications5/lokalize.notifyrc
-share/kxmlgui5/
-share/kxmlgui5/lokalize/
-share/kxmlgui5/lokalize/editorui.rc
-share/kxmlgui5/lokalize/filesearchtabui.rc
-share/kxmlgui5/lokalize/lokalizemainwindowui.rc
-share/kxmlgui5/lokalize/projectmanagerui.rc
-share/kxmlgui5/lokalize/scriptsui.rc
-share/kxmlgui5/lokalize/translationmemoryrui.rc
 share/locale/ar/LC_MESSAGES/lokalize.mo
 share/locale/az/LC_MESSAGES/lokalize.mo
 share/locale/be/LC_MESSAGES/lokalize.mo

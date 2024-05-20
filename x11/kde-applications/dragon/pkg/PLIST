@@ -1,7 +1,7 @@
 @pkgpath x11/kde4/dragon
 @bin bin/dragon
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/dragonpart.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/dragonpart.so
 @man man/man1/dragon.1
 man/sr@latin/
 man/sr@latin/man1/
@@ -105,9 +105,11 @@ share/icons/oxygen/48x48/actions/player-volume-muted.png
 share/icons/oxygen/scalable/
 share/icons/oxygen/scalable/actions/
 share/icons/oxygen/scalable/actions/player-volume-muted.svgz
-share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/dragonplayer_play_dvd.desktop
+share/kio/
+share/kio/servicemenus/
+share/kio/servicemenus/dragonplayer_play_dvd.desktop
 share/locale/ar/LC_MESSAGES/dragonplayer.mo
+share/locale/ast/LC_MESSAGES/dragonplayer.mo
 share/locale/be/LC_MESSAGES/dragonplayer.mo
 share/locale/bg/LC_MESSAGES/dragonplayer.mo
 share/locale/bs/LC_MESSAGES/dragonplayer.mo

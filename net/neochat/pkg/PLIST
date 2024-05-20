@@ -4,11 +4,12 @@
 share/applications/org.kde.neochat.desktop
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
-share/knotifications5/neochat.notifyrc
+share/knotifications6/neochat.notifyrc
 share/krunner/
 share/krunner/dbusplugins/
 share/krunner/dbusplugins/plasma-runner-neochat.desktop
 share/locale/ar/LC_MESSAGES/neochat.mo
+share/locale/ast/LC_MESSAGES/neochat.mo
 share/locale/az/LC_MESSAGES/neochat.mo
 share/locale/ca/LC_MESSAGES/neochat.mo
 share/locale/ca@valencia/LC_MESSAGES/neochat.mo
@@ -17,6 +18,7 @@ share/locale/da/LC_MESSAGES/neochat.mo
 share/locale/de/LC_MESSAGES/neochat.mo
 share/locale/el/LC_MESSAGES/neochat.mo
 share/locale/en_GB/LC_MESSAGES/neochat.mo
+share/locale/eo/LC_MESSAGES/neochat.mo
 share/locale/es/LC_MESSAGES/neochat.mo
 share/locale/eu/LC_MESSAGES/neochat.mo
 share/locale/fi/LC_MESSAGES/neochat.mo
@@ -51,4 +53,4 @@ share/metainfo/
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 share/metainfo/org.kde.neochat.appdata.xml
-share/qlogging-categories5/neochat.categories
+share/qlogging-categories6/neochat.categories

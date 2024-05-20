@@ -1,29 +1,29 @@
 COMMENT =	widgets for Baloo
 DISTNAME =	baloo-widgets-${VERSION}
-PKGNAME =	baloo-widgets-kf5-${VERSION}
+PKGNAME =	kf6-baloo-widgets-${VERSION}
 CATEGORIES =	devel x11
 
-SHARED_LIBS +=  KF5BalooWidgets       2.1 # 19.12.3
+SHARED_LIBS +=	KF6BalooWidgets           0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Baloo KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5CoreAddons KF5FileMetaData KF5I18n
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service
-WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Baloo KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6FileMetaData KF6I18n
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
+WANTLIB += KF6Solid KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Widgets c m
 
 MODKDE5_TRANSLATIONS = yes
 
-LIB_DEPENDS =	devel/kf5/baloo \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kfilemetadata \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons
+LIB_DEPENDS =	devel/kf6/baloo \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kfilemetadata \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/solid \
+		devel/kf6/kwidgetsaddons
 
 TEST_IS_INTERACTIVE =	X11
 

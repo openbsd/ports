@@ -1,53 +1,67 @@
-@so lib/qt5/plugins/kaccounts/daemonplugins/gdrive.so
-@so lib/qt5/plugins/kf5/kfileitemaction/gdrivecontextmenuaction.so
-@so lib/qt5/plugins/kf5/kio/gdrive.so
-lib/qt5/plugins/kf5/propertiesdialog/
-@so lib/qt5/plugins/kf5/propertiesdialog/gdrivepropertiesplugin.so
-@so lib/qt5/plugins/kf5/purpose/purpose_gdrive.so
+@so lib/qt6/plugins/kaccounts/daemonplugins/gdrive.so
+@so lib/qt6/plugins/kf6/kfileitemaction/gdrivecontextmenuaction.so
+@so lib/qt6/plugins/kf6/kio/gdrive.so
+lib/qt6/plugins/kf6/propertiesdialog/
+@so lib/qt6/plugins/kf6/propertiesdialog/gdrivepropertiesplugin.so
+@so lib/qt6/plugins/kf6/purpose/purpose_gdrive.so
 share/accounts/services/kde/google-drive.service
+share/doc/HTML/ca/kioslave5/
 share/doc/HTML/ca/kioslave5/gdrive/
 share/doc/HTML/ca/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/ca/kioslave5/gdrive/index.docbook
+share/doc/HTML/de/kioslave5/
 share/doc/HTML/de/kioslave5/gdrive/
 share/doc/HTML/de/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/de/kioslave5/gdrive/index.docbook
+share/doc/HTML/en/kioslave5/
 share/doc/HTML/en/kioslave5/gdrive/
 share/doc/HTML/en/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/en/kioslave5/gdrive/index.docbook
+share/doc/HTML/es/kioslave5/
 share/doc/HTML/es/kioslave5/gdrive/
 share/doc/HTML/es/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/es/kioslave5/gdrive/index.docbook
+share/doc/HTML/it/kioslave5/
 share/doc/HTML/it/kioslave5/gdrive/
 share/doc/HTML/it/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/it/kioslave5/gdrive/index.docbook
+share/doc/HTML/nl/kioslave5/
 share/doc/HTML/nl/kioslave5/gdrive/
 share/doc/HTML/nl/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/nl/kioslave5/gdrive/index.docbook
+share/doc/HTML/pt/kioslave5/
 share/doc/HTML/pt/kioslave5/gdrive/
 share/doc/HTML/pt/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/pt/kioslave5/gdrive/index.docbook
+share/doc/HTML/pt_BR/kioslave5/
 share/doc/HTML/pt_BR/kioslave5/gdrive/
 share/doc/HTML/pt_BR/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/gdrive/index.docbook
+share/doc/HTML/ru/kioslave5/
 share/doc/HTML/ru/kioslave5/gdrive/
 share/doc/HTML/ru/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/ru/kioslave5/gdrive/index.docbook
+share/doc/HTML/sr/kioslave5/
 share/doc/HTML/sr/kioslave5/gdrive/
 share/doc/HTML/sr/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/sr/kioslave5/gdrive/index.docbook
+share/doc/HTML/sr@latin/kioslave5/
 share/doc/HTML/sr@latin/kioslave5/gdrive/
 share/doc/HTML/sr@latin/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/sr@latin/kioslave5/gdrive/index.docbook
+share/doc/HTML/sv/kioslave5/
 share/doc/HTML/sv/kioslave5/gdrive/
 share/doc/HTML/sv/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/sv/kioslave5/gdrive/index.docbook
+share/doc/HTML/tr/kioslave5/
 share/doc/HTML/tr/kioslave5/gdrive/
 share/doc/HTML/tr/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/tr/kioslave5/gdrive/index.docbook
+share/doc/HTML/uk/kioslave5/
 share/doc/HTML/uk/kioslave5/gdrive/
 share/doc/HTML/uk/kioslave5/gdrive/index.cache.bz2
 share/doc/HTML/uk/kioslave5/gdrive/index.docbook
-share/knotifications5/gdrive.notifyrc
+share/knotifications6/gdrive.notifyrc
 share/locale/ar/LC_MESSAGES/kio5_gdrive.mo
 share/locale/az/LC_MESSAGES/kio5_gdrive.mo
 share/locale/be/LC_MESSAGES/kio5_gdrive.mo
@@ -92,6 +106,7 @@ share/locale/zh_CN/LC_MESSAGES/kio5_gdrive.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_gdrive.mo
 share/metainfo/
 share/metainfo/org.kde.kio_gdrive.metainfo.xml
+share/purpose/
 share/purpose/purpose_gdrive_config.qml
 share/remoteview/
 share/remoteview/gdrive-network.desktop

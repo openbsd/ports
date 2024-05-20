@@ -4,18 +4,18 @@
 @bin bin/akregatorstorageexporter
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
-@so lib/qt5/plugins/akregatorpart.so
-lib/qt5/plugins/pim5/kcms/akregator/
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_advanced.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_appearance.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_archive.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_browser.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_general.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_plugins.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_security.so
-@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_userfeedback.so
-lib/qt5/plugins/pim5/kontact/
-@so lib/qt5/plugins/pim5/kontact/kontact_akregatorplugin.so
+@so lib/qt6/plugins/akregatorpart.so
+lib/qt6/plugins/pim6/kcms/akregator/
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_advanced.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_appearance.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_archive.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_browser.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_general.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_plugins.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_security.so
+@so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_userfeedback.so
+lib/qt6/plugins/pim6/kontact/
+@so lib/qt6/plugins/pim6/kontact/kontact_akregatorplugin.so
 share/akregator/
 share/akregator/grantleetheme/
 share/akregator/grantleetheme/5.2/
@@ -121,8 +121,9 @@ share/icons/hicolor/32x32/apps/akregator.png
 share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/64x64/apps/akregator.png
 share/icons/hicolor/scalable/apps/akregator.svg
-share/knotifications5/akregator.notifyrc
+share/knotifications6/akregator.notifyrc
 share/locale/ar/LC_MESSAGES/akregator.mo
+share/locale/ast/LC_MESSAGES/akregator.mo
 share/locale/az/LC_MESSAGES/akregator.mo
 share/locale/be/LC_MESSAGES/akregator.mo
 share/locale/bg/LC_MESSAGES/akregator.mo
@@ -196,7 +197,7 @@ share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/zh_CN/LC_MESSAGES/akregator.mo
 share/locale/zh_TW/LC_MESSAGES/akregator.mo
 share/metainfo/org.kde.akregator.appdata.xml
-share/qlogging-categories5/akregator.categories
-share/qlogging-categories5/akregator.renamecategories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/akregator.categories
+share/qlogging-categories6/akregator.renamecategories

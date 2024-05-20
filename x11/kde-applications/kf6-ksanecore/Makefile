@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	KDE SANE (scanner) core library
 
 DISTNAME =	ksanecore-${VERSION}

@@ -4,13 +4,12 @@ CATEGORIES =	education
 
 HOMEPAGE =	https://apps.kde.org/kiten
 
-SHARED_LIBS +=  kiten                     3.0 # 5.0
+SHARED_LIBS +=  kiten                     4.0 # 5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5KIOCore KF5Notifications
-WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6I18n KF6KIOCore KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
@@ -20,15 +19,16 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/knotifications \
-		devel/kf5/kxmlgui
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui
 
 .include <bsd.port.mk>

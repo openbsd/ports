@@ -1,7 +1,7 @@
-lib/qt5/plugins/kf5/thumbcreator/
-@so lib/qt5/plugins/kf5/thumbcreator/ffmpegthumbs.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/ffmpegthumbs.so
 share/config.kcfg/
 share/config.kcfg/ffmpegthumbnailersettings5.kcfg
 share/metainfo/
 share/metainfo/org.kde.ffmpegthumbs.metainfo.xml
-share/qlogging-categories5/ffmpegthumbs.categories
+share/qlogging-categories6/ffmpegthumbs.categories

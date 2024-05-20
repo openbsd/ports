@@ -4,12 +4,12 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.ktimer
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
-WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6DBusAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6StatusNotifierItem KF6WidgetsAddons Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -18,21 +18,21 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kitemviews \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid
+BUILD_DEPENDS =	devel/kf6/kitemviews \
+		devel/kf6/kxmlgui
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/solid
 
 .include <bsd.port.mk>

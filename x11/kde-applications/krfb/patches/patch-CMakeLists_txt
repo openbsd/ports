@@ -9,5 +9,5 @@ Index: CMakeLists.txt
 -check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
 +#check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
  
- find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets X11Extras)
+ find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets)
  

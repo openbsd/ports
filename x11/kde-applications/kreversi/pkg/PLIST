@@ -75,7 +75,7 @@ share/icons/hicolor/48x48/apps/kreversi.png
 share/icons/hicolor/64x64/apps/kreversi.png
 share/icons/hicolor/scalable/actions/lastmoves.svgz
 share/icons/hicolor/scalable/actions/legalmoves.svgz
-share/knotifications5/kreversi.notifyrc
+share/knotifications6/kreversi.notifyrc
 share/kreversi/
 share/kreversi/pics/
 share/kreversi/pics/default_theme.desktop
@@ -93,6 +93,7 @@ share/kreversi/sounds/reversi-click.wav
 share/kreversi/sounds/reversi-won.wav
 share/locale/af/LC_MESSAGES/kreversi.mo
 share/locale/ar/LC_MESSAGES/kreversi.mo
+share/locale/ast/LC_MESSAGES/kreversi.mo
 share/locale/be/LC_MESSAGES/kreversi.mo
 share/locale/bg/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
@@ -120,6 +121,7 @@ share/locale/hi/LC_MESSAGES/kreversi.mo
 share/locale/hne/LC_MESSAGES/kreversi.mo
 share/locale/hr/LC_MESSAGES/kreversi.mo
 share/locale/hu/LC_MESSAGES/kreversi.mo
+share/locale/ia/LC_MESSAGES/kreversi.mo
 share/locale/id/LC_MESSAGES/kreversi.mo
 share/locale/is/LC_MESSAGES/kreversi.mo
 share/locale/it/LC_MESSAGES/kreversi.mo

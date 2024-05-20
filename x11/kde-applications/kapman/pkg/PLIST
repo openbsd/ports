@@ -41,6 +41,7 @@ share/doc/HTML/pl/kapman/kapman.png
 share/doc/HTML/pt/kapman/
 share/doc/HTML/pt/kapman/index.cache.bz2
 share/doc/HTML/pt/kapman/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kapman/
 share/doc/HTML/pt_BR/kapman/config.png
 share/doc/HTML/pt_BR/kapman/index.cache.bz2
@@ -69,7 +70,6 @@ share/kapman/themes/invisible_preview.png
 share/kapman/themes/matches.desktop
 share/kapman/themes/matches.svgz
 share/kapman/themes/matches_preview.png
-share/kapman/themes/mountain.copyright
 share/kapman/themes/mountain.desktop
 share/kapman/themes/mountain.svgz
 share/kapman/themes/mountain_preview.png
@@ -80,6 +80,7 @@ share/kapman/themes/retro.desktop
 share/kapman/themes/retro.svgz
 share/kapman/themes/retro_preview.png
 share/locale/ar/LC_MESSAGES/kapman.mo
+share/locale/ast/LC_MESSAGES/kapman.mo
 share/locale/bg/LC_MESSAGES/kapman.mo
 share/locale/bs/LC_MESSAGES/kapman.mo
 share/locale/ca/LC_MESSAGES/kapman.mo
@@ -101,6 +102,7 @@ share/locale/gu/LC_MESSAGES/kapman.mo
 share/locale/hi/LC_MESSAGES/kapman.mo
 share/locale/hr/LC_MESSAGES/kapman.mo
 share/locale/hu/LC_MESSAGES/kapman.mo
+share/locale/ia/LC_MESSAGES/kapman.mo
 share/locale/id/LC_MESSAGES/kapman.mo
 share/locale/is/LC_MESSAGES/kapman.mo
 share/locale/it/LC_MESSAGES/kapman.mo
@@ -140,6 +142,7 @@ share/locale/zh_CN/LC_MESSAGES/kapman.mo
 share/locale/zh_TW/LC_MESSAGES/kapman.mo
 share/metainfo/
 share/metainfo/org.kde.kapman.appdata.xml
+share/sounds/
 share/sounds/kapman/
 share/sounds/kapman/bonus.ogg
 share/sounds/kapman/energizer.ogg

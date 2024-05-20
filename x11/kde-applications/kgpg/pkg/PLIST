@@ -96,6 +96,9 @@ share/doc/HTML/sv/kgpg/keygen.png
 share/doc/HTML/sv/kgpg/keymanage.png
 share/doc/HTML/sv/kgpg/keys.png
 share/doc/HTML/sv/kgpg/options.png
+share/doc/HTML/tr/kgpg/
+share/doc/HTML/tr/kgpg/index.cache.bz2
+share/doc/HTML/tr/kgpg/index.docbook
 share/doc/HTML/uk/kgpg/
 share/doc/HTML/uk/kgpg/editor.png
 share/doc/HTML/uk/kgpg/index.cache.bz2
@@ -151,17 +154,11 @@ share/icons/hicolor/scalable/apps/kgpg.svg
 share/icons/hicolor/scalable/status/key-group.svgz
 share/icons/hicolor/scalable/status/key-pair.svgz
 share/icons/hicolor/scalable/status/key-single.svgz
-share/kgpg/
-share/kgpg/tips
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/kgpg_encryptfile.desktop
 share/kio/servicemenus/kgpg_encryptfolder.desktop
 share/kio/servicemenus/kgpg_viewdecrypted.desktop
-share/kxmlgui5/
-share/kxmlgui5/kgpg/
-share/kxmlgui5/kgpg/keysmanager.rc
-share/kxmlgui5/kgpg/kgpgeditor.rc
 share/locale/ar/LC_MESSAGES/kgpg.mo
 share/locale/be/LC_MESSAGES/kgpg.mo
 share/locale/bg/LC_MESSAGES/kgpg.mo
@@ -232,5 +229,5 @@ share/locale/zh_CN/LC_MESSAGES/kgpg.mo
 share/locale/zh_TW/LC_MESSAGES/kgpg.mo
 share/metainfo/
 share/metainfo/org.kde.kgpg.appdata.xml
-share/qlogging-categories5/kgpg.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/kgpg.categories

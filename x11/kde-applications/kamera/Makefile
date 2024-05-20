@@ -4,11 +4,11 @@ DISTNAME =	kamera-${VERSION}
 
 CATEGORIES =	x11 graphics
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KCMUtils KF5KIOCore KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5Xml gphoto2 gphoto2_port m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Widgets Qt6Xml gphoto2 gphoto2_port m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -18,19 +18,16 @@ MODKF5_L10N_CONFLICT = yes
 # XXX fix with new libgphoto2; revisit at next update
 CXXFLAGS +=	-I${LOCALBASE}/include -DHAVE_GPHOTO2_5
 
-BUILD_DEPENDS =	devel/kf5/kcmutils
-
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kcmutils \
-		devel/kf5/kxmlgui \
-		graphics/libgphoto2
+LIB_DEPENDS =	devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		graphics/libgphoto2 \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

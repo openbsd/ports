@@ -1,9 +1,9 @@
 @conflict kdegraphics-thumbnailers-<=19.12.3
 @pkgpath x11/kde4/graphics-thumbnailers
-lib/qt5/plugins/kf5/thumbcreator/
-@so lib/qt5/plugins/kf5/thumbcreator/blenderthumbnail.so
-@so lib/qt5/plugins/kf5/thumbcreator/gsthumbnail.so
-@so lib/qt5/plugins/kf5/thumbcreator/mobithumbnail.so
-@so lib/qt5/plugins/kf5/thumbcreator/rawthumbnail.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/blenderthumbnail.so
+@so lib/qt6/plugins/kf6/thumbcreator/gsthumbnail.so
+@so lib/qt6/plugins/kf6/thumbcreator/mobithumbnail.so
+@so lib/qt6/plugins/kf6/thumbcreator/rawthumbnail.so
 share/metainfo/
 share/metainfo/org.kde.kdegraphics-thumbnailers.metainfo.xml

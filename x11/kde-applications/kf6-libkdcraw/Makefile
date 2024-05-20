@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	KDE wrapper around the LibRaw library
 
 DISTNAME =	libkdcraw-${VERSION}

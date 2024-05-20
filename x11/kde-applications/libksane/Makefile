@@ -3,6 +3,8 @@ DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}
 CATEGORIES =	graphics devel
 
+MODKDE_KF5 =	Yes
+
 SHARED_LIBS +=  KF5Sane                   4.0 # 5.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5SonnetUi KF5TextWidgets

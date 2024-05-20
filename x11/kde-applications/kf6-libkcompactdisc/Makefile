@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	library for interfacing with CDs
 
 DISTNAME =	libkcompactdisc-${VERSION}

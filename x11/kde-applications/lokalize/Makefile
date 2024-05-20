@@ -1,7 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -12,15 +11,17 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
-WANTLIB += Qt5Xml X11 c hunspell-1.7 m
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
+WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
+WANTLIB += KF5I18n KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Service
+WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml X11 c hunspell-1.7
+WANTLIB += m
+
+MODKDE_KF5 = yes
 
 MODULES +=	lang/python
 
@@ -40,6 +41,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/knotifications \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \

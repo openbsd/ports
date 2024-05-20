@@ -9,8 +9,8 @@ include/minuet/interfaces/isoundcontroller.h
 include/minuet/interfaces/iuicontroller.h
 include/minuet/interfaces/minuetinterfacesexport.h
 @lib lib/libminuetinterfaces.so.${LIBminuetinterfaces_VERSION}
-lib/qt5/plugins/minuet/
-@so lib/qt5/plugins/minuet/minuetfluidsynthsoundcontroller.so
+lib/qt6/plugins/minuet/
+@so lib/qt6/plugins/minuet/minuetfluidsynthsoundcontroller.so
 share/applications/org.kde.minuet.desktop
 share/doc/HTML/ca/minuet/
 share/doc/HTML/ca/minuet/index.cache.bz2
@@ -106,10 +106,12 @@ share/locale/uk/LC_MESSAGES/minuet.mo
 share/locale/zh_CN/LC_MESSAGES/minuet.mo
 share/locale/zh_TW/LC_MESSAGES/minuet.mo
 share/metainfo/
-share/metainfo/org.kde.minuet.appdata.xml
+share/metainfo/org.kde.minuet.metainfo.xml
 share/minuet/
 share/minuet/definitions/
-share/minuet/definitions/chords-root-position-definitions.json
+share/minuet/definitions/chords-extended-definitions.json
+share/minuet/definitions/chords-sevenths-definitions.json
+share/minuet/definitions/chords-three-notes-definitions.json
 share/minuet/definitions/intervals-ascending-melodic-harmonic-definitions.json
 share/minuet/definitions/intervals-descending-melodic-definitions.json
 share/minuet/definitions/rhythm-definitions.json
@@ -120,7 +122,10 @@ share/minuet/definitions/scales-major-and-its-modes-definitions.json
 share/minuet/definitions/scales-pentatonic-major-and-its-modes-definitions.json
 share/minuet/definitions/scales-simmetric-definitions.json
 share/minuet/exercises/
-share/minuet/exercises/chords-root-position-exercises.json
+share/minuet/exercises/chords-combined-exercises.json
+share/minuet/exercises/chords-extended-exercises.json
+share/minuet/exercises/chords-sevenths-exercises.json
+share/minuet/exercises/chords-three-notes-exercises.json
 share/minuet/exercises/intervals-ascending-melodic-exercises.json
 share/minuet/exercises/intervals-descending-melodic-exercises.json
 share/minuet/exercises/intervals-harmonic-exercises.json

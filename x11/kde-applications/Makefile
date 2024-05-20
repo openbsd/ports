@@ -126,7 +126,6 @@
      SUBDIR += kget
      SUBDIR += kio-gdrive
      SUBDIR += kmailtransport
-     #SUBDIR += kopete
      SUBDIR += krdc
      SUBDIR += krfb
      SUBDIR += tokodon
@@ -175,7 +174,6 @@
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
      SUBDIR += markdownpart
-     SUBDIR += print-manager
      SUBDIR += sweeper
 
      # webdev

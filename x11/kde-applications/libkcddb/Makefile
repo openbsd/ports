@@ -1,6 +1,8 @@
 COMMENT =	KDE CDDB library
+
 DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	libkcddb-kf5-${VERSION}
+
 CATEGORIES =	devel multimedia
 
 SHARED_LIBS +=  KF5Cddb                   3.0 # 5.0
@@ -18,6 +20,8 @@ MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+MODKDE_KF5 = yes
+
 BUILD_DEPENDS =	devel/kf5/kcmutils
 
 LIB_DEPENDS =	audio/libmusicbrainz5 \
@@ -29,8 +33,10 @@ LIB_DEPENDS =	audio/libmusicbrainz5 \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
+		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
-		devel/kf5/kwidgetsaddons
+		devel/kf5/solid
 
 .include <bsd.port.mk>

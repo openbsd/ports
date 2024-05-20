@@ -1,8 +1,8 @@
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
-lib/qt5/plugins/kf5/thumbcreator/
-@so lib/qt5/plugins/kf5/thumbcreator/mltpreview.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/mltpreview.so
 @man man/man1/kdenlive.1
 @man man/man1/kdenlive_render.1
 share/applications/org.kde.kdenlive.desktop
@@ -120,6 +120,8 @@ share/doc/HTML/uk/kdenlive/kdenlive_quickstart-timelinecursor.png
 share/doc/Kdenlive/
 share/doc/Kdenlive/AUTHORS
 share/doc/Kdenlive/LICENSES/
+share/doc/Kdenlive/LICENSES/Apache-2.0.txt
+share/doc/Kdenlive/LICENSES/BSD-2-Clause.txt
 share/doc/Kdenlive/LICENSES/BSD-3-Clause.txt
 share/doc/Kdenlive/LICENSES/BSL-1.0.txt
 share/doc/Kdenlive/LICENSES/CC-BY-SA-4.0.txt
@@ -127,9 +129,12 @@ share/doc/Kdenlive/LICENSES/CC0-1.0.txt
 share/doc/Kdenlive/LICENSES/GPL-2.0-only.txt
 share/doc/Kdenlive/LICENSES/GPL-3.0-only.txt
 share/doc/Kdenlive/LICENSES/GPL-3.0-or-later.txt
+share/doc/Kdenlive/LICENSES/LGPL-2.1-only.txt
 share/doc/Kdenlive/LICENSES/LGPL-3.0-only.txt
+share/doc/Kdenlive/LICENSES/LGPL-3.0-or-later.txt
 share/doc/Kdenlive/LICENSES/LicenseRef-KDE-Accepted-GPL.txt
 share/doc/Kdenlive/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt
+share/doc/Kdenlive/LICENSES/MIT.txt
 share/doc/Kdenlive/README.md
 share/icons/hicolor/128x128/apps/kdenlive.png
 share/icons/hicolor/128x128/mimetypes/application-x-kdenlivetitle.png
@@ -167,6 +172,7 @@ share/kdenlive/
 share/kdenlive/clipjobsettings.rc
 share/kdenlive/effect-templates/
 share/kdenlive/effect-templates/secondary_color_correction.xml
+share/kdenlive/effect-templates/secondary_color_correction_v2.xml
 share/kdenlive/effect-templates/shut_off.xml
 share/kdenlive/effects/
 share/kdenlive/effects/acompressor.xml
@@ -213,6 +219,7 @@ share/kdenlive/effects/avfilter_compensationdelay.xml
 share/kdenlive/effects/avfilter_crossfeed.xml
 share/kdenlive/effects/avfilter_crystalizer.xml
 share/kdenlive/effects/avfilter_datascope.xml
+share/kdenlive/effects/avfilter_dblur.xml
 share/kdenlive/effects/avfilter_dcshift.xml
 share/kdenlive/effects/avfilter_dctdnoiz.xml
 share/kdenlive/effects/avfilter_deband.xml
@@ -327,6 +334,9 @@ share/kdenlive/effects/frei0r_B.xml
 share/kdenlive/effects/frei0r_G.xml
 share/kdenlive/effects/frei0r_R.xml
 share/kdenlive/effects/frei0r_alpha0ps.xml
+share/kdenlive/effects/frei0r_alpha0ps_alpha0ps.xml
+share/kdenlive/effects/frei0r_alpha0ps_alphagrad.xml
+share/kdenlive/effects/frei0r_alpha0ps_alphaspot.xml
 share/kdenlive/effects/frei0r_alphagrad.xml
 share/kdenlive/effects/frei0r_alphaspot.xml
 share/kdenlive/effects/frei0r_balanc0r.xml
@@ -647,7 +657,7 @@ share/kdenlive/transitions/region.xml
 share/kdenlive/transitions/slide.xml
 share/kdenlive/transitions/vqm.xml
 share/kdenlive/transitions/wipe.xml
-share/knotifications5/kdenlive.notifyrc
+share/knotifications6/kdenlive.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/kdenlive_effects.knsrc
 share/knsrcfiles/kdenlive_keyboardschemes.knsrc
@@ -703,7 +713,7 @@ share/metainfo/
 share/metainfo/org.kde.kdenlive.appdata.xml
 share/mime/packages/org.kde.kdenlive.xml
 share/mime/packages/westley.xml
-share/qlogging-categories5/kdenlive.categories
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/kdenlive.categories

@@ -1,9 +1,10 @@
 @pkgpath x11/kde4/dev-utils
 @bin bin/kpartloader
 @bin bin/kuiviewer
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/kuiviewerpart.so
-@so lib/qt5/plugins/quithumbnail.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/kuiviewerpart.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/quithumbnail.so
 share/applications/org.kde.kuiviewer.desktop
 share/icons/hicolor/128x128/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
@@ -11,8 +12,6 @@ share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/48x48/apps/kuiviewer.png
 share/icons/hicolor/64x64/apps/kuiviewer.png
 share/icons/hicolor/scalable/apps/kuiviewer.svg
-share/kservices5/designerthumbnail.desktop
-share/kservices5/kuiviewer_part.desktop
 share/locale/ar/LC_MESSAGES/kuiviewer.mo
 share/locale/az/LC_MESSAGES/kpartloader.mo
 share/locale/az/LC_MESSAGES/kuiviewer.mo

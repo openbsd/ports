@@ -52,6 +52,9 @@ share/doc/HTML/ru/ksystemlog/index.docbook
 share/doc/HTML/sv/ksystemlog/
 share/doc/HTML/sv/ksystemlog/index.cache.bz2
 share/doc/HTML/sv/ksystemlog/index.docbook
+share/doc/HTML/tr/ksystemlog/
+share/doc/HTML/tr/ksystemlog/index.cache.bz2
+share/doc/HTML/tr/ksystemlog/index.docbook
 share/doc/HTML/uk/ksystemlog/
 share/doc/HTML/uk/ksystemlog/filter-process.png
 share/doc/HTML/uk/ksystemlog/first-opening.png
@@ -62,10 +65,8 @@ share/doc/HTML/zh_CN/
 share/doc/HTML/zh_CN/ksystemlog/
 share/doc/HTML/zh_CN/ksystemlog/index.cache.bz2
 share/doc/HTML/zh_CN/ksystemlog/index.docbook
-share/kxmlgui5/
-share/kxmlgui5/ksystemlog/
-share/kxmlgui5/ksystemlog/ksystemlogui.rc
 share/locale/ar/LC_MESSAGES/ksystemlog.mo
+share/locale/ast/LC_MESSAGES/ksystemlog.mo
 share/locale/az/LC_MESSAGES/ksystemlog.mo
 share/locale/be/LC_MESSAGES/ksystemlog.mo
 share/locale/bg/LC_MESSAGES/ksystemlog.mo
@@ -127,4 +128,4 @@ share/locale/zh_TW/LC_MESSAGES/ksystemlog.mo
 share/metainfo/
 share/metainfo/org.kde.ksystemlog.appdata.xml
 @tag update-desktop-database
-share/qlogging-categories5/ksystemlog.categories
+share/qlogging-categories6/ksystemlog.categories

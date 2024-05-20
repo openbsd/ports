@@ -1,6 +1,6 @@
 @pkgpath x11/kde4/sdk-thumbnailers
-lib/qt5/plugins/kf5/thumbcreator/
-@so lib/qt5/plugins/kf5/thumbcreator/pothumbnail.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/pothumbnail.so
 share/config.kcfg/
 share/config.kcfg/pocreatorsettings.kcfg
 share/locale/ar/LC_MESSAGES/pothumbnail.mo

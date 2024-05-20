@@ -1,7 +1,10 @@
 @pkgpath x11/kde4/kwalletmanager
 @bin bin/kwalletmanager5
-@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwallet5.so
-@bin libexec/kauth/kcm_kwallet_helper5
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kwallet5.so
+@bin libexec/kf6/kauth/kcm_kwallet_helper5
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
 share/dbus-1/services/org.kde.kwalletmanager5.service
@@ -94,9 +97,10 @@ share/icons/hicolor/48x48/apps/kwalletmanager.png
 share/icons/hicolor/48x48/apps/kwalletmanager2.png
 share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
-share/kservices5/kwalletmanager5_show.desktop
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
+share/locale/ast/LC_MESSAGES/kcmkwallet.mo
+share/locale/ast/LC_MESSAGES/kwalletmanager.mo
 share/locale/az/LC_MESSAGES/kcmkwallet.mo
 share/locale/az/LC_MESSAGES/kwalletmanager.mo
 share/locale/be/LC_MESSAGES/kcmkwallet.mo
@@ -141,6 +145,8 @@ share/locale/ga/LC_MESSAGES/kcmkwallet.mo
 share/locale/ga/LC_MESSAGES/kwalletmanager.mo
 share/locale/gl/LC_MESSAGES/kcmkwallet.mo
 share/locale/gl/LC_MESSAGES/kwalletmanager.mo
+share/locale/he/LC_MESSAGES/kcmkwallet.mo
+share/locale/he/LC_MESSAGES/kwalletmanager.mo
 share/locale/hi/LC_MESSAGES/kcmkwallet.mo
 share/locale/hi/LC_MESSAGES/kwalletmanager.mo
 share/locale/hne/LC_MESSAGES/kcmkwallet.mo
@@ -248,6 +254,6 @@ share/locale/zh_TW/LC_MESSAGES/kwalletmanager.mo
 share/metainfo/
 share/metainfo/org.kde.kwalletmanager5.appdata.xml
 share/polkit-1/actions/org.kde.kcontrol.kcmkwallet5.policy
-share/qlogging-categories5/kwalletmanager.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/kwalletmanager.categories

@@ -17,11 +17,10 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+MODKDE_KF5 = yes
 
-BUILD_DEPENDS =devel/kf5/kinit
-
-RUN_DEPENDS =	misc/shared-mime-info \
-		devel/kf5/kinit
+RUN_DEPENDS =	misc/shared-mime-info
+BUILD_DEPENDS =	devel/kf5/kinit
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -39,6 +38,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kpty \
 		devel/kf5/kservice \
 		devel/kf5/sonnet \
+		devel/kf5/kwindowsystem \
+		devel/kf5/solid \
 		devel/kf5/kdesu \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \

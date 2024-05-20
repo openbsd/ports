@@ -1,44 +1,39 @@
 @conflict kdepimlibs-<=4
 @bin bin/akonadiimportwizard
-include/KPim5/ImportWizard/
-include/KPim5/ImportWizard/ImportWizard/
-include/KPim5/ImportWizard/ImportWizard/AbstractAddressBook
-include/KPim5/ImportWizard/ImportWizard/AbstractBase
-include/KPim5/ImportWizard/ImportWizard/AbstractCalendar
-include/KPim5/ImportWizard/ImportWizard/AbstractDisplayInfo
-include/KPim5/ImportWizard/ImportWizard/AbstractImporter
-include/KPim5/ImportWizard/ImportWizard/AbstractSettings
-include/KPim5/ImportWizard/ImportWizard/ImportWizardUtil
-include/KPim5/ImportWizard/importwizard/
-include/KPim5/ImportWizard/importwizard/abstractaddressbook.h
-include/KPim5/ImportWizard/importwizard/abstractbase.h
-include/KPim5/ImportWizard/importwizard/abstractcalendar.h
-include/KPim5/ImportWizard/importwizard/abstractdisplayinfo.h
-include/KPim5/ImportWizard/importwizard/abstractimporter.h
-include/KPim5/ImportWizard/importwizard/abstractsettings.h
-include/KPim5/ImportWizard/importwizard/importwizardutil.h
-include/KPim5/ImportWizard/importwizard/libimportwizard_export.h
-include/KPim5/ImportWizard/importwizard_version.h
-lib/cmake/KPim5ImportWizard/
-lib/cmake/KPim5ImportWizard/KPim5ImportWizardConfig.cmake
-lib/cmake/KPim5ImportWizard/KPim5ImportWizardConfigVersion.cmake
-lib/cmake/KPim5ImportWizard/KPim5ImportWizardTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KPim5ImportWizard/KPim5ImportWizardTargets.cmake
-lib/cmake/KPimImportWizard/
-lib/cmake/KPimImportWizard/KPim5ImportWizardTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KPimImportWizard/KPim5ImportWizardTargets.cmake
-lib/cmake/KPimImportWizard/KPimImportWizardConfig.cmake
-lib/cmake/KPimImportWizard/KPimImportWizardConfigVersion.cmake
-@lib lib/libKPim5ImportWizard.so.${LIBKPim5ImportWizard_VERSION}
-lib/qt5/plugins/pim5/importwizard/
-@so lib/qt5/plugins/pim5/importwizard/balsaimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/clawsmailimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/evolutionv3importerplugin.so
-@so lib/qt5/plugins/pim5/importwizard/icedoveimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/seamonkeyimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/sylpheedimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/thunderbirdimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/trojitaimporterplugin.so
+include/KPim6/ImportWizard/
+include/KPim6/ImportWizard/ImportWizard/
+include/KPim6/ImportWizard/ImportWizard/AbstractAddressBook
+include/KPim6/ImportWizard/ImportWizard/AbstractBase
+include/KPim6/ImportWizard/ImportWizard/AbstractCalendar
+include/KPim6/ImportWizard/ImportWizard/AbstractDisplayInfo
+include/KPim6/ImportWizard/ImportWizard/AbstractImporter
+include/KPim6/ImportWizard/ImportWizard/AbstractSettings
+include/KPim6/ImportWizard/ImportWizard/ImportWizardUtil
+include/KPim6/ImportWizard/importwizard/
+include/KPim6/ImportWizard/importwizard/abstractaddressbook.h
+include/KPim6/ImportWizard/importwizard/abstractbase.h
+include/KPim6/ImportWizard/importwizard/abstractcalendar.h
+include/KPim6/ImportWizard/importwizard/abstractdisplayinfo.h
+include/KPim6/ImportWizard/importwizard/abstractimporter.h
+include/KPim6/ImportWizard/importwizard/abstractsettings.h
+include/KPim6/ImportWizard/importwizard/importwizardutil.h
+include/KPim6/ImportWizard/importwizard/libimportwizard_export.h
+include/KPim6/ImportWizard/importwizard_version.h
+lib/cmake/KPim6ImportWizard/
+lib/cmake/KPim6ImportWizard/KPim6ImportWizardConfig.cmake
+lib/cmake/KPim6ImportWizard/KPim6ImportWizardConfigVersion.cmake
+lib/cmake/KPim6ImportWizard/KPim6ImportWizardTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim6ImportWizard/KPim6ImportWizardTargets.cmake
+@lib lib/libKPim6ImportWizard.so.${LIBKPim6ImportWizard_VERSION}
+lib/qt6/plugins/pim6/importwizard/
+@so lib/qt6/plugins/pim6/importwizard/balsaimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/clawsmailimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/evolutionv3importerplugin.so
+@so lib/qt6/plugins/pim6/importwizard/icedoveimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/seamonkeyimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/sylpheedimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/thunderbirdimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/trojitaimporterplugin.so
 share/applications/org.kde.akonadiimportwizard.desktop
 share/doc/HTML/ca/importwizard/
 share/doc/HTML/ca/importwizard/index.cache.bz2
@@ -89,6 +84,7 @@ share/importwizard/
 share/importwizard/pics/
 share/importwizard/pics/step1.png
 share/locale/ar/LC_MESSAGES/akonadiimportwizard.mo
+share/locale/ast/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/az/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/bg/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/bs/LC_MESSAGES/akonadiimportwizard.mo
@@ -99,6 +95,7 @@ share/locale/da/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/de/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/el/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/en_GB/LC_MESSAGES/akonadiimportwizard.mo
+share/locale/eo/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/es/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/et/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/eu/LC_MESSAGES/akonadiimportwizard.mo
@@ -133,7 +130,7 @@ share/locale/ug/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/uk/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/zh_CN/LC_MESSAGES/akonadiimportwizard.mo
 share/locale/zh_TW/LC_MESSAGES/akonadiimportwizard.mo
-share/qlogging-categories5/importwizard.categories
-share/qlogging-categories5/importwizard.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/importwizard.categories
+share/qlogging-categories6/importwizard.renamecategories

@@ -4,17 +4,13 @@ CATEGORIES =	net www
 
 SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5ItemModels
-WANTLIB += KF5ItemViews KF5KCMUtils KF5KIOCore KF5KrossCore KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Notifications KF5Service KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5XmlGui KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
-WANTLIB += KPim5IdentityManagement KPim5Ldap KPim5Libkdepim KPim5Libkleo
-WANTLIB += KPim5MailTransport KPim5Mime KPim5PimCommon KPim5TextEdit
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script
-WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6I18n KF6ItemModels KF6KIOCore KF6WidgetsAddons
+WANTLIB += KPim6AkonadiCore KPim6AkonadiWidgets KPim6IdentityManagementCore
+WANTLIB += KPim6MailTransport KPim6Mime Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -22,31 +18,24 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/kf5/knotifyconfig \
-		devel/kf5/ktexteditor
+		devel/kf6/knotifyconfig \
+		devel/kf6/ktexteditor
 
-RUN_DEPENDS =	devel/kf5/knotifyconfig \
+RUN_DEPENDS =	devel/kf6/knotifyconfig \
 		misc/shared-mime-info
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/knewstuff \
-		devel/kf5/knotifications \
-		devel/kf5/kross \
-		devel/kf5/kservice \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		security/gpgme,-qt \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kwidgetsaddons \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kldap>=${MODKDE_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
@@ -54,7 +43,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
 		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

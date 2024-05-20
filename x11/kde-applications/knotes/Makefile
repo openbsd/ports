@@ -7,24 +7,24 @@ HOMEPAGE =	http://knotesapp.com/
 SHARED_LIBS +=  knotesprivate           2.0 # 5.13.2
 SHARED_LIBS +=  notesharedprivate       4.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5Attica
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5Crash KF5DNSSD KF5GlobalAccel
-WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextAddonsWidgets KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui KPim5AkonadiAgentBase KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiNotes KPim5AkonadiSearchDebug
-WANTLIB += KPim5AkonadiSearchPIM KPim5AkonadiWidgets KPim5CalendarUtils
-WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5KontactInterface
-WANTLIB += KPim5Libkdepim KPim5Mime KPim5PimCommon KPim5PimCommonAkonadi
-WANTLIB += KPim5TextEdit Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6CalendarCore
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
+WANTLIB += KF6DNSSD KF6GlobalAccel KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Parts KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6StatusNotifierItem KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6TextUtils KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase
+WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiNotes KPim6AkonadiSearchDebug
+WANTLIB += KPim6AkonadiSearchPIM KPim6AkonadiWidgets KPim6CalendarUtils
+WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6KontactInterface
+WANTLIB += KPim6Libkdepim KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6Widgets Qt6Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -38,41 +38,43 @@ BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdnssd \
-		devel/kf5/kglobalaccel \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdnssd \
+		devel/kf6/kglobalaccel \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/ktexttemplate \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
 		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
 		x11/kde-applications/kimap>=${MODKDE_VERSION} \
@@ -81,7 +83,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
-		x11/qt5/qtx11extras
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

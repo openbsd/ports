@@ -20,12 +20,12 @@ lib/cmake/Pala/PalaConfigVersion.cmake
 lib/cmake/Pala/PalaTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Pala/PalaTargets.cmake
 @lib lib/libpala.so.${LIBpala_VERSION}
-lib/qt5/plugins/kf5/thumbcreator/
-@so lib/qt5/plugins/kf5/thumbcreator/palathumbcreator.so
-lib/qt5/plugins/palapelislicers/
-@so lib/qt5/plugins/palapelislicers/palapeli_goldbergslicer.so
-@so lib/qt5/plugins/palapelislicers/palapeli_jigsawslicer.so
-@so lib/qt5/plugins/palapelislicers/palapeli_rectslicer.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/palathumbcreator.so
+lib/qt6/plugins/palapelislicers/
+@so lib/qt6/plugins/palapelislicers/palapeli_goldbergslicer.so
+@so lib/qt6/plugins/palapelislicers/palapeli_jigsawslicer.so
+@so lib/qt6/plugins/palapelislicers/palapeli_rectslicer.so
 share/applications/org.kde.palapeli.desktop
 share/doc/HTML/ca/palapeli/
 share/doc/HTML/ca/palapeli/index.cache.bz2
@@ -93,7 +93,8 @@ share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/palapeli_servicemenu.desktop
-share/knotifications5/palapeli.notifyrc
+share/knotifications6/palapeli.notifyrc
+share/locale/ast/LC_MESSAGES/palapeli.mo
 share/locale/bg/LC_MESSAGES/palapeli.mo
 share/locale/bs/LC_MESSAGES/palapeli.mo
 share/locale/ca/LC_MESSAGES/palapeli.mo
@@ -171,7 +172,7 @@ share/palapeli/collection/european-honey-bee.jpg
 share/palapeli/collection/panther-chameleon-female.desktop
 share/palapeli/collection/panther-chameleon-female.jpg
 share/palapeli/palapeli.kcfg
-share/qlogging-categories5/palapeli.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+share/qlogging-categories6/palapeli.categories

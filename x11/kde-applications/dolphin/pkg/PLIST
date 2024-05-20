@@ -14,13 +14,11 @@ lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
-lib/qt5/plugins/dolphin/
-lib/qt5/plugins/dolphin/kcms/
-@so lib/qt5/plugins/dolphin/kcms/kcm_dolphingeneral.so
-@so lib/qt5/plugins/dolphin/kcms/kcm_dolphinnavigation.so
-@so lib/qt5/plugins/dolphin/kcms/kcm_dolphinviewmodes.so
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/dolphinpart.so
+lib/qt6/plugins/dolphin/
+lib/qt6/plugins/dolphin/kcms/
+@so lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so
+@so lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so
+@so lib/qt6/plugins/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
 share/config.kcfg/dolphin_compactmodesettings.kcfg
@@ -226,11 +224,14 @@ share/doc/HTML/uk/dolphin/toolbar.png
 share/doc/HTML/uk/dolphin/viewproperties-dialog.png
 share/dolphin/
 share/dolphin/dolphinpartactions.desktop
+share/icons/hicolor/scalable/apps/org.kde.dolphin.svg
 share/kconf_update/dolphin_detailsmodesettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/servicemenu.knsrc
 share/locale/ar/LC_MESSAGES/dolphin.mo
 share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/ast/LC_MESSAGES/dolphin.mo
+share/locale/ast/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/az/LC_MESSAGES/dolphin.mo
 share/locale/az/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/be/LC_MESSAGES/dolphin.mo
@@ -267,8 +268,6 @@ share/locale/eu/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/fa/LC_MESSAGES/dolphin.mo
 share/locale/fi/LC_MESSAGES/dolphin.mo
 share/locale/fi/LC_MESSAGES/dolphin_servicemenuinstaller.mo
-share/locale/fi/LC_SCRIPTS/dolphin/
-share/locale/fi/LC_SCRIPTS/dolphin/dolphin.js
 share/locale/fr/LC_MESSAGES/dolphin.mo
 share/locale/fr/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/fy/LC_MESSAGES/dolphin.mo
@@ -277,6 +276,7 @@ share/locale/gl/LC_MESSAGES/dolphin.mo
 share/locale/gl/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/gu/LC_MESSAGES/dolphin.mo
 share/locale/he/LC_MESSAGES/dolphin.mo
+share/locale/he/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/hi/LC_MESSAGES/dolphin.mo
 share/locale/hi/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/hne/LC_MESSAGES/dolphin.mo
@@ -371,6 +371,7 @@ share/locale/zh_CN/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml
-share/qlogging-categories5/dolphin.categories
 @tag update-desktop-database
+share/qlogging-categories6/dolphin.categories
 share/zsh/site-functions/_dolphin
+@tag gtk-update-icon-cache %D/share/icons/hicolor

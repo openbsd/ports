@@ -1,0 +1,11 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -101,7 +101,6 @@ install(EXPORT KSaneCore${KSANECORE_SUFFFIX}Targets
+     NAMESPACE KSane${KSANECORE_SUFFFIX}::
+ )
+ 
+-ki18n_install(po)
+ 
+ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ 

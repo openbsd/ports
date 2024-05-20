@@ -1,6 +1,6 @@
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
-PKGNAME =	dolphin-kf5-${VERSION}
+PKGNAME =	kf6-dolphin-${VERSION}
 CATEGORIES =	x11
 
 HOMEPAGE =	https://apps.kde.org/dolphin
@@ -8,18 +8,18 @@ HOMEPAGE =	https://apps.kde.org/dolphin
 SHARED_LIBS +=  dolphinprivate            10.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
-WANTLIB += KF5AuthCore KF5Baloo KF5BalooWidgets KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5FileMetaData
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets KF5Notifications
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
-WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
-WANTLIB += c m phonon4qt5
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6BookmarksWidgets
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Notifications KF6Parts KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6UserFeedbackCore
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml X11 c m
+WANTLIB += phonon4qt6 xkbcommon
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -27,46 +27,49 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	print/poppler,-qt5 \
-		devel/kf5/kfilemetadata \
-		devel/kf5/kinit
+BUILD_DEPENDS =	print/poppler,-qt6 \
+		devel/kf6/kfilemetadata
 
-RUN_DEPENDS =	devel/kf5/kfilemetadata \
-		devel/kf5/kinit \
+RUN_DEPENDS =	devel/kf6/kfilemetadata \
 		misc/shared-mime-info \
 		x11/kde-applications/ffmpegthumbs>=${MODKDE_VERSION} \
 		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_VERSION} \
-		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION} \
 		x11/kde-applications/konsole>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kactivities \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/knotifications \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		multimedia/phonon \
-		productivity/kuserfeedback \
-		x11/kde-applications/baloo-widgets>=${MODKDE_VERSION}
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcmutils \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/knotifications \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kuserfeedback \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		x11/kde-plasma/plasma-activities \
+		x11/qt6/qtdeclarative \
+		multimedia/phonon,qt6 \
+		x11/xkbcommon
+
+#x11/kde-applications/baloo-widgets>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	distraction-free Markdown editor
 
 DISTNAME =	ghostwriter-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	editors
 
@@ -25,6 +26,8 @@ SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 MODULES =		x11/kde-applications \
 			devel/kf5
 
+MODKDE_KF5 =		Yes
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
@@ -33,12 +36,15 @@ LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kconfig \
 			devel/kf5/kconfigwidgets \
 			devel/kf5/kcoreaddons \
-			devel/kf5/sonnet \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kxmlgui \
+			devel/kf5/sonnet \
 			textproc/hunspell \
 			x11/qt5/qtbase \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtlocation \
 			x11/qt5/qtsvg \
+			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine
 
 NO_TEST =		Yes

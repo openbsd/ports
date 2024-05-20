@@ -2,12 +2,11 @@ COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
 CATEGORIES =	x11 inputmethods
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5Notifications
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Widgets Qt5Xml SM X11 Xext Xtst c
-WANTLIB += m phonon4qt5
+WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6I18n KF6IconThemes KF6StatusNotifierItem KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6Widgets Qt6Xml SM X11 Xext Xtst c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -15,15 +14,17 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/knotifications \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		multimedia/phonon
+LIB_DEPENDS =	 devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		x11/qt6/qtmultimedia
 
 .include <bsd.port.mk>

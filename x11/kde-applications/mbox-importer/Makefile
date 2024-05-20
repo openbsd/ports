@@ -2,21 +2,21 @@ COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
 
 CATEGORIES =	devel
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Service KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5WidgetsAddons KPim5AkonadiContact
-WANTLIB += KPim5AkonadiCore KPim5AkonadiMime KPim5AkonadiWidgets
-WANTLIB += KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
-WANTLIB += KPim5IdentityManagementWidgets KPim5Libkdepim KPim5Libkleo
-WANTLIB += KPim5MailCommon KPim5MailImporter KPim5MailImporterAkonadi
-WANTLIB += KPim5MessageComposer KPim5MessageCore KPim5Mime KPim5PimCommon
-WANTLIB += KPim5PimCommonAkonadi KPim5TextEdit Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml assuan
-WANTLIB += c gpgme gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6ItemModels KF6KIOCore
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
+WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailCommon KPim6MailImporter KPim6MailImporterAkonadi
+WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
+WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets assuan c gpgme gpgmepp
+WANTLIB += m qgpgmeqt6
 
-WANTLIB += lib/inotify/inotify
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -24,29 +24,36 @@ MODKDE5_DESKTOP_FILE = yes
 
 BUILD_DEPENDS =	devel/boost
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/libinotify \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
 		security/gpgme,-qt \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		security/libassuan \
+		textproc/ktextaddons \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
 		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_VERSION}
+		x11/kde-applications/mailimporter>=${MODKDE_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

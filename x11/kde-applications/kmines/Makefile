@@ -4,12 +4,11 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://www.kde.org/applications/games/kmines
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5KDEGames KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6I18n KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -18,21 +17,18 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
-RUN_DEPENDS =	x11/qt5/qtquickcontrols
-
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/ki18n \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		x11/qt5/qtdeclarative \
-		x11/kde-applications/libkdegames>=${MODKDE_VERSION}
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet \
+		x11/kde-applications/libkdegames>=${MODKDE_VERSION} \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

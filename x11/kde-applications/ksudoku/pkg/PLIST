@@ -186,6 +186,7 @@ share/ksudoku/themes/ksudoku_scrible.desktop
 share/ksudoku/themes/ksudoku_scrible.svg
 share/ksudoku/themes/scribble_preview.png
 share/locale/ar/LC_MESSAGES/ksudoku.mo
+share/locale/ast/LC_MESSAGES/ksudoku.mo
 share/locale/be/LC_MESSAGES/ksudoku.mo
 share/locale/bg/LC_MESSAGES/ksudoku.mo
 share/locale/bs/LC_MESSAGES/ksudoku.mo

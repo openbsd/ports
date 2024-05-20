@@ -2,8 +2,8 @@ COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  kalarmcalendar           3.0 # 0.0
-SHARED_LIBS +=  kalarmplugin             2.0 # 0.0
+SHARED_LIBS +=  kalarmcalendar           4.0 # 0.0
+SHARED_LIBS +=  kalarmplugin             3.0 # 0.0
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -13,21 +13,21 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
-WANTLIB += KF5Bookmarks KF5CalendarCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GlobalAccel
-WANTLIB += KF5GuiAddons KF5Holidays KF5I18n KF5IdleTime KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextEditTextToSpeech
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiMime
-WANTLIB += KPim5AkonadiWidgets KPim5CalendarUtils KPim5GrantleeTheme
-WANTLIB += KPim5IdentityManagement KPim5IdentityManagementWidgets
-WANTLIB += KPim5MailTransport KPim5Mime KPim5TextEdit Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c m phonon4qt5
+WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6Bookmarks KF6CalendarCore
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6Holidays KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
+WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6TextEditTextToSpeech
+WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
+WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport KPim6Mime
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml X11 c canberra m
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
@@ -36,36 +36,39 @@ RUN_DEPENDS =	x11/dbus,-suid \
 		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
 		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kidletime \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kglobalaccel \
-		devel/kf5/kguiaddons \
-		devel/kf5/kholidays \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
+LIB_DEPENDS =	audio/libcanberra \
+		devel/kf6/kauth \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kglobalaccel \
+		devel/kf6/kguiaddons \
+		devel/kf6/kholidays \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/ktexttemplate \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
 		textproc/ktextaddons \
-		multimedia/phonon \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
@@ -73,7 +76,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/qt5/qtx11extras
+		x11/qt6/qt5compat
 
 .include <bsd.port.mk>

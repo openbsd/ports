@@ -165,12 +165,8 @@ share/kbruch/pics/icon_learning.png
 share/kbruch/pics/icon_learning_1.png
 share/kbruch/pics/icon_test_case.png
 share/kbruch/pics/icon_test_case_1.png
-share/kxmlgui5/
-share/kxmlgui5/kbruch/
-share/kxmlgui5/kbruch/AppMenuWidgetui.rc
-share/kxmlgui5/kbruch/FractionRingWidgetui.rc
-share/kxmlgui5/kbruch/kbruchui.rc
 share/locale/ar/LC_MESSAGES/kbruch.mo
+share/locale/ast/LC_MESSAGES/kbruch.mo
 share/locale/be/LC_MESSAGES/kbruch.mo
 share/locale/bg/LC_MESSAGES/kbruch.mo
 share/locale/bn/LC_MESSAGES/kbruch.mo

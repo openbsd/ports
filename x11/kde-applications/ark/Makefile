@@ -4,17 +4,14 @@ CATEGORIES =	archivers
 
 SHARED_LIBS +=  kerfuffle                 9.1 # 17.08
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5Parts
-WANTLIB += KF5Pty KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 archive c m z zip
-
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6I18n KF6IconThemes
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty KF6Service
+WANTLIB += KF6Solid KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml X11 archive c m z zip
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -39,27 +36,28 @@ RUN_DEPENDS =	archivers/bzip2 \
 
 LIB_DEPENDS =	archivers/libarchive \
 		archivers/libzip \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kparts \
-		devel/kf5/kpty \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/libinotify
+		devel/kf6/kbookmarks \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kfilemetadata \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kparts \
+		devel/kf6/kpty \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		
 
 # for tests
 PORTHOME =	${WRKDIR}

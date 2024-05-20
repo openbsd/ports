@@ -3,7 +3,6 @@ bin/kmail_antivir.sh
 bin/kmail_clamav.sh
 bin/kmail_fprot.sh
 bin/kmail_sav.sh
-@lib lib/libadblocklibprivate.so.${LIBadblocklibprivate_VERSION}
 @lib lib/libakonadidatasetools.so.${LIBakonadidatasetools_VERSION}
 @lib lib/libdkimverifyconfigure.so.${LIBdkimverifyconfigure_VERSION}
 @lib lib/libexpireaccounttrashfolderconfig.so.${LIBexpireaccounttrashfolderconfig_VERSION}
@@ -13,118 +12,115 @@ bin/kmail_sav.sh
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}
 @lib lib/libkmailquicktextpluginprivate.so.${LIBkmailquicktextpluginprivate_VERSION}
 @lib lib/libopenurlwithconfigure.so.${LIBopenurlwithconfigure_VERSION}
-@lib lib/libscamconfiguresettings.so.${LIBscamconfiguresettings_VERSION}
 @lib lib/libshorturlpluginprivate.so.${LIBshorturlpluginprivate_VERSION}
-@so lib/qt5/plugins/pim5/akonadi/emailaddressselectionldapdialogplugin.so
-lib/qt5/plugins/pim5/contacteditor/
-lib/qt5/plugins/pim5/contacteditor/editorpageplugins/
-@so lib/qt5/plugins/pim5/contacteditor/editorpageplugins/cryptopageplugin.so
-@so lib/qt5/plugins/pim5/importwizard/evolutionv1importerplugin.so
-@so lib/qt5/plugins/pim5/importwizard/evolutionv2importerplugin.so
-@so lib/qt5/plugins/pim5/importwizard/gearyimporterplugin.so
-@so lib/qt5/plugins/pim5/importwizard/operaimporterplugin.so
-lib/qt5/plugins/pim5/kaddressbook/
-lib/qt5/plugins/pim5/kaddressbook/importexportplugin/
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportcsvplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportgmxplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportldapplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportldifplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportvcardplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/importexportplugin/kaddressbook_importexportwindowscontactplugin.so
-lib/qt5/plugins/pim5/kaddressbook/mainview/
-@so lib/qt5/plugins/pim5/kaddressbook/mainview/kaddressbook_checkgravatarplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/mainview/kaddressbook_mergecontactsplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/mainview/kaddressbook_searchduplicatesplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/mainview/kaddressbook_sendmailplugin.so
-@so lib/qt5/plugins/pim5/kaddressbook/mainview/kaddressbook_sendvcardsplugin.so
-lib/qt5/plugins/pim5/kmail/
-lib/qt5/plugins/pim5/kmail/mainview/
-@so lib/qt5/plugins/pim5/kmail/mainview/kmail_akonadidatabasetoolplugin.so
-@so lib/qt5/plugins/pim5/kmail/mainview/kmail_antispamplugin.so
-@so lib/qt5/plugins/pim5/kmail/mainview/kmail_antivirusplugin.so
-@so lib/qt5/plugins/pim5/kmail/mainview/kmail_expertplugin.so
-lib/qt5/plugins/pim5/kmail/plugincheckbeforesend/
-@so lib/qt5/plugins/pim5/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugincheckbeforesend/kmail_confirmaddresseditorplugin.so
-lib/qt5/plugins/pim5/kmail/plugineditor/
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_changecaseeditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_insertemaileditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_insertshorturleditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_insertspecialcharactereditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_nonbreakingspaceeditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_quicktextplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_sharetexteditorplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditor/kmail_zoomtexteditorplugin.so
-lib/qt5/plugins/pim5/kmail/plugineditorconverttext/
-@so lib/qt5/plugins/pim5/kmail/plugineditorconverttext/kmail_markdownplugin.so
-lib/qt5/plugins/pim5/kmail/plugineditorgrammar/
-@so lib/qt5/plugins/pim5/kmail/plugineditorgrammar/kmail_grammalecteplugin.so
-@so lib/qt5/plugins/pim5/kmail/plugineditorgrammar/kmail_languagetoolplugin.so
-lib/qt5/plugins/pim5/kmail/plugineditorinit/
-@so lib/qt5/plugins/pim5/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
-lib/qt5/plugins/pim5/korganizer/
-@so lib/qt5/plugins/pim5/korganizer/datenums.so
-@so lib/qt5/plugins/pim5/korganizer/lunarphases.so
-@so lib/qt5/plugins/pim5/korganizer/picoftheday.so
-@so lib/qt5/plugins/pim5/korganizer/thisdayinhistory.so
-lib/qt5/plugins/pim5/libksieve/
-@so lib/qt5/plugins/pim5/libksieve/emaillineeditplugin.so
-@so lib/qt5/plugins/pim5/libksieve/imapfoldercompletionplugin.so
-@so lib/qt5/plugins/pim5/mailtransport/mailtransport_sendplugin.so
-lib/qt5/plugins/pim5/messageviewer/bodypartformatter/
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_gnupgwks.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_mstnef.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_pkpass.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_semantic.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_calendar.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_highlighter.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_markdown.so
-@so lib/qt5/plugins/pim5/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_vcard.so
-lib/qt5/plugins/pim5/messageviewer/checkbeforedeleting/
-@so lib/qt5/plugins/pim5/messageviewer/checkbeforedeleting/kmail_confirmbeforedeletingplugin.so
-lib/qt5/plugins/pim5/messageviewer/configuresettings/
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_dkimconfigplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_openurlwithconfigplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/configuresettings/messageviewer_scamconfiguresettingsplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/grantlee/5.0/kitinerary_grantlee_extension.so
-@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_grantleeheaderstyleplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_longheaderstyleplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_standardsheaderstyleplugin.so
-lib/qt5/plugins/pim5/messageviewer/viewercommonplugin/
-@so lib/qt5/plugins/pim5/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/viewercommonplugin/messageviewer_translatorplugin.so
-lib/qt5/plugins/pim5/messageviewer/viewerplugin/
-@so lib/qt5/plugins/pim5/messageviewer/viewerplugin/messageviewer_createeventplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/viewerplugin/messageviewer_createnoteplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/viewerplugin/messageviewer_createtodoplugin.so
-@so lib/qt5/plugins/pim5/messageviewer/viewerplugin/messageviewer_externalscriptplugin.so
-lib/qt5/plugins/pim5/pimcommon/
-lib/qt5/plugins/pim5/pimcommon/customtools/
-@so lib/qt5/plugins/pim5/pimcommon/customtools/pimcommon_translatorplugin.so
-lib/qt5/plugins/pim5/pimcommon/shorturlengine/
-@so lib/qt5/plugins/pim5/pimcommon/shorturlengine/pimcommon_isgdshorturlengineplugin.so
-@so lib/qt5/plugins/pim5/pimcommon/shorturlengine/pimcommon_tinyurlengineplugin.so
-@so lib/qt5/plugins/pim5/pimcommon/shorturlengine/pimcommon_triopabshorturlengineplugin.so
-lib/qt5/plugins/pim5/templateparser/
-@so lib/qt5/plugins/pim5/templateparser/templateparseraddressrequesterplugin.so
-lib/qt5/plugins/pim5/webengineviewer/
-lib/qt5/plugins/pim5/webengineviewer/urlinterceptor/
-@so lib/qt5/plugins/pim5/webengineviewer/urlinterceptor/webengineviewer_adblockplugin.so
-@so lib/qt5/plugins/pim5/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
-lib/qt5/plugins/plasmacalendarplugins/
-lib/qt5/plugins/plasmacalendarplugins/pimevents/
-@so lib/qt5/plugins/plasmacalendarplugins/pimevents.so
-lib/qt5/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qml
-lib/qt5/qml/org/kde/plasma/PimCalendars/
-@so lib/qt5/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
-lib/qt5/qml/org/kde/plasma/PimCalendars/qmldir
+@so lib/qt6/plugins/pim6/akonadi/emailaddressselectionldapdialogplugin.so
+lib/qt6/plugins/pim6/contacteditor/
+lib/qt6/plugins/pim6/contacteditor/editorpageplugins/
+@so lib/qt6/plugins/pim6/contacteditor/editorpageplugins/cryptopageplugin.so
+@so lib/qt6/plugins/pim6/importwizard/evolutionv1importerplugin.so
+@so lib/qt6/plugins/pim6/importwizard/evolutionv2importerplugin.so
+@so lib/qt6/plugins/pim6/importwizard/gearyimporterplugin.so
+@so lib/qt6/plugins/pim6/importwizard/operaimporterplugin.so
+lib/qt6/plugins/pim6/kaddressbook/
+lib/qt6/plugins/pim6/kaddressbook/importexportplugin/
+@so lib/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportgmxplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportldapplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportldifplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportvcardplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/importexportplugin/kaddressbook_importexportwindowscontactplugin.so
+lib/qt6/plugins/pim6/kaddressbook/mainview/
+@so lib/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_checkgravatarplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_mergecontactsplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_searchduplicatesplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_sendmailplugin.so
+@so lib/qt6/plugins/pim6/kaddressbook/mainview/kaddressbook_sendvcardsplugin.so
+lib/qt6/plugins/pim6/kmail/
+lib/qt6/plugins/pim6/kmail/mainview/
+@so lib/qt6/plugins/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
+@so lib/qt6/plugins/pim6/kmail/mainview/kmail_antispamplugin.so
+@so lib/qt6/plugins/pim6/kmail/mainview/kmail_antivirusplugin.so
+@so lib/qt6/plugins/pim6/kmail/mainview/kmail_expertplugin.so
+lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/
+@so lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_checkbeforesendeditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_confirmaddresseditorplugin.so
+lib/qt6/plugins/pim6/kmail/plugineditor/
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_autocorrectioneditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_changecaseeditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_insertemaileditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_insertshorturleditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_insertspecialcharactereditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_nonbreakingspaceeditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_quicktextplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_sharetexteditorplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditor/kmail_zoomtexteditorplugin.so
+lib/qt6/plugins/pim6/kmail/plugineditorconverttext/
+@so lib/qt6/plugins/pim6/kmail/plugineditorconverttext/kmail_markdownplugin.so
+lib/qt6/plugins/pim6/kmail/plugineditorgrammar/
+@so lib/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_grammalecteplugin.so
+@so lib/qt6/plugins/pim6/kmail/plugineditorgrammar/kmail_languagetoolplugin.so
+lib/qt6/plugins/pim6/kmail/plugineditorinit/
+@so lib/qt6/plugins/pim6/kmail/plugineditorinit/kmail_externalcomposereditorplugin.so
+lib/qt6/plugins/pim6/korganizer/
+@so lib/qt6/plugins/pim6/korganizer/datenums.so
+@so lib/qt6/plugins/pim6/korganizer/lunarphases.so
+@so lib/qt6/plugins/pim6/korganizer/picoftheday.so
+@so lib/qt6/plugins/pim6/korganizer/thisdayinhistory.so
+lib/qt6/plugins/pim6/libksieve/
+@so lib/qt6/plugins/pim6/libksieve/emaillineeditplugin.so
+@so lib/qt6/plugins/pim6/libksieve/imapfoldercompletionplugin.so
+@so lib/qt6/plugins/pim6/mailtransport/mailtransport_sendplugin.so
+lib/qt6/plugins/pim6/messageviewer/bodypartformatter/
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_gnupgwks.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_mstnef.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_pkpass.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_semantic.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_calendar.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_highlighter.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_markdown.so
+@so lib/qt6/plugins/pim6/messageviewer/bodypartformatter/messageviewer_bodypartformatter_text_vcard.so
+lib/qt6/plugins/pim6/messageviewer/checkbeforedeleting/
+@so lib/qt6/plugins/pim6/messageviewer/checkbeforedeleting/kmail_confirmbeforedeletingplugin.so
+lib/qt6/plugins/pim6/messageviewer/configuresettings/
+@so lib/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_dkimconfigplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/configuresettings/messageviewer_openurlwithconfigplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_fancyheaderstyleplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_grantleeheaderstyleplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_longheaderstyleplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_standardsheaderstyleplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/kf6/ktexttemplate/kitinerary_ktexttemplate_extension.so
+lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/
+@so lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_expandurlplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/viewercommonplugin/messageviewer_translatorplugin.so
+lib/qt6/plugins/pim6/messageviewer/viewerplugin/
+@so lib/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createeventplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createnoteplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_createtodoplugin.so
+@so lib/qt6/plugins/pim6/messageviewer/viewerplugin/messageviewer_externalscriptplugin.so
+lib/qt6/plugins/pim6/pimcommon/
+lib/qt6/plugins/pim6/pimcommon/customtools/
+@so lib/qt6/plugins/pim6/pimcommon/customtools/pimcommon_translatorplugin.so
+lib/qt6/plugins/pim6/pimcommon/shorturlengine/
+@so lib/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_isgdshorturlengineplugin.so
+@so lib/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_tinyurlengineplugin.so
+@so lib/qt6/plugins/pim6/pimcommon/shorturlengine/pimcommon_triopabshorturlengineplugin.so
+lib/qt6/plugins/pim6/templateparser/
+@so lib/qt6/plugins/pim6/templateparser/templateparseraddressrequesterplugin.so
+lib/qt6/plugins/pim6/webengineviewer/
+lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/
+@so lib/qt6/plugins/pim6/webengineviewer/urlinterceptor/webengineviewer_donottrackplugin.so
+lib/qt6/plugins/plasmacalendarplugins/
+lib/qt6/plugins/plasmacalendarplugins/pimevents/
+@so lib/qt6/plugins/plasmacalendarplugins/pimevents.so
+lib/qt6/plugins/plasmacalendarplugins/pimevents/PimEventsConfig.qml
+lib/qt6/qml/org/kde/plasma/
+lib/qt6/qml/org/kde/plasma/PimCalendars/
+@so lib/qt6/qml/org/kde/plasma/PimCalendars/libpimcalendarsplugin.so
+lib/qt6/qml/org/kde/plasma/PimCalendars/qmldir
 share/examples/kdepim-addons/
 share/examples/kdepim-addons/xdg/
 share/examples/kdepim-addons/xdg/kmail.antispamrc
@@ -135,7 +131,6 @@ share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-full.svg
 share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-new.svg
-share/kconf_update/webengineurlinterceptoradblock.upd
 share/locale/af/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/af/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ar/LC_MESSAGES/cryptopageplugin.mo
@@ -161,9 +156,33 @@ share/locale/ar/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ar/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ar/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ar/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ar/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ar/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ar/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ast/LC_MESSAGES/cryptopageplugin.mo
+share/locale/ast/LC_MESSAGES/customtoolsplugin.mo
+share/locale/ast/LC_MESSAGES/importwizard_plugins.mo
+share/locale/ast/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/ast/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_editorgrammar_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_editorinit_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
+share/locale/ast/LC_MESSAGES/kmail_plugins.mo
+share/locale/ast/LC_MESSAGES/kmailtransport_plugins.mo
+share/locale/ast/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ast/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/ast/LC_MESSAGES/messageviewer_semantic_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/ast/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
+share/locale/ast/LC_MESSAGES/messageviewerheaderplugins.mo
+share/locale/ast/LC_MESSAGES/messageviewerplugins.mo
+share/locale/ast/LC_MESSAGES/sieveeditor_plugins.mo
+share/locale/ast/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/az/LC_MESSAGES/cryptopageplugin.mo
 share/locale/az/LC_MESSAGES/customtoolsplugin.mo
 share/locale/az/LC_MESSAGES/importwizard_plugins.mo
@@ -187,7 +206,6 @@ share/locale/az/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/az/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/az/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/az/LC_MESSAGES/messageviewerplugins.mo
-share/locale/az/LC_MESSAGES/pimeventsplugin.mo
 share/locale/az/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/az/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/be/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -217,7 +235,6 @@ share/locale/bg/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/bg/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/bg/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/bg/LC_MESSAGES/messageviewerplugins.mo
-share/locale/bg/LC_MESSAGES/pimeventsplugin.mo
 share/locale/bg/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/bg/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/bn/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -254,7 +271,6 @@ share/locale/ca/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ca/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ca/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ca/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ca/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ca/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ca/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ca@valencia/LC_MESSAGES/cryptopageplugin.mo
@@ -280,7 +296,6 @@ share/locale/ca@valencia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ca@valencia/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/cs/LC_MESSAGES/cryptopageplugin.mo
@@ -306,7 +321,6 @@ share/locale/cs/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/cs/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/cs/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/cs/LC_MESSAGES/messageviewerplugins.mo
-share/locale/cs/LC_MESSAGES/pimeventsplugin.mo
 share/locale/cs/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/cs/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/cy/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -334,7 +348,6 @@ share/locale/da/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/da/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/da/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/da/LC_MESSAGES/messageviewerplugins.mo
-share/locale/da/LC_MESSAGES/pimeventsplugin.mo
 share/locale/da/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/da/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/de/LC_MESSAGES/cryptopageplugin.mo
@@ -360,7 +373,6 @@ share/locale/de/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/de/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/de/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/de/LC_MESSAGES/messageviewerplugins.mo
-share/locale/de/LC_MESSAGES/pimeventsplugin.mo
 share/locale/de/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/de/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/el/LC_MESSAGES/cryptopageplugin.mo
@@ -392,22 +404,33 @@ share/locale/en_GB/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/en_GB/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/en_GB/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/en_GB/LC_MESSAGES/messageviewerplugins.mo
-share/locale/en_GB/LC_MESSAGES/pimeventsplugin.mo
 share/locale/en_GB/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/en_GB/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/eo/LC_MESSAGES/cryptopageplugin.mo
 share/locale/eo/LC_MESSAGES/customtoolsplugin.mo
 share/locale/eo/LC_MESSAGES/importwizard_plugins.mo
 share/locale/eo/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/eo/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/eo/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
+share/locale/eo/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/eo/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/eo/LC_MESSAGES/kmail_editorgrammar_plugins.mo
 share/locale/eo/LC_MESSAGES/kmail_editorinit_plugins.mo
+share/locale/eo/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
+share/locale/eo/LC_MESSAGES/kmail_plugins.mo
 share/locale/eo/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/eo/LC_MESSAGES/korganizer_plugins.mo
+share/locale/eo/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
 share/locale/eo/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/eo/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/eo/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/eo/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/eo/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
-share/locale/eo/LC_MESSAGES/pimeventsplugin.mo
+share/locale/eo/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
+share/locale/eo/LC_MESSAGES/messageviewerheaderplugins.mo
+share/locale/eo/LC_MESSAGES/messageviewerplugins.mo
+share/locale/eo/LC_MESSAGES/sieveeditor_plugins.mo
+share/locale/eo/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/es/LC_MESSAGES/cryptopageplugin.mo
 share/locale/es/LC_MESSAGES/customtoolsplugin.mo
 share/locale/es/LC_MESSAGES/importwizard_plugins.mo
@@ -431,7 +454,6 @@ share/locale/es/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/es/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/es/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/es/LC_MESSAGES/messageviewerplugins.mo
-share/locale/es/LC_MESSAGES/pimeventsplugin.mo
 share/locale/es/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/es/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/et/LC_MESSAGES/cryptopageplugin.mo
@@ -456,7 +478,6 @@ share/locale/et/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/et/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/et/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/et/LC_MESSAGES/messageviewerplugins.mo
-share/locale/et/LC_MESSAGES/pimeventsplugin.mo
 share/locale/et/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/et/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/eu/LC_MESSAGES/cryptopageplugin.mo
@@ -482,7 +503,6 @@ share/locale/eu/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/eu/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/eu/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/eu/LC_MESSAGES/messageviewerplugins.mo
-share/locale/eu/LC_MESSAGES/pimeventsplugin.mo
 share/locale/eu/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/eu/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/fa/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -512,7 +532,6 @@ share/locale/fi/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/fi/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/fi/LC_MESSAGES/messageviewerplugins.mo
-share/locale/fi/LC_MESSAGES/pimeventsplugin.mo
 share/locale/fi/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/fi/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/fr/LC_MESSAGES/cryptopageplugin.mo
@@ -538,7 +557,6 @@ share/locale/fr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/fr/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/fr/LC_MESSAGES/messageviewerplugins.mo
-share/locale/fr/LC_MESSAGES/pimeventsplugin.mo
 share/locale/fr/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/fr/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/fy/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -574,7 +592,6 @@ share/locale/gl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/gl/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/gl/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/gl/LC_MESSAGES/messageviewerplugins.mo
-share/locale/gl/LC_MESSAGES/pimeventsplugin.mo
 share/locale/gl/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/gl/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/he/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -591,9 +608,12 @@ share/locale/hr/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/hr/LC_MESSAGES/korganizer_plugins.mo
 share/locale/hsb/LC_MESSAGES/korganizer_plugins.mo
 share/locale/hu/LC_MESSAGES/cryptopageplugin.mo
+share/locale/hu/LC_MESSAGES/customtoolsplugin.mo
+share/locale/hu/LC_MESSAGES/importwizard_plugins.mo
 share/locale/hu/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/hu/LC_MESSAGES/korganizer_plugins.mo
 share/locale/hu/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/hu/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/hu/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/hu/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/hu/LC_MESSAGES/webengineurlinterceptor.mo
@@ -620,7 +640,6 @@ share/locale/ia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ia/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ia/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ia/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ia/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ia/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ia/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/is/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -650,7 +669,6 @@ share/locale/it/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/it/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/it/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/it/LC_MESSAGES/messageviewerplugins.mo
-share/locale/it/LC_MESSAGES/pimeventsplugin.mo
 share/locale/it/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/it/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ja/LC_MESSAGES/cryptopageplugin.mo
@@ -676,7 +694,6 @@ share/locale/ja/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ja/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ja/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ja/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ja/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ja/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ja/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ka/LC_MESSAGES/cryptopageplugin.mo
@@ -702,7 +719,6 @@ share/locale/ka/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ka/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ka/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ka/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ka/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ka/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ka/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/kk/LC_MESSAGES/cryptopageplugin.mo
@@ -739,7 +755,6 @@ share/locale/ko/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ko/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ko/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ko/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ko/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ko/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ko/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/lt/LC_MESSAGES/cryptopageplugin.mo
@@ -765,7 +780,6 @@ share/locale/lt/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/lt/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/lt/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/lt/LC_MESSAGES/messageviewerplugins.mo
-share/locale/lt/LC_MESSAGES/pimeventsplugin.mo
 share/locale/lt/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/lt/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/lv/LC_MESSAGES/cryptopageplugin.mo
@@ -828,7 +842,6 @@ share/locale/nl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/nl/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/nl/LC_MESSAGES/messageviewerplugins.mo
-share/locale/nl/LC_MESSAGES/pimeventsplugin.mo
 share/locale/nl/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/nl/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/nn/LC_MESSAGES/cryptopageplugin.mo
@@ -864,7 +877,6 @@ share/locale/pl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/pl/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/pl/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/pl/LC_MESSAGES/messageviewerplugins.mo
-share/locale/pl/LC_MESSAGES/pimeventsplugin.mo
 share/locale/pl/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pl/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/pt/LC_MESSAGES/cryptopageplugin.mo
@@ -890,7 +902,6 @@ share/locale/pt/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/pt/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/pt/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/pt/LC_MESSAGES/messageviewerplugins.mo
-share/locale/pt/LC_MESSAGES/pimeventsplugin.mo
 share/locale/pt/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pt/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/pt_BR/LC_MESSAGES/cryptopageplugin.mo
@@ -916,7 +927,6 @@ share/locale/pt_BR/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/pt_BR/LC_MESSAGES/messageviewerplugins.mo
-share/locale/pt_BR/LC_MESSAGES/pimeventsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/pt_BR/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ro/LC_MESSAGES/cryptopageplugin.mo
@@ -951,7 +961,6 @@ share/locale/ru/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/ru/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/ru/LC_MESSAGES/messageviewerplugins.mo
-share/locale/ru/LC_MESSAGES/pimeventsplugin.mo
 share/locale/ru/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/ru/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/se/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -981,7 +990,6 @@ share/locale/sk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sk/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/sk/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sk/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sk/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sk/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sk/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sl/LC_MESSAGES/cryptopageplugin.mo
@@ -1007,7 +1015,6 @@ share/locale/sl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sl/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/sl/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sl/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sl/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sl/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sl/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sq/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -1030,7 +1037,6 @@ share/locale/sr/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sr/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sr/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sr/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sr/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sr/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sr@ijekavian/LC_MESSAGES/cryptopageplugin.mo
@@ -1051,7 +1057,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sr@ijekavian/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sr@ijekavian/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sr@ijekavian/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/cryptopageplugin.mo
@@ -1072,7 +1077,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sr@latin/LC_MESSAGES/cryptopageplugin.mo
@@ -1093,7 +1097,6 @@ share/locale/sr@latin/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sr@latin/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sr@latin/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sr@latin/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sr@latin/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/sv/LC_MESSAGES/cryptopageplugin.mo
@@ -1119,15 +1122,20 @@ share/locale/sv/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/sv/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/sv/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sv/LC_MESSAGES/messageviewerplugins.mo
-share/locale/sv/LC_MESSAGES/pimeventsplugin.mo
 share/locale/sv/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sv/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ta/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/ta/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_editor_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_editorinit_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_plugins.mo
+share/locale/ta/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ta/LC_MESSAGES/korganizer_plugins.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
-share/locale/ta/LC_MESSAGES/pimeventsplugin.mo
 share/locale/tg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/tg/LC_MESSAGES/korganizer_plugins.mo
 share/locale/tg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -1159,7 +1167,6 @@ share/locale/tr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/tr/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/tr/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/tr/LC_MESSAGES/messageviewerplugins.mo
-share/locale/tr/LC_MESSAGES/pimeventsplugin.mo
 share/locale/tr/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/tr/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/ug/LC_MESSAGES/cryptopageplugin.mo
@@ -1191,7 +1198,6 @@ share/locale/uk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/uk/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/uk/LC_MESSAGES/messageviewerplugins.mo
-share/locale/uk/LC_MESSAGES/pimeventsplugin.mo
 share/locale/uk/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/uk/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/uz/LC_MESSAGES/kaddressbook_importexportplugins.mo
@@ -1229,7 +1235,6 @@ share/locale/zh_CN/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/zh_CN/LC_MESSAGES/messageviewerplugins.mo
-share/locale/zh_CN/LC_MESSAGES/pimeventsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/zh_CN/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/zh_TW/LC_MESSAGES/cryptopageplugin.mo
@@ -1255,11 +1260,10 @@ share/locale/zh_TW/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewerplugins.mo
-share/locale/zh_TW/LC_MESSAGES/pimeventsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/webengineurlinterceptor.mo
-share/qlogging-categories5/kdepim-addons.categories
-share/qlogging-categories5/kdepim-addons.renamecategories
+share/qlogging-categories6/kdepim-addons.categories
+share/qlogging-categories6/kdepim-addons.renamecategories
 share/qtcreator/
 share/qtcreator/templates/
 share/qtcreator/templates/kmaileditorconvertertextplugins/
@@ -1270,13 +1274,5 @@ share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
 share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
 share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
 share/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
-share/qtcreator/templates/kmaileditorplugins/
-share/qtcreator/templates/kmaileditorplugins/CMakeLists.txt
-share/qtcreator/templates/kmaileditorplugins/plugin.json.impl
-share/qtcreator/templates/kmaileditorplugins/plugineditor.cpp
-share/qtcreator/templates/kmaileditorplugins/plugineditor.h
-share/qtcreator/templates/kmaileditorplugins/plugineditorinterface.cpp
-share/qtcreator/templates/kmaileditorplugins/plugineditorinterface.h
-share/qtcreator/templates/kmaileditorplugins/wizard.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

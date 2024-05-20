@@ -2,33 +2,30 @@ COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
 
-SHARED_LIBS +=  KPim5GrantleeTheme        1.0 # 0.0
+SHARED_LIBS +=	KPim6GrantleeTheme        0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
-WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5IconThemes KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6TextTemplate KF6WidgetsAddons KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/knewstuff \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		x11/grantlee-qt5
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/knewstuff \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui
 
 TEST_IS_INTERACTIVE =	X11
 

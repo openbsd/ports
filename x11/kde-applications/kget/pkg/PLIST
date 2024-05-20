@@ -1,21 +1,21 @@
 @pkgpath x11/kde4/kget
 @bin bin/kget
 @lib lib/libkgetcore.so.${LIBkgetcore_VERSION}
-lib/qt5/plugins/kget/
-@so lib/qt5/plugins/kget/kget_bittorrent.so
-@so lib/qt5/plugins/kget/kget_checksumsearchfactory.so
-@so lib/qt5/plugins/kget/kget_kio.so
-@so lib/qt5/plugins/kget/kget_metalinkfactory.so
-@so lib/qt5/plugins/kget/kget_mirrorsearchfactory.so
-@so lib/qt5/plugins/kget/kget_mmsfactory.so
-@so lib/qt5/plugins/kget/kget_multisegkiofactory.so
-lib/qt5/plugins/kget_kcms/
-@so lib/qt5/plugins/kget_kcms/kcm_kget_bittorrentfactory.so
-@so lib/qt5/plugins/kget_kcms/kcm_kget_checksumsearchfactory.so
-@so lib/qt5/plugins/kget_kcms/kcm_kget_metalinkfactory.so
-@so lib/qt5/plugins/kget_kcms/kcm_kget_mirrorsearchfactory.so
-@so lib/qt5/plugins/kget_kcms/kcm_kget_mmsfactory.so
-@so lib/qt5/plugins/kget_kcms/kcm_kget_multisegkiofactory.so
+lib/qt6/plugins/kget/
+@so lib/qt6/plugins/kget/kget_bittorrent.so
+@so lib/qt6/plugins/kget/kget_checksumsearchfactory.so
+@so lib/qt6/plugins/kget/kget_kio.so
+@so lib/qt6/plugins/kget/kget_metalinkfactory.so
+@so lib/qt6/plugins/kget/kget_mirrorsearchfactory.so
+@so lib/qt6/plugins/kget/kget_mmsfactory.so
+@so lib/qt6/plugins/kget/kget_multisegkiofactory.so
+lib/qt6/plugins/kget_kcms/
+@so lib/qt6/plugins/kget_kcms/kcm_kget_bittorrentfactory.so
+@so lib/qt6/plugins/kget_kcms/kcm_kget_checksumsearchfactory.so
+@so lib/qt6/plugins/kget_kcms/kcm_kget_metalinkfactory.so
+@so lib/qt6/plugins/kget_kcms/kcm_kget_mirrorsearchfactory.so
+@so lib/qt6/plugins/kget_kcms/kcm_kget_mmsfactory.so
+@so lib/qt6/plugins/kget_kcms/kcm_kget_multisegkiofactory.so
 share/applications/org.kde.kget.desktop
 share/config.kcfg/kget.kcfg
 share/config.kcfg/kget_checksumsearchfactory.kcfg
@@ -210,11 +210,8 @@ share/kget/pics/kget_splash.png
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/kget_download.desktop
-share/knotifications5/kget.notifyrc
-share/kservicetypes5/kget_plugin.desktop
-share/kxmlgui5/
-share/kxmlgui5/kget/
-share/kxmlgui5/kget/kgetui.rc
+share/kio/servicemenus/kget_plugin.desktop
+share/knotifications6/kget.notifyrc
 share/locale/af/LC_MESSAGES/kget.mo
 share/locale/ar/LC_MESSAGES/kget.mo
 share/locale/be/LC_MESSAGES/kget.mo
@@ -298,4 +295,4 @@ share/locale/zh_TW/LC_MESSAGES/kget.mo
 share/metainfo/
 share/metainfo/org.kde.kget.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/qlogging-categories5/kget.categories
+share/qlogging-categories6/kget.categories

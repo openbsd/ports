@@ -45,6 +45,9 @@ share/doc/HTML/ru/kruler/index.docbook
 share/doc/HTML/sv/kruler/
 share/doc/HTML/sv/kruler/index.cache.bz2
 share/doc/HTML/sv/kruler/index.docbook
+share/doc/HTML/tr/kruler/
+share/doc/HTML/tr/kruler/index.cache.bz2
+share/doc/HTML/tr/kruler/index.docbook
 share/doc/HTML/uk/kruler/
 share/doc/HTML/uk/kruler/index.cache.bz2
 share/doc/HTML/uk/kruler/index.docbook
@@ -63,13 +66,14 @@ share/icons/hicolor/22x22/apps/kruler.png
 share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/48x48/apps/kruler.png
 share/icons/hicolor/64x64/apps/kruler.png
-share/knotifications5/
-share/knotifications5/kruler.notifyrc
+share/knotifications6/
+share/knotifications6/kruler.notifyrc
 share/kruler/
 share/kruler/sounds/
 share/kruler/sounds/move.wav
 share/locale/af/LC_MESSAGES/kruler.mo
 share/locale/ar/LC_MESSAGES/kruler.mo
+share/locale/ast/LC_MESSAGES/kruler.mo
 share/locale/be/LC_MESSAGES/kruler.mo
 share/locale/bg/LC_MESSAGES/kruler.mo
 share/locale/br/LC_MESSAGES/kruler.mo

@@ -1,9 +1,9 @@
 @conflict kdenetwork-filesharing-<=19.12.3
 @pkgpath x11/kde4/network-filesharing
-lib/qt5/plugins/kf5/propertiesdialog/
-@so lib/qt5/plugins/kf5/propertiesdialog/SambaAcl.so
-@so lib/qt5/plugins/kf5/propertiesdialog/sambausershareplugin.so
-@bin libexec/kauth/authhelper
+lib/qt6/plugins/kf6/propertiesdialog/
+@so lib/qt6/plugins/kf6/propertiesdialog/SambaAcl.so
+@so lib/qt6/plugins/kf6/propertiesdialog/sambausershareplugin.so
+@bin libexec/kf6/kauth/authhelper
 share/dbus-1/system-services/org.kde.filesharing.samba.service
 share/dbus-1/system.d/org.kde.filesharing.samba.conf
 share/locale/ar/LC_MESSAGES/kfileshare.mo

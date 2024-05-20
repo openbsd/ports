@@ -1,63 +1,71 @@
 COMMENT =	client for Matrix chat
 DISTNAME =	neochat-${MODKDE_VERSION}
 CATEGORIES=	net
-REVISION =	0
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+EXTRACT_SUFX =	.tar.xz
 
 HOMEPAGE =	https://apps.kde.org/de/neochat/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5DBusAddons KF5I18n KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Kirigami2 KF5Notifications
-WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5WidgetsAddons
-WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5QuickControls2 Qt5Sql Qt5Widgets Qt5Xml Quotient
-WANTLIB += X11 c cmark m olm qt5keychain
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6I18n KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6SonnetCore KF6StatusNotifierItem KF6WidgetsAddons
+WANTLIB += KF6WindowSystem Kirigami KirigamiPlatform Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Sql Qt6WebView Qt6Widgets
+WANTLIB += QuotientQt6 X11 c cmark icuuc m olm qt6keychain
 
 MODULES =	x11/kde-applications \
-		devel/kf5
+		devel/kf6
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kitemmodels \
-		devel/kf5/qqc2-desktop-style \
-		devel/kf5/sonnet \
+		devel/kf6/kitemmodels \
+		devel/kf6/qqc2-desktop-style \
+		devel/kf6/sonnet \
 		graphics/kquickimageeditor>=0.2.0 \
+		devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
 		x11/gtk+4,-guic
 
 BUILD_DEPENDS = devel/gettext,-tools \
-		devel/kf5/kitemmodels \
-		devel/kf5/qqc2-desktop-style \
+		devel/kf6/kitemmodels \
+		devel/kf6/qqc2-desktop-style \
 		graphics/kquickimageeditor>=0.2.0 \
-		devel/qcoro \
+		devel/kf6/kquickcharts \
+		devel/qcoro,qt6 \
 		graphics/kirigami-addons \
+		x11/qt6/qtlocation \
 		math/ecm
 
-LIB_DEPENDS =	devel/kf5/kconfig \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kcompletion \
-		devel/kf5/kservice \
-		devel/kf5/solid \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kirigami2 \
-		devel/kf5/sonnet \
-		devel/kf5/knotifications \
-		devel/kf5/kitemmodels \
-		security/qtkeychain \
+LIB_DEPENDS =	devel/kf6/kconfig \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kirigami \
+		devel/kf6/kitemmodels \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/olm \
+		security/qtkeychain,qt6 \
 		textproc/cmark \
-		x11/libqtolm \
 		x11/libquotient>=0.7 \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtquickcontrols2
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtwebview
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -69,6 +69,8 @@ share/kcachegrind/icons/hicolor/32x32/actions/
 share/kcachegrind/icons/hicolor/32x32/actions/percent.png
 share/kcachegrind/tips
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
+share/locale/ast/LC_MESSAGES/kcachegrind.mo
+share/locale/ast/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/be/LC_MESSAGES/kcachegrind.mo
 share/locale/bg/LC_MESSAGES/kcachegrind.mo
 share/locale/bg/LC_MESSAGES/kcachegrind_qt.qm
@@ -114,6 +116,8 @@ share/locale/hr/LC_MESSAGES/kcachegrind.mo
 share/locale/hr/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/hu/LC_MESSAGES/kcachegrind.mo
 share/locale/hu/LC_MESSAGES/kcachegrind_qt.qm
+share/locale/ia/LC_MESSAGES/kcachegrind.mo
+share/locale/ia/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/it/LC_MESSAGES/kcachegrind.mo
 share/locale/it/LC_MESSAGES/kcachegrind_qt.qm
 share/locale/ja/LC_MESSAGES/kcachegrind.mo

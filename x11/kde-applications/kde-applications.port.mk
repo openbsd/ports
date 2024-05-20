@@ -1,4 +1,6 @@
-MODKDE_VERSION ?=		23.08.4
+MODKDE_VERSION ?=		24.02.1
+
+MODKDE_KF5 ?=			No
 
 # Set to 'yes' if there are .desktop files under share/release-service/.
 .if defined(MODKDE5_DESKTOP_FILE) && ${MODKDE5_DESKTOP_FILE:L} == "yes"
@@ -17,6 +19,11 @@ MODKDE5_BUILD_DEPENDS +=	devel/gettext,-tools
 
 # Set to 'yes' if there are icon files under share/doc/.
 .if defined(MODKDE5_DOCS) && ${MODKDE5_DOCS:L} == "yes"
+.if ${MODKDE_KF5:L} == "yes"
 MODKDE5_BUILD_DEPENDS +=	devel/kf5/kdoctools
 MODKDE5_RUN_DEPENDS +=		devel/kf5/kdoctools
+.else
+MODKDE5_BUILD_DEPENDS +=	devel/kf6/kdoctools
+MODKDE5_RUN_DEPENDS +=		devel/kf6/kdoctools
+.endif
 .endif

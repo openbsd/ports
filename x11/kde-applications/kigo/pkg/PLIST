@@ -98,6 +98,7 @@ share/knsrcfiles/
 share/knsrcfiles/kigo-games.knsrc
 share/knsrcfiles/kigo.knsrc
 share/locale/ar/LC_MESSAGES/kigo.mo
+share/locale/ast/LC_MESSAGES/kigo.mo
 share/locale/bg/LC_MESSAGES/kigo.mo
 share/locale/bs/LC_MESSAGES/kigo.mo
 share/locale/ca/LC_MESSAGES/kigo.mo
@@ -118,6 +119,7 @@ share/locale/gl/LC_MESSAGES/kigo.mo
 share/locale/hr/LC_MESSAGES/kigo.mo
 share/locale/hsb/LC_MESSAGES/kigo.mo
 share/locale/hu/LC_MESSAGES/kigo.mo
+share/locale/ia/LC_MESSAGES/kigo.mo
 share/locale/id/LC_MESSAGES/kigo.mo
 share/locale/is/LC_MESSAGES/kigo.mo
 share/locale/it/LC_MESSAGES/kigo.mo
@@ -158,4 +160,4 @@ share/metainfo/
 share/metainfo/org.kde.kigo.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-share/qlogging-categories5/kigo.categories
+share/qlogging-categories6/kigo.categories

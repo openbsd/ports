@@ -4,11 +4,11 @@ CATEGORIES =	productivity
 
 HOMEPAGE =	https://kde.org/applications/utilities/org.kde.kteatime
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5Notifications
-WANTLIB += KF5NotifyConfig KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6Notifications
+WANTLIB += KF6NotifyConfig KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets Qt6Xml
 WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
@@ -18,18 +18,18 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/sonnet
 
 .include <bsd.port.mk>

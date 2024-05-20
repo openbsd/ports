@@ -1,6 +1,5 @@
 @pkgpath x11/kde4/kiten
 @bin bin/kiten
-@bin bin/kitengen
 @bin bin/kitenkanjibrowser
 @bin bin/kitenradselect
 include/libkiten/
@@ -16,7 +15,6 @@ include/libkiten/dictquery.h
 include/libkiten/entry.h
 include/libkiten/entrylist.h
 include/libkiten/historyptrlist.h
-include/libkiten/kromajiedit.h
 @lib lib/libkiten.so.${LIBkiten_VERSION}
 share/applications/org.kde.kiten.desktop
 share/applications/org.kde.kitenkanjibrowser.desktop
@@ -110,13 +108,6 @@ share/kiten/kanjidic
 share/kiten/radkfile
 share/kiten/romkana.cnv
 share/kiten/vconj
-share/kxmlgui5/
-share/kxmlgui5/kiten/
-share/kxmlgui5/kiten/kitenui.rc
-share/kxmlgui5/kitenkanjibrowser/
-share/kxmlgui5/kitenkanjibrowser/kanjibrowserui.rc
-share/kxmlgui5/kitenradselect/
-share/kxmlgui5/kitenradselect/radselectui.rc
 share/locale/af/LC_MESSAGES/kiten.mo
 share/locale/ar/LC_MESSAGES/kiten.mo
 share/locale/be/LC_MESSAGES/kiten.mo
@@ -140,10 +131,12 @@ share/locale/fi/LC_MESSAGES/kiten.mo
 share/locale/fr/LC_MESSAGES/kiten.mo
 share/locale/ga/LC_MESSAGES/kiten.mo
 share/locale/gl/LC_MESSAGES/kiten.mo
+share/locale/he/LC_MESSAGES/kiten.mo
 share/locale/hi/LC_MESSAGES/kiten.mo
 share/locale/hne/LC_MESSAGES/kiten.mo
 share/locale/hr/LC_MESSAGES/kiten.mo
 share/locale/hu/LC_MESSAGES/kiten.mo
+share/locale/ia/LC_MESSAGES/kiten.mo
 share/locale/is/LC_MESSAGES/kiten.mo
 share/locale/it/LC_MESSAGES/kiten.mo
 share/locale/ja/LC_MESSAGES/kiten.mo

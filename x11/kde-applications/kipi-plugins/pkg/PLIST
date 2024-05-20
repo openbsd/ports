@@ -115,6 +115,8 @@ share/kservices5/kipiplugin_remotestorage.desktop
 share/kservices5/kipiplugin_sendimages.desktop
 share/kservices5/kipiplugin_smug.desktop
 share/kservices5/kipiplugin_yandexfotki.desktop
+share/kxmlgui5/
+share/kxmlgui5/kipi/
 share/kxmlgui5/kipi/kipiplugin_dropboxui.rc
 share/kxmlgui5/kipi/kipiplugin_facebookui.rc
 share/kxmlgui5/kipi/kipiplugin_flickrui.rc

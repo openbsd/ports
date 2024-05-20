@@ -2,9 +2,9 @@
 @bin bin/gwenview
 @bin bin/gwenview_importer
 @lib lib/libgwenviewlib.so.${LIBgwenviewlib_VERSION}
-@so lib/qt5/plugins/kf5/kfileitemaction/slideshowfileitemaction.so
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/gvpart.so
+@so lib/qt6/plugins/kf6/kfileitemaction/slideshowfileitemaction.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/gvpart.so
 share/applications/org.kde.gwenview.desktop
 share/applications/org.kde.gwenview_importer.desktop
 share/doc/HTML/ca/gwenview/
@@ -70,6 +70,9 @@ share/doc/HTML/sr@latin/gwenview/index.docbook
 share/doc/HTML/sv/gwenview/
 share/doc/HTML/sv/gwenview/index.cache.bz2
 share/doc/HTML/sv/gwenview/index.docbook
+share/doc/HTML/tr/gwenview/
+share/doc/HTML/tr/gwenview/index.cache.bz2
+share/doc/HTML/tr/gwenview/index.docbook
 share/doc/HTML/uk/gwenview/
 share/doc/HTML/uk/gwenview/browse_mode.png
 share/doc/HTML/uk/gwenview/fullscreen-browse.png
@@ -100,9 +103,6 @@ share/icons/hicolor/48x48/actions/document-share.png
 share/icons/hicolor/48x48/apps/gwenview.png
 share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
-share/kconf_update/gwenview-imageview-alphabackgroundmode-update.pl
-share/kconf_update/gwenview.upd
-share/kservices5/gvpart.desktop
 share/locale/ar/LC_MESSAGES/gwenview.mo
 share/locale/az/LC_MESSAGES/gwenview.mo
 share/locale/be/LC_MESSAGES/gwenview.mo
@@ -173,7 +173,7 @@ share/locale/wa/LC_MESSAGES/gwenview.mo
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/metainfo/org.kde.gwenview.appdata.xml
-share/qlogging-categories5/gwenview.categories
+share/qlogging-categories6/gwenview.categories
 share/solid/actions/gwenview_importer.desktop
 share/solid/actions/gwenview_importer_camera.desktop
 @tag update-desktop-database

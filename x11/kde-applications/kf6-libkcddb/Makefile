@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	KDE CDDB library
 
 DISTNAME =	libkcddb-${VERSION}

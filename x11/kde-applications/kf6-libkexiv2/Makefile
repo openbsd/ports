@@ -1,4 +1,3 @@
-UNLINKED =	kf6
 COMMENT =	EXIV2 Library interface for KDE
 
 DISTNAME =	libkexiv2-${VERSION}

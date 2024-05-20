@@ -3,26 +3,26 @@
 @lib lib/libkorganizer_core.so.${LIBkorganizer_core_VERSION}
 @lib lib/libkorganizer_interfaces.so.${LIBkorganizer_interfaces_VERSION}
 @lib lib/libkorganizerprivate.so.${LIBkorganizerprivate_VERSION}
-@so lib/qt5/plugins/korganizerpart.so
-lib/qt5/plugins/pim5/kcms/korganizer/
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configcolorsandfonts.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configdesignerfields.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configfreebusy.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configgroupscheduling.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configmain.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configplugins.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configtime.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configviews.so
-@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_userfeedback.so
-lib/qt5/plugins/pim5/kcms/summary/
-@so lib/qt5/plugins/pim5/kcms/summary/kcmapptsummary.so
-@so lib/qt5/plugins/pim5/kcms/summary/kcmsdsummary.so
-@so lib/qt5/plugins/pim5/kcms/summary/kcmtodosummary.so
-lib/qt5/plugins/pim5/kontact/
-@so lib/qt5/plugins/pim5/kontact/kontact_journalplugin.so
-@so lib/qt5/plugins/pim5/kontact/kontact_korganizerplugin.so
-@so lib/qt5/plugins/pim5/kontact/kontact_specialdatesplugin.so
-@so lib/qt5/plugins/pim5/kontact/kontact_todoplugin.so
+@so lib/qt6/plugins/korganizerpart.so
+lib/qt6/plugins/pim6/kcms/korganizer/
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configcolorsandfonts.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configdesignerfields.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configfreebusy.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configgroupscheduling.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configmain.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configplugins.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configtime.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configviews.so
+@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_userfeedback.so
+lib/qt6/plugins/pim6/kcms/summary/
+@so lib/qt6/plugins/pim6/kcms/summary/kcmapptsummary.so
+@so lib/qt6/plugins/pim6/kcms/summary/kcmsdsummary.so
+@so lib/qt6/plugins/pim6/kcms/summary/kcmtodosummary.so
+lib/qt6/plugins/pim6/kontact/
+@so lib/qt6/plugins/pim6/kontact/kontact_journalplugin.so
+@so lib/qt6/plugins/pim6/kontact/kontact_korganizerplugin.so
+@so lib/qt6/plugins/pim6/kontact/kontact_specialdatesplugin.so
+@so lib/qt6/plugins/pim6/kontact/kontact_todoplugin.so
 share/applications/korganizer-import.desktop
 share/applications/korganizer-view.desktop
 share/applications/org.kde.korganizer.desktop
@@ -137,6 +137,7 @@ share/korganizer/sounds/onscreen.wav
 share/korganizer/sounds/spinout.wav
 share/locale/af/LC_MESSAGES/korganizer.mo
 share/locale/ar/LC_MESSAGES/korganizer.mo
+share/locale/ast/LC_MESSAGES/korganizer.mo
 share/locale/az/LC_MESSAGES/korganizer.mo
 share/locale/be/LC_MESSAGES/korganizer.mo
 share/locale/bg/LC_MESSAGES/korganizer.mo
@@ -210,8 +211,8 @@ share/locale/xh/LC_MESSAGES/korganizer.mo
 share/locale/zh_CN/LC_MESSAGES/korganizer.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer.mo
 share/metainfo/org.kde.korganizer.appdata.xml
-share/qlogging-categories5/korganizer.categories
-share/qlogging-categories5/korganizer.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/oxygen
+share/qlogging-categories6/korganizer.categories
+share/qlogging-categories6/korganizer.renamecategories

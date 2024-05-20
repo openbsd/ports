@@ -18,6 +18,8 @@ MODKDE5_DOCS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_DESKTOP_FILE = yes
 
+MODKDE_KF5 = yes
+
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
@@ -28,11 +30,13 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
+		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
-		x11/qt5/qtxmlpatterns \
-		x11/kde-applications/libkipi>=${MODKDE_VERSION}
+		x11/kde-applications/libkipi>=${MODKDE_VERSION} \
+		x11/qt5/qtxmlpatterns
 
 .include <bsd.port.mk>

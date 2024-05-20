@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/ksirk
 @bin bin/ksirk
 @bin bin/ksirkskineditor
-@lib lib/libiris_ksirk.so.${LIBiris_ksirk_VERSION}
 share/applications/org.kde.ksirk.desktop
 share/applications/org.kde.ksirkskineditor.desktop
 share/config.kcfg/
@@ -109,6 +108,7 @@ share/doc/HTML/pt/ksirk/index.docbook
 share/doc/HTML/pt/ksirkskineditor/
 share/doc/HTML/pt/ksirkskineditor/index.cache.bz2
 share/doc/HTML/pt/ksirkskineditor/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/ksirk/
 share/doc/HTML/pt_BR/ksirk/index.cache.bz2
 share/doc/HTML/pt_BR/ksirk/index.docbook
@@ -158,7 +158,6 @@ share/icons/hicolor/scalable/apps/ksirk.svgz
 share/knsrcfiles/
 share/knsrcfiles/ksirk.knsrc
 share/ksirk/
-share/ksirk/jabber.png
 share/ksirk/skins/
 share/ksirk/skins/default/
 share/ksirk/skins/default/Data/
@@ -204,12 +203,9 @@ share/ksirk/skins/skinsdir
 share/ksirkskineditor/
 share/ksirkskineditor/cross.png
 share/ksirkskineditor/target.png
-share/kxmlgui5/
-share/kxmlgui5/ksirk/
-share/kxmlgui5/ksirk/ksirkui.rc
-share/kxmlgui5/ksirkskineditor/
-share/kxmlgui5/ksirkskineditor/ksirkskineditorui.rc
 share/locale/ar/LC_MESSAGES/ksirk.mo
+share/locale/ast/LC_MESSAGES/ksirk.mo
+share/locale/ast/LC_MESSAGES/ksirkskineditor.mo
 share/locale/be/LC_MESSAGES/ksirk.mo
 share/locale/bg/LC_MESSAGES/ksirk.mo
 share/locale/bg/LC_MESSAGES/ksirkskineditor.mo
@@ -250,6 +246,8 @@ share/locale/hr/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirkskineditor.mo
 share/locale/hu/LC_MESSAGES/ksirk.mo
 share/locale/hu/LC_MESSAGES/ksirkskineditor.mo
+share/locale/ia/LC_MESSAGES/ksirk.mo
+share/locale/ia/LC_MESSAGES/ksirkskineditor.mo
 share/locale/is/LC_MESSAGES/ksirk.mo
 share/locale/is/LC_MESSAGES/ksirkskineditor.mo
 share/locale/it/LC_MESSAGES/ksirk.mo
@@ -318,5 +316,5 @@ share/locale/zh_TW/LC_MESSAGES/ksirk.mo
 share/locale/zh_TW/LC_MESSAGES/ksirkskineditor.mo
 share/metainfo/
 share/metainfo/org.kde.ksirk.appdata.xml
-share/qlogging-categories5/ksirk.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/ksirk.categories

@@ -1,59 +1,60 @@
 @bin bin/akonadi_html_to_text
 @bin bin/akonadi_indexing_agent
-include/KPim5/AkonadiSearch/
-include/KPim5/AkonadiSearch/Core/
-include/KPim5/AkonadiSearch/Core/Query
-include/KPim5/AkonadiSearch/Core/ResultIterator
-include/KPim5/AkonadiSearch/Core/SearchStore
-include/KPim5/AkonadiSearch/Core/Term
-include/KPim5/AkonadiSearch/Debug/
-include/KPim5/AkonadiSearch/Debug/akonadisearchdebugdialog.h
-include/KPim5/AkonadiSearch/Debug/akonadisearchdebugsearchpathcombobox.h
-include/KPim5/AkonadiSearch/Debug/search_debug_export.h
-include/KPim5/AkonadiSearch/PIM/
-include/KPim5/AkonadiSearch/PIM/collectionquery.h
-include/KPim5/AkonadiSearch/PIM/contactcompleter.h
-include/KPim5/AkonadiSearch/PIM/contactquery.h
-include/KPim5/AkonadiSearch/PIM/emailquery.h
-include/KPim5/AkonadiSearch/PIM/indexeditems.h
-include/KPim5/AkonadiSearch/PIM/notequery.h
-include/KPim5/AkonadiSearch/PIM/query.h
-include/KPim5/AkonadiSearch/PIM/resultiterator.h
-include/KPim5/AkonadiSearch/PIM/search_pim_export.h
-include/KPim5/AkonadiSearch/Xapian/
-include/KPim5/AkonadiSearch/Xapian/search_xapian_export.h
-include/KPim5/AkonadiSearch/Xapian/xapiandatabase.h
-include/KPim5/AkonadiSearch/Xapian/xapiandocument.h
-include/KPim5/AkonadiSearch/Xapian/xapianqueryparser.h
-include/KPim5/AkonadiSearch/Xapian/xapiansearchstore.h
-include/KPim5/AkonadiSearch/Xapian/xapiantermgenerator.h
-include/KPim5/AkonadiSearch/akonadi_search_version.h
-include/KPim5/AkonadiSearch/core/
-include/KPim5/AkonadiSearch/core/query.h
-include/KPim5/AkonadiSearch/core/resultiterator.h
-include/KPim5/AkonadiSearch/core/searchstore.h
-include/KPim5/AkonadiSearch/core/term.h
-include/KPim5/AkonadiSearch/search_core_export.h
-lib/cmake/KPim5AkonadiSearch/
-lib/cmake/KPim5AkonadiSearch/KPim5AkonadiSearchConfig.cmake
-lib/cmake/KPim5AkonadiSearch/KPim5AkonadiSearchConfigVersion.cmake
-lib/cmake/KPim5AkonadiSearch/KPim5AkonadiSearchTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KPim5AkonadiSearch/KPim5AkonadiSearchTargets.cmake
-@lib lib/libKPim5AkonadiSearchCore.so.${LIBKPim5AkonadiSearchCore_VERSION}
-@lib lib/libKPim5AkonadiSearchDebug.so.${LIBKPim5AkonadiSearchDebug_VERSION}
-@lib lib/libKPim5AkonadiSearchPIM.so.${LIBKPim5AkonadiSearchPIM_VERSION}
-@lib lib/libKPim5AkonadiSearchXapian.so.${LIBKPim5AkonadiSearchXapian_VERSION}
-lib/qt5/plugins/kf5/krunner/
-lib/qt5/plugins/kf5/krunner/kcms/
-@so lib/qt5/plugins/kf5/krunner/kcms/kcm_krunner_pimcontacts.so
-@so lib/qt5/plugins/kf5/krunner/krunner_pimcontacts.so
-@so lib/qt5/plugins/pim5/akonadi/akonadi_search_plugin.so
-@so lib/qt5/plugins/pim5/akonadi/calendarsearchstore.so
-@so lib/qt5/plugins/pim5/akonadi/contactsearchstore.so
-@so lib/qt5/plugins/pim5/akonadi/emailsearchstore.so
-@so lib/qt5/plugins/pim5/akonadi/notesearchstore.so
+include/KPim6/AkonadiSearch/
+include/KPim6/AkonadiSearch/Core/
+include/KPim6/AkonadiSearch/Core/Query
+include/KPim6/AkonadiSearch/Core/ResultIterator
+include/KPim6/AkonadiSearch/Core/SearchStore
+include/KPim6/AkonadiSearch/Core/Term
+include/KPim6/AkonadiSearch/Debug/
+include/KPim6/AkonadiSearch/Debug/akonadisearchdebugdialog.h
+include/KPim6/AkonadiSearch/Debug/akonadisearchdebugsearchpathcombobox.h
+include/KPim6/AkonadiSearch/Debug/search_debug_export.h
+include/KPim6/AkonadiSearch/PIM/
+include/KPim6/AkonadiSearch/PIM/collectionquery.h
+include/KPim6/AkonadiSearch/PIM/contactcompleter.h
+include/KPim6/AkonadiSearch/PIM/contactquery.h
+include/KPim6/AkonadiSearch/PIM/emailquery.h
+include/KPim6/AkonadiSearch/PIM/indexeditems.h
+include/KPim6/AkonadiSearch/PIM/notequery.h
+include/KPim6/AkonadiSearch/PIM/query.h
+include/KPim6/AkonadiSearch/PIM/resultiterator.h
+include/KPim6/AkonadiSearch/PIM/search_pim_export.h
+include/KPim6/AkonadiSearch/Xapian/
+include/KPim6/AkonadiSearch/Xapian/search_xapian_export.h
+include/KPim6/AkonadiSearch/Xapian/xapiandatabase.h
+include/KPim6/AkonadiSearch/Xapian/xapiandocument.h
+include/KPim6/AkonadiSearch/Xapian/xapianqueryparser.h
+include/KPim6/AkonadiSearch/Xapian/xapiansearchstore.h
+include/KPim6/AkonadiSearch/Xapian/xapiantermgenerator.h
+include/KPim6/AkonadiSearch/akonadi_search_version.h
+include/KPim6/AkonadiSearch/core/
+include/KPim6/AkonadiSearch/core/query.h
+include/KPim6/AkonadiSearch/core/resultiterator.h
+include/KPim6/AkonadiSearch/core/searchstore.h
+include/KPim6/AkonadiSearch/core/term.h
+include/KPim6/AkonadiSearch/search_core_export.h
+lib/cmake/KPim6AkonadiSearch/
+lib/cmake/KPim6AkonadiSearch/KPim6AkonadiSearchConfig.cmake
+lib/cmake/KPim6AkonadiSearch/KPim6AkonadiSearchConfigVersion.cmake
+lib/cmake/KPim6AkonadiSearch/KPim6AkonadiSearchTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim6AkonadiSearch/KPim6AkonadiSearchTargets.cmake
+@lib lib/libKPim6AkonadiSearchCore.so.${LIBKPim6AkonadiSearchCore_VERSION}
+@lib lib/libKPim6AkonadiSearchDebug.so.${LIBKPim6AkonadiSearchDebug_VERSION}
+@lib lib/libKPim6AkonadiSearchPIM.so.${LIBKPim6AkonadiSearchPIM_VERSION}
+@lib lib/libKPim6AkonadiSearchXapian.so.${LIBKPim6AkonadiSearchXapian_VERSION}
+lib/qt6/plugins/kf6/krunner/
+lib/qt6/plugins/kf6/krunner/kcms/
+@so lib/qt6/plugins/kf6/krunner/kcms/kcm_krunner_pimcontacts.so
+@so lib/qt6/plugins/kf6/krunner/krunner_pimcontacts.so
+@so lib/qt6/plugins/pim6/akonadi/akonadi_search_plugin.so
+@so lib/qt6/plugins/pim6/akonadi/calendarsearchstore.so
+@so lib/qt6/plugins/pim6/akonadi/contactsearchstore.so
+@so lib/qt6/plugins/pim6/akonadi/emailsearchstore.so
+@so lib/qt6/plugins/pim6/akonadi/notesearchstore.so
 share/akonadi/agents/akonadiindexingagent.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
+share/locale/ast/LC_MESSAGES/akonadi_search.mo
 share/locale/az/LC_MESSAGES/akonadi_search.mo
 share/locale/bg/LC_MESSAGES/akonadi_search.mo
 share/locale/ca/LC_MESSAGES/akonadi_search.mo
@@ -63,6 +64,7 @@ share/locale/da/LC_MESSAGES/akonadi_search.mo
 share/locale/de/LC_MESSAGES/akonadi_search.mo
 share/locale/el/LC_MESSAGES/akonadi_search.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_search.mo
+share/locale/eo/LC_MESSAGES/akonadi_search.mo
 share/locale/es/LC_MESSAGES/akonadi_search.mo
 share/locale/et/LC_MESSAGES/akonadi_search.mo
 share/locale/eu/LC_MESSAGES/akonadi_search.mo
@@ -87,6 +89,7 @@ share/locale/pt/LC_MESSAGES/akonadi_search.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_search.mo
 share/locale/ro/LC_MESSAGES/akonadi_search.mo
 share/locale/ru/LC_MESSAGES/akonadi_search.mo
+share/locale/sa/LC_MESSAGES/akonadi_search.mo
 share/locale/sk/LC_MESSAGES/akonadi_search.mo
 share/locale/sl/LC_MESSAGES/akonadi_search.mo
 share/locale/sr/LC_MESSAGES/akonadi_search.mo
@@ -98,5 +101,5 @@ share/locale/tr/LC_MESSAGES/akonadi_search.mo
 share/locale/uk/LC_MESSAGES/akonadi_search.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_search.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_search.mo
-share/qlogging-categories5/akonadi-search.categories
-share/qlogging-categories5/akonadi-search.renamecategories
+share/qlogging-categories6/akonadi-search.categories
+share/qlogging-categories6/akonadi-search.renamecategories

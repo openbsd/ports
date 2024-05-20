@@ -4,15 +4,15 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=  sieveeditor       4.1 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
-WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5KIOCore
-WANTLIB += KF5Service KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5WidgetsAddons KF5XmlGui KPim5KManageSieve KPim5KSieve
-WANTLIB += KPim5KSieveUi KPim5MailTransport KPim5PimCommon KPim5TextEdit
-WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += c m qt5keychain
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6BookmarksWidgets
+WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6KIOCore
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6UserFeedbackCore KF6UserFeedbackWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6KManageSieve KPim6KSieve
+WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6MailTransport KPim6PimCommon
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += c m qt6keychain
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -20,20 +20,20 @@ MODKDE5_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		productivity/kuserfeedback \
+LIB_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kuserfeedback \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		security/qtkeychain,qt6 \
+		textproc/ktextaddons \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
 		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION}

@@ -47,6 +47,7 @@ share/doc/HTML/pt/kcalc/
 share/doc/HTML/pt/kcalc/commands.docbook
 share/doc/HTML/pt/kcalc/index.cache.bz2
 share/doc/HTML/pt/kcalc/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcalc/
 share/doc/HTML/pt_BR/kcalc/commands.docbook
 share/doc/HTML/pt_BR/kcalc/index.cache.bz2
@@ -59,6 +60,7 @@ share/doc/HTML/sr/kcalc/
 share/doc/HTML/sr/kcalc/commands.docbook
 share/doc/HTML/sr/kcalc/index.cache.bz2
 share/doc/HTML/sr/kcalc/index.docbook
+share/doc/HTML/sr@latin/
 share/doc/HTML/sr@latin/kcalc/
 share/doc/HTML/sr@latin/kcalc/commands.docbook
 share/doc/HTML/sr@latin/kcalc/index.cache.bz2
@@ -67,15 +69,21 @@ share/doc/HTML/sv/kcalc/
 share/doc/HTML/sv/kcalc/commands.docbook
 share/doc/HTML/sv/kcalc/index.cache.bz2
 share/doc/HTML/sv/kcalc/index.docbook
+share/doc/HTML/tr/kcalc/
+share/doc/HTML/tr/kcalc/commands.docbook
+share/doc/HTML/tr/kcalc/index.cache.bz2
+share/doc/HTML/tr/kcalc/index.docbook
 share/doc/HTML/uk/kcalc/
 share/doc/HTML/uk/kcalc/commands.docbook
 share/doc/HTML/uk/kcalc/index.cache.bz2
 share/doc/HTML/uk/kcalc/index.docbook
+share/kconf_update/
 share/kconf_update/kcalcrc.upd
 share/kglobalaccel/
 share/kglobalaccel/org.kde.kcalc.desktop
 share/locale/af/LC_MESSAGES/kcalc.mo
 share/locale/ar/LC_MESSAGES/kcalc.mo
+share/locale/ast/LC_MESSAGES/kcalc.mo
 share/locale/az/LC_MESSAGES/kcalc.mo
 share/locale/be/LC_MESSAGES/kcalc.mo
 share/locale/bg/LC_MESSAGES/kcalc.mo

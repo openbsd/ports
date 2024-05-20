@@ -2,16 +2,16 @@ COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5MailImporter         2.0 # 0.0
-SHARED_LIBS +=  KPim5MailImporterAkonadi  1.0 # 0.0
+SHARED_LIBS +=	KPim6MailImporter         0.0 # 0.0
+SHARED_LIBS +=	KPim6MailImporterAkonadi  0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5ItemModels KF5KIOCore KF5Service KF5TextAutoCorrectionCore
-WANTLIB += KF5TextAutoCorrectionWidgets KF5WidgetsAddons KPim5AkonadiCore
-WANTLIB += KPim5AkonadiMime KPim5Mime KPim5PimCommon KPim5TextEdit
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
+WANTLIB += KF6ItemModels KF6KIOCore KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6WidgetsAddons
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6Mime KPim6PimCommon
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -19,11 +19,16 @@ MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kconfig \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kitemmodels \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kitemmodels \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kio \
+		devel/kf6/kwidgetsaddons \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \

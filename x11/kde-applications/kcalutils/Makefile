@@ -2,21 +2,22 @@ COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  KPim5CalendarUtils        2.0 # 0.0
+SHARED_LIBS +=	KPim6CalendarUtils        0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5CalendarCore
-WANTLIB += KF5Codecs KF5CoreAddons KF5I18n KF5IconThemes KF5WidgetsAddons
-WANTLIB += KPim5IdentityManagement Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6CoreAddons
+WANTLIB += KF6I18n KF6IconThemes KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KPim6IdentityManagementCore Qt6Core Qt6Gui Qt6Widgets
+WANTLIB += m
 
 MODKDE5_TRANSLATIONS = yes
 
-LIB_DEPENDS +=	devel/kf5/kcodecs \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kwidgetsaddons \
-		x11/grantlee-qt5>=5.3 \
+LIB_DEPENDS +=	devel/kf6/kcalendarcore \
+		devel/kf6/kcodecs \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kwidgetsaddons \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11

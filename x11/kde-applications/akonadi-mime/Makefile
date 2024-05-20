@@ -2,14 +2,14 @@ COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
 
-SHARED_LIBS +=  KPim5AkonadiMime          1.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiMime          0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5ItemModels KF5KIOCore KF5Service KF5WidgetsAddons
-WANTLIB += KF5XmlGui KPim5AkonadiCore KPim5AkonadiPrivate KPim5AkonadiWidgets
-WANTLIB += KPim5Mime Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Test Qt5Widgets Qt5Xml c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
+WANTLIB += KF6ItemModels KF6KIOCore KF6WidgetsAddons KF6XmlGui
+WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Test
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 
@@ -20,16 +20,15 @@ BUILD_DEPENDS =	devel/boost \
 RUN_DEPENDS =	misc/shared-mime-info \
 		textproc/libxslt
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
+LIB_DEPENDS =	devel/kf6/kconfig \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION}
 

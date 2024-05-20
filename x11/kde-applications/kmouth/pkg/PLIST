@@ -134,11 +134,8 @@ share/kmouth/books/sv/sv-greetings.phrasebook
 share/kmouth/books/sv/sv-howareyou.phrasebook
 share/kmouth/books/sv/sv-personal.phrasebook
 share/kmouth/books/sv/sv.desktop
-share/kxmlgui5/
-share/kxmlgui5/kmouth/
-share/kxmlgui5/kmouth/kmouthui.rc
-share/kxmlgui5/kmouth/phrasebookdialogui.rc
 share/locale/ar/LC_MESSAGES/kmouth.mo
+share/locale/ast/LC_MESSAGES/kmouth.mo
 share/locale/be/LC_MESSAGES/kmouth.mo
 share/locale/bg/LC_MESSAGES/kmouth.mo
 share/locale/br/LC_MESSAGES/kmouth.mo

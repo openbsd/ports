@@ -1,14 +1,15 @@
 COMMENT =	simple video player for KDE
+VERSION =	24.02.2
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 c m phonon4qt5
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6Solid
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml X11 c m
+WANTLIB += phonon4qt6
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -18,27 +19,23 @@ MODKDE5_DOCS = yes
 
 RUN_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kio \
-		devel/kf5/knotifications \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		multimedia/phonon
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		multimedia/phonon,qt6 \
+		devel/kf6/solid
 
 TEST_IS_INTERACTIVE =	X11
 

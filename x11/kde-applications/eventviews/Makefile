@@ -2,16 +2,16 @@ COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5EventViews           1.0 # 0.0
+SHARED_LIBS +=	KPim6EventViews           0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5Holidays KF5I18n KF5IconThemes KF5ItemModels KF5Service
-WANTLIB += KF5WidgetsAddons KGantt KPim5AkonadiCalendar KPim5AkonadiCore
-WANTLIB += KPim5AkonadiWidgets KPim5CalendarSupport KPim5CalendarUtils
-WANTLIB += KPim5IdentityManagement KPim5Libkdepim KPim5Mime Qt5Core
-WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6Holidays
+WANTLIB += KF6I18n KF6IconThemes KF6ItemModels KF6Service KF6WidgetsAddons
+WANTLIB += KGantt6 KPim6AkonadiCalendar KPim6AkonadiCore KPim6AkonadiWidgets
+WANTLIB += KPim6CalendarSupport KPim6CalendarUtils KPim6IdentityManagementCore
+WANTLIB += KPim6Libkdepim KPim6Mime Qt6Core Qt6Gui Qt6PrintSupport
+WANTLIB += Qt6Widgets m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -21,25 +21,26 @@ BUILD_DEPENDS =	textproc/libxslt \
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kguiaddons \
-		devel/kf5/kholidays \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kitemmodels \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		graphics/kdiagram \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+LIB_DEPENDS =	devel/kf6/kcalendarcore \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/kholidays \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kitemmodels \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		graphics/kdiagram-qt6 \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION}

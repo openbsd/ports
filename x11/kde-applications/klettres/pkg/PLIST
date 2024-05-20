@@ -61,6 +61,7 @@ share/doc/HTML/nl/klettres/index.docbook
 share/doc/HTML/pt/klettres/
 share/doc/HTML/pt/klettres/index.cache.bz2
 share/doc/HTML/pt/klettres/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/klettres/
 share/doc/HTML/pt_BR/klettres/index.cache.bz2
 share/doc/HTML/pt_BR/klettres/index.docbook
@@ -2070,11 +2071,9 @@ share/klettres/uk/syllab/zmi.ogg
 share/klettres/uk/syllab/zyk.ogg
 share/knsrcfiles/
 share/knsrcfiles/klettres.knsrc
-share/kxmlgui5/
-share/kxmlgui5/klettres/
-share/kxmlgui5/klettres/klettresui.rc
 share/locale/af/LC_MESSAGES/klettres.mo
 share/locale/ar/LC_MESSAGES/klettres.mo
+share/locale/ast/LC_MESSAGES/klettres.mo
 share/locale/be/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
 share/locale/bn/LC_MESSAGES/klettres.mo
@@ -2148,5 +2147,5 @@ share/locale/zh_CN/LC_MESSAGES/klettres.mo
 share/locale/zh_TW/LC_MESSAGES/klettres.mo
 share/metainfo/
 share/metainfo/org.kde.klettres.appdata.xml
-share/qlogging-categories5/klettres.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/klettres.categories

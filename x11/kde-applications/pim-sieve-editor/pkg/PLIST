@@ -44,7 +44,14 @@ share/doc/HTML/sv/sieveeditor/index.docbook
 share/doc/HTML/uk/sieveeditor/
 share/doc/HTML/uk/sieveeditor/index.cache.bz2
 share/doc/HTML/uk/sieveeditor/index.docbook
+share/icons/hicolor/16x16/apps/sieveeditor.png
+share/icons/hicolor/22x22/apps/sieveeditor.png
+share/icons/hicolor/32x32/apps/sieveeditor.png
+share/icons/hicolor/48x48/apps/sieveeditor.png
+share/icons/hicolor/64x64/apps/sieveeditor.png
+share/icons/hicolor/scalable/apps/sieveeditor.svg
 share/locale/ar/LC_MESSAGES/sieveeditor.mo
+share/locale/ast/LC_MESSAGES/sieveeditor.mo
 share/locale/az/LC_MESSAGES/sieveeditor.mo
 share/locale/bg/LC_MESSAGES/sieveeditor.mo
 share/locale/bs/LC_MESSAGES/sieveeditor.mo
@@ -88,6 +95,7 @@ share/locale/uk/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_CN/LC_MESSAGES/sieveeditor.mo
 share/locale/zh_TW/LC_MESSAGES/sieveeditor.mo
 share/metainfo/org.kde.sieveeditor.appdata.xml
-share/qlogging-categories5/sieveeditor.categories
-share/qlogging-categories5/sieveeditor.renamecategories
 @tag update-desktop-database
+share/qlogging-categories6/sieveeditor.categories
+share/qlogging-categories6/sieveeditor.renamecategories
+@tag gtk-update-icon-cache %D/share/icons/hicolor

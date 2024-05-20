@@ -572,6 +572,7 @@ share/kajongg/voices/male2/ww.ogg
 share/kajongg/wall.py
 share/kajongg/wind.py
 share/locale/ar/LC_MESSAGES/kajongg.mo
+share/locale/ast/LC_MESSAGES/kajongg.mo
 share/locale/bg/LC_MESSAGES/kajongg.mo
 share/locale/bs/LC_MESSAGES/kajongg.mo
 share/locale/ca/LC_MESSAGES/kajongg.mo
@@ -590,6 +591,7 @@ share/locale/fr/LC_MESSAGES/kajongg.mo
 share/locale/ga/LC_MESSAGES/kajongg.mo
 share/locale/gl/LC_MESSAGES/kajongg.mo
 share/locale/hu/LC_MESSAGES/kajongg.mo
+share/locale/ia/LC_MESSAGES/kajongg.mo
 share/locale/is/LC_MESSAGES/kajongg.mo
 share/locale/it/LC_MESSAGES/kajongg.mo
 share/locale/ja/LC_MESSAGES/kajongg.mo

@@ -1,6 +1,7 @@
 @pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
+lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/kigpart.so
 @man man/man1/kig.1
 share/applications/org.kde.kig.desktop
@@ -61,6 +62,7 @@ share/doc/HTML/it/kig/index.docbook
 share/doc/HTML/nl/kig/
 share/doc/HTML/nl/kig/index.cache.bz2
 share/doc/HTML/nl/kig/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kig/
 share/doc/HTML/pt_BR/kig/index.cache.bz2
 share/doc/HTML/pt_BR/kig/index.docbook
@@ -397,10 +399,6 @@ share/kig/icons/hicolor/scalable/actions/vectordifference.svgz
 share/kig/icons/hicolor/scalable/actions/vectorsum.svgz
 share/kig/icons/hicolor/scalable/actions/w.svgz
 share/kig/tips
-share/kxmlgui5/
-share/kxmlgui5/kig/
-share/kxmlgui5/kig/kigpartui.rc
-share/kxmlgui5/kig/kigui.rc
 share/locale/ar/LC_MESSAGES/kig.mo
 share/locale/be/LC_MESSAGES/kig.mo
 share/locale/bg/LC_MESSAGES/kig.mo
@@ -468,6 +466,6 @@ share/locale/xh/LC_MESSAGES/kig.mo
 share/locale/zh_CN/LC_MESSAGES/kig.mo
 share/locale/zh_TW/LC_MESSAGES/kig.mo
 share/metainfo/
-share/metainfo/org.kde.kig.appdata.xml
+share/metainfo/org.kde.kig.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

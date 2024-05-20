@@ -6,6 +6,8 @@ CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} KF5KrossCore Qt5Core Qt5Gui Qt5Script
 WANTLIB += Qt5Widgets Qt5Xml m
 
+MODKDE_KF5 = yes
+
 MODKDE5_TRANSLATIONS = yes
 
 MODULES +=	lang/ruby

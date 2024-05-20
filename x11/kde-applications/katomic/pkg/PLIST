@@ -29,6 +29,7 @@ share/doc/HTML/nl/katomic/index.docbook
 share/doc/HTML/pt/katomic/
 share/doc/HTML/pt/katomic/index.cache.bz2
 share/doc/HTML/pt/katomic/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/katomic/
 share/doc/HTML/pt_BR/katomic/index.cache.bz2
 share/doc/HTML/pt_BR/katomic/index.docbook
@@ -53,12 +54,11 @@ share/katomic/levels/
 share/katomic/levels/default_levels.dat
 share/katomic/pics/
 share/katomic/pics/default_theme.svgz
-share/kconf_update/katomic-levelset-upd.pl
-share/kconf_update/katomic-levelset.upd
 share/knsrcfiles/
 share/knsrcfiles/katomic.knsrc
 share/locale/af/LC_MESSAGES/katomic.mo
 share/locale/ar/LC_MESSAGES/katomic.mo
+share/locale/ast/LC_MESSAGES/katomic.mo
 share/locale/be/LC_MESSAGES/katomic.mo
 share/locale/bg/LC_MESSAGES/katomic.mo
 share/locale/bn/LC_MESSAGES/katomic.mo
@@ -86,6 +86,7 @@ share/locale/hi/LC_MESSAGES/katomic.mo
 share/locale/hne/LC_MESSAGES/katomic.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
 share/locale/hu/LC_MESSAGES/katomic.mo
+share/locale/ia/LC_MESSAGES/katomic.mo
 share/locale/id/LC_MESSAGES/katomic.mo
 share/locale/is/LC_MESSAGES/katomic.mo
 share/locale/it/LC_MESSAGES/katomic.mo
@@ -137,4 +138,4 @@ share/metainfo/
 share/metainfo/org.kde.katomic.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/qlogging-categories5/katomic.categories
+share/qlogging-categories6/katomic.categories

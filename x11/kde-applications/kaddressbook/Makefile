@@ -2,23 +2,22 @@ COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPim5AddressbookImportExport 1.0 # 0.0
+SHARED_LIBS +=	KPim6AddressbookImportExport 0.0 # 0.0
 SHARED_LIBS +=  kaddressbookprivate          5.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5ItemModels KF5JobWidgets KF5KCMUtils KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Prison KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPim5AkonadiContact KPim5AkonadiCore KPim5AkonadiSearchDebug
-WANTLIB += KPim5AkonadiWidgets KPim5ContactEditor KPim5GrantleeTheme
-WANTLIB += KPim5IMAP KPim5KontactInterface KPim5Libkdepim KPim5Mime
-WANTLIB += KPim5PimCommon KPim5PimCommonAkonadi KPim5TextEdit
-WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6ItemModels KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6Solid
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiSearchDebug
+WANTLIB += KPim6AkonadiWidgets KPim6GrantleeTheme KPim6IMAP KPim6KontactInterface
+WANTLIB += KPim6Libkdepim KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -32,34 +31,36 @@ BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/prison \
-		devel/kf5/sonnet \
-		productivity/kuserfeedback \
+LIB_DEPENDS =	devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kuserfeedback \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		textproc/ktextaddons \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
 		x11/kde-applications/kimap>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
 		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 

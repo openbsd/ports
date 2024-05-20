@@ -11,6 +11,8 @@ WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml Qt5XmlPatterns X11 c m
 
+MODKDE_KF5 =	Yes
+
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -35,8 +37,11 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/ktexteditor \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/solid \
 		devel/kf5/sonnet \
+		devel/kf5/syntax-highlighting \
 		x11/qt5/qtsvg \
 		x11/qt5/qtxmlpatterns
 

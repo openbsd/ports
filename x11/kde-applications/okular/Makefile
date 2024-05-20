@@ -4,21 +4,20 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=  Okular5Core               5.0 # 9.0
+SHARED_LIBS +=	Okular6Core               0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Archive KF5Auth
-WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets
-WANTLIB += KF5KExiv2 KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5Parts KF5Pty KF5Purpose KF5PurposeWidgets
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5ThreadWeaver
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml X11 c chm djvulibre epub freetype jpeg m markdown
-WANTLIB += phonon4qt5 poppler poppler-qt5 qmobipocket spectre
-WANTLIB += tiff z zip
+WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6Archive KF6Bookmarks
+WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty KF6Purpose
+WANTLIB += KF6PurposeWidgets KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
+WANTLIB += KF6ThreadWeaver KF6Wallet KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui PlasmaActivities QMobipocket6 Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6Svg Qt6TextToSpeech Qt6Widgets Qt6Xml X11 c djvulibre
+WANTLIB += epub freetype jpeg m markdown phonon4qt6 poppler poppler-qt6
+WANTLIB += spectre tiff xkbcommon z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -28,53 +27,53 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS = net/libvncserver \
-		devel/kf5/kirigami2
+		devel/kf6/kirigami
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		devel/kf5/kirigami2 \
+		devel/kf6/kirigami \
 		net/libvncserver
 
-LIB_DEPENDS =	devel/chmlib \
-		devel/kf5/kactivities \
-		devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/khtml \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
-		devel/kf5/kparts \
-		devel/kf5/kpty \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/purpose \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/threadweaver \
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kparts \
+		devel/kf6/kpty \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwallet \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/purpose \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/threadweaver \
 		graphics/djvulibre \
+		graphics/jpeg \
 		graphics/tiff \
-		multimedia/phonon \
-		print/poppler,-qt5>=23.05.0 \
+		multimedia/phonon,qt6 \
 		print/libspectre \
+		print/poppler,-qt6>=23.05.0 \
 		textproc/discount \
 		textproc/ebook-tools \
-		x11/kde-applications/kdegraphics-mobipocket>=${MODKDE_VERSION} \
-		x11/kde-applications/libkexiv2>=${MODKDE_VERSION} \
-		x11/qt5/qtspeech \
-		x11/qt5/qtsvg
+		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-libkexiv2>=${MODKDE_VERSION} \
+		x11/kde-plasma/plasma-activities \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtspeech \
+		x11/qt6/qtsvg \
+		x11/xkbcommon
 
 CONFIGURE_ARGS +=	-DBUILD_OKULARKIRIGAMI=OFF
 

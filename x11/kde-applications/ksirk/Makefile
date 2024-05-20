@@ -6,13 +6,12 @@ HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 
 SHARED_LIBS +=  iris_ksirk                2.0 # 2.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5KDEGames KF5KDEGamesPrivate
-WANTLIB += KF5KIOCore KF5NewStuff KF5NewStuffCore KF5Service KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m phonon4qt5 qca-qt5 z
+WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KDEGames6Private KF6Attica
+WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6I18n KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6WidgetsAddons KF6XmlGui Qt6Core
+WANTLIB += Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
+WANTLIB += Qt6Qml Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -20,26 +19,21 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
-RUN_DEPENDS =	x11/qt5/qtquickcontrols
-
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/knewstuff \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		security/qca-qt5 \
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/knewstuff \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
 		x11/kde-applications/libkdegames>=${MODKDE_VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg \
-		multimedia/phonon
+		x11/qt6/qt5compat \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

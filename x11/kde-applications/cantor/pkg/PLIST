@@ -54,7 +54,6 @@ lib/qt5/plugins/cantor/assistants/
 @so lib/qt5/plugins/cantor/assistants/cantor_runscriptassistant.so
 @so lib/qt5/plugins/cantor/assistants/cantor_solveassistant.so
 lib/qt5/plugins/cantor/backends/
-@so lib/qt5/plugins/cantor/backends/cantor_kalgebrabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_luabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_maximabackend.so
 @so lib/qt5/plugins/cantor/backends/cantor_octavebackend.so
@@ -89,7 +88,6 @@ share/cantor/xslt/latex.xsl
 share/config.kcfg/
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg
-share/config.kcfg/kalgebrabackend.kcfg
 share/config.kcfg/luabackend.kcfg
 share/config.kcfg/maximabackend.kcfg
 share/config.kcfg/octavebackend.kcfg.in
@@ -196,7 +194,6 @@ share/icons/hicolor/64x64/apps/cantor.png
 share/knsrcfiles/
 share/knsrcfiles/cantor-documentation.knsrc
 share/knsrcfiles/cantor.knsrc
-share/knsrcfiles/cantor_kalgebra.knsrc
 share/knsrcfiles/cantor_lua.knsrc
 share/knsrcfiles/cantor_maxima.knsrc
 share/knsrcfiles/cantor_octave.knsrc
@@ -205,24 +202,6 @@ share/knsrcfiles/cantor_qalculate.knsrc
 share/knsrcfiles/cantor_r.knsrc
 share/knsrcfiles/cantor_sage.knsrc
 share/knsrcfiles/cantor_scilab.knsrc
-share/kxmlgui5/
-share/kxmlgui5/cantor/
-share/kxmlgui5/cantor/cantor_advancedplot_assistant.rc
-share/kxmlgui5/cantor/cantor_create_matrix_assistant.rc
-share/kxmlgui5/cantor/cantor_differentiate_assistant.rc
-share/kxmlgui5/cantor/cantor_eigenvalues_assistant.rc
-share/kxmlgui5/cantor/cantor_eigenvectors_assistant.rc
-share/kxmlgui5/cantor/cantor_import_package_assistant.rc
-share/kxmlgui5/cantor/cantor_integrate_assistant.rc
-share/kxmlgui5/cantor/cantor_invert_matrix_assistant.rc
-share/kxmlgui5/cantor/cantor_part.rc
-share/kxmlgui5/cantor/cantor_plot2d_assistant.rc
-share/kxmlgui5/cantor/cantor_plot3d_assistant.rc
-share/kxmlgui5/cantor/cantor_qalculateplotassistant.rc
-share/kxmlgui5/cantor/cantor_runscript_assistant.rc
-share/kxmlgui5/cantor/cantor_scripteditor.rc
-share/kxmlgui5/cantor/cantor_shell.rc
-share/kxmlgui5/cantor/cantor_solve_assistant.rc
 share/locale/ar/LC_MESSAGES/cantor.mo
 share/locale/bg/LC_MESSAGES/cantor.mo
 share/locale/bs/LC_MESSAGES/cantor.mo

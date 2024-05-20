@@ -1,19 +1,19 @@
 COMMENT =	thumbnailers for various graphics file formats
 DISTNAME =	kdegraphics-thumbnailers-${VERSION}
-PKGNAME =	kdegraphics-thumbnailers-kf5-${VERSION}
+PKGNAME =	kf6-kdegraphics-thumbnailers-${VERSION}
 CATEGORIES =	devel graphics
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5ConfigCore KF5CoreAddons
-WANTLIB += KF5KDcraw KF5KExiv2 KF5KIOCore KF5KIOGui KF5Service
-WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Widgets X11 m qmobipocket
+WANTLIB += ${COMPILER_LIBCXX} GL KDcrawQt6 KExiv2Qt6 KF6Archive
+WANTLIB += KF6ConfigCore KF6CoreAddons KF6KIOCore KF6KIOGui KF6Service
+WANTLIB += QMobipocket6 Qt6Core Qt6DBus Qt6Gui Qt6Network m
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kconfig \
-		devel/kf5/kio \
-		devel/kf5/kservice \
-		x11/kde-applications/libkdcraw>=${MODKDE_VERSION} \
-		x11/kde-applications/kdegraphics-mobipocket>=${MODKDE_VERSION} \
-		x11/kde-applications/libkexiv2>=${MODKDE_VERSION}
+LIB_DEPENDS =	devel/kf6/karchive \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kio \
+		devel/kf6/kservice \
+		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-libkdcraw>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-libkexiv2>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

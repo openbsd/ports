@@ -6,25 +6,25 @@ SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2
 SHARED_LIBS +=  korganizerprivate       8.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} GL Grantlee_Templates KF5Attica
-WANTLIB += KF5Auth KF5AuthCore KF5CalendarCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
-WANTLIB += KF5CoreAddons KF5Crash KF5Holidays KF5I18n KF5IconThemes
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5NewStuffWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextAutoCorrectionCore KF5TextAutoCorrectionWidgets
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KPim5AkonadiCalendar KPim5AkonadiContact KPim5AkonadiCore
-WANTLIB += KPim5AkonadiMime KPim5AkonadiNotes KPim5AkonadiWidgets
-WANTLIB += KPim5CalendarSupport KPim5CalendarUtils KPim5ContactEditor
-WANTLIB += KPim5EventViews KPim5GrantleeTheme KPim5IMAP KPim5IdentityManagement
-WANTLIB += KPim5IncidenceEditor KPim5KontactInterface KPim5Ldap
-WANTLIB += KPim5Libkdepim KPim5MailTransport KPim5Mime KPim5PimCommon
-WANTLIB += KPim5PimCommonAkonadi KPim5TextEdit KUserFeedbackCore
-WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += X11 c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6CalendarCore KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6Holidays KF6I18n
+WANTLIB += KF6IconThemes KF6IconWidgets KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Parts KF6Service KF6Solid KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiNotes KPim6AkonadiWidgets KPim6CalendarSupport
+WANTLIB += KPim6CalendarUtils KPim6EventViews KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IncidenceEditor
+WANTLIB += KPim6KontactInterface KPim6LdapCore KPim6LdapWidgets
+WANTLIB += KPim6Libkdepim KPim6MailTransport KPim6Mime KPim6PimCommon
+WANTLIB += KPim6PimCommonAkonadi Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6UiTools
+WANTLIB += Qt6Widgets Qt6Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -38,40 +38,41 @@ BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/attica \
-		devel/kf5/kauth \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcontacts \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kholidays \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		productivity/kuserfeedback \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+LIB_DEPENDS =	devel/kf6/attica \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcontacts \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kholidays \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/ktexttemplate \
+		devel/kf6/kuserfeedback \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
 		x11/kde-applications/eventviews>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme \
 		x11/kde-applications/incidenceeditor>=${MODKDE_VERSION} \
 		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
@@ -82,12 +83,11 @@ LIB_DEPENDS =	devel/kf5/attica \
 		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/qt6/qttools \
+		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
 
-pre-configure:
-	find ${WRKSRC} -type f \( -name \*.cpp -o -name \*.h \) -exec \
-		sed -i -e 's,#include <phonon,#include <phonon4qt5/phonon,g' {} +
 
 .include <bsd.port.mk>

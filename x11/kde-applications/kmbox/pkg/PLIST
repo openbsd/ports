@@ -1,18 +1,17 @@
-include/KPim5/KMbox/
-include/KPim5/KMbox/KMbox/
-include/KPim5/KMbox/KMbox/MBox
-include/KPim5/KMbox/KMbox/MBoxEntry
-include/KPim5/KMbox/kmbox/
-include/KPim5/KMbox/kmbox/kmbox_export.h
-include/KPim5/KMbox/kmbox/mbox.h
-include/KPim5/KMbox/kmbox/mboxentry.h
-include/KPim5/KMbox/kmbox_version.h
-lib/cmake/KPim5Mbox/
-lib/cmake/KPim5Mbox/KPim5MboxConfig.cmake
-lib/cmake/KPim5Mbox/KPim5MboxConfigVersion.cmake
-lib/cmake/KPim5Mbox/KPim5MboxTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KPim5Mbox/KPim5MboxTargets.cmake
-@lib lib/libKPim5Mbox.so.${LIBKPim5Mbox_VERSION}
-share/kf5/mkspecs/qt_KMbox.pri
-share/qlogging-categories5/kmbox.categories
-share/qlogging-categories5/kmbox.renamecategories
+include/KPim6/KMbox/
+include/KPim6/KMbox/KMbox/
+include/KPim6/KMbox/KMbox/MBox
+include/KPim6/KMbox/KMbox/MBoxEntry
+include/KPim6/KMbox/kmbox/
+include/KPim6/KMbox/kmbox/kmbox_export.h
+include/KPim6/KMbox/kmbox/mbox.h
+include/KPim6/KMbox/kmbox/mboxentry.h
+include/KPim6/KMbox/kmbox_version.h
+lib/cmake/KPim6Mbox/
+lib/cmake/KPim6Mbox/KPim6MboxConfig.cmake
+lib/cmake/KPim6Mbox/KPim6MboxConfigVersion.cmake
+lib/cmake/KPim6Mbox/KPim6MboxTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim6Mbox/KPim6MboxTargets.cmake
+@lib lib/libKPim6Mbox.so.${LIBKPim6Mbox_VERSION}
+share/qlogging-categories6/kmbox.categories
+share/qlogging-categories6/kmbox.renamecategories

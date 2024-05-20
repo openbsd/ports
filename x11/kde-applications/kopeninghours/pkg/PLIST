@@ -22,9 +22,11 @@ lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.pyi
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/qt5/qml/org/kde/kopeninghours/
-@so lib/qt5/qml/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
-lib/qt5/qml/org/kde/kopeninghours/qmldir
+lib/qt6/qml/org/kde/kopeninghours/
+lib/qt6/qml/org/kde/kopeninghours/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kopeninghours/kopeninghoursqmlplugin.qmltypes
+@so lib/qt6/qml/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
+lib/qt6/qml/org/kde/kopeninghours/qmldir
 share/locale/ca/LC_MESSAGES/kopeninghours.mo
 share/locale/ca@valencia/LC_MESSAGES/kopeninghours.mo
 share/locale/cs/LC_MESSAGES/kopeninghours.mo
@@ -37,6 +39,7 @@ share/locale/fi/LC_MESSAGES/kopeninghours.mo
 share/locale/fr/LC_MESSAGES/kopeninghours.mo
 share/locale/gl/LC_MESSAGES/kopeninghours.mo
 share/locale/hi/LC_MESSAGES/kopeninghours.mo
+share/locale/ia/LC_MESSAGES/kopeninghours.mo
 share/locale/it/LC_MESSAGES/kopeninghours.mo
 share/locale/ja/LC_MESSAGES/kopeninghours.mo
 share/locale/ka/LC_MESSAGES/kopeninghours.mo
@@ -56,4 +59,4 @@ share/locale/tr/LC_MESSAGES/kopeninghours.mo
 share/locale/uk/LC_MESSAGES/kopeninghours.mo
 share/locale/zh_CN/LC_MESSAGES/kopeninghours.mo
 share/locale/zh_TW/LC_MESSAGES/kopeninghours.mo
-share/qlogging-categories5/org_kde_kopeninghours.categories
+share/qlogging-categories6/org_kde_kopeninghours.categories

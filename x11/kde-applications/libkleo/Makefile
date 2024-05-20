@@ -2,15 +2,12 @@ COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  KPim5Libkleo              1.0 # 0.0
+SHARED_LIBS +=	KPim6Libkleo              0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5I18n KF5ItemModels KF5WidgetsAddons KPim5TextEdit
-WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml assuan gpgme gpgmepp
-WANTLIB += m qgpgme
-
-WANTLIB += lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels
+WANTLIB += KF6TextCustomEditor KF6WidgetsAddons Qt6Core Qt6Gui
+WANTLIB += Qt6Widgets assuan gpg-error gpgme gpgmepp m qgpgmeqt6
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
@@ -18,14 +15,18 @@ MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-LIB_DEPENDS =	devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/ki18n \
-		devel/kf5/kitemmodels \
-		devel/kf5/kwidgetsaddons \
+LIB_DEPENDS =	devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kitemmodels \
+		devel/kf6/kwidgetsaddons \
 		security/gpgme,-qt \
-		devel/libinotify \
+		security/libassuan \
+		security/libgpg-error \
+		textproc/ktextaddons \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

@@ -2,6 +2,8 @@ COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
 CATEGORIES =	games education
 
+MODKDE_KF5 =	Yes
+
 HOMEPAGE =	https://www.kde.org/applications/education/rocs/
 
 SHARED_LIBS +=  rocsgraphtheory        5.0 # 0.0
@@ -25,10 +27,8 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	devel/boost \
-		x11/qt5/qtquickcontrols \
 		x11/qt5/qtsvg
-RUN_DEPENDS =	x11/qt5/qtquickcontrols \
-		x11/qt5/qtsvg
+RUN_DEPENDS =	x11/qt5/qtsvg
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -47,8 +47,11 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/ktexteditor \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
+		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
+		devel/kf5/solid \
 		devel/kf5/sonnet \
+		devel/kf5/syntax-highlighting \
 		x11/grantlee-qt5 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtscript \

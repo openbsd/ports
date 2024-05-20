@@ -5,12 +5,12 @@ DISTNAME =	kalgebra-${VERSION}
 CATEGORIES =	education
 
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
-WANTLIB += AnalitzaWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5I18n
-WANTLIB += KF5KIOCore KF5Service KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c ereadline m
+WANTLIB += AnalitzaWidgets GL KF6ColorScheme KF6ConfigCore KF6ConfigGui
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6I18n KF6KIOCore KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c ereadline m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -18,38 +18,35 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kbookmarks \
-		devel/kf5/kirigami2 \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/solid \
-		devel/kf5/plasma-framework \
-		x11/qt5/qtgraphicaleffects
+BUILD_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kirigami \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/solid \
+		x11/kde-plasma/libplasma
 
-RUN_DEPENDS =	devel/kf5/kbookmarks \
-		devel/kf5/kirigami2 \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/solid \
-		misc/shared-mime-info \
-		x11/qt5/qtgraphicaleffects
+RUN_DEPENDS =	devel/kf6/kbookmarks \
+		devel/kf6/kirigami \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/solid \
+		misc/shared-mime-info
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets\
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kio \
-		devel/kf5/kio \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets\
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
 		devel/readline \
 		x11/kde-applications/analitza>=${MODKDE_VERSION} \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtwebengine
+		x11/qt6/qt5compat \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 

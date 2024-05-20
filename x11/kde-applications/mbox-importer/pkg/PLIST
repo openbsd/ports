@@ -2,6 +2,7 @@
 @bin bin/mboximporter
 share/applications/org.kde.mboximporter.desktop
 share/locale/ar/LC_MESSAGES/mboximporter.mo
+share/locale/ast/LC_MESSAGES/mboximporter.mo
 share/locale/bg/LC_MESSAGES/mboximporter.mo
 share/locale/bs/LC_MESSAGES/mboximporter.mo
 share/locale/ca/LC_MESSAGES/mboximporter.mo
@@ -11,6 +12,7 @@ share/locale/da/LC_MESSAGES/mboximporter.mo
 share/locale/de/LC_MESSAGES/mboximporter.mo
 share/locale/el/LC_MESSAGES/mboximporter.mo
 share/locale/en_GB/LC_MESSAGES/mboximporter.mo
+share/locale/eo/LC_MESSAGES/mboximporter.mo
 share/locale/es/LC_MESSAGES/mboximporter.mo
 share/locale/et/LC_MESSAGES/mboximporter.mo
 share/locale/eu/LC_MESSAGES/mboximporter.mo
@@ -35,6 +37,7 @@ share/locale/pt/LC_MESSAGES/mboximporter.mo
 share/locale/pt_BR/LC_MESSAGES/mboximporter.mo
 share/locale/ro/LC_MESSAGES/mboximporter.mo
 share/locale/ru/LC_MESSAGES/mboximporter.mo
+share/locale/sa/LC_MESSAGES/mboximporter.mo
 share/locale/sk/LC_MESSAGES/mboximporter.mo
 share/locale/sl/LC_MESSAGES/mboximporter.mo
 share/locale/sr/LC_MESSAGES/mboximporter.mo

@@ -3,7 +3,7 @@
 Index: vnc/vncclientthread.cpp
 --- vnc/vncclientthread.cpp.orig
 +++ vnc/vncclientthread.cpp
-@@ -663,23 +663,6 @@ void VncClientThread::clientSetKeepalive()
+@@ -667,23 +667,6 @@ void VncClientThread::clientSetKeepalive()
          return;
      }
  

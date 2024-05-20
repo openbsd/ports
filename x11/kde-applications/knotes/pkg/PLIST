@@ -2,18 +2,18 @@
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
 @lib lib/libnotesharedprivate.so.${LIBnotesharedprivate_VERSION}
-lib/qt5/plugins/pim5/kcms/knotes/
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_action.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_collection.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_display.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_editor.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_misc.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_network.so
-@so lib/qt5/plugins/pim5/kcms/knotes/kcm_knote_print.so
-lib/qt5/plugins/pim5/kcms/summary/
-@so lib/qt5/plugins/pim5/kcms/summary/kcmknotessummary.so
-lib/qt5/plugins/pim5/kontact/
-@so lib/qt5/plugins/pim5/kontact/kontact_knotesplugin.so
+lib/qt6/plugins/pim6/kcms/knotes/
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_action.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_collection.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_display.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_editor.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_misc.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_network.so
+@so lib/qt6/plugins/pim6/kcms/knotes/kcm_knote_print.so
+lib/qt6/plugins/pim6/kcms/summary/
+@so lib/qt6/plugins/pim6/kcms/summary/kcmknotessummary.so
+lib/qt6/plugins/pim6/kontact/
+@so lib/qt6/plugins/pim6/kontact/kontact_knotesplugin.so
 share/akonadi/agents/notesagent.desktop
 share/applications/org.kde.knotes.desktop
 share/config.kcfg/knotesglobalconfig.kcfg
@@ -125,7 +125,7 @@ share/knotes/print/themes/big-title/theme.html
 share/knotes/print/themes/default/
 share/knotes/print/themes/default/theme.desktop
 share/knotes/print/themes/default/theme.html
-share/knotifications5/akonadi_notes_agent.notifyrc
+share/knotifications6/akonadi_notes_agent.notifyrc
 share/knsrcfiles/knotes_printing_theme.knsrc
 share/kxmlgui5/
 share/kxmlgui5/knotes/
@@ -136,6 +136,9 @@ share/locale/af/LC_MESSAGES/knotes.mo
 share/locale/ar/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/ar/LC_MESSAGES/knotes.mo
 share/locale/ar/LC_MESSAGES/libnoteshared.mo
+share/locale/ast/LC_MESSAGES/akonadi_notes_agent.mo
+share/locale/ast/LC_MESSAGES/knotes.mo
+share/locale/ast/LC_MESSAGES/libnoteshared.mo
 share/locale/be/LC_MESSAGES/knotes.mo
 share/locale/bg/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/bg/LC_MESSAGES/knotes.mo
@@ -190,7 +193,9 @@ share/locale/ga/LC_MESSAGES/knotes.mo
 share/locale/gl/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/gl/LC_MESSAGES/knotes.mo
 share/locale/gl/LC_MESSAGES/libnoteshared.mo
+share/locale/he/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/he/LC_MESSAGES/knotes.mo
+share/locale/he/LC_MESSAGES/libnoteshared.mo
 share/locale/hi/LC_MESSAGES/knotes.mo
 share/locale/hne/LC_MESSAGES/knotes.mo
 share/locale/hr/LC_MESSAGES/knotes.mo
@@ -290,8 +295,9 @@ share/locale/zh_CN/LC_MESSAGES/libnoteshared.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_notes_agent.mo
 share/locale/zh_TW/LC_MESSAGES/knotes.mo
 share/locale/zh_TW/LC_MESSAGES/libnoteshared.mo
+share/metainfo/
 share/metainfo/org.kde.knotes.appdata.xml
-share/qlogging-categories5/knotes.categories
-share/qlogging-categories5/knotes.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/knotes.categories
+share/qlogging-categories6/knotes.renamecategories

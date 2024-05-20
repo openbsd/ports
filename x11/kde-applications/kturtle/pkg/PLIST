@@ -159,20 +159,16 @@ share/doc/HTML/uk/kturtle/mainwindow_flower_nrs.png
 share/doc/HTML/uk/kturtle/programming-reference.docbook
 share/doc/HTML/uk/kturtle/translator-guide.docbook
 share/doc/HTML/uk/kturtle/using-kturtle.docbook
-share/examples/kturtle/
-share/examples/kturtle/xdg/
-share/examples/kturtle/xdg/kturtle.knsrc
-@sample ${SYSCONFDIR}/xdg/kturtle.knsrc
 share/icons/hicolor/128x128/apps/kturtle.png
 share/icons/hicolor/16x16/apps/kturtle.png
 share/icons/hicolor/22x22/apps/kturtle.png
 share/icons/hicolor/32x32/apps/kturtle.png
 share/icons/hicolor/48x48/apps/kturtle.png
 share/icons/hicolor/64x64/apps/kturtle.png
-share/kxmlgui5/
-share/kxmlgui5/kturtle/
-share/kxmlgui5/kturtle/kturtleui.rc
+share/knsrcfiles/
+share/knsrcfiles/kturtle.knsrc
 share/locale/ar/LC_MESSAGES/kturtle.mo
+share/locale/ast/LC_MESSAGES/kturtle.mo
 share/locale/be/LC_MESSAGES/kturtle.mo
 share/locale/bg/LC_MESSAGES/kturtle.mo
 share/locale/bn/LC_MESSAGES/kturtle.mo
@@ -202,6 +198,7 @@ share/locale/hne/LC_MESSAGES/kturtle.mo
 share/locale/hr/LC_MESSAGES/kturtle.mo
 share/locale/hu/LC_MESSAGES/kturtle.mo
 share/locale/hy/LC_MESSAGES/kturtle.mo
+share/locale/ia/LC_MESSAGES/kturtle.mo
 share/locale/is/LC_MESSAGES/kturtle.mo
 share/locale/it/LC_MESSAGES/kturtle.mo
 share/locale/ja/LC_MESSAGES/kturtle.mo

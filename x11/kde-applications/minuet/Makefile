@@ -6,24 +6,20 @@ HOMEPAGE =	https://minuet.kde.org/
 
 SHARED_LIBS +=  minuetinterfaces          3.1 # 0.3
 
-WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5Crash KF5I18n Qt5Core
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5Widgets c fluidsynth m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg c fluidsynth m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	x11/qt5/qtquickcontrols
-RUN_DEPENDS =	x11/qt5/qtquickcontrols
-
 LIB_DEPENDS =	audio/fluidsynth \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtquickcontrols2 \
-		x11/qt5/qtsvg
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

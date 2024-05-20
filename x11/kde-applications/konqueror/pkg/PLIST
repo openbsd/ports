@@ -5,99 +5,98 @@
 @bin bin/kcreatewebarchive
 @bin bin/kfmclient
 @bin bin/konqueror
-include/KF5/asyncselectorinterface.h
-include/KF5/konq_events.h
-include/KF5/konq_historyentry.h
-include/KF5/konq_historyprovider.h
-include/KF5/konq_kpart_plugin.h
-include/KF5/konq_popupmenu.h
-include/KF5/konq_version.h
-include/KF5/libkonq_export.h
-include/konqsidebarplugin.h
-lib/cmake/KF5Konq/
-lib/cmake/KF5Konq/KF5KonqConfig.cmake
-lib/cmake/KF5Konq/KF5KonqConfigVersion.cmake
-lib/cmake/KF5Konq/KF5KonqTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5Konq/KF5KonqTargets.cmake
-@lib lib/libKF5Konq.so.${LIBKF5Konq_VERSION}
-@so lib/libkdeinit5_kfmclient.so
-@so lib/libkdeinit5_konqueror.so
+include/KF6/asyncselectorinterface.h
+include/KF6/konq_events.h
+include/KF6/konq_historyentry.h
+include/KF6/konq_historyprovider.h
+include/KF6/konq_kpart_plugin.h
+include/KF6/konq_popupmenu.h
+include/KF6/konq_version.h
+include/KF6/konqsidebarplugin.h
+include/KF6/libkonq_export.h
+lib/cmake/KF6Konq/
+lib/cmake/KF6Konq/KF6KonqConfig.cmake
+lib/cmake/KF6Konq/KF6KonqConfigVersion.cmake
+lib/cmake/KF6Konq/KF6KonqTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6Konq/KF6KonqTargets.cmake
+@lib lib/libKF6Konq.so.${LIBKF6Konq_VERSION}
 @lib lib/libkonqsidebarplugin.so.${LIBkonqsidebarplugin_VERSION}
 @lib lib/libkonquerorprivate.so.${LIBkonquerorprivate_VERSION}
 @so lib/libkwebenginepart.so
-@so lib/qt5/plugins/akregatorkonqfeedicon.so
-@so lib/qt5/plugins/autorefresh.so
-@so lib/qt5/plugins/babelfishplugin.so
-lib/qt5/plugins/dolphinpart/
-lib/qt5/plugins/dolphinpart/kpartplugins/
-@so lib/qt5/plugins/dolphinpart/kpartplugins/dirfilterplugin.so
-@so lib/qt5/plugins/dolphinpart/kpartplugins/kimgallery.so
-@so lib/qt5/plugins/dolphinpart/kpartplugins/konq_shellcmdplugin.so
-lib/qt5/plugins/kf5/kfileitemaction/
-@so lib/qt5/plugins/kf5/kfileitemaction/akregatorplugin.so
-lib/qt5/plugins/kf5/parts/
-@so lib/qt5/plugins/kf5/parts/fsviewpart.so
-@so lib/qt5/plugins/kf5/parts/konq_sidebar.so
-@so lib/qt5/plugins/kf5/parts/webenginepart.so
-lib/qt5/plugins/khtml/
-lib/qt5/plugins/khtml/kpartplugins/
-@so lib/qt5/plugins/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/autorefreshkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/babelfishpluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/khtmlsettingspluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/khtmlttspluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/konqueror_kget_browser_integrationkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/uachangerpluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/webarchiverpluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtmlsettingsplugin.so
-@so lib/qt5/plugins/khtmlttsplugin.so
-@so lib/qt5/plugins/konqsidebar_bookmarks.so
-@so lib/qt5/plugins/konqsidebar_history.so
-@so lib/qt5/plugins/konqsidebar_places.so
-@so lib/qt5/plugins/konqsidebar_tree.so
-lib/qt5/plugins/konqueror/
-lib/qt5/plugins/konqueror/kpartplugins/
-@so lib/qt5/plugins/konqueror/kpartplugins/searchbarplugin.so
-lib/qt5/plugins/konqueror_kcms/
-@so lib/qt5/plugins/konqueror_kcms/kcm_bookmarks.so
-@so lib/qt5/plugins/konqueror_kcms/kcm_history.so
-@so lib/qt5/plugins/konqueror_kcms/kcm_konq.so
-@so lib/qt5/plugins/konqueror_kcms/kcm_performance.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_appearance.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_behavior.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_cache.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_filter.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_general.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_java_js.so
-@so lib/qt5/plugins/konqueror_kcms/khtml_useragent.so
-@so lib/qt5/plugins/konqueror_kget_browser_integration.so
-lib/qt5/plugins/kwebkitpart/
-lib/qt5/plugins/kwebkitpart/kpartplugins/
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/babelfishpluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/khtmlsettingspluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/khtmlttspluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/konqueror_kget_browser_integrationkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/uachangerpluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/webarchiverpluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/uachangerplugin.so
-@so lib/qt5/plugins/webarchiverplugin.so
-@so lib/qt5/plugins/webarchivethumbnail.so
-lib/qt5/plugins/webenginepart/
-lib/qt5/plugins/webenginepart/kpartplugins/
-@so lib/qt5/plugins/webenginepart/kpartplugins/akregatorkonqfeediconwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/autorefreshwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/babelfishpluginwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/khtmlsettingspluginwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/khtmlttspluginwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/konqueror_kget_browser_integrationwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/uachangerpluginwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/webarchiverpluginwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/akregatorkonqfeedicon.so
+@so lib/qt6/plugins/autorefresh.so
+@so lib/qt6/plugins/babelfishplugin.so
+lib/qt6/plugins/dolphinpart/
+lib/qt6/plugins/dolphinpart/kpartplugins/
+@so lib/qt6/plugins/dolphinpart/kpartplugins/dirfilterplugin.so
+@so lib/qt6/plugins/dolphinpart/kpartplugins/kimgallery.so
+@so lib/qt6/plugins/dolphinpart/kpartplugins/konq_shellcmdplugin.so
+lib/qt6/plugins/kf6/kfileitemaction/
+@so lib/qt6/plugins/kf6/kfileitemaction/akregatorplugin.so
+@so lib/qt6/plugins/kf6/kio/bookmarks.so
+lib/qt6/plugins/kf6/parts/
+@so lib/qt6/plugins/kf6/parts/fsviewpart.so
+@so lib/qt6/plugins/kf6/parts/konq_sidebar.so
+@so lib/qt6/plugins/kf6/parts/webenginepart.so
+lib/qt6/plugins/khtml/
+lib/qt6/plugins/khtml/kpartplugins/
+@so lib/qt6/plugins/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/autorefreshkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/babelfishpluginkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/khtmlsettingspluginkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/konqueror_kget_browser_integrationkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/uachangerpluginkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtml/kpartplugins/webarchiverpluginkhtml_kpartplugins.so
+@so lib/qt6/plugins/khtmlsettingsplugin.so
+lib/qt6/plugins/konqueror/
+lib/qt6/plugins/konqueror/kpartplugins/
+@so lib/qt6/plugins/konqueror/kpartplugins/searchbarplugin.so
+lib/qt6/plugins/konqueror/sidebar/
+@so lib/qt6/plugins/konqueror/sidebar/konqsidebar_bookmarks.so
+@so lib/qt6/plugins/konqueror/sidebar/konqsidebar_history.so
+@so lib/qt6/plugins/konqueror/sidebar/konqsidebar_places.so
+@so lib/qt6/plugins/konqueror/sidebar/konqsidebar_tree.so
+lib/qt6/plugins/konqueror_kcms/
+@so lib/qt6/plugins/konqueror_kcms/kcm_bookmarks.so
+@so lib/qt6/plugins/konqueror_kcms/kcm_history.so
+@so lib/qt6/plugins/konqueror_kcms/kcm_konq.so
+@so lib/qt6/plugins/konqueror_kcms/kcm_performance.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_appearance.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_behavior.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_cache.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_cookies.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_filter.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_general.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_java_js.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_tabs.so
+@so lib/qt6/plugins/konqueror_kcms/khtml_useragent.so
+@so lib/qt6/plugins/konqueror_kget_browser_integration.so
+lib/qt6/plugins/kwebkitpart/
+lib/qt6/plugins/kwebkitpart/kpartplugins/
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/babelfishpluginkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/khtmlsettingspluginkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/konqueror_kget_browser_integrationkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/uachangerpluginkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/kwebkitpart/kpartplugins/webarchiverpluginkwebkitpart_kpartplugins.so
+@so lib/qt6/plugins/uachangerplugin.so
+@so lib/qt6/plugins/webarchiverplugin.so
+@so lib/qt6/plugins/webarchivethumbnail.so
+lib/qt6/plugins/webenginepart/
+lib/qt6/plugins/webenginepart/kpartplugins/
+@so lib/qt6/plugins/webenginepart/kpartplugins/akregatorkonqfeediconwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/autorefreshwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/babelfishpluginwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/khtmlsettingspluginwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/konqueror_kget_browser_integrationwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/uachangerpluginwebenginepart_kpartplugins.so
+@so lib/qt6/plugins/webenginepart/kpartplugins/webarchiverpluginwebenginepart_kpartplugins.so
 share/akregator/
 share/akregator/pics/
 share/akregator/pics/feed.png
 share/applications/bookmarks.desktop
+share/applications/kcm_bookmarks.desktop
 share/applications/kfmclient.desktop
 share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
@@ -109,101 +108,67 @@ share/config.kcfg/kcreatewebarchive.kcfg
 share/config.kcfg/konqueror.kcfg
 share/dbus-1/interfaces/org.kde.Konqueror.Main.xml
 share/dbus-1/interfaces/org.kde.Konqueror.MainWindow.xml
-share/doc/HTML/ca/kcontrol5/bookmarks/
-share/doc/HTML/ca/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/ca/kcontrol5/filemanager/
-share/doc/HTML/ca/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/filemanager/index.docbook
-share/doc/HTML/ca/kcontrol5/history/
-share/doc/HTML/ca/kcontrol5/history/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/history/index.docbook
-share/doc/HTML/ca/kcontrol5/kcmcss/
-share/doc/HTML/ca/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/ca/kcontrol5/khtml-adblock/
-share/doc/HTML/ca/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/ca/kcontrol5/khtml-behavior/
-share/doc/HTML/ca/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/ca/kcontrol5/khtml-general/
-share/doc/HTML/ca/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/ca/kcontrol5/khtml-java-js/
-share/doc/HTML/ca/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/ca/kcontrol5/performance/
-share/doc/HTML/ca/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/ca/kcontrol5/performance/index.docbook
+share/doc/HTML/ca/kcontrol/
+share/doc/HTML/ca/kcontrol/bookmarks/
+share/doc/HTML/ca/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/ca/kcontrol/bookmarks/index.docbook
+share/doc/HTML/ca/kcontrol/filemanager/
+share/doc/HTML/ca/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/ca/kcontrol/filemanager/index.docbook
+share/doc/HTML/ca/kcontrol/history/
+share/doc/HTML/ca/kcontrol/history/index.cache.bz2
+share/doc/HTML/ca/kcontrol/history/index.docbook
+share/doc/HTML/ca/kcontrol/kcmcss/
+share/doc/HTML/ca/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/ca/kcontrol/kcmcss/index.docbook
+share/doc/HTML/ca/kcontrol/khtml-adblock/
+share/doc/HTML/ca/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/ca/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/ca/kcontrol/khtml-behavior/
+share/doc/HTML/ca/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/ca/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/ca/kcontrol/khtml-general/
+share/doc/HTML/ca/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/ca/kcontrol/khtml-general/index.docbook
+share/doc/HTML/ca/kcontrol/khtml-java-js/
+share/doc/HTML/ca/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/ca/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/ca/kcontrol/performance/
+share/doc/HTML/ca/kcontrol/performance/index.cache.bz2
+share/doc/HTML/ca/kcontrol/performance/index.docbook
 share/doc/HTML/ca/konqueror/
 share/doc/HTML/ca/konqueror/index.cache.bz2
 share/doc/HTML/ca/konqueror/index.docbook
 share/doc/HTML/ca/konqueror/konqorg.png
 share/doc/HTML/ca/konqueror/viewproperties-dialog.png
-share/doc/HTML/da/konqueror/
-share/doc/HTML/da/konqueror/basics.docbook
-share/doc/HTML/da/konqueror/bookmarks.docbook
-share/doc/HTML/da/konqueror/browser.docbook
-share/doc/HTML/da/konqueror/cmndline.png
-share/doc/HTML/da/konqueror/commands.docbook
-share/doc/HTML/da/konqueror/config.docbook
-share/doc/HTML/da/konqueror/credits.docbook
-share/doc/HTML/da/konqueror/dirtree.png
-share/doc/HTML/da/konqueror/dragdrop.png
-share/doc/HTML/da/konqueror/faq.docbook
-share/doc/HTML/da/konqueror/filemanager.docbook
-share/doc/HTML/da/konqueror/index.cache.bz2
-share/doc/HTML/da/konqueror/index.docbook
-share/doc/HTML/da/konqueror/introduction.docbook
-share/doc/HTML/da/konqueror/konqorg.png
-share/doc/HTML/da/konqueror/parts.png
-share/doc/HTML/da/konqueror/path-complete.docbook
-share/doc/HTML/da/konqueror/plugins.docbook
-share/doc/HTML/da/konqueror/save-settings.docbook
-share/doc/HTML/da/konqueror/shortcut1.png
-share/doc/HTML/da/konqueror/shortcut2.png
-share/doc/HTML/da/konqueror/sidebar.docbook
-share/doc/HTML/de/kcontrol5/bookmarks/
-share/doc/HTML/de/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/de/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/de/kcontrol5/filemanager/
-share/doc/HTML/de/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/de/kcontrol5/filemanager/index.docbook
-share/doc/HTML/de/kcontrol5/history/
-share/doc/HTML/de/kcontrol5/history/index.cache.bz2
-share/doc/HTML/de/kcontrol5/history/index.docbook
-share/doc/HTML/de/kcontrol5/kcmcss/
-share/doc/HTML/de/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/de/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/de/kcontrol5/khtml-adblock/
-share/doc/HTML/de/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/de/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/de/kcontrol5/khtml-behavior/
-share/doc/HTML/de/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/de/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/de/kcontrol5/khtml-general/
-share/doc/HTML/de/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/de/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/de/kcontrol5/khtml-java-js/
-share/doc/HTML/de/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/de/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/de/kcontrol5/performance/
-share/doc/HTML/de/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/de/kcontrol5/performance/index.docbook
-share/doc/HTML/de/konqueror/
-share/doc/HTML/de/konqueror/cmndline.png
-share/doc/HTML/de/konqueror/dirtree.png
-share/doc/HTML/de/konqueror/dragdrop.png
-share/doc/HTML/de/konqueror/folders.png
-share/doc/HTML/de/konqueror/index.cache.bz2
-share/doc/HTML/de/konqueror/index.docbook
-share/doc/HTML/de/konqueror/konqorg.png
-share/doc/HTML/de/konqueror/look.png
-share/doc/HTML/de/konqueror/parts.png
-share/doc/HTML/de/konqueror/shortcut1.png
-share/doc/HTML/de/konqueror/shortcut2.png
-share/doc/HTML/de/konqueror/thumbnails.png
+share/doc/HTML/de/kcontrol/
+share/doc/HTML/de/kcontrol/bookmarks/
+share/doc/HTML/de/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/de/kcontrol/bookmarks/index.docbook
+share/doc/HTML/de/kcontrol/filemanager/
+share/doc/HTML/de/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/de/kcontrol/filemanager/index.docbook
+share/doc/HTML/de/kcontrol/history/
+share/doc/HTML/de/kcontrol/history/index.cache.bz2
+share/doc/HTML/de/kcontrol/history/index.docbook
+share/doc/HTML/de/kcontrol/kcmcss/
+share/doc/HTML/de/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/de/kcontrol/kcmcss/index.docbook
+share/doc/HTML/de/kcontrol/khtml-adblock/
+share/doc/HTML/de/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/de/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/de/kcontrol/khtml-behavior/
+share/doc/HTML/de/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/de/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/de/kcontrol/khtml-general/
+share/doc/HTML/de/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/de/kcontrol/khtml-general/index.docbook
+share/doc/HTML/de/kcontrol/khtml-java-js/
+share/doc/HTML/de/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/de/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/de/kcontrol/performance/
+share/doc/HTML/de/kcontrol/performance/index.cache.bz2
+share/doc/HTML/de/kcontrol/performance/index.docbook
 share/doc/HTML/el/konqueror/
 share/doc/HTML/el/konqueror/basics.docbook
 share/doc/HTML/el/konqueror/bookmarks.docbook
@@ -232,30 +197,31 @@ share/doc/HTML/el/konqueror/sidebar.docbook
 share/doc/HTML/el/konqueror/thumbnails.png
 share/doc/HTML/el/konqueror/view-extensions.docbook
 share/doc/HTML/el/konqueror/viewproperties-dialog.png
-share/doc/HTML/en/kcontrol5/bookmarks/
-share/doc/HTML/en/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/en/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/en/kcontrol5/filemanager/
-share/doc/HTML/en/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/en/kcontrol5/filemanager/index.docbook
-share/doc/HTML/en/kcontrol5/kcmcss/
-share/doc/HTML/en/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/en/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/en/kcontrol5/khtml-adblock/
-share/doc/HTML/en/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/en/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/en/kcontrol5/khtml-behavior/
-share/doc/HTML/en/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/en/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/en/kcontrol5/khtml-general/
-share/doc/HTML/en/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/en/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/en/kcontrol5/khtml-java-js/
-share/doc/HTML/en/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/en/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/en/kcontrol5/performance/
-share/doc/HTML/en/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/en/kcontrol5/performance/index.docbook
+share/doc/HTML/en/kcontrol6/
+share/doc/HTML/en/kcontrol6/bookmarks/
+share/doc/HTML/en/kcontrol6/bookmarks/index.cache.bz2
+share/doc/HTML/en/kcontrol6/bookmarks/index.docbook
+share/doc/HTML/en/kcontrol6/filemanager/
+share/doc/HTML/en/kcontrol6/filemanager/index.cache.bz2
+share/doc/HTML/en/kcontrol6/filemanager/index.docbook
+share/doc/HTML/en/kcontrol6/kcmcss/
+share/doc/HTML/en/kcontrol6/kcmcss/index.cache.bz2
+share/doc/HTML/en/kcontrol6/kcmcss/index.docbook
+share/doc/HTML/en/kcontrol6/khtml-adblock/
+share/doc/HTML/en/kcontrol6/khtml-adblock/index.cache.bz2
+share/doc/HTML/en/kcontrol6/khtml-adblock/index.docbook
+share/doc/HTML/en/kcontrol6/khtml-behavior/
+share/doc/HTML/en/kcontrol6/khtml-behavior/index.cache.bz2
+share/doc/HTML/en/kcontrol6/khtml-behavior/index.docbook
+share/doc/HTML/en/kcontrol6/khtml-general/
+share/doc/HTML/en/kcontrol6/khtml-general/index.cache.bz2
+share/doc/HTML/en/kcontrol6/khtml-general/index.docbook
+share/doc/HTML/en/kcontrol6/khtml-java-js/
+share/doc/HTML/en/kcontrol6/khtml-java-js/index.cache.bz2
+share/doc/HTML/en/kcontrol6/khtml-java-js/index.docbook
+share/doc/HTML/en/kcontrol6/performance/
+share/doc/HTML/en/kcontrol6/performance/index.cache.bz2
+share/doc/HTML/en/kcontrol6/performance/index.docbook
 share/doc/HTML/en/konqueror/
 share/doc/HTML/en/konqueror/cmndline.png
 share/doc/HTML/en/konqueror/dirtree.png
@@ -273,50 +239,34 @@ share/doc/HTML/en/konqueror/parts.png
 share/doc/HTML/en/konqueror/reset.png
 share/doc/HTML/en/konqueror/thumbnails.png
 share/doc/HTML/en/konqueror/viewproperties-dialog.png
-share/doc/HTML/en_GB/
-share/doc/HTML/en_GB/konqueror/
-share/doc/HTML/en_GB/konqueror/basics.docbook
-share/doc/HTML/en_GB/konqueror/bookmarks.docbook
-share/doc/HTML/en_GB/konqueror/browser.docbook
-share/doc/HTML/en_GB/konqueror/commands.docbook
-share/doc/HTML/en_GB/konqueror/config.docbook
-share/doc/HTML/en_GB/konqueror/credits.docbook
-share/doc/HTML/en_GB/konqueror/faq.docbook
-share/doc/HTML/en_GB/konqueror/filemanager.docbook
-share/doc/HTML/en_GB/konqueror/index.cache.bz2
-share/doc/HTML/en_GB/konqueror/index.docbook
-share/doc/HTML/en_GB/konqueror/introduction.docbook
-share/doc/HTML/en_GB/konqueror/path-complete.docbook
-share/doc/HTML/en_GB/konqueror/plugins.docbook
-share/doc/HTML/en_GB/konqueror/save-settings.docbook
-share/doc/HTML/en_GB/konqueror/sidebar.docbook
-share/doc/HTML/es/kcontrol5/bookmarks/
-share/doc/HTML/es/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/es/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/es/kcontrol5/filemanager/
-share/doc/HTML/es/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/es/kcontrol5/filemanager/index.docbook
-share/doc/HTML/es/kcontrol5/history/
-share/doc/HTML/es/kcontrol5/history/index.cache.bz2
-share/doc/HTML/es/kcontrol5/history/index.docbook
-share/doc/HTML/es/kcontrol5/kcmcss/
-share/doc/HTML/es/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/es/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/es/kcontrol5/khtml-adblock/
-share/doc/HTML/es/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/es/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/es/kcontrol5/khtml-behavior/
-share/doc/HTML/es/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/es/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/es/kcontrol5/khtml-general/
-share/doc/HTML/es/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/es/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/es/kcontrol5/khtml-java-js/
-share/doc/HTML/es/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/es/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/es/kcontrol5/performance/
-share/doc/HTML/es/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/es/kcontrol5/performance/index.docbook
+share/doc/HTML/es/kcontrol/
+share/doc/HTML/es/kcontrol/bookmarks/
+share/doc/HTML/es/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/es/kcontrol/bookmarks/index.docbook
+share/doc/HTML/es/kcontrol/filemanager/
+share/doc/HTML/es/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/es/kcontrol/filemanager/index.docbook
+share/doc/HTML/es/kcontrol/history/
+share/doc/HTML/es/kcontrol/history/index.cache.bz2
+share/doc/HTML/es/kcontrol/history/index.docbook
+share/doc/HTML/es/kcontrol/kcmcss/
+share/doc/HTML/es/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/es/kcontrol/kcmcss/index.docbook
+share/doc/HTML/es/kcontrol/khtml-adblock/
+share/doc/HTML/es/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/es/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/es/kcontrol/khtml-behavior/
+share/doc/HTML/es/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/es/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/es/kcontrol/khtml-general/
+share/doc/HTML/es/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/es/kcontrol/khtml-general/index.docbook
+share/doc/HTML/es/kcontrol/khtml-java-js/
+share/doc/HTML/es/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/es/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/es/kcontrol/performance/
+share/doc/HTML/es/kcontrol/performance/index.cache.bz2
+share/doc/HTML/es/kcontrol/performance/index.docbook
 share/doc/HTML/es/konqueror/
 share/doc/HTML/es/konqueror/basics.docbook
 share/doc/HTML/es/konqueror/bookmarks.docbook
@@ -334,61 +284,62 @@ share/doc/HTML/es/konqueror/plugins.docbook
 share/doc/HTML/es/konqueror/save-settings.docbook
 share/doc/HTML/es/konqueror/sidebar.docbook
 share/doc/HTML/es/konqueror/view-extensions.docbook
-share/doc/HTML/et/kcontrol5/
-share/doc/HTML/et/kcontrol5/bookmarks/
-share/doc/HTML/et/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/et/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/et/kcontrol5/filemanager/
-share/doc/HTML/et/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/et/kcontrol5/filemanager/index.docbook
-share/doc/HTML/et/kcontrol5/history/
-share/doc/HTML/et/kcontrol5/history/index.cache.bz2
-share/doc/HTML/et/kcontrol5/history/index.docbook
-share/doc/HTML/et/kcontrol5/kcmcss/
-share/doc/HTML/et/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/et/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/et/kcontrol5/khtml-adblock/
-share/doc/HTML/et/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/et/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/et/kcontrol5/khtml-behavior/
-share/doc/HTML/et/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/et/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/et/kcontrol5/khtml-general/
-share/doc/HTML/et/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/et/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/et/kcontrol5/khtml-java-js/
-share/doc/HTML/et/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/et/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/et/kcontrol5/performance/
-share/doc/HTML/et/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/et/kcontrol5/performance/index.docbook
-share/doc/HTML/fr/kcontrol5/bookmarks/
-share/doc/HTML/fr/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/fr/kcontrol5/filemanager/
-share/doc/HTML/fr/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/filemanager/index.docbook
-share/doc/HTML/fr/kcontrol5/history/
-share/doc/HTML/fr/kcontrol5/history/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/history/index.docbook
-share/doc/HTML/fr/kcontrol5/kcmcss/
-share/doc/HTML/fr/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/fr/kcontrol5/khtml-adblock/
-share/doc/HTML/fr/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/fr/kcontrol5/khtml-behavior/
-share/doc/HTML/fr/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/fr/kcontrol5/khtml-general/
-share/doc/HTML/fr/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/fr/kcontrol5/khtml-java-js/
-share/doc/HTML/fr/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/fr/kcontrol5/performance/
-share/doc/HTML/fr/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/fr/kcontrol5/performance/index.docbook
+share/doc/HTML/et/kcontrol/
+share/doc/HTML/et/kcontrol/bookmarks/
+share/doc/HTML/et/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/et/kcontrol/bookmarks/index.docbook
+share/doc/HTML/et/kcontrol/filemanager/
+share/doc/HTML/et/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/et/kcontrol/filemanager/index.docbook
+share/doc/HTML/et/kcontrol/history/
+share/doc/HTML/et/kcontrol/history/index.cache.bz2
+share/doc/HTML/et/kcontrol/history/index.docbook
+share/doc/HTML/et/kcontrol/kcmcss/
+share/doc/HTML/et/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/et/kcontrol/kcmcss/index.docbook
+share/doc/HTML/et/kcontrol/khtml-adblock/
+share/doc/HTML/et/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/et/kcontrol/khtml-behavior/
+share/doc/HTML/et/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/et/kcontrol/khtml-general/
+share/doc/HTML/et/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-general/index.docbook
+share/doc/HTML/et/kcontrol/khtml-java-js/
+share/doc/HTML/et/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/et/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/et/kcontrol/performance/
+share/doc/HTML/et/kcontrol/performance/index.cache.bz2
+share/doc/HTML/et/kcontrol/performance/index.docbook
+share/doc/HTML/fr/kcontrol/
+share/doc/HTML/fr/kcontrol/bookmarks/
+share/doc/HTML/fr/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/fr/kcontrol/bookmarks/index.docbook
+share/doc/HTML/fr/kcontrol/filemanager/
+share/doc/HTML/fr/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/fr/kcontrol/filemanager/index.docbook
+share/doc/HTML/fr/kcontrol/history/
+share/doc/HTML/fr/kcontrol/history/index.cache.bz2
+share/doc/HTML/fr/kcontrol/history/index.docbook
+share/doc/HTML/fr/kcontrol/kcmcss/
+share/doc/HTML/fr/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/fr/kcontrol/kcmcss/index.docbook
+share/doc/HTML/fr/kcontrol/khtml-adblock/
+share/doc/HTML/fr/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/fr/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/fr/kcontrol/khtml-behavior/
+share/doc/HTML/fr/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/fr/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/fr/kcontrol/khtml-general/
+share/doc/HTML/fr/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/fr/kcontrol/khtml-general/index.docbook
+share/doc/HTML/fr/kcontrol/khtml-java-js/
+share/doc/HTML/fr/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/fr/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/fr/kcontrol/performance/
+share/doc/HTML/fr/kcontrol/performance/index.cache.bz2
+share/doc/HTML/fr/kcontrol/performance/index.docbook
 share/doc/HTML/fr/konqueror/
 share/doc/HTML/fr/konqueror/basics.docbook
 share/doc/HTML/fr/konqueror/bookmarks.docbook
@@ -413,76 +364,80 @@ share/doc/HTML/fr/konqueror/shortcut1.png
 share/doc/HTML/fr/konqueror/shortcut2.png
 share/doc/HTML/fr/konqueror/sidebar.docbook
 share/doc/HTML/fr/konqueror/view-extensions.docbook
-share/doc/HTML/it/kcontrol5/bookmarks/
-share/doc/HTML/it/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/it/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/it/kcontrol5/filemanager/
-share/doc/HTML/it/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/it/kcontrol5/filemanager/index.docbook
-share/doc/HTML/it/kcontrol5/history/
-share/doc/HTML/it/kcontrol5/history/index.cache.bz2
-share/doc/HTML/it/kcontrol5/history/index.docbook
-share/doc/HTML/it/kcontrol5/kcmcss/
-share/doc/HTML/it/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/it/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/it/kcontrol5/khtml-adblock/
-share/doc/HTML/it/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/it/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/it/kcontrol5/khtml-behavior/
-share/doc/HTML/it/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/it/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/it/kcontrol5/khtml-general/
-share/doc/HTML/it/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/it/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/it/kcontrol5/khtml-java-js/
-share/doc/HTML/it/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/it/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/it/kcontrol5/performance/
-share/doc/HTML/it/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/it/kcontrol5/performance/index.docbook
+share/doc/HTML/it/kcontrol/
+share/doc/HTML/it/kcontrol/bookmarks/
+share/doc/HTML/it/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/it/kcontrol/bookmarks/index.docbook
+share/doc/HTML/it/kcontrol/filemanager/
+share/doc/HTML/it/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/it/kcontrol/filemanager/index.docbook
+share/doc/HTML/it/kcontrol/history/
+share/doc/HTML/it/kcontrol/history/index.cache.bz2
+share/doc/HTML/it/kcontrol/history/index.docbook
+share/doc/HTML/it/kcontrol/kcmcss/
+share/doc/HTML/it/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/it/kcontrol/kcmcss/index.docbook
+share/doc/HTML/it/kcontrol/khtml-adblock/
+share/doc/HTML/it/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/it/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/it/kcontrol/khtml-behavior/
+share/doc/HTML/it/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/it/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/it/kcontrol/khtml-general/
+share/doc/HTML/it/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/it/kcontrol/khtml-general/index.docbook
+share/doc/HTML/it/kcontrol/khtml-java-js/
+share/doc/HTML/it/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/it/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/it/kcontrol/performance/
+share/doc/HTML/it/kcontrol/performance/index.cache.bz2
+share/doc/HTML/it/kcontrol/performance/index.docbook
 share/doc/HTML/it/konqueror/
 share/doc/HTML/it/konqueror/index.cache.bz2
 share/doc/HTML/it/konqueror/index.docbook
-share/doc/HTML/ko/kcontrol5/
-share/doc/HTML/ko/kcontrol5/performance/
-share/doc/HTML/ko/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/ko/kcontrol5/performance/index.docbook
-share/doc/HTML/nb/kcontrol5/bookmarks/
-share/doc/HTML/nb/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/nb/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/nb/kcontrol5/history/
-share/doc/HTML/nb/kcontrol5/history/index.cache.bz2
-share/doc/HTML/nb/kcontrol5/history/index.docbook
-share/doc/HTML/nb/kcontrol5/kcmcss/
-share/doc/HTML/nb/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/nb/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/nl/kcontrol5/bookmarks/
-share/doc/HTML/nl/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/nl/kcontrol5/filemanager/
-share/doc/HTML/nl/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/filemanager/index.docbook
-share/doc/HTML/nl/kcontrol5/history/
-share/doc/HTML/nl/kcontrol5/history/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/history/index.docbook
-share/doc/HTML/nl/kcontrol5/kcmcss/
-share/doc/HTML/nl/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/nl/kcontrol5/khtml-adblock/
-share/doc/HTML/nl/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/nl/kcontrol5/khtml-behavior/
-share/doc/HTML/nl/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/nl/kcontrol5/khtml-general/
-share/doc/HTML/nl/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/nl/kcontrol5/khtml-java-js/
-share/doc/HTML/nl/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/nl/kcontrol5/performance/
-share/doc/HTML/nl/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/nl/kcontrol5/performance/index.docbook
+share/doc/HTML/ko/kcontrol/
+share/doc/HTML/ko/kcontrol/performance/
+share/doc/HTML/ko/kcontrol/performance/index.cache.bz2
+share/doc/HTML/ko/kcontrol/performance/index.docbook
+share/doc/HTML/nb/
+share/doc/HTML/nb/kcontrol/
+share/doc/HTML/nb/kcontrol/bookmarks/
+share/doc/HTML/nb/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/nb/kcontrol/bookmarks/index.docbook
+share/doc/HTML/nb/kcontrol/history/
+share/doc/HTML/nb/kcontrol/history/index.cache.bz2
+share/doc/HTML/nb/kcontrol/history/index.docbook
+share/doc/HTML/nb/kcontrol/kcmcss/
+share/doc/HTML/nb/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/nb/kcontrol/kcmcss/index.docbook
+share/doc/HTML/nl/kcontrol/
+share/doc/HTML/nl/kcontrol/bookmarks/
+share/doc/HTML/nl/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/nl/kcontrol/bookmarks/index.docbook
+share/doc/HTML/nl/kcontrol/filemanager/
+share/doc/HTML/nl/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/nl/kcontrol/filemanager/index.docbook
+share/doc/HTML/nl/kcontrol/history/
+share/doc/HTML/nl/kcontrol/history/index.cache.bz2
+share/doc/HTML/nl/kcontrol/history/index.docbook
+share/doc/HTML/nl/kcontrol/kcmcss/
+share/doc/HTML/nl/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/nl/kcontrol/kcmcss/index.docbook
+share/doc/HTML/nl/kcontrol/khtml-adblock/
+share/doc/HTML/nl/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/nl/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/nl/kcontrol/khtml-behavior/
+share/doc/HTML/nl/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/nl/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/nl/kcontrol/khtml-general/
+share/doc/HTML/nl/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/nl/kcontrol/khtml-general/index.docbook
+share/doc/HTML/nl/kcontrol/khtml-java-js/
+share/doc/HTML/nl/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/nl/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/nl/kcontrol/performance/
+share/doc/HTML/nl/kcontrol/performance/index.cache.bz2
+share/doc/HTML/nl/kcontrol/performance/index.docbook
 share/doc/HTML/nl/konqueror/
 share/doc/HTML/nl/konqueror/basics.docbook
 share/doc/HTML/nl/konqueror/bookmarks.docbook
@@ -507,56 +462,34 @@ share/doc/HTML/nl/konqueror/shortcut1.png
 share/doc/HTML/nl/konqueror/shortcut2.png
 share/doc/HTML/nl/konqueror/sidebar.docbook
 share/doc/HTML/nl/konqueror/view-extensions.docbook
-share/doc/HTML/pl/konqueror/
-share/doc/HTML/pl/konqueror/basics.docbook
-share/doc/HTML/pl/konqueror/bookmarks.docbook
-share/doc/HTML/pl/konqueror/browser.docbook
-share/doc/HTML/pl/konqueror/cmndline.png
-share/doc/HTML/pl/konqueror/commands.docbook
-share/doc/HTML/pl/konqueror/config.docbook
-share/doc/HTML/pl/konqueror/credits.docbook
-share/doc/HTML/pl/konqueror/dirtree.png
-share/doc/HTML/pl/konqueror/dragdrop.png
-share/doc/HTML/pl/konqueror/faq.docbook
-share/doc/HTML/pl/konqueror/filemanager.docbook
-share/doc/HTML/pl/konqueror/index.cache.bz2
-share/doc/HTML/pl/konqueror/index.docbook
-share/doc/HTML/pl/konqueror/introduction.docbook
-share/doc/HTML/pl/konqueror/konqorg.png
-share/doc/HTML/pl/konqueror/parts.png
-share/doc/HTML/pl/konqueror/path-complete.docbook
-share/doc/HTML/pl/konqueror/plugins.docbook
-share/doc/HTML/pl/konqueror/save-settings.docbook
-share/doc/HTML/pl/konqueror/shortcut1.png
-share/doc/HTML/pl/konqueror/shortcut2.png
-share/doc/HTML/pl/konqueror/sidebar.docbook
-share/doc/HTML/pt/kcontrol5/bookmarks/
-share/doc/HTML/pt/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/pt/kcontrol5/filemanager/
-share/doc/HTML/pt/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/filemanager/index.docbook
-share/doc/HTML/pt/kcontrol5/history/
-share/doc/HTML/pt/kcontrol5/history/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/history/index.docbook
-share/doc/HTML/pt/kcontrol5/kcmcss/
-share/doc/HTML/pt/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/pt/kcontrol5/khtml-adblock/
-share/doc/HTML/pt/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/pt/kcontrol5/khtml-behavior/
-share/doc/HTML/pt/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/pt/kcontrol5/khtml-general/
-share/doc/HTML/pt/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/pt/kcontrol5/khtml-java-js/
-share/doc/HTML/pt/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/pt/kcontrol5/performance/
-share/doc/HTML/pt/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/pt/kcontrol5/performance/index.docbook
+share/doc/HTML/pt/kcontrol/
+share/doc/HTML/pt/kcontrol/bookmarks/
+share/doc/HTML/pt/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/pt/kcontrol/bookmarks/index.docbook
+share/doc/HTML/pt/kcontrol/filemanager/
+share/doc/HTML/pt/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/pt/kcontrol/filemanager/index.docbook
+share/doc/HTML/pt/kcontrol/history/
+share/doc/HTML/pt/kcontrol/history/index.cache.bz2
+share/doc/HTML/pt/kcontrol/history/index.docbook
+share/doc/HTML/pt/kcontrol/kcmcss/
+share/doc/HTML/pt/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/pt/kcontrol/kcmcss/index.docbook
+share/doc/HTML/pt/kcontrol/khtml-adblock/
+share/doc/HTML/pt/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/pt/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/pt/kcontrol/khtml-behavior/
+share/doc/HTML/pt/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/pt/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/pt/kcontrol/khtml-general/
+share/doc/HTML/pt/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/pt/kcontrol/khtml-general/index.docbook
+share/doc/HTML/pt/kcontrol/khtml-java-js/
+share/doc/HTML/pt/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/pt/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/pt/kcontrol/performance/
+share/doc/HTML/pt/kcontrol/performance/index.cache.bz2
+share/doc/HTML/pt/kcontrol/performance/index.docbook
 share/doc/HTML/pt/konqueror/
 share/doc/HTML/pt/konqueror/basics.docbook
 share/doc/HTML/pt/konqueror/bookmarks.docbook
@@ -574,33 +507,34 @@ share/doc/HTML/pt/konqueror/plugins.docbook
 share/doc/HTML/pt/konqueror/save-settings.docbook
 share/doc/HTML/pt/konqueror/sidebar.docbook
 share/doc/HTML/pt/konqueror/view-extensions.docbook
-share/doc/HTML/pt_BR/kcontrol5/bookmarks/
-share/doc/HTML/pt_BR/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/filemanager/
-share/doc/HTML/pt_BR/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/filemanager/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/history/
-share/doc/HTML/pt_BR/kcontrol5/history/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/history/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/kcmcss/
-share/doc/HTML/pt_BR/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/khtml-adblock/
-share/doc/HTML/pt_BR/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/khtml-behavior/
-share/doc/HTML/pt_BR/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/khtml-general/
-share/doc/HTML/pt_BR/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/khtml-java-js/
-share/doc/HTML/pt_BR/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/pt_BR/kcontrol5/performance/
-share/doc/HTML/pt_BR/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/pt_BR/kcontrol5/performance/index.docbook
+share/doc/HTML/pt_BR/kcontrol/
+share/doc/HTML/pt_BR/kcontrol/bookmarks/
+share/doc/HTML/pt_BR/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/bookmarks/index.docbook
+share/doc/HTML/pt_BR/kcontrol/filemanager/
+share/doc/HTML/pt_BR/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/filemanager/index.docbook
+share/doc/HTML/pt_BR/kcontrol/history/
+share/doc/HTML/pt_BR/kcontrol/history/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/history/index.docbook
+share/doc/HTML/pt_BR/kcontrol/kcmcss/
+share/doc/HTML/pt_BR/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/kcmcss/index.docbook
+share/doc/HTML/pt_BR/kcontrol/khtml-adblock/
+share/doc/HTML/pt_BR/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/pt_BR/kcontrol/khtml-behavior/
+share/doc/HTML/pt_BR/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/pt_BR/kcontrol/khtml-general/
+share/doc/HTML/pt_BR/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/khtml-general/index.docbook
+share/doc/HTML/pt_BR/kcontrol/khtml-java-js/
+share/doc/HTML/pt_BR/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/pt_BR/kcontrol/performance/
+share/doc/HTML/pt_BR/kcontrol/performance/index.cache.bz2
+share/doc/HTML/pt_BR/kcontrol/performance/index.docbook
 share/doc/HTML/pt_BR/konqueror/
 share/doc/HTML/pt_BR/konqueror/cmndline.png
 share/doc/HTML/pt_BR/konqueror/dirtree.png
@@ -615,80 +549,59 @@ share/doc/HTML/pt_BR/konqueror/shortcut1.png
 share/doc/HTML/pt_BR/konqueror/shortcut2.png
 share/doc/HTML/pt_BR/konqueror/thumbnails.png
 share/doc/HTML/pt_BR/konqueror/viewproperties-dialog.png
-share/doc/HTML/ru/kcontrol5/bookmarks/
-share/doc/HTML/ru/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/ru/kcontrol5/filemanager/
-share/doc/HTML/ru/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/filemanager/index.docbook
-share/doc/HTML/ru/kcontrol5/history/
-share/doc/HTML/ru/kcontrol5/history/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/history/index.docbook
-share/doc/HTML/ru/kcontrol5/kcmcss/
-share/doc/HTML/ru/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/ru/kcontrol5/khtml-adblock/
-share/doc/HTML/ru/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/ru/kcontrol5/khtml-behavior/
-share/doc/HTML/ru/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/ru/kcontrol5/khtml-general/
-share/doc/HTML/ru/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/ru/kcontrol5/khtml-java-js/
-share/doc/HTML/ru/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/ru/kcontrol5/performance/
-share/doc/HTML/ru/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/ru/kcontrol5/performance/index.docbook
-share/doc/HTML/ru/konqueror/
-share/doc/HTML/ru/konqueror/basics.docbook
-share/doc/HTML/ru/konqueror/bookmarks.docbook
-share/doc/HTML/ru/konqueror/browser.docbook
-share/doc/HTML/ru/konqueror/cmndline.png
-share/doc/HTML/ru/konqueror/commands.docbook
-share/doc/HTML/ru/konqueror/config.docbook
-share/doc/HTML/ru/konqueror/credits.docbook
-share/doc/HTML/ru/konqueror/dirtree.png
-share/doc/HTML/ru/konqueror/dragdrop.png
-share/doc/HTML/ru/konqueror/faq.docbook
-share/doc/HTML/ru/konqueror/filemanager.docbook
-share/doc/HTML/ru/konqueror/index.cache.bz2
-share/doc/HTML/ru/konqueror/index.docbook
-share/doc/HTML/ru/konqueror/introduction.docbook
-share/doc/HTML/ru/konqueror/konqorg.png
-share/doc/HTML/ru/konqueror/parts.png
-share/doc/HTML/ru/konqueror/path-complete.docbook
-share/doc/HTML/ru/konqueror/plugins.docbook
-share/doc/HTML/ru/konqueror/save-settings.docbook
-share/doc/HTML/ru/konqueror/shortcut1.png
-share/doc/HTML/ru/konqueror/shortcut2.png
-share/doc/HTML/ru/konqueror/sidebar.docbook
-share/doc/HTML/sr/kcontrol5/bookmarks/
-share/doc/HTML/sr/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/sr/kcontrol5/filemanager/
-share/doc/HTML/sr/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/filemanager/index.docbook
-share/doc/HTML/sr/kcontrol5/kcmcss/
-share/doc/HTML/sr/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/sr/kcontrol5/khtml-adblock/
-share/doc/HTML/sr/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/sr/kcontrol5/khtml-behavior/
-share/doc/HTML/sr/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/sr/kcontrol5/khtml-general/
-share/doc/HTML/sr/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/sr/kcontrol5/khtml-java-js/
-share/doc/HTML/sr/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/sr/kcontrol5/performance/
-share/doc/HTML/sr/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/sr/kcontrol5/performance/index.docbook
+share/doc/HTML/ru/kcontrol/
+share/doc/HTML/ru/kcontrol/bookmarks/
+share/doc/HTML/ru/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/ru/kcontrol/bookmarks/index.docbook
+share/doc/HTML/ru/kcontrol/filemanager/
+share/doc/HTML/ru/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/ru/kcontrol/filemanager/index.docbook
+share/doc/HTML/ru/kcontrol/history/
+share/doc/HTML/ru/kcontrol/history/index.cache.bz2
+share/doc/HTML/ru/kcontrol/history/index.docbook
+share/doc/HTML/ru/kcontrol/kcmcss/
+share/doc/HTML/ru/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kcmcss/index.docbook
+share/doc/HTML/ru/kcontrol/khtml-adblock/
+share/doc/HTML/ru/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/ru/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/ru/kcontrol/khtml-behavior/
+share/doc/HTML/ru/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/ru/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/ru/kcontrol/khtml-general/
+share/doc/HTML/ru/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/ru/kcontrol/khtml-general/index.docbook
+share/doc/HTML/ru/kcontrol/khtml-java-js/
+share/doc/HTML/ru/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/ru/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/ru/kcontrol/performance/
+share/doc/HTML/ru/kcontrol/performance/index.cache.bz2
+share/doc/HTML/ru/kcontrol/performance/index.docbook
+share/doc/HTML/sr/kcontrol/
+share/doc/HTML/sr/kcontrol/bookmarks/
+share/doc/HTML/sr/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/sr/kcontrol/bookmarks/index.docbook
+share/doc/HTML/sr/kcontrol/filemanager/
+share/doc/HTML/sr/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/sr/kcontrol/filemanager/index.docbook
+share/doc/HTML/sr/kcontrol/kcmcss/
+share/doc/HTML/sr/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/sr/kcontrol/kcmcss/index.docbook
+share/doc/HTML/sr/kcontrol/khtml-adblock/
+share/doc/HTML/sr/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/sr/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/sr/kcontrol/khtml-behavior/
+share/doc/HTML/sr/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/sr/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/sr/kcontrol/khtml-general/
+share/doc/HTML/sr/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/sr/kcontrol/khtml-general/index.docbook
+share/doc/HTML/sr/kcontrol/khtml-java-js/
+share/doc/HTML/sr/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/sr/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/sr/kcontrol/performance/
+share/doc/HTML/sr/kcontrol/performance/index.cache.bz2
+share/doc/HTML/sr/kcontrol/performance/index.docbook
 share/doc/HTML/sr/konqueror/
 share/doc/HTML/sr/konqueror/basics.docbook
 share/doc/HTML/sr/konqueror/bookmarks.docbook
@@ -706,30 +619,31 @@ share/doc/HTML/sr/konqueror/plugins.docbook
 share/doc/HTML/sr/konqueror/save-settings.docbook
 share/doc/HTML/sr/konqueror/sidebar.docbook
 share/doc/HTML/sr/konqueror/view-extensions.docbook
-share/doc/HTML/sr@latin/kcontrol5/bookmarks/
-share/doc/HTML/sr@latin/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/filemanager/
-share/doc/HTML/sr@latin/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/filemanager/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/kcmcss/
-share/doc/HTML/sr@latin/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/khtml-adblock/
-share/doc/HTML/sr@latin/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/khtml-behavior/
-share/doc/HTML/sr@latin/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/khtml-general/
-share/doc/HTML/sr@latin/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/khtml-java-js/
-share/doc/HTML/sr@latin/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/sr@latin/kcontrol5/performance/
-share/doc/HTML/sr@latin/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/sr@latin/kcontrol5/performance/index.docbook
+share/doc/HTML/sr@latin/kcontrol/
+share/doc/HTML/sr@latin/kcontrol/bookmarks/
+share/doc/HTML/sr@latin/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/bookmarks/index.docbook
+share/doc/HTML/sr@latin/kcontrol/filemanager/
+share/doc/HTML/sr@latin/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/filemanager/index.docbook
+share/doc/HTML/sr@latin/kcontrol/kcmcss/
+share/doc/HTML/sr@latin/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/kcmcss/index.docbook
+share/doc/HTML/sr@latin/kcontrol/khtml-adblock/
+share/doc/HTML/sr@latin/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/sr@latin/kcontrol/khtml-behavior/
+share/doc/HTML/sr@latin/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/sr@latin/kcontrol/khtml-general/
+share/doc/HTML/sr@latin/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/khtml-general/index.docbook
+share/doc/HTML/sr@latin/kcontrol/khtml-java-js/
+share/doc/HTML/sr@latin/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/sr@latin/kcontrol/performance/
+share/doc/HTML/sr@latin/kcontrol/performance/index.cache.bz2
+share/doc/HTML/sr@latin/kcontrol/performance/index.docbook
 share/doc/HTML/sr@latin/konqueror/
 share/doc/HTML/sr@latin/konqueror/basics.docbook
 share/doc/HTML/sr@latin/konqueror/bookmarks.docbook
@@ -747,33 +661,34 @@ share/doc/HTML/sr@latin/konqueror/plugins.docbook
 share/doc/HTML/sr@latin/konqueror/save-settings.docbook
 share/doc/HTML/sr@latin/konqueror/sidebar.docbook
 share/doc/HTML/sr@latin/konqueror/view-extensions.docbook
-share/doc/HTML/sv/kcontrol5/bookmarks/
-share/doc/HTML/sv/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/sv/kcontrol5/filemanager/
-share/doc/HTML/sv/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/filemanager/index.docbook
-share/doc/HTML/sv/kcontrol5/history/
-share/doc/HTML/sv/kcontrol5/history/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/history/index.docbook
-share/doc/HTML/sv/kcontrol5/kcmcss/
-share/doc/HTML/sv/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/sv/kcontrol5/khtml-adblock/
-share/doc/HTML/sv/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/sv/kcontrol5/khtml-behavior/
-share/doc/HTML/sv/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/sv/kcontrol5/khtml-general/
-share/doc/HTML/sv/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/sv/kcontrol5/khtml-java-js/
-share/doc/HTML/sv/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/sv/kcontrol5/performance/
-share/doc/HTML/sv/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/sv/kcontrol5/performance/index.docbook
+share/doc/HTML/sv/kcontrol/
+share/doc/HTML/sv/kcontrol/bookmarks/
+share/doc/HTML/sv/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/sv/kcontrol/bookmarks/index.docbook
+share/doc/HTML/sv/kcontrol/filemanager/
+share/doc/HTML/sv/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/sv/kcontrol/filemanager/index.docbook
+share/doc/HTML/sv/kcontrol/history/
+share/doc/HTML/sv/kcontrol/history/index.cache.bz2
+share/doc/HTML/sv/kcontrol/history/index.docbook
+share/doc/HTML/sv/kcontrol/kcmcss/
+share/doc/HTML/sv/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/sv/kcontrol/kcmcss/index.docbook
+share/doc/HTML/sv/kcontrol/khtml-adblock/
+share/doc/HTML/sv/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/sv/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/sv/kcontrol/khtml-behavior/
+share/doc/HTML/sv/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/sv/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/sv/kcontrol/khtml-general/
+share/doc/HTML/sv/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/sv/kcontrol/khtml-general/index.docbook
+share/doc/HTML/sv/kcontrol/khtml-java-js/
+share/doc/HTML/sv/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/sv/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/sv/kcontrol/performance/
+share/doc/HTML/sv/kcontrol/performance/index.cache.bz2
+share/doc/HTML/sv/kcontrol/performance/index.docbook
 share/doc/HTML/sv/konqueror/
 share/doc/HTML/sv/konqueror/cmndline.png
 share/doc/HTML/sv/konqueror/dirtree.png
@@ -784,48 +699,59 @@ share/doc/HTML/sv/konqueror/konqorg.png
 share/doc/HTML/sv/konqueror/parts.png
 share/doc/HTML/sv/konqueror/shortcut1.png
 share/doc/HTML/sv/konqueror/shortcut2.png
-share/doc/HTML/tr/kcontrol5/bookmarks/
-share/doc/HTML/tr/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/tr/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/tr/kcontrol5/filemanager/
-share/doc/HTML/tr/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/tr/kcontrol5/filemanager/index.docbook
-share/doc/HTML/tr/kcontrol5/history/
-share/doc/HTML/tr/kcontrol5/history/index.cache.bz2
-share/doc/HTML/tr/kcontrol5/history/index.docbook
-share/doc/HTML/tr/kcontrol5/khtml-adblock/
-share/doc/HTML/tr/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/tr/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/tr/kcontrol5/khtml-general/
-share/doc/HTML/tr/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/tr/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/uk/kcontrol5/bookmarks/
-share/doc/HTML/uk/kcontrol5/bookmarks/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/bookmarks/index.docbook
-share/doc/HTML/uk/kcontrol5/filemanager/
-share/doc/HTML/uk/kcontrol5/filemanager/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/filemanager/index.docbook
-share/doc/HTML/uk/kcontrol5/history/
-share/doc/HTML/uk/kcontrol5/history/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/history/index.docbook
-share/doc/HTML/uk/kcontrol5/kcmcss/
-share/doc/HTML/uk/kcontrol5/kcmcss/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/kcmcss/index.docbook
-share/doc/HTML/uk/kcontrol5/khtml-adblock/
-share/doc/HTML/uk/kcontrol5/khtml-adblock/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/khtml-adblock/index.docbook
-share/doc/HTML/uk/kcontrol5/khtml-behavior/
-share/doc/HTML/uk/kcontrol5/khtml-behavior/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/khtml-behavior/index.docbook
-share/doc/HTML/uk/kcontrol5/khtml-general/
-share/doc/HTML/uk/kcontrol5/khtml-general/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/khtml-general/index.docbook
-share/doc/HTML/uk/kcontrol5/khtml-java-js/
-share/doc/HTML/uk/kcontrol5/khtml-java-js/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/khtml-java-js/index.docbook
-share/doc/HTML/uk/kcontrol5/performance/
-share/doc/HTML/uk/kcontrol5/performance/index.cache.bz2
-share/doc/HTML/uk/kcontrol5/performance/index.docbook
+share/doc/HTML/tr/kcontrol/
+share/doc/HTML/tr/kcontrol/bookmarks/
+share/doc/HTML/tr/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/tr/kcontrol/bookmarks/index.docbook
+share/doc/HTML/tr/kcontrol/filemanager/
+share/doc/HTML/tr/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/tr/kcontrol/filemanager/index.docbook
+share/doc/HTML/tr/kcontrol/history/
+share/doc/HTML/tr/kcontrol/history/index.cache.bz2
+share/doc/HTML/tr/kcontrol/history/index.docbook
+share/doc/HTML/tr/kcontrol/kcmcss/
+share/doc/HTML/tr/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/tr/kcontrol/kcmcss/index.docbook
+share/doc/HTML/tr/kcontrol/khtml-adblock/
+share/doc/HTML/tr/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/tr/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/tr/kcontrol/khtml-general/
+share/doc/HTML/tr/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/tr/kcontrol/khtml-general/index.docbook
+share/doc/HTML/tr/kcontrol/khtml-java-js/
+share/doc/HTML/tr/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/tr/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/tr/kcontrol/performance/
+share/doc/HTML/tr/kcontrol/performance/index.cache.bz2
+share/doc/HTML/tr/kcontrol/performance/index.docbook
+share/doc/HTML/uk/kcontrol/
+share/doc/HTML/uk/kcontrol/bookmarks/
+share/doc/HTML/uk/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/uk/kcontrol/bookmarks/index.docbook
+share/doc/HTML/uk/kcontrol/filemanager/
+share/doc/HTML/uk/kcontrol/filemanager/index.cache.bz2
+share/doc/HTML/uk/kcontrol/filemanager/index.docbook
+share/doc/HTML/uk/kcontrol/history/
+share/doc/HTML/uk/kcontrol/history/index.cache.bz2
+share/doc/HTML/uk/kcontrol/history/index.docbook
+share/doc/HTML/uk/kcontrol/kcmcss/
+share/doc/HTML/uk/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/uk/kcontrol/kcmcss/index.docbook
+share/doc/HTML/uk/kcontrol/khtml-adblock/
+share/doc/HTML/uk/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/uk/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/uk/kcontrol/khtml-behavior/
+share/doc/HTML/uk/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/uk/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/uk/kcontrol/khtml-general/
+share/doc/HTML/uk/kcontrol/khtml-general/index.cache.bz2
+share/doc/HTML/uk/kcontrol/khtml-general/index.docbook
+share/doc/HTML/uk/kcontrol/khtml-java-js/
+share/doc/HTML/uk/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/uk/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/uk/kcontrol/performance/
+share/doc/HTML/uk/kcontrol/performance/index.cache.bz2
+share/doc/HTML/uk/kcontrol/performance/index.docbook
 share/doc/HTML/uk/konqueror/
 share/doc/HTML/uk/konqueror/cmndline.png
 share/doc/HTML/uk/konqueror/dirtree.png
@@ -839,10 +765,10 @@ share/doc/HTML/uk/konqueror/parts.png
 share/doc/HTML/uk/konqueror/thumbnails.png
 share/doc/HTML/uk/konqueror/viewproperties-dialog.png
 share/doc/HTML/zh_CN/
-share/doc/HTML/zh_CN/kcontrol5/
-share/doc/HTML/zh_CN/kcontrol5/history/
-share/doc/HTML/zh_CN/kcontrol5/history/index.cache.bz2
-share/doc/HTML/zh_CN/kcontrol5/history/index.docbook
+share/doc/HTML/zh_CN/kcontrol/
+share/doc/HTML/zh_CN/kcontrol/history/
+share/doc/HTML/zh_CN/kcontrol/history/index.cache.bz2
+share/doc/HTML/zh_CN/kcontrol/history/index.docbook
 share/examples/konqueror/
 share/examples/konqueror/xdg/
 share/examples/konqueror/xdg/autostart/
@@ -875,13 +801,16 @@ share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/64x64/apps/webengine.png
 share/kcmcss/
 share/kcmcss/template.css
+share/kconf_update/
 share/kconf_update/webenginepart.upd
 share/kcontrol/
 share/kcontrol/pics/
 share/kcontrol/pics/onlyone.png
 share/kcontrol/pics/overlapping.png
-share/kf5/kbookmark/
-share/kf5/kbookmark/directory_bookmarkbar.desktop
+share/kf6/kbookmark/
+share/kf6/kbookmark/directory_bookmarkbar.desktop
+share/kio_bookmarks/
+share/kio_bookmarks/kio_bookmarks.css
 share/konqsidebartng/
 share/konqsidebartng/entries/
 share/konqsidebartng/entries/bookmarks.desktop
@@ -892,11 +821,6 @@ share/konqsidebartng/entries/places.desktop
 share/konqsidebartng/entries/remote.desktop
 share/konqsidebartng/entries/root.desktop
 share/konqsidebartng/entries/services.desktop
-share/konqsidebartng/plugins/
-share/konqsidebartng/plugins/konqsidebar_bookmarks.desktop
-share/konqsidebartng/plugins/konqsidebar_history.desktop
-share/konqsidebartng/plugins/konqsidebar_places.desktop
-share/konqsidebartng/plugins/konqsidebar_tree.desktop
 share/konqueror/
 share/konqueror/about/
 share/konqueror/about/body-background.png
@@ -916,7 +840,6 @@ share/konqueror/about/konq.css
 share/konqueror/about/launch.html
 share/konqueror/about/plugins.html
 share/konqueror/about/plugins_rtl.html
-share/konqueror/about/specs.html
 share/konqueror/about/tips.html
 share/konqueror/about/top-left-konqueror.png
 share/konqueror/about/top-middle.png
@@ -946,7 +869,6 @@ share/konqueror/partsrcfiles/autorefresh.rc
 share/konqueror/partsrcfiles/babelfishplugin.rc
 share/konqueror/partsrcfiles/dirfilterplugin.rc
 share/konqueror/partsrcfiles/khtmlsettingsplugin.rc
-share/konqueror/partsrcfiles/khtmlttsplugin.rc
 share/konqueror/partsrcfiles/kimgallery.rc
 share/konqueror/partsrcfiles/konq_shellcmdplugin.rc
 share/konqueror/partsrcfiles/konqueror_kget_browser_integration.rc
@@ -961,16 +883,6 @@ share/konqueror/pics/indicator_viewactive.png
 share/konqueror/webengine_dictionaries/
 share/konqueror/webengine_dictionaries/default.bdic
 share/konqueror/webengine_dictionaries/en-GB.bdic
-share/kservices5/fsview_part.desktop
-share/kservices5/konq_sidebartng.desktop
-share/kservices5/org.kde.konqueror.desktop
-share/kservices5/webarchivethumbnail.desktop
-share/kservices5/webenginepart.desktop
-share/kxmlgui5/
-share/kxmlgui5/fsview/
-share/kxmlgui5/fsview/fsview_part.rc
-share/kxmlgui5/webenginepart/
-share/kxmlgui5/webenginepart/webenginepart.rc
 share/locale/af/LC_MESSAGES/babelfish.mo
 share/locale/af/LC_MESSAGES/dirfilterplugin.mo
 share/locale/af/LC_MESSAGES/imgalleryplugin.mo
@@ -1000,6 +912,7 @@ share/locale/ar/LC_MESSAGES/kfmclient.mo
 share/locale/ar/LC_MESSAGES/kgetplugin.mo
 share/locale/ar/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ar/LC_MESSAGES/khtmltts.mo
+share/locale/ar/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ar/LC_MESSAGES/konqueror.mo
 share/locale/ar/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ar/LC_MESSAGES/libkonq.mo
@@ -1020,6 +933,7 @@ share/locale/be/LC_MESSAGES/kfmclient.mo
 share/locale/be/LC_MESSAGES/kgetplugin.mo
 share/locale/be/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/be/LC_MESSAGES/khtmltts.mo
+share/locale/be/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/be/LC_MESSAGES/konqueror.mo
 share/locale/be/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/be/LC_MESSAGES/libkonq.mo
@@ -1028,6 +942,7 @@ share/locale/be/LC_MESSAGES/uachangerplugin.mo
 share/locale/be@latin/LC_MESSAGES/kcmkonq.mo
 share/locale/be@latin/LC_MESSAGES/kfmclient.mo
 share/locale/be@latin/LC_MESSAGES/khtmltts.mo
+share/locale/be@latin/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/be@latin/LC_MESSAGES/konqueror.mo
 share/locale/be@latin/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/be@latin/LC_MESSAGES/libkonq.mo
@@ -1045,6 +960,7 @@ share/locale/bg/LC_MESSAGES/kfmclient.mo
 share/locale/bg/LC_MESSAGES/kgetplugin.mo
 share/locale/bg/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/bg/LC_MESSAGES/khtmltts.mo
+share/locale/bg/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/bg/LC_MESSAGES/konqueror.mo
 share/locale/bg/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/bg/LC_MESSAGES/libkonq.mo
@@ -1065,6 +981,7 @@ share/locale/bn_IN/LC_MESSAGES/kcmkonq.mo
 share/locale/bn_IN/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/bn_IN/LC_MESSAGES/kfmclient.mo
 share/locale/bn_IN/LC_MESSAGES/khtmltts.mo
+share/locale/bn_IN/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/bn_IN/LC_MESSAGES/konqueror.mo
 share/locale/bn_IN/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/bn_IN/LC_MESSAGES/libkonq.mo
@@ -1100,6 +1017,7 @@ share/locale/bs/LC_MESSAGES/kfmclient.mo
 share/locale/bs/LC_MESSAGES/kgetplugin.mo
 share/locale/bs/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/bs/LC_MESSAGES/khtmltts.mo
+share/locale/bs/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/bs/LC_MESSAGES/konqueror.mo
 share/locale/bs/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/bs/LC_MESSAGES/libkonq.mo
@@ -1120,6 +1038,7 @@ share/locale/ca/LC_MESSAGES/kfmclient.mo
 share/locale/ca/LC_MESSAGES/kgetplugin.mo
 share/locale/ca/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ca/LC_MESSAGES/khtmltts.mo
+share/locale/ca/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ca/LC_MESSAGES/konqueror.mo
 share/locale/ca/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca/LC_MESSAGES/libkonq.mo
@@ -1141,6 +1060,7 @@ share/locale/ca@valencia/LC_MESSAGES/kfmclient.mo
 share/locale/ca@valencia/LC_MESSAGES/kgetplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/khtmltts.mo
+share/locale/ca@valencia/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ca@valencia/LC_MESSAGES/konqueror.mo
 share/locale/ca@valencia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/libkonq.mo
@@ -1162,6 +1082,7 @@ share/locale/cs/LC_MESSAGES/kfmclient.mo
 share/locale/cs/LC_MESSAGES/kgetplugin.mo
 share/locale/cs/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/cs/LC_MESSAGES/khtmltts.mo
+share/locale/cs/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/cs/LC_MESSAGES/konqueror.mo
 share/locale/cs/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/cs/LC_MESSAGES/libkonq.mo
@@ -1209,6 +1130,7 @@ share/locale/da/LC_MESSAGES/kfmclient.mo
 share/locale/da/LC_MESSAGES/kgetplugin.mo
 share/locale/da/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/da/LC_MESSAGES/khtmltts.mo
+share/locale/da/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/da/LC_MESSAGES/konqueror.mo
 share/locale/da/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/da/LC_MESSAGES/libkonq.mo
@@ -1229,6 +1151,7 @@ share/locale/de/LC_MESSAGES/kfmclient.mo
 share/locale/de/LC_MESSAGES/kgetplugin.mo
 share/locale/de/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/de/LC_MESSAGES/khtmltts.mo
+share/locale/de/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/de/LC_MESSAGES/konqueror.mo
 share/locale/de/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/de/LC_MESSAGES/libkonq.mo
@@ -1250,6 +1173,7 @@ share/locale/el/LC_MESSAGES/kfmclient.mo
 share/locale/el/LC_MESSAGES/kgetplugin.mo
 share/locale/el/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/el/LC_MESSAGES/khtmltts.mo
+share/locale/el/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/el/LC_MESSAGES/konqueror.mo
 share/locale/el/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/el/LC_MESSAGES/libkonq.mo
@@ -1271,6 +1195,7 @@ share/locale/en_GB/LC_MESSAGES/kfmclient.mo
 share/locale/en_GB/LC_MESSAGES/kgetplugin.mo
 share/locale/en_GB/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/en_GB/LC_MESSAGES/khtmltts.mo
+share/locale/en_GB/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/en_GB/LC_MESSAGES/konqueror.mo
 share/locale/en_GB/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/en_GB/LC_MESSAGES/libkonq.mo
@@ -1292,11 +1217,13 @@ share/locale/eo/LC_MESSAGES/kfmclient.mo
 share/locale/eo/LC_MESSAGES/kgetplugin.mo
 share/locale/eo/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/eo/LC_MESSAGES/khtmltts.mo
+share/locale/eo/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/eo/LC_MESSAGES/konqueror.mo
 share/locale/eo/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/eo/LC_MESSAGES/libkonq.mo
 share/locale/eo/LC_MESSAGES/searchbarplugin.mo
 share/locale/eo/LC_MESSAGES/uachangerplugin.mo
+share/locale/eo/LC_MESSAGES/webarchiver.mo
 share/locale/eo/LC_MESSAGES/webenginepart.mo
 share/locale/es/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/es/LC_MESSAGES/autorefresh.mo
@@ -1312,6 +1239,7 @@ share/locale/es/LC_MESSAGES/kfmclient.mo
 share/locale/es/LC_MESSAGES/kgetplugin.mo
 share/locale/es/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/es/LC_MESSAGES/khtmltts.mo
+share/locale/es/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/es/LC_MESSAGES/konqueror.mo
 share/locale/es/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/es/LC_MESSAGES/libkonq.mo
@@ -1333,6 +1261,7 @@ share/locale/et/LC_MESSAGES/kfmclient.mo
 share/locale/et/LC_MESSAGES/kgetplugin.mo
 share/locale/et/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/et/LC_MESSAGES/khtmltts.mo
+share/locale/et/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/et/LC_MESSAGES/konqueror.mo
 share/locale/et/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/et/LC_MESSAGES/libkonq.mo
@@ -1353,6 +1282,7 @@ share/locale/eu/LC_MESSAGES/kfmclient.mo
 share/locale/eu/LC_MESSAGES/kgetplugin.mo
 share/locale/eu/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/eu/LC_MESSAGES/khtmltts.mo
+share/locale/eu/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/eu/LC_MESSAGES/konqueror.mo
 share/locale/eu/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/eu/LC_MESSAGES/libkonq.mo
@@ -1374,6 +1304,7 @@ share/locale/fa/LC_MESSAGES/kfmclient.mo
 share/locale/fa/LC_MESSAGES/kgetplugin.mo
 share/locale/fa/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fa/LC_MESSAGES/khtmltts.mo
+share/locale/fa/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/fa/LC_MESSAGES/konqueror.mo
 share/locale/fa/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fa/LC_MESSAGES/libkonq.mo
@@ -1394,6 +1325,7 @@ share/locale/fi/LC_MESSAGES/kfmclient.mo
 share/locale/fi/LC_MESSAGES/kgetplugin.mo
 share/locale/fi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fi/LC_MESSAGES/khtmltts.mo
+share/locale/fi/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/fi/LC_MESSAGES/konqueror.mo
 share/locale/fi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
@@ -1415,6 +1347,7 @@ share/locale/fr/LC_MESSAGES/kfmclient.mo
 share/locale/fr/LC_MESSAGES/kgetplugin.mo
 share/locale/fr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fr/LC_MESSAGES/khtmltts.mo
+share/locale/fr/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/fr/LC_MESSAGES/konqueror.mo
 share/locale/fr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fr/LC_MESSAGES/libkonq.mo
@@ -1435,6 +1368,7 @@ share/locale/fy/LC_MESSAGES/kcmperformance.mo
 share/locale/fy/LC_MESSAGES/kfmclient.mo
 share/locale/fy/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/fy/LC_MESSAGES/khtmltts.mo
+share/locale/fy/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/fy/LC_MESSAGES/konqueror.mo
 share/locale/fy/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/fy/LC_MESSAGES/libkonq.mo
@@ -1454,6 +1388,7 @@ share/locale/ga/LC_MESSAGES/kfmclient.mo
 share/locale/ga/LC_MESSAGES/kgetplugin.mo
 share/locale/ga/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ga/LC_MESSAGES/khtmltts.mo
+share/locale/ga/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ga/LC_MESSAGES/konqueror.mo
 share/locale/ga/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ga/LC_MESSAGES/libkonq.mo
@@ -1474,6 +1409,7 @@ share/locale/gl/LC_MESSAGES/kfmclient.mo
 share/locale/gl/LC_MESSAGES/kgetplugin.mo
 share/locale/gl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/gl/LC_MESSAGES/khtmltts.mo
+share/locale/gl/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/gl/LC_MESSAGES/konqueror.mo
 share/locale/gl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/gl/LC_MESSAGES/libkonq.mo
@@ -1486,6 +1422,7 @@ share/locale/gu/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/gu/LC_MESSAGES/kcmperformance.mo
 share/locale/gu/LC_MESSAGES/kfmclient.mo
 share/locale/gu/LC_MESSAGES/khtmltts.mo
+share/locale/gu/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/gu/LC_MESSAGES/konqueror.mo
 share/locale/gu/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/gu/LC_MESSAGES/libkonq.mo
@@ -1503,6 +1440,7 @@ share/locale/he/LC_MESSAGES/kfmclient.mo
 share/locale/he/LC_MESSAGES/kgetplugin.mo
 share/locale/he/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/he/LC_MESSAGES/khtmltts.mo
+share/locale/he/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/he/LC_MESSAGES/konqueror.mo
 share/locale/he/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/he/LC_MESSAGES/libkonq.mo
@@ -1522,6 +1460,7 @@ share/locale/hi/LC_MESSAGES/kfmclient.mo
 share/locale/hi/LC_MESSAGES/kgetplugin.mo
 share/locale/hi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hi/LC_MESSAGES/khtmltts.mo
+share/locale/hi/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/hi/LC_MESSAGES/konqueror.mo
 share/locale/hi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hi/LC_MESSAGES/libkonq.mo
@@ -1560,6 +1499,7 @@ share/locale/hr/LC_MESSAGES/kfmclient.mo
 share/locale/hr/LC_MESSAGES/kgetplugin.mo
 share/locale/hr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hr/LC_MESSAGES/khtmltts.mo
+share/locale/hr/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/hr/LC_MESSAGES/konqueror.mo
 share/locale/hr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hr/LC_MESSAGES/libkonq.mo
@@ -1572,6 +1512,7 @@ share/locale/hsb/LC_MESSAGES/kcmperformance.mo
 share/locale/hsb/LC_MESSAGES/kfmclient.mo
 share/locale/hsb/LC_MESSAGES/kgetplugin.mo
 share/locale/hsb/LC_MESSAGES/khtmltts.mo
+share/locale/hsb/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/hsb/LC_MESSAGES/konqueror.mo
 share/locale/hsb/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hsb/LC_MESSAGES/libkonq.mo
@@ -1590,6 +1531,7 @@ share/locale/hu/LC_MESSAGES/kfmclient.mo
 share/locale/hu/LC_MESSAGES/kgetplugin.mo
 share/locale/hu/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/hu/LC_MESSAGES/khtmltts.mo
+share/locale/hu/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/hu/LC_MESSAGES/konqueror.mo
 share/locale/hu/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/hu/LC_MESSAGES/libkonq.mo
@@ -1610,6 +1552,7 @@ share/locale/ia/LC_MESSAGES/kfmclient.mo
 share/locale/ia/LC_MESSAGES/kgetplugin.mo
 share/locale/ia/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ia/LC_MESSAGES/khtmltts.mo
+share/locale/ia/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ia/LC_MESSAGES/konqueror.mo
 share/locale/ia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ia/LC_MESSAGES/libkonq.mo
@@ -1631,6 +1574,7 @@ share/locale/id/LC_MESSAGES/kfmclient.mo
 share/locale/id/LC_MESSAGES/kgetplugin.mo
 share/locale/id/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/id/LC_MESSAGES/khtmltts.mo
+share/locale/id/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/id/LC_MESSAGES/konqueror.mo
 share/locale/id/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/id/LC_MESSAGES/libkonq.mo
@@ -1652,6 +1596,7 @@ share/locale/is/LC_MESSAGES/kfmclient.mo
 share/locale/is/LC_MESSAGES/kgetplugin.mo
 share/locale/is/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/is/LC_MESSAGES/khtmltts.mo
+share/locale/is/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/is/LC_MESSAGES/konqueror.mo
 share/locale/is/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/is/LC_MESSAGES/libkonq.mo
@@ -1671,6 +1616,7 @@ share/locale/it/LC_MESSAGES/kfmclient.mo
 share/locale/it/LC_MESSAGES/kgetplugin.mo
 share/locale/it/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/it/LC_MESSAGES/khtmltts.mo
+share/locale/it/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/it/LC_MESSAGES/konqueror.mo
 share/locale/it/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
@@ -1692,6 +1638,7 @@ share/locale/ja/LC_MESSAGES/kfmclient.mo
 share/locale/ja/LC_MESSAGES/kgetplugin.mo
 share/locale/ja/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ja/LC_MESSAGES/khtmltts.mo
+share/locale/ja/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ja/LC_MESSAGES/konqueror.mo
 share/locale/ja/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ja/LC_MESSAGES/libkonq.mo
@@ -1713,6 +1660,7 @@ share/locale/ka/LC_MESSAGES/kfmclient.mo
 share/locale/ka/LC_MESSAGES/kgetplugin.mo
 share/locale/ka/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ka/LC_MESSAGES/khtmltts.mo
+share/locale/ka/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ka/LC_MESSAGES/konqueror.mo
 share/locale/ka/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ka/LC_MESSAGES/libkonq.mo
@@ -1734,6 +1682,7 @@ share/locale/kk/LC_MESSAGES/kfmclient.mo
 share/locale/kk/LC_MESSAGES/kgetplugin.mo
 share/locale/kk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/kk/LC_MESSAGES/khtmltts.mo
+share/locale/kk/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/kk/LC_MESSAGES/konqueror.mo
 share/locale/kk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/kk/LC_MESSAGES/libkonq.mo
@@ -1754,6 +1703,7 @@ share/locale/km/LC_MESSAGES/kfmclient.mo
 share/locale/km/LC_MESSAGES/kgetplugin.mo
 share/locale/km/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/km/LC_MESSAGES/khtmltts.mo
+share/locale/km/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/km/LC_MESSAGES/konqueror.mo
 share/locale/km/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/km/LC_MESSAGES/libkonq.mo
@@ -1765,6 +1715,7 @@ share/locale/kn/LC_MESSAGES/kcmkonq.mo
 share/locale/kn/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/kn/LC_MESSAGES/kcmperformance.mo
 share/locale/kn/LC_MESSAGES/khtmltts.mo
+share/locale/kn/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/kn/LC_MESSAGES/konqueror.mo
 share/locale/kn/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/kn/LC_MESSAGES/libkonq.mo
@@ -1782,6 +1733,7 @@ share/locale/ko/LC_MESSAGES/kfmclient.mo
 share/locale/ko/LC_MESSAGES/kgetplugin.mo
 share/locale/ko/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ko/LC_MESSAGES/khtmltts.mo
+share/locale/ko/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ko/LC_MESSAGES/konqueror.mo
 share/locale/ko/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ko/LC_MESSAGES/libkonq.mo
@@ -1802,6 +1754,7 @@ share/locale/ku/LC_MESSAGES/kcmperformance.mo
 share/locale/ku/LC_MESSAGES/kfmclient.mo
 share/locale/ku/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ku/LC_MESSAGES/khtmltts.mo
+share/locale/ku/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ku/LC_MESSAGES/konqueror.mo
 share/locale/ku/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ku/LC_MESSAGES/libkonq.mo
@@ -1821,6 +1774,7 @@ share/locale/lt/LC_MESSAGES/kfmclient.mo
 share/locale/lt/LC_MESSAGES/kgetplugin.mo
 share/locale/lt/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/lt/LC_MESSAGES/khtmltts.mo
+share/locale/lt/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/lt/LC_MESSAGES/konqueror.mo
 share/locale/lt/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lt/LC_MESSAGES/libkonq.mo
@@ -1842,6 +1796,7 @@ share/locale/lv/LC_MESSAGES/kfmclient.mo
 share/locale/lv/LC_MESSAGES/kgetplugin.mo
 share/locale/lv/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/lv/LC_MESSAGES/khtmltts.mo
+share/locale/lv/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/lv/LC_MESSAGES/konqueror.mo
 share/locale/lv/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lv/LC_MESSAGES/libkonq.mo
@@ -1861,6 +1816,7 @@ share/locale/mai/LC_MESSAGES/kfmclient.mo
 share/locale/mai/LC_MESSAGES/kgetplugin.mo
 share/locale/mai/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/mai/LC_MESSAGES/khtmltts.mo
+share/locale/mai/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/mai/LC_MESSAGES/konqueror.mo
 share/locale/mai/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/mai/LC_MESSAGES/libkonq.mo
@@ -1881,6 +1837,7 @@ share/locale/mk/LC_MESSAGES/kfmclient.mo
 share/locale/mk/LC_MESSAGES/kgetplugin.mo
 share/locale/mk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/mk/LC_MESSAGES/khtmltts.mo
+share/locale/mk/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/mk/LC_MESSAGES/konqueror.mo
 share/locale/mk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/mk/LC_MESSAGES/libkonq.mo
@@ -1899,6 +1856,7 @@ share/locale/ml/LC_MESSAGES/kcmperformance.mo
 share/locale/ml/LC_MESSAGES/kfmclient.mo
 share/locale/ml/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ml/LC_MESSAGES/khtmltts.mo
+share/locale/ml/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ml/LC_MESSAGES/konqueror.mo
 share/locale/ml/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ml/LC_MESSAGES/libkonq.mo
@@ -1919,6 +1877,7 @@ share/locale/mr/LC_MESSAGES/kfmclient.mo
 share/locale/mr/LC_MESSAGES/kgetplugin.mo
 share/locale/mr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/mr/LC_MESSAGES/khtmltts.mo
+share/locale/mr/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/mr/LC_MESSAGES/konqueror.mo
 share/locale/mr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/mr/LC_MESSAGES/libkonq.mo
@@ -1939,6 +1898,7 @@ share/locale/ms/LC_MESSAGES/kfmclient.mo
 share/locale/ms/LC_MESSAGES/kgetplugin.mo
 share/locale/ms/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ms/LC_MESSAGES/khtmltts.mo
+share/locale/ms/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ms/LC_MESSAGES/konqueror.mo
 share/locale/ms/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ms/LC_MESSAGES/libkonq.mo
@@ -1979,6 +1939,7 @@ share/locale/nb/LC_MESSAGES/kfmclient.mo
 share/locale/nb/LC_MESSAGES/kgetplugin.mo
 share/locale/nb/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nb/LC_MESSAGES/khtmltts.mo
+share/locale/nb/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/nb/LC_MESSAGES/konqueror.mo
 share/locale/nb/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nb/LC_MESSAGES/libkonq.mo
@@ -1999,6 +1960,7 @@ share/locale/nds/LC_MESSAGES/kfmclient.mo
 share/locale/nds/LC_MESSAGES/kgetplugin.mo
 share/locale/nds/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nds/LC_MESSAGES/khtmltts.mo
+share/locale/nds/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/nds/LC_MESSAGES/konqueror.mo
 share/locale/nds/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nds/LC_MESSAGES/libkonq.mo
@@ -2038,6 +2000,7 @@ share/locale/nl/LC_MESSAGES/kfmclient.mo
 share/locale/nl/LC_MESSAGES/kgetplugin.mo
 share/locale/nl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nl/LC_MESSAGES/khtmltts.mo
+share/locale/nl/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/nl/LC_MESSAGES/konqueror.mo
 share/locale/nl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nl/LC_MESSAGES/libkonq.mo
@@ -2059,6 +2022,7 @@ share/locale/nn/LC_MESSAGES/kfmclient.mo
 share/locale/nn/LC_MESSAGES/kgetplugin.mo
 share/locale/nn/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nn/LC_MESSAGES/khtmltts.mo
+share/locale/nn/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/nn/LC_MESSAGES/konqueror.mo
 share/locale/nn/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/nn/LC_MESSAGES/libkonq.mo
@@ -2091,6 +2055,7 @@ share/locale/or/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/or/LC_MESSAGES/kcmperformance.mo
 share/locale/or/LC_MESSAGES/kfmclient.mo
 share/locale/or/LC_MESSAGES/khtmltts.mo
+share/locale/or/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/or/LC_MESSAGES/konqueror.mo
 share/locale/or/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/or/LC_MESSAGES/libkonq.mo
@@ -2108,6 +2073,7 @@ share/locale/pa/LC_MESSAGES/kfmclient.mo
 share/locale/pa/LC_MESSAGES/kgetplugin.mo
 share/locale/pa/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pa/LC_MESSAGES/khtmltts.mo
+share/locale/pa/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/pa/LC_MESSAGES/konqueror.mo
 share/locale/pa/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pa/LC_MESSAGES/libkonq.mo
@@ -2128,6 +2094,7 @@ share/locale/pl/LC_MESSAGES/kfmclient.mo
 share/locale/pl/LC_MESSAGES/kgetplugin.mo
 share/locale/pl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pl/LC_MESSAGES/khtmltts.mo
+share/locale/pl/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/pl/LC_MESSAGES/konqueror.mo
 share/locale/pl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pl/LC_MESSAGES/libkonq.mo
@@ -2149,6 +2116,7 @@ share/locale/pt/LC_MESSAGES/kfmclient.mo
 share/locale/pt/LC_MESSAGES/kgetplugin.mo
 share/locale/pt/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pt/LC_MESSAGES/khtmltts.mo
+share/locale/pt/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/pt/LC_MESSAGES/konqueror.mo
 share/locale/pt/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pt/LC_MESSAGES/libkonq.mo
@@ -2170,6 +2138,7 @@ share/locale/pt_BR/LC_MESSAGES/kfmclient.mo
 share/locale/pt_BR/LC_MESSAGES/kgetplugin.mo
 share/locale/pt_BR/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/khtmltts.mo
+share/locale/pt_BR/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/pt_BR/LC_MESSAGES/konqueror.mo
 share/locale/pt_BR/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/pt_BR/LC_MESSAGES/libkonq.mo
@@ -2191,6 +2160,7 @@ share/locale/ro/LC_MESSAGES/kfmclient.mo
 share/locale/ro/LC_MESSAGES/kgetplugin.mo
 share/locale/ro/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ro/LC_MESSAGES/khtmltts.mo
+share/locale/ro/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ro/LC_MESSAGES/konqueror.mo
 share/locale/ro/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ro/LC_MESSAGES/libkonq.mo
@@ -2211,6 +2181,7 @@ share/locale/ru/LC_MESSAGES/kfmclient.mo
 share/locale/ru/LC_MESSAGES/kgetplugin.mo
 share/locale/ru/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ru/LC_MESSAGES/khtmltts.mo
+share/locale/ru/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ru/LC_MESSAGES/konqueror.mo
 share/locale/ru/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ru/LC_MESSAGES/libkonq.mo
@@ -2245,6 +2216,7 @@ share/locale/si/LC_MESSAGES/kcmperformance.mo
 share/locale/si/LC_MESSAGES/kfmclient.mo
 share/locale/si/LC_MESSAGES/kgetplugin.mo
 share/locale/si/LC_MESSAGES/khtmltts.mo
+share/locale/si/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/si/LC_MESSAGES/konqueror.mo
 share/locale/si/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/si/LC_MESSAGES/libkonq.mo
@@ -2262,6 +2234,7 @@ share/locale/sk/LC_MESSAGES/kfmclient.mo
 share/locale/sk/LC_MESSAGES/kgetplugin.mo
 share/locale/sk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sk/LC_MESSAGES/khtmltts.mo
+share/locale/sk/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sk/LC_MESSAGES/konqueror.mo
 share/locale/sk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sk/LC_MESSAGES/libkonq.mo
@@ -2283,6 +2256,7 @@ share/locale/sl/LC_MESSAGES/kfmclient.mo
 share/locale/sl/LC_MESSAGES/kgetplugin.mo
 share/locale/sl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sl/LC_MESSAGES/khtmltts.mo
+share/locale/sl/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sl/LC_MESSAGES/konqueror.mo
 share/locale/sl/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sl/LC_MESSAGES/libkonq.mo
@@ -2303,6 +2277,7 @@ share/locale/sq/LC_MESSAGES/kcmperformance.mo
 share/locale/sq/LC_MESSAGES/kfmclient.mo
 share/locale/sq/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sq/LC_MESSAGES/khtmltts.mo
+share/locale/sq/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sq/LC_MESSAGES/konqueror.mo
 share/locale/sq/LC_MESSAGES/libkonq.mo
 share/locale/sq/LC_MESSAGES/searchbarplugin.mo
@@ -2321,6 +2296,7 @@ share/locale/sr/LC_MESSAGES/kfmclient.mo
 share/locale/sr/LC_MESSAGES/kgetplugin.mo
 share/locale/sr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sr/LC_MESSAGES/khtmltts.mo
+share/locale/sr/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sr/LC_MESSAGES/konqueror.mo
 share/locale/sr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr/LC_MESSAGES/libkonq.mo
@@ -2341,6 +2317,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kfmclient.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/khtmltts.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sr@ijekavian/LC_MESSAGES/konqueror.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkonq.mo
@@ -2361,6 +2338,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kfmclient.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/khtmltts.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/konqueror.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkonq.mo
@@ -2381,6 +2359,7 @@ share/locale/sr@latin/LC_MESSAGES/kfmclient.mo
 share/locale/sr@latin/LC_MESSAGES/kgetplugin.mo
 share/locale/sr@latin/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sr@latin/LC_MESSAGES/khtmltts.mo
+share/locale/sr@latin/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sr@latin/LC_MESSAGES/konqueror.mo
 share/locale/sr@latin/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sr@latin/LC_MESSAGES/libkonq.mo
@@ -2401,6 +2380,7 @@ share/locale/sv/LC_MESSAGES/kfmclient.mo
 share/locale/sv/LC_MESSAGES/kgetplugin.mo
 share/locale/sv/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sv/LC_MESSAGES/khtmltts.mo
+share/locale/sv/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/sv/LC_MESSAGES/konqueror.mo
 share/locale/sv/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/sv/LC_MESSAGES/libkonq.mo
@@ -2422,6 +2402,7 @@ share/locale/ta/LC_MESSAGES/kfmclient.mo
 share/locale/ta/LC_MESSAGES/kgetplugin.mo
 share/locale/ta/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ta/LC_MESSAGES/khtmltts.mo
+share/locale/ta/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ta/LC_MESSAGES/konqueror.mo
 share/locale/ta/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ta/LC_MESSAGES/libkonq.mo
@@ -2433,6 +2414,7 @@ share/locale/te/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/te/LC_MESSAGES/kcmperformance.mo
 share/locale/te/LC_MESSAGES/kfmclient.mo
 share/locale/te/LC_MESSAGES/khtmltts.mo
+share/locale/te/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/te/LC_MESSAGES/konqueror.mo
 share/locale/te/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/te/LC_MESSAGES/libkonq.mo
@@ -2450,6 +2432,7 @@ share/locale/tg/LC_MESSAGES/kfmclient.mo
 share/locale/tg/LC_MESSAGES/kgetplugin.mo
 share/locale/tg/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/tg/LC_MESSAGES/khtmltts.mo
+share/locale/tg/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/tg/LC_MESSAGES/konqueror.mo
 share/locale/tg/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tg/LC_MESSAGES/libkonq.mo
@@ -2470,6 +2453,7 @@ share/locale/th/LC_MESSAGES/kfmclient.mo
 share/locale/th/LC_MESSAGES/kgetplugin.mo
 share/locale/th/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/th/LC_MESSAGES/khtmltts.mo
+share/locale/th/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/th/LC_MESSAGES/konqueror.mo
 share/locale/th/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/th/LC_MESSAGES/libkonq.mo
@@ -2490,6 +2474,7 @@ share/locale/tr/LC_MESSAGES/kfmclient.mo
 share/locale/tr/LC_MESSAGES/kgetplugin.mo
 share/locale/tr/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/tr/LC_MESSAGES/khtmltts.mo
+share/locale/tr/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/tr/LC_MESSAGES/konqueror.mo
 share/locale/tr/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/tr/LC_MESSAGES/libkonq.mo
@@ -2511,6 +2496,7 @@ share/locale/ug/LC_MESSAGES/kfmclient.mo
 share/locale/ug/LC_MESSAGES/kgetplugin.mo
 share/locale/ug/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ug/LC_MESSAGES/khtmltts.mo
+share/locale/ug/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/ug/LC_MESSAGES/konqueror.mo
 share/locale/ug/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ug/LC_MESSAGES/libkonq.mo
@@ -2531,6 +2517,7 @@ share/locale/uk/LC_MESSAGES/kfmclient.mo
 share/locale/uk/LC_MESSAGES/kgetplugin.mo
 share/locale/uk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/uk/LC_MESSAGES/khtmltts.mo
+share/locale/uk/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/uk/LC_MESSAGES/konqueror.mo
 share/locale/uk/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/uk/LC_MESSAGES/libkonq.mo
@@ -2588,6 +2575,7 @@ share/locale/vi/LC_MESSAGES/kfmclient.mo
 share/locale/vi/LC_MESSAGES/kgetplugin.mo
 share/locale/vi/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/vi/LC_MESSAGES/khtmltts.mo
+share/locale/vi/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/vi/LC_MESSAGES/konqueror.mo
 share/locale/vi/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/vi/LC_MESSAGES/libkonq.mo
@@ -2606,6 +2594,7 @@ share/locale/wa/LC_MESSAGES/kcmperformance.mo
 share/locale/wa/LC_MESSAGES/kfmclient.mo
 share/locale/wa/LC_MESSAGES/kgetplugin.mo
 share/locale/wa/LC_MESSAGES/khtmltts.mo
+share/locale/wa/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/wa/LC_MESSAGES/konqueror.mo
 share/locale/wa/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/wa/LC_MESSAGES/libkonq.mo
@@ -2637,6 +2626,7 @@ share/locale/zh_CN/LC_MESSAGES/kfmclient.mo
 share/locale/zh_CN/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_CN/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/khtmltts.mo
+share/locale/zh_CN/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/zh_CN/LC_MESSAGES/konqueror.mo
 share/locale/zh_CN/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_CN/LC_MESSAGES/libkonq.mo
@@ -2659,6 +2649,7 @@ share/locale/zh_TW/LC_MESSAGES/kfmclient.mo
 share/locale/zh_TW/LC_MESSAGES/kgetplugin.mo
 share/locale/zh_TW/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/khtmltts.mo
+share/locale/zh_TW/LC_MESSAGES/kio6_bookmarks.mo
 share/locale/zh_TW/LC_MESSAGES/konqueror.mo
 share/locale/zh_TW/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
@@ -2668,9 +2659,9 @@ share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 share/locale/zh_TW/LC_MESSAGES/webenginepart.mo
 share/metainfo/
 share/metainfo/org.kde.konqueror.appdata.xml
-share/qlogging-categories5/akregatorplugin.categories
-share/qlogging-categories5/fsview.categories
-share/qlogging-categories5/konqueror.categories
+share/qlogging-categories6/akregatorplugin.categories
+share/qlogging-categories6/fsview.categories
+share/qlogging-categories6/konqueror.categories
 share/webenginepart/
 share/webenginepart/error.html
 @tag gtk-update-icon-cache %D/share/icons/hicolor

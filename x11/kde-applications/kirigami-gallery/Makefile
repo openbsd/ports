@@ -1,10 +1,11 @@
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
+
+MODKDE_KF5 =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} KF5ItemModels KF5Kirigami2 Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
@@ -13,8 +14,7 @@ WANTLIB += Qt5Svg Qt5Widgets c m
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
 
-BUILD_DEPENDS =	devel/kf5/kpackage \
-		x11/qt5/qtquickcontrols
+BUILD_DEPENDS =	devel/kf5/kpackage
 
 RUN_DEPENDS =	devel/kf5/kpackage \
 		devel/kf6/breeze-icons \

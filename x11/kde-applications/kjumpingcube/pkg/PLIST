@@ -60,6 +60,7 @@ share/kjumpingcube/pics/default.desktop
 share/kjumpingcube/pics/default.svg
 share/locale/af/LC_MESSAGES/kjumpingcube.mo
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
+share/locale/ast/LC_MESSAGES/kjumpingcube.mo
 share/locale/be/LC_MESSAGES/kjumpingcube.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
 share/locale/br/LC_MESSAGES/kjumpingcube.mo
@@ -86,6 +87,7 @@ share/locale/hi/LC_MESSAGES/kjumpingcube.mo
 share/locale/hne/LC_MESSAGES/kjumpingcube.mo
 share/locale/hr/LC_MESSAGES/kjumpingcube.mo
 share/locale/hu/LC_MESSAGES/kjumpingcube.mo
+share/locale/ia/LC_MESSAGES/kjumpingcube.mo
 share/locale/id/LC_MESSAGES/kjumpingcube.mo
 share/locale/is/LC_MESSAGES/kjumpingcube.mo
 share/locale/it/LC_MESSAGES/kjumpingcube.mo
@@ -133,6 +135,6 @@ share/locale/zh_CN/LC_MESSAGES/kjumpingcube.mo
 share/locale/zh_TW/LC_MESSAGES/kjumpingcube.mo
 share/metainfo/
 share/metainfo/org.kde.kjumpingcube.appdata.xml
-share/qlogging-categories5/kjumpingcube.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kjumpingcube.categories

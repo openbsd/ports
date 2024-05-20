@@ -38,6 +38,7 @@ share/doc/HTML/pl/kfourinline/index.docbook
 share/doc/HTML/pt/kfourinline/
 share/doc/HTML/pt/kfourinline/index.cache.bz2
 share/doc/HTML/pt/kfourinline/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kfourinline/
 share/doc/HTML/pt_BR/kfourinline/index.cache.bz2
 share/doc/HTML/pt_BR/kfourinline/index.docbook
@@ -70,6 +71,7 @@ share/kfourinline/grafix/yellow_reflection.desktop
 share/kfourinline/grafix/yellow_reflection.rc
 share/locale/af/LC_MESSAGES/kfourinline.mo
 share/locale/ar/LC_MESSAGES/kfourinline.mo
+share/locale/ast/LC_MESSAGES/kfourinline.mo
 share/locale/be/LC_MESSAGES/kfourinline.mo
 share/locale/bg/LC_MESSAGES/kfourinline.mo
 share/locale/br/LC_MESSAGES/kfourinline.mo
@@ -94,6 +96,7 @@ share/locale/gl/LC_MESSAGES/kfourinline.mo
 share/locale/he/LC_MESSAGES/kfourinline.mo
 share/locale/hr/LC_MESSAGES/kfourinline.mo
 share/locale/hu/LC_MESSAGES/kfourinline.mo
+share/locale/ia/LC_MESSAGES/kfourinline.mo
 share/locale/id/LC_MESSAGES/kfourinline.mo
 share/locale/is/LC_MESSAGES/kfourinline.mo
 share/locale/it/LC_MESSAGES/kfourinline.mo
@@ -139,6 +142,6 @@ share/locale/zh_CN/LC_MESSAGES/kfourinline.mo
 share/locale/zh_TW/LC_MESSAGES/kfourinline.mo
 share/metainfo/
 share/metainfo/org.kde.kfourinline.appdata.xml
-share/qlogging-categories5/kfourinline.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kfourinline.categories

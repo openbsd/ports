@@ -2,7 +2,10 @@
 @bin bin/kdf
 @bin bin/kwikdisk
 @lib lib/libkdfprivate.so.${LIBkdfprivate_VERSION}
-@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdf.so
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdf.so
 share/applications/kcm_kdf.desktop
 share/applications/org.kde.kdf.desktop
 share/applications/org.kde.kwikdisk.desktop
@@ -150,11 +153,9 @@ share/icons/hicolor/48x48/apps/kdf.png
 share/icons/hicolor/48x48/apps/kwikdisk.png
 share/icons/hicolor/64x64/apps/kdf.png
 share/icons/hicolor/64x64/apps/kwikdisk.png
-share/kxmlgui5/
-share/kxmlgui5/kdf/
-share/kxmlgui5/kdf/kdfui.rc
 share/locale/af/LC_MESSAGES/kdf.mo
 share/locale/ar/LC_MESSAGES/kdf.mo
+share/locale/ast/LC_MESSAGES/kdf.mo
 share/locale/be/LC_MESSAGES/kdf.mo
 share/locale/bg/LC_MESSAGES/kdf.mo
 share/locale/br/LC_MESSAGES/kdf.mo
@@ -229,6 +230,6 @@ share/locale/zh_CN/LC_MESSAGES/kdf.mo
 share/locale/zh_TW/LC_MESSAGES/kdf.mo
 share/metainfo/
 share/metainfo/org.kde.kdf.appdata.xml
-share/qlogging-categories5/kdf.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories6/kdf.categories

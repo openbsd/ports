@@ -19,16 +19,16 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/kf5/kinit
-RUN_DEPENDS =	devel/kf5/kinit
+MODKDE_KF5 =		Yes
 
-LIB_DEPENDS =	audio/pulseaudio \
-		audio/libcanberra \
+LIB_DEPENDS =	audio/libcanberra \
+		audio/pulseaudio \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
+		devel/kf5/kdbusaddons \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
 		devel/kf5/knotifications \
@@ -36,5 +36,6 @@ LIB_DEPENDS =	audio/pulseaudio \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid
+
 
 .include <bsd.port.mk>

@@ -1,22 +1,22 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kget
 
 SHARED_LIBS +=  kgetcore                  4.1 # 5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5I18nLocaleData
-WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Service KF5Solid KF5Torrent KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
-WANTLIB += Qt5Xml X11 assuan c gcrypt gmp gpgme gpgmepp m mms
-WANTLIB += qca-qt5 qgpgme
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6I18nLocaleData KF6IconThemes
+WANTLIB += KF6IconWidgets KF6ItemViews KF6JobWidgets KF6KCMUtils
+WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
+WANTLIB += KF6Solid KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KTorrent6 Qt6Core Qt6Core5Compat
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml X11 assuan c gcrypt gmp gpgme gpgmepp m mms
+WANTLIB += qgpgmeqt6
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -28,44 +28,45 @@ MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	databases/sqlite3 \
 		devel/boost \
-		devel/kf5/kinit \
-		devel/kf5/kitemmodels \
-		devel/kf5/kparts \
-		x11/qt5/qtquickcontrols
+		devel/kf6/kitemmodels \
+		devel/kf6/kparts
 
 RUN_DEPENDS =	databases/sqlite3 \
-		devel/kf5/kinit \
-		devel/kf5/kitemmodels \
-		x11/kde-applications/kio-extras>=${MODKDE_VERSION} \
-		x11/qt5/qtquickcontrols
+		devel/kf6/kitemmodels \
+		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION}
 
-LIB_DEPENDS =	devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kservice \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
+LIB_DEPENDS =	devel/gmp \
+		devel/kf6/karchive \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kservice \
+		devel/kf6/kstatusnotifieritem \
+		devel/kf6/kwallet \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
 		multimedia/libmms \
 		net/libktorrent \
 		security/gpgme,-qt \
-		security/qca-qt5
+		security/libassuan \
+		security/libgcrypt \
+		x11/qt6/qt5compat \
+		x11/qt6/qtdeclarative
+
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_LibKWorkspace=ON
 
