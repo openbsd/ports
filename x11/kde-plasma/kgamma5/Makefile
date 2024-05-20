@@ -12,8 +12,8 @@ MODKDE5_TRANSLATIONS = Yes
 MODKDE5_DOCS = Yes
 
 # Qt6::PdfQuickplugin
-BUILD_DEPENDS =	x11/qt6/qtwebengin
-RUN_DEPENDS =	x11/qt6/qtwebengin
+BUILD_DEPENDS =	x11/qt6/qtwebengine
+RUN_DEPENDS =	x11/qt6/qtwebengine
 
 LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kcolorscheme \
