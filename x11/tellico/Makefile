@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.5.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -47,6 +47,7 @@ LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \
 		devel/kf5/attica \
 		devel/kf5/karchive \
+		devel/kf5/kauth \
 		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
@@ -64,6 +65,7 @@ LIB_DEPENDS =	audio/libcdio \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kservice \
+		devel/kf5/ktextwidgets \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
@@ -77,9 +79,11 @@ LIB_DEPENDS =	audio/libcdio \
 		textproc/libxslt \
 		x11/kde-applications/libkcddb \
 		x11/kde-applications/libksane \
+		x11/qt5/qtcharts \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtwebengine \
-		x11/qt5/qtcharts
+		x11/qt5/qtlocation \
+		x11/qt5/qtwebchannel \
+		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
 
