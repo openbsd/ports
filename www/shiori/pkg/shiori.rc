@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/shiori serve"
+daemon="${TRUEPREFIX}/bin/shiori server"
 daemon_user="_shiori"
 daemon_flags="-a localhost"
 

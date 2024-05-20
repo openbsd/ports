@@ -1,11 +1,10 @@
 # on OpenBSD, modernc.org/sqlite only supports these
 ONLY_FOR_ARCHS =	amd64 aarch64
-BROKEN =		syscall(2) removal.  Working with upstream for a fix.
 
 COMMENT =		simple bookmarks manager
 
 MODGO_MODNAME =		github.com/go-shiori/shiori
-MODGO_VERSION =		v1.5.5
+MODGO_VERSION =		v1.6.3
 
 DISTNAME =		shiori-${MODGO_VERSION}
 
