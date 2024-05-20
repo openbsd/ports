@@ -6,7 +6,7 @@ COMMENT =	KDE digital photo and video management utility
 
 V =		8.3.0
 PKGNAME =	digikam-${V}
-DISTNAME =	digiKam-${V}
+DISTNAME =	digiKam-${V}-1
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.digikam.org/
