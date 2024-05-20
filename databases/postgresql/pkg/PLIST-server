@@ -988,6 +988,7 @@ share/postgresql/extension/plperlu--1.0.sql
 share/postgresql/extension/plperlu.control
 share/postgresql/extension/plpgsql--1.0.sql
 share/postgresql/extension/plpgsql.control
+share/postgresql/fix-CVE-2024-4317.sql
 share/postgresql/pg_hba.conf.sample
 share/postgresql/pg_ident.conf.sample
 share/postgresql/pg_service.conf.sample

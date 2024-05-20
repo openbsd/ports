@@ -4,17 +4,11 @@ COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
-REVISION-contrib=	0
-REVISION-docs=	0
-REVISION-pg_upgrade=	0
-REVISION-plpython=	0
-REVISION-server=0
 
-VERSION=	16.2
+VERSION=	16.3
 PREV_MAJOR=	15
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
-REVISION-main=	0
 
 DPB_PROPERTIES=	parallel
 
