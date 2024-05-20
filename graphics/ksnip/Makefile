@@ -1,9 +1,9 @@
+BROKEN =	Qt6 version still broken, waiting for upstream
 COMMENT =	screenshot tool with annotations features
 
-GH_ACCOUNT =	ksnip
-GH_PROJECT =	ksnip
-GH_TAGNAME =	v1.10.0
-REVISION =	0
+PKGNAME = ksnip-1.11.0
+# XXX still broken
+DIST_TUPLE =	github ksnip ksnip 75d022d669cee86a6fea1ab3c9ceb050ab14bd27 .
 
 CATEGORIES =	graphics
 
@@ -17,14 +17,15 @@ WANTLIB += xcb-shape xcb-xfixes
 
 EXTRACT_SUFX =		.tar.gz
 
-MODULES =		devel/kf5
+MODULES =		devel/cmake x11/qt6
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		graphics/kcolorpicker>=0.2.0 \
-			graphics/kimageannotator>=0.6.0 \
-			x11/qt5/qtx11extras
+LIB_DEPENDS =		graphics/kcolorpicker>=0.3 \
+			graphics/kimageannotator>=0.7 \
+
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
 
 CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
