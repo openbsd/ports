@@ -27,11 +27,9 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
-PLASMA_VERSION =	5.27.10
+PLASMA_VERSION =	6.0.4
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
-
-REVISION-plasma =	0
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -145,6 +143,7 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/klines \
 	x11/kde-applications/kmahjongg \
 	x11/kde-applications/kmines \
+	x11/kde-applications/mimetreeparser \
 	x11/kde-applications/knavalbattle \
 	x11/kde-applications/knetwalk \
 	x11/kde-applications/kolf \
@@ -162,6 +161,18 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/lskat \
 	x11/kde-applications/palapeli \
 	x11/kde-applications/picmi
+
+
+WANTLIB-development =
+LIB_DEPENDS-development =
+RUN_DEPENDS-development = \
+	x11/kde-applications/kf6-libkexiv2 \
+	x11/kde-applications/kf6-ksanecore \
+	x11/kde-applications/kf6-libkdcraw \
+	x11/kde-applications/kf6-kio-extras \
+	x11/kde-applications/kf6-libkcompactdisc \
+	x11/kde-applications/kf6-libkcddb \
+	x11/kde-applications/kf6-kdegraphics-mobipocket
 
 # Not yet ported
 #x11/kde-applications/kpatience
@@ -250,7 +261,6 @@ RUN_DEPENDS-utils = \
 	x11/kde-applications/kteatime \
 	x11/kde-applications/ktimer \
 	x11/kde-applications/kwalletmanager \
-	x11/kde-applications/print-manager \
 	x11/kde-applications/sweeper \
 	x11/kde-applications/markdownpart
 
@@ -361,24 +371,25 @@ RUN_DEPENDS-plasma += \
 		x11/kde-plasma/kdecoration \
 		x11/kde-plasma/kdeplasma-addons \
 		x11/kde-plasma/kgamma5 \
-		x11/kde-plasma/khotkeys \
 		x11/kde-plasma/kinfocenter \
 		x11/kde-plasma/kmenuedit \
 		x11/kde-plasma/kpipewire \
 		x11/kde-plasma/kscreen \
 		x11/kde-plasma/kscreenlocker \
 		x11/kde-plasma/ksshaskpass \
-		x11/kde-plasma/ksysguard \
 		x11/kde-plasma/ksystemstats \
-		x11/kde-plasma/kwayland-integration \
+		x11/kde-plasma/kwayland \
 		x11/kde-plasma/kwin \
 		x11/kde-plasma/kwrited \
 		x11/kde-plasma/layer-shell-qt \
 		x11/kde-plasma/libkscreen \
 		x11/kde-plasma/libksysguard \
+		x11/kde-plasma/libplasma \
 		x11/kde-plasma/milou \
 		x11/kde-plasma/oxygen \
 		x11/kde-plasma/oxygen-sounds \
+		x11/kde-plasma/plasma-activities \
+		x11/kde-plasma/plasma-activities-stats \
 		x11/kde-plasma/plasma-browser-integration \
 		x11/kde-plasma/plasma-desktop \
 		x11/kde-plasma/plasma-nano \
@@ -388,6 +399,7 @@ RUN_DEPENDS-plasma += \
 		x11/kde-plasma/plasma-workspace-wallpapers \
 		x11/kde-plasma/polkit-kde-agent-1 \
 		x11/kde-plasma/powerdevil \
+		x11/kde-plasma/print-manager \
 		x11/kde-plasma/qqc2-breeze-style \
 		x11/kde-plasma/systemsettings \
 		x11/kde-plasma/xdg-desktop-portal-kde
