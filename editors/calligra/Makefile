@@ -3,7 +3,7 @@ HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	13
+REVISION =	14
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -36,8 +36,6 @@ SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
 SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
 SHARED_LIBS +=  gemini                    0.0 # 16.0
-SHARED_LIBS +=  kookularGenerator_odt     0.0 # 17.0
-SHARED_LIBS +=  kookularGenerator_odp     0.0 # 17.0
 
 DIST_SUBDIR =	kde
 SITES =		${SITE_KDE:=stable/calligra/${VERSION}/}
@@ -58,7 +56,7 @@ WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
 WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5UnitConversion KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Okular5Core Qt5Concurrent
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
@@ -116,7 +114,6 @@ LIB_DEPENDS =	converters/libiconv \
 		multimedia/phonon \
 		print/poppler,-qt5 \
 		security/qca-qt5 \
-		x11/kde-applications/okular \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras

@@ -87,8 +87,6 @@
 @lib lib/libkoodf.so.${LIBkoodf_VERSION}
 @lib lib/libkoodf2.so.${LIBkoodf2_VERSION}
 @lib lib/libkoodfreader.so.${LIBkoodfreader_VERSION}
-@lib lib/libkookularGenerator_odp.so.${LIBkookularGenerator_odp_VERSION}
-@lib lib/libkookularGenerator_odt.so.${LIBkookularGenerator_odt_VERSION}
 @lib lib/libkopageapp.so.${LIBkopageapp_VERSION}
 @lib lib/libkoplugin.so.${LIBkoplugin_VERSION}
 @lib lib/libkostore.so.${LIBkostore_VERSION}
@@ -220,13 +218,6 @@ lib/qt5/plugins/karbon/extensions/
 @so lib/qt5/plugins/karbon/extensions/karbon_refinepath.so
 @so lib/qt5/plugins/karbon/extensions/karbon_roundcorners.so
 @so lib/qt5/plugins/karbon/extensions/karbon_whirlpinch.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_doc_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_docx_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_odp_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_odt_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_powerpoint_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_pptx_calligra.so
-@so lib/qt5/plugins/okular/generators/okularGenerator_rtf_calligra.so
 lib/qt5/qml/Calligra/
 lib/qt5/qml/Calligra/Gemini/
 lib/qt5/qml/Calligra/Gemini/Dropbox/
@@ -236,13 +227,6 @@ lib/qt5/qml/org/kde/calligra/
 @so lib/qt5/qml/org/kde/calligra/libCalligraComponentsPlugin.so
 lib/qt5/qml/org/kde/calligra/qmldir
 share/applications/calligra.desktop
-share/applications/okularApplication_doc_calligra.desktop
-share/applications/okularApplication_docx_calligra.desktop
-share/applications/okularApplication_odp_calligra.desktop
-share/applications/okularApplication_odt_calligra.desktop
-share/applications/okularApplication_powerpoint_calligra.desktop
-share/applications/okularApplication_pptx_calligra.desktop
-share/applications/okularApplication_rtf_calligra.desktop
 share/applications/org.kde.calligragemini.desktop
 share/applications/org.kde.calligrasheets.desktop
 share/applications/org.kde.calligrastage.desktop
@@ -5111,6 +5095,7 @@ share/color/icc/calligra/sRGB-elle-V4-g10.icc
 share/color/icc/calligra/sRGB-elle-V4-labl.icc
 share/color/icc/calligra/sRGB-elle-V4-srgbtrc.icc
 share/color/icc/calligra/scRGB.icm
+share/config.kcfg/
 share/config.kcfg/calligrasheets.kcfg
 share/doc/HTML/ca/calligra/
 share/doc/HTML/ca/calligra/index.cache.bz2
@@ -5850,13 +5835,6 @@ share/kservices5/calligradocinfopropspage.desktop
 share/kservices5/karbon_karbon1x_thumbnail.desktop
 share/kservices5/karbon_wmf_thumbnail.desktop
 share/kservices5/karbon_xfig_thumbnail.desktop
-share/kservices5/okularDoc_calligra.desktop
-share/kservices5/okularDocx_calligra.desktop
-share/kservices5/okularOdp_calligra.desktop
-share/kservices5/okularOdt_calligra.desktop
-share/kservices5/okularPowerpoint_calligra.desktop
-share/kservices5/okularPptx_calligra.desktop
-share/kservices5/okularRtf_calligra.desktop
 share/kservices5/sheets_excel_thumbnail.desktop
 share/kservices5/sheets_ods_thumbnail.desktop
 share/kservices5/sheets_xlsx_thumbnail.desktop
@@ -5868,6 +5846,7 @@ share/kservices5/words_docx_thumbnail.desktop
 share/kservices5/words_msword_thumbnail.desktop
 share/kservices5/words_odt_thumbnail.desktop
 share/kservices5/words_rtf_thumbnail.desktop
+share/kxmlgui5/
 share/kxmlgui5/calligrasheets/
 share/kxmlgui5/calligrasheets/calligrasheets.rc
 share/kxmlgui5/calligrasheets/calligrasheets_readonly.rc
@@ -7968,6 +7947,7 @@ share/locale/zh_TW/LC_MESSAGES/krossmodulesheets.mo
 share/locale/zh_TW/LC_MESSAGES/krossmodulewords.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odt.mo
+share/metainfo/
 share/metainfo/org.kde.calligragemini.appdata.xml
 share/metainfo/org.kde.calligrasheets.appdata.xml
 share/metainfo/org.kde.calligrastage.appdata.xml
