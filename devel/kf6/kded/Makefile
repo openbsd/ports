@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	central daemon of KDE workspaces
 DISTNAME =	kded-${VERSION}
 

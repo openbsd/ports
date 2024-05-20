@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
 

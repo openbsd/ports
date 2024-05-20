@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE implementation of Status Notifier Items
 DISTNAME =	kstatusnotifieritem-${VERSION}
 

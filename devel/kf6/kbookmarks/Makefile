@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =		XBEL bookmarks format support for KDE
 DISTNAME =		kbookmarks-${VERSION}
 

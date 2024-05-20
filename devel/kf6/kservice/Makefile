@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	plugin framework for KDE desktop services
 DISTNAME =	kservice-${VERSION}
 

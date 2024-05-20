@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE 6 library for extracting text and metadata
 
 DISTNAME =	kfilemetadata-${VERSION}

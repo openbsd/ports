@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	QtQuickControls 2 style for painting
 DISTNAME =	qqc2-desktop-style-${VERSION}
 

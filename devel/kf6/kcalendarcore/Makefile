@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE calendar access library
 DISTNAME =	kcalendarcore-${VERSION}
 

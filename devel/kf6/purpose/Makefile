@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
 

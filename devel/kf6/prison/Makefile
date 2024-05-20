@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	bar code generator
 DISTNAME =	prison-${VERSION}
 

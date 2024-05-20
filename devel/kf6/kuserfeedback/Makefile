@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE framework for collecting user feedback
 DISTNAME =	kuserfeedback-${VERSION}
 

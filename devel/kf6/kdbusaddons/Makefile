@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
 

@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
 

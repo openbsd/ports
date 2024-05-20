@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
 

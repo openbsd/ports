@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE icon GUI utility library
 DISTNAME =	kiconthemes-${VERSION}
 

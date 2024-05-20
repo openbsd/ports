@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	Qt6-based API for manipulating file archives
 DISTNAME =	karchive-${VERSION}
 

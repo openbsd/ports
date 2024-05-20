@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	extensions for the Qt model-view framework
 DISTNAME =	kitemviews-${VERSION}
 

@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =		large set of KDE widgets
 DISTNAME =		kwidgetsaddons-${VERSION}
 

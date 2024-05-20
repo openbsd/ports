@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet

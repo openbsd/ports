@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE safe desktop-wide storage for passwords
 DISTNAME =	kwallet-${VERSION}
 

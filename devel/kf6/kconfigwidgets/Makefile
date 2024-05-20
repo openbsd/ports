@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =		widgets for KDE configuration dialogs
 DISTNAME =		kconfigwidgets-${VERSION}
 

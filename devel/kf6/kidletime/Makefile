@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	reporting of idle time of user and system
 DISTNAME =	kidletime-${VERSION}
 

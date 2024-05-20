@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	QtQuick module providing high-performance charts
 DISTNAME =	kquickcharts-${VERSION}
 

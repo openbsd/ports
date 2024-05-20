@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE contacts access library
 DISTNAME =	kcontacts-${VERSION}
 CATEGORIES =	devel mail

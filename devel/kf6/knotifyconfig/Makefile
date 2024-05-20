@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
 

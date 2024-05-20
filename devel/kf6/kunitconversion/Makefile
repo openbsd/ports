@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE framework for converting physical units
 DISTNAME =	kunitconversion-${VERSION}
 

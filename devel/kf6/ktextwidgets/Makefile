@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	text editing widgets for KDE
 DISTNAME =	ktextwidgets-${VERSION}
 

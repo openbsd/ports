@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	highlighting engine for structured text and code
 DISTNAME =	syntax-highlighting-${VERSION}
 

@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE framework for aggregating and accessing people contacts
 DISTNAME =	kpeople-${VERSION}
 

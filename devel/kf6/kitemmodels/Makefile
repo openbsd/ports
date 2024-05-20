@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE item models extending the Qt model-view framework
 DISTNAME =	kitemmodels-${VERSION}
 

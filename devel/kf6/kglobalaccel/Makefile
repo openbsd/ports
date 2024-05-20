@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	global desktop keyboard shortcuts for KDE
 DISTNAME =	kglobalaccel-${VERSION}
 

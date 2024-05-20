@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
 

@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 

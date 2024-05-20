@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE helper for multithreaded programming
 DISTNAME =	threadweaver-${VERSION}
 

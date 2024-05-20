@@ -1,4 +1,3 @@
-UNLINKED = kf6
 COMMENT =	KDE components for handling SVGs
 DISTNAME =	ksvg-${VERSION}
 
