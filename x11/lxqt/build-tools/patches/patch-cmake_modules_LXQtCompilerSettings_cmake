@@ -9,8 +9,8 @@ Index: cmake/modules/LXQtCompilerSettings.cmake
 +        set(NO_UNDEFINED_FLAGS "")
          # -Bsymbolic-functions: replace dynamic symbols used internally in
          #                       shared libs with direct addresses.
--        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic-functions -Wl,-Bsymbolic")
-+        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic")
+-        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic-functions")
++        set(SYMBOLIC_FLAGS "")
      endif()
  
      set(CMAKE_SHARED_LINKER_FLAGS

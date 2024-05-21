@@ -1,7 +1,7 @@
 Index: cmake/modules/LXQtCreatePkgConfigFile.cmake
 --- cmake/modules/LXQtCreatePkgConfigFile.cmake.orig
 +++ cmake/modules/LXQtCreatePkgConfigFile.cmake
-@@ -235,6 +235,8 @@ function(lxqt_create_pkgconfig_file)
+@@ -243,6 +243,8 @@ function(lxqt_create_pkgconfig_file)
          # https://www.freebsd.org/doc/handbook/dirstructure.html
          if(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
              set(_PKGCONFIG_INSTALL_DESTINATION "libdata/pkgconfig")
