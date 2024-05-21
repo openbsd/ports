@@ -2,7 +2,8 @@
 @pkgpath x11/lxqt/l10n,-about
 @bin bin/lxqt-about
 share/applications/lxqt-about.desktop
-@tag update-desktop-database
+share/icons/hicolor/scalable/apps/lxqt-about.svg
+share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-about/
 share/lxqt/translations/lxqt-about/lxqt-about_ar.qm
@@ -26,6 +27,7 @@ share/lxqt/translations/lxqt-about/lxqt-about_fi.qm
 share/lxqt/translations/lxqt-about/lxqt-about_fr.qm
 share/lxqt/translations/lxqt-about/lxqt-about_gl.qm
 share/lxqt/translations/lxqt-about/lxqt-about_he.qm
+share/lxqt/translations/lxqt-about/lxqt-about_hi.qm
 share/lxqt/translations/lxqt-about/lxqt-about_hr.qm
 share/lxqt/translations/lxqt-about/lxqt-about_hu.qm
 share/lxqt/translations/lxqt-about/lxqt-about_ia.qm
@@ -33,11 +35,13 @@ share/lxqt/translations/lxqt-about/lxqt-about_id.qm
 share/lxqt/translations/lxqt-about/lxqt-about_it.qm
 share/lxqt/translations/lxqt-about/lxqt-about_ja.qm
 share/lxqt/translations/lxqt-about/lxqt-about_ko.qm
+share/lxqt/translations/lxqt-about/lxqt-about_lg.qm
 share/lxqt/translations/lxqt-about/lxqt-about_lt.qm
 share/lxqt/translations/lxqt-about/lxqt-about_lv.qm
 share/lxqt/translations/lxqt-about/lxqt-about_nb_NO.qm
 share/lxqt/translations/lxqt-about/lxqt-about_nl.qm
 share/lxqt/translations/lxqt-about/lxqt-about_oc.qm
+share/lxqt/translations/lxqt-about/lxqt-about_pa.qm
 share/lxqt/translations/lxqt-about/lxqt-about_pl.qm
 share/lxqt/translations/lxqt-about/lxqt-about_pt.qm
 share/lxqt/translations/lxqt-about/lxqt-about_pt_BR.qm
@@ -55,3 +59,5 @@ share/lxqt/translations/lxqt-about/lxqt-about_uk.qm
 share/lxqt/translations/lxqt-about/lxqt-about_vi.qm
 share/lxqt/translations/lxqt-about/lxqt-about_zh_CN.qm
 share/lxqt/translations/lxqt-about/lxqt-about_zh_TW.qm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
