@@ -196,7 +196,7 @@ logstash/logstash-core/lib/jars/jackson-dataformat-cbor-2.15.3.jar
 logstash/logstash-core/lib/jars/janino-3.1.0.jar
 logstash/logstash-core/lib/jars/javassist-3.29.0-GA.jar
 logstash/logstash-core/lib/jars/jsr305-3.0.2.jar
-logstash/logstash-core/lib/jars/jvm-options-parser-8.13.3.jar
+logstash/logstash-core/lib/jars/jvm-options-parser-8.13.4.jar
 logstash/logstash-core/lib/jars/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
 logstash/logstash-core/lib/jars/log4j-1.2-api-2.17.1.jar
 logstash/logstash-core/lib/jars/log4j-api-2.17.1.jar
@@ -6884,30 +6884,30 @@ logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-csv-3.0.10/lib/logstash/
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-csv-3.0.10/lib/logstash/outputs/
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-csv-3.0.10/lib/logstash/outputs/csv.rb
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-csv-3.0.10/logstash-output-csv.gemspec
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/CHANGELOG.md
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/CONTRIBUTORS
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/LICENSE
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/NOTICE.TXT
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/README.md
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/docs/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/docs/index.asciidoc
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/data_stream_support.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/default-ilm-policy.json
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/http_client/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/http_client.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/http_client/manticore_adapter.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/http_client_builder.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/ilm.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/license_checker.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/template_manager.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/CHANGELOG.md
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/CONTRIBUTORS
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/LICENSE
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/NOTICE.TXT
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/README.md
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/docs/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/docs/index.asciidoc
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/data_stream_support.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/default-ilm-policy.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/http_client/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/http_client.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/http_client/manticore_adapter.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/http_client_builder.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/ilm.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/license_checker.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/template_manager.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/
 @mode 0750
 @owner root
 @sample ${SYSCONFDIR}/logstash/
@@ -6915,56 +6915,56 @@ logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-ja
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/
 @mode
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-disabled/
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-6x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-6x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-disabled/elasticsearch-6x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-7x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-7x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-disabled/elasticsearch-7x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-8x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-disabled/elasticsearch-8x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-disabled/elasticsearch-8x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v1/
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-6x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-6x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v1/elasticsearch-6x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-7x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-7x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v1/elasticsearch-7x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-8x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v1/elasticsearch-8x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v1/elasticsearch-8x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v8/
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/elasticsearch-7x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/elasticsearch-7x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v8/elasticsearch-7x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/elasticsearch-8x.json
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/outputs/elasticsearch/templates/ecs-v8/elasticsearch-8x.json
 @owner root
 @sample ${SYSCONFDIR}/logstash/conf.d/templates/ecs-v8/elasticsearch-8x.json
 @owner _logstash
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/plugin_mixins/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/plugin_mixins/elasticsearch/
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/plugin_mixins/elasticsearch/api_configs.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/plugin_mixins/elasticsearch/common.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/lib/logstash/plugin_mixins/elasticsearch/noop_license_checker.rb
-logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.5-java/logstash-output-elasticsearch.gemspec
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/plugin_mixins/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/plugin_mixins/elasticsearch/
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/plugin_mixins/elasticsearch/api_configs.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/plugin_mixins/elasticsearch/common.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/lib/logstash/plugin_mixins/elasticsearch/noop_license_checker.rb
+logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.6-java/logstash-output-elasticsearch.gemspec
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-email-4.1.3/
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-email-4.1.3/CHANGELOG.md
 logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-email-4.1.3/CONTRIBUTORS
@@ -11364,7 +11364,7 @@ logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-mixin-plugin_factory_
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-mixin-scheduler-1.0.1-java.gemspec
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-mixin-validator_support-1.1.1-java.gemspec
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-csv-3.0.10.gemspec
-logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-elasticsearch-11.22.5-java.gemspec
+logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-elasticsearch-11.22.6-java.gemspec
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-email-4.1.3.gemspec
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-file-4.3.0.gemspec
 logstash/vendor/bundle/jruby/3.1.0/specifications/logstash-output-graphite-3.1.6.gemspec
