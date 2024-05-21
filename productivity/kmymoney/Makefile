@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	productivity x11
 
@@ -39,11 +39,9 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5
-WANTLIB += aqbanking assuan c db db_cxx gmp gpgme gpgmepp gwengui-cpp
-WANTLIB += gwengui-qt5 gwenhywfar ical icalss icalvcal icui18n
-WANTLIB += icuuc m ofx
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += Qt5Widgets Qt5Xml X11 aqbanking assuan c db db_cxx
+WANTLIB += gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
+WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
 
 MODULES =		lang/python \
 			devel/kf5
@@ -65,7 +63,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			www/woob \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		devel/gwenhywfar \
+LIB_DEPENDS =		devel/gmp \
+			devel/gwenhywfar \
 			devel/kf5/kactivities \
 			devel/kf5/karchive \
 			devel/kf5/kauth \
@@ -96,8 +95,9 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			graphics/kdiagram \
 			productivity/aqbanking \
 			productivity/libalkimia>=8.0 \
-			security/gpgme,,-qt \
+			security/gpgme,-qt \
 			security/libassuan \
+			textproc/icu4c \
 			textproc/libical \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtlocation \

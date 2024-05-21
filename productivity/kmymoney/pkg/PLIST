@@ -116,8 +116,6 @@ include/kmymoney/viewinterface.h
 @lib lib/libkmm_printer.so.${LIBkmm_printer_VERSION}
 @lib lib/libkmm_settings.so.${LIBkmm_settings_VERSION}
 @lib lib/libkmm_widgets.so.${LIBkmm_widgets_VERSION}
-lib/qt5/
-lib/qt5/plugins/
 lib/qt5/plugins/kmymoney/
 @so lib/qt5/plugins/kmymoney/budgetview.so
 @so lib/qt5/plugins/kmymoney/checkprinting.so
@@ -152,8 +150,6 @@ share/checkprinting/check_template_green_linen.html
 share/config.kcfg/
 share/config.kcfg/kbanking.kcfg
 share/config.kcfg/kmymoney.kcfg
-share/doc/HTML/
-share/doc/HTML/ca/
 share/doc/HTML/ca/kmymoney/
 share/doc/HTML/ca/kmymoney/credits.docbook
 share/doc/HTML/ca/kmymoney/details-accounts.docbook
@@ -187,7 +183,6 @@ share/doc/HTML/ca/kmymoney/introduction.docbook
 share/doc/HTML/ca/kmymoney/makemostof.docbook
 share/doc/HTML/ca/kmymoney/reference.docbook
 share/doc/HTML/ca/kmymoney/whatsnew.docbook
-share/doc/HTML/de/
 share/doc/HTML/de/kmymoney/
 share/doc/HTML/de/kmymoney/credits.docbook
 share/doc/HTML/de/kmymoney/details-accounts.docbook
@@ -220,7 +215,6 @@ share/doc/HTML/de/kmymoney/introduction.docbook
 share/doc/HTML/de/kmymoney/makemostof.docbook
 share/doc/HTML/de/kmymoney/reference.docbook
 share/doc/HTML/de/kmymoney/whatsnew.docbook
-share/doc/HTML/en/
 share/doc/HTML/en/kmymoney/
 share/doc/HTML/en/kmymoney/accessories-calculator.png
 share/doc/HTML/en/kmymoney/account_edit.png
@@ -371,7 +365,6 @@ share/doc/HTML/en/kmymoney/transactionform.png
 share/doc/HTML/en/kmymoney/translist.png
 share/doc/HTML/en/kmymoney/value_widget.png
 share/doc/HTML/en/kmymoney/whatsnew.docbook
-share/doc/HTML/it/
 share/doc/HTML/it/kmymoney/
 share/doc/HTML/it/kmymoney/credits.docbook
 share/doc/HTML/it/kmymoney/details-accounts.docbook
@@ -406,7 +399,6 @@ share/doc/HTML/it/kmymoney/introduction.docbook
 share/doc/HTML/it/kmymoney/makemostof.docbook
 share/doc/HTML/it/kmymoney/reference.docbook
 share/doc/HTML/it/kmymoney/whatsnew.docbook
-share/doc/HTML/nl/
 share/doc/HTML/nl/kmymoney/
 share/doc/HTML/nl/kmymoney/credits.docbook
 share/doc/HTML/nl/kmymoney/details-accounts.docbook
@@ -441,7 +433,6 @@ share/doc/HTML/nl/kmymoney/introduction.docbook
 share/doc/HTML/nl/kmymoney/makemostof.docbook
 share/doc/HTML/nl/kmymoney/reference.docbook
 share/doc/HTML/nl/kmymoney/whatsnew.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kmymoney/
 share/doc/HTML/pt_BR/kmymoney/credits.docbook
 share/doc/HTML/pt_BR/kmymoney/details-accounts.docbook
@@ -474,7 +465,6 @@ share/doc/HTML/pt_BR/kmymoney/introduction.docbook
 share/doc/HTML/pt_BR/kmymoney/makemostof.docbook
 share/doc/HTML/pt_BR/kmymoney/reference.docbook
 share/doc/HTML/pt_BR/kmymoney/whatsnew.docbook
-share/doc/HTML/ru/
 share/doc/HTML/ru/kmymoney/
 share/doc/HTML/ru/kmymoney/credits.docbook
 share/doc/HTML/ru/kmymoney/details-accounts.docbook
@@ -507,7 +497,6 @@ share/doc/HTML/ru/kmymoney/introduction.docbook
 share/doc/HTML/ru/kmymoney/makemostof.docbook
 share/doc/HTML/ru/kmymoney/reference.docbook
 share/doc/HTML/ru/kmymoney/whatsnew.docbook
-share/doc/HTML/sv/
 share/doc/HTML/sv/kmymoney/
 share/doc/HTML/sv/kmymoney/credits.docbook
 share/doc/HTML/sv/kmymoney/details-accounts.docbook
@@ -542,7 +531,6 @@ share/doc/HTML/sv/kmymoney/introduction.docbook
 share/doc/HTML/sv/kmymoney/makemostof.docbook
 share/doc/HTML/sv/kmymoney/reference.docbook
 share/doc/HTML/sv/kmymoney/whatsnew.docbook
-share/doc/HTML/uk/
 share/doc/HTML/uk/kmymoney/
 share/doc/HTML/uk/kmymoney/credits.docbook
 share/doc/HTML/uk/kmymoney/details-accounts.docbook
@@ -616,7 +604,6 @@ share/kbanking/qml/chipTan/ChipTan.qml
 share/kbanking/qml/chipTan/ChipTanFlickerField.qml
 share/kbanking/qml/chipTan/chipTan.js
 share/kbanking/qml/chipTan/positionmarker.svg
-share/kconf_update/
 share/kconf_update/kmymoney.upd
 share/kmymoney/
 share/kmymoney/html/
@@ -1723,7 +1710,6 @@ share/kmymoney/templates/zh_TW/spouseinc.kmt
 share/kmymoney/templates/zh_TW/spouseretire.kmt
 share/kmymoney/templates/zh_TW/vehicle.kmt
 share/kmymoney/tips
-share/kservices5/
 share/kservices5/kcm_checkprinting.desktop
 share/kservices5/kcm_csvimporter.desktop
 share/kservices5/kcm_forecastview.desktop
