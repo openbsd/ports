@@ -9,7 +9,7 @@ V =			5.0.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -23,10 +23,9 @@ SITES =			https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tdesktop:		GPLvj with OpenSSL exception
+# tdesktop:		GPLv3 with OpenSSL exception
 # GSL:			MIT
 # cld3:			Apache 2.0
-# kcoreaddons:		LGPL 2.1+, GPL 2+
 # libprisma:		MIT
 # libtgvoip:		unlicense/public domain
 # minizip:		zlib
@@ -35,7 +34,7 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # xdg-desktop-portal:	LGPL 2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons Qt6Core Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
@@ -76,6 +75,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			devel/abseil-cpp \
 			devel/glib2>=2.78.0 \
+			devel/kf6/kcoreaddons \
 			devel/libdispatch \
 			graphics/ffmpeg \
 			graphics/jpeg \
@@ -119,9 +119,6 @@ NEEDED_BUNDLES =	cld3 libprisma libtgvoip rlottie tgcalls
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
 
-# exist under Qt5-only devel/kf5/
-NEEDED_BUNDLES +=	kcoreaddons
-
 # tdesktop 4.9.5 forced bundled GSL due to libstdc++ and CMake bugs
 NEEDED_BUNDLES +=	GSL
 
@@ -143,4 +140,5 @@ post-patch:
 	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
 	    ${WRKSRC}/cmake/options_linux.cmake
 
+Spotted
 .include <bsd.port.mk>
