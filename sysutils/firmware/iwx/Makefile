@@ -1,4 +1,4 @@
-FW_VER=		20240410
+FW_VER=		20240513
 FW_DRIVER=	iwx
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
