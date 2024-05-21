@@ -1,50 +1,52 @@
-@bin bin/qtxdg-mat
-include/qt5xdg/
-include/qt5xdg/XdgAction
-include/qt5xdg/XdgAutoStart
-include/qt5xdg/XdgDefaultApps
-include/qt5xdg/XdgDesktopFile
-include/qt5xdg/XdgDirs
-include/qt5xdg/XdgIcon
-include/qt5xdg/XdgMenu
-include/qt5xdg/XdgMenuWidget
-include/qt5xdg/XdgMimeApps
-include/qt5xdg/XdgMimeType
-include/qt5xdg/XmlHelper
-include/qt5xdg/xdgaction.h
-include/qt5xdg/xdgautostart.h
-include/qt5xdg/xdgdefaultapps.h
-include/qt5xdg/xdgdesktopfile.h
-include/qt5xdg/xdgdirs.h
-include/qt5xdg/xdgicon.h
-include/qt5xdg/xdgmacros.h
-include/qt5xdg/xdgmenu.h
-include/qt5xdg/xdgmenuwidget.h
-include/qt5xdg/xdgmimeapps.h
-include/qt5xdg/xdgmimetype.h
-include/qt5xdg/xmlhelper.h
-include/qt5xdgiconloader/
-include/qt5xdgiconloader/3.8.0/
-include/qt5xdgiconloader/3.8.0/private/
-include/qt5xdgiconloader/3.8.0/private/xdgiconloader/
-include/qt5xdgiconloader/3.8.0/private/xdgiconloader/xdgiconloader_p.h
-include/qt5xdgiconloader/xdgiconloader_export.h
-@lib lib/libQt5Xdg.so.${LIBQt5Xdg_VERSION}
-@lib lib/libQt5XdgIconLoader.so.${LIBQt5XdgIconLoader_VERSION}
-lib/pkgconfig/Qt5Xdg.pc
-lib/pkgconfig/Qt5XdgIconLoader.pc
-@so lib/qt5/plugins/iconengines/libQt5XdgIconPlugin.so
+include/qt6xdg/
+include/qt6xdg/XdgAction
+include/qt6xdg/XdgAutoStart
+include/qt6xdg/XdgDefaultApps
+include/qt6xdg/XdgDesktopFile
+include/qt6xdg/XdgDirs
+include/qt6xdg/XdgIcon
+include/qt6xdg/XdgMenu
+include/qt6xdg/XdgMenuWidget
+include/qt6xdg/XdgMimeApps
+include/qt6xdg/XdgMimeType
+include/qt6xdg/XmlHelper
+include/qt6xdg/xdgaction.h
+include/qt6xdg/xdgautostart.h
+include/qt6xdg/xdgdefaultapps.h
+include/qt6xdg/xdgdesktopfile.h
+include/qt6xdg/xdgdirs.h
+include/qt6xdg/xdgicon.h
+include/qt6xdg/xdgmacros.h
+include/qt6xdg/xdgmenu.h
+include/qt6xdg/xdgmenuwidget.h
+include/qt6xdg/xdgmimeapps.h
+include/qt6xdg/xdgmimetype.h
+include/qt6xdg/xmlhelper.h
+include/qt6xdgiconloader/
+include/qt6xdgiconloader/${VERSION}/
+include/qt6xdgiconloader/${VERSION}/private/
+include/qt6xdgiconloader/${VERSION}/private/xdgiconloader/
+include/qt6xdgiconloader/${VERSION}/private/xdgiconloader/xdgiconloader_p.h
+include/qt6xdgiconloader/xdgiconloader_export.h
+@lib lib/libQt6Xdg.so.${LIBQt6Xdg_VERSION}
+@lib lib/libQt6XdgIconLoader.so.${LIBQt6XdgIconLoader_VERSION}
+lib/pkgconfig/Qt6Xdg.pc
+lib/pkgconfig/Qt6XdgIconLoader.pc
+@so lib/qt6/plugins/iconengines/libQt6XdgIconPlugin.so
 share/cmake/
-share/cmake/qt5xdg/
-share/cmake/qt5xdg/qt5xdg-config-version.cmake
-share/cmake/qt5xdg/qt5xdg-config.cmake
-share/cmake/qt5xdg/qt5xdg-targets${MODCMAKE_BUILD_SUFFIX}
-share/cmake/qt5xdg/qt5xdg-targets.cmake
-share/cmake/qt5xdgiconloader/
-share/cmake/qt5xdgiconloader/qt5xdgiconloader-config-version.cmake
-share/cmake/qt5xdgiconloader/qt5xdgiconloader-config.cmake
-share/cmake/qt5xdgiconloader/qt5xdgiconloader-targets${MODCMAKE_BUILD_SUFFIX}
-share/cmake/qt5xdgiconloader/qt5xdgiconloader-targets.cmake
-share/lxqt/
-share/lxqt/lxqt-qtxdg.conf
-share/lxqt/qtxdg.conf
+share/cmake/qt6xdg/
+share/cmake/qt6xdg/qt6xdg-config-version.cmake
+share/cmake/qt6xdg/qt6xdg-config.cmake
+share/cmake/qt6xdg/qt6xdg-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/qt6xdg/qt6xdg-targets.cmake
+share/cmake/qt6xdgiconloader/
+share/cmake/qt6xdgiconloader/qt6xdgiconloader-config-version.cmake
+share/cmake/qt6xdgiconloader/qt6xdgiconloader-config.cmake
+share/cmake/qt6xdgiconloader/qt6xdgiconloader-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/qt6xdgiconloader/qt6xdgiconloader-targets.cmake
+share/examples/libqtxdg/
+share/examples/libqtxdg/xdg/
+share/examples/libqtxdg/xdg/lxqt-qtxdg.conf
+@sample ${SYSCONFDIR}/xdg/lxqt-qtxdg.conf
+share/examples/libqtxdg/xdg/qtxdg.conf
+@sample ${SYSCONFDIR}/xdg/qtxdg.conf

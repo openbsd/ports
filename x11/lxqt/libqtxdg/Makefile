@@ -1,22 +1,23 @@
 COMMENT =	qt implementation of freedesktop.org xdg specs
 
-VERSION =	3.8.0
-REVISION =	0
+VERSION =	4.0.0
 
 NAME =		libqtxdg
 
-SHARED_LIBS +=  Qt5Xdg                    0.1 # 3.8
-SHARED_LIBS +=  Qt5XdgIconLoader          0.0 # 3.8
+SHARED_LIBS +=  Qt6Xdg                    0.0 # 3.8
+SHARED_LIBS +=  Qt6XdgIconLoader          0.0 # 3.8
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Svg
+WANTLIB += Qt6Widgets Qt6Xml gio-2.0 glib-2.0 gobject-2.0 m
 
-LIB_DEPENDS +=		x11/qt5/qtsvg
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+LIB_DEPENDS =		x11/qt6/qtsvg
 
-CONFIGURE_ARGS +=	-DBUILD_TESTS=Yes
+BUILD_DEPENDS =		x11/lxqt/build-tools2
 
-NO_TEST =		No
+XDG_PATH =		${PREFIX}/share/examples/${PKGNAME:C/-[0-9].*//}/xdg/
+CONFIGURE_ARGS +=	-DQTXDG_DEFAPPS_CONF_INSTALL_DIR:PATH=${XDG_PATH}
+
+SUBST_VARS = VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/qtxdg/xdgdirs.cpp \
