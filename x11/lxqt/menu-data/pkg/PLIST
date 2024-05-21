@@ -1,0 +1,46 @@
+@conflict lxqt-config-<2.0.0
+@pkgpath x11/lxqt/config
+@sample ${SYSCONFDIR}/xdg/
+share/cmake/
+share/cmake/lxqt-menu-data/
+share/cmake/lxqt-menu-data/lxqt-menu-data-config-version.cmake
+share/cmake/lxqt-menu-data/lxqt-menu-data-config.cmake
+share/desktop-directories/
+share/desktop-directories/lxqt-audio-video.directory
+share/desktop-directories/lxqt-development.directory
+share/desktop-directories/lxqt-education-science.directory
+share/desktop-directories/lxqt-education.directory
+share/desktop-directories/lxqt-game.directory
+share/desktop-directories/lxqt-graphics.directory
+share/desktop-directories/lxqt-hardware.directory
+share/desktop-directories/lxqt-internet-and-network.directory
+share/desktop-directories/lxqt-leave.directory
+share/desktop-directories/lxqt-look-and-feel.directory
+share/desktop-directories/lxqt-menu-applications.directory
+share/desktop-directories/lxqt-menu-system.directory
+share/desktop-directories/lxqt-network.directory
+share/desktop-directories/lxqt-office.directory
+share/desktop-directories/lxqt-other.directory
+share/desktop-directories/lxqt-personal.directory
+share/desktop-directories/lxqt-preferences.directory
+share/desktop-directories/lxqt-science-math.directory
+share/desktop-directories/lxqt-settings-other.directory
+share/desktop-directories/lxqt-settings-system.directory
+share/desktop-directories/lxqt-settings.directory
+share/desktop-directories/lxqt-system-tools.directory
+share/desktop-directories/lxqt-system.directory
+share/desktop-directories/lxqt-utility-accessibility.directory
+share/desktop-directories/lxqt-utility.directory
+share/examples/lxqt-menu-data/
+share/examples/lxqt-menu-data/menus/
+@sample ${SYSCONFDIR}/xdg/menus/
+share/examples/lxqt-menu-data/menus/lxqt-applications-compact.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-compact.menu
+share/examples/lxqt-menu-data/menus/lxqt-applications-fm.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-fm.menu
+share/examples/lxqt-menu-data/menus/lxqt-applications-simple.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-simple.menu
+share/examples/lxqt-menu-data/menus/lxqt-applications.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications.menu
+share/examples/lxqt-menu-data/menus/lxqt-config.menu
+@sample ${SYSCONFDIR}/xdg/menus/lxqt-config.menu
