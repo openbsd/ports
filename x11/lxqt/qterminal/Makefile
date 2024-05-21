@@ -1,15 +1,12 @@
 COMMENT =	lightweight Qt terminal emulator based on QTermWidget
 
-VERSION =	1.4.0
 NAME =		qterminal
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5X11Extras X11 c canberra m qtermwidget5 util
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Widgets
+WANTLIB += X11 c canberra m qtermwidget6 util
 
-MODULES =	x11/qt5 devel/cmake
-LIB_DEPENDS =	x11/lxqt/qtermwidget>=1.4.0 \
-		audio/libcanberra \
-		x11/qt5/qtx11extras
+LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.0 \
+		audio/libcanberra
 
 BUILD_DEPENDS =	x11/lxqt/build-tools
 
