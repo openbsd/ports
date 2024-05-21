@@ -3,6 +3,9 @@ DISTNAME =		freerdp-2.11.7
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
+# 3.x needs posix timers, epoll-shim is no longer enough to workaround
+PORTROACH =		limit:^2
+
 SHARED_LIBS +=  freerdp-client2           1.1
 SHARED_LIBS +=  freerdp2                  3.0
 SHARED_LIBS +=  winpr-tools2              1.0
