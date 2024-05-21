@@ -1,6 +1,7 @@
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-DISTNAME?=	lucee-$V
+DISTNAME?=	lucee-${V}
+PKGNAME?=	lucee-${V:S/-RC/rc/}
 EXTRACT_SUFX?=	.war
 
 CATEGORIES=	lang www
