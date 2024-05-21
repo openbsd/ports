@@ -1,15 +1,12 @@
 COMMENT =	the terminal widget for QTerminal
 
-VERSION =	1.4.0
 NAME =		qtermwidget
 
-SHARED_LIBS +=  qtermwidget5              2.0 # 1.0.0
+SHARED_LIBS +=  qtermwidget6 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets m util
 
-MODULES =	x11/qt5 devel/cmake
-
-BUILD_DEPENDS =	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/qtermwidget.cpp
