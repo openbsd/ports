@@ -31,7 +31,16 @@ BUILD_DEPENDS =	graphics/spirv-headers
 
 CONFIGURE_ARGS =	-DSPIRV-Headers_SOURCE_DIR="${LOCALBASE}"
 
+SUBST_VARS +=	ADDITIONAL_LIBRARIES
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/tools/CMakeLists.txt
+
 # effcee is missing to build tests
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+ADDITIONAL_LIBRARIES = stdc++fs
+.endif

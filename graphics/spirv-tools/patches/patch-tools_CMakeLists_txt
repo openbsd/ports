@@ -1,0 +1,14 @@
+Add -lstdc++fs for ports-gcc
+
+Index: tools/CMakeLists.txt
+--- tools/CMakeLists.txt.orig
++++ tools/CMakeLists.txt
+@@ -74,7 +74,7 @@ if (NOT ${SPIRV_SKIP_EXECUTABLES})
+                            objdump/extract_source.cpp
+                            util/cli_consumer.cpp
+                            ${COMMON_TOOLS_SRCS}
+-                      LIBS ${SPIRV_TOOLS_FULL_VISIBILITY})
++                      LIBS ${SPIRV_TOOLS_FULL_VISIBILITY} ${ADDITIONAL_LIBRARIES})
+     target_include_directories(spirv-objdump PRIVATE ${spirv-tools_SOURCE_DIR}
+                                                      ${SPIRV_HEADER_INCLUDE_DIR})
+     set(SPIRV_INSTALL_TARGETS ${SPIRV_INSTALL_TARGETS} spirv-objdump)
