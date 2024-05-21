@@ -1,14 +1,13 @@
 @conflict qterminal-l10n-*
 @pkgpath x11/lxqt/l10n,-qterminal
 @bin bin/qterminal
-share/appdata/
-share/appdata/qterminal.appdata.xml
 share/applications/qterminal-drop.desktop
 share/applications/qterminal.desktop
 share/icons/hicolor/64x64/apps/qterminal.png
-@tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/qterminal.metainfo.xml
 share/qterminal/
+share/qterminal/qterminal_bookmarks_example.xml
 share/qterminal/translations/
 share/qterminal/translations/qterminal_ar.qm
 share/qterminal/translations/qterminal_arn.qm
@@ -19,6 +18,7 @@ share/qterminal/translations/qterminal_cs.qm
 share/qterminal/translations/qterminal_cy.qm
 share/qterminal/translations/qterminal_da.qm
 share/qterminal/translations/qterminal_de.qm
+share/qterminal/translations/qterminal_de_CH.qm
 share/qterminal/translations/qterminal_el.qm
 share/qterminal/translations/qterminal_es.qm
 share/qterminal/translations/qterminal_et.qm
@@ -27,6 +27,7 @@ share/qterminal/translations/qterminal_fi.qm
 share/qterminal/translations/qterminal_fr.qm
 share/qterminal/translations/qterminal_gl.qm
 share/qterminal/translations/qterminal_he.qm
+share/qterminal/translations/qterminal_hi.qm
 share/qterminal/translations/qterminal_hr.qm
 share/qterminal/translations/qterminal_hu.qm
 share/qterminal/translations/qterminal_id.qm
@@ -48,3 +49,5 @@ share/qterminal/translations/qterminal_tr.qm
 share/qterminal/translations/qterminal_uk.qm
 share/qterminal/translations/qterminal_zh_CN.qm
 share/qterminal/translations/qterminal_zh_TW.qm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
