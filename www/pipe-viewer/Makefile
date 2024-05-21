@@ -1,7 +1,7 @@
 COMMENT-main =	lightweight YouTube client
 COMMENT-gtk =	lightweight YouTube client with a GTK interface
 
-VERSION =	0.5.0
+VERSION =	0.5.1
 DIST_TUPLE =	github trizen pipe-viewer ${VERSION} .
 PKGNAME-main =	pipe-viewer-${VERSION}
 PKGNAME-gtk =	gtk-pipe-viewer-${VERSION}
