@@ -2,9 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.5.2
-
-REVISION =		0
+GH_TAGNAME =		1.5.3
 
 COMMENT =		open-source version of Doom 3
 
