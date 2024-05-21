@@ -1,7 +1,7 @@
 Index: pcmanfm/tabpage.cpp
 --- pcmanfm/tabpage.cpp.orig
 +++ pcmanfm/tabpage.cpp
-@@ -509,7 +509,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
+@@ -556,7 +556,7 @@ void TabPage::onFolderError(const Fm::GErrorPtr& err, 
  }
  
  void TabPage::onFolderFsInfo() {

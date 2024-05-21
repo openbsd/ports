@@ -1,0 +1,12 @@
+Index: pcmanfm/CMakeLists.txt
+--- pcmanfm/CMakeLists.txt.orig
++++ pcmanfm/CMakeLists.txt
+@@ -90,7 +90,7 @@ target_include_directories(pcmanfm-qt
+ target_link_libraries(pcmanfm-qt
+     Qt6::Widgets
+     Qt6::DBus
+-    LayerShellQtInterface
++    LayerShellQt::Interface
+     fm-qt6
+ )
+ 

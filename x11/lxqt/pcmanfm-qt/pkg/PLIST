@@ -15,7 +15,7 @@ share/examples/pcmanfm-qt/xdg/pcmanfm-qt/lxqt/
 @sample ${SYSCONFDIR}/xdg/pcmanfm-qt/lxqt/
 share/examples/pcmanfm-qt/xdg/pcmanfm-qt/lxqt/settings.conf
 @sample ${SYSCONFDIR}/xdg/pcmanfm-qt/lxqt/settings.conf
-@tag update-desktop-database
+share/icons/hicolor/scalable/apps/pcmanfm-qt.svg
 share/pcmanfm-qt/
 share/pcmanfm-qt/translations/
 share/pcmanfm-qt/translations/pcmanfm-qt_ar.qm
@@ -31,8 +31,11 @@ share/pcmanfm-qt/translations/pcmanfm-qt_el.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_en_GB.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_es.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_et.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_eu.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_fi.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_fil.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_fr.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_ga.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_gl.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_he.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_hi.qm
@@ -43,6 +46,7 @@ share/pcmanfm-qt/translations/pcmanfm-qt_it.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_ja.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_kk.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_ko.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_lg.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_lt.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_lv.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_nb_NO.qm
@@ -55,9 +59,12 @@ share/pcmanfm-qt/translations/pcmanfm-qt_ro.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_ru.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_si.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_sk_SK.qm
+share/pcmanfm-qt/translations/pcmanfm-qt_sl.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_sv.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_tr.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_uk.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_vi.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_zh_CN.qm
 share/pcmanfm-qt/translations/pcmanfm-qt_zh_TW.qm
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
