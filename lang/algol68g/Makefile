@@ -1,5 +1,5 @@
 COMMENT =	Algol 68 Genie compiler-interpreter
-DISTNAME =	algol68g-3.4.4
+DISTNAME =	algol68g-3.5.2
 CATEGORIES =	lang
 
 HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html
@@ -24,5 +24,7 @@ CONFIGURE_ARGS =	--disable-gsl \
 			--disable-mpfr \
 			--disable-plotutils \
 			--disable-postgresql
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
