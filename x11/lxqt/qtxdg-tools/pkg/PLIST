@@ -1,0 +1,6 @@
+@bin bin/qtxdg-mat
+share/cmake/qtxdg-tools/
+share/cmake/qtxdg-tools/qtxdg-tools-config-version.cmake
+share/cmake/qtxdg-tools/qtxdg-tools-config.cmake
+share/cmake/qtxdg-tools/qtxdg-tools-targets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/qtxdg-tools/qtxdg-tools-targets.cmake
