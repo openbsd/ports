@@ -1,18 +1,18 @@
 COMMENT =	configuration tool for compton X composite manager
 
-VERSION =	0.15.0
-REVISION =      0
+VERSION =	0.16.0
 
 NAME =		compton-conf
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c config m
 
-LIB_DEPENDS +=		devel/libconfig
+MODULES =	x11/qt5 devel/cmake
+LIB_DEPENDS =	devel/libconfig
 
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
