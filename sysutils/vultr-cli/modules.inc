@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.110.10 \
 	cloud.google.com/go/compute				 v1.23.3 \
-	cloud.google.com/go/compute/metadata			 v0.2.3 \
+	cloud.google.com/go/compute/metadata			 v0.3.0 \
 	cloud.google.com/go/firestore				 v1.14.0 \
 	cloud.google.com/go/iam					 v1.1.5 \
 	cloud.google.com/go/longrunning				 v0.5.4 \
@@ -77,14 +77,13 @@ MODGO_MODULES =	\
 	go.uber.org/atomic					 v1.9.0 \
 	go.uber.org/multierr					 v1.9.0 \
 	go.uber.org/zap						 v1.21.0 \
-	golang.org/x/crypto					 v0.21.0 \
+	golang.org/x/crypto					 v0.16.0 \
 	golang.org/x/exp					 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/mod					 v0.12.0 \
-	golang.org/x/net					 v0.22.0 \
-	golang.org/x/oauth2					 v0.18.0 \
+	golang.org/x/net					 v0.19.0 \
+	golang.org/x/oauth2					 v0.20.0 \
 	golang.org/x/sync					 v0.5.0 \
 	golang.org/x/sys					 v0.18.0 \
-	golang.org/x/term					 v0.18.0 \
 	golang.org/x/text					 v0.14.0 \
 	golang.org/x/time					 v0.5.0 \
 	golang.org/x/tools					 v0.13.0 \
@@ -95,57 +94,43 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/api		 v0.0.0-20231106174013-bbf56f31fb17 \
 	google.golang.org/genproto/googleapis/rpc		 v0.0.0-20231120223509-83a465c0220f \
 	google.golang.org/grpc					 v1.59.0 \
-	google.golang.org/protobuf				 v1.33.0 \
+	google.golang.org/protobuf				 v1.31.0 \
 	gopkg.in/check.v1					 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/ini.v1						 v1.67.0 \
 	gopkg.in/yaml.v3					 v3.0.1
 
 MODGO_MODFILES =	\
-	cloud.google.com/go/compute	 v1.20.1 \
-	github.com/davecgh/go-spew	 v1.1.0 \
-	github.com/davecgh/go-spew	 v1.1.1 \
-	github.com/golang/protobuf	 v1.3.1 \
-	github.com/golang/protobuf	 v1.5.0 \
-	github.com/google/go-cmp	 v0.5.2 \
-	github.com/google/go-cmp	 v0.5.5 \
-	github.com/google/go-cmp	 v0.5.8 \
-	github.com/hashicorp/go-hclog	 v0.9.2 \
-	github.com/kr/pretty		 v0.2.1 \
-	github.com/kr/pretty		 v0.3.0 \
-	github.com/kr/text		 v0.1.0 \
-	github.com/pmezard/go-difflib	 v1.0.0 \
-	github.com/stretchr/objx	 v0.1.0 \
-	github.com/stretchr/objx	 v0.4.0 \
-	github.com/stretchr/testify	 v1.2.2 \
-	github.com/stretchr/testify	 v1.3.0 \
-	github.com/stretchr/testify	 v1.7.0 \
-	github.com/stretchr/testify	 v1.7.1 \
-	github.com/stretchr/testify	 v1.7.5 \
-	github.com/stretchr/testify	 v1.8.0 \
-	github.com/stretchr/testify	 v1.8.1 \
-	go.uber.org/atomic		 v1.7.0 \
-	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
-	golang.org/x/crypto		 v0.16.0 \
-	golang.org/x/mod		 v0.8.0 \
-	golang.org/x/net		 v0.0.0-20190603091049-60506f45cf65 \
-	golang.org/x/net		 v0.19.0 \
-	golang.org/x/oauth2		 v0.15.0 \
-	golang.org/x/sys		 v0.0.0-20190215142949-d0b11bdaac8a \
-	golang.org/x/sys		 v0.12.0 \
-	golang.org/x/sys		 v0.15.0 \
-	golang.org/x/sys		 v0.4.0 \
-	golang.org/x/sys		 v0.5.0 \
-	golang.org/x/text		 v0.12.0 \
-	golang.org/x/text		 v0.3.0 \
-	golang.org/x/text		 v0.3.2 \
-	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
-	golang.org/x/tools		 v0.6.0 \
-	golang.org/x/xerrors		 v0.0.0-20191204190536-9bdfabe68543 \
-	google.golang.org/api		 v0.152.0 \
-	google.golang.org/protobuf	 v1.26.0 \
-	google.golang.org/protobuf	 v1.26.0-rc.1 \
-	google.golang.org/protobuf	 v1.31.0 \
-	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
-	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
-	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
+	cloud.google.com/go/compute/metadata	 v0.2.3 \
+	github.com/davecgh/go-spew		 v1.1.0 \
+	github.com/davecgh/go-spew		 v1.1.1 \
+	github.com/google/go-cmp		 v0.5.2 \
+	github.com/google/go-cmp		 v0.5.8 \
+	github.com/hashicorp/go-hclog		 v0.9.2 \
+	github.com/kr/pretty			 v0.2.1 \
+	github.com/kr/pretty			 v0.3.0 \
+	github.com/kr/text			 v0.1.0 \
+	github.com/pmezard/go-difflib		 v1.0.0 \
+	github.com/stretchr/objx		 v0.1.0 \
+	github.com/stretchr/objx		 v0.4.0 \
+	github.com/stretchr/testify		 v1.2.2 \
+	github.com/stretchr/testify		 v1.3.0 \
+	github.com/stretchr/testify		 v1.7.0 \
+	github.com/stretchr/testify		 v1.7.1 \
+	github.com/stretchr/testify		 v1.7.5 \
+	github.com/stretchr/testify		 v1.8.0 \
+	github.com/stretchr/testify		 v1.8.1 \
+	go.uber.org/atomic			 v1.7.0 \
+	golang.org/x/mod			 v0.8.0 \
+	golang.org/x/oauth2			 v0.15.0 \
+	golang.org/x/sys			 v0.12.0 \
+	golang.org/x/sys			 v0.15.0 \
+	golang.org/x/sys			 v0.4.0 \
+	golang.org/x/sys			 v0.5.0 \
+	golang.org/x/text			 v0.12.0 \
+	golang.org/x/tools			 v0.6.0 \
+	golang.org/x/xerrors			 v0.0.0-20191204190536-9bdfabe68543 \
+	google.golang.org/api			 v0.152.0 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
+	gopkg.in/check.v1			 v1.0.0-20190902080502-41f04d3bba15 \
+	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c
 
