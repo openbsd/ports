@@ -2,6 +2,7 @@
 @pkgpath x11/lxqt/l10n,-openssh-askpass
 @bin bin/lxqt-openssh-askpass
 @man man/man1/lxqt-openssh-askpass.1
+share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-openssh-askpass/
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ar.qm
@@ -17,6 +18,7 @@ share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_el.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_en_GB.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_es.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_et.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_fi.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_fr.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_gl.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_he.qm
@@ -26,9 +28,12 @@ share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_id.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_it.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ja.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ko.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_lg.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_lt.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_nb_NO.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_nl.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_oc.qm
+share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_pa.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_pl.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_pt.qm
 share/lxqt/translations/lxqt-openssh-askpass/lxqt-openssh-askpass_ru.qm
