@@ -1,11 +1,8 @@
 @conflict lximage-qt-l10n-*
 @pkgpath x11/lxqt/l10n,-lximage-qt
 @bin bin/lximage-qt
-share/applications/lximage-qt-screenshot.desktop
 share/applications/lximage-qt.desktop
-share/icons/hicolor/48x48/apps/lximage-qt.png
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
+share/icons/hicolor/48x48/apps/lximage-qt.svg
 share/lximage-qt/
 share/lximage-qt/translations/
 share/lximage-qt/translations/lximage-qt_ar.qm
@@ -17,22 +14,28 @@ share/lximage-qt/translations/lximage-qt_cs.qm
 share/lximage-qt/translations/lximage-qt_cy.qm
 share/lximage-qt/translations/lximage-qt_da.qm
 share/lximage-qt/translations/lximage-qt_de.qm
+share/lximage-qt/translations/lximage-qt_de_CH.qm
 share/lximage-qt/translations/lximage-qt_el.qm
 share/lximage-qt/translations/lximage-qt_en_GB.qm
 share/lximage-qt/translations/lximage-qt_es.qm
 share/lximage-qt/translations/lximage-qt_et.qm
+share/lximage-qt/translations/lximage-qt_fi.qm
 share/lximage-qt/translations/lximage-qt_fr.qm
 share/lximage-qt/translations/lximage-qt_gl.qm
 share/lximage-qt/translations/lximage-qt_he.qm
+share/lximage-qt/translations/lximage-qt_hi.qm
 share/lximage-qt/translations/lximage-qt_hr.qm
 share/lximage-qt/translations/lximage-qt_hu.qm
 share/lximage-qt/translations/lximage-qt_id.qm
 share/lximage-qt/translations/lximage-qt_is.qm
 share/lximage-qt/translations/lximage-qt_it.qm
 share/lximage-qt/translations/lximage-qt_ja.qm
+share/lximage-qt/translations/lximage-qt_ko.qm
+share/lximage-qt/translations/lximage-qt_lg.qm
 share/lximage-qt/translations/lximage-qt_lt.qm
 share/lximage-qt/translations/lximage-qt_nb_NO.qm
 share/lximage-qt/translations/lximage-qt_nl.qm
+share/lximage-qt/translations/lximage-qt_oc.qm
 share/lximage-qt/translations/lximage-qt_pa.qm
 share/lximage-qt/translations/lximage-qt_pl.qm
 share/lximage-qt/translations/lximage-qt_pt.qm
@@ -47,3 +50,7 @@ share/lximage-qt/translations/lximage-qt_uk.qm
 share/lximage-qt/translations/lximage-qt_vi.qm
 share/lximage-qt/translations/lximage-qt_zh_CN.qm
 share/lximage-qt/translations/lximage-qt_zh_TW.qm
+share/metainfo/
+share/metainfo/lximage-qt.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
