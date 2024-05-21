@@ -1235,6 +1235,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}test_resu
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}test_result_submitter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}tuplematch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}tuplematch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}twisted.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}twisted.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/_notifier.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/async_sort.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/backoff.py
@@ -1275,6 +1277,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/state.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/subscription.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/test_result_submitter.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/tuplematch.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/twisted.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/wamp/
 lib/python${MODPY_VERSION}/site-packages/buildbot/wamp/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/wamp/${MODPY_PYCACHE}/
