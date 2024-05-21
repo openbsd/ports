@@ -3,7 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v4.5.1
+GH_TAGNAME =	v6.0.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =	archivers/brotli \
 		devel/pcre2
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-avx \
+CONFIGURE_ARGS =	--disable-avx2 \
 			--disable-neon \
 			--without-boost-regex
 

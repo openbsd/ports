@@ -2,7 +2,9 @@
 bin/ug+
 @bin bin/ugrep
 bin/ugrep+
+@bin bin/ugrep-indexer
 @man man/man1/ug.1
+@man man/man1/ugrep-indexer.1
 @man man/man1/ugrep.1
 share/bash-completion/
 share/bash-completion/completions/
