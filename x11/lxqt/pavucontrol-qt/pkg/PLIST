@@ -2,9 +2,9 @@
 @pkgpath x11/lxqt/l10n,-pavucontrol-qt
 @bin bin/pavucontrol-qt
 share/applications/pavucontrol-qt.desktop
-@tag update-desktop-database
 share/pavucontrol-qt/
 share/pavucontrol-qt/translations/
+share/pavucontrol-qt/translations/pavucontrol-qt_ar.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_arn.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_as.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ast.qm
@@ -31,11 +31,13 @@ share/pavucontrol-qt/translations/pavucontrol-qt_it.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ja.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_kn.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ko.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_lg.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_lt.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_ml.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_mr.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_nb_NO.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_nl.qm
+share/pavucontrol-qt/translations/pavucontrol-qt_oc.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_or.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_pa.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_pl.qm
@@ -55,3 +57,4 @@ share/pavucontrol-qt/translations/pavucontrol-qt_tr.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_uk.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_zh_CN.qm
 share/pavucontrol-qt/translations/pavucontrol-qt_zh_TW.qm
+@tag update-desktop-database

@@ -2,13 +2,13 @@ COMMENT =	pulseaudio mixer in qt
 
 NAME =		pavucontrol-qt
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += c glib-2.0 intl m pulse pulse-mainloop-glib
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c glib-2.0
+WANTLIB += intl m pulse pulse-mainloop-glib
 
-LIB_DEPENDS +=		audio/pulseaudio
+LIB_DEPENDS =	audio/pulseaudio
 
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
-RUN_DEPENDS +=		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 .include <bsd.port.mk>
