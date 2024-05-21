@@ -1,7 +1,7 @@
 COMMENT =		pluggable Terraform linter
 
 MODGO_MODNAME =		github.com/terraform-linters/tflint
-MODGO_VERSION =		v0.51.0
+MODGO_VERSION =		v0.51.1
 
 DISTNAME =		tflint-${MODGO_VERSION}
 
