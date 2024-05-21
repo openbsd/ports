@@ -1,11 +1,11 @@
-V=		2023-03-30
+FW_VER=		20240410
 FW_DRIVER=	iwm
-FW_VER=		${V:S/-//g}
-DISTNAME=	linux-firmware-iwlwifi-fw-$V
+DISTNAME=	linux-firmware-${FW_VER}
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 
-SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/snapshot/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode}
 
 FW+=	3160	17 \
