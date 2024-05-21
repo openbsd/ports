@@ -1,6 +1,7 @@
 COMMENT =	YouTube/Invidious player
 DISTNAME =	plasmatube-${VERSION}
 CATEGORIES =	multimedia net x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6I18n KF6WindowSystem MpvQt Qt6Concurrent
