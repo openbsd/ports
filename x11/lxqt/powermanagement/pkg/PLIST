@@ -12,9 +12,6 @@ share/examples/lxqt-powermanagement/xdg/autostart/
 share/examples/lxqt-powermanagement/xdg/autostart/lxqt-powermanagement.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-powermanagement.desktop
 share/icons/hicolor/scalable/devices/laptop-lid.svg
-@tag gtk-update-icon-cache %D/share/icons/hicolor
-@tag update-desktop-database
-share/lxqt/translations/
 share/lxqt/translations/lxqt-config-powermanagement/
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ar.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_arn.qm
@@ -38,9 +35,12 @@ share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_it.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ja.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_ko.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_lg.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_lt.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_nb_NO.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_nl.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_oc.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pa.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pl.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pt.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_pt_BR.qm
@@ -50,6 +50,7 @@ share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_tr.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_uk.qm
 share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_zh_CN.qm
+share/lxqt/translations/lxqt-config-powermanagement/lxqt-config-powermanagement_zh_TW.qm
 share/lxqt/translations/lxqt-powermanagement/
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ar.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_arn.qm
@@ -73,9 +74,12 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_id.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_it.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ja.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_ko.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lg.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_lt.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_nb_NO.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_nl.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_oc.qm
+share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pa.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pl.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pt.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_pt_BR.qm
@@ -86,3 +90,5 @@ share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_tr.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_uk.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_vi.qm
 share/lxqt/translations/lxqt-powermanagement/lxqt-powermanagement_zh_CN.qm
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

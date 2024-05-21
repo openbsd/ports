@@ -1,25 +1,24 @@
 COMMENT =	power management module for LXQt
-REVISION =	0
 
 NAME =		lxqt-powermanagement
 
-WANTLIB += ${COMPILER_LIBCXX} KF5IdleTime KF5Solid KF5WindowSystem
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xdg Qt5XdgIconLoader Qt5Xml X11 c gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 lxqt lxqt-globalkeys m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6IdleTime KF6Solid KF6WindowSystem
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets Qt6Xdg Qt6XdgIconLoader
+WANTLIB += Qt6Xml X11 c gio-2.0 glib-2.0 gobject-2.0 lxqt lxqt-globalkeys
+WANTLIB += m xcb xcb-dpms xcb-screensaver
 
-LIB_DEPENDS +=		devel/kf5/kidletime \
-			devel/kf5/kwindowsystem \
-			devel/kf5/solid \
-			x11/lxqt/globalkeys \
-			x11/lxqt/liblxqt \
-			x11/qt5/qtsvg
+LIB_DEPENDS =	devel/kf6/kidletime \
+		devel/kf6/kwindowsystem \
+		devel/kf6/solid \
+		x11/lxqt/globalkeys \
+		x11/lxqt/liblxqt \
+		x11/qt6/qtsvg
 
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
-RUN_DEPENDS +=		devel/desktop-file-utils \
-			sysutils/upower \
-			x11/gtk+4,-guic
+RUN_DEPENDS =	devel/desktop-file-utils \
+		sysutils/upower \
+		x11/gtk+4,-guic
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
