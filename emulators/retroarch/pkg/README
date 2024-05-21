@@ -1,0 +1,19 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, the UI assets are not available (icons in menus), you can
+download them from Retroarch:
+
+  Main Menu -> Online Updater -> Update assets
+
+
+If Retroarch does not offer a core when you try to load a content,
+although the according core is installed, it is recommended to create
+a playlist:
+
+  Import content -> Manual Scan
+
+    - choose a content directory
+    - choose a default core for the files in this directory
+    - Start Scan

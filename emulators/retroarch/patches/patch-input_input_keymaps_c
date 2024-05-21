@@ -4,7 +4,7 @@ which breaks keyboard input.
 Index: input/input_keymaps.c
 --- input/input_keymaps.c.orig
 +++ input/input_keymaps.c
-@@ -60,7 +60,9 @@
+@@ -64,7 +64,9 @@
  #endif
  
  #ifdef HAVE_X11
@@ -15,7 +15,7 @@ Index: input/input_keymaps.c
  #endif
  
  #ifdef HAVE_DINPUT
-@@ -864,123 +866,156 @@ const struct rarch_key_map rarch_key_map_wiiu[] = {
+@@ -1008,123 +1010,156 @@ const struct rarch_key_map rarch_key_map_wiiu[] = {
  
  #ifdef HAVE_X11
  

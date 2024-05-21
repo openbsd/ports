@@ -3,6 +3,7 @@ bin/retroarch-cg2glsl
 @man man/man6/retroarch-cg2glsl.6
 @man man/man6/retroarch.6
 share/applications/retroarch.desktop
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/retroarch/
 share/doc/retroarch/COPYING
 share/doc/retroarch/README.md

@@ -1,7 +1,7 @@
 Index: retroarch.cfg
 --- retroarch.cfg.orig
 +++ retroarch.cfg
-@@ -832,7 +832,7 @@
+@@ -844,7 +844,7 @@
  # rgui_browser_directory =
  
  # Core directory for libretro core implementations.
