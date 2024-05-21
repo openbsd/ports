@@ -1,9 +1,9 @@
 COMMENT=	elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.31.0
+# 2.33 expected to move to hatchling
+MODPY_EGG_VERSION=	2.32.1
 DISTNAME=	requests-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	www
 
