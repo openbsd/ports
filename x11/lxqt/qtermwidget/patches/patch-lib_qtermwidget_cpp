@@ -1,7 +1,7 @@
 Index: lib/qtermwidget.cpp
 --- lib/qtermwidget.cpp.orig
 +++ lib/qtermwidget.cpp
-@@ -269,7 +269,7 @@ void QTermWidget::init(int startnow)
+@@ -274,7 +274,7 @@ void QTermWidget::init(int startnow)
      QString d = QFile::decodeName(qgetenv("XDG_DATA_DIRS"));
      QStringList dirs = d.split(QLatin1Char(':'), Qt::SkipEmptyParts);
      if (dirs.isEmpty()) {

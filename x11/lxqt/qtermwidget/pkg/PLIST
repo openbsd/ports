@@ -6,6 +6,7 @@ include/qtermwidget5/Filter.h
 include/qtermwidget5/KeyboardTranslator.h
 include/qtermwidget5/qtermwidget.h
 include/qtermwidget5/qtermwidget_export.h
+include/qtermwidget5/qtermwidget_interface.h
 include/qtermwidget5/qtermwidget_version.h
 lib/cmake/qtermwidget5/
 lib/cmake/qtermwidget5/qtermwidget5-config-version.cmake
@@ -21,6 +22,7 @@ share/qtermwidget5/color-schemes/BlackOnRandomLight.colorscheme
 share/qtermwidget5/color-schemes/BlackOnWhite.colorscheme
 share/qtermwidget5/color-schemes/BreezeModified.colorscheme
 share/qtermwidget5/color-schemes/DarkPastels.colorscheme
+share/qtermwidget5/color-schemes/Falcon.colorscheme
 share/qtermwidget5/color-schemes/GreenOnBlack.colorscheme
 share/qtermwidget5/color-schemes/Linux.colorscheme
 share/qtermwidget5/color-schemes/Solarized.colorscheme
@@ -53,6 +55,7 @@ share/qtermwidget5/kb-layouts/macbook.keytab
 share/qtermwidget5/kb-layouts/solaris.keytab
 share/qtermwidget5/kb-layouts/vt420pc.keytab
 share/qtermwidget5/translations/
+share/qtermwidget5/translations/qtermwidget_ar.qm
 share/qtermwidget5/translations/qtermwidget_arn.qm
 share/qtermwidget5/translations/qtermwidget_ast.qm
 share/qtermwidget5/translations/qtermwidget_bg.qm
@@ -61,9 +64,11 @@ share/qtermwidget5/translations/qtermwidget_cs.qm
 share/qtermwidget5/translations/qtermwidget_cy.qm
 share/qtermwidget5/translations/qtermwidget_da.qm
 share/qtermwidget5/translations/qtermwidget_de.qm
+share/qtermwidget5/translations/qtermwidget_de_CH.qm
 share/qtermwidget5/translations/qtermwidget_el.qm
 share/qtermwidget5/translations/qtermwidget_es.qm
 share/qtermwidget5/translations/qtermwidget_et.qm
+share/qtermwidget5/translations/qtermwidget_fi.qm
 share/qtermwidget5/translations/qtermwidget_fr.qm
 share/qtermwidget5/translations/qtermwidget_gl.qm
 share/qtermwidget5/translations/qtermwidget_he.qm
@@ -71,9 +76,11 @@ share/qtermwidget5/translations/qtermwidget_hr.qm
 share/qtermwidget5/translations/qtermwidget_hu.qm
 share/qtermwidget5/translations/qtermwidget_it.qm
 share/qtermwidget5/translations/qtermwidget_ja.qm
+share/qtermwidget5/translations/qtermwidget_ko.qm
 share/qtermwidget5/translations/qtermwidget_lt.qm
 share/qtermwidget5/translations/qtermwidget_nb_NO.qm
 share/qtermwidget5/translations/qtermwidget_nl.qm
+share/qtermwidget5/translations/qtermwidget_oc.qm
 share/qtermwidget5/translations/qtermwidget_pl.qm
 share/qtermwidget5/translations/qtermwidget_pt.qm
 share/qtermwidget5/translations/qtermwidget_pt_BR.qm
