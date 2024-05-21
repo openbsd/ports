@@ -1,5 +1,6 @@
 COMMENT =	KDE Plasma PulseAudio support
 DISTNAME =	plasma-pa-${VERSION}
+REVISION =	0
 
 MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_DOCS = Yes
@@ -14,6 +15,7 @@ BUILD_DEPENDS =	devel/kf6/kitemmodels \
 		devel/kf6/kdeclarative \
 		devel/kf6/ksvg \
 		graphics/kirigami-addons>=1.0.0 \
+		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/gtk-vnc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
