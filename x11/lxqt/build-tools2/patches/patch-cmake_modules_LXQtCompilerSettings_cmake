@@ -1,0 +1,16 @@
+Index: cmake/modules/LXQtCompilerSettings.cmake
+--- cmake/modules/LXQtCompilerSettings.cmake.orig
++++ cmake/modules/LXQtCompilerSettings.cmake
+@@ -161,10 +161,10 @@ if (CMAKE_COMPILER_IS_GNUCXX OR LXQT_COMPILER_IS_CLANG
+         # -Bsymbolic* make sense for ELF only
+         set(SYMBOLIC_FLAGS "")
+     else()
+-        set(NO_UNDEFINED_FLAGS "-Wl,--no-undefined")
++        set(NO_UNDEFINED_FLAGS "")
+         # -Bsymbolic-functions: replace dynamic symbols used internally in
+         #                       shared libs with direct addresses.
+-        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic-functions")
++        set(SYMBOLIC_FLAGS "-Wl,-Bsymbolic")
+     endif()
+ 
+     set(CMAKE_SHARED_LINKER_FLAGS
