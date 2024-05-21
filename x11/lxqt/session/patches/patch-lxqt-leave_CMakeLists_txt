@@ -1,0 +1,12 @@
+Index: lxqt-leave/CMakeLists.txt
+--- lxqt-leave/CMakeLists.txt.orig
++++ lxqt-leave/CMakeLists.txt
+@@ -53,7 +53,7 @@ add_executable(lxqt-leave
+ 
+ target_link_libraries(lxqt-leave
+     lxqt
+-    LayerShellQtInterface
++    LayerShellQt::Interface
+ )
+ 
+ install(TARGETS

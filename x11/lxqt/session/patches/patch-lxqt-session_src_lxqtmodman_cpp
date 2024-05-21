@@ -12,8 +12,8 @@ Index: lxqt-session/src/lxqtmodman.cpp
  #include "lxqtmodman.h"
  #include <LXQt/Globals>
  #include <LXQt/Settings>
-@@ -43,7 +47,11 @@
- #include <QDateTime>
+@@ -44,7 +48,11 @@
+ #include <QPointer>
  #include "wmselectdialog.h"
  #include "windowmanager.h"
 +#ifdef NO_WORDEXP
@@ -23,8 +23,8 @@ Index: lxqt-session/src/lxqtmodman.cpp
 +#endif
  #include "log.h"
  
- #include <KWindowSystem/KWindowSystem>
-@@ -429,6 +437,22 @@ bool LXQtModuleManager::nativeEventFilter(const QByteA
+ #include <KWindowSystem>
+@@ -420,6 +428,22 @@ void LXQtModuleManager::resetCrashReport()
  
  void lxqt_setenv(const char *env, const QByteArray &value)
  {
@@ -47,7 +47,7 @@ Index: lxqt-session/src/lxqtmodman.cpp
      wordexp_t p;
      wordexp(value.constData(), &p, 0);
      if (p.we_wordc == 1)
-@@ -443,6 +467,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
+@@ -434,6 +458,7 @@ void lxqt_setenv(const char *env, const QByteArray &va
          qputenv(env, value);
      }
       wordfree(&p);

@@ -1,14 +1,12 @@
 Index: lxqt-session/src/procreaper.cpp
 --- lxqt-session/src/procreaper.cpp.orig
 +++ lxqt-session/src/procreaper.cpp
-@@ -30,9 +30,7 @@
- #if defined(Q_OS_LINUX)
- #include <sys/prctl.h>
- #include <proc/readproc.h>
--#elif defined(Q_OS_FREEBSD)
--#include <sys/procctl.h>
--#include <libutil.h>
+@@ -42,6 +42,8 @@
+ #include <kvm.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
 +#elif defined(Q_OS_OPENBSD)
- #include <sys/user.h>
- #include <signal.h>
++#include <sys/user.h>
  #endif
+ #include <unistd.h>
+ #include <cstring>

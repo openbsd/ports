@@ -16,7 +16,6 @@ share/applications/lxqt-reboot.desktop
 share/applications/lxqt-shutdown.desktop
 share/applications/lxqt-suspend.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-@tag update-desktop-database
 share/examples/lxqt-session/
 share/examples/lxqt-session/xdg/
 share/examples/lxqt-session/xdg/autostart/
@@ -56,10 +55,12 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-confi
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_ja.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_ko.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_lg.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_lt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_nb_NO.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_nl.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_oc.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_pa.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_pl.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_pt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-config-session/lxqt-config-session_pt_BR.qm
@@ -97,10 +98,14 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_hu.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_id.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_ja.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_kk.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_ko.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_lg.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_lt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_nb_NO.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_nl.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_oc.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_pa.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_pl.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_pt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-leave/lxqt-leave_pt_BR.qm
@@ -140,11 +145,15 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ia.q
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_id.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_it.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ja.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_kk.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_ko.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_lg.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_lt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_nb_NO.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_nl.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_oc.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_or.qm
+share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_pa.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_pl.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_pt.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_pt_BR.qm
@@ -163,9 +172,6 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_C
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_TW.qm
 share/examples/lxqt-session/xdg/lxqt/windowmanagers.conf
 @sample ${SYSCONFDIR}/xdg/lxqt/windowmanagers.conf
-@sample ${SYSCONFDIR}/xdg/openbox/
-share/kdm/
-share/kdm/sessions/
-share/kdm/sessions/lxqt.desktop
 share/xsessions/
 share/xsessions/lxqt.desktop
+@tag update-desktop-database

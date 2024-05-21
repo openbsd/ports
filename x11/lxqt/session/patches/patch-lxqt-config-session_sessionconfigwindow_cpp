@@ -1,7 +1,7 @@
 Index: lxqt-config-session/sessionconfigwindow.cpp
 --- lxqt-config-session/sessionconfigwindow.cpp.orig
 +++ lxqt-config-session/sessionconfigwindow.cpp
-@@ -115,7 +115,7 @@ void SessionConfigWindow::updateCfgComboBox(QComboBox 
+@@ -119,7 +119,7 @@ void SessionConfigWindow::updateCfgComboBox(QComboBox 
                                              const QString &prompt
                                             )
  {
