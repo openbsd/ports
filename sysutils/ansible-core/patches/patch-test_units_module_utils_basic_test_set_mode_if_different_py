@@ -1,15 +1,15 @@
 Index: test/units/module_utils/basic/test_set_mode_if_different.py
 --- test/units/module_utils/basic/test_set_mode_if_different.py.orig
 +++ test/units/module_utils/basic/test_set_mode_if_different.py
-@@ -9,6 +9,7 @@ __metaclass__ = type
- 
+@@ -8,6 +8,7 @@ from __future__ import annotations
+ import builtins
  import errno
  import os
 +import sys
  
  from itertools import product
  
-@@ -130,6 +131,7 @@ def test_missing_lchmod_is_not_link(am, mock_stats, mo
+@@ -124,6 +125,7 @@ def test_missing_lchmod_is_not_link(am, mock_stats, mo
          m_chmod.assert_called_with(b'/path/to/file/no_lchmod', 0o660)
  
  
@@ -17,7 +17,7 @@ Index: test/units/module_utils/basic/test_set_mode_if_different.py
  @pytest.mark.parametrize('check_mode, stdin',
                           product((True, False), ({},)),
                           indirect=['stdin'])
-@@ -157,6 +159,7 @@ def test_missing_lchmod_is_link(am, mock_stats, mocker
+@@ -151,6 +153,7 @@ def test_missing_lchmod_is_link(am, mock_stats, mocker
      mocker.stopall()
  
  

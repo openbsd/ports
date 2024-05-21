@@ -1,9 +1,8 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.16.6
+MODPY_EGG_VERSION =	2.17.0
 DISTNAME =		ansible_core-${MODPY_EGG_VERSION}
 PKGNAME =		ansible-core-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
