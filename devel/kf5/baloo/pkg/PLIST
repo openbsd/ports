@@ -4,6 +4,8 @@
 @conflict kf5-baloo-<=5.51.0p1v0
 @pkgpath devel/kf5/baloo,main
 @pkgpath devel/kf5/baloo,icons
+@bin bin/baloosearch
+@bin bin/balooshow
 include/KF5/Baloo/
 include/KF5/Baloo/Baloo/
 include/KF5/Baloo/Baloo/File
@@ -32,6 +34,10 @@ lib/cmake/KF5Baloo/KF5BalooTargets.cmake
 @lib lib/libKF5Baloo.so.${LIBKF5Baloo_VERSION}
 @lib lib/libKF5BalooEngine.so.${LIBKF5BalooEngine_VERSION}
 lib/pkgconfig/Baloo.pc
+@so lib/qt5/plugins/kf5/kded/baloosearchmodule.so
+@so lib/qt5/plugins/kf5/kio/baloosearch.so
+@so lib/qt5/plugins/kf5/kio/tags.so
+@so lib/qt5/plugins/kf5/kio/timeline.so
 lib/qt5/qml/org/kde/baloo/
 lib/qt5/qml/org/kde/baloo/experimental/
 @so lib/qt5/qml/org/kde/baloo/experimental/libbaloomonitorplugin.so

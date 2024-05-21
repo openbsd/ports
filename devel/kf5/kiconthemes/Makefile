@@ -1,6 +1,5 @@
 COMMENT =	KDE icon GUI utility library
 DISTNAME =	kiconthemes-${VERSION}
-REVISION =	1
 
 SHARED_LIBS =	KF5IconThemes		5.6
 

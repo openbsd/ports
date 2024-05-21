@@ -1,7 +1,7 @@
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
 
-SHARED_LIBS =	KF5ActivitiesStats	12.1
+SHARED_LIBS =	KF5ActivitiesStats	13.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore Qt5Core
 WANTLIB += Qt5DBus Qt5Sql m

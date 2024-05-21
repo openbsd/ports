@@ -356,7 +356,6 @@ share/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 share/kdevappwizard/templates/qml-plasmoid.tar.bz2
-share/kservices5/
 share/kservices5/plasma-containmentactions-test.desktop
 share/kservicetypes5/plasma-applet.desktop
 share/kservicetypes5/plasma-containment.desktop

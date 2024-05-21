@@ -7655,9 +7655,11 @@ share/icons/breeze-dark/mimetypes/16/audio-mp2.svg
 share/icons/breeze-dark/mimetypes/16/audio-mp3.svg
 share/icons/breeze-dark/mimetypes/16/audio-mp4.svg
 share/icons/breeze-dark/mimetypes/16/audio-mpeg.svg
+share/icons/breeze-dark/mimetypes/16/audio-ogg.svg
 share/icons/breeze-dark/mimetypes/16/audio-prs.sid.svg
 share/icons/breeze-dark/mimetypes/16/audio-vn.rn-realmedia.svg
 share/icons/breeze-dark/mimetypes/16/audio-vnd.rn-realvideo.svg
+share/icons/breeze-dark/mimetypes/16/audio-vnd.wave.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-adpcm.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-aiff.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-flac+ogg.svg
@@ -7667,6 +7669,7 @@ share/icons/breeze-dark/mimetypes/16/audio-x-monkey.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-mp2.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-mpeg.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-speex+ogg.svg
+share/icons/breeze-dark/mimetypes/16/audio-x-vorbis+ogg.svg
 share/icons/breeze-dark/mimetypes/16/audio-x-wav.svg
 share/icons/breeze-dark/mimetypes/16/audiobook.svg
 share/icons/breeze-dark/mimetypes/16/encrypted.svg
@@ -8158,9 +8161,11 @@ share/icons/breeze-dark/mimetypes/22/audio-mp2.svg
 share/icons/breeze-dark/mimetypes/22/audio-mp3.svg
 share/icons/breeze-dark/mimetypes/22/audio-mp4.svg
 share/icons/breeze-dark/mimetypes/22/audio-mpeg.svg
+share/icons/breeze-dark/mimetypes/22/audio-ogg.svg
 share/icons/breeze-dark/mimetypes/22/audio-prs.sid.svg
 share/icons/breeze-dark/mimetypes/22/audio-vn.rn-realmedia.svg
 share/icons/breeze-dark/mimetypes/22/audio-vnd.rn-realvideo.svg
+share/icons/breeze-dark/mimetypes/22/audio-vnd.wave.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-adpcm.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-aiff.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-flac+ogg.svg
@@ -8170,6 +8175,7 @@ share/icons/breeze-dark/mimetypes/22/audio-x-monkey.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-mp2.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-mpeg.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-speex+ogg.svg
+share/icons/breeze-dark/mimetypes/22/audio-x-vorbis+ogg.svg
 share/icons/breeze-dark/mimetypes/22/audio-x-wav.svg
 share/icons/breeze-dark/mimetypes/22/audiobook.svg
 share/icons/breeze-dark/mimetypes/22/encrypted.svg
@@ -8669,9 +8675,11 @@ share/icons/breeze-dark/mimetypes/32/audio-mp2.svg
 share/icons/breeze-dark/mimetypes/32/audio-mp3.svg
 share/icons/breeze-dark/mimetypes/32/audio-mp4.svg
 share/icons/breeze-dark/mimetypes/32/audio-mpeg.svg
+share/icons/breeze-dark/mimetypes/32/audio-ogg.svg
 share/icons/breeze-dark/mimetypes/32/audio-prs.sid.svg
 share/icons/breeze-dark/mimetypes/32/audio-vn.rn-realmedia.svg
 share/icons/breeze-dark/mimetypes/32/audio-vnd.rn-realvideo.svg
+share/icons/breeze-dark/mimetypes/32/audio-vnd.wave.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-adpcm.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-aiff.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-flac+ogg.svg
@@ -8681,6 +8689,7 @@ share/icons/breeze-dark/mimetypes/32/audio-x-monkey.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-mp2.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-mpeg.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-speex+ogg.svg
+share/icons/breeze-dark/mimetypes/32/audio-x-vorbis+ogg.svg
 share/icons/breeze-dark/mimetypes/32/audio-x-wav.svg
 share/icons/breeze-dark/mimetypes/32/audiobook.svg
 share/icons/breeze-dark/mimetypes/32/encrypted.svg
@@ -9172,9 +9181,11 @@ share/icons/breeze-dark/mimetypes/64/audio-mp2.svg
 share/icons/breeze-dark/mimetypes/64/audio-mp3.svg
 share/icons/breeze-dark/mimetypes/64/audio-mp4.svg
 share/icons/breeze-dark/mimetypes/64/audio-mpeg.svg
+share/icons/breeze-dark/mimetypes/64/audio-ogg.svg
 share/icons/breeze-dark/mimetypes/64/audio-prs.sid.svg
 share/icons/breeze-dark/mimetypes/64/audio-vn.rn-realmedia.svg
 share/icons/breeze-dark/mimetypes/64/audio-vnd.rn-realvideo.svg
+share/icons/breeze-dark/mimetypes/64/audio-vnd.wave.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-adpcm.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-aiff.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-flac+ogg.svg
@@ -9184,6 +9195,7 @@ share/icons/breeze-dark/mimetypes/64/audio-x-monkey.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-mp2.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-mpeg.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-speex+ogg.svg
+share/icons/breeze-dark/mimetypes/64/audio-x-vorbis+ogg.svg
 share/icons/breeze-dark/mimetypes/64/audio-x-wav.svg
 share/icons/breeze-dark/mimetypes/64/audiobook.svg
 share/icons/breeze-dark/mimetypes/64/encrypted.svg
@@ -18808,9 +18820,11 @@ share/icons/breeze/mimetypes/16/audio-mp2.svg
 share/icons/breeze/mimetypes/16/audio-mp3.svg
 share/icons/breeze/mimetypes/16/audio-mp4.svg
 share/icons/breeze/mimetypes/16/audio-mpeg.svg
+share/icons/breeze/mimetypes/16/audio-ogg.svg
 share/icons/breeze/mimetypes/16/audio-prs.sid.svg
 share/icons/breeze/mimetypes/16/audio-vn.rn-realmedia.svg
 share/icons/breeze/mimetypes/16/audio-vnd.rn-realvideo.svg
+share/icons/breeze/mimetypes/16/audio-vnd.wave.svg
 share/icons/breeze/mimetypes/16/audio-x-adpcm.svg
 share/icons/breeze/mimetypes/16/audio-x-aiff.svg
 share/icons/breeze/mimetypes/16/audio-x-flac+ogg.svg
@@ -18820,6 +18834,7 @@ share/icons/breeze/mimetypes/16/audio-x-monkey.svg
 share/icons/breeze/mimetypes/16/audio-x-mp2.svg
 share/icons/breeze/mimetypes/16/audio-x-mpeg.svg
 share/icons/breeze/mimetypes/16/audio-x-speex+ogg.svg
+share/icons/breeze/mimetypes/16/audio-x-vorbis+ogg.svg
 share/icons/breeze/mimetypes/16/audio-x-wav.svg
 share/icons/breeze/mimetypes/16/audiobook.svg
 share/icons/breeze/mimetypes/16/encrypted.svg
@@ -19311,9 +19326,11 @@ share/icons/breeze/mimetypes/22/audio-mp2.svg
 share/icons/breeze/mimetypes/22/audio-mp3.svg
 share/icons/breeze/mimetypes/22/audio-mp4.svg
 share/icons/breeze/mimetypes/22/audio-mpeg.svg
+share/icons/breeze/mimetypes/22/audio-ogg.svg
 share/icons/breeze/mimetypes/22/audio-prs.sid.svg
 share/icons/breeze/mimetypes/22/audio-vn.rn-realmedia.svg
 share/icons/breeze/mimetypes/22/audio-vnd.rn-realvideo.svg
+share/icons/breeze/mimetypes/22/audio-vnd.wave.svg
 share/icons/breeze/mimetypes/22/audio-x-adpcm.svg
 share/icons/breeze/mimetypes/22/audio-x-aiff.svg
 share/icons/breeze/mimetypes/22/audio-x-flac+ogg.svg
@@ -19323,6 +19340,7 @@ share/icons/breeze/mimetypes/22/audio-x-monkey.svg
 share/icons/breeze/mimetypes/22/audio-x-mp2.svg
 share/icons/breeze/mimetypes/22/audio-x-mpeg.svg
 share/icons/breeze/mimetypes/22/audio-x-speex+ogg.svg
+share/icons/breeze/mimetypes/22/audio-x-vorbis+ogg.svg
 share/icons/breeze/mimetypes/22/audio-x-wav.svg
 share/icons/breeze/mimetypes/22/audiobook.svg
 share/icons/breeze/mimetypes/22/encrypted.svg
@@ -19813,9 +19831,11 @@ share/icons/breeze/mimetypes/24/audio-mp2.svg
 share/icons/breeze/mimetypes/24/audio-mp3.svg
 share/icons/breeze/mimetypes/24/audio-mp4.svg
 share/icons/breeze/mimetypes/24/audio-mpeg.svg
+share/icons/breeze/mimetypes/24/audio-ogg.svg
 share/icons/breeze/mimetypes/24/audio-prs.sid.svg
 share/icons/breeze/mimetypes/24/audio-vn.rn-realmedia.svg
 share/icons/breeze/mimetypes/24/audio-vnd.rn-realvideo.svg
+share/icons/breeze/mimetypes/24/audio-vnd.wave.svg
 share/icons/breeze/mimetypes/24/audio-x-adpcm.svg
 share/icons/breeze/mimetypes/24/audio-x-aiff.svg
 share/icons/breeze/mimetypes/24/audio-x-flac+ogg.svg
@@ -19825,6 +19845,7 @@ share/icons/breeze/mimetypes/24/audio-x-monkey.svg
 share/icons/breeze/mimetypes/24/audio-x-mp2.svg
 share/icons/breeze/mimetypes/24/audio-x-mpeg.svg
 share/icons/breeze/mimetypes/24/audio-x-speex+ogg.svg
+share/icons/breeze/mimetypes/24/audio-x-vorbis+ogg.svg
 share/icons/breeze/mimetypes/24/audio-x-wav.svg
 share/icons/breeze/mimetypes/24/audiobook.svg
 share/icons/breeze/mimetypes/24/encrypted.svg
@@ -20313,9 +20334,11 @@ share/icons/breeze/mimetypes/32/audio-mp2.svg
 share/icons/breeze/mimetypes/32/audio-mp3.svg
 share/icons/breeze/mimetypes/32/audio-mp4.svg
 share/icons/breeze/mimetypes/32/audio-mpeg.svg
+share/icons/breeze/mimetypes/32/audio-ogg.svg
 share/icons/breeze/mimetypes/32/audio-prs.sid.svg
 share/icons/breeze/mimetypes/32/audio-vn.rn-realmedia.svg
 share/icons/breeze/mimetypes/32/audio-vnd.rn-realvideo.svg
+share/icons/breeze/mimetypes/32/audio-vnd.wave.svg
 share/icons/breeze/mimetypes/32/audio-x-adpcm.svg
 share/icons/breeze/mimetypes/32/audio-x-aiff.svg
 share/icons/breeze/mimetypes/32/audio-x-flac+ogg.svg
@@ -20325,6 +20348,7 @@ share/icons/breeze/mimetypes/32/audio-x-monkey.svg
 share/icons/breeze/mimetypes/32/audio-x-mp2.svg
 share/icons/breeze/mimetypes/32/audio-x-mpeg.svg
 share/icons/breeze/mimetypes/32/audio-x-speex+ogg.svg
+share/icons/breeze/mimetypes/32/audio-x-vorbis+ogg.svg
 share/icons/breeze/mimetypes/32/audio-x-wav.svg
 share/icons/breeze/mimetypes/32/audiobook.svg
 share/icons/breeze/mimetypes/32/encrypted.svg
@@ -20816,9 +20840,11 @@ share/icons/breeze/mimetypes/64/audio-mp2.svg
 share/icons/breeze/mimetypes/64/audio-mp3.svg
 share/icons/breeze/mimetypes/64/audio-mp4.svg
 share/icons/breeze/mimetypes/64/audio-mpeg.svg
+share/icons/breeze/mimetypes/64/audio-ogg.svg
 share/icons/breeze/mimetypes/64/audio-prs.sid.svg
 share/icons/breeze/mimetypes/64/audio-vn.rn-realmedia.svg
 share/icons/breeze/mimetypes/64/audio-vnd.rn-realvideo.svg
+share/icons/breeze/mimetypes/64/audio-vnd.wave.svg
 share/icons/breeze/mimetypes/64/audio-x-adpcm.svg
 share/icons/breeze/mimetypes/64/audio-x-aiff.svg
 share/icons/breeze/mimetypes/64/audio-x-flac+ogg.svg
@@ -20828,6 +20854,7 @@ share/icons/breeze/mimetypes/64/audio-x-monkey.svg
 share/icons/breeze/mimetypes/64/audio-x-mp2.svg
 share/icons/breeze/mimetypes/64/audio-x-mpeg.svg
 share/icons/breeze/mimetypes/64/audio-x-speex+ogg.svg
+share/icons/breeze/mimetypes/64/audio-x-vorbis+ogg.svg
 share/icons/breeze/mimetypes/64/audio-x-wav.svg
 share/icons/breeze/mimetypes/64/audiobook.svg
 share/icons/breeze/mimetypes/64/encrypted.svg

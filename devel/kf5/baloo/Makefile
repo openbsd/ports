@@ -2,15 +2,14 @@ COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
-REVISION =	0
 
 SHARED_LIBS +=  KF5Baloo                  5.0 # 4.0
 SHARED_LIBS +=  KF5BalooEngine            8.0 # 5.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5FileMetaData KF5I18n KF5IdleTime KF5KIOCore
-WANTLIB += KF5Service KF5Solid Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml c lmdb m
+WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5CoreAddons KF5DBusAddons
+WANTLIB += KF5FileMetaData KF5I18n KF5KIOCore KF5Service KF5Solid
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Network Qt5Qml c lmdb
+WANTLIB += m
 
 WANTLIB += lib/inotify/inotify
 
