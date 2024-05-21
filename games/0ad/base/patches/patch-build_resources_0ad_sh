@@ -1,0 +1,22 @@
+Try to crank datasize to 2G to avoid ENOMEM crashes during big games
+
+Index: build/resources/0ad.sh
+--- build/resources/0ad.sh.orig
++++ build/resources/0ad.sh
+@@ -2,6 +2,16 @@
+ 
+ pyrogenesis=$(which pyrogenesis 2> /dev/null)
+ if [ -x "$pyrogenesis" ] ; then
++  DATASIZE=$((2 * 1024 * 1024))
++  if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
++    ulimit -Sd ${DATASIZE} || \
++      ${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no <<- _EOF
++	Cannot increase datasize-cur to at least ${DATASIZE}
++	Do you want to run 0 A.D. anyway?
++	(If so, it may run out of memory and crash.)
++	_EOF
++    [ $? -eq 0 ] || exit
++  fi
+   "$pyrogenesis" "$@"
+ else
+   echo "Error: pyrogenesis not found in ($PATH)"

@@ -2,7 +2,7 @@ COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
-REVISION =		6
+REVISION =		7
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
@@ -105,7 +105,7 @@ do-install:
 	cp -R ${WRKDIST}/binaries/data/* ${PREFIX}/share/0ad
 	${INSTALL_DATA} ${WRKDIST}/binaries/system/lib* ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKDIST}/binaries/system/pyrogenesis ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
+	${SUBST_PROGRAM} ${WRKDIST}/build/resources/0ad.sh ${PREFIX}/bin/0ad
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIST}/build/resources/0ad.desktop \
 		${PREFIX}/share/applications/
