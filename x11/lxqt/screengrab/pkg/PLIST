@@ -1,6 +1,4 @@
 @bin bin/screengrab
-lib/screengrab/
-@lib lib/screengrab/libextedit.so.${LIBextedit_VERSION}
 share/applications/screengrab.desktop
 share/doc/screengrab/
 share/doc/screengrab/html/
@@ -15,9 +13,12 @@ share/examples/screengrab/
 @sample ${SYSCONFDIR}/xdg/screengrab/
 share/examples/screengrab/screengrab.conf
 @sample ${SYSCONFDIR}/xdg/screengrab/screengrab.conf
-share/icons/hicolor/32x32/apps/screengrab.png
+share/icons/hicolor/scalable/apps/screengrab.svg
+share/metainfo/
+share/metainfo/screengrab.metainfo.xml
 share/screengrab/
 share/screengrab/translations/
+share/screengrab/translations/screengrab_ar.qm
 share/screengrab/translations/screengrab_arn.qm
 share/screengrab/translations/screengrab_ast.qm
 share/screengrab/translations/screengrab_bg.qm
@@ -28,6 +29,7 @@ share/screengrab/translations/screengrab_de.qm
 share/screengrab/translations/screengrab_el.qm
 share/screengrab/translations/screengrab_es.qm
 share/screengrab/translations/screengrab_et.qm
+share/screengrab/translations/screengrab_fi.qm
 share/screengrab/translations/screengrab_fr.qm
 share/screengrab/translations/screengrab_gl.qm
 share/screengrab/translations/screengrab_he.qm
@@ -35,10 +37,13 @@ share/screengrab/translations/screengrab_hr.qm
 share/screengrab/translations/screengrab_hu.qm
 share/screengrab/translations/screengrab_it.qm
 share/screengrab/translations/screengrab_ja.qm
+share/screengrab/translations/screengrab_ko.qm
+share/screengrab/translations/screengrab_lg.qm
 share/screengrab/translations/screengrab_lt.qm
 share/screengrab/translations/screengrab_nb_NO.qm
 share/screengrab/translations/screengrab_nl.qm
 share/screengrab/translations/screengrab_oc.qm
+share/screengrab/translations/screengrab_pa.qm
 share/screengrab/translations/screengrab_pl.qm
 share/screengrab/translations/screengrab_pt.qm
 share/screengrab/translations/screengrab_pt_BR.qm
@@ -47,6 +52,7 @@ share/screengrab/translations/screengrab_ru.qm
 @tag update-desktop-database
 share/screengrab/translations/screengrab_si.qm
 share/screengrab/translations/screengrab_sk.qm
+share/screengrab/translations/screengrab_sl.qm
 share/screengrab/translations/screengrab_sv.qm
 share/screengrab/translations/screengrab_tr.qm
 share/screengrab/translations/screengrab_uk.qm
