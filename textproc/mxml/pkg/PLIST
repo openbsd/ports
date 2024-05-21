@@ -1,22 +1,13 @@
 @bin bin/mxmldoc
 include/mxml.h
-lib/libmxml.a
+@static-lib lib/libmxml.a
 @lib lib/libmxml.so.${LIBmxml_VERSION}
 lib/pkgconfig/mxml.pc
 @man man/man1/mxmldoc.1
 @man man/man3/mxml.3
 share/doc/mxml/
-share/doc/mxml/0.gif
-share/doc/mxml/1.gif
-share/doc/mxml/2.gif
-share/doc/mxml/3.gif
-share/doc/mxml/4.gif
-share/doc/mxml/A.gif
-share/doc/mxml/B.gif
-share/doc/mxml/C.gif
 share/doc/mxml/CHANGES
 share/doc/mxml/COPYING
-share/doc/mxml/D.gif
 share/doc/mxml/README
 share/doc/mxml/mxml.html
 share/doc/mxml/mxmldoc.xsd

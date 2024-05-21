@@ -1,23 +1,32 @@
-COMMENT=		minimal XML library
-DISTNAME=		mxml-2.10
-CATEGORIES=		textproc
+COMMENT=	minimal XML library
 
-SHARED_LIBS=		mxml	0.2	# 1.5
+# 3.x changes license to Apache + exception for linking from GPLv2-only code
+# 3.x and 4.x both have API changes breaking existing ports
+# 4.x requires C99 (n.b. base-gcc archs)
+V=		2.12
+DISTNAME=	mxml-$V
+CATEGORIES=	textproc
 
-HOMEPAGE=		http://www.msweet.org/projects.php?Z3
+SHARED_LIBS=	mxml	0.3	# 1.6
+
+HOMEPAGE=	https://www.msweet.org/mxml/
 
 # LGPLv2 with exceptions
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
-SITES=			http://www.msweet.org/files/project3/
+SITES=		https://github.com/michaelrsweet/mxml/releases/download/v$V/
 
-CONFIGURE_STYLE=	gnu dest
-CONFIGURE_ARGS+=	--disable-threads
-CONFIGURE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
-MAKE_ENV+=		LIBmxml_VERSION=${LIBmxml_VERSION}
+CONFIGURE_STYLE= autoconf dest no-autoheader
 
-NO_TEST=		Yes
+AUTOCONF_VERSION= 2.69
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
+CONFIGURE_ENV=	LIBmxml_VERSION=${LIBmxml_VERSION}
+MAKE_ENV=	LIBmxml_VERSION=${LIBmxml_VERSION}
+
+CONFIGURE_ARGS=	--disable-threads
+
+TEST_TARGET=	testmxml
 
 .include <bsd.port.mk>

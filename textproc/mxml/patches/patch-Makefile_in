@@ -1,41 +1,52 @@
---- Makefile.in.orig	Thu Jan 23 01:28:45 2014
-+++ Makefile.in	Thu Jan 23 01:32:15 2014
-@@ -166,14 +166,14 @@ install-libmxml.a:
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -67,7 +67,6 @@ INSTALL_SCRIPT	=	$(INSTALL) -m 755
+ # Rules...
+ #
+ 
+-.SILENT:
+ .SUFFIXES:	.c .man .o
+ .c.o:
+ 	echo Compiling $<
+@@ -83,7 +82,7 @@ PUBLIBOBJS	=	mxml-attr.o mxml-entity.o mxml-file.o mxm
+ 			mxml-index.o mxml-node.o mxml-search.o mxml-set.o
+ LIBOBJS		=	$(PUBLIBOBJS) mxml-private.o mxml-string.o
+ OBJS		=	mmd.o mxmldoc.o testmxml.o zipc.o $(LIBOBJS)
+-ALLTARGETS	=	$(LIBMXML) mxmldoc testmxml mxml.xml @MXML_EPUB@
++ALLTARGETS	=	$(LIBMXML) mxmldoc mxml.xml @MXML_EPUB@
+ CROSSTARGETS	=	$(LIBMXML) mxmldoc
+ TARGETS		=	$(@TARGETS@)
+ 
+@@ -168,14 +167,10 @@ install-libmxml.a:	libmxml.a
  	$(INSTALL_LIB) libmxml.a $(BUILDROOT)$(libdir)
  	$(RANLIB) $(BUILDROOT)$(libdir)/libmxml.a
  
--install-libmxml.so.1.5:
-+install-libmxml.so.$(LIBmxml_VERSION):
+-install-libmxml.so.1.6:	libmxml.so.1.6
++install-libmxml.so.${LIBmxml_VERSION}:	libmxml.so.${LIBmxml_VERSION}
  	echo Installing libmxml.so to $(BUILDROOT)$(libdir)...
  	$(INSTALL_DIR) $(BUILDROOT)$(libdir)
--	$(INSTALL_LIB) libmxml.so.1.5 $(BUILDROOT)$(libdir)
+-	$(INSTALL_LIB) libmxml.so.1.6 $(BUILDROOT)$(libdir)
 -	$(RM) $(BUILDROOT)$(libdir)/libmxml.so
--	$(LN) libmxml.so.1.5 $(BUILDROOT)$(libdir)/libmxml.so
+-	$(LN) libmxml.so.1.6 $(BUILDROOT)$(libdir)/libmxml.so
 -	$(RM) $(BUILDROOT)$(libdir)/libmxml.so.1
--	$(LN) libmxml.so.1.5 $(BUILDROOT)$(libdir)/libmxml.so.1
-+	$(INSTALL_LIB) libmxml.so.$(LIBmxml_VERSION) $(BUILDROOT)$(libdir)
-+#	$(RM) $(BUILDROOT)$(libdir)/libmxml.so
-+#	$(LN) libmxml.so.1.5 $(BUILDROOT)$(libdir)/libmxml.so
-+#	$(RM) $(BUILDROOT)$(libdir)/libmxml.so.1
-+#	$(LN) libmxml.so.1.5 $(BUILDROOT)$(libdir)/libmxml.so.1
+-	$(LN) libmxml.so.1.6 $(BUILDROOT)$(libdir)/libmxml.so.1
++	$(INSTALL_LIB) libmxml.so.${LIBmxml_VERSION} $(BUILDROOT)$(libdir)
  
- install-libmxml.sl.1:
+ install-libmxml.sl.1:	libmxml.sl.1
  	echo Installing libmxml.sl to $(BUILDROOT)$(libdir)...
-@@ -295,12 +295,12 @@ mxml-entity.o mxml-file.o mxml-private.o: mxml-private
- # libmxml.so.1.5
+@@ -269,12 +264,9 @@ mxml1.dll:	$(LIBOBJS)
+ # libmxml.so.1.6
  #
  
--libmxml.so.1.5:	$(LIBOBJS)
-+libmxml.so.$(LIBmxml_VERSION):	$(LIBOBJS)
+-libmxml.so.1.6:	$(LIBOBJS)
++libmxml.so.${LIBmxml_VERSION}:	$(LIBOBJS)
  	echo Creating $@...
--	$(DSO) $(DSOFLAGS) -o libmxml.so.1.5 $(LIBOBJS)
+-	$(DSO) $(DSOFLAGS) $(LDFLAGS) -o libmxml.so.1.6 $(LIBOBJS) $(LIBS)
 -	$(RM) libmxml.so libmxml.so.1
--	$(LN) libmxml.so.1.5 libmxml.so
--	$(LN) libmxml.so.1.5 libmxml.so.1
-+	$(DSO) $(DSOFLAGS) -o libmxml.so.$(LIBmxml_VERSION) $(LIBOBJS)
-+#	$(RM) libmxml.so libmxml.so.1
-+#	$(LN) libmxml.so.1.5 libmxml.so
-+#	$(LN) libmxml.so.1.5 libmxml.so.1
+-	$(LN) libmxml.so.1.6 libmxml.so
+-	$(LN) libmxml.so.1.6 libmxml.so.1
++	$(DSO) $(DSOFLAGS) $(LDFLAGS) -o libmxml.so.${LIBmxml_VERSION} $(LIBOBJS) $(LIBS)
  
  
  #

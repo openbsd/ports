@@ -1,0 +1,27 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -225,10 +225,9 @@ if test x$enable_shared != xno; then
+ 
+ 		*bsd)
+ 			AC_MSG_RESULT(yes)
+-			LIBMXML="libmxml.so.1.6"
++			LIBMXML="libmxml.so.${LIBmxml_VERSION}"
+ 			DSO="\$(CC)"
+-			DSOFLAGS="$DSOFLAGS -Wl,-soname,libmxml.so.1,-R\$(libdir) -shared \$(OPTIM)"
+-			LDFLAGS="$LDFLAGS -Wl,-R\$(libdir)"
++			DSOFLAGS="$DSOFLAGS -shared"
+                         ;;
+ 
+ 		darwin)
+@@ -265,10 +264,6 @@ AC_SUBST(PICFLAG)
+ dnl Add -Wall for GCC...
+ if test -n "$GCC"; then
+ 	CFLAGS="-Wall -D_GNU_SOURCE $CFLAGS"
+-
+-	if test "x$OPTIM" = x; then
+-		OPTIM="-Os -g"
+-	fi
+ 
+ 	if test "x$use_ansi" = xyes; then
+ 		CFLAGS="-ansi -pedantic $CFLAGS"
