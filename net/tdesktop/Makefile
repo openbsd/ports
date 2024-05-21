@@ -140,5 +140,4 @@ post-patch:
 	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
 	    ${WRKSRC}/cmake/options_linux.cmake
 
-Spotted
 .include <bsd.port.mk>
