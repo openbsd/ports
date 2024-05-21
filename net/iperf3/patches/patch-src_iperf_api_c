@@ -3,7 +3,7 @@ Default to IPv4.
 Index: src/iperf_api.c
 --- src/iperf_api.c.orig
 +++ src/iperf_api.c
-@@ -2900,7 +2900,7 @@ iperf_defaults(struct iperf_test *testp)
+@@ -2953,7 +2953,7 @@ iperf_defaults(struct iperf_test *testp)
      testp->stats_interval = testp->reporter_interval = 1;
      testp->num_streams = 1;
  
