@@ -1,11 +1,14 @@
 @conflict lxqt-sudo-l10n-*
 @pkgpath x11/lxqt/l10n,-sudo
+bin/lxdoas
 @bin bin/lxqt-sudo
 bin/lxsu
 bin/lxsudo
+@man man/man1/lxdoas.1
 @man man/man1/lxqt-sudo.1
 @man man/man1/lxsu.1
 @man man/man1/lxsudo.1
+share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-sudo/
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ar.qm
@@ -30,9 +33,12 @@ share/lxqt/translations/lxqt-sudo/lxqt-sudo_id.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_it.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ja.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_ko.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_lg.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_lt.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_nb_NO.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_nl.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_oc.qm
+share/lxqt/translations/lxqt-sudo/lxqt-sudo_pa.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_pl.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt.qm
 share/lxqt/translations/lxqt-sudo/lxqt-sudo_pt_BR.qm
