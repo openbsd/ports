@@ -1,7 +1,7 @@
 Index: plugin-directorymenu/directorymenuconfiguration.cpp
 --- plugin-directorymenu/directorymenuconfiguration.cpp.orig
 +++ plugin-directorymenu/directorymenuconfiguration.cpp
-@@ -42,7 +42,7 @@ DirectoryMenuConfiguration::DirectoryMenuConfiguration
+@@ -43,7 +43,7 @@ DirectoryMenuConfiguration::DirectoryMenuConfiguration
      ui(new Ui::DirectoryMenuConfiguration),
      mBaseDirectory(QDir::homePath()),
      mDefaultIcon(XdgIcon::fromTheme(QStringLiteral("folder"))),
@@ -10,7 +10,7 @@ Index: plugin-directorymenu/directorymenuconfiguration.cpp
  {
      setAttribute(Qt::WA_DeleteOnClose);
      setObjectName(QStringLiteral("DirectoryMenuConfigurationWindow"));
-@@ -109,7 +109,7 @@ void DirectoryMenuConfiguration::showDirectoryDialog()
+@@ -128,7 +128,7 @@ void DirectoryMenuConfiguration::showDirectoryDialog()
  
  void DirectoryMenuConfiguration::showTermDialog()
  {
@@ -18,4 +18,4 @@ Index: plugin-directorymenu/directorymenuconfiguration.cpp
 +    QFileDialog d(this, tr("Choose Default Terminal"), QStringLiteral("${LOCALBASE}/bin"));
      d.setFileMode(QFileDialog::ExistingFile);
      d.setWindowModality(Qt::WindowModal);
-     
+ 

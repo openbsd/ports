@@ -1,26 +1,28 @@
 COMMENT =	desktop panel for LXQt
 
 NAME =		lxqt-panel
+VERSION =	2.0.1
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Solid KF5WindowSystem Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xdg Qt5XdgIconLoader Qt5Xml SM X11 Xcomposite Xdamage
-WANTLIB += Xext Xfixes Xrender c dbusmenu-qt5 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 lxqt lxqt-globalkeys lxqt-globalkeys-ui
-WANTLIB += m pulse statgrab sysstat-qt5 xcb xcb-damage xcb-util
-WANTLIB += xcb-xkb xkbcommon xkbcommon-x11
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Solid KF6WindowSystem LayerShellQtInterface
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Svg Qt6Widgets
+WANTLIB += Qt6Xdg Qt6XdgIconLoader Qt6Xml X11 Xtst c dbusmenu-lxqt
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 lxqt lxqt-globalkeys lxqt-globalkeys-ui
+WANTLIB += m pulse statgrab sysstat-qt6 xcb xcb-composite xcb-damage
+WANTLIB += xcb-image xcb-randr xcb-render xcb-shape xcb-shm xcb-util
+WANTLIB += xcb-xfixes xcb-xkb xkbcommon xkbcommon-x11
 
-LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0 \
-			x11/lxqt/globalkeys>=1.0.0 \
-			x11/lxqt/libsysstat \
-			sysutils/libstatgrab \
-			devel/kf5/solid \
-			x11/dbusmenu-qt \
-			audio/pulseaudio
+LIB_DEPENDS =	x11/lxqt/liblxqt>=2.0.0 \
+		x11/lxqt/globalkeys>=2.0.0 \
+		x11/lxqt/libsysstat \
+		x11/lxqt/libdbusmenu \
+		x11/kde-plasma/layer-shell-qt \
+		sysutils/libstatgrab \
+		devel/kf6/solid \
+		audio/pulseaudio
 
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
-CONFIGURE_ARGS +=	-DSENSORS_PLUGIN=No \
+CONFIGURE_ARGS =	-DSENSORS_PLUGIN=No \
 			-DVOLUME_USE_ALSA=No
 
 pre-configure:

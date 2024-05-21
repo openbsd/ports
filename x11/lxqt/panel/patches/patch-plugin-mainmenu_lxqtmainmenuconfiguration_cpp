@@ -1,7 +1,7 @@
 Index: plugin-mainmenu/lxqtmainmenuconfiguration.cpp
 --- plugin-mainmenu/lxqtmainmenuconfiguration.cpp.orig
 +++ plugin-mainmenu/lxqtmainmenuconfiguration.cpp
-@@ -172,7 +172,7 @@ void LXQtMainMenuConfiguration::chooseMenuFile()
+@@ -188,7 +188,7 @@ void LXQtMainMenuConfiguration::chooseMenuFile()
  {
      QFileDialog *d = new QFileDialog(this,
                                       tr("Choose menu file"),

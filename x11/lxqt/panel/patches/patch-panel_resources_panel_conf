@@ -5,12 +5,12 @@ Index: panel/resources/panel.conf
  panels=panel1
  
  [panel1]
--plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,worldclock,showdesktop
-+plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,worldclock,showdesktop
+-plugins=fancymenu,desktopswitch,quicklaunch,taskbar,statusnotifier,tray,mount,volume,worldclock,showdesktop
++plugins=fancymenu,desktopswitch,quicklaunch,taskbar,statusnotifier,tray,mount,worldclock,showdesktop
  position=Bottom
  desktop=0
  
-@@ -26,10 +26,6 @@ type=mount
+@@ -30,10 +30,6 @@ type=mount
  
  [worldclock]
  type=worldclock
