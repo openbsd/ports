@@ -1,5 +1,6 @@
 COMMENT =	minimal Plasma shell package
 DISTNAME =	plasma-nano-${VERSION}
+REVISION =	0
 
 MODKDE5_TRANSLATIONS =	Yes
 
@@ -7,7 +8,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Service KF6WindowSystem KWaylandClient
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick X11 m
 
-BUILD_DEPENDS =	x11/kde-plasma/libplasma>=${VERSION}
+BUILD_DEPENDS =	devel/kf6/kitemmodels \
+		devel/kf6/ki18n \
+		x11/kde-plasma/libplasma>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kservice \
 		x11/kde-plasma/kwayland>=${VERSION} \
