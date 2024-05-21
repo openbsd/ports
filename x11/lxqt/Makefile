@@ -2,14 +2,17 @@
 # Base
      SUBDIR += libqtxdg
      SUBDIR += build-tools
+     SUBDIR += build-tools2
      SUBDIR += libsysstat
 # PcmanFM-qt
+     SUBDIR += menu-data
      SUBDIR += libfm-qt
      SUBDIR += pcmanfm-qt
 # LXQt
      SUBDIR += liblxqt
+     SUBDIR += libdbusmenu
      SUBDIR += about
-     SUBDIR += config			#NO KScreen
+     SUBDIR += config
      SUBDIR += globalkeys
      SUBDIR += notificationd
      SUBDIR += openssh-askpass
@@ -18,6 +21,7 @@
      SUBDIR += powermanagement
      SUBDIR += qtplugin
      SUBDIR += runner
+     SUBDIR += qtxdg-tools
      SUBDIR += session
      SUBDIR += sudo
      SUBDIR += themes
