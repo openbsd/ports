@@ -3,6 +3,7 @@ VERSION =	0.26.15
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
+REVISION =	0
 
 MODKDE_KF5 =	Yes
 
