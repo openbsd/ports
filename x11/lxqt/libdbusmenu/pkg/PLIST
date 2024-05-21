@@ -1,0 +1,12 @@
+include/dbusmenu-lxqt/
+include/dbusmenu-lxqt/dbusmenu_export.h
+include/dbusmenu-lxqt/dbusmenu_version.h
+include/dbusmenu-lxqt/dbusmenuexporter.h
+include/dbusmenu-lxqt/dbusmenuimporter.h
+lib/cmake/dbusmenu-lxqt/
+lib/cmake/dbusmenu-lxqt/dbusmenu-lxqt-config-version.cmake
+lib/cmake/dbusmenu-lxqt/dbusmenu-lxqt-config.cmake
+lib/cmake/dbusmenu-lxqt/dbusmenu-lxqt-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/dbusmenu-lxqt/dbusmenu-lxqt-targets.cmake
+@lib lib/libdbusmenu-lxqt.so.${LIBdbusmenu-lxqt_VERSION}
+lib/pkgconfig/dbusmenu-lxqt.pc
