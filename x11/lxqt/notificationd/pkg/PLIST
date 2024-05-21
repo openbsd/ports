@@ -10,7 +10,7 @@ share/examples/lxqt-notificationd/xdg/
 share/examples/lxqt-notificationd/xdg/autostart/
 share/examples/lxqt-notificationd/xdg/autostart/lxqt-notifications.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-notifications.desktop
-@tag update-desktop-database
+share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-config-notificationd/
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ar.qm
@@ -26,6 +26,7 @@ share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_el.q
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_en_GB.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_es.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_et.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_fi.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_fr.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_gl.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_he.qm
@@ -35,10 +36,13 @@ share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_id.q
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_it.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ja.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_ko.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lg.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lt.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_lv.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_nb_NO.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_nl.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_oc.qm
+share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pa.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pl.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt.qm
 share/lxqt/translations/lxqt-config-notificationd/lxqt-config-notificationd_pt_BR.qm
@@ -62,6 +66,7 @@ share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_el.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_en_GB.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_es.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_et.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_fi.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_fr.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_gl.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_he.qm
@@ -70,11 +75,15 @@ share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_hu.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_id.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_it.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ja.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_kk.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_ko.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lg.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lt.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_lv.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nb_NO.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_nl.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_oc.qm
+share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pa.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pl.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_pt_BR.qm
@@ -87,3 +96,4 @@ share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_uk.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_vi.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_CN.qm
 share/lxqt/translations/lxqt-notificationd/lxqt-notificationd_zh_TW.qm
+@tag update-desktop-database

@@ -1,0 +1,12 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -42,7 +42,7 @@ target_link_libraries(lxqt-notificationd
+     Qt6::DBus
+     lxqt
+     KF6::WindowSystem
+-    LayerShellQtInterface
++    LayerShellQt::Interface
+ )
+ 
+ install(TARGETS
