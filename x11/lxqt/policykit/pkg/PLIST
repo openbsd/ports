@@ -7,6 +7,7 @@ share/examples/lxqt-policykit/xdg/
 share/examples/lxqt-policykit/xdg/autostart/
 share/examples/lxqt-policykit/xdg/autostart/lxqt-policykit-agent.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/lxqt-policykit-agent.desktop
+share/lxqt/
 share/lxqt/translations/
 share/lxqt/translations/lxqt-policykit-agent/
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ar.qm
@@ -21,6 +22,7 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_de.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_el.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_es.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_et.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fi.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_fr.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_gl.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_he.qm
@@ -30,9 +32,12 @@ share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_id.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_it.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ja.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ko.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lg.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_lt.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nb_NO.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_nl.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_oc.qm
+share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pa.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pl.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_pt.qm
 share/lxqt/translations/lxqt-policykit-agent/lxqt-policykit-agent_ro.qm

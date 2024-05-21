@@ -1,18 +1,16 @@
 COMMENT =	policy kit agent for LXQt
 
 NAME =		lxqt-policykit
-REVISION =	0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5WindowSystem Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xdg Qt5XdgIconLoader
-WANTLIB += Qt5Xml X11 c gio-2.0 glib-2.0 gobject-2.0 intl lxqt
-WANTLIB += m polkit-agent-1 polkit-gobject-1 polkit-qt5-agent-1
-WANTLIB += polkit-qt5-core-1
+WANTLIB += ${COMPILER_LIBCXX} GL KF6WindowSystem Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Svg Qt6Widgets Qt6Xdg Qt6XdgIconLoader Qt6Xml
+WANTLIB += X11 c gio-2.0 glib-2.0 gobject-2.0 intl lxqt m polkit-agent-1
+WANTLIB += polkit-gobject-1 polkit-qt6-agent-1 polkit-qt6-core-1
 
-LIB_DEPENDS +=		x11/lxqt/liblxqt>=1.0.0 \
-			x11/polkit-qt,qt5
+LIB_DEPENDS =	x11/lxqt/liblxqt \
+		x11/polkit-qt
 
-BUILD_DEPENDS +=	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/test/test_agent.sh
