@@ -3,7 +3,7 @@ COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
 CATEGORIES =	devel graphics
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	SDL2_image		1.1 # 2.8.2
 
@@ -38,5 +38,8 @@ CONFIGURE_ARGS +=	--disable-avif-shared \
 			--disable-tif-shared \
 			--disable-webp-shared
 CONFIGURE_ENV +=	OBJC="${CC}"
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/sdl2_image-config.cmake.in
 
 .include <bsd.port.mk>

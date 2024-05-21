@@ -1,0 +1,12 @@
+Index: sdl2_image-config.cmake.in
+--- sdl2_image-config.cmake.in.orig
++++ sdl2_image-config.cmake.in
+@@ -78,7 +78,7 @@ if(NOT TARGET SDL2_image::SDL2_image)
+     else()
+         set_target_properties(SDL2_image::SDL2_image
+             PROPERTIES
+-                IMPORTED_LOCATION "${_sdl2image_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_image${CMAKE_SHARED_LIBRARY_SUFFIX}"
++                IMPORTED_LOCATION "${_sdl2image_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_image${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBSDL2_image_VERSION}"
+         )
+     endif()
+ endif()
