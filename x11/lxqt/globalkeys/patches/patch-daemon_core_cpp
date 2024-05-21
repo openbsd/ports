@@ -1,7 +1,7 @@
 Index: daemon/core.cpp
 --- daemon/core.cpp.orig
 +++ daemon/core.cpp
-@@ -888,7 +888,7 @@ void Core::log(int level, const char *format, ...) con
+@@ -890,7 +890,7 @@ void Core::log(int level, const char *format, ...) con
      va_start(ap, format);
      if (mUseSyslog)
      {
