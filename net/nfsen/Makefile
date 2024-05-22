@@ -5,6 +5,7 @@ REVISION=	9
 DISTNAME=	nfsen-$V
 CATEGORIES=	net www
 HOMEPAGE=	https://nfsen.sourceforge.net/
+PORTROACH=	site:https://github.com/phaag/nfsen/releases/
 
 # BSD
 PERMIT_PACKAGE=	Yes
