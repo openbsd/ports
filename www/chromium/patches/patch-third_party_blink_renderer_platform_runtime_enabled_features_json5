@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 --- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -313,7 +313,7 @@
+@@ -323,7 +323,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1961,7 +1961,7 @@
+@@ -1928,7 +1928,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
        origin_trial_feature_name: "FullscreenPopupWindows",
@@ -19,7 +19,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      {
        name: "GamepadButtonAxisEvents",
-@@ -2882,7 +2882,7 @@
+@@ -2890,7 +2890,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "stable",
      },
      {
-@@ -3074,7 +3074,7 @@
+@@ -3078,7 +3078,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -37,7 +37,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -3942,7 +3942,7 @@
+@@ -3946,7 +3946,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -46,7 +46,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4102,7 +4102,7 @@
+@@ -4113,7 +4113,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",

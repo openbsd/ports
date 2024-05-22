@@ -1,7 +1,7 @@
 Index: net/url_request/url_request_context.cc
 --- net/url_request/url_request_context.cc.orig
 +++ net/url_request/url_request_context.cc
-@@ -117,7 +117,7 @@ const HttpNetworkSessionContext* URLRequestContext::Ge
+@@ -121,7 +121,7 @@ const HttpNetworkSessionContext* URLRequestContext::Ge
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if !BUILDFLAG(IS_WIN) && \

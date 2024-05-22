@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser_ui_prefs.cc
 --- chrome/browser/ui/browser_ui_prefs.cc.orig
 +++ chrome/browser/ui/browser_ui_prefs.cc
-@@ -168,7 +168,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
+@@ -175,7 +175,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeFallbacks);
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeNavigations);
    registry->RegisterBooleanPref(prefs::kHttpsOnlyModeAutoEnabled, false);

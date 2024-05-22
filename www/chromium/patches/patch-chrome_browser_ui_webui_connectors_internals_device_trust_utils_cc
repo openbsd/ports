@@ -19,7 +19,7 @@ Index: chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -189,7 +189,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
+@@ -173,7 +173,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {

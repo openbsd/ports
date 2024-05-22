@@ -9,7 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			124.0.6367.207
+V=			125.0.6422.60
 
 DISTNAME=		chromium-${V}
 
@@ -163,6 +163,7 @@ GN_ARGS=	enable_nacl=false \
 		enable_log_error_not_reached=true \
 		use_kerberos=false \
 		use_sndio=true \
+		use_pulseaudio=true \
 		use_cups=true \
 		use_system_libdrm=true \
 		use_system_libjpeg=true \
@@ -214,7 +215,7 @@ PKG_ARGS+=	-Dswiftshader=0
 .endif
 
 FFMPEG_BRAND=	Chrome
-FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -257,8 +258,8 @@ pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	cd ${WRKSRC}/third_party/ffmpeg && \
-		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	cd ${WRKSRC}/media/ffmpeg && \
+		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
@@ -344,7 +345,7 @@ do-install:
 .endfor
 
 pre-test:
-.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
+.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//} ${REGRESS_DISTFILES.a:C/:[0-9]$//}
 	@${ECHO_MSG} "Extracting ${_d}"
 	@case ${_d} in \
 	*testdata*.tar.xz) \

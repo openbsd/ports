@@ -1,7 +1,7 @@
 Index: media/gpu/vaapi/vaapi_wrapper.cc
 --- media/gpu/vaapi/vaapi_wrapper.cc.orig
 +++ media/gpu/vaapi/vaapi_wrapper.cc
-@@ -67,7 +67,7 @@
+@@ -70,7 +70,7 @@
  using media_gpu_vaapi::kModuleVa_prot;
  #endif
  

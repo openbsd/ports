@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/ui_features.cc
 --- chrome/browser/ui/ui_features.cc.orig
 +++ chrome/browser/ui/ui_features.cc
-@@ -410,7 +410,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
+@@ -426,7 +426,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
               "TopChromeWebUIUsesSpareRenderer",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

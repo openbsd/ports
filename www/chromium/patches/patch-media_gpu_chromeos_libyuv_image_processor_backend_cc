@@ -10,7 +10,7 @@ Index: media/gpu/chromeos/libyuv_image_processor_backend.cc
      CONV(NV12, AR24, kConversion, Supported),
  #endif
      CONV(NV12, NV12, kConversion, Supported),
-@@ -436,7 +436,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
+@@ -410,7 +410,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
            fr->GetWritableVisibleData(VideoFrame::kUVPlane)), \
        fr->stride(VideoFrame::kUVPlane)
  
@@ -19,7 +19,7 @@ Index: media/gpu/chromeos/libyuv_image_processor_backend.cc
  #define ARGB_DATA(fr)                                 \
    fr->GetWritableVisibleData(VideoFrame::kARGBPlane), \
        fr->stride(VideoFrame::kARGBPlane)
-@@ -597,7 +597,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
+@@ -571,7 +571,7 @@ int LibYUVImageProcessorBackend::DoConversion(const Fr
      }
    }
  

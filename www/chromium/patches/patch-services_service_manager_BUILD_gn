@@ -1,7 +1,7 @@
 Index: services/service_manager/BUILD.gn
 --- services/service_manager/BUILD.gn.orig
 +++ services/service_manager/BUILD.gn
-@@ -67,7 +67,7 @@ source_set("service_manager") {
+@@ -66,7 +66,7 @@ source_set("service_manager") {
      ]
    }
  

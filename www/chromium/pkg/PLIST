@@ -127,6 +127,11 @@ chrome/locales/zh-TW.pak.info
 chrome/product_logo_48.png
 chrome/resources/
 chrome/resources.pak
+chrome/resources/accessibility/
+chrome/resources/accessibility/reading_mode_gdocs_helper/
+chrome/resources/accessibility/reading_mode_gdocs_helper/content.js
+chrome/resources/accessibility/reading_mode_gdocs_helper/gdocs_script.js
+chrome/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 chrome/resources/inspector_overlay/
 chrome/resources/inspector_overlay/inspector_overlay_resources.grd
 chrome/resources/inspector_overlay/main.js

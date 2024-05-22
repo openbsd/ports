@@ -9,7 +9,7 @@ Index: content/browser/browser_child_process_host_impl.cc
    };
    cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
  
-@@ -644,7 +645,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+@@ -657,7 +658,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
            ->child_process());
  #endif
  

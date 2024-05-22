@@ -10,7 +10,7 @@ Index: chrome/browser/ui/chrome_pages.h
  namespace web_app {
  enum class AppSettingsPageEntryPoint;
  }  // namespace web_app
-@@ -262,7 +262,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -263,7 +263,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
