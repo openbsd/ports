@@ -5,6 +5,7 @@ REVISION =	4
 CATEGORIES =	databases www
 
 HOMEPAGE =	https://pgstatsinfo.sourceforge.net/
+PORTROACH =	site:https://github.com/ossc-db/pg_stats_reporter/releases/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
