@@ -1,10 +1,10 @@
 Index: Make.openbsd
 --- Make.openbsd.orig
 +++ Make.openbsd
-@@ -5,17 +5,17 @@ AS=as
+@@ -4,17 +4,17 @@ AR=ar
+ AS=as
  RANLIB=ranlib
  X11=/usr/X11R6
- CC=gcc
 -CFLAGS=-Wall -Wno-missing-braces -ggdb -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) -O2
 +CFLAGS=-Wall -Wno-missing-braces -I$(ROOT) -I$(ROOT)/include -I$(ROOT)/kern -c -I$(X11)/include -D_THREAD_SAFE $(PTHREAD) $(PORTS_CFLAGS)
  O=o

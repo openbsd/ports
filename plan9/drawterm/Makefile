@@ -2,8 +2,8 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm aarch64
 
 COMMENT=	Plan9 terminal emulator
 
-V=		e65af5d4e422db4722e2cc026ecca5607dedfc5a
-DISTNAME=	drawterm-20211008
+V=		c0951f2a3182d8b70ffe579bfd9da24c2b86e232
+DISTNAME=	drawterm-20240423
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{snap${EXTRACT_SUFX}}
 WRKDIST=	${WRKDIR}/drawterm
 
