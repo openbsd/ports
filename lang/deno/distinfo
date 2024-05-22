@@ -36,6 +36,7 @@ SHA256 (cargo/backtrace-0.3.71.tar.gz) = JrBYANLoF8iztLVKvUYXJiZfqXia40MwYi8tue5
 SHA256 (cargo/base16ct-0.2.0.tar.gz) = TH8C1Opl8sGFMIn/2NJ4e9vGPeLw0p3tvPjM36DM1M8=
 SHA256 (cargo/base32-0.4.0.tar.gz) = I85mnNbIWI954Vz0UDFPljj5Z/xXcP8cfB3rCSXqfPo=
 SHA256 (cargo/base64-0.21.7.tar.gz) = nSl96xkluJ8szBPXY1+gcU8SyHrc4cdTVrOcqbcXhWc=
+SHA256 (cargo/base64-0.22.1.tar.gz) = crMlTxYlGoOBqhLkDjxNLwGZ+MZQj77LnZH1deD7uMY=
 SHA256 (cargo/base64-simd-0.7.0.tar.gz) = eB3SDDr/C9GU/n0ql33ZLyHBc4kfOgO2dzWeX6RX5dU=
 SHA256 (cargo/base64-simd-0.8.0.tar.gz) = M5q7545zF4di4jvqnf0I5pfrPzMBzUvpgcD3i6WFkZU=
 SHA256 (cargo/base64ct-1.6.0.tar.gz) = jDwaNo9w1s9zAtePj3CT2iQfuOiAfAXMnlGhJYlabVs=
@@ -125,7 +126,7 @@ SHA256 (cargo/deno_ops-0.156.0.tar.gz) = gjeyctsabLlBuKWmO6Y1OQBKgmPosCMKERNtdu6
 SHA256 (cargo/deno_semver-0.5.4.tar.gz) = tJ4U7/2d+O0mH3oaNKwZu68PqUDFm9GabYMTz0FSXhw=
 SHA256 (cargo/deno_task_shell-0.16.1.tar.gz) = l+X/ZqHontt8oMNrc6j83ACLpCbErXo24d+z9KFmF54=
 SHA256 (cargo/deno_terminal-0.1.1.tar.gz) = fmM31Ofzdfi5hkCadvvuz6S9ihND5jNVcprkvvoFjq8=
-SHA256 (cargo/deno_unsync-0.3.2.tar.gz) = MN/34DWE264Yja6WoPGHZ0AFSAmyrQz3yfxdNh8g5zk=
+SHA256 (cargo/deno_unsync-0.3.4.tar.gz) = dVel6SeLmlzIBW3DcGLqQ0R3C9pO61lzx8u36/Y2uaQ=
 SHA256 (cargo/deno_whoami-0.1.0.tar.gz) = 515MqpK5iifwnGcdE5mu4PWXCqSRuaWYUjqsAAohkuM=
 SHA256 (cargo/denokv_proto-0.5.0.tar.gz) = mKeffpi/08FIzngsJ8FJTnfDyUq4fJ5+hukBy8FkNEk=
 SHA256 (cargo/denokv_remote-0.5.0.tar.gz) = UY4YHrFPGjuPxCPkjeQxBIJJeA+wgV2B6BOfrzR8Mmk=
@@ -140,6 +141,8 @@ SHA256 (cargo/derive_more-0.99.17.tar.gz) = T7gQ0wp8GVP5EzTeckRzH8PzwQ1/4WMzijW5
 SHA256 (cargo/deunicode-1.4.3.tar.gz) = tuhUEmdWxJa4yB3siPmnBrFbh1xYSdQJejhUR2uf35Q=
 SHA256 (cargo/diff-0.1.13.tar.gz) = ViVJhndeMjP/qcTX0/qvbTaiwJ0wsgaH6fiLyLr8Fsg=
 SHA256 (cargo/digest-0.10.7.tar.gz) = ntmigfe8m3V25hRoumFaZqXIz9/0JCCnCqgnAaOx4pI=
+SHA256 (cargo/dirs-5.0.1.tar.gz) = RMRanQPWZ2ZSvLXnJMfpiN4aytI6cRtSF6ucvsvsIiU=
+SHA256 (cargo/dirs-sys-0.4.1.tar.gz) = Ug8FpcvTNfrlqZ/3pquGJ1d2YO5c/WqUpqkptS/wMhw=
 SHA256 (cargo/displaydoc-0.2.4.tar.gz) = SHWF9NDGZV/nSQXiUE2K1pCOTbZ/dE6xQIdpBsLzF10=
 SHA256 (cargo/dissimilar-1.0.4.tar.gz) = jJe5IzWB2EuOHmic3TpHtvaXcAhPwkboan94sNnB1KU=
 SHA256 (cargo/dlopen2-0.6.1.tar.gz) = a8LH7Qb9cqhRPe2NDS9v0mVahdaIXEjK6GJdgPryjAM=
@@ -302,6 +305,7 @@ SHA256 (cargo/libffi-sys-2.3.0.tar.gz) = 82EVFgxX6FKXgbQYPCu1H9wfbW0e00VZHYS+dwO
 SHA256 (cargo/libloading-0.7.4.tar.gz) = tnOA/TsvvnUnpgbhhynSHG85UWM9BQBXTE3CLS1ji58=
 SHA256 (cargo/libloading-0.8.3.tar.gz) = DCoZj7aw6toqjfR5M3NObTXTUGZaM6NZPXFk+lLHXBk=
 SHA256 (cargo/libm-0.2.8.tar.gz) = TsKoYhNNKn0y15g93N0cSSNTCDPJ8uoaRPxfpHOYkFg=
+SHA256 (cargo/libredox-0.1.3.tar.gz) = wP83vVkMolBj41r3RcNDy3oCcZBvt7N+SBPo958AJo0=
 SHA256 (cargo/libsqlite3-sys-0.26.0.tar.gz) = r8Iu/2GxM7EVxujHToGMYo1tXnpQKv6m9k3uB23ZQyY=
 SHA256 (cargo/libz-sys-1.1.16.tar.gz) = XhQ7XmZrJpXSj2vKZJdyCBP2mclgLdf1yskQCLitp/k=
 SHA256 (cargo/linked-hash-map-0.5.6.tar.gz) = BxfO8byLY2xuHBu978CeYyLaipMhlm6JKO+A0g9/dw8=
@@ -360,6 +364,7 @@ SHA256 (cargo/onig_sys-69.8.1.tar.gz) = e4KePX6cx0x+MV7o7bGFv0GQ2lrN50r9f8WcNbHw
 SHA256 (cargo/opaque-debug-0.3.1.tar.gz) = wI1liF7jiHbE+G+lA/tJ17UHwrYlUt98cLL85ifgY4E=
 SHA256 (cargo/open-5.1.2.tar.gz) = RJ8P+FXYXdvx7dW2RtZSSerT9eQiqqhrfS0LBJsQPjI=
 SHA256 (cargo/openssl-probe-0.1.5.tar.gz) = /wEaMCw5alGXaSQx/BlIAZFUr8F4uvfY43NnRCpGAc8=
+SHA256 (cargo/option-ext-0.2.0.tar.gz) = BHRPSerpmreODVwLYDqyGPUV6oz+WkVtdimtiDo7bn0=
 SHA256 (cargo/ordered-float-2.10.1.tar.gz) = aPGdZ+WieVyU5z4Lscwaft6y4o79OeLhybekDBEIsRw=
 SHA256 (cargo/os_pipe-1.1.5.tar.gz) = VxGcO4k5hkkeyaqFBWeA06Dzz02nzAndNlDb1sZzj7k=
 SHA256 (cargo/outref-0.1.0.tar.gz) = fyIoKa6Sk+M6n16fRAxnYKPUUKZK/+GEZIaxQNuBwfQ=
@@ -437,6 +442,7 @@ SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.2.16.tar.gz) = +1pYwYVbS2gZ1ZASFVYD8LIq0wytdSYAqt/LaVJlUZo=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
+SHA256 (cargo/redox_users-0.4.5.tar.gz) = vSg9llHu2ksqg6Q8HJGyZsQP127NOaUKjGMK5p3HKJE=
 SHA256 (cargo/ref-cast-1.0.22.tar.gz) = xIRtTFDRchsaO++K92kk7vINXnI2RzM3mMG1GbOpRz8=
 SHA256 (cargo/ref-cast-impl-1.0.22.tar.gz) = X920+NmbCi66/GWoemmnuYdeSxrh8A2yZdMA738ovMw=
 SHA256 (cargo/regex-1.10.4.tar.gz) = wRfb396cgwiXW2oY1x8/OFyJRh97P7BUKI7PKiBYukw=
@@ -450,6 +456,7 @@ SHA256 (cargo/ring-0.17.8.tar.gz) = wX+ky2WONYNCPpFbnzrMAczq7hhg4z1Z665mrcOi3A0=
 SHA256 (cargo/ripemd-0.1.3.tar.gz) = vRJCItF62TpkTtnQEaQPT7ZKpUJ1wIzCFlJKnqgvsJ8=
 SHA256 (cargo/ron-0.8.1.tar.gz) = uR9+/wX3SHZ/GD30Mgpj1pNunGEH2Xyea92XhPQonJQ=
 SHA256 (cargo/rsa-0.9.6.tar.gz) = XQ5RJPyzDnan55v+5oOidG24N4S4Yon2JRtUt5UKDfw=
+SHA256 (cargo/runtimelib-0.9.0.tar.gz) = QwC0arbylw+BwXb08vf/CkiAn1K+eo/Uyloy6QAvbo8=
 SHA256 (cargo/rusqlite-0.29.0.tar.gz) = VJudA21XHULm6F0cFCXirINJEHUHjKmhW+AhxWsWQfI=
 SHA256 (cargo/rustc-demangle-0.1.23.tar.gz) = 1ia7na534oIZk3rwRcJXwov9P2kzPFElU1B/X5eYy3Y=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
@@ -491,8 +498,10 @@ SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBE
 SHA256 (cargo/serde_v8-0.189.0.tar.gz) = iTyZUlXW+/VcMxZrZR/QN8TjzHhkv4IhPqGNDslO0WU=
 SHA256 (cargo/sha-1-0.10.0.tar.gz) = Ao9I1RP5Z4zaKPbkBkdVs/uyr2rNZy8sIJtiMj966g8=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
+SHA256 (cargo/sha1_smol-1.0.0.tar.gz) = rhpHGGwDoyF3BC5V28X9Wu6QC44AaajXD7qWqTdc0BI=
 SHA256 (cargo/sha2-0.10.8.tar.gz) = eT23WtK8r8P/p8aLIV/uJo9TeYLNkB0TL4nGND86Pcg=
 SHA256 (cargo/shell-escape-0.1.5.tar.gz) = RbtnoY+pEmbMeAcYH2L5F4poc7+tfceIxC5kMNtAGE8=
+SHA256 (cargo/shellexpand-3.1.0.tar.gz) = 2gP6O5TMGePr/IjEIpxJ2PCM29EiiHCkXw/9+EmI4Us=
 SHA256 (cargo/signal-hook-0.3.17.tar.gz) = hiFYfUeYyvjrRIedQuVrmpPqXc0xWmSHw1cTAJW2KAE=
 SHA256 (cargo/signal-hook-registry-1.4.1.tar.gz) = 2CKbRzuqWYCscu9DTEQV5wxLXnG0IwQ620ugWficmaE=
 SHA256 (cargo/signature-2.2.0.tar.gz) = d1STmVUt5FqJilgMG0HURb9zDfhnzETmwCM7vEuDKd4=
@@ -685,7 +694,7 @@ SHA256 (cargo/zeromq-0.3.4.tar.gz) = LbNfvH2QgtOahcmDHsXce3sTUDjS8Au1/ypMAnWJPaE
 SHA256 (cargo/zstd-0.12.4.tar.gz) = GidZXhc2QRcfx0oSMrexx6fLbhgiLBHp37mIj6QkxTw=
 SHA256 (cargo/zstd-safe-6.0.6.tar.gz) = 7pj/0LSO6V5sUWgYjkSlRVCxVk2dUw7iHV8OrtEGlYE=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (deno-1.43.5.tar.gz) = SV4c24XUiZATDHI+qeRYunZpYURR98Sh782OSuM+YJI=
+SHA256 (deno-1.43.6.tar.gz) = abmscPSIXLh6mW7vRrvYAx+trXkknvIKrWeJ5aM7m18=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -724,6 +733,7 @@ SIZE (cargo/backtrace-0.3.71.tar.gz) = 86553
 SIZE (cargo/base16ct-0.2.0.tar.gz) = 10240
 SIZE (cargo/base32-0.4.0.tar.gz) = 7791
 SIZE (cargo/base64-0.21.7.tar.gz) = 82576
+SIZE (cargo/base64-0.22.1.tar.gz) = 81597
 SIZE (cargo/base64-simd-0.7.0.tar.gz) = 9966
 SIZE (cargo/base64-simd-0.8.0.tar.gz) = 12531
 SIZE (cargo/base64ct-1.6.0.tar.gz) = 28870
@@ -813,7 +823,7 @@ SIZE (cargo/deno_ops-0.156.0.tar.gz) = 62779
 SIZE (cargo/deno_semver-0.5.4.tar.gz) = 21147
 SIZE (cargo/deno_task_shell-0.16.1.tar.gz) = 43207
 SIZE (cargo/deno_terminal-0.1.1.tar.gz) = 4489
-SIZE (cargo/deno_unsync-0.3.2.tar.gz) = 7545
+SIZE (cargo/deno_unsync-0.3.4.tar.gz) = 10232
 SIZE (cargo/deno_whoami-0.1.0.tar.gz) = 3032
 SIZE (cargo/denokv_proto-0.5.0.tar.gz) = 19500
 SIZE (cargo/denokv_remote-0.5.0.tar.gz) = 6780
@@ -828,6 +838,8 @@ SIZE (cargo/derive_more-0.99.17.tar.gz) = 55771
 SIZE (cargo/deunicode-1.4.3.tar.gz) = 177180
 SIZE (cargo/diff-0.1.13.tar.gz) = 46216
 SIZE (cargo/digest-0.10.7.tar.gz) = 19557
+SIZE (cargo/dirs-5.0.1.tar.gz) = 12255
+SIZE (cargo/dirs-sys-0.4.1.tar.gz) = 10719
 SIZE (cargo/displaydoc-0.2.4.tar.gz) = 23200
 SIZE (cargo/dissimilar-1.0.4.tar.gz) = 28793
 SIZE (cargo/dlopen2-0.6.1.tar.gz) = 27273
@@ -990,6 +1002,7 @@ SIZE (cargo/libffi-sys-2.3.0.tar.gz) = 1383479
 SIZE (cargo/libloading-0.7.4.tar.gz) = 27580
 SIZE (cargo/libloading-0.8.3.tar.gz) = 28480
 SIZE (cargo/libm-0.2.8.tar.gz) = 113450
+SIZE (cargo/libredox-0.1.3.tar.gz) = 6068
 SIZE (cargo/libsqlite3-sys-0.26.0.tar.gz) = 4840390
 SIZE (cargo/libz-sys-1.1.16.tar.gz) = 3958920
 SIZE (cargo/linked-hash-map-0.5.6.tar.gz) = 15049
@@ -1048,6 +1061,7 @@ SIZE (cargo/onig_sys-69.8.1.tar.gz) = 638216
 SIZE (cargo/opaque-debug-0.3.1.tar.gz) = 7066
 SIZE (cargo/open-5.1.2.tar.gz) = 23336
 SIZE (cargo/openssl-probe-0.1.5.tar.gz) = 7227
+SIZE (cargo/option-ext-0.2.0.tar.gz) = 7345
 SIZE (cargo/ordered-float-2.10.1.tar.gz) = 16029
 SIZE (cargo/os_pipe-1.1.5.tar.gz) = 11430
 SIZE (cargo/outref-0.1.0.tar.gz) = 3067
@@ -1125,6 +1139,7 @@ SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.2.16.tar.gz) = 24012
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
+SIZE (cargo/redox_users-0.4.5.tar.gz) = 15514
 SIZE (cargo/ref-cast-1.0.22.tar.gz) = 12664
 SIZE (cargo/ref-cast-impl-1.0.22.tar.gz) = 9306
 SIZE (cargo/regex-1.10.4.tar.gz) = 253191
@@ -1138,6 +1153,7 @@ SIZE (cargo/ring-0.17.8.tar.gz) = 4188554
 SIZE (cargo/ripemd-0.1.3.tar.gz) = 16601
 SIZE (cargo/ron-0.8.1.tar.gz) = 63251
 SIZE (cargo/rsa-0.9.6.tar.gz) = 80048
+SIZE (cargo/runtimelib-0.9.0.tar.gz) = 21843
 SIZE (cargo/rusqlite-0.29.0.tar.gz) = 137156
 SIZE (cargo/rustc-demangle-0.1.23.tar.gz) = 28970
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
@@ -1179,8 +1195,10 @@ SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
 SIZE (cargo/serde_v8-0.189.0.tar.gz) = 32226
 SIZE (cargo/sha-1-0.10.0.tar.gz) = 12239
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
+SIZE (cargo/sha1_smol-1.0.0.tar.gz) = 9782
 SIZE (cargo/sha2-0.10.8.tar.gz) = 26357
 SIZE (cargo/shell-escape-0.1.5.tar.gz) = 6847
+SIZE (cargo/shellexpand-3.1.0.tar.gz) = 25591
 SIZE (cargo/signal-hook-0.3.17.tar.gz) = 50296
 SIZE (cargo/signal-hook-registry-1.4.1.tar.gz) = 17987
 SIZE (cargo/signature-2.2.0.tar.gz) = 15531
@@ -1373,4 +1391,4 @@ SIZE (cargo/zeromq-0.3.4.tar.gz) = 53843
 SIZE (cargo/zstd-0.12.4.tar.gz) = 30434
 SIZE (cargo/zstd-safe-6.0.6.tar.gz) = 20828
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (deno-1.43.5.tar.gz) = 22550379
+SIZE (deno-1.43.6.tar.gz) = 22552437
