@@ -1,6 +1,6 @@
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20230215
+DISTNAME=	Mail-DMARC-1.20240314
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 CATEGORIES=	mail
@@ -44,6 +44,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Exception \
 		devel/p5-Test-File-ShareDir \
 		devel/p5-Test-Output \
+		net/p5-Net-DNS-Resolver-Mock \
 		textproc/p5-XML-Validator-Schema
 
 CONFIGURE_STYLE= modbuild
