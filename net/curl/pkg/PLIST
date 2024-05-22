@@ -18,7 +18,6 @@ include/curl/websockets.h
 lib/libcurl.la
 @lib lib/libcurl.so.${LIBcurl_VERSION}
 lib/pkgconfig/libcurl.pc
-@man man/man1/curl-config.1
 @man man/man1/curl.1
 @man man/man1/mk-ca-bundle.1
 @man man/man3/CURLINFO_ACTIVESOCKET.3
@@ -163,6 +162,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_DOH_SSL_VERIFYPEER.3
 @man man/man3/CURLOPT_DOH_SSL_VERIFYSTATUS.3
 @man man/man3/CURLOPT_DOH_URL.3
+@man man/man3/CURLOPT_ECH.3
 @man man/man3/CURLOPT_EGDSOCKET.3
 @man man/man3/CURLOPT_ERRORBUFFER.3
 @man man/man3/CURLOPT_EXPECT_100_TIMEOUT_MS.3
@@ -481,6 +481,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/curl_multi_strerror.3
 @man man/man3/curl_multi_timeout.3
 @man man/man3/curl_multi_wait.3
+@man man/man3/curl_multi_waitfds.3
 @man man/man3/curl_multi_wakeup.3
 @man man/man3/curl_pushheader_byname.3
 @man man/man3/curl_pushheader_bynum.3
