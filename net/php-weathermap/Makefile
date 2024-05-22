@@ -7,6 +7,7 @@ REVISION=	7
 CATEGORIES=	net www
 
 HOMEPAGE=	http://www.network-weathermap.com/
+PORTROACH=	site:https://github.com/Cacti/plugin_weathermap/releases/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
