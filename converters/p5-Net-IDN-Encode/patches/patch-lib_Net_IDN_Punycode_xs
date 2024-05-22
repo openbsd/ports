@@ -1,0 +1,14 @@
+use uvchr_to_utf8_flags instead of uvuni_to_utf8_flags which is removed in Perl 5.38
+https://github.com/cfaerber/Net-IDN-Encode/pull/11
+Index: lib/Net/IDN/Punycode.xs
+--- lib/Net/IDN/Punycode.xs.orig
++++ lib/Net/IDN/Punycode.xs
+@@ -253,7 +253,7 @@ decode_punycode(input)
+ 		  if(skip_p < re_p)				/* move succeeding chars */
+ 		    Move(skip_p, skip_p + u8, re_p - skip_p, char);
+ 		  re_p += u8;
+-		  uvuni_to_utf8_flags((U8*)skip_p, n, UNICODE_ALLOW_ANY);
++		  uvchr_to_utf8_flags((U8*)skip_p, n, UNICODE_ALLOW_ANY);
+ 		}
+ 
+ 		if(!first) SvUTF8_on(RETVAL);			/* UTF-8 chars have been inserted */

@@ -1,7 +1,7 @@
 COMMENT =	Internationalizing Domain Names in Applications
 
 DISTNAME =	Net-IDN-Encode-2.500
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net converters
 
