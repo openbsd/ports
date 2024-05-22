@@ -1,7 +1,7 @@
 COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter
-MODGO_VERSION =		v1.8.0
+MODGO_VERSION =		v1.8.1
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
 
