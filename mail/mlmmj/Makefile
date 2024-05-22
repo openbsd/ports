@@ -11,6 +11,9 @@ HOMEPAGE=	https://codeberg.org/mlmmj/mlmmj
 # MIT
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c iconv
 
 SITES=		https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${V:S/./_/g}/
