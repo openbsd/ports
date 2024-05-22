@@ -4,6 +4,7 @@ GH_ACCOUNT =	lloyd
 GH_PROJECT =	yajl
 GH_TAGNAME =	2.1.0
 PKGNAME =	lib${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

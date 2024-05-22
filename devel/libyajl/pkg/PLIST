@@ -7,5 +7,5 @@ include/yajl/yajl_parse.h
 include/yajl/yajl_tree.h
 include/yajl/yajl_version.h
 @lib lib/libyajl.so.${LIByajl_VERSION}
-lib/libyajl_s.a
+@static-lib lib/libyajl_s.a
 share/pkgconfig/yajl.pc

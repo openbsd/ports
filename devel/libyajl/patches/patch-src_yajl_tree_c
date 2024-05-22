@@ -1,0 +1,31 @@
+Plug leaks. From upstream
+
+https://github.com/lloyd/yajl/issues/250#issuecomment-1628695214
+https://github.com/likema/yajl/commit/31531a6e6b5641398237ce15b7e62da02d975fc6
+
+Index: src/yajl_tree.c
+--- src/yajl_tree.c.orig
++++ src/yajl_tree.c
+@@ -144,6 +144,7 @@ static yajl_val context_pop(context_t *ctx)
+ 
+     v = stack->value;
+ 
++    free (stack->key);
+     free (stack);
+ 
+     return (v);
+@@ -444,7 +445,14 @@ yajl_val yajl_tree_parse (const char *input,
+              snprintf(error_buffer, error_buffer_size, "%s", internal_err_str);
+              YA_FREE(&(handle->alloc), internal_err_str);
+         }
++        while(ctx.stack != NULL) {
++             yajl_val v = context_pop(&ctx);
++             yajl_tree_free(v);
++        }
+         yajl_free (handle);
++	//If the requested memory is not released in time, it will cause memory leakage
++	if(ctx.root)
++	     yajl_tree_free(ctx.root);
+         return NULL;
+     }
+ 
