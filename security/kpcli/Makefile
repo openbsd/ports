@@ -4,7 +4,7 @@ DISTNAME =	kpcli-4.0
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
-REVISION =	1
+REVISION =	2
 HOMEPAGE =	https://kpcli.sourceforge.io/
 
 # Perl

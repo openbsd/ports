@@ -1,5 +1,8 @@
-fixes opening passwordless (eg keyfile-only) kdbx
+chunk1: fixes opening passwordless (eg keyfile-only) kdbx
 https://sourceforge.net/p/kpcli/bugs/52/
+
+chunk2: fix totp generation with padded Base32 secrets
+https://sourceforge.net/p/kpcli/code/60/
 Index: kpcli-4.0.pl
 --- kpcli-4.0.pl.orig
 +++ kpcli-4.0.pl
@@ -15,3 +18,19 @@ Index: kpcli-4.0.pl
    if (defined $key_file and length($key_file) and -f $key_file) {
      push @components, File::KDBX::Key->new({ file => $key_file });
    }
+@@ -8023,7 +8026,14 @@ sub get_totp($$) {
+   my $key2FA = shift @_ || '';
+   my $digest = shift @_ || 'SHA'; # RFC6238 uses SHA-1 == Digest::SHA
+   my $oath = Authen::OATH->new( digest => 'Digest::'.uc($digest) );
+-  my $otp = $oath->totp(decode_base32($key2FA));
++  my $decoded_key2FA = undef;
++  $key2FA =~ s/=+$//; # Remove any trailing padding characters
++  if (! eval { $decoded_key2FA = decode_base32($key2FA); }) {
++    chomp $@;
++    print "Failed to Base32 decode the 2FA key: $@\n";
++    return undef;
++  }
++  my $otp = $oath->totp($decoded_key2FA);
+   return $otp;
+ }
+ 
