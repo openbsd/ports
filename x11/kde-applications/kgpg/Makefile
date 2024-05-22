@@ -1,6 +1,7 @@
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6Codecs
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
@@ -14,7 +15,6 @@ WANTLIB += KPim6AkonadiCore KPim6GrantleeTheme Qt6Core Qt6Core5Compat
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
 WANTLIB += Qt6Xml X11 c m
 
-
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -22,7 +22,10 @@ MODKDE5_ICON_CACHE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		security/gpgme
+
+RUN_DEPENDS =	security/gpgme
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kbookmarks \
