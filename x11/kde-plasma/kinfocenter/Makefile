@@ -11,26 +11,26 @@ WANTLIB += Qt6Qml Qt6Widgets c m usb-1.0
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_DOCS = Yes
 
-BUILD_DEPENDS =		devel/boost
+BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/dbus,-suid
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/dbus,-suid
 
-LIB_DEPENDS =		devel/kf6/kauth \
-			devel/kf6/kcmutils \
-			devel/kf6/kcolorscheme \
-			devel/kf6/kcompletion \
-			devel/kf6/kconfig \
-			devel/kf6/kconfigwidgets \
-			devel/kf6/kcoreaddons \
-			devel/kf6/ki18n \
-			devel/kf6/kio \
-			devel/kf6/kjobwidgets \
-			devel/kf6/kservice \
-			devel/kf6/kwidgetsaddons \
-			devel/kf6/solid \
-			devel/libusb1 \
-			x11/qt6/qtdeclarative
+LIB_DEPENDS =	devel/kf6/kauth \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/solid \
+		devel/libusb1 \
+		x11/qt6/qtdeclarative
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

@@ -1,6 +1,5 @@
 COMMENT =	minimal Plasma shell package
 DISTNAME =	plasma-nano-${VERSION}
-REVISION =	0
 
 MODKDE5_TRANSLATIONS =	Yes
 

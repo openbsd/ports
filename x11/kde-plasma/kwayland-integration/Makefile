@@ -1,7 +1,6 @@
 COMMENT =	integration kwayland plugins
 DISTNAME =	kwayland-integration-${VERSION}
 
-
 MODULES +=	devel/kf5
 
 BUILD_DEPENDS =	devel/kf5/kidletime

@@ -25,7 +25,6 @@ WANTLIB += kworkspace6 m notificationmanager processcore taskmanager
 WANTLIB += wayland-client wayland-cursor xcb xcb-record xcb-util
 WANTLIB += xcb-xkb xkbcommon xkbfile
 
-
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \
 		textproc/intltool \

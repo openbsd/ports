@@ -27,7 +27,7 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
-PLASMA_VERSION =	6.0.4
+PLASMA_VERSION =	6.0.5
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
 

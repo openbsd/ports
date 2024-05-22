@@ -1,6 +1,5 @@
 COMMENT =	KDE Plasma PulseAudio support
 DISTNAME =	plasma-pa-${VERSION}
-REVISION =	0
 
 MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_DOCS = Yes

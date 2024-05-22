@@ -18,7 +18,6 @@ fi
 export QT_FORCE_STDERR_LOGGING=1
 export XDG_CURRENT_DESKTOP=KDE
 export DESKTOP_SESSION=plasma
-export QT_FORCE_STDERR_LOGGING=1
 ${LOCALBASE}/bin/startplasma-x11 > ~/.startplasma-x11.log 2>&1
 
 Logging out and shutting down the computer
@@ -47,9 +46,9 @@ will also allow you to suspend the laptop from the logout dialog.
 
 Screen compositor
 =================
-The KDE compositor does not seem to run properly by default. It is recommended
-to deactivate this under: "System Setting" -> "Display Configuration" ->
-"Compositor" or in `~/.config/kwinrc":
+The KDE compositor may not run properly by default. You can deactivate it
+under: "System Setting" -> "Display Configuration" -> "Compositor" or
+in `~/.config/kwinrc":
 
 [Compositing]
 Enabled=false
@@ -88,7 +87,6 @@ ${LOCALBASE}/bin/ck-launch-session dbus-run-session ${LOCALBASE}/bin/startplasma
 
 Known issues
 ============
-- No compositor seem to run by default. (Read "Screen compositor"
 - You can't unlock your session when the screensaver has locked it. I get the
   graphical message "Something wrong happened. Run # ck-unlock-session ...".
   So you will end up with a freezen session that you have to completely kill.
@@ -134,7 +132,7 @@ Please help to improve this situation and report what works well and what does
 not. So that issues are known and a solution can be worked on. Please provide
 reports with debugging information:
 
-${LOCALBASE}/bin/qdbus-qt5 org.kde.KWin /KWin supportInformation
+${LOCALBASE}/bin/qdbus-qt6 org.kde.KWin /KWin supportInformation
 
 You can also output all error/info messages by starting `startplasma-x11` with
 the following options and provide a full error log.

@@ -123,6 +123,7 @@ share/locale/ca@valencia/LC_MESSAGES/powerdevil_osd.mo
 share/locale/cs/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/cs/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/cs/LC_MESSAGES/powerdevil.mo
+share/locale/cs/LC_MESSAGES/powerdevil_osd.mo
 share/locale/da/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/da/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/da/LC_MESSAGES/powerdevil.mo
@@ -139,6 +140,7 @@ share/locale/en_GB/LC_MESSAGES/powerdevil.mo
 share/locale/eo/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/eo/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/eo/LC_MESSAGES/powerdevil.mo
+share/locale/eo/LC_MESSAGES/powerdevil_osd.mo
 share/locale/es/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/es/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/es/LC_MESSAGES/powerdevil.mo
@@ -163,6 +165,7 @@ share/locale/ga/LC_MESSAGES/powerdevil.mo
 share/locale/gl/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/gl/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/gl/LC_MESSAGES/powerdevil.mo
+share/locale/gl/LC_MESSAGES/powerdevil_osd.mo
 share/locale/gu/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/gu/LC_MESSAGES/powerdevil.mo
 share/locale/he/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
@@ -295,6 +298,7 @@ share/locale/ug/LC_MESSAGES/powerdevil.mo
 share/locale/uk/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/uk/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/uk/LC_MESSAGES/powerdevil.mo
+share/locale/uk/LC_MESSAGES/powerdevil_osd.mo
 share/locale/wa/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/wa/LC_MESSAGES/powerdevil.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo

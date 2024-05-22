@@ -1,6 +1,5 @@
 COMMENT =	KDE monitor calibration tool
 DISTNAME =	kgamma-${VERSION}
-# XXX renamed from kgamma5 to kgamma
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n

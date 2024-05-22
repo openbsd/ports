@@ -1,5 +1,5 @@
-COMMENT =		Breeze KDE desktop theme
-DISTNAME =		breeze-${VERSION}
+COMMENT =	Breeze KDE desktop theme
+DISTNAME =	breeze-${VERSION}
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
