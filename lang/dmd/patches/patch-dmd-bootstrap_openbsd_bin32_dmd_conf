@@ -1,0 +1,12 @@
+Use the bootstrap libphobos2.a when linking the initially built dmd.
+
+Index: dmd-bootstrap/openbsd/bin32/dmd.conf
+--- dmd-bootstrap/openbsd/bin32/dmd.conf.orig
++++ dmd-bootstrap/openbsd/bin32/dmd.conf
+@@ -1,5 +1,5 @@
+ [Environment32]
+-DFLAGS=-I${TRUEPREFIX}/include/dmd/phobos -I${TRUEPREFIX}/include/dmd/druntime/import -L-L/usr/lib -L-L${TRUEPREFIX}/lib -L--export-dynamic -fPIC
++DFLAGS=-I%@P%/../../../dmd/druntime/src -I%@P%/../../../phobos -L-L%@P%/../../../phobos/generated/openbsd/release/32 -L--export-dynamic -fPIC -L-L%@P%/../../../dmd-bootstrap/openbsd/lib32
+ 
+ [Environment64]
+ DFLAGS=-I${TRUEPREFIX}/include/dmd/phobos -I${TRUEPREFIX}/include/dmd/druntime/import -L-L/usr/lib -L-L${TRUEPREFIX}/lib -L--export-dynamic -fPIC

@@ -84,6 +84,7 @@ include/dmd/druntime/import/core/internal/util/math.d
 include/dmd/druntime/import/core/internal/vararg/
 include/dmd/druntime/import/core/internal/vararg/aarch64.d
 include/dmd/druntime/import/core/internal/vararg/sysv_x64.d
+include/dmd/druntime/import/core/interpolation.d
 include/dmd/druntime/import/core/lifetime.d
 include/dmd/druntime/import/core/math.d
 include/dmd/druntime/import/core/memory.d
@@ -103,6 +104,7 @@ include/dmd/druntime/import/core/stdc/locale.d
 include/dmd/druntime/import/core/stdc/math.d
 include/dmd/druntime/import/core/stdc/signal.d
 include/dmd/druntime/import/core/stdc/stdarg.d
+include/dmd/druntime/import/core/stdc/stdatomic.d
 include/dmd/druntime/import/core/stdc/stddef.d
 include/dmd/druntime/import/core/stdc/stdint.d
 include/dmd/druntime/import/core/stdc/stdio.d
@@ -200,6 +202,7 @@ include/dmd/druntime/import/core/sys/freebsd/err.d
 include/dmd/druntime/import/core/sys/freebsd/execinfo.d
 include/dmd/druntime/import/core/sys/freebsd/ifaddrs.d
 include/dmd/druntime/import/core/sys/freebsd/net/
+include/dmd/druntime/import/core/sys/freebsd/net/if_.d
 include/dmd/druntime/import/core/sys/freebsd/net/if_dl.d
 include/dmd/druntime/import/core/sys/freebsd/netinet/
 include/dmd/druntime/import/core/sys/freebsd/netinet/in_.d
@@ -580,6 +583,7 @@ include/dmd/phobos/etc/c/sqlite3.d
 include/dmd/phobos/etc/c/zlib/
 include/dmd/phobos/etc/c/zlib.d
 include/dmd/phobos/etc/c/zlib/ChangeLog
+include/dmd/phobos/etc/c/zlib/LICENSE
 include/dmd/phobos/etc/c/zlib/README
 include/dmd/phobos/etc/c/zlib/adler32.c
 include/dmd/phobos/etc/c/zlib/compress.c
@@ -602,8 +606,6 @@ include/dmd/phobos/etc/c/zlib/inflate.c
 include/dmd/phobos/etc/c/zlib/inflate.h
 include/dmd/phobos/etc/c/zlib/inftrees.c
 include/dmd/phobos/etc/c/zlib/inftrees.h
-include/dmd/phobos/etc/c/zlib/linux.mak
-include/dmd/phobos/etc/c/zlib/osx.mak
 include/dmd/phobos/etc/c/zlib/test/
 include/dmd/phobos/etc/c/zlib/test/example.c
 include/dmd/phobos/etc/c/zlib/test/infcover.c
@@ -611,8 +613,6 @@ include/dmd/phobos/etc/c/zlib/test/minigzip.c
 include/dmd/phobos/etc/c/zlib/trees.c
 include/dmd/phobos/etc/c/zlib/trees.h
 include/dmd/phobos/etc/c/zlib/uncompr.c
-include/dmd/phobos/etc/c/zlib/win32.mak
-include/dmd/phobos/etc/c/zlib/win64.mak
 include/dmd/phobos/etc/c/zlib/zconf.h
 include/dmd/phobos/etc/c/zlib/zlib.3
 include/dmd/phobos/etc/c/zlib/zlib.h

@@ -1,12 +1,12 @@
-Index: dmd/druntime/posix.mak
---- dmd/druntime/posix.mak.orig
-+++ dmd/druntime/posix.mak
-@@ -65,11 +65,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
- DDOCFLAGS=-conf= -c -w -o- -Isrc -Iimport -version=CoreDdoc
+Index: dmd/druntime/Makefile
+--- dmd/druntime/Makefile.orig
++++ dmd/druntime/Makefile
+@@ -85,11 +85,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
+ DDOCFLAGS=-conf= -c -w -o- -Iimport -version=CoreDdoc
  
  # Set CFLAGS
--CFLAGS=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
-+CFLAGS+=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
+-CFLAGS=$(if $(findstring $(OS),windows),,$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H)
++CFLAGS+=$(if $(findstring $(OS),windows),,$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H)
  ifeq ($(BUILD),debug)
  	CFLAGS += -g
 -else
@@ -14,7 +14,7 @@ Index: dmd/druntime/posix.mak
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -474,7 +472,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
+@@ -520,7 +518,6 @@ benchmark-compile-only: $(ROOT)/benchmark$(DOTEXE) $(D
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################

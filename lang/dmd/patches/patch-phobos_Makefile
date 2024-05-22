@@ -1,0 +1,12 @@
+Index: phobos/Makefile
+--- phobos/Makefile.orig
++++ phobos/Makefile
+@@ -150,7 +150,7 @@ ifneq ($(USE_IMPORTC),1)
+ 		CC_OUTFILEFLAG := /Fo
+ 		CFLAGS := /nologo /Zl /GS- $(if $(findstring $(BUILD),debug),/Z7,/O2)
+ 	else # Posix
+-		CFLAGS := $(MODEL_FLAG) -fPIC -std=c11 $(if $(findstring $(BUILD),debug),-g,-O3)
++		CFLAGS += $(MODEL_FLAG) -fPIC -std=c11
+ 		ifeq (osx64,$(OS)$(MODEL))
+ 			CFLAGS += --target=x86_64-darwin-apple  # ARM cpu is not supported by dmd
+ 		endif

@@ -1,0 +1,12 @@
+Index: dmd/Makefile
+--- dmd/Makefile.orig
++++ dmd/Makefile
+@@ -19,7 +19,7 @@
+ 
+ include compiler/src/osmodel.mak
+ 
+-INSTALL_DIR=$(shell pwd)/../install
++INSTALL_DIR=../install
+ ECTAGS_LANGS = Make,C,C++,D,Sh
+ ECTAGS_FILES = compiler/dmd/*.[chd] compiler/dmd/backend/*.[chd] compiler/dmd/root/*.[chd]
+ 

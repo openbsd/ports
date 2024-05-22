@@ -1,0 +1,18 @@
+Index: dmd/compiler/docs/Makefile
+--- dmd/compiler/docs/Makefile.orig
++++ dmd/compiler/docs/Makefile
+@@ -4,7 +4,7 @@ DMD_MAN_PAGE=man/man1/dmd.1
+ DIFFABLE=0
+ 
+ build: $(GENERATED)/build
+-	./$(GENERATED)/build HOST_DMD="$(DMD)" DIFFABLE="$(DIFFABLE)" man
++	./$(GENERATED)/build HOST_DMD="$(HOST_DMD)" DIFFABLE="$(DIFFABLE)" man
+ 
+ preview: $(GENERATED)/docs/$(DMD_MAN_PAGE)
+ 	man -l $(GENERATED)/docs/$(DMD_MAN_PAGE)
+@@ -13,4 +13,4 @@ $(GENERATED)/docs/%: $(GENERATED)/build
+ 	$(GENERATED)/build $@
+ 
+ $(GENERATED)/build: ../src/build.d
+-	$(DMD) -of$@ ../src/build.d
++	$(HOST_DMD) -of$@ ../src/build.d
