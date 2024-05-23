@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -508,7 +508,7 @@ endif()
+@@ -510,7 +510,7 @@ endif()
  
  if(ENABLE_LAUNCHER OR ENABLE_EDITOR)
  	# Widgets finds its own dependencies (QtGui and QtCore).
