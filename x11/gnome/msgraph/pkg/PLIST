@@ -16,6 +16,7 @@ include/msg/msg-authorizer.h
 include/msg/msg-error.h
 include/msg/msg-goa-authorizer.h
 include/msg/msg-input-stream.h
+include/msg/msg-json-utils.h
 include/msg/msg-oauth2-authorizer.h
 include/msg/msg-private.h
 include/msg/msg-service.h
@@ -97,18 +98,17 @@ share/doc/msgraph-0/ctor.Message.new.html
 share/doc/msgraph-0/ctor.Message.new_from_json.html
 share/doc/msgraph-0/ctor.MessageService.new.html
 share/doc/msgraph-0/ctor.OAuth2Authorizer.new.html
-share/doc/msgraph-0/ctor.Service.new.html
 share/doc/msgraph-0/ctor.User.new.html
 share/doc/msgraph-0/ctor.User.new_from_json.html
 share/doc/msgraph-0/ctor.UserService.new.html
 share/doc/msgraph-0/enum.DriveType.html
-share/doc/msgraph-0/enum.LogLevel.html
 share/doc/msgraph-0/enum.MessageMailFolderType.html
 share/doc/msgraph-0/error.Error.html
 share/doc/msgraph-0/fonts.css
 share/doc/msgraph-0/func.OAUTH2_AUTHORIZER.html
 share/doc/msgraph-0/func.OAUTH2_AUTHORIZER_CLASS.html
 share/doc/msgraph-0/func.error_quark.html
+share/doc/msgraph-0/func.json_object_get_string.html
 share/doc/msgraph-0/fzy.js
 share/doc/msgraph-0/go-up-symbolic.png
 share/doc/msgraph-0/iface.Authorizer.html
@@ -150,6 +150,7 @@ share/doc/msgraph-0/method.DriveItem.set_parent_id.html
 share/doc/msgraph-0/method.DriveItemFile.get_mime_type.html
 share/doc/msgraph-0/method.DriveItemFile.get_thumbnail_uri.html
 share/doc/msgraph-0/method.DriveService.add_item_to_folder.html
+share/doc/msgraph-0/method.DriveService.copy_file.html
 share/doc/msgraph-0/method.DriveService.create_folder.html
 share/doc/msgraph-0/method.DriveService.delete.html
 share/doc/msgraph-0/method.DriveService.download_item.html
@@ -158,6 +159,7 @@ share/doc/msgraph-0/method.DriveService.get_drives.html
 share/doc/msgraph-0/method.DriveService.get_root.html
 share/doc/msgraph-0/method.DriveService.get_shared_with_me.html
 share/doc/msgraph-0/method.DriveService.list_children.html
+share/doc/msgraph-0/method.DriveService.move_file.html
 share/doc/msgraph-0/method.DriveService.rename.html
 share/doc/msgraph-0/method.DriveService.update.html
 share/doc/msgraph-0/method.DriveService.update_finish.html
@@ -182,6 +184,7 @@ share/doc/msgraph-0/method.Service.get_authorizer.html
 share/doc/msgraph-0/method.Service.get_session.html
 share/doc/msgraph-0/method.Service.refresh_authorization.html
 share/doc/msgraph-0/method.Service.send.html
+share/doc/msgraph-0/method.Service.send_and_parse_response.html
 share/doc/msgraph-0/method.Service.send_and_read.html
 share/doc/msgraph-0/method.User.get_mail.html
 share/doc/msgraph-0/method.UserService.get_user.html
@@ -204,6 +207,7 @@ share/doc/msgraph-0/type_func.OAuth2Authorizer.test_load_credentials.html
 share/doc/msgraph-0/type_func.OAuth2Authorizer.test_save_credentials.html
 share/doc/msgraph-0/type_func.Service.accept_certificate_cb.html
 share/doc/msgraph-0/type_func.Service.get_https_port.html
+share/doc/msgraph-0/type_func.Service.get_next_link.html
 share/doc/msgraph-0/type_func.Service.parse_response.html
 share/doc/msgraph-0/vfunc.Authorizer.process_request.html
 share/doc/msgraph-0/vfunc.Authorizer.refresh_authorization.html
