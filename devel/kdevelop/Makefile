@@ -4,7 +4,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
 DISTNAME =	kdevelop-${MODKDE_VERSION}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -57,6 +57,7 @@ MODULES =	x11/kde-applications \
 		lang/python
 
 MODKDE_KF5 =		Yes
+
 MODCLANG_COMPILER_LINKS=No
 MODCLANG_BUILDDEP=	No
 MODPY_BUILDDEP =	No
@@ -77,7 +78,7 @@ RUN_DEPENDS =	devel/clang-tools-extra \
 		lang/clazy \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic \
-		x11/kde-applications/kate>=${MODKDE_VERSION} \
+		x11/kde-applications/kate \
 		x11/kde-applications/konsole
 
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
