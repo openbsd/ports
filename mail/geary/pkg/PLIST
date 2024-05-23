@@ -2,7 +2,7 @@
 @pkgpath mail/postler
 @bin bin/geary
 lib/geary/
-@so lib/geary/libgeary-client-44.1.so
+@so lib/geary/libgeary-client-46.0.so
 lib/geary/plugins/
 lib/geary/plugins/desktop-notifications/
 lib/geary/plugins/desktop-notifications/desktop-notifications.plugin
@@ -386,6 +386,7 @@ share/locale/id/LC_MESSAGES/geary.mo
 share/locale/ie/LC_MESSAGES/geary.mo
 share/locale/it/LC_MESSAGES/geary.mo
 share/locale/ja/LC_MESSAGES/geary.mo
+share/locale/ka/LC_MESSAGES/geary.mo
 share/locale/kk/LC_MESSAGES/geary.mo
 share/locale/km/LC_MESSAGES/geary.mo
 share/locale/lt/LC_MESSAGES/geary.mo
