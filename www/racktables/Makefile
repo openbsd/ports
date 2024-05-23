@@ -13,6 +13,7 @@ PERMIT_PACKAGE=	Yes
 SITES=		${SITE_SOURCEFORGE:=racktables/}
 
 MODULES=	lang/php
+# 8.2: see https://github.com/RackTables/racktables/pull/285
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
