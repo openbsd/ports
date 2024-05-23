@@ -1,24 +1,22 @@
 COMMENT=	archive files using LZW compression (.lzh files)
 
-VERSION=	1.14i-ac20210926
-DISTNAME=	lha-${VERSION}
-PKGNAME=	lha-${VERSION:C/-/./}
+DIST_TUPLE=	github jca02266 lha 4f193b1e98700aa2bc9dfeef11943efc1f036154 .
+PKGNAME=	lha-1.14i.ac20230913
 CATEGORIES=	archivers
-
-HOMEPAGE=       https://lha.osdn.jp/
 
 MAINTAINER=	Yozo Toda <yozo@v007.vaio.ne.jp>
 
 # Restrictive
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
 
-GH_ACCOUNT =	jca02266
-GH_PROJECT =	lha
-GH_TAGNAME =	release-20210926
+WANTLIB=		c iconv
 
 CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS=		converters/libiconv
 
 .include <bsd.port.mk>
