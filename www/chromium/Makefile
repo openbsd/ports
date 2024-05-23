@@ -74,6 +74,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
+		audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
 		lang/node \
