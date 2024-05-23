@@ -47,6 +47,8 @@ libexec/openldap/homedir.la
 @so libexec/openldap/homedir.so
 libexec/openldap/memberof.la
 @so libexec/openldap/memberof.so
+libexec/openldap/nestgroup.la
+@so libexec/openldap/nestgroup.so
 libexec/openldap/otp.la
 @so libexec/openldap/otp.so
 libexec/openldap/pcache.la
@@ -108,6 +110,7 @@ libexec/openldap/valsort.la
 @man man/man5/slapo-dynlist.5
 @man man/man5/slapo-homedir.5
 @man man/man5/slapo-memberof.5
+@man man/man5/slapo-nestgroup.5
 @man man/man5/slapo-otp.5
 @man man/man5/slapo-pbind.5
 @man man/man5/slapo-pcache.5

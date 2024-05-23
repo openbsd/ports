@@ -1,7 +1,7 @@
 COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
 
-DISTNAME =	  openldap-2.6.7
+DISTNAME =	  openldap-2.6.8
 
 MULTI_PACKAGES =  -main -server
 PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
@@ -35,7 +35,7 @@ COMPILER =		base-clang ports-gcc
 DPB_PROPERTIES =	parallel
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 CONFIGURE_STYLE =	autoconf
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 USE_GMAKE =		Yes
