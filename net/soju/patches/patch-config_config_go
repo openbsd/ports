@@ -1,7 +1,7 @@
 Index: config/config.go
 --- config/config.go.orig
 +++ config/config.go
-@@ -13,7 +13,7 @@ import (
+@@ -14,7 +14,7 @@ import (
  
  var (
  	DefaultPath          string

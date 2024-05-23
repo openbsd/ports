@@ -1,7 +1,7 @@
 COMMENT =		user-friendly IRC bouncer
 
 MODGO_MODNAME =		git.sr.ht/~emersion/soju
-MODGO_VERSION =		v0.7.0
+MODGO_VERSION =		v0.8.0
 DISTNAME =		soju-${MODGO_VERSION}
 
 CATEGORIES =		net
