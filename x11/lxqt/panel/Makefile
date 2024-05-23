@@ -20,7 +20,8 @@ LIB_DEPENDS =	x11/lxqt/liblxqt>=2.0.0 \
 		devel/kf6/solid \
 		audio/pulseaudio
 
-BUILD_DEPENDS =	x11/lxqt/build-tools2
+BUILD_DEPENDS =	x11/lxqt/build-tools2 \
+		x11/lxqt/menu-data
 
 CONFIGURE_ARGS =	-DSENSORS_PLUGIN=No \
 			-DVOLUME_USE_ALSA=No
