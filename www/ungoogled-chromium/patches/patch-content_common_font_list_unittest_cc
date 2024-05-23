@@ -1,7 +1,7 @@
 Index: content/common/font_list_unittest.cc
 --- content/common/font_list_unittest.cc.orig
 +++ content/common/font_list_unittest.cc
-@@ -47,7 +47,7 @@ TEST(FontList, GetFontList) {
+@@ -48,7 +48,7 @@ TEST(FontList, GetFontList) {
          EXPECT_TRUE(HasFontWithName(fonts, "MS Gothic", "MS Gothic"));
          EXPECT_TRUE(HasFontWithName(fonts, "Segoe UI", "Segoe UI"));
          EXPECT_TRUE(HasFontWithName(fonts, "Verdana", "Verdana"));

@@ -31,4 +31,4 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
 +#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
  void WebRtcLoggingController::OnRtpPacket(
-     std::unique_ptr<uint8_t[]> packet_header,
+     base::HeapArray<uint8_t> packet_header,

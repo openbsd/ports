@@ -126,6 +126,11 @@ ungoogled-chromium/locales/zh-TW.pak.info
 ungoogled-chromium/product_logo_48.png
 ungoogled-chromium/resources/
 ungoogled-chromium/resources.pak
+ungoogled-chromium/resources/accessibility/
+ungoogled-chromium/resources/accessibility/reading_mode_gdocs_helper/
+ungoogled-chromium/resources/accessibility/reading_mode_gdocs_helper/content.js
+ungoogled-chromium/resources/accessibility/reading_mode_gdocs_helper/gdocs_script.js
+ungoogled-chromium/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 ungoogled-chromium/resources/inspector_overlay/
 ungoogled-chromium/resources/inspector_overlay/inspector_overlay_resources.grd
 ungoogled-chromium/resources/inspector_overlay/main.js

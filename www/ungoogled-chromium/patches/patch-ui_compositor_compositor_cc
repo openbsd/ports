@@ -1,7 +1,7 @@
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc
-@@ -910,7 +910,7 @@ void Compositor::OnResume() {
+@@ -922,7 +922,7 @@ void Compositor::OnResume() {
      obs.ResetIfActive();
  }
  

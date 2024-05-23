@@ -10,7 +10,7 @@ Index: ui/base/ime/init/input_method_initializer.cc
  #include "ui/base/ime/linux/fake_input_method_context.h"
  #include "ui/base/ime/linux/linux_input_method_context_factory.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -43,7 +43,7 @@ void RestartInputMethod() {
+@@ -33,7 +33,7 @@ void ShutdownInputMethod() {
  }
  
  void InitializeInputMethodForTesting() {
@@ -19,7 +19,7 @@ Index: ui/base/ime/init/input_method_initializer.cc
    GetInputMethodContextFactoryForTest() =
        base::BindRepeating([](LinuxInputMethodContextDelegate* delegate)
                                -> std::unique_ptr<LinuxInputMethodContext> {
-@@ -56,7 +56,7 @@ void InitializeInputMethodForTesting() {
+@@ -46,7 +46,7 @@ void InitializeInputMethodForTesting() {
  
  void ShutdownInputMethodForTesting() {
  #if !BUILDFLAG(IS_CHROMEOS_ASH) && defined(USE_AURA) && \

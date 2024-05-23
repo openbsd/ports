@@ -1,7 +1,7 @@
 Index: content/browser/devtools/devtools_frontend_host_impl.h
 --- content/browser/devtools/devtools_frontend_host_impl.h.orig
 +++ content/browser/devtools/devtools_frontend_host_impl.h
-@@ -33,7 +33,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
+@@ -34,7 +34,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
  
    void BadMessageReceived() override;
  

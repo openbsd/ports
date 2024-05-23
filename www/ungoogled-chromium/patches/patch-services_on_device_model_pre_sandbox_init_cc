@@ -28,7 +28,7 @@ Index: services/on_device_model/pre_sandbox_init.cc
    // Warm any relevant drivers before attempting to bring up the sandbox. For
    // good measure we initialize a device instance for any adapter with an
    // appropriate backend on top of any integrated or discrete GPU.
-@@ -100,7 +100,7 @@ bool OnDeviceModelService::PreSandboxInit() {
+@@ -102,7 +102,7 @@ bool OnDeviceModelService::PreSandboxInit() {
    return true;
  }
  

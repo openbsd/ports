@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/BUILD.gn
 --- third_party/blink/renderer/platform/BUILD.gn.orig
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -1950,7 +1950,7 @@ static_library("test_support") {
+@@ -1981,7 +1981,7 @@ static_library("test_support") {
    ]
  
    # fuzzed_data_provider may not work with a custom toolchain.

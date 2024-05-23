@@ -1,7 +1,7 @@
 Index: chrome/common/chrome_switches.cc
 --- chrome/common/chrome_switches.cc.orig
 +++ chrome/common/chrome_switches.cc
-@@ -881,14 +881,14 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
+@@ -872,14 +872,14 @@ const char kAllowNaClSocketAPI[] = "allow-nacl-socket-
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

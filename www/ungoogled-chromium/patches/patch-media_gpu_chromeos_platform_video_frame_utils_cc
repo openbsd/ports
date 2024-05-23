@@ -19,7 +19,7 @@ Index: media/gpu/chromeos/platform_video_frame_utils.cc
          false;
  #endif
      if (is_intel_media_compression_enabled) {
-@@ -347,7 +347,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameFromGpuMemor
+@@ -349,7 +349,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameFromGpuMemor
    const bool is_intel_media_compression_enabled =
  #if BUILDFLAG(IS_CHROMEOS)
        base::FeatureList::IsEnabled(features::kEnableIntelMediaCompression);

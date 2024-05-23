@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			124.0.6367.207
+V=			125.0.6422.76
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -77,6 +77,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		x11/gtk+4,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
+		audio/pulseaudio \
 		devel/gpatch \
 		devel/gperf \
 		devel/bison \
@@ -163,6 +164,7 @@ GN_ARGS=	is_official_build=true \
 		enable_log_error_not_reached=true \
 		use_kerberos=false \
 		use_sndio=true \
+		use_pulseaudio=true \
 		use_cups=true \
 		use_system_libdrm=true \
 		use_system_libjpeg=true \
@@ -211,7 +213,7 @@ PKG_ARGS+=	-Dswiftshader=0
 .endif
 
 FFMPEG_BRAND=	Chrome
-FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
 GN_ARGS+=	ffmpeg_branding=\"${FFMPEG_BRAND}\" \
@@ -277,8 +279,8 @@ pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	cd ${WRKSRC}/third_party/ffmpeg && \
-		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	cd ${WRKSRC}/media/ffmpeg && \
+		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
@@ -364,7 +366,7 @@ do-install:
 .endfor
 
 pre-test:
-.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
+.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//} ${REGRESS_DISTFILES.a:C/:[0-9]$//}
 	@${ECHO_MSG} "Extracting ${_d}"
 	@case ${_d} in \
 	*testdata*.tar.xz) \

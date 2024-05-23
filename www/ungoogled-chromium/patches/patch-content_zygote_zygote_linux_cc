@@ -9,7 +9,7 @@ Index: content/zygote/zygote_linux.cc
  
  #include "content/zygote/zygote_linux.h"
  
-@@ -717,3 +718,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
+@@ -720,3 +721,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
  }
  
  }  // namespace content

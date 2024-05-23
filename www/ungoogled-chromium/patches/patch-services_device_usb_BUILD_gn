@@ -1,7 +1,7 @@
 Index: services/device/usb/BUILD.gn
 --- services/device/usb/BUILD.gn.orig
 +++ services/device/usb/BUILD.gn
-@@ -92,15 +92,17 @@ static_library("usb") {
+@@ -91,15 +91,17 @@ static_library("usb") {
      deps += [ "//third_party/re2" ]
    }
  
@@ -28,7 +28,7 @@ Index: services/device/usb/BUILD.gn
  
      # These sources and deps are required for libusb.
      # TODO(https://crbug.com/1096743) Remove these sources.
-@@ -124,6 +126,13 @@ static_library("usb") {
+@@ -123,6 +125,13 @@ static_library("usb") {
      deps += [ "//third_party/libusb" ]
    }
  
@@ -42,7 +42,7 @@ Index: services/device/usb/BUILD.gn
    if (is_linux || is_chromeos) {
      sources += [
        "usb_device_linux.cc",
-@@ -141,7 +150,7 @@ static_library("usb") {
+@@ -140,7 +149,7 @@ static_library("usb") {
      deps += [ "//device/udev_linux" ]
    }
  

@@ -1,7 +1,7 @@
 Index: content/child/BUILD.gn
 --- content/child/BUILD.gn.orig
 +++ content/child/BUILD.gn
-@@ -132,6 +132,13 @@ target(link_target_type, "child") {
+@@ -131,6 +131,13 @@ target(link_target_type, "child") {
      ]
    }
  
