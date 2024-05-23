@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -50,5 +50,5 @@ setup(
+@@ -51,5 +51,5 @@ setup(
      install_requires=_runtime_dependencies(),
      data_files=[('share/pixmaps/', ['puddletag.png', ]),
                  ('share/applications/', ['puddletag.desktop', ]),
