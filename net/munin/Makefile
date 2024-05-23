@@ -5,12 +5,10 @@ COMMENT-server =flexible network host monitoring, server
 
 GH_ACCOUNT = 	munin-monitoring
 GH_PROJECT = 	munin
-GH_TAGNAME =	2.0.75
+GH_TAGNAME =	2.0.76
 PKGNAME-main =	munin-node-${GH_TAGNAME}
 PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
-REVISION-main =	0
-REVISION-server =	0
 
 HOMEPAGE =	https://munin-monitoring.org/
 
@@ -46,8 +44,7 @@ RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Net-Server \
 			net/p5-IO-Socket-INET6 \
 			net/p5-Net-CIDR
-RUN_DEPENDS-server +=	converters/p5-DateManip \
-			devel/p5-File-Copy-Recursive \
+RUN_DEPENDS-server +=	devel/p5-File-Copy-Recursive \
 			net/rrdtool \
 			security/p5-Net-SSLeay \
 			www/fcgi \
