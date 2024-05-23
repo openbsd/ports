@@ -1,0 +1,26 @@
+From 118269b607bd957fa27d0296823d7e435e6900b9 Mon Sep 17 00:00:00 2001
+From: Virsacer <virsacer@online.de>
+Date: Sat, 10 Dec 2022 21:02:49 +0100
+Subject: [PATCH] PHP 8.1 compatibility (fixes multiple deprecation messages
+ and broken images)
+
+---
+ wwwroot/inc/caching.php       | 6 +++---
+ wwwroot/inc/functions.php     | 6 +++---
+ wwwroot/inc/interface-lib.php | 4 ++--
+ wwwroot/inc/popup.php         | 2 +-
+ wwwroot/inc/solutions.php     | 2 +-
+ 5 files changed, 10 insertions(+), 10 deletions(-)
+
+Index: wwwroot/inc/popup.php
+--- wwwroot/inc/popup.php.orig
++++ wwwroot/inc/popup.php
+@@ -137,7 +137,7 @@ INNER JOIN (
+ 				}
+ 			$rows_by_pn = array();
+ 		}
+-		$prev_object_id = $row['object_id'];
++		$prev_object_id = $row['object_id'] ?? "";
+ 		if ($row)
+ 			$rows_by_pn[$row['name']][] = $row;
+ 		else

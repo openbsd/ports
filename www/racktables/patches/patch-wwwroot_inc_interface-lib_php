@@ -1,0 +1,34 @@
+From 118269b607bd957fa27d0296823d7e435e6900b9 Mon Sep 17 00:00:00 2001
+From: Virsacer <virsacer@online.de>
+Date: Sat, 10 Dec 2022 21:02:49 +0100
+Subject: [PATCH] PHP 8.1 compatibility (fixes multiple deprecation messages
+ and broken images)
+
+---
+ wwwroot/inc/caching.php       | 6 +++---
+ wwwroot/inc/functions.php     | 6 +++---
+ wwwroot/inc/interface-lib.php | 4 ++--
+ wwwroot/inc/popup.php         | 2 +-
+ wwwroot/inc/solutions.php     | 2 +-
+ 5 files changed, 10 insertions(+), 10 deletions(-)
+
+Index: wwwroot/inc/interface-lib.php
+--- wwwroot/inc/interface-lib.php.orig
++++ wwwroot/inc/interface-lib.php
+@@ -1210,14 +1210,14 @@ function stringForTD ($string, $maxlen = 30)
+ function stringForTextInputValue ($string, $maxlen = 30)
+ {
+ 	if ($maxlen != 0)
+-		$string = mb_substr ($string, 0, $maxlen);
++		$string = mb_substr ($string ?? "", 0, $maxlen);
+ 	return htmlspecialchars ($string, ENT_QUOTES, 'UTF-8');
+ }
+ 
+ // "<TEXTAREA>%s</TEXTAREA>"
+ function stringForTextarea ($string)
+ {
+-	return htmlspecialchars ($string, ENT_QUOTES, 'UTF-8');
++	return htmlspecialchars ($string ?? "", ENT_QUOTES, 'UTF-8');
+ }
+ 
+ // <OPTION>%s</OPTION>
