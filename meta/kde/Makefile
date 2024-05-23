@@ -31,6 +31,8 @@ PLASMA_VERSION =	6.0.5
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
 
+REVISION-plasma =	0
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -373,7 +375,6 @@ RUN_DEPENDS-plasma += \
 		x11/kde-plasma/kgamma5 \
 		x11/kde-plasma/kinfocenter \
 		x11/kde-plasma/kmenuedit \
-		x11/kde-plasma/kpipewire \
 		x11/kde-plasma/kscreen \
 		x11/kde-plasma/kscreenlocker \
 		x11/kde-plasma/ksshaskpass \
