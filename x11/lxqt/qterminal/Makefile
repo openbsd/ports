@@ -8,7 +8,7 @@ WANTLIB += X11 c canberra m qtermwidget6 util
 LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.0 \
 		audio/libcanberra
 
-BUILD_DEPENDS =	x11/lxqt/build-tools
+BUILD_DEPENDS =	x11/lxqt/build-tools2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
