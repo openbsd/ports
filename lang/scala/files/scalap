@@ -1,5 +1,0 @@
-#!/bin/ksh
-
-JAVA_CMD=$(javaPathHelper -c scala)
-
-JAVACMD=${JAVA_CMD} ${TRUEPREFIX}/scala/bin/scalap "$@"

@@ -1,17 +1,16 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION =	2.12.9
-DISTNAME=	scala-${VERSION}
+VERSION =	3.4.2
+DISTNAME=	scala3-${VERSION}
+PKGNAME=	${DISTNAME:S/scala3-/scala-/}
 CATEGORIES=	lang
-REVISION=	0
 
 HOMEPAGE=	http://www.scala-lang.org/
 
-# BSD
+# Apache2
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://downloads.lightbend.com/scala/${VERSION}/
-EXTRACT_SUFX=	.tgz
+SITES=		https://github.com/scala/scala3/releases/download/${VERSION}/
 
 MODULES=	java
 MODJAVA_VER=	1.8+
@@ -20,7 +19,7 @@ RUN_DEPENDS=	java/javaPathHelper \
 		shells/bash
 
 SCALA_HOME=	${PREFIX}/scala/
-SCALA_SCRIPTS=	fsc scala scalac scalap scaladoc
+SCALA_SCRIPTS=	scala scalac scaladoc
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
@@ -31,9 +30,8 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA_DIR} ${SCALA_HOME}
-	cd ${WRKSRC} && tar -cf - bin doc lib misc src | \
+	cd ${WRKSRC} && tar -cf - bin lib | \
 		tar -xf - -C ${SCALA_HOME}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/*.1 ${PREFIX}/man/man1/
 	# Install the wrapper scripts
 .for s in ${SCALA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/$s ${PREFIX}/bin/

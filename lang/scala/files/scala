@@ -1,5 +1,5 @@
 #!/bin/ksh
 
-JAVA_CMD=$(javaPathHelper -c scala)
+JAVA_HOME=${JAVA_HOME:-$(javaPathHelper -h scala)}
 
-JAVACMD=${JAVA_CMD} ${TRUEPREFIX}/scala/bin/scala "$@"
+JAVA_HOME=${JAVA_HOME} ${TRUEPREFIX}/scala/bin/scala "$@"
