@@ -31,7 +31,8 @@ PLASMA_VERSION =	6.0.5
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
 
-REVISION-plasma =	0
+REVISION-plasma =	1
+REVISION-graphics =	1
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -112,7 +113,6 @@ RUN_DEPENDS-graphics = \
 	x11/kde-applications/kruler \
 	x11/kde-applications/okular \
 	x11/kde-applications/kontrast \
-	x11/kde-applications/spectacle \
 	x11/kde-applications/svgpart
 
 RUN_DEPENDS-graphics += \
@@ -420,7 +420,6 @@ RUN_DEPENDS-plasma-extras += \
 		x11/kde-applications/kate \
 		x11/kde-applications/kcalc \
 		x11/kde-applications/merkuro \
-		x11/kde-applications/okular \
-		x11/kde-applications/spectacle
+		x11/kde-applications/okular
 
 .include <bsd.port.mk>
