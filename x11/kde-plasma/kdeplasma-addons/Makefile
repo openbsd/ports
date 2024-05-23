@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
 
@@ -22,6 +23,7 @@ MODKDE5_ICON_CACHE = Yes
 BUILD_DEPENDS =	archivers/gtar \
 		devel/kf6/kitemmodels \
 		devel/kf6/purpose \
+		devel/kf6/knewstuff \
 		graphics/kirigami-addons>=1.0.0
 
 RUN_DEPENDS =	devel/kf6/kitemmodels \
