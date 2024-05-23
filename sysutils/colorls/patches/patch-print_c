@@ -67,7 +67,7 @@ Index: print.c
  
  	if ((dp->list == NULL || dp->list->fts_level != FTS_ROOTLEVEL) &&
  	    (f_longform || f_size))
-@@ -124,7 +162,15 @@ printlong(DISPLAY *dp)
+@@ -121,7 +159,15 @@ printlong(DISPLAY *dp)
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
@@ -83,7 +83,7 @@ Index: print.c
  		if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  			(void)printtype(sp->st_mode);
  		if (S_ISLNK(sp->st_mode))
-@@ -225,6 +271,9 @@ printaname(FTSENT *p, int inodefield, int sizefield)
+@@ -222,6 +268,9 @@ printaname(FTSENT *p, int inodefield, int sizefield)
  {
  	struct stat *sp;
  	int chcnt;
@@ -93,7 +93,7 @@ Index: print.c
  
  	sp = p->fts_statp;
  	chcnt = 0;
-@@ -234,7 +283,15 @@ printaname(FTSENT *p, int inodefield, int sizefield)
+@@ -231,7 +280,15 @@ printaname(FTSENT *p, int inodefield, int sizefield)
  	if (f_size)
  		chcnt += printf("%*lld ", sizefield,
  		    howmany((long long)sp->st_blocks, blocksize));
@@ -109,7 +109,7 @@ Index: print.c
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -348,6 +405,151 @@ printtype(mode_t mode)
+@@ -345,6 +402,151 @@ printtype(mode_t mode)
  	}
  	return (0);
  }
