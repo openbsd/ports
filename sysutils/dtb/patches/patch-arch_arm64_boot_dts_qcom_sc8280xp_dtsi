@@ -1,7 +1,7 @@
 Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
 --- arch/arm64/boot/dts/qcom/sc8280xp.dtsi.orig
 +++ arch/arm64/boot/dts/qcom/sc8280xp.dtsi
-@@ -1741,6 +1741,7 @@
+@@ -1743,6 +1743,7 @@
  					<0 0 0 2 &intc 0 0 GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 3 &intc 0 0 GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 4 &intc 0 0 GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH>;
@@ -9,7 +9,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
  
  			clocks = <&gcc GCC_PCIE_4_AUX_CLK>,
  				 <&gcc GCC_PCIE_4_CFG_AHB_CLK>,
-@@ -1841,6 +1842,7 @@
+@@ -1844,6 +1845,7 @@
  					<0 0 0 2 &intc 0 0 GIC_SPI 527 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 3 &intc 0 0 GIC_SPI 528 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 4 &intc 0 0 GIC_SPI 529 IRQ_TYPE_LEVEL_HIGH>;
@@ -17,7 +17,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
  
  			clocks = <&gcc GCC_PCIE_3B_AUX_CLK>,
  				 <&gcc GCC_PCIE_3B_CFG_AHB_CLK>,
-@@ -1939,6 +1941,7 @@
+@@ -1943,6 +1945,7 @@
  					<0 0 0 2 &intc 0 0 GIC_SPI 542 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 3 &intc 0 0 GIC_SPI 543 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 4 &intc 0 0 GIC_SPI 544 IRQ_TYPE_LEVEL_HIGH>;
@@ -25,7 +25,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
  
  			clocks = <&gcc GCC_PCIE_3A_AUX_CLK>,
  				 <&gcc GCC_PCIE_3A_CFG_AHB_CLK>,
-@@ -2040,6 +2043,7 @@
+@@ -2045,6 +2048,7 @@
  					<0 0 0 2 &intc 0 0 GIC_SPI 434 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 3 &intc 0 0 GIC_SPI 435 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 4 &intc 0 0 GIC_SPI 438 IRQ_TYPE_LEVEL_HIGH>;
@@ -33,7 +33,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
  
  			clocks = <&gcc GCC_PCIE_2B_AUX_CLK>,
  				 <&gcc GCC_PCIE_2B_CFG_AHB_CLK>,
-@@ -2138,6 +2142,7 @@
+@@ -2144,6 +2148,7 @@
  					<0 0 0 2 &intc 0 0 GIC_SPI 531 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 3 &intc 0 0 GIC_SPI 532 IRQ_TYPE_LEVEL_HIGH>,
  					<0 0 0 4 &intc 0 0 GIC_SPI 533 IRQ_TYPE_LEVEL_HIGH>;
@@ -41,7 +41,7 @@ Index: arch/arm64/boot/dts/qcom/sc8280xp.dtsi
  
  			clocks = <&gcc GCC_PCIE_2A_AUX_CLK>,
  				 <&gcc GCC_PCIE_2A_CFG_AHB_CLK>,
-@@ -4211,7 +4216,7 @@
+@@ -4804,7 +4809,7 @@
  			#size-cells = <2>;
  			ranges;
  
