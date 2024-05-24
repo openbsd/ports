@@ -179,6 +179,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rpm_fallback.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}sevenz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}sevenz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}socket_or_fifo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}socket_or_fifo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,6 +201,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}vmlinuz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xmlb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -275,6 +279,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rdata.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm_fallback.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rust.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/sevenz.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/socket_or_fifo.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/sphinx.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/sqlite.py
@@ -317,6 +322,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/operation.
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/specialize.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/vmlinuz.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/wasm.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xar.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xml.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xmlb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xsb.py
