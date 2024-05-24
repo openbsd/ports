@@ -1,7 +1,7 @@
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	comms net
 
@@ -25,6 +25,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 MAKE_FILE=	GNUmakefile
 MAKE_FLAGS=	RELEASE=1 \
+		NO_PULSEAUDIO=1 \
 		WITHOUT_CRYPTLIB=1 \
 		USE_SDL=1 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl2-config \
