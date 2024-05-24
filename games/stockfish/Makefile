@@ -1,13 +1,8 @@
-BROKEN-i386 =	problems with mmx intrinsics
-# nnue/nnue_feature_transformer.h:528:24: error: always_inline function '_mm_add_pi16' requires target feature 'mmx', but would be inlined into function
-# 'update_accumulator' that is compiled without support for 'mmx'
-#               acc[k] = vec_add_16(acc[k], column[k]);
-# etc.etc.
-
-V =		16
+V =		16.1
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}
-NNUE =		nn-5af11540bbfe.nnue
+NNUE_BIG =	nn-b1a57edbea57.nnue
+NNUE_SMALL =	nn-baff1ede1f90.nnue
 CATEGORIES =	games
 
 HOMEPAGE =	https://stockfishchess.org/
@@ -21,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 SITES =		https://github.com/official-stockfish/Stockfish/archive/
 SITES.a =	https://tests.stockfishchess.org/api/nn/
 DISTFILES =	sf_${V}.tar.gz
-DISTFILES.a = 	${NNUE}
+DISTFILES.a = 	${NNUE_BIG} ${NNUE_SMALL}
 EXTRACT_ONLY =	${DISTFILES}
 
 # C++17
@@ -54,7 +49,8 @@ WRKDIST =	${WRKDIR}/Stockfish-sf_${V}
 WRKSRC =	${WRKDIST}/src
 
 post-extract:
-	cp ${DISTDIR}/${NNUE} ${WRKSRC}
+	cp ${DISTDIR}/${NNUE_BIG} ${WRKSRC}
+	cp ${DISTDIR}/${NNUE_SMALL} ${WRKSRC}
 
 pre-configure:
 	sed -i 's,-O3,${CXXFLAGS},g' ${WRKSRC}/Makefile

@@ -12,7 +12,7 @@ Index: src/Makefile
  BINDIR = $(PREFIX)/bin
  
  ### Built-in benchmark for pgo-builds
-@@ -376,8 +376,8 @@ ifeq ($(COMP),)
+@@ -396,8 +396,8 @@ ifeq ($(COMP),)
  endif
  
  ifeq ($(COMP),gcc)
