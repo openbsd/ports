@@ -4,6 +4,7 @@ DISTNAME=	tiff-4.6.0
 SHARED_LIBS=	tiff	42.0	# 13.0
 SHARED_LIBS+=	tiffxx	42.0	# 13.0
 CATEGORIES=	graphics
+REVISION=	0
 
 SITES=		https://download.osgeo.org/libtiff/
 EXTRACT_SUFX=	.tar.xz

@@ -1,0 +1,14 @@
+dont end up with -lm.so.X.Y in Libs.private in tiff-4.pc
+
+Index: libtiff/CMakeLists.txt
+--- libtiff/CMakeLists.txt.orig
++++ libtiff/CMakeLists.txt
+@@ -167,7 +167,7 @@ if(WEBP_SUPPORT)
+ endif()
+ if(CMath_LIBRARY)
+   target_link_libraries(tiff PRIVATE CMath::CMath)
+-  list(APPEND tiff_libs_private_list "${CMath_LIBRARY}")
++  list(APPEND tiff_libs_private_list "m")
+ endif()
+ 
+ set(tiff_libs_private_list "${tiff_libs_private_list}" PARENT_SCOPE)
