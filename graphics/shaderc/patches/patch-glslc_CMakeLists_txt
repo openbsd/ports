@@ -1,8 +1,18 @@
+- add stc++fs for sparc64
 - remove the generation of the build-version.inc file
 
 Index: glslc/CMakeLists.txt
 --- glslc/CMakeLists.txt.orig
 +++ glslc/CMakeLists.txt
+@@ -43,7 +43,7 @@ if (SHADERC_ENABLE_WGSL_OUTPUT)
+ endif(SHADERC_ENABLE_WGSL_OUTPUT)
+ 
+ target_link_libraries(glslc PRIVATE
+-  glslang SPIRV    # Glslang libraries
++  glslang SPIRV ${ADDITIONAL_LIBRARIES}  # Glslang libraries
+   $<$<BOOL:${SHADERC_ENABLE_WGSL_OUTPUT}>:libtint>      # Tint libraries, optional
+   shaderc_util shaderc                                  # internal Shaderc libraries
+   ${CMAKE_THREAD_LIBS_INIT})
 @@ -53,7 +53,6 @@ shaderc_default_compile_options(glslc_exe)
  target_include_directories(glslc_exe PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/.. ${spirv-tools_SOURCE_DIR}/include)
  set_target_properties(glslc_exe PROPERTIES OUTPUT_NAME glslc)

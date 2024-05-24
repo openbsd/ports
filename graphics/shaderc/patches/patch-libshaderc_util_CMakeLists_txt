@@ -1,0 +1,14 @@
+Add -lstdc++fs for sparc64
+
+Index: libshaderc_util/CMakeLists.txt
+--- libshaderc_util/CMakeLists.txt.orig
++++ libshaderc_util/CMakeLists.txt
+@@ -46,7 +46,7 @@ add_definitions(-DENABLE_HLSL)
+ 
+ find_package(Threads)
+ target_link_libraries(shaderc_util PRIVATE
+-  glslang SPIRV
++  glslang SPIRV ${ADDITIONAL_LIBRARIES}
+   SPIRV-Tools-opt ${CMAKE_THREAD_LIBS_INIT})
+ 
+ shaderc_add_tests(
