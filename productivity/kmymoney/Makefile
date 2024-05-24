@@ -4,7 +4,7 @@ COMMENT =	accounting for KDE 5
 
 V =		5.1.3
 DISTNAME =	kmymoney-${V}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	productivity x11
 
@@ -51,7 +51,8 @@ CONFIGURE_STYLE =	cmake
 BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			misc/shared-mime-info \
-			textproc/libical,-glib
+			textproc/libical,-glib \
+			x11/qt5/qtsensors
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/p5-Finance-Quote \
@@ -100,7 +101,7 @@ LIB_DEPENDS =		devel/gmp \
 			textproc/icu4c \
 			textproc/libical \
 			x11/qt5/qtdeclarative \
-			x11/qt5/qtlocation \
+			x11/qt5/qtlocatin \
 			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine
 
