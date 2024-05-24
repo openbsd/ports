@@ -1,10 +1,9 @@
 COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 
-MODPY_EGG_VERSION=	2024.2.12
+MODPY_EGG_VERSION=	2024.5.22
 
 DISTNAME=	tifffile-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -21,8 +20,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
-
-# lots of new deps needed
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
