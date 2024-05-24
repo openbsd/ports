@@ -101,7 +101,7 @@ LIB_DEPENDS =		devel/gmp \
 			textproc/icu4c \
 			textproc/libical \
 			x11/qt5/qtdeclarative \
-			x11/qt5/qtlocatin \
+			x11/qt5/qtlocation \
 			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine
 
