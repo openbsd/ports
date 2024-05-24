@@ -1,10 +1,9 @@
 COMMENT=	GIS TIFF interchange library
 
-DISTNAME=	libgeotiff-1.7.1
+DISTNAME=	libgeotiff-1.7.2
 CATEGORIES=	devel geo
-SHARED_LIBS=	geotiff 3.1 # 6.0
+SHARED_LIBS=	geotiff 3.2 # 6.0
 WRKSRC=	${WRKDIR}/${DISTNAME:S/rc2//}
-REVISION=	1
 
 HOMEPAGE=	https://github.com/OSGeo/libgeotiff
 
