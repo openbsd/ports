@@ -1,12 +1,12 @@
 COMMENT=	asynchronous resolver library
 
-V=		1.28.1
+V=		1.29.0
 DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
 SITES=		${HOMEPAGE}download/
 
-SHARED_LIBS +=  cares                3.6      # 2.13.1
+SHARED_LIBS +=  cares                3.7      # 2.14.0
 
 HOMEPAGE=	https://c-ares.haxx.se/
 

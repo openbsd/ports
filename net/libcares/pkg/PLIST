@@ -136,6 +136,7 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_set_local_dev.3
 @man man/man3/ares_set_local_ip4.3
 @man man/man3/ares_set_local_ip6.3
+@man man/man3/ares_set_server_state_callback.3
 @man man/man3/ares_set_servers.3
 @man man/man3/ares_set_servers_csv.3
 @man man/man3/ares_set_servers_ports.3
