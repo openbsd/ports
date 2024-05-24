@@ -1,0 +1,14 @@
+Use HMAC_Init_ex() instead of the deprecated HMAC_Init()
+
+Index: lib/https.c
+--- lib/https.c.orig
++++ lib/https.c
+@@ -696,7 +696,7 @@ https_send(struct https_request *req, const char *meth
+         ctx.errstr = strerror(errno);
+         return (HTTPS_ERR_LIB);
+     }
+-    HMAC_Init(hmac, skey, strlen(skey), EVP_sha512());
++    HMAC_Init_ex(hmac, skey, strlen(skey), EVP_sha512(), NULL);
+     HMAC_Update(hmac, (unsigned char *)p, strlen(p));
+     HMAC_Final(hmac, MD, NULL);
+     HMAC_CTX_free(hmac);
