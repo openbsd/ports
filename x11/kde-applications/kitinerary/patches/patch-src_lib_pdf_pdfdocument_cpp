@@ -1,0 +1,20 @@
+Index: src/lib/pdf/pdfdocument.cpp
+--- src/lib/pdf/pdfdocument.cpp.orig
++++ src/lib/pdf/pdfdocument.cpp
+@@ -22,6 +22,7 @@
+ #include <PDFDoc.h>
+ #include <PDFDocEncoding.h>
+ #include <Stream.h>
++#include <UTF.h>
+ 
+ #include <cmath>
+ 
+@@ -330,7 +331,7 @@ QString gooStringToUnicode(const std::unique_ptr<GooSt
+         return {};
+     }
+ 
+-    if (s->hasUnicodeMarker() || s->hasUnicodeMarkerLE()) {
++    if (hasUnicodeByteOrderMark(s->toStr()) || hasUnicodeByteOrderMarkLE(s->toStr())) {
+         return QString::fromUtf16(reinterpret_cast<const char16_t*>(s->toStr().c_str()), s->toStr().size() / 2);
+     } else {
+         int len = 0;
