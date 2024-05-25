@@ -1,3 +1,5 @@
+BROKEN =	broken by kde update
+
 COMMENT =	modern style for Qt applications
 
 GH_ACCOUNT =	Luwx
