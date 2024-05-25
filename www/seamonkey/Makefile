@@ -1,4 +1,3 @@
-BROKEN =		fail to build with lang/rust 1.78.0, see https://bugzilla.mozilla.org/show_bug.cgi?id=1896958
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
 
 COMMENT-main =		Mozilla application suite
@@ -10,6 +9,14 @@ MOZILLA_VERSION =	2.53.18.2
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
+
+# unbreaks build with rust 1.78
+SITES.p =	https://bugzilla.mozilla.org/
+PATCHFILES.p=	bug-1896958-rust178.zip{attachment.cgi?id=9403797}
+PATCH_DIST_STRIP =	-p1 -f
+# || true because third_party/rust/packed_simd/Cargo.toml fails to patch but we dont care
+PATCH_CASES += *.zip) \
+	${UNZIP} -p $$patchfile | ${PATCH} ${PATCH_DIST_ARGS} || true ;;
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -62,7 +69,7 @@ WANTLIB += Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
-MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
+MAKE_ENV +=	RUSTC_BOOTSTRAP="any_all_workaround,version,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
@@ -74,6 +81,14 @@ DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+# patch doesnt grok file rename from git
+# and cargo fails to checksum those if not present
+post-patch:
+	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-APACHE
+	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-MIT
+	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
+	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
