@@ -1,0 +1,24 @@
+Index: src/extension/internal/pdfinput/poppler-utils.cpp
+--- src/extension/internal/pdfinput/poppler-utils.cpp.orig
++++ src/extension/internal/pdfinput/poppler-utils.cpp
+@@ -16,6 +16,7 @@
+ #include "GfxFont.h"
+ #include "GfxState.h"
+ #include "PDFDoc.h"
++#include "UTF.h"
+ #include "libnrtype/font-factory.h"
+ 
+ /**
+@@ -563,10 +564,10 @@ std::string getDictString(Dict *dict, const char *key)
+  */
+ std::string getString(const GooString *value)
+ {
+-    if (value->hasUnicodeMarker()) {
++    if (hasUnicodeByteOrderMark(value->toStr())) {
+         return g_convert(value->getCString () + 2, value->getLength () - 2,
+                          "UTF-8", "UTF-16BE", NULL, NULL, NULL);
+-    } else if (value->hasUnicodeMarkerLE()) {
++    } else if (hasUnicodeByteOrderMarkLE(value->toStr())) {
+         return g_convert(value->getCString () + 2, value->getLength () - 2,
+                          "UTF-8", "UTF-16LE", NULL, NULL, NULL);
+     }
