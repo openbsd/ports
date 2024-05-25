@@ -280,7 +280,7 @@ SHA256 (gnome/../cargo/xml5ever-0.17.0.tar.gz) = QDTh0Fr5i1GtchRSdzBibwGWgteXuji
 SHA256 (gnome/../cargo/yeslogic-fontconfig-sys-4.0.1.tar.gz) = 7GV/0yu8vq71x7yOELPblbFD+rjbClAHl3Pb+Tb9T3M=
 SHA256 (gnome/../cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.58.0.tar.xz) = 18REqSZAa1l5C+DerhluGO0mBZ2lc/oaqeycp2WKVZw=
+SHA256 (gnome/librsvg-2.58.1.tar.xz) = NyhZYpCoV20wXQbsiv30c1Fv7unf8i4DI16sQz1Wgk4=
 SIZE (gnome/../cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (gnome/../cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (gnome/../cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -563,4 +563,4 @@ SIZE (gnome/../cargo/xml5ever-0.17.0.tar.gz) = 41208
 SIZE (gnome/../cargo/yeslogic-fontconfig-sys-4.0.1.tar.gz) = 6694
 SIZE (gnome/../cargo/zune-inflate-0.2.54.tar.gz) = 37973
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.58.0.tar.xz) = 5726268
+SIZE (gnome/librsvg-2.58.1.tar.xz) = 6217300
