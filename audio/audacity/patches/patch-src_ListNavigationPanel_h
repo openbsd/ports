@@ -1,3 +1,6 @@
+OpenBSD build fixes
+4470b5ae13b4d93135f5fefc5e0338b602abbccf
+
 Index: src/ListNavigationPanel.h
 --- src/ListNavigationPanel.h.orig
 +++ src/ListNavigationPanel.h

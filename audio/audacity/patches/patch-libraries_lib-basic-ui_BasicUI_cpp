@@ -1,11 +1,18 @@
+OpenBSD build fixes
+4470b5ae13b4d93135f5fefc5e0338b602abbccf
+
 Index: libraries/lib-basic-ui/BasicUI.cpp
 --- libraries/lib-basic-ui/BasicUI.cpp.orig
 +++ libraries/lib-basic-ui/BasicUI.cpp
-@@ -34,6 +34,7 @@ extern char** environ;
+@@ -29,10 +29,9 @@ Paul Licameli
+ 
+ #include <string>
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ extern char** environ;
  #endif
+-
  
- 
-+extern char** environ;
  namespace
  {
- 

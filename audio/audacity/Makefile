@@ -7,7 +7,7 @@ GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-3.5.1
 REVISION=	1
 DISTNAME=	${GH_TAGNAME:L}
-
+REVISION=	0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://www.audacityteam.org/
@@ -29,7 +29,7 @@ WANTLIB += z
 # dlopened
 WANTLIB += avcodec avformat avutil
 
-COMPILER=	base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake \
 		lang/python
