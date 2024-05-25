@@ -7,7 +7,7 @@ Index: qt6/src/CMakeLists.txt
  )
  add_library(poppler-qt6 ${poppler_qt6_SRCS})
  generate_export_header(poppler-qt6 BASE_NAME poppler-qt6 EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/poppler-export.h")
--set_target_properties(poppler-qt6 PROPERTIES VERSION 3.4.0 SOVERSION 3)
+-set_target_properties(poppler-qt6 PROPERTIES VERSION 3.5.0 SOVERSION 3)
  if(MINGW AND BUILD_SHARED_LIBS)
      get_target_property(POPPLER_QT6_SOVERSION poppler-qt6 SOVERSION)
      set_target_properties(poppler-qt6 PROPERTIES SUFFIX "-${POPPLER_QT6_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")

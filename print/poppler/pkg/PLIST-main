@@ -31,6 +31,7 @@ include/poppler/GfxFont.h
 include/poppler/GfxState.h
 include/poppler/GfxState_helpers.h
 include/poppler/GlobalParams.h
+include/poppler/HashAlgorithm.h
 include/poppler/Hints.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
@@ -62,6 +63,7 @@ include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
 include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
+include/poppler/SignatureInfo.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
 include/poppler/Stream-CCITT.h
@@ -154,7 +156,6 @@ include/poppler/splash/SplashState.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
-lib/girepository-1.0/
 lib/girepository-1.0/Poppler-0.18.typelib
 @lib lib/libpoppler-cpp.so.${LIBpoppler-cpp_VERSION}
 @lib lib/libpoppler-glib.so.${LIBpoppler-glib_VERSION}
@@ -162,5 +163,4 @@ lib/girepository-1.0/Poppler-0.18.typelib
 lib/pkgconfig/poppler-cpp.pc
 lib/pkgconfig/poppler-glib.pc
 lib/pkgconfig/poppler.pc
-share/gir-1.0/
 share/gir-1.0/Poppler-0.18.gir

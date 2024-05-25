@@ -7,7 +7,7 @@ Index: cpp/CMakeLists.txt
  
  add_library(poppler-cpp ${poppler_cpp_SRCS})
  generate_export_header(poppler-cpp BASE_NAME poppler-cpp EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/poppler_cpp_export.h")
--set_target_properties(poppler-cpp PROPERTIES VERSION 0.11.0 SOVERSION 0)
+-set_target_properties(poppler-cpp PROPERTIES VERSION 1.0.0 SOVERSION 1)
  if(MINGW AND BUILD_SHARED_LIBS)
      get_target_property(POPPLER_CPP_SOVERSION poppler-cpp SOVERSION)
      set_target_properties(poppler-cpp PROPERTIES SUFFIX "-${POPPLER_CPP_SOVERSION}${CMAKE_SHARED_LIBRARY_SUFFIX}")
