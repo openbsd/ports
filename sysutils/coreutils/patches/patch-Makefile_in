@@ -3,7 +3,7 @@ XXX: Avoid rebuilding coreutils.info; our makeinfo is too old
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -22186,6 +22186,7 @@ doc/$(am__dirstamp):
+@@ -22237,6 +22237,7 @@ doc/$(am__dirstamp):
  	@: > doc/$(am__dirstamp)
  
  $(srcdir)/doc/coreutils.info: doc/coreutils.texi $(srcdir)/doc/version.texi $(doc_coreutils_TEXINFOS)
