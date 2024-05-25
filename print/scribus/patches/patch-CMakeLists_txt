@@ -1,0 +1,25 @@
+Enforce C++20 for poppler-24.05.0.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -407,17 +407,8 @@ endif()
+ 
+ #C++11 Support
+ #as of 1.5.5.svn, require C++11
+-if(NOT WANT_CPP14 AND NOT WANT_CPP17)
+-	message(STATUS "Enabling C++11 compiler features")
+-	set(CMAKE_CXX_STANDARD 11)
+-endif()
+-if (WANT_CPP14)
+-	message(STATUS "Enabling C++14 compiler features")
+-	set(CMAKE_CXX_STANDARD 14)
+-elseif(WANT_CPP17)
+-		message(STATUS "Enabling C++17 compiler features")
+-		set(CMAKE_CXX_STANDARD 17)
+-endif()
++message(STATUS "Enabling C++20 compiler features")
++set (CMAKE_CXX_STANDARD 20)
+ set (CMAKE_CXX_STANDARD_REQUIRED ON)
+ set (CMAKE_CXX_EXTENSIONS OFF)
+ 
