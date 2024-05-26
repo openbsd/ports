@@ -39,9 +39,10 @@ WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml X11 aqbanking assuan c db db_cxx
-WANTLIB += gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
+WANTLIB += Qt5Widgets Qt5Xml X11 alkimia5 aqbanking assuan c db
+WANTLIB += db_cxx gmp gpgme gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
 WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
+WANTLIB += sqlcipher
 
 MODULES =		lang/python \
 			devel/kf5
@@ -64,7 +65,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			www/woob \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		devel/gmp \
+LIB_DEPENDS =		databases/sqlcipher \
+			devel/gmp \
 			devel/gwenhywfar \
 			devel/kf5/kactivities \
 			devel/kf5/karchive \

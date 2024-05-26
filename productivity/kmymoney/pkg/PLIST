@@ -142,6 +142,7 @@ lib/qt5/plugins/kmymoney/
 @so lib/qt5/plugins/kmymoney/sqlstorage.so
 @so lib/qt5/plugins/kmymoney/woob.so
 @so lib/qt5/plugins/kmymoney/xmlstorage.so
+@so lib/qt5/plugins/sqldrivers/qsqlcipher.so
 @man man/man1/kmymoney.1
 share/applications/org.kde.kmymoney.desktop
 share/checkprinting/
