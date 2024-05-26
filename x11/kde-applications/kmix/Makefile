@@ -1,6 +1,7 @@
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kmix
 
@@ -21,6 +22,9 @@ MODKDE5_DOCS = yes
 
 MODKDE_KF5 =		Yes
 
+BUILD_DEPENDS =	devel/kf5/kcrash
+RUN_DEPENDS =	devel/kf5/kcrash
+
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
 		devel/kf5/kauth \
@@ -36,6 +40,5 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid
-
 
 .include <bsd.port.mk>
