@@ -33,6 +33,7 @@ PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
 
 REVISION-plasma =	1
 REVISION-graphics =	1
+REVISION-plasma-extras = 0
 
 MULTI_PACKAGES +=	-main \
 			-games \
