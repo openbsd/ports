@@ -1,6 +1,6 @@
 COMMENT=	GIS TIFF interchange library
 
-DISTNAME=	libgeotiff-1.7.2
+DISTNAME=	libgeotiff-1.7.3
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 3.2 # 6.0
 WRKSRC=	${WRKDIR}/${DISTNAME:S/rc2//}
