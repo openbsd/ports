@@ -12,6 +12,73 @@ Index: c_stuff/lib/FBLE.pm
  use POSIX(qw(floor ceil));
  use SDL;
  use SDL::App;
+@@ -127,7 +129,7 @@ sub draw_bubble {
+ 
+     $bubble_rects{$x}{$y} = SDL::Rect->new(-x => $x, '-y' => $y, -width => $bubble->width, -height => $bubble->height);
+ 
+-    $alpha and $bubble->set_alpha(SDL_SRCALPHA, 0x66);
++    $alpha and $bubble->set_alpha(SDL_SRCALPHA(), 0x66);
+ 
+     $bubble->blit(NULL, $surface_tmp, $bubble_rects{$x}{$y});
+     $ignore_update or $surface_tmp->update($bubble_rects{$x}{$y});
+@@ -624,7 +626,7 @@ sub handle_events {
+         $event->pump;
+         if ($event->poll != 0) {
+     
+-            if ($event->type == SDL_MOUSEMOTION) {
++            if ($event->type == SDL_MOUSEMOTION()) {
+                 if ($displaying_dialog eq '') {
+                     choose_action($event->button_x, $event->button_y, 'motion', $event->button);  #- , )
+                 } else {
+@@ -632,7 +634,7 @@ sub handle_events {
+                 }
+                 $app->flip;
+ 
+-            } elsif ($event->type == SDL_MOUSEBUTTONDOWN) {
++            } elsif ($event->type == SDL_MOUSEBUTTONDOWN()) {
+                 $button_hold = 1;
+                 if ($displaying_dialog eq '') {
+                     choose_action($event->button_x, $event->button_y, 'button', $event->button);  #- , )
+@@ -641,10 +643,10 @@ sub handle_events {
+                 }
+                 $app->flip;
+ 
+-            } elsif ($event->type == SDL_MOUSEBUTTONUP) {
++            } elsif ($event->type == SDL_MOUSEBUTTONUP()) {
+                 $button_hold = 0;
+ 
+-            } elsif ($event->type == SDL_KEYDOWN) {
++            } elsif ($event->type == SDL_KEYDOWN()) {
+                 if ($displaying_dialog eq '') {
+                     if ($event->key_sym == SDLK_ESCAPE() || $event->key_sym == SDLK_q() ) {
+                         if ($modified_levelset == 1) {
+@@ -809,7 +811,7 @@ sub handle_events {
+         
+                 $app->flip;
+ 
+-            } elsif ($event->type == SDL_QUIT) {
++            } elsif ($event->type == SDL_QUIT()) {
+                 if ($displaying_dialog eq '') {
+                     if ($modified_levelset == 1) {
+                         $modified_levelset_action = '$modified_levelset_action = "return 1"';
+@@ -1130,7 +1132,7 @@ sub modify_selected_level {
+ 				#key down and we follow the logic as usual
+                 $app->delay(100);
+                 $event->pump;
+-                if ($event->poll == 0 || $event->type == SDL_MOUSEMOTION) { #mousemotion is when they are
++                if ($event->poll == 0 || $event->type == SDL_MOUSEMOTION()) { #mousemotion is when they are
+                     #holding the mouse key down and
+                     #jiggle it's position a litte bit
+                     $app->delay(300);
+@@ -1151,7 +1153,7 @@ sub modify_selected_level {
+             $loops++;
+ 
+         } else {
+-            if ($event->type == SDL_MOUSEMOTION) {
++            if ($event->type == SDL_MOUSEMOTION()) {
+                 #let them move the mouse around in the arrow that's already highlighted
+                 
+                 my $x = $event->button_x;
 @@ -1405,7 +1407,7 @@ sub display_levelset_screenshot {
                     $rect{middle}->y + $rect{middle}->height/2 - $rect{screenshot}->height/8 - 3 + $widgetMove);
  
@@ -30,3 +97,30 @@ Index: c_stuff/lib/FBLE.pm
          if (!$s_save) {
              $s_save = SDL::Surface->new(-name => "$FPATH/gfx/level_editor.png");
          }
+@@ -1863,7 +1865,7 @@ sub is_ok_select_start_value {
+ # this subroutine is taken from frozen-bubble code
+ sub keysym_to_char($) { 
+     my ($key) = @_; 
+-    eval "$key eq SDLK_$_" and return uc($_) foreach @fbsyms::syms; 
++    eval "$key eq SDLK_$_()" and return uc($_) foreach @fbsyms::syms; 
+ }
+ 
+ 
+@@ -1936,7 +1938,7 @@ sub print_new_ls_name {
+ 						    || $key >= SDLK_KP0() && $key <= SDLK_KP9()
+ 						    || $key >= SDLK_a() && $key <= SDLK_z()
+ 						    || $key == SDLK_MINUS()
+-						    || $key >= SDLK_0 && $key <= SDLK_9()))) {
++						    || $key >= SDLK_0() && $key <= SDLK_9()))) {
+         # first erase the previous words
+         $rect{dialog_blank} = SDL::Rect->new('-y' => 2 * $WOOD_PLANK_HEIGHT,
+ 					     -width => $surface_dialog->width,
+@@ -2206,7 +2208,7 @@ sub init_app {
+ 				       -x => $_->{x}, '-y' => $_->{'y'}) foreach @allrects;
+ 
+     $highlight = SDL::Surface->new(-name => "$FPATH/gfx/hover.gif");
+-    $highlight->set_alpha(SDL_SRCALPHA, 0x44);
++    $highlight->set_alpha(SDL_SRCALPHA(), 0x44);
+ }
+ 
+ 

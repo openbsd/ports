@@ -3,7 +3,7 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-REVISION-main =		16
+REVISION-main =		17
 REVISION-server =	11
 CATEGORIES =		games
 
