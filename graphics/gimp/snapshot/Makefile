@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
 DISTNAME=	gimp-${V}.18
-REVISION=	1
+REVISION=	2
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -62,7 +62,6 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		lang/luajit \
 		lang/vala \
 		shells/bash \
-		textproc/gi-docgen \
 		textproc/libxslt
 
 # XXX check at next release: this should be optional for building
@@ -114,6 +113,13 @@ CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dheadless-tests=disabled \
 		-Dcheck-update=no \
 		-Denable-console-bin=true
+
+# XXX disable; it does not build with newer gi-docgen
+# WARNING: Unknown component in class link for Pango.Font: .Description
+# Returns a [class@Pango.Font.Description] representing @font.
+# ninja: build stopped: subcommand failed.
+#BUILD_DEPENDS +=	textproc/gi-docgen
+CONFIGURE_ARGS +=	-Dgi-docgen=disabled
 
 # needs OpenMP
 CONFIGURE_ARGS +=	-Dopenmp=disabled
