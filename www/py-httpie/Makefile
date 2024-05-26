@@ -16,8 +16,12 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-# requires network access
-MODPY_PYTEST=	Yes
+# tests require network access
+# ignore tests using devel/py-test-lazy-fixture${MODPY_FLAVOR}
+# which is broken with newer pytest
+MODPY_PYTEST_ARGS= --ignore tests/test_cookie_on_redirects.py \
+		--ignore tests/test_sessions.py \
+		--ignore tests/test_update_warnings.py
 
 RUN_DEPENDS=	net/py-socks${MODPY_FLAVOR} \
 		textproc/py-charset-normalizer${MODPY_FLAVOR} \
@@ -27,7 +31,6 @@ RUN_DEPENDS=	net/py-socks${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-requests-toolbelt${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-httpbin${MODPY_FLAVOR} \
-		devel/py-test-lazy-fixture${MODPY_FLAVOR} \
 		devel/py-test-mock${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR} \
 		devel/py-rich${MODPY_FLAVOR} \
