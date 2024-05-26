@@ -1,6 +1,6 @@
 COMMENT =	minimalistic music player
 
-DISTNAME =	amused-0.14
+DISTNAME =	amused-0.15
 
 CATEGORIES =	audio
 
@@ -23,9 +23,6 @@ LIB_DEPENDS =	audio/flac \
 
 CONFIGURE_STYLE = simple
 CONFIGURE_ARGS = --backend=sndio
-
-ALL_TARGET =	all web
-FAKE_TARGET =	install install-web
 
 NO_TEST =	Yes
 
