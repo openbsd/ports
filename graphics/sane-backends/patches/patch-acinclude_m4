@@ -1,7 +1,7 @@
 Index: acinclude.m4
 --- acinclude.m4.orig
 +++ acinclude.m4
-@@ -638,8 +638,7 @@ for be in ${BACKENDS}; do
+@@ -649,8 +649,7 @@ for be in ${BACKENDS}; do
      ;;
  
      v4l)

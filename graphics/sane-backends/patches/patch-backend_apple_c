@@ -1,0 +1,16 @@
+64bit time_t
+
+Index: backend/apple.c
+--- backend/apple.c.orig
++++ backend/apple.c
+@@ -310,8 +310,8 @@ return SANE_STATUS_GOOD;
+ 	  gettimeofday (&now, 0);
+ 	  if (now.tv_sec - start.tv_sec >= MAX_WAITING_TIME)
+ 	    {
+-	      DBG (ERROR_MESSAGE, "wait_ready: timed out after %lu seconds\n",
+-		   (u_long) now.tv_sec - start.tv_sec);
++	      DBG (ERROR_MESSAGE, "wait_ready: timed out after %lld seconds\n",
++		   (int64_t) now.tv_sec - start.tv_sec);
+ 	      return SANE_STATUS_INVAL;
+ 	    }
+ 	  usleep (100000);	/* retry after 100ms */

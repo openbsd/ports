@@ -60,6 +60,7 @@ lib/sane/
 @so lib/sane/libsane-kvs40xx.so
 @so lib/sane/libsane-leo.so
 @so lib/sane/libsane-lexmark.so
+@so lib/sane/libsane-lexmark_x2600.so
 @so lib/sane/libsane-ma1509.so
 @so lib/sane/libsane-magicolor.so
 @so lib/sane/libsane-matsushita.so
@@ -148,6 +149,7 @@ lib/sane/
 @man man/man5/sane-kvs40xx.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
+@man man/man5/sane-lexmark_x2600.5
 @man man/man5/sane-ma1509.5
 @man man/man5/sane-magicolor.5
 @man man/man5/sane-matsushita.5
@@ -262,6 +264,8 @@ share/doc/sane-backends/sane-backends-external.html
 share/doc/sane-backends/sane-backends.html
 share/doc/sane-backends/sane-mfgs-external.html
 share/doc/sane-backends/sane-mfgs.html
+share/doc/sane-backends/saned/
+share/doc/sane-backends/saned/saned.install.md
 share/doc/sane-backends/sceptre/
 share/doc/sane-backends/sceptre/s1200.txt
 share/doc/sane-backends/teco/
@@ -384,6 +388,7 @@ share/examples/sane-backends/sane.d/leo.conf
 @sample ${SYSCONFDIR}/sane.d/leo.conf
 share/examples/sane-backends/sane.d/lexmark.conf
 @sample ${SYSCONFDIR}/sane.d/lexmark.conf
+share/examples/sane-backends/sane.d/lexmark_x2600.conf
 share/examples/sane-backends/sane.d/ma1509.conf
 @sample ${SYSCONFDIR}/sane.d/ma1509.conf
 share/examples/sane-backends/sane.d/magicolor.conf
@@ -454,31 +459,87 @@ share/examples/sane-backends/sane.d/umax_pp.conf
 share/examples/sane-backends/sane.d/v4l.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
+share/locale/
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/sane-backends.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/sane-backends.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/sane-backends.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/sane-backends.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/sane-backends.mo
+share/locale/en@boldquot/
+share/locale/en@boldquot/LC_MESSAGES/
 share/locale/en@boldquot/LC_MESSAGES/sane-backends.mo
+share/locale/en@quot/
+share/locale/en@quot/LC_MESSAGES/
 share/locale/en@quot/LC_MESSAGES/sane-backends.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/sane-backends.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/sane-backends.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/sane-backends.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/sane-backends.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/sane-backends.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/sane-backends.mo
+share/locale/he/
+share/locale/he/LC_MESSAGES/
 share/locale/he/LC_MESSAGES/sane-backends.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/sane-backends.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/sane-backends.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/sane-backends.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/sane-backends.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/sane-backends.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/sane-backends.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/sane-backends.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/sane-backends.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/sane-backends.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/sane-backends.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/sane-backends.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/

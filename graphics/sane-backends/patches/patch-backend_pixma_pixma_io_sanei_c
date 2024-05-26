@@ -4,7 +4,7 @@ https://gitlab.com/sane-project/backends/-/issues/412
 Index: backend/pixma/pixma_io_sanei.c
 --- backend/pixma/pixma_io_sanei.c.orig
 +++ backend/pixma/pixma_io_sanei.c
-@@ -536,8 +536,7 @@ pixma_wait_interrupt (pixma_io_t * io, void *buf, unsi
+@@ -529,8 +529,7 @@ pixma_wait_interrupt (pixma_io_t * io, void *buf, unsi
  #endif
        error = map_error (sanei_usb_read_int (io->dev, buf, &count));
      }

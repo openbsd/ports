@@ -2,10 +2,9 @@ BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-V=			1.2.1
+V=			1.3.1
 DISTNAME=		backends-${V}
 PKGNAME=		sane-${DISTNAME}
-REVISION=		1
 
 SHARED_LIBS +=  sane                 2.3      # unknown
 

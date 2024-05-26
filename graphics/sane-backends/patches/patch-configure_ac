@@ -12,7 +12,7 @@ Index: configure.ac
  
  dnl *****************************************************************
  dnl  Set up I18N/L10N support
-@@ -218,6 +218,7 @@ AC_MSG_RESULT($have_long_long)
+@@ -235,6 +235,7 @@ AC_MSG_RESULT($have_long_long)
  
  AC_MSG_CHECKING([for socklen_t in <sys/socket.h>])
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
