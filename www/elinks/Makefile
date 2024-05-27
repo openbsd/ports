@@ -4,6 +4,7 @@ V =			0.17.0
 GH_ACCOUNT =		rkd77
 GH_PROJECT =		elinks
 GH_TAGNAME =		v$V
+REVISION =		0
 
 CATEGORIES =		www
 
