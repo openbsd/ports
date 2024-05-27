@@ -1,0 +1,12 @@
+Index: clang/lib/CodeGen/CodeGenModule.cpp
+--- clang/lib/CodeGen/CodeGenModule.cpp.orig
++++ clang/lib/CodeGen/CodeGenModule.cpp
+@@ -979,7 +979,7 @@ void CodeGenModule::EmitOpenCLMetadata() {
+ void CodeGenModule::EmitBackendOptionsMetadata(
+     const CodeGenOptions CodeGenOpts) {
+   if (getTriple().isRISCV()) {
+-    getModule().addModuleFlag(llvm::Module::Error, "SmallDataLimit",
++    getModule().addModuleFlag(llvm::Module::Warning, "SmallDataLimit",
+                               CodeGenOpts.SmallDataLimit);
+   }
+ }

@@ -1,0 +1,14 @@
+Index: llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+--- llvm/lib/Target/RISCV/RISCVISelLowering.cpp.orig
++++ llvm/lib/Target/RISCV/RISCVISelLowering.cpp
+@@ -4537,6 +4537,10 @@ SDValue RISCVTargetLowering::getDynamicTLSAddr(GlobalA
+ 
+ SDValue RISCVTargetLowering::lowerGlobalTLSAddress(SDValue Op,
+                                                    SelectionDAG &DAG) const {
++  const GlobalAddressSDNode *GA = cast<GlobalAddressSDNode>(Op);
++  if (DAG.getTarget().useEmulatedTLS())
++    return LowerToTLSEmulatedModel(GA, DAG);
++
+   GlobalAddressSDNode *N = cast<GlobalAddressSDNode>(Op);
+   assert(N->getOffset() == 0 && "unexpected offset in global node");
+ 

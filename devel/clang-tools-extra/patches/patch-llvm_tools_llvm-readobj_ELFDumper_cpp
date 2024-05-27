@@ -1,0 +1,13 @@
+Index: llvm/tools/llvm-readobj/ELFDumper.cpp
+--- llvm/tools/llvm-readobj/ELFDumper.cpp.orig
++++ llvm/tools/llvm-readobj/ELFDumper.cpp
+@@ -1411,7 +1411,9 @@ static StringRef segmentTypeToString(unsigned Arch, un
+ 
+     LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_MUTABLE);
+     LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_RANDOMIZE);
++    LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_SYSCALLS);
+     LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_WXNEEDED);
++    LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_NOBTCFI);
+     LLVM_READOBJ_ENUM_CASE(ELF, PT_OPENBSD_BOOTDATA);
+   default:
+     return "";

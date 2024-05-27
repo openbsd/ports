@@ -1,0 +1,16 @@
+Index: clang/include/clang/AST/FormatString.h
+--- clang/include/clang/AST/FormatString.h.orig
++++ clang/include/clang/AST/FormatString.h
+@@ -232,8 +232,10 @@ class ConversionSpecifier { (public)
+ 
+   bool isIntArg() const { return (kind >= IntArgBeg && kind <= IntArgEnd) ||
+     kind == FreeBSDrArg || kind == FreeBSDyArg; }
+-  bool isUIntArg() const { return kind >= UIntArgBeg && kind <= UIntArgEnd; }
+-  bool isAnyIntArg() const { return kind >= IntArgBeg && kind <= UIntArgEnd; }
++  bool isUIntArg() const { return (kind >= UIntArgBeg && kind <= UIntArgEnd) ||
++    kind == FreeBSDbArg; }
++  bool isAnyIntArg() const { return (kind >= IntArgBeg && kind <= UIntArgEnd) ||
++    kind == FreeBSDbArg; }
+   bool isDoubleArg() const {
+     return kind >= DoubleArgBeg && kind <= DoubleArgEnd;
+   }

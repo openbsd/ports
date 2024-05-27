@@ -1,0 +1,23 @@
+Index: clang/lib/Frontend/CompilerInvocation.cpp
+--- clang/lib/Frontend/CompilerInvocation.cpp.orig
++++ clang/lib/Frontend/CompilerInvocation.cpp
+@@ -1505,6 +1505,10 @@ void CompilerInvocation::GenerateCodeGenArgs(
+                 F.Filename, SA);
+   }
+ 
++  if (Opts.ReturnProtector) {
++    GenerateArg(Args, OPT_ret_protector, SA);
++  }
++
+   GenerateArg(
+       Args, Opts.EmulatedTLS ? OPT_femulated_tls : OPT_fno_emulated_tls, SA);
+ 
+@@ -1866,6 +1870,8 @@ bool CompilerInvocation::ParseCodeGenArgs(CodeGenOptio
+     }
+     Opts.LinkBitcodeFiles.push_back(F);
+   }
++
++  Opts.ReturnProtector = Args.hasArg(OPT_ret_protector);
+ 
+   if (!Args.getLastArg(OPT_femulated_tls) &&
+       !Args.getLastArg(OPT_fno_emulated_tls)) {

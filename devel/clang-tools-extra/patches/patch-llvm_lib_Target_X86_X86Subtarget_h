@@ -1,0 +1,20 @@
+Index: llvm/lib/Target/X86/X86Subtarget.h
+--- llvm/lib/Target/X86/X86Subtarget.h.orig
++++ llvm/lib/Target/X86/X86Subtarget.h
+@@ -139,6 +139,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+     return &getInstrInfo()->getRegisterInfo();
+   }
+ 
++  bool getSaveArgs() const { return SaveArgs; }
++
+   unsigned getTileConfigSize() const { return 64; }
+   Align getTileConfigAlignment() const { return TileConfigAlignment; }
+ 
+@@ -279,6 +281,7 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+ 
+   bool isTargetDarwin() const { return TargetTriple.isOSDarwin(); }
+   bool isTargetFreeBSD() const { return TargetTriple.isOSFreeBSD(); }
++  bool isTargetOpenBSD() const { return TargetTriple.isOSOpenBSD(); }
+   bool isTargetDragonFly() const { return TargetTriple.isOSDragonFly(); }
+   bool isTargetSolaris() const { return TargetTriple.isOSSolaris(); }
+   bool isTargetPS() const { return TargetTriple.isPS(); }

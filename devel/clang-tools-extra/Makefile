@@ -12,10 +12,10 @@ DPB_PROPERTIES =	parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	13.0.0
-DISTNAME =	llvm-${LLVM_V}.src
+LLVM_V =	16.0.6
+LLVM_BASE =	llvm16
+DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION =	10
 
 CATEGORIES =	devel
 
@@ -26,14 +26,11 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c curses edit m z
+WANTLIB += ${COMPILER_LIBCXX} c m
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
 
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
-
-DISTFILES =	llvm-${LLVM_V}.src${EXTRACT_SUFX} \
-		clang-${LLVM_V}.src${EXTRACT_SUFX} \
-		clang-tools-extra-${LLVM_V}.src${EXTRACT_SUFX}
 
 COMPILER =		base-clang ports-gcc
 
@@ -41,62 +38,92 @@ MODULES =		devel/cmake \
 			lang/clang \
 			lang/python
 
-MODCLANG_BUILDDEP ?=		No
-MODCLANG_RUNDEP ?=		Yes
-MODCLANG_COMPILER_LINKS ?=	No
+MODCLANG_COMPILER_LINKS =	No
+MODCLANG_BUILDDEP =		No
+MODCLANG_RUNDEP =		No
 
 CONFIGURE_STYLE =	cmake
 
-# Disable the most stuff to speed up the whole build step
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2=ON \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Z3=ON \
-			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
-			-DLLVM_BUILD_LLVM_DYLIB=OFF \
-			-DLLVM_ENABLE_FFI=OFF \
-			-DLLVM_ENABLE_RTTI=ON \
-			-DLLVM_ENABLE_TERMINFO=ON \
-			-DLLVM_LINK_LLVM_DYLIB=OFF
+WRKDIST =	${WRKDIR}/llvm-project-${LLVM_V}.src
+WRKSRC =	${WRKDIR}/llvm-project-${LLVM_V}.src/llvm
 
-CONFIGURE_ARGS +=	-DCLANG_ENABLE_STATIC_ANALYZER=ON \
-			-DCLANG_INCLUDE_TESTS=OFF \
-			-DLLVM_BUILD_BENCHMARKS=OFF \
-			-DLLVM_BUILD_TESTS=OFF \
-			-DLLVM_ENABLE_DOXYGEN=OFF \
-			-DLLVM_ENABLE_SPHINX=OFF \
-			-DLLVM_INCLUDE_BENCHMARKS=OFF \
-			-DLLVM_INCLUDE_EXAMPLES=OFF \
-			-DLLVM_INCLUDE_TESTS=OFF
+LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS}
 
-GCC_VER =		8.4.0
+BUILD_DEPENDS +=	devel/swig \
+			textproc/py-sphinx${MODPY_FLAVOR} \
+			textproc/py-recommonmark${MODPY_FLAVOR}
+
 .if ${MACHINE_ARCH} == "amd64"
 GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
 .else
 GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 .endif
-CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_VER GCC_CONFIG
+
+CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/16/include
+SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_CONFIG
+
+CONFIGURE_ARGS +=	-DLLVM_ENABLE_BACKTRACES=OFF \
+			-DLLVM_ENABLE_FFI=OFF \
+			-DLLVM_ENABLE_LIBXML2=OFF \
+			-DLLVM_ENABLE_OCAMLDOC=OFF \
+			-DLLVM_ENABLE_PLUGINS=OFF \
+			-DLLVM_ENABLE_TERMINFO=OFF \
+			-DLLVM_ENABLE_RTTI=ON \
+			-DLLVM_ENABLE_Z3_SOLVER=OFF \
+			-DLLVM_ENABLE_ZSTD=OFF \
+			-DLLVM_INCLUDE_TESTS=OFF \
+			-DLLVM_INCLUDE_EXAMPLES=OFF \
+			-DLLVM_INCLUDE_BENCHMARKS=OFF \
+			-DLLVM_BUILD_LLVM_DYLIB=ON \
+			-DLLVM_LINK_LLVM_DYLIB=ON \
+
+# Generate documentation in man(1) format
+CONFIGURE_ARGS +=	-DLLVM_ENABLE_SPHINX=ON \
+			-DSPHINX_WARNINGS_AS_ERRORS=OFF \
+			-DSPHINX_OUTPUT_MAN=ON
+
+# OpenBSD specific options
+CONFIGURE_ARGS +=	-DLLD_ENABLE_MACHO=OFF \
+			-DLLD_ENABLE_WASM=ON \
+			-DLLD_ENABLE_COFF=ON \
+			-DLLD_ENABLE_MINGW=ON
+
+CONFIGURE_ARGS +=	-DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra"
+
+# Disable some protections in the compiler to regain performance.
+CXXFLAGS-aarch64 =	-fno-ret-protector
+CXXFLAGS-amd64 =	-fno-ret-protector -mno-retpoline
+CXXFLAGS-i386 =		-fno-ret-protector -mno-retpoline
+CXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
+CXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
+CXXFLAGS-powerpc =	-fno-ret-protector
+CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
 
 # hack to disable the use of -Bsymbolic-functions
-# Keep in sync with devel/llvm
 OPENBSD_LD_IS_LLD =	FALSE
 SUBST_VARS +=		OPENBSD_LD_IS_LLD
 
-post-extract:
-	mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKSRC}/tools/clang
-	mv ${WRKDIR}/clang-tools-extra-${LLVM_V}.src ${WRKSRC}/tools/clang/tools/extra
+ALL_TARGET =	clang-change-namespace clang-apply-replacements
+ALL_TARGET +=	clang-doc clang-format clang-include-fixer clang-move
+ALL_TARGET +=	clang-query clang-reorder-fields clang-tidy clangd
+ALL_TARGET +=	modularize pp-trace tool-template find-all-symbols
+
+MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+MODCMAKE_LDFLAGS += -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
-	@${SUBST_CMD} ${WRKSRC}/cmake/modules/LLVMProcessSources.cmake
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/clang-shlib/CMakeLists.txt
-	@${SUBST_CMD} ${WRKSRC}/tools/llvm-shlib/CMakeLists.txt
-	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	${SUBST_CMD} ${WRKDIST}/clang/lib/Driver/ToolChains/OpenBSD.cpp \
+		${WRKDIST}/clang/tools/clang-shlib/CMakeLists.txt \
+		${WRKDIST}/clang/tools/clang-format/clang-format-sublime.py \
+		${WRKDIST}/clang/tools/clang-format/clang-format.py \
+		${WRKDIST}/clang/tools/clang-format/git-clang-format \
+		${WRKSRC}/tools/llvm-shlib/CMakeLists.txt
 
-post-install:
-	find ${PREFIX}/share/clang -type f -name \*.py -exec ${MODPY_BIN_ADJ} {} +
-	2to3 -w -n ${PREFIX}/share/clang
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/clang
+do-install:
+	cd ${WRKBUILD}
+.for _t in ${ALL_TARGET}
+	exec ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} cmake --install ${WRKBUILD} \
+		--component "${_t}"
+.endfor
 
 .include <bsd.port.mk>

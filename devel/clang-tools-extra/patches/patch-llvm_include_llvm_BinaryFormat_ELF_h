@@ -1,0 +1,12 @@
+Index: llvm/include/llvm/BinaryFormat/ELF.h
+--- llvm/include/llvm/BinaryFormat/ELF.h.orig
++++ llvm/include/llvm/BinaryFormat/ELF.h
+@@ -1404,6 +1404,8 @@ enum {
+   PT_OPENBSD_MUTABLE = 0x65a3dbe5,   // Like bss, but not immutable.
+   PT_OPENBSD_RANDOMIZE = 0x65a3dbe6, // Fill with random data.
+   PT_OPENBSD_WXNEEDED = 0x65a3dbe7,  // Program does W^X violations.
++  PT_OPENBSD_NOBTCFI = 0x65a3dbe8,   // Do not enforce branch target CFI
++  PT_OPENBSD_SYSCALLS = 0x65a3dbe9,  // System call sites.
+   PT_OPENBSD_BOOTDATA = 0x65a41be6,  // Section for boot arguments.
+ 
+   // ARM program header types.

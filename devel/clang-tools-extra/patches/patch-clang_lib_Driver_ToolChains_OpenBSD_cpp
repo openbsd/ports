@@ -1,0 +1,14 @@
+Index: clang/lib/Driver/ToolChains/OpenBSD.cpp
+--- clang/lib/Driver/ToolChains/OpenBSD.cpp.orig
++++ clang/lib/Driver/ToolChains/OpenBSD.cpp
+@@ -276,6 +276,10 @@ SanitizerMask OpenBSD::getSupportedSanitizers() const 
+     Res |= SanitizerKind::FuzzerNoLink;
+   }
+ 
++  if (IsX86_64) {
++    Res |= SanitizerKind::KernelAddress;
++  }
++
+   return Res;
+ }
+ 

@@ -1,0 +1,12 @@
+Index: llvm/lib/CodeGen/CMakeLists.txt
+--- llvm/lib/CodeGen/CMakeLists.txt.orig
++++ llvm/lib/CodeGen/CMakeLists.txt
+@@ -196,6 +196,8 @@ add_llvm_component_library(LLVMCodeGen
+   RegUsageInfoPropagate.cpp
+   ReplaceWithVeclib.cpp
+   ResetMachineFunctionPass.cpp
++  ReturnProtectorLowering.cpp
++  ReturnProtectorPass.cpp
+   RegisterBank.cpp
+   RegisterBankInfo.cpp
+   SafeStack.cpp

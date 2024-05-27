@@ -1,0 +1,18 @@
+Index: llvm/tools/llvm-objdump/ELFDump.cpp
+--- llvm/tools/llvm-objdump/ELFDump.cpp.orig
++++ llvm/tools/llvm-objdump/ELFDump.cpp
+@@ -253,8 +253,14 @@ static void printProgramHeaders(const ELFFile<ELFT> &O
+     case ELF::PT_OPENBSD_MUTABLE:
+       outs() << "OPENBSD_MUTABLE ";
+       break;
++    case ELF::PT_OPENBSD_NOBTCFI:
++      outs() << "OPENBSD_NOBTCFI ";
++      break;
+     case ELF::PT_OPENBSD_RANDOMIZE:
+       outs() << "OPENBSD_RANDOMIZE ";
++      break;
++    case ELF::PT_OPENBSD_SYSCALLS:
++      outs() << "OPENBSD_SYSCALLS ";
+       break;
+     case ELF::PT_OPENBSD_WXNEEDED:
+       outs() << "OPENBSD_WXNEEDED ";

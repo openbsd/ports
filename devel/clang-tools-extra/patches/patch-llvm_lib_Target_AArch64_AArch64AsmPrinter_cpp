@@ -1,0 +1,22 @@
+Index: llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp
+--- llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp.orig
++++ llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp
+@@ -1662,6 +1662,18 @@ void AArch64AsmPrinter::emitInstruction(const MachineI
+     TS->emitARM64WinCFIEpilogEnd();
+     return;
+ 
++  case AArch64::RETGUARD_JMP_TRAP:
++    {
++    MCSymbol *RGSuccSym = OutContext.createTempSymbol();
++    /* Compare and branch */
++    EmitToStreamer(*OutStreamer, MCInstBuilder(AArch64::CBZX)
++        .addReg(MI->getOperand(0).getReg())
++        .addExpr(MCSymbolRefExpr::create(RGSuccSym, OutContext)));
++    EmitToStreamer(*OutStreamer, MCInstBuilder(AArch64::BRK).addImm(1));
++    OutStreamer->emitLabel(RGSuccSym);
++    return;
++    }
++
+   case AArch64::SEH_PACSignLR:
+     TS->emitARM64WinCFIPACSignLR();
+     return;

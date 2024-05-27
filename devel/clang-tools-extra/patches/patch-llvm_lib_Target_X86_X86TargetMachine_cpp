@@ -1,0 +1,11 @@
+Index: llvm/lib/Target/X86/X86TargetMachine.cpp
+--- llvm/lib/Target/X86/X86TargetMachine.cpp.orig
++++ llvm/lib/Target/X86/X86TargetMachine.cpp
+@@ -575,6 +575,7 @@ void X86PassConfig::addPreEmitPass() {
+   addPass(createX86EvexToVexInsts());
+   addPass(createX86DiscriminateMemOpsPass());
+   addPass(createX86InsertPrefetchPass());
++  addPass(createX86FixupGadgetsPass());
+   addPass(createX86InsertX87waitPass());
+ }
+ 
