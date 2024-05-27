@@ -8,6 +8,7 @@ V =		8.3.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}-1
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -61,6 +62,9 @@ RUN_DEPENDS =	databases/sqlite3 \
 		devel/kf5/kdoctools \
 		x11/gtk+4,-guic \
 		x11/qt5/qtwebview
+
+# Depends on exiftool
+RUN_DEPENDS +=	graphics/p5-Image-ExifTool
 
 LIB_DEPENDS =	devel/glib2 \
 		devel/kf5/kauth \
