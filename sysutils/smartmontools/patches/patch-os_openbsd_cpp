@@ -9,20 +9,20 @@ Index: os_openbsd.cpp
  #include "utility.h"
  #include "os_openbsd.h"
  
-@@ -22,8 +23,10 @@
+@@ -22,9 +23,9 @@
  #include <sys/stat.h>
  #include <util.h>
  
--const char * os_openbsd_cpp_cvsid = "$Id: patch-os_openbsd_cpp,v 1.6 2024/05/27 16:07:52 krw Exp $"
+-const char * os_openbsd_cpp_cvsid = "$Id: patch-os_openbsd_cpp,v 1.7 2024/05/27 16:45:09 krw Exp $"
 -  OS_OPENBSD_H_CVSID;
+-
 +// based on OpenBSD "/usr/include/dev/ic/nvmeio.h" && "/usr/include/dev/biovar.h"
 +#include "openbsd_nvme_ioctl.h"	// NVME_PASSTHROUGH_CMD, nvme_completion_is_error
-+ const char * os_openbsd_cpp_cvsid = "$Id: patch-os_openbsd_cpp,v 1.6 2024/05/27 16:07:52 krw Exp $"
-+   OS_OPENBSD_H_CVSID;
- 
++ 
  #define ARGUSED(x) ((void)(x))
  
-@@ -32,6 +35,23 @@ const char * os_openbsd_cpp_cvsid = "$Id: os_openbsd.c
+ /////////////////////////////////////////////////////////////////////////////
+@@ -32,6 +33,23 @@ const char * os_openbsd_cpp_cvsid = "$Id: os_openbsd.c
  namespace os_openbsd { // No need to publish anything, name provided for Doxygen
  
  static const char *net_dev_prefix = "/dev/";
@@ -46,7 +46,7 @@ Index: os_openbsd.cpp
  static const char *net_dev_ata_disk = "wd";
  static const char *net_dev_scsi_disk = "sd";
  static const char *net_dev_scsi_tape = "st";
-@@ -209,6 +229,80 @@ bool openbsd_ata_device::ata_pass_through(const ata_cm
+@@ -209,6 +227,80 @@ bool openbsd_ata_device::ata_pass_through(const ata_cm
  }
  
  /////////////////////////////////////////////////////////////////////////////
@@ -127,7 +127,7 @@ Index: os_openbsd.cpp
  /// Standard SCSI support
  
  class openbsd_scsi_device
-@@ -381,6 +475,9 @@ class openbsd_smart_interface (protected)
+@@ -381,6 +473,9 @@ class openbsd_smart_interface (protected)
  
    virtual scsi_device * get_scsi_device(const char * name, const char * type) override;
  
@@ -137,7 +137,7 @@ Index: os_openbsd.cpp
    virtual smart_device * autodetect_smart_device(const char * name) override;
  
    virtual smart_device * get_custom_smart_device(const char * name, const char * type) override;
-@@ -434,6 +531,11 @@ scsi_device * openbsd_smart_interface::get_scsi_device
+@@ -434,6 +529,11 @@ scsi_device * openbsd_smart_interface::get_scsi_device
    return new openbsd_scsi_device(this, name, type);
  }
  
@@ -149,7 +149,7 @@ Index: os_openbsd.cpp
  int openbsd_smart_interface::get_dev_names(char ***names, const char *prefix)
  {
    char *disknames, *p, **mp;
-@@ -504,6 +606,7 @@ bool openbsd_smart_interface::scan_smart_devices(smart
+@@ -504,6 +604,7 @@ bool openbsd_smart_interface::scan_smart_devices(smart
  
      bool scan_ata = !*type || !strcmp(type, "ata");
      bool scan_scsi = !*type || !strcmp(type, "scsi") || !strcmp(type, "sat");
@@ -157,7 +157,7 @@ Index: os_openbsd.cpp
  
      // Make namelists
      char * * atanames = 0; int numata = 0;
-@@ -517,7 +620,7 @@ bool openbsd_smart_interface::scan_smart_devices(smart
+@@ -517,7 +618,7 @@ bool openbsd_smart_interface::scan_smart_devices(smart
  
      char * * scsinames = 0; int numscsi = 0;
      char * * scsitapenames = 0; int numscsitape = 0;
@@ -166,7 +166,7 @@ Index: os_openbsd.cpp
        numscsi = get_dev_names(&scsinames, net_dev_scsi_disk);
        if (numscsi < 0) {
          set_err(ENOMEM);
-@@ -541,9 +644,17 @@ bool openbsd_smart_interface::scan_smart_devices(smart
+@@ -541,9 +642,17 @@ bool openbsd_smart_interface::scan_smart_devices(smart
      if(numata) free(atanames);
  
      for (i = 0; i < numscsi; i++) {
@@ -187,7 +187,7 @@ Index: os_openbsd.cpp
        free(scsinames[i]);
      }
      if(numscsi) free(scsinames);
-@@ -588,8 +699,11 @@ smart_device * openbsd_smart_interface::autodetect_sma
+@@ -588,8 +697,11 @@ smart_device * openbsd_smart_interface::autodetect_sma
        // XXX get USB vendor ID, product ID and version from sd(4)/umass(4).
        // XXX check sat device via get_usb_dev_type_by_id().
  
