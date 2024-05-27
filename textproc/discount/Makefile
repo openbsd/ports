@@ -1,17 +1,18 @@
 COMMENT =		fast C implementation of Markdown
 
-DISTNAME =		discount-2.2.7
+DISTNAME =		discount-2.2.7d
+PKGNAME =		discount-2.2.7pl0
 SHARED_LIBS =		markdown 0.0
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.pell.portland.or.us/~orc/Code/markdown/
+HOMEPAGE =		https://www.pell.portland.or.us/~orc/Code/markdown/
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c
 
-SITES =			http://www.pell.portland.or.us/~orc/Code/discount/
+SITES =			https://www.pell.portland.or.us/~orc/Code/discount/
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	simple
