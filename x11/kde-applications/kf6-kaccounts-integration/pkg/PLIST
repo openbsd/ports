@@ -1,3 +1,4 @@
+@conflict kaccounts-integration-<24.02.1p0
 include/KAccounts6/
 include/KAccounts6/KAccounts/
 include/KAccounts6/KAccounts/AccountServiceToggleJob
