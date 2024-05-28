@@ -6,6 +6,8 @@ GH_PROJECT =		compose
 GH_TAGNAME =		v${V}
 PKGNAME =		docker-${DISTNAME}
 
+REVISION =		0
+
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://docs.docker.com/compose/
@@ -13,6 +15,8 @@ HOMEPAGE =		https://docs.docker.com/compose/
 DISTFILES.vendor =	docker-compose-vendor-${V}.tar.gz
 
 SITES.vendor =		https://kirill.korins.ky/pub/distfiles/
+
+MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

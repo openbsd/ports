@@ -6,9 +6,13 @@ GH_PROJECT =		buildx
 GH_TAGNAME =		v${V}
 PKGNAME =		docker-${DISTNAME}
 
+REVISION =		0
+
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://github.com/docker/buildx
+
+MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
