@@ -5,18 +5,18 @@ COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-GH_TAGNAME =		v0.20.8
-REVISION =		1
+GH_TAGNAME =		v0.22.6
 
-SHARED_LIBS +=		tree-sitter	3.0
+SHARED_LIBS +=		tree-sitter	4.0 # 0.22.6
 
 CATEGORIES =		textproc
 
 # Unlicense/MIT
 PERMIT_PACKAGE =	Yes
 
-# Uses -std=gnu99, prefer base compiler
-COMPILER =		base-clang base-gcc
+# C11
+COMPILER = 		base-clang ports-gcc
+COMPILER_LANGS = 	c
 
 MAKE_ENV =		DESTDIR="" \
 			LIBDIR="${LOCALBASE}/lib" \
@@ -26,5 +26,9 @@ USE_GMAKE =		Yes
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/Makefile
+
+# Tests need rust/cargo and bash.
+# Script/fetch-fixtures downloads tree-sitter grammars from GitHub.
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

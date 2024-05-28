@@ -1,6 +1,5 @@
 include/tree_sitter/
 include/tree_sitter/api.h
-include/tree_sitter/parser.h
 @static-lib lib/libtree-sitter.a
 @lib lib/libtree-sitter.so.${LIBtree-sitter_VERSION}
 lib/pkgconfig/tree-sitter.pc

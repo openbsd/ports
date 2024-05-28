@@ -5,7 +5,7 @@ the pkg-config file
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -34,8 +34,8 @@ ifeq ($(shell uname),Darwin)
+@@ -38,8 +38,8 @@ else ifeq ($(shell uname),Darwin)
  else
  	SOEXT = so
  	SOEXTVER_MAJOR = so.$(SONAME_MAJOR)
@@ -14,28 +14,24 @@ Index: Makefile
 +	SOEXTVER = so.${LIBtree-sitter_VERSION}
 +	LINKSHARED += -shared
  endif
- ifneq (,$(filter $(shell uname),FreeBSD NetBSD DragonFly))
+ ifneq ($(filter $(shell uname),FreeBSD NetBSD DragonFly),)
  	PCLIBDIR := $(PREFIX)/libdata/pkgconfig
-@@ -48,21 +48,16 @@ libtree-sitter.a: $(OBJ)
- 
- libtree-sitter.$(SOEXTVER): $(OBJ)
- 	$(CC) $(LDFLAGS) $(LINKSHARED) $^ $(LDLIBS) -o $@
--	ln -sf $@ libtree-sitter.$(SOEXT)
--	ln -sf $@ libtree-sitter.$(SOEXTVER_MAJOR)
- 
- install: all
- 	install -d '$(DESTDIR)$(LIBDIR)'
- 	install -m755 libtree-sitter.a '$(DESTDIR)$(LIBDIR)'/libtree-sitter.a
- 	install -m755 libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER)
--	ln -sf libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER_MAJOR)
--	ln -sf libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXT)
- 	install -d '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter
- 	install -m644 lib/include/tree_sitter/*.h '$(DESTDIR)$(INCLUDEDIR)'/tree_sitter/
- 	install -d '$(DESTDIR)$(PCLIBDIR)'
- 	sed -e 's|@LIBDIR@|$(LIBDIR)|;s|@INCLUDEDIR@|$(INCLUDEDIR)|;s|@VERSION@|$(VERSION)|' \
--	    -e 's|=$(PREFIX)|=$${prefix}|' \
--	    -e 's|@PREFIX@|$(PREFIX)|' \
-+	    -e 's|@PREFIX@|$(LOCALBASE)|' \
- 	    tree-sitter.pc.in > '$(DESTDIR)$(PCLIBDIR)'/tree-sitter.pc
- 
+@@ -60,8 +60,7 @@ tree-sitter.pc: tree-sitter.pc.in
+ 	sed -e 's|@VERSION@|$(VERSION)|' \
+ 		-e 's|@LIBDIR@|$(LIBDIR)|' \
+ 		-e 's|@INCLUDEDIR@|$(INCLUDEDIR)|' \
+-		-e 's|=$(PREFIX)|=$${prefix}|' \
+-		-e 's|@PREFIX@|$(PREFIX)|' $< > $@
++		-e 's|@PREFIX@|$(LOCALBASE)|' $< > $@
+
  clean:
+ 	$(RM) $(OBJ) tree-sitter.pc libtree-sitter.a libtree-sitter.$(SOEXT)
+@@ -72,8 +71,6 @@ install: all
+ 	install -m644 tree-sitter.pc '$(DESTDIR)$(PCLIBDIR)'/tree-sitter.pc
+ 	install -m644 libtree-sitter.a '$(DESTDIR)$(LIBDIR)'/libtree-sitter.a
+ 	install -m755 libtree-sitter.$(SOEXT) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER)
+-	ln -sf libtree-sitter.$(SOEXTVER) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXTVER_MAJOR)
+-	ln -sf libtree-sitter.$(SOEXTVER_MAJOR) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.$(SOEXT)
+
+ uninstall:
+ 	$(RM) '$(DESTDIR)$(LIBDIR)'/libtree-sitter.a \
