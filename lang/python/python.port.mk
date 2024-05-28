@@ -295,6 +295,8 @@ MODPY_ADJ_FILES ?=
 MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
+MODPY_COMPILEALL = ${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0 -o 1
+
 .if ${MODPY_PYBUILD:L} != no
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ]; then \
