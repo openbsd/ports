@@ -522,7 +522,6 @@
      SUBDIR += pen
      SUBDIR += pfresolved
      SUBDIR += pfstat
-     SUBDIR += php-weathermap
      SUBDIR += pidgin
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-icb

@@ -1,6 +1,0 @@
-<?php
-
-// The editor will not be used unless this is set to true.
-$ENABLED=false;
-
-?>
