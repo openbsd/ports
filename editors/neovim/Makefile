@@ -11,28 +11,22 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.9.5 .
+DIST_TUPLE =	github neovim neovim v0.10.0 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
 
 CATEGORIES =	editors devel
-REVISION =	0
 HOMEPAGE =	https://neovim.io
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-# The versions listed here must match those in cmake.deps/CMakeLists.txt.
+# The versions listed here must match those in cmake.deps/deps.txt.
 STATIC_DEPS_WRKSRC =		${WRKDIST}/static-deps/
-DIST_TUPLE +=	github luvit luv 1.45.0-0 ${STATIC_DEPS_WRKSRC}/luv
-DIST_TUPLE +=	github LuaJIT LuaJIT 03c31124cc3b521ef54fe398e10fa55660a5057d \
+DIST_TUPLE +=	github luvit luv 1.48.0-2 ${STATIC_DEPS_WRKSRC}/luv
+DIST_TUPLE +=	github LuaJIT LuaJIT 75e92777988017fe47c5eb290998021bbf972d1f \
 		${STATIC_DEPS_WRKSRC}/luajit
-DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.9 \
+DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.13 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
-
-SITES.fix =		https://github.com/neovim/neovim/commit/
-# fix(stream): do not close handle if it is already closing (#26537)
-PATCHFILES.fix =	neovim-1907abb4c27{1907abb4c27857fe7f4e7394f32e130f9955a2e7}.patch
-PATCH_DIST_STRIP =	-p1
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
@@ -41,7 +35,7 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += c iconv intl m msgpack-c pthread termkey
+WANTLIB += c iconv intl m msgpack-c pthread
 WANTLIB += tree-sitter unibilium util uv vterm
 
 .if ${EMBED_LUAJIT} != "Yes"
@@ -65,12 +59,11 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/lua-bitop
 
 LIB_DEPENDS =		devel/gettext,-runtime \
-			devel/libtermkey \
 			devel/libuv \
-			devel/libvterm \
+			devel/libvterm>=0.3.3 \
 			devel/msgpack \
 			devel/unibilium \
-			textproc/tree-sitter>=0.20.8
+			textproc/tree-sitter>=0.20.9
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
@@ -80,8 +73,8 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
-			-DLIBLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
-			-DLIBLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
+			-DLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
+			-DLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
 .if ${EMBED_LUAJIT} == "Yes"
 CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit \
 			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
@@ -177,8 +170,7 @@ pre-configure:
 # Test_language_cmd fails due to:
 # https://github.com/neovim/neovim/issues/19331
 #
-# If cscope is installed, one test fails:
-# https://github.com/neovim/neovim/issues/12744
+# Test_linebreak_list test fails (test_breakindent.vim)
 #
 do-test:
 	true
