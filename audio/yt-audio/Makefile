@@ -3,7 +3,7 @@ COMMENT =		youtube-dl wrapper to manage youtube audio
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		yt-audio-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
-REVISION =		5
+REVISION =		6
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		www/youtube-dl \
+RUN_DEPENDS =		www/yt-dlp \
 			graphics/ffmpeg
 
 MODPY_PI =		Yes

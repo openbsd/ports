@@ -1,0 +1,33 @@
+Index: yt_audio/common.py
+--- yt_audio/common.py.orig
++++ yt_audio/common.py
+@@ -11,9 +11,9 @@ class Common:
+     """
+ 
+     DEFAULT_ARGUMENT_VALUES = {
+-        'download_command': 'youtube-dl -x -q --print-json --audio-format mp3 --audio-quality 0 '
++        'download_command': 'yt-dlp -x -q --print-json --audio-format mp3 --audio-quality 0 '
+                             '--add-metadata --embed-thumbnail -o "$OUTPUT$" $URL$',
+-        'playlist_info_command': 'youtube-dl --flat-playlist -J $PLAYLIST_URL$',
++        'playlist_info_command': 'yt-dlp --flat-playlist -J $PLAYLIST_URL$',
+         'output_format': '%%(title)s.%%(ext)s',
+         'ffprobe_command': 'ffprobe -v quiet -print_format json -show_format -hide_banner "$PATH$"',
+         'output_directory': str(PurePath(Path.home(), "Music"))
+@@ -88,7 +88,7 @@ class Common:
+ 
+         Parameters:
+         ==========
+-        > download_command (string): youtube-dl download command
++        > download_command (string): yt-dlp download command
+ 
+         > title_count (int): no. of titles to download
+         """
+@@ -203,7 +203,7 @@ class Common:
+     def check_dependencies(self):
+         _dependencies = ["ffmpeg -version|avconv -version",
+                          "ffprobe -version|avprobe -version",
+-                         "youtube-dl --version",
++                         "yt-dlp --version",
+                          ]
+         for _dep in _dependencies:
+             try:
