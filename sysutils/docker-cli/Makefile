@@ -1,6 +1,6 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			26.1.2
+V =			26.1.3
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
@@ -10,6 +10,8 @@ PKGNAME =		docker-${DISTNAME}
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://docs.docker.com/engine/reference/commandline/cli/
+
+MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
