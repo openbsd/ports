@@ -1,7 +1,6 @@
 COMMENT =		communicate with the i3 window manager
 
-DISTNAME =		AnyEvent-I3-0.17
-REVISION =		1
+DISTNAME =		AnyEvent-I3-0.19
 
 CATEGORIES =		x11 devel
 
