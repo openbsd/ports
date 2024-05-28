@@ -1823,6 +1823,7 @@
      SUBDIR += ruby-test-unit-ruby-core
      SUBDIR += ruby-thor
      SUBDIR += ruby-tilt
+     SUBDIR += ruby-wisper
      SUBDIR += ruby-xdg
      SUBDIR += ruby-yajl,ruby32
      SUBDIR += ruby-yajl,ruby33
