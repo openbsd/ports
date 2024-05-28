@@ -1,0 +1,17 @@
+Index: erts/emulator/Makefile.in
+--- erts/emulator/Makefile.in.orig
++++ erts/emulator/Makefile.in
+@@ -300,13 +300,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
+ NO_INLINE_FUNCTIONS=true
+ endif
+ 
+-ifneq ($(filter tile-%,$(TARGET)), )
+-# -O2 generally produces faster for tile-cc, because the code is smaller.
+-# Since tile-cc looks like gcc, we need to override the normal gcc -O3 setting.
+ OPT_LEVEL = -O2
+-else
+-OPT_LEVEL = -O3
+-endif
+ 
+ ifeq ($(GCC),yes)
+ ifeq ($(NO_INLINE_FUNCTIONS),true)

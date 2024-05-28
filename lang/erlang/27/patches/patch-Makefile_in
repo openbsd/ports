@@ -1,0 +1,13 @@
+Create symlink so the build can handle versioned binaries
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -594,6 +594,7 @@ $(BOOTSTRAP_ROOT)/bootstrap/bin/erl: $(ERL_TOP)/erts/e
+ 	        $(ERL_TOP)/erts/etc/unix/erl.src.src > \
+ 			$(BOOTSTRAP_ROOT)/bootstrap/bin/erl
+ 	@chmod 755 $(BOOTSTRAP_ROOT)/bootstrap/bin/erl
++	@(cd $(BOOTSTRAP_ROOT)/bootstrap/bin && $(LN_S) ./erl erl${MAJ_V})
+ 
+ $(BOOTSTRAP_ROOT)/bootstrap/bin/erlc: $(ERL_TOP)/bin/$(TARGET)/erlc $(BOOTSTRAP_ROOT)/bootstrap/target
+ 	@rm -f $(BOOTSTRAP_ROOT)/bootstrap/bin/erlc

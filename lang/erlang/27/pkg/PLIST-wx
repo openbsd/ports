@@ -1,0 +1,990 @@
+@option no-default-conflict
+@option is-branch
+@conflict erlang-wx->=26,<27
+@conflict erlang-wx->=26v0,<27v0
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_debugged.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_icmd.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_idb.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_ieval.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_iload.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_iserver.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_istk.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_break.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_break_win.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_code.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_filedialog_win.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_interpret.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_mon.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_mon_win.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_settings.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_src_view.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_trace.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_trace_win.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_view.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_win.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/dbg_wx_winman.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/debugger.app
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/debugger.appup
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/debugger.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/i.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/ebin/int.beam
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/priv/
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/priv/debugger.gif
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/priv/debugger.tool
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/priv/erlang_bug.png
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_debugged.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_icmd.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_idb.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_ieval.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_ieval.hrl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_iload.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_iserver.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_istk.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_break.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_break_win.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_code.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_filedialog_win.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_filedialog_win.hrl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_interpret.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_mon.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_mon_win.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_settings.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_src_view.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_trace.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_trace_win.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_view.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_win.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/dbg_wx_winman.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/debugger.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/i.erl
+lib/${ERLANG_V}/lib/${ERL_DEBUGGER}/src/int.erl
+lib/${ERLANG_V}/lib/${ERL_ET}/ebin/et_wx_contents_viewer.beam
+lib/${ERLANG_V}/lib/${ERL_ET}/ebin/et_wx_viewer.beam
+lib/${ERLANG_V}/lib/${ERL_ET}/src/et_wx_contents_viewer.erl
+lib/${ERLANG_V}/lib/${ERL_ET}/src/et_wx_viewer.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_atom_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_bin_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_detail_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_dist_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_ets_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_fun_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_gen_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_html_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_info_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_int_tab_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_mem_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_mod_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_multi_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_persistent_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_port_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_proc_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_sched_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_table_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_term_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_timer_cb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_virtual_list_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/cdv_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/crashdump_viewer.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/etop.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/etop_tr.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/etop_txt.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer.app
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer.appup
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_alloc_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_app_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_html_lib.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_lib.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_perf_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_port_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_pro_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_procinfo.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_sock_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_sys_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_trace_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_traceoptions_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_tv_table.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_tv_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/observer_wx.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/ttb.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/ebin/ttb_et.beam
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/examples/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/examples/multitrace.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/include/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/include/etop.hrl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/bin/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/bin/cdv
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/bin/etop
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/priv/erlang_observer.png
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_atom_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_bin_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_detail_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_dist_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_ets_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_fun_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_gen_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_html_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_info_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_int_tab_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_mem_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_mod_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_multi_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_persistent_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_port_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_proc_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_sched_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_table_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_term_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_timer_cb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_virtual_list_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/cdv_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/crashdump_viewer.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/crashdump_viewer.hrl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/etop.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/etop_defs.hrl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/etop_tr.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/etop_txt.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_alloc_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_app_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_defs.hrl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_html_lib.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_lib.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_perf_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_port_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_pro_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_procinfo.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_sock_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_sys_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_trace_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_traceoptions_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_tv.hrl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_tv_table.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_tv_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/observer_wx.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/ttb.erl
+lib/${ERLANG_V}/lib/${ERL_OBSERVER}/src/ttb_et.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/gl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/glu.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wx.app
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wx.appup
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wx.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAcceleratorEntry.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAcceleratorTable.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxActivateEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxArtProvider.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiDockArt.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiManager.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiManagerEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiNotebook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiNotebookEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiPaneInfo.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiSimpleTabArt.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxAuiTabArt.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBitmap.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBitmapButton.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBitmapDataObject.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBookCtrlBase.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBookCtrlEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBoxSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBrush.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBufferedDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxBufferedPaintDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxButton.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCalendarCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCalendarDateAttr.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCalendarEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCaret.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCheckBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCheckListBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxChildFocusEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxChoice.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxChoicebook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxClientDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxClipboard.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxClipboardTextEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCloseEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxColourData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxColourDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxColourPickerCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxColourPickerEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxComboBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCommandEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxContextMenuEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxControl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxControlWithItems.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxCursor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDCOverlay.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDataObject.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDateEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDatePickerCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDirDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDirPickerCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDisplay.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDisplayChangedEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxDropFilesEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxEraseEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxEvtHandler.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFileDataObject.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFileDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFileDirPickerEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFilePickerCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFindReplaceData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFindReplaceDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFlexGridSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFocusEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFont.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFontData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFontDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFontPickerCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFontPickerEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxFrame.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGBSizerItem.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGCDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGLCanvas.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGLContext.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGauge.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGenericDirCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsBrush.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsContext.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsFont.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsGradientStops.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsMatrix.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsObject.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsPath.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsPen.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGraphicsRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGrid.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridBagSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellAttr.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellBoolEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellBoolRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellChoiceEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellFloatEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellFloatRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellNumberEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellNumberRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellStringRenderer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridCellTextEditor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxGridSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxHelpEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxHtmlEasyPrinting.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxHtmlLinkEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxHtmlWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxIcon.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxIconBundle.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxIconizeEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxIdleEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxImage.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxImageList.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxInitDialogEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxJoystickEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxKeyEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxLayoutAlgorithm.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListItem.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListItemAttr.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListView.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxListbook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxLocale.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxLogNull.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMDIChildFrame.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMDIClientWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMDIParentFrame.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMask.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMaximizeEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMemoryDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMenu.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMenuBar.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMenuEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMenuItem.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMessageDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMiniFrame.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMirrorDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMouseCaptureChangedEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMouseCaptureLostEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMouseEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMoveEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxMultiChoiceDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxNavigationKeyEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxNotebook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxNotificationMessage.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxNotifyEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxOverlay.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPageSetupDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPageSetupDialogData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPaintDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPaintEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPalette.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPaletteChangedEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPanel.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPasswordEntryDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPen.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPickerBase.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPopupTransientWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPopupWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPostScriptDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPreviewCanvas.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPreviewControlBar.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPreviewFrame.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrintData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrintDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrintDialogData.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrintPreview.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrinter.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxPrintout.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxProgressDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxQueryNewPaletteEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxRadioBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxRadioButton.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxRegion.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSashEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSashLayoutWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSashWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxScreenDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxScrollBar.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxScrollEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxScrollWinEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxScrolledWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSetCursorEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxShowEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSingleChoiceDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSizeEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSizerFlags.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSizerItem.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSlider.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSpinButton.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSpinCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSpinEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSplashScreen.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSplitterEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSplitterWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStaticBitmap.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStaticBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStaticBoxSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStaticLine.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStaticText.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStatusBar.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStdDialogButtonSizer.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStyledTextCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxStyledTextEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSysColourChangedEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSystemOptions.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxSystemSettings.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTaskBarIcon.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTaskBarIconEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTextAttr.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTextCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTextDataObject.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTextEntryDialog.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxToggleButton.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxToolBar.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxToolTip.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxToolbook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTopLevelWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTreeCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTreeEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxTreebook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxUpdateUIEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWebView.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWebViewEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWindowCreateEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWindowDC.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxWindowDestroyEvent.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxXmlResource.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wx_misc.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wx_object.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxe_master.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxe_server.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/ebin/wxe_util.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/demo.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/demo.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/demo_html_tagger.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/demo_html_tagger.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/erlang.png
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_aui.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_aui.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_button.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_button.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_canvas.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_canvas.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_canvas_paint.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_canvas_paint.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_choices.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_choices.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_cursor.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_cursor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_dialogs.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_dialogs.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_frame_utils.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_frame_utils.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_gauge.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_gauge.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_gl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_gl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_graphicsContext.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_graphicsContext.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_grid.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_grid.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_htmlWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_htmlWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_htmlWindow.html
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_listCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_listCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_notebook.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_notebook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_notificationMessage.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_notificationMessage.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_pickers.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_pickers.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_popupMenu.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_popupMenu.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_radioBox.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_radioBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_sashWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_sashWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_sizers.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_sizers.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_slider.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_slider.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_splitterWindow.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_splitterWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_static.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_static.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_textCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_textCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_treeCtrl.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_treeCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_webview.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/ex_webview.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/demo/image.jpg
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/simple/
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/simple/hello.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/simple/hello2.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/simple/menu.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/simple/minimal.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_board.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_board.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_game.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_game.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_gui.beam
+lib/${ERLANG_V}/lib/${ERL_WX}/examples/sudoku/sudoku_gui.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/include/
+lib/${ERLANG_V}/lib/${ERL_WX}/include/gl.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/include/glu.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/include/wx.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/priv/
+@so lib/${ERLANG_V}/lib/${ERL_WX}/priv/erl_gl.so
+lib/${ERLANG_V}/lib/${ERL_WX}/priv/erlang-logo128.png
+lib/${ERLANG_V}/lib/${ERL_WX}/priv/erlang-logo32.png
+lib/${ERLANG_V}/lib/${ERL_WX}/priv/erlang-logo64.png
+@so lib/${ERLANG_V}/lib/${ERL_WX}/priv/wxe_driver.so
+lib/${ERLANG_V}/lib/${ERL_WX}/src/
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/gl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/glu.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAcceleratorEntry.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAcceleratorTable.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxActivateEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxArtProvider.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiDockArt.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiManager.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiManagerEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiNotebook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiNotebookEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiPaneInfo.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiSimpleTabArt.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxAuiTabArt.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBitmap.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBitmapButton.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBitmapDataObject.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBookCtrlBase.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBookCtrlEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBoxSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBrush.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBufferedDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxBufferedPaintDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxButton.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCalendarCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCalendarDateAttr.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCalendarEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCaret.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCheckBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCheckListBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxChildFocusEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxChoice.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxChoicebook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxClientDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxClipboard.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxClipboardTextEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCloseEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxColourData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxColourDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxColourPickerCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxColourPickerEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxComboBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCommandEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxContextMenuEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxControl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxControlWithItems.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxCursor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDCOverlay.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDataObject.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDateEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDatePickerCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDirDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDirPickerCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDisplay.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDisplayChangedEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxDropFilesEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxEraseEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxEvtHandler.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFileDataObject.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFileDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFileDirPickerEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFilePickerCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFindReplaceData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFindReplaceDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFlexGridSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFocusEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFont.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFontData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFontDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFontPickerCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFontPickerEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxFrame.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGBSizerItem.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGCDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGLCanvas.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGLContext.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGauge.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGenericDirCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsBrush.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsContext.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsFont.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsGradientStops.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsMatrix.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsObject.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsPath.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsPen.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGraphicsRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGrid.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridBagSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellAttr.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellBoolEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellBoolRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellChoiceEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellFloatEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellFloatRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellNumberEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellNumberRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellStringRenderer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridCellTextEditor.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxGridSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxHelpEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxHtmlEasyPrinting.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxHtmlLinkEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxHtmlWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxIcon.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxIconBundle.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxIconizeEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxIdleEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxImage.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxImageList.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxInitDialogEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxJoystickEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxKeyEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxLayoutAlgorithm.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListItem.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListItemAttr.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListView.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxListbook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxLocale.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxLogNull.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMDIChildFrame.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMDIClientWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMDIParentFrame.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMask.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMaximizeEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMemoryDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMenu.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMenuBar.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMenuEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMenuItem.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMessageDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMiniFrame.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMirrorDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMouseCaptureChangedEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMouseCaptureLostEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMouseEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMoveEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxMultiChoiceDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxNavigationKeyEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxNotebook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxNotificationMessage.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxNotifyEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxOverlay.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPageSetupDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPageSetupDialogData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPaintDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPaintEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPalette.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPaletteChangedEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPanel.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPasswordEntryDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPen.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPickerBase.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPopupTransientWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPopupWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPostScriptDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPreviewCanvas.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPreviewControlBar.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPreviewFrame.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrintData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrintDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrintDialogData.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrintPreview.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrinter.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxPrintout.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxProgressDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxQueryNewPaletteEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxRadioBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxRadioButton.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxRegion.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSashEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSashLayoutWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSashWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxScreenDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxScrollBar.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxScrollEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxScrollWinEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxScrolledWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSetCursorEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxShowEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSingleChoiceDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSizeEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSizerFlags.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSizerItem.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSlider.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSpinButton.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSpinCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSpinEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSplashScreen.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSplitterEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSplitterWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStaticBitmap.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStaticBox.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStaticBoxSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStaticLine.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStaticText.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStatusBar.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStdDialogButtonSizer.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStyledTextCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxStyledTextEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSysColourChangedEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSystemOptions.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxSystemSettings.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTaskBarIcon.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTaskBarIconEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTextAttr.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTextCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTextDataObject.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTextEntryDialog.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxToggleButton.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxToolBar.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxToolTip.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxToolbook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTopLevelWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTreeCtrl.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTreeEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxTreebook.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxUpdateUIEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWebView.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWebViewEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWindow.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWindowCreateEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWindowDC.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxWindowDestroyEvent.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxXmlResource.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wx_misc.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/gen/wxe_funcs.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wx.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wx_object.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wxe.hrl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wxe_master.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wxe_server.erl
+lib/${ERLANG_V}/lib/${ERL_WX}/src/wxe_util.erl
+@man lib/${ERLANG_V}/man/man3/debugger.3
+@man lib/${ERLANG_V}/man/man3/observer.3
+@man lib/${ERLANG_V}/man/man3/wx.3
+@man lib/${ERLANG_V}/man/man3/wxAcceleratorEntry.3
+@man lib/${ERLANG_V}/man/man3/wxAcceleratorTable.3
+@man lib/${ERLANG_V}/man/man3/wxActivateEvent.3
+@man lib/${ERLANG_V}/man/man3/wxArtProvider.3
+@man lib/${ERLANG_V}/man/man3/wxAuiDockArt.3
+@man lib/${ERLANG_V}/man/man3/wxAuiManager.3
+@man lib/${ERLANG_V}/man/man3/wxAuiManagerEvent.3
+@man lib/${ERLANG_V}/man/man3/wxAuiNotebook.3
+@man lib/${ERLANG_V}/man/man3/wxAuiNotebookEvent.3
+@man lib/${ERLANG_V}/man/man3/wxAuiPaneInfo.3
+@man lib/${ERLANG_V}/man/man3/wxAuiSimpleTabArt.3
+@man lib/${ERLANG_V}/man/man3/wxAuiTabArt.3
+@man lib/${ERLANG_V}/man/man3/wxBitmap.3
+@man lib/${ERLANG_V}/man/man3/wxBitmapButton.3
+@man lib/${ERLANG_V}/man/man3/wxBitmapDataObject.3
+@man lib/${ERLANG_V}/man/man3/wxBookCtrlBase.3
+@man lib/${ERLANG_V}/man/man3/wxBookCtrlEvent.3
+@man lib/${ERLANG_V}/man/man3/wxBoxSizer.3
+@man lib/${ERLANG_V}/man/man3/wxBrush.3
+@man lib/${ERLANG_V}/man/man3/wxBufferedDC.3
+@man lib/${ERLANG_V}/man/man3/wxBufferedPaintDC.3
+@man lib/${ERLANG_V}/man/man3/wxButton.3
+@man lib/${ERLANG_V}/man/man3/wxCalendarCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxCalendarDateAttr.3
+@man lib/${ERLANG_V}/man/man3/wxCalendarEvent.3
+@man lib/${ERLANG_V}/man/man3/wxCaret.3
+@man lib/${ERLANG_V}/man/man3/wxCheckBox.3
+@man lib/${ERLANG_V}/man/man3/wxCheckListBox.3
+@man lib/${ERLANG_V}/man/man3/wxChildFocusEvent.3
+@man lib/${ERLANG_V}/man/man3/wxChoice.3
+@man lib/${ERLANG_V}/man/man3/wxChoicebook.3
+@man lib/${ERLANG_V}/man/man3/wxClientDC.3
+@man lib/${ERLANG_V}/man/man3/wxClipboard.3
+@man lib/${ERLANG_V}/man/man3/wxClipboardTextEvent.3
+@man lib/${ERLANG_V}/man/man3/wxCloseEvent.3
+@man lib/${ERLANG_V}/man/man3/wxColourData.3
+@man lib/${ERLANG_V}/man/man3/wxColourDialog.3
+@man lib/${ERLANG_V}/man/man3/wxColourPickerCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxColourPickerEvent.3
+@man lib/${ERLANG_V}/man/man3/wxComboBox.3
+@man lib/${ERLANG_V}/man/man3/wxCommandEvent.3
+@man lib/${ERLANG_V}/man/man3/wxContextMenuEvent.3
+@man lib/${ERLANG_V}/man/man3/wxControl.3
+@man lib/${ERLANG_V}/man/man3/wxControlWithItems.3
+@man lib/${ERLANG_V}/man/man3/wxCursor.3
+@man lib/${ERLANG_V}/man/man3/wxDC.3
+@man lib/${ERLANG_V}/man/man3/wxDCOverlay.3
+@man lib/${ERLANG_V}/man/man3/wxDataObject.3
+@man lib/${ERLANG_V}/man/man3/wxDateEvent.3
+@man lib/${ERLANG_V}/man/man3/wxDatePickerCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxDialog.3
+@man lib/${ERLANG_V}/man/man3/wxDirDialog.3
+@man lib/${ERLANG_V}/man/man3/wxDirPickerCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxDisplay.3
+@man lib/${ERLANG_V}/man/man3/wxDisplayChangedEvent.3
+@man lib/${ERLANG_V}/man/man3/wxDropFilesEvent.3
+@man lib/${ERLANG_V}/man/man3/wxEraseEvent.3
+@man lib/${ERLANG_V}/man/man3/wxEvent.3
+@man lib/${ERLANG_V}/man/man3/wxEvtHandler.3
+@man lib/${ERLANG_V}/man/man3/wxFileDataObject.3
+@man lib/${ERLANG_V}/man/man3/wxFileDialog.3
+@man lib/${ERLANG_V}/man/man3/wxFileDirPickerEvent.3
+@man lib/${ERLANG_V}/man/man3/wxFilePickerCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxFindReplaceData.3
+@man lib/${ERLANG_V}/man/man3/wxFindReplaceDialog.3
+@man lib/${ERLANG_V}/man/man3/wxFlexGridSizer.3
+@man lib/${ERLANG_V}/man/man3/wxFocusEvent.3
+@man lib/${ERLANG_V}/man/man3/wxFont.3
+@man lib/${ERLANG_V}/man/man3/wxFontData.3
+@man lib/${ERLANG_V}/man/man3/wxFontDialog.3
+@man lib/${ERLANG_V}/man/man3/wxFontPickerCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxFontPickerEvent.3
+@man lib/${ERLANG_V}/man/man3/wxFrame.3
+@man lib/${ERLANG_V}/man/man3/wxGBSizerItem.3
+@man lib/${ERLANG_V}/man/man3/wxGCDC.3
+@man lib/${ERLANG_V}/man/man3/wxGLCanvas.3
+@man lib/${ERLANG_V}/man/man3/wxGLContext.3
+@man lib/${ERLANG_V}/man/man3/wxGauge.3
+@man lib/${ERLANG_V}/man/man3/wxGenericDirCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsBrush.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsContext.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsFont.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsGradientStops.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsMatrix.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsObject.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsPath.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsPen.3
+@man lib/${ERLANG_V}/man/man3/wxGraphicsRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGrid.3
+@man lib/${ERLANG_V}/man/man3/wxGridBagSizer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellAttr.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellBoolEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellBoolRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellChoiceEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellFloatEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellFloatRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellNumberEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellNumberRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellStringRenderer.3
+@man lib/${ERLANG_V}/man/man3/wxGridCellTextEditor.3
+@man lib/${ERLANG_V}/man/man3/wxGridEvent.3
+@man lib/${ERLANG_V}/man/man3/wxGridSizer.3
+@man lib/${ERLANG_V}/man/man3/wxHelpEvent.3
+@man lib/${ERLANG_V}/man/man3/wxHtmlEasyPrinting.3
+@man lib/${ERLANG_V}/man/man3/wxHtmlLinkEvent.3
+@man lib/${ERLANG_V}/man/man3/wxHtmlWindow.3
+@man lib/${ERLANG_V}/man/man3/wxIcon.3
+@man lib/${ERLANG_V}/man/man3/wxIconBundle.3
+@man lib/${ERLANG_V}/man/man3/wxIconizeEvent.3
+@man lib/${ERLANG_V}/man/man3/wxIdleEvent.3
+@man lib/${ERLANG_V}/man/man3/wxImage.3
+@man lib/${ERLANG_V}/man/man3/wxImageList.3
+@man lib/${ERLANG_V}/man/man3/wxInitDialogEvent.3
+@man lib/${ERLANG_V}/man/man3/wxJoystickEvent.3
+@man lib/${ERLANG_V}/man/man3/wxKeyEvent.3
+@man lib/${ERLANG_V}/man/man3/wxLayoutAlgorithm.3
+@man lib/${ERLANG_V}/man/man3/wxListBox.3
+@man lib/${ERLANG_V}/man/man3/wxListCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxListEvent.3
+@man lib/${ERLANG_V}/man/man3/wxListItem.3
+@man lib/${ERLANG_V}/man/man3/wxListItemAttr.3
+@man lib/${ERLANG_V}/man/man3/wxListView.3
+@man lib/${ERLANG_V}/man/man3/wxListbook.3
+@man lib/${ERLANG_V}/man/man3/wxLocale.3
+@man lib/${ERLANG_V}/man/man3/wxLogNull.3
+@man lib/${ERLANG_V}/man/man3/wxMDIChildFrame.3
+@man lib/${ERLANG_V}/man/man3/wxMDIClientWindow.3
+@man lib/${ERLANG_V}/man/man3/wxMDIParentFrame.3
+@man lib/${ERLANG_V}/man/man3/wxMask.3
+@man lib/${ERLANG_V}/man/man3/wxMaximizeEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMemoryDC.3
+@man lib/${ERLANG_V}/man/man3/wxMenu.3
+@man lib/${ERLANG_V}/man/man3/wxMenuBar.3
+@man lib/${ERLANG_V}/man/man3/wxMenuEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMenuItem.3
+@man lib/${ERLANG_V}/man/man3/wxMessageDialog.3
+@man lib/${ERLANG_V}/man/man3/wxMiniFrame.3
+@man lib/${ERLANG_V}/man/man3/wxMirrorDC.3
+@man lib/${ERLANG_V}/man/man3/wxMouseCaptureChangedEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMouseCaptureLostEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMouseEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMoveEvent.3
+@man lib/${ERLANG_V}/man/man3/wxMultiChoiceDialog.3
+@man lib/${ERLANG_V}/man/man3/wxNavigationKeyEvent.3
+@man lib/${ERLANG_V}/man/man3/wxNotebook.3
+@man lib/${ERLANG_V}/man/man3/wxNotificationMessage.3
+@man lib/${ERLANG_V}/man/man3/wxNotifyEvent.3
+@man lib/${ERLANG_V}/man/man3/wxOverlay.3
+@man lib/${ERLANG_V}/man/man3/wxPageSetupDialog.3
+@man lib/${ERLANG_V}/man/man3/wxPageSetupDialogData.3
+@man lib/${ERLANG_V}/man/man3/wxPaintDC.3
+@man lib/${ERLANG_V}/man/man3/wxPaintEvent.3
+@man lib/${ERLANG_V}/man/man3/wxPalette.3
+@man lib/${ERLANG_V}/man/man3/wxPaletteChangedEvent.3
+@man lib/${ERLANG_V}/man/man3/wxPanel.3
+@man lib/${ERLANG_V}/man/man3/wxPasswordEntryDialog.3
+@man lib/${ERLANG_V}/man/man3/wxPen.3
+@man lib/${ERLANG_V}/man/man3/wxPickerBase.3
+@man lib/${ERLANG_V}/man/man3/wxPopupTransientWindow.3
+@man lib/${ERLANG_V}/man/man3/wxPopupWindow.3
+@man lib/${ERLANG_V}/man/man3/wxPostScriptDC.3
+@man lib/${ERLANG_V}/man/man3/wxPreviewCanvas.3
+@man lib/${ERLANG_V}/man/man3/wxPreviewControlBar.3
+@man lib/${ERLANG_V}/man/man3/wxPreviewFrame.3
+@man lib/${ERLANG_V}/man/man3/wxPrintData.3
+@man lib/${ERLANG_V}/man/man3/wxPrintDialog.3
+@man lib/${ERLANG_V}/man/man3/wxPrintDialogData.3
+@man lib/${ERLANG_V}/man/man3/wxPrintPreview.3
+@man lib/${ERLANG_V}/man/man3/wxPrinter.3
+@man lib/${ERLANG_V}/man/man3/wxPrintout.3
+@man lib/${ERLANG_V}/man/man3/wxProgressDialog.3
+@man lib/${ERLANG_V}/man/man3/wxQueryNewPaletteEvent.3
+@man lib/${ERLANG_V}/man/man3/wxRadioBox.3
+@man lib/${ERLANG_V}/man/man3/wxRadioButton.3
+@man lib/${ERLANG_V}/man/man3/wxRegion.3
+@man lib/${ERLANG_V}/man/man3/wxSashEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSashLayoutWindow.3
+@man lib/${ERLANG_V}/man/man3/wxSashWindow.3
+@man lib/${ERLANG_V}/man/man3/wxScreenDC.3
+@man lib/${ERLANG_V}/man/man3/wxScrollBar.3
+@man lib/${ERLANG_V}/man/man3/wxScrollEvent.3
+@man lib/${ERLANG_V}/man/man3/wxScrollWinEvent.3
+@man lib/${ERLANG_V}/man/man3/wxScrolledWindow.3
+@man lib/${ERLANG_V}/man/man3/wxSetCursorEvent.3
+@man lib/${ERLANG_V}/man/man3/wxShowEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSingleChoiceDialog.3
+@man lib/${ERLANG_V}/man/man3/wxSizeEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSizer.3
+@man lib/${ERLANG_V}/man/man3/wxSizerFlags.3
+@man lib/${ERLANG_V}/man/man3/wxSizerItem.3
+@man lib/${ERLANG_V}/man/man3/wxSlider.3
+@man lib/${ERLANG_V}/man/man3/wxSpinButton.3
+@man lib/${ERLANG_V}/man/man3/wxSpinCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxSpinEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSplashScreen.3
+@man lib/${ERLANG_V}/man/man3/wxSplitterEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSplitterWindow.3
+@man lib/${ERLANG_V}/man/man3/wxStaticBitmap.3
+@man lib/${ERLANG_V}/man/man3/wxStaticBox.3
+@man lib/${ERLANG_V}/man/man3/wxStaticBoxSizer.3
+@man lib/${ERLANG_V}/man/man3/wxStaticLine.3
+@man lib/${ERLANG_V}/man/man3/wxStaticText.3
+@man lib/${ERLANG_V}/man/man3/wxStatusBar.3
+@man lib/${ERLANG_V}/man/man3/wxStdDialogButtonSizer.3
+@man lib/${ERLANG_V}/man/man3/wxStyledTextCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxStyledTextEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSysColourChangedEvent.3
+@man lib/${ERLANG_V}/man/man3/wxSystemOptions.3
+@man lib/${ERLANG_V}/man/man3/wxSystemSettings.3
+@man lib/${ERLANG_V}/man/man3/wxTaskBarIcon.3
+@man lib/${ERLANG_V}/man/man3/wxTaskBarIconEvent.3
+@man lib/${ERLANG_V}/man/man3/wxTextAttr.3
+@man lib/${ERLANG_V}/man/man3/wxTextCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxTextDataObject.3
+@man lib/${ERLANG_V}/man/man3/wxTextEntryDialog.3
+@man lib/${ERLANG_V}/man/man3/wxToggleButton.3
+@man lib/${ERLANG_V}/man/man3/wxToolBar.3
+@man lib/${ERLANG_V}/man/man3/wxToolTip.3
+@man lib/${ERLANG_V}/man/man3/wxToolbook.3
+@man lib/${ERLANG_V}/man/man3/wxTopLevelWindow.3
+@man lib/${ERLANG_V}/man/man3/wxTreeCtrl.3
+@man lib/${ERLANG_V}/man/man3/wxTreeEvent.3
+@man lib/${ERLANG_V}/man/man3/wxTreebook.3
+@man lib/${ERLANG_V}/man/man3/wxUpdateUIEvent.3
+@man lib/${ERLANG_V}/man/man3/wxWebView.3
+@man lib/${ERLANG_V}/man/man3/wxWebViewEvent.3
+@man lib/${ERLANG_V}/man/man3/wxWindow.3
+@man lib/${ERLANG_V}/man/man3/wxWindowCreateEvent.3
+@man lib/${ERLANG_V}/man/man3/wxWindowDC.3
+@man lib/${ERLANG_V}/man/man3/wxWindowDestroyEvent.3
+@man lib/${ERLANG_V}/man/man3/wxXmlResource.3
+@man lib/${ERLANG_V}/man/man3/wx_misc.3
+@man lib/${ERLANG_V}/man/man3/wx_object.3
+@man lib/${ERLANG_V}/man/man6/observer.6
