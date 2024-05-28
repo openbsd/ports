@@ -1,0 +1,29 @@
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -64,14 +64,14 @@ dependencies:
+     requirements:
+     - - ">="
+       - !ruby/object:Gem::Version
+-        version: 1.5.0
++        version: 1.3.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+     - - ">="
+       - !ruby/object:Gem::Version
+-        version: 1.5.0
++        version: 1.3.0
+ - !ruby/object:Gem::Dependency
+   name: ffi
+   requirement: !ruby/object:Gem::Requirement
+@@ -112,7 +112,7 @@ dependencies:
+     requirements:
+     - - "~>"
+       - !ruby/object:Gem::Version
+-        version: 2.6.3
++        version: 2.7.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement

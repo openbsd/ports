@@ -1,0 +1,21 @@
+Index: lib/pdk/cli/exec.rb
+--- lib/pdk/cli/exec.rb.orig
++++ lib/pdk/cli/exec.rb
+@@ -39,7 +39,7 @@ module PDK
+       end
+ 
+       def self.bundle(*args)
+-        ensure_bin_present!(bundle_bin, 'bundler')
++        ensure_bin_present!(bundle_bin, 'bundler${GEM_BIN_SUFFIX}')
+ 
+         execute(bundle_bin, *args)
+       end
+@@ -47,7 +47,7 @@ module PDK
+       def self.bundle_bin
+         require 'pdk/util/ruby_version'
+ 
+-        bundle_bin = Gem.win_platform? ? 'bundle.bat' : 'bundle'
++        bundle_bin = Gem.win_platform? ? 'bundle.bat' : 'bundle${GEM_BIN_SUFFIX}'
+         vendored_bin_path = File.join('private', 'ruby', PDK::Util::RubyVersion.active_ruby_version, 'bin', bundle_bin)
+ 
+         try_vendored_bin(vendored_bin_path, bundle_bin)
