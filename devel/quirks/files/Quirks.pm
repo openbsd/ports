@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1632 2024/05/20 07:22:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1633 2024/05/28 13:39:24 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1945,6 +1945,7 @@ setup_obsolete_reason(
 	3 => 'py3-fsb5',
 	3 => 'khotkeys',
 	3 => 'ksysguard',
+	3 => 'php-weathermap',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
