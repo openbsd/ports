@@ -197,6 +197,7 @@ share/yosys/nexus/parse_init.vh
 share/yosys/pmux2mux.v
 share/yosys/python3/
 ${MODPY_COMMENT}share/yosys/python3/${MODPY_PYCACHE}/
+share/yosys/python3/${MODPY_PYCACHE}smtio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/yosys/python3/${MODPY_PYCACHE}smtio.${MODPY_PYC_MAGIC_TAG}pyc
 share/yosys/python3/smtio.py
 share/yosys/quicklogic/

@@ -5,7 +5,7 @@ COMMENT =	Atari ST/STE/TT/Falcon emulator
 V =		2.5.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 
@@ -45,8 +45,7 @@ pre-configure:
 		${WRKSRC}/tools/hconsole/hconsole.1
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	${PREFIX}/share/hatari/hconsole/*.py
+	${MODPY_COMPILEALL} ${PREFIX}/share/hatari/hconsole/
 	gunzip ${PREFIX}/man/man1/*.1.gz
 
 .include <bsd.port.mk>

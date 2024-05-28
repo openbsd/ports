@@ -48,9 +48,13 @@ share/ECM/find-modules/Findgzip.cmake
 share/ECM/find-modules/GeneratePythonBindingUmbrellaModule.cmake
 share/ECM/find-modules/Qt5Ruleset.py
 ${MODPY_COMMENT}share/ECM/find-modules/${MODPY_PYCACHE}/
+share/ECM/find-modules/${MODPY_PYCACHE}Qt5Ruleset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/find-modules/${MODPY_PYCACHE}Qt5Ruleset.${MODPY_PYC_MAGIC_TAG}pyc
+share/ECM/find-modules/${MODPY_PYCACHE}rules_engine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/find-modules/${MODPY_PYCACHE}rules_engine.${MODPY_PYC_MAGIC_TAG}pyc
+share/ECM/find-modules/${MODPY_PYCACHE}run-sip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/find-modules/${MODPY_PYCACHE}run-sip.${MODPY_PYC_MAGIC_TAG}pyc
+share/ECM/find-modules/${MODPY_PYCACHE}sip_generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/find-modules/${MODPY_PYCACHE}sip_generator.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/find-modules/local.properties.cmake
 share/ECM/find-modules/rules_engine.py
@@ -128,6 +132,7 @@ share/ECM/modules/ECMVersionHeader.h.in
 share/ECM/modules/ECMWinResolveSymlinks.cmake
 share/ECM/modules/QtVersionOption.cmake
 ${MODPY_COMMENT}share/ECM/modules/${MODPY_PYCACHE}/
+share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/modules/${MODPY_PYCACHE}check-outbound-license.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/modules/check-outbound-license.py
 share/ECM/modules/ecm_uninstall.cmake.in
@@ -137,6 +142,7 @@ share/ECM/toolchain/
 share/ECM/toolchain/Android.cmake
 share/ECM/toolchain/ECMAndroidDeployQt.cmake
 ${MODPY_COMMENT}share/ECM/toolchain/${MODPY_PYCACHE}/
+share/ECM/toolchain/${MODPY_PYCACHE}generate-fastlane-metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ECM/toolchain/${MODPY_PYCACHE}generate-fastlane-metadata.${MODPY_PYC_MAGIC_TAG}pyc
 share/ECM/toolchain/deployment-file-qt514.json.in
 share/ECM/toolchain/deployment-file.json.in

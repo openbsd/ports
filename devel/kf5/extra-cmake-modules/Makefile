@@ -1,5 +1,6 @@
 COMMENT =	CMake modules required by KDE5
 DISTNAME =	extra-cmake-modules-${VERSION}
+REVISION =	0
 HOMEPAGE =	https://projects.kde.org/projects/kdesupport/extra-cmake-modules
 
 PKG_ARCH =	*
@@ -16,7 +17,7 @@ CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/share/ECM/find-modules/ \
 		${PREFIX}/share/ECM/modules/ \
 		${PREFIX}/share/ECM/toolchain/

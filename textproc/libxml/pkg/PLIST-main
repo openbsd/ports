@@ -59,6 +59,7 @@ lib/cmake/libxml2/libxml2-config.cmake
 lib/libxml2.la
 @lib lib/libxml2.so.${LIBxml2_VERSION}
 lib/pkgconfig/libxml-2.0.pc
+lib/python${MODPY_VERSION}/
 @man man/man1/xml2-config.1
 @man man/man1/xmlcatalog.1
 @man man/man1/xmllint.1

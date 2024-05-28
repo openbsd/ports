@@ -4,7 +4,7 @@ GH_ACCOUNT=	stp
 GH_PROJECT=	stp
 GH_TAGNAME=	stp-2.2.0
 DISTNAME=	stp-2.2.0
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  stp                       0.0 # 2.2
 
@@ -37,7 +37,7 @@ NO_TEST=	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/stp
 	${INSTALL_DATA} ${WRKSRC}/papers/*.pdf ${PREFIX}/share/doc/stp
-	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}
 	find ${PREFIX}/bin -name 'stp*' -ls
 	# stp-X.Y.Z ends up as ${FULLPKGNAME} in PLIST
 	if [ -L ${PREFIX}/bin/stp ]; then \

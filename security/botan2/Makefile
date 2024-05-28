@@ -3,7 +3,7 @@ COMMENT =	crypto and TLS for C++11
 VERSION =	2.19.4
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	botan-2		18.0
 
@@ -66,7 +66,7 @@ do-test:
 	    --data-dir=${WRKSRC}/src/tests/data
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/botan2.py
 	cd ${PREFIX}/share/doc && mv botan-${VERSION} botan-2
 	${INSTALL_PROGRAM} ${WRKBUILD}/botan-test ${PREFIX}/bin

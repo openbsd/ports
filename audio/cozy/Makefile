@@ -3,7 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.3.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		audio
 
@@ -41,7 +41,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 PORTHOME=		${WRKDIR}
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}
+	${MODPY_COMPILEALL} ${PREFIX}
 	ln -s com.github.geigi.cozy ${PREFIX}/bin/cozy
 
 .include <bsd.port.mk>

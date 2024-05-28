@@ -2,7 +2,7 @@ COMMENT=		simple GTK desktop news aggregator
 
 V=			1.14.6
 DISTNAME=		liferea-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www news x11
 
@@ -70,7 +70,6 @@ FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
 post-install:
 	rm ${PREFIX}/lib/liferea/web-extension/*.{a,la}
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/liferea/plugins/
+	${MODPY_COMPILEALL} ${PREFIX}/lib/liferea/plugins/
 
 .include <bsd.port.mk>

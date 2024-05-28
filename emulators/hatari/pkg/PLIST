@@ -70,7 +70,9 @@ share/hatari/
 share/hatari/hatari-icon.bmp
 share/hatari/hconsole/
 ${MODPY_COMMENT}share/hatari/hconsole/${MODPY_PYCACHE}/
+share/hatari/hconsole/${MODPY_PYCACHE}example.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hatari/hconsole/${MODPY_PYCACHE}example.${MODPY_PYC_MAGIC_TAG}pyc
+share/hatari/hconsole/${MODPY_PYCACHE}hconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hatari/hconsole/${MODPY_PYCACHE}hconsole.${MODPY_PYC_MAGIC_TAG}pyc
 share/hatari/hconsole/example-commands
 share/hatari/hconsole/example-debugger

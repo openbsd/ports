@@ -1,5 +1,6 @@
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
+REVISION =	0
 
 PKG_ARCH =	*
 
@@ -16,10 +17,7 @@ CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/ECM/find-modules/ \
-		${PREFIX}/share/ECM/modules/ \
-		${PREFIX}/share/ECM/toolchain/
+	${MODPY_COMPILEALL} ${PREFIX}/share/ECM
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/find-modules/FindInotify.cmake

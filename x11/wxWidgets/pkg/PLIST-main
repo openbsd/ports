@@ -783,6 +783,7 @@ share/aclocal/wxwin.m4
 share/bakefile/
 share/bakefile/presets/
 ${MODPY_COMMENT}share/bakefile/presets/${MODPY_PYCACHE}/
+share/bakefile/presets/${MODPY_PYCACHE}wx_presets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/bakefile/presets/${MODPY_PYCACHE}wx_presets.${MODPY_PYC_MAGIC_TAG}pyc
 share/bakefile/presets/wx.bkl
 share/bakefile/presets/wx_presets.py

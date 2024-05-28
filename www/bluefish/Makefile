@@ -1,7 +1,7 @@
 COMMENT=		HTML editor for experienced web designers
 
 DISTNAME=		bluefish-2.2.15
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www editors
 
@@ -50,6 +50,6 @@ post-install:
 	rm ${PREFIX}/lib/bluefish/*.{a,la}
 # XXX not fully py3 ready although it needs it
 # (checking whether /usr/local/bin/python2.7 version is >= 3.3... no)
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/bluefish || true
+	${MODPY_COMPILEALL} ${PREFIX}/share/bluefish || true
 
 .include <bsd.port.mk>

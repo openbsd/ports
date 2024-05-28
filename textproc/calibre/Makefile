@@ -2,7 +2,7 @@ COMMENT =		ebook management application
 
 V =			5.44.0
 DISTNAME =		calibre-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 
@@ -115,7 +115,6 @@ do-install:
 	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/calibre
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/calibre
+	${MODPY_COMPILEALL} ${PREFIX}/{lib,share}/calibre
 
 .include <bsd.port.mk>

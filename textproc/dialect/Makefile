@@ -3,7 +3,7 @@ V =			2.3.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -50,6 +50,6 @@ pre-test:
 		${WRKBUILD}/data/app.drey.Dialect.metainfo.xml
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/dialect/dialect/
+	${MODPY_COMPILEALL} ${PREFIX}/share/dialect/dialect/
 
 .include <bsd.port.mk>

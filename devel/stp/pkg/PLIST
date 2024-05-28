@@ -13,9 +13,12 @@ lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/stp/
 lib/python${MODPY_VERSION}/site-packages/stp/__init__.py
-lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}library_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}library_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}stp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/stp/${MODPY_PYCACHE}stp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/stp/library_path.py
 lib/python${MODPY_VERSION}/site-packages/stp/stp.py

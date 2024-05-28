@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
 DISTNAME=	gimp-${V}.18
-REVISION=	2
+REVISION=	3
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -144,8 +144,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/gimp ${PREFIX}/share/examples/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/gimp/${V}/plug-ins
+	${MODPY_COMPILEALL} ${PREFIX}/lib/gimp/${V}/plug-ins
 
 # XXX remove once this GIMP version becomes the default;
 # prevent conflicts with graphics/gimp/stable;

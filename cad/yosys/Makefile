@@ -1,6 +1,6 @@
 COMMENT =	framework for Verilog RTL synthesis
 DISTNAME =	yosys-0.9pl4081
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys
@@ -67,7 +67,6 @@ post-build:
 	    xargs sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,'
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/share/yosys/python3
+	${MODPY_COMPILEALL} ${PREFIX}/share/yosys/python3
 
 .include <bsd.port.mk>

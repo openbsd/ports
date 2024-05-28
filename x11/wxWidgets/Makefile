@@ -7,6 +7,7 @@ DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
+REVISION-main =		0
 
 CATEGORIES =		x11
 SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
@@ -133,7 +134,7 @@ pre-configure:
 	${MODPYTHON_pre-configure}
 
 post-install:
-	${MODPY_BIN} -m compileall ${PREFIX}/share/bakefile/presets/wx_presets.py
+	${MODPY_COMPILEALL} ${PREFIX}/share/bakefile/presets/wx_presets.py
 
 do-test:
 	@cd ${WRKSRC}/tests && \
