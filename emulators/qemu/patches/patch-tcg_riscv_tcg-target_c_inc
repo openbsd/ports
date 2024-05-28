@@ -1,7 +1,7 @@
 Index: tcg/riscv/tcg-target.c.inc
 --- tcg/riscv/tcg-target.c.inc.orig
 +++ tcg/riscv/tcg-target.c.inc
-@@ -2115,7 +2115,7 @@ static void sigill_handler(int signo, siginfo_t *si, v
+@@ -2116,7 +2116,7 @@ static void sigill_handler(int signo, siginfo_t *si, v
  {
      /* Skip the faulty instruction */
      ucontext_t *uc = (ucontext_t *)data;

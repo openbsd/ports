@@ -111,6 +111,7 @@ share/doc/qemu/devel/code-of-conduct.html
 share/doc/qemu/devel/conflict-resolution.html
 share/doc/qemu/devel/control-flow-integrity.html
 share/doc/qemu/devel/decodetree.html
+share/doc/qemu/devel/docs.html
 share/doc/qemu/devel/ebpf_rss.html
 share/doc/qemu/devel/fuzzing.html
 share/doc/qemu/devel/index-api.html
@@ -123,7 +124,18 @@ share/doc/qemu/devel/kconfig.html
 share/doc/qemu/devel/loads-stores.html
 share/doc/qemu/devel/maintainers.html
 share/doc/qemu/devel/memory.html
-share/doc/qemu/devel/migration.html
+share/doc/qemu/devel/migration/
+share/doc/qemu/devel/migration/CPR.html
+share/doc/qemu/devel/migration/best-practices.html
+share/doc/qemu/devel/migration/compatibility.html
+share/doc/qemu/devel/migration/dirty-limit.html
+share/doc/qemu/devel/migration/features.html
+share/doc/qemu/devel/migration/index.html
+share/doc/qemu/devel/migration/main.html
+share/doc/qemu/devel/migration/mapped-ram.html
+share/doc/qemu/devel/migration/postcopy.html
+share/doc/qemu/devel/migration/vfio.html
+share/doc/qemu/devel/migration/virtio.html
 share/doc/qemu/devel/modules.html
 share/doc/qemu/devel/multi-process.html
 share/doc/qemu/devel/multi-thread-tcg.html
@@ -151,7 +163,7 @@ share/doc/qemu/devel/testing.html
 share/doc/qemu/devel/tracing.html
 share/doc/qemu/devel/trivial-patches.html
 share/doc/qemu/devel/ui.html
-share/doc/qemu/devel/vfio-migration.html
+share/doc/qemu/devel/vfio-iommufd.html
 share/doc/qemu/devel/virtio-backends.html
 share/doc/qemu/devel/writing-monitor-commands.html
 share/doc/qemu/devel/zoned-storage.html
@@ -185,6 +197,7 @@ share/doc/qemu/specs/acpi_mem_hotplug.html
 share/doc/qemu/specs/acpi_nvdimm.html
 share/doc/qemu/specs/acpi_pci_hotplug.html
 share/doc/qemu/specs/edu.html
+share/doc/qemu/specs/fsi.html
 share/doc/qemu/specs/fw_cfg.html
 share/doc/qemu/specs/index.html
 share/doc/qemu/specs/ivshmem-spec.html
@@ -208,6 +221,7 @@ share/doc/qemu/specs/vmw_pvscsi-spec.html
 share/doc/qemu/system/
 share/doc/qemu/system/arm/
 share/doc/qemu/system/arm/aspeed.html
+share/doc/qemu/system/arm/b-l475e-iot01a.html
 share/doc/qemu/system/arm/bananapi_m2u.html
 share/doc/qemu/system/arm/collie.html
 share/doc/qemu/system/arm/cpu-features.html
@@ -260,6 +274,7 @@ share/doc/qemu/system/devices/net.html
 share/doc/qemu/system/devices/nvme.html
 share/doc/qemu/system/devices/usb-u2f.html
 share/doc/qemu/system/devices/usb.html
+share/doc/qemu/system/devices/vhost-user-input.html
 share/doc/qemu/system/devices/vhost-user-rng.html
 share/doc/qemu/system/devices/vhost-user.html
 share/doc/qemu/system/devices/virtio-gpu.html
@@ -295,6 +310,7 @@ share/doc/qemu/system/openrisc/emulation.html
 share/doc/qemu/system/openrisc/or1k-sim.html
 share/doc/qemu/system/openrisc/virt.html
 share/doc/qemu/system/ppc/
+share/doc/qemu/system/ppc/amigang.html
 share/doc/qemu/system/ppc/embedded.html
 share/doc/qemu/system/ppc/powermac.html
 share/doc/qemu/system/ppc/powernv.html
@@ -415,6 +431,7 @@ share/qemu/firmware/60-edk2-arm.json
 share/qemu/firmware/60-edk2-i386.json
 share/qemu/firmware/60-edk2-x86_64.json
 share/qemu/hppa-firmware.img
+share/qemu/hppa-firmware64.img
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo

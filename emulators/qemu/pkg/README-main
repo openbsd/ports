@@ -29,8 +29,7 @@
 	-hda virtual.img -cdrom cd74.iso -boot d
 
     $ qemu-system-sparc64 -m 64 -monitor stdio \
-	-hda virtual.img -cdrom cd74.iso -boot d \
-        -net nic,model=ne2k_pci -net user
+	-hda virtual.img -cdrom cd74.iso -boot d
 
    NOTE: start this inside an xterm or equivalent.
    NOTE: be sure to choose serial console during install.
@@ -55,8 +54,7 @@
 
     $ qemu-system-x86_64 -m 64 -nographic -no-fd-bootchk -hda virtual.img
 
-    $ qemu-system-sparc64 -m 64 -nographic -hda virtual.img \
-	-net nic,model=ne2k_pci -net user
+    $ qemu-system-sparc64 -m 64 -nographic -hda virtual.img
 
 ==> Networking
 

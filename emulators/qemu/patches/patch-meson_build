@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -2070,7 +2070,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -2156,7 +2156,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -13,7 +13,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4144,9 +4144,6 @@ else
+@@ -4226,9 +4226,6 @@ else
    summary_info += {'Objective-C compiler': false}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
