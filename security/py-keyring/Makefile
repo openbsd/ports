@@ -1,9 +1,8 @@
 COMMENT=		store and access your passwords safely
 
-MODPY_EGG_VERSION=	23.6.0
+MODPY_EGG_VERSION=	23.8.2
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
 
 CATEGORIES=		security
 
@@ -16,8 +15,7 @@ MODPY_ADJ_FILES=	keyring/cli.py
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools_scm
 
-RUN_DEPENDS=		devel/py-entrypoints${MODPY_FLAVOR} \
-			security/py-secretstorage${MODPY_FLAVOR}
+RUN_DEPENDS=		security/py-secretstorage${MODPY_FLAVOR}
 
 # KWallet backend
 RUN_DEPENDS+=		x11/dbus-python${MODPY_FLAVOR}
