@@ -1,37 +1,32 @@
-COMMENT=		rss reader, live stream, mashup, aggregation webapp
+COMMENT=	rss reader, live stream, mashup, aggregation webapp
 
-V=			2.18
-DISTNAME=		selfoss-$V
-MODPHP_VERSION=		7.4
-REVISION=		6
+V=		2.19
+DISTNAME=	selfoss-$V
 
-CATEGORIES=		www
+CATEGORIES=	www
 
-HOMEPAGE=		http://selfoss.aditu.de/
+HOMEPAGE=	http://selfoss.aditu.de/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
 SITES=		https://github.com/SSilence/selfoss/releases/download/$V/
-EXTRACT_SUFX=		.zip
+EXTRACT_SUFX=	.zip
+WRKDIST=	${WRKDIR}/selfoss
 
-MODULES=		lang/php
+MODULES=	lang/php
 
-RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-gd \
-			${MODPHP_PDO_DEPENDS}
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		${MODPHP_PDO_DEPENDS}
 
-NO_BUILD=		Yes
-NO_TEST=		Yes
-PKG_ARCH=		*
+NO_BUILD=	Yes
+NO_TEST=	Yes
+PKG_ARCH=	*
 
-PREFIX=			${VARBASE}/www
-INSTDIR=		${PREFIX}/selfoss
-TINSTDIR=		${TRUEPREFIX}/selfoss
-SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR
-
-do-extract:
-	mkdir -p ${WRKDIST}
-	unzip -oq -d ${WRKDIST} ${FULLDISTDIR}/${EXTRACT_ONLY}
+PREFIX=		${VARBASE}/www
+INSTDIR=	${PREFIX}/selfoss
+TINSTDIR=	${TRUEPREFIX}/selfoss
+SUBST_VARS=	INSTDIR MODPHP_VERSION TINSTDIR
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}

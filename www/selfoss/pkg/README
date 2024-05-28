@@ -12,6 +12,7 @@ It can be accessed by pointing you browser to:
 Post-installation instructions
 ==============================
 To use selfoss with nginx, see configuration examples at:
+	${INSTDIR}/.nginx.conf
 	https://github.com/SSilence/selfoss/wiki/nginx-configuration
 
 With Apache, AllowOverride settings on the ${INSTDIR} directory and
