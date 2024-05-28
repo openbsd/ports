@@ -1,5 +1,6 @@
 COMMENT=		store and access your passwords safely
 
+# newer versions require jaraco.classes
 MODPY_EGG_VERSION=	23.8.2
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
