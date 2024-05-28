@@ -1185,6 +1185,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}federation_whitelist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}federation_whitelist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}jwks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}jwks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}new_user_consent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1201,6 +1203,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}sso_register.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}unsubscribe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/${MODPY_PYCACHE}unsubscribe.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/federation_whitelist.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/jwks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/new_user_consent.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/client/oidc/
