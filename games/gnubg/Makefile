@@ -3,7 +3,7 @@ COMMENT =		GNU Backgammon
 V =			1.07.001
 DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		games x11
 
@@ -65,8 +65,7 @@ CFLAGS +=		-DFONT_VERA=\\\"${FONT_SANS}\\\" \
 WRKDIST =		${WRKDIR}/gnubg-$V
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/gnubg/scripts/*.py
+	${MODPY_COMPILEALL} ${PREFIX}/share/gnubg/scripts
 	rm -R ${PREFIX}/share/gnubg/fonts
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${FILESDIR}/gnubg.desktop ${PREFIX}/share/applications/

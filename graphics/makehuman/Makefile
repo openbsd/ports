@@ -3,7 +3,7 @@ COMMENT=	parametrical modeling of 3D humanoid characters
 GH_ACCOUNT=	makehumancommunity
 GH_PROJECT=	makehuman
 GH_TAGNAME=	v1.2.0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/py-qt5${MODPY_FLAVOR}
 
 do-build:
-	cd ${WRKSRC}/makehuman && ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py .
 .for TARGET in models proxies targets
 	cd ${WRKSRC}/makehuman && ${MODPY_BIN} compile_${TARGET}.py
 .endfor
@@ -41,5 +40,6 @@ do-install:
 	${SUBST_CMD} -m 0555 -c -o ${BINOWN} -g ${BINGRP} \
 		${FILESDIR}/makehuman.in ${PREFIX}/bin/makehuman
 	cp -Rp ${WRKSRC}/makehuman ${PREFIX}/share
+	${MODPY_COMPILEALL} ${PREFIX}/share/makehuman
 
 .include <bsd.port.mk>

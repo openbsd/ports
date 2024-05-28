@@ -3,6 +3,7 @@ COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			4.3.1
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
+REVISION =			0
 
 CATEGORIES =			news
 
@@ -68,7 +69,7 @@ do-install:
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 	    ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd
 
 .include <bsd.port.mk>

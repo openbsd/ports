@@ -8,7 +8,7 @@ CATEGORIES =		security
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
 GH_COMMIT =		f8762584c536cfad0b7eff8dbdac914845e8fe4a
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
@@ -34,6 +34,6 @@ SCRIPTS_DIR = ${PREFIX}/share/tlsfuzzer/scripts
 post-install:
 	${INSTALL_DATA_DIR} ${SCRIPTS_DIR}
 	cd ${WRKSRC}/scripts && pax -rw *.py ${SCRIPTS_DIR}
-	${MODPY_BIN} -m compileall ${SCRIPTS_DIR}
+	${MODPY_COMPILEALL} ${SCRIPTS_DIR}
 
 .include <bsd.port.mk>

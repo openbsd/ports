@@ -83,7 +83,7 @@ post-install:
 		${PREFIX}/share/pixmaps/
 	sed -i 's,${WRKINST},,' ${PREFIX}/include/gpsd_config.h
 
-	${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0 -o 1 ${WRKINST}${MODPY_SITEPKG}/gps
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}/gps
 
 # Needs running messagebus daemon
 TEST_IS_INTERACTIVE=	Yes

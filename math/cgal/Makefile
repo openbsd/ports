@@ -4,7 +4,7 @@ V =			5.6
 DISTNAME =		CGAL-${V}
 PKGNAME =		${DISTNAME:L}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		math
 
@@ -27,7 +27,6 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/cmake/CGAL/Help
+	${MODPY_COMPILEALL} ${PREFIX}/lib/cmake/CGAL/Help
 
 .include <bsd.port.mk>

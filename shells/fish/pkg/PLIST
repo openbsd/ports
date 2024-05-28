@@ -1483,12 +1483,15 @@ share/fish/man/man1/
 @man share/fish/man/man1/while.1
 share/fish/tools/
 ${MODPY_COMMENT}share/fish/tools/${MODPY_PYCACHE}/
+share/fish/tools/${MODPY_PYCACHE}create_manpage_completions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fish/tools/${MODPY_PYCACHE}create_manpage_completions.${MODPY_PYC_MAGIC_TAG}pyc
+share/fish/tools/${MODPY_PYCACHE}deroff.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fish/tools/${MODPY_PYCACHE}deroff.${MODPY_PYC_MAGIC_TAG}pyc
 share/fish/tools/create_manpage_completions.py
 share/fish/tools/deroff.py
 share/fish/tools/web_config/
 ${MODPY_COMMENT}share/fish/tools/web_config/${MODPY_PYCACHE}/
+share/fish/tools/web_config/${MODPY_PYCACHE}webconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/fish/tools/web_config/${MODPY_PYCACHE}webconfig.${MODPY_PYC_MAGIC_TAG}pyc
 share/fish/tools/web_config/delete.png
 share/fish/tools/web_config/favicon.png

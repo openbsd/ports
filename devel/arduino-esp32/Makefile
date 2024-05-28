@@ -2,7 +2,7 @@ COMMENT =	esp32 arduino core toolset
 V =		2.0.4
 DISTNAME =	esp32-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -29,10 +29,10 @@ post-patch:
 	${SUBST_CMD} ${WRKDIST}/platform.txt
 
 do-build:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}/tools
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALLDIR}
 	@cp -r ${WRKDIST}/* ${INSTALLDIR}
+	${MODPY_COMPILEALL} ${INSTALLDIR}/tools
 
 .include <bsd.port.mk>

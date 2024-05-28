@@ -1,7 +1,7 @@
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.14
 CATEGORIES =	x11
-REVISION =	2
+REVISION =	3
 
 SITES =		${SITE_SOURCEFORGE:=menumaker/}
 
@@ -20,7 +20,6 @@ MAKE_FLAGS =	PYTHON=${MODPY_BIN}
 NO_TEST =	Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/share/menumaker
+	${MODPY_COMPILEALL} ${PREFIX}/share/menumaker
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@ COMMENT =		friendly interactive shell
 V =			3.7.1
 
 DISTNAME =		fish-$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		shells
 
@@ -57,12 +57,7 @@ do-test:
 	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/fish/tools/deroff.py
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/fish/tools/create_manpage_completions.py
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/fish/tools/web_config/webconfig.py
+	${MODPY_COMPILEALL} ${PREFIX}/share/fish/tools
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
 	mv ${PREFIX}/etc/fish/config.fish ${PREFIX}/share/examples/fish/
 	rm -Rf ${PREFIX}/etc/

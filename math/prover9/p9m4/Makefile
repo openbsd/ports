@@ -2,7 +2,7 @@ COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05
 PKGNAME=		${DISTNAME:S/v//}
-REVISION =		4
+REVISION =		5
 
 SITES=			${HOMEPAGE}/gui/
 
@@ -45,7 +45,7 @@ do-install:
 .for m in ${MODPY_ADJ_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/$m ${LIBEXEC_DIR}
 	2to3 -wn --no-diffs ${LIBEXEC_DIR}/*
-	${MODPY_BIN} -m compileall ${LIBEXEC_DIR}
 .endfor
+	${MODPY_COMPILEALL} ${LIBEXEC_DIR}
 
 .include <bsd.port.mk>

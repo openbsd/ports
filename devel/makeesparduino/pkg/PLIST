@@ -6,6 +6,7 @@ share/makeEspArduino/os/OpenBSD.mk
 share/makeEspArduino/os/Windows_NT.mk
 share/makeEspArduino/tools/
 ${MODPY_COMMENT}share/makeEspArduino/tools/${MODPY_PYCACHE}/
+share/makeEspArduino/tools/${MODPY_PYCACHE}py_wrap.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/makeEspArduino/tools/${MODPY_PYCACHE}py_wrap.${MODPY_PYC_MAGIC_TAG}pyc
 share/makeEspArduino/tools/board_op.pl
 share/makeEspArduino/tools/crash_tool.pl

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	3.9.0
 
 DISTNAME=	flit_core-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -37,8 +37,7 @@ do-build:
 do-install:
 	cd ${WRKSRC}; ${MODPY_BIN} bootstrap_install.py \
 	    --installdir ${WRKINST}${MODPY_SITEPKG} dist/*.whl
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 
 post-install:
 	rm -rf ${WRKINST}/${MODPY_SITEPKG}/flit_core/tests

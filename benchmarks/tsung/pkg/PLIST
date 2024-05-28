@@ -255,7 +255,9 @@ lib/tsung/tsung_controller-${V}/src/tsung_controller.erl
 lib/tsung/tsung_plotter/
 lib/tsung/tsung_plotter/__init__.py
 ${MODPY_COMMENT}lib/tsung/tsung_plotter/${MODPY_PYCACHE}/
+lib/tsung/tsung_plotter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/tsung/tsung_plotter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/tsung/tsung_plotter/${MODPY_PYCACHE}tsung.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/tsung/tsung_plotter/${MODPY_PYCACHE}tsung.${MODPY_PYC_MAGIC_TAG}pyc
 lib/tsung/tsung_plotter/tsung.py
 lib/tsung/tsung_recorder-${V}/

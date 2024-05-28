@@ -40,8 +40,6 @@ pre-configure:
 		${WRKSRC}/scripts/vim/README
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/share/doc/taskwarrior/scripts/add-ons
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d
 	${INSTALL_DATA} ${PREFIX}/share/doc/taskwarrior/scripts/bash/task.sh \

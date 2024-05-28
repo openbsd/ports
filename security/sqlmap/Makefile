@@ -3,7 +3,7 @@ COMMENT =		penetration testing tool to detect/exploit SQL injection
 GH_ACCOUNT =		sqlmapproject
 GH_PROJECT =		sqlmap
 GH_TAGNAME =		1.8.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -29,6 +29,6 @@ do-install:
 	rm ${INSTDIR}/{.{gitattributes,gitignore},README.md}
 	rm -rf ${INSTDIR}/doc
 	ln -s ${TRUEPREFIX}/share/sqlmap/sqlmap.py ${PREFIX}/bin/sqlmap
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${INSTDIR}
+	${MODPY_COMPILEALL} ${INSTDIR}
 
 .include <bsd.port.mk>

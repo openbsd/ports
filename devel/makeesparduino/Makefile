@@ -5,7 +5,7 @@ GH_PROJECT =		makeEspArduino
 GH_TAGNAME =		6.6.5
 
 PKGNAME =		makeesparduino-${GH_TAGNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -34,7 +34,6 @@ do-install:
 	cp -r ${WRKDIST}/tools ${PREFIX}/share/makeEspArduino/
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/makeEspArduino/tools
+	${MODPY_COMPILEALL} ${PREFIX}/share/makeEspArduino/tools
 
 .include <bsd.port.mk>

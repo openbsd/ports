@@ -180,11 +180,17 @@ share/gnubg/pixmaps/
 share/gnubg/pixmaps/gnubg-big.png
 share/gnubg/scripts/
 ${MODPY_COMMENT}share/gnubg/scripts/${MODPY_PYCACHE}/
+share/gnubg/scripts/${MODPY_PYCACHE}batch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}batch.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}batch_win.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}batch_win.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}db_import.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}db_import.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}gnubg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}gnubg.${MODPY_PYC_MAGIC_TAG}pyc
+share/gnubg/scripts/${MODPY_PYCACHE}matchseries.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gnubg/scripts/${MODPY_PYCACHE}matchseries.${MODPY_PYC_MAGIC_TAG}pyc
 share/gnubg/scripts/batch.py
 share/gnubg/scripts/batch_win.py

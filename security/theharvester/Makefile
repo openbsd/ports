@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	5
+REVISION =	6
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -47,6 +47,6 @@ do-install:
 	cp -r ${WRKDIST} ${INSTDIR}
 	chmod 755 ${INSTDIR}/theHarvester.py
 	ln -s ${TRUEPREFIX}/share/theharvester/theHarvester.py ${PREFIX}/bin/theHarvester
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${INSTDIR}
+	${MODPY_COMPILEALL} ${INSTDIR}
 
 .include <bsd.port.mk>

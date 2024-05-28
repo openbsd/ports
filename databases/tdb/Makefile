@@ -7,7 +7,7 @@ V=		1.4.10
 
 DISTNAME=	tdb-$V
 PKGNAME-python=	py3-${DISTNAME}
-REVISION-python=0
+REVISION-python=1
 
 MULTI_PACKAGES=	-main -python
 
@@ -61,6 +61,6 @@ CONFIGURE_ARGS= --mandir="${PREFIX}/man" \
 		--disable-rpath
 
 post-install:
-	 ${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

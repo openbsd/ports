@@ -7,7 +7,7 @@ Index: config/package_layout.json
    "runtime": {
      "analyzers": {
 -      "clangsa": "clang",
-+      "clangsa": "${LOCALBASE}/bin/clang",
++      "clangsa": "${LOCALBASE}/bin/clang-${MODCLANG_VERSION}",
        "clang-tidy": "clang-tidy",
        "cppcheck": "cppcheck"
      },

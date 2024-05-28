@@ -9,6 +9,7 @@ include/lilv-0/lilv/lilvmm.hpp
 @lib lib/liblilv-0.so.${LIBlilv-0_VERSION}
 lib/pkgconfig/lilv-0.pc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}lilv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}lilv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lilv.py
 @man man/man1/lv2apply.1

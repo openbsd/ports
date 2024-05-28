@@ -4,7 +4,7 @@ GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
 GH_TAGNAME =	v6.21.0
 
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -58,8 +58,7 @@ pre-configure:
 
 do-install:
 	cp -rf ${WRKSRC}/build/CodeChecker ${PREFIX}/share/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/CodeChecker
+	${MODPY_COMPILEALL} ${PREFIX}/share/CodeChecker
 	ln -sf ${TRUEPREFIX}/share/CodeChecker/bin/CodeChecker \
 		${PREFIX}/bin/codechecker
 	find ${PREFIX}/share \( -name '*${PATCHORIG}' -or \

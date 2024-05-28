@@ -11,7 +11,7 @@ COMMENT =	program matching and transformation engine
 GH_ACCOUNT =	coccinelle
 GH_PROJECT =	coccinelle
 GH_TAGNAME =	1.1.1
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -73,8 +73,7 @@ post-build:
 		${MAKE_PROGRAM} WEBDOCS=${PREFIX}/share/doc/coccinelle html
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/share/coccinelle/python/coccilib
+	${MODPY_COMPILEALL} ${PREFIX}/lib/coccinelle
 	mv ${PREFIX}/lib/coccinelle/*.so \
 		${PREFIX}/lib/ocaml/stublibs/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinelle

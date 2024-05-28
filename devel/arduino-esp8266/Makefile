@@ -2,7 +2,7 @@ COMMENT =	esp8266 arduino core toolset
 V =		3.0.2
 DISTNAME =	esp8266-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -36,7 +36,6 @@ pre-build:
 	${SUBST_CMD} ${WRKDIST}/platform.txt
 
 do-build:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
 
 # libc is no longer supplied, so we need to get it from newlib
 # note, a symlink doesn't work here, and I don't know why
@@ -47,5 +46,6 @@ do-install:
 	    ${INSTALL_DATA_DIR} libc/xtensa-lx106-elf && \
 	    cp -r ${LOCALBASE}/xtensa-lx106-elf/xtensa-lx106-elf/include \
 	    libc/xtensa-lx106-elf/
+	${MODPY_COMPILEALL} ${INSTALLDIR}/tools/
 
 .include <bsd.port.mk>

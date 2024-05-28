@@ -19,7 +19,7 @@ COMMENT =	flashcard learning system with spaced repetition
 #
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	education
 
@@ -56,7 +56,6 @@ do-build:
 	ln -fs ${LOCALBASE}/bin/$i${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/$i
 .endfor
 	cd ${WRKSRC} && ${MAKE_ENV} sh tools/build_ui.sh
-	${MODPY_BIN} -mcompileall ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
@@ -76,5 +75,6 @@ do-install:
 	cd ${WRKSRC} && pax -rw web ${WRKINST}/${MODPY_SITEPKG}/aqt
 	rm ${WRKINST}/${MODPY_SITEPKG}/anki/*${PATCHORIG}
 	rm ${WRKINST}/${MODPY_SITEPKG}/aqt/*${PATCHORIG}
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

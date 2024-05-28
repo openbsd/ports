@@ -7,7 +7,7 @@ GNOME_PROJECT=		libxml2
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
 REVISION-main=		0
-REVISION-python=	0
+REVISION-python=	1
 
 SHARED_LIBS +=  xml2                 20.0     # 14.7
 
@@ -71,9 +71,6 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
-.if ${BUILD_PACKAGES:M-python}
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
-.endif
 
 do-test:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \

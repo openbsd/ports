@@ -1,5 +1,6 @@
 @conflict tdb-<1.3.18p0
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_tdb_text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_tdb_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_tdb_text.py
 @so lib/python${MODPY_VERSION}/site-packages/tdb.${MODPY_PYC_MAGIC_TAG}so

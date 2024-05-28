@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-9.2
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -49,6 +49,6 @@ LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
 
 post-install:
-	${MODPY_BIN} -m compileall ${PREFIX}/share/gdb/python
+	${MODPY_COMPILEALL} ${PREFIX}/share/gdb/python
 
 .include <bsd.port.mk>

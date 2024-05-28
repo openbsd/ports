@@ -5,7 +5,7 @@ COMMENT =	declarative cross-platform build tool
 V =		2.2.2
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qbscore		15.0
 
@@ -33,7 +33,6 @@ RUN_DEPENDS =		x11/qt6/qtdeclarative
 LIB_DEPENDS =		x11/qt6/qt5compat
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/qbs/python/{dmgbuild,ds_store,mac_alias}
+	${MODPY_COMPILEALL} ${PREFIX}/share/qbs/python/
 
 .include <bsd.port.mk>

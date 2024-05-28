@@ -2,7 +2,7 @@ COMMENT=	braille translator, back-translator and formatter
 
 V=		3.29.0
 DISTNAME=	liblouis-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  louis                8.2      # 20.17
 
@@ -34,6 +34,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}/louis
 	${INSTALL_DATA} ${WRKSRC}/python/louis/__init__.py \
 		${WRKINST}/${MODPY_SITEPKG}/louis
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

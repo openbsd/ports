@@ -5,7 +5,7 @@ GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		editors
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=		www/sassc \
 			x11/libhandy
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${DESTDIR}${MODPY_SITEPKG}/apostrophe/
+	${MODPY_COMPILEALL} ${DESTDIR}${MODPY_SITEPKG}/apostrophe/
 
 .include <bsd.port.mk>

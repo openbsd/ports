@@ -1,7 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.11.4
-REVISION=		1
+REVISION=		2
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -54,7 +54,6 @@ do-install:
 		-f ${MAKE_FILE} install
 	sed -i s,${PREFIX},${TRUEPREFIX}, \
 		${PREFIX}/share/applications/*.desktop
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/gpodder/extensions/
+	${MODPY_COMPILEALL} ${PREFIX}/share/gpodder/extensions/
 
 .include <bsd.port.mk>

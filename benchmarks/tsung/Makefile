@@ -4,7 +4,7 @@ V=		1.8.0
 GH_ACCOUNT=	processone
 GH_PROJECT=	tsung
 GH_TAGNAME=	v${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	benchmarks net
 
@@ -35,9 +35,6 @@ FAKE_FLAGS=		CONFDIR="${PREFIX}/share/examples/tsung/" \
 SUBST_VARS+=		V
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/tsung/tsung_plotter/__init__.py
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/tsung/tsung_plotter/tsung.py
+	${MODPY_COMPILEALL} ${PREFIX}/lib/tsung
 
 .include <bsd.port.mk>
