@@ -1,0 +1,4 @@
+A set of methods for processing keyboard input in character, line and
+multiline modes. It maintains history of entered input with an ability
+to recall and re-edit those inputs. It lets you register to listen for
+keystroke events and trigger custom key events yourself.
