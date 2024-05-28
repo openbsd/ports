@@ -1,5 +1,5 @@
 COMMENT =	VT220/xterm/ECMA-48 terminal emulator library
-DISTNAME =	libvterm-0.3
+DISTNAME =	libvterm-0.3.3
 EPOCH =		0
 
 HOMEPAGE =	https://www.leonerd.org.uk/code/libvterm/
