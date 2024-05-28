@@ -1,0 +1,33 @@
+Use HMAC_Init_ex() instead of the deprecated HMAC_Init()
+
+Index: xsec/enc/OpenSSL/OpenSSLCryptoHashHMAC.cpp
+--- xsec/enc/OpenSSL/OpenSSLCryptoHashHMAC.cpp.orig
++++ xsec/enc/OpenSSL/OpenSSLCryptoHashHMAC.cpp
+@@ -142,10 +142,11 @@ void OpenSSLCryptoHashHMAC::setKey(const XSECCryptoKey
+     m_keyLen = ((XSECCryptoKeyHMAC *) key)->getKey(m_keyBuf);
+ 
+ 
+-    HMAC_Init(mp_hctx, 
++    HMAC_Init_ex(mp_hctx,
+         m_keyBuf.rawBuffer(),
+         m_keyLen,
+-        mp_md);
++        mp_md,
++        NULL);
+ 
+     m_initialised = true;
+ 
+@@ -173,10 +174,11 @@ void OpenSSLCryptoHashHMAC::reset(void) {
+ #if (OPENSSL_VERSION_NUMBER < 0x10100000L)
+         HMAC_CTX_cleanup(mp_hctx);
+ #endif
+-        HMAC_Init(mp_hctx, 
++        HMAC_Init_ex(mp_hctx,
+             m_keyBuf.rawBuffer(),
+             m_keyLen,
+-            mp_md);
++            mp_md,
++            NULL);
+ 
+     }
+ 

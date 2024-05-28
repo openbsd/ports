@@ -1,7 +1,7 @@
 COMMENT =		C++ implementation of W3C security standards for XML
 
 V =			2.0.4
-REVISION =		2
+REVISION =		3
 DISTNAME =		xml-security-c-${V}
 CATEGORIES =		security textproc
 
