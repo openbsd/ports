@@ -1757,6 +1757,7 @@
      SUBDIR += rttr
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
+     SUBDIR += ruby-childprocess
      SUBDIR += ruby-cicphash
      SUBDIR += ruby-colored2
      SUBDIR += ruby-colorize
@@ -1773,11 +1774,14 @@
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-highline
+     SUBDIR += ruby-hitimes
      SUBDIR += ruby-hocon
      SUBDIR += ruby-i18n
      SUBDIR += ruby-idn,ruby32
      SUBDIR += ruby-idn,ruby33
      SUBDIR += ruby-isolate
+     SUBDIR += ruby-json_pure
+     SUBDIR += ruby-json-schema
      SUBDIR += ruby-kgio,ruby32
      SUBDIR += ruby-kgio,ruby33
      SUBDIR += ruby-locale
@@ -1793,6 +1797,8 @@
      SUBDIR += ruby-nio4r,ruby33
      SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
+     SUBDIR += ruby-pastel
+     SUBDIR += ruby-pathspec
      SUBDIR += ruby-pkg-config
      SUBDIR += ruby-prof,ruby32
      SUBDIR += ruby-prof,ruby33
