@@ -295,7 +295,11 @@ MODPY_ADJ_FILES ?=
 MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
+.if ${MODPY_VERSION} == ${MODPY_DEFAULT_VERSION_2}
+MODPY_COMPILEALL = ${MODPY_BIN} -m compileall
+.else
 MODPY_COMPILEALL = ${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0 -o 1
+.endif
 
 .if ${MODPY_PYBUILD:L} != no
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm}
