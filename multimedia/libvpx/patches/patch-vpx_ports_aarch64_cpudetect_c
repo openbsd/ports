@@ -1,23 +1,51 @@
-Allow ARM CPU runtime detection code to build on OpenBSD.
+Add AArch64 CPU feature detection support for OpenBSD.
 
 Index: vpx_ports/aarch64_cpudetect.c
 --- vpx_ports/aarch64_cpudetect.c.orig
 +++ vpx_ports/aarch64_cpudetect.c
-@@ -15,7 +15,7 @@
- #include <sys/sysctl.h>
- #endif
- 
--#if !CONFIG_RUNTIME_CPU_DETECT
-+#if !CONFIG_RUNTIME_CPU_DETECT || defined(__OpenBSD__)
- 
- static int arm_get_cpu_caps(void) {
-   // This function should actually be a no-op. There is no way to adjust any of
-@@ -28,7 +28,7 @@ static int arm_get_cpu_caps(void) {
+@@ -170,7 +170,44 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
--#elif defined(__APPLE__)  // end !CONFIG_RUNTIME_CPU_DETECT
-+#elif defined(__APPLE__)  // end !CONFIG_RUNTIME_CPU_DETECT || __OpenBSD__
- 
- // sysctlbyname() parameter documentation for instruction set characteristics:
- // https://developer.apple.com/documentation/kernel/1387446-sysctlbyname/determining_instruction_set_characteristics
+-#else  // end __Fuchsia__
++#elif defined(__OpenBSD__)  // end __Fuchsia__
++
++#include <machine/armreg.h>
++#include <machine/cpu.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++
++static int arm_get_cpu_caps(void) {
++  int flags = 0;
++  int mib[2];
++  uint64_t isar0;
++  uint64_t isar1;
++  size_t len;
++
++  flags |= HAS_NEON;  // Neon is mandatory in Armv8.0-A.
++
++  mib[0] = CTL_MACHDEP;
++  mib[1] = CPU_ID_AA64ISAR0;
++  len = sizeof(isar0);
++  if (sysctl(mib, 2, &isar0, &len, NULL, 0) != -1) {
++    if (ID_AA64ISAR0_DP(isar0) >= ID_AA64ISAR0_DP_IMPL)
++      flags |= HAS_NEON_DOTPROD;
++  }
++
++  mib[0] = CTL_MACHDEP;
++  mib[1] = CPU_ID_AA64ISAR1;
++  len = sizeof(isar1);
++  if (sysctl(mib, 2, &isar1, &len, NULL, 0) != -1) {
++#ifdef ID_AA64ISAR1_I8MM_IMPL
++    if (ID_AA64ISAR1_I8MM(isar1) >= ID_AA64ISAR1_I8MM_IMPL)
++      flags |= HAS_NEON_I8MM;
++#endif
++  }
++
++  return flags;
++}
++
++#else  // end __OpenBSD__
+ #error \
+     "Runtime CPU detection selected, but no CPU detection method available" \
+ "for your platform. Rerun configure with --disable-runtime-cpu-detect."
