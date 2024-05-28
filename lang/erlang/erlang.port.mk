@@ -23,7 +23,7 @@ MODERL_HANDLE_FLAVORS ?=	No
 # If erlang.port.mk should handle FLAVORS, define a separate FLAVOR
 # for each erlang runtime
 .    if !defined(FLAVORS)
-FLAVORS =	erlang25 erlang26
+FLAVORS =	erlang25 erlang26 erlang27
 .    endif
 
 FULLPKGNAME ?=	${MODERL_PKG_PREFIX}-${PKGNAME}
@@ -42,6 +42,8 @@ MODERL_PKG_PREFIX =	erl${MODERL_VERSION}
 _MODERL_FLAVOR =	erlang25
 .  elif ${MODERL_VERSION} == 26
 _MODERL_FLAVOR =	erlang26
+.  elif ${MODERL_VERSION} == 27
+_MODERL_FLAVOR =	erlang27
 .  else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
 .  endif
@@ -54,6 +56,9 @@ _MODERL_FLAVOR ?=	erlang25
 .    elif ${FLAVOR} == erlang26
 MODERL_VERSION ?=	26
 _MODERL_FLAVOR ?=	erlang26
+.    elif ${FLAVOR} == erlang27
+MODERL_VERSION ?=	27
+_MODERL_FLAVOR ?=	erlang27
 .    endif
 .  endif
 .endif
