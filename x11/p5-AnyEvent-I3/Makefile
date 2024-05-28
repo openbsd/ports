@@ -17,4 +17,8 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-AnyEvent \
 			converters/p5-JSON-XS
 
+# not compatible with PORTS_PRIVSEP
+TEST_IS_INTERACTIVE =	x11
+TEST_DEPENDS =		x11/i3
+
 .include <bsd.port.mk>
