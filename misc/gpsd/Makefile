@@ -2,17 +2,14 @@ COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.24
+VERSION=		3.25
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION-main=		2
-REVISION-php=		1
-REVISION-x11=		1
 
-SHARED_LIBS +=		gps		22.2
-SHARED_LIBS +=		gpsdpacket	0.1
+SHARED_LIBS +=		gps		23.0
+SHARED_LIBS +=		gpsdpacket	1.0
 CATEGORIES=		misc geo
 
 HOMEPAGE =		https://gpsd.gitlab.io/gpsd/
@@ -29,7 +26,6 @@ WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
 MODULES +=		devel/scons lang/python lang/php
-MODPHP_VERSION=		7.4
 MODPHP_BUILDDEP=	No
 MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			qt=no \
@@ -57,6 +53,7 @@ RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 
 RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
 			devel/py-gobject3${MODPY_FLAVOR} \
+			graphics/py-matplotlib${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			x11/gtk+3
 
@@ -86,10 +83,7 @@ post-install:
 		${PREFIX}/share/pixmaps/
 	sed -i 's,${WRKINST},,' ${PREFIX}/include/gpsd_config.h
 
-	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
-		${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py {} \;
-	@find ${DESTDIR}/${MODPY_SITEPKG}/gps -name "*.py" -exec \
-		${MODPY_BIN} -O ${MODPY_LIBDIR}/py_compile.py {} \;
+	${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0 -o 1 ${WRKINST}${MODPY_SITEPKG}/gps
 
 # Needs running messagebus daemon
 TEST_IS_INTERACTIVE=	Yes

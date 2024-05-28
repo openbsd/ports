@@ -1,15 +1,9 @@
-#1, set lib version
-#2, our scons isn't setting CCVERSION
-#3, qt lib names
-#4, ???
-#5, set lib version
-
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -224,8 +224,7 @@ api_version_minor = 15
- libgps_version_current = 29
- libgps_version_revision = 1
+@@ -231,8 +231,7 @@ api_version_minor = 15
+ libgps_version_current = 30
+ libgps_version_revision = 0
  libgps_version_age = 0
 -libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
 -                               libgps_version_revision)
@@ -17,48 +11,7 @@ Index: SConscript
  #
  # Release identification ends here
  
-@@ -922,7 +921,7 @@ if not cleaning and not helping:
-     if (sys.platform != config.env['target_platform']):
-         announce("Target system is: %s" % config.env['target_platform'])
- 
--    announce("cc is %s, version %s" % (env['CC'], env['CCVERSION']))
-+    announce("cc is %s" % (env['CC']))
-     # clang accepts -pthread, then warns it is unused.
-     if not config.CheckCC():
-         announce("ERROR: CC doesn't work")
-@@ -1417,6 +1416,10 @@ if not cleaning and not helping:
-     # if not, force qt to off
-     if config.env["qt"]:
-         qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
-+        if env["qt_versioned"] == "5":
-+                qt_net_name = 'Qt5Network'
-+        elif env["qt_versioned"] == "4":
-+                qt_net_name = 'QtNetwork'
-         qt_network = config.CheckPKG(qt_net_name)
-         if not qt_network:
-             config.env["qt"] = False
-@@ -1620,20 +1623,6 @@ if not cleaning and not helping and config.env['python
- 
-         config.env['xgps_deps'] = True
- 
--        # check for pycairo
--        if not config.GetPythonValue('module cairo (pycairo)',
--                                     'import cairo', '"found"'):
--            # no pycairo, used by xgps, xgpsspeed
--            config.env['xgps_deps'] = False
--            announce("WARNING: Python module cairo (pycairo) not found.")
--
--        # check for pygobject
--        if not config.GetPythonValue('module gi (pygobject)',
--                                     'import gi', '"found"'):
--            # no pygobject, used by xgps, xgpsspeed
--            config.env['xgps_deps'] = False
--            announce("WARNING: Python module gi (pygobject) not found.")
--
-         # gtk+ needed by pygobject
-         if not config.CheckPKG('gtk+-3.0'):
-             config.env['xgps_deps'] = False
-@@ -1860,7 +1849,7 @@ libgpsd_static = env.StaticLibrary(
+@@ -1896,7 +1895,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,

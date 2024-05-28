@@ -104,4 +104,9 @@ share/gpsd/doc/README.adoc
 share/gpsd/doc/SUPPORT.adoc
 share/gpsd/doc/build.adoc
 share/gpsd/doc/example1.c.txt
+share/gpsd/doc/example2.py.txt
 @comment share/gpsd/icons/
+share/snmp/
+share/snmp/mibs/
+share/snmp/mibs/gpsd/
+share/snmp/mibs/gpsd/GPSD-MIB
