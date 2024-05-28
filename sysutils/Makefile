@@ -370,6 +370,7 @@
      SUBDIR += ruby-facter
      SUBDIR += ruby-libvirt,ruby32
      SUBDIR += ruby-libvirt,ruby33
+     SUBDIR += ruby-pdk
      SUBDIR += ruby-posix-spawn,ruby32
      SUBDIR += ruby-posix-spawn,ruby33
      SUBDIR += ruby-puppet
@@ -382,6 +383,13 @@
      SUBDIR += ruby-serverengine
      SUBDIR += ruby-sigdump
      SUBDIR += ruby-tzinfo
+     SUBDIR += ruby-tty-color
+     SUBDIR += ruby-tty-cursor
+     SUBDIR += ruby-tty-prompt
+     SUBDIR += ruby-tty-reader
+     SUBDIR += ruby-tty-screen
+     SUBDIR += ruby-tty-spinner
+     SUBDIR += ruby-tty-which
      SUBDIR += rundeck
      SUBDIR += runit
      SUBDIR += rustic
