@@ -1,9 +1,0 @@
-Index: pkg/remote/cache_unix.go
---- pkg/remote/cache_unix.go.orig
-+++ pkg/remote/cache_unix.go
-@@ -1,4 +1,4 @@
--//go:build linux
-+//go:build linux || openbsd
- 
- /*
-    Copyright 2020 Docker Compose CLI authors

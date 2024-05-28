@@ -1,9 +1,0 @@
-Index: internal/locker/runtime_unix.go
---- internal/locker/runtime_unix.go.orig
-+++ internal/locker/runtime_unix.go
-@@ -1,4 +1,4 @@
--//go:build linux
-+//go:build linux || openbsd
- 
- /*
-    Copyright 2020 Docker Compose CLI authors

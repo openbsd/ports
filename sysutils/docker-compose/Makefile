@@ -1,12 +1,10 @@
 COMMENT =		Define and run multi-container applications with Docker
 
-V =			2.27.0
+V =			2.27.1
 GH_ACCOUNT =		docker
 GH_PROJECT =		compose
 GH_TAGNAME =		v${V}
 PKGNAME =		docker-${DISTNAME}
-
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -21,7 +19,7 @@ MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += 		c pthread
+WANTLIB +=		c pthread
 
 MODULES =		lang/go
 GO_PKGNAME =		github.com/docker/compose/v2
