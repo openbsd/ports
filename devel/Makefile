@@ -1741,8 +1741,9 @@
      SUBDIR += rcs-fast-import
      SUBDIR += re2c
      SUBDIR += readline
-     SUBDIR += rebar3
+     SUBDIR += rebar3,erlang25
      SUBDIR += rebar3,erlang26
+     SUBDIR += rebar3,erlang27
      SUBDIR += remake
      SUBDIR += reposurgeon
      SUBDIR += rgbds
