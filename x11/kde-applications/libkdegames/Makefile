@@ -2,6 +2,7 @@ COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
 PKGNAME =	kf6-libkdegames-${VERSION}
 CATEGORIES =	devel games
+REVISION =	0
 
 SHARED_LIBS +=	KDEGames6                 0.0 # 0.0
 SHARED_LIBS +=	KDEGames6Private          0.0 # 0.0

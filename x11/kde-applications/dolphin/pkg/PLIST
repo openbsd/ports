@@ -1,3 +1,4 @@
+@conflict dolphin-kf5-*
 @conflict dolphin-plugins-<=4.14.3
 @bin bin/dolphin
 @bin bin/servicemenuinstaller

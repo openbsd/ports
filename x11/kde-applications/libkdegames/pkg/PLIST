@@ -1,3 +1,4 @@
+@conflict libkdegames-kf5-*
 include/KDEGames6/
 include/KDEGames6/KGameAudioScene
 include/KDEGames6/KGameClock

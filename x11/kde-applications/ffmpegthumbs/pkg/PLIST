@@ -1,3 +1,4 @@
+@conflict ffmpegthumbs-kf5-*
 lib/qt6/plugins/kf6/thumbcreator/
 @so lib/qt6/plugins/kf6/thumbcreator/ffmpegthumbs.so
 share/config.kcfg/

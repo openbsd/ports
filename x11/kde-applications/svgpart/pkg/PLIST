@@ -1,3 +1,4 @@
+@conflict svgpart-kf5-*
 @conflict svgpart-<=19.12.3p0
 @pkgpath x11/kde4/svgpart
 lib/qt6/plugins/kf6/parts/

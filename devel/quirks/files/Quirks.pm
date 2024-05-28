@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1634 2024/05/28 13:59:21 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1635 2024/05/28 21:37:52 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -824,6 +824,15 @@ my $stem_extensions = {
 	'web-eid-native-chrome' => 'web-eid-chrome',
 	'kuserfeedback' => 'kf6-kuserfeedback',
 	'kgamma5' => 'kgamma',
+	'baloo-widgets-kf5' => 'kf6-baloo-widgets',
+	'dolphin-kf5' => 'kf6-dolphin',
+	'ffmpegthumbs-kf5' => 'kf6-ffmpegthumbs',
+	'svgpart-kf5' => 'kf6-svgpart',
+	'kdegraphics-thumbnailers-kf5' => 'kf6-kdegraphics-thumbnailers',
+	'libkdegames-kf5' => 'kf6-libkdegames',
+	'systemsettings-kf5' => 'kf6-systemsettings',
+	'libkscreen-kf5' => 'kf6-libkscreen',
+	'kdeplasma-addons-kf5' => 'kf6-kdeplasma-addons',
 };
 
 my $obsolete_reason = {};

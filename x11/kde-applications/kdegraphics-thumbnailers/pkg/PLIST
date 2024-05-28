@@ -1,3 +1,4 @@
+@conflict kdegraphics-thumbnailers-kf5-*
 @conflict kdegraphics-thumbnailers-<=19.12.3
 @pkgpath x11/kde4/graphics-thumbnailers
 lib/qt6/plugins/kf6/thumbcreator/

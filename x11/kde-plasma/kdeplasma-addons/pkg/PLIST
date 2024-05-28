@@ -1,3 +1,4 @@
+@conflict kdeplasma-kf5-*
 include/plasma/
 include/plasma/potdprovider/
 include/plasma/potdprovider/plasma_potd_export.h

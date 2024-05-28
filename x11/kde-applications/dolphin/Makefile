@@ -2,6 +2,7 @@ COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	kf6-dolphin-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/dolphin
 

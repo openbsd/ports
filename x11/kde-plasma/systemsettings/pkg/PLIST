@@ -1,3 +1,4 @@
+@conflict systemsettings-kf5-*
 @bin bin/systemsettings
 @lib lib/libsystemsettingsview.so.${LIBsystemsettingsview_VERSION}
 lib/qt6/plugins/kf6/krunner/
