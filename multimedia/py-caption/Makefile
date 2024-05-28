@@ -1,6 +1,6 @@
 COMMENT=	closed caption converter
 
-MODPY_EGG_VERSION=	2.2.8
+MODPY_EGG_VERSION=	2.2.10
 DISTNAME=	pycaption-${MODPY_EGG_VERSION}
 PKGNAME=	py-caption-${MODPY_EGG_VERSION}
 
