@@ -6,6 +6,7 @@ USE_WXNEEDED =		Yes
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
 NODE_VERSION =		v20.13.1
+REVISION =		0
 PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
@@ -91,10 +92,8 @@ pre-configure:
 		${WRKDIST}/tools/test.py
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/update-gyp.py
+	${MODPY_COMPILEALL} \
+		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
 		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
