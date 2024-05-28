@@ -1,4 +1,4 @@
 SHA256 (hex_modules/meck-0.8.13.tar) = 008BPBVttRrVfMVWiRuXIOahwd9f4uFa+ZnITWzr6xo=
-SHA256 (rebar3-3.22.1.tar.gz) = KFW1eEMAhl0uQ8t6E1yyu6FEzxUhTGGQZbkYr8jMbrk=
+SHA256 (rebar3-3.23.0.tar.gz) = AGRraSdi/9NAVg6PFkhtvahA4VRnSe5af1j+63fntRY=
 SIZE (hex_modules/meck-0.8.13.tar) = 34304
-SIZE (rebar3-3.22.1.tar.gz) = 797521
+SIZE (rebar3-3.23.0.tar.gz) = 807007
