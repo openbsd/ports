@@ -1,10 +1,8 @@
 COMMENT =	guess information from video filenames
 
-MODPY_EGG_VERSION =	3.7.1
-
+MODPY_EGG_VERSION =	3.8.0
 DISTNAME =	guessit-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	multimedia
 
