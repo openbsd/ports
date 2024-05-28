@@ -1,3 +1,0 @@
-Python has one. Ruby has one. Clojure has one. Now PHP has one too. Boris is
-PHP's missing REPL (read-eval-print loop), allowing developers to experiment
-with PHP code in the terminal in an interactive manner.

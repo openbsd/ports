@@ -52,7 +52,6 @@
      SUBDIR += blame
      SUBDIR += boehm-gc
      SUBDIR += boost
-     SUBDIR += boris
      SUBDIR += bpython,python3
      SUBDIR += bullet
      SUBDIR += c2ffi
