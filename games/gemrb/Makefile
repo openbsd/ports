@@ -5,7 +5,7 @@ COMMENT =		open-source implementation of Bioware's Infinity Engine
 V =			0.8.8
 DISTNAME =		gemrb-${V}-sources
 PKGNAME =		gemrb-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games emulators x11
 
@@ -50,9 +50,7 @@ do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	 cd ${PREFIX}/share/gemrb/GUIScripts/ && find * -name \*.py \
-		-exec ${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/gemrb/GUIScripts/{} \;
+	 ${MODPY_COMPILEALL} ${PREFIX}/share/gemrb/GUIScripts
 	 ${SUBST_CMD} -m 444 -c ${FILESDIR}/baldurs_gate_1.cfg \
 		 ${PREFIX}/share/examples/gemrb/baldurs_gate_1.cfg
 

@@ -2,6 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.36
 PKGSPEC =	gimp->=2,<2.99
+REVISION =	0
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -107,7 +108,6 @@ CONFIGURE_ARGS+= \
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/gimp/2.0/plug-ins
+	${MODPY_COMPILEALL} ${PREFIX}/lib/gimp/2.0/plug-ins
 
 .include <bsd.port.mk>
