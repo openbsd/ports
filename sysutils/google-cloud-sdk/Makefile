@@ -4,6 +4,7 @@ V=			477.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -43,7 +44,7 @@ do-install:
 	find ${PREFIX} -type d -name python2 -exec rm -rf '{}' \+
 
 # XXX ||true: ignore error due to some old python2 syntax still around (unused)
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/google-cloud-sdk/{lib,platform} || true
 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/google-cloud-sdk

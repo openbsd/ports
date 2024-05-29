@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/PyKOpeningHours.so
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyKOpeningHours/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/qml/org/kde/kopeninghours/
 lib/qt6/qml/org/kde/kopeninghours/kde-qmlmodule.version

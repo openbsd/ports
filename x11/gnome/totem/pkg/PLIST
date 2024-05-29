@@ -31,7 +31,9 @@ lib/totem/plugins/open-directory/
 lib/totem/plugins/open-directory/open-directory.plugin
 lib/totem/plugins/opensubtitles/
 ${MODPY_COMMENT}lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}/
+lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}hash.${MODPY_PYC_MAGIC_TAG}pyc
+lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}opensubtitles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/totem/plugins/opensubtitles/${MODPY_PYCACHE}opensubtitles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/opensubtitles/hash.py
 lib/totem/plugins/opensubtitles/opensubtitles.plugin
@@ -42,7 +44,9 @@ lib/totem/plugins/properties/
 lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/pythonconsole/
 ${MODPY_COMMENT}lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}/
+lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
+lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/totem/plugins/pythonconsole/${MODPY_PYCACHE}pythonconsole.${MODPY_PYC_MAGIC_TAG}pyc
 lib/totem/plugins/pythonconsole/console.py
 lib/totem/plugins/pythonconsole/pythonconsole.plugin

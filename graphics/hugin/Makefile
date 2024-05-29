@@ -8,7 +8,7 @@ EXTRACT_SUFX =	.tar.bz2
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0
@@ -87,7 +87,7 @@ pre-patch:
 	    ../src/CMakeLists.txt
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages \
 		${PREFIX}/share/hugin/data/plugins/
 

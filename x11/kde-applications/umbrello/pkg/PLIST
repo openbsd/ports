@@ -379,6 +379,7 @@ share/umbrello5/common.ent
 share/umbrello5/docbook2xhtml.xsl
 share/umbrello5/headings/
 ${MODPY_COMMENT}share/umbrello5/headings/${MODPY_PYCACHE}/
+share/umbrello5/headings/${MODPY_PYCACHE}heading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/umbrello5/headings/${MODPY_PYCACHE}heading.${MODPY_PYC_MAGIC_TAG}pyc
 share/umbrello5/headings/heading.adb
 share/umbrello5/headings/heading.ads

@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.5.3
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 
@@ -88,7 +88,7 @@ LIB_DEPENDS =	audio/libcdio \
 TEST_IS_INTERACTIVE =	X11
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/share/tellico/data-sources/
 
 .include <bsd.port.mk>

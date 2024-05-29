@@ -9,7 +9,7 @@ SUPDATE_V =	1.3.3
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.1 # 2.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://suricata.io/
 
@@ -77,8 +77,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/*.config ${PREFIX}/share/examples/suricata
 	${INSTALL_DATA} ${WRKSRC}/suricata.yaml ${PREFIX}/share/examples/suricata
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/suricata/python/
+	${MODPY_COMPILEALL} ${PREFIX}/lib/suricata/python/
 	# nothing particularly useful in there as of 6.0.1
 	rm -r ${PREFIX}/share/doc/suricata
 

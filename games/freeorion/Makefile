@@ -3,7 +3,7 @@ COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_Source
 PKGNAME =	freeorion-${V}
 CATEGORIES =	games
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.freeorion.org/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -54,7 +54,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/GG/CMakeLists.txt
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/freeorion/default/
+	${MODPY_COMPILEALL} ${PREFIX}/share/freeorion/default/
 
 .include <bsd.port.mk>

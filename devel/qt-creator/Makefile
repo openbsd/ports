@@ -1,11 +1,12 @@
 USE_WXNEEDED =		Yes
+DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
 V =			12.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  Aggregation               3.0 # 0.0
 SHARED_LIBS +=  CPlusPlus                 9.0 # 0.0
@@ -94,7 +95,6 @@ post-install:
 .for _l _v in ${SHARED_LIBS}
 	ln -sf qtcreator/lib${_l}.so.${_v} ${PREFIX}/lib
 .endfor
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/qtcreator/debugger/
+	${MODPY_COMPILEALL} ${PREFIX}/share/qtcreator/debugger/
 
 .include <bsd.port.mk>

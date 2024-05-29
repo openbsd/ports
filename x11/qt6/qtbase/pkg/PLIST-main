@@ -3223,7 +3223,9 @@ lib/qt6/bin/qt-configure-module
 @bin lib/qt6/bin/qtpaths6
 lib/qt6/libexec/
 ${MODPY_COMMENT}lib/qt6/libexec/${MODPY_PYCACHE}/
+lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/libexec/android_emulator_launcher.sh
 @bin lib/qt6/libexec/cmake_automoc_parser
@@ -3579,6 +3581,7 @@ lib/qt6/mkspecs/features/toolchain.prf
 lib/qt6/mkspecs/features/uic.prf
 lib/qt6/mkspecs/features/uikit/
 ${MODPY_COMMENT}lib/qt6/mkspecs/features/uikit/${MODPY_PYCACHE}/
+lib/qt6/mkspecs/features/uikit/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/mkspecs/features/uikit/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/mkspecs/features/uikit/bitcode.prf
 lib/qt6/mkspecs/features/uikit/default_post.prf

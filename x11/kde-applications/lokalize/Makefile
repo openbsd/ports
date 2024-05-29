@@ -1,5 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
+REVISION =	0
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
@@ -50,8 +51,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 
 # XXX ||true: ignore error due to some old python2 syntax still around (unused)
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/lokalize/scripts/ \
-		${PREFIX}/share/lokalize/scripts/odf/ || true
+	${MODPY_COMPILEALL} ${PREFIX}/share/lokalize/scripts/ || true
 
 .include <bsd.port.mk>

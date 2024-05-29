@@ -3,7 +3,7 @@ COMMENT =	gcc for ${CONFIG} cross-development
 VERSION =	10.2.0
 DISTNAME =	gcc-${VERSION}
 PKGNAME =	${CONFIG}-gcc-${VERSION}
-REVISION =	6
+REVISION =	7
 
 SHARED_LIBS +=  cc1plugin                 0.0 # 0.0
 SHARED_LIBS +=  cp1plugin                 0.0 # 0.0
@@ -74,7 +74,7 @@ post-build:
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
 		${PREFIX}/${CONFIG}/lib/gcc/${CONFIG}/${VERSION}/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/${CONFIG}/
+	${MODPY_COMPILEALL} ${PREFIX}/${CONFIG}/
 	@cd ${PREFIX}/${CONFIG}/bin && ln -s ${CONFIG}-gcc ${CONFIG}-cc
 
 .include <bsd.port.mk>

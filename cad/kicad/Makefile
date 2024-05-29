@@ -9,7 +9,7 @@ V =			6.0.11
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=		kicad_3dsg                1.0 # 2.0
 
@@ -80,15 +80,9 @@ CXXFLAGS +=		-I${X11BASE}/include
 NO_TEST =		Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/kicad/demos/python_scripts_examples/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/kicad/plugins/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/kicad/scripting/kicad_pyshell/
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/kicad/scripting/plugins/
+	${MODPY_COMPILEALL} \
+		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ \
+		${PREFIX}/share/kicad/plugins/ \
+		${PREFIX}/share/kicad/scripting/
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 IS_PORTING_AID =	Yes
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		KF5KDELibs4Support	8.0
 
@@ -66,7 +66,6 @@ TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/cmake/KF5KDELibs4Support
+	${MODPY_COMPILEALL} ${PREFIX}/lib/cmake/KF5KDELibs4Support
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 COMMENT =	full end-to-end digital synthesis flow for VLSI ASIC designs
 
 DISTNAME =	qflow-1.4.83
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	cad
 
@@ -52,8 +52,7 @@ USE_GMAKE =	Yes
 NO_TEST =	Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/share/qflow/scripts
+	${MODPY_COMPILEALL} ${PREFIX}/share/qflow/scripts
 	rm ${PREFIX}/share/qflow/bin/yosys-abc
 	ln -s ${LOCALBASE}/bin/abc ${PREFIX}/share/qflow/bin/yosys-abc
 	sed -i "s,/bin/tcsh -f,${LOCALBASE}/bin/tcsh," \

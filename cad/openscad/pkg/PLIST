@@ -108,10 +108,15 @@ share/openscad/libraries/MCAD/README.markdown
 share/openscad/libraries/MCAD/TODO
 share/openscad/libraries/MCAD/__init__.py
 ${MODPY_COMMENT}share/openscad/libraries/MCAD/${MODPY_PYCACHE}/
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_testing.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}openscad_utils.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_docs.${MODPY_PYC_MAGIC_TAG}pyc
+share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_mcad.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/openscad/libraries/MCAD/${MODPY_PYCACHE}test_mcad.${MODPY_PYC_MAGIC_TAG}pyc
 share/openscad/libraries/MCAD/bearing.scad
 share/openscad/libraries/MCAD/bitmap/

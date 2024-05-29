@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.0
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -58,6 +58,6 @@ CONFIGURE_ARGS=		-Denable-easy-codec-installation=no
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}
+	${MODPY_COMPILEALL} ${PREFIX}
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
+REVISION =	0
 CATEGORIES =	x11 productivity
 
 HOMEPAGE =	https://umbrello.kde.org/
@@ -63,7 +64,6 @@ CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF \
 TEST_IS_INTERACTIVE =	X11
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/umbrello5/headings/
+	${MODPY_COMPILEALL} ${PREFIX}/share/umbrello5/headings/
 
 .include <bsd.port.mk>

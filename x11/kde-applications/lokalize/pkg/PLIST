@@ -321,7 +321,9 @@ share/lokalize/scripts/msgmerge.py
 share/lokalize/scripts/msgmerge.rc
 share/lokalize/scripts/odf/
 ${MODPY_COMMENT}share/lokalize/scripts/odf/${MODPY_PYCACHE}/
+share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lokalize/scripts/odf/${MODPY_PYCACHE}xliff2odf-standalone.${MODPY_PYC_MAGIC_TAG}pyc
+share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/lokalize/scripts/odf/${MODPY_PYCACHE}xliffmerge.${MODPY_PYC_MAGIC_TAG}pyc
 share/lokalize/scripts/odf/xliff2odf-standalone.py
 share/lokalize/scripts/odf/xliff2odf.py

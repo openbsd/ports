@@ -1,5 +1,6 @@
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
+REVISION =	0
 CATEGORIES =	devel geo
 
 SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1
@@ -19,7 +20,7 @@ LIB_DEPENDS =	devel/boost \
 		x11/qt6/qtdeclarative
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${WRKINST}/${MODPY_SITEPKG}/PyKOpeningHours/
 
 .include <bsd.port.mk>

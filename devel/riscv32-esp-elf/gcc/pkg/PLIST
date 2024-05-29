@@ -1375,6 +1375,7 @@ riscv32-esp-elf/riscv32-esp-elf/include/c++/${V}/valarray
 riscv32-esp-elf/riscv32-esp-elf/include/c++/${V}/variant
 riscv32-esp-elf/riscv32-esp-elf/include/c++/${V}/vector
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/${MODPY_PYCACHE}/
+riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/libstdc++.a
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/libstdc++.a-gdb.py
@@ -1382,6 +1383,7 @@ riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/libstdc++.la
 @static-lib riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/libsupc++.a
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32i/ilp32/libsupc++.la
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/${MODPY_PYCACHE}/
+riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/libstdc++.a
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/libstdc++.a-gdb.py
@@ -1389,6 +1391,7 @@ riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/libstdc++.la
 @static-lib riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/libsupc++.a
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imafc/ilp32f/libsupc++.la
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imc/ilp32/${MODPY_PYCACHE}/
+riscv32-esp-elf/riscv32-esp-elf/lib/rv32imc/ilp32/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imc/ilp32/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib riscv32-esp-elf/riscv32-esp-elf/lib/rv32imc/ilp32/libstdc++.a
 riscv32-esp-elf/riscv32-esp-elf/lib/rv32imc/ilp32/libstdc++.a-gdb.py
@@ -1400,12 +1403,16 @@ riscv32-esp-elf/share/gcc-${V}/python/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/__init__.py
 ${MODPY_COMMENT}riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/__init__.py
 ${MODPY_COMMENT}riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}pyc
+riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}xmethods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}xmethods.${MODPY_PYC_MAGIC_TAG}pyc
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/printers.py
 riscv32-esp-elf/share/gcc-${V}/python/libstdcxx/v6/xmethods.py

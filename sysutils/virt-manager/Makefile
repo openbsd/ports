@@ -2,7 +2,7 @@ COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-4.1.0
 CATEGORIES=		sysutils x11
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -46,6 +46,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtinst/buildconfig.py
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/virt-manager
+	${MODPY_COMPILEALL} ${PREFIX}/share/virt-manager
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@ COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-2.1.2-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	editors print x11
 
@@ -48,7 +48,6 @@ post-extract:
 	rm -f ${WRKDIST}/plugins/mathematica/bin/realpath.py
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/TeXmacs/plugins/tmpy
+	${MODPY_COMPILEALL} ${PREFIX}/share/TeXmacs/plugins/tmpy
 
 .include <bsd.port.mk>

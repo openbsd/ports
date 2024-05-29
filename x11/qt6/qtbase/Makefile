@@ -4,7 +4,7 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		0
+REVISION-main =		1
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
@@ -154,10 +154,9 @@ post-extract:
 		${WRKDIST}/mkspecs/openbsd-clang/
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/qt6/libexec/qt-testrunner.py \
-		${PREFIX}/lib/qt6/libexec/sanitizer-testrunner.py\
-		${PREFIX}/lib/qt6/mkspecs/features/uikit/devices.py
+	${MODPY_COMPILEALL} \
+		${PREFIX}/lib/qt6/libexec/ \
+		${PREFIX}/lib/qt6/mkspecs/features/uikit/
 
 .include <bsd.port.mk>
 

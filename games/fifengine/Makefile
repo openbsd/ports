@@ -8,7 +8,7 @@ GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_COMMIT =	be64c707dea6b3250bd4355bf5c825d25920087d
 DISTNAME =	fifengine-0.4.2
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	games
 
@@ -45,6 +45,6 @@ CONFIGURE_ARGS += 	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 NO_TEST =		Yes
 
 post-install:
-	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}
 
 .include <bsd.port.mk>

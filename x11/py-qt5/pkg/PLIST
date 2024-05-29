@@ -939,10 +939,15 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v2/string_io.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}as_string.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}as_string.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}ascii_upper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}ascii_upper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}proxy_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}proxy_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}string_io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/${MODPY_PYCACHE}string_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/as_string.py
 lib/python${MODPY_VERSION}/site-packages/PyQt5/uic/port_v3/ascii_upper.py

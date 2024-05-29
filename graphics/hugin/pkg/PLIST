@@ -38,7 +38,9 @@ lib/hugin/
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
 @lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
 @lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hsi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hsi.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/_hsi.so
 lib/python${MODPY_VERSION}/site-packages/hpi.py
@@ -111,7 +113,9 @@ share/hugin/data/plugins-templates/dual_use.py
 share/hugin/data/plugins-templates/plugin_skeleton.py
 share/hugin/data/plugins/README_woa.txt
 ${MODPY_COMMENT}share/hugin/data/plugins/${MODPY_PYCACHE}/
+share/hugin/data/plugins/${MODPY_PYCACHE}top_five.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hugin/data/plugins/${MODPY_PYCACHE}top_five.${MODPY_PYC_MAGIC_TAG}pyc
+share/hugin/data/plugins/${MODPY_PYCACHE}woa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/hugin/data/plugins/${MODPY_PYCACHE}woa.${MODPY_PYC_MAGIC_TAG}pyc
 share/hugin/data/plugins/top_five.py
 share/hugin/data/plugins/woa.py

@@ -8,7 +8,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-3.3.16
-REVISION =	1
+REVISION =	2
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.blender.org/
@@ -100,12 +100,6 @@ MODPY_ADJ_FILES =	release/scripts/modules/bl_i18n_utils/merge_po.py \
 			release/datafiles/ctodata.py \
 			release/datafiles/prvicons_update.py
 
-post-build:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${WRKSRC}/release/scripts \
-		${WRKSRC}/release/datafiles \
-		${WRKSRC}/intern/cycles/blender/addon
-
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/blender ${PREFIX}/bin
 	${SUBST_CMD} ${PREFIX}/bin/blender
@@ -136,5 +130,6 @@ do-install:
 	${MODPY_BIN} ${WRKSRC}/doc/manpage/blender.1.py \
 		--blender ${WRKBUILD}/bin/blender \
 		--output ${PREFIX}/man/man1/blender.1
+	${MODPY_COMPILEALL} ${PREFIX}/share/blender/
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@ DPB_PROPERTIES=	parallel
 MODPY_EGG_VERSION= 5.15.9
 DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11 devel
 
@@ -79,7 +79,7 @@ post-extract:
 	ln -sf ${MODQT5_QMAKE} ${WRKDIR}/bin/qmake
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 	    ${WRKINST}/${MODPY_SITEPKG}/PyQt5/uic/port_v3
 
 .include <bsd.port.mk>

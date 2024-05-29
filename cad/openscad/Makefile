@@ -3,7 +3,7 @@ BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		cad
 
@@ -64,7 +64,6 @@ pre-configure:
 	ln -sf ${LOCALBASE}/bin/bison ${WRKDIR}/bin/yacc
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/openscad/libraries/MCAD/
+	${MODPY_COMPILEALL} ${PREFIX}/share/openscad/libraries/MCAD/
 
 .include <bsd.port.mk>

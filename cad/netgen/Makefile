@@ -1,7 +1,7 @@
 COMMENT =	tool for netlist comparison (LVS) and format manipulation
 DISTNAME =	netgen-1.5.171
 EXTRACT_SUFX =	.tgz
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	cad
 
@@ -36,8 +36,7 @@ USE_GMAKE =	Yes
 NO_TEST =	Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-	    ${PREFIX}/lib/netgen/python
+	${MODPY_COMPILEALL} ${PREFIX}/lib/netgen/python
 	mv ${PREFIX}/lib/netgen/doc ${PREFIX}/share/doc/netgen
 
 .include <bsd.port.mk>

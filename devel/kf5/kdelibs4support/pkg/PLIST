@@ -1014,8 +1014,11 @@ lib/cmake/KF5KDELibs4Support/PythonMacros.cmake
 lib/cmake/KF5KDELibs4Support/SIPMacros.cmake
 lib/cmake/KF5KDELibs4Support/Win32Macros.cmake
 ${MODPY_COMMENT}lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}/
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindLibPython.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindLibPython.${MODPY_PYC_MAGIC_TAG}pyc
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindSIP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}FindSIP.${MODPY_PYC_MAGIC_TAG}pyc
+lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}PythonCompile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/cmake/KF5KDELibs4Support/${MODPY_PYCACHE}PythonCompile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/cmake/KF5KDELibs4Support/check_installed_exports_file.cmake
 lib/cmake/KF5KDELibs4Support/cmake-modules-styleguide.txt

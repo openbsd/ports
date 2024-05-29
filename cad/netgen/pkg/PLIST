@@ -3,11 +3,17 @@ lib/netgen/
 lib/netgen/ntk2adl.sh
 lib/netgen/python/
 ${MODPY_COMMENT}lib/netgen/python/${MODPY_PYCACHE}/
+lib/netgen/python/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}consoletext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/netgen/python/${MODPY_PYCACHE}helpwindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}helpwindow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/netgen/python/${MODPY_PYCACHE}lvs_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}lvs_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/netgen/python/${MODPY_PYCACHE}tksimpledialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}tksimpledialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/netgen/python/${MODPY_PYCACHE}tooltip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}tooltip.${MODPY_PYC_MAGIC_TAG}pyc
+lib/netgen/python/${MODPY_PYCACHE}treeviewsplit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/netgen/python/${MODPY_PYCACHE}treeviewsplit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/netgen/python/consoletext.py
 lib/netgen/python/helpwindow.py

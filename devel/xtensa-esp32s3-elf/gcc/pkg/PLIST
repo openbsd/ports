@@ -515,12 +515,16 @@ xtensa-esp32s3-elf/share/gcc-${V}/python/
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/__init__.py
 ${MODPY_COMMENT}xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/__init__.py
 ${MODPY_COMMENT}xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}printers.${MODPY_PYC_MAGIC_TAG}pyc
+xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}xmethods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/${MODPY_PYCACHE}xmethods.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/printers.py
 xtensa-esp32s3-elf/share/gcc-${V}/python/libstdcxx/v6/xmethods.py
@@ -1408,8 +1412,10 @@ xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/${V}/xtensa-esp32s3-elf/no-rtt
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/${V}/xtensa-esp32s3-elf/no-rtti/ext/
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/include/c++/${V}/xtensa-esp32s3-elf/no-rtti/ext/opt_random.h
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/libssp.a
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/libssp.la
@@ -1421,6 +1427,7 @@ xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/libstdc++.la
 @static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/libsupc++.a
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/libsupc++.la
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/no-rtti/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/no-rtti/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/no-rtti/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/no-rtti/libssp.a
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/esp32-psram/no-rtti/libssp.la
@@ -1441,6 +1448,7 @@ xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/libstdc++.la
 @static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/libsupc++.a
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/libsupc++.la
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/no-rtti/${MODPY_PYCACHE}/
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/no-rtti/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/no-rtti/${MODPY_PYCACHE}libstdc++.a-gdb.${MODPY_PYC_MAGIC_TAG}pyc
 @static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/no-rtti/libssp.a
 xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/no-rtti/libssp.la
