@@ -4,7 +4,7 @@ COMMENT =		statically typed systems programming language
 
 DISTNAME =		nim-1.6.18
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 
@@ -57,8 +57,7 @@ do-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/nim
 	cp -R ${WRKSRC}/lib/* ${PREFIX}/lib/nim
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/lib/nim/pure/unidecode/gen.py
+	${MODPY_COMPILEALL} ${PREFIX}/lib/nim/pure/unidecode/gen.py
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/nim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nim
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/nim

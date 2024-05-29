@@ -68,9 +68,6 @@ pre-configure:
 		perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," {} +
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/lyx/configure.py
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/lyx/scripts
+	${MODPY_COMPILEALL} ${PREFIX}/share/lyx
 
 .include <bsd.port.mk>

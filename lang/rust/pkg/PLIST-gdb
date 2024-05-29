@@ -3,11 +3,17 @@ bin/rust-gdb
 bin/rust-lldb
 lib/rustlib/etc/
 ${MODPY_COMMENT}lib/rustlib/etc/${MODPY_PYCACHE}/
+lib/rustlib/etc/${MODPY_PYCACHE}gdb_load_rust_pretty_printers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_load_rust_pretty_printers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}gdb_lookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_lookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}gdb_providers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}gdb_providers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}lldb_lookup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}lldb_lookup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}lldb_providers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}lldb_providers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rustlib/etc/${MODPY_PYCACHE}rust_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rustlib/etc/${MODPY_PYCACHE}rust_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 lib/rustlib/etc/gdb_lookup.py

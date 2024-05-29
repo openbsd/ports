@@ -1,9 +1,9 @@
 COMMENT =		birthday reminder with tray notification
 
-GH_ACCOUNT = 		lafrech
+GH_ACCOUNT =		lafrech
 GH_PROJECT =		qbirthday
-GH_TAGNAME = 		v0.7.0b3
-REVISION =              3
+GH_TAGNAME =		v0.7.0b3
+REVISION =		4
 
 CATEGORIES =		productivity x11
 
@@ -18,7 +18,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/py-qt5${MODPY_FLAVOR}
 NO_TEST =		Yes
 
-MODPY_ADJ_FILES += 	src/qb
+MODPY_ADJ_FILES +=	src/qb
 
 NO_BUILD =		Yes
 MODPY_BUILDDEP =	Yes
@@ -42,7 +42,7 @@ do-install:
 		${PREFIX}/share/icons/hicolor/scalable/apps/
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/qbirthday
 
 .include <bsd.port.mk>

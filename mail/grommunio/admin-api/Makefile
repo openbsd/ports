@@ -7,7 +7,7 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
 GH_COMMIT=	63c43b5e4256c67b5a77bf29d3b85f08cdfc783b
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail www productivity
 
@@ -42,8 +42,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/yaml2json.py ${WRKSRC}/main.py
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/grommunio-admin-api
+	${MODPY_COMPILEALL} ${PREFIX}/share/grommunio-admin-api
 	${INSTALL_DATA} ${FILESDIR}/database.yaml \
 		${PREFIX}/share/examples/grommunio-admin-api/conf.d
 

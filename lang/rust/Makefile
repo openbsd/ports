@@ -17,6 +17,7 @@ COMMENT-src =		Rust source component
 
 V =			1.78.0
 DISTNAME =		rustc-${V}-src
+REVISION-gdb =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.78.0
@@ -310,7 +311,7 @@ do-install:
 		${PREFIX}/share/bash-completion/completions
 	-rmdir -p ${PREFIX}/etc/bash_completion.d
 	# compile python stuff
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/rustlib/etc
+	${MODPY_COMPILEALL} ${PREFIX}/lib/rustlib/etc
 
 do-test:
 	${TEST_BIN} test --jobs=${MAKE_JOBS} --no-fail-fast

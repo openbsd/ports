@@ -3,7 +3,7 @@ COMMENT=		maths, science and engineering modules for Python
 MODPY_EGG_VERSION=	1.10.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math devel
 
@@ -51,7 +51,7 @@ MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
 
 post-install:
-	${MODPY_BIN} -m compileall ${WRKINST}/${MODPY_SITEPKG}/scipy
+	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}/scipy
 
 PORTHOME=	${WRKDIR}
 

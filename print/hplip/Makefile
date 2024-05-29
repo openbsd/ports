@@ -18,11 +18,11 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 REVISION-common=	0
-REVISION-gui=		0
+REVISION-gui=		1
 REVISION-hpaio=		0
 REVISION-hpcups=	0
 REVISION-hpijs=		0
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
@@ -222,8 +222,7 @@ post-install:
 	${SUBST_DATA} ${FILESDIR}/hplip.state \
 		${PREFIX}/share/examples/hplip/db/hplip.state
 	echo 'hpaio' >${PREFIX}/share/examples/hplip/sane.d/dll.d/hpaio
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/hplip
+	${MODPY_COMPILEALL} ${PREFIX}/share/hplip
 	rm -r ${WRKINST}/usr/{lib,share}
 	rm -r ${WRKINST}/etc/udev
 	rm -r ${WRKINST}/etc/sane.d

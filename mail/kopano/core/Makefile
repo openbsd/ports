@@ -8,7 +8,7 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
-REVISION-main=	8
+REVISION-main=	9
 REVISION-mapi=	6
 
 CATEGORIES=	mail www productivity
@@ -189,7 +189,7 @@ post-install:
 
 	find ${PREFIX} -name "*.la" -delete
 
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/share/kopano-dagent/python \
 		${PREFIX}/share/kopano-spooler/python \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages

@@ -1,6 +1,7 @@
 BROKEN =	Missinf KPipeWire
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	https://apps.kde.org/spectacle/
@@ -18,7 +19,7 @@ BUILD_DEPENDS =	wayland/libinput-openbsd \
 
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/share/kconf_update/50-clipboard_settings_change.py
 
 .include <bsd.port.mk>

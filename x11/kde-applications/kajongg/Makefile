@@ -2,6 +2,7 @@ BROKEN =	qt6 python
 COMMENT =	Mah Jongg four players board game for KDE5
 DISTNAME =	kajongg-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kajongg
 
@@ -24,8 +25,7 @@ RUN_DEPENDS =	devel/py-twisted${MODPY_FLAVOR} \
 		x11/py-qt5${MODPY_FLAVOR}
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/kajongg/
+	${MODPY_COMPILEALL} ${PREFIX}/share/kajongg/
 	echo "#!/bin/sh" > ${WRKSRC}/kajongg.sh
 	echo "${MODPY_BIN} ${TRUEPREFIX}/share/kajongg/kajongg.py" >> \
 		${WRKSRC}/kajongg.sh

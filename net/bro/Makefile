@@ -6,6 +6,7 @@ COMMENT=		network analysis and security monitoring framework
 
 V=			6.0.4
 DISTNAME=		zeek-${V}
+REVISION=		0
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broccoli                  10.0
@@ -112,7 +113,7 @@ post-install:
 	rm -rf ${WRKINST}/var/{log,spool}/zeek ${PREFIX}/var/
 	mv ${PREFIX}/share/zeek/site/ ${PREFIX}/share/examples/zeek/
 	cd ${PREFIX}/share/zeek && ln -sf ${SYSCONFDIR}/zeek/site
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/zeek/python
+	${MODPY_COMPILEALL} ${PREFIX}/lib/zeek/python
 
 # handled by exec-add / exec-delete; symlink changes according to spooldir
 	rm ${PREFIX}/share/zeekctl/scripts/zeekctl-config.sh

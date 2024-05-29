@@ -209,6 +209,7 @@ lib/nim/pure/typetraits.nim
 lib/nim/pure/unicode.nim
 lib/nim/pure/unidecode/
 ${MODPY_COMMENT}lib/nim/pure/unidecode/${MODPY_PYCACHE}/
+lib/nim/pure/unidecode/${MODPY_PYCACHE}gen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/nim/pure/unidecode/${MODPY_PYCACHE}gen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/nim/pure/unidecode/gen.py
 lib/nim/pure/unidecode/unidecode.dat

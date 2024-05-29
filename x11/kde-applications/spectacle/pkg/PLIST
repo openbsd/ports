@@ -59,6 +59,7 @@ share/doc/HTML/uk/spectacle/index.docbook
 share/icons/hicolor/scalable/apps/spectacle.svg
 share/kconf_update/50-clipboard_settings_change.py
 share/kconf_update/${MODPY_PYCACHE}/
+share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}pyc
 share/kconf_update/spectacle_clipboard.upd
 share/kconf_update/spectacle_newConfig.upd
