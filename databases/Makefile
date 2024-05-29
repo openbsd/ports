@@ -140,8 +140,6 @@
      SUBDIR += percona-toolkit
      SUBDIR += pg-toolbox
      SUBDIR += pg_sqlite_fdw
-     SUBDIR += pg_stats_reporter
-     SUBDIR += pg_statsinfo
      SUBDIR += pgbackrest
      SUBDIR += pgbadger
      SUBDIR += pgbouncer
