@@ -5,8 +5,11 @@
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}cindex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}cindex.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}enumerations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/${MODPY_PYCACHE}enumerations.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/cindex.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang/enumerations.py

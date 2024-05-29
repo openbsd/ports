@@ -161,14 +161,7 @@ post-install:
 		${PREFIX}/${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang
 	${INSTALL_DATA} ${WRKSRC}/../clang/bindings/python/clang/* \
 		${PREFIX}/${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/clang \
-		${PREFIX}/${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb \
-		${PREFIX}/${LLVM_BASE}/lib/libear \
-		${PREFIX}/${LLVM_BASE}/lib/libscanbuild \
-		${PREFIX}/${LLVM_BASE}/share/clang \
-		${PREFIX}/${LLVM_BASE}/share/opt-viewer \
-		${PREFIX}/${LLVM_BASE}/share/scan-view
+	${MODPY_COMPILEALL} ${PREFIX}/${LLVM_BASE}/{lib,share}
 	${INSTALL_DATA} ${WRKBUILD}/docs/man/* \
 		${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKBUILD}/man/man1/* \
