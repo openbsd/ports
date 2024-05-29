@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
-XFCE_VERSION=	1.10.5
+XFCE_VERSION=	1.10.6
 XFCE_GOODIE=	xfce4-screenshooter
 
 PORTROACH=	limitw:1,even
@@ -16,6 +16,7 @@ RUN_DEPENDS=	x11/xclip \
 		x11/gnome/zenity \
 		net/curl \
 		textproc/jq
+BUILD_DEPENDS=	wayland/wayland
 
 # Build picks up help2man automatically
 CONFIGURE_ENV +=	ac_cv_prog_HELP2MAN=
