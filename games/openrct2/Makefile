@@ -1,12 +1,12 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.4.5
-TITLE_V =	0.4.0
-OBJECTS_V =	1.3.11
-OPENSFX_V =	1.0.3
-OPENMSX_V =	1.3.0
-REPLAYS_V =	0.0.78
+V =		0.4.11
+TITLE_V =	0.4.6
+OBJECTS_V =	1.4.4
+OPENSFX_V =	1.0.5
+OPENMSX_V =	1.5
+REPLAYS_V =	0.0.79
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTFILES =	openrct2-${V}{v${V}}.tar.gz
 DISTFILES.a = 	title-sequences-${TITLE_V}{title-sequences}.zip
@@ -68,6 +68,7 @@ CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 			-DDOWNLOAD_OPENSFX=OFF \
 			-DDOWNLOAD_REPLAYS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
+			-DDISABLE_DISCORD_RPC=ON \
 			-DOPENRCT2_BRANCH=master \
 			-DOPENRCT2_COMMIT_SHA1_SHORT="76ca840"
 
@@ -85,9 +86,9 @@ post-extract:
 	unzip -q ${FULLDISTDIR}/objects-${OBJECTS_V}.zip -d \
 		${WRKSRC}/data/object
 	unzip -q ${FULLDISTDIR}/opensfx-${OPENSFX_V}.zip -d \
-		${WRKSRC}/data/assetpack
+		${WRKSRC}/data/object
 	unzip -q ${FULLDISTDIR}/openmsx-${OPENMSX_V}.zip -d \
-		${WRKSRC}/data/assetpack
+		${WRKSRC}/data/object
 	unzip -q ${FULLDISTDIR}/replays-${REPLAYS_V}.zip -d \
 		${WRKSRC}/testdata/replays
 
