@@ -1,4 +1,5 @@
 @bin bin/kristall
+@man man/man1/kristall.1
 share/applications/Kristall.desktop
 share/icons/hicolor/128x128/apps/net.random-projects.kristall.png
 share/icons/hicolor/16x16/apps/net.random-projects.kristall.png
@@ -7,5 +8,7 @@ share/icons/hicolor/64x64/apps/net.random-projects.kristall.png
 share/icons/hicolor/scalable/apps/net.random-projects.kristall.svg
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/
+share/metainfo/Kristall.metainfo.xml
 share/mime/packages/kristall.xml
 @tag update-mime-database

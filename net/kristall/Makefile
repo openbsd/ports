@@ -1,11 +1,10 @@
 COMMENT =	graphical multi-protocol navigator
 
-DISTNAME =	kristall-2021111500
+DISTNAME =	kristall-2024010500
 
 GH_ACCOUNT =	MasterQ32
 GH_PROJECT =	kristall
-GH_COMMIT =	9744a24ffbf4d5ea6ad8b418d740c90336ee33b8
-REVISION =	1
+GH_COMMIT =	b4c677cdb5a9d7337758bcad45db5b21e2b85280
 
 CATEGORIES =	net x11
 
@@ -30,6 +29,12 @@ LIB_DEPENDS =	audio/pulseaudio \
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+MAKE_ENV +=	KRISTALL_VERSION=${DISTNAME} \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}"
+
+FAKE_FLAGS =	mandir="${DESTDIR}${PREFIX}/man/man1"
 
 ALL_TARGET =	kristall
 
