@@ -1,9 +1,8 @@
 COMMENT =	dungeon builder game with roguelike elements
 
-# 1_0_hotfix16 on itch.io: 2024-05-08 checkout
-COMMIT =	0c9d2e0682beb52f466e543953ac489730d53fe4
-COMMIT_DATE =	2024-05-08
-PKGNAME =	keeperrl-1.0pl16
+COMMIT =	cfdd70355cc500f8d1e068b33234cbac772b7a3f
+COMMIT_DATE =	2024-05-24
+PKGNAME =	keeperrl-1.0pl19
 DIST_TUPLE +=	github miki151 keeperrl ${COMMIT} .
 
 CATEGORIES =	games x11

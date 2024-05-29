@@ -10,12 +10,3 @@ Index: steam_base.cpp
  
  namespace steam {
    
-@@ -24,7 +24,7 @@ string formatError(int value, const pair<int, const ch
-     if (strings[n].first == value)
-       return strings[n].second;
-   char buffer[64];
--  sprintf(buffer, "unknown (%d)", value);
-+  snprintf(buffer, sizeof(buffer), "unknown (%d)", value);
-   return buffer;
- }
- 

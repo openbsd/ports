@@ -1,3 +1,5 @@
+using strlcpy is correct here, not strncpy
+
 Index: miniunz.cpp
 --- miniunz.cpp.orig
 +++ miniunz.cpp
@@ -5,7 +7,7 @@ Index: miniunz.cpp
      return 0;
  
    buffer = (char*)malloc(len+1);
--  strcpy(buffer,newdir);
+-  strncpy(buffer,newdir,len+1);
 +  strlcpy(buffer,newdir,len+1);
  
    if (buffer[len-1] == '/') {
