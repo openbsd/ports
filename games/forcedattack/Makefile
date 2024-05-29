@@ -3,7 +3,7 @@ COMMENT=	connect four of stones in a straight line
 V=		2.1.4
 DISTNAME=	4stAttack-${V}
 PKGNAME=	forcedattack-${V}
-REVISION =	8
+REVISION =	9
 CATEGORIES=	games
 
 HOMEPAGE=	https://forcedattack.sourceforge.net/
@@ -28,13 +28,12 @@ do-build:
 			${WRKSRC}/4stattack
 	@perl -pi -e 's,python,python${MODPY_VERSION},g' ${WRKSRC}/4stattack.py
 
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKSRC}
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/4stattack ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/4stattack ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${GAMEDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.{py,pyc} ${GAMEDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${GAMEDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.{ini,ttf} ${GAMEDIR}
 	cd ${WRKSRC}; tar cf - data gui kde players | tar xf - -C ${GAMEDIR}
+	${MODPY_COMPILEALL} ${GAMEDIR}
 
 .include <bsd.port.mk>
