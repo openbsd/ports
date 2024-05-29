@@ -95,8 +95,4 @@ TEST_IS_INTERACTIVE =	X11
 
 PORTHOME =		${WRKDIR}
 
-post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		 ${PREFIX}/share/kconf_update/
-
 .include <bsd.port.mk>
