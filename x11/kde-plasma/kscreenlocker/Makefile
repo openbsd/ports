@@ -1,5 +1,6 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
@@ -15,10 +16,12 @@ WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
 WANTLIB += Qt6Widgets Qt6Xml X11 Xext Xi c m pam wayland-client
 WANTLIB += wayland-server xcb xcb-keysyms xkbcommon
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		sysutils/consolekit
 
-BUILD_DEPENDS =	wayland/wayland-protocols \
+BUILD_DEPENDS =	sysutils/consolekit \
 		wayland/plasma-wayland-protocols \
+		wayland/wayland-protocols \
 		x11/kde-plasma/kscreen>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kconfig \
