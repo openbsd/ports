@@ -12,6 +12,7 @@ REVISION-cgi =	3
 CATEGORIES =	www
 
 HOMEPAGE =	https://docs.pnp4nagios.org/
+PORTROACH =	site:https://github.com/pnp4nagios/pnp4nagios/releases/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2
