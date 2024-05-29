@@ -1,7 +1,7 @@
 COMMENT =	KDE Plasma control center
 DISTNAME =	systemsettings-${VERSION}
 PKGNAME =	kf6-systemsettings-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  systemsettingsview        1.0 # 0.0
 
@@ -18,9 +18,11 @@ WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Widgets Qt6Xml X11 c m
 MODKDE5_TRANSLATIONS =	Yes
 MODKDE5_DOCS = Yes
 
-BUILD_DEPENDS =	devel/kf6/kdeclarative
+BUILD_DEPENDS =	devel/kf6/kdeclarative \
+		devel/kf6/kirigami
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf6/kirigami \
 		devel/kf6/kdeclarative \
 		sysutils/lscpu \
 		graphics/vulkan-tools
