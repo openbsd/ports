@@ -1,4 +1,5 @@
 COMMENT =	library and QML module for Accounts-SSO and SignOn-SSO
+REVISION =	0
 
 DISTNAME =	kaccounts-integration-${VERSION}
 
