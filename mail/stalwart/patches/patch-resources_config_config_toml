@@ -1,7 +1,7 @@
 Index: resources/config/config.toml
 --- resources/config/config.toml.orig
 +++ resources/config/config.toml
-@@ -3,34 +3,34 @@
+@@ -3,43 +3,43 @@
  #############################################
  
  [server.listener."smtp"]
@@ -31,6 +31,17 @@ Index: resources/config/config.toml
  protocol = "imap"
  tls.implicit = true
  
+ [server.listener.pop3]
+-bind = "[::]:110"
++bind = "0.0.0.0:110"
+ protocol = "pop3"
+ 
+ [server.listener.pop3s]
+-bind = "[::]:995"
++bind = "0.0.0.0:995"
+ protocol = "pop3"
+ tls.implicit = true
+ 
  [server.listener."sieve"]
 -bind = ["[::]:4190"]
 +bind = ["0.0.0.0:4190"]
@@ -43,7 +54,7 @@ Index: resources/config/config.toml
  tls.implicit = true
  
  [storage]
-@@ -55,9 +55,9 @@ level = "info"
+@@ -64,9 +64,9 @@ level = "info"
  ansi = false
  enable = true
  
