@@ -1,8 +1,7 @@
 COMMENT =		PostgreSQL backup & restore tool
 
-V =			2.51
+V =			2.52
 DISTNAME =		pgbackrest-${V}
-REVISION =		0
 
 CATEGORIES = 		databases
 HOMEPAGE = 		https://pgbackrest.org/
