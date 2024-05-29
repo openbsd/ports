@@ -1,8 +1,7 @@
 COMMENT=	tool for measuring maximum TCP and UDP bandwidth
 
-DISTNAME=	iperf-2.0.12
+DISTNAME=	iperf-2.2.0
 CATEGORIES=	net
-REVISION=	1
 
 HOMEPAGE=	https://sourceforge.net/projects/iperf/
 
@@ -18,7 +17,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 SITES=		${SITE_SOURCEFORGE:=iperf2/}
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 
 # Separate build breaks configure test for IPv6 support
 SEPARATE_BUILD=	No
