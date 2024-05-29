@@ -1,6 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict lldb-${LLVM_PKGSPEC}
+@conflict llvm-<17.0.6p9
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
 bin/lldb-vscode-${LLVM_MAJOR}
@@ -53,6 +54,7 @@ ${LLVM_BASE}/include/lldb/API/SBProcessInfo.h
 ${LLVM_BASE}/include/lldb/API/SBQueue.h
 ${LLVM_BASE}/include/lldb/API/SBQueueItem.h
 ${LLVM_BASE}/include/lldb/API/SBReproducer.h
+${LLVM_BASE}/include/lldb/API/SBScriptObject.h
 ${LLVM_BASE}/include/lldb/API/SBSection.h
 ${LLVM_BASE}/include/lldb/API/SBSourceManager.h
 ${LLVM_BASE}/include/lldb/API/SBStream.h
@@ -119,6 +121,7 @@ ${LLVM_BASE}/include/lldb/Core/DebuggerEvents.h
 ${LLVM_BASE}/include/lldb/Core/Declaration.h
 ${LLVM_BASE}/include/lldb/Core/Disassembler.h
 ${LLVM_BASE}/include/lldb/Core/DumpDataExtractor.h
+${LLVM_BASE}/include/lldb/Core/DumpRegisterInfo.h
 ${LLVM_BASE}/include/lldb/Core/DumpRegisterValue.h
 ${LLVM_BASE}/include/lldb/Core/EmulateInstruction.h
 ${LLVM_BASE}/include/lldb/Core/FileLineResolver.h
@@ -203,6 +206,7 @@ ${LLVM_BASE}/include/lldb/Expression/IRInterpreter.h
 ${LLVM_BASE}/include/lldb/Expression/IRMemoryMap.h
 ${LLVM_BASE}/include/lldb/Expression/LLVMUserExpression.h
 ${LLVM_BASE}/include/lldb/Expression/Materializer.h
+${LLVM_BASE}/include/lldb/Expression/ObjectFileJIT.h
 ${LLVM_BASE}/include/lldb/Expression/REPL.h
 ${LLVM_BASE}/include/lldb/Expression/UserExpression.h
 ${LLVM_BASE}/include/lldb/Expression/UtilityFunction.h
@@ -258,6 +262,7 @@ ${LLVM_BASE}/include/lldb/Host/common/NativeThreadProtocol.h
 ${LLVM_BASE}/include/lldb/Host/common/NativeWatchpointList.h
 ${LLVM_BASE}/include/lldb/Host/common/TCPSocket.h
 ${LLVM_BASE}/include/lldb/Host/common/UDPSocket.h
+${LLVM_BASE}/include/lldb/Host/common/ZipFileResolver.h
 ${LLVM_BASE}/include/lldb/Host/freebsd/
 ${LLVM_BASE}/include/lldb/Host/freebsd/HostInfoFreeBSD.h
 ${LLVM_BASE}/include/lldb/Host/linux/
@@ -350,6 +355,7 @@ ${LLVM_BASE}/include/lldb/Interpreter/OptionValues.h
 ${LLVM_BASE}/include/lldb/Interpreter/Options.h
 ${LLVM_BASE}/include/lldb/Interpreter/Property.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptInterpreter.h
+${LLVM_BASE}/include/lldb/Interpreter/ScriptObject.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptedInterface.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptedPlatformInterface.h
 ${LLVM_BASE}/include/lldb/Interpreter/ScriptedProcessInterface.h
@@ -423,7 +429,9 @@ ${LLVM_BASE}/include/lldb/Target/QueueList.h
 ${LLVM_BASE}/include/lldb/Target/RegisterCheckpoint.h
 ${LLVM_BASE}/include/lldb/Target/RegisterContext.h
 ${LLVM_BASE}/include/lldb/Target/RegisterContextUnwind.h
+${LLVM_BASE}/include/lldb/Target/RegisterFlags.h
 ${LLVM_BASE}/include/lldb/Target/RegisterNumber.h
+${LLVM_BASE}/include/lldb/Target/RegisterTypeBuilder.h
 ${LLVM_BASE}/include/lldb/Target/RemoteAwarePlatform.h
 ${LLVM_BASE}/include/lldb/Target/Runtime.h
 ${LLVM_BASE}/include/lldb/Target/SectionLoadHistory.h
@@ -489,6 +497,7 @@ ${LLVM_BASE}/include/lldb/Utility/Endian.h
 ${LLVM_BASE}/include/lldb/Utility/Environment.h
 ${LLVM_BASE}/include/lldb/Utility/Event.h
 ${LLVM_BASE}/include/lldb/Utility/FileSpec.h
+${LLVM_BASE}/include/lldb/Utility/FileSpecList.h
 ${LLVM_BASE}/include/lldb/Utility/Flags.h
 ${LLVM_BASE}/include/lldb/Utility/GDBRemote.h
 ${LLVM_BASE}/include/lldb/Utility/IOObject.h
@@ -506,6 +515,7 @@ ${LLVM_BASE}/include/lldb/Utility/RangeMap.h
 ${LLVM_BASE}/include/lldb/Utility/RegisterValue.h
 ${LLVM_BASE}/include/lldb/Utility/RegularExpression.h
 ${LLVM_BASE}/include/lldb/Utility/Scalar.h
+${LLVM_BASE}/include/lldb/Utility/ScriptedMetadata.h
 ${LLVM_BASE}/include/lldb/Utility/SelectHelper.h
 ${LLVM_BASE}/include/lldb/Utility/SharedCluster.h
 ${LLVM_BASE}/include/lldb/Utility/State.h
@@ -518,6 +528,7 @@ ${LLVM_BASE}/include/lldb/Utility/StringExtractorGDBRemote.h
 ${LLVM_BASE}/include/lldb/Utility/StringLexer.h
 ${LLVM_BASE}/include/lldb/Utility/StringList.h
 ${LLVM_BASE}/include/lldb/Utility/StructuredData.h
+${LLVM_BASE}/include/lldb/Utility/ThreadSafeDenseMap.h
 ${LLVM_BASE}/include/lldb/Utility/TildeExpressionResolver.h
 ${LLVM_BASE}/include/lldb/Utility/Timeout.h
 ${LLVM_BASE}/include/lldb/Utility/Timer.h
@@ -531,6 +542,7 @@ ${LLVM_BASE}/include/lldb/Utility/UserIDResolver.h
 ${LLVM_BASE}/include/lldb/Utility/VASPrintf.h
 ${LLVM_BASE}/include/lldb/Utility/VMRange.h
 ${LLVM_BASE}/include/lldb/Utility/XcodeSDK.h
+${LLVM_BASE}/include/lldb/Utility/ZipFile.h
 ${LLVM_BASE}/include/lldb/Version/
 ${LLVM_BASE}/include/lldb/Version/Version.h
 ${LLVM_BASE}/include/lldb/lldb-defines.h
@@ -550,7 +562,9 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}embedded_interpreter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/${MODPY_PYCACHE}embedded_interpreter.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/_lldb.${MODPY_PYC_MAGIC_TAG}so
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/embedded_interpreter.py
@@ -558,19 +572,28 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/Logger.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}Logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}Logger.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}attrib_fromdict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}attrib_fromdict.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}metrics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}metrics.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}synth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/${MODPY_PYCACHE}synth.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/attrib_fromdict.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cache.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}gnu_libstdcpp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}gnu_libstdcpp.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}libcxx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/${MODPY_PYCACHE}libcxx.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/gnu_libstdcpp.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/formatters/cpp/libcxx.py
@@ -580,16 +603,22 @@ ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/lldb-argdumper
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_platform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_platform.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_process.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/${MODPY_PYCACHE}scripted_process.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_platform.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/plugins/scripted_process.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/__init__.py
 ${MODPY_COMMENT}${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}/
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}in_call_stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}in_call_stack.${MODPY_PYC_MAGIC_TAG}pyc
+${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}symbolication.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/${MODPY_PYCACHE}symbolication.${MODPY_PYC_MAGIC_TAG}pyc
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/in_call_stack.py
 ${LLVM_BASE}/lib/python${MODPY_VERSION}/site-packages/lldb/utils/symbolication.py
