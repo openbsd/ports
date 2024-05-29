@@ -1,50 +1,9 @@
-Add OpenBSD to the configure args we need.
 Do not look for CMake; we don't need it.
 
 Index: make/configure.py
 --- make/configure.py.orig
 +++ make/configure.py
-@@ -682,6 +682,8 @@ class ArchAction( Action ):
-         elif host_tuple.match( '*-*-freebsd*' ):
-             self.mode['i386']   = 'i386-portsbuild-freebsd%s' % (host_tuple.release)
-             self.mode['amd64'] = 'amd64-portsbuild-freebsd%s' % (host_tuple.release)
-+        elif host_tuple.match( '*-*-openbsd*' ):
-+            pass
-         else:
-             self.msg_pass = 'WARNING'
- 
-@@ -1338,7 +1340,7 @@ def createCLI( cross = None ):
-     ## add build options
-     grp = cli.add_argument_group( 'Build Options' )
-     grp.add_argument( '--snapshot', default=False, action='store_true', help='Force a snapshot build' )
--    h = IfHost( 'Build extra contribs for flatpak packaging', '*-*-linux*', '*-*-freebsd*', none=argparse.SUPPRESS ).value
-+    h = IfHost( 'Build extra contribs for flatpak packaging', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--flatpak', default=False, action='store_true', help=h )
-     cli.add_argument_group( grp )
- 
-@@ -1378,10 +1380,10 @@ def createCLI( cross = None ):
-     h = IfHost( 'enable assembly code in non-contrib modules', 'NOMATCH*-*-darwin*', 'NOMATCH*-*-linux*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--enable-asm', default=False, action='store_true', help=h )
- 
--    h = IfHost( 'disable GTK GUI', '*-*-linux*', '*-*-freebsd*', none=argparse.SUPPRESS ).value
-+    h = IfHost( 'disable GTK GUI', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--disable-gtk', default=False, action='store_true', help=h )
- 
--    h = IfHost( 'disable GTK GUI update checks', '*-*-linux*', '*-*-freebsd*', none=argparse.SUPPRESS ).value
-+    h = IfHost( 'disable GTK GUI update checks', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--disable-gtk-update-checks', default=False, action='store_true', help=h )
- 
-     h = 'enable GTK GUI for Windows' if (cross is not None and 'mingw' in cross) else argparse.SUPPRESS
-@@ -1390,7 +1392,7 @@ def createCLI( cross = None ):
-     h = IfHost( 'Build GUI with GTK4', '*-*-linux*', '*-*-freebsd*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--enable-gtk4', default=False, action='store_true', help=h )
- 
--    h = IfHost( 'disable GStreamer (live preview)', '*-*-linux*', '*-*-freebsd*', none=argparse.SUPPRESS ).value
-+    h = IfHost( 'disable GStreamer (live preview)', '*-*-linux*', '*-*-freebsd*', '*-*-openbsd*', none=argparse.SUPPRESS ).value
-     grp.add_argument( '--disable-gst', default=False, action='store_true', help=h )
- 
-     h = IfHost( 'x265 video encoder', '*-*-*', none=argparse.SUPPRESS ).value
-@@ -1581,13 +1583,10 @@ try:
+@@ -1638,13 +1638,10 @@ try:
      class Tools:
          ar         = ToolProbe( 'AR.exe',         'ar',         'ar', abort=True )
          cp         = ToolProbe( 'CP.exe',         'cp',         'cp', abort=True )
@@ -58,11 +17,11 @@ Index: make/configure.py
          python     = ToolProbe( 'PYTHON.exe',     'python',     os.path.basename(sys.executable), abort=True )
  
          gcc_tools  = ['GCC.gcc',
-@@ -1602,14 +1601,9 @@ try:
+@@ -1659,14 +1656,9 @@ try:
          else:
              gmake  = ToolProbe( 'GMAKE.exe',      'make',       'gmake', 'make', abort=True )
  
--        autoconf   = ToolProbe( 'AUTOCONF.exe',   'autoconf',   'autoconf', abort=True, minversion=[2,69,0] )
+-        autoconf   = ToolProbe( 'AUTOCONF.exe',   'autoconf',   'autoconf', abort=True, minversion=([2,71,0] if build_tuple.match('*-*-darwin*') else [2,69,0]) )
 -        automake   = ToolProbe( 'AUTOMAKE.exe',   'automake',   'automake', abort=True, minversion=[1,13,0] )
          libtool    = ToolProbe( 'LIBTOOL.exe',    'libtool',    'libtool', abort=True )
          lipo       = ToolProbe( 'LIPO.exe',       'lipo',       'lipo', abort=False )
@@ -71,14 +30,12 @@ Index: make/configure.py
 -        nasm       = ToolProbe( 'NASM.exe',       'asm',        'nasm', abort=True, minversion=[2,13,0] )
 -        ninja      = ToolProbe( 'NINJA.exe',      'ninja',      'ninja-build', 'ninja', abort=True )
  
-         xcodebuild = ToolProbe( 'XCODEBUILD.exe', 'xcodebuild', 'xcodebuild', abort=(True if (build_tuple.match('*-*-darwin*') and cross is None) else False), versionopt='-version', minversion=[10,3,0] )
+         xcodebuild = ToolProbe( 'XCODEBUILD.exe', 'xcodebuild', 'xcodebuild', abort=(True if (not xcode_opts['disabled'] and (build_tuple.match('*-*-darwin*') and cross is None)) else False), versionopt='-version', minversion=[10,3,0] )
  
-@@ -1695,12 +1689,6 @@ try:
-     if options.flatpak or host_tuple.match('*-*-darwin*', '*-*-mingw'):
-         # Requires Jansson which requires CMake 3.1.0 or later
-         Tools.cmake = ToolProbe('CMAKE.exe', 'cmake', 'cmake', abort=True, minversion=[3,1,0])
--    else:
--        Tools.cmake = ToolProbe('CMAKE.exe', 'cmake', 'cmake', abort=True, minversion=[2,8,12])
+@@ -1765,10 +1757,6 @@ try:
+     #####################################
+     # Requires oneVPL which requires CMake 3.16.3 or later
+     Tools.cmake = ToolProbe('CMAKE.exe', 'cmake', 'cmake', abort=True, minversion=[3,16,3])
 -    Tools.cmake.__init__( Tools.cmake.var, Tools.cmake.option, Tools.cmake.name, **Tools.cmake.kwargs )
 -    Tools.cmake.run()
 -    for action in Action.actions:

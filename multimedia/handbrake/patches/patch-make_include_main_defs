@@ -1,10 +1,9 @@
 Rip out all the optional dependencies.
-We'll let the ports tree handle it.
 
 Index: make/include/main.defs
 --- make/include/main.defs.orig
 +++ make/include/main.defs
-@@ -7,87 +7,6 @@ include $(SRC/)make/include/tool.defs
+@@ -7,97 +7,6 @@ include $(SRC/)make/include/tool.defs
  
  ###############################################################################
  
@@ -29,9 +28,11 @@ Index: make/include/main.defs
 -    MODULES += contrib/x264
 -    MODULES += contrib/jansson
 -    MODULES += contrib/libvpx
+-    MODULES += contrib/libjpeg-turbo
 -endif
 -
 -ifeq (1,$(FEATURE.flatpak))
+-    MODULES += contrib/libass
 -    MODULES += contrib/jansson
 -    MODULES += contrib/x264
 -endif
@@ -48,13 +49,17 @@ Index: make/include/main.defs
 -endif
 -
 -MODULES += contrib/libdav1d
+-MODULES += contrib/svt-av1
+-MODULES += contrib/zimg
 -MODULES += contrib/ffmpeg
 -MODULES += contrib/libdvdread
 -MODULES += contrib/libdvdnav
 -MODULES += contrib/libbluray
 -
 -ifeq (1,$(FEATURE.qsv))
--    MODULES += contrib/libmfx
+-ifeq (,$(filter $(HOST.system),freebsd))
+-    MODULES += contrib/libvpl
+-endif
 -endif
 -
 -ifeq (1,$(FEATURE.vce))
@@ -67,6 +72,10 @@ Index: make/include/main.defs
 -
 -ifneq (,$(filter $(HOST.system),darwin))
 -    MODULES += contrib/xz
+-endif
+-
+-ifneq (,$(filter $(HOST.machine),arm64 aarch64))
+-    MODULES += contrib/sse2neon
 -endif
 -
 -ifneq (,$(filter $(HOST.system),cygwin mingw))
@@ -91,16 +100,4 @@ Index: make/include/main.defs
 -
  ## these must come after contrib since some contrib modules are optional
  MODULES += libhb
- 
-@@ -122,6 +41,11 @@ endif
- 
- ifeq (1-gnu,$(FEATURE.gtk)-$(HOST.system))
-     ## build gtk when gtk+gnu
-+    MODULES += gtk
-+endif
-+
-+ifeq (1-openbsd,$(FEATURE.gtk)-$(BUILD.system))
-+    ## build gtk when gtk+openbsd
-     MODULES += gtk
- endif
  

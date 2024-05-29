@@ -1,8 +1,8 @@
-V = 		1.3.3
 COMMENT =	open source video transcoder
+
+V =		1.6.1
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	9
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -11,20 +11,20 @@ HOMEPAGE =	https://handbrake.fr/
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender aom ass
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avfilter avformat
-WANTLIB += avutil bluray bz2 c cairo cairo-gobject
-WANTLIB += crypto dav1d dbus-1 dvdnav dvdread epoxy execinfo expat
-WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gsm gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += iconv intl jansson jpeg lzma m mp3lame ogg opus orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
-WANTLIB += png postproc speex ssl swresample swscale theoradec
-WANTLIB += theoraenc udfread vidstab vorbis vorbisenc vpx x264
-WANTLIB += x265 xcb xcb-render xcb-shm xml2 xvidcore z zimg
+WANTLIB += ${COMPILER_LIBCXX} SvtAv1Enc X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += aom ass atk-1.0 atk-bridge-2.0 atspi avcodec avfilter
+WANTLIB += avformat avutil bluray bz2 c cairo cairo-gobject crypto
+WANTLIB += dav1d dbus-1 dvdnav dvdread epoxy execinfo expat ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsm gstaudio-1.0
+WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv intl
+WANTLIB += jansson jpeg lzma m mp3lame ogg opus orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png postproc
+WANTLIB += speex ssl swresample swscale theoradec theoraenc turbojpeg
+WANTLIB += udfread unibreak vidstab vorbis vorbisenc vpx x264 x265 xcb
+WANTLIB += xcb-render xcb-shm xml2 xvidcore z zimg
 
 SITES =		https://github.com/HandBrake/HandBrake/releases/download/${V}/
 
@@ -39,17 +39,32 @@ BUILD_DEPENDS =	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/libtool \
 		textproc/intltool
 
-LIB_DEPENDS =	devel/jansson \
-		devel/orc \
+LIB_DEPENDS =	archivers/bzip2 \
+		archivers/xz \
+		audio/lame \
+		audio/libogg \
+		audio/libvorbis \
+		audio/opus \
+		audio/speex \
+		converters/libiconv \
+		devel/fribidi \
+		devel/harfbuzz \
+		devel/jansson \
+		devel/libdvdread \
 		graphics/ffmpeg \
+		graphics/jpeg \
+		graphics/zimg \
 		multimedia/aom \
+		multimedia/libass \
 		multimedia/libbluray \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		multimedia/libvpx \
+		multimedia/svt-av1 \
 		multimedia/x264 \
 		multimedia/x265 \
+		textproc/libxml \
 		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -59,8 +74,6 @@ SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/make/configure.py
-CONFIGURE_ARGS =	--disable-gtk-update-checks \
-			--enable-x265
 
 # Yes, autoconf is called *during* the build but not at configure time...
 USE_GMAKE =	Yes
@@ -70,22 +83,20 @@ MAKE_ENV =	AUTOCONF_VERSION="${AUTOCONF_VERSION}" \
 		AWK=/usr/bin/awk \
 		MKDIR_P='/bin/mkdir -p'
 MAKE_FILE =	GNUmakefile
-MAKE_FLAGS =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libxml2 -D_NO_UPDATE_CHECK" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib -lx265 -liconv"
+MAKE_FLAGS =	CFLAGS="${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .if ${MACHINE_ARCH:Mi386}
 CFLAGS +=	-msse2
 CXXFLAGS +=	-msse2
 .endif
 
-AUTOCONF_VERSION =	2.69
+CFLAGS+=	-D_NO_UPDATE_CHECK
+
+AUTOCONF_VERSION =	2.71
 AUTOMAKE_VERSION =	1.16
 
 WRKDIST =	${WRKDIR}/HandBrake-${V}
-
-post-extract:
-	ln -s ${WRKSRC}/make/variant/freebsd.defs \
-		${WRKSRC}/make/variant/openbsd.defs
 
 post-install:
 	ln -s ${TRUEPREFIX}/bin/ghb ${PREFIX}/bin/HandBrake

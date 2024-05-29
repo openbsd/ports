@@ -1,0 +1,15 @@
+Revert "libhb: use mask part the new FFmpeg channel layout api."
+c5012478cba356b8f8f222d6acff9fe3cc74e67e
+
+Index: libhb/scan.c
+--- libhb/scan.c.orig
++++ libhb/scan.c
+@@ -1611,7 +1611,7 @@ static void LookForAudio(hb_scan_t *scan, hb_title_t *
+     {
+         int lfes     = (!!(audio->config.in.channel_layout & AV_CH_LOW_FREQUENCY) +
+                         !!(audio->config.in.channel_layout & AV_CH_LOW_FREQUENCY_2));
+-        int channels = hb_layout_get_discrete_channel_count(audio->config.in.channel_layout);
++        int channels = av_get_channel_layout_nb_channels(audio->config.in.channel_layout);
+         char *desc   = audio->config.lang.description +
+                         strlen(audio->config.lang.description);
+         size_t size = sizeof(audio->config.lang.description) - strlen(audio->config.lang.description);
