@@ -4,26 +4,21 @@ Add OpenBSD and correct path search.
 Index: source/Files.cpp
 --- source/Files.cpp.orig
 +++ source/Files.cpp
-@@ -101,24 +101,23 @@ void Files::Init(const char * const *argv)
+@@ -101,12 +101,11 @@ void Files::Init(const char * const *argv)
  	{
  		// Find the path to the resource directory. This will depend on the
  		// operating system, and can be overridden by a command line argument.
 -		char *str = SDL_GetBasePath();
-+		char *str = "/usr/local/share/endless-sky";
++		char str[] = "/usr/local/share/endless-sky";
  		if(!str)
  			throw runtime_error("Unable to get path to resource directory!");
- 		
+ 
  		resources = str;
 -		SDL_free(str);
  	}
  #if defined _WIN32
  	FixWindowsSlashes(resources);
- #endif
- 	if(resources.back() != '/')
- 		resources += '/';
--#if defined __linux__ || defined __FreeBSD__ || defined __DragonFly__
-+#if defined __linux__ || defined __FreeBSD__ || defined __DragonFly__ || defined __OpenBSD__
- 	// Special case, for Linux: the resource files are not in the same place as
+@@ -118,7 +117,7 @@ void Files::Init(const char * const *argv)
  	// the executable, but are under the same prefix (/usr or /usr/local).
  	static const string LOCAL_PATH = "/usr/local/";
  	static const string STANDARD_PATH = "/usr/";

@@ -3,8 +3,7 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	endless-sky
 GH_PROJECT =	endless-sky
-GH_TAGNAME =	v0.9.12
-REVISION =	0
+GH_TAGNAME =	v0.10.6
 
 HOMEPAGE =	https://endless-sky.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -14,7 +13,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 c jpeg m mad openal
-WANTLIB += png
+WANTLIB += png uuid
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -26,7 +25,8 @@ LIB_DEPENDS =	audio/libmad \
 		devel/sdl2 \
 		graphics/glew \
 		graphics/jpeg \
-		graphics/png
+		graphics/png \
+		sysutils/e2fsprogs
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

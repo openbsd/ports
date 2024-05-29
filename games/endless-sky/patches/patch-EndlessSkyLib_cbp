@@ -1,0 +1,13 @@
+Index: EndlessSkyLib.cbp
+--- EndlessSkyLib.cbp.orig
++++ EndlessSkyLib.cbp
+@@ -25,9 +25,7 @@
+ 				<Option compiler="gcc" />
+ 				<Option createDefFile="1" />
+ 				<Compiler>
+-					<Add option="-Werror" />
+ 					<Add option="-flto" />
+-					<Add option="-O3" />
+ 					<Add option="-msse3" />
+ 				</Compiler>
+ 				<Linker>
