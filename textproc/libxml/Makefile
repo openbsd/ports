@@ -6,7 +6,7 @@ GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
-REVISION-main=		0
+REVISION-main=		1
 REVISION-python=	1
 
 SHARED_LIBS +=  xml2                 20.0     # 14.7
