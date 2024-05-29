@@ -1,0 +1,3 @@
+This is a implementation of the JSON specification according to RFC 4627. You
+can think of it as a low fat alternative to XML, if you want to store data to
+disk or transmit it over a network rather than use a verbose markup language.
