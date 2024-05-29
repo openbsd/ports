@@ -59,6 +59,7 @@
      SUBDIR += ptouch-driver
      SUBDIR += py-cups,python3
      SUBDIR += py-fonttools,python3
+     SUBDIR += py-pdf2image,python3
      SUBDIR += py-pikepdf,python3
      SUBDIR += py-pylatex,python3
      SUBDIR += py-pydyf,python3
