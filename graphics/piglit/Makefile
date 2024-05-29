@@ -6,7 +6,7 @@ DISTNAME =	piglit-20210128
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	graphics
 
@@ -51,6 +51,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
 NO_TEST =		Yes
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/piglit
+	${MODPY_COMPILEALL} ${PREFIX}/lib/piglit
 
 .include <bsd.port.mk>

@@ -873,6 +873,7 @@ share/metainfo/org.kde.kdeconnect.metainfo.xml
 share/nautilus-python/
 share/nautilus-python/extensions/
 ${MODPY_COMMENT}share/nautilus-python/extensions/${MODPY_PYCACHE}/
+share/nautilus-python/extensions/${MODPY_PYCACHE}kdeconnect-share.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/nautilus-python/extensions/${MODPY_PYCACHE}kdeconnect-share.${MODPY_PYC_MAGIC_TAG}pyc
 share/nautilus-python/extensions/kdeconnect-share.py
 share/plasma/

@@ -12,7 +12,7 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 REVISION-java =		1
-REVISION-main =		1
+REVISION-main =		2
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -125,7 +125,7 @@ post-patch:
 		${WRKSRC}/samples/cpp/tutorial_code/core/how_to_scan_images/how_to_scan_images.cpp
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 
 do-test:
 	cd ${WRKBUILD}; \

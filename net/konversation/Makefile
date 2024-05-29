@@ -1,6 +1,7 @@
 COMMENT =	IRC client for KDE
 
 DISTNAME =	konversation-${MODKDE_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -72,7 +73,7 @@ LIB_DEPENDS =	devel/kf6/karchive  \
 		x11/qt6/qtmultimedia
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	${MODPY_COMPILEALL} \
 		${PREFIX}/share/konversation/scripting_support/python/konversation
 
 .include <bsd.port.mk>

@@ -143,8 +143,11 @@ share/konversation/scripting_support/python/
 share/konversation/scripting_support/python/konversation/
 share/konversation/scripting_support/python/konversation/__init__.py
 ${MODPY_COMMENT}share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}/
+share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}dbus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}dbus.${MODPY_PYC_MAGIC_TAG}pyc
+share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/konversation/scripting_support/python/konversation/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
 share/konversation/scripting_support/python/konversation/dbus.py
 share/konversation/scripting_support/python/konversation/i18n.py

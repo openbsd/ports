@@ -1,7 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	kdeconnectcore		6.0 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	1.0 # 1.4
@@ -92,7 +92,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/sftp/mounter.cpp
 
 post-install:
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-		${PREFIX}/share/nautilus-python/extensions
+	${MODPY_COMPILEALL} ${PREFIX}/share/nautilus-python/extensions
 
 .include <bsd.port.mk>

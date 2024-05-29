@@ -189,8 +189,7 @@ post-install:
 	    -name '*.deconforig' \) \
 		-delete
 	# precompiling Python modules
-	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
-	${MODPY_BIN} -O ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
+	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
 	# install samba docs and sample config
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/samba
 	cp -R ${WRKDIST}/examples/* ${PREFIX}/share/examples/samba
