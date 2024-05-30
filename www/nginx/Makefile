@@ -18,7 +18,7 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
 
-VERSION=	1.26.0
+VERSION=	1.26.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 
@@ -40,8 +40,6 @@ PKGNAME-njs=		nginx-njs-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
-
-REVISION-main=		1
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
