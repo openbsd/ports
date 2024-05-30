@@ -87,8 +87,8 @@ include/re/rem_vidmix.h
 lib/cmake/
 lib/cmake/libre/
 lib/cmake/libre/libre-config.cmake
-lib/cmake/libre/libre${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/libre/libre.cmake
+lib/cmake/libre/libre-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libre/libre-targets.cmake
 lib/cmake/re/
 lib/cmake/re/re-config.cmake
 @static-lib lib/libre.a
