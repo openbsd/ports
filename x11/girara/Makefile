@@ -1,7 +1,7 @@
 COMMENT =	user interface library from pwmt
-DISTNAME =	girara-0.4.1
+DISTNAME =	girara-0.4.4
 
-SHARED_LIBS += girara-gtk3               1.3 # 3.1
+SHARED_LIBS += girara-gtk3               2.0 # 3.1
 
 EXTRACT_SUFX =	.tar.xz
 
