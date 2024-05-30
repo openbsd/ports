@@ -1,4 +1,6 @@
 @bin bin/tilda
+@man man/man1/tilda.1
+share/applications/tilda-dbus.desktop
 share/applications/tilda.desktop
 share/doc/tilda/
 share/doc/tilda/README.md
@@ -10,6 +12,7 @@ share/locale/el/LC_MESSAGES/tilda.mo
 share/locale/en_GB/LC_MESSAGES/tilda.mo
 share/locale/es/LC_MESSAGES/tilda.mo
 share/locale/fr/LC_MESSAGES/tilda.mo
+share/locale/hr/LC_MESSAGES/tilda.mo
 share/locale/hu/LC_MESSAGES/tilda.mo
 share/locale/it/LC_MESSAGES/tilda.mo
 share/locale/lt/LC_MESSAGES/tilda.mo
@@ -22,6 +25,7 @@ share/locale/sk/LC_MESSAGES/tilda.mo
 share/locale/sl/LC_MESSAGES/tilda.mo
 share/locale/sv/LC_MESSAGES/tilda.mo
 share/locale/tr/LC_MESSAGES/tilda.mo
+share/locale/uk/LC_MESSAGES/tilda.mo
 share/locale/zh_CN/LC_MESSAGES/tilda.mo
 share/locale/zh_TW/LC_MESSAGES/tilda.mo
 share/metainfo/

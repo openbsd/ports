@@ -1,0 +1,12 @@
+Index: src/tilda-lock-files.c
+--- src/tilda-lock-files.c.orig
++++ src/tilda-lock-files.c
+@@ -217,7 +217,7 @@ static struct lock_info *islockfile (const gchar *file
+ static GSList *getPids() {
+     GSList *pids = NULL;
+     FILE *ps_output;
+-    const gchar ps_command[] = "ps -C tilda -o pid=";
++    const gchar ps_command[] = "/usr/bin/pgrep tilda";
+     gchar buf[16]; /* Really shouldn't need more than 6 */
+ 
+     if ((ps_output = popen (ps_command, "r")) == NULL) {

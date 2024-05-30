@@ -2,9 +2,8 @@ COMMENT=		drop-down terminal emulator
 
 GH_ACCOUNT=		lanoxx
 GH_PROJECT=		tilda
-GH_TAGNAME=		tilda-1.5.0
-DISTNAME=		tilda-1.5.0
-REVISION=		0
+GH_TAGNAME=		tilda-2.0.0
+DISTNAME=		${GH_TAGNAME}
 
 CATEGORIES=		x11
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=		devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.15
 AUTORECONF=		./autogen.sh
 CONFIGURE_STYLE=	autoreconf
