@@ -3,7 +3,7 @@ COMMENT=	open source SIP User-Agent library
 DISTNAME=	sofia-sip-1.12.11
 SHARED_LIBS +=  sofia-sip-ua-glib         0.0 # 3.0
 SHARED_LIBS +=  sofia-sip-ua              0.0 # 6.0
-REVISION=	3
+REVISION=	4
 
 API=		1.12
 

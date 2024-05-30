@@ -1,0 +1,43 @@
+https://github.com/freeswitch/sofia-sip/pull/263
+
+Index: libsofia-sip-ua/stun/stun_common.c
+--- libsofia-sip-ua/stun/stun_common.c.orig
++++ libsofia-sip-ua/stun/stun_common.c
+@@ -437,6 +437,7 @@ int stun_encode_message_integrity(stun_attr_t *attr,
+ 				  stun_buffer_t *pwd) {
+   int padded_len;
+   unsigned int dig_len;
++  unsigned char md[EVP_MAX_MD_SIZE];
+   unsigned char *padded_text = NULL;
+   void *sha1_hmac;
+ 
+@@ -452,10 +453,10 @@ int stun_encode_message_integrity(stun_attr_t *attr,
+     memcpy(padded_text, buf, len);
+     memset(padded_text + len, 0, padded_len - len);
+ 
+-    sha1_hmac = HMAC(EVP_sha1(), pwd->data, pwd->size, padded_text, padded_len, NULL, &dig_len);
++    sha1_hmac = HMAC(EVP_sha1(), pwd->data, pwd->size, padded_text, padded_len, md, &dig_len);
+   }
+   else {
+-    sha1_hmac = HMAC(EVP_sha1(), pwd->data, pwd->size, buf, len, NULL, &dig_len);
++    sha1_hmac = HMAC(EVP_sha1(), pwd->data, pwd->size, buf, len, md, &dig_len);
+   }
+ 
+   assert(dig_len == 20);
+@@ -503,6 +504,7 @@ int stun_validate_message_integrity(stun_msg_t *msg, s
+   int padded_len, len;
+   unsigned int dig_len;
+   unsigned char dig[20]; /* received sha1 digest */
++  unsigned char md[EVP_MAX_MD_SIZE];
+   unsigned char *padded_text;
+ #endif
+ 
+@@ -528,7 +530,7 @@ int stun_validate_message_integrity(stun_msg_t *msg, s
+   memset(padded_text, 0, padded_len);
+   memcpy(padded_text, msg->enc_buf.data, len);
+ 
+-  memcpy(dig, HMAC(EVP_sha1(), pwd->data, pwd->size, padded_text, padded_len, NULL, &dig_len), 20);
++  memcpy(dig, HMAC(EVP_sha1(), pwd->data, pwd->size, padded_text, padded_len, md, &dig_len), 20);
+ 
+   if (memcmp(dig, msg->enc_buf.data + msg->enc_buf.size - 20, 20) != 0) {
+     /* does not match, but try the test server's password */
