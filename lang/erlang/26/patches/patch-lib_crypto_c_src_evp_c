@@ -1,0 +1,25 @@
+Index: lib/crypto/c_src/evp.c
+--- lib/crypto/c_src/evp.c.orig
++++ lib/crypto/c_src/evp.c
+@@ -37,8 +37,6 @@ ERL_NIF_TERM evp_compute_key_nif(ErlNifEnv* env, int a
+     /* Arg 0, Curve */
+     if (argv[0] == atom_x25519)
+         type = EVP_PKEY_X25519;
+-    else if (argv[0] == atom_x448)
+-        type = EVP_PKEY_X448;
+     else
+         assign_goto(ret, bad_arg, EXCP_BADARG_N(env, 0, "Bad curve"));
+ 
+@@ -122,12 +120,8 @@ ERL_NIF_TERM evp_generate_key_nif(ErlNifEnv* env, int 
+ 
+     if (argv[0] == atom_x25519)
+         type = EVP_PKEY_X25519;
+-    else if (argv[0] == atom_x448)
+-        type = EVP_PKEY_X448;
+     else if (argv[0] == atom_ed25519)
+         type = EVP_PKEY_ED25519;
+-    else if (argv[0] == atom_ed448)
+-        type = EVP_PKEY_ED448;
+     else
+         assign_goto(ret, bad_arg, EXCP_BADARG_N(env, 0, "Bad curve"));
+ 

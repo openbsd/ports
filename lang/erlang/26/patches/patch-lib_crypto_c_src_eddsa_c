@@ -1,0 +1,12 @@
+Index: lib/crypto/c_src/eddsa.c
+--- lib/crypto/c_src/eddsa.c.orig
++++ lib/crypto/c_src/eddsa.c
+@@ -40,8 +40,6 @@ int get_eddsa_key(ErlNifEnv* env, int public, ERL_NIF_
+ 
+     if (algo == atom_ed25519) {
+         type = EVP_PKEY_ED25519;
+-    } else if (algo == atom_ed448) {
+-        type = EVP_PKEY_ED448;
+     } else {
+         goto err;
+     }

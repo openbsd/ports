@@ -1,0 +1,15 @@
+Index: lib/crypto/c_src/algorithms.c
+--- lib/crypto/c_src/algorithms.c.orig
++++ lib/crypto/c_src/algorithms.c
+@@ -639,11 +639,9 @@ int init_curves(ErlNifEnv* env, int fips) {
+     if (!fips) {
+ #ifdef HAVE_EDDSA
+         algo_curve[fips][cnt++] = enif_make_atom(env,"ed25519");
+-        algo_curve[fips][cnt++] = enif_make_atom(env,"ed448");
+ #endif
+ #ifdef HAVE_EDDH
+         algo_curve[fips][cnt++] = enif_make_atom(env,"x25519");
+-        algo_curve[fips][cnt++] = enif_make_atom(env,"x448");
+ #endif
+     }
+ 
