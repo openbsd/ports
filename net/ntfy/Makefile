@@ -1,7 +1,7 @@
 COMMENT =	send push notifications to your phone or desktop
 
 MODGO_MODNAME =	heckel.io/ntfy/v2
-MODGO_VERSION =	v2.10.0
+MODGO_VERSION =	v2.11.0
 
 DISTNAME =	ntfy-${MODGO_VERSION}
 
