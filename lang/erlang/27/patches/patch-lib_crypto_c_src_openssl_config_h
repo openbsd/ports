@@ -1,0 +1,12 @@
+Index: lib/crypto/c_src/openssl_config.h
+--- lib/crypto/c_src/openssl_config.h.orig
++++ lib/crypto/c_src/openssl_config.h
+@@ -342,6 +342,8 @@
+ # if LIBRESSL_VERSION_NUMBER >= 0x3070000fL
+ #   define HAVE_CHACHA20_POLY1305
+ #   define HAVE_CHACHA20
++#   define HAVE_EDDH
++#   define HAVE_EDDSA
+ # endif
+ #endif
+ 
