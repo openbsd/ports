@@ -1,6 +1,6 @@
 COMMENT =	small, embeddable JavaScript engine in C
 
-V =		2020.09.06
+V =		2024.01.13
 DISTNAME =	quickjs-${V:S/./-/g}
 PKGNAME =	quickjs-${V}
 
@@ -28,5 +28,7 @@ MAKE_FLAGS =	CC="${CC}"
 WANTLIB +=	atomic
 MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
+
+FAKE_FLAGS =	DESTDIR=""
 
 .include <bsd.port.mk>

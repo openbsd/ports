@@ -3,7 +3,7 @@ Remove -ldl
 Index: qjsc.c
 --- qjsc.c.orig
 +++ qjsc.c
-@@ -450,7 +450,6 @@ static int output_executable(const char *out_filename,
+@@ -449,7 +449,6 @@ static int output_executable(const char *out_filename,
               lib_dir, bn_suffix, lto_suffix);
      *arg++ = libjsname;
      *arg++ = "-lm";

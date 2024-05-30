@@ -7,7 +7,7 @@ Remove -ldl
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -28,11 +28,12 @@ endif
+@@ -28,13 +28,14 @@ endif
  # Windows cross compilation from Linux
  #CONFIG_WIN32=y
  # use link time optimization (smaller and faster executables but slower build)
@@ -17,31 +17,33 @@ Index: Makefile
  #CONFIG_WERROR=y
  # force 32 bit build for some utilities
  #CONFIG_M32=y
+ # cosmopolitan build (see https://github.com/jart/cosmopolitan)
+ #CONFIG_COSMO=y
 +CONFIG_DEFAULT_AR=y
  
- ifdef CONFIG_DARWIN
- # use clang instead of gcc
-@@ -83,8 +84,8 @@ ifdef CONFIG_CLANG
+ # installation directory
+ PREFIX?=/usr/local
+@@ -98,8 +99,8 @@ else ifdef CONFIG_COSMO
  else
    HOST_CC=gcc
    CC=$(CROSS_PREFIX)gcc
--  CFLAGS=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
+-  CFLAGS+=-g -Wall -MMD -MF $(OBJDIR)/$(@F).d
 -  CFLAGS += -Wno-array-bounds -Wno-format-truncation
 +  CFLAGS+=-Wall -MMD -MF $(OBJDIR)/$(@F).d
 +  CFLAGS += -Wno-array-bounds
    ifdef CONFIG_LTO
      AR=$(CROSS_PREFIX)gcc-ar
    else
-@@ -106,7 +107,7 @@ endif
+@@ -122,7 +123,7 @@ endif
  CFLAGS+=$(DEFINES)
  CFLAGS_DEBUG=$(CFLAGS) -O0
  CFLAGS_SMALL=$(CFLAGS) -Os
 -CFLAGS_OPT=$(CFLAGS) -O2
 +CFLAGS_OPT=$(CFLAGS)
  CFLAGS_NOLTO:=$(CFLAGS_OPT)
- LDFLAGS=-g
- ifdef CONFIG_LTO
-@@ -170,10 +171,10 @@ QJS_LIB_OBJS+=$(OBJDIR)/libbf.o 
+ ifdef CONFIG_COSMO
+ LDFLAGS+=-s # better to strip by default
+@@ -194,10 +195,10 @@ ifdef CONFIG_BIGNUM
  QJS_OBJS+=$(OBJDIR)/qjscalc.o
  endif
  
@@ -52,5 +54,5 @@ Index: Makefile
 -LIBS+=-ldl -lpthread
 +LIBS+=-lpthread
  endif
+ LIBS+=$(EXTRA_LIBS)
  
- $(OBJDIR):

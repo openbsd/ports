@@ -3,7 +3,7 @@ This test waits forever if the process ignores SIGQUIT.
 Index: tests/test_std.js
 --- tests/test_std.js.orig
 +++ tests/test_std.js
-@@ -252,10 +252,10 @@ function test_os_exec()
+@@ -253,10 +253,10 @@ function test_os_exec()
  
      pid = os.exec(["cat"], { block: false } );
      assert(pid >= 0);

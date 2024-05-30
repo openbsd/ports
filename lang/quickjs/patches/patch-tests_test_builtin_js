@@ -6,7 +6,7 @@ Fix the Float32Array test on big-endian platforms.
 Index: tests/test_builtin.js
 --- tests/test_builtin.js.orig
 +++ tests/test_builtin.js
-@@ -313,12 +313,12 @@ function test_number()
+@@ -336,12 +336,12 @@ function test_number()
      assert(Number.isNaN(Number("-")));
      assert(Number.isNaN(Number("\x00a")));
  
@@ -25,17 +25,3 @@ Index: tests/test_builtin.js
  }
  
  function test_eval2()
-@@ -412,11 +412,11 @@ function test_typed_array()
-     a[0] = -1;
- 
-     a = new Float32Array(buffer, 8, 1);
--    a[0] = 1;
-+    a[0] = 8651851;
-     
-     a = new Uint8Array(buffer);
-     
--    assert(a.toString(), "0,0,255,255,0,0,0,0,0,0,128,63,255,255,255,255");
-+    assert(a.toString(), "0,0,255,255,0,0,0,0,75,4,4,75,255,255,255,255");
- 
-     assert(a.buffer, buffer);
- 
