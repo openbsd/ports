@@ -1,9 +1,11 @@
+bin/tinytuya
 lib/python${MODPY_VERSION}/site-packages/tinytuya/
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/tinytuya-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tinytuya/BulbDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Cloud.py
