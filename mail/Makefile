@@ -198,6 +198,7 @@
      SUBDIR += postgrey
      SUBDIR += procmail
      SUBDIR += py-authres,python3
+     SUBDIR += py-dkimpy,python3
      SUBDIR += py-imaplib2,python3
      SUBDIR += py-policyd-spf,python3
      SUBDIR += py-spf,python3
