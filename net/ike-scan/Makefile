@@ -1,6 +1,7 @@
 GH_ACCOUNT=	royhills
 GH_PROJECT=	ike-scan
 GH_TAGNAME=	1.9.5
+REVISION=	0
 
 COMMENT=	VPN scanner and identifier
 

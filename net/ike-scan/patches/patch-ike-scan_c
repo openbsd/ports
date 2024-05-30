@@ -1,0 +1,22 @@
+https://github.com/royhills/ike-scan/pull/41
+
+Index: ike-scan.c
+--- ike-scan.c.orig
++++ ike-scan.c
+@@ -1329,6 +1329,7 @@ add_host(const char *name, unsigned timeout, unsigned 
+       memset(he->icookie, '\0', sizeof(he->icookie));
+       memcpy(he->icookie, cookie_data, cookie_data_len);
+    } else {
++      unsigned char md[MD5_DIGEST_LENGTH];
+ /*
+  * We cast the timeval elements to unsigned long because different vendors
+  * use different types for them (int, long, unsigned int and unsigned long).
+@@ -1337,7 +1338,7 @@ add_host(const char *name, unsigned timeout, unsigned 
+  */
+       snprintf(str, sizeof(str), "%lu %lu %u %s", (unsigned long) now.tv_sec,
+               (unsigned long) now.tv_usec, *num_hosts, inet_ntoa(he->addr));
+-      memcpy(he->icookie, MD5((unsigned char *)str, strlen(str), NULL),
++      memcpy(he->icookie, MD5((unsigned char *)str, strlen(str), md),
+              sizeof(he->icookie));
+    }
+ }
