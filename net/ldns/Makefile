@@ -8,7 +8,7 @@ V=		1.8.3
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	ldns                 8.0      # 7.0
 
