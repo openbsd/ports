@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -94,7 +94,7 @@ class SABCToolsBuild(build_ext):
+@@ -98,7 +98,7 @@ class SABCToolsBuild(build_ext):
              cflags = ["/O2", "/GS-", "/Gy", "/sdl-", "/Oy", "/Oi"]
          else:
              # TODO: consider -flto - may require some extra testing
@@ -10,7 +10,7 @@ Index: setup.py
              cflags = [
                  "-Wall",
                  "-Wextra",
-@@ -102,7 +102,6 @@ class SABCToolsBuild(build_ext):
+@@ -106,7 +106,6 @@ class SABCToolsBuild(build_ext):
                  "-fomit-frame-pointer",
                  "-fno-rtti",
                  "-fno-exceptions",
