@@ -1,7 +1,7 @@
 Index: Apache-Test/lib/Apache/TestConfig.pm
 --- Apache-Test/lib/Apache/TestConfig.pm.orig
 +++ Apache-Test/lib/Apache/TestConfig.pm
-@@ -474,7 +474,7 @@ sub configure_apxs {
+@@ -478,7 +478,7 @@ sub configure_apxs {
      $vars->{conf_dir} ||= $self->apxs('SYSCONFDIR');
  
      if ($vars->{conf_dir}) {
