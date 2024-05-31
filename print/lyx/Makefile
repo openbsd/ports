@@ -3,7 +3,7 @@ PORTROACH=	skipv:2.3.x
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.3.6.1
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	print editors
 
