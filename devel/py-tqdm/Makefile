@@ -1,9 +1,8 @@
 COMMENT =		progress bar for Python
 
-MODPY_EGG_VERSION =	4.65.0
+MODPY_EGG_VERSION =	4.66.2
 DISTNAME =		tqdm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -21,5 +20,8 @@ MODPY_PYBUILD =		setuptools_scm
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+TEST_DEPENDS=		devel/py-test-asyncio${MODPY_FLAVOR} \
+			devel/py-test-timeout${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
