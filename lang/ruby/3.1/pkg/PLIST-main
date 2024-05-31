@@ -220,7 +220,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.1.5.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.1.6.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby31.so
