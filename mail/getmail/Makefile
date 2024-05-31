@@ -1,12 +1,11 @@
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	6.18.14
 GH_ACCOUNT=	getmail6
 GH_PROJECT=	getmail6
-GH_TAGNAME=	v${MODPY_EGG_VERSION}
+GH_TAGNAME=	v6.19.00
+MODPY_EGG_VERSION= 6.19.0
 PKGNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
-REVISION=	0
 
 # https://github.com/getmail6/getmail6
 HOMEPAGE=	https://getmail6.org/
