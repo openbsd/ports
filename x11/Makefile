@@ -164,7 +164,6 @@
      SUBDIR += libqtolm
      SUBDIR += libquotient
      SUBDIR += libxdg-basedir
-     SUBDIR += lightly
      SUBDIR += lsw
      SUBDIR += lumina
      SUBDIR += lupe
