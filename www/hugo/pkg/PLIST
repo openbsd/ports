@@ -22,6 +22,7 @@
 @man man/man1/hugo-list-drafts.1
 @man man/man1/hugo-list-expired.1
 @man man/man1/hugo-list-future.1
+@man man/man1/hugo-list-published.1
 @man man/man1/hugo-list.1
 @man man/man1/hugo-mod-clean.1
 @man man/man1/hugo-mod-get.1
