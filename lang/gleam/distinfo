@@ -93,7 +93,7 @@ SHA256 (cargo/hashbrown-0.14.3.tar.gz) = KQ8aHZJCx40JzkCl6H51VO5jevE1GWgVn0lS8Cj
 SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
-SHA256 (cargo/hexpm-2.4.0.tar.gz) = N3YqqVtLFqyuVzL1GIHQOE3KXwWdBLmmAIn8gBn0MEY=
+SHA256 (cargo/hexpm-2.4.1.tar.gz) = VV7tKodrZl3o4T3KmsCBCLldg37z1/6AIFUx5C6vWUs=
 SHA256 (cargo/home-0.5.9.tar.gz) = 49E1S/a3I1y0oFdsJhn9TtGBg/aJsSsAag7nMp7v+aU=
 SHA256 (cargo/hostname-0.4.0.tar.gz) = +cfHyKwWx5hzS4okVgwTYhIFl8QNXhRZ8JSY+PbI8ro=
 SHA256 (cargo/http-1.1.0.tar.gz) = IbndtFhxC8N2SBuEL12mXN8xUi3iMsHKgUarzio1glg=
@@ -305,7 +305,7 @@ SHA256 (cargo/xattr-1.3.1.tar.gz) = jahPGiWTmyf2gg2SrtEI+D/5IP3xGnsZNmwnxM2oHU8=
 SHA256 (cargo/xxhash-rust-0.8.10.tar.gz) = kn2oHiW+HhopAdWbgbN90u/R/JyTRaVQB/Cb9aLT7gM=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (gleam-1.2.0.tar.gz) = OBI5U1yhorlcmC9GVphHtyLZowj4SRDIqw0D2KbV9tU=
+SHA256 (gleam-1.2.1.tar.gz) = fO0ECwKJ+v8I7y/4ET6ezwbix+OskVSlKfo7m/GkreA=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -401,7 +401,7 @@ SIZE (cargo/hashbrown-0.14.3.tar.gz) = 141425
 SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
-SIZE (cargo/hexpm-2.4.0.tar.gz) = 417127
+SIZE (cargo/hexpm-2.4.1.tar.gz) = 419095
 SIZE (cargo/home-0.5.9.tar.gz) = 8760
 SIZE (cargo/hostname-0.4.0.tar.gz) = 10632
 SIZE (cargo/http-1.1.0.tar.gz) = 103144
@@ -613,4 +613,4 @@ SIZE (cargo/xattr-1.3.1.tar.gz) = 12580
 SIZE (cargo/xxhash-rust-0.8.10.tar.gz) = 20066
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (gleam-1.2.0.tar.gz) = 930482
+SIZE (gleam-1.2.1.tar.gz) = 930812
