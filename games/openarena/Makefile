@@ -1,4 +1,6 @@
 ONLY_FOR_ARCHS =	amd64 i386 macppc
+
+# custom JIT
 USE_NOBTCFI =		Yes
 
 BROKEN-i386 =		code/qcommon/vm_x86.c:(.text+0x18): undefined reference to `callMask'
@@ -16,8 +18,9 @@ E_V =			${V}# 	engine version
 
 PKGNAME =		openarena-${V}
 
-REVISION-main =		2
-REVISION-server =	1
+REVISION-main =		3
+REVISION-server =	2
+REVISION-data =		0
 
 PKG_ARCH-data = 	*
 
@@ -25,11 +28,11 @@ DISTNAME =		openarena-${V}
 DISTFILES =		${DISTNAME}.zip 
 DISTFILES.a =		openarena-engine-source-${E_V}.tar.bz2
 
-HOMEPAGE =		http://www.openarena.ws/
+HOMEPAGE =		https://www.openarena.ws/
 MS_PREFIX =		https://download.tuxfamily.org/openarena/rel/
 SITES =			${MS_PREFIX}${V:S/.//g}/ \
 			${MS_PREFIX}${E_V:S/.//g}/source/
-SITES.a =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
+SITES.a =		https://files.poulsander.com/~poul19/public_files/oa/dev088/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
@@ -50,6 +53,7 @@ USE_GMAKE =		Yes
 MAKE_FLAGS =		USE_OPENAL=0 \
 			FULLBINEXT='' \
 			V=1 \
+			NO_STRIP=1 \
 			DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
 
 .if ${MACHINE_ARCH} == "powerpc"
@@ -64,6 +68,8 @@ MAKE_FLAGS +=		PIE_CFLAGS=-fno-pie PIE_LDFLAGS=-nopie
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/openarena-engine-source-${E_V}
 ALL_TARGET =		release
+
+DEBUG_PACKAGES =	-main -server
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -delete
