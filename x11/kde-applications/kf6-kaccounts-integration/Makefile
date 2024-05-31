@@ -2,7 +2,7 @@ COMMENT =	library and QML module for Accounts-SSO and SignOn-SSO
 
 DISTNAME =	kaccounts-integration-${VERSION}
 PKGNAME =	kf6-kaccounts-integration-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net devel
 

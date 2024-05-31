@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1636 2024/05/29 06:55:10 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1637 2024/05/31 07:03:10 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -833,6 +833,7 @@ my $stem_extensions = {
 	'systemsettings-kf5' => 'kf6-systemsettings',
 	'libkscreen-kf5' => 'kf6-libkscreen',
 	'kdeplasma-addons-kf5' => 'kf6-kdeplasma-addons',
+	'kaccounts-integration' => 'kf6-kaccounts-integration',
 };
 
 my $obsolete_reason = {};

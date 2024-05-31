@@ -31,6 +31,8 @@ PLASMA_VERSION =	6.0.5
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
 
+REVISION =		0
+REVISION-development =	0
 REVISION-plasma =	1
 REVISION-graphics =	1
 REVISION-plasma-extras = 0
@@ -332,7 +334,6 @@ RUN_DEPENDS-development = \
 RUN_DEPENDS-development += \
 	x11/kde-applications/okteta \
 	x11/kde-applications/signon-kwallet-extension \
-	x11/kde-applications/kaccounts-integration \
 	x11/kde-applications/kaccounts-providers
 
 # Not yet ported

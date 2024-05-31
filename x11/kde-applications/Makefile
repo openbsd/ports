@@ -249,7 +249,6 @@
      SUBDIR += libkdcraw
      SUBDIR += kf6-libkdcraw
 
-     SUBDIR += kaccounts-integration
      SUBDIR += kf6-kaccounts-integration
 
      # libkgapi still needs a Qt 5 version for kio-gdrive and a Qt 6 version

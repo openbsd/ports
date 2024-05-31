@@ -1,5 +1,6 @@
 COMMENT =	framework to create integrate services and actions
 DISTNAME =	purpose-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF5Purpose                3.0
 SHARED_LIBS +=  KF5PurposeWidgets         2.0
@@ -10,8 +11,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Completion KF5ConfigCore KF5CoreAddons
 WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Notifications KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml Qt5Widgets Qt5Xml X11 accounts-qt5
-WANTLIB += c kaccounts m
+WANTLIB += Qt5Network Qt5Qml Qt5Widgets X11 c m
 
 # Special case, KAccounts depends on intltool-merge
 MODULES +=	textproc/intltool
@@ -38,8 +38,7 @@ LIB_DEPENDS =	devel/kf5/kcompletion>=${MODKF5_VERSION} \
 		devel/kf5/solid>=${MODKF5_VERSION} \
 		x11/qt5/qtdeclarative
 
-LIB_DEPENDS +=	net/libaccounts-qt \
-		x11/kde-applications/kaccounts-integration
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_KAccounts=ON
 
 # sucks
 TEST_IS_INTERACTIVE =	X11

@@ -41,14 +41,12 @@ lib/qt5/plugins/kf5/purpose/
 @so lib/qt5/plugins/kf5/purpose/kdeconnectplugin.so
 @so lib/qt5/plugins/kf5/purpose/kdeconnectsmsplugin.so
 @so lib/qt5/plugins/kf5/purpose/ktpsendfileplugin.so
-@so lib/qt5/plugins/kf5/purpose/nextcloudplugin.so
 @so lib/qt5/plugins/kf5/purpose/pastebinplugin.so
 @so lib/qt5/plugins/kf5/purpose/phabricatorplugin.so
 @so lib/qt5/plugins/kf5/purpose/reviewboardplugin.so
 @so lib/qt5/plugins/kf5/purpose/saveasplugin.so
 @so lib/qt5/plugins/kf5/purpose/telegramplugin.so
 @so lib/qt5/plugins/kf5/purpose/twitterplugin.so
-@so lib/qt5/plugins/kf5/purpose/youtubeplugin.so
 lib/qt5/qml/org/kde/purpose/
 lib/qt5/qml/org/kde/purpose/AlternativesView.qml
 lib/qt5/qml/org/kde/purpose/JobView.qml
@@ -61,20 +59,12 @@ lib/qt5/qml/org/kde/purpose/reviewboard/
 @so lib/qt5/qml/org/kde/purpose/reviewboard/librbpurposequickplugin.so
 lib/qt5/qml/org/kde/purpose/reviewboard/qmldir
 @bin libexec/kf5/purposeprocess
-share/accounts/
-share/accounts/services/
-share/accounts/services/kde/
 @comment share/accounts/services/kde/google-youtube.service
 @comment share/accounts/services/kde/nextcloud-upload.service
 share/icons/hicolor/128x128/apps/phabricator-purpose.png
 share/icons/hicolor/128x128/apps/reviewboard-purpose.png
-share/icons/hicolor/16x16/actions/kipiplugin_youtube.png
 share/icons/hicolor/16x16/apps/phabricator-purpose.png
 share/icons/hicolor/16x16/apps/reviewboard-purpose.png
-share/icons/hicolor/22x22/actions/kipiplugin_youtube.png
-share/icons/hicolor/32x32/actions/kipiplugin_youtube.png
-share/icons/hicolor/48x48/actions/kipiplugin_youtube.png
-share/icons/hicolor/64x64/actions/kipiplugin_youtube.png
 share/locale/ar/LC_MESSAGES/libpurpose_quick.mo
 share/locale/ar/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/ar/LC_MESSAGES/purpose-fileitemaction.mo
@@ -696,11 +686,9 @@ share/locale/zh_TW/LC_MESSAGES/purpose_youtube.mo
 share/purpose/
 share/purpose/barcodeplugin_config.qml
 share/purpose/kdeconnectplugin_config.qml
-share/purpose/nextcloudplugin_config.qml
 share/purpose/phabricatorplugin_config.qml
 share/purpose/reviewboardplugin_config.qml
 share/purpose/saveasplugin_config.qml
-share/purpose/youtubeplugin_config.qml
 share/qlogging-categories5/purpose.categories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories5/purpose.renamecategories
