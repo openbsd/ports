@@ -1,0 +1,12 @@
+Index: src/openrct2/core/String.cpp
+--- src/openrct2/core/String.cpp.orig
++++ src/openrct2/core/String.cpp
+@@ -15,7 +15,7 @@
+ #include <stdexcept>
+ #include <vector>
+ #ifndef _WIN32
+-#    ifndef __FreeBSD__
++#    ifndef __OpenBSD__
+ #        include <alloca.h>
+ #    endif
+ #    include <unicode/ucnv.h>
