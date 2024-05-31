@@ -1,9 +1,8 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			4.3.1
+VERSION =			4.3.2
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
-REVISION =			0
 
 CATEGORIES =			news
 
@@ -42,7 +41,7 @@ RUN_DEPENDS =			archivers/par2cmdline \
 				multimedia/py-guessit${MODPY_FLAVOR} \
 				net/py-portend${MODPY_FLAVOR} \
 				net/py-socks${MODPY_FLAVOR} \
-				news/py-sabctools${MODPY_FLAVOR}>=8.1.0v0 \
+				news/py-sabctools${MODPY_FLAVOR}>=8.2.0v0 \
 				security/py-cryptography${MODPY_FLAVOR} \
 				textproc/py-chardet${MODPY_FLAVOR} \
 				textproc/py-feedparser${MODPY_FLAVOR} \
