@@ -12,6 +12,7 @@ EMBED_LUAJIT =	No
 COMMENT =	continuation and extension of Vim
 
 DIST_TUPLE =	github neovim neovim v0.10.0 .
+REVISION = 0
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -67,6 +68,7 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
+			devel/lpeg \
 			devel/desktop-file-utils \
 			devel/lua-compat53 \
 			x11/gtk+4,-guic
