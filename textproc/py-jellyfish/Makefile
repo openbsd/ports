@@ -1,13 +1,14 @@
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	1.0.4
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		1
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://jamesturk.github.io/jellyfish/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
