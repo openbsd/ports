@@ -9,4 +9,4 @@ Index: vendor/github.com/tonistiigi/fsutil/send.go
 +			return errors.WithStack(&os.PathError{Path: path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
  		}
  		stat.Path = filepath.ToSlash(stat.Path)
- 		p := &types.Packet{
+ 		stat.Linkname = filepath.ToSlash(stat.Linkname)

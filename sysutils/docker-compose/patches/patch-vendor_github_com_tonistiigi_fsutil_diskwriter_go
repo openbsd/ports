@@ -1,7 +1,7 @@
 Index: vendor/github.com/tonistiigi/fsutil/diskwriter.go
 --- vendor/github.com/tonistiigi/fsutil/diskwriter.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/diskwriter.go
-@@ -121,7 +121,7 @@ func (dw *DiskWriter) HandleChange(kind ChangeKind, p 
+@@ -123,7 +123,7 @@ func (dw *DiskWriter) HandleChange(kind ChangeKind, p 
  
  	stat, ok := fi.Sys().(*types.Stat)
  	if !ok {

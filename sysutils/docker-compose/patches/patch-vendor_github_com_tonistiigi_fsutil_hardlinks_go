@@ -1,7 +1,7 @@
 Index: vendor/github.com/tonistiigi/fsutil/hardlinks.go
 --- vendor/github.com/tonistiigi/fsutil/hardlinks.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/hardlinks.go
-@@ -29,7 +29,7 @@ func (v *Hardlinks) HandleChange(kind ChangeKind, p st
+@@ -32,7 +32,7 @@ func (v *Hardlinks) HandleChange(kind ChangeKind, p st
  
  	stat, ok := fi.Sys().(*types.Stat)
  	if !ok {
@@ -10,3 +10,12 @@ Index: vendor/github.com/tonistiigi/fsutil/hardlinks.go
  	}
  
  	if fi.IsDir() || fi.Mode()&os.ModeSymlink != 0 {
+@@ -80,7 +80,7 @@ func (r *hardlinkFilter) Walk(ctx context.Context, tar
+ 
+ 		stat, ok := fi.Sys().(*types.Stat)
+ 		if !ok {
+-			return errors.WithStack(&os.PathError{Path: path, Err: syscall.EBADMSG, Op: "fileinfo without stat info"})
++			return errors.WithStack(&os.PathError{Path: path, Err: syscall.Errno(0x5c), Op: "fileinfo without stat info"})
+ 		}
+ 
+ 		if stat.Linkname != "" {
