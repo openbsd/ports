@@ -3,7 +3,7 @@ COMMENT =		Python Language Server
 MODPY_EGG_VERSION =	1.11.0
 DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -20,7 +20,7 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/autopep8>=2.0.4,<2.1.0 \
+RUN_DEPENDS =		devel/autopep8 \
 			devel/flake8>=7.0.0,<8 \
 			devel/pyflakes${MODPY_FLAVOR}>=3.2.0,<3.3.0 \
 			devel/pylint${MODPY_FLAVOR}>=3.1,<4 \
