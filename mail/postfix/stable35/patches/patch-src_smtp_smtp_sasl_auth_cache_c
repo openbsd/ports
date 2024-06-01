@@ -1,0 +1,17 @@
+Don't rely on SHA1() returning a static buffer
+
+Index: src/smtp/smtp_sasl_auth_cache.c
+--- src/smtp/smtp_sasl_auth_cache.c.orig
++++ src/smtp/smtp_sasl_auth_cache.c
+@@ -170,9 +170,10 @@ static char *smtp_sasl_auth_cache_make_key(const char 
+ static char *smtp_sasl_auth_cache_make_pass(const char *password)
+ {
+     VSTRING *buf = vstring_alloc(2 * SHA_DIGEST_LENGTH);
++    unsigned char md[EVP_MAX_MD_SIZE];
+ 
+     base64_encode(buf, (const char *) SHA1((const unsigned char *) password,
+-					   strlen(password), 0),
++					   strlen(password), md),
+ 		  SHA_DIGEST_LENGTH);
+     return (vstring_export(buf));
+ }
