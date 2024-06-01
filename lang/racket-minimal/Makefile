@@ -5,7 +5,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
-V =			8.11.1
+V =			8.13
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX}
 DISTFILES.boot = 	racket-openbsd-2${EXTRACT_SUFX}
@@ -20,9 +20,10 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 SITES =		https://mirror.racket-lang.org/installers/${V}/ \
-		https://www.cs.utah.edu/plt/installers/${V}/ \
-		https://plt.eecs.northwestern.edu/racket-mirror/${V}/ \
-		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${V}/ \
+		https://users.cs.utah.edu/plt/installers/${V}/ \
+		https://plt.cs.northwestern.edu/racket-mirror/${V}/ \
+		https://mirror.csclub.uwaterloo.ca/racket/racket-installers/${V}/ \
+		https://racket.infogroep.be/${V}/ \
 		http://pre-release.racket-lang.org/installers/ \
 		http://pre.racket-lang.org/release/installers/ \
 		http://pre.racket-lang.org/installers/ \
