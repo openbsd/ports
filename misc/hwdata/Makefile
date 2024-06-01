@@ -2,7 +2,7 @@ COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.382
+GH_TAGNAME=		v0.383
 
 CATEGORIES=		misc
 
