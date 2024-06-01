@@ -237,8 +237,8 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
 	github.com/hashicorp/go-cty-funcs			 v0.0.0-20200930094925-2721b1e36840 \
 	github.com/hashicorp/go-getter/gcs/v2			 v2.2.1 \
-	github.com/hashicorp/go-getter/s3/v2			 v2.2.1 \
-	github.com/hashicorp/go-getter/v2			 v2.2.1 \
+	github.com/hashicorp/go-getter/s3/v2			 v2.2.2 \
+	github.com/hashicorp/go-getter/v2			 v2.2.2 \
 	github.com/hashicorp/go-hclog				 v1.5.0 \
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
 	github.com/hashicorp/go-msgpack				 v0.5.5 \
@@ -255,12 +255,12 @@ MODGO_MODULES =	\
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
 	github.com/hashicorp/hcl/v2				 v2.19.1 \
-	github.com/hashicorp/hcp-sdk-go				 v0.91.0 \
+	github.com/hashicorp/hcp-sdk-go				 v0.96.0 \
 	github.com/hashicorp/logutils				 v1.0.0 \
 	github.com/hashicorp/mdns				 v1.0.4 \
 	github.com/hashicorp/memberlist				 v0.5.0 \
 	github.com/hashicorp/packer-plugin-amazon		 v1.2.1 \
-	github.com/hashicorp/packer-plugin-sdk			 v0.5.2 \
+	github.com/hashicorp/packer-plugin-sdk			 v0.5.3 \
 	github.com/hashicorp/serf				 v0.10.1 \
 	github.com/hashicorp/vault/api				 v1.10.0 \
 	github.com/hashicorp/vault/sdk				 v0.2.1 \
@@ -528,7 +528,9 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-cleanhttp			 v0.5.1 \
 	github.com/hashicorp/go-getter/gcs/v2			 v2.1.0 \
 	github.com/hashicorp/go-getter/s3/v2			 v2.1.0 \
+	github.com/hashicorp/go-getter/s3/v2			 v2.2.1 \
 	github.com/hashicorp/go-getter/v2			 v2.1.0 \
+	github.com/hashicorp/go-getter/v2			 v2.2.1 \
 	github.com/hashicorp/go-hclog				 v0.16.2 \
 	github.com/hashicorp/go-hclog				 v0.9.2 \
 	github.com/hashicorp/go-immutable-radix			 v1.0.0 \
@@ -641,7 +643,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20220517005047-85d78b3ac167 \
 	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/crypto					 v0.13.0 \
-	golang.org/x/crypto					 v0.14.0 \
 	golang.org/x/crypto					 v0.16.0 \
 	golang.org/x/crypto					 v0.17.0 \
 	golang.org/x/crypto					 v0.19.0 \
@@ -761,7 +762,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.8.0 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
-	golang.org/x/term					 v0.13.0 \
+	golang.org/x/term					 v0.15.0 \
 	golang.org/x/term					 v0.17.0 \
 	golang.org/x/term					 v0.2.0 \
 	golang.org/x/term					 v0.5.0 \
