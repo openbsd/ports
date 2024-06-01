@@ -1,0 +1,36 @@
+Don't rely on libcrypto returning static buffers
+
+Index: src/dynamic-plugins/sf_engine/sf_snort_plugin_content.c
+--- src/dynamic-plugins/sf_engine/sf_snort_plugin_content.c.orig
++++ src/dynamic-plugins/sf_engine/sf_snort_plugin_content.c
+@@ -423,6 +423,7 @@ static int contentMatchCommon(ContentInfo* content,
+ static int protectedContentMatchCommon(ProtectedContentInfo* content,
+         const uint8_t *start_ptr, int dlen, const uint8_t **cursor)
+ {
++    unsigned char md[SHA512_HASH_SIZE];
+     const uint8_t *base_ptr;
+     const uint8_t *end_ptr = start_ptr + dlen;
+     int depth, ret;
+@@ -480,19 +481,19 @@ static int protectedContentMatchCommon(ProtectedConten
+     {
+         case PROTECTED_CONTENT_HASH_MD5:
+         {
+-            ret = memcmp(MD5DIGEST(base_ptr, content->protected_length, NULL),
++            ret = memcmp(MD5DIGEST(base_ptr, content->protected_length, md),
+                          content->patternByteForm, MD5_HASH_SIZE);
+             break;
+         }
+         case PROTECTED_CONTENT_HASH_SHA256:
+         {
+-            ret = memcmp(SHA256DIGEST(base_ptr, content->protected_length, NULL),
++            ret = memcmp(SHA256DIGEST(base_ptr, content->protected_length, md),
+                          content->patternByteForm, SHA256_HASH_SIZE);
+             break;
+         }
+         case PROTECTED_CONTENT_HASH_SHA512:
+         {
+-            ret = memcmp(SHA512DIGEST(base_ptr, content->protected_length, NULL),
++            ret = memcmp(SHA512DIGEST(base_ptr, content->protected_length, md),
+                          content->patternByteForm, SHA512_HASH_SIZE);
+             break;
+         }

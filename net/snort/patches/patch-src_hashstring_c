@@ -1,0 +1,36 @@
+Don't rely on libcrypto returning static buffers
+
+Index: src/hashstring.c
+--- src/hashstring.c.orig
++++ src/hashstring.c
+@@ -95,6 +95,7 @@ int main()
+  ****************************************************************/
+ int hashSearchFixed(const char *buf, int blen, const Secure_Hash_Type type, const char *ptrn)
+ {
++    unsigned char md[SHA512_HASH_SIZE];
+     unsigned char *digest;
+     size_t pattern_length;
+ 
+@@ -117,19 +118,19 @@ int hashSearchFixed(const char *buf, int blen, const S
+     {
+         case SECHASH_MD5:
+             {
+-                digest = MD5DIGEST((const unsigned char *)buf, (unsigned int)blen, NULL);
++                digest = MD5DIGEST((const unsigned char *)buf, (unsigned int)blen, md);
+                 pattern_length = MD5_HASH_SIZE;
+                 break;
+             }
+         case SECHASH_SHA256:
+             {
+-                digest = SHA256DIGEST((const unsigned char *)buf, (unsigned int)blen, NULL);
++                digest = SHA256DIGEST((const unsigned char *)buf, (unsigned int)blen, md);
+                 pattern_length = SHA256_HASH_SIZE;
+                 break;
+             }
+         case SECHASH_SHA512:
+             {
+-                digest = SHA512DIGEST((const unsigned char *)buf, (unsigned int)blen, NULL);
++                digest = SHA512DIGEST((const unsigned char *)buf, (unsigned int)blen, md);
+                 pattern_length = SHA512_HASH_SIZE;
+                 break;
+             }
