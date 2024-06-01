@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.93.0
+GH_TAGNAME =		0.94.1
 
 CATEGORIES =		shells
 
