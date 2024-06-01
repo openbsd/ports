@@ -1,8 +1,8 @@
 COMMENT = 	C graph library
-V =		0.10.8
+V =		0.10.12
 DISTNAME =	igraph-$V
 
-SHARED_LIBS =	igraph 3.0	# 0.0
+SHARED_LIBS =	igraph 3.1	# 0.0
 
 CATEGORIES =	math
 

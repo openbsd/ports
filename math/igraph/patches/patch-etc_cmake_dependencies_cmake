@@ -10,7 +10,7 @@ Index: etc/cmake/dependencies.cmake
    set(VENDORED_DEPENDENCIES "")
  
    # Declare minimum supported version for some dependencies
-@@ -156,6 +156,7 @@ macro(find_dependencies)
+@@ -155,6 +155,7 @@ macro(find_dependencies)
    endif()
  
    if(NEED_LINKING_AGAINST_LIBM)
