@@ -1,6 +1,7 @@
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6KManageSieve         0.0 # 0.0
 SHARED_LIBS +=	KPim6KSieve               0.0 # 0.0
@@ -47,7 +48,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_VERSION} \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
