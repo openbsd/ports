@@ -4,7 +4,7 @@ SHA256 (KhronosGroup-SPIRV-Cross-06407561ece7d7e78544112189f3eee13adf9959.tar.gz
 SHA256 (RetroAchievements-rcheevos-bfa0d3138865ae2a649a0beadfa4206408a14690.tar.gz) = gHG2G+GU7S+Xr6Z0JU7h3uyOR3aQrV5oF/kY2gKUSzc=
 SHA256 (bylaws-libadrenotools-deec5f75ee1a8ccbe32c8780b1d17284fc87b0f1.tar.gz) = o6augsMi1ZiwdoJ9EIZTT0f5/s7Xs2eDiQFTy6+e2YA=
 SHA256 (curl-curl-5379dbc248045ba46e89d76ffc4be4380d854728.tar.gz) = bvVz/TmIBJzA60tqxaAkvj76RRP1AxHbvcRvFSPtzGI=
-SHA256 (dolphin-emu-dolphin-b6f0e8876e40a41941f0fb6cef89cf49c91edb56.tar.gz) = 205WTI1m1d+HP6Mgau1DZDLWWLiDcEL7ySyrwYqGCec=
+SHA256 (dolphin-emu-dolphin-222a3930807545d9ebffebfbd13c3a816f788434.tar.gz) = xpUvPS+RDeNwJufKF3eQMM2eQZYntlf9yHxzwGGEMGA=
 SHA256 (dolphin-emu-ext-win-ffmpeg-9bc087fbca36ce5a85eb4fd73f0c73813593e5a2.tar.gz) = yYzYdIDrLVja3JYdx5JWlmlN5KIR0wiSEn/h3HwJJ4U=
 SHA256 (dolphin-emu-ext-win-qt-495517af2b922c10c24f543e0fd6ea3ddf774e50.tar.gz) = 0l6BYA4Uxz8Ikq/C93dfENrESO0KCSSYLMdnc1udUv0=
 SHA256 (epezent-implot-f156599faefe316f7dd20fe6c783bf87c8bb6fd9.tar.gz) = 13nOMzJjQ3JNHg+iPUlgzJrK9K9YS8ATTlBOdxfMxLs=
@@ -26,7 +26,7 @@ SIZE (KhronosGroup-SPIRV-Cross-06407561ece7d7e78544112189f3eee13adf9959.tar.gz) 
 SIZE (RetroAchievements-rcheevos-bfa0d3138865ae2a649a0beadfa4206408a14690.tar.gz) = 657051
 SIZE (bylaws-libadrenotools-deec5f75ee1a8ccbe32c8780b1d17284fc87b0f1.tar.gz) = 88081
 SIZE (curl-curl-5379dbc248045ba46e89d76ffc4be4380d854728.tar.gz) = 3300739
-SIZE (dolphin-emu-dolphin-b6f0e8876e40a41941f0fb6cef89cf49c91edb56.tar.gz) = 20283207
+SIZE (dolphin-emu-dolphin-222a3930807545d9ebffebfbd13c3a816f788434.tar.gz) = 20304671
 SIZE (dolphin-emu-ext-win-ffmpeg-9bc087fbca36ce5a85eb4fd73f0c73813593e5a2.tar.gz) = 14871857
 SIZE (dolphin-emu-ext-win-qt-495517af2b922c10c24f543e0fd6ea3ddf774e50.tar.gz) = 100540982
 SIZE (epezent-implot-f156599faefe316f7dd20fe6c783bf87c8bb6fd9.tar.gz) = 140301

@@ -5,9 +5,9 @@ ONLY_FOR_ARCHS =	aarch64 amd64
 COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
-PKGNAME =		dolphin-5.0.0.20240421
+PKGNAME =		dolphin-5.0.0.20240524
 DIST_TUPLE +=		github dolphin-emu dolphin \
-			b6f0e8876e40a41941f0fb6cef89cf49c91edb56 . # GPLv2
+			222a3930807545d9ebffebfbd13c3a816f788434 . # GPLv2
 
 # Externals/
 DIST_TUPLE +=		github dolphin-emu ext-win-qt \
@@ -81,12 +81,12 @@ MULTI_PACKAGES =	-main -nogui
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		EGL GL GLU ICE SDL2 SM X11 Xext Xi Xrandr avcodec \
-			avformat avutil bz2 c curl fmt hidapi-libusb iconv \
-			lz4 lzma lzo2 m mbedcrypto mbedtls mbedx509 miniupnpc \
-			minizip pthread pugixml sfml-network sfml-system \
-			speexdsp spng swscale swresample usb-1.0 xxhash \
-			zstd ${COMPILER_LIBCXX}
+cWANTLIB =		EGL GL GLU SDL2 X11 Xi Xrandr avcodec avformat avutil \
+			bz2 c curl fmt hidapi-libusb iconv lz4 lzma lzo2 m \
+			mbedcrypto mbedtls mbedx509 miniupnpc minizip pthread \
+			pugixml sfml-network sfml-system speexdsp spng swscale \
+			swresample usb-1.0 xxhash zstd \
+			${COMPILER_LIBCXX}
 # sndio library is dlopen'd
 cWANTLIB +=		sndio
 
@@ -117,8 +117,8 @@ LIB_DEPENDS-nogui =	archivers/lz4 \
 LIB_DEPENDS-main =	${LIB_DEPENDS-nogui} \
 			x11/qt6/qtbase
 RUN_DEPENDS-main =	${RUN_DEPENDS-nogui} \
+			${BASE_PKGPATH},-nogui \
 			devel/desktop-file-utils \
-			emulators/dolphin,-nogui \
 			x11/gtk+4,-guic
 
 COMPILER =		base-clang
@@ -134,8 +134,6 @@ CONFIGURE_ARGS +=	-DENABLE_ALSA=OFF \
 			-DUSE_SYSTEM_ENET=OFF \
 			-DUSE_SYSTEM_LIBMGBA=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
-
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 FIX_CRLF_FILES =	Externals/soundtouch/SoundTouch.cpp \
 			Externals/soundtouch/SoundTouch.h

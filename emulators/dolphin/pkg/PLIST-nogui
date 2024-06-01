@@ -1773,6 +1773,10 @@ share/dolphin-emu/sys/Resources/Platform_Wad@4x.png
 share/dolphin-emu/sys/Resources/Platform_Wii.png
 share/dolphin-emu/sys/Resources/Platform_Wii@2x.png
 share/dolphin-emu/sys/Resources/Platform_Wii@4x.png
+share/dolphin-emu/sys/Resources/achievements_game.png
+share/dolphin-emu/sys/Resources/achievements_locked.png
+share/dolphin-emu/sys/Resources/achievements_player.png
+share/dolphin-emu/sys/Resources/achievements_unlocked.png
 share/dolphin-emu/sys/Resources/dolphin_logo.png
 share/dolphin-emu/sys/Resources/dolphin_logo@2x.png
 share/dolphin-emu/sys/Resources/isoproperties_disc.png
