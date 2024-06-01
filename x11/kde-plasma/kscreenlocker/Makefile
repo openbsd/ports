@@ -1,6 +1,6 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 

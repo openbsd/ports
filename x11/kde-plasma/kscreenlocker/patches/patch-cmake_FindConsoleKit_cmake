@@ -6,7 +6,7 @@ Index: cmake/FindConsoleKit.cmake
  #=============================================================================
  find_program(cklistsessions_EXECUTABLE NAMES ck-list-sessions)
 -find_program(qdbus_EXECUTABLE NAMES qdbus)
-+find_program(qdbus_EXECUTABLE NAMES qdbus-qt5 qdbus)
++find_program(qdbus_EXECUTABLE NAMES qdbus-qt6 qdbus)
  find_package_handle_standard_args(ConsoleKit
      FOUND_VAR
          ConsoleKit_FOUND
