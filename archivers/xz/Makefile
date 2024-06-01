@@ -1,7 +1,8 @@
 COMMENT=	library and tools for XZ and LZMA compressed files
 
-DISTNAME=	xz-5.4.5
-SHARED_LIBS=	lzma                 2.2      # 9.4
+VERSION=	5.6.2
+DISTNAME=	xz-${VERSION}
+SHARED_LIBS=	lzma                 2.3      # 11.2
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
 
@@ -12,7 +13,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_SOURCEFORGE:=lzmautils/}
+SITES=	https://github.com/tukaani-project/xz/releases/download/v${VERSION}/
 
 # uses pledge()
 WANTLIB=	c pthread
