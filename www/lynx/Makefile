@@ -1,4 +1,4 @@
-V =		2.9.1
+V =		2.9.2
 COMMENT =	text web browser
 DISTNAME =	lynx${V}
 PKGNAME =	lynx-${V}
