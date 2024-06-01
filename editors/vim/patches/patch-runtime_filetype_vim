@@ -9,7 +9,7 @@ Index: runtime/filetype.vim
  au BufNewFile,BufRead *.patch
  	\ if getline(1) =~# '^From [0-9a-f]\{40,\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
-@@ -1362,6 +1363,7 @@ au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
+@@ -1366,6 +1367,7 @@ au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
  au BufNewFile,BufRead *[mM]akefile,*.mk,*.mak,*.dsp setf make
