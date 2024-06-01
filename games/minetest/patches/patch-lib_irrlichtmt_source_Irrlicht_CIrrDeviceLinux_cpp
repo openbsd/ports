@@ -1,0 +1,11 @@
+Index: lib/irrlichtmt/source/Irrlicht/CIrrDeviceLinux.cpp
+--- lib/irrlichtmt/source/Irrlicht/CIrrDeviceLinux.cpp.orig
++++ lib/irrlichtmt/source/Irrlicht/CIrrDeviceLinux.cpp
+@@ -28,6 +28,7 @@
+ #include "IFileSystem.h"
+ #include <X11/XKBlib.h>
+ #include <X11/Xatom.h>
++#include <unistd.h>
+ 
+ #if defined(_IRR_LINUX_X11_XINPUT2_)
+ #include <X11/extensions/XInput2.h>
