@@ -1,6 +1,6 @@
 COMMENT=	Python Data Validation for Humans
 
-MODPY_EGG_VERSION=	0.28.1
+MODPY_EGG_VERSION=	0.28.3
 DISTNAME=	validators-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
