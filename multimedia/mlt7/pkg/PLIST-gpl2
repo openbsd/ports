@@ -2,6 +2,7 @@
 @so lib/mlt-7/libmltnormalize.so
 @so lib/mlt-7/libmltplusgpl.so
 @so lib/mlt-7/libmltqt.so
+@so lib/mlt-7/libmltqt6.so
 @so lib/mlt-7/libmltresample.so
 @so lib/mlt-7/libmltrtaudio.so
 @so lib/mlt-7/libmltvidstab.so
@@ -14,9 +15,12 @@ share/mlt-7/plusgpl/consumer_cbrts.yml
 share/mlt-7/plusgpl/filter_burningtv.yml
 share/mlt-7/plusgpl/filter_lumaliftgaingamma.yml
 share/mlt-7/plusgpl/filter_rotoscoping.yml
+share/mlt-7/qt/
 share/mlt-7/qt/filter_audiolevelgraph.yml
 share/mlt-7/qt/filter_audiospectrum.yml
 share/mlt-7/qt/filter_audiowaveform.yml
+share/mlt-7/qt/filter_gpsgraphic.yml
+share/mlt-7/qt/filter_gpstext.yml
 share/mlt-7/qt/filter_lightshow.yml
 share/mlt-7/qt/filter_qtblend.yml
 share/mlt-7/qt/filter_qtcrop.yml
@@ -27,6 +31,22 @@ share/mlt-7/qt/producer_qimage.yml
 share/mlt-7/qt/producer_qtext.yml
 share/mlt-7/qt/transition_qtblend.yml
 share/mlt-7/qt/transition_vqm.yml
+share/mlt-7/qt6/
+share/mlt-7/qt6/filter_audiolevelgraph.yml
+share/mlt-7/qt6/filter_audiospectrum.yml
+share/mlt-7/qt6/filter_audiowaveform.yml
+share/mlt-7/qt6/filter_gpsgraphic.yml
+share/mlt-7/qt6/filter_gpstext.yml
+share/mlt-7/qt6/filter_lightshow.yml
+share/mlt-7/qt6/filter_qtblend.yml
+share/mlt-7/qt6/filter_qtcrop.yml
+share/mlt-7/qt6/filter_qtext.yml
+share/mlt-7/qt6/filter_typewriter.yml
+share/mlt-7/qt6/producer_kdenlivetitle.yml
+share/mlt-7/qt6/producer_qimage.yml
+share/mlt-7/qt6/producer_qtext.yml
+share/mlt-7/qt6/transition_qtblend.yml
+share/mlt-7/qt6/transition_vqm.yml
 share/mlt-7/resample/filter_resample.yml
 share/mlt-7/rtaudio/
 share/mlt-7/rtaudio/consumer_rtaudio.yml

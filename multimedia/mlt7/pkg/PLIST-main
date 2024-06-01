@@ -435,9 +435,6 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
-share/mlt-7/qt/
-share/mlt-7/qt/filter_gpsgraphic.yml
-share/mlt-7/qt/filter_gpstext.yml
 share/mlt-7/resample/
 share/mlt-7/resample/link_resample.yml
 share/mlt-7/sdl/
