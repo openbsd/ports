@@ -2,7 +2,7 @@
 bin/bacon.sh
 @bin bin/bacongui-fltk
 share/BaCon/
-share/BaCon/LICENSE
+share/BaCon/LICENSE.txt
 share/BaCon/documentation/
 share/BaCon/documentation/doc_frame.html
 share/BaCon/documentation/doc_index.html
@@ -14,14 +14,12 @@ share/BaCon/syntax/bacon.vim
 share/BaCon/syntax/lower.m4
 share/BaCon/syntax/upper.m4
 share/applications/bacongui-fltk.desktop
-share/enscript/
-share/enscript/hl/
-share/enscript/hl/bacon.st
-share/icons/hicolor/scalable/apps/bacon.png
 share/pixmaps/
 share/pixmaps/BaCon.png
 share/pixmaps/BaCon.xbm
 share/pixmaps/BaCon24.png
 share/pixmaps/BaConEyes.png
+share/pixmaps/BaConLegacy.png
+share/pixmaps/BaConStrip.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,7 +1,6 @@
 COMMENT =		BASIC converter to C translator for Unix system
 
-DISTNAME =		bacon-4.6
-REVISION =		0
+DISTNAME =		bacon-4.8
 
 CATEGORIES =		lang
 
