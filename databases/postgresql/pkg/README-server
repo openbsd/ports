@@ -186,7 +186,6 @@ identify them:
 Clients/Frontends
 =================
 Many applications can use the PostgreSQL database right away.  To facilitate
-administration of a PostgreSQL database, two clients are notable:
+administration of a PostgreSQL database, a client is notable:
 
 www/phppgadmin		A web based user interface that uses PHP
-databases/pgadmin3	A graphical user interface that uses wxWidgets
