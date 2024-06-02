@@ -1,11 +1,12 @@
 COMMENT =		json rpc server library
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.1.2
 DISTNAME =		python-lsp-jsonrpc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		net
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
