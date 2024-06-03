@@ -1,0 +1,15 @@
+Enable ChaCha20-Poly1305. In-place decryption was fixed.
+https://github.com/haproxy/haproxy/issues/2569
+
+Index: include/haproxy/quic_tls.h
+--- include/haproxy/quic_tls.h.orig
++++ include/haproxy/quic_tls.h
+@@ -140,7 +140,7 @@ static inline const EVP_CIPHER *tls_aead(const SSL_CIP
+ 		return EVP_aes_128_gcm();
+ 	case TLS1_3_CK_AES_256_GCM_SHA384:
+ 		return EVP_aes_256_gcm();
+-#if !defined(OPENSSL_IS_AWSLC) && (!defined(LIBRESSL_VERSION_NUMBER) || LIBRESSL_VERSION_NUMBER >= 0x4000000fL)
++#if !defined(OPENSSL_IS_AWSLC)
+ 	/* WT: LibreSSL has an issue with CHACHA20 running in-place till 3.9.2
+ 	 *     included, but the fix is already identified and will be merged
+ 	 *     into next major version. Given that on machines without AES-NI

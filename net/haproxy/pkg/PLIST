@@ -1,10 +1,10 @@
-@newgroup _haproxy:${HAPROXYGID}
-@newuser _haproxy:${HAPROXYUID}:_haproxy::HAProxy Daemon:/var/haproxy:/sbin/nologin
+@newgroup _haproxy:604
+@newuser _haproxy:604:_haproxy::HAProxy Daemon:${LOCALSTATEDIR}/haproxy:/sbin/nologin
 @rcscript ${RCDIR}/haproxy
 @man man/man1/haproxy.1
 @bin sbin/haproxy
-@sample ${HAPROXYCONF}/
-@sample ${HAPROXYSTATE}/
+@sample ${SYSCONFDIR}/haproxy/
+@sample ${LOCALSTATEDIR}/haproxy/
 share/doc/haproxy/
 share/doc/haproxy/51Degrees-device-detection.txt
 share/doc/haproxy/DeviceAtlas-device-detection.txt
@@ -29,7 +29,7 @@ share/examples/haproxy/
 share/examples/haproxy/basic-config-edge.cfg
 share/examples/haproxy/content-sw-sample.cfg
 share/examples/haproxy/haproxy.cfg
-@sample ${HAPROXYCONF}/haproxy.cfg
+@sample ${SYSCONFDIR}/haproxy/haproxy.cfg
 share/examples/haproxy/option-http_proxy.cfg
 share/examples/haproxy/quick-test.cfg
 share/examples/haproxy/socks4.cfg
