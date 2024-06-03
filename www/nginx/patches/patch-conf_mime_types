@@ -1,7 +1,17 @@
+chunk 1: https://trac.nginx.org/nginx/ticket/2216
+
 Index: conf/mime.types
 --- conf/mime.types.orig
 +++ conf/mime.types
-@@ -58,6 +58,7 @@ types {
+@@ -3,6 +3,7 @@ types {
+     text/html                                        html htm shtml;
+     text/css                                         css;
+     text/xml                                         xml;
++    text/javascript                                  mjs;
+     image/gif                                        gif;
+     image/jpeg                                       jpeg jpg;
+     application/javascript                           js;
+@@ -58,6 +59,7 @@ types {
      application/x-java-archive-diff                  jardiff;
      application/x-java-jnlp-file                     jnlp;
      application/x-makeself                           run;
@@ -9,7 +19,7 @@ Index: conf/mime.types
      application/x-perl                               pl pm;
      application/x-pilot                              prc pdb;
      application/x-rar-compressed                     rar;
-@@ -78,6 +79,7 @@ types {
+@@ -78,6 +80,7 @@ types {
      application/octet-stream                         iso img;
      application/octet-stream                         msi msp msm;
  
@@ -17,7 +27,7 @@ Index: conf/mime.types
      audio/midi                                       mid midi kar;
      audio/mpeg                                       mp3;
      audio/ogg                                        ogg;
-@@ -92,6 +94,7 @@ types {
+@@ -92,6 +95,7 @@ types {
      video/webm                                       webm;
      video/x-flv                                      flv;
      video/x-m4v                                      m4v;

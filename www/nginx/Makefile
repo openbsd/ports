@@ -21,6 +21,7 @@ COMMENT-securelink=	nginx HMAC secure link module
 VERSION=	1.26.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
+REVISION-main=	0
 
 VERSION-njs=	0.8.2
 VERSION-rtmp=	1.2.1
