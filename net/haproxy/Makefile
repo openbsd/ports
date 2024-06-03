@@ -3,7 +3,8 @@ COMMENT =	reliable, high performance TCP/HTTP load balancer
 DISTNAME =	haproxy-3.0.0
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
-MAINTAINER =	Daniel Jakots <obsd@chown.me>
+MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
