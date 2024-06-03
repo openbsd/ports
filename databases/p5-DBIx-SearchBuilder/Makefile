@@ -3,7 +3,7 @@ COMMENT=	encapsulate SQL queries and rows in simple perl objects
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	DBIx-SearchBuilder-1.78
+DISTNAME =	DBIx-SearchBuilder-1.82
 
 CATEGORIES=	databases
 

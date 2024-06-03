@@ -3,6 +3,7 @@ ${P5SITE}/DBIx/SearchBuilder.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/
 ${P5SITE}/DBIx/SearchBuilder/Handle.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/Informix.pm
+${P5SITE}/DBIx/SearchBuilder/Handle/MariaDB.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/ODBC.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/Oracle.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/Pg.pm
@@ -20,6 +21,7 @@ ${P5SITE}/DBIx/SearchBuilder/Util.pm
 @man man/man3p/DBIx::SearchBuilder.3p
 @man man/man3p/DBIx::SearchBuilder::Handle.3p
 @man man/man3p/DBIx::SearchBuilder::Handle::Informix.3p
+@man man/man3p/DBIx::SearchBuilder::Handle::MariaDB.3p
 @man man/man3p/DBIx::SearchBuilder::Handle::ODBC.3p
 @man man/man3p/DBIx::SearchBuilder::Handle::Oracle.3p
 @man man/man3p/DBIx::SearchBuilder::Handle::Pg.3p
