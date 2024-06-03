@@ -1,10 +1,9 @@
 COMMENT=	install and run Python applications in isolated environments
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	1.6.0
 DISTNAME=	pipx-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
-REVISION=	1
 
 # https://github.com/pypa/pipx
 HOMEPAGE=	https://pypa.github.io/pipx/
