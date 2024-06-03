@@ -295,9 +295,17 @@ libdata/perl5/site_perl/RT/Record/Role/Roles.pm
 libdata/perl5/site_perl/RT/Record/Role/Status.pm
 libdata/perl5/site_perl/RT/Reminders.pm
 libdata/perl5/site_perl/RT/Report/
+libdata/perl5/site_perl/RT/Report.pm
+libdata/perl5/site_perl/RT/Report/Assets/
+libdata/perl5/site_perl/RT/Report/Assets.pm
+libdata/perl5/site_perl/RT/Report/Assets/Entry.pm
+libdata/perl5/site_perl/RT/Report/Entry.pm
 libdata/perl5/site_perl/RT/Report/Tickets/
 libdata/perl5/site_perl/RT/Report/Tickets.pm
 libdata/perl5/site_perl/RT/Report/Tickets/Entry.pm
+libdata/perl5/site_perl/RT/Report/Transactions/
+libdata/perl5/site_perl/RT/Report/Transactions.pm
+libdata/perl5/site_perl/RT/Report/Transactions/Entry.pm
 libdata/perl5/site_perl/RT/RightsInspector.pm
 libdata/perl5/site_perl/RT/Rule.pm
 libdata/perl5/site_perl/RT/Ruleset.pm
@@ -418,7 +426,6 @@ sbin/rt-validator
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/rt/
 share/doc/rt/GDPR.pod
-share/doc/rt/README
 share/doc/rt/UPGRADING-2.0
 share/doc/rt/UPGRADING-3.0
 share/doc/rt/UPGRADING-3.2
@@ -471,6 +478,9 @@ share/doc/rt/images/asset-search.png
 share/doc/rt/images/asset-ticket-create-selfservice.png
 share/doc/rt/images/asset-ticket-create.png
 share/doc/rt/images/catalog-rights.png
+share/doc/rt/images/chart-limited-to-top-10.png
+share/doc/rt/images/chart-ordered-by-value.png
+share/doc/rt/images/chart-tickets-by-requestor.png
 share/doc/rt/images/complicated-search-arrows.png
 share/doc/rt/images/create-setowner-action.png
 share/doc/rt/images/current-search.png
@@ -505,12 +515,14 @@ share/doc/rt/images/queue-created-started-chart.png
 share/doc/rt/images/quote-selection-highlighted.png
 share/doc/rt/images/quote-selection-ticket-update.png
 share/doc/rt/images/saved-dashboard.png
+share/doc/rt/images/screenshot.png
 share/doc/rt/images/search-arrows.png
 share/doc/rt/images/search-criteria.png
 share/doc/rt/images/search-results.png
 share/doc/rt/images/sorting-display-columns.png
 share/doc/rt/images/status-change-condition.png
 share/doc/rt/images/subscriptions.png
+share/doc/rt/images/support-dashboard.png
 share/doc/rt/images/theme_editor_defaults.png
 share/doc/rt/images/user-time-worked-report.png
 share/doc/rt/images/with-created-before.png
@@ -1287,6 +1299,8 @@ share/examples/rt/upgrade/5.0.5/schema.SQLite
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.SQLite
 share/examples/rt/upgrade/5.0.5/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.mysql
+share/examples/rt/upgrade/5.0.6/
+share/examples/rt/upgrade/5.0.6/indexes
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1597,6 +1611,7 @@ share/rt/html/Asset/Elements/EditBasics
 share/rt/html/Asset/Elements/EditCatalogPeople
 share/rt/html/Asset/Elements/EditDates
 share/rt/html/Asset/Elements/EditPeople
+share/rt/html/Asset/Elements/EditPeopleInline
 share/rt/html/Asset/Elements/EditRoleMembers
 share/rt/html/Asset/Elements/Search
 share/rt/html/Asset/Elements/SelectCatalog
@@ -1711,6 +1726,7 @@ share/rt/html/Elements/GotoTicket
 share/rt/html/Elements/GotoUser
 share/rt/html/Elements/Header
 share/rt/html/Elements/HeaderJavascript
+share/rt/html/Elements/HttpResponseHeaders
 share/rt/html/Elements/JavascriptConfig
 share/rt/html/Elements/LabeledValue
 share/rt/html/Elements/Lifecycle/
@@ -1802,6 +1818,7 @@ share/rt/html/Elements/SelectObject
 share/rt/html/Elements/SelectOwner
 share/rt/html/Elements/SelectOwnerAutocomplete
 share/rt/html/Elements/SelectOwnerDropdown
+share/rt/html/Elements/SelectOwnerDropdownDelay
 share/rt/html/Elements/SelectPriority
 share/rt/html/Elements/SelectPriorityAsString
 share/rt/html/Elements/SelectQueue
@@ -1881,11 +1898,13 @@ share/rt/html/Helpers/
 share/rt/html/Helpers/AddTimeWorked
 share/rt/html/Helpers/Admin/
 share/rt/html/Helpers/Admin/EditCustomFieldValue
+share/rt/html/Helpers/AssetUpdate
 share/rt/html/Helpers/Autocomplete/
 share/rt/html/Helpers/Autocomplete/Articles
 share/rt/html/Helpers/Autocomplete/Assets
 share/rt/html/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/Helpers/Autocomplete/Groups
+share/rt/html/Helpers/Autocomplete/LinkTargets
 share/rt/html/Helpers/Autocomplete/Owners
 share/rt/html/Helpers/Autocomplete/Principals
 share/rt/html/Helpers/Autocomplete/Queues
@@ -1899,6 +1918,7 @@ share/rt/html/Helpers/PreviewScrips
 share/rt/html/Helpers/RightsInspector/
 share/rt/html/Helpers/RightsInspector/Revoke
 share/rt/html/Helpers/RightsInspector/Search
+share/rt/html/Helpers/SelectOwnerDropdown
 share/rt/html/Helpers/ShortcutHelp
 share/rt/html/Helpers/ShowSimplifiedRecipients
 share/rt/html/Helpers/SpawnLinkedTicket
@@ -2030,6 +2050,8 @@ share/rt/html/Search/Elements/EditFormat
 share/rt/html/Search/Elements/EditQuery
 share/rt/html/Search/Elements/EditSearches
 share/rt/html/Search/Elements/EditSort
+share/rt/html/Search/Elements/FilterAssets
+share/rt/html/Search/Elements/FilterTickets
 share/rt/html/Search/Elements/Graph
 share/rt/html/Search/Elements/NewListActions
 share/rt/html/Search/Elements/PickAssetCFs
@@ -2091,6 +2113,7 @@ share/rt/html/SelfService/Helpers/Autocomplete/
 share/rt/html/SelfService/Helpers/Autocomplete/CustomFieldValues
 share/rt/html/SelfService/Helpers/Autocomplete/Principals
 share/rt/html/SelfService/Helpers/Autocomplete/Users
+share/rt/html/SelfService/Helpers/SelectOwnerDropdown
 share/rt/html/SelfService/Helpers/ShortcutHelp
 share/rt/html/SelfService/Helpers/TextDiff
 share/rt/html/SelfService/Helpers/Upload/

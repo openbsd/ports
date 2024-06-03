@@ -1,6 +1,6 @@
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-5.0.5
+DISTNAME=		rt-5.0.6
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -16,7 +16,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			converters/p5-JSON \
 			databases/p5-DBD-mysql \
 			databases/p5-DBI \
-			databases/p5-DBIx-SearchBuilder>=1.78 \
+			databases/p5-DBIx-SearchBuilder>=1.82 \
 			databases/p5-Data-Page \
 			devel/p5-Class-ReturnValue \
 			devel/p5-Data-UUID \
