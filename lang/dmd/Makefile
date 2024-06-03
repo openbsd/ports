@@ -4,8 +4,8 @@ ONLY_FOR_ARCHS =	amd64 i386
 # No BT CFI yet.
 USE_NOBTCFI =	Yes
 
-V =		2.108.1
-BOOTSTRAP =	2.108.1
+V =		2.109.0
+BOOTSTRAP =	2.109.0
 COMMENT =	reference compiler for the D programming language
 DISTFILES =		dmd-${V}{v${V}}.tar.gz
 DISTFILES.boot= 	dmd-${BOOTSTRAP}-bootstrap.tar.gz

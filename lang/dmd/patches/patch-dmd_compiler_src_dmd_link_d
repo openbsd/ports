@@ -1,7 +1,7 @@
 Index: dmd/compiler/src/dmd/link.d
 --- dmd/compiler/src/dmd/link.d.orig
 +++ dmd/compiler/src/dmd/link.d
-@@ -509,6 +509,12 @@ public int runLINK(bool verbose, ErrorSink eSink)
+@@ -494,6 +494,12 @@ public int runLINK(bool verbose, ErrorSink eSink)
              if (driverParams.dll)
                  argv.push("-shared");
          }

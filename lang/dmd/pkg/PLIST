@@ -2,7 +2,7 @@
 include/dmd/
 include/dmd/druntime/
 include/dmd/druntime/import/
-include/dmd/druntime/import/__builtins.di
+include/dmd/druntime/import/__importc_builtins.di
 include/dmd/druntime/import/core/
 include/dmd/druntime/import/core/atomic.d
 include/dmd/druntime/import/core/attribute.d
@@ -201,6 +201,7 @@ include/dmd/druntime/import/core/sys/freebsd/dlfcn.d
 include/dmd/druntime/import/core/sys/freebsd/err.d
 include/dmd/druntime/import/core/sys/freebsd/execinfo.d
 include/dmd/druntime/import/core/sys/freebsd/ifaddrs.d
+include/dmd/druntime/import/core/sys/freebsd/mqueue.d
 include/dmd/druntime/import/core/sys/freebsd/net/
 include/dmd/druntime/import/core/sys/freebsd/net/if_.d
 include/dmd/druntime/import/core/sys/freebsd/net/if_dl.d
@@ -255,6 +256,7 @@ include/dmd/druntime/import/core/sys/linux/sys/eventfd.d
 include/dmd/druntime/import/core/sys/linux/sys/file.d
 include/dmd/druntime/import/core/sys/linux/sys/inotify.d
 include/dmd/druntime/import/core/sys/linux/sys/mman.d
+include/dmd/druntime/import/core/sys/linux/sys/mount.d
 include/dmd/druntime/import/core/sys/linux/sys/prctl.d
 include/dmd/druntime/import/core/sys/linux/sys/signalfd.d
 include/dmd/druntime/import/core/sys/linux/sys/socket.d

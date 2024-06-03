@@ -14,7 +14,7 @@ Index: dmd/druntime/Makefile
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -520,7 +518,6 @@ benchmark-compile-only: $(ROOT)/benchmark$(DOTEXE) $(D
+@@ -516,7 +514,6 @@ benchmark-compile-only: $(ROOT)/benchmark$(DOTEXE) $(D
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################
