@@ -3,7 +3,7 @@ COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
-V =			0.99
+V =			0.100
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
@@ -37,6 +37,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 TEST_IS_INTERACTIVE =	Yes
 TEST_ENV =		$${SSH_AUTH_SOCK:+SSH_AUTH_SOCK="$$SSH_AUTH_SOCK"}
 TEST_DEPENDS =		devel/git \
+			www/p5-HTTP-Daemon \
 			${PKGPATH}=${V}
 
 PREFIX-webd =		${VARBASE}/www
