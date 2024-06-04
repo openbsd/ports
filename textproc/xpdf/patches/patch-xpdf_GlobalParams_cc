@@ -3,10 +3,10 @@ Point font path at GhostScript
 Index: xpdf/GlobalParams.cc
 --- xpdf/GlobalParams.cc.orig
 +++ xpdf/GlobalParams.cc
-@@ -109,14 +109,7 @@ static const char *displayFontDirs[] = {
- };
- #else
- static const char *displayFontDirs[] = {
+@@ -107,14 +107,7 @@ static const char *displayFontDirs[] = {
+   "c:/windows/fonts",
+   "c:/winnt/fonts",
+ #else // _WIN32
 -  "/usr/share/ghostscript/fonts",
 -  "/usr/local/share/ghostscript/fonts",
 -  "/usr/share/fonts/default/Type1",
@@ -16,6 +16,6 @@ Index: xpdf/GlobalParams.cc
 -  "/usr/sfw/share/ghostscript/fonts",
 -#endif
 +  "/usr/local/share/fonts/ghostscript",
+ #endif // _WIN32
    NULL
  };
- #endif

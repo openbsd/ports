@@ -3,7 +3,7 @@ Ignore owner passwords/permissions to always allow print, modify, etc.
 Index: xpdf/XRef.cc
 --- xpdf/XRef.cc.orig
 +++ xpdf/XRef.cc
-@@ -1164,19 +1164,19 @@ GBool XRef::getEncryption(int *permFlagsA, GBool *owne
+@@ -1170,19 +1170,19 @@ GBool XRef::getEncryption(int *permFlagsA, GBool *owne
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
