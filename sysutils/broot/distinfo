@@ -1,7 +1,6 @@
-SHA256 (broot-1.38.0.tar.gz) = GAXYrL9bMRJDcKGcH4VaUMf7kpNZ72idm2iVe9laoAA=
+SHA256 (broot-1.39.0.tar.gz) = 0dLMwRVD/06mRdV6XnhjlUKm9RC1haeMMd2zokOZv2E=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/ahash-0.4.8.tar.gz) = BFMjKs6C3uDdC0yHpZvZD3tTsxTz4PYf4u58ihZIIok=
-SHA256 (cargo/ahash-0.8.11.tar.gz) = 6J2oQagEGKmzkeuuoX9cES/6qpb2IdLChbUXTadrkBE=
 SHA256 (cargo/aho-corasick-1.1.3.tar.gz) = jmDTQw06aUeK0Jk/GSONLfl8UHAJpSs8EK3c1/a8uRY=
 SHA256 (cargo/android-tzdata-0.1.1.tar.gz) = 6ZmUGyNPMTGwC8E8ItBujF/3JtG2MYrH6ydpl7u0/vA=
 SHA256 (cargo/android_system_properties-0.1.5.tar.gz) = gZ5yGdvUEEOsJ5sZgw8u/IlxVkkNf9bqkWcgEX7mYxE=
@@ -193,6 +192,7 @@ SHA256 (cargo/roff-0.2.1.tar.gz) = uDPY0DTqCUsepoqm1cdA4NBLrZ0WVo0Ium92gjoRQxY=
 SHA256 (cargo/roxmltree-0.18.1.tar.gz) = hiNA41HOGycaN47FPzBKVVj324fzdp3GVaj27LtoswI=
 SHA256 (cargo/roxmltree-0.19.0.tar.gz) = PNFP1eO3d6dCLMp5NYxXqPbjpwPZrBh0SNDa8iDCQH8=
 SHA256 (cargo/rusqlite-0.24.2.tar.gz) = 1fOO5xy6ssgn7ArCTnb4LspyPO6SxQmmX2fe45PCURI=
+SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
 SHA256 (cargo/rustix-0.38.34.tar.gz) = cNxewEL3pDxKcyQSB87MmHOgbUXeuzizKfhUHYXCcw8=
 SHA256 (cargo/rustybuzz-0.10.0.tar.gz) = cc0V/vkRKh+UrGS1jR5GKBkmMa1q9NxpmX+ZVFnIdOc=
 SHA256 (cargo/ryu-1.0.17.tar.gz) = 6GaXyRYBmoWIyZtfrDzq107AtLgZcHpoL9TSP6DOG6E=
@@ -316,13 +316,10 @@ SHA256 (cargo/xmlwriter-0.1.0.tar.gz) = 7HoqUB7RiXA9uosIFC8Ffoh9/EssxNstNDrGN2uj
 SHA256 (cargo/xterm-query-0.3.0.tar.gz) = WmrwlMWibPdmPpfZL2ndb0wTHpDpWsZDCCifzpFowGY=
 SHA256 (cargo/xterm-query-0.4.0.tar.gz) = LylQTQosqMFxR4HBOVqKZg0lV7LPnJZpQzFT/JA+m/w=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
-SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
 SHA256 (cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
-SIZE (broot-1.38.0.tar.gz) = 12912336
+SIZE (broot-1.39.0.tar.gz) = 12917263
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.4.8.tar.gz) = 51510
-SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -514,6 +511,7 @@ SIZE (cargo/roff-0.2.1.tar.gz) = 10605
 SIZE (cargo/roxmltree-0.18.1.tar.gz) = 43040
 SIZE (cargo/roxmltree-0.19.0.tar.gz) = 53547
 SIZE (cargo/rusqlite-0.24.2.tar.gz) = 120103
+SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/rustix-0.38.34.tar.gz) = 365160
 SIZE (cargo/rustybuzz-0.10.0.tar.gz) = 240016
 SIZE (cargo/ryu-1.0.17.tar.gz) = 47537
@@ -637,6 +635,4 @@ SIZE (cargo/xmlwriter-0.1.0.tar.gz) = 6261
 SIZE (cargo/xterm-query-0.3.0.tar.gz) = 6549
 SIZE (cargo/xterm-query-0.4.0.tar.gz) = 6163
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
-SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
-SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
 SIZE (cargo/zune-inflate-0.2.54.tar.gz) = 37973
