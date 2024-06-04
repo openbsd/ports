@@ -1,6 +1,6 @@
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.15.4
+DISTNAME=		nokogiri-1.16.5
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
