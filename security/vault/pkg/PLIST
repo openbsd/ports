@@ -1,8 +1,9 @@
 @newgroup _vault:772
-@newuser _vault:772:_vault::Vault Server:/nonexistent:/sbin/nologin
+@newuser _vault:772:_vault::HashiCorp Vault:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/vault/{plugins,storage}/*
 @extraunexec rm -rf /var/log/vault/*
 @rcscript ${RCDIR}/vault
+@rcscript ${RCDIR}/vault_agent
 @bin bin/vault
 share/doc/pkg-readmes/${PKGSTEM}
 @mode 0750
@@ -11,6 +12,12 @@ share/doc/pkg-readmes/${PKGSTEM}
 @mode
 @group
 share/examples/vault/
+share/examples/vault/agent.hcl
+@mode 0640
+@group _vault
+@sample ${SYSCONFDIR}/vault/agent.hcl
+@mode
+@group
 share/examples/vault/vault.hcl
 @mode 0640
 @group _vault
