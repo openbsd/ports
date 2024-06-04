@@ -1,0 +1,79 @@
+Index: src/current/iozone.c
+--- src/current/iozone.c.orig
++++ src/current/iozone.c
+@@ -106,24 +106,15 @@ extern  int h_errno; /* imported for errors */
+    syscall(__NR_sched_setaffinity, (pid_t)pid, (size_t)size, (void *)cpuset)
+ #endif
+ 
+-#if defined(HAVE_ANSIC_C) && defined(linux)
+-#include <stdlib.h>
++#if defined(HAVE_ANSIC_C) && (defined(linux) || defined(__OpenBSD__))
+ #include <sys/wait.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #endif
+ 
+ #ifdef HAVE_PROTO
+ #include "proto.h"
+ #else
+-int atoi();
+-int close();
+-int unlink();
+-int main();
+-#if !defined(linux)
+-int wait();
+-#endif
+-int fsync();
+-void srand48();
+-long lrand48();
+ void create_list();
+ void init_by_array64(unsigned long long *, unsigned long long );
+ unsigned long long genrand64_int64(void);
+@@ -348,11 +339,11 @@ THISVERSION,
+ #include <stdlib.h>
+ #endif
+ 
+-#if defined(OSFV5) || defined(linux)
++#if defined(OSFV5) || defined(linux) || defined(__OpenBSD__)
+ #include <string.h>
+ #endif
+ 
+-#if defined(linux)
++#if defined(linux) || defined(__OpenBSD__)
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+@@ -1272,7 +1263,7 @@ int pit_gettimeofday();
+ ssize_t pwrite64(); 
+ ssize_t pread64(); 
+ #endif
+-#if !defined(linux)
++#if !defined(linux) && !defined(__OpenBSD__)
+ char *getenv();
+ char *inet_ntoa();
+ int system();
+@@ -1346,7 +1337,6 @@ FILE *open_r_traj(void);
+ void traj_vers(void);
+ void r_traj_size(void);
+ long long w_traj_size(void);
+-void init_file_sizes();
+ off64_t get_next_file_size(off64_t);
+ void add_file_size(off64_t);
+ void init_file_sizes( off64_t,  off64_t);
+@@ -1359,7 +1349,7 @@ void dump_hist(char *,int );
+ void do_speed_check(int);
+ #else
+ void do_speed_check();
+-#if !defined(linux)
++#if !defined(linux) && !defined(__OpenBSD__)
+ char *getenv();
+ char *inet_ntoa();
+ int system();
+@@ -1835,7 +1825,6 @@ long long rest_val;
+  */
+ void stop_child_send();
+ void stop_child_send();
+-void child_send();
+ void compressible_rand_16_int(int *);
+ void new_touch_dedup(char *, int);
+ 

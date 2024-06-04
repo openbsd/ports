@@ -1,16 +1,19 @@
 COMMENT=	performance test of sequential file I/O
 
-V =		3.490
+V =		3.494
 DISTNAME=	iozone${V:S/./_/}
 PKGNAME=	iozone-$V
 CATEGORIES=	benchmarks
-SITES=		http://www.iozone.org/src/current/
-EXTRACT_SUFX=	.tar
+SITES=		https://www.iozone.org/src/stable/ \
+		https://www.iozone.org/src/current/
+# some versions .tar, others .tgz
+#EXTRACT_SUFX=	.tar
+EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://www.iozone.org/
+HOMEPAGE=	https://www.iozone.org/
 
-PERMIT_PACKAGE=		incomplete/bad license
-PERMIT_DISTFILES=	incomplete/bad license
+# in a string in iozone.c, printed with iozone -v
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += c pthread
 
@@ -19,6 +22,7 @@ NO_TEST=	Yes
 ALL_TARGET=	openbsd-threads
 
 MAKE_FILE=	makefile
+CFLAGS+=	-Wno-deprecated-non-prototype
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" CC="${CC}"
 
 WRKSRC=		${WRKDIST}/src/current
