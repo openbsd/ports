@@ -1,6 +1,14 @@
 @conflict py-last-*
 @pkgpath audio/py-last
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylast.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/pylast.py
+lib/python${MODPY_VERSION}/site-packages/pylast/
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/pylast-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pylast/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylast/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pylast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pylast/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
