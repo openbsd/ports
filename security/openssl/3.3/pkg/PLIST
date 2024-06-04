@@ -4739,6 +4739,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_security_level.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_session.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_session_id_context.3
+@man lib/${EOPENSSL_V}/man/man3/SSL_set_session_secret_cb.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_shutdown.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_split_send_fragment.3
 @man lib/${EOPENSSL_V}/man/man3/SSL_set_srp_server_param.3
@@ -5930,6 +5931,7 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/sk_TYPE_value.3
 @man lib/${EOPENSSL_V}/man/man3/sk_TYPE_zero.3
 @man lib/${EOPENSSL_V}/man/man3/ssl_ct_validation_cb.3
+@man lib/${EOPENSSL_V}/man/man3/tls_session_secret_cb_fn.3
 lib/${EOPENSSL_V}/man/man5/
 @man lib/${EOPENSSL_V}/man/man5/config.5
 @man lib/${EOPENSSL_V}/man/man5/fips_config.5
@@ -6057,6 +6059,7 @@ lib/${EOPENSSL_V}/man/man7/
 @man lib/${EOPENSSL_V}/man/man7/OSSL_PROVIDER-default.7
 @man lib/${EOPENSSL_V}/man/man7/OSSL_PROVIDER-legacy.7
 @man lib/${EOPENSSL_V}/man/man7/OSSL_PROVIDER-null.7
+@man lib/${EOPENSSL_V}/man/man7/OSSL_STORE-winstore.7
 @man lib/${EOPENSSL_V}/man/man7/RAND.7
 @man lib/${EOPENSSL_V}/man/man7/RSA-PSS.7
 @man lib/${EOPENSSL_V}/man/man7/RSA.7
