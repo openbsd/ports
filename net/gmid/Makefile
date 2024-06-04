@@ -1,5 +1,5 @@
 COMMENT =	simple gemini server
-DISTNAME =	gmid-2.0.2
+DISTNAME =	gmid-2.0.3
 
 CATEGORIES =	net
 
