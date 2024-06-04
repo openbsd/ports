@@ -1,4 +1,4 @@
-SHA256 (ruby-3.3.1.tar.gz) = jcKvKALMcAzRgtVDByY4jM+IWz8KFPzWoPIf8knJqpk=
+SHA256 (ruby-3.3.2.tar.gz) = O+HRAOvyoM5gws2NIs2dtNZLPgShlDvixP97Ug8ry1s=
 SHA256 (ruby33-i386-compile-warning.patch) = ozizp3gIm42WxEhiAL6XoYyV26LfpWmQmP5sRlrX5qI=
-SIZE (ruby-3.3.1.tar.gz) = 22074535
+SIZE (ruby-3.3.2.tar.gz) = 22095824
 SIZE (ruby33-i386-compile-warning.patch) = 819
