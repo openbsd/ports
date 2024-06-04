@@ -22,7 +22,7 @@ and add 'chroma' to the plugins: line.
 
 replaygain: This plugin adds support for ReplayGain, a technique for
 normalizing audio playback levels. It requires dependencies:
-"pkg_add py3-gstreamer1 py3-gobject3 gstreamer1-plugins-good".
+"pkg_add py3-gstreamer1 gstreamer1-plugins-good".
 Edit ~/.config/beets/config.yaml - add 'replaygain' to the plugins:
 line, and add the following:
 
