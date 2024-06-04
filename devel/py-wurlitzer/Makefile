@@ -20,8 +20,6 @@ MODPY_PYTEST_ARGS=	test.py
 FLAVORS=	python3
 FLAVOR=		python3
 
-pre-configure:
-	cd ${WRKDIR}; ${CC} ${CFLAGS} ${FILESDIR}/getsize.c -o getsize; \
-	sed -i "s,SIZE_OF_FILE,$$(./getsize),g" ${WRKSRC}/wurlitzer.py
+TEST_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
