@@ -1,5 +1,6 @@
 COMMENT =	Algol 68 Genie compiler-interpreter
 DISTNAME =	algol68g-3.5.2
+REVISION =	0
 CATEGORIES =	lang
 
 HOMEPAGE =	https://jmvdveer.home.xs4all.nl/algol.html

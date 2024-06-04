@@ -1,0 +1,14 @@
+Don't depend on curses defining FALSE.
+
+Index: src/a68g/parser-scanner.c
+--- src/a68g/parser-scanner.c.orig
++++ src/a68g/parser-scanner.c
+@@ -856,7 +856,7 @@ char *pragment (int type, LINE_T ** ref_l, char **ref_
+         ADD_ONE_CHAR (c);
+         c = next_char (ref_l, ref_c, A68_FALSE);
+       }
+-      scan_next = FALSE;
++      scan_next = A68_FALSE;
+     } else if (IS_PRINT (c) || IS_SPACE (c)) {
+       ADD_ONE_CHAR (c);
+     }
