@@ -17,7 +17,8 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-REVISION-common=	0
+
+REVISION-common=	1
 REVISION-gui=		1
 REVISION-hpaio=		0
 REVISION-hpcups=	0

@@ -15,6 +15,11 @@ cups package (cf. ${LOCALBASE}/share/doc/pkg-readmes/cups-*).
 If you care about device information (e.g. ink status), you should use
 the HP tools to install and communicate with it (see below).
 
+Supported printers are available here:
+https://developers.hp.com/hp-linux-imaging-and-printing/supported_devices/index
+Models that don't need a "Driver Plug-in" are prefered as they don't require a
+proprietary blob.
+
 Printing
 ========
 
