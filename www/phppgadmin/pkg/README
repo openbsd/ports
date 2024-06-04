@@ -2,14 +2,14 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-The phpPgAdmin has been installed into ${INSTDIR}
+phpPgAdmin has been installed into ${INSTDIR}.
 
-You should point this to the DocumentRoot of your web-server:
+You may want to link this under the DocumentRoot of your web-server:
    # ln -s ../phpPgAdmin /var/www/htdocs/phpPgAdmin
-(make sure you use a relative symlink since Apache is chrooted)
+(use a relative symlink - web servers on OpenBSD are typically chrooted).
+
+Configure your database(s) in ${INSTDIR}/conf/config.inc.php
+as necessary.
 
 You can ensure you have a working install by accessing:
 http://<localhost>/phpPgAdmin/index.php
-
-You need to modify ${INSTDIR}/conf/config.inc.php according
-to your database(s) settings

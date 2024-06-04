@@ -1,17 +1,16 @@
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
-DISTNAME=	phpPgAdmin-5.6.0
-MODPHP_VERSION=	7.4
+V=		7.14.7
+GH_ACCOUNT=	ReimuHakurei
+GH_PROJECT=	phpPgAdmin
+GH_TAGNAME=	v$V-mod
+PKGNAME=	phpPgAdmin-$V
+
 CATEGORIES=	www databases
-HOMEPAGE=	https://phppgadmin.sourceforge.net/
-REVISION=	2
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
-
-SITES=	https://github.com/phppgadmin/phppgadmin/releases/download/REL_5-6-0/
-EXTRACT_SUFX=	.tar.bz2
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
@@ -31,6 +30,5 @@ do-install:
 
 post-install:
 	@rm -fr ${PREFIX}/phpPgAdmin/tests
-	@rm ${PREFIX}/phpPgAdmin/conf/{.gitignore,config.inc.php}
 
 .include <bsd.port.mk>

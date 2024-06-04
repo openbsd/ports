@@ -1,6 +1,6 @@
 remove paths as they are invalid in the default chroot
 
-Index: conf/config.inc.php
+Index: conf/config.inc.php-dist
 --- conf/config.inc.php-dist.orig
 +++ conf/config.inc.php-dist
 @@ -32,8 +32,8 @@
