@@ -663,7 +663,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (nushell-0.94.1.tar.gz) = sWhtA3J1NvQqJZLjMpVfsAXSKffbGfG8LYsMdZ7EyXk=
+SHA256 (nushell-0.94.2.tar.gz) = GbjMsw9j2n6tvI2a+mkxjZy7tAvBYlWGBKJLh3PM0Eo=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler32-1.2.0.tar.gz) = 6411
@@ -1329,4 +1329,4 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (nushell-0.94.1.tar.gz) = 3016922
+SIZE (nushell-0.94.2.tar.gz) = 3018706
