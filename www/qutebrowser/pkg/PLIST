@@ -174,8 +174,8 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}certificateerror.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}httpheaders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}httpheaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}mhtml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}mhtml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCACHE}tabhistory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -197,7 +197,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/cache.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/certificateerror.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/cookies.py
-lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/http.py
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/httpheaders.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/mhtml.py
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/browser/webkit/network/__init__.py

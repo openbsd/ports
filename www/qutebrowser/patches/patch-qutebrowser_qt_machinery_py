@@ -5,8 +5,8 @@ Index: qutebrowser/qt/machinery.py
  # sed -i 's/_WRAPPER_OVERRIDE = .*/_WRAPPER_OVERRIDE = "PyQt6"/' qutebrowser/qt/machinery.py
  #
  # Users: Set the QUTE_QT_WRAPPER environment variable to change the default wrapper.
--_WRAPPER_OVERRIDE = None
-+_WRAPPER_OVERRIDE = "PyQt5"
+-_WRAPPER_OVERRIDE = None  # type: ignore[var-annotated]
++_WRAPPER_OVERRIDE = "PyQt5"  # type: ignore[var-annotated]
  
  WRAPPERS = [
      "PyQt6",

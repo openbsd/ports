@@ -1,27 +1,26 @@
-COMMENT =		keyboard-focused browser with a minimal GUI
+COMMENT=	keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION =	3.1.0
-DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_EGG_VERSION=	3.2.0
+DISTNAME=	qutebrowser-${MODPY_EGG_VERSION}
 
-HOMEPAGE =		https://www.qutebrowser.org/
+HOMEPAGE=	https://www.qutebrowser.org/
 
-CATEGORIES =		www
+CATEGORIES=	www
 
 # GPLv3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 # prefers PyQt6 if possible; see patch-qutebrowser_qt_machinery_py if switching
-RUN_DEPENDS =		devel/desktop-file-utils \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			x11/gtk+4,-guic \
-			x11/py-qt5${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-qtwebengine${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/desktop-file-utils \
+		textproc/py-yaml${MODPY_FLAVOR} \
+		x11/gtk+4,-guic \
+		x11/py-qt5${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR} \
+		www/py-qtwebengine${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
