@@ -6,6 +6,8 @@ REVISION-main =		29
 REVISION-lldb =		8
 REVISION-python =	6
 
+FLAVOR=		no_lldb
+
 SHARED_LIBS +=	LTO		6.0 \
 		Remarks		0.0 \
 		clang-cpp	1.0 \
