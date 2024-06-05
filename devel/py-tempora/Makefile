@@ -1,28 +1,26 @@
-COMMENT =		objects and routines pertaining to date and time
+COMMENT=	objects and routines pertaining to date and time
 
-MODPY_EGG_VERSION =	5.1.0
-DISTNAME =		tempora-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_EGG_VERSION=	5.5.1
+DISTNAME=	tempora-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/jaraco/tempora
+HOMEPAGE=	https://github.com/jaraco/tempora
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST_ARGS =	tempora/tests
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
-RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
-			devel/py-tz${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
+		devel/py-tz${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-freezegun${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

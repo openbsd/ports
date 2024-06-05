@@ -20,13 +20,5 @@ lib/python${MODPY_VERSION}/site-packages/tempora/${MODPY_PYCACHE}timing.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/tempora/${MODPY_PYCACHE}utc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tempora/${MODPY_PYCACHE}utc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tempora/schedule.py
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_schedule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_schedule.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_timing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/${MODPY_PYCACHE}test_timing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/test_schedule.py
-lib/python${MODPY_VERSION}/site-packages/tempora/tests/test_timing.py
 lib/python${MODPY_VERSION}/site-packages/tempora/timing.py
 lib/python${MODPY_VERSION}/site-packages/tempora/utc.py
