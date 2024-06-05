@@ -1,7 +1,6 @@
 COMMENT=	GNUstep gui library
 
-REVISION =	1
-GH_TAGNAME=     0.30.0
+GH_TAGNAME=     0.31.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-gui
 DISTNAME=       gnustep-gui-${GH_TAGNAME}
@@ -10,7 +9,7 @@ CATEGORIES=	devel
 
 # needs to follow gnustep-back backend versioning
 # cf. gnustep_backend_bundle() in ${WRKSRC}/Source/NSApplication.m
-SHARED_LIBS =	gnustep-gui 0.32
+SHARED_LIBS =	gnustep-gui 0.33
 
 HOMEPAGE=	http://www.gnustep.org/
 
@@ -19,7 +18,7 @@ WANTLIB += flite_usenglish gif jpeg png sndfile sndio
 WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
 #SITES=	${SITE_GNUSTEP:=core/}
-SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_30_0/
+SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_31_0/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=No

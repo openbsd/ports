@@ -14,7 +14,6 @@ include/AppKit/DPSOperators.h
 include/AppKit/GMAppKit.h
 include/AppKit/GMArchiver.h
 include/AppKit/GSAnimator.h
-include/AppKit/GSAutoLayoutVFLParser.h
 include/AppKit/GSDisplayServer.h
 include/AppKit/GSDragView.h
 include/AppKit/GSEPSPrintOperation.h
@@ -87,7 +86,12 @@ include/AppKit/NSCell.h
 include/AppKit/NSClickGestureRecognizer.h
 include/AppKit/NSClipView.h
 include/AppKit/NSCollectionView.h
+include/AppKit/NSCollectionViewCompositionalLayout.h
+include/AppKit/NSCollectionViewFlowLayout.h
+include/AppKit/NSCollectionViewGridLayout.h
 include/AppKit/NSCollectionViewItem.h
+include/AppKit/NSCollectionViewLayout.h
+include/AppKit/NSCollectionViewTransitionLayout.h
 include/AppKit/NSColor.h
 include/AppKit/NSColorList.h
 include/AppKit/NSColorPanel.h
@@ -110,6 +114,7 @@ include/AppKit/NSDataLinkManager.h
 include/AppKit/NSDataLinkPanel.h
 include/AppKit/NSDatePicker.h
 include/AppKit/NSDatePickerCell.h
+include/AppKit/NSDictionaryController.h
 include/AppKit/NSDockTile.h
 include/AppKit/NSDocument.h
 include/AppKit/NSDocumentController.h
@@ -252,10 +257,13 @@ include/AppKit/NSSwitch.h
 include/AppKit/NSTabView.h
 include/AppKit/NSTabViewController.h
 include/AppKit/NSTabViewItem.h
+include/AppKit/NSTableCellView.h
 include/AppKit/NSTableColumn.h
 include/AppKit/NSTableHeaderCell.h
 include/AppKit/NSTableHeaderView.h
+include/AppKit/NSTableRowView.h
 include/AppKit/NSTableView.h
+include/AppKit/NSTableViewRowAction.h
 include/AppKit/NSText.h
 include/AppKit/NSTextAlternatives.h
 include/AppKit/NSTextAttachment.h
@@ -349,7 +357,6 @@ include/gnustep/gui/
 include/gnustep/gui/GMAppKit.h
 include/gnustep/gui/GMArchiver.h
 include/gnustep/gui/GSAnimator.h
-include/gnustep/gui/GSAutoLayoutVFLParser.h
 include/gnustep/gui/GSDisplayServer.h
 include/gnustep/gui/GSDragView.h
 include/gnustep/gui/GSEPSPrintOperation.h
@@ -700,6 +707,7 @@ lib/GNUstep/Sounds/Submarine.wav
 lib/GNUstep/Sounds/Tink.wav
 lib/GNUstep/Themes/
 @lib lib/libgnustep-gui.so.${LIBgnustep-gui_VERSION}
+lib/pkgconfig/gnustep-gui.pc
 libexec/GNUstep/
 libexec/GNUstep/GSSpeechServer.app/
 @bin libexec/GNUstep/GSSpeechServer.app/GSSpeechServer
