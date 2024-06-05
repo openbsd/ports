@@ -24,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/path/compat/${MODPY_PYCACHE}py38.${MODP
 lib/python${MODPY_VERSION}/site-packages/path/compat/${MODPY_PYCACHE}py38.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/path/compat/py38.py
 lib/python${MODPY_VERSION}/site-packages/path/masks.py
-lib/python${MODPY_VERSION}/site-packages/path/masks.pyi
 lib/python${MODPY_VERSION}/site-packages/path/matchers.py
 lib/python${MODPY_VERSION}/site-packages/path/matchers.pyi
 lib/python${MODPY_VERSION}/site-packages/path/py.typed
