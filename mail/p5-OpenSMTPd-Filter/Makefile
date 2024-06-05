@@ -1,6 +1,6 @@
 COMMENT =	easier filters for OpenSMTPd in perl
 
-DISTNAME =	OpenSMTPd-Filter-v0.0.2
+DISTNAME =	OpenSMTPd-Filter-v0.0.3
 PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CPAN_AUTHOR =	ANDREW
 PKG_ARCH =	*
