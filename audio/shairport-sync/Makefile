@@ -1,9 +1,6 @@
 COMMENT =	AirPlay audio player
 
-# 25.02.2024 for merged patches
-C =		2dba9bc8cae01242e430c0026bf92c8a1a850646
-DIST_TUPLE =	github	mikebrady	shairport-sync	${C}	.
-PKGNAME =	shairport-sync-4.3.3pre1
+DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.3	.
 CATEGORIES =	audio net
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
