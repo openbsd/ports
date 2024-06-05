@@ -12,6 +12,3 @@ lib/python${MODPY_VERSION}/site-packages/munch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/munch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/munch/${MODPY_PYCACHE}python3_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/munch/${MODPY_PYCACHE}python3_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/munch/python3_compat.py
