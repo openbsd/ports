@@ -6,7 +6,7 @@ Should match b_lundef in meson(1).
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -249,7 +249,6 @@ array_bounds = get_option('b_sanitize') == 'none' ? 2 
+@@ -254,7 +254,6 @@ array_bounds = get_option('b_sanitize') == 'none' ? 2 
  
  cc_flags += [
    '-fasynchronous-unwind-tables',
@@ -14,7 +14,7 @@ Index: meson.build
    '-fipa-pure-const',
    '-fno-common',
    '-Wabsolute-value',
-@@ -527,11 +526,6 @@ libvirt_nodelete = cc.get_supported_link_arguments([
+@@ -545,11 +544,6 @@ libvirt_nodelete = cc.get_supported_link_arguments([
  ])
  
  libvirt_no_undefined = []
@@ -26,7 +26,7 @@ Index: meson.build
  
  libvirt_no_indirect = cc.get_supported_link_arguments([
    '-Wl,--no-copy-dt-needed-entries',
-@@ -859,7 +853,7 @@ if not get_option('driver_remote').disabled()
+@@ -876,7 +870,7 @@ if not get_option('driver_remote').disabled()
      xdr_dep = cc.find_library('portablexdr', required: get_option('driver_remote'))
    elif host_machine.system() in [ 'linux', 'gnu' ]
      xdr_dep = dependency('libtirpc', required: get_option('driver_remote'))
@@ -35,7 +35,7 @@ Index: meson.build
      xdr_dep = cc.find_library('c', required: get_option('driver_remote'))
    else
      xdr_dep = dependency('', required: false)
-@@ -944,15 +938,18 @@ if devmapper_dep.found()
+@@ -961,15 +955,18 @@ if devmapper_dep.found()
    conf.set('WITH_DEVMAPPER', 1)
  endif
  
@@ -62,7 +62,7 @@ Index: meson.build
  fuse_version = '3.1.0'
  fuse_dep = dependency('fuse3', version: '>=' + fuse_version, required: false)
  if fuse_dep.found()
-@@ -1918,7 +1915,7 @@ endif
+@@ -1946,7 +1943,7 @@ endif
  
  driver_modules_flags = []
  if conf.has('WITH_LIBVIRTD')
@@ -71,7 +71,7 @@ Index: meson.build
      error('You must have dlfcn.h / dlopen() support to build driver modules')
    endif
    driver_modules_flags = libvirt_export_dynamic
-@@ -2280,7 +2277,7 @@ libs_summary = {
+@@ -2314,7 +2311,7 @@ libs_summary = {
    'capng': capng_dep.found(),
    'curl': curl_dep.found(),
    'devmapper': devmapper_dep.found(),

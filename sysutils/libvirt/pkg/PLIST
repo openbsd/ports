@@ -417,6 +417,7 @@ share/doc/libvirt/html/programming-languages.html
 share/doc/libvirt/html/python.html
 share/doc/libvirt/html/remote.html
 share/doc/libvirt/html/securityprocess.html
+share/doc/libvirt/html/ssh-proxy.html
 share/doc/libvirt/html/storage.html
 share/doc/libvirt/html/strategy.html
 share/doc/libvirt/html/styleguide.html

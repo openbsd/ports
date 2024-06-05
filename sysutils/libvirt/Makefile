@@ -1,14 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-10.3.0
-REVISION=		0
+DISTNAME=		libvirt-10.4.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.4 # 0.10003.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.10003.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.10003.0
-SHARED_LIBS += virt-admin                2.2 # 0.10003.0
+SHARED_LIBS += virt                      2.4 # 0.10004.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.10004.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.10004.0
+SHARED_LIBS += virt-admin                2.2 # 0.10004.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -71,7 +70,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			glusterfs libiscsi libpcap polkit netcf numactl numad \
 			openwsman selinux_mount selinux udev readline \
-			driver_bhyve driver_hyperv driver_interface \
+			driver_bhyve driver_hyperv driver_interface ssh_proxy \
 			driver_libxl driver_lxc driver_openvz driver_vz \
 			secdriver_apparmor secdriver_selinux nbdkit \
 			login_shell driver_network nss sysctl_config \
