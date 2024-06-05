@@ -37,6 +37,9 @@ EXTRACT_SUFX =	.tar.xz
 
 MULTI_PACKAGES =	-main -python -lldb
 
+PSEUDO_FLAVORS =	no_lldb
+FLAVOR ?=
+
 .for i in ${MULTI_PACKAGES:S/-//g}
 DESCR-${i} =	${.CURDIR}/../files/DESCR-${i}
 .endfor
@@ -58,11 +61,17 @@ BUILD_DEPENDS +=	devel/swig \
 RUN_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-c++
 .endif
 
+.if ${FLAVOR:Mno_lldb}
+PROJECTS =	clang;lld
+.else
+PROJECTS =	clang;lld;lldb
+.endif
+
 CONFIGURE_STYLE +=	cmake
 CONFIGURE_ARGS +=	\
 	-DCMAKE_INSTALL_PREFIX="${LOCALBASE}/${LLVM_BASE}" \
 	-DCMAKE_PREFIX_PATH="${LOCALBASE}/${LLVM_BASE}" \
-	-DLLVM_ENABLE_PROJECTS="clang;lld;lldb" \
+	-DLLVM_ENABLE_PROJECTS="${PROJECTS}" \
 	-DLLVM_ENABLE_BACKTRACES=OFF \
 	-DLLVM_ENABLE_FFI=OFF \
 	-DLLVM_ENABLE_LIBXML2=OFF \
