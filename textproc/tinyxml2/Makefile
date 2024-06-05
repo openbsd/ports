@@ -2,13 +2,13 @@ COMMENT =		simple, small and efficient C++ XML parser
 
 GH_ACCOUNT =		leethomason
 GH_PROJECT =		tinyxml2
-GH_TAGNAME =		9.0.0
+GH_TAGNAME =		10.0.0
 
-SHARED_LIBS +=		tinyxml2	9.0 # 9.0
+SHARED_LIBS +=		tinyxml2	10.0 # 10.0
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.grinninglizard.com/tinyxml2/index.html
+HOMEPAGE =		https://github.com/leethomason/tinyxml2/
 
 # zlib
 PERMIT_PACKAGE =	Yes
