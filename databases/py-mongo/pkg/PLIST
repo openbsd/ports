@@ -95,8 +95,12 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_azure_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_azure_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_csot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_csot.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_gcp_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_gcp_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}aggregation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -147,6 +151,8 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}helpers.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}lock.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}max_staleness_selectors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}max_staleness_selectors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -211,8 +217,10 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}uri_parser.${MO
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}uri_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}write_concern.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}write_concern.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pymongo/_azure_helpers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/_cmessagemodule.c
 lib/python${MODPY_VERSION}/site-packages/pymongo/_csot.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/_gcp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/_version.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/aggregation.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/auth.py
@@ -238,6 +246,7 @@ lib/python${MODPY_VERSION}/site-packages/pymongo/event_loggers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/hello.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/helpers.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/lock.py
+lib/python${MODPY_VERSION}/site-packages/pymongo/logger.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/max_staleness_selectors.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/message.py
 lib/python${MODPY_VERSION}/site-packages/pymongo/mongo_client.py
