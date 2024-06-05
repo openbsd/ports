@@ -4,7 +4,7 @@ library.
 Index: target.make
 --- target.make.orig
 +++ target.make
-@@ -86,6 +86,8 @@ ifeq ($(findstring sysv4.2, $(GNUSTEP_TARGET_OS)), sys
+@@ -94,6 +94,8 @@ ifeq ($(findstring sysv4.2, $(GNUSTEP_TARGET_OS)), sys
    TARGET_SYSTEM_LIBS = $(CONFIG_SYSTEM_LIBS) -lsocket -lnsl -lm
  endif
  
@@ -13,7 +13,7 @@ Index: target.make
  #
  # Specific settings for building shared libraries, static libraries,
  # and bundles on various systems
-@@ -687,7 +689,7 @@ endif
+@@ -695,7 +697,7 @@ endif
  ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
  HAVE_SHARED_LIBS        = yes
  SHARED_LIB_LINK_CMD = \
@@ -22,7 +22,7 @@ Index: target.make
  	   $(ALL_LDFLAGS) -o $(LIB_LINK_OBJ_DIR)/$(LIB_LINK_VERSION_FILE) $^ \
  	   $(INTERNAL_LIBRARIES_DEPEND_UPON) \
  	   $(SHARED_LD_POSTFLAGS) \
-@@ -695,18 +697,17 @@ SHARED_LIB_LINK_CMD = \
+@@ -703,18 +705,17 @@ SHARED_LIB_LINK_CMD = \
  	  $(RM_LN_S) $(LIB_LINK_FILE); \
            if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
              $(RM_LN_S) $(LIB_LINK_SONAME_FILE);\
