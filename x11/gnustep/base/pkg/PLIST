@@ -945,6 +945,7 @@ ${LIBDIR}/Resources/Spanish.lproj/Localizable.strings
 ${LIBDIR}/Resources/TraditionalChinese.lproj/
 ${LIBDIR}/Resources/TraditionalChinese.lproj/Localizable.strings
 @lib lib/libgnustep-base.so.${LIBgnustep-base_VERSION}
+lib/pkgconfig/gnustep-base.pc
 @man man/man1/HTMLLinker.1
 @man man/man1/autogsdoc.1
 @man man/man1/cvtenc.1
