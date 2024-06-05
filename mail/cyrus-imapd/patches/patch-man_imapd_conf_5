@@ -10,7 +10,7 @@ Index: man/imapd.conf.5
  .UNINDENT
  .UNINDENT
  .sp
-@@ -4094,7 +4094,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
+@@ -4129,7 +4129,7 @@ Allowed values: \fIflat\fP, \fIskiplist\fP, \fItwoskip
  .UNINDENT
  .UNINDENT
  .sp
@@ -19,7 +19,7 @@ Index: man/imapd.conf.5
  .INDENT 0.0
  .INDENT 3.5
  The pathname of the sendmail executable.  Sieve invokes sendmail
-@@ -4315,7 +4315,7 @@ assumed.
+@@ -4350,7 +4350,7 @@ assumed.
  .UNINDENT
  .UNINDENT
  .sp
