@@ -1,9 +1,8 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	10.3.0
+MODPY_EGG_VERSION =	10.4.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
