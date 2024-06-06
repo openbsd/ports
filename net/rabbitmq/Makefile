@@ -1,6 +1,6 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.13.2
+V =		3.13.3
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 CATEGORIES =	net

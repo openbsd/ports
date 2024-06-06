@@ -448,6 +448,7 @@ lib/rabbitmq/plugins/${RABBIT_KHEPRI_MNESIA_MIGRATION}/ebin/mnesia_to_khepri_con
 lib/rabbitmq/plugins/${RABBIT_KHEPRI_MNESIA_MIGRATION}/ebin/mnesia_to_khepri_example_converter.beam
 lib/rabbitmq/plugins/oauth2_client-${V}/
 lib/rabbitmq/plugins/oauth2_client-${V}/ebin/
+lib/rabbitmq/plugins/oauth2_client-${V}/ebin/jwt_helper.beam
 lib/rabbitmq/plugins/oauth2_client-${V}/ebin/oauth2_client.app
 lib/rabbitmq/plugins/oauth2_client-${V}/ebin/oauth2_client.beam
 lib/rabbitmq/plugins/oauth2_client-${V}/include/
