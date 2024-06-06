@@ -1,7 +1,7 @@
 Index: WindowMaker/Makefile.in
 --- WindowMaker/Makefile.in.orig
 +++ WindowMaker/Makefile.in
-@@ -835,8 +835,8 @@ uninstall-am: uninstall-dist_prefsdataDATA \
+@@ -865,8 +865,8 @@ uninstall-am: uninstall-dist_prefsdataDATA \
  
  
  $(GENERATED_MENUS):

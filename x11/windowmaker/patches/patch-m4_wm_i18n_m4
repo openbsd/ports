@@ -1,22 +1,25 @@
---- m4/wm_i18n.m4.orig	Tue Aug 11 20:41:14 2015
-+++ m4/wm_i18n.m4	Wed Feb  3 10:24:21 2016
+Index: m4/wm_i18n.m4
+--- m4/wm_i18n.m4.orig
++++ m4/wm_i18n.m4
 @@ -37,7 +37,7 @@ AC_DEFUN_ONCE([WM_I18N_LANGUAGES],
  [AC_ARG_VAR([LINGUAS],
      [list of language translations to support (I18N), use 'list' to get the list of supported languages, default: none])dnl
  AC_DEFUN([WM_ALL_LANGUAGES],
--    [m4_esyscmd([( ls WINGs/po/ ; ls po/ ; ls WPrefs.app/po/ ; ls util/po/ ) | sed -n -e '/po$/{s,\.po,,;p}' | sort -u | tr '\n' ' '])])dnl
+-    [m4_esyscmd([( ls wrlib/po/ ; ls WINGs/po/ ; ls po/ ; ls WPrefs.app/po/ ; ls util/po/ ) | sed -n -e '/po$/{s,\.po,,;p}' | sort -u | tr '\n' ' '])])dnl
 +    [m4_esyscmd([( ls WINGs/po/ ; ls po/ ; ls WPrefs.app/po/ ; ls util/po/ ) | sed -n -e '/po$/{s,\.po,,;p; }' | sort -u | tr '\n' ' '])])dnl
  dnl We 'divert' the macro to have it executed as soon as the option list have
  dnl been processed, so the list of locales will be printed after the configure
  dnl options have been parsed, but before any test have been run
-@@ -66,10 +66,10 @@ AS_IF([test "x$LINGUAS" != "x"],
+@@ -66,11 +66,11 @@ AS_IF([test "x$LINGUAS" != "x"],
       supported_locales=""
  
       # This is the list of locales that our archive currently supports
+-     wraster_locales=" m4_esyscmd([ls wrlib/po/ | sed -n '/po$/{s,.po,,;p}' | tr '\n' ' '])"
 -     wings_locales=" m4_esyscmd([ls WINGs/po/ | sed -n '/po$/{s,.po,,;p}' | tr '\n' ' '])"
 -     wmaker_locales=" m4_esyscmd([ls po/ | sed -n '/po$/{s,.po,,;p}' | tr '\n' ' '])"
 -     wprefs_locales=" m4_esyscmd([ls WPrefs.app/po/ | sed -n '/po$/{s,.po,,;p}' | tr '\n' ' '])"
 -     util_locales=" m4_esyscmd([ls util/po/ | sed -n '/po$/{s,.po,,;p}' | tr '\n' ' '])"
++     wraster_locales=" m4_esyscmd([ls wrlib/po/ | sed -n '/po$/{s,.po,,;p; }' | tr '\n' ' '])"
 +     wings_locales=" m4_esyscmd([ls WINGs/po/ | sed -n '/po$/{s,.po,,;p; }' | tr '\n' ' '])"
 +     wmaker_locales=" m4_esyscmd([ls po/ | sed -n '/po$/{s,.po,,;p; }' | tr '\n' ' '])"
 +     wprefs_locales=" m4_esyscmd([ls WPrefs.app/po/ | sed -n '/po$/{s,.po,,;p; }' | tr '\n' ' '])"

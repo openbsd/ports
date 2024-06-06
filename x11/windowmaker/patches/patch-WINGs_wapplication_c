@@ -1,11 +1,12 @@
---- WINGs/wapplication.c.orig	Tue Aug 11 20:41:14 2015
-+++ WINGs/wapplication.c	Wed Jun  8 09:52:32 2016
-@@ -187,7 +187,7 @@ char *WMPathForResourceOfType(const char *resource, co
+Index: WINGs/wapplication.c
+--- WINGs/wapplication.c.orig
++++ WINGs/wapplication.c
+@@ -205,7 +205,7 @@ char *WMPathForResourceOfType(const char *resource, co
  	if (path)
  		goto out;
  
--	path = checkFile("/usr/local/GNUstep", appdir, ext, resource);
-+	path = checkFile(PREFIX "/GNUstep", appdir, ext, resource);
- 	if (path)
- 		goto out;
+-	path = checkFile("/usr/GNUstep/System/Applications", appdir, ext, resource); /* falls through */
++	path = checkFile(PREFIX "/GNUstep", appdir, ext, resource); /* falls through */
  
+ out:
+ 	if (appdir)

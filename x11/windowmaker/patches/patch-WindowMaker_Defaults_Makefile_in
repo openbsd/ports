@@ -1,13 +1,7 @@
 Index: WindowMaker/Defaults/Makefile.in
 --- WindowMaker/Defaults/Makefile.in.orig
 +++ WindowMaker/Defaults/Makefile.in
-@@ -562,12 +562,13 @@ WMWindowAttributes: $(srcdir)/WMWindowAttributes.in
- 
- WindowMaker: $(srcdir)/WindowMaker.in
- 	$(AM_V_GEN)sed -e "s:#pkgdatadir#:$(pkgdatadir):" \
-+		-e "s:#prefix#:$(prefix):" \
- 		-e "s:#pixmapdir#:$(pixmapdir):" $(srcdir)/WindowMaker.in \
- 		> WindowMaker ; \
+@@ -573,7 +573,7 @@ WindowMaker: $(srcdir)/WindowMaker.in
  	chmod 644 WindowMaker
  
  WMState: $(srcdir)/WMState.in

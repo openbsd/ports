@@ -1,6 +1,7 @@
---- src/startup.c.orig	Tue Aug 11 20:41:14 2015
-+++ src/startup.c	Wed Jun  8 09:52:32 2016
-@@ -666,7 +666,7 @@ void StartUp(Bool defaultScreenOnly)
+Index: src/startup.c
+--- src/startup.c.orig
++++ src/startup.c
+@@ -667,7 +667,7 @@ void StartUp(Bool defaultScreenOnly)
  		wMenuRestoreState(wScreen[j]);
  
  		/* If we're not restarting, restore session */

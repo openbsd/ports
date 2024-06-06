@@ -114,6 +114,7 @@ share/WPrefs/tiff/drawer.tiff
 share/WPrefs/tiff/ergonomic.tiff
 share/WPrefs/tiff/expert.tiff
 share/WPrefs/tiff/fonts.tiff
+share/WPrefs/tiff/hotcorners.tiff
 share/WPrefs/tiff/iconprefs.tiff
 share/WPrefs/tiff/keyboard.tiff
 share/WPrefs/tiff/keyboardprefs.tiff
@@ -311,6 +312,7 @@ share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
+share/applications/WPrefs.desktop
 share/examples/WindowMaker/
 @sample ${SYSCONFDIR}/WindowMaker/
 share/examples/WindowMaker/WMGLOBAL
@@ -323,3 +325,6 @@ share/examples/WindowMaker/WMWindowAttributes
 @sample ${SYSCONFDIR}/WindowMaker/WMWindowAttributes
 share/examples/WindowMaker/WindowMaker
 @sample ${SYSCONFDIR}/WindowMaker/WindowMaker
+share/xsessions/
+share/xsessions/wmaker.desktop
+@tag update-desktop-database

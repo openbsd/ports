@@ -3,7 +3,7 @@ On OpenBSD, time_t is long long.
 Index: WPrefs.app/Appearance.c
 --- WPrefs.app/Appearance.c.orig
 +++ WPrefs.app/Appearance.c
-@@ -926,7 +926,7 @@ static char *makeFileName(const char *prefix)
+@@ -932,7 +932,7 @@ static char *makeFileName(const char *prefix)
  		char buf[30];
  
  		wfree(fname);

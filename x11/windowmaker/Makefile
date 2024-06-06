@@ -1,12 +1,10 @@
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 
-V =			0.95.9
+V =			0.96.0
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
-
-REVISION-main=		0
 
 SHARED_LIBS +=  WINGs                     1.0 # 4.0
 SHARED_LIBS +=  WMaker                    0.0 # 1.1
@@ -26,10 +24,10 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg
 WANTLIB += kvm m png pthread tiff xcb z lzma zstd
 
-SITES=			${SITE_WINDOWMAKER:=source/release/}
+SITES=	https://github.com/window-maker/wmaker/releases/download/wmaker-${V}/
 
 NO_TEST=		Yes
-SEPARATE_BUILD=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-magick \
 			--disable-webp \
@@ -53,6 +51,7 @@ LIB_DEPENDS=		devel/gettext,-runtime \
 			graphics/tiff \
 			graphics/png \
 			graphics/giflib
+RUN_DEPENDS =		devel/desktop-file-utils
 
 RUN_DEPENDS-lang =	x11/windowmaker>=${V}
 LIB_DEPENDS-lang=

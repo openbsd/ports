@@ -1,12 +1,12 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17612,7 +17612,7 @@ else
-   wm_cv_imgfmt_xpm=no
+@@ -19170,7 +19170,7 @@ else $as_nop
                             wm_save_LIBS="$LIBS"
-          if wm_fn_lib_try_link "XpmCreatePixmapFromData" "$XLFLAGS $XLIBS -lXpm"; then :
+          if wm_fn_lib_try_link "XpmCreatePixmapFromData" "$XLFLAGS $XLIBS -lXpm"
+ then :
 -  wm_cv_imgfmt_xpm="-lXpm" ; break
 +  wm_cv_imgfmt_xpm="-lXpm"
  fi
           LIBS="$wm_save_LIBS"
-          if test "x$enable_xpm$wm_cv_imgfmt_xpm" = "xyesno"; then :
+          if test "x$enable_xpm$wm_cv_imgfmt_xpm" = "xyesno"

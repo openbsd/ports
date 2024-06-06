@@ -1,6 +1,7 @@
---- m4/windowmaker.m4.orig	Tue Aug 11 20:41:14 2015
-+++ m4/windowmaker.m4	Wed Feb  3 10:24:21 2016
-@@ -195,7 +195,7 @@ AC_CACHE_CHECK([for secure_getenv], [wm_cv_func_secure
+Index: m4/windowmaker.m4
+--- m4/windowmaker.m4.orig
++++ m4/windowmaker.m4
+@@ -249,7 +249,7 @@ AC_CACHE_CHECK([for secure_getenv], [wm_cv_func_secure
       wm_save_CFLAGS="$CFLAGS"
       for wm_arg in "% yes" "-D_GNU_SOURCE"; do
           AS_IF([wm_fn_lib_try_compile "stdlib.h" "const char *h;" "h = secure_getenv(\"HOME\")" dnl

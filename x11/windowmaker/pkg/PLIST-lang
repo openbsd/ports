@@ -48,8 +48,6 @@ share/locale/be/LC_MESSAGES/WindowMaker.mo
 share/locale/bg/LC_MESSAGES/WINGs.mo
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
-share/locale/bs/
-share/locale/bs/LC_MESSAGES/
 share/locale/bs/LC_MESSAGES/WindowMaker.mo
 share/locale/ca/LC_MESSAGES/WINGs.mo
 share/locale/ca/LC_MESSAGES/WPrefs.mo
@@ -72,6 +70,7 @@ share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WINGs.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
+share/locale/fr/LC_MESSAGES/WRaster.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/wmgenmenu.mo
 share/locale/fy/
@@ -86,8 +85,6 @@ share/locale/hr/LC_MESSAGES/WindowMaker.mo
 share/locale/hu/LC_MESSAGES/WINGs.mo
 share/locale/hu/LC_MESSAGES/WPrefs.mo
 share/locale/hu/LC_MESSAGES/WindowMaker.mo
-share/locale/hy/
-share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/WindowMaker.mo
 share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
@@ -95,8 +92,6 @@ share/locale/ja/LC_MESSAGES/WPrefs.mo
 share/locale/ja/LC_MESSAGES/WindowMaker.mo
 share/locale/ko/LC_MESSAGES/WPrefs.mo
 share/locale/ko/LC_MESSAGES/WindowMaker.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/WindowMaker.mo
 share/locale/nl/LC_MESSAGES/WINGs.mo
 share/locale/nl/LC_MESSAGES/WPrefs.mo
@@ -114,6 +109,7 @@ share/locale/sk/LC_MESSAGES/WINGs.mo
 share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
 share/locale/sv/LC_MESSAGES/WindowMaker.mo
+share/locale/tr/LC_MESSAGES/WPrefs.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
 share/locale/uk/LC_MESSAGES/WPrefs.mo
 share/locale/uk/LC_MESSAGES/WindowMaker.mo
