@@ -1,0 +1,32 @@
+Run tests with unmodified config-example-test.yaml file
+
+Index: cmd/headscale/headscale_test.go
+--- cmd/headscale/headscale_test.go.orig
++++ cmd/headscale/headscale_test.go
+@@ -42,7 +42,7 @@ func (*Suite) TestConfigFileLoading(c *check.C) {
+ 
+ 	// Symlink the example config file
+ 	err = os.Symlink(
+-		filepath.Clean(path+"/../../config-example.yaml"),
++		filepath.Clean(path+"/../../config-example-test.yaml"),
+ 		cfgFile,
+ 	)
+ 	if err != nil {
+@@ -85,7 +85,7 @@ func (*Suite) TestConfigLoading(c *check.C) {
+ 
+ 	// Symlink the example config file
+ 	err = os.Symlink(
+-		filepath.Clean(path+"/../../config-example.yaml"),
++		filepath.Clean(path+"/../../config-example-test.yaml"),
+ 		filepath.Join(tmpDir, "config.yaml"),
+ 	)
+ 	if err != nil {
+@@ -129,7 +129,7 @@ func (*Suite) TestDNSConfigLoading(c *check.C) {
+ 
+ 	// Symlink the example config file
+ 	err = os.Symlink(
+-		filepath.Clean(path+"/../../config-example.yaml"),
++		filepath.Clean(path+"/../../config-example-test.yaml"),
+ 		filepath.Join(tmpDir, "config.yaml"),
+ 	)
+ 	if err != nil {

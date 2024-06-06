@@ -1,0 +1,15 @@
+Add missing return in shutdown
+See https://github.com/juanfont/headscale/issues/1461
+
+Index: hscontrol/app.go
+--- hscontrol/app.go.orig
++++ hscontrol/app.go
+@@ -821,6 +821,8 @@ func (h *Headscale) Serve() error {
+ 
+ 				// And we're done:
+ 				cancel()
++
++				return
+ 			}
+ 		}
+ 	}
