@@ -6,7 +6,7 @@ Features:
   - Support RFC 8737: TLS Application-Layer Protocol Negotiation (ALPN)
     Challenge Extension
   - Support RFC 8738: certificates for IP addresses
-  - Support draft-ietf-acme-ari-01: Renewal Information (ARI) Extension
+  - Support draft-ietf-acme-ari-03: Renewal Information (ARI) Extension
 - Register with CA
 - Obtain certificates, both from scratch or with an existing CSR
 - Renew certificates
