@@ -19,7 +19,7 @@ Index: config-example.yaml
  
  # List of IP prefixes to allocate tailaddresses from.
  # Each prefix consists of either an IPv4 or IPv6 address,
-@@ -106,7 +106,8 @@ derp:
+@@ -107,7 +107,8 @@ derp:
    #
    # paths:
    #   - /etc/headscale/derp-example.yaml
@@ -29,7 +29,7 @@ Index: config-example.yaml
  
    # If enabled, a worker will be set up to periodically
    # refresh the given sources and update the derpmap
-@@ -132,7 +133,7 @@ node_update_check_interval: 10s
+@@ -133,7 +134,7 @@ node_update_check_interval: 10s
  db_type: sqlite3
  
  # For production:
@@ -38,7 +38,7 @@ Index: config-example.yaml
  
  # # Postgres config
  # If using a Unix socket to connect to Postgres, set the socket path in the 'host' field and leave 'port' blank.
-@@ -166,7 +167,7 @@ tls_letsencrypt_hostname: ""
+@@ -167,7 +168,7 @@ tls_letsencrypt_hostname: ""
  # Path to store certificates and metadata needed by
  # letsencrypt
  # For production:
@@ -47,12 +47,12 @@ Index: config-example.yaml
  
  # Type of ACME challenge to use, currently supported types:
  # HTTP-01 or TLS-ALPN-01
-@@ -256,7 +257,7 @@ dns_config:
+@@ -257,7 +258,7 @@ dns_config:
  
  # Unix socket used for the CLI to connect without authentication
  # Note: for production you will want to set this to something like:
 -unix_socket: /var/run/headscale/headscale.sock
-+unix_socket: ${LOCALSTATEDIR}/run/headscale.sock
++unix_socket: ${LOCALSTATEDIR}/run/headscale/headscale.sock
  unix_socket_permission: "0770"
  #
  # headscale supports experimental OpenID connect support,

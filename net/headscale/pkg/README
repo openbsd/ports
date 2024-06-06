@@ -5,16 +5,13 @@
 Initial Setup
 =============
 
-Generate a private key:
-
-    # openssl rand -base64 32 > ${SYSCONFDIR}/headscale/private.key
-
-Create an initial user:
-
-    # su -s/bin/sh _headscale
-    $ headscale users create myfirstuser
-
 Enable and start the service
 
     # rcctl enable headscale
     # rcctl start headscale
+
+Create an initial user:
+
+    # su -s /bin/sh _headscale
+    $ headscale users create myfirstuser
+

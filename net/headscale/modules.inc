@@ -187,7 +187,6 @@ MODGO_MODULES =	\
 	github.com/breml/bidichk					 v0.2.1 \
 	github.com/butuzov/ireturn					 v0.1.1 \
 	github.com/cavaliercoder/go-cpio				 v0.0.0-20180626203310-925f9528c45e \
-	github.com/ccding/go-stun/stun					 v0.0.0-20200514191101-4dc67bcdb029 \
 	github.com/cenkalti/backoff/v4					 v4.2.0 \
 	github.com/census-instrumentation/opencensus-proto		 v0.4.1 \
 	github.com/cespare/xxhash/v2					 v2.2.0 \
@@ -195,7 +194,7 @@ MODGO_MODULES =	\
 	github.com/chavacava/garif					 v0.0.0-20210405164556-e8a0a408d6af \
 	github.com/checkpoint-restore/go-criu/v5			 v5.3.0 \
 	github.com/chzyer/logex						 v1.1.10 \
-	github.com/chzyer/readline					 v0.0.0-20180603132655-2972be24d48e \
+	github.com/chzyer/readline					 v1.5.0 \
 	github.com/chzyer/test						 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/cilium/ebpf						 v0.10.0 \
 	github.com/client9/misspell					 v0.3.4 \
@@ -240,6 +239,7 @@ MODGO_MODULES =	\
 	github.com/evanw/esbuild					 v0.14.53 \
 	github.com/fatih/color						 v1.13.0 \
 	github.com/fatih/structtag					 v1.2.0 \
+	github.com/felixge/fgprof					 v0.9.3 \
 	github.com/frankban/quicktest					 v1.14.3 \
 	github.com/fsnotify/fsnotify					 v1.6.0 \
 	github.com/fxamacker/cbor/v2					 v2.4.0 \
@@ -349,7 +349,7 @@ MODGO_MODULES =	\
 	github.com/hinshun/vt10x					 v0.0.0-20220119200601-820417d04eec \
 	github.com/huandu/xstrings					 v1.3.2 \
 	github.com/iancoleman/strcase					 v0.2.0 \
-	github.com/ianlancetaylor/demangle				 v0.0.0-20200824232613-28f6c0f3b639 \
+	github.com/ianlancetaylor/demangle				 v0.0.0-20220319035150-800ac71e25c2 \
 	github.com/illarion/gonotify					 v1.0.1 \
 	github.com/imdario/mergo					 v0.3.13 \
 	github.com/inconshreveable/mousetrap				 v1.1.0 \
@@ -449,6 +449,7 @@ MODGO_MODULES =	\
 	github.com/philip-bui/grpc-zerolog				 v1.0.1 \
 	github.com/pkg/diff						 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pkg/errors						 v0.9.1 \
+	github.com/pkg/profile						 v1.7.0 \
 	github.com/pkg/sftp						 v1.13.4 \
 	github.com/pmezard/go-difflib					 v1.0.0 \
 	github.com/polyfloyd/go-errorlint				 v0.0.0-20211125173453-6d6d39c5bb8b \
@@ -580,7 +581,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3						 v3.0.1 \
 	gorm.io/driver/postgres						 v1.4.8 \
 	gorm.io/gorm							 v1.24.6 \
-	gotest.tools/v3							 v3.2.0 \
+	gotest.tools/v3							 v3.4.0 \
 	gvisor.dev/gvisor						 v0.0.0-20221203005347-703fd9b7fbc0 \
 	honnef.co/go/tools						 v0.4.2 \
 	howett.net/plist						 v1.0.0 \
@@ -680,6 +681,7 @@ MODGO_MODFILES =	\
 	github.com/cenkalti/backoff/v4				 v4.1.3 \
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
 	github.com/cespare/xxhash/v2				 v2.1.2 \
+	github.com/chzyer/readline				 v0.0.0-20180603132655-2972be24d48e \
 	github.com/cilium/ebpf					 v0.7.0 \
 	github.com/cncf/udpa/go					 v0.0.0-20191209042840-269d4d468f6f \
 	github.com/cncf/udpa/go					 v0.0.0-20200629203442-efcf912fb354 \
@@ -760,6 +762,7 @@ MODGO_MODFILES =	\
 	github.com/google/pprof					 v0.0.0-20201023163331-3e6fc7fc9c4c \
 	github.com/google/pprof					 v0.0.0-20201203190320-1bf35d6f28c2 \
 	github.com/google/pprof					 v0.0.0-20201218002935-b9804c9f04c2 \
+	github.com/google/pprof					 v0.0.0-20211214055906-6f57359322fd \
 	github.com/google/uuid					 v1.1.2 \
 	github.com/googleapis/gax-go/v2				 v2.0.4 \
 	github.com/googleapis/gax-go/v2				 v2.0.5 \
@@ -769,6 +772,8 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hdevalence/ed25519consensus			 v0.0.0-20220222234857-c00d1f31bab3 \
 	github.com/ianlancetaylor/demangle			 v0.0.0-20181102032728-5e5cf60278f6 \
+	github.com/ianlancetaylor/demangle			 v0.0.0-20200824232613-28f6c0f3b639 \
+	github.com/ianlancetaylor/demangle			 v0.0.0-20210905161508-09a460cdf81d \
 	github.com/imdario/mergo				 v0.3.12 \
 	github.com/inconshreveable/mousetrap			 v1.0.0 \
 	github.com/jinzhu/now					 v1.1.4 \
@@ -1040,10 +1045,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys					 v0.0.0-20210906170528-6f6e22806c34 \
 	golang.org/x/sys					 v0.0.0-20210927094055-39ccf1dd6fa6 \
+	golang.org/x/sys					 v0.0.0-20211007075335-d3039528d8ac \
 	golang.org/x/sys					 v0.0.0-20211013075003-97ac67df715c \
 	golang.org/x/sys					 v0.0.0-20211025201205-69cdffdb9359 \
 	golang.org/x/sys					 v0.0.0-20211116061358-0a5406a5449c \
 	golang.org/x/sys					 v0.0.0-20211216021012-1d35b9e2eb4e \
+	golang.org/x/sys					 v0.0.0-20220310020820-b874c991c1a5 \
 	golang.org/x/sys					 v0.0.0-20220319134239-a9b59b0215f8 \
 	golang.org/x/sys					 v0.0.0-20220405210540-1e041c57c461 \
 	golang.org/x/sys					 v0.0.0-20220412211240-33da011f77ad \
@@ -1255,6 +1262,7 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v3					 v3.0.0-20210107192922-496545a6307b \
 	gorm.io/gorm						 v1.24.2 \
 	gorm.io/gorm						 v1.24.5 \
+	gotest.tools/v3						 v3.2.0 \
 	honnef.co/go/tools					 v0.0.0-20190102054323-c2f93a96b099 \
 	honnef.co/go/tools					 v0.0.0-20190106161140-3f1c8253044a \
 	honnef.co/go/tools					 v0.0.0-20190418001031-e561f6794a2a \
@@ -1265,3 +1273,20 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.4.0-0.dev.0.20230130122044-c30b15588105 \
 	modernc.org/memory					 v1.4.0
 
+# Update modernc.org/libc to v1.50.9 + depends
+# See https://github.com/juanfont/headscale/issues/1857
+MODGO_MODULES +=	\
+	github.com/google/uuid v1.6.0 \
+	github.com/mattn/go-isatty v0.0.20 \
+	github.com/ncruces/go-strftime v0.1.9 \
+	golang.org/x/crypto v0.21.0 \
+	golang.org/x/mod v0.16.0 \
+	golang.org/x/net v0.22.0 \
+	golang.org/x/sync v0.6.0 \
+	golang.org/x/sys v0.20.0 \
+	golang.org/x/term v0.18.0 \
+	golang.org/x/text v0.14.0 \
+	golang.org/x/tools v0.19.0 \
+	modernc.org/libc v1.50.9 \
+	modernc.org/mathutil v1.6.0 \
+	modernc.org/memory v1.8.0

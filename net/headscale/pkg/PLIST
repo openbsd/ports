@@ -6,6 +6,7 @@
 @sample ${SYSCONFDIR}/headscale/
 @owner _headscale
 @sample ${LOCALSTATEDIR}/db/headscale/
+@sample ${LOCALSTATEDIR}/run/headscale/
 @mode
 @owner
 @group
@@ -16,6 +17,9 @@ share/examples/headscale/config-example.yaml
 @mode 640
 @group _headscale
 @sample ${SYSCONFDIR}/headscale/config.yaml
+@mode
+@group
 share/examples/headscale/derp-example.yaml
-@mode 644
+@mode 640
+@group _headscale
 @sample ${SYSCONFDIR}/headscale/derp.yaml
