@@ -25,6 +25,7 @@ SITES =		https://download.osgeo.org/gdal/${V:C/rc.//:C/beta.//}/
 WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
 MODULES =	devel/cmake \
+		lang/clang \
 		lang/python
 FLAVORS =	python3
 FLAVOR =	python3
@@ -70,6 +71,7 @@ LIB_DEPENDS-python =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
+			${MODCLANG_RUN_DEPENDS} \
 			math/py-numpy${MODPY_FLAVOR} \
 			devel/gtest \
 			devel/swig
