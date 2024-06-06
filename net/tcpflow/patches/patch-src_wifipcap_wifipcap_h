@@ -1,0 +1,12 @@
+Index: src/wifipcap/wifipcap.h
+--- src/wifipcap/wifipcap.h.orig
++++ src/wifipcap/wifipcap.h
+@@ -12,7 +12,7 @@
+ #include <stdint.h>
+ #include <inttypes.h>
+ 
+-#include <pcap/pcap.h>
++#include <pcap.h>
+ #include <netinet/in.h>
+ 
+ #include "arp.h"

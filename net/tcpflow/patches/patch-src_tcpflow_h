@@ -1,0 +1,16 @@
+Index: src/tcpflow.h
+--- src/tcpflow.h.orig
++++ src/tcpflow.h
+@@ -297,6 +297,12 @@ inline const timeval &tvshift(struct timeval &tv,const
+     return tv;
+ }
+ 
++inline const timeval &tvshift(struct timeval &tv,const struct bpf_timeval &tv_)
++{
++    tv.tv_sec  = tv_.tv_sec + datalink_tdelta;
++    tv.tv_usec = tv_.tv_usec;
++    return tv;
++}
+ 
+ 
+ /* util.cpp - utility functions */

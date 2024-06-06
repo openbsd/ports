@@ -1,35 +1,27 @@
---- doc/tcpflow.1.in.orig	Mon Feb 26 15:01:30 2001
-+++ doc/tcpflow.1.in	Mon Aug 11 11:07:02 2003
-@@ -32,7 +32,7 @@ tcpflow \- TCP flow recorder 
- is a program that captures data transmitted as part of TCP connections
- (flows), and stores the data in a way that is convenient for protocol
- analysis or debugging.  A program like
--.IR tcpdump(4)
-+.IR tcpdump(8)
- shows a summary of packets seen on the wire, but usually doesn't store
- the data that's actually being transmitted.  In contrast, tcpflow
- reconstructs the actual data streams and stores each flow in a
-@@ -109,7 +109,7 @@ already be in promiscuous mode for some 
+Index: doc/tcpflow.1.in
+--- doc/tcpflow.1.in.orig
++++ doc/tcpflow.1.in
+@@ -377,7 +377,7 @@ as the root privileges are dropped after opening the f
+ .B \-l \fIroot-only*.pcap\fP\c
+ ).
+ This option has the same behaviour as the
+-.IR tcpdump (1)
++.IR tcpdump (8)
+ option having the same name
+ .B \--relinquish-privileges\fB
+ .
+@@ -386,7 +386,7 @@ option having the same name
  Read from file.  Read packets from \fIfile\fP, which was created using the
  .B \-w
  option of
 -.IR tcpdump (1).
 +.IR tcpdump (8).
- Standard input is used if \fIfile\fP is ``-''.
+ This option may be repeated any number of times. Standard input is used if \fIfile\fP is "-".
  Note that for this option to be useful, tcpdump's
  .B \-s
-@@ -132,7 +132,7 @@ The
- specified on the command-line specifies which packets should be
- captured.  Because tcpflow uses the the libpcap library, tcpflow has
- the same powerful filtering language available as programs such as
--.IR tcpdump (1).
-+.IR tcpdump (8).
- .LP
- .B The following part of the man page is excerpted from the tcpdump man page.
- .LP
-@@ -539,4 +539,4 @@ The current version of this software is 
- .I http://www.circlemud.org/~jelson/software/tcpflow
+@@ -642,4 +642,4 @@ An announcement mailing list for this program is at:
+ .I http://groups.google.com/group/tcpflow-users
  .RE
  .SH "SEE ALSO"
--tcpdump(1), nit(4P), bpf(4), pcap(3)
-+tcpdump(8), nit(4P), bpf(4), pcap(3)
+-tcpdump(1), nit(4P), bpf(4), pcap(3), pcap-savefile(5), pcap-filter(7)
++tcpdump(8), nit(4P), bpf(4), pcap(3), pcap-savefile(5), pcap-filter(7)

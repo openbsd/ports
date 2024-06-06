@@ -1,17 +1,31 @@
-COMMENT=	tool for capturing data from TCP connections
+COMMENT=		tool for capturing data from TCP connections
 
-DISTNAME=	tcpflow-0.21
-REVISION=	2
-CATEGORIES=	net
-SITES=		http://www.circlemud.org/pub/jelson/tcpflow/
+V=			1.6.1
+DISTNAME=		tcpflow-${V}
+CATEGORIES=		net
 
-HOMEPAGE=       http://www.circlemud.org/~jelson/software/tcpflow/
+SITES=			https://github.com/simsong/tcpflow/releases/download/tcpflow-${V}/
 
-# GPLv2
-PERMIT_PACKAGE=	Yes
+HOMEPAGE=		https://github.com/simsong/tcpflow
 
-WANTLIB=		c pcap 
+MAINTAINER=		Kirill A. Korinsky <kirill@korins.ky>
 
-CONFIGURE_STYLE=        gnu
+# GPLv3
+PERMIT_PACKAGE=		Yes
+
+WANTLIB += ${COMPILER_LIBCXX} c crypto m pcap sqlite3 ssl z
+
+COMPILER=		base-clang ports-gcc
+
+LIB_DEPENDS=		databases/sqlite3
+
+# a test for cairo has a side effect which brokes pcap test
+# when it can't find cairo, so, disable it.
+CONFIGURE_ARGS=		--enable-cairo=false
+
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
+
+CONFIGURE_STYLE=	autoreconf
 
 .include <bsd.port.mk>
