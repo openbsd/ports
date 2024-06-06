@@ -4,7 +4,7 @@ CATEGORIES =	devel security
 HOMEPAGE =	https://cryptopp.com/
 SITES =		${HOMEPAGE}
 
-V =		8.7.0
+V =		8.9.0
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
-SHARED_LIBS =	cryptopp	7.0
+SHARED_LIBS =	cryptopp	8.0
 
 CXXFLAGS +=	-fPIC -Wno-unused -DNDEBUG
 
