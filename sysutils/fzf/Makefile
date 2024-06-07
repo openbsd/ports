@@ -1,9 +1,9 @@
 COMMENT =	command-line fuzzy finder
 
 MODGO_MODNAME =	github.com/junegunn/fzf
-MODGO_VERSION =	v0.0.0-20240513165430-6432f00f0d02
+MODGO_VERSION =	v0.0.0-20240606130326-c4a9ccd6afc3
 
-V =		0.52.1
+V =		0.53.0
 DISTNAME =	fzf-${V}
 
 CATEGORIES =	sysutils
