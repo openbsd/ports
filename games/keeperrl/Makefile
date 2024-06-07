@@ -41,6 +41,7 @@ USE_GMAKE =		Yes
 # need to set STEAMAPI_API because not set in the port, cf. libcsteamworks
 CFLAGS +=	-DENABLE_LOCAL_USER_DIR=1 \
 		-DSTEAMAPI_API="extern \"C\"" \
+		-I${WRKSRC}/extern \
 		-I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lsteam_api
 
