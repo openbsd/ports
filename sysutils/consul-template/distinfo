@@ -1,4 +1,4 @@
-SHA256 (consul-template-v0.38.0.zip) = BBO/kqXOEAngKAg592Spx8d/gnwOsRNPd5dbgul7XXI=
+SHA256 (consul-template-v0.38.1.zip) = ioyl9LtEvChAvuf7NwsZ3+PKHflnBmzm5+g39RLu/5s=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.mod) = JnfIL+dPIDdyiJpagBr7Mp2VF1UId92ssXIZFpurPt0=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.zip) = XeJGoMtMJW8/1dDbigihFPWK8MLhk7vwrZASEErbtrI=
 SHA256 (go_modules/github.com/!data!dog/datadog-go/@v/v3.2.0+incompatible.mod) = XeyoqP45xjq6SWZryO0OhvYJm6zQl2bs8HQeE/7cWKM=
@@ -463,7 +463,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) =
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (consul-template-v0.38.0.zip) = 410048
+SIZE (consul-template-v0.38.1.zip) = 410428
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.mod) = 43
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.zip) = 303020
 SIZE (go_modules/github.com/!data!dog/datadog-go/@v/v3.2.0+incompatible.mod) = 37
