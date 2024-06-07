@@ -1,8 +1,9 @@
 COMMENT =	deliver Go binaries as fast and easily as possible
 
-MODGO_MODNAME =	github.com/goreleaser/goreleaser
-MODGO_VERSION =	v1.21.2
+MODGO_MODNAME =	github.com/goreleaser/goreleaser/v2
+MODGO_VERSION =	v2.0.0
 
+# https://github.com/goreleaser/goreleaser
 HOMEPAGE =	https://goreleaser.com/
 
 DISTNAME =	goreleaser-${MODGO_VERSION}
