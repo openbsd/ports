@@ -1,4 +1,4 @@
-MODPY_EGG_VERSION =	268
+MODPY_EGG_VERSION =	271
 COMMENT =	in-depth comparison of files, archives, and directories
 DISTNAME =	diffoscope-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils devel
