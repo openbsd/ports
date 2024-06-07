@@ -1,4 +1,4 @@
-@conflict kdeplasma-kf5-*
+@conflict kdeplasma-addons-kf5-<=5.27.10p0
 include/plasma/
 include/plasma/potdprovider/
 include/plasma/potdprovider/plasma_potd_export.h

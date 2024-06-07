@@ -1,4 +1,4 @@
-@conflict kgamma5-*
+@conflict kgamma5-<=5.27.10
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcminit/
 @so lib/qt6/plugins/plasma/kcminit/kcm_kgamma_init.so

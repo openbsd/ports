@@ -1,4 +1,4 @@
-@conflict libkscreen-kf5-*
+@conflict libkscreen-kf5-<=5.27.10
 @bin bin/kscreen-doctor
 include/KF6/
 include/KF6/KScreen/
