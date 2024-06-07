@@ -1,3 +1,4 @@
+@conflict kdeplasma-addons-kf5-<=5.27.10p0
 @bin bin/kwin_wayland
 @bin bin/kwin_wayland_wrapper
 @bin bin/kwin_x11
