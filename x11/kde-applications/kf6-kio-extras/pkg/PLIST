@@ -1,3 +1,4 @@
+@conflict kio-extras-<24.02.1
 include/KioArchive6/
 include/KioArchive6/kio_archivebase.h
 include/KioArchive6/kioarchive_version.h
