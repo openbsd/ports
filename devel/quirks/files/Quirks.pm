@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1638 2024/05/31 07:22:53 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1639 2024/06/07 19:12:23 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -305,9 +305,9 @@ my $stem_extensions = {
 	'uqm-remix4' => 'uqm-remix',
 	'py-responses' => 'py3-responses',
 	'py-pudb' => 'py3-pudb',
-        'py-keyring' => 'py3-keyring',
-        'py-secretstorage' => 'py3-secretstorage',
-        'rgain' => 'rgain3',
+	'py-keyring' => 'py3-keyring',
+	'py-secretstorage' => 'py3-secretstorage',
+	'rgain' => 'rgain3',
 	'py-urwid' => 'py3-urwid',
 	'py-ply' => 'py3-ply',
 	'py-dtfabric' => 'py3-dtfabric',
@@ -802,7 +802,7 @@ my $stem_extensions = {
 	'py-sortedcontainers' => 'py3-sortedcontainers',
 	'py-future' => 'py3-future',
 	'py-capstone' => 'py3-capstone',
-        'iosevka-fixed-slab' => 'iosevka-slab',
+	'iosevka-fixed-slab' => 'iosevka-slab',
 	'py-six' => 'py3-six',
 	'py-binaryornot' => 'py3-binaryornot',
 	'py-cython' => 'py3-cython',
