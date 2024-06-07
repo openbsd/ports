@@ -1,9 +1,21 @@
 Remove sys-proctable dependency, only needed on Windows.
 
+Remove pessimistic version restriction on nokogiri dependency.
+
 Index: .metadata
 --- .metadata.orig
 +++ .metadata
-@@ -176,7 +176,7 @@ dependencies:
+@@ -51,9 +51,6 @@ dependencies:
+     - - ">="
+       - !ruby/object:Gem::Version
+         version: 1.11.4
+-    - - "<"
+-      - !ruby/object:Gem::Version
+-        version: 1.16.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+@@ -176,7 +173,7 @@ dependencies:
      - - "<"
        - !ruby/object:Gem::Version
          version: 1.4.0
