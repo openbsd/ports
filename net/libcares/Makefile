@@ -3,12 +3,13 @@ COMMENT=	asynchronous resolver library
 V=		1.29.0
 DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
+REVISION=	0
 CATEGORIES=	net devel
-SITES=		${HOMEPAGE}download/
+SITES=		https://github.com/c-ares/c-ares/releases/download/cares-${V:S/./_/g}/
 
 SHARED_LIBS +=  cares                3.7      # 2.14.0
 
-HOMEPAGE=	https://c-ares.haxx.se/
+HOMEPAGE=	https://c-ares.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
