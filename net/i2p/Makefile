@@ -2,7 +2,7 @@ COMMENT=	i2p routing protocol
 
 GH_ACCOUNT=	i2p
 GH_PROJECT=	i2p.i2p
-GH_TAGNAME=	i2p-2.3.0
+GH_TAGNAME=	i2p-2.5.1
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	net

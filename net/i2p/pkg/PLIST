@@ -15,6 +15,7 @@ bin/i2prouter
 share/i2p/
 share/i2p/INSTALL-headless.txt
 share/i2p/LICENSE.txt
+share/i2p/blocklist-tor.txt
 share/i2p/blocklist.txt
 share/i2p/certificates/
 share/i2p/certificates/family/
@@ -39,6 +40,7 @@ share/i2p/certificates/plugin/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/plugin/str4d_at_mail.i2p.crt
 share/i2p/certificates/plugin/zzz-plugin_at_mail.i2p.crt
 share/i2p/certificates/reseed/
+share/i2p/certificates/reseed/admin_at_stormycloud.org.crt
 share/i2p/certificates/reseed/arnavbhatt288_at_mail.i2p.crt
 share/i2p/certificates/reseed/creativecowpat_at_mail.i2p.crt
 share/i2p/certificates/reseed/echelon3_at_mail.i2p.crt
@@ -323,6 +325,7 @@ share/i2p/eepsite/docroot/help/index_fr.html
 share/i2p/eepsite/docroot/help/index_hu.html
 share/i2p/eepsite/docroot/help/index_in.html
 share/i2p/eepsite/docroot/help/index_it.html
+share/i2p/eepsite/docroot/help/index_ja.html
 share/i2p/eepsite/docroot/help/index_nl.html
 share/i2p/eepsite/docroot/help/index_pl.html
 share/i2p/eepsite/docroot/help/index_pt.html
