@@ -568,6 +568,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/iot_data.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kinesis.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}startlivetail.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/${MODPY_PYCACHE}startlivetail.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/logs/startlivetail.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/mturk.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworks.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworkscm.py
