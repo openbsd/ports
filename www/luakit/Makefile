@@ -1,8 +1,7 @@
 COMMENT =	fast, small, webkit based browser written in lua
 
-V =		2.3.3
+V =		2.3.6
 DISTNAME =	luakit-${V}
-REVISION =	4
 
 EPOCH =		1
 
@@ -21,10 +20,10 @@ USE_GMAKE =		Yes
 
 COMPILER =	base-clang ports-gcc
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB =  atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += intl javascriptcoregtk-4.0 pango-1.0 pangocairo-1.0 pthread
-WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0
+WANTLIB += intl javascriptcoregtk-4.1 pango-1.0 pangocairo-1.0 pthread
+WANTLIB += soup-3.0 sqlite3 webkit2gtk-4.1
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mluajit}
@@ -49,7 +48,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		net/luasocket \
 		textproc/lua-markdown
 
-LIB_DEPENDS +=	www/webkitgtk4
+LIB_DEPENDS +=	www/webkitgtk4,webkitgtk41
 
 TEST_DEPENDS =	devel/luassert \
 		devel/luacheck
