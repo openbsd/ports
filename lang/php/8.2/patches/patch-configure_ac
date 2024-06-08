@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1159,16 +1159,16 @@ case $php_sapi_module in
+@@ -1162,16 +1162,16 @@ case $php_sapi_module in
      fi
      case $with_pic in
        yes)
@@ -21,7 +21,7 @@ Index: configure.ac
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
        enable_shared=no
      fi
-@@ -1257,6 +1257,7 @@ AS_CASE([$host_cpu],
+@@ -1260,6 +1260,7 @@ AS_CASE([$host_cpu],
    [s390x*], [fiber_cpu="s390x"],
    [mips64*], [fiber_cpu="mips64"],
    [mips*], [fiber_cpu="mips32"],
@@ -29,7 +29,7 @@ Index: configure.ac
    [fiber_cpu="unknown"]
  )
  
-@@ -1278,6 +1279,7 @@ AS_CASE([$fiber_cpu],
+@@ -1281,6 +1282,7 @@ AS_CASE([$fiber_cpu],
    [s390x], [fiber_asm_file_prefix="s390x_sysv"],
    [mips64], [fiber_asm_file_prefix="mips64_n64"],
    [mips32], [fiber_asm_file_prefix="mips32_o32"],
@@ -37,7 +37,7 @@ Index: configure.ac
    [fiber_asm_file_prefix="unknown"]
  )
  
-@@ -1424,7 +1426,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1427,7 +1429,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
