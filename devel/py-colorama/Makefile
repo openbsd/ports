@@ -2,10 +2,9 @@
 
 COMMENT=		print colored terminal text from Python apps
 
-MODPY_EGG_VERSION=	0.4.4
+MODPY_EGG_VERSION=	0.4.6
 DISTNAME=		colorama-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
 
 CATEGORIES=		devel
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		hatchling
 
 FLAVORS=		python3
 FLAVOR=			python3
