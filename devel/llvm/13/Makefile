@@ -6,7 +6,8 @@ REVISION-main =		29
 REVISION-lldb =		8
 REVISION-python =	6
 
-FLAVOR=		no_lldb
+MULTI_PACKAGES =	-main -python
+PROJECTS =		clang;lld
 
 SHARED_LIBS +=	LTO		6.0 \
 		Remarks		0.0 \
