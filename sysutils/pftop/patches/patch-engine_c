@@ -1,5 +1,6 @@
---- engine.c.orig	Wed Nov  7 06:35:44 2007
-+++ engine.c	Sat Nov 21 01:51:04 2015
+Index: engine.c
+--- engine.c.orig
++++ engine.c
 @@ -34,11 +34,11 @@
  #endif
  
@@ -15,7 +16,15 @@
  };
  
  int delay = 5;
-@@ -510,7 +510,7 @@ add_view(field_view *fv)
+@@ -105,7 +105,6 @@ tb_end(void)
+ 
+ int
+ tbprintf(char *format, ...)
+-	GCC_PRINTFLIKE(1,2)       /* defined in curses.h */
+ {
+ 	int len;
+ 	va_list arg;
+@@ -510,7 +509,7 @@ add_view(field_view *fv)
  		return;
  
  	ent->view = fv;
@@ -24,7 +33,7 @@
  
  	if (curr_view == NULL)
  		set_curr_view(ent);
-@@ -526,7 +526,7 @@ set_view(char *opt)
+@@ -526,7 +525,7 @@ set_view(char *opt)
  	if (opt == NULL || (len = strlen(opt)) == 0)
  		return 1;
  
@@ -33,7 +42,7 @@
  		v = ve->view;
  		if (strncasecmp(opt, v->name, len) == 0) {
  			if (vm)
-@@ -548,7 +548,7 @@ foreach_view(void (*callback)(field_view *))
+@@ -548,7 +547,7 @@ foreach_view(void (*callback)(field_view *))
  {
  	struct view_ent *ve;
  
@@ -42,7 +51,7 @@
  		callback(ve->view);
  	}
  }
-@@ -560,7 +560,7 @@ set_view_hotkey(int ch)
+@@ -560,7 +559,7 @@ set_view_hotkey(int ch)
  	field_view *v;
  	int key = tolower(ch);
  
@@ -51,7 +60,7 @@
  		v = ve->view;
  		if (key == v->hotkey) {
  			set_curr_view(ve);
-@@ -576,12 +576,12 @@ next_view(void)
+@@ -576,12 +575,12 @@ next_view(void)
  {
  	struct view_ent *ve;
  
@@ -68,7 +77,7 @@
  
  	set_curr_view(ve);
  }
-@@ -591,12 +591,12 @@ prev_view(void)
+@@ -591,12 +590,12 @@ prev_view(void)
  {
  	struct view_ent *ve;
  
@@ -85,13 +94,21 @@
  
  	set_curr_view(ve);
  }
-@@ -808,6 +808,9 @@ void
- next_order(void)
+@@ -809,6 +808,9 @@ next_order(void)
  {
  	order_type *o, *oc;
-+
+ 
 +	if (curr_view->mgr->order_list == NULL)
 +		return;
- 
++
  	oc = curr_view->mgr->order_curr;
  
+ 	for (o = curr_view->mgr->order_list; o->name != NULL; o++) {
+@@ -987,7 +989,6 @@ message_set(const char *msg) {
+ 
+ int
+ msgprintf(char *format, ...)
+-	GCC_PRINTFLIKE(1,2)       /* defined in curses.h */
+ {
+ 	static char buf[1024];
+ 	int len;
