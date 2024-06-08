@@ -17,6 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto m pcap sqlite3 ssl z
 
 COMPILER=		base-clang ports-gcc
 
+BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS=		databases/sqlite3
 
 # a test for cairo has a side effect which brokes pcap test
