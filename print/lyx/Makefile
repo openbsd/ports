@@ -1,24 +1,21 @@
-PORTROACH=	skipv:2.3.x
-
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.3.6.1
-REVISION=	5
+DISTNAME=	lyx-2.4.0
 
 CATEGORIES=	print editors
 
 HOMEPAGE=	https://www.lyx.org/
 
-SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.3.x/ \
-		http://ftp.icm.edu.pl/packages/lyx/stable/ \
-		http://mirror.ufs.ac.za/applications/lyx/stable/2.3.x/ \
-		ftp://ftp.lyx.org/pub/lyx/stable/2.3.x/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.3.x/ \
-		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.3.x/
+SITES=		https://ftp.lip6.fr/pub/lyx/stable/2.4.x/ \
+		http://ftp.icm.edu.pl/packages/lyx/stable/2.4.x/ \
+		http://mirror.ufs.ac.za/applications/lyx/stable/2.4.x/ \
+		ftp://ftp.lyx.org/pub/lyx/stable/2.4.x/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/stable/2.4.x/ \
+		ftp://ftp.u-aizu.ac.jp/pub/tex/lyx/stable/2.4.x/
 
 WANTLIB+= ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Svg
-WANTLIB+= Qt5Widgets Qt5X11Extras aspell c enchant-2 hunspell-1.7
-WANTLIB+= iconv m magic xcb z
+WANTLIB+= Qt5Widgets Qt5X11Extras aspell c enchant-2 execinfo
+WANTLIB+= hunspell-1.7 iconv m magic xcb z
 
 COMPILER=	base-clang ports-gcc
 

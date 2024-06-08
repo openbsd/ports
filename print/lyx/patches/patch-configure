@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -17170,7 +17170,7 @@ fi
+ lyx_win_res=false;
+ case ${host} in
+     *mingw*|*cygwin*) lyx_win_res=true;;
+-    *freebsd*) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for library containing backtrace_symbols" >&5
++    *freebsd*|*openbsd*) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for library containing backtrace_symbols" >&5
+ printf %s "checking for library containing backtrace_symbols... " >&6; }
+ if test ${ac_cv_search_backtrace_symbols+y}
+ then :

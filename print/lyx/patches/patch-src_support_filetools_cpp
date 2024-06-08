@@ -1,0 +1,14 @@
+for WEXITSTATUS
+
+Index: src/support/filetools.cpp
+--- src/support/filetools.cpp.orig
++++ src/support/filetools.cpp
+@@ -69,6 +69,8 @@
+ #if defined (_WIN32)
+ #include <io.h>
+ #include <windows.h>
++#else
++#include <sys/wait.h>
+ #endif
+ 
+ using namespace std;
