@@ -18,6 +18,9 @@ share/postgresql/extension/timescaledb--2.13.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.13.1--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.14.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.14.1--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.14.2--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.15.0--${GH_TAGNAME}.sql
+share/postgresql/extension/timescaledb--2.15.1--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.2.0--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.2.1--${GH_TAGNAME}.sql
@@ -41,3 +44,5 @@ share/postgresql/extension/timescaledb--2.9.1--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.9.2--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb--2.9.3--${GH_TAGNAME}.sql
 share/postgresql/extension/timescaledb.control
+share/timescaledb/
+share/timescaledb/2.15.X-fix_hypertable_foreign_keys.sql
