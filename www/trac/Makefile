@@ -1,7 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.6
-REVISION=	1
+REVISION=	2
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
@@ -26,6 +26,7 @@ COMMON_DEPS=	devel/py-babel${MODPY_FLAVOR} \
 
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
+		devel/py-setuptools${MODPY_FLAVOR} \
 		textproc/py-docutils${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR}
 
