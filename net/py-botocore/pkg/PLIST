@@ -138,12 +138,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/examples-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/acm/2015-12-08/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/alexaforbusiness/2017-11-09/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/2020-08-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/amp/2020-08-01/endpoint-rule-set-1.json
@@ -1235,13 +1229,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/end
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/healthlake/2017-07-01/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/paginators-1.sdk-extras.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/honeycode/2020-03-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iam/2010-05-08/endpoint-rule-set-1.json
@@ -1565,6 +1552,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/location/2020-11-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/logs/2014-03-28/
@@ -1955,6 +1943,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pipes/2015-10-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pipes/2015-10-07/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pipes/2015-10-07/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pipes/2015-10-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pipes/2015-10-07/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/polly/2016-06-10/endpoint-rule-set-1.json
@@ -2443,6 +2432,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/synthetics/2017-10-11/end
 lib/python${MODPY_VERSION}/site-packages/botocore/data/synthetics/2017-10-11/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/synthetics/2017-10-11/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/synthetics/2017-10-11/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/taxsettings/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/textract/2018-06-27/endpoint-rule-set-1.json
