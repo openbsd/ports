@@ -1,8 +1,7 @@
 COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
-V =		0.15
+V =		0.16
 DISTNAME =	zutty-$V
-REVISION =	0
 
 CATEGORIES =	x11
 
