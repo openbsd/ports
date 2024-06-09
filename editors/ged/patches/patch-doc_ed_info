@@ -1,5 +1,6 @@
---- doc/ed.info.orig	Tue Jan 10 11:36:14 2017
-+++ doc/ed.info	Sat Jan 14 12:38:50 2017
+Index: doc/ed.info
+--- doc/ed.info.orig
++++ doc/ed.info
 @@ -2,7 +2,7 @@ This is ed.info, produced by makeinfo version 4.13+ fr
  
  INFO-DIR-SECTION Basics
@@ -8,4 +9,4 @@
 +* Ed: (ged).                     The GNU line editor
  END-INFO-DIR-ENTRY
  
-    Copyright (C) 1993, 1994, 2006-2017 Free Software Foundation, Inc.
+    Copyright (C) 1993, 1994, 2006-2024 Free Software Foundation, Inc.

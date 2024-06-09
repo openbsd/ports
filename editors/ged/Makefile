@@ -1,6 +1,6 @@
 COMMENT =		GNU version of standard text editor
 
-V =			1.14.2
+V =			1.20.2
 DISTNAME =		ed-${V}
 PKGNAME =		ged-${V}
 
@@ -21,6 +21,8 @@ EXTRACT_SUFX =		.tar.lz
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--program-prefix=g \
 			CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
+USE_GMAKE =		Yes
 
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
