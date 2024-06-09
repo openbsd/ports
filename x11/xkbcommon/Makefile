@@ -31,6 +31,9 @@ WANTLIB += c wayland-client xcb xcb-xkb xml2
 BUILD_DEPENDS=		devel/bison \
 			wayland/wayland-protocols
 
+# used by some tests
+BUILD_DEPENDS +=	textproc/icu4c
+
 LIB_DEPENDS=		textproc/libxml \
 			wayland/wayland
 
