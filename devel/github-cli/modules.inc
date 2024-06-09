@@ -117,7 +117,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify							 v1.7.0 \
 	github.com/fullstorydev/grpcurl							 v1.8.9 \
 	github.com/fxamacker/cbor/v2							 v2.4.0 \
-	github.com/gabriel-vasile/mimetype						 v1.4.3 \
+	github.com/gabriel-vasile/mimetype						 v1.4.4 \
 	github.com/gdamore/encoding							 v1.0.0 \
 	github.com/gdamore/tcell/v2							 v2.5.4 \
 	github.com/go-chi/chi								 v4.1.2+incompatible \
@@ -377,15 +377,15 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.11.0 \
 	go.uber.org/zap									 v1.27.0 \
 	gocloud.dev									 v0.37.0 \
-	golang.org/x/crypto								 v0.22.0 \
+	golang.org/x/crypto								 v0.23.0 \
 	golang.org/x/exp								 v0.0.0-20231006140011-7918f672742d \
 	golang.org/x/mod								 v0.17.0 \
-	golang.org/x/net								 v0.23.0 \
+	golang.org/x/net								 v0.25.0 \
 	golang.org/x/oauth2								 v0.18.0 \
 	golang.org/x/sync								 v0.6.0 \
-	golang.org/x/sys								 v0.19.0 \
-	golang.org/x/term								 v0.19.0 \
-	golang.org/x/text								 v0.14.0 \
+	golang.org/x/sys								 v0.20.0 \
+	golang.org/x/term								 v0.20.0 \
+	golang.org/x/text								 v0.15.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.16.1 \
 	golang.org/x/xerrors								 v0.0.0-20231012003039-104605ab7028 \
@@ -477,6 +477,7 @@ MODGO_MODFILES =	\
 	github.com/fatih/color								 v1.7.0 \
 	github.com/felixge/httpsnoop							 v1.0.3 \
 	github.com/fsnotify/fsnotify							 v1.4.9 \
+	github.com/gabriel-vasile/mimetype						 v1.4.3 \
 	github.com/gdamore/tcell/v2							 v2.4.1-0.20210905002822-f057f0a857a1 \
 	github.com/go-jose/go-jose/v3							 v3.0.0 \
 	github.com/go-jose/go-jose/v3							 v3.0.1 \
@@ -624,6 +625,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.19.0 \
 	golang.org/x/crypto								 v0.20.0 \
 	golang.org/x/crypto								 v0.21.0 \
+	golang.org/x/crypto								 v0.22.0 \
 	golang.org/x/crypto								 v0.8.0 \
 	golang.org/x/exp								 v0.0.0-20230321023759-10a507213a29 \
 	golang.org/x/exp								 v0.0.0-20230905200255-921286631fa9 \
@@ -671,6 +673,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.16.0 \
 	golang.org/x/sys								 v0.17.0 \
 	golang.org/x/sys								 v0.18.0 \
+	golang.org/x/sys								 v0.19.0 \
 	golang.org/x/sys								 v0.3.0 \
 	golang.org/x/sys								 v0.4.0 \
 	golang.org/x/sys								 v0.5.0 \
@@ -685,9 +688,11 @@ MODGO_MODFILES =	\
 	golang.org/x/term								 v0.15.0 \
 	golang.org/x/term								 v0.17.0 \
 	golang.org/x/term								 v0.18.0 \
+	golang.org/x/term								 v0.19.0 \
 	golang.org/x/text								 v0.10.0 \
 	golang.org/x/text								 v0.12.0 \
 	golang.org/x/text								 v0.13.0 \
+	golang.org/x/text								 v0.14.0 \
 	golang.org/x/text								 v0.3.0 \
 	golang.org/x/text								 v0.3.3 \
 	golang.org/x/text								 v0.3.7 \

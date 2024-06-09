@@ -178,6 +178,7 @@
 @man man/man1/gh-ssh-key.1
 @man man/man1/gh-status.1
 @man man/man1/gh-variable-delete.1
+@man man/man1/gh-variable-get.1
 @man man/man1/gh-variable-list.1
 @man man/man1/gh-variable-set.1
 @man man/man1/gh-variable.1
