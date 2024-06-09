@@ -524,6 +524,8 @@ SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = tcaxcq3Bh4zY5pC6kSOwp
 SHA256 (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = DP5IbNY9Re1MtYY/8cvRSxXkuTgNy/gP8mmRtASfT98=
 SHA256 (go_modules/github.com/gohugoio/go-i18n/v2/@v/v2.1.3-0.20230805085216-e63c13218d0e.mod) = C8k1d7JcYVa23ww6IXqiysFdOK3hSwUc5R+/Y7+c+7w=
 SHA256 (go_modules/github.com/gohugoio/go-i18n/v2/@v/v2.1.3-0.20230805085216-e63c13218d0e.zip) = OA61F3YhPZzivMFOCIJQ1blWqvnke7tdGvCBcAeesiI=
+SHA256 (go_modules/github.com/gohugoio/httpcache/@v/v0.7.0.mod) = M23D7Laf/XE2gmJnaacWTbaXV9xYrGPa+VJgM3/VoVg=
+SHA256 (go_modules/github.com/gohugoio/httpcache/@v/v0.7.0.zip) = mE1/5ExnzV9mRtyMB7gcizAowSeGIPDd3KG8hajQZx8=
 SHA256 (go_modules/github.com/gohugoio/hugo-goldmark-extensions/extras/@v/v0.1.0.mod) = XcACLyPbD9vFu4aUM8Pk3QMfIj3ji+jRcJTocrts2pk=
 SHA256 (go_modules/github.com/gohugoio/hugo-goldmark-extensions/extras/@v/v0.1.0.zip) = kJpLaB1w2uauw4H6/UHia2k5cNw26XL6UycDFQmVALc=
 SHA256 (go_modules/github.com/gohugoio/hugo-goldmark-extensions/passthrough/@v/v0.2.0.mod) = j44FCDzaj3kvjyLLKzJqVcKVAFYxCg9w1HeFJmNSEao=
@@ -1293,7 +1295,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.126.2.zip) = vScr54XKQmn/g2+Jxh5Vc4/TrE58OCkA7OoOFg969Mk=
+SHA256 (hugo-v0.127.0.zip) = Nhl6JZWhUnMczvyhPghj4m7wDz/CYujNvkHOKTi/Z10=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.zip) = 309004
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.mod) = 1308
@@ -1820,6 +1822,8 @@ SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.mod) = 30
 SIZE (go_modules/github.com/gobwas/glob/@v/v0.2.3.zip) = 50402
 SIZE (go_modules/github.com/gohugoio/go-i18n/v2/@v/v2.1.3-0.20230805085216-e63c13218d0e.mod) = 146
 SIZE (go_modules/github.com/gohugoio/go-i18n/v2/@v/v2.1.3-0.20230805085216-e63c13218d0e.zip) = 59409
+SIZE (go_modules/github.com/gohugoio/httpcache/@v/v0.7.0.mod) = 283
+SIZE (go_modules/github.com/gohugoio/httpcache/@v/v0.7.0.zip) = 14981
 SIZE (go_modules/github.com/gohugoio/hugo-goldmark-extensions/extras/@v/v0.1.0.mod) = 109
 SIZE (go_modules/github.com/gohugoio/hugo-goldmark-extensions/extras/@v/v0.1.0.zip) = 10871
 SIZE (go_modules/github.com/gohugoio/hugo-goldmark-extensions/passthrough/@v/v0.2.0.mod) = 343
@@ -2589,4 +2593,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.126.2.zip) = 6640487
+SIZE (hugo-v0.127.0.zip) = 6652283
