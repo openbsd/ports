@@ -1,11 +1,10 @@
+@bin bin/INS@cNZDYsSKWm
 @bin bin/glab
 @man man/man1/glab-alias-delete.1
 @man man/man1/glab-alias-list.1
 @man man/man1/glab-alias-set.1
 @man man/man1/glab-alias.1
 @man man/man1/glab-api.1
-@man man/man1/glab-ask-git.1
-@man man/man1/glab-ask.1
 @man man/man1/glab-auth-login.1
 @man man/man1/glab-auth-status.1
 @man man/man1/glab-auth.1
@@ -26,6 +25,7 @@
 @man man/man1/glab-ci-trigger.1
 @man man/man1/glab-ci-view.1
 @man man/man1/glab-ci.1
+@man man/man1/glab-cluster-agent-check_manifest_usage.1
 @man man/man1/glab-cluster-agent-get-token.1
 @man man/man1/glab-cluster-agent-list.1
 @man man/man1/glab-cluster-agent-update-kubeconfig.1
@@ -35,6 +35,8 @@
 @man man/man1/glab-config-get.1
 @man man/man1/glab-config-set.1
 @man man/man1/glab-config.1
+@man man/man1/glab-duo-ask.1
+@man man/man1/glab-duo.1
 @man man/man1/glab-incident-close.1
 @man man/man1/glab-incident-list.1
 @man man/man1/glab-incident-note.1
