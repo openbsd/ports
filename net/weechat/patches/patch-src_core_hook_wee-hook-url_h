@@ -1,6 +1,6 @@
-Index: src/core/hook/wee-hook-url.h
---- src/core/hook/wee-hook-url.h.orig
-+++ src/core/hook/wee-hook-url.h
+Index: src/core/hook/hook-url.h
+--- src/core/hook/hook-url.h.orig
++++ src/core/hook/hook-url.h
 @@ -20,6 +20,8 @@
  #ifndef WEECHAT_HOOK_URL_H
  #define WEECHAT_HOOK_URL_H
