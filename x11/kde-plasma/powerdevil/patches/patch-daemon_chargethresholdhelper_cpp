@@ -1,0 +1,181 @@
+https://invent.kde.org/plasma/powerdevil/-/merge_requests/378
+
+Index: daemon/chargethresholdhelper.cpp
+--- daemon/chargethresholdhelper.cpp.orig
++++ daemon/chargethresholdhelper.cpp
+@@ -1,5 +1,6 @@
+ /*
+  * SPDX-FileCopyrightText: 2020 Kai Uwe Broulik <kde@broulik.de>
++ * SPDX-FileCopyrightText: 2023 Fabian Arndt <fabian.arndt@root-core.net>
+  *
+  * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+  */
+@@ -8,6 +9,11 @@
+ 
+ #include <powerdevil_debug.h>
+ 
++#if defined(__OpenBSD__)
++  #include <sys/types.h>
++  #include <sys/sysctl.h>
++#endif
++
+ #include <KAuth/HelperSupport>
+ 
+ #include <algorithm>
+@@ -16,6 +22,7 @@
+ #include <QFile>
+ 
+ static const QString s_powerSupplySysFsPath = QStringLiteral("/sys/class/power_supply");
++static const QString s_conservationModeSysFsPath = QStringLiteral("/sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode");
+ 
+ static const QString s_chargeStartThreshold = QStringLiteral("charge_control_start_threshold");
+ static const QString s_chargeEndThreshold = QStringLiteral("charge_control_end_threshold");
+@@ -107,10 +114,90 @@ static bool setThresholds(const QString &which, int th
+     return true;
+ }
+ 
++#if defined(__OpenBSD__)
++static bool isThresholdSupported()
++{
++    int mode;
++    size_t len = sizeof(mode);
++    // If HW_BATTERY_CHARGEMODE is present there is hardware support.
++    int mib[] = {CTL_HW, HW_BATTERY, HW_BATTERY_CHARGEMODE};
++    return (sysctl(mib, 3, &mode, &len, NULL, 0) != -1);
++}
++
++static int getBatteryCharge(const int type)
++{
++    int percentage = -1;
++    size_t len = sizeof(percentage);
++    int mib[] = {CTL_HW, HW_BATTERY, type};
++    sysctl(mib, 3, &percentage, &len, NULL, 0);
++    return percentage;
++}
++
++static bool setBatteryCharge(const int type, int percentage)
++{
++    size_t len = sizeof(percentage);
++    int mib[] = {CTL_HW, HW_BATTERY, type};
++    return (sysctl(mib, 3, NULL, 0, &percentage, len) != -1);
++}
++
+ ActionReply ChargeThresholdHelper::getthreshold(const QVariantMap &args)
+ {
+     Q_UNUSED(args);
+ 
++    if (!isThresholdSupported()) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Control battery charging is not supported by the kernel for this hardware"));
++        return reply;
++    }
++
++    const int startThreshold = getBatteryCharge(HW_BATTERY_CHARGESTART);
++    const int stopThreshold = getBatteryCharge(HW_BATTERY_CHARGESTOP);
++
++    ActionReply reply;
++    reply.setData({
++        {QStringLiteral("chargeStartThreshold"), startThreshold},
++        {QStringLiteral("chargeStopThreshold"), stopThreshold},
++    });
++    return reply;
++}
++
++ActionReply ChargeThresholdHelper::setthreshold(const QVariantMap &args)
++{
++    bool hasStartThreshold;
++    const int startThreshold = args.value(QStringLiteral("chargeStartThreshold"), -1).toInt(&hasStartThreshold);
++    hasStartThreshold &= startThreshold != -1;
++
++    bool hasStopThreshold;
++    const int stopThreshold = args.value(QStringLiteral("chargeStopThreshold"), -1).toInt(&hasStopThreshold);
++    hasStopThreshold &= stopThreshold != -1;
++
++    if ((hasStartThreshold && (startThreshold < 0 || startThreshold > 100)) || (hasStopThreshold && (stopThreshold < 0 || stopThreshold > 100))
++        || (hasStartThreshold && hasStopThreshold && startThreshold > stopThreshold) || (!hasStartThreshold && !hasStopThreshold)) {
++        auto reply = ActionReply::HelperErrorReply(); // is there an "invalid arguments" error?
++        reply.setErrorDescription(QStringLiteral("Invalid thresholds provided"));
++        return reply;
++    }
++    if (hasStartThreshold && !(setBatteryCharge(HW_BATTERY_CHARGESTART, startThreshold)
++        || setBatteryCharge(HW_BATTERY_CHARGESTART, startThreshold))) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Failed to write start charge threshold"));
++        return reply;
++    }
++
++    if (hasStopThreshold && !(setBatteryCharge(HW_BATTERY_CHARGESTOP, stopThreshold)
++        || setBatteryCharge(HW_BATTERY_CHARGESTOP, stopThreshold))) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Failed to write stop charge threshold"));
++        return reply;
++    }
++
++    return ActionReply();
++}
++#else // Linux and friends
++ActionReply ChargeThresholdHelper::getthreshold(const QVariantMap &args)
++{
++    Q_UNUSED(args);
++
+     auto startThresholds = getThresholds(s_chargeStartThreshold);
+     auto stopThresholds = getThresholds(s_chargeEndThreshold);
+ 
+@@ -174,6 +261,57 @@ ActionReply ChargeThresholdHelper::setthreshold(const 
+ 
+     return ActionReply();
+ }
++
++// This handles Lenovo's "battery conservation mode" that limits the threshold to a fixed value
++// This value differs from model to model (most 55-60%, others ~80%) and is unknown (last checked in Kernel 6.3)
++ActionReply ChargeThresholdHelper::getconservationmode(const QVariantMap &args)
++{
++    Q_UNUSED(args);
++
++    QFile file(s_conservationModeSysFsPath);
++    if (!file.open(QIODevice::ReadOnly)) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Battery conservation mode is not supported"));
++        return reply;
++    }
++
++    int state = 0;
++    QTextStream stream(&file);
++    stream >> state;
++
++    if (state < 0 || state > 1) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Battery conservation mode is in an invalid state"));
++        return reply;
++    }
++
++    ActionReply reply;
++    reply.setData({
++        {QStringLiteral("batteryConservationModeEnabled"), !!state}
++    });
++    return reply;
++}
++
++ActionReply ChargeThresholdHelper::setconservationmode(const QVariantMap &args)
++{
++    const bool enabled = args.value(QStringLiteral("batteryConservationModeEnabled"), 0).toBool();
++    QFile file(s_conservationModeSysFsPath);
++
++    if (!file.open(QIODevice::WriteOnly)) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Failed to open battery conservation mode file"));
++        return reply;
++    }
++
++    if (file.write(QByteArray::number(enabled)) == -1) {
++        auto reply = ActionReply::HelperErrorReply();
++        reply.setErrorDescription(QStringLiteral("Failed to set battery conservation mode"));
++        return reply;
++    }
++
++    return ActionReply();
++}
++#endif
+ 
+ KAUTH_HELPER_MAIN("org.kde.powerdevil.chargethresholdhelper", ChargeThresholdHelper)
+ 
