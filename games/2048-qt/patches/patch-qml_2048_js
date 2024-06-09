@@ -1,0 +1,14 @@
+https://github.com/OpenOrphanage/2048-Qt/pull/19
+
+Index: qml/2048.js
+--- qml/2048.js.orig
++++ qml/2048.js
+@@ -490,7 +490,7 @@ function clearCurrentCellValuesSetting() {
+ 
+ function saveSettings() {
+     if (isDead()) {
+-        clearCurrentCellsSetting();
++        clearCurrentCellValuesSetting();
+     } else {
+         console.log("Saving cell values...");
+         var cells = [];

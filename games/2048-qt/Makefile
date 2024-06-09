@@ -2,7 +2,7 @@
 #DIST_TUPLE =		github	keshavbhatt	2048-qt	3.0	.
 
 COMMENT =		2048 game in Qt
-DIST_TUPLE =		github	xiaoyong	2048-Qt	v0.1.6	.
+DIST_TUPLE =		github	OpenOrphanage	2048-Qt	v0.1.7	.
 CATEGORIES =		games x11
 PKGNAME =		${DISTNAME:L}
 
