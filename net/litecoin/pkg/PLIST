@@ -42,8 +42,6 @@ lib/pkgconfig/libunivalue.pc
 @man man/man1/litecoin-tx.1
 @man man/man1/litecoin-wallet.1
 @man man/man1/litecoind.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/litecoin/
 share/bash-completion/completions/litecoin/bitcoin-cli.bash-completion
 share/bash-completion/completions/litecoin/bitcoin-tx.bash-completion
