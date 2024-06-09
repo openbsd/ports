@@ -1,7 +1,7 @@
 COMMENT =	background setter for Wayland
 
-DISTNAME =	swaybg-1.2.0
-SITES =		https://github.com/swaywm/swaybg/releases/download/v1.2.0/
+DISTNAME =	swaybg-1.2.1
+SITES =		https://github.com/swaywm/swaybg/releases/download/v1.2.1/
 
 CATEGORIES =	wayland
 
