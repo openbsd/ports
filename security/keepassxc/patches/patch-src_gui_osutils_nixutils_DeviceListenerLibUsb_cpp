@@ -1,0 +1,20 @@
+https://github.com/keepassxreboot/keepassxc/pull/10872
+
+Index: src/gui/osutils/nixutils/DeviceListenerLibUsb.cpp
+--- src/gui/osutils/nixutils/DeviceListenerLibUsb.cpp.orig
++++ src/gui/osutils/nixutils/DeviceListenerLibUsb.cpp
+@@ -94,11 +94,12 @@ int DeviceListenerLibUsb::registerHotplugCallback(bool
+         // Avoid race conditions
+         m_usbEvents.waitForFinished();
+     }
+-    if (!m_usbEvents.isRunning()) {
++    if (handle > 0 && !m_usbEvents.isRunning()) {
+         m_completed = false;
+         m_usbEvents = QtConcurrent::run(handleUsbEvents, static_cast<libusb_context*>(m_ctx), &m_completed);
+     }
+-    m_callbackHandles.insert(handle);
++    if (handle > 0)
++        m_callbackHandles.insert(handle);
+     return handle;
+ }
+ 
