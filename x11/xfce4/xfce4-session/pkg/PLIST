@@ -39,6 +39,15 @@ share/icons/hicolor/48x48/actions/xfsm-shutdown.png
 share/icons/hicolor/48x48/actions/xfsm-suspend.png
 share/icons/hicolor/48x48/actions/xfsm-switch-user.png
 share/icons/hicolor/48x48/apps/org.xfce.session.png
+share/icons/hicolor/64x64/apps/org.xfce.session.png
+share/icons/hicolor/96x96/actions/xfsm-hibernate.png
+share/icons/hicolor/96x96/actions/xfsm-lock.png
+share/icons/hicolor/96x96/actions/xfsm-logout.png
+share/icons/hicolor/96x96/actions/xfsm-reboot.png
+share/icons/hicolor/96x96/actions/xfsm-shutdown.png
+share/icons/hicolor/96x96/actions/xfsm-suspend.png
+share/icons/hicolor/96x96/actions/xfsm-switch-user.png
+share/icons/hicolor/96x96/apps/org.xfce.session.png
 share/icons/hicolor/scalable/apps/org.xfce.session.svg
 share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
@@ -62,8 +71,6 @@ share/locale/eo/LC_MESSAGES/xfce4-session.mo
 share/locale/es/LC_MESSAGES/xfce4-session.mo
 share/locale/et/LC_MESSAGES/xfce4-session.mo
 share/locale/eu/LC_MESSAGES/xfce4-session.mo
-share/locale/fa_IR/
-share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/xfce4-session.mo
 share/locale/fi/LC_MESSAGES/xfce4-session.mo
 share/locale/fr/LC_MESSAGES/xfce4-session.mo
@@ -112,6 +119,8 @@ share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-session.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
 share/polkit-1/actions/org.xfce.session.policy
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/xfce-portals.conf
 share/xsessions/
 share/xsessions/xfce.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
