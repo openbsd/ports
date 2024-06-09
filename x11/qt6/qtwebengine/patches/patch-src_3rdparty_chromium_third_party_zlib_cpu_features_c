@@ -45,7 +45,7 @@ Index: src/3rdparty/chromium/third_party/zlib/cpu_features.c
 +    if (ID_AA64ISAR0_AES(cpu_id) >= ID_AA64ISAR0_AES_PMULL)
 +        arm_cpu_enable_pmull = 1;
 +
-+    if (ID_AA64ISAR0_AES(cpu_id) >= ID_AA64ISAR0_CRC32_BASE)
++    if (ID_AA64ISAR0_CRC32(cpu_id) >= ID_AA64ISAR0_CRC32_BASE)
 +        arm_cpu_enable_crc32 = 1;
  #elif defined(ARMV8_OS_FUCHSIA)
      uint32_t features;
