@@ -1,7 +1,7 @@
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor OpenBGPd peers
-DISTNAME=		check_openbgpd-1.10.1
+DISTNAME=		check_openbgpd-1.11
 CATEGORIES=		sysutils net
 
 MAINTAINER=		Andrew Hewus Fresh <afresh1@openbsd.org>
