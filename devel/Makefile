@@ -1684,6 +1684,8 @@
      SUBDIR += py-txaio,python3
      SUBDIR += py-typeguard,python3
      SUBDIR += py-typer,python3
+     SUBDIR += py-types-psutil,python3
+     SUBDIR += py-types-setuptools,python3
      SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal,python3
