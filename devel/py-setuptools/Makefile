@@ -1,5 +1,6 @@
 COMMENT=	simplified packaging system for Python modules
 
+# py-types-setuptools should have a matching version
 MODPY_EGG_VERSION=	68.0.0
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
