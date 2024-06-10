@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v26.1
+GH_TAGNAME =		v27.0
 
 SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
@@ -42,7 +42,7 @@ CONFIGURE_ARGS +=	--with-incompatible-bdb \
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4"
 
-CXXFLAGS +=		-std=c++17
+CXXFLAGS +=		-std=c++20
 
 MAKE_FLAGS =		CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 

@@ -3,11 +3,11 @@ We already uses PIE as default. Unbreak with lld
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -990,7 +990,6 @@ if test "$use_hardening" != "no"; then
+@@ -946,7 +946,6 @@ if test "$use_hardening" != "no"; then
    AX_CHECK_LINK_FLAG([-Wl,-z,relro], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"], [], [$LDFLAG_WERROR])
    AX_CHECK_LINK_FLAG([-Wl,-z,now], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"], [], [$LDFLAG_WERROR])
    AX_CHECK_LINK_FLAG([-Wl,-z,separate-code], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,separate-code"], [], [$LDFLAG_WERROR])
 -  AX_CHECK_LINK_FLAG([-fPIE -pie], [PIE_FLAGS="-fPIE"; HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"], [], [$CXXFLAG_WERROR])
+ fi
  
-   case $host in
-     *mingw*)
+ dnl These flags are specific to ld64, and may cause issues with other linkers.
