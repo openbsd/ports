@@ -23,7 +23,6 @@
      SUBDIR += resiprocate
      SUBDIR += siproxd
      SUBDIR += sngrep
-     SUBDIR += sofia-sip
      SUBDIR += spandsp
      SUBDIR += stuntman
 
