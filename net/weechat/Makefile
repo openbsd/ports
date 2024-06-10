@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.3.1
+V=		4.3.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -12,11 +12,6 @@ PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
-REVISION-lua=	0
-REVISION-main=	0
-REVISION-python=0
-REVISION-ruby=	0
-REVISION-tcl=	0
 
 CATEGORIES=	net
 
