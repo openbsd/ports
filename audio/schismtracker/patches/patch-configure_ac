@@ -4,13 +4,15 @@ Prevent calling Git to obtain date of the last commit, and hardcode
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -22,8 +22,7 @@ dnl along with this program; if not, write to the Free
- dnl Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+@@ -23,9 +23,9 @@ dnl Foundation, Inc., 59 Temple Place, Suite 330, Bost
  
  dnl PACKAGE_VERSION will be either "" if not using git, or date of the last git commit in the form YYYYMMDD
--m4_define([last_git_commit], patsubst(m4_esyscmd([git log -n 1 --date=short --format=format:%cd]), [[^0-9]]))
--AC_INIT([schismtracker],[last_git_commit])
-+AC_INIT([schismtracker],[20240523])
+ m4_define([last_git_commit], patsubst(m4_esyscmd([git log -n 1 --date=short --format=format:%cd]), [[^0-9]]))
+-AC_INIT([schismtracker], [last_git_commit])
++AC_INIT([schismtracker], [20240609])
+ 
+-last_commit_date=[last_git_commit]
++last_commit_date=[20240609]
  
  AC_CONFIG_SRCDIR([schism/main.c])
  
