@@ -2,6 +2,7 @@ COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 
 V =			0.96.0
+REVISION-main=		0
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
@@ -20,9 +21,11 @@ MAINTAINER=		Michael <michi+openbsd@dataswamp.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
-WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg
-WANTLIB += kvm m png pthread tiff xcb z lzma zstd
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 XRes Xext Xft Xinerama
+WANTLIB += Xmu Xpm Xrandr Xrender Xt c expat ffi fontconfig freetype
+WANTLIB += fribidi gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 harfbuzz iconv intl jpeg kvm lzma m pango-1.0
+WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre2-8 png tiff xcb z zstd
 
 SITES=	https://github.com/window-maker/wmaker/releases/download/wmaker-${V}/
 
@@ -48,9 +51,11 @@ MULTI_PACKAGES=		-main -lang
 
 BUILD_DEPENDS=		devel/gettext,-tools
 LIB_DEPENDS=		devel/gettext,-runtime \
-			graphics/tiff \
+			devel/pango \
+			graphics/giflib \
+			graphics/graphite2 \
 			graphics/png \
-			graphics/giflib
+			graphics/tiff
 RUN_DEPENDS =		devel/desktop-file-utils
 
 RUN_DEPENDS-lang =	x11/windowmaker>=${V}
