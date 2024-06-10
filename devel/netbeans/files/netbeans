@@ -17,7 +17,7 @@ export JAVA_HOME=$(javaPathHelper -h netbeans)
 if [ ! -x "${JAVA_BIN}" ]; then
 	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
 	echo "       Unable to find Java binary ${JAVA_BIN}"
-        exit 1
+	exit 1
 fi
 
 # Check if 'netbeans' executable can be found
@@ -28,8 +28,8 @@ if [ ! -x "${NETBEANS_HOME}/bin/netbeans" ]; then
 fi
 
 xm_log() {
-	echo -n "$@\nDo you want to run PyCharm anyway?\n\
-(If you don't increase these limits, PyCharm might fail to work properly.)" | \
+	echo -n "$@\nDo you want to run netbeans anyway?\n\
+(If you don't increase these limits, netbeans might fail to work properly.)" | \
 		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
 }
 
