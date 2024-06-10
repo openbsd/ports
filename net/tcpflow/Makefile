@@ -3,7 +3,7 @@ COMMENT=		tool for capturing data from TCP connections
 V=			1.6.1
 DISTNAME=		tcpflow-${V}
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 SITES=			https://github.com/simsong/tcpflow/releases/download/tcpflow-${V}/
 

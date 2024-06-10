@@ -1,0 +1,12 @@
+https://github.com/simsong/tcpflow/pull/260
+Index: src/tcpflow.cpp
+--- src/tcpflow.cpp.orig
++++ src/tcpflow.cpp
+@@ -632,6 +632,7 @@ int main(int argc, char *argv[])
+ 	    demux.opt.suppress_header = 1;	DEBUG(10) ("packet header dump suppressed");
+ 	    break;
+ 	case 'c':
++            opt_enable_report = false;
+ 	    demux.opt.console_output = true;	DEBUG(10) ("printing packets to console only");
+ 	    break;
+     case '0':
