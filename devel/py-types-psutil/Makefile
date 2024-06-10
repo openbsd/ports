@@ -9,7 +9,7 @@ CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/python/typeshed
 
-# MIT
+# Apache 2.0
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
