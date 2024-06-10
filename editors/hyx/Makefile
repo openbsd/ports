@@ -11,6 +11,9 @@ MAINTAINER =	Thim Cederlund <thim@cederlund.de>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	c
 
 SITES =		https://yx7.cc/code/hyx/
