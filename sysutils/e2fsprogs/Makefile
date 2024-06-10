@@ -16,6 +16,9 @@ PORTROACH=	site:https://github.com/tytso/e2fsprogs/releases/
 # GPLv2/LGPLv2/BSD/MIT
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c execinfo iconv intl pthread
 
 SITES=		${SITE_SOURCEFORGE:=e2fsprogs/}
