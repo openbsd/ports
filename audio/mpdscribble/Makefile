@@ -13,6 +13,9 @@ MAINTAINER =		Steven Mestdagh <steven@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =		base-clang ports-gcc
+
 WANTLIB += c curl gcrypt mpdclient
 WANTLIB += ${COMPILER_LIBCXX} m
 
