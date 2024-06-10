@@ -6,7 +6,7 @@ Listen on localhost only
 ========================
 
 openHAB is configured by sourcing environment variables from /etc/openhab.conf.
-By default openHAB listens on 0.0.0.0 port 8080 (http) and 8443 (https).
+By default, openHAB listens on 0.0.0.0 port 8080 (http) and 8443 (https).
 
 We've opted to default to 127.0.0.1 for obvious security reasons. To restore the
 original behavior make the following change in /etc/openhab.conf:
@@ -21,11 +21,11 @@ Access to serial devices
 openHAB runs as user _openhab. By default, this user will not be able to access
 serial devices. If, for example, you plan to access a locally connected USB
 dongle for Zigbee or Z-Wave, you will need to add the _openhab user to the
-'dialer' group. Further, you will also need to edit /etc/openhab.conf and
-adjust EXTRA_JAVA_OPTS accordingly.
+'dialer' group.
 
-Please note, you will have to find a Java wrapper library for native serial port
-access. The example of passing "-Dgnu.io.rxtx.SerialPorts" uses the rxtx library
-which is currently unsupported on OpenBSD. This may change in the future.
+Please note, you will need a library to access serial ports from Java. The
+example of passing "-Dgnu.io.rxtx.SerialPorts" uses the rxtx library, which is
+currently unsupported on OpenBSD. However, 100% Java implementations such as
+PureJavaComm and jSerialComm are known to work.
 
 Refer to https://www.openhab.org/docs/ for more details.
