@@ -11,6 +11,9 @@ MAINTAINER =		Frederic Cambus <fcambus@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
