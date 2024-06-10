@@ -40,7 +40,8 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}		\
 FLAVORS =		python3
 FLAVOR =		python3
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-hypothesis${MODPY_FLAVOR}
 TEST_ENV =		LC_ALL=en_US.UTF-8
 TESTDIR =		${WRKSRC}/regress
 
