@@ -13,6 +13,9 @@ HOMEPAGE =	https://babelouest.github.io/orcania/
 # LGPL 2.1
 PERMIT_PACKAGE =	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		devel/cmake
 
 CONFIGURE_ARGS =	-DBUILD_BASE64URL:BOOL=OFF
