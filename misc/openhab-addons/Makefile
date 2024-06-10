@@ -1,6 +1,6 @@
 COMMENT=	addons for openHAB
 
-V=		4.1.2
+V=		4.1.3
 DISTNAME=	openhab-addons-${V}
 
 CATEGORIES=	misc
@@ -18,6 +18,8 @@ EXTRACT_ONLY=
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
+
+SUBST_VARS=	V
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/openhab/addons/
