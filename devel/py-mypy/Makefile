@@ -1,10 +1,6 @@
 COMMENT=	optional static type checker for Python
 
-# additional deps needed for 0.980+:
-# "types-psutil", "types-setuptools", "types-typed-ast"
-MODPY_EGG_VERSION=	0.971
-REVISION=	2
-
+MODPY_EGG_VERSION=	1.10.0
 DISTNAME=	mypy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -20,12 +16,13 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR}
-# additional deps
-#MODPY_PYTEST_ARGS= --ignore tests/providers/test_internet.py \
-#		--ignore tests/providers/test_ssn.py
+BUILD_DEPENDS=	devel/py-types-psutil${MODPY_FLAVOR} \
+		devel/py-types-setuptools${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR} \
 		devel/py-mypy-extensions${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
+		devel/py-test-xdist${MODPY_FLAVOR} \
+		sysutils/py-filelock${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3

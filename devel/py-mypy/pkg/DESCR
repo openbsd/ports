@@ -1,8 +1,8 @@
 Mypy is an optional static type checker for Python that aims to combine
 the benefits of dynamic (or "duck") typing and static typing.
 
-Mypy combines the expressive power and convenience of Python with a
-powerful type system and compile-time type checking.
-
-Mypy type-checks standard Python programs; run them using any Python VM
-with basically no runtime overhead.
+Add type annotations to your Python programs, and use mypy to type check
+them. Mypy is essentially a Python linter on steroids, and it can catch
+many programming errors by analyzing your program, without actually
+having to run it. Mypy has a powerful type system with features such as
+type inference, gradual typing, generics and union types.
