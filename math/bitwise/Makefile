@@ -8,6 +8,9 @@ MAINTAINER =	Paco Esteban <paco@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
+COMPILER = 		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=		c curses form ereadline m
 
 LIB_DEPENDS +=		devel/readline
