@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1639 2024/06/07 19:12:23 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1640 2024/06/10 17:10:21 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1960,6 +1960,7 @@ setup_obsolete_reason(
 	3 => 'pg_statsinfo',
 	3 => 'pg_stats_reporter',
 	3 => 'lightly',
+	5 => 'sofia-sip',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
