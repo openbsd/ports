@@ -17,7 +17,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS=	devel/py-types-psutil${MODPY_FLAVOR} \
-		devel/py-types-setuptools${MODPY_FLAVOR}
+		devel/py-types-setuptools${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR} \
+		devel/py-mypy-extensions${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR} \
 		devel/py-mypy-extensions${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
