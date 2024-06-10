@@ -2,19 +2,83 @@
 @bin bin/airdecap-ng
 @bin bin/airdecloak-ng
 @bin bin/airolib-ng
+@bin bin/besside-ng-crawler
+@bin bin/buddy-ng
 @bin bin/ivstools
 @bin bin/kstats
 @bin bin/makeivs-ng
 @bin bin/packetforge-ng
 @bin bin/wpaclean
-lib/libaircrack-crypto-1.3.0.so
 %%x86%%
-%%arm%%
-lib/libaircrack-crypto.la
-lib/libaircrack-crypto.so
-lib/libaircrack-osdep-1.3.0.so
+include/aircrack-ng/
+include/aircrack-ng/adt/
+include/aircrack-ng/adt/avl_tree.h
+include/aircrack-ng/adt/circular_buffer.h
+include/aircrack-ng/adt/circular_queue.h
+include/aircrack-ng/aircrack-ng.h
+include/aircrack-ng/ce-wep/
+include/aircrack-ng/ce-wep/uniqueiv.h
+include/aircrack-ng/ce-wpa/
+include/aircrack-ng/ce-wpa/aligned.h
+include/aircrack-ng/ce-wpa/arch.h
+include/aircrack-ng/ce-wpa/crypto_engine.h
+include/aircrack-ng/ce-wpa/jcommon.h
+include/aircrack-ng/ce-wpa/johnswap.h
+include/aircrack-ng/ce-wpa/memory.h
+include/aircrack-ng/ce-wpa/misc.h
+include/aircrack-ng/ce-wpa/pseudo_intrinsics.h
+include/aircrack-ng/ce-wpa/simd-intrinsics-load-flags.h
+include/aircrack-ng/ce-wpa/simd-intrinsics.h
+include/aircrack-ng/ce-wpa/wpapsk.h
+include/aircrack-ng/compat.h
+include/aircrack-ng/cowpatty/
+include/aircrack-ng/cowpatty/cowpatty.h
+include/aircrack-ng/cpu/
+include/aircrack-ng/cpu/cpuset.h
+include/aircrack-ng/cpu/simd_cpuid.h
+include/aircrack-ng/cpu/trampoline.h
+include/aircrack-ng/crypto/
+include/aircrack-ng/crypto/crctable.h
+include/aircrack-ng/crypto/crypto.h
+include/aircrack-ng/crypto/gcrypt-openssl-wrapper.h
+include/aircrack-ng/crypto/sha1-git.h
+include/aircrack-ng/crypto/sha1-sse2.h
+include/aircrack-ng/defs.h
+include/aircrack-ng/osdep/
+include/aircrack-ng/osdep/byteorder.h
+include/aircrack-ng/osdep/channel.h
+include/aircrack-ng/osdep/common.h
+include/aircrack-ng/osdep/network.h
+include/aircrack-ng/osdep/osdep.h
+include/aircrack-ng/osdep/packed.h
+include/aircrack-ng/ptw/
+include/aircrack-ng/ptw/aircrack-ptw-lib.h
+include/aircrack-ng/support/
+include/aircrack-ng/support/common.h
+include/aircrack-ng/support/communications.h
+include/aircrack-ng/support/crypto_engine_loader.h
+include/aircrack-ng/support/fragments.h
+include/aircrack-ng/support/mcs_index_rates.h
+include/aircrack-ng/support/pcap_local.h
+include/aircrack-ng/support/station.h
+include/aircrack-ng/third-party/
+include/aircrack-ng/third-party/eapol.h
+include/aircrack-ng/third-party/ethernet.h
+include/aircrack-ng/third-party/hashcat.h
+include/aircrack-ng/third-party/ieee80211.h
+include/aircrack-ng/third-party/if_arp.h
+include/aircrack-ng/third-party/if_llc.h
+include/aircrack-ng/tui/
+include/aircrack-ng/tui/console.h
+include/aircrack-ng/utf8/
+include/aircrack-ng/utf8/verifyssid.h
+include/aircrack-ng/version.h
+@so lib/libaircrack-ce-wpa-${API_REV}.so
+lib/libaircrack-ce-wpa.la
+@so lib/libaircrack-ce-wpa.so
+@so lib/libaircrack-osdep-${API_REV}.so
 lib/libaircrack-osdep.la
-lib/libaircrack-osdep.so
+@so lib/libaircrack-osdep.so
 @man man/man1/aircrack-ng.1
 @man man/man1/airdecap-ng.1
 @man man/man1/airdecloak-ng.1
@@ -23,6 +87,7 @@ lib/libaircrack-osdep.so
 @man man/man1/airolib-ng.1
 @comment man/man1/airtun-ng.1
 @man man/man1/besside-ng-crawler.1
+@man man/man1/buddy-ng.1
 @man man/man1/ivstools.1
 @man man/man1/kstats.1
 @man man/man1/makeivs-ng.1
@@ -34,10 +99,21 @@ lib/libaircrack-osdep.so
 @man man/man8/airodump-ng.8
 @man man/man8/airserv-ng.8
 @comment man/man8/airtun-ng.8
+@man man/man8/airventriloquist-ng.8
+@man man/man8/besside-ng.8
+@man man/man8/easside-ng.8
+@man man/man8/tkiptun-ng.8
+@man man/man8/wesside-ng.8
 @bin sbin/airbase-ng
 @comment sbin/airdriver-ng
 @bin sbin/aireplay-ng
 @comment sbin/airmon-ng
 @bin sbin/airodump-ng
+sbin/airodump-ng-oui-update
 @bin sbin/airserv-ng
 @comment sbin/airtun-ng
+@bin sbin/airventriloquist-ng
+@bin sbin/besside-ng
+@bin sbin/easside-ng
+@bin sbin/tkiptun-ng
+@bin sbin/wesside-ng

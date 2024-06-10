@@ -1,9 +1,9 @@
-lib/libaircrack-crypto-x86-avx-1.3.0.so
-lib/libaircrack-crypto-x86-avx.la
-lib/libaircrack-crypto-x86-avx.so
-lib/libaircrack-crypto-x86-avx2-1.3.0.so
-lib/libaircrack-crypto-x86-avx2.la
-lib/libaircrack-crypto-x86-avx2.so
-lib/libaircrack-crypto-x86-sse2-1.3.0.so
-lib/libaircrack-crypto-x86-sse2.la
-lib/libaircrack-crypto-x86-sse2.so
+@so lib/libaircrack-ce-wpa-x86-avx-${API_REV}.so
+lib/libaircrack-ce-wpa-x86-avx.la
+@so lib/libaircrack-ce-wpa-x86-avx.so
+@so lib/libaircrack-ce-wpa-x86-avx2-${API_REV}.so
+lib/libaircrack-ce-wpa-x86-avx2.la
+@so lib/libaircrack-ce-wpa-x86-avx2.so
+@so lib/libaircrack-ce-wpa-x86-sse2-${API_REV}.so
+lib/libaircrack-ce-wpa-x86-sse2.la
+@so lib/libaircrack-ce-wpa-x86-sse2.so

@@ -1,0 +1,12 @@
+Index: src/airodump-ng/airodump-ng.c
+--- src/airodump-ng/airodump-ng.c.orig
++++ src/airodump-ng/airodump-ng.c
+@@ -97,7 +97,7 @@ static const unsigned char llcnull[] = {0, 0, 0, 0};
+ 
+ static const char * OUI_PATHS[]
+ 	= {"./airodump-ng-oui.txt",
+-	   "/etc/aircrack-ng/airodump-ng-oui.txt",
++	   "${PREFIX}/share/mac-vendor/aircrack-oui.txt",
+ 	   "/usr/local/etc/aircrack-ng/airodump-ng-oui.txt",
+ 	   "/usr/share/aircrack-ng/airodump-ng-oui.txt",
+ 	   "/var/lib/misc/oui.txt",
