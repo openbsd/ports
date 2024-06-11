@@ -2,6 +2,7 @@ COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 
 VER=			1.7
 DISTNAME=		aircrack-ng-${VER}
+REVISION=		0
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/
@@ -20,15 +21,17 @@ LIB_DEPENDS=		databases/sqlite3 \
 
 RUN_DEPENDS+=		net/arp-scan,-mac>=20190128
 
+COMPILER=		base-clang ports-gcc
+
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 CONFIGURE_STYLE=	autoreconf
 
-# Disable NEON optimizations (arm, aarch64) since clang can't compile the code
-# https://github.com/aircrack-ng/aircrack-ng/issues/1957
+.if ${MACHINE_ARCH} == "arm"
 CONFIGURE_ENV+=		ax_cv_neon_cflags=no ax_cv_neon_cxxflags=no
+.endif
 
 MAKE_ENV+=		SQLITE=true UNSTABLE=true
 MAKE_FLAGS+=		CC="${CC}" CFLAGS="${CFLAGS}"
@@ -56,10 +59,5 @@ SUBST_VARS+=		API_REV
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/airodump-ng/airodump-ng.c
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
 
 .include <bsd.port.mk>

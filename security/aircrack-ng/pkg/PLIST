@@ -9,6 +9,7 @@
 @bin bin/makeivs-ng
 @bin bin/packetforge-ng
 @bin bin/wpaclean
+%%arm%%
 %%x86%%
 include/aircrack-ng/
 include/aircrack-ng/adt/
