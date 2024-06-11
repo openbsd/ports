@@ -1,0 +1,14 @@
+on my computer, addr.prefixLength() returns -1 although
+my network interface is correctly configured
+
+Index: app/backend/nvcomputer.cpp
+--- app/backend/nvcomputer.cpp.orig
++++ app/backend/nvcomputer.cpp
+@@ -422,7 +422,6 @@ NvComputer::ReachabilityType NvComputer::getActiveAddr
+                     }
+ 
+                     // Didn't meet any of our VPN heuristics. Let's see if it's on-link.
+-                    Q_ASSERT(addr.prefixLength() >= 0);
+                     if (addr.prefixLength() >= 0 && s.localAddress().isInSubnet(addr.ip(), addr.prefixLength())) {
+                         return ReachabilityType::RI_LAN;
+                     }
