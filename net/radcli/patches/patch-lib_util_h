@@ -1,7 +1,7 @@
 Index: lib/util.h
 --- lib/util.h.orig
 +++ lib/util.h
-@@ -25,7 +25,9 @@ size_t rc_strlcpy(char *dst, char const *src, size_t s
+@@ -23,7 +23,9 @@ size_t rc_strlcpy(char *dst, char const *src, size_t s
  #define SA_LEN(sa) \
    (((sa)->sa_family == AF_INET) ? \
      sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6))

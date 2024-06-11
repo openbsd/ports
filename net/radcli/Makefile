@@ -1,8 +1,8 @@
 COMMENT=	simple RADIUS client library
 
-SHARED_LIBS +=	radcli               1.0      # 8.0
+SHARED_LIBS +=	radcli               2.0      # 9.0
 
-V=		1.3.1
+V=		1.4.0
 DISTNAME=	radcli-$V
 
 CATEGORIES=	net
