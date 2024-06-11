@@ -51,6 +51,7 @@ include/nss/nssckfwt.h
 include/nss/nssckg.h
 include/nss/nssckmdt.h
 include/nss/nssckt.h
+include/nss/nsshash.h
 include/nss/nssilckt.h
 include/nss/nssilock.h
 include/nss/nsslocks.h
