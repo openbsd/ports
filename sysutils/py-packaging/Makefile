@@ -1,6 +1,6 @@
-COMMENT=	core utilities for Python packages
+COMMENT=	core utilities for Python packaging
 
-MODPY_EGG_VERSION=	24.0
+MODPY_EGG_VERSION=	24.1
 
 DISTNAME=	packaging-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
