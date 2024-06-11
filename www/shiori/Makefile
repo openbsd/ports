@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 COMMENT =		simple bookmarks manager
 
 MODGO_MODNAME =		github.com/go-shiori/shiori
-MODGO_VERSION =		v1.6.3
+MODGO_VERSION =		v1.7.0
 
 DISTNAME =		shiori-${MODGO_VERSION}
 
@@ -17,7 +17,7 @@ MAINTAINER =		Paco Esteban <paco@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB +=		c m pthread
 
 MODULES =		lang/go
 
