@@ -2,4 +2,5 @@
 
 export CRYSTAL_PATH="lib:${TRUEPREFIX}/lib/crystal"
 export CRYSTAL_LIBRARY_PATH=lib:${TRUEPREFIX}/lib
+export LD_LIBRARY_PATH="${TRUEPREFIX}/llvm${MODCLANG_VERSION}/lib"
 exec ${TRUEPREFIX}/libexec/crystal "${@}"

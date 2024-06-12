@@ -1,0 +1,18 @@
+Index: bin/crystal
+--- bin/crystal.orig
++++ bin/crystal
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/usr/local/bin/bash
+ 
+ ################## https://github.com/mkropat/sh-realpath #####################
+ #
+@@ -186,6 +186,8 @@ cd "$(realpath "$(pwd)")"
+ 
+ if [ -x "$CRYSTAL_DIR/crystal" ]; then
+   __warning_msg "Using compiled compiler at ${CRYSTAL_DIR#"$PWD/"}/crystal"
++  export LD_LIBRARY_PATH=/usr/local/llvm17/lib
++  export LLVM_CONFIG=/usr/local/llvm17/bin/llvm-config
+   exec "$CRYSTAL_DIR/crystal" "$@"
+ elif !($PARENT_CRYSTAL_EXISTS); then
+   __error_msg 'You need to have a crystal executable in your path! or set CRYSTAL env variable'
