@@ -1,6 +1,6 @@
 COMMENT =	interactive, extensible binary editor
 
-DISTNAME =	poke-4.0
+DISTNAME =	poke-4.1
 
 SHARED_LIBS +=  poke                      2.0 # 1.0
 
@@ -29,6 +29,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-hserver
 # don't find emacs or xemacs
 CONFIGURE_ENV +=	ac_cv_prog_EMACS=
+
+USE_GMAKE =		Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

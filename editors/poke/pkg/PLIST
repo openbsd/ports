@@ -12,6 +12,7 @@ lib/libpoke.la
 lib/pkgconfig/poke.pc
 @man man/man1/poke.1
 @man man/man1/poked.1
+@man man/man1/pokefmt.1
 share/aclocal/
 share/aclocal/poke.m4
 share/emacs/
