@@ -1,3 +1,9 @@
 @pkgpath sysutils/py-statgrab
-lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/COPYING.LGPL
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pystatgrab-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/statgrab.${MODPY_PYC_MAGIC_TAG}so
