@@ -1,17 +1,11 @@
 Index: exch/dnsbl_filter.cpp
 --- exch/dnsbl_filter.cpp.orig
 +++ exch/dnsbl_filter.cpp
-@@ -7,12 +7,12 @@
- #endif
- #include <cerrno>
- #include <cstring>
--#include <resolv.h>
+@@ -10,6 +10,7 @@
  #include <string>
- #include <arpa/inet.h>
- #include <arpa/nameser.h>
+ #	include <arpa/inet.h>
  #include <libHX/string.h>
++#include <sys/socket.h>
  #include <netinet/in.h>
-+#include <resolv.h>
  #include <gromox/config_file.hpp>
  #include <gromox/scope.hpp>
- #include <gromox/svc_common.h>
