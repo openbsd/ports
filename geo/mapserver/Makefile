@@ -6,19 +6,13 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		8.0.1
+V=		8.0.2
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
-REVISION-main=	0
-REVISION-perl=	0
-REVISION-python=0
-REVISION-utils=	0
-
-REVISION-php=	2
 
 SHARED_LIBS +=	mapserver 6.0
 
