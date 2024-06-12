@@ -1,12 +1,16 @@
+Add support for OpenBSD
+11f3d1c24e6179abf8247611c5308f41d95389a1
+
 Index: include/urcu/syscall-compat.h
 --- include/urcu/syscall-compat.h.orig
 +++ include/urcu/syscall-compat.h
-@@ -33,7 +33,7 @@
+@@ -33,7 +33,8 @@
  #include <syscall.h>
  
  #elif defined(__CYGWIN__) || defined(__APPLE__) || \
 -	defined(__FreeBSD__) || defined(__DragonFly__)
-+	defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
++	defined(__FreeBSD__) || defined(__DragonFly__) || \
++	defined(__OpenBSD__)
  /* Don't include anything on these platforms. */
  
  #else

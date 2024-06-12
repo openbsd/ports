@@ -1,4 +1,5 @@
-XXX not portable, but used by tests only.
+Add support for OpenBSD
+11f3d1c24e6179abf8247611c5308f41d95389a1
 
 Index: tests/common/thread-id.h
 --- tests/common/thread-id.h.orig
@@ -8,7 +9,7 @@ Index: tests/common/thread-id.h
  }
  
 +#elif defined(__OpenBSD__)
-+# include <unistd.h>
++#include <unistd.h>
 +
 +static inline
 +unsigned long urcu_get_thread_id(void)
