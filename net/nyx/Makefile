@@ -2,7 +2,7 @@ COMMENT =		terminal status monitor for Tor
 
 MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		nyx-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net
 
