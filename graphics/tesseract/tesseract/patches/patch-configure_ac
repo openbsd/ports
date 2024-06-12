@@ -3,9 +3,9 @@ No librt on OpenBSD.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -112,6 +112,9 @@ case "${host_os}" in
+@@ -107,6 +107,9 @@ case "${host_os}" in
+         ;;
      powerpc-*-darwin*)
-         OPENCL_LIBS=""
          ;;
 +    *openbsd*)
 +        AM_CONDITIONAL([ADD_RT], false)
