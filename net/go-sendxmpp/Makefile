@@ -1,7 +1,7 @@
 COMMENT =		CLI tool to send messages over XMPP
 
 MODGO_MODNAME =		salsa.debian.org/mdosch/go-sendxmpp
-MODGO_VERSION =		v0.10.0
+MODGO_VERSION =		v0.11.0
 
 DISTNAME =		go-sendxmpp-${MODGO_VERSION}
 PKGNAME =		${DISTNAME:S/-v/-/}

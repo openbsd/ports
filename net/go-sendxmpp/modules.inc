@@ -2,26 +2,26 @@ MODGO_MODULES =	\
 	github.com/!proton!mail/go-crypto	 v1.0.0 \
 	github.com/!proton!mail/go-mime		 v0.0.0-20230322103455-7d82a3887f2f \
 	github.com/!proton!mail/gopenpgp/v2	 v2.7.5 \
-	github.com/beevik/etree			 v1.3.0 \
+	github.com/beevik/etree			 v1.4.0 \
 	github.com/bwesterb/go-ristretto	 v1.2.3 \
-	github.com/cloudflare/circl		 v1.3.7 \
+	github.com/cloudflare/circl		 v1.3.8 \
 	github.com/davecgh/go-spew		 v1.1.1 \
-	github.com/gabriel-vasile/mimetype	 v1.4.3 \
+	github.com/gabriel-vasile/mimetype	 v1.4.4 \
 	github.com/google/uuid			 v1.6.0 \
 	github.com/pborman/getopt/v2		 v2.1.0 \
 	github.com/pkg/errors			 v0.9.1 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/stretchr/objx		 v0.1.0 \
 	github.com/stretchr/testify		 v1.7.0 \
-	github.com/xmppo/go-xmpp		 v0.2.0 \
+	github.com/xmppo/go-xmpp		 v0.2.1 \
 	github.com/yuin/goldmark		 v1.4.13 \
-	golang.org/x/crypto			 v0.22.0 \
+	golang.org/x/crypto			 v0.23.0 \
 	golang.org/x/mod			 v0.8.0 \
-	golang.org/x/net			 v0.24.0 \
+	golang.org/x/net			 v0.25.0 \
 	golang.org/x/sync			 v0.1.0 \
-	golang.org/x/sys			 v0.19.0 \
-	golang.org/x/term			 v0.19.0 \
-	golang.org/x/text			 v0.14.0 \
+	golang.org/x/sys			 v0.20.0 \
+	golang.org/x/term			 v0.20.0 \
+	golang.org/x/text			 v0.15.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
@@ -34,14 +34,13 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew		 v1.1.0 \
 	golang.org/x/crypto			 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto			 v0.0.0-20210921155107-089bfa567519 \
-	golang.org/x/crypto			 v0.17.0 \
+	golang.org/x/crypto			 v0.11.1-0.20230711161743-2e82bdd1719d \
 	golang.org/x/crypto			 v0.3.1-0.20221117191849-2c476679df9a \
 	golang.org/x/crypto			 v0.7.0 \
 	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/net			 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net			 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net			 v0.0.0-20220722155237-a158d28d115b \
-	golang.org/x/net			 v0.17.0 \
 	golang.org/x/net			 v0.2.0 \
 	golang.org/x/net			 v0.21.0 \
 	golang.org/x/net			 v0.6.0 \
@@ -53,7 +52,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys			 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/sys			 v0.0.0-20220722155257-8c9f86f7a55f \
-	golang.org/x/sys			 v0.15.0 \
+	golang.org/x/sys			 v0.10.0 \
 	golang.org/x/sys			 v0.2.0 \
 	golang.org/x/sys			 v0.3.0 \
 	golang.org/x/sys			 v0.5.0 \
