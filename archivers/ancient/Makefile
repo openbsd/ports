@@ -2,9 +2,9 @@ COMMENT =	decompression routines for ancient formats
 
 GH_ACCOUNT =	temisu
 GH_PROJECT =	ancient
-GH_TAGNAME =	v2.1.1
+GH_TAGNAME =	v2.2.0
 
-SHARED_LIBS +=	ancient 0.0	# 2.1
+SHARED_LIBS +=	ancient 0.0	# 2.2
 
 CATEGORIES =	archivers
 
