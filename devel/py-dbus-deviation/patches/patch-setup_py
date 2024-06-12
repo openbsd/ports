@@ -1,0 +1,11 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -92,7 +92,6 @@ setuptools.setup(
+     exclude_package_data={'': ['.gitignore']},
+     zip_safe=True,
+     setup_requires=[
+-        'setuptools_git >= 0.3',
+         'sphinx',
+     ],
+     install_requires=['lxml'],

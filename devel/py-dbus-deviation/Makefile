@@ -3,7 +3,7 @@ COMMENT=		D-Bus introspection XML parser and processor
 MODPY_EGG_VERSION=	0.6.1
 DISTNAME=		dbus-deviation-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		devel
 
@@ -17,8 +17,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-BUILD_DEPENDS=		devel/py-setuptools_git${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
 
 RUN_DEPENDS=		textproc/py-lxml${MODPY_FLAVOR}
 
