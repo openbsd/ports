@@ -8,7 +8,5 @@ include/enet/types.h
 include/enet/unix.h
 include/enet/utility.h
 include/enet/win32.h
-lib/libenet.a
-lib/libenet.la
 @lib lib/libenet.so.${LIBenet_VERSION}
 lib/pkgconfig/libenet.pc

@@ -1,8 +1,8 @@
 COMMENT =		network library for games
-DISTNAME =		enet-1.3.13
-REVISION =		0
 
-SHARED_LIBS +=  	enet 0.2 # 1.3
+DISTNAME =		enet-1.3.18
+
+SHARED_LIBS +=  	enet 0.3 # 1.3
 
 CATEGORIES =		net
 
@@ -12,9 +12,10 @@ MAINTAINER =		Laurent FANIS <laurent.fanis@gmail.com>
 # MIT-like
 PERMIT_PACKAGE =	Yes
 
-SITES =			${HOMEPAGE}/download/
+SITES =			${HOMEPAGE}download/
 
+MODULES =		devel/cmake
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS+=	-DBUILD_SHARED_LIBS=ON
 
 .include <bsd.port.mk>

@@ -1,0 +1,73 @@
+- CMake: Fix linking for Windows builds on non-mingw compilers
+  276ff5ae05a245bcee195af9c9fd002851517d40
+- CMake: Enable shared builds
+  ca56fecaf35f6031b30d1573b8e772d7c81abcb4
+- CMake: Improve install instructions
+  4ce1625b8ae22a4e0030f07d80360e25ae558a1e
+
+- CMake: set project LANGUAGES to C
+  https://github.com/lsalzman/enet/pull/250
+- CMake: Include libenet.pc in installation
+  https://github.com/lsalzman/enet/pull/233
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -1,6 +1,8 @@
+ cmake_minimum_required(VERSION 2.8.12...3.20)
+ 
+-project(enet)
++# I.e. The ABI version
++project(enet VERSION 7.0.5 LANGUAGES C)
++set(ENET_VERSION "1.3.18")
+ 
+ # The "configure" step.
+ include(CheckFunctionExists)
+@@ -84,19 +86,40 @@ set(SOURCE_FILES
+ source_group(include FILES ${INCLUDE_FILES})
+ source_group(source FILES ${SOURCE_FILES})
+ 
+-add_library(enet STATIC
++if(WIN32 AND BUILD_SHARED_LIBS AND (MSVC OR CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
++    add_definitions(-DENET_DLL=1)
++    add_definitions(-DENET_BUILDING_LIB)
++endif()
++
++add_library(enet
+     ${INCLUDE_FILES}
+     ${SOURCE_FILES}
+ )
++set_target_properties(enet PROPERTIES
++    SOVERSION ${PROJECT_VERSION_MAJOR}
++    VERSION ${PROJECT_VERSION}
++)
+ 
+-if (MINGW)
++if (WIN32)
+     target_link_libraries(enet winmm ws2_32)
+ endif()
+ 
++include(GNUInstallDirs)
+ install(TARGETS enet
+-    RUNTIME DESTINATION bin
+-    ARCHIVE DESTINATION lib/static
+-    LIBRARY DESTINATION lib)
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++)
++install(DIRECTORY include/enet
++    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
++)
+ 
+-install(DIRECTORY include/
+-        DESTINATION include)
++# Add variables for substitution in libenet.pc.in
++set(PACKAGE_VERSION ${ENET_VERSION})
++set(PACKAGE_NAME "lib${PROJECT_NAME}")
++set(prefix ${CMAKE_INSTALL_PREFIX})
++set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
++configure_file(libenet.pc.in libenet.pc @ONLY)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libenet.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
