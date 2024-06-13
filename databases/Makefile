@@ -144,7 +144,6 @@
      SUBDIR += pgbadger
      SUBDIR += pgbouncer
      SUBDIR += pgcluu
-     SUBDIR += pgfouine
      SUBDIR += pgmodeler
      SUBDIR += pgpool
      SUBDIR += pgtap
