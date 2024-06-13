@@ -33,6 +33,12 @@ vpn-user-portal/schema/
 vpn-user-portal/schema/2022022201.schema
 vpn-user-portal/schema/2022022201_2023011801.migration
 vpn-user-portal/schema/2023011801.schema
+vpn-user-portal/schema/2023011801_2024052701.migration
+vpn-user-portal/schema/2024052701.schema
+vpn-user-portal/schema/2024052701_2023011801.migration
+vpn-user-portal/schema/2024052701_2024052801.migration
+vpn-user-portal/schema/2024052801.schema
+vpn-user-portal/schema/2024052801_2024052701.migration
 vpn-user-portal/src/
 vpn-user-portal/src/Base64.php
 vpn-user-portal/src/Base64UrlSafe.php
@@ -221,6 +227,9 @@ vpn-user-portal/vendor/composer/platform_check.php
 vpn-user-portal/vendor/fkooman/
 vpn-user-portal/vendor/fkooman/oauth2-server/
 vpn-user-portal/vendor/fkooman/oauth2-server/.build.yml
+vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/
+vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/workflows/
+vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/workflows/tests.yml
 vpn-user-portal/vendor/fkooman/oauth2-server/.php-cs-fixer.dist.php
 vpn-user-portal/vendor/fkooman/oauth2-server/CHANGES.md
 vpn-user-portal/vendor/fkooman/oauth2-server/LICENSE
@@ -230,6 +239,7 @@ vpn-user-portal/vendor/fkooman/oauth2-server/TOKEN_FORMAT.md
 vpn-user-portal/vendor/fkooman/oauth2-server/composer.json
 vpn-user-portal/vendor/fkooman/oauth2-server/php.mod
 vpn-user-portal/vendor/fkooman/oauth2-server/phpstan.neon
+vpn-user-portal/vendor/fkooman/oauth2-server/phpunit.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/psalm.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/src/
 vpn-user-portal/vendor/fkooman/oauth2-server/src/AccessToken.php
