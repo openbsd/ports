@@ -15,17 +15,16 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.78.0
+V =			1.79.0
 DISTNAME =		rustc-${V}-src
-REVISION-gdb =		0
 
 # rustc bootstrap version
-BV-aarch64 =		1.78.0
-BV-amd64 =		1.78.0
-BV-i386 =		1.78.0
+BV-aarch64 =		1.79.0
+BV-amd64 =		1.79.0
+BV-i386 =		1.79.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.77.0-20240401
-BV-sparc64 =		1.77.2
+BV-riscv64 =		1.78.0
+BV-sparc64 =		1.78.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -146,7 +145,7 @@ BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
 MODULES +=			lang/clang
-MODCLANG_VERSION =		16
+MODCLANG_VERSION =		17
 MODCLANG_COMPILER_LINKS =	No
 .else
 WANTLIB-main +=		execinfo
@@ -158,7 +157,7 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 
 RUN_DEPENDS-gdb +=	lang/rust,-main \
 			devel/gdb \
-			devel/llvm/16,-lldb
+			devel/llvm/17,-lldb
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 RUN_DEPENDS-src +=	lang/rust,-main

@@ -1,9 +1,9 @@
 https://github.com/sfackler/rust-openssl/pull/2124
 
-Index: vendor/openssl/build.rs
---- vendor/openssl/build.rs.orig
-+++ vendor/openssl/build.rs
-@@ -81,6 +81,9 @@ fn main() {
+Index: vendor/openssl-0.10.57/build.rs
+--- vendor/openssl-0.10.57/build.rs.orig
++++ vendor/openssl-0.10.57/build.rs
+@@ -73,6 +73,9 @@ fn main() {
          for var in vars.split(',') {
              println!("cargo:rustc-cfg=osslconf=\"{}\"", var);
          }

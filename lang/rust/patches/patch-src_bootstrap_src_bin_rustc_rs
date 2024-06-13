@@ -5,7 +5,7 @@ try to reduce memory usage on aarch64 and i386:
 Index: src/bootstrap/src/bin/rustc.rs
 --- src/bootstrap/src/bin/rustc.rs.orig
 +++ src/bootstrap/src/bin/rustc.rs
-@@ -150,6 +150,18 @@ fn main() {
+@@ -150,6 +150,19 @@ fn main() {
          {
              cmd.arg("-Ztls-model=initial-exec");
          }
@@ -13,14 +13,15 @@ Index: src/bootstrap/src/bin/rustc.rs
 +        if target.unwrap().contains("aarch64-unknown-openbsd")
 +            && crate_name == Some("rustc")
 +        {
-+            cmd.arg("-Z").arg("fewer-names");
-+        }
-+        if target.unwrap().contains("i686-unknown-openbsd")
-+            && crate_name == Some("rustc_middle")
-+        {
-+            cmd.arg("-Z").arg("fewer-names");
-+            cmd.arg("-C").arg("codegen-units=64");
-+        }
-     } else if std::env::var("MIRI").is_err() {
++           cmd.arg("-Z").arg("fewer-names");
++       }
++       if target.unwrap().contains("i686-unknown-openbsd")
++           && crate_name == Some("rustc_middle")
++       {
++           cmd.arg("-Z").arg("fewer-names");
++           cmd.arg("-C").arg("codegen-units=64");
++       }
++
+     } else {
          // Find any host flags that were passed by bootstrap.
          // The flags are stored in a RUSTC_HOST_FLAGS variable, separated by spaces.

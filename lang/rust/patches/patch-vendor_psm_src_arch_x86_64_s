@@ -1,8 +1,8 @@
 Add some endbr64 instructions: required for rustc binary on amd64 with IBT.
 
-Index: vendor/psm/src/arch/x86_64.s
---- vendor/psm/src/arch/x86_64.s.orig
-+++ vendor/psm/src/arch/x86_64.s
+Index: vendor/psm-0.1.21/src/arch/x86_64.s
+--- vendor/psm-0.1.21/src/arch/x86_64.s.orig
++++ vendor/psm-0.1.21/src/arch/x86_64.s
 @@ -26,6 +26,7 @@ TYPE(rust_psm_stack_direction)
  FUNCTION(rust_psm_stack_direction):
  /* extern "sysv64" fn() -> u8 (%al) */
