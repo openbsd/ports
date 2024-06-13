@@ -1,3 +1,5 @@
+# bump net/dnsdist when updating (static link)
+
 GH_ACCOUNT =	google
 GH_PROJECT =	boringssl
 GH_COMMIT =	9cac8a6b38c1cbd45c77aee108411d588da006fe
