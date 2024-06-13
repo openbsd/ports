@@ -1,0 +1,42 @@
+Index: doc/autoconf.texi
+--- doc/autoconf.texi.orig
++++ doc/autoconf.texi
+@@ -227,27 +227,27 @@ entitled ``GNU Free Documentation License.''
+ 
+ @dircategory Software development
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts.
++* Autoconf-2.72: (autoconf-2.72).         Create source code configuration scripts.
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* autoscan: (autoconf)autoscan Invocation.
++* autoscan-2.72: (autoconf-2.72)autoscan Invocation.
+                                 Semi-automatic @file{configure.ac} writing
+-* ifnames: (autoconf)ifnames Invocation.        Listing conditionals in source.
+-* autoconf-invocation: (autoconf)autoconf Invocation.
++* ifnames-2.72: (autoconf-2.72)ifnames Invocation.        Listing conditionals in source.
++* autoconf-invocation-2.72: (autoconf-2.72)autoconf Invocation.
+                                 How to create configuration scripts
+-* autoreconf: (autoconf)autoreconf Invocation.
++* autoreconf-2.72: (autoconf-2.72)autoreconf Invocation.
+                                 Remaking multiple @command{configure} scripts
+-* autoheader: (autoconf)autoheader Invocation.
++* autoheader-2.72: (autoconf-2.72)autoheader Invocation.
+                                 How to create configuration templates
+-* autom4te: (autoconf)autom4te Invocation.
++* autom4te-2.72: (autoconf-2.72)autom4te Invocation.
+                                 The Autoconf executables backbone
+-* configure: (autoconf)configure Invocation.    Configuring a package.
+-* autoupdate: (autoconf)autoupdate Invocation.
++* configure-2.72: (autoconf-2.72)configure Invocation.    Configuring a package.
++* autoupdate-2.72: (autoconf-2.72)autoupdate Invocation.
+                                 Automatic update of @file{configure.ac}
+-* config.status: (autoconf)config.status Invocation. Recreating configurations.
+-* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
++* config.status-2.72: (autoconf-2.72)config.status Invocation. Recreating configurations.
++* testsuite-2.72: (autoconf-2.72)testsuite Invocation.    Running an Autotest test suite.
+ @end direntry
+ 
+ @titlepage

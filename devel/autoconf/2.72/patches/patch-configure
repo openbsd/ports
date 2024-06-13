@@ -1,0 +1,57 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -2846,29 +2846,7 @@ do
+     for ac_exec_ext in '' $ac_executable_extensions; do
+       ac_path_M4="$as_dir$ac_prog$ac_exec_ext"
+       as_fn_executable_p "$ac_path_M4" || continue
+-      # Root out GNU M4 1.4.5, as well as non-GNU m4 that ignore -t, -F.
+-      # Root out GNU M4 1.4.15 with buggy false negative replacement strstr.
+-      # Root out Glibc 2.9 - 2.12 and GNU M4 1.4.11 - 1.4.15 with buggy
+-      # false positive strstr.
+-      ac_snippet=change'quote(<,>)in''dir(<if''def>,mac,bug)'
+-      ac_snippet=${ac_snippet}pat'subst(a,\(b\)\|\(a\),\1)d'nl
+-      ac_snippet=${ac_snippet}${as_nl}if'else(in''dex(..wi.d.,.d.),-1,bug)'
+-      ac_snippet=${ac_snippet}${as_nl}if'else(in''dex(;:11-:12-:12-:12-:12-:12-:12-:12-:12.:12.:12.:12.:12.:12.:12.:12.:12-,:12-:12-:12-:12-:12-:12-:12-:12-),-1,,strstr-bug2)'
+-      # Root out M4 1.4.6 and 1.4.7, which do not implement --debug=aflq
+-      # correctly for macros invoked from m4wrap.
+-      ac_snip2=change'quote(<,>)def''ine(<T>,<>)d'nl
+-      ac_snip2=${ac_snip2}${as_nl}def'ine(<F>,<T(<traced>)>)d'nl
+-      ac_snip2=${ac_snip2}${as_nl}m4'wrap(<F>)d'nl
+-      printf "%s\n" "$as_me:${as_lineno-$LINENO}: trying $ac_path_M4" \
+-          >&5
+-      test -z "`$ac_path_M4 -F conftest.m4f </dev/null 2>&1`" \
+-      && test -z "`printf "%s\n" "$ac_snippet" | $ac_path_M4 --trace=mac 2>&1`" \
+-      && test -f conftest.m4f \
+-      && test x"`printf "%s\n" "$ac_snip2" | \
+-                $ac_path_M4 --trace=T --debug=aflq 2>&1`" = \
+-              x'm4trace:stdin:3: -1- T(<traced>)' \
+-      && ac_cv_path_M4=$ac_path_M4 ac_path_M4_found=:
+-      rm -f conftest.m4f
++      ac_cv_path_M4=$ac_path_M4 ac_path_M4_found=:
+       $ac_path_M4_found && break 3
+     done
+   done
+@@ -2918,21 +2896,7 @@ printf "%s\n" "$as_me: WARNING: the version of M4 that
+ printf "%s\n" "$as_me: WARNING: using it with POSIXLY_CORRECT set may cause problems" >&2;}
+     fi
+   fi
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking how m4 supports trace files" >&5
+-printf %s "checking how m4 supports trace files... " >&6; }
+-if test ${ac_cv_prog_gnu_m4_debugfile+y}
+-then :
+-  printf %s "(cached) " >&6
+-else case e in #(
+-  e) case `$M4 --help < /dev/null 2>&1` in
+-      *debugfile*) ac_cv_prog_gnu_m4_debugfile=--debugfile ;;
+-      *) ac_cv_prog_gnu_m4_debugfile=--error-output ;;
+-    esac ;;
+-esac
+-fi
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_prog_gnu_m4_debugfile" >&5
+-printf "%s\n" "$ac_cv_prog_gnu_m4_debugfile" >&6; }
+-  M4_DEBUGFILE=$ac_cv_prog_gnu_m4_debugfile
++  M4_DEBUGFILE=-o
+ 
+ 
+ 

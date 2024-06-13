@@ -1,4 +1,4 @@
-VERSION =	2.71
+VERSION =	2.72
 
 BUILD_DEPENDS =		devel/help2man
 
@@ -10,5 +10,6 @@ MAKE_FLAGS =		EMACS=no
 FAKE_FLAGS =		EMACS=no
 TEST_DEPENDS =	devel/automake/1.16
 TEST_FLAGS +=	AUTOMAKE_VERSION=1.16
+PORTROACH =
 
 .include <bsd.port.mk>

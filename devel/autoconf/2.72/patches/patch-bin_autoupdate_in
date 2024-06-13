@@ -1,0 +1,24 @@
+Index: bin/autoupdate.in
+--- bin/autoupdate.in.orig
++++ bin/autoupdate.in
+@@ -59,6 +59,7 @@ my @include = ('@pkgdatadir@');
+ my $force = 0;
+ # m4.
+ my $m4 = $ENV{"M4"} || '@M4@';
++$m4.=" -g -D__gnu__";
+ 
+ 
+ # $HELP
+@@ -408,9 +409,9 @@ EOF
+        or error "cannot close $tmp/input.m4: $!";
+ 
+     # Now ask m4 to perform the update.
+-    xsystem ("$m4 --include=" . shell_quote ($tmp)
+-	     . join (' --include=', '', map { shell_quote ($_) } reverse (@prepend_include))
+-	     . join (' --include=', '', map { shell_quote ($_) } @include)
++    xsystem ("$m4 -I" . shell_quote ($tmp)
++	     . join (' -I', '', map { shell_quote ($_) } reverse (@prepend_include))
++	     . join (' -I', '', map { shell_quote ($_) } @include)
+ 	     . " " . shell_quote ("$tmp/input.m4") . " > " . shell_quote ("$tmp/updated"));
+     update_file ("$tmp/updated",
+ 		 "$file" eq "$tmp/stdin" ? '-' : "$file");

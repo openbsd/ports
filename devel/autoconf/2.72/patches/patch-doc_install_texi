@@ -1,0 +1,17 @@
+./doc//install.texi:52: @command expected braces.
+./doc//install.texi:52: Misplaced {.
+./doc//install.texi:52: Misplaced }.
+./doc//install.texi:52: @code missing close brace.
+
+Index: doc/install.texi
+--- doc/install.texi.orig
++++ doc/install.texi
+@@ -49,7 +49,7 @@ using developer tools or the network.  Because the out
+ package developer so that its output can be put into the distribution
+ tarball and ordinary builders and users need not run @command{bootstrap}.
+ Some packages have commands like @command{./autopull.sh} and
+-@command {./autogen.sh} that you can run instead of @command{./bootstrap},
++@command{./autogen.sh} that you can run instead of @command{./bootstrap},
+ for more fine-grained control over bootstrapping.
+ 
+ The @command{configure} shell script attempts to guess correct values
