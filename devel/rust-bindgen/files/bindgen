@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+if [ ! -d "${LIBCLANG_PATH:-}" ]; then
+	LIBCLANG_PATH=$(ls -d /usr/local/llvm*/lib 2>/dev/null | sort -nr | head -1)
+
+	if [ ! -d "${LIBCLANG_PATH}" ]; then
+		echo "error: llvm/clang library not found" >&2
+		exit 1
+	fi
+fi
+export LIBCLANG_PATH
+
+exec /usr/local/libexec/rust-bindgen "$@"
