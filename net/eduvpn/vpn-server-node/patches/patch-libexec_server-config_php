@@ -10,7 +10,7 @@ Index: libexec/server-config.php
   * SPDX-License-Identifier: AGPL-3.0+
   */
  
--require_once dirname(__DIR__).'/vendor/autoload.php';
+-require_once dirname(__DIR__) . '/vendor/autoload.php';
 -$baseDir = dirname(__DIR__);
 +require_once '/var/www/vpn-server-node/vendor/autoload.php';
 +$baseDir = '/var/www/vpn-server-node';
