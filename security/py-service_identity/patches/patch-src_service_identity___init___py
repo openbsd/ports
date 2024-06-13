@@ -1,0 +1,15 @@
+https://github.com/pyca/service-identity/issues/68
+Index: src/service_identity/__init__.py
+--- src/service_identity/__init__.py.orig
++++ src/service_identity/__init__.py
+@@ -58,6 +58,9 @@ def __getattr__(name: str) -> str:
+         return meta["Project-URL"].split(" ", 1)[1]
+
+     if name == "__email__":
+-        return meta["Author-email"].split("<", 1)[1].rstrip(">")
++        if "<" in meta["Author-email"]:
++            return meta["Author-email"].split("<", 1)[1].rstrip(">")
++        else:
++            return meta["Author-email"]
+
+     return meta[dunder_to_metadata[name]]
