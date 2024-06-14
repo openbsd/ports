@@ -1,5 +1,6 @@
 @option no-default-conflict
 @option is-branch
+@pkgpath devel/llvm/16,lldb
 @conflict lldb-${LLVM_PKGSPEC}
 bin/lldb-${LLVM_MAJOR}
 bin/lldb-argdumper-${LLVM_MAJOR}
