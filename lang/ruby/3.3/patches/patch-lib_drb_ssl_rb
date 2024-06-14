@@ -1,0 +1,19 @@
+Allow drb ssl tests to pass
+
+X509_set_version states that the version field is one
+less than the actual version, so a version 3 certificate
+should use 2.  Without this, setting the version to 3
+raises an exception, resulting in many failing tests.
+
+Index: lib/drb/ssl.rb
+--- lib/drb/ssl.rb.orig
++++ lib/drb/ssl.rb
+@@ -185,7 +185,7 @@ module DRb
+         }
+ 
+         cert = OpenSSL::X509::Certificate.new
+-        cert.version = 3
++        cert.version = 2
+         cert.serial = 0
+         name = OpenSSL::X509::Name.new(self[:SSLCertName])
+         cert.subject = name

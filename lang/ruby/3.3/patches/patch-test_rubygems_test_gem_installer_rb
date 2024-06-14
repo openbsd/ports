@@ -1,0 +1,15 @@
+Update tests for change in OpenBSD port to not clean intermediate
+files when building gems.
+
+Index: test/rubygems/test_gem_installer.rb
+--- test/rubygems/test_gem_installer.rb.orig
++++ test/rubygems/test_gem_installer.rb
+@@ -1700,7 +1700,7 @@ end
+     end
+ 
+     assert_path_exist extension_file, "installed"
+-    assert_path_not_exist intermediate_file
++    assert_path_exist intermediate_file
+   end
+ 
+   def test_installation_satisfies_dependency_eh

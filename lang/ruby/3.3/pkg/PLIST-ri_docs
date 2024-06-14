@@ -418,6 +418,7 @@ share/ri/${REV}/system/Binding/source_location-i.ri
 share/ri/${REV}/system/Bundler/
 share/ri/${REV}/system/Bundler/app_cache-c.ri
 share/ri/${REV}/system/Bundler/app_config_path-c.ri
+share/ri/${REV}/system/Bundler/auto_install-c.ri
 share/ri/${REV}/system/Bundler/bin_path-c.ri
 share/ri/${REV}/system/Bundler/bundle_path-c.ri
 share/ri/${REV}/system/Bundler/cdesc-Bundler.ri
@@ -3028,7 +3029,6 @@ share/ri/${REV}/system/Gem/Dependency/name-i.ri
 share/ri/${REV}/system/Gem/Dependency/new-c.ri
 share/ri/${REV}/system/Gem/Dependency/prerelease%3f-i.ri
 share/ri/${REV}/system/Gem/Dependency/prerelease-i.ri
-share/ri/${REV}/system/Gem/Dependency/prioritizes_bundler%3f-i.ri
 share/ri/${REV}/system/Gem/Dependency/requirement-i.ri
 share/ri/${REV}/system/Gem/Dependency/requirements_list-i.ri
 share/ri/${REV}/system/Gem/Dependency/runtime%3f-i.ri
@@ -3142,7 +3142,6 @@ share/ri/${REV}/system/Gem/Ext/CargoBuilder/ruby_static%3f-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/runner-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/rustc_dynamic_linker_flags-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/rustc_lib_flags-i.ri
-share/ri/${REV}/system/Gem/Ext/CargoBuilder/so_ext-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/spec-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/split_flags-i.ri
 share/ri/${REV}/system/Gem/Ext/CargoBuilder/win_target%3f-i.ri
@@ -3509,6 +3508,7 @@ share/ri/${REV}/system/Gem/Package/files-i.ri
 share/ri/${REV}/system/Gem/Package/gem-i.ri
 share/ri/${REV}/system/Gem/Package/gzip_to-i.ri
 share/ri/${REV}/system/Gem/Package/initialize-i.ri
+share/ri/${REV}/system/Gem/Package/limit_read-i.ri
 share/ri/${REV}/system/Gem/Package/new-c.ri
 share/ri/${REV}/system/Gem/Package/normalize_path-i.ri
 share/ri/${REV}/system/Gem/Package/prog_mode-i.ri
@@ -4399,11 +4399,9 @@ share/ri/${REV}/system/Gem/Specification/for_cache-i.ri
 share/ri/${REV}/system/Gem/Specification/from_yaml-c.ri
 share/ri/${REV}/system/Gem/Specification/full_name-i.ri
 share/ri/${REV}/system/Gem/Specification/gems_dir-i.ri
-share/ri/${REV}/system/Gem/Specification/gemspec_stubs_in-c.ri
 share/ri/${REV}/system/Gem/Specification/has_conflicts%3f-i.ri
 share/ri/${REV}/system/Gem/Specification/homepage-i.ri
 share/ri/${REV}/system/Gem/Specification/initialize_copy-i.ri
-share/ri/${REV}/system/Gem/Specification/installed_stubs-c.ri
 share/ri/${REV}/system/Gem/Specification/invalidate_memoized_attributes-i.ri
 share/ri/${REV}/system/Gem/Specification/keep_only_files_and_directories-i.ri
 share/ri/${REV}/system/Gem/Specification/latest_spec_for-c.ri
@@ -4415,7 +4413,6 @@ share/ri/${REV}/system/Gem/Specification/licenses%3d-i.ri
 share/ri/${REV}/system/Gem/Specification/licenses-i.ri
 share/ri/${REV}/system/Gem/Specification/load-c.ri
 share/ri/${REV}/system/Gem/Specification/load_defaults-c.ri
-share/ri/${REV}/system/Gem/Specification/mark_version-i.ri
 share/ri/${REV}/system/Gem/Specification/metadata-i.ri
 share/ri/${REV}/system/Gem/Specification/missing_extensions%3f-i.ri
 share/ri/${REV}/system/Gem/Specification/name-i.ri
@@ -4459,6 +4456,7 @@ share/ri/${REV}/system/Gem/Specification/sort_obj-i.ri
 share/ri/${REV}/system/Gem/Specification/spec_dir-i.ri
 share/ri/${REV}/system/Gem/Specification/spec_file-i.ri
 share/ri/${REV}/system/Gem/Specification/spec_name-i.ri
+share/ri/${REV}/system/Gem/Specification/specification_record-c.ri
 share/ri/${REV}/system/Gem/Specification/specification_version-i.ri
 share/ri/${REV}/system/Gem/Specification/stubbed%3f-i.ri
 share/ri/${REV}/system/Gem/Specification/stubs-c.ri
@@ -4506,6 +4504,28 @@ share/ri/${REV}/system/Gem/SpecificationPolicy/validate_shebang_line_in-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_specification_version-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_unique_links-i.ri
 share/ri/${REV}/system/Gem/SpecificationPolicy/validate_values-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/
+share/ri/${REV}/system/Gem/SpecificationRecord/add_spec-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/all%3d-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/all-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/all_names-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/cdesc-SpecificationRecord.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/dirs_from-c.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/each-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/find_active_stub_by_path-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/find_all_by_name-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/find_by_path-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/find_inactive_by_path-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/from_path-c.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/installed_stubs-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/latest_spec_for-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/latest_specs-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/map_stubs-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/new-c.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/remove_spec-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/stubs-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/stubs_for-i.ri
+share/ri/${REV}/system/Gem/SpecificationRecord/stubs_for_pattern-i.ri
 share/ri/${REV}/system/Gem/StreamUI/
 share/ri/${REV}/system/Gem/StreamUI/SilentDownloadReporter/
 share/ri/${REV}/system/Gem/StreamUI/SilentDownloadReporter/cdesc-SilentDownloadReporter.ri
@@ -4583,6 +4603,7 @@ share/ri/${REV}/system/Gem/Uninstaller/default_specs_that_match-i.ri
 share/ri/${REV}/system/Gem/Uninstaller/gem_home-i.ri
 share/ri/${REV}/system/Gem/Uninstaller/new-c.ri
 share/ri/${REV}/system/Gem/Uninstaller/path_ok%3f-i.ri
+share/ri/${REV}/system/Gem/Uninstaller/plugin_dir_for-i.ri
 share/ri/${REV}/system/Gem/Uninstaller/regenerate_plugins-i.ri
 share/ri/${REV}/system/Gem/Uninstaller/remove-i.ri
 share/ri/${REV}/system/Gem/Uninstaller/remove_all-i.ri
@@ -4751,6 +4772,7 @@ share/ri/${REV}/system/Gem/find_latest_files-c.ri
 share/ri/${REV}/system/Gem/find_spec_for_exe-c.ri
 share/ri/${REV}/system/Gem/find_unresolved_default_spec-c.ri
 share/ri/${REV}/system/Gem/finish_resolve-c.ri
+share/ri/${REV}/system/Gem/freebsd_platform%3f-c.ri
 share/ri/${REV}/system/Gem/gemdeps-c.ri
 share/ri/${REV}/system/Gem/host%3d-c.ri
 share/ri/${REV}/system/Gem/host-c.ri
