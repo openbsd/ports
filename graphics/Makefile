@@ -297,6 +297,7 @@
      SUBDIR += ruby-rqrcode
      SUBDIR += ruby-rqrcode-core
      SUBDIR += s10sh
+     SUBDIR += sane-airscan
      SUBDIR += sane-backends
      SUBDIR += sane-backends,escl
      SUBDIR += sane-backends,snmp
