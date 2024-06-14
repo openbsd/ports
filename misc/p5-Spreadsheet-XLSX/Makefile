@@ -1,6 +1,6 @@
 COMMENT =	Perl extension for reading MS Excel 2007 files
 
-DISTNAME =	Spreadsheet-XLSX-0.17
+DISTNAME =	Spreadsheet-XLSX-0.18
 
 CATEGORIES =	misc
 
