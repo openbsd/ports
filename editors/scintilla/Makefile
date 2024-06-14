@@ -1,6 +1,6 @@
 COMMENT=	source code editing component for GTK+
 
-VERSION=	5.4.3
+VERSION=	5.5.0
 DISTNAME=	scintilla${VERSION:S/.//g}
 PKGNAME=	scintilla-${VERSION}
 CATEGORIES=	editors x11
