@@ -188,6 +188,7 @@ go/src/archive/zip/reader_test.go
 go/src/archive/zip/register.go
 go/src/archive/zip/struct.go
 go/src/archive/zip/testdata/
+go/src/archive/zip/testdata/comment-truncated.zip
 go/src/archive/zip/testdata/crc32-not-streamed.zip
 go/src/archive/zip/testdata/dd.zip
 go/src/archive/zip/testdata/dupdir.zip
@@ -2576,6 +2577,7 @@ go/src/cmd/go/testdata/script/gopath_std_vendor.txt
 go/src/cmd/go/testdata/script/gopath_vendor_dup_err.txt
 go/src/cmd/go/testdata/script/goroot_executable.txt
 go/src/cmd/go/testdata/script/goroot_executable_trimpath.txt
+go/src/cmd/go/testdata/script/gotoolchain_issue66175.txt
 go/src/cmd/go/testdata/script/gotoolchain_local.txt
 go/src/cmd/go/testdata/script/gotoolchain_loop.txt
 go/src/cmd/go/testdata/script/gotoolchain_modcmds.txt
@@ -5326,7 +5328,6 @@ go/src/crypto/x509/root.go
 go/src/crypto/x509/root_aix.go
 go/src/crypto/x509/root_bsd.go
 go/src/crypto/x509/root_darwin.go
-go/src/crypto/x509/root_darwin_test.go
 go/src/crypto/x509/root_linux.go
 go/src/crypto/x509/root_plan9.go
 go/src/crypto/x509/root_solaris.go
@@ -5335,7 +5336,6 @@ go/src/crypto/x509/root_unix.go
 go/src/crypto/x509/root_unix_test.go
 go/src/crypto/x509/root_wasm.go
 go/src/crypto/x509/root_windows.go
-go/src/crypto/x509/root_windows_test.go
 go/src/crypto/x509/sec1.go
 go/src/crypto/x509/sec1_test.go
 go/src/crypto/x509/test-file.crt
@@ -13244,6 +13244,9 @@ go/test/fixedbugs/issue6703w.go
 go/test/fixedbugs/issue6703x.go
 go/test/fixedbugs/issue6703y.go
 go/test/fixedbugs/issue6703z.go
+go/test/fixedbugs/issue67141.go
+go/test/fixedbugs/issue67160.go
+go/test/fixedbugs/issue67255.go
 go/test/fixedbugs/issue6750.go
 go/test/fixedbugs/issue6772.go
 go/test/fixedbugs/issue6789.dir/
