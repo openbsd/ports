@@ -65,6 +65,10 @@ share/unicode/ucd/auxiliary/SentenceBreakTest.txt
 share/unicode/ucd/auxiliary/WordBreakProperty.txt
 share/unicode/ucd/auxiliary/WordBreakTest.html
 share/unicode/ucd/auxiliary/WordBreakTest.txt
+share/unicode/ucd/emoji/
+share/unicode/ucd/emoji/ReadMe.txt
+share/unicode/ucd/emoji/emoji-data.txt
+share/unicode/ucd/emoji/emoji-variation-sequences.txt
 share/unicode/ucd/extracted/
 share/unicode/ucd/extracted/DerivedBidiClass.txt
 share/unicode/ucd/extracted/DerivedBinaryProperties.txt
