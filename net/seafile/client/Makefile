@@ -2,9 +2,9 @@ COMMENT =		seafile client
 
 GH_PROJECT =		seafile-client
 # upstream keep on sliding tags to pull in new commits
-# this commit is from the "v9.0.5" tag
-GH_COMMIT =		47533e06ff8bca5e0f7895581b3bbad1b78cfcea
-DISTNAME =		seafile-client-9.0.5pl20240228
+# this commit is from the "v9.0.6" tag
+GH_COMMIT =		4a4230f7229c3f55dcd486de061eb20ed4c3f34d
+DISTNAME =		seafile-client-9.0.6pl20240525
 EPOCH = 		0
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
