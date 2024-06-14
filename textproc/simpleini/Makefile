@@ -3,8 +3,7 @@ CATEGORIES =	textproc
 
 GH_ACCOUNT =	brofield
 GH_PROJECT =	simpleini
-GH_TAGNAME =	v4.20
-REVISION =	0
+GH_TAGNAME =	v4.22
 
 # MIT
 PERMIT_PACKAGE =	Yes
