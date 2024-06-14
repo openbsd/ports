@@ -1,0 +1,12 @@
+@bin bin/airscan-discover
+@so lib/sane/libsane-airscan.so
+@lib lib/sane/libsane-airscan.so.${LIBsane-airscan_VERSION}
+@man man/man1/airscan-discover.1
+@man man/man5/sane-airscan.5
+share/examples/sane-airscan/
+share/examples/sane-airscan/sane.d/
+share/examples/sane-airscan/sane.d/airscan.conf
+@sample ${SYSCONFDIR}/sane.d/airscan.conf
+share/examples/sane-airscan/sane.d/dll.d/
+share/examples/sane-airscan/sane.d/dll.d/airscan
+@sample ${SYSCONFDIR}/sane.d/dll.d/airscan
