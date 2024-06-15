@@ -1,0 +1,16 @@
+dumb test for libspatialindex_c major/minor
+
+Index: tests/test_index.py
+--- tests/test_index.py.orig
++++ tests/test_index.py
+@@ -44,8 +44,8 @@ class IndexTestCase(unittest.TestCase):
+ 
+ class IndexVersion(unittest.TestCase):
+     def test_libsidx_version(self) -> None:
+-        self.assertTrue(index.major_version == 1)
+-        self.assertTrue(index.minor_version >= 7)
++        self.assertTrue(index.major_version >= 1)
++        self.assertTrue(index.minor_version >= 0)
+ 
+ 
+ class IndexCount(unittest.TestCase):
