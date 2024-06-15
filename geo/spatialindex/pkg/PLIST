@@ -1,4 +1,5 @@
 include/spatialindex/
+include/spatialindex/Ball.h
 include/spatialindex/LineSegment.h
 include/spatialindex/MVRTree.h
 include/spatialindex/MovingPoint.h
@@ -31,5 +32,12 @@ include/spatialindex/tools/PointerPool.h
 include/spatialindex/tools/PoolPointer.h
 include/spatialindex/tools/Tools.h
 include/spatialindex/tools/rand48.h
+lib/cmake/
+lib/cmake/libspatialindex/
+lib/cmake/libspatialindex/libspatialindexConfig.cmake
+lib/cmake/libspatialindex/libspatialindexConfigVersion.cmake
+lib/cmake/libspatialindex/libspatialindexTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libspatialindex/libspatialindexTargets.cmake
 @lib lib/libspatialindex.so.${LIBspatialindex_VERSION}
 @lib lib/libspatialindex_c.so.${LIBspatialindex_c_VERSION}
+lib/pkgconfig/libspatialindex.pc

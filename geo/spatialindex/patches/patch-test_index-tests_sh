@@ -1,0 +1,21 @@
+drop bash dependency
+https://github.com/libspatialindex/libspatialindex/pull/249
+
+Index: test/index-tests.sh
+--- test/index-tests.sh.orig
++++ test/index-tests.sh
+@@ -8,12 +8,12 @@ TEST_ROOT=`pwd`
+ 
+ execute_test () {
+     dir="$1"
+-    pushd "$dir"
++    cd "$dir"
+     echo "Executing test ------------------ $1 -----------------------------"
+     ./run
+     echo "Executed test ------------------ $1 -----------------------------"
+     $TEST_ROOT/cleanup-test-output.sh
+-    popd
++    cd -
+ }
+ 
+ execute_test "geometry/test1"
