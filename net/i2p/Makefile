@@ -1,9 +1,8 @@
 COMMENT=	i2p routing protocol
 
-GH_ACCOUNT=	i2p
-GH_PROJECT=	i2p.i2p
-GH_TAGNAME=	i2p-2.5.1
-DISTNAME=	${GH_TAGNAME}
+V =		2.5.2
+DISTNAME =	i2psource_${V}
+PKGNAME =	i2p-${V}
 
 CATEGORIES=	net
 
@@ -15,7 +14,11 @@ MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 # EPLv1.0 GPLv2 GPLv3 LGPLv2.1 LGPLv3 MIT public-domain WTFPLv2
 PERMIT_PACKAGE=	Yes
 
+EXTRACT_SUFX =	.tar.bz2
+
 WANTLIB +=	gmp
+
+SITES =		https://files.i2p-projekt.de/${V}/
 
 MODULES=	java
 MODJAVA_VER=	1.8
@@ -47,6 +50,8 @@ MAKE_ENV=	CC=${CC} BITS=${BITS} MACHINE_ARCH=${MACHINE_ARCH}
 
 # test requires addition dependencies (atleast: junit, hamcrest, jmockfit)
 NO_TEST=	Yes
+
+WRKDIST=	${WRKDIR}/i2p-${V}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/installer/resources/wrapper.config
