@@ -96,6 +96,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/http
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hylang
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/idlang
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/idris
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/iecst
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/igorpro
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ini
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/io
@@ -345,6 +346,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hylang.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/idlang.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/idris.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/iecst.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/igorpro.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ini.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/io.rb
