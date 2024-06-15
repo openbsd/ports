@@ -1,9 +1,8 @@
 COMMENT =	client library and CLI for Planet's public API
 
-MODPY_EGG_VERSION =	1.5.2
+MODPY_EGG_VERSION =	2.9
 DISTNAME =	planet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	geo
 
@@ -24,8 +23,5 @@ RUN_DEPENDS +=	devel/py-click${MODPY_FLAVOR} \
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
 		www/py-requests-mock${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR}
-
-post-install:
-	rm ${PREFIX}/LICENSE
 
 .include <bsd.port.mk>
