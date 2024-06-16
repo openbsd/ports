@@ -18740,6 +18740,7 @@ share/wesnoth/data/gui/window/attack_predictions.cfg
 share/wesnoth/data/gui/window/campaign_dialog.cfg
 share/wesnoth/data/gui/window/campaign_difficulty.cfg
 share/wesnoth/data/gui/window/chat_log.cfg
+share/wesnoth/data/gui/window/community_dialog.cfg
 share/wesnoth/data/gui/window/core_dialog.cfg
 share/wesnoth/data/gui/window/custom_tod.cfg
 share/wesnoth/data/gui/window/debug_clock.cfg
@@ -19485,6 +19486,7 @@ share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/attacks/attack
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/attacks/attacks_wfl_self.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/attacks/attacks_zero.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/backstab.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/damage_recalculation_mid_attack.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/feeding.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/firststrike_and_laststrike.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/heals/
@@ -19660,6 +19662,7 @@ share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/res
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_apply_to_blade.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_apply_to_invalid.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_apply_to_non_blade.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_cumulative_max_value.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_divide.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_high_fraction.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_low_fraction.cfg
@@ -19676,12 +19679,16 @@ share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/res
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_sub.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_sub_divide.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_sub_multiply.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_to_damage_type_special.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_mixed_same_id.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_mixed_unique_id.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_mixed_unique_id_skeletal.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_no_same_id.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_no_unique_id.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_no_unique_id_skeletal.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_yes_same_id.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_yes_unique_id.cfg
+share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_two_cumulative_yes_unique_id_skeletal.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_wfl_other.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_wfl_self.cfg
 share/wesnoth/data/test/scenarios/wml_tests/UnitsWML/AbilitiesWML/resistance/resistance_zero.cfg
