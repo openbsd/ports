@@ -260,6 +260,7 @@
      SUBDIR += vgmplay
      SUBDIR += vgmstream
      SUBDIR += vlorb
+     SUBDIR += vo-amrwbenc
      SUBDIR += vorbis-tools
      SUBDIR += vorbisgain
      SUBDIR += wavpack
