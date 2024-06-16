@@ -168,7 +168,7 @@ MODGO_MODULES =	\
 	github.com/googleapis/google-cloud-go-testing					 v0.0.0-20210719221736-1c9a4c676720 \
 	github.com/gorilla/css								 v1.0.0 \
 	github.com/gorilla/mux								 v1.8.1 \
-	github.com/gorilla/websocket							 v1.5.1 \
+	github.com/gorilla/websocket							 v1.5.2 \
 	github.com/grpc-ecosystem/go-grpc-middleware					 v1.4.0 \
 	github.com/grpc-ecosystem/go-grpc-prometheus					 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway						 v1.16.0 \
@@ -343,7 +343,7 @@ MODGO_MODULES =	\
 	github.com/ysmood/leakless							 v0.8.0 \
 	github.com/yuin/goldmark							 v1.5.4 \
 	github.com/yuin/goldmark-emoji							 v1.0.2 \
-	github.com/zalando/go-keyring							 v0.2.4 \
+	github.com/zalando/go-keyring							 v0.2.5 \
 	github.com/zeebo/errs								 v1.3.0 \
 	github.com/zmap/zcrypto								 v0.0.0-20230310154051-c8b263fd8300 \
 	github.com/zmap/zlint/v3							 v3.5.0 \
@@ -395,7 +395,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/api					 v0.0.0-20240311173647-c811ad7063a7 \
 	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20240318140521-94a12d6c2237 \
 	google.golang.org/grpc								 v1.62.2 \
-	google.golang.org/protobuf							 v1.34.1 \
+	google.golang.org/protobuf							 v1.34.2 \
 	gopkg.in/check.v1								 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/cheggaaa/pb.v1								 v1.0.28 \
 	gopkg.in/fsnotify.v1								 v1.4.7 \
@@ -644,6 +644,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.20.0 \
 	golang.org/x/net								 v0.21.0 \
 	golang.org/x/net								 v0.22.0 \
+	golang.org/x/net								 v0.23.0 \
 	golang.org/x/net								 v0.9.0 \
 	golang.org/x/oauth2								 v0.15.0 \
 	golang.org/x/oauth2								 v0.16.0 \
@@ -740,6 +741,7 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf							 v1.31.0 \
 	google.golang.org/protobuf							 v1.32.0 \
 	google.golang.org/protobuf							 v1.33.0 \
+	google.golang.org/protobuf							 v1.34.1 \
 	gopkg.in/check.v1								 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1								 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1								 v1.0.0-20190902080502-41f04d3bba15 \
