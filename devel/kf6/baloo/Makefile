@@ -1,5 +1,6 @@
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Baloo                  0.0 # 0.0
 SHARED_LIBS +=  KF6BalooEngine            0.0 # 0.0
@@ -10,7 +11,10 @@ WANTLIB += KF6Solid Qt6Core Qt6DBus Qt6Network Qt6Qml c lmdb m
 
 WANTLIB += lib/inotify/inotify
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		x11/qt6/qtquick3d
+
+RUN_DEPENDS =	x11/qt6/qtquick3d
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/kf6/kconfig>=${MODKF6_VERSION} \
