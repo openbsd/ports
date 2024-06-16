@@ -63,6 +63,9 @@ LIB_DEPENDS=		devel/jsonrpc-glib \
 			x11/gnome/libpanel \
 			x11/gtksourceview5
 
+# don't pick up llvm-config(1) from base
+CONFIGURE_ENV=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION}
+
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
 			-Dplugin_sysprof=false \
@@ -82,9 +85,6 @@ CONFIGURE_ARGS +=	-Db_asneeded=false
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/clang/meson.build
-# don't pick up llvm-config(1) from base
-	ln -sf ${LOCALBASE}/bin/llvm-config-${MODCLANG_VERSION} \
-		${WRKDIR}/bin/llvm-config
 # XXX see src/libide/core/meson.build; prevent a dependency on git;
 # ninja: error: '/usr/local/bin/git',
 # needed by 'src/libide/core/ide-build-ident.h', missing and no known rule to make it
