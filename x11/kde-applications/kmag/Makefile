@@ -1,6 +1,7 @@
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/utilities/kmag/
 
@@ -16,6 +17,9 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
+
+BUILD_DEPENDS =		x11/qt6/qtmultimedia
+RUN_DEPENDS =		x11/qt6/qtmultimedia
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
