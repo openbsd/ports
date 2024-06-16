@@ -3,7 +3,7 @@ https://github.com/allinurl/goaccess/pull/1350
 Index: src/browsers.c
 --- src/browsers.c.orig
 +++ src/browsers.c
-@@ -118,6 +118,8 @@ static const char *browsers[][2] = {
+@@ -118,6 +118,8 @@ static const char *const browsers[][2] = {
    {"MicroMessenger", "Others"},
    {"Apache", "Others"},
    {"JOSM", "Others"},
@@ -12,9 +12,9 @@ Index: src/browsers.c
    {"pacman", "Others"},
    {"Pamac", "Others"},
    {"libwww-perl", "Others"},
-@@ -216,6 +218,7 @@ static const char *browsers[][2] = {
+@@ -217,6 +219,7 @@ static const char *const browsers[][2] = {
    {"Microsoft-WebDAV", "Crawlers"},
-   {"DuckDuckGo-Favicons-Bot", "Crawlers"},
+   {"DuckDuckGo", "Crawlers"},
    {"bingbot", "Crawlers"},
 +  {"The Knowledge AI", "Crawlers"},
    {"PetalBot", "Crawlers"},
