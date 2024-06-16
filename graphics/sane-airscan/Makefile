@@ -16,6 +16,8 @@ WANTLIB += tiff xml2
 
 MODULES=		devel/meson
 
+BUILD_DEPENDS=		graphics/sane-backends
+
 LIB_DEPENDS=		graphics/png \
 			graphics/tiff \
 			net/avahi,-libs \
