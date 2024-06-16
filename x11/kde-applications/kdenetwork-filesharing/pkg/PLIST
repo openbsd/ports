@@ -1,4 +1,5 @@
 @conflict kdenetwork-filesharing-<=19.12.3
+@conflict kdenetwork-filesharing-kf5-<=23.08.4
 @pkgpath x11/kde4/network-filesharing
 lib/qt6/plugins/kf6/propertiesdialog/
 @so lib/qt6/plugins/kf6/propertiesdialog/SambaAcl.so
