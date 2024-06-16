@@ -2,6 +2,7 @@ COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
 COMMENT-qt6 =	PIN or passphrase entry dialog (Qt6 interface)
+REVISION-qt6 =	0
 
 VERSION = 	1.3.0
 DISTNAME = 	pinentry-${VERSION}
@@ -45,8 +46,11 @@ LIB_DEPENDS-qt5 =	${LIB_DEPENDS} \
 
 WANTLIB-qt6 += ${WANTLIB}
 WANTLIB-qt6 += ${COMPILER_LIBCXX} Qt6Core Qt6Gui Qt6Widgets m
+WANTLIB-qt6 += KF6GuiAddons KF6WindowSystem
 
 LIB_DEPENDS-qt6 =	${LIB_DEPENDS} \
+			devel/kf6/kguiaddons \
+			devel/kf6/kwindowsystem \
 			x11/qt6/qtbase
 
 CONFIGURE_STYLE = 	gnu
