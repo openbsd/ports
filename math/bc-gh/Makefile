@@ -1,4 +1,4 @@
-V =		6.7.5
+V =		6.7.6
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}
 PKGNAME =	bc-gh-${V}
