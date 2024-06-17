@@ -1,47 +1,51 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -35,8 +35,10 @@ DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
+@@ -35,12 +35,14 @@ DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
  # for dynamic linking
  LIBS      = -lssl -lcrypto
  ifneq ($(OS), FreeBSD)
 +ifneq ($(OS), OpenBSD)
+ ifneq ($(findstring MINGW64,$(OS)),MINGW64)
  	LIBS += -ldl
+ else
+ 	LIBS += -lwsock32 -lWs2_32
+ endif
  endif
 +endif
  ifeq ($(OS), SunOS)
  	CFLAGS += -m64
  	LIBS   += -lsocket -lnsl
-@@ -45,14 +47,16 @@ endif
- # Enable checks for buffer overflows, add stack protectors, generate position
- # independent code, mark the relocation table read-only, and mark the global
- # offset table read-only.
--CFLAGS  += -D_FORTIFY_SOURCE=2 -fstack-protector-all -fPIE
-+CFLAGS  += -D_FORTIFY_SOURCE=2 -fstack-protector-all
- 
+@@ -54,6 +56,7 @@ CFLAGS  += -D_FORTIFY_SOURCE=2 -fstack-protector-all -
  # Don't enable some hardening flags on OS X because it uses an old version of Clang
  ifneq ($(OS), Darwin)
  ifneq ($(OS), SunOS)
 +ifneq ($(OS), OpenBSD)
+ ifneq ($(findstring CYGWIN,$(OS)),CYGWIN)
+ ifneq ($(findstring MINGW64,$(OS)),MINGW64)
  	LDFLAGS += -pie -z relro -z now
+@@ -63,6 +66,7 @@ endif
+ endif
  endif
  endif
 +endif
  
  # Force C11 mode to fix the build on very old version of GCC
  CFLAGS += -std=gnu11
-@@ -68,8 +72,10 @@ else
+@@ -78,10 +82,12 @@ else
  LIBS         = -lssl -lcrypto -lz -lpthread
  endif
  ifneq ($(OS), FreeBSD)
 +ifneq ($(OS), OpenBSD)
+ ifneq ($(findstring CYGWIN,$(OS)),CYGWIN)
  	LIBS += -ldl
+ endif
  endif
 +endif
  ifeq ($(OS), SunOS)
  	LIBS += -lsocket -lnsl
  endif
-@@ -125,6 +131,7 @@ uninstall:
+@@ -137,6 +143,7 @@ uninstall:
  	rm -f $(DESTDIR)$(BINDIR)/sslscan
  	rm -f $(DESTDIR)$(MAN1DIR)/sslscan.1
  
@@ -49,7 +53,7 @@ Index: Makefile
  .openssl.is.fresh: opensslpull
  	true
  opensslpull:
-@@ -133,6 +140,7 @@ opensslpull:
+@@ -145,6 +152,7 @@ opensslpull:
  	else \
  	git clone --depth 1 -b `git ls-remote https://github.com/openssl/openssl | grep -Eo '(openssl-3\.0\.[0-9]+)' | sort -V | tail -n 1` https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
  	fi
@@ -57,7 +61,7 @@ Index: Makefile
  
  # Need to build OpenSSL differently on OSX
  ifeq ($(OS), Darwin)
-@@ -147,6 +155,7 @@ openssl/Makefile: .openssl.is.fresh
+@@ -159,6 +167,7 @@ openssl/Makefile: .openssl.is.fresh
  else
  openssl/Makefile: .openssl.is.fresh
  	cd ./openssl; ./config -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
