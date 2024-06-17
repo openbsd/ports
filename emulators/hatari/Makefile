@@ -5,7 +5,7 @@ COMMENT =	Atari ST/STE/TT/Falcon emulator
 V =		2.5.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 
@@ -16,7 +16,8 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SDL2 SM X11 Xext c m png portmidi readline z
+WANTLIB += ICE SDL2 SM X11 Xext c capstone m png portmidi readline
+WANTLIB += z
 
 SITES =		https://download.tuxfamily.org/hatari/$V/
 
@@ -26,6 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/portmidi \
+		devel/capstone/main \
 		devel/sdl2 \
 		graphics/png
 
