@@ -16,6 +16,7 @@
 @comment bin/mkpkg
 @comment bin/mkversion
 @comment bin/nardump
+@comment bin/natc
 @comment bin/netlogfmt
 @comment bin/pgproxy
 @comment bin/printdep
@@ -25,6 +26,7 @@
 @comment bin/ssh-auth-none-demo
 @comment bin/stunc
 @comment bin/stund
+@comment bin/stunstamp
 @comment bin/sync-containers
 @bin bin/tailscale
 @bin bin/tailscaled
