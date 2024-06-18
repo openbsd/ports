@@ -1,9 +1,8 @@
 COMMENT=		kernels used by spyder on its ipython console
 
-MODPY_EGG_VERSION=	2.5.1
-DISTNAME=		spyder-kernels-${MODPY_EGG_VERSION}
-PKGNAME=		${MODPY_PY_PREFIX}${DISTNAME}
-REVISION=		0
+MODPY_EGG_VERSION=	2.5.2
+DISTNAME=		spyder_kernels-${MODPY_EGG_VERSION}
+PKGNAME=		${MODPY_PY_PREFIX}${DISTNAME:S/_/-/}
 
 PORTROACH=		limit:^2
 
