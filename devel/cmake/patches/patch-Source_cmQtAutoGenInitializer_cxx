@@ -13,7 +13,7 @@ why it's failing. Upstream bug report [2]
 Index: Source/cmQtAutoGenInitializer.cxx
 --- Source/cmQtAutoGenInitializer.cxx.orig
 +++ Source/cmQtAutoGenInitializer.cxx
-@@ -1809,6 +1809,10 @@ bool cmQtAutoGenInitializer::SetupWriteAutogenInfo()
+@@ -1967,6 +1967,10 @@ bool cmQtAutoGenInitializer::SetupWriteAutogenInfo()
        if (this->Moc.PredefsCmd.size() >= 3) {
          this->Moc.PredefsCmd.insert(this->Moc.PredefsCmd.begin() + 1,
                                      CompileOptionValue);

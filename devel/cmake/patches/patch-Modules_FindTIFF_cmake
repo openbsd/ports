@@ -1,0 +1,34 @@
+Revert: https://gitlab.kitware.com/cmake/cmake/-/merge_requests/9300
+More: https://gitlab.kitware.com/cmake/cmake/-/issues/26038
+Index: Modules/FindTIFF.cmake
+--- Modules/FindTIFF.cmake.orig
++++ Modules/FindTIFF.cmake
+@@ -100,9 +100,9 @@ if (_TIFF_component_opt)
+ endif ()
+ unset(_TIFF_component_opt)
+ # Always find with QUIET to avoid noise when it is not found.
+-find_package(Tiff CONFIG QUIET ${_TIFF_args})
++find_package(tiff CONFIG QUIET ${_TIFF_args})
+ unset(_TIFF_args)
+-if (Tiff_FOUND)
++if (tiff_FOUND)
+   if (NOT TARGET TIFF::TIFF)
+     add_library(TIFF::TIFF IMPORTED INTERFACE)
+     set_target_properties(TIFF::TIFF PROPERTIES
+@@ -201,7 +201,7 @@ if (Tiff_FOUND)
+       endif ()
+     endif ()
+   endif ()
+-  set(TIFF_VERSION_STRING "${Tiff_VERSION}")
++  set(TIFF_VERSION_STRING "${tiff_VERSION}")
+   foreach (_TIFF_component IN LISTS TIFF_FIND_COMPONENTS)
+     set(TIFF_${_TIFF_component}_FOUND "${Tiff_${_TIFF_component}_FOUND}")
+   endforeach ()
+@@ -210,7 +210,6 @@ if (Tiff_FOUND)
+   include(${CMAKE_CURRENT_LIST_DIR}/FindPackageHandleStandardArgs.cmake)
+   find_package_handle_standard_args(TIFF
+                                     HANDLE_COMPONENTS
+-                                    REQUIRED_VARS Tiff_DIR
+                                     VERSION_VAR TIFF_VERSION_STRING)
+ 
+   cmake_policy(POP)
