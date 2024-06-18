@@ -1,7 +1,7 @@
 Index: media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.h
 --- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.h.orig
 +++ media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.h
-@@ -693,7 +693,7 @@ struct StructTraits<media::stable::mojom::NativeGpuMem
+@@ -690,7 +690,7 @@ struct StructTraits<media::stable::mojom::NativeGpuMem
    static const gfx::GpuMemoryBufferId& id(
        const gfx::GpuMemoryBufferHandle& input);
  

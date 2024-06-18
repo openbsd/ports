@@ -25,7 +25,7 @@ Index: third_party/blink/renderer/controller/blink_initializer.cc
    binders.Add<mojom::blink::MemoryUsageMonitorLinux>(
        ConvertToBaseRepeatingCallback(
            CrossThreadBindRepeating(&MemoryUsageMonitorPosix::Bind)),
-@@ -306,7 +306,7 @@ void BlinkInitializer::RegisterMemoryWatchers(Platform
+@@ -303,7 +303,7 @@ void BlinkInitializer::RegisterMemoryWatchers(Platform
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

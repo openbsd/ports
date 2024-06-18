@@ -1,7 +1,7 @@
 Index: chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
 --- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -798,7 +798,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
+@@ -916,7 +916,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
      g_observer->ConfiguringCable(request_type);
    }
  

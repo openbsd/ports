@@ -1,7 +1,7 @@
 Index: ui/events/keycodes/dom/keycode_converter.h
 --- ui/events/keycodes/dom/keycode_converter.h.orig
 +++ ui/events/keycodes/dom/keycode_converter.h
-@@ -63,7 +63,7 @@ class KeycodeConverter {
+@@ -64,7 +64,7 @@ class KeycodeConverter {
    // Convert a DomCode into a native keycode.
    static int DomCodeToNativeKeycode(DomCode code);
  

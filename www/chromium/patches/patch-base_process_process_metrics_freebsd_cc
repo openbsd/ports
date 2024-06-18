@@ -68,7 +68,7 @@ Index: base/process/process_metrics_freebsd.cc
  
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
+-  NOTREACHED_IN_MIGRATION();
 -  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -

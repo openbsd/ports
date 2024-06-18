@@ -1,7 +1,7 @@
 Index: mojo/public/tools/bindings/mojom.gni
 --- mojo/public/tools/bindings/mojom.gni.orig
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -741,6 +741,16 @@ template("mojom") {
+@@ -746,6 +746,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
      }
  

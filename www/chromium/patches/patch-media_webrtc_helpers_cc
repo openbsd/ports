@@ -16,5 +16,5 @@ Index: media/webrtc/helpers.cc
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    // Use AGC2 digital and input volume controller.
-   // TODO(crbug.com/1375239): Remove `kWebRtcAllowInputVolumeAdjustment` safely
+   // TODO(crbug.com/40872787): Remove `kWebRtcAllowInputVolumeAdjustment` safely
    // and set `input_volume_controller.enabled` true.

@@ -1,7 +1,7 @@
 Index: content/browser/gpu/gpu_data_manager_impl.cc
 --- content/browser/gpu/gpu_data_manager_impl.cc.orig
 +++ content/browser/gpu/gpu_data_manager_impl.cc
-@@ -396,7 +396,7 @@ void GpuDataManagerImpl::OnDisplayMetricsChanged(
+@@ -397,7 +397,7 @@ void GpuDataManagerImpl::OnDisplayMetricsChanged(
    private_->OnDisplayMetricsChanged(display, changed_metrics);
  }
  

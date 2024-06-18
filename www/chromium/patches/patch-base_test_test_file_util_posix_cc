@@ -1,7 +1,7 @@
 Index: base/test/test_file_util_posix.cc
 --- base/test/test_file_util_posix.cc.orig
 +++ base/test/test_file_util_posix.cc
-@@ -89,7 +89,7 @@ void SyncPageCacheToDisk() {
+@@ -91,7 +91,7 @@ void SyncPageCacheToDisk() {
  }
  
  #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_APPLE) && \

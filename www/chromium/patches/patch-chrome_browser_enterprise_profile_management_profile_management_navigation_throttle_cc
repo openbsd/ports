@@ -2,7 +2,7 @@ Index: chrome/browser/enterprise/profile_management/profile_management_navigatio
 --- chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc.orig
 +++ chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc
 @@ -67,8 +67,8 @@ base::flat_map<std::string, SAMLProfileAttributes>& Ge
-   // TODO(crbug.com/1445072): Add actual domains with attribute names.
+   // TODO(crbug.com/40267996): Add actual domains with attribute names.
    profile_attributes->insert(std::make_pair(
        "supported.test",
 -      SAMLProfileAttributes("placeholderName", "placeholderDomain",

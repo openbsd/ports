@@ -1,7 +1,7 @@
 Index: content/common/BUILD.gn
 --- content/common/BUILD.gn.orig
 +++ content/common/BUILD.gn
-@@ -444,19 +444,28 @@ source_set("common") {
+@@ -448,19 +448,28 @@ source_set("common") {
    }
  
    if (is_linux || is_chromeos) {
