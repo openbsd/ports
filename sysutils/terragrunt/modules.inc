@@ -155,7 +155,7 @@ MODGO_MODULES =	\
 	github.com/!masterminds/sprig						 v2.22.0+incompatible \
 	github.com/!masterminds/sprig/v3					 v3.2.3 \
 	github.com/!microsoft/go-winio						 v0.6.1 \
-	github.com/!n!y!times/gziphandler					 v0.0.0-20170623195520-56545f4a5d46 \
+	github.com/!n!y!times/gziphandler					 v1.1.1 \
 	github.com/!netflix/go-expect						 v0.0.0-20220104043353-73e0943537d2 \
 	github.com/!nvveen/!gotty						 v0.0.0-20120604004816-cd527374f1e5 \
 	github.com/!one!of!one/xxhash						 v1.2.2 \
@@ -849,6 +849,7 @@ MODGO_MODFILES =	\
 	github.com/!masterminds/semver/v3				 v3.2.0 \
 	github.com/!microsoft/go-winio					 v0.5.2 \
 	github.com/!microsoft/go-winio					 v0.6.0 \
+	github.com/!n!y!times/gziphandler				 v0.0.0-20170623195520-56545f4a5d46 \
 	github.com/agext/levenshtein					 v1.2.1 \
 	github.com/agext/levenshtein					 v1.2.2 \
 	github.com/apparentlymart/go-dump				 v0.0.0-20180507223929-23540a00eaa3 \

@@ -537,7 +537,8 @@ SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.6.0.mod) = iXWp5V5yZu4KM
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.6.1.mod) = GR3dd4wdsbe9WoL7ainnVfCh1ZujT026AyNTay/OvwY=
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.6.1.zip) = /f7Ii562GJWrOe06YYHZnXg2Zjj4amCRcNdkF7oBj1M=
 SHA256 (go_modules/github.com/!n!y!times/gziphandler/@v/v0.0.0-20170623195520-56545f4a5d46.mod) = 3iCxZM0vtVTuvgy0CBEhNOuTakI8Rg2DuyGtvolLvJo=
-SHA256 (go_modules/github.com/!n!y!times/gziphandler/@v/v0.0.0-20170623195520-56545f4a5d46.zip) = DCzOmJoCJiH9NEWUgTa1/6tA42qe8Wf8XW33kHc1nlA=
+SHA256 (go_modules/github.com/!n!y!times/gziphandler/@v/v1.1.1.mod) = UW40aFEz2P2DTkqoHMKzuqaskSxzUKvcuVY8SWzzENg=
+SHA256 (go_modules/github.com/!n!y!times/gziphandler/@v/v1.1.1.zip) = KUjZ9w5DiPE/TtlADfQdymCEEFn33MMM+QnIJ5bMcFo=
 SHA256 (go_modules/github.com/!netflix/go-expect/@v/v0.0.0-20220104043353-73e0943537d2.mod) = fmpOLc8t9YpYy4EELw0O2ZUG+Mh2Z6ibEURRFuYQC5A=
 SHA256 (go_modules/github.com/!netflix/go-expect/@v/v0.0.0-20220104043353-73e0943537d2.zip) = BAumlRCZXwKFnFZR9dIvc6q4fcW0G8DArmPe4IZQxIw=
 SHA256 (go_modules/github.com/!nvveen/!gotty/@v/v0.0.0-20120604004816-cd527374f1e5.mod) = rq8Tiwbes9R+BKesYDu5l7H+M4vUE2ovCl57B4A1Gmc=
@@ -2570,7 +2571,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = XmRigeM
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.59.3.zip) = bz2TG5Jps96xuXIZTpzW/vZSCT1sbQNMsWG4B812l+Q=
+SHA256 (terragrunt-v0.59.4.zip) = UcNuOpdoGu7R5ZZXnKfPvKNzWI7RITTOpkTvX9I04qQ=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3110,7 +3111,8 @@ SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.6.0.mod) = 254
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.6.1.mod) = 191
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.6.1.zip) = 149727
 SIZE (go_modules/github.com/!n!y!times/gziphandler/@v/v0.0.0-20170623195520-56545f4a5d46.mod) = 38
-SIZE (go_modules/github.com/!n!y!times/gziphandler/@v/v0.0.0-20170623195520-56545f4a5d46.zip) = 48225
+SIZE (go_modules/github.com/!n!y!times/gziphandler/@v/v1.1.1.mod) = 91
+SIZE (go_modules/github.com/!n!y!times/gziphandler/@v/v1.1.1.zip) = 55401
 SIZE (go_modules/github.com/!netflix/go-expect/@v/v0.0.0-20220104043353-73e0943537d2.mod) = 125
 SIZE (go_modules/github.com/!netflix/go-expect/@v/v0.0.0-20220104043353-73e0943537d2.zip) = 24456
 SIZE (go_modules/github.com/!nvveen/!gotty/@v/v0.0.0-20120604004816-cd527374f1e5.mod) = 31
@@ -5143,4 +5145,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.3.zip) = 230610
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.59.3.zip) = 4939091
+SIZE (terragrunt-v0.59.4.zip) = 4939272
