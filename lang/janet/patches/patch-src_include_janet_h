@@ -3,7 +3,7 @@ Use more generic and more accurate tests for LP64 and endianness.
 Index: src/include/janet.h
 --- src/include/janet.h.orig
 +++ src/include/janet.h
-@@ -103,44 +103,18 @@ extern "C" {
+@@ -103,45 +103,18 @@ extern "C" {
  #endif
  
  /* Check 64-bit vs 32-bit */
@@ -16,7 +16,8 @@ Index: src/include/janet.h
 -    || defined(__s390x__) /* S390 64-bit (BE) */ \
 -    || (defined(__ppc64__) || defined(__PPC64__)) \
 -    || defined(__aarch64__) /* ARM 64-bit */ \
--    || (defined(__riscv) && (__riscv_xlen == 64)) /* RISC-V 64-bit */
+-    || (defined(__riscv) && (__riscv_xlen == 64)) /* RISC-V 64-bit */ \
+-    || defined(__loongarch64) /* LoongArch64 64-bit */
 +#if defined(__LP64__) || defined(_LP64)
  #define JANET_64 1
  #else
