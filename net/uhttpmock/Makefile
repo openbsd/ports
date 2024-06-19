@@ -1,9 +1,9 @@
 COMMENT =		HTTP web service mocking library
 
-VERSION =		0.10.0
+VERSION =		0.11.0
 DISTNAME =		uhttpmock-${VERSION}
 
-SHARED_LIBS += uhttpmock-1.0             0.0 # 1.2.3
+SHARED_LIBS += uhttpmock-1.0             0.1 # 1.2.3
 
 CATEGORIES =		net devel
 
