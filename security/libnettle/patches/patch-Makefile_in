@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -503,11 +503,6 @@ install-dll-nettle:
+@@ -507,11 +507,6 @@ install-dll-nettle:
  install-shared-nettle: $(LIBNETTLE_FORLINK) @IF_DLL@ install-dll-nettle
  	$(MKDIR_P) $(DESTDIR)$(libdir)
  	$(INSTALL_DATA) $(LIBNETTLE_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBNETTLE_FILE)
@@ -13,7 +13,7 @@ Index: Makefile.in
  
  install-dll-hogweed:
  	$(MKDIR_P) $(DESTDIR)$(bindir)
-@@ -516,11 +511,6 @@ install-dll-hogweed:
+@@ -520,11 +515,6 @@ install-dll-hogweed:
  install-shared-hogweed: $(LIBHOGWEED_FORLINK) @IF_DLL@ install-dll-hogweed
  	$(MKDIR_P) $(DESTDIR)$(libdir)
  	$(INSTALL_DATA) $(LIBHOGWEED_FILE_SRC) $(DESTDIR)$(libdir)/$(LIBHOGWEED_FILE)

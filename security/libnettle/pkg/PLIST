@@ -26,6 +26,7 @@ include/nettle/ctr.h
 include/nettle/curve25519.h
 include/nettle/curve448.h
 include/nettle/des.h
+include/nettle/drbg-ctr.h
 include/nettle/dsa-compat.h
 include/nettle/dsa.h
 include/nettle/eax.h
