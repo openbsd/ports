@@ -1,7 +1,7 @@
 COMMENT=		GLib / GObject wrapper for the Microsoft Graph API
 
 GNOME_PROJECT=		msgraph
-GNOME_VERSION=		0.2.2
+GNOME_VERSION=		0.2.3
 
 SHARED_LIBS += msgraph-0                 0.0 # 0.2.2
 
