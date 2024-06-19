@@ -5,8 +5,8 @@ Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router
  
  BrowserCrashEventRouter::BrowserCrashEventRouter(
      content::BrowserContext* context) {
--#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS)
-+#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
+-#if !BUILDFLAG(IS_CHROMEOS)
++#if !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
    CrashReportingContext* crash_reporting_context =
        CrashReportingContext::GetInstance();
    Profile* profile = Profile::FromBrowserContext(context);
@@ -14,8 +14,8 @@ Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router
  }
  
  BrowserCrashEventRouter::~BrowserCrashEventRouter() {
--#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS)
-+#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
+-#if !BUILDFLAG(IS_CHROMEOS)
++#if !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
    CrashReportingContext* crash_reporting_context =
        CrashReportingContext::GetInstance();
    crash_reporting_context->RemoveProfile(this);

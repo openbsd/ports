@@ -80,7 +80,7 @@ Index: base/process/process_metrics_openbsd.cc
 -
 -base::expected<TimeDelta, ProcessCPUUsageError>
 -ProcessMetrics::GetCumulativeCPUUsage() {
--  NOTREACHED();
+-  NOTREACHED_IN_MIGRATION();
 -  return base::unexpected(ProcessCPUUsageError::kNotImplemented);
 -}
 -

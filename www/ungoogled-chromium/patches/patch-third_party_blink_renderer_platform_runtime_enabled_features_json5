@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 --- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -323,7 +323,7 @@
+@@ -325,7 +325,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -10,7 +10,34 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1937,7 +1937,7 @@
+@@ -1517,7 +1517,7 @@
+       status: "test",
+       base_feature: "none",
+       origin_trial_feature_name: "FedCmContinueOnBundle",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -1534,7 +1534,7 @@
+       status: "test",
+       base_feature: "none",
+       origin_trial_feature_name: "FedCmButtonMode",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -1579,7 +1579,7 @@
+       base_feature: "none",
+       public: true,
+       origin_trial_feature_name: "FedCmMultipleIdentityProviders",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       origin_trial_allows_third_party: true,
+     },
+     {
+@@ -1928,7 +1928,7 @@
        base_feature_status: "enabled",
        copied_from_base_feature_if: "overridden",
        origin_trial_feature_name: "FullscreenPopupWindows",
@@ -19,16 +46,16 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      {
        name: "GamepadButtonAxisEvents",
-@@ -2899,7 +2899,7 @@
-       name: "PaymentHandlerMinimalHeaderUX",
-       origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
-       origin_trial_allows_third_party: true,
+@@ -2992,7 +2992,7 @@
+       // Tracking bug for the implementation: https://crbug.com/1462930
+       name: "PermissionElement",
+       origin_trial_feature_name: "PermissionElement",
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
-       status: "stable",
-     },
-     {
-@@ -3087,7 +3087,7 @@
+       status: "experimental",
+       public: true,
+       base_feature_status: "enabled",
+@@ -3127,7 +3127,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -37,7 +64,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -3955,7 +3955,7 @@
+@@ -4077,7 +4077,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -46,7 +73,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4122,7 +4122,7 @@
+@@ -4246,7 +4246,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -55,3 +82,12 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "experimental",
        base_feature: "none",
      },
+@@ -4289,7 +4289,7 @@
+       status: "experimental",
+       base_feature: "none",
+       origin_trial_feature_name: "WebAppUrlHandling",
+-      origin_trial_os: ["win", "mac", "linux"],
++      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
+     },
+     {
+       // WebAssembly JS Promise Integration,

@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/connectors_service.cc
 --- chrome/browser/enterprise/connectors/connectors_service.cc.orig
 +++ chrome/browser/enterprise/connectors/connectors_service.cc
-@@ -524,7 +524,7 @@ bool ConnectorsService::ConnectorsEnabled() const {
+@@ -520,7 +520,7 @@ bool ConnectorsService::ConnectorsEnabled() const {
  
    Profile* profile = Profile::FromBrowserContext(context_);
  

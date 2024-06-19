@@ -9,7 +9,7 @@ Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 +    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  const int kManagedUserNoticeConfirmationDialogWidth = 512;
  const int kManagedUserNoticeConfirmationDialogHeight = 576;
- const int kManagedUserNoticeConfirmationUpdatedDialogWidth = 1024;
+ const int kManagedUserNoticeConfirmationUpdatedDialogWidth = 900;
 @@ -187,7 +187,7 @@ SigninViewControllerDelegateViews::CreateProfileCustom
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT) || BUILDFLAG(IS_CHROMEOS_LACROS)
  

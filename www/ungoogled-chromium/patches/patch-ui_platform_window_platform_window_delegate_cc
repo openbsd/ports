@@ -1,9 +1,9 @@
 Index: ui/platform_window/platform_window_delegate.cc
 --- ui/platform_window/platform_window_delegate.cc.orig
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -48,7 +48,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
- 
- PlatformWindowDelegate::~PlatformWindowDelegate() = default;
+@@ -61,7 +61,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
+   return gfx::Insets();
+ }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

@@ -5,8 +5,8 @@ Index: base/threading/platform_thread_posix.cc
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
--#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
-+#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_BSD)
+-#if PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
++#if PA_BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && !BUILDFLAG(IS_BSD)
      partition_alloc::internal::StackTopRegistry::Get().NotifyThreadCreated();
  #endif
  

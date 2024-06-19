@@ -1,7 +1,7 @@
 Index: headless/lib/browser/headless_web_contents_impl.cc
 --- headless/lib/browser/headless_web_contents_impl.cc.orig
 +++ headless/lib/browser/headless_web_contents_impl.cc
-@@ -60,7 +60,7 @@ namespace headless {
+@@ -62,7 +62,7 @@ namespace headless {
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {

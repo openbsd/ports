@@ -9,6 +9,6 @@ Index: chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
 +  } else if (strcmp(os, "freebsd") == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
-   } else if (strcmp(os, "fuchsia") == 0) {
-     info->os = extensions::api::runtime::PlatformOs::kFuchsia;
    } else {
+     NOTREACHED() << "Platform not supported: " << os;
+     return false;

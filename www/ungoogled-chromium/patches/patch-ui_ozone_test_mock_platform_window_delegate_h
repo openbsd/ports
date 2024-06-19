@@ -1,7 +1,7 @@
 Index: ui/ozone/test/mock_platform_window_delegate.h
 --- ui/ozone/test/mock_platform_window_delegate.h.orig
 +++ ui/ozone/test/mock_platform_window_delegate.h
-@@ -33,7 +33,7 @@ class MockPlatformWindowDelegate : public PlatformWind
+@@ -35,7 +35,7 @@ class MockPlatformWindowDelegate : public PlatformWind
    MOCK_METHOD2(OnWindowStateChanged,
                 void(PlatformWindowState old_state,
                      PlatformWindowState new_state));

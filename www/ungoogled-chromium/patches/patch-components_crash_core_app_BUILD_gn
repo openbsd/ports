@@ -30,7 +30,7 @@ Index: components/crash/core/app/BUILD.gn
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -243,11 +247,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+@@ -245,11 +249,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
    # define custom UserStreamDataSources.
    executable("chrome_crashpad_handler") {
      sources = [ "chrome_crashpad_handler.cc" ]

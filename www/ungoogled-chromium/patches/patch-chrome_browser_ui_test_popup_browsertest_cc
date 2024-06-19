@@ -7,7 +7,7 @@ Index: chrome/browser/ui/test/popup_browsertest.cc
    expected.AdjustToFit(display.work_area());
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // TODO(crbug.com/1286870) Desktop Linux window bounds are inaccurate.
+   // TODO(crbug.com/40815883) Desktop Linux window bounds are inaccurate.
    expected.Outset(50);
    EXPECT_TRUE(expected.Contains(popup->window()->GetBounds()))
 @@ -106,7 +106,7 @@ IN_PROC_BROWSER_TEST_F(PopupTest, OpenClampedToCurrent
@@ -16,6 +16,6 @@ Index: chrome/browser/ui/test/popup_browsertest.cc
      gfx::Rect work_area(display.work_area());
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     // TODO(crbug.com/1286870) Desktop Linux bounds flakily extend outside the
+     // TODO(crbug.com/40815883) Desktop Linux bounds flakily extend outside the
      // work area on trybots, when opening with excessive width and height, e.g.:
      // width=${screen.availWidth+300},height=${screen.availHeight+300} yields:
