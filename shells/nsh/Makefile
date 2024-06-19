@@ -2,7 +2,7 @@ COMMENT =	network switch style shell
 
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
-V =		1.2
+V =		1.2.1
 DISTNAME =	nsh-${V}
 SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
 REVISION =	0
@@ -36,15 +36,6 @@ MAKE_FLAGS +=	LDFLAGS="-L${LOCALBASE}/lib -ledit -ltermcap -lsqlite3 -lm -lpthre
 .endif
 
 NO_TEST=	Yes
-
-MAKE_FLAGS += BSDSRCDIR=${WRKDIST} BSDOBJDIR=${WRKDIST}/obj
-
-post-gen:
-	mkdir -p ${WKRDIST}/obj
-
-post-configure:
-	${MAKE} ${MAKE_FLAGS} -C ${WRKDIST} obj
-
 
 post-install:
 .for i in save-ro.sh save-rw.sh
