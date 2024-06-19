@@ -1,6 +1,5 @@
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6CalendarEvents         0.0 # 0.0
 

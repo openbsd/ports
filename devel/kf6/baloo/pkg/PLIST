@@ -30,9 +30,7 @@ lib/cmake/KF6Baloo/KF6BalooTargets.cmake
 @lib lib/libKF6Baloo.so.${LIBKF6Baloo_VERSION}
 @lib lib/libKF6BalooEngine.so.${LIBKF6BalooEngine_VERSION}
 lib/pkgconfig/KF6Baloo.pc
-lib/qt6/plugins/kf6/kded/
 @so lib/qt6/plugins/kf6/kded/baloosearchmodule.so
-lib/qt6/plugins/kf6/kio/
 @so lib/qt6/plugins/kf6/kio/baloosearch.so
 @so lib/qt6/plugins/kf6/kio/tags.so
 @so lib/qt6/plugins/kf6/kio/timeline.so

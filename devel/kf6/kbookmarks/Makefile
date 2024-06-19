@@ -13,6 +13,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 LIB_DEPENDS =		devel/kf6/kconfig>=${MODKF6_VERSION} \
 			devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 			devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
+			devel/kf6/kcolorscheme>=${MODKF6_VERSION} \
 			devel/kf6/kwidgetsaddons>=${MODKF6_VERSION}
 
 TEST_IS_INTERACTIVE =	X11

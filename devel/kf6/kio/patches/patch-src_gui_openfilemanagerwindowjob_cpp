@@ -1,0 +1,43 @@
+Index: src/gui/openfilemanagerwindowjob.cpp
+--- src/gui/openfilemanagerwindowjob.cpp.orig
++++ src/gui/openfilemanagerwindowjob.cpp
+@@ -45,23 +45,23 @@ class OpenFileManagerWindowJobPrivate (public)
+ 
+     ~OpenFileManagerWindowJobPrivate() = default;
+ 
+-#if USE_DBUS
++#ifdef WITH_QTDBUS
+     void createDBusStrategy()
+     {
+         strategy = std::make_unique<OpenFileManagerWindowDBusStrategy>(q);
+     }
+-#endif
+-#if defined(Q_OS_WINDOWS)
++#elif defined(Q_OS_WINDOWS)
+     void createWindowsShellStrategy()
+     {
+         strategy = std::make_unique<OpenFileManagerWindowWindowsShellStrategy>(q);
+     }
+-#endif
++#else
+ 
+     void createKRunStrategy()
+     {
+         strategy = std::make_unique<OpenFileManagerWindowKRunStrategy>(q);
+     }
++#endif
+ 
+     OpenFileManagerWindowJob *const q;
+     QList<QUrl> highlightUrls;
+@@ -147,7 +147,11 @@ void OpenFileManagerWindowDBusStrategy::start(const QL
+ 
+             if (reply.isError()) {
+                 // Try the KRun strategy as fallback, also calls emitResult inside
++#ifdef WITH_QTDBUS
++                m_job->d->createDBusStrategy();
++#else
+                 m_job->d->createKRunStrategy();
++#endif
+                 m_job->d->strategy->start(urls, asn);
+                 return;
+             }

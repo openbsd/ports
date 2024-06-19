@@ -21,6 +21,6 @@ EXTRACT_SUFX ?=		.tar.xz
 CONFIGURE_ENV +=	LC_ALL=en_US.UTF-8
 MAKE_ENV +=		LC_ALL=en_US.UTF-8
 
-SITES ?=		${SITE_KDE:=stable/frameworks/6.2/}
+SITES ?=		${SITE_KDE:=stable/frameworks/6.3/}
 
 DIST_SUBDIR =		kde-kf6

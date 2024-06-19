@@ -1,6 +1,5 @@
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Baloo                  0.0 # 0.0
 SHARED_LIBS +=  KF6BalooEngine            0.0 # 0.0

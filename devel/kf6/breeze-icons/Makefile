@@ -1,9 +1,9 @@
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
 
-PKG_ARCH =	*
+SHARED_LIBS +=	KF6BreezeIcons            0.0 # 0.0
 
-WANTLIB- =
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui m
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No

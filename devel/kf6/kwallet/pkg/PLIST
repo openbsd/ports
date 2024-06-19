@@ -15,7 +15,6 @@ lib/cmake/KF6Wallet/KF6WalletTargets.cmake
 @lib lib/libKF6WalletBackend.so.${LIBKF6WalletBackend_VERSION}
 @man man/man1/kwallet-query.1
 share/applications/org.kde.kwalletd6.desktop
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/kf6_org.kde.KWallet.xml
 share/dbus-1/services/org.kde.kwalletd5.service
 share/dbus-1/services/org.kde.kwalletd6.service
@@ -94,6 +93,7 @@ share/locale/ko/LC_MESSAGES/kwalletd6.mo
 share/locale/ku/LC_MESSAGES/kwalletd6.mo
 share/locale/lt/LC_MESSAGES/kwallet6-query.mo
 share/locale/lt/LC_MESSAGES/kwalletd6.mo
+share/locale/lv/LC_MESSAGES/kwallet6-query.mo
 share/locale/lv/LC_MESSAGES/kwalletd6.mo
 share/locale/mai/LC_MESSAGES/kwalletd6.mo
 share/locale/mk/LC_MESSAGES/kwalletd6.mo
@@ -154,3 +154,6 @@ share/locale/zh_TW/LC_MESSAGES/kwallet6-query.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletd6.mo
 share/qlogging-categories6/kwallet.categories
 share/qlogging-categories6/kwallet.renamecategories
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/kwallet.portal

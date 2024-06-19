@@ -1,5 +1,4 @@
 COMMENT =		large set of KDE widgets
-VERSION =		6.2.2
 DISTNAME =		kwidgetsaddons-${VERSION}
 
 SHARED_LIBS +=  KF6WidgetsAddons          0.0 # 0.0

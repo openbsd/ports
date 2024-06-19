@@ -12,9 +12,11 @@ include/KF6/Prison/prison_version.h
 include/KF6/PrisonScanner/
 include/KF6/PrisonScanner/Prison/
 include/KF6/PrisonScanner/Prison/Format
+include/KF6/PrisonScanner/Prison/ImageScanner
 include/KF6/PrisonScanner/Prison/ScanResult
 include/KF6/PrisonScanner/Prison/VideoScanner
 include/KF6/PrisonScanner/Prison/format.h
+include/KF6/PrisonScanner/Prison/imagescanner.h
 include/KF6/PrisonScanner/Prison/prisonscanner_export.h
 include/KF6/PrisonScanner/Prison/scanresult.h
 include/KF6/PrisonScanner/Prison/videoscanner.h

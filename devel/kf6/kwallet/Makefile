@@ -1,5 +1,4 @@
 COMMENT =	KDE safe desktop-wide storage for passwords
-VERSION =	6.2.1
 DISTNAME =	kwallet-${VERSION}
 
 SHARED_LIBS +=  KF6Wallet                 0.0 # 0.0

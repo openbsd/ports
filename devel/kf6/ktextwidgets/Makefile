@@ -17,7 +17,9 @@ LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
+		devel/kf6/kcolorscheme>=${MODKF6_VERSION} \
 		devel/kf6/sonnet>=${MODKF6_VERSION} \
+		x11/qt6/qtmultimedia \
 		x11/qt6/qtspeech
 
 TEST_IS_INTERACTIVE =	X11

@@ -1,16 +1,9 @@
-lib/cmake/
 lib/cmake/KF6QQC2DesktopStyle/
 lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfig.cmake
 lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfigVersion.cmake
-lib/qt6/
-lib/qt6/plugins/
-lib/qt6/plugins/kf6/
 lib/qt6/plugins/kf6/kirigami/
 lib/qt6/plugins/kf6/kirigami/platform/
 @so lib/qt6/plugins/kf6/kirigami/platform/org.kde.desktop.so
-lib/qt6/qml/
-lib/qt6/qml/org/
-lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/desktop/
 lib/qt6/qml/org/kde/desktop/BusyIndicator.qml
 lib/qt6/qml/org/kde/desktop/Button.qml
@@ -86,3 +79,29 @@ lib/qt6/qml/org/kde/qqc2desktopstyle/private/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/qqc2desktopstyle/private/libqqc2desktopstyleplugin.so
 lib/qt6/qml/org/kde/qqc2desktopstyle/private/qmldir
 lib/qt6/qml/org/kde/qqc2desktopstyle/private/qqc2desktopstyleplugin.qmltypes
+share/locale/ar/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ast/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ca/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ca@valencia/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/cs/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/de/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/en_GB/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/eo/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/es/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/eu/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/fr/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/gl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/he/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/hu/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ia/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/it/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ka/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/lv/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/nl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/pl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/sl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ta/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/tr/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/uk/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/zh_CN/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/zh_TW/LC_MESSAGES/qqc2desktopstyle_qt.qm

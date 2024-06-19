@@ -9,7 +9,8 @@ LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
 		graphics/libavif \
 		graphics/libjxl \
 		graphics/libraw \
-		graphics/openexr
+		graphics/openexr \
+		math/imath
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,4 +1,3 @@
-include/KF6/
 include/KF6/Kirigami/
 include/KF6/Kirigami/Platform/
 include/KF6/Kirigami/Platform/PlatformPluginFactory
@@ -31,7 +30,10 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigami.so.${LIBKirigami_VERSION}
 @lib lib/libKirigamiDelegates.so.${LIBKirigamiDelegates_VERSION}
+@lib lib/libKirigamiDialogs.so.${LIBKirigamiDialogs_VERSION}
+@lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
+@lib lib/libKirigamiPrimitives.so.${LIBKirigamiPrimitives_VERSION}
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/kirigami/
@@ -52,9 +54,7 @@ lib/qt6/qml/org/kde/kirigami/CardsListView.qml
 lib/qt6/qml/org/kde/kirigami/Chip.qml
 lib/qt6/qml/org/kde/kirigami/ContextDrawer.qml
 lib/qt6/qml/org/kde/kirigami/ContextualHelpButton.qml
-lib/qt6/qml/org/kde/kirigami/Dialog.qml
 lib/qt6/qml/org/kde/kirigami/FlexColumn.qml
-lib/qt6/qml/org/kde/kirigami/FormLayout.qml
 lib/qt6/qml/org/kde/kirigami/GlobalDrawer.qml
 lib/qt6/qml/org/kde/kirigami/Heading.qml
 lib/qt6/qml/org/kde/kirigami/InlineMessage.qml
@@ -64,7 +64,6 @@ lib/qt6/qml/org/kde/kirigami/LinkButton.qml
 lib/qt6/qml/org/kde/kirigami/ListItemDragHandle.qml
 lib/qt6/qml/org/kde/kirigami/ListSectionHeader.qml
 lib/qt6/qml/org/kde/kirigami/LoadingPlaceholder.qml
-lib/qt6/qml/org/kde/kirigami/MenuDialog.qml
 lib/qt6/qml/org/kde/kirigami/NavigationTabBar.qml
 lib/qt6/qml/org/kde/kirigami/NavigationTabButton.qml
 lib/qt6/qml/org/kde/kirigami/OverlayDrawer.qml
@@ -74,12 +73,9 @@ lib/qt6/qml/org/kde/kirigami/PagePoolAction.qml
 lib/qt6/qml/org/kde/kirigami/PageRow.qml
 lib/qt6/qml/org/kde/kirigami/PasswordField.qml
 lib/qt6/qml/org/kde/kirigami/PlaceholderMessage.qml
-lib/qt6/qml/org/kde/kirigami/PromptDialog.qml
 lib/qt6/qml/org/kde/kirigami/ScrollablePage.qml
 lib/qt6/qml/org/kde/kirigami/SearchField.qml
 lib/qt6/qml/org/kde/kirigami/SelectableLabel.qml
-lib/qt6/qml/org/kde/kirigami/Separator.qml
-lib/qt6/qml/org/kde/kirigami/ShadowedImage.qml
 lib/qt6/qml/org/kde/kirigami/SwipeListItem.qml
 lib/qt6/qml/org/kde/kirigami/UrlButton.qml
 lib/qt6/qml/org/kde/kirigami/delegates/
@@ -93,13 +89,35 @@ lib/qt6/qml/org/kde/kirigami/delegates/TitleSubtitle.qml
 lib/qt6/qml/org/kde/kirigami/delegates/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/delegates/libKirigamiDelegatesplugin.so
 lib/qt6/qml/org/kde/kirigami/delegates/qmldir
+lib/qt6/qml/org/kde/kirigami/dialogs/
+lib/qt6/qml/org/kde/kirigami/dialogs/Dialog.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/KirigamiDialogs.qmltypes
+lib/qt6/qml/org/kde/kirigami/dialogs/MenuDialog.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/PromptDialog.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/SearchDialog.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/dialogs/libKirigamiDialogsplugin.so
+lib/qt6/qml/org/kde/kirigami/dialogs/qmldir
 lib/qt6/qml/org/kde/kirigami/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kirigami/layouts/
+lib/qt6/qml/org/kde/kirigami/layouts/FormLayout.qml
+lib/qt6/qml/org/kde/kirigami/layouts/KirigamiLayouts.qmltypes
+lib/qt6/qml/org/kde/kirigami/layouts/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/layouts/libKirigamiLayoutsplugin.so
+lib/qt6/qml/org/kde/kirigami/layouts/qmldir
 @so lib/qt6/qml/org/kde/kirigami/libKirigamiplugin.so
 lib/qt6/qml/org/kde/kirigami/platform/
 lib/qt6/qml/org/kde/kirigami/platform/KirigamiPlatform.qmltypes
 lib/qt6/qml/org/kde/kirigami/platform/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/platform/libKirigamiPlatformplugin.so
 lib/qt6/qml/org/kde/kirigami/platform/qmldir
+lib/qt6/qml/org/kde/kirigami/primitives/
+lib/qt6/qml/org/kde/kirigami/primitives/KirigamiPrimitives.qmltypes
+lib/qt6/qml/org/kde/kirigami/primitives/Separator.qml
+lib/qt6/qml/org/kde/kirigami/primitives/ShadowedImage.qml
+lib/qt6/qml/org/kde/kirigami/primitives/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/primitives/libKirigamiPrimitivesplugin.so
+lib/qt6/qml/org/kde/kirigami/primitives/qmldir
 lib/qt6/qml/org/kde/kirigami/private/
 lib/qt6/qml/org/kde/kirigami/private/ActionIconGroup.qml
 lib/qt6/qml/org/kde/kirigami/private/ActionMenuItem.qml
