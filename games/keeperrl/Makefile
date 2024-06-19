@@ -1,8 +1,8 @@
 COMMENT =	dungeon builder game with roguelike elements
 
-COMMIT =	cfdd70355cc500f8d1e068b33234cbac772b7a3f
-COMMIT_DATE =	2024-05-24
-PKGNAME =	keeperrl-1.0pl19
+COMMIT =	f1a614f302cffd96f7ecf625b833f00885633221
+COMMIT_DATE =	2024-06-14
+PKGNAME =	keeperrl-1.0pl20
 DIST_TUPLE +=	github miki151 keeperrl ${COMMIT} .
 
 CATEGORIES =	games x11
