@@ -1,6 +1,0 @@
-As of the 12.5 release, torrc has been moved from
-~/TorBrowser-Data/torrc to ~/TorBrowser-Data/Tor/torrc.
-If you wish to preserve your tor configuration (e.g., bridges),
-please do the following BEFORE starting tor-browser after you upgrade:
-
-  $ mv ~/TorBrowser-Data/torrc ~/TorBrowser-Data/Tor
