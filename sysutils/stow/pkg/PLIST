@@ -13,7 +13,7 @@ share/doc/stow/README.md
 share/doc/stow/manual-single.html
 share/doc/stow/manual-split/
 share/doc/stow/manual-split/Bootstrapping.html
-share/doc/stow/manual-split/Compile_002dtime-vs-Install_002dtime.html
+share/doc/stow/manual-split/Compile_002dtime-vs_002e-Install_002dtime.html
 share/doc/stow/manual-split/Conflicts.html
 share/doc/stow/manual-split/Cygnus-Software.html
 share/doc/stow/manual-split/Deferred-Operation.html
@@ -39,6 +39,7 @@ share/doc/stow/manual-split/Terminology.html
 share/doc/stow/manual-split/Tree-unfolding.html
 share/doc/stow/manual-split/Types-And-Syntax-Of-Ignore-Lists.html
 share/doc/stow/manual-split/index.html
+share/doc/stow/manual-split/symlink.html
 share/doc/stow/manual-split/tree-folding.html
 share/doc/stow/manual-split/tree-refolding.html
 share/doc/stow/manual.pdf
