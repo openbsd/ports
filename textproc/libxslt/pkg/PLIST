@@ -43,7 +43,6 @@ lib/xsltConf.sh
 @man man/man1/xsltproc.1
 @man man/man3/libexslt.3
 @man man/man3/libxslt.3
-share/aclocal/libxslt.m4
 share/doc/libxslt/
 share/doc/libxslt/tutorial/
 share/doc/libxslt/tutorial/images/
