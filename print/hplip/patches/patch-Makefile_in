@@ -39,7 +39,7 @@ Index: Makefile.in
  	prnt/ipp-usb/HPLIP.conf scan/sane/hpaio.desc \
  	installer/text_install.py data/localization/hplip_de.ts \
  	data/localization/hplip_es.ts data/localization/hplip_fr.ts \
-@@ -4842,7 +4838,7 @@ dist_unrel_DATA = 
+@@ -4866,7 +4862,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/orblitei.h scan/sane/orblite.h scan/sane/orblite.c \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/OrbliteScan/MacCommon.h
  
@@ -48,7 +48,7 @@ Index: Makefile.in
  @DARWIN_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LDFLAGS = -module -framework CoreFoundation -version-info 1:0:0
  # The following is a interlibrary dependency that must be compiled first.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la \
-@@ -4850,7 +4846,6 @@ dist_unrel_DATA = 
+@@ -4874,7 +4870,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	libhpipp.la \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(DBUS_LIBS) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	-lcups \
@@ -56,7 +56,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_1)
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS) \
-@@ -4872,7 +4867,6 @@ dist_unrel_DATA = 
+@@ -4896,7 +4891,6 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@libhpmud_la_LDFLAGS =  \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	-version-info \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	0:6:0 -lpthread \
@@ -64,7 +64,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_6) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_9) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	$(am__append_11)
-@@ -4926,7 +4920,7 @@ dist_unrel_DATA = 
+@@ -4950,7 +4944,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -73,7 +73,7 @@ Index: Makefile.in
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@dist_hplip_SCRIPTS = hpssd.py __init__.py hpdio.py
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@cmddir = $(hplipdir)
-@@ -5126,7 +5120,7 @@ dist_unrel_DATA = 
+@@ -5150,7 +5144,7 @@ dist_unrel_DATA = 
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -82,7 +82,7 @@ Index: Makefile.in
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -5195,8 +5189,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5219,8 +5213,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -93,7 +93,7 @@ Index: Makefile.in
  
  # hpcups
  #if NEW_HPCUPS
-@@ -5240,7 +5234,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5264,7 +5258,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -102,7 +102,7 @@ Index: Makefile.in
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -5248,21 +5242,21 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5272,21 +5266,21 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -128,7 +128,7 @@ Index: Makefile.in
  dat2drvdir = $(hplipdir)
  dat2drv_SOURCES = Common.h  Dat2drv.cpp  Dat2drv.h Normalize.cpp  Normalize.h
  @GCC_GE_47_TRUE@dat2drv_CXXFLAGS = -std=c++11
-@@ -10212,19 +10206,9 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
+@@ -10236,19 +10230,9 @@ uninstall-am: uninstall-apparmor_abstractionDATA \
  
  
  install-data-hook:

@@ -103,23 +103,15 @@ Index: installer/core_install.py
          Found = False
          for p in dir_list:
              if check_file('Python.h', dir=p):
-@@ -1086,13 +1086,8 @@ class CoreInstall(object):
+@@ -1086,6 +1086,7 @@ class CoreInstall(object):
              return False
  
      def check_dbus(self):
--        log.debug("Checking for dbus running and header files present (dbus-devel)...")
--        if (self.distro_name.lower()=='fedora') and (self.distro_version>='30'):
--            return True
--        else:
--            return check_ps(['dbus-daemon'])  and \
--                len(locate_file_contains("dbus-message.h",
--                                         '/usr/include', 'dbus_message_new_signal'))
-+        log.debug("Checking for dbus header files...")
-+        return check_file("dbus-message.h", "${LOCALBASE}/include")
- 
-     def check_cups_devel(self):
-         return check_file('cups.h') and bool(utils.which('lpr'))
-@@ -1107,11 +1102,11 @@ class CoreInstall(object):
++        return True
+         log.debug("Checking for dbus running and header files present (dbus-devel)...")
+         dbus_found = False
+         if (self.distro_name.lower()=='fedora') and (self.distro_version>='30'):
+@@ -1121,11 +1122,11 @@ class CoreInstall(object):
              return True
  
      def check_cups_image(self):
@@ -133,7 +125,7 @@ Index: installer/core_install.py
  
      def check_libtool(self):
          log.debug("Checking for libtool...")
-@@ -1178,7 +1173,7 @@ class CoreInstall(object):
+@@ -1192,7 +1193,7 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -142,7 +134,7 @@ Index: installer/core_install.py
  
      def check_libavahi_dev(self):
          log.debug("Checking for libavahi-dev")
-@@ -1233,7 +1228,7 @@ class CoreInstall(object):
+@@ -1247,7 +1248,7 @@ class CoreInstall(object):
  
      def check_hpaio(self):
          found = False
@@ -151,7 +143,7 @@ Index: installer/core_install.py
              log.debug("'Checking for hpaio' in '%s'..." % path)
              try:
                  f = open(path, 'r')
-@@ -1262,13 +1257,13 @@ class CoreInstall(object):
+@@ -1276,13 +1277,13 @@ class CoreInstall(object):
          if pat.match(home_dir) is not None:
              usrlib_dir = pat.match(home_dir).group(1) + "lib/"
              if os.path.exists(usrlib_dir + 'sane/libsane-hpaio.so.1'):
@@ -169,7 +161,7 @@ Index: installer/core_install.py
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
                  else:
-@@ -1281,20 +1276,20 @@ class CoreInstall(object):
+@@ -1295,20 +1296,20 @@ class CoreInstall(object):
                      f.close()
  
                  if not found:
@@ -195,7 +187,7 @@ Index: installer/core_install.py
                      cmd = self.passwordObj.getAuthCmd() % cmd
                      log.debug("cmd=%s" % cmd)
                      utils.run(cmd, self.passwordObj)
-@@ -1760,11 +1755,14 @@ class CoreInstall(object):
+@@ -1774,11 +1775,14 @@ class CoreInstall(object):
          return num_opt_missing
  
      def check_wget(self):
@@ -214,7 +206,7 @@ Index: installer/core_install.py
  
      def check_avahi_utils(self):
          if utils.which("avahi-browse"):
-@@ -1890,7 +1888,7 @@ class CoreInstall(object):
+@@ -1904,7 +1908,7 @@ class CoreInstall(object):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False, distro_ver):
              cmds.append(self.passwordObj.getAuthCmd() %

@@ -1,6 +1,7 @@
---- base/g.py.orig	Mon Feb  8 10:42:52 2016
-+++ base/g.py	Wed Feb 10 09:14:55 2016
-@@ -182,16 +182,16 @@ class ConfigBase(object):
+Index: base/g.py
+--- base/g.py.orig
++++ base/g.py
+@@ -189,16 +189,16 @@ class ConfigBase(object):
          
  class SysConfig(ConfigBase):
      def __init__(self):
@@ -22,7 +23,7 @@
  
  
  class UserConfig(ConfigBase):
-@@ -283,9 +283,9 @@ prop.max_message_len = 8192
+@@ -290,9 +290,9 @@ prop.max_message_len = 8192
  prop.max_message_read = 65536
  prop.read_timeout = 90
  

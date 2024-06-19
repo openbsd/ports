@@ -15,7 +15,7 @@ Index: ui/devmgr4.py
              hplip_conf = ConfigParser.ConfigParser()
 -            fp = open("/etc/hp/hplip.conf", "r")
 +            fp = open("${SYSCONFDIR}/hp/hplip.conf", "r")
-             hplip_conf.readfp(fp)
+             hplip_conf.read_file(fp)
              fp.close()
  
 @@ -1422,7 +1422,7 @@ class DevMgr4(DevMgr4_base):
