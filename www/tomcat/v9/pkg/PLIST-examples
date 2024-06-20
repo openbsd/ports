@@ -1384,9 +1384,6 @@ webapps/docs/api/org/apache/tomcat/buildutil/Utils.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-summary.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-tree.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportBase.html
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportEnglish.html
-webapps/docs/api/org/apache/tomcat/buildutil/translate/BackportTranslations.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Constants.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Import.html
 webapps/docs/api/org/apache/tomcat/buildutil/translate/Utils.html
