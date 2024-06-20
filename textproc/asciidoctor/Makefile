@@ -3,6 +3,7 @@ COMMENT =	better AsciiDoc text proc/publishing software
 V =		2.0.20
 DISTNAME =	asciidoctor-${V}
 FULLPKGNAME =	${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	textproc
 

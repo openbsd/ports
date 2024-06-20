@@ -13,6 +13,8 @@ PKGNAME-python=	weechat-python-${V}
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
 
+REVISION-ruby=	0
+
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.weechat.org/

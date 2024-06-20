@@ -2,7 +2,7 @@ COMMENT =	powerful webserver security scanner for network
 
 DISTNAME =	arirang-2.03
 CATEGORIES =	security
-REVISION =	10
+REVISION =	11
 FIX_EXTRACT_PERMISSIONS=Yes
 
 SITES =		http://monkey.org/~pilot/arirang/ \

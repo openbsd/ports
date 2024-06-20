@@ -6,6 +6,8 @@ GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		3.3.0
 
+REVISION =		0
+
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/
 

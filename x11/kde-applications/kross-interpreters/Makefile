@@ -3,6 +3,8 @@ DISTNAME =	kross-interpreters-${VERSION}
 PKGNAME =	kross-interpreters-kf5-${VERSION}
 CATEGORIES =	devel
 
+REVISION =	0
+
 WANTLIB += ${COMPILER_LIBCXX} KF5KrossCore Qt5Core Qt5Gui Qt5Script
 WANTLIB += Qt5Widgets Qt5Xml m
 

@@ -2,6 +2,7 @@ COMMENT =		Puppet server
 
 VERSION =		8.6.0
 DISTNAME =		puppetserver-${VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

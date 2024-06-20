@@ -4,6 +4,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 V=		1.8.0
 REVISION=	1
+REVISION-ruby=	2
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
