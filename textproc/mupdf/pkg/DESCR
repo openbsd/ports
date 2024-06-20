@@ -1,31 +1,23 @@
-MuPDF is a lightweight PDF and XPS viewer.
-It can also render EPUB, XHTML, CBZ, PNG, JPEG, GIF, and TIFF.
+MuPDF is a lightweight PDF, XPS, and E-book viewer.
 
-The renderer in MuPDF is tailored for high quality anti-aliased
-graphics. It renders text with metrics and spacing accurate to within
-fractions of a pixel for the highest fidelity in reproducing the look of
-a printed page on screen.
+Support includes PDF 1.7 (with transparency, encryption, hyperlinks,
+annotations, searching and more), epub, xps, cbz, mobi, fb2, various
+image types (including svg, png, jpg, bmp, jpeg, tiff), and has basic
+support for MSOffice XML formats (docx, xlsx, pptx).
 
-MuPDF is also small, fast, and yet complete. It supports PDF 1.7 with
-transparency, encryption, hyperlinks, annotations, searching and more.
-It also reads OpenXPS documents.
-
-We don't support interactive features such as form filling, javascript
-and transitions. MuPDF is written modularly, so such features can be
-added on by integrators if they so desire.
+The renderer is tailored for high quality anti-aliased graphics. It
+renders text with metrics and spacing accurate to within fractions of a
+pixel for the highest fidelity in reproducing the look of a printed page
+on screen.
 
 The mutool command line tool supports multiple arguments, including
 "show" to print and examine objects in a PDF file, "clean" to decompress
 and pretty-print the streams and objects in PDF files and also to
 extract individual pages, "info" to display information about objects,
-"extract" to extract individual objects, and "poster" to split a large
-page into many tiles.
+"extract" to extract individual objects, "poster" to split a large
+page into many tiles, and "draw" to render documents to image files
+(pbm/pgm/ppm/pam/png/pcl and others).
 
-The mudraw command line tool renders pages and outputs PGM/PPM/PAM/PNG
-image files.
-
-Flavors:
-	js - build with JavaScript support (using the MuJS interpreter)
-
-Note that the js flavor also include the OpenGL-based renderer "mupdf-gl"
-which has some dependencies on MuJS.
+Flavours:
+	js - build with JavaScript support (using the MuJS interpreter;
+		this includes the OpenGL-based renderer "mupdf-gl")
