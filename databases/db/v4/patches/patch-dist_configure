@@ -118,7 +118,16 @@ Index: dist/configure
     { (exit 1); exit 1; }; } ;;
  	esac
  
-@@ -30504,7 +30526,7 @@ int
+@@ -28549,8 +28571,6 @@ main ()
+ {
+ if ((ac__type_new_ *) 0)
+   return 0;
+-if (sizeof (ac__type_new_))
+-  return 0;
+   ;
+   return 0;
+ }
+@@ -30504,7 +30524,7 @@ int
  main ()
  {
  
@@ -127,7 +136,7 @@ Index: dist/configure
  		exit(0);
  	#else
  		FAIL TO COMPILE/LINK
-@@ -35352,7 +35374,7 @@ fi
+@@ -35352,7 +35372,7 @@ fi
  
  # Optional utilities.
  if test "$db_cv_dump185" = "yes"; then
@@ -136,7 +145,7 @@ Index: dist/configure
  fi
  
  # You can disable pieces of functionality to save space.
-@@ -36224,7 +36246,9 @@ MAKEFILE_CC!$MAKEFILE_CC$ac_delim
+@@ -36224,7 +36244,9 @@ MAKEFILE_CC!$MAKEFILE_CC$ac_delim
  MAKEFILE_CCLINK!$MAKEFILE_CCLINK$ac_delim
  MAKEFILE_CXX!$MAKEFILE_CXX$ac_delim
  MAKEFILE_CXXLINK!$MAKEFILE_CXXLINK$ac_delim
@@ -147,7 +156,7 @@ Index: dist/configure
  MAKEFILE_XSOLINK!$MAKEFILE_XSOLINK$ac_delim
  OSDIR!$OSDIR$ac_delim
  POSTLINK!$POSTLINK$ac_delim
-@@ -36244,7 +36268,7 @@ DB_VERSION_PATCH!$DB_VERSION_PATCH$ac_delim
+@@ -36244,7 +36266,7 @@ DB_VERSION_PATCH!$DB_VERSION_PATCH$ac_delim
  DB_VERSION_STRING!$DB_VERSION_STRING$ac_delim
  _ACEOF
  
