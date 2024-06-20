@@ -1,6 +1,7 @@
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-7.1
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -9,14 +10,15 @@ HOMEPAGE =		https://www.gnu.org/software/texinfo/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c iconv intl curses
+WANTLIB += c iconv intl curses unistring
 
 SITES =			${SITE_GNU:=texinfo/}
 
 BUILD_DEPENDS =		devel/help2man \
 			lang/gawk
 RUN_DEPENDS =		print/texlive/base
-LIB_DEPENDS =		devel/gettext,-runtime
+LIB_DEPENDS =		converters/libunistring \
+			devel/gettext,-runtime 
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 FAKE_FLAGS =		TEXMF=${PREFIX}/share/texmf-local
