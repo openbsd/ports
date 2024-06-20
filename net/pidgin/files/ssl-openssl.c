@@ -198,13 +198,17 @@ ssl_openssl_read(PurpleSslConnection *gsc, void *data, size_t len)
 	if (s <= 0) {
 		ret = SSL_get_error(openssl_data->ssl, s);
 
+		if (ret == SSL_ERROR_ZERO_RETURN)
+			return (0);
+
 		if (ret == SSL_ERROR_WANT_READ || ret == SSL_ERROR_WANT_WRITE) {
 			errno = EAGAIN;
 			return (-1);
 		}
 
-		purple_debug_error("openssl", "receive failed: %zi\n", s);
-		s = 0;
+		purple_debug_error("openssl", "receive failed: %d\n", ret);
+		errno = EIO;
+		s = -1;
 	}
 
 	return (s);
@@ -224,13 +228,17 @@ ssl_openssl_write(PurpleSslConnection *gsc, const void *data, size_t len)
 	if (s <= 0) {
 		ret = SSL_get_error(openssl_data->ssl, s);
 
+		if (ret == SSL_ERROR_ZERO_RETURN)
+			return (0);
+
 		if (ret == SSL_ERROR_WANT_READ || ret == SSL_ERROR_WANT_WRITE) {
 			errno = EAGAIN;
 			return (-1);
 		}
 
-		purple_debug_error("openssl", "send failed: %zi\n", s);
-		s = 0;
+		purple_debug_error("openssl", "send failed: %d\n", ret);
+		errno = EIO;
+		s = -1;
 	}
 
 	return (s);
