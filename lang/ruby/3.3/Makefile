@@ -1,3 +1,6 @@
+USE_NOBTCFI-aarch64 =	Yes
+REVISION-main =		0
+
 VERSION =		3.3.3
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
