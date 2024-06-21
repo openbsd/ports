@@ -1,5 +1,6 @@
 COMMENT =	Plasma library and runtime components
 DISTNAME =	libplasma-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  Plasma                    0.0 # 0.0
 SHARED_LIBS +=  PlasmaQuick               0.0 # 0.0
@@ -18,7 +19,8 @@ WANTLIB += Qt6QmlModels Qt6Quick Qt6Svg Qt6WaylandClient Qt6Widgets
 WANTLIB += SM X11 Xext m wayland-client wayland-cursor xcb xcb-composite
 WANTLIB += xcb-damage xcb-render xcb-shape xcb-xfixes xkbcommon
 
-BUILD_DEPENDS =	wayland/wayland-protocols \
+BUILD_DEPENDS =	archivers/gtar \
+		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
@@ -47,5 +49,8 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
