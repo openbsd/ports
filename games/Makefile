@@ -253,6 +253,7 @@
      SUBDIR += pioneers
      SUBDIR += polymorphable
      SUBDIR += postal
+     SUBDIR += powder-toy
      SUBDIR += prboom
      SUBDIR += prboom-plus
      SUBDIR += pushover
