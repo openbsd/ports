@@ -1,4 +1,5 @@
 phpvirtualbox/
+phpvirtualbox/.htaccess
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
 phpvirtualbox/LICENSE.txt
@@ -36,8 +37,8 @@ phpvirtualbox/endpoints/lib/language.php
 phpvirtualbox/endpoints/lib/utils.php
 phpvirtualbox/endpoints/lib/vboxServiceWrappers.php
 phpvirtualbox/endpoints/lib/vboxconnector.php
-phpvirtualbox/endpoints/lib/vboxweb-5.2.wsdl
-phpvirtualbox/endpoints/lib/vboxwebService-5.2.wsdl
+phpvirtualbox/endpoints/lib/vboxweb-7.0.wsdl
+phpvirtualbox/endpoints/lib/vboxwebService-7.0.wsdl
 phpvirtualbox/endpoints/rdp.php
 phpvirtualbox/endpoints/screen.php
 phpvirtualbox/images/
@@ -269,9 +270,11 @@ phpvirtualbox/images/vbox/os_ubuntu_64.png
 phpvirtualbox/images/vbox/os_virtualbox.png
 phpvirtualbox/images/vbox/os_win10.png
 phpvirtualbox/images/vbox/os_win10_64.png
+phpvirtualbox/images/vbox/os_win11_64.png
 phpvirtualbox/images/vbox/os_win2k.png
 phpvirtualbox/images/vbox/os_win2k12_64.png
 phpvirtualbox/images/vbox/os_win2k16_64.png
+phpvirtualbox/images/vbox/os_win2k19_64.png
 phpvirtualbox/images/vbox/os_win2k3.png
 phpvirtualbox/images/vbox/os_win2k3_64.png
 phpvirtualbox/images/vbox/os_win2k8.png
@@ -420,6 +423,10 @@ phpvirtualbox/images/vbox/video_capture_disabled_16px.png
 phpvirtualbox/images/vbox/video_capture_on_16px.png
 phpvirtualbox/images/vbox/video_capture_on_disabled_16px.png
 phpvirtualbox/images/vbox/video_capture_settings_16px.png
+phpvirtualbox/images/vbox/virtio_scsi_add_16px.png
+phpvirtualbox/images/vbox/virtio_scsi_add_disabled_16px.png
+phpvirtualbox/images/vbox/virtio_scsi_collapse_16px.png
+phpvirtualbox/images/vbox/virtio_scsi_expand_16px.png
 phpvirtualbox/images/vbox/virtualbox-hdd.png
 phpvirtualbox/images/vbox/virtualbox-ova.png
 phpvirtualbox/images/vbox/virtualbox-ovf.png
@@ -506,6 +513,7 @@ phpvirtualbox/js/phpvirtualbox.js
 phpvirtualbox/js/utils.js
 phpvirtualbox/languages/
 phpvirtualbox/languages/cs.xml
+phpvirtualbox/languages/da.xml
 phpvirtualbox/languages/de.xml
 phpvirtualbox/languages/en.xml
 phpvirtualbox/languages/es.xml

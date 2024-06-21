@@ -1,11 +1,9 @@
 COMMENT=		web-based VirtualBox front-end
 
+GH_ACCOUNT=		BartekSz95
 GH_PROJECT=		phpvirtualbox
-GH_ACCOUNT=		phpvirtualbox
-GH_TAGNAME=		5.2-1
-MODPHP_VERSION=		7.4
-PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
-REVISION=		1
+GH_TAGNAME=		v7.0-rc1
+PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/v//:S/-//}
 
 CATEGORIES=		www sysutils
 
@@ -30,6 +28,8 @@ SUBST_VARS=		INSTDIR TINSTDIR
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	rm ${INSTDIR}/{Dockerfile,docker-compose.yml,.{docker,git}ignore}
+	rm ${INSTDIR}/{Dockerfile,docker-compose.yml,.{docker,git}ignore} \
+		${INSTDIR}/packaging/install-scripts/{un,}install.bash
+	rmdir ${INSTDIR}/packaging{/install-scripts,}
 
 .include <bsd.port.mk>
