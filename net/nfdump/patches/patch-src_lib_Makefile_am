@@ -1,0 +1,12 @@
+Index: src/lib/Makefile.am
+--- src/lib/Makefile.am.orig
++++ src/lib/Makefile.am
+@@ -33,7 +33,7 @@ vcs_track.h: Makefile
+ 
+ lib_LTLIBRARIES = libnfdump.la
+ libnfdump_la_SOURCES = $(conf) $(util) $(pidfile) $(compress) $(nffile) $(nflist) $(filter) $(output) $(regex) $(daemon) $(version) vcs_track.h
+-libnfdump_la_LDFLAGS = -release @VERSION@
++libnfdump_la_LDFLAGS =
+  
+ 
+ EXTRA_DIST = gen_version.sh conf/nfdump.conf.dist
