@@ -1,3 +1,5 @@
+BROKEN-i386 =	out of memory compiling qrc_breeze-icons.cpp
+
 COMMENT =	KDE Breeze-style light and dark icon themes
 DISTNAME =	breeze-icons-${VERSION}
 
