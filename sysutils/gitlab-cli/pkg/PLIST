@@ -114,6 +114,16 @@
 @man man/man1/glab-ssh-key-get.1
 @man man/man1/glab-ssh-key-list.1
 @man man/man1/glab-ssh-key.1
+@man man/man1/glab-stack-amend.1
+@man man/man1/glab-stack-create.1
+@man man/man1/glab-stack-first.1
+@man man/man1/glab-stack-last.1
+@man man/man1/glab-stack-move.1
+@man man/man1/glab-stack-next.1
+@man man/man1/glab-stack-prev.1
+@man man/man1/glab-stack-save.1
+@man man/man1/glab-stack-sync.1
+@man man/man1/glab-stack.1
 @man man/man1/glab-user-events.1
 @man man/man1/glab-user.1
 @man man/man1/glab-variable-delete.1
