@@ -10,6 +10,7 @@ lib/${BROWSER_NAME}/browser/
 lib/${BROWSER_NAME}/browser/chrome/
 lib/${BROWSER_NAME}/browser/chrome/icons/
 lib/${BROWSER_NAME}/browser/chrome/icons/default/
+lib/${BROWSER_NAME}/browser/chrome/icons/default/about-logo.svg
 lib/${BROWSER_NAME}/browser/chrome/icons/default/default.png
 lib/${BROWSER_NAME}/browser/chrome/icons/default/default128.png
 lib/${BROWSER_NAME}/browser/chrome/icons/default/default16.png

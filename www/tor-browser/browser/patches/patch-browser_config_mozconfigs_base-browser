@@ -1,6 +1,3 @@
-Encrypted Media Extensions is not supported on OpenBSD. Apparently this also
-means we can not pass --disable-eme to configure so comment that out.
-
 Don't use --enable-rust-simd, fails to build.
 
 Remove $WASI_SYSROOT test, it breaks the build for us. Not sure if the test
@@ -18,7 +15,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-unverified-updates
  ac_add_options --enable-base-browser-update
-@@ -21,13 +20,14 @@ ac_add_options --enable-bundled-fonts
+@@ -21,6 +20,8 @@ ac_add_options --enable-bundled-fonts
  
  ac_add_options --disable-tests
  ac_add_options --disable-debug
@@ -27,14 +24,7 @@ Index: browser/config/mozconfigs/base-browser
  
  ac_add_options --disable-crashreporter
  # Before removing, please notice that WebRTC does not work on mingw (Bug 1393901)
- ac_add_options --disable-webrtc
- ac_add_options --disable-parental-controls
- # Let's make sure no preference is enabling either Adobe's or Google's CDM.
--ac_add_options --disable-eme
- ac_add_options --enable-proxy-bypass-protection
- # See bugs #30575 and #32418: system policies are harmful either because they
- # could allow proxy bypass, and override a number of other preferences we set
-@@ -42,7 +42,3 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
+@@ -40,10 +41,6 @@ ac_add_options MOZ_TELEMETRY_REPORTING=
  # Disable the creation of a <something>.default that Firefox by default creates
  # for old version that could not use dedicated profiles. See tor-browser#41542.
  ac_add_options --disable-legacy-profile-creation
@@ -42,3 +32,6 @@ Index: browser/config/mozconfigs/base-browser
 -if test -z "$WASI_SYSROOT"; then
 -    ac_add_options --without-wasm-sandboxed-libraries
 -fi
+ 
+ # tor-browser#42337
+ ac_add_options --enable-geckodriver

@@ -3,7 +3,7 @@ Use ~/TorBrowser-Data/Browser as the browser data directory.
 Index: toolkit/xre/nsXREDirProvider.cpp
 --- toolkit/xre/nsXREDirProvider.cpp.orig
 +++ toolkit/xre/nsXREDirProvider.cpp
-@@ -1433,6 +1433,19 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
+@@ -1459,6 +1459,19 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
    const char* homeDir = getenv("HOME");
    if (!homeDir || !*homeDir) return NS_ERROR_FAILURE;
  
@@ -23,7 +23,7 @@ Index: toolkit/xre/nsXREDirProvider.cpp
  #  ifdef ANDROID /* We want (ProfD == ProfLD) on Android. */
    aLocal = false;
  #  endif
-@@ -1452,6 +1465,7 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
+@@ -1478,6 +1491,7 @@ nsresult nsXREDirProvider::GetUserDataDirectoryHome(ns
      rv = NS_NewNativeLocalFile(nsDependentCString(homeDir), true,
                                 getter_AddRefs(localDir));
    }
@@ -31,7 +31,7 @@ Index: toolkit/xre/nsXREDirProvider.cpp
  #else
  #  error "Don't know how to get product dir on your platform"
  #endif
-@@ -1512,8 +1526,10 @@ nsresult nsXREDirProvider::GetUserDataDirectory(nsIFil
+@@ -1538,8 +1552,10 @@ nsresult nsXREDirProvider::GetUserDataDirectory(nsIFil
    nsresult rv = GetUserDataDirectoryHome(getter_AddRefs(localDir), aLocal);
    NS_ENSURE_SUCCESS(rv, rv);
  

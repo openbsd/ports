@@ -3,7 +3,7 @@ Use ~/TorBrowser-Data/Browser as the browser data directory.
 Index: xpcom/io/nsAppFileLocationProvider.cpp
 --- xpcom/io/nsAppFileLocationProvider.cpp.orig
 +++ xpcom/io/nsAppFileLocationProvider.cpp
-@@ -328,6 +328,12 @@ nsresult nsAppFileLocationProvider::GetProductDirector
+@@ -338,6 +338,12 @@ nsresult nsAppFileLocationProvider::GetProductDirector
    if (NS_FAILED(rv)) {
      return rv;
    }

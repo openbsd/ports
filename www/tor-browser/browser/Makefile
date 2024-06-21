@@ -11,8 +11,7 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-115.12.0esr-13.0-1-build1
-REVISION =		0
+DISTNAME =		src-firefox-tor-browser-115.12.0esr-13.5-1-build3
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -155,7 +154,7 @@ post-install:
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${BROWSER_NAME}.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/content/tor-browser-logo.svg \
+	${INSTALL_DATA} ${WRKSRC}/browser/branding/tb-release/content/about-logo.svg \
 	    ${PREFIX}/share/icons/hicolor/scalable/apps/${BROWSER_NAME}.svg
 
 	# link default48.png to default.png to be used by default

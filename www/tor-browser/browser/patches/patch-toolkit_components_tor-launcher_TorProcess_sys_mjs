@@ -4,23 +4,28 @@ the new getTorFile() deal with it.
 Index: toolkit/components/tor-launcher/TorProcess.sys.mjs
 --- toolkit/components/tor-launcher/TorProcess.sys.mjs.orig
 +++ toolkit/components/tor-launcher/TorProcess.sys.mjs
-@@ -254,16 +254,14 @@ export class TorProcess {
-       "torrc-defaults",
-       false
-     );
--    // The geoip and geoip6 files are in the same directory as torrc-defaults.
--    const geoipFile = torrcDefaultsFile.clone();
--    geoipFile.leafName = "geoip";
--    const geoip6File = torrcDefaultsFile.clone();
--    geoip6File.leafName = "geoip6";
-+    const geoipFile = lazy.TorLauncherUtil.getTorFile("geoip", false);
-+    const geoip6File = lazy.TorLauncherUtil.getTorFile("geoip6", false);
- 
-     this.#args = [];
-     if (torrcDefaultsFile) {
-       this.#args.push("--defaults-torrc", torrcDefaultsFile.path);
-     }
-+    this.#args.push("--ignore-missing-torrc");
+@@ -219,6 +219,7 @@ export class TorProcess {
      this.#args.push("-f", torrcFile.path);
      this.#args.push("DataDirectory", this.#dataDir.path);
      this.#args.push("ClientOnionAuthDir", onionAuthDir.path);
++    this.#args.push("--ignore-missing-torrc");
+ 
+     // TODO: Create this starting from pt_config.json (tor-browser#42357).
+     const torrcDefaultsFile = lazy.TorLauncherUtil.getTorFile(
+@@ -227,14 +228,11 @@ export class TorProcess {
+     );
+     if (torrcDefaultsFile) {
+       this.#args.push("--defaults-torrc", torrcDefaultsFile.path);
+-      // The geoip and geoip6 files are in the same directory as torrc-defaults.
+       // TODO: Change TorFile to return the generic path to these files to make
+       // them independent from the torrc-defaults.
+-      const geoipFile = torrcDefaultsFile.clone();
+-      geoipFile.leafName = "geoip";
++      const geoipFile = lazy.TorLauncherUtil.getTorFile("geoip", false);
+       this.#args.push("GeoIPFile", geoipFile.path);
+-      const geoip6File = torrcDefaultsFile.clone();
+-      geoip6File.leafName = "geoip6";
++      const geoip6File = lazy.TorLauncherUtil.getTorFile("geoip6", false);
+       this.#args.push("GeoIPv6File", geoip6File.path);
+     } else {
+       logger.warn(
