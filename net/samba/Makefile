@@ -1,4 +1,4 @@
-VERSION =		4.20.1
+VERSION =		4.20.2
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -10,7 +10,7 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-SHARED_LIBS =		dcerpc			1.1 \
+SHARED_LIBS =		dcerpc			1.2 \
 			dcerpc-binding		5.0 \
 			dcerpc-samr		1.0 \
 			dcerpc-server-core	3.1 \
@@ -20,7 +20,7 @@ SHARED_LIBS =		dcerpc			1.1 \
 			ndr-nbt			2.1 \
 			ndr-standard		6.0 \
 			netapi			3.3 \
-			samba-credentials	1.5 \
+			samba-credentials	1.6 \
 			samba-errors		2.1 \
 			samba-hostconfig	14.0 \
 			samba-passdb		3.0 \

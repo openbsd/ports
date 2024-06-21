@@ -1169,6 +1169,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}ht
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}http_content.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}mdsearch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}mdsearch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}misc_dfs_widelink.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}misc_dfs_widelink.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}ndrdump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}ndrdump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/${MODPY_PYCACHE}netads_dns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1206,6 +1208,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/downgradedatabase.
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/http_chunk.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/http_content.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/mdsearch.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/misc_dfs_widelink.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/ndrdump.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/netads_dns.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/blackbox/netads_json.py
