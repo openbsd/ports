@@ -1,11 +1,14 @@
 ONLY_FOR_ARCHS = amd64 i386
 
+USE_NOBTCFI =	Yes
+
 COMMENT = 	fast-paced hollywood-tactical shooter: "fun over realism"
 DISTNAME =	urbanterror-4.3.4
 
 GH_ACCOUNT =	Barbatos
 GH_PROJECT =	ioq3-for-UrbanTerror-4
 GH_TAGNAME =	release-4.3.4
+REVISION =	0
 
 CATEGORIES =	games x11
 
