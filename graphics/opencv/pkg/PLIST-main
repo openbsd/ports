@@ -356,8 +356,6 @@ share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt
 share/licenses/opencv4/flatbuffers-LICENSE.txt
 share/licenses/opencv4/mscr-chi_table_LICENSE.txt
-share/licenses/opencv4/protobuf-LICENSE
-share/licenses/opencv4/protobuf-README.md
 share/opencv4/
 share/opencv4/haarcascades/
 share/opencv4/haarcascades/haarcascade_eye.xml

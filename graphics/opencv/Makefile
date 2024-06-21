@@ -12,7 +12,7 @@ GH_TAGNAME =		${V}
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
 REVISION-java =		1
-REVISION-main =		2
+REVISION-main =		3
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -25,11 +25,12 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 SHARED_LIBS += $i 13.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_2 avcodec avformat avutil
-WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m openjp2 png swscale
-WANTLIB-main += tiff webp z
+WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_2 absl_hash absl_log_internal_message
+WANTLIB-main += absl_log_internal_nullguard absl_spinlock_wait avcodec
+WANTLIB-main += avformat avutil c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
+WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gtk-3 jpeg lapack
+WANTLIB-main += m openjp2 png protobuf swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc
@@ -63,6 +64,9 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
+			devel/protobuf \
+			math/lapack \
+			devel/abseil-cpp \
 			multimedia/gstreamer1/core \
 			multimedia/gstreamer1/plugins-base \
 			x11/gtk+3
@@ -119,6 +123,11 @@ NO_TEST =	Yes
 #
 #CONFIGURE_ARGS +=	-DDBUILD_TESTS=ON \
 #			-DBUILD_PERF_TESTS=ON
+
+# Use system protobuf and do NOT override CXX VERSION
+CONFIGURE_ARGS +=	-DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
+			-DBUILD_PROTOBUF=OFF \
+			-DPROTOBUF_UPDATE_FILES=ON
 
 post-patch:
 	perl -pi -e 's@^.*(#\s*include)@$$1@' \
