@@ -1,3 +1,4 @@
+@conflict kf5-qqc2-desktop-style-<5.116.0p0
 lib/cmake/KF6QQC2DesktopStyle/
 lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfig.cmake
 lib/cmake/KF6QQC2DesktopStyle/KF6QQC2DesktopStyleConfigVersion.cmake
