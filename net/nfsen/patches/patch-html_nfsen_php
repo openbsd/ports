@@ -1,6 +1,7 @@
---- html/nfsen.php.orig	Mon Jun 23 20:27:50 2014
-+++ html/nfsen.php	Fri Jan  9 17:16:58 2015
-@@ -706,7 +706,7 @@ switch ($label) {
+Index: html/nfsen.php
+--- html/nfsen.php.orig
++++ html/nfsen.php
+@@ -695,7 +695,7 @@ switch ($label) {
  		}
  		if ( count($plugins) > 0 ) {
  			$plugin_name = $plugins[ $_SESSION['sub_tab'] ];

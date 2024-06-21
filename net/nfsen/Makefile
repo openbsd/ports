@@ -1,24 +1,20 @@
 COMMENT=	web-based front end for the nfdump netflow tools
 
-V=		1.3.8
-REVISION=	9
-DISTNAME=	nfsen-$V
+GH_ACCOUNT=	phaag
+GH_PROJECT=	nfsen
+GH_TAGNAME=	v.1.3.11
 CATEGORIES=	net www
 HOMEPAGE=	https://nfsen.sourceforge.net/
-PORTROACH=	site:https://github.com/phaag/nfsen/releases/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=		${SITE_SOURCEFORGE:=nfsen/}
-
 MODULES=	perl lang/php
-MODPHP_VERSION=	7.4
 RUN_DEPENDS=	net/rrdtool \
 		mail/p5-Mail-Tools \
 		net/p5-Socket6 \
 		net/nfdump,-nfprofile \
-		net/nfdump>=1.6.9
+		net/nfdump>=1.6.20
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	Yes
@@ -49,7 +45,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.pm ${PREFIX}/lib/nfsen/plugins/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.php ${WWWDIR}/nfsen/plugins/
 	-mv ${WWWDIR}/nfsen/conf.php ${WWWDIR}/nfsen/conf.php.dist
-	find ${WRKINST} \( -name '*.orig' -o -name '._*' \) -delete
+	find ${WRKINST} -name '*${PATCHORIG}' -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/libdata
 

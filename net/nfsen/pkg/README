@@ -15,7 +15,7 @@ This will read the configuration file, create directories and files
 as needed, and handle upgrades from previous versions.
 
 It is highly advisable to read the documentation available at
-http://nfsen.sourceforge.net/
+https://nfsen.sourceforge.net/
 
 Note, you may export netflow-compatible data from PF via pflow(4).
 
@@ -39,7 +39,7 @@ but is somewhat experimental. You can attempt to use it like this:
 section in the sample ${SYSCONFDIR}/nfsen.conf
 
 - start nftrack: note that this will require at least 10GB of space in
-the database directory. 
+the database directory.
 # su -m _nfcapd -c "nftrack -I -d /var/db/nfsen/ports-db/"
 
 - restart nfsen

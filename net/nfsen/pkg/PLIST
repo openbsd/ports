@@ -1,7 +1,8 @@
+@conflict nfsen-web-*
 @pkgpath net/nfsen,-main
 @pkgpath net/nfsen,-web
-@conflict nfsen-web-*
 @extraunexec rm -rf /var/db/nfsen/ports-db/*
+@rcscript ${RCDIR}/nfsen
 bin/RebuildHierarchy.pl
 bin/install-nfsen.pl
 bin/nfsen
@@ -39,12 +40,11 @@ share/examples/nfsen/nfsen.conf
 @group www
 @sample /var/db/nfsen/
 @sample /var/db/nfsen/ports-db/
-@group
-@owner
-@mode
 @exec-add usermod -v -G www _nfcapd
-@rcscript ${RCDIR}/nfsen
 @cwd /var/www
+@mode
+@owner
+@group
 htdocs/nfsen/
 htdocs/nfsen/alerting.php
 htdocs/nfsen/colour_palette.html

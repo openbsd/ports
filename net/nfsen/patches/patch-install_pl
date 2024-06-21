@@ -1,6 +1,7 @@
---- install.pl.orig	Mon Jun 23 20:27:50 2014
-+++ install.pl	Mon Apr 11 09:23:26 2016
-@@ -165,14 +165,14 @@ sub VerifyUser {
+Index: install.pl
+--- install.pl.orig
++++ install.pl
+@@ -158,14 +158,14 @@ sub VerifyUser {
  	if ( !defined $gid_name ) {
  		die "Group '$user_gid' not found on this system\n";
  	}
@@ -21,16 +22,7 @@
  
  } # End of VerifyUser
  
-@@ -553,7 +553,7 @@ sub UpgradeProfiles {
- 				if( ! -f "$NfConf::PROFILEDATADIR/$profilepath/$channel/.nfstat") { 
- 					# no shadow profile, but missing channel stat
- 					print "Rebuilding profile stats for '$profilegroup/$profilename'\n";
--					NfProfile::DoRebuild(\%profileinfo, $profilename, $profilegroup, $profilepath, 1, 0);
-+					NfProfile::DoRebuild("", \%profileinfo, $profilename, $profilegroup, $profilepath, 1, 0);
- 					NfProfile::WriteProfile(\%profileinfo);
- 				}
- 				# make sure it's own by nfsen_uid after the rebuild
-@@ -584,7 +584,6 @@ sub CopyAllFiles {
+@@ -577,7 +577,6 @@ sub CopyAllFiles {
  	$CopyRecursive::UID 	 = 0;
  	$CopyRecursive::GID 	 = $www_gid;
  	$CopyRecursive::MODE 	 = 0755;
@@ -38,7 +30,7 @@
  	CopyRecursive::dircopy("bin", "$NfConf::INSTPREFIX$NfConf::BINDIR");
  	CopyRecursive::dircopy("libexec", "$NfConf::INSTPREFIX$NfConf::LIBEXECDIR");
  	$CopyRecursive::MODE 	 = 0644;
-@@ -592,11 +591,11 @@ sub CopyAllFiles {
+@@ -585,11 +584,11 @@ sub CopyAllFiles {
  	CopyRecursive::dircopy("plugins/backend",  "$NfConf::INSTPREFIX$NfConf::BACKEND_PLUGINDIR");
  	CopyRecursive::dircopy("plugins/frontend", "$NfConf::INSTPREFIX$NfConf::FRONTEND_PLUGINDIR");
  
@@ -52,7 +44,7 @@
  	}
  	print "\n";
  
-@@ -615,7 +614,7 @@ sub Cleanup {
+@@ -608,7 +607,7 @@ sub Cleanup {
  					);
  
  	foreach my $file ( @OldFiles ) {
@@ -61,7 +53,7 @@
  	}
  
  } # End of Cleanup
-@@ -629,8 +628,13 @@ sub Cleanup {
+@@ -622,8 +621,13 @@ sub Cleanup {
  $| = 1;
  
  my $ConfigFile = shift @ARGV;
@@ -76,7 +68,7 @@
  # Load the required NfSen modules 
  unshift @INC, "libexec";
  print "Check for required Perl modules: ";
-@@ -652,7 +656,7 @@ if ( $@ ) {
+@@ -645,7 +649,7 @@ if ( $@ ) {
  
  # need to run as root
  if ( !NfSen::root_process() ) {
@@ -85,7 +77,7 @@
  }
  
  # need a config file
-@@ -702,7 +706,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
+@@ -695,7 +699,8 @@ print "Version: $nfsen_version: $VERSION\n\n";
  
  # Get Perl
  # Put this into a NfConf variable, so we can use the standard Patch Procedure
@@ -95,9 +87,9 @@
  $NfConf::INSTPREFIX = $ENV{'INSTPREFIX'};
  if ( defined $NfConf::INSTPREFIX ) {
  	if ( ! $NfConf::INSTPREFIX =~ /\/$/ ) {
-@@ -716,7 +721,10 @@ if ( defined $NfConf::INSTPREFIX ) {
+@@ -711,7 +716,10 @@ my ($nfsen_uid, $www_gid, $nfdump_version ) = VerifyCo
+ $$$hints{'nfdump'} = $nfdump_version;
  
- my ($nfsen_uid, $www_gid ) = VerifyConfig();
  my $nfsen_run = 0;
 +my $need_rrdlayout_upgrade = undef;
 +my $rrdtool = undef;
@@ -106,7 +98,7 @@
  # test for two files of old layout
  my $need_rrdlayout_upgrade = -f "$NfConf::PROFILESTATDIR/live/flows.rrd" && -f "$NfConf::PROFILESTATDIR/live/packets_other.rrd";
  
-@@ -766,10 +774,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
+@@ -761,10 +769,14 @@ if ( -f "$NfConf::PIDDIR/$pid_name" ) {
  		}
  	}
  }
@@ -121,7 +113,7 @@
  Cleanup();
  SetupEnv($nfsen_uid, $www_gid);
  
-@@ -810,14 +822,17 @@ $$$hints{'version'} 		= $nfsen_version;
+@@ -805,14 +817,17 @@ $$$hints{'version'} 		= $nfsen_version;
  $$$hints{'installed'} 		= time();
  NfSen::StoreHints();
  chown $nfsen_uid, $www_gid, "$NfConf::INSTPREFIX$NfConf::PROFILESTATDIR/hints" || die "Can't chown hints db: $!\n";

@@ -1,6 +1,7 @@
---- libexec/NfProfile.pm.orig	Mon Apr 11 09:24:34 2016
-+++ libexec/NfProfile.pm	Mon Apr 11 09:26:04 2016
-@@ -1343,7 +1343,7 @@ sub DoRebuild {
+Index: libexec/NfProfile.pm
+--- libexec/NfProfile.pm.orig
++++ libexec/NfProfile.pm
+@@ -1342,7 +1342,7 @@ sub DoRebuild {
  				$completed = 100;
  			}
  			if ( ($counter % $modulo ) == 0 ) {
