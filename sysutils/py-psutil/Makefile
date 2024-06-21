@@ -1,11 +1,10 @@
 COMMENT=	library to retrieve system information and utilisation
 
-MODPY_EGG_VERSION=	5.9.8
+MODPY_EGG_VERSION=	6.0.0
 
 DISTNAME=	psutil-${MODPY_EGG_VERSION}
 PKGNAME=	py-psutil-${MODPY_EGG_VERSION}
 CATEGORIES=	sysutils
-REVISION=	0
 
 HOMEPAGE=	https://github.com/giampaolo/psutil
 
