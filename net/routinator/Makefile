@@ -1,23 +1,13 @@
-# ring-v0.17.7 does not support this arch
+# ring-v0.17.8 does not support this arch
 NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	RPKI "relying party" software
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	routinator
-GH_TAGNAME =	v0.13.2
+GH_TAGNAME =	v0.14.0
 
-UI =		0.3.4
-SITES.ui =	https://github.com/NLnetLabs/routinator-ui/releases/download/v${UI}/
-DISTFILES.ui =	routinator-ui-${UI}{routinator-ui-build}.tar.gz
-
-# The routinator-ui crate expects its Vue.js parts to be in ../dist
-EXTRACT_CASES +=	routinator-ui-*.tar.gz) \
-	mkdir -p ${MODCARGO_VENDOR_DIR}/dist; \
-	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | \
-	${TAR} -C ${MODCARGO_VENDOR_DIR}/dist -xf - -- ${EXTRACT_FILES};;
-
-CATEGORIES =		net
+CATEGORIES =	net
 
 # code: BSD
 # ARIN TAL: ridiculous license. at runtime the file is not easily available
