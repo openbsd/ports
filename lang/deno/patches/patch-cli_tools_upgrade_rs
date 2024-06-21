@@ -1,7 +1,7 @@
 Index: cli/tools/upgrade.rs
 --- cli/tools/upgrade.rs.orig
 +++ cli/tools/upgrade.rs
-@@ -235,10 +235,7 @@ fn print_release_notes(current_version: &str, new_vers
+@@ -239,10 +239,7 @@ fn print_release_notes(current_version: &str, new_vers
  }
  
  pub fn upgrade_check_enabled() -> bool {
@@ -13,11 +13,11 @@ Index: cli/tools/upgrade.rs
  }
  
  pub fn check_for_upgrades(
-@@ -370,6 +367,7 @@ pub async fn upgrade(
+@@ -374,6 +371,7 @@ pub async fn upgrade(
    flags: Flags,
    upgrade_flags: UpgradeFlags,
  ) -> Result<(), AnyError> {
 +  bail!("Upgrades are not supported on OpenBSD.");
    let factory = CliFactory::from_flags(flags)?;
-   let client = factory.http_client();
+   let client = factory.http_client_provider().get_or_create()?;
    let current_exe_path = std::env::current_exe()?;

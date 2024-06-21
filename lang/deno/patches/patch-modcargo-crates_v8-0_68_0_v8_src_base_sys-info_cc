@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.91.1/v8/src/base/sys-info.cc
---- modcargo-crates/v8-0.91.1/v8/src/base/sys-info.cc.orig
-+++ modcargo-crates/v8-0.91.1/v8/src/base/sys-info.cc
+Index: modcargo-crates/v8-0.93.1/v8/src/base/sys-info.cc
+--- modcargo-crates/v8-0.93.1/v8/src/base/sys-info.cc.orig
++++ modcargo-crates/v8-0.93.1/v8/src/base/sys-info.cc
 @@ -38,7 +38,7 @@ namespace base {
  // static
  int SysInfo::NumberOfProcessors() {

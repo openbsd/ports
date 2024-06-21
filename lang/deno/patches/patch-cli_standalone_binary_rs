@@ -1,7 +1,7 @@
 Index: cli/standalone/binary.rs
 --- cli/standalone/binary.rs.orig
 +++ cli/standalone/binary.rs
-@@ -149,7 +149,7 @@ pub struct Metadata {
+@@ -148,7 +148,7 @@ pub struct Metadata {
  }
  
  pub fn load_npm_vfs(root_dir_path: PathBuf) -> Result<FileBackedVfs, AnyError> {

@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.91.1/build/config/linux/BUILD.gn
---- modcargo-crates/v8-0.91.1/build/config/linux/BUILD.gn.orig
-+++ modcargo-crates/v8-0.91.1/build/config/linux/BUILD.gn
+Index: modcargo-crates/v8-0.93.1/build/config/linux/BUILD.gn
+--- modcargo-crates/v8-0.93.1/build/config/linux/BUILD.gn.orig
++++ modcargo-crates/v8-0.93.1/build/config/linux/BUILD.gn
 @@ -40,10 +40,6 @@ config("runtime_library") {
      defines = [ "OS_CHROMEOS" ]
    }

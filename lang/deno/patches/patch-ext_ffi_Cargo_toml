@@ -2,8 +2,8 @@ Use devel/libffi from ports
 Index: ext/ffi/Cargo.toml
 --- ext/ffi/Cargo.toml.orig
 +++ ext/ffi/Cargo.toml
-@@ -17,12 +17,15 @@ path = "lib.rs"
- deno_core.workspace = true
+@@ -18,12 +18,15 @@ deno_core.workspace = true
+ deno_permissions.workspace = true
  dlopen2.workspace = true
  dynasmrt = "1.2.3"
 -libffi = "=3.2.0"
