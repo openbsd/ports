@@ -53,16 +53,9 @@
      SUBDIR += p7zip
      SUBDIR += par1cmdline
      SUBDIR += par2cmdline
-     SUBDIR += pecl-lzf,php74
-     SUBDIR += pecl-lzf,php80
      SUBDIR += pecl-lzf,php81
      SUBDIR += pecl-lzf,php82
      SUBDIR += pecl-lzf,php83
-     SUBDIR += pecl-rar,php74
-     SUBDIR += pecl-rar,php80
-     #SUBDIR += pecl-rar,php81	# fails
-     #SUBDIR += pecl-rar,php82	# fails
-     #SUBDIR += pecl-rar,php83	# fails
      SUBDIR += pigz
      SUBDIR += pixz
      SUBDIR += py-brotli,python3

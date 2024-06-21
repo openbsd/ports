@@ -2,7 +2,7 @@ COMMENT=	YAML-1.1 parser and emitter for PHP
 
 DISTNAME=	yaml-2.2.3
 DIST_SUBDIR=	pecl
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

@@ -377,8 +377,6 @@
      SUBDIR += pdfgrep
      SUBDIR += pdfpc
      SUBDIR += pdftk
-     SUBDIR += pecl-yaml,php74
-     SUBDIR += pecl-yaml,php80
      SUBDIR += pecl-yaml,php81
      SUBDIR += pecl-yaml,php82
      SUBDIR += pecl-yaml,php83

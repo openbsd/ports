@@ -1,5 +1,7 @@
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php72
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php73
+${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php74
+${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php80
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/doc/pkg-readmes/${PKGSTEM}

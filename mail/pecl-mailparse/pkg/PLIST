@@ -4,6 +4,8 @@ ${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php70
 ${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php71
 ${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php72
 ${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php73
+${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php74
+${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php80
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

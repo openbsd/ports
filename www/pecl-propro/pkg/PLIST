@@ -1,8 +1,0 @@
-@conflict pecl-propro-*
-@extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
-share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
-@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_api.h

@@ -1,5 +1,7 @@
 ${MODPECL_DEFAULTV}@pkgpath textproc/pecl-yaml,php72
 ${MODPECL_DEFAULTV}@pkgpath textproc/pecl-yaml,php73
+${MODPECL_DEFAULTV}@pkgpath textproc/pecl-yaml,php74
+${MODPECL_DEFAULTV}@pkgpath textproc/pecl-yaml,php80
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

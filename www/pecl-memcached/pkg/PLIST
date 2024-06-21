@@ -4,6 +4,8 @@ ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php70
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php71
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php72
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php73
+${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php74
+${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php80
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

@@ -1,7 +1,7 @@
 COMMENT=	PHP bindings for the libssh2 library
 
 DISTNAME=	ssh2-1.4
-REVISION=	0
+REVISION=	1
 
 # PHP
 PERMIT_PACKAGE=	Yes

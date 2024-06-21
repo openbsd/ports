@@ -1,3 +1,4 @@
+${MODPECL_DEFAULTV}@pkgpath www/pecl-xdebug,php80
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini

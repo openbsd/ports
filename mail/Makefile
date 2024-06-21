@@ -180,8 +180,6 @@
      SUBDIR += p5-Mail-Webmail-Gmail
      SUBDIR += p5-OpenSMTPd-Filter
      SUBDIR += p5-SMTP-Server
-     SUBDIR += pecl-mailparse,php74
-     SUBDIR += pecl-mailparse,php80
      SUBDIR += pecl-mailparse,php81
      SUBDIR += pecl-mailparse,php82
      SUBDIR += pecl-mailparse,php83
