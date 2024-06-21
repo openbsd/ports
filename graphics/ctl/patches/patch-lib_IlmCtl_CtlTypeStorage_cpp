@@ -1,10 +1,12 @@
---- lib/IlmCtl/CtlTypeStorage.cpp.orig	Sun Aug  7 22:06:34 2016
-+++ lib/IlmCtl/CtlTypeStorage.cpp	Sun Aug  7 22:06:54 2016
-@@ -64,7 +64,6 @@
- #include <half.h>
- #include <CtlExc.h>
- #include <string.h>
--#include <alloca.h>
+Index: lib/IlmCtl/CtlTypeStorage.cpp
+--- lib/IlmCtl/CtlTypeStorage.cpp.orig
++++ lib/IlmCtl/CtlTypeStorage.cpp
+@@ -67,7 +67,7 @@
+ #ifdef _WIN32
+ 	#include <malloc.h>
+ #else
+-	#include <alloca.h>
++	#include <stdlib.h>
+ #endif
  #include <stdio.h>
  #include <stdlib.h>
- #include <stdint.h>

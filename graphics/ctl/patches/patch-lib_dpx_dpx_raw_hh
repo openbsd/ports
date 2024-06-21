@@ -1,8 +1,9 @@
---- lib/dpx/dpx_raw.hh.orig	Fri Sep 11 13:13:47 2015
-+++ lib/dpx/dpx_raw.hh	Fri Sep 11 13:17:18 2015
+Index: lib/dpx/dpx_raw.hh
+--- lib/dpx/dpx_raw.hh.orig
++++ lib/dpx/dpx_raw.hh
 @@ -55,6 +55,16 @@
  #if !defined(CTL_DPX_RAW_INTERNAL_INCLUDE)
- #define CRL_DPX_RAW_INTERNAL_INCLUDE
+ #define CTL_DPX_RAW_INTERNAL_INCLUDE
  
 +#ifdef swap64
 +#undef swap64

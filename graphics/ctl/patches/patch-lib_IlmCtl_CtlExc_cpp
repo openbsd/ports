@@ -1,11 +1,12 @@
---- lib/IlmCtl/CtlExc.cpp.orig	Sun Aug  7 21:04:25 2016
-+++ lib/IlmCtl/CtlExc.cpp	Sun Aug  7 21:04:48 2016
-@@ -55,7 +55,7 @@
- #include <CtlExc.h>
- #include <stdarg.h>
- #include <stdio.h>
--#include <alloca.h>
-+#include <stdlib.h>
+Index: lib/IlmCtl/CtlExc.cpp
+--- lib/IlmCtl/CtlExc.cpp.orig
++++ lib/IlmCtl/CtlExc.cpp
+@@ -58,7 +58,7 @@
+ #ifdef _WIN32
+ 	#include <malloc.h>
+ #else
+-	#include <alloca.h>
++	#include <stdlib.h>
+ #endif
  #include <string.h>
  
- namespace Ctl {

@@ -1,11 +1,12 @@
---- ctlrender/tiff_file.cc.orig	Sun Aug  7 22:09:18 2016
-+++ ctlrender/tiff_file.cc	Sun Aug  7 22:09:47 2016
-@@ -61,7 +61,7 @@
- #include <sys/param.h>
- #include <math.h>
- #include <Iex.h>
--#include <alloca.h>
-+#include <stdlib.h>
+Index: ctlrender/tiff_file.cc
+--- ctlrender/tiff_file.cc.orig
++++ ctlrender/tiff_file.cc
+@@ -66,7 +66,7 @@
+ #ifdef _WIN32
+   #include <malloc.h>
+ #else
+-  #include <alloca.h>
++  #include <stdlib.h>
+ #endif
  
  void tiff_read_multiplane(TIFF *t, float scale, ctl::dpx::fb<float> * pixels);
- void tiff_read_interleaved(TIFF *t, float scale, ctl::dpx::fb<float> * pixels);

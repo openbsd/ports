@@ -1,11 +1,12 @@
---- lib/dpx/dpx_util.cc.orig	Sun Aug  7 21:02:08 2016
-+++ lib/dpx/dpx_util.cc	Sun Aug  7 21:03:31 2016
-@@ -55,7 +55,7 @@
- #include "dpx_util.hh"
- #include <stdarg.h>
- #include <stdio.h>
--#include <alloca.h>
-+#include <stdlib.h>
+Index: lib/dpx/dpx_util.cc
+--- lib/dpx/dpx_util.cc.orig
++++ lib/dpx/dpx_util.cc
+@@ -58,7 +58,7 @@
+ #ifdef _WIN32
+ 	#include <malloc.h>
+ #else
+-	#include <alloca.h>
++	#include <stdlib.h>
+ #endif
  #include <string.h>
  
- namespace ctl {

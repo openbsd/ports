@@ -28,21 +28,16 @@ include/CTL/CtlType.h
 include/CTL/CtlTypeStorage.h
 include/CTL/CtlVersion.h
 include/OpenEXR/ImfCtlApplyTransforms.h
-lib/CTL/
-lib/CTL/change_saturation.ctl
-lib/CTL/transform_DPX_EXR.ctl
-lib/CTL/transform_EXR_DPX.ctl
-lib/CTL/utilities.ctl
-lib/cmake/CTL/
-lib/cmake/CTL/CTLConfig.cmake
-lib/cmake/CTL/CTLConfigVersion.cmake
-lib/cmake/CTL/CTLLibraryDepends.cmake
 @lib lib/libIlmCtl.so.${LIBIlmCtl_VERSION}
 @lib lib/libIlmCtlMath.so.${LIBIlmCtlMath_VERSION}
 @lib lib/libIlmCtlSimd.so.${LIBIlmCtlSimd_VERSION}
 @lib lib/libIlmImfCtl.so.${LIBIlmImfCtl_VERSION}
-lib/pkgconfig/CTL.pc
-lib/pkgconfig/OpenEXR_CTL.pc
+share/CTL/
+share/CTL/change_saturation.ctl
+share/CTL/transform_DPX_EXR.ctl
+share/CTL/transform_EXR_DPX.ctl
+share/CTL/utilities.ctl
 share/doc/CTL/
-share/doc/CTL/CtlManual.doc
-share/doc/CTL/CtlManual.pdf
+share/doc/CTL/CTL/
+share/doc/CTL/CTL/CtlManual.doc
+share/doc/CTL/CTL/CtlManual.pdf
