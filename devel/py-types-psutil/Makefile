@@ -1,7 +1,7 @@
 COMMENT=	typing stubs for psutil
 
-# "aims to provide accurate annotations for psutil==5.9.*"
-MODPY_EGG_VERSION=	5.9.5.20240516
+# "aims to provide accurate annotations for psutil==6.0.*"
+MODPY_EGG_VERSION=	6.0.0.20240621
 DISTNAME=	types-psutil-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
