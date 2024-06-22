@@ -2494,6 +2494,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-local-gate
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-local-gateway-virtual-interface-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-local-gateway-virtual-interfaces.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-local-gateways.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-locked-snapshots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-managed-prefix-lists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-moving-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-nat-gateways.rst
@@ -2584,6 +2585,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image-depre
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-ipam-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-serial-console-access.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-snapshot-block-public-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-vpc-classic-link-dns-support.rst
@@ -2610,6 +2612,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ipam-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-reachability-analyzer-organization-sharing.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-serial-console-access.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-snapshot-block-public-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-transit-gateway-route-table-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-vgw-route-propagation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-volume-io.rst
@@ -2649,6 +2652,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.r
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-security-groups-for-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-serial-console-access-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-snapshot-block-public-access-state.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-spot-placement-scores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-subnet-cidr-reservations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-attachment-propagations.rst
@@ -2666,6 +2670,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/list-images-in-recycle-bin.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/list-snapshots-in-recycle-bin.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/lock-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-address-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-availability-zone-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-capacity-reservation-fleet.rst
@@ -2792,6 +2797,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/terminate-instances
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unassign-ipv6-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unassign-private-ip-addresses.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unassign-private-nat-gateway-address.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unlock-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/unmonitor-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/update-security-group-rule-descriptions-egress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/update-security-group-rule-descriptions-ingress.rst
@@ -2943,6 +2949,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-fargate-profile.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/delete-nodegroup.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/deregister-cluster.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-addon-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-addon-versions.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-addon.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/describe-cluster.rst
@@ -2973,8 +2980,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/update-nodegroup-co
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/update-nodegroup-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/addon-active.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/addon-deleted.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/cluster-active.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/cluster-deleted.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/fargate-profile-active.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/fargate-profile-deleted.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/nodegroup-active.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/eks/wait/nodegroup-deleted.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/add-tags-to-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/elasticache/authorize-cache-security-group-ingress.rst
@@ -4844,11 +4857,16 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmanager/update-g
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmanager/update-link.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmanager/update-site.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/create-monitor.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/create-probe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/delete-monitor.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/delete-probe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/get-monitor.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/get-probe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/list-monitors.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/update-monitor.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/update-probe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/nimble/
