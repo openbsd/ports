@@ -3,6 +3,7 @@ V=		2.8.1
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 SITES=		https://downloads.scummvm.org/frs/scummvm/${V}/
+REVISION=	0
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -59,6 +60,8 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--mandir="${LOCALBASE}/man"
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
