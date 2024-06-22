@@ -1,0 +1,46 @@
+Index: src/cmd/link/internal/amd64/asm.go
+--- src/cmd/link/internal/amd64/asm.go.orig
++++ src/cmd/link/internal/amd64/asm.go
+@@ -617,15 +617,12 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+ 			panic("plt is not set up")
+ 		}
+ 
+-		// jmpq *got+size(IP)
+-		plt.AddUint8(0xff)
+-
+-		plt.AddUint8(0x25)
+-		plt.AddPCRelPlus(target.Arch, got.Sym(), got.Size())
+-
+ 		// add to got: pointer to current pos in plt
+ 		got.AddAddrPlus(target.Arch, plt.Sym(), plt.Size())
+ 
++		// endbr64
++		plt.AddBytes([]byte{0xf3, 0x0f, 0x1e, 0xfa})
++
+ 		// pushq $x
+ 		plt.AddUint8(0x68)
+ 
+@@ -635,6 +632,23 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+ 		plt.AddUint8(0xe9)
+ 
+ 		plt.AddUint32(target.Arch, uint32(-(plt.Size() + 4)))
++
++		// nop (2 bytes)
++		plt.AddBytes([]byte{0x66, 0x90})
++
++		// .plt.sec equivalent
++
++		// endbr64
++		plt.AddBytes([]byte{0xf3, 0x0f, 0x1e, 0xfa})
++
++		// jmpq *got+size(IP)
++		plt.AddUint8(0xff)
++
++		plt.AddUint8(0x25)
++		plt.AddPCRelPlus(target.Arch, got.Sym(), got.Size()-8)
++
++		// nop (6 bytes)
++		plt.AddBytes([]byte{0x66, 0x0f, 0x1f, 0x44, 0x00, 0x00})
+ 
+ 		// rela
+ 		rela.AddAddrPlus(target.Arch, got.Sym(), got.Size()-8)

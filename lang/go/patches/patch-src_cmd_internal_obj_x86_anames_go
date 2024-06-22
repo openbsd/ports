@@ -1,0 +1,19 @@
+Index: src/cmd/internal/obj/x86/anames.go
+--- src/cmd/internal/obj/x86/anames.go.orig
++++ src/cmd/internal/obj/x86/anames.go
+@@ -199,6 +199,7 @@ var Anames = []string{
+ 	"DECL",
+ 	"DECQ",
+ 	"DECW",
++	"DEFERRET",
+ 	"DIVB",
+ 	"DIVL",
+ 	"DIVPD",
+@@ -210,6 +211,7 @@ var Anames = []string{
+ 	"DPPD",
+ 	"DPPS",
+ 	"EMMS",
++	"ENDBR64",
+ 	"ENTER",
+ 	"EXTRACTPS",
+ 	"F2XM1",

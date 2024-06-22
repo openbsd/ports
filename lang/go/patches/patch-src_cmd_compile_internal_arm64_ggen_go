@@ -1,0 +1,24 @@
+Index: src/cmd/compile/internal/arm64/ggen.go
+--- src/cmd/compile/internal/arm64/ggen.go.orig
++++ src/cmd/compile/internal/arm64/ggen.go
+@@ -10,8 +10,11 @@ import (
+ 	"cmd/compile/internal/types"
+ 	"cmd/internal/obj"
+ 	"cmd/internal/obj/arm64"
++	"internal/buildcfg"
+ )
+ 
++var isOpenBSD = buildcfg.GOOS == "openbsd"
++
+ func padframe(frame int64) int64 {
+ 	// arm64 requires that the frame size (not counting saved FP&LR)
+ 	// be 16 bytes aligned. If not, pad it.
+@@ -29,7 +32,7 @@ func zerorange(pp *objw.Progs, p *obj.Prog, off, cnt i
+ 		for i := int64(0); i < cnt; i += int64(types.PtrSize) {
+ 			p = pp.Append(p, arm64.AMOVD, obj.TYPE_REG, arm64.REGZERO, 0, obj.TYPE_MEM, arm64.REGSP, 8+off+i)
+ 		}
+-	} else if cnt <= int64(128*types.PtrSize) {
++	} else if !isOpenBSD && cnt <= int64(128*types.PtrSize) {
+ 		if cnt%(2*int64(types.PtrSize)) != 0 {
+ 			p = pp.Append(p, arm64.AMOVD, obj.TYPE_REG, arm64.REGZERO, 0, obj.TYPE_MEM, arm64.REGSP, 8+off)
+ 			off += int64(types.PtrSize)

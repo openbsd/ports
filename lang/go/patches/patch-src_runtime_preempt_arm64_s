@@ -1,0 +1,9 @@
+Index: src/runtime/preempt_arm64.s
+--- src/runtime/preempt_arm64.s.orig
++++ src/runtime/preempt_arm64.s
+@@ -82,4 +82,4 @@ TEXT ·asyncPreempt(SB),NOSPLIT|NOFRAME,$0-0
+ 	MOVD -8(RSP), R29
+ 	MOVD (RSP), R27
+ 	ADD $512, RSP
+-	JMP (R27)
++	RET R27

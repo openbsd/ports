@@ -1,0 +1,19 @@
+Index: src/cmd/compile/internal/ssa/config.go
+--- src/cmd/compile/internal/ssa/config.go.orig
++++ src/cmd/compile/internal/ssa/config.go
+@@ -188,6 +188,7 @@ func NewConfig(arch string, types Types, ctxt *obj.Lin
+ 		c.haveBswap64 = true
+ 		c.haveBswap32 = true
+ 		c.haveBswap16 = true
++		c.noDuffDevice = true
+ 	case "386":
+ 		c.PtrSize = 4
+ 		c.RegSize = 4
+@@ -233,6 +234,7 @@ func NewConfig(arch string, types Types, ctxt *obj.Lin
+ 		c.haveBswap64 = true
+ 		c.haveBswap32 = true
+ 		c.haveBswap16 = true
++		c.noDuffDevice = true
+ 	case "ppc64":
+ 		c.BigEndian = true
+ 		fallthrough

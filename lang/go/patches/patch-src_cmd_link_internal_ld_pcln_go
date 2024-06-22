@@ -1,0 +1,19 @@
+Index: src/cmd/link/internal/ld/pcln.go
+--- src/cmd/link/internal/ld/pcln.go.orig
++++ src/cmd/link/internal/ld/pcln.go
+@@ -144,9 +144,13 @@ func computeDeferReturn(ctxt *Link, deferReturnSym, s 
+ 				// instruction).
+ 				deferreturn = uint32(r.Off())
+ 				switch target.Arch.Family {
+-				case sys.AMD64, sys.I386:
++				case sys.AMD64:
++					deferreturn -= 5 // four bytes for endbr64, one byte for callq
++				case sys.I386:
+ 					deferreturn--
+-				case sys.ARM, sys.ARM64, sys.Loong64, sys.MIPS, sys.MIPS64, sys.PPC64, sys.RISCV64:
++				case sys.ARM64:
++					deferreturn -= 4 // bti before call
++				case sys.ARM, sys.Loong64, sys.MIPS, sys.MIPS64, sys.PPC64, sys.RISCV64:
+ 					// no change
+ 				case sys.S390X:
+ 					deferreturn -= 2

@@ -1,0 +1,20 @@
+Index: src/cmd/compile/internal/amd64/ggen.go
+--- src/cmd/compile/internal/amd64/ggen.go.orig
++++ src/cmd/compile/internal/amd64/ggen.go
+@@ -15,6 +15,7 @@ import (
+ 
+ // no floating point in note handlers on Plan 9
+ var isPlan9 = buildcfg.GOOS == "plan9"
++var isOpenBSD = buildcfg.GOOS == "openbsd"
+ 
+ // DUFFZERO consists of repeated blocks of 4 MOVUPSs + LEAQ,
+ // See runtime/mkduff.go.
+@@ -72,7 +73,7 @@ func zerorange(pp *objw.Progs, p *obj.Prog, off, cnt i
+ 		if cnt%16 != 0 {
+ 			p = pp.Append(p, x86.AMOVUPS, obj.TYPE_REG, x86.REG_X15, 0, obj.TYPE_MEM, x86.REG_SP, off+cnt-int64(16))
+ 		}
+-	} else if !isPlan9 && (cnt <= int64(128*types.RegSize)) {
++	} else if !isPlan9 && !isOpenBSD && (cnt <= int64(128*types.RegSize)) {
+ 		// Save DI to r12. With the amd64 Go register abi, DI can contain
+ 		// an incoming parameter, whereas R12 is always scratch.
+ 		p = pp.Append(p, x86.AMOVQ, obj.TYPE_REG, x86.REG_DI, 0, obj.TYPE_REG, x86.REG_R12, 0)

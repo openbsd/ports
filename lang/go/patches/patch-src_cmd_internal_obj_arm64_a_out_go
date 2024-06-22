@@ -1,0 +1,33 @@
+Index: src/cmd/internal/obj/arm64/a.out.go
+--- src/cmd/internal/obj/arm64/a.out.go.orig
++++ src/cmd/internal/obj/arm64/a.out.go
+@@ -1018,6 +1018,7 @@ const (
+ 	AWFI
+ 	AWORD
+ 	AYIELD
++	ABTI
+ 	ALAST
+ 	AB  = obj.AJMP
+ 	ABL = obj.ACALL
+@@ -1188,7 +1189,7 @@ const (
+ 	SPOP_DAIFSet
+ 	SPOP_DAIFClr
+ 
+-	// Condition code, EQ, NE, etc. Their relative order to EQ is matter.
++	// Condition code, EQ, NE, etc. Their relative order to EQ matters.
+ 	SPOP_EQ
+ 	SPOP_NE
+ 	SPOP_HS
+@@ -1205,7 +1206,11 @@ const (
+ 	SPOP_LE
+ 	SPOP_AL
+ 	SPOP_NV
+-	// Condition code end.
++
++	// Branch Target Indicator (BTI) targets
++	SPOP_C
++	SPOP_J
++	SPOP_JC
+ 
+ 	SPOP_END
+ )

@@ -1,0 +1,190 @@
+Index: src/cmd/internal/obj/arm64/obj7.go
+--- src/cmd/internal/obj/arm64/obj7.go.orig
++++ src/cmd/internal/obj/arm64/obj7.go
+@@ -65,6 +65,9 @@ var zrReplace = map[obj.As]bool{
+ }
+ 
+ func (c *ctxt7) stacksplit(p *obj.Prog, framesize int32) *obj.Prog {
++	// Jump back to here after morestack returns.
++	startPred := c.cursym.Func().Text
++
+ 	if c.ctxt.Flag_maymorestack != "" {
+ 		p = c.cursym.Func().SpillRegisterArgs(p, c.newprog)
+ 
+@@ -145,11 +148,9 @@ func (c *ctxt7) stacksplit(p *obj.Prog, framesize int3
+ 		p.Spadj = -frameSize
+ 
+ 		p = c.cursym.Func().UnspillRegisterArgs(p, c.newprog)
++		startPred = p
+ 	}
+ 
+-	// Jump back to here after morestack returns.
+-	startPred := p
+-
+ 	// MOV	g_stackguard(g), RT1
+ 	p = obj.Appendp(p, c.newprog)
+ 
+@@ -509,6 +510,24 @@ func (c *ctxt7) rewriteToUseGot(p *obj.Prog) {
+ 	obj.Nopout(p)
+ }
+ 
++var runtimeEntryPoints = map[string]struct{}{
++	"runtime.(*_panic).start": {},
++	"runtime.deferproc": {},
++	"runtime.deferprocStack": {},
++	"runtime.mcall": {},
++	"runtime.morestack": {},
++	"runtime.morestack_noctxt": {},
++	"runtime.mstart1": {},
++}
++
++func isRuntimeEntryPoint(s *obj.LSym) bool {
++	if s == nil {
++		return false
++	}
++	_, ok := runtimeEntryPoints[s.Name]
++	return ok
++}
++
+ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newprog obj.ProgAlloc) {
+ 	if cursym.Func().Text == nil || cursym.Func().Text.Link == nil {
+ 		return
+@@ -552,20 +571,20 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 
+ 	var q *obj.Prog
+ 	var q1 *obj.Prog
+-	var retjmp *obj.LSym
++	var last *obj.Prog
+ 	for p := c.cursym.Func().Text; p != nil; p = p.Link {
+-		o := p.As
+-		switch o {
++		switch p.As {
+ 		case obj.ATEXT:
+-			c.cursym.Func().Text = p
++			text := p
++			cursym.Func().Text = text
+ 			c.autosize = int32(textstksiz)
+ 
+-			if p.Mark&LEAF != 0 && c.autosize == 0 {
++			if text.Mark&LEAF != 0 && c.autosize == 0 {
+ 				// A leaf function with no locals has no frame.
+-				p.From.Sym.Set(obj.AttrNoFrame, true)
++				text.From.Sym.Set(obj.AttrNoFrame, true)
+ 			}
+ 
+-			if !p.From.Sym.NoFrame() {
++			if !text.From.Sym.NoFrame() {
+ 				// If there is a stack frame at all, it includes
+ 				// space to save the LR.
+ 				c.autosize += 8
+@@ -587,10 +606,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 
+ 				// low 32 bits for autosize
+ 				// high 32 bits for extrasize
+-				p.To.Offset = int64(c.autosize) | int64(extrasize)<<32
++				text.To.Offset = int64(c.autosize) | int64(extrasize)<<32
+ 			} else {
+ 				// NOFRAME
+-				p.To.Offset = 0
++				text.To.Offset = 0
+ 			}
+ 
+ 			if c.autosize == 0 && c.cursym.Func().Text.Mark&LEAF == 0 {
+@@ -600,20 +619,28 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 				c.cursym.Func().Text.Mark |= LEAF
+ 			}
+ 
++			// Add branch target indicator for function entry.
++			// TODO(jsing): May be able to use SPOP_C outside of runtime (which
++			// makes use of systemstack).
++			p = obj.Appendp(text, newprog)
++			p.As = ABTI
++			p.From.Type = obj.TYPE_SPECIAL
++			p.From.Offset = int64(SPOP_JC)
++
+ 			if cursym.Func().Text.Mark&LEAF != 0 {
+ 				cursym.Set(obj.AttrLeaf, true)
+-				if p.From.Sym.NoFrame() {
++				if text.From.Sym.NoFrame() {
+ 					break
+ 				}
+ 			}
+ 
+-			if p.Mark&LEAF != 0 && c.autosize < abi.StackSmall {
++			if text.Mark&LEAF != 0 && c.autosize < abi.StackSmall {
+ 				// A leaf function with a small stack can be marked
+ 				// NOSPLIT, avoiding a stack check.
+-				p.From.Sym.Set(obj.AttrNoSplit, true)
++				text.From.Sym.Set(obj.AttrNoSplit, true)
+ 			}
+ 
+-			if !p.From.Sym.NoSplit() {
++			if !text.From.Sym.NoSplit() {
+ 				p = c.stacksplit(p, c.autosize) // emit split check
+ 			}
+ 
+@@ -846,7 +873,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 				break
+ 			}
+ 
+-			retjmp = p.To.Sym
++			retJMP, retReg := p.To.Sym, p.To.Reg
++			if retReg == 0 {
++				retReg = REGLINK
++			}
+ 			p.To = obj.Addr{}
+ 			if c.cursym.Func().Text.Mark&LEAF != 0 {
+ 				if c.autosize != 0 {
+@@ -924,10 +954,10 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 				p = q
+ 			}
+ 
+-			if retjmp != nil { // retjmp
++			if retJMP != nil {
+ 				p.As = AB
+ 				p.To.Type = obj.TYPE_BRANCH
+-				p.To.Sym = retjmp
++				p.To.Sym = retJMP
+ 				p.Spadj = +c.autosize
+ 				break
+ 			}
+@@ -935,7 +965,7 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 			p.As = obj.ARET
+ 			p.To.Type = obj.TYPE_MEM
+ 			p.To.Offset = 0
+-			p.To.Reg = REGLINK
++			p.To.Reg = retReg
+ 			p.Spadj = +c.autosize
+ 
+ 		case AADD, ASUB:
+@@ -1063,6 +1093,21 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 			p = q5
+ 		}
+ 
++		if p.As == obj.ACALL && isRuntimeEntryPoint(p.To.Sym) {
++			// Append BTI as we'll return after this call via gogo.
++			p = obj.Appendp(p, newprog)
++			p.As = ABTI
++			p.From.Type = obj.TYPE_SPECIAL
++			p.From.Offset = int64(SPOP_J)
++		}
++		if p.As == obj.ACALL && p.To.Sym != nil && p.To.Sym.Name == "runtime.deferreturn" && last != nil {
++			// Prepend BTI as we'll enter this point via gogo.
++			pp := obj.Appendp(last, newprog)
++			pp.As = ABTI
++			pp.From.Type = obj.TYPE_SPECIAL
++			pp.From.Offset = int64(SPOP_J)
++		}
++
+ 		if p.To.Type == obj.TYPE_REG && p.To.Reg == REGSP && p.Spadj == 0 {
+ 			f := c.cursym.Func()
+ 			if f.FuncFlag&abi.FuncFlagSPWrite == 0 {
+@@ -1095,6 +1140,8 @@ func preprocess(ctxt *obj.Link, cursym *obj.LSym, newp
+ 			p.From.Reg = int16(REG_LSL + r + (shift&7)<<5)
+ 			p.From.Offset = 0
+ 		}
++
++		last = p
+ 	}
+ }
+ 

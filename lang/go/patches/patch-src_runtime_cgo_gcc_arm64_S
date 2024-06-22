@@ -1,0 +1,11 @@
+Index: src/runtime/cgo/gcc_arm64.S
+--- src/runtime/cgo/gcc_arm64.S.orig
++++ src/runtime/cgo/gcc_arm64.S
+@@ -26,6 +26,7 @@
+  */
+ .globl EXT(crosscall1)
+ EXT(crosscall1):
++	bti c
+ 	.cfi_startproc
+ 	stp x29, x30, [sp, #-96]!
+ 	.cfi_def_cfa_offset 96

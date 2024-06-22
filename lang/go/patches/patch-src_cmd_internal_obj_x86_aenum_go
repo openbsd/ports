@@ -1,0 +1,19 @@
+Index: src/cmd/internal/obj/x86/aenum.go
+--- src/cmd/internal/obj/x86/aenum.go.orig
++++ src/cmd/internal/obj/x86/aenum.go
+@@ -201,6 +201,7 @@ const (
+ 	ADECL
+ 	ADECQ
+ 	ADECW
++	ADEFERRET
+ 	ADIVB
+ 	ADIVL
+ 	ADIVPD
+@@ -212,6 +213,7 @@ const (
+ 	ADPPD
+ 	ADPPS
+ 	AEMMS
++	AENDBR64
+ 	AENTER
+ 	AEXTRACTPS
+ 	AF2XM1

@@ -1,0 +1,10 @@
+Index: src/cmd/internal/obj/arm64/anames.go
+--- src/cmd/internal/obj/arm64/anames.go.orig
++++ src/cmd/internal/obj/arm64/anames.go
+@@ -536,5 +536,6 @@ var Anames = []string{
+ 	"WFI",
+ 	"WORD",
+ 	"YIELD",
++	"BTI",
+ 	"LAST",
+ }

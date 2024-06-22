@@ -1,0 +1,106 @@
+Index: src/cmd/internal/obj/x86/asm6.go
+--- src/cmd/internal/obj/x86/asm6.go.orig
++++ src/cmd/internal/obj/x86/asm6.go
+@@ -618,6 +618,10 @@ var ycall = []ytab{
+ 	{Zcallcon, 1, argList{Yi32}},
+ }
+ 
++var ydeferret = []ytab{
++	{Zcall, 5, argList{Ybr}},
++}
++
+ var yduff = []ytab{
+ 	{Zcallduff, 1, argList{Yi32}},
+ }
+@@ -1085,6 +1089,7 @@ var optab =
+ 	{ADECL, yincl, Px1, opBytes{0x48, 0xff, 01}},
+ 	{ADECQ, yincq, Pw, opBytes{0xff, 01}},
+ 	{ADECW, yincq, Pe, opBytes{0xff, 01}},
++	{ADEFERRET, ydeferret, Px, opBytes{Pf3, Pm, 0x1e, 0xfa, 0xe8, 0x0}},
+ 	{ADIVB, ydivb, Pb, opBytes{0xf6, 06}},
+ 	{ADIVL, ydivl, Px, opBytes{0xf7, 06}},
+ 	{ADIVPD, yxm, Pe, opBytes{0x5e}},
+@@ -1096,6 +1101,7 @@ var optab =
+ 	{ADPPD, yxshuf, Pq, opBytes{0x3a, 0x41, 0}},
+ 	{ADPPS, yxshuf, Pq, opBytes{0x3a, 0x40, 0}},
+ 	{AEMMS, ynone, Pm, opBytes{0x77}},
++	{AENDBR64, ynone, Pf3, opBytes{0x1e, 0xfa}},
+ 	{AEXTRACTPS, yextractps, Pq, opBytes{0x3a, 0x17, 0}},
+ 	{AENTER, nil, 0, opBytes{}}, // botch
+ 	{AFXRSTOR, ysvrs_mo, Pm, opBytes{0xae, 01, 0xae, 01}},
+@@ -1858,7 +1864,8 @@ func spadjop(ctxt *obj.Link, l, q obj.As) obj.As {
+ // or end on a 32 byte boundary by inserting NOPs before the jumps.
+ func isJump(p *obj.Prog) bool {
+ 	return p.To.Target() != nil || p.As == obj.AJMP || p.As == obj.ACALL ||
+-		p.As == obj.ARET || p.As == obj.ADUFFCOPY || p.As == obj.ADUFFZERO
++		p.As == obj.ARET || p.As == obj.ADUFFCOPY || p.As == obj.ADUFFZERO ||
++		p.As == ADEFERRET
+ }
+ 
+ // lookForJCC returns the first real instruction starting from p, if that instruction is a conditional
+@@ -2061,6 +2068,24 @@ func addpad(pc, a int64, ctxt *obj.Link, cursym *obj.L
+ 	return 0
+ }
+ 
++var runtimeEntryPoints = map[string]struct{}{
++	"runtime.(*_panic).start": {},
++	"runtime.deferproc": {},
++	"runtime.deferprocStack": {},
++	"runtime.mcall": {},
++	"runtime.morestack": {},
++	"runtime.morestack_noctxt": {},
++	"runtime.mstart1": {},
++}
++
++func isRuntimeEntryPoint(s *obj.LSym) bool {
++	if s == nil {
++		return false
++	}
++	_, ok := runtimeEntryPoints[s.Name]
++	return ok
++}
++
+ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.ProgAlloc) {
+ 	if ctxt.Retpoline && ctxt.Arch.Family == sys.I386 {
+ 		ctxt.Diag("-spectre=ret not supported on 386")
+@@ -2077,6 +2102,7 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+ 		ctxt.Diag("x86 tables not initialized, call x86.instinit first")
+ 	}
+ 
++	var last *obj.Prog
+ 	for p := s.Func().Text; p != nil; p = p.Link {
+ 		if p.To.Type == obj.TYPE_BRANCH && p.To.Target() == nil {
+ 			p.To.SetTarget(p)
+@@ -2109,6 +2135,19 @@ func span6(ctxt *obj.Link, s *obj.LSym, newprog obj.Pr
+ 			p.To.Reg = 0
+ 			p.To.Offset = 0
+ 		}
++		if p.As == obj.ACALL && isRuntimeEntryPoint(p.To.Sym) {
++			// Append ENDBR64 as we'll return after this call via gogo.
++			p = obj.Appendp(p, newprog)
++			p.As = AENDBR64
++		}
++		if p.As == obj.ACALL && p.To.Sym != nil && p.To.Sym.Name == "runtime.deferreturn" && last != nil {
++			// Use ADEFERRET instead of ACALL. We need to prepend ENDBR64 here,
++			// however due to the realignment of call instructions, we can end
++			// up with variable length NOPs between the ENDBR64 and the CALLQ,
++			// which makes it impossible to compute the deferret offset.
++			p.As = ADEFERRET
++		}
++		last = p
+ 	}
+ 
+ 	var count int64 // rough count of number of instructions
+@@ -4898,7 +4937,11 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
+ 					// LEAQ -16(SP), BP
+ 					ab.Put(bpduff1)
+ 				}
+-				ab.Put1(byte(op))
++				if p.As == ADEFERRET {
++					ab.PutOpBytesLit(z, &o.op)
++				} else {
++					ab.Put1(byte(op))
++				}
+ 				r = obj.Addrel(cursym)
+ 				r.Off = int32(p.Pc + int64(ab.Len()))
+ 				r.Sym = p.To.Sym
