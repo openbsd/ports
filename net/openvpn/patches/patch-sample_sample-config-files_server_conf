@@ -1,7 +1,7 @@
 Index: sample/sample-config-files/server.conf
 --- sample/sample-config-files/server.conf.orig
 +++ sample/sample-config-files/server.conf
-@@ -271,8 +271,8 @@ cipher AES-256-CBC
+@@ -266,8 +266,8 @@ keepalive 10 120
  #
  # You can uncomment this on non-Windows
  # systems after creating a dedicated user.
