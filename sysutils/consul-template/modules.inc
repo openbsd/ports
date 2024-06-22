@@ -1,4 +1,5 @@
 MODGO_MODULES =	\
+	dario.cat/mergo						 v1.0.0 \
 	github.com/!burnt!sushi/toml				 v1.3.2 \
 	github.com/!data!dog/datadog-go				 v3.2.0+incompatible \
 	github.com/!masterminds/goutils				 v1.1.1 \
@@ -31,9 +32,9 @@ MODGO_MODULES =	\
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/google/uuid					 v1.3.0 \
 	github.com/gorilla/websocket				 v1.5.0 \
-	github.com/hashicorp/consul/api				 v1.28.3 \
+	github.com/hashicorp/consul/api				 v1.29.1 \
 	github.com/hashicorp/consul/proto-public		 v0.6.1 \
-	github.com/hashicorp/consul/sdk				 v0.15.0 \
+	github.com/hashicorp/consul/sdk				 v0.16.1 \
 	github.com/hashicorp/cronexpr				 v1.1.1 \
 	github.com/hashicorp/errwrap				 v1.1.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
@@ -60,7 +61,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/vault/api				 v1.10.0 \
 	github.com/hashicorp/vault/api/auth/kubernetes		 v0.5.0 \
 	github.com/huandu/xstrings				 v1.4.0 \
-	github.com/imdario/mergo				 v0.3.13 \
+	github.com/imdario/mergo				 v0.3.11 \
 	github.com/json-iterator/go				 v1.1.9 \
 	github.com/julienschmidt/httprouter			 v1.2.0 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
@@ -83,7 +84,6 @@ MODGO_MODULES =	\
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
 	github.com/mwitkow/go-conntrack				 v0.0.0-20161129095857-cc309e4a2223 \
-	github.com/niemeyer/pretty				 v0.0.0-20200227124842-a10e7caefd8e \
 	github.com/pascaldekloe/goe				 v0.1.0 \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pmezard/go-difflib				 v1.0.1-0.20181226105442-5d4384ee4fb2 \
@@ -136,7 +136,6 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew			 v1.1.0 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/fatih/color				 v1.13.0 \
-	github.com/fatih/color				 v1.14.1 \
 	github.com/fatih/color				 v1.16.0 \
 	github.com/fatih/color				 v1.7.0 \
 	github.com/fatih/color				 v1.9.0 \
@@ -154,7 +153,6 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp			 v0.5.9 \
 	github.com/google/uuid				 v1.1.1 \
 	github.com/google/uuid				 v1.1.2 \
-	github.com/hashicorp/consul/proto-public	 v0.5.1 \
 	github.com/hashicorp/errwrap			 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.1 \
@@ -178,7 +176,6 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/golang-lru			 v0.5.4 \
 	github.com/huandu/xstrings			 v1.3.2 \
 	github.com/huandu/xstrings			 v1.3.3 \
-	github.com/imdario/mergo			 v0.3.11 \
 	github.com/json-iterator/go			 v1.1.6 \
 	github.com/kr/pretty				 v0.1.0 \
 	github.com/kr/text				 v0.1.0 \
@@ -192,7 +189,6 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty			 v0.0.12 \
 	github.com/mattn/go-isatty			 v0.0.14 \
 	github.com/mattn/go-isatty			 v0.0.16 \
-	github.com/mattn/go-isatty			 v0.0.17 \
 	github.com/mattn/go-isatty			 v0.0.3 \
 	github.com/mattn/go-isatty			 v0.0.8 \
 	github.com/miekg/dns				 v1.1.26 \
@@ -234,7 +230,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify			 v1.7.0 \
 	github.com/stretchr/testify			 v1.7.2 \
 	github.com/stretchr/testify			 v1.8.1 \
-	github.com/stretchr/testify			 v1.8.3 \
 	github.com/yuin/goldmark			 v1.3.5 \
 	golang.org/x/crypto				 v0.0.0-20180904163835-0709b304e793 \
 	golang.org/x/crypto				 v0.0.0-20190308221718-c2843e01d9a2 \
@@ -300,7 +295,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys				 v0.0.0-20220728004956-3c1f35247d10 \
 	golang.org/x/sys				 v0.0.0-20220811171246-fbc7d0a398ab \
-	golang.org/x/sys				 v0.13.0 \
 	golang.org/x/sys				 v0.17.0 \
 	golang.org/x/sys				 v0.18.0 \
 	golang.org/x/sys				 v0.19.0 \
@@ -334,11 +328,9 @@ MODGO_MODFILES =	\
 	golang.org/x/xerrors				 v0.0.0-20191204190536-9bdfabe68543 \
 	gopkg.in/check.v1				 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1				 v1.0.0-20190902080502-41f04d3bba15 \
-	gopkg.in/check.v1				 v1.0.0-20200227125254-8fa46927fb4f \
 	gopkg.in/yaml.v2				 v2.2.1 \
 	gopkg.in/yaml.v2				 v2.2.2 \
 	gopkg.in/yaml.v2				 v2.2.4 \
 	gopkg.in/yaml.v2				 v2.2.5 \
 	gopkg.in/yaml.v2				 v2.3.0 \
-	gopkg.in/yaml.v3				 v3.0.0 \
 	gopkg.in/yaml.v3				 v3.0.0-20200313102051-9f266ea9e77c
