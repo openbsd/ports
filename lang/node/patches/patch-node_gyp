@@ -13,7 +13,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
          'deps/simdutf/simdutf.gyp:simdutf',
-@@ -1056,8 +1056,8 @@
+@@ -1144,8 +1144,8 @@
        'dependencies': [
          '<(node_lib_target_name)',
          'deps/base64/base64.gyp:base64',
@@ -24,7 +24,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
          'deps/simdutf/simdutf.gyp:simdutf',
-@@ -1105,6 +1105,10 @@
+@@ -1193,6 +1193,10 @@
          }],
          ['OS=="solaris"', {
            'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
