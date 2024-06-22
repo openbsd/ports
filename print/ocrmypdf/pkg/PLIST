@@ -17,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}__main__.${MOD
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_concurrent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_concurrent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_defaults.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_defaults.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_graft.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_graft.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}_jobcontext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,6 +58,7 @@ lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}pluginspec.${M
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}quality.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/${MODPY_PYCACHE}quality.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_concurrent.py
+lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_defaults.py
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/
 lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ocrmypdf/_exec/${MODPY_PYCACHE}/
