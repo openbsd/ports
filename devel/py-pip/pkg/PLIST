@@ -1,5 +1,6 @@
 bin/pip
 bin/pip3
+bin/pip${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/pip/
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pip-${MODPY_EGG_VERSION}.dist-info/AUTHORS.txt

@@ -22,4 +22,7 @@ FLAVOR=		python3
 # No test suites in pypi tarball
 NO_TEST=	Yes
 
+post-install:
+	ln -s pip3 ${PREFIX}/bin/pip${MODPY_VERSION}
+
 .include <bsd.port.mk>
