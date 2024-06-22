@@ -1,0 +1,11 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -141,6 +141,6 @@ endif()
+ 
+ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ 
+-ecm_install_po_files_as_qm(poqm)
++#ecm_install_po_files_as_qm(poqm)
+ 
+ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
