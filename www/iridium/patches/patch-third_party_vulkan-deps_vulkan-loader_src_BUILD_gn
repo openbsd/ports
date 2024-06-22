@@ -9,4 +9,4 @@ Index: third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
 +      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
      ]
    }
-   if (!vulkan_loader_shared) {
+   if (is_apple && !vulkan_loader_shared) {

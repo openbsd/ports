@@ -10,8 +10,8 @@ Index: chrome/browser/memory_details.cc
  #include "content/public/browser/zygote_host/zygote_host_linux.h"
  #endif
  
-@@ -335,7 +335,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
-           std::ref(process)));
+@@ -334,7 +334,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+           });
      }
  
 -#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_ANDROID)

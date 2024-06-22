@@ -1,7 +1,7 @@
 Index: content/browser/renderer_host/delegated_frame_host.cc
 --- content/browser/renderer_host/delegated_frame_host.cc.orig
 +++ content/browser/renderer_host/delegated_frame_host.cc
-@@ -312,7 +312,7 @@ void DelegatedFrameHost::EmbedSurface(
+@@ -318,7 +318,7 @@ void DelegatedFrameHost::EmbedSurface(
  
    if (!primary_surface_id ||
        primary_surface_id->local_surface_id() != local_surface_id_) {

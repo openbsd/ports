@@ -9,4 +9,4 @@ Index: sandbox/policy/features.h
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  SANDBOX_POLICY_EXPORT BASE_DECLARE_FEATURE(
      kForceDisableSpectreVariant2MitigationInNetworkService);
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ 

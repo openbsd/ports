@@ -1,8 +1,8 @@
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -286,9 +286,20 @@ source_set("audio") {
-     ]
+@@ -270,9 +270,20 @@ source_set("audio") {
+     deps += [ "//media/base/android:media_jni_headers" ]
    }
  
 -  if (is_linux || is_chromeos) {

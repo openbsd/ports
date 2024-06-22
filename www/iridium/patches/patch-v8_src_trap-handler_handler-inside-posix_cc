@@ -10,7 +10,7 @@ Index: v8/src/trap-handler/handler-inside-posix.cc
  #else
  #error "Unsupported platform."
  #endif
-@@ -78,8 +80,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
+@@ -80,8 +82,12 @@ bool IsKernelGeneratedSignal(siginfo_t* info) {
    // si_code at its default of 0 for signals that don’t originate in hardware.
    // The other conditions are only relevant for Linux.
    return info->si_code > 0 && info->si_code != SI_USER &&

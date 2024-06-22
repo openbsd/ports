@@ -1,7 +1,7 @@
 Index: chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc
 --- chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc.orig
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc
-@@ -434,7 +434,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
+@@ -441,7 +441,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
      }
    }
  

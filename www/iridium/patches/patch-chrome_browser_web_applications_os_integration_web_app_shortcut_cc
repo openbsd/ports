@@ -12,7 +12,7 @@ Index: chrome/browser/web_applications/os_integration/web_app_shortcut.cc
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
 @@ -227,7 +227,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
  
- // TODO(crbug.com/1416965): Implement tests on Linux for using shortcuts_menu
+ // TODO(crbug.com/40257107): Implement tests on Linux for using shortcuts_menu
  // actions.
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

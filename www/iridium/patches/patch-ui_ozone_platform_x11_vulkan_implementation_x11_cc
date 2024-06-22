@@ -1,7 +1,7 @@
 Index: ui/ozone/platform/x11/vulkan_implementation_x11.cc
 --- ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig
 +++ ui/ozone/platform/x11/vulkan_implementation_x11.cc
-@@ -58,7 +58,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
+@@ -59,7 +59,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
  
      path = path.Append("libvk_swiftshader.so");
    } else {

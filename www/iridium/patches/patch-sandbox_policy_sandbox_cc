@@ -12,7 +12,7 @@ Index: sandbox/policy/sandbox.cc
  #if BUILDFLAG(IS_MAC)
  #include "sandbox/mac/seatbelt.h"
  #endif  // BUILDFLAG(IS_MAC)
-@@ -31,7 +35,7 @@
+@@ -32,7 +36,7 @@
  namespace sandbox {
  namespace policy {
  

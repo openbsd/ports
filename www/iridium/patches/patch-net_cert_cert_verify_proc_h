@@ -1,7 +1,7 @@
 Index: net/cert/cert_verify_proc.h
 --- net/cert/cert_verify_proc.h.orig
 +++ net/cert/cert_verify_proc.h
-@@ -79,7 +79,7 @@ class NET_EXPORT CertVerifyProc
+@@ -176,7 +176,7 @@ class NET_EXPORT CertVerifyProc
      kMaxValue = kChainLengthOne
    };
  

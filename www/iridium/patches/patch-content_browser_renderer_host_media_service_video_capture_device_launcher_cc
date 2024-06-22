@@ -10,7 +10,7 @@ Index: content/browser/renderer_host/media/service_video_capture_device_launcher
  #include "content/browser/gpu/gpu_data_manager_impl.h"
  #endif
  
-@@ -172,7 +172,7 @@ void ServiceVideoCaptureDeviceLauncher::LaunchDeviceAs
+@@ -173,7 +173,7 @@ void ServiceVideoCaptureDeviceLauncher::LaunchDeviceAs
    }
  #else
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {

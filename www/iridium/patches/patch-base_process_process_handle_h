@@ -1,7 +1,7 @@
 Index: base/process/process_handle.h
 --- base/process/process_handle.h.orig
 +++ base/process/process_handle.h
-@@ -106,7 +106,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
+@@ -86,7 +86,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  

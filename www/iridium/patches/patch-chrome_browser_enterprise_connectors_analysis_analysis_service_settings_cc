@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc
 --- chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc.orig
 +++ chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc
-@@ -143,7 +143,7 @@ AnalysisServiceSettings::AnalysisServiceSettings(
+@@ -151,7 +151,7 @@ AnalysisServiceSettings::AnalysisServiceSettings(
    const char* verification_key = kKeyWindowsVerification;
  #elif BUILDFLAG(IS_MAC)
    const char* verification_key = kKeyMacVerification;

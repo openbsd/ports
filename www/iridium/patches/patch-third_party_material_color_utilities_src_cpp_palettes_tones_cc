@@ -9,4 +9,4 @@ Index: third_party/material_color_utilities/src/cpp/palettes/tones.cc
 +
  #include "cpp/palettes/tones.h"
  
- #include "cpp/cam/cam.h"
+ #include <cmath>

@@ -1,7 +1,7 @@
 Index: gpu/vulkan/vulkan_function_pointers.cc
 --- gpu/vulkan/vulkan_function_pointers.cc.orig
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -1241,7 +1241,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1297,7 +1297,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }
    }
  
@@ -9,8 +9,8 @@ Index: gpu/vulkan/vulkan_function_pointers.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (gfx::HasExtension(enabled_extensions,
                          VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME)) {
-     vkGetImageDrmFormatModifierPropertiesEXT =
-@@ -1440,7 +1440,7 @@ void VulkanFunctionPointers::ResetForTesting() {
+     constexpr char kvkGetImageDrmFormatModifierPropertiesEXT[] =
+@@ -1498,7 +1498,7 @@ void VulkanFunctionPointers::ResetForTesting() {
    vkGetSwapchainImagesKHR = nullptr;
    vkQueuePresentKHR = nullptr;
  

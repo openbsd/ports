@@ -10,7 +10,7 @@ Index: tools/perf/chrome_telemetry_build/BUILD.gn
      data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
  
      # CrOS currently has issues with the locally compiled version of
-@@ -176,7 +176,7 @@ group("telemetry_chrome_test_without_chrome") {
+@@ -178,7 +178,7 @@ group("telemetry_chrome_test_without_chrome") {
    ]
  
    # Cr-Fuchsia doesn't support breakpad.

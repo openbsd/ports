@@ -126,6 +126,11 @@ iridium/locales/zh-TW.pak.info
 iridium/product_logo_48.png
 iridium/resources/
 iridium/resources.pak
+iridium/resources/accessibility/
+iridium/resources/accessibility/reading_mode_gdocs_helper/
+iridium/resources/accessibility/reading_mode_gdocs_helper/content.js
+iridium/resources/accessibility/reading_mode_gdocs_helper/gdocs_script.js
+iridium/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 iridium/resources/inspector_overlay/
 iridium/resources/inspector_overlay/inspector_overlay_resources.grd
 iridium/resources/inspector_overlay/main.js

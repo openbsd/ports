@@ -14,7 +14,7 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -284,7 +284,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -288,7 +288,7 @@ void WebRtcLoggingController::StartEventLogging(
        web_app_id, callback);
  }
  
@@ -23,7 +23,7 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
  void WebRtcLoggingController::GetLogsDirectory(
      LogsDirectoryCallback callback,
      LogsDirectoryErrorCallback error_callback) {
-@@ -329,7 +329,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -334,7 +334,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
        FROM_HERE,
        base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }
@@ -31,4 +31,4 @@ Index: chrome/browser/media/webrtc/webrtc_logging_controller.cc
 +#endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
  void WebRtcLoggingController::OnRtpPacket(
-     std::unique_ptr<uint8_t[]> packet_header,
+     base::HeapArray<uint8_t> packet_header,

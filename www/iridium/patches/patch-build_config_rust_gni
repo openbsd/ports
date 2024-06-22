@@ -1,0 +1,14 @@
+Index: build/config/rust.gni
+--- build/config/rust.gni.orig
++++ build/config/rust.gni
+@@ -272,6 +272,10 @@ if (is_linux || is_chromeos) {
+   }
+ }
+ 
++if (is_bsd) {
++  rust_abi_target = string_replace(rust_abi_target, "linux-gnu", current_os)
++}
++
+ assert(!toolchain_has_rust || rust_abi_target != "")
+ 
+ # This variable is passed to the Rust libstd build.

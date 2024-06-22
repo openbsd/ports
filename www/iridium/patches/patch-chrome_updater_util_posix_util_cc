@@ -1,7 +1,7 @@
 Index: chrome/updater/util/posix_util.cc
 --- chrome/updater/util/posix_util.cc.orig
 +++ chrome/updater/util/posix_util.cc
-@@ -16,7 +16,7 @@
+@@ -20,7 +20,7 @@
  #include "chrome/updater/updater_branding.h"
  #include "chrome/updater/util/util.h"
  

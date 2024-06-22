@@ -8,11 +8,11 @@ Index: components/policy/core/common/policy_loader_common.cc
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      key::kAutoOpenFileTypes,
-     key::kSafeBrowsingAllowlistDomains,
      key::kHomepageIsNewTabPage,
-@@ -55,7 +55,7 @@ const char* kSensitivePolicies[] = {
-     key::kRestoreOnStartup,
-     key::kRestoreOnStartupURLs,
+     key::kPasswordProtectionChangePasswordURL,
+@@ -56,7 +56,7 @@ const char* kSensitivePolicies[] = {
+     key::kSafeBrowsingAllowlistDomains,
+     key::kSiteSearchSettings,
  #endif
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

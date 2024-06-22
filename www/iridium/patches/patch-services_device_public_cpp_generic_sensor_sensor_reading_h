@@ -8,5 +8,5 @@ Index: services/device/public/cpp/generic_sensor/sensor_reading.h
 +#include <cstdint>
 +
  #include <type_traits>
- #include <stdint.h>
- #include <cstddef>
+ 
+ namespace device {

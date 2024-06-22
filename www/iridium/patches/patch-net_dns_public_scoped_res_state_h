@@ -8,4 +8,4 @@ Index: net/dns/public/scoped_res_state.h
 +#include <netinet/in.h>
  #include <resolv.h>
  
- #include "build/build_config.h"
+ #include <optional>

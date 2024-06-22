@@ -1,7 +1,7 @@
 Index: content/browser/audio/audio_service.cc
 --- content/browser/audio/audio_service.cc.orig
 +++ content/browser/audio/audio_service.cc
-@@ -33,7 +33,7 @@
+@@ -32,7 +32,7 @@
  #if BUILDFLAG(ENABLE_PASSTHROUGH_AUDIO_CODECS)
  #include "ui/display/util/edid_parser.h"
  
@@ -10,7 +10,7 @@ Index: content/browser/audio/audio_service.cc
  #include "ui/display/display_util.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -225,7 +225,7 @@ audio::mojom::AudioService& GetAudioService() {
+@@ -200,7 +200,7 @@ audio::mojom::AudioService& GetAudioService() {
          ->PostTaskAndReplyWithResult(
              FROM_HERE, base::BindOnce(&ScanEdidBitstreams),
              base::BindOnce(&LaunchAudioService, std::move(receiver)));

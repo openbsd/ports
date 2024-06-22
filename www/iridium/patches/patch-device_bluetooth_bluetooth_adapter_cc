@@ -1,7 +1,7 @@
 Index: device/bluetooth/bluetooth_adapter.cc
 --- device/bluetooth/bluetooth_adapter.cc.orig
 +++ device/bluetooth/bluetooth_adapter.cc
-@@ -31,7 +31,7 @@ namespace device {
+@@ -32,7 +32,7 @@ namespace device {
  BluetoothAdapter::ServiceOptions::ServiceOptions() = default;
  BluetoothAdapter::ServiceOptions::~ServiceOptions() = default;
  

@@ -1,9 +1,9 @@
 Index: net/filter/zstd_source_stream.cc
 --- net/filter/zstd_source_stream.cc.orig
 +++ net/filter/zstd_source_stream.cc
-@@ -6,6 +6,7 @@
- 
+@@ -7,6 +7,7 @@
  #include <algorithm>
+ #include <unordered_map>
  #include <utility>
 +#include <unordered_map>
  
