@@ -1,0 +1,16 @@
+spawn-posix.c:345:5: error: use of undeclared identifier 'environ'
+
+Index: src/spawn-posix.c
+--- src/spawn-posix.c.orig
++++ src/spawn-posix.c
+@@ -55,6 +55,10 @@
+ # include <dirent.h>
+ #endif /*__linux__ */
+ 
++#ifdef __OpenBSD__
++extern char** environ;
++#endif
++
+ #include "gpgrt-int.h"
+ 
+ 
