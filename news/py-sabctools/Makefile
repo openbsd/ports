@@ -1,3 +1,5 @@
+BROKEN-riscv64 =	needs riscv_vector.h
+
 COMMENT =		C implementations of functions for use within SABnzbd
 
 MODPY_EGG_VERSION =	8.2.3
