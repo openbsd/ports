@@ -279,6 +279,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/artifact/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/2017-05-18/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/athena/2017-05-18/endpoint-rule-set-1.json
@@ -781,6 +782,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/202
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cost-optimization-hub/2022-07-26/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cur/2017-01-06/endpoint-rule-set-1.json
@@ -1391,6 +1393,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs-realtime/2020-07-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/examples-1.json
