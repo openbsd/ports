@@ -1,7 +1,7 @@
 Index: build/make/configure.sh
 --- build/make/configure.sh.orig
 +++ build/make/configure.sh
-@@ -701,8 +701,8 @@ post_process_cmdline() {
+@@ -735,8 +735,8 @@ post_process_cmdline() {
  }
  
  setup_gnu_toolchain() {
@@ -12,7 +12,7 @@ Index: build/make/configure.sh
    AR=${AR:-${CROSS}ar}
    LD=${LD:-${CROSS}${link_with_cc:-ld}}
    AS=${AS:-${CROSS}as}
-@@ -746,7 +746,7 @@ check_xcode_minimum_version() {
+@@ -780,7 +780,7 @@ check_xcode_minimum_version() {
  
  process_common_toolchain() {
    if [ -z "$toolchain" ]; then
@@ -21,8 +21,8 @@ Index: build/make/configure.sh
      # detect tgt_isa
      case "$gcctarget" in
        aarch64*)
-@@ -1012,7 +1012,7 @@ EOF
- 
+@@ -1028,7 +1028,7 @@ EOF
+       asm_conversion_cmd="cat"
        case ${tgt_cc} in
          gcc)
 -          link_with_cc=gcc
@@ -30,8 +30,8 @@ Index: build/make/configure.sh
            setup_gnu_toolchain
            arch_int=${tgt_isa##armv}
            arch_int=${arch_int%%te}
-@@ -1230,7 +1230,7 @@ EOF
-       esac
+@@ -1275,7 +1275,7 @@ EOF
+ 
        ;;
      mips*)
 -      link_with_cc=gcc
@@ -39,7 +39,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
        tune_cflags="-mtune="
        if enabled dspr2; then
-@@ -1281,7 +1281,7 @@ EOF
+@@ -1326,7 +1326,7 @@ EOF
        check_add_asflags -KPIC
        ;;
      ppc64le*)
@@ -48,7 +48,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
        # Do not enable vsx by default.
        # https://bugs.chromium.org/p/webm/issues/detail?id=1522
-@@ -1338,7 +1338,7 @@ EOF
+@@ -1383,7 +1383,7 @@ EOF
            esac
            ;;
          gcc*)
@@ -57,7 +57,7 @@ Index: build/make/configure.sh
            tune_cflags="-march="
            setup_gnu_toolchain
            #for 32 bit x86 builds, -O3 did not turn on this flag
-@@ -1469,7 +1469,7 @@ EOF
+@@ -1514,7 +1514,7 @@ EOF
        esac
        ;;
      loongarch*)
@@ -66,7 +66,7 @@ Index: build/make/configure.sh
        setup_gnu_toolchain
  
        enabled lsx && check_inline_asm lsx '"vadd.b $vr0, $vr1, $vr1"'
-@@ -1478,7 +1478,7 @@ EOF
+@@ -1523,7 +1523,7 @@ EOF
        enabled lasx && soft_enable runtime_cpu_detect
        ;;
      *-gcc|generic-gnu)
