@@ -1113,6 +1113,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}sand
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}sandboxed_worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}scheduler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}scheduler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}site.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}site.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}sourcesteps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}sourcesteps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}tuplematching.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1145,6 +1147,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/querylog.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/reporter.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/sandboxed_worker.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/scheduler.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/site.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/sourcesteps.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/tuplematching.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/validation.py
