@@ -1,6 +1,6 @@
 COMMENT =	engine for Perl providing parallel processing capabilities
 
-DISTNAME =	MCE-1.889
+DISTNAME =	MCE-1.897
 CPAN_AUTHOR =	MARIOROY
 
 CATEGORIES =	devel
