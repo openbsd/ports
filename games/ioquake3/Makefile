@@ -1,10 +1,13 @@
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386 macppc
 
+# custom JIT (see VM_CallCompiled() in code/qcommon/vm_x86.c)
+USE_NOBTCFI=	Yes
+
 COMMENT=	clone of the original Quake III Arena
 
 DISTNAME=	ioquake3-2020.09.29
-REVISION=	1
+REVISION=	2
 
 GH_ACCOUNT=	ioquake
 GH_PROJECT=	ioq3
@@ -28,6 +31,9 @@ LIB_DEPENDS=	audio/libogg \
 MAKE_ENV=	V=1 USE_VOIP=0 USE_INTERNAL_OGG=0 CC="${CC}" TOOLS_CC="${CC}"
 ALL_TARGET=	"release"
 USE_GMAKE=	Yes
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+
 NO_TEST=	Yes
 
 QUAKE_ARCH-amd64 = 	x86_64
