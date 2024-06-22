@@ -99,6 +99,7 @@ include/opencv4/opencv2/core/hal/simd_utils.impl.hpp
 include/opencv4/opencv2/core/mat.hpp
 include/opencv4/opencv2/core/mat.inl.hpp
 include/opencv4/opencv2/core/matx.hpp
+include/opencv4/opencv2/core/matx.inl.hpp
 include/opencv4/opencv2/core/neon_utils.hpp
 include/opencv4/opencv2/core/ocl.hpp
 include/opencv4/opencv2/core/ocl_genbase.hpp
@@ -231,6 +232,7 @@ include/opencv4/opencv2/imgproc.hpp
 include/opencv4/opencv2/imgproc/bindings.hpp
 include/opencv4/opencv2/imgproc/detail/
 include/opencv4/opencv2/imgproc/detail/gcgraph.hpp
+include/opencv4/opencv2/imgproc/detail/legacy.hpp
 include/opencv4/opencv2/imgproc/hal/
 include/opencv4/opencv2/imgproc/hal/hal.hpp
 include/opencv4/opencv2/imgproc/hal/interface.h
