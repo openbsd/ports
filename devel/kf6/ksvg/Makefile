@@ -1,6 +1,6 @@
 COMMENT =	KDE components for handling SVGs
+VERSION =	6.3.1
 DISTNAME =	ksvg-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Svg                    0.0 # 0.0
 
