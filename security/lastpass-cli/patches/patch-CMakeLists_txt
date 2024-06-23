@@ -3,7 +3,7 @@ Build and install docs by default
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -77,8 +77,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+@@ -122,8 +122,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
    target_link_libraries(${PROJECT_NAME} "-lkvm")
  endif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
  
