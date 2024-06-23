@@ -1,6 +1,8 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		29.3
+# XXX 29.4 was released with a .texi file newer than emacs.info
+# Zap post-extract when updating
+VERSION=		29.4
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -101,6 +103,9 @@ WANTLIB += rsvg-2 tiff webpdecoder webpdemux xcb xcb-shape xcb-util
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
 .endif
+
+post-extract:
+	touch ${WRKSRC}/info/emacs.info
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
