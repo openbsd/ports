@@ -3,42 +3,50 @@ don't set ${PREFIX} here because this confuses the fake installation
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -26,15 +26,15 @@
- # along with this program. If not, see http://www.gnu.org/licenses/.
+@@ -28,8 +28,8 @@
+ # SPDX-FileCopyrightText:  © 2020 David Wicksell <dlw@linux.com>
+ # SPDX-License-Identifier: AGPL-3.0-or-later
  
- OS      != uname
--CC      := gcc
-+CC      ?= cc
- PROG    := rsm
- RM      := rm -f
- DEPS    := include/*.h
- SRC     != ls */*.c
- OBJ     := $(SRC:.c=.o)
--CFLAGS  := -Wall -Wextra -fsigned-char -fwrapv -std=gnu99 -Iinclude
-+CFLAGS  += -Wall -Wextra -fsigned-char -fwrapv -std=gnu99 -Iinclude
- LDFLAGS := -lm -lcrypt
--PREFIX  := /usr/local
-+#PREFIX  := /usr/local
- GIT_SHA != git rev-parse --short=10 HEAD 2>/dev/null; true
+-CC       := gcc
+-CFLAGS   := -std=gnu99 -Wall -Wextra -fsigned-char -fwrapv
++CC       ?= gcc
++CFLAGS   += -std=gnu99 -Wall -Wextra -fsigned-char -fwrapv
+ CPPFLAGS := -Iinclude
+ LDLIBS   := -lcrypt -lm
+ PROG     := rsm
+@@ -41,7 +41,7 @@ DOCS     := doc/adoc/*.adoc
+ MAN      := doc/man/rsm.1
+ RM       := rm -f
+ GZIP     := gzip -f9
+-PREFIX   := /usr/local
++#PREFIX   := /usr/local
+ OS       != uname
+ GIT_SHA  != git rev-parse --short=10 HEAD 2>/dev/null; true
  
- .ifdef $(GIT_SHA)
-@@ -62,7 +62,6 @@ GIT_SHA != git rev-parse --short=10 HEAD 2>/dev/null; 
+@@ -63,7 +63,6 @@ GIT_SHA  != git rev-parse --short=10 HEAD 2>/dev/null;
  .       endif
  .   endif
  .else
--    CONFIG  := -O3
-     CFLAGS  += -DNDEBUG
+-    CFLAGS   += -O3
+     CPPFLAGS += -DNDEBUG
  .endif
  
-@@ -80,10 +79,7 @@ clean:
- 	${RM} ${OBJ} ${PROG} $(wildcard ${PROG}.core)
+@@ -96,10 +95,6 @@ clean:
  
- install: ${PROG}
+ .PHONY: install
+ install: $(PROG)
 -	@if [ "$${USER}" != "root" ]; then \
--	    echo "You must install ${PROG} as root"; \
+-	    echo "You must install $(PROG) and $(UTILS) as root"; \
 -	    exit 1; \
--	elif [ -d ${PREFIX}/bin ]; then \
-+	if [ -d ${PREFIX}/bin ]; then \
- 	    echo install -o root -g 0 -m 755 -s ${PROG} ${PREFIX}/bin; \
- 	    install -o root -g 0 -m 755 -s ${PROG} ${PREFIX}/bin; \
- 	else \
+-	else \
+ 	    echo install -d -o 0 -g 0 -m 755 $(PREFIX)/bin; \
+ 	    install -d -o 0 -g 0 -m 755 $(PREFIX)/bin; \
+ 	    echo install -o 0 -g 0 -m 755 -s $(PROG) $(PREFIX)/bin; \
+@@ -108,7 +103,6 @@ install: $(PROG)
+ 	    install -d -o 0 -g 0 -m 755 $(PREFIX)/share/rsm; \
+ 	    echo install -o 0 -g 0 -m 644 $(UTILS) $(PREFIX)/share/rsm; \
+ 	    install -o 0 -g 0 -m 644 $(UTILS) $(PREFIX)/share/rsm; \
+-	fi
+ 
+ .PHONY: uninstall
+ uninstall:

@@ -1,7 +1,7 @@
 COMMENT =	Reference Standard M, implementation of M/MUMPS
 
-V =		1.80.4
-HASH =		0efe8a658f3e7d1dc04cb974b97b5402271fab66
+V =		1.81.1
+HASH =		e869606095aa517508e0ef6ef1fb5256996540a4
 PKGNAME =	rsm-${V}
 DIST_TUPLE +=	gitlab Reference-Standard-M rsm v${V} .
 
