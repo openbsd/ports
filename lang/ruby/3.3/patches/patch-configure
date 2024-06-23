@@ -6,6 +6,15 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
+@@ -10913,7 +10913,7 @@ esac
+     case "$target_cpu" in #(
+   aarch64) :
+ 
+-	for opt in -mbranch-protection=pac-ret -msign-return-address=all
++	for opt in -mbranch-protection=standard -msign-return-address=all
+ do :
+ 
+ 
 @@ -31909,7 +31909,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :

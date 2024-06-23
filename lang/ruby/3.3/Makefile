@@ -1,5 +1,4 @@
-USE_NOBTCFI-aarch64 =	Yes
-REVISION-main =		0
+REVISION-main =		1
 
 VERSION =		3.3.3
 DISTNAME =		ruby-${VERSION}
