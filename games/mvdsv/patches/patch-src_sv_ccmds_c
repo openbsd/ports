@@ -5,7 +5,7 @@ at: https://github.com/deurk/mvdsv/pull/69
 Index: src/sv_ccmds.c
 --- src/sv_ccmds.c.orig
 +++ src/sv_ccmds.c
-@@ -741,54 +741,6 @@ void SV_ChmodFile_f (void)
+@@ -744,54 +744,6 @@ void SV_ChmodFile_f (void)
  }
  #endif //_WIN32
  
@@ -60,7 +60,7 @@ Index: src/sv_ccmds.c
  /*
  ==================
  SV_Kick_f
-@@ -1847,8 +1799,6 @@ void SV_InitOperatorCommands (void)
+@@ -1853,8 +1805,6 @@ void SV_InitOperatorCommands (void)
  	Cmd_AddCommand ("chmod", SV_ChmodFile_f);
  #endif //_WIN32
  	//<-

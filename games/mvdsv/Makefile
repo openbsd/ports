@@ -3,7 +3,7 @@ COMMENT =	QuakeWorld server
 CATEGORIES =	games
 
 QUAKE_COMMIT =	bf4ac424ce754894ac8f1dae6a3981954bc9852d
-DIST_TUPLE +=	github QW-Group mvdsv 0.36 .
+DIST_TUPLE +=	github QW-Group mvdsv v1.00 .
 DIST_TUPLE +=	github QW-Group qwprot 53af547d0608a1507895fc1629cdc3f4820fc0af src/qwprot
 DIST_TUPLE +=	github id-software Quake ${QUAKE_COMMIT} .
 
