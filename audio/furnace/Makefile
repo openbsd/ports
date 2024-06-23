@@ -5,7 +5,7 @@ BROKEN-i386 =	asm tries to use %eax which is not available
 
 COMMENT =	multi-system chiptune tracker
 
-DIST_TUPLE =	github tildearrow furnace v0.6.3 .
+DIST_TUPLE =	github tildearrow furnace v0.6.4 .
 DIST_TUPLE +=	github superctr adpcm 7736b178f4fb722d594c6ebdfc1ddf1af2ec81f7 extern/adpcm
 DIST_TUPLE +=	github dbry adpcm-xq 6220fed7655e86a29702b45dbc641a028ed5a4bf extern/adpcm-xq
 
@@ -19,7 +19,7 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} GL SDL2 c execinfo fftw3 fmt freetype
-WANTLIB +=	m portaudio sndfile z
+WANTLIB +=	intl m portaudio sndfile z
 
 COMPILER =	base-clang ports-gcc
 

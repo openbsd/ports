@@ -352,6 +352,7 @@ share/furnace/demos/arcade/eek_qsound.fur
 share/furnace/demos/arcade/ice_cap_NamcoC30.fur
 share/furnace/demos/arcade/iji_tor_segaxboard.fur
 share/furnace/demos/arcade/last_day_of_summer_NamcoC15.fur
+share/furnace/demos/arcade/sans_TaitoArcade.fur
 share/furnace/demos/arcade/the_machines_are_socialising_SegaPCM.fur
 share/furnace/demos/ay8910/
 share/furnace/demos/ay8910/AY-3-8910_Jam.fur
@@ -364,6 +365,7 @@ share/furnace/demos/ay8910/remark_music.fur
 share/furnace/demos/ay8910/vibe_zone.fur
 share/furnace/demos/ay8930/
 share/furnace/demos/ay8930/AY8930Shuffle.fur
+share/furnace/demos/ay8930/Obscure_Temptation.fur
 share/furnace/demos/ay8930/One_Minute_Waltz.fur
 share/furnace/demos/ay8930/Playing_On_The_Stairs.fur
 share/furnace/demos/ay8930/Red_Planet.fur
@@ -375,6 +377,7 @@ share/furnace/demos/c64/C64 junk.fur
 share/furnace/demos/c64/ChaosTune.fur
 share/furnace/demos/c64/DOOM_E1M1.fur
 share/furnace/demos/c64/DOOM_E1M3.fur
+share/furnace/demos/c64/Hellcharger.fur
 share/furnace/demos/c64/The_Snippet.fur
 share/furnace/demos/c64/deadlock.fur
 share/furnace/demos/c64/yeah!.fur
@@ -420,6 +423,7 @@ share/furnace/demos/esfm/synthy.fur
 share/furnace/demos/esfm/wack.fur
 share/furnace/demos/esfm/x_evil_soul.fur
 share/furnace/demos/gameboy/
+share/furnace/demos/gameboy/GB_WaitForMe.fur
 share/furnace/demos/gameboy/On_Hold.fur
 share/furnace/demos/gameboy/Pleasure_of_Tension.fur
 share/furnace/demos/gameboy/You're_Doing_Well!.fur
@@ -447,6 +451,7 @@ share/furnace/demos/genesis/Plok_Beach.fur
 share/furnace/demos/genesis/Puyopuyo~n_DopplegangerArle-TsuuStyle.fur
 share/furnace/demos/genesis/Shovel_Knight_Title.fur
 share/furnace/demos/genesis/Solar_Man.fur
+share/furnace/demos/genesis/SpareHalloween2.fur
 share/furnace/demos/genesis/SparkmanMD.fur
 share/furnace/demos/genesis/Stereotactics_Rewritten.fur
 share/furnace/demos/genesis/darkstar.fur
@@ -476,6 +481,7 @@ share/furnace/demos/misc/Inner Machinations YM2610B.fur
 share/furnace/demos/misc/Miami_Ice_Sharp_X1.fur
 share/furnace/demos/misc/OHM_VRC6.fur
 share/furnace/demos/misc/Playground_2xT6W28.fur
+share/furnace/demos/misc/Slam_the_Door_TIA.fur
 share/furnace/demos/misc/Someting_I_can_feel_MSM5232.fur
 share/furnace/demos/misc/Special Stage Sonic 3 (GBA).fur
 share/furnace/demos/misc/StrobesPowerNoise.fur
@@ -501,8 +507,8 @@ share/furnace/demos/misc/morepain_TIA.fur
 share/furnace/demos/misc/mushroomhill_SM8521.fur
 share/furnace/demos/misc/pseudogba_pwaa_godot.fur
 share/furnace/demos/misc/rf5wapianoroll.fur
-share/furnace/demos/misc/rule2_zx.fur
 share/furnace/demos/misc/sparkling_aria_pokemini.fur
+share/furnace/demos/misc/sucked_something_zx.fur
 share/furnace/demos/misc/teddy_bear_midnight_jam_ted.fur
 share/furnace/demos/misc/the_erfngjt_TIA.fur
 share/furnace/demos/misc/the_king_of_crisp_opm.fur
@@ -511,10 +517,12 @@ share/furnace/demos/misc/walkontheroof_T6W28.fur
 share/furnace/demos/misc/waterworld_map_opm.fur
 share/furnace/demos/msx/
 share/furnace/demos/msx/21492413.fur
+share/furnace/demos/msx/BREEZE_SENSATION.fur
 share/furnace/demos/msx/Gyruss_Stage_2.fur
 share/furnace/demos/msx/Morning_Alarm.fur
 share/furnace/demos/msx/Nemesis2AirBattle.fur
 share/furnace/demos/msx/OPLL_High_and_Rising.fur
+share/furnace/demos/msx/OPLL_OperationPleaseLeaveLeave.fur
 share/furnace/demos/msx/Princess_of_the_Dead.fur
 share/furnace/demos/msx/Striking_Towards_Opposition.fur
 share/furnace/demos/msx/attack_the_barbarian.fur
@@ -588,6 +596,7 @@ share/furnace/demos/opl/Memories_of_Triumph.fur
 share/furnace/demos/opl/Midnight_Dog_Orchestra.fur
 share/furnace/demos/opl/Moon.fur
 share/furnace/demos/opl/Oh no, more sine waves.fur
+share/furnace/demos/opl/Perpetual_Motion.fur
 share/furnace/demos/opl/PhantomBreakerBattleGrounds_ShinjukuStage-OPL3.fur
 share/furnace/demos/opl/Sliding_on_a_Rainbow.fur
 share/furnace/demos/opl/TeamInnocent-BGM4-OPL3Plus.fur
@@ -596,10 +605,12 @@ share/furnace/demos/opl/e3m2_opl3.fur
 share/furnace/demos/opl/fight and flight.fur
 share/furnace/demos/opl/green_biker_dude_opl.fur
 share/furnace/demos/opl/home_wfl_opl3.fur
+share/furnace/demos/opl/rain.cloud.sunset.fur
 share/furnace/demos/opl/the_foggy_cave_in_the_darkness.fur
 share/furnace/demos/pc98/
 share/furnace/demos/pc98/Blue_Nebula.fur
 share/furnace/demos/pc98/CT_maintheme.fur
+share/furnace/demos/pc98/Counterattack.fur
 share/furnace/demos/pc98/MMXStageClear.fur
 share/furnace/demos/pc98/atomic_failure.fur
 share/furnace/demos/pce/
@@ -628,6 +639,7 @@ share/furnace/demos/snes/changeyourheart.fur
 share/furnace/demos/snes/segacd.fur
 share/furnace/demos/snes/tetristheme.fur
 share/furnace/demos/snes/very chill snes.fur
+share/furnace/demos/snes/wonders_of_synthia.fur
 share/furnace/demos/specs2/
 share/furnace/demos/specs2/KeygenTypeBeat.fur
 share/furnace/demos/specs2/Tim_Follin.fur
@@ -707,6 +719,8 @@ share/furnace/instruments/AY/Snare A#3.fui
 share/furnace/instruments/AY/kick.fui
 share/furnace/instruments/AY/snare.fui
 share/furnace/instruments/C64/
+share/furnace/instruments/C64/C64Lead.fui
+share/furnace/instruments/C64/C64_Bass.fui
 share/furnace/instruments/C64/Castanets.fui
 share/furnace/instruments/C64/Closed_Hi-hat.fui
 share/furnace/instruments/C64/Gunshot.fui
@@ -817,6 +831,9 @@ share/furnace/instruments/ESFM/djtBMX_vic20square.fui
 share/furnace/instruments/ESFM/djtBMX_vic20squaretest.fui
 share/furnace/instruments/ESFM/djtBMX_wurly.fui
 share/furnace/instruments/GB/
+share/furnace/instruments/GB/GB_Kick.fui
+share/furnace/instruments/GB/GB_Lead.fui
+share/furnace/instruments/GB/GB_Snare.fui
 share/furnace/instruments/GB/closed hi-hat.fui
 share/furnace/instruments/GB/kick.fui
 share/furnace/instruments/GB/open hihat.fui
@@ -936,6 +953,8 @@ share/furnace/instruments/OPM/Harmonica.dmp
 share/furnace/instruments/OPM/Hi-Hat Closed.dmp
 share/furnace/instruments/OPM/Hi-Hat Open.dmp
 share/furnace/instruments/OPM/OPM Power Snare.fui
+share/furnace/instruments/OPM/OPMSquare.fui
+share/furnace/instruments/OPM/OPMTrumpet.fui
 share/furnace/instruments/OPM/Organ 2 (Percussive).dmp
 share/furnace/instruments/OPM/Organ 3 (Rock Organ).dmp
 share/furnace/instruments/OPM/Organ 3 Alt (Rock Organ Alt).dmp
@@ -1508,6 +1527,7 @@ share/furnace/instruments/OPZ/
 share/furnace/instruments/OPZ/Fake SNES Bass_OPZ.fui
 share/furnace/instruments/OPZ/Fake_Famicom_Tri.fui
 share/furnace/instruments/OPZ/Heavy_synth_bass.fui
+share/furnace/instruments/OPZ/Organ_OPZ.fui
 share/furnace/instruments/OPZ/Synth Bass.fui
 share/furnace/instruments/OPZ/accordion.fui
 share/furnace/instruments/OPZ/accordion2.fui
@@ -1803,6 +1823,8 @@ share/furnace/wavetables/128x256/128x256bass.fuw
 share/furnace/wavetables/128x256/128x256chime.fuw
 share/furnace/wavetables/128x256/128x256lead.fuw
 share/furnace/wavetables/32x16/
+share/furnace/wavetables/32x16/32x16FunkyLead.fuw
+share/furnace/wavetables/32x16/32x16NamcoBass.fuw
 share/furnace/wavetables/32x16/32x16ataribass.fuw
 share/furnace/wavetables/32x16/32x16brass.fuw
 share/furnace/wavetables/32x16/32x16clarinet.fuw
@@ -1822,6 +1844,7 @@ share/furnace/wavetables/32x16/32x16synthbrass.fuw
 share/furnace/wavetables/32x16/32x16trumpet.fuw
 share/furnace/wavetables/32x16/32x16voice.fuw
 share/furnace/wavetables/32x32/
+share/furnace/wavetables/32x32/32x32KeygenBass.fuw
 share/furnace/wavetables/32x32/32x32accordion.fuw
 share/furnace/wavetables/32x32/32x32accordion2.fuw
 share/furnace/wavetables/32x32/32x32acousticguitar.fuw
@@ -1883,32 +1906,69 @@ share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/furnace.png
 share/icons/hicolor/128x128/apps/furnace.png
-share/icons/hicolor/128x128@2/
-share/icons/hicolor/128x128@2/apps/
 share/icons/hicolor/128x128@2/apps/furnace.png
 share/icons/hicolor/16x16/apps/furnace.png
-share/icons/hicolor/16x16@2/
-share/icons/hicolor/16x16@2/apps/
 share/icons/hicolor/16x16@2/apps/furnace.png
 share/icons/hicolor/256x256/apps/furnace.png
-share/icons/hicolor/256x256@2/
-share/icons/hicolor/256x256@2/apps/
 share/icons/hicolor/256x256@2/apps/furnace.png
 share/icons/hicolor/32x32/apps/furnace.png
-share/icons/hicolor/32x32@2/
-share/icons/hicolor/32x32@2/apps/
 share/icons/hicolor/32x32@2/apps/furnace.png
 share/icons/hicolor/512x512/apps/furnace.png
-share/icons/hicolor/512x512@2/
-share/icons/hicolor/512x512@2/apps/
 share/icons/hicolor/512x512@2/apps/furnace.png
 share/icons/hicolor/64x64/apps/furnace.png
-share/icons/hicolor/64x64@2/
-share/icons/hicolor/64x64@2/apps/
 share/icons/hicolor/64x64@2/apps/furnace.png
 share/licenses/furnace/
 share/licenses/furnace/LICENSE
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/locale/locale/
+share/locale/locale/de/
+share/locale/locale/de/LC_MESSAGES/
+share/locale/locale/de/LC_MESSAGES/furnace.mo
+share/locale/locale/es/
+share/locale/locale/es/LC_MESSAGES/
+share/locale/locale/es/LC_MESSAGES/furnace.mo
+share/locale/locale/fi/
+share/locale/locale/fi/LC_MESSAGES/
+share/locale/locale/fi/LC_MESSAGES/furnace.mo
+share/locale/locale/fr/
+share/locale/locale/fr/LC_MESSAGES/
+share/locale/locale/fr/LC_MESSAGES/furnace.mo
+share/locale/locale/hy/
+share/locale/locale/hy/LC_MESSAGES/
+share/locale/locale/hy/LC_MESSAGES/furnace.mo
+share/locale/locale/id/
+share/locale/locale/id/LC_MESSAGES/
+share/locale/locale/id/LC_MESSAGES/furnace.mo
+share/locale/locale/ko/
+share/locale/locale/ko/LC_MESSAGES/
+share/locale/locale/ko/LC_MESSAGES/furnace.mo
+share/locale/locale/nl/
+share/locale/locale/nl/LC_MESSAGES/
+share/locale/locale/nl/LC_MESSAGES/furnace.mo
+share/locale/locale/pl/
+share/locale/locale/pl/LC_MESSAGES/
+share/locale/locale/pl/LC_MESSAGES/furnace.mo
+share/locale/locale/pt_BR/
+share/locale/locale/pt_BR/LC_MESSAGES/
+share/locale/locale/pt_BR/LC_MESSAGES/furnace.mo
+share/locale/locale/ru/
+share/locale/locale/ru/LC_MESSAGES/
+share/locale/locale/ru/LC_MESSAGES/furnace.mo
+share/locale/locale/sk/
+share/locale/locale/sk/LC_MESSAGES/
+share/locale/locale/sk/LC_MESSAGES/furnace.mo
+share/locale/locale/sv/
+share/locale/locale/sv/LC_MESSAGES/
+share/locale/locale/sv/LC_MESSAGES/furnace.mo
+share/locale/locale/th/
+share/locale/locale/th/LC_MESSAGES/
+share/locale/locale/th/LC_MESSAGES/furnace.mo
+share/locale/locale/tr/
+share/locale/locale/tr/LC_MESSAGES/
+share/locale/locale/tr/LC_MESSAGES/furnace.mo
+share/locale/locale/uk/
+share/locale/locale/uk/LC_MESSAGES/
+share/locale/locale/uk/LC_MESSAGES/furnace.mo
 share/mime/packages/furnace.xml
 @tag update-mime-database
