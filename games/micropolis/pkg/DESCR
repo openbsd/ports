@@ -5,4 +5,4 @@ inclusion in the One Laptop Per Child program. Copyright (C) 1989 -
 
 The Micropolis package was modified from the original source.  The
 changes can be found in the patches directory or online at
-http://www.openbsd.org/cgi-bin/cvsweb/ports/games/micropolis/patches/
+https://cvsweb.openbsd.org/ports/games/micropolis/patches/
