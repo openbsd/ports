@@ -5,7 +5,7 @@
  	   FLITE_PROJECT_DATE);
      printf("  CMU Copyright 1999-2003, all rights reserved\n");
 +    printf("  Modified from the original for the OpenBSD project\n");
-+    printf("  See http://www.openbsd.org/cgi-bin/cvsweb/ports/audio/flite/patches/\n");
++    printf("  See https://cvsweb.openbsd.org/ports/audio/flite/patches/\n");
  }
  
  static void flite_usage()

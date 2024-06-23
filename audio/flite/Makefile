@@ -5,7 +5,7 @@ COMMENT=	text to speech utility
 VERSION=	1.2
 DISTNAME=	flite-${VERSION}-release
 PKGNAME=	flite-${VERSION}
-REVISION=	7
+REVISION=	8
 SHARED_LIBS=	flite			1.2 \
 		flite_cmu_time_awb	1.2 \
 		flite_cmu_us_kal	1.2 \
