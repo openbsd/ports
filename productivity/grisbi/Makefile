@@ -38,7 +38,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
-BUILD_DEPENDS=	devel/cunit
+BUILD_DEPENDS=	devel/cunit \
+		devel/gettext,-tools
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
