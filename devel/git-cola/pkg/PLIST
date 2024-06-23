@@ -10,8 +10,6 @@ lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__init__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}_scm_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}_scm_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -86,7 +84,6 @@ lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}utils.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cola/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cola/_scm_version.py
 lib/python${MODPY_VERSION}/site-packages/cola/_version.py
 lib/python${MODPY_VERSION}/site-packages/cola/actions.py
 lib/python${MODPY_VERSION}/site-packages/cola/app.py
@@ -233,6 +230,8 @@ lib/python${MODPY_VERSION}/site-packages/cola/icons/folder-new.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/folder.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/gear.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/git-branch.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/git-cola-error.svg
+lib/python${MODPY_VERSION}/site-packages/cola/icons/git-cola-ok.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/git-cola.ico
 lib/python${MODPY_VERSION}/site-packages/cola/icons/git-cola.svg
 lib/python${MODPY_VERSION}/site-packages/cola/icons/git-commit.svg
