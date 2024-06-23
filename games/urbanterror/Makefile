@@ -8,11 +8,11 @@ DISTNAME =	urbanterror-4.3.4
 GH_ACCOUNT =	Barbatos
 GH_PROJECT =	ioq3-for-UrbanTerror-4
 GH_TAGNAME =	release-4.3.4
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games x11
 
-HOMEPAGE =	http://urbanterror.info/
+HOMEPAGE =	https://urbanterror.info/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
@@ -30,6 +30,8 @@ ALL_TARGET =    release
 
 MAKE_ENV =	V=1 \
 		DEFAULT_BASEDIR=${TRUEPREFIX}/share/urbanterror
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} \

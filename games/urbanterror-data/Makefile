@@ -3,13 +3,14 @@ ONLY_FOR_ARCHS = amd64 i386
 COMMENT =	Urban Terror game data
 PKGNAME =	urbanterror-data-4.3.4
 CATEGORIES =	games
+REVISION =	0
 
 URT_VER =	43
 URT_REV =	4
 
 DISTNAME =	UrbanTerror${URT_VER}${URT_REV}_full
 
-HOMEPAGE =	http://urbanterror.info/
+HOMEPAGE =	https://urbanterror.info/
 
 MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 
