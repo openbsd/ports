@@ -1,6 +1,6 @@
 COMMENT =	library to do multipart form posts
 
-DISTNAME =	multipart-post-2.4.0
+DISTNAME =	multipart-post-2.4.1
 CATEGORIES =	www
 HOMEPAGE =	https://github.com/nicksieger/multipart-post
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
