@@ -102,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}flex.
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}flex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}float.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}float.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}grid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}grid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}inline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}inline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/${MODPY_PYCACHE}leader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,6 +126,7 @@ lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/block.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/column.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/flex.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/float.py
+lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/grid.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/inline.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/leader.py
 lib/python${MODPY_VERSION}/site-packages/weasyprint/layout/min_max.py
