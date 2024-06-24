@@ -1,6 +1,6 @@
 COMMENT =		constant autoloading with Ruby semantics
 
-DISTNAME =		zeitwerk-2.6.13
+DISTNAME =		zeitwerk-2.6.16
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 

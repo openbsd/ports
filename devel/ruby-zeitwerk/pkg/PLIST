@@ -5,6 +5,7 @@ ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/cref.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/explicit_namespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/zeitwerk/gem_inflector.rb
