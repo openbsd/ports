@@ -3,7 +3,7 @@ COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 PKGNAME =	vkquake-${GH_TAGNAME}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
-GH_TAGNAME =	1.30.1
+GH_TAGNAME =	1.31.0
 
 CATEGORIES =	games x11
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
