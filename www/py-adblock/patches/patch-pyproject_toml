@@ -1,4 +1,12 @@
-https://gitlab.archlinux.org/archlinux/packaging/packages/python-adblock/-/blob/main/pep-621-compatibility.patch?ref_type=heads
+From 7597cd0b841a0ede22ff4cec6b4b91fb7d26a805 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Robert=20Sch=C3=BCtz?= <mail@dotlambda.de>
+Date: Mon, 27 Feb 2023 23:21:40 -0800
+Subject: [PATCH] PEP 621 compatibility
+
+From 873ff13bb0659a56cfec2e07b464a5f1bf8e722f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=C3=81rni=20Dagur?= <arni@dagur.eu>
+Date: Fri, 3 Mar 2023 00:20:10 +0100
+Subject: [PATCH] Duplicate package information for Poetry
 
 Index: pyproject.toml
 --- pyproject.toml.orig
@@ -7,7 +15,8 @@ Index: pyproject.toml
 -[tool.poetry]
 +[project]
  name = "adblock"
- version = "0.0.0"
+-version = "0.0.0"
++version = "${MODPY_EGG_VERSION}"
  description = "Brave's adblocking in Python"
 -authors = ["Árni Dagur <arni@dagur.eu>"]
 +requires-python = ">=3.7"

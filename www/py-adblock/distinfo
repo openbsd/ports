@@ -1,3 +1,4 @@
+SHA256 (adblock-0.6.0.tar.gz) = EWUelWxps+5XFAR1TfZlhUcXJVuA9Dfp3DI+6CtWTnI=
 SHA256 (cargo/adblock-0.5.6.tar.gz) = J3he9bibyI/S3vPh7P799ewVg3lbkWZnr9FbEwWPgxU=
 SHA256 (cargo/addr-0.14.0.tar.gz) = xUzKyUmir6/fyInhXHU7vG7oeD4Ca749BXsAsTkH23A=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
@@ -62,7 +63,7 @@ SHA256 (cargo/windows_i686_gnu-0.36.1.tar.gz) = GA5szwHa9MQmuEbfxm2x/FGPB0uqeTqn
 SHA256 (cargo/windows_i686_msvc-0.36.1.tar.gz) = 4ueRcUiygS0e6vrrIql+SBPfpgo/j3jr4gS8yI8S8CQ=
 SHA256 (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = Tc0XG4d2xBuXUh5doSei2GrSgBFIB9Cyqx5GK8dk2eE=
 SHA256 (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = yBHKSoyFPvQgq9hZK6U927rJBBD6tpA7PnmXKmMfdoA=
-SHA256 (python-adblock-0.6.0.tar.gz) = zd5dtkDx2SBXhWQWZbeebtt8UQkqaFNrxJB1YMcRNrI=
+SIZE (adblock-0.6.0.tar.gz) = 21617
 SIZE (cargo/adblock-0.5.6.tar.gz) = 7704188
 SIZE (cargo/addr-0.14.0.tar.gz) = 90210
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -127,4 +128,3 @@ SIZE (cargo/windows_i686_gnu-0.36.1.tar.gz) = 818115
 SIZE (cargo/windows_i686_msvc-0.36.1.tar.gz) = 724575
 SIZE (cargo/windows_x86_64_gnu-0.36.1.tar.gz) = 790934
 SIZE (cargo/windows_x86_64_msvc-0.36.1.tar.gz) = 661999
-SIZE (python-adblock-0.6.0.tar.gz) = 24976

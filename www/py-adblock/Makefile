@@ -1,40 +1,33 @@
-BROKEN-i386 =	fatal runtime error: Rust cannot catch foreign exceptions
-#.if ${MACHINE_ARCH} == i386
-#DPB_PROPERTIES = lonesome
-#.endif
+BROKEN-i386=	fatal runtime error: Rust cannot catch foreign exceptions
 
-COMMENT =	Brave's adblock library
+COMMENT=	Brave's adblock library
 
-GH_ACCOUNT =	ArniDagur
-GH_PROJECT =	python-adblock
-GH_TAGNAME =	0.6.0
-DISTNAME =	py-adblock-${GH_TAGNAME}
-#MODPY_EGG_VERSION = ${GH_TAGNAME}
-MODPY_EGG_VERSION = 0.0.0
-REVISION =	4
+MODPY_EGG_VERSION= 0.6.0
+DISTNAME=	adblock-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
+REVISION=	5
 
-CATEGORIES =	www
+CATEGORIES=	www
 
 # MIT
-PERMIT_PACKAGE =Yes
+PERMIT_PACKAGE=Yes
 
 WANTLIB += ${MODCARGO_WANTLIB}
 
-MODULES =	devel/cargo \
+MODULES=	devel/cargo \
 		lang/python
+MODPY_PI=	Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PYBUILD =		maturin
-MODCARGO_CARGO_BIN =	maturin
+MODPY_PYBUILD=		maturin
+MODCARGO_CARGO_BIN=	maturin
+CONFIGURE_STYLE=	cargo
 
-CONFIGURE_STYLE =	cargo
-
-BUILD_DEPENDS =	devel/maturin \
-		devel/py-pip${MODPY_FLAVOR}
-
-TEST_DEPENDS =	textproc/py-toml${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-installer${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-pip${MODPY_FLAVOR} \
+			textproc/py-toml${MODPY_FLAVOR}
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \
@@ -42,19 +35,16 @@ do-build:
 		--release \
 		${MODCARGO_BUILD_ARGS} ;
 
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/target/wheels/*.whl
+
 do-test:
-	pip${MODPY_VERSION} install --no-cache-dir --isolated \
+	@pip${MODPY_VERSION} install --no-cache-dir --isolated \
 		--target=${WRKSRC}/tests \
 		--ignore-installed \
 		--no-deps ${WRKSRC}/target/wheels/*.whl
-	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} -m pytest -v
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/target/release/libadblock.so ${PREFIX}/lib
-	pip${MODPY_VERSION} install --no-cache-dir --isolated \
-		--root=${WRKINST} \
-		--ignore-installed \
-		--no-deps ${WRKSRC}/target/wheels/*.whl
+	@${MODPY_TEST_CMD}
 
 .include "crates.inc"
 

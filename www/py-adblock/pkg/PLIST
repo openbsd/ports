@@ -1,17 +1,14 @@
-@so lib/libadblock.so
 lib/python${MODPY_VERSION}/site-packages/adblock/
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/REQUESTED
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/direct_url.json
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/license_files/
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE-APACHE
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE-MIT
 lib/python${MODPY_VERSION}/site-packages/adblock/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/adblock/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/adblock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/adblock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/adblock/adblock${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/adblock/adblock.pyi
