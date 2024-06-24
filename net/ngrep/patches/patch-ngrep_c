@@ -1,22 +1,48 @@
 Index: ngrep.c
 --- ngrep.c.orig
 +++ ngrep.c
-@@ -16,6 +16,7 @@
+@@ -16,8 +16,13 @@
  #include <arpa/inet.h>
  #include <sys/tty.h>
  #include <pwd.h>
 +#include <stdint.h>
  #endif
  
- #if defined(OSF1)
-@@ -494,6 +495,10 @@ int setup_pcap_source(void) {
- 
-         case DLT_PPP:
-             link_offset = PPPHDR_SIZE;
-+            break;
++#if defined(__OpenBSD__)
++#include <net/if_pflog.h>
++#endif
 +
-+        case DLT_PPP_ETHER:
-+            link_offset = 8;
+ #if defined(OSF1)
+ #include <sys/types.h>
+ #include <sys/socket.h>
+@@ -496,6 +501,10 @@ int setup_pcap_source(void) {
+             link_offset = PPPHDR_SIZE;
              break;
  
++        case DLT_PPP_ETHER:
++            link_offset = 8;
++            break;
++
  #if HAVE_DLT_LOOP
+         case DLT_LOOP:
+ #endif
+@@ -529,7 +538,7 @@ int setup_pcap_source(void) {
+ 
+ #if HAVE_DLT_PFLOG
+         case DLT_PFLOG:
+-            link_offset = PFLOGHDR_SIZE;
++            link_offset = PFLOG_HDRLEN;
+             break;
+ #endif
+ 
+@@ -1242,7 +1251,9 @@ uint8_t strishex(char *str) {
+ 
+ 
+ void print_time_absolute(struct pcap_pkthdr *h) {
+-    struct tm *t = localtime((const time_t *)&h->ts.tv_sec);
++    struct tm *t;
++    time_t ts = h->ts.tv_sec;
++    t = localtime(&ts);
+ 
+     printf("%02u/%02u/%02u %02u:%02u:%02u.%06u ",
+            t->tm_year+1900, t->tm_mon+1, t->tm_mday, t->tm_hour,
