@@ -1,6 +1,6 @@
 COMMENT=		MATE/Xfce4 backend implementation for xdg-desktop-portal
 
-DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.0.6 .
+DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.0.7 .
 
 CATEGORIES=		x11
 
