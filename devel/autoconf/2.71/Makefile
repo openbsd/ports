@@ -1,4 +1,5 @@
 VERSION =	2.71
+REVISION =	0
 
 BUILD_DEPENDS =		devel/help2man
 
