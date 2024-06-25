@@ -173,6 +173,7 @@ vpn-user-portal/src/LdapClient.php
 vpn-user-portal/src/LogConnectionHook.php
 vpn-user-portal/src/LoggerInterface.php
 vpn-user-portal/src/Migration.php
+vpn-user-portal/src/NodeInfo.php
 vpn-user-portal/src/NullLogger.php
 vpn-user-portal/src/OAuth/
 vpn-user-portal/src/OAuth/NullAccessTokenVerifier.php
