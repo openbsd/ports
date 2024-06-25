@@ -1011,10 +1011,12 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/version.py
 @man man/man5/exabgp.conf.5
 share/examples/exabgp/
 share/examples/exabgp/api-add-remove.run
+share/examples/exabgp/api-announce-star.run
 share/examples/exabgp/api-announce.run
 share/examples/exabgp/api-announcement.run
 share/examples/exabgp/api-api.nothing.run
 share/examples/exabgp/api-api.receive.run
+share/examples/exabgp/api-attributes-path.run
 share/examples/exabgp/api-attributes-vpn.run
 share/examples/exabgp/api-attributes.run
 share/examples/exabgp/api-broken-flow.run
@@ -1047,9 +1049,11 @@ share/examples/exabgp/etc/
 @owner
 @group
 share/examples/exabgp/etc/api-add-remove.conf
+share/examples/exabgp/etc/api-announce-star.conf
 share/examples/exabgp/etc/api-announce.conf
 share/examples/exabgp/etc/api-announcement.conf
 share/examples/exabgp/etc/api-api.conf
+share/examples/exabgp/etc/api-attributes-path.conf
 share/examples/exabgp/etc/api-attributes-vpn.conf
 share/examples/exabgp/etc/api-attributes.conf
 share/examples/exabgp/etc/api-broken-flow.conf
