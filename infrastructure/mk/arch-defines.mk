@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.106 2024/05/16 11:04:44 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.107 2024/06/25 13:48:24 jsing Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -24,7 +24,7 @@ GCC4_ARCHS = alpha hppa sh sparc64
 GCC3_ARCHS = m88k
 # arches where certain ports are available
 MONO_ARCHS = aarch64 amd64 i386
-GO_ARCHS = aarch64 amd64 arm armv7 i386 mips64 riscv64
+GO_ARCHS = aarch64 amd64 arm i386 riscv64
 LUAJIT_ARCHS = aarch64 arm amd64 i386 powerpc
 RUST_ARCHS = aarch64 amd64 i386 powerpc64 riscv64 sparc64
 # arch-specific features that ocaml ports need to know about

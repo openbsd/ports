@@ -1,6 +1,6 @@
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
-BIN_BOOTSTRAP_GOARCHS =	386 amd64 arm arm64 mips64 riscv64
+BIN_BOOTSTRAP_GOARCHS =	386 amd64 arm arm64 riscv64
 BIN_BOOTSTRAP_VERSION = 1.20.4
 
 COMMENT =		Go programming language
@@ -46,16 +46,14 @@ GOROOT =		${PREFIX}/go
 GOROOT_BOOTSTRAP =
 
 # sync with go.port.mk
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "aarch64"
+GOARCH =		arm64
+.elif ${MACHINE_ARCH} == "amd64"
 GOARCH =		amd64
 .elif ${MACHINE_ARCH} == "arm"
 GOARCH =		arm
-.elif ${MACHINE_ARCH} == "aarch64"
-GOARCH =		arm64
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
-.elif ${MACHINE_ARCH} == "mips64"
-GOARCH =		mips64
 .elif ${MACHINE_ARCH} == "riscv64"
 GOARCH =		riscv64
 .endif
