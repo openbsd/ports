@@ -1,6 +1,6 @@
 COMMENT =	code coverage measurement for Python
 
-MODPY_EGG_VERSION =	7.5.1
+MODPY_EGG_VERSION =	7.5.4
 DISTNAME =	coverage-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -23,7 +23,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 # tests want a writable directory on the python path that already
-# contains a .pth file; making /usr/local/lib/python3.9/site-packages
+# contains a .pth file; making /usr/local/lib/python3.*/site-packages
 # writable by _pbuild will get some tests to run successfully
 NO_TEST =	Yes
 #TEST_DEPENDS =	devel/py-test-xdist${MODPY_FLAVOR}
