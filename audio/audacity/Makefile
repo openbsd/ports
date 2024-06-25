@@ -8,7 +8,7 @@ GH_TAGNAME=	Audacity-3.5.1
 DISTNAME=	${GH_TAGNAME:L}
 CATEGORIES=	audio
 
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.audacityteam.org/
 
