@@ -1,9 +1,8 @@
 COMMENT=	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION= 0.7.7
+MODPY_EGG_VERSION= 0.7.8
 DISTNAME=	Genshi-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	2
 
 CATEGORIES=	www
 
