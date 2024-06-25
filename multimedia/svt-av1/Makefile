@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 
 COMMENT=	scalable AV1 encoder/decoder
 
-VER=		2.0.0
+VER=		2.1.0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
@@ -26,7 +26,7 @@ COMPILER=	base-clang ports-gcc
 MODULES=	devel/cmake
 
 .if ${MACHINE_ARCH} == "amd64"
-BUILD_DEPENDS+=	devel/yasm
+BUILD_DEPENDS+=	devel/nasm
 .endif
 
 CONFIGURE_ARGS+=-DSVT_AV1_LTO=ON
