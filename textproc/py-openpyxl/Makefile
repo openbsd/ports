@@ -1,10 +1,9 @@
 COMMENT=	Python library to read/write Excel 2010 xlsx/xlsm files
 
-MODPY_EGG_VERSION=	3.1.2
+MODPY_EGG_VERSION=	3.1.4
 
 DISTNAME=	openpyxl-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -22,13 +21,11 @@ FLAVOR=		python3
 FLAVORS=	python3
 
 # not in pypi distfile
-NO_TEST=		Yes
+NO_TEST=	Yes
 
-RUN_DEPENDS=		misc/py-jdcal${MODPY_FLAVOR} \
-			textproc/py-defusedxml${MODPY_FLAVOR}>=0.6.0 \
-			textproc/py-et_xmlfile${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR}
-
-FIX_EXTRACT_PERMISSIONS= Yes
+RUN_DEPENDS=	misc/py-jdcal${MODPY_FLAVOR} \
+		textproc/py-defusedxml${MODPY_FLAVOR}>=0.6.0 \
+		textproc/py-et_xmlfile${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
