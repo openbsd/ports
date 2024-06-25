@@ -1,8 +1,9 @@
 COMMENT=	full text search plugin for Dovecot using Xapian
 
-DIST_TUPLE=	github grosjo fts-xapian 1.7.0 .
-
-PKGNAME=	dovecot-${DISTNAME}
+V=		1.7.13
+DISTNAME=	dovecot-fts-xapian-$V
+SITES=		https://github.com/grosjo/fts-xapian/releases/download/$V/
+WRKDIST=	${WRKDIR}/fts-xapian-$V
 
 CATEGORIES=	mail
 
@@ -13,6 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3 xapian z
 
 COMPILER=	base-clang ports-gcc
 
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 BUILD_DEPENDS=	mail/dovecot
 RUN_DEPENDS=	mail/dovecot
 
