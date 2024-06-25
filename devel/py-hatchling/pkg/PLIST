@@ -45,6 +45,8 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}cons
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}macos.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}sdist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}sdist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -78,6 +80,7 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/builders/hooks/plugin/${MODPY
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/hooks/plugin/hooks.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/hooks/plugin/interface.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/hooks/version.py
+lib/python${MODPY_VERSION}/site-packages/hatchling/builders/macos.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/plugin/
 lib/python${MODPY_VERSION}/site-packages/hatchling/builders/plugin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/builders/plugin/${MODPY_PYCACHE}/
