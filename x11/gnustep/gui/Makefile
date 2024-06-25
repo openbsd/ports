@@ -1,6 +1,6 @@
 COMMENT=	GNUstep gui library
 
-GH_TAGNAME=     0.31.0
+GH_TAGNAME=     0.31.1
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-gui
 DISTNAME=       gnustep-gui-${GH_TAGNAME}
@@ -18,7 +18,7 @@ WANTLIB += flite_usenglish gif jpeg png sndfile sndio
 WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
 
 #SITES=	${SITE_GNUSTEP:=core/}
-SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_31_0/
+SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_31_1/
 
 MODULES=	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=No
