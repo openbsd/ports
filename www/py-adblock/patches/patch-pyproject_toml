@@ -16,7 +16,7 @@ Index: pyproject.toml
 +[project]
  name = "adblock"
 -version = "0.0.0"
-+version = "${MODPY_EGG_VERSION}"
++version = "0.6.0"
  description = "Brave's adblocking in Python"
 -authors = ["Árni Dagur <arni@dagur.eu>"]
 +requires-python = ">=3.7"
