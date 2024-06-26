@@ -1,8 +1,10 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION =	2.1.4
+MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
-REVISION =		0
+
+DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_EGG_VERSION} .
+WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_EGG_VERSION}-37655e4e87da89fffeb4fa424a97867264f95326
 
 CATEGORIES =		sysutils
 
@@ -11,22 +13,21 @@ HOMEPAGE =		https://www.nongnu.org/duplicity/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://gitlab.com/duplicity/duplicity/uploads/490b3b4bfe0c4c5b9513b121fef78946/
-
 WANTLIB += rsync
 
 MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/py-pip${MODPY_FLAVOR} \
+			sysutils/py-pipx${MODPY_FLAVOR}
 
 LIB_DEPENDS =		net/librsync
 
 RUN_DEPENDS =		devel/py-fasteners${MODPY_FLAVOR} \
-			devel/py-future${MODPY_FLAVOR} \
 			net/ncftp \
-			security/gnupg>=2.2.23p1 \
+			security/gnupg \
 			security/py-paramiko${MODPY_FLAVOR}
 
 TEST_DEPENDS =		archivers/gtar \
@@ -44,6 +45,6 @@ TEST_DEPENDS =		archivers/gtar \
 
 MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
 
-MODPY_ADJ_FILES =	bin/duplicity
+#MODPY_ADJ_FILES =	bin/duplicity
 
 .include <bsd.port.mk>

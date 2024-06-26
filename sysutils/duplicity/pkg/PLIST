@@ -1,21 +1,26 @@
 bin/duplicity
 lib/python${MODPY_VERSION}/site-packages/duplicity/
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/AUTHORS.md
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/duplicity-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/duplicity/__init__.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}argparse311.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}argparse311.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}asyncscheduler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}asyncscheduler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}backend_pool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}backend_pool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}cached_ops.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}cached_ops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}cli_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,10 +37,10 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_collectio
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_collections.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_main.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_tarfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_tarfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_temp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_temp.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_threading.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_threading.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}dup_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,8 +75,6 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}selection.${M
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}selection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}statistics.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}tarfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}tarfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}tempdir.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}tempdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,10 +82,9 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/${MODPY_PYCACHE}util.${MODPY_
 @so lib/python${MODPY_VERSION}/site-packages/duplicity/_librsync.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/duplicity/_librsyncmodule.c
 lib/python${MODPY_VERSION}/site-packages/duplicity/argparse311.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/asyncscheduler.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backend_pool.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/
-lib/python${MODPY_VERSION}/site-packages/duplicity/backends/README
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -91,6 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_cloudfiles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_pyrax.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_cf_pyrax.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_testbackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}_testbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}adbackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}adbackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}azurebackend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,6 +171,7 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}xorr
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/${MODPY_PYCACHE}xorrisobackend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_cloudfiles.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_testbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/adbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/azurebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/b2backend.py
@@ -220,8 +225,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/config.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/diffdir.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_collections.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_main.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/dup_tarfile.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_temp.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/dup_threading.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_time.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/errors.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.py
@@ -239,7 +244,6 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/progress.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/robust.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/selection.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/statistics.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/tarfile.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/tempdir.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/util.py
 @man man/man1/duplicity.1

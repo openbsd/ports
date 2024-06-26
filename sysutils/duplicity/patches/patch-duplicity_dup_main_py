@@ -1,7 +1,7 @@
 Index: duplicity/dup_main.py
 --- duplicity/dup_main.py.orig
 +++ duplicity/dup_main.py
-@@ -1416,14 +1416,17 @@ def check_resources(action):
+@@ -1472,14 +1472,17 @@ def check_resources(action):
              log.FatalError(_("Unable to get max open files."), log.ErrorCode.get_ulimit_failed)
          maxopen = min([l for l in (soft, hard) if l > -1])
          if maxopen < 1024:
