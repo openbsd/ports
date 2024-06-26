@@ -1,7 +1,6 @@
 COMMENT=		simple encrypted backup tool for GNOME
-REVISION=		0
 
-DIST_TUPLE=		gnome World deja-dup 45.2 .
+DIST_TUPLE=		gnome World deja-dup 46.1 .
 
 CATEGORIES=		sysutils
 
