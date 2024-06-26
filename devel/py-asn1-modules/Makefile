@@ -1,12 +1,12 @@
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
-MODPY_EGG_VERSION =	0.2.8
-DISTNAME =		pyasn1-modules-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:S/py/py-/}
-CATEGORIES =		devel
-REVISION =		1
+MODPY_EGG_VERSION =	0.4.0
+DISTNAME =		pyasn1_modules-${MODPY_EGG_VERSION}
+PKGNAME =		py-asn1-modules-${MODPY_EGG_VERSION}
 
-HOMEPAGE =		https://github.com/etingof/pyasn1
+CATEGORIES =		devel
+
+HOMEPAGE =		https://github.com/pyasn1/pyasn1-modules
 
 # BSD 2-Clause
 PERMIT_PACKAGE =	Yes
