@@ -1,9 +1,9 @@
-V =		2.14.3
+V =		2.15.0
 COMMENT =	fast, compressed, persistent binary data store library for C
 PKGNAME =	blosc2-${V}
 CATEGORIES =	archivers
 
-SHARED_LIBS +=	blosc2                     1.0 # 0.0
+SHARED_LIBS +=	blosc2                     2.0 # 0.0
 
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc2
