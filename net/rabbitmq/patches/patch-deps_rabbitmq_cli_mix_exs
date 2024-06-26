@@ -1,0 +1,15 @@
+Allow Elixir 1.17.x
+Backport of
+https://github.com/rabbitmq/rabbitmq-server/commit/82fda88fd4e055ceaad6ec393a62d446907a19e6
+Index: deps/rabbitmq_cli/mix.exs
+--- deps/rabbitmq_cli/mix.exs.orig
++++ deps/rabbitmq_cli/mix.exs
+@@ -11,7 +11,7 @@ defmodule RabbitMQCtl.MixfileBase do
+     [
+       app: :rabbitmqctl,
+       version: "3.13.0-dev",
+-      elixir: ">= 1.13.4 and < 1.17.0",
++      elixir: ">= 1.13.4 and < 1.18.0",
+       build_embedded: Mix.env() == :prod,
+       start_permanent: Mix.env() == :prod,
+       escript: [
