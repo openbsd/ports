@@ -69,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/FindPytho
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Common.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Config.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11ConfigVersion.cmake
+lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11GuessPythonExtSuffix.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11NewTools.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Targets.cmake
 lib/python${MODPY_VERSION}/site-packages/pybind11/share/cmake/pybind11/pybind11Tools.cmake
