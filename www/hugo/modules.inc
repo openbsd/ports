@@ -138,8 +138,8 @@ MODGO_MODULES =	\
 	github.com/!burnt!sushi/toml							 v0.3.1 \
 	github.com/!burnt!sushi/xgb							 v0.0.0-20160522181843-27f122750802 \
 	github.com/!google!cloud!platform/cloudsql-proxy				 v1.33.14 \
-	github.com/alecthomas/assert/v2							 v2.6.0 \
-	github.com/alecthomas/chroma/v2							 v2.13.0 \
+	github.com/alecthomas/assert/v2							 v2.7.0 \
+	github.com/alecthomas/chroma/v2							 v2.14.0 \
 	github.com/alecthomas/repr							 v0.4.0 \
 	github.com/armon/go-radix							 v1.0.1-0.20221118154546-54df44f2176c \
 	github.com/aws/aws-sdk-go							 v1.50.7 \
@@ -205,7 +205,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/envoyproxy/go-control-plane						 v0.11.1 \
 	github.com/envoyproxy/protoc-gen-validate					 v1.0.2 \
-	github.com/evanw/esbuild							 v0.20.2 \
+	github.com/evanw/esbuild							 v0.21.4 \
 	github.com/fatih/color								 v1.16.0 \
 	github.com/felixge/fgprof							 v0.9.3 \
 	github.com/fortytw2/leaktest							 v1.3.0 \
@@ -223,7 +223,7 @@ MODGO_MODULES =	\
 	github.com/gobwas/glob								 v0.2.3 \
 	github.com/gohugoio/go-i18n/v2							 v2.1.3-0.20230805085216-e63c13218d0e \
 	github.com/gohugoio/httpcache							 v0.7.0 \
-	github.com/gohugoio/hugo-goldmark-extensions/extras				 v0.1.0 \
+	github.com/gohugoio/hugo-goldmark-extensions/extras				 v0.2.0 \
 	github.com/gohugoio/hugo-goldmark-extensions/passthrough			 v0.2.0 \
 	github.com/gohugoio/locales							 v0.14.0 \
 	github.com/gohugoio/localescompressed						 v1.0.1 \
@@ -320,8 +320,8 @@ MODGO_MODULES =	\
 	github.com/tdewolff/parse/v2							 v2.7.13 \
 	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
 	github.com/ugorji/go/codec							 v1.2.7 \
-	github.com/yuin/goldmark							 v1.7.1 \
-	github.com/yuin/goldmark-emoji							 v1.0.2 \
+	github.com/yuin/goldmark							 v1.7.4 \
+	github.com/yuin/goldmark-emoji							 v1.0.3 \
 	go.opencensus.io								 v0.24.0 \
 	go.uber.org/automaxprocs							 v1.5.3 \
 	go.uber.org/multierr								 v1.11.0 \
@@ -544,9 +544,10 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark					 v1.1.32 \
 	github.com/yuin/goldmark					 v1.2.1 \
 	github.com/yuin/goldmark					 v1.3.5 \
-	github.com/yuin/goldmark					 v1.3.7 \
 	github.com/yuin/goldmark					 v1.4.13 \
 	github.com/yuin/goldmark					 v1.6.0 \
+	github.com/yuin/goldmark					 v1.7.1 \
+	github.com/yuin/goldmark					 v1.7.2 \
 	go.opencensus.io						 v0.21.0 \
 	go.opencensus.io						 v0.22.0 \
 	go.opencensus.io						 v0.22.2 \
