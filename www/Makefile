@@ -440,6 +440,8 @@
      SUBDIR += py-genshi,python3
      SUBDIR += py-gunicorn,python3
      SUBDIR += py-h11,python3
+     SUBDIR += py-h2,python3
+     SUBDIR += py-hpack,python3
      SUBDIR += py-html5-parser,python3
      SUBDIR += py-http_ece,python3
      SUBDIR += py-httpbin,python3
@@ -448,6 +450,7 @@
      SUBDIR += py-httplib2,python3
      SUBDIR += py-httpretty,python3
      SUBDIR += py-httpx,python3
+     SUBDIR += py-hyperframe,python3
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2,python3
