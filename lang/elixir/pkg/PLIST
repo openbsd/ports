@@ -64,6 +64,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Date.Range.beam
 lib/elixir/lib/elixir/ebin/Elixir.Date.beam
 lib/elixir/lib/elixir/ebin/Elixir.DateTime.beam
 lib/elixir/lib/elixir/ebin/Elixir.Dict.beam
+lib/elixir/lib/elixir/ebin/Elixir.Duration.beam
 lib/elixir/lib/elixir/ebin/Elixir.DynamicSupervisor.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.EmptyError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Enum.OutOfBoundsError.beam
@@ -111,6 +112,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Inspect.BitString.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Date.Range.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Date.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.DateTime.beam
+lib/elixir/lib/elixir/ebin/Elixir.Inspect.Duration.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Error.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Float.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Function.beam
@@ -162,15 +164,14 @@ lib/elixir/lib/elixir/ebin/Elixir.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.MatchError.beam
 lib/elixir/lib/elixir/ebin/Elixir.MismatchedDelimiterError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Behaviour.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.LocalsTracker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.ParallelChecker.beam
-lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Behaviour.beam
-lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Error.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Descr.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Expr.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Helpers.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Of.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Pattern.beam
-lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Unify.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.beam
 lib/elixir/lib/elixir/ebin/Elixir.NaiveDateTime.beam
@@ -298,6 +299,7 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.FailuresManifest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Filters.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Formatter.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.MultiError.beam
+lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.OnExitHandler.Supervisor.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.OnExitHandler.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Runner.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.RunnerStats.beam
@@ -443,6 +445,7 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.New.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Cprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Eprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Fprof.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Profile.Tprof.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.Init.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Tasks.Run.beam

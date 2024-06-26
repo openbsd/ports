@@ -4,7 +4,7 @@ complete.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -277,12 +277,13 @@ test_elixir: test_stdlib test_ex_unit test_logger test
+@@ -276,12 +276,13 @@ test_elixir: test_stdlib test_ex_unit test_logger test
  
  test_stdlib: compile
  	@ echo "==> elixir (ex_unit)"

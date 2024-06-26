@@ -1,6 +1,6 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.16.3
+V=			1.17.1
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V

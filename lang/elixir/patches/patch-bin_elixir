@@ -3,7 +3,7 @@ Detect erlang ERTS directory at runtime.
 Index: bin/elixir
 --- bin/elixir.orig
 +++ bin/elixir
-@@ -225,7 +225,9 @@ fi
+@@ -226,7 +226,9 @@ fi
  
  # One MAY change ERTS_BIN= but you MUST NOT change
  # ERTS_BIN=$ERTS_BIN as it is handled by Elixir releases.
@@ -13,4 +13,4 @@ Index: bin/elixir
 +done
  ERTS_BIN="$ERTS_BIN"
  
- set -- "$ERTS_BIN$ERL_EXEC" -noshell -elixir_root "$SCRIPT_PATH"/../lib -pa "$SCRIPT_PATH"/../lib/elixir/ebin $ELIXIR_ERL_OPTIONS -s elixir start_$MODE $ERL "$@"
+ set -- "$ERTS_BIN$ERL_EXEC" -noshell -elixir_root "$SCRIPT_PATH"/../lib -pa "$SCRIPT_PATH"/../lib/elixir/ebin $ELIXIR_ERL_OPTIONS $ERL "$@"
