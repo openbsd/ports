@@ -484,11 +484,13 @@
      SUBDIR += py-terminado,python3
      SUBDIR += py-tornado,python3
      SUBDIR += py-treq,python3
+     SUBDIR += py-uri-template,python3
      SUBDIR += py-uritemplate,python3
      SUBDIR += py-urlgrabber,python3
      SUBDIR += py-urllib3,python3
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress,python3
+     SUBDIR += py-webcolors,python3
      SUBDIR += py-webob,python3
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest,python3

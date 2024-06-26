@@ -1477,6 +1477,7 @@
      SUBDIR += py-iso3166,python3
      SUBDIR += py-iso639,python3
      SUBDIR += py-isodate,python3
+     SUBDIR += py-isoduration,python3
      SUBDIR += py-isort,python3
      SUBDIR += py-iterable-io,python3
      SUBDIR += py-jaraco-classes,python3
@@ -1490,6 +1491,7 @@
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jsonschema-spec,python3
+     SUBDIR += py-jsonschema-specifications,python3
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-jupyter_packaging,python3
@@ -1596,6 +1598,7 @@
      SUBDIR += py-rencode,python3
      SUBDIR += py-resolvelib,python3
      SUBDIR += py-rfc3339-validator,python3
+     SUBDIR += py-rfc3986-validator,python3
      SUBDIR += py-rfc6555,python3
      SUBDIR += py-rich,python3
      SUBDIR += py-robotframework,python3
