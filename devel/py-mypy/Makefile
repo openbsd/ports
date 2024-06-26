@@ -1,6 +1,6 @@
 COMMENT=	optional static type checker for Python
 
-MODPY_EGG_VERSION=	1.10.0
+MODPY_EGG_VERSION=	1.10.1
 DISTNAME=	mypy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	devel/py-types-psutil${MODPY_FLAVOR} \
 		devel/py-mypy-extensions${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR} \
 		devel/py-mypy-extensions${MODPY_FLAVOR}
+# some tests want network access
+PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
 		devel/py-test-xdist${MODPY_FLAVOR} \
 		sysutils/py-filelock${MODPY_FLAVOR}
