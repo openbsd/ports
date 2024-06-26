@@ -1,0 +1,45 @@
+Index: test/test_events.py
+--- test/test_events.py.orig
++++ test/test_events.py
+@@ -209,8 +209,8 @@ class TestEventReprs(object):
+ 
+         assert repr(e) == (
+             "<RemoteSettingsChanged changed_settings:{ChangedSetting("
+-            "setting=SettingCodes.INITIAL_WINDOW_SIZE, original_value=65536, "
+-            "new_value=32768)}>"
++            "setting=%d, original_value=65536, "
++            "new_value=32768)}>" % h2.settings.SettingCodes.INITIAL_WINDOW_SIZE
+         )
+ 
+     def test_pingreceived_repr(self):
+@@ -251,7 +251,7 @@ class TestEventReprs(object):
+ 
+         assert repr(e) == (
+             "<StreamReset stream_id:919, "
+-            "error_code:ErrorCodes.ENHANCE_YOUR_CALM, remote_reset:False>"
++            "error_code:%d, remote_reset:False>" % h2.errors.ErrorCodes.ENHANCE_YOUR_CALM
+         )
+ 
+     def test_pushedstreamreceived_repr(self):
+@@ -286,8 +286,8 @@ class TestEventReprs(object):
+ 
+         assert repr(e) == (
+             "<SettingsAcknowledged changed_settings:{ChangedSetting("
+-            "setting=SettingCodes.INITIAL_WINDOW_SIZE, original_value=65536, "
+-            "new_value=32768)}>"
++            "setting=%d, original_value=65536, "
++            "new_value=32768)}>" % h2.settings.SettingCodes.INITIAL_WINDOW_SIZE
+         )
+ 
+     def test_priorityupdated_repr(self):
+@@ -319,8 +319,8 @@ class TestEventReprs(object):
+         e.additional_data = additional_data
+ 
+         assert repr(e) == (
+-            "<ConnectionTerminated error_code:ErrorCodes.INADEQUATE_SECURITY, "
+-            "last_stream_id:33, additional_data:%s>" % data_repr
++            "<ConnectionTerminated error_code:%d, "
++            "last_stream_id:33, additional_data:%s>" % (h2.errors.ErrorCodes.INADEQUATE_SECURITY, data_repr)
+         )
+ 
+     def test_alternativeserviceavailable_repr(self):
