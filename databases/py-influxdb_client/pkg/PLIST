@@ -46,6 +46,8 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}_pages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}_pages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}authorizations_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}authorizations_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}bucket_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -87,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}write_api_async.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}write_api_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/_base.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/_pages.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/authorizations_api.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/bucket_api.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/delete_api.py
