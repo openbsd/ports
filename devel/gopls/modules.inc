@@ -5,24 +5,23 @@ MODGO_MODULES =	\
 	github.com/google/go-cmp	 v0.6.0 \
 	github.com/google/renameio	 v0.1.0 \
 	github.com/google/safehtml	 v0.1.0 \
-	github.com/jba/printsrc		 v0.2.2 \
-	github.com/jba/templatecheck	 v0.6.0 \
+	github.com/jba/templatecheck	 v0.7.0 \
 	github.com/kr/pretty		 v0.3.1 \
 	github.com/kr/text		 v0.2.0 \
 	github.com/rogpeppe/go-internal	 v1.12.0 \
 	github.com/yuin/goldmark	 v1.4.13 \
 	golang.org/x/exp/typeparams	 v0.0.0-20221212164502-fae10dda9338 \
-	golang.org/x/mod		 v0.15.0 \
-	golang.org/x/net		 v0.21.0 \
-	golang.org/x/sync		 v0.6.0 \
-	golang.org/x/sys		 v0.17.0 \
-	golang.org/x/telemetry		 v0.0.0-20240209200032-7b892fcb8a78 \
-	golang.org/x/text		 v0.14.0 \
-	golang.org/x/tools		 v0.18.1-0.20240412183611-d92ae0781217 \
-	golang.org/x/vuln		 v1.0.1 \
+	golang.org/x/mod		 v0.18.0 \
+	golang.org/x/net		 v0.26.0 \
+	golang.org/x/sync		 v0.7.0 \
+	golang.org/x/sys		 v0.21.0 \
+	golang.org/x/telemetry		 v0.0.0-20240607193123-221703e18637 \
+	golang.org/x/text		 v0.16.0 \
+	golang.org/x/tools		 v0.22.1-0.20240620150659-cb3016b76f3e \
+	golang.org/x/vuln		 v1.0.4 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v3		 v3.0.1 \
-	honnef.co/go/tools		 v0.4.6 \
+	honnef.co/go/tools		 v0.4.7 \
 	mvdan.cc/gofumpt		 v0.6.0 \
 	mvdan.cc/unparam		 v0.0.0-20230312165513-e84e2d14e3b8 \
 	mvdan.cc/xurls/v2		 v2.5.0
@@ -35,19 +34,17 @@ MODGO_MODFILES =	\
 	golang.org/x/mod		 v0.10.0 \
 	golang.org/x/mod		 v0.12.0 \
 	golang.org/x/mod		 v0.14.0 \
-	golang.org/x/mod		 v0.8.0 \
+	golang.org/x/mod		 v0.17.0 \
 	golang.org/x/sync		 v0.1.0 \
-	golang.org/x/sync		 v0.3.0 \
+	golang.org/x/sync		 v0.6.0 \
 	golang.org/x/sys		 v0.11.0 \
 	golang.org/x/sys		 v0.16.0 \
-	golang.org/x/sys		 v0.5.0 \
-	golang.org/x/telemetry		 v0.0.0-20240208230135-b75ee8823808 \
+	golang.org/x/telemetry		 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/text		 v0.3.3 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
-	golang.org/x/tools		 v0.12.1-0.20230815132531-74c255bcf846 \
 	golang.org/x/tools		 v0.12.1-0.20230825192346-2191a27a6dc5 \
 	golang.org/x/tools		 v0.13.0 \
 	golang.org/x/tools		 v0.17.0 \
-	golang.org/x/tools		 v0.6.0 \
+	golang.org/x/tools		 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405
 

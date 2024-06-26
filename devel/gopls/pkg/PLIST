@@ -5,6 +5,7 @@ share/doc/gopls/README.md
 share/doc/gopls/doc/
 share/doc/gopls/doc/advanced.md
 share/doc/gopls/doc/analyzers.md
+share/doc/gopls/doc/codelenses.md
 share/doc/gopls/doc/command-line.md
 share/doc/gopls/doc/commands.md
 share/doc/gopls/doc/contributing.md
