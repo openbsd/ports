@@ -13,6 +13,3 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/static/scripts.js
-lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/static/scripts.js.map
-lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/static/styles.css
-lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/static/styles.css.map

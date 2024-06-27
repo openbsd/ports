@@ -1,11 +1,12 @@
---- buildbot/scripts/logwatcher.py.orig	Tue Nov 28 10:31:51 2023
-+++ buildbot/scripts/logwatcher.py	Tue Nov 28 10:32:01 2023
+Index: buildbot/scripts/logwatcher.py
+--- buildbot/scripts/logwatcher.py.orig
++++ buildbot/scripts/logwatcher.py
 @@ -113,7 +113,7 @@ class LogWatcher(LineOnlyLongLineReceiver):
          else:
              tailBin = "/usr/bin/tail"
  
 -        args = ("tail", "-F", "-n", "0", self.logfile)
 +        args = ("tail", "-f", "-n", "0", self.logfile)
-         self.p = self._reactor.spawnProcess(self.pp, tailBin, args,
-                                             env=os.environ)
+         self.p = self._reactor.spawnProcess(self.pp, tailBin, args, env=os.environ)
          self.running = True
+         d = defer.maybeDeferred(self._start)

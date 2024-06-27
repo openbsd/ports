@@ -3,7 +3,7 @@ COMMENT =	continuous integration framework
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME}
 
-RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR}>=1.4.0 \
 		databases/py-alembic${MODPY_FLAVOR} \
 		devel/py-setuptools${MODPY_FLAVOR} \
 		devel/py-buildbot/www \

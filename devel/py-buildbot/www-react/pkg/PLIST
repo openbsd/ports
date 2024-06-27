@@ -12,8 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/assets/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/assets/index-437186e5.js
-lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/assets/index-f21775f4.css
+lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/assets/index-342ec232.css
+lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/assets/index-74f03935.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/browser-warning-list.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/browser-warning.css
 lib/python${MODPY_VERSION}/site-packages/buildbot_www_react/static/browser-warning.js
