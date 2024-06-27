@@ -5,7 +5,7 @@ GH_ACCOUNT=		leohemsted
 GH_PROJECT=		smartypants.py
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 PKGNAME=		py-smartypants-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-MODPY_PYTEST=		Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3
