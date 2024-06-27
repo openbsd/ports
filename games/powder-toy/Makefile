@@ -34,4 +34,8 @@ CONFIGURE_ENV +=	LIBRARY_PATH=/usr/local/lib LDFLAGS="${LDFLAGS}"
 CFLAGS +=		-I/usr/local/include
 LDFLAGS +=		-lexecinfo
 
+.if ${MACHINE_ARCH:Mi386}
+CXXFLAGS +=            -msse2
+.endif
+
 .include <bsd.port.mk>
