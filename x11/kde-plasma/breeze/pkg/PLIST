@@ -410,7 +410,7 @@ share/wallpapers/Next/contents/images_dark/440x247.png
 share/wallpapers/Next/contents/images_dark/5120x2880.png
 share/wallpapers/Next/contents/images_dark/720x1440.png
 share/wallpapers/Next/metadata.json
+@tag gtk-update-icon-cache %D/share/icons/Breeze_Light
 @tag gtk-update-icon-cache %D/share/icons/breeze_cursors
-@tag gtk-update-icon-cache %D/share/icons/Breeze_Snow
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
