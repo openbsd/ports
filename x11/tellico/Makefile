@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.5.3
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	x11
 
@@ -45,6 +45,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \
+		converters/libiconv \
 		devel/kf5/attica \
 		devel/kf5/karchive \
 		devel/kf5/kauth \
