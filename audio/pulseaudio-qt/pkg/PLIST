@@ -1,3 +1,4 @@
+include/KF6/
 include/KF6/KF6PulseAudioQt/
 include/KF6/KF6PulseAudioQt/PulseAudioQt/
 include/KF6/KF6PulseAudioQt/PulseAudioQt/Card
