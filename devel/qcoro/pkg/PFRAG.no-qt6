@@ -120,12 +120,11 @@ lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfig.cmake
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfigVersion.cmake
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsTargets.cmake
-@static-lib lib/libQCoro5Core.a
-@static-lib lib/libQCoro5DBus.a
-@static-lib lib/libQCoro5Network.a
-@static-lib lib/libQCoro5Qml.a
-@static-lib lib/libQCoro5Quick.a
-@static-lib lib/libQCoro5WebSockets.a
+@lib lib/libQCoro5DBus.so.${LIBQCoro5DBus_VERSION}
+@lib lib/libQCoro5Network.so.${LIBQCoro5Network_VERSION}
+@lib lib/libQCoro5Qml.so.${LIBQCoro5Qml_VERSION}
+@lib lib/libQCoro5Quick.so.${LIBQCoro5Quick_VERSION}
+@lib lib/libQCoro5WebSockets.so.${LIBQCoro5WebSockets_VERSION}
 mkspecs/
 mkspecs/modules/
 mkspecs/modules/qt_QCoroCore.pri

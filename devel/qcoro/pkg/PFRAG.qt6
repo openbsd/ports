@@ -120,12 +120,12 @@ lib/cmake/QCoro6WebSockets/QCoro6WebSocketsConfig.cmake
 lib/cmake/QCoro6WebSockets/QCoro6WebSocketsConfigVersion.cmake
 lib/cmake/QCoro6WebSockets/QCoro6WebSocketsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QCoro6WebSockets/QCoro6WebSocketsTargets.cmake
-@static-lib lib/libQCoro6Core.a
-@static-lib lib/libQCoro6DBus.a
-@static-lib lib/libQCoro6Network.a
-@static-lib lib/libQCoro6Qml.a
-@static-lib lib/libQCoro6Quick.a
-@static-lib lib/libQCoro6WebSockets.a
+@lib lib/libQCoro6Core.so.${LIBQCoro6Core_VERSION}
+@lib lib/libQCoro6DBus.so.${LIBQCoro6DBus_VERSION}
+@lib lib/libQCoro6Network.so.${LIBQCoro6Network_VERSION}
+@lib lib/libQCoro6Qml.so.${LIBQCoro6Qml_VERSION}
+@lib lib/libQCoro6Quick.so.${LIBQCoro6Quick_VERSION}
+@lib lib/libQCoro6WebSockets.so.${LIBQCoro6WebSockets_VERSION}
 lib/qt6/
 lib/qt6/mkspecs/
 lib/qt6/mkspecs/modules/
