@@ -1,2 +1,3 @@
 include/quiche.h
 @static-lib lib/libquiche.a
+lib/pkgconfig/quiche.pc
