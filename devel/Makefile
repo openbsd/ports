@@ -1351,7 +1351,6 @@
      SUBDIR += py-automat,python3
      SUBDIR += py-babel,python3
      SUBDIR += py-backcall,python3
-     SUBDIR += py-backports-strenum,python3
      SUBDIR += py-bencode,python3
      SUBDIR += py-beniget,python3
      SUBDIR += py-binaryornot,python3

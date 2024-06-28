@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1641 2024/06/13 15:34:12 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1642 2024/06/28 08:40:00 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1962,6 +1962,7 @@ setup_obsolete_reason(
 	3 => 'lightly',
 	5 => 'sofia-sip',
 	3 => 'pgfouine',
+	6 => 'py3-backports-strenum',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
