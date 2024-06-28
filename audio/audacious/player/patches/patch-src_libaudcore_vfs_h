@@ -8,4 +8,4 @@ Index: src/libaudcore/vfs.h
 +    VFS_SEEK_UNK = -1,
      VFS_SEEK_SET = 0,
      VFS_SEEK_CUR = 1,
-     VFS_SEEK_END = 2
+     VFS_SEEK_END = 2,

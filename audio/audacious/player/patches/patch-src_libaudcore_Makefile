@@ -5,5 +5,5 @@ Index: src/libaudcore/Makefile
 -SHARED_LIB = ${LIB_PREFIX}audcore${LIB_SUFFIX}
 +SHARED_LIB = ${LIB_PREFIX}audcore.so.${LIBaudcore_VERSION}
  LIB_MAJOR = 5
- LIB_MINOR = 4
+ LIB_MINOR = 5
  

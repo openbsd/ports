@@ -5,6 +5,6 @@ Index: src/libaudqt/Makefile
 -SHARED_LIB = ${LIB_PREFIX}audqt${LIB_SUFFIX}
 +SHARED_LIB = ${LIB_PREFIX}audqt.so.${LIBaudqt_VERSION}
 +
- LIB_MAJOR = 2
- LIB_MINOR = 4
+ LIB_MAJOR = 3
+ LIB_MINOR = 0
  

@@ -11,6 +11,7 @@ lib/audacious/Container/
 @so lib/audacious/Container/pls.so
 @so lib/audacious/Container/xspf.so
 lib/audacious/Effect/
+@so lib/audacious/Effect/background_music.so
 @so lib/audacious/Effect/bitcrusher.so
 @so lib/audacious/Effect/compressor.so
 @so lib/audacious/Effect/crossfade.so
@@ -27,7 +28,7 @@ lib/audacious/General/
 @so lib/audacious/General/albumart-qt.so
 @so lib/audacious/General/cd-menu-items.so
 @so lib/audacious/General/delete-files.so
-@so lib/audacious/General/lyricwiki-qt.so
+@so lib/audacious/General/lyrics-qt.so
 @so lib/audacious/General/mpris2.so
 @so lib/audacious/General/notify.so
 @so lib/audacious/General/playlist-manager-qt.so

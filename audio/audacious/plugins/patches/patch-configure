@@ -5,7 +5,7 @@ polluted very early on, breaking most of the checks using AC_CHECK_LIB.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11758,8 +11758,6 @@ printf "%s\n" "yes" >&6; }
+@@ -11977,8 +11977,6 @@ printf "%s\n" "yes" >&6; }
  
  fi
  
@@ -14,7 +14,7 @@ Index: configure
  
  
  if test $HAVE_DARWIN = yes ; then
-@@ -17192,6 +17190,8 @@ then :
+@@ -17629,6 +17627,8 @@ then :
  
  fi
  

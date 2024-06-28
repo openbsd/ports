@@ -1,7 +1,6 @@
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
-REVISION =		1
 
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
@@ -11,8 +10,8 @@ WANTLIB += Qt5Widgets Qt5X11Extras X11 adplug audcore audqt audtag
 WANTLIB += avcodec avformat avutil binio cddb cdio cdio_cdda cue
 WANTLIB += curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += iconv intl m mms modplug mp3lame mpg123 neon notify
-WANTLIB += ogg opus opusfile samplerate sndfile sndio soxr vorbis
-WANTLIB += vorbisenc vorbisfile wavpack xml2 z
+WANTLIB += ogg opusfile samplerate sndfile sndio soxr vorbis vorbisenc
+WANTLIB += vorbisfile wavpack xml2 z
 
 # needed for the gio plugin
 RUN_DEPENDS =		x11/gnome/gvfs
@@ -30,7 +29,6 @@ LIB_DEPENDS =		audio/adplug \
 			audio/libsoxr \
 			audio/libvorbis \
 			audio/mpg123 \
-			audio/opus \
 			audio/opusfile \
 			audio/wavpack \
 			devel/libnotify>=0.7.2 \

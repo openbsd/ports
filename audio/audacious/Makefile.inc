@@ -1,5 +1,5 @@
 # Do not forget to sync meta/audacious
-VERSION =	4.3.1
+VERSION =	4.4
 
 CATEGORIES =	audio multimedia
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS +=	devel/gettext,-tools
 
 MODULES +=		x11/qt5
 CONFIGURE_ARGS +=	--disable-gtk \
-			--enable-qt
+			--enable-qt5
 
 USE_GMAKE =		Yes
 
