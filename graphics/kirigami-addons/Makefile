@@ -1,6 +1,6 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-VERSION =	1.2.0
+VERSION =	1.2.1
 DISTNAME =	kirigami-addons-${VERSION}
 
 CATEGORIES =	graphics
