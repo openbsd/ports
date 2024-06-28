@@ -20,7 +20,7 @@ Index: CMakeLists.txt
  if (CMAKE_C_COMPILER_ID STREQUAL "GNU")
    # extra options specific to gcc/g++
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wformat-overflow=2 -Wformat-truncation=2")
-@@ -245,7 +245,7 @@ if(DL_LIBRARY)
+@@ -256,7 +256,7 @@ if(DL_LIBRARY)
    list(APPEND EXTRA_LIBS dl)
  endif()
  
