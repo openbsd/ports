@@ -27,15 +27,9 @@ PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
 
-PLASMA_VERSION =	6.0.5
+PLASMA_VERSION =	6.1.1
 PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
-
-REVISION =		0
-REVISION-development =	0
-REVISION-plasma =	1
-REVISION-graphics =	1
-REVISION-plasma-extras = 0
 
 MULTI_PACKAGES +=	-main \
 			-games \
