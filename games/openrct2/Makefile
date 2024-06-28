@@ -15,6 +15,7 @@ DISTFILES.c = 	opensfx-${OPENSFX_V}{opensound}.zip
 DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://openrct2.org/
