@@ -16,7 +16,7 @@ BUILD_DEPENDS =	www/libsass \
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		x11/xsettingsd
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/glib2 \
 		devel/harfbuzz \
 		devel/kf6/kcolorscheme \

@@ -9,6 +9,7 @@ SHARED_LIBS +=  taskmanager               1.0 # 0.0
 SHARED_LIBS +=  weather_ion               1.0 # 0.0
 SHARED_LIBS +=  kmpris                    0.0 # 0.0
 SHARED_LIBS +=  kworkspace6               0.0 # 0.0
+SHARED_LIBS +=  batterycontrol            0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KExiv2Qt6 KF6Archive KF6Attica
 WANTLIB += KF6AuthCore KF6Baloo KF6Bookmarks KF6CalendarEvents
@@ -27,16 +28,15 @@ WANTLIB += KF6UnitConversion KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KScreenLocker KSysGuardFormatter
 WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
 WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
-WANTLIB += PlasmaActivitiesStats PlasmaQuick Qt6Concurrent Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Sql
-WANTLIB += Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xau
-WANTLIB += Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
-WANTLIB += fontconfig freetype icui18n icuuc  m phonon4qt6
-WANTLIB += phonon4qt6experimental processcore qalculate udev wayland-client
-WANTLIB += wayland-cursor xcb xcb-composite xcb-damage xcb-image
-WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes
-WANTLIB += xkbcommon z
+WANTLIB += PlasmaActivitiesStats PlasmaQuick QCoro6Core QCoro6DBus
+WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
+WANTLIB += Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM
+WANTLIB += X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
+WANTLIB += fontconfig freetype icui18n icuuc m phonon4qt6 processcore
+WANTLIB += qalculate udev wayland-client wayland-cursor xcb xcb-composite
+WANTLIB += xcb-damage xcb-image xcb-randr xcb-render xcb-shape
+WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon z
 
 MODKDE5_TRANSLATIONS = Yes
 MODKDE5_ICON_CACHE = Yes
@@ -102,6 +102,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
+		devel/qcoro,qt6 \
 		math/libqalculate \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \

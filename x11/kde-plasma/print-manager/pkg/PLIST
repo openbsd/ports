@@ -20,6 +20,7 @@ share/applications/org.kde.ConfigurePrinter.desktop
 share/applications/org.kde.PrintQueue.desktop
 share/applications/org.kde.kde-add-printer.desktop
 share/knotifications6/printmanager.notifyrc
+share/locale/ar/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/kcm_printer_manager.mo
@@ -27,6 +28,7 @@ share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ast/LC_MESSAGES/print-manager.mo
 share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/az/LC_MESSAGES/print-manager.mo
+share/locale/be/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/be/LC_MESSAGES/print-manager.mo
 share/locale/bg/LC_MESSAGES/kcm_printer_manager.mo
@@ -50,6 +52,7 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/de/LC_MESSAGES/print-manager.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/el/LC_MESSAGES/print-manager.mo
+share/locale/en_GB/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/en_GB/LC_MESSAGES/print-manager.mo
 share/locale/eo/LC_MESSAGES/kcm_printer_manager.mo
@@ -87,6 +90,7 @@ share/locale/ia/LC_MESSAGES/print-manager.mo
 share/locale/id/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/id/LC_MESSAGES/print-manager.mo
+share/locale/is/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/is/LC_MESSAGES/print-manager.mo
 share/locale/it/LC_MESSAGES/kcm_printer_manager.mo
@@ -105,6 +109,7 @@ share/locale/km/LC_MESSAGES/print-manager.mo
 share/locale/ko/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ko/LC_MESSAGES/print-manager.mo
+share/locale/lt/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/lt/LC_MESSAGES/print-manager.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
@@ -131,6 +136,7 @@ share/locale/pt/LC_MESSAGES/print-manager.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/pt_BR/LC_MESSAGES/print-manager.mo
+share/locale/ro/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ro/LC_MESSAGES/print-manager.mo
 share/locale/ru/LC_MESSAGES/kcm_printer_manager.mo
@@ -150,6 +156,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.printman
 share/locale/sr@ijekavianlatin/LC_MESSAGES/print-manager.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/sr@latin/LC_MESSAGES/print-manager.mo
+share/locale/sv/LC_MESSAGES/kcm_printer_manager.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/sv/LC_MESSAGES/print-manager.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo

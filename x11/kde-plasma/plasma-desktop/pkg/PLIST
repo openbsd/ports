@@ -65,12 +65,11 @@ lib/qt6/qml/org/kde/plasma/private/taskmanager/
 @so lib/qt6/qml/org/kde/plasma/private/taskmanager/libtaskmanagerplugin.so
 lib/qt6/qml/org/kde/plasma/private/taskmanager/qmldir
 lib/qt6/qml/org/kde/plasma/private/trash/
+lib/qt6/qml/org/kde/plasma/private/trash/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/plasma/private/trash/libtrashplugin.so
 lib/qt6/qml/org/kde/plasma/private/trash/qmldir
+lib/qt6/qml/org/kde/plasma/private/trash/trashplugin.qmltypes
 lib/qt6/qml/org/kde/private/desktopcontainment/
-lib/qt6/qml/org/kde/private/desktopcontainment/desktop/
-@so lib/qt6/qml/org/kde/private/desktopcontainment/desktop/libdesktopplugin.so
-lib/qt6/qml/org/kde/private/desktopcontainment/desktop/qmldir
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/
 @so lib/qt6/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir
@@ -111,6 +110,7 @@ share/config.kcfg/kcmaccessibilitybell.kcfg
 share/config.kcfg/kcmaccessibilitykeyboard.kcfg
 share/config.kcfg/kcmaccessibilitymouse.kcfg
 share/config.kcfg/kcmaccessibilityscreenreader.kcfg
+share/config.kcfg/kcmaccessibilityshakecursor.kcfg
 share/config.kcfg/krunnersettingsbase.kcfg
 share/config.kcfg/landingpage_kdeglobalssettings.kcfg
 share/config.kcfg/splashscreensettings.kcfg
@@ -1135,9 +1135,9 @@ share/locale/af/LC_MESSAGES/kcm_access.mo
 share/locale/af/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/af/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/af/LC_MESSAGES/kcm_kded.mo
+share/locale/af/LC_MESSAGES/kcm_keyboard.mo
 share/locale/af/LC_MESSAGES/kcm_smserver.mo
 share/locale/af/LC_MESSAGES/kcmkclock.mo
-share/locale/af/LC_MESSAGES/kcmkeyboard.mo
 share/locale/af/LC_MESSAGES/kcmmouse.mo
 share/locale/af/LC_MESSAGES/knetattach.mo
 share/locale/af/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1148,7 +1148,9 @@ share/locale/ar/LC_MESSAGES/kcm_baloofile.mo
 share/locale/ar/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ar/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ar/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/ar/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ar/LC_MESSAGES/kcm_kded.mo
+share/locale/ar/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ar/LC_MESSAGES/kcm_keys.mo
 share/locale/ar/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ar/LC_MESSAGES/kcm_landingpage.mo
@@ -1162,7 +1164,6 @@ share/locale/ar/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ar/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ar/LC_MESSAGES/kcm_workspace.mo
 share/locale/ar/LC_MESSAGES/kcmkclock.mo
-share/locale/ar/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ar/LC_MESSAGES/kcmmouse.mo
 share/locale/ar/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ar/LC_MESSAGES/knetattach.mo
@@ -1182,7 +1183,6 @@ share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ar/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ar/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ar/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ar/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/as/LC_MESSAGES/kcm_access.mo
@@ -1195,6 +1195,7 @@ share/locale/ast/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ast/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ast/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ast/LC_MESSAGES/kcm_kded.mo
+share/locale/ast/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ast/LC_MESSAGES/kcm_keys.mo
 share/locale/ast/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ast/LC_MESSAGES/kcm_landingpage.mo
@@ -1208,7 +1209,6 @@ share/locale/ast/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ast/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ast/LC_MESSAGES/kcm_workspace.mo
 share/locale/ast/LC_MESSAGES/kcmkclock.mo
-share/locale/ast/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ast/LC_MESSAGES/kcmmouse.mo
 share/locale/ast/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ast/LC_MESSAGES/knetattach.mo
@@ -1228,7 +1228,6 @@ share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ast/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ast/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ast/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ast/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ast/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ast/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/az/LC_MESSAGES/kaccess.mo
@@ -1239,6 +1238,7 @@ share/locale/az/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/az/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/az/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/az/LC_MESSAGES/kcm_kded.mo
+share/locale/az/LC_MESSAGES/kcm_keyboard.mo
 share/locale/az/LC_MESSAGES/kcm_keys.mo
 share/locale/az/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/az/LC_MESSAGES/kcm_landingpage.mo
@@ -1252,7 +1252,6 @@ share/locale/az/LC_MESSAGES/kcm_touchpad.mo
 share/locale/az/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/az/LC_MESSAGES/kcm_workspace.mo
 share/locale/az/LC_MESSAGES/kcmkclock.mo
-share/locale/az/LC_MESSAGES/kcmkeyboard.mo
 share/locale/az/LC_MESSAGES/kcmmouse.mo
 share/locale/az/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/az/LC_MESSAGES/knetattach.mo
@@ -1272,7 +1271,6 @@ share/locale/az/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/az/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/az/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/az/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/az/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/az/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/az/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/be/LC_MESSAGES/kaccess.mo
@@ -1282,7 +1280,9 @@ share/locale/be/LC_MESSAGES/kcm_baloofile.mo
 share/locale/be/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/be/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/be/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/be/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/be/LC_MESSAGES/kcm_kded.mo
+share/locale/be/LC_MESSAGES/kcm_keyboard.mo
 share/locale/be/LC_MESSAGES/kcm_keys.mo
 share/locale/be/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/be/LC_MESSAGES/kcm_landingpage.mo
@@ -1296,7 +1296,6 @@ share/locale/be/LC_MESSAGES/kcm_touchpad.mo
 share/locale/be/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/be/LC_MESSAGES/kcm_workspace.mo
 share/locale/be/LC_MESSAGES/kcmkclock.mo
-share/locale/be/LC_MESSAGES/kcmkeyboard.mo
 share/locale/be/LC_MESSAGES/kcmmouse.mo
 share/locale/be/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/be/LC_MESSAGES/knetattach.mo
@@ -1316,12 +1315,11 @@ share/locale/be/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/be/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/be/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/be/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/be/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/be/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/be/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/be@latin/LC_MESSAGES/kcm_desktoppaths.mo
+share/locale/be@latin/LC_MESSAGES/kcm_keyboard.mo
 share/locale/be@latin/LC_MESSAGES/kcmkclock.mo
-share/locale/be@latin/LC_MESSAGES/kcmkeyboard.mo
 share/locale/be@latin/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/be@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/be@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
@@ -1335,6 +1333,7 @@ share/locale/bg/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bg/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/bg/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/bg/LC_MESSAGES/kcm_kded.mo
+share/locale/bg/LC_MESSAGES/kcm_keyboard.mo
 share/locale/bg/LC_MESSAGES/kcm_keys.mo
 share/locale/bg/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/bg/LC_MESSAGES/kcm_landingpage.mo
@@ -1348,7 +1347,6 @@ share/locale/bg/LC_MESSAGES/kcm_touchpad.mo
 share/locale/bg/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/bg/LC_MESSAGES/kcm_workspace.mo
 share/locale/bg/LC_MESSAGES/kcmkclock.mo
-share/locale/bg/LC_MESSAGES/kcmkeyboard.mo
 share/locale/bg/LC_MESSAGES/kcmmouse.mo
 share/locale/bg/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/bg/LC_MESSAGES/knetattach.mo
@@ -1368,7 +1366,6 @@ share/locale/bg/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/bg/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/bg/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/bg/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/bg/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/bg/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/bn/LC_MESSAGES/kaccess.mo
@@ -1376,17 +1373,17 @@ share/locale/bn/LC_MESSAGES/kcm_access.mo
 share/locale/bn/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/bn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bn/LC_MESSAGES/kcm_kded.mo
+share/locale/bn/LC_MESSAGES/kcm_keyboard.mo
 share/locale/bn/LC_MESSAGES/kcm_smserver.mo
 share/locale/bn/LC_MESSAGES/kcmkclock.mo
-share/locale/bn/LC_MESSAGES/kcmkeyboard.mo
 share/locale/bn/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/bn_IN/LC_MESSAGES/kaccess.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_access.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_kded.mo
+share/locale/bn_IN/LC_MESSAGES/kcm_keyboard.mo
 share/locale/bn_IN/LC_MESSAGES/kcm_smserver.mo
 share/locale/bn_IN/LC_MESSAGES/kcmkclock.mo
-share/locale/bn_IN/LC_MESSAGES/kcmkeyboard.mo
 share/locale/bn_IN/LC_MESSAGES/knetattach.mo
 share/locale/bn_IN/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/bn_IN/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
@@ -1397,9 +1394,9 @@ share/locale/br/LC_MESSAGES/kcm_access.mo
 share/locale/br/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/br/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/br/LC_MESSAGES/kcm_kded.mo
+share/locale/br/LC_MESSAGES/kcm_keyboard.mo
 share/locale/br/LC_MESSAGES/kcm_smserver.mo
 share/locale/br/LC_MESSAGES/kcmkclock.mo
-share/locale/br/LC_MESSAGES/kcmkeyboard.mo
 share/locale/br/LC_MESSAGES/kcmmouse.mo
 share/locale/br/LC_MESSAGES/knetattach.mo
 share/locale/br/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1410,6 +1407,7 @@ share/locale/bs/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/bs/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/bs/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/bs/LC_MESSAGES/kcm_kded.mo
+share/locale/bs/LC_MESSAGES/kcm_keyboard.mo
 share/locale/bs/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/bs/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/bs/LC_MESSAGES/kcm_smserver.mo
@@ -1418,7 +1416,6 @@ share/locale/bs/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/bs/LC_MESSAGES/kcm_touchpad.mo
 share/locale/bs/LC_MESSAGES/kcm_workspace.mo
 share/locale/bs/LC_MESSAGES/kcmkclock.mo
-share/locale/bs/LC_MESSAGES/kcmkeyboard.mo
 share/locale/bs/LC_MESSAGES/kcmmouse.mo
 share/locale/bs/LC_MESSAGES/knetattach.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1433,7 +1430,6 @@ share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/bs/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/bs/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/bs/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/bs/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ca/LC_MESSAGES/kaccess.mo
 share/locale/ca/LC_MESSAGES/kcm_access.mo
 share/locale/ca/LC_MESSAGES/kcm_activities.mo
@@ -1443,6 +1439,7 @@ share/locale/ca/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ca/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ca/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ca/LC_MESSAGES/kcm_kded.mo
+share/locale/ca/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ca/LC_MESSAGES/kcm_keys.mo
 share/locale/ca/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ca/LC_MESSAGES/kcm_landingpage.mo
@@ -1456,11 +1453,11 @@ share/locale/ca/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ca/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ca/LC_MESSAGES/kcm_workspace.mo
 share/locale/ca/LC_MESSAGES/kcmkclock.mo
-share/locale/ca/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ca/LC_MESSAGES/kcmmouse.mo
 share/locale/ca/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ca/LC_MESSAGES/knetattach.mo
 share/locale/ca/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/ca/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -1476,7 +1473,6 @@ share/locale/ca/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ca/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ca/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ca/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ca/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ca/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ca@valencia/LC_MESSAGES/kaccess.mo
@@ -1488,6 +1484,7 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_kded.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_keys.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_landingpage.mo
@@ -1501,11 +1498,11 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_workspace.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmkclock.mo
-share/locale/ca@valencia/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmmouse.mo
 share/locale/ca@valencia/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ca@valencia/LC_MESSAGES/knetattach.mo
 share/locale/ca@valencia/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/ca@valencia/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -1521,7 +1518,6 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ca@valencia/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/cs/LC_MESSAGES/kaccess.mo
@@ -1533,6 +1529,7 @@ share/locale/cs/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/cs/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/cs/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/cs/LC_MESSAGES/kcm_kded.mo
+share/locale/cs/LC_MESSAGES/kcm_keyboard.mo
 share/locale/cs/LC_MESSAGES/kcm_keys.mo
 share/locale/cs/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/cs/LC_MESSAGES/kcm_landingpage.mo
@@ -1546,7 +1543,6 @@ share/locale/cs/LC_MESSAGES/kcm_touchpad.mo
 share/locale/cs/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/cs/LC_MESSAGES/kcm_workspace.mo
 share/locale/cs/LC_MESSAGES/kcmkclock.mo
-share/locale/cs/LC_MESSAGES/kcmkeyboard.mo
 share/locale/cs/LC_MESSAGES/kcmmouse.mo
 share/locale/cs/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/cs/LC_MESSAGES/knetattach.mo
@@ -1566,16 +1562,15 @@ share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/cs/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/cs/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/cs/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/cs/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/cs/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/csb/LC_MESSAGES/kaccess.mo
 share/locale/csb/LC_MESSAGES/kcm_access.mo
 share/locale/csb/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/csb/LC_MESSAGES/kcm_kded.mo
+share/locale/csb/LC_MESSAGES/kcm_keyboard.mo
 share/locale/csb/LC_MESSAGES/kcm_smserver.mo
 share/locale/csb/LC_MESSAGES/kcmkclock.mo
-share/locale/csb/LC_MESSAGES/kcmkeyboard.mo
 share/locale/csb/LC_MESSAGES/knetattach.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/csb/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
@@ -1587,9 +1582,9 @@ share/locale/cy/LC_MESSAGES/kcm_access.mo
 share/locale/cy/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/cy/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/cy/LC_MESSAGES/kcm_kded.mo
+share/locale/cy/LC_MESSAGES/kcm_keyboard.mo
 share/locale/cy/LC_MESSAGES/kcm_smserver.mo
 share/locale/cy/LC_MESSAGES/kcmkclock.mo
-share/locale/cy/LC_MESSAGES/kcmkeyboard.mo
 share/locale/cy/LC_MESSAGES/kcmmouse.mo
 share/locale/cy/LC_MESSAGES/knetattach.mo
 share/locale/cy/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1601,6 +1596,7 @@ share/locale/da/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/da/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/da/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/da/LC_MESSAGES/kcm_kded.mo
+share/locale/da/LC_MESSAGES/kcm_keyboard.mo
 share/locale/da/LC_MESSAGES/kcm_keys.mo
 share/locale/da/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/da/LC_MESSAGES/kcm_plasmasearch.mo
@@ -1610,7 +1606,6 @@ share/locale/da/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/da/LC_MESSAGES/kcm_touchpad.mo
 share/locale/da/LC_MESSAGES/kcm_workspace.mo
 share/locale/da/LC_MESSAGES/kcmkclock.mo
-share/locale/da/LC_MESSAGES/kcmkeyboard.mo
 share/locale/da/LC_MESSAGES/kcmmouse.mo
 share/locale/da/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/da/LC_MESSAGES/knetattach.mo
@@ -1629,7 +1624,6 @@ share/locale/da/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/da/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/da/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/da/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/da/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/da/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/da/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/de/LC_MESSAGES/kaccess.mo
@@ -1641,6 +1635,7 @@ share/locale/de/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/de/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/de/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/de/LC_MESSAGES/kcm_kded.mo
+share/locale/de/LC_MESSAGES/kcm_keyboard.mo
 share/locale/de/LC_MESSAGES/kcm_keys.mo
 share/locale/de/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/de/LC_MESSAGES/kcm_landingpage.mo
@@ -1654,7 +1649,6 @@ share/locale/de/LC_MESSAGES/kcm_touchpad.mo
 share/locale/de/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/de/LC_MESSAGES/kcm_workspace.mo
 share/locale/de/LC_MESSAGES/kcmkclock.mo
-share/locale/de/LC_MESSAGES/kcmkeyboard.mo
 share/locale/de/LC_MESSAGES/kcmmouse.mo
 share/locale/de/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/de/LC_MESSAGES/knetattach.mo
@@ -1674,7 +1668,6 @@ share/locale/de/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/de/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/de/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/de/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/de/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/de/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/de/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/el/LC_MESSAGES/kaccess.mo
@@ -1685,6 +1678,7 @@ share/locale/el/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/el/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/el/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/el/LC_MESSAGES/kcm_kded.mo
+share/locale/el/LC_MESSAGES/kcm_keyboard.mo
 share/locale/el/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/el/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/el/LC_MESSAGES/kcm_smserver.mo
@@ -1693,7 +1687,6 @@ share/locale/el/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/el/LC_MESSAGES/kcm_touchpad.mo
 share/locale/el/LC_MESSAGES/kcm_workspace.mo
 share/locale/el/LC_MESSAGES/kcmkclock.mo
-share/locale/el/LC_MESSAGES/kcmkeyboard.mo
 share/locale/el/LC_MESSAGES/kcmmouse.mo
 share/locale/el/LC_MESSAGES/knetattach.mo
 share/locale/el/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1709,7 +1702,6 @@ share/locale/el/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/el/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/el/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/el/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/el/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/el/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/en_GB/LC_MESSAGES/kaccess.mo
 share/locale/en_GB/LC_MESSAGES/kcm_access.mo
@@ -1718,7 +1710,9 @@ share/locale/en_GB/LC_MESSAGES/kcm_baloofile.mo
 share/locale/en_GB/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/en_GB/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/en_GB/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/en_GB/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kded.mo
+share/locale/en_GB/LC_MESSAGES/kcm_keyboard.mo
 share/locale/en_GB/LC_MESSAGES/kcm_keys.mo
 share/locale/en_GB/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/en_GB/LC_MESSAGES/kcm_landingpage.mo
@@ -1732,11 +1726,11 @@ share/locale/en_GB/LC_MESSAGES/kcm_touchpad.mo
 share/locale/en_GB/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/en_GB/LC_MESSAGES/kcm_workspace.mo
 share/locale/en_GB/LC_MESSAGES/kcmkclock.mo
-share/locale/en_GB/LC_MESSAGES/kcmkeyboard.mo
 share/locale/en_GB/LC_MESSAGES/kcmmouse.mo
 share/locale/en_GB/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/en_GB/LC_MESSAGES/knetattach.mo
 share/locale/en_GB/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/en_GB/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -1752,7 +1746,6 @@ share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/en_GB/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/en_GB/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/en_GB/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/en_GB/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/en_GB/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/eo/LC_MESSAGES/kaccess.mo
@@ -1764,6 +1757,7 @@ share/locale/eo/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/eo/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/eo/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/eo/LC_MESSAGES/kcm_kded.mo
+share/locale/eo/LC_MESSAGES/kcm_keyboard.mo
 share/locale/eo/LC_MESSAGES/kcm_keys.mo
 share/locale/eo/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/eo/LC_MESSAGES/kcm_landingpage.mo
@@ -1777,7 +1771,6 @@ share/locale/eo/LC_MESSAGES/kcm_touchpad.mo
 share/locale/eo/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/eo/LC_MESSAGES/kcm_workspace.mo
 share/locale/eo/LC_MESSAGES/kcmkclock.mo
-share/locale/eo/LC_MESSAGES/kcmkeyboard.mo
 share/locale/eo/LC_MESSAGES/kcmmouse.mo
 share/locale/eo/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/eo/LC_MESSAGES/knetattach.mo
@@ -1797,7 +1790,6 @@ share/locale/eo/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/eo/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/eo/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/eo/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/eo/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/es/LC_MESSAGES/kaccess.mo
@@ -1809,6 +1801,7 @@ share/locale/es/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/es/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/es/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/es/LC_MESSAGES/kcm_kded.mo
+share/locale/es/LC_MESSAGES/kcm_keyboard.mo
 share/locale/es/LC_MESSAGES/kcm_keys.mo
 share/locale/es/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/es/LC_MESSAGES/kcm_landingpage.mo
@@ -1822,11 +1815,11 @@ share/locale/es/LC_MESSAGES/kcm_touchpad.mo
 share/locale/es/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/es/LC_MESSAGES/kcm_workspace.mo
 share/locale/es/LC_MESSAGES/kcmkclock.mo
-share/locale/es/LC_MESSAGES/kcmkeyboard.mo
 share/locale/es/LC_MESSAGES/kcmmouse.mo
 share/locale/es/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/es/LC_MESSAGES/knetattach.mo
 share/locale/es/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/es/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -1842,7 +1835,6 @@ share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/es/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/es/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/es/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/es/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/es/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/es/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/et/LC_MESSAGES/kaccess.mo
@@ -1853,6 +1845,7 @@ share/locale/et/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/et/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/et/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/et/LC_MESSAGES/kcm_kded.mo
+share/locale/et/LC_MESSAGES/kcm_keyboard.mo
 share/locale/et/LC_MESSAGES/kcm_keys.mo
 share/locale/et/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/et/LC_MESSAGES/kcm_landingpage.mo
@@ -1864,7 +1857,6 @@ share/locale/et/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/et/LC_MESSAGES/kcm_touchpad.mo
 share/locale/et/LC_MESSAGES/kcm_workspace.mo
 share/locale/et/LC_MESSAGES/kcmkclock.mo
-share/locale/et/LC_MESSAGES/kcmkeyboard.mo
 share/locale/et/LC_MESSAGES/kcmmouse.mo
 share/locale/et/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/et/LC_MESSAGES/knetattach.mo
@@ -1883,7 +1875,6 @@ share/locale/et/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/et/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/et/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/et/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/et/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/et/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/et/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/eu/LC_MESSAGES/kaccess.mo
@@ -1895,6 +1886,7 @@ share/locale/eu/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/eu/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/eu/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/eu/LC_MESSAGES/kcm_kded.mo
+share/locale/eu/LC_MESSAGES/kcm_keyboard.mo
 share/locale/eu/LC_MESSAGES/kcm_keys.mo
 share/locale/eu/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/eu/LC_MESSAGES/kcm_landingpage.mo
@@ -1908,7 +1900,6 @@ share/locale/eu/LC_MESSAGES/kcm_touchpad.mo
 share/locale/eu/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/eu/LC_MESSAGES/kcm_workspace.mo
 share/locale/eu/LC_MESSAGES/kcmkclock.mo
-share/locale/eu/LC_MESSAGES/kcmkeyboard.mo
 share/locale/eu/LC_MESSAGES/kcmmouse.mo
 share/locale/eu/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/eu/LC_MESSAGES/knetattach.mo
@@ -1928,7 +1919,6 @@ share/locale/eu/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/eu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/eu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/eu/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/eu/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/eu/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/fa/LC_MESSAGES/kaccess.mo
@@ -1937,10 +1927,10 @@ share/locale/fa/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/fa/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fa/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fa/LC_MESSAGES/kcm_kded.mo
+share/locale/fa/LC_MESSAGES/kcm_keyboard.mo
 share/locale/fa/LC_MESSAGES/kcm_smserver.mo
 share/locale/fa/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fa/LC_MESSAGES/kcmkclock.mo
-share/locale/fa/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fa/LC_MESSAGES/kcmmouse.mo
 share/locale/fa/LC_MESSAGES/knetattach.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -1956,6 +1946,7 @@ share/locale/fi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fi/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/fi/LC_MESSAGES/kcm_kded.mo
+share/locale/fi/LC_MESSAGES/kcm_keyboard.mo
 share/locale/fi/LC_MESSAGES/kcm_keys.mo
 share/locale/fi/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/fi/LC_MESSAGES/kcm_landingpage.mo
@@ -1969,7 +1960,6 @@ share/locale/fi/LC_MESSAGES/kcm_touchpad.mo
 share/locale/fi/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/fi/LC_MESSAGES/kcm_workspace.mo
 share/locale/fi/LC_MESSAGES/kcmkclock.mo
-share/locale/fi/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fi/LC_MESSAGES/kcmmouse.mo
 share/locale/fi/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/fi/LC_MESSAGES/knetattach.mo
@@ -1989,7 +1979,6 @@ share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/fi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/fi/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/fi/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/fi/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/fi/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/fr/LC_MESSAGES/kaccess.mo
@@ -2001,6 +1990,7 @@ share/locale/fr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/fr/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/fr/LC_MESSAGES/kcm_kded.mo
+share/locale/fr/LC_MESSAGES/kcm_keyboard.mo
 share/locale/fr/LC_MESSAGES/kcm_keys.mo
 share/locale/fr/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/fr/LC_MESSAGES/kcm_landingpage.mo
@@ -2014,11 +2004,11 @@ share/locale/fr/LC_MESSAGES/kcm_touchpad.mo
 share/locale/fr/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/fr/LC_MESSAGES/kcm_workspace.mo
 share/locale/fr/LC_MESSAGES/kcmkclock.mo
-share/locale/fr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fr/LC_MESSAGES/kcmmouse.mo
 share/locale/fr/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/fr/LC_MESSAGES/knetattach.mo
 share/locale/fr/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/fr/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2034,7 +2024,6 @@ share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/fr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/fr/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/fr/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/fr/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/fy/LC_MESSAGES/kaccess.mo
@@ -2042,10 +2031,10 @@ share/locale/fy/LC_MESSAGES/kcm_access.mo
 share/locale/fy/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/fy/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/fy/LC_MESSAGES/kcm_kded.mo
+share/locale/fy/LC_MESSAGES/kcm_keyboard.mo
 share/locale/fy/LC_MESSAGES/kcm_smserver.mo
 share/locale/fy/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fy/LC_MESSAGES/kcmkclock.mo
-share/locale/fy/LC_MESSAGES/kcmkeyboard.mo
 share/locale/fy/LC_MESSAGES/kcmmouse.mo
 share/locale/fy/LC_MESSAGES/knetattach.mo
 share/locale/fy/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2058,10 +2047,10 @@ share/locale/ga/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ga/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ga/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ga/LC_MESSAGES/kcm_kded.mo
+share/locale/ga/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ga/LC_MESSAGES/kcm_smserver.mo
 share/locale/ga/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ga/LC_MESSAGES/kcmkclock.mo
-share/locale/ga/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ga/LC_MESSAGES/kcmmouse.mo
 share/locale/ga/LC_MESSAGES/knetattach.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2083,6 +2072,8 @@ share/locale/gl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/gl/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/gl/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/gl/LC_MESSAGES/kcm_kded.mo
+share/locale/gl/LC_MESSAGES/kcm_keyboard.mo
+share/locale/gl/LC_MESSAGES/kcm_keys.mo
 share/locale/gl/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/gl/LC_MESSAGES/kcm_landingpage.mo
 share/locale/gl/LC_MESSAGES/kcm_plasmasearch.mo
@@ -2095,11 +2086,11 @@ share/locale/gl/LC_MESSAGES/kcm_touchpad.mo
 share/locale/gl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/gl/LC_MESSAGES/kcm_workspace.mo
 share/locale/gl/LC_MESSAGES/kcmkclock.mo
-share/locale/gl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/gl/LC_MESSAGES/kcmmouse.mo
 share/locale/gl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/gl/LC_MESSAGES/knetattach.mo
 share/locale/gl/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/gl/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2115,7 +2106,6 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/gl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/gl/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/gl/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/gl/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/gu/LC_MESSAGES/kaccess.mo
@@ -2124,10 +2114,10 @@ share/locale/gu/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/gu/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/gu/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/gu/LC_MESSAGES/kcm_kded.mo
+share/locale/gu/LC_MESSAGES/kcm_keyboard.mo
 share/locale/gu/LC_MESSAGES/kcm_smserver.mo
 share/locale/gu/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/gu/LC_MESSAGES/kcmkclock.mo
-share/locale/gu/LC_MESSAGES/kcmkeyboard.mo
 share/locale/gu/LC_MESSAGES/kcmmouse.mo
 share/locale/gu/LC_MESSAGES/knetattach.mo
 share/locale/gu/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2145,6 +2135,7 @@ share/locale/he/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/he/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/he/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/he/LC_MESSAGES/kcm_kded.mo
+share/locale/he/LC_MESSAGES/kcm_keyboard.mo
 share/locale/he/LC_MESSAGES/kcm_keys.mo
 share/locale/he/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/he/LC_MESSAGES/kcm_landingpage.mo
@@ -2158,7 +2149,6 @@ share/locale/he/LC_MESSAGES/kcm_touchpad.mo
 share/locale/he/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/he/LC_MESSAGES/kcm_workspace.mo
 share/locale/he/LC_MESSAGES/kcmkclock.mo
-share/locale/he/LC_MESSAGES/kcmkeyboard.mo
 share/locale/he/LC_MESSAGES/kcmmouse.mo
 share/locale/he/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/he/LC_MESSAGES/knetattach.mo
@@ -2178,7 +2168,6 @@ share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/he/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/he/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/he/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/he/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/he/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/he/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/hi/LC_MESSAGES/kaccess.mo
@@ -2187,6 +2176,7 @@ share/locale/hi/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hi/LC_MESSAGES/kcm_kded.mo
+share/locale/hi/LC_MESSAGES/kcm_keyboard.mo
 share/locale/hi/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/hi/LC_MESSAGES/kcm_landingpage.mo
 share/locale/hi/LC_MESSAGES/kcm_plasmasearch.mo
@@ -2195,7 +2185,6 @@ share/locale/hi/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hi/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/hi/LC_MESSAGES/kcm_tablet.mo
 share/locale/hi/LC_MESSAGES/kcmkclock.mo
-share/locale/hi/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hi/LC_MESSAGES/kcmmouse.mo
 share/locale/hi/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hi/LC_MESSAGES/knetattach.mo
@@ -2213,16 +2202,15 @@ share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
-share/locale/hi/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/hi/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/hne/LC_MESSAGES/kaccess.mo
 share/locale/hne/LC_MESSAGES/kcm_access.mo
 share/locale/hne/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hne/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hne/LC_MESSAGES/kcm_kded.mo
+share/locale/hne/LC_MESSAGES/kcm_keyboard.mo
 share/locale/hne/LC_MESSAGES/kcm_smserver.mo
 share/locale/hne/LC_MESSAGES/kcmkclock.mo
-share/locale/hne/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hne/LC_MESSAGES/kcmmouse.mo
 share/locale/hne/LC_MESSAGES/knetattach.mo
 share/locale/hne/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2235,10 +2223,10 @@ share/locale/hr/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hr/LC_MESSAGES/kcm_kded.mo
+share/locale/hr/LC_MESSAGES/kcm_keyboard.mo
 share/locale/hr/LC_MESSAGES/kcm_smserver.mo
 share/locale/hr/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hr/LC_MESSAGES/kcmkclock.mo
-share/locale/hr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hr/LC_MESSAGES/kcmmouse.mo
 share/locale/hr/LC_MESSAGES/knetattach.mo
 share/locale/hr/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2254,9 +2242,9 @@ share/locale/hsb/LC_MESSAGES/kcm_access.mo
 share/locale/hsb/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/hsb/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hsb/LC_MESSAGES/kcm_kded.mo
+share/locale/hsb/LC_MESSAGES/kcm_keyboard.mo
 share/locale/hsb/LC_MESSAGES/kcm_smserver.mo
 share/locale/hsb/LC_MESSAGES/kcmkclock.mo
-share/locale/hsb/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hsb/LC_MESSAGES/kcmmouse.mo
 share/locale/hsb/LC_MESSAGES/knetattach.mo
 share/locale/hsb/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2274,6 +2262,7 @@ share/locale/hu/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hu/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/hu/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/hu/LC_MESSAGES/kcm_kded.mo
+share/locale/hu/LC_MESSAGES/kcm_keyboard.mo
 share/locale/hu/LC_MESSAGES/kcm_keys.mo
 share/locale/hu/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/hu/LC_MESSAGES/kcm_landingpage.mo
@@ -2287,11 +2276,11 @@ share/locale/hu/LC_MESSAGES/kcm_touchpad.mo
 share/locale/hu/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_workspace.mo
 share/locale/hu/LC_MESSAGES/kcmkclock.mo
-share/locale/hu/LC_MESSAGES/kcmkeyboard.mo
 share/locale/hu/LC_MESSAGES/kcmmouse.mo
 share/locale/hu/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/hu/LC_MESSAGES/knetattach.mo
 share/locale/hu/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/hu/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2307,7 +2296,6 @@ share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/hu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/hu/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/hu/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/hu/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ia/LC_MESSAGES/kaccess.mo
@@ -2319,6 +2307,7 @@ share/locale/ia/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ia/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ia/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ia/LC_MESSAGES/kcm_kded.mo
+share/locale/ia/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ia/LC_MESSAGES/kcm_keys.mo
 share/locale/ia/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ia/LC_MESSAGES/kcm_landingpage.mo
@@ -2332,7 +2321,6 @@ share/locale/ia/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ia/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ia/LC_MESSAGES/kcm_workspace.mo
 share/locale/ia/LC_MESSAGES/kcmkclock.mo
-share/locale/ia/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ia/LC_MESSAGES/kcmmouse.mo
 share/locale/ia/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ia/LC_MESSAGES/knetattach.mo
@@ -2352,7 +2340,6 @@ share/locale/ia/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ia/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ia/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ia/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ia/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ia/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/id/LC_MESSAGES/kaccess.mo
@@ -2363,6 +2350,7 @@ share/locale/id/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/id/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/id/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/id/LC_MESSAGES/kcm_kded.mo
+share/locale/id/LC_MESSAGES/kcm_keyboard.mo
 share/locale/id/LC_MESSAGES/kcm_keys.mo
 share/locale/id/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/id/LC_MESSAGES/kcm_landingpage.mo
@@ -2375,7 +2363,6 @@ share/locale/id/LC_MESSAGES/kcm_tablet.mo
 share/locale/id/LC_MESSAGES/kcm_touchpad.mo
 share/locale/id/LC_MESSAGES/kcm_workspace.mo
 share/locale/id/LC_MESSAGES/kcmkclock.mo
-share/locale/id/LC_MESSAGES/kcmkeyboard.mo
 share/locale/id/LC_MESSAGES/kcmmouse.mo
 share/locale/id/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/id/LC_MESSAGES/knetattach.mo
@@ -2395,16 +2382,14 @@ share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/id/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/id/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/id/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/id/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/id/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/id/LC_MESSAGES/plasmaactivitymanager.mo
+share/locale/ie/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ie/LC_MESSAGES/kcmkclock.mo
-share/locale/ie/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ie/LC_MESSAGES/kcmmouse.mo
 share/locale/ie/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/ie/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ie/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
-share/locale/ie/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ie/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/is/LC_MESSAGES/kaccess.mo
 share/locale/is/LC_MESSAGES/kcm_access.mo
@@ -2413,7 +2398,9 @@ share/locale/is/LC_MESSAGES/kcm_baloofile.mo
 share/locale/is/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/is/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/is/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/is/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/is/LC_MESSAGES/kcm_kded.mo
+share/locale/is/LC_MESSAGES/kcm_keyboard.mo
 share/locale/is/LC_MESSAGES/kcm_keys.mo
 share/locale/is/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/is/LC_MESSAGES/kcm_landingpage.mo
@@ -2425,20 +2412,27 @@ share/locale/is/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/is/LC_MESSAGES/kcm_tablet.mo
 share/locale/is/LC_MESSAGES/kcm_touchpad.mo
 share/locale/is/LC_MESSAGES/kcm_touchscreen.mo
+share/locale/is/LC_MESSAGES/kcm_workspace.mo
 share/locale/is/LC_MESSAGES/kcmkclock.mo
-share/locale/is/LC_MESSAGES/kcmkeyboard.mo
 share/locale/is/LC_MESSAGES/kcmmouse.mo
+share/locale/is/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/is/LC_MESSAGES/knetattach.mo
+share/locale/is/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
+share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
+share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
+share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.showActivityManager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/is/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/is/LC_MESSAGES/plasma_runner_plasma-desktop.mo
-share/locale/is/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
+share/locale/is/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
 share/locale/is/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/is/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/it/LC_MESSAGES/kaccess.mo
@@ -2450,6 +2444,7 @@ share/locale/it/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/it/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/it/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/it/LC_MESSAGES/kcm_kded.mo
+share/locale/it/LC_MESSAGES/kcm_keyboard.mo
 share/locale/it/LC_MESSAGES/kcm_keys.mo
 share/locale/it/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/it/LC_MESSAGES/kcm_landingpage.mo
@@ -2463,7 +2458,6 @@ share/locale/it/LC_MESSAGES/kcm_touchpad.mo
 share/locale/it/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/it/LC_MESSAGES/kcm_workspace.mo
 share/locale/it/LC_MESSAGES/kcmkclock.mo
-share/locale/it/LC_MESSAGES/kcmkeyboard.mo
 share/locale/it/LC_MESSAGES/kcmmouse.mo
 share/locale/it/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/it/LC_MESSAGES/knetattach.mo
@@ -2483,7 +2477,6 @@ share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/it/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/it/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/it/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/it/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/it/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/it/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ja/LC_MESSAGES/kaccess.mo
@@ -2495,6 +2488,7 @@ share/locale/ja/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ja/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ja/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ja/LC_MESSAGES/kcm_kded.mo
+share/locale/ja/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ja/LC_MESSAGES/kcm_keys.mo
 share/locale/ja/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ja/LC_MESSAGES/kcm_landingpage.mo
@@ -2508,7 +2502,6 @@ share/locale/ja/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ja/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ja/LC_MESSAGES/kcm_workspace.mo
 share/locale/ja/LC_MESSAGES/kcmkclock.mo
-share/locale/ja/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ja/LC_MESSAGES/kcmmouse.mo
 share/locale/ja/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ja/LC_MESSAGES/knetattach.mo
@@ -2528,7 +2521,6 @@ share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ja/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ja/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ja/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ja/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ja/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ka/LC_MESSAGES/kaccess.mo
@@ -2540,6 +2532,7 @@ share/locale/ka/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ka/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ka/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ka/LC_MESSAGES/kcm_kded.mo
+share/locale/ka/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ka/LC_MESSAGES/kcm_keys.mo
 share/locale/ka/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ka/LC_MESSAGES/kcm_landingpage.mo
@@ -2553,11 +2546,11 @@ share/locale/ka/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ka/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ka/LC_MESSAGES/kcm_workspace.mo
 share/locale/ka/LC_MESSAGES/kcmkclock.mo
-share/locale/ka/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ka/LC_MESSAGES/kcmmouse.mo
 share/locale/ka/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ka/LC_MESSAGES/knetattach.mo
 share/locale/ka/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/ka/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2573,7 +2566,6 @@ share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ka/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ka/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ka/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ka/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ka/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/kk/LC_MESSAGES/kaccess.mo
@@ -2582,10 +2574,10 @@ share/locale/kk/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/kk/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/kk/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/kk/LC_MESSAGES/kcm_kded.mo
+share/locale/kk/LC_MESSAGES/kcm_keyboard.mo
 share/locale/kk/LC_MESSAGES/kcm_smserver.mo
 share/locale/kk/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/kk/LC_MESSAGES/kcmkclock.mo
-share/locale/kk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/kk/LC_MESSAGES/kcmmouse.mo
 share/locale/kk/LC_MESSAGES/knetattach.mo
 share/locale/kk/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2605,10 +2597,10 @@ share/locale/km/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/km/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/km/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/km/LC_MESSAGES/kcm_kded.mo
+share/locale/km/LC_MESSAGES/kcm_keyboard.mo
 share/locale/km/LC_MESSAGES/kcm_smserver.mo
 share/locale/km/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/km/LC_MESSAGES/kcmkclock.mo
-share/locale/km/LC_MESSAGES/kcmkeyboard.mo
 share/locale/km/LC_MESSAGES/kcmmouse.mo
 share/locale/km/LC_MESSAGES/knetattach.mo
 share/locale/km/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2626,9 +2618,9 @@ share/locale/kn/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/kn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/kn/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/kn/LC_MESSAGES/kcm_kded.mo
+share/locale/kn/LC_MESSAGES/kcm_keyboard.mo
 share/locale/kn/LC_MESSAGES/kcm_smserver.mo
 share/locale/kn/LC_MESSAGES/kcmkclock.mo
-share/locale/kn/LC_MESSAGES/kcmkeyboard.mo
 share/locale/kn/LC_MESSAGES/kcmmouse.mo
 share/locale/kn/LC_MESSAGES/knetattach.mo
 share/locale/kn/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2646,6 +2638,7 @@ share/locale/ko/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ko/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ko/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ko/LC_MESSAGES/kcm_kded.mo
+share/locale/ko/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ko/LC_MESSAGES/kcm_keys.mo
 share/locale/ko/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ko/LC_MESSAGES/kcm_landingpage.mo
@@ -2659,7 +2652,6 @@ share/locale/ko/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ko/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ko/LC_MESSAGES/kcm_workspace.mo
 share/locale/ko/LC_MESSAGES/kcmkclock.mo
-share/locale/ko/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ko/LC_MESSAGES/kcmmouse.mo
 share/locale/ko/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ko/LC_MESSAGES/knetattach.mo
@@ -2679,7 +2671,6 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ko/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ko/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ko/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ko/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ku/LC_MESSAGES/kaccess.mo
@@ -2687,9 +2678,9 @@ share/locale/ku/LC_MESSAGES/kcm_access.mo
 share/locale/ku/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ku/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ku/LC_MESSAGES/kcm_kded.mo
+share/locale/ku/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ku/LC_MESSAGES/kcm_smserver.mo
 share/locale/ku/LC_MESSAGES/kcmkclock.mo
-share/locale/ku/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ku/LC_MESSAGES/kcmmouse.mo
 share/locale/ku/LC_MESSAGES/knetattach.mo
 share/locale/ku/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2704,7 +2695,9 @@ share/locale/lt/LC_MESSAGES/kcm_baloofile.mo
 share/locale/lt/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/lt/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/lt/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/lt/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/lt/LC_MESSAGES/kcm_kded.mo
+share/locale/lt/LC_MESSAGES/kcm_keyboard.mo
 share/locale/lt/LC_MESSAGES/kcm_keys.mo
 share/locale/lt/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/lt/LC_MESSAGES/kcm_landingpage.mo
@@ -2718,7 +2711,6 @@ share/locale/lt/LC_MESSAGES/kcm_touchpad.mo
 share/locale/lt/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/lt/LC_MESSAGES/kcm_workspace.mo
 share/locale/lt/LC_MESSAGES/kcmkclock.mo
-share/locale/lt/LC_MESSAGES/kcmkeyboard.mo
 share/locale/lt/LC_MESSAGES/kcmmouse.mo
 share/locale/lt/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/lt/LC_MESSAGES/knetattach.mo
@@ -2738,7 +2730,6 @@ share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/lt/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/lt/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/lt/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/lt/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/lt/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/lv/LC_MESSAGES/kaccess.mo
@@ -2748,7 +2739,9 @@ share/locale/lv/LC_MESSAGES/kcm_baloofile.mo
 share/locale/lv/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/lv/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/lv/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/lv/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/lv/LC_MESSAGES/kcm_kded.mo
+share/locale/lv/LC_MESSAGES/kcm_keyboard.mo
 share/locale/lv/LC_MESSAGES/kcm_keys.mo
 share/locale/lv/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/lv/LC_MESSAGES/kcm_landingpage.mo
@@ -2762,7 +2755,6 @@ share/locale/lv/LC_MESSAGES/kcm_touchpad.mo
 share/locale/lv/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/lv/LC_MESSAGES/kcm_workspace.mo
 share/locale/lv/LC_MESSAGES/kcmkclock.mo
-share/locale/lv/LC_MESSAGES/kcmkeyboard.mo
 share/locale/lv/LC_MESSAGES/kcmmouse.mo
 share/locale/lv/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/lv/LC_MESSAGES/knetattach.mo
@@ -2782,7 +2774,6 @@ share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/lv/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/lv/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/lv/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/lv/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/lv/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/mai/LC_MESSAGES/kaccess.mo
@@ -2791,10 +2782,10 @@ share/locale/mai/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/mai/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/mai/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/mai/LC_MESSAGES/kcm_kded.mo
+share/locale/mai/LC_MESSAGES/kcm_keyboard.mo
 share/locale/mai/LC_MESSAGES/kcm_smserver.mo
 share/locale/mai/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/mai/LC_MESSAGES/kcmkclock.mo
-share/locale/mai/LC_MESSAGES/kcmkeyboard.mo
 share/locale/mai/LC_MESSAGES/kcmmouse.mo
 share/locale/mai/LC_MESSAGES/knetattach.mo
 share/locale/mai/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2808,9 +2799,9 @@ share/locale/mk/LC_MESSAGES/kcm_access.mo
 share/locale/mk/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/mk/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/mk/LC_MESSAGES/kcm_kded.mo
+share/locale/mk/LC_MESSAGES/kcm_keyboard.mo
 share/locale/mk/LC_MESSAGES/kcm_smserver.mo
 share/locale/mk/LC_MESSAGES/kcmkclock.mo
-share/locale/mk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/mk/LC_MESSAGES/kcmmouse.mo
 share/locale/mk/LC_MESSAGES/knetattach.mo
 share/locale/mk/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2825,6 +2816,7 @@ share/locale/ml/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ml/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ml/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ml/LC_MESSAGES/kcm_kded.mo
+share/locale/ml/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ml/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ml/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/ml/LC_MESSAGES/kcm_smserver.mo
@@ -2833,7 +2825,6 @@ share/locale/ml/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/ml/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ml/LC_MESSAGES/kcm_workspace.mo
 share/locale/ml/LC_MESSAGES/kcmkclock.mo
-share/locale/ml/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ml/LC_MESSAGES/kcmmouse.mo
 share/locale/ml/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ml/LC_MESSAGES/knetattach.mo
@@ -2852,7 +2843,6 @@ share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ml/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ml/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ml/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ml/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ml/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/mr/LC_MESSAGES/kaccess.mo
@@ -2861,10 +2851,10 @@ share/locale/mr/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/mr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/mr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/mr/LC_MESSAGES/kcm_kded.mo
+share/locale/mr/LC_MESSAGES/kcm_keyboard.mo
 share/locale/mr/LC_MESSAGES/kcm_smserver.mo
 share/locale/mr/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/mr/LC_MESSAGES/kcmkclock.mo
-share/locale/mr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/mr/LC_MESSAGES/kcmmouse.mo
 share/locale/mr/LC_MESSAGES/knetattach.mo
 share/locale/mr/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2884,10 +2874,10 @@ share/locale/ms/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ms/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ms/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ms/LC_MESSAGES/kcm_kded.mo
+share/locale/ms/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ms/LC_MESSAGES/kcm_smserver.mo
 share/locale/ms/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ms/LC_MESSAGES/kcmkclock.mo
-share/locale/ms/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ms/LC_MESSAGES/kcmmouse.mo
 share/locale/ms/LC_MESSAGES/knetattach.mo
 share/locale/ms/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2904,6 +2894,7 @@ share/locale/nb/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/nb/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/nb/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nb/LC_MESSAGES/kcm_kded.mo
+share/locale/nb/LC_MESSAGES/kcm_keyboard.mo
 share/locale/nb/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/nb/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/nb/LC_MESSAGES/kcm_smserver.mo
@@ -2912,7 +2903,6 @@ share/locale/nb/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/nb/LC_MESSAGES/kcm_touchpad.mo
 share/locale/nb/LC_MESSAGES/kcm_workspace.mo
 share/locale/nb/LC_MESSAGES/kcmkclock.mo
-share/locale/nb/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nb/LC_MESSAGES/kcmmouse.mo
 share/locale/nb/LC_MESSAGES/knetattach.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2927,7 +2917,6 @@ share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nb/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/nb/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nb/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/nb/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/nds/LC_MESSAGES/kaccess.mo
 share/locale/nds/LC_MESSAGES/kcm_access.mo
 share/locale/nds/LC_MESSAGES/kcm_baloofile.mo
@@ -2935,6 +2924,7 @@ share/locale/nds/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/nds/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/nds/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nds/LC_MESSAGES/kcm_kded.mo
+share/locale/nds/LC_MESSAGES/kcm_keyboard.mo
 share/locale/nds/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/nds/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/nds/LC_MESSAGES/kcm_smserver.mo
@@ -2942,7 +2932,6 @@ share/locale/nds/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/nds/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/nds/LC_MESSAGES/kcm_workspace.mo
 share/locale/nds/LC_MESSAGES/kcmkclock.mo
-share/locale/nds/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nds/LC_MESSAGES/kcmmouse.mo
 share/locale/nds/LC_MESSAGES/knetattach.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2957,15 +2946,14 @@ share/locale/nds/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/nds/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/nds/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nds/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/nds/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ne/LC_MESSAGES/kaccess.mo
 share/locale/ne/LC_MESSAGES/kcm_access.mo
 share/locale/ne/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ne/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ne/LC_MESSAGES/kcm_kded.mo
+share/locale/ne/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ne/LC_MESSAGES/kcm_smserver.mo
 share/locale/ne/LC_MESSAGES/kcmkclock.mo
-share/locale/ne/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ne/LC_MESSAGES/kcmmouse.mo
 share/locale/ne/LC_MESSAGES/knetattach.mo
 share/locale/ne/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -2979,6 +2967,7 @@ share/locale/nl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/nl/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nl/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/nl/LC_MESSAGES/kcm_kded.mo
+share/locale/nl/LC_MESSAGES/kcm_keyboard.mo
 share/locale/nl/LC_MESSAGES/kcm_keys.mo
 share/locale/nl/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/nl/LC_MESSAGES/kcm_landingpage.mo
@@ -2992,7 +2981,6 @@ share/locale/nl/LC_MESSAGES/kcm_touchpad.mo
 share/locale/nl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/nl/LC_MESSAGES/kcm_workspace.mo
 share/locale/nl/LC_MESSAGES/kcmkclock.mo
-share/locale/nl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nl/LC_MESSAGES/kcmmouse.mo
 share/locale/nl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/nl/LC_MESSAGES/knetattach.mo
@@ -3012,7 +3000,6 @@ share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/nl/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/nl/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/nl/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/nn/LC_MESSAGES/kaccess.mo
@@ -3024,6 +3011,7 @@ share/locale/nn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/nn/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/nn/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/nn/LC_MESSAGES/kcm_kded.mo
+share/locale/nn/LC_MESSAGES/kcm_keyboard.mo
 share/locale/nn/LC_MESSAGES/kcm_keys.mo
 share/locale/nn/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/nn/LC_MESSAGES/kcm_landingpage.mo
@@ -3037,7 +3025,6 @@ share/locale/nn/LC_MESSAGES/kcm_touchpad.mo
 share/locale/nn/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/nn/LC_MESSAGES/kcm_workspace.mo
 share/locale/nn/LC_MESSAGES/kcmkclock.mo
-share/locale/nn/LC_MESSAGES/kcmkeyboard.mo
 share/locale/nn/LC_MESSAGES/kcmmouse.mo
 share/locale/nn/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/nn/LC_MESSAGES/knetattach.mo
@@ -3057,7 +3044,6 @@ share/locale/nn/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/nn/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/nn/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/nn/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/nn/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/oc/LC_MESSAGES/kaccess.mo
@@ -3065,9 +3051,9 @@ share/locale/oc/LC_MESSAGES/kcm_access.mo
 share/locale/oc/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/oc/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/oc/LC_MESSAGES/kcm_kded.mo
+share/locale/oc/LC_MESSAGES/kcm_keyboard.mo
 share/locale/oc/LC_MESSAGES/kcm_smserver.mo
 share/locale/oc/LC_MESSAGES/kcmkclock.mo
-share/locale/oc/LC_MESSAGES/kcmkeyboard.mo
 share/locale/oc/LC_MESSAGES/kcmmouse.mo
 share/locale/oc/LC_MESSAGES/knetattach.mo
 share/locale/oc/LC_MESSAGES/plasma_applet_org.kde.plasma.pager.mo
@@ -3076,9 +3062,9 @@ share/locale/or/LC_MESSAGES/kcm_access.mo
 share/locale/or/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/or/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/or/LC_MESSAGES/kcm_kded.mo
+share/locale/or/LC_MESSAGES/kcm_keyboard.mo
 share/locale/or/LC_MESSAGES/kcm_smserver.mo
 share/locale/or/LC_MESSAGES/kcmkclock.mo
-share/locale/or/LC_MESSAGES/kcmkeyboard.mo
 share/locale/or/LC_MESSAGES/kcmmouse.mo
 share/locale/or/LC_MESSAGES/knetattach.mo
 share/locale/or/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3092,7 +3078,9 @@ share/locale/pa/LC_MESSAGES/kcm_baloofile.mo
 share/locale/pa/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/pa/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/pa/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/pa/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/pa/LC_MESSAGES/kcm_kded.mo
+share/locale/pa/LC_MESSAGES/kcm_keyboard.mo
 share/locale/pa/LC_MESSAGES/kcm_keys.mo
 share/locale/pa/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/pa/LC_MESSAGES/kcm_landingpage.mo
@@ -3101,11 +3089,11 @@ share/locale/pa/LC_MESSAGES/kcm_recentFiles.mo
 share/locale/pa/LC_MESSAGES/kcm_smserver.mo
 share/locale/pa/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/pa/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/pa/LC_MESSAGES/kcm_tablet.mo
 share/locale/pa/LC_MESSAGES/kcm_touchpad.mo
 share/locale/pa/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/pa/LC_MESSAGES/kcm_workspace.mo
 share/locale/pa/LC_MESSAGES/kcmkclock.mo
-share/locale/pa/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pa/LC_MESSAGES/kcmmouse.mo
 share/locale/pa/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/pa/LC_MESSAGES/knetattach.mo
@@ -3125,7 +3113,6 @@ share/locale/pa/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pa/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pa/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/pa/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/pa/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/pa/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/pl/LC_MESSAGES/kaccess.mo
@@ -3137,6 +3124,7 @@ share/locale/pl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/pl/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/pl/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/pl/LC_MESSAGES/kcm_kded.mo
+share/locale/pl/LC_MESSAGES/kcm_keyboard.mo
 share/locale/pl/LC_MESSAGES/kcm_keys.mo
 share/locale/pl/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/pl/LC_MESSAGES/kcm_landingpage.mo
@@ -3150,7 +3138,6 @@ share/locale/pl/LC_MESSAGES/kcm_touchpad.mo
 share/locale/pl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/pl/LC_MESSAGES/kcm_workspace.mo
 share/locale/pl/LC_MESSAGES/kcmkclock.mo
-share/locale/pl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pl/LC_MESSAGES/kcmmouse.mo
 share/locale/pl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/pl/LC_MESSAGES/knetattach.mo
@@ -3170,7 +3157,6 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/pl/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/pl/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/pl/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/pt/LC_MESSAGES/kaccess.mo
@@ -3181,6 +3167,7 @@ share/locale/pt/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/pt/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/pt/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/pt/LC_MESSAGES/kcm_kded.mo
+share/locale/pt/LC_MESSAGES/kcm_keyboard.mo
 share/locale/pt/LC_MESSAGES/kcm_keys.mo
 share/locale/pt/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/pt/LC_MESSAGES/kcm_landingpage.mo
@@ -3194,7 +3181,6 @@ share/locale/pt/LC_MESSAGES/kcm_touchpad.mo
 share/locale/pt/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/pt/LC_MESSAGES/kcm_workspace.mo
 share/locale/pt/LC_MESSAGES/kcmkclock.mo
-share/locale/pt/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pt/LC_MESSAGES/kcmmouse.mo
 share/locale/pt/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/pt/LC_MESSAGES/knetattach.mo
@@ -3214,7 +3200,6 @@ share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pt/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pt/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/pt/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/pt/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/pt/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/pt_BR/LC_MESSAGES/kaccess.mo
@@ -3226,6 +3211,7 @@ share/locale/pt_BR/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_kded.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_keyboard.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_keys.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_landingpage.mo
@@ -3239,7 +3225,6 @@ share/locale/pt_BR/LC_MESSAGES/kcm_touchpad.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_workspace.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkclock.mo
-share/locale/pt_BR/LC_MESSAGES/kcmkeyboard.mo
 share/locale/pt_BR/LC_MESSAGES/kcmmouse.mo
 share/locale/pt_BR/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/pt_BR/LC_MESSAGES/knetattach.mo
@@ -3259,7 +3244,6 @@ share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/pt_BR/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/pt_BR/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ro/LC_MESSAGES/kaccess.mo
@@ -3271,6 +3255,7 @@ share/locale/ro/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ro/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ro/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ro/LC_MESSAGES/kcm_kded.mo
+share/locale/ro/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ro/LC_MESSAGES/kcm_keys.mo
 share/locale/ro/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ro/LC_MESSAGES/kcm_landingpage.mo
@@ -3284,7 +3269,6 @@ share/locale/ro/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ro/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ro/LC_MESSAGES/kcm_workspace.mo
 share/locale/ro/LC_MESSAGES/kcmkclock.mo
-share/locale/ro/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ro/LC_MESSAGES/kcmmouse.mo
 share/locale/ro/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ro/LC_MESSAGES/knetattach.mo
@@ -3304,7 +3288,6 @@ share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ro/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ro/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ro/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ro/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ru/LC_MESSAGES/kaccess.mo
@@ -3316,6 +3299,7 @@ share/locale/ru/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ru/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ru/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ru/LC_MESSAGES/kcm_kded.mo
+share/locale/ru/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ru/LC_MESSAGES/kcm_keys.mo
 share/locale/ru/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ru/LC_MESSAGES/kcm_landingpage.mo
@@ -3329,7 +3313,6 @@ share/locale/ru/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ru/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ru/LC_MESSAGES/kcm_workspace.mo
 share/locale/ru/LC_MESSAGES/kcmkclock.mo
-share/locale/ru/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ru/LC_MESSAGES/kcmmouse.mo
 share/locale/ru/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ru/LC_MESSAGES/knetattach.mo
@@ -3349,7 +3332,6 @@ share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ru/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ru/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ru/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
@@ -3358,9 +3340,9 @@ share/locale/se/LC_MESSAGES/kcm_access.mo
 share/locale/se/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/se/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/se/LC_MESSAGES/kcm_kded.mo
+share/locale/se/LC_MESSAGES/kcm_keyboard.mo
 share/locale/se/LC_MESSAGES/kcm_smserver.mo
 share/locale/se/LC_MESSAGES/kcmkclock.mo
-share/locale/se/LC_MESSAGES/kcmkeyboard.mo
 share/locale/se/LC_MESSAGES/kcmmouse.mo
 share/locale/se/LC_MESSAGES/knetattach.mo
 share/locale/se/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3371,10 +3353,10 @@ share/locale/si/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/si/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/si/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/si/LC_MESSAGES/kcm_kded.mo
+share/locale/si/LC_MESSAGES/kcm_keyboard.mo
 share/locale/si/LC_MESSAGES/kcm_smserver.mo
 share/locale/si/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/si/LC_MESSAGES/kcmkclock.mo
-share/locale/si/LC_MESSAGES/kcmkeyboard.mo
 share/locale/si/LC_MESSAGES/kcmmouse.mo
 share/locale/si/LC_MESSAGES/knetattach.mo
 share/locale/si/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3391,6 +3373,7 @@ share/locale/sk/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sk/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sk/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/sk/LC_MESSAGES/kcm_kded.mo
+share/locale/sk/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sk/LC_MESSAGES/kcm_keys.mo
 share/locale/sk/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sk/LC_MESSAGES/kcm_landingpage.mo
@@ -3404,7 +3387,6 @@ share/locale/sk/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sk/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/sk/LC_MESSAGES/kcm_workspace.mo
 share/locale/sk/LC_MESSAGES/kcmkclock.mo
-share/locale/sk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sk/LC_MESSAGES/kcmmouse.mo
 share/locale/sk/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/sk/LC_MESSAGES/knetattach.mo
@@ -3424,7 +3406,6 @@ share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sk/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sk/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sk/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sk/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/sk/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sl/LC_MESSAGES/kaccess.mo
@@ -3436,6 +3417,7 @@ share/locale/sl/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sl/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sl/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/sl/LC_MESSAGES/kcm_kded.mo
+share/locale/sl/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sl/LC_MESSAGES/kcm_keys.mo
 share/locale/sl/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sl/LC_MESSAGES/kcm_landingpage.mo
@@ -3449,11 +3431,11 @@ share/locale/sl/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/sl/LC_MESSAGES/kcm_workspace.mo
 share/locale/sl/LC_MESSAGES/kcmkclock.mo
-share/locale/sl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sl/LC_MESSAGES/kcmmouse.mo
 share/locale/sl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/sl/LC_MESSAGES/knetattach.mo
 share/locale/sl/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/sl/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3469,17 +3451,16 @@ share/locale/sl/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sl/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sl/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sl/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sl/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/sl/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sq/LC_MESSAGES/kaccess.mo
 share/locale/sq/LC_MESSAGES/kcm_access.mo
 share/locale/sq/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sq/LC_MESSAGES/kcm_kded.mo
+share/locale/sq/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sq/LC_MESSAGES/kcm_smserver.mo
 share/locale/sq/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/sq/LC_MESSAGES/kcmkclock.mo
-share/locale/sq/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sq/LC_MESSAGES/kcmmouse.mo
 share/locale/sq/LC_MESSAGES/knetattach.mo
 share/locale/sq/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3497,6 +3478,7 @@ share/locale/sr/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sr/LC_MESSAGES/kcm_kded.mo
+share/locale/sr/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sr/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sr/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/sr/LC_MESSAGES/kcm_smserver.mo
@@ -3505,7 +3487,6 @@ share/locale/sr/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sr/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sr/LC_MESSAGES/kcm_workspace.mo
 share/locale/sr/LC_MESSAGES/kcmkclock.mo
-share/locale/sr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sr/LC_MESSAGES/kcmmouse.mo
 share/locale/sr/LC_MESSAGES/knetattach.mo
 share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3521,7 +3502,6 @@ share/locale/sr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sr/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sr/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sr/LC_SCRIPTS/kfontinst/
 share/locale/sr/LC_SCRIPTS/kfontinst/kfontinst.js
@@ -3533,6 +3513,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_kded.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_smserver.mo
@@ -3541,7 +3522,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcm_workspace.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcmkclock.mo
-share/locale/sr@ijekavian/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kcmmouse.mo
 share/locale/sr@ijekavian/LC_MESSAGES/knetattach.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3557,7 +3537,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sr@ijekavian/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sr@ijekavian/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sr@ijekavian/LC_SCRIPTS/kfontinst/
 share/locale/sr@ijekavian/LC_SCRIPTS/kfontinst/kfontinst.js
@@ -3569,6 +3548,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_kded.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_smserver.mo
@@ -3577,7 +3557,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcm_workspace.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcmkclock.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kcmmouse.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/knetattach.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3593,7 +3572,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_applet_org.kde.plasma.windowli
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sr@ijekavianlatin/LC_SCRIPTS/kfontinst/
 share/locale/sr@ijekavianlatin/LC_SCRIPTS/kfontinst/kfontinst.js
@@ -3605,6 +3583,7 @@ share/locale/sr@latin/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_kded.mo
+share/locale/sr@latin/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_smserver.mo
@@ -3613,7 +3592,6 @@ share/locale/sr@latin/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_touchpad.mo
 share/locale/sr@latin/LC_MESSAGES/kcm_workspace.mo
 share/locale/sr@latin/LC_MESSAGES/kcmkclock.mo
-share/locale/sr@latin/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sr@latin/LC_MESSAGES/kcmmouse.mo
 share/locale/sr@latin/LC_MESSAGES/knetattach.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3629,7 +3607,6 @@ share/locale/sr@latin/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sr@latin/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sr@latin/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/sr@latin/LC_SCRIPTS/kfontinst/
 share/locale/sr@latin/LC_SCRIPTS/kfontinst/kfontinst.js
@@ -3640,7 +3617,9 @@ share/locale/sv/LC_MESSAGES/kcm_baloofile.mo
 share/locale/sv/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/sv/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/sv/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/sv/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/sv/LC_MESSAGES/kcm_kded.mo
+share/locale/sv/LC_MESSAGES/kcm_keyboard.mo
 share/locale/sv/LC_MESSAGES/kcm_keys.mo
 share/locale/sv/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/sv/LC_MESSAGES/kcm_landingpage.mo
@@ -3651,13 +3630,14 @@ share/locale/sv/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/sv/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sv/LC_MESSAGES/kcm_tablet.mo
 share/locale/sv/LC_MESSAGES/kcm_touchpad.mo
+share/locale/sv/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/sv/LC_MESSAGES/kcm_workspace.mo
 share/locale/sv/LC_MESSAGES/kcmkclock.mo
-share/locale/sv/LC_MESSAGES/kcmkeyboard.mo
 share/locale/sv/LC_MESSAGES/kcmmouse.mo
 share/locale/sv/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/sv/LC_MESSAGES/knetattach.mo
 share/locale/sv/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/sv/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3673,7 +3653,6 @@ share/locale/sv/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/sv/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/sv/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/sv/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/sv/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/sv/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ta/LC_MESSAGES/kaccess.mo
@@ -3685,6 +3664,7 @@ share/locale/ta/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ta/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ta/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/ta/LC_MESSAGES/kcm_kded.mo
+share/locale/ta/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ta/LC_MESSAGES/kcm_keys.mo
 share/locale/ta/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/ta/LC_MESSAGES/kcm_landingpage.mo
@@ -3698,7 +3678,6 @@ share/locale/ta/LC_MESSAGES/kcm_touchpad.mo
 share/locale/ta/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ta/LC_MESSAGES/kcm_workspace.mo
 share/locale/ta/LC_MESSAGES/kcmkclock.mo
-share/locale/ta/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ta/LC_MESSAGES/kcmmouse.mo
 share/locale/ta/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ta/LC_MESSAGES/knetattach.mo
@@ -3717,7 +3696,6 @@ share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/ta/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/ta/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/ta/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/ta/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/ta/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/ta/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/te/LC_MESSAGES/kaccess.mo
@@ -3725,9 +3703,9 @@ share/locale/te/LC_MESSAGES/kcm_access.mo
 share/locale/te/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/te/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/te/LC_MESSAGES/kcm_kded.mo
+share/locale/te/LC_MESSAGES/kcm_keyboard.mo
 share/locale/te/LC_MESSAGES/kcm_smserver.mo
 share/locale/te/LC_MESSAGES/kcmkclock.mo
-share/locale/te/LC_MESSAGES/kcmkeyboard.mo
 share/locale/te/LC_MESSAGES/kcmmouse.mo
 share/locale/te/LC_MESSAGES/knetattach.mo
 share/locale/te/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3741,12 +3719,12 @@ share/locale/tg/LC_MESSAGES/kcm_baloofile.mo
 share/locale/tg/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/tg/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/tg/LC_MESSAGES/kcm_kded.mo
+share/locale/tg/LC_MESSAGES/kcm_keyboard.mo
 share/locale/tg/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/tg/LC_MESSAGES/kcm_plasmasearch.mo
 share/locale/tg/LC_MESSAGES/kcm_smserver.mo
 share/locale/tg/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/tg/LC_MESSAGES/kcmkclock.mo
-share/locale/tg/LC_MESSAGES/kcmkeyboard.mo
 share/locale/tg/LC_MESSAGES/kcmmouse.mo
 share/locale/tg/LC_MESSAGES/knetattach.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3761,7 +3739,6 @@ share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/tg/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/tg/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/tg/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/tg/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/tg/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/th/LC_MESSAGES/kaccess.mo
 share/locale/th/LC_MESSAGES/kcm_access.mo
@@ -3769,10 +3746,10 @@ share/locale/th/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/th/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/th/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/th/LC_MESSAGES/kcm_kded.mo
+share/locale/th/LC_MESSAGES/kcm_keyboard.mo
 share/locale/th/LC_MESSAGES/kcm_smserver.mo
 share/locale/th/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/th/LC_MESSAGES/kcmkclock.mo
-share/locale/th/LC_MESSAGES/kcmkeyboard.mo
 share/locale/th/LC_MESSAGES/kcmmouse.mo
 share/locale/th/LC_MESSAGES/knetattach.mo
 share/locale/th/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3791,6 +3768,7 @@ share/locale/tr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/tr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/tr/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/tr/LC_MESSAGES/kcm_kded.mo
+share/locale/tr/LC_MESSAGES/kcm_keyboard.mo
 share/locale/tr/LC_MESSAGES/kcm_keys.mo
 share/locale/tr/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/tr/LC_MESSAGES/kcm_landingpage.mo
@@ -3804,11 +3782,11 @@ share/locale/tr/LC_MESSAGES/kcm_touchpad.mo
 share/locale/tr/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/tr/LC_MESSAGES/kcm_workspace.mo
 share/locale/tr/LC_MESSAGES/kcmkclock.mo
-share/locale/tr/LC_MESSAGES/kcmkeyboard.mo
 share/locale/tr/LC_MESSAGES/kcmmouse.mo
 share/locale/tr/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/tr/LC_MESSAGES/knetattach.mo
 share/locale/tr/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/tr/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3824,7 +3802,6 @@ share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/tr/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/tr/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/tr/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/tr/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/ug/LC_MESSAGES/kaccess.mo
@@ -3833,10 +3810,10 @@ share/locale/ug/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/ug/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ug/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/ug/LC_MESSAGES/kcm_kded.mo
+share/locale/ug/LC_MESSAGES/kcm_keyboard.mo
 share/locale/ug/LC_MESSAGES/kcm_smserver.mo
 share/locale/ug/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ug/LC_MESSAGES/kcmkclock.mo
-share/locale/ug/LC_MESSAGES/kcmkeyboard.mo
 share/locale/ug/LC_MESSAGES/kcmmouse.mo
 share/locale/ug/LC_MESSAGES/knetattach.mo
 share/locale/ug/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3859,6 +3836,7 @@ share/locale/uk/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/uk/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/uk/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/uk/LC_MESSAGES/kcm_kded.mo
+share/locale/uk/LC_MESSAGES/kcm_keyboard.mo
 share/locale/uk/LC_MESSAGES/kcm_keys.mo
 share/locale/uk/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/uk/LC_MESSAGES/kcm_landingpage.mo
@@ -3872,11 +3850,11 @@ share/locale/uk/LC_MESSAGES/kcm_touchpad.mo
 share/locale/uk/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/uk/LC_MESSAGES/kcm_workspace.mo
 share/locale/uk/LC_MESSAGES/kcmkclock.mo
-share/locale/uk/LC_MESSAGES/kcmkeyboard.mo
 share/locale/uk/LC_MESSAGES/kcmmouse.mo
 share/locale/uk/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/uk/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3892,7 +3870,6 @@ share/locale/uk/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/uk/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/uk/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/uk/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/uk/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/uz/LC_MESSAGES/kaccess.mo
@@ -3900,9 +3877,9 @@ share/locale/uz/LC_MESSAGES/kcm_access.mo
 share/locale/uz/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/uz/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/uz/LC_MESSAGES/kcm_kded.mo
+share/locale/uz/LC_MESSAGES/kcm_keyboard.mo
 share/locale/uz/LC_MESSAGES/kcm_smserver.mo
 share/locale/uz/LC_MESSAGES/kcmkclock.mo
-share/locale/uz/LC_MESSAGES/kcmkeyboard.mo
 share/locale/uz/LC_MESSAGES/kcmmouse.mo
 share/locale/uz/LC_MESSAGES/knetattach.mo
 share/locale/uz/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3911,9 +3888,9 @@ share/locale/uz@cyrillic/LC_MESSAGES/kcm_access.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm_kded.mo
+share/locale/uz@cyrillic/LC_MESSAGES/kcm_keyboard.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcm_smserver.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcmkclock.mo
-share/locale/uz@cyrillic/LC_MESSAGES/kcmkeyboard.mo
 share/locale/uz@cyrillic/LC_MESSAGES/kcmmouse.mo
 share/locale/uz@cyrillic/LC_MESSAGES/knetattach.mo
 share/locale/uz@cyrillic/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3925,6 +3902,7 @@ share/locale/vi/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/vi/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/vi/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/vi/LC_MESSAGES/kcm_kded.mo
+share/locale/vi/LC_MESSAGES/kcm_keyboard.mo
 share/locale/vi/LC_MESSAGES/kcm_keys.mo
 share/locale/vi/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/vi/LC_MESSAGES/kcm_landingpage.mo
@@ -3938,7 +3916,6 @@ share/locale/vi/LC_MESSAGES/kcm_touchpad.mo
 share/locale/vi/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/vi/LC_MESSAGES/kcm_workspace.mo
 share/locale/vi/LC_MESSAGES/kcmkclock.mo
-share/locale/vi/LC_MESSAGES/kcmkeyboard.mo
 share/locale/vi/LC_MESSAGES/kcmmouse.mo
 share/locale/vi/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/vi/LC_MESSAGES/knetattach.mo
@@ -3958,7 +3935,6 @@ share/locale/vi/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/vi/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/vi/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/vi/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/vi/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/vi/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/wa/LC_MESSAGES/kaccess.mo
@@ -3967,10 +3943,10 @@ share/locale/wa/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/wa/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/wa/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/wa/LC_MESSAGES/kcm_kded.mo
+share/locale/wa/LC_MESSAGES/kcm_keyboard.mo
 share/locale/wa/LC_MESSAGES/kcm_smserver.mo
 share/locale/wa/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/wa/LC_MESSAGES/kcmkclock.mo
-share/locale/wa/LC_MESSAGES/kcmkeyboard.mo
 share/locale/wa/LC_MESSAGES/kcmmouse.mo
 share/locale/wa/LC_MESSAGES/knetattach.mo
 share/locale/wa/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
@@ -3985,9 +3961,9 @@ share/locale/xh/LC_MESSAGES/kcm_access.mo
 share/locale/xh/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/xh/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/xh/LC_MESSAGES/kcm_kded.mo
+share/locale/xh/LC_MESSAGES/kcm_keyboard.mo
 share/locale/xh/LC_MESSAGES/kcm_smserver.mo
 share/locale/xh/LC_MESSAGES/kcmkclock.mo
-share/locale/xh/LC_MESSAGES/kcmkeyboard.mo
 share/locale/xh/LC_MESSAGES/kcmmouse.mo
 share/locale/xh/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/zh_CN/LC_MESSAGES/kaccess.mo
@@ -3999,6 +3975,7 @@ share/locale/zh_CN/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_kded.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_keyboard.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_keys.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_landingpage.mo
@@ -4012,7 +3989,6 @@ share/locale/zh_CN/LC_MESSAGES/kcm_touchpad.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_workspace.mo
 share/locale/zh_CN/LC_MESSAGES/kcmkclock.mo
-share/locale/zh_CN/LC_MESSAGES/kcmkeyboard.mo
 share/locale/zh_CN/LC_MESSAGES/kcmmouse.mo
 share/locale/zh_CN/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/zh_CN/LC_MESSAGES/knetattach.mo
@@ -4032,7 +4008,6 @@ share/locale/zh_CN/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/zh_CN/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/zh_CN/LC_MESSAGES/plasmaactivitymanager.mo
 share/locale/zh_TW/LC_MESSAGES/kaccess.mo
@@ -4044,6 +4019,7 @@ share/locale/zh_TW/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_kded.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_keyboard.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_keys.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_krunnersettings.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_landingpage.mo
@@ -4057,11 +4033,11 @@ share/locale/zh_TW/LC_MESSAGES/kcm_touchpad.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_workspace.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkclock.mo
-share/locale/zh_TW/LC_MESSAGES/kcmkeyboard.mo
 share/locale/zh_TW/LC_MESSAGES/kcmmouse.mo
 share/locale/zh_TW/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/zh_TW/LC_MESSAGES/knetattach.mo
 share/locale/zh_TW/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/zh_TW/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -4077,11 +4053,9 @@ share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo
-share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.desktoptoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_toolbox_org.kde.paneltoolbox.mo
 share/locale/zh_TW/LC_MESSAGES/plasmaactivitymanager.mo
 share/metainfo/org.kde.desktopcontainment.appdata.xml
-share/metainfo/org.kde.desktoptoolbox.appdata.xml
 share/metainfo/org.kde.paneltoolbox.appdata.xml
 share/metainfo/org.kde.plasma.activitypager.appdata.xml
 share/metainfo/org.kde.plasma.desktop.appdata.xml
@@ -4267,14 +4241,6 @@ share/plasma/layout-templates/org.kde.plasma.desktop.emptyPanel/contents/
 share/plasma/layout-templates/org.kde.plasma.desktop.emptyPanel/contents/layout.js
 share/plasma/layout-templates/org.kde.plasma.desktop.emptyPanel/metadata.json
 share/plasma/packages/
-share/plasma/packages/org.kde.desktoptoolbox/
-share/plasma/packages/org.kde.desktoptoolbox/contents/
-share/plasma/packages/org.kde.desktoptoolbox/contents/config/
-share/plasma/packages/org.kde.desktoptoolbox/contents/config/main.xml
-share/plasma/packages/org.kde.desktoptoolbox/contents/ui/
-share/plasma/packages/org.kde.desktoptoolbox/contents/ui/ToolBoxContent.qml
-share/plasma/packages/org.kde.desktoptoolbox/contents/ui/main.qml
-share/plasma/packages/org.kde.desktoptoolbox/metadata.json
 share/plasma/packages/org.kde.paneltoolbox/
 share/plasma/packages/org.kde.paneltoolbox/contents/
 share/plasma/packages/org.kde.paneltoolbox/contents/ui/
@@ -4466,7 +4432,7 @@ share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipDelegate.qm
 share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipInstance.qml
 share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/ToolTipWindowMouseArea.qml
 share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/
-share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/layout.js
+share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/layoutmetrics.js
 share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/code/tools.js
 share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.taskmanager/metadata.json
@@ -4527,7 +4493,19 @@ share/plasma/shells/org.kde.plasma.desktop/contents/explorer/AppletAlternatives.
 share/plasma/shells/org.kde.plasma.desktop/contents/explorer/AppletDelegate.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/explorer/Tooltip.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/explorer/WidgetExplorer.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/LockOsd.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/LockScreen.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/LockScreenUi.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/MainBlock.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/MediaControls.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/NoPasswordUnlock.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/config.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/lockscreen/config.xml
 share/plasma/shells/org.kde.plasma.desktop/contents/main.js
+share/plasma/shells/org.kde.plasma.desktop/contents/osd/
+share/plasma/shells/org.kde.plasma.desktop/contents/osd/Osd.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/osd/OsdItem.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_migrate_font_settings.js
@@ -4546,6 +4524,7 @@ share/plasma/shells/org.kde.plasma.desktop/contents/updates/systemloadviewer_sys
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/unlock_widgets.js
 share/plasma/shells/org.kde.plasma.desktop/contents/views/
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Desktop.qml
+share/plasma/shells/org.kde.plasma.desktop/contents/views/DesktopEditMode.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/Panel.qml
 share/plasma/shells/org.kde.plasma.desktop/contents/views/PreviewBanner.qml
 share/plasma/shells/org.kde.plasma.desktop/metadata.json
@@ -4557,6 +4536,21 @@ share/qlogging-categories6/kcm_mouse.categories
 share/qlogging-categories6/kcm_tablet.categories
 share/qlogging-categories6/kcm_touchscreen.categories
 share/qlogging-categories6/kcmkeys.categories
+share/sddm/
+share/sddm/themes/
+share/sddm/themes/breeze/
+share/sddm/themes/breeze/Background.qml
+share/sddm/themes/breeze/KeyboardButton.qml
+share/sddm/themes/breeze/Login.qml
+share/sddm/themes/breeze/Main.qml
+share/sddm/themes/breeze/Messages.sh
+share/sddm/themes/breeze/SessionButton.qml
+share/sddm/themes/breeze/default-logo.svg
+share/sddm/themes/breeze/faces/
+share/sddm/themes/breeze/faces/.face.icon
+share/sddm/themes/breeze/metadata.desktop
+share/sddm/themes/breeze/preview.png
+share/sddm/themes/breeze/theme.conf
 share/solid/devices/
 share/solid/devices/solid-device-Battery.desktop
 share/solid/devices/solid-device-Block.desktop

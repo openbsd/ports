@@ -23,7 +23,7 @@ WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SDL2 X11 X11-xcb
 WANTLIB += Xext Xi accounts-qt6 c canberra icui18n icuuc kaccounts6
 WANTLIB += kworkspace6 m notificationmanager processcore taskmanager
 WANTLIB += wayland-client wayland-cursor xcb xcb-record xcb-util
-WANTLIB += xcb-xkb xkbcommon xkbfile
+WANTLIB += xcb-xkb xkbcommon xkbfile xkbregistry
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \

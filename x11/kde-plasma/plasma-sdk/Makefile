@@ -7,9 +7,8 @@ WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Package KF6Parts KF6Service
 WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextEditor KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Plasma Plasma5Support PlasmaQuick
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml X11
-WANTLIB += c m
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml X11 c m
 
 MODKDE5_TRANSLATIONS =	Yes
 
@@ -42,7 +41,6 @@ LIB_DEPENDS +=	devel/kf6/karchive \
 		devel/kf6/syntax-highlighting \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION} \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative
 
 CONFIGURE_ARGS = \

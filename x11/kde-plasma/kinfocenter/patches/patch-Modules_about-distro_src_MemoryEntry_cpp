@@ -1,6 +1,6 @@
-Index: Modules/about-distro/src/MemoryEntry.cpp
---- Modules/about-distro/src/MemoryEntry.cpp.orig
-+++ Modules/about-distro/src/MemoryEntry.cpp
+Index: kcms/about-distro/src/MemoryEntry.cpp
+--- kcms/about-distro/src/MemoryEntry.cpp.orig
++++ kcms/about-distro/src/MemoryEntry.cpp
 @@ -9,10 +9,11 @@
  
  #ifdef Q_OS_LINUX

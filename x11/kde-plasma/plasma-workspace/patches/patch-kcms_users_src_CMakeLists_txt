@@ -1,7 +1,7 @@
 Index: kcms/users/src/CMakeLists.txt
 --- kcms/users/src/CMakeLists.txt.orig
 +++ kcms/users/src/CMakeLists.txt
-@@ -64,5 +64,4 @@ target_link_libraries(kcm_users PRIVATE
+@@ -70,5 +70,4 @@ target_link_libraries(kcm_users PRIVATE
      KF6::KCMUtilsQuick
      KF6::Wallet
      Qt::DBus

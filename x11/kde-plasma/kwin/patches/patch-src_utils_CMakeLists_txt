@@ -1,7 +1,7 @@
 Index: src/utils/CMakeLists.txt
 --- src/utils/CMakeLists.txt.orig
 +++ src/utils/CMakeLists.txt
-@@ -16,7 +16,7 @@ target_sources(kwin PRIVATE
+@@ -18,7 +18,7 @@ endif()
  
  if(CMAKE_SYSTEM_NAME MATCHES "Linux")
      target_sources(kwin PRIVATE executable_path_proc.cpp)

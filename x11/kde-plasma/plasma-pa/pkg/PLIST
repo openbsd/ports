@@ -1,3 +1,5 @@
+@lib lib/libplasma-volume.so.${LIBplasma-volume_VERSION}
+@so lib/qt6/plugins/kf6/kded/audioshortcutsservice.so
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/
@@ -121,6 +123,7 @@ share/locale/ko/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/lv/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ml/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
@@ -171,8 +174,6 @@ share/plasma/
 share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.plasma.volume/
 share/plasma/plasmoids/org.kde.plasma.volume/contents/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/code/
-share/plasma/plasmoids/org.kde.plasma.volume/contents/code/icon.js
 share/plasma/plasmoids/org.kde.plasma.volume/contents/config/
 share/plasma/plasmoids/org.kde.plasma.volume/contents/config/main.xml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/

@@ -15,6 +15,7 @@ include/kwin/core/colorlut3d.h
 include/kwin/core/colorpipelinestage.h
 include/kwin/core/colorspace.h
 include/kwin/core/colortransformation.h
+include/kwin/core/drmdevice.h
 include/kwin/core/gbmgraphicsbufferallocator.h
 include/kwin/core/graphicsbuffer.h
 include/kwin/core/graphicsbufferallocator.h
@@ -104,7 +105,6 @@ include/kwin/opengl/glshadermanager.h
 include/kwin/opengl/gltexture.h
 include/kwin/opengl/gltexture_p.h
 include/kwin/opengl/glutils.h
-include/kwin/opengl/glutils_funcs.h
 include/kwin/opengl/glvertexbuffer.h
 include/kwin/opengl/openglcontext.h
 include/kwin/options.h
@@ -184,6 +184,7 @@ include/kwin/wayland/keyboard.h
 include/kwin/wayland/keyboard_shortcuts_inhibit_v1.h
 include/kwin/wayland/keystate.h
 include/kwin/wayland/layershell_v1.h
+include/kwin/wayland/linux_drm_syncobj_v1.h
 include/kwin/wayland/lockscreen_overlay_v1.h
 include/kwin/wayland/output.h
 include/kwin/wayland/output_order_v1.h
@@ -203,6 +204,7 @@ include/kwin/wayland/primaryselectionsource_v1.h
 include/kwin/wayland/quirks.h
 include/kwin/wayland/qwayland-server-content-type-v1.h
 include/kwin/wayland/qwayland-server-frog-color-management-v1.h
+include/kwin/wayland/qwayland-server-linux-drm-syncobj-v1.h
 include/kwin/wayland/qwayland-server-presentation-time.h
 include/kwin/wayland/qwayland-server-xx-color-management-v2.h
 include/kwin/wayland/relativepointer_v1.h
@@ -225,10 +227,12 @@ include/kwin/wayland/touch.h
 include/kwin/wayland/viewporter.h
 include/kwin/wayland/wayland-content-type-v1-server-protocol.h
 include/kwin/wayland/wayland-frog-color-management-v1-server-protocol.h
+include/kwin/wayland/wayland-linux-drm-syncobj-v1-server-protocol.h
 include/kwin/wayland/wayland-presentation-time-server-protocol.h
 include/kwin/wayland/wayland-xx-color-management-v2-server-protocol.h
 include/kwin/wayland/xdgactivation_v1.h
 include/kwin/wayland/xdgdecoration_v1.h
+include/kwin/wayland/xdgdialog_v1.h
 include/kwin/wayland/xdgforeign_v2.h
 include/kwin/wayland/xdgoutput_v1.h
 include/kwin/wayland/xdgshell.h
@@ -257,6 +261,7 @@ lib/kconf_update_bin/
 @bin lib/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts
 @bin lib/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default
 @bin lib/kconf_update_bin/kwin-6.0-reset-active-mouse-screen
+@bin lib/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts
 @bin lib/kconf_update_bin/kwin5_update_default_rules
 @lib lib/libkcmkwincommon.so.${LIBkcmkwincommon_VERSION}
 @lib lib/libkwin.so.${LIBkwin_VERSION}
@@ -274,6 +279,7 @@ lib/qt6/plugins/kwin/effects/configs/
 @so lib/qt6/plugins/kwin/effects/configs/kwin_colorblindnesscorrection_config.so
 @so lib/qt6/plugins/kwin/effects/configs/kwin_diminactive_config.so
 @so lib/qt6/plugins/kwin/effects/configs/kwin_glide_config.so
+@so lib/qt6/plugins/kwin/effects/configs/kwin_hidecursor_config.so
 @so lib/qt6/plugins/kwin/effects/configs/kwin_invert_config.so
 @so lib/qt6/plugins/kwin/effects/configs/kwin_magiclamp_config.so
 @so lib/qt6/plugins/kwin/effects/configs/kwin_magnifier_config.so
@@ -292,8 +298,9 @@ lib/qt6/plugins/kwin/plugins/
 @so lib/qt6/plugins/kwin/plugins/BounceKeysPlugin.so
 @so lib/qt6/plugins/kwin/plugins/StickyKeysPlugin.so
 @so lib/qt6/plugins/kwin/plugins/buttonsrebind.so
+@so lib/qt6/plugins/kwin/plugins/eis.so
 @so lib/qt6/plugins/kwin/plugins/krunnerintegration.so
-@so lib/qt6/plugins/kwin/plugins/nightcolor.so
+@so lib/qt6/plugins/kwin/plugins/nightlight.so
 @so lib/qt6/plugins/kwin/plugins/screencast.so
 @so lib/qt6/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so
 @so lib/qt6/plugins/org.kde.kdecoration2/org.kde.kwin.aurorae.so
@@ -335,6 +342,8 @@ lib/qt6/qml/org/kde/kwin/private/effects/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kwin/private/effects/libeffectsplugin.so
 lib/qt6/qml/org/kde/kwin/private/effects/qmldir
 lib/qt6/qml/org/kde/kwin/private/kdecoration/
+lib/qt6/qml/org/kde/kwin/private/kdecoration/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kwin/private/kdecoration/kdecorationprivatedeclarative.qmltypes
 @so lib/qt6/qml/org/kde/kwin/private/kdecoration/libkdecorationprivatedeclarative.so
 lib/qt6/qml/org/kde/kwin/private/kdecoration/qmldir
 lib/systemd/user/plasma-kwin_wayland.service
@@ -355,7 +364,7 @@ share/applications/org.kde.kwin.killer.desktop
 share/config.kcfg/
 share/config.kcfg/kwin.kcfg
 share/config.kcfg/kwindecorationsettings.kcfg
-share/config.kcfg/nightcolorsettings.kcfg
+share/config.kcfg/nightlightsettings.kcfg
 share/config.kcfg/virtualdesktopssettings.kcfg
 share/dbus-1/interfaces/org.kde.KWin.NightLight.xml
 share/dbus-1/interfaces/org.kde.KWin.Plugins.xml
@@ -853,6 +862,7 @@ share/kwin/builtin-effects/contrast.json
 share/kwin/builtin-effects/diminactive.json
 share/kwin/builtin-effects/fallapart.json
 share/kwin/builtin-effects/glide.json
+share/kwin/builtin-effects/hidecursor.json
 share/kwin/builtin-effects/highlightwindow.json
 share/kwin/builtin-effects/invert.json
 share/kwin/builtin-effects/kscreen.json
@@ -1552,10 +1562,15 @@ share/locale/lt/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/lt/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/lt/LC_MESSAGES/kcmkwm.mo
 share/locale/lt/LC_MESSAGES/kwin.mo
+share/locale/lv/LC_MESSAGES/kcm_kwin_effects.mo
+share/locale/lv/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/lv/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/lv/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/lv/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/lv/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/lv/LC_MESSAGES/kcm_kwinxwayland.mo
+share/locale/lv/LC_MESSAGES/kcm_virtualkeyboard.mo
+share/locale/lv/LC_MESSAGES/kcmkwincommon.mo
 share/locale/lv/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/lv/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/lv/LC_MESSAGES/kcmkwm.mo
@@ -1833,6 +1848,7 @@ share/locale/sv/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/sv/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/sv/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/sv/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/sv/LC_MESSAGES/kcm_kwinxwayland.mo
 share/locale/sv/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/sv/LC_MESSAGES/kcmkwincommon.mo
 share/locale/sv/LC_MESSAGES/kcmkwincompositing.mo

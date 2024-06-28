@@ -1,6 +1,5 @@
 COMMENT =	Plasma library and runtime components
 DISTNAME =	libplasma-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  Plasma                    0.0 # 0.0
 SHARED_LIBS +=  PlasmaQuick               0.0 # 0.0

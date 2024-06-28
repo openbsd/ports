@@ -1,6 +1,5 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -18,8 +17,8 @@ WANTLIB += KF6WindowSystem KF6XmlGui KGlobalAccelD KWaylandClient
 WANTLIB += PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6Sensors Qt6UiTools Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml SM X11 X11-xcb Xext Xi c display-info drm epoxy
-WANTLIB += fontconfig freetype gbm input kdecorations2 kdecorations2private
+WANTLIB += Qt6Xml SM X11 X11-xcb Xext Xi c display-info drm eis
+WANTLIB += epoxy fontconfig freetype gbm input kdecorations2 kdecorations2private
 WANTLIB += lcms2 m pipewire-0.3 qaccessibilityclient-qt6 udev
 WANTLIB += wayland-client wayland-cursor wayland-server xcb xcb-composite
 WANTLIB += xcb-cursor xcb-damage xcb-dri3 xcb-glx xcb-icccm xcb-keysyms
@@ -64,12 +63,14 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
+		devel/epoll-shim \
 		graphics/lcms2 \
 		multimedia/pipewire/pipewire,-libs \
 		sysutils/libdisplay-info \
 		sysutils/libudev-openbsd \
 		wayland/libinput-openbsd \
 		wayland/wayland \
+		wayland/libei \
 		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
@@ -81,7 +82,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
 
-CXXFLAGS +=		-I${X11BASE}/include
+CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
 

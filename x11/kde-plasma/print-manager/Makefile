@@ -13,9 +13,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6IconWidgets
 WANTLIB += KF6JobWidgets KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
-WANTLIB += KF6Solid KF6WidgetsAddons KF6WindowSystem Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets X11 c cups
-WANTLIB += m
+WANTLIB += KF6Solid KF6WidgetsAddons KF6WindowSystem Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Widgets X11 c cups m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -43,7 +42,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kwindowsystem \
 		devel/kf6/solid \
 		print/cups,-libs \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

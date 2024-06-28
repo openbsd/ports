@@ -1,0 +1,23 @@
+Index: daemon/CMakeLists.txt
+--- daemon/CMakeLists.txt.orig
++++ daemon/CMakeLists.txt
+@@ -121,7 +121,18 @@ qt_add_dbus_adaptor(powerdevil_SRCS dbus/org.freedeskt
+ qt_add_dbus_adaptor(powerdevil_SRCS dbus/org.freedesktop.PowerManagement.Inhibit.xml powerdevilfdoconnector.h PowerDevil::FdoConnector powermanagementinhibitadaptor PowerManagementInhibitAdaptor)
+ 
+ # KAuth charge threshold helper
+-add_executable(chargethresholdhelper chargethresholdhelper.cpp powerdevil_debug.cpp ${chargethresholdhelper_mocs})
++if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++set(chargethresholdhelper_SRCS
++    chargethresholdhelper_openbsd.cpp
++    powerdevil_debug.cpp
++)
++else()
++set(chargethresholdhelper_SRCS
++    chargethresholdhelper.cpp
++    powerdevil_debug.cpp
++)
++endif()
++add_executable(chargethresholdhelper ${chargethresholdhelper_SRCS} ${chargethresholdhelper_mocs})
+ target_link_libraries(chargethresholdhelper Qt::Core KF6::AuthCore)
+ install(TARGETS chargethresholdhelper DESTINATION ${KAUTH_HELPER_INSTALL_DIR})
+ kauth_install_helper_files(chargethresholdhelper org.kde.powerdevil.chargethresholdhelper root)
