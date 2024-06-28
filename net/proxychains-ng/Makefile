@@ -11,6 +11,10 @@ MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=		c pthread
 
 USE_GMAKE=	Yes
