@@ -4,7 +4,7 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v23.07.29
+GH_TAGNAME =	v24.04.28
 
 CATEGORIES =	multimedia
 
@@ -36,6 +36,8 @@ RUN_DEPENDS =		audio/jack \
 
 LIB_DEPENDS =		math/fftw3 \
 			multimedia/mlt7 \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtcharts \
 			x11/qt6/qtmultimedia
 
 NO_TEST =		Yes

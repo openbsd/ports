@@ -9,6 +9,7 @@ share/metainfo/org.shotcut.Shotcut.metainfo.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 share/shotcut/
 share/shotcut/filter-sets/
+share/shotcut/filter-sets/Glow Intensity
 share/shotcut/filter-sets/Obscure With Blur
 share/shotcut/filter-sets/Obscure With Mosaic
 share/shotcut/filter-sets/Text Simple with Gradient Back
@@ -36,6 +37,17 @@ share/shotcut/qml/filters/alpha_view/
 share/shotcut/qml/filters/alpha_view/icon.webp
 share/shotcut/qml/filters/alpha_view/meta.qml
 share/shotcut/qml/filters/alpha_view/ui.qml
+share/shotcut/qml/filters/ambisonic_decoder/
+share/shotcut/qml/filters/ambisonic_decoder/meta.qml
+share/shotcut/qml/filters/ambisonic_decoder/ui.qml
+share/shotcut/qml/filters/ambisonic_decoder/vui.qml
+share/shotcut/qml/filters/ambisonic_encoder/
+share/shotcut/qml/filters/ambisonic_encoder/meta.qml
+share/shotcut/qml/filters/ambisonic_encoder/ui.qml
+share/shotcut/qml/filters/ambisonic_encoder/vui.qml
+share/shotcut/qml/filters/audio_adeclick/
+share/shotcut/qml/filters/audio_adeclick/meta.qml
+share/shotcut/qml/filters/audio_adeclick/ui.qml
 share/shotcut/qml/filters/audio_autofade/
 share/shotcut/qml/filters/audio_autofade/meta.qml
 share/shotcut/qml/filters/audio_autofade/ui.qml
@@ -552,6 +564,9 @@ share/shotcut/qml/filters/vertigo/
 share/shotcut/qml/filters/vertigo/icon.webp
 share/shotcut/qml/filters/vertigo/meta.qml
 share/shotcut/qml/filters/vertigo/ui.qml
+share/shotcut/qml/filters/video_autofade/
+share/shotcut/qml/filters/video_autofade/meta.qml
+share/shotcut/qml/filters/video_autofade/ui.qml
 share/shotcut/qml/filters/vignette/
 share/shotcut/qml/filters/vignette/icon.webp
 share/shotcut/qml/filters/vignette/meta_movit.qml
