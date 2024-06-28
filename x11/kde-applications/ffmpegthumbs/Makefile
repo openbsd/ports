@@ -2,7 +2,6 @@ COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 DISTNAME =	ffmpegthumbs-${VERSION}
 PKGNAME =	kf6-ffmpegthumbs-${VERSION}
 CATEGORIES =	multimedia
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6CoreAddons KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets

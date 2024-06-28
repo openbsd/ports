@@ -16,7 +16,7 @@ WANTLIB += KF6ThreadWeaver KF6Wallet KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui PlasmaActivities QMobipocket6 Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport Qt6Qml
 WANTLIB += Qt6Svg Qt6TextToSpeech Qt6Widgets Qt6Xml X11 c djvulibre
-WANTLIB += epub freetype jpeg m markdown phonon4qt6 poppler poppler-qt6
+WANTLIB += epub freetype m markdown phonon4qt6 poppler poppler-qt6
 WANTLIB += spectre tiff xkbcommon z
 
 MODKDE5_DESKTOP_FILE = yes
@@ -59,7 +59,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/sonnet \
 		devel/kf6/threadweaver \
 		graphics/djvulibre \
-		graphics/jpeg \
 		graphics/tiff \
 		multimedia/phonon,qt6 \
 		print/libspectre \

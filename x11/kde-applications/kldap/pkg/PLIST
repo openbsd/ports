@@ -165,6 +165,7 @@ share/locale/ga/LC_MESSAGES/libkldap6.mo
 share/locale/gl/LC_MESSAGES/kio_ldap.mo
 share/locale/gl/LC_MESSAGES/libkldap6.mo
 share/locale/he/LC_MESSAGES/kio_ldap.mo
+share/locale/he/LC_MESSAGES/libkldap6.mo
 share/locale/hi/LC_MESSAGES/kio_ldap.mo
 share/locale/hi/LC_MESSAGES/libkldap6.mo
 share/locale/hne/LC_MESSAGES/kio_ldap.mo
@@ -234,6 +235,7 @@ share/locale/sr@latin/LC_MESSAGES/libkldap6.mo
 share/locale/sv/LC_MESSAGES/kio_ldap.mo
 share/locale/sv/LC_MESSAGES/libkldap6.mo
 share/locale/ta/LC_MESSAGES/kio_ldap.mo
+share/locale/ta/LC_MESSAGES/libkldap6.mo
 share/locale/th/LC_MESSAGES/kio_ldap.mo
 share/locale/th/LC_MESSAGES/libkldap6.mo
 share/locale/tr/LC_MESSAGES/kio_ldap.mo

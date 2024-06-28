@@ -3,7 +3,7 @@
 Index: vnc/vncclientthread.cpp
 --- vnc/vncclientthread.cpp.orig
 +++ vnc/vncclientthread.cpp
-@@ -667,23 +667,6 @@ void VncClientThread::clientSetKeepalive()
+@@ -657,23 +657,6 @@ void VncClientThread::clientSetKeepalive()
          return;
      }
  
@@ -20,7 +20,7 @@ Index: vnc/vncclientthread.cpp
 -    }
 -
 -    optval = m_keepalive.failedProbes;
--    if(setsockopt(cl->sock, IPPROTO_TCP, TCP_KEEPCNT, &optval, optlen) < 0) {
+-    if (setsockopt(cl->sock, IPPROTO_TCP, TCP_KEEPCNT, &optval, optlen) < 0) {
 -        qCritical(KRDC) << "setsockopt(TCP_KEEPCNT)" << strerror(errno);
 -        return;
 -    }

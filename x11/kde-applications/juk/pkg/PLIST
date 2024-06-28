@@ -88,6 +88,7 @@ share/kio/servicemenus/
 share/kio/servicemenus/jukservicemenu.desktop
 share/knotifications6/juk.notifyrc
 share/locale/ar/LC_MESSAGES/juk.mo
+share/locale/ast/LC_MESSAGES/juk.mo
 share/locale/be/LC_MESSAGES/juk.mo
 share/locale/bg/LC_MESSAGES/juk.mo
 share/locale/bn/LC_MESSAGES/juk.mo

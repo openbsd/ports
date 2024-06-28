@@ -1,7 +1,7 @@
 Index: src/autotests/TerminalInterfaceTest.cpp
 --- src/autotests/TerminalInterfaceTest.cpp.orig
 +++ src/autotests/TerminalInterfaceTest.cpp
-@@ -23,6 +23,7 @@
+@@ -22,6 +22,7 @@
  #include <unistd.h>
  #elif defined(Q_OS_OPENBSD)
  #include <kvm.h>
@@ -9,7 +9,7 @@ Index: src/autotests/TerminalInterfaceTest.cpp
  #include <sys/param.h>
  #include <sys/sysctl.h>
  #endif
-@@ -213,11 +214,11 @@ void TerminalInterfaceTest::testTerminalInterface()
+@@ -212,11 +213,11 @@ void TerminalInterfaceTest::testTerminalInterface()
      QVERIFY(procExeTarget.open(QIODevice::ReadOnly));
      QCOMPARE(QStringLiteral(procExeTarget.readAll()), command);
  #elif defined(Q_OS_OPENBSD)

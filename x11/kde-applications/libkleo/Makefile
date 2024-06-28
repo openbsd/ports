@@ -13,7 +13,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kcolorscheme \
@@ -26,7 +27,6 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		security/gpgme,-qt \
 		security/libassuan \
 		security/libgpg-error \
-		textproc/ktextaddons \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
+		textproc/ktextaddons
 
 .include <bsd.port.mk>

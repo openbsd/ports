@@ -87,15 +87,16 @@ share/kconf_update/klickety.upd
 share/klickety/
 share/klickety/klickety.kcfg
 share/klickety/themes/
-share/klickety/themes/classic.svg
+share/klickety/themes/classic.svgz
 share/klickety/themes/classic_preview.png
 share/klickety/themes/default.desktop
 share/klickety/themes/ksame.desktop
-share/klickety/themes/ksame.svg
+share/klickety/themes/ksame.svgz
 share/klickety/themes/ksame_old.desktop
-share/klickety/themes/ksame_old.svg
+share/klickety/themes/ksame_old.svgz
 share/klickety/themes/ksame_old_preview.png
 share/klickety/themes/ksame_preview.png
+share/locale/ar/LC_MESSAGES/klickety.mo
 share/locale/ast/LC_MESSAGES/klickety.mo
 share/locale/bg/LC_MESSAGES/klickety.mo
 share/locale/bs/LC_MESSAGES/klickety.mo
@@ -114,6 +115,7 @@ share/locale/fi/LC_MESSAGES/klickety.mo
 share/locale/fr/LC_MESSAGES/klickety.mo
 share/locale/ga/LC_MESSAGES/klickety.mo
 share/locale/gl/LC_MESSAGES/klickety.mo
+share/locale/he/LC_MESSAGES/klickety.mo
 share/locale/hu/LC_MESSAGES/klickety.mo
 share/locale/ia/LC_MESSAGES/klickety.mo
 share/locale/id/LC_MESSAGES/klickety.mo

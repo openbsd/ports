@@ -135,5 +135,5 @@ share/locale/vi/LC_MESSAGES/kmag.mo
 share/locale/zh_CN/LC_MESSAGES/kmag.mo
 share/locale/zh_TW/LC_MESSAGES/kmag.mo
 share/metainfo/
-share/metainfo/org.kde.kmag.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.kde.kmag.metainfo.xml

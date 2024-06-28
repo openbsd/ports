@@ -15,8 +15,8 @@ WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Parts
 WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
 WANTLIB += KF6TextEditor KF6TextWidgets KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 c intl m xkbcommon
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml X11 c intl m xkbcommon
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -28,7 +28,7 @@ RUN_DEPENDS =	devel/kf6/sonnet,-aspell \
 		x11/kde-applications/konsole>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf6/attica \
-		devel/gettext \
+		devel/gettext,-runtime \
 		devel/kf6/kbookmarks \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
@@ -55,6 +55,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
+		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11

@@ -38,6 +38,8 @@ lib/qt6/plugins/kf6/parts/
 @so lib/qt6/plugins/kf6/parts/fsviewpart.so
 @so lib/qt6/plugins/kf6/parts/konq_sidebar.so
 @so lib/qt6/plugins/kf6/parts/webenginepart.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/webarchivethumbnail.so
 lib/qt6/plugins/khtml/
 lib/qt6/plugins/khtml/kpartplugins/
 @so lib/qt6/plugins/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
@@ -82,7 +84,6 @@ lib/qt6/plugins/kwebkitpart/kpartplugins/
 @so lib/qt6/plugins/kwebkitpart/kpartplugins/webarchiverpluginkwebkitpart_kpartplugins.so
 @so lib/qt6/plugins/uachangerplugin.so
 @so lib/qt6/plugins/webarchiverplugin.so
-@so lib/qt6/plugins/webarchivethumbnail.so
 lib/qt6/plugins/webenginepart/
 lib/qt6/plugins/webenginepart/kpartplugins/
 @so lib/qt6/plugins/webenginepart/kpartplugins/akregatorkonqfeediconwebenginepart_kpartplugins.so
@@ -919,6 +920,28 @@ share/locale/ar/LC_MESSAGES/libkonq.mo
 share/locale/ar/LC_MESSAGES/searchbarplugin.mo
 share/locale/ar/LC_MESSAGES/uachangerplugin.mo
 share/locale/ar/LC_MESSAGES/webenginepart.mo
+share/locale/ast/LC_MESSAGES/akregator_konqplugin.mo
+share/locale/ast/LC_MESSAGES/autorefresh.mo
+share/locale/ast/LC_MESSAGES/babelfish.mo
+share/locale/ast/LC_MESSAGES/dirfilterplugin.mo
+share/locale/ast/LC_MESSAGES/fsview.mo
+share/locale/ast/LC_MESSAGES/imgalleryplugin.mo
+share/locale/ast/LC_MESSAGES/kcmbookmarks.mo
+share/locale/ast/LC_MESSAGES/kcmkonq.mo
+share/locale/ast/LC_MESSAGES/kcmkonqhtml.mo
+share/locale/ast/LC_MESSAGES/kcmperformance.mo
+share/locale/ast/LC_MESSAGES/kfmclient.mo
+share/locale/ast/LC_MESSAGES/kgetplugin.mo
+share/locale/ast/LC_MESSAGES/khtmlsettingsplugin.mo
+share/locale/ast/LC_MESSAGES/khtmltts.mo
+share/locale/ast/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ast/LC_MESSAGES/konqueror.mo
+share/locale/ast/LC_MESSAGES/kshellcmdplugin.mo
+share/locale/ast/LC_MESSAGES/libkonq.mo
+share/locale/ast/LC_MESSAGES/searchbarplugin.mo
+share/locale/ast/LC_MESSAGES/uachangerplugin.mo
+share/locale/ast/LC_MESSAGES/webarchiver.mo
+share/locale/ast/LC_MESSAGES/webenginepart.mo
 share/locale/be/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/be/LC_MESSAGES/autorefresh.mo
 share/locale/be/LC_MESSAGES/babelfish.mo
@@ -1802,6 +1825,8 @@ share/locale/lv/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/lv/LC_MESSAGES/libkonq.mo
 share/locale/lv/LC_MESSAGES/searchbarplugin.mo
 share/locale/lv/LC_MESSAGES/uachangerplugin.mo
+share/locale/lv/LC_MESSAGES/webarchiver.mo
+share/locale/lv/LC_MESSAGES/webenginepart.mo
 share/locale/mai/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/mai/LC_MESSAGES/autorefresh.mo
 share/locale/mai/LC_MESSAGES/babelfish.mo

@@ -22,11 +22,11 @@ WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Notifications KF6People KF6PulseAudioQt
 WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6WidgetsAddons
-WANTLIB += KF6WindowSystem Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui
-WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml SM X11 Xext Xtst c crypto dbus-1 fakekey m wayland-client
-WANTLIB += wayland-cursor xkbcommon
+WANTLIB += KF6WindowSystem Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xext Xtst
+WANTLIB += c crypto dbus-1 fakekey m wayland-client wayland-cursor
+WANTLIB += xkbcommon
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
@@ -80,7 +80,6 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		wayland/wayland \
 		x11/dbus \
 		x11/libfakekey \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtwayland \

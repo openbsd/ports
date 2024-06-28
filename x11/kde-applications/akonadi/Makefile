@@ -13,9 +13,9 @@ SHARED_LIBS +=	KPim6AkonadiXml           0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
-WANTLIB += KF6KIOCore KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Sql Qt6Widgets Qt6Xml accounts-qt6
-WANTLIB += c kaccounts6 lzma m xml2
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml accounts-qt6 c kaccounts6
+WANTLIB += lzma m xml2
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -52,7 +52,6 @@ LIB_DEPENDS =		archivers/xz \
 			devel/kf6/kcrash \
 			devel/kf6/ki18n \
 			devel/kf6/kiconthemes \
-			devel/kf6/kio \
 			devel/kf6/kitemmodels \
 			devel/kf6/kwidgetsaddons \
 			devel/kf6/kxmlgui \

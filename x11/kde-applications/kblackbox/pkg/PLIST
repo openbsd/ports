@@ -48,8 +48,8 @@ share/icons/hicolor/32x32/apps/kblackbox.png
 share/icons/hicolor/48x48/apps/kblackbox.png
 share/icons/hicolor/64x64/apps/kblackbox.png
 share/kblackbox/
-share/kblackbox/pics/
-share/kblackbox/pics/kblackbox.svgz
+share/kblackbox/themes/
+share/kblackbox/themes/default.svgz
 share/locale/af/LC_MESSAGES/kblackbox.mo
 share/locale/ar/LC_MESSAGES/kblackbox.mo
 share/locale/ast/LC_MESSAGES/kblackbox.mo

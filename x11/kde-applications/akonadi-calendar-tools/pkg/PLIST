@@ -113,6 +113,8 @@ share/locale/ko/LC_MESSAGES/calendarjanitor.mo
 share/locale/ko/LC_MESSAGES/konsolekalendar.mo
 share/locale/lt/LC_MESSAGES/calendarjanitor.mo
 share/locale/lt/LC_MESSAGES/konsolekalendar.mo
+share/locale/lv/LC_MESSAGES/calendarjanitor.mo
+share/locale/lv/LC_MESSAGES/konsolekalendar.mo
 share/locale/mk/LC_MESSAGES/konsolekalendar.mo
 share/locale/mr/LC_MESSAGES/konsolekalendar.mo
 share/locale/ms/LC_MESSAGES/konsolekalendar.mo
@@ -142,6 +144,7 @@ share/locale/sl/LC_MESSAGES/konsolekalendar.mo
 share/locale/sq/LC_MESSAGES/konsolekalendar.mo
 share/locale/sv/LC_MESSAGES/calendarjanitor.mo
 share/locale/sv/LC_MESSAGES/konsolekalendar.mo
+share/locale/ta/LC_MESSAGES/calendarjanitor.mo
 share/locale/ta/LC_MESSAGES/konsolekalendar.mo
 share/locale/tg/LC_MESSAGES/konsolekalendar.mo
 share/locale/tr/LC_MESSAGES/calendarjanitor.mo

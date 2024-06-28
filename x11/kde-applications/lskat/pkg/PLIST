@@ -127,16 +127,16 @@ share/locale/xh/LC_MESSAGES/lskat.mo
 share/locale/zh_CN/LC_MESSAGES/lskat.mo
 share/locale/zh_TW/LC_MESSAGES/lskat.mo
 share/lskat/
-share/lskat/grafix/
-share/lskat/grafix/blue.desktop
-share/lskat/grafix/blue.rc
-share/lskat/grafix/blue.svg
-share/lskat/grafix/egyptian.desktop
-share/lskat/grafix/egyptian.rc
-share/lskat/grafix/egyptian.svg
-share/lskat/grafix/oxygen.desktop
-share/lskat/grafix/oxygen.rc
-share/lskat/grafix/oxygen.svg
+share/lskat/themes/
+share/lskat/themes/blue.desktop
+share/lskat/themes/blue.rc
+share/lskat/themes/blue.svgz
+share/lskat/themes/egyptian.desktop
+share/lskat/themes/egyptian.rc
+share/lskat/themes/egyptian.svgz
+share/lskat/themes/oxygen.desktop
+share/lskat/themes/oxygen.rc
+share/lskat/themes/oxygen.svgz
 share/metainfo/
 share/metainfo/org.kde.lskat.appdata.xml
 @tag update-desktop-database

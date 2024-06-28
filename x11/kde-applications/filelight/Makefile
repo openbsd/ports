@@ -44,5 +44,4 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/solid \
 		x11/qt6/qtdeclarative
 
-
 .include <bsd.port.mk>

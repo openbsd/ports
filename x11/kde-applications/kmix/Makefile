@@ -1,7 +1,6 @@
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kmix
 

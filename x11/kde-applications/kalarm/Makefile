@@ -26,8 +26,8 @@ WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport KPim6Mime
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml X11 c canberra m
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += X11 c canberra m
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
@@ -77,7 +77,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/qt6/qt5compat
+		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
 
 .include <bsd.port.mk>

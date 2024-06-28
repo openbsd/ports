@@ -6,8 +6,8 @@ HOMEPAGE =	https://www.kde.org/applications/games/kubrick
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU KDEGames6 KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6I18n KF6WidgetsAddons KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
 WANTLIB += Qt6Qml Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
@@ -23,6 +23,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kxmlgui \
+		devel/kf6/kdbusaddons \
 		devel/kf6/kwidgetsaddons \
 		x11/qt6/qtsvg \
 		x11/qt6/qtdeclarative \

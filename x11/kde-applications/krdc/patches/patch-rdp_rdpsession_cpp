@@ -1,7 +1,7 @@
 Index: rdp/rdpsession.cpp
 --- rdp/rdpsession.cpp.orig
 +++ rdp/rdpsession.cpp
-@@ -32,6 +32,10 @@
+@@ -33,6 +33,10 @@
  #include <freerdp/locale/keyboard.h>
  #endif
  
@@ -12,7 +12,7 @@ Index: rdp/rdpsession.cpp
  #include "rdpview.h"
  
  #include "krdc_debug.h"
-@@ -407,7 +411,11 @@ bool RdpSession::start()
+@@ -492,7 +496,11 @@ bool RdpSession::start()
      }
  
      m_thread = std::thread(std::bind(&RdpSession::run, this));

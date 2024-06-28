@@ -1,5 +1,4 @@
 COMMENT =	library and QML module for Accounts-SSO and SignOn-SSO
-REVISION =	0
 
 DISTNAME =	kaccounts-integration-${VERSION}
 
@@ -16,13 +15,13 @@ MODKDE5_DESKTOP_FILE = yes
 
 MODKDE_KF5 = yes
 
-BUILD_DEPENDS =	devel/kf5/kcmutils \
-		devel/qcoro
+BUILD_DEPENDS =	devel/kf5/kcmutils
 
 LIB_DEPENDS =	devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		net/libaccounts-qt \
 		net/signond \
+		devel/qcoro \
 		x11/qt5/qtdeclarative
 
 CONFIGURE_ARGS =	-DKF6_COMPAT_BUILD=ON

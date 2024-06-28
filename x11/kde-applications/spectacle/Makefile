@@ -1,7 +1,6 @@
 BROKEN =	Missinf KPipeWire
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
-REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	https://apps.kde.org/spectacle/

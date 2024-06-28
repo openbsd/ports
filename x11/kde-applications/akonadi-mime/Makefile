@@ -8,8 +8,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
 WANTLIB += KF6ItemModels KF6KIOCore KF6WidgetsAddons KF6XmlGui
 WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
-WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Test
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

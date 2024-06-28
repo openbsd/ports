@@ -9,8 +9,7 @@ WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Network m sasl2
 
 MODKDE5_TRANSLATIONS = yes
 
-LIB_DEPENDS =	 \
-		devel/kf6/kcoreaddons \
+LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		security/cyrus-sasl2 \

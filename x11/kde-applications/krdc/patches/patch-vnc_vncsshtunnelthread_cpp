@@ -3,11 +3,11 @@ Missing include
 Index: vnc/vncsshtunnelthread.cpp
 --- vnc/vncsshtunnelthread.cpp.orig
 +++ vnc/vncsshtunnelthread.cpp
-@@ -10,6 +10,7 @@
- 
+@@ -11,6 +11,7 @@
  #include <KLocalizedString>
  
+ #include <arpa/inet.h>
 +#include <errno.h>
  #include <fcntl.h>
- #include <arpa/inet.h>
  #include <netinet/in.h>
+ #include <sys/socket.h>

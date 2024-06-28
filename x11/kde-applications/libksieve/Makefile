@@ -1,7 +1,6 @@
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6KManageSieve         0.0 # 0.0
 SHARED_LIBS +=	KPim6KSieve               0.0 # 0.0

@@ -80,6 +80,7 @@ lib/cmake/KPim6MailImporterAkonadi/KPim6MailImporterAkonadiTargets.cmake
 @lib lib/libKPim6MailImporterAkonadi.so.${LIBKPim6MailImporterAkonadi_VERSION}
 share/locale/af/LC_MESSAGES/libmailimporter6.mo
 share/locale/ar/LC_MESSAGES/libmailimporter6.mo
+share/locale/ast/LC_MESSAGES/libmailimporter6.mo
 share/locale/be/LC_MESSAGES/libmailimporter6.mo
 share/locale/bg/LC_MESSAGES/libmailimporter6.mo
 share/locale/br/LC_MESSAGES/libmailimporter6.mo

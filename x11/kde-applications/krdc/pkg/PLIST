@@ -10,9 +10,9 @@ lib/qt6/plugins/krdc/
 lib/qt6/plugins/krdc/kcms/
 @so lib/qt6/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
 @so lib/qt6/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
-@so lib/qt6/plugins/krdc/libkrdc_rdpplugin.so
-@so lib/qt6/plugins/krdc/libkrdc_testplugin.so
-@so lib/qt6/plugins/krdc/libkrdc_vncplugin.so
+@so lib/qt6/plugins/krdc/krdc_rdpplugin.so
+@so lib/qt6/plugins/krdc/krdc_testplugin.so
+@so lib/qt6/plugins/krdc/krdc_vncplugin.so
 share/applications/org.kde.krdc.desktop
 share/config.kcfg/
 share/config.kcfg/krdc.kcfg

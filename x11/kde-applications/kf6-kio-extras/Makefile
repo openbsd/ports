@@ -1,7 +1,6 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity net
 
@@ -16,16 +15,15 @@ WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6SyntaxHighlighting KF6TextWidgets KF6WidgetsAddons
 WANTLIB += OpenEXR-3_2 OpenEXRCore-3_2 PlasmaActivities PlasmaActivitiesStats
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Qml
-WANTLIB += Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
+WANTLIB += QCoro6Core Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
 WANTLIB += m mtp phonon4qt6 phonon4qt6experimental smbclient ssh
 WANTLIB += tag util
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	devel/qcoro,qt6 \
-		devel/gperf \
+BUILD_DEPENDS =	devel/gperf \
 		devel/kf6/kiconthemes \
 		devel/kf6/kpty
 
@@ -58,6 +56,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/libmtp \
+		devel/qcoro,qt6 \
 		graphics/openexr \
 		multimedia/phonon,qt6 \
 		net/kdsoap,qt6 \

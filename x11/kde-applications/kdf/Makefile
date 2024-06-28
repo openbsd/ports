@@ -12,8 +12,8 @@ WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6JobWidgets
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
 WANTLIB += KF6Solid KF6StatusNotifierItem KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Qml
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -38,7 +38,6 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

@@ -31,6 +31,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/kf6/solid \
+		devel/kf6/solid
 
 .include <bsd.port.mk>

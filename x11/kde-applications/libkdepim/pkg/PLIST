@@ -37,6 +37,7 @@ share/dbus-1/interfaces/org.kde.addressbook.service.xml
 share/dbus-1/interfaces/org.kde.mailtransport.service.xml
 share/locale/af/LC_MESSAGES/libkdepim6.mo
 share/locale/ar/LC_MESSAGES/libkdepim6.mo
+share/locale/ast/LC_MESSAGES/libkdepim6.mo
 share/locale/be/LC_MESSAGES/libkdepim6.mo
 share/locale/bg/LC_MESSAGES/libkdepim6.mo
 share/locale/br/LC_MESSAGES/libkdepim6.mo

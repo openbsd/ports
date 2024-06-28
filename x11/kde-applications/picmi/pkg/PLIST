@@ -65,6 +65,7 @@ share/locale/fi/LC_MESSAGES/picmi.mo
 share/locale/fr/LC_MESSAGES/picmi.mo
 share/locale/ga/LC_MESSAGES/picmi.mo
 share/locale/gl/LC_MESSAGES/picmi.mo
+share/locale/he/LC_MESSAGES/picmi.mo
 share/locale/hu/LC_MESSAGES/picmi.mo
 share/locale/ia/LC_MESSAGES/picmi.mo
 share/locale/it/LC_MESSAGES/picmi.mo
@@ -137,7 +138,7 @@ share/picmi/levels/default/zebra.xpm
 share/picmi/themes/
 share/picmi/themes/picmi.desktop
 share/picmi/themes/picmi.png
-share/picmi/themes/picmi.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/picmi/themes/picmi.svgz
 share/qlogging-categories6/picmi.categories

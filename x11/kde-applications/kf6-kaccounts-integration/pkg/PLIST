@@ -49,6 +49,7 @@ lib/qt6/qml/org/kde/kaccounts/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kaccounts/qmldir
 share/applications/kcm_kaccounts.desktop
 share/locale/ar/LC_MESSAGES/kaccounts-integration.mo
+share/locale/ast/LC_MESSAGES/kaccounts-integration.mo
 share/locale/az/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bg/LC_MESSAGES/kaccounts-integration.mo
 share/locale/bs/LC_MESSAGES/kaccounts-integration.mo
@@ -66,14 +67,17 @@ share/locale/eu/LC_MESSAGES/kaccounts-integration.mo
 share/locale/fi/LC_MESSAGES/kaccounts-integration.mo
 share/locale/fr/LC_MESSAGES/kaccounts-integration.mo
 share/locale/gl/LC_MESSAGES/kaccounts-integration.mo
+share/locale/he/LC_MESSAGES/kaccounts-integration.mo
 share/locale/hu/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ia/LC_MESSAGES/kaccounts-integration.mo
 share/locale/id/LC_MESSAGES/kaccounts-integration.mo
+share/locale/is/LC_MESSAGES/kaccounts-integration.mo
 share/locale/it/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ja/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ka/LC_MESSAGES/kaccounts-integration.mo
 share/locale/ko/LC_MESSAGES/kaccounts-integration.mo
 share/locale/lt/LC_MESSAGES/kaccounts-integration.mo
+share/locale/lv/LC_MESSAGES/kaccounts-integration.mo
 share/locale/nl/LC_MESSAGES/kaccounts-integration.mo
 share/locale/nn/LC_MESSAGES/kaccounts-integration.mo
 share/locale/pa/LC_MESSAGES/kaccounts-integration.mo

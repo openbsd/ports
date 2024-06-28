@@ -2,7 +2,6 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	UML Modeller
 DISTNAME =	umbrello-${VERSION}
-REVISION =	0
 CATEGORIES =	x11 productivity
 
 HOMEPAGE =	https://umbrello.kde.org/

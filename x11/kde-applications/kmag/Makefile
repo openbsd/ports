@@ -1,7 +1,6 @@
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/utilities/kmag/
 

@@ -61,8 +61,6 @@ share/kolf/courses/Practice
 share/kolf/courses/ReallyEasy
 share/kolf/courses/USApro
 share/kolf/intro
-share/kolf/pics/
-share/kolf/pics/default_theme.svgz
 share/kolf/sounds/
 share/kolf/sounds/blackhole.wav
 share/kolf/sounds/blackholeeject.wav
@@ -74,6 +72,8 @@ share/kolf/sounds/holeinone.wav
 share/kolf/sounds/puddle.wav
 share/kolf/sounds/wall.wav
 share/kolf/sounds/woohoo.wav
+share/kolf/themes/
+share/kolf/themes/default.svgz
 share/kolf/tutorial.kolf
 share/kolf/tutorial.kolfgame
 share/locale/af/LC_MESSAGES/kolf.mo

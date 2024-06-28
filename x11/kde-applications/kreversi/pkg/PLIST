@@ -77,9 +77,6 @@ share/icons/hicolor/scalable/actions/lastmoves.svgz
 share/icons/hicolor/scalable/actions/legalmoves.svgz
 share/knotifications6/kreversi.notifyrc
 share/kreversi/
-share/kreversi/pics/
-share/kreversi/pics/default_theme.desktop
-share/kreversi/pics/default_theme.svgz
 share/kreversi/qml/
 share/kreversi/qml/Board.qml
 share/kreversi/qml/CanvasItem.qml
@@ -91,6 +88,9 @@ share/kreversi/qml/globals.js
 share/kreversi/sounds/
 share/kreversi/sounds/reversi-click.wav
 share/kreversi/sounds/reversi-won.wav
+share/kreversi/themes/
+share/kreversi/themes/default.desktop
+share/kreversi/themes/default.svgz
 share/locale/af/LC_MESSAGES/kreversi.mo
 share/locale/ar/LC_MESSAGES/kreversi.mo
 share/locale/ast/LC_MESSAGES/kreversi.mo

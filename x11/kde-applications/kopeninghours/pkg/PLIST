@@ -28,6 +28,7 @@ lib/qt6/qml/org/kde/kopeninghours/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kopeninghours/kopeninghoursqmlplugin.qmltypes
 @so lib/qt6/qml/org/kde/kopeninghours/libkopeninghoursqmlplugin.so
 lib/qt6/qml/org/kde/kopeninghours/qmldir
+share/locale/ast/LC_MESSAGES/kopeninghours.mo
 share/locale/ca/LC_MESSAGES/kopeninghours.mo
 share/locale/ca@valencia/LC_MESSAGES/kopeninghours.mo
 share/locale/cs/LC_MESSAGES/kopeninghours.mo
@@ -39,13 +40,16 @@ share/locale/eu/LC_MESSAGES/kopeninghours.mo
 share/locale/fi/LC_MESSAGES/kopeninghours.mo
 share/locale/fr/LC_MESSAGES/kopeninghours.mo
 share/locale/gl/LC_MESSAGES/kopeninghours.mo
+share/locale/he/LC_MESSAGES/kopeninghours.mo
 share/locale/hi/LC_MESSAGES/kopeninghours.mo
+share/locale/hu/LC_MESSAGES/kopeninghours.mo
 share/locale/ia/LC_MESSAGES/kopeninghours.mo
 share/locale/it/LC_MESSAGES/kopeninghours.mo
 share/locale/ja/LC_MESSAGES/kopeninghours.mo
 share/locale/ka/LC_MESSAGES/kopeninghours.mo
 share/locale/ko/LC_MESSAGES/kopeninghours.mo
 share/locale/lt/LC_MESSAGES/kopeninghours.mo
+share/locale/lv/LC_MESSAGES/kopeninghours.mo
 share/locale/nl/LC_MESSAGES/kopeninghours.mo
 share/locale/nn/LC_MESSAGES/kopeninghours.mo
 share/locale/pl/LC_MESSAGES/kopeninghours.mo

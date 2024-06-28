@@ -52,8 +52,8 @@ share/icons/hicolor/64x64/apps/katomic.png
 share/katomic/
 share/katomic/levels/
 share/katomic/levels/default_levels.dat
-share/katomic/pics/
-share/katomic/pics/default_theme.svgz
+share/katomic/themes/
+share/katomic/themes/default.svgz
 share/knsrcfiles/
 share/knsrcfiles/katomic.knsrc
 share/locale/af/LC_MESSAGES/katomic.mo

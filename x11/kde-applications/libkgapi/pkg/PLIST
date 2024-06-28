@@ -410,6 +410,7 @@ share/locale/fi/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/fr/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/ga/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/gl/LC_MESSAGES/libkgapi6_qt.qm
+share/locale/he/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/hu/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/ia/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/it/LC_MESSAGES/libkgapi6_qt.qm
@@ -419,6 +420,7 @@ share/locale/kk/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/km/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/ko/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/lt/LC_MESSAGES/libkgapi6_qt.qm
+share/locale/lv/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/mr/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/nb/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/nds/LC_MESSAGES/libkgapi6_qt.qm
@@ -436,6 +438,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/sr@latin/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/sv/LC_MESSAGES/libkgapi6_qt.qm
+share/locale/ta/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/tr/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/ug/LC_MESSAGES/libkgapi6_qt.qm
 share/locale/uk/LC_MESSAGES/libkgapi6_qt.qm

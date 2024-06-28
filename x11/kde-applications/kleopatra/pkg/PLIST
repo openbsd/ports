@@ -39,6 +39,12 @@ share/doc/HTML/et/kleopatra/index.docbook
 share/doc/HTML/et/kwatchgnupg/
 share/doc/HTML/et/kwatchgnupg/index.cache.bz2
 share/doc/HTML/et/kwatchgnupg/index.docbook
+share/doc/HTML/fr/kleopatra/
+share/doc/HTML/fr/kleopatra/index.cache.bz2
+share/doc/HTML/fr/kleopatra/index.docbook
+share/doc/HTML/fr/kwatchgnupg/
+share/doc/HTML/fr/kwatchgnupg/index.cache.bz2
+share/doc/HTML/fr/kwatchgnupg/index.docbook
 share/doc/HTML/it/kleopatra/
 share/doc/HTML/it/kleopatra/index.cache.bz2
 share/doc/HTML/it/kleopatra/index.docbook
@@ -89,9 +95,6 @@ share/icons/hicolor/256x256/apps/kleopatra.png
 share/icons/hicolor/32x32/apps/kleopatra.png
 share/icons/hicolor/48x48/apps/kleopatra.png
 share/icons/hicolor/64x64/apps/kleopatra.png
-share/kconf_update/
-share/kconf_update/kleopatra-15.08-kickoff.sh
-share/kconf_update/kleopatra.upd
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/kleopatra_decryptverifyfiles.desktop
@@ -158,6 +161,7 @@ share/locale/ga/LC_MESSAGES/kwatchgnupg.mo
 share/locale/gl/LC_MESSAGES/kleopatra.mo
 share/locale/gl/LC_MESSAGES/kwatchgnupg.mo
 share/locale/he/LC_MESSAGES/kleopatra.mo
+share/locale/he/LC_MESSAGES/kwatchgnupg.mo
 share/locale/hi/LC_MESSAGES/kleopatra.mo
 share/locale/hi/LC_MESSAGES/kwatchgnupg.mo
 share/locale/hne/LC_MESSAGES/kleopatra.mo

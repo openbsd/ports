@@ -35,6 +35,7 @@ lib/cmake/KPim6TextEdit/KPim6TextEditTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6TextEdit/KPim6TextEditTargets.cmake
 @lib lib/libKPim6TextEdit.so.${LIBKPim6TextEdit_VERSION}
 share/locale/ar/LC_MESSAGES/libkpimtextedit6.mo
+share/locale/ast/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/az/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/bs/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/ca/LC_MESSAGES/libkpimtextedit6.mo
@@ -52,6 +53,7 @@ share/locale/fi/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/fr/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/ga/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/gl/LC_MESSAGES/libkpimtextedit6.mo
+share/locale/he/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/hu/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/ia/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/it/LC_MESSAGES/libkpimtextedit6.mo
@@ -81,6 +83,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/sr@latin/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/sv/LC_MESSAGES/libkpimtextedit6.mo
+share/locale/ta/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/tr/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/ug/LC_MESSAGES/libkpimtextedit6.mo
 share/locale/uk/LC_MESSAGES/libkpimtextedit6.mo

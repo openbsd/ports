@@ -54,14 +54,14 @@ share/icons/hicolor/32x32/apps/knavalbattle.png
 share/icons/hicolor/48x48/apps/knavalbattle.png
 share/icons/hicolor/64x64/apps/knavalbattle.png
 share/knavalbattle/
-share/knavalbattle/pictures/
-share/knavalbattle/pictures/default.desktop
-share/knavalbattle/pictures/default_theme.svgz
 share/knavalbattle/sounds/
 share/knavalbattle/sounds/ship-player-shoot-water.ogg
 share/knavalbattle/sounds/ship-player1-shoot.ogg
 share/knavalbattle/sounds/ship-player2-shoot.ogg
 share/knavalbattle/sounds/ship-sink.ogg
+share/knavalbattle/themes/
+share/knavalbattle/themes/default.desktop
+share/knavalbattle/themes/default.svgz
 share/locale/af/LC_MESSAGES/knavalbattle.mo
 share/locale/ar/LC_MESSAGES/knavalbattle.mo
 share/locale/ast/LC_MESSAGES/knavalbattle.mo

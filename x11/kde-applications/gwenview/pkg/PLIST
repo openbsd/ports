@@ -104,6 +104,7 @@ share/icons/hicolor/48x48/apps/gwenview.png
 share/icons/hicolor/64x64/actions/document-share.png
 share/icons/hicolor/64x64/apps/gwenview.png
 share/locale/ar/LC_MESSAGES/gwenview.mo
+share/locale/ast/LC_MESSAGES/gwenview.mo
 share/locale/az/LC_MESSAGES/gwenview.mo
 share/locale/be/LC_MESSAGES/gwenview.mo
 share/locale/bg/LC_MESSAGES/gwenview.mo

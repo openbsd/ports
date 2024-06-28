@@ -42,7 +42,7 @@ MODKDE5_DOCS = yes
 
 RUN_DEPENDS =	misc/shared-mime-info
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf5/attica \
 		devel/kf5/karchive \
 		devel/kf5/kauth \

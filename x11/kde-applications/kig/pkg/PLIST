@@ -1,7 +1,6 @@
 @pkgpath x11/kde4/kig
 @bin bin/kig
 bin/pykig.py
-lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/kigpart.so
 @man man/man1/kig.1
 share/applications/org.kde.kig.desktop
@@ -62,7 +61,6 @@ share/doc/HTML/it/kig/index.docbook
 share/doc/HTML/nl/kig/
 share/doc/HTML/nl/kig/index.cache.bz2
 share/doc/HTML/nl/kig/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kig/
 share/doc/HTML/pt_BR/kig/index.cache.bz2
 share/doc/HTML/pt_BR/kig/index.docbook

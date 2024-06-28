@@ -1,4 +1,5 @@
 COMMENT =	extra functionality for kioslaves
+VERSION =	24.02.1
 DISTNAME =	kio-extras-kf5-${VERSION}
 PKGNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
@@ -25,8 +26,7 @@ MODKDE_KF5 =	yes
 
 BUILD_DEPENDS =	devel/gperf \
 		devel/kf5/kiconthemes \
-		devel/kf5/kpty \
-		devel/qcoro
+		devel/kf5/kpty
 
 RUN_DEPENDS =	devel/gperf \
 		devel/kf5/kiconthemes \

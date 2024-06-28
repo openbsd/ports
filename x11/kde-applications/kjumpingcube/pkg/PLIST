@@ -55,9 +55,9 @@ share/icons/hicolor/32x32/apps/kjumpingcube.png
 share/icons/hicolor/48x48/apps/kjumpingcube.png
 share/icons/hicolor/64x64/apps/kjumpingcube.png
 share/kjumpingcube/
-share/kjumpingcube/pics/
-share/kjumpingcube/pics/default.desktop
-share/kjumpingcube/pics/default.svg
+share/kjumpingcube/themes/
+share/kjumpingcube/themes/default.desktop
+share/kjumpingcube/themes/default.svgz
 share/locale/af/LC_MESSAGES/kjumpingcube.mo
 share/locale/ar/LC_MESSAGES/kjumpingcube.mo
 share/locale/ast/LC_MESSAGES/kjumpingcube.mo

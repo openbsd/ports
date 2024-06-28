@@ -247,6 +247,7 @@ share/konversation/themes/square/irc_op.png
 share/konversation/themes/square/irc_owner.png
 share/konversation/themes/square/irc_voice.png
 share/locale/ar/LC_MESSAGES/konversation.mo
+share/locale/ast/LC_MESSAGES/konversation.mo
 share/locale/bg/LC_MESSAGES/konversation.mo
 share/locale/br/LC_MESSAGES/konversation.mo
 share/locale/bs/LC_MESSAGES/konversation.mo
@@ -280,6 +281,7 @@ share/locale/kk/LC_MESSAGES/konversation.mo
 share/locale/km/LC_MESSAGES/konversation.mo
 share/locale/ko/LC_MESSAGES/konversation.mo
 share/locale/lt/LC_MESSAGES/konversation.mo
+share/locale/lv/LC_MESSAGES/konversation.mo
 share/locale/mr/LC_MESSAGES/konversation.mo
 share/locale/ms/LC_MESSAGES/konversation.mo
 share/locale/mt/LC_MESSAGES/konversation.mo

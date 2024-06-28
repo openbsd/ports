@@ -6,7 +6,6 @@
 @so lib/qt6/plugins/korganizerpart.so
 lib/qt6/plugins/pim6/kcms/korganizer/
 @so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configcolorsandfonts.so
-@so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configdesignerfields.so
 @so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configfreebusy.so
 @so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configgroupscheduling.so
 @so lib/qt6/plugins/pim6/kcms/korganizer/korganizer_configmain.so

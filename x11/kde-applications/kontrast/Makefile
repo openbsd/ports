@@ -3,7 +3,6 @@ DISTNAME =	kontrast-${VERSION}
 # XXX Depends on FutureSQL
 VERSION =	23.04.3
 CATEGORIES =	x11 graphics
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels

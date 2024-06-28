@@ -508,7 +508,6 @@ include/KPim6/WebEngineViewer/WebEngineViewer/SubmittedFormWarningWidget
 include/KPim6/WebEngineViewer/WebEngineViewer/TrackingWarningWidget
 include/KPim6/WebEngineViewer/WebEngineViewer/UpdateDataBaseInfo
 include/KPim6/WebEngineViewer/WebEngineViewer/WebEngineAccessKey
-include/KPim6/WebEngineViewer/WebEngineViewer/WebEngineExportHtmlPageJob
 include/KPim6/WebEngineViewer/WebEngineViewer/WebEngineExportPdfPageJob
 include/KPim6/WebEngineViewer/WebEngineViewer/WebEngineManageScript
 include/KPim6/WebEngineViewer/WebEngineViewer/WebEnginePage
@@ -541,7 +540,6 @@ include/KPim6/WebEngineViewer/webengineviewer/submittedformwarningwidget.h
 include/KPim6/WebEngineViewer/webengineviewer/trackingwarningwidget.h
 include/KPim6/WebEngineViewer/webengineviewer/updatedatabaseinfo.h
 include/KPim6/WebEngineViewer/webengineviewer/webengineaccesskey.h
-include/KPim6/WebEngineViewer/webengineviewer/webengineexporthtmlpagejob.h
 include/KPim6/WebEngineViewer/webengineviewer/webengineexportpdfpagejob.h
 include/KPim6/WebEngineViewer/webengineviewer/webenginemanagescript.h
 include/KPim6/WebEngineViewer/webengineviewer/webenginepage.h
@@ -636,9 +634,13 @@ share/locale/ar/LC_MESSAGES/libmessageviewer6.mo
 share/locale/ar/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/ar/LC_MESSAGES/libtemplateparser6.mo
 share/locale/ar/LC_MESSAGES/libwebengineviewer6.mo
+share/locale/ast/LC_MESSAGES/libmessagecomposer6.mo
 share/locale/ast/LC_MESSAGES/libmessagecore6.mo
+share/locale/ast/LC_MESSAGES/libmessagelist6.mo
+share/locale/ast/LC_MESSAGES/libmessageviewer6.mo
 share/locale/ast/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/ast/LC_MESSAGES/libtemplateparser6.mo
+share/locale/ast/LC_MESSAGES/libwebengineviewer6.mo
 share/locale/be/LC_MESSAGES/libmessagelist6.mo
 share/locale/be/LC_MESSAGES/libmessageviewer6.mo
 share/locale/be/LC_MESSAGES/libmimetreeparser6.mo
@@ -773,9 +775,13 @@ share/locale/gl/LC_MESSAGES/libmessageviewer6.mo
 share/locale/gl/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/gl/LC_MESSAGES/libtemplateparser6.mo
 share/locale/gl/LC_MESSAGES/libwebengineviewer6.mo
+share/locale/he/LC_MESSAGES/libmessagecomposer6.mo
+share/locale/he/LC_MESSAGES/libmessagecore6.mo
 share/locale/he/LC_MESSAGES/libmessagelist6.mo
 share/locale/he/LC_MESSAGES/libmessageviewer6.mo
 share/locale/he/LC_MESSAGES/libmimetreeparser6.mo
+share/locale/he/LC_MESSAGES/libtemplateparser6.mo
+share/locale/he/LC_MESSAGES/libwebengineviewer6.mo
 share/locale/hi/LC_MESSAGES/libmessagelist6.mo
 share/locale/hi/LC_MESSAGES/libmessageviewer6.mo
 share/locale/hi/LC_MESSAGES/libmimetreeparser6.mo
@@ -849,10 +855,13 @@ share/locale/lt/LC_MESSAGES/libmessageviewer6.mo
 share/locale/lt/LC_MESSAGES/libmimetreeparser6.mo
 share/locale/lt/LC_MESSAGES/libtemplateparser6.mo
 share/locale/lt/LC_MESSAGES/libwebengineviewer6.mo
+share/locale/lv/LC_MESSAGES/libmessagecomposer6.mo
 share/locale/lv/LC_MESSAGES/libmessagecore6.mo
 share/locale/lv/LC_MESSAGES/libmessagelist6.mo
 share/locale/lv/LC_MESSAGES/libmessageviewer6.mo
 share/locale/lv/LC_MESSAGES/libmimetreeparser6.mo
+share/locale/lv/LC_MESSAGES/libtemplateparser6.mo
+share/locale/lv/LC_MESSAGES/libwebengineviewer6.mo
 share/locale/mai/LC_MESSAGES/libmessagelist6.mo
 share/locale/mai/LC_MESSAGES/libmessageviewer6.mo
 share/locale/mai/LC_MESSAGES/libmimetreeparser6.mo

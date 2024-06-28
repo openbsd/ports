@@ -23,8 +23,7 @@ WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IncidenceEditor
 WANTLIB += KPim6KontactInterface KPim6LdapCore KPim6LdapWidgets
 WANTLIB += KPim6Libkdepim KPim6MailTransport KPim6Mime KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6UiTools
-WANTLIB += Qt6Widgets Qt6Xml X11 c m
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -84,10 +83,8 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
-		x11/qt6/qttools \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
-
 
 .include <bsd.port.mk>

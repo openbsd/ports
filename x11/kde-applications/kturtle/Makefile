@@ -8,8 +8,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6I18n KF6KIOCore KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Svg
+WANTLIB += Qt6SvgWidgets Qt6Widgets Qt6Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -31,7 +31,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/sonnet \
-		x11/qt6/qt5compat \
 		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

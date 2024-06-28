@@ -1124,18 +1124,31 @@ share/locale/sv/LC_MESSAGES/messageviewerheaderplugins.mo
 share/locale/sv/LC_MESSAGES/messageviewerplugins.mo
 share/locale/sv/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/sv/LC_MESSAGES/webengineurlinterceptor.mo
+share/locale/ta/LC_MESSAGES/cryptopageplugin.mo
+share/locale/ta/LC_MESSAGES/customtoolsplugin.mo
 share/locale/ta/LC_MESSAGES/importwizard_plugins.mo
 share/locale/ta/LC_MESSAGES/kaddressbook_importexportplugins.mo
+share/locale/ta/LC_MESSAGES/kaddressbook_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
+share/locale/ta/LC_MESSAGES/kmail_editorgrammar_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editorinit_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_editorsendcheck_plugins.mo
 share/locale/ta/LC_MESSAGES/kmail_plugins.mo
 share/locale/ta/LC_MESSAGES/kmailtransport_plugins.mo
 share/locale/ta/LC_MESSAGES/korganizer_plugins.mo
+share/locale/ta/LC_MESSAGES/messageviewer_application_gnupgwks_plugin.mo
+share/locale/ta/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
+share/locale/ta/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
+share/locale/ta/LC_MESSAGES/messageviewer_semantic_plugin.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ta/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/ta/LC_MESSAGES/messageviewerconfiguresettingsplugins.mo
+share/locale/ta/LC_MESSAGES/messageviewerheaderplugins.mo
+share/locale/ta/LC_MESSAGES/messageviewerplugins.mo
+share/locale/ta/LC_MESSAGES/sieveeditor_plugins.mo
+share/locale/ta/LC_MESSAGES/webengineurlinterceptor.mo
 share/locale/tg/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/tg/LC_MESSAGES/korganizer_plugins.mo
 share/locale/tg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
@@ -1264,15 +1277,5 @@ share/locale/zh_TW/LC_MESSAGES/sieveeditor_plugins.mo
 share/locale/zh_TW/LC_MESSAGES/webengineurlinterceptor.mo
 share/qlogging-categories6/kdepim-addons.categories
 share/qlogging-categories6/kdepim-addons.renamecategories
-share/qtcreator/
-share/qtcreator/templates/
-share/qtcreator/templates/kmaileditorconvertertextplugins/
-share/qtcreator/templates/kmaileditorconvertertextplugins/CMakeLists.txt
-share/qtcreator/templates/kmaileditorconvertertextplugins/plugin.json.impl
-share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.cpp
-share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditor.h
-share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.cpp
-share/qtcreator/templates/kmaileditorconvertertextplugins/plugineditorinterface.h
-share/qtcreator/templates/kmaileditorconvertertextplugins/wizard.json
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

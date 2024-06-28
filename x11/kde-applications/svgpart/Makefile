@@ -2,7 +2,6 @@ COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
 PKGNAME =	kf6-svgpart-${VERSION}
 CATEGORIES =	graphics
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n

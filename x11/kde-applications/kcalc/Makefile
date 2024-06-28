@@ -5,8 +5,8 @@ CATEGORIES =	x11 math
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6GuiAddons KF6I18n KF6Notifications KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Widgets
-WANTLIB += Qt6Xml c gmp m mpfr
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets Qt6Xml
+WANTLIB += c gmp m mpfr
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -24,7 +24,6 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf6/knotifications \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/mpfr \
-		x11/qt6/qt5compat
+		devel/mpfr
 
 .include <bsd.port.mk>

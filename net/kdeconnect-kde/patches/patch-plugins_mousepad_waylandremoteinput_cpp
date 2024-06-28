@@ -83,7 +83,7 @@ Index: plugins/mousepad/waylandremoteinput.cpp
  };
  }
  
-@@ -250,6 +252,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+@@ -249,6 +251,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
              bool shift = np.get<bool>(QStringLiteral("shift"), false);
              bool super = np.get<bool>(QStringLiteral("super"), false);
  
@@ -91,7 +91,7 @@ Index: plugins/mousepad/waylandremoteinput.cpp
              if (ctrl)
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTCTRL, 1);
              if (alt)
-@@ -282,6 +285,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
+@@ -281,6 +284,7 @@ bool WaylandRemoteInput::handlePacket(const NetworkPac
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTSHIFT, 0);
              if (super)
                  s_session->iface->NotifyKeyboardKeycode(s_session->m_xdpPath, {}, KEY_LEFTMETA, 0);

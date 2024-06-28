@@ -1,6 +1,5 @@
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
-REVISION =	0
 CATEGORIES =	devel geo
 
 SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1

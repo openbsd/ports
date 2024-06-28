@@ -205,6 +205,7 @@ lib/cmake/KTorrent6/KTorrent6Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KTorrent6/KTorrent6Targets.cmake
 @lib lib/libKTorrent6.so.${LIBKTorrent6_VERSION}
 share/locale/ar/LC_MESSAGES/libktorrent6.mo
+share/locale/ast/LC_MESSAGES/libktorrent6.mo
 share/locale/be/LC_MESSAGES/libktorrent6.mo
 share/locale/bg/LC_MESSAGES/libktorrent6.mo
 share/locale/bs/LC_MESSAGES/libktorrent6.mo
@@ -223,6 +224,7 @@ share/locale/fi/LC_MESSAGES/libktorrent6.mo
 share/locale/fr/LC_MESSAGES/libktorrent6.mo
 share/locale/ga/LC_MESSAGES/libktorrent6.mo
 share/locale/gl/LC_MESSAGES/libktorrent6.mo
+share/locale/he/LC_MESSAGES/libktorrent6.mo
 share/locale/hi/LC_MESSAGES/libktorrent6.mo
 share/locale/hne/LC_MESSAGES/libktorrent6.mo
 share/locale/hr/LC_MESSAGES/libktorrent6.mo

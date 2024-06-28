@@ -2,7 +2,6 @@ COMMENT =	widgets for Baloo
 DISTNAME =	baloo-widgets-${VERSION}
 PKGNAME =	kf6-baloo-widgets-${VERSION}
 CATEGORIES =	devel x11
-REVISION =	0
 
 SHARED_LIBS +=	KF6BalooWidgets           0.0 # 0.0
 

@@ -43,5 +43,4 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-
 .include <bsd.port.mk>

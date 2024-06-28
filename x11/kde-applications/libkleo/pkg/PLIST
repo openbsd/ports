@@ -1,6 +1,7 @@
 include/KPim6/
 include/KPim6/Libkleo/
 include/KPim6/Libkleo/Libkleo/
+include/KPim6/Libkleo/Libkleo/AdjustingScrollArea
 include/KPim6/Libkleo/Libkleo/Algorithm
 include/KPim6/Libkleo/Libkleo/Assuan
 include/KPim6/Libkleo/Libkleo/AuditLogEntry
@@ -53,8 +54,6 @@ include/KPim6/Libkleo/Libkleo/KeyUsage
 include/KPim6/Libkleo/Libkleo/KeyserverConfig
 include/KPim6/Libkleo/Libkleo/KleoException
 include/KPim6/Libkleo/Libkleo/MessageBox
-include/KPim6/Libkleo/Libkleo/NavigatableTreeView
-include/KPim6/Libkleo/Libkleo/NavigatableTreeWidget
 include/KPim6/Libkleo/Libkleo/NewKeyApprovalDialog
 include/KPim6/Libkleo/Libkleo/OidMap
 include/KPim6/Libkleo/Libkleo/Predicates
@@ -67,9 +66,14 @@ include/KPim6/Libkleo/Libkleo/StringUtils
 include/KPim6/Libkleo/Libkleo/SubkeyListModel
 include/KPim6/Libkleo/Libkleo/SystemInfo
 include/KPim6/Libkleo/Libkleo/Test
+include/KPim6/Libkleo/Libkleo/TreeView
+include/KPim6/Libkleo/Libkleo/TreeWidget
 include/KPim6/Libkleo/Libkleo/UniqueLock
 include/KPim6/Libkleo/Libkleo/UserIDListModel
+include/KPim6/Libkleo/Libkleo/UserIDProxyModel
+include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/libkleo/
+include/KPim6/Libkleo/libkleo/adjustingscrollarea.h
 include/KPim6/Libkleo/libkleo/algorithm.h
 include/KPim6/Libkleo/libkleo/assuan.h
 include/KPim6/Libkleo/libkleo/auditlogentry.h
@@ -125,8 +129,6 @@ include/KPim6/Libkleo/libkleo/keyusage.h
 include/KPim6/Libkleo/libkleo/kleo_export.h
 include/KPim6/Libkleo/libkleo/kleoexception.h
 include/KPim6/Libkleo/libkleo/messagebox.h
-include/KPim6/Libkleo/libkleo/navigatabletreeview.h
-include/KPim6/Libkleo/libkleo/navigatabletreewidget.h
 include/KPim6/Libkleo/libkleo/newkeyapprovaldialog.h
 include/KPim6/Libkleo/libkleo/oidmap.h
 include/KPim6/Libkleo/libkleo/predicates.h
@@ -139,8 +141,12 @@ include/KPim6/Libkleo/libkleo/stringutils.h
 include/KPim6/Libkleo/libkleo/subkeylistmodel.h
 include/KPim6/Libkleo/libkleo/systeminfo.h
 include/KPim6/Libkleo/libkleo/test.h
+include/KPim6/Libkleo/libkleo/treeview.h
+include/KPim6/Libkleo/libkleo/treewidget.h
 include/KPim6/Libkleo/libkleo/uniquelock.h
 include/KPim6/Libkleo/libkleo/useridlistmodel.h
+include/KPim6/Libkleo/libkleo/useridproxymodel.h
+include/KPim6/Libkleo/libkleo/useridselectioncombo.h
 include/KPim6/Libkleo/libkleo_version.h
 lib/cmake/KPim6Libkleo/
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfig.cmake
@@ -167,6 +173,7 @@ share/libkleopatra/pics/key_ok.png
 share/libkleopatra/pics/key_unknown.png
 share/libkleopatra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra6.mo
+share/locale/ast/LC_MESSAGES/libkleopatra6.mo
 share/locale/be/LC_MESSAGES/libkleopatra6.mo
 share/locale/bg/LC_MESSAGES/libkleopatra6.mo
 share/locale/br/LC_MESSAGES/libkleopatra6.mo

@@ -10,6 +10,12 @@ share/config.kcfg/fileviewgitpluginsettings.kcfg
 share/config.kcfg/fileviewhgpluginsettings.kcfg
 share/config.kcfg/fileviewsvnpluginsettings.kcfg
 share/locale/ar/LC_MESSAGES/mountisoaction.mo
+share/locale/ast/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/ast/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ast/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/ast/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ast/LC_MESSAGES/makefileactions.mo
+share/locale/ast/LC_MESSAGES/mountisoaction.mo
 share/locale/az/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/az/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/az/LC_MESSAGES/fileviewhgplugin.mo
@@ -19,6 +25,7 @@ share/locale/bg/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bg/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/bg/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/bg/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/bg/LC_MESSAGES/makefileactions.mo
 share/locale/bg/LC_MESSAGES/mountisoaction.mo
 share/locale/bs/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/bs/LC_MESSAGES/fileviewgitplugin.mo
@@ -60,6 +67,7 @@ share/locale/en_GB/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/en_GB/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/en_GB/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/en_GB/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/en_GB/LC_MESSAGES/makefileactions.mo
 share/locale/en_GB/LC_MESSAGES/mountisoaction.mo
 share/locale/eo/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/eo/LC_MESSAGES/fileviewgitplugin.mo
@@ -104,7 +112,11 @@ share/locale/gl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/gl/LC_MESSAGES/makefileactions.mo
 share/locale/gl/LC_MESSAGES/mountisoaction.mo
+share/locale/he/LC_MESSAGES/fileviewbazaarplugin.mo
+share/locale/he/LC_MESSAGES/makefileactions.mo
+share/locale/he/LC_MESSAGES/mountisoaction.mo
 share/locale/hu/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/hu/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/hu/LC_MESSAGES/fileviewhgplugin.mo
@@ -156,6 +168,7 @@ share/locale/lt/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/lt/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/lt/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/lt/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/lt/LC_MESSAGES/makefileactions.mo
 share/locale/lt/LC_MESSAGES/mountisoaction.mo
 share/locale/mr/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/mr/LC_MESSAGES/fileviewgitplugin.mo
@@ -233,6 +246,10 @@ share/locale/sv/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/sv/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/sv/LC_MESSAGES/makefileactions.mo
 share/locale/sv/LC_MESSAGES/mountisoaction.mo
+share/locale/ta/LC_MESSAGES/fileviewgitplugin.mo
+share/locale/ta/LC_MESSAGES/fileviewhgplugin.mo
+share/locale/ta/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/ta/LC_MESSAGES/makefileactions.mo
 share/locale/ta/LC_MESSAGES/mountisoaction.mo
 share/locale/tr/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/tr/LC_MESSAGES/fileviewgitplugin.mo

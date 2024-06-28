@@ -7,9 +7,9 @@ CATEGORIES =	education
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui AnalitzaPlot
 WANTLIB += AnalitzaWidgets GL KF6ColorScheme KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6I18n KF6KIOCore KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c ereadline m
 
 MODKDE5_DESKTOP_FILE = yes
@@ -42,7 +42,6 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kxmlgui \
 		devel/readline \
 		x11/kde-applications/analitza>=${MODKDE_VERSION} \
-		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \
