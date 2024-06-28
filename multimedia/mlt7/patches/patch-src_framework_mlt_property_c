@@ -60,7 +60,7 @@ Index: src/framework/mlt_property.c
          if (locale) {
              // Restore the current locale
              setlocale(LC_NUMERIC, orig_localename);
-@@ -1152,7 +1152,7 @@ static int is_property_numeric(mlt_property self, mlt_
+@@ -1150,7 +1150,7 @@ int mlt_property_is_numeric(mlt_property self, mlt_loc
      if ((!result && self->types & mlt_prop_string) && self->prop_string) {
          char *p = NULL;
  
@@ -69,7 +69,7 @@ Index: src/framework/mlt_property.c
          if (locale)
              strtod_l(self->prop_string, &p, locale);
          else
-@@ -1172,7 +1172,7 @@ static int is_property_numeric(mlt_property self, mlt_
+@@ -1170,7 +1170,7 @@ int mlt_property_is_numeric(mlt_property self, mlt_loc
  
              strtod(self->prop_string, &p);
  

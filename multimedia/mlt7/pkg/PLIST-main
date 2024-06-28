@@ -104,7 +104,11 @@ share/mlt-7/avformat/yuv_only.txt
 share/mlt-7/chain_normalizers.ini
 share/mlt-7/core/
 share/mlt-7/core/consumer_multi.yml
+share/mlt-7/core/consumer_null.yml
+share/mlt-7/core/filter_audiochannels.yml
+share/mlt-7/core/filter_audioconvert.yml
 share/mlt-7/core/filter_audiomap.yml
+share/mlt-7/core/filter_audioseam.yml
 share/mlt-7/core/filter_audiowave.yml
 share/mlt-7/core/filter_autofade.yml
 share/mlt-7/core/filter_box_blur.yml
@@ -115,6 +119,7 @@ share/mlt-7/core/filter_crop.yml
 share/mlt-7/core/filter_fieldorder.yml
 share/mlt-7/core/filter_gamma.yml
 share/mlt-7/core/filter_greyscale.yml
+share/mlt-7/core/filter_imageconvert.yml
 share/mlt-7/core/filter_luma.yml
 share/mlt-7/core/filter_mask_apply.yml
 share/mlt-7/core/filter_mask_start.yml
@@ -130,6 +135,8 @@ share/mlt-7/core/filter_watermark.yml
 share/mlt-7/core/link_timeremap.yml
 share/mlt-7/core/loader.dict
 share/mlt-7/core/loader.ini
+share/mlt-7/core/producer_abnormal.yml
+share/mlt-7/core/producer_blank.yml
 share/mlt-7/core/producer_colour.yml
 share/mlt-7/core/producer_consumer.yml
 share/mlt-7/core/producer_hold.yml
@@ -148,6 +155,7 @@ share/mlt-7/decklink/
 share/mlt-7/decklink/consumer_decklink.yml
 share/mlt-7/decklink/producer_decklink.yml
 share/mlt-7/frei0r/
+share/mlt-7/frei0r/aliases.yaml
 share/mlt-7/frei0r/blacklist.txt
 share/mlt-7/frei0r/filter_cairoblend_mode.yml
 share/mlt-7/frei0r/not_thread_safe.txt

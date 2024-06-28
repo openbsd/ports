@@ -1,6 +1,6 @@
 COMMENT-main =	multimedia transformations framework
 COMMENT-gpl2 =	GPLv2-licensed modules for mlt
-V =		7.18.0
+V =		7.24.0
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}
@@ -17,8 +17,8 @@ SITES =		https://github.com/mltframework/mlt/releases/download/v${V}/
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # XXX versions should be kept in sync together
-SHARED_LIBS =		mlt-7		4.2
-SHARED_LIBS +=		mlt++-7		4.2
+SHARED_LIBS =		mlt-7		5.0
+SHARED_LIBS +=		mlt++-7		5.0
 
 # GPLv2+, LGPLv2.1+
 # Actually, qimage module could be under GPLv3+ if one more object

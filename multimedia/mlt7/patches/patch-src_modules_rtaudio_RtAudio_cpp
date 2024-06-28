@@ -1,0 +1,21 @@
+Index: src/modules/rtaudio/RtAudio.cpp
+--- src/modules/rtaudio/RtAudio.cpp.orig
++++ src/modules/rtaudio/RtAudio.cpp
+@@ -9078,7 +9078,7 @@ static void *alsaCallbackHandler( void *ptr )
+   RtApiAlsa *object = (RtApiAlsa *) info->object;
+   bool *isRunning = &info->isRunning;
+ 
+-#ifdef SCHED_RR // Undefined with some OSes (e.g. NetBSD 1.6.x with GNU Pthread)
++#if defined(SCHED_RR) && !defined(__OpenBSD__) // Undefined with some OSes (e.g. NetBSD 1.6.x with GNU Pthread)
+   if ( info->doRealtime ) {
+     std::cerr << "RtAudio alsa: " << 
+              (sched_getscheduler(0) == SCHED_RR ? "" : "_NOT_ ") << 
+@@ -9354,7 +9354,7 @@ static void *pulseaudio_callback( void * user )
+   RtApiPulse *context = static_cast<RtApiPulse *>( cbi->object );
+   volatile bool *isRunning = &cbi->isRunning;
+   
+-#ifdef SCHED_RR // Undefined with some OSes (e.g. NetBSD 1.6.x with GNU Pthread)
++#if defined(SCHED_RR) && !defined(__OpenBSD__) // Undefined with some OSes (e.g. NetBSD 1.6.x with GNU Pthread)
+   if (cbi->doRealtime) {
+     std::cerr << "RtAudio pulse: " << 
+              (sched_getscheduler(0) == SCHED_RR ? "" : "_NOT_ ") << 
