@@ -1,19 +1,21 @@
-COMMENT=		trap exit codes
+COMMENT =	trap exit codes
 
-DISTNAME =		Test-Trap-v0.3.4
-PKGNAME=		p5-${DISTNAME:S/v//}
+DISTNAME =	Test-Trap-v0.3.5
+PKGNAME =	p5-${DISTNAME:S/-v/-/}
 
-CATEGORIES=		devel
+CATEGORIES =	devel
 
-# perl
-PERMIT_PACKAGE=	Yes
+# Perl
+PERMIT_PACKAGE =	Yes
 
-MODULES=		cpan
-PKG_ARCH=		*
-RUN_DEPENDS=		devel/p5-Data-Dump
+MODULES =		cpan
 
-MAKE_ENV=		TEST_POD=Yes
+RUN_DEPENDS =		devel/p5-Data-Dump
 
-CONFIGURE_STYLE=	modbuild
+MAKE_ENV =		TEST_POD=Yes
+
+CONFIGURE_STYLE =	modbuild
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
