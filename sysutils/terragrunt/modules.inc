@@ -277,7 +277,7 @@ MODGO_MODULES =	\
 	github.com/envoyproxy/go-control-plane					 v0.11.1 \
 	github.com/envoyproxy/protoc-gen-validate				 v1.0.2 \
 	github.com/evanphx/json-patch						 v4.2.0+incompatible \
-	github.com/fatih/color							 v1.15.0 \
+	github.com/fatih/color							 v1.16.0 \
 	github.com/fatih/structs						 v1.1.0 \
 	github.com/form3tech-oss/jwt-go						 v3.2.2+incompatible \
 	github.com/fsnotify/fsnotify						 v1.4.7 \
@@ -355,14 +355,14 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-azure-helpers					 v0.14.0 \
 	github.com/hashicorp/go-checkpoint					 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp					 v0.5.2 \
-	github.com/hashicorp/go-getter						 v1.7.4 \
+	github.com/hashicorp/go-getter						 v1.7.5 \
 	github.com/hashicorp/go-getter/v2					 v2.2.1 \
-	github.com/hashicorp/go-hclog						 v1.5.0 \
+	github.com/hashicorp/go-hclog						 v1.6.3 \
 	github.com/hashicorp/go-immutable-radix					 v0.0.0-20180129170900-7f3cd4390caa \
 	github.com/hashicorp/go-msgpack						 v0.5.4 \
 	github.com/hashicorp/go-multierror					 v1.1.1 \
 	github.com/hashicorp/go-plugin						 v1.4.10 \
-	github.com/hashicorp/go-retryablehttp					 v0.7.1 \
+	github.com/hashicorp/go-retryablehttp					 v0.7.7 \
 	github.com/hashicorp/go-rootcerts					 v1.0.2 \
 	github.com/hashicorp/go-safetemp					 v1.0.0 \
 	github.com/hashicorp/go-secure-stdlib/parseutil				 v0.1.6 \
@@ -921,6 +921,7 @@ MODGO_MODFILES =	\
 	github.com/evanphx/json-patch					 v0.0.0-20190203023257-5858425f7550 \
 	github.com/fatih/color						 v1.10.0 \
 	github.com/fatih/color						 v1.13.0 \
+	github.com/fatih/color						 v1.15.0 \
 	github.com/fatih/color						 v1.7.0 \
 	github.com/fatih/color						 v1.9.0 \
 	github.com/ghodss/yaml						 v0.0.0-20150909031657-73d445a93680 \
@@ -1055,13 +1056,14 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-hclog					 v0.14.1 \
 	github.com/hashicorp/go-hclog					 v0.15.0 \
 	github.com/hashicorp/go-hclog					 v0.16.2 \
-	github.com/hashicorp/go-hclog					 v0.9.2 \
 	github.com/hashicorp/go-hclog					 v1.2.1 \
+	github.com/hashicorp/go-hclog					 v1.5.0 \
 	github.com/hashicorp/go-multierror				 v1.0.0 \
 	github.com/hashicorp/go-multierror				 v1.1.0 \
 	github.com/hashicorp/go-plugin					 v1.4.1 \
 	github.com/hashicorp/go-retryablehttp				 v0.5.2 \
 	github.com/hashicorp/go-retryablehttp				 v0.6.6 \
+	github.com/hashicorp/go-retryablehttp				 v0.7.1 \
 	github.com/hashicorp/go-rootcerts				 v1.0.0 \
 	github.com/hashicorp/go-secure-stdlib/strutil			 v0.1.1 \
 	github.com/hashicorp/go-sockaddr				 v0.0.0-20180320115054-6d291a969b86 \
@@ -1554,6 +1556,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.16.0 \
 	golang.org/x/sys						 v0.17.0 \
 	golang.org/x/sys						 v0.2.0 \
+	golang.org/x/sys						 v0.20.0 \
 	golang.org/x/sys						 v0.3.0 \
 	golang.org/x/sys						 v0.5.0 \
 	golang.org/x/sys						 v0.6.0 \
