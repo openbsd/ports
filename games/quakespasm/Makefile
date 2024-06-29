@@ -1,6 +1,6 @@
 COMMENT=	SDL Quake port
 CATEGORIES=	games
-DISTNAME=	quakespasm-0.96.1
+DISTNAME=	quakespasm-0.96.2
 SITES=		${SITE_SOURCEFORGE:=quakespasm/}
 HOMEPAGE=	https://quakespasm.sourceforge.net
 
