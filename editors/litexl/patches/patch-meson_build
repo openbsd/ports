@@ -9,7 +9,7 @@ Index: meson.build
          'lua5.4', # Debian
          'lua-5.4', # FreeBSD
          'lua',    # Fedora
-@@ -204,7 +205,7 @@ else
+@@ -209,7 +210,7 @@ else
      lite_bindir = 'bin'
      lite_docdir = 'share/doc/lite-xl'
      lite_datadir = 'share/lite-xl'
