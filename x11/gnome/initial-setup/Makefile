@@ -1,7 +1,7 @@
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		46.2
+GNOME_VERSION=		46.3
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
