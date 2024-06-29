@@ -57,7 +57,6 @@ lib/wireplumber-0.5/
 @so lib/wireplumber-0.5/libwireplumber-module-reserve-device.so
 @so lib/wireplumber-0.5/libwireplumber-module-settings.so
 @so lib/wireplumber-0.5/libwireplumber-module-si-audio-adapter.so
-@so lib/wireplumber-0.5/libwireplumber-module-si-audio-virtual.so
 @so lib/wireplumber-0.5/libwireplumber-module-si-node.so
 @so lib/wireplumber-0.5/libwireplumber-module-si-standard-link.so
 @so lib/wireplumber-0.5/libwireplumber-module-standard-event-source.so
@@ -71,9 +70,10 @@ share/doc/wireplumber/examples/wireplumber.conf.d/device.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/libcamera.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/linking.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/log.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/media-role-nodes.conf
+share/doc/wireplumber/examples/wireplumber.conf.d/smart-equalizer.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/stream.conf
 share/doc/wireplumber/examples/wireplumber.conf.d/v4l2.conf
-share/doc/wireplumber/examples/wireplumber.conf.d/virtual.conf
 share/gir-1.0/Wp-0.5.gir
 share/locale/af/LC_MESSAGES/wireplumber.mo
 share/locale/as/LC_MESSAGES/wireplumber.mo
@@ -157,7 +157,6 @@ share/wireplumber/scripts/device/select-routes.lua
 share/wireplumber/scripts/device/state-profile.lua
 share/wireplumber/scripts/device/state-routes.lua
 share/wireplumber/scripts/fallback-sink.lua
-share/wireplumber/scripts/intended-roles.lua
 share/wireplumber/scripts/lib/
 share/wireplumber/scripts/lib/common-utils.lua
 share/wireplumber/scripts/lib/device-info-cache.lua
@@ -170,12 +169,12 @@ share/wireplumber/scripts/linking/find-best-target.lua
 share/wireplumber/scripts/linking/find-default-target.lua
 share/wireplumber/scripts/linking/find-defined-target.lua
 share/wireplumber/scripts/linking/find-filter-target.lua
+share/wireplumber/scripts/linking/find-media-role-target.lua
 share/wireplumber/scripts/linking/find-user-target.lua.example
-share/wireplumber/scripts/linking/find-virtual-target.lua
 share/wireplumber/scripts/linking/get-filter-from-target.lua
 share/wireplumber/scripts/linking/link-target.lua
 share/wireplumber/scripts/linking/prepare-link.lua
-share/wireplumber/scripts/linking/rescan-virtual-links.lua
+share/wireplumber/scripts/linking/rescan-media-role-links.lua
 share/wireplumber/scripts/linking/rescan.lua
 share/wireplumber/scripts/metadata.lua
 share/wireplumber/scripts/monitors/
@@ -197,7 +196,6 @@ share/wireplumber/scripts/monitors/v4l2/name-device.lua
 share/wireplumber/scripts/monitors/v4l2/name-node.lua
 share/wireplumber/scripts/node/
 share/wireplumber/scripts/node/create-item.lua
-share/wireplumber/scripts/node/create-virtual-item.lua
 share/wireplumber/scripts/node/filter-forward-format.lua
 share/wireplumber/scripts/node/software-dsp.lua
 share/wireplumber/scripts/node/state-stream.lua
