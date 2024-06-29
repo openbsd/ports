@@ -1,4 +1,7 @@
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<DefineConstants>CASE_SENSITIVITY_HACK;$(DefineConstants)</DefineConstants>
+	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="lib/SDL2-CS/src/SDL2_image.cs" />
 		<Compile Include="Vorbisfile-CS/Vorbisfile.cs" />
