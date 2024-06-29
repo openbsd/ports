@@ -10,19 +10,19 @@ Index: config/logstash.yml
  #
  # ------------ Pipeline Settings --------------
  #
-@@ -314,7 +314,7 @@
- #   * json
- #
+@@ -316,7 +316,7 @@
  # log.format: plain
+ # log.format.json.fix_duplicate_message_fields: false
+ #
 -# path.logs:
 +path.logs: ${LOCALSTATEDIR}/log/logstash
  #
  # ------------ Other Settings --------------
  #
-@@ -327,64 +327,3 @@
- # Flag to output log lines of each pipeline in its separate log file. Each log filename contains the pipeline.name
- # Default is false
- # pipeline.separate_logs: false
+@@ -333,64 +333,3 @@
+ # Determine where to allocate memory buffers, for plugins that leverage them.
+ # Default to direct, optionally can be switched to heap to select Java heap space.
+ # pipeline.buffer.type: direct
 -#
 -# ------------ X-Pack Settings (not applicable for OSS build)--------------
 -#
