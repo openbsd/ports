@@ -1,7 +1,7 @@
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.52.2
+GNOME_VERSION=		3.52.3
 
 CATEGORIES=		mail
 
