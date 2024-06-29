@@ -6,7 +6,7 @@ COMMENT-google=		GVFS mount module for Google Drive
 COMMENT-onedrive=	GVFS mount module for Microsoft OneDrive backend
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.54.1
+GNOME_VERSION=		1.54.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}

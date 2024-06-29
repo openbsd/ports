@@ -4,7 +4,7 @@ Index: daemon/gvfsftpdircache.c
 --- daemon/gvfsftpdircache.c.orig
 +++ daemon/gvfsftpdircache.c
 @@ -723,7 +723,7 @@ g_vfs_ftp_dir_cache_funcs_process (GInputStream *     
-       mtime = mktime (&result.fe_time);
+       mtime = timegm (&result.fe_time);
        if (mtime != -1)
          {
 -          char *etag = g_strdup_printf ("%ld", mtime);
