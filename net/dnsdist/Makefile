@@ -79,6 +79,7 @@ BUILD_DEPENDS+=		net/quiche \
 			security/boringssl/head
 .else
 
+CONFIGURE_ARGS+=	--without-quiche
 WANTLIB+=		ssl
 
 .endif
