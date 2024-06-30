@@ -2,8 +2,7 @@ COMMENT =	Qt-based directory statistics
 
 GH_ACCOUNT =	shundhammer
 GH_PROJECT =	qdirstat
-GH_TAGNAME =	1.8.1
-REVISION =	0
+GH_TAGNAME =	1.9
 
 CATEGORIES =	x11
 

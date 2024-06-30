@@ -1,7 +1,7 @@
 Index: src/src.pro
 --- src/src.pro.orig
 +++ src/src.pro
-@@ -288,7 +288,7 @@ desktop.files	= *.desktop
+@@ -297,7 +297,7 @@ desktop.files	= *.desktop
  desktop.path	= $$INSTALL_PREFIX/share/applications
  
  icons.files	= icons/qdirstat.svg
