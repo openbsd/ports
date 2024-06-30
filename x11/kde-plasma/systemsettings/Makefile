@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma control center
 DISTNAME =	systemsettings-${VERSION}
 PKGNAME =	kf6-systemsettings-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  systemsettingsview        1.0 # 0.0
 
@@ -25,6 +26,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kdeclarative \
 		sysutils/lscpu \
 		graphics/vulkan-tools
+
+RUN_DEPENDS +=	x11/kde-plasma/plasma-integration>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kauth \
