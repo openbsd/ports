@@ -348,6 +348,7 @@
      SUBDIR += vkquake
      SUBDIR += vms-empire
      SUBDIR += vodovod
+     SUBDIR += vvvvvv
      SUBDIR += wanderer
      SUBDIR += warmux
      SUBDIR += warzone2100
