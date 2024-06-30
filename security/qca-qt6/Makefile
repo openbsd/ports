@@ -1,10 +1,9 @@
 COMMENT =	Qt Cryptographic Architecture
 
-V =		2.3.8
+V =		2.3.9
 DISTNAME =	qca-${V}
 PKGNAME =	qca-qt6-${V}
 CATEGORIES =	security
-REVISION =	0
 
 SHARED_LIBS +=  qca-qt6                   0.0 # 0.0
 
