@@ -1,6 +1,6 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-VERSION =	1.2.1
+VERSION =	1.3.0
 DISTNAME =	kirigami-addons-${VERSION}
 
 CATEGORIES =	graphics
@@ -34,4 +34,3 @@ LIB_DEPENDS =		devel/kf6/ki18n \
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
-
