@@ -1,0 +1,48 @@
+fix GetCaseName
+
+Index: src/TitleContainer.cs
+--- src/TitleContainer.cs.orig
++++ src/TitleContainer.cs
+@@ -91,16 +91,28 @@ namespace Microsoft.Xna.Framework
+ 			}
+ 
+ 			string[] splits = name.Split(Path.DirectorySeparatorChar);
+-			splits[0] = "/";
++			// treat first directory specially
++			splits[0] = SearchCase(
++    				splits[1],
++    				Directory.GetDirectories("/")
++    			);
+ 			int i;
+ 
+ 			// The directories...
+-			for (i = 1; i < splits.Length - 1; i += 1)
++			for (i = 2; i < splits.Length - 1; i += 1)
+ 			{
+-				splits[0] += SearchCase(
+-					splits[i],
+-					Directory.GetDirectories(splits[0])
+-				);
++    				string trydir = Path.Combine(splits[0], splits[i]);
++				if (Directory.Exists(trydir) || File.Exists(trydir))
++				{
++					splits[0] = trydir;
++				}
++				else
++				{
++					splits[0] += SearchCase(
++						splits[i],
++						Directory.GetDirectories(splits[0])
++					);
++				}
+ 			}
+ 
+ 			// The file...
+@@ -110,7 +122,6 @@ namespace Microsoft.Xna.Framework
+ 			);
+ 
+ 			// Finally.
+-			splits[0] = splits[0].Remove(0, 1);
+ 			FNALoggerEXT.LogError(
+ 				"Case sensitivity!\n\t" +
+ 				name.Substring(TitleLocation.Path.Length) + "\n\t" +

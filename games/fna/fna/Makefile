@@ -1,5 +1,6 @@
 COMMENT =	XNA4 reimplementation for open platforms
 PKGNAME =	fna-${V}
+REVISION =	0
 
 # MS-PL, includes lzxdecoder (dual MSPL/LGPL) and Mono.Xna (MIT)
 PERMIT_PACKAGE = Yes
