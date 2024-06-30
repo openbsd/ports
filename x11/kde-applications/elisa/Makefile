@@ -1,6 +1,7 @@
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
@@ -21,9 +22,11 @@ MODKDE5_TRANSLATIONS = yes
 MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
+		graphics/kirigami-addons \
 		devel/kf6/qqc2-desktop-style
 
 RUN_DEPENDS =	devel/kf6/kirigami \
+		graphics/kirigami-addons \
 		devel/kf6/qqc2-desktop-style
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
