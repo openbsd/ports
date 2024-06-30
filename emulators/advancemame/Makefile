@@ -13,6 +13,9 @@ HOMEPAGE =	https://www.advancemame.it/
 PERMIT_PACKAGE =	unclear license
 PERMIT_DISTFILES =	unclear license
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	SDL2 c expat freetype m pthread z
 
 SITES =		https://github.com/amadvance/advancemame/releases/download/v$V/
