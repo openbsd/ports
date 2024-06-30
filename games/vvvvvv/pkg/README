@@ -1,0 +1,29 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Required Copyright Information
+==============================
+
+VVVVVV is copyright of Terry Cavanagh. This version of VVVVVV has been changed
+to run on OpenBSD.
+
+How to Install the Required Assets
+==================================
+
+You need assets (icons, art, graphics, music) to run the game, either from the
+purchased game or free assets from the Make and Play Edition (can use Windows
+version assets):
+
+https://thelettervsixtim.es/makeandplay/
+
+Copy 'data.zip' to ~/.local/share/VVVVVV/ as follows:
+
+$ mkdir -p ~/.local/share/VVVVVV
+$ cp data.zip ~/.local/share/VVVVVV/
+$ VVVVVV	# starts the game
+
+Alternatively, you can specify a custom asset directory with '-assets <dir>':
+
+$ unzip data.zip -d /path/to/assets
+$ VVVVVV -assets /path/to/assets

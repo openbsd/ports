@@ -1,0 +1,37 @@
+Cannot be upstreamed.
+Put data.zip in ~/.local/share/VVVVVV
+
+Index: desktop_version/src/FileSystemUtils.cpp
+--- desktop_version/src/FileSystemUtils.cpp.orig
++++ desktop_version/src/FileSystemUtils.cpp
+@@ -1,3 +1,5 @@
++/* This file has been changed to run on OpenBSD. */
++
+ #include <iostream>
+ #include <iterator>
+ #include <physfs.h>
+@@ -70,6 +72,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+ 	int retval;
+ 	const char* pathSep = PHYSFS_getDirSeparator();
+ 	char* basePath;
++	char osDir[MAX_PATH - 8];	// "data.zip" has length of 8
+ 
+ 	PHYSFS_setAllocator(&allocator);
+ 
+@@ -146,6 +149,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+ 	}
+ 
+ 	basePath = SDL_GetBasePath();
++	PLATFORM_getOSDirectory(osDir, sizeof(osDir));
+ 
+ 	if (basePath == NULL)
+ 	{
+@@ -161,7 +165,7 @@ int FILESYSTEM_init(char *argvZero, char* baseDir, cha
+ 	else
+ 	{
+ 		SDL_snprintf(output, sizeof(output), "%s%s",
+-			basePath,
++			osDir,
+ 			"data.zip"
+ 		);
+ 	}
