@@ -1,4 +1,5 @@
 @conflict qt-creator-<=4.3.1p1
+@bin bin/clang-format-test
 @bin bin/qbs
 @bin bin/qbs-config
 @bin bin/qbs-config-ui
@@ -8,6 +9,7 @@
 @bin bin/qbs-setup-toolchains
 @bin bin/qbs_benchmarker
 @bin bin/qbs_fuzzy-test
+@bin bin/qbs_lspclient
 include/qbs/
 include/qbs/api/
 include/qbs/api/jobs.h
@@ -38,6 +40,7 @@ include/qbs/tools/error.h
 include/qbs/tools/generateoptions.h
 include/qbs/tools/installoptions.h
 include/qbs/tools/joblimits.h
+include/qbs/tools/mutexdata.h
 include/qbs/tools/preferences.h
 include/qbs/tools/processresult.h
 include/qbs/tools/profile.h
@@ -333,6 +336,19 @@ share/qbs/examples/compiled-qml/main.cpp
 share/qbs/examples/compiled-qml/main.qml
 share/qbs/examples/compiled-qml/qml.qrc
 share/qbs/examples/examples.qbs
+share/qbs/examples/exporters/
+share/qbs/examples/exporters/exporters.qbs
+share/qbs/examples/exporters/lib_a/
+share/qbs/examples/exporters/lib_a/lib_a.cpp
+share/qbs/examples/exporters/lib_a/lib_a.h
+share/qbs/examples/exporters/lib_a/lib_a.qbs
+share/qbs/examples/exporters/lib_b/
+share/qbs/examples/exporters/lib_b/lib_b.cpp
+share/qbs/examples/exporters/lib_b/lib_b.h
+share/qbs/examples/exporters/lib_b/lib_b.qbs
+share/qbs/examples/exporters/qbs/
+share/qbs/examples/exporters/qbs/imports/
+share/qbs/examples/exporters/qbs/imports/MyLibrary.qbs
 share/qbs/examples/grpc/
 share/qbs/examples/grpc/client.cpp
 share/qbs/examples/grpc/grpc.qbs
@@ -513,6 +529,10 @@ share/qbs/modules/Android/sdk/
 share/qbs/modules/Android/sdk/sdk.qbs
 share/qbs/modules/Android/sdk/utils.js
 share/qbs/modules/Exporter/
+share/qbs/modules/Exporter/cmake/
+share/qbs/modules/Exporter/cmake/cmakeexporter.js
+share/qbs/modules/Exporter/cmake/cmakeexporter.qbs
+share/qbs/modules/Exporter/exporter.js
 share/qbs/modules/Exporter/pkgconfig/
 share/qbs/modules/Exporter/pkgconfig/pkgconfig.js
 share/qbs/modules/Exporter/pkgconfig/pkgconfig.qbs

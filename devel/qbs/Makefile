@@ -2,12 +2,11 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT =	declarative cross-platform build tool
 
-V =		2.2.2
+V =		2.3.1
 DISTNAME =	qbs-src-${V}
 PKGNAME =	qbs-${V}
-REVISION =	1
 
-SHARED_LIBS =	qbscore		15.0
+SHARED_LIBS =	qbscore		16.0
 
 CATEGORIES =	devel
 
