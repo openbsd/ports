@@ -1,6 +1,6 @@
 COMMENT =	modular Wayland compositor library
 
-V =		0.17.3
+V =		0.17.4
 EPOCH =		0
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
@@ -12,7 +12,7 @@ HOMEPAGE =	https://gitlab.freedesktop.org/wlroots
 # MIT
 PERMIT_PACKAGE = Yes
 
-SHARED_LIBS +=  wlroots 0.0 # 0.0
+SHARED_LIBS +=  wlroots 0.1 # 0.0
 
 MODULES =	devel/meson
 
