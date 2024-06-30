@@ -1,3 +1,5 @@
+Make sure we prefer the bundled flatbuffers copy.
+
 Index: modules/dnn/CMakeLists.txt
 --- modules/dnn/CMakeLists.txt.orig
 +++ modules/dnn/CMakeLists.txt
