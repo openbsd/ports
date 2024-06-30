@@ -1,0 +1,16 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -177,6 +177,12 @@ endif
+ libxcvt_dep = dependency('libxcvt', fallback: ['libxcvt', 'libxcvt_dep'], required: true)
+ build_xwayland = true
+ 
++if host_machine.system() in ['freebsd', 'openbsd']
++   epoll_dep = dependency('epoll-shim')
++else
++   epoll_dep = []
++endif
++
+ xwayland_path = get_option('xwayland-path')
+ if (xwayland_path == '')
+     xwayland_path = join_paths(get_option('prefix'), get_option('bindir'))

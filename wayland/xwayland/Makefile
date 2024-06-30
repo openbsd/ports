@@ -1,6 +1,6 @@
 COMMENT =	X server running as wayland application
 
-DISTNAME =	xwayland-23.2.6
+DISTNAME =	xwayland-24.1.0
 
 CATEGORIES =	wayland
 
@@ -19,7 +19,8 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/meson
 
-BUILD_DEPENDS =		wayland/libinput-openbsd \
+BUILD_DEPENDS =		devel/epoll-shim \
+			wayland/libinput-openbsd \
 			wayland/wayland-protocols
 
 RUN_DEPENDS =		devel/desktop-file-utils
