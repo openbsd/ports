@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-snmp-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/snmp.so
-share/examples/php-${PV}/snmp.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/snmp.ini

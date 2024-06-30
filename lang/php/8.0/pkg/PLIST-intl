@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-intl-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/intl.so
-share/examples/php-${PV}/intl.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/intl.ini

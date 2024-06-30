@@ -1,7 +1,6 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-curl-${PHP_PKGSPEC}
-@conflict php->8.1,<8.1.3p0
 @so lib/php-${PV}/modules/curl.so
 share/examples/php-${PV}/curl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

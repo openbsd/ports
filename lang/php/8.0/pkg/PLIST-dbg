@@ -1,5 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-dbg-${PHP_PKGSPEC}
-@bin bin/phpdbg-${PV}
-@man man/man1/phpdbg-${PV}.1

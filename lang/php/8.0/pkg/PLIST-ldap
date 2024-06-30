@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-ldap-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/ldap.so
-share/examples/php-${PV}/ldap.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/ldap.ini

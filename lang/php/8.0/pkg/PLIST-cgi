@@ -1,5 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-cgi-${PHP_PKGSPEC}
-@bin bin/php-cgi-${PV}
-@man man/man1/php-cgi-${PV}.1

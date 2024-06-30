@@ -1,6 +1,13 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-snmp-${PHP_PKGSPEC}
+@pkgpath lang/php/5.6,-snmp
+@pkgpath lang/php/7.0,-snmp
+@pkgpath lang/php/7.1,-snmp
+@pkgpath lang/php/7.2,-snmp
+@pkgpath lang/php/7.3,-snmp
+@pkgpath lang/php/7.4,-snmp
+@pkgpath lang/php/8.0,-snmp
 @so lib/php-${PV}/modules/snmp.so
 share/examples/php-${PV}/snmp.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/snmp.ini

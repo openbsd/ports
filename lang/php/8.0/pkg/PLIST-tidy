@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-tidy-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/tidy.so
-share/examples/php-${PV}/tidy.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/tidy.ini

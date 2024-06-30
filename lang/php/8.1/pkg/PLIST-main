@@ -1,8 +1,10 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
-@conflict php->=7.4,<7.4.28p1
-@conflict php->=8.0,<8.0.28p1
+@pkgpath lang/php/7.2,-main
+@pkgpath lang/php/7.3,-main
+@pkgpath lang/php/7.4,-main
+@pkgpath lang/php/8.0,-main
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}.sample/*
 @extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
 @mode 1700
@@ -14,10 +16,8 @@
 @group
 @sample ${SYSCONFDIR}/php-fpm.d/
 @rcscript ${RCDIR}/php${SV}_fpm
-bin/phar
 bin/phar-${PV}
 bin/phar-${PV}.phar
-bin/php
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}

@@ -1,6 +1,10 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-enchant-${PHP_PKGSPEC}
+@pkgpath lang/php/7.2,-enchant
+@pkgpath lang/php/7.3,-enchant
+@pkgpath lang/php/7.4,-enchant
+@pkgpath lang/php/8.0,-enchant
 @so lib/php-${PV}/modules/enchant.so
 share/examples/php-${PV}/enchant.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/enchant.ini

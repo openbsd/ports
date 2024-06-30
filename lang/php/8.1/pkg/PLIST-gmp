@@ -1,6 +1,13 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-gmp-${PHP_PKGSPEC}
+@pkgpath lang/php/5.6,-gmp
+@pkgpath lang/php/7.0,-gmp
+@pkgpath lang/php/7.1,-gmp
+@pkgpath lang/php/7.2,-gmp
+@pkgpath lang/php/7.3,-gmp
+@pkgpath lang/php/7.4,-gmp
+@pkgpath lang/php/8.0,-gmp
 @so lib/php-${PV}/modules/gmp.so
 share/examples/php-${PV}/gmp.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gmp.ini

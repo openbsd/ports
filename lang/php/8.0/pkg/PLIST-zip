@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-zip-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/zip.so
-share/examples/php-${PV}/zip.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/zip.ini

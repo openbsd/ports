@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-pspell-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/pspell.so
-share/examples/php-${PV}/pspell.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/pspell.ini

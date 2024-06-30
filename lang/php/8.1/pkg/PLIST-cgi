@@ -1,5 +1,12 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-cgi-${PHP_PKGSPEC}
+@pkgpath lang/php/5.6,-cgi
+@pkgpath lang/php/7.0,-cgi
+@pkgpath lang/php/7.1,-cgi
+@pkgpath lang/php/7.2,-cgi
+@pkgpath lang/php/7.3,-cgi
+@pkgpath lang/php/7.4,-cgi
+@pkgpath lang/php/8.0,-cgi
 @bin bin/php-cgi-${PV}
 @man man/man1/php-cgi-${PV}.1

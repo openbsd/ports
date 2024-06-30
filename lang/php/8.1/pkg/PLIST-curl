@@ -2,6 +2,13 @@
 @option is-branch
 @conflict php-curl-${PHP_PKGSPEC}
 @conflict php->8.1,<8.1.3p0
+@pkgpath lang/php/5.6,-curl
+@pkgpath lang/php/7.0,-curl
+@pkgpath lang/php/7.1,-curl
+@pkgpath lang/php/7.2,-curl
+@pkgpath lang/php/7.3,-curl
+@pkgpath lang/php/7.4,-curl
+@pkgpath lang/php/8.0,-curl
 @so lib/php-${PV}/modules/curl.so
 share/examples/php-${PV}/curl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

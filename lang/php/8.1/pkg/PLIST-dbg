@@ -1,5 +1,12 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-dbg-${PHP_PKGSPEC}
+@pkgpath lang/php/5.6,-dbg
+@pkgpath lang/php/7.0,-dbg
+@pkgpath lang/php/7.1,-dbg
+@pkgpath lang/php/7.2,-dbg
+@pkgpath lang/php/7.3,-dbg
+@pkgpath lang/php/7.4,-dbg
+@pkgpath lang/php/8.0,-dbg
 @bin bin/phpdbg-${PV}
 @man man/man1/phpdbg-${PV}.1

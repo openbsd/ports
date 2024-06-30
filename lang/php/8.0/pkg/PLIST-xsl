@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-xsl-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/xsl.so
-share/examples/php-${PV}/xsl.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/xsl.ini

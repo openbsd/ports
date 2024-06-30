@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-pcntl-${PHP_PKGSPEC}
-@so lib/php-${PV}/modules/pcntl.so
-share/examples/php-${PV}/pcntl.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/pcntl.ini

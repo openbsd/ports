@@ -1,6 +1,10 @@
 PHP_VERSION=	8.2.20
 PHP_PKGSPEC=	>=8.2,<8.3
 
+REVISION-main=	0
+
 AUTOCONF_VERSION=	2.71
+
+DEFAULT_PHP=	Yes
 
 .include <bsd.port.mk>

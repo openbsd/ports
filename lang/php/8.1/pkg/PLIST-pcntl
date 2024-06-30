@@ -1,6 +1,13 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-pcntl-${PHP_PKGSPEC}
+@pkgpath lang/php/5.6,-pcntl
+@pkgpath lang/php/7.0,-pcntl
+@pkgpath lang/php/7.1,-pcntl
+@pkgpath lang/php/7.2,-pcntl
+@pkgpath lang/php/7.3,-pcntl
+@pkgpath lang/php/7.4,-pcntl
+@pkgpath lang/php/8.0,-pcntl
 @so lib/php-${PV}/modules/pcntl.so
 share/examples/php-${PV}/pcntl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pcntl.ini

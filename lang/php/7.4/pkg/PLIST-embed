@@ -1,6 +1,0 @@
-@option no-default-conflict
-@option is-branch
-@conflict php-embed-${PHP_PKGSPEC}
-@so lib/php-${PV}/${SAPI_SO}
-share/php-${PV}/include/sapi/embed/
-share/php-${PV}/include/sapi/embed/php_embed.h

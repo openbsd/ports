@@ -450,15 +450,6 @@ WANTLIB-tidy=		pthread tidy
 CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 .endif
 
-# xml-rpc
-COMMENT-xmlrpc=		XML RPC functions for php
-HOMEPAGE-xmlrpc=	https://www.php.net/xmlrpc
-LIB_DEPENDS-xmlrpc=	textproc/libxml
-WANTLIB-xmlrpc=		iconv lzma m pthread xml2 z
-.if ${BUILD_PACKAGES:M-xmlrpc}
-CONFIGURE_ARGS+=	--with-xmlrpc=shared
-.endif
-
 # xsl
 COMMENT-xsl=		XSL functions for php
 HOMEPAGE-xsl=		https://www.php.net/xsl
@@ -574,7 +565,7 @@ post-install:
 .endif
 
 .if ${DEFAULT_PHP:L} == yes
-.    for p in phar php
+.    for p in phar php php-config phpize
 	ln -s $p-${PV} ${PREFIX}/bin/$p
 .    endfor
 .endif
