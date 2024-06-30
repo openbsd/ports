@@ -1,6 +1,6 @@
 COMMENT = lightweight KMS plane library
 
-V = 		0.4.1
+V = 		0.5.0
 DISTNAME = 	libliftoff-v$V
 PKGNAME = 	libliftoff-$V
 CATEGORIES = 	graphics
@@ -8,7 +8,7 @@ CATEGORIES = 	graphics
 # MIT
 PERMIT_PACKAGE = Yes
 
-SHARED_LIBS = 	liftoff 0.0 # 0.5.0
+SHARED_LIBS = 	liftoff 0.1 # 0.5.0
 
 SITES =	https://gitlab.freedesktop.org/emersion/libliftoff/-/archive/v$V/
 
