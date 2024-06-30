@@ -14,6 +14,9 @@ HOMEPAGE=	https://www.enlightenment.org/e16
 # X11
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 X11-xcb Xcomposite
 WANTLIB += Xdamage Xext Xfixes Xft Xinerama Xrandr Xrender audiofile
 WANTLIB += c expat ffi fontconfig freetype fribidi gio-2.0 glib-2.0
