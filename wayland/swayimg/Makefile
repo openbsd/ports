@@ -9,6 +9,9 @@ CATEGORIES =	wayland
 # MIT
 PERMIT_PACKAGE = Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson
 
 WANTLIB =	OpenEXRCore-3_2 avif cairo epoll-shim exif fontconfig freetype
