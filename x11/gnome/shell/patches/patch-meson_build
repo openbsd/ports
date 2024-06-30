@@ -3,7 +3,7 @@ https://gitlab.gnome.org/GNOME/gnome-shell/-/merge_requests/2747
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -159,8 +159,10 @@ cdata.set('HAVE_FDWALK', cc.has_function('fdwalk'))
+@@ -156,8 +156,10 @@ cdata.set('HAVE_FDWALK', cc.has_function('fdwalk'))
  cdata.set('HAVE_MALLINFO', cc.has_function('mallinfo'))
  cdata.set('HAVE_MALLINFO2', cc.has_function('mallinfo2'))
  cdata.set('HAVE_SYS_RESOURCE_H', cc.has_header('sys/resource.h'))
