@@ -11,6 +11,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
+# Atomics
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += avahi-client avahi-common c gnutls jpeg m png pthread
 WANTLIB += tiff xml2
 
