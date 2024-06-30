@@ -1,9 +1,8 @@
 COMMENT =		http client/server for asyncio
 
-MODPY_EGG_VERSION =	3.8.4
+MODPY_EGG_VERSION =	3.9.5
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -19,16 +18,15 @@ FLAVORS =		python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 # disable tests using "proxy" and "re_assert" modules which aren't in ports
-MODPY_PYTEST_ARGS =	--ignore tests/test_proxy_functional.py \
+MODPY_PYTEST_ARGS =	--ignore tests/autobahn/test_autobahn.py \
+			--ignore tests/test_proxy_functional.py \
 			--ignore tests/test_client_session.py \
 			--ignore tests/test_streams.py \
 			--ignore tests/test_urldispatch.py \
 			--ignore tests/test_web_response.py
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
-			textproc/py-charset-normalizer${MODPY_FLAVOR} \
 			www/py-multidict${MODPY_FLAVOR}<7 \
-			devel/py-async-timeout${MODPY_FLAVOR}<5 \
 			www/py-yarl${MODPY_FLAVOR}<2 \
 			devel/py-frozenlist${MODPY_FLAVOR} \
 			devel/py-aiosignal${MODPY_FLAVOR}

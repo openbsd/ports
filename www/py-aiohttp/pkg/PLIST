@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client_reqrep.$
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client_reqrep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client_ws.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}client_ws.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}compression_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}compression_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}cookiejar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,6 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/client_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client_proto.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client_reqrep.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client_ws.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/compression_utils.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/connector.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/cookiejar.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/formdata.py
