@@ -12,4 +12,8 @@ PKG_ARCH =	*
 
 TEST_DEPENDS =	sysutils/fdupes
 
+MODULES =	x11/qt6
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+
 .include <bsd.port.mk>
