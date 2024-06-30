@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 EXTRACT_ONLY =		# empty
 
 MODULES =		java
-MODJAVA_VER =		11
+MODJAVA_VER =		17
 MODJAVA_JRE =		yes
 
 RUN_DEPENDS =		java/javaPathHelper
