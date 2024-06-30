@@ -2,7 +2,6 @@
      SUBDIR += kdecoration
 
      # Tars that need Qt5 and Qt6 build
-     # SUBDIR +=plasma-integration
      SUBDIR += breeze
      SUBDIR += oxygen
 
@@ -37,6 +36,7 @@
      SUBDIR += kdeplasma-addons
      SUBDIR += plasma-pa
      SUBDIR += plasma-nano
+     SUBDIR += plasma-integration
      SUBDIR += plasma-sdk
      SUBDIR += kwin
      SUBDIR += plasma-workspace
