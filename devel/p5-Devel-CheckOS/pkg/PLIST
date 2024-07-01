@@ -30,10 +30,27 @@ ${P5SITE}/Devel/AssertOS/Interix.pm
 ${P5SITE}/Devel/AssertOS/Irix.pm
 ${P5SITE}/Devel/AssertOS/Linux/
 ${P5SITE}/Devel/AssertOS/Linux.pm
+${P5SITE}/Devel/AssertOS/Linux/Alma.pm
+${P5SITE}/Devel/AssertOS/Linux/Alpine.pm
+${P5SITE}/Devel/AssertOS/Linux/Arch.pm
+${P5SITE}/Devel/AssertOS/Linux/Centos.pm
 ${P5SITE}/Devel/AssertOS/Linux/Debian.pm
 ${P5SITE}/Devel/AssertOS/Linux/Devuan.pm
+${P5SITE}/Devel/AssertOS/Linux/Elementary.pm
+${P5SITE}/Devel/AssertOS/Linux/Fedora.pm
+${P5SITE}/Devel/AssertOS/Linux/Gentoo.pm
+${P5SITE}/Devel/AssertOS/Linux/NixOS.pm
+${P5SITE}/Devel/AssertOS/Linux/OpenSUSE.pm
+${P5SITE}/Devel/AssertOS/Linux/Oracle.pm
+${P5SITE}/Devel/AssertOS/Linux/PopOS.pm
+${P5SITE}/Devel/AssertOS/Linux/RHEL.pm
 ${P5SITE}/Devel/AssertOS/Linux/Raspbian.pm
 ${P5SITE}/Devel/AssertOS/Linux/RealDebian.pm
+${P5SITE}/Devel/AssertOS/Linux/Redhat.pm
+${P5SITE}/Devel/AssertOS/Linux/Rocky.pm
+${P5SITE}/Devel/AssertOS/Linux/SLES.pm
+${P5SITE}/Devel/AssertOS/Linux/SUSE.pm
+${P5SITE}/Devel/AssertOS/Linux/Slackware.pm
 ${P5SITE}/Devel/AssertOS/Linux/Ubuntu.pm
 ${P5SITE}/Devel/AssertOS/Linux/UnknownDebianLike.pm
 ${P5SITE}/Devel/AssertOS/Linux/v2_6.pm
@@ -62,6 +79,7 @@ ${P5SITE}/Devel/AssertOS/MacOSX/v10_9.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v11.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v12.pm
 ${P5SITE}/Devel/AssertOS/MacOSX/v13.pm
+${P5SITE}/Devel/AssertOS/MacOSX/v14.pm
 ${P5SITE}/Devel/AssertOS/MacOSclassic.pm
 ${P5SITE}/Devel/AssertOS/MachTen.pm
 ${P5SITE}/Devel/AssertOS/MicrosoftWindows.pm
@@ -101,6 +119,8 @@ ${P5SITE}/Devel/AssertOS/iOS.pm
 ${P5SITE}/Devel/CheckOS/
 ${P5SITE}/Devel/CheckOS.pm
 ${P5SITE}/Devel/CheckOS/Families.pod
+${P5SITE}/Devel/CheckOS/Helpers/
+${P5SITE}/Devel/CheckOS/Helpers/LinuxOSrelease.pm
 @man man/man1/use-devel-assertos.1
 @man man/man3p/Devel::AssertOS.3p
 @man man/man3p/Devel::AssertOS::AIX.3p
@@ -127,10 +147,27 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::Interix.3p
 @man man/man3p/Devel::AssertOS::Irix.3p
 @man man/man3p/Devel::AssertOS::Linux.3p
+@man man/man3p/Devel::AssertOS::Linux::Alma.3p
+@man man/man3p/Devel::AssertOS::Linux::Alpine.3p
+@man man/man3p/Devel::AssertOS::Linux::Arch.3p
+@man man/man3p/Devel::AssertOS::Linux::Centos.3p
 @man man/man3p/Devel::AssertOS::Linux::Debian.3p
 @man man/man3p/Devel::AssertOS::Linux::Devuan.3p
+@man man/man3p/Devel::AssertOS::Linux::Elementary.3p
+@man man/man3p/Devel::AssertOS::Linux::Fedora.3p
+@man man/man3p/Devel::AssertOS::Linux::Gentoo.3p
+@man man/man3p/Devel::AssertOS::Linux::NixOS.3p
+@man man/man3p/Devel::AssertOS::Linux::OpenSUSE.3p
+@man man/man3p/Devel::AssertOS::Linux::Oracle.3p
+@man man/man3p/Devel::AssertOS::Linux::PopOS.3p
+@man man/man3p/Devel::AssertOS::Linux::RHEL.3p
 @man man/man3p/Devel::AssertOS::Linux::Raspbian.3p
 @man man/man3p/Devel::AssertOS::Linux::RealDebian.3p
+@man man/man3p/Devel::AssertOS::Linux::Redhat.3p
+@man man/man3p/Devel::AssertOS::Linux::Rocky.3p
+@man man/man3p/Devel::AssertOS::Linux::SLES.3p
+@man man/man3p/Devel::AssertOS::Linux::SUSE.3p
+@man man/man3p/Devel::AssertOS::Linux::Slackware.3p
 @man man/man3p/Devel::AssertOS::Linux::Ubuntu.3p
 @man man/man3p/Devel::AssertOS::Linux::UnknownDebianLike.3p
 @man man/man3p/Devel::AssertOS::Linux::v2_6.3p
@@ -158,6 +195,7 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::MacOSX::v11.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v12.3p
 @man man/man3p/Devel::AssertOS::MacOSX::v13.3p
+@man man/man3p/Devel::AssertOS::MacOSX::v14.3p
 @man man/man3p/Devel::AssertOS::MacOSclassic.3p
 @man man/man3p/Devel::AssertOS::MachTen.3p
 @man man/man3p/Devel::AssertOS::MicrosoftWindows.3p
@@ -194,3 +232,4 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man3p/Devel::AssertOS::iOS.3p
 @man man/man3p/Devel::CheckOS.3p
 @man man/man3p/Devel::CheckOS::Families.3p
+@man man/man3p/Devel::CheckOS::Helpers::LinuxOSrelease.3p
