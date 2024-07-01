@@ -1,0 +1,14 @@
+https://github.com/threerings/openvpn-auth-ldap/pull/92
+
+Index: src/openvpn-cr.c
+--- src/openvpn-cr.c.orig
++++ src/openvpn-cr.c
+@@ -29,7 +29,7 @@ int extract_openvpn_cr(const char *response, openvpn_r
+ 	tokenIndexes[0] = response;
+ 	int tokenCnt = 1;
+ 	const char *p;
+-	for (p = response; *p; ++p) {
++	for (p = response; *p && tokenCnt < 15; ++p) {
+ 		if (*p == ':')
+ 			tokenIndexes[tokenCnt++] = p + 1;
+ 	}
