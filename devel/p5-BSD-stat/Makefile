@@ -1,16 +1,15 @@
-COMMENT =		stat() with BSD 4.4 extentions
+COMMENT =	stat() with BSD 4.4 extentions
 
-DISTNAME =		BSD-stat-1.35
-REVISION =		2
+DISTNAME =	BSD-stat-1.36
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c perl
+WANTLIB =		c perl
 
 MODULES =		cpan
 
