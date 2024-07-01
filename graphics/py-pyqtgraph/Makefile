@@ -1,10 +1,9 @@
 COMMENT =	pure-python graphics and GUI library
 
-MODPY_EGG_VERSION =	0.13.4
+MODPY_EGG_VERSION =	0.13.7
 
 DISTNAME =	pyqtgraph-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	graphics
 

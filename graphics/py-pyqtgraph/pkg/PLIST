@@ -879,6 +879,15 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/default.png
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/icons.svg
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/invisibleEye.svg
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/lock.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee.svg
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_128px.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_128px@2x.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_192px.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_256px.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_256px@2x.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_512px.png
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/icons/peegee/peegee_512px@2x.png
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/imageview/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/imageview/ImageView.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/imageview/ImageViewTemplate_generic.py
@@ -1113,6 +1122,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/BusyCursor.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/CheckTable.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorButton.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorMapButton.py
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorMapMenu.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ColorMapWidget.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/ComboBox.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/DataFilterWidget.py
@@ -1151,6 +1161,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}Color
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorButton.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapButton.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapButton.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapMenu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapMenu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapWidget.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ColorMapWidget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/widgets/${MODPY_PYCACHE}ComboBox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
