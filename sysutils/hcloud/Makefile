@@ -1,5 +1,5 @@
 COMMENT =		command-line interface for Hetzner Cloud
-V =			1.43.1
+V =			1.44.1
 
 MODGO_MODNAME =		github.com/hetznercloud/cli
 MODGO_VERSION =		v${V}
