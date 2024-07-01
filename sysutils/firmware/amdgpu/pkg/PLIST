@@ -68,6 +68,8 @@ firmware/amdgpu/dcn_3_1_5_dmcub.bin
 firmware/amdgpu/dcn_3_1_6_dmcub.bin
 firmware/amdgpu/dcn_3_2_0_dmcub.bin
 firmware/amdgpu/dcn_3_2_1_dmcub.bin
+firmware/amdgpu/dcn_3_5_1_dmcub.bin
+firmware/amdgpu/dcn_3_5_dmcub.bin
 firmware/amdgpu/dimgrey_cavefish_ce.bin
 firmware/amdgpu/dimgrey_cavefish_dmcub.bin
 firmware/amdgpu/dimgrey_cavefish_me.bin
@@ -144,6 +146,20 @@ firmware/amdgpu/gc_11_0_4_mes1.bin
 firmware/amdgpu/gc_11_0_4_mes_2.bin
 firmware/amdgpu/gc_11_0_4_pfp.bin
 firmware/amdgpu/gc_11_0_4_rlc.bin
+firmware/amdgpu/gc_11_5_0_imu.bin
+firmware/amdgpu/gc_11_5_0_me.bin
+firmware/amdgpu/gc_11_5_0_mec.bin
+firmware/amdgpu/gc_11_5_0_mes1.bin
+firmware/amdgpu/gc_11_5_0_mes_2.bin
+firmware/amdgpu/gc_11_5_0_pfp.bin
+firmware/amdgpu/gc_11_5_0_rlc.bin
+firmware/amdgpu/gc_11_5_1_imu.bin
+firmware/amdgpu/gc_11_5_1_me.bin
+firmware/amdgpu/gc_11_5_1_mec.bin
+firmware/amdgpu/gc_11_5_1_mes1.bin
+firmware/amdgpu/gc_11_5_1_mes_2.bin
+firmware/amdgpu/gc_11_5_1_pfp.bin
+firmware/amdgpu/gc_11_5_1_rlc.bin
 firmware/amdgpu/gc_9_4_3_mec.bin
 firmware/amdgpu/gc_9_4_3_rlc.bin
 firmware/amdgpu/green_sardine_asd.bin
@@ -176,6 +192,7 @@ firmware/amdgpu/hawaii_sdma1.bin
 firmware/amdgpu/hawaii_smc.bin
 firmware/amdgpu/hawaii_uvd.bin
 firmware/amdgpu/hawaii_vce.bin
+firmware/amdgpu/isp_4_1_1.bin
 firmware/amdgpu/kabini_ce.bin
 firmware/amdgpu/kabini_me.bin
 firmware/amdgpu/kabini_mec.bin
@@ -372,6 +389,10 @@ firmware/amdgpu/psp_13_0_7_ta.bin
 firmware/amdgpu/psp_13_0_8_asd.bin
 firmware/amdgpu/psp_13_0_8_ta.bin
 firmware/amdgpu/psp_13_0_8_toc.bin
+firmware/amdgpu/psp_14_0_0_ta.bin
+firmware/amdgpu/psp_14_0_0_toc.bin
+firmware/amdgpu/psp_14_0_1_ta.bin
+firmware/amdgpu/psp_14_0_1_toc.bin
 firmware/amdgpu/raven2_asd.bin
 firmware/amdgpu/raven2_ce.bin
 firmware/amdgpu/raven2_gpu_info.bin
@@ -415,6 +436,8 @@ firmware/amdgpu/sdma_6_0_0.bin
 firmware/amdgpu/sdma_6_0_1.bin
 firmware/amdgpu/sdma_6_0_2.bin
 firmware/amdgpu/sdma_6_0_3.bin
+firmware/amdgpu/sdma_6_1_0.bin
+firmware/amdgpu/sdma_6_1_1.bin
 firmware/amdgpu/si58_mc.bin
 firmware/amdgpu/sienna_cichlid_ce.bin
 firmware/amdgpu/sienna_cichlid_dmcub.bin
@@ -472,6 +495,7 @@ firmware/amdgpu/topaz_rlc.bin
 firmware/amdgpu/topaz_sdma.bin
 firmware/amdgpu/topaz_sdma1.bin
 firmware/amdgpu/topaz_smc.bin
+firmware/amdgpu/umsch_mm_4_0_0.bin
 firmware/amdgpu/vangogh_asd.bin
 firmware/amdgpu/vangogh_ce.bin
 firmware/amdgpu/vangogh_dmcub.bin
@@ -488,6 +512,9 @@ firmware/amdgpu/vcn_4_0_0.bin
 firmware/amdgpu/vcn_4_0_2.bin
 firmware/amdgpu/vcn_4_0_3.bin
 firmware/amdgpu/vcn_4_0_4.bin
+firmware/amdgpu/vcn_4_0_5.bin
+firmware/amdgpu/vcn_4_0_6.bin
+firmware/amdgpu/vcn_4_0_6_1.bin
 firmware/amdgpu/vega10_acg_smc.bin
 firmware/amdgpu/vega10_asd.bin
 firmware/amdgpu/vega10_ce.bin
@@ -550,6 +577,8 @@ firmware/amdgpu/verde_pfp.bin
 firmware/amdgpu/verde_rlc.bin
 firmware/amdgpu/verde_smc.bin
 firmware/amdgpu/verde_uvd.bin
+firmware/amdgpu/vpe_6_1_0.bin
+firmware/amdgpu/vpe_6_1_1.bin
 firmware/amdgpu/yellow_carp_asd.bin
 firmware/amdgpu/yellow_carp_ce.bin
 firmware/amdgpu/yellow_carp_dmcub.bin
