@@ -1,6 +1,6 @@
 COMMENT =	Japanese gothic TrueType fonts from Vine Linux
 
-V =		20220612
+V =		20230918
 DISTNAME =	VLGothic-$V
 PKGNAME =	vlgothic-$V
 
@@ -11,7 +11,7 @@ HOMEPAGE =	http://vlgothic.dicey.org/
 #BSD
 PERMIT_PACKAGE=	Yes
 
-SITES =			${SITE_OSDN_JP:=vlgothic/77450/}
+SITES =			https://github.com/daisukesuzuki/VLGothic/releases/download/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 NO_BUILD =		Yes
