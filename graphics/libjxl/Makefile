@@ -2,11 +2,9 @@ COMMENT =	JPEG XL image format reference implementation
 
 GH_ACCOUNT =	libjxl
 GH_PROJECT =	libjxl
-GH_TAGNAME =	v0.10.2
+GH_TAGNAME =	v0.10.3
 GH_TESTDATA_COMMIT=ff8d743aaba05b3014f17e5475e576242fa979fc
 CATEGORIES =	graphics
-
-REVISION =	1
 
 # add external test data
 DISTFILES.t = 	libjxl-testdata-${GH_TAGNAME}{${GH_TESTDATA_COMMIT}}${EXTRACT_SUFX}
