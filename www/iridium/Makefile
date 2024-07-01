@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2024.06.126.2
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -48,7 +48,7 @@ COMPILER=		ports-clang
 
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
-WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c cairo
+WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
@@ -83,6 +83,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 LIB_DEPENDS=	audio/opus \
 		devel/pango \
 		graphics/jpeg \
+		multimedia/aom \
 		multimedia/dav1d \
 		multimedia/libvpx \
 		multimedia/openh264 \
