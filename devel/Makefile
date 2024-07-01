@@ -1689,6 +1689,7 @@
      SUBDIR += py-types-setuptools,python3
      SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz,python3
+     SUBDIR += py-tzdata,python3
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
@@ -1697,6 +1698,7 @@
      SUBDIR += py-urwid,python3
      SUBDIR += py-validators,python3
      SUBDIR += py-vcversioner,python3
+     SUBDIR += py-versioneer,python3
      SUBDIR += py-virtualenv,python3
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-vulture,python3
