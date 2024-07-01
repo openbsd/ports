@@ -3,7 +3,7 @@ Disable AltiVec for it breaks the build due to various undefined symbols (vec_sq
 Index: vendor/eigen/Eigen/src/Core/util/ConfigureVectorization.h
 --- vendor/eigen/Eigen/src/Core/util/ConfigureVectorization.h.orig
 +++ vendor/eigen/Eigen/src/Core/util/ConfigureVectorization.h
-@@ -373,7 +373,7 @@
+@@ -374,7 +374,7 @@
      #undef vector
      #undef pixel
  
