@@ -1,9 +1,12 @@
 ${P5ARCH}/Syntax/
 ${P5ARCH}/Syntax/Keyword/
+${P5ARCH}/Syntax/Keyword/Match/
 ${P5ARCH}/Syntax/Keyword/Match.pm
+${P5ARCH}/Syntax/Keyword/Match/Deparse.pm
 ${P5ARCH}/auto/Syntax/
 ${P5ARCH}/auto/Syntax/Keyword/
 ${P5ARCH}/auto/Syntax/Keyword/Match/
 @comment ${P5ARCH}/auto/Syntax/Keyword/Match/Match.bs
 @so ${P5ARCH}/auto/Syntax/Keyword/Match/Match.so
 @man man/man3p/Syntax::Keyword::Match.3p
+@man man/man3p/Syntax::Keyword::Match::Deparse.3p
