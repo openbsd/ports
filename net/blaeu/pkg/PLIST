@@ -1,4 +1,6 @@
 bin/blaeu-cert
+bin/blaeu-http
+bin/blaeu-ntp
 bin/blaeu-reach
 bin/blaeu-resolve
 bin/blaeu-traceroute
