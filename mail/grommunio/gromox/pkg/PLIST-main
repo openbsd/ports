@@ -34,9 +34,6 @@ lib/libgromox_mapi.la
 @static-lib lib/libgromox_rpc.a
 lib/libgromox_rpc.la
 @lib lib/libgromox_rpc.so.${LIBgromox_rpc_VERSION}
-@static-lib lib/libgromox_rule.a
-lib/libgromox_rule.la
-@lib lib/libgromox_rule.so.${LIBgromox_rule_VERSION}
 @static-lib lib/libgxh_ews.a
 lib/libgxh_ews.la
 @lib lib/libgxh_ews.so.${LIBgxh_ews_VERSION}
@@ -91,14 +88,15 @@ lib/libgxs_midb_agent.la
 @static-lib lib/libgxs_mysql_adaptor.a
 lib/libgxs_mysql_adaptor.la
 @lib lib/libgxs_mysql_adaptor.so.${LIBgxs_mysql_adaptor_VERSION}
+@static-lib lib/libgxs_ruleproc.a
+lib/libgxs_ruleproc.la
+@lib lib/libgxs_ruleproc.so.${LIBgxs_ruleproc_VERSION}
 @static-lib lib/libgxs_timer_agent.a
 lib/libgxs_timer_agent.la
 @lib lib/libgxs_timer_agent.so.${LIBgxs_timer_agent_VERSION}
 @static-lib lib/libgxs_user_filter.a
 lib/libgxs_user_filter.la
 @lib lib/libgxs_user_filter.so.${LIBgxs_user_filter_VERSION}
-@comment lib/php-${MODPHP_VERSION}/
-@comment lib/php-${MODPHP_VERSION}/modules/
 lib/systemd/
 lib/systemd/system/
 lib/systemd/system/gromox-delivery-queue.service
@@ -318,8 +316,7 @@ share/gromox/mlist_bounce/shift-jis/
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_DOMAIN
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_INTERNAL
 share/gromox/mlist_bounce/shift-jis/BOUNCE_MLIST_SPECIFIED
-share/gromox/msgchg_grouping/
-share/gromox/msgchg_grouping/0x1.txt
+share/gromox/msgchg_group_0x1.txt
 share/gromox/notify_bounce/
 share/gromox/notify_bounce/ascii/
 share/gromox/notify_bounce/ascii/BOUNCE_NOTIFY_NON_READ

@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.29
+V=		2.30
 DISTNAME=	gromox-${V}
 
 PKGNAME-main=	gromox-core-${V}
@@ -12,7 +12,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	c4c5dbdf72c3f9fb122682ceb0934c45dc04fc0e
+GH_COMMIT=	f0a485f5498dbe843f1b101807dd063edce02036
 
 CATEGORIES=	mail www productivity
 
@@ -24,7 +24,6 @@ SHARED_LIBS +=  gromox_epoll              0.0 # 0.0
 SHARED_LIBS +=  gromox_exrpc              0.0 # 0.0
 SHARED_LIBS +=  gromox_mapi               0.0 # 0.0
 SHARED_LIBS +=  gromox_rpc                0.0 # 0.0
-SHARED_LIBS +=  gromox_rule               0.0 # 0.0
 SHARED_LIBS +=  gxh_ews                   0.0 # 0.0
 SHARED_LIBS +=  gxh_mh_emsmdb             0.0 # 0.0
 SHARED_LIBS +=  gxh_mh_nsp                0.0 # 0.0
@@ -43,6 +42,7 @@ SHARED_LIBS +=  gxs_exmdb_provider        0.0 # 0.0
 SHARED_LIBS +=  gxs_ldap_adaptor          0.0 # 0.0
 SHARED_LIBS +=  gxs_midb_agent            0.0 # 0.0
 SHARED_LIBS +=  gxs_mysql_adaptor         0.0 # 0.0
+SHARED_LIBS +=  gxs_ruleproc              0.0 # 0.0
 SHARED_LIBS +=  gxs_timer_agent           0.0 # 0.0
 SHARED_LIBS +=  gxs_user_filter           0.0 # 0.0
 

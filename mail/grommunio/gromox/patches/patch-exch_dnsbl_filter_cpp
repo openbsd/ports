@@ -1,7 +1,7 @@
 Index: exch/dnsbl_filter.cpp
 --- exch/dnsbl_filter.cpp.orig
 +++ exch/dnsbl_filter.cpp
-@@ -10,6 +10,7 @@
+@@ -9,6 +9,7 @@
  #include <string>
  #	include <arpa/inet.h>
  #include <libHX/string.h>

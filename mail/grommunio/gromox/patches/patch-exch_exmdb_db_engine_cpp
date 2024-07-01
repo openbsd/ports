@@ -1,7 +1,7 @@
 Index: exch/exmdb/db_engine.cpp
 --- exch/exmdb/db_engine.cpp.orig
 +++ exch/exmdb/db_engine.cpp
-@@ -290,7 +290,7 @@ BOOL db_engine_unload_db(const char *path)
+@@ -269,7 +269,7 @@ BOOL db_engine_unload_db(const char *path)
  		if (it == g_hash_table.end())
  			return TRUE;
  		auto now = tp_now();

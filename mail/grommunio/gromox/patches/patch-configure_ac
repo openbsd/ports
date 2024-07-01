@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -127,25 +127,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
+@@ -126,25 +126,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
  PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([tinyxml2], [tinyxml2 >= 8])
  PKG_CHECK_MODULES([vmime], [vmime >= 0.9.2])
