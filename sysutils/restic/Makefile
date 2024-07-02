@@ -1,7 +1,7 @@
 COMMENT=	fast, efficient and secure backup program
 
 MODGO_MODNAME=	github.com/restic/restic
-MODGO_VERSION=	v0.16.4
+MODGO_VERSION=	v0.16.5
 
 DISTNAME=	restic-${MODGO_VERSION}
 
