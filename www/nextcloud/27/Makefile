@@ -1,5 +1,3 @@
-NC_VERSION=	27.1.10
-# default PHP version changed, so keep REVISION in -current higher
-# than -stable until 7.5-release.
+NC_VERSION=	27.1.11
 
 .include <bsd.port.mk>
