@@ -1,7 +1,7 @@
 Index: config/Makefile.in
 --- config/Makefile.in.orig
 +++ config/Makefile.in
-@@ -328,7 +328,7 @@ top_srcdir = @top_srcdir@
+@@ -337,7 +337,7 @@ top_srcdir = @top_srcdir@
  version = @version@
  
  # configuration location

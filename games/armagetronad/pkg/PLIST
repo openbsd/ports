@@ -18,11 +18,9 @@ share/armagetronad/language/english_base.txt
 share/armagetronad/language/english_base_notranslate.txt
 share/armagetronad/language/french.txt
 share/armagetronad/language/languages.txt
-share/armagetronad/language/languages.txt.in
 share/armagetronad/language/polish.txt
 share/armagetronad/language/polish_transliterated.txt
 share/armagetronad/language/spanish.txt
-share/armagetronad/language/update.py
 share/armagetronad/models/
 share/armagetronad/models/cycle_body.mod
 share/armagetronad/models/cycle_front.mod
@@ -64,7 +62,6 @@ share/armagetronad/sound/
 share/armagetronad/sound/cyclrun.wav
 share/armagetronad/sound/expl.wav
 share/armagetronad/textures/
-share/armagetronad/textures/KGN_logo.png
 share/armagetronad/textures/cycle_body.png
 share/armagetronad/textures/cycle_wheel.png
 share/armagetronad/textures/dir_wall.png
