@@ -1,6 +1,6 @@
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-4.12.1
+DISTNAME =	worker-5.0.2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/

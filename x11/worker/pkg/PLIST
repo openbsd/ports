@@ -96,12 +96,16 @@ share/worker/config-updates/update-3.9.0-utf8.conf
 share/worker/config-updates/update-3.9.0.conf
 share/worker/config-updates/update-4.10.0-utf8.conf
 share/worker/config-updates/update-4.10.0.conf
+share/worker/config-updates/update-4.10.1-utf8.conf
+share/worker/config-updates/update-4.10.1.conf
 share/worker/config-updates/update-4.4.0-utf8.conf
 share/worker/config-updates/update-4.4.0.conf
 share/worker/config-updates/update-4.4.1-utf8.conf
 share/worker/config-updates/update-4.4.1.conf
 share/worker/config-updates/update-4.8.1-utf8.conf
 share/worker/config-updates/update-4.8.1.conf
+share/worker/config-updates/update-5.0.0-utf8.conf
+share/worker/config-updates/update-5.0.0.conf
 share/worker/hints-english
 share/worker/hints-english.utf8
 share/worker/scripts/
