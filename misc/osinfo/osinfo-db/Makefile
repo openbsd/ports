@@ -1,6 +1,6 @@
 COMMENT=		osinfo database files
 
-V=			20240523
+V=			20240701
 DISTNAME=		osinfo-db-${V}
 EXTRACT_SUFX=		.tar.xz
 
