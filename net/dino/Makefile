@@ -1,24 +1,14 @@
 COMMENT=	XMPP desktop client
-VERSION=	0.4.3
+VERSION=	0.4.4
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
-REVISION=	2
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
-SHARED_LIBS +=	dino                      3.0 # 0.0
+SHARED_LIBS +=	dino                      3.1 # 0.0
 SHARED_LIBS +=	qlite                     0.0 # 0.1
-SHARED_LIBS +=	xmpp-vala                 3.0 # 0.1
+SHARED_LIBS +=	xmpp-vala                 3.1 # 0.1
 
 HOMEPAGE=	https://dino.im/
-
-SITES=		https://github.com/dino/dino/releases/download/v${VERSION}/
-SITES.fix= 	https://github.com/dino/dino/commit/
-# "Always export symbols to fix startup on BSDs" merged in master but not (yet)
-# into the "v0.4" release branch: https://github.com/dino/dino/issues/438
-PATCHFILES.fix=	b75b6062abc07b25d0dcd6717e168aa85be7cf4e.patch
-PATCH_DIST_STRIP=	-p1
-
-MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
