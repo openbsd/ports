@@ -82,11 +82,15 @@ ${P5SITE}/Test2/Plugin/UTF8.pm
 ${P5SITE}/Test2/Require/
 ${P5SITE}/Test2/Require.pm
 ${P5SITE}/Test2/Require/AuthorTesting.pm
+${P5SITE}/Test2/Require/AutomatedTesting.pm
 ${P5SITE}/Test2/Require/EnvVar.pm
+${P5SITE}/Test2/Require/ExtendedTesting.pm
 ${P5SITE}/Test2/Require/Fork.pm
 ${P5SITE}/Test2/Require/Module.pm
+${P5SITE}/Test2/Require/NonInteractiveTesting.pm
 ${P5SITE}/Test2/Require/Perl.pm
 ${P5SITE}/Test2/Require/RealFork.pm
+${P5SITE}/Test2/Require/ReleaseTesting.pm
 ${P5SITE}/Test2/Require/Threads.pm
 ${P5SITE}/Test2/Suite.pm
 ${P5SITE}/Test2/Todo.pm
@@ -206,11 +210,15 @@ ${P5SITE}/Test2/Workflow/Task/Group.pm
 @man man/man3p/Test2::Plugin::UTF8.3p
 @man man/man3p/Test2::Require.3p
 @man man/man3p/Test2::Require::AuthorTesting.3p
+@man man/man3p/Test2::Require::AutomatedTesting.3p
 @man man/man3p/Test2::Require::EnvVar.3p
+@man man/man3p/Test2::Require::ExtendedTesting.3p
 @man man/man3p/Test2::Require::Fork.3p
 @man man/man3p/Test2::Require::Module.3p
+@man man/man3p/Test2::Require::NonInteractiveTesting.3p
 @man man/man3p/Test2::Require::Perl.3p
 @man man/man3p/Test2::Require::RealFork.3p
+@man man/man3p/Test2::Require::ReleaseTesting.3p
 @man man/man3p/Test2::Require::Threads.3p
 @man man/man3p/Test2::Suite.3p
 @man man/man3p/Test2::Todo.3p
