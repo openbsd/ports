@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.9.5
 DISTNAME =		steamctl-${MODPY_EGG_VERSION}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steamctl
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -16,6 +16,7 @@ MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-argcomplete${MODPY_FLAVOR} \
 			devel/py-arrow${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-tqdm${MODPY_FLAVOR} \
 			games/py-steam${MODPY_FLAVOR} \
 			archivers/py-vpk${MODPY_FLAVOR} \
