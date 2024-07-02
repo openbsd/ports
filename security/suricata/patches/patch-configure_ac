@@ -3,7 +3,7 @@ To remove the pid file, its directory must be writable by suricata user.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -2562,7 +2562,7 @@ if test "$WINDOWS_PATH" = "yes"; then
+@@ -2597,7 +2597,7 @@ if test "$WINDOWS_PATH" = "yes"; then
      fi
  else
      EXPAND_VARIABLE(localstatedir, e_logdir, "/log/suricata/")

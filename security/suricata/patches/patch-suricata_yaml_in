@@ -35,7 +35,7 @@ Index: suricata.yaml.in
        # Enable for multi-threaded eve.json output; output files are amended with
        # an identifier, e.g., eve.9.json
        #threaded: false
-@@ -334,6 +336,7 @@ outputs:
+@@ -340,6 +342,7 @@ outputs:
    - http-log:
        enabled: no
        filename: http.log
@@ -43,7 +43,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # enable this for extended logging information
        #custom: yes       # enable the custom logging format (defined by customformat)
-@@ -344,6 +347,7 @@ outputs:
+@@ -350,6 +353,7 @@ outputs:
    - tls-log:
        enabled: no  # Log TLS connections.
        filename: tls.log # File to store TLS logs.
@@ -51,7 +51,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # Log extended information like fingerprint
        #custom: yes       # enabled the custom logging format (defined by customformat)
-@@ -391,6 +395,7 @@ outputs:
+@@ -397,6 +401,7 @@ outputs:
    - pcap-log:
        enabled: no
        filename: log.pcap
@@ -59,7 +59,7 @@ Index: suricata.yaml.in
  
        # File size limit.  Can be specified in kb, mb, gb.  Just a number
        # is parsed as bytes.
-@@ -429,6 +434,7 @@ outputs:
+@@ -435,6 +440,7 @@ outputs:
    - alert-debug:
        enabled: no
        filename: alert-debug.log
@@ -67,7 +67,7 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -436,6 +442,7 @@ outputs:
+@@ -442,6 +448,7 @@ outputs:
    - stats:
        enabled: yes
        filename: stats.log
@@ -75,7 +75,7 @@ Index: suricata.yaml.in
        append: yes       # append to file (yes) or overwrite it (no)
        totals: yes       # stats for all threads merged together
        threads: no       # per thread stats
-@@ -529,6 +536,7 @@ outputs:
+@@ -535,6 +542,7 @@ outputs:
        enabled: no
        type: file
        filename: tcp-data.log
@@ -83,7 +83,7 @@ Index: suricata.yaml.in
  
    # Log HTTP body data after normalization, de-chunking and unzipping.
    # Two types: file or dir.
-@@ -542,6 +550,7 @@ outputs:
+@@ -548,6 +556,7 @@ outputs:
        enabled: no
        type: file
        filename: http-data.log
@@ -91,7 +91,7 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -1195,9 +1204,9 @@ datasets:
+@@ -1203,9 +1212,9 @@ datasets:
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -104,7 +104,7 @@ Index: suricata.yaml.in
  
  security:
    # if true, prevents process creation from Suricata by calling
-@@ -1208,13 +1217,11 @@ security:
+@@ -1216,13 +1225,11 @@ security:
      enabled: no
      directories:
        #write:
@@ -118,7 +118,7 @@ Index: suricata.yaml.in
  
    lua:
      # Allow Lua rules. Disabled by default.
-@@ -1227,7 +1234,7 @@ security:
+@@ -1235,7 +1242,7 @@ security:
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -127,17 +127,17 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1295,8 +1302,7 @@ unix-command:
+@@ -1303,8 +1310,7 @@ unix-command:
    #filename: custom.socket
  
  # Magic file. The extension .mgc is added to the value here.
 -#magic-file: /usr/share/file/magic
-+#magic-file: ${SYSCONFDIR}/magic
 -@e_magic_file_comment@magic-file: @e_magic_file@
++#magic-file: ${LOCALBASE}/share/misc/magic
  
  # GeoIP2 database file. Specify path and filename of GeoIP2 database
  # if using rules with "geoip" rule option.
-@@ -1334,8 +1340,8 @@ legacy:
+@@ -1342,8 +1348,8 @@ legacy:
  exception-policy: auto
  
  # IP Reputation
@@ -148,7 +148,7 @@ Index: suricata.yaml.in
  #reputation-files:
  # - reputation.list
  
-@@ -1813,7 +1819,7 @@ profiling:
+@@ -1825,7 +1831,7 @@ profiling:
      limit: 10
  
      # output to json
@@ -157,7 +157,7 @@ Index: suricata.yaml.in
  
    # per keyword profiling
    keywords:
-@@ -2143,22 +2149,44 @@ napatech:
+@@ -2155,22 +2161,44 @@ napatech:
      #
      hashmode: hash5tuplesorted
  
