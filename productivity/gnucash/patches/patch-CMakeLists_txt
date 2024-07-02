@@ -3,7 +3,7 @@ Force usage of webkit2gtk-4.1.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -214,10 +214,7 @@ if (WITH_GNUCASH)
+@@ -223,10 +223,7 @@ if (WITH_GNUCASH)
      pkg_check_modules (WEBKIT REQUIRED IMPORTED_TARGET webkitgtk-3.0)
      set(WEBKIT1 1 CACHE INTERNAL "WebKitGtk")
    else()

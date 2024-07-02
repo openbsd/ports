@@ -4,13 +4,15 @@ bin/gnc-fq-update
 @bin bin/gnucash-cli
 include/gnucash/
 include/gnucash/Account.h
+include/gnucash/Account.hpp
 include/gnucash/FreqSpec.h
 include/gnucash/Query.h
 include/gnucash/QuickFill.h
 include/gnucash/Recurrence.h
 include/gnucash/SX-book.h
-include/gnucash/SX-ttinfo.h
+include/gnucash/SX-ttinfo.hpp
 include/gnucash/SchedXaction.h
+include/gnucash/SchedXaction.hpp
 include/gnucash/Scrub.h
 include/gnucash/Scrub2.h
 include/gnucash/Scrub3.h
@@ -190,7 +192,6 @@ include/gnucash/qofbackend.h
 include/gnucash/qofbook.h
 include/gnucash/qofbook.hpp
 include/gnucash/qofbookslots.h
-include/gnucash/qofchoice.h
 include/gnucash/qofclass.h
 include/gnucash/qofevent.h
 include/gnucash/qofid-p.h
@@ -357,6 +358,7 @@ lib/guile/3.0/site-ccache/gnucash/reports/standard/register.go
 lib/guile/3.0/site-ccache/gnucash/reports/standard/taxinvoice.go
 lib/guile/3.0/site-ccache/gnucash/reports/standard/transaction.go
 lib/guile/3.0/site-ccache/gnucash/reports/standard/trial-balance.go
+lib/guile/3.0/site-ccache/gnucash/reports/standard/txn-columns.go
 lib/guile/3.0/site-ccache/gnucash/reports/standard/view-column.go
 lib/guile/3.0/site-ccache/gnucash/string.go
 lib/guile/3.0/site-ccache/gnucash/utilities.go
@@ -1203,6 +1205,7 @@ share/guile/site/3.0/gnucash/reports/standard/register.scm
 share/guile/site/3.0/gnucash/reports/standard/taxinvoice.scm
 share/guile/site/3.0/gnucash/reports/standard/transaction.scm
 share/guile/site/3.0/gnucash/reports/standard/trial-balance.scm
+share/guile/site/3.0/gnucash/reports/standard/txn-columns.scm
 share/guile/site/3.0/gnucash/reports/standard/view-column.scm
 share/guile/site/3.0/gnucash/reports/stylesheets/
 share/guile/site/3.0/gnucash/reports/stylesheets/balsheet-eg.css
