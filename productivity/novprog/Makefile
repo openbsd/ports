@@ -1,8 +1,7 @@
-V =		3.2.2
+V =		3.2.3
 COMMENT =	graphical wordcount grapher
 DISTNAME =	novprog-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
 CATEGORIES =	productivity x11
 
 HOMEPAGE =	https://gottcode.org/novprog/
