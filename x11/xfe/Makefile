@@ -1,6 +1,6 @@
 COMMENT=	MS-Explorer like file manager for X
 
-DISTNAME=	xfe-1.45
+DISTNAME=	xfe-1.46.2
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	x11
 
@@ -21,7 +21,8 @@ MODULES=	textproc/intltool
 
 LIB_DEPENDS=	devel/fox
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 USE_GMAKE=	Yes
 

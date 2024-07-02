@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -589,17 +589,13 @@ uninstall-polkit_actionDATA:
+@@ -555,17 +555,13 @@ uninstall-polkit_actionDATA:
  install-rcDATA: $(rc_DATA)
  	@$(NORMAL_INSTALL)
  	@list='$(rc_DATA)'; test -n "$(rcdir)" || list=; \

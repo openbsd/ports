@@ -10,6 +10,10 @@ share/applications/xfe.desktop
 share/applications/xfi.desktop
 share/applications/xfp.desktop
 share/applications/xfw.desktop
+share/icons/hicolor/scalable/apps/xfe.svg
+share/icons/hicolor/scalable/apps/xfi.svg
+share/icons/hicolor/scalable/apps/xfp.svg
+share/icons/hicolor/scalable/apps/xfw.svg
 share/locale/bs/LC_MESSAGES/xfe.mo
 share/locale/ca/LC_MESSAGES/xfe.mo
 share/locale/cs/LC_MESSAGES/xfe.mo
@@ -49,6 +53,9 @@ share/pixmaps/xfp.png
 share/pixmaps/xfp.xpm
 share/pixmaps/xfw.png
 share/pixmaps/xfw.xpm
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.xfe.root.policy
 share/xfe/
 share/xfe/icons/
 share/xfe/icons/default-theme/
@@ -76,6 +83,7 @@ share/xfe/icons/default-theme/bigfileopen.png
 share/xfe/icons/default-theme/bigfilter.png
 share/xfe/icons/default-theme/bigfloppy.png
 share/xfe/icons/default-theme/bigfolder.png
+share/xfe/icons/default-theme/bigfolderlink.png
 share/xfe/icons/default-theme/bigfolderlocked.png
 share/xfe/icons/default-theme/bigfolderopen.png
 share/xfe/icons/default-theme/bigfolderup.png
@@ -212,6 +220,7 @@ share/xfe/icons/default-theme/minidoc.png
 share/xfe/icons/default-theme/miniexec.png
 share/xfe/icons/default-theme/minifolder.png
 share/xfe/icons/default-theme/minifolderclosed.png
+share/xfe/icons/default-theme/minifolderlink.png
 share/xfe/icons/default-theme/minifolderlocked.png
 share/xfe/icons/default-theme/minifolderopen.png
 share/xfe/icons/default-theme/minifolderup.png
@@ -400,6 +409,7 @@ share/xfe/icons/gnome-theme/bigfileopen.png
 share/xfe/icons/gnome-theme/bigfilter.png
 share/xfe/icons/gnome-theme/bigfloppy.png
 share/xfe/icons/gnome-theme/bigfolder.png
+share/xfe/icons/gnome-theme/bigfolderlink.png
 share/xfe/icons/gnome-theme/bigfolderlocked.png
 share/xfe/icons/gnome-theme/bigfolderopen.png
 share/xfe/icons/gnome-theme/bigfolderup.png
@@ -536,6 +546,7 @@ share/xfe/icons/gnome-theme/minidoc.png
 share/xfe/icons/gnome-theme/miniexec.png
 share/xfe/icons/gnome-theme/minifolder.png
 share/xfe/icons/gnome-theme/minifolderclosed.png
+share/xfe/icons/gnome-theme/minifolderlink.png
 share/xfe/icons/gnome-theme/minifolderlocked.png
 share/xfe/icons/gnome-theme/minifolderopen.png
 share/xfe/icons/gnome-theme/minifolderup.png
@@ -724,6 +735,7 @@ share/xfe/icons/kde-theme/bigfileopen.png
 share/xfe/icons/kde-theme/bigfilter.png
 share/xfe/icons/kde-theme/bigfloppy.png
 share/xfe/icons/kde-theme/bigfolder.png
+share/xfe/icons/kde-theme/bigfolderlink.png
 share/xfe/icons/kde-theme/bigfolderlocked.png
 share/xfe/icons/kde-theme/bigfolderopen.png
 share/xfe/icons/kde-theme/bigfolderup.png
@@ -860,6 +872,7 @@ share/xfe/icons/kde-theme/minidoc.png
 share/xfe/icons/kde-theme/miniexec.png
 share/xfe/icons/kde-theme/minifolder.png
 share/xfe/icons/kde-theme/minifolderclosed.png
+share/xfe/icons/kde-theme/minifolderlink.png
 share/xfe/icons/kde-theme/minifolderlocked.png
 share/xfe/icons/kde-theme/minifolderopen.png
 share/xfe/icons/kde-theme/minifolderup.png
@@ -1048,6 +1061,7 @@ share/xfe/icons/xfce-theme/bigfileopen.png
 share/xfe/icons/xfce-theme/bigfilter.png
 share/xfe/icons/xfce-theme/bigfloppy.png
 share/xfe/icons/xfce-theme/bigfolder.png
+share/xfe/icons/xfce-theme/bigfolderlink.png
 share/xfe/icons/xfce-theme/bigfolderlocked.png
 share/xfe/icons/xfce-theme/bigfolderopen.png
 share/xfe/icons/xfce-theme/bigfolderup.png
@@ -1184,6 +1198,7 @@ share/xfe/icons/xfce-theme/minidoc.png
 share/xfe/icons/xfce-theme/miniexec.png
 share/xfe/icons/xfce-theme/minifolder.png
 share/xfe/icons/xfce-theme/minifolderclosed.png
+share/xfe/icons/xfce-theme/minifolderlink.png
 share/xfe/icons/xfce-theme/minifolderlocked.png
 share/xfe/icons/xfce-theme/minifolderopen.png
 share/xfe/icons/xfce-theme/minifolderup.png
@@ -1349,3 +1364,4 @@ share/xfe/icons/xfce-theme/zoomout.png
 share/xfe/icons/xfce-theme/zoomwin.png
 share/xfe/xferc
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
