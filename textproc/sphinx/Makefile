@@ -21,12 +21,6 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 SITES =			${HOMEPAGE}files/
 
-# for tests
-MODULES =		lang/php
-MODPHP_VERSION =	7.4
-MODPHP_BUILDDEP =	No
-MODPHP_RUNDEP =		No
-
 LIB_DEPENDS =		converters/libiconv
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/sphinx
@@ -50,14 +44,7 @@ LIB_DEPENDS +=		databases/mariadb
 WANTLIB +=		mariadb
 .endif
 
-# Needs php with mysqli setup, mariadb listening on 127.0.0.1, and maybe
-# a database named "test" pre-created.
-TEST_IS_INTERACTIVE =	Yes
-
-TEST_DEPENDS =		lang/php/${MODPHP_VERSION} \
-			lang/php/${MODPHP_VERSION},-mysqli \
-			databases/mariadb,-server
-MAKE_ENV =		MODPHP_BIN=${MODPHP_BIN}
+NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sphinx
