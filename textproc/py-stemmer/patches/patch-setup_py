@@ -1,0 +1,17 @@
+From d3d423dc877b4f49e0ab1776f7edaff37feb6799 Mon Sep 17 00:00:00 2001
+From: Stefano Rivera <stefano@rivera.za.net>
+Date: Sat, 25 Nov 2023 16:33:46 +0000
+Subject: [PATCH] Unrestrict the maximum Cython version
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -208,7 +208,7 @@ setup(name='PyStemmer',
+           "Topic :: Text Processing :: Indexing",
+           "Topic :: Text Processing :: Linguistic",
+       ],
+-      setup_requires=['Cython>=0.28.5,<1.0', 'setuptools>=18.0'],
++      setup_requires=['Cython>=0.28.5', 'setuptools>=18.0'],
+       ext_modules=[
+           C_EXTENSION
+       ],

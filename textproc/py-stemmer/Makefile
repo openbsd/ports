@@ -3,7 +3,7 @@ COMMENT =		snowball stemming algorithms, for information retrieval
 MODPY_EGG_VERSION =	2.2.0.1
 DISTNAME =		PyStemmer-${MODPY_EGG_VERSION}
 PKGNAME =		py-stemmer-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
