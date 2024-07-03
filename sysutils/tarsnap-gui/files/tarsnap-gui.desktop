@@ -1,0 +1,9 @@
+[Desktop Entry]
+GenericName=Backup
+Name=Tarsnap Backup
+Comment=GUI for the Tarsnap backup service
+Exec=tarsnap-gui
+Terminal=false
+Type=Application
+Categories=Utility;Archiving;Qt;
+Icon=tarsnap-gui
