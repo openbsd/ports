@@ -42,6 +42,7 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-test-asyncio${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
