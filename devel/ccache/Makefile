@@ -1,39 +1,37 @@
-COMMENT =	C/C++ compiler front-end to cache compiled object code
+COMMENT=	C/C++ compiler front-end to cache compiled object code
 
-V =		4.9.1
-DISTNAME =	ccache-$V
+V=		4.10.1
+DISTNAME=	ccache-$V
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://ccache.dev/
+HOMEPAGE=	https://ccache.dev/
 
 # GPLv3+
-PERMIT_PACKAGE =	 Yes
+PERMIT_PACKAGE=	 Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c hiredis m zstd
+WANTLIB += ${COMPILER_LIBCXX} c fmt hiredis m xxhash zstd
 
-SITES =	https://github.com/ccache/ccache/releases/download/v$V/
+SITES=		https://github.com/ccache/ccache/releases/download/v$V/
 
-MODULES =		devel/cmake
-CONFIGURE_ARGS =	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR}
+MODULES=	devel/cmake
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-COMPILER =		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS =		textproc/asciidoctor
-LIB_DEPENDS =		archivers/zstd \
-			databases/libhiredis
+BUILD_DEPENDS=	textproc/asciidoctor
+LIB_DEPENDS=	archivers/zstd \
+		databases/libhiredis \
+		devel/fmt \
+		sysutils/xxhash
 
-# Failure in cpp1 test appears to be due to an embedded filename
-# in a .o file present in one file, and not present in the file being
-# compared with.
-PORTHOME =		${WRKDIR}
-TEST_DEPENDS =		shells/bash
-TEST_ENV =		CC="${CC}"
+# needs https://github.com/doctest/doctest, wants to download at
+# configure time if not available
+NO_TEST=	Yes
 
-# disabled in default build via patch
-pre-test:
-	@${MODCMAKE_BUILD_TARGET} -t unittest
+CONFIGURE_ARGS=	-DCMAKE_INSTALL_SYSCONFDIR=${SYSCONFDIR} \
+		-DDEPS=offline \
+		-DENABLE_TESTING=OFF
 
 .include <bsd.port.mk>
