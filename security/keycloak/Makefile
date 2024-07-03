@@ -2,7 +2,7 @@ COMMENT =	Identity and Access Management solution
 
 CATEGORIES =	security
 
-VERSION =	24.0.5
+VERSION =	25.0.1
 DISTNAME =	keycloak-${VERSION}
 
 SITES =	https://github.com/keycloak/keycloak/releases/download/${VERSION}/
@@ -16,7 +16,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 MODULES =	java
-MODJAVA_VER =	17
+MODJAVA_VER =	21
 
 RUN_DEPENDS =	java/javaPathHelper \
 		shells/bash
