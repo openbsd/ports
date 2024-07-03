@@ -36,8 +36,8 @@ DPB_PROPERTIES = parallel
 
 EXTRACT_ONLY =  ${DISTNAME}${EXTRACT_SUFX}
 DISTFILES = 	${EXTRACT_ONLY} \
-		stb-${V1}{stb}/stb_image.h \
-		stb-${V2}{stb}/stb_image_write.h
+		stb-${V1}/stb_image.h \
+		stb-${V2}/stb_image_write.h
 
 
 FULLPKGNAME-main = 	mlpack-$V
