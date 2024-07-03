@@ -10,6 +10,8 @@ SHARED_LIBS +=	xmpp-vala                 3.1 # 0.1
 
 HOMEPAGE=	https://dino.im/
 
+SITES=		https://github.com/dino/dino/releases/download/v${VERSION}/
+
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
 
