@@ -1,6 +1,7 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
 MODPY_EGG_VERSION=	1.8.12
+REVISION=	0
 DISTNAME=	borgmatic-${MODPY_EGG_VERSION}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -16,7 +17,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.2 \
+RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
 		devel/py-colorama${MODPY_FLAVOR}-<0.5 \
 		devel/py-jsonschema${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
