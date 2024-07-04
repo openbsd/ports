@@ -67,6 +67,7 @@ lib/znc/
 @so lib/znc/clearbufferonmsg.so
 @so lib/znc/clientnotify.so
 @so lib/znc/controlpanel.so
+@so lib/znc/corecaps.so
 @so lib/znc/crypt.so
 @so lib/znc/ctcpflood.so
 @so lib/znc/dcc.so
@@ -105,8 +106,10 @@ lib/znc/
 share/doc/pkg-readmes/${PKGSTEM}
 share/znc/
 share/znc/cmake/
+share/znc/cmake/CMakeFindDependencyMacroPC.cmake
 share/znc/cmake/ZNCConfig.cmake
 share/znc/cmake/ZNCConfigVersion.cmake
+share/znc/cmake/use_homebrew.cmake
 share/znc/cmake/znc_internal${MODCMAKE_BUILD_SUFFIX}
 share/znc/cmake/znc_internal.cmake
 share/znc/cmake/znc_public.cmake
@@ -177,7 +180,10 @@ share/znc/translations/id-ID
 share/znc/translations/it-IT
 share/znc/translations/nl-NL
 share/znc/translations/pl-PL
+share/znc/translations/pt-BR
+share/znc/translations/pt-PT
 share/znc/translations/ru-RU
+share/znc/translations/tr-TR
 share/znc/webskins/
 share/znc/webskins/_default_/
 share/znc/webskins/_default_/pub/
