@@ -10,6 +10,7 @@ include/p11-kit-1/p11-kit/pkcs11.h
 include/p11-kit-1/p11-kit/pkcs11x.h
 include/p11-kit-1/p11-kit/remote.h
 include/p11-kit-1/p11-kit/uri.h
+include/p11-kit-1/p11-kit/version.h
 @lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
 @so lib/p11-kit-proxy.so
 lib/pkcs11/
