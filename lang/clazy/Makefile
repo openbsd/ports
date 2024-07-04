@@ -2,9 +2,8 @@ BROKEN-sparc64 = Uses clang-cpp libraries and fails to link with either ports-gc
 
 COMMENT =	static source code analyzer for Qt-based C++
 
-V =		1.11
+V =		1.12
 DISTNAME =	clazy-${V}
-REVISION =	3
 
 CATEGORIES =	lang devel
 
@@ -23,7 +22,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		lang/clang devel/cmake
 
 MODCLANG_COMPILER_LINKS = 	No
-MODCLANG_RUNDEP =		Yes 
+MODCLANG_RUNDEP =		Yes
 
 LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS}
 
