@@ -78,6 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/folder.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/globe.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/hdd-o-active.png
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/hdd-o.png
+lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/help-about.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/icon.svg
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/loading.gif
 lib/python${MODPY_VERSION}/site-packages/vorta/assets/icons/minus.svg
@@ -306,9 +307,12 @@ lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}loading_button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}loading_button.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}tooltip_button.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}tooltip_button.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/${MODPY_PYCACHE}treemodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/loading_button.py
+lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/tooltip_button.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/partials/treemodel.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/profile_add_edit_dialog.py
 lib/python${MODPY_VERSION}/site-packages/vorta/views/repo_add_dialog.py

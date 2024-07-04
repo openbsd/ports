@@ -1,7 +1,6 @@
 COMMENT=	GUI for Borg Backup
 
-MODPY_EGG_VERSION=	0.8.9
-REVISION=	1
+MODPY_EGG_VERSION=	0.8.12
 DISTNAME=	vorta-${MODPY_EGG_VERSION}
 
 CATEGORIES=	sysutils
@@ -21,9 +20,8 @@ NO_TEST=	Yes
 BUILD_DEPENDS=	devel/py-pip${MODPY_FLAVOR}
 RUN_DEPENDS=	databases/py-peewee${MODPY_FLAVOR} \
 		devel/py-appdirs${MODPY_FLAVOR} \
-		security/py-paramiko${MODPY_FLAVOR} \
 		security/py-secretstorage${MODPY_FLAVOR} \
-		borgbackup-*:sysutils/borgbackup/1.2 \
+		borgbackup-*:sysutils/borgbackup/1.4 \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		x11/py-qt5${MODPY_FLAVOR}
 
