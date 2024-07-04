@@ -2,8 +2,7 @@ COMMENT =	self hosted personal CRM system
 
 CATEGORIES =	productivity
 
-VERSION =	4.0.0
-REVISION =	0
+VERSION =	4.1.2
 PKGNAME =	monica-${VERSION}
 
 SITES =	https://github.com/monicahq/monica/releases/download/v${VERSION}/
@@ -19,7 +18,6 @@ MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/php
-MODPHP_VERSION=	8.1
 
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
