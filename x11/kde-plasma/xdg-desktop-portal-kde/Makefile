@@ -22,21 +22,25 @@ BUILD_DEPENDS =	devel/kf6/kirigami
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
-		devel/kf6/kglobalaccel \
-		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kcoreaddons \
+		devel/kf6/kglobalaccel \
+		devel/kf6/kguiaddons
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
+		devel/kf6/kio \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
-		devel/kf6/kio \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
-		devel/kf6/solid \
-		x11/kde-plasma/kwayland>=${VERSION} \
+		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
-		x11/qt6/qtdeclarative
+		devel/kf6/solid \
+		wayland/wayland \
+		x11/kde-plasma/kwayland>=${VERSION} \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtwayland \
+		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 

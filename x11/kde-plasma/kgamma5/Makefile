@@ -20,7 +20,8 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kcmutils \
-		devel/kf6/kwidgetsaddons
+		devel/kf6/kwidgetsaddons \
+		x11/qt6/qtdeclarative
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
