@@ -1571,7 +1571,7 @@ gitea/assets/css/
 gitea/assets/css/asciinema-player.dd36a08e.css
 gitea/assets/css/code-frequency-graph.55afbe7d.css
 gitea/assets/css/colorpicker.ec78e358.css
-gitea/assets/css/contributors-graph.a63e16c9.css
+gitea/assets/css/contributors-graph.66f42f73.css
 gitea/assets/css/dropzone.5a752d14.css
 gitea/assets/css/index.css
 gitea/assets/css/katex.fb6ef55c.css
@@ -2028,12 +2028,12 @@ gitea/assets/js/citation-js-formats.63828ec7.js
 gitea/assets/js/code-frequency-graph.50d197d3.js
 gitea/assets/js/colorpicker.de7eb406.js
 gitea/assets/js/contributors-graph-code-frequency-graph-recent-commits-graph.eb309961.js
-gitea/assets/js/contributors-graph.454a1a6d.js
+gitea/assets/js/contributors-graph.81a9f092.js
 gitea/assets/js/dropzone.6ba4ca5d.js
 gitea/assets/js/easymde.0bb18d64.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.854dda92.map
+gitea/assets/js/index.js.0c2f14dc.map
 gitea/assets/js/katex-.bd7ddd30.js
 gitea/assets/js/katex.6ad51582.js
 gitea/assets/js/mcaptcha-vanilla-glue.53a504bd.js
