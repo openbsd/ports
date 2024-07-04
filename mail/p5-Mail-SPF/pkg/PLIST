@@ -1,4 +1,5 @@
 @conflict p5-Mail-SPF-Query-*
+bin/spfd
 bin/spfquery
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/SPF/
@@ -57,4 +58,3 @@ ${P5SITE}/Mail/SPF/v2/Record.pm
 @man man/man3p/Mail::SPF::Util.3p
 @man man/man3p/Mail::SPF::v1::Record.3p
 @man man/man3p/Mail::SPF::v2::Record.3p
-sbin/spfd

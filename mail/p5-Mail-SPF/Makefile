@@ -1,8 +1,6 @@
 COMMENT =		perl oop implementation of Sender Policy Framework
 
-DISTNAME =		Mail-SPF-v2.9.0
-PKGNAME =		p5-${DISTNAME:S/-v/-/}
-REVISION =		4
+DISTNAME =		Mail-SPF-3.20240617
 CATEGORIES =		mail
 
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>
@@ -12,7 +10,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 PKG_ARCH =		*
-CONFIGURE_STYLE =	modbuild
 
 RUN_DEPENDS =		devel/p5-Error \
 			net/p5-NetAddr-IP>=4 \
@@ -26,6 +23,6 @@ MAKE_ENV =		TEST_POD=Yes
 CONFIGURE_ARGS =	install_path=sbin="${PREFIX}/sbin"
 
 post-build:
-	pod2man ${WRKSRC}/sbin/spfd > ${WRKSRC}/blib/bindoc/spfd.1
+	find ${WRKBUILD}/blib -type f -name '*.orig.port' -delete
 
 .include <bsd.port.mk>

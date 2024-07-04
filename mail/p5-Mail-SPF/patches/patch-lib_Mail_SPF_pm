@@ -1,0 +1,12 @@
+Index: lib/Mail/SPF.pm
+--- lib/Mail/SPF.pm.orig
++++ lib/Mail/SPF.pm
+@@ -17,7 +17,7 @@ Mail::SPF - An object-oriented implementation of Sende
+ 
+ =head1 VERSION
+ 
+-2.009
++3.20240617
+ 
+ =cut
+ 
