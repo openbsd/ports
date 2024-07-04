@@ -68,7 +68,6 @@ www/freshrss/app/Exceptions/
 www/freshrss/app/Exceptions/AlreadySubscribedException.php
 www/freshrss/app/Exceptions/BadUrlException.php
 www/freshrss/app/Exceptions/ContextException.php
-www/freshrss/app/Exceptions/DAOException.php
 www/freshrss/app/Exceptions/EntriesGetterException.php
 www/freshrss/app/Exceptions/FeedException.php
 www/freshrss/app/Exceptions/FeedNotAddedException.php
@@ -129,6 +128,7 @@ www/freshrss/app/Services/
 www/freshrss/app/Services/ExportService.php
 www/freshrss/app/Services/ImportService.php
 www/freshrss/app/Utils/
+www/freshrss/app/Utils/dotNotationUtil.php
 www/freshrss/app/Utils/feverUtil.php
 www/freshrss/app/Utils/passwordUtil.php
 www/freshrss/app/actualize_script.php
@@ -408,10 +408,13 @@ www/freshrss/app/views/helpers/extension/configure.phtml
 www/freshrss/app/views/helpers/extension/details.phtml
 www/freshrss/app/views/helpers/feed/
 www/freshrss/app/views/helpers/feed/update.phtml
+www/freshrss/app/views/helpers/htmlPagination.phtml
 www/freshrss/app/views/helpers/index/
+www/freshrss/app/views/helpers/index/article.phtml
 www/freshrss/app/views/helpers/index/normal/
 www/freshrss/app/views/helpers/index/normal/entry_bottom.phtml
 www/freshrss/app/views/helpers/index/normal/entry_header.phtml
+www/freshrss/app/views/helpers/index/tags.phtml
 www/freshrss/app/views/helpers/javascript_vars.phtml
 www/freshrss/app/views/helpers/logs_pagination.phtml
 www/freshrss/app/views/helpers/stream-footer.phtml
@@ -421,6 +424,7 @@ www/freshrss/app/views/importExport/index.phtml
 www/freshrss/app/views/index/
 www/freshrss/app/views/index/about.phtml
 www/freshrss/app/views/index/global.phtml
+www/freshrss/app/views/index/html.phtml
 www/freshrss/app/views/index/index.phtml
 www/freshrss/app/views/index/logs.phtml
 www/freshrss/app/views/index/normal.phtml
@@ -445,6 +449,7 @@ www/freshrss/app/views/tag/
 www/freshrss/app/views/tag/getTagsForEntry.phtml
 www/freshrss/app/views/tag/index.phtml
 www/freshrss/app/views/tag/tagEntry.phtml
+www/freshrss/app/views/tag/update.phtml
 www/freshrss/app/views/update/
 www/freshrss/app/views/update/apply.phtml
 www/freshrss/app/views/update/checkInstall.phtml
@@ -458,14 +463,17 @@ www/freshrss/app/views/user_mailer/
 www/freshrss/app/views/user_mailer/email_need_validation.txt.php
 www/freshrss/cli/
 www/freshrss/cli/.htaccess
+www/freshrss/cli/CliOption.php
+www/freshrss/cli/CliOptionsParser.php
 www/freshrss/cli/README.md
 www/freshrss/cli/_cli.php
-www/freshrss/cli/_update-or-create-user.php
 www/freshrss/cli/access-permissions.sh
 www/freshrss/cli/actualize-user.php
 www/freshrss/cli/check.translation.php
 www/freshrss/cli/create-user.php
+www/freshrss/cli/db-backup.php
 www/freshrss/cli/db-optimize.php
+www/freshrss/cli/db-restore.php
 www/freshrss/cli/delete-user.php
 www/freshrss/cli/do-install.php
 www/freshrss/cli/export-opml-for-user.php
@@ -562,13 +570,15 @@ www/freshrss/docs/en/admins/14_CloudProviders.md
 www/freshrss/docs/en/admins/15_extensions.md
 www/freshrss/docs/en/admins/16_OpenID-Connect-Authentik.md
 www/freshrss/docs/en/admins/16_OpenID-Connect.md
+www/freshrss/docs/en/admins/17_configs_not_ui.md
+www/freshrss/docs/en/admins/Caddy.md
 www/freshrss/docs/en/admins/DatabaseConfig.md
 www/freshrss/docs/en/admins/logs_and_errors.md
 www/freshrss/docs/en/contributing.md
 www/freshrss/docs/en/developers/
 www/freshrss/docs/en/developers/01_Index.md
 www/freshrss/docs/en/developers/02_First_steps.md
-www/freshrss/docs/en/developers/02_Github.md
+www/freshrss/docs/en/developers/02_GitHub.md
 www/freshrss/docs/en/developers/03_Backend/
 www/freshrss/docs/en/developers/03_Backend/01_Database_schema.md
 www/freshrss/docs/en/developers/03_Backend/03_External_libraries.md
@@ -592,6 +602,7 @@ www/freshrss/docs/en/img/admins/authentik-01.png
 www/freshrss/docs/en/img/admins/authentik-02.png
 www/freshrss/docs/en/img/admins/authentik-03.png
 www/freshrss/docs/en/img/admins/authentik-04.png
+www/freshrss/docs/en/img/admins/authentik-05.png
 www/freshrss/docs/en/img/doc.edit.png
 www/freshrss/docs/en/img/logo_freshrss.png
 www/freshrss/docs/en/img/users/
@@ -611,6 +622,7 @@ www/freshrss/docs/en/img/users/refresh.6.png
 www/freshrss/docs/en/img/users/status.filter.0.7.png
 www/freshrss/docs/en/img/users/status.filter.0.8.png
 www/freshrss/docs/en/img/users/token.1.png
+www/freshrss/docs/en/img/users/user-query-share.png
 www/freshrss/docs/en/img/users/user.queries.drop-down.empty.png
 www/freshrss/docs/en/img/users/user.queries.drop-down.not.empty.png
 www/freshrss/docs/en/index.md
@@ -627,6 +639,7 @@ www/freshrss/docs/en/users/09_refreshing_feeds.md
 www/freshrss/docs/en/users/10_filter.md
 www/freshrss/docs/en/users/11_website_scraping.md
 www/freshrss/docs/en/users/WebSub.md
+www/freshrss/docs/en/users/user_queries.md
 www/freshrss/docs/fr/
 www/freshrss/docs/fr/contributing.md
 www/freshrss/docs/fr/developers/
@@ -808,6 +821,7 @@ www/freshrss/lib/phpgt/cssxpath/src/NotYetImplementedException.php
 www/freshrss/lib/phpgt/cssxpath/src/Translator.php
 www/freshrss/lib/phpmailer/
 www/freshrss/lib/phpmailer/phpmailer/
+www/freshrss/lib/phpmailer/phpmailer/.editorconfig
 www/freshrss/lib/phpmailer/phpmailer/LICENSE
 www/freshrss/lib/phpmailer/phpmailer/README.md
 www/freshrss/lib/phpmailer/phpmailer/VERSION
@@ -825,6 +839,7 @@ www/freshrss/p/api/fever.php
 www/freshrss/p/api/greader.php
 www/freshrss/p/api/index.php
 www/freshrss/p/api/pshb.php
+www/freshrss/p/api/query.php
 www/freshrss/p/ext.php
 www/freshrss/p/f.php
 www/freshrss/p/favicon.ico
@@ -1140,6 +1155,7 @@ www/freshrss/p/themes/p.rtl.css
 www/freshrss/package-lock.json
 www/freshrss/package.json
 www/freshrss/phpcs.xml
+www/freshrss/phpstan-next.neon
 www/freshrss/phpstan.neon
 www/freshrss/tests/
 www/freshrss/tests/.gitignore
@@ -1151,9 +1167,12 @@ www/freshrss/tests/app/Models/LogDAOTest.php
 www/freshrss/tests/app/Models/SearchTest.php
 www/freshrss/tests/app/Models/UserQueryTest.php
 www/freshrss/tests/app/Utils/
+www/freshrss/tests/app/Utils/dotNotationUtilTest.php
 www/freshrss/tests/app/Utils/passwordUtilTest.php
 www/freshrss/tests/bootstrap.php
 www/freshrss/tests/cli/
+www/freshrss/tests/cli/CliOptionsParserTest.php
+www/freshrss/tests/cli/cli-parser-test.php
 www/freshrss/tests/cli/i18n/
 www/freshrss/tests/cli/i18n/I18nCompletionValidatorTest.php
 www/freshrss/tests/cli/i18n/I18nDataTest.php
@@ -1175,7 +1194,6 @@ www/freshrss/tests/lib/Minz/
 www/freshrss/tests/lib/Minz/MigratorTest.php
 www/freshrss/tests/lib/PHPMailer/
 www/freshrss/tests/lib/PHPMailer/PHPMailerTest.php
-www/freshrss/tests/phpstan-next.txt
 www/freshrss/tests/shellchecks.sh
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}
