@@ -2,6 +2,7 @@ COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME=	xfe-1.46.2
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 CATEGORIES=	x11
 
 HOMEPAGE=	http://roland65.free.fr/xfe/
@@ -18,6 +19,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 SITES=		${SITE_SOURCEFORGE:=xfe/}
 
 MODULES=	textproc/intltool
+
+BUILD_DEPENDS =	sysutils/polkit
 
 LIB_DEPENDS=	devel/fox
 
