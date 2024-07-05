@@ -1,6 +1,6 @@
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-3.10
+DISTNAME=	feh-3.10.3
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -38,5 +38,8 @@ USE_GMAKE=	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/themes ${WRKSRC}/man/feh.pre \
 	    ${WRKSRC}/src/{events,keyevents,options}.c
+
+post-install:
+	rm -f ${PREFIX}/share/examples/feh/themes.orig.port
 
 .include <bsd.port.mk>
