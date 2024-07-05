@@ -57,7 +57,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/golang-lru							 v0.5.4 \
 	github.com/hashicorp/hcl							 v1.0.0 \
 	github.com/hashicorp/serf							 v0.10.1 \
-	github.com/hetznercloud/hcloud-go/v2						 v2.10.1 \
+	github.com/hetznercloud/hcloud-go/v2						 v2.10.2 \
 	github.com/inconshreveable/mousetrap						 v1.1.0 \
 	github.com/jedib0t/go-pretty/v6							 v6.5.9 \
 	github.com/jessevdk/go-flags							 v1.4.1-0.20181029123624-5de817a9aa20 \
