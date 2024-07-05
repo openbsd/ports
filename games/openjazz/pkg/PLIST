@@ -4,7 +4,7 @@ share/applications/OpenJazz.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/48x48/apps/OpenJazz.png
 share/icons/hicolor/scalable/apps/OpenJazz.svg
-share/openjazz/
-share/openjazz/openjazz.000
+share/pixmaps/
+share/pixmaps/OpenJazz.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

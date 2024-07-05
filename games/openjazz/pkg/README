@@ -7,13 +7,12 @@ OpenJazz
 OpenJazz requires the original game files from Jazz Jackrabbit to work
 properly.  These can come from an original CD or from GOG.com.
 
-If using the GOG.com version, you must extract the files from
-setup_jazz_jackrabbit_collection_2.0_cs_(28162).exe using the
-innoextract package.
+The Windows version from GOG.com can be extracted with innoextract.
+The Linux version from GOG.com can be extracted with unzip.
 
-The files will be in a directory named app. You must keep this
-directory, though it can be renamed and moved to a location of your
-choosing. You can delete everything else that is extracted from the exe.
+The files will be extracted into the current working directory. The
+directory can be renamed and moved to a location of your choosing. You
+can delete all non-game related files that are extracted from the exe.
 
 While this package and the game engine are open source, one still needs
 to provide the original game assets from Jazz Jackrabbit, which is not

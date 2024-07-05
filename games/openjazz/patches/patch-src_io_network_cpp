@@ -3,9 +3,9 @@ Missing netinet/in.h and sys/select.h
 Index: src/io/network.cpp
 --- src/io/network.cpp.orig
 +++ src/io/network.cpp
-@@ -41,6 +41,8 @@
- 		#define EWOULDBLOCK WSAEWOULDBLOCK
- 		#define MSG_NOSIGNAL 0
+@@ -43,6 +43,8 @@
+ 			#define EWOULDBLOCK WSAEWOULDBLOCK
+ 		#endif
  	#else
 +		#include <netinet/in.h>
 +		#include <sys/select.h>

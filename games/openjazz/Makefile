@@ -1,13 +1,9 @@
 COMMENT =	open-source version of the classic Jazz Jackrabbit games
-DISTNAME =	openjazz-20190120
-REVISION =	1
 CATEGORIES =	games x11
 
-# Upstream does make real tarballs.
-# Will switch to those next release.
 GH_ACCOUNT =	AlisterT
 GH_PROJECT =	openjazz
-GH_COMMIT =	9e6ed1f4e1ed8581e49686fd64e69cfcd37bf558
+GH_TAGNAME =	20231028
 
 HOMEPAGE =	http://www.alister.eu/jazz/oj/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,29 +11,18 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL c m
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c m
 
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+# C++11
+COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	devel/sdl
+MODULES =	devel/cmake
+
+BUILD_DEPENDS =	textproc/asciidoctor
+
+LIB_DEPENDS =	devel/sdl2
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
-
-CONFIGURE_STYLE =	gnu
-
-USE_GMAKE =	Yes
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
-
-do-gen:
-	cd ${WRKSRC} && \
-		${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -fi
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/menu/mainmenu.cpp
 
 .include <bsd.port.mk>
