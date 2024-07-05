@@ -1,18 +1,7 @@
 Index: xdrawchem.pro
 --- xdrawchem.pro.orig
 +++ xdrawchem.pro
-@@ -2,8 +2,8 @@ TEMPLATE = app
- TARGET = xdrawchem
- 
- # edit to match your OB install
--exists(/usr/include/openbabel3/openbabel/mol.h) {
--INCLUDEPATH += /usr/include/openbabel3
-+exists($${PREFIX}/include/openbabel3/openbabel/mol.h) {
-+INCLUDEPATH += $${PREFIX}/include/openbabel3
- LIBS += -lopenbabel
- }
- exists(/usr/local/include/openbabel-3.0/openbabel/mol.h) {
-@@ -45,7 +45,7 @@ ringdir.files = ring/*
+@@ -23,7 +23,7 @@ ringdir.files = ring/*
  doc.path = $${PREFIX}/share/xdrawchem/doc
  doc.files = doc/*
  INSTALLS += ringdir doc
@@ -20,4 +9,4 @@ Index: xdrawchem.pro
 +QMAKE_CXXFLAGS_DEBUG +=
  
  CONFIG += debug
- QT += xml svg network core widgets printsupport network gui
+ 

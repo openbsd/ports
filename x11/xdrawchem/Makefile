@@ -1,6 +1,6 @@
 COMMENT=	two-dimensional molecule drawing program
 
-V=		1.11.0
+V=		1.11.1
 DISTNAME=	xdrawchem-${V}
 
 CATEGORIES=	x11 biology
@@ -25,6 +25,6 @@ LIB_DEPENDS=	misc/openbabel>=3.0.0 \
 
 NO_TEST=	Yes
 
-WRKDIST=	${WRKDIR}/xdrawchem-v1.11.0-53047f64b571b5f01623bf897eb9e2b212778031
+WRKDIST=	${WRKDIR}/xdrawchem-v1.11.1-9f224231491314825b3eebb23027f529f0f41f97
 
 .include <bsd.port.mk>
