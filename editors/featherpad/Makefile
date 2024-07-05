@@ -4,23 +4,21 @@ CATEGORIES =	editors x11
 
 GH_ACCOUNT =	tsujan
 GH_PROJECT =	FeatherPad
-GH_TAGNAME =	V1.4.1
+GH_TAGNAME =	V1.5.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5DBus Qt5Gui Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras SM X11 Xext c hunspell-1.7
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Core Qt6DBus Qt6Gui Qt6PrintSupport
+WANTLIB += Qt6Svg Qt6Widgets SM X11 Xext c hunspell-1.7 m
 
 MODULES =	devel/cmake \
-		x11/qt5
+		x11/qt6
 
 LIB_DEPENDS =	textproc/hunspell \
-		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras
+		x11/qt6/qtsvg
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
@@ -28,7 +26,5 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
 
 CXXFLAGS +=	-I${LOCALBASE}/include
-
-NO_TEST =	Yes
 
 .include <bsd.port.mk>

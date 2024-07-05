@@ -1,4 +1,4 @@
-FeatherPad is a lightweight Qt5 plain-text editor. It is independent of
+FeatherPad is a lightweight Qt6 plain-text editor. It is independent of
 any desktop environment and has:
   * Drag-and-drop support, including tab detachment and attachment
   * X11 virtual desktop awareness
