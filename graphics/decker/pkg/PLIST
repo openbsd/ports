@@ -1,5 +1,6 @@
 @bin bin/decker
 @bin bin/lilt
+share/applications/decker.desktop
 share/doc/decker/
 share/doc/decker/decker.html
 share/doc/decker/format.html
@@ -36,6 +37,7 @@ share/doc/decker/images/scripteditor.gif
 share/doc/decker/images/slidertypes.gif
 share/doc/decker/images/sounds.gif
 share/doc/decker/images/wings.gif
+share/doc/decker/learn.html
 share/doc/decker/lil.html
 share/doc/decker/lilquickref.html
 share/doc/decker/lilt.html
@@ -64,12 +66,17 @@ share/examples/decker/maze.lil
 share/examples/decker/ovum.deck
 share/examples/decker/palimport.deck
 share/examples/decker/patedit.deck
+share/examples/decker/pdf.deck
 share/examples/decker/plot.deck
 share/examples/decker/podcasts.lil
 share/examples/decker/publictransit.deck
 share/examples/decker/puppeteer.deck
+share/examples/decker/sokoban.deck
 share/examples/decker/sound.deck
 share/examples/decker/tour.deck
 share/examples/decker/transit.deck
 share/examples/decker/utena.deck
 share/examples/decker/zazz.deck
+share/pixmaps/
+share/pixmaps/decker.png
+@tag update-desktop-database

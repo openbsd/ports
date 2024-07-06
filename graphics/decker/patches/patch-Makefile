@@ -36,7 +36,7 @@ Index: Makefile
  
  clean:
  	@rm -rf ./c/build/
-@@ -63,19 +63,19 @@ clean:
+@@ -63,21 +63,21 @@ clean:
  	@rm -f docs/*.html
  
  install:
@@ -54,11 +54,15 @@ Index: Makefile
  test: lilt
 -	@chmod +x ./scripts/test_interpreter.sh
 -	@./scripts/test_interpreter.sh "./c/build/lilt "
+-	@./c/build/lilt tests/dom/arrays.lil
+-	@./c/build/lilt tests/dom/images.lil
 -	@./c/build/lilt tests/dom/domtests.lil
 -	@./c/build/lilt tests/dom/test_roundtrip.lil
 -	@./c/build/lilt tests/puzzles/weeklychallenge.lil
 +	chmod +x ./scripts/test_interpreter.sh
 +	./scripts/test_interpreter.sh "./c/build/lilt "
++	./c/build/lilt tests/dom/arrays.lil
++	./c/build/lilt tests/dom/images.lil
 +	./c/build/lilt tests/dom/domtests.lil
 +	./c/build/lilt tests/dom/test_roundtrip.lil
 +	./c/build/lilt tests/puzzles/weeklychallenge.lil

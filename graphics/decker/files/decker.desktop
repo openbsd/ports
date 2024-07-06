@@ -1,0 +1,9 @@
+[Desktop Entry]
+GenericName=Multimedia platform
+Name=Decker
+Comment=Multimedia platform inspired by HyperCard
+Exec=decker
+Terminal=false
+Type=Application
+Categories=Multimedia;Graphics;
+Icon=decker
