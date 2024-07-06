@@ -1,9 +1,8 @@
-MODPY_EGG_VERSION =	2.9
+MODPY_EGG_VERSION =	5.1
 COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	archivers devel
-REVISION =	6
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
