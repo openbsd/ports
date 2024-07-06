@@ -4,6 +4,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 # Zap post-extract when updating
 VERSION=		29.4
 DISTNAME=		emacs-${VERSION}
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -26,10 +27,12 @@ FLAVORS=		athena gtk2 gtk3 no_x11
 FLAVOR?=		gtk3
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd
+LOCAL_LISP_PATH=	${SYSCONFDIR}/emacs:${LOCALBASE}/share/emacs/${VERSION:C/[a-z]+$$//}/site-lisp:${LOCALBASE}/share/emacs/site-lisp
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 CONFIGURE_ARGS=		--build="${GCCARCH}" \
+			--enable-locallisppath="${LOCAL_LISP_PATH}" \
 			--without-sound
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

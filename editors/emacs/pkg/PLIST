@@ -4309,3 +4309,4 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/subdirs.el
 share/metainfo/
 share/metainfo/emacs.metainfo.xml
+@sample ${SYSCONFDIR}/emacs/
