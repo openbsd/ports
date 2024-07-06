@@ -1,26 +1,16 @@
 @bin bin/xaos
-@info info/xaos.info
-@man man/man6/xaos.6
 share/XaoS/
 share/XaoS/catalogs/
-share/XaoS/catalogs/README
-share/XaoS/catalogs/cesky.cat
-share/XaoS/catalogs/deutsch.cat
-share/XaoS/catalogs/english.cat
-share/XaoS/catalogs/espanhol.cat
-share/XaoS/catalogs/francais.cat
-share/XaoS/catalogs/italiano.cat
-share/XaoS/catalogs/magyar.cat
-share/XaoS/catalogs/portuguese.cat
-share/XaoS/catalogs/romanian.cat
-share/XaoS/doc/
-share/XaoS/doc/AUTHORS
-share/XaoS/doc/COPYING
-share/XaoS/doc/ChangeLog
-share/XaoS/doc/ChangeLog.old
-share/XaoS/doc/INSTALL
-share/XaoS/doc/NEWS
-share/XaoS/doc/TODO
+share/XaoS/catalogs/cs.cat
+share/XaoS/catalogs/de.cat
+share/XaoS/catalogs/en.cat
+share/XaoS/catalogs/es.cat
+share/XaoS/catalogs/fr.cat
+share/XaoS/catalogs/hu.cat
+share/XaoS/catalogs/it.cat
+share/XaoS/catalogs/pt.cat
+share/XaoS/catalogs/ro.cat
+share/XaoS/catalogs/ru.cat
 share/XaoS/examples/
 share/XaoS/examples/0rfel1.xpf
 share/XaoS/examples/0rfel2.xpf
@@ -34,7 +24,6 @@ share/XaoS/examples/3d6.xpf
 share/XaoS/examples/3d7.xpf
 share/XaoS/examples/3d8.xpf
 share/XaoS/examples/3d9.xpf
-share/XaoS/examples/README
 share/XaoS/examples/alien.xpf
 share/XaoS/examples/animal.xpf
 share/XaoS/examples/axe.xpf
@@ -95,7 +84,6 @@ share/XaoS/examples/julia2.xpf
 share/XaoS/examples/julia3.xpf
 share/XaoS/examples/julia4.xpf
 share/XaoS/examples/julia5.xpf
-share/XaoS/examples/juliaanim.xaf
 share/XaoS/examples/kovzsi10.2.xpf
 share/XaoS/examples/kovzsi12.xpf
 share/XaoS/examples/kovzsi14.xpf
@@ -135,13 +123,11 @@ share/XaoS/examples/mand5.xpf
 share/XaoS/examples/mand7.xpf
 share/XaoS/examples/mand8.xpf
 share/XaoS/examples/mand9.xpf
-share/XaoS/examples/mandanim.xaf
 share/XaoS/examples/minibrot.xpf
 share/XaoS/examples/nap.xpf
 share/XaoS/examples/newcolor.xpf
 share/XaoS/examples/newt.xpf
 share/XaoS/examples/newt2.xpf
-share/XaoS/examples/newton.xaf
 share/XaoS/examples/newton.xpf
 share/XaoS/examples/newton2.xpf
 share/XaoS/examples/newton3.xpf
@@ -150,6 +136,8 @@ share/XaoS/examples/orveny.xpf
 share/XaoS/examples/paisleypillow.xpf
 share/XaoS/examples/palace.xpf
 share/XaoS/examples/paramecium.xpf
+share/XaoS/examples/parjulia1.xpf
+share/XaoS/examples/parjulia2.xpf
 share/XaoS/examples/pavaszem.xpf
 share/XaoS/examples/pavaszem2.xpf
 share/XaoS/examples/pentafrac.xpf
@@ -193,8 +181,6 @@ share/XaoS/examples/ufo.xpf
 share/XaoS/examples/warriormask.xpf
 share/XaoS/examples/whisp.xpf
 share/XaoS/examples/zsigapro.xpf
-share/XaoS/help/
-share/XaoS/help/xaos.hlp
 share/XaoS/tutorial/
 share/XaoS/tutorial/3dtutor.xaf
 share/XaoS/tutorial/Bclosing.xaf
@@ -223,6 +209,7 @@ share/XaoS/tutorial/head.xhf
 share/XaoS/tutorial/incolor.xaf
 share/XaoS/tutorial/innew.xhf
 share/XaoS/tutorial/intro.xaf
+share/XaoS/tutorial/iter.xaf
 share/XaoS/tutorial/julia.xaf
 share/XaoS/tutorial/keys.xhf
 share/XaoS/tutorial/line1.xhf
@@ -230,6 +217,7 @@ share/XaoS/tutorial/magnet.xaf
 share/XaoS/tutorial/mset.xaf
 share/XaoS/tutorial/msetren.xaf
 share/XaoS/tutorial/new30.xaf
+share/XaoS/tutorial/new40.xaf
 share/XaoS/tutorial/newton.xaf
 share/XaoS/tutorial/octo.xaf
 share/XaoS/tutorial/other.xaf
@@ -250,11 +238,3 @@ share/XaoS/tutorial/tree.xhf
 share/XaoS/tutorial/trice.xaf
 share/XaoS/tutorial/truecol.xaf
 share/XaoS/tutorial/truecol.xhf
-share/locale/cs/LC_MESSAGES/xaos.mo
-share/locale/de/LC_MESSAGES/xaos.mo
-share/locale/es/LC_MESSAGES/xaos.mo
-share/locale/fr/LC_MESSAGES/xaos.mo
-share/locale/hu/LC_MESSAGES/xaos.mo
-share/locale/it/LC_MESSAGES/xaos.mo
-share/locale/pt/LC_MESSAGES/xaos.mo
-share/locale/ro/LC_MESSAGES/xaos.mo
