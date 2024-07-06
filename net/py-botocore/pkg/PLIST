@@ -1891,6 +1891,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/2021-09-14/paginators-1.json
