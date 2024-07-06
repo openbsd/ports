@@ -1,9 +1,9 @@
 COMMENT =	ARP level ping utility
 
-DISTNAME =	arping-2.24
+DISTNAME =	arping-2.25
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.habets.pp.se/synscan/programs.php?prog=ARPing
+HOMEPAGE =	https://www.habets.pp.se/synscan/programs_arping.html
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
