@@ -2,7 +2,7 @@ COMMENT =	extension for easily overriding subroutines
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Sub-Override-0.10
+DISTNAME =	Sub-Override-0.12
 CATEGORIES =	devel
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
