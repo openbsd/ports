@@ -2926,6 +2926,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/update-task-set.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/wait/services-stable.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecs/wait/tasks-running.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/create-file-system.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/efs/create-mount-target.rst
