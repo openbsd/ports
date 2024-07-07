@@ -2,7 +2,7 @@
 @option is-branch
 @conflict php-apache-${PHP_PKGSPEC}
 ${APACHE_DIR}/
-@so ${APACHE_DIR}/${SAPI_SO}
+@so ${APACHE_DIR}/libphp.so
 @sample ${MODPHP_CONFIG_PATH}/modules.sample/
 share/examples/php-${PV}/modphp.conf
 @sample ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
