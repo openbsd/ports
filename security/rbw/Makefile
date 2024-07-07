@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	command line BitWarden client
 
-DISTNAME =	rbw-1.10.2
+DISTNAME =	rbw-1.11.1
 
 CATEGORIES =	security
 
