@@ -3,7 +3,7 @@ fix C++17 error when working with sorting the structs
 Index: AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp
 --- AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp.orig
 +++ AI/Skirmish/BARb/src/circuit/module/EconomyManager.cpp
-@@ -552,7 +552,9 @@ void CEconomyManager::Init()
+@@ -542,7 +542,9 @@ void CEconomyManager::Init()
  				? (mspInfoEnd.pull - mspInfoBegin.pull) / (mspInfoEnd.mex - mspInfoBegin.mex)
  				: 0.f;
  	}

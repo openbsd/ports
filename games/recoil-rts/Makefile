@@ -4,17 +4,17 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		real-time strategy game engine for Beyond All Reason
 
 # To keep version in sync with Beyond All Reason: use version information at:
-# https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
+#https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2472
-HASH =			ga5aa45c
+BLD =			2511
+HASH =			g747f18b
 V =			${MJ}.${MN}pl${BLD}
 # ${IN_ENGINE_V} is what recoil uses/displays internally
-IN_ENGINE_V =		${MJ}.${MN:C/\..*//}
+IN_ENGINE_V =           "${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
 
 # Prefix '0.' to avoid future EPOCH. Upstream has indicated future versioning
 # with YY.MM; once that has happened, remove '0.'
@@ -23,26 +23,30 @@ PKGNAME =		recoil-rts-0.${V}
 DIST_STRING =		spring_bar_%7BBAR${MJ}%7D${MAJ}.${MN}-${BLD}-${HASH}
 
 DIST_TUPLE +=		github beyond-all-reason spring ${DIST_STRING} .
-DIST_TUPLE +=		github USCiLab cereal d1fcec807b372f04e4c1041b3058e11c12853e6e \
+DIST_TUPLE +=		github USCiLab cereal \
+			d1fcec807b372f04e4c1041b3058e11c12853e6e \
 			rts/lib/cereal # BSD-3
-DIST_TUPLE +=		github skypjack entt e4ccb878f47245a319704912435d3c89f34ad6be \
+DIST_TUPLE +=		github skypjack entt \
+			e4ccb878f47245a319704912435d3c89f34ad6be \
 			rts/lib/entt # MIT
-DIST_TUPLE +=		github gflags gflags f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
+DIST_TUPLE +=		github gflags gflags \
+			f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 			rts/lib/gflags # BSD-3
-DIST_TUPLE +=		github wolfpld tracy 5a1f5371b792c12aea324213e1dc738b2923ae21 \
+DIST_TUPLE +=		github wolfpld tracy \
+			5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			aded4d13fcec74a3416e7055fcfb8275e49061a1 AI/Skirmish/BARb \
-			# GPL-2.0
+			3dee671176bdae7e6b1dd46a3c6c2c0d03c48755 \
+			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			edc74149c281e2140f28c091ed74310c11611cc7 AI/Skirmish/CircuitAI \
-			# GPL-2.0
+			edc74149c281e2140f28c091ed74310c11611cc7 \
+			AI/Skirmish/CircuitAI # GPL-2.0
 DIST_TUPLE +=		github spring SpringMapConvNG \
-			0ddd86eaa8871dc0833c69f931f55cd856c5009d tools/mapcompile \
-			# GPL-2.0
+			0ddd86eaa8871dc0833c69f931f55cd856c5009d \
+			tools/mapcompile # GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
-			bdac30330eccb5ec73da299922491f3f4ee8debe tools/pr-downloader \
-			# GPL-2.0
+			bdac30330eccb5ec73da299922491f3f4ee8debe \
+			tools/pr-downloader # GPL-2.0
 DIST_TUPLE +=		github cameron314 readerwriterqueue \
 			8e7627d18c2108aca178888d88514179899a044f \
 			tools/pr-downloader/src/lib/readerwriterqueue # BSD-2
@@ -58,7 +62,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU IL ILU SDL2 X11 Xcursor
 WANTLIB += c curl execinfo fontconfig freetype jsoncpp m minizip ogg
 WANTLIB += openal vorbis vorbisfile z
 
-FIX_CRLF_FILES =	tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
+FIX_CRLF_FILES = \
+	tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
