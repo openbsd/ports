@@ -3,11 +3,6 @@ BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 COMMENT-main=	server-side HTML-embedded scripting language
 
 PV=		${PHP_VERSION:R}
-.if ${PHP_VERSION:M7*}
-MV=		${PV:R}
-.else
-MV=
-.endif
 SV=		${PV:S/.//}
 
 PKGNAME-main?=		php-${PHP_VERSION}
@@ -123,7 +118,6 @@ PSEUDO_FLAVORS=		${PHP_EXTENSIONS:C/-(pdo_)?mysqli?//:C/-(pcntl|shmop)//:C/-/no_
 PSEUDO_FLAVORS+=	embed
 FLAVOR ?=
 
-.if ${PV} != 7.4 && ${PV} != 8.0
 # BDEP needed as well as LIB_DEPENDS-main because -main is knocked
 # out for "embed" builds.
 # xxhash is used as a header-only library here; the file is included in
@@ -135,7 +129,6 @@ BUILD_DEPENDS+=		devel/capstone/main \
 CONFIGURE_ARGS+=	--with-capstone
 LIB_DEPENDS-main+=	devel/capstone/main
 WANTLIB-main+=		capstone
-.endif
 
 # where the main php module is stored (outside the chroot)
 .if ${FLAVOR:Membed}
@@ -146,7 +139,6 @@ MULTI_PACKAGES=	${SAPI} ${PHP_EXTENSIONS}
 SAPI_DIR=	lib/apache2/php-${PV}
 APACHE_DIR=	${SAPI_DIR}
 .endif
-SAPI_SO=	libphp${MV}.so
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -202,16 +194,13 @@ WANTLIB$i +=		c
 
 .for i in ${SAPI}
 WANTLIB$i +=		argon2 crypto curses iconv intl lzma m onig
-WANTLIB$i +=		pcre2-8 pthread readline sodium ssl xml2 z
+WANTLIB$i +=		pcre2-8 pthread readline sodium ssl util xml2 z
 LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			devel/pcre2 \
 			security/argon2 \
 			security/libsodium \
 			textproc/libxml \
 			textproc/oniguruma
-.  if !${PV:M7*}
-WANTLIB$i +=		util
-.  endif
 .endfor
 
 #
@@ -250,15 +239,9 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 # enchant
 COMMENT-enchant=	enchant library extensions for php
 HOMEPAGE-enchant=	https://www.php.net/enchant
-.if ${PV:M7*}
-LIB_DEPENDS-enchant=	textproc/enchant
-WANTLIB-enchant=	${COMPILER_LIBCXX} enchant glib-2.0 gmodule-2.0 \
-			iconv intl
-.else
 LIB_DEPENDS-enchant=	textproc/enchant2
 WANTLIB-enchant=	aspell enchant-2 glib-2.0 gmodule-2.0 iconv intl \
 			pthread
-.endif
 .if ${BUILD_PACKAGES:M-enchant}
 CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 .endif
@@ -470,10 +453,7 @@ WANTLIB-zip=		bz2 crypto lzma pthread z zip zstd
 CONFIGURE_ARGS+=	--with-zip=shared
 .endif
 
-# some variables to substitute
-SUBST_VARS+=	CHROOT_DIR MODPHP_CONFIG_PATH SV PV MV PHP_PKGSPEC
-SUBST_VARS+=	APACHE_DIR SAPI_SO
-UPDATE_PLIST_ARGS+= -i MV
+SUBST_VARS+=	APACHE_DIR CHROOT_DIR MODPHP_CONFIG_PATH SV PV PHP_PKGSPEC
 DEFAULT_PHP?=	No
 DESTDIRNAME=	INSTALL_ROOT
 
@@ -482,8 +462,7 @@ INSTALL_TARGET=	install-binaries install-build install-headers install-programs
 
 # install-pharcmd makes a $(shell ...) call which requires gmake
 # newer php versions have an extra check and don't provide a useful
-# phar command unless this works - use it on all versions to reduce
-# differing codepaths
+# phar command unless this works
 USE_GMAKE=	Yes
 INSTALL_TARGET+= install-pharcmd
 
@@ -535,7 +514,7 @@ post-install:
 
 .if ${BUILD_PACKAGES:M-apache} || ${BUILD_PACKAGES:M-embed}
 	${INSTALL_DATA_DIR} ${PREFIX}/${SAPI_DIR}
-	${INSTALL_DATA} ${WRKBUILD}/.libs/${SAPI_SO} ${PREFIX}/${SAPI_DIR}
+	${INSTALL_DATA} ${WRKBUILD}/.libs/libphp.so ${PREFIX}/${SAPI_DIR}
 .endif
 
 .for m in ${ZEND_EXTENSIONS:S/-//g}
