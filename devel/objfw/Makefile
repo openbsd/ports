@@ -1,10 +1,10 @@
 COMMENT =	portable, lightweight framework for the Objective-C language
 
-DISTNAME =	objfw-1.1.2
+DISTNAME =	objfw-1.1.5
 
 # .objc_sel_* symbols are for string de-duplication and can be ignored.
-SHARED_LIBS +=	objfw		0.1
-SHARED_LIBS +=	objfwrt		0.1
+SHARED_LIBS +=	objfw		1.0
+SHARED_LIBS +=	objfwrt		1.0
 SHARED_LIBS +=	objfwtls	0.0
 
 CATEGORIES =	devel
