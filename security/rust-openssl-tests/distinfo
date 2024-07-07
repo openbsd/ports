@@ -50,11 +50,11 @@ SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ
 SHA256 (cargo/rustix-0.38.34.tar.gz) = cNxewEL3pDxKcyQSB87MmHOgbUXeuzizKfhUHYXCcw8=
 SHA256 (cargo/ryu-1.0.18.tar.gz) = 88tboNxDJCzhfemcGA6W25CyNbip/clUPJbSIJEWvZ8=
 SHA256 (cargo/semver-1.0.23.tar.gz) = YWl+Chx+US6EpiEyYjmESiTYIHtGabQbwYsy6ly/mIs=
-SHA256 (cargo/serde-1.0.203.tar.gz) = clOrTelx5y+3vpg4AjAMMLWn8MLlb6uKv8aiFDB8AJQ=
-SHA256 (cargo/serde_derive-1.0.203.tar.gz) = UAy8Dr629GYn9Q8/WBHM9r8AZDvjALTD6rwO9V3Ftbo=
+SHA256 (cargo/serde-1.0.204.tar.gz) = vHb1WODLsqg503NUxXXx3D/cZUa1vjc7pD2V8jG/fBI=
+SHA256 (cargo/serde_derive-1.0.204.tar.gz) = 4M1+EXvmPTw2eHdnU5KUdPOwSkOggMdE1rCuKowo4iI=
 SHA256 (cargo/serde_json-1.0.120.tar.gz) = Tg0hyajK4SNa1YoAwRy0DUseXHhPHvLFN4du1v/Yt8U=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
-SHA256 (cargo/syn-2.0.68.tar.gz) = kB+nDYi51smAIuI7QTb58+VORmLDvBvR2EpCqaDwwek=
+SHA256 (cargo/syn-2.0.69.tar.gz) = IB/No4RcI+ghLNRmv+vwvSBpRJD8A1aujkKOCCSpFaY=
 SHA256 (cargo/term-0.6.1.tar.gz) = wIY6M0XnD2HWE+qzLuBGzNG8xfkQX+QCxh/NDBPuuLU=
 SHA256 (cargo/thiserror-1.0.61.tar.gz) = xUbIDWvkvGoAwPAXMMCN+C6qenph8R1lZSZQYRLMFwk=
 SHA256 (cargo/thiserror-impl-1.0.61.tar.gz) = RsM4QlAAKm1a9NEU8oRdN7V1IQM/MNXD9GxNcOEZdTM=
@@ -78,7 +78,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/yansi-term-0.1.2.tar.gz) = /lwwreBeYWViR7LjNKAx39DMRm+t74Zb3N6o1TeVG/E=
-SHA256 (rust-openssl-tests-20240705-c38bc2f8.tar.gz) = KJKmqqOMmdRA7dtSwuEKSV+V5ih3ndesR36iSQkunMg=
+SHA256 (rust-openssl-tests-20240707-22ffa9ad.tar.gz) = KSpACea4PY4xMZyJsq25LBX/SNIur/L2VbyQK3Py0t0=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/annotate-snippets-0.9.2.tar.gz) = 32065
 SIZE (cargo/bindgen-0.65.1.tar.gz) = 213479
@@ -131,11 +131,11 @@ SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
 SIZE (cargo/rustix-0.38.34.tar.gz) = 365160
 SIZE (cargo/ryu-1.0.18.tar.gz) = 47713
 SIZE (cargo/semver-1.0.23.tar.gz) = 30622
-SIZE (cargo/serde-1.0.203.tar.gz) = 77935
-SIZE (cargo/serde_derive-1.0.203.tar.gz) = 55867
+SIZE (cargo/serde-1.0.204.tar.gz) = 78253
+SIZE (cargo/serde_derive-1.0.204.tar.gz) = 55871
 SIZE (cargo/serde_json-1.0.120.tar.gz) = 147062
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
-SIZE (cargo/syn-2.0.68.tar.gz) = 265035
+SIZE (cargo/syn-2.0.69.tar.gz) = 265441
 SIZE (cargo/term-0.6.1.tar.gz) = 37578
 SIZE (cargo/thiserror-1.0.61.tar.gz) = 21264
 SIZE (cargo/thiserror-impl-1.0.61.tar.gz) = 15786
@@ -159,4 +159,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/yansi-term-0.1.2.tar.gz) = 14342
-SIZE (rust-openssl-tests-20240705-c38bc2f8.tar.gz) = 364685
+SIZE (rust-openssl-tests-20240707-22ffa9ad.tar.gz) = 364702
