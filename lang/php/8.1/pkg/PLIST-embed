@@ -3,6 +3,6 @@
 @conflict php-embed-${PHP_PKGSPEC}
 @pkgpath lang/php/7.4,-embed
 @pkgpath lang/php/8.0,-embed
-@so lib/php-${PV}/${SAPI_SO}
+@so lib/php-${PV}/libphp.so
 share/php-${PV}/include/sapi/embed/
 share/php-${PV}/include/sapi/embed/php_embed.h
