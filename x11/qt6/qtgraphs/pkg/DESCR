@@ -1,0 +1,5 @@
+The Qt Graphs module enables you to visualize data in 2D and 3D graphs. In the
+3D realm there is support for bar, scatter, and surface graphs. It's especially
+useful for visualizing depth maps and large quantities of rapidly changing
+data, such as data received from multiple sensors. The look and feel of graphs
+can be customized by using themes or by adding custom items and labels.
