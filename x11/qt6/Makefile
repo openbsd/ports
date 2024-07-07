@@ -7,6 +7,7 @@
      SUBDIR += qtdatavis3d
      SUBDIR += qtdeclarative
      #SUBDIR += qtdoc
+     SUBDIR += qtgraphs
      SUBDIR += qtgrpc
      SUBDIR += qthttpserver
      SUBDIR += qtimageformats
