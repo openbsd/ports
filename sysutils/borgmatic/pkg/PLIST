@@ -39,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}compa
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}compact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}export_key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}export_key.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}export_tar.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -57,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}prune
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}prune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}rcreate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}rcreate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}rdelete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}rdelete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}restore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}restore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/${MODPY_PYCACHE}rinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -85,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/bootstrap.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/generate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/config/validate.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/create.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/delete.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/export_key.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/export_tar.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/extract.py
@@ -94,6 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/list.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/mount.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/prune.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/rcreate.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/rdelete.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/restore.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/rinfo.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/actions/rlist.py
@@ -113,6 +119,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}compact.
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}compact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}environment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}export_key.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,6 +143,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rcreate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rcreate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rdelete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rdelete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}rlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -152,6 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/break_lock.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/check.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/compact.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/create.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/delete.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/environment.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/export_key.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/export_tar.py
@@ -163,6 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/list.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/mount.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/prune.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/rcreate.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/rdelete.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/rinfo.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/rlist.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/state.py
@@ -273,6 +285,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgre
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}uptimekuma.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}uptimekuma.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/apprise.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/command.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/cronhub.py
@@ -290,6 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/ntfy.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/pagerduty.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/postgresql.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/sqlite.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/uptimekuma.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/logger.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/signals.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/verbosity.py
