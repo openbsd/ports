@@ -1,12 +1,14 @@
 COMMENT=	interactive build tool, primarily for Scala/Java
 
-V=		1.10.0
+V=		1.10.1
 DISTNAME=	sbt-$V
 CATEGORIES=	devel
 
 HOMEPAGE=	https://scala-sbt.org
 SITES =		https://github.com/sbt/sbt/releases/download/v$V/
 EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache Software License 2.0
 PERMIT_PACKAGE=	Yes
