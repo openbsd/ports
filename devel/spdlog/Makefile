@@ -2,10 +2,10 @@ COMMENT =	fast C++ logging library
 
 GH_ACCOUNT =	gabime
 GH_PROJECT =	spdlog
-GH_TAGNAME =	v1.13.0
+GH_TAGNAME =	v1.14.1
 CATEGORIES =	devel
 
-SHARED_LIBS =	spdlog	1.1
+SHARED_LIBS =	spdlog	2.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -20,6 +20,7 @@ LIB_DEPENDS +=	devel/fmt>=10.2.1
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_ARGS+=-DSPDLOG_BUILD_BENCH=OFF \
+		-DSPDLOG_BUILD_EXAMPLE=OFF \
 		-DSPDLOG_BUILD_SHARED=ON \
 		-DSPDLOG_FMT_EXTERNAL=ON
 
