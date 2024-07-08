@@ -3,10 +3,10 @@ SHA256 (go-openbsd-amd64-bootstrap-1.20.4.tar.gz) = 8WlSsDZ/ZLtSJ6I8s0FKX6CChU8U
 SHA256 (go-openbsd-arm-bootstrap-1.20.4.tar.gz) = MFK9DdbKJSqyYFLANhKbD6KWT1x+wX8+w9NTJ21o1/4=
 SHA256 (go-openbsd-arm64-bootstrap-1.20.4.tar.gz) = G3sZhx63D+QLEgbwU1+d3ECiVJjVrFD5RqD2/qutXmI=
 SHA256 (go-openbsd-riscv64-bootstrap-1.20.4.tar.gz) = lQv/8KPWi8U3yLG+k3xVDNRVzxa5rmPIIpJUDrwVo0o=
-SHA256 (go1.22.4.src.tar.gz) = /tcgZ45yinyjC6jR3tHKr+J9FgKPqwIyuLqOIgCPt4Q=
+SHA256 (go1.22.5.src.tar.gz) = rJxyPyJJaa7mJLw0/TTJ4T8qIS11xxyAfeZEu0bhEvY=
 SIZE (go-openbsd-386-bootstrap-1.20.4.tar.gz) = 100681343
 SIZE (go-openbsd-amd64-bootstrap-1.20.4.tar.gz) = 107075675
 SIZE (go-openbsd-arm-bootstrap-1.20.4.tar.gz) = 104680775
 SIZE (go-openbsd-arm64-bootstrap-1.20.4.tar.gz) = 102706601
 SIZE (go-openbsd-riscv64-bootstrap-1.20.4.tar.gz) = 106167229
-SIZE (go1.22.4.src.tar.gz) = 27555503
+SIZE (go1.22.5.src.tar.gz) = 27559458

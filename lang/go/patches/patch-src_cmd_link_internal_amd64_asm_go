@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/amd64/asm.go
 --- src/cmd/link/internal/amd64/asm.go.orig
 +++ src/cmd/link/internal/amd64/asm.go
-@@ -617,15 +617,12 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+@@ -624,15 +624,12 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
  			panic("plt is not set up")
  		}
  
@@ -20,7 +20,7 @@ Index: src/cmd/link/internal/amd64/asm.go
  		// pushq $x
  		plt.AddUint8(0x68)
  
-@@ -635,6 +632,23 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
+@@ -642,6 +639,23 @@ func addpltsym(target *ld.Target, ldr *loader.Loader, 
  		plt.AddUint8(0xe9)
  
  		plt.AddUint32(target.Arch, uint32(-(plt.Size() + 4)))
