@@ -241,9 +241,11 @@
      SUBDIR += py-i3ipc,python3
      SUBDIR += py-pyglet,python3
      SUBDIR += py-qt5,python3
+     SUBDIR += py-qt6,python3
      SUBDIR += py-qtawesome,python3
      SUBDIR += py-qtpy,python3
      SUBDIR += py-sip-qt5,python3
+     SUBDIR += py-sip-qt6,python3
      SUBDIR += py-virtualdisplay,python3
      SUBDIR += py-wxPython,python3
      SUBDIR += py-xcbgen,python3
