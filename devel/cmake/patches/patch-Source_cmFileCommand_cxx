@@ -1,7 +1,7 @@
 Index: Source/cmFileCommand.cxx
 --- Source/cmFileCommand.cxx.orig
 +++ Source/cmFileCommand.cxx
-@@ -1855,6 +1855,13 @@ bool HandleDownloadCommand(std::vector<std::string> co
+@@ -1870,6 +1870,13 @@ bool HandleDownloadCommand(std::vector<std::string> co
    ++i;
    std::string file;
  
@@ -15,7 +15,7 @@ Index: Source/cmFileCommand.cxx
    long timeout = 0;
    long inactivity_timeout = 0;
    std::string logVar;
-@@ -2265,6 +2272,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
+@@ -2326,6 +2333,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
                           cmExecutionStatus& status)
  {
  #if !defined(CMAKE_BOOTSTRAP)

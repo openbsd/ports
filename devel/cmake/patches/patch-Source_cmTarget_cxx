@@ -1,7 +1,7 @@
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -481,7 +481,7 @@ TargetProperty const StaticTargetProperties[] = {
+@@ -483,7 +483,7 @@ TargetProperty const StaticTargetProperties[] = {
    { "INSTALL_NAME_DIR"_s, IC::CanCompileSources },
    { "INSTALL_REMOVE_ENVIRONMENT_RPATH"_s, IC::CanCompileSources },
    { "INSTALL_RPATH"_s, ""_s, IC::CanCompileSources },

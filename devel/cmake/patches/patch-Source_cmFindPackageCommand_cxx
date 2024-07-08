@@ -3,7 +3,7 @@ Disable find_package QUIET option in openbsd ports builds.
 Index: Source/cmFindPackageCommand.cxx
 --- Source/cmFindPackageCommand.cxx.orig
 +++ Source/cmFindPackageCommand.cxx
-@@ -711,7 +711,13 @@ bool cmFindPackageCommand::InitialPass(std::vector<std
+@@ -712,7 +712,13 @@ bool cmFindPackageCommand::InitialPass(std::vector<std
    std::vector<std::size_t> moduleArgs;
    for (std::size_t i = 1u; i < args.size(); ++i) {
      if (args[i] == "QUIET") {
