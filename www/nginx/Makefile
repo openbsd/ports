@@ -10,7 +10,7 @@ COMMENT-mailproxy=	nginx mail proxy module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-ldap_auth=	nginx LDAP authentication module
-COMMENT-lua=		nginx lua scripting module
+COMMENT-lua=		nginx lua scripting (lua-nginx-module and ngx_devel_kit)
 COMMENT-headers_more=	nginx module for setting/adding/clearing headers
 COMMENT-perl=		nginx perl scripting module
 COMMENT-njs=		nginx javascript scripting module
@@ -21,11 +21,12 @@ COMMENT-securelink=	nginx HMAC secure link module
 VERSION=	1.26.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION-main=	0
-REVISION-passenger=	0
-
-VERSION-njs=	0.8.2
-VERSION-rtmp=	1.2.1
+REVISION-geoip2= 0
+REVISION-lua=	0
+REVISION-main=	1
+REVISION-njs=	0
+REVISION-passenger= 0
+REVISION-rtmp=	0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-image_filter=	nginx-image_filter-${VERSION}
@@ -46,24 +47,19 @@ PKGNAME-securelink=	nginx-securelink-${VERSION}
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
 SITES=	https://nginx.org/download/
-SITES.a=https://github.com/
 SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
 	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
 
-_GH_MODS=	\
-	openresty	headers-more-nginx-module	v0.34 \
-	openresty	lua-nginx-module		v0.10.11 \
-	nbs-system	naxsi				d714f1636ea49a9a9f4f06dba14aee003e970834 \
-	kvspb		nginx-auth-ldap			83c059b73566c2ee9cbda920d91b66657cf120b7 \
-	arut		nginx-rtmp-module		v${VERSION-rtmp} \
-	nginx		njs				${VERSION-njs} \
-	simpl		ngx_devel_kit			v0.3.0 \
-	leev		ngx_http_geoip2_module		3.3 \
-	nginx-modules	ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50
-
-.for _a _p _c in ${_GH_MODS}
-DISTFILES.a+=	${_p}-{${_a}/${_p}/archive/}${_c}.tar.gz
-.endfor
+DIST_TUPLE=	\
+	github openresty headers-more-nginx-module v0.34 headers-more-nginx-module \
+	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
+	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
+	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
+	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
+	github nginx njs 0.8.4 njs \
+	github vision5 ngx_devel_kit v0.3.3 ngx_devel_kit \
+	github leev ngx_http_geoip2_module 3.4 ngx_http_geoip2_module \
+	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module
 
 HOMEPAGE=	https://nginx.org/
 
@@ -159,7 +155,7 @@ CONFIGURE_ARGS+=	--add-dynamic-module=${LOCALBASE}/lib/phusion-passenger${GEM_BI
 .endif
 
 .if ${BUILD_PACKAGES:M-rtmp}
-CONFIGURE_ARGS+=	--add-dynamic-module=${WRKDIR}/nginx-rtmp-module-${VERSION-rtmp}/
+CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/nginx-rtmp-module
 .endif
 
 .if ${BUILD_PACKAGES:M-njs}
@@ -208,13 +204,6 @@ SUBSTFILES=		conf/nginx.conf */config
 
 NO_TEST=		Yes
 ALL_TARGET=
-
-pre-patch:
-.for i in headers-more-nginx-module lua-nginx-module naxsi njs \
-	nginx-auth-ldap ngx_devel_kit ngx_http_geoip2_module \
-	ngx_http_hmac_secure_link_module
-	cd ${WRKSRC} && mv ../$i-* $i
-.endfor
 
 pre-configure:
 	@cd ${WRKSRC} && ${SUBST_CMD} ${SUBSTFILES}
