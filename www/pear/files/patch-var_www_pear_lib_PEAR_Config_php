@@ -1,19 +1,15 @@
---- var/www/pear/lib/PEAR/Config.php.orig	Wed Mar 30 22:25:04 2016
-+++ var/www/pear/lib/PEAR/Config.php	Wed Mar 30 22:25:05 2016
-@@ -79,11 +79,7 @@ if (getenv('PHP_PEAR_HTTP_PROXY')) {
+--- var/www/pear/lib/PEAR/Config.php.orig	Mon Jul  8 15:15:00 2024
++++ var/www/pear/lib/PEAR/Config.php	Mon Jul  8 15:17:48 2024
+@@ -79,7 +79,7 @@ if (getenv('PHP_PEAR_HTTP_PROXY')) {
  if (getenv('PHP_PEAR_INSTALL_DIR')) {
      define('PEAR_CONFIG_DEFAULT_PHP_DIR', getenv('PHP_PEAR_INSTALL_DIR'));
  } else {
--    if (@file_exists($PEAR_INSTALL_DIR) && is_dir($PEAR_INSTALL_DIR)) {
--        define('PEAR_CONFIG_DEFAULT_PHP_DIR', $PEAR_INSTALL_DIR);
--    } else {
--        define('PEAR_CONFIG_DEFAULT_PHP_DIR', $PEAR_INSTALL_DIR);
--    }
-+    define('PEAR_CONFIG_DEFAULT_PHP_DIR', '/var/www/pear'.'/lib');
+-    define('PEAR_CONFIG_DEFAULT_PHP_DIR', $PEAR_INSTALL_DIR);
++    define('PEAR_CONFIG_DEFAULT_PHP_DIR', '/var/www/pear/lib');
  }
  
  // Default for metadata_dir
-@@ -113,8 +109,7 @@ if (getenv('PHP_PEAR_EXTENSION_DIR')) {
+@@ -109,8 +109,7 @@ if (getenv('PHP_PEAR_EXTENSION_DIR')) {
  if (getenv('PHP_PEAR_DOC_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR', getenv('PHP_PEAR_DOC_DIR'));
  } else {
@@ -23,7 +19,7 @@
  }
  
  // Default for bin_dir
-@@ -128,8 +123,7 @@ if (getenv('PHP_PEAR_BIN_DIR')) {
+@@ -124,8 +123,7 @@ if (getenv('PHP_PEAR_BIN_DIR')) {
  if (getenv('PHP_PEAR_DATA_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DATA_DIR', getenv('PHP_PEAR_DATA_DIR'));
  } else {
@@ -33,7 +29,7 @@
  }
  
  // Default for cfg_dir
-@@ -164,8 +158,7 @@ if (getenv('PHP_PEAR_MAN_DIR')) {
+@@ -160,8 +158,7 @@ if (getenv('PHP_PEAR_MAN_DIR')) {
  if (getenv('PHP_PEAR_TEST_DIR')) {
      define('PEAR_CONFIG_DEFAULT_TEST_DIR', getenv('PHP_PEAR_TEST_DIR'));
  } else {
@@ -43,7 +39,7 @@
  }
  
  // Default for temp_dir
-@@ -242,9 +235,7 @@ if (getenv('PHP_PEAR_SIG_TYPE')) {
+@@ -238,9 +235,7 @@ if (getenv('PHP_PEAR_SIG_TYPE')) {
  if (getenv('PHP_PEAR_SIG_BIN')) {
      define('PEAR_CONFIG_DEFAULT_SIG_BIN', getenv('PHP_PEAR_SIG_BIN'));
  } else {
