@@ -6,7 +6,7 @@ COMMENT=		network analysis and security monitoring framework
 
 V=			6.0.4
 DISTNAME=		zeek-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broccoli                  10.0
