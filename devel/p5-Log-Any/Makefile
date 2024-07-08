@@ -17,6 +17,6 @@ TEST_DEPENDS =		devel/p5-Devel-StackTrace>=2.00 \
 PKG_ARCH =		*
 
 pre-configure:
-			find ${WRKSRC} -name "*.orig.port" -delete
+			find ${WRKSRC} -name "*${PATCHORIG}" -delete
 
 .include <bsd.port.mk>

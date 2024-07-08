@@ -49,7 +49,7 @@ do-install:
 	cd ${WRKSRC} && pax -rw cmd thirdparty vlib v.mod ${PREFIX}/lib/vlang
 	${INSTALL_PROGRAM} ${WRKSRC}/v ${PREFIX}/lib/vlang
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/v ${PREFIX}/bin/v
-	find ${PREFIX} -type f -name \*.orig.port -delete
+	find ${PREFIX} -type f -name \*${PATCHORIG} -delete
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${PORTHOME} ./v test-all

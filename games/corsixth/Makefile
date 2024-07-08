@@ -34,8 +34,8 @@ RUN_DEPENDS =	audio/timidity \
 
 NO_TEST =	Yes
 
-# Remove the .orig.port file
+# Remove the ${PATCHORIG} file
 post-install:
-	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua.orig.port
+	@rm -f ${PREFIX}/share/corsix-th/Lua/app.lua${PATCHORIG}
 
 .include <bsd.port.mk>

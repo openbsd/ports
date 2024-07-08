@@ -35,6 +35,6 @@ TEST_FLAGS =		AUTOMATED_TESTING=1
 PKG_ARCH =		*
 
 post-build:
-		find ${WRKBUILD}/blib -type f -name '*.orig.port' -delete
+		find ${WRKBUILD}/blib -type f -name '*${PATCHORIG}' -delete
 
 .include <bsd.port.mk>

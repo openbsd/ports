@@ -40,6 +40,6 @@ pre-configure:
 	    ${WRKSRC}/src/{events,keyevents,options}.c
 
 post-install:
-	rm -f ${PREFIX}/share/examples/feh/themes.orig.port
+	rm -f ${PREFIX}/share/examples/feh/themes${PATCHORIG}
 
 .include <bsd.port.mk>

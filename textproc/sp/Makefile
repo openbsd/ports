@@ -33,6 +33,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/generic/* ${PREFIX}/include/sp
-	rm ${PREFIX}/include/sp/{Attribute,config}.h.orig.port
+	rm ${PREFIX}/include/sp/{Attribute,config}.h${PATCHORIG}
 
 .include <bsd.port.mk>

@@ -23,6 +23,6 @@ MAKE_ENV =		TEST_POD=Yes
 CONFIGURE_ARGS =	install_path=sbin="${PREFIX}/sbin"
 
 post-build:
-	find ${WRKBUILD}/blib -type f -name '*.orig.port' -delete
+	find ${WRKBUILD}/blib -type f -name '*${PATCHORIG}' -delete
 
 .include <bsd.port.mk>

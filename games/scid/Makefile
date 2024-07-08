@@ -56,6 +56,6 @@ post-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/tcl/lang/removetoken.tcl
 
 post-install:
-	rm -f ${PREFIX}/share/scid/tcl/utils/tooltip.tcl.orig.port
+	rm -f ${PREFIX}/share/scid/tcl/utils/tooltip.tcl${PATCHORIG}
 
 .include <bsd.port.mk>
