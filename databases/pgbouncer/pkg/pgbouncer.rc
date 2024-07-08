@@ -9,4 +9,6 @@ rc_pre() {
 	/usr/bin/install -d -o _pgbouncer /var/run/pgbouncer
 }
 
+rc_stop_signal=QUIT
+
 rc_cmd $1
