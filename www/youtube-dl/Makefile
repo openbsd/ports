@@ -5,11 +5,9 @@ MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://yt-dl.org
-
-MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE =	Yes

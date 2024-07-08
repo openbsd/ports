@@ -2,6 +2,7 @@ COMMENT =	CLI program to download videos from YouTube and other sites
 
 VERSION =	2024.07.02
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
+REVISION =	0
 
 DISTNAME =	yt-dlp-${VERSION}
 DISTFILES =	yt-dlp-${VERSION}{yt-dlp}${EXTRACT_SUFX}
@@ -9,8 +10,6 @@ DISTFILES =	yt-dlp-${VERSION}{yt-dlp}${EXTRACT_SUFX}
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/yt-dlp/yt-dlp/
-
-MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE =	Yes

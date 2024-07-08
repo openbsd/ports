@@ -3,13 +3,11 @@ COMMENT =		graphical client for the SoulSeek peer-to-peer system
 GH_ACCOUNT =		Nicotine-Plus
 GH_PROJECT =		nicotine-plus
 GH_TAGNAME =		3.2.9
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://nicotine-plus.github.io/nicotine-plus/
-
-MAINTAINER =		Ricardo Mestre <mestre@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

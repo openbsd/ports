@@ -4,11 +4,10 @@ COMMENT =	emulates numerous game consoles
 VERSION =	1.32.1
 DISTNAME =	mednafen-${VERSION}
 PKGNAME =	mednafen-${VERSION:C/-UNSTABLE//}
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	https://mednafen.github.io
-
-MAINTAINER =	Ricardo Mestre <mestre@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
