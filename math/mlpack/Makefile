@@ -98,6 +98,8 @@ CONFIGURE_ARGS += 	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 # software...
 TEST_ENV = 	CTEST_OUTPUT_ON_FAILURE=1
 
+TEST_DEPENDS =	devel/py-more-itertools${MODPY_FLAVOR}
+
 SITEDIR = 	lib/python${MODPY_VERSION}/site-packages
 EGGDIR = 	${SITEDIR}/mlpack-$V-py${MODPY_VERSION}.egg-info
 
