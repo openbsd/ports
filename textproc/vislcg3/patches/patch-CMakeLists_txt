@@ -3,10 +3,20 @@ Work around vasprintf visibility bug in OpenBSD's iostream header
 (cannot be used without _BSD_VISIBLE).
 Work around locale_t visibility bug in OpenBSD's iostream header
 (cannot be used with _POSIX_C_SOURCE=200112).
+Unbreak with cmake >=3.30
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -56,10 +56,8 @@ else()
+@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+ cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+ project(cg3 CXX C)
+ 
++cmake_policy(SET CMP0167 OLD)
++
+ set(MASTER_PROJECT OFF)
+ if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
+ 	set(MASTER_PROJECT ON)
+@@ -56,10 +58,8 @@ else()
  
  	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${_FLAGS_COMMON} -fvisibility-inlines-hidden")
  	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g3")
@@ -17,7 +27,7 @@ Index: CMakeLists.txt
  
  	# Enable latest possible C standard
  	foreach(flag "-std=c2x" "-std=c11" "-std=c1x" "-std=c99")
-@@ -120,7 +118,8 @@ if(WIN32)
+@@ -120,7 +120,8 @@ if(WIN32)
  	add_definitions(-DUNICODE -D_UNICODE -D_SECURE_SCL=0 -D_ITERATOR_DEBUG_LEVEL=0 -D_CRT_SECURE_NO_DEPRECATE -DWIN32_LEAN_AND_MEAN -DVC_EXTRALEAN -DNOMINMAX -D_SILENCE_CXX20_CISO646_REMOVED_WARNING)
  	include_directories("include/getopt" "include/wordexp")
  else()

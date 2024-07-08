@@ -1,9 +1,9 @@
 Index: src/inlines.hpp
 --- src/inlines.hpp.orig
 +++ src/inlines.hpp
-@@ -23,6 +23,8 @@
- #ifndef c6d28b7452ec699b_INLINES_H
- #define c6d28b7452ec699b_INLINES_H
+@@ -66,6 +66,8 @@ constexpr inline void* VOIDP(T t) {
+ 	return static_cast<void*>(t);
+ }
  
 +#include <array>
 +

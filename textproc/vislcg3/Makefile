@@ -7,6 +7,7 @@ COMMENT =		constraint grammar formalism variant
 V =			1.4.6
 DISTNAME =		cg3-$V
 PKGNAME =		vislcg3-$V
+REVISION =		0
 
 SHARED_LIBS =		cg3                       2.0 # 0.0
 
