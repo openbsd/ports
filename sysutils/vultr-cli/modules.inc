@@ -73,7 +73,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx							 v0.5.2 \
 	github.com/stretchr/testify							 v1.9.0 \
 	github.com/subosito/gotenv							 v1.6.0 \
-	github.com/vultr/govultr/v3							 v3.8.1 \
+	github.com/vultr/govultr/v3							 v3.9.0 \
 	go.etcd.io/etcd/api/v3								 v3.5.12 \
 	go.etcd.io/etcd/client/pkg/v3							 v3.5.12 \
 	go.etcd.io/etcd/client/v2							 v2.305.12 \
