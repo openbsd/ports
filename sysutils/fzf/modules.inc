@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/charlievieth/fastwalk	 v1.0.3 \
+	github.com/charlievieth/fastwalk	 v1.0.7-0.20240703190418-87029d931815 \
 	github.com/gdamore/encoding		 v1.0.0 \
 	github.com/gdamore/tcell/v2		 v2.7.4 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
@@ -12,8 +12,8 @@ MODGO_MODULES =	\
 	golang.org/x/mod			 v0.8.0 \
 	golang.org/x/net			 v0.6.0 \
 	golang.org/x/sync			 v0.1.0 \
-	golang.org/x/sys			 v0.20.0 \
-	golang.org/x/term			 v0.20.0 \
+	golang.org/x/sys			 v0.22.0 \
+	golang.org/x/term			 v0.22.0 \
 	golang.org/x/text			 v0.14.0 \
 	golang.org/x/tools			 v0.6.0 \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7
