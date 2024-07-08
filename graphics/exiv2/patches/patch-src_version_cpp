@@ -3,7 +3,7 @@ getProcessPath() doesn't work on OpenBSD.
 Index: src/version.cpp
 --- src/version.cpp.orig
 +++ src/version.cpp
-@@ -425,7 +425,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os, const st
+@@ -430,7 +430,7 @@ void Exiv2::dumpLibraryInfo(std::ostream& os, const st
    output(os, keys, "version", __VERSION__);
    output(os, keys, "date", __DATE__);
    output(os, keys, "time", __TIME__);

@@ -2,12 +2,8 @@ COMMENT=		image metadata manipulation
 
 CATEGORIES=		graphics devel
 
-GH_ACCOUNT=		Exiv2
-GH_PROJECT=		exiv2
-GH_TAGNAME=		v0.28.2
+DIST_TUPLE=		github Exiv2 exiv2 v0.28.3 .
 EPOCH=			0
-
-REVISION=		0
 
 SHARED_LIBS +=  exiv2                13.0
 
@@ -31,7 +27,9 @@ LIB_DEPENDS=		archivers/brotli \
 			devel/gettext,-runtime \
 			textproc/libinih
 
-CONFIGURE_ARGS=		-DEXIV2_ENABLE_NLS=ON
+# default meson(1) options
+CONFIGURE_ARGS=		-DEXIV2_ENABLE_NLS=ON \
+			-DEXIV2_ENABLE_WEBREADY=ON
 
 FIX_CRLF_FILES=		cmake/compilerFlags.cmake
 
