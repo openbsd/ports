@@ -702,7 +702,7 @@ SHA256 (cargo/zopfli-0.8.1.tar.gz) = 5QGfORusXPJS6Tu8xT0Dn/1ix7+3wVBBTWE2mv5X6UY
 SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = dWUsVcC28+bxLreG/hvJYDlr8Foes78fNpHDYQrC5tQ=
-SHA256 (mail-server-0.8.4.tar.gz) = 78zI1M1OZxeN/F6hyxqd3JdYOovgwcIpERFw1gfz6pM=
+SHA256 (mail-server-0.8.5.tar.gz) = zNxjrqfgdXbeDBWCVQwZJ8bQ9ok+6g/KdSqgXW4gPIg=
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
@@ -1407,4 +1407,4 @@ SIZE (cargo/zopfli-0.8.1.tar.gz) = 50972
 SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.11+zstd.1.5.6.tar.gz) = 749078
-SIZE (mail-server-0.8.4.tar.gz) = 6800885
+SIZE (mail-server-0.8.5.tar.gz) = 6803933
