@@ -1,8 +1,9 @@
 COMMENT =	open source port of Cannon Fodder game
 DISTNAME =	openfodder-1.4.1
 CATEGORIES =	games x11
+REVISION =	0
 
-HOMEPAGE =	http://openfodder.com/
+HOMEPAGE =	https://openfodder.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv3+
