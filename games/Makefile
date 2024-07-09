@@ -164,6 +164,7 @@
      SUBDIR += hlsteam
      SUBDIR += hyperrogue
      SUBDIR += icebreaker
+     SUBDIR += indierunner
      SUBDIR += inform6
      SUBDIR += instead
      SUBDIR += ioquake3
