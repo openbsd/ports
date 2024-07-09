@@ -5,7 +5,7 @@ https://hg.mozilla.org/releases/mozilla-esr115/raw-file/tip/intl/icu-patches/bug
 Index: source/i18n/vtzone.cpp
 --- source/i18n/vtzone.cpp.orig
 +++ source/i18n/vtzone.cpp
-@@ -1735,14 +1735,17 @@ VTimeZone::write(VTZWriter& writer, UErrorCode& status
+@@ -1731,14 +1731,17 @@ VTimeZone::write(VTZWriter& writer, UErrorCode& status
              }
          }
      } else {
