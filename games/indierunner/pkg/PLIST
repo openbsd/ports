@@ -1,0 +1,51 @@
+bin/indierunner
+${P5SITE}/IndieRunner/
+${P5SITE}/IndieRunner.pm
+${P5SITE}/IndieRunner/Cmdline.pm
+${P5SITE}/IndieRunner/Engine/
+${P5SITE}/IndieRunner/Engine.pm
+${P5SITE}/IndieRunner/Engine/FNA.pm
+${P5SITE}/IndieRunner/Engine/GZDoom.pm
+${P5SITE}/IndieRunner/Engine/Godot.pm
+${P5SITE}/IndieRunner/Engine/HashLink.pm
+${P5SITE}/IndieRunner/Engine/Java/
+${P5SITE}/IndieRunner/Engine/Java.pm
+${P5SITE}/IndieRunner/Engine/Java/JavaMod.pm
+${P5SITE}/IndieRunner/Engine/Java/LWJGL2.pm
+${P5SITE}/IndieRunner/Engine/Java/LWJGL3.pm
+${P5SITE}/IndieRunner/Engine/Java/LibGDX.pm
+${P5SITE}/IndieRunner/Engine/Java/Steamworks4j.pm
+${P5SITE}/IndieRunner/Engine/Love2D.pm
+${P5SITE}/IndieRunner/Engine/Mono/
+${P5SITE}/IndieRunner/Engine/Mono.pm
+${P5SITE}/IndieRunner/Engine/Mono/Dllmap.pm
+${P5SITE}/IndieRunner/Engine/Mono/Iomap.pm
+${P5SITE}/IndieRunner/Engine/MonoGame.pm
+${P5SITE}/IndieRunner/Engine/ScummVM.pm
+${P5SITE}/IndieRunner/Engine/XNA.pm
+${P5SITE}/IndieRunner/Game.pm
+${P5SITE}/IndieRunner/GrandCentral.pm
+${P5SITE}/IndieRunner/Helpers.pm
+${P5SITE}/IndieRunner/Io.pm
+${P5SITE}/IndieRunner/Mode/
+${P5SITE}/IndieRunner/Mode.pm
+${P5SITE}/IndieRunner/Mode/Dryrun.pm
+${P5SITE}/IndieRunner/Mode/Run.pm
+${P5SITE}/IndieRunner/Mode/Script.pm
+${P5SITE}/IndieRunner/Platform/
+${P5SITE}/IndieRunner/Platform.pm
+${P5SITE}/IndieRunner/Platform/openbsd.pm
+${P5SITE}/auto/share/dist/IndieRunner/
+${P5SITE}/auto/share/dist/IndieRunner/LICENSE
+${P5SITE}/auto/share/dist/IndieRunner/Status-Tracker.md
+${P5SITE}/auto/share/dist/IndieRunner/config/
+${P5SITE}/auto/share/dist/IndieRunner/config/dllmap.config
+@man man/man1/indierunner.1
+@man man/man3p/IndieRunner.3p
+@man man/man3p/IndieRunner::Cmdline.3p
+@man man/man3p/IndieRunner::Engine.3p
+@man man/man3p/IndieRunner::Game.3p
+@man man/man3p/IndieRunner::GrandCentral.3p
+@man man/man3p/IndieRunner::Helpers.3p
+@man man/man3p/IndieRunner::Mode.3p
+@man man/man3p/IndieRunner::Platform.3p

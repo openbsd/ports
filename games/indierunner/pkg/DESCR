@@ -1,0 +1,4 @@
+IndieRunner provides a universal CLI launcher for a variety of independent
+games built with frameworks like FNA, XNA, LWJGL, LibGDX, HashLink, GZDoom,
+ScummVM, Love2D. It selects a runtime, configures it as needed, and takes care
+of outdated or incompatible bundled libraries.
