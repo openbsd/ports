@@ -1,7 +1,7 @@
 Index: tests/src/lib.rs
 --- tests/src/lib.rs.orig
 +++ tests/src/lib.rs
-@@ -23,10 +23,10 @@
+@@ -6,10 +6,10 @@
  
  use std::path::PathBuf;
  

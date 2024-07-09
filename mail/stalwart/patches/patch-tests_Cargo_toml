@@ -1,9 +1,9 @@
 Index: tests/Cargo.toml
 --- tests/Cargo.toml.orig
 +++ tests/Cargo.toml
-@@ -62,5 +62,5 @@ num_cpus = "1.15.0"
- async-trait = "0.1.68"
+@@ -63,5 +63,5 @@ async-trait = "0.1.68"
  chrono = "0.4"
+ ring = { version = "0.17" }
  
 -[target.'cfg(not(target_env = "msvc"))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]
