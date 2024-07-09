@@ -1,5 +1,3 @@
-BROKEN=			does not build with icu4c>=75
-
 PORTROACH =	limitw:^3\.6\.
 
 # DB upgrades are only supported across one major version.
@@ -8,12 +6,12 @@ PORTROACH =	limitw:^3\.6\.
 # upgrade instead (3.6->4.0->4.2->4.4) or provide some docs on how to
 # dump/restore using mongodump from databases/mongo-tools.
 V =		3.6.23
-REVISION =	4
+REVISION =	5
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt
 WANTLIB += boost_program_options-mt boost_system-mt
-WANTLIB += c crypto execinfo icudata icui18n icuuc
+WANTLIB += c crypto execinfo
 WANTLIB += kvm m pcre pcrecpp snappy ssl stemmer yaml-cpp z
 
 PATCH_LIST =	patch-* python3-*

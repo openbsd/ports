@@ -1,7 +1,7 @@
 PORTROACH =	limitw:1,even
 
 V =		4.4.29
-REVISION =	0
+REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_log-mt
@@ -15,6 +15,10 @@ MODSCONS_FLAGS += --use-system-zstd
 ALL_TARGET =	install-core
 LIB_DEPENDS =	archivers/zstd \
 		net/curl
+
+# XXX cannot add it to Makefile.inc because MongoDB 3.6 won't build with it
+MODSCONS_FLAGS += --use-system-icu
+LIB_DEPENDS +=	textproc/icu4c
 
 BUILD_DEPENDS =	sysutils/py-psutil${MODPY_FLAVOR}
 

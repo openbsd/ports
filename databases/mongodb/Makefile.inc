@@ -43,7 +43,6 @@ MODSCONS_FLAGS += --opt=on \
 		  --ssl=on \
 		  --allocator=system \
 		  --use-system-boost \
-		  --use-system-icu \
 		  --use-system-pcre \
 		  --use-system-snappy \
 		  --use-system-stemmer \
@@ -56,7 +55,6 @@ LIB_DEPENDS +=	archivers/snappy \
 		devel/boost \
 		devel/pcre \
 		devel/yaml-cpp \
-		textproc/icu4c \
 		textproc/libstemmer
 TEST_DEPENDS +=	databases/py-mongo${MODPY_FLAVOR}
 
