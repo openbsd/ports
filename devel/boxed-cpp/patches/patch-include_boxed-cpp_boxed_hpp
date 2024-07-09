@@ -1,0 +1,19 @@
+--- include/boxed-cpp/boxed.hpp.orig	Sat Mar  2 09:46:41 2024
++++ include/boxed-cpp/boxed.hpp	Tue Jun 25 22:57:30 2024
+@@ -1,6 +1,7 @@
+ // SPDX-License-Identifier: Apache-2.0
+ #pragma once
+ 
++#include <compare>
+ #include <iostream>
+ #include <limits>
+ #include <type_traits>
+@@ -217,6 +218,8 @@ namespace fmt
+ template <typename Type, typename Tag>
+ struct fmt::formatter<boxed::detail::boxed<Type, Tag>>
+ {
++    constexpr auto parse(fmt::format_parse_context& ctx) { return ctx.begin(); }
++
+     auto format(boxed::detail::boxed<Type, Tag> const& val, fmt::format_context& ctx)
+     {
+         return fmt::format_to(ctx.out(), "{}", val.value);
