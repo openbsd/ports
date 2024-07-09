@@ -1,5 +1,11 @@
 # Keep in sync with games/easyrpg
 COMMENT =	library for handling RPG Maker 2000/2003 data
+
+GH_ACCOUNT =	EasyRPG
+GH_PROJECT =	liblcf
+GH_TAGNAME =	0.5.3
+REVISION =	0
+
 CATEGORIES =	games x11
 
 SHARED_LIBS +=  lcf                       1.0 # 1.0
@@ -8,10 +14,6 @@ HOMEPAGE =	https://easyrpg.org/
 
 # GPLv3+
 PERMIT_PACKAGE =		Yes
-
-GH_ACCOUNT =	EasyRPG
-GH_PROJECT =	liblcf
-GH_TAGNAME =	0.5.3
 
 WANTLIB += ${COMPILER_LIBCXX} expat icudata icui18n icuuc m
 

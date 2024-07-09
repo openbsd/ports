@@ -82,7 +82,7 @@ include/liblcf/rpg_trooppagecondition.h
 include/liblcf/rpg_variable.h
 include/liblcf/writer_lcf.h
 include/liblcf/writer_xml.h
-lib/liblcf.a
+@static-lib lib/liblcf.a
 lib/liblcf.la
 @lib lib/liblcf.so.${LIBlcf_VERSION}
 lib/pkgconfig/liblcf.pc

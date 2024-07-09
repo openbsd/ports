@@ -1,0 +1,23 @@
+icu4c>=75 needs c++17
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -10,7 +10,7 @@ liblcf_la_CPPFLAGS = \
+ 	-I$(srcdir)/src \
+ 	-I$(srcdir)/src/generated
+ liblcf_la_CXXFLAGS = \
+-	-std=c++11 \
++	-std=c++17 \
+ 	$(AM_CXXFLAGS) \
+ 	$(EXPAT_CFLAGS) \
+ 	$(ICU_CFLAGS)
+@@ -203,7 +203,7 @@ test_runner_CPPFLAGS = \
+ 	-I$(srcdir)/src \
+ 	-I$(srcdir)/src/generated
+ test_runner_CXXFLAGS = \
+-	-std=c++11 \
++	-std=c++17 \
+ 	$(EXPAT_CXXFLAGS) \
+ 	$(ICU_CXXFLAGS)
+ test_runner_LDADD = \
