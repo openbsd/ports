@@ -5,9 +5,17 @@ ONLY_FOR_ARCHS = amd64
 DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
+PKGNAME =	mongodb-$V
 
+.if ${V:M3*}
+SITES =		https://fastdl.mongodb.org/src/
 DISTNAME =	mongodb-src-r$V
-PKGNAME =	${DISTNAME:S/src-r//}
+.else
+GH_ACCOUNT =	mongodb
+GH_PROJECT =	mongo
+GH_TAGNAME =	r$V
+MODSCONS_FLAGS += MONGO_VERSION=$V
+.endif
 
 CATEGORIES =	databases
 
@@ -21,7 +29,6 @@ HOMEPAGE =	https://www.mongodb.com/
 # (later versions: fmt: MIT)
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://fastdl.mongodb.org/src/
 FIX_CRLF_FILES = src/third_party/IntelRDFPMathLib*/LIBRARY/src/bid_functions.h
 
 MODULES =	devel/scons \
@@ -66,6 +73,12 @@ BUILD_DEPENDS += \
 		devel/py-setuptools${MODPY_FLAVOR} \
 		net/libbind \
 		textproc/py-yaml${MODPY_FLAVOR}
+
+.if !${V:M3*}
+MODSCONS_FLAGS += --use-system-icu
+LIB_DEPENDS +=	  textproc/icu4c
+BUILD_DEPENDS +=  sysutils/py-psutil${MODPY_FLAVOR}
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb
