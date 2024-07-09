@@ -1,7 +1,7 @@
 Index: xmllint.c
 --- xmllint.c.orig
 +++ xmllint.c
-@@ -82,7 +82,7 @@
+@@ -88,7 +88,7 @@
  #endif
  
  #ifndef XML_XML_DEFAULT_CATALOG
@@ -9,4 +9,4 @@ Index: xmllint.c
 +#define XML_XML_DEFAULT_CATALOG "file:///var/db/xmlcatalog"
  #endif
  
- typedef enum {
+ #ifndef STDIN_FILENO

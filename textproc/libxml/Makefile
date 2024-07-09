@@ -1,13 +1,16 @@
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-GNOME_VERSION=		2.12.8
+GNOME_VERSION=		2.13.2
 GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
 
-SHARED_LIBS +=  xml2                 20.0     # 14.8
+REVISION-main=		1
+REVISION-python=	0
+
+SHARED_LIBS +=  xml2                 21.0     # 15.2
 
 CATEGORIES=		textproc
 
@@ -31,8 +34,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS=		--enable-static \
 			--with-legacy \
-			--with-iconv="${LOCALBASE}" \
-			--with-lzma="${LOCALBASE}"
+			--with-iconv="${LOCALBASE}"
 
 # only used to fetch data during regression test
 CONFIGURE_ENV=		WGET=/usr/bin/ftp

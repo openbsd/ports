@@ -1,0 +1,20 @@
+From e30cb632e734394ddbd7bd62b57cee3586424352 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Mon, 8 Jul 2024 11:23:39 +0200
+Subject: [PATCH] parser: Fix error return of xmlParseBalancedChunkMemory
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -12535,7 +12535,10 @@ xmlParseBalancedChunkMemoryRecover(xmlDocPtr doc, xmlS
+     else
+         xmlFreeNodeList(list);
+ 
+-    ret = ctxt->errNo;
++    if (!ctxt->wellFormed)
++        ret = ctxt->errNo;
++    else
++        ret = XML_ERR_OK;
+ 
+     xmlFreeInputStream(input);
+     xmlFreeParserCtxt(ctxt);
