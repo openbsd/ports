@@ -6,15 +6,15 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		8.0.2
+V=		8.2.0
 DISTNAME=	mapserver-${V}
-PKGNAME-main=	${DISTNAME}
-PKGNAME-utils=	mapserver-utils-${V}
-PKGNAME-php=	php-mapscript-${V}
-PKGNAME-perl=	p5-mapscript-${V}
-PKGNAME-python=	py3-mapscript-${V}
+PKGNAME-main=	mapserver-${V:S/-//}
+PKGNAME-utils=	mapserver-utils-${V:S/-//}
+PKGNAME-php=	php-mapscript-${V:S/-//}
+PKGNAME-perl=	p5-mapscript-${V:S/-//}
+PKGNAME-python=	py3-mapscript-${V:S/-//}
 
-SHARED_LIBS +=	mapserver 6.0
+SHARED_LIBS +=	mapserver 7.0
 
 CATEGORIES=	geo www
 
@@ -33,7 +33,7 @@ MODULES=	lang/php lang/python devel/cmake
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes
-MODPY_EGG_VERSION=	${V}
+MODPY_EGG_VERSION=	${V:C/-beta.//:C/-rc.//}
 CONFIGURE_STYLE=cmake
 
 NO_TEST =	Yes
@@ -45,6 +45,7 @@ RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-utils =	# empty
 
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
+BUILD_DEPENDS +=	devel/py-pip${MODPY_FLAVOR}
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
@@ -61,7 +62,7 @@ LIB_DEPENDS-php +=	${BUILD_PKGPATH},-main
 LIB_DEPENDS-utils +=	${BUILD_PKGPATH},-main
 LIB_DEPENDS-python +=	${BUILD_PKGPATH},-main
 
-WANTLIB += curl freetype jpeg m png pq xml2 z proj
+WANTLIB += curl freetype jpeg iconv m png pq xml2 z proj
 WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
 
 WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
@@ -99,7 +100,7 @@ post-install:
 
 .for l in perl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/${l}
-	${INSTALL_DATA}	${WRKSRC}/mapscript/${l}/examples/* \
+	${INSTALL_DATA}	${WRKSRC}/src/mapscript/${l}/examples/* \
 		${PREFIX}/share/examples/mapserver/${l}
 .endfor
 

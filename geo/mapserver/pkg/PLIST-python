@@ -1,9 +1,12 @@
 lib/python${MODPY_VERSION}/site-packages/mapscript/
-lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/REQUESTED
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/direct_url.json
+lib/python${MODPY_VERSION}/site-packages/mapscript-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mapscript/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapscript/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

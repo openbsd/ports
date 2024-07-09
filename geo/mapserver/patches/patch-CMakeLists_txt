@@ -2,7 +2,7 @@ Ensure it uses our FindIconv.cmake module
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -439,9 +439,9 @@ find_package(Freetype)
+@@ -449,9 +449,9 @@ find_package(Freetype)
  if(NOT FREETYPE_FOUND)
    report_mandatory_not_found(FREETYPE)
  endif(NOT FREETYPE_FOUND)
@@ -14,16 +14,23 @@ Index: CMakeLists.txt
  
  
  find_package(Proj)
-@@ -511,7 +511,7 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
+@@ -521,11 +521,11 @@ endif( USE_FRIBIDI AND NOT(USE_HARFBUZZ) )
  
  
  if(WITH_ICONV)
 -  find_package(ICONV)
 +  find_package(Iconv)
    if(ICONV_FOUND)
-     include_directories(${ICONV_INCLUDE_DIR})
-     ms_link_libraries( ${ICONV_LIBRARY})
-@@ -1081,7 +1081,7 @@ if(UNIX)
+-    include_directories(${ICONV_INCLUDE_DIR})
+-    ms_link_libraries( ${ICONV_LIBRARY})
+-    list(APPEND ALL_INCLUDE_DIRS ${ICONV_INCLUDE_DIR})
++    include_directories(${Iconv_INCLUDE_DIR})
++    ms_link_libraries( ${Iconv_LIBRARY})
++    list(APPEND ALL_INCLUDE_DIRS ${Iconv_INCLUDE_DIR})
+     set (USE_ICONV 1)
+   else(ICONV_FOUND)
+     report_optional_not_found(ICONV)
+@@ -1094,7 +1094,7 @@ if(UNIX)
  else()
    set(DEFAULT_DATA_SUBDIR share/mapserver)
  endif()
@@ -32,10 +39,12 @@ Index: CMakeLists.txt
  
  # Locations are changeable by user to customize layout of MapServer installation
  # (default values are platform-specific)
-@@ -1114,5 +1114,5 @@ install(
+@@ -1128,7 +1128,7 @@ install(
  
  install(
    FILES ${PROJECT_SOURCE_DIR}/etc/mapserver-sample.conf
 -  DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/
 +  DESTINATION ${MAPSERVER_DATA_SUBDIR}/
  )
+ 
+ option(BUILD_TESTING "Build unit test" ON)
