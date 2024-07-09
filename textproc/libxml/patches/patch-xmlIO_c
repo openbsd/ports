@@ -1,0 +1,17 @@
+From bf43e8a888cbee75e13622fea8a722b9d166c437 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Tue, 9 Jul 2024 12:29:53 +0200
+Subject: [PATCH] io: Fix return value of xmlFileRead
+
+Index: xmlIO.c
+--- xmlIO.c.orig
++++ xmlIO.c
+@@ -776,7 +776,7 @@ xmlFileRead(void * context, char * buffer, int len) {
+     if ((bytes < (size_t) len) && (ferror(file)))
+         return(-xmlIOErr(0, "fread()"));
+ 
+-    return(len);
++    return(bytes);
+ }
+ 
+ #ifdef LIBXML_OUTPUT_ENABLED
