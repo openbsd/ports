@@ -1,7 +1,7 @@
 Index: src/pipewire/private.h
 --- src/pipewire/private.h.orig
 +++ src/pipewire/private.h
-@@ -12,6 +12,10 @@ extern "C" {
+@@ -14,6 +14,10 @@ extern "C" {
  #include <sys/socket.h>
  #include <sys/types.h> /* for pthread_t */
  
@@ -12,7 +12,7 @@ Index: src/pipewire/private.h
  #include "pipewire/impl.h"
  
  #include <spa/support/plugin.h>
-@@ -259,7 +263,11 @@ struct pw_impl_client {
+@@ -262,7 +266,11 @@ struct pw_impl_client {
  
  	void *user_data;		/**< extra user data */
  

@@ -1,3 +1,5 @@
+No support for cpu_set_t, pthread_setaffinity_np, ... on OpenBSD.
+
 Index: src/pipewire/thread.c
 --- src/pipewire/thread.c.orig
 +++ src/pipewire/thread.c
@@ -12,7 +14,23 @@ Index: src/pipewire/thread.c
  #include <spa/utils/dict.h>
  #include <spa/utils/defs.h>
  #include <spa/utils/list.h>
-@@ -43,7 +47,7 @@ error:
+@@ -25,6 +29,7 @@ do {									\
+ 	}								\
+ } while(false);
+ 
++#ifndef __OpenBSD__
+ static int parse_affinity(const char *affinity, cpu_set_t *set)
+ {
+ 	struct spa_json it[2];
+@@ -41,6 +46,7 @@ static int parse_affinity(const char *affinity, cpu_se
+         }
+ 	return 0;
+ }
++#endif
+ 
+ SPA_EXPORT
+ void *pw_thread_fill_attr(const struct spa_dict *props, void *_attr)
+@@ -61,7 +67,7 @@ error:
  	return NULL;
  }
  
@@ -21,3 +39,30 @@ Index: src/pipewire/thread.c
  #include <sys/param.h>
  #if __FreeBSD_version < 1202000 || defined(__MidnightBSD__)
  int pthread_setname_np(pthread_t thread, const char *name)
+@@ -75,12 +81,14 @@ int pthread_setname_np(pthread_t thread, const char *n
+ int pthread_setname_np(pthread_t thread, const char *name) { return 0; }
+ #endif
+ 
++#ifndef __OpenBSD__
+ static int thread_setaffinity(pthread_t thread, const char *affinity)
+ {
+ 	cpu_set_t set;
+ 	parse_affinity(affinity, &set);
+ 	return -pthread_setaffinity_np(thread, sizeof(set), &set);
+ }
++#endif
+ 
+ static struct spa_thread *impl_create(void *object,
+ 			const struct spa_dict *props,
+@@ -106,9 +114,11 @@ static struct spa_thread *impl_create(void *object,
+ 		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_NAME)) != NULL &&
+ 		    (err = pthread_setname_np(pt, str)) != 0)
+ 			pw_log_warn("pthread_setname error: %s", strerror(err));
++#ifndef __OpenBSD__
+ 		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_AFFINITY)) != NULL &&
+ 		    (err = thread_setaffinity(pt, str)) != 0)
+ 			pw_log_warn("pthread_setaffinity error: %s", strerror(err));
++#endif
+ 	}
+ 	return (struct spa_thread*)pt;
+ }

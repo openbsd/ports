@@ -1,16 +1,16 @@
 Index: src/modules/module-vban-recv.c
 --- src/modules/module-vban-recv.c.orig
 +++ src/modules/module-vban-recv.c
-@@ -31,7 +31,7 @@
- 
+@@ -32,7 +32,7 @@
  #include <module-vban/stream.h>
+ #include "network-utils.h"
  
 -#ifdef __FreeBSD__
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
  #define ifr_ifindex ifr_index
  #endif
  
-@@ -237,9 +237,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -218,9 +218,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

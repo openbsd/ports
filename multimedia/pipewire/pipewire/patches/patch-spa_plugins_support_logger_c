@@ -1,9 +1,9 @@
 Index: spa/plugins/support/logger.c
 --- spa/plugins/support/logger.c.orig
 +++ spa/plugins/support/logger.c
-@@ -22,7 +22,7 @@
- 
- #include "log-patterns.h"
+@@ -20,7 +20,7 @@
+ #include <spa/utils/string.h>
+ #include <spa/utils/ansi.h>
  
 -#if defined(__FreeBSD__) || defined(__MidnightBSD__)
 +#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)

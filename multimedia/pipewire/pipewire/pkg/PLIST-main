@@ -5,6 +5,7 @@ bin/pipewire-pulse
 @bin bin/pw-cat
 @bin bin/pw-cli
 @bin bin/pw-config
+@bin bin/pw-container
 @bin bin/pw-dot
 bin/pw-dsdplay
 @bin bin/pw-dump
@@ -39,6 +40,7 @@ bin/pw-record
 @so lib/pipewire-0.3/libpipewire-module-metadata.so
 @so lib/pipewire-0.3/libpipewire-module-netjack2-driver.so
 @so lib/pipewire-0.3/libpipewire-module-netjack2-manager.so
+@so lib/pipewire-0.3/libpipewire-module-parametric-equalizer.so
 @so lib/pipewire-0.3/libpipewire-module-pipe-tunnel.so
 @so lib/pipewire-0.3/libpipewire-module-portal.so
 @so lib/pipewire-0.3/libpipewire-module-profiler.so
@@ -68,9 +70,6 @@ lib/spa-0.2/audiotestsrc/
 @so lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/
 @so lib/spa-0.2/control/libspa-control.so
-lib/spa-0.2/support/
-@so lib/spa-0.2/support/libspa-dbus.so
-@so lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/videoconvert/
 @so lib/spa-0.2/videoconvert/libspa-videoconvert.so
 lib/spa-0.2/videotestsrc/
@@ -80,6 +79,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man1/pw-cat.1
 @man man/man1/pw-cli.1
 @man man/man1/pw-config.1
+@man man/man1/pw-container.1
 @man man/man1/pw-dot.1
 @man man/man1/pw-dump.1
 @man man/man1/pw-jack.1
@@ -122,6 +122,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-metadata.7
 @man man/man7/libpipewire-module-netjack2-driver.7
 @man man/man7/libpipewire-module-netjack2-manager.7
+@man man/man7/libpipewire-module-parametric-equalizer.7
 @man man/man7/libpipewire-module-pipe-tunnel.7
 @man man/man7/libpipewire-module-portal.7
 @man man/man7/libpipewire-module-profiler.7
@@ -139,6 +140,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-rtp-sink.7
 @man man/man7/libpipewire-module-rtp-source.7
 @man man/man7/libpipewire-module-session-manager.7
+@man man/man7/libpipewire-module-snapcast-discover.7
 @man man/man7/libpipewire-module-vban-recv.7
 @man man/man7/libpipewire-module-vban-send.7
 @man man/man7/libpipewire-module-x11-bell.7
@@ -149,6 +151,8 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/pipewire-pulse-module-alsa-source.7
 @man man/man7/pipewire-pulse-module-always-sink.7
 @man man/man7/pipewire-pulse-module-combine-sink.7
+@man man/man7/pipewire-pulse-module-device-manager.7
+@man man/man7/pipewire-pulse-module-device-restore.7
 @man man/man7/pipewire-pulse-module-echo-cancel.7
 @man man/man7/pipewire-pulse-module-jackdbus-detect.7
 @man man/man7/pipewire-pulse-module-ladspa-sink.7
@@ -167,6 +171,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/pipewire-pulse-module-rtp-recv.7
 @man man/man7/pipewire-pulse-module-rtp-send.7
 @man man/man7/pipewire-pulse-module-simple-protocol-tcp.7
+@man man/man7/pipewire-pulse-module-stream-restore.7
 @man man/man7/pipewire-pulse-module-switch-on-connect.7
 @man man/man7/pipewire-pulse-module-tunnel-sink.7
 @man man/man7/pipewire-pulse-module-tunnel-source.7

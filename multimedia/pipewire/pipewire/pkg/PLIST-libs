@@ -16,6 +16,7 @@ include/pipewire-0.3/pipewire/extensions/client-node.h
 include/pipewire-0.3/pipewire/extensions/metadata.h
 include/pipewire-0.3/pipewire/extensions/profiler.h
 include/pipewire-0.3/pipewire/extensions/protocol-native.h
+include/pipewire-0.3/pipewire/extensions/security-context.h
 include/pipewire-0.3/pipewire/extensions/session-manager/
 include/pipewire-0.3/pipewire/extensions/session-manager.h
 include/pipewire-0.3/pipewire/extensions/session-manager/impl-interfaces.h
@@ -74,6 +75,7 @@ include/spa-0.2/spa/debug/
 include/spa-0.2/spa/debug/buffer.h
 include/spa-0.2/spa/debug/context.h
 include/spa-0.2/spa/debug/dict.h
+include/spa-0.2/spa/debug/file.h
 include/spa-0.2/spa/debug/format.h
 include/spa-0.2/spa/debug/log.h
 include/spa-0.2/spa/debug/mem.h

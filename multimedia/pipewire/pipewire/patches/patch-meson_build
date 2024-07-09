@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -282,8 +282,9 @@ cdata.set('HAVE_DBUS', dbus_dep.found())
+@@ -284,8 +284,9 @@ cdata.set('HAVE_DBUS', dbus_dep.found())
  sdl_dep = dependency('sdl2', required : get_option('sdl2'))
  summary({'SDL2 (video examples)': sdl_dep.found()}, bool_yn: true, section: 'Misc dependencies')
  drm_dep = dependency('libdrm', required : false)
@@ -12,7 +12,7 @@ Index: meson.build
  if not readline_dep.found()
    readline_dep = cc.find_library('readline', required : get_option('readline'))
  endif
-@@ -308,7 +309,11 @@ cdata.set('HAVE_OPUS', opus_dep.found())
+@@ -310,7 +311,11 @@ cdata.set('HAVE_OPUS', opus_dep.found())
  
  summary({'readline (for pw-cli)': readline_dep.found()}, bool_yn: true, section: 'Misc dependencies')
  cdata.set('HAVE_READLINE', readline_dep.found())
@@ -24,7 +24,7 @@ Index: meson.build
  sndfile_dep = dependency('sndfile', version : '>= 1.0.20', required : get_option('sndfile'))
  summary({'sndfile': sndfile_dep.found()}, bool_yn: true, section: 'pw-cat/pw-play/pw-dump/filter-chain')
  cdata.set('HAVE_SNDFILE', sndfile_dep.found())
-@@ -397,10 +402,13 @@ endif
+@@ -415,10 +420,13 @@ endif
  
  # On FreeBSD and MidnightBSD, epoll-shim library is required for eventfd() and timerfd()
  epoll_shim_dep = (host_machine.system() == 'freebsd' or host_machine.system() == 'midnightbsd'

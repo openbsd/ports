@@ -18,7 +18,7 @@ Index: src/pipewire/pipewire.c
  #include <pwd.h>
  #include <errno.h>
  #include <dlfcn.h>
-@@ -552,7 +556,7 @@ parse_pw_debug_env(void)
+@@ -484,7 +488,7 @@ static struct spa_log *load_journal_logger(struct supp
   * This function can be called multiple times.
   */
  SPA_EXPORT
@@ -27,7 +27,7 @@ Index: src/pipewire/pipewire.c
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -665,7 +669,7 @@ done:
+@@ -596,7 +600,7 @@ done:
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -36,7 +36,7 @@ Index: src/pipewire/pipewire.c
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -691,6 +695,21 @@ done:
+@@ -622,6 +626,21 @@ done:
  
  }
  
@@ -58,7 +58,7 @@ Index: src/pipewire/pipewire.c
  /** Check if a debug category is enabled
   *
   * \param name the name of the category to check
-@@ -738,7 +757,7 @@ static void init_prgname(void)
+@@ -669,7 +688,7 @@ static void init_prgname(void)
  		}
  	}
  #endif
@@ -67,7 +67,7 @@ Index: src/pipewire/pipewire.c
  	{
  		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
  			prgname = name;
-@@ -856,4 +875,21 @@ SPA_EXPORT
+@@ -787,4 +806,21 @@ SPA_EXPORT
  const struct spa_type_info * pw_type_info(void)
  {
  	return type_info;

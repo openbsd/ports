@@ -3,7 +3,7 @@ Automatically start wireplumber (no support for systemd services).
 Index: src/daemon/pipewire.conf.in
 --- src/daemon/pipewire.conf.in.orig
 +++ src/daemon/pipewire.conf.in
-@@ -309,6 +309,8 @@ context.exec = [
+@@ -333,6 +333,8 @@ context.exec = [
      #
      @sm_comment@{ path = "@session_manager_path@" args = "@session_manager_args@"
      @sm_comment@  condition = [ { exec.session-manager = null } { exec.session-manager = true } ] }

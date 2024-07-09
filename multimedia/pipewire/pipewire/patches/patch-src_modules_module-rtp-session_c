@@ -1,16 +1,16 @@
 Index: src/modules/module-rtp-session.c
 --- src/modules/module-rtp-session.c.orig
 +++ src/modules/module-rtp-session.c
-@@ -37,7 +37,7 @@
- #include <module-rtp/apple-midi.h>
+@@ -39,7 +39,7 @@
  #include <module-rtp/stream.h>
+ #include "network-utils.h"
  
 -#ifdef __FreeBSD__
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
  #define ifr_ifindex ifr_index
  #endif
  
-@@ -1103,9 +1103,9 @@ static int make_socket(const struct sockaddr_storage* 
+@@ -1093,9 +1093,9 @@ static int make_socket(const struct sockaddr_storage* 
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

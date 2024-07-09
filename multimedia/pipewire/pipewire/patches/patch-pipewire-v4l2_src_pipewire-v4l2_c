@@ -13,7 +13,7 @@ Index: pipewire-v4l2/src/pipewire-v4l2.c
  
  #include "pipewire-v4l2.h"
  
-@@ -2348,7 +2352,7 @@ static int v4l2_ioctl(int fd, unsigned long int reques
+@@ -2353,7 +2357,7 @@ static int v4l2_ioctl(int fd, unsigned long int reques
  	if ((file = find_file(fd, &flags)) == NULL)
  		return globals.old_fops.ioctl(fd, request, arg);
  

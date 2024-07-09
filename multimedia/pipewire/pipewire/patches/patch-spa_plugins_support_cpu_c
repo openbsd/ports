@@ -10,7 +10,7 @@ Index: spa/plugins/support/cpu.c
  #include <sys/sysctl.h>
  #endif
  
-@@ -85,7 +85,7 @@ impl_cpu_force_flags(void *object, uint32_t flags)
+@@ -86,7 +86,7 @@ impl_cpu_force_flags(void *object, uint32_t flags)
  	return 0;
  }
  

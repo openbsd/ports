@@ -1,7 +1,7 @@
 Index: src/modules/module-rt.c
 --- src/modules/module-rt.c.orig
 +++ src/modules/module-rt.c
-@@ -242,6 +242,8 @@ static pid_t _gettid(void)
+@@ -243,6 +243,8 @@ static pid_t _gettid(void)
  	long pid;
  	thr_self(&pid);
  	return (pid_t)pid;

@@ -2,17 +2,16 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.0.7
+PW_VERSION=		1.2.0
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-SHARED_LIBS += pipewire-0.3              0.1 # 0.1007.0
+SHARED_LIBS += pipewire-0.3              0.2 # 0.1200.0
 
 MULTI_PACKAGES=		-main -libs
 
-WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim glib-2.0
-WANTLIB-main += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB-main += gstreamer-1.0 gstvideo-1.0 m opus pthread readline
-WANTLIB-main += pipewire-0.3 sndfile
+WANTLIB-main += X11 Xfixes c canberra curses dbus-1 glib-2.0 gobject-2.0
+WANTLIB-main += gstallocators-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB-main += gstvideo-1.0 m opus pipewire-0.3 pthread readline sndfile
 
 WANTLIB-libs += intl pthread
 
@@ -28,7 +27,6 @@ BUILD_DEPENDS=		devel/doxygen \
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libcanberra \
 			audio/libsndfile \
-			devel/epoll-shim \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
@@ -49,7 +47,8 @@ CONFIGURE_ARGS=		-Dman=enabled \
 			-Dlegacy-rtkit=false \
 			-Dalsa=disabled \
 			-Dflatpak=disabled \
-			-Dselinux=disabled
+			-Dselinux=disabled \
+			-Dsnap=disabled
 
 # until supported and/or proven useful
 CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
@@ -63,6 +62,11 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Dlibffado=disabled \
 			-Dlibmysofa=disabled \
 			-Davahi=disabled
+
+# XXX "support" needs threads.h;
+# "tests" don't configure without support: ERROR: Unknown variable "spa_support_dep"
+CONFIGURE_ARGS +=	-Dsupport=disabled \
+			-Dtests=disabled
 
 # PAM limits.d file
 CONFIGURE_ARGS +=	-Drlimits-install=false
