@@ -1,10 +1,15 @@
-bin/opentyrian
+@bin bin/opentyrian
 @man man/man6/opentyrian.6
+share/applications/opentyrian.desktop
 share/doc/opentyrian/
-share/doc/opentyrian/CREDITS
 share/doc/opentyrian/NEWS
 share/doc/opentyrian/README
 share/doc/pkg-readmes/${PKGSTEM}
-share/opentyrian/
-@bin share/opentyrian/opentyrian
+share/icons/hicolor/128x128/apps/opentyrian.png
+share/icons/hicolor/22x22/apps/opentyrian.png
+share/icons/hicolor/24x24/apps/opentyrian.png
+share/icons/hicolor/32x32/apps/opentyrian.png
+share/icons/hicolor/48x48/apps/opentyrian.png
 @extraunexec rm -f %D/share/opentyrian/*
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

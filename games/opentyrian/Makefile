@@ -1,32 +1,30 @@
-V =			2.1.20201204
+V =			2.1.20221123
 COMMENT =		port of the DOS shoot-em-up Tyrian
 DISTNAME =		opentyrian-${V}
 CATEGORIES =		games x11
 
-# No new releases... but years of activity
 GH_ACCOUNT =		opentyrian
 GH_PROJECT =		opentyrian
-GH_COMMIT =		650e1f72fd18d2242d10d706afa7f77f80151aea
+GH_TAGNAME =		v${V}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 SDL2_net c m
 
-RUN_DEPENDS =		archivers/unzip
+RUN_DEPENDS =		archivers/unzip \
+			devel/desktop-file-utils \
+			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/sdl2-net
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		CC="${CC}" \
-			MAKECMDGOALS=release
+			gamesdir="${PREFIX}/share"
 
 FAKE_FLAGS =		mandir="${PREFIX}/man"
 
-NO_TEST =		Yes
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/opentyrian
-	mv ${PREFIX}/bin/opentyrian ${PREFIX}/share/opentyrian/opentyrian
-	${SUBST_PROGRAM} ${FILESDIR}/opentyrian ${PREFIX}/bin/opentyrian
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
