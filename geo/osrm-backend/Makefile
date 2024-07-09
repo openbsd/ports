@@ -7,7 +7,7 @@ COMMENT =		high-performance road network routing engine
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_COMMIT =		31e31a63d062fb804f5f4695ed3036ca7a269ead
-REVISION =		0
+REVISION =		1
 DISTNAME =		osrm-backend-5.27.1pl0
 
 CATEGORIES =		geo
@@ -43,5 +43,10 @@ CXXFLAGS +=		-I${LOCALBASE}/include/utf8cpp
 
 # Requires network access, and http access to sample osrm data is 403'd
 NO_TEST =		Yes
+
+post-install:
+	# Hack to avoid shipping an old flatbuffers copy in the default
+	# include directory
+	mv ${PREFIX}/include/flatbuffers ${PREFIX}/include/osrm
 
 .include <bsd.port.mk>

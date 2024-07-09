@@ -9,21 +9,6 @@
 @bin bin/osrm-extract
 @bin bin/osrm-partition
 @bin bin/osrm-routed
-include/flatbuffers/
-include/flatbuffers/base.h
-include/flatbuffers/code_generators.h
-include/flatbuffers/flatbuffers.h
-include/flatbuffers/flatc.h
-include/flatbuffers/flexbuffers.h
-include/flatbuffers/grpc.h
-include/flatbuffers/hash.h
-include/flatbuffers/idl.h
-include/flatbuffers/minireflect.h
-include/flatbuffers/reflection.h
-include/flatbuffers/reflection_generated.h
-include/flatbuffers/registry.h
-include/flatbuffers/stl_emulation.h
-include/flatbuffers/util.h
 include/mapbox/
 include/mapbox/optional.hpp
 include/mapbox/recursive_wrapper.hpp
@@ -68,6 +53,21 @@ include/osrm/extractor/extractor_config.hpp
 include/osrm/extractor/io_config.hpp
 include/osrm/extractor/travel_mode.hpp
 include/osrm/extractor_config.hpp
+include/osrm/flatbuffers/
+include/osrm/flatbuffers/base.h
+include/osrm/flatbuffers/code_generators.h
+include/osrm/flatbuffers/flatbuffers.h
+include/osrm/flatbuffers/flatc.h
+include/osrm/flatbuffers/flexbuffers.h
+include/osrm/flatbuffers/grpc.h
+include/osrm/flatbuffers/hash.h
+include/osrm/flatbuffers/idl.h
+include/osrm/flatbuffers/minireflect.h
+include/osrm/flatbuffers/reflection.h
+include/osrm/flatbuffers/reflection_generated.h
+include/osrm/flatbuffers/registry.h
+include/osrm/flatbuffers/stl_emulation.h
+include/osrm/flatbuffers/util.h
 include/osrm/json_container.hpp
 include/osrm/match_parameters.hpp
 include/osrm/nearest_parameters.hpp
