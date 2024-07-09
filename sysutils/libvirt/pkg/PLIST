@@ -2,7 +2,7 @@
 @bin bin/virt-admin
 @bin bin/virt-host-validate
 @bin bin/virt-pki-query-dn
-bin/virt-pki-validate
+@bin bin/virt-pki-validate
 bin/virt-qemu-qmp-proxy
 @bin bin/virt-qemu-run
 bin/virt-qemu-sev-validate

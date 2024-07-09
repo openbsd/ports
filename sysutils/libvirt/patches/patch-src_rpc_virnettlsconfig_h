@@ -1,0 +1,22 @@
+Index: src/rpc/virnettlsconfig.h
+--- src/rpc/virnettlsconfig.h.orig
++++ src/rpc/virnettlsconfig.h
+@@ -22,9 +22,15 @@
+ 
+ #include "configmake.h"
+ 
+-#define LIBVIRT_PKI_DIR SYSCONFDIR "/pki"
+-#define LIBVIRT_CACERT_DIR LIBVIRT_PKI_DIR "/CA"
+-#define LIBVIRT_CACRL_DIR LIBVIRT_PKI_DIR "/CA"
++#ifdef __OpenBSD__
++# define LIBVIRT_PKI_DIR SYSCONFDIR "/ssl"
++# define LIBVIRT_CACERT_DIR LIBVIRT_PKI_DIR
++# define LIBVIRT_CACRL_DIR LIBVIRT_PKI_DIR
++#else
++# define LIBVIRT_PKI_DIR SYSCONFDIR "/pki"
++# define LIBVIRT_CACERT_DIR LIBVIRT_PKI_DIR "/CA"
++# define LIBVIRT_CACRL_DIR LIBVIRT_PKI_DIR "/CA"
++#endif
+ #define LIBVIRT_KEY_DIR LIBVIRT_PKI_DIR "/libvirt/private"
+ #define LIBVIRT_CERT_DIR LIBVIRT_PKI_DIR "/libvirt"
+ 
