@@ -244,6 +244,7 @@
      SUBDIR += openttd
      SUBDIR += openttd-data
      SUBDIR += opentyrian
+     SUBDIR += opentyrian-data
      SUBDIR += openxcom
      SUBDIR += orthorobot
      SUBDIR += ottomatic
