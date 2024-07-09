@@ -1,0 +1,7 @@
+The goal of this library is to bring painless unicode support to C++ with
+simple and easy to understand APIs.
+The API naming conventions are chosen to look familiar to those using the
+C++ standard libary.
+
+Original libunicode (at least v0.1.0 - v0.4.0) uses Unicode UCD 15.0.0
+but this ports uses textproc/unicode/ucd package.
