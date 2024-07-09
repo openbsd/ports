@@ -1,16 +1,16 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -163,7 +163,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
+@@ -166,7 +166,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
  endif
  
  # These must come before the -Wno- flags
 -WARNINGS += -Werror -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
 +WARNINGS += -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
- WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context
+ WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation
  
  # Only add this flag if the compiler supports it
-@@ -230,7 +230,7 @@ LDFLAGS += -lxaudio2_9redist
+@@ -233,7 +233,7 @@ LDFLAGS += -lxaudio2_9redist
  sdl: $(BIN)/SDL/xaudio2_9redist.dll
  endif
  else
