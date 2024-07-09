@@ -6,7 +6,7 @@ COMMENT=		network analysis and security monitoring framework
 
 V=			6.0.4
 DISTNAME=		zeek-${V}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broccoli                  10.0
@@ -25,8 +25,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += c m maxminddb pcap pthread z
-WANTLIB += lib/eopenssl11/crypto lib/eopenssl11/ssl lib/libbind/bind
+WANTLIB += c crypto m maxminddb pcap pthread ssl z lib/libbind/bind
 
 SITES=			https://download.zeek.org/ \
 			https://old.zeek.org/downloads/
@@ -55,8 +54,7 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			net/libbind \
-			net/libmaxminddb \
-			security/openssl/1.1
+			net/libmaxminddb
 
 RUN_DEPENDS=		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city \
