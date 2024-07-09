@@ -5,7 +5,7 @@ COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
 V =		1.17.1
-REVISION =	0
+REVISION =	1
 
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
@@ -35,6 +35,9 @@ LIB_DEPENDS =		archivers/snappy \
 			graphics/ffmpeg \
 			graphics/glew \
 			graphics/png
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/gtk+4,-guic
 
 COMPILER =		base-clang ports-gcc
 
@@ -56,10 +59,5 @@ NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/UI/NativeApp.cpp
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/PPSSPPSDL ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ppsspp
-	cp -LR ${WRKSRC}/assets ${PREFIX}/share/ppsspp
 
 .include <bsd.port.mk>

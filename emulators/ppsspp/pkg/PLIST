@@ -1,4 +1,16 @@
 @bin bin/PPSSPPSDL
+share/applications/PPSSPPSDL.desktop
+share/icons/hicolor/128x128/apps/ppsspp.png
+share/icons/hicolor/16x16/apps/ppsspp.png
+share/icons/hicolor/24x24/apps/ppsspp.png
+share/icons/hicolor/256x256/apps/ppsspp.png
+share/icons/hicolor/32x32/apps/ppsspp.png
+share/icons/hicolor/48x48/apps/ppsspp.png
+share/icons/hicolor/512x512/apps/ppsspp.png
+share/icons/hicolor/64x64/apps/ppsspp.png
+share/icons/hicolor/96x96/apps/ppsspp.png
+share/icons/hicolor/scalable/apps/ppsspp.svg
+share/mime/packages/ppsspp.xml
 share/ppsspp/
 share/ppsspp/assets/
 share/ppsspp/assets/7z.png
@@ -6,9 +18,7 @@ share/ppsspp/assets/Roboto-Condensed.ttf
 share/ppsspp/assets/asciifont_atlas.meta
 share/ppsspp/assets/asciifont_atlas.zim
 share/ppsspp/assets/compat.ini
-share/ppsspp/assets/compatvr.ini
 share/ppsspp/assets/debugger/
-share/ppsspp/assets/debugger/.git
 share/ppsspp/assets/debugger/.nojekyll
 share/ppsspp/assets/debugger/asset-manifest.json
 share/ppsspp/assets/debugger/favicon.ico
@@ -47,9 +57,8 @@ share/ppsspp/assets/flash0/font/ltn9.pgf
 share/ppsspp/assets/font_atlas.meta
 share/ppsspp/assets/font_atlas.zim
 share/ppsspp/assets/gamecontrollerdb.txt
-share/ppsspp/assets/knownfuncs.ini
+share/ppsspp/assets/icon_regular_72.png
 share/ppsspp/assets/lang/
-share/ppsspp/assets/lang/README.md
 share/ppsspp/assets/lang/ar_AE.ini
 share/ppsspp/assets/lang/az_AZ.ini
 share/ppsspp/assets/lang/bg_BG.ini
@@ -94,16 +103,12 @@ share/ppsspp/assets/lang/vi_VN.ini
 share/ppsspp/assets/lang/zh_CN.ini
 share/ppsspp/assets/lang/zh_TW.ini
 share/ppsspp/assets/langregion.ini
-share/ppsspp/assets/mime/
-share/ppsspp/assets/mime/ppsspp.xml
+share/ppsspp/assets/logo.png
 share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
-share/ppsspp/assets/redump.csv
-share/ppsspp/assets/sfx_achievement_unlocked.wav
 share/ppsspp/assets/sfx_back.wav
 share/ppsspp/assets/sfx_confirm.wav
-share/ppsspp/assets/sfx_leaderbord_submitted.wav
 share/ppsspp/assets/sfx_select.wav
 share/ppsspp/assets/sfx_toggle_off.wav
 share/ppsspp/assets/sfx_toggle_on.wav
@@ -168,3 +173,6 @@ share/ppsspp/assets/vfpu/vfpu_sin_lut_exceptions.dat
 share/ppsspp/assets/vfpu/vfpu_sin_lut_interval_delta.dat
 share/ppsspp/assets/vfpu/vfpu_sqrt_lut.dat
 share/ppsspp/assets/zip.png
+@tag update-mime-database
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
