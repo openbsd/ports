@@ -471,6 +471,7 @@
      SUBDIR += usbutil
      SUBDIR += usbutils
      SUBDIR += usmb
+     SUBDIR += victorialogs
      SUBDIR += vifm
      SUBDIR += virt-manager
      SUBDIR += virt-what
