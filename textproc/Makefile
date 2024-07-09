@@ -127,6 +127,7 @@
      SUBDIR += libtextcat
      SUBDIR += libtranslate
      SUBDIR += libunibreak
+     SUBDIR += libunicode
      SUBDIR += libuninameslist
      SUBDIR += libwpd
      SUBDIR += libxml
