@@ -3,13 +3,15 @@
 Index: src/compiler/crystal/compiler.cr
 --- src/compiler/crystal/compiler.cr.orig
 +++ src/compiler/crystal/compiler.cr
-@@ -466,6 +466,9 @@ module Crystal
+@@ -463,6 +463,11 @@ module Crystal
        else
          link_flags = @link_flags || ""
          link_flags += " -rdynamic"
++
 +        if program.has_flag? "openbsd"
 +          link_flags += " -L/usr/local/lib -L/usr/local/llvm17/lib -Wl,-z,nobtcfi"
 +        end
- 
++
          {DEFAULT_LINKER, %(#{DEFAULT_LINKER} "${@}" -o #{Process.quote_posix(output_filename)} #{link_flags} #{program.lib_flags}), object_names}
        end
+     end

@@ -1,6 +1,7 @@
 bin/crystal
 @bin bin/shards
 lib/crystal/
+lib/crystal/SOURCE_DATE_EPOCH
 lib/crystal/VERSION
 lib/crystal/annotations.cr
 lib/crystal/array.cr
@@ -368,13 +369,17 @@ lib/crystal/crystal/system/
 lib/crystal/crystal/system.cr
 lib/crystal/crystal/system/dir.cr
 lib/crystal/crystal/system/env.cr
+lib/crystal/crystal/system/event_loop/
 lib/crystal/crystal/system/event_loop.cr
+lib/crystal/crystal/system/event_loop/file_descriptor.cr
+lib/crystal/crystal/system/event_loop/socket.cr
 lib/crystal/crystal/system/fiber.cr
 lib/crystal/crystal/system/file.cr
 lib/crystal/crystal/system/file_descriptor.cr
 lib/crystal/crystal/system/file_info.cr
 lib/crystal/crystal/system/group.cr
 lib/crystal/crystal/system/mime.cr
+lib/crystal/crystal/system/panic.cr
 lib/crystal/crystal/system/path.cr
 lib/crystal/crystal/system/print_error.cr
 lib/crystal/crystal/system/process.cr
@@ -440,7 +445,6 @@ lib/crystal/crystal/system/wasi/wasi.cr
 lib/crystal/crystal/system/win32/
 lib/crystal/crystal/system/win32/cpucount.cr
 lib/crystal/crystal/system/win32/crypto.cr
-lib/crystal/crystal/system/win32/delay_load.cr
 lib/crystal/crystal/system/win32/dir.cr
 lib/crystal/crystal/system/win32/env.cr
 lib/crystal/crystal/system/win32/event_loop_iocp.cr
@@ -449,6 +453,7 @@ lib/crystal/crystal/system/win32/file.cr
 lib/crystal/crystal/system/win32/file_descriptor.cr
 lib/crystal/crystal/system/win32/file_info.cr
 lib/crystal/crystal/system/win32/hostname.cr
+lib/crystal/crystal/system/win32/iocp.cr
 lib/crystal/crystal/system/win32/library_archive.cr
 lib/crystal/crystal/system/win32/mime.cr
 lib/crystal/crystal/system/win32/path.cr
@@ -467,6 +472,7 @@ lib/crystal/crystal/system/win32/wmain.cr
 lib/crystal/crystal/system/win32/zone_names.cr
 lib/crystal/crystal/system/windows.cr
 lib/crystal/crystal/thread_local_value.cr
+lib/crystal/crystal/tracing.cr
 lib/crystal/csv/
 lib/crystal/csv.cr
 lib/crystal/csv/builder.cr
@@ -613,7 +619,6 @@ lib/crystal/io/file_descriptor.cr
 lib/crystal/io/hexdump.cr
 lib/crystal/io/memory.cr
 lib/crystal/io/multi_writer.cr
-lib/crystal/io/overlapped.cr
 lib/crystal/io/sized.cr
 lib/crystal/io/stapled.cr
 lib/crystal/iterable.cr
@@ -1356,6 +1361,7 @@ lib/crystal/llvm/abi/
 lib/crystal/llvm/abi.cr
 lib/crystal/llvm/abi/aarch64.cr
 lib/crystal/llvm/abi/arm.cr
+lib/crystal/llvm/abi/avr.cr
 lib/crystal/llvm/abi/wasm32.cr
 lib/crystal/llvm/abi/x86.cr
 lib/crystal/llvm/abi/x86_64.cr
@@ -1623,6 +1629,7 @@ lib/crystal/uuid/json.cr
 lib/crystal/uuid/yaml.cr
 lib/crystal/va_list.cr
 lib/crystal/value.cr
+lib/crystal/wait_group.cr
 lib/crystal/wasi_error.cr
 lib/crystal/weak_ref.cr
 lib/crystal/winerror.cr
