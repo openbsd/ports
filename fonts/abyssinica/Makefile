@@ -19,10 +19,6 @@ SITES =			https://software.sil.org/downloads/r/abyssinica/
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-DOCDIR =		${PREFIX}/share/doc/abyssinica
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/{README.txt,OFL.txt} ${DOCDIR}
+MODFONT_DOCFILES =	README.txt OFL.txt
 
 .include <bsd.port.mk>

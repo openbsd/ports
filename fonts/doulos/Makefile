@@ -20,10 +20,7 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME}
-DOCDIR =		${PREFIX}/share/doc/doulos
 
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
+MODFONT_DOCFILES =	*.txt
 
 .include <bsd.port.mk>

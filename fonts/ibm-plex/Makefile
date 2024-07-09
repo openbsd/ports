@@ -1,5 +1,7 @@
 COMMENT =		IBM's corporate type family
 
+MODFONT_FAMILY =	ibm-plex
+
 CATEGORIES =		fonts
 V =			6.4.0
 PKGNAME =		ibm-plex-$V
@@ -22,7 +24,6 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 FONTDIR =		${PREFIX}/share/fonts/ibm-plex
-DOCDIR =		${PREFIX}/share/doc/ibm-plex
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
@@ -32,9 +33,7 @@ do-install:
 	# this package use hinted font following Noto fonts.
 	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans-JP/hinted/*.otf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/TrueType/IBM-Plex-Sans-JP/hinted/*.ttf ${FONTDIR}
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans/license.txt ${DOCDIR}
+	${INSTALL_DATA_DIR} ${MODFONT_DOCDIR}
+	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans/license.txt ${MODFONT_DOCDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 COMMENT =		Unicode font for African Arabic script
 V =			2.000
+MODFONT_FAMILY =	alkalami
 DISTNAME =		Alkalami-${V}
 PKGNAME =		alkalami-${V}
 CATEGORIES =		fonts
@@ -18,12 +19,7 @@ MODULES =		font
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-FONTDIR =		${PREFIX}/share/fonts/alkalami
-DOCDIR =		${PREFIX}/share/doc/alkalami
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/{FONTLOG.txt,README.txt} ${DOCDIR}
+MODFONT_TYPES =		ttf
+MODFONT_DOCFILES =	FONTLOG.txt README.txt
 
 .include <bsd.port.mk>

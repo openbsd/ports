@@ -25,11 +25,10 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/Print\ Fonts
-DOCDIR =	${PREFIX}/share/doc/${MODFONT_FAMILY}
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
+	${INSTALL_DATA_DIR} ${MODFONT_DOCDIR}
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES.doc} \
-		${DOCDIR}/Atkinson-Hyperlegible-Font-License.pdf
+		${MODFONT_DOCDIR}/Atkinson-Hyperlegible-Font-License.pdf
 
 .include <bsd.port.mk>

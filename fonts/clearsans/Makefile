@@ -20,10 +20,7 @@ NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
 WRKSRC =		${WRKDIST}/TTF
-DOCDIR =		${PREFIX}/share/doc/clearsans
 
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
+MODFONT_DOCFILES =	../*.txt
 
 .include <bsd.port.mk>
