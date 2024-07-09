@@ -1,0 +1,9 @@
+@newgroup _victorialogs:630
+@newuser _victorialogs:630:_victorialogs::VictoriaLogs:${LOCALSTATEDIR}/db/victorialogs:/sbin/nologin
+@sample ${SYSCONFDIR}/victorialogs/
+@rcscript ${RCDIR}/victorialogs
+@bin bin/victoria-logs
+@mode 0755
+@owner _victorialogs
+@group _victorialogs
+@sample ${LOCALSTATEDIR}/db/victorialogs/

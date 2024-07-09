@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/victoria-logs"
+daemon_flags="-storageDataPath '${LOCALSTATEDIR}/db/victorialogs/'"
+daemon_user="_victorialogs"
+daemon_logger="daemon.info"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

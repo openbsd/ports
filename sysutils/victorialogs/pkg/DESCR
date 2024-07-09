@@ -1,0 +1,16 @@
+VictoriaLogs is a fast and easy-to-use, open source logs solution.
+
+VictoriaLogs provides the following key features:
+- accept logs from popular log collectors
+- much easier to set up and operate compared to Elasticsearch and
+  Grafana Loki
+- easy yet powerful query language with full-text search capabilities
+  across all the log fields
+- seamlessly combine with good old Unix tools for log analysis such
+  as grep, less, sort, jq, etc.
+- capacity and performance scales linearly with the available
+  resources (CPU, RAM, disk IO, disk space)
+- fast full-text search over high-cardinality log fields such as
+  trace_id, user_id and ip
+- out-of-order logs ingestion aka backfilling
+- a simple web UI for querying logs
