@@ -1,4 +1,3 @@
-@conflict osrm-backend-*
 @bin bin/flatc
 include/flatbuffers/
 include/flatbuffers/allocator.h

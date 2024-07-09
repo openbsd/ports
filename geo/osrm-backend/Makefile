@@ -7,7 +7,7 @@ COMMENT =		high-performance road network routing engine
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
 GH_COMMIT =		31e31a63d062fb804f5f4695ed3036ca7a269ead
-REVISION =		1
+REVISION =		2
 DISTNAME =		osrm-backend-5.27.1pl0
 
 CATEGORIES =		geo
