@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ClassiCube
+GenericName=ClassiCube
+Comment=A game based on the original Minecraft Classic.
+Exec=classicube
+Icon=${TRUEPREFIX}/share/classicube/CCicon.png
+Terminal=false
+Type=Application
+Categories=Game;

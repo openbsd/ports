@@ -1,0 +1,18 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+This program grabs game assets from the net upon first run to the
+current working directory.
+
+This port provides two executables, one a script and one a binary:
+
+    ${TRUEPREFIX}/share/classicube/classicube_run
+	the binary of the game engine itself.
+	do not run this manually (keep reading)
+
+    ${TRUEPREFIX}/bin/classicube
+	a wrapper script that opens classicube_run in a sane location
+	so that the assets get saved to a user-writable location.
+	the script opens & downloads assets to/from
+	$HOME/.local/share/classicube

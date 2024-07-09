@@ -1,0 +1,10 @@
+bin/classicube
+share/applications/classicube.desktop
+share/classicube/
+share/classicube/CCicon.png
+@bin share/classicube/classicube_run
+share/doc/pkg-readmes/${PKGSTEM}
+share/licenses/
+share/licenses/classicube/
+share/licenses/classicube/license.txt
+@tag update-desktop-database
