@@ -1,0 +1,17 @@
+XXX push upstream
+
+Index: gio/meson.build
+--- gio/meson.build.orig
++++ gio/meson.build
+@@ -80,7 +80,10 @@ if host_system != 'windows'
+   endif
+ 
+   # dn_comp()
+-  if cc.links('''#include <resolv.h>
++  if cc.links('''#include <sys/types.h>
++                 #include <netinet/in.h>
++                 #include <arpa/nameser.h>
++                 #include <resolv.h>
+                  int main (int argc, char ** argv) {
+                    return dn_comp(NULL, NULL, 0, NULL, NULL) == -1;
+                  } ''', args : network_args, name : 'dn_comp()')
