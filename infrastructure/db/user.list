@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.444 2024/04/23 20:42:50 sthen Exp $
+$OpenBSD: user.list,v 1.445 2024/07/09 10:51:56 denis Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -138,7 +138,7 @@ id  user		group		port
 #627 _zarafa		_zarafa		mail/zarafa/zarafa
 628 _kamailio		_kamailio	telephony/kamailio
 629 _avahi		_avahi		net/avahi
-#630 _avahi-autoipd	_avahi-autoipd	net/avahi
+630 _victorialogs	_victorialogs	sysutils/victorialogs
 631 _dnsmasq		_dnsmasq	net/dnsmasq
 632 _openfire		_openfire	net/openfire
 #633 _nbaudit		_nbaudit	security/nbaudit
