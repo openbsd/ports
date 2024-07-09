@@ -861,6 +861,7 @@ webapps/docs/api/org/apache/catalina/util/DOMWriter.html
 webapps/docs/api/org/apache/catalina/util/ErrorPageSupport.html
 webapps/docs/api/org/apache/catalina/util/Extension.html
 webapps/docs/api/org/apache/catalina/util/ExtensionValidator.html
+webapps/docs/api/org/apache/catalina/util/FilterUtil.html
 webapps/docs/api/org/apache/catalina/util/IOTools.html
 webapps/docs/api/org/apache/catalina/util/Introspection.html
 webapps/docs/api/org/apache/catalina/util/LifecycleBase.html
