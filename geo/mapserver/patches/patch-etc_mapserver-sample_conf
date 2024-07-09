@@ -1,0 +1,37 @@
+Index: etc/mapserver-sample.conf
+--- etc/mapserver-sample.conf.orig
++++ etc/mapserver-sample.conf
+@@ -11,14 +11,14 @@ CONFIG
+     # Limit Mapfile Access
+     #
+     # MS_MAP_NO_PATH "1"
+-    MS_MAP_PATTERN "^/opt/mapserver" ## required when referencing mapfiles by path
++    MS_MAP_PATTERN "^/etc/mapserver" ## required when referencing mapfiles by path
+     # MS_MAP_BAD_PATTERN "[/\\]{2}|[/\\]?\\.+[/\\]|,"
+ 
+     #
+     # Global Log/Debug Setup
+     #
+     # MS_DEBUGLEVEL "5"
+-    # MS_ERRORFILE "/opt/mapserver/logs/mapserver.log"
++    # MS_ERRORFILE "/tmp/mapserver.log"
+ 
+     #
+     # Global Error Redirect Handling
+@@ -67,14 +67,14 @@ CONFIG
+     #
+     # OGC API
+     #
+-    # OGCAPI_HTML_TEMPLATE_DIRECTORY "/usr/local/mapserver/share/ogcapi/templates/html-bootstrap4/"
++    # OGCAPI_HTML_TEMPLATE_DIRECTORY "/usr/local/share/mapserver/ogcapi/templates/html-plain/"
+   END
+  
+   #
+   # Map Aliases
+   #
+   MAPS
+-    # TEST_MAPFILE "/opt/mapserver/test/test.map"
++    # TEST_MAPFILE "/etc/mapserver/test.map"
+   END
+ 
+ END
