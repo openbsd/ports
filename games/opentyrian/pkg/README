@@ -2,8 +2,7 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-In order to play the game you need the data files from "Tyrian":
-https://www.camanis.net/tyrian/tyrian21.zip
+In order to play the game you need the data files from Tyrian.
 
-For a systemwide installation you can install them with this command:
-unzip -j -d /usr/local/share/tyrian tyrian21.zip
+To install these data files systemwide, you can build and install the
+games/opentyrian-data port.
