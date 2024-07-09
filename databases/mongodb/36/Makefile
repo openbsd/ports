@@ -1,3 +1,5 @@
+BROKEN=			does not build with icu4c>=75
+
 PORTROACH =	limitw:^3\.6\.
 
 # DB upgrades are only supported across one major version.
