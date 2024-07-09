@@ -43,14 +43,14 @@ Index: setup.py
      'win32': [],
      'sunos5': [],
      'cygwin': ['-pedantic'],
-@@ -138,6 +144,7 @@ CFLAGS = {
-     'darwin': ['-std=c++11'],
-     'linux': ['-std=c++11'],
-     'freebsd': ['-std=c++11'],
-+    'openbsd': ['-std=c++11'],
+@@ -137,6 +143,7 @@ PEDANTIC_FLAGS = {
+ CFLAGS = {
+     'darwin': ['-std=c++17'],
+     'linux': ['-std=c++17'],
++    'openbsd': ['-std=c++17'],
+     'freebsd': ['-std=c++17'],
      'win32': ['/Zc:wchar_t', '/EHsc'],
-     'sunos5': ['-std=c++11'],
-     'cygwin': ['-D_GNU_SOURCE=1', '-std=c++11'],
+     'sunos5': ['-std=c++17'],
 @@ -148,6 +155,7 @@ DEBUG_CFLAGS = {
      'darwin': ['-O0', '-g', '-DDEBUG'],
      'linux': ['-O0', '-g', '-DDEBUG'],
