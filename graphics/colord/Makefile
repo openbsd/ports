@@ -3,6 +3,7 @@ COMMENT=		device color profile management daemon
 GH_ACCOUNT=		hughsie
 GH_PROJECT=		colord
 GH_TAGNAME=		1.4.7
+REVISION=		0
 
 SHARED_LIBS += colordprivate             2.0 # 2.0.5
 SHARED_LIBS += colord                    2.0 # 2.0.5
@@ -52,6 +53,9 @@ CONFIGURE_ARGS=		-Dudev_rules=false \
 			-Dvapi=true \
 			-Ddaemon_user=_colord \
 			-Dpnp_ids=${LOCALBASE}/share/hwdata/pnp.ids
+
+# XXX fails with libxml >=2.13.0; ERROR: Error in gtkdoc helper script
+CONFIGURE_ARGS +=	-Ddocs=false
 
 # XXX needs docbook-xsl-ns
 CONFIGURE_ARGS +=	-Dman=false
