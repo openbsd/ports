@@ -15,6 +15,12 @@ ${P5ARCH}/auto/XS/Parse/
 ${P5ARCH}/auto/XS/Parse/Keyword/
 @comment ${P5ARCH}/auto/XS/Parse/Keyword/Keyword.bs
 @so ${P5ARCH}/auto/XS/Parse/Keyword/Keyword.so
+${P5ARCH}/auto/share/
+${P5ARCH}/auto/share/dist/
+${P5ARCH}/auto/share/dist/XS-Parse-Keyword/
+${P5ARCH}/auto/share/dist/XS-Parse-Keyword/include/
+${P5ARCH}/auto/share/dist/XS-Parse-Keyword/include/XSParseInfix.h
+${P5ARCH}/auto/share/dist/XS-Parse-Keyword/include/XSParseKeyword.h
 @man man/man3p/XS::Parse::Infix.3p
 @man man/man3p/XS::Parse::Infix::Builder.3p
 @man man/man3p/XS::Parse::Keyword.3p
