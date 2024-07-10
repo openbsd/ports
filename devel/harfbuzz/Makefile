@@ -7,6 +7,8 @@ V=			9.0.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
+REVISION-main=		0
+
 SHARED_LIBS += harfbuzz                  18.9 # 0.60900.0
 SHARED_LIBS += harfbuzz-subset           2.5 # 0.60900.0
 SHARED_LIBS += harfbuzz-cairo            0.2 # 0.60900.0
@@ -68,6 +70,6 @@ CONFIGURE_ARGS +=	-Dchafa=disabled
 CONFIGURE_ARGS +=	-Dtests=disabled
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/check-symbols.py
+	${SUBST_CMD} ${WRKSRC}/src/{check-symbols.py,harfbuzz-config.cmake.in}
 
 .include <bsd.port.mk>

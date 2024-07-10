@@ -1,0 +1,35 @@
+Index: src/harfbuzz-config.cmake.in
+--- src/harfbuzz-config.cmake.in.orig
++++ src/harfbuzz-config.cmake.in
+@@ -6,19 +6,19 @@ set_and_check(HARFBUZZ_INCLUDE_DIR "@PACKAGE_INCLUDE_I
+ add_library(harfbuzz::harfbuzz @HB_LIBRARY_TYPE@ IMPORTED)
+ set_target_properties(harfbuzz::harfbuzz PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
+-  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz@HB_LIB_SUFFIX@")
++  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz_VERSION}")
+ 
+ add_library(harfbuzz::icu @HB_LIBRARY_TYPE@ IMPORTED)
+ set_target_properties(harfbuzz::icu PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
+   INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
+-  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-icu@HB_LIB_SUFFIX@")
++  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-icu${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz-icu_VERSION}")
+ 
+ add_library(harfbuzz::subset @HB_LIBRARY_TYPE@ IMPORTED)
+ set_target_properties(harfbuzz::subset PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
+   INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
+-  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-subset@HB_LIB_SUFFIX@")
++  IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-subset${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz-subset_VERSION}")
+ 
+ # Only add the gobject library if it was built.
+ if (@HB_HAVE_GOBJECT@)
+@@ -26,7 +26,7 @@ if (@HB_HAVE_GOBJECT@)
+   set_target_properties(harfbuzz::gobject PROPERTIES
+     INTERFACE_INCLUDE_DIRECTORIES "@PACKAGE_INCLUDE_INSTALL_DIR@"
+     INTERFACE_LINK_LIBRARIES "harfbuzz::harfbuzz"
+-    IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-gobject@HB_LIB_SUFFIX@")
++    IMPORTED_LOCATION "@PACKAGE_CMAKE_INSTALL_LIBDIR@/@HB_LIB_PREFIX@harfbuzz-gobject${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBharfbuzz_VERSION}")
+ endif ()
+ 
+ check_required_components(harfbuzz)
