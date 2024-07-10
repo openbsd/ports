@@ -10,13 +10,7 @@ PKGNAME-wwwdata=	icu4c-wwwdata-${VERSION}
 EPOCH-main=		0
 EPOCH-wwwdata=		0
 
-# XXX see also post-extract;
-# install: /usr/ports/pobj/icu4c-74_2-src/icu/source/../LICENSE: No such file or directory
-# https://github.com/unicode-org/icu/commit/312bae866003461bcd4022855ac7ec60546b81f7
-SITES.licence=		https://raw.githubusercontent.com/unicode-org/icu/main/
-DISTFILES.licence=	LICENSE
-EXTRACT_ONLY=		${DISTFILES}
-DIST_SUBDIR=		icu4c
+REVISION-main=		0
 
 # XXX libicudata is not recognized as a SHARED_LIBS by the ports tools because
 # it's missing the '.note.openbsd.ident' section ("-nodefaultlibs -nostdlib" in
@@ -89,9 +83,6 @@ SUBST_VARS +=		ENDIAN_DATA
 TEST_ENV +=		ICU_DATA="${WRKBUILD}/data/out/build/${ENDIAN_DATA}"
 
 TEST_DEPENDS=		${BASE_PKGPATH}=${VERSION}
-
-post-extract:
-	cp ${FULLDISTDIR}/LICENSE ${WRKDIR}/
 
 post-install:
 	find ${PREFIX}/lib -type l -name 'libicu*.so*' -delete
