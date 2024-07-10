@@ -1,9 +1,8 @@
 COMMENT =		volatile memory extraction framework
 
-MODPY_EGG_VERSION =	2.5.2
+MODPY_EGG_VERSION =	2.7.0
 DISTNAME =		volatility3-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		security
 HOMEPAGE =		https://www.volatilityfoundation.org/
@@ -24,7 +23,8 @@ PORTHOME =		${WRKDIR}
 # fixture 'image' not found
 NO_TEST =		Yes
 
-RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/capstone/python${MODPY_FLAVOR} \
+			security/py-cryptodome${MODPY_FLAVOR} \
 			security/py-pefile${MODPY_FLAVOR} \
 			security/yara/python${MODPY_FLAVOR}
 

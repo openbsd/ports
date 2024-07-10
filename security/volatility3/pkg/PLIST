@@ -17,10 +17,13 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/cli/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}text_filter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}text_filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}text_renderer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}text_renderer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}volargparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/${MODPY_PYCACHE}volargparse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/cli/text_filter.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/text_renderer.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/volargparse.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/cli/volshell/
@@ -267,6 +270,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${M
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}keyboard_notifiers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}kmsg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}kmsg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}library_list.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}library_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}lsmod.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}lsmod.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/${MODPY_PYCACHE}lsof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -303,6 +308,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/env
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/iomem.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/keyboard_notifiers.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/kmsg.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/library_list.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/lsmod.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/lsof.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/linux/malfind.py
@@ -328,6 +334,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MOD
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}check_sysctl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}check_trap_table.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}check_trap_table.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}dmesg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}dmesg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}ifconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}ifconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/${MODPY_PYCACHE}kauth_listeners.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -368,6 +376,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/bash.
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/check_syscall.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/check_sysctl.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/check_trap_table.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/dmesg.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/ifconfig.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/kauth_listeners.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/mac/kauth_scopes.py
@@ -426,6 +435,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/$
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}handles.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}hashdump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}hashdump.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}iat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}iat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}joblinks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -474,6 +485,10 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/$
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}svcscan.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}symlinkscan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}symlinkscan.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}thrdscan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}thrdscan.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}truecrypt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}truecrypt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}vadinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}vadinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/${MODPY_PYCACHE}vadwalk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -501,6 +516,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/g
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/getsids.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/handles.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/hashdump.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/iat.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/info.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/joblinks.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/ldrmodules.py
@@ -544,6 +560,8 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/s
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/strings.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/svcscan.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/symlinkscan.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/thrdscan.py
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/truecrypt.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/vadinfo.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/vadwalk.py
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/plugins/windows/vadyarascan.py
@@ -715,6 +733,12 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/s
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-15063-x86.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-16299-x64.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-16299-x86.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-17763-x86.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-18362-x64.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-18362-x86.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-19041-x64.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-19041-x86.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win10-25398-x64.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win8-x64.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-win8-x86.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/framework/symbols/windows/services/services-xp-2003-x64.json
@@ -765,6 +789,7 @@ lib/python${MODPY_VERSION}/site-packages/volatility3/schemas/schema-4.1.0.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/schemas/schema-6.0.0.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/schemas/schema-6.1.0.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/schemas/schema-6.2.0.json
+lib/python${MODPY_VERSION}/site-packages/volatility3/schemas/schema-6.3.0.json
 lib/python${MODPY_VERSION}/site-packages/volatility3/symbols/
 lib/python${MODPY_VERSION}/site-packages/volatility3/symbols/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/volatility3/symbols/${MODPY_PYCACHE}/
