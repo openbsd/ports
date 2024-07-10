@@ -142,6 +142,7 @@
      SUBDIR += jwm
      SUBDIR += kde-applications
      SUBDIR += kde-plasma
+     SUBDIR += kdsingleapplication
      SUBDIR += keybinder3
      SUBDIR += keynav
      SUBDIR += kitty
