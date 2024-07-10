@@ -20,6 +20,7 @@ share/bash-completion/completions/_ansible-playbook
 share/bash-completion/completions/_ansible-pull
 share/bash-completion/completions/_ansible-vault
 share/bash-completion/completions/_arduino-cli
+share/bash-completion/completions/_bao
 share/bash-completion/completions/_black
 share/bash-completion/completions/_blackd
 share/bash-completion/completions/_buf
@@ -38,6 +39,7 @@ share/bash-completion/completions/_cz
 share/bash-completion/completions/_datree
 share/bash-completion/completions/_deno
 share/bash-completion/completions/_diesel
+share/bash-completion/completions/_dlv
 share/bash-completion/completions/_dmesg
 share/bash-completion/completions/_docker
 share/bash-completion/completions/_dprint
@@ -55,12 +57,14 @@ share/bash-completion/completions/_golangci-lint
 share/bash-completion/completions/_gopherjs
 share/bash-completion/completions/_goreleaser
 share/bash-completion/completions/_gsctl
+share/bash-completion/completions/_gup
 share/bash-completion/completions/_helm
 share/bash-completion/completions/_hexdump
 share/bash-completion/completions/_httpx
 share/bash-completion/completions/_hugo
 share/bash-completion/completions/_hwclock
 share/bash-completion/completions/_ignite
+share/bash-completion/completions/_incus
 share/bash-completion/completions/_infracost
 share/bash-completion/completions/_ionice
 share/bash-completion/completions/_istioctl
@@ -114,6 +118,7 @@ share/bash-completion/completions/_renice
 share/bash-completion/completions/_repomanage
 share/bash-completion/completions/_reptyr
 share/bash-completion/completions/_rfkill
+share/bash-completion/completions/_rg
 share/bash-completion/completions/_rtcwake
 share/bash-completion/completions/_ruff
 share/bash-completion/completions/_runuser
@@ -133,6 +138,7 @@ share/bash-completion/completions/_tendermint
 share/bash-completion/completions/_terraform
 share/bash-completion/completions/_tkn
 share/bash-completion/completions/_tkn-pac
+share/bash-completion/completions/_tofu
 share/bash-completion/completions/_tokio-console
 share/bash-completion/completions/_trivy
 share/bash-completion/completions/_udevadm
@@ -147,6 +153,7 @@ share/bash-completion/completions/_write
 share/bash-completion/completions/_xm
 share/bash-completion/completions/_yq
 share/bash-completion/completions/_yum
+share/bash-completion/completions/_zarf
 share/bash-completion/completions/_zitadel
 share/bash-completion/completions/a2x
 share/bash-completion/completions/abook
@@ -298,6 +305,7 @@ share/bash-completion/completions/e2label
 share/bash-completion/completions/ebtables
 share/bash-completion/completions/ecryptfs-migrate-home
 share/bash-completion/completions/edquota
+share/bash-completion/completions/env
 share/bash-completion/completions/eog
 share/bash-completion/completions/ether-wake
 share/bash-completion/completions/etherwake
