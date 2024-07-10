@@ -1,14 +1,12 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.5
+V=			3.8.6
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
-# XXX must be ahead of OPENBSD_7_5
-REVISION=		1
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               47.9     # 67.1
+SHARED_LIBS +=  gnutls              47.10     # 70.0
 SHARED_LIBS +=  gnutlsxx             30.2     # 30.0
 SHARED_LIBS +=  gnutls-dane          1.1      # 4.1
 

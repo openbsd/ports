@@ -1,21 +1,7 @@
 Index: lib/accelerated/aarch64/elf/sha512-armv8.s
 --- lib/accelerated/aarch64/elf/sha512-armv8.s.orig
 +++ lib/accelerated/aarch64/elf/sha512-armv8.s
-@@ -58,11 +58,8 @@ sha512_block_data_order:
- 
- 
- 
-- ldr x16,.L_gnutls_arm_cpuid_s
--
-- adr x17,.L_gnutls_arm_cpuid_s
-- add x16,x16,x17
-- ldr w16,[x16]
-+ adrp x16,_gnutls_arm_cpuid_s
-+ ldr w16,[x16,#:lo12:_gnutls_arm_cpuid_s]
-  tst w16,#(1<<6)
-  b.ne .Lv8_entry
- 
-@@ -82,7 +79,8 @@ sha512_block_data_order:
+@@ -79,7 +79,8 @@ sha512_block_data_order:
   ldp x24,x25,[x0,#4*8]
   add x2,x1,x2,lsl#7
   ldp x26,x27,[x0,#6*8]
@@ -25,7 +11,7 @@ Index: lib/accelerated/aarch64/elf/sha512-armv8.s
   stp x0,x2,[x29,#96]
  
  .Loop:
-@@ -1030,6 +1028,7 @@ sha512_block_data_order:
+@@ -1027,6 +1028,7 @@ sha512_block_data_order:
   ret
  .size sha512_block_data_order,.-sha512_block_data_order
  
@@ -33,7 +19,7 @@ Index: lib/accelerated/aarch64/elf/sha512-armv8.s
  .align 6
  .type .LK512,%object
  .LK512:
-@@ -1088,6 +1087,7 @@ sha512_block_data_order:
+@@ -1076,6 +1078,7 @@ sha512_block_data_order:
  .align 2
  .align 2
  
@@ -41,7 +27,7 @@ Index: lib/accelerated/aarch64/elf/sha512-armv8.s
  .type sha512_block_armv8,%function
  .align 6
  sha512_block_armv8:
-@@ -1099,7 +1099,8 @@ sha512_block_armv8:
+@@ -1088,7 +1091,8 @@ sha512_block_armv8:
   ld1 {v20.16b,v21.16b,v22.16b,v23.16b},[x1],#64
  
   ld1 {v0.2d,v1.2d,v2.2d,v3.2d},[x0]

@@ -1,16 +1,15 @@
 Index: lib/accelerated/aarch64/elf/aes-aarch64.s
 --- lib/accelerated/aarch64/elf/aes-aarch64.s.orig
 +++ lib/accelerated/aarch64/elf/aes-aarch64.s
-@@ -45,7 +45,7 @@
- # 2 "lib/accelerated/aarch64/elf/aes-aarch64.s.tmp.S" 2
+@@ -47,13 +47,14 @@
  
  
+ .arch armv8-a+crypto
 -.text
 +.rodata
- .arch armv8-a+crypto
  .align 5
  .Lrcon:
-@@ -53,6 +53,7 @@
+ .long 0x01,0x01,0x01,0x01
  .long 0x0c0f0e0d,0x0c0f0e0d,0x0c0f0e0d,0x0c0f0e0d
  .long 0x1b,0x1b,0x1b,0x1b
  
@@ -18,7 +17,7 @@ Index: lib/accelerated/aarch64/elf/aes-aarch64.s
  .globl aes_v8_set_encrypt_key
  .type aes_v8_set_encrypt_key,%function
  .align 5
-@@ -73,7 +74,8 @@ aes_v8_set_encrypt_key:
+@@ -76,7 +77,8 @@ aes_v8_set_encrypt_key:
   tst w1,#0x3f
   b.ne .Lenc_key_abort
  

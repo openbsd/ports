@@ -1,21 +1,16 @@
 Index: lib/accelerated/aarch64/elf/sha1-armv8.s
 --- lib/accelerated/aarch64/elf/sha1-armv8.s.orig
 +++ lib/accelerated/aarch64/elf/sha1-armv8.s
-@@ -55,11 +55,8 @@ sha1_block_data_order:
+@@ -49,7 +49,7 @@
+ .hidden _gnutls_arm_cpuid_s
  
  
+-.text
++.rodata
  
-- ldr x16,.L_gnutls_arm_cpuid_s
--
-- adr x17,.L_gnutls_arm_cpuid_s
-- add x16,x16,x17
-- ldr w16,[x16]
-+ adrp x16,_gnutls_arm_cpuid_s
-+ ldr w16,[x16,#:lo12:_gnutls_arm_cpuid_s]
-  tst w16,#(1<<3)
-  b.ne .Lv8_entry
- 
-@@ -1125,7 +1122,8 @@ sha1_block_armv8:
+ .globl sha1_block_data_order
+ .type sha1_block_data_order,%function
+@@ -1125,7 +1125,8 @@ sha1_block_armv8:
   stp x29,x30,[sp,#-16]!
   add x29,sp,#0
  
@@ -25,7 +20,7 @@ Index: lib/accelerated/aarch64/elf/sha1-armv8.s
   eor v1.16b,v1.16b,v1.16b
   ld1 {v0.4s},[x0],#16
   ld1 {v1.s}[0],[x0]
-@@ -1248,6 +1246,7 @@ sha1_block_armv8:
+@@ -1248,6 +1249,7 @@ sha1_block_armv8:
   ldr x29,[sp],#16
   ret
  .size sha1_block_armv8,.-sha1_block_armv8

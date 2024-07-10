@@ -330,6 +330,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hash_get_len.3
 @man man/man3/gnutls_hash_init.3
 @man man/man3/gnutls_hash_output.3
+@man man/man3/gnutls_hash_squeeze.3
 @man man/man3/gnutls_heartbeat_allowed.3
 @man man/man3/gnutls_heartbeat_enable.3
 @man man/man3/gnutls_heartbeat_get_timeout.3
@@ -526,6 +527,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs12_export2.3
 @man man/man3/gnutls_pkcs12_generate_mac.3
 @man man/man3/gnutls_pkcs12_generate_mac2.3
+@man man/man3/gnutls_pkcs12_generate_mac3.3
 @man man/man3/gnutls_pkcs12_get_bag.3
 @man man/man3/gnutls_pkcs12_import.3
 @man man/man3/gnutls_pkcs12_init.3
