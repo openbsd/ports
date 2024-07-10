@@ -136,6 +136,7 @@
      SUBDIR += libxml++50
      SUBDIR += libxmlb
      SUBDIR += libxslt
+     SUBDIR += license-scanner
      SUBDIR += link-grammar
      SUBDIR += loccount
      SUBDIR += lowdown
