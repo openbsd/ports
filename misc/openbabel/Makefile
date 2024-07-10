@@ -1,7 +1,7 @@
 COMMENT=	chemistry file translation program
 
 V=		3.1.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	openbabel-${V}
 
 CATEGORIES=	misc
@@ -35,7 +35,8 @@ LIB_DEPENDS=	devel/boost \
 		graphics/cairo \
 		textproc/libxml
 
-BUILD_DEPENDS=	math/eigen3
+BUILD_DEPENDS=	math/eigen3 \
+		textproc/rapidjson
 
 CONFIGURE_ARGS=	-DBUILD_GUI=OFF
 
