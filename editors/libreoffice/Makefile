@@ -31,6 +31,8 @@ DPB_PROPERTIES=	parallel
 
 EPOCH=		0
 
+REVISION=	0
+
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
@@ -45,6 +47,10 @@ SITES.a=	http://dev-www.libreoffice.org/src/ \
 		http://download.go-oo.org/extern/ \
 		http://www.numbertext.org/linux/ \
 		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
+SITES.u=	https://nerd.hu/distfiles/
+
+PATCHFILES.u=		libreoffice-icu75.patch
+PATCH_DIST_STRIP=	-p1
 
 TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-${VERSION}.tar.xz
