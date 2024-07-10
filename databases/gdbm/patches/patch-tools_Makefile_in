@@ -4,8 +4,8 @@ equivalent, ours does not.
 Index: tools/Makefile.in
 --- tools/Makefile.in.orig
 +++ tools/Makefile.in
-@@ -152,17 +152,17 @@ am__installdirs = "$(DESTDIR)$(bindir)"
- PROGRAMS = $(bin_PROGRAMS)
+@@ -152,17 +152,17 @@ am_libgdbmapp_a_OBJECTS = err.$(OBJEXT) mem.$(OBJEXT) 
+ libgdbmapp_a_OBJECTS = $(am_libgdbmapp_a_OBJECTS)
  gdbm_dump_SOURCES = gdbm_dump.c
  gdbm_dump_OBJECTS = gdbm_dump.$(OBJEXT)
 -gdbm_dump_DEPENDENCIES = ./libgdbmapp.a ../src/libgdbm.la

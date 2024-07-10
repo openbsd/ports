@@ -17,8 +17,10 @@ share/locale/es/LC_MESSAGES/gdbm.mo
 share/locale/fi/LC_MESSAGES/gdbm.mo
 share/locale/fr/LC_MESSAGES/gdbm.mo
 share/locale/ja/LC_MESSAGES/gdbm.mo
+share/locale/ka/LC_MESSAGES/gdbm.mo
 share/locale/pl/LC_MESSAGES/gdbm.mo
 share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+share/locale/ro/LC_MESSAGES/gdbm.mo
 share/locale/ru/LC_MESSAGES/gdbm.mo
 share/locale/sr/LC_MESSAGES/gdbm.mo
 share/locale/sv/LC_MESSAGES/gdbm.mo
