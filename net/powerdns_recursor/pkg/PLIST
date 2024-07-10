@@ -11,3 +11,4 @@ share/examples/pdns/
 share/examples/pdns/recursor.conf
 @sample ${SYSCONFDIR}/recursor.conf
 @sample /var/pdns_recursor/
+share/examples/pdns/recursor.yml-dist

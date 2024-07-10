@@ -10,7 +10,13 @@ It is also possible to write to stdout by specifying `-' as file.
 
 See https://docs.powerdns.com/recursor/upgrade.html for more details.
 
-On OpenBSD it is recommended to set
+On OpenBSD it is recommended to set (using YAML syntax)
+
+incoming:
+  reuseport: false
+  pdns_distributes_queries: true
+
+or, when using old-style syntax:
 
 reuseport=no
 pdns-distributes-queries=yes

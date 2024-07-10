@@ -1,6 +1,6 @@
 COMMENT=		recursive nameserver
 
-V=			5.0.7
+V=			5.1.0
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -68,10 +68,8 @@ EXAMPLE_DIR=            ${PREFIX}/share/examples/pdns/
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
-	cat ${FILESDIR}/recursor.conf ${WRKSRC}/recursor.conf-dist > \
-	    ${WRKSRC}/recursor.conf # concatenate local and upstream sample configs
-	${INSTALL_DATA} ${WRKSRC}/recursor.conf ${EXAMPLE_DIR}
-	rm ${WRKINST}${SYSCONFDIR}/recursor.conf-dist
+	${INSTALL_DATA} ${FILESDIR}/recursor.conf ${EXAMPLE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/recursor.yml-dist ${EXAMPLE_DIR}
 
 .include "crates.inc"
 
