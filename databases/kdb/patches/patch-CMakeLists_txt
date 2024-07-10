@@ -1,0 +1,14 @@
+Fix build with icu >=75
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -5,6 +5,8 @@ include(SetKDbCMakePolicies NO_POLICY_SCOPE)
+ 
+ project(KDb VERSION 3.2.0) # Update this
+ 
++set(CMAKE_CXX_STANDARD 17)
++
+ include(KDbAddTests)
+ include(KDbAddExamples)
+ kdb_add_tests(OFF)
