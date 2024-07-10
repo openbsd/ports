@@ -1,12 +1,11 @@
 COMMENT =	client API for Matrix, built on libcurl
 CATEGORIES =	devel
 
-SHARED_LIBS +=  matrix_client	2.0
+SHARED_LIBS +=  matrix_client	3.0
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	mtxclient
-GH_TAGNAME =	v0.9.2
-REVISION =	2
+GH_TAGNAME =	v0.10.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
