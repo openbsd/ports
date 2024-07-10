@@ -1,12 +1,14 @@
 COMMENT =	toolkit for developing mapping applications
 
-# Check if next release incorporates support for new PROJ
-V =		3.1.0
+V =		4.0.0
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	6
 
+DIST_TUPLE +=	github mapbox geometry.hpp c83a2ab18a225254f128b6f5115aa39d04f2de21 deps/mapbox/geometry
+DIST_TUPLE +=	github mapbox polylabel 51f09d04c21e7b7faf94e2300ca1fe6e1f12fa7f deps/mapbox/polylabel
+DIST_TUPLE +=	github mapbox protozero 7487f8109acc8637b48e3cb291784cd58f943a1c deps/mapbox/protozero
+DIST_TUPLE +=	github mapbox variant a2a4858345423a760eca300ec42acad1ad123aa3 deps/mapbox/variant
 SHARED_LIBS =	mapnik 4.0 #3.0
 CATEGORIES =	graphics geo
 
@@ -17,17 +19,14 @@ DPB_PROPERTIES = nojunk parallel
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xrender boost_filesystem
-WANTLIB += boost_program_options boost_regex harfbuzz webp
-WANTLIB += boost_system c cairo expat ffi fontconfig freetype
-WANTLIB += gdal glib-2.0 gobject-2.0 icudata icui18n icuuc
-WANTLIB += intl jpeg lzo2 m pcre2-8 pixman-1 png>=17.0 pq pthread
-WANTLIB += sqlite3 tiff xcb xcb-render xcb-shm xml2 z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} boost_program_options-mt boost_regex-mt
+WANTLIB += c cairo freetype gdal harfbuzz icudata icui18n icuuc
+WANTLIB += jpeg m png pq proj sqlite3 tiff webp xml2 z
 
 SITES =		https://github.com/mapnik/mapnik/releases/download/v${V}/
-MODULES =	devel/scons
+MODULES =	devel/cmake
 
-# C++14
+# C++17
 COMPILER =	base-clang ports-gcc
 
 TEST_DEPENDS =	shells/bash \
@@ -41,33 +40,12 @@ LIB_DEPENDS =	devel/boost \
 		geo/gdal \
 		textproc/icu4c
 
-# Scons sucks. Use WARNING_CXXFLAGS as a way to pass freetype2 includes
-MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
-			DESTDIR="${WRKINST}" \
-			ICU_INCLUDES=${LOCALBASE}/include \
-			ICU_LIBS=${LOCALBASE}/lib \
-			HB_INCLUDES=${LOCALBASE}/include \
-			HB_LIBS=${LOCALBASE}/lib \
-			WARNING_CXXFLAGS="-I${X11BASE}/include/freetype2" \
-			CUSTOM_CXXFLAGS="-fPIC" \
-			SYSTEM_FONTS=${X11BASE}/lib/X11/fonts/TTF/ \
-			CUSTOM_LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			FAST=yes \
-			INPUT_PLUGINS=raster,postgis,shape,gdal,ogr,sqlite \
-			XMLPARSER=libxml2
+CONFIGURE_ARGS +=	-DBUILD_DEMO_VIEWER=OFF #depends on qt6
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_INCLUDEDIR=${LOCALBASE}/include/mapnik #deconflicts with protozero/osrm-backend
+CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
 
-pre-configure:
-	# subst shlib version
-	${SUBST_CMD} ${WRKSRC}/src/build.py
-
-do-test:
-	# Test data could be fetched from github and extracted to test subdir.
-	# https://github.com/mapnik/test-data
-	# https://github.com/mapnik/test-data-visual
-	# warning: some tests may swap your machine to death
-	# python_tests.datasource_test.test_hit_grid may stall gobbling all cpu
-	# python_tests.geometry_io_test.test_wkb_parsing may segfault
-	# tests involving unicode/utf fail
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash test/run
+# Test data could be fetched from github and extracted to ${WRKBUILD}/out/test/data{,-visual} subdirs.
+# https://github.com/mapnik/test-data
+# https://github.com/mapnik/test-data-visual
 
 .include <bsd.port.mk>
