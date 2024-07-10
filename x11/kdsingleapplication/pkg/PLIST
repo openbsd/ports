@@ -1,0 +1,24 @@
+include/kdsingleapplication-qt6/
+include/kdsingleapplication-qt6/KDSingleApplication
+include/kdsingleapplication-qt6/kdsingleapplication.h
+include/kdsingleapplication-qt6/kdsingleapplication_lib.h
+include/kdsingleapplication-qt6/kdsingleapplication_version.h
+lib/cmake/
+lib/cmake/KDSingleApplication-qt6/
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Config.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6ConfigVersion.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KDSingleApplication-qt6/KDSingleApplication-qt6Targets.cmake
+lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KDSingleApplication-qt6/KDSingleApplicationTargets.cmake
+@lib lib/libkdsingleapplication-qt6.so.${LIBkdsingleapplication-qt6_VERSION}
+lib/qt6/
+lib/qt6/mkspecs/
+lib/qt6/mkspecs/modules/
+lib/qt6/mkspecs/modules/qt_KDSingleApplication.pri
+share/doc/KDSingleApplication-qt6/
+share/doc/KDSingleApplication-qt6/LICENSE.txt
+share/doc/KDSingleApplication-qt6/LICENSES/
+share/doc/KDSingleApplication-qt6/LICENSES/BSD-3-Clause.txt
+share/doc/KDSingleApplication-qt6/LICENSES/MIT.txt
+share/doc/KDSingleApplication-qt6/README.md
