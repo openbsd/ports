@@ -11,9 +11,9 @@ Index: src/hwf-arm.c
 +#include <machine/cpu.h>
 +#include <machine/armreg.h>
  #endif
- 
- #include "g10lib.h"
-@@ -62,7 +67,8 @@ static unsigned long getauxval(unsigned long type)
+ #if defined(__APPLE__) && defined(HAVE_SYS_SYSCTL_H) && \
+     defined(HAVE_SYSCTLBYNAME)
+@@ -66,7 +71,8 @@ static unsigned long getauxval(unsigned long type)
  
  #undef HAS_SYS_AT_HWCAP
  #if defined(__linux__) || \
@@ -23,7 +23,7 @@ Index: src/hwf-arm.c
  #define HAS_SYS_AT_HWCAP 1
  
  struct feature_map_s {
-@@ -196,6 +202,29 @@ get_hwcap(unsigned int *hwcap, unsigned int *hwcap2)
+@@ -243,6 +249,29 @@ get_hwcap(unsigned int *hwcap, unsigned int *hwcap2)
        *hwcap2 = stored_hwcap2;
        return 0;
      }

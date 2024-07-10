@@ -3,8 +3,8 @@ https://dev.gnupg.org/T6442
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20029,6 +20029,12 @@ then :
-   printf "%s\n" "#define HAVE_GETENTROPY 1" >>confdefs.h
+@@ -20021,6 +20021,12 @@ if test "$gcry_cv_gcc_inline_asm_ppc_altivec" = "yes" 
+ printf "%s\n" "#define HAVE_GCC_INLINE_ASM_PPC_ALTIVEC 1" >>confdefs.h
  
  fi
 +ac_fn_c_check_func "$LINENO" "getrandom" "ac_cv_func_getrandom"
@@ -15,4 +15,4 @@ Index: configure
 +fi
  
  
-  ac_fn_c_check_func "$LINENO" "mlock" "ac_cv_func_mlock"
+ #
