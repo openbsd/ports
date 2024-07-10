@@ -1,4 +1,4 @@
-SHA256 (broot-1.39.1.tar.gz) = sYbqqZWlDvNvDRZhBDUOT1waC3TL5+8QHrFraPsCjN8=
+SHA256 (broot-1.39.2.tar.gz) = aeVl17FiDcyUAei0FfzehIk9ZAVB97U0pVhpucHP04c=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/ahash-0.4.8.tar.gz) = BFMjKs6C3uDdC0yHpZvZD3tTsxTz4PYf4u58ihZIIok=
 SHA256 (cargo/aho-corasick-1.1.3.tar.gz) = jmDTQw06aUeK0Jk/GSONLfl8UHAJpSs8EK3c1/a8uRY=
@@ -318,7 +318,7 @@ SHA256 (cargo/xterm-query-0.3.0.tar.gz) = WmrwlMWibPdmPpfZL2ndb0wTHpDpWsZDCCifzp
 SHA256 (cargo/xterm-query-0.4.0.tar.gz) = LylQTQosqMFxR4HBOVqKZg0lV7LPnJZpQzFT/JA+m/w=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
 SHA256 (cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
-SIZE (broot-1.39.1.tar.gz) = 12917870
+SIZE (broot-1.39.2.tar.gz) = 12918512
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.4.8.tar.gz) = 51510
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
