@@ -1,0 +1,46 @@
+Fix build with icu >=75
+
+Index: setup/extensions.json
+--- setup/extensions.json.orig
++++ setup/extensions.json
+@@ -6,7 +6,7 @@
+         "lib_dirs": "!hunspell_lib_dirs",
+         "libraries": "hunspell-1.7",
+         "windows_libraries": "libhunspell",
+-		"needs_c++11": true
++		"needs_c++17": true
+     },
+     {
+         "name": "hyphen",
+@@ -75,7 +75,7 @@
+         "name": "sqlite_extension",
+         "headers": "calibre/utils/cpp_binding.h",
+         "sources": "calibre/db/sqlite_extension.cpp",
+-		"needs_c++14": true,
++		"needs_c++17": true,
+         "libraries": "icudata icui18n icuuc icuio stemmer",
+         "windows_libraries": "icudt icuin icuuc icuio libstemmer",
+         "lib_dirs": "!icu_lib_dirs",
+@@ -117,19 +117,19 @@
+         "lib_dirs": "!podofo_lib",
+         "inc_dirs": "!podofo_inc",
+         "error": "!podofo_error",
+-		"needs_c++11": true
++		"needs_c++17": true
+     },
+     {
+         "name": "html_as_json",
+         "sources": "calibre/srv/html_as_json.cpp",
+-		"needs_c++11": true
++		"needs_c++17": true
+     },
+     {
+         "name": "fast_css_transform",
+         "headers": "calibre/utils/cpp_binding.h calibre/utils/stb_sprintf.h",
+         "sources": "calibre/srv/fast_css_transform.cpp",
+ 		"inc_dirs": "perfect-hashing",
+-		"needs_c++14": true
++		"needs_c++17": true
+     },
+     {
+         "name": "pictureflow",
