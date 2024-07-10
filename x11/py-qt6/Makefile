@@ -28,7 +28,8 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
-		x11/dbus-python${MODPY_FLAVOR}
+		x11/dbus-python${MODPY_FLAVOR} \
+		graphics/vulkan-loader
 
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
 		x11/py-sip-qt6${MODPY_FLAVOR}>=13.6 \
