@@ -1,7 +1,7 @@
 Index: vcl/source/app/svapp.cxx
 --- vcl/source/app/svapp.cxx.orig
 +++ vcl/source/app/svapp.cxx
-@@ -1229,7 +1229,7 @@ OUString Application::GetHWOSConfInfo(const int bSelec
+@@ -1228,7 +1228,7 @@ OUString Application::GetHWOSConfInfo(const int bSelec
  #endif
              appendDetails(u"", Localize(SV_APP_DEFAULT, bLocalize));
  
