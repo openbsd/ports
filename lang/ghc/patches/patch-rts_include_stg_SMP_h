@@ -1,0 +1,18 @@
+Avoid -Wstrict-prototypes diagnostics
+
+Index: rts/include/stg/SMP.h
+--- rts/include/stg/SMP.h.orig
++++ rts/include/stg/SMP.h
+@@ -590,9 +590,9 @@ load_load_barrier(void) {
+ EXTERN_INLINE void write_barrier(void);
+ EXTERN_INLINE void store_load_barrier(void);
+ EXTERN_INLINE void load_load_barrier(void);
+-EXTERN_INLINE void write_barrier     () {} /* nothing */
+-EXTERN_INLINE void store_load_barrier() {} /* nothing */
+-EXTERN_INLINE void load_load_barrier () {} /* nothing */
++EXTERN_INLINE void write_barrier     (void) {} /* nothing */
++EXTERN_INLINE void store_load_barrier(void) {} /* nothing */
++EXTERN_INLINE void load_load_barrier (void) {} /* nothing */
+ 
+ // Relaxed atomic operations
+ #define RELAXED_LOAD(ptr) *ptr

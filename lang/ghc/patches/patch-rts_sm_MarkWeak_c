@@ -1,0 +1,14 @@
+Avoid -Wstrict-prototypes diagnostics
+
+Index: rts/sm/MarkWeak.c
+--- rts/sm/MarkWeak.c.orig
++++ rts/sm/MarkWeak.c
+@@ -453,7 +453,7 @@ static void checkWeakPtrSanity(StgWeak *hd, StgWeak *t
+  * Traverse the capabilities' local new-weak-pointer lists at the beginning of
+  * GC and move them to the nursery's weak_ptr_list.
+  */
+-void collectFreshWeakPtrs()
++void collectFreshWeakPtrs(void)
+ {
+     uint32_t i;
+     // move recently allocated weak_ptr_list to the old list as well
