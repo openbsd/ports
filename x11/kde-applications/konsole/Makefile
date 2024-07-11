@@ -49,6 +49,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		textproc/icu4c \
 		x11/qt6/qt5compat \
 		x11/qt6/qtmultimedia
 

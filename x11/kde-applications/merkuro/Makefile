@@ -71,6 +71,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		security/gpgme \
 		security/libassuan \
 		textproc/ktextaddons \
+		security/gpgme,-qt \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \

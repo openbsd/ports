@@ -65,6 +65,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/olm \
 		devel/qcoro,qt6 \
 		security/qtkeychain,qt6 \
+		textproc/icu4c \
 		textproc/cmark \
 		x11/libquotient>=0.7 \
 		x11/qt6/qtdeclarative \

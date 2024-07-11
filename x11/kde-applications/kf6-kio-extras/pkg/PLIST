@@ -1703,6 +1703,7 @@ share/locale/sr@latin/LC_MESSAGES/kio6_thumbnail.mo
 share/locale/sv/LC_MESSAGES/kfileaudiopreview6.mo
 share/locale/sv/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/sv/LC_MESSAGES/kio6_activities.mo
+share/locale/sv/LC_MESSAGES/kio6_afc.mo
 share/locale/sv/LC_MESSAGES/kio6_archive.mo
 share/locale/sv/LC_MESSAGES/kio6_fish.mo
 share/locale/sv/LC_MESSAGES/kio6_info.mo

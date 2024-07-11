@@ -57,6 +57,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/solid \
 		devel/kf5/syntax-highlighting \
 		devel/libmtp \
+		math/imath \
 		graphics/openexr \
 		multimedia/phonon \
 		net/kdsoap \

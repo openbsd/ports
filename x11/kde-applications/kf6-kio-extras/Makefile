@@ -58,6 +58,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/libmtp \
 		devel/qcoro,qt6 \
 		graphics/openexr \
+		math/imath \
 		multimedia/phonon,qt6 \
 		net/kdsoap,qt6 \
 		net/kdsoap-ws-discovery-client \

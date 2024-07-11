@@ -10,9 +10,9 @@ WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
 WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6GrantleeTheme Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
-WANTLIB += Qt6Xml X11 c m
+WANTLIB += KPim6AkonadiCore KPim6GrantleeTheme Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets Qt6Xml
+WANTLIB += X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -54,8 +54,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/sonnet \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme \
-		x11/qt6/qt5compat
+		x11/kde-applications/grantleetheme
 
 TEST_IS_INTERACTIVE =	X11
 

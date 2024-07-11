@@ -15,6 +15,7 @@ lib/qt6/qml/org/kde/akonadi/qmldir
 lib/qt6/qml/org/kde/merkuro/
 lib/qt6/qml/org/kde/merkuro/calendar/
 lib/qt6/qml/org/kde/merkuro/calendar/BottomToolBar.qml
+lib/qt6/qml/org/kde/merkuro/calendar/DatePopupSingleton.qml
 lib/qt6/qml/org/kde/merkuro/calendar/MenuBar.qml
 lib/qt6/qml/org/kde/merkuro/calendar/PriorityComboBox.qml
 lib/qt6/qml/org/kde/merkuro/calendar/ReminderDelegate.qml

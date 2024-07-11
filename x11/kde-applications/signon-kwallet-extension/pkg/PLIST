@@ -1,3 +1,2 @@
-lib/signon/
 lib/signon/extensions/
 @so lib/signon/extensions/libkeyring-kwallet.so

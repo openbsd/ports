@@ -13,6 +13,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
+BUILD_DEPENDS =	devel/qcoro,qt6
+
 RUN_DEPENDS =	net/samba \
 		x11/dbus,-suid
 
@@ -26,7 +28,6 @@ LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/solid \
-		devel/qcoro,qt6 \
 		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>
