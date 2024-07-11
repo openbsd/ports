@@ -1,10 +1,11 @@
-@bin bin/heif-convert
+@bin bin/heif-dec
 @bin bin/heif-enc
 @bin bin/heif-info
 @bin bin/heif-thumbnailer
 include/libheif/
 include/libheif/heif.h
 include/libheif/heif_cxx.h
+include/libheif/heif_items.h
 include/libheif/heif_plugin.h
 include/libheif/heif_properties.h
 include/libheif/heif_regions.h
@@ -18,7 +19,7 @@ lib/libheif/
 @lib lib/libheif.so.${LIBheif_VERSION}
 @so lib/libheif/libheif-dav1d.so
 lib/pkgconfig/libheif.pc
-@man man/man1/heif-convert.1
+@man man/man1/heif-dec.1
 @man man/man1/heif-enc.1
 @man man/man1/heif-info.1
 @man man/man1/heif-thumbnailer.1

@@ -1,9 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.17.6
+V=		1.18.0
 DISTNAME=	libheif-$V
 
-SHARED_LIBS +=  heif 2.0
+SHARED_LIBS +=  heif 2.1
 
 CATEGORIES=	multimedia graphics
 
@@ -13,7 +13,7 @@ HOMEPAGE=	https://github.com/strukturag/libheif
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} aom c dav1d de265 gdk_pixbuf-2.0
-WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png sharpyuv x265
+WANTLIB += glib-2.0 gobject-2.0 intl jpeg m png sharpyuv tiff x265
 WANTLIB += z
 
 SITES=		https://github.com/strukturag/libheif/releases/download/v$V/
