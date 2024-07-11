@@ -1,0 +1,5 @@
+lib/python${MODPY_VERSION}/site-packages/git_filter_repo.py
+libexec/git/git-filter-repo
+@man man/man1/git-filter-repo.1
+share/doc/git/
+share/doc/git/git-filter-repo.html
