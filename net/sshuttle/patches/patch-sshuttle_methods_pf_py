@@ -6,6 +6,8 @@ int main (void) {
 	printf("%zu\n", sizeof(struct pfioc_rule));
 }
 
+https://github.com/sshuttle/sshuttle/pull/815
+
 Index: sshuttle/methods/pf.py
 --- sshuttle/methods/pf.py.orig
 +++ sshuttle/methods/pf.py
