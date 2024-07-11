@@ -1,6 +1,4 @@
-REVISION-main =		1
-
-VERSION =		3.3.3
+VERSION =		3.3.4
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
@@ -61,5 +59,6 @@ pre-install:
 
 post-install:
 	${FIX_RBCONFIG}
+	rm -rf ${PREFIX}/lib/ruby/gems/${REV}/gems/{debug,rbs}-*/ext/
 
 .include <bsd.port.mk>

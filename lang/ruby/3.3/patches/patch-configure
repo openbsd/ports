@@ -15,7 +15,7 @@ Index: configure
  do :
  
  
-@@ -31909,7 +31909,7 @@ fi
+@@ -31926,7 +31926,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -24,7 +24,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -34035,7 +34035,7 @@ then :
+@@ -34052,7 +34052,7 @@ then :
  
  else $as_nop
  
