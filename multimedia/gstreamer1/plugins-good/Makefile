@@ -5,6 +5,9 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 SITES=			${SITE_GST:=gst-plugins-good/}
 
+# Override ../Makefile.inc for C++ plugins
+COMPILER_LANGS=		c c++
+
 WANTLIB += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes Xtst
 WANTLIB += bz2 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
