@@ -1,7 +1,6 @@
 COMMENT=	clone of the classic Frog Bog game
 
-DISTNAME =	batrachians-0.1.7
-REVISION =	1
+DISTNAME=	batrachians-0.2.0
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/batrachians.html
@@ -11,12 +10,14 @@ PERMIT_PACKAGE=	Yes
 
 SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
-WANTLIB=	SDL SDL_image SDL_mixer c m pthread ${COMPILER_LIBCXX} flatzebra-0.1>=1
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
+WANTLIB += SDL2_ttf c flatzebra-0.2 m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
+
+LIB_DEPENDS=	devel/flatzebra>=0.2.0
 
 RUN_DEPENDS=	devel/desktop-file-utils
-LIB_DEPENDS=	devel/flatzebra>=0.1.7
 
 CONFIGURE_STYLE=gnu
 
