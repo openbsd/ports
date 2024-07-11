@@ -19,9 +19,9 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 
 RUN_DEPENDS =		devel/git
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
 
 NO_BUILD =		Yes
-NO_TEST =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/git
@@ -34,5 +34,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${MODPY_SITEPKG}
 	ln -s ${TRUEPREFIX}/libexec/git/git-filter-repo \
 		${DESTDIR}${MODPY_SITEPKG}/git_filter_repo.py
+
+do-test:
+	sed -i s,/bin/bash,/bin/sh, ${WRKSRC}/t/run_tests
+	${WRKSRC}/t/run_tests
 
 .include <bsd.port.mk>
