@@ -11,6 +11,9 @@ HOMEPAGE=		https://pio.sourceforge.net/
 # program GPLv2+, icons CC-BY-SA-4.0
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl m notify pango-1.0 pangocairo-1.0
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
