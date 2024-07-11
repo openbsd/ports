@@ -55,13 +55,10 @@ Start the daemon:
 resolv.conf
 ===========
 
-Set ${SYSCONFDIR}/resolv.conf to perform queries from dnscrypt-proxy:
+Managed by resolvd(8). One way is to disable it and force
+${SYSCONFDIR}/resolv.conf to perform queries from dnscrypt-proxy:
 
 nameserver 127.0.0.1
 lookup file bind
-
-Note: If your IP address is dynamically fetched, dhclient(8) will normally
-update resolv.conf with network-provided DNS servers. This can be avoided by
-using "ignore domain-name, domain-name-servers;" in ${SYSCONFDIR}/dhclient.conf.
 
 For more information, see https://dnscrypt.info/
