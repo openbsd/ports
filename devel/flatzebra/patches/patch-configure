@@ -1,0 +1,53 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -16097,12 +16097,12 @@ if test -n "$SDL2_CFLAGS"; then
+     pkg_cv_SDL2_CFLAGS="$SDL2_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"sdl2 >= \$SDL2_MINVER SDL2_image >= \$SDL2_IMAGE_MINVER SDL2_mixer >= \$SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= \$SDL2_TTF_MINVER\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"sdl2 >= \$SDL2_MINVER SDL2_image >= \$SDL2_IMAGE_MINVER SDL2_mixer >= \$SDL2_MIXER_MINVER SDL2_gfx >= \$SDL2_GFX_MINVER SDL2_ttf >= \$SDL2_TTF_MINVER\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_SDL2_CFLAGS=`$PKG_CONFIG --cflags "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>/dev/null`
++  pkg_cv_SDL2_CFLAGS=`$PKG_CONFIG --cflags "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16114,12 +16114,12 @@ if test -n "$SDL2_LIBS"; then
+     pkg_cv_SDL2_LIBS="$SDL2_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"sdl2 >= \$SDL2_MINVER SDL2_image >= \$SDL2_IMAGE_MINVER SDL2_mixer >= \$SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= \$SDL2_TTF_MINVER\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"sdl2 >= \$SDL2_MINVER SDL2_image >= \$SDL2_IMAGE_MINVER SDL2_mixer >= \$SDL2_MIXER_MINVER SDL2_gfx >= \$SDL2_GFX_MINVER SDL2_ttf >= \$SDL2_TTF_MINVER\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_SDL2_LIBS=`$PKG_CONFIG --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>/dev/null`
++  pkg_cv_SDL2_LIBS=`$PKG_CONFIG --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+   pkg_failed=yes
+@@ -16140,14 +16140,14 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        SDL2_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>&1`
++	        SDL2_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>&1`
+         else
+-	        SDL2_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>&1`
++	        SDL2_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$SDL2_PKG_ERRORS" >&5
+ 
+-	as_fn_error $? "Package requirements (sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER) were not met:
++	as_fn_error $? "Package requirements (sdl2 >= $SDL2_MINVER SDL2_image >= $SDL2_IMAGE_MINVER SDL2_mixer >= $SDL2_MIXER_MINVER SDL2_gfx >= $SDL2_GFX_MINVER SDL2_ttf >= $SDL2_TTF_MINVER) were not met:
+ 
+ $SDL2_PKG_ERRORS
+ 
