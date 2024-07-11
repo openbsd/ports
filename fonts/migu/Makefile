@@ -2,6 +2,7 @@ COMMENT =	mixture of M+ and IPA Gothic fonts, focused on kanji
 
 V =		20200307
 PKGNAME =	migu-$V
+MODFONT_FAMILY =	migu
 
 CATEGORIES =	fonts
 
@@ -24,8 +25,6 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/migu
-	${INSTALL_DATA} ${WRKDIR}/*/*.ttf ${PREFIX}/share/fonts/migu
+MODFONT_FONTFILES =	*/*.ttf
 
 .include <bsd.port.mk>

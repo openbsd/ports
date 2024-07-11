@@ -23,17 +23,13 @@ MODULES =		font
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
+# currently JP fonts only have hinted/unhinted directory,
+# this package use hinted font following Noto fonts.
+MODFONT_FONTFILES =	OpenType/*/*.otf \
+			TrueType/*/*.ttf \
+			OpenType/IBM-Plex-Sans-JP/hinted/*.otf \
+			TrueType/IBM-Plex-Sans-JP/hinted/*.ttf
+MODFONT_DOCFILES =	OpenType/IBM-Plex-Sans/license.txt
 FONTDIR =		${PREFIX}/share/fonts/ibm-plex
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/OpenType/*/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/TrueType/*/*.ttf ${FONTDIR}
-	# currently JP fonts only have hinted/unhinted directory,
-	# this package use hinted font following Noto fonts.
-	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans-JP/hinted/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/TrueType/IBM-Plex-Sans-JP/hinted/*.ttf ${FONTDIR}
-	${INSTALL_DATA_DIR} ${MODFONT_DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/OpenType/IBM-Plex-Sans/license.txt ${MODFONT_DOCDIR}
 
 .include <bsd.port.mk>

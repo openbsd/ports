@@ -5,6 +5,8 @@ PKGNAME =	cascadia-code-${V}
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
+MODFONT_FAMILY =	cascadia-code
+
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
 
@@ -16,9 +18,7 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/cascadia
-	${INSTALL_DATA} ${WRKDIR}/ttf/*.ttf ${PREFIX}/share/fonts/cascadia
-	${INSTALL_DATA} ${WRKDIR}/otf/static/*.otf ${PREFIX}/share/fonts/cascadia
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/cascadia
+MODFONT_FONTFILES =	ttf/*.ttf otf/static/*.otf
 
 .include <bsd.port.mk>

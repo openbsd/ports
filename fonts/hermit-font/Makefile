@@ -19,7 +19,7 @@ MODULES=	font
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-MODFONT_TYPES=	otf
+MODFONT_FONTFILES=	*.otf
 WRKDIST=	${WRKDIR}
 
 .include <bsd.port.mk>

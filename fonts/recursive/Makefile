@@ -18,13 +18,11 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${MODFONT_DIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/Recursive_Desktop/separate_statics/OTF/*.otf \
-		${WRKSRC}/Recursive_Code/RecMonoCasual/*.ttf \
-		${WRKSRC}/Recursive_Code/RecMonoDuotone/*.ttf \
-		${WRKSRC}/Recursive_Code/RecMonoLinear/*.ttf \
-		${WRKSRC}/Recursive_Code/RecMonoSemicasual/*.ttf ${MODFONT_DIR}
+MODFONT_FONTFILES =	Recursive_Desktop/separate_statics/OTF/*.otf \
+			Recursive_Desktop/separate_statics/OTF/*.otf \
+			Recursive_Code/RecMonoCasual/*.ttf \
+			Recursive_Code/RecMonoDuotone/*.ttf \
+			Recursive_Code/RecMonoLinear/*.ttf \
+			Recursive_Code/RecMonoSemicasual/*.ttf
 
 .include <bsd.port.mk>

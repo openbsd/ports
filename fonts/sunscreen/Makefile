@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			http://www.simon-cozens.org/downloads/
 
 MODULES =		font
-MODFONT_TYPES =		otf
+MODFONT_FONTFILES =	*.otf
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

@@ -20,10 +20,6 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-DOCDIR =	${PREFIX}/share/doc/blockzone
-
-post-install:
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCDIR}
+MODFONT_DOCFILES =	LICENSE
 
 .include <bsd.port.mk>

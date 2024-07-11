@@ -4,6 +4,7 @@ V =			4.105
 
 DISTNAME =		vollkorn-${V:S/./-/}
 PKGNAME =		vollkorn-$V
+MODFONT_FAMILY =	vollkorn
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
@@ -22,14 +23,8 @@ NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
 
-FONTDIR =		${PREFIX}/share/fonts/vollkorn
-DOCDIR =		${PREFIX}/share/doc/vollkorn
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/PS-OTF/*.otf ${FONTDIR}
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/OFL.txt ${DOCDIR}
+MODFONT_FONTFILES =	TTF/*.ttf \
+			PS-OTF/*.otf
+MODFONT_DOCFILES =	OFL.txt
 
 .include <bsd.port.mk>

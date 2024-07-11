@@ -2,6 +2,7 @@ COMMENT =	mixture of M+ and IPA Gothic fonts, focused on kanji
 
 V =		20200307
 PKGNAME =	migmix-$V
+MODFONT_FAMILY =	migmix
 
 CATEGORIES =	fonts
 
@@ -21,11 +22,9 @@ DISTFILES =	migmix-1m-$V.zip \
 
 MODULES =	font
 
+MODFONT_FONTFILES =	*/*.ttf
+
 NO_BUILD =	Yes
 NO_TEST =	Yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/migmix
-	${INSTALL_DATA} ${WRKDIR}/*/*.ttf ${PREFIX}/share/fonts/migmix
 
 .include <bsd.port.mk>

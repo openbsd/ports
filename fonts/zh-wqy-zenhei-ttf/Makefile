@@ -17,11 +17,11 @@ MODULES =	font
 SITES=		${SITE_SOURCEFORGE:=wqy/}
 EXTRACT_SUFX=	.tar.gz
 
-MODFONT_TYPES =	ttc
+MODFONT_FONTFILES =	*.ttc
 
 WRKDIST=	${WRKDIR}/wqy-zenhei
 NO_BUILD=	Yes
 NO_TEST=	Yes
-MODFONT_DIR=	${PREFIX}/share/fonts/wqy
+MODFONT_FONTDIR=	${PREFIX}/share/fonts/wqy
 
 .include <bsd.port.mk>

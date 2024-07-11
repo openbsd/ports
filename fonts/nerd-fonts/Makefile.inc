@@ -22,5 +22,5 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 
 MODFONT_FAMILY =	${NF_FONT:L}
-MODFONT_DIR =		${PREFIX}/share/fonts/${NF_PROJECT}/${NF_FONT:L}
+MODFONT_FONTDIR =	${PREFIX}/share/fonts/${NF_PROJECT}/${NF_FONT:L}
 DOCDIR =		${PREFIX}/share/doc/${NF_PROJECT}/${NF_FONT:L}

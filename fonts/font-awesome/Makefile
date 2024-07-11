@@ -4,6 +4,8 @@ V =		6.5.2
 PKGNAME =	font-awesome-${V}
 DISTNAME =	fontawesome-free-${V}-desktop
 
+MODFONT_FAMILY =	font-awesome
+
 CATEGORIES=	fonts
 
 HOMEPAGE =	https://fontawesome.com
@@ -17,18 +19,11 @@ EXTRACT_SUFX =	.zip
 PERMIT_PACKAGE=	Yes
 
 MODULES =	font
-MODFONT_TYPES =	otf
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-FONTS_DIR=	${PREFIX}/share/fonts/font-awesome
-DOCDIR =	${PREFIX}/share/doc/font-awesome
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/otfs/*.otf ${FONTS_DIR}
-	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
+MODFONT_FONTFILES =	otfs/*.otf
+MODFONT_DOCFILES =	*.txt
 
 .include <bsd.port.mk>

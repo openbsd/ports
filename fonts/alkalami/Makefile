@@ -19,7 +19,7 @@ MODULES =		font
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-MODFONT_TYPES =		ttf
+MODFONT_FONTFILES =	*.ttf
 MODFONT_DOCFILES =	FONTLOG.txt README.txt
 
 .include <bsd.port.mk>

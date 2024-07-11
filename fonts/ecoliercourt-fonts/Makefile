@@ -21,7 +21,7 @@ EXTRACT_ONLY=
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-pre-install:
-	cp ${FULLDISTDIR}/*.ttf ${WRKSRC}
+WRKDIST =	${FULLDISTDIR}
+MODFONT_FONTFILES =	*.ttf
 
 .include <bsd.port.mk>

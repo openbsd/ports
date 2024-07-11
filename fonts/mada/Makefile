@@ -3,7 +3,7 @@ COMMENT =	modernist Arabic typeface
 V =		1.3
 DISTNAME =	mada-${V}
 
-CATEGORIES =	fonts
+MODFONT_FAMILY =	mada
 
 MAINTAINER =	George Rosamond <george@nycbug.org>
 
@@ -17,13 +17,9 @@ MODULES =	font
 NO_BUILD =	Yes
 NO_TEST =	Yes
 
-FONTDIR =	${PREFIX}/share/fonts/mada
-DOCDIR =	${PREFIX}/share/doc/mada
 WRKDIST =	${WRKDIR}/Mada-${V}
 
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.otf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/README.txt ${DOCDIR}
+MODFONT_FONTFILES =	*.otf
+MODFONT_DOCFILES =	README.txt
 
 .include <bsd.port.mk>

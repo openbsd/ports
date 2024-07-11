@@ -13,7 +13,7 @@ HOMEPAGE =	https://brailleinstitute.org/freefont
 PERMIT_PACKAGE = Yes
 
 MODULES =	font
-MODFONT_TYPES =	otf
+MODFONT_FONTFILES =	*.otf
 
 SITES =	https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/
 SITES.doc =	https://brailleinstitute.org/wp-content/uploads/2020/11/
