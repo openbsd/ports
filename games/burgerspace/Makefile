@@ -1,6 +1,6 @@
 COMMENT=	burgertime clone for X
 
-DISTNAME =	burgerspace-1.9.5
+DISTNAME=	burgerspace-1.10.0
 
 CATEGORIES=	games
 
@@ -9,16 +9,15 @@ HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/burgerspace.html
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC SDL SDL_image SDL_mixer c flatzebra-0.1
-WANTLIB += iconv jpeg lzma m mikmod ogg png pthread smpeg sndio tiff
-WANTLIB += usbhid vorbis vorbisfile webp z zstd
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
+WANTLIB += SDL2_ttf c flatzebra-0.2 m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
-LIB_DEPENDS=	converters/libiconv \
-		devel/flatzebra>=0.1.7
+LIB_DEPENDS=	devel/flatzebra>=0.2.0
+
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu

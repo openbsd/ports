@@ -1,0 +1,11 @@
+Index: src/BurgerSpaceEngine.cpp
+--- src/BurgerSpaceEngine.cpp.orig
++++ src/BurgerSpaceEngine.cpp
+@@ -30,6 +30,7 @@
+ #include <fstream>
+ #include <iomanip>
+ #include <algorithm>
++#include <sstream>
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
