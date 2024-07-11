@@ -45,6 +45,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_INCLUDEDIR=${LOCALBASE}/include/mapnik #deconf
 # fetches catch2 from github when running configure
 # https://github.com/mapnik/mapnik/issues/4329#issuecomment-1244923292 for a workaround
 #CONFIGURE_ARGS +=	-DBUILD_TESTING=ON
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 # Test data could be fetched from github and extracted to ${WRKBUILD}/out/test/data{,-visual} subdirs.
 # https://github.com/mapnik/test-data
