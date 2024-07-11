@@ -16,8 +16,8 @@ WANTLIB += gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0 scintilla
 SITES=			https://www.scintilla.org/
 EXTRACT_SUFX=		.tgz
 
-# c++17
-COMPILER=		base-clang ports-gcc
+# C++20
+COMPILER=		base-clang ports-clang
 
 LIB_DEPENDS=		x11/gtk+3 \
 			editors/scintilla
