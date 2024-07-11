@@ -1,10 +1,11 @@
 COMMENT=	command-line HTTP client
 
-MODPY_EGG_VERSION=	3.2.2
+# intentionally no py- prefix
+MODPY_EGG_VERSION=	3.2.3
 GH_TAGNAME=	${MODPY_EGG_VERSION}
 GH_ACCOUNT=	httpie
 GH_PROJECT=	httpie
-REVISION =	1
+WRKDIST=	${WRKDIR}/cli-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www net
 

@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -104,7 +104,7 @@ test =
+     werkzeug<2.1.0
+ 
+ [options.data_files]
+-share/man/man1 =
++man/man1 =
+     extras/man/http.1
+     extras/man/https.1
+     extras/man/httpie.1
