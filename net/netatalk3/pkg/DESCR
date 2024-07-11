@@ -1,9 +1,13 @@
-Netatalk is an OpenSource software package, that can be used to turn a
-*NIX machine into an extremely high-performance and reliable file server
-for Macintosh computers.
+Netatalk is a Free and Open Source file server that implements the Apple Filing 
+rotocol (AFP; https://en.wikipedia.org/wiki/Apple_Filing_Protocol) 3.4 over
+TCP/IP.
+AFP is the primary file sharing protocol used on Apple II, Classic Mac OS, and
+Mac OS X, as well as one of several supported protocols on macOS.
+A *NIX/*BSD system running Netatalk provides high-speed AppleShare file sharing
+for macOS and Classic Mac OS clients.
 
-Using Netatalk's AFP 3.3 compliant file-server leads to significantly
-higher transmission speeds compared with Macs accessing a server via
-Samba/NFS while providing clients with the best possible user experience
-(full support for Macintosh metadata, flawlessly supporting mixed
-environments of classic Mac OS and OS X clients).
+If you need Netatalk to provide AFP over AppleTalk (DDP) in order to do file
+sharing with very old Macs or Apple II computers, please install the old stable
+netatalk-2.x package.
+AppleTalk support was removed in Netatalk 3.0, however 2.x is still being
+actively maintained.

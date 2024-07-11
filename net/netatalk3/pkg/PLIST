@@ -37,6 +37,7 @@ include/atalk/unix.h
 include/atalk/util.h
 include/atalk/vfs.h
 include/atalk/volume.h
+@static-lib lib/libatalk.a
 lib/libatalk.la
 @lib lib/libatalk.so.${LIBatalk_VERSION}
 lib/netatalk/

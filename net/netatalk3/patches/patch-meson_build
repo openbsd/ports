@@ -1,0 +1,13 @@
+../../pobj/netatalk-3.2.2/netatalk-3.2.2/etc/uams/meson.build:229:30: ERROR: Unknown variable "pam".
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -1587,6 +1587,7 @@ uams_options = ''
+ 
+ if not enable_pam
+     have_pam = false
++    pam = []
+ else
+     if host_os != 'sunos'
+         pam_paths = [

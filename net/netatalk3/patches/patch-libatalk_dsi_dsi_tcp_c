@@ -1,8 +1,9 @@
 http://sourceforge.net/p/netatalk/code/ci/0b7f7fe6e is wrong for OpenBSD.
 
---- libatalk/dsi/dsi_tcp.c.orig	Mon Jun  6 13:21:51 2016
-+++ libatalk/dsi/dsi_tcp.c	Fri Jul 29 15:06:49 2016
-@@ -452,7 +452,12 @@ int dsi_tcp_init(DSI *dsi, const char *hostname, const
+Index: libatalk/dsi/dsi_tcp.c
+--- libatalk/dsi/dsi_tcp.c.orig
++++ libatalk/dsi/dsi_tcp.c
+@@ -451,7 +451,12 @@ int dsi_tcp_init(DSI *dsi, const char *hostname, const
  
      if (!address) {
          hints.ai_flags |= AI_PASSIVE;

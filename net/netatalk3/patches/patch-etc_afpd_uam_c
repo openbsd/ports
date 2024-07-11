@@ -1,11 +1,12 @@
---- etc/afpd/uam.c.orig	Fri Jul 29 14:34:05 2016
-+++ etc/afpd/uam.c	Fri Jul 29 14:33:29 2016
-@@ -205,7 +205,7 @@ struct passwd *uam_getname(void *private, char *name, 
+Index: etc/afpd/uam.c
+--- etc/afpd/uam.c.orig
++++ etc/afpd/uam.c
+@@ -199,7 +199,7 @@ struct passwd *uam_getname(void *private, char *name, 
      char *p;
      size_t namelen, gecoslen = 0, pwnamelen = 0;
  
 -    if ((pwent = getpwnam(name)))
 +    if ((pwent = getpwnam_shadow(name)))
          return pwent;
-         
+ 
      /* if we have a NT domain name try with it */
