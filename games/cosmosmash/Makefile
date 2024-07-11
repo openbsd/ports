@@ -1,7 +1,6 @@
 COMMENT=	astrosmash clone for X
 
-DISTNAME =	cosmosmash-1.4.8
-REVISION =	2
+DISTNAME=	cosmosmash-1.5.0
 
 CATEGORIES=	games
 
@@ -10,16 +9,15 @@ HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/cosmosmash.html
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${COMPILER_LIBCXX}
-WANTLIB += FLAC iconv jpeg mikmod ogg png smpeg sndio tiff usbhid
-WANTLIB += vorbis vorbisfile webp z lzma zstd
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
+WANTLIB += SDL2_ttf c flatzebra-0.2 m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
-LIB_DEPENDS =	converters/libiconv \
-		devel/flatzebra>=0.1.7
+LIB_DEPENDS=	devel/flatzebra>=0.2.0
+
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu
