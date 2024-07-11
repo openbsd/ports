@@ -3,6 +3,10 @@
 +-----------------------------------------------------------------------
 
 In order to play the game you need the data files from Tyrian.
-
 To install these data files systemwide, you can build and install the
 games/opentyrian-data port.
+
+Alternatively, you can manually download the files from:
+    https://www.camanis.net/tyrian/tyrian21.zip
+and manually install them:
+    unzip -j -d ${TRUEPREFIX}/share/opentyrian tyrian21.zip

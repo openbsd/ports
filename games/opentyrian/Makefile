@@ -2,7 +2,7 @@ V =			2.1.20221123
 COMMENT =		port of the DOS shoot-em-up Tyrian
 DISTNAME =		opentyrian-${V}
 CATEGORIES =		games x11
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		opentyrian
 GH_PROJECT =		opentyrian
