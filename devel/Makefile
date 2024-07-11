@@ -181,6 +181,7 @@
      SUBDIR += git-cola
      SUBDIR += git-crypt
      SUBDIR += git-cvs
+     SUBDIR += git-filter-repo
      SUBDIR += git-lfs
      SUBDIR += github-backup
      SUBDIR += github-cli
