@@ -16,11 +16,13 @@ share/icons/hicolor/256x256/apps/snes9x.png
 share/icons/hicolor/32x32/apps/snes9x.png
 share/icons/hicolor/64x64/apps/snes9x.png
 share/icons/hicolor/scalable/apps/snes9x.svg
+share/locale/de/LC_MESSAGES/snes9x-gtk.mo
 share/locale/es/LC_MESSAGES/snes9x-gtk.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/snes9x-gtk.mo
 share/locale/ja/LC_MESSAGES/snes9x-gtk.mo
+share/locale/pl/LC_MESSAGES/snes9x-gtk.mo
 share/locale/pt_BR/LC_MESSAGES/snes9x-gtk.mo
 share/locale/ru/LC_MESSAGES/snes9x-gtk.mo
 share/locale/sr@latin/LC_MESSAGES/snes9x-gtk.mo

@@ -1,0 +1,14 @@
+dlopen correctly - leave out Linux version suffix
+
+Index: external/imgui/imgui_impl_opengl3_loader.h
+--- external/imgui/imgui_impl_opengl3_loader.h.orig
++++ external/imgui/imgui_impl_opengl3_loader.h
+@@ -662,7 +662,7 @@ static GL3WglProc (*glx_get_proc_address)(const GLubyt
+ 
+ static int open_libgl(void)
+ {
+-    libgl = dlopen("libGL.so.1", RTLD_LAZY | RTLD_LOCAL);
++    libgl = dlopen("libGL.so", RTLD_LAZY | RTLD_LOCAL);
+     if (!libgl)
+         return GL3W_ERROR_LIBRARY_OPEN;
+     *(void **)(&glx_get_proc_address) = dlsym(libgl, "glXGetProcAddressARB");
