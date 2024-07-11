@@ -1,7 +1,6 @@
 COMMENT=	Night Stalker clone for X
 
-DISTNAME=	afternoonstalker-1.1.6
-REVISION=	1
+DISTNAME=	afternoonstalker-1.2.0
 
 CATEGORIES=	games
 
@@ -10,13 +9,15 @@ HOMEPAGE=	http://perso.b2b2c.ca/~sarrazip/dev/afternoonstalker.html
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_gfx-1.0 SDL2_image SDL2_mixer
+WANTLIB += SDL2_ttf c flatzebra-0.2 m
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 SITES=		http://perso.b2b2c.ca/~sarrazip/dev/
 
-LIB_DEPENDS =	devel/flatzebra>=0.1.7
+LIB_DEPENDS=	devel/flatzebra>=0.2.0
+
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE= gnu
