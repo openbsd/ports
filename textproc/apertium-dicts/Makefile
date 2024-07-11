@@ -13,10 +13,10 @@
      SUBDIR += cy-en
      SUBDIR += dan
      SUBDIR += dan-nor
-     SUBDIR += en-es
      SUBDIR += en-gl
      SUBDIR += eng
      SUBDIR += eng-cat
+     SUBDIR += eng-spa
      SUBDIR += eo-ca
      SUBDIR += eo-en
      SUBDIR += eo-es
