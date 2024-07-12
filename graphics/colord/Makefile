@@ -3,7 +3,7 @@ COMMENT=		device color profile management daemon
 GH_ACCOUNT=		hughsie
 GH_PROJECT=		colord
 GH_TAGNAME=		1.4.7
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += colordprivate             2.0 # 2.0.5
 SHARED_LIBS += colord                    2.0 # 2.0.5
@@ -54,9 +54,6 @@ CONFIGURE_ARGS=		-Dudev_rules=false \
 			-Ddaemon_user=_colord \
 			-Dpnp_ids=${LOCALBASE}/share/hwdata/pnp.ids
 
-# XXX fails with libxml >=2.13.0; ERROR: Error in gtkdoc helper script
-CONFIGURE_ARGS +=	-Ddocs=false
-
 # XXX needs docbook-xsl-ns
 CONFIGURE_ARGS +=	-Dman=false
 
@@ -66,6 +63,12 @@ CONFIGURE_ARGS +=	-Dargyllcms_sensor=false
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/colord/cd-icc-store.c \
 		${WRKSRC}/src/cd-main.c
+
+post-build:
+# XXX
+# ERROR: ['/usr/local/bin/gtkdoc-mkhtml', '--path=/usr/ports/pobj/colord-1.4.7/colord-1.4.7/doc/api:/usr/ports/pobj/colord-1.4.7/build-amd64/doc/api', 'colord', '../colord-docs.xml'] failed with status 6
+# warning: failed to load external entity "../../../COPYING"
+	cp ${WRKSRC}/COPYING ${WRKBUILD}/
 
 post-install:
 	rm -rf ${WRKINST}/var/lib
