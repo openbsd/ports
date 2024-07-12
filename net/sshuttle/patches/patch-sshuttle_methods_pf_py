@@ -1,3 +1,8 @@
+From 9c3107bed7638068ef61bc729470fadfe99a3556 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 19 Nov 2022 18:46:47 +0100
+Subject: [PATCH] Unbreak OpenBSD runtime.
+
 #include <stdio.h>
 #include <net/if.h>
 #include <net/pfvar.h>
@@ -5,8 +10,6 @@
 int main (void) {
 	printf("%zu\n", sizeof(struct pfioc_rule));
 }
-
-https://github.com/sshuttle/sshuttle/pull/815
 
 Index: sshuttle/methods/pf.py
 --- sshuttle/methods/pf.py.orig
