@@ -1,10 +1,15 @@
 - Use our own libtool
 - Link with libc++abi on arm (to access unwind symbols)
 
+From 45d284f2d066cc3a080c5be88e51b4d934349797 Mon Sep 17 00:00:00 2001
+From: Bill Roberts <152999275+billatarm@users.noreply.github.com>
+Date: Sat, 1 Jun 2024 12:34:53 -0500
+Subject: [PATCH] aarch64: support pointer authentication (#834)
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9940,7 +9940,7 @@ esac
+@@ -9882,7 +9882,7 @@ esac
  LIBTOOL_DEPS=$ltmain
  
  # Always use our own libtool.
@@ -13,7 +18,30 @@ Index: configure
  
  
  
-@@ -19725,6 +19725,12 @@ if test "x$sys_symbol_underscore" = xyes; then
+@@ -19241,11 +19241,11 @@ main (void)
+ 
+ #ifdef __clang__
+ # if __has_feature(ptrauth_calls)
+-#  define HAVE_PTRAUTH 1
++#  define HAVE_ARM64E_PTRAUTH 1
+ # endif
+ #endif
+ 
+-#ifndef HAVE_PTRAUTH
++#ifndef HAVE_ARM64E_PTRAUTH
+ # error Pointer authentication not supported
+ #endif
+ 
+@@ -19266,7 +19266,7 @@ fi
+ printf "%s\n" "$libffi_cv_as_ptrauth" >&6; }
+ if test "x$libffi_cv_as_ptrauth" = xyes; then
+ 
+-printf "%s\n" "#define HAVE_PTRAUTH 1" >>confdefs.h
++printf "%s\n" "#define HAVE_ARM64E_PTRAUTH 1" >>confdefs.h
+ 
+ fi
+ 
+@@ -19341,6 +19341,12 @@ if test "x$sys_symbol_underscore" = xyes; then
  printf "%s\n" "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi

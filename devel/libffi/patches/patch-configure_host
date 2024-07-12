@@ -1,7 +1,7 @@
 Index: configure.host
 --- configure.host.orig
 +++ configure.host
-@@ -223,7 +223,7 @@ case "${host}" in
+@@ -224,7 +224,7 @@ case "${host}" in
  	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
  	CFLAGS="$CFLAGS -D__NO_FPRS__"
  	;;

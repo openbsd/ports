@@ -1,0 +1,24 @@
+From 45d284f2d066cc3a080c5be88e51b4d934349797 Mon Sep 17 00:00:00 2001
+From: Bill Roberts <152999275+billatarm@users.noreply.github.com>
+Date: Sat, 1 Jun 2024 12:34:53 -0500
+Subject: [PATCH] aarch64: support pointer authentication (#834)
+
+Index: include/ffi_cfi.h
+--- include/ffi_cfi.h.orig
++++ include/ffi_cfi.h
+@@ -49,6 +49,7 @@
+ # define cfi_personality(enc, exp)	.cfi_personality enc, exp
+ # define cfi_lsda(enc, exp)		.cfi_lsda enc, exp
+ # define cfi_escape(...)		.cfi_escape __VA_ARGS__
++# define cfi_window_save		.cfi_window_save
+ 
+ #else
+ 
+@@ -71,6 +72,7 @@
+ # define cfi_personality(enc, exp)
+ # define cfi_lsda(enc, exp)
+ # define cfi_escape(...)
++# define cfi_window_save
+ 
+ #endif /* HAVE_AS_CFI_PSEUDO_OP */
+ #endif /* FFI_CFI_H */

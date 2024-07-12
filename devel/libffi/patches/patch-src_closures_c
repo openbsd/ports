@@ -1,7 +1,39 @@
+From 45d284f2d066cc3a080c5be88e51b4d934349797 Mon Sep 17 00:00:00 2001
+From: Bill Roberts <152999275+billatarm@users.noreply.github.com>
+Date: Sat, 1 Jun 2024 12:34:53 -0500
+Subject: [PATCH] aarch64: support pointer authentication (#834)
+
 Index: src/closures.c
 --- src/closures.c.orig
 +++ src/closures.c
-@@ -904,6 +904,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -164,7 +164,7 @@ ffi_tramp_is_present (__attribute__((unused)) void *pt
+ 
+ #include <mach/mach.h>
+ #include <pthread.h>
+-#ifdef HAVE_PTRAUTH
++#ifdef HAVE_ARM64E_PTRAUTH
+ #include <ptrauth.h>
+ #endif
+ #include <stdio.h>
+@@ -223,7 +223,7 @@ ffi_trampoline_table_alloc (void)
+   /* Remap the trampoline table on top of the placeholder page */
+   trampoline_page = config_page + PAGE_MAX_SIZE;
+ 
+-#ifdef HAVE_PTRAUTH
++#ifdef HAVE_ARM64E_PTRAUTH
+   trampoline_page_template = (vm_address_t)(uintptr_t)ptrauth_auth_data((void *)&ffi_closure_trampoline_table_page, ptrauth_key_function_pointer, 0);
+ #else
+   trampoline_page_template = (vm_address_t)&ffi_closure_trampoline_table_page;
+@@ -268,7 +268,7 @@ ffi_trampoline_table_alloc (void)
+       ffi_trampoline_table_entry *entry = &table->free_list_pool[i];
+       entry->trampoline =
+ 	(void *) (trampoline_page + (i * FFI_TRAMPOLINE_SIZE));
+-#ifdef HAVE_PTRAUTH
++#ifdef HAVE_ARM64E_PTRAUTH
+       entry->trampoline = ptrauth_sign_unauthenticated(entry->trampoline, ptrauth_key_function_pointer, 0);
+ #endif
+ 
+@@ -906,6 +906,7 @@ dlmmap (void *start, size_t length, int prot,
        return ptr;
      }
  
@@ -9,7 +41,7 @@ Index: src/closures.c
    /* -1 != execfd hints that we already decided to use dlmmap_locked
       last time.  */
    if (execfd == -1 && is_mprotect_enabled ())
-@@ -932,6 +933,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -934,6 +935,7 @@ dlmmap (void *start, size_t length, int prot,
  	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
  	 MREMAP_DUP and prot at this point.  */
      }
