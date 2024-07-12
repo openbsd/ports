@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.13.0
+V =		1.13.1
 V_SHARDS =	0.18.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
