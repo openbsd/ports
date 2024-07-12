@@ -1,0 +1,18 @@
+Allow X509_ALGOR to be opaque
+
+https://github.com/zeek/zeek/pull/3829
+
+Index: src/file_analysis/analyzer/x509/X509.cc
+--- src/file_analysis/analyzer/x509/X509.cc.orig
++++ src/file_analysis/analyzer/x509/X509.cc
+@@ -176,7 +176,9 @@ RecordValPtr X509::ParseCertificate(X509Val* cert_val,
+ 	i2a_ASN1_OBJECT(bio, ssl_cert->sig_alg->algorithm);
+ #else
+ 	const X509_ALGOR* sigalg = X509_get0_tbs_sigalg(ssl_cert);
+-	i2a_ASN1_OBJECT(bio, sigalg->algorithm);
++	const ASN1_OBJECT *alg;
++	X509_ALGOR_get0(&alg, NULL, NULL, sigalg);
++	i2a_ASN1_OBJECT(bio, alg);
+ #endif
+ 	len = BIO_gets(bio, buf, sizeof(buf));
+ 	pX509Cert->Assign(13, make_intrusive<StringVal>(len, buf));
