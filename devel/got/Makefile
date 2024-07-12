@@ -5,6 +5,7 @@ COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
 V =			0.101
 DISTNAME =		got-${V}
+REVISION-main =		0
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
 PKGNAME-gitwrapper =	gitwrapper-${V}
