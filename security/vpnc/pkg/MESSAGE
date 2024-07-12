@@ -1,9 +1,0 @@
-In order for vpnc to actually get any received IPsec packet, you have
-to disable ESP in your kernel like this:
-
-    sysctl net.inet.esp.enable=0
-
-If you are behind a NAT gateway, you have to disable UDP encapsulation
-as well:
-
-    sysctl net.inet.esp.udpencap=0

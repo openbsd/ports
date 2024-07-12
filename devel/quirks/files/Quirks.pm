@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1643 2024/07/11 14:21:00 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.1644 2024/07/12 16:24:34 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1964,6 +1964,7 @@ setup_obsolete_reason(
 	5 => 'sofia-sip',
 	3 => 'pgfouine',
 	6 => 'py3-backports-strenum',
+	67 => 'vpnc',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -2046,7 +2047,8 @@ my $obsolete_message = {
 	63 => "outdated, unmaintained, crashes on startup",
 	64 => "dead upstream, crashes when showing the Syncthing web interface, use a browser",
 	65 => "superseded by goldendict-ng",
-	66 => "superseded by opensmtpd-table-*"
+	66 => "superseded by opensmtpd-table-*",
+	67 => "unmaintained upstream, outdated for decades, only supports old crypto, expected dhclient",
 };
 
 # ->is_base_system($handle, $state):

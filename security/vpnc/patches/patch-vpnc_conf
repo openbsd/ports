@@ -1,9 +1,0 @@
---- vpnc.conf.orig	Thu Sep 13 22:40:00 2007
-+++ vpnc.conf	Thu Sep 13 22:39:04 2007
-@@ -4,3 +4,6 @@ IPSec secret <group-psk>
- IKE Authmode hybrid
- Xauth username <username>
- Xauth password <password>
-+
-+# run script to manipulate dns and routing settings
-+#Script /etc/vpnc/split.sh

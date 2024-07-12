@@ -1,6 +1,0 @@
-A VPN client compatible with Cisco's EasyVPN equipment.
-
-Supports IPSec (ESP) with Mode Configuration and Xauth.  Supports only
-shared-secret IPSec authentication, 3DES, MD5, and IP tunneling.
-
-It runs entirely in userspace.
