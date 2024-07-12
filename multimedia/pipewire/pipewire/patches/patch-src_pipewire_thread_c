@@ -54,7 +54,7 @@ Index: src/pipewire/thread.c
  
  static struct spa_thread *impl_create(void *object,
  			const struct spa_dict *props,
-@@ -106,9 +114,11 @@ static struct spa_thread *impl_create(void *object,
+@@ -112,9 +120,11 @@ static struct spa_thread *impl_create(void *object,
  		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_NAME)) != NULL &&
  		    (err = pthread_setname_np(pt, str)) != 0)
  			pw_log_warn("pthread_setname error: %s", strerror(err));
