@@ -14,6 +14,7 @@ share/applications/gnome-color-panel.desktop
 share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-display-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
+share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-multitasking-panel.desktop
 share/applications/gnome-notifications-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
@@ -57,6 +58,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-applications-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-color-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-display-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-keyboard-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-mouse-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-multitasking-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-notifications-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-online-accounts-symbolic.svg

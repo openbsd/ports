@@ -1,19 +1,9 @@
-The mouse panel needs gsd_device_manager_get() which needs GUdev.
-
 wwan needs network-manager
 
 Index: panels/meson.build
 --- panels/meson.build.orig
 +++ panels/meson.build
-@@ -6,7 +6,6 @@ panels = [
-   'color',
-   'display',
-   'keyboard',
--  'mouse',
-   'multitasking',
-   'notifications',
-   'online-accounts',
-@@ -18,7 +17,6 @@ panels = [
+@@ -18,11 +18,11 @@ panels = [
    'sound',
    'system',
    'universal-access',
@@ -21,3 +11,8 @@ Index: panels/meson.build
  ]
  
  if host_is_linux
+   panels += ['network']
++  panels += ['wwan']
+ endif
+ 
+ if host_is_linux_not_s390

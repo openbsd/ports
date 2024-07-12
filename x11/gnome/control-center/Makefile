@@ -5,6 +5,7 @@ COMMENT=		GNOME settings
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
 GNOME_VERSION=		46.3
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -45,17 +46,13 @@ BUILD_DEPENDS=		devel/iso-codes \
 			devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon
 
-# BDEP only because it's used by the wwan and sharing panels which we don't ship
-BUILD_DEPENDS +=	x11/gnome/gcr
-
 # NOTE that a11y dependencies (e.g. caribou) are not enforced on purpose.
 RUN_DEPENDS=		x11/gnome/settings-daemon \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
-
 # polkit(8) almost always needs to know the "active" session
-RUN_DEPENDS +=	sysutils/consolekit
+RUN_DEPENDS +=		sysutils/consolekit
 
 # needed for gnome-color-panel
 RUN_DEPENDS +=		x11/gnome/color-manager
