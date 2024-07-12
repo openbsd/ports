@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	3D realtime strategy on a future earth
 
 V=		4.3.2
-REVISION=	1
+REVISION=	2
 DISTNAME=	warzone2100-$V
 CATEGORIES=	games
 SITES=		https://github.com/Warzone2100/warzone2100/releases/download/$V/
@@ -16,7 +16,7 @@ HOMEPAGE=	https://wz2100.net/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcursor Xext Xfixes Xi Xrandr
-WANTLIB += Xss c curl freetype fribidi harfbuzz intl m miniupnpc
+WANTLIB += Xss c curl freetype fribidi harfbuzz iconv intl m miniupnpc
 WANTLIB += ogg openal opus physfs png samplerate sndio sodium
 WANTLIB += sqlite3 theoradec usbhid vorbis vorbisfile z
 
@@ -44,6 +44,7 @@ BUILD_DEPENDS=	archivers/libzip \
 		archivers/zip \
 		devel/gettext,-tools \
 		devel/sdl2 \
+		graphics/shaderc \
 		textproc/asciidoc \
 		textproc/asciidoctor \
 		textproc/nlohmann-json
