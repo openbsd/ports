@@ -11,8 +11,8 @@ Index: app/main.c
  #include <stdio.h>
  #include <stdlib.h>
  #include <string.h>
-@@ -416,10 +417,15 @@ main (int    argc,
-   GFile          *user_gimprc_file   = NULL;
+@@ -520,10 +521,15 @@ main (int    argc,
+   GOptionGroup   *gimp_group         = NULL;
    gchar          *backtrace_file     = NULL;
    gint            i;
 +  struct  rlimit limit;

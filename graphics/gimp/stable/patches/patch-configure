@@ -1,0 +1,29 @@
+Fix build with libheif >=1.18.0
+See: https://github.com/strukturag/libheif/commit/cf0d89c6e0809427427583290547a7757428cf5a
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -30412,18 +30412,14 @@ $as_echo "yes" >&6; }
+ fi
+ fi
+ 
+-can_import_heic=no
+-can_export_heic=no
+-can_import_avif=no
+-can_export_avif=no
++can_import_heic=yes
++can_export_heic=yes
++can_import_avif=yes
++can_export_avif=yes
+ if test "x$have_libheif" = xyes; then
+-  can_import_heic=`$PKG_CONFIG --variable=builtin_h265_decoder libheif`
+-  can_export_heic=`$PKG_CONFIG --variable=builtin_h265_encoder libheif`
+   if test "x$can_import_heic" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/heif;image/heic"
+   fi
+-  can_import_avif=`$PKG_CONFIG --variable=builtin_avif_decoder libheif`
+-  can_export_avif=`$PKG_CONFIG --variable=builtin_avif_encoder libheif`
+   if test "x$can_import_avif" = xyes; then
+     MIME_TYPES="$MIME_TYPES;image/avif"
+   fi
