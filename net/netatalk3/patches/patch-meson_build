@@ -3,7 +3,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -1587,6 +1587,7 @@ uams_options = ''
+@@ -1574,6 +1574,7 @@ uams_options = ''
  
  if not enable_pam
      have_pam = false
