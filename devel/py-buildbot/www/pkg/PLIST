@@ -13,8 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-20f98304.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-342ec232.css
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-74f03935.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning-list.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.css
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.js

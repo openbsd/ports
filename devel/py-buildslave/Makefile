@@ -1,6 +1,6 @@
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	4.0.0
+MODPY_EGG_VERSION=	4.0.1
 DISTNAME=	buildbot_worker-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
 
