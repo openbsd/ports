@@ -7,10 +7,10 @@ HOMEPAGE =	https://www.kde.org/applications/games/kajongg
 
 MODULES +=	lang/python
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kpty \

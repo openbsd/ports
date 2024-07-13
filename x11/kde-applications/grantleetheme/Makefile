@@ -10,7 +10,7 @@ WANTLIB += KF6I18n KF6IconThemes KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6TextTemplate KF6WidgetsAddons KF6XmlGui Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 

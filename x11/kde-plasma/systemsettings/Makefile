@@ -14,8 +14,8 @@ WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Widgets Qt6Xml X11 c m
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		devel/kf6/kirigami

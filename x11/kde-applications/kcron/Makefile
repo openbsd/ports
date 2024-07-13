@@ -10,10 +10,10 @@ WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6Solid
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets c m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/dbus,-suid

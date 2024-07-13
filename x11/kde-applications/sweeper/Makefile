@@ -8,11 +8,11 @@ WANTLIB += KF6I18n KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui PlasmaActivitiesStats Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Widgets Qt6Xml c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcolorscheme \

@@ -1,7 +1,7 @@
 COMMENT =	xdg-desktop-portal Qt/KF6 backend
 DISTNAME =	xdg-desktop-portal-kde-${VERSION}
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6GlobalAccel KF6GuiAddons

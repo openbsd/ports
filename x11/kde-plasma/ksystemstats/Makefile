@@ -5,7 +5,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n KF6KIOCore
 WANTLIB += KF6Solid KSysGuardFormatter KSysGuardSystemStats Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network c m udev
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \

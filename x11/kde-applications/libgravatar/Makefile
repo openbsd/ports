@@ -11,7 +11,7 @@ WANTLIB += KF6TextCustomEditor KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \

@@ -19,10 +19,10 @@ WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c m
 
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_DOCS = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 

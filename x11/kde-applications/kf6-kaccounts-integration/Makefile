@@ -14,9 +14,9 @@ WANTLIB += KF6KIOCore KF6Wallet KF6WidgetsAddons QCoro6Core Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
 WANTLIB += accounts-qt6 m signon-qt6
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \

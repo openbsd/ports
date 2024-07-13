@@ -12,8 +12,8 @@ WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
 WANTLIB += Qt6Xml X11 Xcursor m wayland-client wayland-cursor
 WANTLIB += xcb xkbcommon
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	wayland/plasma-wayland-protocols
 

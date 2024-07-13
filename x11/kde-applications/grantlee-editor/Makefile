@@ -21,8 +21,8 @@ WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
 WANTLIB += assuan c gpgme gpgmepp m qgpgmeqt6
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes

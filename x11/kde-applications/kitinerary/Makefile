@@ -11,7 +11,7 @@ WANTLIB += KF6Contacts KF6I18n KF6I18nLocaleData KPim6Mime KPim6PkPass
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml ZXing c crypto m phonenumber
 WANTLIB += poppler xml2 z
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	textproc/libxml
 

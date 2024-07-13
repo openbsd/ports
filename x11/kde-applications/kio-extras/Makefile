@@ -21,8 +21,8 @@ WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 Xcursor c kdsoap m mtp
 WANTLIB += phonon4qt5 phonon4qt5experimental smbclient ssh tag
 WANTLIB += util
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 MODKDE_KF5 =	yes
 
 BUILD_DEPENDS =	devel/gperf \

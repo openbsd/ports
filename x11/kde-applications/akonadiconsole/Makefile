@@ -21,9 +21,9 @@ WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Sql Qt6Widgets
 WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6 xapian
 
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
 
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost

@@ -22,7 +22,7 @@ WANTLIB += KPim6TemplateParser KPim6TextEdit Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml assuan gpgme gpgmepp m
 WANTLIB += phonon4qt6 qgpgmeqt6
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	textproc/libxslt \

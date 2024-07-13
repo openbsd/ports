@@ -20,9 +20,9 @@ WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml assuan c gpgme
 WANTLIB += gpgmepp m qgpgmeqt6 qt6keychain
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes

@@ -11,12 +11,12 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
 WANTLIB += KF6StatusNotifierItem KF6WidgetsAddons Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf6/kitemviews \
 		devel/kf6/kxmlgui

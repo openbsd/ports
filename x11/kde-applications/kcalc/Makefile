@@ -8,10 +8,10 @@ WANTLIB += KF6GuiAddons KF6I18n KF6Notifications KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets Qt6Xml
 WANTLIB += c gmp m mpfr
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/gmp \
 		devel/kf6/kcolorscheme \

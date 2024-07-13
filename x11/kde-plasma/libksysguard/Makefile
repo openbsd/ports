@@ -12,7 +12,7 @@ WANTLIB += KF6ConfigQml KF6CoreAddons KF6I18n KF6Package KF6Service
 WANTLIB += KF6Solid Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick c m z
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/kf6/knewstuff \
 		devel/kf6/kcompletion \

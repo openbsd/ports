@@ -33,9 +33,9 @@ WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6TextToSpeech Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
 WANTLIB += X11 c m qca-qt6 qt6keychain sasl2
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes

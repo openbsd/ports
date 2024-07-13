@@ -14,8 +14,8 @@ WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6MailTransport KPim6PimCommon
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += c m qt6keychain
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes

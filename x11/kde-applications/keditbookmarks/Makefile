@@ -11,11 +11,11 @@ WANTLIB += KF6KIOCore KF6KIOGui KF6Parts KF6Service KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Widgets Qt6Xml X11 c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcodecs \

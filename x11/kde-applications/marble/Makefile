@@ -22,12 +22,12 @@ WANTLIB += Qt5QmlModels Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
 WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
 WANTLIB += Qt5Xml X11 c gps m phonon4qt5 protobuf shp z
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 MODKDE_KF5 =	Yes
 

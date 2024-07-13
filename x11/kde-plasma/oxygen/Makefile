@@ -19,7 +19,7 @@ WANTLIB += Qt5X11Extras Qt5Xml Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets X11
 WANTLIB += c kdecorations2 m xcb xkbcommon
 
-MODKDE5_TRANSLATIONS = Yes
+MODKDE_TRANSLATIONS = Yes
 
 MODULES +=	x11/qt5
 

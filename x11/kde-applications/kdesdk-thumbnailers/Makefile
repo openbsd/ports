@@ -9,10 +9,10 @@ WANTLIB += KF6I18n KF6KIOCore KF6KIOGui KF6Service KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets gettextpo
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kconfig \

@@ -9,9 +9,9 @@ SHARED_LIBS +=  kaccounts                 0.1 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5Xml accounts-qt5 m signon-qt5
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DESKTOP_FILE = yes
 
 MODKDE_KF5 = yes
 

@@ -10,7 +10,7 @@ WANTLIB += Qt6Gui Qt6Network Qt6Widgets avcodec avfilter avformat
 WANTLIB += avutil m swscale
 
 # build depends but there are no translations
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kconfig \

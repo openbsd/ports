@@ -47,8 +47,8 @@ WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml assuan gpgme gpgmepp m markdown qgpgmeqt6
 
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	textproc/libxslt \

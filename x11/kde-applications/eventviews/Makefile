@@ -13,7 +13,7 @@ WANTLIB += KPim6CalendarSupport KPim6CalendarUtils KPim6IdentityManagementCore
 WANTLIB += KPim6Libkdepim KPim6Mime Qt6Core Qt6Gui Qt6PrintSupport
 WANTLIB += Qt6Widgets m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	textproc/libxslt \

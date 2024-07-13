@@ -7,7 +7,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Runner
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6Widgets m
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		devel/kf6/ki18n \

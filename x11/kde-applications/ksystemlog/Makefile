@@ -11,11 +11,11 @@ WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kcolorscheme \

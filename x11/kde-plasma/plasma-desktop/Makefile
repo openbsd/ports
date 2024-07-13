@@ -1,9 +1,9 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_ICON_CACHE =	Yes
-MODKDE5_DOCS =		Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_ICON_CACHE =	Yes
+MODKDE_DOCS =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6AuthCore KF6Baloo
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion

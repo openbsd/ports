@@ -18,9 +18,9 @@ WANTLIB += Qt6Gui Qt6Network Qt6Widgets assuan c gpgme gpgmepp
 WANTLIB += m qgpgmeqt6
 
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DESKTOP_FILE = yes
 
 BUILD_DEPENDS =	devel/boost
 

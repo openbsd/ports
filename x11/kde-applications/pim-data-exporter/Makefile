@@ -22,8 +22,8 @@ WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml assuan c gpgme
 WANTLIB += gpgmepp m qgpgmeqt6
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
 
 BUILD_DEPENDS =	devel/boost
 

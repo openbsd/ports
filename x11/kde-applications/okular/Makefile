@@ -19,12 +19,12 @@ WANTLIB += Qt6Svg Qt6TextToSpeech Qt6Widgets Qt6Xml X11 c djvulibre
 WANTLIB += epub freetype m markdown phonon4qt6 poppler poppler-qt6
 WANTLIB += spectre tiff xkbcommon z
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS = net/libvncserver \
 		devel/kf6/kirigami

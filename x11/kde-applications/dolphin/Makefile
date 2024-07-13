@@ -21,11 +21,11 @@ WANTLIB += KF6XmlGui PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml X11 c m
 WANTLIB += phonon4qt6 xkbcommon
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	print/poppler,-qt6 \
 		devel/kf6/kfilemetadata

@@ -6,7 +6,7 @@ SHARED_LIBS +=	KPim6Mime                 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF6Codecs KF6I18n Qt6Core m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS +=	devel/kf6/kcodecs \
 		devel/kf6/ki18n

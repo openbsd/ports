@@ -17,10 +17,10 @@ WANTLIB += Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
 WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml X11 c icui18n icuuc
 WANTLIB += m z
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kbookmarks \

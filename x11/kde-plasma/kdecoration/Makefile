@@ -6,7 +6,7 @@ SHARED_LIBS +=  kdecorations2private  1.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6I18n Qt6Core Qt6Gui m
 
-MODKDE5_TRANSLATIONS = Yes
+MODKDE_TRANSLATIONS = Yes
 
 LIB_DEPENDS =	devel/kf6/ki18n
 

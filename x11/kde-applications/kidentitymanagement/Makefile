@@ -14,7 +14,7 @@ WANTLIB += KF6XmlGui KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	graphics/kirigami-addons
 

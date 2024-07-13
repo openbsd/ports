@@ -38,9 +38,9 @@ WANTLIB += qalculate udev wayland-client wayland-cursor xcb xcb-composite
 WANTLIB += xcb-damage xcb-image xcb-randr xcb-render xcb-shape
 WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon z
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_ICON_CACHE = Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_ICON_CACHE = Yes
+MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
 		graphics/kirigami-addons \

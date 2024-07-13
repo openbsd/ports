@@ -1,8 +1,8 @@
 COMMENT =	Breeze KDE desktop theme
 DISTNAME =	breeze-${VERSION}
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_ICON_CACHE = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_ICON_CACHE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons

@@ -9,7 +9,7 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Widgets c
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 

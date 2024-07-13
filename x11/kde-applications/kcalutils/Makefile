@@ -9,7 +9,7 @@ WANTLIB += KF6I18n KF6IconThemes KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KPim6IdentityManagementCore Qt6Core Qt6Gui Qt6Widgets
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS +=	devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \

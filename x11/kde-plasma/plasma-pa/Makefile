@@ -3,8 +3,8 @@ DISTNAME =	plasma-pa-${VERSION}
 
 SHARED_LIBS +=	plasma-volume             0.0 # 0.0
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_DOCS = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6KCMUtilsCore

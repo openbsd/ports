@@ -17,8 +17,8 @@ WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebChannelQuick
 WANTLIB += Qt6WebEngineCore Qt6WebEngineQuick Qt6Widgets Qt6Xml
 WANTLIB += X11 c icui18n icuuc m
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_ICON_CACHE = Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_ICON_CACHE = Yes
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/kf6/kitemmodels \

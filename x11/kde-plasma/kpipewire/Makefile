@@ -6,7 +6,7 @@ SHARED_LIBS +=  KPipeWire                 0.0 # 0.0
 SHARED_LIBS +=  KPipeWireDmaBuf           0.0 # 0.0
 SHARED_LIBS +=  KPipeWireRecord           0.0 # 0.0
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	multimedia/pipewire/pipewire
 

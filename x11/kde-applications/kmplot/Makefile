@@ -9,12 +9,12 @@ WANTLIB += KF6KIOGui KF6Parts KF6Service KF6SonnetUi KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6PrintSupport Qt6Svg Qt6Widgets Qt6Xml c m
 
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \

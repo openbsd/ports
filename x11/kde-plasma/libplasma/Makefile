@@ -4,7 +4,7 @@ DISTNAME =	libplasma-${VERSION}
 SHARED_LIBS +=  Plasma                    0.0 # 0.0
 SHARED_LIBS +=  PlasmaQuick               0.0 # 0.0
 
-MODKDE5_TRANSLATIONS = Yes
+MODKDE_TRANSLATIONS = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6Archive KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigQml

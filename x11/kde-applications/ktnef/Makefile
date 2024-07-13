@@ -8,7 +8,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Contacts KF6CoreAddons
 WANTLIB += KF6I18n KPim6CalendarUtils Qt6Core Qt6Gui Qt6Widgets
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcontacts \

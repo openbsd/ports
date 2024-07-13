@@ -12,7 +12,7 @@ SHARED_LIBS +=  KF5CompactDisc            2.0 # 5.0
 WANTLIB += ${COMPILER_LIBCXX} KF5I18n KF5Solid Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Widgets m phonon4qt5
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 LIB_DEPENDS =	devel/kf5/ki18n \

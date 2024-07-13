@@ -17,11 +17,11 @@ WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Widgets Qt6Xml X11 c freerdp-client2 freerdp2
 WANTLIB += m sndio ssh vncclient winpr2
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcmutils \

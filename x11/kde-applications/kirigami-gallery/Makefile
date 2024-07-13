@@ -11,8 +11,8 @@ WANTLIB += ${COMPILER_LIBCXX} KF5ItemModels KF5Kirigami2 Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5Svg Qt5Widgets c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/kf5/kpackage
 

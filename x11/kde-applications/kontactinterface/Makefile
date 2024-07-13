@@ -10,7 +10,7 @@ WANTLIB += KF6KIOCore KF6KIOGui KF6Parts KF6Service KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Widgets Qt6Xml X11 m xkbcommon
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \

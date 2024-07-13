@@ -7,9 +7,9 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg
 WANTLIB += Qt6Widgets c futuresql6 m
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
 
 BUILD_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kdeclarative \

@@ -8,12 +8,12 @@ WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6NewStuffCore KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
 WANTLIB += c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kconfig \

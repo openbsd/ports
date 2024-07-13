@@ -9,10 +9,10 @@ WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6WindowSystem Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += X11 c m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kconfig \

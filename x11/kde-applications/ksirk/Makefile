@@ -14,11 +14,11 @@ WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6Qml Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml
 WANTLIB += c m
 
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kcolorscheme \

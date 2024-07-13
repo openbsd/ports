@@ -14,7 +14,7 @@ WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg Qt6Widgets Qt6Xml
 WANTLIB += m openal sndfile
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/kf6/kdbusaddons \
 		devel/kf6/kitemviews \

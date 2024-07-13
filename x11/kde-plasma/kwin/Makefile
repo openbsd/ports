@@ -26,9 +26,9 @@ WANTLIB += xcb-present xcb-randr xcb-render xcb-shape xcb-shm
 WANTLIB += xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xcvt xkbcommon
 WANTLIB += xkbcommon-x11
 
-MODKDE5_TRANSLATIONS =	Yes
-MODKDE5_ICON_CACHE =	Yes
-MODKDE5_DOCS =		Yes
+MODKDE_TRANSLATIONS =	Yes
+MODKDE_ICON_CACHE =	Yes
+MODKDE_DOCS =		Yes
 
 MODULES +=	lang/python
 

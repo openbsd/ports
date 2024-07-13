@@ -12,10 +12,10 @@ WANTLIB += KF6KIOCore KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Qml Qt6Widgets cdda_interface cdda_paranoia
 WANTLIB += m ogg vorbis vorbisenc vorbisfile
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \

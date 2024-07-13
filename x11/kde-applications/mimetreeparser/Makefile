@@ -11,7 +11,7 @@ WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets assuan gpgme gpgmepp
 WANTLIB += m qgpgmeqt6
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 RUN_DEPENDS =	devel/kf6/kwallet
 

@@ -20,8 +20,8 @@ WANTLIB += Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
 WANTLIB += m mtp phonon4qt6 phonon4qt6experimental smbclient ssh
 WANTLIB += tag util
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/gperf \
 		devel/kf6/kiconthemes \

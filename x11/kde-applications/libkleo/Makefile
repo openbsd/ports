@@ -9,7 +9,7 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels
 WANTLIB += KF6TextCustomEditor KF6WidgetsAddons Qt6Core Qt6Gui
 WANTLIB += Qt6Widgets assuan gpg-error gpgme gpgmepp m qgpgmeqt6
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 

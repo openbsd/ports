@@ -15,7 +15,7 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiWidgets KPim6GrantleeTheme
 WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += Qt6Xml m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \

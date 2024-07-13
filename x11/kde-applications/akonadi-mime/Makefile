@@ -11,7 +11,7 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiPrivate KPim6AkonadiWidgets
 WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += Qt6Xml m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/boost \
 		misc/shared-mime-info \

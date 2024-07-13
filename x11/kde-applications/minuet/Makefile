@@ -10,10 +10,10 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg c fluidsynth m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	audio/fluidsynth \
 		devel/kf6/kcoreaddons \

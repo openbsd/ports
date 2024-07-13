@@ -10,9 +10,9 @@ WANTLIB += KF6SonnetUi KF6WidgetsAddons KF6WindowSystem KF6XmlGui
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += X11 c m
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_DOCS = Yes
-MODKDE5_ICON_CACHE = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_DOCS = Yes
+MODKDE_ICON_CACHE = Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

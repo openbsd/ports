@@ -35,7 +35,7 @@ WANTLIB += lib/inotify/inotify
 
 
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 RUN_DEPENDS =	devel/kf6/kwallet

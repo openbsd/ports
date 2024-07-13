@@ -3,7 +3,7 @@ DISTNAME =	layer-shell-qt-${VERSION}
 
 SHARED_LIBS +=  LayerShellQtInterface    1.0 # 5.22.5
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Qml
 WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon

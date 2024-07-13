@@ -13,11 +13,11 @@ WANTLIB += KF6Pty KF6Service KF6Solid KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Widgets Qt6Xml X11 archive c m z zip
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/lzo2 \

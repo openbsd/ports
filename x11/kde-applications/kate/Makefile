@@ -18,10 +18,10 @@ WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
 WANTLIB += Qt6Xml X11 c intl m xkbcommon
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 RUN_DEPENDS =	devel/kf6/sonnet,-aspell \
 		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION} \

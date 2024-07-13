@@ -19,7 +19,7 @@ WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6LdapCore KPim6LdapWidgets
 WANTLIB += KPim6Libkdepim KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Widgets Qt6Xml m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 MODKF5_L10N_CONFLICT = yes
 

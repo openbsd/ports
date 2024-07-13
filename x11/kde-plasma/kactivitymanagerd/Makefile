@@ -9,7 +9,7 @@ WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Sql Qt6Widgets Qt6Xml
 WANTLIB += X11 c m
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 BUILD_DEPENDS =	devel/boost
 

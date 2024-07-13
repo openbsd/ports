@@ -2,7 +2,7 @@ COMMENT =	KDEs screen management software
 
 DISTNAME =	kscreen-${VERSION}
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons

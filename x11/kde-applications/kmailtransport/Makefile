@@ -11,7 +11,7 @@ WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KPim6GAPICore
 WANTLIB += KPim6SMTP Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
 WANTLIB += m qt6keychain
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/kf6/sonnet \
 		devel/kf6/solid \

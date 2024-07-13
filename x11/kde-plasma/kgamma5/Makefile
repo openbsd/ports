@@ -7,8 +7,8 @@ WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml Qt6Widgets SM X11
 WANTLIB += Xext Xxf86vm m
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_DOCS = Yes
 
 # Qt6::PdfQuickplugin
 BUILD_DEPENDS =	x11/qt6/qtwebengine

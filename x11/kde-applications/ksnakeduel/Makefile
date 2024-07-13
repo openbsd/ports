@@ -10,10 +10,10 @@ WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
 WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \

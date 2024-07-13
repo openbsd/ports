@@ -14,7 +14,7 @@ WANTLIB += KPim6CalendarUtils KPim6IdentityManagementCore KPim6Mime
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost

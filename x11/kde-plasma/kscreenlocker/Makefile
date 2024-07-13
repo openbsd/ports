@@ -3,7 +3,7 @@ DISTNAME =	kscreenlocker-${VERSION}
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigQml KF6ConfigWidgets KF6CoreAddons

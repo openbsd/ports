@@ -13,7 +13,7 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6Mime KPim6PimCommon
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 MODKF5_L10N_CONFLICT = yes
 

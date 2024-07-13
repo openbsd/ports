@@ -8,9 +8,9 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Widgets
 WANTLIB += X11 c m mpv qt6keychain
 
-MODKDE5_DESKTOP_FILE =	Yes
-MODKDE5_ICON_CACHE =	Yes
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_DESKTOP_FILE =	Yes
+MODKDE_ICON_CACHE =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		graphics/kirigami-addons

@@ -15,7 +15,7 @@ WANTLIB += KF6WidgetsAddons KPim6AkonadiAgentBase KPim6AkonadiCore
 WANTLIB += KPim6AkonadiMime KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Widgets c m xapian
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/boost
 

@@ -5,10 +5,10 @@ CATEGORIES =	productivity
 SHARED_LIBS +=  kalarmcalendar           4.0 # 0.0
 SHARED_LIBS +=  kalarmplugin             3.0 # 0.0
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes

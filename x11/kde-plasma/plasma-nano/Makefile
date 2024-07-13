@@ -1,7 +1,7 @@
 COMMENT =	minimal Plasma shell package
 DISTNAME =	plasma-nano-${VERSION}
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Service KF6WindowSystem KWaylandClient
 WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels

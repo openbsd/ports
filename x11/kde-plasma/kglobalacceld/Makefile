@@ -4,7 +4,7 @@ DISTNAME =	kglobalacceld-${VERSION}
 
 SHARED_LIBS +=  KGlobalAccelD             0.0 # 0.0
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6GlobalAccel KF6JobWidgets KF6KIOCore

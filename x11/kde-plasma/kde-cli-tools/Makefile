@@ -2,8 +2,8 @@ COMMENT =	KDE krameworks 5 tools
 
 DISTNAME =	kde-cli-tools-${VERSION}
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_DOCS = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

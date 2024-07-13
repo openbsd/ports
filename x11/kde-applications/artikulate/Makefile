@@ -16,11 +16,11 @@ WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5Widgets Qt5Xml Qt5XmlPatterns c
 WANTLIB += m
 
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
-MODKDE5_DESKTOP_FILE = yes
+MODKDE_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/attica \

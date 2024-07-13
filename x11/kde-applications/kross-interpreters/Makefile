@@ -8,7 +8,7 @@ WANTLIB += Qt5Widgets Qt5Xml m
 
 MODKDE_KF5 = yes
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 MODULES +=	lang/ruby
 

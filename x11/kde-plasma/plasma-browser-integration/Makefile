@@ -8,7 +8,7 @@ WANTLIB += KF6Runner KF6Service KF6StatusNotifierItem PlasmaActivities
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets c m taskmanager
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

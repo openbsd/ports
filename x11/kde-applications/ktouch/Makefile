@@ -13,10 +13,10 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
 WANTLIB += Qt5Sql Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns
 WANTLIB += SM X11 Xext c m xcb xcb-xkb
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 #KQtQuickCharts, QtQuick plugin to render beautiful and interactive charts
 RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION} \

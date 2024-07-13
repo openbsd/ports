@@ -9,8 +9,8 @@ WANTLIB += KPim6GAPICore KPim6GAPIDrive Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml accounts-qt6 kaccounts6
 WANTLIB += m
 
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	textproc/intltool
 

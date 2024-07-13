@@ -15,7 +15,7 @@ SHARED_LIBS +=  kdexoauth2                3.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Contacts KF6Wallet
 WANTLIB += Qt6Core Qt6Gui Qt6Network m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 BUILD_DEPENDS =	devel/kf6/kcoreaddons \
 		security/cyrus-sasl2

@@ -1,8 +1,8 @@
 COMMENT =	Breeze QQC2 Style
 DISTNAME =	qqc2-breeze-style-${VERSION}
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_ICON_CACHE = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_ICON_CACHE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6GuiAddons KF6IconThemes KirigamiPlatform Qt6Core

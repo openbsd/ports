@@ -8,7 +8,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Svg Qt6Widgets m
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \

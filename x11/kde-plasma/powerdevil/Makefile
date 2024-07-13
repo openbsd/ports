@@ -17,7 +17,7 @@ SHARED_LIBS +=  powerdevilconfigcommonprivate 1.0 # 0.0
 SHARED_LIBS +=  powerdevilcore                1.0 # 0.0
 SHARED_LIBS +=  powerdevilui                  1.0 # 0.0
 
-MODKDE5_TRANSLATIONS =	Yes
+MODKDE_TRANSLATIONS =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/upower \

@@ -7,8 +7,8 @@ WANTLIB += KF6I18n KF6WindowSystem Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets X11
 WANTLIB += c m polkit-qt6-agent-1 polkit-qt6-core-1
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_ICON_CACHE = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_ICON_CACHE = Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 

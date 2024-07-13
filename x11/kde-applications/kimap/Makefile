@@ -7,7 +7,7 @@ SHARED_LIBS +=	KPim6IMAP                 0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons KF6I18n KF6KIOCore
 WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Network m sasl2
 
-MODKDE5_TRANSLATIONS = yes
+MODKDE_TRANSLATIONS = yes
 
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \

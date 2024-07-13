@@ -8,8 +8,8 @@ WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6Solid
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Widgets c m usb-1.0
 
-MODKDE5_TRANSLATIONS = Yes
-MODKDE5_DOCS = Yes
+MODKDE_TRANSLATIONS = Yes
+MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	devel/boost
 

@@ -8,11 +8,11 @@ WANTLIB += KF6I18n KF6IconThemes KF6StatusNotifierItem KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml SM X11 Xext Xtst c m
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 LIB_DEPENDS =	 devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \

@@ -9,7 +9,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Service
 WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += Qt5Xml m
 
-MODKDE5_ICON_CACHE = yes
+MODKDE_ICON_CACHE = yes
 MODKDE_KF5 = yes
 
 BUILD_DEPENDS =	graphics/png \

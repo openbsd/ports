@@ -5,7 +5,7 @@ CATEGORIES =	devel
 HOMEPAGE =	https://kde.org/applications/development/
 
 # At build time
-MODKDE5_DOCS = yes
+MODKDE_DOCS = yes
 
 MODULES +=	lang/python \
 		perl

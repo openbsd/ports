@@ -19,10 +19,10 @@ WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
 WANTLIB += Qt6QuickWidgets Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml
 WANTLIB += c m mlt++-7 mlt-7
 
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
+MODKDE_DESKTOP_FILE = yes
+MODKDE_ICON_CACHE = yes
+MODKDE_TRANSLATIONS = yes
+MODKDE_DOCS = yes
 
 MODULES +=	lang/python
 
