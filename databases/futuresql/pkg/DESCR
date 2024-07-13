@@ -1,0 +1,4 @@
+FutureSQL was in part inspired by Diesel, and provides a higher level of
+abstraction than QtSql. Its features include non-blocking database access
+by default, relatively boilderplate-free queries, automatic database
+migrations and simple mapping to objects.

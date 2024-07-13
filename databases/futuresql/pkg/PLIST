@@ -1,0 +1,11 @@
+include/FutureSQL6/
+include/FutureSQL6/ThreadedDatabase
+include/FutureSQL6/futuresql_export.h
+include/FutureSQL6/threadeddatabase.h
+include/FutureSQL6/threadeddatabase_p.h
+lib/cmake/FutureSQL6/
+lib/cmake/FutureSQL6/FutureSQL6Config.cmake
+lib/cmake/FutureSQL6/FutureSQL6ConfigVersion.cmake
+lib/cmake/FutureSQL6/FutureSQLTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/FutureSQL6/FutureSQLTargets.cmake
+@lib lib/libfuturesql6.so.${LIBfuturesql6_VERSION}
