@@ -1,3 +1,5 @@
+BROKEN =	needs adjusting for cython 3
+
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	1.5.3
