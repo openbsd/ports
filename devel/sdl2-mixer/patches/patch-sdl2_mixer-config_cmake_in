@@ -1,0 +1,12 @@
+Index: sdl2_mixer-config.cmake.in
+--- sdl2_mixer-config.cmake.in.orig
++++ sdl2_mixer-config.cmake.in
+@@ -111,7 +111,7 @@ if(NOT TARGET SDL2_mixer::SDL2_mixer)
+         unset(_sdl2mixer_dll)
+         unset(_sdl2mixer_imp)
+     else()
+-        set(_sdl2mixer_shl "${_sdl2mixer_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_mixer${CMAKE_SHARED_LIBRARY_SUFFIX}")
++        set(_sdl2mixer_shl "${_sdl2mixer_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_mixer${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBSDL2_mixer_VERSION}")
+         if(EXISTS "${_sdl2mixer_shl}")
+             add_library(SDL2_mixer::SDL2_mixer SHARED IMPORTED)
+             set_target_properties(SDL2_mixer::SDL2_mixer
