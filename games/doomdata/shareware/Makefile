@@ -18,8 +18,8 @@ PKG_ARCH =		*
 PERMIT_PACKAGE =	Yes
 
 # 1.8 first so 1.9 files are preferred
-SITES =			http://www.gamers.org/pub/idgames/historic/
-SITES.19 =		http://www.gamers.org/pub/idgames/idstuff/doom/
+SITES =			https://www.gamers.org/pub/idgames/historic/
+SITES.19 =		https://www.gamers.org/pub/idgames/idstuff/doom/
 
 WRKSRC =		${WRKDIR}
 
