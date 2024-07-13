@@ -1,4 +1,45 @@
 @bin bin/labplot2
+include/labplot/
+include/labplot/backend/
+include/labplot/backend/core/
+include/labplot/backend/core/AbstractAspect.h
+include/labplot/backend/core/AbstractColumn.h
+include/labplot/backend/core/AbstractPart.h
+include/labplot/backend/core/column/
+include/labplot/backend/core/column/Column.h
+include/labplot/backend/core/column/ColumnPrivate.h
+include/labplot/backend/gsl/
+include/labplot/backend/gsl/parser.h
+include/labplot/backend/lib/
+include/labplot/backend/lib/Interval.h
+include/labplot/backend/lib/IntervalAttribute.h
+include/labplot/backend/lib/Range.h
+include/labplot/backend/lib/commandtemplates.h
+include/labplot/backend/lib/macros.h
+include/labplot/backend/lib/macrosCurve.h
+include/labplot/backend/nsl/
+include/labplot/backend/nsl/nsl_fit.h
+include/labplot/backend/nsl/nsl_math.h
+include/labplot/backend/worksheet/
+include/labplot/backend/worksheet/Worksheet.h
+include/labplot/backend/worksheet/WorksheetElement.h
+include/labplot/backend/worksheet/WorksheetElementContainer.h
+include/labplot/backend/worksheet/plots/
+include/labplot/backend/worksheet/plots/AbstractPlot.h
+include/labplot/backend/worksheet/plots/PlotArea.h
+include/labplot/backend/worksheet/plots/cartesian/
+include/labplot/backend/worksheet/plots/cartesian/Axis.h
+include/labplot/backend/worksheet/plots/cartesian/BoxPlot.h
+include/labplot/backend/worksheet/plots/cartesian/CartesianPlot.h
+include/labplot/backend/worksheet/plots/cartesian/CartesianPlotLegend.h
+include/labplot/backend/worksheet/plots/cartesian/Histogram.h
+include/labplot/backend/worksheet/plots/cartesian/XYAnalysisCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYEquationCurve.h
+include/labplot/backend/worksheet/plots/cartesian/XYFitCurve.h
+include/labplot/labplot.h
+include/labplot/labplot_export.h
+@so lib/liblabplot.so
 @man man/man1/labplot2.1
 share/applications/org.kde.labplot2.desktop
 share/doc/HTML/ca/labplot2/
@@ -62,6 +103,9 @@ share/doc/HTML/nl/labplot2/index.docbook
 share/doc/HTML/pt_BR/labplot2/
 share/doc/HTML/pt_BR/labplot2/index.cache.bz2
 share/doc/HTML/pt_BR/labplot2/index.docbook
+share/doc/HTML/ru/labplot2/
+share/doc/HTML/ru/labplot2/index.cache.bz2
+share/doc/HTML/ru/labplot2/index.docbook
 share/doc/HTML/sv/labplot2/
 share/doc/HTML/sv/labplot2/index.cache.bz2
 share/doc/HTML/sv/labplot2/index.docbook
@@ -175,15 +219,13 @@ share/icons/hicolor/scalable/apps/labplot-zoom-select-y.svg
 share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
 share/icons/hicolor/scalable/apps/labplot-zoom.svg
 share/icons/hicolor/scalable/apps/labplot2.svgz
-share/kxmlgui5/
-share/kxmlgui5/labplot2/
-share/kxmlgui5/labplot2/labplot2ui.rc
 share/labplot2/
 share/labplot2/application-x-labplot2.ico
 share/labplot2/color-schemes/
 share/labplot2/color-schemes/Breeze.colors
 share/labplot2/color-schemes/BreezeDark.colors
 share/labplot2/color-schemes/BreezeHighContrast.colors
+share/labplot2/color-schemes/Dracula.colors
 share/labplot2/color-schemes/Honeycomb.colors
 share/labplot2/color-schemes/Norway.colors
 share/labplot2/color-schemes/ObsidianCoast.colors
@@ -205,6 +247,7 @@ share/labplot2/colormaps/ColorCET (Linear).json
 share/labplot2/colormaps/ColorCET (Rainbow).json
 share/labplot2/colormaps/ColormapCollections.json
 share/labplot2/colormaps/Diverging Color Maps for Scientific Visualization.json
+share/labplot2/colormaps/Dracula (Categorical).json
 share/labplot2/colormaps/Scientific Colour Maps (Cyclic).json
 share/labplot2/colormaps/Scientific Colour Maps (Diverging).json
 share/labplot2/colormaps/Scientific Colour Maps (Multi-sequential).json
@@ -223,6 +266,7 @@ share/labplot2/datasets/OzDASL.json
 share/labplot2/datasets/README.md
 share/labplot2/datasets/Rdatasets.json
 share/labplot2/datasets/StatLib.json
+share/labplot2/datasets/seaborn.json
 share/labplot2/examples/
 share/labplot2/examples/Analysis/
 share/labplot2/examples/Analysis/Fit/
@@ -355,6 +399,7 @@ share/labplot2/themes/Creme
 share/labplot2/themes/Dark
 share/labplot2/themes/DarkPastels
 share/labplot2/themes/Default
+share/labplot2/themes/Dracula
 share/labplot2/themes/GgplotDark
 share/labplot2/themes/GgplotGrey
 share/labplot2/themes/GreenOnBlack
@@ -364,6 +409,7 @@ share/labplot2/themes/Monokai
 share/labplot2/themes/RedOnBlack
 share/labplot2/themes/Solarized
 share/labplot2/themes/SolarizedLight
+share/labplot2/themes/Sparkline
 share/labplot2/themes/Tufte
 share/labplot2/themes/screenshots/
 share/labplot2/themes/screenshots/BlackOnLightYellow.png
@@ -374,6 +420,7 @@ share/labplot2/themes/screenshots/Creme.png
 share/labplot2/themes/screenshots/Dark.png
 share/labplot2/themes/screenshots/DarkPastels.png
 share/labplot2/themes/screenshots/Default.png
+share/labplot2/themes/screenshots/Dracula.png
 share/labplot2/themes/screenshots/GgplotDark.png
 share/labplot2/themes/screenshots/GgplotGrey.png
 share/labplot2/themes/screenshots/GreenOnBlack.png
@@ -383,8 +430,10 @@ share/labplot2/themes/screenshots/Monokai.png
 share/labplot2/themes/screenshots/RedOnBlack.png
 share/labplot2/themes/screenshots/Solarized.png
 share/labplot2/themes/screenshots/SolarizedLight.png
+share/labplot2/themes/screenshots/Sparkline.png
 share/labplot2/themes/screenshots/Tufte.png
 share/labplot2/themes/screenshots/Unavailable.png
+share/locale/ar/LC_MESSAGES/labplot2.mo
 share/locale/bs/LC_MESSAGES/labplot2.mo
 share/locale/ca/LC_MESSAGES/labplot2.mo
 share/locale/ca@valencia/LC_MESSAGES/labplot2.mo
@@ -393,6 +442,7 @@ share/locale/da/LC_MESSAGES/labplot2.mo
 share/locale/de/LC_MESSAGES/labplot2.mo
 share/locale/el/LC_MESSAGES/labplot2.mo
 share/locale/en_GB/LC_MESSAGES/labplot2.mo
+share/locale/eo/LC_MESSAGES/labplot2.mo
 share/locale/es/LC_MESSAGES/labplot2.mo
 share/locale/eu/LC_MESSAGES/labplot2.mo
 share/locale/fi/LC_MESSAGES/labplot2.mo

@@ -1,7 +1,6 @@
 COMMENT =	data visualization and analysis software
 
-DISTNAME =	labplot-2.10.1
-REVISION =	1
+DISTNAME =	labplot-2.11.0
 
 CATEGORIES =	math x11
 
@@ -15,73 +14,70 @@ USE_NOBTCFI =	Yes
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5SyntaxHighlighting KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui
-WANTLIB += QXlsxQt5 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5SerialPort Qt5Sql Qt5Svg Qt5Widgets
-WANTLIB += Qt5Xml X11 c cantorlibs cerf cfitsio fftw3 gsl gslcblas
-WANTLIB += hdf5 lz4 m markdown matio netcdf poppler poppler-qt5
-WANTLIB += spectre z
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Purpose KF6PurposeWidgets KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6SyntaxHighlighting KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui QXlsxQt6 Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6SerialPort Qt6Sql
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c cerf cfitsio fftw3 gsl gslcblas
+WANTLIB += hdf5 lz4 m markdown matio netcdf poppler poppler-qt6
+WANTLIB += qt6advanceddocking xcb z
 
 SITES =		https://download.kde.org/stable/labplot/
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-tools \
 		misc/shared-mime-info \
+		math/eigen3 \
 		x11/gtk+4,-guic
 
 BUILD_DEPENDS =	devel/bison \
+		math/eigen3 \
 		devel/desktop-file-utils \
 		devel/gettext,-tools \
-		devel/kf5/kdoctools
+		devel/kf6/kdoctools
 
 LIB_DEPENDS =	archivers/lz4 \
 		devel/gsl \
-		devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
+		devel/kf6/karchive \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/purpose \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
 		math/cfitsio \
 		math/fftw3 \
-		print/poppler,-qt5 \
+		print/poppler,-qt6 \
 		textproc/discount \
-		x11/qt5/qtserialport \
-		x11/qt5/qtsvg
+		x11/qtadvanceddocking \
+		x11/qt6/qtserialport \
+		x11/qt6/qtsvg
 
 # OPTIONAL packages
-LIB_DEPENDS +=	devel/kf5/syntax-highlighting \
+LIB_DEPENDS +=	devel/kf6/syntax-highlighting \
 		math/hdf5 \
 		math/libcerf \
 		math/matio \
 		math/netcdf \
-		textproc/qxlsx \
-		x11/kde-applications/cantor
+		textproc/qxlsx,qt6
 
 #-- The following OPTIONAL packages have not been found:
 #* LibOrigin, A library for reading OriginLab project files,
@@ -97,13 +93,14 @@ CONFIGURE_ARGS +=	-DENABLE_LIBORIGIN=OFF
 CONFIGURE_ARGS +=	-DKDE_INSTALL_MANDIR=${WRKINST}/man
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_KUserFeedback=On
 
 CONFIGURE_ARGS +=	-DENABLE_VECTOR_BLF=Off
 
 CONFIGURE_ARGS +=	-DCMAKE_MODULE_PATH=${LOCALBASE}/lib/cmake
 
-CONFIGURE_ARGS +=	-DUSE_SYSTEM_QXLSX=ON
+CONFIGURE_ARGS +=	-DQT_VERSION_MAJOR=6
+
+MODCMAKE_LDFLAGS =    -L${X11BASE}/lib -L${LOCALBASE}/lib
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -1,0 +1,15 @@
+Index: cmake/FindQXlsx.cmake
+--- cmake/FindQXlsx.cmake.orig
++++ cmake/FindQXlsx.cmake
+@@ -4,9 +4,9 @@
+ # SPDX-License-Identifier: BSD-3-Clause
+ #=============================================================================
+ 
+-find_library(QXLSX_LIBRARIES NAMES QXlsx QXlsxQt5)
++find_library(QXLSX_LIBRARIES NAMES QXlsx QXlsxQt${QT_VERSION_MAJOR})
+ 
+-find_path(QXLSX_INCLUDE_DIR xlsxdocument.h PATH_SUFFIXES QXlsx QXlsxQt5)
++find_path(QXLSX_INCLUDE_DIR xlsxdocument.h PATH_SUFFIXES QXlsx QXlsxQt${QT_VERSION_MAJOR})
+ 
+ include(FindPackageHandleStandardArgs)
+ find_package_handle_standard_args(QXlsx
