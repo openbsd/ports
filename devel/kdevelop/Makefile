@@ -4,6 +4,7 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
 DISTNAME =	kdevelop-${MODKDE_VERSION}
+REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -47,6 +48,8 @@ WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml X11 apr-1 aprutil-1
 WANTLIB += c komparediff2 m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1
 WANTLIB += svn_subr-1 svn_wc-1
+
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
