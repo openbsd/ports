@@ -1,0 +1,27 @@
+@pkgpath archivers/quazip,qt5
+include/QuaZip-Qt5/
+include/QuaZip-Qt5/quazip/
+include/QuaZip-Qt5/quazip/JlCompress.h
+include/QuaZip-Qt5/quazip/ioapi.h
+include/QuaZip-Qt5/quazip/minizip_crypt.h
+include/QuaZip-Qt5/quazip/quaadler32.h
+include/QuaZip-Qt5/quazip/quachecksum32.h
+include/QuaZip-Qt5/quazip/quacrc32.h
+include/QuaZip-Qt5/quazip/quagzipfile.h
+include/QuaZip-Qt5/quazip/quaziodevice.h
+include/QuaZip-Qt5/quazip/quazip.h
+include/QuaZip-Qt5/quazip/quazip_global.h
+include/QuaZip-Qt5/quazip/quazip_qt_compat.h
+include/QuaZip-Qt5/quazip/quazipdir.h
+include/QuaZip-Qt5/quazip/quazipfile.h
+include/QuaZip-Qt5/quazip/quazipfileinfo.h
+include/QuaZip-Qt5/quazip/quazipnewinfo.h
+include/QuaZip-Qt5/quazip/unzip.h
+include/QuaZip-Qt5/quazip/zip.h
+lib/cmake/QuaZip-Qt5/
+lib/cmake/QuaZip-Qt5/QuaZip-Qt5Config.cmake
+lib/cmake/QuaZip-Qt5/QuaZip-Qt5ConfigVersion.cmake
+lib/cmake/QuaZip-Qt5/QuaZip-Qt5_SharedTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QuaZip-Qt5/QuaZip-Qt5_SharedTargets.cmake
+@lib lib/libquazip1-qt5.so.${LIBquazip1-qt5_VERSION}
+lib/pkgconfig/quazip1-qt5.pc
