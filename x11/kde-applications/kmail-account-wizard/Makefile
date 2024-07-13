@@ -1,6 +1,7 @@
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
@@ -19,10 +20,12 @@ MODKDE_ICON_CACHE = yes
 
 BUILD_DEPENDS =	devel/boost \
 		devel/kf6/knotifyconfig \
-		devel/kf6/ktexteditor
+		devel/kf6/ktexteditor \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION}
 
 RUN_DEPENDS =	devel/kf6/knotifyconfig \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
@@ -34,16 +37,10 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kldap>=${MODKDE_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
