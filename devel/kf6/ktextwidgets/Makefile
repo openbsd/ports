@@ -1,6 +1,5 @@
 COMMENT =	text editing widgets for KDE
 DISTNAME =	ktextwidgets-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6TextWidgets            0.0 # 0.0
 

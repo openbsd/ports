@@ -3,7 +3,7 @@ XXX TODO rsadowski
 Index: src/platforms/wayland/shm.cpp
 --- src/platforms/wayland/shm.cpp.orig
 +++ src/platforms/wayland/shm.cpp
-@@ -83,7 +83,6 @@ std::unique_ptr<ShmBuffer> Shm::createBuffer(const QIm
+@@ -84,7 +84,6 @@ std::unique_ptr<ShmBuffer> Shm::createBuffer(const QIm
      if (fd >= 0) {
          fcntl(fd, F_ADD_SEALS, F_SEAL_SHRINK | F_SEAL_SEAL);
      } else
@@ -11,7 +11,7 @@ Index: src/platforms/wayland/shm.cpp
      {
          char templateName[] = "/tmp/kwayland-shared-XXXXXX";
          fd = mkstemp(templateName);
-@@ -133,4 +132,7 @@ std::unique_ptr<ShmBuffer> Shm::createBuffer(const QIm
+@@ -134,4 +133,7 @@ std::unique_ptr<ShmBuffer> Shm::createBuffer(const QIm
      munmap(data, byteCount);
      close(fd);
      return std::make_unique<ShmBuffer>(buffer);

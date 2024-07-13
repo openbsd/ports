@@ -41,6 +41,7 @@ lib/qt6/qml/org/kde/desktop/ScrollBar.qml
 lib/qt6/qml/org/kde/desktop/ScrollView.qml
 lib/qt6/qml/org/kde/desktop/Slider.qml
 lib/qt6/qml/org/kde/desktop/SpinBox.qml
+lib/qt6/qml/org/kde/desktop/SplitView.qml
 lib/qt6/qml/org/kde/desktop/StackView.qml
 lib/qt6/qml/org/kde/desktop/Switch.qml
 lib/qt6/qml/org/kde/desktop/SwitchDelegate.qml
@@ -100,7 +101,9 @@ share/locale/ka/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/lv/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/nl/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/pl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/ro/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/sl/LC_MESSAGES/qqc2desktopstyle_qt.qm
+share/locale/sv/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/ta/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/tr/LC_MESSAGES/qqc2desktopstyle_qt.qm
 share/locale/uk/LC_MESSAGES/qqc2desktopstyle_qt.qm

@@ -282,6 +282,7 @@ lib/qt6/plugins/kf6/urifilters/
 @bin libexec/kf6/kioexec
 @bin libexec/kf6/kioworker
 share/applications/ktelnetservice6.desktop
+share/applications/org.kde.kiod6.desktop
 share/dbus-1/services/org.kde.kiod6.service
 share/dbus-1/services/org.kde.kioexecd6.service
 share/dbus-1/services/org.kde.kpasswdserver6.service

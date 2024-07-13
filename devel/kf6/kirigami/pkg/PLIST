@@ -34,6 +34,7 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
 @lib lib/libKirigamiPrimitives.so.${LIBKirigamiPrimitives_VERSION}
+@lib lib/libKirigamiPrivate.so.${LIBKirigamiPrivate_VERSION}
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/kirigami/
@@ -129,7 +130,7 @@ lib/qt6/qml/org/kde/kirigami/private/DefaultChipBackground.qml
 lib/qt6/qml/org/kde/kirigami/private/DefaultPageTitleDelegate.qml
 lib/qt6/qml/org/kde/kirigami/private/EdgeShadow.qml
 lib/qt6/qml/org/kde/kirigami/private/GlobalDrawerActionItem.qml
-lib/qt6/qml/org/kde/kirigami/private/KirigamiPrivatePlugin.qmltypes
+lib/qt6/qml/org/kde/kirigami/private/KirigamiPrivate.qmltypes
 lib/qt6/qml/org/kde/kirigami/private/MobileDialogLayer.qml
 lib/qt6/qml/org/kde/kirigami/private/PrivateActionToolButton.qml
 lib/qt6/qml/org/kde/kirigami/private/PullDownIndicator.qml
@@ -143,7 +144,7 @@ lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/TitlesPageHeader.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/ToolBarPageFooter.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/ToolBarPageHeader.qml
 lib/qt6/qml/org/kde/kirigami/private/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/kirigami/private/libKirigamiPrivatePlugin.so
+@so lib/qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so
 lib/qt6/qml/org/kde/kirigami/private/qmldir
 lib/qt6/qml/org/kde/kirigami/qmldir
 lib/qt6/qml/org/kde/kirigami/styles/

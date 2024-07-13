@@ -7,8 +7,10 @@
 @so lib/qt6/plugins/imageformats/kimg_kra.so
 @so lib/qt6/plugins/imageformats/kimg_ora.so
 @so lib/qt6/plugins/imageformats/kimg_pcx.so
+@so lib/qt6/plugins/imageformats/kimg_pfm.so
 @so lib/qt6/plugins/imageformats/kimg_pic.so
 @so lib/qt6/plugins/imageformats/kimg_psd.so
+@so lib/qt6/plugins/imageformats/kimg_pxr.so
 @so lib/qt6/plugins/imageformats/kimg_qoi.so
 @so lib/qt6/plugins/imageformats/kimg_ras.so
 @so lib/qt6/plugins/imageformats/kimg_raw.so

@@ -79,7 +79,6 @@ lib/qt6/qml/org/kde/newstuff/private/Shadow.qml
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/BigPreviewDelegate.qml
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/FeedbackOverlay.qml
-lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/ThumbDelegate.qml
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/TileDelegate.qml
 lib/qt6/qml/org/kde/newstuff/qmldir
 share/applications/org.kde.knewstuff-dialog6.desktop

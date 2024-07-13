@@ -8,6 +8,7 @@ include/KF6/KCalendarCore/KCalendarCore/CalFilter
 include/KF6/KCalendarCore/KCalendarCore/CalFormat
 include/KF6/KCalendarCore/KCalendarCore/CalStorage
 include/KF6/KCalendarCore/KCalendarCore/Calendar
+include/KF6/KCalendarCore/KCalendarCore/CalendarListModel
 include/KF6/KCalendarCore/KCalendarCore/CalendarPlugin
 include/KF6/KCalendarCore/KCalendarCore/CalendarPluginLoader
 include/KF6/KCalendarCore/KCalendarCore/Conference
@@ -39,6 +40,7 @@ include/KF6/KCalendarCore/kcalendarcore/alarm.h
 include/KF6/KCalendarCore/kcalendarcore/attachment.h
 include/KF6/KCalendarCore/kcalendarcore/attendee.h
 include/KF6/KCalendarCore/kcalendarcore/calendar.h
+include/KF6/KCalendarCore/kcalendarcore/calendarlistmodel.h
 include/KF6/KCalendarCore/kcalendarcore/calendarplugin.h
 include/KF6/KCalendarCore/kcalendarcore/calendarpluginloader.h
 include/KF6/KCalendarCore/kcalendarcore/calfilter.h
@@ -78,6 +80,14 @@ lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets.cmake
 @lib lib/libKF6CalendarCore.so.${LIBKF6CalendarCore_VERSION}
 lib/pkgconfig/KF6CalendarCore.pc
+lib/qt6/qml/
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/calendarcore/
+lib/qt6/qml/org/kde/calendarcore/kcalendarcoreqml.qmltypes
+lib/qt6/qml/org/kde/calendarcore/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/calendarcore/libkcalendarcoreqml.so
+lib/qt6/qml/org/kde/calendarcore/qmldir
 share/qlogging-categories6/
 share/qlogging-categories6/kcalendarcore.categories
 share/qlogging-categories6/kcalendarcore.renamecategories

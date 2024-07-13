@@ -35,9 +35,13 @@ lib/pkgconfig/KF6Baloo.pc
 @so lib/qt6/plugins/kf6/kio/tags.so
 @so lib/qt6/plugins/kf6/kio/timeline.so
 lib/qt6/qml/org/kde/baloo/
+lib/qt6/qml/org/kde/baloo/balooplugin.qmltypes
 lib/qt6/qml/org/kde/baloo/experimental/
+lib/qt6/qml/org/kde/baloo/experimental/baloomonitorplugin.qmltypes
+lib/qt6/qml/org/kde/baloo/experimental/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/baloo/experimental/libbaloomonitorplugin.so
 lib/qt6/qml/org/kde/baloo/experimental/qmldir
+lib/qt6/qml/org/kde/baloo/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/baloo/libbalooplugin.so
 lib/qt6/qml/org/kde/baloo/qmldir
 lib/systemd/user/kde-baloo.service
@@ -476,6 +480,8 @@ share/locale/sr@latin/LC_MESSAGES/balooshow6.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_tags.mo
 share/locale/sr@latin/LC_MESSAGES/kio6_timeline.mo
+share/locale/sv/LC_MESSAGES/baloo_file6.mo
+share/locale/sv/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/sv/LC_MESSAGES/balooctl6.mo
 share/locale/sv/LC_MESSAGES/baloodb6.mo
 share/locale/sv/LC_MESSAGES/balooengine6.mo
