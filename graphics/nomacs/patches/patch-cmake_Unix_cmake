@@ -1,0 +1,16 @@
+Index: cmake/Unix.cmake
+--- cmake/Unix.cmake.orig
++++ cmake/Unix.cmake
+@@ -111,9 +111,9 @@ if(ENABLE_QUAZIP)
+             add_definitions(-DWITH_QUAZIP)
+             add_definitions(-DWITH_QUAZIP1)
+         else()
+-            find_package(QuaZip-Qt5 QUIET)
+-            if (QuaZip-Qt5_FOUND)
+-                message(STATUS "QUAZIP: QuaZip-1 for Qt5 found")
++            find_package(QuaZip-Qt6 QUIET)
++            if (QuaZip-Qt6_FOUND)
++                message(STATUS "QUAZIP: QuaZip-1 for Qt6 found")
+                 set(QUAZIP_LIBRARIES QuaZip::QuaZip)
+                 add_definitions(-DWITH_QUAZIP)
+                 add_definitions(-DWITH_QUAZIP1)
