@@ -22,17 +22,26 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Build/Inline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/IpythonMagic.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestCyCache.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestCythonizeArgsParser.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestDependencies.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestInline.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestIpythonMagic.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestRecythonize.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/TestStripLiterals.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCyCache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCyCache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCythonizeArgsParser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestCythonizeArgsParser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestDependencies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestDependencies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestInline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestInline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestIpythonMagic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestIpythonMagic.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestRecythonize.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestRecythonize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestStripLiterals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}TestStripLiterals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Build/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -61,10 +70,12 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/AutoDocTransforms.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Buffer.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Builtin.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/CmdLine.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Code.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Code.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Code.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/CodeGeneration.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/CythonScope.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Dataclass.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/DebugFlags.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Errors.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/ExprNodes.py
@@ -85,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Optimize.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Options.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/ParseTreeTransforms.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/ParseTreeTransforms.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Parsing.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Parsing.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Parsing.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Pipeline.py
@@ -102,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestFlowControl.p
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestGrammar.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestMemView.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestParseTreeTransforms.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestScanning.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestSignatureMatching.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestStringEncoding.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreeFragment.py
@@ -109,6 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreePath.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTypes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestUtilityLoad.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestVisitor.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/Utils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestBuffer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,6 +137,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}T
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestMemView.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestParseTreeTransforms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestParseTreeTransforms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestScanning.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestScanning.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestSignatureMatching.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestSignatureMatching.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestStringEncoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -137,12 +153,15 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}T
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestUtilityLoad.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestVisitor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}TestVisitor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}Utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}Utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TreeFragment.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TreePath.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TypeInference.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TypeSlots.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/UFuncs.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/UtilNodes.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/UtilityCode.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Version.py
@@ -169,6 +188,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}CodeGen
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}CodeGeneration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}CythonScope.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}CythonScope.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}Dataclass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}Dataclass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}DebugFlags.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}DebugFlags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}Errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -223,6 +244,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}TypeInf
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}TypeInference.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}TypeSlots.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}TypeSlots.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}UFuncs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}UFuncs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}UtilNodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}UtilNodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/${MODPY_PYCACHE}UtilityCode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -283,43 +306,6 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/build_ext.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/extension.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Distutils/old_build_ext.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_bool.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_buffer.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_bytes.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_cobject.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_complex.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_dict.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_exc.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_float.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_function.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_getargs.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_instance.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_int.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_iterator.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_list.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_long.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_mapping.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_mem.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_method.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_module.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_number.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_object.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_oldbuffer.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_pycapsule.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_ref.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_sequence.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_set.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_string.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_tuple.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_type.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_unicode.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_version.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/python_weakref.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/stdio.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/stdlib.pxd
-lib/python${MODPY_VERSION}/site-packages/Cython/Includes/Deprecated/stl.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/array.pxd
@@ -332,10 +318,13 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/ceval.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/cobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/codecs.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/complex.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/contextvars.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/conversion.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/datetime.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/descr.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/dict.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/exc.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/fileobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/float.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/function.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/genobject.pxd
@@ -348,6 +337,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/long.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/longintrepr.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/mapping.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/marshal.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/mem.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/memoryview.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/method.pxd
@@ -357,6 +347,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/object.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/oldbuffer.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/pycapsule.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/pylifecycle.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/pyport.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/pystate.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/pythread.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/ref.pxd
@@ -364,6 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/sequence.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/set.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/slice.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/string.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/time.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/tuple.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/type.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/unicode.pxd
@@ -371,6 +363,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/version.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/weakref.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/__init__.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/complex.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/errno.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/float.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/limits.pxd
@@ -387,9 +380,14 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libc/time.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/__init__.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/algorithm.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/any.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/atomic.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/bit.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cast.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/cmath.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/complex.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/deque.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/execution.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/forward_list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/functional.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/iterator.pxd
@@ -397,8 +395,12 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/limits.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/list.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/map.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/memory.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/numbers.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/numeric.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/optional.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/pair.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/queue.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/random.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/set.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/stack.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/libcpp/string.pxd
@@ -427,22 +429,27 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/stdlib.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/strings.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/time.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/types.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/uio.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/unistd.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/posix/wait.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/
 @so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Actions.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/DFA.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/Cython/Plex/DFA.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/DFA.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Errors.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Lexicons.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Machines.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Machines.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Machines.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Regexps.py
 @so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Scanners.py
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Timing.py
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Traditional.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/Transitions.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}/
@@ -460,10 +467,6 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Regexps.${M
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Regexps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Scanners.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Scanners.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Timing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Timing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Traditional.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Traditional.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Transitions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}Transitions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Plex/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -476,6 +479,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}__init__
 @so lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.py
+@so lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/__init__.py
@@ -497,7 +501,9 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Tests/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestCodeWriter.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestCythonUtils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestJediTyper.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestShadow.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestStringIOTree.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/TestTestUtils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCodeWriter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -506,8 +512,12 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCython
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestCythonUtils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestJediTyper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestJediTyper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestShadow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestShadow.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestStringIOTree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestStringIOTree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestTestUtils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}TestTestUtils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Tests/${MODPY_PYCACHE}xmlrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -519,7 +529,6 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Buffer.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Builtins.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CMath.c
-lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Capsule.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CommonStructures.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Complex.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Coroutine.c
@@ -527,6 +536,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CpdefEnums.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppConvert.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CppSupport.cpp
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/CythonFunction.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Dataclasses.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Dataclasses.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Embed.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Exceptions.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ExtensionTypes.c
@@ -535,6 +546,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ImportExport.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/MemoryView.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/MemoryView_C.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ModuleSetupCode.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/NumpyImportArray.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ObjectHandling.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Optimize.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Overflow.c
@@ -545,11 +557,16 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCyUtilityLoader.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCythonScope.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestUtilityLoader.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TypeConversion.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs.pyx
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/UFuncs_C.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}Dataclasses.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/arrayarray.h
+@so lib/python${MODPY_VERSION}/site-packages/Cython/Utils.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Utils.py
 lib/python${MODPY_VERSION}/site-packages/Cython/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cython/${MODPY_PYCACHE}/
@@ -578,9 +595,15 @@ lib/python${MODPY_VERSION}/site-packages/pyximport/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}_pyximport2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}_pyximport2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}_pyximport3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}_pyximport3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}pyxbuild.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}pyxbuild.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}pyximport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyximport/${MODPY_PYCACHE}pyximport.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyximport/_pyximport2.py
+lib/python${MODPY_VERSION}/site-packages/pyximport/_pyximport3.py
 lib/python${MODPY_VERSION}/site-packages/pyximport/pyxbuild.py
 lib/python${MODPY_VERSION}/site-packages/pyximport/pyximport.py
