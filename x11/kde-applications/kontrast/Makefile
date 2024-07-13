@@ -1,14 +1,11 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
-# XXX Depends on FutureSQL
-VERSION =	23.04.3
 CATEGORIES =	x11 graphics
-REVISION =	1
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg Qt6Widgets
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n QCoro6Core
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg
+WANTLIB += Qt6Widgets c futuresql6 m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -21,8 +18,10 @@ BUILD_DEPENDS =	devel/kf6/kconfig \
 
 RUN_DEPENDS =	devel/kf6/kirigami
 
-LIB_DEPENDS =	devel/kf6/kcoreaddons \
+LIB_DEPENDS =	databases/futuresql \
+		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
+		devel/qcoro,qt6 \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsvg
 
