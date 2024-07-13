@@ -289,7 +289,6 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose.app
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_app.beam
-lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_base.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_base64.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_base64url.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_block_encryptor.beam
@@ -299,10 +298,14 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_chacha20_poly1305_libsodium.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_chacha20_poly1305_unsupported.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_crypto_compat.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519_crypto.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519_fallback.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519_libdecaf.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519_libsodium.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve25519_unsupported.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve448.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve448_crypto.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve448_fallback.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve448_libdecaf.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_curve448_unsupported.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_json.beam
@@ -347,6 +350,7 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_c20p_kw.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_dir.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_ecdh_1pu.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_ecdh_es.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_ecdh_ss.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_pbes2.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_rsa.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_jwe_alg_xc20p_kw.beam
@@ -393,6 +397,7 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_sha3_unsupported.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_sup.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_xchacha20_poly1305.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_xchacha20_poly1305_crypto.beam
+lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_xchacha20_poly1305_libsodium.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/ebin/jose_xchacha20_poly1305_unsupported.beam
 lib/rabbitmq/plugins/${RABBIT_JOSE}/include/
 lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose.hrl
@@ -404,7 +409,7 @@ lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose_jws.hrl
 lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose_jwt.hrl
 lib/rabbitmq/plugins/${RABBIT_JOSE}/include/jose_public_key.hrl
 lib/rabbitmq/plugins/${RABBIT_JOSE}/priv/
-lib/rabbitmq/plugins/${RABBIT_JOSE}/priv/Dockerfile
+lib/rabbitmq/plugins/${RABBIT_JOSE}/priv/.keep
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri.app
@@ -800,6 +805,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vhost_process.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vhost_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vhost_sup_sup.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vhost_sup_wrapper.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vhosts.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_vm.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/supervised_lifecycle.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/tcp_listener.beam
@@ -1585,6 +1591,8 @@ lib/rabbitmq/plugins/rabbitmq_tracing-${V}/ebin/rabbit_tracing_wm_trace.beam
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/ebin/rabbit_tracing_wm_traces.beam
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/ebin/rabbitmq_tracing.app
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/
+lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/schema/
+lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/schema/rabbitmq_tracing.schema
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/www/
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/www/js/
 lib/rabbitmq/plugins/rabbitmq_tracing-${V}/priv/www/js/tmpl/
