@@ -1,14 +1,23 @@
-Remove unused uuid dependency
-https://gitlab.gnome.org/GNOME/gnome-notes/-/issues/176
+From cbadb5e8b7d3e5e6672e8acab82276c174999a12 Mon Sep 17 00:00:00 2001
+From: Isaque Galdino <igaldino@gmail.com>
+Date: Sun, 16 May 2021 21:46:34 -0300
+Subject: [PATCH] meson: remove uuid dependency
+
+From 8471369c54f9aa777857e2a42d82ab502c071520 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?G=C3=BCnther=20Wagner?= <info@gunibert.de>
+Date: Fri, 24 Jun 2022 10:03:31 +0200
+Subject: [PATCH] flatpak: switch to soup3
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -125,7 +125,6 @@ bijiben_deps = [
+@@ -125,8 +125,7 @@ bijiben_deps = [
    dependency('libhandy-1', version: '>= 1.0.0'),
    dependency('libxml-2.0'),
    dependency('libcurl'),
 -  dependency('uuid'),
-   dependency('webkit2gtk-4.0', version: '>= 2.26'),
+-  dependency('webkit2gtk-4.0', version: '>= 2.26'),
++  dependency('webkit2gtk-4.1', version: '>= 2.26'),
    cc.find_library('m')
  ]
+ 
