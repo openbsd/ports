@@ -1,3 +1,5 @@
+BROKEN =	needs update for cython 3.x - current upstream version works with py 3.x
+
 # Keep in sync with games/renpy!!!
 V =		7.3.5.606
 COMMENT =	Ren'Py fork of pygame
@@ -17,6 +19,11 @@ PERMIT_PACKAGE =	Yes
 # Not yet. We need to wait for Ren'Py to make the switch.
 #FLAVORS =	python3
 #FLAVOR ?=
+
+# N.B. there's no py- prefix for this port; suggest normalising by using
+# PKGNAME=py-pygame_sdl2-${V} when switching to python 3, the python module
+# will take care of changing this to py3-pygame_sdl2. The move will need
+# a "quirks rename" (pygame_sdl2 -> py3-pygame_sdl2) and @pkgpath marker. -sthen
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf jpeg png pthread
 WANTLIB += ${MODPY_WANTLIB}

@@ -1,3 +1,5 @@
+BROKEN =		needs update for cython 3.x - current upstream version works with py 3.x
+
 COMMENT =		visual novel engine
 
 V =			7.3.5
