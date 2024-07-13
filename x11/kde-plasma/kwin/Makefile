@@ -1,5 +1,6 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -18,13 +19,13 @@ WANTLIB += PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6Sensors Qt6UiTools Qt6WaylandClient Qt6Widgets
 WANTLIB += Qt6Xml SM X11 X11-xcb Xext Xi c display-info drm eis
-WANTLIB += epoxy fontconfig freetype gbm input kdecorations2 kdecorations2private
-WANTLIB += lcms2 m pipewire-0.3 qaccessibilityclient-qt6 udev
-WANTLIB += wayland-client wayland-cursor wayland-server xcb xcb-composite
-WANTLIB += xcb-cursor xcb-damage xcb-dri3 xcb-glx xcb-icccm xcb-keysyms
-WANTLIB += xcb-present xcb-randr xcb-render xcb-shape xcb-shm
-WANTLIB += xcb-sync xcb-xfixes xcb-xinerama xcb-xkb xcvt xkbcommon
-WANTLIB += xkbcommon-x11
+WANTLIB += epoll-shim epoxy fontconfig freetype gbm input kdecorations2
+WANTLIB += kdecorations2private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
+WANTLIB += udev wayland-client wayland-cursor wayland-server xcb
+WANTLIB += xcb-composite xcb-cursor xcb-damage xcb-dri3 xcb-glx
+WANTLIB += xcb-icccm xcb-keysyms xcb-present xcb-randr xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
+WANTLIB += xcb-xkb xcvt xkbcommon xkbcommon-x11
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -83,7 +84,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/xkbcommon
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
 CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
