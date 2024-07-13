@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -62,9 +62,7 @@ fi
+@@ -68,9 +68,7 @@ fi
  
  if test "X$GCC" = Xyes; then
    AX_APPEND_FLAG(-Wall, CFLAGS)
