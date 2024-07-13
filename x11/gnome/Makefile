@@ -49,7 +49,6 @@
      SUBDIR += keyring
      SUBDIR += libadwaita
      SUBDIR += libcloudproviders
-     SUBDIR += libcryptui
      SUBDIR += libdazzle
      SUBDIR += libdmapsharing4
      SUBDIR += libgda
@@ -79,9 +78,7 @@
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
-     SUBDIR += screenshot
      SUBDIR += seahorse
-     SUBDIR += seahorse-nautilus
      SUBDIR += secrets
      SUBDIR += session
      SUBDIR += settings-daemon
