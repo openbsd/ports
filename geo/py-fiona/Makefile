@@ -1,9 +1,8 @@
 COMMENT =	high-level API and CLI on top of OGR
 
-MODPY_EGG_VERSION =	1.9.4.post1
-DISTNAME =	Fiona-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.9.6
+DISTNAME =	fiona-${MODPY_EGG_VERSION}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
-REVISION =	0
 
 CATEGORIES =	geo
 
@@ -36,8 +35,7 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 		devel/py-munch${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-tz${MODPY_FLAVOR} \
 		net/py-boto3${MODPY_FLAVOR}
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m
