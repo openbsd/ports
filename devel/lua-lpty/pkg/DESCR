@@ -1,0 +1,4 @@
+lpty is a module that allows a program written in lua to open the master
+side of a PTY and start a program with the slave side of the PTY as its
+controlling terminal.  The PTY may then be read from and written to,
+thus controlling the remote program.
