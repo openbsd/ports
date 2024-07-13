@@ -1,0 +1,15 @@
+Allow msgpack 1.0.8, taken from
+https://github.com/borgbackup/borg/commit/a507a2cb3b9fed025743e80971ce1615887a47e4
+
+Index: src/borg/helpers/msgpack.py
+--- src/borg/helpers/msgpack.py.orig
++++ src/borg/helpers/msgpack.py
+@@ -209,7 +209,7 @@ def is_supported_msgpack():
+ 
+     if msgpack.version in []:  # < add bad releases here to deny list
+         return False
+-    return (1, 0, 3) <= msgpack.version <= (1, 0, 7)
++    return (1, 0, 3) <= msgpack.version <= (1, 0, 8)
+ 
+ 
+ def get_limited_unpacker(kind):
