@@ -1,6 +1,16 @@
---- CMakeLists.txt.orig	Sat May 24 11:16:04 2014
-+++ CMakeLists.txt	Tue Jun  3 09:52:20 2014
-@@ -97,7 +97,7 @@ else()
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -101,8 +101,6 @@ else()
+ 		if(DEBUG_PROFILE AND CMAKE_COMPILER_IS_GNUCC)
+ 			add_definitions(-p)
+ 		endif()
+-	else()
+-		add_definitions(-O2)
+ 	endif()
+ 	if(GCW0)
+ 		add_definitions(-D__GCWZERO__)
+@@ -129,7 +127,7 @@ else()
  		endif()
  	endif()
  	if(NOT BEOS AND NOT HAIKU)
@@ -9,18 +19,21 @@
  		set(EXTRA_LIBRARIES "m")
  	endif()
  endif()
-@@ -174,11 +174,11 @@ INSTALL(DIRECTORY
- 	${SOURCE_DIRECTORY}/graphics
- 	${SOURCE_DIRECTORY}/music
- 	${SOURCE_DIRECTORY}/sounds
--	DESTINATION ${INSTALL_PREFIX})
--INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs_icon.bmp ${SOURCE_DIRECTORY}/README.md DESTINATION ${INSTALL_PREFIX})
-+	DESTINATION ${CMAKE_INSTALL_PREFIX}/share/cdogs-sdl)
-+INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs_icon.bmp ${SOURCE_DIRECTORY}/README.md DESTINATION ${CMAKE_INSTALL_PREFIX}/share/doc/cdogs-sdl)
- IF(UNIX AND NOT APPLE AND NOT BEOS AND NOT HAIKU)
- 	INSTALL(FILES ${SOURCE_DIRECTORY}/build/linux/cdogs-sdl.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
--	INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons)
-+	INSTALL(FILES ${SOURCE_DIRECTORY}/cdogs-sdl.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/pixmaps)
- elseif(MSVC)
- 	# Package for Windows
- 	FILE(GLOB DLLS "${SOURCE_DIRECTORY}/src/*.dll")
+@@ -140,7 +138,7 @@ if(NOT DEFINED CDOGS_DATA_DIR)
+ 	if(GCW0)
+ 		set(CDOGS_DATA_DIR "./")
+ 	else()
+-		set(CDOGS_DATA_DIR "../")
++		set(CDOGS_DATA_DIR "share/cdogs-sdl")
+ 	endif()
+ endif()
+ message("Data dir is ${CDOGS_DATA_DIR}")
+@@ -196,7 +194,7 @@ elseif(APPLE)
+ 	set(INSTALL_PREFIX "cdogs-sdl")
+ else()
+ 	set(LIB_EXTENSION ".so")
+-	set(DATA_INSTALL_DIR ".")
++	set(DATA_INSTALL_DIR "share/cdogs-sdl")
+ endif()
+ 
+ # Since Debian wants games binaries in /usr/games
