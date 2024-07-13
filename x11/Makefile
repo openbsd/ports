@@ -256,6 +256,7 @@
      SUBDIR += qt5ct
      SUBDIR += qt6
      SUBDIR += qt6ct
+     SUBDIR += qtadvanceddocking
      SUBDIR += qtfm
      SUBDIR += qwt
      SUBDIR += ratmen
