@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1644 2024/07/12 16:24:34 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1645 2024/07/13 15:49:55 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1965,6 +1965,9 @@ setup_obsolete_reason(
 	3 => 'pgfouine',
 	6 => 'py3-backports-strenum',
 	67 => 'vpnc',
+	3 => 'seahorse-nautilus',
+	3 => 'libcryptui',
+	3 => 'gnome-screenshot',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
