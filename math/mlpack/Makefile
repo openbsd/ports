@@ -1,3 +1,5 @@
+BROKEN =	needs adjusting for cython 3
+
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
 BROKEN-sparc64 = Exhausts virtual memory
