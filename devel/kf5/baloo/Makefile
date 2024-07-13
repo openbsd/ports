@@ -2,6 +2,7 @@ COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
 EPOCH =		0
+REVISION =	0
 
 SHARED_LIBS +=  KF5Baloo                  5.0 # 4.0
 SHARED_LIBS +=  KF5BalooEngine            8.0 # 5.0
@@ -13,12 +14,16 @@ WANTLIB += m
 
 WANTLIB += lib/inotify/inotify
 
-BUILD_DEPENDS =	devel/gettext,-tools
+RUN_DEPENDS =	devel/kf5/kcrash>=${MODKF5_VERSION} \
+		devel/kf5/kidletime>=${MODKF5_VERSION}
+
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/kcrash>=${MODKF5_VERSION} \
+		devel/kf5/kidletime>=${MODKF5_VERSION}
 
 LIB_DEPENDS =	databases/lmdb \
 		devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
-		devel/kf5/kcrash>=${MODKF5_VERSION} \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/kfilemetadata>=${MODKF5_VERSION} \
 		devel/kf5/kfilemetadata>=${MODKF5_VERSION} \
@@ -26,7 +31,6 @@ LIB_DEPENDS =	databases/lmdb \
 		devel/kf5/kio>=${MODKF5_VERSION} \
 		devel/kf5/kservice>=${MODKF5_VERSION} \
 		devel/kf5/solid>=${MODKF5_VERSION} \
-		devel/kf5/kidletime>=${MODKF5_VERSION} \
 		devel/libinotify \
 		x11/qt5/qtdeclarative
 
