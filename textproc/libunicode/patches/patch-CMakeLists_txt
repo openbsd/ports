@@ -1,0 +1,16 @@
+From ad31f78a116c844e5c00712b3dcd258c76586e57 Mon Sep 17 00:00:00 2001
+From: Christian Parpart <christian@parpart.family>
+Date: Tue, 26 Dec 2023 10:07:16 +0100
+Subject: [PATCH] Make usage of SSE extension optional
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -43,6 +43,7 @@ option(LIBUNICODE_EXAMPLES "libunicode: Enables buildi
+ option(LIBUNICODE_TESTING "libunicode: Enables building of unittests for libunicode [default: ${MASTER_PROJECT}" ${MASTER_PROJECT})
+ option(LIBUNICODE_TOOLS "libunicode: Builds CLI tools [default: ${MASTER_PROJECT}]" ${MASTER_PROJECT})
+ option(LIBUNICODE_BUILD_STATIC "libunicode: provide static library instead of dynamic [default: ${LIBUNICODE_BUILD_STATIC_DEFAULT}]" ${LIBUNICODE_BUILD_STATIC_DEFAULT})
++option(LIBUNICODE_USE_INTRINSICS "libunicode: Use SIMD extenstion during text read [default: ON]" ON)
+ 
+ include(ThirdParties)
+ 

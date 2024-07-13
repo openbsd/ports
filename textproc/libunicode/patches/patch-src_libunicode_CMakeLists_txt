@@ -1,0 +1,19 @@
+From ad31f78a116c844e5c00712b3dcd258c76586e57 Mon Sep 17 00:00:00 2001
+From: Christian Parpart <christian@parpart.family>
+Date: Tue, 26 Dec 2023 10:07:16 +0100
+Subject: [PATCH] Make usage of SSE extension optional
+
+Index: src/libunicode/CMakeLists.txt
+--- src/libunicode/CMakeLists.txt.orig
++++ src/libunicode/CMakeLists.txt
+@@ -110,6 +110,10 @@ add_library(unicode ${LIBUNICODE_LIB_MODE}
+     codepoint_properties_names.cpp
+ )
+ 
++if(LIBUNICODE_USE_INTRINSICS)
++    target_compile_definitions(unicode PRIVATE USE_INTRINSICS)
++endif()
++
+ set(public_headers
+     capi.h
+     codepoint_properties.h

@@ -1,0 +1,24 @@
+From ad31f78a116c844e5c00712b3dcd258c76586e57 Mon Sep 17 00:00:00 2001
+From: Christian Parpart <christian@parpart.family>
+Date: Tue, 26 Dec 2023 10:07:16 +0100
+Subject: [PATCH] Make usage of SSE extension optional
+
+Index: src/libunicode/scan.cpp
+--- src/libunicode/scan.cpp.orig
++++ src/libunicode/scan.cpp
+@@ -81,6 +81,7 @@ size_t detail::scan_for_text_ascii(string_view text, s
+     auto input = text.data();
+     auto const end = text.data() + min(text.size(), maxColumnCount);
+ 
++#if defined(USE_INTRINSICS)
+     intrinsics::m128i const ControlCodeMax = intrinsics::set1_epi8(0x20); // 0..0x1F
+     intrinsics::m128i const Complex = intrinsics::set1_epi8(-128);        // equals to 0x80 (0b1000'0000)
+ 
+@@ -99,6 +100,7 @@ size_t detail::scan_for_text_ascii(string_view text, s
+         }
+         input += sizeof(intrinsics::m128i);
+     }
++#endif
+ 
+     while (input != end && is_ascii(*input))
+         ++input;

@@ -1,11 +1,9 @@
 COMMENT =	Unicode support to C++ with simple and easy APIs
 
-V = 0.4.0
-DISTNAME =	libunicode-${V}
-
 GH_ACCOUNT =	contour-terminal
 GH_PROJECT =	libunicode
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v0.4.0
+REVISION =	0
 
 SHARED_LIBS  =	unicode		0.0 # 0.0
 SHARED_LIBS +=	unicode_loader	0.0 # 0.0
@@ -36,5 +34,9 @@ CONFIGURE_STYLE =	cmake
 
 CONFIGURE_ARGS =	-DLIBUNICODE_TESTING=OFF \
 			-DLIBUNICODE_UCD_DIR=${LOCALBASE}/share/unicode/ucd
+
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "aarch64"
+CONFIGURE_ARGS +=	-DLIBUNICODE_USE_INTRINSICS=OFF
+.endif
 
 .include <bsd.port.mk>
