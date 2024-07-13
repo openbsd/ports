@@ -1,3 +1,5 @@
+BROKEN =	needs adjusting for cython 3
+
 COMMENT =		image processing routines for SciPy
 
 MODPY_EGG_VERSION =	0.19.3

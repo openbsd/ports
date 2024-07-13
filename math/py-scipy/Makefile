@@ -1,3 +1,5 @@
+BROKEN =	needs adjusting for cython 3
+
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.10.1

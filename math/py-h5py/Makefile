@@ -1,3 +1,5 @@
+BROKEN =	needs adjusting for cython 3
+
 COMMENT =	pythonic interface to the HDF5 binary data format
 
 MODPY_EGG_VERSION =	3.10.0
