@@ -1,0 +1,16 @@
+X509_check_trust() was removed from the public API
+
+Index: src/SWIG/_x509.i
+--- src/SWIG/_x509.i.orig
++++ src/SWIG/_x509.i
+@@ -108,8 +108,10 @@ extern int X509_cmp_current_time(ASN1_TIME *);
+ 
+ %rename(x509_check_purpose) X509_check_purpose;
+ extern int X509_check_purpose(X509 *, int, int);
++#ifndef LIBRESSL_VERSION_NUMBER
+ %rename(x509_check_trust) X509_check_trust;
+ extern int X509_check_trust(X509 *, int, int);
++#endif
+ 
+ %rename(x509_write_pem) PEM_write_bio_X509;
+ %threadallow PEM_write_bio_X509;
