@@ -416,6 +416,7 @@
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-diff-match-patch,python3
      SUBDIR += py-docutils,python3
+     SUBDIR += py-docx,python3
      SUBDIR += py-elasticsearch,python3
      SUBDIR += py-elementpath,python3
      SUBDIR += py-emoji,python3
