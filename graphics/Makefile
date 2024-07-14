@@ -26,6 +26,7 @@
      SUBDIR += cgif
      SUBDIR += chafa
      SUBDIR += clutter
+     SUBDIR += coin
      SUBDIR += colord
      SUBDIR += colord-gtk
      SUBDIR += colorexplorer
