@@ -1,5 +1,5 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_EGG_VERSION =	2.4.4
+MODPY_EGG_VERSION =	2.5
 DISTNAME =		novelwriter-${MODPY_EGG_VERSION}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
