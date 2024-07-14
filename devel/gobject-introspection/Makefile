@@ -2,7 +2,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.80.1
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -22,6 +22,8 @@ COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m
+
+CONFIGURE_ARGS=		-Dcairo_libname=libcairo-gobject.so
 
 # cairo is only needed for tests;
 # prevent cyclic dependency: g-o-i -> cairo -> glib2 -> g-o-i
