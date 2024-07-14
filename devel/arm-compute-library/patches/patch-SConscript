@@ -1,7 +1,7 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -154,7 +154,7 @@ def build_library(name, build_env, sources, static=Fal
+@@ -162,7 +162,7 @@ def build_library(name, build_env, sources, static=Fal
  
          # Dynamic Fusion has a direct dependency on the Compute Kernel Writer (CKW) subproject, therefore we collect the
          # built CKW objects to pack into the Compute Library archive.
@@ -10,16 +10,16 @@ Index: SConscript
              static_sources += get_ckw_obj_list()
  
          obj = cloned_build_env.StaticLibrary(name, source=static_sources, LIBS=arm_compute_env["LIBS"] + libs)
-@@ -725,7 +725,7 @@ if (env['multi_isa']):
- 
- # STATIC library build.
+@@ -726,7 +726,7 @@ Export('bootcode_o')
  if (env['multi_isa']):
+     lib_static_objs, lib_shared_objs = build_multiisa_lib_objects()
+     # STATIC library build.
 -    arm_compute_a = build_library('arm_compute-static', arm_compute_env, lib_static_objs, static=True)
 +    arm_compute_a = build_library('arm_compute', arm_compute_env, lib_static_objs, static=True)
  else:
      if 'sve2' in env['arch']:
          lib_files += lib_files_sve
-@@ -733,7 +733,7 @@ else:
+@@ -734,7 +734,7 @@ else:
      elif 'sve' in env['arch']:
          lib_files += lib_files_sve
  
@@ -28,7 +28,7 @@ Index: SConscript
  
  Export('arm_compute_a')
  
-@@ -753,7 +753,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
+@@ -754,7 +754,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
  # Build graph libraries
  arm_compute_graph_env.Append(CXXFLAGS = ['-Wno-redundant-move', '-Wno-pessimizing-move'])
  

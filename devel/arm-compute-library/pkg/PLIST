@@ -160,6 +160,7 @@ include/arm_compute/function_info/ConvolutionInfo.h
 include/arm_compute/function_info/FullyConnectedLayerInfo.h
 include/arm_compute/function_info/GEMMInfo.h
 include/arm_compute/function_info/MatMulInfo.h
+include/arm_compute/function_info/ScatterInfo.h
 include/arm_compute/graph/
 include/arm_compute/graph.h
 include/arm_compute/graph/DataLayerVisitor.h
@@ -381,6 +382,7 @@ include/arm_compute/runtime/CL/functions/CLReorgLayer.h
 include/arm_compute/runtime/CL/functions/CLReshapeLayer.h
 include/arm_compute/runtime/CL/functions/CLReverse.h
 include/arm_compute/runtime/CL/functions/CLScale.h
+include/arm_compute/runtime/CL/functions/CLScatter.h
 include/arm_compute/runtime/CL/functions/CLSelect.h
 include/arm_compute/runtime/CL/functions/CLSlice.h
 include/arm_compute/runtime/CL/functions/CLSoftmaxLayer.h
@@ -635,6 +637,7 @@ share/examples/arm-compute-library/graph_yolov3.cpp
 share/examples/arm-compute-library/neon_cnn.cpp
 share/examples/arm-compute-library/neon_copy_objects.cpp
 share/examples/arm-compute-library/neon_gemm_qasymm8.cpp
+share/examples/arm-compute-library/neon_gemm_s8_f32.cpp
 share/examples/arm-compute-library/neon_permute.cpp
 share/examples/arm-compute-library/neon_scale.cpp
 share/examples/arm-compute-library/neon_sgemm.cpp
