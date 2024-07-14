@@ -46,6 +46,7 @@ RUN_DEPENDS-utils =	# empty
 
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 BUILD_DEPENDS +=	devel/py-pip${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-wheel${MODPY_FLAVOR}
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
