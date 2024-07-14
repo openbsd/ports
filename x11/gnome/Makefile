@@ -53,7 +53,6 @@
      SUBDIR += libdmapsharing4
      SUBDIR += libgda
      SUBDIR += libgepub
-     SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
      SUBDIR += libgweather4
      SUBDIR += libmediaart
