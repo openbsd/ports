@@ -378,6 +378,10 @@
      SUBDIR += lua-lgi
      SUBDIR += lua-lgi,lua52
      SUBDIR += lua-lgi,lua53
+     SUBDIR += lua-lpty,lua51
+     SUBDIR += lua-lpty,lua52
+     SUBDIR += lua-lpty,lua53
+     SUBDIR += lua-lpty,lua54
      SUBDIR += lua-openbsd
      SUBDIR += lua-openbsd,lua52
      SUBDIR += lua-openbsd,lua53
