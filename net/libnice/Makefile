@@ -1,5 +1,6 @@
 COMMENT =		GLib ICE implementation
 DISTNAME =		libnice-0.1.22
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -10,8 +11,6 @@ WANTLIB += gupnp-igd-1.6
 
 HOMEPAGE =		https://libnice.freedesktop.org
 SITES =			https://libnice.freedesktop.org/releases/
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # dual-licensed: MPL 1.1 + LGPL 2.1
 PERMIT_PACKAGE =	Yes
