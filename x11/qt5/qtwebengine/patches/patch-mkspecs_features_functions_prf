@@ -31,7 +31,7 @@ Index: mkspecs/features/functions.prf
  
  defineReplace(gnPdfArgs) {
      linux: include($$QTWEBENGINE_ROOT/src/buildtools/config/linux.pri)
-+    openbsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/opebsd.pri)
++    openbsd: include($$QTWEBENGINE_ROOT/src/buildtools/config/openbsd.pri)
      macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
      ios: include($$QTWEBENGINE_ROOT/src/pdf/config/ios.pri)
      win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)

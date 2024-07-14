@@ -9,7 +9,7 @@ USE_NOBTCFI =		Yes
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		224806a7022eed6d5c75b486bec8715a618cb314
 KDE_VERSION =		6
-REVISION =		5
+REVISION =		6
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
@@ -50,7 +50,7 @@ WANTLIB += expat fido2 fontconfig freetype gbm glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-subset intl jpeg kvm lcms2 m minizip
 WANTLIB += nspr4 nss3 nssutil3 opus pcre2-8 plc4 plds4 png sharpyuv
 WANTLIB += smime3 snappy sndio usbhid util vpx webp webpdemux
-WANTLIB += webpmux xcb xkbcommon xml2 xslt z
+WANTLIB += webpmux xcb xkbcommon xml2 xslt z lzma
 
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes
@@ -72,7 +72,6 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
-		x11/gnome/libgnome-keyring \
 		x11/gtk+3 \
 		x11/py-xcbgen
 
