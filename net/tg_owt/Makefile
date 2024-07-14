@@ -8,17 +8,15 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		WebRTC build for Telegram
 
-GH_ACCOUNT =		desktop-app
-GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		71cce98c5fb1d9328892d55f70db711afd5b1aef
-DISTNAME =		${GH_PROJECT}-0.0.0.20231101
+DIST_TUPLE =		github	desktop-app	tg_owt	\
+			c9cc4390ab951f2cbc103ff783a11f398b27660b	.
+PKGNAME =		tg_owt-0.0.0.20240518
 CATEGORIES =		net
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	8.0	# upstream is static only
+SHARED_LIBS =		tg_owt	9.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -26,8 +24,8 @@ DIST_SUBDIR =		tg_owt
 # https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
-DIST_TUPLE =		github	klemensn	libyuv \
-			3aae5c7fb15452a2c708db8353041f55dc15e116 \
+DIST_TUPLE +=		github	klemensn	libyuv \
+			04821d1e7d60845525e8db55c7bcd41ef5be9406 \
 			src/third_party/libyuv
 
 SITES.tg_owt =		https://github.com/desktop-app/tg_owt/commit/
