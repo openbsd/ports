@@ -1,3 +1,4 @@
+bin/beyond-all-reason
 @bin bin/mapcompile
 @bin bin/mapdecompile
 @bin bin/pr-downloader

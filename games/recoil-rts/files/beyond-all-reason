@@ -1,0 +1,50 @@
+#!/bin/sh
+
+GAME_DIR=~/.local/state/BAR
+CONFIG_FILE=${GAME_DIR}/chobby_config.json
+SETTINGS_FILE=${GAME_DIR}/springsettings.cfg
+DATASIZE="8388608" # 8G
+
+xm_log() {
+	echo -n "$@\nDo you want to run Beyond All Reason anyway?\n\
+(If you don't increase these limits, spring might fail to work properly.)" | \
+		${X11BASE}/bin/xmessage -file - -center -buttons yes:0,no:1 -default no
+}
+
+if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
+	ulimit -Sd ${DATASIZE} || \
+		xm_log "Cannot increase datasize-cur to at least ${DATASIZE}"
+		[ $? -eq 0 ] || exit
+fi
+
+# setup
+[[ -d ${GAME_DIR} ]] || mkdir -p ${GAME_DIR}
+[[ -f ${CONFIG_FILE} ]] || cat > ${CONFIG_FILE} <<EOF
+{
+  "server": {
+    "address": "server4.beyondallreason.info",
+    "port": 8200,
+    "protocol": "spring",
+    "serverName": "BAR"
+  },
+  "game": "byar"
+}
+EOF
+[[ -f ${SETTINGS_FILE} ]] || cat > ${SETTINGS_FILE} <<EOF
+RapidTagResolutionOrder = repos-cdn.beyondallreason.dev;repos.beyondallreason.dev
+EOF
+
+# update
+PRD_HTTP_SEARCH_URL=https://files-cdn.beyondallreason.dev/find
+PRD_RAPID_USE_STREAMER=false
+PRD_RAPID_REPO_MASTER=https://repos-cdn.beyondallreason.dev/repos.gz
+export PRD_HTTP_SEARCH_URL PRD_RAPID_USE_STREAMER PRD_RAPID_REPO_MASTER
+${TRUEPREFIX}/bin/pr-downloader \
+	--filesystem-writepath ${GAME_DIR} \
+	--download-game byar:test \
+	--download-game byar-chobby:test
+
+# start
+${TRUEPREFIX}/bin/spring --write-dir ${GAME_DIR} \
+	--isolation --isolation-dir ${TRUEPREFIX}/share/games/spring/ \
+	--menu rapid://byar-chobby:test

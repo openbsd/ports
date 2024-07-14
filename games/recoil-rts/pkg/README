@@ -6,39 +6,65 @@ Datasize
 ========
 
 ${PKGSTEM} needs datasize of at least 4-6G to launch, see login.conf(5) and
-ksh(1).
+ksh(1). Recommended datasize for Beyond All Reason is 8G.
+
+How to play
+===========
+
+${PKGSTEM} itself only provides the building blocks, so in order to run
+anything, you need to add an engine and a lobby. Depending on the lobby you may
+also need to install maps. Each game built on ${PKGSTEM} may have special
+requirements and may depend on different tools to download and install.
+
+https://springrts.com/wiki/Games
+
+Beyond All Reason
+-----------------
+
+https://www.beyondallreason.info/
+
+${PKGSTEM} comes with a helper script named beyond-all-reason.
+
+	$ beyond-all-reason
+
+The script take care of required settings and update to last engine and lobby
+version available before running the game. It will install and run with
+isolation in ~/.local/state/BAR.
+
+Other Usage Hints
+=================
+
+Home directories
+----------------
+
+${PKGSTEM} may install files and settings into:
+
+	1. $XDG_CONFIG_HOME/spring
+	2. ~/.config/spring
+	3. ~/.spring
 
 Installing Engines
-==================
+------------------
 
-Different engines are built with ${PKGSTEM}. ${PKGSTEM} itself only provides
-the building blocks, so in order to run anything, you need to add an engine.
 The best known and best supported engines for ${PKGSTEM} are Zero-K and
 Beyond All Reason. For example, install Zero-K this way:
 
-	$ pr-downloader zk:stable
+	$ pr-downloader zk:test
 
 And Beyond All Reason:
 
-	$ pr-downloader byar:stable
+	$ pr-downloader byar:test
 
 It will then show up as an engine that can be selected in the ${PKGSTEM} GUI.
-
-Setting up Lobbies
-==================
-
-Running ${PKGSTEM} without a lobby set up will allow testing of maps, engines,
-and settings. To add a lobby, you need to download it and then launch it with:
-
-	1. use `--menu <menu>' argument to spring, or
 
 Installing Lobbies
 ------------------
 
+Running ${PKGSTEM} without a lobby set up will allow testing of maps, engines,
+and settings.
+
 To install Chobby lobby, run the following:
 
-	$ pr-downloader chobby:stable	# latest stable version
-		or
 	$ pr-downloader chobby:test	# latest test version
 
 Then launch it for example with:
@@ -49,7 +75,7 @@ Or set it as the default by adding `DefaultLuaMenu = <menu> <version>' to
 ~/.config/spring/springsettings.cfg.
 
 Installing Maps
-===============
+---------------
 
 Maps can be installed in one of three ways: via the lobby interface, with
 pr-downloader, or by manually downloading the map and placing it in

@@ -13,8 +13,9 @@ MN =			1.1
 BLD =			2511
 HASH =			g747f18b
 V =			${MJ}.${MN}pl${BLD}
+REVISION =		0
 # ${IN_ENGINE_V} is what recoil uses/displays internally
-IN_ENGINE_V =           "${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
+IN_ENGINE_V =		"${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
 
 # Prefix '0.' to avoid future EPOCH. Upstream has indicated future versioning
 # with YY.MM; once that has happened, remove '0.'
@@ -110,5 +111,9 @@ SUBST_VARS +=		IN_ENGINE_V
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake
+
+post-install:
+	${SUBST_PROGRAM} ${FILESDIR}/beyond-all-reason \
+		${PREFIX}/bin/beyond-all-reason
 
 .include <bsd.port.mk>
