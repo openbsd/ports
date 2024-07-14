@@ -22,7 +22,7 @@ REVISION-python=	7
 REVISION-gui=		10
 REVISION-gtk3=		5
 REVISION-main=		10
-REVISION-libs=		4
+REVISION-libs=		5
 REVISION-glib=		3
 
 CATEGORIES=		net devel
