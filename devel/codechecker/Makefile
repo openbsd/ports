@@ -2,9 +2,7 @@ COMMENT =	clang static code analyzer
 
 GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
-GH_TAGNAME =	v6.21.0
-
-REVISION =	4
+GH_TAGNAME =	v6.24.0
 
 CATEGORIES =	devel
 
@@ -30,6 +28,8 @@ MODCLANG_COMPILER_LINKS=	No
 MODCLANG_BUILDDEP=		No
 MODCLANG_RUNDEP=		Yes
 
+SUBST_VARS+=	MODCLANG_VERSION
+
 CONFIGURE_STYLE =	none
 
 ALL_TARGET =	package package_api
@@ -37,7 +37,9 @@ USE_GMAKE =	Yes
 
 RUN_DEPENDS =	databases/py-alembic${MODPY_FLAVOR} \
 		databases/py-sqlalchemy${MODPY_FLAVOR} \
+		devel/py-multiprocess${MODPY_FLAVOR} \
 		devel/py-portalocker${MODPY_FLAVOR} \
+		devel/py-sarif-tools${MODPY_FLAVOR} \
 		devel/py-thrift${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR} \

@@ -2,7 +2,7 @@ Disable web and npm stuff
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -43,7 +43,7 @@ package_gerrit_skiplist:
+@@ -43,7 +43,7 @@ package_gerrit_skiplist: package_dir_structure
  
  package: package_dir_structure set_git_commit_template package_gerrit_skiplist
  	BUILD_DIR=$(BUILD_DIR) BUILD_LOGGER_64_BIT_ONLY=$(BUILD_LOGGER_64_BIT_ONLY) $(MAKE) -C $(CC_ANALYZER) package_analyzer

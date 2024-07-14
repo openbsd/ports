@@ -1,4 +1,3 @@
-Prevent use of base clang
 Index: config/package_layout.json
 --- config/package_layout.json.orig
 +++ config/package_layout.json
@@ -9,5 +8,5 @@ Index: config/package_layout.json
 -      "clangsa": "clang",
 +      "clangsa": "${LOCALBASE}/bin/clang-${MODCLANG_VERSION}",
        "clang-tidy": "clang-tidy",
-       "cppcheck": "cppcheck"
-     },
+       "cppcheck": "cppcheck",
+       "gcc": "g++"
