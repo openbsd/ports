@@ -3,6 +3,7 @@ COMMENT =		data analysis and manipulation library
 MODPY_EGG_VERSION =	2.2.2
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -28,6 +29,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/meson-python \
 			devel/py-versioneer${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR} \
 			math/py-oldest-supported-numpy${MODPY_FLAVOR}
