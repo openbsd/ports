@@ -346,6 +346,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/setup_config.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/vs_instances.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/winapi.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/windows_sys.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/windows/windows_targets.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_cexpr}/.github/
@@ -3072,6 +3073,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_size.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_stmt.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_token_trees.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_ty.rs
+share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_unparenthesize.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/test_visibility.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/tests/zzz_stable.rs
 share/rust-openssl-tests/modcargo-crates/${VER_term}/
