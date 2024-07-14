@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1646 2024/07/14 12:57:59 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1647 2024/07/14 14:00:48 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1969,6 +1969,7 @@ setup_obsolete_reason(
 	3 => 'libcryptui',
 	3 => 'gnome-screenshot',
 	3 => 'libgnome-keyring',
+	1 => 'fnaify',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

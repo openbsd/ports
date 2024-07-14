@@ -113,7 +113,6 @@
      SUBDIR += flare
      SUBDIR += flightgear
      SUBDIR += fna
-     SUBDIR += fnaify
      SUBDIR += fnaify-extralibs
      SUBDIR += foobillard
      SUBDIR += forcedattack

@@ -1,9 +1,0 @@
-fnaify is a script to facilitate running games based on the open-source FNA
-framework on OpenBSD. It takes care of adjusting the configuration files to
-OpenBSD's library names and creates a custom launch script with everything
-needed to start the game.
-
-For more information on FNA, see official website: https://fna-xna.github.io
-
-Some examples of games FNA games that can be configured with fnaify include
-Stardew Valley, Rogue Legacy, and Owlboy.

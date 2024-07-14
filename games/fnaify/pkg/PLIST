@@ -1,5 +1,0 @@
-bin/fnaify
-@man man/man1/fnaify.1
-share/doc/pkg-readmes/${PKGSTEM}
-share/fnaify/
-share/fnaify/fnaify.dllmap.config
