@@ -1612,6 +1612,7 @@
      SUBDIR += py-rpds-py,python3
      SUBDIR += py-rtree,python3
      SUBDIR += py-rx,python3
+     SUBDIR += py-sarif-tools,python3
      SUBDIR += py-schema,python3
      SUBDIR += py-semantic-version,python3
      SUBDIR += py-send2trash,python3
