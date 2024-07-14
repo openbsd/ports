@@ -1,0 +1,5 @@
+Coin is an OpenGL based, retained mode 3D graphics rendering library.
+It is implemented in C++ and publicly released with the source code
+open for your perusal. The application programmer's interface (API)
+is fully compatible with SGI's Open Inventor, the de facto standard
+3D graphics API for complex visualization applications.
