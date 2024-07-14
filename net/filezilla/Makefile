@@ -37,7 +37,9 @@ WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_html-3.2
 WANTLIB += wx_gtk3u_xrc-3.2 xcb xcb-render xcb-shm xkbcommon z
 WANTLIB += zstd
 
-SITES=		https://download.filezilla-project.org/client/
+# XXX it seems that it is no longer possible to link directly to the distfile
+#SITES=		https://download.filezilla-project.org/client/
+SITES=		https://arcfour.nl/mirror/
 EXTRACT_SUFX=	.tar.xz
 
 # c++17

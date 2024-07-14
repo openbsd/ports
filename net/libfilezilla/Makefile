@@ -16,7 +16,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} gmp gnutls hogweed iconv idn2 intl
 WANTLIB +=	m nettle p11-kit tasn1 unistring
 
-SITES =			https://download.filezilla-project.org/libfilezilla/
+# XXX it seems that it is no longer possible to link directly to the distfile
+#SITES =			https://download.filezilla-project.org/libfilezilla/
+SITES =			https://arcfour.nl/mirror/
 EXTRACT_SUFX =		.tar.xz
 
 # c++17
