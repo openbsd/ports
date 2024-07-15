@@ -315,6 +315,7 @@
      SUBDIR += libmpack
      SUBDIR += libmpc
      SUBDIR += libmtp
+     SUBDIR += libnfc
      SUBDIR += libnfs
      SUBDIR += libnotify
      SUBDIR += libofx
